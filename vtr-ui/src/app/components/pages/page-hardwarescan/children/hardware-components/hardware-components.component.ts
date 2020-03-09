@@ -94,10 +94,13 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		this.metrics = this.shellService.getMetrics();
 	}
 
-	@HostListener('window: focus')
-	onFocus(): void {
-		if (this.hardwareScanService.hasLastResponse()) {
-			this.hardwareScanService.renderLastResponse();
+	@HostListener('document: visibilitychange')
+	onVisibilityChange(): void {
+		const visibility = document.visibilityState;
+		if (visibility === 'visible') {
+			if (this.hardwareScanService.hasLastResponse()) {
+				this.hardwareScanService.renderLastResponse();
+			}
 		}
 	}
 
@@ -282,10 +285,38 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 			modalCancel.componentInstance.cancelRequested.subscribe(() => {
 				if (this.hardwareScanService) {
+					let cancelWatcherDelay = 3000;
+					let cancelWatcher;
+					let self = this;
+
+					let checkCliRunning = function() {
+						// Workaround for RTC changing date/time problem!
+						// NOTICE: Remove this code piece as soon as this problem is fixed
+						cancelWatcher = setInterval(function watch() {
+							self.hardwareScanService.getStatus().then((result: any) => {
+								if (!result.isScanInProgress) {
+									clearInterval(cancelWatcher);
+									self.hardwareScanService.setIsScanDone(true);
+									self.hardwareScanService.setScanExecutionStatus(false);
+									self.hardwareScanService.setScanOrRBSFinished(true);
+									self.cleaningUpScan(undefined);
+									self.refreshModules();
+									modalCancel.close();
+									if (self.cancelHandler && self.cancelHandler.cancel) {
+										self.cancelHandler.cancel();
+									}
+								}
+							});
+						}, cancelWatcherDelay);
+					};
+
                     this.hardwareScanService.cancelScanExecution()
-						.then((response) => {});
+						.then((response) => {
+							checkCliRunning();
+						});
 
                     this.hardwareScanService.isWorkDone().subscribe((done) => {
+						clearInterval(cancelWatcher);
 						if (done) {
 							// When the cancelation is done, close the cancelation dialog and sets the
 							// status of the scan to avoid problems when viewing their results

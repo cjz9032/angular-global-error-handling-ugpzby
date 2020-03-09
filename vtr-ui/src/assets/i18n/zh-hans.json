@@ -22,6 +22,12 @@
                     "rapidCharge": "快速充电"
                 },
                 "legionEdge": {
+                    "thermalMode2": {
+                        "OC_On": "超频开启",
+                        "performance": "野兽模式",
+                        "balance": "智能模式",
+                        "quiet": "节能模式"
+                    },
                     "title": "CPU 超频",
                     "status": {
                         "alwayson": "开启",
@@ -105,12 +111,12 @@
                     "fnQDesc": "可使用快捷键 Fn+Q 切换模式。",
                     "perormanceTitle": "野兽模式",
                     "performanceDesc": "提升计算机性能，同时会提高风扇速度和功耗。",
-                    "OCDesc": "可选择开启“超频”功能。",
-                    "ac_dcDesc": "野兽模式仅在接通电源时可用。",
+                    "OCDesc": "可选择开启超频功能。",
+                    "ac_dcDesc": "仅在插入交流电源适配器时才能使用野兽模式。",
                     "balanceTitle": "智能模式",
-                    "balanceDesc": "根据温度自动平衡性能和风扇速度。中等功耗。",
+                    "balanceDesc": "根据温度自动平衡性能和风扇速度，产生中等程度的功耗。",
                     "quietTitle": "节能模式",
-                    "quietDesc": "尽可能降低计算机的性能和风扇速度，以保持安静。低功耗。",
+                    "quietDesc": "尽可能降低计算机的性能和风扇速度以保持安静，产生较低的功耗。",
                     "OC": {
                         "cpu_gpuOC": "在野兽模式下启用 CPU/GPU 超频。",
                         "cpuOC": "在野兽模式下启用 CPU 超频。",
@@ -121,7 +127,7 @@
                         "gpuDriverLack": "安装 GPU 驱动程序以使用超频功能。",
                         "goInstall": "去安装"
                     },
-                    "autoSwitch": "启动游戏时自动切换到野兽模式并在之后切回。"
+                    "autoSwitch": "启动游戏时自动切换到野兽模式并在退出游戏后切换回来。"
                 },
                 "advancedOC": {
                     "title": "超频高级设置",
@@ -795,7 +801,9 @@
             "loading": "载入中...",
             "from": "从",
             "to": "到",
-            "clickToChange": "单击以更改"
+            "clickToChange": "单击以更改",
+            "failedLoad": "未能加载。",
+            "retry": "重试"
         },
         "app-update": {
             "message": "您好！已有较新版本的 Vantage，您要加载吗？"
@@ -861,11 +869,18 @@
                 "submitScreenShot": "提交屏幕截图",
                 "messages": {
                     "feedbackSuccess": "感谢您的反馈！"
-                }
+                },
+                "question6": "您将 Lenovo Vantage 应用程序推荐给同事或朋友的可能性有多大？",
+                "question7": "您是否知道可以使用 Lenovo Vantage 让计算机上的软件（驱动程序、固件和 BIOS）保持最新状态？",
+                "question8": "您是否使用过 Lenovo Vantage 来访问有关计算机的支持信息？",
+                "tips2": "如有任何其他意见，请在下面提出",
+                "emailAddressLabel": "如果您想与 Lenovo Vantage 团队联系，请留下您的电子邮件地址。",
+                "emailAddress": "电子邮件地址",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "您的设置",
+            "title": "快速设置",
             "microphone": "麦克风",
             "cameraPrivacy": "相机",
             "eyeCareMode": "护眼",
@@ -910,6 +925,10 @@
                     "update": "更新"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "更新驱动程序、BIOS 和其他软件。",
+            "checkForSystemUpdates": "检查系统更新"
         }
     },
     "device": {
@@ -1022,14 +1041,14 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "为延长电池的使用寿命，我们根据您的使用情况优化了其完全充电电量。要想使用完全电池电量，可能需要先放电至 20% 并重新充电。"
                 },
                 "condition": {
                     "Illegal": "系统<b>不支持</b>所安装的电池，电池无法充电。请将该电池更换为用于此系统的正确 Lenovo 电池。",
                     "Good": "<b>电池状况良好。</b>",
                     "Exhaustion": "电池容量已<b>降低</b>。请更换一个新电池。",
                     "Bad": "<b>出现电池错误。</b>电池无法充电/放电。更换电池。",
-                    "NotDetected": "<b>未检测到电池或未</b>插入电池。",
+                    "NotDetected": "<b>未检测到电池。</b>",
                     "NotGood": "<b>电池状况不佳。</b>",
                     "NotSupportACAdapter": "<b>不支持交流电源适配器。</b>",
                     "LimitedACAdapterSupport": "<b>交流电源适配器无法提供足够的电量。</b>",
@@ -1234,9 +1253,9 @@
                             "reset": "重置",
                             "stop": "停止"
                         },
-                        "progressText1": "步骤{{stage}}（共{{stageNum}}个步骤）：校准为完全充电",
-                        "progressText2": "步骤{{stage}}（共{{stageNum}}个步骤）：校准为放电到低电量",
-                        "progressText3": "{{stageNum}} 的 {{stage}}：校准为电池电量充足",
+                        "progressText1": "步骤 {{stage}}，总共 {{stageNum}} 步：校准为完全充电",
+                        "progressText2": "步骤 {{stage}}，总共 {{stageNum}} 步：校准为电池电量不足",
+                        "progressText3": "步骤 {{stage}}，总共 {{stageNum}} 步：校准为电池电量充足",
                         "FCCText": "从 {{before}} Wh 到 {{after}} Wh",
                         "note": "注意：重置电池电量表之前，请确保将计算机连接到交流电源。",
                         "resetLog": {
@@ -1264,6 +1283,55 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "ENERGY STAR 认证产品"
+                },
+                "dpm": {
+                    "title": "电源管理",
+                    "subtitle": "电源设置",
+                    "description": "此部分可让您检查缺省设置，并根据需要自定义您的电源使用和电源计划。",
+                    "globalPowerSettings": {
+                        "title": "全局电源设置",
+                        "description": "此功能将覆盖电源计划或电源使用设置。",
+                        "powerButton": {
+                            "label": "电源按钮：",
+                            "items": {
+                                "doNothing": "什么都不做",
+                                "sleep": "睡眠",
+                                "hibernate": "休眠",
+                                "shutDown": "关机",
+                                "turnOffTheDisplay": "关闭显示屏"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "需要登录：",
+                            "items": {
+                                "never": "从不",
+                                "fromSleep": "当电脑从睡眠中唤醒时"
+                            },
+                            "tip": "注意：仅在设置了系统密码后才能使用。"
+                        }
+                    },
+                    "powerUse": {
+                        "title": "电源使用",
+                        "description": "如果系统空闲：",
+                        "turnOffDisplay": "在等待以下时间后关闭显示屏：",
+                        "turnOffHDD": "在等待以下时间后关闭硬盘：",
+                        "sleep": "在等待以下时间后睡眠：",
+                        "hibernate": "在等待以下时间后休眠：",
+                        "items": {
+                            "never": "从不",
+                            "minute": "分钟",
+                            "minutes": "分钟",
+                            "hour": "小时",
+                            "hours": "小时"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "电源计划",
+                        "description": "选择一项电源计划以控制计算机性能、系统温度及电源使用情况。",
+                        "currentPowerPlan": {
+                            "label": "当前计划"
+                        }
+                    }
                 },
                 "smartStandby": {
                     "title": "智能待机",
@@ -1649,8 +1717,11 @@
                         "options": {
                             "option1": "请选择",
                             "option2": "打开网站",
-                            "option3": "输入文字"
-                        }
+                            "option3": "输入文字",
+                            "option4": "Open applications or files",
+                            "option5": "Invoke key sequence"
+                        },
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function."
                     },
                     "apply": {
                         "title": "应用"
@@ -1664,6 +1735,17 @@
                     "enterText": {
                         "title": "要输入的文本",
                         "placeholder": "请在这里输入"
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles": {
+                        "applicationTitle": "You need to delete one app first",
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {
@@ -1899,7 +1981,7 @@
                 "heading": "智能媒体",
                 "title": "视频播放智能控制",
                 "desc": "此功能将在离开计算机时暂停视频，并在您回来时重新播放视频。",
-                "tooltip": "此功能不适用于 Web 视频播放器。流行的本地视频播放器（例如 Windows Media Player、5KPlayer 等）均支持此功能。"
+                "tooltip": "此功能不适用于<br>Web 视频播放器。<br>支持的播放器如下所列：<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
             },
             "superResolution": {
                 "heading": "智能媒体",
@@ -1937,7 +2019,8 @@
                     "point7": "选择所需的源语言和目标语言。",
                     "point8": "根据您的需要，从扬声器或麦克风处设置语音输入。",
                     "point9": "单击麦克风图标开始说话",
-                    "closeText": "关闭"
+                    "closeText": "关闭",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "确定",
@@ -2462,30 +2545,30 @@
         "loggingOut": "正在注销...",
         "unlockExclusives": "解锁专享功能",
         "user": "用户",
-        "welcomeText1": "今天也是活力满满的一天，{{firstName}}！",
+        "welcomeText1": "加油，热干面！",
         "welcomeText2": "很高兴再次见到您，{{firstName}}",
-        "welcomeText3": "多么令人惊喜，{{firstName}}",
-        "welcomeText4": "微笑一下，{{firstName}}，一起开心吧 :)",
-        "welcomeText5": "叮咚，{{firstName}}，你还在吗？",
-        "welcomeText6": "我们一起探索美好世界！",
+        "welcomeText3": "青山一道同云雨，明月何曾是两乡",
+        "welcomeText4": "同气连枝，共盼春来",
+        "welcomeText5": "长风破浪会有时，直挂云帆济沧海",
+        "welcomeText6": "联想与您共克时艰",
         "welcomeText7": "让我们开启元气满满的一天，{{firstName}}！",
         "welcomeText8": "要不要来一杯快乐肥宅水？",
-        "welcomeText9": "派对开始了，{{firstName}}！",
+        "welcomeText9": "今日关中事，萧何共尔忧",
         "welcomeText10": "保持冷静，Vantage 就来了",
         "welcomeText11": "Vantage 物美价廉",
         "welcomeText12": "将 Vantage 带回家",
         "welcomeText13": "吃好、睡好，起来接着玩转Vantage！",
         "welcomeText14": "Vantage 每一刻都新鲜",
         "welcomeText15": "Vantage 发挥最大作用",
-        "welcomeTextWithoutUserName1": "今天也是活力满满的一天！",
+        "welcomeTextWithoutUserName1": "加油，热干面！",
         "welcomeTextWithoutUserName2": "很高兴再次见到您",
-        "welcomeTextWithoutUserName3": "多么令人惊喜",
-        "welcomeTextWithoutUserName4": "微笑一下，一起开心吧 :)",
-        "welcomeTextWithoutUserName5": "叮咚，你还在吗？",
-        "welcomeTextWithoutUserName6": "我们一起探索美好世界！",
+        "welcomeTextWithoutUserName3": "青山一道同云雨，明月何曾是两乡",
+        "welcomeTextWithoutUserName4": "同气连枝，共盼春来",
+        "welcomeTextWithoutUserName5": "长风破浪会有时，直挂云帆济沧海",
+        "welcomeTextWithoutUserName6": "联想与您共克时艰",
         "welcomeTextWithoutUserName7": "让我们开启元气满满的一天！",
         "welcomeTextWithoutUserName8": "要不要来一杯快乐肥宅水？",
-        "welcomeTextWithoutUserName9": "派对开始了！",
+        "welcomeTextWithoutUserName9": "今日关中事，萧何共尔忧",
         "welcomeTextWithoutUserName10": "保持冷静，Vantage 就来了",
         "welcomeTextWithoutUserName11": "Vantage 物美价廉",
         "welcomeTextWithoutUserName12": "将 Vantage 带回家",
@@ -2860,9 +2943,9 @@
         }
     },
     "welcometutorial": {
-        "description": "您好！欢迎使用Vantage<br>Vantage是为您量身定做的系统管家。我们在Vantage中集成了多种功能可以帮助您轻松掌握系统状态，并持续保持系统处于最优状态。也可在您系统遇到问题时，为您快速运行诊断程序，定位问题。",
+        "description": "您好！欢迎使用Vantage<br>Vantage是为您量身定制的系统管家。我们在Vantage中集成了多种功能以便您轻松掌握系统状态，并使系统持续处于最优状态。也可在您系统遇到问题时，为您快速运行诊断程序，定位问题。",
         "bullets1": "系统整体状态在首页清晰可览。",
-        "bullets2": "安全顾问助您轻松改善系统安全状况。",
+        "bullets2": "安全顾问助您轻松改善系统安全状况（适用于特定系统）。",
         "bullets3": "自动更新让您的设备处于最佳状态（ARM平台机型 和 windows S mode 机型不可用)。",
         "subtitle1": "您将如何使用您的设备？",
         "subtitle2": "请告诉我们您的兴趣（选填）",

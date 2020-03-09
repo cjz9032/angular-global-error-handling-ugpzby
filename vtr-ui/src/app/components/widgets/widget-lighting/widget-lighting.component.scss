@@ -11,13 +11,17 @@
 		border-radius: $border_radius;
 		box-shadow: $drop_shadow_gaming;
 		padding: 4rem;
-		background: url(./../../../../assets/images/gaming/lightingImage@2x.png) center top no-repeat $gaming_darkest;
+		background: url(./../../../../assets/images/gaming/lightingImage@2x.png) center top no-repeat $gaming_dark;
 		background-size: 100% auto;
 		padding-top: 18rem;
 	}
+	.widget-container-notebook{
+		background: url(./../../../../assets/images/gaming/lighting/lighting-ui-new/bg_note.png) center top no-repeat $gaming_dark;
+		background-size: 100% auto;
+	}
 	.lighting-porfile {
 		padding: 3rem;
-		background: $gaming_bg;
+		background: $gaming_darkest;
 		border-radius: 0.8rem;
 		.card-title {
 			color: $gaming_switch_light;
@@ -29,7 +33,7 @@
 			width: 100%;
 			border-radius: 5rem;
 			margin: auto;
-			background: $gaming_bg;
+			background: $gaming_darkest;
 			position: relative;
 			z-index: 0;
 			box-sizing: border-box;
@@ -45,7 +49,7 @@
 				bottom: 0rem;
 				right: 0rem;
 				margin: 0rem;
-				background: $gaming_bg;
+				background: $gaming_darkest;
 				z-index: -1;
 			}
 			&::before {
@@ -99,7 +103,7 @@
 					position: relative;
 					z-index: 1;
 					cursor: pointer;
-					span{ 
+					span{
 						overflow: hidden;
 						text-overflow: ellipsis;
 						white-space: nowrap;
@@ -219,9 +223,15 @@
 				overflow: hidden;
 				cursor: pointer;
 				color: $shade_light;
+				@media #{$black-on-white}{
+					color: $high-contrast-grey;
+					}
+					@media #{$white-on-black}{
+					color: $high-contrast-grey;
+					}
 				line-height: 1.5rem;
 				&:hover {
-					color: $gaming_lightest;
+					color: $gaming_lightest;					
 					.icon{
 						background:$screen_dark_20;
 						color: $gaming_lightest;

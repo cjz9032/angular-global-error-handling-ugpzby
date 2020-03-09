@@ -6,21 +6,14 @@
 <div class="row">
     <div class="col-xs-6 col-sm-6">
         <vtr-container-card order="1"
-            [itemID]="cardContentPositionF.Id" [img]="cardContentPositionF.FeatureImage"
-            [title]="cardContentPositionF.Title" [logoText]="cardContentPositionF.BrandName"
-            [action]="cardContentPositionF.Action" [dataSource]="cardContentPositionF.DataSource"
-            [actionType]="cardContentPositionF.ActionType" [actionLink]="cardContentPositionF.ActionLink"
+            [item]="cardContentPositionF"
             [type]="'subpage-article'" [ratio]="1" id="macro_key_crm_card_A" aria-label="macro_key_crm_card_A"
             [cardId]="'macro_key_crm_card'">
         </vtr-container-card>
     </div>
     <div class="col-xs-6 col-sm-6">
         <vtr-container-card order="2"
-            [itemID]="cardContentPositionC.id" [dynamicmetricsItem]="dynamic_metricsItem"
-            [img]="cardContentPositionC.FeatureImage" [caption]="cardContentPositionC.Description"
-            [title]="cardContentPositionC.Title" [logoText]="cardContentPositionC.BrandName"
-            [action]="cardContentPositionC.Action" [dataSource]="cardContentPositionC.DataSource"
-            [actionType]="cardContentPositionC.ActionType" [actionLink]="cardContentPositionC.ActionLink"
+            [item]="cardContentPositionC" [dynamicmetricsItem]="dynamic_metricsItem"
             [type]="'subpage-corner'" [ratio]="2" [cornerShift]="'large'" id="macro_key_crm_card_B"
             aria-label="macro_key_crm_card_B" [cardId]="'macro_key_crm_card'">
         </vtr-container-card>

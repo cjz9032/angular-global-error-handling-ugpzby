@@ -22,6 +22,12 @@
                     "rapidCharge": "Carga rápida"
                 },
                 "legionEdge": {
+                    "thermalMode2": {
+                        "OC_On": "Acel. activada",
+                        "performance": "Rendimiento",
+                        "balance": "Equilibrio",
+                        "quiet": "Silencioso"
+                    },
                     "title": "Aceleración de CPU",
                     "status": {
                         "alwayson": "Encendido",
@@ -101,27 +107,27 @@
                 },
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Config. de modo térmico",
-                    "thermalMode2SettingDesc": "Seleccione la modalidad que desee utilizar.",
+                    "thermalMode2SettingDesc": "Seleccione la modalidad que desea utilizar.",
                     "fnQDesc": "Puede cambiar de modalidad utilizando la combinación de teclas Fn+Q.",
                     "perormanceTitle": "Modalidad de rendimiento",
-                    "performanceDesc": "Aumente el rendimiento del sistema con más velocidad del ventilador y más consumo de energía.",
-                    "OCDesc": "Puede seleccionar que se active la característica de Aceleración.",
-                    "ac_dcDesc": "Modalidad de rendimiento disponible solo conectado.",
+                    "performanceDesc": "Aumente el rendimiento del equipo con mayor velocidad del ventilador y consumo de energía. ",
+                    "OCDesc": "Puede seleccionar que se active la función de Aceleración.",
+                    "ac_dcDesc": "La modalidad de rendimiento solo se aplica cuando está conectado el adaptador de alimentación de CA.",
                     "balanceTitle": "Modalidad balanceada",
-                    "balanceDesc": "Equilibre automáticamente el rendimiento y la velocidad del ventilador según la temperatura. Consumo de energía mediano.",
+                    "balanceDesc": "Equilibre automáticamente el rendimiento y la velocidad del ventilador según la temperatura con un consumo de energía medio.",
                     "quietTitle": "Modalidad silenciosa",
-                    "quietDesc": "Continúe deduciendo el rendimiento y la velocidad del ventilador de sistema siempre que sea posible. Bajo consumo de energía.",
+                    "quietDesc": "Continúe deduciendo el rendimiento y la velocidad del ventilador de equipo siempre que sea posible con el consumo de energía bajo.",
                     "OC": {
                         "cpu_gpuOC": "Habilite la Aceleración de CPU/GPU en Modalidad de rendimiento.",
                         "cpuOC": "Habilite la Aceleración de CPU en Modalidad de rendimiento.",
                         "gpuOC": "Habilite la Aceleración de GPU en Modalidad de rendimiento.",
                         "advance": "AVANZADO",
-                        "cpu_gpuDriverLack": "Instale controladores de CPU/GPU para utilizar función de Aceleración.",
-                        "cpuDriverLack": "Instale el controlador de CPU/GPU para usar función de Aceleración.",
+                        "cpu_gpuDriverLack": "Instale controladores de CPU/GPU para utilizar la función de Aceleración.",
+                        "cpuDriverLack": "Instale el controlador de CPU para usar la función de Aceleración.",
                         "gpuDriverLack": "Instale el controlador de GPU para usar la función de Aceleración.",
                         "goInstall": "VAYA A INSTALAR"
                     },
-                    "autoSwitch": "Cambie auto. a Rendimiento al iniciar juegos y después cambie de vuelta."
+                    "autoSwitch": "Cambie automáticamente a la modalidad de rendimiento al iniciar juegos y vuelva a cambiar después de salir del juego."
                 },
                 "advancedOC": {
                     "title": "Op. avanzadas aceleración",
@@ -698,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -769,7 +775,7 @@
             "notFound": "NO ENCONTRADO",
             "registered": "REGISTRADO",
             "notRegistered": "NO REGISTRADO",
-            "fingerPrint": "Huella dactilar",
+            "fingerPrint": "Huella Dactilar",
             "privacyPolicyAndTermsOfService": "<tag>Política de privacidad</tag> y las <tag>Condiciones de servicio</tag>",
             "windowsHello": "Windows Hello",
             "enrolled": "REGISTRADO",
@@ -795,7 +801,9 @@
             "loading": "Cargando...",
             "from": "a partir de",
             "to": "en",
-            "clickToChange": "haga clic para cambiar"
+            "clickToChange": "haga clic para cambiar",
+            "failedLoad": "Error al cargar.",
+            "retry": "Reint."
         },
         "app-update": {
             "message": "¡Ey! Hay disponible una versión más reciente de Vantage, ¿desea cargarla?"
@@ -861,11 +869,18 @@
                 "submitScreenShot": "Enviar captura de pantalla",
                 "messages": {
                     "feedbackSuccess": "Gracias por sus comentarios."
-                }
+                },
+                "question6": "¿Qué probabilidades hay de que recomiende la aplicación Lenovo Vantage a un amigo o colega?",
+                "question7": "¿Sabía que podría utilizar Lenovo Vantage para mantener actualizado el software (controladores, firmware y BIOS) de su equipo?",
+                "question8": "¿Ha utilizado Lenovo Vantage para tener acceso a información de soporte de su equipo?",
+                "tips2": "Deje cualquier comentario adicional a continuación",
+                "emailAddressLabel": "Deje su dirección de correo electrónico si desea que el equipo de Lenovo Vantage se ponga en contacto con usted.",
+                "emailAddress": "Dirección de correo electrónico",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "Su configuración rápida",
+            "title": "Configuración rápida",
             "microphone": "Micrófono",
             "cameraPrivacy": "Cámara",
             "eyeCareMode": "Cuidado visión",
@@ -910,6 +925,10 @@
                     "update": "Actualizar"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Actualice sus controladores, BIOS y otro software.",
+            "checkForSystemUpdates": "Compruebe si hay actualizaciones del sistema"
         }
     },
     "device": {
@@ -1021,14 +1040,14 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "Para ampliar la vida de la batería, hemos optimizado su capacidad de carga completa según su uso. Es posible que la capacidad máxima de la batería no esté disponible hasta que se descargue hasta el 20 % y se recargue."
                 },
                 "condition": {
                     "Illegal": "El sistema <b>no admite</b> la batería instalada, por lo que esta no cargará. Sustituya la batería con la batería Lenovo correcta para este sistema.",
                     "Good": "<b>La batería está en buen estado.</b>",
                     "Exhaustion": "La capacidad de la batería se ha <b>degradado</b>. Sustitúyala con una nueva.",
                     "Bad": "<b>Se produjo un error de batería.</b> No se puede cargar/descargar la batería. Sustituya la batería.",
-                    "NotDetected": "<b>No se ha detectado ninguna batería o no hay</b> ninguna batería conectada.",
+                    "NotDetected": "<b>No se detectó ninguna batería.</b>",
                     "NotGood": "<b>La batería no está en buen estado.</b>",
                     "NotSupportACAdapter": "<b>El adaptador de CA no es compatible.</b>",
                     "LimitedACAdapterSupport": "<b>El adaptador de CA no puede proporcionar suficiente energía.</b>",
@@ -1234,9 +1253,9 @@
                             "reset": "Restablecer",
                             "stop": "Detener"
                         },
-                        "progressText1": "{{stage}} de {{stageNum}}: Calibración a carga completa",
-                        "progressText2": "{{stage}} de {{stageNum}}: Calibración a energía de batería baja",
-                        "progressText3": "{{stage}} de {{stageNum}}: Calibración a energía de batería alta",
+                        "progressText1": "Paso {{stage}} de {{stageNum}} pasos en total: calibración con carga completa",
+                        "progressText2": "Paso {{stage}} de {{stageNum}} pasos en total: calibración con energía de batería baja",
+                        "progressText3": "Paso {{stage}} de {{stageNum}} pasos en total: calibración con batería alta",
                         "FCCText": "De {{before}} Wh a {{after}} Wh",
                         "note": "Nota: antes de restablecer el indicador de la batería, asegúrese de conectar el sistema a la alimentación de CA. ",
                         "resetLog": {
@@ -1264,6 +1283,55 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "UN PRODUCTO CERTIFICADO POR ENERGY STAR"
+                },
+                "dpm": {
+                    "title": "Energía",
+                    "subtitle": "Configuración de energía",
+                    "description": "Esta sección le permite comprobar los valores predeterminados y personalizar su uso de energía y plan de energía según sus necesidades.",
+                    "globalPowerSettings": {
+                        "title": "Valores de energía globales",
+                        "description": "Esta característica invalidará los valores del plan de energía o del uso de energía.",
+                        "powerButton": {
+                            "label": "BOTÓN DE ENCENDIDO/APAGADO:",
+                            "items": {
+                                "doNothing": "No hacer nada",
+                                "sleep": "Suspender",
+                                "hibernate": "Entrar en hibernación",
+                                "shutDown": "Concluir",
+                                "turnOffTheDisplay": "Apagar la pantalla"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "INICIO DE SESIÓN NECESARIO:",
+                            "items": {
+                                "never": "Nunca",
+                                "fromSleep": "Cuando el PC se reactiva desde la suspensión"
+                            },
+                            "tip": "Nota: Esto solo funciona si se ha establecido la contraseña del sistema."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "Uso de energía",
+                        "description": "SI EL SISTEMA ESTÁ INACTIVO:",
+                        "turnOffDisplay": "APAGAR LA PANTALLA DESPUÉS DE:",
+                        "turnOffHDD": "APAGAR EL DISCO DURO DESPUÉS DE:",
+                        "sleep": "SUSPENDER DESPUÉS DE:",
+                        "hibernate": "HIBERNAR DESPUÉS DE:",
+                        "items": {
+                            "never": "Nunca",
+                            "minute": "minuto",
+                            "minutes": "minutos",
+                            "hour": "hora",
+                            "hours": "horas"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "Plan de energía",
+                        "description": "Elija un plan de energía para controlar el rendimiento de la computadora, la temperatura del sistema y el uso de energía.",
+                        "currentPowerPlan": {
+                            "label": "PLAN ACTUAL"
+                        }
+                    }
                 },
                 "smartStandby": {
                     "title": "Suspensión inteligente",
@@ -1648,8 +1716,11 @@
                         "options": {
                             "option1": "Seleccione",
                             "option2": "Sitio web abierto",
-                            "option3": "Ingrese texto"
-                        }
+                            "option3": "Ingrese texto",
+                            "option4": "Open applications or files",
+                            "option5": "Invoke key sequence"
+                        },
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function."
                     },
                     "tooltip": "Contenido a rellenar",
                     "apply": {
@@ -1664,6 +1735,17 @@
                     "enterText": {
                         "title": "TEXTO QUE SE INGRESARÁ",
                         "placeholder": "Escríbalo aquí"
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles": {
+                        "applicationTitle": "You need to delete one app first",
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {
@@ -1899,7 +1981,7 @@
                 "heading": "Medios inteligentes",
                 "title": "Reproducción de video sin interacción",
                 "desc": "Esta característica pausará el video cuando deje el equipo y reanudará el video cuando vuelva.",
-                "tooltip": "Esta característica no se aplica a reproductores de video Web. Los reproductores de video locales más populares, como Windows Media Player, 5KPlayer, etc., admiten esta característica."
+                "tooltip": "Esta característica no se aplica a<br>reproductores de video Web.<br>Los reproductores compatibles son los siguientes:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
             },
             "superResolution": {
                 "heading": "Medios inteligentes",
@@ -1937,7 +2019,8 @@
                     "point7": "Seleccione el idioma origen y el idioma de destino que desee.",
                     "point8": "En función de sus necesidades, establezca la entrada de voz de altavoz o del micrófono.",
                     "point9": "Haga clic en el icono de micrófono para empezar a hablar",
-                    "closeText": "cerrar"
+                    "closeText": "cerrar",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "aceptar",

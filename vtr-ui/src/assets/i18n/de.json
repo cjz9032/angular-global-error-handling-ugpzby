@@ -22,6 +22,12 @@
                     "rapidCharge": "Schnellladen"
                 },
                 "legionEdge": {
+                    "thermalMode2": {
+                        "OC_On": "Overclock ein",
+                        "performance": "Leistung",
+                        "balance": "Abstimmung",
+                        "quiet": "Leise"
+                    },
                     "title": "CPU-Übertaktung",
                     "status": {
                         "alwayson": "Ein",
@@ -104,24 +110,24 @@
                     "thermalMode2SettingDesc": "Wählen Sie den gewünschten Modus aus.",
                     "fnQDesc": "Sie können den Modus über die Tastenkombination Fn+Q wechseln.",
                     "perormanceTitle": "Leistungsmodus",
-                    "performanceDesc": "Steigern Sie die Leistung Ihres Computers. Dies führt zu höherer Lüftergeschwindigkeit und mehr Stromverbrauch.",
-                    "OCDesc": "Sie können auswählen, dass die Funktion zum Übertakten aktiviert werden soll.",
-                    "ac_dcDesc": "Der Leistungsmodus ist nur bei Netzbetrieb verfügbar.",
+                    "performanceDesc": "Steigert die Leistung Ihres Computers. Dies führt zu höherer Lüftergeschwindigkeit und mehr Stromverbrauch. ",
+                    "OCDesc": "Sie können die Overclocking-Funktion aktivieren.",
+                    "ac_dcDesc": "Der Leistungsmodus kann nur eingesetzt werden, wenn das Netzteil angeschlossen ist.",
                     "balanceTitle": "Ausbalancierter Modus",
-                    "balanceDesc": "Die Leistung und die Lüftergeschwindigkeit werden automatisch basierend auf der Temperatur ausgeglichen. Durchschnittlicher Stromverbrauch.",
+                    "balanceDesc": "Automatische Anpassung von Leistung und Lüftergeschwindigkeit basierend auf der Temperatur für einen durchschnittlichen Stromverbrauch.",
                     "quietTitle": "Ruhemodus",
-                    "quietDesc": "Leiser Betrieb, indem die Leistung des Computers sowie die Lüftergeschwindigkeit soweit möglich reduziert werden. Niedriger Stromverbrauch.",
+                    "quietDesc": "Leiser Betrieb durch Senken der Leistung und Lüftergeschwindigkeit des Computers für niedrigen Stromverbrauch.",
                     "OC": {
                         "cpu_gpuOC": "CPU-/GPU-Übertaktung im Leistungsmodus aktivieren.",
                         "cpuOC": "CPU-Übertaktung im Leistungsmodus aktivieren.",
                         "gpuOC": "GPU-Übertaktung im Leistungsmodus aktivieren.",
                         "advance": "ERWEITERT",
-                        "cpu_gpuDriverLack": "CPU-/GPU-Treiber installieren, um Overclocking zu verwenden.",
-                        "cpuDriverLack": "CPU-Treiber installieren, um Overclocking zu verwenden.",
-                        "gpuDriverLack": "GPU-Treiber installieren, um Overclocking zu verwenden.",
+                        "cpu_gpuDriverLack": "CPU-/GPU-Treiber installieren, um die Overclocking-Funktion zu verwenden.",
+                        "cpuDriverLack": "CPU-Treiber installieren, um die Overclocking-Funktion zu verwenden.",
+                        "gpuDriverLack": "GPU-Treiber installieren, um die Overclocking-Funktion zu verwenden.",
                         "goInstall": "INSTALLIEREN"
                     },
-                    "autoSwitch": "Autom. Wechsel zu Leistung, wenn Spiele gestartet werden, danach zurückschalten."
+                    "autoSwitch": "Automatischer Wechsel in den Leistungsmodus, wenn Spiele gestartet werden. Nach dem Beenden des Spiels wird der Modus automatisch zurückgeschaltet."
                 },
                 "advancedOC": {
                     "title": "Overclock Erweiterte Einst.",
@@ -698,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -795,7 +801,9 @@
             "loading": "Wird geladen...",
             "from": "von",
             "to": "nach",
-            "clickToChange": "zum Ändern klicken"
+            "clickToChange": "zum Ändern klicken",
+            "failedLoad": "Fehler beim Laden.",
+            "retry": "Wiederholen"
         },
         "app-update": {
             "message": "Hallo! Es ist eine neuere Version von Vantage verfügbar. Möchten Sie sie herunterladen?"
@@ -861,11 +869,18 @@
                 "submitScreenShot": "Screenshot senden",
                 "messages": {
                     "feedbackSuccess": "Vielen Dank für Ihr Feedback!"
-                }
+                },
+                "question6": "Wie wahrscheinlich ist es, dass Sie Lenovo Vantage einem Freund oder Kollegen weiterempfehlen würden?",
+                "question7": "Wussten Sie, dass Sie mit Lenovo Vantage die Software auf Ihrem Computer (Treiber, Firmware und BIOS) aktualisieren können?",
+                "question8": "Haben Sie Lenovo Vantage bereits verwendet, um auf Unterstützungsinformationen Ihres Computers zuzugreifen?",
+                "tips2": "Weitere Kommentare können Sie unten hinterlassen",
+                "emailAddressLabel": "Geben Sie Ihre E‑Mail-Adresse ein, wenn das Lenovo Vantage-Team Sie kontaktieren darf.",
+                "emailAddress": "E-Mail-Adresse",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "Ihre Schnelleinstellungen",
+            "title": "Schnelleinstellungen",
             "microphone": "Mikrofon",
             "cameraPrivacy": "Kamera",
             "eyeCareMode": "Augen schonen",
@@ -910,6 +925,10 @@
                     "update": "Aktualisierung"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Aktualisieren Sie Ihre Treiber, das BIOS und weitere Software.",
+            "checkForSystemUpdates": "Nach Systemaktualisierungen suchen"
         }
     },
     "device": {
@@ -923,7 +942,7 @@
             "freeMemory": "Freier Speicher",
             "systemUpdate": {
                 "title": "Systemaktualisierung",
-                "notFound": "System Update nicht gefunden",
+                "notFound": "Systemaktualisierung nicht gefunden",
                 "detail": {
                     "uptoDate": "Updates geprüft ",
                     "updatedOn": "geprüft am ",
@@ -1021,14 +1040,14 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "Um die Lebensdauer Ihres Akkus zu verlängern, haben wir die volle Ladekapazität anhand Ihrer Nutzung optimiert. Die volle Akkukapazität ist möglicherweise erst verfügbar, wenn Sie den Akku bis auf 20 % entladen und anschließend wieder laden."
                 },
                 "condition": {
                     "Illegal": "Der installierte Akku wird vom System <b>nicht unterstützt</b> und kann nicht geladen werden. Ersetzen Sie den Akku mit dem richtigen Lenovo Akku für dieses System.",
                     "Good": "<b>Der Akku befindet sich in einem guten Zustand.</b>",
                     "Exhaustion": "Die Ladekapazität des Akkus ist <b>vermindert</b>. Setzen Sie einen neuen Akku ein.",
                     "Bad": "<b>Ein Akkufehler ist aufgetreten.</b> Der Akku kann nicht aufgeladen/entladen werden. Tauschen Sie den Akku aus.",
-                    "NotDetected": "<b>Kein Akku erkannt</b> oder nicht ordnungsgemäß eingesetzter Akku.",
+                    "NotDetected": "<b>Kein Akku erkannt.</b>",
                     "NotGood": "<b>Der Akku befindet sich nicht in einem guten Zustand.</b>",
                     "NotSupportACAdapter": "<b>Netzteil wird nicht unterstützt.</b>",
                     "LimitedACAdapterSupport": "<b>Netzteil kann nicht genügend Strom liefern.</b>",
@@ -1234,9 +1253,9 @@
                             "reset": "Zurücksetzen",
                             "stop": "Stoppen"
                         },
-                        "progressText1": "{{stage}} von {{stageNum}}: Kalibrierung für volle Ladung",
-                        "progressText2": "{{stage}} von {{stageNum}}: Kalibrierung für niedrigen Akkustand",
-                        "progressText3": "{{stage}} von {{stageNum}}: Kalibrierung für hohen Akkustand",
+                        "progressText1": "Schritt {{stage}} von {{stageNum}} Schritten: Kalibrierung für volle Ladung",
+                        "progressText2": "Schritt {{stage}} von {{stageNum}} Schritten: Kalibrierung für niedrige Ladung",
+                        "progressText3": "Schritt {{stage}} von {{stageNum}} Schritten: Kalibrierung für hohe Ladung",
                         "FCCText": "Von {{before}} Wh auf {{after}} Wh",
                         "note": "Hinweis: Vor dem Zurücksetzen des Akkustandsanzeigers muss Ihr Computer an die Stromversorgung angeschlossen werden. ",
                         "resetLog": {
@@ -1264,6 +1283,55 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "EIN ENERGY STAR-ZERTIFIZIERTES PRODUKT"
+                },
+                "dpm": {
+                    "title": "Stromversorgung",
+                    "subtitle": "Einstellungen für Energieversorgung",
+                    "description": "In diesem Abschnitt können Sie die Standardeinstellungen überprüfen und Energieverbrauch und Energieschema an Ihre Bedürfnisse anpassen.",
+                    "globalPowerSettings": {
+                        "title": "Globale Einstellungen für Energieversorgung",
+                        "description": "Mit dieser Funktion werden die Einstellungen für Energieschema oder Energieverbrauch außer Kraft gesetzt.",
+                        "powerButton": {
+                            "label": "BETRIEBSSPANNUNGSSCHALTER:",
+                            "items": {
+                                "doNothing": "Keine Aktion",
+                                "sleep": "Energie sparen",
+                                "hibernate": "Hibernation",
+                                "shutDown": "Herunterfahren",
+                                "turnOffTheDisplay": "Anzeige ausschalten"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "ANMELDUNG ERFORDERLICH:",
+                            "items": {
+                                "never": "Nie",
+                                "fromSleep": "Bei Beendigung des Standbymodus des PCs"
+                            },
+                            "tip": "Hinweis: Dies funktioniert nur, wenn ein Systemkennwort festgelegt ist."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "Energieverbrauch",
+                        "description": "BEI INAKTIVEM SYSTEM:",
+                        "turnOffDisplay": "ANZEIGE AUSSCHALTEN NACH:",
+                        "turnOffHDD": "FESTPLATTENLAUFWERK AUSSCHALTEN NACH:",
+                        "sleep": "ENERGIE SPAREN NACH:",
+                        "hibernate": "RUHEZUSTAND NACH:",
+                        "items": {
+                            "never": "Nie",
+                            "minute": "Minute",
+                            "minutes": "Minuten",
+                            "hour": "Stunde",
+                            "hours": "Stunden"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "Energieschema",
+                        "description": "Wählen Sie ein Energieschema, um Leistung, Systemtemperatur und Energieverbrauch des Computers zu steuern.",
+                        "currentPowerPlan": {
+                            "label": "AKTUELLES SCHEMA"
+                        }
+                    }
                 },
                 "smartStandby": {
                     "title": "Smart-Standby",
@@ -1648,8 +1716,11 @@
                         "options": {
                             "option1": "Bitte auswählen",
                             "option2": "Webseite öffnen",
-                            "option3": "Text eingeben"
-                        }
+                            "option3": "Text eingeben",
+                            "option4": "Open applications or files",
+                            "option5": "Invoke key sequence"
+                        },
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function."
                     },
                     "tooltip": "Auszufüllender Inhalt",
                     "apply": {
@@ -1664,6 +1735,17 @@
                     "enterText": {
                         "title": "EINZUGEBENDER TEXT",
                         "placeholder": "Text hier eingeben"
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles": {
+                        "applicationTitle": "You need to delete one app first",
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {
@@ -1899,7 +1981,7 @@
                 "heading": "Intelligente Medien",
                 "title": "Zero-Touch-Videowiedergabe",
                 "desc": "Diese Funktion pausiert das Video, wenn Sie sich vom Computer entfernen, und spielt es weiter ab, wenn Sie zurück sind.",
-                "tooltip": "Diese Funktion funktioniert nicht bei Web-Videoplayern. Bekannte lokale Videoplayer unterstützen diese Funktion, z. B. Windows Media Player, 5KPlayer etc."
+                "tooltip": "Diese Funktion ist nicht verfügbar bei<br>Web-Videoplayern.<br>Die folgenden Player werden unterstützt:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
             },
             "superResolution": {
                 "heading": "Intelligente Medien",
@@ -1937,7 +2019,8 @@
                     "point7": "Wählen Sie die gewünschte Ausgangs‑ und Zielsprache aus.",
                     "point8": "Stellen Sie abhängig von Ihren Anforderungen ein, ob die Spracheingabe vom Lautsprecher oder vom Mikrofon stammt.",
                     "point9": "Klicken Sie auf das Mikrofonsymbol und beginnen Sie zu sprechen",
-                    "closeText": "schließen"
+                    "closeText": "schließen",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "OK",
@@ -1983,7 +2066,7 @@
             },
             "recommended": {
                 "title": "Empfohlene Updates",
-                "tooltip": "Empfohlene Treiberupdates sorgen dafür"
+                "tooltip": "Durch empfohlene Treiberaktualisierungen wird Ihr Computer bei optimaler Leistung betrieben."
             },
             "windows": {
                 "title": "Windows-Updates",
@@ -2169,7 +2252,7 @@
             "goWifi": "zur Wifi-Sicherheit wechseln",
             "goVpn": "zur VPN-Sicherheit wechseln",
             "visitWindows": "Aktivierung von Windows besuchen",
-            "visitFingerprint": "Fingerprint Reader besuchen",
+            "visitFingerprint": "Lesegerät für Fingerabdrücke besuchen",
             "visitUac": "Benutzerkontensteuerung besuchen",
             "visitHde": "Festplattenlaufwerk-Verschlüsselung besuchen",
             "haveOwnPassword": "Ich habe meinen eigenen Password Manager",
@@ -2402,7 +2485,7 @@
             "getStarted2": "Schalten Sie das VPN ein und warten Sie kurz auf die Bestätigung einer sicheren Verbindung.",
             "getStarted3": "Ändern Sie die Region oder den Standort nach Wunsch und genießen Sie die Nutzung eines sicheren und geschützten Netzwerks.",
             "poweredBySurfEasy": "Unterstützt von SurfEasy",
-            "privacyPolicyAndTermsOfService": "Leia a <tag>Política de privacidade</tag> e os <tag>Termos de serviço</tag> para obter mais informações"
+            "privacyPolicyAndTermsOfService": "Weitere Informationen erhalten Sie bei den <tag>Datenschutz-Bestimmungen</tag> und <tag>TNutzungsbedingungen</tag>"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE-KENNWORTMANAGER",

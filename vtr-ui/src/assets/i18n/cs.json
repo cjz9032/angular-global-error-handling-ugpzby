@@ -22,6 +22,12 @@
                     "rapidCharge": "Rych-lé nabíjení"
                 },
                 "legionEdge": {
+                    "thermalMode2": {
+                        "OC_On": "Přetakt. zap.",
+                        "performance": "Výkon",
+                        "balance": "Vyvážení",
+                        "quiet": "Tichý"
+                    },
                     "title": "Přetaktování CPU",
                     "status": {
                         "alwayson": "Zapnuto",
@@ -39,7 +45,7 @@
                     "ramOverlock": "Přetaktování RAM",
                     "popup": {
                         "text": "Změny se projeví po restartování počítače.",
-                        "button": "U redu"
+                        "button": "OK"
                     },
                     "driverPopup": {
                         "headerText": "Je vyžadována instalace ovladače",
@@ -104,24 +110,24 @@
                     "thermalMode2SettingDesc": "Vyberte režim, který chcete použít.",
                     "fnQDesc": "Režim můžete přepnout pomocí klávesové zkratky Fn+Q.",
                     "perormanceTitle": "Režim výkonu",
-                    "performanceDesc": "Zvyšte výkon svého počítače vyšší rychlostí ventilátoru a vyšší spotřebou energie.",
+                    "performanceDesc": "Zvyšte výkon svého počítače vyšší rychlostí ventilátoru a vyšší spotřebou energie. ",
                     "OCDesc": "Můžete se rozhodnout zapnout funkci přetaktování.",
-                    "ac_dcDesc": "Režim výkonu je k dispozici pouze po připojení.",
+                    "ac_dcDesc": "Režim Performance (Výkon) je použitelný pouze v případě, že je připojen napájecí adaptér.",
                     "balanceTitle": "Režim vyvážení",
-                    "balanceDesc": "Automatické vyvážení výkonu a rychlosti ventilátoru na základě teploty. Střední spotřeba energie.",
+                    "balanceDesc": "Automatické vyvážení výkonu a rychlosti ventilátoru na základě teploty se středně vysokou spotřebou.",
                     "quietTitle": "Tichý režim",
-                    "quietDesc": "Pokud je to možné, snižte hlasitost redukcí výkonu počítače a rychlosti ventilátoru. Nízká spotřeba energie.",
+                    "quietDesc": "Pokud je to možné, snižte hlasitost redukcí výkonu počítače a rychlosti ventilátoru díky nízké spotřebě.",
                     "OC": {
-                        "cpu_gpuOC": "Povolit přetaktování CPU/GPU v režimu výkonu.",
-                        "cpuOC": "Povolit přetaktování CPU v režimu výkonu.",
-                        "gpuOC": "Povolit přetaktování GPU v režimu výkonu.",
+                        "cpu_gpuOC": "Povolit přetaktování CPU/GPU v režimu výkonu.",
+                        "cpuOC": "Povolit přetaktování CPU v režimu výkonu.",
+                        "gpuOC": "Povolit přetaktování GPU v režimu výkonu.",
                         "advance": "ROZŠÍŘENÉ",
-                        "cpu_gpuDriverLack": "K použití funkce přetaktování musíte nainstalovat ovladače CPU/GPU.",
-                        "cpuDriverLack": "K použití funkce přetaktování musíte nainstalovat ovladač CPU.",
-                        "gpuDriverLack": "K použití funkce přetaktování musíte nainstalovat ovladač GPU.",
+                        "cpu_gpuDriverLack": "K použití funkce přetaktování musíte nainstalovat ovladače CPU/GPU.",
+                        "cpuDriverLack": "K použití funkce přetaktování musíte nainstalovat ovladač CPU.",
+                        "gpuDriverLack": "K použití funkce přetaktování musíte nainstalovat ovladač GPU.",
                         "goInstall": "ZAčíT INSTALACI"
                     },
-                    "autoSwitch": "Automatické přepínání na výkon při spouštění her a opětovné přepínání zpět."
+                    "autoSwitch": "Automatické přepínání do režimu Performance (Výkon) na výkon při spouštění her a jeho ukončení po opuštění hry."
                 },
                 "advancedOC": {
                     "title": "Přetaktování Upřesnit nast.",
@@ -698,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -795,7 +801,9 @@
             "loading": "Načítání...",
             "from": "z",
             "to": "změňte na",
-            "clickToChange": "kliknutím upravte"
+            "clickToChange": "kliknutím upravte",
+            "failedLoad": "Načtení selhalo.",
+            "retry": "Opakovat"
         },
         "app-update": {
             "message": "Ahoj! K dispozici je novější verze aplikace Vantage, chcete ji načíst?"
@@ -861,11 +869,18 @@
                 "submitScreenShot": "Odeslat snímek obrazovky",
                 "messages": {
                     "feedbackSuccess": "Děkujeme za váš názor."
-                }
+                },
+                "question6": "Jak je pravděpodobné, že byste aplikaci Lenovo Vantage doporučili svému známému nebo kolegovi?",
+                "question7": "Věděli jste, že pomocí aplikace Lenovo Vantage můžete ve svém počítači aktualizovat software (ovladače, firmware a systém BIOS)?",
+                "question8": "Použili jste aplikaci Lenovo Vantage k dohledání informací o podpoře ke svému počítači?",
+                "tips2": "Níže uveďte případné další komentáře",
+                "emailAddressLabel": "Pokud chcete být v případě potřeby kontaktováni týmem aplikace Lenovo Vantage, uveďte svou e-mailovou adresu.",
+                "emailAddress": "E-mailová adresa",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "Vaše rychlá nastavení",
+            "title": "Rychlé nastavení",
             "microphone": "Mikrofon",
             "cameraPrivacy": "Fotoaparát",
             "eyeCareMode": "Péče o oči",
@@ -910,6 +925,10 @@
                     "update": "Aktualizace"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Aktualizace ovladačů, systému BIOS a dalšího softwaru.",
+            "checkForSystemUpdates": "Vyhledat aktualizace systému"
         }
     },
     "device": {
@@ -1021,14 +1040,14 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "Abychom prodloužili životnost baterie, optimalizovali jsme její plnou kapacitu nabíjení na základě vašeho používání. Plná kapacita baterie nemusí být k dispozici, dokud baterii nevybijete na 20% a znovu nenabijete."
                 },
                 "condition": {
                     "Illegal": "Nainstalovaná baterie <b>není</b> tímto systémem podporována a nebude se dobíjet. Vyměňte baterii za správnou baterii Lenovo určenou pro tento systém.",
                     "Good": "<b>Stav baterie je dobrý.</b>",
                     "Exhaustion": "Kapacita baterie <b>degradovala</b>. Vyměňte ji za novou.",
                     "Bad": "<b>Došlo k chybě baterie.</b> Baterii nelze nabít/vybít. Vyměňte ji.",
-                    "NotDetected": "<b>Nebyla zjištěna žádná baterie</b> nebo baterie není připojena.",
+                    "NotDetected": "<b>Nebyla zjištěna žádná baterie.</b>",
                     "NotGood": "<b>Stav baterie není dobrý.</b>",
                     "NotSupportACAdapter": "<b>Napájecí adaptér není podporován.</b>",
                     "LimitedACAdapterSupport": "<b>Síťový adaptér nemůže poskytnout dostatek energie.</b>",
@@ -1043,7 +1062,7 @@
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} napájení je připojené.</b>",
                     "EmDriverInstalled": "Podrobnosti o baterii nejsou dostupné. Pro instalaci ovladače <b>Lenovo ACPI - Compliant Virtual Power Controller</b> přejděte do nabídky Windows Update -> Zkontrolovat aktualizace."
                 },
-                "batteryNotDetected": "Baterie nebyla nalezena",
+                "batteryNotDetected": "Nebyla zjištěna žádná baterie",
                 "thresholdNote": "<b>Poznámka:</b> Pokud je aktivován Limit nabíjení baterie, nelze baterii plně nabít.",
                 "seeDetailsLink": "Zobrazit podrobnosti",
                 "gaugeResetWarning": "<b>Poznámka:</b> Probíhá reset měřiče baterie. Ponechejte připojený napájecí adaptér.",
@@ -1234,9 +1253,9 @@
                             "reset": "Reset",
                             "stop": "Zastavit"
                         },
-                        "progressText1": "{{stage}} z {{stageNum}}: Kalibrace na plné nabití",
-                        "progressText2": "{{stage}} z {{stageNum}}: Kalibrace na nízký stav baterie",
-                        "progressText3": "{{stage}} z {{stageNum}}: Kalibrace na vysoký stav baterie",
+                        "progressText1": "Krok {{stage}} z {{stageNum}}: Kalibrace na plné nabití",
+                        "progressText2": "Krok {{stage}} z {{stageNum}}: Kalibrace na nízký stav baterie",
+                        "progressText3": "Krok {{stage}} z {{stageNum}}: Kalibrace na vysoké nabití baterie",
                         "FCCText": "Z {{before}} Wh na {{after}} Wh",
                         "note": "Poznámka: Před resetováním ukazatele stavu baterie nezapomeňte připojit počítač k napájení ze sítě. ",
                         "resetLog": {
@@ -1264,6 +1283,55 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "ZAŘÍZENÍ S CERTIFIKACÍ ENERGY STAR"
+                },
+                "dpm": {
+                    "title": "Napájení",
+                    "subtitle": "Nastavení napájení",
+                    "description": "V této části můžete zkontrolovat výchozí nastavení a přizpůsobit spotřebu energie a schéma napájení svým potřebám.",
+                    "globalPowerSettings": {
+                        "title": "Globální nastavení napájení",
+                        "description": "Tato funkce slouží k potlačení schématu napájení nebo nastavení spotřeby energie.",
+                        "powerButton": {
+                            "label": "HLAVNÍ VYPÍNAČ:",
+                            "items": {
+                                "doNothing": "Nedělat nic",
+                                "sleep": "Režim spánku",
+                                "hibernate": "Režim hibernace",
+                                "shutDown": "Vypnout",
+                                "turnOffTheDisplay": "Vypnout displej"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "JE VYŽADOVÁNO PŘIHLÁŠENÍ:",
+                            "items": {
+                                "never": "Nikdy",
+                                "fromSleep": "Když se počítač probudí z režimu spánku"
+                            },
+                            "tip": "Poznámka: Funguje pouze v případě, že je nastavené heslo k systému."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "Spotřeba energie",
+                        "description": "KDYŽ JE SYSTÉM NEČINNÝ:",
+                        "turnOffDisplay": "VYPNOUT DISPLEJ PO:",
+                        "turnOffHDD": "VYPNOUT PEVNÝ DISK PO:",
+                        "sleep": "USPAT PO:",
+                        "hibernate": "HIBERNOVAT PO:",
+                        "items": {
+                            "never": "Nikdy",
+                            "minute": "minuta",
+                            "minutes": "minuty",
+                            "hour": "hodina",
+                            "hours": "hodiny"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "Schéma napájení",
+                        "description": "Vyberte schéma napájení, kterým chcete řídit výkon počítače, teplotu systému a spotřebu energie.",
+                        "currentPowerPlan": {
+                            "label": "AKTUÁLNÍ SCHÉMA"
+                        }
+                    }
                 },
                 "smartStandby": {
                     "title": "Chytrý pohotovostní režim",
@@ -1648,8 +1716,11 @@
                         "options": {
                             "option1": "Proveďte výběr",
                             "option2": "Otevřete webové stránky",
-                            "option3": "Zadejte text"
-                        }
+                            "option3": "Zadejte text",
+                            "option4": "Open applications or files",
+                            "option5": "Invoke key sequence"
+                        },
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function."
                     },
                     "tooltip": "Obsah, který má být vyplněn",
                     "apply": {
@@ -1664,6 +1735,17 @@
                     "enterText": {
                         "title": "TEXT K ZADÁNÍ",
                         "placeholder": "Zadejte sem"
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles": {
+                        "applicationTitle": "You need to delete one app first",
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {
@@ -1899,7 +1981,7 @@
                 "heading": "Inteligentní média",
                 "title": "Bezdotykové přehrávání videa",
                 "desc": "Tato funkce pozastaví video, když odejdete od počítače, a opět je spustí, když se vrátíte.",
-                "tooltip": "Tato funkce není použitelná pro webové přehrávače videa. Oblíbené přehrávače videí v počítači (například Windows Media Player, 5KPlayer apod.) tuto funkci podporují."
+                "tooltip": "Tato funkce se netýká<br>webových přehrávačů videa.<br>Jsou podporovány následující přehrávače:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
             },
             "superResolution": {
                 "heading": "Inteligentní média",
@@ -1937,7 +2019,8 @@
                     "point7": "Vyberte požadovaný zdrojový jazyk a cílový jazyk.",
                     "point8": "Podle svých potřeb nastavte hlasový vstup z reproduktoru nebo z mikrofonu.",
                     "point9": "Klepněte na ikonu mikrofonu a začněte mluvit",
-                    "closeText": "Zavřít"
+                    "closeText": "Zavřít",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",

@@ -10,7 +10,7 @@ import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { ssoErroType } from 'src/app/enums/lenovo-id-key.enum';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import * as CryptoJS from 'crypto-js';
+import AES from 'crypto-js/aes';
 
 @Component({
 	selector: 'vtr-modal-lenovo-id',
@@ -200,12 +200,13 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 					const firstname = (el.querySelector('#firstname') as HTMLInputElement).value;
 					const lastname = (el.querySelector('#lastname') as HTMLInputElement).value;
 					if (firstname && userguid) {
-						const encryptedFirstName = CryptoJS.AES.encrypt(firstname, userguid).toString();
+						const encryptedFirstName = AES.encrypt(firstname, userguid).toString();
 						this.commonService.setLocalStorageValue(LocalStorageKey.LidUserFirstName, encryptedFirstName);
 					}
 					// Default to enable SSO after login success
 					self.userService.enableSSO(useruad, username, userid, userguid).then(result => {
 						if (result.success && result.status === 0) {
+							self.userService.hasFirstName = Boolean(firstname);
 							self.userService.setName(firstname, lastname);
 							self.userService.setAuth(true);
 							// Close logon dialog

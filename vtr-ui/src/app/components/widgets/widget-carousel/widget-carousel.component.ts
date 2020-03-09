@@ -3,7 +3,7 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { CommonService } from 'src/app/services/common/common.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
-import { CardService } from 'src/app/services/card/card.service';
+import { CardService, CardOverlayTheme } from 'src/app/services/card/card.service';
 
 @Component({
 	selector: 'vtr-widget-carousel',
@@ -36,7 +36,7 @@ export class WidgetCarouselComponent implements OnInit, OnChanges {
 		private config: NgbCarouselConfig,
 		private commonService: CommonService,
 		private cardService: CardService,
-		) {
+	) {
 	}
 
 	ngOnInit() {
@@ -90,7 +90,8 @@ export class WidgetCarouselComponent implements OnInit, OnChanges {
 				image: carousel.url,
 				link: carousel.ActionLink ? carousel.ActionLink : '',
 				linkType: carousel.ActionType || '',
-				dataSource: carousel.DataSource || ''
+				dataSource: carousel.DataSource || '',
+				overlayThemeDark: !carousel.OverlayTheme || carousel.OverlayTheme !== CardOverlayTheme.Light,
 			});
 		}
 	}
@@ -124,7 +125,8 @@ interface CarouselModel {
 	link: string;
 	id: string;
 	linkType: string;
-	dataSource: string;
+	dataSource?: string;
+	overlayThemeDark?: boolean;
 }
 
 

@@ -294,4 +294,12 @@ export class CommonService {
 	getSystemTimeFormat() {
 		return this.systemTimeFormat12Hrs.asObservable();
 	}
+
+	checkPowerPageFlagAndHide() {
+		// Solution to fix the issue VAN-14826.
+		const isPowerPageAvailable = this.getLocalStorageValue(LocalStorageKey.IsPowerPageAvailable, true);
+		if (!isPowerPageAvailable) {
+			this.sendNotification(LocalStorageKey.IsPowerPageAvailable, {available: isPowerPageAvailable, link: false });
+		}
+	}
 }

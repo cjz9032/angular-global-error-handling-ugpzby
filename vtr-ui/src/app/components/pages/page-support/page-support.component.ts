@@ -14,6 +14,7 @@ import { WarrantyService } from 'src/app/services/warranty/warranty.service';
 import { SupportContentStatus } from 'src/app/enums/support-content-status.enum';
 // cpt
 import { environment } from 'src/environments/environment';
+import { FeedbackService } from 'src/app/services/feedback/feedback.service';
 
 @Component({
 	selector: 'vtr-page-support',
@@ -134,7 +135,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		private cmsService: CMSService,
 		private commonService: CommonService,
 		private loggerService: LoggerService,
-		private modalService: NgbModal
+		private feedbackService: FeedbackService,
 	) {
 		this.isOnline = this.commonService.isOnline;
 	}
@@ -265,8 +266,8 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 				}
 			},
 			error => {
-                this.getArticlesTimeout = setTimeout(() => { this.fetchCMSContents(); }, 5000);
-            }
+				this.getArticlesTimeout = setTimeout(() => { this.fetchCMSContents(); }, 5000);
+			}
 		);
 	}
 
@@ -294,8 +295,8 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 				}
 			},
 			error => {
-                setTimeout(() => { this.fetchCMSArticleCategory(); }, 5000);
-            }
+				setTimeout(() => { this.fetchCMSArticleCategory(); }, 5000);
+			}
 		);
 	}
 
@@ -341,10 +342,10 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 				}
 			},
 			error => {
-                if (lang.toLowerCase() !== 'en') {
+				if (lang.toLowerCase() !== 'en') {
 					this.getArticlesTimeout = setTimeout(() => { this.fetchCMSArticles(categoryId, 'en'); }, 5000);
 				}
-            }
+			}
 		);
 	}
 
@@ -376,6 +377,10 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 
 	copyObjectArray(obj: any) {
 		return JSON.parse(JSON.stringify(obj));
+	}
+
+	openFeedbackModal() {
+		this.feedbackService.openFeedbackModal();
 	}
 
 	search(value: string) {

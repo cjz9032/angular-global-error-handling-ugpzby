@@ -67,10 +67,6 @@
 										{{ 'support.quickAccess.seeArticles' | translate }}</div>
 								</div>
 							</div>
-							<div class="spinner-content w-100 text-center"
-								*ngIf="articlesType === SupportContentStatus.Empty && isOnline">
-								<img src="/assets/images/support/empty.png" />
-							</div>
 						</div>
 					</div>
 				</div>
@@ -130,6 +126,10 @@
 				<div class="spinner-border text-primary progress-spinner"
 					role="status"></div>
 			</div>
+			<div class="spinner-content w-100 text-center"
+				*ngIf="articlesType === SupportContentStatus.Empty && isOnline">
+				<img src="/assets/images/support/empty.png" />
+			</div>
 		</div>
 	</left-content>
 
@@ -142,6 +142,18 @@
 				<div class="col col-12 px-0 pt-0 pb-40">
 					<vtr-widget-warranty [item]="warrantyData" [year]="warrantyYear"
 						[isConnected]="isOnline"></vtr-widget-warranty>
+				</div>
+			</div>
+
+			<div class="row"
+				[vtrAppSearchScroller]="['search-feedback']">
+				<div class="col col-12 px-0 pt-0 pb-40">
+					<vtr-widget-feedback [title]="'dashboard.feedback.title' | translate"
+						[description]="'dashboard.feedback.subtitle' | translate"
+						[actionName]="'dashboard.feedback.button' | translate"
+						[isOnline]="isOnline"
+						(feedBackClick)="openFeedbackModal()">
+					</vtr-widget-feedback>
 				</div>
 			</div>
 

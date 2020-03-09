@@ -6,9 +6,18 @@
 			border: 0.1rem solid #ecf0f1;
 			height: 25rem;
 			width: 100%;
-			max-width: 33.5rem;
+			max-width: 98%;
 			object-fit: contain;
 			border-radius: 0.4rem;
+			@media #{$breakpoint_xl} {
+				max-width: 33.5rem;
+			}
+			@media #{$breakpoint_lg} {
+				max-width: 98%;
+			}
+			@media #{$breakpoint_md} {
+				max-width: 33.5rem;
+			}
 		}
 		.feed {
             @extend .base-preview;

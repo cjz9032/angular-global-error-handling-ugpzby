@@ -62,7 +62,7 @@ describe('EyeCareModeComponent', () => {
 	});
 	it('should test onSunsetToSunrise method', () => {
 		spyOn(component.sunsetToSunrise, 'emit').and.callThrough();
-		component.onSunsetToSunrise(new Event('click'));
+		component.onSunsetToSunrise();
 		expect(component.sunsetToSunrise.emit).toHaveBeenCalled();
 	});
 

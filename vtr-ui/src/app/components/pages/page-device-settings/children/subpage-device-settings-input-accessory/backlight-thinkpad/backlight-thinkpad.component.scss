@@ -1,0 +1,9 @@
+@import '../../../../../../app.theme.scss';
+
+.vtr-backlight-thinkpad {
+	::ng-deep .vtr-ui-switch-row.white-theme {
+		.col-12 {
+			margin-left: 3rem;
+		}
+	}
+}

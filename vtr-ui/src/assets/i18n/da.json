@@ -22,6 +22,12 @@
                     "rapidCharge": "Hurtig opladning"
                 },
                 "legionEdge": {
+                    "thermalMode2": {
+                        "OC_On": "Overclock. til",
+                        "performance": "Ydeevne",
+                        "balance": "Balance",
+                        "quiet": "Stille"
+                    },
                     "title": "CPU-overclocking",
                     "status": {
                         "alwayson": "Aktiveret",
@@ -101,16 +107,16 @@
                 },
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Indstil. for varmetilstand",
-                    "thermalMode2SettingDesc": "Vælg den metode, du vil bruge.",
+                    "thermalMode2SettingDesc": "Vælg den tilstand, du vil bruge.",
                     "fnQDesc": "Du kan skifte tilstand ved hjælp af genvejen Fn+Q.",
                     "perormanceTitle": "Ydeevnetilstand",
-                    "performanceDesc": "Boost computerens ydeevne med højere blæserhastighed og højere strømforbrug.",
+                    "performanceDesc": "Boost computerens ydeevne med højere blæserhastighed og strømforbrug. ",
                     "OCDesc": "Du kan vælge at aktivere overclockingfunktionen.",
-                    "ac_dcDesc": "Ydeevnetilstand er kun tilgængelig ved tilslutning til stikkontakt.",
+                    "ac_dcDesc": "Ydeevnetilstand kan kun benyttes, når vekselstrømsadapteren er tilsluttet.",
                     "balanceTitle": "Balanceret tilstand",
-                    "balanceDesc": "Afbalancer automatisk ydeevnen og blæserhastigheden med udgangspunkt i temperaturen. Middel strømforbrug.",
+                    "balanceDesc": "Afbalancer automatisk ydeevnen og blæserhastigheden med udgangspunkt i temperaturen og med mellemstort strømforbrug.",
                     "quietTitle": "Stille tilstand",
-                    "quietDesc": "Bevar et lavt støjniveau ved at reducere computerens ydeevne og blæserhastighed, når det er muligt. Lavt strømforbrug.",
+                    "quietDesc": "Bevar et lavt støjniveau ved at reducere computerens ydeevne og blæserhastighed, når det er muligt, med et lavt strømforbrug.",
                     "OC": {
                         "cpu_gpuOC": "Aktiver CPU-/GPU-overclocking i ydeevnetilstand.",
                         "cpuOC": "Aktiver CPU-overclocking i ydeevnetilstand.",
@@ -121,7 +127,7 @@
                         "gpuDriverLack": "Installer GPU-driver for at bruge overclockingfunktionen.",
                         "goInstall": "INSTALLER"
                     },
-                    "autoSwitch": "Skift automatisk til ydeevne, når du starter spil, og skift tilbage bagefter."
+                    "autoSwitch": "Skift automatisk til ydeevnetilstand, når du starter spil, og skift tilbage, når spillet af afsluttet."
                 },
                 "advancedOC": {
                     "title": "Avan. instil. f. overclock.",
@@ -698,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -795,7 +801,9 @@
             "loading": "Indlæser...",
             "from": "fra",
             "to": "til",
-            "clickToChange": "klik for at ændre"
+            "clickToChange": "klik for at ændre",
+            "failedLoad": "Kunne ikke indlæses.",
+            "retry": "Prøv igen"
         },
         "app-update": {
             "message": "Hej! Der findes en nyere version af Vantage. Vil du indlæse den?"
@@ -861,11 +869,18 @@
                 "submitScreenShot": "Send skærmbillede",
                 "messages": {
                     "feedbackSuccess": "Tak for din feedback!"
-                }
+                },
+                "question6": "Hvor sandsynligt er det, at du vil anbefale Lenovo Vantage-programmet til en ven eller kollega?",
+                "question7": "Ved du, at du kan bruge Lenovo Vantage til at holde softwaren (drivere, firmware og BIOS) på din computer opdateret?",
+                "question8": "Har du brugt Lenovo Vantage til at få adgang til supportoplysninger om computeren?",
+                "tips2": "Skriv eventuelle andre kommentarer nedenfor",
+                "emailAddressLabel": "Angiv din e-mailadresse, hvis du vil have mulighed for at blive kontaktet af Lenovo Vantage-teamet.",
+                "emailAddress": "E-mailadresse",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "Dine Hurtige indstillinger",
+            "title": "Hurtige indstillinger",
             "microphone": "Mikrofon",
             "cameraPrivacy": "Kamera",
             "eyeCareMode": "Øjenpleje",
@@ -910,6 +925,10 @@
                     "update": "Opdatér"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Opdater dine drivere, BIOS og anden software.",
+            "checkForSystemUpdates": "Søg efter systemopdateringer"
         }
     },
     "device": {
@@ -1021,14 +1040,14 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "For at forlænge batterilevetiden har vi optimeret dets kapacitet ved fuld opladning baseret på din brug. Den fulde batterikapacitet er muligvis ikke tilgængelig, før du aflader til 20 % og oplader igen."
                 },
                 "condition": {
                     "Illegal": "Det batteri, der er installeret, <b>understøttes ikke</b> af dette system og vil ikke blive opladet. Udskift batteriet med det korrekte Lenovo-batteri til systemet.",
                     "Good": "<b>Batteriets tilstand er god.</b>",
                     "Exhaustion": "Batteriets kapacitet er blevet <b>forringet</b>. Udskift det med et nyt.",
                     "Bad": "<b>Der er opstået en batterifejl.</b> Batteriet kan ikke oplades/aflades. Udskift batteriet.",
-                    "NotDetected": "<b>Der er ikke registreret et batteri</b>, eller der er ikke tilsluttet noget batteri.",
+                    "NotDetected": "<b>Der blev ikke fundet noget batteri.</b>",
                     "NotGood": "<b>Batteriets tilstand er ikke god.</b>",
                     "NotSupportACAdapter": "<b>Vekselstrømsadapter understøttes ikke.</b>",
                     "LimitedACAdapterSupport": "<b>Vekselstrømsadapteren kan ikke levere nok strøm.</b>",
@@ -1234,9 +1253,9 @@
                             "reset": "Nulstil",
                             "stop": "Stop"
                         },
-                        "progressText1": "{{stage}} af {{stageNum}}: Kalibrerer til fuld opladning",
-                        "progressText2": "{{stage}} af {{stageNum}}: Kalibrerer til lavt batteristrømniveau",
-                        "progressText3": "{{stage}} af {{stageNum}}: Kalibrerer til højt batteristrømniveau",
+                        "progressText1": "Trin {{stage}} ud af i alt {{stageNum}} trin: Kalibrerer til fuld opladning",
+                        "progressText2": "Trin {{stage}} ud af i alt {{stageNum}} trin: Kalibrerer til lavt batteristrømniveau",
+                        "progressText3": "Trin {{stage}} ud af i alt {{stageNum}} trin: Kalibrerer til højt batteristrømniveau",
                         "FCCText": "Fra {{before}} Wh til {{after}} Wh",
                         "note": "Bemærk: Før du nulstiller batterimåleren, skal du slutte computeren til vekselstrøm. ",
                         "resetLog": {
@@ -1264,6 +1283,55 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "ET ENERGY STAR-CERTIFICERET PRODUKT"
+                },
+                "dpm": {
+                    "title": "Strøm",
+                    "subtitle": "Strømindstillinger",
+                    "description": "I denne sektion kan du tjekke standardindstillingerne og tilpasse dit strømforbrug og din strømplan i overensstemmelse med dine behov.",
+                    "globalPowerSettings": {
+                        "title": "Globale strømindstillinger",
+                        "description": "Denne funktion tilsidesætter indstillingerne for Strømplan eller Strømforbrug.",
+                        "powerButton": {
+                            "label": "TÆND/SLUK-KNAP:",
+                            "items": {
+                                "doNothing": "Gør intet",
+                                "sleep": "Slumre",
+                                "hibernate": "Dvale",
+                                "shutDown": "Luk computeren",
+                                "turnOffTheDisplay": "Sluk for skærmen"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "DER KRÆVES LOGON:",
+                            "items": {
+                                "never": "Aldrig",
+                                "fromSleep": "Når pc'en vågner op fra slumretilstand"
+                            },
+                            "tip": "Bemærk: Dette virker kun, hvis systemadgangskoden er angivet."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "Strømforbrug",
+                        "description": "HVIS SYSTEMET ER INAKTIVT:",
+                        "turnOffDisplay": "SLUK FOR SKÆRMEN EFTER:",
+                        "turnOffHDD": "SLUK FOR HARDDISKEN EFTER:",
+                        "sleep": "SKIFT TIL SLUMRETILSTAND EFTER:",
+                        "hibernate": "SKIFT TIL DVALETILSTAND EFTER:",
+                        "items": {
+                            "never": "Aldrig",
+                            "minute": "minut",
+                            "minutes": "minutter",
+                            "hour": "time",
+                            "hours": "timer"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "Strømskema",
+                        "description": "Vælg en strømplan til at styre din computers ydeevne, systemtemperatur og strømforbrug.",
+                        "currentPowerPlan": {
+                            "label": "NUVÆRENDE PLAN"
+                        }
+                    }
                 },
                 "smartStandby": {
                     "title": "Smart-standby",
@@ -1648,8 +1716,11 @@
                         "options": {
                             "option1": "Vælg",
                             "option2": "Åben hjemmeside",
-                            "option3": "Indtast tekst"
-                        }
+                            "option3": "Indtast tekst",
+                            "option4": "Open applications or files",
+                            "option5": "Invoke key sequence"
+                        },
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function."
                     },
                     "tooltip": "Indhold, der skal udfyldes",
                     "apply": {
@@ -1664,6 +1735,17 @@
                     "enterText": {
                         "title": "TEKST, DER SKAL SKRIVES",
                         "placeholder": "Skriv her"
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles": {
+                        "applicationTitle": "You need to delete one app first",
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {
@@ -1899,7 +1981,7 @@
                 "heading": "Intelligente medier",
                 "title": "Videoafspilning uden berøring",
                 "desc": "Denne funktion afbryder videoen, når du forlader computeren, og genoptager videoen, når du er tilbage.",
-                "tooltip": "Denne funktion kan ikke bruges med internetvideoafspillere. Populære lokale videoafspillere som f.eks. Windows Media Player, 5KPlayer osv. understøtter denne funktion."
+                "tooltip": "Denne funktion kan ikke bruges med<br>internetvideoafspillere.<br>Følgende afspillere understøttes:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
             },
             "superResolution": {
                 "heading": "Intelligente medier",
@@ -1937,7 +2019,8 @@
                     "point7": "Vælg det ønskede kildesprog og målsprog.",
                     "point8": "Angiv stemmeinput fra højttaler eller fra mikrofon afhængigt af dine behov.",
                     "point9": "Klik på mikrofonikonet for at begynde at tale",
-                    "closeText": "luk"
+                    "closeText": "luk",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -1983,7 +2066,7 @@
             },
             "recommended": {
                 "title": "Anbefalede opdateringer",
-                "tooltip": "Anbefalede driveropdateringer sikrer"
+                "tooltip": "Anbefalede driveropdateringer sikrer optimal ydeevne for computeren."
             },
             "windows": {
                 "title": "Windows-opdateringer",
@@ -2169,7 +2252,7 @@
             "goWifi": "gå til wifi-sikkerhed",
             "goVpn": "gå til VPN-sikkerhed",
             "visitWindows": "Besøg Windows-aktivering",
-            "visitFingerprint": "Besøg Fingerprint Reader",
+            "visitFingerprint": "Besøg Fingeraftrykslæser",
             "visitUac": "Besøg Kontrol af brugerkonti",
             "visitHde": "Besøg harddiskkryptering",
             "haveOwnPassword": "Jeg har min egen password manager",
@@ -3423,7 +3506,7 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-			"security": "Vidste du det? Selvom du ikke har et antivirusprogram installeret, tilbyder vi stadig en grundlæggende sikkerhedsbeskyttelse til din enhed.",
+            "security": "Vidste du det? Selvom du ikke har et antivirusprogram installeret, tilbyder vi stadig en grundlæggende sikkerhedsbeskyttelse til din enhed.",
             "connectedHomeSecurity": "Få overvågning i realtid og advarsler om din netværkssikkerhed derhjemme. Du er den første, der får det at vide, hvis nogen af dine smart-enheder er udsat for et sikkerhedsangreb."
         }
     },

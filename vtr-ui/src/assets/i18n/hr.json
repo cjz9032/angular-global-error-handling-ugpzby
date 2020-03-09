@@ -22,6 +22,12 @@
                     "rapidCharge": "Brzo punjenje"
                 },
                 "legionEdge": {
+                    "thermalMode2": {
+                        "OC_On": "Overclock uklj.",
+                        "performance": "Performanse",
+                        "balance": "Balans",
+                        "quiet": "Tiho"
+                    },
                     "title": "Overclock CPU-a",
                     "status": {
                         "alwayson": "Uključeno",
@@ -101,27 +107,27 @@
                 },
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Postavlj. termičkog načina",
-                    "thermalMode2SettingDesc": "Odaberite način rada kojim se želite koristiti.",
+                    "thermalMode2SettingDesc": "Odaberite način rada koji želite koristiti.",
                     "fnQDesc": "Možete prebaciti način rada s pomoću prečaca Fn+Q.",
                     "perormanceTitle": "Način rada performansi",
-                    "performanceDesc": "Povećajte performanse računala uz veću brzinu ventilatora i veću potrošnju energije.",
-                    "OCDesc": "Možete odabrati uključivanje značajke Overclocking.",
-                    "ac_dcDesc": "Način rada performansi dostupan je samo kad je uključen.",
+                    "performanceDesc": "Povećajte performanse računala uz veću brzinu ventilatora i bolju potrošnju energije. ",
+                    "OCDesc": "Možete odabrati uključivanje funkcije overclockinga.",
+                    "ac_dcDesc": "Način performansi rada primjenjiv je samo kad je uključen ispravljač.",
                     "balanceTitle": "Način rada uravnoteženosti",
-                    "balanceDesc": "Automatski uravnotežite performanse i brzinu ventilatora na temelju temperature. Srednja potrošnja energije.",
+                    "balanceDesc": "Automatski uravnotežite performanse i brzinu ventilatora na temelju temperature sa srednjom potrošnjom energije.",
                     "quietTitle": "Tihi način rada",
-                    "quietDesc": "Budite tihi smanjujući performanse vašeg računala i brzinu ventilatora kad je to moguće. Niska potrošnja energije.",
+                    "quietDesc": "Zadržite tihi rad smanjujući performanse računala i brzinu ventilatora kad je to moguće uz smanjenje potrošnje energije.",
                     "OC": {
                         "cpu_gpuOC": "Omogući Overclocking CPU/GPU-a u načinu rada.",
                         "cpuOC": "Omogući Overclocking CPU-a u načinu rada.",
                         "gpuOC": "Omogući Overclocking GPU-a u načinu rada.",
                         "advance": "NAPREDNO",
-                        "cpu_gpuDriverLack": "Instalacija upravlj. prog. CPU/GPU-a za uporabu funkcije Overclocking.",
-                        "cpuDriverLack": "Instalacija upravlj. prog. CPU-a za uporabu funkcije Overclocking.",
-                        "gpuDriverLack": "Instalacija upravlj. prog. GPU-a za uporabu funk. Overclocking.",
+                        "cpu_gpuDriverLack": "Instalirajte CPU/GPU upravljačke programe za upotrebu funkcije overclockinga.",
+                        "cpuDriverLack": "Instalirajte CPU upravljački program za upotrebu funkcije overclockinga.",
+                        "gpuDriverLack": "Instalirajte upravljački program GPU za upotrebu funkcije overclockinga.",
                         "goInstall": "INSTALIRAJ"
                     },
-                    "autoSwitch": "Autom. se prebacite na performanse pri pokretanju igrica pa se vratite."
+                    "autoSwitch": "Automatski prebacite u način rada performansi pri pokretanju igara i vratite natrag nakon zatvaranja igre."
                 },
                 "advancedOC": {
                     "title": "Overclock Napredne postavke",
@@ -698,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -795,7 +801,9 @@
             "loading": "Učitavam...",
             "from": "od",
             "to": "do",
-            "clickToChange": "kliknite za izmjenu"
+            "clickToChange": "kliknite za izmjenu",
+            "failedLoad": "Učitavanje nije uspjelo.",
+            "retry": "Pokušajte ponovno"
         },
         "app-update": {
             "message": "Hej! Dostupna je novija verzija programa Vantage, želite li je učitati?"
@@ -861,11 +869,18 @@
                 "submitScreenShot": "Pošalji snimku zaslona",
                 "messages": {
                     "feedbackSuccess": "Hvala vam na povratnim informacijama!"
-                }
+                },
+                "question6": "Kolika je vjerojatnost da preporučite Lenovo Vantage aplikaciju prijatelju ili kolegi?",
+                "question7": "Jeste li znali da Lenovo Vantage možete koristiti da biste ažurirali softver (upravljačke programe, firmver i BIOS) na računalu?",
+                "question8": "Jeste li Lenovo Vantage koristili za pristup informacijama o podršci vašem računalu?",
+                "tips2": "U nastavku unesite bilo kakve dodatne komentare",
+                "emailAddressLabel": "Ostavite svoju adresu e-pošte ako želite da vas tim Lenovo Vantage kontaktira.",
+                "emailAddress": "Adresa e-pošte",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "Vaše Brze postavke",
+            "title": "Brze postavke",
             "microphone": "Mikrofon",
             "cameraPrivacy": "Kamera",
             "eyeCareMode": "Ugodnost za oči",
@@ -910,6 +925,10 @@
                     "update": "Ažuriraj"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Ažurirajte upravljačke programe, BIOS i drugi softver.",
+            "checkForSystemUpdates": "Provjerite ažuriranja sustava"
         }
     },
     "device": {
@@ -1021,14 +1040,14 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "Da bismo produžili vijek trajanja baterije, optimizirali smo njezin puni kapacitet na temelju vaše upotrebe. Puni kapacitet baterije možda neće biti dostupan dok je ne ispraznite na 20% i ponovno je napunite."
                 },
                 "condition": {
                     "Illegal": "Ovaj sustav <b>ne podržava</b> umetnutu bateriju te je neće puniti. Bateriju zamijenite odgovarajućom baterijom tvrtke Lenovo za ovaj sustav.",
                     "Good": "<b>Baterija je u dobrom stanju.</b>",
                     "Exhaustion": "Kapacitet baterije je <b>degradiran</b>. Zamijenite je novom.",
                     "Bad": "<b>Došlo je do pogreške baterije.</b> Bateriju nije moguće puniti/prazniti. Zamijenite bateriju.",
-                    "NotDetected": "<b>Baterija nije pronađena</b> ili nije priključena.",
+                    "NotDetected": "<b>Nije otkrivena baterija.</b>",
                     "NotGood": "<b>Baterija nije u dobrom stanju.</b>",
                     "NotSupportACAdapter": "<b>Prilagodnik izmjeničnog napona nije podržan.</b>",
                     "LimitedACAdapterSupport": "<b>Prilagodnik izmjeničnog napona ne može pružiti dovoljno energije.</b>",
@@ -1043,7 +1062,7 @@
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} napajanje je povezano.</b>",
                     "EmDriverInstalled": "Pojedinosti o bateriji nisu dostupne. Pokrenite Windows ažuriranje-> Provjerite postoje li ažuriranja da biste instalirali Upravljački program za <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
                 },
-                "batteryNotDetected": "Baterija nije pronađena",
+                "batteryNotDetected": "Nije otkrivena baterija",
                 "thresholdNote": "<b>Napomena:</b> Ako je omogućen prag napunjenosti baterije baterija se ne može potpuno napuniti.",
                 "seeDetailsLink": "Prikaži pojedinosti",
                 "gaugeResetWarning": "<b>Napomena:</b> U tijeku je ponovno postavljanje mjerača baterije. Neka prilagodnik izmjeničnog napona ostane priključen.",
@@ -1234,9 +1253,9 @@
                             "reset": "Ponovno postavljanje",
                             "stop": "Zaustavi"
                         },
-                        "progressText1": "{{stage}} od {{stageNum}}: Kalibriranje do potpune napunjenosti",
-                        "progressText2": "{{stage}} od {{stageNum}}: Kalibriranje na nisku razinu baterije",
-                        "progressText3": "{{stage}} od {{stageNum}}: Kalibriranje do velike snage baterije",
+                        "progressText1": "Korak {{stage}}, od ukupno {{stageNum}} koraka: Kalibriranje do potpuno napunjene baterije",
+                        "progressText2": "Korak {{stage}}, od ukupno {{stageNum}} koraka: Kalibriranje na nisku razinu napunjenosti baterije",
+                        "progressText3": "Korak {{stage}}, od ukupno {{stageNum}} koraka: Kalibriranje na visoku razinu napunjenosti baterije",
                         "FCCText": "Od {{before}} Wh do {{after}} Wh",
                         "note": "Napomena: Prije ponovnog postavljanja prikaza napunjenosti baterije obavezno povežite računalo na izmjenično napajanje. ",
                         "resetLog": {
@@ -1264,6 +1283,55 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "PROIZVOD S CERTIFIKATOM ENERGY STAR"
+                },
+                "dpm": {
+                    "title": "Napajanje",
+                    "subtitle": "Postavke napajanja",
+                    "description": "Ovaj odjeljak omogućuje vam provjeru zadanih postavki i prilagođavanje potrošnje i plana napajanja prema vašim potrebama.",
+                    "globalPowerSettings": {
+                        "title": "Globalne postavke napajanja",
+                        "description": "Ova će značajka nadvladati postavke napajanja ili postavke upotrebe energije.",
+                        "powerButton": {
+                            "label": "GUMB ZA NAPAJANJE:",
+                            "items": {
+                                "doNothing": "Nemojte učiniti ništa",
+                                "sleep": "Stanje mirovanja",
+                                "hibernate": "Hibernacija",
+                                "shutDown": "Isključi",
+                                "turnOffTheDisplay": "Isključite zaslon"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "POTREBNA PRIJAVA:",
+                            "items": {
+                                "never": "Nikada",
+                                "fromSleep": "Kada se računalo probudi iz sna"
+                            },
+                            "tip": "Napomena: Ovo funkcionira samo ako je postavljena lozinka sustava."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "Uporaba napajanja",
+                        "description": "AKO JE SUSTAV U PRAZNOM HODU:",
+                        "turnOffDisplay": "ISKLJUČITE ZASLON NAKON:",
+                        "turnOffHDD": "ISKLJUČITE TVRDI DISK NAKON:",
+                        "sleep": "STANJE MIROVANJA NAKON:",
+                        "hibernate": "HIBERNACIJA NAKON:",
+                        "items": {
+                            "never": "Nikada",
+                            "minute": "min",
+                            "minutes": "min",
+                            "hour": "h",
+                            "hours": "h"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "Plan napajanja",
+                        "description": "Odaberite plan napajanja da bist eupravljali performansama računala, temperaturom sustava i potrošnjom energije.",
+                        "currentPowerPlan": {
+                            "label": "TRENUTNI PLAN"
+                        }
+                    }
                 },
                 "smartStandby": {
                     "title": "Pametno stanje mirovanja",
@@ -1648,8 +1716,11 @@
                         "options": {
                             "option1": "Odaberite",
                             "option2": "Otvori web-lokaciju",
-                            "option3": "Unesite tekst"
-                        }
+                            "option3": "Unesite tekst",
+                            "option4": "Open applications or files",
+                            "option5": "Invoke key sequence"
+                        },
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function."
                     },
                     "tooltip": "Sadržaj treba popuniti",
                     "apply": {
@@ -1664,6 +1735,17 @@
                     "enterText": {
                         "title": "TEKST ZA UNOS",
                         "placeholder": "Pišite ovdje"
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles": {
+                        "applicationTitle": "You need to delete one app first",
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {
@@ -1899,7 +1981,7 @@
                 "heading": "Inteligentni mediji",
                 "title": "Zero Touch reprodukcija videozapisa",
                 "desc": "Ta će značajka pauzirati reprodukciju videozapisa kada se udaljite od računala i nastaviti je kada se vratite.",
-                "tooltip": "Ta značajka nije primjenjiva na web-reproduktore videosadržaja. Popularni lokalni reproduktori videosadržaja, kao što su Windows Media Player, 5KPlayer itd., podržavaju tu značajku."
+                "tooltip": "Ova značajka nije primjenjiva na<br>web video uređajima za reprodukciju.<br>Igrači koji su podržani su navedeni na sljedeći način:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
             },
             "superResolution": {
                 "heading": "Inteligentni mediji",
@@ -1937,7 +2019,8 @@
                     "point7": "Odaberite željeni izvorni i ciljni jezik.",
                     "point8": "Ovisno o vašim potrebama, postavite glasovni ulaz iz zvučnika ili iz mikrofona.",
                     "point9": "Da biste počeli govoriti, kliknite ikonu mikrofona",
-                    "closeText": "zatvori"
+                    "closeText": "zatvori",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "u redu",

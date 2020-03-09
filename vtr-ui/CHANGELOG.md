@@ -2,6 +2,90 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.25](https://bitbucket.tc.lenovo.com///compare/v1.3.24...v1.3.25) (2020-03-05)
+
+### [1.3.24](https://bitbucket.tc.lenovo.com///compare/v1.3.23...v1.3.24) (2020-03-05)
+
+### [1.3.23](https://bitbucket.tc.lenovo.com///compare/v1.3.22...v1.3.23) (2020-03-05)
+
+### [1.3.22](https://bitbucket.tc.lenovo.com///compare/v1.3.21...v1.3.22) (2020-03-05)
+
+### [1.3.21](https://bitbucket.tc.lenovo.com///compare/v1.3.20...v1.3.21) (2020-03-04)
+
+### [1.3.20](https://bitbucket.tc.lenovo.com///compare/v1.3.19...v1.3.20) (2020-03-04)
+
+### [1.3.19](https://bitbucket.tc.lenovo.com///compare/v1.3.18...v1.3.19) (2020-03-03)
+
+### [1.3.18](https://bitbucket.tc.lenovo.com///compare/v1.3.17...v1.3.18) (2020-03-03)
+
+### [1.3.17](https://bitbucket.tc.lenovo.com///compare/v1.3.16...v1.3.17) (2020-03-02)
+
+### [1.3.16](https://bitbucket.tc.lenovo.com///compare/v1.3.15...v1.3.16) (2020-02-28)
+
+### [1.3.15](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.3.14...v1.3.15) (2020-02-28)
+
+
+### Bug Fixes
+
+* **header:** can only go back to non-shell-provided pages ([e82f26c](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/e82f26cea1054e5a2bcfa189a70274ddae683c27))
+
+### [1.3.14](https://bitbucket.tc.lenovo.com///compare/v1.3.13...v1.3.14) (2020-02-27)
+
+### [1.3.13](https://bitbucket.tc.lenovo.com///compare/v1.3.12...v1.3.13) (2020-02-26)
+
+### [1.3.12](https://bitbucket.tc.lenovo.com///compare/v1.3.11...v1.3.12) (2020-02-26)
+
+
+### Bug Fixes
+
+* **FontAwesome:** migrated to v5 and refactor the necessary ([d75063b](https://bitbucket.tc.lenovo.com///commit/d75063bfb89a13c1970316bf5978267565a145b8))
+
+## [1.3.11](https://bitbucket.tc.lenovo.com/scm/tan/tan-client-experience/compare/v1.3.10...v1.3.11) (2020-02-25)
+
+
+### Bug Fixes
+
+* **overall:** fix tslint error in smart performance module file ([c5be239](https://bitbucket.tc.lenovo.com/scm/tan/tan-client-experience/commits/c5be239))
+* **overall:** update deps for ng9 and refactor the necessary ([ef87de8](https://bitbucket.tc.lenovo.com/scm/tan/tan-client-experience/commits/ef87de8))
+
+
+
+## [1.3.10](https://bitbucket.tc.lenovo.com///compare/v1.3.9...v1.3.10) (2020-02-25)
+
+### [1.3.9](https://bitbucket.tc.lenovo.com///compare/v1.3.8...v1.3.9) (2020-02-25)
+
+
+### Bug Fixes
+
+* **nls:** merge test to develop ([60ed425](https://bitbucket.tc.lenovo.com///commit/60ed4250dcbd86606dc8baf968818825efbc2896))
+
+### [1.3.7](https://bitbucket.tc.lenovo.com///compare/v1.3.6...v1.3.7) (2020-02-24)
+
+### [1.3.8](https://bitbucket.tc.lenovo.com///compare/v1.3.6...v1.3.8) (2020-02-24)
+
+
+### Bug Fixes
+
+* **nls:** add missing line for legion edge modal - line 12 ([28e4949](https://bitbucket.tc.lenovo.com///commit/28e4949f0d08c76c22620c606e8209a9d65aaee2))
+
+### [1.3.7](https://bitbucket.tc.lenovo.com///compare/v1.3.6...v1.3.7) (2020-02-24)
+
+
+### Bug Fixes
+
+* **nls:** add missing line for legion edge modal - line 12 ([28e4949](https://bitbucket.tc.lenovo.com///commit/28e4949f0d08c76c22620c606e8209a9d65aaee2))
+
+### [1.3.6](https://bitbucket.tc.lenovo.com///compare/v1.3.5...v1.3.6) (2020-02-24)
+
+### [1.3.5](https://bitbucket.tc.lenovo.com///compare/v1.3.4...v1.3.5) (2020-02-24)
+
+
+### Features
+
+* **gaming:** correct more merging error ([90001bc](https://bitbucket.tc.lenovo.com///commit/90001bc45dc3eddc40940591e7b07016dcf8c748))
+* **gaming:** more correction ([ac78b51](https://bitbucket.tc.lenovo.com///commit/ac78b51ecad57e921d4ff3a71c39109d74c61579))
+* **gaming:** recover 3.2.0.1 code ([4882c98](https://bitbucket.tc.lenovo.com///commit/4882c98d4158d60523c7c40d6312719fcc4c515f))
+
 ### [1.3.4](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.3.3...v1.3.4) (2020-02-22)
 
 

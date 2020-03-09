@@ -101,6 +101,9 @@ export class HardwareScanService {
             // If HardwareScan is available, dispatch the priority requests
             this.isAvailable().then((available) => {
                 if (available) {
+					// Validate the type of this machine to load dynamically the icons.
+					this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
+
 					// Retrive the Plugin's version (it does not use the CLI)
 					this.getPluginInfo().then((hwscanPluginInfo: any) => {
                         if (hwscanPluginInfo) {
@@ -678,12 +681,12 @@ export class HardwareScanService {
                 if (this.devicesToRecoverBadSectors.groupList.length !== 0) {
 					this.hasItemsToRecoverBadSectors = true;
 				}
+
+				// Signalizes that the hardware list has been retrieved
+				this.hardwareModulesLoaded.next(true);
             });
 			this.isLoadingModulesDone = true;
 			this.loadCustomModal();
-
-			// Signalizes that the hardware list has been retrieved
-			this.hardwareModulesLoaded.next(true);
 		});
 	}
 
@@ -1044,20 +1047,25 @@ export class HardwareScanService {
 				const groupsResultMeta = module.categoryInformation.groupList;
 
 				for (let i = 0; i < module.response.groupResults.length; i++) {
-                    const item: any = {};
-                    const groupResultMeta = groupsResultMeta.find(x => x.id === groupResult[i].id);
-                    const moduleName = groupResult[i].moduleName;
+					const item: any = {};
+					const groupResultMeta = groupsResultMeta.find(x => x.id === groupResult[i].id);
+					const moduleName = groupResult[i].moduleName;
 
-                    item.id = moduleId;
-                    item.module = module.categoryInformation.name;
-                    item.name = groupResultMeta.name;
-                    item.resultCode = groupResult[i].resultCode;
-                    item.information = groupResult[i].resultDescription;
-                    item.collapsed = false;
-                    item.icon = this.getHardwareComponentIcon(moduleName);
-                    item.details = [];
+					item.id = moduleId;
+					item.module = module.categoryInformation.name;
+					item.name = groupResultMeta.name;
+					item.resultCode = groupResult[i].resultCode;
+					item.information = groupResult[i].resultDescription;
+					item.collapsed = false;
+					item.icon = moduleName;
+					if (!this.isDesktopMachine) {
+						if (item.icon === 'pci_express') {
+							item.icon += "_laptop";
+						}
+					}
+					item.details = [];
 
-                    for (let j = 0; j < groupResultMeta.metaInformation.length; j++) {
+					for (let j = 0; j < groupResultMeta.metaInformation.length; j++) {
 						const meta = groupResultMeta.metaInformation[j];
 						const detail = {};
 						detail[meta.name] = meta.value;
@@ -1189,6 +1197,7 @@ export class HardwareScanService {
 				test.percent = 0;
 				test.status = HardwareScanTestResult.NotStarted;
 			}
+			moduleObject.resultCode = '';
 		}
 
 		for (const moduleObject of this.customScanResponse) {
@@ -1196,6 +1205,7 @@ export class HardwareScanService {
 				test.percent = 0;
 				test.status = HardwareScanTestResult.NotStarted;
 			}
+			moduleObject.resultCode = '';
 		}
 	}
 

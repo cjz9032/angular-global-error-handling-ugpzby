@@ -24,6 +24,12 @@
                     "rapidCharge": "الشحن السريع"
                 },
                 "legionEdge": {
+                    "thermalMode2": {
+                        "OC_On": "زيادة الأداء تعمل",
+                        "performance": "الأداء",
+                        "balance": "التوازن",
+                        "quiet": "هادئ"
+                    },
                     "title": "كسر سرعة وحدة CPU",
                     "status": {
                         "alwayson": "تشغيل",
@@ -106,24 +112,24 @@
                     "thermalMode2SettingDesc": "اختر الوضع الذي تريد استخدامه.",
                     "fnQDesc": "يمكنك تبديل الوضع باستخدام اختصار Fn+Q.",
                     "perormanceTitle": "وضع الأداء",
-                    "performanceDesc": "عزز أداء الكمبيوتر لديك مع زيادة سرعة المروحة والمزيد من استهلاك الطاقة.",
-                    "OCDesc": "يمكنك اختيار تشغيل ميزة زيادة الأداء.",
-                    "ac_dcDesc": "وضع الأداء متاح فقط عند توصيله.",
+                    "performanceDesc": "عزز أداء الكمبيوتر لديك مع زيادة سرعة المروحة والمزيد من استهلاك الطاقة. ",
+                    "OCDesc": "يمكنك اختيار تشغيل وظيفة زيادة الأداء.",
+                    "ac_dcDesc": "لا ينطبق وضع الأداء إلا عند توصيل محول التيار المتردد.",
                     "balanceTitle": "‏‫الوضع المتوازن",
-                    "balanceDesc": "توازن الأداء وسرعة المروحة تلقائيًا حسب درجة الحرارة. استهلاك طاقة متوسط.",
+                    "balanceDesc": "توازن الأداء وسرعة المروحة تلقائيًا حسب درجة الحرارة مع استهلاك متوسط للطاقة.",
                     "quietTitle": "الوضع الهادئ",
-                    "quietDesc": "حافظ على الهدوء من خلال تقليل أداء الكمبيوتر وسرعة المروحة كلما أمكن ذلك. استهلاك طاقة منخفض.",
+                    "quietDesc": "حافظ على الهدوء من خلال تقليل أداء الكمبيوتر وسرعة المروحة كلما أمكن ذلك مع استهلاك منخفض للطاقة.",
                     "OC": {
                         "cpu_gpuOC": "تمكين زيادة أداء CPU/GPU في وضع Performance Mode.",
                         "cpuOC": "تمكين زيادة أداء CPU في وضع Performance Mode.",
                         "gpuOC": "تمكين زيادة أداء GPU في وضع Performance Mode.",
                         "advance": "متقدم",
                         "cpu_gpuDriverLack": "قم بتثبيت برامج التشغيل CPU/GPU لاستخدام وظيفة زيادة الأداء.",
-                        "cpuDriverLack": "قم بتثبيت برامج التشغيل CPU لاستخدام وظيفة زيادة الأداء.",
-                        "gpuDriverLack": "قم بتثبيت برامج التشغيل GPU لاستخدام وظيفة زيادة الاداء.",
+                        "cpuDriverLack": "قم بتثبيت برنامج تشغيل CPU لاستخدام وظيفة زيادة الأداء.",
+                        "gpuDriverLack": "قم بتثبيت برنامج تشغيل GPU لاستخدام وظيفة زيادة الأداء.",
                         "goInstall": "انتقل للتثبيت"
                     },
-                    "autoSwitch": "التبديل التلقائي إلى الأداء عند تشغيل الألعاب والعودة إلى الوضع السابق بعد ذلك."
+                    "autoSwitch": "قم بالتبديل التلقائي إلى وضع الأداء عند تشغيل الألعاب والعودة إلى الوضع السابق بعد الخروج من اللعبة."
                 },
                 "advancedOC": {
                     "title": "إعداداتسرعة الأداءالمتقدمة",
@@ -700,7 +706,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -746,7 +752,7 @@
                 "sub3": "أمان WiFi",
                 "sub4": "سلامة كلمة المرور",
                 "sub5": "أمان VPN",
-                "sub6": "بصمة"
+                "sub6": "بصمة الإصبع"
             },
             "support": "الدعم",
             "beta": {
@@ -771,7 +777,7 @@
             "notFound": "لم يتم العثور عليه",
             "registered": "مسجل",
             "notRegistered": "غير مسجل",
-            "fingerPrint": "بصمة",
+            "fingerPrint": "بصمة الإصبع",
             "privacyPolicyAndTermsOfService": "<tag>سياسة الخصوصية</tag> و<tag>شروط الخدمة</tag>",
             "windowsHello": "Windows Hello",
             "enrolled": "مسجل",
@@ -797,7 +803,9 @@
             "loading": "...جار التحميل",
             "from": "من",
             "to": "الى",
-            "clickToChange": "انقر للتغيير"
+            "clickToChange": "انقر للتغيير",
+            "failedLoad": "تعذّر التحميل.",
+            "retry": "أعد المحاولة"
         },
         "app-update": {
             "message": "مرحبا! يتوفر إصدار أحدث من Vantage، هل تريد تحميله؟"
@@ -863,11 +871,18 @@
                 "submitScreenShot": "إرسال لقطة الشاشة",
                 "messages": {
                     "feedbackSuccess": "نشكرك على تعليقاتك!"
-                }
+                },
+                "question6": "ما مدى احتمال أن توصي أحد الأصدقاء أو الزملاء بتطبيق Lenovo Vantage؟",
+                "question7": "هل تعلم أنه يمكنك استخدام تطبيق Lenovo Vantage للمحافظة على تحديث البرنامج (برامج التشغيل والبرامج الثابتة وBIOS) على الكمبيوتر؟",
+                "question8": "هل استخدمت Lenovo Vantage للوصول إلى معلومات الدعم الخاصة بالكمبيوتر؟",
+                "tips2": "يرجى ترك أي تعليقات إضافية أدناه",
+                "emailAddressLabel": "يرجى ترك عنوان بريدك الإلكتروني إذا كنت ترغب في أن يتصل بك فريق Lenovo Vantage.",
+                "emailAddress": "عنوان البريد الالكتروني",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "إعداداتك السريعة",
+            "title": "الإعدادات السريعة",
             "microphone": "الميكروفون",
             "cameraPrivacy": "الكاميرا",
             "eyeCareMode": "العناية بالعين",
@@ -912,6 +927,10 @@
                     "update": "تعديل"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "تحديث برامج التشغيل ونظام BIOS وبرامج أخرى.",
+            "checkForSystemUpdates": "التحقق من وجود تحديثات النظام"
         }
     },
     "device": {
@@ -1023,14 +1042,14 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "لتمديد عمر البطارية، قمنا بتحسين سعة شحنها الكاملة بالاستناد إلى استخدامك. قد لا تتوفر سعة البطارية الكاملة حتى تفريغ الشحنة إلى 20% وإعادة الشحن."
                 },
                 "condition": {
                     "Illegal": "البطارية المركّبة <b>غير مدعومة</b> بواسطة النظام ولن يتم شحنها. الرجاء استبدال البطارية ببطارية Lenovo المناسبة لهذا النظام.",
                     "Good": "<b>البطارية بحالة جيدة.</b>",
                     "Exhaustion": "لقد <b>تراجعت‏‎</b> سعة البطارية. يرجى استبدالها بواحدة جديدة.",
                     "Bad": "<b>حدث خطأ في البطارية.</b> لا يمكن شحن/تفريغ البطارية. استبدل البطارية.",
-                    "NotDetected": "<b>لم يتم الكشف عن بطارية أو</b> البطارية غير موصولة.",
+                    "NotDetected": "<b>لم يتم الكشف عن أي بطارية.</b>",
                     "NotGood": "<b>البطارية ليست بحالة جيدة.</b>",
                     "NotSupportACAdapter": "<span dir='rtl'><b>محول التيار المتردد غير مدعوم.</b></span>",
                     "LimitedACAdapterSupport": "<b>لا يمكن أن يوفر محول التيار المتردد طاقة كافية.</b>",
@@ -1236,9 +1255,9 @@
                             "reset": "إعادة تعيين",
                             "stop": "إيقاف"
                         },
-                        "progressText1": "{{stage}} من {{stageNum}}: معايرة إلى الشحن الكامل",
-                        "progressText2": "{{stage}} من {{stageNum}}: معايرة إلى طاقة البطارية المنخفضة",
-                        "progressText3": "{{stage}} من {{stageNum}}: المعايرة إلى طاقة البطارية العالية",
+                        "progressText1": "الخطوة {{stage}} من {{stageNum}} خطوة (خطوات) في المجموع: معايرة إلى الشحن الكامل",
+                        "progressText2": "الخطوة {{stage}} من {{stageNum}} خطوة (خطوات) في المجموع: معايرة إلى طاقة البطارية المنخفضة‬",
+                        "progressText3": "الخطوة {{stage}} من {{stageNum}} خطوة (خطوات) في المجموع: معايرة إلى طاقة البطارية العالية‬",
                         "FCCText": "من {{before}} واط بالساعة‬ إلى {{after}} واط بالساعة‬",
                         "note": "ملاحظة: قبل إعادة تعيين مقياس البطارية، تأكد من توصيل الكمبيوتر بطاقة التيار المتردد. ",
                         "resetLog": {
@@ -1266,6 +1285,55 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "منتج حاصل على اعتماد ENERGY STAR"
+                },
+                "dpm": {
+                    "title": "الطاقة",
+                    "subtitle": "إعدادات الطاقة",
+                    "description": "‏‫يمكّنك هذا القسم من التحقق من الإعدادات الافتراضية وتخصيص استخدام الطاقة ومخطط الطاقة وفقًا لاحتياجاتك.",
+                    "globalPowerSettings": {
+                        "title": "إعدادات الطاقة العمومية",
+                        "description": "ستتجاوز هذه الميزة إعدادات مخطط الطاقة أو استخدام الطاقة.",
+                        "powerButton": {
+                            "label": "زر الطاقة:",
+                            "items": {
+                                "doNothing": "لا شيء",
+                                "sleep": "السكون",
+                                "hibernate": "الإسبات",
+                                "shutDown": "إيقاف التشغيل",
+                                "turnOffTheDisplay": "إيقاف تشغيل الشاشة"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "تسجيل الدخول المطلوب:",
+                            "items": {
+                                "never": "أبدًا",
+                                "fromSleep": "عندما ينشط الكمبيوتر من وضع السكون"
+                            },
+                            "tip": "ملاحظة: ينطبق هذا فقط إذا تم تعيين كلمة مرور النظام."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "استخدام الطاقة",
+                        "description": "إذا كان النظام خاملاً:",
+                        "turnOffDisplay": "‏‫إيقاف تشغيل جهاز العرض بعد:",
+                        "turnOffHDD": "‏‫إيقاف تشغيل محرك القرص الثابت بعد‬:",
+                        "sleep": "السكون بعد:",
+                        "hibernate": "الإسبات بعد:",
+                        "items": {
+                            "never": "أبدًا",
+                            "minute": "دقيقة",
+                            "minutes": "دقائق",
+                            "hour": "ساعة",
+                            "hours": "ساعات"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "مخطط الطاقة",
+                        "description": "اختر مخطط طاقة للتحكم في أداء الكمبيوتر ودرجة حرارة النظام واستخدام الطاقة.",
+                        "currentPowerPlan": {
+                            "label": "المخطط الحالي"
+                        }
+                    }
                 },
                 "smartStandby": {
                     "title": "وضع الاستعداد الذكي",
@@ -1650,8 +1718,11 @@
                         "options": {
                             "option1": "يُرجى تحديد",
                             "option2": "افتح الموقع",
-                            "option3": "أدخل النص"
-                        }
+                            "option3": "أدخل النص",
+                            "option4": "Open applications or files",
+                            "option5": "Invoke key sequence"
+                        },
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function."
                     },
                     "tooltip": "المحتوى الذي يجب تعبئته",
                     "apply": {
@@ -1666,6 +1737,17 @@
                     "enterText": {
                         "title": "النص الذي يجب إدخاله",
                         "placeholder": "يرجى الكتابة هنا"
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles": {
+                        "applicationTitle": "You need to delete one app first",
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {
@@ -1901,7 +1983,7 @@
                 "heading": "الوسائط الذكية",
                 "title": "تشغيل الفيديو من دون لمس",
                 "desc": "ستعمل هذه الميزة على إيقاف الفيديو بشكل مؤقت عندما تغادر الكمبيوتر، وتستأنف الفيديو عند عودتك إليه.",
-                "tooltip": "لا تنطبق هذه الميزة على مشغلات فيديو الويب. تدعم مشغلات الفيديو المحلية الأكثر رواجًا، مثل Windows Media Player و5KPlayer وغيرها، هذه الميزة."
+                "tooltip": "لا تنطبق هذه الميزة على<br>مشغلات فيديو الويب.<br>المشغلات المعتمدة مذكورة على الشكل التالي:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
             },
             "superResolution": {
                 "heading": "الوسائط الذكية",
@@ -1939,7 +2021,8 @@
                     "point7": "حدد لغتك المطلوبة، اللغة المصدر واللغة الهدف.",
                     "point8": "حسب احتياجاتك، اضبط الإدخال الصوتي من السماعة أو من الميكروفون.",
                     "point9": "انقر فوق رمز الميكروفون لبدء التحدث",
-                    "closeText": "إغلاق"
+                    "closeText": "إغلاق",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "موافق",
@@ -3423,7 +3506,6 @@
     },
     "notification": {
         "menu": {
-            "privacy": "يمكنك الآن معرفة ما إذا كانت معلوماتك قد تعرضت للانتهاك أو ما إذا تم استخدامها من قِبل متتبعين عبر الإنترنت من دون علمك.",
             "security": "هل تعلم؟ حتى لو لم يكن لديك برامج للحماية من الفيروسات مثبتة على جهازك، فنحن نوفر مع ذلك حماية الأمان الأساسية لجهازك.",
             "connectedHomeSecurity": "احصل على مراقبة وتنبيهات في الوقت الحقيقي حول أمان شبكتك في المنزل. ستكون أول من يعرف ما إذا كان أحد أجهزتك الذكية يتعرض لهجوم أمني."
         }

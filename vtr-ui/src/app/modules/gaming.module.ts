@@ -9,7 +9,6 @@ import { PageLightingcustomizeComponent } from '../components/pages/page-lightin
 import { PageAutocloseComponent } from '../components/pages/page-autoclose/page-autoclose.component';
 import { UiMacrokeyPopupComponent } from '../components/ui/ui-macrokey-popup/ui-macrokey-popup.component';
 import { UiLightingProfileToggleComponent } from '../components/ui/ui-lighting-profile-toggle/ui-lighting-profile-toggle.component';
-import { UiBrightnessSliderComponent } from '../components/ui/ui-brightness-slider/ui-brightness-slider.component';
 import { UiLightingEffectComponent } from '../components/ui/ui-lighting-effect/ui-lighting-effect.component';
 import { UiLightingSingleColorComponent } from '../components/ui/ui-lighting-single-color/ui-lighting-single-color.component';
 import { UiMacrokeyCollapsibleContainerComponent } from '../components/ui/ui-macrokey-collapsible-container/ui-macrokey-collapsible-container.component';
@@ -17,16 +16,20 @@ import { UiColorWheelComponent } from '../components/ui/ui-color-wheel/ui-color-
 import { UiMacrokeyDetailsComponent } from '../components/ui/ui-macrokey-details/ui-macrokey-details.component';
 import { UiLightingProfileComponent } from '../components/ui/ui-lighting-profile/ui-lighting-profile.component';
 import { UiMacrokeyRecordedListComponent } from '../components/ui/ui-macrokey-recorded-list/ui-macrokey-recorded-list.component';
+import { UiColorPickerComponent } from '../components/ui/ui-color-picker/ui-color-picker.component';
+import { WidgetLightingDeskComponent } from '../components/widgets/widget-lighting-desk/widget-lighting-desk.component';
+import { WidgetLightingNotebookComponent } from '../components/widgets/widget-lighting-notebook/widget-lighting-notebook.component';
+import { UiLightingKeyboardLNBx50Component } from '../components/ui/ui-lighting-keyboard-lnbx50/ui-lighting-keyboard-lnbx50.component';
 import { WidgetMacrokeySettingsComponent } from '../components/widgets/widget-macrokey-settings/widget-macrokey-settings.component';
 import { SharedModule } from './shared.module';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { CommonUiModule } from './common/common-ui.module';
 import { CommonWidgetModule } from './common/common-widget.module';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { GamingRoutingModule } from '../modules/gaming-routing.module';
 import { WidgetAutocloseComponent } from '../components/widgets/widget-autoclose/widget-autoclose.component';
 import { ContainerCardModule } from '../components/container-card/container-card.module';
-import { MetricsModule } from '../directives/metrics.module';
+import { MetricsModule } from '../services/metric/metrics.module';
 import { WidgetOfflineModule } from '../components/widgets/widget-offline-info/widget-offline.module';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalTurnOnComponent } from '../components/modal/modal-autoclose/modal-turn-on/modal-turn-on.component';
@@ -37,7 +40,6 @@ import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 
 // Load Icons for Gaming
-import { library } from '@fortawesome/fontawesome-svg-core';
 import { faQuestionCircle } from '@fortawesome/free-regular-svg-icons/faQuestionCircle';
 import { faCog } from '@fortawesome/pro-light-svg-icons/faCog';
 import { faCheck } from '@fortawesome/pro-light-svg-icons/faCheck';
@@ -47,13 +49,6 @@ import { faArrowAltToTop } from '@fortawesome/pro-light-svg-icons/faArrowAltToTo
 import { faChevronDown } from '@fortawesome/pro-light-svg-icons/faChevronDown';
 import { FeedbackModule } from './feedback/feedback.module';
 
-library.add(faSpinner);
-library.add(faCog);
-library.add(faQuestionCircle);
-library.add(faCheck);
-library.add(faCheckCircle);
-library.add(faChevronDown);
-library.add(faArrowAltToTop);
 
 @NgModule({
 	declarations: [
@@ -62,7 +57,6 @@ library.add(faArrowAltToTop);
 		PageAutocloseComponent,
 		UiMacrokeyPopupComponent,
 		UiLightingProfileToggleComponent,
-		UiBrightnessSliderComponent,
 		UiLightingEffectComponent,
 		UiLightingSingleColorComponent,
 		UiMacrokeyCollapsibleContainerComponent,
@@ -70,6 +64,9 @@ library.add(faArrowAltToTop);
 		UiMacrokeyDetailsComponent,
 		UiLightingProfileComponent,
 		UiMacrokeyRecordedListComponent,
+		UiColorPickerComponent,
+		WidgetLightingDeskComponent,
+		WidgetLightingNotebookComponent,
 		WidgetMacrokeySettingsComponent,
 		WidgetAutocloseComponent,
 		ModalTurnOnComponent,
@@ -77,7 +74,8 @@ library.add(faArrowAltToTop);
 		WidgetNetworkboostComponent,
 		ModalAddAppsComponent,
 		NetworkboostAddAppsComponent,
-		NetworkboostTurnOnComponent
+		NetworkboostTurnOnComponent,
+		UiLightingKeyboardLNBx50Component
 	],
 	imports: [
 		CommonModule,
@@ -101,4 +99,14 @@ library.add(faArrowAltToTop);
 	schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
 	entryComponents: []
 })
-export class GamingModule {}
+export class GamingModule {
+	constructor(library: FaIconLibrary) {
+		library.addIcons(faSpinner);
+		library.addIcons(faCog);
+		library.addIcons(faQuestionCircle);
+		library.addIcons(faCheck);
+		library.addIcons(faCheckCircle);
+		library.addIcons(faChevronDown);
+		library.addIcons(faArrowAltToTop);
+	}
+}

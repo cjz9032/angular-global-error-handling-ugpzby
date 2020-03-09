@@ -42,6 +42,10 @@
 				font-size: 1.1rem;
 			}
 		}
+
+		.text-gray {
+			color: $grey_darker;
+		}
 	}
 
 	.group-delete-item {
@@ -185,6 +189,11 @@
 			border-width: 1rem;
 			border-color: $main;
 		}
+	}
+
+	.spinner-content .spinner-border {
+		width: 2.5rem;
+		height: 2.5rem;
 	}
 }
 

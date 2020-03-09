@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, EventEmitter, NgZone } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, EventEmitter, NgZone, AfterViewInit } from '@angular/core';
 import { CameraDetail, CameraSettingsResponse, CameraFeatureAccess, EyeCareModeResponse } from 'src/app/data-models/camera/camera-detail.model';
 import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
 import { Subscription, EMPTY, Subject } from 'rxjs';
@@ -22,7 +22,7 @@ import { EyeCareModeCapability } from 'src/app/data-models/device/eye-care-mode-
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { WhiteListCapability } from '../../../../../data-models/eye-care-mode/white-list-capability.interface';
 import { Md5 } from 'ts-md5';
-import {BatteryDetailService} from 'src/app/services/battery-detail/battery-detail.service';
+import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-display',
@@ -30,7 +30,7 @@ import {BatteryDetailService} from 'src/app/services/battery-detail/battery-deta
 	styleUrls: ['./subpage-device-settings-display.component.scss'],
 	changeDetection: ChangeDetectionStrategy.Default
 })
-export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy {
+export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy, AfterViewInit {
 	title = 'device.deviceSettings.displayCamera.title';
 	public dataSource: any;
 	public eyeCareDataSource: EyeCareMode;
@@ -215,6 +215,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 
 	ngOnInit() {
 		this.logger.debug('subpage-device-setting-display onInit');
+		this.commonService.checkPowerPageFlagAndHide();
 		this.initDataFromCache();
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
@@ -222,18 +223,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 		if (this.commonService.getLocalStorageValue(LocalStorageKey.EyeCareModeResetStatus) === 'true') {
 			this.showECMReset = true;
 		}
-		this.inWhiteList().then(isSupport => {
-			if (isSupport) {
-				this.initDisplayColorTempFromCache();
-				this.initEyeCareModeFromCache();
-				this.statusChangedLocationPermission();
-				this.initEyecaremodeSettings();
-				this.startEyeCareMonitor();
-			} else {
-				this.showECMReset = true;
-				this.resetEyecaremodeAllSettings();
-			}
-		});
+
 		this.cameraDetailSubscription = this.baseCameraDetail.cameraDetailObservable.subscribe(
 			cameraDetail => {
 				this.dataSource = cameraDetail;
@@ -257,6 +247,23 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 					document.getElementById('camera').scrollIntoView();
 				}, 500);
 			});
+	}
+
+	ngAfterViewInit() {
+		this.inWhiteList().then(isSupport => {
+			if (isSupport) {
+				this.initDisplayColorTempFromCache();
+				this.initEyeCareModeFromCache();
+				this.statusChangedLocationPermission();
+				this.initEyecaremodeSettings();
+				this.startEyeCareMonitor();
+				this.commonService.setLocalStorageValue(LocalStorageKey.EyeCareModeResetStatus, 'false');
+				this.showECMReset = false;
+			} else {
+				this.showECMReset = true;
+				this.resetEyecaremodeAllSettings();
+			}
+		});
 
 		this.isOnline = this.commonService.isOnline;
 		if (this.isOnline) {
@@ -340,7 +347,8 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 		this.getOLEDPowerControlCapability();
 		const machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 		if (machineType === 1) {
-			this.getPriorityControlCapability();
+			// commented below line to temporarily hide in current release
+			// this.getPriorityControlCapability();
 		} else {
 			this.displayPriorityModal.capability = false;
 			this.commonService.setLocalStorageValue(LocalStorageKey.PriorityControlCapability, false);
@@ -348,6 +356,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 	}
 
 	inWhiteList() {
+		// noinspection SpellCheckingInspection
 		const whitelist = [
 			'40346638a8da4aa73c765af43a709673',
 			'a8c959c9d2f5f73734de9fb94a7065a2',
@@ -368,8 +377,11 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 			'671f1454b4101503f00ff4f786d44fa0',
 			'479a92a1dccaf9467d168ede8848faba',
 		];
-		return this.deviceService.getDeviceInfo()
-			.then(res => whitelist.includes(Md5.hashStr(res.bios.substr(0, 5)) as string));
+		return this.deviceService.getMachineInfo()
+			.then(res => res.hasOwnProperty('biosVersion')
+				&& typeof res.biosVersion === 'string'
+				&& res.biosVersion.length >= 5
+				&& whitelist.includes(Md5.hashStr(res.biosVersion.substr(0, 5)) as string));
 	}
 
 	async initCameraSection() {
@@ -606,7 +618,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 							// 	this.showECMReset = true;
 							// 	this.resetEyecaremodeAllSettings();
 							// 	break;
-								// @@IMPORTANT@@ Do NOT correct this typos !!!!  This message is from plugins
+							// @@IMPORTANT@@ Do NOT correct this typos !!!!  This message is from plugins
 							case 'NotAvaliable':
 								this.enableSlider = false;
 								this.enableColorTempSlider = false;
@@ -755,6 +767,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 		}
 	}
 	public onSunsetToSunrise($featureStatus: any) {
+		this.sunsetToSunriseModeStatus.status = $featureStatus.status
 		try {
 			this.logger.debug('sunset to sunrise event', $featureStatus);
 			if (this.displayService.isShellAvailable) {
@@ -770,10 +783,10 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 							// this.isEyeCareMode = this.eyeCareModeStatus.status;
 							this.enableSlider = response.eyecaremodeState;
 							this.commonService.setSessionStorageValue(SessionStorageKey.DashboardEyeCareMode, this.eyeCareModeStatus);
-
 							this.eyeCareModeCache.toggleStatus = this.eyeCareModeStatus.status;
 							this.eyeCareModeCache.enableSlider = this.enableSlider;
 							this.eyeCareModeCache.eyeCareDataSource = this.eyeCareDataSource;
+							this.eyeCareModeCache.sunsetToSunriseStatus.status = $featureStatus.status;
 							this.commonService.setLocalStorageValue(LocalStorageKey.DisplayEyeCareModeCapability, this.eyeCareModeCache);
 						}
 
@@ -909,7 +922,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 				.getCameraPrivacyModeState()
 				.then((featureStatus: FeatureStatus) => {
 					this.logger.debug('cameraPrivacyModeStatus.then', featureStatus);
-					this.cameraPrivacyModeStatus = {...this.cameraPrivacyModeStatus, ...featureStatus};
+					this.cameraPrivacyModeStatus = { ...this.cameraPrivacyModeStatus, ...featureStatus };
 					this.cameraPrivacyModeStatus.isLoading = false;
 					this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraPrivacyModeStatus);
 				})
@@ -924,7 +937,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 	startMonitorHandlerForCamera(value: FeatureStatus) {
 		this.logger.debug('startMonitorHandlerForCamera', value);
 		this.cameraPrivacyModeStatus.isLoading = false;
-		this.cameraPrivacyModeStatus = {...this.cameraPrivacyModeStatus, ...value};
+		this.cameraPrivacyModeStatus = { ...this.cameraPrivacyModeStatus, ...value };
 		// this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, this.cameraPrivacyModeStatus);
 		this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraPrivacyModeStatus);
 	}
@@ -1093,7 +1106,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 
 	public isDisabledCameraBlur(): boolean {
 		if (this.batteryService.gaugePercent < 23 && !this.batteryService.isAcAttached) {
-			this.onCameraBackgroundBlur({switchValue: false});
+			this.onCameraBackgroundBlur({ switchValue: false });
 			return true;
 		}
 		return false;
@@ -1305,13 +1318,13 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 			this.logger.error('SubpageDeviceSettingsDisplayComponent:getPriorityControlCapability', error.message);
 			return EMPTY;
 		}
-	 }
+	}
 
-	 public removeObjByName(array: any[], name: string) {
+	public removeObjByName(array: any[], name: string) {
 		return array.filter(e => e.name !== name);
 	}
 
-	 public getPriorityControlSetting() {
+	public getPriorityControlSetting() {
 		try {
 			if (this.displayService.isShellAvailable) {
 				this.displayService.getPriorityControlSetting()
@@ -1347,7 +1360,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy 
 			this.logger.error('SubpageDeviceSettingsDisplayComponent:getPriorityControlCapability', error.message);
 			return EMPTY;
 		}
- 	}
+	}
 
 	//#endregion
 

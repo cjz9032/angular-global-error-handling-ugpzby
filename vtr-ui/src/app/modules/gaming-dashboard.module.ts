@@ -13,7 +13,7 @@ import { GamingDashboardRoutingModule } from './gaming-dashboard-routing.module'
 import { MockService } from '../services/mock/mock.service';
 import { TranslateModule, TranslateLoader, MissingTranslationHandler } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 
 import { GamingRoutingModule } from './gaming-routing.module';
 import { WidgetLegionEdgeComponent } from '../components/widgets/widget-legion-edge/widget-legion-edge.component';
@@ -23,8 +23,8 @@ import { WidgetSystemMonitorComponent } from '../components/widgets/widget-syste
 import { WidgetQuicksettingsListComponent } from '../components/widgets/widget-quicksettings-list/widget-quicksettings-list.component';
 import { WidgetLightingComponent } from '../components/widgets/widget-lighting/widget-lighting.component';
 import { ContainerCardModule } from '../components/container-card/container-card.module';
-import { MetricsModule } from '../directives/metrics.module';
-import { library } from '@fortawesome/fontawesome-svg-core';
+import { MetricsModule } from '../services/metric/metrics.module';
+
 import { faQuestionCircle } from '@fortawesome/pro-light-svg-icons/faQuestionCircle';
 import { faKeyboard } from '@fortawesome/pro-light-svg-icons/faKeyboard';
 import { faWindows } from '@fortawesome/free-brands-svg-icons';
@@ -42,16 +42,11 @@ import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.mod
 import { ModalGamingLightingComponent } from '../components/modal/modal-gaming-lighting/modal-gaming-lighting.component';
 import { MissingTranslationDefaultHandler } from '../i18n/handler/missing-tranlsation-default-handler';
 import { WebpackTranslateLoader } from '../i18n/loader/webpack-translate-loader.loader';
+import { ModalGamingPromptComponent } from '../components/modal/modal-gaming-prompt/modal-gaming-prompt.component';
+import { ModalGamingAdvancedOCComponent } from '../components/modal/modal-gaming-advanced-oc/modal-gaming-advanced-oc.component';
+import { ModalGamingThermalMode2Component } from '../components/modal/modal-gaming-thermal-mode2/modal-gaming-thermal-mode2.component';
+import { GamingOCService } from '../services/gaming/gaming-OC/gaming-oc.service';
 
-library.add(faKeyboard);
-library.add(faQuestionCircle);
-library.add(faWindows);
-library.add(faChevronDown);
-library.add(faDesktopAlt);
-library.add(faBatteryBolt);
-library.add(faArrowAltToTop);
-library.add(faCog);
-library.add(faCheck);
 
 @NgModule({
 	declarations: [
@@ -62,7 +57,10 @@ library.add(faCheck);
 		WidgetSystemToolsComponent,
 		WidgetSystemMonitorComponent,
 		WidgetQuicksettingsListComponent,
-		WidgetLightingComponent
+		WidgetLightingComponent,
+		ModalGamingPromptComponent,
+		ModalGamingAdvancedOCComponent,
+		ModalGamingThermalMode2Component
 	],
 	imports: [
 		CommonModule,
@@ -91,7 +89,7 @@ library.add(faCheck);
 		PageLayoutModule
 	],
 	exports: [TranslateModule, ContainerCardModule, MetricsModule, WidgetOfflineModule],
-	providers: [MockService, DialogService],
+	providers: [MockService, DialogService,GamingOCService],
 	entryComponents: [
 		WidgetLegionEdgeComponent,
 		ModalGamingLegionedgeComponent,
@@ -99,8 +97,23 @@ library.add(faCheck);
 		WidgetSystemToolsComponent,
 		WidgetSystemMonitorComponent,
 		WidgetQuicksettingsListComponent,
-		WidgetLightingComponent
+		WidgetLightingComponent,
+		ModalGamingPromptComponent,
+		ModalGamingAdvancedOCComponent,
+		ModalGamingThermalMode2Component
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })
-export class GamingDashboardModule { }
+export class GamingDashboardModule {
+	constructor(library: FaIconLibrary) {
+		library.addIcons(faKeyboard);
+		library.addIcons(faQuestionCircle);
+		library.addIcons(faWindows);
+		library.addIcons(faChevronDown);
+		library.addIcons(faDesktopAlt);
+		library.addIcons(faBatteryBolt);
+		library.addIcons(faArrowAltToTop);
+		library.addIcons(faCog);
+		library.addIcons(faCheck);
+	}
+}

@@ -19,6 +19,7 @@ export class SmartAssistService {
 
 	public isShellAvailable = false;
 	public isAPSavailable = false;
+	private shellVersion: string;
 
 	constructor(shellService: VantageShellService) {
 		this.intelligentSensing = shellService.getIntelligentSensing();
@@ -26,6 +27,7 @@ export class SmartAssistService {
 		this.activeProtectionSystem = shellService.getActiveProtectionSystem(); // getting APS Object from //vantage-shell.service
 		this.lenovoVoice = shellService.getLenovoVoice();
 		this.superResolution = shellService.getSuperResolution();
+		// this.shellVersion = shellService.getShellVersion();
 
 		this.activeProtectionSystem ? this.isAPSavailable = true : this.isAPSavailable = false;
 		if (this.intelligentSensing && this.intelligentMedia && this.lenovoVoice && this.superResolution) {
@@ -292,14 +294,21 @@ export class SmartAssistService {
 	}
 
 	/**
-	 * if value returned is true then show note
+	 * if value returned is true then show note.
+	 * API Shell 3.1.6 or older version shell
 	 */
 	public getAutoScreenOffNoteStatus(): Promise<boolean> {
 		if (this.isShellAvailable) {
+			// TODO: compare shell version and call respective API when JS Bridge is ready
+			// this.shellVersion = this.she.getShellVersion();
 			return this.intelligentSensing.GetWalkingCautionVisibility();
+
+			// TODO: If Shell 3.2 or newer version shell
+			// return this.intelligentSensing.GetWalkingCautionVisibilityByNever();
 		}
 		return undefined;
 	}
+
 
 	public getReadingOrBrowsingVisibility(): Promise<boolean> {
 		if (this.isShellAvailable) {
@@ -428,18 +437,18 @@ export class SmartAssistService {
 	}
 	// SET Snooze time
 	public setSnoozeTime(value: string): Promise<boolean> {
-        if (this.isAPSavailable) {
+		if (this.isAPSavailable) {
 			return this.activeProtectionSystem.setSnoozeTime(value);
 		}
-        return undefined;
-    }
+		return undefined;
+	}
 	// Suspend APS
 	public sendSnoozeCommand(value: string): Promise<boolean> {
-        if (this.isAPSavailable) {
+		if (this.isAPSavailable) {
 			return this.activeProtectionSystem.sendSnoozeCommand(value);
 		}
-        return undefined;
-    }
+		return undefined;
+	}
 	//  Get Pen Capability
 	public getPenCapability(): Promise<boolean> {
 		if (this.isAPSavailable) {

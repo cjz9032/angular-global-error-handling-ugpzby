@@ -6,7 +6,7 @@ import { HardwareDashboardRoutingModule } from './hardware-dashboard-routing.mod
 import { TranslationModule } from '../translation.module';
 import { MockService } from 'src/app/services/mock/mock.service';
 import { PageDashboardComponent } from 'src/app/components/pages/page-dashboard/page-dashboard.component';
-import { MetricsModule } from 'src/app/directives/metrics.module';
+import { MetricsModule } from 'src/app/services/metric/metrics.module';
 import { ContainerCardModule } from 'src/app/components/container-card/container-card.module';
 import { UiButtonModule } from 'src/app/components/ui/ui-button/ui-button.module';
 import { WidgetQuicksettingsComponent } from 'src/app/components/widgets/widget-quicksettings/widget-quicksettings.component';
@@ -17,8 +17,7 @@ import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-i
 import { WidgetCarouselModule } from 'src/app/components/widgets/widget-carousel/widget-carousel.module';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
 import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons/faExclamationCircle';
 import { faCheckCircle } from '@fortawesome/pro-light-svg-icons/faCheckCircle';
@@ -26,12 +25,14 @@ import { CommonPipeModule } from '../common/common-pipe.module';
 import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 import { WidgetDashboardWarrantyComponent } from 'src/app/components/widgets/widget-dashboard-warranty/widget-dashboard-warranty.component';
 import { FeedbackModule } from '../feedback/feedback.module';
+import { WidgetSystemUpdateComponent } from 'src/app/components/widgets/widget-system-update/widget-system-update.component';
 
 @NgModule({
 	declarations: [
 		PageDashboardComponent,
 		WidgetSwitchIconComponent,
 		WidgetQuicksettingsComponent,
+		WidgetSystemUpdateComponent,
 		WidgetDashboardWarrantyComponent
 	],
 	imports: [
@@ -74,9 +75,9 @@ import { FeedbackModule } from '../feedback/feedback.module';
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })
 export class HardwareDashboardModule {
-	constructor() {
-		library.add(faTimes);
-		library.add(faExclamationCircle);
-		library.add(faCheckCircle);
+	constructor(library: FaIconLibrary) {
+		library.addIcons(faTimes);
+		library.addIcons(faExclamationCircle);
+		library.addIcons(faCheckCircle);
 	}
 }

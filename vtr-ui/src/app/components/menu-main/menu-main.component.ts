@@ -35,6 +35,7 @@ import { BacklightService } from '../pages/page-device-settings/children/subpage
 import { StringBooleanEnum } from '../../data-models/common/common.interface';
 import { BacklightLevelEnum } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.enum';
 import { LenovoIdStatus } from 'src/app/enums/lenovo-id-key.enum';
+import { FeedbackService } from 'src/app/services/feedback/feedback.service';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -113,6 +114,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		private newFeatureTipService: NewFeatureTipService,
 		private viewContainerRef: ViewContainerRef,
 		public cardService: CardService,
+		private feedbackService: FeedbackService,
 		private backlightService: BacklightService
 	) {
 		newFeatureTipService.viewContainer = this.viewContainerRef;
@@ -151,7 +153,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	private collectPreloadAssets(menu: Array<any>) : string[] {
+	private collectPreloadAssets(menu: Array<any>): string[] {
 		let assets = [];
 		menu.forEach(item => {
 			if (!item.hide && item.pre) {
@@ -161,7 +163,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			if (item.subitems.length > 0) {
 				assets = assets.concat(this.collectPreloadAssets(item.subitems));
 			}
-		})
+		});
 
 		return assets;
 	}
@@ -308,7 +310,25 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 	toggleMenu(event) {
 		this.updateSearchBoxState(false);
 		this.showMenu = !this.showMenu;
+		this.colorPickerFun();
 		event.stopPropagation();
+	}
+
+	public colorPickerFun() {
+		if (this.showMenu) {
+			if (document.getElementById('colorBtn')) {
+				document.getElementById('colorBtn').addEventListener('click', (event) => {
+					this.showMenu = false;
+				});
+			}
+			for (let i = 0; i < 4; i++) {
+				if (document.getElementById('keyboard-area' + i)) {
+					document.getElementById('keyboard-area' + i).addEventListener('click', (event) => {
+						this.showMenu = false;
+					});
+				}
+			}
+		}
 	}
 
 	onKeyPress($event) {
@@ -476,5 +496,10 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 	openModernPreloadModal() {
 		this.showMenu = false;
 		this.dialogService.openModernPreloadModal();
+	}
+
+	openFeedbackModal() {
+		this.showMenu = false;
+		this.feedbackService.openFeedbackModal();
 	}
 }

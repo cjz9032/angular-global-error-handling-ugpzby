@@ -11,7 +11,6 @@ import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
 import { TranslateService } from '@ngx-translate/core';
 import { WindowsHelloService } from 'src/app/services/security/windowsHello.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
-import { AntivirusErrorHandle } from 'src/app/data-models/security-advisor/antivirus-error-handle.model';
 import { UACWidgetItemViewModel } from 'src/app/data-models/security-advisor/widget-security-status/uac-widget-item.model';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { DeviceService } from 'src/app/services/device/device.service';
@@ -26,7 +25,7 @@ export class WidgetSecurityStatusComponent implements OnInit {
 	@Input() securityAdvisor: SecurityAdvisor;
 	items: Array<WidgetItem>;
 	region: string;
-	pluginSupport = true;
+	pluginSupport: boolean;
 
 	@Input() linkId: string;
 	constructor(
@@ -50,6 +49,7 @@ export class WidgetSecurityStatusComponent implements OnInit {
 			this.region = 'us';
 			this.showVpn();
 		});
+
 		this.hypSettings.getFeatureSetting('SecurityAdvisor').then((result) => {
 			this.pluginSupport = result === 'true';
 		}).catch((e) => {
@@ -57,6 +57,7 @@ export class WidgetSecurityStatusComponent implements OnInit {
 		}).finally(() => {
 			this.showUac();
 		});
+
 		const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
 		if (cacheShowWindowsHello) {
 			this.items.splice(this.items.length - 1, 0, new WindowsHelloWidgetItem(this.securityAdvisor.windowsHello, this.commonService, this.translateService));
@@ -85,8 +86,6 @@ export class WidgetSecurityStatusComponent implements OnInit {
 		wifiSecurity.on(EventTypes.wsIsSupportWifiEvent, () => {
 			this.showWifiSecurityItem();
 		});
-		const antivirus = new AntivirusErrorHandle(this.securityAdvisor.antivirus);
-		antivirus.refreshAntivirus();
 	}
 
 	showWindowsHelloItem() {
@@ -119,10 +118,8 @@ export class WidgetSecurityStatusComponent implements OnInit {
 
 	showUac() {
 		const uacItem = this.items.find(item => item.id.startsWith('sa-widget-lnk-uac'));
-		if (!this.pluginSupport) {
-			if (uacItem) {
-				this.items = this.items.filter(item => !item.id.startsWith('sa-widget-lnk-uac'));
-			}
+		if (!this.pluginSupport && uacItem) {
+			this.items = this.items.filter(item => !item.id.startsWith('sa-widget-lnk-uac'));
 		}
 	}
 

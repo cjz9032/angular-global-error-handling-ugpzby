@@ -1,163 +1,261 @@
-<li class="pt-3 user-defined-key-block"
-	*ngIf="hasUDKCapability && machineType === 1">
-	<vtr-ui-row-switch [title]="'device.deviceSettings.inputAccessories.userDefinedKey.title' | translate"
-		componentName="User defined key"
-		[caption]="'device.deviceSettings.inputAccessories.userDefinedKey.caption' | translate"
-		[leftIcon]="['icomoon', 'icomoon-star']"
-		[showChildContent]="true"
-		[theme]="'white'"
-		[tooltipText]="'device.deviceSettings.inputAccessories.userDefinedKey.tooltip' | translate"
-		[switchId]="'ds-ip-userdefined-key'">
-		<div class="row">
-			<div class="col-12 pt-3 pl-5">
-				<div class="row">
-					<div class="col-auto pl-0">
-						<img class="img-fluid f12-img"
-							src="assets/images/F12-key.PNG">
-						<!-- <p class="pressf12"
+<li class="pt-3 user-defined-key-block" *ngIf="hasUDKCapability && machineType === 1">
+    <vtr-ui-row-switch [title]="'device.deviceSettings.inputAccessories.userDefinedKey.title' | translate"
+        componentName="User defined key"
+        [caption]="'device.deviceSettings.inputAccessories.userDefinedKey.caption' | translate"
+        [leftIcon]="['icomoon', 'icomoon-star']" [showChildContent]="true" [theme]="'white'"
+        [tooltipText]="'device.deviceSettings.inputAccessories.userDefinedKey.tooltip' | translate"
+        [switchId]="'ds-ip-userdefined-key'">
+        <div class="row">
+            <div class="col-12 pt-3 pl-5">
+                <div class="row">
+                    <div class="col-auto pl-0">
+                        <img class="img-fluid f12-img" role="text" id="f12-key" attr.aria-label="f12-key" src="assets/images/F12-key.PNG">
+                        <!-- <p class="pressf12"
 							style="text-align: center">press F12</p> -->
-					</div>
-				</div>
-				<div class="row">
-					<div class="inputSection">
-						<form name="udkBack"
-							validate>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="inputSection">
+                        <form name="udkBack" validate>
 
-							<div class="col">
-								<div class="btn-group btn-block dropdown-left"
-									ngbDropdown #userDefineDrop="ngbDropdown"
-									placement="bottom">
-									<button [ngClass]="['btn','btn-outline-shadow']"
-										ngbDropdownToggle
-										type="button"
-										id="ip-userdefinedkey-dropdown-btn"
-										attr.aria-label="ip-userdefinedkey-dropdown-btn">
-										<div class="row d-flex justify-content-between">
-											<div class="col-11 col-sm-10 pl-1 pr-0">
-												<div class="select-title"
-													id="ip-userdefinedkey-dropdown-title"
-													attr.aria-label="ip-userdefinedkey-dropdown-title">
-													{{'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.title' | translate}}
-												</div>
+                            <div class="col">
+                                <div class="btn-group btn-block dropdown-left" ngbDropdown #userDefineDrop="ngbDropdown"
+                                    placement="bottom">
+                                    <button [ngClass]="['btn','btn-outline-shadow']" ngbDropdownToggle type="button"
+                                        id="ip-userdefinedkey-dropdown-btn"
+                                        attr.aria-label="ip-userdefinedkey-dropdown-btn">
+                                        <div class="row d-flex justify-content-between">
+                                            <div class="col-11 col-sm-10 pl-1 pr-0">
+                                                <div class="select-title" id="ip-userdefinedkey-dropdown-title"
+                                                    attr.aria-label="ip-userdefinedkey-dropdown-title">
+                                                    {{'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.title' | translate}}
+                                                </div>
 
-												<div class="select-text text-left"
-													id="userdefinedkey-selected-text"
-													attr.aria-label="userdefinedkey-selected-text">
-													{{selectedValue.title | translate}}
-												</div>
-											</div>
-											<div class="col-1 pl-0 pr-1">
-												<div class="dropdown-icon">
-													<fa-icon [icon]="['fas', 'chevron-down']">
-													</fa-icon>
-												</div>
-											</div>
-										</div>
-									</button>
-									<div ngbDropdownMenu
-										aria-labelledby="">
-										<a [ngClass]="['dropdown-item']"
-											*ngFor="let item of userDefinedKeyOptions, let i=index"
-											id="userdefinedkey-{{i}}"
-											attr.aria-label="userdefinedkey-{{item.title | translate}}"
-											tabindex="0"
-											(keydown.enter)="onChange(item); userDefineDrop.close()"
-											(keydown)="checkDropDown(userDefineDrop, i, $event)"
-											(click)="onChange(item)">{{item.title | translate}}
-										</a>
-									</div>
-								</div>
-							</div>
+                                                <div class="select-text text-left" id="userdefinedkey-selected-text"
+                                                    attr.aria-label="userdefinedkey-selected-text">
+                                                    {{selectedValue.title | translate}}
+                                                </div>
+                                            </div>
+                                            <div class="col-1 pl-0 pr-1">
+                                                <div class="dropdown-icon">
+                                                    <fa-icon [icon]="['fas', 'chevron-down']">
+                                                    </fa-icon>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </button>
+                                    <div ngbDropdownMenu aria-labelledby="">
+                                        <a [ngClass]="['dropdown-item']"
+                                            *ngFor="let item of userDefinedKeyOptions, let i=index"
+                                            id="userdefinedkey-{{i}}"
+                                            attr.aria-label="userdefinedkey-{{item.title | translate}}" tabindex="0"
+                                            (keydown.enter)="onChange(item); userDefineDrop.close()"
+                                            (keydown)="checkDropDown(userDefineDrop, i, $event)"
+                                            (click)="onChange(item)">{{item.title | translate}}
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
 
-							<div class="col"
-								*ngIf="selectedValue.value == 1 && !hideApplyForDefault">
-							</div>
-							<div class="col"
-								*ngIf="selectedValue.value == 2">
-								<form #form1="ngForm"
-									novalidate
-									(ngSubmit)="udkSubmit(2)">
-									<div class="row no-gutters">
-										<div class="input-group mt-3">
-											<label id="ip-webseiteurl"
-												attr.aria-label="ip-webseiteurl">{{'device.deviceSettings.inputAccessories.userDefinedKey.website.url' | translate}}</label>
-											<textarea class="form-control"
-												spellcheck="false"
-												[(ngModel)]="url"
-												[placeholder]="'device.deviceSettings.inputAccessories.userDefinedKey.website.placeholder' | translate"
-												name="url"
-												required></textarea>
-										</div>
-										<div class="col-12">
-											<div *ngIf="isUDFSetSuccessVisible"
-												class="select-text pt-3 udf-set-success">
-												{{'device.deviceSettings.inputAccessories.userDefinedKey.website.successMessage'| translate}}
-											</div>
-											<div *ngIf="isUDFSetFailedVisible"
-												class="select-text pt-3 udf-set-failed">
-												{{'device.deviceSettings.inputAccessories.userDefinedKey.website.invalidURLMessage'
+                            <div class="col" *ngIf="selectedValue.value == 1 && !hideApplyForDefault">
+                            </div>
+                            <div class="col" *ngIf="selectedValue.value == 2">
+                                <form #form1="ngForm" novalidate (ngSubmit)="udkSubmit(2)">
+                                    <div class="row no-gutters">
+                                        <div class="input-group mt-3">
+                                            <label id="ip-webseiteurl"
+                                                attr.aria-label="ip-webseiteurl">{{'device.deviceSettings.inputAccessories.userDefinedKey.website.url' | translate}}</label>
+                                            <textarea class="form-control" spellcheck="false" id="ip-webseiteurl-text"
+                                                attr.aria-label="ip-webseiteurl-text" [(ngModel)]="url"
+                                                [placeholder]="'device.deviceSettings.inputAccessories.userDefinedKey.website.placeholder' | translate"
+                                                name="url" required></textarea>
+                                        </div>
+                                        <div class="col-12">
+                                            <div *ngIf="isUDFSetSuccessVisible"
+                                                class="select-text pt-3 udf-set-success"
+                                                id="userDefinedKey.website.successMessage"
+                                                attr.aria-label="userDefinedKey.website.successMessage"
+                                                role="text">
+                                                {{'device.deviceSettings.inputAccessories.userDefinedKey.website.successMessage'| translate}}
+                                            </div>
+                                            <div *ngIf="isUDFSetFailedVisible" id="userDefinedKey.website.invalidURLMessage" attr.aria-label="userDefinedKey.website.invalidURLMessage" role="text" class="select-text pt-3 udf-set-failed">
+                                                {{'device.deviceSettings.inputAccessories.userDefinedKey.website.invalidURLMessage'
 										| translate}}
-											</div>
-											<button type="submit"
-												class="button"
-												title="{{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}"
-												id="ip-userdefined-key-applybtn"
-												attr.aria-label="ip-userdefined-key-applybtn">
-												{{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}
-											</button>
-										</div>
-									</div>
-								</form>
-							</div>
+                                            </div>
+                                            <button type="submit" class="button"
+                                                title="{{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}"
+                                                id="ip-userdefined-key-applybtn"
+                                                role="text"
+                                                attr.aria-label="ip-userdefined-key-applybtn">
+                                                {{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
 
 
-							<div class="col"
-								*ngIf="selectedValue.value == 3">
-								<div class="note align-items-center"
-									id="ip-accesories-note"
-									attr.aria-label="ip-accesories-note">
-									{{'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.note' | translate}}
-								</div>
-							</div>
+                            <div class="col" *ngIf="selectedValue.value == 3">
+                                <div class="note align-items-center" id="inputAccessories.userDefinedKey.dropDown.note"
+                                    attr.aria-label="inputAccessories.userDefinedKey.dropDown.note" role="text">
+                                    {{'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.note' | translate}}
+                                </div>
+                            </div>
 
-							<div class="col"
-								*ngIf="selectedValue.value == 3">
+                            <div class="col" *ngIf="selectedValue.value == 3">
 
-								<form #form2="ngForm"
-									novalidate
-									(ngSubmit)="udkSubmit(3)">
-									<div class="row no-gutters">
-										<div class="input-group mt-3">
-											<label id="ip-texttobe-entered"
-												attr.aria-label="ip-texttobe-entered">{{'device.deviceSettings.inputAccessories.userDefinedKey.enterText.title' | translate}}</label>
-											<textarea class="form-control"
-												[(ngModel)]="description"
-												name="description"
-												spellcheck="false"
-												[placeholder]="'device.deviceSettings.inputAccessories.userDefinedKey.enterText.placeholder' | translate"
-												(keydown)="onKeydown($event)"
-												required></textarea>
-										</div>
-										<div class="col-12">
-											<div *ngIf="isUDFSetSuccessVisible"
-												class="select-text pt-3 udf-set-success">
-												{{'device.deviceSettings.inputAccessories.userDefinedKey.website.successMessage' | translate}}
-											</div>
-											<button id="ip-userdefined-key-applybtn"
-												attr.aria-label="ip-userdefined-key-applybtn"
-												type="submit"
-												class="button"
-												title="{{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}">
-												{{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}
-											</button>
-										</div>
-									</div>
-								</form>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</vtr-ui-row-switch>
+                                <form #form2="ngForm" novalidate (ngSubmit)="udkSubmit(3)">
+                                    <div class="row no-gutters">
+                                        <div class="input-group mt-3">
+                                            <label id="ip-texttobe-entered"
+                                                attr.aria-label="ip-texttobe-entered">{{'device.deviceSettings.inputAccessories.userDefinedKey.enterText.title' | translate}}</label>
+                                            <textarea class="form-control" [(ngModel)]="description" name="description"
+                                                id="ip-text-entered" attr.aria-label="ip-text-entered"
+                                                spellcheck="false"
+                                                [placeholder]="'device.deviceSettings.inputAccessories.userDefinedKey.enterText.placeholder' | translate"
+                                                (keydown)="onKeydown($event)" required></textarea>
+                                        </div>
+                                        <div class="col-12">
+                                            <div *ngIf="isUDFSetSuccessVisible"
+                                                class="select-text pt-3 udf-set-success"
+                                                id="userDefinedKey.website.successMessage"
+                                                role="text"
+                                                attr.aria-label="userDefinedKey.website.successMessage">
+                                                {{'device.deviceSettings.inputAccessories.userDefinedKey.website.successMessage' | translate}}
+                                            </div>
+                                            <button id="ip-userdefined-key-applybtn"
+                                                attr.aria-label="ip-userdefined-key-applybtn" type="submit"
+                                                class="button"
+                                                role="text"
+                                                title="{{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}">
+                                                {{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+<!--                             
+                            <div class="col" *ngIf="selectedValue.value == 4">
+                                <br>
+                                <form #form1="ngForm" novalidate>
+                                    <div class="row">
+                                        <div class="col title">{{'device.deviceSettings.inputAccessories.userDefinedKey.openapplicationsorfiles.applicationsToOpen' | translate}}</div>
+                                        <div class="col-auto px-0">
+                                            <button *ngIf="applicationList.length<6 && applicationList.length"
+                                                id="add-application" attr.aria-label="add-application"
+                                                (click)="udkSubmit(4);" class="title add">{{'device.deviceSettings.inputAccessories.userDefinedKey.openapplicationsorfiles.add' | translate}}</button>
+                                            <span *ngIf="applicationList.length>=6" tabindex="0" data-toggle="tooltip"
+                                                title="{{'device.deviceSettings.inputAccessories.userDefinedKey.openapplicationsorfiles.applicationTitle' | translate}}">
+                                                <button *ngIf=applicationList.length (click)="udkSubmit(4);"
+                                                    id="add-application" attr.aria-label="add-application"
+                                                    [disabled]="applicationList.length>=6"
+                                                    class="title add">{{'device.deviceSettings.inputAccessories.userDefinedKey.openapplicationsorfiles.add' | translate}}</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="row no-gutters">
+                                        <div class="col mt-3">
+                                            <div class="open-apps-block" (click)="udkSubmit(4);"
+                                                *ngIf=!applicationList.length>
+                                                <fa-icon [icon]="['fal', 'plus-square']">
+                                                </fa-icon>
+                                            </div>
+                                            <div class="open-apps-block"
+                                                *ngFor="let application of applicationList; index as i">
+                                                <div
+                                                    class="d-flex justify-content-between align-items-center p-4 apps-list">
+                                                    <div class="app-name">
+                                                        {{application.value}}
+                                                    </div>
+                                                    <div class="app-name delete-app" id="delete-app-{{i+1}}"
+                                                        attr-aria-label="delete-app-{{i+1}}"
+                                                        (click)="deleteApplicationOrFile('0',application.key,application.value,i,'APPLICATIONS');">
+                                                        {{'hardwareScan.scheduledScan.delete'| translate}}</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <br>
+                                <form #form1="ngForm" novalidate>
+                                    <div class="row">
+                                        <div class="col title">{{'device.deviceSettings.inputAccessories.userDefinedKey.openapplicationsorfiles.filesToOpen' | translate}}</div>
+                                        <div class="col-auto px-0">
+                                            <button *ngIf="fileList.length<6 && fileList.length" (click)="udkSubmit(5);"
+                                                id="add-file" attr.aria-label="add-file" class="title add">{{'device.deviceSettings.inputAccessories.userDefinedKey.openapplicationsorfiles.add' | translate}}</button>
+                                            <span *ngIf="fileList.length>=6" class="d-inline-block disabled-tooltip"
+                                                tabindex="0" data-toggle="tooltip"
+                                                title="{{'device.deviceSettings.inputAccessories.userDefinedKey.openapplicationsorfiles.fileTitle' | translate}}">
+                                                <button *ngIf=fileList.length (click)="udkSubmit(5);" id="add-file"
+                                                    attr.aria-label="add-file" [disabled]="fileList.length>=6"
+                                                    class="title add">{{'device.deviceSettings.inputAccessories.userDefinedKey.openapplicationsorfiles.add' | translate}}</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="row no-gutters">
+                                        <div class="col mt-3">
+                                            <div class="open-apps-block" (click)="udkSubmit(5);" *ngIf=!fileList.length>
+                                                <fa-icon [icon]="['fal', 'plus-square']">
+                                                </fa-icon>
+                                            </div>
+                                            <div class="open-apps-block" *ngFor="let file of fileList; index as i">
+                                                <div
+                                                    class="d-flex justify-content-between align-items-center p-4 apps-list">
+                                                    <div class="app-name">
+                                                        {{file.value}}
+                                                    </div>
+                                                    <div class="app-name delete-app" id="delete-file-{{i+1}}"
+                                                        attr-aria-label="delete-file-{{i+1}}"
+                                                        (click)="deleteApplicationOrFile('0',file.key,file.value,i,'FILES');">
+                                                        {{'hardwareScan.scheduledScan.delete'| translate}}</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col" *ngIf="selectedValue.value == 5">
+                                <div class="note align-items-center" id="ip-accesories-note"
+                                    attr.aria-label="ip-accesories-note">
+                                    {{'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.invokeKeySequenceNote' | translate}}
+                                </div>
+                            </div>
+                            <div class="col" *ngIf="selectedValue.value == 5">
+                                <form #form2="ngForm" novalidate (ngSubmit)="udkSubmit(6)">
+                                    <div class="row no-gutters">
+                                        <div class="input-group mt-3">
+                                            <label id="ip-texttobe-entered-keysequence"
+                                                attr.aria-label="ip-texttobe-entered-keysequence">{{'device.deviceSettings.inputAccessories.userDefinedKey.invokeKeySequence.title' | translate}}</label>
+                                            <div class="txt-ara-box">
+                                                <textarea class="form-control" name="invoke-key-value"
+                                                    spellcheck="false" id="invoke-key-sequence"
+                                                    attr.araia-label="invoke-key-sequence" [(ngModel)]="this.keyCode"
+                                                    [placeholder]="'device.deviceSettings.inputAccessories.userDefinedKey.invokeKeySequence.placeholder' | translate"
+                                                    (keydown)="invokeKeySequence($event)" required></textarea>
+                                                <div class="del-btn" *ngIf="this.keyCode" id="delete-key-sequence"
+                                                    attr.aria-label="delete-key-sequence"
+                                                    (click)="resetInvokeSequence($event);"><a>{{'hardwareScan.scheduledScan.delete'| translate}}</a></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div *ngIf="isUDFSetSuccessVisible"
+                                                class="select-text pt-3 udf-set-success">
+                                                {{'device.deviceSettings.inputAccessories.userDefinedKey.website.successMessage' | translate}}
+                                            </div>
+                                            <button id="ip-userdefined-key-applybtn"
+                                                attr.aria-label="ip-userdefined-key-applybtn" type="submit"
+                                                class="button"
+                                                title="{{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}">
+                                                {{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div> -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </vtr-ui-row-switch>
 </li>

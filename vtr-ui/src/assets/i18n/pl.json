@@ -22,6 +22,12 @@
                     "rapidCharge": "Szybkie ładowanie"
                 },
                 "legionEdge": {
+                    "thermalMode2": {
+                        "OC_On": "Przetakt. wł.",
+                        "performance": "Wydajność",
+                        "balance": "Równowaga",
+                        "quiet": "Cichy"
+                    },
                     "title": "Przetaktowywanie CPU",
                     "status": {
                         "alwayson": "Włącz",
@@ -104,24 +110,24 @@
                     "thermalMode2SettingDesc": "Wybierz tryb, którego chcesz używać.",
                     "fnQDesc": "Możesz przełączyć tryb za pomocą skrótu Fn+Q.",
                     "perormanceTitle": "Tryb wydajny",
-                    "performanceDesc": "Zwiększ wydajność swojego komputera kosztem wyższej prędkości wentylatora i większego zużycia energii.",
-                    "OCDesc": "Możesz włączyć funkcję Przetaktowywanie.",
-                    "ac_dcDesc": "Tryb wydajny jest dostępny przy zasilaniu z sieci.",
+                    "performanceDesc": "Zwiększ wydajność swojego komputera z wyższą prędkością wentylatora i większym zużyciem energii. ",
+                    "OCDesc": "Możesz włączyć funkcję Przetaktowania.",
+                    "ac_dcDesc": "Tryb wydajności ma zastosowanie tylko wtedy, gdy podłączony jest zasilacz sieciowy.",
                     "balanceTitle": "Tryb zrównoważony",
-                    "balanceDesc": "Automatycznie równoważy wydajność komputera i prędkość wentylatora na podstawie temperatury. Średni pobór mocy.",
+                    "balanceDesc": "Automatycznie równoważy wydajność komputera i prędkość wentylatora na podstawie temperatury przy średnim zużyciu mocy.",
                     "quietTitle": "Tryb cichy",
-                    "quietDesc": "Cicha praca dzięki zmniejszeniu wydajności komputera i prędkości wentylatora, jeśli to możliwe. Niski pobór mocy.",
+                    "quietDesc": "Cicha praca dzięki zmniejszeniu wydajności komputera i prędkości wentylatora, jeśli to możliwe, przy niskim zużyciu mocy.",
                     "OC": {
                         "cpu_gpuOC": "Włącz taktowanie CPU/GPU w trybie wydajnym.",
                         "cpuOC": "Włącz taktowanie CPU w trybie wydajnym.",
                         "gpuOC": "Włącz taktowanie GPU w trybie wydajnym.",
                         "advance": "ZAAWANSOWANE",
-                        "cpu_gpuDriverLack": "Zainstaluj sterowniki CPU/GPU w celu użycia funkcji taktowania.",
-                        "cpuDriverLack": "Zainstaluj sterownik CPU w celu użycia funkcji taktowania.",
-                        "gpuDriverLack": "Zainstaluj sterownik GPU w celu użycia funkcji taktowania.",
+                        "cpu_gpuDriverLack": "Zainstaluj sterowniki CPU/GPU w celu użycia funkcji Przetaktowania.",
+                        "cpuDriverLack": "Zainstaluj sterownik CPU w celu użycia funkcji Przetaktowania.",
+                        "gpuDriverLack": "Zainstaluj sterownik GPU w celu użycia funkcji Przetaktowania.",
                         "goInstall": "ZAINSTALUJ"
                     },
-                    "autoSwitch": "Autom. włączaj tryb wydajny po uruchamianiu gry i wyłączaj go po jej zamknięciu."
+                    "autoSwitch": "Automatycznie włączaj tryb wydajności po uruchomianiu gry i wyłączaj go po jej zamknięciu."
                 },
                 "advancedOC": {
                     "title": "Przetaktowywanie Ust. zaaw.",
@@ -698,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -795,7 +801,9 @@
             "loading": "Ładuję...",
             "from": "z",
             "to": "na",
-            "clickToChange": "kliknij, aby zmienić"
+            "clickToChange": "kliknij, aby zmienić",
+            "failedLoad": "Ładowanie nie powiodło się.",
+            "retry": "Spróbuj ponownie"
         },
         "app-update": {
             "message": "Witaj! Dostępna jest nowsza wersja Vantage, czy chcesz ją pobrać?"
@@ -861,11 +869,18 @@
                 "submitScreenShot": "Prześlij zrzut ekranu",
                 "messages": {
                     "feedbackSuccess": "Dziękujemy za opinię!"
-                }
+                },
+                "question6": "Jak prawdopodobne jest, że polecisz aplikację Lenovo Vantage znajomemu?",
+                "question7": "Czy wiesz, że dzięki aplikacji Lenovo Vantage oprogramowanie (sterowniki, oprogramowanie układowe i system BIOS) na komputerze mogą być zawsze aktualne?",
+                "question8": "Czy aplikacja Lenovo Vantage była używana do uzyskiwania dostępu do informacji pomocy technicznej dotyczącej komputera?",
+                "tips2": "Wprowadź dodatkowe komentarze poniżej",
+                "emailAddressLabel": "Podaj adres e-mail, jeśli chcesz, aby zespół ds. aplikacji Lenovo Vantage mógł się z Tobą kontaktować.",
+                "emailAddress": "Adres e-mail",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "Twoje szybkie ustawienia",
+            "title": "Szybkie ustawienia",
             "microphone": "Mikrofon",
             "cameraPrivacy": "Aparat",
             "eyeCareMode": "Ochrona oczu",
@@ -910,6 +925,10 @@
                     "update": "Aktualizacja"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Zaktualizuj sterowniki, system BIOS i inne oprogramowanie.",
+            "checkForSystemUpdates": "Sprawdź aktualizacje systemu"
         }
     },
     "device": {
@@ -967,7 +986,7 @@
         "deviceSettings": {
             "helpful": "Pomocna treść",
             "batteryGauge": {
-                "subtitle": "Kondycja akumulatora",
+                "subtitle": "Akumulator",
                 "hours": "godzin(y)",
                 "hour": "godzina",
                 "minutes": "minut(y)",
@@ -1021,14 +1040,14 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "Aby przedłużyć żywotność baterii, zoptymalizowaliśmy jej pełną pojemność ładowania w zależności od sposobu użytkowania. Pełna pojemność baterii może być niedostępna do momentu rozładowania do 20% i ponownego naładowania."
                 },
                 "condition": {
                     "Illegal": "Zainstalowany akumulator <b>nie jest obsługiwany</b> w tym systemie i nie będzie ładowany. Wymień go na właściwy akumulator Lenovo dla tego systemu.",
                     "Good": "<b>Akumulator jest w dobrym stanie.</b>",
                     "Exhaustion": "Pojemność baterii <b>trwale spadła</b>. Wymień baterię na nową.",
                     "Bad": "<b>Wystąpił błąd akumulatora.</b> Nie można naładować/rozładować akumulatora. Wymień baterię.",
-                    "NotDetected": "<b>Nie wykryto akumulatora lub</b> akumulator nie jest podłączony do prądu.",
+                    "NotDetected": "<b>Nie wykryto akumulatora.</b>",
                     "NotGood": "<b>Akumulator nie jest w dobrym stanie.</b>",
                     "NotSupportACAdapter": "<b>Zasilacz nie jest obsługiwany.</b>",
                     "LimitedACAdapterSupport": "<b>Zasilacz nie zapewnia wystarczającej mocy.</b>",
@@ -1234,9 +1253,9 @@
                             "reset": "Resetuj",
                             "stop": "Zatrzymaj"
                         },
-                        "progressText1": "{{stage}} z {{stageNum}}: Kalibracja do całkowitego naładowania",
-                        "progressText2": "{{stage}} z {{stageNum}}: Kalibracja do niskiego poziomu naładowania baterii",
-                        "progressText3": "{{stage}} z {{stageNum}}: Kalibracja do wysokiego poziomu zasilania baterii",
+                        "progressText1": "Krok {{stage}} z {{stageNum}} kroków łącznie: Kalibracja do całkowitego naładowania",
+                        "progressText2": "Krok {{stage}} z {{stageNum}} kroków łącznie: Kalibracja do niskiego poziomu naładowania baterii",
+                        "progressText3": "Krok {{stage}} z {{stageNum}} kroków łącznie: Kalibracja do wysokiego poziomu naładowania baterii",
                         "FCCText": "Od {{before}} Wh do {{after}} Wh",
                         "note": "Uwaga: Przed zresetowaniem wskaźnika stanu akumulatora należy podłączyć komputer do zasilania sieciowego. ",
                         "resetLog": {
@@ -1264,6 +1283,55 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "PRODUKT Z CERTYFIKATEM ENERGY STAR"
+                },
+                "dpm": {
+                    "title": "Zasilanie",
+                    "subtitle": "Ustawienia zasilania",
+                    "description": "Możesz sprawdzić domyślne ustawienia w tej sekcji i dostosować zużycie energii i plan zasilania do swoich potrzeb.",
+                    "globalPowerSettings": {
+                        "title": "Globalne ustawienia zasilania",
+                        "description": "Funkcja zastąpi ustawienia planu zasilania lub zużycia energii.",
+                        "powerButton": {
+                            "label": "PRZYCISK ZASILANIA:",
+                            "items": {
+                                "doNothing": "Nie rób nic",
+                                "sleep": "Uśpienie",
+                                "hibernate": "Hibernuj",
+                                "shutDown": "Zamknij",
+                                "turnOffTheDisplay": "Wyłącz ekran"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "WYMAGANE ZALOGOWANIE:",
+                            "items": {
+                                "never": "Nigdy",
+                                "fromSleep": "Gdy komputer budzi się z trybu uśpienia"
+                            },
+                            "tip": "Uwaga: Działa to tylko wtedy, jeśli ustawiono hasło systemu."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "Zużycie energii",
+                        "description": "JEŚLI SYSTEM NIE JEST UŻYWANY:",
+                        "turnOffDisplay": "WYŁĄCZ EKRAN PO:",
+                        "turnOffHDD": "WYŁĄCZ HDD PO:",
+                        "sleep": "PRZEJDŹ DO TRYBU UŚPIENIA PO:",
+                        "hibernate": "PRZEJDŹ DO TRYBU HIBERNACJI PO:",
+                        "items": {
+                            "never": "Nigdy",
+                            "minute": "minuta",
+                            "minutes": "minut(y)",
+                            "hour": "godzina",
+                            "hours": "godzin(y)"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "Plan zasilania",
+                        "description": "Wybierz plan zasilania, aby kontrolować wydajność, temperaturę komputera i zużycie energii.",
+                        "currentPowerPlan": {
+                            "label": "OBECNY PLAN"
+                        }
+                    }
                 },
                 "smartStandby": {
                     "title": "Inteligentne wstrzymanie",
@@ -1648,8 +1716,11 @@
                         "options": {
                             "option1": "Wybierz",
                             "option2": "Otwórz stronę internetową",
-                            "option3": "Wprowadź tekst"
-                        }
+                            "option3": "Wprowadź tekst",
+                            "option4": "Open applications or files",
+                            "option5": "Invoke key sequence"
+                        },
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function."
                     },
                     "tooltip": "Treść do wypełnienia",
                     "apply": {
@@ -1664,6 +1735,17 @@
                     "enterText": {
                         "title": "TEKST DO WPROWADZENIA",
                         "placeholder": "Proszę wpisać tutaj"
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles": {
+                        "applicationTitle": "You need to delete one app first",
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {
@@ -1899,7 +1981,7 @@
                 "heading": "Inteligentne multimedia",
                 "title": "Odtwarzanie wideo bez dotyku",
                 "desc": "Ta funkcja wstrzymuje odtwarzanie wideo, gdy odchodzisz od komputera, i wznawia je, gdy wracasz.",
-                "tooltip": "Ta funkcja nie dotyczy odtwarzaczy wideo w sieci Web. Popularne lokalne odtwarzacze wideo, takie jak program Windows Media Player, 5KPlayer itd., obsługują tę funkcję."
+                "tooltip": "Ta funkcja nie dotyczy<br>odtwarzaczy wideo w sieci Web.<br>Obsługiwane są następujące odtwarzacze:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
             },
             "superResolution": {
                 "heading": "Inteligentne multimedia",
@@ -1937,7 +2019,8 @@
                     "point7": "Wybierz żądany język źródłowy oraz docelowy.",
                     "point8": "W zależności od potrzeb ustaw wejście głosowe z głośnika lub z mikrofonu.",
                     "point9": "Kliknij ikonę mikrofonu, aby zacząć mówić",
-                    "closeText": "zamknij"
+                    "closeText": "zamknij",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",

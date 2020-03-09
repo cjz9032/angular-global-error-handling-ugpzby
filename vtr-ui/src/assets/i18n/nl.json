@@ -22,6 +22,12 @@
                     "rapidCharge": "Snelladen"
                 },
                 "legionEdge": {
+                    "thermalMode2": {
+                        "OC_On": "Overklok aan",
+                        "performance": "Prestaties",
+                        "balance": "Balans",
+                        "quiet": "Stil"
+                    },
                     "title": "CPU overklok",
                     "status": {
                         "alwayson": "Aan",
@@ -101,27 +107,27 @@
                 },
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Instelling thermische modus",
-                    "thermalMode2SettingDesc": "Kies de modus die u wilt gebruiken.",
+                    "thermalMode2SettingDesc": "Selecteer de modus die u wilt gebruiken.",
                     "fnQDesc": "U kunt de modus wijzigen met de sneltoets Fn+Q.",
                     "perormanceTitle": "Prestatiemodus",
-                    "performanceDesc": "Verhoog de prestaties van uw computer met meer ventilatorsnelheid en meer energieverbruik.",
-                    "OCDesc": "U kunt de functie overklokken inschakelen.",
-                    "ac_dcDesc": "Prestatiemodus alleen beschikbaar wanneer aangesloten.",
+                    "performanceDesc": "Verhoog de prestaties van uw computer met een hogere ventilatorsnelheid en een hoger energieverbruik. ",
+                    "OCDesc": "U kunt de functie Overklokken inschakelen.",
+                    "ac_dcDesc": "De prestatiemodus is alleen te gebruiken als de netvoedingsadapter is aangesloten.",
                     "balanceTitle": "Gebalanceerde modus",
-                    "balanceDesc": "De prestaties en ventilatorsnelheid worden automatisch aangepast aan de temperatuur. Gemiddeld energieverbruik.",
+                    "balanceDesc": "Laat de prestaties en ventilatorsnelheid automatisch aanpassen op basis van de temperatuur en met middelhoog energieverbruik.",
                     "quietTitle": "Stille modus",
-                    "quietDesc": "De computer wordt stiller door de prestaties en de ventilatorsnelheid zo laag mogelijk te houden. Laag energieverbruik.",
+                    "quietDesc": "Zorg voor een stille computer door de prestaties en de ventilatorsnelheid indien mogelijk te verlagen, met een laag energieverbruik.",
                     "OC": {
                         "cpu_gpuOC": "CPU/GPU-overklokken inschakelen in prestatiemodus.",
                         "cpuOC": "CPU-overklokken inschakelen in prestatiemodus.",
                         "gpuOC": "GPU-overklokken inschakelen in prestatiemodus.",
                         "advance": "GEAVANCEERD",
-                        "cpu_gpuDriverLack": "CPU/GPU-stuurprogramma's installeren om overklokken te gebruiken.",
-                        "cpuDriverLack": "CPU-stuurprogramma installeren om overklokken te gebruiken.",
-                        "gpuDriverLack": "GPU-stuurprogramma installeren om overklokken te gebruiken.",
+                        "cpu_gpuDriverLack": "Installeer CPU/GPU-stuurprogramma's om de functie Overklokken te gebruiken.",
+                        "cpuDriverLack": "Installeer CPU-stuurprogramma om de functie Overklokken te gebruiken.",
+                        "gpuDriverLack": "Installeer GPU-stuurprogramma om de functie Overklokken te gebruiken.",
                         "goInstall": "GA NAAR INSTALLEREN"
                     },
-                    "autoSwitch": "Automatisch schakelen naar prestaties bij starten games en later terugschakelen."
+                    "autoSwitch": "Schakel automatisch naar de prestatiemodus bij het starten van games en schakel terug na het afsluiten van de game."
                 },
                 "advancedOC": {
                     "title": "Overklok geavanc. instell.",
@@ -698,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -795,7 +801,9 @@
             "loading": "Bezig met laden...",
             "from": "uit",
             "to": "naar",
-            "clickToChange": "klik om te wijzigen"
+            "clickToChange": "klik om te wijzigen",
+            "failedLoad": "Laden is mislukt.",
+            "retry": "Opnieuw proberen"
         },
         "app-update": {
             "message": "Hallo! Er is een nieuwere versie van Vantage beschikbaar, wilt u deze laden?"
@@ -861,11 +869,18 @@
                 "submitScreenShot": "Schermafbeelding verzenden",
                 "messages": {
                     "feedbackSuccess": "Bedankt voor uw feedback."
-                }
+                },
+                "question6": "Zou u de toepassing Lenovo Vantage aanbevelen bij een collega of vriend?",
+                "question7": "Wist u dat u met Lenovo Vantage de software (stuurprogramma's, firmware en BIOS) op uw computer up-to-date kunt houden?",
+                "question8": "Hebt u Lenovo Vantage al eens gebruikt om toegang te krijgen tot ondersteuningsinformatie over uw computer?",
+                "tips2": "Laat hieronder eventuele aanvullende opmerkingen achter",
+                "emailAddressLabel": "Geef uw e-mailadres op als u de mogelijkheid wilt bieden dat het Lenovo Vantage-team contact met u opneemt.",
+                "emailAddress": "E-mailadres",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "Uw Quick Settings",
+            "title": "Snelle instellingen",
             "microphone": "Microfoon",
             "cameraPrivacy": "Camera",
             "eyeCareMode": "Oogzorg",
@@ -910,6 +925,10 @@
                     "update": "Updaten"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Werk uw stuurprogramma´s, BIOS en andere software bij.",
+            "checkForSystemUpdates": "Controleren op systeemupdates"
         }
     },
     "device": {
@@ -1021,14 +1040,14 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "Om de werkingsduur van de batterij te verlengen, hebben we de volledige laadcapaciteit op basis van uw gebruik geoptimaliseerd. De volledige batterijcapaciteit is mogelijk pas beschikbaar nadat u tot 20% hebt ontladen en opnieuw hebt opgeladen."
                 },
                 "condition": {
                     "Illegal": "De geïnstalleerde batterij wordt <b>niet ondersteund</b> door het systeem en kan niet worden opgeladen. Vervang de batterij door een Lenovo-batterij die geschikt is voor dit systeem.",
                     "Good": "<b>De batterij is in goede staat.</b>",
                     "Exhaustion": "De capaciteit van de batterij is <b>verminderd</b>. Vervang deze door een nieuwe.",
                     "Bad": "<b>Er is een batterijfout opgetreden.</b> De batterij kan niet worden opgeladen/ontladen. Vervang de batterij.",
-                    "NotDetected": "<b>Er is geen batterij aangetroffen of</b> aangesloten.",
+                    "NotDetected": "<b>Geen batterij gedetecteerd.</b>",
                     "NotGood": "<b>De batterij is niet in goede staat.</b>",
                     "NotSupportACAdapter": "<b>De netvoedingsadapter wordt niet ondersteund.</b>",
                     "LimitedACAdapterSupport": "<b>De netvoedingsadapter kan niet voldoende stroom leveren.</b>",
@@ -1234,9 +1253,9 @@
                             "reset": "Resetten",
                             "stop": "Stoppen"
                         },
-                        "progressText1": "{{stage}} van {{stageNum}}: kalibreren naar volledig opladen",
-                        "progressText2": "{{stage}} van {{stageNum}}: kalibreren naar bijna lege batterij",
-                        "progressText3": "{{stage}} van {{stageNum}}: kalibreren naar bijna volle batterij",
+                        "progressText1": "Stap {{stage}} van in totaal {{stageNum}} stappen: kalibreren naar volledig opladen",
+                        "progressText2": "Stap {{stage}} van in totaal {{stageNum}} stappen: kalibreren naar bijna lege batterij",
+                        "progressText3": "Stap {{stage}} van in totaal {{stageNum}} stappen: kalibreren naar bijna volle batterij",
                         "FCCText": "Van {{before}} Wh tot {{after}} Wh",
                         "note": "Opmerking: voordat u de batterijmeter opnieuw instelt, zorg ervoor dat de computer is aangesloten op de netvoeding. ",
                         "resetLog": {
@@ -1264,6 +1283,55 @@
                 "energyStar": {
                     "title": "Energy star",
                     "description": "EEN DOOR ENERGY STAR GECERTIFICEERD PRODUCT"
+                },
+                "dpm": {
+                    "title": "Energiebeheer",
+                    "subtitle": "Energie-instellingen",
+                    "description": "In dit gedeelte kunt u de standaardinstellingen bekijken en uw energieverbruik en energieschema aanpassen aan uw behoeften.",
+                    "globalPowerSettings": {
+                        "title": "Algemene instellingen voor energiebeheer",
+                        "description": "Deze functie negeert de instellingen voor energieschema of energieverbruik.",
+                        "powerButton": {
+                            "label": "AAN/UIT-KNOP:",
+                            "items": {
+                                "doNothing": "Niets doen",
+                                "sleep": "Slaapstand",
+                                "hibernate": "Slaapstand",
+                                "shutDown": "Afsluiten",
+                                "turnOffTheDisplay": "Beeldscherm uitzetten"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "VEREISTE AANMELDING:",
+                            "items": {
+                                "never": "Nooit",
+                                "fromSleep": "Als pc uit de slaapstand wordt gehaald"
+                            },
+                            "tip": "Opmerking: Dit werkt alleen als er een systeemwachtwoord is ingesteld."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "Energieverbruik",
+                        "description": "ALS HET SYSTEEM INACTIEF IS:",
+                        "turnOffDisplay": "BEELDSCHERM UITSCHAKELEN NA:",
+                        "turnOffHDD": "HDD UITSCHAKELEN NA:",
+                        "sleep": "SLAAPSTAND NA:",
+                        "hibernate": "SLUIMERSTAND NA:",
+                        "items": {
+                            "never": "Nooit",
+                            "minute": "minuut",
+                            "minutes": "minuten",
+                            "hour": "uur",
+                            "hours": "uur"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "Energiebeheerschema",
+                        "description": "Kies een energieschema om de prestaties, de systeemtemperatuur en het energieverbruik van de computer te regelen.",
+                        "currentPowerPlan": {
+                            "label": "HUIDIG SCHEMA"
+                        }
+                    }
                 },
                 "smartStandby": {
                     "title": "Slim stand-by",
@@ -1648,8 +1716,11 @@
                         "options": {
                             "option1": "Maak een keuze",
                             "option2": "Open de website",
-                            "option3": "Tekst invoeren"
-                        }
+                            "option3": "Tekst invoeren",
+                            "option4": "Open applications or files",
+                            "option5": "Invoke key sequence"
+                        },
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function."
                     },
                     "tooltip": "In te vullen inhoud",
                     "apply": {
@@ -1664,6 +1735,17 @@
                     "enterText": {
                         "title": "IN TE VOEREN TEKST",
                         "placeholder": "Typ hier"
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles": {
+                        "applicationTitle": "You need to delete one app first",
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {
@@ -1899,7 +1981,7 @@
                 "heading": "Intelligente media",
                 "title": "Zero Touch Video afspelen",
                 "desc": "Met deze functie wordt de video gepauzeerd wanneer u weggaat bij de computer en hervat wanneer u terugkeert.",
-                "tooltip": "Deze functie is niet van toepassing op webvideospelers. Populaire lokale videospelers, zoals Windows Media Player, 5KPlayer en dergelijke, ondersteunen deze functie."
+                "tooltip": "Deze functie is niet van toepassing<br>op webvideospelers.<br>De ondersteunde spelers worden als volgt weergegeven:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
             },
             "superResolution": {
                 "heading": "Intelligente media",
@@ -1937,7 +2019,8 @@
                     "point7": "Selecteer de gewenste bron- en doeltaal.",
                     "point8": "Stel de steminvoer vanaf een luidspreker of vanaf een microfoon in, afhankelijk van uw behoeften.",
                     "point9": "Klik op het pictogram microfoon om te beginnen met spreken",
-                    "closeText": "sluiten"
+                    "closeText": "sluiten",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",

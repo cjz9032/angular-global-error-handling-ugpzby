@@ -123,27 +123,13 @@
 						*ngIf="!displayNoteOnly"
 						[class.disabled]="isGaugeResetRunning">
 						<div class="col px-5">
-							<div class="auto-set-checkbox custom-checkbox-gaming"
-								tabindex="0"
-								role="checkbox"
-								(keydown.enter)="customControlInput.click()"
-								[attr.aria-checked]="bctInfo.checkboxValue"
-								attr.aria-labelledby="{{isCheckedAutoInput + randomNumber}}"
-								role="checkbox">
-								<input type="checkbox"
-									class="custom-control-input"
-									#customControlInput
-									tabindex="-1"
-									aria-hidden="true"
-									[id]="isCheckedAutoInput + randomNumber"
-									attr.aria-label="batteryThreshold-options-checkboxText"
-									[name]="isCheckedAutoInput + randomNumber"
-									[(ngModel)]="bctInfo.checkboxValue"
-									(ngModelChange)='toggleAutoChargeSettings($event)'>
-								<span class="checkmark"></span>
-								<label
-									[for]="isCheckedAutoInput + randomNumber">{{'device.deviceSettings.power.batterySettings.batteryThreshold.options.checkboxText' | translate}}</label>
-							</div>
+							<vtr-ui-checkbox [componentId]="'cb' + textId"
+								[disabled]="isGaugeResetRunning"
+								[value]="bctInfo.checkboxValue"
+								[checked]="bctInfo.checkboxValue"
+								[label]="'device.deviceSettings.power.batterySettings.batteryThreshold.options.checkboxText' | translate"
+								(toggle)='toggleAutoChargeSettings($event)'>
+							</vtr-ui-checkbox>
 						</div>
 					</div>
 				</div>

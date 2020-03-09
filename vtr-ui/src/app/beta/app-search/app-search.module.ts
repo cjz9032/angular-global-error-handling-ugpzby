@@ -3,12 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { SearchDropdownComponent } from './search-dropdown/search-dropdown.component';
 import { AppSearchScrollerDirective } from 'src/app/beta/app-search/app-search-scroller.directive';
-import { MetricsModule } from 'src/app/directives/metrics.module';
+import { MetricsModule } from 'src/app/services/metric/metrics.module';
 import { CommonPipeModule } from 'src/app/modules/common/common-pipe.module';
 import { AppSearchRoutingModule } from 'src/app/beta/app-search/app-search-routing.module';
 import { FormsModule } from '@angular/forms';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeModule, FaIconLibrary  } from '@fortawesome/angular-fontawesome';
 import { faSearch } from '@fortawesome/pro-light-svg-icons/faSearch';
 import { faTimes } from '@fortawesome/pro-light-svg-icons/faTimes';
 import { faColumns } from '@fortawesome/pro-light-svg-icons/faColumns';
@@ -33,29 +32,6 @@ import { faGem } from '@fortawesome/pro-light-svg-icons/faGem';
 import { faUsb } from '@fortawesome/free-brands-svg-icons/faUsb';
 import { SearchTipsComponent } from './search-tips/search-tips.component';
 
-library.add(faSearch);
-library.add(faTimes);
-library.add(faColumns);
-library.add(faMicrophone);
-library.add(faCamera);
-library.add(faEye);
-library.add(faUserShield);
-library.add(faLock);
-library.add(faLaptop);
-library.add(faPlane);
-library.add(faBatteryHalf);
-library.add(faQuestionCircle);
-library.add(faThumbtack);
-library.add(faVolumeDown);
-library.add(faThermometerFull);
-library.add(faKeyboard);
-library.add(faSync);
-library.add(faWifi);
-library.add(faNetworkWired);
-library.add(faWrench);
-library.add(faGem);
-library.add(faUsb);
-
 
 @NgModule({
 	declarations: [
@@ -79,4 +55,29 @@ library.add(faUsb);
 	schemas: [CUSTOM_ELEMENTS_SCHEMA,
 		NO_ERRORS_SCHEMA]
 })
-export class AppSearchModule { }
+export class AppSearchModule {
+	constructor(library: FaIconLibrary) {
+		library.addIcons(faSearch);
+		library.addIcons(faTimes);
+		library.addIcons(faColumns);
+		library.addIcons(faMicrophone);
+		library.addIcons(faCamera);
+		library.addIcons(faEye);
+		library.addIcons(faUserShield);
+		library.addIcons(faLock);
+		library.addIcons(faLaptop);
+		library.addIcons(faPlane);
+		library.addIcons(faBatteryHalf);
+		library.addIcons(faQuestionCircle);
+		library.addIcons(faThumbtack);
+		library.addIcons(faVolumeDown);
+		library.addIcons(faThermometerFull);
+		library.addIcons(faKeyboard);
+		library.addIcons(faSync);
+		library.addIcons(faWifi);
+		library.addIcons(faNetworkWired);
+		library.addIcons(faWrench);
+		library.addIcons(faGem);
+		library.addIcons(faUsb);
+	}
+}

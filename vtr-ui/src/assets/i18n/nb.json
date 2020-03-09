@@ -22,6 +22,12 @@
                     "rapidCharge": "Hurtiglading"
                 },
                 "legionEdge": {
+                    "thermalMode2": {
+                        "OC_On": "Overklokking på",
+                        "performance": "Ytelse",
+                        "balance": "Balanse",
+                        "quiet": "Stille"
+                    },
                     "title": "CPU-overklokking",
                     "status": {
                         "alwayson": "På",
@@ -101,27 +107,27 @@
                 },
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Innstillinger termisk modus",
-                    "thermalMode2SettingDesc": "Velg modusen du ønsker å bruke.",
+                    "thermalMode2SettingDesc": "Velg modusen du vil bruke.",
                     "fnQDesc": "Du kan endre modus ved å bruke hurtigtastene Fn+Q.",
                     "perormanceTitle": "Ytelsesmodus",
-                    "performanceDesc": "Øk datamaskinens ytelse med høyere viftehastighet og høyere strømforbruk.",
-                    "OCDesc": "Du kan velge å skru på overklokkingsfunksjonaliteten.",
-                    "ac_dcDesc": "Ytelsesmodus bare tilgjengelig når den er koblet til.",
+                    "performanceDesc": "Øk datamaskinens ytelse med høyere viftehastighet og høyere strømforbruk. ",
+                    "OCDesc": "Du kan velge å skru på funksjonen for overklokking.",
+                    "ac_dcDesc": "Ytelsesmodus er bare tilgjengelig når en strømadapter er koblet til.",
                     "balanceTitle": "Balansert modus",
-                    "balanceDesc": "Balanserer automatisk ytelse og viftehastighet basert på temperatur. Middels strømforbruk.",
+                    "balanceDesc": "Balanserer automatisk ytelse og viftehastighet basert på temperatur, med middels strømforbruk.",
                     "quietTitle": "Stillemodus",
-                    "quietDesc": "Holdes stille ved å redusere datamaskinens ytelse og viftehastighet der det er mulig. Lavt strømforbruk.",
+                    "quietDesc": "Holdes stille ved å redusere datamaskinens ytelse og viftehastighet der det er mulig, med lavt strømforbruk.",
                     "OC": {
                         "cpu_gpuOC": "Aktiver CPU/GPU-overklokking i ytelsesmodus.",
                         "cpuOC": "Aktiver CPU-overklokking i ytelsesmodus.",
                         "gpuOC": "Aktiver GPU-overklokking i ytelsesmodus.",
                         "advance": "AVANSERT",
-                        "cpu_gpuDriverLack": "Installer CPU/GPU-drivere for å bruke funksjonen for overklokking.",
-                        "cpuDriverLack": "Installer CPU-driver for å bruke funksjonen for overklokking.",
-                        "gpuDriverLack": "Installer GPU-driver for å bruke funksjonen for overklokking.",
+                        "cpu_gpuDriverLack": "Installer CPU/GPU-drivere for å bruke funksjonen for overklokking.",
+                        "cpuDriverLack": "Installer CPU-driver for å bruke funksjonen for overklokking.",
+                        "gpuDriverLack": "Installer GPU-driver for å bruke funksjonen for overklokking.",
                         "goInstall": "INSTALLER"
                     },
-                    "autoSwitch": "Bytt automatisk til ytelse når du lanserer spill og bytt tilbake etterpå."
+                    "autoSwitch": "Bytt automatisk til ytelsesmodus når du starter spill, og bytt tilbake etter at du har avsluttet spillet."
                 },
                 "advancedOC": {
                     "title": "Overklokking Avansert",
@@ -698,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -795,7 +801,9 @@
             "loading": "Laster...",
             "from": "fra",
             "to": "til",
-            "clickToChange": "klikk for å endre"
+            "clickToChange": "klikk for å endre",
+            "failedLoad": "Kunne ikke lastes inn.",
+            "retry": "Prøv igjen"
         },
         "app-update": {
             "message": "Hei! Det finnes en nyere versjon av Vantage, vil du laste den?"
@@ -861,11 +869,18 @@
                 "submitScreenShot": "Send skjermbilde",
                 "messages": {
                     "feedbackSuccess": "Takk for tilbakemeldingen!"
-                }
+                },
+                "question6": "Hvor sannsynlig er det at du kommer til å anbefale Lenovo Vantage-programmet til en venn eller kollega?",
+                "question7": "Visste du at du kunne bruke Lenovo Vantage for å holde programvaren (drivere, fastvare og BIOS) på datamaskinen din oppdatert?",
+                "question8": "Har du brukt Lenovo Vantage for å få tilgang til støtteinformasjon om datamaskinen din?",
+                "tips2": "Skriv inn eventuelle kommentarer nedenfor",
+                "emailAddressLabel": "Legg inn e-postadressen din hvis du ønsker å bli kontaktet av Lenovo Vantage-teamet.",
+                "emailAddress": "E-postadresse",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "Hurtiginnstillingene dine",
+            "title": "Hurtiginnstillinger",
             "microphone": "Mikrofon",
             "cameraPrivacy": "Kamera",
             "eyeCareMode": "Øyebeskyttelse",
@@ -910,6 +925,10 @@
                     "update": "Oppdater"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Oppdater drivere, BIOS og annen programvare.",
+            "checkForSystemUpdates": "Se etter systemoppdateringer"
         }
     },
     "device": {
@@ -1021,14 +1040,14 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "For å forlenge batteriets levetid har vi optimalisert full ladekapasitet basert på bruken din. Full batterikapasitet er kanskje ikke tilgjengelig før det er ladet ut til 20 % og ladet opp igjen."
                 },
                 "condition": {
                     "Illegal": "Det installerte batteriet <b>støttes ikke</b> av dette systemet, og vil ikke kunne lades opp. Batteriet må bare byttes ut med korrekt Lenovo-batteri for dette systemet.",
                     "Good": "<b>Batteriet er i god stand.</b>",
                     "Exhaustion": "Batterikapasiteten er <b>redusert</b>. Bytt det ut med et nytt.",
                     "Bad": "<b>Det har oppstått en batterifeil.</b> Batteriet kan ikke lades/utlades. Bytt batteri.",
-                    "NotDetected": "<b>Kan ikke gjenkjenne batteri, eller</b> batteri ikke satt i.",
+                    "NotDetected": "<b>Batteri ikke oppdaget.</b>",
                     "NotGood": "<b>Batteriet er ikke i god stand.</b>",
                     "NotSupportACAdapter": "<b>Strømadapteret støttes ikke.</b>",
                     "LimitedACAdapterSupport": "<b>STRØM adapteren kan ikke gi nok strøm.</b>",
@@ -1043,7 +1062,7 @@
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} strøm er koblet til.</b>",
                     "EmDriverInstalled": "Detaljert batteriinformasjon er utilgjengelig. Kjør Windows Update -> Se etter oppdateringer for å installere <b>Lenovo ACPI – Compliant Virtual Power Controller</b>-driveren."
                 },
-                "batteryNotDetected": "Kan ikke gjenkjenne batteri",
+                "batteryNotDetected": "Batteri ikke oppdaget",
                 "thresholdNote": "<b>Merk:</b> Batteriet kan ikke lades fullstendig når batteriladeterskelen er aktivert.",
                 "seeDetailsLink": "For detaljer se",
                 "gaugeResetWarning": "<b>Merk:</b> Tilbakestilling av batterimåler pågår. Hold strømadapteren tilkoblet.",
@@ -1234,9 +1253,9 @@
                             "reset": "Tilbakestill",
                             "stop": "Stopp"
                         },
-                        "progressText1": "{{stage}} av {{stageNum}}: kalibrerer for fullading",
-                        "progressText2": "{{stage}} av {{stageNum}}: kalibrerer for lite batteristrøm",
-                        "progressText3": "{{stage}} av {{stageNum}}: Kalibrerer til høy batteristrøm",
+                        "progressText1": "Trinn {{stage}} av totalt {{stageNum}} trinn: Kalibrering til full lading",
+                        "progressText2": "Trinn {{stage}} av totalt {{stageNum}} trinn: Kalibrering til lav batteristrøm",
+                        "progressText3": "Trinn {{stage}} av totalt {{stageNum}} trinn: Kalibrering til høy batteristrøm",
                         "FCCText": "Fra {{before}} Wh til {{after}} Wh",
                         "note": "Merk: Koble datamaskinen til strømnettet før du tilbakestiller batterimåleren. ",
                         "resetLog": {
@@ -1264,6 +1283,55 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "ET ENERGY STAR SERTIFISERT PRODUKT"
+                },
+                "dpm": {
+                    "title": "Strøm",
+                    "subtitle": "Strøminnstillinger",
+                    "description": "Denne delen lar deg kontrollere standardinnstillingene og tilpasse strømbruk og strømplan etter behov.",
+                    "globalPowerSettings": {
+                        "title": "Globale strøminnstillinger",
+                        "description": "Denne funksjonen overstyrer innstillingene for Strømplan eller Strømbruk.",
+                        "powerButton": {
+                            "label": "AV/PÅ-KNAPP:",
+                            "items": {
+                                "doNothing": "Ikke gjør noe",
+                                "sleep": "Sov",
+                                "hibernate": "Dvalemodus",
+                                "shutDown": "Avslutt",
+                                "turnOffTheDisplay": "Slå av skjermen"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "KREVER PÅLOGGING:",
+                            "items": {
+                                "never": "Aldri",
+                                "fromSleep": "Når PC-en starter opp fra hvilemodus"
+                            },
+                            "tip": "Merk: Dette fungerer bare hvis det er angitt systempassord."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "Strømbruk",
+                        "description": "HVIS SYSTEMET ER INAKTIVT:",
+                        "turnOffDisplay": "SLÅ AV SKJERM ETTER:",
+                        "turnOffHDD": "SLÅ AV HARDDISK ETTER:",
+                        "sleep": "HVILEMODUS ETTER:",
+                        "hibernate": "DVALEMODUS ETTER:",
+                        "items": {
+                            "never": "Aldri",
+                            "minute": "minutt",
+                            "minutes": "minutter",
+                            "hour": "time",
+                            "hours": "timer"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "Strømplan",
+                        "description": "Velg en strømplan for å styre datamaskinens ytelse, systemets temperatur og strømbruk.",
+                        "currentPowerPlan": {
+                            "label": "GJELDENDE PLAN"
+                        }
+                    }
                 },
                 "smartStandby": {
                     "title": "Smart hvilemodus",
@@ -1648,8 +1716,11 @@
                         "options": {
                             "option1": "Vennligst velg",
                             "option2": "Åpen nettside",
-                            "option3": "Skriv inn tekst"
-                        }
+                            "option3": "Skriv inn tekst",
+                            "option4": "Open applications or files",
+                            "option5": "Invoke key sequence"
+                        },
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function."
                     },
                     "tooltip": "Innhold som skal fylles ut",
                     "apply": {
@@ -1664,6 +1735,17 @@
                     "enterText": {
                         "title": "TEKST SOM SKAL SKRIVES INN",
                         "placeholder": "Skriv her"
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles": {
+                        "applicationTitle": "You need to delete one app first",
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {
@@ -1899,7 +1981,7 @@
                 "heading": "Intelligent medieavspilling",
                 "title": "Berøringsfri videoavspilling",
                 "desc": "Denne funksjonen setter videoen på pause når du forlater datamaskinen, og fortsetter avspillingen når du kommer tilbake.",
-                "tooltip": "Denne funksjonen støttes ikke av nettvideospillere. Populære lokale videospillere, for eksempel Windows Media Player og 5KPlayer, støtter denne funksjonen."
+                "tooltip": "Denne funksjonen støttes ikke på<br>nettvideospillere.<br>De støttede spillerne er listet opp som følger<br>: 5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
             },
             "superResolution": {
                 "heading": "Intelligent medieavspilling",
@@ -1937,7 +2019,8 @@
                     "point7": "Velg ønsket kilde språk og mål språk.",
                     "point8": "Avhengig av dine behov, må du definere tale signaler fra taler eller mikrofon.",
                     "point9": "Klikk på mikrofon ikonet for å begynne å snakke",
-                    "closeText": "Lukk"
+                    "closeText": "Lukk",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -2142,7 +2225,7 @@
             "vpnVirtual": "Virtuelt privat nettverk",
             "wifiConnected": "WiFi og Sikkerhet for tilkoblede hjem",
             "connectedHomeSecurity": "Sikkerhet for tilkoblede hjem",
-            "fingerprint": "Fingeravtrykkleser",
+            "fingerprint": "Fingerprint Reader",
             "uacTitle": "Hva er UAC-varsling?",
             "uacText": "Brukerkontokontroll er en svært viktig sikkerhetsfunksjon i Windows som bidrar til å hindre at potensielt skadelige programmer gjør endringer på systemet.",
             "windowsTitle": "Hvorfor må jeg aktive Windows?",
@@ -3423,7 +3506,7 @@
     "dirClass": "ltr",
     "notification": {
         "menu": {
-			"security": "Visste du dette? Selv om du ikke har installert antivirusprogramvare, leverer vi fortsatt grunnleggende sikkerhetsbeskyttelse for enheten din.",
+            "security": "Visste du dette? Selv om du ikke har installert antivirusprogramvare, leverer vi fortsatt grunnleggende sikkerhetsbeskyttelse for enheten din.",
             "connectedHomeSecurity": "Få overvåking og varsler i sanntid om nettverkssikkerheten hjemme. Du er den første som får beskjed om noen av smartenhetene utsettes for et sikkerhetsangrep."
         }
     },

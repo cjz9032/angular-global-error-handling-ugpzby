@@ -10,6 +10,7 @@ export class WidgetLandingNavComponent implements OnInit {
 	@Input() intermediateItems;
 	@Input() advancedItems;
 	@Output() haveOwnChecked = new EventEmitter<any>();
+	@Output() retryClick = new EventEmitter<any>();
 	currentPage = 'base-security';
 	featurePagesConfig = [
 		{
@@ -39,6 +40,10 @@ export class WidgetLandingNavComponent implements OnInit {
 
 	haveOwn(checkedList) {
 		this.haveOwnChecked.emit(checkedList);
+	}
+
+	retry(id) {
+		this.retryClick.emit(id);
 	}
 
 }

@@ -67,7 +67,7 @@
 											[label]="dolbyMode | dolbyModesTranslation"
 											[value]='dolbyMode'
 											[checked]="dolbyMode == dolbyModeResponse.currentMode"
-											(optionChange)="onDolbySeetingRadioChange($event)"
+											(optionChange)="onDolbySettingRadioChange($event)"
 											[processIcon]="true"
 											[textId]="'myDevice-settings-audio-automatic-dolby'">
 										</vtr-ui-circle-radio-with-checkbox>
@@ -119,7 +119,7 @@
 						</vtr-widget-permission-note>
 						<ul class="list-group list-group-flush"
 							*ngIf="microphoneProperties.permission">
-							<li class="">
+							<li class="microphone-on-off">
 								<vtr-ui-row-switch [title]="'device.deviceSettings.audio.microphone.title' | translate"
 									[name]="'device.deviceSettings.audio.microphone.title' | translate"
 									componentName="Microphone"
@@ -227,7 +227,7 @@
 										[theme]="'white'"
 										[isLastChild]="true"
 										[switchId]="'audio-microphone-optimize'">
-										<div class="row no-gutters"
+										<div class="row no-gutters pl-4 ml-4"
 											role="radiogroup"
 											tabindex="0"
 											aria-label="microphone optimizemore list, select using arrow keys">

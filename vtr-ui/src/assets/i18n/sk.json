@@ -22,6 +22,12 @@
                     "rapidCharge": "Rýchle nabíjanie"
                 },
                 "legionEdge": {
+                    "thermalMode2": {
+                        "OC_On": "Pretakt. zap.",
+                        "performance": "Výkon",
+                        "balance": "Vyvážený",
+                        "quiet": "Tichý"
+                    },
                     "title": "Pretaktovanie CPU",
                     "status": {
                         "alwayson": "Zap.",
@@ -101,27 +107,27 @@
                 },
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Nastavenie tepelného režimu",
-                    "thermalMode2SettingDesc": "Vyberte režim, ktorý chcete používať.",
+                    "thermalMode2SettingDesc": "Vyberte režim, ktorý chcete použiť.",
                     "fnQDesc": "Režim môžete prepínať pomocou klávesovej skratky Fn+Q.",
                     "perormanceTitle": "Režim vysokého výkonu",
-                    "performanceDesc": "Zvýšte výkon počítača zvýšením otáčok ventilátora a spotreby energie.",
-                    "OCDesc": "Môžete zapnúť funkciu pretaktovania.",
-                    "ac_dcDesc": "Režim vysokého výkonu je dostupný len pri sieťovom napájaní.",
+                    "performanceDesc": "Zvýšte výkon počítača zvýšením otáčok ventilátora a spotreby energie. ",
+                    "OCDesc": "Môžete sa rozhodnúť zapnúť funkciu pretaktovania.",
+                    "ac_dcDesc": "Režim vysokého výkonu je možné použiť, len ak je pripojený sieťový adaptér.",
                     "balanceTitle": "Vyvážený režim",
-                    "balanceDesc": "Automatické nastavovanie rovnováhy medzi výkonom a otáčkami ventilátora v závislosti od teploty. Stredná spotreba energie.",
+                    "balanceDesc": "Automatické nastavovanie rovnováhy medzi výkonom a otáčkami ventilátora v závislosti od teploty so strednou spotrebou energie.",
                     "quietTitle": "Tichý režim",
-                    "quietDesc": "Udržiavanie nízkej hlučnosti znížením výkonu počítača a otáčok ventilátora, pokiaľ je to možné. Nízka spotreba energie.",
+                    "quietDesc": "Udržiavanie nízkej hlučnosti znížením výkonu počítača a otáčok ventilátora, pokiaľ je to možné, s nízkou spotrebou energie.",
                     "OC": {
                         "cpu_gpuOC": "Povoľte pretaktovanie CPU/GPU v režime vysokého výkonu.",
                         "cpuOC": "Povoľte pretaktovanie CPU v režime vysokého výkonu.",
                         "gpuOC": "Povoľte pretaktovanie GPU v režime vysokého výkonu.",
                         "advance": "VYSOKÁ",
-                        "cpu_gpuDriverLack": "Ak chcete používať funkciu pretaktovania, nainštalujte ovládače CPU/GPU.",
-                        "cpuDriverLack": "Ak chcete používať funkciu pretaktovania, nainštalujte ovládač CPU.",
-                        "gpuDriverLack": "Ak chcete používať funkciu pretaktovania, nainštalujte ovládač GPU.",
+                        "cpu_gpuDriverLack": "Ak chcete používať funkciu pretaktovania, nainštalujte ovládače procesora/grafického procesora.",
+                        "cpuDriverLack": "Ak chcete používať funkciu pretaktovania, nainštalujte ovládač procesora.",
+                        "gpuDriverLack": "Ak chcete používať funkciu pretaktovania, nainštalujte ovládač grafického procesora.",
                         "goInstall": "INŠTALOVAŤ"
                     },
-                    "autoSwitch": "Pri spustení hry automaticky aktivovať vysoký výkon, potom obnoviť pôvodný režim."
+                    "autoSwitch": "Automaticky prepínajte do režimu vysokého výkonu pri spustení hry a po ukončení hry prepnite späť."
                 },
                 "advancedOC": {
                     "title": "Detaily pretaktovania",
@@ -698,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -744,7 +750,7 @@
                 "sub3": "Zabezpečenie WiFi",
                 "sub4": "Sila hesla",
                 "sub5": "Zabezpečenie VPN",
-                "sub6": "Odtlačok"
+                "sub6": "Odtlačok prsta"
             },
             "support": "Technická podpora",
             "beta": {
@@ -769,7 +775,7 @@
             "notFound": "NENÁJDENÉ",
             "registered": "REGISTROVANÉ",
             "notRegistered": "NEREGISTROVANÉ",
-            "fingerPrint": "Odtlačok",
+            "fingerPrint": "Odtlačok Prsta",
             "privacyPolicyAndTermsOfService": "<tag>zásadách ochrany osobných údajov</tag> a <tag>podmienkach poskytovania služieb</tag>",
             "windowsHello": "Windows Hello",
             "enrolled": "ZAREGISTROVANÉ",
@@ -795,7 +801,9 @@
             "loading": "Načítava...",
             "from": "od",
             "to": "zmeňte na",
-            "clickToChange": "kliknutím zmeňte"
+            "clickToChange": "kliknutím zmeňte",
+            "failedLoad": "Načítanie zlyhalo.",
+            "retry": "Skúsiť znova"
         },
         "app-update": {
             "message": "Dobrý deň. K dispozícii je novšia verzia aplikácie Vantage, chcete ju načítať?"
@@ -861,11 +869,18 @@
                 "submitScreenShot": "Odoslať snímku obrazovky",
                 "messages": {
                     "feedbackSuccess": "Ďakujeme vám za spätnú väzbu!"
-                }
+                },
+                "question6": "Aká je pravdepodobnosť, že by ste aplikáciu Lenovo Vantage odporučili priateľom alebo kolegom?",
+                "question7": "Vedeli ste, že Lenovo Vantage môžete použiť na aktualizáciu softvéru (ovládače, firmvér a BIOS) vášho počítača?",
+                "question8": "Použili ste Lenovo Vantage na prístup k informáciám o podpore vášho počítača?",
+                "tips2": "Nižšie uveďte doplňujúce komentáre",
+                "emailAddressLabel": "Ak chcete, aby vás tím Lenovo Vantage kontaktoval, zanechajte svoju e-mailovú adresu.",
+                "emailAddress": "E-mailová adresa",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "Vaše rýchle nastavenia",
+            "title": "Rýchle nastavenia",
             "microphone": "Mikrofón",
             "cameraPrivacy": "Kamera",
             "eyeCareMode": "Ochrana zraku",
@@ -910,6 +925,10 @@
                     "update": "Aktualizovať"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Aktualizovať ovládače, systém BIOS a iný softvér.",
+            "checkForSystemUpdates": "Vyhľadať aktualizácie systému"
         }
     },
     "device": {
@@ -1021,14 +1040,14 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "Aby sme predĺžili životnosť batérie, optimalizovali sme jej plnú kapacitu nabíjania na základe vášho používania. Plná kapacita batérie nemusí byť k dispozícii, kým ju nevybijete na 20% a znova nenabijete."
                 },
                 "condition": {
                     "Illegal": "Tento systém <b>nepodporuje</b> nainštalovanú batériu, ktorá sa preto nebude nabíjať. Vymeňte batériu za správnu batériu Lenovo určenú pre tento systém.",
                     "Good": "<b>Batéria je v dobrom stave.</b>",
                     "Exhaustion": "Kapacita batérie sa <b>zhoršila</b>. Vymeňte ju za novú.",
                     "Bad": "<b>Vyskytla sa chyba batérie.</b> Batériu nemožno nabiť/vybiť. Vymeňte batériu.",
-                    "NotDetected": "<b>Nezistená žiadna batéria ani</b> pripojená batéria.",
+                    "NotDetected": "<b>Nebola zistená žiadna batéria.</b>",
                     "NotGood": "<b>Batéria nie je v dobrom stave.</b>",
                     "NotSupportACAdapter": "<b>Napájací adaptér nie je podporovaný.</b>",
                     "LimitedACAdapterSupport": "<b>Sieťový adaptér nedokáže poskytnúť dostatok energie na napájanie.</b>",
@@ -1234,9 +1253,9 @@
                             "reset": "Obnoviť predvolené",
                             "stop": "Zastaviť"
                         },
-                        "progressText1": "{{stage}} z {{stageNum}}: Kalibrácia na úplné nabitie",
-                        "progressText2": "{{stage}} z {{stageNum}}: Kalibrácia na nízku úroveň nabitia batérie",
-                        "progressText3": "{{stage}} z {{stageNum}}: Kalibrácia na vysokú úroveň nabitia batérie",
+                        "progressText1": "Krok {{stage}}z celkového počtu {{stageNum}}: Kalibrácia na úplné nabitie",
+                        "progressText2": "Krok {{stage}}z celkového počtu {{stageNum}}: Kalibrácia na nízku úroveň nabitia batérie",
+                        "progressText3": "Krok {{stage}}z celkového počtu {{stageNum}}: Kalibrácia na vysokú úroveň nabitia batérie",
                         "FCCText": "Z {{before}} Wh na {{after}} Wh",
                         "note": "Poznámka: Pred resetovaním ukazovateľa batérie pripojte počítač k zdroju napájania. ",
                         "resetLog": {
@@ -1264,6 +1283,55 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "CERTIFIKOVANÝ PRODUKT ENERGY STAR"
+                },
+                "dpm": {
+                    "title": "Napájanie",
+                    "subtitle": "Nastavenia napájania",
+                    "description": "V tejto časti si môžete pozrieť predvolené nastavenia a prispôsobiť používanie napájania a plán napájania podľa vlastných potrieb.",
+                    "globalPowerSettings": {
+                        "title": "Globálne nastavenia napájania",
+                        "description": "Táto funkcia potlačí plán napájania alebo nastavenia používania napájania.",
+                        "powerButton": {
+                            "label": "TLAČIDLO NAPÁJANIA:",
+                            "items": {
+                                "doNothing": "Nerobiť nič",
+                                "sleep": "Spánok",
+                                "hibernate": "Dlhodobý spánok",
+                                "shutDown": "Vypnúť",
+                                "turnOffTheDisplay": "Vypnúť obrazovku"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "POŽADOVANÉ PRIHLÁSENIE:",
+                            "items": {
+                                "never": "Nikdy",
+                                "fromSleep": "Keď sa počítač prebudí zo spánku"
+                            },
+                            "tip": "Poznámka: Funguje len v prípade nastaveného systémového hesla."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "Používanie napájania",
+                        "description": "AK JE SYSTÉM NEČINNÝ:",
+                        "turnOffDisplay": "VYPNÚŤ OBRAZOVKU PO:",
+                        "turnOffHDD": "VYPNÚŤ PEVNÝ DISK PO:",
+                        "sleep": "SPÁNOK PO:",
+                        "hibernate": "DLHODOBÝ SPÁNOK PO:",
+                        "items": {
+                            "never": "Nikdy",
+                            "minute": "minúta",
+                            "minutes": "minúty",
+                            "hour": "hodina",
+                            "hours": "hodiny"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "Plán napájania",
+                        "description": "Vyberte plán napájania na ovládanie výkonu počítača, teplotu systému a spotrebu napájania.",
+                        "currentPowerPlan": {
+                            "label": "PLÁN PRÚDU"
+                        }
+                    }
                 },
                 "smartStandby": {
                     "title": "Inteligentný pohotovostný režim",
@@ -1648,8 +1716,11 @@
                         "options": {
                             "option1": "Vyberte",
                             "option2": "Otvorte webovú stránku",
-                            "option3": "Zadajte text"
-                        }
+                            "option3": "Zadajte text",
+                            "option4": "Open applications or files",
+                            "option5": "Invoke key sequence"
+                        },
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function."
                     },
                     "tooltip": "Obsah, ktorý sa má vyplniť",
                     "apply": {
@@ -1664,6 +1735,17 @@
                     "enterText": {
                         "title": "TEXT, KTORÝ SA MÁ ZADAŤ",
                         "placeholder": "Tu napíšte"
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles": {
+                        "applicationTitle": "You need to delete one app first",
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {
@@ -1899,7 +1981,7 @@
                 "heading": "Inteligentné médiá",
                 "title": "Bezdotykové prehrávanie videa",
                 "desc": "Táto funkcia pozastaví prehrávanie videa, keď odídete od počítača a obnoví prehrávanie videa, keď sa vrátite.",
-                "tooltip": "Táto funkcia sa nevzťahuje na webové video prehrávače. Obľúbené lokálne prehrávače videa (prehrávač Windows Media Player, 5KPlayer a pod.) túto funkciu podporujú."
+                "tooltip": "Táto funkcia sa nevzťahuje na<br>webové video prehrávače.<br>Podporované prehrávače sú tieto:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
             },
             "superResolution": {
                 "heading": "Inteligentné médiá",
@@ -1937,7 +2019,8 @@
                     "point7": "Vyberte požadovaný zdrojový jazyk a cieľový jazyk.",
                     "point8": "V závislosti od svojich potrieb nastavte hlasový vstup z reproduktora alebo mikrofónu.",
                     "point9": "Kliknite na ikonu mikrofónu a začnite hovoriť.",
-                    "closeText": "zatvoriť"
+                    "closeText": "zatvoriť",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -1983,7 +2066,7 @@
             },
             "recommended": {
                 "title": "Odporúčané aktualizácie",
-                "tooltip": "Odporúčané aktualizácie ovládačov zabezpečia"
+                "tooltip": "Odporúčané aktualizácie ovládačov umožňujú zachovať optimálny výkon počítača."
             },
             "windows": {
                 "title": "Aktualizácie systému Windows",

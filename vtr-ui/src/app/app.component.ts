@@ -31,7 +31,6 @@ import { TimerServiceEx } from 'src/app/services/timer/timer-service-ex.service'
 // import { AppUpdateService } from './services/app-update/app-update.service';
 import { VantageFocusHelper } from 'src/app/services/timer/vantage-focus.helper';
 import { SegmentConst } from './services/self-select/self-select.service';
-import { ToolbarToastService } from './services/toolbartoast/toolbartoast.service';
 
 declare var Windows;
 @Component({
@@ -48,6 +47,8 @@ export class AppComponent implements OnInit, OnDestroy {
 	private totalDuration = 0; // itermittant app duratin will be added to it
 	private vantageFocusHelper = new VantageFocusHelper();
 	private isServerSwitchEnabled = true;
+	private shellVersion;
+	private newTutorialVersion = '3.1.2';
 
 	constructor(
 		private displayService: DisplayService,
@@ -65,15 +66,20 @@ export class AppComponent implements OnInit, OnDestroy {
 		private appUpdateService: AppUpdateService,
 		private appsForYouService: AppsForYouService,
 		private metricService: MetricService,
-		private toolbarToast: ToolbarToastService
 		// private appUpdateService: AppUpdateService
 	) {
 		// to check web and js bridge version in browser console
 		const win: any = window;
+		this.shellVersion = this.vantageShellService.getShellVersion();
+
 		win.webAppVersion = {
 			web: environment.appVersion,
-			bridge: version
+			bridge: version,
+			shell: this.shellVersion
 		};
+
+		// using error because by default its enabled in all
+		this.logger.error('APP VERSION', win.webAppVersion);
 
 		this.subscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
@@ -130,7 +136,6 @@ export class AppComponent implements OnInit, OnDestroy {
 		}
 
 		this.setRunVersionToRegistry();
-		this.toolbarToast.showVantageToolbarToast();
 	}
 
 	ngOnDestroy() {
@@ -161,7 +166,17 @@ export class AppComponent implements OnInit, OnDestroy {
 
 	private launchWelcomeModal() {
 		if (!this.deviceService.isArm && !this.deviceService.isAndroid) {
-			const tutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
+			const gamingTutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.GamingTutorial);
+			let tutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
+			if (this.deviceService.isGaming) {
+				if (gamingTutorial) {
+					tutorial = gamingTutorial;
+				} else if (tutorial && tutorial.isDone && tutorial.tutorialVersion === ''){
+					tutorial.tutorialVersion = this.newTutorialVersion;// 3.1.6 will save tutorial empty version in gaming
+					this.commonService.setLocalStorageValue(LocalStorageKey.GamingTutorial, tutorial);
+					this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, tutorial);
+				}
+			}
 			const newTutorialVersion = '3.1.2';
 			if ((tutorial === undefined || tutorial.tutorialVersion !== newTutorialVersion) && navigator.onLine) {
 				this.openWelcomeModal(1, newTutorialVersion);
@@ -182,11 +197,17 @@ export class AppComponent implements OnInit, OnDestroy {
 		modalRef.result.then(
 			(result: WelcomeTutorial) => {
 				// on open
+				if (this.deviceService.isGaming) {
+					this.commonService.setLocalStorageValue(LocalStorageKey.GamingTutorial, result);
+				}
 				this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, result);
 			},
 			(reason: WelcomeTutorial) => {
 				// on close
 				if (reason instanceof WelcomeTutorial) {
+					if (this.deviceService.isGaming) {
+						this.commonService.setLocalStorageValue(LocalStorageKey.GamingTutorial, reason);
+					}
 					this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, reason);
 				}
 			}
@@ -249,8 +270,6 @@ export class AppComponent implements OnInit, OnDestroy {
 					this.commonService.setLocalStorageValue(LocalStorageKey.HadRunApp, true);
 					this.metricService.sendFirstRunEvent(value);
 				}
-
-				this.metricService.sendEnvInfoMetric(appFirstRun);
 			}
 		} catch (e) {
 			this.vantageShellService.getLogger().error(JSON.stringify(e));
@@ -353,7 +372,6 @@ export class AppComponent implements OnInit, OnDestroy {
 
 	@HostListener('window:load', ['$event'])
 	onLoad(event) {
-		this.metricService.sendAppLoadedMetric();
 		const scale = 1 / (window.devicePixelRatio || 1);
 		const content = `shrink-to-fit=no, width=device-width, initial-scale=${scale}, minimum-scale=${scale}`;
 		document.querySelector('meta[name="viewport"]').setAttribute('content', content);
@@ -400,11 +418,8 @@ export class AppComponent implements OnInit, OnDestroy {
 					this.deviceService.getMachineInfo()
 						.then((info) => {
 							if (info) {
-								if (info.isGaming) {
-									const gamingTutorialData = new WelcomeTutorial(2, '', true, SegmentConst.Gaming);
-									this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, gamingTutorialData);
-								} else if (info.cpuArchitecture && info.cpuArchitecture.toUpperCase().trim() === 'ARM64') {
-									const armTutorialData = new WelcomeTutorial(2, '', true, SegmentConst.Consumer);
+								if (info.cpuArchitecture && info.cpuArchitecture.toUpperCase().trim() === 'ARM64') {
+									const armTutorialData = new WelcomeTutorial(2, this.newTutorialVersion, true, SegmentConst.Consumer);
 									this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, armTutorialData);
 								} else {
 									setTimeout(() => {
@@ -422,7 +437,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
 	private setRunVersionToRegistry() {
 		setTimeout(() => {
-			const runVersion = this.vantageShellService.getShellVersion();
+			const runVersion = this.shellVersion;
 			const regUtil = this.vantageShellService.getRegistryUtil();
 			if (runVersion && regUtil) {
 				const regPath = 'HKEY_CURRENT_USER\\Software\\Lenovo\\ImController';

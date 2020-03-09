@@ -16,7 +16,7 @@
 	z-index: 100 !important;
 	width: 100%;
 
-	@media #{$mediaquery_xl} {
+	@media #{$breakpoint_xl} {
 		position: fixed;
 		left: 0%;
 		right: 0%;
@@ -86,7 +86,7 @@
 			margin-left: 0.6rem;
 			margin-right: auto;
 
-			@media #{$mediaquery_xl} {
+			@media #{$breakpoint_xl} {
 				text-align: left;
 			}
 
@@ -422,7 +422,7 @@
 				}
 			}
 
-			@media #{$mediaquery_xl} {
+			@media #{$breakpoint_xl} {
 				position: absolute;
 				top: 9rem;
 				right: 0;
@@ -507,7 +507,7 @@
 			position: relative;
 			text-align: center;
 
-			@media #{$mediaquery_xl} {
+			@media #{$breakpoint_xl} {
 				display: block;
 			}
 
@@ -568,7 +568,7 @@
     color: #ccc !important;
 }
 
-@media #{$mediaquery_xl} {
+@media #{$breakpoint_xl} {
 	.dropdown-menu {
 		top: 0 !important;
 		position: relative;

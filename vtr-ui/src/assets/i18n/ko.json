@@ -22,6 +22,12 @@
                     "rapidCharge": "급속 충전"
                 },
                 "legionEdge": {
+                    "thermalMode2": {
+                        "OC_On": "오버클럭 켜기",
+                        "performance": "성능",
+                        "balance": "밸런스",
+                        "quiet": "저소음"
+                    },
                     "title": "CPU 오버클럭",
                     "status": {
                         "alwayson": "켜기",
@@ -101,27 +107,27 @@
                 },
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "열 모드 설정",
-                    "thermalMode2SettingDesc": "사용할 모드를 선택하십시오.",
+                    "thermalMode2SettingDesc": "사용할 모드를 선택합니다.",
                     "fnQDesc": "바로 가기 Fn+Q를 사용해 모드를 전환할 수 있습니다.",
                     "perormanceTitle": "Performance 모드",
-                    "performanceDesc": "컴퓨터의 팬 속도 및 전력 소모 성능을 개선하십시오.",
-                    "OCDesc": "오버클럭 기능을 사용하도록 설정할 수 있습니다.",
-                    "ac_dcDesc": "연결된 경우에만 Performance 모드를 사용할 수 있습니다.",
+                    "performanceDesc": "팬 속도와 전력 소모 수준을 높여 컴퓨터 성능을 향상시킵니다. ",
+                    "OCDesc": "오버클럭 기능을 사용하도록 선택할 수 있습니다.",
+                    "ac_dcDesc": "Performance 모드는 AC 전원 어댑터가 연결되어 있는 경우에만 적용됩니다.",
                     "balanceTitle": "균형 모드",
-                    "balanceDesc": "온도에 따라 자동으로 성능과 팬 속도를 균형있게 조정 합니다. 중간 전력 소모량.",
+                    "balanceDesc": "중간 전력 소모 수준에서 온도에 따라 자동으로 성능과 팬 속도를 균형있게 조정합니다.",
                     "quietTitle": "저소음 모드",
-                    "quietDesc": "가능한 경우 컴퓨터의 성능과 팬 속도를 줄여 소음을 줄일 수 있습니다. 낮은 전력 소모량.",
+                    "quietDesc": "낮은 전력 소모 수준에서 가능한 경우 컴퓨터의 성능과 팬 속도를 줄여 소음을 줄일 수 있습니다.",
                     "OC": {
                         "cpu_gpuOC": "Performance 모드에서 CPU/GPU 오버클럭 사용.",
                         "cpuOC": "Performance 모드에서 CPU 오버클럭 사용.",
                         "gpuOC": "Performance 모드에서 GPU 오버클럭 사용.",
                         "advance": "고급",
-                        "cpu_gpuDriverLack": "CPU/GPU 드라이버를 설치해 오버클럭 기능 사용.",
-                        "cpuDriverLack": "CPU 드라이버를 설치해 오버클럭 기능 사용.",
-                        "gpuDriverLack": "GPU 드라이버를 설치해 오버클럭 기능 사용.",
+                        "cpu_gpuDriverLack": "오버클럭 기능을 사용하려면 CPU/GPU 드라이버를 설치합니다.",
+                        "cpuDriverLack": "오버클럭 기능을 사용하려면 CPU 드라이버를 설치합니다.",
+                        "gpuDriverLack": "오버클럭 기능을 사용하려면 GPU 드라이버를 설치합니다.",
                         "goInstall": "설치하기"
                     },
-                    "autoSwitch": "게임을 실행하고 되돌아갈 때 자동으로 Performance로 전환합니다."
+                    "autoSwitch": "게임을 실행하면 Performance 모드로 자동으로 전환되고 게임을 종료하면 다시 전환됩니다."
                 },
                 "advancedOC": {
                     "title": "오버클럭 고급 설정",
@@ -698,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -795,7 +801,9 @@
             "loading": "로드 중...",
             "from": "백업 선택",
             "to": "백업 위치 지정",
-            "clickToChange": "클릭하여 변경"
+            "clickToChange": "클릭하여 변경",
+            "failedLoad": "로드에 실패했습니다.",
+            "retry": "다시 시도"
         },
         "app-update": {
             "message": "앗! 새 버전의 Vantage를 사용할 수 있습니다. 로드하시겠습니까?"
@@ -861,7 +869,14 @@
                 "submitScreenShot": "스크린 샷 제출",
                 "messages": {
                     "feedbackSuccess": "소중한 의견을 들려주셔서 감사합니다!"
-                }
+                },
+                "question6": "친구나 동료들에게 Lenovo Vantage 어플리케이션을 추천할 가능성이 얼마나 됩니까?",
+                "question7": "Lenovo Vantage를 사용하면 소프트웨어(드라이버, 펌웨어, BIOS)를 최신 상태로 유지할 수 있다는 사실을 알고 계십니까?",
+                "question8": "Lenovo Vantage를 사용하여 컴퓨터 관련 지원 정보를 얻은 적이 있으십니까?",
+                "tips2": "추가 의견은 아래에 남겨주시기 바랍니다",
+                "emailAddressLabel": "혹시 Lenovo Vantage 팀에게 연락을 받길 원하신다면 이메일 주소를 남겨주시기 바랍니다.",
+                "emailAddress": "이메일 주소",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
@@ -910,6 +925,10 @@
                     "update": "업데이트"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "드라이버, BIOS 및 기타 소프트웨어를 업데이트하십시오.",
+            "checkForSystemUpdates": "시스템 업데이트 확인"
         }
     },
     "device": {
@@ -1021,14 +1040,14 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "배터리 수명을 연장하기 위해 사용량에 따라 완전 충전 용량을 최적화했습니다. 완전 충전 용량은 배터리를 20%까지 방전시킨 다음 재충전해야 사용할 수 있습니다."
                 },
                 "condition": {
                     "Illegal": "시스템에서 <b>지원되지 않는</b> 배터리를 설치하여 충전되지 않습니다. 이 시스템에 맞는 Lenovo 배터리로 교체하십시오.",
                     "Good": "<b>배터리의 상태가 좋습니다.</b>",
                     "Exhaustion": "배터리 용량이 <b>저하</b>되었습니다. 새 배터리를 교체하십시오.",
                     "Bad": "<b>배터리 오류가 발생했습니다.</b> 배터리를 충전/방전할 수 없습니다. 배터리를 교체하십시오.",
-                    "NotDetected": "<b>배터리가 감지되지 않거나 배터리</b>에 꽂혀 있지 않습니다.",
+                    "NotDetected": "<b>감지된 배터리가 없습니다.</b>",
                     "NotGood": "<b>배터리의 상태가 좋지 않습니다.</b>",
                     "NotSupportACAdapter": "<b>AC 어댑터가 지원되지 않습니다.</b>",
                     "LimitedACAdapterSupport": "<b>AC 어댑터는 충분한 전원을 공급하지 못합니다.</b>",
@@ -1043,7 +1062,7 @@
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} 전원이 연결돼 있습니다.</b>",
                     "EmDriverInstalled": "배터리 세부사항을 사용할 수 없습니다. <b>Lenovo ACPI - Compliant Virtual Power Controller</b> 드라이버를 설치하려면 Windows 업데이트->업데이트 확인을 실행하십시오."
                 },
-                "batteryNotDetected": "배터리 없음",
+                "batteryNotDetected": "감지된 배터리가 없습니다",
                 "thresholdNote": "<b>참고:</b> 배터리 충전 임계값을 사용하는 경우 배터리가 완전히 충전되지 않습니다.",
                 "seeDetailsLink": "세부사항 참조",
                 "gaugeResetWarning": "<b>참고:</b> 배터리 게이지 리셋이 진행 중입니다. AC 전원 어댑터를 연결 상태로 두십시오.",
@@ -1234,9 +1253,9 @@
                             "reset": "재설정",
                             "stop": "중지"
                         },
-                        "progressText1": "{{stageNum}}의 {{stage}}: 완전 충전으로 보정 중",
-                        "progressText2": "{{stageNum}}의 {{stage}}: 저전력으로 보정 중",
-                        "progressText3": "{{stageNum}}의 {{stage}}: 고전력으로 보정 중",
+                        "progressText1": "총 {{stageNum}} 단계 중, {{stage}} 단계: 완전 충전으로 보정",
+                        "progressText2": "총 {{stageNum}} 단계 중, {{stage}} 단계: 저전력으로 보정",
+                        "progressText3": "총 {{stageNum}} 단계 중, {{stage}} 단계: 고전력으로 보정",
                         "FCCText": "{{before}} Wh에서 {{after}} Wh",
                         "note": "참고: 배터리 게이지를 리셋하기 전에, 컴퓨터를 AC 전원에 연결시키십시오. ",
                         "resetLog": {
@@ -1264,6 +1283,55 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "ENERGY STAR 인증 제품"
+                },
+                "dpm": {
+                    "title": "전원",
+                    "subtitle": "전원 설정",
+                    "description": "이 섹션에서 기본 설정을 확인하고, 필요에 따라 전원 사용 및 전원 계획을 사용자 정의할 수 있습니다.",
+                    "globalPowerSettings": {
+                        "title": "글로벌 전원 설정",
+                        "description": "이 기능은 전원 계획 또는 전원 사용 설정을 재정의합니다.",
+                        "powerButton": {
+                            "label": "전원 버튼:",
+                            "items": {
+                                "doNothing": "아무 작업도 하지 않음",
+                                "sleep": "절전",
+                                "hibernate": "최대 절전",
+                                "shutDown": "시스템 종료",
+                                "turnOffTheDisplay": "디스플레이 끄기"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "로그인 필수:",
+                            "items": {
+                                "never": "사용 안 함",
+                                "fromSleep": "PC가 절전 모드에서 깨어날 때"
+                            },
+                            "tip": "참고: 시스템 암호가 설정된 경우에만 작동합니다."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "전원 사용",
+                        "description": "시스템이 유휴 상태인 경우:",
+                        "turnOffDisplay": "다음 시간이 경과하면 디스플레이 끄기:",
+                        "turnOffHDD": "다음 시간이 경과하면 HDD 끄기:",
+                        "sleep": "다음 시간이 경과하면 절전 모드 실행:",
+                        "hibernate": "다음 시간이 경과하면 최대 절전 모드 실행:",
+                        "items": {
+                            "never": "사용 안 함",
+                            "minute": "분",
+                            "minutes": "분",
+                            "hour": "시",
+                            "hours": "시"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "전원 구성",
+                        "description": "전원 계획을 선택하여 컴퓨터 성능, 시스템 온도 및 전력 사용량을 제어합니다.",
+                        "currentPowerPlan": {
+                            "label": "현재 계획"
+                        }
+                    }
                 },
                 "smartStandby": {
                     "title": "스마트 대기",
@@ -1648,8 +1716,11 @@
                         "options": {
                             "option1": "선택하십시오.",
                             "option2": "웹 사이트 열기",
-                            "option3": "텍스트 입력"
-                        }
+                            "option3": "텍스트 입력",
+                            "option4": "Open applications or files",
+                            "option5": "Invoke key sequence"
+                        },
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function."
                     },
                     "tooltip": "채워질 콘텐츠",
                     "apply": {
@@ -1664,6 +1735,17 @@
                     "enterText": {
                         "title": "입력할 텍스트",
                         "placeholder": "여기에 입력해 주십시오"
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles": {
+                        "applicationTitle": "You need to delete one app first",
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {
@@ -1899,7 +1981,7 @@
                 "heading": "지능형 미디어",
                 "title": "제로 터치 비디오 재생",
                 "desc": "이 기능은 컴퓨터를 두고 자리를 떠나면 비디오를 일시 정지하고 자리에 다시 돌아 오면 비디오를 다시 시작합니다.",
-                "tooltip": "이 기능은 웹 비디오 플레이어에는 적용되지 않습니다. 대중적인 비디오 플레이어(예: Windows Media Player, 5KPlayer 등)가 이 기능을 지원합니다."
+                "tooltip": "이 기능은<br>웹 비디오 플레이어에서 사용할 수 없습니다.<br>지원 가능한 플레이어는 다음과 같습니다.<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
             },
             "superResolution": {
                 "heading": "지능형 미디어",
@@ -1937,7 +2019,8 @@
                     "point7": "원하는 소스 언어 및 대상 언어를 선택하십시오.",
                     "point8": "필요에 따라 스피커 또는 마이크에서 음성 입력을 설정하십시오.",
                     "point9": "말하기를 시작하려면 마이크 아이콘을 클릭하십시오",
-                    "closeText": "닫기"
+                    "closeText": "닫기",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "확인",

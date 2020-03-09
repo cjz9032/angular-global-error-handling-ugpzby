@@ -22,6 +22,12 @@
                     "rapidCharge": "Snabbladdning"
                 },
                 "legionEdge": {
+                    "thermalMode2": {
+                        "OC_On": "Överklockn. på",
+                        "performance": "Prestanda",
+                        "balance": "Balans",
+                        "quiet": "Tyst"
+                    },
                     "title": "CPU-överklockning",
                     "status": {
                         "alwayson": "På",
@@ -167,27 +173,27 @@
                 },
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Inst. för temperaturläge",
-                    "thermalMode2SettingDesc": "Välj önskat läge.",
+                    "thermalMode2SettingDesc": "Välj det läge du vill använda.",
                     "fnQDesc": "Du kan växla läge med kortkommandot Fn+Q.",
                     "perormanceTitle": "Prestandaläge",
-                    "performanceDesc": "Öka datorns prestanda med högre fläkthastighet och energiförbrukning.",
-                    "OCDesc": "Du kan välja att aktivera överklockningsfunktionen.",
-                    "ac_dcDesc": "Prestandaläget är endast tillgängligt vid nätdrift.",
+                    "performanceDesc": "Öka datorns prestanda med högre fläkthastighet och effektförbrukning. ",
+                    "OCDesc": "Du kan välja att slå på överklockningsfunktionen.",
+                    "ac_dcDesc": "Prestandaläget går bara att använda när nätadaptern är inkopplad.",
                     "balanceTitle": "Balansläge",
-                    "balanceDesc": "Balansera automatiskt prestanda och fläkthastighet baserat på temperatur. Medelhög energiförbrukning.",
+                    "balanceDesc": "Gör en automatisk avvägning mellan prestanda och fläkthastighet utifrån temperatur med medelhög effektförbrukning.",
                     "quietTitle": "Tyst läge",
-                    "quietDesc": "Gör datorn tystare genom att minska datorns prestanda och fläkthastighet när det är möjligt. Låg energiförbrukning.",
+                    "quietDesc": "Gör datorn tystare genom att minska datorns prestanda och fläkthastighet med låg effektförbrukning när det är möjligt.",
                     "OC": {
                         "cpu_gpuOC": "Aktivera CPU-/GPU-överklockning i prestandaläge.",
                         "cpuOC": "Aktivera CPU-överklockning i prestandaläge.",
                         "gpuOC": "Aktivera GPU-överklockning i prestandaläge.",
                         "advance": "AVANCERAT",
-                        "cpu_gpuDriverLack": "Installera CPU-/GPU-drivrutiner för att använda överklockning.",
-                        "cpuDriverLack": "Installera CPU-drivrutinen om du vill använda överklockning.",
-                        "gpuDriverLack": "Installera GPU-drivrutinen om du vill använda överklockning.",
+                        "cpu_gpuDriverLack": "Installera CPU-/GPU-drivrutiner om du vill använda överklockningsfunktionen.",
+                        "cpuDriverLack": "Installera CPU-drivrutinen om du vill använda överklockningsfunktionen.",
+                        "gpuDriverLack": "Installera GPU-drivrutinen om du vill använda överklockningsfunktionen.",
                         "goInstall": "INSTALLERA"
                     },
-                    "autoSwitch": "Växla automatiskt till prestandaläge vid spelstart och växla tillbaka efteråt."
+                    "autoSwitch": "Växla automatiskt till prestandaläge när du startar spel och växla tillbaka när du är klar."
                 }
             }
         },
@@ -698,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -795,7 +801,9 @@
             "loading": "Läser in...",
             "from": "från",
             "to": "till",
-            "clickToChange": "klicka för att ändra"
+            "clickToChange": "klicka för att ändra",
+            "failedLoad": "Det gick inte att läsa in.",
+            "retry": "Försök igen"
         },
         "app-update": {
             "message": "Hej! Det finns en nyare version av Vantage. Vill du läsa in den?"
@@ -861,11 +869,18 @@
                 "submitScreenShot": "Skicka skärmdump",
                 "messages": {
                     "feedbackSuccess": "Tack för din feedback!"
-                }
+                },
+                "question6": "Hur troligt är det att du skulle rekommendera en vän eller kollega programmet Lenovo Vantage?",
+                "question7": "Visste du att du kan använda Lenovo Vantage för att hålla programvara (drivrutiner, fast programvara och BIOS) på datorn uppdaterade?",
+                "question8": "Har du använt Lenovo Vantage för att få supportinformation om datorn?",
+                "tips2": "Lämna eventuella övriga kommentarer nedan",
+                "emailAddressLabel": "Lämna din e-postadress om du kan tänka dig att eventuellt bli kontaktad av Lenovo Vantage-teamet.",
+                "emailAddress": "E-postadress",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "Dina snabbinställningar",
+            "title": "Snabbinställningar",
             "microphone": "Mikrofon",
             "cameraPrivacy": "Kamera",
             "eyeCareMode": "Ögonskydd",
@@ -910,6 +925,10 @@
                     "update": "Uppdatera"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Uppdatera drivrutiner, BIOS och annan programvara.",
+            "checkForSystemUpdates": "Sök efter systemuppdateringar"
         }
     },
     "device": {
@@ -1021,14 +1040,14 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "För att förlänga batteritiden har vi optimerat kapaciteten för full laddning baserat på din användning. Full batterikapacitet kan kräva att batteriet laddas ur till 20 % och sedan laddas om."
                 },
                 "condition": {
                     "Illegal": "Det installerade batteriet <b>stöds inte</b> på enheten och kommer inte att laddas. Byt ut batteriet mot ett Lenovo-batteri.",
                     "Good": "<b>Batteriet är i gott skick.</b>",
                     "Exhaustion": "Batteriets kapacitet har <b>försämrats</b>. Byt ut det mot ett nytt.",
                     "Bad": "<b>Ett batterifel har uppstått.</b> Batteriet går inte att ladda/ladda ur. Byt ut batteriet.",
-                    "NotDetected": "<b>Inget batteri upptäcktes</b> eller batteriet är inte anslutet.",
+                    "NotDetected": "<b>Inget batteri upptäcktes.</b>",
                     "NotGood": "<b>Batteriet är inte i gott skick.</b>",
                     "NotSupportACAdapter": "<b>Nätadaptern stöds inte.</b>",
                     "LimitedACAdapterSupport": "<b>Nätadaptern ger inte tillräcklig strömförsörjning.</b>",
@@ -1234,9 +1253,9 @@
                             "reset": "Återställ",
                             "stop": "Stopp"
                         },
-                        "progressText1": "{{stage}} av {{stageNum}}: Kalibrerar för full laddning",
-                        "progressText2": "{{stage}} av {{stageNum}}: Kalibrerar för låg batterinivå",
-                        "progressText3": "{{stage}} av {{stageNum}}: Kalibrerar för hög batterinivå",
+                        "progressText1": "Steg {{stage}} av {{stageNum}}: kalibrering till full laddning",
+                        "progressText2": "Steg {{stage}} av {{stageNum}}: kalibrering för låg batterinivå",
+                        "progressText3": "Steg {{stage}} av {{stageNum}}: kalibrering för hög batterinivå",
                         "FCCText": "Från {{before}} Wh till {{after}} Wh",
                         "note": "Obs! Tänk på att ansluta datorn till nätström innan du återställer batterimätaren. ",
                         "resetLog": {
@@ -1264,6 +1283,55 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "EN ENERGY STAR-CERTIFIERAD PRODUKT"
+                },
+                "dpm": {
+                    "title": "Ström",
+                    "subtitle": "Ströminställningar",
+                    "description": "I detta avsnitt kan du kontrollera standardinställningarna och anpassa energiförbrukningen och energischemat efter dina behov.",
+                    "globalPowerSettings": {
+                        "title": "Globala energiinställningar",
+                        "description": "Funktionen åsidosätter inställningarna för Energischema och Energiförbrukning.",
+                        "powerButton": {
+                            "label": "STRÖMBRYTARE:",
+                            "items": {
+                                "doNothing": "Gör ingenting",
+                                "sleep": "Strömsparläge",
+                                "hibernate": "Viloläge",
+                                "shutDown": "Stäng av",
+                                "turnOffTheDisplay": "Stäng av bildskärmen"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "INLOGGNING KRÄVS:",
+                            "items": {
+                                "never": "Aldrig",
+                                "fromSleep": "När datorn aktiveras från strömsparläge"
+                            },
+                            "tip": "Obs! Fungerar bara om du har ställt in ett systemlösenord."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "Energianvändning",
+                        "description": "OM SYSTEMET ÄR INAKTIVT:",
+                        "turnOffDisplay": "STÄNG AV BILDSKÄRM EFTER:",
+                        "turnOffHDD": "STÄNG AV HÅRDDISK EFTER:",
+                        "sleep": "STRÖMSPARLÄGE EFTER:",
+                        "hibernate": "VILOLÄGE EFTER:",
+                        "items": {
+                            "never": "Aldrig",
+                            "minute": "minut",
+                            "minutes": "minuter",
+                            "hour": "timme",
+                            "hours": "timmar"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "Energischema",
+                        "description": "Välj ett energischema för att styra datorprestanda, systemtemperatur och energiförbrukning.",
+                        "currentPowerPlan": {
+                            "label": "AKTUELLT SCHEMA"
+                        }
+                    }
                 },
                 "smartStandby": {
                     "title": "Smart vänteläge",
@@ -1648,8 +1716,11 @@
                         "options": {
                             "option1": "Välj",
                             "option2": "Öppna hemsidan",
-                            "option3": "Skriv text"
-                        }
+                            "option3": "Skriv text",
+                            "option4": "Open applications or files",
+                            "option5": "Invoke key sequence"
+                        },
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function."
                     },
                     "tooltip": "Platshållare för innehåll",
                     "apply": {
@@ -1664,6 +1735,17 @@
                     "enterText": {
                         "title": "PLATSHÅLLARE FÖR TEXT",
                         "placeholder": "Skriv här"
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles": {
+                        "applicationTitle": "You need to delete one app first",
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {
@@ -1899,7 +1981,7 @@
                 "heading": "Intelligenta medier",
                 "title": "Beröringsfri videouppspelning",
                 "desc": "Videon pausas när du lämnar datorn och återupptas när du är tillbaka.",
-                "tooltip": "Denna funktion fungerar inte på onlinevideospelare. Vanliga lokala videospelare (som Windows Media Player och 5KPlayer) har stöd för denna funktion."
+                "tooltip": "Denna funktion fungerar inte på<br>onlinevideospelare.<br>Funktionen är kompatibel med följande spelare:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
             },
             "superResolution": {
                 "heading": "Intelligenta medier",
@@ -1937,7 +2019,8 @@
                     "point7": "Välj önskade käll- och målspråk.",
                     "point8": "Ställ in röstinmatning från Högtalare eller Mikrofon.",
                     "point9": "Klicka på mikrofonikonen och börja tala",
-                    "closeText": "stäng"
+                    "closeText": "stäng",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",

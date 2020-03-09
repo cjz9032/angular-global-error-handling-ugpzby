@@ -5,7 +5,8 @@
 			[hidden]="item.isHidden">
 			<!--Open vantage subapges if isSystemLink===undefined or  isSystemLink  === false  and launch not existed then user routerLink to naviagate within Lenovo Vantage Application -->
 
-			<a routerLink="/{{item.path}}"
+			<a *ngIf="!item.isSystemLink && !item.launch"
+				routerLink="/{{item.path}}"
 				id="{{linkId}}-{{item.id}}"
 				[queryParams]="item.pathParams"
 				vtrMetrics
@@ -17,8 +18,7 @@
 				[ngClass]="clickable?'':'disabled'"
 				[tabindex]="clickable ? 0 : -1"
 				role="link"
-				[title]="(item.metricsItemName ? item.metricsItemName : item.title) + (item.detail? ' - '+item.detail:'' ) +(item.subText? ' - '+item.subText:'' )"
-				*ngIf="(item.isSystemLink===undefined || (item.isSystemLink!==undefined && item.isSystemLink===false)) && !item.launch">
+				[title]="(item.metricsItemName ? item.metricsItemName : item.title) + (item.detail? ' - '+item.detail:'' ) +(item.subText? ' - '+item.subText:'' )">
 				<div class="container-fluid">
 					<div class="row align-items-center">
 						<div class="col col-1 text-center"
@@ -89,7 +89,7 @@
 						<div class="col col-1 text-center"
 							*ngIf="iconPlacement==='right'">
 							<div class="item-icon status"
-								*ngIf="item.status !== undefined && item.status !== '' && item.status !== 4">
+								*ngIf="item.status !== undefined && item.status !== '' && item.status !== 4 && item.status !== 7">
 								<div class="icon-bkg"
 									id="{{'icon-' + getItemStatusIconClass(item) + '-' + item.id}}">
 									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
@@ -113,6 +113,11 @@
 									<fa-icon [icon]="item.icon"></fa-icon>
 								</div>
 							</div>
+							<div [hidden]="item.status !== 7">
+								<a href="javascript:void(0);"
+									class="retryLink text-two-ellipsis"
+									(click)="retry(item, $event)">{{item.retryText}}</a>
+							</div>
 							<div class="item-icon-image"
 								*ngIf="item.iconPath">
 								<img [src]="item.iconPath|svgInline|async" />
@@ -130,7 +135,8 @@
 				</div>
 			</a>
 			<!--Open Windows Settings /subapges if isSystemLink is not undefined and  true or  then sanitise URL of windows settings page like (ms-settings:storagesense) , link href instead of routerlink value is set to URL-->
-			<a href="javascript:void(0);"
+			<a *ngIf="item.isSystemLink"
+				href="javascript:void(0);"
 				id="{{linkId}}-{{item.id}}"
 				vtrMetrics
 				[metricsItem]="item.metricsItemName ? item.metricsItemName : item.title"
@@ -139,8 +145,7 @@
 				[ngClass]="clickable?'':'disabled'"
 				[tabindex]="clickable ? 0 : -1"
 				role="link"
-				[title]="(item.metricsItemName ? item.metricsItemName : item.title) + (item.detail? ' - '+item.detail:'' ) +(item.subText? ' - '+item.subText:'' )"
-				*ngIf="item.isSystemLink!==undefined && item.isSystemLink===true">
+				[title]="(item.metricsItemName ? item.metricsItemName : item.title) + (item.detail? ' - '+item.detail:'' ) +(item.subText? ' - '+item.subText:'' )">
 				<div class="container-fluid">
 					<div class="row align-items-center">
 						<div class="col col-1 text-center"
@@ -183,12 +188,12 @@
 							[ngClass]="{'col-10': chevronVisibility, 'col-11': !chevronVisibility}">
 							<div class="row no-gutters">
 								<div title="{{item.title}}"
-									class="col-6 title text-break d-flex align-items-center"
-									[ngClass]="{'light-title':item.lightTitle, 'col-12':!item.detail, 'col-6': item.detail}">
+									class="col-5 title text-break d-flex align-items-center"
+									[ngClass]="{'light-title':item.lightTitle, 'col-12':!item.detail, 'col-5': item.detail}">
 									{{item.title}}
 								</div>
 								<div title="{{item.detail}}"
-									class="col-6 detail word-break-all d-flex align-items-center justify-content-end"
+									class="col-7 detail word-break-all d-flex align-items-center justify-content-end"
 									*ngIf="item.detail"
 									[ngClass]="getItemDetailClasses(item)">
 									{{item.detail}}
@@ -240,7 +245,8 @@
 			</a>
 
 			<!--Open other apps if launch existed-->
-			<a href="javascript:void(0);"
+			<a *ngIf="item.launch"
+				href="javascript:void(0);"
 				id="{{linkId}}-{{item.id}}"
 				vtrMetrics
 				[metricsItem]="item.metricsItemName ? item.metricsItemName : item.title"
@@ -249,8 +255,7 @@
 				[ngClass]="clickable?'':'disabled'"
 				[tabindex]="clickable ? 0 : -1"
 				role="link"
-				[title]="(item.metricsItemName ? item.metricsItemName : item.title) + (item.detail? ' - '+item.detail:'' ) +(item.subText? ' - '+item.subText:'' )"
-				*ngIf="item.launch">
+				[title]="(item.metricsItemName ? item.metricsItemName : item.title) + (item.detail? ' - '+item.detail:'' ) +(item.subText? ' - '+item.subText:'' )">
 				<div class="container-fluid">
 					<div class="row align-items-center">
 						<div class="col col-1 text-center"

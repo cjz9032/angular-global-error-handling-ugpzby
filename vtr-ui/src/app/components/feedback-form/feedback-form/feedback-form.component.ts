@@ -13,28 +13,31 @@ export class FeedbackFormComponent implements OnInit {
 	feedbackForm: FormGroup;
 	feedbackSuccess = false;
 	leftTime = 3;
+	countryCode = '';
+	public isSubmitted = false;
 
 	private metrics: any;
 
 	questions = [
 		{
-			idYes: 'feedback-qa-new-style-yes',
-			idNo: 'feedback-qa-new-style-no',
-			name: 'qaNewStyle',
-			question: 'dashboard.feedback.form.question1'
+			likelyValues: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+			name: 'remommendVantageToFriend',
+			question: 'dashboard.feedback.form.question6'
 		},
 		{
 			idYes: 'feedback-su-awareness-yes',
 			idNo: 'feedback-su-awareness-no',
 			name: 'systemUpdateAwareness',
-			question: 'dashboard.feedback.form.question4'
+			question: 'dashboard.feedback.form.question7'
 		},
 		{
-			likelyValues: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-			name: 'remommendVantageToFriend',
-			question: 'dashboard.feedback.form.question5'
+			idYes: 'feedback-qa-new-style-yes',
+			idNo: 'feedback-qa-new-style-no',
+			name: 'qaNewStyle',
+			question: 'dashboard.feedback.form.question8'
 		}
 	];
+	showEmailField = true;
 
 	constructor(
 		public activeModal: NgbActiveModal,
@@ -47,15 +50,35 @@ export class FeedbackFormComponent implements OnInit {
 	ngOnInit() {
 		this.createFeedbackForm();
 		setTimeout(() => { document.getElementById('feedback-form-dialog').parentElement.parentElement.parentElement.parentElement.focus(); }, 0);
+		this.getCurrentRegion();
 	}
 
+	 getCurrentRegion() {
+		 this.deviceService.getMachineInfo().then(machineInfo => {
+			 this.countryCode = machineInfo.country.toUpperCase();
+			 if (this.countryCode === 'CN' ||
+				 this.countryCode === 'VN' ||
+				 this.countryCode === 'RU') {
+				 this.showEmailField = false;
+			 }
+		 });
+	 }
 	public onFeedBackSubmit(): void {
+		this.isSubmitted = true;
+		if(!this.feedbackForm.value.userEmail){
+			this.prepareDataTosubmit();
+		} else if(this.feedbackForm.value.userEmail && !this.feedbackForm.get('userEmail').invalid){
+			this.prepareDataTosubmit();
+		}
+	}
+	prepareDataTosubmit(){
 		const formData = this.feedbackForm.value;
 		const data = {
 			ItemType: 'UserFeedback',
 			ItemName: 'Submit',
 			ItemParent: 'Dialog.Feedback',
 			Content: formData.userComment,
+			UserEmail: formData.userEmail,
 			QA: {
 				QaNewStyle: formData.qaNewStyle,
 				SystemUpdateAwareness: formData.systemUpdateAwareness,
@@ -77,8 +100,9 @@ export class FeedbackFormComponent implements OnInit {
 	}
 
 	private createFeedbackForm(): void {
+		const emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 		this.feedbackForm = new FormGroup({
-			// userEmail: new FormControl('', [Validators.email]),
+			userEmail: new FormControl('', [Validators.required, Validators.pattern(emailPattern)]),
 			userComment: new FormControl('', [
 				Validators.required,
 				Validators.minLength(1)

@@ -11,10 +11,8 @@ import { UpdateRebootType } from 'src/app/enums/update-reboot-type.enum';
 import { SystemUpdateStatus } from 'src/app/data-models/system-update/system-update-status-message.model';
 import { UpdateInstallSeverity } from 'src/app/enums/update-install-severity.enum';
 import { WinRT } from '@lenovo/tan-client-bridge';
-import { MetricHelper } from 'src/app/data-models/metrics/metric-helper.model';
-import { TaskAction } from 'src/app/data-models/metrics/events.model';
-import * as metricsConst from 'src/app/enums/metrics.enum';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
+import { MetricService } from '../metric/metric.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -24,17 +22,14 @@ export class SystemUpdateService {
 
 	constructor(
 		shellService: VantageShellService,
-		private commonService: CommonService) {
+		private commonService: CommonService,
+		private metricService: MetricService) {
 		this.systemUpdateBridge = shellService.getSystemUpdate();
-		this.metricHelper = new MetricHelper(shellService.getMetrics());
-		this.metricClient = shellService.getMetrics();
 		if (this.systemUpdateBridge) {
 			this.isShellAvailable = true;
 		}
 	}
 	private systemUpdateBridge: any;
-	private metricHelper: any;
-	private metricClient: any;
 	public autoUpdateStatus: any;
 	public isShellAvailable = false;
 	public isCheckForUpdateComplete = true;
@@ -103,13 +98,7 @@ export class SystemUpdateService {
 			this.systemUpdateBridge.setUpdateSchedule(request)
 				.then((response) => {
 					const taskParam = 'critical-update:' + request.criticalAutoUpdates + ',recommanded-update:' + request.recommendedAutoUpdates;
-					this.metricClient.sendAsync(new TaskAction(
-						metricsConst.MetricString.TaskSetUpdateSchedule,
-						1,
-						taskParam,
-						response,
-						0
-					));
+					this.metricService.sendSetUpdateSchedure(taskParam, response);
 					this.getUpdateSchedule();
 				}).catch((error) => {
 					// get current status
@@ -150,7 +139,7 @@ export class SystemUpdateService {
 				} else {
 					while (this.percentCompleted < 100 && !this.isCheckingCancel) {
 						const percent = this.percentCompleted + 10;
-						if (percent <= 100 ) {
+						if (percent <= 100) {
 							this.percentCompleted = percent;
 						} else {
 							this.percentCompleted = 100;
@@ -163,14 +152,11 @@ export class SystemUpdateService {
 					const payload = { ...response, status };
 					this.isInstallationSuccess = this.getInstallationSuccess(payload);
 					this.commonService.sendNotification(UpdateProgress.UpdateCheckCompleted, payload);
+					this.getScheduleUpdateStatus(false);
 				}
 			}).catch((error) => {
 				this.percentCompleted = 0;
-				this.metricHelper.sendSystemUpdateMetric(
-					0,
-					'',
-					error.message,
-					MetricHelper.timeSpan(new Date(), timeStartSearch));
+				this.metricService.sendSystemUpdateMetric(0, '', error.message, timeStartSearch);
 				if (error &&
 					((error.description && error.description.includes('errorcode: 606'))
 						|| (error.errorcode && error.errorcode === 606))) {
@@ -754,15 +740,17 @@ export class SystemUpdateService {
 		if (this.systemUpdateBridge) {
 			this.systemUpdateBridge.cancelDownload()
 				.then((status: boolean) => {
-					this.isUpdateDownloading = false;
-					this.percentCompleted = 0;
-					this.isUpdatesAvailable = true;
-					this.installationPercent = 0;
-					this.downloadingPercent = 0;
-					this.isInstallationCompleted = false;
-					this.isDownloadingCancel = true;
-					this.isInstallingAllUpdates = true;
-					this.commonService.sendNotification(UpdateProgress.UpdateDownloadCancelled, status);
+					if (status === true) {
+						this.isUpdateDownloading = false;
+						this.percentCompleted = 0;
+						this.isUpdatesAvailable = true;
+						this.installationPercent = 0;
+						this.downloadingPercent = 0;
+						this.isInstallationCompleted = false;
+						this.isDownloadingCancel = true;
+						this.isInstallingAllUpdates = true;
+						this.commonService.sendNotification(UpdateProgress.UpdateDownloadCancelled, status);
+					}
 				});
 		}
 	}
@@ -770,7 +758,7 @@ export class SystemUpdateService {
 	// check for installed updates, if all installed correctly return true else return false
 	private getInstallationSuccess(payload: any): boolean {
 		let isSuccess = false;
-		if (payload.status !== SystemUpdateStatus.SUCCESS ) {
+		if (payload.status !== SystemUpdateStatus.SUCCESS) {
 			isSuccess = false;
 		} else {
 			for (let index = 0; index < payload.updateList.length; index++) {

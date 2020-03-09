@@ -1,0 +1,43 @@
+@import "../../../../../app.theme";
+.dpmpowersetting{
+    margin:0.4rem;
+}
+
+::ng-deep{
+	.subpage-device-settings-dpm{
+		.boldtitle{
+			color: #34495E;
+			font-size: 1.4rem;
+			font-weight: bold;
+		}
+		h5{
+			color: #34495E;
+			font-size: 1.2rem;
+			margin: 1.4rem 0rem;
+			font-weight: bold;
+			opacity: 0.5;
+		}
+		div.content{
+			margin-left: 3.1rem;
+		}
+		.spinner-content {
+			padding-top: 6.5rem;
+			margin-bottom: 6.5rem;
+
+			img {
+				width: 50%;
+				margin-top: -3rem;
+			}
+
+			.spinner-border {
+				width: 5rem !important;
+				height: 5rem !important;
+				padding: 4rem;
+			}
+
+			.mn-6 {
+				margin-top: $shift_up_small;
+			}
+		}
+	}
+}

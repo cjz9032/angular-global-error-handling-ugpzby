@@ -50,7 +50,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			header: 'gaming.dashboard.device.quickSettings.title',
 			name: 'gaming.dashboard.device.quickSettings.title',
 			subHeader: '',
-			isVisible: true,
+			isVisible: false,
 			isCollapsible: true,
 			readonly: false,
 			isCheckBoxVisible: false,
@@ -72,7 +72,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			isCustomizable: false,
 			setLink: '',
 			readonly: false,
-			isVisible: true,
+			isVisible: false,
 			isCollapsible: false,
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
@@ -92,7 +92,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			subHeader: '',
 			isCustomizable: true,
 			routerLink: '/security/wifi-security',
-			isVisible: true,
+			isVisible: false,
 			readonly: true,
 			isCollapsible: false,
 			isCheckBoxVisible: true,
@@ -113,7 +113,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			subHeader: '',
 			isCustomizable: true,
 			routerLink: '/device/device-settings/audio',
-			isVisible: true,
+			isVisible: false,
 			isCollapsible: false,
 			readonly: false,
 			isCheckBoxVisible: true,
@@ -160,7 +160,6 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			}
 		]
 	};
-	public gamingSettings: any = {};
 	public isQuickSettingsVisible = false;
 	constructor(
 		private gamingCapabilityService: GamingAllCapabilitiesService,
@@ -192,14 +191,14 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 		this.gamingCapabilities.smartFanStatus = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.PrevThermalModeStatus
 		);
+		this.gamingCapabilities.thermalModeVersion = this.gamingCapabilityService.getCapabilityFromCache(
+			LocalStorageKey.thermalModeVersion
+		);
 
 		if (!this.gamingCapabilities.smartFanFeature) {
 			this.quickSettings[0].isVisible = false;
 		}
 
-		if (!this.gamingSettings.winKeyLockFeature) {
-			this.quickSettings[2].isVisible = true;
-		}
 		this.checkQuickSettingsVisibility();
 		// Initialize Quicksetting;
 		this.quicksettingListInit();
@@ -239,7 +238,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 
 	public registerThermalModeEvent() {
 		if (this.gamingCapabilities.smartFanFeature) {
-			this.gamingThermalModeService.regThermalModeEvent();
+			this.gamingThermalModeService.regThermalModeChangeEvent();
 			this.shellServices.registerEvent(
 				EventTypes.gamingThermalModeChangeEvent,
 				this.onRegThermalModeEvent.bind(this)
@@ -281,7 +280,13 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 	}
 	public quicksettingListInit() {
 		const gamingStatus = this.gamingCapabilities;
-		this.quickSettings[0].isVisible = gamingStatus.smartFanFeature;
+		// TODO thermalModeVersion 2.0
+		if (gamingStatus.thermalModeVersion === 2) {
+			this.quickSettings[0].isVisible = false;
+		} else {
+			this.quickSettings[0].isVisible = gamingStatus.smartFanFeature;
+		}
+		// this.quickSettings[0].isVisible = gamingStatus.smartFanFeature;
 		if (gamingStatus.smartFanFeature) {
 			this.renderThermalModeStatus();
 		}
@@ -300,7 +305,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 		try {
 			this.drop.curSelected = this.GetThermalModeCacheStatus();
 			if (this.gamingThermalModeService) {
-				const thermalModeStatus = await this.gamingThermalModeService.getThermalModeStatus();
+				const thermalModeStatus = await this.gamingThermalModeService.getThermalModeSettingStatus();
 				if (thermalModeStatus !== undefined) {
 					this.drop.curSelected = thermalModeStatus;
 					const ThermalModeStatusObj = new thermalModeStatus();
@@ -321,7 +326,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			}
 			this.setThermalModeStatus.thermalModeStatus = event.option.value;
 			this.gamingThermalModeService
-				.setThermalModeStatus(this.setThermalModeStatus.thermalModeStatus)
+				.setThermalModeSettingStatus(this.setThermalModeStatus.thermalModeStatus)
 				.then((statusValue: boolean) => {
 					if (!statusValue) {
 						this.drop.curSelected = this.GetThermalModeCacheStatus();
@@ -404,7 +409,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			this.wifiSecurity.on(EventTypes.wsIsSupportWifiEvent, (res) => {
 				this.updateWifiSecurityState(res);
 			});
-			this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage, true);
+			this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInGamingDashboard, true);
 			this.commonService.setSessionStorageValue(
 				SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog,
 				true
@@ -434,14 +439,11 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 	}
 
 	public updateWifiSecurityState(state = false) {
-		if (!state) {
-			this.quickSettings[2].isVisible = false;
-		} else {
-			this.commonService.setLocalStorageValue(LocalStorageKey.WifiSecurityCache, true);
-			this.quickSettings[2].isVisible = true;
-		}
+		this.commonService.setLocalStorageValue(LocalStorageKey.WifiSecurityCache, state);
+		this.quickSettings[2].isVisible = state;
 		this.checkQuickSettingsVisibility();
 	}
+
 	public runLocationService() {
 		const wifiSecurity = this.securityAdvisor.wifiSecurity;
 		if (this.wifiSecurity) {
@@ -473,7 +475,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 	}
 
 	public async setWifiSecuritySettings(value: any) {
-		if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage) === true) {
+		if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInGamingDashboard) === true) {
 			if (this.wifiHomeViewModel.isLWSEnabled) {
 				this.wifiHomeViewModel.wifiSecurity.disableWifiSecurity().then((res) => {
 					if (res === true) {
@@ -574,7 +576,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 
 	ngOnDestroy(): void {
 		this.unRegisterThermalModeEvent();
-		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage, false);
+		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInGamingDashboard, false);
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog, false);
 		if (
 			this.router.routerState.snapshot.url.indexOf('security') === -1 &&

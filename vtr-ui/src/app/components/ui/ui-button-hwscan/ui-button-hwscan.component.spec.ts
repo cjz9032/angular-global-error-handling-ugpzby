@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UiButtonHWScanComponent } from './ui-button-hwscan.component
+import { UiButtonHWScanComponent } from './ui-button-hwscan.component';
 
 xdescribe('UiButtonComponent', () => {
 	let component: UiButtonHWScanComponent;

@@ -16,7 +16,8 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Subscription } from 'rxjs';
 import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
-import * as CryptoJS from 'crypto-js';
+import AES from 'crypto-js/aes';
+import enc_utf8 from 'crypto-js/enc-utf8';
 
 declare var Windows;
 
@@ -30,7 +31,7 @@ export class UserService {
 	public starter = false;
 	public silentlyLoginSuccess = false;
 	token = '';
-	public hasFirstName = true;
+	public hasFirstName = false;
 	public firstName = 'User';
 	lastName = '';
 	initials = 'U';
@@ -154,7 +155,7 @@ export class UserService {
 			undefined
 		);
 		if (firstName && userGuid) {
-			const decrptedFirstName = CryptoJS.AES.decrypt(firstName, userGuid).toString(CryptoJS.enc.Utf8);
+			const decrptedFirstName = AES.decrypt(firstName, userGuid).toString(enc_utf8);
 			return decrptedFirstName;
 		} else {
 			return undefined;
@@ -210,6 +211,7 @@ export class UserService {
 						self.setName(firstName, '');
 					}
 					self.lid.getUserProfile().then(profile => {
+						self.hasFirstName = Boolean(profile.firstName);
 						if (profile.success && profile.status === 0) {
 							if (profile.firstName && profile.firstName !== firstName) {
 								self.setName(profile.firstName, profile.lastName);
@@ -362,7 +364,6 @@ export class UserService {
 	}
 
 	setName(firstName: string, lastName: string) {
-		this.hasFirstName = !!firstName;
 		if (!firstName && !lastName) {
 			this.translate.stream('lenovoId.user').subscribe((value) => {
 				this.firstName = value;

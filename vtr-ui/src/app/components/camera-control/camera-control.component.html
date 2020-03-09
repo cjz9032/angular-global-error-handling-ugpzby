@@ -75,21 +75,22 @@
 							<vtr-ui-switch-onoff [value]="cameraFeatureAccess.exposureAutoValue"
 								[disabled]="disabledAll"
 								(toggle)="onAutoExposureChange($event)"
+								[ariaLabel]="'device.deviceSettings.displayCamera.camera.autoExposure' | translate"
 								[onOffSwitchId]="'cameraSettings-autoExposure'"></vtr-ui-switch-onoff>
 						</div>
-                    </div>
-                    <div *ngIf="!cameraFeatureAccess.exposureAutoValue">
-					<vtr-ui-range-slider [hidden]="!cameraFeatureAccess.showAutoExposureSlider"
-						[step]="cameraSettings.exposure.step"
-						[minValue]="cameraSettings.exposure.min"
-						[maxValue]="cameraSettings.exposure.max"
-						[enableSlider]="disabledAll"
-						[manualRefresh]="manualRefresh"
-						[(value)]="cameraSettings.exposure.value"
-						(sliderChange)="onExposureSliderChange($event)"
-						[rangeSliderId]="'cameraSettings-autoExposure'">
-                    </vtr-ui-range-slider>
-                </div>
+					</div>
+					<div *ngIf="!cameraFeatureAccess.exposureAutoValue">
+						<vtr-ui-range-slider [hidden]="!cameraFeatureAccess.showAutoExposureSlider"
+							[step]="cameraSettings.exposure.step"
+							[minValue]="cameraSettings.exposure.min"
+							[maxValue]="cameraSettings.exposure.max"
+							[enableSlider]="disabledAll"
+							[manualRefresh]="manualRefresh"
+							[(value)]="cameraSettings.exposure.value"
+							(sliderChange)="onExposureSliderChange($event)"
+							[rangeSliderId]="'cameraSettings-autoExposure'">
+						</vtr-ui-range-slider>
+					</div>
 				</li>
 				<li class="list-group-item"
 					*ngIf="cameraSettings.focus && cameraSettings.focus.supported">

@@ -4,6 +4,7 @@
 export enum LocalStorageKey {
 	EyeCareModeResetStatus = '[LocalStorageKey] EyeCareModeResetStatus',
 	WelcomeTutorial = '[LocalStorageKey] WelcomeTutorial',
+	GamingTutorial = '[LocalStorageKey] GamingTutorial',
 	SecurityVPNStatus = '[LocalStorageKey] SecurityVPNStatus',
 	SecurityPasswordManagerStatus = '[LocalStorageKey] SecurityPasswordManagerStatus',
 	SecurityLandingPasswordManagerShowOwn = '[LocalStorageKey] SecurityLandingPasswordManagerShowOwn',
@@ -47,7 +48,10 @@ export enum LocalStorageKey {
 	LidFirstSignInDate = '[LocalStorageKey] LidFirstSignInDate',
 	LidHasCreateStarterAccount = '[LocalStorageKey] LidHasCreateStarterAccount',
 	LidUserFirstName = '[LocalStorageKey] LidUserFirstName',
+	LidSsoDevMode = '[LocalStorageKey] LidSsoDevMode',
 	CpuOCStatus = '[LocalStorageKey] CpuOCStatus',
+	GpuOCStatus = '[LocalStorageKey] GpuOCStatus',
+	RealThermalModeStatus = '[LocalStorageKey] RealThermalModeStatus',
 	CurrentThermalModeStatus = '[LocalStorageKey] CurrentThermalModeStatus',
 	CurrentThermalModeFeature = '[LocalStorageKey] CurrentThermalModeFeature',
 	PrevThermalModeStatus = '[LocalStorageKey] PrevThermalModeStatus',
@@ -126,6 +130,8 @@ export enum LocalStorageKey {
 	SystemUpdateInstallationHistoryList = '[LocalStorageKey] SystemUpdateInstallationHistoryList',
 
 	// this enum is for local storage keys. new keys can be added here. Please give meaningful names to key
+	desktopType = '[LocalStorageKey] DesktopType',
+	liteGaming = '[LocalStorageKey] LiteGaming',
 	cpuInfoFeature = '[LocalStorageKey] CpuInfoFeature',
 	gpuInfoFeature = '[LocalStorageKey] GpuInfoFeature',
 	memoryInfoFeature = '[LocalStorageKey] MemoryInfoFeature',
@@ -134,13 +140,19 @@ export enum LocalStorageKey {
 	winKeyLockfeature = '[LocalStorageKey] WinKeyLockFeature',
 	networkBoostFeature = '[LocalStorageKey] NetworkBoostFeature',
 	cpuOCFeature = '[LocalStorageKey] CpuOCFeature',
+	gpuOCFeature = '[LocalStorageKey] GpuOCFeature',
+	advanceCPUOCFeature = '[LocalStorageKey] AdvanceCPUOCFeature',
+	advanceGPUOCFeature = '[LocalStorageKey] AdvanceGPUOCFeature',
 	ledSetFeature = '[LocalStorageKey] LedSetFeature',
 	memOCFeature = '[LocalStorageKey] MemOCFeature',
 	macroKeyFeature = '[LocalStorageKey] MacroKeyFeature',
 	hybridModeFeature = '[LocalStorageKey] HybridModeFeature',
 	optimizationFeature = '[LocalStorageKey] OptimizationFeature',
 	smartFanFeature = '[LocalStorageKey] SmartFanFeature',
+	thermalModeVersion = '[LocalStorageKey] ThermalModeVersion',
+	supporttedThermalMode = '[LocalStorageKey] SupporttedThermalMode',
 	xtuService = '[LocalStorageKey] XtuService',
+	nvDriver = '[LocalStorageKey] NvDriver',
 	fbNetFilter = '[LocalStorageKey] FbNetFilter',
 	ledDriver = '[LocalStorageKey] LedDriver',
 	winKeyLockFeature = '[LocalStorageKey] WinKeyLockFeature',
@@ -165,6 +177,7 @@ export enum LocalStorageKey {
 	hddName = '[LocalStorageKey] hddName',
 	isSystemDisk = '[LocalStorageKey] isSystemDisk',
 	usedDisk = '[LocalStorageKey] usedDisk',
+	autoSwitchStatus = '[LocalStorageKey] AutoSwitchStatus',
 
 	// this enum is for macrokey local storage key
 	MacroKeyType = '[LocalStorageKey] MacroKeyType',
@@ -202,6 +215,10 @@ export enum LocalStorageKey {
 	AutoCloseStatus = '[LocalStorageKey] AutoCloseStatus',
 	AutoCloseList = '[LocalStorageKey] AutoCloseList',
 	NeedToAsk = '[LocalStorageKey] NeedToAsk',
+
+	//Gaming 3.2 advanced OC
+	AdvancedOCInfo = '[LocalStorageKey] AdvancedOCInfo',
+
 	BetaUser = '[LocalStorageKey] BetaUser',
 	BetaTag = '[LocalStorageKey] BetaTag',
 	IntelligentCoolingCapability = '[LocalStorageKey] IntelligentCoolingCapability',
@@ -251,8 +268,10 @@ export enum LocalStorageKey {
 
 	// TEMP battery condition
 	BatteryCondition = '[LocalStorageKey] batteryCondition',
-
+	// DPM
+	DPMAllPowerPlans = '[LocalStorageKey] DPMAllPowerPlans',
 	// UPE
 	UPEChannelTags = '[LocalStorageKey] UPEChannelTags',
-	PriorityControlCapability = '[LocalStorageKey] PriorityControlCapability'
+	PriorityControlCapability = '[LocalStorageKey] PriorityControlCapability',
+	KBDBacklightThinkPadCapability =  '[LocalStorageKey] KBDBacklightThinkPadCapability'
 }

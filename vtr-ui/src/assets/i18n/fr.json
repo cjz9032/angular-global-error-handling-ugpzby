@@ -22,6 +22,12 @@
                     "rapidCharge": "Charge rapide"
                 },
                 "legionEdge": {
+                    "thermalMode2": {
+                        "OC_On": "Surfréquençage activé",
+                        "performance": "Performances",
+                        "balance": "Equilibre",
+                        "quiet": "Silencieux"
+                    },
                     "title": "Overclocking UC",
                     "status": {
                         "alwayson": "Activé",
@@ -101,16 +107,16 @@
                 },
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Paramètres mode thermique",
-                    "thermalMode2SettingDesc": "Choisissez le mode que vous souhaitez utiliser.",
+                    "thermalMode2SettingDesc": "Sélectionnez le mode que vous souhaitez utiliser.",
                     "fnQDesc": "Vous pouvez changer de mode à l'aide du raccourci Fn+Q.",
                     "perormanceTitle": "Mode de performance",
-                    "performanceDesc": "Améliorez les performances de votre ordinateur avec une vitesse de ventilateur supérieure et une consommation d'électricité plus élevée.",
-                    "OCDesc": "Vous pouvez choisir d'activer la fonction de surfréquençage.",
-                    "ac_dcDesc": "Le mode de performance est uniquement disponible lors du branchement.",
+                    "performanceDesc": "Améliorez les performances de votre ordinateur avec une vitesse de ventilateur supérieure et une consommation d'énergie plus élevée. ",
+                    "OCDesc": "Vous pouvez choisir d'activer la fonction overclocking.",
+                    "ac_dcDesc": "Le mode de performance n'est applicable que lorsque le boîtier d'alimentation est branché.",
                     "balanceTitle": "Mode équilibré",
-                    "balanceDesc": "Équilibre automatiquement les performances et la vitesse du ventilateur en fonction de la température. Consommation électrique moyenne.",
+                    "balanceDesc": "Équilibre automatiquement les performances et la vitesse du ventilateur en fonction de la température avec une consommation d'énergie moyenne.",
                     "quietTitle": "Mode silencieux",
-                    "quietDesc": "Reste silencieux en diminuant les performances de votre ordinateur et en réduisant la vitesse du ventilateur dans la mesure du possible. Consommation électrique faible.",
+                    "quietDesc": "Reste silencieux en diminuant les performances de votre ordinateur et en réduisant la vitesse du ventilateur dans la mesure du possible avec une consommation d'énergie faible.",
                     "OC": {
                         "cpu_gpuOC": "Activer l'overclocking de l'UC/GPU en mode de performance.",
                         "cpuOC": "Activer l'overclocking de l'UC en mode de performance.",
@@ -121,7 +127,7 @@
                         "gpuDriverLack": "Installer les pilotes GPU pour utiliser la fonction overclocking.",
                         "goInstall": "PROCÉDER À L'INSTALLATION"
                     },
-                    "autoSwitch": "Passage auto au mode performance lors de jeux et revenir au mode précédent."
+                    "autoSwitch": "Passage automatique au mode performance lors du lancement d'un jeu et retour au mode précédent à la fermeture du jeu."
                 },
                 "advancedOC": {
                     "title": "Surfréquençage Param. avancés",
@@ -698,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -795,7 +801,9 @@
             "loading": "Chargement...",
             "from": "à partir de",
             "to": "pour",
-            "clickToChange": "cliquez pour modifier"
+            "clickToChange": "cliquez pour modifier",
+            "failedLoad": "Echec du chargement.",
+            "retry": "Réess."
         },
         "app-update": {
             "message": "Bonjour, Une version plus récente de Vantage est disponible. Voulez-vous la télécharger ?"
@@ -861,11 +869,18 @@
                 "submitScreenShot": "Envoyer une capture d'écran",
                 "messages": {
                     "feedbackSuccess": "Merci pour votre commentaire !"
-                }
+                },
+                "question6": "Quelle est la probabilité que vous recommandiez l'application Lenovo Vantage à un ami ou collègue ?",
+                "question7": "Saviez-vous que vous pouvez utiliser Lenovo Vantage pour mettre à jour les logiciels (pilotes, microprogramme et BIOS) de votre ordinateur ?",
+                "question8": "Avez-vous utilisé Lenovo Vantage pour accéder aux informations d'aide concernant votre ordinateur ?",
+                "tips2": "Veuillez ajouter tout commentaire supplémentaire ci-dessous",
+                "emailAddressLabel": "Indiquez votre adresse e-mail si vous souhaitez être contacté par l'équipe Lenovo Vantage.",
+                "emailAddress": "Adresse e-mail",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "Votre configuration rapide des paramètres",
+            "title": "Paramètres rapides",
             "microphone": "Microphone",
             "cameraPrivacy": "Caméra",
             "eyeCareMode": "Protection visuelle",
@@ -910,6 +925,10 @@
                     "update": "Mettre à jour"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Mettez à jour vos pilotes, BIOS et logiciels.",
+            "checkForSystemUpdates": "Rechercher les mises à jour du système"
         }
     },
     "device": {
@@ -1021,14 +1040,14 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "Pour prolonger la durée de vie de votre batterie, nous avons optimisé sa capacité de charge complète en fonction de votre utilisation. La capacité totale de la batterie peut ne pas être disponible tant que vous n'avez pas laissé la batterie se vider jusqu'à 20 % avant de la recharger."
                 },
                 "condition": {
                     "Illegal": "La batterie installée n'est <b>pas prise en charge</b> par ce système et ne va pas se charger. Remplacez la batterie par une batterie agréée par Lenovo et compatible avec ce système.",
                     "Good": "<b>La batterie est en bon état.</b>",
                     "Exhaustion": "La capacité de la batterie est <b>affaiblie</b>. Veuillez la remplacer par une nouvelle.",
                     "Bad": "<b>Une erreur batterie s'est produite.</b> La batterie ne peut pas être chargée/déchargée. Remplacez la batterie.",
-                    "NotDetected": "<b>Aucune batterie n'a été</b> détectée ou n'est connectée à la batterie.",
+                    "NotDetected": "<b>Aucune batterie détectée.</b>",
                     "NotGood": "<b>La batterie n'est pas en bon état.</b>",
                     "NotSupportACAdapter": "<b>L'adaptateur secteur n'est pas pris en charge.</b>",
                     "LimitedACAdapterSupport": "<b>L'adaptateur secteur ne parvient pas à fournir suffisamment d'énergie.</b>",
@@ -1054,7 +1073,7 @@
             "power": {
                 "title": "Alimentation",
                 "subtitle": "Paramètres d'alimentation",
-                "description": "Cette section vous permet d'ajuster dynamiquement les performances thermiques et de maximiser la durée de vie de la batterie.Elle propose également d'autres fonctions d'alimentation fréquemment utilisées. Vous pouvez vérifier les paramètres par défaut de cette section et personnaliser votre système en fonction de vos besoins.",
+                "description": "Cette section vous permet d'ajuster dynamiquement les performances thermiques et de maximiser la durée de vie de la batterie. Elle propose également d'autres fonctions d'alimentation fréquemment utilisées. Vous pouvez vérifier les paramètres par défaut de cette section et personnaliser votre système en fonction de vos besoins.",
                 "jumpto": {
                     "title": "ACCÉDER AUX PARAMÈTRES",
                     "battery": "Batterie",
@@ -1234,9 +1253,9 @@
                             "reset": "Réinitialiser",
                             "stop": "Arrêt"
                         },
-                        "progressText1": "{{stage}} sur {{stageNum}} : Étalonnage sur charge complète",
-                        "progressText2": "{{stage}} sur {{stageNum}} : Étalonnage sur charge de batterie faible",
-                        "progressText3": "{{stage}} sur {{stageNum}} : Étalonnage sur charge de batterie pleine",
+                        "progressText1": "Étape {{stage}} sur {{stageNum}} étapes au total : étalonnage sur charge complète",
+                        "progressText2": "Étape {{stage}} sur {{stageNum}} étapes au total : étalonnage sur charge de batterie faible",
+                        "progressText3": "Étape {{stage}} sur {{stageNum}} étapes au total : étalonnage sur charge de batterie pleine",
                         "FCCText": "De {{before}} Wh à {{after}} Wh",
                         "note": "Remarque : avant de réinitialiser la jauge de la batterie, assurez-vous de connecter votre ordinateur à l'alimentation secteur. ",
                         "resetLog": {
@@ -1264,6 +1283,55 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "UN PRODUIT CERTIFIÉ ENERGY STAR"
+                },
+                "dpm": {
+                    "title": "Alimentation",
+                    "subtitle": "Paramètres d'alimentation",
+                    "description": "Cette section vous permet de vérifier les paramètres par défaut et de personnaliser votre utilisation de l'alimentation et votre mode de gestion de l'alimentation en fonction de vos besoins.",
+                    "globalPowerSettings": {
+                        "title": "Paramètres d'alimentation globaux",
+                        "description": "Cette fonctionnalité remplacera les paramètres de mode de gestion de l'alimentation ou d'utilisation de l'alimentation.",
+                        "powerButton": {
+                            "label": "BOUTON D'ALIMENTATION :",
+                            "items": {
+                                "doNothing": "Ne rien faire",
+                                "sleep": "Veille",
+                                "hibernate": "Hibernation",
+                                "shutDown": "Arrêt",
+                                "turnOffTheDisplay": "Mise hors tension de l'écran"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "CONNEXION OBLIGATOIRE :",
+                            "items": {
+                                "never": "Jamais",
+                                "fromSleep": "Quand le PC quitte le mode veille"
+                            },
+                            "tip": "Remarque : Cela ne fonctionne que si un mot de passe système est défini."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "Utilisation de l'alimentation",
+                        "description": "SI LE SYSTÈME EST INACTIF :",
+                        "turnOffDisplay": "DÉSACTIVER L'ÉCRAN APRÈS :",
+                        "turnOffHDD": "DÉSACTIVER HDD APRÈS :",
+                        "sleep": "METTRE EN VEILLE APRÈS :",
+                        "hibernate": "METTRE EN HIBERNATION APRÈS :",
+                        "items": {
+                            "never": "Jamais",
+                            "minute": "minute",
+                            "minutes": "minutes",
+                            "hour": "heure",
+                            "hours": "heures"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "Mode de gestion de l'alimentation",
+                        "description": "Choisissez un mode de gestion de l'alimentation pour contrôler les performances, la température système et l'utilisation de l'alimentation de l'ordinateur.",
+                        "currentPowerPlan": {
+                            "label": "MODE ACTUEL"
+                        }
+                    }
                 },
                 "smartStandby": {
                     "title": "Veille intelligente",
@@ -1397,8 +1465,8 @@
                         "title": "Volume du micro",
                         "description": "Le Dolby Audio offre un son puissant, clair et performant pour tous les contenus que vous utilisez, sélectionnez le mode approprié pour votre contenu et votre équipement.",
                         "options": {
-                            "silent": "Volume maximum",
-                            "loud": "Volume minimum"
+                            "silent": "Volume minimum",
+                            "loud": "Volume maximum"
                         }
                     },
                     "suppress": {
@@ -1648,8 +1716,11 @@
                         "options": {
                             "option1": "Sélectionnez",
                             "option2": "Site ouvert",
-                            "option3": "Entrez du texte"
-                        }
+                            "option3": "Entrez du texte",
+                            "option4": "Open applications or files",
+                            "option5": "Invoke key sequence"
+                        },
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function."
                     },
                     "tooltip": "Contenu à remplir",
                     "apply": {
@@ -1664,6 +1735,17 @@
                     "enterText": {
                         "title": "TEXTE À SAISIR",
                         "placeholder": "Veuillez saisir votre texte ici"
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles": {
+                        "applicationTitle": "You need to delete one app first",
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {
@@ -1899,7 +1981,7 @@
                 "heading": "Support intelligent",
                 "title": "Lecture de la vidéo sans pression tactile",
                 "desc": "Cette fonctionnalité interrompra la vidéo lorsque vous quittez l'ordinateur et reprendra sa lecture lorsque vous revenez.",
-                "tooltip": "Cette fonction n'est pas applicable aux lecteurs vidéo Web. Les lecteurs vidéo locaux populaires tels que Windows Media Player, 5KPlayer, etc. prennent en charge cette fonction."
+                "tooltip": "Cette fonction ne s'applique pas aux<br>lecteurs vidéo Web.<br>Les lecteurs compatibles sont les suivants :<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
             },
             "superResolution": {
                 "heading": "Support intelligent",
@@ -1937,7 +2019,8 @@
                     "point7": "Sélectionnez la langue source et la langue cible souhaitées.",
                     "point8": "En fonction de vos besoins, définissez la saisie vocale à partir du haut-parleur ou du micro.",
                     "point9": "Cliquez sur l'icône du micro pour commencer à parler",
-                    "closeText": "fermer"
+                    "closeText": "fermer",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -2169,7 +2252,7 @@
             "goWifi": "accéder à la sécurité wifi",
             "goVpn": "accéder à la sécurité VPN",
             "visitWindows": "Visiter Activation de Windows",
-            "visitFingerprint": "Visiter Fingerprint Reader",
+            "visitFingerprint": "Visiter Lecteur d'empreintes digitales",
             "visitUac": "Visiter le Contrôle de compte d'utilisateur",
             "visitHde": "Visiter le chiffrement du disque dur",
             "haveOwnPassword": "J'ai mon propre Password Manager",

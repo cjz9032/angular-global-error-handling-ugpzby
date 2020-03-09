@@ -319,17 +319,20 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		}
 		@media #{$breakpoint_xl}{
 			max-width: 24.2rem !important;
-		}		
+		}
 	}
+}
+
+.fcc-note-tooltip {
+		.tooltip-inner {
+			width: 20rem !important;
+		}
 }
 
 .fnctrl-tooltip.tooltip {
 	width: 30rem !important;
 	.tooltip-inner {
-		padding: 0.5rem 1rem !important;
-		@media #{$breakpoint_lg} {
-			padding: 0.5rem !important;
-		}
+		padding: 0.5rem !important;
 	}
 }
 
@@ -1436,7 +1439,7 @@ vtr-ui-smart-performance-scanning {
 			max-width: 92rem;
 		}
 		@media #{$breakpoint_lg} {
-			max-width: 66rem;
+			max-width: 70rem;
 		}
 		@media #{$breakpoint_md} {
 			max-width: 54rem;
@@ -1549,6 +1552,56 @@ vtr-ui-smart-performance-scanning {
 	ngb-tooltip-window.vtr-tooltip.tooltip {
 		.tooltip-inner {
 			width: 40rem;
+		}
+	}
+}
+
+.vtr-page-dashboard {
+	.vtr-header-main {
+		.vtr-header-main-inner {
+			padding: 1rem $padding_side 6rem $padding_side !important;
+		}
+	}
+	.container-card {
+		&.card-corner {
+			@media #{$breakpoint_xl} {
+				height: 20rem !important;
+			}
+			@media #{$breakpoint_lg} {
+				height: 17.6rem !important;
+			}
+			@media #{$breakpoint_sm} {
+				height: 15.7rem !important;
+			}
+			.content {
+				.card-image {
+					height: 100% !important;
+				}
+			}
+		}
+		&.card-highlight {
+			@media #{$breakpoint_xl} {
+				height: 20rem !important;
+			}
+			@media #{$breakpoint_lg} {
+				height: 17.6rem !important;
+			}
+			@media #{$breakpoint_sm} {
+				height: 15.7rem !important;
+			}
+			.content {
+				.card-image {
+					height: 100% !important;
+				}
+			}
+		}
+	}
+}
+
+.vtr-backlight, .vtr-backlight-thinkpad {
+	.vtr-ui-circle-radio-with-checkbox.white-theme {
+		.icomoon {
+			font-size: 4.5rem !important;
 		}
 	}
 }

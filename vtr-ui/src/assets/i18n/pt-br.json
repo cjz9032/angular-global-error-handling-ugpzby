@@ -22,6 +22,12 @@
                     "rapidCharge": "Carregamento rápido"
                 },
                 "legionEdge": {
+                    "thermalMode2": {
+                        "OC_On": "Overclock ativ.",
+                        "performance": "Desempenho",
+                        "balance": "Equilíbrio",
+                        "quiet": "Silencioso"
+                    },
                     "title": "Overclock da CPU",
                     "status": {
                         "alwayson": "Ligado",
@@ -104,13 +110,13 @@
                     "thermalMode2SettingDesc": "Escolha o modo que deseja usar.",
                     "fnQDesc": "Você pode alternar o modo usando o atalho Fn+Q.",
                     "perormanceTitle": "Modo de Desempenho",
-                    "performanceDesc": "Aumente o desempenho do computador com mais velocidade do ventilador e mais energia consumida.",
-                    "OCDesc": "Você pode optar por ativar o recurso de Overclocking.",
-                    "ac_dcDesc": "Modo de Desempenho disponível apenas quando conectado.",
+                    "performanceDesc": "Aumente o desempenho do computador com velocidade do ventilador e consumo de energia mais altos. ",
+                    "OCDesc": "Você pode escolher ativar a função de Overclocking.",
+                    "ac_dcDesc": "O Modo de Desempenho é aplicável apenas quando o adaptador de energia CA está conectado.",
                     "balanceTitle": "Modo de Equilíbrio",
-                    "balanceDesc": "Equilibre automaticamente o desempenho e a velocidade do ventilador com base na temperatura. Consumo de energia médio.",
+                    "balanceDesc": "Equilibre automaticamente o desempenho e a velocidade do ventilador com base na temperatura com consumo de energia médio.",
                     "quietTitle": "Modo Silencioso",
-                    "quietDesc": "Mantenha silencioso reduzindo o desempenho e a velocidade do ventilador do computador sempre que possível. Consumo de energia baixo.",
+                    "quietDesc": "Mantenha silencioso reduzindo o desempenho e a velocidade do ventilador do computador sempre que possível com consumo de energia baixo.",
                     "OC": {
                         "cpu_gpuOC": "Ative Overclocking da CPU/GPU no Modo de Desempenho.",
                         "cpuOC": "Ative Overclocking da CPU no Modo de Desempenho.",
@@ -121,7 +127,7 @@
                         "gpuDriverLack": "Instale o driver da GPU para usar a função de Overclocking.",
                         "goInstall": "INSTALAR"
                     },
-                    "autoSwitch": "Alterne auto. para Desempenho ao iniciar jogos e alterne novamente ao término."
+                    "autoSwitch": "Alterne automaticamente para o Modo Desempenho ao iniciar jogos e alterne novamente ao término."
                 },
                 "advancedOC": {
                     "title": "Overclock Config. Avançadas",
@@ -698,7 +704,7 @@
                 "name4": "Legion CPU Fan Lighting",
                 "name5": "Legion Liquid Cooling Pump Lighting",
                 "name6": "Legion Liquid Cooling Fan Lighting",
-                "name7": "Legion Fan Lighting",
+                "name7": "Legion Icon (Front)",
                 "name9": "Ambient  Lighting"
             },
             "lightingEffect": {
@@ -734,7 +740,7 @@
                 "title": "Dispositivo",
                 "sub1": "Meu Dispositivo",
                 "sub2": "Configurações do meu dispositivo",
-                "sub3": "Atualização do Sistema",
+                "sub3": "Atualização do sistema",
                 "sub4": "Assistência inteligente"
             },
             "security": {
@@ -744,7 +750,7 @@
                 "sub3": "Segurança WiFi",
                 "sub4": "Integridade de senha",
                 "sub5": "Segurança VPN",
-                "sub6": "Impressão digital"
+                "sub6": "Impressões digitais"
             },
             "support": "Suporte",
             "beta": {
@@ -769,7 +775,7 @@
             "notFound": "NÃO ENCONTRADO",
             "registered": "REGISTRADO",
             "notRegistered": "NÃO REGISTRADO",
-            "fingerPrint": "Impressão Digital",
+            "fingerPrint": "Impressões digitais",
             "privacyPolicyAndTermsOfService": "<tag>Política de Privacidade</tag> e nos <tag>Termos de Serviço</tag>",
             "windowsHello": "Windows Hello",
             "enrolled": "CADASTRADO",
@@ -795,7 +801,9 @@
             "loading": "Carregando...",
             "from": "de",
             "to": "para",
-            "clickToChange": "clique para alterar"
+            "clickToChange": "clique para alterar",
+            "failedLoad": "Falha ao carregar.",
+            "retry": "Tentar Novamente"
         },
         "app-update": {
             "message": "Ei! Uma versão mais recente do Vantage está disponível. Deseja carregá-la?"
@@ -861,7 +869,14 @@
                 "submitScreenShot": "Enviar captura de tela",
                 "messages": {
                     "feedbackSuccess": "Agradecemos seus comentários."
-                }
+                },
+                "question6": "Qual a probabilidade de você recomendar o aplicativo Lenovo Vantage a um amigo ou colega?",
+                "question7": "Você sabia que pode usar o Lenovo Vantage para atualizar o software (drivers, firmware e BIOS) no seu computador?",
+                "question8": "Você usou o Lenovo Vantage para acessar informações de suporte sobre o seu computador?",
+                "tips2": "Deixe comentários adicionais abaixo",
+                "emailAddressLabel": "Deixe seu endereço de e-mail se desejar ser contatado pela equipe do Lenovo Vantage.",
+                "emailAddress": "Endereço de email",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
@@ -910,6 +925,10 @@
                     "update": "Atualizar"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Atualize os drivers, BIOS e outros softwares.",
+            "checkForSystemUpdates": "Verificar se há atualizações do sistema"
         }
     },
     "device": {
@@ -922,7 +941,7 @@
             "learnMore": "Saber mais",
             "freeMemory": "Memoria livre",
             "systemUpdate": {
-                "title": "Atualização do Sistema",
+                "title": "Atualização do sistema",
                 "notFound": "Atualização do sistema não encontrada",
                 "detail": {
                     "uptoDate": "Atualizações verificadas ",
@@ -1021,14 +1040,14 @@
                         "celxpert": "Celxpert",
                         "smp": "SMP"
                     },
-                    "fccTooltipText": "To extend your battery's lifespan, we have optimized its full charge capacity based on your usage. Full battery capacity may not be available until you discharge to 20% and recharge."
+                    "fccTooltipText": "Para estender a vida útil da bateria, otimizamos sua capacidade de carga máxima com base no seu uso. A capacidade máxima da bateria pode não estar disponível até você descarregar para 20% e recarregar."
                 },
                 "condition": {
                     "Illegal": "A bateria instalada <b>não é aceita</b> pelo sistema e não será carregada. Substitua a bateria pela bateria correta da Lenovo para esse sistema.",
                     "Good": "<b>A bateria está em boas condições.</b>",
                     "Exhaustion": "A capacidade da bateria foi <b>degradada</b>. Substitua por uma nova.",
                     "Bad": "<b>Ocorreu um erro na bateria.</b> Não é possível carregar/descarregar a bateria. Substitua a bateria.",
-                    "NotDetected": "<b>Nenhuma bateria detectada ou nenhuma</b> bateria conectada.",
+                    "NotDetected": "<b>Nenhuma bateria detectada.</b>",
                     "NotGood": "<b>A bateria não está em boas condições.</b>",
                     "NotSupportACAdapter": "<b>O adaptador de energia CA não é suportado.</b>",
                     "LimitedACAdapterSupport": "<b>O adaptador de energia CA não pode fornecer potência suficiente.</b>",
@@ -1158,7 +1177,7 @@
                     },
                     "easyResume": {
                         "title": "Retomada fácil",
-                        "description": "Ative este recurso para diminuir o tempo de retomada ao abrir e fechar a tampa do computador com frequência",
+                        "description": "Ative este recurso para diminuir o tempo de retomada ao abrir e fechar a tampa do computador com frequência.",
                         "tooltip": "Este recurso diminui o tempo de retomada ao abrir e fechar a tampa do computador com frequência. Quando o recurso está ativado, o computador entra no modo de baixo consumo de energia ao fechar a tampa e retoma imediatamente ao reabrir a tampa, desde que isso ocorra em até 15 minutos depois de fechá-la. Esse recurso também permite que o notebook tente concluir atividades pendentes (como envio de email ou download de arquivo) antes de o sistema entrar em suspensão."
                     },
                     "flipToBoot": {
@@ -1234,9 +1253,9 @@
                             "reset": "Redefinir",
                             "stop": "Parar"
                         },
-                        "progressText1": "{{stage}} de {{stageNum}}: Calibrando em carga máxima",
-                        "progressText2": "{{stage}} de {{stageNum}}: Calibrando em bateria fraca",
-                        "progressText3": "{{stage}} de {{stageNum}}: Calibrando em bateria alta",
+                        "progressText1": "Etapa {{stage}} de {{stageNum}} etapas no total: Calibrando em carga máxima",
+                        "progressText2": "Etapa {{stage}} de {{stageNum}} etapas no total: Calibrando em bateria fraca",
+                        "progressText3": "Etapa {{stage}} de {{stageNum}} etapas no total: Calibrando em bateria alta",
                         "FCCText": "De {{before}} Wh para {{after}} Wh",
                         "note": "Nota: Antes de redefinir o medidor da bateria, certifique-se de conectar o computador à energia CA. ",
                         "resetLog": {
@@ -1264,6 +1283,55 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "UM PRODUTO COM CERTIFICAÇÃO ENERGY STAR"
+                },
+                "dpm": {
+                    "title": "Energia",
+                    "subtitle": "Configurações de energia",
+                    "description": "Esta seção permite que você verifique as configurações padrão e personalize o uso de energia e o plano de energia de acordo com suas necessidades.",
+                    "globalPowerSettings": {
+                        "title": "Configurações de energia globais",
+                        "description": "Esse recurso substituirá as configurações do Plano de energia ou do Uso de energia.",
+                        "powerButton": {
+                            "label": "BOTÃO LIGA/DESLIGA:",
+                            "items": {
+                                "doNothing": "Não fazer nada",
+                                "sleep": "Suspender",
+                                "hibernate": "Hibernar",
+                                "shutDown": "Encerrar",
+                                "turnOffTheDisplay": "Desligar o monitor"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "ACESSO NECESSÁRIO:",
+                            "items": {
+                                "never": "Nunca",
+                                "fromSleep": "Quando o PC sair do modo de suspensão"
+                            },
+                            "tip": "Nota: Isso funciona apenas se a senha do sistema foi definida."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "Uso de energia",
+                        "description": "SE O SISTEMA ESTIVER OCIOSO:",
+                        "turnOffDisplay": "DESLIGAR O MONITOR APÓS:",
+                        "turnOffHDD": "DESLIGAR O HDD APÓS:",
+                        "sleep": "SUSPENDER APÓS:",
+                        "hibernate": "HIBERNAR APÓS:",
+                        "items": {
+                            "never": "Nunca",
+                            "minute": "minuto",
+                            "minutes": "minutos",
+                            "hour": "hora",
+                            "hours": "horas"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "Plano de energia",
+                        "description": "Escolha um plano de energia para controlar o desempenho do computador, a temperatura do sistema e o consumo de energia.",
+                        "currentPowerPlan": {
+                            "label": "PLANO ATUAL"
+                        }
+                    }
                 },
                 "smartStandby": {
                     "title": "Suspensão inteligente",
@@ -1459,7 +1527,7 @@
                         "onSunsetToSunriseScheduleDescription": "Agendar o modo proteção ocular do pôr do sol ao nascer do sol",
                         "note": {
                             "title": "Nota",
-                            "description": "O Lenovo Vantage precisa acessar suas informações de localização para calcular o horário do pôr do sol e do nascer do sol da sua região."
+                            "description": "O Lenovo Vantage precisa acessar suas informações de localização para calcular o horário do pôr do sol e do nascer do sol de sua região."
                         },
                         "tips": "Execute o Windows Update ou instale manualmente o driver gráfico para recuperar o modo Proteção Ocular"
                     },
@@ -1526,7 +1594,7 @@
                     "url": "Ir para as configurações de privacidade do Windows",
                     "cameraPrivacy": {
                         "title": "Modo de privacidade da câmera",
-                        "tooltip": "A câmera para de enviar imagens ao vivo quando a configuração de privacidade é ativada. Ative essa configuração somente quando não desejar compartilhar suas imagens com outras pessoas durante chamadas com vídeo."
+                        "tooltip": "A câmera interrompe o envio de imagens ao vivo quando a configuração de privacidade está ativada. Ative essa configuração somente quando não desejar compartilhar suas imagens durante chamadas com vídeo."
                     },
                     "camera": {
                         "title": "Câmera",
@@ -1648,8 +1716,11 @@
                         "options": {
                             "option1": "Selecione",
                             "option2": "Abrir site",
-                            "option3": "Digite o texto"
-                        }
+                            "option3": "Digite o texto",
+                            "option4": "Open applications or files",
+                            "option5": "Invoke key sequence"
+                        },
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function."
                     },
                     "tooltip": "Conteúdo a ser preenchido",
                     "apply": {
@@ -1664,6 +1735,17 @@
                     "enterText": {
                         "title": "TEXTO A SER INSERIDO",
                         "placeholder": "Digite aqui"
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles": {
+                        "applicationTitle": "You need to delete one app first",
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {
@@ -1899,7 +1981,7 @@
                 "heading": "Mídia inteligente",
                 "title": "Reprodução de vídeo sem toques",
                 "desc": "Esse recurso pausará o vídeo quando você deixar o computador e continuará o vídeo quando você voltar.",
-                "tooltip": "Esse recurso não é aplicável a players de vídeo da Web. Os players de vídeo populares, como o Windows Media Player, 5KPlayer, dentre outros, oferecem suporte a esse recurso."
+                "tooltip": "Esse recurso não é aplicável em<br>players de vídeo da Web.<br>Os players compatíveis estão listados a seguir:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
             },
             "superResolution": {
                 "heading": "Mídia inteligente",
@@ -1937,7 +2019,8 @@
                     "point7": "Selecione o idioma de origem e o idioma de destino desejados.",
                     "point8": "Dependendo das suas necessidades, defina a entrada de voz do alto-falante ou do microfone.",
                     "point9": "Clique no ícone do microfone para começar a falar",
-                    "closeText": "fechar"
+                    "closeText": "fechar",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "OK",
@@ -1948,7 +2031,7 @@
         }
     },
     "systemUpdates": {
-        "title": "Atualização do Sistema",
+        "title": "Atualização do sistema",
         "back": "VOLTAR",
         "history": "HISTÓRICO COMPLETO",
         "notAvailable": "Não Disponível",
@@ -2064,11 +2147,11 @@
             "autoScriptEvaluationException": "Houve um erro ao avaliar o script de configuração automático.",
             "localRepositoryConnectionFailureException": "Impossível conectar-se ao Repositório Local.",
             "localRepositoryDatabaseException": "O banco de dados do repositório local não pôde ser localizado ou está corrompido.",
-            "networkInterruptedException": "O Servidor de Atualização do Sistema está indisponível atualmente. Tente novamente mais tarde.",
-            "helpCenterInvalidServerException": "O Servidor de Atualização do Sistema é inválido. Tente novamente mais tarde.",
+            "networkInterruptedException": "O Servidor de Atualização do sistema está indisponível atualmente. Tente novamente mais tarde.",
+            "helpCenterInvalidServerException": "O Servidor de Atualização do sistema é inválido. Tente novamente mais tarde.",
             "catalogNotFoundException": "Não foram encontradas atualizações aplicáveis para o seu sistema, pois o catálogo de atualizações não foi encontrado.",
             "catalogCrcErrorException": "O catálogo do sistema está sendo atualizado no momento. Tente novamente mais tarde.",
-            "catalogErrorException": "Erro detectado no catálogo de atualizações para seu sistema no Servidor de Atualização do Sistema. Tente novamente mais tarde.",
+            "catalogErrorException": "Erro detectado no catálogo de atualizações para seu sistema no Servidor de Atualização do sistema. Tente novamente mais tarde.",
             "fileNotFoundException": "Arquivo não encontrado."
         }
     },
@@ -2897,7 +2980,7 @@
         "settingsDescription": "Na página de configurações de preferências, você pode optar por ativar/desativar a notificação de mensagens com base nas categorias de mensagens do Vantage. Observe que, mesmo que todas as categorias de mensagens estejam desativadas, talvez você ainda receba ocasionalmente mensagens Críticas do Sistema do Vantage, quando necessário.",
         "messagesInLenovoVantage": "Mensagens no Lenovo Vantage",
         "appFeatures": "Recursos do aplicativo",
-        "appFeaturesDescription": "Mensagens sobre Atualização do Sistema, artigos e outros recursos notáveis.",
+        "appFeaturesDescription": "Mensagens sobre Atualização do sistema, artigos e outros recursos notáveis.",
         "marketing": "Marketing",
         "marketingDescription": "Mensagens de promoções, incluindo ofertas especiais da Lenovo.",
         "actionTriggered": "Ação acionadas",

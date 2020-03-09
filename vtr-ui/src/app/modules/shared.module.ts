@@ -20,7 +20,7 @@ import { RouterModule } from '@angular/router';
 import { SettingsService } from '../services/settings.service';
 import { TranslationModule } from './translation.module';
 import { UiButtonModule } from '../components/ui/ui-button/ui-button.module';
-import { MetricsModule } from '../directives/metrics.module';
+import { MetricsModule } from '../services/metric/metrics.module';
 import { HeaderMainModule } from '../components/header-main/header-main.module';
 import { ModalCommonConfirmationComponent } from 'src/app/components/modal/modal-common-confirmation/modal-common-confirmation.component';
 import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';

@@ -75,6 +75,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	}
 
 	ngOnInit() {
+		this.commonService.checkPowerPageFlagAndHide();
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 		if (this.machineType === 1) {
 			this.initDataFromCache();
@@ -84,8 +85,11 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 			// udk capability
 			const inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability);
 			this.hasUDKCapability = inputAccessoriesCapability.isUdkAvailable;
-			this.getFnCtrlSwapCapability();
-			this.getFnAsCtrlCapability();
+
+			// fnCtrlSwap & fnAsCtrl features hidden in 3.2.001
+
+			// this.getFnCtrlSwapCapability();
+			// this.getFnAsCtrlCapability();
 		}
 		this.getMouseAndTouchPadCapability();
 		this.getVoipHotkeysSettings();
@@ -209,7 +213,8 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 					this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, this.inputAccessoriesCapability);
 					if (value) {
 						this.getKBDMachineType(value);
-						this.getLayoutTable(value);
+						// fnAsCtrl feature hidden in 3.2.001
+						// this.getLayoutTable(value);
 					}
 				})
 					.catch(error => {
@@ -306,8 +311,9 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 			return EMPTY;
 		}
 	}
+	// fnCtrlSwap & fnAsCtrl features hidden in 3.2.001
  	// FnCtrlSwap feature start here
-	public getFnCtrlSwapCapability() {
+	/*public getFnCtrlSwapCapability() {
 		try {
 			if (this.keyboardService.isShellAvailable) {
 				this.keyboardService.GetFnCtrlSwapCapability().then(res => {
@@ -358,10 +364,11 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 			return EMPTY;
 		}
 	}
+	*/
  	// FnCtrlSwap feature end here
 
 	// FnAsCtrl feature start here
-	public getFnAsCtrlCapability() {
+	/*public getFnAsCtrlCapability() {
 		try {
 			if (this.keyboardService.isShellAvailable) {
 				this.keyboardService.GetFnAsCtrlCapability().then(res => {
@@ -408,6 +415,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 			return EMPTY;
 		}
 	}
+	*/
 	public getLayoutTable(layOutName) {
 		this.fnCtrlKeyTooltipContent = [];
 		let array = [];

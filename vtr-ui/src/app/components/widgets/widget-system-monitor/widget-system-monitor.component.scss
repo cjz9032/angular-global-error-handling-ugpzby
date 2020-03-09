@@ -9,7 +9,7 @@
 		background:$gaming_darkest;
 		box-shadow: $drop_shadow_gaming;
 		padding: 2rem 4rem 3.5rem 4rem;
-		height:auto;	
+		height:auto;			
 		@media #{$breakpoint_lg} {
 			padding: 2rem;			
 		}
@@ -98,7 +98,8 @@
 			.monitor-section {
 				border-radius: $border_radius_sm;
 				//background-color: $gaming_darkest;
-				background-color:$gaming_bg;
+				background-color:$gaming_bg;				
+				border: 1px solid $gaming_bg;
 				height: 24rem;
 				position: relative;
 				@media #{$breakpoint_xl3} {
@@ -113,10 +114,22 @@
 					border-radius: $border_radius_sm;		
 					background-color: $gaming_bg;
 					border: 1px solid $gaming_bg;
+					@media #{$black-on-white}{
+						border: 0px solid $gaming_bg;
+						}
+						@media #{$white-on-black}{
+							border: 0px solid $gaming_bg;
+						}
 					@media #{$breakpoint_md} {
 						float:left;	
 						padding-bottom:2rem;
 						position:relative;
+						@media #{$black-on-white}{
+							padding-bottom:0rem;
+							}
+							@media #{$white-on-black}{
+								padding-bottom:0rem;
+							}
 						}
 					@media screen and (min-width: 992px) and (max-width: 1199.9px) { 
 						float:left;	
@@ -386,6 +399,12 @@
 					width: 38rem;
 					height: 38rem;
 					border-radius: 50%;
+					@media #{$black-on-white}{
+						border:1px solid $high-contrast-grey;
+						}
+						@media #{$white-on-black}{
+						border:1px solid $high-contrast-grey;
+						}
 					@media #{$breakpoint_xl3} {
 						top: -3.5rem;
 						width: 29rem;
@@ -422,25 +441,24 @@
 						background-size: 100% 100%;
 						background-position: 50% 50%;
 						background-repeat: no-repeat;
-					//	background-color:$gaming_darkest;
-						width: 34.5rem;
-						height: 34.5rem;
+						background-color:$gaming_bg;
+						width: 34.2rem;
+						height: 34.2rem;
 						position: relative;
-						top: 1.75rem;
-						left: 1.75rem;
+						top: 1.85rem;
+						left: 1.85rem;
 						border-radius: 50%;
-						border: 0.75rem solid $gaming_bg;
 						@media #{$breakpoint_xl3} {
-							top: 1rem;
-							left: 1rem;
-							width: 27rem;
-							height: 27rem;
+							top: 1.1rem;
+							left: 1.1rem;
+							width: 26.6rem;
+							height: 26.6rem;
 						}
 						@media #{$breakpoint_xl2} {
-							top: 1rem;
-							left: 1rem;
-							width: 22rem;
-							height: 22rem;
+							top: 1.1rem;
+							left: 1.1rem;
+							width: 21.6rem;
+							height: 21.6rem;
 						}
 					}
 
@@ -515,9 +533,9 @@
 							}
 						}
 						&.right {
-							left: 19rem;
+							left: 18.95rem;
 							@media #{$breakpoint_xl3} {
-								left: 14.5rem;
+								left: 14.45rem;
 							}
 							@media #{$breakpoint_xl2} {
 								left: 11.95rem;
@@ -563,11 +581,11 @@
 						position: absolute;
 						top: 6rem;
 						left: 6rem;
-						background-color: $gaming_bg;
+						background-color: $gaming_darkest;
 						width: 26rem;
 						height: 26rem;
 						border-radius: 50%;
-						border: 0.75rem solid $gaming_darkest;
+						//border: 0.75rem solid $gaming_darkest;
 						@media #{$breakpoint_xl3} {
 							top: 4.5rem;
 							left: 4.5rem;
@@ -595,17 +613,17 @@
 								height: 16rem;
 							}
 							@media #{$breakpoint_xl2} {
-								width: 11rem;
-								height: 11rem;
+								width: 12rem;
+								height: 12rem;
 							}
 							.cpu-label {
-								margin-top: 5rem;
+								margin-top: 4rem;
 								display: inline-block;
 								@media #{$breakpoint_xl3} {
 									margin-top: 2rem;
 								}
 								@media #{$breakpoint_xl2} {
-									margin-top: 1.5rem;
+									margin-top: 1.85rem;
 								}
 								.cpu-title {
 									text-transform: uppercase;
