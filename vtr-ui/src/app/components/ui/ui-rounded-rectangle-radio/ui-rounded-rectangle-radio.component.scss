@@ -11,28 +11,10 @@
 	height: 6.5rem;
 	border-radius: 20rem;
 	cursor: pointer;
+	outline: none;
 
-	@media #{$mediaquery_X20} {
-		width: 40rem;
-	}
-	@media #{$mediaquery_X19} {
-		width: 30.5rem;
-	}
-	@media #{$mediaquery_X18} {
-		width: 18rem;
-		margin-right: 1rem;
-	}
-	@media #{$mediaquery_X42} {
-		width: 21rem;
-		margin-right: 1rem;
-	}
-	@media #{$mediaquery_X16} {
-		width: 16.5rem;
-		margin-right: 1rem;
-	}
-	@media #{$mediaquery_X24} {
-		width: 30rem;
-		margin-right: 1rem;
+	@media #{$breakpoint_xl} {
+		width: 20rem;
 	}
 
 	label {
@@ -54,11 +36,11 @@
 
 			// }
 			position: absolute;
-			top: 50%;
+			top: 48.5%;
 			left: 6rem;
-			color: $main_darkest;
-			font-size: 1.5rem;
-			font-weight: bold;
+			color: $shade_blue;
+			font-size: $fontsize_xs;
+			font-weight: $weight_light;
 			word-wrap: break-word;
 			word-break: break-all;
 			padding-right: 1rem;
@@ -67,8 +49,8 @@
 
 		.icon-circle {
 			font-size: 3rem;
-			color: $main;
-			top: 1.3rem;
+			color: $menu_hover;
+			top: 1.5rem;
 			left: 1.3rem;
 			@media #{$white-on-black}{
 				background-color: $dark;
@@ -88,7 +70,7 @@
 			left: 9rem;
 			top: 9rem;
 			font-size: 3.2rem;
-			color: $main;
+			color: $menu_hover;
 			}
 
 		span.question {

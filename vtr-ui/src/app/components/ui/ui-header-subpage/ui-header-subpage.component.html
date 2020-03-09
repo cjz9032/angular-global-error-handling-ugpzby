@@ -38,7 +38,7 @@
 				</div>
 				<div class="row"
 					*ngIf="items">
-					<div *ngFor="let item of items; let i=index"
+					<div *ngFor="let item of items; let i=index;"
 						class="col-auto p-0">
 						<div class="menu-item"
 							role="link"
@@ -48,7 +48,7 @@
 							metricsEvent="FeatureClick"
 							[metricsParent]="metricsParent"
 							id="jumptoSetting-{{item.path}}"
-							attr.aria-label= "jumpto-{{item.path | translate}}"
+							attr.aria-label="{{'device.deviceSettings.power.jumpto.title' | translate}}-{{item.title | translate}}"
 							(click)="menuItemClick($event, item)"
 							(keydown.enter)="menuItemClick($event, item)">
 							{{item.title | translate}}

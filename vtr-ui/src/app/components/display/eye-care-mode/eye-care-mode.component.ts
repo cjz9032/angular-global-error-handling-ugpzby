@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, EventEmitter, Output, OnChanges, SimpleChanges } from '@angular/core';
 import { ChangeContext } from 'ng5-slider';
 import { EyeCareMode, SunsetToSunriseStatus } from 'src/app/data-models/camera/eyeCareMode.model';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-eye-care-mode',
@@ -30,7 +31,7 @@ export class EyeCareModeComponent implements OnInit, OnChanges {
 		{ value: 4 }
 	];
 
-	constructor() { }
+	constructor(private logger: LoggerService) { }
 
 	ngOnInit() { }
 
@@ -55,25 +56,9 @@ export class EyeCareModeComponent implements OnInit, OnChanges {
 			return 1;
 		}
 	}
-	public sliderChange(value: number) {
-		switch (value) {
-			case 1:
-				console.log('todo: warm');
-				break;
-			case 2:
-				console.log('todo: eye care mode');
-				break;
-			case 3:
-				console.log('todo: default');
-				break;
-			case 4:
-				console.log('todo: cold');
-				break;
-		}
-	}
 
 	public onResetTemparature($event: any) {
-		console.log('Reset Temperature');
+		this.logger.info('Reset Temperature');
 		this.resetTemparature.emit($event);
 	}
 	public onEyeCareTemparatureChange($event: ChangeContext) {
@@ -82,9 +67,9 @@ export class EyeCareModeComponent implements OnInit, OnChanges {
 	public onEyeCareTemparatureValueChange($event: ChangeContext) {
 		this.eyeCareTemparatureValueChange.emit($event);
 	}
-	public onSunsetToSunrise(event: any) {
+	public onSunsetToSunrise() {
 		this.sunsetToSunriseStatus.status = !this.sunsetToSunriseStatus.status;
-		console.log('sunset to sunrise in eyecare-mode commponent', this.sunsetToSunriseStatus);
-		this.sunsetToSunrise.emit(event);
+		this.logger.info('sunset to sunrise in eyecare-mode commponent', this.sunsetToSunriseStatus);
+		this.sunsetToSunrise.emit(this.sunsetToSunriseStatus);
 	}
 }

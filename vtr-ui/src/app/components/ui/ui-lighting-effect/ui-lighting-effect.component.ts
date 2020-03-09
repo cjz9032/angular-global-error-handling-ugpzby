@@ -2,6 +2,7 @@ import { Component, OnInit, Input, ElementRef, Output, EventEmitter, OnChanges, 
 import { isUndefined } from 'util';
 import { LanguageService } from 'src/app/services/language/language.service';
 import { DeviceService } from 'src/app/services/device/device.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-ui-lighting-effect',
@@ -19,7 +20,8 @@ export class UiLightingEffectComponent implements OnInit, OnChanges {
 	@Output() public change = new EventEmitter<any>();
 	@Input() enableBrightCondition1: boolean;
 	@Input() showDescription: boolean;
-	public showOptions = false;
+	@Input() isEffectChange = true;
+	@Input() showOptions = false;
 	public buttonName: any = 'Show';
 	public selected = false;
 	public currentOption: string;
@@ -41,7 +43,8 @@ export class UiLightingEffectComponent implements OnInit, OnChanges {
 
 	constructor(
 		private elementRef: ElementRef,
-		private deviceService: DeviceService
+		private deviceService: DeviceService,
+		private loggerService: LoggerService
 	) {
 		if (document.getElementById('menu-main-btn-navbar-toggler')) {
 			document.getElementById('menu-main-btn-navbar-toggler').addEventListener('click', (event) => {
@@ -54,7 +57,7 @@ export class UiLightingEffectComponent implements OnInit, OnChanges {
 		this.deviceService.getMachineInfo().then((value: any) => {
 			this.defaultLanguage = value.locale;
 		});
-		console.log('option itpeople', this.options);
+		this.loggerService.info('ui-lighting-effect.component.ngOnInit', '--->' + this.options);
 	}
 
 	public toggleOptions() {
@@ -131,6 +134,21 @@ export class UiLightingEffectComponent implements OnInit, OnChanges {
 				if (!isUndefined(changes.selectedValue)) {
 					this.selectedOption = this.options.dropOptions.filter(
 						(option) => option.value === changes.selectedValue.currentValue
+					)[0];
+				}
+			}
+		}
+		// if (!isUndefined(changes.effectOptionName)) {
+		// 	if (changes.effectOptionName.previousValue !== changes.effectOptionName.currentValue) {
+		// 		this.effectOptionName = changes.effectOptionName.currentValue;
+		// 	}
+
+		// }
+		if (!isUndefined(changes.options)) {
+			if (!isUndefined(changes.options.currentValue)) {
+				if (!isUndefined(this.selectedValue)) {
+					this.selectedOption = changes.options.currentValue.dropOptions.filter(
+						(option) => option.value === this.selectedValue
 					)[0];
 				}
 			}

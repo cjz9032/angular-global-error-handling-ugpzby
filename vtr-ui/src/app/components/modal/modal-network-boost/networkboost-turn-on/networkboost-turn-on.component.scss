@@ -20,7 +20,6 @@ ui-popover-turn-on {
 	}
 	@media #{$breakpoint_sm} {
 		width: 90%;
-		padding: 3rem 4rem;
 	}
 	@media #{$black-on-white}{
 		border:0.1rem solid $dark;
@@ -87,7 +86,7 @@ ui-popover-turn-on {
 	}
 
 	h1 {
-		font-size: 2.5rem;
+		font-size: $fontsize_xl;
 		font-weight: normal;
 		color: $blue-dark;
 		padding-right: 2.5rem;
@@ -112,7 +111,7 @@ ui-popover-turn-on {
 		background: $gradient_main;
 		border-radius: 3rem;
 		color: $light;
-		font-size: 2rem;
+		font-size: $fontsize_sm;
 		padding: 1rem 3rem;
 		margin-top: 1rem;
 		margin-right: 3rem;
@@ -122,9 +121,9 @@ ui-popover-turn-on {
 		}
 	}
 		.cancel-link {
-		height: 3.2rem;
+		height: 2.5rem;
 		color: $btn_secondary_color;
-		font-size: 2rem;
+		font-size:$fontsize_sm;
 		vertical-align: middle;
 		padding: 0 0.5rem;
 		font-weight: $weight_600;

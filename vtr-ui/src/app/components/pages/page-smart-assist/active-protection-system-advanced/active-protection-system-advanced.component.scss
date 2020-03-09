@@ -1,6 +1,8 @@
+@import "../../../../app.theme.scss";
 .caption {
-    font-size: 1.5rem;
-    // color: $main_shade;
+	font-size: $fontsize_xs;
+	font-weight: $weight_light;
+    color: $purple_navy;
 }
 .input-item{
     padding: 0;
@@ -12,11 +14,17 @@
         margin-bottom: 3rem;
     }
     .dropdown{
+		padding-right: 2rem;
         ::ng-deep .vtr-ui-dropdown{
             margin-top: 3rem;
         }
         // @media screen and (max-width:640px){
         //     width: 100%;
         // }
-    }
+	}
+	::ng-deep .vtr-ui-switch-row.white-theme {
+		.vtr-col-pad, .col-12{
+			padding-left: 0;
+		}
+	}
 }

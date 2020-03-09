@@ -16,15 +16,15 @@
 		}
 		@media #{$mediaquery_sm} {
 			padding-top: 0rem;
-			margin-top: -1rem;
+			//margin-top: -1rem;
 		}
 		@media #{$mediaquery_md} {
 			padding-top: 0rem;
-			margin-top: -1rem;
+			//margin-top: -1rem;
 		}
 		@media #{$mediaquery_lg} {
 			padding-top: 0rem;
-			margin-top: -1rem;
+			//margin-top: -1rem;
 		}
 	// @media #{$mediaquery_X5} {
 	// 	padding-left: 8.5rem;
@@ -63,8 +63,9 @@
 		}
 
 		.battery-health {
-			color: $main_dark;
-			font-size: $sub_header;
+			color: $shade_blue;
+			font-size: 3.6rem;
+			font-weight: $weight_light;
 			line-height: 4.2rem;
 		}
 
@@ -125,6 +126,7 @@
 			letter-spacing: 0;
 			padding: 0.5rem 0;
 			align-self: center;
+			color: $shade_blue;
 		}
 		.icomoon {
 			font-size: 3.5rem;

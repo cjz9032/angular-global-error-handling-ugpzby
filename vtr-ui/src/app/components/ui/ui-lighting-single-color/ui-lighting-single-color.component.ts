@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter, Input, OnChanges } from '@angu
 import { LightEffectSimpleType } from 'src/app/enums/light-effect-simple-type';
 import { Options } from 'src/app/data-models/gaming/lighting-options';
 import { isUndefined } from 'util';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-ui-lighting-single-color',
@@ -24,17 +25,17 @@ export class UiLightingSingleColorComponent implements OnInit, OnChanges {
 		this.changeSingleColorOption.emit(optionId);
 	}
 	public singleColorOpt: any = LightEffectSimpleType;
-	constructor() {}
+	constructor(
+		private loggerService: LoggerService
+	) {}
 
 	ngOnInit() {}
 	ngOnChanges(changes) {
 		if (!isUndefined(changes.selectedOptionId)) {
 			if (changes.selectedOptionId.previousValue !== changes.selectedOptionId.currentValue) {
 				this.selectedOptionId = changes.selectedOptionId.currentValue;
-				console.log(
-					'selectedOptionId changed------------------------------------ssss',
-					changes.selectedOptionId.currentValue
-				);
+				this.loggerService.info('ui-lighting-single-color.component.ngOnChanges',
+				'selectedOptionId changed --->' +  changes.selectedOptionId.currentValue);
 			}
 		}
 	}

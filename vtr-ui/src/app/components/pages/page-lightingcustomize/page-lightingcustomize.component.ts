@@ -1,7 +1,7 @@
 import { ModalGamingLegionedgeComponent } from './../../modal/modal-gaming-legionedge/modal-gaming-legionedge.component';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CMSService } from 'src/app/services/cms/cms.service';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { CommonService } from 'src/app/services/common/common.service';
@@ -16,6 +16,8 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalGamingLightingComponent } from '../../modal/modal-gaming-lighting/modal-gaming-lighting.component';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { Gaming } from './../../../enums/gaming.enum';
+import { LocalStorageKey } from './../../../enums/local-storage-key.enum';
 
 @Component({
 	selector: 'vtr-page-lightingcustomize',
@@ -30,6 +32,7 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 	startDateTime: any = new Date();
 	metrics: any;
 	dynamic_metricsItem: any = 'lighting_profile_cms_inner_content';
+	public ledlayoutversion:any;
 
 	constructor(
 		private titleService: Title,
@@ -39,7 +42,8 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 		private shellService: VantageShellService,
 		public dashboardService: DashboardService,
 		private translate: TranslateService,
-		public deviceService: DeviceService
+		public deviceService: DeviceService,
+		private router: Router
 	) {
 		this.metrics = this.shellService.getMetrics();
 		this.route.params.subscribe((params) => {
@@ -122,4 +126,11 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 		} else {
 		}
 	}
+	public getLayOutversion(){
+        if(this.commonService.getLocalStorageValue(LocalStorageKey.ledLayoutVersion) !== undefined){
+			this.ledlayoutversion = this.commonService.getLocalStorageValue(LocalStorageKey.ledLayoutVersion);
+		}else{
+			this.router.navigate(['/device-gaming']);
+		}
+    }
 }

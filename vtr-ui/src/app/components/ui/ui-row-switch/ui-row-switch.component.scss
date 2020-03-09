@@ -12,12 +12,14 @@
 			}
 		}
 		.vtr-col-pad {
-			padding: 0 1rem;
+			padding: 0 1.5rem;
 		}
 		.vtr-row-switch {
 			// padding-right: 3rem;
 			padding-right: 0;
 			display: flex;
+			align-content: flex-start;
+			//min-width: 8rem;
 			@media #{$mediaquery_X42} {
 				padding-left: 0;
 			}
@@ -49,7 +51,7 @@
 			padding: 0 1rem 0 0;
 
 			.left-icon {
-				font-size: 2rem;
+				font-size: $fontsize_lg;
 				color: $icon_color;
 				fill: $icon_color;
 				width: 2rem;
@@ -57,7 +59,7 @@
 			}
 
 			.left-icon-svg {
-				font-size: 2rem;
+				font-size: $fontsize_lg;
 				color: $icon_color;
 				fill: $icon_color;
 				width: 2.5rem;
@@ -91,7 +93,7 @@
 		}
 
 		.right-icon {
-			font-size: 1.6rem;
+			font-size: $fontsize_sm;
 			color: $icon_color;
 			cursor: pointer;
 
@@ -127,10 +129,10 @@
 		}
 
 		.text {
-			font-size: 1.4rem;
+			font-size: $fontsize_xs;
 
 			.link-text {
-				font-size: 1.2rem;
+				font-size: $fontsize_xs2;
 				text-decoration: underline;
 				letter-spacing: 0.05rem;
 				padding-top: 0.3rem;
@@ -138,15 +140,20 @@
 		}
 
 		.link-text {
-			font-size: 1.2rem;
+			font-size: $fontsize_xs2;
 			text-decoration: underline;
 			letter-spacing: 0.05rem;
 			padding-top: 0.3rem;
 		}
 
 		.tool-tip-icon {
-			margin-left: 0.9rem;
+			//margin-left: 0.9rem;
 			margin-top: 0.3rem;
+			margin-left: 1rem;
+			//order: 2;
+			// &.auto-screen-lock-help-icon {
+			// 	margin-left: 3.5rem;
+			// }
 		}
 		// .right-align{
 		// 	padding-left: 3.5rem;
@@ -210,3 +217,12 @@
 // @mixin theme($name, $background, $font_color, $icon_color, $border)
 @include theme(white-theme, $light, $purple_navy, $menu_hover, $screen_dark_10);
 @include theme(blue-theme, $gradient_main, $light, $light, $screen_light_15);
+
+.vtr-ui-switch-row.white-theme {
+	.caption {
+		color: $grey_dark;
+		span{
+		color: $grey_dark;
+		}
+	}
+}

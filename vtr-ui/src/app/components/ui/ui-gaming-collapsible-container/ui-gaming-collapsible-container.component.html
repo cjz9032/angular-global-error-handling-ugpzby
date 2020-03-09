@@ -15,7 +15,7 @@
 				<ng-container *ngFor="let option of options.dropOptions; index as i">
 					<li [ngClass]="{ 'selected': option.value===options.curSelected }" (click)="optionSelected(option)" (keydown.enter)="optionSelected(option)"
 						(mouseenter)="changeDescription(option)" (mouseleave)="resetDescription(option)" vtrMetrics
-						[metricsItem]="option.metricitem" metricsEvent="featureClick" metricsParam="{{option.metricitem}}" metricsValue="{{option.value}}"
+						[metricsItem]="option.metricitem" metricsEvent="featureClick" metricsParam="{{option.metricitem}}" metricsValue="{{option.value}}" metricsParent="Gaming.Dashboard"
 						(keydown)="keyupTabFn($event,i)" [attr.aria-selected]="option.value===options.curSelected?'true':'false'" role="option" tabindex="1"
 						 [attr.aria-label] = "option.ariaLabel">
 						<a class="dropdown-item" id="{{option.id}}" tabindex="-1">

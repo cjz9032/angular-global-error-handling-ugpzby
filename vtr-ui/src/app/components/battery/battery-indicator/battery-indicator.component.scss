@@ -82,8 +82,8 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 			// left: 3.3%; // small
 			// width: 91.3%;
 
-			left: 1.8%; // big
-			width: 91%;
+			left: 0.8rem; // big
+			width: calc(100% - 1.6rem);
 			border: 0.8rem solid var(--border-color);
 			opacity: 1;
 			border-radius: 0.5rem;
@@ -112,17 +112,17 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 
 		.battery {
 			position: relative;
-			width: 90%;
+			width: calc(100% - 2rem);
 			height: 12rem;
 			border: 0.2rem solid var(--border-color);
 			border-radius: 0.3rem;
-			left: -0.7rem;
-			@media #{$medium-screen} {
-				left: -1.6rem;
-			}
-			@media #{$mediaquery_X4} {
-				left: -1rem;
-			}
+			left: 0;
+			// @media #{$medium-screen} {
+			// 	left: -1.6rem;
+			// }
+			// @media #{$mediaquery_X4} {
+			// 	left: -1rem;
+			// }
 			/* battery notch */
 			&:after {
 				position: absolute;
@@ -186,13 +186,19 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 					@extend .base-percentage-text;
 					// font-size: 3rem;
 					// // color: $stop;
-					top: 2.5rem;
+					// top: 2.5rem;
+					width: 80%;
+					// margin-left: 12.5%;
+					margin: auto;
+					height: 100%;
+					position: static;
+					padding-left: 2.8rem;
 
 					.error-icon {
 						font-size: 3.5rem;
-						align-self: center;
+						// align-self: center;
 						position: relative;
-						bottom: 1.2rem;
+						bottom: 3.3rem;
 						right: 2.5rem;
 					}
 					.icomoon-NoBatteryError {
@@ -204,18 +210,23 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 						margin-left: 1rem;
 						font-size: 1.5rem;
 						position: relative;
-						top: -0.8rem;
+						top: -0.3rem;
+						white-space: nowrap;
+						text-overflow: ellipsis;
+						overflow: hidden;
+						display: inline-block;
+						width: auto;
 					}
 				}
 
 				.percentage {
 					@extend .base-percentage-text;
 					font-size: 4.5rem;
-					color: $main_dark;
+					color: $shade_blue;
 
 					.percentage-symbol {
 						position: relative;
-						font-size: $section_header;
+						font-size: $fontsize_xs2;
 						left: -1.2rem;
 					}
 				}
@@ -234,12 +245,12 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 			.remaining-time {
 				@extend .base-remaining-text;
 				bottom: 19%;
-				color: $main_dark;
+				color: $shade_blue;
 			}
 
 			.remaining-text {
 				@extend .base-remaining-text;
-				color: $main_dark;
+				color: $shade_blue;
 				bottom: 5%;
 				font-weight: $weight_light;
 				font-size: 1.3rem;

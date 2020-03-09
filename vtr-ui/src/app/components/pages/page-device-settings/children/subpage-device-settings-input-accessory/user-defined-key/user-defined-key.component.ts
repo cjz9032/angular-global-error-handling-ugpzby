@@ -71,7 +71,7 @@ export class UserDefinedKeyComponent implements OnInit {
 				this.hasUDKCapability = false;
 			}
 		} catch (error) {
-			console.log('ngOnInit: ', error.message);
+			this.logger.error('ngOnInit: ', error.message);
 		}
 	}
 
@@ -97,14 +97,21 @@ export class UserDefinedKeyComponent implements OnInit {
 				this.userDefinedKeyOptions = this.commonService.removeObjFrom(this.userDefinedKeyOptions, '1');
 		}
 	}
+	checkDropDown(userDefineDrop: any, i, event) {
+		if (event && event.keyCode === 9) {
+			if (i === this.userDefinedKeyOptions.length - 1 ) {
+					userDefineDrop.close();
+			}
+		}
+	}
 
 	public getUDKTypeList() {
 		try {
 			if (this.keyboardService.isShellAvailable) {
 				this.keyboardService.GetUDKTypeList()
 					.then((value: any) => {
-						console.log('keyboard getUDKTypeList here -------------.>', value);
-						console.log(value);
+						this.logger.info('keyboard getUDKTypeList here -------------.>', value);
+						this.logger.info(value);
 						this.udkActionInfo = new UDKActionInfo(value);
 						this.initValues(this.udkActionInfo);
 					}).catch(error => {
@@ -126,7 +133,7 @@ export class UserDefinedKeyComponent implements OnInit {
 						this.showUDFSetSuccessMessage(settingKey);
 						this.udkFormSubmitted = false;
 						this.userDefinedKeyOptions = this.commonService.removeObjFrom(this.userDefinedKeyOptions, '1');
-						console.log('keyboard setUDKTypeList here -------------.>', value);
+						this.logger.info('keyboard setUDKTypeList here -------------.>', value);
 					}).catch(error => {
 						this.logger.error('keyboard setUDKTypeList error here', error.message);
 						return EMPTY;

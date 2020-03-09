@@ -8,7 +8,7 @@
 	}
 	.widget-container {
 		border-radius: $border_radius;
-		background: $dark_cell;
+		background: $gaming_darkest;
 		box-shadow: $drop_shadow_gaming;
 		padding: 4rem;
 		@media #{$breakpoint_sm} {
@@ -119,12 +119,6 @@
 			.gaming-header-image {
 				height: 5rem;
 			}
-		}
-	}
-
-	.macro-key-subpage {
-		.container-card {
-			background-color: $gaming_lightest !important;
 		}
 	}
 }

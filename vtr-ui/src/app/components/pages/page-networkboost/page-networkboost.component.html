@@ -25,7 +25,7 @@
 										</vtr-ui-switch-onoff> -->
 										<vtr-ui-toggle *ngIf='toggleStatus !== undefined' [label]="'networkBoost'"
 											[toggleId]="'networkBoost'" [onOffSwitchId]="'networkboostSwitch'"
-											(toggle)="setNetworkBoostStatus($event)" [value]="toggleStatus">
+											(toggle)="setNetworkBoostStatus($event)" [value]="toggleStatus" [parentId]="'Gaming.NetworkBoost'">
 										</vtr-ui-toggle>
 										<p class="intro-text">
 											{{'gaming.networkBoost.introLine' | translate}}</p>
@@ -47,22 +47,26 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col col-12 px-0 pt-0 pb-40">
-					<vtr-container-card [ngClass]="{'cursor-default': isOnline == false}"  order="1" [itemID]="cardContentPositionF.Id"
-						[img]="cardContentPositionF.FeatureImage" [title]="cardContentPositionF.Title"
-						[logoText]="cardContentPositionF.BrandName" [action]="cardContentPositionF.Action"
-						[dataSource]="cardContentPositionF.DataSource" [actionType]="cardContentPositionF.ActionType"
-						[actionLink]="cardContentPositionF.ActionLink" [type]="'subpage-article'" [ratio]="1">
+					<vtr-container-card [ngClass]="{'cursor-default': isOnline == false}"  order="1" [itemID]="cardContentPositionC.id"
+						[img]="cardContentPositionC.FeatureImage" [title]="cardContentPositionC.Title"
+						[logoText]="cardContentPositionC.BrandName" [action]="cardContentPositionC.Action"
+						[dataSource]="cardContentPositionC.DataSource" [actionType]="cardContentPositionC.ActionType"
+						[actionLink]="cardContentPositionC.ActionLink" [type]="'subpage-article'" [ratio]="1"
+						[dynamicmetricsItem]="dynamic_metricsItem" vtrMetrics
+						metricsEvent="FeatureClick"
+						metricsItem="{{cardContentPositionC.Title}}">
 					</vtr-container-card>
 				</div>
 
 				<div class="col col-12 px-0 pt-0 pb-40">
-					<vtr-container-card [ngClass]="{'cursor-default': isOnline == false}"  order="2" [itemID]="cardContentPositionC.id"
-						[img]="cardContentPositionC.FeatureImage" [caption]="cardContentPositionC.Description"
-						[title]="cardContentPositionC.Title" [logoText]="cardContentPositionC.BrandName"
-						[action]="cardContentPositionC.Action" [dataSource]="cardContentPositionC.DataSource"
-						[actionType]="cardContentPositionC.ActionType" [actionLink]="cardContentPositionC.ActionLink"
-						[type]="'subpage-corner'" [ratio]="2" [cornerShift]="'large'"
-						[dynamicmetricsItem]="dynamic_metricsItem">
+					<vtr-container-card [ngClass]="{'cursor-default': isOnline == false}"  order="2" [itemID]="cardContentPositionF.Id"
+						[img]="cardContentPositionF.FeatureImage" [caption]="cardContentPositionF.Description"
+						[title]="cardContentPositionF.Title" [logoText]="cardContentPositionF.BrandName"
+						[action]="cardContentPositionF.Action" [dataSource]="cardContentPositionF.DataSource"
+						[actionType]="cardContentPositionF.ActionType" [actionLink]="cardContentPositionF.ActionLink"
+						[type]="'subpage-corner'" [ratio]="2" [cornerShift]="'large'" vtrMetrics
+						metricsEvent="FeatureClick"
+						metricsItem="{{cardContentPositionF.Title}}">
 					</vtr-container-card>
 				</div>
 

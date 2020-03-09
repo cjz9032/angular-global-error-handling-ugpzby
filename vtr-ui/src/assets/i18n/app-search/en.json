@@ -46,58 +46,6 @@
 				]
 			}
 		},
-		"/privacy": {
-			"armSupport": false,
-			"smodeSupport": false,
-			"gamingSupport": false,
-			"search-privacy-score": {
-				"icon": ["fal", "search"],
-				"desc": "Check your privacy score",
-				"tags": [
-					"privacy score"
-				],
-				"relevantTags": []
-			}
-		},
-		"/privacy/breaches": {
-			"armSupport": false,
-			"smodeSupport": false,
-			"gamingSupport": false,
-			"search-email-breach": {
-				"icon": ["fal", "user-shield"],
-				"desc": "Check email for breaches",
-				"tags": [
-					"email breaches"
-				],
-				"relevantTags": ["privacy"]
-			}
-		},
-		"/privacy/trackers": {
-			"armSupport": false,
-			"smodeSupport": false,
-			"gamingSupport": false,
-			"search-check-tracking": {
-				"icon": ["fal", "eye"],
-				"desc": "Check for tracking tools",
-				"tags": [
-					"tracking tools"
-				],
-				"relevantTags": ["privacy"]
-			}
-		},
-		"/privacy/browser-accounts": {
-			"armSupport": false,
-			"smodeSupport": false,
-			"gamingSupport": false,
-			"search-vulnerable-passwords": {
-				"icon": ["fal", "lock"],
-				"desc": "Check for vulnerable passwords",
-				"tags": [
-					"vulnerable passwords"
-				],
-				"relevantTags": ["privacy"]
-			}
-		},
 		"/device": {
 			"armSupport": false,
 			"search-prossesor": {

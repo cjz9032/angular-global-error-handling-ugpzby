@@ -12,6 +12,8 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { WarrantyService } from 'src/app/services/warranty/warranty.service';
 import { SupportContentStatus } from 'src/app/enums/support-content-status.enum';
+// cpt
+import { environment } from 'src/environments/environment';
 
 @Component({
 	selector: 'vtr-page-support',
@@ -99,6 +101,14 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		metricsEvent: 'FeatureClick',
 		metricsParent: 'Page.Support'
 	};
+
+	// cpt
+	private isCPTEnabled = true;
+	listCpt = {
+		iconPath: 'assets/images/support/svg_icon_cpt.svg',
+		title: 'cpt.title',
+		clickItem: 'cpt'
+	};
 	offlineImages = [
 		'assets/images/support/support-offline-1.jpg',
 		'assets/images/support/support-offline-2.jpg',
@@ -110,7 +120,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		'assets/images/support/how-to.svg',
 		'assets/images/support/lifestyle-entertainment.svg',
 		'assets/images/support/software-apps.svg',
-	]
+	];
 
 	cateStartTime: any;
 	contentStartTime: any;
@@ -137,6 +147,10 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 
 		this.fetchCMSArticleCategory();
 		this.fetchCMSContents();
+
+		// cpt
+		this.isCPTEnabled = (typeof environment !== 'undefined' ? environment.isCPTEnabled : true);
+
 		this.setShowList();
 	}
 
@@ -186,6 +200,12 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 			this.supportDatas.needHelp.splice(1, 0, this.listContactCustomerService);
 		});
 		this.supportDatas.quicklinks.push(this.listAboutLenovoVantage);
+
+		// cpt
+		if (this.isCPTEnabled) {
+			this.supportDatas.quicklinks.push(this.listCpt);
+		}
+
 	}
 
 	getWarrantyInfo() {
@@ -245,9 +265,8 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 				}
 			},
 			error => {
-				console.log('fetchCMSContent error', error);
-				this.getArticlesTimeout = setTimeout(() => { this.fetchCMSContents(); }, 5000);
-			}
+                this.getArticlesTimeout = setTimeout(() => { this.fetchCMSContents(); }, 5000);
+            }
 		);
 	}
 
@@ -275,9 +294,8 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 				}
 			},
 			error => {
-				console.log('fetchCMSArticleCategories error', error);
-				setTimeout(() => { this.fetchCMSArticleCategory(); }, 5000);
-			}
+                setTimeout(() => { this.fetchCMSArticleCategory(); }, 5000);
+            }
 		);
 	}
 
@@ -323,11 +341,10 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 				}
 			},
 			error => {
-				console.log('fetchCMSArticles error', error);
-				if (lang.toLowerCase() !== 'en') {
+                if (lang.toLowerCase() !== 'en') {
 					this.getArticlesTimeout = setTimeout(() => { this.fetchCMSArticles(categoryId, 'en'); }, 5000);
 				}
-			}
+            }
 		);
 	}
 

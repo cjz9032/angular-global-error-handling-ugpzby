@@ -428,20 +428,18 @@ export class SmartAssistService {
 	}
 	// SET Snooze time
 	public setSnoozeTime(value: string): Promise<boolean> {
-		console.log('SNOOZE VALUE', typeof value);
-		if (this.isAPSavailable) {
+        if (this.isAPSavailable) {
 			return this.activeProtectionSystem.setSnoozeTime(value);
 		}
-		return undefined;
-	}
+        return undefined;
+    }
 	// Suspend APS
 	public sendSnoozeCommand(value: string): Promise<boolean> {
-		console.log('SUSPEND', typeof value, value);
-		if (this.isAPSavailable) {
+        if (this.isAPSavailable) {
 			return this.activeProtectionSystem.sendSnoozeCommand(value);
 		}
-		return undefined;
-	}
+        return undefined;
+    }
 	//  Get Pen Capability
 	public getPenCapability(): Promise<boolean> {
 		if (this.isAPSavailable) {

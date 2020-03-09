@@ -228,9 +228,7 @@ export class LIDStarterHelper {
 			mapData.insert('model', mathineInfo.mtm);
 			mapData.insert('serial', mathineInfo.serialnumber);
 			mapData.insert('date', new Date().toISOString().substring(0, 19));
-		} catch (ex) {
-			console.log(ex.message);
-		}
+		} catch (ex) {}
 
 		const formContent = new Windows.Web.Http.HttpFormUrlEncodedContent(mapData);
 		const strContent = 'oobeversion=W10_WW_1.0_A&' + formContent.toString();

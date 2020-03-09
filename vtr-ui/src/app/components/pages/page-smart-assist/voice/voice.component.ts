@@ -45,22 +45,20 @@ export class VoiceComponent implements OnInit {
 	}
 
 	isLenovoVoiceInstalled() {
-		console.log('isLenovoVoiceInstalled');
-		try {
+        try {
 			if (this.smartAssist.isShellAvailable) {
 				this.smartAssist.isLenovoVoiceInstalled()
 					.then((status: boolean) => {
-						console.log('isLenovoVoiceInstalled.then', status);
-						if (status) {
-							this.installedStatus = InstalledStatus.DONE;
-							this.btnText = this.translate.instant('device.smartAssist.voice.launchBtnText');
-							this.voiceStatus = 'Launch';
-						} else {
-							this.installedStatus = InstalledStatus.CANCELED;
-							this.btnText = this.translate.instant('device.smartAssist.voice.installBtnText');
-							this.voiceStatus = 'Install';
-						}
-					}).catch(error => {
+                    if (status) {
+                        this.installedStatus = InstalledStatus.DONE;
+                        this.btnText = this.translate.instant('device.smartAssist.voice.launchBtnText');
+                        this.voiceStatus = 'Launch';
+                    } else {
+                        this.installedStatus = InstalledStatus.CANCELED;
+                        this.btnText = this.translate.instant('device.smartAssist.voice.installBtnText');
+                        this.voiceStatus = 'Install';
+                    }
+                }).catch(error => {
 						this.logger.error('isLenovoVoiceInstalled', error.message);
 						return EMPTY;
 					});
@@ -69,28 +67,26 @@ export class VoiceComponent implements OnInit {
 			this.logger.error('isLenovoVoiceInstalled' + error.message);
 			return EMPTY;
 		}
-	}
+    }
 
 	downloadLenovoVoice() {
-		console.log('downloadLenovoVoice');
-		this.showLoader = true;
-		try {
+        this.showLoader = true;
+        try {
 			if (this.smartAssist.isShellAvailable) {
 				this.smartAssist.downloadLenovoVoice()
 					.then((status: string) => {
-						console.log('downloadLenovoVoice.then', status);
-						this.showLoader = false;
-						if (status === InstalledStatus.DONE) {
-							this.installedStatus = InstalledStatus.DONE;
-							this.btnText = this.translate.instant('device.smartAssist.voice.launchBtnText');
-							this.voiceStatus = 'Launch';
-						} else if (status === InstalledStatus.FAILED) {
-							this.installedStatus = InstalledStatus.FAILED;
-							this.onDownloadFailedModal();
-						} else {
-							this.installedStatus = InstalledStatus.FAILED;
-						}
-					}).catch(error => {
+                    this.showLoader = false;
+                    if (status === InstalledStatus.DONE) {
+                        this.installedStatus = InstalledStatus.DONE;
+                        this.btnText = this.translate.instant('device.smartAssist.voice.launchBtnText');
+                        this.voiceStatus = 'Launch';
+                    } else if (status === InstalledStatus.FAILED) {
+                        this.installedStatus = InstalledStatus.FAILED;
+                        this.onDownloadFailedModal();
+                    } else {
+                        this.installedStatus = InstalledStatus.FAILED;
+                    }
+                }).catch(error => {
 						this.showLoader = false;
 						this.logger.error('downloadLenovoVoice', error.message);
 						return EMPTY;
@@ -101,16 +97,13 @@ export class VoiceComponent implements OnInit {
 			this.logger.error('downloadLenovoVoice' + error.message);
 			return EMPTY;
 		}
-	}
+    }
 
 	launchLenovoVoice() {
-		console.log('launchLenovoVoice');
-		try {
+        try {
 			if (this.smartAssist.isShellAvailable) {
 				this.smartAssist.launchLenovoVoice()
-					.then((status: boolean) => {
-						console.log('launchLenovoVoice.then', status);
-					}).catch(error => {
+					.then((status: boolean) => {}).catch(error => {
 						this.logger.error('launchLenovoVoice', error.message);
 						return EMPTY;
 					});
@@ -119,7 +112,7 @@ export class VoiceComponent implements OnInit {
 			this.logger.error('launchLenovoVoice' + error.message);
 			return EMPTY;
 		}
-	}
+    }
 
 	onDownloadFailedModal() {
 		this.modalService.open(DownloadFailedModalComponent, {

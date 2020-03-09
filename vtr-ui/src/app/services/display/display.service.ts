@@ -12,6 +12,7 @@ export class DisplayService {
 	private cameraSettings: any;
 	private privacyGuardSettings: any;
 	private oledSettings: any;
+	private priorityControl: any;
 	public isShellAvailable = false;
 	@Output() windowResize: EventEmitter<any> = new EventEmitter();
 
@@ -44,6 +45,11 @@ export class DisplayService {
 
 		this.oledSettings = shellService.getOledSettings();
 		if (this.oledSettings) {
+			this.isShellAvailable = true;
+		}
+
+		this.priorityControl = shellService.getPriorityControl();
+		if (this.priorityControl) {
 			this.isShellAvailable = true;
 		}
 	}
@@ -136,9 +142,8 @@ export class DisplayService {
 	public getCameraSettingsInfo(): Promise<any> {
 		try {
 			if (this.cameraSettings) {
-				console.log('this.cameraSettings', this.cameraSettings);
-				return this.cameraSettings.getCameraSettings();
-			}
+                return this.cameraSettings.getCameraSettings();
+            }
 			return undefined;
 		} catch (error) {
 			throw new Error(error.message);
@@ -182,18 +187,15 @@ export class DisplayService {
 		return undefined;
 	}
 	public getDisplayColortemperature(): Promise<any> {
-		console.log('inside eycaremode service');
-		if (this.displayEyeCareMode) {
-			console.log('this.getDisplayColortemperature', this.displayEyeCareMode);
-			return this.displayEyeCareMode.getDisplayColortemperature();
-		}
-		return undefined;
-	}
+        if (this.displayEyeCareMode) {
+            return this.displayEyeCareMode.getDisplayColortemperature();
+        }
+        return undefined;
+    }
 	public setDisplayColortemperature(value: number): Promise<boolean> {
 		if (this.displayEyeCareMode) {
-			console.log('this.setDisplayColortemperature', this.displayEyeCareMode);
-			return this.displayEyeCareMode.setDisplayColortemperature(value);
-		}
+            return this.displayEyeCareMode.setDisplayColortemperature(value);
+        }
 		return undefined;
 	}
 	public resetEyeCareMode(): Promise<any> {
@@ -210,9 +212,8 @@ export class DisplayService {
 	}
 	public getEyeCareAutoMode(): Promise<any> {
 		if (this.displayEyeCareMode) {
-			console.log('this.getEyeCareAutoModeState');
-			return this.displayEyeCareMode.getEyeCareAutoModeState();
-		}
+            return this.displayEyeCareMode.getEyeCareAutoModeState();
+        }
 		return undefined;
 	}
 
@@ -289,9 +290,8 @@ export class DisplayService {
 	public statusChangedLocationPermission(handler: any) {
 		try {
 			if (this.isShellAvailable) {
-				console.log(JSON.stringify(this.displayEyeCareMode));
-				this.displayEyeCareMode.statusChangedLocationPermission((handler));
-			}
+                this.displayEyeCareMode.statusChangedLocationPermission((handler));
+            }
 			return undefined;
 		} catch (error) {
 			throw new Error(error.message);
@@ -326,9 +326,7 @@ export class DisplayService {
 	public stopMonitorForCameraPermission() {
 		try {
 			if (this.isShellAvailable) {
-				return this.cameraSettings.stopMonitor((response: boolean) => {
-					console.log('stopMonitorForCameraPermission', response);
-				});
+				return this.cameraSettings.stopMonitor((response: boolean) => {});
 			}
 			return undefined;
 		} catch (error) {
@@ -414,5 +412,26 @@ export class DisplayService {
 
 	getWhiteListCapability(): Promise<WhiteListCapability> {
 		return this.displayEyeCareMode.getWhiteListCapability();
+	}
+
+	public getPriorityControlCapability(): Promise<any> {
+		if (this.priorityControl) {
+			return this.priorityControl.GetCapability();
+		}
+		return undefined;
+	}
+
+	public getPriorityControlSetting(): Promise<string> {
+		if (this.priorityControl) {
+			return this.priorityControl.GetPriorityControlSetting();
+		}
+		return undefined;
+	}
+
+	public setPriorityControlSetting(value: string): Promise<boolean> {
+		if (this.priorityControl) {
+			return this.priorityControl.SetPriorityControlSetting(value);
+		}
+		return undefined;
 	}
 }

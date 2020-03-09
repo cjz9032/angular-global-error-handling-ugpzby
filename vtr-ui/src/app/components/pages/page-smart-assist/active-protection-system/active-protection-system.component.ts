@@ -35,9 +35,9 @@ export class ActiveProtectionSystemComponent implements OnInit {
 	// public taskBarDimmerValue: number;
 
 	private populateIntervals() {
-		const seconds = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.seconds'); //'seconds';
-		const minute = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.minute'); //'minute';
-		const minutes = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.minutes');  //'minutes';
+		const seconds = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.seconds'); // 'seconds';
+		const minute = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.minute'); // 'minute';
+		const minutes = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.minutes');  // 'minutes';
 
 		this.intervals = [{
 			name: '30',
@@ -104,8 +104,8 @@ export class ActiveProtectionSystemComponent implements OnInit {
 					});
 				this.smartAssist
 					.getAutoDisableSetting()
-					.then(res => { this.repeatShock = res; 
-						// console.log('APS Auto Disable Checkbox---------------------------------', res); 
+					.then(res => { this.repeatShock = res;
+						// console.log('APS Auto Disable Checkbox---------------------------------', res);
 					});
 				this.smartAssist
 					.getSnoozeSetting()
@@ -120,7 +120,7 @@ export class ActiveProtectionSystemComponent implements OnInit {
 							});
 					});
 			})
-			.catch(err => console.log(err));
+			.catch(err => {});
 	}
 	// APS Advanced
 	checkAdvance() {
@@ -133,7 +133,7 @@ export class ActiveProtectionSystemComponent implements OnInit {
 				res[1] ? this.touchCapability = true : this.touchCapability = false;
 				res[2] ? this.pSensorCapability = true : this.pSensorCapability = false;
 			})
-			.catch(error => console.log('APS Advanced ERROR --------------------------------- ', error));
+			.catch(error => {});
 	}
 
 	// APS FUNCTIONS
@@ -142,7 +142,7 @@ export class ActiveProtectionSystemComponent implements OnInit {
 		this.apsStatus = !this.apsStatus;
 		this.smartAssist
 			.setAPSMode(value)
-			.then(res => console.log('APS SET --------------------------------- ', res));
+			.then(res => {});
 	}
 
 	setAPSSensitivityLevel(event) {
@@ -163,15 +163,14 @@ export class ActiveProtectionSystemComponent implements OnInit {
 		}
 		this.smartAssist
 			.setAPSSensitivityLevel(value)
-			.then(res => console.log('APS SENSITIVITY LEVEL SET ---------------------------------', value, res));
+			.then(res => {});
 	}
 
 	setAutoDisableSetting(event) {
-		console.log('Event value from checkbox', event);
 		const value = event.target.checked;
 		this.smartAssist
 			.setAutoDisableSetting(value)
-			.then(res => console.log('AUTO DISABLE CHECKBOX SET ---------------------------------', value));
+			.then(res => {});
 	}
 
 	setSnoozeSetting(event) {
@@ -180,30 +179,25 @@ export class ActiveProtectionSystemComponent implements OnInit {
 		this.smartAssist
 			.setSnoozeSetting(value)
 			.then(res => {
-				console.log('SNOOZE STATUS SET --------------------------------- ', res);
-				this.smartAssist
-					.getSnoozeTime()
-					.then(time => {
-						console.log('MANUAL SNOOZE TIME --------------------------------- ', time);
-						this.manualSnoozeTime = +(time);
-					});
+			this.smartAssist
+				.getSnoozeTime()
+				.then(time => {
+				this.manualSnoozeTime = +(time);
 			});
+		});
 	}
 
 	setSnoozeTime(event: DropDownInterval) {
 		this.selectedSnoozeTime = event.value;
-		console.log('SNOOZE TIME', this.selectedSnoozeTime);
 		this.smartAssist
 			.setSnoozeTime(event.value.toString())
 			.then(res => {
-				console.log('SNOOZE TIME SET ---------------------------------', event.value, res);
-				this.smartAssist
-					.getSnoozeTime()
-					.then(time => {
-						console.log('MANUAL SNOOZE TIME --------------------------------- ', time);
-						this.manualSnoozeTime = +(time);
-					});
+			this.smartAssist
+				.getSnoozeTime()
+				.then(time => {
+				this.manualSnoozeTime = +(time);
 			});
+		});
 	}
 
 	suspendNow() {
@@ -222,10 +216,9 @@ export class ActiveProtectionSystemComponent implements OnInit {
 				timeInSec = '180';
 				break;
 		}
-		console.log(this.selectedSnoozeTime);
 		this.smartAssist
 			.sendSnoozeCommand(timeInSec)
-			.then(res => console.log('SNOOZE SUSPEND COMMAND --------------------------------- ', timeInSec, res));
+			.then(res => {});
 	}
 
 	// Advanced APS Functions

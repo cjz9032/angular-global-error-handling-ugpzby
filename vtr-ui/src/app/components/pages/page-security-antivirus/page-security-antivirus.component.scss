@@ -4,104 +4,104 @@
 		.vtr-widget-offline-info {
 			margin-top: $shift_up_small;
 		}
-	
+
 		.img-fluid {
 			width: 10rem;
 			@media #{$mediaquery_lg} {
 				width: 12rem;
 			}
 		}
-			
+
 		.w-windows {
 			@media #{$mediaquery_lg} {
 				margin-top: -30rem;
-				width: 80% !important;
+				width: 95% !important;
 			}
 		}
-	
+
 		.windows-logo {
 			width: 10rem;
 			padding-top: 0.9rem;
 		}
-	
+
 		.mcafee-logo {
 			width: 8rem;
 			padding-top: 0.9rem;
 		}
-	
+
+		.mcafee-black-img {
+			max-width: 12rem;
+		}
+
 		.divider {
 			margin: 2rem 0 1rem 0;
 			height: 0.1rem;
 			background-color: $light-grey;
 		}
-	
+
 		.mt-60 {
 			margin-top: 60px;
 		}
-	
+
 		.header {
 			.rounded-card-with-shadow {
 				box-shadow: $drop_shadow;
 				border-radius: $border_radius;
 				background: $main_darkest;
-	
+
 				.title {
 					color: $shade_darkest;
 					font-size: 1.4rem;
 					font-weight: 600;
 					line-height: 2.9rem;
 				}
-	
+
 				.subtitle {
 					color: $light;
 					font-size: 1.4rem;
 					line-height: 2.1rem;
 				}
-	
+
 				.subtitle-color {
 					color: $shade_darkest;
 					font: size 1.2rem;
 				}
-	
+
 				.date {
 					color: $go_dark;
 					font-size: 1.6rem;
 					font-weight: $weight_medium;
 					line-height: 3rem;
 				}
-	
+
 				a {
 					text-decoration: underline;
 				}
 			}
-	
+
 			.part-position {
+				padding: 2rem 3rem;
 				@media #{$mediaquery_lg} {
 					position: relative;
-					top: 34rem;
+					top: 36rem;
+					padding-bottom: 3rem;
 				}
 
 				@media #{$mediaquery_X44}{
 					margin-right: 2rem !important;
 				}
 			}
-	
+
 			.b-border {
 				border: 0.1rem solid #27ADD7;
 				box-shadow: none;
 			}
-	
-			.lg-none {
-				@media #{$mediaquery_lg} {
-					display: none;
-				}
-			}
-	
+
 			.flex-bas {
 				flex-basis: 30%;
 			}
 		}
-	
+
 		.mcafee {
 			.vtr-widget-offline-info {
 				@media #{$mediaquery_xl} {
@@ -109,98 +109,98 @@
 					top: -13rem;
 				}
 			}
-	
+
 			@media #{$mediaquery_xl} {
 				position: relative;
-				margin-top: 12rem;
+				// margin-top: 12rem;
 			}
 		}
-	
+
 		.subheader {
 			@media #{$mediaquery_md} {
 				flex-direction: column;
 			}
-	
+
 			.rounded-card-with-shadow {
 				box-shadow: $drop_shadow;
 				border-radius: $border_radius;
 				background: $light;
-	
+
 				@media #{$mediaquery_lg} {
 					margin-bottom: 3rem;
 				}
-	
+
 				.title {
 					color: $shade_darkest;
 					font-size: 2rem;
 					font-weight: 600;
 					line-height: 3rem;
 				}
-	
+
 				.title-normal {
 					font-size: 2.5rem;
 					font-weight: $weight_regular;
 					color: $screen_dark_70;
 				}
-	
+
 				.subtitle {
 					color: $shade_darkest;
 					font-size: 1.5rem;
 					font-weight: $weight_regular;
 					line-height: 2.3rem;
 				}
-	
+
 				.content {
 					color: $shade_darkest;
 					font-size: 1.5rem;
 					font-weight: $weight_regular;
 					line-height: 2.3rem;
 				}
-	
+
 				.date {
 					color: $go_dark;
 					font-size: 1.6rem;
 					font-weight: $weight_bold;
 					line-height: 3rem;
 				}
-	
+
 				.stopdate {
 					color: $stop_dark;
 					font-size: 1.6rem;
 					font-weight: $weight_bold;
 					line-height: 3rem;
 				}
-	
+
 				.line-height {
 					width: 0.01rem;
 					margin: 0 0.5rem;
 					background-color: $shade_darker;
 					height: 2.8rem;
 				}
-	
+
 				.divider {
 					margin: 1rem 0 2rem 0;
 					height: 0.1rem;
 					background-color: $light-grey;
-	
+
 					@media #{$mediaquery_md} {
 						margin: 2rem 0;
 					}
 				}
-	
+
 				a {
 					text-decoration: underline;
 				}
-	
+
 				.sub-font {
 					padding: 2rem 4rem 2rem 2rem;
 					color: $main_darker;
-	
+
 					@media #{$mediaquery_lg} {
 						padding: 2rem;
 					}
 				}
-	
+
 				.xl-display {
 					@media #{$mediaquery_xl} {
 						flex-direction: column;
@@ -208,21 +208,21 @@
 						margin-top: -15rem;
 					}
 				}
-	
+
 				.md-margin {
 					@media #{$mediaquery_md} {
 						margin-top: 3rem;
 					}
 				}
 			}
-	
+
 			.defender-part {
 				width: 48.5%;
 				padding: 2rem;
 				@media #{$mediaquery_lg} {
 					width: 100%;
 				}
-				
+
 				.subtitle {
 					color: $main_darker;
 					font-size: 1.3rem;
@@ -233,24 +233,24 @@
 				.title {
 					font-size: 1.8rem;
 				}
-	
+
 				img {
 					margin-right: 0.7rem;
 				}
 			}
-	
+
 			.offline-part {
 				@media #{$mediaquery_lg} {
 					padding-top: 34rem !important;
 				}
 			}
-	
+
 			.s-border {
 				border: 0.1rem solid $shade_lighter;
 				box-shadow: none;
 			}
-	
-		
+
+
 			.card-header {
 				padding: 1.25rem 2rem !important;
 				.header{
@@ -258,15 +258,18 @@
 					font-weight: 400 !important;
 				}
 			}
-	
+
 			.card-body {
 					padding: 0.75rem 2rem !important;
 			}
 		}
-	
+
 		.antivirus-block {
 			margin-top: 3rem;
-	
+			@media #{$mediaquery_lg} {
+				margin-top: 4rem;
+			}
+
 			ul.list-unstyled {
 				li {
 					.col-auto {
@@ -275,12 +278,12 @@
 				}
 			}
 		}
-	
+
 		.badge {
 			font-weight: normal;
 			font-size: 69%;
 		}
-	
+
 		.button {
 			.button-box {
 				padding: 0 !important;
@@ -292,7 +295,7 @@
 				}
 			}
 		}
-	
+
 		.white-button {
 			.button-box {
 				.button {
@@ -300,7 +303,7 @@
 					background: $light !important;
 					color: $main !important;
 					min-height: 3rem;
-					min-width: 10rem;
+					min-width: 10rem !important;
 					&:hover {
 						background: $light;
 						color: $main;
@@ -308,7 +311,7 @@
 				}
 			}
 		}
-	
+
 		.normal-button {
 				.button-box {
 					.button {
@@ -317,39 +320,50 @@
 					}
 				}
 		}
-	
+
+		.two-ellipsis-button {
+			.button-box {
+				.button {
+					.text {
+						display: -webkit-box !important;
+						overflow: hidden;
+						white-space: normal !important;
+						text-overflow: ellipsis;
+						word-wrap: break-word !important;
+						-webkit-line-clamp: 2 !important;
+						/* autoprefixer: off */
+						-webkit-box-orient: vertical !important;
+					}
+				}
+			}
+		}
+
 		.dashlane-side-left-img {
 			width: 90%;
 		}
-	
+
 		.vtr-page-right-column {
 			@media #{$mediaquery_X5} {
 				padding: 4rem 4rem 4rem 8.5rem;
-			}
-			@media #{$mediaquery_md} {
-				margin-top: 3rem;
 			}
 		}
 
 		right-content{
 			.footer {
-				display: none;
 				margin-top: 2rem;
-				@media #{$mediaquery_md} {
-				  display: flex !important;
-				  flex-direction: row;
+				@media #{$mediaquery_lg} {
 				}
 				.text-regular {
 				  font-size: 1.6rem;
 				  color: $main_shade;
 				}
-			
+
 				.mcafee-logo {
 				  width: 14rem;
 				  padding-top: 1rem;
 				  margin-right: 2rem;
 				}
-			
+
 				a {
 				  font-weight: $weight_medium;
 				  text-decoration: underline;

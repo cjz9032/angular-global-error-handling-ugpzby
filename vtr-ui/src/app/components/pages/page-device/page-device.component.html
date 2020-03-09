@@ -9,7 +9,7 @@
 	<left-content>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-sm-12 pb-20 pt-0 px-0"
+				<div class="col-sm-12 pb-5 pt-0 px-0"
 					[vtrAppSearchScroller]="['search-prossesor', 'search-memory', 'search-disk']">
 					<vtr-widget-device></vtr-widget-device>
 				</div>
@@ -20,7 +20,7 @@
 	<right-content>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-sm-12 px-0 pb-20 pt-0">
+				<div class="col-sm-12 px-0 pb-5 pt-0">
 					<vtr-container-card order="1"
 						sideFlag="r"
 						[img]="cardContentPositionA.FeatureImage"
@@ -41,12 +41,14 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col col-12 help-heading">
+				<div class="col col-12 help-heading"
+					role="text"
+					tabindex="0">
 					{{ 'device.deviceSettings.helpful' | translate }}
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-sm-12 px-0 mt-20">
+				<div class="col-sm-12 px-0 mt-3">
 					<vtr-widget-questions [title]="'common.qAndA.title' | translate"
 						[itemid]="'common.QAndA.itemid'|translate"
 						[description]="'common.qAndA.subtitle' | translate"

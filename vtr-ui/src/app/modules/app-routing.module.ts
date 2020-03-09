@@ -4,16 +4,28 @@ import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 import { PageSettingsComponent } from '../components/pages/page-settings/page-settings.component';
 import { PageDashboardComponent } from '../components/pages/page-dashboard/page-dashboard.component';
 import { PageDeviceGamingComponent } from '../components/pages/page-device-gaming/page-device-gaming.component';
+import { GuardService } from 'src/app/services/guard/guardService.service';
 
 const routes: Routes = [
 
 	{
 		path: 'dashboard',
-		component: PageDashboardComponent
+		component: PageDashboardComponent,
+		canDeactivate: [GuardService],
+		canActivate: [ GuardService ],
+		data: {
+			pageName: 'Dashboard'
+		}
 	},
 	{
 		path: 'device-gaming',
-		component: PageDeviceGamingComponent
+		component: PageDeviceGamingComponent,
+		canDeactivate: [ GuardService ],
+		canActivate: [ GuardService ],
+		data: {
+			pageName: 'Gaming.Dashboard',
+			pageContent: 'Gaming Dashboard'
+		}
 	},
 	{
 		path: 'gaming',
@@ -33,10 +45,6 @@ const routes: Routes = [
 	{
 		path: 'home-security',
 		loadChildren: './connected-home-security/connected-home-security.module#ConnectedHomeSecurityModule'
-	},
-	{
-		path: 'privacy',
-		loadChildren: '../components/pages/page-privacy/privacy.module#PrivacyModule'
 	},
 	{
 		path: 'security',
@@ -59,8 +67,17 @@ const routes: Routes = [
 		loadChildren: '../beta/beta.module#BetaModule'
 	},
 	{
+		path: 'hardware-scan',
+		loadChildren: './hardware-scan/hardware-scan.module#HardwareScanModule'
+	},
+	{
 		path: 'support/smart-performance',
 		loadChildren: './smart-performance/smart-performance.module#SmartPerformanceModule'
+	},
+	{
+		path: 'cpt',
+		/*component: PageCptComponent*/
+		loadChildren: './cpt/cpt.module#CptModule'
 	},
 	{
 		path: '',

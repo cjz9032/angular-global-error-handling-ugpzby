@@ -7,7 +7,7 @@
 	padding: 0 2rem;
 	margin-top: 2.7rem;
 	margin-bottom: 2rem;
-	@media #{$mediaquery_X46} {
+	@media #{$mediaquery_lg} {
 		padding: 1rem;
 	}
 
@@ -21,7 +21,7 @@
 		}
 
 		.windows-padding {
-			@media #{$mediaquery_X46} {
+			@media #{$mediaquery_lg} {
 				padding-right: 0.7rem !important;
 			}
 		}
@@ -30,7 +30,7 @@
 			color: $go_dark;
 			font-size: 1.3rem;
 			font-weight: 600;
-			@media #{$mediaquery_X46} {
+			@media #{$mediaquery_lg} {
 				font-size: 1.1rem;
 			}
 		}
@@ -38,7 +38,7 @@
 		.text-d-color {
 			color: red;
 			font-size: 1.3rem;
-			@media #{$mediaquery_X46} {
+			@media #{$mediaquery_lg} {
 				font-size: 1.1rem;
 			}
 		}
@@ -51,6 +51,10 @@
 		&:nth-last-child(2) {
 			border-bottom: none;
 			padding-bottom: 0;
+		}
+
+		.line-through {
+			text-decoration: line-through;
 		}
 
 		.text-color {
@@ -68,13 +72,6 @@
 			color: $light-grey;
 			padding: 0 1.5rem 0 0.8rem;
 		}
-
-		.divider {
-			height: 0.1rem;
-			background-color: $light-grey;
-			position: relative;
-			top: -0.8rem;
-		}
 	}
 
 	li {
@@ -83,7 +80,10 @@
 
 	.button {
 		position: relative;
-		top: 2rem;
+		top: 1.8rem;
+		@media #{$mediaquery_lg} {
+			top: 2.5rem;
+		}
 		::ng-deep {
 			.button-box {
 				.button {
@@ -104,7 +104,6 @@
 					border: 0.1rem solid $main !important;
 					background: $light!important;
 					color: $main!important;
-					font-size: 2rem !important;
 					min-width: 24rem !important;
 					font-weight: $weight_bold;
 				}
@@ -138,14 +137,10 @@
 	}
 
 	.text {
-		color: $shade_extradark;
+		color: $grey_darker;
 		padding: 1rem 0;
-		font-size: 1.8rem;
+		font-size: 1.3rem;
 		font-weight: $weight_bold;
-
-		@media #{$mediaquery_X46} {
-			font-size: 1.4rem;
-		}
 	}
 
 	span:hover {
@@ -156,23 +151,17 @@
 		.icon-bkg {
 			display: inline-block;
 			border-radius: 50%;
-			height: 3.3rem;
-			width: 3.3rem;
+			height: 2.5rem;
+			width: 2.5rem;
 			border-width: 0.3rem;
 			border-style: solid;
 			text-align: center;
-			@media #{$mediaquery_X46} {
-				height: 2.7rem;
-				width: 2.7rem;
-			}
 			fa-icon {
 				font-size: 1.6rem;
-				line-height: 2.7rem;
+				line-height: 2rem;
 				color: $light;
-				@media #{$mediaquery_X46} {
-					font-size: 1.3rem;
-					line-height: 2.2rem;
-				}
+				font-size: 1.3rem;
+				line-height: 2rem;
 			}
 		}
 
@@ -206,24 +195,30 @@
 	}
 
 	.windows-padding {
-		padding-right: 0.8rem !important;
+		padding-right: 0.5rem !important;
 	}
 	h3 {
 		font-size: 1.1rem !important;
 	}
 
 	.bullet-icon {
-		height: 2.7rem;
-		width: 2.7rem;
+		height: 2.5rem;
+		width: 2.5rem;
 
 		.icon-bkg {
-			height: 2.7rem;
-			width: 2.7rem;
+			height: 2.5rem;
+			width: 2.5rem;
 
 			fa-icon {
-				line-height: 2.2rem;
+				line-height: 2rem;
 				font-size: 1.4rem;
 			}
+		}
+	}
+
+	.button {
+		@media #{$mediaquery_lg} {
+			top: 1.8rem;
 		}
 	}
 

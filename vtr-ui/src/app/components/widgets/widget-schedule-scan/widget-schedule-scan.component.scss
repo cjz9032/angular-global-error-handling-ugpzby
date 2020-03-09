@@ -1,0 +1,52 @@
+@import "../../../app.theme";
+
+.vtr-widget-schedule-scan {
+	border-radius: $border_radius;
+	background-color: $light;
+	box-shadow: $drop_shadow;
+	padding: 4rem;
+	.title {
+		color: $main_darker;
+		font-size: $fontsize_xl;
+	}
+	.description {
+		color: $shade;
+		font-size: $fontsize_xs;
+		font-weight: $weight_medium;
+	}
+
+	.settings-container {
+		background: #f6f8f8;
+		margin-top: 1.5rem;
+		list-style: none;
+		padding: 0;
+		border-radius: 0.9rem;
+	}
+
+	.force-scroll {
+		overflow-y: scroll;
+		height: 16rem;
+	}
+}
+
+.button-row {
+	text-align: center;
+	margin-top: 1.5rem;
+
+	.action-button {
+		border-radius: 2.5rem;
+		background: $gradient_main;
+		text-transform: uppercase;
+		padding: 0 3rem;
+		color: $light;
+		font-size: $fontsize_xs;
+		height: 5rem;
+		max-width: 100%;
+		font-weight: $weight_bold;
+		line-height: 5rem;
+
+		text-align: center;
+		border: 0rem;
+		cursor: pointer;
+	}
+}

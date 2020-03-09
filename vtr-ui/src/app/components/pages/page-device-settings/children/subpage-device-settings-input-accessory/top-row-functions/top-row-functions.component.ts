@@ -1,3 +1,4 @@
+import { AppEvent } from './../../../../../../enums/app-event.enum';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
@@ -31,7 +32,6 @@ export class TopRowFunctionsComponent implements OnInit, OnDestroy {
 			this.getAllStatuses();
 		} else {
 			this.topRowKeyObj = new TopRowFunctionsCapability();
-			this.getFunctionCapabilities();
 		}
 
 		this.getFunctionCapabilities();
@@ -71,7 +71,12 @@ export class TopRowFunctionsComponent implements OnInit, OnDestroy {
 			}
 		}, 30000);
 	}
-
+	updateCustomKeyEvents(event, value) {
+		const { customeEvent } = event;
+		if (customeEvent === AppEvent.LEFT || customeEvent === AppEvent.RIGHT) {
+			this.onChangeKeyType(value);
+		}
+	}
 	public getAllStatuses() {
 		if (this.topRowKeyObj) {
 			if (this.topRowKeyObj.fnLockCap) {
@@ -106,6 +111,13 @@ export class TopRowFunctionsComponent implements OnInit, OnDestroy {
 			this.getAllStatuses();
 		});
 	}
+	public updateFocusAndSelection(event, value) {
+		const { switchEVent } = event;
+		if (switchEVent === AppEvent.LEFT || switchEVent === AppEvent.RIGHT) {
+			this.onChangeFunType(value);
+		}
+	}
+
 	public onChangeKeyType(value: boolean) {
 		this.topRowKeyObj.stickyFunStatus = value;
 		this.keyboardService.setFnStickKeyStatus(value).then(res => {

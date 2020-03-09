@@ -1,5 +1,7 @@
 @import "../../../app.theme";
 
+$largeCircleWidth: 22rem;
+$largeSideWidth: 3.5rem;
 .vtr-widget-security {
   .security-background {
     border-radius: 0.5rem;
@@ -20,8 +22,8 @@
 	.left-container {
 		margin-top: -3rem;
 		.circle-box {
-			width: 22rem;
-			height: 22rem;
+			width: $largeCircleWidth;
+			height: $largeCircleWidth;
 		}
 		@media #{$mediaquery_X45} {
 			.circle-box {
@@ -50,11 +52,11 @@
 			}
 		}
 		.circle-desc {
-			width: 10rem;
+			width: 12rem;
 			position: absolute;
 			left: 50%;
 			top: 50%;
-			margin-left: -5rem;
+			margin-left: -6rem;
 			margin-top: -2rem;
 			text-align: center;
 			p {
@@ -65,11 +67,11 @@
 				font-size: 1.2rem;
 			}
 			@media #{$mediaquery_X45} {
-				width: 10rem;
+				width: 12rem;
 				position: absolute;
 				left: 50%;
 				top: 50%;
-				margin-left: -5rem;
+				margin-left: -6rem;
 				margin-top: -2rem;
 			}
 			// @media #{$mediaquery_X46} {
@@ -82,7 +84,7 @@
 				position: absolute;
 				left: 50%;
 				top: 50%;
-				margin-left: -5rem;
+				margin-left: -6rem;
 				margin-top: -2rem;
 			}
 			@media #{$mediaquery_X48} {
@@ -97,7 +99,7 @@
 	.side {
 		margin-left: -1rem;
 		svg {
-			width: 3.5rem;
+			width: $largeSideWidth;
 		}
 	}
 	// @media #{$mediaquery_X46} {
@@ -123,6 +125,12 @@
 		border-radius: 0 0.5rem 0.5rem 0.5rem;
 		.title {
 			font-size: 2rem;
+		}
+	}
+
+	@media #{$mediaquery_X43} {
+		.follow-btn {
+			padding-left: calc(#{$largeCircleWidth + $largeSideWidth} + 1rem);
 		}
 	}
 

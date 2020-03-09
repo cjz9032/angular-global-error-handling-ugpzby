@@ -20,6 +20,7 @@ import { Status } from 'src/app/data-models/widgets/status.model';
 import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { LenovoIdKey } from 'src/app/enums/lenovo-id-key.enum';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-page-dashboard-android',
@@ -62,7 +63,8 @@ export class PageDashboardAndroidComponent implements OnInit {
 		private translate: TranslateService,
 		vantageShellService: VantageShellService,
 		public androidService: AndroidService,
-		private sanitizer: DomSanitizer
+		private sanitizer: DomSanitizer,
+		private logger: LoggerService
 	) {
 		config.backdrop = 'static';
 		config.keyboard = false;
@@ -88,7 +90,6 @@ export class PageDashboardAndroidComponent implements OnInit {
 
 		this.isOnline = this.commonService.isOnline;
 		if (this.dashboardService.isShellAvailable) {
-			console.log('PageDashboardComponent.getSystemInfo');
 			// this.getSystemInfo();
 		}
 
@@ -159,7 +160,7 @@ export class PageDashboardAndroidComponent implements OnInit {
 				}
 			},
 			error => {
-				console.log('fetchCMSContent error', error);
+				this.logger.error('fetchCMSContent error', error);
 			}
 		);
 	}

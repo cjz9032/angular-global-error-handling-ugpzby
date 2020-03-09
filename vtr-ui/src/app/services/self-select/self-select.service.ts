@@ -4,6 +4,7 @@ import { DeviceService } from '../device/device.service';
 import { CommonService } from '../common/common.service';
 import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { LoggerService } from '../logger/logger.service';
 
 export class SelfSelectConfig {
 	public customtags?: string;
@@ -66,13 +67,14 @@ export class SelfSelectService {
 	constructor(
 		private vantageShellService: VantageShellService,
 		private commonService: CommonService,
+		private logger: LoggerService,
 		public deviceService: DeviceService
 	) {
 		this.selfSelect = this.vantageShellService.getSelfSelect();
 		this.vantageStub = this.vantageShellService.getVantageStub();
 		const changedConfig = this.commonService.getLocalStorageValue(LocalStorageKey.ChangedSelfSelectConfig);
 		if (changedConfig && changedConfig.segment) {
-			console.log(`SelfSelectService update segment. ${changedConfig.segment}`);
+			this.logger.info(`SelfSelectService update segment. ${changedConfig.segment}`);
 			this.commonService.setLocalStorageValue(LocalStorageKey.LocalInfoSegment, changedConfig.segment);
 			if (this.selfSelect) {
 				this.selfSelect.updateConfig(changedConfig).catch((error) => {});
@@ -92,9 +94,8 @@ export class SelfSelectService {
 
 	public async getConfig() {
 		try {
-			this.machineInfo = await this.deviceService.getMachineInfo();
-			const isArm = this.machineInfo && this.machineInfo.cpuArchitecture && this.machineInfo.cpuArchitecture.toUpperCase().trim() === 'ARM64';
 			this.userProfileEnabled = true;
+			this.machineInfo = await this.deviceService.getMachineInfo();
 			const config = this.commonService.getLocalStorageValue(LocalStorageKey.ChangedSelfSelectConfig);
 			if (config && config.customtags) {
 				const checkedTags = config.customtags;
@@ -105,17 +106,35 @@ export class SelfSelectService {
 					item.checked = checkedTags && checkedTags.includes(item.label);
 				});
 			}
-			if (config && config.segment && !this.machineInfo.isGaming && !isArm) {
-				this.usageType = config.segment;
-				this.savedSegment = this.usageType;
-			} else {
-				this.usageType = await this.getDefaultSegment();
+			if (!this.machineInfo && (!config || !config.segment)) {
+				this.usageType = SegmentConst.Consumer;
 				this.savedSegment = this.usageType;
 				this.saveConfig();
 			}
+			else if (this.machineInfo && (!config || !config.segment)) {
+				this.usageType = this.calcDefaultSegment(this.machineInfo);
+				this.savedSegment = this.usageType;
+				this.saveConfig();
+			}
+			else if (this.machineInfo && config && config.segment) {
+				if (this.machineInfo.isGaming ||
+					this.isArm(this.machineInfo)){
+					this.usageType = this.calcDefaultSegment(this.machineInfo);
+					this.savedSegment = this.usageType;
+					this.saveConfig();
+				}
+				else {
+					this.usageType = config.segment;
+					this.savedSegment = this.usageType;
+				}
+			}
+			else if (!this.machineInfo && config && config.segment){
+				this.usageType = config.segment;
+				this.savedSegment = this.usageType;
+			}
 		} catch (error) {
-			console.log('SelfSelectService.getConfig failed. ', error);
-			this.usageType = await this.getDefaultSegment();
+			this.logger.error('SelfSelectService.getConfig failed. ', error);
+			this.usageType = this.calcDefaultSegment(this.machineInfo);
 			this.savedSegment = this.usageType;
 			this.saveConfig();
 		}
@@ -146,29 +165,19 @@ export class SelfSelectService {
 		} catch (error) { }
 	}
 
-	private async getDefaultSegment() {
-		try {
-			if (!this.machineInfo) {
-				this.machineInfo = await this.deviceService.getMachineInfo();
-				return this.calcDefaultSegment(this.machineInfo);
-			} else {
-				return this.calcDefaultSegment(this.machineInfo);
-			}
-		} catch (error) {
-			console.log('SelfSelectService.getDefaultSegment exception: ', error);
-			return SegmentConst.Consumer;
-		}
+	private isArm(machineInfo) {
+		return machineInfo && machineInfo.cpuArchitecture
+		&& machineInfo.cpuArchitecture.toUpperCase().trim() === 'ARM64';
 	}
 
 	private calcDefaultSegment(machineInfo) {
 		try {
 			let segment = SegmentConst.Consumer;
 			if (!machineInfo) {
-				console.log('SelfSelectService.calcDefaultSegment failed for machine info undefined. ');
+				this.logger.info('SelfSelectService.calcDefaultSegment failed for machine info undefined. ');
 			} else if (machineInfo.isGaming) {
 				segment = SegmentConst.Gaming;
-			} else if (machineInfo.cpuArchitecture
-				&& machineInfo.cpuArchitecture.toUpperCase().trim() === 'ARM64') {
+			} else if (this.isArm(machineInfo)) {
 				this.userProfileEnabled = false;
 				segment = SegmentConst.Consumer;
 			} else {
@@ -185,7 +194,7 @@ export class SelfSelectService {
 			}
 			return segment;
 		} catch (e) {
-			console.log('SelfSelectService.calcDefaultSegment exception: ', e);
+			this.logger.error('SelfSelectService.calcDefaultSegment exception: ', e);
 			return SegmentConst.Consumer;
 		}
 	}

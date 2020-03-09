@@ -106,9 +106,7 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 					}
 				}
 			},
-			error => {
-				console.log('fetchCMSContent error', error);
-			}
+			error => {}
 		);
 
 		this.cmsService.fetchCMSArticle(this.dashlaneArticleId, { Lang: 'EN' }).then((response: any) => {

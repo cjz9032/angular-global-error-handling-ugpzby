@@ -1,7 +1,7 @@
 <div class="vtr-eye-care-mode">
 	<div class="row">
-		<div class="col">
-			<vtr-ui-range-slider 
+		<div class="col pl-4">
+			<vtr-ui-range-slider
 				[step]="100"
 				[manualRefresh]="manualRefresh"
 				[enableSlider]="enableSlider"
@@ -9,7 +9,7 @@
 				[maxValue]="displayColorTempSettings.maximum"
 				[minValueLegend]="'device.deviceSettings.displayCamera.display.dispColorTemp.options.warm' | translate"
 				[maxValueLegend]="'device.deviceSettings.displayCamera.display.dispColorTemp.options.cold' | translate"
-				(change)="onDisplayColorTemparatureChange($event)"
+				(sliderChange)="onDisplayColorTemparatureChange($event)"
 				[(value)]="displayColorTempSettings.current"
 				(valueChangeEnd)="dragChangeValue($event)"
 				[rangeSliderId]="'day-time-color-temp'">

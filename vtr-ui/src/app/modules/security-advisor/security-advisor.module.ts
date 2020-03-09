@@ -6,7 +6,6 @@ import { SecurityAdvisorRoutingModule } from './security-advisor-routing.module'
 import { PageSecurityComponent } from 'src/app/components/pages/page-security/page-security.component';
 import { PageSecurityAntivirusComponent } from 'src/app/components/pages/page-security-antivirus/page-security-antivirus.component';
 import { WifiSecurityComponent } from 'src/app/components/pages/page-security-wifi/children/wifi-security/wifi-security.component';
-import { HomeSecurityComponent } from 'src/app/components/pages/page-security-wifi/children/home-security/home-security.component';
 import { PageSecurityPasswordComponent } from 'src/app/components/pages/page-security-password/page-security-password.component';
 import { PageSecurityInternetComponent } from 'src/app/components/pages/page-security-internet/page-security-internet.component';
 import { PageSecurityWifiComponent } from 'src/app/components/pages/page-security-wifi/page-security-wifi.component';
@@ -46,6 +45,9 @@ import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons/faQuestionCi
 import { faWifi as falWifi } from '@fortawesome/pro-light-svg-icons/faWifi';
 import { faCheck as falCheck } from '@fortawesome/pro-light-svg-icons/faCheck';
 import { faTimes as falTimes } from '@fortawesome/pro-light-svg-icons/faTimes';
+import { faDatabase as falDatabase } from '@fortawesome/pro-light-svg-icons/faDatabase';
+import { faKey as falKey } from '@fortawesome/pro-light-svg-icons/faKey';
+import { faTools as falTools } from '@fortawesome/pro-light-svg-icons/faTools';
 import { CommonModalModule } from '../common/common-modal.module';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { WidgetAntivirusComponent } from 'src/app/components/pages/page-security-antivirus/widget/widget-antivirus/widget-antivirus.component';
@@ -63,8 +65,11 @@ library.add(
 	faLockAlt,
 	faQuestionCircle,
 	faKey,
+	falKey,
 	faDatabase,
+	falDatabase,
 	faTools,
+	falTools,
 	faChevronUp,
 	faChevronDown,
 	falTimes,
@@ -82,7 +87,6 @@ library.add(
 		PageSecurityAntivirusComponent,
 		PageSecurityWifiComponent,
 		WifiSecurityComponent,
-		HomeSecurityComponent,
 		ConnectedHomeStatusComponent,
 		PageSecurityPasswordComponent,
 		PageSecurityInternetComponent,

@@ -19,7 +19,7 @@ import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
 import { AdPolicyId } from 'src/app/enums/ad-policy-id.enum';
 import { Observable, Subscription } from 'rxjs';
-import { HardwareScanService } from 'src/app/beta/hardware-scan/services/hardware-scan/hardware-scan.service';
+import { HardwareScanService } from 'src/app/services/hardware-scan/hardware-scan.service';
 import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.service';
@@ -34,6 +34,7 @@ import { CardService } from 'src/app/services/card/card.service';
 import { BacklightService } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.service';
 import { StringBooleanEnum } from '../../data-models/common/common.interface';
 import { BacklightLevelEnum } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.enum';
+import { LenovoIdStatus } from 'src/app/enums/lenovo-id-key.enum';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -59,6 +60,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 	private searchTipsTimeout: any;
 	private unsupportFeatureEvt: Observable<string>;
 	private subscription: Subscription;
+	public isLoggingOut = false;
 	public selfSelectStatusVal: boolean;
 	showMenu = false;
 	showHWScanMenu = false;
@@ -145,12 +147,23 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 	updateMenu(menu) {
 		if (menu && menu.length > 0) {
 			this.items = menu;
-			const chsItem = this.items.find((item) => item.id === 'home-security');
-			if (!chsItem) {
-				return;
-			}
-			this.preloadImages = [].concat(chsItem.pre);
+			this.preloadImages = this.collectPreloadAssets(menu);
 		}
+	}
+
+	private collectPreloadAssets(menu: Array<any>) : string[] {
+		let assets = [];
+		menu.forEach(item => {
+			if (!item.hide && item.pre) {
+				assets = assets.concat(item.pre);
+			}
+
+			if (item.subitems.length > 0) {
+				assets = assets.concat(this.collectPreloadAssets(item.subitems));
+			}
+		})
+
+		return assets;
 	}
 
 	private initComponent() {
@@ -231,9 +244,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 						return undefined;
 					})
 				).subscribe();
-			} catch (error) {
-				console.log('Backlight error: ', error);
-			}
+			} catch (error) {}
 
 		}
 
@@ -398,7 +409,6 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 
 	private onNotification(notification: AppNotification) {
 		if (notification) {
-			// this.logger.info(`MenuMainComponent.onNotification: ${notification.type}`, this.items);
 			switch (notification.type) {
 				case 'MachineInfo':
 					this.machineFamilyName = notification.payload.family;
@@ -416,6 +426,9 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 					break;
 				case MenuItem.MenuItemChange:
 					this.updateMenu(notification.payload);
+					break;
+				case LenovoIdStatus.LoggingOut:
+					this.isLoggingOut = notification.payload;
 					break;
 				default:
 					break;
@@ -447,7 +460,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 						inputAccessoriesCapability
 					);
 				} catch (error) {
-					console.log('initInputAccessories', error);
+					this.logger.exception('initInputAccessories', error);
 				}
 			})
 			.catch((error) => { });

@@ -56,9 +56,7 @@ export class ModalChsStartTrialContainerComponent implements OnInit, OnDestroy {
 			if (response === 'success') {
 				this.closeModal();
 			}
-		}).catch((err) => {
-			console.log(`disconnected error: ${err}`);
-		});
+		}).catch((err) => {});
 	}
 
 	ngOnDestroy() {

@@ -16,7 +16,7 @@ but not to any other element on the page. using ::ng-deep
 				border: 0.1rem solid $shade_lighter;
 				height: 0.8rem;
 				border-radius: 0.5rem;
-				width:99.5%!important;
+				// width:99.5%!important;
 			}
 			/* slider selected area*/
 			.ng5-slider-selection {
@@ -122,7 +122,7 @@ but not to any other element on the page. using ::ng-deep
 	}
 	.disable-slider-pointer {
 		.ng5-slider {
-			.ng5-slider-pointer {
+			.ng5-slider-pointer, .ng5-slider-selection {
 				background: #8b91a2 !important;
 			}
 		}

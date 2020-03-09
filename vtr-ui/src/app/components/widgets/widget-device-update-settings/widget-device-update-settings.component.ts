@@ -37,12 +37,11 @@ export class WidgetDeviceUpdateSettingsComponent extends BaseComponent implement
 
 	ngOnInit() { }
 	currentFocus(id) {
-		console.log('-------------------------IDFORFOCUS', id);
-		const focElement = document.getElementById(id);
-		if (focElement) {
+        const focElement = document.getElementById(id);
+        if (focElement) {
 			focElement.focus();
 		}
-	}
+    }
 	public onToggleOnOff($event: any) {
 		this.toggleOnOff.emit($event);
 	}

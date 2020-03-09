@@ -14,7 +14,7 @@
 							{{'gaming.lightingProfile.lightingProfileHeading.heading.title' | translate}}</h5>
 						<div class="multi-state-toggle">
 							<div class="inner-toggle">
-								
+
 								<input type="radio"
 									value="0"
 									name="lighting-porfile"
@@ -23,6 +23,7 @@
 									[metricsItem]="'lighting_customize_off'"
 									metricsEvent="featureClick"
 									metricsParam="'profileId'"
+									metricsParent="Gaming.Dashboard"
 									metricsValue="0"
 									id="off_radio"
 									aria-label="Lighting profile off"
@@ -42,6 +43,7 @@
 									metricsEvent="featureClick"
 									metricsParam="'profileId'"
 									metricsValue="1"
+									metricsParent="Gaming.Dashboard"
 									id="first_radio"
 									aria-label="Lighting profile 1"
 									[checked]="setprofId===1"
@@ -61,6 +63,7 @@
 									metricsEvent="featureClick"
 									metricsParam="'profileId'"
 									metricsValue="2"
+									metricsParent="Gaming.Dashboard"
 									id="second_radio"
 									aria-label="Lighting profile 2"
 									[checked]="setprofId===2"
@@ -79,6 +82,7 @@
 									metricsEvent="featureClick"
 									metricsParam="'profileId'"
 									metricsValue="3"
+									metricsParent="Gaming.Dashboard"
 									id="third_radio"
 									aria-label="Lighting profile 3"
 									[checked]="setprofId===3"
@@ -105,6 +109,7 @@
 									metricsEvent="featureClick"
 									metricsParam="lightingcustomize"
 									metricsValue="{{setprofId}}"
+									metricsParent="Gaming.Dashboard"
 									id="lighting customize"
 									attr.aria-label="lighting customize"
 									tabindex="1"
@@ -120,6 +125,7 @@
 									metricsEvent="featureClick"
 									metricsParam="lightingcustomize"
 									metricsValue="{{setprofId}}"
+									metricsParent="Gaming.Dashboard"
 									id="lighting customize"
 									attr.aria-label="lighting customize"
 									tabindex="1"

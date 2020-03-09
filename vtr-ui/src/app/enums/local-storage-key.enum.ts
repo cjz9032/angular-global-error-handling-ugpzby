@@ -89,6 +89,35 @@ export enum LocalStorageKey {
 	LightingRGBSide = '[LocalStorageKey] LightingRGBSide',
 	LightingSetDefaultProfile = '[LocalStorageKey] LightingSetDefaultProfile',
 
+	// DTX50 lighting page
+	LightingCapabilitiesNewversionDesk = '[LocalStorageKey] LightingCapabilitiesNewversionDesk',
+	ledLayoutVersion = '[LocalStorageKey] ledLayoutVersion',
+
+	LightingProfileByIdDesk1 = '[LocalStorageKey] LightingProfileByIdDesk1',
+	LightingProfileByIdDesk2 = '[LocalStorageKey] LightingProfileByIdDesk2',
+	LightingProfileByIdDesk3= '[LocalStorageKey] LightingProfileByIdDesk3',
+
+	LightingProfileDeskDefault1 = '[LocalStorageKey] LightingProfileDeskDefault1',
+	LightingProfileDeskDefault2 = '[LocalStorageKey] LightingProfileDeskDefault2',
+	LightingProfileDeskDefault3= '[LocalStorageKey] LightingProfileDeskDefault3',
+
+	// LNBX50 lighting page
+	KeyboardToggleStatusLNBx50 = '[LocalStorageKey] KeyboardToggleStatusLNBx50',
+	LightingCapabilitiesNewversionNote = '[LocalStorageKey] LightingCapabilitiesNewversionNote',
+	LightingProfileByIdNewversionNote = '[LocalStorageKey] LightingProfileByIdNewversionNote',
+	LedSwitchButtonFeature = '[LocalStorageKey] LedSwitchButtonFeature',
+
+	LightingProfileByIdNoteOff1 = '[LocalStorageKey] LightingProfileByIdNoteOff1',
+	LightingProfileByIdNoteOn1 = '[LocalStorageKey] LightingProfileByIdNoteOn1',
+	LightingProfileByIdNoteOff2 = '[LocalStorageKey] LightingProfileByIdNoteOff2',
+	LightingProfileByIdNoteOn2 = '[LocalStorageKey] LightingProfileByIdNoteOn2',
+	LightingProfileByIdNoteOff3 = '[LocalStorageKey] LightingProfileByIdNoteOff3',
+	LightingProfileByIdNoteOn3 = '[LocalStorageKey] LightingProfileByIdNoteOn3',
+
+	LightingProfileByIdDefault1 = '[LocalStorageKey] LightingProfileByIdDefault1',
+	LightingProfileByIdDefault2 = '[LocalStorageKey] LightingProfileByIdDefault2',
+	LightingProfileByIdDefault3 = '[LocalStorageKey] LightingProfileByIdDefault3',
+
 	SystemUpdateCriticalUpdateStatus = '[LocalStorageKey] SystemUpdateCriticalUpdateStatus',
 	SystemUpdateRecommendUpdateStatus = '[LocalStorageKey] SystemUpdateRecommendUpdateStatus',
 	SystemUpdateLastScanTime = '[LocalStorageKey] SystemUpdateLastScanTime',
@@ -166,7 +195,7 @@ export enum LocalStorageKey {
 	InputAccessoriesCapability = '[LocalStorageKey] InputAccessoriesCapability',
 	VOIPCapability = '[LocalStorageKey] VOIPCapability',
 	DashboardCameraPrivacy = '[LocalStorageKey] DashboardCameraPrivacy',
-	DashboardMicrophoneStatus = '[LocalStorageKey] DashboardMicrophoneStatus',
+	// DashboardMicrophoneStatus = '[LocalStorageKey] DashboardMicrophoneStatus',
 	// DashboardEyeCareMode = '[LocalStorageKey] DashboardEyeCareMode',
 
 	// Auto close storage key
@@ -224,5 +253,6 @@ export enum LocalStorageKey {
 	BatteryCondition = '[LocalStorageKey] batteryCondition',
 
 	// UPE
-	UPEChannelTags = '[LocalStorageKey] UPEChannelTags'
+	UPEChannelTags = '[LocalStorageKey] UPEChannelTags',
+	PriorityControlCapability = '[LocalStorageKey] PriorityControlCapability'
 }

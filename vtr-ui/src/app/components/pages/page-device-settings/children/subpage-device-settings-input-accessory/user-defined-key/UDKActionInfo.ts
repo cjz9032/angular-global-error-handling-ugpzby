@@ -18,7 +18,6 @@ export class UDKActionInfo {
 				&& response.UDKType[0].SettingList[0].Setting) {
 				const info = response.UDKType[0].SettingList[0].Setting;
 				for (const data of info) {
-					console.log('data.key: ' + data.key + ', data.value: ' + data.value);
 					switch (data.key) {
 						case 'UserDefinedKeyType':
 							this.keyType = Number(data.value);
@@ -37,10 +36,8 @@ export class UDKActionInfo {
 					}
 				}
 			} else {
-				console.log('Response id not in correct format', response);
 			}
 		} catch (error) {
-			console.log('Error while processing response', error);
 		}
 	}
 }

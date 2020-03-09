@@ -18,11 +18,7 @@ export class CameraDetailService implements BaseCameraDetail {
 		return null;
 	}
 
-	toggleCameraPrivacyMode(value: boolean): void {
-		console.log('toggleCameraPrivacyMode', value);
-	}
+	toggleCameraPrivacyMode(value: boolean): void {}
 
-	toggleAutoExposure(value: boolean): void {
-		console.log('toggleAutoExposure', value);
-	}
+	toggleAutoExposure(value: boolean): void {}
 }

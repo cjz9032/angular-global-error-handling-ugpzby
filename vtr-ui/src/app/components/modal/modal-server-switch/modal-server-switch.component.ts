@@ -193,9 +193,8 @@ export class ModalServerSwitchComponent implements OnInit {
 		// this.router.navigateByUrl(uri, { queryParams: parms, queryParamsHandling: 'merge', skipLocationChange: false });
 		this.router.navigateByUrl(urlRootTree)
 			.then(() => {
-				console.log('@sh navigateByUrl', this.router.parseUrl(this.router.url), parms);
-				this.router.navigateByUrl(urlTree);
-			});
+            this.router.navigateByUrl(urlTree);
+        });
 	}
 
 	private getSelectedObject(array: any[], value: string) {

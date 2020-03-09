@@ -166,7 +166,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		this.windowsActiveLandingViewModel = new WindowsActiveLandingViewModel(this.translate, this.windowsActive, this.commonService);
 		this.passwordManagerLandingViewModel = new PasswordManagerLandingViewModel(this.translate, this.passwordManager, this.commonService);
 		this.uacLandingViewModel = new UacLandingViewModel(this.translate, this.uac, this.commonService);
-		this.bitLockerLandingViewModel = new BitLockerLandingViewModel(this.translate, this.bitLocker, this.commonService);
+		// this.bitLockerLandingViewModel = new BitLockerLandingViewModel(this.translate, this.bitLocker, this.commonService);
 		if (this.showVpn) {
 			this.vpnLandingViewModel = new VpnLandingViewModel(this.translate, this.vpn, this.commonService);
 		} else {
@@ -283,17 +283,17 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 				const element = statusList[key];
 				switch (key) {
 					case SecurityTypeConst.Basic:
-						levelStatus.basicValid = element.filter(i => i === 'true' || i === 'enabled' || i === 'installed' || i === 'registered').length;
+						levelStatus.basicValid = element.filter(i => i === 'true' || i === 'enabled' || i === 'installed' || i === 'enrolled').length;
 						levelStatus.basicSuccess = element.length === levelStatus.basicValid;
 						levelStatus.basicLength = element.length;
 						break;
 					case SecurityTypeConst.Intermediate:
-						levelStatus.intermediateValid = element.filter(i => i === 'true' || i === 'enabled' || i === 'installed' || i === 'registered').length;
+						levelStatus.intermediateValid = element.filter(i => i === 'true' || i === 'enabled' || i === 'installed' || i === 'enrolled').length;
 						levelStatus.intermediateSuccess = element.length === levelStatus.intermediateValid;
 						levelStatus.intermediateLength = element.length;
 						break;
 					case SecurityTypeConst.Advanced:
-						levelStatus.advancedValid = element.filter(i => i === 'true' || i === 'enabled' || i === 'installed' || i === 'registered').length;
+						levelStatus.advancedValid = element.filter(i => i === 'true' || i === 'enabled' || i === 'installed' || i === 'enrolled').length;
 						levelStatus.advancedSuccess = element.length === levelStatus.advancedValid;
 						levelStatus.advancedLength = element.length;
 						break;
@@ -349,9 +349,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 					}
 				}
 			},
-			error => {
-				console.log('fetchCMSContent error', error);
-			}
+			error => {}
 		);
 	}
 

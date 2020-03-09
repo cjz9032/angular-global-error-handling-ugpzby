@@ -1,7 +1,7 @@
 <div class="vtr-ui-range-slider"
 	[attr.data-slider-value]="value"
 	[ngClass]="{'disable-slider-pointer': enableSlider}">
-	<ng5-slider [(value)]="value"
+	<ng5-slider [(ngModel)]="value"
 		[options]="options"
 		(valueChange)="onValueChange($event)"
 		(userChange)="onChange($event)"
@@ -16,7 +16,7 @@
 		<div class="col"
 			id="{{rangeSliderId + '-min-value-title'}}"
 			attr.aria-label="{{rangeSliderId + '-min-value-title'}}">{{ minValueLegend }}</div>
-			<div class="col text-center"
+		<div class="col text-center"
 			id="{{rangeSliderId + '-med-value-title'}}"
 			attr.aria-label="{{rangeSliderId + '-med-value-title'}}">{{ mediumValueLegend }}</div>
 		<div class="col text-right"

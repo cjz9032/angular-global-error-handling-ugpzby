@@ -14,7 +14,7 @@ import { DeviceService } from 'src/app/services/device/device.service';
 @Component({
 	selector: 'vtr-page-networkboost',
 	templateUrl: './page-networkboost.component.html',
-	styleUrls: [ './page-networkboost.component.scss' ]
+	styleUrls: ['./page-networkboost.component.scss']
 })
 export class PageNetworkboostComponent implements OnInit {
 	public showTurnOnModal = false;
@@ -40,7 +40,7 @@ export class PageNetworkboostComponent implements OnInit {
 		private loggerService: LoggerService,
 		private hypService: HypothesisService,
 		private translate: TranslateService,
-		public deviceService: DeviceService
+		public deviceService: DeviceService,
 	) {
 		this.fetchCMSArticles();
 		// VAN-5872, server switch feature on language change
@@ -88,8 +88,8 @@ export class PageNetworkboostComponent implements OnInit {
 		try {
 			this.needToAsk = this.networkBoostService.getNeedToAsk();
 			this.needToAsk = this.needToAsk === undefined || isNaN(this.needToAsk) ? 0 : this.needToAsk;
-			console.log('NEED TO ASK FROM LOCAL =>', this.needToAsk, this.needToAsk === 1, this.needToAsk === 2);
-			console.log('TOGGLE STATUS =>', this.toggleStatus);
+			this.loggerService.info('page-networkboost.component.openTargetModal', 'NEED TO ASK FROM LOCAL --->' + this.needToAsk);
+			this.loggerService.info('page-networkboost.component.openTargetModal', 'TOGGLE STATUS --->' + this.toggleStatus);
 			if (this.toggleStatus) {
 				this.showAppsModal = true;
 			} else if (this.needToAsk === 1 || this.needToAsk === 2) {
@@ -102,7 +102,7 @@ export class PageNetworkboostComponent implements OnInit {
 			}
 			this.hiddenScroll(true);
 		} catch (error) {
-			console.log(`ERROR in openTargetModal() `, error);
+			this.loggerService.error('page-networkboost.component.openTargetModal', 'ERROR in openTargetModal()-->' + error);
 		}
 	}
 	private onNotification(notification: AppNotification) {
@@ -143,7 +143,7 @@ export class PageNetworkboostComponent implements OnInit {
 		if (!this.showTurnOnModal) {
 			this.changeListNum += 1;
 		}
-		this.hiddenScroll(false);
+		this.hiddenScroll(true);
 	}
 
 	modalCloseAddApps(action: boolean) {
@@ -165,7 +165,7 @@ export class PageNetworkboostComponent implements OnInit {
 			}
 			this.commonService.setLocalStorageValue(LocalStorageKey.NetworkBoostStatus, this.toggleStatus);
 		} catch (err) {
-			console.log(`ERROR in setNetworkBoostStatus()`, err);
+			this.loggerService.error('page-networkboost.component.setNetworkBoostStatus', 'ERROR in setNetworkBoostStatus()-->' + err);
 		}
 	}
 
@@ -173,7 +173,7 @@ export class PageNetworkboostComponent implements OnInit {
 		try {
 			this.networkBoostService.setNeedToAsk(status);
 		} catch (error) {
-			console.error(`ERROR in setAksAgain()`, error);
+			this.loggerService.error('page-networkboost.component.setAksAgain', 'ERROR in setAksAgain()-->' + error);
 		}
 	}
 
@@ -182,15 +182,20 @@ export class PageNetworkboostComponent implements OnInit {
 			this.toggleStatus = await this.networkBoostService.getNetworkBoostStatus();
 			this.commonService.setLocalStorageValue(LocalStorageKey.NetworkBoostStatus, this.toggleStatus);
 		} catch (err) {
-			console.log(`ERROR in setNetworkBoostStatus()`, err);
+			this.loggerService.error('page-networkboost.component.getNetworkBoostStatus', 'ERROR in setNetworkBoostStatus()-->' + err);
 		}
 	}
 
 	hiddenScroll(action: boolean) {
+		const selectorVtr = (document.getElementsByClassName('vtr-app')[0] as HTMLElement);
 		if (action) {
-			(document.getElementsByClassName('vtr-app')[0] as HTMLElement).style.overflow = 'hidden';
+			selectorVtr.style.overflowY = 'hidden';
+			selectorVtr.style.overflowX = 'hidden';
 		} else {
-			(document.getElementsByClassName('vtr-app')[0] as HTMLElement).style.overflow = '';
+			if (selectorVtr.style.overflowY === 'hidden') {
+				selectorVtr.style.overflowY = 'auto';
+				selectorVtr.style.overflowX = 'hidden';
+			}
 		}
 	}
 

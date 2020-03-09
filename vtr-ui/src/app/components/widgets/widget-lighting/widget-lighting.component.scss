@@ -11,13 +11,13 @@
 		border-radius: $border_radius;
 		box-shadow: $drop_shadow_gaming;
 		padding: 4rem;
-		background: url(./../../../../assets/images/gaming/lightingImage@2x.png) center top no-repeat $gaming_dark;
+		background: url(./../../../../assets/images/gaming/lightingImage@2x.png) center top no-repeat $gaming_darkest;
 		background-size: 100% auto;
 		padding-top: 18rem;
 	}
 	.lighting-porfile {
 		padding: 3rem;
-		background: $gaming_darkest;
+		background: $gaming_bg;
 		border-radius: 0.8rem;
 		.card-title {
 			color: $gaming_switch_light;
@@ -29,7 +29,7 @@
 			width: 100%;
 			border-radius: 5rem;
 			margin: auto;
-			background: $gaming_darkest;
+			background: $gaming_bg;
 			position: relative;
 			z-index: 0;
 			box-sizing: border-box;
@@ -45,7 +45,7 @@
 				bottom: 0rem;
 				right: 0rem;
 				margin: 0rem;
-				background: $gaming_darkest;
+				background: $gaming_bg;
 				z-index: -1;
 			}
 			&::before {

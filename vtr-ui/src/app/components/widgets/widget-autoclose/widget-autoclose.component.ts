@@ -27,9 +27,7 @@ export class WidgetAutocloseComponent implements OnInit, OnChanges {
 		this.actionModal.emit();
 	}
 
-	ngOnChanges(changes: SimpleChanges): void {
-		console.log(changes);
-	}
+	ngOnChanges(changes: SimpleChanges): void {}
 
 	public removeApp(name: string, index: number) {
 		this.removeFromList.emit({ name, index });

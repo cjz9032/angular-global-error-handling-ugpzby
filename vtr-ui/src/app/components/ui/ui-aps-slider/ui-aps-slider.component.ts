@@ -77,13 +77,10 @@ export class UiApsSliderComponent implements OnInit, AfterContentChecked {
 	 * @param $event event data from ng5-slider component
 	 */
 	public onChange($event: ChangeContext) {
-		console.log('onChange Ui slider');
-		this.change.emit($event);
-	}
+        this.change.emit($event);
+    }
 
-	public onSliderChanged(event: any) {
-		console.log('slider changed');
-	}
+	public onSliderChanged(event: any) {}
 	public dragEnd() {
 		this.valueChangeEnd.emit();
 	}

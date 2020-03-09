@@ -6,7 +6,7 @@
 			tabindex="1" (keyup.enter)="close()"
 			role="button"
 			 vtrMetrics [metricsItem]="'driverpopup_close'"
-					metricsEvent="featureClick" id="gaming-driverPopup-close" aria-label="gaming driverPopup close" role="link" aria-labelledby="driver_popup_close">
+					metricsEvent="featureClick" metricsParent="Gaming.Dashboard" id="gaming-driverPopup-close" aria-label="gaming driverPopup close" role="link" aria-labelledby="driver_popup_close">
 					<fa-icon [icon]="['fal', 'times']"></fa-icon>
 			</a>
 			</div>
@@ -37,7 +37,7 @@
 				(keydown)="runappKeyup($event)"
 				class="cancel-link active" id="gaming_driverPopup_cancel" aria-label="gaming driverPopup cancel" role="link">{{'gaming.dashboard.device.legionEdge.driverPopup.link' | translate}}</a>
 			</div>
-			</div>	
+			</div>
 		</div>
 	</div>
 	<!--Need input from Raghu on this-->

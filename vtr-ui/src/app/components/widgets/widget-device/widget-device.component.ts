@@ -10,7 +10,6 @@ import { MetricService } from 'src/app/services/metric/metric.service';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { map, mergeMap } from 'rxjs/operators';
 import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
-import { LanguageService } from 'src/app/services/language/language.service';
 import { WarrantyService } from 'src/app/services/warranty/warranty.service';
 @Component({
 	selector: 'vtr-widget-device',
@@ -21,8 +20,6 @@ import { WarrantyService } from 'src/app/services/warranty/warranty.service';
 export class WidgetDeviceComponent implements OnInit, OnDestroy {
 	public myDevice: MyDevice;
 	public deviceStatus: Status[] = [];
-	public direction = 'ltr';
-
 	// subtitle = 'My device status';
 
 	virusImage = '//vtr-ui//src//assets//Device_antivirus.png';
@@ -35,12 +32,8 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		private dashboardService: DashboardService,
 		private warrantyService: WarrantyService,
 		private adPolicyService: AdPolicyService,
-		private languageService: LanguageService
 	) {
 		this.myDevice = new MyDevice();
-		if (this.languageService.currentLanguage.toLowerCase() === 'ar' || this.languageService.currentLanguage.toLowerCase() === 'he' ) {
-			this.direction = 'rtl';
-		}
 	}
 
 	ngOnInit() {
@@ -236,7 +229,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 				} else {
 					warranty = this.deviceStatus[3];
 				}
-				const warrantyDate = this.commonService.formatDate(data.endDate);
+				const warrantyDate = this.commonService.formatUTCDate(data.endDate);
 				// in warranty
 				if (data.status === 0) {
 					const today = new Date();

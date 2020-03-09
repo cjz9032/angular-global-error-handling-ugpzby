@@ -97,11 +97,6 @@
 	.font-12-semi {
 		font-size: 1.6rem;
 		font-weight: 300;
-		.title2 {
-			&:focus {
-				outline: none;
-			}
-		}
 	}
 
 	.font-14-bold {
@@ -168,9 +163,6 @@
 				justify-content: center;
 				font-weight: $weight_light;
 				z-index: 2;
-				&:focus {
-					outline: none;
-				}
 			}
 
 			img {
@@ -232,7 +224,7 @@
 
 			// tick mark
 			&::after {
-				top: 0.2rem;
+				top: 0;
 				width: 2rem;
 				height: 2rem;
 				left: 0.1rem;
@@ -553,9 +545,6 @@
 	.content-page-2 .interests input[type="checkbox"] + label,
 	.content-page-2 .privacy-check .custom-checkbox {
 		cursor: pointer;
-		&:focus {
-			outline: none;
-		}
 	}
 
 	.content-page-2 span.more-interests:hover,

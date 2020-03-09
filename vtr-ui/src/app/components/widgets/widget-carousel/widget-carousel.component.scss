@@ -7,6 +7,13 @@
 	background: $light;
 	overflow: hidden;
 
+	@media #{$breakpoint_md} {
+		height: 24.3rem !important;
+	}
+	@media #{$breakpoint_sm} {
+		height: 18.6rem !important;
+	}
+
 	&::after {
 		content: "";
 		background: rgba(0, 0, 0, 0.4);
@@ -81,6 +88,19 @@
 		width: 100%;
 		background-size: cover;
 		background-position: center center;
+
+		@media #{$breakpoint_md} {
+			height: 24.3rem !important;
+		}
+		@media #{$breakpoint_sm} {
+			height: 18.6rem !important;
+		}
+	}
+	@media #{$black-on-white} {
+		border: 0.1rem solid ;
+	}
+	@media #{$white-on-black} {
+		border: 0.1rem solid ;
 	}
 }
 
@@ -94,11 +114,38 @@
 			.carousel-inner {
 				overflow: inherit;
 			}
-
-			.carousel-control-prev,
-			.carousel-control-next {
-				width: 5%;
+			.carousel-control-prev,.carousel-control-next {
+				width: 8.5%;
 			}
+			.carousel-control-next-icon {
+				background-image: none;
+				width: 2rem;
+				height: 2rem;
+				border-top: 0.3rem solid $light;
+				border-right: 0.3rem solid $light;
+				transform: rotate(45deg);
+			}
+			.carousel-control-prev-icon {
+				background-image: none;
+				width: 2rem;
+				height: 2rem;
+				border-top: 0.3rem solid $light;
+				border-left: 0.3rem solid $light;
+				transform: rotate(-45deg);
+			}
+			// .carousel-control-prev,
+			// .carousel-control-next {
+			// 	width: 3.2rem;
+			// 	height: 3.2rem;
+			// 	position: relative;
+			// 	&::after{
+			// 		content: '';
+			// 		position: absolute;
+			// 		height: 2rem;
+			// 		width: 0.2rem;
+			// 		background: $light;
+			// 	}
+			// }
 		}
 	}
 }

@@ -3,6 +3,7 @@
 .vtr-widget-switch-icon {
 	display: inline-block;
 	cursor: pointer;
+	outline: none;
 	.loader {
 		position: absolute;
 		top: 50%;
@@ -39,6 +40,7 @@
 		&.checked {
 			border: 1px solid $go;
 			background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
+			outline: none;
 
 			.title {
 				color: $light;
@@ -53,6 +55,7 @@
 		&.unchecked {
 			border: 1px solid $shade_lighter;
 			background: linear-gradient($gradient_angle, $shade_lighter 0%, $light 100%);
+			outline: none;
 
 			.title {
 				color: $shade_darker;
@@ -116,7 +119,7 @@
 
 				@media #{$breakpoint_xl2} {
 					font-size: 2.7rem;
-					line-height: 4.3rem;
+					line-height: 4.5rem;
 				}
 
 				@media #{$breakpoint_xl} {

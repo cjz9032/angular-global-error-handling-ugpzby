@@ -23,7 +23,6 @@ export class HeaderMainComponent implements OnInit, AfterViewInit {
 	@Input() isInnerBack = false;
 	@Input() textId: string;
 	@Input() hideBack = false;
-	@Input() showDemo: boolean;
 	@Output() innerBack = new EventEmitter();
 
 	constructor(

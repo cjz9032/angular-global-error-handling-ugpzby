@@ -25,8 +25,7 @@ export class CameraFeedService {
 	}
 
 	public setCameraBlurSettings(isEnabling: boolean, mode: string): Promise<any> {
-		console.log('setCameraBlurSettings: ' + isEnabling + ', ' + mode);
-		if (this.cameraBlur) {
+        if (this.cameraBlur) {
 			if (mode === '') {
 				const enable = isEnabling ? '1' : '0';
 				return this.cameraBlur.setCameraBlurSettings(true, enable);
@@ -34,6 +33,6 @@ export class CameraFeedService {
 				return this.cameraBlur.setCameraBlurSettings(false, mode);
 			}
 		}
-		return undefined;
-	}
+        return undefined;
+    }
 }

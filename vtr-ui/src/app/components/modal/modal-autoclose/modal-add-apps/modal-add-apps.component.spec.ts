@@ -62,6 +62,9 @@ describe('ModalAddAppsComponent', () => {
 	beforeEach(() => {
 		fixture = TestBed.createComponent(ModalAddAppsComponent);
 		component = fixture.componentInstance;
+		const close = document.createElement('div');
+		close.id = 'close';
+		fixture.debugElement.nativeElement.append(close);
 		fixture.detectChanges();
 	});
 
@@ -91,8 +94,10 @@ describe('ModalAddAppsComponent', () => {
 	  });
 
 	it('runappKeyup', fakeAsync(() => {
-		const result = component.runappKeyup(true, 1);
-		expect(result).toBe(undefined);
+		component.runningList = [1];
+		component.runappKeyup({ which: 9 }, 1);
+		//console.log('test in ',document.getElementById('close'));
+		expect(component).toBeTruthy();
 	})
 	);
 
@@ -103,7 +108,7 @@ describe('ModalAddAppsComponent', () => {
 	);
 
 	it('addAppData', fakeAsync(() => {
-		const result = component.addAppData({ target: { value: true } }, 1);
+		const result = component.addAppData({ target: { value: true } }, 0);
 		expect(result).toBe(undefined);
 	})
 	);

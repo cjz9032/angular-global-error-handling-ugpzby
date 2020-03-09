@@ -4,8 +4,11 @@ import { LocalStorageKey } from './../../../enums/local-storage-key.enum';
 import { CommonService } from 'src/app/services/common/common.service';
 import { GamingAllCapabilitiesService } from './../../../services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { GamingLightingService } from './../../../services/gaming/lighting/gaming-lighting.service';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { EventTypes } from '@lenovo/tan-client-bridge';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-widget-lighting',
@@ -24,10 +27,15 @@ export class WidgetLightingComponent implements OnInit {
 	public isdriverpopup = false;
 	public isPopupVisible: any;
 	public defaultLanguage: any;
+	public ledSwitchButtonFeature: boolean;
+
 	constructor(
+		private ngZone: NgZone,
 		private gamingLightingService: GamingLightingService,
 		private commonService: CommonService,
-		private deviceService: DeviceService
+		private deviceService: DeviceService,
+		public shellServices: VantageShellService,
+		private logger: LoggerService
 	) { }
 
 	ngOnInit() {
@@ -40,7 +48,6 @@ export class WidgetLightingComponent implements OnInit {
 		});
 		this.deviceService.getMachineInfo().then((value: any) => {
 			this.defaultLanguage = value.locale;
-			console.log('defaultLanguagedefaultLanguagedefaultLanguagedefaultLanguage===>', this.defaultLanguage);
 		});
 	}
 
@@ -65,6 +72,10 @@ export class WidgetLightingComponent implements OnInit {
 			this.isPopupVisible = true;
 		} else if (!this.ledSetFeature && !this.ledDriver) {
 			this.isLightingVisible = false;
+		}
+		this.logger.info('ledSwitchButtonFeature: ', this.ledSwitchButtonFeature);
+		if (this.ledSwitchButtonFeature) {
+		 this.regLightingProfileIdChangeEvent();
 		}
 	}
 
@@ -123,6 +134,26 @@ export class WidgetLightingComponent implements OnInit {
 			}
 		} catch (error) {
 		}
+	}
+
+
+	public regLightingProfileIdChangeEvent() {
+		this.gamingLightingService.regLightingProfileIdChangeEvent();
+		this.shellServices.registerEvent(
+		  EventTypes.gamingLightingProfileIdChangeEvent,
+		  this.setProfileEvent.bind(this)
+		);
+	}
+
+	public setProfileEvent(profileId) {
+		this.ngZone.run(() => {
+			this.logger.info('profileId event ', profileId);
+			if (this.setprofId === profileId) { return; }
+			this.setprofId = profileId;
+			if (this.setprofId !== undefined) {
+				this.commonService.setLocalStorageValue(LocalStorageKey.ProfileId, this.setprofId);
+			}
+		});
 	}
 
 	public checkStatus(id) {
