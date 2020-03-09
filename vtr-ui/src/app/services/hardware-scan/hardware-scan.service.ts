@@ -87,14 +87,25 @@ export class HardwareScanService {
 	 *          concurrent requests.
 	 */
 	private doPriorityRequests() {
-		// Retrive the Plugin's information (it does not use the CLI)
-		if (this.pluginInfoPromise == undefined) {
-			this.pluginInfoPromise = this.getPluginInfo();
-		}
-		// Retrive the last Scan's results (it does not use the CLI)
-		if (this.previousResultsResponse == undefined) {
-			this.previousResultsResponse = this.hardwareScanBridge.getPreviousResults();
-		}
+		// Check whether HardwareScan is available in Hypothesis Service or not
+		if (this.hypSettingsPromise == undefined) {
+            this.hypSettingsPromise = this.hypSettings.getFeatureSetting(HardwareScanService.HARDWARE_SCAN_HYPHOTESIS_CONFIG_NAME);
+
+            // If HardwareScan is available, dispatch the priority requests
+            this.isAvailable().then((available) => {
+                if (available) {
+					// Validate the type of this machine to load dynamically the icons.
+					this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
+
+					// Retrive the Plugin's version (it does not use the CLI)
+					this.getPluginInfo().then((hwscanPluginInfo: any) => {
+                        if (hwscanPluginInfo) {
+                            this.pluginVersion = hwscanPluginInfo.PluginVersion;
+                        }
+                    });
+
+					// Retrive the last Scan's results (it does not use the CLI)
+					this.previousResultsResponse = this.hardwareScanBridge.getPreviousResults();
 
 		// Retrive the hardware component list (it does use the CLI)
 		if (this.itemsToScanResponse == undefined) {
@@ -702,12 +713,12 @@ export class HardwareScanService {
 				if (this.devicesToRecoverBadSectors.groupList.length !== 0) {
 					this.hasItemsToRecoverBadSectors = true;
 				}
-			});
+
+				// Signalizes that the hardware list has been retrieved
+				this.hardwareModulesLoaded.next(true);
+            });
 			this.isLoadingModulesDone = true;
 			this.loadCustomModal();
-
-			// Signalizes that the hardware list has been retrieved
-			this.hardwareModulesLoaded.next(true);
 		});
 	}
 
@@ -1107,6 +1118,7 @@ export class HardwareScanService {
 				for (let i = 0; i < module.response.groupResults.length; i++) {
 					const item: any = {};
 					const groupResultMeta = groupsResultMeta.find(x => x.id === groupResult[i].id);
+					const moduleName = groupResult[i].moduleName;
 
 					item.id = moduleId;
 					item.module = module.categoryInformation.name;
@@ -1114,6 +1126,12 @@ export class HardwareScanService {
 					item.resultCode = groupResult[i].resultCode;
 					item.information = groupResult[i].resultDescription;
 					item.collapsed = false;
+					item.icon = moduleName;
+					if (!this.isDesktopMachine) {
+						if (item.icon === 'pci_express') {
+							item.icon += "_laptop";
+						}
+					}
 					item.details = [];
 
 					for (let j = 0; j < groupResultMeta.metaInformation.length; j++) {
@@ -1249,6 +1267,7 @@ export class HardwareScanService {
 				test.percent = 0;
 				test.status = HardwareScanTestResult.NotStarted;
 			}
+			moduleObject.resultCode = '';
 		}
 
 		for (const moduleObject of this.customScanResponse) {
@@ -1256,6 +1275,7 @@ export class HardwareScanService {
 				test.percent = 0;
 				test.status = HardwareScanTestResult.NotStarted;
 			}
+			moduleObject.resultCode = '';
 		}
 	}
 

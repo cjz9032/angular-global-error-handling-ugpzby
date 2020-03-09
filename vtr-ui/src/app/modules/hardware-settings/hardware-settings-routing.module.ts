@@ -10,16 +10,20 @@ import { SubpageDeviceSettingsAudioComponent } from 'src/app/components/pages/pa
 import { SubpageDeviceSettingsDisplayComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-display/subpage-device-settings-display.component';
 import { SubpageDeviceSettingsInputAccessoryComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/subpage-device-settings-input-accessory.component';
 import { SubpageDeviceSettingsPowerComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-power/subpage-device-settings-power.component';
+import { SubpageDeviceSettingsPowerDpmComponent } from "../../components/pages/page-device-settings/children/subpage-device-settings-power-dpm/subpage-device-settings-power-dpm.component";
+import { SubpageDeviceSettingsPowerDpmGuard } from "../../components/pages/page-device-settings/children/subpage-device-settings-power-dpm/subpage-device-settings-power-dpm.guard";
+
 import { NonGamingGuard } from 'src/app/services/guard/non-gaming-guard';
 import { NonArmGuard } from 'src/app/services/guard/non-arm-guard';
 import { NonSmodeGuard } from 'src/app/services/guard/non-smode-guard';
+import { SubpageDeviceSettingsPowerContainerComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-power-container/subpage-device-settings-power-container.component';
 
 const routes: Routes = [
 	{
 		path: '',
 		component: PageDeviceComponent,
-		canDeactivate: [ GuardService ],
-		canActivate: [ GuardService, NonArmGuard ],
+		canDeactivate: [GuardService],
+		canActivate: [GuardService, NonArmGuard],
 		data: {
 			pageName: 'Device.MyDevice',
 			pageContent: 'My Device Status'
@@ -28,8 +32,8 @@ const routes: Routes = [
 	{
 		path: 'device',
 		component: PageDeviceComponent,
-		canDeactivate: [ GuardService ],
-		canActivate: [ GuardService, NonArmGuard ],
+		canDeactivate: [GuardService],
+		canActivate: [GuardService, NonArmGuard],
 		data: {
 			pageName: 'Device.MyDevice',
 			pageContent: 'My Device Status'
@@ -38,8 +42,8 @@ const routes: Routes = [
 	{
 		path: 'device-settings',
 		component: PageDeviceSettingsComponent,
-		canDeactivate: [ GuardService ],
-		canActivate: [ GuardService, NonArmGuard ],
+		canDeactivate: [GuardService],
+		canActivate: [GuardService, NonArmGuard],
 		data: {
 			pageName: 'Device.MyDeviceSettings',
 			pageContent: 'My Device Status'
@@ -52,9 +56,9 @@ const routes: Routes = [
 			},
 			{
 				path: 'power',
-				component: SubpageDeviceSettingsPowerComponent,
-				canDeactivate: [ GuardService ],
-				canActivate: [ GuardService ],
+				component: SubpageDeviceSettingsPowerContainerComponent,
+				canDeactivate: [GuardService],
+				canActivate: [GuardService],
 				data: {
 					pageName: 'Device.MyDeviceSettings'
 				}
@@ -62,8 +66,8 @@ const routes: Routes = [
 			{
 				path: 'audio',
 				component: SubpageDeviceSettingsAudioComponent,
-				canDeactivate: [ GuardService ],
-				canActivate: [ GuardService ],
+				canDeactivate: [GuardService],
+				canActivate: [GuardService],
 				data: {
 					pageName: 'Device.MyDeviceSettings'
 				}
@@ -71,8 +75,8 @@ const routes: Routes = [
 			{
 				path: 'display-camera',
 				component: SubpageDeviceSettingsDisplayComponent,
-				canDeactivate: [ GuardService ],
-				canActivate: [ GuardService ],
+				canDeactivate: [GuardService],
+				canActivate: [GuardService],
 				data: {
 					pageName: 'Device.MyDeviceSettings'
 				}
@@ -80,8 +84,8 @@ const routes: Routes = [
 			{
 				path: 'input-accessories',
 				component: SubpageDeviceSettingsInputAccessoryComponent,
-				canDeactivate: [ GuardService ],
-				canActivate: [ GuardService ],
+				canDeactivate: [GuardService],
+				canActivate: [GuardService],
 				data: {
 					pageName: 'Device.MyDeviceSettings'
 				}
@@ -91,8 +95,8 @@ const routes: Routes = [
 	{
 		path: 'smart-assist',
 		component: PageSmartAssistComponent,
-		canDeactivate: [ GuardService ],
-		canActivate: [ GuardService, NonGamingGuard, NonArmGuard ],
+		canDeactivate: [GuardService],
+		canActivate: [GuardService, NonGamingGuard, NonArmGuard],
 
 		data: {
 			pageName: 'Device.SmartAssist',
@@ -102,8 +106,8 @@ const routes: Routes = [
 	{
 		path: 'system-updates',
 		component: PageDeviceUpdatesComponent,
-		canDeactivate: [ GuardService ],
-		canActivate: [ GuardService, NonArmGuard, NonSmodeGuard ],
+		canDeactivate: [GuardService],
+		canActivate: [GuardService, NonArmGuard, NonSmodeGuard],
 		data: {
 			pageName: 'Device.SystemUpdate',
 			pageContent: 'My Device Status'
@@ -112,8 +116,8 @@ const routes: Routes = [
 	{
 		path: 'support-detail/:id',
 		component: PageSupportDetailComponent,
-		canDeactivate: [ GuardService ],
-		canActivate: [ GuardService ],
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
 		data: {
 			pageName: 'Support.Detail'
 		}
@@ -121,7 +125,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-	imports: [ RouterModule.forChild(routes) ],
-	exports: [ RouterModule ]
+	imports: [RouterModule.forChild(routes)],
+	exports: [RouterModule]
 })
-export class HardwareSettingRoutingModule {}
+export class HardwareSettingRoutingModule { }

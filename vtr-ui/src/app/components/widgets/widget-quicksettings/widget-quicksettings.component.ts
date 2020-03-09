@@ -40,7 +40,10 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	public machineType: any;
 	public thresholdLoadingStatus = false;
 	public conservationModeStatus = new FeatureStatus(false, true);
-
+	public cameraPrivacyGreyOut = true;
+	public microPhoneGreyOut = true;
+	public cameraNoAccessNoteShow = false;
+	public isCameraPrivacyCacheExist = false;
 	public quickSettingsWidget = [
 		{
 			// tooltipText: 'MICROPHONE',
@@ -76,6 +79,8 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		private vantageShellService: VantageShellService,
 		private router: Router) {
 		this.cameraStatus.permission = false;
+		this.cameraStatus.isLoading = false;
+		this.microphoneStatus.isLoading = false;
 		this.Windows = vantageShellService.getWindows();
 		if (this.Windows) {
 			this.windowsObj = this.Windows.Devices.Enumeration.DeviceAccessInformation
@@ -133,11 +138,17 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	initDataFromCache() {
 		const cameraState: FeatureStatus = this.commonService.getLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy);
 		if (cameraState) {
+			if (cameraState.permission) {
+				this.cameraPrivacyGreyOut = false;
+			} else {
+				this.cameraNoAccessNoteShow = true;
+			}
+			this.isCameraPrivacyCacheExist = true;
 			this.cameraStatus.available = cameraState.available;
 			this.cameraStatus.status = cameraState.status;
 			this.cameraStatus.isLoading = false;
 			this.cameraStatus.permission = cameraState.permission;
-		}
+		} 
 	}
 
 	ngOnDestroy() {
@@ -222,13 +233,16 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 				// this.cameraStatus.isLoading = true;
 				this.displayService.getCameraSettingsInfo()
 					.then((result) => {
-						this.cameraStatus.isLoading = false;
-						console.log('getCameraPermission.then', result);
-						if (result) {
-							this.cameraStatus.permission = result.permission;
-							this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraStatus); this.cameraStatus.isLoading = false;
+					this.cameraStatus.isLoading = false;
+					this.cameraPrivacyGreyOut = false;
+                    if (result) {
+						if (!result.permission) {
+							this.cameraNoAccessNoteShow = true;
 						}
-					}).catch(error => {
+                        this.cameraStatus.permission = result.permission;
+                        this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraStatus); this.cameraStatus.isLoading = false;
+                    }
+                }).catch(error => {
 						this.logger.error('getCameraPermission', error.message);
 						this.cameraStatus.isLoading = false;
 						return EMPTY;
@@ -357,14 +371,14 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 								const a = performance.now();
 								this.audioClient = win.VantageShellExtension.AudioClient.getInstance();
 								const b = performance.now();
-								console.log('audioclient init ' + (b - a) + 'ms');
+								this.logger.info('audioclient init ' + (b - a) + 'ms');
 								if (this.audioClient) {
 									this.audioClient.onchangecallback = (data: string) => {
 										if (data) {
 											if (this.audioData && this.audioData.toString() === data) {
 												return;
 											}
-											console.log('data data, got it ' + data);
+											this.logger.info('data data, got it ' + data);
 											this.audioData = data;
 											const dic = data.split(',');
 
@@ -376,17 +390,17 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 												// }
 												this.commonService.sendNotification(DeviceMonitorStatus.MicrophoneStatus, {muteDisabled});
 											} else {
-												console.log('core audio wrong data format');
+												this.logger.info('core audio wrong data format');
 											}
 										}
 									};
 								}
 								this.audioClient.startMonitor();
 							} catch (error) {
-								console.log('cannot init core audio for widget quick settings' + error.message);
+								this.logger.info('cannot init core audio for widget quick settings' + error.message);
 							}
 						} else {
-							console.log('current shell version maybe not support core audio');
+							this.logger.info('current shell version maybe not support core audio');
 							// this.deviceService.startMicrophoneMonitor();
 						}
 					}

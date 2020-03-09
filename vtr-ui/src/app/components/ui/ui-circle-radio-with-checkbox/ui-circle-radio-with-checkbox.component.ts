@@ -46,6 +46,7 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 		// this.translate.stream(this.label).subscribe((result: string) => {
 		// 	this.label = result;
 		// });
+		this.setRadioButtons(); // Set up radio buttons first , last etc and if none selected,set tabindex to first element
 	}
 
 	onChange(event) {
@@ -146,7 +147,7 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 				this.setChecked(this.radioButtons[index - 1]);
 			}
 		} catch (error) {
-			console.log('setCheckedToPreviousItem :: ' + error);
+			this.logger.exception('setRadioButtons error occurred ::', error);
 		}
 	}
 
@@ -163,7 +164,7 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 			}
 
 		} catch (error) {
-			console.log('setCheckedToNextItem :: ' + error);
+			this.logger.exception('setRadioButtons error occurred ::', error);
 		}
 
 	}
@@ -175,33 +176,26 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 			}
 			const rbs = this.radioGroup.querySelectorAll('[role=radio]');
 
-			if (this.radioButtons.length !== rbs.length) {
+			this.radioButtons = [];
+			rbs.forEach(radioButton => {
+				this.radioButtons.push(radioButton);
+				if (!this.firstRadioButton) {
+					this.firstRadioButton = radioButton;
+				}
+				this.lastRadioButton = radioButton;
 
-				rbs.forEach(radioButton => {
-					this.radioButtons.push(radioButton);
-					if (!this.firstRadioButton) {
-						this.firstRadioButton = radioButton;
-					}
-					this.lastRadioButton = radioButton;
-				});
-				/* for (let i = 0; i < rbs.length; i++) {
+				if (radioButton.getAttribute('aria-checked') === 'true') {
+					this.selectedRadioButton = radioButton;
+					this.noRadioButtonSelected = false;
+				}
+			});
 
-					this.radioButtons.push(rbs[i]);
-					if (!this.firstRadioButton) {
-						this.firstRadioButton = rbs[i];
-					}
-					this.lastRadioButton = rbs[i];
-				} */
+			if (this.firstRadioButton && this.noRadioButtonSelected) {
+				this.firstRadioButton.focus();
+				// this.setRadioTabIndex(this.firstRadioButton);
 			}
-			if (!this.firstRadioButton) {
-				this.firstRadioButton.nativeElement.tabIndex = 0;
-			}
-
 		} catch (error) {
-			console.log('setRadioButtons :: ' + error);
+			this.logger.exception('setRadioButtons error occurred ::', error);
 		}
-
-
 	}
-
 }

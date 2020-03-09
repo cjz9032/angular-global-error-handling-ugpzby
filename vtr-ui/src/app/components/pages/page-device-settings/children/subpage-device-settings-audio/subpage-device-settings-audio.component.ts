@@ -70,6 +70,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			this.onNotification(response);
 		});
 		this.isDTmachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
+		this.commonService.checkPowerPageFlagAndHide();
 
 		this.isOnline = this.commonService.isOnline;
 		if (this.isOnline) {
@@ -371,7 +372,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyAudioToggleCache);
 	}
 
-	onDolbySeetingRadioChange(event) {
+	onDolbySettingRadioChange(event) {
 		try {
 			this.dolbyModeResponse.currentMode = event.target.value;
 			this.dolbyAudioToggleCache.dolbyModeResponse = this.dolbyModeResponse;
@@ -393,6 +394,9 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 
 	onToggleOfMicrophoneAutoOptimization(event) {
 		try {
+
+			this.microphoneProperties.autoOptimization = event.switchValue;
+			this.updateMicrophoneCache();
 			if (this.audioService.isShellAvailable) {
 				this.cacheFlag.autoOptimization = false;
 				this.audioService.setMicrophoneAutoOptimization(event.switchValue)
@@ -413,6 +417,8 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		const volume = event.value;
 		try {
 			this.microphoneProperties.volume = volume;
+			this.updateMicrophoneCache();
+
 			if (this.audioService.isShellAvailable) {
 				this.audioService.setMicrophoneVolume(volume)
 					.then((value) => {
@@ -430,6 +436,9 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 
 	public onToggleOfMicrophone(event) {
 		try {
+			this.microphoneProperties.muteDisabled = event.switchValue;
+			this.updateMicrophoneCache();
+
 			if (this.dashboardService.isShellAvailable) {
 				this.dashboardService.setMicrophoneStatus(event.switchValue)
 					.then((value: boolean) => {
@@ -450,6 +459,9 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 
 	public onToggleOfSuppressKbdNoise(event) {
 		try {
+			this.microphoneProperties.keyboardNoiseSuppression = event.switchValue;
+			this.updateMicrophoneCache();
+
 			if (this.audioService.isShellAvailable) {
 				this.cacheFlag.keyboardNoiseSuppression = false;
 				this.audioService.setSuppressKeyboardNoise(event.switchValue)
@@ -468,6 +480,9 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 
 	public setMicrophoneAEC(event) {
 		try {
+			this.microphoneProperties.AEC = event.switchValue;
+			this.updateMicrophoneCache();
+
 			if (this.audioService.isShellAvailable) {
 				this.cacheFlag.AEC = false;
 				this.audioService.setMicrophoneAEC(event.switchValue)

@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
-import * as d3 from 'd3';
+import * as d3 from 'd3-selection';
 import SmartStandbyActivityModel from 'src/app/data-models/smart-standby-graph/smart-standby-activity.model';
 import { PowerService } from 'src/app/services/power/power.service';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';

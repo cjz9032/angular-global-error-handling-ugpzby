@@ -13,7 +13,6 @@ import { CommonModalModule } from '../common/common-modal.module';
 import { DialogService } from '../../services/dialog/dialog.service';
 import { WidgetSecurityStatusModule } from 'src/app/components/widgets/widget-security-status/widget-security-status.module';
 import { UiListChevronModule } from 'src/app/components/ui/ui-list-chevron/ui-list-chevron.module';
-import { library } from '@fortawesome/fontawesome-svg-core';
 import { faWifi } from '@fortawesome/pro-light-svg-icons/faWifi';
 import { faWifiSlash } from '@fortawesome/pro-light-svg-icons/faWifiSlash';
 import { faExclamationCircle } from '@fortawesome/pro-light-svg-icons/faExclamationCircle';
@@ -25,17 +24,10 @@ import { faTv } from '@fortawesome/pro-light-svg-icons/faTv';
 import { faMapMarkerAlt } from '@fortawesome/pro-light-svg-icons/faMapMarkerAlt';
 import { HomeSecurityAfterSignupComponent } from '../../components/pages/page-connected-home-security/component/home-security-after-signup/home-security-after-signup.component';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 
 
-library.add(faWifi);
-library.add(faWifiSlash);
-library.add(faExclamationCircle);
-library.add(faQuestionCircle);
-library.add(faLaptop);
-library.add(faUserFriends);
-library.add(faHome);
-library.add(faTv);
-library.add(faMapMarkerAlt);
+
 
 @NgModule({
 	declarations: [
@@ -55,7 +47,8 @@ library.add(faMapMarkerAlt);
 		CommonModalModule,
 		WidgetSecurityStatusModule,
 		UiListChevronModule,
-		PageLayoutModule
+		PageLayoutModule,
+		FontAwesomeModule
 	],
 	providers: [
 		DialogService
@@ -64,4 +57,18 @@ library.add(faMapMarkerAlt);
 		CUSTOM_ELEMENTS_SCHEMA
 	]
 })
-export class ConnectedHomeSecurityModule { }
+export class ConnectedHomeSecurityModule {
+	constructor(library: FaIconLibrary) {
+		library.addIcons(
+			faWifi,
+			faWifiSlash,
+			faExclamationCircle,
+			faQuestionCircle,
+			faLaptop,
+			faUserFriends,
+			faHome,
+			faTv,
+			faMapMarkerAlt
+		);
+	}
+}

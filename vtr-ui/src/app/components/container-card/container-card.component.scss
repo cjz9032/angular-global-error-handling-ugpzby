@@ -1,5 +1,16 @@
 @import "../../app.theme";
 
+@mixin overlay {
+	content: "";
+	background: rgba(0, 0, 0, 0);
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: absolute;
+	z-index: 0;
+}
+
 .container-card {
 	box-shadow: $drop_shadow;
 	border-radius: $border_radius;
@@ -50,15 +61,11 @@
 				border-radius: $border_radius;
 				overflow: hidden;
 
-				&::after {
-					content: "";
-					background: rgba(0, 0, 0, 0.4);
-					width: 100%;
-					height: 100%;
-					top: 0;
-					left: 0;
-					position: absolute;
-					z-index: 0;
+				&.overlay-dark {
+					&::after {
+						@include overlay();
+						background: rgba(0, 0, 0, 0.4);
+					}
 				}
 
 				.inner-content {
@@ -66,6 +73,16 @@
 					z-index: 1;
 					padding: 2rem 2.5rem;
 					height: 100%;
+					@media #{$black-on-white} {
+
+						border-bottom: 1px solid $dark !important;
+						border-radius: 1rem;
+					}
+					@media #{$white-on-black} {
+
+						border-bottom: 1px solid $light !important;
+						border-radius: 1rem;
+					}
 
 					.title {
 						color: $light;
@@ -212,15 +229,11 @@
 				border-radius: $border_radius;
 				overflow: hidden;
 
-				&::after {
-					content: "";
-					background: rgba(0, 0, 0, 0.4);
-					width: 100%;
-					height: 100%;
-					top: 0;
-					left: 0;
-					position: absolute;
-					z-index: 0;
+				&.overlay-dark {
+					&::after {
+						@include overlay();
+						background: rgba(0, 0, 0, 0.4);
+					}
 				}
 
 				.inner-content {
@@ -229,12 +242,14 @@
 					padding: 2rem;
 					height: 100%;
 					@media #{$black-on-white} {
-						border: 0.1rem solid;
-						border-radius: 2rem;
+						border:1px solid;
+						border-bottom: 1px solid !important;
+						border-radius: 1rem;
 					}
 					@media #{$white-on-black} {
-						border: 0.1rem solid;
-						border-radius: 2rem;
+						border: 1px solid;
+						border-bottom: 1px solid !important;
+						border-radius: 1rem;
 					}
 
 					@media #{$mediaquery_X1} {
@@ -318,6 +333,13 @@
 				border-radius: $border_radius;
 				overflow: hidden;
 
+				&.overlay-dark {
+					&::after {
+						@include overlay();
+						background: rgba(0, 0, 0, 0.4);
+					}
+				}
+
 				.inner-content {
 					position: relative;
 					z-index: 1;
@@ -380,6 +402,12 @@
 				width: 100%;
 				height: 60%;
 				cursor: pointer;
+				// @media #{$black-on-white} {
+				// 	border: 0.1rem solid ;
+				// }
+				// @media #{$white-on-black} {
+				// 	border: 0.1rem solid ;
+				// }
 			}
 
 			.content {
@@ -599,6 +627,18 @@
 		position: relative;
 		z-index: 0;
 	}
+	@media #{$black-on-white} {
+		border: 0.1rem solid  $dark ;
+
+		border-radius: $border_radius;
+	}
+	@media #{$white-on-black} {
+		border: 0.1rem solid $dark ;
+
+		border-radius: $border_radius;
+	}
+
+
 }
 
 .spinner-border {

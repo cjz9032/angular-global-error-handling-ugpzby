@@ -22,6 +22,12 @@
                     "rapidCharge": "Hızlı Şarj"
                 },
                 "legionEdge": {
+                    "thermalMode2": {
+                        "OC_On": "Hız Aşrtma açık",
+                        "performance": "Performans",
+                        "balance": "Denge",
+                        "quiet": "Sessiz"
+                    },
                     "title": "CPU Hız Aşırtma",
                     "status": {
                         "alwayson": "Açık",
@@ -97,6 +103,96 @@
                 },
                 "quickSettingstitle": {
                     "title": "Hızlı Ayarlar"
+                },
+                "thermalMode2Popup": {
+                    "thermalMode2SettingTitle": "Isı Kipi Ayarı",
+                    "thermalMode2SettingDesc": "Kullanmak istediğiniz kipi seçin.",
+                    "fnQDesc": "Fn+Q kısayolunu kullanarak kipi değiştirebilirsiniz.",
+                    "perormanceTitle": "Performans Kipi",
+                    "performanceDesc": "Daha yüksek fan hızı ve daha fazla güç tüketimi ile bilgisayarınızın performansını artırın. ",
+                    "OCDesc": "Hız Aşırtma işlevini açmayı seçebilirsiniz.",
+                    "ac_dcDesc": "Performans Kipi yalnızca AC güç bağdaştırıcısı takılıyken geçerlidir.",
+                    "balanceTitle": "Denge Kipi",
+                    "balanceDesc": "Orta düzeyde güç tüketimiyle performansı ve fan hızını sıcaklığa göre otomatik olarak dengeleyin.",
+                    "quietTitle": "Sessiz Kipi",
+                    "quietDesc": "Düşük güç tüketimiyle mümkün olduğunda bilgisayarınızın performansını ve fan hızını azaltarak sessiz olun.",
+                    "OC": {
+                        "cpu_gpuOC": "Performans Kipi'nde CPU/GPU Hız Aşırtma'yı etkinleştirin.",
+                        "cpuOC": "Performans Kipi'nde CPU Hız Aşırtma'yı etkinleştirin.",
+                        "gpuOC": "Performans Kipi'nde GPU Hız Aşırtma'yı etkinleştirin.",
+                        "advance": "GELİŞMİŞ",
+                        "cpu_gpuDriverLack": "Hız Aşırtma işlevini kullanmak için CPU/GPU sürücülerini yükleyin.",
+                        "cpuDriverLack": "Hız Aşırtma işlevini kullanmak için CPU sürücüsünü yükleyin.",
+                        "gpuDriverLack": "Hız Aşırtma işlevini kullanmak için GPU sürücüsünü yükleyin.",
+                        "goInstall": "YÜKLE"
+                    },
+                    "autoSwitch": "Oyunları başlatırken otomatik olarak Performans Kipi'ne geçip oyundan çıktıktan sonra eski kipe geri dönün."
+                },
+                "advancedOC": {
+                    "title": "Hız Aşırtma Gelşmiş Ayrları",
+                    "description": "Hız Aşırtma açıkken kullanılacak gelşmiş özel parametreleri ayarlayın. Bu Riskli olabilir.",
+                    "gpuOverclock": "GPU Hız Aşırtma",
+                    "cpuOCNames": {
+                        "cpuOCName2": "Çekirdek Voltajı",
+                        "cpuOCName116": "1 Çekirdek Oranı",
+                        "cpuOCName117": "2 Çekirdek Oranı",
+                        "cpuOCName118": "3 Çekirdek Oranı",
+                        "cpuOCName119": "4 Çekirdek Oranı",
+                        "cpuOCName34": "Çekirdek Voltajı Sapması",
+                        "cpuOCName120": "5 Çekirdek Oranı",
+                        "cpuOCName121": "6 Çekirdek Oranı",
+                        "cpuOCName76": "Önbellek Oranı",
+                        "cpuOCName77": "Önbellek Voltajı",
+                        "cpuOCName79": "Önbellek Voltajı Sapması",
+                        "cpuOCName122": "7 Çekirdek Oranı",
+                        "cpuOCName123": "8 Çekirdek Oranı",
+                        "cpuOCName102": "Çekirdek ICCMAX",
+                        "cpuOCName106": "Önbellek ICCMAX",
+                        "cpuOCName114": "AVX Oranı Sapması"
+                    },
+                    "cpuOCTips": {
+                        "cpuOCTip2": "CPU Çekirdeği için voltajı ayarlayın.",
+                        "cpuOCTip116": "Çekirdeklerin çalışabileceği maksimum çekirdek çarpanını ayarlayın. Çekirdek frekansının değeri, bu oranın ve referans saat frekansının ürünüdür.",
+                        "cpuOCTip117": "Çekirdeklerin çalışabileceği maksimum çekirdek çarpanını ayarlayın. Çekirdek frekansının değeri, bu oranın ve referans saat frekansının ürünüdür.",
+                        "cpuOCTip118": "Çekirdeklerin çalışabileceği maksimum çekirdek çarpanını ayarlayın. Çekirdek frekansının değeri, bu oranın ve referans saat frekansının ürünüdür.",
+                        "cpuOCTip119": "Çekirdeklerin çalışabileceği maksimum çekirdek çarpanını ayarlayın. Çekirdek frekansının değeri, bu oranın ve referans saat frekansının ürünüdür.",
+                        "cpuOCTip34": "Geçerli çekirdek voltajından voltaj sapması.",
+                        "cpuOCTip120": "Çekirdeklerin çalışabileceği maksimum çekirdek çarpanını ayarlayın. Çekirdek frekansının değeri, bu oranın ve referans saat frekansının ürünüdür.",
+                        "cpuOCTip121": "Çekirdeklerin çalışabileceği maksimum çekirdek çarpanını ayarlayın. Çekirdek frekansının değeri, bu oranın ve referans saat frekansının ürünüdür.",
+                        "cpuOCTip76": "Önbelleklerin çalışabileceği maksimum işlemci önbelleği çarpanını ayarlayın. Önbellek frekansı değeri, bu oranın ve referans saat frekansının çarpımıdır.",
+                        "cpuOCTip77": "Seçili olan önbellek voltaj moduna bağlı olarak işlemcinin dahili önbellek arabirimine sağlanan voltaj.",
+                        "cpuOCTip79": "Önbellek Voltajına uygulanan son voltaj sapması.",
+                        "cpuOCTip122": "Çekirdeklerin çalışabileceği maksimum çekirdek çarpanını ayarlayın. Çekirdek frekansının değeri, bu oranın ve referans saat frekansının ürünüdür.",
+                        "cpuOCTip123": "Çekirdeklerin çalışabileceği maksimum çekirdek çarpanını ayarlayın. Çekirdek frekansının değeri, bu oranın ve referans saat frekansının ürünüdür.",
+                        "cpuOCTip102": "İşlemci Çekirdek Voltaj Regülatörü için ICCMAX'i ayarlayın.",
+                        "cpuOCTip106": "İşlemci Önbellek ve Halka Veriyolu Voltaj Regülatörü için ICCMAX'i ayarlayın.",
+                        "cpuOCTip114": "AVX etkin durumdayken etkili etkin çekirdek oranı sınırını elde etmek için bu değeri, karşılık gelen etkin çekirdek oranı sınırından çıkarın."
+                    },
+                    "gpuOCNames": {
+                        "gpuOCName0": "GPU Saati Sapması",
+                        "gpuOCName1": "VRAM Saati Sapması"
+                    },
+                    "gpuOCTips": {
+                        "gpuOCTip0": "GPU saati frekansına bir sapma ekleme.",
+                        "gpuOCTip1": "Bellek saati frekansına bir sapma ekleme."
+                    }
+                },
+                "savePromptPopup": {
+                    "title": "Değişikliği Kaydet?",
+                    "description1": "Yanlış Hız Aşırtma ayarları geri dönüşü olmayan donanım hasarına yol açabilir. Herhangi bir sorunla karşılaşırsanız aşağıdakilerden birini yapın: ",
+                    "description2": "•  Bilgisayarı yeniden başlatıp varsayılan parametreleri geri yüklemek için güç düğmesini 8 saniye basılı tutun.",
+                    "description3": "•  Varsayılan parametreleri geri yüklemek için BIOS ayarlarında “Varsayılan Hız Aşırtmayı Geri Yükle” seçeneğini kullanın.",
+                    "save": "KAYDET",
+                    "notSave": "KAYDETME"
+                },
+                "defaultPromptPopup": {
+                    "title": "Varsayılana ayarla?",
+                    "description": "Mevcut ve önceki tüm değişiklikler kaybolacak."
+                },
+                "warningPromptPopup": {
+                    "title": "Uyarı!",
+                    "description": "Yanlış Hız Aşırtma ayarları geri dönüşü olmayan donanım hasarına yol açabilir.",
+                    "proceed": "DEVAM ET"
                 }
             }
         },
@@ -598,6 +694,42 @@
                     "close": "close"
                 }
             }
+        },
+        "lightingNewversion": {
+            "machineName": {
+                "name1": "Legion Icon Lighting (Front)",
+                "name2": "Internal Ambient Lighting",
+                "name3": "Legion Rear Fan Lighting",
+                "name4": "Legion CPU Fan Lighting",
+                "name5": "Legion Liquid Cooling Pump Lighting",
+                "name6": "Legion Liquid Cooling Fan Lighting",
+                "name7": "Legion Icon (Front)",
+                "name9": "Ambient  Lighting"
+            },
+            "lightingEffect": {
+                "effectName1": "Statik",
+                "effectName2": "Spektrum",
+                "effectName3": "Gökkuşağı",
+                "effectName4": "Rastgele",
+                "effectName5": "Serin_Mavi",
+                "effectName6": "Dalga_Sağ",
+                "effectName7": "Dalga_Sol"
+            },
+            "lightingSpeed": {
+                "title": "Hız"
+            },
+            "colorPicker": {
+                "text2": "DAHA FAZLA",
+                "text3": "R",
+                "text4": "G",
+                "text5": "B",
+                "text6": "Alanı Böl (Kapalı): Klavye resmini tıklayıp renkleri değiştirin",
+                "text7": "Alanı Böl (Açık): Klavye resmindeki bölümleri tıklayıp bölüm renklerini değiştirin",
+                "text8": "Geçerli efekt renk seçimini desteklemiyor"
+            },
+            "tipText": {
+                "title1": "Profiller arasında geçiş yapmak için Fn+Boşluk tuşlarını kullanın"
+            }
         }
     },
     "common": {
@@ -643,7 +775,7 @@
             "notFound": "BULUNAMADI",
             "registered": "KAYITLI",
             "notRegistered": "KAYITLI DEĞİL",
-            "fingerPrint": "Fingerprint",
+            "fingerPrint": "Parmak İzi",
             "privacyPolicyAndTermsOfService": "<tag>Gizlilik Politikası</tag> ve <tag>Hizmet Koşulları</tag>",
             "windowsHello": "Windows Hello"
         },
@@ -667,7 +799,9 @@
             "loading": "Yükleniyor...",
             "from": "başlangıç",
             "to": "->",
-            "clickToChange": "değiştirmek için tıklatın"
+            "clickToChange": "değiştirmek için tıklatın",
+            "failedLoad": "Yüklenemedi.",
+            "retry": "Yeniden Dene"
         },
         "app-update": {
             "message": "Merhaba! Vantage'ın daha yeni bir sürümü var, yüklemek ister misiniz?"
@@ -738,11 +872,18 @@
                 "submitScreenShot": "Ekran Görüntüsü Gönder",
                 "messages": {
                     "feedbackSuccess": "Geri bildiriminiz için teşekkürler!"
-                }
+                },
+                "question6": "Lenovo Vantage uygulamasını bir arkadaşınıza veya meslektaşınıza tavsiye etme olasılığınız nedir?",
+                "question7": "Bilgisayarınızdaki yazılımları (sürücüler, sabit yazılım ve BIOS) güncel tutmak için Lenovo Vantage'ı kullanabileceğinizi biliyor muydunuz?",
+                "question8": "Bilgisayarınızla ilgili destek bilgilerine erişmek için Lenovo Vantage'ı kullandınız mı?",
+                "tips2": "Lütfen ek yorumlarınızı aşağıya bırakın",
+                "emailAddressLabel": "Potansiyel olarak Lenovo Vantage ekibinin sizinle iletişime geçmesini istiyorsanız lütfen e-posta adresinizi belirtin.",
+                "emailAddress": "E-posta adresi",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "Hızlı Ayarlarınız",
+            "title": "Hızlı ayarlar",
             "microphone": "Mikrofon",
             "cameraPrivacy": "Kamera",
             "eyeCareMode": "Göz Koruması",
@@ -787,6 +928,10 @@
                     "update": "Güncelle"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Sürücülerinizi, BIOS'u ve diğer yazılımları güncelleyin.",
+            "checkForSystemUpdates": "Sistem güncellemelerini denetle"
         }
     },
     "device": {
@@ -897,14 +1042,15 @@
                         "title": "Üretici",
                         "celxpert": "Celxpert",
                         "smp": "SMP"
-                    }
+                    },
+                    "fccTooltipText": "Pilinizin ömrünü uzatmak için tam dolum kapasitesini kullanımınıza göre iyileştirdik. Pil kapasitesinin tamamını kullanmak için pili %20'ye kadar boşaltıp yeniden doldurmanız gerekmektedir."
                 },
                 "condition": {
                     "Illegal": "Takılı pil, sistem tarafından <b>desteklenmiyor</b> ve doldurulmayacak. Lütfen yerine bu sistem için doğru olan Lenovo pilini takın.",
                     "Good": "<b>Pil iyi durumda.</b>",
                     "Exhaustion": "Pil kapasitesi <b>düştü</b>. Lütfen yenisiyle değiştirin.",
                     "Bad": "<b>Bir pil hatası oluştu.</b> Pil doldurulamıyor/boşaltılamıyor. Pili değiştirin.",
-                    "NotDetected": "<b>Pil algılanmadı veya</b> pile takılı değil.",
+                    "NotDetected": "<b>Pil algılanmadı.</b>",
                     "NotGood": "<b>Pil iyi durumda değil.</b>",
                     "NotSupportACAdapter": "<b>AC bağdaştırıcısı desteklenmiyor.</b>",
                     "LimitedACAdapterSupport": "<b>AC bağdaştırıcısı yeterli güç sağlayamıyor.</b>",
@@ -1110,9 +1256,9 @@
                             "reset": "Sıfırla",
                             "stop": "Durdur"
                         },
-                        "progressText1": "{{stage}} / {{stageNum}}: Tam şarj için kalibre ediliyor",
-                        "progressText2": "{{stage}} / {{stageNum}}: Düşük pil gücü için kalibre ediliyor",
-                        "progressText3": "{{stage}} / {{stageNum}}: Tam şarj için kalibre ediliyor",
+                        "progressText1": "Adım {{stage}}/{{stageNum}}: Tam şarj için kalibre ediliyor",
+                        "progressText2": "Adım {{stage}}/{{stageNum}}: Düşük pil gücü için kalibre ediliyor",
+                        "progressText3": "Adım {{stage}}/{{stageNum}}: Yüksek pil gücü için kalibre ediliyor",
                         "FCCText": "{{before}} Wh - {{after}} Wh",
                         "note": "Not: Pil göstergesini sıfırlamadan önce, bilgisayarınızı AC gücüne bağladığınızdan emin olun. ",
                         "resetLog": {
@@ -1140,6 +1286,55 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "ENERGY STAR SERTİFİKALI ÜRÜN"
+                },
+                "dpm": {
+                    "title": "Güç",
+                    "subtitle": "Güç ayarları",
+                    "description": "Bu bölümden varsayılan ayarları denetleyebilir, güç kullanımınızı ve güç planınızı ihtiyaçlarınıza göre özelleştirebilirsiniz.",
+                    "globalPowerSettings": {
+                        "title": "Genel güç ayarları",
+                        "description": "Bu özellik, Güç planı ve Güç kullanımı ayarlarını geçersiz kılacaktır.",
+                        "powerButton": {
+                            "label": "AÇMA/KAPAMA DÜĞMESİ:",
+                            "items": {
+                                "doNothing": "Hiçbir şey yapma",
+                                "sleep": "Uyku",
+                                "hibernate": "Hazırda bekleme kipine geç",
+                                "shutDown": "Kapat",
+                                "turnOffTheDisplay": "Görüntü birimini kapat"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "OTURUM AÇMA GEREKLİ:",
+                            "items": {
+                                "never": "Hiçbir zaman",
+                                "fromSleep": "PC uyku kipinden çağrıldığında"
+                            },
+                            "tip": "Not: Bu yalnızca sistem parolası belirlenmişse geçerlidir."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "Güç kullanımı",
+                        "description": "SİSTEM BOŞTAYSA:",
+                        "turnOffDisplay": "EKRAN KAPATMAK İÇİN BEKLENECEK SÜRE:",
+                        "turnOffHDD": "HDD'Yİ KAPATMAK İÇİN BEKLENECEK SÜRE:",
+                        "sleep": "UYKU KİPİNE GEÇMEK İÇİN BEKLENECEK SÜRE:",
+                        "hibernate": "HAZIRDA BEKLEME KİPİNE GEÇMEK İÇİN BEKLENECEK SÜRE:",
+                        "items": {
+                            "never": "Hiçbir zaman",
+                            "minute": "dakika",
+                            "minutes": "dakika",
+                            "hour": "saat",
+                            "hours": "saat"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "Güç planı",
+                        "description": "Bilgisayar performansını, sistem sıcaklığını ve güç kullanımını denetlemek için bir güç planı seçin.",
+                        "currentPowerPlan": {
+                            "label": "GEÇERLİ PLAN"
+                        }
+                    }
                 },
                 "smartStandby": {
                     "title": "Akıllı Bekleme",
@@ -1521,8 +1716,11 @@
                         "options": {
                             "option1": "Lütfen seçin:",
                             "option2": "Web sitesini aç",
-                            "option3": "Metin gir"
-                        }
+                            "option3": "Metin gir",
+                            "option4": "Open applications or files",
+                            "option5": "Invoke key sequence"
+                        },
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function."
                     },
                     "tooltip": "Doldurulacak içerik",
                     "apply": {
@@ -1537,6 +1735,17 @@
                     "enterText": {
                         "title": "GİRİLECEK METİN",
                         "placeholder": "Lütfen buraya yazın"
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles": {
+                        "applicationTitle": "You need to delete one app first",
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {
@@ -1772,7 +1981,7 @@
                 "heading": "Akıllı Medya",
                 "title": "Sıfır Dokunma ile Video Oynatma",
                 "desc": "Bu özellik, bilgisayarın başından ayrıldığınızda videoyu duraklatır ve geri döndüğünüzde videoyu oynatmaya devam eder.",
-                "tooltip": "Bu özellik, Web üzerindeki video oynatıcılar için geçerli değildir. Windows Media Player ya da 5KPlayer gibi popüler yerel video oynatıcılar bu özelliği destekler."
+                "tooltip": "Bu özellik, Web üzerindeki<br>video oynatıcılar için geçerli değildir.<br>Şu oynatıcılar desteklenmektedir:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
             },
             "superResolution": {
                 "heading": "Akıllı Medya",
@@ -1810,7 +2019,8 @@
                     "point7": "İstediğiniz kaynak dili ve hedef dili seçin.",
                     "point8": "Gereksinimlerinize bağlı olarak ses girişini Hoparlör veya Mikrofon olacak şekilde ayarlayın.",
                     "point9": "Konuşmaya başlamak için mikrofon simgesine tıklayın",
-                    "closeText": "kapat"
+                    "closeText": "kapat",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "tamam",
@@ -1856,7 +2066,7 @@
             },
             "recommended": {
                 "title": "Önerilen Güncellemeler",
-                "tooltip": "Önerilen sürücü güncellemeleri"
+                "tooltip": "Önerilen sürücü güncellemeleri bilgisayarınızın en iyi performansla çalışmasını sağlar."
             },
             "windows": {
                 "title": "Windows Güncellemeleri",

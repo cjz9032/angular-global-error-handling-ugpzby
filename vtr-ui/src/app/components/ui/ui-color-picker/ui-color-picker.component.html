@@ -1,0 +1,27 @@
+<div class="ui-color-picker">
+   <div class="preset-color" *ngIf="isTogglePresetColor" (click)="colorPresetFun();$event.stopPropagation();">
+      <ul>
+         <li *ngFor="let item of presetColorList;let i = index;"  [ngStyle]="{'background':'#'+item.color}" [ngClass]="{'checked': item.isChecked}" (click)="colorChange(i)">
+            <span></span>
+         </li>
+      </ul>
+      <div class="more-color">
+         <button class="under-line-button" (click)="moreColorFun();$event.stopPropagation();">{{'gaming.lightingNewversion.colorPicker.text2' | translate}}</button>
+      </div>
+   </div>
+   <div *ngIf="isToggleMoreColor">
+      <div class="inp-color-picker">
+         <input type="button" class="color-inp" [(colorPicker)]="'#'+color" [style.background]="'#'+color" [cpWidth]="350" 
+         [cpAlphaChannel]="'disabled'" [cpDialogDisplay]="'inline'" [cpToggle]="isToggleMoreColor" [cpOutputFormat]="'rgba'"
+         [cpOKButton]="true" [cpOKButtonText]="'gaming.lightingProfile.colourwheel.text2.title' | translate" [cpOKButtonClass]="'btn btn-apply'" 
+         [cpCancelButton]="true" [cpCancelButtonText]="'gaming.dashboard.device.legionEdge.lightingDriverPopup.link' | translate" [cpCancelButtonClass]="'btn btn-cancel'" 
+         (colorPickerSelect)="colorPickerSelectFun()" (colorPickerCancel)="colorPickerCancelFun()" (colorPickerChange)="colorPickerChangeFun($event)"
+         (cpSliderDragEnd) = "cpSliderDragEndFun($event)" >
+      </div>
+      <div class="color-name">
+         <span>{{'gaming.lightingNewversion.colorPicker.text3' | translate}}</span>
+         <span>{{'gaming.lightingNewversion.colorPicker.text4' | translate}}</span>
+         <span>{{'gaming.lightingNewversion.colorPicker.text5' | translate}}</span>
+      </div>
+   </div>
+</div>

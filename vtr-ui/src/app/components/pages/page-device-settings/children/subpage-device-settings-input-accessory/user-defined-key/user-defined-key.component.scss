@@ -219,3 +219,75 @@ div {
 .dropdown-toggle {
 	white-space: normal !important;
 }
+.title {
+	font-size: $fontsize_xs;
+	font-weight: $weight_bold;
+	color: $grey_dark;
+	text-transform: uppercase;
+	background: none;
+	border: none;
+
+	&.add {
+		color: $menu_hover;
+		text-align: right;
+		text-decoration: underline;
+		&:hover {
+			text-decoration: underline;
+			color: $menu_hover;
+		}
+		&:disabled {
+			color: $gray_out;
+			.disabled-tooltip{
+				display: block;
+			}
+
+		}
+	}
+	&:hover, &:focus {
+		outline: none;
+	}
+}
+
+.open-apps-block {
+	background: $grey_lighter;
+	border: 0.1rem solid $note_border;
+	width: 100%;
+	text-align: center;
+	fa-icon {
+		color: $menu_hover;
+		font-size: $fontsize_xl2;
+	}
+	.apps-list {
+		border-bottom: 0.1rem solid $gray;
+		&:last-child {
+			border-bottom: none;
+		}
+		.app-name {
+			font-size: $fontsize_xs;
+			font-weight: $weight_light;
+			color: $shade_blue;
+			letter-spacing: 0;
+			&.delete-app {
+				text-decoration: underline;
+				color: $menu_hover;
+			}
+		}
+	}
+}
+
+.txt-ara-box {
+	display: flex;
+	justify-content: space-between;
+textarea {
+	width: 75%;
+}
+.del-btn {
+text-align: right;
+margin-top: 1rem;
+a{
+	color: #4A81FD;
+	font-size: 1.4rem;
+	text-decoration: underline;
+}
+}
+}

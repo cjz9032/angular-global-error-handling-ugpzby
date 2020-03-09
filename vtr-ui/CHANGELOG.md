@@ -2,6 +2,274 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.25](https://bitbucket.tc.lenovo.com///compare/v1.3.24...v1.3.25) (2020-03-05)
+
+### [1.3.24](https://bitbucket.tc.lenovo.com///compare/v1.3.23...v1.3.24) (2020-03-05)
+
+### [1.3.23](https://bitbucket.tc.lenovo.com///compare/v1.3.22...v1.3.23) (2020-03-05)
+
+### [1.3.22](https://bitbucket.tc.lenovo.com///compare/v1.3.21...v1.3.22) (2020-03-05)
+
+### [1.3.21](https://bitbucket.tc.lenovo.com///compare/v1.3.20...v1.3.21) (2020-03-04)
+
+### [1.3.20](https://bitbucket.tc.lenovo.com///compare/v1.3.19...v1.3.20) (2020-03-04)
+
+### [1.3.19](https://bitbucket.tc.lenovo.com///compare/v1.3.18...v1.3.19) (2020-03-03)
+
+### [1.3.18](https://bitbucket.tc.lenovo.com///compare/v1.3.17...v1.3.18) (2020-03-03)
+
+### [1.3.17](https://bitbucket.tc.lenovo.com///compare/v1.3.16...v1.3.17) (2020-03-02)
+
+### [1.3.16](https://bitbucket.tc.lenovo.com///compare/v1.3.15...v1.3.16) (2020-02-28)
+
+### [1.3.15](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.3.14...v1.3.15) (2020-02-28)
+
+
+### Bug Fixes
+
+* **header:** can only go back to non-shell-provided pages ([e82f26c](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/e82f26cea1054e5a2bcfa189a70274ddae683c27))
+
+### [1.3.14](https://bitbucket.tc.lenovo.com///compare/v1.3.13...v1.3.14) (2020-02-27)
+
+### [1.3.13](https://bitbucket.tc.lenovo.com///compare/v1.3.12...v1.3.13) (2020-02-26)
+
+### [1.3.12](https://bitbucket.tc.lenovo.com///compare/v1.3.11...v1.3.12) (2020-02-26)
+
+
+### Bug Fixes
+
+* **FontAwesome:** migrated to v5 and refactor the necessary ([d75063b](https://bitbucket.tc.lenovo.com///commit/d75063bfb89a13c1970316bf5978267565a145b8))
+
+## [1.3.11](https://bitbucket.tc.lenovo.com/scm/tan/tan-client-experience/compare/v1.3.10...v1.3.11) (2020-02-25)
+
+
+### Bug Fixes
+
+* **overall:** fix tslint error in smart performance module file ([c5be239](https://bitbucket.tc.lenovo.com/scm/tan/tan-client-experience/commits/c5be239))
+* **overall:** update deps for ng9 and refactor the necessary ([ef87de8](https://bitbucket.tc.lenovo.com/scm/tan/tan-client-experience/commits/ef87de8))
+
+
+
+## [1.3.10](https://bitbucket.tc.lenovo.com///compare/v1.3.9...v1.3.10) (2020-02-25)
+
+### [1.3.9](https://bitbucket.tc.lenovo.com///compare/v1.3.8...v1.3.9) (2020-02-25)
+
+
+### Bug Fixes
+
+* **nls:** merge test to develop ([60ed425](https://bitbucket.tc.lenovo.com///commit/60ed4250dcbd86606dc8baf968818825efbc2896))
+
+### [1.3.7](https://bitbucket.tc.lenovo.com///compare/v1.3.6...v1.3.7) (2020-02-24)
+
+### [1.3.8](https://bitbucket.tc.lenovo.com///compare/v1.3.6...v1.3.8) (2020-02-24)
+
+
+### Bug Fixes
+
+* **nls:** add missing line for legion edge modal - line 12 ([28e4949](https://bitbucket.tc.lenovo.com///commit/28e4949f0d08c76c22620c606e8209a9d65aaee2))
+
+### [1.3.7](https://bitbucket.tc.lenovo.com///compare/v1.3.6...v1.3.7) (2020-02-24)
+
+
+### Bug Fixes
+
+* **nls:** add missing line for legion edge modal - line 12 ([28e4949](https://bitbucket.tc.lenovo.com///commit/28e4949f0d08c76c22620c606e8209a9d65aaee2))
+
+### [1.3.6](https://bitbucket.tc.lenovo.com///compare/v1.3.5...v1.3.6) (2020-02-24)
+
+### [1.3.5](https://bitbucket.tc.lenovo.com///compare/v1.3.4...v1.3.5) (2020-02-24)
+
+
+### Features
+
+* **gaming:** correct more merging error ([90001bc](https://bitbucket.tc.lenovo.com///commit/90001bc45dc3eddc40940591e7b07016dcf8c748))
+* **gaming:** more correction ([ac78b51](https://bitbucket.tc.lenovo.com///commit/ac78b51ecad57e921d4ff3a71c39109d74c61579))
+* **gaming:** recover 3.2.0.1 code ([4882c98](https://bitbucket.tc.lenovo.com///commit/4882c98d4158d60523c7c40d6312719fcc4c515f))
+
+### [1.3.4](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.3.3...v1.3.4) (2020-02-22)
+
+
+### Features
+
+* **overall:** merge release/vantage3.2-stage1 to develop ([d3eafbc](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/d3eafbc3af30ab80c2968588772288a1a0f4a894))
+
+### [1.3.3](https://bitbucket.tc.lenovo.com///compare/v1.2.86...v1.3.3) (2020-02-21)
+
+
+### Features
+
+* **VAN-14642:** backlight multi levels move back ([c91afff](https://bitbucket.tc.lenovo.com///commit/c91afff0428334311366fc103c0a34092fd23530))
+
+### [1.3.2](https://bitbucket.tc.lenovo.com///compare/v1.2.86...v1.3.2) (2020-02-20)
+
+### Features
+
+* **VAN-14642:** backlight multi levels move back ([c91afff](https://bitbucket.tc.lenovo.com///commit/c91afff0428334311366fc103c0a34092fd23530))
+
+### [1.2.98](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.2.97...v1.2.98) (2020-02-21)
+
+### [1.2.97](https://bitbucket.tc.lenovo.com///compare/v1.2.96...v1.2.97) (2020-02-20)
+
+### Features
+
+* **privacy:** remove privacy code ([417a999](https://bitbucket.tc.lenovo.com///commit/417a999c3f4165398b541452ef2b9b0851eaebf9))
+
+### [1.2.96](https://bitbucket.tc.lenovo.com///compare/v1.2.95...v1.2.96) (2020-02-20)
+
+## [1.2.95](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.2.94...v1.2.95) (2020-02-19)
+
+
+
+## [1.2.94](https://bitbucket.tc.lenovo.com///compare/v1.2.93...v1.2.94) (2020-02-19)
+
+### [1.2.93](https://bitbucket.tc.lenovo.com///compare/v1.2.92...v1.2.93) (2020-02-19)
+
+
+### Bug Fixes
+
+* **smart assist:** disable smart assist IMC calls ([4ec8a67](https://bitbucket.tc.lenovo.com///commit/4ec8a6711f7d5d3bd6328ca53a3e33d313c42a1f))
+
+### [1.2.92](https://bitbucket.tc.lenovo.com///compare/v1.2.91...v1.2.92) (2020-02-18)
+
+
+### Bug Fixes
+
+* **menu:** wait smart assist filter if machineType cached ([153bcdc](https://bitbucket.tc.lenovo.com///commit/153bcdcac7890fe523bbfa760244d199e8b50b49))
+
+### [1.2.91](https://bitbucket.tc.lenovo.com///compare/v1.2.90...v1.2.91) (2020-02-18)
+
+### [1.2.90](https://bitbucket.tc.lenovo.com///compare/v1.2.89...v1.2.90) (2020-02-18)
+
+### [1.2.89](https://bitbucket.tc.lenovo.com///compare/v1.2.87...v1.2.89) (2020-02-17)
+
+## [1.2.88](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.2.87...v1.2.88) (2020-02-14)
+
+
+
+## [1.2.87](https://bitbucket.tc.lenovo.com/scm/tan/tan-client-experience/compare/v1.2.86...v1.2.87) (2020-02-14)
+
+
+
+## [1.2.86](https://bitbucket.tc.lenovo.com/scm/tan/tan-client-experience/compare/v1.2.85...v1.2.86) (2020-02-13)
+
+
+
+## [1.2.85](https://bitbucket.tc.lenovo.com/scm/tan/tan-client-experience/compare/v1.2.84...v1.2.85) (2020-02-12)
+
+
+
+## [1.2.84](https://bitbucket.tc.lenovo.com/scm/tan/tan-client-experience/compare/v1.2.81...v1.2.84) (2020-02-12)
+
+
+
+## [1.2.81](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.80...v1.2.81) (2020-02-11)
+
+
+
+## [1.2.80](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.79...v1.2.80) (2020-02-11)
+
+
+
+## [1.2.79](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.78...v1.2.79) (2020-02-10)
+
+
+
+## [1.2.78](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.77...v1.2.78) (2020-02-07)
+
+
+
+## [1.2.77](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.76...v1.2.77) (2020-02-06)
+
+
+
+## [1.2.76](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.75...v1.2.76) (2020-02-06)
+
+
+
+## [1.2.75](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.74...v1.2.75) (2020-02-05)
+
+
+
+## [1.2.74](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.73...v1.2.74) (2020-02-05)
+
+
+
+## [1.2.73](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.72...v1.2.73) (2020-02-04)
+
+
+
+## [1.2.72](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.71...v1.2.72) (2020-02-03)
+
+
+
+## [1.2.71](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.70...v1.2.71) (2020-02-03)
+
+
+
+## [1.2.70](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.69...v1.2.70) (2020-02-03)
+
+
+
+## [1.2.69](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.68...v1.2.69) (2020-01-31)
+
+
+
+## [1.2.68](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.67...v1.2.68) (2020-01-31)
+
+
+
+## [1.2.67](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.66...v1.2.67) (2020-01-29)
+
+
+
+## [1.2.66](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.65...v1.2.66) (2020-01-28)
+
+
+
+## [1.2.65](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.64...v1.2.65) (2020-01-27)
+
+
+
+## [1.2.64](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.63...v1.2.64) (2020-01-24)
+
+
+
+## [1.2.63](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.62...v1.2.63) (2020-01-23)
+
+
+
+## [1.2.62](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.61...v1.2.62) (2020-01-22)
+
+
+### Bug Fixes
+
+* **wifi security:** add mb-40 to the content card ([fa6001e](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/fa6001e))
+* **wifi security:** the on/off no longer affected by first usage ([6a55915](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/6a55915))
+
+
+
+## [1.2.61](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.60...v1.2.61) (2020-01-21)
+
+
+
+## [1.2.60](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.59...v1.2.60) (2020-01-21)
+
+
+### Features
+
+* **VAN-10543:** update remove eye care mode ([b507c6a](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/b507c6a))
+* **VAN-10543:** update remove eye care mode ([0c03a81](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/0c03a81))
+
+
+
+## [1.2.59](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.58...v1.2.59) (2020-01-20)
+
+
+
+## [1.2.58](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.57...v1.2.58) (2020-01-20)
+
+
+
 ## [1.2.57](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.56...v1.2.57) (2020-01-17)
 
 

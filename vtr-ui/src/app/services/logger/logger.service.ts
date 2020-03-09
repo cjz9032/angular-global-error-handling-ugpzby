@@ -36,40 +36,34 @@ export class LoggerService {
 	public debug(message: string, data: any = {}): void {
 		if (this.isShellAvailable) {
 			this.logger.debug(this.getMessage(message, data));
+		} else {
+			console.debug(this.getMessage(message, data));
 		}
-		if (environment.allowMockService) {}
 	}
 
 	//
 	public error(message: string, data: any = {}): void {
 		if (this.isShellAvailable) {
 			this.logger.error(this.getMessage(message, data));
+		} else {
+			console.error(this.getMessage(message, data));
 		}
-		if (environment.allowMockService) {}
 	}
 
 	public info(message: string, data: any = {}): void {
 		if (this.isShellAvailable) {
 			this.logger.info(this.getMessage(message, data));
+		} else {
+			console.info(this.getMessage(message, data));
 		}
-		if (environment.allowMockService) {}
 	}
 
 	public exception(message: string, error: Error): void {
 		const errorMessage = JSON.stringify({ message: error.message, stackTrace: error.stack });
 		if (this.isShellAvailable) {
 			this.logger.error(this.getMessage(message, errorMessage));
+		} else {
+			console.error(this.getMessage(message, errorMessage));
 		}
-		if (environment.allowMockService) {}
 	}
-
-	/**
-	 * add console log with ISO date time stamp
-	 * @param message message to log
-	 * @param param any param
-	 */
-	// public logDate(message: string, ...param) {
-	// 	const date = new Date();
-	// 	console.log(`${date.toISOString()} | ${message}`, param);
-	// }
 }

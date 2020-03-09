@@ -6,8 +6,8 @@
 				vtrMetrics
 				metricsItem="SmartStandbyModalCloseButton"
 				metricsEvent="featureClick"
-				metricsParent="Device.deviceSettings"				
-				id="modal_smartStandby_close"
+				metricsParent="Device.deviceSettings"
+				id="modal-smartStandby-close"
 				class="close"
 				tabindex="1"
 				aria-hidden="true"
@@ -21,7 +21,7 @@
 	<div class="row">
 		<div class="col-12">
 			<div class="pl-2">
-				<div class="tittle">{{items[0].tittle | translate}}</div>
+				<div class="tittle" role="link" id="usage-computer" attr.aria-label="usage-computer">{{items[0].tittle | translate}}</div>
 				<div class="sub-tittle">{{items[0].subTittle | translate}}</div>
 			</div>
 			<div #chartContainer1
@@ -57,8 +57,8 @@
 		</div>
 		<div class="col-12">
 			<div class="pl-2">
-				<div class="tittle">{{items[1].tittle | translate}}</div>
-				<div class="sub-tittle">{{items[1].subTittle | translate}}</div>
+				<div class="tittle" role="link" id="smart-standby-active-time" attr.aria-label="smart-standby-active-time">{{items[1].tittle | translate}}</div>
+				<div class="sub-tittle" role="link" id="smart-standby-active-time-subtitle"  attr.aria-label="smart-standby-active-time-subtitle">{{items[1].subTittle | translate}}</div>
 			</div>
 			<div #chartContainer2
 				[id]="'chartContainer-2'"
@@ -76,9 +76,9 @@
 				vtrMetrics
 				metricsItem="SmartStandbyModalCloseButton"
 				metricsEvent="featureClick"
-				metricsParent="Device.deviceSettings"				
-				id="modal_smartStandby_close"
-				attr.aria-label="smart-standby-close"
+				metricsParent="Device.deviceSettings"
+				id="smart-standby-close-button"
+				attr.aria-label="smart-standby-close-button"
 				tabindex="1"
 				class="btn close-button"
 				(click)="closeModal()"

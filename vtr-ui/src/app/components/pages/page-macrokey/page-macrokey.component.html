@@ -25,26 +25,20 @@
 		<div class="container-fluid">
 		<div class="row">
 				<div class="col col-12 px-0 pt-0 pb-40">
-					<vtr-container-card [ngClass]="{'cursor-default': isOnline == false}"  order="1" [itemID]="cardContentPositionC.id"
-						[img]="cardContentPositionC.FeatureImage" [title]="cardContentPositionC.Title"
-						[logoText]="cardContentPositionC.BrandName" [action]="cardContentPositionC.Action"
-						[dataSource]="cardContentPositionC.DataSource" [actionType]="cardContentPositionC.ActionType"
-						[actionLink]="cardContentPositionC.ActionLink" [type]="'subpage-article'" [ratio]="1"
+					<vtr-container-card [ngClass]="{'cursor-default': isOnline == false}" order="1"
+						[item]="cardContentPositionC" [type]="'subpage-article'" [ratio]="1"
 						id="macro_key_crm_card_A" aria-label="macro_key_crm_card_A" [cardId]="'macro_key_crm_card'" vtrMetrics
-						metricsEvent="FeatureClick"
-						metricsItem="{{cardContentPositionC.Title}}">
+						metricsEvent="ArticleClick"
+						metricsItem="gaming_macrokey_containerCard_positionC" ItemCategory="corner-article">
 					</vtr-container-card>
 				</div>
 				<div class="col col-12 px-0 pt-0 pb-40">
-					<vtr-container-card [ngClass]="{'cursor-default': isOnline == false}"  order="2" [itemID]="cardContentPositionF.Id"
-						[img]="cardContentPositionF.FeatureImage" [caption]="cardContentPositionF.Description"
-						[title]="cardContentPositionF.Title" [logoText]="cardContentPositionF.BrandName"
-						[action]="cardContentPositionF.Action" [dataSource]="cardContentPositionF.DataSource"
-						[actionType]="cardContentPositionF.ActionType" [actionLink]="cardContentPositionF.ActionLink"
+					<vtr-container-card [ngClass]="{'cursor-default': isOnline == false}" order="2"
+						[item]="cardContentPositionF"
 						[type]="'subpage-corner'" [ratio]="2" [cornerShift]="'large'"
 						id="macro_key_crm_card_B" aria-label="macro_key_crm_card_B" [cardId]="'macro_key_crm_card'" vtrMetrics
-						metricsEvent="FeatureClick"
-						metricsItem="{{cardContentPositionF.Title}}">
+						metricsEvent="ArticleClick"
+						metricsItem="gaming_macrokey_containerCard_positionF" ItemCategory="corner-article">
 					</vtr-container-card>
 				</div>
 			</div>

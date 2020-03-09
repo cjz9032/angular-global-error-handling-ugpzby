@@ -22,6 +22,7 @@
 				[ngClass]="{'no-link': !model.link}"
 				(click)="linkClicked($event, model.linkType, model.link)">
 				<div class="image img-fluid"
+						[class.overlay-dark]="model.overlayThemeDark"
 						[style.backgroundImage]="'url(' + model.image + ')'"
 						[style.height.px]="carouselContainer.clientWidth * 340 / 944"></div>
 				<div class="carousel-caption">

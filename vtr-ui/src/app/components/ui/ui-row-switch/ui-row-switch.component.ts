@@ -13,6 +13,7 @@ import { BaseComponent } from '../../base/base.component';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { TranslateService } from '@ngx-translate/core';
 import { ModalVoiceComponent } from '../../modal/modal-voice/modal-voice.component';
+import {DomSanitizer} from '@angular/platform-browser';
 
 
 @Component({
@@ -66,7 +67,11 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit {
 	// private tooltip: NgbTooltip;
 
 	constructor(
-		public modalService: NgbModal, private deviceService: DeviceService, private translate: TranslateService,
+		public modalService: NgbModal, 
+		private deviceService: DeviceService, 
+		private translate: TranslateService,
+		protected html_sanitizer:DomSanitizer,
+		private ngZone: NgZone
 	) { super(); }
 
 
@@ -157,7 +162,28 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit {
 	public onRightIconClick($event) {
 		this.tooltipClick.emit($event);
 	}
+    htmlSanitizer(html_content){
+		return this.html_sanitizer.bypassSecurityTrustHtml(html_content);
+	}
+	checkToolTips() {
+		// console.log('==THROTTLE');
+		const subscription = this.scrollEvent.asObservable().pipe(throttleTime(100)).subscribe(event => {
+			this.toggleToolTip(this.rightToolTip1);
+			this.toggleToolTip(this.rightToolTip2);
+			this.toggleToolTip(this.rightToolTip3);
+		});
+		this.subscriptionList.push(subscription);
+	}
 
+	public toggleToolTip(tooltip, canOpen = false) {
+		if (tooltip) {
+			if (tooltip.isOpen()) {
+				tooltip.close();
+			} else if (canOpen) {
+				tooltip.open();
+			}
+		}
+	}
 	public onResetClick($event: Event) {
 		this.resetClick.emit($event);
 	}

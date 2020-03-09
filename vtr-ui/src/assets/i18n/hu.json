@@ -22,6 +22,12 @@
                     "rapidCharge": "Gyorstöltés"
                 },
                 "legionEdge": {
+                    "thermalMode2": {
+                        "OC_On": "Túlpörgetés",
+                        "performance": "Teljesítmény",
+                        "balance": "Egyensúly",
+                        "quiet": "Csendes"
+                    },
                     "title": "CPU-túlpörgetés",
                     "status": {
                         "alwayson": "Be",
@@ -97,6 +103,96 @@
                 },
                 "quickSettingstitle": {
                     "title": "Gyorsbeállítások"
+                },
+                "thermalMode2Popup": {
+                    "thermalMode2SettingTitle": "Termál mód beállítása",
+                    "thermalMode2SettingDesc": "Válassza ki a használni kívánt módot.",
+                    "fnQDesc": "Másik módra az Fn+Q paranccsal válthat.",
+                    "perormanceTitle": "Teljesítményközpontú mód",
+                    "performanceDesc": "Számítógépe teljesítményének növelése nagyobb ventilátorsebességgel és energiafogyasztással. ",
+                    "OCDesc": "Úgy is dönthet, hogy bekapcsolja a Túlpörgetés funkciót.",
+                    "ac_dcDesc": "A Teljesítmény mód csak akkor alkalmazható, ha a hálózati adapter csatlakoztatva van.",
+                    "balanceTitle": "Kiegyensúlyozott mód",
+                    "balanceDesc": "Automatikusan kiegyenlíti a teljesítményt és a ventilátor sebességét a hőmérséklet alapján, közepes energiafogyasztás mellett.",
+                    "quietTitle": "Csendes mód",
+                    "quietDesc": "A készülék csendes marad a számítógép teljesítményének és a ventilátor sebességének csökkentésével, ahol csak lehet, alacsony energiafogyasztás mellett.",
+                    "OC": {
+                        "cpu_gpuOC": "CPU/GPU-túlpörgetés funkció engedélyezése Teljesítmény módban.",
+                        "cpuOC": "CPU-túlpörgetés funkció engedélyezése Teljesítmény módban.",
+                        "gpuOC": "GPU-túlpörgetés funkció engedélyezése Teljesítmény módban.",
+                        "advance": "KOMPLEX",
+                        "cpu_gpuDriverLack": "CPU/GPU-illesztőprogramok telepítése a Túlpörgetés funkcióhoz.",
+                        "cpuDriverLack": "CPU-illesztőprogram telepítése a Túlpörgetés funkcióhoz.",
+                        "gpuDriverLack": "GPU-illesztőprogram telepítése a Túlpörgetés funkcióhoz.",
+                        "goInstall": "TELEPÍTÉS"
+                    },
+                    "autoSwitch": "Automatikus váltás Teljesítmény módra játék indításakor, majd visszaváltás a játékból való kilépést követően."
+                },
+                "advancedOC": {
+                    "title": "Túlpörgetés Spec. beáll.",
+                    "description": "Spec. egyéni paraméterek beáll., ha a Túlpörgetés be van kapcsolva. Ez kockázatos lehet.",
+                    "gpuOverclock": "GPU-túlpörgetés",
+                    "cpuOCNames": {
+                        "cpuOCName2": "Magfeszültség",
+                        "cpuOCName116": "1 magos arány",
+                        "cpuOCName117": "2 magos arány",
+                        "cpuOCName118": "3 magos arány",
+                        "cpuOCName119": "4 magos arány",
+                        "cpuOCName34": "Magfeszültség eltolása",
+                        "cpuOCName120": "5 magos arány",
+                        "cpuOCName121": "6 magos arány",
+                        "cpuOCName76": "Gyorsítótár aránya",
+                        "cpuOCName77": "Gyorsítótár feszültsége",
+                        "cpuOCName79": "Gyorsítótár feszültségének eltolása",
+                        "cpuOCName122": "7 magos arány",
+                        "cpuOCName123": "8 magos arány",
+                        "cpuOCName102": "ICCMAX mag",
+                        "cpuOCName106": "ICCMAX gyorsítótár",
+                        "cpuOCName114": "AVX arány eltolása"
+                    },
+                    "cpuOCTips": {
+                        "cpuOCTip2": "Állítsa be a CPU mag feszültségét.",
+                        "cpuOCTip116": "Állítsa be a maximális magszorzó értékét, amelyen a magok működőképesek. A magfrekvencia értéke ennek az aránynak és a referencia órajel frekvenciának a szorzata.",
+                        "cpuOCTip117": "Állítsa be a maximális magszorzó értékét, amelyen a magok működőképesek. A magfrekvencia értéke ennek az aránynak és a referencia órajel frekvenciának a szorzata.",
+                        "cpuOCTip118": "Állítsa be a maximális magszorzó értékét, amelyen a magok működőképesek. A magfrekvencia értéke ennek az aránynak és a referencia órajel frekvenciának a szorzata.",
+                        "cpuOCTip119": "Állítsa be a maximális magszorzó értékét, amelyen a magok működőképesek. A magfrekvencia értéke ennek az aránynak és a referencia órajel frekvenciának a szorzata.",
+                        "cpuOCTip34": "Feszültségtolás a jelenlegi magfeszültség értékéből.",
+                        "cpuOCTip120": "Állítsa be a maximális magszorzó értékét, amelyen a magok működőképesek. A magfrekvencia értéke ennek az aránynak és a referencia órajel frekvenciának a szorzata.",
+                        "cpuOCTip121": "Állítsa be a maximális magszorzó értékét, amelyen a magok működőképesek. A magfrekvencia értéke ennek az aránynak és a referencia órajel frekvenciának a szorzata.",
+                        "cpuOCTip76": "Állítsa be a processzor gyorsítótárának maximális szorzóját, amelyen a gyorsítótárak működhetnek. A gyorsítótár-frekvencia értéke ennek az aránynak és a referencia órajel frekvenciának a szorzata.",
+                        "cpuOCTip77": "A processzor belső gyorsítótár felületét ellátó feszültség az aktuálisan kiválasztott gyorsítótár feszültségének üzemmódjától függ.",
+                        "cpuOCTip79": "A végleges feszültségtolás, amelyet a gyorsítótár feszültségére alkalmaznak.",
+                        "cpuOCTip122": "Állítsa be a maximális magszorzó értékét, amelyen a magok működőképesek. A magfrekvencia értéke ennek az aránynak és a referencia órajel frekvenciának a szorzata.",
+                        "cpuOCTip123": "Állítsa be a maximális magszorzó értékét, amelyen a magok működőképesek. A magfrekvencia értéke ennek az aránynak és a referencia órajel frekvenciának a szorzata.",
+                        "cpuOCTip102": "Állítsa be az ICCMAX-ot a processzor magfeszültség-szabályozójához.",
+                        "cpuOCTip106": "Állítsa be az ICCMAX-ot a processzor gyorsítótárának és gyűrűs buszának feszültségszabályozójához.",
+                        "cpuOCTip114": "Az effektív aktív magarány korlátjának meghatározásához az AVX aktív állapotában vonja le ezt az értéket a megfelelő aktív magarány korlátjából."
+                    },
+                    "gpuOCNames": {
+                        "gpuOCName0": "GPU órajel eltolása",
+                        "gpuOCName1": "VRAM órajel eltolása"
+                    },
+                    "gpuOCTips": {
+                        "gpuOCTip0": "Eltolás hozzáadása a GPU órajel frekvenciájához.",
+                        "gpuOCTip1": "Eltolás hozzáadása a memória órajel frekvenciájához."
+                    }
+                },
+                "savePromptPopup": {
+                    "title": "Módosítások mentése?",
+                    "description1": "A Túlpörgetés helytelen beállítása végleg károsíthatja a hardvert. Probléma esetén tegye a következők valamelyikét: ",
+                    "description2": "•  A főkapcsoló 8 mp-ig való lenyomása után visszaállnak a paraméterek.",
+                    "description3": "•  A BIOS-ban („Alapért. túlpörgetés visszaáll.”) állítja vissza őket.",
+                    "save": "MENTÉS",
+                    "notSave": "NE MENTSE"
+                },
+                "defaultPromptPopup": {
+                    "title": "Alapértelmezett?",
+                    "description": "Az összes jelenlegi és korábbi módosítás elveszik."
+                },
+                "warningPromptPopup": {
+                    "title": "Figyelmeztetés!",
+                    "description": "A Túlpörgetés helytelen beállítása visszafordíthatatlan hardverkárosodást okozhat.",
+                    "proceed": "FOLYTATÁS"
                 }
             }
         },
@@ -598,6 +694,42 @@
                     "close": "close"
                 }
             }
+        },
+        "lightingNewversion": {
+            "machineName": {
+                "name1": "Legion Icon Lighting (Front)",
+                "name2": "Internal Ambient Lighting",
+                "name3": "Legion Rear Fan Lighting",
+                "name4": "Legion CPU Fan Lighting",
+                "name5": "Legion Liquid Cooling Pump Lighting",
+                "name6": "Legion Liquid Cooling Fan Lighting",
+                "name7": "Legion Icon (Front)",
+                "name9": "Ambient  Lighting"
+            },
+            "lightingEffect": {
+                "effectName1": "Statikus",
+                "effectName2": "Színkép",
+                "effectName3": "Szivárvány",
+                "effectName4": "Véletlen",
+                "effectName5": "Hideg_kék",
+                "effectName6": "Hullám_jobb",
+                "effectName7": "Hullám_bal"
+            },
+            "lightingSpeed": {
+                "title": "Sebesség"
+            },
+            "colorPicker": {
+                "text2": "TOVÁBBIAK",
+                "text3": "P",
+                "text4": "Z",
+                "text5": "K",
+                "text6": "Területfelosztás (Ki): színek módos. kattintson a lenti bill.képre",
+                "text7": "Ter.feloszt. (Be): szakaszszín mód. katt. a bill.kép szakaszaira",
+                "text8": "A jelenlegi hatás nem támogatja a színválasztást"
+            },
+            "tipText": {
+                "title1": "Az Fn+szóköz segítségével válthat a profilok között"
+            }
         }
     },
     "common": {
@@ -667,7 +799,9 @@
             "loading": "Betöltés...",
             "from": "ettől",
             "to": "sort",
-            "clickToChange": "a módosításhoz kattintson ide"
+            "clickToChange": "a módosításhoz kattintson ide",
+            "failedLoad": "A betöltés sikertelen volt.",
+            "retry": "Újrapróbálkozás"
         },
         "app-update": {
             "message": "Szia! Megjelent a Vantage legújabb verziója, szeretnéd letölteni?"
@@ -738,11 +872,18 @@
                 "submitScreenShot": "Képernyőkép küldése",
                 "messages": {
                     "feedbackSuccess": "Köszönjük a visszajelzését."
-                }
+                },
+                "question6": "Mennyire valószínű, hogy ajánlaná a Lenovo Vantage alkalmazást egy ismerősének vagy munkatársának?",
+                "question7": "Tudta, hogy a Lenovo Vantage segítségével naprakészen tarthatja a számítógép szoftvereit (illesztőprogramjait, firmware-jét és BIOS-át)?",
+                "question8": "Használta már a Lenovo Vantage alkalmazást a számítógépével kapcsolatos támogatási információk eléréséhez?",
+                "tips2": "Ha van további megjegyzése, írja le alább.",
+                "emailAddressLabel": "Ha szeretné, hogy a Lenovo Vantage csapata felvehesse Önnel a kapcsolatot, adja meg az e-mail-címét.",
+                "emailAddress": "E-mail-cím",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "Saját gyorsbeállítások",
+            "title": "Gyorsbeállítások",
             "microphone": "Mikrofon",
             "cameraPrivacy": "Kamera",
             "eyeCareMode": "Szemvédő",
@@ -787,6 +928,10 @@
                     "update": "Frissítés"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Illesztőprogramok, a BIOS és más szoftverek frissítése.",
+            "checkForSystemUpdates": "Rendszerfrissítések keresése"
         }
     },
     "device": {
@@ -897,14 +1042,15 @@
                         "title": "Gyártó",
                         "celxpert": "Celxpert",
                         "smp": "SMP"
-                    }
+                    },
+                    "fccTooltipText": "Az akkumulátor élettartamának meghosszabbítása érdekében optimalizáltuk az akkumulátor teljes töltési kapacitását a használati séma alapján. Előfordulhat, hogy a teljes akkumulátorkapacitás csak azután áll rendelkezésre, hogy az akkumulátor 20%-ra lemerült és feltöltődött."
                 },
                 "condition": {
                     "Illegal": "A telepített akkumulátort a rendszer <b>nem támogatja</b> és nem tölti fel. Cserélje ki az akkumulátort egy a rendszerhez megfelelő Lenovo akkumulátorra.",
                     "Good": "<b>Az akkumulátor jó állapotban van.</b>",
                     "Exhaustion": "Az akkumulátor kapacitása <b>tartósan csökkent</b>. Kérjük, cserélje ki egy újra.",
                     "Bad": "<b>Hiba történt az akkumulátorral.</b> Az akkumulátor nem tölthető/meríthető le. Cserélje ki az akkumulátort.",
-                    "NotDetected": "<b>Nem található akkumulátor, vagy</b> az akkumulátor nincs megfelelően behelyezve.",
+                    "NotDetected": "<b>A rendszer nem észlel akkumulátort.</b>",
                     "NotGood": "<b>Az akkumulátor nincs jó állapotban.</b>",
                     "NotSupportACAdapter": "<b>A hálózati adapter nem támogatott.</b>",
                     "LimitedACAdapterSupport": "<b>A hálózati adapter nem képes elegendő energiát szolgáltatni.</b>",
@@ -1110,9 +1256,9 @@
                             "reset": "Visszaállítás",
                             "stop": "Leállítás"
                         },
-                        "progressText1": "{{stage}}/{{stageNum}}: Kalibrálás teljes feltöltésre",
-                        "progressText2": "{{stage}}/{{stageNum}}: Kalibrálás alacsony akkumulátortöltöttségre",
-                        "progressText3": "{{stage}}/{{stageNum}}: Kalibrálás teljes feltöltésre",
+                        "progressText1": "{{stage}}. lépés (összesen {{stageNum}} lépés): Kalibrálás teljes feltöltésre",
+                        "progressText2": "{{stage}}. lépés (összesen {{stageNum}} lépés): Kalibrálás alacsony akkumulátortöltöttségre",
+                        "progressText3": "{{stage}}. lépés (összesen {{stageNum}} lépés): Kalibrálás magas akkumulátortöltöttségre",
                         "FCCText": "{{before}} Wó-ról {{after}} Wó-ra",
                         "note": "Megjegyzés: Mielőtt nullázná az akkumulátormérőt, feltétlenül csatlakoztassa a számítógépet hálózati tápellátáshoz. ",
                         "resetLog": {
@@ -1140,6 +1286,55 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "ENERGY STAR-TANÚSÍTVÁNNYAL RENDELKEZŐ TERMÉK"
+                },
+                "dpm": {
+                    "title": "Tápellátás",
+                    "subtitle": "Energiagazdálkodási beállítások",
+                    "description": "Ez a szakasz lehetővé teszi az alapértelmezett beállítások ellenőrzését, valamint az energiafelhasználás és az energiaséma testreszabását az igényeinek megfelelően.",
+                    "globalPowerSettings": {
+                        "title": "Globális energiagazdálkodási beállítások",
+                        "description": "Ez a funkció felülbírálja az Energiaséma vagy Energiafelhasználás beállításait.",
+                        "powerButton": {
+                            "label": "FŐKAPCSOLÓ:",
+                            "items": {
+                                "doNothing": "Ne tegyen semmit",
+                                "sleep": "Alvó mód",
+                                "hibernate": "Hibernálás",
+                                "shutDown": "Leállítás",
+                                "turnOffTheDisplay": "Kapcsolja ki a kijelzőt"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "BEJELENTKEZÉS SZÜKSÉGES:",
+                            "items": {
+                                "never": "Soha",
+                                "fromSleep": "Amikor a számítógép felébred alvásból"
+                            },
+                            "tip": "Megjegyzés: Ez csak akkor működik, ha a rendszer jelszava be van állítva."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "Energiahasználat",
+                        "description": "HA A RENDSZER TÉTLEN:",
+                        "turnOffDisplay": "KIJELZŐ KIKAPCSOLÁSA ENNYI IDŐ ELTELTÉVEL:",
+                        "turnOffHDD": "HDD KIKAPCSOLÁSA ENNYI IDŐ ELTELTÉVEL:",
+                        "sleep": "ALVÓ ÁLLAPOT ENNYI IDŐ ELTELTÉVEL:",
+                        "hibernate": "HIBERNÁLÁS ENNYI IDŐ ELTELTÉVEL:",
+                        "items": {
+                            "never": "Soha",
+                            "minute": "perc",
+                            "minutes": "perc",
+                            "hour": "óra",
+                            "hours": "óra"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "Energiaséma",
+                        "description": "Válasszon egy energiasémát, amely vezérli a számítógép teljesítményét, a rendszer hőmérsékletét és az energiafelhasználást.",
+                        "currentPowerPlan": {
+                            "label": "AKTUÁLIS SÉMA"
+                        }
+                    }
                 },
                 "smartStandby": {
                     "title": "Intelligens készenlét",
@@ -1521,8 +1716,11 @@
                         "options": {
                             "option1": "Válasszon",
                             "option2": "Nyissa meg a webhelyet",
-                            "option3": "Írja be a szöveget"
-                        }
+                            "option3": "Írja be a szöveget",
+                            "option4": "Open applications or files",
+                            "option5": "Invoke key sequence"
+                        },
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function."
                     },
                     "tooltip": "Kitöltendő tartalom",
                     "apply": {
@@ -1537,6 +1735,17 @@
                     "enterText": {
                         "title": "MEGADANDÓ SZÖVEG",
                         "placeholder": "Írja be ide"
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles": {
+                        "applicationTitle": "You need to delete one app first",
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {
@@ -1772,7 +1981,7 @@
                 "heading": "Intelligens média",
                 "title": "Zero Touch Videolejátszás",
                 "desc": "Ez a funkció szünetelteti a videólejátszást, amikor a felhasználó magára hagyja a számítógépet, és újraindítja a lejátszást, amikor visszatér.",
-                "tooltip": "Ez a funkció nem használható internetes videólejátszókhoz. A népszerű helyi videólejátszók (pl. a Windows Media Player vagy a 5KPlayer) támogatják ezt a funkciót."
+                "tooltip": "Ez a funkció nem használható<br>internetes videólejátszókhoz.<br>A támogatott lejátszók az alábbi felsorolásban láthatók:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
             },
             "superResolution": {
                 "heading": "Intelligens média",
@@ -1810,7 +2019,8 @@
                     "point7": "Válassza ki a forrásnyelvet és a célnyelvet.",
                     "point8": "Szükség szerint állítsa be a hangbemenetet (Hangszóró vagy Mikrofon).",
                     "point9": "Kattintson a mikrofon ikonra, és kezdjen beszélni",
-                    "closeText": "bezárás"
+                    "closeText": "bezárás",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",

@@ -78,7 +78,7 @@ export class ConfigService {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
 		if (this.securityAdvisor) {
 			this.wifiSecurity = this.securityAdvisor.wifiSecurity;
-			this.wifiSecurity.getWifiSecurityState();
+			this.wifiSecurity.getWifiSecurityStateOnce();
 			this.wifiSecurity.on(EventTypes.wsIsSupportWifiEvent, (status) => {
 				this.commonService.sendReplayNotification(MenuItem.MenuWifiItemChange, status);
 			});
@@ -221,21 +221,21 @@ export class ConfigService {
 		}, (error) => {
 			this.logger.error('ConfigService.initShowCHSMenu: promise rejected ', error);
 		});
-	}
 
-	isShowCHSByShellVersion(shellVersion: ShellVersion) {
-		const Windows = this.vantageShellService.getWindows();
-		if (Windows) {
-			const packageVersion = Windows.ApplicationModel.Package.current.id.version;
-			return packageVersion.major !== shellVersion.major ? packageVersion.major > shellVersion.major :
-				packageVersion.minor !== shellVersion.minor ? packageVersion.minor > shellVersion.minor :
-					packageVersion.build >= shellVersion.build;
-		} else {
-			return true;
+		this.showCHSWithoutSegment = country.toLowerCase() === 'us'
+			&& locale.startsWith('en')
+			&& chsHypsis
+			&& !machineInfo.isGaming;
+		this.showCHS = this.showCHSWithoutSegment && (this.activeSegment !== SegmentConst.Commercial);
+
+		if (!this.showCHSWithoutSegment) {
+			menu = menu.filter(item => item.id !== 'home-security');
 		}
+
+		return menu;
 	}
 
-	showSecurityItem(region, items) {
+	initializeSecurityItem(region, items) {
 		const securityItem = items.find((item) => item.id === 'security');
 		const cacheWifi = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity, false);
 		items = this.supportFilter(items, 'wifi-security', cacheWifi);

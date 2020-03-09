@@ -1,7 +1,7 @@
 import { ModalGamingLegionedgeComponent } from './../../modal/modal-gaming-legionedge/modal-gaming-legionedge.component';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CMSService } from 'src/app/services/cms/cms.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { CommonService } from 'src/app/services/common/common.service';
@@ -32,7 +32,7 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 	startDateTime: any = new Date();
 	metrics: any;
 	dynamic_metricsItem: any = 'lighting_profile_cms_inner_content';
-	public ledlayoutversion:any;
+	public ledlayoutversion: any;
 
 	constructor(
 		private titleService: Title,
@@ -40,6 +40,7 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 		private cmsService: CMSService,
 		private route: ActivatedRoute,
 		private shellService: VantageShellService,
+		private gamingLightService: GamingLightingService,
 		public dashboardService: DashboardService,
 		private translate: TranslateService,
 		public deviceService: DeviceService,
@@ -60,6 +61,12 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
+		this.getLayOutversion();
+		this.commonService.getCapabalitiesNotification().subscribe((response) => {
+			if (response.type === Gaming.GamingCapabilities) {
+				this.getLayOutversion();
+			}
+		});
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
@@ -87,15 +94,6 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 			Page: 'lighting'
 		};
 		this.cmsService.fetchCMSContent(queryOptions).subscribe((response: any) => {
-			const cardContentPositionF = this.cmsService.getOneCMSContent(
-				response,
-				'half-width-top-image-title-link',
-				'position-F'
-			)[0];
-			if (cardContentPositionF) {
-				this.cardContentPositionF = cardContentPositionF;
-			}
-
 			const cardContentPositionC = this.cmsService.getOneCMSContent(
 				response,
 				'half-width-title-description-link-image',
@@ -103,19 +101,28 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 			)[0];
 			if (cardContentPositionC) {
 				this.cardContentPositionC = cardContentPositionC;
-				if (this.cardContentPositionC.BrandName) {
-					this.cardContentPositionC.BrandName = this.cardContentPositionC.BrandName.split('|')[0];
+			}
+
+			const cardContentPositionF = this.cmsService.getOneCMSContent(
+				response,
+				'inner-page-right-side-article-image-background',
+				'position-F'
+			)[0];
+			if (cardContentPositionF) {
+				this.cardContentPositionF = cardContentPositionF;
+				if (this.cardContentPositionF.BrandName) {
+					this.cardContentPositionF.BrandName = this.cardContentPositionF.BrandName.split('|')[0];
 				}
 			}
 		});
 
 		if (!this.isOnline) {
-			this.cardContentPositionF = {
-				FeatureImage: './../../../../assets/cms-cache/content-card-4x4-support.jpg'
+			this.cardContentPositionC = {
+				FeatureImage: './../../../../assets/cms-cache/GamingPosC.jpg'
 			};
 
-			this.cardContentPositionC = {
-				FeatureImage: './../../../../assets/cms-cache/Security4x3-zone2.jpg'
+			this.cardContentPositionF = {
+				FeatureImage: './../../../../assets/cms-cache/lighting_offline.jpg'
 			};
 		}
 	}
@@ -126,11 +133,11 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 		} else {
 		}
 	}
-	public getLayOutversion(){
-        if(this.commonService.getLocalStorageValue(LocalStorageKey.ledLayoutVersion) !== undefined){
+	public getLayOutversion() {
+		if (this.commonService.getLocalStorageValue(LocalStorageKey.ledLayoutVersion) !== undefined) {
 			this.ledlayoutversion = this.commonService.getLocalStorageValue(LocalStorageKey.ledLayoutVersion);
-		}else{
+		} else {
 			this.router.navigate(['/device-gaming']);
 		}
-    }
+	}
 }

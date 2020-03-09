@@ -1,4 +1,4 @@
-<div [ngSwitch]="supportType$ | async">
+<div [ngSwitch]="supportType$ | async" class="vtr-backlight">
 	<vtr-ui-row-switch
 		*ngSwitchCase="backlightLevelEnum.ONE_LEVEL"
 		[title]="'device.deviceSettings.inputAccessories.backlight.title' | translate"

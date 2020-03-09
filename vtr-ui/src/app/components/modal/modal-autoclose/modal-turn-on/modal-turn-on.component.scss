@@ -110,9 +110,10 @@ ui-popover-turn-on {
 			vertical-align: middle;
 		}
 		.status-text {
-			font-size: 1.6rem;
+			font-size: $fontsize_xs;
 			padding-left: 3rem;
 			line-height: 1.5rem;
+			color: $darkText;
 		}
 		.ask-again {
 			position: absolute;
@@ -142,17 +143,23 @@ ui-popover-turn-on {
 	h1 {
 		font-size: $fontsize_xl;
 		font-weight: normal;
-		color: $blue-dark;
+		color: $darkText;
 		padding-right: 2.5rem;
 	}
 
 	p {
-		font-size: 1.6rem;
-		color: $light-grey;
+		font-size: $fontsize_xs;
+		color: $darkText;
 		padding: 0.5rem 0;
 	}
 
 	.btn-close {
+		@media #{$black-on-white}{
+			color: $high-contrast-grey;
+			}
+			@media #{$white-on-black}{
+			color: $high-contrast-grey;
+			}
 		button.close {
 			&:hover {
 				opacity: 0.75;
@@ -162,37 +169,33 @@ ui-popover-turn-on {
 	.action-container{
 		width: 100%;
 		.enable-button {
-		background: $gradient_main;
-		border-radius: 3rem;
-		color: $light;
-		font-size: 1.6rem;
-		padding: 1rem 3rem;
-		margin-top: 1rem;
-		font-weight: $weight_600;
-		margin-right: 3rem;
+			background: $blueFill;
+			border-radius: 3rem;
+			color: $light;
+			font-size: $fontsize_sm;
+			padding: 1rem 3rem;
+			margin-top: 1rem;
+			margin-right: 3rem;
+			font-weight: $weight_bold;
 		&:active {
 			transform: scale(0.95);
 		}
 	}
 	.cancel-link {
 		height: 2.5rem;
-		color: $btn_secondary_color;
+		color: $blueFill;
 		font-size: $fontsize_sm;
 		vertical-align: middle;
 		padding: 0 0.5rem;
 		font-weight: $weight_600;
 		margin-top: 1rem;
-		border-bottom: 2px solid $btn_secondary_color;
-		display: inline-block;
+		border-bottom: 2px solid $blueFill;
 		cursor: pointer;
 		&:hover {
-			color: $btn_primary_color;
-			border-bottom: 2px solid $btn_primary_color;
-			text-decoration: none;
-		}
-		&:active {
-			transform: scale(0.95);
-		}
+			color: $blueHover;
+			border-bottom: 2px solid $blueHover;			
+			cursor: pointer;
+		  }		
 	}
 	}
 	

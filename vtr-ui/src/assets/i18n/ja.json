@@ -22,6 +22,12 @@
                     "rapidCharge": "急速充電"
                 },
                 "legionEdge": {
+                    "thermalMode2": {
+                        "OC_On": "CLKUPオン",
+                        "performance": "性能",
+                        "balance": "バランス",
+                        "quiet": "静音"
+                    },
                     "title": "CPU クロックアップ",
                     "status": {
                         "alwayson": "オン",
@@ -97,6 +103,96 @@
                 },
                 "quickSettingstitle": {
                     "title": "クイック設定"
+                },
+                "thermalMode2Popup": {
+                    "thermalMode2SettingTitle": "サーマル・モード設定",
+                    "thermalMode2SettingDesc": "使用するモードを選択します。",
+                    "fnQDesc": "ショートカット Fn+Q を使用してモードを切り替えることができます。",
+                    "perormanceTitle": "パフォーマンス・モード",
+                    "performanceDesc": "ファン速度と電力消費を上げコンピューターのパフォーマンスを向上させます。",
+                    "OCDesc": "クロックアップ機能をオンにできます。",
+                    "ac_dcDesc": "パフォーマンス・モードは、AC 電源アダプターが接続されている場合にのみ適用できます。",
+                    "balanceTitle": "バランス・モード",
+                    "balanceDesc": "中程度の電力消費で温度に基づいて自動的にパフォーマンスとファン速度のバランスを取ります。",
+                    "quietTitle": "静音モード",
+                    "quietDesc": "可能な場合は低電力消費でコンピューターのパフォーマンスとファン速度を下げて静かに動作します。",
+                    "OC": {
+                        "cpu_gpuOC": "CPU/GPU クロックアップ・パフォーマンス・モードを有効化。",
+                        "cpuOC": "CPU クロックアップ・パフォーマンス・モードを有効化。",
+                        "gpuOC": "GPU クロックアップ・パフォーマンス・モードを有効化。",
+                        "advance": "拡張",
+                        "cpu_gpuDriverLack": "CPU/GPU ドライバーをインストールしてクロックアップ機能を使用。",
+                        "cpuDriverLack": "CPU ドライバーをインストールしてクロックアップ機能を使用。",
+                        "gpuDriverLack": "GPU ドライバーをインストールしてクロックアップ機能を使用。",
+                        "goInstall": "インストールする"
+                    },
+                    "autoSwitch": "ゲームの起動時に自動的にパフォーマンス・モードに切り替え、ゲーム終了後は元に戻します。"
+                },
+                "advancedOC": {
+                    "title": "CLKUP詳細設定",
+                    "description": "CLKUPがオンの場合に高度なカスタム・パラメーターを設定します。リスクの可能性があります。",
+                    "gpuOverclock": "GPU クロックアップ",
+                    "cpuOCNames": {
+                        "cpuOCName2": "コア電圧",
+                        "cpuOCName116": "1 コア・レシオ",
+                        "cpuOCName117": "2 コア・レシオ",
+                        "cpuOCName118": "3 コア・レシオ",
+                        "cpuOCName119": "4 コア・レシオ",
+                        "cpuOCName34": "コア電圧オフセット",
+                        "cpuOCName120": "5 コア・レシオ",
+                        "cpuOCName121": "6 コア・レシオ",
+                        "cpuOCName76": "キャッシュ・レシオ",
+                        "cpuOCName77": "キャッシュ電圧",
+                        "cpuOCName79": "キャッシュ電圧オフセット",
+                        "cpuOCName122": "7 コア・レシオ",
+                        "cpuOCName123": "8 コア・レシオ",
+                        "cpuOCName102": "コア ICCMAX",
+                        "cpuOCName106": "キャッシュ ICCMAX",
+                        "cpuOCName114": "AVX レシオ・オフセット"
+                    },
+                    "cpuOCTips": {
+                        "cpuOCTip2": "CPU コアの電圧を設定します。",
+                        "cpuOCTip116": "コアが動作できる最大コア乗数を設定します。コア周波数の値は、この比率とリファレンス・クロック周波数の積です。",
+                        "cpuOCTip117": "コアが動作できる最大コア乗数を設定します。コア周波数の値は、この比率とリファレンス・クロック周波数の積です。",
+                        "cpuOCTip118": "コアが動作できる最大コア乗数を設定します。コア周波数の値は、この比率とリファレンス・クロック周波数の積です。",
+                        "cpuOCTip119": "コアが動作できる最大コア乗数を設定します。コア周波数の値は、この比率とリファレンス・クロック周波数の積です。",
+                        "cpuOCTip34": "現在のコア電圧からの電圧オフセット。",
+                        "cpuOCTip120": "コアが動作できる最大コア乗数を設定します。コア周波数の値は、この比率とリファレンス・クロック周波数の積です。",
+                        "cpuOCTip121": "コアが動作できる最大コア乗数を設定します。コア周波数の値は、この比率とリファレンス・クロック周波数の積です。",
+                        "cpuOCTip76": "キャッシュが動作できる最大プロセッサー・キャッシュ乗数を設定します。キャッシュ周波数の値は、この比率とリファレンス・クロック周波数の積です。",
+                        "cpuOCTip77": "現在選択されているキャッシュ電圧モードに基づいて、プロセッサの内部キャッシュ・インターフェイスに供給される電圧。",
+                        "cpuOCTip79": "キャッシュ電圧に適用される最終的な電圧オフセット。",
+                        "cpuOCTip122": "コアが動作できる最大コア乗数を設定します。コア周波数の値は、この比率とリファレンス・クロック周波数の積です。",
+                        "cpuOCTip123": "コアが動作できる最大コア乗数を設定します。コア周波数の値は、この比率とリファレンス・クロック周波数の積です。",
+                        "cpuOCTip102": "プロセッサーのコア電圧レギュレーターの ICCMAX を設定します。",
+                        "cpuOCTip106": "プロセッサーのキャッシュおよびリング・バス電圧レギュレーターの ICCMAX を設定します。",
+                        "cpuOCTip114": "AVX がアクティブなときに有効なアクティブ・コア・レシオの制限を導出するには、この値を対応するアクティブ・コア・レシオの制限から減算します。"
+                    },
+                    "gpuOCNames": {
+                        "gpuOCName0": "GPU クロック オフセット",
+                        "gpuOCName1": "VRAM クロック オフセット"
+                    },
+                    "gpuOCTips": {
+                        "gpuOCTip0": "GPU クロック周波数にオフセットを追加します。",
+                        "gpuOCTip1": "メモリー・クロック周波数にオフセットを追加します。"
+                    }
+                },
+                "savePromptPopup": {
+                    "title": "変更を保存しますか?",
+                    "description1": "この設定が不適切な場合、不可逆的に損傷する可能性があります。問題が発生した場合は、次のいずれかのことを実行してください。",
+                    "description2": "•  電源ボタンを8秒間押して再起動し、パラメーターを復元します。",
+                    "description3": "•  BIOS Restore Default Overclockを使用",
+                    "save": "保存",
+                    "notSave": "保存しない"
+                },
+                "defaultPromptPopup": {
+                    "title": "規定値に戻しますか?",
+                    "description": "現在および以前の変更はすべて失われます。"
+                },
+                "warningPromptPopup": {
+                    "title": "警告",
+                    "description": "クロックアップの設定が不適切な場合、ハードウェアが不可逆的に損傷する可能性があります。",
+                    "proceed": "続行"
                 }
             }
         },
@@ -598,6 +694,42 @@
                     "close": "close"
                 }
             }
+        },
+        "lightingNewversion": {
+            "machineName": {
+                "name1": "Legion Icon Lighting (Front)",
+                "name2": "Internal Ambient Lighting",
+                "name3": "Legion Rear Fan Lighting",
+                "name4": "Legion CPU Fan Lighting",
+                "name5": "Legion Liquid Cooling Pump Lighting",
+                "name6": "Legion Liquid Cooling Fan Lighting",
+                "name7": "Legion Icon (Front)",
+                "name9": "Ambient  Lighting"
+            },
+            "lightingEffect": {
+                "effectName1": "静的",
+                "effectName2": "スペクトラム",
+                "effectName3": "レインボー",
+                "effectName4": "ランダム",
+                "effectName5": "クール_ブルー",
+                "effectName6": "ウェーブ_右",
+                "effectName7": "ウェーブ_左"
+            },
+            "lightingSpeed": {
+                "title": "速度"
+            },
+            "colorPicker": {
+                "text2": "詳細",
+                "text3": "赤",
+                "text4": "緑",
+                "text5": "黒",
+                "text6": "分割 (オフ): 下のキーボード画像をクリックして色を変更",
+                "text7": "分割 (オン): キーボード画像の区域をクリックして区域の色を変更",
+                "text8": "現在の効果は色の選択をサポートしていません"
+            },
+            "tipText": {
+                "title1": "プロファイルの切り替えは Fn+Space を使用します"
+            }
         }
     },
     "common": {
@@ -667,7 +799,9 @@
             "loading": "ロード中...",
             "from": "から",
             "to": "～",
-            "clickToChange": "クリックして変更"
+            "clickToChange": "クリックして変更",
+            "failedLoad": "ロードに失敗しました。",
+            "retry": "再試行"
         },
         "app-update": {
             "message": "お知らせがあります。新しいバージョンの Vantage が利用可能です。ロードしますか?"
@@ -738,7 +872,14 @@
                 "submitScreenShot": "スクリーンショットを送信する",
                 "messages": {
                     "feedbackSuccess": "フィードバックをありがとうございました!"
-                }
+                },
+                "question6": "Lenovo Vantage アプリケーションを友人または同僚におすすめする可能性はどのくらいありますか?",
+                "question7": "Lenovo Vantage でコンピューターのソフトウェア・ドライバー、ファームウェア、および BIOS を最新の状態に維持できることをご存知でしたか?",
+                "question8": "Lenovo Vantage を使用して、コンピューターに関するサポート情報にアクセスされましたか?",
+                "tips2": "追加のコメントを以下に残してください",
+                "emailAddressLabel": "Lenovo Vantage チームから連絡を受ける可能性がある場合は、メール・アドレスを残してください。",
+                "emailAddress": "メール・アドレス",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
@@ -787,6 +928,10 @@
                     "update": "更新"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "ドライバー、BIOS、およびソフトウェアのを更新します。",
+            "checkForSystemUpdates": "システム更新を確認"
         }
     },
     "device": {
@@ -897,14 +1042,15 @@
                         "title": "製造元",
                         "celxpert": "Celxpert",
                         "smp": "SMP"
-                    }
+                    },
+                    "fccTooltipText": "バッテリーの寿命を延ばすために、使用状況に基づいてフル充電容量を最適化しました。20% まで放電して再充電するまで、バッテリーの全容量を使用できない場合があります。"
                 },
                 "condition": {
                     "Illegal": "取り付けられているバッテリーはシステムでは<b>サポートされない</b>ため、充電は行われません。ご使用のシステムに適した Lenovo バッテリーに交換してください。",
                     "Good": "<b>バッテリーは良好な状態です。</b>",
                     "Exhaustion": "バッテリー容量が<b>低下しています</b>。新しいバッテリーに交換してください。",
                     "Bad": "<b>バッテリー・エラーが発生しました。</b>バッテリーを充電/放電できません。バッテリーを交換してください。",
-                    "NotDetected": "<b>バッテリーが検出されないか</b>、接続されていません。",
+                    "NotDetected": "<b>バッテリーが検出されませんでした。</b>",
                     "NotGood": "<b>バッテリーは良好な状態ではありません。</b>",
                     "NotSupportACAdapter": "<b>AC アダプターがサポートされていません。</b>",
                     "LimitedACAdapterSupport": "<b>ACアダプターが十分な電力を供給できません。</b>",
@@ -1056,18 +1202,18 @@
                     "batteryThreshold": {
                         "title": "バッテリー充電のしきい値",
                         "description": "コンピューターを主に AC アダプターに接続して使用し、バッテリー電源はそれほど使用しない場合は、充電のしきい値を 100 % より下に変更してバッテリー寿命を延ばすことができます。それほど使用しないバッテリーは完全に充電しない状態を維持することで寿命が長くなるため、効果的です。",
-                        "tooltip": "現状でバッテリーが充電停止しきい値を超えて充電されている場合は、電源を取り外して、バッテリーを充電停止しきい値以下まで放電させてください。バッテリーの状態 (古いまたは新しい) によって、充電の正確な開始点および停止点は、最大 2 パーセントのポイントで異なります。この機能が有効の場合、バッテリーの状態が正しく報告されるように定期的にバッテリー・ゲージのリセットを実行することをお勧めします。",
+                        "tooltip": "現状でバッテリーが充電停止しきい値を超えて充電されている場合は、ACアダプターを取り外して、バッテリーを充電停止しきい値以下まで放電させてください。バッテリーの状態 (古いまたは新しい) によって、充電の正確な開始点および停止点は、最大 2 パーセントのポイントで異なります。この機能が有効の場合、バッテリーの状態が正しく報告されるように定期的にバッテリー・ゲージのリセットを実行することをお勧めします。",
                         "note": "お願い",
                         "readMoreText": "表示を多くする。",
-                        "noteInfo": " バッテリー充電のしきい値がまだ完全にアクティブではありません。マシンの電源を切り、充電停止しきい値以下までバッテリを放電してください。",
+                        "noteInfo": " バッテリー充電のしきい値はまだ完全に有効になっていません。ACアダプターを抜き、充電停止しきい値以下までバッテリを放電してください。",
                         "settings": {
                             "title1": "プライマリー・バッテリーのしきい値",
                             "title2": "セカンダリ・バッテリーのしきい値"
                         },
                         "popup": {
                             "title": "バッテリー充電しきい値を有効にする",
-                            "description1": "カスタムのバッテリー充電を有効にすると、このデバイスを使用したときに全般的なバッテリー状態が持続します。しかし、フル充電していないと、バッテリーによる稼働時間が少なくなります。",
-                            "description2": "この機能を完全に有効にするには、マシンの電源を切り、充電停止しきい値以下までバッテリーを放電してください。",
+                            "description1": "バッテリーのカスタム充電を有効にすると、バッテリー状態がより長期間良好に保たれる可能性が高くなります。ただし、フル充電したときよりバッテリー持ち時間は短くなります。",
+                            "description2": "この機能を完全に有効にするには、ACアダプターを抜き、充電停止しきい値以下までバッテリーを放電してください。",
                             "enable": "有効にする",
                             "cancel": "キャンセル"
                         },
@@ -1110,9 +1256,9 @@
                             "reset": "リセット",
                             "stop": "停止"
                         },
-                        "progressText1": "{{stage}}/{{stageNum}}: 満充電にして調整",
-                        "progressText2": "{{stage}}/{{stageNum}}: 低バッテリー残量にして調整",
-                        "progressText3": "{{stage}}/{{stageNum}}: 満充電にして調整",
+                        "progressText1": "ステップ {{stage}} / 合計 {{stageNum}} ステップ: 満充電にして調整",
+                        "progressText2": "ステップ {{stage}} / 合計 {{stageNum}} ステップ: 低バッテリー残量にして調整",
+                        "progressText3": "ステップ {{stage}} / 合計 {{stageNum}} ステップ: 高バッテリー残量にして調整",
                         "FCCText": "{{before}} Wh から {{after}} Wh",
                         "note": "注: バッテリー・ゲージをリセットする前に、コンピューターを AC 電源に接続してください。",
                         "resetLog": {
@@ -1141,12 +1287,61 @@
                     "title": "Energy Star",
                     "description": "ENERGY STAR 認定製品"
                 },
+                "dpm": {
+                    "title": "電源",
+                    "subtitle": "電源設定",
+                    "description": "このセクションでは、デフォルト設定を確認し、必要に応じて電力消費と電源プランをカスタマイズできます。",
+                    "globalPowerSettings": {
+                        "title": "共通省電力設定",
+                        "description": "この機能は、電源プランまたは電力消費設定を上書きします。",
+                        "powerButton": {
+                            "label": "電源ボタン:",
+                            "items": {
+                                "doNothing": "何もしない",
+                                "sleep": "スリープ",
+                                "hibernate": "休止",
+                                "shutDown": "シャットダウン",
+                                "turnOffTheDisplay": "ディスプレイの電源をオフにする"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "次の場合にサインインが必要です：",
+                            "items": {
+                                "never": "なし",
+                                "fromSleep": "PC がスリープから復帰したとき"
+                            },
+                            "tip": "注: これは、システム・パスワードが設定されている場合にのみ機能します。"
+                        }
+                    },
+                    "powerUse": {
+                        "title": "電力消費",
+                        "description": "システムがアイドルの場合:",
+                        "turnOffDisplay": "ディスプレイをオフにする:",
+                        "turnOffHDD": "HDD をオフにする:",
+                        "sleep": "スリープ状態にする:",
+                        "hibernate": "休止状態にする:",
+                        "items": {
+                            "never": "なし",
+                            "minute": "分",
+                            "minutes": "分",
+                            "hour": "時間",
+                            "hours": "時間"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "電源プラン",
+                        "description": "電源プランを選択して、コンピューターのパフォーマンス、システム温度、および電力使用率を制御します。",
+                        "currentPowerPlan": {
+                            "label": "現在のプラン"
+                        }
+                    }
+                },
                 "smartStandby": {
                     "title": "スマート・スタンバイ",
-                    "description": "この機能は、使用頻度の高い時間中の<a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">モダン・スタンバイ</a>の高速再開エクスペリエンスに影響を与えずにアイドル時間中のバッテリー省電力を最適化するようにコンピューターをスケジュールします。",
-                    "tooltip": "スマート・スタンバイを有効にすると、コンピューターはスケジュールされた開始時間前にモダン・スタンバイに切り替わり、バッテリー電源の使用中に一定時間操作されない場合は休止状態に入ります。この期間は、設定したスケジュールまたはコンピューターの使用状況に基づいて最適化されます。コンピューターはスケジュールされた日のみ休止状態からモダン・スタンバイに切り替わります。スケジュールされた日に連続して操作されない場合は切り替わりません。",
+                    "description": "あなたがコンピューターを使わない時間にバッテリー消費を最適化しながら、よく使う時間に<a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">モダン・スタンバイ</a>によりすばやく作業を再開できるようにします。",
+                    "tooltip": "スマート・スタンバイを有効にすると、コンピューターはスケジュールされた開始時刻より前にモダン・スタンバイに切り替わり、バッテリー駆動で一定時間操作がなければ休止状態に移行します。その時間は入力されたスケジュール、またはコンピューターの使用時間に基づいて最適化されます。コンピューターはスケジュールされた曜日のみ休止状態からモダン・スタンバイに切り替わり、スケジュールされた日に連続して操作がなかった場合は切り替わりません。",
                     "timer": {
-                        "heading": "通常このコンピューターを使用する時刻:",
+                        "heading": "ふだんこのコンピューターを使用する時間帯:",
                         "subHeading1": "フィールドの",
                         "subHeading2": "終了",
                         "subHeading3": "このスケジュールを使用する期間",
@@ -1188,16 +1383,16 @@
                         "noDaySelected": "日が選択されていません"
                     },
                     "checkbox": "使用状況に基づいてコンピューターのアクティブ時間を自動調整する",
-                    "hyperlinkToGraph": "クリックして使用状況と適用されたアクティブ時間を確認します",
+                    "hyperlinkToGraph": "コンピューターの使用状況とアクティブ時間を確認する",
                     "subTitle": "コンピューターのスケジュール",
                     "automaticMode": "自動モード",
                     "manualMode": "手動モード",
-                    "subNote": "コンピューターは、使用状況に基づいてモダン・スタンバイにスケジュールされます。",
+                    "subNote": "お使いのコンピューターは、使用状況に基づいて迅速に再開するようスケジュールされます。",
                     "graph": {
                         "graph1Tittle": "このコンピューターの使用状況",
                         "graph2Tittle": "適用されたアクティブ時間",
                         "graphSubtittle": "この期間中は、コンピューターをより迅速に再開できる状態にします。",
-                        "graphNote": "このコンピューターの活動データは、自動スケジューリングのプロファイルを提供するには不十分です。スマート・スタンバイは、十分なデータを利用できるようになるまで、手動モード・スケジュールを使用します。",
+                        "graphNote": "自動モードの設定に必要なコンピュータの使用データが足りません。スマート・スタンバイは、十分なデータが得られるまで、手動モードに設定されているスケジュールを適用します。",
                         "legends": {
                             "none": "なし",
                             "frequent": "頻繁"
@@ -1229,9 +1424,10 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "この機能は、使用頻度の高い時間中の高速スタートアップ時間に影響を与えずにアイドル時間中のバッテリー省電力を最適化するようにコンピューターをスケジュールします。",
-                    "subTitle2": "通常このコンピューターを使用する時刻を設定します",
-                    "oldTooltipText": "スマート・スタンバイを有効にすると、コンピューターはスケジュールされた開始時間前にモダン・スタンバイに切り替わり、バッテリー電源の使用中に一定時間操作されない場合は休止状態に入ります。時間は設定されたスケジュールに基づいて最適化されます。コンピューターはスケジュールされた日のみ休止状態からモダン・スタンバイに切り替わります。スケジュールされた日に連続して操作されない場合は切り替わりません。"
+                    "description2": "あなたがコンピューターを使わない時間にバッテリー消費を最適化しながら、よく使う時間にすばやく作業を再開できるようにします。",
+                    "subTitle2": "ふだんこのコンピューターを使う時間帯を入力してください",
+                    "oldTooltipText": "スマート・スタンバイを有効にすると、コンピューターはスケジュールされた開始時刻より前にモダン・スタンバイに切り替わり、バッテリー駆動で一定時間操作がなければ休止状態に移行します。その時間は入力されたスケジュールに基づいて最適化されます。コンピューターはスケジュールされた曜日のみ休止状態からモダン・スタンバイに切り替わり、スケジュールされた日に連続して操作がなかった場合は切り替わりません。",
+                    "sectionTitle": "スタンバイ設定"
                 }
             },
             "audio": {
@@ -1521,8 +1717,11 @@
                         "options": {
                             "option1": "選択してください",
                             "option2": "ウェブサイトを開く",
-                            "option3": "テキストを入力"
-                        }
+                            "option3": "テキストを入力",
+                            "option4": "Open applications or files",
+                            "option5": "Invoke key sequence"
+                        },
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function."
                     },
                     "tooltip": "記入する内容",
                     "apply": {
@@ -1537,6 +1736,17 @@
                     "enterText": {
                         "title": "入力するテキスト",
                         "placeholder": "ここに入力してください"
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles": {
+                        "applicationTitle": "You need to delete one app first",
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {
@@ -1772,7 +1982,7 @@
                 "heading": "インテリジェント・メディア",
                 "title": "ビデオの自動再生",
                 "desc": "この機能では、コンピューターを離れるときにビデオを一時停止し、戻ったときにビデオを再開します。",
-                "tooltip": "この機能は Web ビデオ・プレイヤーに適用できません。Windows Media Player、5KPlayer など、人気のあるローカル・ビデオ・プレイヤーは、この機能をサポートしています。"
+                "tooltip": "この機能は Web ビデオ・プレイヤーに<br>適用できません。<br>サポートされているプレーヤーは次のとおりです。<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
             },
             "superResolution": {
                 "heading": "インテリジェント・メディア",
@@ -1810,7 +2020,8 @@
                     "point7": "目的の原文言語と訳文言語を選択します。",
                     "point8": "必要に応じて、スピーカーまたはマイクからの音声入力を設定します。",
                     "point9": "マイクのアイコンをクリックして話し始めます",
-                    "closeText": "閉じる"
+                    "closeText": "閉じる",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -2930,7 +3141,7 @@
         },
         "battery": {
             "title": "バッテリー充電しきい値を有効にする",
-            "description": "カスタムのバッテリー充電を有効にすると、このデバイスを使用したときに全般的なバッテリー状態が持続します。しかし、フル充電していないと、バッテリーによる稼働時間が少なくなります。この機能を完全に有効にするには、マシンの電源を切り、充電停止しきい値以下までバッテリーを放電してください。",
+            "description": "バッテリーのカスタム充電を有効にすると、バッテリー状態がより長期間良好に保たれる可能性が高くなります。ただし、フル充電したときよりバッテリー持ち時間は短くなります。この機能を完全に有効にするには、ACアダプターを抜き、充電停止しきい値以下までバッテリーを放電してください。",
             "enable": "有効にする"
         },
         "refreshModule": "モジュールの更新",

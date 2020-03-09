@@ -55,12 +55,12 @@
 		font-family: "Segoe UI", sans-serif;
 		font-weight: $weight_light;
 		@media #{$black-on-white} {
-			color: $yellow;
-			border: none;
+			color: $high-contrast-blue;
+			border:none;
 		}
 		@media #{$white-on-black} {
-			color: $blue-lighter;
-			border: none;
+			color: $yellow;
+			border:none;
 		}
 	}
 }

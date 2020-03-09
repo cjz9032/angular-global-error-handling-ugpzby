@@ -1,5 +1,4 @@
 <div class="vtr-widget-switch-icon"
-	tabindex="0"
 	[disabled]="isBlocked"
 	[ngClass]="{'disable-state': (disable || isLoading)}"
 	(keyup.enter)="onChange($event)"
@@ -12,7 +11,6 @@
 	[metricsValue]="!value"
 	[metricsItem]="metricsItem">
 	<button class="switch-container"
-		tabindex="-1"
 		[ngClass]="[(value && !isLoading) ? 'checked' : 'unchecked', disable ? 'disable-container' : '']"
 		[ngClass]="{'unchecked': isLoading}"
 		[id]="findId(value,disable)">
@@ -36,22 +34,21 @@
 		<div *ngIf="isLoading"
 			class="icon-container d-block position-relative">
 			<div class="loader center-block">
-				<div class="spinner-border text-secondary progress-spinner"
-					role="status"></div>
+				<div class="spinner-border text-secondary progress-spinner"></div>
 			</div>
 		</div>
 		<div class="row"
 			[ngClass]="{'is-visible' : hideOnOffLabel}">
 			<div class="col">
 				<div class="switch-on-off">
-					<div *ngIf="!value && !isLoading"
+					<div *ngIf="!value && !isLoading"						
 						class="switch-label off-label"
 						id="qs-{{switchId}}-switch-off"
 						attr.aria-label="qs-{{switchId}}-switch-off">
 						<span *ngIf="!disable">{{'common.ui.off' | translate}}</span>
 						<span *ngIf="disable">&nbsp;</span>
 					</div>
-					<div *ngIf="value && !isLoading"
+					<div *ngIf="value && !isLoading"						
 						class="switch-label on-label"
 						id="qs-{{switchId}}-switch-on"
 						attr.aria-label="qs-{{switchId}}-switch-on">

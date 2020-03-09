@@ -41,6 +41,10 @@
 				height: 4rem;
 				width: 4rem;
 				font-size: 3.2rem;
+				display: none;
+			}
+			.text {
+				display: inline-block;
 			}
 			@media #{$breakpoint_xl6} {
 				font-size: $fontsize_md;

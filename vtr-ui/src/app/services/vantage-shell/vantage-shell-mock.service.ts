@@ -3,7 +3,6 @@ import * as Phoenix from '@lenovo/tan-client-bridge';
 import { environment } from '../../../environments/environment';
 import { CommonService } from '../common/common.service';
 import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
-import { MetricHelper } from 'src/app/data-models/metrics/metric-helper.model';
 import { HttpClient } from '@angular/common/http';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { Container, BindingScopeEnum } from 'inversify';
@@ -14,6 +13,7 @@ import { TopRowFunctionsIdeapad, KeyType } from 'src/app/components/pages/page-d
 import { VoipErrorCodeEnum } from 'src/app/enums/voip.enum';
 import { CommonErrorCode } from 'src/app/data-models/common/common.interface';
 import { BacklightStatusEnum, BacklightLevelEnum } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.enum';
+import { MetricHelper } from 'src/app/services/metric/metrics.helper';
 
 declare var Windows;
 
@@ -391,121 +391,11 @@ export class VantageShellService {
 		return '';
 	}
 
-	private normalizeEventName(eventName) {
-		eventName = eventName.toLowerCase();
-		switch (eventName) {
-			case 'firstrun':
-				eventName = 'FirstRun';
-				break;
-			case 'apploaded':
-				eventName = 'AppLoaded';
-				break;
-			case 'articledisplay':
-				eventName = 'ArticleDisplay';
-				break;
-			case 'appaction':
-				eventName = 'AppAction';
-				break;
-			case 'getenvinfo':
-				eventName = 'GetEnvInfo';
-				break;
-			case 'pageview':
-				eventName = 'PageView';
-				break;
-			case 'featureclick':
-			case 'itemclick':
-				eventName = 'FeatureClick';
-				break;
-			case 'itemview':
-				eventName = 'ItemView';
-				break;
-			case 'articleclick':
-			case 'docclick':
-				eventName = 'ArticleClick';
-				break;
-			case 'articleview':
-				eventName = 'ArticleView';
-				break;
-			case 'docview':
-				eventName = 'DocView';
-				break;
-			case 'taskaction':
-				eventName = 'TaskAction';
-				break;
-			case 'settingupdate':
-				eventName = 'SettingUpdate';
-				break;
-			case 'userfeedback':
-				eventName = 'UserFeedback';
-				break;
-		}
-
-		return eventName;
-	}
-
 	/**
 	 * returns metric object from VantageShellService of JS Bridge
 	 */
 	public getMetrics(): any {
-		if (this.phoenix && this.phoenix.metrics) {
-			const metricClient = this.phoenix.metrics;
-			if (!metricClient.isInit) {
-				const jsBridgeVesion = this.getVersion() || '';
-				const shellVersion = this.getShellVersion();
-				metricClient.init({
-					appVersion: `Web:${environment.appVersion};Bridge:${jsBridgeVesion};Shell:${shellVersion}`,
-					appId: MetricHelper.getAppId('dß'),
-					appName: 'vantage3',
-					channel: '',
-					ludpUrl: 'https://chifsr.lenovomm.com/PCJson'
-				});
-				const that = this;
-				metricClient.isInit = true;
-				metricClient.sendAsyncOrignally = metricClient.sendAsync;
-				metricClient.commonService = this.commonService;
-				metricClient.sendAsync = async function sendAsync(data) {
-					try {
-						// automatically fill the OnlineStatus for page view event
-						if (!data.OnlineStatus) {
-							data.OnlineStatus = that.commonService.isOnline ? 1 : 0;
-						}
-
-						const isBeta = that.commonService.getLocalStorageValue(LocalStorageKey.BetaTag, false);
-						if (isBeta) {
-							data.IsBetaUser = true;
-						}
-
-						data.ItemType = that.normalizeEventName(data.ItemType);
-						return await this.sendAsyncOrignally(data);
-					} catch (ex) {
-						return Promise.resolve({
-							status: 0,
-							desc: 'ok'
-						});
-					}
-				};
-			}
-
-			return metricClient;
-		}
-
-		const defaultMetricsClient = {
-			sendAsync() {
-				return Promise.resolve({
-					status: 0,
-					desc: 'ok'
-				});
-			},
-			sendAsyncEx() {
-				return Promise.resolve({
-					status: 0,
-					desc: 'ok'
-				});
-			},
-			metricsEnabled: false
-		};
-
-		return defaultMetricsClient;
+		return MetricHelper.createSimulateObj();
 	}
 
 	public getMetricsPolicy(callback) {
@@ -2358,6 +2248,29 @@ export class VantageShellService {
 	public getSelfSelect() {
 		if (this.phoenix) {
 			return this.phoenix.selfSelect;
+		}
+		return undefined;
+	}
+
+	public getPowerDPM(){
+		return undefined;
+	}
+
+	public getInstalledApplicationList() {
+		if (this.phoenix) {
+				const installedAppList: any = {
+					installedAppList: [{
+						name: 'Google Chrome',
+						description: ''
+						}, {
+						name: 'Internet Explorer',
+						description: ''
+						}, {
+						name: 'candy crush saga',
+						description: ''
+						}]
+				};
+				return installedAppList;
 		}
 		return undefined;
 	}

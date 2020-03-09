@@ -91,7 +91,7 @@ describe('PageDeviceSettingsComponent', () => {
     // });
     it('#fetchCMSArticles should call', async() => {
         const { fixture, component,audioService } = setup();
-        spyOn(cmsService, 'getOneCMSContent').and.returnValue(Promise.resolve(true));
+        spyOn(cmsService, 'getOneCMSContent');
         spyOn(component,'fetchCMSArticles')
         fixture.detectChanges();
         await component.fetchCMSArticles();

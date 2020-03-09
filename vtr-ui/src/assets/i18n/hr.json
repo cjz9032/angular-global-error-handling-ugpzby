@@ -22,6 +22,12 @@
                     "rapidCharge": "Brzo punjenje"
                 },
                 "legionEdge": {
+                    "thermalMode2": {
+                        "OC_On": "Overclock uklj.",
+                        "performance": "Performanse",
+                        "balance": "Balans",
+                        "quiet": "Tiho"
+                    },
                     "title": "Overclock CPU-a",
                     "status": {
                         "alwayson": "Uključeno",
@@ -97,6 +103,96 @@
                 },
                 "quickSettingstitle": {
                     "title": "Brze postavke"
+                },
+                "thermalMode2Popup": {
+                    "thermalMode2SettingTitle": "Postavlj. termičkog načina",
+                    "thermalMode2SettingDesc": "Odaberite način rada koji želite koristiti.",
+                    "fnQDesc": "Možete prebaciti način rada s pomoću prečaca Fn+Q.",
+                    "perormanceTitle": "Način rada performansi",
+                    "performanceDesc": "Povećajte performanse računala uz veću brzinu ventilatora i bolju potrošnju energije. ",
+                    "OCDesc": "Možete odabrati uključivanje funkcije overclockinga.",
+                    "ac_dcDesc": "Način performansi rada primjenjiv je samo kad je uključen ispravljač.",
+                    "balanceTitle": "Način rada uravnoteženosti",
+                    "balanceDesc": "Automatski uravnotežite performanse i brzinu ventilatora na temelju temperature sa srednjom potrošnjom energije.",
+                    "quietTitle": "Tihi način rada",
+                    "quietDesc": "Zadržite tihi rad smanjujući performanse računala i brzinu ventilatora kad je to moguće uz smanjenje potrošnje energije.",
+                    "OC": {
+                        "cpu_gpuOC": "Omogući Overclocking CPU/GPU-a u načinu rada.",
+                        "cpuOC": "Omogući Overclocking CPU-a u načinu rada.",
+                        "gpuOC": "Omogući Overclocking GPU-a u načinu rada.",
+                        "advance": "NAPREDNO",
+                        "cpu_gpuDriverLack": "Instalirajte CPU/GPU upravljačke programe za upotrebu funkcije overclockinga.",
+                        "cpuDriverLack": "Instalirajte CPU upravljački program za upotrebu funkcije overclockinga.",
+                        "gpuDriverLack": "Instalirajte upravljački program GPU za upotrebu funkcije overclockinga.",
+                        "goInstall": "INSTALIRAJ"
+                    },
+                    "autoSwitch": "Automatski prebacite u način rada performansi pri pokretanju igara i vratite natrag nakon zatvaranja igre."
+                },
+                "advancedOC": {
+                    "title": "Overclock Napredne postavke",
+                    "description": "Postavite dodatne prilagođene parametre kad je Overclocking uključen. To bi moglo biti rizično.",
+                    "gpuOverclock": "Overclock GPU-a",
+                    "cpuOCNames": {
+                        "cpuOCName2": "Napon jezgre",
+                        "cpuOCName116": "1 omjer jezgre",
+                        "cpuOCName117": "2 omjer jezgre",
+                        "cpuOCName118": "3 omjer jezgre",
+                        "cpuOCName119": "4 omjer jezgre",
+                        "cpuOCName34": "Pomak napona jezgre",
+                        "cpuOCName120": "5 omjer jezgre",
+                        "cpuOCName121": "6 omjer jezgre",
+                        "cpuOCName76": "Omjer predmemorije",
+                        "cpuOCName77": "Napon predmemorije",
+                        "cpuOCName79": "Pomak napona predmemorije",
+                        "cpuOCName122": "7 omjer jezgre",
+                        "cpuOCName123": "8 omjer jezgre",
+                        "cpuOCName102": "Jezgra ICCMAX",
+                        "cpuOCName106": "Predmemorija ICCMAX",
+                        "cpuOCName114": "Pomak AVX omjera"
+                    },
+                    "cpuOCTips": {
+                        "cpuOCTip2": "Postavite napon za jezgru CPU-a.",
+                        "cpuOCTip116": "Postavite maksimalni množitelj jezgre pri kojemu jezgre mogu raditi. Vrijednost frekvencije jezgre proizvod je tog omjera i frekvencije referentnog takta.",
+                        "cpuOCTip117": "Postavite maksimalni množitelj jezgre pri kojemu jezgre mogu raditi. Vrijednost frekvencije jezgre proizvod je tog omjera i frekvencije referentnog takta.",
+                        "cpuOCTip118": "Postavite maksimalni množitelj jezgre pri kojemu jezgre mogu raditi. Vrijednost frekvencije jezgre proizvod je tog omjera i frekvencije referentnog takta.",
+                        "cpuOCTip119": "Postavite maksimalni množitelj jezgre pri kojemu jezgre mogu raditi. Vrijednost frekvencije jezgre proizvod je tog omjera i frekvencije referentnog takta.",
+                        "cpuOCTip34": "Pomak napona od trenutačnog napona jezgre.",
+                        "cpuOCTip120": "Postavite maksimalni množitelj jezgre pri kojemu jezgre mogu raditi. Vrijednost frekvencije jezgre proizvod je tog omjera i frekvencije referentnog takta.",
+                        "cpuOCTip121": "Postavite maksimalni množitelj jezgre pri kojemu jezgre mogu raditi. Vrijednost frekvencije jezgre proizvod je tog omjera i frekvencije referentnog takta.",
+                        "cpuOCTip76": "Postavite maksimalan množitelj predmemorije procesora pri kojem predmemorije mogu raditi. Vrijednost frekvencije predmemorije proizvod je tog omjera i frekvencije referentnog takta.",
+                        "cpuOCTip77": "Napon koji se isporučuje u interno sučelje predmemorije procesora na temelju trenutačno odabranog načina napona predmemorije.",
+                        "cpuOCTip79": "Konačni pomak napona koji se primjenjuje na napon predmemorije.",
+                        "cpuOCTip122": "Postavite maksimalni množitelj jezgre pri kojemu jezgre mogu raditi. Vrijednost frekvencije jezgre proizvod je tog omjera i frekvencije referentnog takta.",
+                        "cpuOCTip123": "Postavite maksimalni množitelj jezgre pri kojemu jezgre mogu raditi. Vrijednost frekvencije jezgre proizvod je tog omjera i frekvencije referentnog takta.",
+                        "cpuOCTip102": "Postavite ICCMAX za regulator napona jezgre procesora.",
+                        "cpuOCTip106": "Postavite ICCMAX za regulator napona predmemorije i prstenaste sabirnice procesora.",
+                        "cpuOCTip114": "Da biste dobili stvarno ograničenje omjera aktivne jezgre kad je AVX aktivan, oduzmite tu vrijednost od odgovarajućeg ograničenja omjera aktivne jezgre."
+                    },
+                    "gpuOCNames": {
+                        "gpuOCName0": "Pomak takta GPU-a",
+                        "gpuOCName1": "Pomak takta VRAM-a"
+                    },
+                    "gpuOCTips": {
+                        "gpuOCTip0": "Dodaj pomak frekvenciji takta GPU-a.",
+                        "gpuOCTip1": "Dodaj pomak frekvenciji takta memorije."
+                    }
+                },
+                "savePromptPopup": {
+                    "title": "Spremi promjene?",
+                    "description1": "Nepr. postavke Overclocking-a mogu dovesti do nepovratnih ošt. hard. Ako naiđete na bilo koji problem učinite nešto od sljedećeg: ",
+                    "description2": "•  Pritisnite gumb nap. na 8 sek. za pon. pokr. i vraćanje zad. par.",
+                    "description3": "•  Za vrać. zad. par. upotr. prek. \"Vrati zad. Overclocking\" u BIOS-u.",
+                    "save": "SPREMI",
+                    "notSave": "NE SPREMAJ"
+                },
+                "defaultPromptPopup": {
+                    "title": "Postaviti na zadano?",
+                    "description": "Sve će trenutačne i prethodne promjene biti izgubljene."
+                },
+                "warningPromptPopup": {
+                    "title": "Upozorenje!",
+                    "description": "Neispravne postavke procesa Overclocking mogu dovesti do nepovratnog oštećenja hardvera.",
+                    "proceed": "NASTAVI"
                 }
             }
         },
@@ -598,6 +694,42 @@
                     "close": "close"
                 }
             }
+        },
+        "lightingNewversion": {
+            "machineName": {
+                "name1": "Legion Icon Lighting (Front)",
+                "name2": "Internal Ambient Lighting",
+                "name3": "Legion Rear Fan Lighting",
+                "name4": "Legion CPU Fan Lighting",
+                "name5": "Legion Liquid Cooling Pump Lighting",
+                "name6": "Legion Liquid Cooling Fan Lighting",
+                "name7": "Legion Icon (Front)",
+                "name9": "Ambient  Lighting"
+            },
+            "lightingEffect": {
+                "effectName1": "Statičko",
+                "effectName2": "Spektar",
+                "effectName3": "Duga",
+                "effectName4": "Nasumično",
+                "effectName5": "Hladna_plava",
+                "effectName6": "Val_desno",
+                "effectName7": "Val_lijevo"
+            },
+            "lightingSpeed": {
+                "title": "Brzina"
+            },
+            "colorPicker": {
+                "text2": "DODATNO",
+                "text3": "R",
+                "text4": "G",
+                "text5": "B",
+                "text6": "Podj. podr. (isklj.): klik. slj. sliku tipk. za promjenu boja",
+                "text7": "Podj. podr. (uklj.): klik. rubr. slj. slike tipk. za pr. boja rub.",
+                "text8": "Trenutačni efekt ne podržava odabir boja"
+            },
+            "tipText": {
+                "title1": "Upotrijebite Fn+Space za prebacivanje među profilima"
+            }
         }
     },
     "common": {
@@ -667,7 +799,9 @@
             "loading": "Učitavam...",
             "from": "od",
             "to": "do",
-            "clickToChange": "kliknite za izmjenu"
+            "clickToChange": "kliknite za izmjenu",
+            "failedLoad": "Učitavanje nije uspjelo.",
+            "retry": "Pokušajte ponovno"
         },
         "app-update": {
             "message": "Hej! Dostupna je novija verzija programa Vantage, želite li je učitati?"
@@ -738,11 +872,18 @@
                 "submitScreenShot": "Pošalji snimku zaslona",
                 "messages": {
                     "feedbackSuccess": "Hvala vam na povratnim informacijama!"
-                }
+                },
+                "question6": "Kolika je vjerojatnost da preporučite Lenovo Vantage aplikaciju prijatelju ili kolegi?",
+                "question7": "Jeste li znali da Lenovo Vantage možete koristiti da biste ažurirali softver (upravljačke programe, firmver i BIOS) na računalu?",
+                "question8": "Jeste li Lenovo Vantage koristili za pristup informacijama o podršci vašem računalu?",
+                "tips2": "U nastavku unesite bilo kakve dodatne komentare",
+                "emailAddressLabel": "Ostavite svoju adresu e-pošte ako želite da vas tim Lenovo Vantage kontaktira.",
+                "emailAddress": "Adresa e-pošte",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "Vaše Brze postavke",
+            "title": "Brze postavke",
             "microphone": "Mikrofon",
             "cameraPrivacy": "Kamera",
             "eyeCareMode": "Ugodnost za oči",
@@ -787,6 +928,10 @@
                     "update": "Ažuriraj"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Ažurirajte upravljačke programe, BIOS i drugi softver.",
+            "checkForSystemUpdates": "Provjerite ažuriranja sustava"
         }
     },
     "device": {
@@ -897,14 +1042,15 @@
                         "title": "Proizvođač",
                         "celxpert": "Celxpert",
                         "smp": "SMP"
-                    }
+                    },
+                    "fccTooltipText": "Da bismo produžili vijek trajanja baterije, optimizirali smo njezin puni kapacitet na temelju vaše upotrebe. Puni kapacitet baterije možda neće biti dostupan dok je ne ispraznite na 20% i ponovno je napunite."
                 },
                 "condition": {
                     "Illegal": "Ovaj sustav <b>ne podržava</b> umetnutu bateriju te je neće puniti. Bateriju zamijenite odgovarajućom baterijom tvrtke Lenovo za ovaj sustav.",
                     "Good": "<b>Baterija je u dobrom stanju.</b>",
                     "Exhaustion": "Kapacitet baterije je <b>degradiran</b>. Zamijenite je novom.",
                     "Bad": "<b>Došlo je do pogreške baterije.</b> Bateriju nije moguće puniti/prazniti. Zamijenite bateriju.",
-                    "NotDetected": "<b>Baterija nije pronađena</b> ili nije priključena.",
+                    "NotDetected": "<b>Nije otkrivena baterija.</b>",
                     "NotGood": "<b>Baterija nije u dobrom stanju.</b>",
                     "NotSupportACAdapter": "<b>Prilagodnik izmjeničnog napona nije podržan.</b>",
                     "LimitedACAdapterSupport": "<b>Prilagodnik izmjeničnog napona ne može pružiti dovoljno energije.</b>",
@@ -919,7 +1065,7 @@
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} napajanje je povezano.</b>",
                     "EmDriverInstalled": "Pojedinosti o bateriji nisu dostupne. Pokrenite Windows ažuriranje-> Provjerite postoje li ažuriranja da biste instalirali Upravljački program za <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
                 },
-                "batteryNotDetected": "Baterija nije pronađena",
+                "batteryNotDetected": "Nije otkrivena baterija",
                 "thresholdNote": "<b>Napomena:</b> Ako je omogućen prag napunjenosti baterije baterija se ne može potpuno napuniti.",
                 "seeDetailsLink": "Prikaži pojedinosti",
                 "gaugeResetWarning": "<b>Napomena:</b> U tijeku je ponovno postavljanje mjerača baterije. Neka prilagodnik izmjeničnog napona ostane priključen.",
@@ -1110,9 +1256,9 @@
                             "reset": "Ponovno postavljanje",
                             "stop": "Zaustavi"
                         },
-                        "progressText1": "{{stage}} od {{stageNum}}: Kalibriranje do potpune napunjenosti",
-                        "progressText2": "{{stage}} od {{stageNum}}: Kalibriranje na nisku razinu baterije",
-                        "progressText3": "{{stage}} od {{stageNum}}: Kalibriranje do potpune napunjenosti",
+                        "progressText1": "Korak {{stage}}, od ukupno {{stageNum}} koraka: Kalibriranje do potpuno napunjene baterije",
+                        "progressText2": "Korak {{stage}}, od ukupno {{stageNum}} koraka: Kalibriranje na nisku razinu napunjenosti baterije",
+                        "progressText3": "Korak {{stage}}, od ukupno {{stageNum}} koraka: Kalibriranje na visoku razinu napunjenosti baterije",
                         "FCCText": "Od {{before}} Wh do {{after}} Wh",
                         "note": "Napomena: Prije ponovnog postavljanja prikaza napunjenosti baterije obavezno povežite računalo na izmjenično napajanje. ",
                         "resetLog": {
@@ -1140,6 +1286,55 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "PROIZVOD S CERTIFIKATOM ENERGY STAR"
+                },
+                "dpm": {
+                    "title": "Napajanje",
+                    "subtitle": "Postavke napajanja",
+                    "description": "Ovaj odjeljak omogućuje vam provjeru zadanih postavki i prilagođavanje potrošnje i plana napajanja prema vašim potrebama.",
+                    "globalPowerSettings": {
+                        "title": "Globalne postavke napajanja",
+                        "description": "Ova će značajka nadvladati postavke napajanja ili postavke upotrebe energije.",
+                        "powerButton": {
+                            "label": "GUMB ZA NAPAJANJE:",
+                            "items": {
+                                "doNothing": "Nemojte učiniti ništa",
+                                "sleep": "Stanje mirovanja",
+                                "hibernate": "Hibernacija",
+                                "shutDown": "Isključi",
+                                "turnOffTheDisplay": "Isključite zaslon"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "POTREBNA PRIJAVA:",
+                            "items": {
+                                "never": "Nikada",
+                                "fromSleep": "Kada se računalo probudi iz sna"
+                            },
+                            "tip": "Napomena: Ovo funkcionira samo ako je postavljena lozinka sustava."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "Uporaba napajanja",
+                        "description": "AKO JE SUSTAV U PRAZNOM HODU:",
+                        "turnOffDisplay": "ISKLJUČITE ZASLON NAKON:",
+                        "turnOffHDD": "ISKLJUČITE TVRDI DISK NAKON:",
+                        "sleep": "STANJE MIROVANJA NAKON:",
+                        "hibernate": "HIBERNACIJA NAKON:",
+                        "items": {
+                            "never": "Nikada",
+                            "minute": "min",
+                            "minutes": "min",
+                            "hour": "h",
+                            "hours": "h"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "Plan napajanja",
+                        "description": "Odaberite plan napajanja da bist eupravljali performansama računala, temperaturom sustava i potrošnjom energije.",
+                        "currentPowerPlan": {
+                            "label": "TRENUTNI PLAN"
+                        }
+                    }
                 },
                 "smartStandby": {
                     "title": "Pametno stanje mirovanja",
@@ -1521,8 +1716,11 @@
                         "options": {
                             "option1": "Odaberite",
                             "option2": "Otvori web-lokaciju",
-                            "option3": "Unesite tekst"
-                        }
+                            "option3": "Unesite tekst",
+                            "option4": "Open applications or files",
+                            "option5": "Invoke key sequence"
+                        },
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function."
                     },
                     "tooltip": "Sadržaj treba popuniti",
                     "apply": {
@@ -1537,6 +1735,17 @@
                     "enterText": {
                         "title": "TEKST ZA UNOS",
                         "placeholder": "Pišite ovdje"
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles": {
+                        "applicationTitle": "You need to delete one app first",
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {
@@ -1772,7 +1981,7 @@
                 "heading": "Inteligentni mediji",
                 "title": "Zero Touch reprodukcija videozapisa",
                 "desc": "Ta će značajka pauzirati reprodukciju videozapisa kada se udaljite od računala i nastaviti je kada se vratite.",
-                "tooltip": "Ta značajka nije primjenjiva na web-reproduktore videosadržaja. Popularni lokalni reproduktori videosadržaja, kao što su Windows Media Player, 5KPlayer itd., podržavaju tu značajku."
+                "tooltip": "Ova značajka nije primjenjiva na<br>web video uređajima za reprodukciju.<br>Igrači koji su podržani su navedeni na sljedeći način:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
             },
             "superResolution": {
                 "heading": "Inteligentni mediji",
@@ -1810,7 +2019,8 @@
                     "point7": "Odaberite željeni izvorni i ciljni jezik.",
                     "point8": "Ovisno o vašim potrebama, postavite glasovni ulaz iz zvučnika ili iz mikrofona.",
                     "point9": "Da biste počeli govoriti, kliknite ikonu mikrofona",
-                    "closeText": "zatvori"
+                    "closeText": "zatvori",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "u redu",

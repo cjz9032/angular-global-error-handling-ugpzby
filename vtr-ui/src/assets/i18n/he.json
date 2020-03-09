@@ -22,6 +22,12 @@
                     "rapidCharge": "טעינה מהירה"
                 },
                 "legionEdge": {
+                    "thermalMode2": {
+                        "OC_On": "אוברקלוק פועל",
+                        "performance": "ביצועים",
+                        "balance": "איזון",
+                        "quiet": "שקט"
+                    },
                     "title": "אוברקלוק של מעבד",
                     "status": {
                         "alwayson": "פועל",
@@ -97,6 +103,96 @@
                 },
                 "quickSettingstitle": {
                     "title": "הגדרות מהירות"
+                },
+                "advancedOC": {
+                    "title": "אוברקלוק: הגדרות מתקדמות",
+                    "description": "הגדירו פרמטרים מותאמים אישית מתקדמים כאשר אוברקלוקינג פועל. זה יכול להיות מסוכן.",
+                    "gpuOverclock": "אוברקלוק של GPU",
+                    "cpuOCNames": {
+                        "cpuOCName2": "מתח ליבה",
+                        "cpuOCName116": "יחס ליבה 1",
+                        "cpuOCName117": "יחס ליבה 2",
+                        "cpuOCName118": "יחס ליבה 3",
+                        "cpuOCName119": "יחס ליבה 4",
+                        "cpuOCName34": "מתח ליבה בהפעלה",
+                        "cpuOCName120": "יחס ליבה 5",
+                        "cpuOCName121": "יחס ליבה 6",
+                        "cpuOCName76": "יחס מטמון",
+                        "cpuOCName77": "מתח מטמון",
+                        "cpuOCName79": "מתח מטמון בהפעלה",
+                        "cpuOCName122": "יחס ליבה 7",
+                        "cpuOCName123": "יחס ליבה 8",
+                        "cpuOCName102": "ליבת ICCMAX",
+                        "cpuOCName106": "מטמון ICCMAX",
+                        "cpuOCName114": "הפעלת יחס AVX"
+                    },
+                    "cpuOCTips": {
+                        "cpuOCTip2": "הגדר את המתח עבור ליבת ה-CPU.",
+                        "cpuOCTip116": "הגדירו את מכפיל הליבה המרבי שבו יכולות הליבות לפעול. הערך של תדר הליבה הוא תוצר של יחס זה ושל תדר שעון המשמש להתייחסות.",
+                        "cpuOCTip117": "הגדירו את מכפיל הליבה המרבי שבו יכולות הליבות לפעול. הערך של תדר הליבה הוא תוצר של יחס זה ושל תדר שעון המשמש להתייחסות.",
+                        "cpuOCTip118": "הגדירו את מכפיל הליבה המרבי שבו יכולות הליבות לפעול. הערך של תדר הליבה הוא תוצר של יחס זה ושל תדר שעון המשמש להתייחסות.",
+                        "cpuOCTip119": "הגדירו את מכפיל הליבה המרבי שבו יכולות הליבות לפעול. הערך של תדר הליבה הוא תוצר של יחס זה ושל תדר שעון המשמש להתייחסות.",
+                        "cpuOCTip34": "מתח בהפעלה ממתח הליבה הנוכחי.",
+                        "cpuOCTip120": "הגדירו את מכפיל הליבה המרבי שבו יכולות הליבות לפעול. הערך של תדר הליבה הוא תוצר של יחס זה ושל תדר שעון המשמש להתייחסות.",
+                        "cpuOCTip121": "הגדירו את מכפיל הליבה המרבי שבו יכולות הליבות לפעול. הערך של תדר הליבה הוא תוצר של יחס זה ושל תדר שעון המשמש להתייחסות.",
+                        "cpuOCTip76": "הגדירו את מכפיל מטמון המעבד המרבי שבו יכול המטמון לפעול. הערך של תדר המטמון הוא תוצר של יחס זה ושל תדר שעון המשמש להתייחסות.‬",
+                        "cpuOCTip77": "מתח המסופק לממשק המטמון הפנימי של המעבד בהתבסס על מצב מתח המטמון שנבחר כעת.",
+                        "cpuOCTip79": "מתח בהפעלה סופי המוחל על מתח המטמון.",
+                        "cpuOCTip122": "הגדירו את מכפיל הליבה המרבי שבו יכולות הליבות לפעול. הערך של תדר הליבה הוא תוצר של יחס זה ושל תדר שעון המשמש להתייחסות.",
+                        "cpuOCTip123": "הגדירו את מכפיל הליבה המרבי שבו יכולות הליבות לפעול. הערך של תדר הליבה הוא תוצר של יחס זה ושל תדר שעון המשמש להתייחסות.",
+                        "cpuOCTip102": "הגדירו ICCMAX עבור וסת מתח הליבה של מעבד.",
+                        "cpuOCTip106": "הגדירו ICCMAX עבור וסת מתח המטמון ואפיק טבעתי של מעבד.",
+                        "cpuOCTip114": "כדי לגזור את גבול יחס הליבה הפעיל האפקטיבי כאשר AVX פעיל, גרעו ערך זה מגבול יחס הליבה הפעיל המתאים."
+                    },
+                    "gpuOCNames": {
+                        "gpuOCName0": "הפעלת שעון GPU",
+                        "gpuOCName1": "הפעלת שעון VRAM"
+                    },
+                    "gpuOCTips": {
+                        "gpuOCTip0": "הוספת קיזוז לתדר שעון GPU.",
+                        "gpuOCTip1": "הוספת קיזוז לתדר שעון זיכרון."
+                    }
+                },
+                "savePromptPopup": {
+                    "title": "לשמור שינויים?",
+                    "description1": "הגדרות לא נכונות של אוברקלוקינג עלולות לגרום נזק בלתי הפיך לחומרה. בצעו אחת מהפעולות הבאות אם אתם נתקלים בבעיה: ",
+                    "description2": "•  לחצו 8 שניות על מתג ההפעלה כדי להפעיל מחדש ולשחזר את ברירת המחדל של הפרמטרים.",
+                    "description3": "•  מתג Restore Default Overclocking ב-BIOS משחזר את הפרמטרים המקוריים.",
+                    "save": "שמור",
+                    "notSave": "אל תשמור"
+                },
+                "defaultPromptPopup": {
+                    "title": "לאפס לברירת מחדל?",
+                    "description": "כל השינויים הנוכחיים והקודמים יאבדו."
+                },
+                "warningPromptPopup": {
+                    "title": "אזהרה!",
+                    "description": "הגדרות לא נכונות של אוברקלוקינג עלולות לגרום נזק בלתי הפיך לחומרה.",
+                    "proceed": "המשך"
+                },
+                "thermalMode2Popup": {
+                    "thermalMode2SettingTitle": "הגדרת מצב תרמי",
+                    "thermalMode2SettingDesc": "בחרו את המצב הרצוי.",
+                    "fnQDesc": "ניתן להחליף מצב באמצעות קיצור דרך Fn+Q.",
+                    "perormanceTitle": "מצב ביצועים",
+                    "performanceDesc": "שפרו את ביצועי המחשב עם מהירות מאוורר גבוהה יותר וצריכת חשמל רבה יותר. ",
+                    "OCDesc": "תוכלו לבחור להפעיל את התכונה 'אוברקלוקינג'.",
+                    "ac_dcDesc": "מצב הביצועים רלוונטי רק כאשר מתאם מתח AC מחובר לחשמל.",
+                    "balanceTitle": "מצב מאוזן",
+                    "balanceDesc": "מאזן ביצועים ומהירות מאוורר באופן אוטומטי בהתבסס על טמפרטורה עם צריכת חשמל בינונית.",
+                    "quietTitle": "מצב שקט",
+                    "quietDesc": "שומר על שקט על ידי הפחתת ביצועי המחשב ומהירות המאוורר במידת האפשר עם צריכת חשמל נמוכה.",
+                    "OC": {
+                        "cpu_gpuOC": "הפעילו אוברקלוקינג של CPU/GPU במצב ביצועים.",
+                        "cpuOC": "הפעילו אוברקלוקינג של CPU במצב ביצועים.",
+                        "gpuOC": "הפעילו אוברקלוקינג של GPU במצב ביצועים.",
+                        "advance": "מתקדם",
+                        "cpu_gpuDriverLack": "התקינו מנהלי התקנים של CPU/GPU כדי להשתמש בפונקציית אוברקלוקינג.",
+                        "cpuDriverLack": "התקינו מנהל התקן של CPU כדי להשתמש בפונקציית אוברקלוקינג.",
+                        "gpuDriverLack": "התקינו מנהל התקן של GPU כדי להשתמש בפונקציית אוברקלוקינג.",
+                        "goInstall": "עברו להתקנה"
+                    },
+                    "autoSwitch": "מעבר אוטומטי למצב ביצועים בעת הפעלת משחקים ולהפך כאשר יוצאים מהמשחק."
                 }
             }
         },
@@ -598,6 +694,42 @@
                     "close": "close"
                 }
             }
+        },
+        "lightingNewversion": {
+            "machineName": {
+                "name1": "Legion Icon Lighting (Front)",
+                "name2": "Internal Ambient Lighting",
+                "name3": "Legion Rear Fan Lighting",
+                "name4": "Legion CPU Fan Lighting",
+                "name5": "Legion Liquid Cooling Pump Lighting",
+                "name6": "Legion Liquid Cooling Fan Lighting",
+                "name7": "Legion Icon (Front)",
+                "name9": "Ambient  Lighting"
+            },
+            "lightingEffect": {
+                "effectName1": "סטטי",
+                "effectName2": "ספקטרום",
+                "effectName3": "קשת",
+                "effectName4": "אקראי",
+                "effectName5": "כחול קריר",
+                "effectName6": "נפנוף ימינה",
+                "effectName7": "נפנוף שמאלה"
+            },
+            "lightingSpeed": {
+                "title": "מהירות"
+            },
+            "colorPicker": {
+                "text2": "עוד",
+                "text3": "R",
+                "text4": "G",
+                "text5": "B",
+                "text6": "חלוקת שטח (כבויה): לחצו על תמונת המקלדת למטה לשינוי צבעים",
+                "text7": "חלוקת שטח(פועל): לחצו על אזורי תמונת מקלדת למטה לשינוי צבעי אזורים",
+                "text8": "האפקט הנוכחי אינו תומך בבחירת צבע"
+            },
+            "tipText": {
+                "title1": "השתמשו ב- Fn+שטח כדי לעבור בין פרופילים"
+            }
         }
     },
     "common": {
@@ -667,7 +799,9 @@
             "loading": "...טעינה",
             "from": "מ:",
             "to": "בשורה",
-            "clickToChange": "לחצו כדי לשנות"
+            "clickToChange": "לחצו כדי לשנות",
+            "failedLoad": "הטעינה נכשלה.",
+            "retry": "נסו שוב"
         },
         "app-update": {
             "message": "היי! יש גרסה חדשה יותר של Vantage, האם ברצונכם לטעון אותה?"
@@ -738,7 +872,14 @@
                 "submitScreenShot": "שליחת צילום מסך",
                 "messages": {
                     "feedbackSuccess": "תודה על המשוב!"
-                }
+                },
+                "question6": "באיזו מידה סביר שתמליצו על היישום Lenovo Vantage לחבר או לעמית?",
+                "question7": "הידעתם שאתם יכולים להשתמש ב-Lenovo Vantage כדי לשמור על עדכניות התוכנה (מנהלי התקנים, קושחה ו-BIOS) במחשב שלכם?",
+                "question8": "האם השתמשתם ב-Lenovo Vantage כדי לגשת למידע בנושא תמיכה במחשב שלכם?",
+                "tips2": "השאירו הערות נוספות למטה",
+                "emailAddressLabel": "השאירו את כתובת הדוא\"ל שלכם אם ברצונכם שצוות Lenovo Vantage יוכל ליצור איתכם קשר.",
+                "emailAddress": "כתובת דואר אלקטרוני",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
@@ -787,6 +928,10 @@
                     "update": "עדכון"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "עדכן את מנהלי התקנים, ה-BIOS ותוכנות אחרות.",
+            "checkForSystemUpdates": "בדוק אם קיימים עדכוני מערכת"
         }
     },
     "device": {
@@ -897,14 +1042,15 @@
                         "title": "יצרן",
                         "celxpert": "Celxpert",
                         "smp": "SMP"
-                    }
+                    },
+                    "fccTooltipText": "להארכת משך חיי הסוללה, ביצענו מיטוב של קיבולת הטעינה המלאה שלה בהתאם לשימוש. יתכן שקיבולת הסוללה המלאה לא תהיה זמינה עד שהסוללה תתרוקן עד 20% ותוטען מחדש."
                 },
                 "condition": {
                     "Illegal": "הסוללה המותקנת <b>אינה נתמכת</b> על-ידי המערכת ולא תיטען. החליפו אותה בסוללה של Lenovo המתאימה למערכת זו.",
                     "Good": "<b>הסוללה במצב תקין.</b>",
                     "Exhaustion": "קיבולת הסוללה <b>נפגעה</b>. יש להחליף לסוללה חדשה.",
                     "Bad": "<b>אירעה שגיאת סוללה.</b> לא ניתן לטעון/לפרוק את הסוללה. החליפו את הסוללה.",
-                    "NotDetected": "<b>לא אותרה סוללה או שהיא</b> אינה מחוברת.",
+                    "NotDetected": "<b>לא זוהתה סוללה.</b>",
                     "NotGood": "<b>הסוללה אינה במצב תקין.</b>",
                     "NotSupportACAdapter": "<span dir='rtl'><b>מתאם ה-AC אינו נתמך.</b></span>",
                     "LimitedACAdapterSupport": "<b>מתאם AC לא יכול לספק מספיק חשמל.</b>",
@@ -1110,9 +1256,9 @@
                             "reset": "איפוס",
                             "stop": "עצירה"
                         },
-                        "progressText1": "{{stage}} מתוך {{stageNum}}: כיול לטעינה מלאה",
-                        "progressText2": "{{stage}} מתוך {{stageNum}}: כיול לרמת חשמל נמוכה של הסוללה",
-                        "progressText3": "{{stage}} מתוך {{stageNum}}: כיול לטעינה מלאה",
+                        "progressText1": "שלב {{stage}}, מתוך {{stageNum}} שלבים סך הכל: כיול לטעינה מלאה",
+                        "progressText2": "שלב {{stage}}, מתוך {{stageNum}} שלבים סך הכל: כיול לרמת חשמל נמוכה של הסוללה‬",
+                        "progressText3": "שלב {{stage}}, מתוך {{stageNum}} שלבים סך הכל: כיול לרמת צריכת חשמל גבוהה של הסוללה‬",
                         "FCCText": "מ-{{before}} ואט עד {{after}} ואט",
                         "note": "הערה: לפני איפוס מד הסוללה, הקפידו לחבר את המחשב שלכם לחשמל. ",
                         "resetLog": {
@@ -1140,6 +1286,55 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "מוצר עם אישור ENERGY STAR"
+                },
+                "dpm": {
+                    "title": "צריכת חשמל",
+                    "subtitle": "הגדרות צריכת חשמל",
+                    "description": "סעיף זה מאפשר לכם לבדוק את הגדרות ברירת המחדל ולהתאים אישית את צריכת החשמל ואת תוכנית צריכת החשמל שלכם בהתאם לצרכים.",
+                    "globalPowerSettings": {
+                        "title": "הגדרות צריכת חשמל כלליות",
+                        "description": "תכונה זו תעקוף את הגדרות תוכנית צריכת החשמל או צריכת החשמל.",
+                        "powerButton": {
+                            "label": "מתג הפעלה:",
+                            "items": {
+                                "doNothing": "שום פעולה",
+                                "sleep": "שינה",
+                                "hibernate": "תרדמה",
+                                "shutDown": "כיבוי",
+                                "turnOffTheDisplay": "כיבוי הצג"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "נדרשת כניסה:",
+                            "items": {
+                                "never": "לעולם לא",
+                                "fromSleep": "כאשר המחשב יוצא ממצב שינה"
+                            },
+                            "tip": "הערה: זה עובד רק אם מוגדרת סיסמת מערכת."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "צריכת חשמל",
+                        "description": "אם המערכת לא פעילה:",
+                        "turnOffDisplay": "כיבוי הצג כעבור:",
+                        "turnOffHDD": "כיבוי ה-HDD כעבור:",
+                        "sleep": "מעבר למצב שינה כעבור:",
+                        "hibernate": "מעבר למצב המתנה כעבור:",
+                        "items": {
+                            "never": "לעולם לא",
+                            "minute": "דקה",
+                            "minutes": "דקות",
+                            "hour": "שעה",
+                            "hours": "שעות"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "תוכנית צריכת חשמל",
+                        "description": "בחרו תוכנית צריכת חשמל כדי לשלוט בביצועי המחשב, בטמפרטורת המערכת ובצריכת החשמל.",
+                        "currentPowerPlan": {
+                            "label": "תוכנית נוכחית"
+                        }
+                    }
                 },
                 "smartStandby": {
                     "title": "המתנה חכמה",
@@ -1521,8 +1716,11 @@
                         "options": {
                             "option1": "יש לבחור",
                             "option2": "פתח אתר אינטרנט",
-                            "option3": "הזן טקסט"
-                        }
+                            "option3": "הזן טקסט",
+                            "option4": "Open applications or files",
+                            "option5": "Invoke key sequence"
+                        },
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function."
                     },
                     "tooltip": "תוכן למילוי",
                     "apply": {
@@ -1537,6 +1735,17 @@
                     "enterText": {
                         "title": "טקסט להזנה",
                         "placeholder": "הקלד כאן"
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles": {
+                        "applicationTitle": "You need to delete one app first",
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {
@@ -1772,7 +1981,7 @@
                 "heading": "מדיה חכמה",
                 "title": "הפעלת וידאו ללא מגע",
                 "desc": "תכונה זו תשהה את הווידאו כאשר אתם עוזבים את המחשב ותחדש את הווידאו כשאתם חוזרים.",
-                "tooltip": "תכונה זו לא ישימה עבור נגני וידאו באינטרנט. נגני וידאו פופולריים, כמו Windows Media Player‏, 5KPlayer וכן הלאה תומכים בתכונה זו."
+                "tooltip": "תכונה זו לא ישימה עבור<br>נגני וידאו באינטרנט.<br>הנגנים הנתמכים הם:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
             },
             "superResolution": {
                 "heading": "מדיה חכמה",
@@ -1810,7 +2019,8 @@
                     "point7": "בחרו את שפת המקור ואת שפת היעד הרצויות.",
                     "point8": "בהתאם לצרכים, הגדירו את קלט הקול מרמקול או ממיקרופון.",
                     "point9": "לחצו על סמל המיקרופון כדי להתחיל לדבר",
-                    "closeText": "סגירה"
+                    "closeText": "סגירה",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "אישור",

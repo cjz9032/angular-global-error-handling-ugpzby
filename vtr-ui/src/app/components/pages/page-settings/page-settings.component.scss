@@ -192,13 +192,17 @@
 
 		.save-button {
 			padding-left: 1rem;
-		}
-	}
-
-	:host-context(.is-gaming) {
-		.user-profile-section {
-			display: none;
-			visibility: hidden;
+			&::ng-deep {
+				vtr-ui-button {
+					.button-box {
+						.disable {
+							.text {
+								color: $grey_darker
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 }

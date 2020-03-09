@@ -54,13 +54,19 @@
 									[showChildContent]="true"
 									[theme]="'white'"
 									[switchId]="'day-time-color-temp'">
-									<div class="displayColorTemperatureLink">
-										<span>{{'device.deviceSettings.displayCamera.display.displayColorTemperature.link.click' | translate}}</span>&nbsp;
-										<a id="goto_nightlight_link"
+									<div class="displayColorTemperatureLink"
+										tabindex="0"
+										role="text">
+										<span
+											role="text" id="displayColorTemperature-link-click">{{'device.deviceSettings.displayCamera.display.displayColorTemperature.link.click' | translate}}</span>&nbsp;
+										<a id="goto-nightlight-link"
 											href="javascript:void()"
-											attr.aria-label="goto_nightlight_link"
-											(click)="launchProtocol('ms-settings:nightlight')">{{'device.deviceSettings.displayCamera.display.displayColorTemperature.link.here' | translate}}</a>&nbsp;
-										<span>{{'device.deviceSettings.displayCamera.display.displayColorTemperature.link.rest' | translate}}</span>
+											role="link"
+											attr.aria-label="goto-nightlight-link"
+											(click)="launchProtocol('ms-settings:nightlight')"
+											(keydown.enter)="launchProtocol('ms-settings:nightlight')">{{'device.deviceSettings.displayCamera.display.displayColorTemperature.link.here' | translate}}</a>&nbsp;
+										<span
+											role="text" id="displayColorTemperature-link">{{'device.deviceSettings.displayCamera.display.displayColorTemperature.link.rest' | translate}}</span>
 									</div>
 								</vtr-ui-row-switch>
 							</li>
@@ -233,12 +239,7 @@
 									[showChildContent]="true"
 									[isSwitchChecked]="eyeCareModeStatus.status"
 									(toggleOnOff)="onEyeCareModeStatusToggle($event)"
-									[theme]="'white'"
-									vtrMetrics
-									metricsEvent="FeatureClick"
-									metricsParent="Page.Settings"
-									metricsName="OledPowerSettings"
-									[switchId]="'oled-power-settings'">
+									[theme]="'white'">
 									<div class="row">
 										<div class="col-12">
 											<vtr-oled-power-settings
@@ -249,9 +250,9 @@
 								</vtr-ui-row-switch>
 							</li>
 
-
+							<!-- commented below lines to temporarily hide in current release -->
 							<!-- Display Priority Control -->
-							<li class="pt-3">
+							<!-- <li class="pt-3" *ngIf="displayPriorityModal.capability">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.displayCamera.display.displayPriority.title' | translate"
 									[caption]="'device.deviceSettings.displayCamera.display.displayPriority.description' | translate"
@@ -278,8 +279,7 @@
 										</vtr-ui-circle-radio-with-checkbox>
 									</div>
 								</vtr-ui-row-switch>
-							</li>
-
+							</li> -->
 						</ul>
 					</vtr-container-collapsible>
 				</div>

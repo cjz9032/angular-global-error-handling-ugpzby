@@ -79,6 +79,12 @@ $normalPadding: 2.4rem;
 				width: 1.4rem;
 				height: 1.4rem;
 				margin: 0.3rem 0 0 0.3rem;
+				@media #{$black-on-white} {
+					background-color: $high-contrast-white-textselected;
+				}
+				@media #{$white-on-black} {
+					background-color: $high-contrast-black-textselected;
+				}
 			}
 			label {
 				font-size: $body;
@@ -112,6 +118,7 @@ $normalPadding: 2.4rem;
 					height: 2rem;
 					content: "";
 					background: no-repeat 50%/50% 50%;
+					
 				}
 			}
 			.likely-content {
@@ -143,6 +150,7 @@ $normalPadding: 2.4rem;
 					&::after {
 						top: 2.4rem;
 						margin-left: 1rem;
+						
 					}
 				}
 			}
@@ -158,7 +166,7 @@ $normalPadding: 2.4rem;
 			margin-bottom: 1.5rem;
 		}
 
-		.user-comment {
+		.user-comment, .user-email {
 			border: 1px solid $shade_lighter;
 			border-radius: 5px;
 			background-color: #FFFFFF;
@@ -175,7 +183,18 @@ $normalPadding: 2.4rem;
 				border-color: $main;
 			}
 		}
-
+		.user-email {		
+			height: 6rem;			
+		}
+		.invalid-email{
+			background: $text_light 0% 0% no-repeat padding-box;
+			border: 1px solid $button_red_start;
+			color: $button_red_start;
+		}
+		.email-error-msg{
+			font-size: $base;
+			color: $button_red_start;
+		}
 		.comment-count {
 			color: $grey_dark;
 			font-size: $caption;
@@ -221,6 +240,9 @@ $normalPadding: 2.4rem;
 			.user-comment {
 				height: 10rem;
 			}
+			.user-email{
+				height: 5rem;
+			}
 		}
 	}
 
@@ -238,7 +260,6 @@ $normalPadding: 2.4rem;
 			font-size: 16rem;
 			color: $go;
 			text-align: center;
-			padding-top: 14rem;
 		}
 
 		.thank-you {
@@ -275,5 +296,13 @@ $normalPadding: 2.4rem;
 			width: 100%;
 			height: 100%;
 		}
+	}
+	@media #{$black-on-white} {
+		border: 1px solid $dark !important ;
+		border-radius: 1rem;
+	}
+	@media #{$white-on-black} {
+		border: 1px solid $light !important ;
+		border-radius: 1rem;
 	}
 }

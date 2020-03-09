@@ -2,8 +2,9 @@
 
 .subpage-device-settings-display {
 	.displayColorTemperatureLink {
-		padding-left: 2.5rem;
-		font-size: 2rem;
+		margin-top: 1rem;
+		padding-left: 3.1rem;
+		font-size: 1.4rem;
 		font-weight: 300;
 	}
 	#goto_nightlight_link {
@@ -39,25 +40,25 @@
 			color: $main;
 		}
 	}
-		.container-card{
-			@media #{$black-on-white} {
-				//background-color: $high-contrast-grey;
-				border: 0.1rem solid $dark;
-				border-radius: 1rem;
-				box-sizing: border-box;
+		// .container-card{
+		// 	@media #{$black-on-white} {
+		// 		//background-color: $high-contrast-grey;
+		// 		border: 0.1rem solid $dark;
+		// 		border-radius: 1rem;
+		// 		box-sizing: border-box;
 
 
-			}
-			@media #{$white-on-black} {
-				//background-color: $high-contrast-grey;
-				border: 0.1rem solid $light;
-				border-radius: 1rem;
-				box-sizing: border-box;
+		// 	}
+		// 	@media #{$white-on-black} {
+		// 		//background-color: $high-contrast-grey;
+		// 		border: 0.1rem solid $light;
+		// 		border-radius: 1rem;
+		// 		box-sizing: border-box;
 
 
-			}
-		}
-	.smartsettings-card {
+		// 	}
+		// }
+	.smart-settings-card {
 		margin-left: -1.5rem;
 		margin-right: -1.5rem;
 		.subtitle {
@@ -209,5 +210,42 @@
 				border: none;
 			}
 		}
+	}
+	.cam-privacy-switch {
+		::ng-deep .vtr-ui-switch-row.white-theme {
+			.vtr-row-switch {
+				min-height: 4rem;
+			}
+		}
+	}
+
+	.camera-block {
+		::ng-deep .vtr-ui-switch-row.white-theme {
+			.tool-tip-icon{
+				margin-left: 1.5rem;
+			}
+		}
+	}
+	.color-temp-block {
+		::ng-deep .vtr-ui-switch-row.white-theme{
+			.vtr-row-switch{
+				display: block !important;
+				text-align: right !important;
+				min-width: auto !important;
+				.tool-tip-icon {
+					margin-left: 0px !important;
+				}
+			}
+		}
+	}
+	::ng-deep .vtr-widget-permission-note {
+		width: 96.5%;
+		margin-left: 1.3rem;
+	}
+}
+
+.ecm-note {
+	p {
+		margin-bottom: 0;
 	}
 }

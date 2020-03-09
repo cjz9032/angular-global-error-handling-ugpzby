@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalArticleDetailComponent } from 'src/app/components/modal/modal-article-detail/modal-article-detail.component';
@@ -52,4 +52,5 @@ export class WidgetHomeSecurityComponent {
 
 		articleDetailModal.componentInstance.articleId = this.peaceOfMindArticleId;
 	}
+
 }

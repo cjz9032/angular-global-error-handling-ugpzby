@@ -10,7 +10,7 @@ $main_lighter: #b5d0f4;
 $main_lightest: #eaf2fd;
 $menu_hover: #4a81fd;
 //new added styles
-$gaming_bg: #11192c;// as per VAN-11517 
+$gaming_bg: #11192c;// as per VAN-11517
 $gaming-Darkslate-blue: #233043;
 $darkPopup: #293757;
 $white5:rgba(251,253,255,0.05);
@@ -124,13 +124,15 @@ $purple_navy: #444f78;
 $note_border: #ecf0f1;
 $dim_gray: #707070;
 $solitude: #fbfcfc;
+$gray_out: #99A4AE;
 
 // updated button color, hover & active effect
 $btn_primary_color: #0073ff;
 $btn_secondary_color: #2486ff;
-$gaming_white60: rgba(251, 253, 255, 0.6);//as per VAN-11517 
-$gaming_white80: rgba(251, 253, 255, 0.8);// as per VAN-11517 
+$gaming_white60: rgba(251, 253, 255, 0.6);//as per VAN-11517
+$gaming_white80: rgba(251, 253, 255, 0.8);// as per VAN-11517
 
+$screen_dark_0: rgba(0, 0, 0, 0);
 $screen_dark_05: rgba(0, 0, 0, 0.05);
 $screen_dark_10: rgba(0, 0, 0, 0.1);
 $screen_dark_15: rgba(0, 0, 0, 0.15);
@@ -141,6 +143,48 @@ $screen_dark_70: rgba(0, 0, 0, 0.7);
 $button_red_shadow: rgba(237, 88, 73, 0.25);
 
 $screen_light_15: rgba(255, 255, 255, 0.15);
+
+//gaming3.2.1 start ------------------------
+
+//below are colors
+
+$blueFill: #257eff;
+//for most blue color in Gaming, such as button/icon/text,etc
+
+$blueHover: #0160d6;
+//when you hover on blue elements such as button
+
+$green: #32d489;
+//for the toggle
+
+$background: #11192c;
+//the whole background color for Gaming
+
+$darkCell: #1f2a42;
+// lots of containers/boxes on Gaming pages, this is the color of them
+
+$darkPopup: #293757;
+//this is for popups shown on page, including dropdown menu, popups
+
+$shadow: rgba(0, 0, 0, 0.4);
+//a shadow color for containers
+
+//some white colors with differect opacities for different purposes
+$white100: rgba(251, 253, 255, 1);
+$white60: rgba(251, 253, 255, 0.6);
+$white20: rgba(251, 253, 255, 0.2);
+$white10: rgba(251, 253, 255, 0.1);
+$white5: rgba(251, 253, 255, 0.05);
+
+//usually in Gaming we do not need dark text but there are white dialogs, therefore some dark colors are needed
+$darkText: #1A638B;
+$lightText: #135579;
+$dark40: rgba(17, 25, 44, 0.4);
+$dark20: rgba(17, 25, 44, 0.2);
+$dark10: rgba(17, 25, 44, 0.1);
+$dark5: rgba(17, 25, 44, 0.05);
+
+//gaming3.2.1 end -------------------------
 
 $drop_shadow: 0 0 1.5rem 0 $screen_dark_15;
 $drop_shadow_1: 0 0 1rem 0 $screen_dark_15;
@@ -284,6 +328,7 @@ $mediaquery_X45: "only screen and (min-width: 992px) and (max-width: 1200px)";
 $mediaquery_X46: "only screen and (min-width: 768px) and (max-width: 992px)";
 $mediaquery_X47: "only screen and (min-width: 600px) and (max-width: 768px)";
 $mediaquery_X48: "only screen and (max-width: 600px)";
+$mediaquery_X49: "only screen and (min-width: 768px) and (max-width: 815px)";
 $dpiquery_0: "max-resolution: 350dpi";
 $dpiquery_1: "max-resolution: 275dpi";
 $dpiquery_2: "max-resolution: 200dpi";
@@ -370,6 +415,6 @@ $screen_dark_01: rgba(0, 0, 0, 0.01);
 $high-contrast-white-textselected: #37006e;
 $high-contrast-blue: #0007a4;
 $high-contrast-white-disabled: #600000;
-$high-contrast-grey: #767879;
+//$high-contrast-grey: #767879;
 $high-contrast-black-textselected: #1aebff;
 $high-contrast-black-disabled: #3be23b;

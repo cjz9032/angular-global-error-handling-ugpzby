@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AntivirusCommon } from 'src/app/data-models/security-advisor/antivirus-common.model';
 
 @Component({
@@ -13,6 +13,8 @@ export class WidgetMcafeeStateComponent implements OnInit {
   @Input() windowsDefender = false;
   @Input() url: string;
   @Input() isOnline: boolean;
+  @Output() retryClick = new EventEmitter<any>();
+
   windowsMcAfee = [{
 	status: 'not-installed',
 	title: 'security.antivirus.windowsDefender.virus'
@@ -40,5 +42,9 @@ export class WidgetMcafeeStateComponent implements OnInit {
 	if (this.windowsDefender && !this.url) {
 		this.windowsList = this.windowsMcAfee.slice(2);
 	}
+  }
+
+  retry(item) {
+	  this.retryClick.emit(item.type);
   }
 }

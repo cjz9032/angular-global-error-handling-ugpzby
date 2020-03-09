@@ -1,111 +1,74 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { NO_ERRORS_SCHEMA } from "@angular/core";
 
-import { DisplayColorTempComponent } from './display-color-temp.component';
-import { EyeCareMode } from 'src/app/data-models/camera/eyeCareMode.model';
-import { ChangeContext, Ng5SliderModule, PointerType } from 'ng5-slider';
-import { UiRangeSliderComponent } from '../../ui/ui-range-slider/ui-range-slider.component';
-import { UiButtonComponent } from '../../ui/ui-button/ui-button.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { TranslationModule } from 'src/app/modules/translation.module';
-import { FormsModule } from '@angular/forms';
-import { TranslateStore } from '@ngx-translate/core';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { DisplayColorTempComponent } from "./display-color-temp.component";
+import { EyeCareMode } from "src/app/data-models/camera/eyeCareMode.model";
+import { ChangeContext } from "ng5-slider";
+import { LoggerService } from "src/app/services/logger/logger.service";
+import { TranslateStore } from "@ngx-translate/core";
 
-describe('DisplayColorTempComponent', () => {
-	// let component: DisplayColorTempComponent;
-	// let fixture: ComponentFixture<DisplayColorTempComponent>;
-	const displayColorTempSettings: EyeCareMode = {
-		available: true,
-		current: 10,
-		maximum: 100,
-		minimum: 0,
-		status: true
-	};
+import { TranslationModule } from "src/app/modules/translation.module";
+
+const displayColorTempSettings: EyeCareMode = {
+	available: true,
+	current: 10,
+	maximum: 100,
+	minimum: 0,
+	status: true
+};
+
+describe("DisplayColorTempComponent", () => {
+	let component: DisplayColorTempComponent;
+	let fixture: ComponentFixture<DisplayColorTempComponent>;
+	let logger: LoggerService;
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [DisplayColorTempComponent, UiRangeSliderComponent, UiButtonComponent],
-			imports: [FontAwesomeModule, TranslationModule, FormsModule],
-			providers: [TranslateStore],
-			schemas: [NO_ERRORS_SCHEMA] // for derictives
-		}).compileComponents();
+			schemas: [NO_ERRORS_SCHEMA],
+			declarations: [DisplayColorTempComponent],
+			imports: [TranslationModule],
+			providers: [LoggerService, TranslateStore]
+		});
 	}));
 
-	describe(':', () => {
+	it("should create the app", () => {
+		fixture = TestBed.createComponent(DisplayColorTempComponent);
+		component = fixture.debugElement.componentInstance;
+		logger = TestBed.get(LoggerService);
+		component.displayColorTempSettings = { ...displayColorTempSettings };
+		spyOn(logger, "info");
+		fixture.detectChanges();
+		expect(component).toBeTruthy();
+	});
 
-		function setup() {
-			const fixture = TestBed.createComponent(DisplayColorTempComponent);
-			const component = fixture.debugElement.componentInstance;
-			// const componentElement = fixture.debugElement.nativeElement;
+	it("should call onDisplayColorTemparatureChange", () => {
+		fixture = TestBed.createComponent(DisplayColorTempComponent);
+		component = fixture.debugElement.componentInstance;
+		const event: ChangeContext = {
+			value: 20,
+			highValue: 80,
+			pointerType: 1
+		};
+		const spy = spyOn(component.displayColorTempChange, "emit");
+		component.onDisplayColorTemparatureChange(event);
+		expect(spy).toHaveBeenCalled();
+	});
 
-			return { fixture, component };
-		}
+	it("should call onResetTemparature", () => {
+		fixture = TestBed.createComponent(DisplayColorTempComponent);
+		component = fixture.debugElement.componentInstance;
+		const event = "10";
+		const spy = spyOn(component.resetTemparature, "emit");
+		component.onResetTemparature(event);
+		expect(spy).toHaveBeenCalled();
+	});
 
-		it('should create the app', (() => {
-			const { component } = setup();
-			expect(component).toBeTruthy();
-		}));
-
-		// it('ui-range-slider created', async(() => {
-		// 	const { fixture, component } = setup();
-		// 	component.displayColorTempSettings = displayColorTempSettings;
-		// 	component.enableSlider = true;
-		// 	fixture.detectChanges();
-
-		// 	const slider = fixture.debugElement.nativeElement.querySelector('vtr-ui-range-slider');
-		// 	expect(slider).not.toBeNull();
-
-		// }));
-
-		// it('displayColorTempChange emited', async(() => {
-		// 	const { fixture, component } = setup();
-		// 	spyOn(component.displayColorTempChange, 'emit').and.callThrough();
-
-		// 	component.displayColorTempSettings = displayColorTempSettings;
-		// 	fixture.detectChanges();
-
-		// 	let pt: PointerType;
-
-		// 	const changeContext: ChangeContext = {
-		// 		highValue: 100,
-		// 		pointerType : pt,
-		// 		value: displayColorTempSettings.current
-		// 	};
-
-		// 	component.onDisplayColorTemparatureChange(changeContext);
-		// 	fixture.whenStable().then(() => {
-		// 		expect(component.displayColorTempChange.emit).toHaveBeenCalled();
-		// 	});
-		// }));
-
-		// it('resetTemparature emited', async(() => {
-		// 	const { fixture, component } = setup();
-		// 	spyOn(component.resetTemparature, 'emit').and.callThrough();
-
-		// 	component.displayColorTempSettings = displayColorTempSettings;
-		// 	component.enableSlider = true;
-		// 	fixture.detectChanges();
-
-		// 	component.onResetTemparature(new Event('click'));
-		// 	fixture.whenStable().then(() => {
-		// 		expect(component.resetTemparature.emit).toHaveBeenCalled();
-		// 	});
-		// }));
-
-		// it('colorPreviewValue emited', async(() => {
-		// 	const { fixture, component } = setup();
-		// 	spyOn(component.colorPreviewValue, 'emit').and.callThrough();
-
-		// 	component.displayColorTempSettings = displayColorTempSettings;
-		// 	component.enableSlider = true;
-		// 	fixture.detectChanges();
-
-		// 	component.dragChangeValue(new Event('click'));
-		// 	fixture.whenStable().then(() => {
-		// 		expect(component.colorPreviewValue.emit).toHaveBeenCalled();
-		// 	});
-		// }));
-
-
+	it("should call dragChangeValue", () => {
+		fixture = TestBed.createComponent(DisplayColorTempComponent);
+		component = fixture.debugElement.componentInstance;
+		const event = 10;
+		const spy = spyOn(component.colorPreviewValue, "emit");
+		component.dragChangeValue(event);
+		expect(spy).toHaveBeenCalled();
 	});
 });

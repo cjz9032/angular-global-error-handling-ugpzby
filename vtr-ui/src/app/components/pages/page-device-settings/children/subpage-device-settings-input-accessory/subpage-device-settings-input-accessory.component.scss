@@ -1,8 +1,5 @@
 @import "../../../../../app.theme.scss";
 
-// TODO: remove below line in 3.2
-$fontsize_xs: 1.4rem;
-
 .subpage-device-settings-input-accessories {
 	ul.list-group {
 		list-style-type: none;
@@ -13,6 +10,7 @@ $fontsize_xs: 1.4rem;
 		font-size: $fontsize_xs;
 		font-weight: $weight_light;
 		color: $grey_dark;
+		line-height: 2.8rem;
 	}
 
 	.keys-row {
@@ -32,6 +30,11 @@ $fontsize_xs: 1.4rem;
 		min-height: 33vh;
 		height: auto;
 		margin-top: 1rem;
+		@media #{$breakpoint_sm} {
+			background-size: 100% auto;
+			min-height: 28vh;
+			background-repeat: no-repeat;
+		}
 
 		img {
 			width: 100%;
@@ -254,13 +257,24 @@ $fontsize_xs: 1.4rem;
 			margin-left: 2rem;
 		}
 	}
+
+	.img-block {
+		padding-left: 3rem;
+	}
+	.keyboard-backlight-block {
+		::ng-deep .vtr-ui-switch-row.white-theme {
+			.col-12 {
+				margin-left: 3rem;
+			}
+		}
+	}
 }
 
 .voip {
 	.caption,
 	.prompting,
 	.app-text {
-		font-size: 1.75rem;
+		font-size: $fontsize_xs;
 		font-weight: 300;
 	}
 
@@ -271,6 +285,10 @@ $fontsize_xs: 1.4rem;
 	.adjust-margin {
 		margin-left: 4rem !important;
 		padding-left: 0;
+	}
+
+	.noInstalledAppsNote {
+		padding-left: 4.5rem;
 	}
 }
 

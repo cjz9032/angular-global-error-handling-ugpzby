@@ -30,19 +30,26 @@
 		.microphone-slider-margin {
 			margin-right: 1.5rem;
 		}
-	}
-	.container-card {
-		@media #{$black-on-white} {
-			border: 0.1rem solid $dark;
-			border-radius: 1rem;
-			box-sizing: border-box;
-		}
-		@media #{$white-on-black} {
-			border: 0.1rem solid $light;
-			border-radius: 1rem;
-			box-sizing: border-box;
+		.microphone-on-off {
+			::ng-deep .vtr-ui-switch-row.white-theme {
+				.vtr-row-switch {
+					min-width: 7.5rem;
+				}
+			}
 		}
 	}
+	// .container-card {
+	// 	@media #{$black-on-white} {
+	// 		border: 0.1rem solid $dark;
+	// 		border-radius: 1rem;
+	// 		box-sizing: border-box;
+	// 	}
+	// 	@media #{$white-on-black} {
+	// 		border: 0.1rem solid $light;
+	// 		border-radius: 1rem;
+	// 		box-sizing: border-box;
+	// 	}
+	// }
 
 	ul.list-group {
 		list-style-type: none;

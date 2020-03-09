@@ -28,10 +28,10 @@ import { SharedModule } from 'src/app/modules/shared.module';
 import { HeaderMainModule } from 'src/app/components/header-main/header-main.module';
 import { UiButtonModule } from '../../components/ui/ui-button-hwscan/ui-button-hwscan.module';
 import { ContainerCardModule } from 'src/app/components/container-card/container-card.module';
-import { MetricsModule } from 'src/app/directives/metrics.module';
+import { MetricsModule } from 'src/app/services/metric/metrics.module';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 
-import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faCaretUp } from '@fortawesome/free-solid-svg-icons/faCaretUp';
 import { faCaretRight } from '@fortawesome/free-solid-svg-icons/faCaretRight';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons/faCaretDown';
@@ -41,18 +41,6 @@ import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons/faExclama
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons/faQuestionCircle';
 import { faAngleUp } from '@fortawesome/pro-light-svg-icons/faAngleUp';
 import { faBan } from '@fortawesome/free-solid-svg-icons/faBan';
-
-
-library.add(faCaretUp);
-library.add(faCaretRight);
-library.add(faCaretDown);
-library.add(faRedo);
-library.add(faExclamationTriangle);
-library.add(faExclamationCircle);
-library.add(faQuestionCircle);
-library.add(faAngleUp);
-library.add(faBan);
-
 
 @NgModule({
 	declarations: [
@@ -92,7 +80,8 @@ library.add(faBan);
 		NgbProgressbarModule,
 		ContainerCardModule,
 		MetricsModule,
-		PageLayoutModule
+		PageLayoutModule,
+		FontAwesomeModule
 	],
 	exports: [
 		NgbCollapseModule
@@ -110,5 +99,17 @@ library.add(faBan);
 		ModalScheduleScanCollisionComponent,
 	]
 })
-export class HardwareScanModule { }
+export class HardwareScanModule {
+	constructor(library: FaIconLibrary) {
+		library.addIcons(faCaretUp);
+		library.addIcons(faCaretRight);
+		library.addIcons(faCaretDown);
+		library.addIcons(faRedo);
+		library.addIcons(faExclamationTriangle);
+		library.addIcons(faExclamationCircle);
+		library.addIcons(faQuestionCircle);
+		library.addIcons(faAngleUp);
+		library.addIcons(faBan);
+	}
+ }
 

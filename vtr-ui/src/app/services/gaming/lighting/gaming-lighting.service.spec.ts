@@ -25,16 +25,28 @@ describe('Shared service:', () => {
 			return { service };
 		}
 
-
-
-
-		it('should call capabilities', () => {
-			spyOn(service.getGamingLighting, 'getLightingCapabilities').and.callThrough();
-			service.getLightingCapabilities();
-			expect(service.getGamingLighting.getLightingCapabilities).toHaveBeenCalled();
+		it('should call getLightingCapabilities', () => {
 			service.isShellAvailable = false;
-			service.getLightingCapabilities();
-			expect(service.getGamingLighting.getLightingCapabilities).toHaveBeenCalled();
+			const res = service.getLightingCapabilities();
+			expect(res).toBe(undefined);
+			service.isShellAvailable = true;
+			try {
+				service.getLightingCapabilities();
+			} catch (e) {
+				expect(e).not.toBeNull();
+			}
+		});
+
+		it('should call regLightingProfileIdChangeEvent', () => {
+			service.isShellAvailable = false;
+			const res = service.regLightingProfileIdChangeEvent();
+			expect(res).toBe(undefined);
+			service.isShellAvailable = true;
+			try {
+				service.regLightingProfileIdChangeEvent();
+			} catch (e) {
+				expect(e).not.toBeNull();
+			}
 		});
 
 		it('should call getLightingProfileId', () => {
@@ -47,14 +59,6 @@ describe('Shared service:', () => {
 			} catch (e) {
 				expect(e).not.toBeNull();
 			}
-		});
-		it('should call getLightingProfileById', () => {
-			spyOn(service.getGamingLighting, 'getLightingProfileById').and.callThrough();
-			service.getLightingProfileById(1);
-			expect(service.getGamingLighting.getLightingProfileById).toHaveBeenCalled();
-			service.isShellAvailable = false;
-			service.getLightingProfileById(1);
-			expect(service.getGamingLighting.getLightingProfileById).toHaveBeenCalled();
 		});
 
 		it('should call setLightingProfileId', () => {
@@ -92,6 +96,20 @@ describe('Shared service:', () => {
 				expect(e).not.toBeNull();
 			}
 		});
+
+
+		it('should call getLightingProfileById', () => {
+			service.isShellAvailable = false;
+			const res = service.getLightingProfileById(1);
+			expect(res).toBe(undefined);
+			service.isShellAvailable = true;
+			try {
+				service.getLightingProfileById(1);
+			} catch (e) {
+				expect(e).not.toBeNull();
+			}
+		});
+
 
 		it('should call setLightingProfileBrightness', () => {
 			service.isShellAvailable = false;

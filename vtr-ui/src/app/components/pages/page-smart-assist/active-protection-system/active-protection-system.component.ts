@@ -167,9 +167,8 @@ export class ActiveProtectionSystemComponent implements OnInit {
 	}
 
 	setAutoDisableSetting(event) {
-		const value = event.target.checked;
 		this.smartAssist
-			.setAutoDisableSetting(value)
+			.setAutoDisableSetting(event)
 			.then(res => {});
 	}
 

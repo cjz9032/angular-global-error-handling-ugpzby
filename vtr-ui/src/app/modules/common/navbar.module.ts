@@ -1,14 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
-import { MetricsModule } from 'src/app/directives/metrics.module';
+import { MetricsModule } from 'src/app/services/metric/metrics.module';
 import { MenuMainComponent } from 'src/app/components/menu-main/menu-main.component';
 import { UiHeaderWarrantyComponent } from 'src/app/components/ui/ui-header-warranty/ui-header-warranty.component';
 import { TranslationModule } from '../translation.module';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 
 //#region FONT AWESOME
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { RouterModule } from '@angular/router';
 import { faDesktop } from '@fortawesome/free-solid-svg-icons/faDesktop';
 import { faSquare } from '@fortawesome/free-solid-svg-icons/faSquare';
@@ -30,26 +29,6 @@ import { UiButtonModule } from 'src/app/components/ui/ui-button/ui-button.module
 import { CommonPipeModule } from './common-pipe.module';
 //#endregion
 
-
-//#region font-awesome icons needed for menu-items
-
-library.add(faDesktop);
-library.add(faWrench);
-library.add(faLaptop);
-library.add(faColumns);
-library.add(faHomeLgAlt);
-library.add(faUserShield);
-library.add(faLock);
-library.add(faSquare);
-library.add(faBars);
-library.add(faArrowRight);
-library.add(faArrowLeft);
-library.add(faCheck);
-library.add(faTimes);
-library.add(faAngleDown);
-library.add(faSearch);
-
-//#endregion
 
 @NgModule({
 	declarations: [
@@ -80,4 +59,22 @@ library.add(faSearch);
 		NO_ERRORS_SCHEMA
 	]
 })
-export class NavbarModule { }
+export class NavbarModule {
+	constructor(library: FaIconLibrary) {
+		library.addIcons(faDesktop);
+		library.addIcons(faWrench);
+		library.addIcons(faLaptop);
+		library.addIcons(faColumns);
+		library.addIcons(faHomeLgAlt);
+		library.addIcons(faUserShield);
+		library.addIcons(faLock);
+		library.addIcons(faSquare);
+		library.addIcons(faBars);
+		library.addIcons(faArrowRight);
+		library.addIcons(faArrowLeft);
+		library.addIcons(faCheck);
+		library.addIcons(faTimes);
+		library.addIcons(faAngleDown);
+		library.addIcons(faSearch);
+	}
+}

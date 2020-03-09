@@ -60,7 +60,7 @@ describe('UiGamingCollapsibleContainerComponent', () => {
 		component.options = drop;
 		fixture.detectChanges();
 	}));
- 
+
 	it('should create', () => {
 		expect(component).toBeTruthy();
 	});
@@ -73,9 +73,9 @@ describe('UiGamingCollapsibleContainerComponent', () => {
 	}));
 
 	it('Checking call have been made for toggleOptions function', fakeAsync(() => {
-		component.toggleOptions(Option);
+		component.toggleOptions(1);
 		spyOn(component, 'toggleOptions');
-		component.toggleOptions(Option);
+		component.toggleOptions(1);
 		expect(component.toggleOptions).toHaveBeenCalled();
 	}));
 

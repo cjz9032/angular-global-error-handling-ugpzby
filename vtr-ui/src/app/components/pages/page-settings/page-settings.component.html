@@ -156,7 +156,7 @@
 							name="SettingsUserProfile"
 							[cardTitle]=" 'settings.userProfile' | translate "
 							[isCollapsed]="true">
-							<div class="row m-0 vtr-col-pad">
+							<div class="row m-0 vtr-col-pad" [hidden]="deviceService.isGaming">
 								<div class="col-auto left-icon-column">
 									<div class="left-icon-block">
 										<fa-icon class="left-icon"
@@ -238,7 +238,7 @@
 									</div>
 								</div>
 							</div>
-							<hr>
+							<hr [hidden]="deviceService.isGaming">
 							<div class="row m-0 vtr-col-pad">
 								<div class="col-auto left-icon-column">
 									<div class="left-icon-block">

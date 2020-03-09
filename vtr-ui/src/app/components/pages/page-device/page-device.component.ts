@@ -56,9 +56,10 @@ export class PageDeviceComponent implements OnInit, OnDestroy {
 					if (cardContentPositionA.ActionLink) {
 						const isHaveSerialNumber = cardContentPositionA.ActionLink.indexOf('[SerialNumber]') > -1;
 						const isWarrantyAposLink = cardContentPositionA.ActionLink.startsWith('https://www.lenovo.com/us/en/warrantyApos');
-						if (isHaveSerialNumber || isWarrantyAposLink) {
+						const isWarrantyLookupLink = cardContentPositionA.ActionLink.startsWith('https://pcsupport.lenovo.com/warrantylookup');
+						if (isHaveSerialNumber || isWarrantyAposLink || isWarrantyLookupLink) {
 							this.deviceService.getMachineInfo().then((info) => {
-								if (isWarrantyAposLink && info && info.mtm && info.mtm.toLocaleLowerCase().endsWith('cd')) {
+								if ((isWarrantyAposLink || isWarrantyLookupLink) && info && info.mtm && info.mtm.toLocaleLowerCase().endsWith('cd')) {
 									this.cardContentPositionA.ActionLink = 'https://item.lenovo.com.cn/product/100785.html?pmf_group=qjz&pmf_medium=qjz&pmf_source=Z00009560T000&_ga=2.136201912.800236951.1571628156-244493281.1561709922';
 								} else if (isHaveSerialNumber && info && info.serialnumber) {
 									this.cardContentPositionA.ActionLink = cardContentPositionA.ActionLink.replace(/\[SerialNumber\]/g, info.serialnumber);

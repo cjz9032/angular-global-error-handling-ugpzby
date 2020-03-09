@@ -173,63 +173,89 @@
 				</div>
 <!-- ****************** End Battery Section ******************************** -->
 
-<!-- ****************** Start Power Section ******************************** -->
-				 <div class="row pt-5 smartsettings-card"
-					id="power"
-					*ngIf="!batteryService.isPowerDriverMissing && (showAirplanePowerModeSection || alwaysOnUSBStatus?.available || showEasyResumeSection || (showFlipToBootSection$ | async))">
-					<div class="col-12 mx-auto container-card">
-						<vtr-container-collapsible
-							[cardTitle]="'device.deviceSettings.power.powerSettings.title' | translate"
-							[tabIndex]="0"
-							[vtrAppSearchScroller]="['search-usb-charging', 'search-easy-resume']"
-							[isCollapsed]="false"
-							[collapseLinkId]="'device-settings-powerSettings'">
-							<ul class="list-group list-group-flush">
-								<li class=""
-									*ngIf="showAirplanePowerModeSection">
-									<vtr-ui-row-switch
-										[title]="'device.deviceSettings.power.batterySettings.airPlanePower.title' | translate"
-										[name]="'device.deviceSettings.power.batterySettings.airPlanePower.title' | translate"
-										[caption]="'device.deviceSettings.power.batterySettings.airPlanePower.description' | translate"
-										[isSwitchVisible]=true
-										[leftIcon]="['fal', 'plane']"
-										[tooltipText]="'device.deviceSettings.power.batterySettings.airPlanePower.description' | translate"
-										[isSwitchChecked]="toggleAirplanePowerModeFlag"
-										[showChildContent]=true
-										[switchId]="'ds-power-battery-airplane'"
-										(toggleOnOff)="onToggleOfAirplanePowerMode($event)">
-										<div class="row">
-											<div class="col px-20">
-												<div class="auto-set-checkbox custom-checkbox-gaming"
-													tabindex="0"
-													(keydown.enter)="cbAirplaneMode.click()"
-													[attr.aria-checked]="airplaneAutoDetection"
-													attr.aria-labelledby="cb-airplane-mode"
-													role="checkbox">
-													<input id="cb-airplane-mode"
-														#cbAirplaneMode
-														tabindex="-1"
-														class="custom-control-input"
-														attr.aria-label="cb-airplane-mode"
-														type="checkbox"
-														name="airplane-mode-checkbox-id"
-														[(ngModel)]="airplaneAutoDetection"
-														(ngModelChange)='onAirplaneAutoModeStatusChange()'
-														aria-hidden="true"
-														checked="" />
-
-													<span class="checkmark"></span>
-													<label for="cb-airplane-mode">
-														{{ 'device.deviceSettings.power.batterySettings.airPlanePower.checkBoxDesc' | translate }}
-													</label>
-												</div>
-												<label *ngIf="airplaneAutoDetection"
-													role="text"
-													tabindex="0"
-													class="auto-detection-note">
-													{{ 	'device.deviceSettings.power.batterySettings.airPlanePower.note' | translate }}
-												</label>
-											</div>
+			<!-- ****************** Start Power Section ******************************** -->
+			<div class="row pt-5 smart-settings-card"
+				id="power"
+				*ngIf="isPowerSectionAvailable">
+				<div class="col-12 mx-auto container-card">
+					<vtr-container-collapsible
+						[cardTitle]="'device.deviceSettings.power.powerSettings.title' | translate"
+						[tabIndex]="0"
+						[vtrAppSearchScroller]="['search-usb-charging', 'search-easy-resume']"
+						[isCollapsed]="false"
+						[collapseLinkId]="'device-settings-powerSettings'">
+						<ul class="list-group list-group-flush">
+							<li class=""
+								*ngIf="showAirplanePowerModeSection">
+								<vtr-ui-row-switch
+									[title]="'device.deviceSettings.power.batterySettings.airPlanePower.title' | translate"
+									[name]="'device.deviceSettings.power.batterySettings.airPlanePower.title' | translate"
+									[caption]="'device.deviceSettings.power.batterySettings.airPlanePower.description' | translate"
+									[isSwitchVisible]=true
+									[leftIcon]="['fal', 'plane']"
+									[tooltipText]="'device.deviceSettings.power.batterySettings.airPlanePower.description' | translate"
+									[isSwitchChecked]="toggleAirplanePowerModeFlag"
+									[showChildContent]=true
+									[switchId]="'ds-power-battery-airplane'"
+									(toggleOnOff)="onToggleOfAirplanePowerMode($event.switchValue)">
+									<div class="row">
+										<div class="col px-5">
+											<vtr-ui-checkbox [componentId]="'cb-airplane-mode'"
+												[value]="airplaneAutoDetection"
+												[checked]="airplaneAutoDetection"
+												[label]="'device.deviceSettings.power.batterySettings.airPlanePower.checkBoxDesc' | translate"
+												(toggle)='onAirplaneAutoModeStatusChange($event)'>
+											</vtr-ui-checkbox>
+											<label *ngIf="airplaneAutoDetection"
+												role="text"
+                                                tabindex="0"
+                                                id="power.batterySettings.airPlanePower.note"
+                                                attr.aria-label="power.batterySettings.airPlanePower.note"
+												class="auto-detection-note">
+												{{  'device.deviceSettings.power.batterySettings.airPlanePower.note' | translate }}
+											</label>
+										</div>
+									</div>
+								</vtr-ui-row-switch>
+							</li>
+							<li *ngIf="showFlipToBootSection$ | async">
+								<vtr-ui-row-switch
+									[title]="'device.deviceSettings.power.powerSettings.flipToBoot.title' | translate"
+									[name]="'device.deviceSettings.power.powerSettings.flipToBoot.title' | translate"
+									[caption]="'device.deviceSettings.power.powerSettings.flipToBoot.description' | translate"
+									[isSwitchVisible]=true
+									[isLastChild]=false
+									[isSwitchChecked]='toggleFlipToBootStatus'
+									[leftIcon]="['icomoon','icomoon-Flip-to-boot']"
+									[rightIcon]="['far', 'question-circle']"
+									[tooltipText]="'device.deviceSettings.power.powerSettings.flipToBoot.tooltip' | translate"
+									[switchId]="'ds-power-flipToBoot'"
+									(toggleOnOff)="onToggleOfFlipToBoot($event.switchValue)">
+								</vtr-ui-row-switch>
+							</li>
+							<li class=""
+								*ngIf="!isDesktopMachine && alwaysOnUSBStatus.available">
+								<vtr-ui-row-switch
+									[title]="'device.deviceSettings.power.powerSettings.alwaysUSB.title' | translate"
+									[name]="'device.deviceSettings.power.powerSettings.alwaysUSB.title' | translate"
+									[caption]="'device.deviceSettings.power.powerSettings.alwaysUSB.description' | translate"
+									[isSwitchVisible]=true
+									[isLastChild]="!showEasyResumeSection"
+									[isSwitchChecked]="toggleAlwaysOnUsbFlag"
+									[leftIcon]="['fab', 'usb']"
+									[rightIcon]="[]"
+									[showChildContent]="true"
+									[tooltipText]=""
+									[switchId]="'ds-power-alwaysUSB'"
+									(toggleOnOff)="onToggleOfAlwaysOnUsb($event.switchValue)">
+									<div class="row">
+										<div class="col-auto justify-content-start align-items-center pr-2">
+											<i class="icomoon icomoon-LE-Charging-USB2x"></i>
+										</div>
+										<div class="col-auto px-0 align-self-center seperator"
+											id="always-on-usb-or"
+											attr.aria-label="always-on-usb-or">
+											{{'device.deviceSettings.power.powerSettings.or' | translate}}
 										</div>
 									</vtr-ui-row-switch>
 								</li>
@@ -353,25 +379,26 @@
 						</vtr-container-collapsible>
 					</div>
 				</div>
-				<div class="row py-5 smartsettings-card "
-					*ngIf="isEnergyStarProduct">
-					<div class="col-12 mx-auto container-card">
-						<vtr-container-collapsible
-							componentName="'device.deviceSettings.power.energyStar.title' | translate"
-							[tabIndex]="0"
-							[cardTitle]="'device.deviceSettings.power.energyStar.title' | translate"
-							[isCollapsed]="false"
-							[collapseLinkId]="'device-settings-power-otherSettings'">
-							<div class="row energystar-container">
-								<div class="col-lg-2 col-md-2 col-sm-12">
-									<img class="img-fluid mx-auto d-block"
-										src="/assets/images/energystar.png">
-								</div>
-								<div class="col-lg-10 col-md-10 col-sm-12 align-self-center">
-									<p class="energystar-text">
-										{{'device.deviceSettings.power.energyStar.description' | translate}}
-									</p>
-								</div>
+			</div>
+			<div class="row pt-5 smart-settings-card"
+				*ngIf="isEnergyStarProduct">
+				<div class="col-12 mx-auto container-card">
+					<vtr-container-collapsible
+						componentName="'device.deviceSettings.power.energyStar.title' | translate"
+						[tabIndex]="0"
+						[cardTitle]="'device.deviceSettings.power.energyStar.title' | translate"
+						[isCollapsed]="false"
+						[collapseLinkId]="'device-settings-power-otherSettings'">
+						<div class="row energystar-container">
+							<div class="col-3 col-sm-4 col-md-2">
+								<img class="img-fluid mx-auto d-block" role="img" id="energystar-image" attr.aria-label="energystar-image"
+									src="/assets/images/energystar.png">
+							</div>
+							<div class="col-9 col-sm-8 col-md-10 pl-0 align-self-center">
+								<p role="text" class="energystar-text" id="power-energyStar-description" role="text"
+									attr.aria-label="power-energyStar-description">
+									{{'device.deviceSettings.power.energyStar.description' | translate}}
+								</p>
 							</div>
 
 						</vtr-container-collapsible>

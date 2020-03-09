@@ -22,6 +22,12 @@
                     "rapidCharge": "Carregamento rápido"
                 },
                 "legionEdge": {
+                    "thermalMode2": {
+                        "OC_On": "Overclock ativo",
+                        "performance": "Desempenho",
+                        "balance": "Equilíbrio",
+                        "quiet": "Silencioso"
+                    },
                     "title": "Overclock da CPU",
                     "status": {
                         "alwayson": "Ligado",
@@ -97,6 +103,96 @@
                 },
                 "quickSettingstitle": {
                     "title": "Definições Rápidas"
+                },
+                "thermalMode2Popup": {
+                    "thermalMode2SettingTitle": "Definição de Modo Térmico",
+                    "thermalMode2SettingDesc": "Escolha o modo que pretende utilizar.",
+                    "fnQDesc": "Pode mudar de modo através do atalho Fn+Q.",
+                    "perormanceTitle": "Modo de Desempenho",
+                    "performanceDesc": "Aumente o desempenho do computador com maior velocidade da ventoinha e consumo energético. ",
+                    "OCDesc": "Pode optar por ativar a função Overclocking.",
+                    "ac_dcDesc": "O Modo de Desempenho é aplicável apenas quando o transformador CA está ligado à corrente.",
+                    "balanceTitle": "Modo Equilibrado",
+                    "balanceDesc": "Equilibre automaticamente o desempenho e a velocidade da ventoinha em função da temperatura com um consumo energético médio.",
+                    "quietTitle": "Modo Silencioso",
+                    "quietDesc": "Mantenha o silêncio ao reduzir o desempenho do computador e a velocidade da ventoinha com um baixo consumo energético.",
+                    "OC": {
+                        "cpu_gpuOC": "Habilitar overclocking CPU/GPU no Modo de desempenho.",
+                        "cpuOC": "Habilitar overclocking CPU no Modo de desempenho.",
+                        "gpuOC": "Habilitar overclocking GPU no Modo de desempenho.",
+                        "advance": "AVANÇADAS",
+                        "cpu_gpuDriverLack": "Instalar drivers CPU/GPU para usar a função Overclocking.",
+                        "cpuDriverLack": "Instalar driver CPU para usar a função Overclocking.",
+                        "gpuDriverLack": "Instalar driver GPU para usar a função Overclocking.",
+                        "goInstall": "IR PARA INSTALAR"
+                    },
+                    "autoSwitch": "Mude automaticamente para o Modo de Desempenho ao iniciar jogos e reverta quando sair do jogo."
+                },
+                "advancedOC": {
+                    "title": "Def. Avançadas de Overclock",
+                    "description": "Defina parâmetros person. avançados quando Overclocking está ativado. Pode ser Arriscado.",
+                    "gpuOverclock": "Overclock da GPU",
+                    "cpuOCNames": {
+                        "cpuOCName2": "Tensão do Núcleo",
+                        "cpuOCName116": "Velocidade do Núcleo 1",
+                        "cpuOCName117": "Velocidade do Núcleo 2",
+                        "cpuOCName118": "Velocidade do Núcleo 3",
+                        "cpuOCName119": "Velocidade do Núcleo 4",
+                        "cpuOCName34": "Desvio de Tensão do Núcleo",
+                        "cpuOCName120": "Velocidade do Núcleo 5",
+                        "cpuOCName121": "Velocidade do Núcleo 6",
+                        "cpuOCName76": "Velocidade da Cache",
+                        "cpuOCName77": "Tensão da Cache",
+                        "cpuOCName79": "Desvio da Tensão da Cache",
+                        "cpuOCName122": "Velocidade do Núcleo 7",
+                        "cpuOCName123": "Velocidade do Núcleo 8",
+                        "cpuOCName102": "ICCMAX do Núcleo",
+                        "cpuOCName106": "ICCMAX da Cache",
+                        "cpuOCName114": "Desvio da Velocidade do AVX"
+                    },
+                    "cpuOCTips": {
+                        "cpuOCTip2": "Defina a tensão do núcleo da CPU.",
+                        "cpuOCTip116": "Defina o multiplicador máximo do núcleo no qual os núcleos podem funcionar. O valor de frequência do núcleo é o produto entre esta relação e a frequência do relógio de referência.",
+                        "cpuOCTip117": "Defina o multiplicador máximo do núcleo no qual os núcleos podem funcionar. O valor de frequência do núcleo é o produto entre esta relação e a frequência do relógio de referência.",
+                        "cpuOCTip118": "Defina o multiplicador máximo do núcleo no qual os núcleos podem funcionar. O valor de frequência do núcleo é o produto entre esta relação e a frequência do relógio de referência.",
+                        "cpuOCTip119": "Defina o multiplicador máximo do núcleo no qual os núcleos podem funcionar. O valor de frequência do núcleo é o produto entre esta relação e a frequência do relógio de referência.",
+                        "cpuOCTip34": "Um desvio da tensão em relação à tensão do núcleo atual.",
+                        "cpuOCTip120": "Defina o multiplicador máximo do núcleo no qual os núcleos podem funcionar. O valor de frequência do núcleo é o produto entre esta relação e a frequência do relógio de referência.",
+                        "cpuOCTip121": "Defina o multiplicador máximo do núcleo no qual os núcleos podem funcionar. O valor de frequência do núcleo é o produto entre esta relação e a frequência do relógio de referência.",
+                        "cpuOCTip76": "Defina o multiplicador máximo da cache do processador no qual as caches podem funcionar. O valor de frequência da cache é o produto entre esta relação e a frequência do relógio de referência.",
+                        "cpuOCTip77": "Tensão fornecida à interface da cache interna do processador baseada no modo de tensão da cache selecionada atualmente.",
+                        "cpuOCTip79": "Desvio da tensão final que é aplicado à Tensão da cache.",
+                        "cpuOCTip122": "Defina o multiplicador máximo do núcleo no qual os núcleos podem funcionar. O valor de frequência do núcleo é o produto entre esta relação e a frequência do relógio de referência.",
+                        "cpuOCTip123": "Defina o multiplicador máximo do núcleo no qual os núcleos podem funcionar. O valor de frequência do núcleo é o produto entre esta relação e a frequência do relógio de referência.",
+                        "cpuOCTip102": "Defina o ICCMAX para o Regulador de Tensão do Núcleo do Processador.",
+                        "cpuOCTip106": "Defina o ICCMAX para o Regulador de Tensão do Barramento em Anel e da Cache do Processador.",
+                        "cpuOCTip114": "Para calcular o limite de velocidade do núcleo ativo eficaz quando o AVX está ativo, subtraia este valor ao limite de velocidade do núcleo ativo correspondente."
+                    },
+                    "gpuOCNames": {
+                        "gpuOCName0": "Desvio do Relógio da GPU",
+                        "gpuOCName1": "Desvio do Relógio da VRAM"
+                    },
+                    "gpuOCTips": {
+                        "gpuOCTip0": "Adicionar um desvio à frequência do relógio da GPU.",
+                        "gpuOCTip1": "Adicionar um desvio à frequência do relógio da memória."
+                    }
+                },
+                "savePromptPopup": {
+                    "title": "Guardar Alteração?",
+                    "description1": "Def. impróprias Overclocking podem causar danos irreversíveis no HW. Siga um dos seguintes procedimentos, caso encontre algum problema: ",
+                    "description2": "•  Premir sem soltar o botão para ligar/desligar por 8 segundos para reiniciar o computador e restaurar os parâmetros predefinidos.",
+                    "description3": "•  Usar “Restore Default Overclocking” no BIOS p/restaurar parâmetros predefinidos.",
+                    "save": "GUARDAR",
+                    "notSave": "NÃO GUARDAR"
+                },
+                "defaultPromptPopup": {
+                    "title": "Predefinir?",
+                    "description": "Todas as alterações atuais e anteriores serão perdidas."
+                },
+                "warningPromptPopup": {
+                    "title": "Atenção!",
+                    "description": "Definições de Overclocking incorretas poderão causar danos irreversíveis no hardware.",
+                    "proceed": "CONTINUAR"
                 }
             }
         },
@@ -598,6 +694,42 @@
                     "close": "close"
                 }
             }
+        },
+        "lightingNewversion": {
+            "machineName": {
+                "name1": "Legion Icon Lighting (Front)",
+                "name2": "Internal Ambient Lighting",
+                "name3": "Legion Rear Fan Lighting",
+                "name4": "Legion CPU Fan Lighting",
+                "name5": "Legion Liquid Cooling Pump Lighting",
+                "name6": "Legion Liquid Cooling Fan Lighting",
+                "name7": "Legion Icon (Front)",
+                "name9": "Ambient  Lighting"
+            },
+            "lightingEffect": {
+                "effectName1": "Estático",
+                "effectName2": "Espectro",
+                "effectName3": "Arco-íris",
+                "effectName4": "Aleatório",
+                "effectName5": "Azul_Frio",
+                "effectName6": "Gesto_para_a_Direita",
+                "effectName7": "Gesto_para_a_Esquerda"
+            },
+            "lightingSpeed": {
+                "title": "Velocidade"
+            },
+            "colorPicker": {
+                "text2": "MAIS",
+                "text3": "R",
+                "text4": "G",
+                "text5": "B",
+                "text6": "Dividir Área (Desat.): clicar na imagem tecl. para alterar cores",
+                "text7": "Dividir Área (Desat.): clicar nas secções na imagem tecl. para alterar cores da secção",
+                "text8": "O efeito atual não suporta a seleção de cores"
+            },
+            "tipText": {
+                "title1": "Utilizar Fn+barra de espaços para alternar entre perfis"
+            }
         }
     },
     "common": {
@@ -667,7 +799,9 @@
             "loading": "Carregando...",
             "from": "de",
             "to": "para",
-            "clickToChange": "clique para alterar"
+            "clickToChange": "clique para alterar",
+            "failedLoad": "Falha ao carregar.",
+            "retry": "Tentar novamente"
         },
         "app-update": {
             "message": "Olá! Está disponível uma versão mais recente do Vantage, pretende carregá-la?"
@@ -738,11 +872,18 @@
                 "submitScreenShot": "Enviar captura de ecrã",
                 "messages": {
                     "feedbackSuccess": "Agradecemos os seus comentários!"
-                }
+                },
+                "question6": "Qual a probabilidade de recomendar a aplicação Lenovo Vantage a um amigo ou colega?",
+                "question7": "Sabia que pode utilizar o Lenovo Vantage para manter atualizado o software (controladores, firmware e BIOS) no seu computador?",
+                "question8": "Utilizou o Lenovo Vantage para aceder às informações de suporte sobre o seu computador?",
+                "tips2": "Forneça quaisquer comentários adicionais abaixo",
+                "emailAddressLabel": "Introduza o seu endereço de e-mail se pretende ser contactado pela equipa do Lenovo Vantage.",
+                "emailAddress": "Endereço de correio eletrónico",
+                "invalidEmailMsg": "Invalid email address"
             }
         },
         "quickSettings": {
-            "title": "As suas definições rápidas",
+            "title": "Definições rápidas",
             "microphone": "Microfone",
             "cameraPrivacy": "Câmara",
             "eyeCareMode": "Cuidados c/Visão",
@@ -787,6 +928,10 @@
                     "update": "Atualizar"
                 }
             }
+        },
+        "systemUpdate": {
+            "subtitle": "Atualize os seus controladores, BIOS e outro software.",
+            "checkForSystemUpdates": "Procurar atualizações do sistema"
         }
     },
     "device": {
@@ -897,14 +1042,15 @@
                         "title": "Fabricante",
                         "celxpert": "Celxpert",
                         "smp": "SMP"
-                    }
+                    },
+                    "fccTooltipText": "Para prolongar a vida útil da bateria, otimizámos a capacidade de carga completa com na sua utilização. A capacidade total da bateria poderá não estar disponível enquanto não a descarregar até 20% e a voltar a carregar."
                 },
                 "condition": {
                     "Illegal": "A bateria instalada <b>não é suportada</b> pelo sistema e não será carregada. Substitua a bateria pela bateria correta da Lenovo para este sistema.",
                     "Good": "<b>A bateria está em boas condições.</b>",
                     "Exhaustion": "A capacidade da bateria <b>degradou-se</b>. Substitua por uma nova.",
                     "Bad": "<b>Ocorreu um erro de bateria.</b> Não é possível carregar/descarregar a bateria. Substitua a bateria.",
-                    "NotDetected": "<b>Nenhuma bateria detetada ou</b> bateria não ligada.",
+                    "NotDetected": "<b>Nenhuma bateria detetada.</b>",
                     "NotGood": "<b>A bateria não está em boas condições.</b>",
                     "NotSupportACAdapter": "<b>O transformador CA não é suportado.</b>",
                     "LimitedACAdapterSupport": "<b>O transformador CA não consegue fornecer energia suficiente.</b>",
@@ -1110,9 +1256,9 @@
                             "reset": "Redefinir",
                             "stop": "Parar"
                         },
-                        "progressText1": "{{stage}} de {{stageNum}}: calibrar até carga completa",
-                        "progressText2": "{{stage}} de {{stageNum}}: calibrar até bateria fraca",
-                        "progressText3": "{{stage}} de {{stageNum}}: calibrar até carga completa",
+                        "progressText1": "Passo {{stage}} de {{stageNum}} passos no total: a calibrar para carga completa",
+                        "progressText2": "Passo {{stage}} de {{stageNum}} passos no total: a calibrar para bateria fraca",
+                        "progressText3": "Passo {{stage}} de {{stageNum}} passos no total: a calibrar para bateria cheia",
                         "FCCText": "De {{before}} Wh até {{after}} Wh",
                         "note": "Nota: antes de repor o indicador de bateria, certifique-se de que liga o computador à alimentação CA. ",
                         "resetLog": {
@@ -1140,6 +1286,55 @@
                 "energyStar": {
                     "title": "Energy Star",
                     "description": "UM PRODUTO COM CERTIFICAÇÃO ENERGY STAR"
+                },
+                "dpm": {
+                    "title": "Alimentação",
+                    "subtitle": "Definições de alimentação",
+                    "description": "Esta secção permite verificar as predefinições, bem como personalizar a utilização de energia e o plano de alimentação de acordo com as suas necessidades.",
+                    "globalPowerSettings": {
+                        "title": "Definições gerais de alimentação",
+                        "description": "Esta funcionalidade substituirá as definições do Plano de alimentação ou da Utilização da energia.",
+                        "powerButton": {
+                            "label": "INTERRUPTOR DE ALIMENTAÇÃO:",
+                            "items": {
+                                "doNothing": "Não fazer nada",
+                                "sleep": "Suspensão",
+                                "hibernate": "Hibernar",
+                                "shutDown": "Encerrar",
+                                "turnOffTheDisplay": "Desligar o ecrã"
+                            }
+                        },
+                        "requiredSignIn": {
+                            "label": "INÍCIO DE SESSÃO OBRIGATÓRIO:",
+                            "items": {
+                                "never": "Nunca",
+                                "fromSleep": "Quando o PC é reativado do modo de suspensão"
+                            },
+                            "tip": "Nota: Isto só funciona se a palavra-passe de sistema estiver definida."
+                        }
+                    },
+                    "powerUse": {
+                        "title": "Utilização da alimentação",
+                        "description": "SE O SISTEMA ESTIVER INATIVO:",
+                        "turnOffDisplay": "DESLIGAR O ECRÃ APÓS:",
+                        "turnOffHDD": "DESLIGAR HDD APÓS:",
+                        "sleep": "ATIVAR MODO DE SUSPENSÃO APÓS:",
+                        "hibernate": "HIBERNAR APÓS:",
+                        "items": {
+                            "never": "Nunca",
+                            "minute": "minuto",
+                            "minutes": "minutos",
+                            "hour": "hora",
+                            "hours": "horas"
+                        }
+                    },
+                    "powerPlan": {
+                        "title": "Plano de alimentação",
+                        "description": "Escolha um plano de alimentação para controlar o desempenho do computador, a temperatura do sistema e a utilização da energia.",
+                        "currentPowerPlan": {
+                            "label": "PLANO ATUAL"
+                        }
+                    }
                 },
                 "smartStandby": {
                     "title": "Modo de Suspensão Inteligente",
@@ -1521,8 +1716,11 @@
                         "options": {
                             "option1": "Selecione",
                             "option2": "Abrir site",
-                            "option3": "Digite o texto"
-                        }
+                            "option3": "Digite o texto",
+                            "option4": "Open applications or files",
+                            "option5": "Invoke key sequence"
+                        },
+                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function."
                     },
                     "tooltip": "Conteúdo a ser preenchido",
                     "apply": {
@@ -1537,6 +1735,17 @@
                     "enterText": {
                         "title": "TEXTO A INSERIR",
                         "placeholder": "Digite aqui"
+                    },
+                    "invokeKeySequence": {
+                        "title": "KEY SEQUENCE",
+                        "placeholder": "5 keys at most"
+                    },
+                    "openapplicationsorfiles": {
+                        "applicationTitle": "You need to delete one app first",
+                        "fileTitle": "You need to delete one file first",
+                        "applicationsToOpen": "APPLICATIONS TO OPEN",
+                        "filesToOpen": "FILES TO OPEN",
+                        "add": "ADD"
                     }
                 },
                 "fnCtrlKey": {
@@ -1772,7 +1981,7 @@
                 "heading": "Multimédia Inteligente",
                 "title": "Reprodução de vídeo Zero Touch",
                 "desc": "Esta funcionalidade irá colocar o vídeo em pausa quando o utilizador deixar o computador e retomar o vídeo quando este voltar.",
-                "tooltip": "Esta funcionalidade não se aplica a leitores de vídeo Web. Os leitores de vídeo locais populares, tais como o Windows Media Player e o 5KPlayer, entre outros, suportam esta funcionalidade."
+                "tooltip": "Esta funcionalidade não se aplica a<br>leitores de vídeo Web.<br>Os leitores suportados estão listados da seguinte forma:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
             },
             "superResolution": {
                 "heading": "Multimédia Inteligente",
@@ -1810,7 +2019,8 @@
                     "point7": "Selecione os idiomas de origem e destino pretendidos.",
                     "point8": "Dependendo das suas necessidades, defina a entrada de voz da Coluna ou do Microfone.",
                     "point9": "Clique no ícone de microfone para começar a falar",
-                    "closeText": "fechar"
+                    "closeText": "fechar",
+                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",

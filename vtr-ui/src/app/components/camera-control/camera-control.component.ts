@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, OnDestroy, ElementRef, Output, EventEmitter, NgZone } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, OnDestroy, ElementRef, Output, EventEmitter, NgZone, AfterViewInit, HostListener } from '@angular/core';
 import { CameraDetail, CameraSettingsResponse, CameraFeatureAccess } from 'src/app/data-models/camera/camera-detail.model';
 import { CameraFeedService } from 'src/app/services/camera/camera-feed/camera-feed.service';
 import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
@@ -34,19 +34,33 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	private DeviceInformation: any;
 	private DeviceClass: any;
 	private oMediaCapture: any;
-	private visibilityChange: any;
-
+	private videoPreviewEvent: any;
+	private cameraStreamStateChanged: any;
 	public cameraErrorTitle: string;
 	public cameraErrorDescription: string;
 	public isCameraInErrorState = false;
+	private isCameraInitialized = false;
+
+	// Rotation metadata to apply to the preview stream and recorded videos (MF_MT_VIDEO_ROTATION)
+	// Reference: http://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh868174.aspx
+	private readonly RotationKey = 'C380465D-2271-428C-9B83-ECEA3B4A85C1';
+	private readonly orientationChangedEvent = 'orientationchanged';
+	private orientationEvent: any;
+	private orientationSensor: any;
+	private deviceOrientation: any;
+	private simpleOrientation: any;
 
 	@ViewChild('cameraPreview', { static: false }) set content(content: ElementRef) {
 		// when camera preview video element is visible then start camera feed
-		this.cameraPreview = content;
-		if (content && !this.cameraDetail.isPrivacyModeEnabled) {
-			this.initializeCameraAsync();
-		} else {
-			this.cleanupCameraAsync();
+		if (content) {
+			this.cameraPreview = content;
+			if (!this.isCameraInitialized) {
+				if (content && !this.cameraDetail.isPrivacyModeEnabled) {
+					this.initializeCameraAsync('ViewChild.cameraPreview');
+				} else {
+					this.cleanupCameraAsync('ViewChild.cameraPreview');
+				}
+			}
 		}
 	}
 
@@ -68,8 +82,6 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		this.logger = this.vantageShellService.getLogger();
 		this.logger.info('constructor camera');
 		this.oMediaCapture = new this.Capture.MediaCapture();
-		this.visibilityChange = this.onVisibilityChanged.bind(this);
-		document.addEventListener('visibilitychange', this.visibilityChange);
 		//#endregion
 		this.cameraDetailSubscription = this.baseCameraDetail.cameraDetailObservable.subscribe(
 			(cameraDetail: CameraDetail) => {
@@ -85,8 +97,53 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		if (this.cameraDetailSubscription) {
 			this.cameraDetailSubscription.unsubscribe();
 		}
-		this.cleanupCameraAsync();
-		document.removeEventListener('visibilitychange', this.visibilityChange);
+
+		//#region unregister orientation change event
+		if (this.orientationSensor != null) {
+			this.orientationSensor.removeEventListener(this.orientationChangedEvent, this.orientationEvent);
+		}
+		if (this.oMediaCapture) {
+			this.oMediaCapture.removeEventListener('camerastreamstatechanged', this.cameraStreamStateChanged);
+		}
+		//#endregion
+		this.cleanupCameraAsync('ngOnDestroy');
+	}
+
+	private convertDisplayOrientationToDegrees(orientation) {
+		switch (orientation) {
+			case this.simpleOrientation.rotated90DegreesCounterclockwise:
+				return 90;
+			case this.simpleOrientation.rotated180DegreesCounterclockwise:
+				return 180;
+			case this.simpleOrientation.rotated270DegreesCounterclockwise:
+				return 270;
+			case this.simpleOrientation.notRotated:
+			default:
+				return 0;
+		}
+	}
+
+	private async setCameraPreviewOrientation(orientationInDegrees: number) {
+		if (this.oMediaCapture && this.oMediaCapture.videoDeviceController) {
+			const props = this.oMediaCapture.videoDeviceController.getMediaStreamProperties(this.Capture.MediaStreamType.videoPreview);
+			props.properties.insert(this.RotationKey, orientationInDegrees);
+			await this.oMediaCapture.setEncodingPropertiesAsync(this.Capture.MediaStreamType.videoPreview, props, null);
+		}
+	}
+
+	onDeviceOrientationChanged(args) {
+		this.logger.info('CameraControlComponent.onDeviceOrientationChanged: ', args);
+
+		if (args.orientation !== this.simpleOrientation.faceup
+			&& args.orientation !== this.simpleOrientation.facedown) {
+			this.deviceOrientation = args.orientation;
+			const orientationDegree = this.convertDisplayOrientationToDegrees(this.deviceOrientation);
+			this.setCameraPreviewOrientation(orientationDegree);
+		}
+	}
+
+	onCameraStreamStateChanged(eventArgs) {
+		this.logger.info('CameraControlComponent.onCameraStreamStateChanged', eventArgs);
 	}
 
 	findCameraDeviceByPanelAsync(panel) {
@@ -112,9 +169,10 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 			});
 	}
 
-	initializeCameraAsync() {
-		console.log('InitializeCameraAsync');
-		const self = this;
+	initializeCameraAsync(source: string) {
+		this.isCameraInitialized = true;
+		this.logger.info('InitializeCameraAsync', source);
+		// const self = this;
 		try {
 			// Get available devices for capturing pictures
 			return this.findCameraDeviceByPanelAsync(this.Windows.Devices.Enumeration.Panel.front)
@@ -132,10 +190,10 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 
 					self.oMediaCapture = new self.Windows.Media.Capture.MediaCapture();
 					// Register for a notification when something goes wrong
-					// TODO: define the fail handle callback and show error message maybe... there's a chance another app is previewing camera, that's when failed happen.
-					self.oMediaCapture.addEventListener('failed', (error) => {
-						this.appLogger.error('failed to capture camera', error.code);
-						self.cleanupCameraAsync();
+					// define the fail handle callback and show error message maybe... there's a chance another app is previewing camera, that's when failed happen.
+					this.oMediaCapture.addEventListener('failed', (error) => {
+						this.logger.error('CameraControlComponent.MediaCaptureFailed event', error);
+						this.cleanupCameraAsync('findCameraDeviceByPanelAsync.failed');
 
 						this.ngZone.run(() => {
 							// Camera is in Use
@@ -151,6 +209,8 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 								this.isCameraInErrorState = true;
 								this.cameraErrorTitle = 'device.deviceSettings.displayCamera.camera.cameraLoadingFailed.loadingFailedTitle';
 								this.cameraErrorDescription = 'device.deviceSettings.displayCamera.camera.cameraLoadingFailed.loadingFailedDescription';
+								this.logger.error('CameraControlComponent.MediaCaptureFailed try to reinitialize once', error);
+								this.initializeCameraAsync('oMediaCapture.failed');
 							}
 						});
 					});
@@ -169,7 +229,9 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 						this.disabledAll = true;
 					});
 				}).then(() => {
-					return self.startPreviewAsync();
+					// this.isCameraInitialized = true;
+					return this.startPreviewAsync();
+
 				}).done();
 		} catch (error) {
 			this.disabledAll = true;
@@ -183,21 +245,36 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 			this.videoElement = this.cameraPreview.nativeElement;
 			this.videoElement.src = previewUrl;
 			this.videoElement.play();
+			this.videoPreviewEvent = this.videoPreviewPlaying.bind(this);
+			this.videoElement.addEventListener('playing', this.videoPreviewEvent);
+			this.logger.info('CameraControlComponent.startPreviewAsync', { previewUrl, videoElement: this.videoElement });
 		});
+	}
+
+	videoPreviewPlaying() {
+		if (this.orientationSensor) {
+			this.deviceOrientation = this.orientationSensor.getCurrentOrientation();
+			this.orientationEvent = this.onDeviceOrientationChanged.bind(this);
+			// when device rotation is detected by sensors, below event will be fired
+			this.orientationSensor.addEventListener(this.orientationChangedEvent
+				, this.orientationEvent);
+		}
 	}
 
 	stopPreview() {
 		this.ngZone.run(() => {
 			// Cleanup the UI
 			if (this.videoElement) {
+				this.videoElement.removeEventListener('playing', this.videoPreviewEvent);
 				this.videoElement.pause();
 				this.videoElement.src = '';
 			}
 		});
 	}
 
-	cleanupCameraAsync() {
-		console.log('cleanupCameraAsync');
+	cleanupCameraAsync(source: string) {
+		this.isCameraInitialized = false;
+		this.logger.info('CameraControlComponent.cleanupCameraAsync', source);
 		this.stopPreview();
 
 		if (this.oMediaCapture) {
@@ -206,20 +283,26 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	onVisibilityChanged() {
-		if (document.hidden) {
-			this.cleanupCameraAsync();
+	@HostListener('document: visibilitychange')
+	onVisibilityChange(): void {
+		const visibility = document.visibilityState;
+		this.logger.info('CameraControlComponent.onVisibilityChange', { visibility, isCameraInitialized: this.isCameraInitialized });
+
+		if (visibility.toLowerCase() === 'visible') {
+			if (!this.isCameraInitialized) {
+				this.initializeCameraAsync('onVisibilityChange');
+			}
 		} else {
-			this.initializeCameraAsync();
+			this.cleanupCameraAsync('onVisibilityChange');
 		}
 	}
 
 	public onAutoExposureChange($event: any) {
 		try {
-			console.log('onAutoExposureChange', this.cameraSettings.exposure);
+			this.logger.info('CameraControlComponent.onAutoExposureChange', this.cameraSettings.exposure);
 			this.exposureToggle.emit($event);
 		} catch (error) {
-			this.appLogger.error('CameraControlComponent:onAutoExposureChange', error.message);
+			this.logger.error('CameraControlComponent.onAutoExposureChange', error.message);
 		}
 	}
 

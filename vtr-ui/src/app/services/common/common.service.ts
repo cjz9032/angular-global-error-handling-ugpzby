@@ -287,4 +287,20 @@ export class CommonService {
 		}
 		return segmentsA.length - segmentsB.length;
 	}
+
+	setSystemTimeFormat(flag: boolean) {
+		this.systemTimeFormat12Hrs.next(flag);
+	}
+
+	getSystemTimeFormat() {
+		return this.systemTimeFormat12Hrs.asObservable();
+	}
+
+	checkPowerPageFlagAndHide() {
+		// Solution to fix the issue VAN-14826.
+		const isPowerPageAvailable = this.getLocalStorageValue(LocalStorageKey.IsPowerPageAvailable, true);
+		if (!isPowerPageAvailable) {
+			this.sendNotification(LocalStorageKey.IsPowerPageAvailable, {available: isPowerPageAvailable, link: false });
+		}
+	}
 }

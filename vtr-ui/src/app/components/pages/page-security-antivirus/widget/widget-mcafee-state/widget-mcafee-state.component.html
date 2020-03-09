@@ -2,30 +2,34 @@
     <li class="group-item" *ngFor="let list of statusList">
       <div class="row align-items-center">
         <div class="col-auto pl-0 windows-padding">
-          <div *ngIf="list.status!=='loading'" class="bullet-icon">
-            <div *ngIf="list.status !== 'disabled' && list.status !== 'not-installed'" class="icon-bkg icon-check">
+          <div [hidden]="list.status==='loading'" class="bullet-icon">
+            <div [hidden]="list.status === 'disabled' || list.status === 'not-installed' || list.status === 'failedLoad'"  class="icon-bkg icon-check">
               <fa-icon [icon]="['fas', 'check']"></fa-icon>
             </div>
-            <div *ngIf="list.status === 'disabled' || list.status === 'not-installed'" class="icon-bkg icon-times">
+            <div [hidden]="list.status === 'enabled' || list.status === 'installed'" class="icon-bkg icon-times">
               <fa-icon [icon]="['fas', 'times']"></fa-icon>
             </div>
           </div>
-          <div *ngIf="list.status==='loading'" class="spinner-content">
+          <div [hidden]="list.status!=='loading'" class="spinner-content">
             <div class="spinner-border text-primary progress-spinner" role="status"></div>
-          </div>
+		  </div>
         </div>
-        <div class="col-7 text px-0 text-ellipsis"
+        <div class="col-7 text px-0"
 			title="{{list.title | translate}}"
 			[innerHTML]="list.title | translate | characterLimit:28">
         </div>
         <div class="col-3 text-right px-0 ml-auto">
 		     <h3 class="text-ellipsis text-color mb-0"
-		      [ngClass]="{'text-d-color': list.status !== 'enabled' && list.status !== 'installed' }">
-			    <span class="text-uppercase"
-				title="{{list.status | statusText | translate | uppercase}}"
-				[innerHTML]="list.status | statusText | translate">
-			</span>
-		  </h3>
+				[ngClass]="{'text-d-color': list.status === 'disabled' || list.status === 'not-installed',
+							'text-gray': list.status === 'loading' || list.status === 'failedLoad'}">
+					<span class="text-uppercase"
+						title="{{list.status | statusText | translate | uppercase}}"
+						[innerHTML]="list.status | statusText | translate">
+					</span>
+			</h3>
+			<a [hidden]="list.status !== 'failedLoad'"
+				href="javascript:void(0);"
+				(click)="retry(list);">{{'common.ui.retry' | translate}}</a>
         </div>
       </div>
     </li>
@@ -38,7 +42,7 @@
             </div>
           </div>
         </div>
-		<div class="col-7 text px-0 line-through text-ellipsis"
+		<div class="col-7 text px-0 line-through"
 			title="{{list.title | translate}}"
 			[innerHTML]="list.title | translate | characterLimit:26">
 		</div>

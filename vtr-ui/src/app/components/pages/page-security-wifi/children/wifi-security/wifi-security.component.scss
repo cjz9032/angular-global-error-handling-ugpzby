@@ -300,6 +300,25 @@
 		}
 	}
 
+				.card-body {
+					border: 0.1rem solid $shade_lighter;
+					border-radius: $border_radius;
+					background: $light;
+
+					.wifi-card {
+						div.wifi {
+							padding-right: 1rem;
+
+							.media {
+								justify-content: center;
+								align-items: center;
+							}
+						}
+
+						div.wifi:nth-child(odd) {
+							border-bottom: 0.1rem solid $shade_lighter;
+							border-right: 0.1rem solid $shade_lighter;
+						}
 
 	.wifiSecurity {
 		.card {
@@ -310,26 +329,10 @@
 				border-bottom-right-radius: 0rem;
 			}
 
-			.no-gutters {
-				// height: 2.7rem;
-				width: 100%;
-				display: flex;
-				.wifisecurity-container-name {
-					line-height: 2rem;
-					font-size: 1.2rem;
-				}
-				.wifisecurity-container-enable {
-					line-height: 1;
-					overflow: hidden;
-					span{
-						display: inline-block;
-						overflow: hidden;
-						white-space: nowrap;
-						text-overflow: ellipsis;
-						font-size: 1.2rem;
-						max-width: 100%;
-						&.badge-success {
-							background-color: $green_dark;
+						div.wifi:nth-last-child(1):nth-child(even) {
+							border-bottom-right-radius: $border_radius;
+							border-bottom: 0;
+							border-bottom-left-radius: $border_radius;
 						}
 						&.badge-danger {
 							background-color: $button_red_start;
