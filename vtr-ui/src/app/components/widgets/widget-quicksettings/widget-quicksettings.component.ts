@@ -158,9 +158,8 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		if (this.audioClient) {
 			try {
 				this.audioClient.stopMonitor();
-				this.logger.info('stop audio monitor success in widget');
 			} catch (error) {
-				this.logger.info('core audio stop moniotr error ' + error.message);
+				this.logger.error('core audio stop moniotr error ' + error.message);
 			}
 		} else {
 			this.deviceService.stopMicrophoneMonitor();
@@ -181,7 +180,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			const { type, payload } = notification;
 			switch (type) {
 				case DeviceMonitorStatus.MicrophoneStatus:
-					this.logger.info('DeviceMonitorStatus.MicrophoneStatus' + JSON.stringify(payload));
+					this.logger.info('DeviceMonitorStatus.MicrophoneStatus ' + JSON.stringify(payload));
 					this.ngZone.run(() => {
 						// microphone payload data is dynamic, need check one by one
 						if (payload.hasOwnProperty('muteDisabled')) {
@@ -388,7 +387,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 								}
 								this.audioClient.startMonitor();
 							} catch (error) {
-								this.logger.info('cannot init core audio for widget quick settings' + error.message);
+								this.logger.error('cannot init core audio for widget quick settings' + error.message);
 							}
 						} else {
 							this.logger.info('current shell version maybe not support core audio');
@@ -469,7 +468,6 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		} catch (error) {
 			this.microphoneStatus.isLoading = false;
 			this.quickSettingsWidget[0].state = true;
-			this.logger.info('onMicrophoneStatusToggle', error.message);
 			return EMPTY;
 		}
 	}
@@ -619,7 +617,6 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		try {
 			if (this.powerService.isShellAvailable) {
 				const value = await this.powerService.setConservationModeStatusIdeaNoteBook(status);
-				// this.commonService.setLocalStorageValue(LocalStorageKey.ConservationModeCapability, this.conservationModeCache);
 			}
 		} catch (error) {
 			this.logger.error('setConservationModeStatusIdeaNoteBook', error.message);
