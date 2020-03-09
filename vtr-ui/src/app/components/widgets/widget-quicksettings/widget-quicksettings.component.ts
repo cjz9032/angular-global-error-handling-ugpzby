@@ -181,7 +181,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			const { type, payload } = notification;
 			switch (type) {
 				case DeviceMonitorStatus.MicrophoneStatus:
-					this.logger.info('DeviceMonitorStatus.MicrophoneStatus', JSON.stringify(payload));
+					this.logger.info('DeviceMonitorStatus.MicrophoneStatus' + JSON.stringify(payload));
 					this.ngZone.run(() => {
 						// microphone payload data is dynamic, need check one by one
 						if (payload.hasOwnProperty('muteDisabled')) {
@@ -317,27 +317,21 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	}
 
 	startMonitorHandlerForCamera(value: FeatureStatus) {
-		console.log('startMonitorHandlerForCamera', value);
 		this.cameraStatus.available = value.available;
 		this.cameraStatus.status = value.status;
 		this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraStatus);
 	}
 
 	startMonitorForCameraPrivacy() {
-		console.log('startMonitorForCameraPrivacy');
 		try {
 			if (this.displayService.isShellAvailable) {
 				this.displayService.startCameraPrivacyMonitor(this.startMonitorHandlerForCamera.bind(this))
-					.then((val) => {
-						console.log('startMonitorForCameraPrivacy.then', val);
-
-					}).catch(error => {
+					.then((val) => {}).catch(error => {
 						this.logger.error('startMonitorForCameraPrivacy', error.message);
 						return EMPTY;
 					});
 			}
 		} catch (error) {
-			console.log('startMonitorForCameraPrivacy', error.message);
 			return EMPTY;
 		}
 	}
@@ -346,15 +340,12 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		try {
 			if (this.displayService.isShellAvailable) {
 				this.displayService.stopCameraPrivacyMonitor()
-					.then((value: any) => {
-						console.log('stopMonitorForCamera.then', value);
-					}).catch(error => {
+					.then((value: any) => {}).catch(error => {
 						this.logger.error('stopMonitorForCamera', error.message);
 						return EMPTY;
 					});
 			}
 		} catch (error) {
-			console.log('stopMonitorForCamera', error.message);
 			return EMPTY;
 		}
 	}
@@ -439,7 +430,6 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			if (this.dashboardService.isShellAvailable) {
 				this.dashboardService.setCameraStatus($event)
 					.then((value: boolean) => {
-						console.log('getCameraStatus.then', value, $event);
 						this.cameraStatus.isLoading = false;
 						this.cameraStatus.status = $event;
 						this.quickSettingsWidget[1].state = true;
@@ -467,7 +457,6 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 				this.dashboardService.setMicrophoneStatus($event)
 					.then((value: boolean) => {
 						this.microphoneStatus.isLoading = false;
-						// console.log('setMicrophoneStatus.then', value, $event);
 						this.microphoneStatus.status = $event;
 						this.quickSettingsWidget[0].state = true;
 					}).catch(error => {
@@ -618,7 +607,6 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		if (this.powerService.isShellAvailable) {
 			try {
 				const featureStatus = await this.powerService.getConservationModeStatusIdeaNoteBook();
-				console.log('getConservationModeStatusIdeaNoteBook.then', featureStatus);
 				this.conservationModeStatus = featureStatus;
 			} catch (error) {
 				this.logger.error('getConservationModeStatusIdeaNoteBook', error.message);
@@ -628,12 +616,9 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	}
 
 	public async setConservationModeStatusIdeaNoteBook(status: any) {
-		console.log('======== setConservationModeStatusIdeaNoteBook.then ======== ');
 		try {
-			console.log('setConservationModeStatusIdeaNoteBook.then', status);
 			if (this.powerService.isShellAvailable) {
 				const value = await this.powerService.setConservationModeStatusIdeaNoteBook(status);
-				console.log('setConservationModeStatusIdeaNoteBook.then', value);
 				// this.commonService.setLocalStorageValue(LocalStorageKey.ConservationModeCapability, this.conservationModeCache);
 			}
 		} catch (error) {
