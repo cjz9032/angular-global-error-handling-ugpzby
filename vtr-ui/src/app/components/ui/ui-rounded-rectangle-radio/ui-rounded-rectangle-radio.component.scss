@@ -125,6 +125,7 @@
 	}
 	&.border-checked-disabled {
 		border: 0.2rem solid #667481;
+		opacity: 0.7;
 		cursor: default;
 		label {
 			.icon-circle {
@@ -134,6 +135,7 @@
 	}
 	&.border-disabled {
 		border: 0.2rem solid #e6eaeb;
+		opacity: 0.7;
 		cursor: default;
 		label {
 			.icon-circle {
@@ -143,6 +145,7 @@
 	}
 	&.border-checked-disabled {
 		border: 0.2rem solid #667481;
+		opacity: 0.7;
 		cursor: default;
 		label {
 			.icon-circle {
