@@ -22,7 +22,8 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-sm-12 pb-20 pt-0 px-0" [hidden]="canShowDccDemo$ | async">
+				<div class="col-sm-12 pb-20 pt-0 px-0"
+					[hidden]="canShowDccDemo$ | async">
 					<vtr-widget-carousel [data]="heroBannerItems"
 						order="1"
 						source="title"
@@ -38,7 +39,8 @@
 						link="thumbnailUrl">
 					</vtr-widget-carousel>
 				</div>
-				<div class="col-sm-12 pb-20 pt-0 px-0" [hidden]="!(canShowDccDemo$ | async)">
+				<div class="col-sm-12 pb-20 pt-0 px-0"
+					[hidden]="!(canShowDccDemo$ | async)">
 					<vtr-widget-carousel [data]="heroBannerDemoItems"
 						order="1"
 						source="title"
