@@ -66,14 +66,26 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		private metricService: MetricService) {
 		this.metrics = shellService.getMetrics();
 
-		this.privacyPolicy = this.metrics.metricsEnabled;
-		const self = this;
-		shellService.getMetricsPolicy((result) => {
-			self.privacyPolicy = result;
-		});
+		this.initMetricOption(shellService);
 		deviceService.getMachineInfo().then((val) => {
 			this.machineInfo = val;
 		});
+	}
+
+	async initMetricOption(shellService) {
+		const userDeterminePrivacy = this.commonService.getLocalStorageValue(
+			LocalStorageKey.UserDeterminePrivacy
+		);
+
+		// if user has ever setup the privacy option, the UI should keep it.
+		if (userDeterminePrivacy) {
+			await this.metricService.metricReady();
+			this.privacyPolicy = this.metrics.metricsEnabled;
+		} else {
+			shellService.getMetricsPolicy((result) => {
+				this.privacyPolicy = result;
+			});
+		}
 	}
 
 	async ngOnInit() {
