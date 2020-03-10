@@ -1,35 +1,47 @@
 <div>
-    <vtr-ui-row-switch [title]="'device.deviceSettings.power.dpm.powerUse.title' | translate"
-        componentName="dpm-powersetting" [caption]="" [leftIcon]="['icomoon', 'icomoon-dpm-power-use']"
-        [showChildContent]="true" [isLastChild]="true" [theme]="'white'">
-        <div class="content">
-            <div class="boldtitle">{{'device.deviceSettings.power.dpm.powerUse.description' | translate}}</div>
-            <section>
-                <h5 tabindex="0">
-                    {{'device.deviceSettings.power.dpm.powerUse.turnOffDisplay' | translate}}
-                </h5>
-                <vtr-ui-dpm-dropdown [list]="timeItems" [value]="turnoffDisplay"
-                    (change)="onTurnOffDisplayChange($event)" [dropDownId]="'dpm-poweruse-display-dropDown'">
-                </vtr-ui-dpm-dropdown>
-                <h5 tabindex="1">
-                    {{'device.deviceSettings.power.dpm.powerUse.turnOffHDD' | translate}}
-                </h5>
-                <vtr-ui-dpm-dropdown [list]="timeItems" [value]="turnoffHDD" (change)="onTurnOffHDDChange($event)"
-                    [dropDownId]="'dpm-poweruse-hdd-dropDown'">
-                </vtr-ui-dpm-dropdown>
-                <h5 tabindex="2">
-                    {{'device.deviceSettings.power.dpm.powerUse.sleep' | translate}}
-                </h5>
-                <vtr-ui-dpm-dropdown [list]="timeItems" [value]="sleepAfter" (change)="onSleepChange($event)"
-                    [dropDownId]="'dpm-poweruse-sleep-dropDown'">
-                </vtr-ui-dpm-dropdown>
-                <h5 tabindex="3">
-                    {{'device.deviceSettings.power.dpm.powerUse.hibernate' | translate}}
-                </h5>
-                <vtr-ui-dpm-dropdown [list]="timeItems" [value]="hibernateAfter" (change)="onHibernateChange($event)"
-                    [dropDownId]="'dpm-poweruse-hibernate-dropDown'">
-                </vtr-ui-dpm-dropdown>
-            </section>
-        </div>
-    </vtr-ui-row-switch>
+	<vtr-ui-row-switch [title]="'device.deviceSettings.power.dpm.powerUse.title' | translate"
+		componentName="dpm-powersetting"
+		[caption]=""
+		[leftIcon]="['icomoon', 'icomoon-dpm-power-use']"
+		[showChildContent]="true"
+		[isLastChild]="true"
+		[theme]="'white'">
+		<div class="content">
+			<div class="boldtitle">{{'device.deviceSettings.power.dpm.powerUse.description' | translate}}</div>
+			<section>
+				<h5>
+					{{'device.deviceSettings.power.dpm.powerUse.turnOffDisplay' | translate}}
+				</h5>
+				<vtr-ui-dpm-dropdown [list]="timeItems"
+					[value]="turnoffDisplay"
+					(change)="onTurnOffDisplayChange($event)"
+					[dropDownId]="'dpm-poweruse-display-dropDown'">
+				</vtr-ui-dpm-dropdown>
+				<h5 tabindex="1">
+					{{'device.deviceSettings.power.dpm.powerUse.turnOffHDD' | translate}}
+				</h5>
+				<vtr-ui-dpm-dropdown [list]="timeItems"
+					[value]="turnoffHDD"
+					(change)="onTurnOffHDDChange($event)"
+					[dropDownId]="'dpm-poweruse-hdd-dropDown'">
+				</vtr-ui-dpm-dropdown>
+				<h5 tabindex="2">
+					{{'device.deviceSettings.power.dpm.powerUse.sleep' | translate}}
+				</h5>
+				<vtr-ui-dpm-dropdown [list]="timeItems"
+					[value]="sleepAfter"
+					(change)="onSleepChange($event)"
+					[dropDownId]="'dpm-poweruse-sleep-dropDown'">
+				</vtr-ui-dpm-dropdown>
+				<h5 tabindex="3">
+					{{'device.deviceSettings.power.dpm.powerUse.hibernate' | translate}}
+				</h5>
+				<vtr-ui-dpm-dropdown [list]="timeItems"
+					[value]="hibernateAfter"
+					(change)="onHibernateChange($event)"
+					[dropDownId]="'dpm-poweruse-hibernate-dropDown'">
+				</vtr-ui-dpm-dropdown>
+			</section>
+		</div>
+	</vtr-ui-row-switch>
 </div>

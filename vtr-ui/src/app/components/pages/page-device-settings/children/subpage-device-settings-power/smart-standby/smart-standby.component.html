@@ -24,8 +24,7 @@
 							<div>
 								<div *ngIf="isAutonomicCapability"
 									class="schedule_header"
-									role="text"
-									tabindex="0">
+									role="text">
 									<h5 role="text"
 										id="smart-standby-schedule-computer"
 										attr.aria-label="smart-standby-schedule-computer">
@@ -53,7 +52,6 @@
 								</div>
 							</div>
 							<div role="text"
-								tabindex="0"
 								*ngIf="!isAutonomicCapability && smartStandby?.isEnabled"
 								class="schedule_header">
 								<h5 role="text">{{ 'device.deviceSettings.power.smartStandby.subTitle2' | translate }}
@@ -61,7 +59,6 @@
 							</div>
 							<div class="schedule"
 								role="text"
-								tabindex="0"
 								*ngIf="isAutonomicCapability && checkbox && smartStandby?.isEnabled">
 								<h5 role="text">
 									{{ 'device.deviceSettings.power.smartStandby.subNote' | translate }}
@@ -69,7 +66,6 @@
 							</div>
 							<div *ngIf="!checkbox && smartStandby?.isEnabled && isAutonomicCapability"
 								role="text"
-								tabindex="0"
 								class="schedule">
 								<h5 role="text"
 									id="smartstandby-timer-heading"
@@ -98,7 +94,6 @@
 									(keydown.enter)="onToggle(timeToggle)"
 									[attr.aria-expanded]="!isCollapsed"
 									#timeToggle
-									tabindex="0"
 									role="button"
 									aria-label="smart standby, time picker-toggle button">
 									<div>
