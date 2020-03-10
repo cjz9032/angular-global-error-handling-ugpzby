@@ -1981,7 +1981,7 @@
                 "heading": "Intelligens média",
                 "title": "Zero Touch Videolejátszás",
                 "desc": "Ez a funkció szünetelteti a videólejátszást, amikor a felhasználó magára hagyja a számítógépet, és újraindítja a lejátszást, amikor visszatér.",
-                "tooltip": "Ez a funkció nem használható<br>internetes videólejátszókhoz.<br>A támogatott lejátszók az alábbi felsorolásban láthatók:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
+                "tooltip": "Ez a funkció nem használható internetes videólejátszókhoz. A népszerű helyi videólejátszók (pl. a Windows Media Player vagy a 5KPlayer) támogatják ezt a funkciót."
             },
             "superResolution": {
                 "heading": "Intelligens média",
@@ -3561,8 +3561,5 @@
             "subtitle2": "All-in-One: Egyszerű",
             "body2": "Az all-in-one számítógépek a 9. generációs Intel® Core™ processzorral az asztali számítógépek minden előnyét biztosítják egy karcsú kijelzőbe csomagolva – kevesebb rendetlenséggel, hardver alapú biztonsággal és nagy felbontású kijelzővel."
         }
-    },
-    "cpt": {
-        "title": "Content Preview Tool"
     }
 }

@@ -1633,7 +1633,7 @@
                         "description": "Tipko Fn v spodnjem levem kotu tipkovnice lahko pritisnite hkrati z drugimi tipkami, da sprožite ukaze, prikazane na sliki tipkovnice spodaj."
                     },
                     "firstKeyObj": {
-                        "tittle": "Fn + tabulatorka",
+                        "tittle": "Fn + Tab",
                         "description": "omogočanje funkcije povečave in pomanjšave pri zaslonih velike ločljivosti",
                         "image": ""
                     },
@@ -1981,7 +1981,7 @@
                 "heading": "Inteligentni mediji",
                 "title": "Predvajanje videoposnetkov z ničelnim dotikom",
                 "desc": "Ta funkcija bo začasno ustavila videoposnetek, ko zapustite računalnik, in nadaljevala predvajanje, ko se vrnete.",
-                "tooltip": "Ta funkcija se ne uporablja za<br>spletne videopredvajalnike.<br>Podprti predvajalniki so:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
+                "tooltip": "Ta funkcija se ne uporablja za spletne videopredvajalnike. To funkcijo podpirajo priljubljeni lokalni videopredvajalniki, kot so Windows Media Player, 5KPlayer in drugi."
             },
             "superResolution": {
                 "heading": "Inteligentni mediji",
@@ -3561,8 +3561,5 @@
             "subtitle2": "Računalniki »vse-v-enem«: učinkovito",
             "body2": "Računalniki »vse-v-enem« s procesorji Intel® Core™ 9. generacije vam nudijo vso zmogljivost namiznega računalnika, vse pa je zapakirano v eleganten zaslon za manj nereda, varnosti, ki temelji na strojni opremi, in z zaslonom z visoko ločljivostjo."
         }
-    },
-    "cpt": {
-        "title": "Content Preview Tool"
     }
 }

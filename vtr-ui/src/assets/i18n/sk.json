@@ -1981,7 +1981,7 @@
                 "heading": "Inteligentné médiá",
                 "title": "Bezdotykové prehrávanie videa",
                 "desc": "Táto funkcia pozastaví prehrávanie videa, keď odídete od počítača a obnoví prehrávanie videa, keď sa vrátite.",
-                "tooltip": "Táto funkcia sa nevzťahuje na<br>webové video prehrávače.<br>Podporované prehrávače sú tieto:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
+                "tooltip": "Táto funkcia sa nevzťahuje na webové video prehrávače. Obľúbené lokálne prehrávače videa (prehrávač Windows Media Player, 5KPlayer a pod.) túto funkciu podporujú."
             },
             "superResolution": {
                 "heading": "Inteligentné médiá",
@@ -3561,8 +3561,5 @@
             "subtitle2": "Počítače All-in-One: stolové počítače jednoduchšie",
             "body2": "Počítače All-in-One s procesormi Intel® Core™ 9. generácie vám poskytnú všetok výkon stolového počítača skrytého v elegantnej obrazovke. Vychutnávajte si väčší poriadok na stole, hardvérového zabezpečenie a obrazovku s vysokým rozlíšením."
         }
-    },
-    "cpt": {
-        "title": "Content Preview Tool"
     }
 }

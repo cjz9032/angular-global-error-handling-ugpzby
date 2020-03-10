@@ -1981,7 +1981,7 @@
                 "heading": "Multimédia Inteligente",
                 "title": "Reprodução de vídeo Zero Touch",
                 "desc": "Esta funcionalidade irá colocar o vídeo em pausa quando o utilizador deixar o computador e retomar o vídeo quando este voltar.",
-                "tooltip": "Esta funcionalidade não se aplica a<br>leitores de vídeo Web.<br>Os leitores suportados estão listados da seguinte forma:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
+                "tooltip": "Esta funcionalidade não se aplica a leitores de vídeo Web. Os leitores de vídeo locais populares, tais como o Windows Media Player e o 5KPlayer, entre outros, suportam esta funcionalidade."
             },
             "superResolution": {
                 "heading": "Multimédia Inteligente",
@@ -3561,8 +3561,5 @@
             "subtitle2": "Multifunções: otimizado",
             "body2": "Os PCs All-in-One com processadores Intel® Core™ de 9.ª geração oferecem toda a potência de um desktop com um ecrã elegante para desfrutar de uma segurança baseada em hardware simplificada e um ecrã de alta resolução."
         }
-    },
-    "cpt": {
-        "title": "Content Preview Tool"
     }
 }

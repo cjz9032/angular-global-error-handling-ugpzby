@@ -23,9 +23,10 @@
 						[theme]="'blue'"
 						[collapseLinkId]="'audio-smart-settings'">
 						<div class="row">
-							<div class="col-auto text-wrap subtitle">
-								<h3 id="audio-audioSmartSettings-sub-title"
-									tabindex="0"
+							<div class="col-auto text-wrap subtitle"
+								role="text">
+								<h3 role="text"
+									id="audio-audioSmartSettings-sub-title"
 									attr.aria-label="{{'device.deviceSettings.audio.audioSmartsettings.subtitle' | translate }}">
 									{{'device.deviceSettings.audio.audioSmartsettings.subtitle' | translate }}</h3>
 								<p id="audio-audioSmartSettings-description"
@@ -52,7 +53,7 @@
 									[isSwitchChecked]="autoDolbyFeatureStatus.status"
 									[showLoaderState]="autoDolbyFeatureLoader"
 									[switchId]="'audio-automatic-dolby'">
-									<div class="row no-gutters"
+									<div class="row no-gutters pl-5"
 										*ngIf="!autoDolbyFeatureStatus.status && dolbyModeResponse.available"
 										role="list"
 										tabindex="0"
@@ -189,6 +190,7 @@
 									[switchId]="'audio-microphone-suppress'">
 								</vtr-ui-row-switch>
 							</li>
+                            </div>
 							<div
 								*ngIf="microphoneProperties?.currentMode && microphoneProperties?.currentMode!='NotSupported' && !isDTmachine">
 								<li class=""

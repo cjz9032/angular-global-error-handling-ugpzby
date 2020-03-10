@@ -24,10 +24,10 @@
 							<div>
 								<div *ngIf="isAutonomicCapability"
 									class="schedule_header"
-									role="text"
-									tabindex="0">
-									<h5 role="text" id="smart-standby-schedule-computer"
-									attr.aria-label="smart-standby-schedule-computer">
+									role="text">
+									<h5 role="text"
+										id="smart-standby-schedule-computer"
+										attr.aria-label="smart-standby-schedule-computer">
 										{{ 'device.deviceSettings.power.smartStandby.subTitle' | translate }}</h5>
 									<vtr-ui-rounded-rectangle-radio [radioId]="'automatic_show'"
 										[group]="'smartStandByBtns'"
@@ -52,7 +52,6 @@
 								</div>
 							</div>
 							<div role="text"
-								tabindex="0"
 								*ngIf="!isAutonomicCapability && smartStandby?.isEnabled"
 								class="schedule_header">
 								<h5 role="text">{{ 'device.deviceSettings.power.smartStandby.subTitle2' | translate }}
@@ -60,7 +59,6 @@
 							</div>
 							<div class="schedule"
 								role="text"
-								tabindex="0"
 								*ngIf="isAutonomicCapability && checkbox && smartStandby?.isEnabled">
 								<h5 role="text">
 									{{ 'device.deviceSettings.power.smartStandby.subNote' | translate }}
@@ -68,16 +66,21 @@
 							</div>
 							<div *ngIf="!checkbox && smartStandby?.isEnabled && isAutonomicCapability"
 								role="text"
-								tabindex="0"
 								class="schedule">
-								<h5 role="text" id="smartstandby-timer-heading" attr.aria-label="smartstandby-timer-heading">
+								<h5 role="text"
+									id="smartstandby-timer-heading"
+									attr.aria-label="smartstandby-timer-heading">
 									{{ 'device.deviceSettings.power.smartStandby.timer.heading' | translate }}
 								</h5>
-								<span role="text" id="smartstandby-schedule" attr.aria-label="smartstandby-schedule">
+								<span role="text"
+									id="smartstandby-schedule"
+									attr.aria-label="smartstandby-schedule">
 									{{smartStandbyService.schedule}}
 								</span>
 								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								<span role="text" id="smartstandby-time" attr.aria-label="smartstandby-time">
+								<span role="text"
+									id="smartstandby-time"
+									attr.aria-label="smartstandby-time">
 									{{'common.ui.from' | translate}} {{smartStandbyStartTime }}
 									{{'common.ui.to' | translate}} {{smartStandbyEndTime}}
 								</span>
@@ -170,7 +173,6 @@
 								[ngClass]="{'disabled': !smartStandby.isEnabled}"
 								class="hyperlink-to-graph"
 								(click)="showUsageGraph()"
-								tabindex="0"
 								role="link"
 								attr.aria-label="{{'device.deviceSettings.power.smartStandby.hyperlinkToGraph' | translate}}">
 								{{'device.deviceSettings.power.smartStandby.hyperlinkToGraph' | translate}}
