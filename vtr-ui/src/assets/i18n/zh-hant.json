@@ -1981,7 +1981,7 @@
                 "heading": "智慧型媒體",
                 "title": "視頻播放智慧控制",
                 "desc": "此功能將在您離開電腦時暫停視訊，並在您回來時繼續播放視訊。",
-                "tooltip": "此功能不適用於<br>Web 視訊播放程式。<br>支援的播放程式如下：<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
+                "tooltip": "此功能不適用於 Web 視訊播放程式。受歡迎的本端視訊播放程式（例如 Windows Media Player、5KPlayer 等）都支援此功能。"
             },
             "superResolution": {
                 "heading": "智慧型媒體",

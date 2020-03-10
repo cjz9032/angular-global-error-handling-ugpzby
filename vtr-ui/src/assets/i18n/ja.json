@@ -1981,7 +1981,7 @@
                 "heading": "インテリジェント・メディア",
                 "title": "ビデオの自動再生",
                 "desc": "この機能では、コンピューターを離れるときにビデオを一時停止し、戻ったときにビデオを再開します。",
-                "tooltip": "この機能は Web ビデオ・プレイヤーに<br>適用できません。<br>サポートされているプレーヤーは次のとおりです。<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
+                "tooltip": "この機能は Web ビデオ・プレイヤーに適用できません。Windows Media Player、5KPlayer など、人気のあるローカル・ビデオ・プレイヤーは、この機能をサポートしています。"
             },
             "superResolution": {
                 "heading": "インテリジェント・メディア",

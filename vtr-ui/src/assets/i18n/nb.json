@@ -1981,7 +1981,7 @@
                 "heading": "Intelligent medieavspilling",
                 "title": "Berøringsfri videoavspilling",
                 "desc": "Denne funksjonen setter videoen på pause når du forlater datamaskinen, og fortsetter avspillingen når du kommer tilbake.",
-                "tooltip": "Denne funksjonen støttes ikke på<br>nettvideospillere.<br>De støttede spillerne er listet opp som følger<br>: 5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
+                "tooltip": "Denne funksjonen støttes ikke av nettvideospillere. Populære lokale videospillere, for eksempel Windows Media Player og 5KPlayer, støtter denne funksjonen."
             },
             "superResolution": {
                 "heading": "Intelligent medieavspilling",

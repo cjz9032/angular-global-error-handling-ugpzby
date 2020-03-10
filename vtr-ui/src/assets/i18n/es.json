@@ -1255,7 +1255,7 @@
                         },
                         "progressText1": "Paso {{stage}} de {{stageNum}} pasos en total: calibración con carga completa",
                         "progressText2": "Paso {{stage}} de {{stageNum}} pasos en total: calibración con energía de batería baja",
-                        "progressText3": "Paso {{stage}} de {{stageNum}} pasos en total: calibración con batería alta",
+                        "progressText3": "Paso {{stage}} de {{stageNum}} pasos en total: calibración con energía de batería alta",
                         "FCCText": "De {{before}} Wh a {{after}} Wh",
                         "note": "Nota: antes de restablecer el indicador de la batería, asegúrese de conectar el sistema a la alimentación de CA. ",
                         "resetLog": {
@@ -1981,7 +1981,7 @@
                 "heading": "Medios inteligentes",
                 "title": "Reproducción de video sin interacción",
                 "desc": "Esta característica pausará el video cuando deje el equipo y reanudará el video cuando vuelva.",
-                "tooltip": "Esta característica no se aplica a<br>reproductores de video Web.<br>Los reproductores compatibles son los siguientes:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
+                "tooltip": "Esta característica no se aplica a reproductores de video Web. Los reproductores de video locales más populares, como Windows Media Player, 5KPlayer, etc., admiten esta característica."
             },
             "superResolution": {
                 "heading": "Medios inteligentes",

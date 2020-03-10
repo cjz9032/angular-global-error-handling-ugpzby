@@ -1981,7 +1981,7 @@
                 "heading": "Inteligentni mediji",
                 "title": "Zero Touch reprodukcija video snimaka",
                 "desc": "Ova funkcija će pauzirati video kada odlazite od računara i nastaviti video kada se vratite.",
-                "tooltip": "Ova funkcija nije primenjiva na<br>veb video plejere.<br>Podržani igrači navedeni su na sledeći način:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
+                "tooltip": "Ova funkcija nije primenjiva na Web video plejere. Popularni lokalni video plejeri kao što su Windows Media Player, 5KPlayer itd. podržavaju ovu funkciju."
             },
             "superResolution": {
                 "heading": "Inteligentni mediji",

@@ -1255,7 +1255,7 @@
                         },
                         "progressText1": "Etapa {{stage}} de {{stageNum}} etapas no total: Calibrando em carga máxima",
                         "progressText2": "Etapa {{stage}} de {{stageNum}} etapas no total: Calibrando em bateria fraca",
-                        "progressText3": "Etapa {{stage}} de {{stageNum}} etapas no total: Calibrando em bateria alta",
+                        "progressText3": "Etapa {{stage}} de {{stageNum}} etapas no total: Calibrando em carga alta da bateria",
                         "FCCText": "De {{before}} Wh para {{after}} Wh",
                         "note": "Nota: Antes de redefinir o medidor da bateria, certifique-se de conectar o computador à energia CA. ",
                         "resetLog": {
@@ -1981,7 +1981,7 @@
                 "heading": "Mídia inteligente",
                 "title": "Reprodução de vídeo sem toques",
                 "desc": "Esse recurso pausará o vídeo quando você deixar o computador e continuará o vídeo quando você voltar.",
-                "tooltip": "Esse recurso não é aplicável em<br>players de vídeo da Web.<br>Os players compatíveis estão listados a seguir:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
+                "tooltip": "Esse recurso não é aplicável a players de vídeo da Web. Os players de vídeo populares, como o Windows Media Player, 5KPlayer, dentre outros, oferecem suporte a esse recurso."
             },
             "superResolution": {
                 "heading": "Mídia inteligente",

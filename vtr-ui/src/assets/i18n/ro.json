@@ -1981,7 +1981,7 @@
                 "heading": "Medii inteligente",
                 "title": "Redare video fără atingere",
                 "desc": "Această funcție întrerupe videoclipul atunci când părăsiți computerul și reia redarea atunci când vă întoarceți.",
-                "tooltip": "Această caracteristică nu se aplică<br>playerelor video web.<br>Playerele acceptate sunt afișate după cum urmează:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
+                "tooltip": "Această funcție nu se aplică jucătorilor de jocuri video pe web. Cele mai populare playere video locale, cum ar fi Windows Media Player, 5KPlayer și altele, acceptă această funcție."
             },
             "superResolution": {
                 "heading": "Medii inteligente",

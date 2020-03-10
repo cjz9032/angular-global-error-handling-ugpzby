@@ -1981,7 +1981,7 @@
                 "heading": "Supporti intelligenti",
                 "title": "Riproduzione video zero touch",
                 "desc": "Questa funzione metterà in pausa il video quando ci si allontana dal computer e riprenderà la riproduzione del video al rientro dell'utente.",
-                "tooltip": "Questa funzione non è applicabile ai<br>lettori video Web.<br>I lettori supportati sono i seguenti:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
+                "tooltip": "Questa funzione non è applicabile ai lettori video Web. I principali lettori video locali, come Windows Media Player, 5KPlayer e così via supportano questa funzione."
             },
             "superResolution": {
                 "heading": "Supporti intelligenti",

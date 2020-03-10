@@ -1981,7 +1981,7 @@
                 "heading": "Intelligente Medien",
                 "title": "Zero-Touch-Videowiedergabe",
                 "desc": "Diese Funktion pausiert das Video, wenn Sie sich vom Computer entfernen, und spielt es weiter ab, wenn Sie zurück sind.",
-                "tooltip": "Diese Funktion ist nicht verfügbar bei<br>Web-Videoplayern.<br>Die folgenden Player werden unterstützt:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
+                "tooltip": "Diese Funktion funktioniert nicht bei Web-Videoplayern. Bekannte lokale Videoplayer unterstützen diese Funktion, z. B. Windows Media Player, 5KPlayer etc."
             },
             "superResolution": {
                 "heading": "Intelligente Medien",

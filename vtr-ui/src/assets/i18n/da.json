@@ -1981,7 +1981,7 @@
                 "heading": "Intelligente medier",
                 "title": "Videoafspilning uden berøring",
                 "desc": "Denne funktion afbryder videoen, når du forlader computeren, og genoptager videoen, når du er tilbage.",
-                "tooltip": "Denne funktion kan ikke bruges med<br>internetvideoafspillere.<br>Følgende afspillere understøttes:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
+                "tooltip": "Denne funktion kan ikke bruges med internetvideoafspillere. Populære lokale videoafspillere som f.eks. Windows Media Player, 5KPlayer osv. understøtter denne funktion."
             },
             "superResolution": {
                 "heading": "Intelligente medier",

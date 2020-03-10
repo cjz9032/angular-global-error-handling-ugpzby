@@ -1981,7 +1981,7 @@
                 "heading": "지능형 미디어",
                 "title": "제로 터치 비디오 재생",
                 "desc": "이 기능은 컴퓨터를 두고 자리를 떠나면 비디오를 일시 정지하고 자리에 다시 돌아 오면 비디오를 다시 시작합니다.",
-                "tooltip": "이 기능은<br>웹 비디오 플레이어에서 사용할 수 없습니다.<br>지원 가능한 플레이어는 다음과 같습니다.<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
+                "tooltip": "이 기능은 웹 비디오 플레이어에는 적용되지 않습니다. 대중적인 비디오 플레이어(예: Windows Media Player, 5KPlayer 등)가 이 기능을 지원합니다."
             },
             "superResolution": {
                 "heading": "지능형 미디어",
