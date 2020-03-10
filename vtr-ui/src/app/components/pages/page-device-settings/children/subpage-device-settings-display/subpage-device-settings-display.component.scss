@@ -255,6 +255,8 @@
 	::ng-deep .vtr-widget-permission-note {
 		width: 96.5%;
 		margin-left: 1.3rem;
+		background-color: $grey_lighter;
+		border: 1px solid $note_border;
 	}
 }
 
