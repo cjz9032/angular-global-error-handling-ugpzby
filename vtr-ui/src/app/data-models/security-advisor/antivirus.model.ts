@@ -537,8 +537,6 @@ export class AntiVirusViewModel {
 		let avStatus: string;
 		let fwStatus: string;
 
-		if (!av && !fw) return;
-
 		if (typeof av === 'boolean' && typeof fw === 'boolean') {
 			avStatus = av ? 'enabled' : 'disabled';
 			fwStatus = fw ? 'enabled' : 'disabled';
@@ -552,6 +550,8 @@ export class AntiVirusViewModel {
 			if (currentPage === 'windows') {
 				fwStatus = 'loading';
 			}
+		} else {
+			return;
 		}
 
 		this.windowsDefenderstatusList = [{
