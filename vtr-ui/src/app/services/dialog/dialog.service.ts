@@ -18,7 +18,7 @@ import { ModalModernPreloadComponent } from 'src/app/components/modal/modal-mode
 import { Router } from '@angular/router';
 import { DeviceService } from '../device/device.service';
 import { DeviceLocationPermission } from 'src/app/data-models/home-security/device-location-permission.model';
-
+import { UserService } from '../user/user.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -28,6 +28,7 @@ export class DialogService {
 		private commonService: CommonService,
 		public modalService: NgbModal,
 		private router: Router,
+		private userService: UserService,
 		private deviceService: DeviceService
 	)  { }
 
@@ -245,13 +246,18 @@ export class DialogService {
 				modalRef.componentInstance.description = 'lenovoId.ssoErrorNetworkDisconnected';
 				return modalRef.result;
 			} else {
-				const modal: NgbModalRef = this.modalService.open(ModalLenovoIdComponent, {
+				const modalRef: NgbModalRef = this.modalService.open(ModalLenovoIdComponent, {
 					backdrop: 'static',
 					centered: true,
 					windowClass: 'lenovo-id-modal-size'
 				});
-				(<ModalLenovoIdComponent>modal.componentInstance).appFeature = appFeature;
-				return modal.result;
+				modalRef.componentInstance.appFeature = appFeature;
+				modalRef.result.catch((reason) => {
+					if (typeof reason === 'number') {
+						this.userService.popupErrorMessage(reason);
+					}
+				});
+				return modalRef.result;
 			}
 		} else {
 			this.router.parseUrl(this.deviceService.isGaming ? '/device-gaming' : '/dashboard');
