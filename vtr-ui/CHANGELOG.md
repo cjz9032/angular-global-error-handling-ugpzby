@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.36](https://bitbucket.tc.lenovo.com///compare/v1.3.35...v1.3.36) (2020-03-10)
+
 ### [1.3.35](https://bitbucket.tc.lenovo.com///compare/v1.3.34...v1.3.35) (2020-03-10)
 
 ### [1.3.34](https://bitbucket.tc.lenovo.com///compare/v1.3.33...v1.3.34) (2020-03-09)
