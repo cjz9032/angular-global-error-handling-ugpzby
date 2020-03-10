@@ -15,6 +15,6 @@ getTestBed().initTestEnvironment(
   platformBrowserDynamicTesting()
 );
 // Then we find all the tests.
-const context = require.context('./', true, /gaming-oc\.service\.spec\.ts$/);
+const context = require.context('./', true, /modal-gaming-thermal-mode2\.component\.spec\.ts$/);
 // And load the modules.
 context.keys().map(context);

@@ -18,7 +18,7 @@ export class GamingOCService {
 		if (this.gamingOverClock) {
 			this.isShellAvailable = true;
 		} else {
-			this.logger.error(`Service-GamingThermalMode-Constructor: gamingOverClock is undefined, shell Available: ${this.isShellAvailable}`);
+			this.logger.error(`Service-gamingOverClock-Constructor: gamingOverClock is undefined, shell Available: ${this.isShellAvailable}`);
 		}
 	}
 

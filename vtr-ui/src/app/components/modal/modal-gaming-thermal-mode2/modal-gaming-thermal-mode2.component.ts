@@ -179,7 +179,8 @@ export class ModalGamingThermalMode2Component implements OnInit {
     let OCStatus = this.OCSettings ? 1 : 3;
     if (this.gamingCapabilities.cpuOCFeature) {
       this.commonService.setLocalStorageValue(LocalStorageKey.CpuOCStatus, OCStatus);
-    } else if (this.gamingCapabilities.gpuOCFeature) {
+    } 
+    if (this.gamingCapabilities.gpuOCFeature) {
       this.commonService.setLocalStorageValue(LocalStorageKey.GpuOCStatus, OCStatus);
     }
     this.OCSettingsMsg.emit(OCStatus);
@@ -192,7 +193,8 @@ export class ModalGamingThermalMode2Component implements OnInit {
           OCStatus = this.OCSettings ? 1 : 3;
           if (this.gamingCapabilities.cpuOCFeature) {
             this.commonService.setLocalStorageValue(LocalStorageKey.CpuOCStatus, OCStatus);
-          } else if (this.gamingCapabilities.gpuOCFeature) {
+          } 
+          if (this.gamingCapabilities.gpuOCFeature) {
             this.commonService.setLocalStorageValue(LocalStorageKey.GpuOCStatus, OCStatus);
           }
           this.OCSettingsMsg.emit(OCStatus);
@@ -204,7 +206,8 @@ export class ModalGamingThermalMode2Component implements OnInit {
       OCStatus = this.OCSettings ? 1 : 3;
       if (this.gamingCapabilities.cpuOCFeature) {
         this.commonService.setLocalStorageValue(LocalStorageKey.CpuOCStatus, OCStatus);
-      } else if (this.gamingCapabilities.gpuOCFeature) {
+      }
+      if (this.gamingCapabilities.gpuOCFeature) {
         this.commonService.setLocalStorageValue(LocalStorageKey.GpuOCStatus, OCStatus);
       }
       this.OCSettingsMsg.emit(OCStatus);
