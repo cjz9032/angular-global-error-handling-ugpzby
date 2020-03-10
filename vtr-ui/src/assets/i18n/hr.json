@@ -1981,7 +1981,7 @@
                 "heading": "Inteligentni mediji",
                 "title": "Zero Touch reprodukcija videozapisa",
                 "desc": "Ta će značajka pauzirati reprodukciju videozapisa kada se udaljite od računala i nastaviti je kada se vratite.",
-                "tooltip": "Ova značajka nije primjenjiva na<br>web video uređajima za reprodukciju.<br>Igrači koji su podržani su navedeni na sljedeći način:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
+                "tooltip": "Ta značajka nije primjenjiva na web-reproduktore videosadržaja. Popularni lokalni reproduktori videosadržaja, kao što su Windows Media Player, 5KPlayer itd., podržavaju tu značajku."
             },
             "superResolution": {
                 "heading": "Inteligentni mediji",
@@ -3561,8 +3561,5 @@
             "subtitle2": "Sve u jednom: pojednostavljeno",
             "body2": "Sve-u-jednom osobna računala s procesorima Intel® Core™ 9. generacije daju vam svu snagu stolnog računala upakiranog u elegantan zaslon - za manje nereda, sigurnost zasnovanu na hardveru i prikaz visoke razlučivosti."
         }
-    },
-    "cpt": {
-        "title": "Content Preview Tool"
     }
 }

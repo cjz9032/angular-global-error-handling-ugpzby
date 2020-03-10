@@ -1329,9 +1329,9 @@
 							"reset": "Reset",
 							"stop": "Stop"
 						},
-						"progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
-						"progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
-						"progressText3": "Step {{stage}}, out of {{stageNum}} steps in total",
+						"progressText1": "Step {{stage}}, out of {{stageNum}} steps in total: Calibrating to full charge",
+						"progressText2": "Step {{stage}}, out of {{stageNum}} steps in total: Calibrating to low battery power",
+						"progressText3": "Step {{stage}}, out of {{stageNum}} steps in total: Calibrating to high battery power",
 						"FCCText": "From {{before}} Wh to {{after}} Wh",
 						"note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
 						"dual_note": "Note: Only one battery can be reset at a time.",
@@ -2743,7 +2743,7 @@
 				"homeSecurityAffect3": "Connected Home Security ensures that other devices connected to your home network are safe.",
 				"describe": "Unsafe devices and networks can introduce malware, lead to identity theft, and leak private and financial information. Enable this feature to reduce the risk of having your device, and your home network exposed to attackers.",
 				"subtitle": "Peace of Mind",
-				"subtitleDescribe": "Connected Home Security will send you an alert if it detects a vulnerability in your device or home network, or if you are connected to a potentially malicious network. Learn even more about Connected Home Security <tag>here</tag>.",
+				"subtitleDescribe": "Connected Home Security will send you an alert if it detects a vulnerability in your device or home network, or if you are connected to a potentially malicious network.",
 				"tryNow": "Try Now",
 				"visit": "Visit",
 				"goToChs": "go to connected home security"
@@ -3561,8 +3561,5 @@
 			"subtitle2": "All-in-Ones: Streamlined",
 			"body2": "All-in-One PCs with 9th Gen Intel® Core™ processors give you all the power of a desktop packaged in a sleek display — for less clutter, hardware-based security, and a hi-res display."
 		}
-	},
-	"cpt": {
-		"title": "Content Preview Tool"
 	}
 }

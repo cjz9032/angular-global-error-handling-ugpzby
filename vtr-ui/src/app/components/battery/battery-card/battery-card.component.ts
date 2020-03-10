@@ -51,7 +51,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	public param: any;
 	notificationSubscription: Subscription;
 	shortAcErrNote = true;
-	isModalShown = false;
 	isWinRTLoading = true;
 	isUnsupportedBattery = false;
 	isThinkPad = false;
@@ -133,7 +132,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 
 		this.activatedRoute.queryParamMap.subscribe((params: ParamMap) => {
 			// this.logger.info('BatteryCardComponent.ngOnInit: Query Params', params);
-			if (params.has('batterydetail') && !this.isModalShown) {
+			if (params.has('batterydetail')) {
 				const showBatteryDetail = this.activatedRoute.snapshot.queryParams.batterydetail;
 				this.getBatteryDetails(showBatteryDetail);
 			}
@@ -471,8 +470,9 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	 * @param content: battery Information
 	 */
 	public showDetailModal(content: any): void {
-		this.isModalShown = true;
-		this.modalService
+		if(!this.batteryService.isBatteryModalShown) {
+			this.batteryService.isBatteryModalShown = true;
+			this.modalService
 			.open(content, {
 				backdrop: 'static',
 				size: 'lg',
@@ -483,9 +483,10 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 					// on open
 				},
 				reason => {
-					this.isModalShown = false;
+					this.batteryService.isBatteryModalShown = false;
 				}
 			);
+		}
 	}
 
 	showDetailTip(index: number) {

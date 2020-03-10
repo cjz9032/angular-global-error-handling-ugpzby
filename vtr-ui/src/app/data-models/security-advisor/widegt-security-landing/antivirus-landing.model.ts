@@ -11,6 +11,8 @@ import {
 import {
 	TranslateService
 } from '@ngx-translate/core';
+import { AntivirusService } from 'src/app/services/security/antivirus.service';
+import { AntivirusCommonData } from '../antivirus-common.data.model';
 
 export class AntiVirusLandingViewModel {
 	avStatus = {
@@ -38,11 +40,11 @@ export class AntiVirusLandingViewModel {
 	currentPage: string;
 	translateString: any;
 	loadTime = 15000;
-	constructor(translate: TranslateService, public avModel: phoenix.Antivirus, public commonService: CommonService) {
+	constructor(translate: TranslateService, public avModel: phoenix.Antivirus, public commonService: CommonService, public antivirusService: AntivirusService) {
 		this.waitTimeout('antivirus');
 		this.waitTimeout('firewall');
 		avModel.on(EventTypes.avRefreshedEvent, (av) => {
-			this.setPage(av);
+			this.setLandingPageUI(this.antivirusService.GetAntivirusStatus());
 		}).on(EventTypes.avStartRefreshEvent, () => {
 			if (this.currentPage === 'windows') {
 				if (this.avStatus.status === 'failedLoad') {
@@ -82,52 +84,20 @@ export class AntiVirusLandingViewModel {
 			this.fwStatus.title = res['security.landing.firewall'];
 			this.fwStatus.content = res['security.landing.firewallContent'];
 			this.fwStatus.buttonLabel = res['security.landing.goFirewall'];
-			const cacheAvStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus);
-			const cacheFwStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus);
-			const cacheCurrentPage = commonService.getLocalStorageValue(LocalStorageKey.SecurityCurrentPage);
-			if (cacheCurrentPage) {
-				this.currentPage = cacheCurrentPage;
-			}
-			if (avModel.mcafee || avModel.windowsDefender || avModel.others) {
-				this.setPage(avModel);
-			} else if (cacheAvStatus !== undefined || cacheFwStatus !== undefined) {
-				this.setAntivirusStatus(cacheAvStatus, cacheFwStatus);
-			}
 
+			this.setLandingPageUI(this.antivirusService.GetAntivirusStatus());
 		});
 	}
 
-	setPage(antiVirus: phoenix.Antivirus) {
-		if (antiVirus.mcafee && (antiVirus.mcafee.enabled || !antiVirus.others || !antiVirus.others.enabled) && antiVirus.mcafee.expireAt > 0) {
-			this.currentPage = 'mcafee';
-			this.setAntivirusStatus(
-				antiVirus.mcafee.status !== undefined ? antiVirus.mcafee.status : null,
-				antiVirus.mcafee.firewallStatus !== undefined ? antiVirus.mcafee.firewallStatus : null
-			);
-		} else if (antiVirus.others) {
-			this.currentPage = 'others';
-			this.setAntivirusStatus(
-				antiVirus.others.antiVirus.length > 0 ? antiVirus.others.antiVirus[0].status : null,
-				antiVirus.others.firewall.length > 0 ? antiVirus.others.firewall[0].status : antiVirus.windowsDefender.firewallStatus
-			);
-		} else {
-			this.currentPage = 'windows';
-			if (antiVirus.windowsDefender) {
-				this.setAntivirusStatus(
-					antiVirus.windowsDefender.status !== undefined ? antiVirus.windowsDefender.status : null,
-					antiVirus.windowsDefender.firewallStatus !== undefined ? antiVirus.windowsDefender.firewallStatus : null
-				);
-			}
-		}
-		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityCurrentPage, this.currentPage);
+	private setLandingPageUI(antivirusCommonData: AntivirusCommonData) {
+		this.currentPage = antivirusCommonData.currentPage;
+		this.setAntivirusStatus(antivirusCommonData.antivirus, antivirusCommonData.firewall);
 	}
 
 	setAntivirusStatus(av: boolean | undefined, fw: boolean | undefined) {
 		if (!this.translateString || ((typeof av !== 'boolean' && typeof fw !== 'boolean'))) {
 			return;
 		}
-		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus, fw !== undefined ? fw : null);
-		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus, av !== undefined ? av : null);
 
 		if (typeof av === 'boolean' && typeof fw === 'boolean') {
 			this.avStatus.status = av ? 'enabled' : 'disabled';

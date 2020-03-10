@@ -175,6 +175,7 @@ export class ModalModernPreloadComponent implements OnInit, OnDestroy, AfterView
 				});
 			}
 			appItem.isCheckDisabled = !(!appItem.activationCode && !appItem.redemptionURL);
+			if (appItem.isCheckDisabled) { appItem.isChecked = false; }
 		});
 	}
 

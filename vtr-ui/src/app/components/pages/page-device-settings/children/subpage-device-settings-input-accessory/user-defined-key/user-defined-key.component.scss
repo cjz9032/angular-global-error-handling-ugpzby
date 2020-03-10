@@ -42,9 +42,9 @@
 		background: $gradient_main;
 		padding: 0 3rem;
 		color: $light;
-		font-size: 1.5rem;
+		font-size: $fontsize_xs;
 		letter-spacing: 0.1rem;
-		font-weight: $weight_600;
+		font-weight: $weight_bold;
 		text-align: center;
 		text-decoration: none;
 		display: inline-block;

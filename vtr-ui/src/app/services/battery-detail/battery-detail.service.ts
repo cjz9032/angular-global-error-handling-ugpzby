@@ -9,6 +9,7 @@ import { ChargeThreshold } from 'src/app/data-models/device/charge-threshold.mod
 })
 export class BatteryDetailService {
 
+	isBatteryModalShown = false;
 	private battery: any;
 	isAcAttached: boolean;
 	gaugePercent:number;

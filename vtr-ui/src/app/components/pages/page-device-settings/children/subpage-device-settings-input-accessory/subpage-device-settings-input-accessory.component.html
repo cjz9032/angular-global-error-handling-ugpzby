@@ -58,18 +58,13 @@
 										<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex"
 											*ngFor="let key of shortcutKeys;let i=index;">
 											<div class="col-4 px-0">
-												<h4 class="caption-tittle"
-													id="keys-title-{{i+1}}"
-													attr.aria-label="{{key.title}}-title">
-													{{key + '.tittle' | translate}}
+												<h4 class="caption-tittle" id="keys-{{key.id}}-title">
+													{{key.text + '.tittle' | translate}}
 												</h4>
 											</div>
 											<div class="col-8 px-0">
-												<p role="text"
-													class="hidden-keyboard-text mb-0"
-													id="keys-description-{{i+1}}"
-													attr.aria-label="{{key.title}}-description">
-													{{key + '.description' | translate}}
+												<p role="text" class="hidden-keyboard-text mb-0" id="keys-{{key.id}}-description">
+													{{key.text + '.description' | translate}}
 												</p>
 											</div>
 										</div>
@@ -86,14 +81,16 @@
 								<vtr-top-row-functions-ideapad></vtr-top-row-functions-ideapad>
 							</li>
 
-							<li class="pt-3 keyboard-backlight-block"
-								*ngIf="machineType === 1 && isKbdBacklightAvailable">
-								<vtr-backlight-thinkpad (showHide)="showHideKeyboardBacklight($event)">
-								</vtr-backlight-thinkpad>
-							</li>
-							<li class="pt-3 keyboard-backlight-block" *ngIf="machineType === 0 && backlightCapability$ | async">
-								<vtr-backlight [isLastChild]="!showVoipHotkeysSection && !hasUDKCapability"></vtr-backlight>
-							</li>
+							<li class="pt-3 keyboard-backlight-block">
+								<div class="w-100" *ngIf="machineType === 1 && isKbdBacklightAvailable">
+	                                <vtr-backlight-thinkpad (showHide)="showHideKeyboardBacklight($event)">
+	                                </vtr-backlight-thinkpad>
+								</div>
+								<div class="w-100" *ngIf="machineType === 0 && backlightCapability$ | async">
+									<vtr-backlight [isLastChild]="!showVoipHotkeysSection && !hasUDKCapability"></vtr-backlight>
+								</div>
+                            </li>
+
 							<li class="pt-3 voip"
 								*ngIf="showVoipHotkeysSection">
 								<vtr-ui-row-switch

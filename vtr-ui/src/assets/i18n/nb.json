@@ -1633,7 +1633,7 @@
                         "description": "Du kan trykke på Fn-tasten nederst til venstre på tastaturet samtidig med andre taster for å aktivere kommandoene som vises i tastaturkartet nedenfor."
                     },
                     "firstKeyObj": {
-                        "tittle": "FN + tab",
+                        "tittle": "Fn + Tab",
                         "description": "aktiver zoomefunksjonen på skjermer med høy oppløsning",
                         "image": ""
                     },
@@ -1981,7 +1981,7 @@
                 "heading": "Intelligent medieavspilling",
                 "title": "Berøringsfri videoavspilling",
                 "desc": "Denne funksjonen setter videoen på pause når du forlater datamaskinen, og fortsetter avspillingen når du kommer tilbake.",
-                "tooltip": "Denne funksjonen støttes ikke på<br>nettvideospillere.<br>De støttede spillerne er listet opp som følger<br>: 5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
+                "tooltip": "Denne funksjonen støttes ikke av nettvideospillere. Populære lokale videospillere, for eksempel Windows Media Player og 5KPlayer, støtter denne funksjonen."
             },
             "superResolution": {
                 "heading": "Intelligent medieavspilling",
@@ -3561,8 +3561,5 @@
             "subtitle2": "Alt-i-ett: strømlinjeformet",
             "body2": "Alt-i-ett-PC-er med 9. generasjons Intel® Core™-prosessorer gir deg all kraften til en stasjonær PC pakket i en elegant skjerm – for mindre rot, maskinvarebasert sikkerhet og skjerm med høy oppløsning."
         }
-    },
-    "cpt": {
-        "title": "Content Preview Tool"
     }
 }
