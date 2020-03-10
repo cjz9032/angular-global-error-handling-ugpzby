@@ -45,32 +45,32 @@ export class AntivirusService {
 	}
 
 	private setPage(antiVirus: Antivirus) {
+		let av: boolean | undefined;
+		let fw: boolean | undefined;
 		if (antiVirus.mcafee && (antiVirus.mcafee.enabled || !antiVirus.others || !antiVirus.others.enabled) && antiVirus.mcafee.expireAt > 0) {
 			this.antivirusCommonData.currentPage = 'mcafee';
 			this.antivirusCommonData.isMcAfeeInstalled = true;
-			this.setAntivirusStatus(
-				antiVirus.mcafee.status !== undefined ? antiVirus.mcafee.status : null,
-				antiVirus.mcafee.firewallStatus !== undefined ? antiVirus.mcafee.firewallStatus : null
-			);
+			av = antiVirus.mcafee.status;
+			fw = antiVirus.mcafee.firewallStatus;
 		} else if (antiVirus.others && antiVirus.others.enabled) {
 			this.antivirusCommonData.currentPage = 'others';
-			if (antiVirus.mcafee) {
-				this.antivirusCommonData.isMcAfeeInstalled = true;
-			} else { this.antivirusCommonData.isMcAfeeInstalled = false; }
-			this.setAntivirusStatus(
-				antiVirus.others.antiVirus.length > 0 ? antiVirus.others.antiVirus[0].status : null,
-				antiVirus.others.firewall.length > 0 ? antiVirus.others.firewall[0].status : antiVirus.windowsDefender.firewallStatus
-			);
+			this.antivirusCommonData.isMcAfeeInstalled = Boolean(antiVirus.mcafee);
+			av = antiVirus.others.antiVirus.length > 0 ? antiVirus.others.antiVirus[0].status : undefined;
+			if (antiVirus.windowsDefender) {
+				fw = antiVirus.others.firewall.length > 0 ? antiVirus.others.firewall[0].status : antiVirus.windowsDefender.firewallStatus;
+			} else {
+				fw = antiVirus.others.firewall.length > 0 ? antiVirus.others.firewall[0].status : undefined;
+			}
 		} else {
 			this.antivirusCommonData.currentPage = 'windows';
 			this.antivirusCommonData.isMcAfeeInstalled = false;
 			if (antiVirus.windowsDefender) {
-				this.setAntivirusStatus(
-					antiVirus.windowsDefender.status !== undefined ? antiVirus.windowsDefender.status : null,
-					antiVirus.windowsDefender.firewallStatus !== undefined ? antiVirus.windowsDefender.firewallStatus : null
-				);
+				av = antiVirus.windowsDefender.status;
+				fw = antiVirus.windowsDefender.firewallStatus;
 			}
 		}
+
+		this.setAntivirusStatus(av, fw);
 		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityCurrentPage, this.antivirusCommonData.currentPage);
 	}
 

@@ -84,11 +84,6 @@ export class AntiVirusViewModel {
 			this.metricsList = cacheMcafeeMetricsList;
 		}
 
-		const cacheWindowsDefender = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityWindowsDefender);
-		if (cacheWindowsDefender) {
-			this.windowsDefender = cacheWindowsDefender;
-		}
-
 		const cacheShowMetricButton = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowMetricButton);
 		if (typeof cacheShowMetricButton === 'boolean') {
 			this.showMetricButton = cacheShowMetricButton;
@@ -194,7 +189,6 @@ export class AntiVirusViewModel {
 	private updateWindowsDefender() {
 		if (this.antiVirus.windowsDefender) {
 			this.windowsDefender = this.antiVirus.windowsDefender;
-			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsDefender, this.windowsDefender);
 		}
 
 		if (this.windowsDefender) {
@@ -551,10 +545,7 @@ export class AntiVirusViewModel {
 				fwStatus = 'loading';
 			}
 		} else {
-			if (currentPage === 'windows') {
-				avStatus = 'loading';
-				fwStatus = 'loading';
-			}
+			return;
 		}
 
 		this.windowsDefenderstatusList = [{
