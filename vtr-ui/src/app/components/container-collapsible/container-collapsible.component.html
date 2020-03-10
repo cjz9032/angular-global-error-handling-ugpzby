@@ -7,12 +7,10 @@
 					[class.hide-border-bottom]="isCollapsed">
 					<div class="container-fluid">
 						<div class="row align-items-center py-2">
-							<div class="col-auto text-left mr-auto header"
+							<h4 class="col-auto text-left mr-auto mb-0 header"
 								id="{{cardTitle+'-collapse-card-title'}}"
 								attr.aria-label="{{ cardTitle + ',card' }}"
-								role="text">
-								{{cardTitle}}
-							</div>
+								[innerHTML]="cardTitle"></h4>
 							<div class="col-auto px-3"
 								*ngIf="allowCollapse">
 								<div class="collapse-control"
