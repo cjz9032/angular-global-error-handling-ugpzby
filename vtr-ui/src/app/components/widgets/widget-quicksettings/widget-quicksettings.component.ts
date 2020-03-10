@@ -116,10 +116,10 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 
 		if (this.microphoneDevice) {
 			this.microphnePermissionHandler = (args: any) =>{
-				if(args && args.status) {
+				if(args && (args.status != null)) {
 					switch (args.status) {
+						case 0:
 						case 1:
-							this.microphoneStatus.permission = true;
 							this.updateMicrophoneStatus();
 							break;
 						case 2:
@@ -354,7 +354,8 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			this.dashboardService.getMicrophoneStatus()
 				.then((featureStatus: FeatureStatus) => {
 					this.microphoneStatus = featureStatus;
-					this.microPhoneGreyOut = false;if (featureStatus.available) {
+					this.microPhoneGreyOut = false;
+					if (featureStatus.available) {
 						const win: any = window;
 						if (win.VantageShellExtension && win.VantageShellExtension.AudioClient) {
 							try {
