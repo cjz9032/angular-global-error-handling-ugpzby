@@ -156,7 +156,8 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	initHiddenKbdFnFromCache() {
 		try {
 			this.inputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, undefined);
-			if (this.inputAccessoriesCapability !== undefined) {
+			this.logger.error('initHiddenKbdFnFromCache capability from cache', this.inputAccessoriesCapability);
+			if (this.inputAccessoriesCapability) {
 				this.cacheFound = true;
 				this.keyboardCompatibility = this.inputAccessoriesCapability.isKeyboardMapAvailable;
 				this.keyboardVersion = this.inputAccessoriesCapability.keyboardVersion;
