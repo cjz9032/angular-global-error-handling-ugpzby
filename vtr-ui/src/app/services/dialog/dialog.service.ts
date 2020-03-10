@@ -254,7 +254,7 @@ export class DialogService {
 				modalRef.componentInstance.appFeature = appFeature;
 				modalRef.result.catch((reason) => {
 					if (typeof reason === 'number') {
-						this.userService.popupErrorMessage(Number(reason));
+						this.userService.popupErrorMessage(reason);
 					}
 				});
 				return modalRef.result;
