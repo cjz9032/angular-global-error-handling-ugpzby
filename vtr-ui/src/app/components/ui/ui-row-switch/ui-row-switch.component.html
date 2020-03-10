@@ -12,8 +12,7 @@
 				[ngClass]="{'col-md-8': (type==='auto-updates' || type==='Camera'), 'col-md-10':type===undefined}">
 				<div class="container-fluid p-0">
 					<div class="row m-0"
-						role="text"
-						tabindex="0">
+						role="text">
 						<div class="col-auto left-icon-column"
 							*ngIf="leftIcon.length > 0">
 							<div class="left-icon-block">
@@ -38,7 +37,10 @@
 								{{ title }}
 							</div>
 							<span *ngIf="caption">
-								<div class="caption" id="{{switchId}}-caption" attr.aria-label="{{switchId}}-caption" role="text"
+								<div class="caption"
+									id="{{switchId}}-caption"
+									attr.aria-label="{{switchId}}-caption"
+									role="text"
 									[innerHTML]="htmlSanitizer(caption.length > 70  && !contentExpand  && readMoreText.length > 0 ? (caption | slice: 0:70) : caption)">
 								</div>
 							</span>
@@ -118,9 +120,8 @@
 				<div class="tool-tip-icon float-right"
 					*ngIf="rightIcon.length > 0 && !voice && !toolTipStatus && !fnCtrltoolTip"
 					[ngClass]="{'auto-screen-lock-help-icon': !isSwitchVisible}">
-					<fa-icon 
-					    id="{{switchId}}-tooltip_right_icon"
-					    attr.aria-label="{{ title }} tooltip, which reads: {{ tooltipText }}"
+					<fa-icon id="{{switchId}}-tooltip_right_icon"
+						attr.aria-label="{{ title }} tooltip, which reads: {{ tooltipText }}"
 						class="right-icon"
 						tabindex="0"
 						role="img"
@@ -130,7 +131,6 @@
 						[ngbTooltip]="tooltipRef"
 						#rightToolTip1="ngbTooltip"
 						autoClose="true"
-                        tabindex="0"  
 						[icon]="rightIcon"
 						container="vtr-root"
 						tooltipClass="vtr-tooltip"
