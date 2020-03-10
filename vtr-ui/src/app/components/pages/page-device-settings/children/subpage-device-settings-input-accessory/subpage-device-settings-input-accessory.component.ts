@@ -84,7 +84,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 			}
 			// udk capability
 			const inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, undefined);
-			if (this.hasUDKCapability) {
+			if (this.inputAccessoriesCapability) {
 				this.hasUDKCapability = inputAccessoriesCapability.isUdkAvailable;
 			}
 			// fnCtrlSwap & fnAsCtrl features hidden in 3.2.001
