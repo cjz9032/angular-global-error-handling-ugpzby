@@ -1981,7 +1981,7 @@
                 "heading": "Inteligentné médiá",
                 "title": "Bezdotykové prehrávanie videa",
                 "desc": "Táto funkcia pozastaví prehrávanie videa, keď odídete od počítača a obnoví prehrávanie videa, keď sa vrátite.",
-                "tooltip": "Táto funkcia sa nevzťahuje na<br>webové video prehrávače.<br>Podporované prehrávače sú tieto:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
+                "tooltip": "Táto funkcia sa nevzťahuje na webové video prehrávače. Obľúbené lokálne prehrávače videa (prehrávač Windows Media Player, 5KPlayer a pod.) túto funkciu podporujú."
             },
             "superResolution": {
                 "heading": "Inteligentné médiá",

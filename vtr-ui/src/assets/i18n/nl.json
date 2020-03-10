@@ -1981,7 +1981,7 @@
                 "heading": "Intelligente media",
                 "title": "Zero Touch Video afspelen",
                 "desc": "Met deze functie wordt de video gepauzeerd wanneer u weggaat bij de computer en hervat wanneer u terugkeert.",
-                "tooltip": "Deze functie is niet van toepassing<br>op webvideospelers.<br>De ondersteunde spelers worden als volgt weergegeven:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
+                "tooltip": "Deze functie is niet van toepassing op webvideospelers. Populaire lokale videospelers, zoals Windows Media Player, 5KPlayer en dergelijke, ondersteunen deze functie."
             },
             "superResolution": {
                 "heading": "Intelligente media",

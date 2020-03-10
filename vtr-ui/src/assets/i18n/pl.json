@@ -1981,7 +1981,7 @@
                 "heading": "Inteligentne multimedia",
                 "title": "Odtwarzanie wideo bez dotyku",
                 "desc": "Ta funkcja wstrzymuje odtwarzanie wideo, gdy odchodzisz od komputera, i wznawia je, gdy wracasz.",
-                "tooltip": "Ta funkcja nie dotyczy<br>odtwarzaczy wideo w sieci Web.<br>Obsługiwane są następujące odtwarzacze:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
+                "tooltip": "Ta funkcja nie dotyczy odtwarzaczy wideo w sieci Web. Popularne lokalne odtwarzacze wideo, takie jak program Windows Media Player, 5KPlayer itd., obsługują tę funkcję."
             },
             "superResolution": {
                 "heading": "Inteligentne multimedia",

@@ -1981,7 +1981,7 @@
                 "heading": "Akıllı Medya",
                 "title": "Sıfır Dokunma ile Video Oynatma",
                 "desc": "Bu özellik, bilgisayarın başından ayrıldığınızda videoyu duraklatır ve geri döndüğünüzde videoyu oynatmaya devam eder.",
-                "tooltip": "Bu özellik, Web üzerindeki<br>video oynatıcılar için geçerli değildir.<br>Şu oynatıcılar desteklenmektedir:<br>5k Player<br>GOM Player<br>VLC Player<br>PotPlayer"
+                "tooltip": "Bu özellik, Web üzerindeki video oynatıcılar için geçerli değildir. Windows Media Player ya da 5KPlayer gibi popüler yerel video oynatıcılar bu özelliği destekler."
             },
             "superResolution": {
                 "heading": "Akıllı Medya",
