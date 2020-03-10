@@ -14,6 +14,7 @@ import * as phoenix from '@lenovo/tan-client-bridge';
 import { AntivirusCommon } from 'src/app/data-models/security-advisor/antivirus-common.model';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { TranslateService } from '@ngx-translate/core';
+import { AntivirusService } from 'src/app/services/security/antivirus.service';
 
 @Component({
 	selector: 'vtr-page-security-antivirus',
@@ -51,6 +52,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 		private router: Router,
 		private localInfoService: LocalInfoService,
 		public translate: TranslateService,
+		private antivirusService: AntivirusService
 	) { }
 
 	ngOnInit() {
@@ -62,7 +64,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 			this.onNotification(notification);
 		});
 		this.common = new AntivirusCommon(this.antiVirus, this.isOnline, this.localInfoService, this.commonService, this.translate);
-		this.viewModel = new AntiVirusViewModel(this.antiVirus, this.commonService, this.translate);
+		this.viewModel = new AntiVirusViewModel(this.antiVirus, this.commonService, this.translate, this.antivirusService);
 
 		if (!this.guard.previousPageName.startsWith('Security')) {
 			this.antiVirus.refresh();

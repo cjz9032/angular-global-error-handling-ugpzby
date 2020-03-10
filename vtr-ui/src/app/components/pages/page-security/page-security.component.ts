@@ -44,6 +44,7 @@ import { SecurityTypeConst } from 'src/app/data-models/security-advisor/status-i
 import { DeviceService } from 'src/app/services/device/device.service';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { LandingView } from 'src/app/data-models/security-advisor/widegt-security-landing/landing-view.model';
+import { AntivirusService } from 'src/app/services/security/antivirus.service';
 
 
 @Component({
@@ -89,7 +90,8 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		private ngZone: NgZone,
 		private router: Router,
 		private windowsHelloService: WindowsHelloService,
-		private hypSettings: HypothesisService
+		private hypSettings: HypothesisService,
+		private antivirusService: AntivirusService
 	) { }
 
 	@HostListener('window: focus')
@@ -159,7 +161,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 	}
 
 	createViewModels() {
-		this.antivirusLandingViewModel = new AntiVirusLandingViewModel(this.translate, this.antivirus, this.commonService);
+		this.antivirusLandingViewModel = new AntiVirusLandingViewModel(this.translate, this.antivirus, this.commonService, this.antivirusService);
 		this.windowsActiveLandingViewModel = new WindowsActiveLandingViewModel(this.translate, this.windowsActive, this.commonService);
 		this.passwordManagerLandingViewModel = new PasswordManagerLandingViewModel(this.translate, this.passwordManager, this.commonService);
 		this.uacLandingViewModel = new UacLandingViewModel(this.translate, this.uac, this.commonService);
