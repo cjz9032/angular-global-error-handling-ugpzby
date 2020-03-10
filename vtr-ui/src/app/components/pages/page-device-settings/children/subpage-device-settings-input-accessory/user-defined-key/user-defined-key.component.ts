@@ -84,10 +84,11 @@ export class UserDefinedKeyComponent implements OnInit {
 		try {
 			this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 			if (this.machineType === 1) {
-				const inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability);
+				let inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability);
 				if (inputAccessoriesCapability) {
 					this.hasUDKCapability = inputAccessoriesCapability.isUdkAvailable;
 				} else {
+					inputAccessoriesCapability = new InputAccessoriesCapability();
 					this.keyboardService.GetAllCapability().then((response) => {
 						if (response) {
 							inputAccessoriesCapability.isUdkAvailable = (Object.keys(response).indexOf('uDKCapability') !== -1) ? response.uDKCapability : false;
