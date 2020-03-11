@@ -24,10 +24,10 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 
 	title = 'device.deviceSettings.inputAccessories.title';
 	public shortcutKeys: any[] = [];
-	public privacyIcon = '/assets/images/keyboard-images/KeyboarmMap_Icons/Privacy-Screen.png';
-	public kbdBlIcon = '/assets/images/keyboard-images/KeyboarmMap_Icons/KBD-BL.png';
-	public merlynIcon = '/assets/images/keyboard-images/KeyboarmMap_Icons/Merlyn-Perf-mode.png';
-	public zoomIcon = '/assets/images/keyboard-images/KeyboarmMap_Icons/Zoom-app.png';
+	public privacyIcon = 'assets/images/keyboard-images/KeyboarmMap_Icons/Privacy-Screen.png';
+	public kbdBlIcon = 'assets/images/keyboard-images/KeyboarmMap_Icons/KBD-BL.png';
+	public merlynIcon = 'assets/images/keyboard-images/KeyboarmMap_Icons/Merlyn-Perf-mode.png';
+	public zoomIcon = 'assets/images/keyboard-images/KeyboarmMap_Icons/Zoom-app.png';
 	public imagePath = 'assets/images/keyboard-images/KeyboardMap_Images/';
 	public imagePathGrafEvo = 'assets/images/keyboard-images/KeyboardMap_Images/GrafEvo/';
 	public imagePathCS20 = 'assets/images/keyboard-images/KeyboardMap_Images/CS20/';

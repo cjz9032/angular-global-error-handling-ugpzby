@@ -22,7 +22,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 	public deviceStatus: Status[] = [];
 	// subtitle = 'My device status';
 
-	virusImage = '//vtr-ui//src//assets//Device_antivirus.png';
+	virusImage = 'assets//Device_antivirus.png';
 
 	constructor(
 		public deviceService: DeviceService,

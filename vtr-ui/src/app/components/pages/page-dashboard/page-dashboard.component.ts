@@ -425,7 +425,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			id: '',
 			source: this.sanitizer.sanitize(SecurityContext.HTML, 'VANTAGE'),
 			title: this.sanitizer.sanitize(SecurityContext.HTML, 'Lenovo exclusive offer of Adobe designer suite'),
-			url: '/assets/images/dcc/hero-banner-dcc.jpg',
+			url: 'assets/images/dcc/hero-banner-dcc.jpg',
 			ActionLink: 'dcc-demo',
 			ActionType: 'Internal',
 			DataSource: 'cms'
