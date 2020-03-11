@@ -39,6 +39,7 @@
 							<span *ngIf="caption">
 								<div class="caption"
 									id="{{switchId}}-caption"
+									attr.aria-label="{{switchId}}-caption"
 									role="text"
 									[innerHTML]="htmlSanitizer(caption.length > 70  && !contentExpand  && readMoreText.length > 0 ? (caption | slice: 0:70) : caption)">
 								</div>

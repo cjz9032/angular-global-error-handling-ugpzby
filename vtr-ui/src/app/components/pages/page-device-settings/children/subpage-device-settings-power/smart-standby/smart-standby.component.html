@@ -94,7 +94,7 @@
 									(keydown.enter)="onToggle(timeToggle)"
 									[attr.aria-expanded]="!isCollapsed"
 									#timeToggle
-									tabindex="0"
+									role="button"
 									aria-label="smart standby, time picker-toggle button">
 									<div>
 										<div *ngIf="isCollapsed"

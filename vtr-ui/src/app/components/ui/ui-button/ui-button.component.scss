@@ -24,19 +24,7 @@
 			top: 40%;
 		}
 		.button {
-			@media #{$black-on-white} {
-
-				border: 0.1rem solid $dark;
-
-			}
-			@media #{$white-on-black} {
-
-				border: 0.1rem solid $light;
-
-			}
-			@media #{$mediaquery_X4} {
-				min-width: 10rem;
-			}
+			
 			padding: 0 2.5rem;
 			position: relative;
 			min-height: 5.2rem;
@@ -80,6 +68,16 @@
 				//font-size: $fontsize_sm !important;
 				letter-spacing: 0;
 				cursor: pointer;
+			}
+			@media #{$black-on-white} {
+				border: 0.1rem solid $dark;
+
+			}
+			@media #{$white-on-black} {
+				border: 0.1rem solid $light;
+			}
+			@media #{$mediaquery_X4} {
+				min-width: 10rem;
 			}
 		}
 

@@ -14,6 +14,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { DolbyAudioToggleCapability } from 'src/app/data-models/device/dolby-audio-toggle-capability';
 import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-audio',
@@ -39,6 +40,9 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	public readonly helpIcon = ['far', 'question-circle'];
 	public automaticDolbyHelpIcon = [];
 	public isOnline: any = true;
+	private microphoneDevice: any;
+	private microphnePermissionHandler: any;
+	private Windows: any;
 
 	// when initialize page, cacheFlag need change to false if user make changes before getting response back,
 	// in this case, need to drop response status.
@@ -51,7 +55,14 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		private audioService: AudioService,
 		private dashboardService: DashboardService,
 		private logger: LoggerService,
-		private commonService: CommonService) {
+		private commonService: CommonService,
+		private vantageShellService: VantageShellService) {
+
+			this.Windows = vantageShellService.getWindows();
+			if (this.Windows) {
+				this.microphoneDevice = this.Windows.Devices.Enumeration.DeviceAccessInformation
+					.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.audioCapture);
+			}
 	}
 
 	ngOnInit() {
@@ -72,6 +83,25 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			this.initFeatures();
 		}
 
+		if (this.microphoneDevice) {
+			this.microphnePermissionHandler = (args: any) =>{
+				if(args && args.status) {
+					switch (args.status) {
+						case 1:
+							this.microphoneProperties.permission = true;
+							this.getMicrophoneSettingsAsync();
+							break;
+						case 2:
+							this.microphoneProperties.permission = false;
+							break;
+						case 3:
+							this.microphoneProperties.permission = false;
+							break;
+					}
+				}
+			};
+			this.microphoneDevice.addEventListener('accesschanged', this.microphnePermissionHandler, false);
+		}
 	}
 
 	private initFeatures() {
@@ -94,6 +124,10 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		}
 		this.stopMonitor();
 		this.stopMonitorForDolby();
+
+		if (this.microphoneDevice) {
+			this.microphoneDevice.removeEventListener('accesschanged', this.microphnePermissionHandler, false);
+		}
 	}
 
 	initDolbyAudioFromCache() {
@@ -587,8 +621,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			this.microphoneProperties.muteDisabled = msg.muteDisabled;
 		}
 		if (msg.hasOwnProperty('volume')) {
-			this.logger.info('*****ready to change volume ' + msg.volume);
-			this.microphoneProperties.volume = msg.volume;
+			this.logger.info('*****ready to change volume ' + msg.volume);this.microphoneProperties.volume = msg.volume;
 		}
 		if (msg.hasOwnProperty('permission')) {
 			this.microphoneProperties.permission = msg.permission;

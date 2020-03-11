@@ -18,7 +18,7 @@
 							id="qs-switch-microphone"
 							aria-label="qs-switch-microphone"
 							[switchId]="'microphone'"
-							[isBlocked]="!microphoneStatus.status"
+							[isBlocked]="!microphoneStatus.status || !microphoneStatus.permission"
 							(toggle)="onMicrophoneStatusToggle($event)"
 							[disable]="!(microphoneStatus.permission && microphoneStatus.available && quickSettingsWidget[0].state) || microPhoneGreyOut"
 							[isLoading]="microphoneStatus.isLoading">

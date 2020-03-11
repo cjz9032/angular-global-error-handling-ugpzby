@@ -78,10 +78,10 @@ ul.list-group {
 	display: inline-block;
 	cursor: pointer;
 	@media #{$black-on-white} {
-		color: darkviolet;
+		color: $high-contrast-blue;
 	}
 	@media #{$white-on-black} {
-		color: yellow;
+		color: $high-contrast-black-yellow;
 	}
 }
 .disabled {
@@ -94,14 +94,7 @@ ul.list-group {
 	cursor: default;
 }
 .container-border {
-	@media #{$black-on-white} {
-		border: 0.1rem solid $dark;
-		border-radius: 1rem;
-	}
-	@media #{$white-on-black} {
-		border: 0.1rem solid $light;
-		border-radius: 1rem;
-	}
+	
 	.collapse-header-icon {
 		flex-wrap: nowrap;
 		margin-left: 1rem;
@@ -136,6 +129,7 @@ ul.list-group {
 	margin-top: 3rem;
 	display: inline-block;
 	cursor: pointer;
+
 }
 .disabled {
 	margin-left: 1rem;

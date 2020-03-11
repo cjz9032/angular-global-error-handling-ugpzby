@@ -86,7 +86,7 @@
 	                                <vtr-backlight-thinkpad (showHide)="showHideKeyboardBacklight($event)">
 	                                </vtr-backlight-thinkpad>
 								</div>
-								<div class="w-100" *ngIf="machineType !== 1 && backlightCapability$ | async">
+								<div class="w-100" *ngIf="machineType === 0 && backlightCapability$ | async">
 									<vtr-backlight [isLastChild]="!showVoipHotkeysSection && !hasUDKCapability"></vtr-backlight>
 								</div>
                             </li>
