@@ -3561,5 +3561,8 @@
             "subtitle2": "Računalniki »vse-v-enem«: učinkovito",
             "body2": "Računalniki »vse-v-enem« s procesorji Intel® Core™ 9. generacije vam nudijo vso zmogljivost namiznega računalnika, vse pa je zapakirano v eleganten zaslon za manj nereda, varnosti, ki temelji na strojni opremi, in z zaslonom z visoko ločljivostjo."
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }

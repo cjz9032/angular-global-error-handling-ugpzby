@@ -3561,5 +3561,8 @@
             "subtitle2": "Alt-i-ett: strømlinjeformet",
             "body2": "Alt-i-ett-PC-er med 9. generasjons Intel® Core™-prosessorer gir deg all kraften til en stasjonær PC pakket i en elegant skjerm – for mindre rot, maskinvarebasert sikkerhet og skjerm med høy oppløsning."
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }

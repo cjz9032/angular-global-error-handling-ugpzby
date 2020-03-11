@@ -3561,5 +3561,8 @@
             "subtitle2": "All-in-One: Egyszerű",
             "body2": "Az all-in-one számítógépek a 9. generációs Intel® Core™ processzorral az asztali számítógépek minden előnyét biztosítják egy karcsú kijelzőbe csomagolva – kevesebb rendetlenséggel, hardver alapú biztonsággal és nagy felbontású kijelzővel."
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }
