@@ -23,7 +23,7 @@
 						[theme]="'white'"
 						[tabIndex]="0">
 						<ul class="list-group list-group-flush">
-							<li class="pt-3"
+							<li class=""
 								*ngIf="machineType == 1 && keyboardCompatibility">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.inputAccessories.inputAccessory.hiddenKeyboardFunctions.title' | translate"
@@ -72,16 +72,16 @@
 								</vtr-ui-row-switch>
 							</li>
 
-							<li class="pt-3"
+							<li class=""
 								*ngIf="machineType === 1">
 								<vtr-top-row-functions></vtr-top-row-functions>
 							</li>
-							<li class="pt-3"
+							<li class=""
 								*ngIf="machineType === 0 && fnLockCapability">
 								<vtr-top-row-functions-ideapad></vtr-top-row-functions-ideapad>
 							</li>
 
-							<li class="pt-3 keyboard-backlight-block">
+							<li class="keyboard-backlight-block">
 								<div class="w-100" *ngIf="machineType === 1 && isKbdBacklightAvailable">
 	                                <vtr-backlight-thinkpad (showHide)="showHideKeyboardBacklight($event)">
 	                                </vtr-backlight-thinkpad>
@@ -233,7 +233,7 @@
 													</vtr-ui-row-switch>
 												</li> -->
 
-							<li *ngIf="machineType === 1">
+							<li *ngIf="machineType === 1" class="pt-3">
 								<vtr-user-defined-key></vtr-user-defined-key>
 							</li>
 						</ul>

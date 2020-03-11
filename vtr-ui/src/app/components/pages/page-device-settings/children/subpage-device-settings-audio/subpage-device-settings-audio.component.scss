@@ -8,22 +8,20 @@
 			width: 100%;
 
 			h3 {
-				opacity: 0.8;
 				color: $light;
-				font-size: $fontsize_xs;
+				font-size: $fontsize_sm;
 				line-height: 2.8rem;
-				margin-top: 1.5rem;
 				text-transform: uppercase;
-				font-weight: $weight_medium;
+				font-weight: $weight_600;
 			}
 
 			p {
-				opacity: 0.8;
 				color: $light;
-				font-size: 1.6rem;
+				font-size: $fontsize_xs;
 				line-height: 2.8rem;
-				padding-bottom: 2.5rem;
 				//border-bottom: 0.1rem solid $screen_light_15;
+				font-weight: $weight_light;
+				margin-bottom: 0;
 			}
 		}
 

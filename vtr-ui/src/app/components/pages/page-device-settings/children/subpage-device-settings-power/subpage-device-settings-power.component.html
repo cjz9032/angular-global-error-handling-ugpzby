@@ -77,7 +77,7 @@
 								</vtr-ui-row-switch>
 							</li>
 
-							<li class=""
+							<li class="common-li-padding"
 								*ngIf="gaugeResetCapability && batteryService.gaugeResetInfo?.length>0">
 								<vtr-battery-gauge-reset></vtr-battery-gauge-reset>
 							</li>
@@ -168,7 +168,7 @@
 									</div>
 								</vtr-ui-row-switch>
 							</li>
-							<li *ngIf="showFlipToBootSection$ | async">
+							<li *ngIf="showFlipToBootSection$ | async" class="common-li-padding">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.power.powerSettings.flipToBoot.title' | translate"
 									[name]="'device.deviceSettings.power.powerSettings.flipToBoot.title' | translate"
@@ -183,7 +183,7 @@
 									(toggleOnOff)="onToggleOfFlipToBoot($event.switchValue)">
 								</vtr-ui-row-switch>
 							</li>
-							<li class=""
+							<li class="common-li-padding"
 								*ngIf="!isDesktopMachine && alwaysOnUSBStatus.available">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.power.powerSettings.alwaysUSB.title' | translate"
@@ -225,7 +225,7 @@
 									</div>
 								</vtr-ui-row-switch>
 							</li>
-							<li class=""
+							<li class="pt-2"
 								*ngIf="!isDesktopMachine && showEasyResumeSection">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.power.powerSettings.easyResume.title' | translate"

@@ -263,13 +263,6 @@
 	.img-block {
 		padding-left: 3rem;
 	}
-	.keyboard-backlight-block {
-		::ng-deep .vtr-ui-switch-row.white-theme {
-			.col-12 {
-				margin-left: 3rem;
-			}
-		}
-	}
 }
 
 .voip {
@@ -278,7 +271,7 @@
 	.app-text {
 		font-size: $fontsize_xs;
 		font-weight: 300;
-		color: $grey_dark
+		color: $grey_dark;
 	}
 
 	.adjust-indent {
