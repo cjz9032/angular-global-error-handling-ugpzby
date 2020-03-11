@@ -34,8 +34,11 @@
 								[allowCollapse]="true"
 								[theme]="'white'"
 								(toggle)="onCardCollapse($event)">
-								<div class="intelligent-security-img-preview" id="intelligent-security-image" role="img" attr.aria-label="intelligent-security-image"
+								<!-- <div class="intelligent-security-img-preview" id="intelligent-security-image" role="img" attr.aria-label="intelligent-security-image"
                                     automationId="intelligent-security-image" [ngStyle]="{ 'background-image': 'url(' + image + ')'}">				
+								</div> -->
+								<div class="no-boder-bottom pb-3">
+									<img [src]="this.image"/>
 								</div>
 								<!-- IdeaPad section -- zeroTouchLogin -->
 								<ul class="list-group list-group-flush"
@@ -53,15 +56,15 @@
 											[disabled]="!intelligentSecurity.isHPDEnabled"
 											[rightIcon]="['far', 'question-circle']"
 											[tooltipText]=" 'device.smartAssist.intelligentSecurity.zeroTouchLogin.tooltip' | translate">
+											<!-- show advanced section -->
+											<div class="pl-5 border-bottom pt-3 pb-4" *ngIf="!zeroTouchLoginShowAdvancedSection">
+												<span class="link-text mt-4"  role="text" tabindex="0" 
+													  id="smartAssist.intelligentSecurity.zeroTouchLock.showAdvSettings" attr-aria-label="smartAssist.intelligentSecurity.zeroTouchLock.showAdvSettings"
+													  (click)="zeroTouchLoginShowAdvancedSection = true" (keydown.enter)="zeroTouchLoginShowAdvancedSection = true">
+												  {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.showAdvSettings' | translate}}
+												</span>
+											</div>
 										</vtr-ui-row-switch>
-										<!-- show advanced section -->
-										<div *ngIf="!zeroTouchLoginShowAdvancedSection">
-											<span class="link-text mt-4"  role="text" tabindex="0" 
-												  id="smartAssist.intelligentSecurity.zeroTouchLogin.showAdvSettings" attr-aria-label="smartAssist.intelligentSecurity.zeroTouchLogin.showAdvSettings"
-												  (click)="zeroTouchLoginShowAdvancedSection = true" (keydown.enter)="zeroTouchLoginShowAdvancedSection = true">
-											  {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.showAdvSettings' | translate}}
-											</span>
-										  </div>
 										<div class="pl-5 bold-title no-border-bottom pb-4 border-bottom"
 											*ngIf="intelligentSecurity.isDistanceSensitivityVisible && zeroTouchLoginShowAdvancedSection">
 											<vtr-ui-row-switch [switchId]="'distanceSensitivity'"
@@ -82,6 +85,7 @@
 													*ngIf="!intelligentSecurity.isZeroTouchLoginAdjustEnabled"
 													[minValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.near' | translate"
 													[minValue]="1"
+													[mediumValueLegend]="'Middle'"
 													[maxValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
 													[maxValue]="3"
 													(sliderChange)="setZeroTouchLoginSensitivity($event)"
@@ -120,7 +124,7 @@
 												</div>
 											</div>
 											<!-- hide advanced section -->
-											<div class="pl-5" >
+											<div class="pb-4 pt-3" >
 												<span class="link-text mt-2 ml-4" role="text" tabindex="0" 
 													  id="smartAssist.intelligentSecurity.zeroTouchLogin.hideAdvSettings" attr.aria-label="smartAssist.intelligentSecurity.zeroTouchLogin.hideAdvSettings"
 													  (click)="zeroTouchLoginShowAdvancedSection = false" (keydown.enter)="zeroTouchLoginShowAdvancedSection = false">
@@ -231,13 +235,13 @@
 											[theme]="'white'"
 											[disabled]="!intelligentSecurity.isHPDEnabled">
 											<!-- show advanced section -->
-											<div *ngIf="!zeroTouchLockShowAdvancedSection">
+											<div class="pl-5 border-bottom pt-3 pb-4" *ngIf="!zeroTouchLockShowAdvancedSection">
 												<span class="link-text mt-4"  role="text" tabindex="0" 
 													  id="smartAssist.intelligentSecurity.zeroTouchLock.showAdvSettings" attr-aria-label="smartAssist.intelligentSecurity.zeroTouchLock.showAdvSettings"
 													  (click)="zeroTouchLockShowAdvancedSection = true" (keydown.enter)="zeroTouchLockShowAdvancedSection = true">
 												  {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.showAdvSettings' | translate}}
 												</span>
-											  </div>
+											</div>
 											<!-- facial recognition -->
 											<div class="row fac-control"
 												*ngIf="zeroTouchLockShowAdvancedSection">
@@ -357,7 +361,7 @@
 											</div>
 										</div>
 										<!-- auto screen lock timer -->
-										<div class="bold-title no-border-bottom pl-5 pb-4 border-bottom auto-screen-lock-help-icon"
+										<div class="bold-title no-border-bottom pl-5 pb-4 auto-screen-lock-help-icon"
 											*ngIf="intelligentSecurity.isZeroTouchLockVisible && zeroTouchLockShowAdvancedSection"
 											[class.col-pad-margin]="isThinkPad">
 											<vtr-ui-row-switch [switchId]="'autoScreenLockTimer'"
@@ -415,7 +419,7 @@
 											</div>
 										</div>
 										<!-- distance sensitivity adjusting -- ideapad section -->
-										<div class="pl-5 bold-title no-border-bottom pb-4 border-bottom"
+										<div class="pl-5 bold-title no-border-bottom pb-4"
 											*ngIf="true && zeroTouchLockShowAdvancedSection">
 											<vtr-ui-row-switch [switchId]="'zeroTouchLockDistanceSensitivity'"
 												[title]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title' | translate"
@@ -470,7 +474,7 @@
 											</div>
 										</div>
 										<!-- hide advanced section -->
-										<div class="pl-5" *ngIf="zeroTouchLockShowAdvancedSection">
+										<div class="pl-5 border-bottom pt-3 pb-4" *ngIf="zeroTouchLockShowAdvancedSection">
 											<span class="link-text mt-2 ml-4" role="text" tabindex="0" 
 												  id="smartAssist.intelligentSecurity.zeroTouchLock.hideAdvSettings" attr.aria-label="smartAssist.intelligentSecurity.zeroTouchLock.hideAdvSettings"
 												  (click)="zeroTouchLockShowAdvancedSection = false" (keydown.enter)="zeroTouchLockShowAdvancedSection = false">

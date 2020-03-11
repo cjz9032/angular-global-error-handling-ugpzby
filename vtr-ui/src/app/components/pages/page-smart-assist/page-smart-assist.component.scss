@@ -363,5 +363,13 @@ $fontsize_xs: 1.4rem;
 	color: $purple_navy;
 }
 
-
+.link-text {
+	font-size: $fontsize_xs2;
+	font-weight: $weight_bold;
+	text-decoration: underline;
+	letter-spacing: 0.05rem;
+	color: $menu_hover;
+	cursor: pointer;
+	padding-top: 0.3rem;
+}
 
