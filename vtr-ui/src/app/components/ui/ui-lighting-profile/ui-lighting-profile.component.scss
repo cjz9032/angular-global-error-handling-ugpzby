@@ -31,18 +31,18 @@
     margin-top: 2.2rem;
     background: $gaming_lighting_profile_bg;
     border-radius: 0.5rem;
-    background: url(./../../../../assets/images/gaming/lighting/blueBG.png) left center no-repeat $gaming_bg;
+    background: url(~/assets/images/gaming/lighting/blueBG.png) left center no-repeat $gaming_bg;
     background-size: contain;
     padding: 2rem;
     @media #{$small-screen}{
-      background: url(./../../../../assets/images/gaming/lighting/blueBG-horizontal.png) center top no-repeat $gaming_bg;
+      background: url(~/assets/images/gaming/lighting/blueBG-horizontal.png) center top no-repeat $gaming_bg;
       background-size: 100% auto;
       .d-flex{
         flex-direction: column;
       }
     }
     @media #{$below-large-screen}{
-      background: url(./../../../../assets/images/gaming/lighting/blueBG-horizontal.png) center top no-repeat $gaming_lighting_profile_bg;
+      background: url(~/assets/images/gaming/lighting/blueBG-horizontal.png) center top no-repeat $gaming_lighting_profile_bg;
       background-size: 100% auto;
       .d-flex{
         flex-direction: column;

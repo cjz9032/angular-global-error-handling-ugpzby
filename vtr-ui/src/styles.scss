@@ -1197,11 +1197,11 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 
 @font-face {
 	font-family: "smart-icons";
-	src: url("./assets/smart-icons/smart-icons.eot");
-	src: url("./assets/smart-icons/smart-icons.eot?#iefix") format("embedded-opentype"),
-		url("./assets/smart-icons/smart-icons.woff") format("woff"),
-		url("./assets/smart-icons/smart-icons.ttf") format("truetype"),
-		url("./assets/smart-icons/smart-icons.svg#smart-icons") format("svg");
+	src: url("~/assets/smart-icons/smart-icons.eot");
+	src: url("~/assets/smart-icons/smart-icons.eot?#iefix") format("embedded-opentype"),
+		url("~/assets/smart-icons/smart-icons.woff") format("woff"),
+		url("~/assets/smart-icons/smart-icons.ttf") format("truetype"),
+		url("~/assets/smart-icons/smart-icons.svg#smart-icons") format("svg");
 	font-weight: normal;
 	font-style: normal;
 }

@@ -86,7 +86,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		M5LjYgCQkiLz4NCgkJPHBvbHlnb24gY2xhc3M9InN0MiIgcG9pbnRzPSIxOTQuOCwxNjIuOSAxMjEuMywxNjIuOSAxMjEuMywzOS42IDg4LjUsMzkuN
 		iA4OC41LDE5Mi42IDE5NC44LDE5Mi42IAkJIi8+DQoJPC9nPg0KPC9nPg0KPC9zdmc+DQo=
 		`;
-	gamingLogo = '../../../assets/images/gaming/gaming-logo-small.png';
+	gamingLogo = 'assets/images/gaming/gaming-logo-small.png';
 	private backlightCapabilitySubscription: Subscription;
 
 	get appsForYouEnum() { return AppsForYouEnum; }
