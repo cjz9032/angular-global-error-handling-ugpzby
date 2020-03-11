@@ -11,7 +11,7 @@
 		</div>
 		<div class="article-body" *ngSwitchCase="AllContentStatus.Empty">
 			<div class="empty-content w-100 text-center">
-				<img src="/assets/images/support/empty.png" />
+				<img src="assets/images/support/empty.png" />
 			</div>
 		</div>
 	</div>
@@ -25,6 +25,6 @@
 		metricsParent="{{ metricsParent }}"
 		(keyup.enter)="closeModal()"
 		(click)="closeModal()">
-		<img [src]=" '/assets/icons/Close.svg' | svgInline | async" alt="" srcset="">
+		<img [src]=" 'assets/icons/Close.svg' | svgInline | async" alt="" srcset="">
 	</div>
 </div>

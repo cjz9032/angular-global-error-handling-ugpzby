@@ -32,8 +32,8 @@ describe("Component: PowerSmartSetting", () => {
 	// let originalTimeout;
 	const thinkpad = 1;
 	const ideapad = 0;
-	// const TRANSLATIONS_EN = require('../../../assets/i18n/en.json');
-	// const TRANSLATIONS_FR = require('../../../assets/i18n/fr.json');
+	// const TRANSLATIONS_EN = require('assets/i18n/en.json');
+	// const TRANSLATIONS_FR = require('assets/i18n/fr.json');
 	beforeEach(async(() => {
 		// originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
 		// jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;

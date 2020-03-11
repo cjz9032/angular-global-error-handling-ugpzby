@@ -15,8 +15,8 @@ export class DccService {
 	public isDccDevice = false;
 	private cmsHeaderDccBackgroundUpdated = false;
 	public headerBackground = '';
-	private headerDefaultBackground = '/assets/images/HeaderImage.jpg';
-	private headerDccBackground = '/assets/images/HeaderImageDcc.jpg';
+	private headerDefaultBackground = 'assets/images/HeaderImage.jpg';
+	private headerDccBackground = 'assets/images/HeaderImageDcc.jpg';
 
 	constructor(
 		private modalService: NgbModal,
