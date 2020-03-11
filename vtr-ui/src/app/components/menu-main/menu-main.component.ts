@@ -462,31 +462,54 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	initInputAccessories() {
+	async initInputAccessories() {
 		this.logger.error('MenuMainComponent.initInputAccessories before API call');
-		Promise.all([
+		const responses = await Promise.all([
 			this.keyboardService.GetAllCapability(),
 			this.keyboardService.GetKeyboardVersion()
-		])
-			.then((responses) => {
-				try {
-					this.logger.error('MenuMainComponent.initInputAccessories after API call'
-						, { GetAllCapability: responses[0], GetKeyboardVersion: responses[1] });
-					let inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, undefined);
-					if (inputAccessoriesCapability === undefined) {
-						inputAccessoriesCapability = new InputAccessoriesCapability();
-					}
-					inputAccessoriesCapability.isUdkAvailable = (responses[0] != null && Object.keys(responses[0]).indexOf('uDKCapability') !== -1) ? responses[0].uDKCapability : false;
-					inputAccessoriesCapability.isKeyboardMapAvailable = (responses[0] != null && Object.keys(responses[0]).indexOf('keyboardMapCapability') !== -1) ? responses[0].keyboardMapCapability : false;
-					inputAccessoriesCapability.keyboardVersion = (responses[1] != null) ? responses[1] : '-1';
-					this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability,
-						inputAccessoriesCapability
-					);
-				} catch (error) {
-					this.logger.exception('initInputAccessories', error);
+		]);
+		try {
+			if (responses) {
+				this.logger.error('MenuMainComponent.initInputAccessories after API call'
+					, { GetAllCapability: responses[0], GetKeyboardVersion: responses[1] });
+				let inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, undefined);
+				if (inputAccessoriesCapability === undefined) {
+					inputAccessoriesCapability = new InputAccessoriesCapability();
 				}
-			})
-			.catch((error) => { });
+				inputAccessoriesCapability.isUdkAvailable = (responses[0] != null && Object.keys(responses[0]).indexOf('uDKCapability') !== -1) ? responses[0].uDKCapability : false;
+				inputAccessoriesCapability.isKeyboardMapAvailable = (responses[0] != null && Object.keys(responses[0]).indexOf('keyboardMapCapability') !== -1) ? responses[0].keyboardMapCapability : false;
+				inputAccessoriesCapability.keyboardVersion = (responses[1] != null) ? responses[1] : '-1';
+				this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability,
+					inputAccessoriesCapability
+				);
+			}
+		} catch (error) {
+			this.logger.exception('initInputAccessories', error);
+		}
+
+		// await Promise.all([
+		// 	this.keyboardService.GetAllCapability(),
+		// 	this.keyboardService.GetKeyboardVersion()
+		// ])
+		// 	.then((responses) => {
+		// 		try {
+		// 			this.logger.error('MenuMainComponent.initInputAccessories after API call'
+		// 				, { GetAllCapability: responses[0], GetKeyboardVersion: responses[1] });
+		// 			let inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, undefined);
+		// 			if (inputAccessoriesCapability === undefined) {
+		// 				inputAccessoriesCapability = new InputAccessoriesCapability();
+		// 			}
+		// 			inputAccessoriesCapability.isUdkAvailable = (responses[0] != null && Object.keys(responses[0]).indexOf('uDKCapability') !== -1) ? responses[0].uDKCapability : false;
+		// 			inputAccessoriesCapability.isKeyboardMapAvailable = (responses[0] != null && Object.keys(responses[0]).indexOf('keyboardMapCapability') !== -1) ? responses[0].keyboardMapCapability : false;
+		// 			inputAccessoriesCapability.keyboardVersion = (responses[1] != null) ? responses[1] : '-1';
+		// 			this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability,
+		// 				inputAccessoriesCapability
+		// 			);
+		// 		} catch (error) {
+		// 			this.logger.exception('initInputAccessories', error);
+		// 		}
+		// 	})
+		// 	.catch((error) => { });
 		this.keyboardService.getVoipHotkeysSettings()
 			.then(response => {
 				if (response.capability) {
