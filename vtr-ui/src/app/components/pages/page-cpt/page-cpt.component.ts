@@ -68,6 +68,14 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
     }
   };
 
+  //for gaming pages need to check useProdCMSTemplate
+  prodCMSServer = [
+    'https://cm.dxp.lenovo.com',
+    'https://stg.dxp.lenovo.com',
+    'https://vantage.dxp.lenovo.com',
+    'https://vantage.csw.lenovo.com'
+  ];
+
   editor: any;
   clipboard: any;
 
@@ -538,9 +546,16 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
         componentRef = this.vc.createComponent(factory);
         this.currentComponent = (<CptpageDeviceGamingComponent>componentRef.instance);
 
+        //no new template in child for useProdCMSTemplate
+        //-1 is search not found
+        /*if(this.prodCMSServer.indexOf(this.serverSwitchResponse.cmsserver)>-1){
+          this.currentComponent.useProdCMSTemplate = true;
+        }*/  
+
         //for full urls 
         queryParams = {
-          Page: 'gaming-dashboard'
+          //Page: 'gaming-dashboard' //as per Aparna, changing to dashboard
+          Page: 'dashboard'
         };
         this.serverSwitchResponse.fullcmsserver = this.parseCMSUrl(defaultsURLParm, queryParams, this.serverSwitchResponse.cmsserver);
 
@@ -563,6 +578,12 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
         factory = this.cfr.resolveComponentFactory(CptpageMacrokeyComponent);
         componentRef = this.vc.createComponent(factory);
         this.currentComponent = (<CptpageMacrokeyComponent>componentRef.instance);
+
+        //set child variable for useProdCMSTemplate
+        //-1 is search not found
+        if(this.prodCMSServer.indexOf(this.serverSwitchResponse.cmsserver)>-1){
+          this.currentComponent.useProdCMSTemplate = true;
+        }  
 
         //for full urls 
         queryParams = {
@@ -590,6 +611,12 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
         componentRef = this.vc.createComponent(factory);
         this.currentComponent = (<CptpageLightingcustomizeComponent>componentRef.instance);
 
+        //set child variable for useProdCMSTemplate
+        //-1 is search not found
+        if(this.prodCMSServer.indexOf(this.serverSwitchResponse.cmsserver)>-1){
+          this.currentComponent.useProdCMSTemplate = true;
+        }  
+
         //for full urls 
         queryParams = {
           Page: 'lighting'
@@ -616,6 +643,12 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
         componentRef = this.vc.createComponent(factory);
         this.currentComponent = (<CptpageNetworkboostComponent>componentRef.instance);
 
+        //set child variable for useProdCMSTemplate
+        //-1 is search not found
+        if(this.prodCMSServer.indexOf(this.serverSwitchResponse.cmsserver)>-1){
+          this.currentComponent.useProdCMSTemplate = true;
+        }  
+
         //for full urls 
         queryParams = {
           Page: 'network-boost'
@@ -641,6 +674,12 @@ export class PageCptComponent implements OnInit, OnDestroy, AfterViewInit {
         factory = this.cfr.resolveComponentFactory(CptpageAutocloseComponent);
         componentRef = this.vc.createComponent(factory);
         this.currentComponent = (<CptpageAutocloseComponent>componentRef.instance);
+
+        //set child variable for useProdCMSTemplate
+        //-1 is search not found
+        if(this.prodCMSServer.indexOf(this.serverSwitchResponse.cmsserver)>-1){
+          this.currentComponent.useProdCMSTemplate = true;
+        }  
 
         //for full urls 
         queryParams = {

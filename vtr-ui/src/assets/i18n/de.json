@@ -3561,5 +3561,8 @@
             "subtitle2": "All-in-Ones: Optimiert",
             "body2": "All-in-One-PCs mit Intel® Core™-Prozessoren der neunten Generation vereinen die volle Leistung eines Desktop-PCs mit einem schlanken Bildschirm – so profitieren Sie von mehr Übersichtlichkeit, hardwarebasierter Sicherheit und einem hochauflösenden Display."
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }

@@ -16,6 +16,7 @@ import { isNull, isUndefined } from 'util';
 export class CptpageDeviceGamingComponent implements OnInit, OnDestroy {
   title = 'Gaming Dashboard';
   cardContentPositionD: any = {};
+  useProdCMSTemplate = false;//for cpt
 
   constructor(
     private commonService: CommonService,
@@ -34,7 +35,8 @@ export class CptpageDeviceGamingComponent implements OnInit, OnDestroy {
      */
   getCmsJsonResponse() {
     const queryOptions = {
-      Page: 'gaming-dashboard'
+      //Page: 'gaming-dashboard' //as per Aparna, changing to dashboard
+      Page: 'dashboard'
     };
 
     return new Observable((observer) => {

@@ -3561,5 +3561,8 @@
             "subtitle2": "Alles-in-één computers: gestroomlijnd",
             "body2": "Alles-in-één pc's met 9e generatie Intel® Core™ processoren voorzien u van de kracht van een desktop in een strak design — voor minder volume, op hardware gebaseerde beveiliging en een scherm met hoge resolutie."
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }
