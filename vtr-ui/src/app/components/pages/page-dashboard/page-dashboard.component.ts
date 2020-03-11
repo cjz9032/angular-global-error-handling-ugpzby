@@ -312,6 +312,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			if (textIndex === 8 && this.translate.currentLang.toLocaleLowerCase() !== 'en') {
 				textIndex = 9;
 			}
+			if (textIndex === 4) { textIndex = 5; }
 			this.dashboardService.welcomeText = `lenovoId.welcomeText${textIndex}`;
 			this.dashboardService.welcomeTextWithoutUserName = `lenovoId.welcomeTextWithoutUserName${textIndex}`;
 			this.commonService.setLocalStorageValue(
