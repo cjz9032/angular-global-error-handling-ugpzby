@@ -61,6 +61,9 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	smartAssistCache: SmartAssistCache;
 	public isSuperResolutionLoading = true;
 	public superResolution = new FeatureStatus(false, true);
+	public image = '/assets/images/smart-assist/intelligent-security/HPDv20.png';
+	public zeroTouchLoginShowAdvancedSection = false;
+	public zeroTouchLockShowAdvancedSection = false;
 
 	headerMenuItems: PageAnchorLink[] = [
 		{
@@ -539,6 +542,14 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			.then((isSuccess: boolean) => {
 				this.logger.info(`onDistanceSensitivityAdjustToggle.setZeroTouchLoginAdjustStatus ${isSuccess}`, this.intelligentSecurity.isZeroTouchLoginAdjustEnabled);
 			});
+	}
+
+	public onZeroTouchLockDistanceSensitivityAdjustToggle(event: any) {
+		
+	}
+
+	public setZeroTouchLockSensitivity(event: ChangeContext) {
+		
 	}
 
 	public onDisplayDimTimeChange($event: ChangeContext) {
