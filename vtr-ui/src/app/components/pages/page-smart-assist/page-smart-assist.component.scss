@@ -22,7 +22,7 @@ $fontsize_xs: 1.4rem;
 		// }
 		ul.list-group {
 			list-style-type: none;
-			padding-bottom: 1rem;
+			// padding-bottom: 1rem;
 		}
 		// .caption {
 		// 	max-width: 60rem;
@@ -99,7 +99,7 @@ $fontsize_xs: 1.4rem;
 			}
 		}
 		.card-body {
-			padding: 2rem 1.8rem;
+			padding: 1.25rem 1.8rem;
 			@media #{$black-on-white} {
 				border:0.1rem solid;
 				border-bottom-left-radius: 1rem;
@@ -284,13 +284,6 @@ $fontsize_xs: 1.4rem;
 			margin-left: 3rem;
 			//padding-top: 1.5rem;
 		}
-		vtr-ui-row-switch {
-			&::ng-deep {
-				.vtr-ui-switch-row.white-theme {
-					padding-top: 0.5rem !important;
-				}
-			}
-		}
 		::ng-deep .vtr-ui-range-slider {
 			width: 85%;
 			&::ng-deep {
@@ -335,7 +328,7 @@ $fontsize_xs: 1.4rem;
 		font-size: $fontsize_xs;
 		color: $purple_navy;
 		font-weight: $weight_light;
-		padding-left: 1rem;
+		padding-left: 1.5rem;
 	}
 }
 

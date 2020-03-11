@@ -25,7 +25,7 @@
 						(toggle)="onCardCollapse($event)"
 						[collapseLinkId]="'device-settings-display'">
 						<ul class="list-group list-group-flush">
-							<li class="pt-3"
+							<li class=""
 								*ngIf="showECMReset">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.displayCamera.display.displayColorTemperature.title' | translate"
@@ -52,7 +52,7 @@
 								</vtr-ui-row-switch>
 							</li>
 
-							<li class="pt-3 color-temp-block"
+							<li class="color-temp-block"
 								*ngIf="displayColorTempDataSource && displayColorTempDataSource.available && !showECMReset">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.displayCamera.display.dispColorTemp.title' | translate"
@@ -93,7 +93,7 @@
 								</vtr-ui-row-switch>
 							</li>
 
-							<li class="pt-3"
+							<li class="common-li-padding"
 								*ngIf="eyeCareModeStatus.available && !showECMReset">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.displayCamera.display.eyeCareMode.title' | translate"
@@ -157,7 +157,7 @@
 								</vtr-ui-row-switch>
 							</li>
 
-							<li class="pt-3"
+							<li class="common-li-padding"
 								*ngIf="privacyGuardCapability">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.displayCamera.display.privacyGuard.title' | translate"
@@ -194,7 +194,7 @@
 									</div>
 									<div class="row"
 										*ngIf="privacyGuardOnPasswordCapability">
-										<div class="col-12 ml-4">
+										<div class="col-12">
 											<div class="custom-control custom-checkbox privacy-checkbox">
 												<vtr-ui-checkbox [componentId]="'cb-privacy-guard'"
 													[disabled]="privacyGuardToggleStatus"
@@ -210,7 +210,7 @@
 								</vtr-ui-row-switch>
 							</li>
 
-							<li class="pt-3"
+							<li class="common-li-padding"
 								*ngIf="hasOLEDPowerControlCapability">
 								<!-- [rightIcon]="['far', 'question-circle']"  [tooltipText]="'device.deviceSettings.displayCamera.display.oledPowerSettings.tooltip' | translate" -->
 								<vtr-ui-row-switch
@@ -288,7 +288,7 @@
 						(toggle)="onCardCollapse($event)"
 						[collapseLinkId]="'device-settings-camera'">
 						<ul class="list-group list-group-flush">
-							<li class="pt-3 cam-privacy-switch"
+							<li class="cam-privacy-switch"
 								*ngIf="cameraPrivacyModeStatus.available">
 								<vtr-ui-row-switch [switchId]="'camera-privacy-mode'"
 									[title]="'device.deviceSettings.displayCamera.camera.cameraPrivacy.title' | translate"
@@ -334,7 +334,7 @@
 									</div>
 								</vtr-ui-row-switch>
 							</li>
-							<li class="pt-3 camera-block">
+							<li class="camera-block common-li-padding">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.displayCamera.camera.camera.title' | translate"
 									componentName="Camera"
@@ -399,7 +399,7 @@
 									</div>
 								</vtr-ui-row-switch>
 							</li>
-							<li class="pt-3"
+							<li class="pt-2"
 								*ngIf="cameraBlur.available && cameraBlur.errorCode == 0">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.displayCamera.camera.camerablur.title' | translate"
