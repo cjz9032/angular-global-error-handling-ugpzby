@@ -54,8 +54,10 @@ export class WifiHomeViewModel {
 					} else if (value) {
 						if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag) === 'yes') {
 							this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag, 'no');
+							this.wifiSecurity.mitt.emit('disableWifiToggle');
 							this.wifiSecurity.enableWifiSecurity().then((res) => {
 								this.isLWSEnabled = res;
+								this.wifiSecurity.mitt.emit('enableWifiToggleOn');
 							});
 						}
 					}

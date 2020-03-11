@@ -1,15 +1,12 @@
 import {
+	ChangeDetectorRef,
 	Component,
 	OnInit,
 	Input
 } from '@angular/core';
 import {
-	NgbModalRef,
 	NgbModal
 } from '@ng-bootstrap/ng-bootstrap';
-import {
-	ModalThreatLocatorComponent
-} from 'src/app/components/modal/modal-threat-locator/modal-threat-locator.component';
 import {
 	WifiHomeViewModel
 } from 'src/app/data-models/security-advisor/wifisecurity.model';
@@ -53,7 +50,8 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 		private commonService: CommonService,
 		public	deviceService: DeviceService,
 		private dialogService: DialogService,
-		private configService: ConfigService
+		private configService: ConfigService,
+		private cd: ChangeDetectorRef
 	) {
 		super();
 	}
@@ -67,20 +65,13 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 		}).on('cancelClickFinish', () => {
 			this.cancelClick = false;
 		});
-	}
-
-	enableWifiSecurity(): void {
-		if (this.data && this.data.wifiSecurity) {
-			this.data.wifiSecurity.enableWifiSecurity().then((res) => {
-				if (res === true) {
-					this.data.isLWSEnabled = true;
-				} else {
-					this.data.isLWSEnabled = false;
-				}
-			}, (error) => {
-				this.dialogService.wifiSecurityLocationDialog(this.data.wifiSecurity);
-			});
-		}
+		this.data.wifiSecurity.on('disableWifiToggle', () => {
+			this.switchDisabled = true;
+			this.cd.detectChanges();
+		}).on('enableWifiToggleOn', () => {
+			this.switchDisabled = false;
+			this.cd.detectChanges();
+		})
 	}
 
 	onToggleChange($event: any) {
@@ -111,6 +102,7 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 					}
 				);
 			}
+			this.cd.detectChanges();
 		}
 	}
 

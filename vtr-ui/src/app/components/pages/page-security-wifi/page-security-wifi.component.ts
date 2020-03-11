@@ -171,21 +171,6 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		});
 	}
 
-	enableWiFiSecurity(event): void {
-		if (this.wifiSecurity) {
-			this.wifiSecurity.enableWifiSecurity().then((res) => {
-				if (res === true) {
-					this.wifiHomeViewModel.isLWSEnabled = true;
-				} else {
-					this.wifiHomeViewModel.isLWSEnabled = false;
-				}
-			}
-				, (error) => {
-					this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
-				});
-		}
-	}
-
 	openSecurityHealthArticle(): void {
 		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
 			size: 'lg',
