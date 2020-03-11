@@ -462,9 +462,9 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	initInputAccessories() {
+	async initInputAccessories() {
 		this.logger.error('MenuMainComponent.initInputAccessories before API call');
-		Promise.all([
+		await Promise.all([
 			this.keyboardService.GetAllCapability(),
 			this.keyboardService.GetKeyboardVersion()
 		])

@@ -80,16 +80,20 @@ export class UserDefinedKeyComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.keyboardMappedValues = keyboardMap
+		this.keyboardMappedValues = keyboardMap;
+		this.getUDKCapability();
+	}
+
+	async getUDKCapability(){
 		try {
 			this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 			if (this.machineType === 1) {
 				let inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability);
-				if (inputAccessoriesCapability) {
+				if (inputAccessoriesCapability && inputAccessoriesCapability.isUdkAvailable) {
 					this.hasUDKCapability = inputAccessoriesCapability.isUdkAvailable;
 				} else {
 					inputAccessoriesCapability = new InputAccessoriesCapability();
-					this.keyboardService.GetAllCapability().then((response) => {
+					await this.keyboardService.GetAllCapability().then((response) => {
 						if (response) {
 							inputAccessoriesCapability.isUdkAvailable = (Object.keys(response).indexOf('uDKCapability') !== -1) ? response.uDKCapability : false;
 							this.hasUDKCapability = inputAccessoriesCapability.isUdkAvailable;
@@ -100,14 +104,11 @@ export class UserDefinedKeyComponent implements OnInit {
 				if (this.hasUDKCapability) {
 					this.getUDKTypeList();
 				}
-			} else {
-				this.hasUDKCapability = false;
 			}
 		} catch (error) {
 			this.logger.error('ngOnInit: ', error.message);
 		}
 	}
-
 	public onChange(item) {
 		this.selectedValue = item;
 		// reset udkFormSubmitted to false
