@@ -2,9 +2,9 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col d-flex justify-content-between">
-				<img class="gaming-header-image" *ngIf="!gamingCapabilities.liteGaming" [src]="'./../../../../assets/images/gaming/legionEdge.png'  | svgInline | async" />
-				<img class="gaming-header-image" *ngIf="gamingCapabilities.liteGaming && gamingCapabilities.desktopType" [src]="'./../../../../assets/images/gaming/ideaCentre@2x.png'  | svgInline | async" />
-				<img class="gaming-header-image" *ngIf="gamingCapabilities.liteGaming && !gamingCapabilities.desktopType" [src]="'./../../../../assets/images/gaming/ideaPad@2x.png'  | svgInline | async" />
+				<img class="gaming-header-image" *ngIf="!gamingCapabilities.liteGaming" [src]="'assets/images/gaming/legionEdge.png'  | svgInline | async" />
+				<img class="gaming-header-image" *ngIf="gamingCapabilities.liteGaming && gamingCapabilities.desktopType" [src]="'assets/images/gaming/ideaCentre@2x.png'  | svgInline | async" />
+				<img class="gaming-header-image" *ngIf="gamingCapabilities.liteGaming && !gamingCapabilities.desktopType" [src]="'assets/images/gaming/ideaPad@2x.png'  | svgInline | async" />
 				<div class="help-box" >
 					<button (click)="openModal()" id="legion_edge_help"
 					 tabindex="1" aria-label="legion edge help">
@@ -29,9 +29,9 @@
 				</div>
 				<div class="item-right">
 					<div  class="icon">
-						<img  class="pngStatus" *ngIf = "thermalModeRealStatus === 3" [src] = " '/assets/images/gaming/thermalMode2/performance.png' | svgInline | async">
-						<img class="pngStatus" *ngIf = "thermalModeRealStatus === 2" [src] = " '/assets/images/gaming/thermalMode2/balance.png' | svgInline | async">
-						<img class="pngStatus" *ngIf = "thermalModeRealStatus === 1" [src] = " '/assets/images/gaming/thermalMode2/quiet.png' | svgInline | async ">
+						<img  class="pngStatus" *ngIf = "thermalModeRealStatus === 3" [src] = " 'assets/images/gaming/thermalMode2/performance.png' | svgInline | async">
+						<img class="pngStatus" *ngIf = "thermalModeRealStatus === 2" [src] = " 'assets/images/gaming/thermalMode2/balance.png' | svgInline | async">
+						<img class="pngStatus" *ngIf = "thermalModeRealStatus === 1" [src] = " 'assets/images/gaming/thermalMode2/quiet.png' | svgInline | async ">
 					</div>
 				</div>
 			</div>
