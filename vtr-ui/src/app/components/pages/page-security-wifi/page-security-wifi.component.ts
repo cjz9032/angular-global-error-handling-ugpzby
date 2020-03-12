@@ -6,7 +6,7 @@ import { EventTypes, PluginMissingError } from '@lenovo/tan-client-bridge';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { CommonService } from '../../../services/common/common.service';
 import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
-import { WifiHomeViewModel, SecurityHealthViewModel, } from 'src/app/data-models/security-advisor/wifisecurity.model';
+import { WifiHomeViewModel } from 'src/app/data-models/security-advisor/wifisecurity.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
@@ -19,6 +19,7 @@ import { ConfigService } from 'src/app/services/config/config.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { SegmentConst } from 'src/app/services/self-select/self-select.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
+import { AppEvent } from 'src/app/data-models/common/app-event.model';
 
 interface WifiSecurityState {
 	state: string; // enabled,disabled,never-used
@@ -39,7 +40,6 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	homeSecurity: phoenix.ConnectedHomeSecurity;
 	isShowInvitationCode: boolean;
 	wifiHomeViewModel: WifiHomeViewModel;
-	securityHealthViewModel: SecurityHealthViewModel;
 	securityHealthArticleId = '9CEBB4794F534648A64C5B376FBC2E39';
 	securityHealthArticleCategory: string;
 	cancelClick = false;
@@ -50,6 +50,8 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	intervalId: number;
 	interval = 15000;
 	segmentConst = SegmentConst;
+	switchDisabled: boolean;
+	appEvent: AppEvent;
 
 	constructor(
 		public activeRouter: ActivatedRoute,
@@ -71,23 +73,47 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		this.homeSecurity = this.shellService.getConnectedHomeSecurity();
 		this.segment = this.commonService.getLocalStorageValue(LocalStorageKey.LocalInfoSegment, this.segmentConst.Consumer);
 		this.wifiSecurity = this.securityAdvisor.wifiSecurity;
-		this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.commonService, this.ngZone, this.dialogService);
-		this.securityHealthViewModel = new SecurityHealthViewModel(this.wifiSecurity, this.commonService, this.translate, this.ngZone);
-		this.wifiSecurity.on('cancelClick', () => {
-			this.cancelClick = true;
-		}).on('cancelClickFinish', () => {
-			this.cancelClick = false;
-		});
+		this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.commonService);
 		this.localInfoService.getLocalInfo().then(result => {
 			this.region = result.GEO;
 		}).catch(e => {
 			this.region = 'us';
 		});
 		this.fetchCMSArticles();
-
-		this.wifiSecurity.on(EventTypes.wsPluginMissingEvent, () => {
+		this.appEvent = new AppEvent();
+		this.appEvent.wsPluginMissingEvent = () => {
 			this.handleError(new PluginMissingError());
-		});
+		};
+		this.appEvent.wsStateEvent = (value) => {
+			if (value) {
+				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, value);
+				this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.commonService);
+			}
+		};
+		this.appEvent.wsIsLocationServiceOnEvent = (value) => {
+			this.ngZone.run(() => {
+				if (value !== undefined) {
+					this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.commonService);
+					if (!value && this.wifiSecurity.state === 'enabled' && this.wifiSecurity.hasSystemPermissionShowed) {
+						this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
+					} else if (value) {
+						if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag) === 'yes') {
+							this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag, 'no');
+							this.switchDisabled = true;
+							this.wifiSecurity.enableWifiSecurity().then(() => {
+								this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.commonService);
+								this.switchDisabled = false;
+							});
+						}
+					}
+				}
+			});
+		};
+		this.wifiSecurity.on(EventTypes.wsPluginMissingEvent, this.appEvent.wsPluginMissingEvent)
+		.on(EventTypes.wsStateEvent, this.appEvent.wsStateEvent)
+		.on(EventTypes.wsIsLocationServiceOnEvent, this.appEvent.wsIsLocationServiceOnEvent);
+
+
 		this.isOnline = this.commonService.isOnline;
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
@@ -126,9 +152,12 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	ngOnDestroy() {
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage, false);
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog, false);
-		if (this.securityAdvisor.wifiSecurity) {
-			this.securityAdvisor.wifiSecurity.cancelGetWifiHistory();
-			this.securityAdvisor.wifiSecurity.cancelGetWifiSecurityState();
+		if (this.wifiSecurity) {
+			this.wifiSecurity.cancelGetWifiHistory();
+			this.wifiSecurity.cancelGetWifiSecurityState();
+			this.wifiSecurity.off(EventTypes.wsPluginMissingEvent, this.appEvent.wsPluginMissingEvent);
+			this.wifiSecurity.off(EventTypes.wsStateEvent, this.appEvent.wsStateEvent);
+			this.wifiSecurity.off(EventTypes.wsIsLocationServiceOnEvent, this.appEvent.wsIsLocationServiceOnEvent);
 		}
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();

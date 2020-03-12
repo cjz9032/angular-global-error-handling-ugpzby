@@ -29,41 +29,11 @@ export class WifiHomeViewModel {
 
 	constructor(
 		wifiSecurity: phoenix.WifiSecurity,
-		private commonService: CommonService,
-		private ngZone: NgZone,
-		private dialogService: DialogService
+		private commonService: CommonService
 		) {
 		const cacheWifiSecurityState = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState);
 		const cacheWifiSecurityHistory = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys);
-		wifiSecurity.on(EventTypes.wsStateEvent, (value) => {
-			if (value) {
-				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, value);
-				if (this.wifiSecurity.isLocationServiceOn !== undefined) {
-					this.isLWSEnabled = (value === 'enabled' && this.wifiSecurity.isLocationServiceOn);
-				}
-			}
-		});
-		wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (value) => {
-			this.ngZone.run(() => {
-				if (value !== undefined) {
-					if (this.wifiSecurity.state) {
-						this.isLWSEnabled = (this.wifiSecurity.state === 'enabled' && value);
-					}
-					if (!value && this.wifiSecurity.state === 'enabled' && this.wifiSecurity.hasSystemPermissionShowed) {
-						this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
-					} else if (value) {
-						if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag) === 'yes') {
-							this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag, 'no');
-							this.wifiSecurity.mitt.emit('disableWifiToggle');
-							this.wifiSecurity.enableWifiSecurity().then((res) => {
-								this.isLWSEnabled = res;
-								this.wifiSecurity.mitt.emit('enableWifiToggleOn');
-							});
-						}
-					}
-				}
-			});
-		});
+
 		wifiSecurity.on(EventTypes.wsWifiHistoryEvent, (value) => {
 			if (value) {
 				let cacheWifiSecurityHistoryNum = commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum);

@@ -1,8 +1,8 @@
 import {
-	ChangeDetectorRef,
 	Component,
 	OnInit,
-	Input
+	Input,
+	OnDestroy
 } from '@angular/core';
 import {
 	NgbModal
@@ -27,31 +27,32 @@ import {
 } from 'src/app/services/dialog/dialog.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { ConfigService } from 'src/app/services/config/config.service';
+import { AppEvent } from 'src/app/data-models/common/app-event.model';
 
 @Component({
 	selector: 'wifi-security',
 	templateUrl: './wifi-security.component.html',
 	styleUrls: ['./wifi-security.component.scss']
 })
-export class WifiSecurityComponent extends BaseComponent implements OnInit {
+export class WifiSecurityComponent extends BaseComponent implements OnInit, OnDestroy {
 	@Input() data: WifiHomeViewModel;
+	@Input() switchDisabled = false;
 	isShowMore = true; // less info, more info
 	isShowMoreLink = true; // show more link
 	isWifiSecurityEnabled = true;
 	showAllNetworks = true;
 	showMore = false;
 	hasMore: boolean;
-	switchDisabled = false;
 	locatorButtonDisable = false;
 	cancelClick = false;
+	appEvent: AppEvent;
 
 	constructor(
 		public modalService: NgbModal,
 		private commonService: CommonService,
 		public	deviceService: DeviceService,
 		private dialogService: DialogService,
-		private configService: ConfigService,
-		private cd: ChangeDetectorRef
+		private configService: ConfigService
 	) {
 		super();
 	}
@@ -60,18 +61,22 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 		if (this.configService) {
 			this.isShowMore = !this.configService.showCHS;
 		}
-		this.data.wifiSecurity.on('cancelClick', () => {
+		this.appEvent = new AppEvent();
+		this.appEvent.wsCancelClickEvent = () => {
 			this.cancelClick = true;
-		}).on('cancelClickFinish', () => {
+		};
+		this.appEvent.wsCancelClickFinishEvent = () => {
 			this.cancelClick = false;
-		});
-		this.data.wifiSecurity.on('disableWifiToggle', () => {
-			this.switchDisabled = true;
-			this.cd.detectChanges();
-		}).on('enableWifiToggleOn', () => {
-			this.switchDisabled = false;
-			this.cd.detectChanges();
-		})
+		};
+		this.data.wifiSecurity.on('cancelClick', this.appEvent.wsCancelClickEvent)
+		.on('cancelClickFinish', this.appEvent.wsCancelClickFinishEvent);
+	}
+
+	ngOnDestroy() {
+		if(this.data && this.data.wifiSecurity) {
+			this.data.wifiSecurity.off('cancelClick', this.appEvent.wsCancelClickEvent);
+			this.data.wifiSecurity.off('cancelClickFinish', this.appEvent.wsCancelClickFinishEvent);
+		}
 	}
 
 	onToggleChange($event: any) {
@@ -79,30 +84,25 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 			this.switchDisabled = true;
 			if (this.data.isLWSEnabled) {
 				this.data.wifiSecurity.disableWifiSecurity().then((res) => {
-					if (res === true) {
-						this.data.isLWSEnabled = false;
+					if (res) {
+						this.switchDisabled = false;
 					} else {
-						this.data.isLWSEnabled = true;
+						this.switchDisabled = true;
 					}
-					this.switchDisabled = false;
 				});
 			} else {
 				this.data.wifiSecurity.enableWifiSecurity().then((res) => {
-						if (res === true) {
-							this.data.isLWSEnabled = true;
-						} else {
-							this.data.isLWSEnabled = false;
-						}
+					if (res) {
 						this.switchDisabled = false;
-					},
-					(error) => {
-						this.data.isLWSEnabled = false;
-						this.dialogService.wifiSecurityLocationDialog(this.data.wifiSecurity);
-						this.switchDisabled = false;
+					} else {
+						this.switchDisabled = true;
 					}
-				);
+				},
+				() => {
+					this.dialogService.wifiSecurityLocationDialog(this.data.wifiSecurity);
+					this.switchDisabled = false;
+				});
 			}
-			this.cd.detectChanges();
 		}
 	}
 
