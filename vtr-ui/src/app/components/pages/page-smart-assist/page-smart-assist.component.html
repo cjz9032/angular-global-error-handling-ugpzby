@@ -92,8 +92,7 @@
 												</div> -->
 															<div class="col">
 																<p id="smart-assist-intelligent-security-note"
-																	role="text"
-																	tabindex="0">
+																	role="text">
 																	{{'device.smartAssist.intelligentSecurity.note.description1' | translate}}
 																	<a id="goto_hello_link"
 																		role="link"
@@ -114,7 +113,7 @@
 								<!-- ThinkPad section -->
 								<ul class="list-group list-group-flush"
 									*ngIf="isThinkPad">
-									<li>
+									<li class="common-li-padding">
 										<vtr-ui-row-switch [switchId]="'humanPresenceDetection'"
 											[title]="'device.smartAssist.intelligentSecurity.humanPresenceDetection.title' | translate"
 											[componentName]="'HumanPresenceDetection'"
@@ -126,7 +125,7 @@
 											[theme]="'white'">
 										</vtr-ui-row-switch>
 									</li>
-									<li class="pt-3 no-border-bottom">
+									<li class="no-border-bottom common-li-padding">
 										<vtr-ui-row-switch [switchId]="'thinkpadZeroTouchLogin'"
 											[title]="'device.smartAssist.intelligentSecurity.zeroTouchLogin.title' | translate"
 											[caption]=" 'device.smartAssist.intelligentSecurity.zeroTouchLogin.caption' | translate"
@@ -176,7 +175,6 @@
 												</div> -->
 															<div class="col">
 																<p id="smart-assist-intelligent-security-note"
-																	tabindex="0"
 																	role="text">
 																	{{'device.smartAssist.intelligentSecurity.note.description1' | translate}}
 																	<a (click)="launchFaceEnrollment()"
@@ -195,10 +193,10 @@
 										</div>
 									</li>
 								</ul>
-								<ul class="list-group list-group-flush pt-3 no-border-bottom"
+								<ul class="list-group list-group-flush no-border-bottom"
 									[class.disabled-overlay]="!intelligentSecurity.isHPDEnabled"
 									*ngIf="intelligentSecurity.isZeroTouchLockVisible">
-									<li class="auto-screen-block">
+									<li class="auto-screen-block common-li-padding">
 										<vtr-ui-row-switch [switchId]="'zeroTouchLock'"
 											[title]="'device.smartAssist.intelligentSecurity.zeroTouchLock.title' | translate"
 											[caption]=" 'device.smartAssist.intelligentSecurity.zeroTouchLock.caption' | translate"
@@ -213,13 +211,13 @@
 											<div class="row fac-control">
 												<div class="col mt-10 facial-recognition"
 													role="text"
-													tabindex="0"
 													*ngIf="intelligentSecurity.isZeroTouchLockFacialRecoVisible">
 													<h3 id="smart-assist-zero-touch-lock-faical-recognition-title mt-2">
 														{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.title' | translate}}
 													</h3>
-													<p id="smart-assist-zero-touch-lock-faical-recognition-desc" role="text"
-													    attr-aria-label="smart-assist-zero-touch-lock-faical-recognition-desc">
+													<p id="smart-assist-zero-touch-lock-faical-recognition-desc"
+														role="text"
+														attr-aria-label="smart-assist-zero-touch-lock-faical-recognition-desc">
 														{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.caption' | translate}}
 													</p>
 													<div class="smart-assist-checkbox">
@@ -237,8 +235,7 @@
 														<div class="row">
 															<div *ngIf="!intelligentSecurity.facilRecognitionCameraAccess"
 																class="col pr-3"
-																role="text"
-																tabindex="0">
+																role="text">
 																<span class="mb-0 mt-auto"
 																	id="ztl-facial-recognition-permission-note"
 																	role="text">
@@ -315,8 +312,7 @@
 														<div class="row blur">
 															<div class="col">
 																<p id="smart-assist-intelligent-security-note"
-																	role="text"
-																	tabindex="0">
+																	role="text">
 																	{{'device.smartAssist.intelligentSecurity.note.description7' | translate}}
 																</p>
 															</div>
@@ -372,8 +368,7 @@
 														<div class="row blur">
 															<div class="col">
 																<p id="smart-assist-zeroTouchLock-note"
-																	role="text"
-																	tabindex="0">
+																	role="text">
 																	{{'device.smartAssist.intelligentSecurity.note.description2' | translate}}
 																</p>
 															</div>
@@ -386,8 +381,7 @@
 								</ul>
 								<div class="row">
 									<div class="feature-note p-4 my-4 mx-3"
-										role="text"
-										tabindex="0">
+										role="text">
 										<p id="smart-assist-intelligent-security-note-desc1"
 											role="text">
 											{{'device.smartAssist.intelligentSecurity.note.description3' | translate}}
@@ -438,8 +432,7 @@
 								<div class="intligent-screen">
 									<div class="col-12 px-0">
 										<div class="int-screen-desc"
-											role="text"
-											tabindex="0">
+											role="text">
 											<p id="smart-assist-intelligent-screen-desc"
 												role="text">
 												{{'device.smartAssist.intelligentScreen.description' | translate}}
@@ -464,8 +457,7 @@
 										<div class="row"
 											*ngIf="intelligentScreen.isAutoScreenOffNoteVisible">
 											<div class="feature-note auto-screen-off-note p-4"
-												role="text"
-												tabindex="0">
+												role="text">
 												<p id="smart-assist-auto-screen-off-note"
 													role="text">
 													{{'device.smartAssist.intelligentScreen.autoScreenOff.note' | translate}}
@@ -488,8 +480,7 @@
 											<div class="pl-4 ml-4 pt-4">
 												<div class="display-dim-title"
 													id="smart-assist-display-slider-title"
-													role="text"
-													tabindex="0">
+													role="text">
 													{{'device.smartAssist.intelligentScreen.keepMyDisplay.displaySlider.title' | translate}}
 												</div>
 												<vtr-ui-range-slider [rangeSliderId]="'keepMyDisplay'"
@@ -586,8 +577,7 @@
 			</div>
 			<div class="row">
 				<div class="col col-12 mb-3 help-heading"
-					role="text"
-					tabindex="0">
+					role="text">
 					{{ 'device.deviceSettings.helpful' | translate }}
 				</div>
 			</div>

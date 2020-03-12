@@ -29,10 +29,9 @@
 					</vtr-ui-row-switch>
 				</li>
 			</ul>
+			<div class="border-top"></div>
 			<ul class="list-group list-group-flush">
-				<li>
-					<div class="border-top"
-						*ngIf="superResolutionAvailable && intelligentMediaAvailable"></div>
+				<li *ngIf="superResolutionAvailable && intelligentMediaAvailable" class="common-li-padding">
 					<vtr-ui-row-switch *ngIf="superResolutionAvailable"
 						[switchId]="'superResolution'"
 						[title]="'device.smartAssist.superResolution.title' | translate"
@@ -53,20 +52,25 @@
 						<div class="feature-note p-4"
 							*ngIf="superResolutionAvailable"
 							role="text"
-							tabindex="0">
-							<p role="text" id="superResolution-note-description">{{'device.smartAssist.superResolution.note.description' | translate}}</p>
+							l>
+							<p role="text"
+								id="superResolution-note-description">
+								{{'device.smartAssist.superResolution.note.description' | translate}}</p>
 							<div class="m-4">
 								<ul>
 									<li>
-										<p role="text" id="superResolution-note-description1">
+										<p role="text"
+											id="superResolution-note-description1">
 											{{'device.smartAssist.superResolution.note.description1' | translate}}</p>
 									</li>
 									<li>
-										<p role="text" id="superResolution-note-description2">
+										<p role="text"
+											id="superResolution-note-description2">
 											{{'device.smartAssist.superResolution.note.description2' | translate}}</p>
 									</li>
 									<li>
-										<p role="text" id="superResolution-note-description3">
+										<p role="text"
+											id="superResolution-note-description3">
 											{{'device.smartAssist.superResolution.note.description3' | translate}}</p>
 									</li>
 								</ul>

@@ -190,7 +190,7 @@
 									"maximumError": "15mb"
 								}
 							],
-							"serviceWorker": true
+							"serviceWorker": false
 						},
 						"beta": {
 							"fileReplacements": [

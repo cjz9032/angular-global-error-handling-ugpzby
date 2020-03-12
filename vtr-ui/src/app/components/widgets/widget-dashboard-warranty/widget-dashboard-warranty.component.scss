@@ -9,19 +9,19 @@
 	padding: 2.4rem;
 
 	&.in-warranty {
-		background-image: url("../../../../assets/images/warranty-bg.png"),
+		background-image: url("~/assets/images/warranty-bg.png"),
 			linear-gradient(to left bottom, #4980fc, #2e62d9);
 		background-size: cover;
 	}
 
 	&.expired {
-		background-image: url("../../../../assets/images/warranty-bg.png"),
+		background-image: url("~/assets/images/warranty-bg.png"),
 			linear-gradient(to left top, $stop_light, $stop_dark);
 		background-size: cover;
 	}
 
 	&.not-found {
-		background-image: url("../../../../assets/images/warranty-bg.png"),
+		background-image: url("~/assets/images/warranty-bg.png"),
 			linear-gradient(to left bottom, #e2e4e5, #e4e4e1);
 		color: $blue-dark;
 		.sub-description {

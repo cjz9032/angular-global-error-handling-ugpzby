@@ -3,7 +3,6 @@
 		<div class="col-12 px-0">
 			<div class="d-flex justify-content-between">
 				<p class="context"
-					tabindex="0"
 					role="text">{{'device.smartAssist.voice.description' | translate}}</p>
 				<button id="voice-install-or-launch-btn"
 					attr.aria-label="voice-install-or-launch-btn"
@@ -25,7 +24,7 @@
 		</div>
 	</div>
 	<ul class="list-group list-group-flush">
-		<li class="">
+		<li class="voice-list common-li-padding">
 			<vtr-ui-row-switch [switchId]="'voiceToText'"
 				[title]="'device.smartAssist.voice.voiceToText.title' | translate"
 				[caption]="'device.smartAssist.voice.voiceToText.caption' | translate"
@@ -37,7 +36,7 @@
 				[metricsParent]="'VoiceToText'">
 			</vtr-ui-row-switch>
 		</li>
-		<li class="">
+		<li class="voice-list common-li-padding">
 			<vtr-ui-row-switch [switchId]="'voiceTranslation'"
 				[isLastChild]="true"
 				[title]="'device.smartAssist.voice.translation.title' | translate"

@@ -35,15 +35,13 @@
 				<div class="col col-12"
 					[ngClass]="{'battery-unavailable': isDesktopMachine}"
 					role="text"
-					tabindex="0"
 					id="battery-details">
 					<vtr-battery-card *ngIf="!isDesktopMachine"> </vtr-battery-card>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col col-12 mb-3 help-heading"
-					role="text"
-					tabindex="0">
+					role="text">
 					{{ 'device.deviceSettings.helpful' | translate }}
 				</div>
 			</div>
@@ -58,8 +56,7 @@
 			</div>
 			<div class="row mb-5">
 				<div class="col col-12">
-					<vtr-container-card
-						[item]="cardContentPositionA"
+					<vtr-container-card [item]="cardContentPositionA"
 						[type]="'subpage-corner'"
 						[ratio]="2"
 						order="3"

@@ -31,9 +31,9 @@ export class FeedbackFormComponent implements OnInit {
 			question: 'dashboard.feedback.form.question7'
 		},
 		{
-			idYes: 'feedback-qa-new-style-yes',
-			idNo: 'feedback-qa-new-style-no',
-			name: 'qaNewStyle',
+			idYes: 'feedback-cus-support-usage-yes',
+			idNo: 'feedback-cus-support-usage-no',
+			name: 'cusSupportusage',
 			question: 'dashboard.feedback.form.question8'
 		}
 	];
@@ -80,7 +80,7 @@ export class FeedbackFormComponent implements OnInit {
 			Content: formData.userComment,
 			UserEmail: formData.userEmail,
 			QA: {
-				QaNewStyle: formData.qaNewStyle,
+				Cus_Support_usage: formData.cusSupportusage,
 				SystemUpdateAwareness: formData.systemUpdateAwareness,
 				RemommendVantageToFriend: formData.remommendVantageToFriend
 			}
@@ -107,7 +107,7 @@ export class FeedbackFormComponent implements OnInit {
 				Validators.required,
 				Validators.minLength(1)
 			]),
-			qaNewStyle: new FormControl(null),
+			cusSupportusage: new FormControl(null),
 			systemUpdateAwareness: new FormControl(null),
 			remommendVantageToFriend: new FormControl(null)
 		});

@@ -65,7 +65,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 	async ngOnInit() {
 		if (!this.webView) {
 			this.devService.writeLog('ModalLenovoIdComponent constructor: webView object is undefined, critical error exit!');
-			this.activeModal.dismiss();
+			this.activeModal.close('Null webView object');
 			return;
 		}
 
@@ -125,7 +125,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 			if ((eventData.event === 'click' && eventData.id === 'btnClose') ||
 				(eventData.event === 'keypress' && eventData.id === 'btnClose' && eventData.keyCode === this.KEYCODE_RETURN)) {
 				this.userService.sendSigninMetrics('failure(rc=UserCancelled)', this.starterStatus, this.everSignIn, this.appFeature);
-				this.activeModal.dismiss();
+				this.activeModal.close('User close');
 			}
 		}
 	}
@@ -210,7 +210,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 							self.userService.setName(firstname, lastname);
 							self.userService.setAuth(true);
 							// Close logon dialog
-							self.activeModal.dismiss();
+							self.activeModal.close('Login success');
 							self.devService.writeLog('onNavigationCompleted: Login success!');
 							// The metrics need to be sent after enabling sso, some data like user guid would be available after that.
 							self.userService.sendSigninMetrics('success', self.starterStatus, self.everSignIn, self.appFeature);
@@ -222,10 +222,9 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 			}
 		} else {
 			// Handle error
-			self.userService.popupErrorMessage(ssoErroType.SSO_ErrorType_UnknownCrashed);
 			self.devService.writeLog('onNavigationCompleted: navigation completed unsuccessfully!');
 			self.userService.sendSigninMetrics('failure', self.starterStatus, self.everSignIn, self.appFeature);
-			self.activeModal.dismiss();
+			self.activeModal.dismiss(ssoErroType.SSO_ErrorType_UnknownCrashed);
 		}
 	}
 
@@ -321,7 +320,9 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 				let loginUrl = result.logonURL;
 				if (loginUrl.indexOf('sso.lenovo.com') === -1) {
 					self.devService.writeLog('User has already logged in');
-					self.activeModal.dismiss();
+					setTimeout(() => {
+						self.activeModal.close('User has already logged in');
+					}, 1000);
 					return;
 				} else {
 					// Change UI language to current system local or user selection saved in cookie
@@ -344,17 +345,24 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 					});
 				}
 			} else {
-				self.userService.popupErrorMessage(result.status);
-				self.devService.writeLog('getLoginUrl() failed ' + result.status);
-				self.activeModal.dismiss();
+				self.devService.writeLog('getLoginUrl() failed, ' + result.status);
+				setTimeout(() => {
+					self.activeModal.dismiss(result.status);
+				}, 500);
 			}
 		}).catch((error) => {
-			if (error && error.errorcode === 513) {
-				self.userService.popupErrorMessage(ssoErroType.SSO_ErrorType_AccountPluginDoesnotExist);
+			if (error && error.description) {
+				self.devService.writeLog('getLoginUrl() exception happen, ' + error.description);
 			} else {
-				self.userService.popupErrorMessage(ssoErroType.SSO_ErrorType_UnknownCrashed);
+				self.devService.writeLog('getLoginUrl() exception happen');
 			}
-			self.activeModal.dismiss();
+			setTimeout(() => {
+				if (error && error.errorcode === 513) {
+					self.activeModal.dismiss(ssoErroType.SSO_ErrorType_AccountPluginDoesnotExist);
+				} else {
+					self.activeModal.dismiss(ssoErroType.SSO_ErrorType_UnknownCrashed);
+				}
+			}, 500);
 		});
 
 	}
@@ -367,8 +375,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 					this.devService.writeLog('onNotification() NetworkStatus: ' + notification.type);
 					const currentIsOnline = notification.payload.isOnline;
 					if (!currentIsOnline && this.isOnline !== currentIsOnline) {
-						this.userService.popupErrorMessage(ssoErroType.SSO_ErrorType_DisConnect);
-						this.activeModal.dismiss();
+						this.activeModal.dismiss(ssoErroType.SSO_ErrorType_DisConnect);
 					}
 					this.isOnline = currentIsOnline;
 					break;

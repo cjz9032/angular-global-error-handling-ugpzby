@@ -24,7 +24,6 @@
 						[collapseLinkId]="'audio-smart-settings'">
 						<div class="row">
 							<div class="col-auto text-wrap subtitle"
-								tabindex="0"
 								role="text">
 								<h3 role="text"
 									id="audio-audioSmartSettings-sub-title"
@@ -37,7 +36,7 @@
 							</div>
 						</div>
 						<ul class="list-group list-group-flush">
-							<li class="">
+							<li class="common-li-padding">
 								<vtr-ui-row-switch componentName="Automatic Dolby Audio Settings"
 									[title]="'device.deviceSettings.audio.audioSmartsettings.dolby.title' | translate"
 									[name]="'device.deviceSettings.audio.audioSmartsettings.dolby.title' | translate"
@@ -54,7 +53,7 @@
 									[isSwitchChecked]="autoDolbyFeatureStatus.status"
 									[showLoaderState]="autoDolbyFeatureLoader"
 									[switchId]="'audio-automatic-dolby'">
-									<div class="row no-gutters"
+									<div class="row no-gutters pl-5"
 										*ngIf="!autoDolbyFeatureStatus.status && dolbyModeResponse.available"
 										role="radiogroup"
 										tabindex="0"
@@ -74,7 +73,7 @@
 									</div>
 								</vtr-ui-row-switch>
 							</li>
-							<li class="">
+							<li class="common-li-padding">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.audio.audioSmartsettings.voip.title' | translate"
 									[name]="'device.deviceSettings.audio.audioSmartsettings.voip' | translate"
@@ -136,7 +135,7 @@
 									[switchId]="'audio-microphone'">
 								</vtr-ui-row-switch>
 							</li>
-							<li class="">
+							<li class="common-li-padding">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.audio.microphone.volume.title' | translate"
 									[name]="'device.deviceSettings.audio.microphone.volume.title' | translate"
@@ -170,7 +169,7 @@
 							</li>
 							<div
 								*ngIf="microphoneProperties?.currentMode && microphoneProperties?.currentMode!='NotSupported' && !isDTmachine">
-								<li class=""
+								<li class="common-li-padding"
 									*ngIf="microphoneProperties.keyboardNoiseSuppression != undefined">
 									<vtr-ui-row-switch
 										[title]="'device.deviceSettings.audio.microphone.suppress.title' | translate"
@@ -191,7 +190,7 @@
 										[switchId]="'audio-microphone-suppress'">
 									</vtr-ui-row-switch>
 								</li>
-								<li class=""
+								<li class="common-li-padding"
 									*ngIf="microphoneProperties.AEC != undefined">
 									<vtr-ui-row-switch
 										[title]="'device.deviceSettings.audio.microphone.acoustic.title' | translate"
@@ -212,7 +211,7 @@
 										[switchId]="'audio-microphone-acousticEcho'">
 									</vtr-ui-row-switch>
 								</li>
-								<li class=""
+								<li class="common-li-padding"
 									*ngIf="!isDTmachine && microOptimizeModeResponse && microOptimizeModeResponse.modes.length > 0">
 									<vtr-ui-row-switch
 										[title]="'device.deviceSettings.audio.microphone.optimize.title' | translate"

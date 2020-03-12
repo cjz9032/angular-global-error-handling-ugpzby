@@ -3,8 +3,7 @@
 		<div class="col-12 px-0">
 			<p class="caption"
 				id="smart-assist-active-protection-system-desc"
-				role="text"
-				tabindex="0">
+				role="text">
 				{{'device.smartAssist.activeProtectionSystem.description' | translate}}
 			</p>
 		</div>
@@ -89,8 +88,7 @@
 							<section class="col-sm-6">
 								<p class="text-uppercase"
 									id="smart-assist-manual-active-protection-system-desc"
-									role="text"
-									tabindex="0">
+									role="text">
 									{{ 'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.dropdown-title' | translate }}
 								</p>
 								<vtr-ui-dropdown [dropDownId]="'manualSnoozeTimeDropDown'"
@@ -124,7 +122,6 @@
 				<!-- Advanced section -->
 				<li *ngIf="advanceAvailable && apsStatus"
 					role="text"
-					tabindex="0"
 					class="advanced pt-3 pl-5 ml-4 keep-my-display-block auto-screen-off-block">
 					<h4 *ngIf="!advancedToggle"
 						id="activeProtectionSystem-more"
@@ -142,10 +139,10 @@
 
 					<section *ngIf="advancedToggle"
 						id="activeProtectionSystem_advanced_settings"
-						role="text"
-						tabindex="0">
+						role="text">
 						<h4 id="activeProtectionSystem.advanced.advanced-settings"
-						    attr.aria-label="activeProtectionSystem.advanced.advanced-settings">{{ 'device.smartAssist.activeProtectionSystem.advanced.advanced-settings' | translate }}
+							attr.aria-label="activeProtectionSystem.advanced.advanced-settings">
+							{{ 'device.smartAssist.activeProtectionSystem.advanced.advanced-settings' | translate }}
 						</h4>
 						<vtr-active-protection-system-advanced [penCapability]="penCapability"
 							[touchCapability]="touchCapability"

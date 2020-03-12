@@ -12,10 +12,10 @@
 	#goto_nightlight_link {
 		text-decoration: underline;
 	}
-	#eye-care-mode-temp-note {
-		margin-right: 15px !important;
-		width: 100%;
-	}
+	// #eye-care-mode-temp-note {
+	// 	margin-right: 15px !important;
+	// 	width: 100%;
+	// }
 	.title {
 		opacity: 0.8;
 		color: $main_darker;
@@ -156,6 +156,13 @@
 			font-size: $fontsize_xs;
 			color: $shade_blue;
 		}
+		&.ecm-note {
+			width: 96.5%;
+			margin-left: 1.3rem;
+			p {
+				margin-bottom: 0;
+			}
+		}
 	}
 
 	.custom-control-label {
@@ -248,11 +255,8 @@
 	::ng-deep .vtr-widget-permission-note {
 		width: 96.5%;
 		margin-left: 1.3rem;
+		background-color: $grey_lighter;
+		border: 1px solid $note_border;
 	}
 }
 
-.ecm-note {
-	p {
-		margin-bottom: 0;
-	}
-}

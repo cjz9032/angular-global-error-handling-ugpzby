@@ -18,6 +18,7 @@ export class CptpageMacrokeyComponent implements OnInit, OnDestroy {
   cardContentPositionC: any = {};
   cardContentPositionF: any = {};
   dynamic_metricsItem: any = 'macrokey_cms_inner_content';
+  useProdCMSTemplate = false;//for cpt
 
   constructor(
     private commonService: CommonService,
@@ -45,7 +46,7 @@ export class CptpageMacrokeyComponent implements OnInit, OnDestroy {
 
           observer.next(response);//cpt
           observer.complete();
-
+          /*
           const cardContentPositionF = this.cmsService.getOneCMSContent(response, 'half-width-top-image-title-link', 'position-F')[0];
           if (cardContentPositionF) {
             this.cardContentPositionF = cardContentPositionF;
@@ -57,7 +58,29 @@ export class CptpageMacrokeyComponent implements OnInit, OnDestroy {
             if (this.cardContentPositionC.BrandName) {
               this.cardContentPositionC.BrandName = this.cardContentPositionC.BrandName.split('|')[0];
             }
+          }*/
+
+          const cardContentPositionC = this.cmsService.getOneCMSContent(
+            response,
+            'half-width-title-description-link-image',
+            'position-C'
+          )[0];
+          if (cardContentPositionC) {
+            this.cardContentPositionC = cardContentPositionC;
           }
+          
+          const cardContentPositionF = this.cmsService.getOneCMSContent(
+            response,
+            (this.useProdCMSTemplate ? 'half-width-top-image-title-link' :'inner-page-right-side-article-image-background'),
+            'position-F'
+          )[0];
+          if (cardContentPositionF) {
+            this.cardContentPositionF = cardContentPositionF;
+            if (this.cardContentPositionF.BrandName) {
+              this.cardContentPositionF.BrandName = this.cardContentPositionF.BrandName.split('|')[0];
+            }
+          }
+
 
         },
         error => {
