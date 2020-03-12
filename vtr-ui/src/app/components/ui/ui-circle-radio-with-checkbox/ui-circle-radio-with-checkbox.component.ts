@@ -141,10 +141,10 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 			let index;
 
 			if (currentItem.nativeElement === this.firstRadioButton) {
-				this.setChecked(this.lastRadioButton, true);
+				this.setChecked(this.lastRadioButton, false);
 			} else {
 				index = this.radioButtons.indexOf(currentItem.nativeElement);
-				this.setChecked(this.radioButtons[index - 1], true);
+				this.setChecked(this.radioButtons[index - 1], false);
 			}
 		} catch (error) {
 			this.logger.exception('setRadioButtons error occurred ::', error);
@@ -157,10 +157,10 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 			let index;
 
 			if (currentItem.nativeElement === this.lastRadioButton) {
-				this.setChecked(this.firstRadioButton, true);
+				this.setChecked(this.firstRadioButton, false);
 			} else {
 				index = this.radioButtons.indexOf(currentItem.nativeElement);
-				this.setChecked(this.radioButtons[index + 1], true);
+				this.setChecked(this.radioButtons[index + 1], false);
 			}
 
 		} catch (error) {
