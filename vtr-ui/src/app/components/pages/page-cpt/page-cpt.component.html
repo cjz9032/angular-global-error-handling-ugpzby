@@ -1,0 +1,166 @@
+<vtr-page-layout [title]="'cpt.title' | translate" [back]="'common.ui.back' | translate" [pageCssClass]="'cpt-page'"
+    [backId]="'cpt-back-btn'" [shiftLeftUp]="false" [shiftRightUp]="true">
+    <left-content>
+        <div class="row cpt-page-fx">
+            <div class="col-6">
+                <div class="cpt-form">
+                    <div class="row server-content">
+                        <div class="server-body col">
+                            <form name="serverswitchform" [formGroup]="serverSwitchForm" (ngSubmit)="onSubmit()"
+                                class="form" novalidate>
+                                <ul *ngIf="sddInvalid.status" class="alert alert-danger">
+                                    <li class="fa fa-error" *ngFor="let msg of sddInvalid.message;">{{msg}}</li>
+                                </ul>
+
+                                <div class="form-group row mb-2">
+                                    <label for="cmsserver" class="col-sm-3 col-form-label">CMS API</label>
+                                    <div class="col-sm-9">
+                                        <select name="cmsserver" id="cmsserver" class="form-control"
+                                            formControlName="cmsserver" required>
+                                            <option *ngFor="let cmslist of serverSwitchData.cmsServerList"
+                                                [ngValue]="cmslist.cmsserver">
+                                                {{cmslist.label}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-2">
+                                    <label for="page" class="col-sm-3 col-form-label">Page</label>
+                                    <div class="col-sm-5">
+                                        <select name="page" class="form-control" id="page" formControlName="page"
+                                            required>
+                                            <optgroup *ngFor="let pg of serverSwitchData.pageList" label="{{pg.optgroup}}">
+                                                <option *ngFor="let page of pg.opt" [ngValue]="page">
+                                                    {{page.label}}</option>
+                                            </optgroup>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row mb-2">
+                                    <label for="country" class="col-sm-3 col-form-label">Country</label>
+                                    <div class="col-sm-5">
+                                        <select name="country" class="form-control" id="country"
+                                            formControlName="country" required>
+                                            <option *ngFor="let country of serverSwitchData.countryList"
+                                                [ngValue]="country">
+                                                {{country.Value}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-2">
+                                    <label for="language" class="col-sm-3 col-form-label">Language</label>
+                                    <div class="col-sm-5">
+                                        <select name="language" class="form-control" id="language"
+                                            formControlName="language" required>
+                                            <option *ngFor="let language of serverSwitchData.languageList"
+                                                [ngValue]="language">
+                                                {{language.Value}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-2">
+                                    <label for="segment" class="col-sm-3 col-form-label">Segment</label>
+                                    <div class="col-sm-5">
+                                        <select name="segment" id="segment" class="form-control"
+                                            formControlName="segment" required>
+                                            <option *ngFor="let segment of serverSwitchData.segmentList"
+                                                [ngValue]="segment">
+                                                {{segment}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row mb-2">
+                                    <label for="oem" class="col-sm-3 col-form-label">OEM</label>
+                                    <div class="col-sm-5">
+                                        <select name="oem" id="oem" class="form-control" formControlName="oem" required>
+                                            <option *ngFor="let oem of serverSwitchData.oemList" [ngValue]="oem">{{oem}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row mb-2">
+                                    <label for="brand" class="col-sm-3 col-form-label">Brand</label>
+                                    <div class="col-sm-5">
+                                        <select name="brand" class="form-control" id="brand" formControlName="brand"
+                                            required>
+                                            <option *ngFor="let brand of serverSwitchData.brandList" [ngValue]="brand">
+                                                {{brand}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-check chk-bx">
+                                    <input type="checkbox" class="form-check-input" id="showeditor" name="showeditor"
+                                        formControlName="showeditor">
+                                    <label class="form-check-label">Show Request Response</label>
+                                </div>
+
+                                <div class="form-group row mb-2 sbmt">
+                                    <div class="col-sm-12">
+                                        <input type="submit" class="btn btn-lg btn-primary button" value="Submit">
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 cms-url-block">
+                <div class="container">
+                    <div class="row mb-20">
+                        <div class="col col-12 cms-txt" [ngClass]="" role="text" tabindex="0" id="cpt-cms-url">
+                            <h2>CMS Url:</h2>
+                            <div class="d-flex flex-row-reverse w-100"><button
+                                    class="btnCopy btn btn-sm btn-primary button" data-clipboard-action="copy"
+                                    [attr.data-clipboard-text]="serverSwitchResponse.fullcmsserver">Copy
+                                    Url</button>
+                            </div>
+                            <p class="text-break mt-1">{{serverSwitchResponse.fullcmsserver}}</p>
+                            <p class="text-break mt-1" [ngClass]="{'text-danger': serverSwitchResponse.responseError.isError}"  *ngIf="serverSwitchResponse.responseError.isError">
+                                Error Response: {{serverSwitchResponse.responseError.message}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row mb-40">
+                        <div class="col col-12"
+                            [ngClass]="{'showEditor': serverSwitchResponse.showeditor && !serverSwitchResponse.responseError.isError, 'hideEditor': !serverSwitchResponse.showeditor || serverSwitchResponse.responseError.isError}"
+                            role="text" tabindex="0" id="cpt-cms-response">
+                            <h2>CMS Response:</h2>
+                            <span *ngIf="serverSwitchResponse.isloading == null"></span>
+                            <div *ngIf="serverSwitchResponse.isloading===true"
+                                class="container-fluid position-relative">
+                                <div class="loader center-block">
+                                    <div class="spinner-border text-secondary progress-spinner" role="status"></div>
+                                </div>
+                            </div>
+                            <div
+                                [ngClass]="{'showEditor': !serverSwitchResponse.isloading, 'hideEditor': serverSwitchResponse.isloading || serverSwitchResponse.isloading == null }">
+                                <div class="d-flex flex-row-reverse w-100">
+                                    <button class="btnCopy btn btn-sm btn-primary button" data-clipboard-action="copy"
+                                        [attr.data-clipboard-text]="serverSwitchResponse.jsonresponse | json">Copy
+                                        Response</button>
+                                </div>
+                                <div id="jeditor"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cpt-preview row">
+            <div class="col">
+                <!-- Pages -->
+                <div class="mt-5">
+                    <ng-template #vc></ng-template>
+                </div>
+            </div>
+        </div>
+    </left-content>
+</vtr-page-layout>

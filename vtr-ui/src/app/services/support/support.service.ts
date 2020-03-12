@@ -91,6 +91,9 @@ export class SupportService {
 			case 'userGuide':
 				this.launchUserGuide(false);
 				break;
+			case 'cpt':
+				this.gotoCpt();
+				break;
 			default:
 				break;
 		}
@@ -115,5 +118,10 @@ export class SupportService {
 		if (this.userGuide) {
 			this.userGuide.launchUg(this.commonService.isOnline, launchPDF);
 		}
+	}
+
+	// cpt
+	gotoCpt() {
+		window.location.href = '#/cpt';
 	}
 }

@@ -72,7 +72,7 @@
 		<div class="row px-3"
 			*ngFor="let batteryConditionNote of batteryConditionNotes; let i = index">
 			<div class="p-0 pr-2 col-auto"
-				role="text" 
+				role="text"
 				id="batteryConditionNote{{i}}"
 				*ngIf="batteryConditions[i].condition!= batteryConditionsEnum.FullACAdapterSupport">
 				<span role="img"
@@ -129,7 +129,7 @@
 		<div class="feature-note p-3 mt-2"
 			*ngIf="batteryIndicator.isChargeThresholdOn || batteryService.isGaugeResetRunning">
 			<div class="row" id="myDevice-settings-batteryGauge-note">
-				<p 
+				<p
 					role="text">
 					<span role="text"
 						*ngIf="!batteryService.isGaugeResetRunning"

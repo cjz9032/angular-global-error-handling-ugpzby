@@ -1,4 +1,4 @@
-<div class="top-row-key-block"
+<div class="top-row-key-block common-li-padding"
 	*ngIf="topRowKeyObj.fnLockCap || topRowKeyObj.stickyFunCap || topRowKeyObj.primaryFunCap">
 	<div *ngIf="topRowKeyObj.fnLockCap">
 		<div class="row">
@@ -75,7 +75,7 @@
 		<vtr-ui-row-switch></vtr-ui-row-switch>
 	</div>
 	<div *ngIf="showAdvancedSection">
-		<div *ngIf="topRowKeyObj.primaryFunCap">
+		<div *ngIf="topRowKeyObj.primaryFunCap" class="common-li-padding">
 			<vtr-ui-row-switch
 				[title]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionTwo.title' | translate"
 				componentName="Input Accessories"

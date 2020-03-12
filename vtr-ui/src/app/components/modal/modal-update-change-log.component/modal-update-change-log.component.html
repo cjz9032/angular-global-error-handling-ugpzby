@@ -1,11 +1,11 @@
 <div class="modal-body vtr-modal-update-change-log">
-	<div role="button" class="close-btn" 
+	<div role="button" class="close-btn"
 				vtrMetrics
 				metricsItem="{{updateModalMetrics.closeButton}}"
 				metricsEvent="FeatureClick"
 				metricsParent="{{updateModalMetrics.pageName}}"
 				(click)="closeModal()">
-		<img [src]=" '/assets/icons/Close.svg' | svgInline | async" alt="" srcset=""/>
+		<img [src]=" 'assets/icons/Close.svg' | svgInline | async" alt="" srcset=""/>
 	</div>
 	<h1>{{'systemUpdates.readMore' | translate}}</h1>
 	<div class="log-content">

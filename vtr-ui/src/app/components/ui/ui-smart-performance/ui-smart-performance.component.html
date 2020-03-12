@@ -1,0 +1,502 @@
+<vtr-page-layout [title]="title"
+[textId]="'myDevice'"
+[pageCssClass]="'device'"
+[shiftLeftUp]="true"
+[shiftRightUp]="true"
+[back]="'common.ui.back' | translate"
+[backId]="'myDevice-back-btn'">
+<left-content>
+	<div class="vtr-ui-smart-performance vtr-page">
+	<div class="row vtr-page-content"  *ngIf="!isScanning && !isScanningCompleted && !isSubscribed">
+		<div class="col vtr-col">
+			<div class="container-fluid mb-5">
+				<div class="row">
+					<div class="vtr-page-left-column">
+					<div class="vtr-page-shift-up">
+						<div class="vtr-device-information">
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col col-12 offline-info-background py-5 px-10">
+										<div class="d-flex justify-content-center w-100">
+											<div class="icon icon-computer-scan-756353"></div>
+											<div class="mt-5 pt-5 pl-5">
+												<h1>{{'smartPerformance.performanceandSecurityCheckTitle' |translate }}</h1>
+												<h3>{{'smartPerformance.performanceandSecurityCheckSubTitle' |translate }}</h3>
+											</div>
+										</div>
+										<div class="d-flex justify-content-center mb-4">
+											<button class="action-button" (click)="ScanNow()">{{'smartPerformance.scanButton' |translate }}</button>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col col-12 pc-performance-block">
+										<h1>{{'smartPerformance.section1Heading' |translate }}</h1>
+										<h5>{{'smartPerformance.section1Description' |translate }}</h5>
+										<div class="performance-slider-block">
+
+											<div class="slider">
+												<div class="condition">
+													<div class="critical">{{'smartPerformance.critical' |translate }}</div>
+
+													<div class="well">{{'smartPerformance.allisWell' |translate }}</div>
+												</div>
+												<div class="verticle-lines">
+													<div class="line"></div>
+													<div class="line"></div>
+													<div class="line"></div>
+													<div class="line"></div>
+													<div class="line"></div>
+													<div class="line"></div>
+													<div class="line"></div>
+													<div class="line"></div>
+													<div class="line"></div>
+													<div class="line"></div>
+													<div class="line"></div>
+												</div>
+											</div>
+											<div class="pc-status-info">
+												<p class="info-text"><span>{{'smartPerformance.tuneUP' |translate }}</span></p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col col-12 pc-performance-block">
+										<h2>{{'smartPerformance.section2Heading' |translate }}</h2>
+										<h5>{{'smartPerformance.section2Description' |translate }}</h5>
+
+									</div>
+								</div>
+								<div class="row">
+									<div class="col col-12 pc-performance-block">
+										<div class="row">
+											<ngb-tabset class="tabset-main">
+												<ngb-tab id="main-1">
+													<ng-template ngbTabTitle>
+														<div class="icon icon-performance"></div>{{'smartPerformance.tunePCPerformance.title' |translate }}
+													</ng-template>
+													<ng-template ngbTabContent>
+														<h2>{{'smartPerformance.tunePCPerformance.heading' |translate }}</h2>
+														<h5>{{'smartPerformance.tunePCPerformance.description' |translate }}</h5>
+														<div class="icon-bar my-5">
+															<ul class="listed-task-icons d-flex justify-content-between align-items-center py-3">
+																<li class="icon-box d-flex justify-content-center align-items-center py-3">
+																	<div class="icon icon-recycling-2025397"></div>
+																	<p>{{'smartPerformance.tunePCPerformance.tabSet1.tab1' |translate }}</p>
+																</li>
+																<li class="icon-box d-flex justify-content-center align-items-center py-3">
+																	<div class="icon icon-noun-touch-200038"></div>
+																	<p>{{'smartPerformance.tunePCPerformance.tabSet1.tab2' |translate }}</p>
+																</li>
+																<li class="icon-box d-flex justify-content-center align-items-center py-3">
+																	<div class="icon icon-microsoft-windows-22"></div>
+																	<p>{{'smartPerformance.tunePCPerformance.tabSet1.tab3' |translate }}</p>
+																</li>
+																<li class="icon-box d-flex justify-content-center align-items-center py-3">
+																	<div class="icon icon-error-1582584"></div>
+																	<p>{{'smartPerformance.tunePCPerformance.tabSet1.tab4' |translate }}</p>
+																</li>
+																<li class="icon-box d-flex justify-content-center align-items-center py-3">
+																	<div class="icon icon-noun-registery-key-1581151"></div>
+																	<p>{{'smartPerformance.tunePCPerformance.tabSet1.tab5' |translate }}</p>
+																</li>
+															</ul>
+														</div>
+														<!-- <vtr-ui-smart-tune-pc></vtr-ui-smart-tune-pc> -->
+														<div class="row my-5 smart-features">
+															<div class="col-sm-4">
+																<h3 class="title">{{'smartPerformance.tunePCPerformance.tabSet2.tab1Heading' |translate }}</h3>
+																<p>{{'smartPerformance.tunePCPerformance.tabSet2.tab1Description' |translate }}</p>
+															</div>
+															<div class="col-sm-4">
+																<h3 class="title">{{'smartPerformance.tunePCPerformance.tabSet2.tab2Heading' |translate }}</h3>
+																<p>{{'smartPerformance.tunePCPerformance.tabSet2.tab2Description' |translate }}</p>
+															</div>
+															<div class="col-sm-4">
+																<h3 class="title">{{'smartPerformance.tunePCPerformance.tabSet2.tab3Heading' |translate }}</h3>
+																<p>{{'smartPerformance.tunePCPerformance.tabSet2.tab3Description' |translate }}</p>
+															</div>
+														</div>
+													</ng-template>
+												</ngb-tab>
+												<ngb-tab id="main-2">
+													<ng-template ngbTabTitle>
+														<div class="icon icon-internet-performance"></div>{{'smartPerformance.boostInternetPerformance.title' |translate }}
+													</ng-template>
+													<ng-template ngbTabContent>
+														<h2>{{'smartPerformance.boostInternetPerformance.heading' |translate }}</h2>
+														<h5>{{'smartPerformance.boostInternetPerformance.description' |translate }}</h5>
+														<div class="icon-bar my-5">
+															<ul class="listed-task-icons d-flex justify-content-between align-items-center py-3">
+																<li class="icon-box d-flex justify-content-center align-items-center py-3">
+																	<div class="icon icon-router"></div>
+																	<p>{{'smartPerformance.boostInternetPerformance.tabSet1.tab1' |translate }}</p>
+																</li>
+																<li class="icon-box d-flex justify-content-center align-items-center py-3">
+																	<div class="icon icon-icon-browser-settings"></div>
+																	<p>{{'smartPerformance.boostInternetPerformance.tabSet1.tab2' |translate }}</p>
+																</li>
+																<li class="icon-box d-flex justify-content-center align-items-center py-3">
+																	<div class="icon icon-visible-to-online-trackers"></div>
+																	<p>{{'smartPerformance.boostInternetPerformance.tabSet1.tab3' |translate }}</p>
+																</li>
+																<li class="icon-box d-flex justify-content-center align-items-center py-3">
+																	<div class="icon icon-wifi"></div>
+																	<p>{{'smartPerformance.boostInternetPerformance.tabSet1.tab4' |translate }}</p>
+																</li>
+																<li class="icon-box d-flex justify-content-center align-items-center py-3">
+																	<div class="icon icon-icon-e-junk"></div>
+																	<p>{{'smartPerformance.boostInternetPerformance.tabSet1.tab5' |translate }}</p>
+																</li>
+															</ul>
+														</div>
+														<!-- <vtr-ui-smart-tune-pc></vtr-ui-smart-tune-pc> -->
+														<div class="row my-5 smart-features">
+															<div class="col-sm-4">
+																<h3 class="title">{{'smartPerformance.boostInternetPerformance.tabSet2.tab1Heading' |translate }}</h3>
+																<p>{{'smartPerformance.boostInternetPerformance.tabSet2.tab1Description' |translate }}</p>
+															</div>
+															<div class="col-sm-4">
+																<h3 class="title">{{'smartPerformance.boostInternetPerformance.tabSet2.tab2Heading' |translate }}</h3>
+																<p>{{'smartPerformance.boostInternetPerformance.tabSet2.tab2Description' |translate }}</p>
+															</div>
+															<div class="col-sm-4">
+																<h3 class="title">{{'smartPerformance.boostInternetPerformance.tabSet2.tab3Heading' |translate }}</h3>
+																<p>{{'smartPerformance.boostInternetPerformance.tabSet2.tab3Description' |translate }}</p>
+															</div>
+														</div>
+													</ng-template>
+												</ngb-tab>
+												<ngb-tab id="main-3">
+													<ng-template ngbTabTitle>
+														<div class="icon icon-malware-security"></div>{{'smartPerformance.malwareSecurity.title' |translate }}
+													</ng-template>
+													<ng-template ngbTabContent>
+														<h2>{{'smartPerformance.malwareSecurity.heading' |translate }}</h2>
+														<h5>{{'smartPerformance.malwareSecurity.description' |translate }}</h5>
+														<div class="icon-bar my-5">
+															<ul class="listed-task-icons d-flex justify-content-between align-items-center py-3">
+																<li class="icon-box d-flex justify-content-center align-items-center py-3">
+																	<div class="icon icon-virus"></div>
+																	<p>{{'smartPerformance.malwareSecurity.tabSet1.tab1' |translate }}</p>
+																</li>
+																<li class="icon-box d-flex justify-content-center align-items-center py-3">
+																	<div class="icon icon-icon-zero-day"></div>
+																	<p>{{'smartPerformance.malwareSecurity.tabSet1.tab2' |translate }}</p>
+																</li>
+																<li class="icon-box d-flex justify-content-center align-items-center py-3">
+																	<div class="icon icon-icon-security-settings"></div>
+																	<p>{{'smartPerformance.malwareSecurity.tabSet1.tab3' |translate }}</p>
+																</li>
+																<li class="icon-box d-flex justify-content-center align-items-center py-3">
+																	<div class="icon icon-uninstall-375971"></div>
+																	<p>{{'smartPerformance.malwareSecurity.tabSet1.tab4' |translate }}</p>
+																</li>
+																<li class="icon-box d-flex justify-content-center align-items-center py-3">
+																	<div class="icon icon-multitasking"></div>
+																	<p>{{'smartPerformance.malwareSecurity.tabSet1.tab5' |translate }}</p>
+																</li>
+															</ul>
+														</div>
+														<!-- <vtr-ui-smart-tune-pc></vtr-ui-smart-tune-pc> -->
+														<div class="row my-5 smart-features">
+															<div class="col-sm-4">
+																<h3 class="title">{{'smartPerformance.malwareSecurity.tabSet2.tab1Heading' |translate }}</h3>
+																<p>{{'smartPerformance.malwareSecurity.tabSet2.tab1Description' |translate }}</p>
+															</div>
+															<div class="col-sm-4">
+																<h3 class="title">{{'smartPerformance.malwareSecurity.tabSet2.tab2Heading' |translate }}</h3>
+																<p>{{'smartPerformance.malwareSecurity.tabSet2.tab2Description' |translate }}</p>
+															</div>
+															<div class="col-sm-4">
+																<h3 class="title">{{'smartPerformance.malwareSecurity.tabSet2.tab3Heading' |translate }}</h3>
+																<p>{{'smartPerformance.malwareSecurity.tabSet2.tab3Description' |translate }}</p>
+															</div>
+														</div>
+													</ng-template>
+												</ngb-tab>
+
+												<ngb-tab id="main-4">
+													<ng-template ngbTabTitle>
+														<div class="icon icon-easy-resume"></div>{{'smartPerformance.proactiveAutomated.title' |translate }}
+													</ng-template>
+													<ng-template ngbTabContent>
+														<h2>{{'smartPerformance.proactiveAutomated.heading' |translate }}</h2>
+														<h5>{{'smartPerformance.proactiveAutomated.description' |translate }}</h5>
+														<div class="icon-bar my-5">
+															<ul class="listed-task-icons d-flex justify-content-between align-items-center py-3">
+																<li class="icon-box d-flex justify-content-center align-items-center py-3">
+																	<div class="icon icon-icon-schedule-scan"></div>
+																	<p>{{'smartPerformance.proactiveAutomated.tabSet1.tab1' |translate }}</p>
+																</li>
+																<li class="icon-box d-flex justify-content-center align-items-center py-3">
+																	<div class="icon icon-responsive"></div>
+																	<p>{{'smartPerformance.proactiveAutomated.tabSet1.tab2' |translate }}</p>
+																</li>
+																<li class="icon-box d-flex justify-content-center align-items-center py-3">
+																	<div class="icon icon-icon-automated-resolution"></div>
+																	<p>{{'smartPerformance.proactiveAutomated.tabSet1.tab3' |translate }}</p>
+																</li>
+																<li class="icon-box d-flex justify-content-center align-items-center py-3">
+																	<div class="icon icon-thumbsup"></div>
+																	<p>{{'smartPerformance.proactiveAutomated.tabSet1.tab4' |translate }}</p>
+																</li>
+																<li class="icon-box d-flex justify-content-center align-items-center py-3">
+																	<div class="icon icon-icon-247-protection"></div>
+																	<p>{{'smartPerformance.proactiveAutomated.tabSet1.tab5' |translate }}</p>
+																</li>
+															</ul>
+														</div>
+														<!-- <vtr-ui-smart-tune-pc></vtr-ui-smart-tune-pc> -->
+														<div class="row my-5 smart-features">
+															<div class="col-sm-4">
+																<h3 class="title">{{'smartPerformance.proactiveAutomated.tabSet2.tab1Heading' |translate }}</h3>
+																<p>{{'smartPerformance.proactiveAutomated.tabSet2.tab1Description' |translate }}</p>
+															</div>
+															<div class="col-sm-4">
+																<h3 class="title">{{'smartPerformance.proactiveAutomated.tabSet2.tab2Heading' |translate }}</h3>
+																<p>{{'smartPerformance.proactiveAutomated.tabSet2.tab2Description' |translate }}</p>
+															</div>
+															<div class="col-sm-4">
+																<h3 class="title">{{'smartPerformance.proactiveAutomated.tabSet2.tab3Heading' |translate }}</h3>
+																<p>{{'smartPerformance.proactiveAutomated.tabSet2.tab3Description' |translate }}</p>
+															</div>
+														</div>
+
+													</ng-template>
+												</ngb-tab>
+											</ngb-tabset>
+										</div>
+
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col col-12 free-scan">
+										<div class="row">
+											<div class="contents">
+												<button class="action-button btn-block" (click)="ScanNow()">{{'smartPerformance.scanButton' |translate }}</button>
+												<div class="description">
+													<p [innerHTML]="'smartPerformance.startScan' |translate"></p>
+												</div>
+											</div>
+
+										</div>
+									</div>
+								</div>
+							</div>
+							 <!-- <vtr-ui-smart-performance-scanning
+							*ngIf="isScanning" (sendScanStatus)="changeScanStatus()">
+						</vtr-ui-smart-performance-scanning> -->
+
+						<div class="system-scan-complete" *ngIf="isScanningCompleted">
+								<div class="row">
+									<div class="col col-12 offline-info-background">
+										<div class="w-100">
+											<div class="row d-flex justify-content-between">
+												<div class="mt-5">
+													<h1>{{'smartPerformance.scanCompletePage.title' |translate }}</h1>
+													<h3>{{'smartPerformance.scanCompletePage.description' |translate }}</h3>
+												</div>
+												<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
+											</div>
+											<hr class="light-dashline" />
+										</div>
+										<div class="performance-slider-block scan-results">
+											<h3 class="recomendation-text">{{'smartPerformance.scanCompletePage.scanRates' |translate }}<span>4</span></h3>
+											<div class="slider">
+												<div class="verticle-lines">
+													<div class="scan-pointer">&#9660;</div>
+													<div class="line"></div>
+													<div class="line"></div>
+													<div class="line"></div>
+													<div class="line"></div>
+													<div class="line"></div>
+													<div class="line"></div>
+													<div class="line"></div>
+													<div class="line"></div>
+													<div class="line"></div>
+													<div class="line"></div>
+													<div class="line"></div>
+												</div>
+												<div class="condition">
+													<div class="critical">{{'smartPerformance.critical' |translate }}</div>
+													<div class="well">{{'smartPerformance.allisWell' |translate }}</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="summary-block">
+										<h2 class="title-big mb-3">{{'smartPerformance.scanCompletePage.summary' |translate }}</h2>
+										<p>{{'smartPerformance.scanCompletePage.summaryDetails' |translate }}</p>
+										<div class="d-flex justify-content-between my-5">
+											<button class="action-button">{{'smartPerformance.scanCompletePage.signupRepairButton' |translate }}</button>
+											<div class="desc">
+												<p>{{'smartPerformance.scanCompletePage.monthlyPricing' |translate }}<a href="#" class="para-link">Learn more</a></p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+</left-content>
+<right-content>
+	<div class="vtr-ui-smart-performance vtr-page">
+	<div class="row vtr-page-content"  *ngIf="!isScanning && !isScanningCompleted && !isSubscribed">
+		<div class="col vtr-col">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="vtr-page-shift-up">
+						<div class="container-fluid">
+							<div class="row mb-40" *ngIf="!isScanning && !isScanningCompleted">
+
+								<div class="col col-12">
+									<vtr-widget-subscriptiondetails></vtr-widget-subscriptiondetails>
+
+								</div>
+							</div>
+
+							<div class="row mb-40"  *ngIf="!isScanning && !isScanningCompleted">
+								<div class="col col-12">
+									<div class="scan-settings sidebar-widget">
+										<div class="title pb-3">{{'smartPerformance.scanSettings.title' |translate }}</div>
+										<div class="card-info">
+											<p>{{'smartPerformance.scanSettings.description' |translate }}</p>
+										</div>
+										<ul class="chevron-list">
+											<li class="d-flex justify-content-between">
+												<div class="item d-flex">
+													<!-- <fa-icon [icon]="['fas', 'laptop']"></fa-icon> -->
+													<strong>{{'smartPerformance.scanSettings.enableScan' |translate }}</strong>
+												</div>
+												<div class="status d-flex justify-content-end">
+													<vtr-ui-switch-onoff [value]="true"
+													[disabled]="false"></vtr-ui-switch-onoff>
+													<!-- <fa-icon [icon]="['fas', 'laptop']"></fa-icon> -->
+												</div>
+											</li>
+											<li class="d-flex justify-content-between">
+												<div class="item d-flex">
+													<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
+													<strong>{{'smartPerformance.scanCompletePage.Onceaweek' |translate }}</strong>
+												</div>
+												<div class="status d-flex justify-content-end">
+													<p class="mr-3"><strong>SAT</strong> | 12:00AM</p>
+													<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
+												</div>
+											</li>
+										</ul>
+										<!-- <a href="#" class="link-text">Manage Subscription</a> -->
+									</div>
+								</div>
+							</div>
+
+							<!-- <div class="row mb-40"  *ngIf="isScanning">
+								<div class="col col-12">
+									<div class="accumulated-junk sidebar-widget">
+										<div class="mini-text">
+											NOW SCANNING DETAIL
+										</div>
+										<div class="title pb-3">
+											<fa-icon [icon]="['fas', 'laptop']" class="mr-2"></fa-icon>
+											{{currentSubItemCategory.name}}
+										</div>
+										<div class="card-info">
+											 <p>This is a brief description of what Accumulated Junk means to a user and why they should know more about it. What is it, why is it important, how is it affecting my computer performance, how will I benifit from the junk being cleaned up?</p>
+											<p>{{currentSubItemCategory.desc}}</p>
+										</div>
+										<div class="d-flex">
+											<div class="labels d-flex flex-column">
+												<span class="badge badge-primary">CURRENT:</span>
+												<span class="badge badge-light">UP NEXT:</span>
+											</div>
+											<div class="ms-slider">
+												<ul class="junk-list ms-slider__words">
+													<li class="ms-slider__word" *ngFor="let item of subItems">{{item.key}}</li>
+													 <li class="ms-slider__word">Applying registry and shortcut fixes</li>
+													<li class="ms-slider__word">Scanning and fixing critical services</li>
+													<li class="ms-slider__word">Modifying windows settings</li>
+													<li class="ms-slider__word">Improving start-up performance</li>
+												</ul>
+											</div>
+										</div>
+										  <a href="#" class="link-text">Manage Subscription</a>
+								</div>
+							</div> -->
+
+							<!-- <div class="row mb-40"  *ngIf="isScanningCompleted">
+								<div class="col col-12">
+									<div class="recommended-action sidebar-widget">
+										<div class="title pb-3">
+											Recommended Action
+										</div>
+										<div class="card-info">
+											<p>We will automatically fix these issues. Once today and every thereafter <a href="#" class="link-text">Learn more</a></p>
+										</div>
+										<div class="pricing">
+											<h2 class="big-text">$19.99 / Yr</h2>
+											<small>less than $2 per month</small>
+										</div>
+										<p>Longer term? Even more savings!</p>
+										<button class="action-button mt-2" (click)=openSubscribeModal()>Sign up</button>
+									</div>
+								</div>
+							</div> -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div></div>
+</right-content>
+
+</vtr-page-layout>
+<!-- <div class="vtr-ui-smart-performance vtr-page">
+	<div class="row vtr-page-header">
+		<div class="col vtr-col">
+			<vtr-header-main [back]="back"
+				[title]="title">
+			</vtr-header-main>
+		</div>
+	</div>
+
+	<div class="row vtr-page-content"  *ngIf="!isScanning && !isScanningCompleted && !isSubscribed">
+		<div class="col vtr-col">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-sm-12 col-lg-8 col-xl-8 vtr-page-left-column">
+
+
+					</div>
+
+					<div class="col-sm-12 col-lg-4 col-xl-4 vtr-page-right-column">
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<vtr-ui-smart-performance-scanning
+*ngIf="isScanning" (sendScanStatus)="changeScanStatus()">
+</vtr-ui-smart-performance-scanning>
+<vtr-ui-smart-performance-scan-summary *ngIf="(isScanningCompleted || isSubscribed) && !isScanning " (backToScan)="changeScanEvent()"></vtr-ui-smart-performance-scan-summary>
+</div> -->
+<vtr-ui-smart-performance-scanning
+				*ngIf="isScanning" (sendScanStatus)="changeScanStatus($event)" (stopScanning)="cancelScan()">
+				</vtr-ui-smart-performance-scanning>
+				<vtr-ui-smart-performance-scan-summary *ngIf="(isScanningCompleted || isSubscribed) && !isScanning " (backToScan)="changeScanEvent()" [rating]="rating" [tune]="tune" [boost]="boost" [secure]="secure"></vtr-ui-smart-performance-scan-summary>

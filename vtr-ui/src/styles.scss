@@ -1198,11 +1198,11 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 
 @font-face {
 	font-family: "smart-icons";
-	src: url("./assets/smart-icons/smart-icons.eot");
-	src: url("./assets/smart-icons/smart-icons.eot?#iefix") format("embedded-opentype"),
-		url("./assets/smart-icons/smart-icons.woff") format("woff"),
-		url("./assets/smart-icons/smart-icons.ttf") format("truetype"),
-		url("./assets/smart-icons/smart-icons.svg#smart-icons") format("svg");
+	src: url("~/assets/smart-icons/smart-icons.eot");
+	src: url("~/assets/smart-icons/smart-icons.eot?#iefix") format("embedded-opentype"),
+		url("~/assets/smart-icons/smart-icons.woff") format("woff"),
+		url("~/assets/smart-icons/smart-icons.ttf") format("truetype"),
+		url("~/assets/smart-icons/smart-icons.svg#smart-icons") format("svg");
 	font-weight: normal;
 	font-style: normal;
 }
@@ -1600,6 +1600,11 @@ vtr-ui-smart-performance-scanning {
 }
 
 .vtr-backlight, .vtr-backlight-thinkpad {
+	.vtr-ui-switch-row.white-theme {
+		.col-12 {
+			margin-left: 3rem;
+		}
+	}
 	.vtr-ui-circle-radio-with-checkbox.white-theme {
 		.icomoon {
 			font-size: 4.5rem !important;
@@ -1613,3 +1618,26 @@ vtr-ui-smart-performance-scanning {
 	}
 }
 
+.subpage-device-settings-power,
+.subpage-device-settings-audio,
+.subpage-device-settings-display,
+.subpage-device-settings-input-accessories,
+.vtr-page-smart-assist {
+	.vtr-container-collapsible.blue-theme, .vtr-container-collapsible.white-theme {
+		.card-header {
+			padding: 0.75rem 0.9rem;
+		}
+		.card-body {
+			padding-left: 0.9rem !important;
+			padding-right: 2.4rem !important;
+			padding-top: 2rem !important
+		}
+	}
+	.vtr-ui-switch-row.blue-theme, .vtr-ui-switch-row.white-theme {
+		padding: 0 0 1.5rem !important;
+	}
+}
+
+.common-li-padding {
+	padding-top: 2rem;
+}

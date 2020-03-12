@@ -73,7 +73,7 @@ describe('WidgetLegionEdgeComponent', () => {
 	// 	fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
 	// 	fixture.detectChanges();
 	// 	const compiled = fixture.debugElement.nativeElement;
-	// 	expect(compiled.querySelector('div.justify-content-between>img').src).toContain('/assets/images/gaming/legionEdge.png');
+	// 	expect(compiled.querySelector('div.justify-content-between>img').src).toContain('assets/images/gaming/legionEdge.png');
 	// }));
 
 	it('should render the Question icon image on legion edge container', async(() => {

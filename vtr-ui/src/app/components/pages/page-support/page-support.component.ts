@@ -12,7 +12,11 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { WarrantyService } from 'src/app/services/warranty/warranty.service';
 import { SupportContentStatus } from 'src/app/enums/support-content-status.enum';
+// cpt
+import { environment } from 'src/environments/environment';
 import { FeedbackService } from 'src/app/services/feedback/feedback.service';
+import { LicensesService } from 'src/app/services/licenses/licenses.service';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
 	selector: 'vtr-page-support',
@@ -101,6 +105,13 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		metricsParent: 'Page.Support'
 	};
 
+	// cpt
+	private isCPTEnabled = true;
+	listCpt = {
+		iconPath: 'assets/images/support/svg_icon_cpt.svg',
+		title: 'cpt.title',
+		clickItem: 'cpt'
+	};
 	offlineImages = [
 		'assets/images/support/support-offline-1.jpg',
 		'assets/images/support/support-offline-2.jpg',
@@ -116,6 +127,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 
 	cateStartTime: any;
 	contentStartTime: any;
+	actionSubscription: Subscription;
 
 	constructor(
 		public mockService: MockService,
@@ -125,6 +137,8 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		public localInfoService: LocalInfoService,
 		private cmsService: CMSService,
 		private commonService: CommonService,
+		private licensesService: LicensesService,
+		private activatedRoute: ActivatedRoute,
 		private loggerService: LoggerService,
 		private feedbackService: FeedbackService,
 	) {
@@ -135,16 +149,26 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
 		});
+		this.getProtocalActions();
 		this.getWarrantyInfo();
 
 		this.fetchCMSArticleCategory();
 		this.fetchCMSContents();
+
+		// cpt
+		this.isCPTEnabled = (typeof environment !== 'undefined' ? environment.isCPTEnabled : true);
 
 		this.setShowList();
 	}
 
 	ngOnDestroy() {
 		clearTimeout(this.getArticlesTimeout);
+		if (this.notificationSubscription) {
+			this.notificationSubscription.unsubscribe();
+		}
+		if (this.actionSubscription) {
+			this.actionSubscription.unsubscribe();
+		}
 	}
 
 	onNotification(notification: AppNotification) {
@@ -179,6 +203,14 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		}
 	}
 
+	getProtocalActions() {
+		this.actionSubscription = this.activatedRoute.queryParamMap.subscribe((params: ParamMap) => {
+			if (params.has('action') && this.activatedRoute.snapshot.queryParams.action === 'licenseagreement') {
+				this.licensesService.openLicensesAgreement();
+			}
+		});
+	}
+
 	setShowList() {
 		this.supportDatas.needHelp.push(
 			this.listLenovoCommunity,
@@ -189,6 +221,12 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 			this.supportDatas.needHelp.splice(1, 0, this.listContactCustomerService);
 		});
 		this.supportDatas.quicklinks.push(this.listAboutLenovoVantage);
+
+		// cpt
+		if (this.isCPTEnabled) {
+			this.supportDatas.quicklinks.push(this.listCpt);
+		}
+
 	}
 
 	getWarrantyInfo() {

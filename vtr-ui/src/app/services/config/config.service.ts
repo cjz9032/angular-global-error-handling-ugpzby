@@ -27,13 +27,6 @@ import { SmartAssistService } from '../smart-assist/smart-assist.service';
 import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 import { NewFeatureTipService } from '../new-feature-tip/new-feature-tip.service';
 
-
-interface ShellVersion {
-	major: number;
-	minor: number;
-	build: number;
-}
-
 @Injectable({
 	providedIn: 'root'
 })

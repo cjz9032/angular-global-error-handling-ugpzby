@@ -11,5 +11,6 @@ export const environment: IEnvironment = {
 	upeSharedKey: 'MmIwNTFjMTAtNTQwM',
 	allowMockService: false,
 	isLoggingEnabled: true,
-	isServerSwitchEnabled: false
+	isServerSwitchEnabled: false,
+	isCPTEnabled: false
 };

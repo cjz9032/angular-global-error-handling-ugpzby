@@ -23,7 +23,7 @@
 						[theme]="'white'"
 						[tabIndex]="0">
 						<ul class="list-group list-group-flush">
-							<li class="pt-3"
+							<li class=""
 								*ngIf="machineType == 1 && keyboardCompatibility">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.inputAccessories.inputAccessory.hiddenKeyboardFunctions.title' | translate"
@@ -35,9 +35,13 @@
 									[switchId]="'inputAccessories-hiddenKeyboardFunctions'">
 									<div class="row pl-3">
 										<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-											<!-- <img src="../../../../../../assets/icons/Hidden keyboard functions.svg" alt="">-->
-                                            <div class="img-preview" id="keyboardMap-background-image" role="img" attr.aria-label="keyboardMap-background-image"
-                                                automationId="keyboardMap.background-image" [ngStyle]="{ 'background-image': 'url(' + image + ')'}">
+											<!-- <img src="assets/icons/Hidden keyboard functions.svg" alt="">-->
+											<div class="img-preview"
+												id="keyboardMap-background-image"
+												role="img"
+												attr.aria-label="keyboardMap-background-image"
+												automationId="keyboardMap.background-image"
+												[ngStyle]="{ 'background-image': 'url(' + image + ')'}">
 												<div class="img-preview"
 													[style.background-image]="additionalCapabilitiesObj.privacy ? 'url(' + privacyIcon + ')': ''">
 													<div class="img-preview"
@@ -58,12 +62,15 @@
 										<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex"
 											*ngFor="let key of shortcutKeys;let i=index;">
 											<div class="col-4 px-0">
-												<h4 class="caption-tittle" id="keys-{{key.id}}-title">
+												<h4 class="caption-tittle"
+													id="keys-{{key.id}}-title">
 													{{key.text + '.tittle' | translate}}
 												</h4>
 											</div>
 											<div class="col-8 px-0">
-												<p role="text" class="hidden-keyboard-text mb-0" id="keys-{{key.id}}-description">
+												<p role="text"
+													class="hidden-keyboard-text mb-0"
+													id="keys-{{key.id}}-description">
 													{{key.text + '.description' | translate}}
 												</p>
 											</div>
@@ -72,24 +79,26 @@
 								</vtr-ui-row-switch>
 							</li>
 
-							<li class="pt-3"
-								*ngIf="machineType === 1">
+							<li *ngIf="machineType === 1">
 								<vtr-top-row-functions></vtr-top-row-functions>
 							</li>
-							<li class="pt-3"
-								*ngIf="machineType === 0 && fnLockCapability">
+							<li *ngIf="machineType === 0 && fnLockCapability">
 								<vtr-top-row-functions-ideapad></vtr-top-row-functions-ideapad>
 							</li>
 
-							<li class="pt-3 keyboard-backlight-block">
-								<div class="w-100" *ngIf="machineType === 1 && isKbdBacklightAvailable">
-	                                <vtr-backlight-thinkpad (showHide)="showHideKeyboardBacklight($event)">
-	                                </vtr-backlight-thinkpad>
+							<li class="keyboard-backlight-block">
+								<div class="w-100"
+									*ngIf="machineType === 1 && isKbdBacklightAvailable">
+									                                
+									<vtr-backlight-thinkpad (showHide)="showHideKeyboardBacklight($event)">
+										                                </vtr-backlight-thinkpad>
 								</div>
-								<div class="w-100" *ngIf="machineType === 0 && backlightCapability$ | async">
-									<vtr-backlight [isLastChild]="!showVoipHotkeysSection && !hasUDKCapability"></vtr-backlight>
-								</div>
-                            </li>
+								<div class="w-100"
+									*ngIf="machineType === 0 && backlightCapability$ | async">
+									<vtr-backlight [isLastChild]="!showVoipHotkeysSection && !hasUDKCapability">
+									</vtr-backlight>
+								</div>                             
+							</li>
 
 							<li class="pt-3 voip"
 								*ngIf="showVoipHotkeysSection">
@@ -106,11 +115,16 @@
 									[switchId]="'inputAccessories-VoipHotkeys'"
 									automationId="[VoipHotkeys.title, VoipHotkeys.description.main, VoipHotkeys.tooltip]">
 									<div class="row adjust-indent pt-2 caption">
-                                        <div class="col-12 adjust-margin" automationId="VoipHotkeys.description.f10" id="VoipHotkeys-description-f10" role="text">
-                                            {{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.description.f10' | translate}}
-                                        </div>
 										<div class="col-12 adjust-margin"
-											automationId="VoipHotkeys.description.f11" id="VoipHotkeys-description-f11" role="text">
+											automationId="VoipHotkeys.description.f10"
+											id="VoipHotkeys-description-f10"
+											role="text">
+											{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.description.f10' | translate}}
+										</div>
+										<div class="col-12 adjust-margin"
+											automationId="VoipHotkeys.description.f11"
+											id="VoipHotkeys-description-f11"
+											role="text">
 											{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.description.f11' | translate}}
 										</div>
 									</div>
@@ -118,7 +132,9 @@
 										*ngIf="installedApps.length > 0; else noAppInstalled">
 										<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
 											<div class="pt-3 pb-4 prompting"
-												automationid="VoipHotkeys.hasInstalledAppsDescription" role="text" id="VoipHotkeys-hasInstalledAppsDescription">
+												automationid="VoipHotkeys.hasInstalledAppsDescription"
+												role="text"
+												id="VoipHotkeys-hasInstalledAppsDescription">
 												{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.hasInstalledAppsDescription' | translate}}
 											</div>
 											<ng-container *ngFor="let installedApp of installedApps; index as i;"
@@ -141,9 +157,12 @@
 												<div class="feature-note col-12 p-4"
 													id="hasInstalledApps-note"
 													attr.aria-label="hasInstalledApps-note">
-                                                    <p role="text" class="mb-0" id="VoipHotkeys-hasInstalledAppsNote" automationid="VoipHotkeys.hasInstalledAppsNote">
-                                                        {{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.hasInstalledAppsNote' | translate}}
-                                                    </p>
+													<p role="text"
+														class="mb-0"
+														id="VoipHotkeys-hasInstalledAppsNote"
+														automationid="VoipHotkeys.hasInstalledAppsNote">
+														{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.hasInstalledAppsNote' | translate}}
+													</p>
 												</div>
 											</div>
 										</div>
@@ -151,25 +170,31 @@
 									<ng-template #noAppInstalled>
 										<div class="row adjust-indent">
 											<div class="col-12 adjust-margin">
-                                                <div class="pt-3 pb-4 prompting" role="text" id="VoipHotkeys-noInstalledAppsDescription"
-                                                    automationid="VoipHotkeys.noInstalledAppsDescription">
-                                                    {{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.noInstalledAppsDescription' | translate}}
-                                                </div>
+												<div class="pt-3 pb-4 prompting"
+													role="text"
+													id="VoipHotkeys-noInstalledAppsDescription"
+													automationid="VoipHotkeys.noInstalledAppsDescription">
+													{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.noInstalledAppsDescription' | translate}}
+												</div>
 											</div>
 										</div>
 										<div class="row adjust-indent mt-2">
 											<div class="col-12 adjust-margin">
-												<span role="img" id="app-icon-skype"
+												<span role="img"
+													id="app-icon-skype"
 													class="app-icon icon-s4b mr-4"></span>
-												<span role="text" id="skype-for-business"
+												<span role="text"
+													id="skype-for-business"
 													class="app-text">Skype for Business 2016</span>
 											</div>
 										</div>
 										<div class="row adjust-indent mt-5 pb-4 mb-5">
 											<div class="col-12 adjust-margin">
-												<span role="text" id="app-icon-microsoft"
+												<span role="text"
+													id="app-icon-microsoft"
 													class="app-icon icon-teams mr-4"></span>
-												<span role="text" id="microsoft-teams-1.0"
+												<span role="text"
+													id="microsoft-teams-1.0"
 													class="app-text">Microsoft Teams 1.0</span>
 											</div>
 										</div>
@@ -178,8 +203,8 @@
 												id="noInstalledApps-note"
 												attr.aria-label="noInstalledApps-note">
 												<p role="text"
-                                                    class="mb-0"
-                                                    id="VoipHotkeys-noInstalledAppsNote"
+													class="mb-0"
+													id="VoipHotkeys-noInstalledAppsNote"
 													automationid="VoipHotkeys.noInstalledAppsNote">
 													{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.noInstalledAppsNote' | translate}}
 												</p>
@@ -233,15 +258,18 @@
 													</vtr-ui-row-switch>
 												</li> -->
 
-							<li *ngIf="machineType === 1">
+							<li *ngIf="machineType === 1"
+								class="pt-3">
 								<vtr-user-defined-key></vtr-user-defined-key>
 							</li>
 						</ul>
 						<div class="control-options-block"
 							*ngIf="isTouchPadVisible || isMouseVisible">
 							<div class="row">
-								<div class="col-auto" id="inputAccessories.controlOptions.more"
-								     attr-aria-label="inputAccessories.controlOptions.more" role="text">
+								<div class="col-auto"
+									id="inputAccessories.controlOptions.more"
+									attr-aria-label="inputAccessories.controlOptions.more"
+									role="text">
 									<p>{{'device.deviceSettings.inputAccessories.controlOptions.more' | translate}}</p>
 								</div>
 							</div>
@@ -251,8 +279,7 @@
 									<a (click)='launchProtocol("ms-settings:devices-touchpad")'
 										(keydown.enter)='launchProtocol("ms-settings:devices-touchpad")'
 										role="text"
-										tabindex="0"><span
-											role="text"
+										tabindex="0"><span role="text"
 											id="inputAccessories.controlOptions.touchpad"
 											attr.aria-label="inputAccessories.controlOptions.touchpad">{{'device.deviceSettings.inputAccessories.controlOptions.control1' | translate}}</span></a>
 								</div>
@@ -262,16 +289,16 @@
 										(click)='launchProtocol("ms-settings:mousetouchpad")'
 										(keydown.enter)='launchProtocol("ms-settings:mousetouchpad")'
 										role="text"
-										tabindex="0"><span
-										role="text"
-										id="inputAccessories.controlOptions.trackpoint"
-										attr.aria-label="inputAccessories.controlOptions.trackpoint">{{'device.deviceSettings.inputAccessories.controlOptions.control3' | translate}}</span></a>
+										tabindex="0"><span role="text"
+											id="inputAccessories.controlOptions.trackpoint"
+											attr.aria-label="inputAccessories.controlOptions.trackpoint">{{'device.deviceSettings.inputAccessories.controlOptions.control3' | translate}}</span></a>
 									<ng-template #otherMachine><a role="text"
 											tabindex="0"
 											(click)='launchProtocol("ms-settings:mousetouchpad")'
 											(keydown.enter)='launchProtocol("ms-settings:mousetouchpad")'><span
-											role="text" id="inputAccessories.controlOptions.mousecontrol"
-											attr.aria-label="inputAccessories.controlOptions.mousecontrol">{{'device.deviceSettings.inputAccessories.controlOptions.control2' | translate}}</span></a>
+												role="text"
+												id="inputAccessories.controlOptions.mousecontrol"
+												attr.aria-label="inputAccessories.controlOptions.mousecontrol">{{'device.deviceSettings.inputAccessories.controlOptions.control2' | translate}}</span></a>
 									</ng-template>
 								</div>
 							</div>

@@ -1221,7 +1221,7 @@ export class HardwareScanService {
 	}
 
 	public getHardwareComponentIcon(moduleName: string) {
-		const iconsBasePath = '/assets/icons/hardware-scan/';
+		const iconsBasePath = 'assets/icons/hardware-scan/';
 
 		if (moduleName in this.iconByModule) {
 			return iconsBasePath + this.iconByModule[moduleName];

@@ -382,12 +382,7 @@ export class VantageShellService {
 	}
 
 	public getShellVersion() {
-		if (Windows) {
-			const packageVersion = Windows.ApplicationModel.Package.current.id.version;
-			return `${packageVersion.major}.${packageVersion.minor}.${packageVersion.build}`;
-		}
-
-		return '';
+		return '10.2003.9';
 	}
 
 	/**
@@ -412,7 +407,7 @@ export class VantageShellService {
 	}
 
 	private downloadMetricsPolicy() {
-		return this.http.get<string>('/assets/privacy-json/metrics.json');
+		return this.http.get<string>('assets/privacy-json/metrics.json');
 	}
 
 	/**
@@ -2237,6 +2232,10 @@ export class VantageShellService {
 				};
 				return installedAppList;
 		}
+		return undefined;
+	}
+
+	public getGamingAdvancedOC() {
 		return undefined;
 	}
 }
