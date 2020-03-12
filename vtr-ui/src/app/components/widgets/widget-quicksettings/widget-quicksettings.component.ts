@@ -377,7 +377,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 												const muteDisabled = (dic[0] === '0');
 
 												// if (/^\d+$/.test(dic[1])){
-												//   const volume = parseInt(dic[1]);
+												//   const volume = math.round(dic[1]);
 												// }
 												this.commonService.sendNotification(DeviceMonitorStatus.MicrophoneStatus, {muteDisabled});
 											} else {
