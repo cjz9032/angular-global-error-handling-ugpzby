@@ -3,27 +3,27 @@
         componentName="dpm-powersetting" [caption]="" [leftIcon]="['icomoon', 'icomoon-dpm-power-use']"
         [showChildContent]="true" [isLastChild]="true" [theme]="'white'">
         <div class="content">
-            <div tabindex="0" class="boldtitle" attr.aria-label="{{'device.deviceSettings.power.dpm.powerUse.description' | translate}}">{{'device.deviceSettings.power.dpm.powerUse.description' | translate}}</div>
+            <div class="boldtitle" attr.aria-label="{{'device.deviceSettings.power.dpm.powerUse.description' | translate}}">{{'device.deviceSettings.power.dpm.powerUse.description' | translate}}</div>
             <section>
-                <h5 tabindex="0">
+                <h5>
                     {{'device.deviceSettings.power.dpm.powerUse.turnOffDisplay' | translate}}
                 </h5>
                 <vtr-ui-dpm-dropdown [list]="timeItems" [value]="turnoffDisplay"
                     (change)="onTurnOffDisplayChange($event)" [dropDownId]="'dpm-poweruse-display-dropDown'">
                 </vtr-ui-dpm-dropdown>
-                <h5 tabindex="0">
+                <h5>
                     {{'device.deviceSettings.power.dpm.powerUse.turnOffHDD' | translate}}
                 </h5>
                 <vtr-ui-dpm-dropdown [list]="timeItems" [value]="turnoffHDD" (change)="onTurnOffHDDChange($event)"
                     [dropDownId]="'dpm-poweruse-hdd-dropDown'">
                 </vtr-ui-dpm-dropdown>
-                <h5 tabindex="0">
+                <h5>
                     {{'device.deviceSettings.power.dpm.powerUse.sleep' | translate}}
                 </h5>
                 <vtr-ui-dpm-dropdown [list]="timeItems" [value]="sleepAfter" (change)="onSleepChange($event)"
                     [dropDownId]="'dpm-poweruse-sleep-dropDown'">
                 </vtr-ui-dpm-dropdown>
-                <h5 tabindex="0">
+                <h5>
                     {{'device.deviceSettings.power.dpm.powerUse.hibernate' | translate}}
                 </h5>
                 <vtr-ui-dpm-dropdown [list]="timeItems" [value]="hibernateAfter" (change)="onHibernateChange($event)"
