@@ -57,12 +57,14 @@
 									aria-labelledby=""
 									role="listbox">
 									<a [ngClass]="['dropdown-item',item >= bctInfo.stopValue?'disabled':'']"
+										ngbDropdownItem
 										role="option"
-										tabindex="0"
+										[tabIndex]="item >= bctInfo.stopValue"
 										*ngFor="let item of startAtChargeOptions"
 										(click)="[onStartValueChange(item , startToggle), $event.preventDefault()]"
 										(keydown.enter)="onStartValueChange(item , startToggle)"
 										id="{{textId}}-startAtChargeOption-{{item}}"
+										[disabled]="item >= bctInfo.stopValue"
 										attr.aria-disabled="{{item >= bctInfo.stopValue}}"
 										attr.aria-label="{{textId}}-startAtChargeOption-{{item}}">{{item}}%</a>
 								</div>
@@ -106,12 +108,14 @@
 								<div ngbDropdownMenu
 									aria-labelledby="">
 									<a [ngClass]="['dropdown-item',!bctInfo.checkboxValue && (item <= bctInfo.startValue) ?'disabled':'']"
+										ngbDropdownItem
 										role="option"
-										tabindex="0"
+										[tabIndex]="!bctInfo.checkboxValue && (item <= bctInfo.startValue)?-1:0"
 										*ngFor="let item of stopAtChargeOptions"
 										(click)="[onStopValueChange(item , endToggle), $event.preventDefault()]"
 										(keydown.enter)="onStopValueChange(item , endToggle)"
 										id="{{textId}}-stopAtChargeOption-{{item}}"
+										[disabled]="!bctInfo.checkboxValue && (item <= bctInfo.startValue)"
 										attr.aria-disabled="{{!bctInfo.checkboxValue && (item <= bctInfo.startValue)}}"
 										attr.aria-label="{{textId}}-stopAtChargeOption-{{item}}">{{item}}%</a>
 								</div>
