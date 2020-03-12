@@ -1,4 +1,5 @@
 import { FeatureStatus } from '../common/feature-status.model';
+import { HsaIntelligentSecurityResponse } from './HsaIntelligentSecurity/intelligentSecurity.model';
 
 export class SmartAssistCapability {
 	public isIntelligentSecuritySupported = false;
@@ -10,4 +11,5 @@ export class SmartAssistCapability {
 	public isAPSCapable = false;
 	public isAPSSensorSupported = false;
 	public isAPSHDDStatus = -1;
+	public isHsaIntelligentSecuritySupported: HsaIntelligentSecurityResponse = new HsaIntelligentSecurityResponse(false, false);
 }

@@ -1879,6 +1879,15 @@
 							"windowsLink": "Go to Windows Settings to give access",
 							"privacyLink": "Go to Camera privacy mode to turn it off"
 						}
+					},
+					"distanceSensitivityAdjusting": {
+						"title": "DISTANCE SENSITIVITY ADJUSTING",
+						"caption": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy. ",
+						"options": {
+							"near": "Near",
+							"medium": "Middle",
+							"far": "Far"
+						}
 					}
 				},
 				"sensitivityAdjusting": {

@@ -16,6 +16,7 @@ export class SmartAssistService {
 	private activeProtectionSystem;
 	private lenovoVoice;
 	private superResolution;
+	private hsaIntelligentSecurity;
 
 	public isShellAvailable = false;
 	public isAPSavailable = false;
@@ -27,6 +28,7 @@ export class SmartAssistService {
 		this.activeProtectionSystem = shellService.getActiveProtectionSystem(); // getting APS Object from //vantage-shell.service
 		this.lenovoVoice = shellService.getLenovoVoice();
 		this.superResolution = shellService.getSuperResolution();
+		this.hsaIntelligentSecurity = shellService.getHsaIntelligentSecurity();
 		// this.shellVersion = shellService.getShellVersion();
 
 		this.activeProtectionSystem ? this.isAPSavailable = true : this.isAPSavailable = false;
@@ -191,7 +193,47 @@ export class SmartAssistService {
 		return this.intelligentSensing.SetHPDLeaveWaitSetting(value);
 	}
 
+	public getHsaIntelligentSecurityStatus() {
+		const intelligentSecurityDate = {capacity: false, zeroTouchLockDistanceAutoAdjust: true, zeroTouchLockDistance: 1};
+		try {
+			if (this.isShellAvailable) {
+				this.hsaIntelligentSecurity.getAllSetting().then((data) => {
+					const obj = JSON.parse(data);
+					if (obj && obj.errorCode === 0) {
+						intelligentSecurityDate.capacity = obj.capacity;
+						intelligentSecurityDate.zeroTouchLockDistanceAutoAdjust = obj.presenceLeaveDistanceAutoAdjust;
+						intelligentSecurityDate.zeroTouchLockDistance = obj.presenceLeaveDistance;
+					}
+					return Promise.resolve(intelligentSecurityDate);
+				})
+			}
+		}catch (error) {
+			//throw new Error(error.message);
+			return Promise.reject(error);
+		}
+	}
 
+	public setZeroTouchLockDistanceSensitivityAutoAdjust (value: boolean):Promise<boolean> {
+		try {
+			if (this.isShellAvailable) {
+				const data = this.hsaIntelligentSecurity.setPresenceLeaveDistanceAutoAdjust(value);
+			}
+			return undefined;
+		} catch (error) {
+            throw new Error(error.message);
+		}
+	}
+
+	public setZeroTouchLockDistanceSensitivity (value: number):Promise<number> {
+		try {
+			if (this.isShellAvailable) {
+				const data = this.hsaIntelligentSecurity.setPresenceLeaveDistance(value);
+			}
+			return undefined;
+		} catch (error) {
+            throw new Error(error.message);
+		}
+	}
 
 	public resetHPDSetting(): Promise<boolean> {
 		if (this.isShellAvailable) {

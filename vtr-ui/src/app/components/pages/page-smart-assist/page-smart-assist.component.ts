@@ -21,6 +21,7 @@ import { EMPTY, fromEvent } from 'rxjs';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { SmartAssistCache } from 'src/app/data-models/smart-assist/smart-assist-cache.model';
 import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
+import { HsaIntelligentSecurityResponse } from 'src/app/data-models/smart-assist/hsaIntelligentSecurity/intelligentSecurity.model';
 
 @Component({
 	selector: 'vtr-page-smart-assist',
@@ -61,6 +62,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	smartAssistCache: SmartAssistCache;
 	public isSuperResolutionLoading = true;
 	public superResolution = new FeatureStatus(false, true);
+	public hsaIntelligentSecurity = new HsaIntelligentSecurityResponse(false, false);
 	public image = '/assets/images/smart-assist/intelligent-security/HPDv20.png';
 	public zeroTouchLoginShowAdvancedSection = false;
 	public zeroTouchLockShowAdvancedSection = false;
@@ -260,6 +262,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			this.initIntelligentScreen();
 			this.getVideoPauseResumeStatus();
 			this.getSuperResolutionStatus();
+			this.getHsaIntelligentSecurityStatus();
 		} else {
 			if (this.smartAssistCapability.isIntelligentSecuritySupported) {
 				this.intelligentSecurity.isIntelligentSecuritySupported = true;
@@ -281,6 +284,10 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			if (this.smartAssistCapability.isSuperResolutionSupported) {
 				this.superResolution = this.smartAssistCapability.isSuperResolutionSupported;
 				this.getSuperResolutionStatus();
+			}
+			if (this.smartAssistCapability.isHsaIntelligentSecuritySupported) {
+				this.hsaIntelligentSecurity = this.smartAssistCapability.isHsaIntelligentSecuritySupported;
+				this.getHsaIntelligentSecurityStatus();
 			}
 			this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
 		}
@@ -544,12 +551,51 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			});
 	}
 
-	public onZeroTouchLockDistanceSensitivityAdjustToggle(event: any) {
-		
+	public getHsaIntelligentSecurityStatus() {
+		try {
+			if (this.smartAssist.isShellAvailable) {
+				this.smartAssist.getHsaIntelligentSecurityStatus()
+					.then((response: HsaIntelligentSecurityResponse) => {
+						this.hsaIntelligentSecurity = response;
+					}).catch(error => {
+						this.logger.error('getHsaIntelligentSecurityStatus error: ', error);
+					});
+			}
+		} catch (error) {
+			this.logger.error('getHsaIntelligentSecurityStatus' + error.message);
+		}
 	}
 
-	public setZeroTouchLockSensitivity(event: ChangeContext) {
-		
+	public onZeroTouchLockDistanceSensitivityAdjustToggle(event: any) {
+		this.hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust = event.switchValue;
+		try {
+			if (this.smartAssist.isShellAvailable) {
+				this.smartAssist.setZeroTouchLockDistanceSensitivityAutoAdjust(event.switchValue)
+					.then((value: boolean) => {
+						this.logger.info('onZeroTouchLockDistanceSensitivityAdjustToggle', value);
+					}).catch(error => {
+						this.logger.error('onZeroTouchLockDistanceSensitivityAdjustToggle error', error);
+					});
+			}
+		} catch (error) {
+			this.logger.error('onZeroTouchLockDistanceSensitivityAdjustToggle' + error.message);
+		}
+	}
+
+	public SetZeroTouchLockDistanceSensitivity(event: ChangeContext) {
+		this.hsaIntelligentSecurity.zeroTouchLockDistance = event.value;
+		try {
+			if (this.smartAssist.isShellAvailable) {
+				this.smartAssist.setZeroTouchLockDistanceSensitivity(event.value)
+					.then((value: number) => {
+						this.logger.info('onZeroTouchLockDistanceSensitivity', value);
+					}).catch(error => {
+						this.logger.error('onZeroTouchLockDistanceSensitivity error', error);
+					});
+			}
+		} catch (error) {
+			this.logger.error('onZeroTouchLockDistanceSensitivity' + error.message);
+		}
 	}
 
 	public onDisplayDimTimeChange($event: ChangeContext) {

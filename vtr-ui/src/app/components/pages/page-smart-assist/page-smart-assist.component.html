@@ -37,7 +37,7 @@
 								<!-- <div class="intelligent-security-img-preview" id="intelligent-security-image" role="img" attr.aria-label="intelligent-security-image"
                                     automationId="intelligent-security-image" [ngStyle]="{ 'background-image': 'url(' + image + ')'}">				
 								</div> -->
-								<div class="no-boder-bottom pb-3">
+								<div class="no-border-bottom pb-3">
 									<img [src]="this.image"/>
 								</div>
 								<!-- IdeaPad section -- zeroTouchLogin -->
@@ -85,7 +85,7 @@
 													*ngIf="!intelligentSecurity.isZeroTouchLoginAdjustEnabled"
 													[minValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.near' | translate"
 													[minValue]="1"
-													[mediumValueLegend]="'Middle'"
+													[mediumValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.medium' | translate"
 													[maxValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
 													[maxValue]="3"
 													(sliderChange)="setZeroTouchLoginSensitivity($event)"
@@ -420,37 +420,38 @@
 										</div>
 										<!-- distance sensitivity adjusting -- ideapad section -->
 										<div class="pl-5 bold-title no-border-bottom pb-4"
-											*ngIf="true && zeroTouchLockShowAdvancedSection">
+											*ngIf="zeroTouchLockShowAdvancedSection">
 											<vtr-ui-row-switch [switchId]="'zeroTouchLockDistanceSensitivity'"
-												[title]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title' | translate"
-												[caption]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.caption' | translate"
+												[title]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.title' | translate"
+												[caption]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.caption' | translate"
 												[isSwitchVisible]="true"
-												[showChildContent]="intelligentSecurity.isZeroTouchLoginAdjustEnabled"
-												[isSwitchChecked]="intelligentSecurity.isZeroTouchLoginAdjustEnabled"
+												[showChildContent]="true"
+												[isSwitchChecked]="hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust"
 												(toggleOnOff)="onZeroTouchLockDistanceSensitivityAdjustToggle($event)"
 												[theme]="'white'"
-												[disabled]="false"
+												[disabled]="!intelligentSecurity.isZeroTouchLockEnabled"
 												[toolTipStatus]='true'
 												[rightIcon]="['far', 'question-circle']">
 											</vtr-ui-row-switch>
 											<div class="slider-note">
 												<vtr-ui-range-slider [rangeSliderId]="'zeroTouchLockDistanceSensitivity'"
 													[manualRefresh]="manualRefresh"
-													[minValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.near' | translate"
+													*ngIf="!hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust"
+													[minValueLegend]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.options.near' | translate"
 													[minValue]="1"
-													[mediumValueLegend]="'Middle'"													
-													[maxValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
+													[mediumValueLegend]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.options.medium' | translate"												
+													[maxValueLegend]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.options.far' | translate"
 													[maxValue]="3"
-													(sliderChange)="setZeroTouchLockSensitivity($event)"
-													[value]="1"
-													[enableSlider]="true"
+													(sliderChange)="SetZeroTouchLockDistanceSensitivity($event)"
+													[value]="hsaIntelligentSecurity.zeroTouchLockDistance"
+													[enableSlider]="!intelligentSecurity.isZeroTouchLockEnabled"
 													vtrMetrics
-													[metricsItem]="'distanceSensitivity'"
+													[metricsItem]="'zeroTouchLockDistanceSensitivity'"
 													metricsEvent="featureClick"
-													metricsValue="{{intelligentSecurity.zeroTouchLoginDistance}}">
+													metricsValue="{{hsaIntelligentSecurity.zeroTouchLockDistance}}">
 												</vtr-ui-range-slider>
 												<div class="pt-3"
-													[class.blur-1]="!intelligentSecurity.isZeroTouchLoginEnabled"
+													[class.blur-1]="!intelligentSecurity.isZeroTouchLockEnabled"
 													*ngIf="intelligentSecurity.isWindowsHelloRegistered">
 													<div class="feature-note p-4">
 														<div class="row">
@@ -480,7 +481,7 @@
 												  (click)="zeroTouchLockShowAdvancedSection = false" (keydown.enter)="zeroTouchLockShowAdvancedSection = false">
 												  {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.hideAdvSettings' | translate}}
 											</span>
-										  </div>
+										</div>
 									</li>
 								</ul>
 								<!-- notes -->

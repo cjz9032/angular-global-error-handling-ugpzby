@@ -623,6 +623,17 @@ export class VantageShellService {
 		return undefined;
 	}
 
+	public getHsaIntelligentSecurity(): any {
+		try {
+		    const win: any = window;
+		    if (win.VantageShellExtension && win.VantageShellExtension.SmartSenseRpcClient) {
+				  return new win.VantageShellExtension.HumanPresenceDetectionRpcClient();
+		    }
+	    } catch (error) {
+		   throw new Error(error.message);		   
+	    }
+	}
+
 	public getPreferenceSettings() {
 		if (this.phoenix) {
 			return this.phoenix.preferenceSettings;
