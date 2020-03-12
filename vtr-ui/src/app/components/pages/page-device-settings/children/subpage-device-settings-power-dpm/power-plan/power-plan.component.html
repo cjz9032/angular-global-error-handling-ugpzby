@@ -14,21 +14,29 @@
                     </vtr-ui-dpm-dropdown>
                 </div>
                 <div>
-                    <div class="boldtitle profile">PLAN profile:</div>
+                    <div class="boldtitle profile">
+                        {{'device.deviceSettings.power.dpm.powerPlan.profile.title' | translate}}
+                    </div>
                     <div>
-                        <div class="lefttitle">MAX performance:</div>
+                        <div class="lefttitle">
+                            {{'device.deviceSettings.power.dpm.powerPlan.profile.performance' | translate}}
+                        </div>
                         <vtr-ui-dpm-energy *ngIf="selectedPowerPlanVal" [value]="selectedPowerPlanVal.performance">
                         </vtr-ui-dpm-energy>
                         <vtr-ui-dpm-energy *ngIf="!selectedPowerPlanVal"></vtr-ui-dpm-energy>
                     </div>
                     <div>
-                        <div class="lefttitle">Max system temperature:</div>
+                        <div class="lefttitle">
+                            {{'device.deviceSettings.power.dpm.powerPlan.profile.temperature' | translate}}
+                        </div>
                         <vtr-ui-dpm-energy *ngIf="selectedPowerPlanVal" [value]="selectedPowerPlanVal.temperature">
                         </vtr-ui-dpm-energy>
                         <vtr-ui-dpm-energy *ngIf="!selectedPowerPlanVal"></vtr-ui-dpm-energy>
                     </div>
                     <div>
-                        <div class="lefttitle">Max power usage:</div>
+                        <div class="lefttitle">
+                            {{'device.deviceSettings.power.dpm.powerPlan.profile.usage' | translate}}
+                        </div>
                         <vtr-ui-dpm-energy *ngIf="selectedPowerPlanVal" [value]="selectedPowerPlanVal.powerUsage">
                         </vtr-ui-dpm-energy>
                         <vtr-ui-dpm-energy *ngIf="!selectedPowerPlanVal"></vtr-ui-dpm-energy>

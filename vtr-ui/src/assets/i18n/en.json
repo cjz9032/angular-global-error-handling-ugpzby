@@ -1424,6 +1424,12 @@
 						"description": "Choose a power plan to control the computer performance, system temperature, and power usage.",
 						"currentPowerPlan": {
 							"label": "CURRENT PLAN"
+						},
+						"profile": {
+							"title": "PLAN PROFILE:",
+							"performance": "Max performance:",
+							"temperature": "Max system temperature:",
+							"usage": "Max power usage:"
 						}
 					}
 				}
