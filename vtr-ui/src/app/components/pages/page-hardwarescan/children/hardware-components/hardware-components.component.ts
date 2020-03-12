@@ -364,7 +364,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					const info = categoryInfo.name;
 					if (!this.hardwareScanService.getIsDesktopMachine()) {
 						if (categoryInfo.id === 'pci_express') {
-							categoryInfo.id += '_laptop'
+							categoryInfo.id += '_laptop';
 						}
 					}
 					devices.push({
