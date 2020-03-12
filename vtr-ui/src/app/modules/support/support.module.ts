@@ -27,6 +27,7 @@ import { ModalFindUsComponent } from 'src/app/components/modal/modal-find-us/mod
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { FeedbackModule } from '../feedback/feedback.module';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
+import { LicensesService } from 'src/app/services/licenses/licenses.service';
 
 
 @NgModule({
@@ -53,9 +54,10 @@ import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.mod
 	],
 	providers: [
 		SupportService,
+		LicensesService,
 	],
 	exports: [
-		//cpt
+		// cpt
 		UIArticleItemComponent,
 		ContainerArticleComponent,
 	],
