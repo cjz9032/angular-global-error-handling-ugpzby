@@ -2,8 +2,9 @@
 	<ng-container *ngFor="let tab of menuItems; let i=index;">
 		<div class="menu-header-tab {{tab.prop}}"
 			tabindex="0"
-			routerLink="/{{tab.path}}"
+			[routerLink]="'/'+tab.path"
 			routerLinkActive="active"
+			[queryParams]="tab.params?tab.params:{}"
 			(keydown.enter)="changeRoute(tab.path)"
 			role="link"
 			id="myDevice-settings-header-menu-{{tab.icon}}"

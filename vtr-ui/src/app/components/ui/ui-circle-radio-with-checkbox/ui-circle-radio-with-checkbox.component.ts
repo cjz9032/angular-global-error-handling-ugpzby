@@ -81,9 +81,9 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 		}
 	} */
 
-	radioKBNavigation(event, radio) {
+	radioKBNavigation($event, radio) {
 		this.setRadioButtons();
-		switch (event.keyCode) {
+		switch ($event.keyCode) {
 			case this.keyCode.TAB:
 				// this.checkOnFocus(event, radio);
 				break;
@@ -93,9 +93,11 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 				break;
 			case this.keyCode.UP:
 				this.setCheckedToPreviousItem(this.radioButton);
+				$event.preventDefault();
 				break;
 			case this.keyCode.DOWN:
 				this.setCheckedToNextItem(this.radioButton);
+				$event.preventDefault();
 				break;
 			case this.keyCode.LEFT:
 				this.setCheckedToPreviousItem(this.radioButton);
@@ -141,10 +143,10 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 			let index;
 
 			if (currentItem.nativeElement === this.firstRadioButton) {
-				this.setChecked(this.lastRadioButton, true);
+				this.setChecked(this.lastRadioButton, false);
 			} else {
 				index = this.radioButtons.indexOf(currentItem.nativeElement);
-				this.setChecked(this.radioButtons[index - 1], true);
+				this.setChecked(this.radioButtons[index - 1], false);
 			}
 		} catch (error) {
 			this.logger.exception('setRadioButtons error occurred ::', error);
@@ -157,10 +159,10 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 			let index;
 
 			if (currentItem.nativeElement === this.lastRadioButton) {
-				this.setChecked(this.firstRadioButton, true);
+				this.setChecked(this.firstRadioButton, false);
 			} else {
 				index = this.radioButtons.indexOf(currentItem.nativeElement);
-				this.setChecked(this.radioButtons[index + 1], true);
+				this.setChecked(this.radioButtons[index + 1], false);
 			}
 
 		} catch (error) {
@@ -191,6 +193,15 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 			});
 
 			if (this.firstRadioButton && this.noRadioButtonSelected) {
+				this.firstRadioButton.tabIndex = 0;
+				this.radioButtons.forEach(element => {
+					if (element != this.firstRadioButton) {
+						element.tabIndex = '0';
+					}
+					else {
+						element.tabindex = -1;
+					}
+				});
 				this.firstRadioButton.focus();
 				// this.setRadioTabIndex(this.firstRadioButton);
 			}
