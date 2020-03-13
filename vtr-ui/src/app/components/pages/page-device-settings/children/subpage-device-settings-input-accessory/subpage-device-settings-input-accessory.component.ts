@@ -62,7 +62,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	private topRowFunctionsIdeapadSubscription: Subscription;
 	backlightCapability$: Observable<boolean>;
 	public fnCtrlKeyTooltipContent = [];
-	public isKbdBacklightAvailable = true;
+	public isKbdBacklightAvailable = false;
 
 	constructor(
 		routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
