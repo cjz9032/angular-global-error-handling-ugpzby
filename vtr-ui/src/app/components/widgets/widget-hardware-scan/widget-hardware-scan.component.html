@@ -1,84 +1,87 @@
 <div class="vtr-widget-hardware-scan">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col col-12 hardwarescan-background">
-                <div class="row">
-                    <div class="col title">{{title}}</div>
-                </div>
-                <div class="row hwscan-header" *ngIf="showProgress && !isScanOrRBSFinished()">
-                    <div class="col row1">
-                        <span class="row">{{subTitle}}</span>
-                        <span class="row">{{warningMessage}}</span>
-                    </div>
-                    <div class="row">
-                        <div class="row progress-div">
-                            <div class="row progress-percent-text">
-                                <span class="progress-value-text">{{percent}}</span>
-                                <span class="progress-complete-text">% {{completeText}}</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div *ngIf="!showProgress" class="row">
-                    <div class="col button-row">
-                        <button [ngClass]="{'action-button': !disableQuickScan, 'action-button-disable': disableQuickScan}"
-                            [title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
-                            [disabled]="disableQuickScan"
-                            (click)="onQuickScan()">{{buttonText}}</button>
-                        <a
-                            vtrMetrics
-                            metricsEvent="FeatureClick"
-                            metricsParent="HardwareScan"
-                            metricsItem="HardwareScan.CustomizeScan"
-                            [title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
-                            [ngClass]="{'action-anchor': !disableQuickScan, 'disabled-anchor': disableQuickScan}" (click)="onAnchor()">
-                            {{anchorText}}
-                        </a>
-                    </div>
-                </div>
-                <div *ngIf="showProgress" class="col row hwscan-header">
-                    <div *ngIf="!isScanOrRBSFinished()" class="col col-12 row progress-bar-div-container">
-                        <div class="col col-12 progress-bar-div">
-                            <ngb-progressbar type="success" [value]="percent" [height]="'0.6rem'"></ngb-progressbar>
-                        </div>
-                    </div>
-                    <div *ngIf="isScanOrRBSFinished()" class="col col-12 row status">
-                        <span>{{statusText}}</span>
-                    </div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col col-12 hardwarescan-background">
+				<div class="row">
+					<div class="col title">{{title}}</div>
+				</div>
+				<div class="row hwscan-header" *ngIf="showProgress && !isScanOrRBSFinished()">
+					<div class="col row1">
+						<span class="row">{{subTitle}}</span>
+						<span class="row">{{warningMessage}}</span>
+					</div>
+					<div class="row">
+						<div class="row progress-div">
+							<div class="row progress-percent-text">
+								<span class="progress-value-text">{{percent}}</span>
+								<span class="progress-complete-text">% {{completeText}}</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div *ngIf="!showProgress" class="row">
+					<div class="col button-row">
+						<button [ngClass]="{'action-button': !disableQuickScan, 'action-button-disable': disableQuickScan}"
+							tabindex="1"
+							[title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
+							[disabled]="disableQuickScan"
+							(click)="onQuickScan()">{{buttonText}}</button>
+						<a
+							vtrMetrics
+							metricsEvent="FeatureClick"
+							metricsParent="HardwareScan"
+							metricsItem="HardwareScan.CustomizeScan"
+							href="javascript:void();"
+							tabindex="1"
+							[title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
+							[ngClass]="{'action-anchor': !disableQuickScan, 'disabled-anchor': disableQuickScan}" (click)="onAnchor()">
+							{{anchorText}}
+						</a>
+					</div>
+				</div>
+				<div *ngIf="showProgress" class="col row hwscan-header">
+					<div *ngIf="!isScanOrRBSFinished()" class="col col-12 row progress-bar-div-container">
+						<div class="col col-12 progress-bar-div">
+							<ngb-progressbar type="success" [value]="percent" [height]="'0.6rem'"></ngb-progressbar>
+						</div>
+					</div>
+					<div *ngIf="isScanOrRBSFinished()" class="col col-12 row status">
+						<span>{{statusText}}</span>
+					</div>
 
 
-                    <div class="col col-12 row">
-                        <div class="col col-12 row">
-                            <div class="col col-12 cancel-check" *ngIf="!isScanOrRBSFinished()"
-                                 title="{{ disableCancel ? ('hardwareScan.waitScanStarts' | translate) : ''}}">
-                                <button type="button"
-                                    id="hw_cancel_scan"
-                                    attr.aria-label="hw_cancel_scan"
-                                    vtrMetrics
-                                    metricsEvent="FeatureClick"
-                                    metricsParent="{{itemParentCancel}}"
-                                    metricsItem="{{itemNameCancel}}"
-                                    class="btn btn-link cancel-check"
-                                    [disabled]="disableCancel"
-                                    (click)="onCancel()">{{'hardwareScan.cancel' | translate}}</button>
-                            </div>
-                        </div>
-                        <div class="col-12 final-result-code" *ngIf="getFinalResultCode()">
-                            <span class="result-code-value-text">{{finalResultCodeText}}:</span>
-                            <span class="result-code-complete-text">{{getFinalResultCode()}}</span>
-                            <fa-icon *ngIf="getTooltipInformation()" class="result-code-icon" triggers="click:blur" placement="auto" [ngbTooltip]="tooltipFinalResultCode" [icon]="['far', 'question-circle']" container="vtr-root" tooltipClass="vtr-tooltip">
-                            </fa-icon>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+					<div class="col col-12 row">
+						<div class="col col-12 row">
+							<div class="col col-12 cancel-check" *ngIf="!isScanOrRBSFinished()"
+								 title="{{ disableCancel ? ('hardwareScan.waitScanStarts' | translate) : ''}}">
+								<button type="button"
+									id="hw_cancel_scan"
+									attr.aria-label="hw_cancel_scan"
+									vtrMetrics
+									metricsEvent="FeatureClick"
+									metricsParent="{{itemParentCancel}}"
+									metricsItem="{{itemNameCancel}}"
+									class="btn btn-link cancel-check"
+									[disabled]="disableCancel"
+									(click)="onCancel()">{{'hardwareScan.cancel' | translate}}</button>
+							</div>
+						</div>
+						<div class="col-12 final-result-code" *ngIf="getFinalResultCode()">
+							<span class="result-code-value-text">{{finalResultCodeText}}:</span>
+							<span class="result-code-complete-text">{{getFinalResultCode()}}</span>
+							<fa-icon *ngIf="getTooltipInformation()" class="result-code-icon" triggers="click:blur" placement="auto" [ngbTooltip]="tooltipFinalResultCode" [icon]="['far', 'question-circle']" container="vtr-root" tooltipClass="vtr-tooltip">
+							</fa-icon>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 <ng-template #tooltipFinalResultCode>
-    <div [innerHTML]="getTooltipInformation()"></div>
-    <div class='button-box'>
-        <a
+	<div [innerHTML]="getTooltipInformation()"></div>
+	<div class='button-box'>
+		<a
 			[attr.href]="'https://support.lenovo.com/contactus'"
 			target="_blank"
 			vtrMetrics
@@ -91,5 +94,5 @@
 				{{ lenovoSupport }}
 			</button>
 		</a>
-    </div>
+	</div>
 </ng-template>
