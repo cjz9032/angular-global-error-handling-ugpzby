@@ -223,6 +223,7 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 					@extend .base-percentage-text;
 					font-size: 4.5rem;
 					color: $shade_blue;
+					top: 1.5rem;
 
 					.percentage-symbol {
 						position: relative;
