@@ -41,7 +41,6 @@ import { faPlusCircle } from '@fortawesome/free-solid-svg-icons/faPlusCircle';
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons/faQuestionCircle';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons/faTimesCircle';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { GlobalErrorHandler } from '../services/error-handler/global.service';
 import { HomeComponent } from './../components/home/home.component';
 import { HttpClient } from '@angular/common/http';
 import { MetricsTranslateService } from '../services/mertics-traslate/metrics-translate.service';
@@ -127,11 +126,6 @@ import { HardwareScanModule } from './hardware-scan/hardware-scan.module';
 		DisplayService,
 		CookieService,
 		NewFeatureTipService,
-		CommsService,
-		{
-			provide: ErrorHandler,
-			useClass: GlobalErrorHandler
-		}
 	],
 	entryComponents: [
 		ModalWelcomeComponent,

@@ -34,13 +34,13 @@ export class SmartStandbyService {
 		} else if (this.checkIsWeekDays() && !this.checkIsWeekends()) {
 			dayText = this.translate.instant('device.deviceSettings.power.smartStandby.days.weekdays');
 			if (this.getSelectedDays(1).length > 0) {
-				dayText += ',' + this.getSelectedDays(1);
+				dayText += ', ' + this.getSelectedDays(1);
 			}
 		} else if (!this.checkIsWeekDays() && this.checkIsWeekends()) {
-			dayText = this.translate.instant('device.deviceSettings.power.smartStandby.days.weekends');
 			if (this.getSelectedDays(2).length > 0) {
-				dayText += ',' + this.getSelectedDays(2);
+				dayText = this.getSelectedDays(2);
 			}
+			dayText += ', ' + this.translate.instant('device.deviceSettings.power.smartStandby.days.weekends');
 		} else {
 			dayText = this.getSelectedDays(0);
 		}

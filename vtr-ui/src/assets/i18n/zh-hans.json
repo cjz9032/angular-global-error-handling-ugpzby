@@ -713,8 +713,8 @@
                 "effectName3": "彩虹",
                 "effectName4": "随机",
                 "effectName5": "酷蓝",
-                "effectName6": "向右挥手",
-                "effectName7": "向左挥手"
+                "effectName6": "向左挥手",
+                "effectName7": "向右挥手"
             },
             "lightingSpeed": {
                 "title": "速度"
@@ -1609,7 +1609,7 @@
                     "camerablur": {
                         "title": "摄像头背景模糊",
                         "caption": "当您使用摄像头进行视频通话或拍摄照片时，该功能可以使背景变得模糊。您可以从下面的选项中选择不同的效果。",
-                        "blurMode": "模糊模式",
+                        "blurMode": "背景虚化模式",
                         "comicMode": "漫画模式",
                         "sketchMode": "素描模式",
                         "tooltip": "Note: The Camera blur function will be automatically disabled if the battery power is lower than 23%. And it will resume once the battery was charging to high battery power."
