@@ -14,17 +14,16 @@ export class CommsService {
 	appId = '';
 	token = '';
 	private serverSwitchLocalData: any;
-	private cmsHost: Promise<any>;
+	private cmsHost: string;
 	constructor(
 		private http: HttpClient,
 		private devService: DevService,
-		shellService: VantageShellService
+		private shellService: VantageShellService
 	) {
-		this.cmsHost = this.getCmsHostFromReg(shellService);
 	}
 
-	async getCmsHostFromReg(shellService: VantageShellService) {
-		const registryUtil = shellService.getRegistryUtil();
+	async getCmsHostFromReg() {
+		const registryUtil = this.shellService.getRegistryUtil();
 		if (!registryUtil) {
 			return null;
 		}
@@ -45,7 +44,11 @@ export class CommsService {
 	}
 
 	async getCmsHost() {
-		return await this.cmsHost || this.env.cmsApiRoot;
+		if (!this.cmsHost) {
+			this.cmsHost = await this.getCmsHostFromReg();
+		}
+
+		return  this.cmsHost || this.env.cmsApiRoot;
 	}
 
 	handleAPIError(method, err) {
