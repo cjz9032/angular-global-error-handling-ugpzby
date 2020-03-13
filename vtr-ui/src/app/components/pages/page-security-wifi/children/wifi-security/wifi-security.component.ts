@@ -27,6 +27,7 @@ import {
 } from 'src/app/services/dialog/dialog.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { ConfigService } from 'src/app/services/config/config.service';
+import { EventTypes } from '@lenovo/tan-client-bridge';
 
 @Component({
 	selector: 'wifi-security',
@@ -43,6 +44,12 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit, OnDe
 	showMore = false;
 	hasMore: boolean;
 	locatorButtonDisable = false;
+	wsSetStateEventHandler = (res) => {
+		if (res === 'finish') {
+			this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecuritySetState, 'no');
+			this.switchDisabled = false;
+		}
+	}
 
 	constructor(
 		public modalService: NgbModal,
@@ -58,27 +65,25 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit, OnDe
 		if (this.configService) {
 			this.isShowMore = !this.configService.showCHS;
 		}
+		if (this.data && this.data.wifiSecurity) {
+			this.data.wifiSecurity.on(EventTypes.wsSetStateEvent, this.wsSetStateEventHandler);
+		}
 	}
 
 	ngOnDestroy() {
-		if(this.data && this.data.wifiSecurity) {
-		}
+		this.data.wifiSecurity.off(EventTypes.wsSetStateEvent, this.wsSetStateEventHandler);
 	}
 
 	onToggleChange($event: any) {
 		if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage) === true) {
 			this.switchDisabled = true;
 			if (this.data.isLWSEnabled) {
-				this.data.wifiSecurity.disableWifiSecurity().then((res) => {
-					this.switchDisabled = false;
-				});
+				this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecuritySetState, 'yes');
+				this.data.wifiSecurity.disableWifiSecurity();
 			} else {
-				this.data.wifiSecurity.enableWifiSecurity().then((res) => {
-					this.switchDisabled = false;
-				},
-				() => {
+				this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecuritySetState, 'yes');
+				this.data.wifiSecurity.enableWifiSecurity().catch(() => {
 					this.dialogService.wifiSecurityLocationDialog(this.data.wifiSecurity);
-					this.switchDisabled = false;
 				});
 			}
 		}
