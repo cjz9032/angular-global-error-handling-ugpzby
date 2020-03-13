@@ -53,6 +53,9 @@
 				text-align: center;
 				border: 0rem;
 				cursor: pointer;
+				&:focus{
+					box-shadow: 0 0 0 0.2rem $blue-dark !important;
+				}
 			}
 			.action-button-disable {
 				border-radius: 2.5rem;
