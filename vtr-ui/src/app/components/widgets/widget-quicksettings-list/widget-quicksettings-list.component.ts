@@ -24,7 +24,6 @@ import { WifiHomeViewModel, SecurityHealthViewModel } from 'src/app/data-models/
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { GuardService } from 'src/app/services/guard/guardService.service';
-import { AppEvent } from 'src/app/data-models/common/app-event.model';
 
 @Component({
 	selector: 'vtr-widget-quicksettings-list',
@@ -41,7 +40,6 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 	public thermalModeStatusObj = new ThermalModeStatus();
 	public setThermalModeStatus: any;
 	public gamingCapabilities: any = new GamingAllCapabilities();
-	appEvent: AppEvent;
 
 
 	public quickSettings = [
@@ -163,6 +161,49 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 		]
 	};
 	public isQuickSettingsVisible = false;
+	wsPluginMissingEventHandler = () => {
+		this.updateWifiSecurityState(false);
+		this.handleError(new PluginMissingError());
+	};
+	wsIsSupportWifiEventHandler = (res) => {
+		this.updateWifiSecurityState(res);
+	};
+	wsStateEventHandler = (value) => {
+		if (value) {
+			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, value);
+			if (this.wifiSecurity.isLocationServiceOn !== undefined) {
+				if (value === 'enabled' && this.wifiHomeViewModel.isLWSEnabled === true) {
+					this.quickSettings[2].isChecked = true;
+				} else {
+					this.quickSettings[2].isChecked = false;
+				}
+			}
+			this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.commonService);
+		}
+	};
+	wsIsLocationServiceOnEventHandler = (value) => {
+		this.ngZone.run(() => {
+			if (value !== undefined) {
+				if (!value && this.wifiSecurity.state === 'enabled' && this.wifiSecurity.hasSystemPermissionShowed) {
+					this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
+				} else if (value) {
+					if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag) === 'yes') {
+						this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag, 'no');
+						this.wifiSecurity.enableWifiSecurity().then((res) => {
+							this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.commonService);
+						});
+					}
+					if (this.wifiHomeViewModel.isLWSEnabled === true) {
+						this.quickSettings[2].isChecked = true;
+					} else {
+						this.quickSettings[2].isChecked = false;
+					}
+				}
+				this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.commonService);
+			}
+		});
+	};
+
 	constructor(
 		private gamingCapabilityService: GamingAllCapabilitiesService,
 		private gamingThermalModeService: GamingThermalModeService,
@@ -179,7 +220,6 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 	) { }
 
 	ngOnInit() {
-		this.appEvent = new AppEvent();
 		this.initializeWifiSecCache();
 		this.initialiseDolbyCache();
 		this.initialiseRapidChargeCache();
@@ -403,15 +443,9 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 				this.wifiSecurity,
 				this.commonService
 			);
-			this.appEvent.wsPluginMissingEvent = () => {
-				this.updateWifiSecurityState(false);
-				this.handleError(new PluginMissingError());
-			};
-			this.appEvent.wsIsSupportWifiEvent = (res) => {
-				this.updateWifiSecurityState(res);
-			};
-			this.wifiSecurity.on(EventTypes.wsPluginMissingEvent, this.appEvent.wsPluginMissingEvent);
-			this.wifiSecurity.on(EventTypes.wsIsSupportWifiEvent, this.appEvent.wsIsSupportWifiEvent);
+
+			this.wifiSecurity.on(EventTypes.wsPluginMissingEvent, this.wsPluginMissingEventHandler);
+			this.wifiSecurity.on(EventTypes.wsIsSupportWifiEvent, this.wsIsSupportWifiEventHandler);
 			this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInGamingDashboard, true);
 			this.commonService.setSessionStorageValue(
 				SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog,
@@ -450,44 +484,8 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 	public runLocationService() {
 		const wifiSecurity = this.securityAdvisor.wifiSecurity;
 		if (this.wifiSecurity) {
-			this.appEvent.wsStateEvent = (value) => {
-				if (value) {
-					this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, value);
-					if (this.wifiSecurity.isLocationServiceOn !== undefined) {
-						if (value === 'enabled' && this.wifiHomeViewModel.isLWSEnabled === true) {
-							this.quickSettings[2].isChecked = true;
-						} else {
-							this.quickSettings[2].isChecked = false;
-						}
-					}
-					this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.commonService);
-				}
-			};
-			this.appEvent.wsIsLocationServiceOnEvent = (value) => {
-				this.ngZone.run(() => {
-					if (value !== undefined) {
-						if (!value && this.wifiSecurity.state === 'enabled' && this.wifiSecurity.hasSystemPermissionShowed) {
-							this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
-						} else if (value) {
-							if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag) === 'yes') {
-								this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag, 'no');
-								this.wifiSecurity.enableWifiSecurity().then((res) => {
-									this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.commonService);
-								});
-							}
-							if (this.wifiHomeViewModel.isLWSEnabled === true) {
-								this.quickSettings[2].isChecked = true;
-							} else {
-								this.quickSettings[2].isChecked = false;
-							}
-						}
-						this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.commonService);
-					}
-				});
-			};
-			wifiSecurity
-				.on(EventTypes.wsStateEvent, this.appEvent.wsStateEvent)
-				.on(EventTypes.wsIsLocationServiceOnEvent, this.appEvent.wsIsLocationServiceOnEvent);
+			wifiSecurity.on(EventTypes.wsStateEvent, this.wsStateEventHandler)
+				.on(EventTypes.wsIsLocationServiceOnEvent, this.wsIsLocationServiceOnEventHandler);
 		}
 	}
 
@@ -602,10 +600,10 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			) {
 				this.securityAdvisor.wifiSecurity.cancelGetWifiSecurityState();
 			}
-			this.securityAdvisor.wifiSecurity.off(EventTypes.wsStateEvent, this.appEvent.wsStateEvent);
-			this.securityAdvisor.wifiSecurity.off(EventTypes.wsIsLocationServiceOnEvent, this.appEvent.wsIsLocationServiceOnEvent);
-			this.securityAdvisor.wifiSecurity.off(EventTypes.wsPluginMissingEvent, this.appEvent.wsPluginMissingEvent);
-			this.securityAdvisor.wifiSecurity.off(EventTypes.wsIsSupportWifiEvent, this.appEvent.wsIsSupportWifiEvent);
+			this.securityAdvisor.wifiSecurity.off(EventTypes.wsStateEvent, this.wsStateEventHandler);
+			this.securityAdvisor.wifiSecurity.off(EventTypes.wsIsLocationServiceOnEvent, this.wsIsLocationServiceOnEventHandler);
+			this.securityAdvisor.wifiSecurity.off(EventTypes.wsPluginMissingEvent, this.wsPluginMissingEventHandler);
+			this.securityAdvisor.wifiSecurity.off(EventTypes.wsIsSupportWifiEvent, this.wsIsSupportWifiEventHandler);
 		}
 	}
 }

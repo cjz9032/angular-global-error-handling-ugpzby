@@ -27,7 +27,6 @@ import {
 } from 'src/app/services/dialog/dialog.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { ConfigService } from 'src/app/services/config/config.service';
-import { AppEvent } from 'src/app/data-models/common/app-event.model';
 
 @Component({
 	selector: 'wifi-security',
@@ -44,8 +43,6 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit, OnDe
 	showMore = false;
 	hasMore: boolean;
 	locatorButtonDisable = false;
-	cancelClick = false;
-	appEvent: AppEvent;
 
 	constructor(
 		public modalService: NgbModal,
@@ -61,21 +58,10 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit, OnDe
 		if (this.configService) {
 			this.isShowMore = !this.configService.showCHS;
 		}
-		this.appEvent = new AppEvent();
-		this.appEvent.wsCancelClickEvent = () => {
-			this.cancelClick = true;
-		};
-		this.appEvent.wsCancelClickFinishEvent = () => {
-			this.cancelClick = false;
-		};
-		this.data.wifiSecurity.on('cancelClick', this.appEvent.wsCancelClickEvent)
-		.on('cancelClickFinish', this.appEvent.wsCancelClickFinishEvent);
 	}
 
 	ngOnDestroy() {
 		if(this.data && this.data.wifiSecurity) {
-			this.data.wifiSecurity.off('cancelClick', this.appEvent.wsCancelClickEvent);
-			this.data.wifiSecurity.off('cancelClickFinish', this.appEvent.wsCancelClickFinishEvent);
 		}
 	}
 
@@ -84,19 +70,11 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit, OnDe
 			this.switchDisabled = true;
 			if (this.data.isLWSEnabled) {
 				this.data.wifiSecurity.disableWifiSecurity().then((res) => {
-					if (res) {
-						this.switchDisabled = false;
-					} else {
-						this.switchDisabled = true;
-					}
+					this.switchDisabled = false;
 				});
 			} else {
 				this.data.wifiSecurity.enableWifiSecurity().then((res) => {
-					if (res) {
-						this.switchDisabled = false;
-					} else {
-						this.switchDisabled = true;
-					}
+					this.switchDisabled = false;
 				},
 				() => {
 					this.dialogService.wifiSecurityLocationDialog(this.data.wifiSecurity);
