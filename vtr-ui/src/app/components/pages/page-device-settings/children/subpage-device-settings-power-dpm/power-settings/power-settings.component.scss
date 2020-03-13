@@ -1,3 +1,5 @@
+@import "../../../../../../app.theme.scss";
+
 .note{
 	background-color: #F5F7F8;
 	color:#34495E;
@@ -7,6 +9,14 @@
 	border-radius: 4px;
 	max-width: 656px;
 	margin-right: 4.5px;
+	@media #{$black-on-white} {
+		border: 1px solid #ECF0F1;
+		background: #f5f7f8;
+	}
+	@media #{$white-on-black} {
+		border: 1px solid #2a2a2a;
+		background:#292929;
+	}
 }
 
 // section{
