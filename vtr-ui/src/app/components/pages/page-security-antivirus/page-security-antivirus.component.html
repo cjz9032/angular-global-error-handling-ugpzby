@@ -67,7 +67,7 @@
 							</div>
 						</div>
 						<div class="flex-column button white-button">
-							<vtr-ui-button class="white-btn" linkId="sa-av-link-subscribe" metricsEvent="itemClick"
+							<vtr-ui-button class="white-btn" linkId="sa-av-btn-buynow" metricsEvent="itemClick"
 								metricsItem="btn.subscribe.no-antivirus" metricsParent="security.antivirus"
 								upperCaseLabel=false btnHeight=true [isDisabled]="isOnline === false"
 								[label]="'security.antivirus.windowsDefender.buyNow' | translate"
@@ -137,13 +137,13 @@
 								<div class="flex-column two-ellipsis-button button col-6 px-0">
 									<vtr-ui-button
 										*ngIf="viewModel.mcafee.subscription === 'trialActive' || viewModel.mcafee.subscription === 'trialInactive'"
-										linkId="sa-av-link-subscribe" metricsEvent="itemClick"
+										linkId="sa-av-btn-subscribe" metricsEvent="itemClick"
 										metricsItem="btn.subscribe" metricsParent="security.antivirus"
 										upperCaseLabel=false btnHeight=true [isDisabled]="isOnline === false"
 										[label]="'security.antivirus.mcafee.trialSubscribe' | translate:{remainingDays: viewModel.mcafee.expireAt}"
 										[href]="viewModel.mcafee.trialUrl"></vtr-ui-button>
 									<vtr-ui-button *ngIf="viewModel.mcafee.subscription === 'licenseActive'"
-										linkId="sa-av-link-subscribe" metricsEvent="itemClick"
+										linkId="sa-av-btn-subscribe" metricsEvent="itemClick"
 										metricsItem="btn.subscribe" metricsParent="security.antivirus"
 										upperCaseLabel=false btnHeight=true [isDisabled]="isOnline === false"
 										[label]="'security.antivirus.mcafee.subscribe' | translate:{remainingDays: viewModel.mcafee.expireAt}"
