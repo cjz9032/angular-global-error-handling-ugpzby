@@ -1408,7 +1408,7 @@
 					"powerUse": {
 						"title": "Power use",
 						"description": "IF SYSTEM IS IN IDLE:",
-						"turnOffDisplay": "TURN OFF DISPALY AFTER:",
+						"turnOffDisplay": "TURN OFF DISPLAY AFTER:",
 						"turnOffHDD": "TURN OFF HDD AFTER:",
 						"sleep": "SLEEP AFTER:",
 						"hibernate": "HIBERNATE AFTER:",
