@@ -406,7 +406,7 @@ describe('WidgetLegionEdgeComponent', () => {
 		tick(10);
 		fixture.detectChanges();
 		component.toggleOnOffRamOCStatus({ target: { value: true, name: 'gaming.dashboard.device.legionEdge.autoClose' } });
-		expect(component.setAutoCloseStatus).toHaveBeenCalled(); 'gaming.dashboard.device.legionEdge.networkBoost'
+		expect(component.setAutoCloseStatus).toHaveBeenCalled();
 	}));
 
 	it('networkboost on off', fakeAsync(() => {
