@@ -713,8 +713,8 @@
                 "effectName3": "彩虹",
                 "effectName4": "随机",
                 "effectName5": "酷蓝",
-                "effectName6": "向右挥手",
-                "effectName7": "向左挥手"
+                "effectName6": "向左挥手",
+                "effectName7": "向右挥手"
             },
             "lightingSpeed": {
                 "title": "速度"
