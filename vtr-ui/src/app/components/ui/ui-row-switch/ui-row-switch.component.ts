@@ -10,7 +10,8 @@ import {
 	EventEmitter,
 	ElementRef,
 	OnDestroy,
-	NgZone
+	NgZone,
+	SecurityContext
 } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalBatteryChargeThresholdComponent } from '../../modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
@@ -76,8 +77,8 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, OnDes
 	subscriptionList = [];
 
 	constructor(
-		public modalService: NgbModal, 
-		private deviceService: DeviceService, 
+		public modalService: NgbModal,
+		private deviceService: DeviceService,
 		private translate: TranslateService,
 		protected html_sanitizer:DomSanitizer,
 		private ngZone: NgZone
@@ -178,7 +179,7 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, OnDes
 		this.tooltipClick.emit($event);
 	}
     htmlSanitizer(html_content){
-		return this.html_sanitizer.bypassSecurityTrustHtml(html_content);
+		return this.html_sanitizer.bypassSecurityTrustHtml(this.html_sanitizer.sanitize(SecurityContext.HTML, html_content));
 	}
 	checkToolTips() {
 		// console.log('==THROTTLE');
