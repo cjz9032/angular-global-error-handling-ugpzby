@@ -71,7 +71,6 @@ export class DialogService {
 			});
 			return modal;
 		}
-		return;
 	}
 
 	wifiSecurityErrorMessageDialog() {

@@ -1,8 +1,7 @@
 import {
 	Component,
 	OnInit,
-	Input,
-	OnDestroy
+	Input
 } from '@angular/core';
 import {
 	NgbModal
@@ -34,7 +33,7 @@ import { EventTypes } from '@lenovo/tan-client-bridge';
 	templateUrl: './wifi-security.component.html',
 	styleUrls: ['./wifi-security.component.scss']
 })
-export class WifiSecurityComponent extends BaseComponent implements OnInit, OnDestroy {
+export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	@Input() data: WifiHomeViewModel;
 	@Input() switchDisabled = false;
 	isShowMore = true; // less info, more info
@@ -44,11 +43,9 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit, OnDe
 	showMore = false;
 	hasMore: boolean;
 	locatorButtonDisable = false;
-	wsSetStateEventHandler = (res) => {
-		if (res === 'finish') {
-			this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecuritySetState, 'no');
-			this.switchDisabled = false;
-		}
+	wsSetStateFinishEventHandler = () => {
+		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecuritySetState, 'no');
+		this.switchDisabled = false;
 	}
 
 	constructor(
@@ -66,12 +63,8 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit, OnDe
 			this.isShowMore = !this.configService.showCHS;
 		}
 		if (this.data && this.data.wifiSecurity) {
-			this.data.wifiSecurity.on(EventTypes.wsSetStateEvent, this.wsSetStateEventHandler);
+			this.data.wifiSecurity.on(EventTypes.wsSetStateFinishEvent, this.wsSetStateFinishEventHandler);
 		}
-	}
-
-	ngOnDestroy() {
-		this.data.wifiSecurity.off(EventTypes.wsSetStateEvent, this.wsSetStateEventHandler);
 	}
 
 	onToggleChange($event: any) {

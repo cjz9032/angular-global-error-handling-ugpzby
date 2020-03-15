@@ -67,7 +67,15 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 	cardContentPositionB: any = {
 		FeatureImage: 'assets/images/connected-home-security/card-gamestore.png'
 	};
-	devicePostureEventHandler;
+	devicePostureEventHandler = (devicePosture: DevicePosture) => {
+		if (devicePosture && devicePosture.value.length > 0) {
+			const cacheDevicePosture = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture);
+			this.homeSecurityDevicePosture = new HomeSecurityDevicePosture(devicePosture, cacheDevicePosture, this.translateService);
+			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture, {
+				homeDevicePosture: this.homeSecurityDevicePosture.homeDevicePosture
+			});
+		}
+	};
 	chsEventHandler = (chs: ConnectedHomeSecurity) => {
 		if (chs.account) {
 			this.common = new HomeSecurityCommon(chs, this.isOnline, this.dialogService);
@@ -189,7 +197,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
 			}
 		}
-		let cacheDevicePosture = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture);
+		const cacheDevicePosture = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture);
 		if (this.devicePosture && this.devicePosture.value.length > 0) {
 			this.homeSecurityDevicePosture = new HomeSecurityDevicePosture(this.devicePosture, cacheDevicePosture, this.translateService);
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture, {
@@ -205,15 +213,6 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		} else if (cacheLocation) {
 			this.locationPermission = cacheLocation;
 		}
-		this.devicePostureEventHandler = (devicePosture: DevicePosture) => {
-			if (devicePosture && devicePosture.value.length > 0) {
-				cacheDevicePosture = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture);
-				this.homeSecurityDevicePosture = new HomeSecurityDevicePosture(devicePosture, cacheDevicePosture, this.translateService);
-				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture, {
-					homeDevicePosture: this.homeSecurityDevicePosture.homeDevicePosture
-				});
-			}
-		};
 		this.chs.on(EventTypes.chsEvent, this.chsEventHandler);
 		this.chs.on(EventTypes.wsPluginMissingEvent, this.wsPluginMissingEventHandler);
 		this.chs.on(EventTypes.devicePostureEvent, this.devicePostureEventHandler);
