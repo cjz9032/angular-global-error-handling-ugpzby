@@ -3,16 +3,17 @@
 	'border-grey':!checked&&!disabled,
 	'large-width': isLarge,
 	'border-checked-disabled': checked && disabled,
-	'border-disabled': disabled && !checked}" 
-	id="{{'div'+radioId}}" 
+	'border-disabled': disabled && !checked}"
+	id="{{'div'+radioId}}"
 	role="radio"
+	#radioButton
 	[attr.aria-disabled]="disabled"
 	[attr.aria-checked]="checked"
-	attr.aria-label="radioId"
-	[tabIndex]="checked? 0 :-1"
-	(keydown)="onkeyPress($event)">
+	[attr.aria-labelledby]="radioId"
+	[tabIndex]="disabled ?-1:checked? 0 :-1"
+	(keydown)="navigateByKeys($event,radio)">
 	<input id="{{radioId}}"
-		attr.aria-label="{{radioId}}"
+		attr.aria-labelledby="{{radioId}}-title"
 		name="{{group}}"
 		type="radio"
 		[value]="value"
@@ -20,6 +21,7 @@
 		[disabled]="disabled"
 		#radio
 		(click)="onChange(value)"
+		aria-hidden="true"
 		tabindex="-1" />
 	<label for="{{radioId}}"
 		vtrMetrics
@@ -27,16 +29,16 @@
 		[metricsItem]="name"
 		[metricsValue]="value"
 		id="{{radioId}}"
-		attr.aria-label="{{radioId}}">
+		attr.aria-labelledby="{{radioId}}-title">
 		<fa-layers [fixedWidth]="true"
 			class="icon-circle">
 			<fa-icon [icon]="['fal', 'circle']"></fa-icon>
 			<fa-icon [icon]="['fas', 'circle']"
 				transform="shrink-6"
-				*ngIf="checked" class="checked-circle"></fa-icon>
+				*ngIf="checked"
+				class="checked-circle"></fa-icon>
 		</fa-layers>
 		<span class="label"
-			id="{{radioId}}-title"
-			attr.aria-label="{{radioId}}-title">{{label}}</span>
+			id="{{radioId}}-title">{{label}}</span>
 	</label>
 </div>
