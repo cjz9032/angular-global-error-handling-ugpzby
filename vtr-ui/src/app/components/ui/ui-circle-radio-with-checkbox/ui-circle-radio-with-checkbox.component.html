@@ -6,7 +6,7 @@
 	[attr.aria-disabled]="disabled"
 	[attr.aria-checked]="checked"
 	attr.aria-label="radioId"
-	(keydown)="radioKBNavigation($event,radio)"
+	(keydown)="navigateByKeys($event,radio)"
 	[ngClass]="{'white-theme': theme === 'white','blue-theme': theme === 'blue'}">
 	<div class="checkbox">
 		<input class="checkbox-custom"
