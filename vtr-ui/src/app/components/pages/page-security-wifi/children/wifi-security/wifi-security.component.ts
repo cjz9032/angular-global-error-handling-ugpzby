@@ -4,12 +4,8 @@ import {
 	Input
 } from '@angular/core';
 import {
-	NgbModalRef,
 	NgbModal
 } from '@ng-bootstrap/ng-bootstrap';
-import {
-	ModalThreatLocatorComponent
-} from 'src/app/components/modal/modal-threat-locator/modal-threat-locator.component';
 import {
 	WifiHomeViewModel
 } from 'src/app/data-models/security-advisor/wifisecurity.model';
@@ -30,6 +26,7 @@ import {
 } from 'src/app/services/dialog/dialog.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { ConfigService } from 'src/app/services/config/config.service';
+import { EventTypes } from '@lenovo/tan-client-bridge';
 
 @Component({
 	selector: 'wifi-security',
@@ -38,15 +35,18 @@ import { ConfigService } from 'src/app/services/config/config.service';
 })
 export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	@Input() data: WifiHomeViewModel;
+	@Input() switchDisabled = false;
 	isShowMore = true; // less info, more info
 	isShowMoreLink = true; // show more link
 	isWifiSecurityEnabled = true;
 	showAllNetworks = true;
 	showMore = false;
 	hasMore: boolean;
-	switchDisabled = false;
 	locatorButtonDisable = false;
-	cancelClick = false;
+	wsSetStateFinishEventHandler = () => {
+		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecuritySetState, 'no');
+		this.switchDisabled = false;
+	}
 
 	constructor(
 		public modalService: NgbModal,
@@ -62,24 +62,8 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 		if (this.configService) {
 			this.isShowMore = !this.configService.showCHS;
 		}
-		this.data.wifiSecurity.on('cancelClick', () => {
-			this.cancelClick = true;
-		}).on('cancelClickFinish', () => {
-			this.cancelClick = false;
-		});
-	}
-
-	enableWifiSecurity(): void {
 		if (this.data && this.data.wifiSecurity) {
-			this.data.wifiSecurity.enableWifiSecurity().then((res) => {
-				if (res === true) {
-					this.data.isLWSEnabled = true;
-				} else {
-					this.data.isLWSEnabled = false;
-				}
-			}, (error) => {
-				this.dialogService.wifiSecurityLocationDialog(this.data.wifiSecurity);
-			});
+			this.data.wifiSecurity.on(EventTypes.wsSetStateFinishEvent, this.wsSetStateFinishEventHandler);
 		}
 	}
 
@@ -87,29 +71,13 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 		if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage) === true) {
 			this.switchDisabled = true;
 			if (this.data.isLWSEnabled) {
-				this.data.wifiSecurity.disableWifiSecurity().then((res) => {
-					if (res === true) {
-						this.data.isLWSEnabled = false;
-					} else {
-						this.data.isLWSEnabled = true;
-					}
-					this.switchDisabled = false;
-				});
+				this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecuritySetState, 'yes');
+				this.data.wifiSecurity.disableWifiSecurity();
 			} else {
-				this.data.wifiSecurity.enableWifiSecurity().then((res) => {
-						if (res === true) {
-							this.data.isLWSEnabled = true;
-						} else {
-							this.data.isLWSEnabled = false;
-						}
-						this.switchDisabled = false;
-					},
-					(error) => {
-						this.data.isLWSEnabled = false;
-						this.dialogService.wifiSecurityLocationDialog(this.data.wifiSecurity);
-						this.switchDisabled = false;
-					}
-				);
+				this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecuritySetState, 'yes');
+				this.data.wifiSecurity.enableWifiSecurity().catch(() => {
+					this.dialogService.wifiSecurityLocationDialog(this.data.wifiSecurity);
+				});
 			}
 		}
 	}
