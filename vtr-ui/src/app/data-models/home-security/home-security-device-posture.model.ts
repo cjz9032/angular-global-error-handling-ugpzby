@@ -57,8 +57,6 @@ export class HomeSecurityDevicePosture {
 			this.assignValue(devicePostures, item.vulnerable, 5);
 		} else if (config.indexOf('windows') !== -1) {
 			this.assignValue(devicePostures, item.vulnerable, 6);
-		} else if (config.indexOf('uac') !== -1) {
-			this.assignValue(devicePostures, item.vulnerable, 7);
 		}
 	}
 
@@ -79,7 +77,6 @@ export class HomeSecurityDevicePosture {
 			'security.homeprotection.securityhealth.deviceName1',
 			'security.homeprotection.securityhealth.deviceName2',
 			'security.homeprotection.securityhealth.deviceName7',
-			'security.homeprotection.securityhealth.deviceName3',
 		];
 		const devicePostures = titles.map((value) => {
 			this.translate.stream(value).subscribe((res) => {

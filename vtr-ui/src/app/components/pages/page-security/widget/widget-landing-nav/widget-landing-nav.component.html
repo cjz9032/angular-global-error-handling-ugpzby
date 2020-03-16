@@ -2,6 +2,7 @@
 	<a class="nav-item" role="button" href="javascript:void(0)"
 		*ngFor="let featureConfig of featurePagesConfig"
 		[hidden]="!featureConfig.item || featureConfig.item && featureConfig.item.length === 0"
+		id="{{'sa-ov-nav-'+featureConfig.page}}"
 		(click)="changePage(featureConfig.page)"
 		(keydown.enter)="changePage(featureConfig.page)"
 		vtrMetrics

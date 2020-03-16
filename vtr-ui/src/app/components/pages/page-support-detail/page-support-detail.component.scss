@@ -20,9 +20,9 @@
 	.left-container {
 		padding: 2.4rem;
 		.description-container {
-			font-size: $fontsize_xs;
+			font-size: $fontsize_sm;
 			display: block;
-			overflow: auto;
+			overflow-y: auto;
 			color: $grey_dark;
 			font-weight: $weight_light;
 		}

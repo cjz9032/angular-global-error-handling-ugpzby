@@ -56,11 +56,11 @@
 								</div>
 								<div class="col-5 align-items-center text-right sm-device-responsive row flex-wrap-reverse justify-content-end">
 									<vtr-ui-switch-onoff
-										[ngClass]="{'switch-disable': data.isLWSEnabled === undefined || switchDisabled || cancelClick}"
+										[ngClass]="{'switch-disable': data.isLWSEnabled === undefined || switchDisabled}"
 										name="wifisecurity"
 										[value]="data.isLWSEnabled"
 										[onOffSwitchId]="'sa-ws-switch'"
-										[disabled]="data.isLWSEnabled === undefined || switchDisabled || cancelClick"
+										[disabled]="data.isLWSEnabled === undefined || switchDisabled"
 										(toggle)="onToggleChange($event)"></vtr-ui-switch-onoff>
 								</div>
 							</div>
@@ -68,7 +68,7 @@
 					</div>
 					<div *ngIf="data.isLWSEnabled" class="card-history">
 						<vtr-container-collapsible
-							[collapseLinkId]="'wifi-history'"
+							[collapseLinkId]="'sa-ws-lnk'"
 							[cardTitle]="'security.wifisecurity.container.networkHistory' | translate"
 							componentName="wifiHistoriesCollapsible"
 							[isCollapsed]="!isShowMore"

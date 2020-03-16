@@ -56,6 +56,21 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	dashboardStart: any = new Date();
 	public hideTitle = false;
 
+	supportDatas = {
+		documentation: [
+			{
+				icon: ['fal', 'book'],
+				title: 'support.documentation.listUserGuide',
+				clickItem: 'userGuide',
+				metricsItem: 'Documentation.UserGuideButton',
+				metricsEvent: 'FeatureClick',
+				metricsParent: 'Page.Dashboard'
+			}
+		],
+		needHelp: [],
+		quicklinks: [],
+	};
+
 	heroBannerItems = []; // tile A
 	cardContentPositionB: FeatureContent = new FeatureContent();
 	cardContentPositionC: FeatureContent = new FeatureContent();
