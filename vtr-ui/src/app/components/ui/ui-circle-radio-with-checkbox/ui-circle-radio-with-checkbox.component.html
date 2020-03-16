@@ -2,7 +2,7 @@
 	attr.aria-labelledby="{{textId}}-{{value}}-label"
 	#radioButton
 	role="radio"
-	[tabIndex]="checked? 0 :-1"
+	[tabIndex]="disabled ?-1:checked? 0 :-1"
 	[attr.aria-disabled]="disabled"
 	[attr.aria-checked]="checked"
 	attr.aria-label="radioId"

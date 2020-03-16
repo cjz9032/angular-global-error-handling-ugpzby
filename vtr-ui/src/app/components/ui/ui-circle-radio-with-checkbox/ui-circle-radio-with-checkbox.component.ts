@@ -41,7 +41,7 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit, AfterViewInit
 	radioButtons: Array<any> = [];
 	@ViewChild('radioButton', { static: false }) radioButton: ElementRef<HTMLElement>;
 	selectedRadioButton: any;
-	noRadioButtonSelected: boolean;
+	noRadioButtonSelected = true;
 	constructor(private translate: TranslateService, private logger: LoggerService) {
 
 	}
@@ -177,7 +177,7 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit, AfterViewInit
 			this.radioButtons = [];
 			rbs.forEach(radioButton => {
 				this.radioButtons.push(radioButton);
-				if (!this.firstRadioButton) {
+				if (this.firstRadioButton === undefined || !this.firstRadioButton) {
 					this.firstRadioButton = radioButton;
 				}
 				this.lastRadioButton = radioButton;
@@ -188,19 +188,15 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit, AfterViewInit
 				}
 			});
 
-			//focus on first non disabled element if not selected any items
+			//focus on first non disabled element if not selected any radio items
 			if (this.firstRadioButton && this.noRadioButtonSelected) {
 				this.firstRadioButton.tabIndex = 0;
 				this.radioButtons.forEach(element => {
-					if (element != this.firstRadioButton) {
-						element.tabIndex = '0';
-					}
-					else {
-						element.tabindex = -1;
+					if (element !== this.firstRadioButton) {
+						element.tabIndex = -1;
 					}
 				});
-				this.firstRadioButton.focus();
-				// this.setRadioTabIndex(this.firstRadioButton);
+
 			}
 		} catch (error) {
 			this.logger.exception('setRadioButtons error occurred ::', error);
