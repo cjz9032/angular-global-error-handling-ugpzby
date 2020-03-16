@@ -1,13 +1,14 @@
-<div class="vtr-ui-rectangle-radio" [ngClass]="{'border-blue':checked && !disabled, 'border-grey':!checked, 'disabled-class':disabled, 'disabled-grey':checked && disabled}"
+<div class="vtr-ui-rectangle-radio"
+	[ngClass]="{'border-blue':checked && !disabled, 'border-grey':!checked, 'disabled-class':disabled, 'disabled-grey':checked && disabled}"
 	role="radio"
 	id="{{'div' + radioId}}"
-	[tabIndex]="checked? 0 :-1"
+	#radioButton
+	[tabIndex]="disabled ?-1:checked? 0 :-1"
 	[attr.aria-disabled]="disabled"
 	[attr.aria-checked]="checked"
 	attr.aria-label="radioId"
-	(keydown)="emitKeyEvent($event)"
-	>
-		<input id="{{radioId}}"
+	(keydown)="navigateByKeys($event,radio)">
+	<input id="{{radioId}}"
 		[attr.aria-label]="radioId"
 		name="{{group}}"
 		type="radio"
@@ -21,14 +22,14 @@
 		[metricsItem]="'radio.'+label"
 		[metricsValue]="!radio.checked"
 		tabindex="-1"
-		[attr.aria-checked]="checked"
-/>
+		[attr.aria-checked]="checked" />
 	<label for="{{radioId}}">
 
 		<span class="label">{{label}}</span>
 		<span class="{{iconName}} mt-3"></span>
 
-		<span *ngIf="!hideIcon" [ngClass]="'icomoon icomoon-'+getIconName(label)"></span>
+		<span *ngIf="!hideIcon"
+			[ngClass]="'icomoon icomoon-'+getIconName(label)"></span>
 		<!--<fa-icon class="icon"
 			[icon]="['far', 'gem']"></fa-icon>-->
 		<span *ngIf="tooltip"
