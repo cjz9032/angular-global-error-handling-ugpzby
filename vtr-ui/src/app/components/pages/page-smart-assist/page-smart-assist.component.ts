@@ -62,10 +62,12 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	smartAssistCache: SmartAssistCache;
 	public isSuperResolutionLoading = true;
 	public superResolution = new FeatureStatus(false, true);
-	public hsaIntelligentSecurity = new HsaIntelligentSecurityResponse(false, false);
+	public hsaIntelligentSecurity = new HsaIntelligentSecurityResponse(false, false, false);
 	public image = '/assets/images/smart-assist/intelligent-security/HPDv20.png';
 	public zeroTouchLoginShowAdvancedSection = false;
 	public zeroTouchLockShowAdvancedSection = false;
+	public zeroTouchPresenceLeaveDistanceCapability = false;
+	public zeroTouchPresenceLeaveDistanceAutoAdjustCapability = false;
 
 	headerMenuItems: PageAnchorLink[] = [
 		{
@@ -556,6 +558,8 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			if (this.smartAssist.isShellAvailable) {
 				this.smartAssist.getHsaIntelligentSecurityStatus()
 					.then((response: HsaIntelligentSecurityResponse) => {
+						this.zeroTouchPresenceLeaveDistanceAutoAdjustCapability = (response.capability && 0x100) != 0;
+						this.zeroTouchPresenceLeaveDistanceCapability = (response.capability && 0x80) != 0;
 						this.hsaIntelligentSecurity = response;
 					}).catch(error => {
 						this.logger.error('getHsaIntelligentSecurityStatus error: ', error);
@@ -570,12 +574,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		this.hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust = event.switchValue;
 		try {
 			if (this.smartAssist.isShellAvailable) {
-				this.smartAssist.setZeroTouchLockDistanceSensitivityAutoAdjust(event.switchValue)
-					.then((value: boolean) => {
-						this.logger.info('onZeroTouchLockDistanceSensitivityAdjustToggle', value);
-					}).catch(error => {
-						this.logger.error('onZeroTouchLockDistanceSensitivityAdjustToggle error', error);
-					});
+				this.smartAssist.setZeroTouchLockDistanceSensitivityAutoAdjust(event.switchValue);
 			}
 		} catch (error) {
 			this.logger.error('onZeroTouchLockDistanceSensitivityAdjustToggle' + error.message);
@@ -586,12 +585,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		this.hsaIntelligentSecurity.zeroTouchLockDistance = event.value;
 		try {
 			if (this.smartAssist.isShellAvailable) {
-				this.smartAssist.setZeroTouchLockDistanceSensitivity(event.value)
-					.then((value: number) => {
-						this.logger.info('onZeroTouchLockDistanceSensitivity', value);
-					}).catch(error => {
-						this.logger.error('onZeroTouchLockDistanceSensitivity error', error);
-					});
+				this.smartAssist.setZeroTouchLockDistanceSensitivity(event.value);
 			}
 		} catch (error) {
 			this.logger.error('onZeroTouchLockDistanceSensitivity' + error.message);

@@ -422,6 +422,7 @@
 										<div class="pl-5 bold-title no-border-bottom pb-4"
 											*ngIf="zeroTouchLockShowAdvancedSection">
 											<vtr-ui-row-switch [switchId]="'zeroTouchLockDistanceSensitivity'"
+												*ngIf="zeroTouchPresenceLeaveDistanceAutoAdjustCapability"
 												[title]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.title' | translate"
 												[caption]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.caption' | translate"
 												[isSwitchVisible]="true"
@@ -429,22 +430,22 @@
 												[isSwitchChecked]="hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust"
 												(toggleOnOff)="onZeroTouchLockDistanceSensitivityAdjustToggle($event)"
 												[theme]="'white'"
-												[disabled]="!intelligentSecurity.isZeroTouchLockEnabled"
+												[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || !hsaIntelligentSecurity.capacity"
 												[toolTipStatus]='true'
 												[rightIcon]="['far', 'question-circle']">
 											</vtr-ui-row-switch>
 											<div class="slider-note">
 												<vtr-ui-range-slider [rangeSliderId]="'zeroTouchLockDistanceSensitivity'"
 													[manualRefresh]="manualRefresh"
-													*ngIf="!hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust"
+													*ngIf="zeroTouchPresenceLeaveDistanceCapability && !hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust"
 													[minValueLegend]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.options.near' | translate"
-													[minValue]="1"
+													[minValue]="0"
 													[mediumValueLegend]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.options.medium' | translate"												
 													[maxValueLegend]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.options.far' | translate"
-													[maxValue]="3"
+													[maxValue]="2"
 													(sliderChange)="SetZeroTouchLockDistanceSensitivity($event)"
 													[value]="hsaIntelligentSecurity.zeroTouchLockDistance"
-													[enableSlider]="!intelligentSecurity.isZeroTouchLockEnabled"
+													[enableSlider]="!intelligentSecurity.isZeroTouchLockEnabled || !hsaIntelligentSecurity.capacity"
 													vtrMetrics
 													[metricsItem]="'zeroTouchLockDistanceSensitivity'"
 													metricsEvent="featureClick"
