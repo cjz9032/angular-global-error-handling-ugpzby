@@ -8,25 +8,25 @@
                 <h5>
                     {{'device.deviceSettings.power.dpm.powerUse.turnOffDisplay' | translate}}
                 </h5>
-                <vtr-ui-dpm-dropdown [list]="timeItems" [value]="turnoffDisplay"
+                <vtr-ui-dpm-dropdown [label]="'device.deviceSettings.power.dpm.powerUse.turnOffDisplay' | translate" [list]="timeItems" [value]="turnoffDisplay"
                     (change)="onTurnOffDisplayChange($event)" [dropDownId]="'dpm-poweruse-display-dropDown'">
                 </vtr-ui-dpm-dropdown>
                 <h5>
                     {{'device.deviceSettings.power.dpm.powerUse.turnOffHDD' | translate}}
                 </h5>
-                <vtr-ui-dpm-dropdown [list]="timeItems" [value]="turnoffHDD" (change)="onTurnOffHDDChange($event)"
+                <vtr-ui-dpm-dropdown [label]="'device.deviceSettings.power.dpm.powerUse.turnOffHDD' | translate" [list]="timeItems" [value]="turnoffHDD" (change)="onTurnOffHDDChange($event)"
                     [dropDownId]="'dpm-poweruse-hdd-dropDown'">
                 </vtr-ui-dpm-dropdown>
                 <h5>
                     {{'device.deviceSettings.power.dpm.powerUse.sleep' | translate}}
                 </h5>
-                <vtr-ui-dpm-dropdown [list]="timeItems" [value]="sleepAfter" (change)="onSleepChange($event)"
+                <vtr-ui-dpm-dropdown [label]="'device.deviceSettings.power.dpm.powerUse.sleep' | translate" [list]="timeItems" [value]="sleepAfter" (change)="onSleepChange($event)"
                     [dropDownId]="'dpm-poweruse-sleep-dropDown'">
                 </vtr-ui-dpm-dropdown>
                 <h5>
                     {{'device.deviceSettings.power.dpm.powerUse.hibernate' | translate}}
                 </h5>
-                <vtr-ui-dpm-dropdown [list]="timeItems" [value]="hibernateAfter" (change)="onHibernateChange($event)"
+                <vtr-ui-dpm-dropdown [label]="'device.deviceSettings.power.dpm.powerUse.hibernate' | translate" [list]="timeItems" [value]="hibernateAfter" (change)="onHibernateChange($event)"
                     [dropDownId]="'dpm-poweruse-hibernate-dropDown'">
                 </vtr-ui-dpm-dropdown>
             </section>

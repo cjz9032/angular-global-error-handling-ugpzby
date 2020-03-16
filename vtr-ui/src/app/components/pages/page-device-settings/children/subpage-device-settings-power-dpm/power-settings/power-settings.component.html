@@ -9,13 +9,13 @@
 				<h5>
 					{{'device.deviceSettings.power.dpm.globalPowerSettings.powerButton.label' | translate}}
 				</h5>
-				<vtr-ui-dpm-dropdown [list]="powerbutton_actions" [value]="selectAction"
+				<vtr-ui-dpm-dropdown [label]="'device.deviceSettings.power.dpm.globalPowerSettings.powerButton.label' | translate" [list]="powerbutton_actions" [value]="selectAction"
 					(change)="onActionChange($event)" [dropDownId]="'dpm-powersetting-action-dropDown'">
 				</vtr-ui-dpm-dropdown>
 				<h5>
 					{{'device.deviceSettings.power.dpm.globalPowerSettings.requiredSignIn.label' | translate}}
 				</h5>
-				<vtr-ui-dpm-dropdown [list]="signInOptions" [value]="selectedSignInOptionVal"
+				<vtr-ui-dpm-dropdown [label]="'device.deviceSettings.power.dpm.globalPowerSettings.requiredSignIn.label' | translate" [list]="signInOptions" [value]="selectedSignInOptionVal"
 					(change)="onSignInOptionChanged($event)" [dropDownId]="'sign-in-options-dropDown'">
 				</vtr-ui-dpm-dropdown>
 				<div class="note" attr.aria-label="{{'device.deviceSettings.power.dpm.globalPowerSettings.requiredSignIn.tip' | translate}}">{{'device.deviceSettings.power.dpm.globalPowerSettings.requiredSignIn.tip' | translate}}</div>

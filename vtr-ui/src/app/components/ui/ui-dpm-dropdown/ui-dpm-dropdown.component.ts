@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter, SimpleChanges, OnChange
 import { TranslateService } from '@ngx-translate/core';
 import { DropDownInterval } from 'src/app/data-models/common/drop-down-interval.model';
 import { DPMDropDownInterval } from 'src/app/data-models/common/dpm-drop-down-interval.model';
+import { SelectMultipleControlValueAccessor } from '@angular/forms';
 
 @Component({
 	selector: 'vtr-ui-dpm-dropdown',
@@ -11,6 +12,7 @@ import { DPMDropDownInterval } from 'src/app/data-models/common/dpm-drop-down-in
 export class UiDpmDropdownComponent implements OnInit {
 
 	@Input() dropDownId;
+	@Input() label = '';
 	@Input() list: DPMDropDownInterval[];
 	@Input() value: any;
 	@Input() disabled = false;
@@ -20,14 +22,14 @@ export class UiDpmDropdownComponent implements OnInit {
 	constructor(private translate: TranslateService) { }
 
 	ngOnInit() {
-        this.setDropDownValue();
-    }
+		this.setDropDownValue();
+	}
 
 	ngOnChanges(changes: SimpleChanges) {
 		// only run when property "data" changed
 		if (changes['value']) {
-            this.setDropDownValue();
-        }
+			this.setDropDownValue();
+		}
 	}
 
 
@@ -56,7 +58,9 @@ export class UiDpmDropdownComponent implements OnInit {
 		this.value = event.value;
 		this.text = event.text;
 		this.change.emit(event);
-		toggle.focus();
+		setTimeout(() => {
+			toggle.focus();
+		}, 10);
 	}
 
 	public customCamelCase(value: string) {
@@ -71,6 +75,12 @@ export class UiDpmDropdownComponent implements OnInit {
 			return firstWord + secondWord.charAt(0).toUpperCase() + secondWord.slice(1);
 		} else {
 			return value.charAt(0).toUpperCase() + value.slice(1);
+		}
+	}
+
+	public onItemBlur(isLast) {
+		if (isLast) {
+			this.toggle();
 		}
 	}
 }
