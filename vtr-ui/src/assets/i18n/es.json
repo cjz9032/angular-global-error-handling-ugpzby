@@ -876,7 +876,7 @@
                 "tips2": "Deje cualquier comentario adicional a continuación",
                 "emailAddressLabel": "Deje su dirección de correo electrónico si desea que el equipo de Lenovo Vantage se ponga en contacto con usted.",
                 "emailAddress": "Dirección de correo electrónico",
-                "invalidEmailMsg": "Invalid email address"
+                "invalidEmailMsg": "Dirección de correo electrónico no válida"
             }
         },
         "quickSettings": {
@@ -1997,30 +1997,30 @@
             },
             "voice": {
                 "title": "Voz",
-                "description": "Lenovo Voice ayuda a convertir la voz a texto con la función Voz a texto y proporciona traducción en tiempo real de voz a texto con la función Traducción.",
+                "description": "Lenovo Voice convierte la voz en texto con la función Voz a texto y proporciona asistencia de traducción de habla en tiempo real con el Asistente de traducción.",
                 "installBtnText": "Instalar",
                 "launchBtnText": "Inicie",
                 "voiceToText": {
                     "title": "Voz a texto",
-                    "caption": "Esta característica facilita la conversión de la voz a texto."
+                    "caption": "Esta característica proporciona la función de escritura de voz que convierte la voz en texto para una entrada rápida."
                 },
                 "translation": {
                     "title": "Traducción",
-                    "caption": "Esta función proporciona traducción en tiempo real a la voz. El contenido traducido se muestra en textos. Se puede elegir los idiomas de origen y de destino según su necesidad."
+                    "caption": "Esta función proporciona ayuda de traducción en tiempo real de habla y todo lo traducido se mostrará en texto. Hay múltiples idiomas disponibles para el idioma de origen y destino."
                 },
                 "modalPopUp": {
                     "heading": "Comenzar:",
-                    "point1": "Asegúrese de que el icono de Lenovo Voice se muestre en la bandeja del sistema de Windows.",
-                    "point2": "Abra el archivo en el punto en el que desea grabar el texto convertido.",
+                    "point1": "Inicie Lenovo Voice desde el menú Inicio y el icono de Lenovo Voice se visualiza en la bandeja del sistema de Windows.",
+                    "point2": "Abra la aplicación en la que desea escribir texto.",
                     "point3": "Haga clic en el icono de Lenovo Voice en la bandeja de sistema de Windows y seleccionar Voz a texto.",
-                    "point4": "Seleccione su idioma deseado y haga clic en el icono de micrófono para empezar.",
-                    "point5": "Coloque el cursor en el punto desde donde quiere editar y empiece a hablar.",
-                    "point6": "Haga clic en el icono de Lenovo Voice en la bandeja de sistema de Windows y seleccionar Traducir.",
-                    "point7": "Seleccione el idioma origen y el idioma de destino que desee.",
+                    "point4": "Seleccione los idiomas que necesite y haga clic en el icono de micrófono para empezar.",
+                    "point5": "Coloque el cursor en la aplicación y empiece a hablar.",
+                    "point6": "Haga clic en el icono de Lenovo Voice en la bandeja de sistema de Windows y seleccionar Traducción.",
+                    "point7": "Seleccione el idioma origen y el idioma de destino.",
                     "point8": "En función de sus necesidades, establezca la entrada de voz de altavoz o del micrófono.",
-                    "point9": "Haga clic en el icono de micrófono para empezar a hablar",
+                    "point9": "Haga clic en el icono de micrófono para empezar a hablar.",
                     "closeText": "cerrar",
-                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
+                    "point10": "Asegúrese de que el icono de Lenovo Voice se muestre en la bandeja del sistema de Windows."
                 },
                 "modalInstallationFailed": {
                     "btnText": "aceptar",

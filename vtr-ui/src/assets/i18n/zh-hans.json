@@ -876,7 +876,7 @@
                 "tips2": "如有任何其他意见，请在下面提出",
                 "emailAddressLabel": "如果您想与 Lenovo Vantage 团队联系，请留下您的电子邮件地址。",
                 "emailAddress": "电子邮件地址",
-                "invalidEmailMsg": "Invalid email address"
+                "invalidEmailMsg": "电子邮件地址无效"
             }
         },
         "quickSettings": {
@@ -1997,30 +1997,30 @@
             },
             "voice": {
                 "title": "语音",
-                "description": "联想语音可通过语音转文本功能帮助您将语音转换为文本，并通过翻译功能提供从语音到文本的实时翻译。",
+                "description": "联想语音可通过语音转文本功能将语音转换为文本，并通过翻译助手功能提供实时语音翻译帮助。",
                 "installBtnText": "安装",
                 "launchBtnText": "启动",
                 "voiceToText": {
                     "title": "语音转文本",
-                    "caption": "此功能有助于将语音转换为文本。"
+                    "caption": "此功能提供语音键入功能，可将语音转换为文本以实现快速输入。"
                 },
                 "translation": {
                     "title": "翻译",
-                    "caption": "此功能提供对语音的实时翻译。译文以文本形式显示。您可以根据需要选择源语言和目标语言。"
+                    "caption": "此功能提供语音的实时翻译帮助，所有翻译的内容都将以文本形式显示。源语言和目标语言涵盖多种语言。"
                 },
                 "modalPopUp": {
                     "heading": "如何开始使用：",
-                    "point1": "确保 Windows 系统托盘中显示联想语音图标。",
-                    "point2": "打开要记录转换文本的文件。",
+                    "point1": "从“开始”菜单中启动联想语音，联想语音图标将显示在 Windows 系统托盘中。",
+                    "point2": "打开要在其中键入文本的应用程序。",
                     "point3": "单击 Windows 系统托盘中的联想语音图标，然后选择语音转文本。",
-                    "point4": "选择所需的语言，然后单击麦克风图标开始。",
-                    "point5": "将光标放在要编辑的位置并开始说话。",
-                    "point6": "单击 Windows 系统托盘中的联想语音图标，然后选择翻译。",
-                    "point7": "选择所需的源语言和目标语言。",
+                    "point4": "选择您需要的语言，然后单击麦克风图标开始。",
+                    "point5": "将光标放在应用程序中，然后开始讲话。",
+                    "point6": "单击 Windows 系统托盘中的联想语音图标，然后选择“翻译”。",
+                    "point7": "选择源语言和目标语言。",
                     "point8": "根据您的需要，从扬声器或麦克风处设置语音输入。",
-                    "point9": "单击麦克风图标开始说话",
+                    "point9": "单击麦克风图标开始说话。",
                     "closeText": "关闭",
-                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
+                    "point10": "确保 Windows 系统托盘中显示联想语音图标。"
                 },
                 "modalInstallationFailed": {
                     "btnText": "确定",

@@ -876,7 +876,7 @@
                 "tips2": "Ha van további megjegyzése, írja le alább.",
                 "emailAddressLabel": "Ha szeretné, hogy a Lenovo Vantage csapata felvehesse Önnel a kapcsolatot, adja meg az e-mail-címét.",
                 "emailAddress": "E-mail-cím",
-                "invalidEmailMsg": "Invalid email address"
+                "invalidEmailMsg": "Érvénytelen e-mail-cím"
             }
         },
         "quickSettings": {
@@ -1997,30 +1997,30 @@
             },
             "voice": {
                 "title": "Hang",
-                "description": "A Lenovo Voice „Hang szöveggé” funkciójával szöveggé alakíthatja át a hangot. A Fordítás funkció valós időben biztosít a hang szöveggé alakításával.",
+                "description": "A Lenovo Voice „Hang szöveggé” funkciójával írott szöveggé alakíthatja a diktált tartalmakat, a Translation Assistant segítségével pedig valós időben lefordíthatja a beszédhangot.",
                 "installBtnText": "Telepítse",
                 "launchBtnText": "Indítás",
                 "voiceToText": {
                     "title": "Hang szöveggé",
-                    "caption": "A funkcióval szöveggé alakítható a hangos bevitel."
+                    "caption": "Ezzel a funkcióval a hangjával gépelhet: a rendszer képes írott szöveggé alakítani a diktált tartalmakat, így gyorsabban beviheti őket a gépbe."
                 },
                 "translation": {
                     "title": "Fordítás",
-                    "caption": "A funkció a hang valós idejű fordítását biztosítja. A lefordított tartalom szövegként jelenik meg. A forrás- és a célnyelvet igény szerint választhatja ki."
+                    "caption": "A funkcióhoz valós idejű fordítási támogatás is tartozik, a lefordított szöveg egyből írásos formában jelenik meg. Több különböző forrás- és célnyelv érhető el."
                 },
                 "modalPopUp": {
                     "heading": "Kezdő lépések:",
-                    "point1": "Győződjön meg arról, hogy a Lenovo Voice ikonja látható a Windows tálcáján.",
-                    "point2": "Nyissa meg azt a fájlt, amelybe rögzíteni szeretné a konvertált szöveget.",
+                    "point1": "Indítsa el a Lenovo Voice funkciót a Start menüből. Ezt követően a Lenovo Voice ikonja meg fog jelenni a Windows tálcáján.",
+                    "point2": "Nyissa meg az alkalmazást, amelybe szeretne szöveget bevinni.",
                     "point3": "Kattintson a Lenovo Voice ikonjára a Windows tálcáján, és válassza a Hang szöveggé parancsot.",
-                    "point4": "Válassza ki a kívánt nyelvet, és a kezdéshez kattintson a mikrofon ikonra.",
-                    "point5": "Vigye a kurzort a szerkesztés helyére, és kezdjen beszélni.",
+                    "point4": "Válassza ki a kívánt nyelveket, és a kezdéshez kattintson a mikrofon ikonra.",
+                    "point5": "Vigye a kurzort az alkalmazásba, majd kezdjen el beszélni.",
                     "point6": "Kattintson a Lenovo Voice ikonjára a Windows tálcáján, és válassza a Fordítás parancsot.",
                     "point7": "Válassza ki a forrásnyelvet és a célnyelvet.",
                     "point8": "Szükség szerint állítsa be a hangbemenetet (Hangszóró vagy Mikrofon).",
-                    "point9": "Kattintson a mikrofon ikonra, és kezdjen beszélni",
+                    "point9": "Kattintson a mikrofon ikonra, és kezdjen beszélni-",
                     "closeText": "bezárás",
-                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
+                    "point10": "Győződjön meg arról, hogy a Lenovo Voice ikonja látható a Windows tálcáján."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",

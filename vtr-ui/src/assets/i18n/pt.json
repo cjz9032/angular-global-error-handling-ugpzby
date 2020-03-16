@@ -876,7 +876,7 @@
                 "tips2": "Forneça quaisquer comentários adicionais abaixo",
                 "emailAddressLabel": "Introduza o seu endereço de e-mail se pretende ser contactado pela equipa do Lenovo Vantage.",
                 "emailAddress": "Endereço de correio eletrónico",
-                "invalidEmailMsg": "Invalid email address"
+                "invalidEmailMsg": "Endereço de correio eletrónico inválido"
             }
         },
         "quickSettings": {
@@ -1997,30 +1997,30 @@
             },
             "voice": {
                 "title": "Voz",
-                "description": "O Lenovo Voice ajuda a converter a sua voz em texto através da função Voz em texto e fornece tradução em tempo real da voz para o texto com a função de Tradução.",
+                "description": "A Lenovo Voice converte a sua voz em texto com o Voice to Text e fornece assistência de tradução de voz em tempo real com o assistente de tradução.",
                 "installBtnText": "Instalar",
                 "launchBtnText": "Iniciar",
                 "voiceToText": {
                     "title": "Voz em texto",
-                    "caption": "Esta funcionalidade ajuda a converter a sua voz em texto."
+                    "caption": "Este recurso oferece a função de digitação por voz que converte a voz em texto para uma rápida introdução."
                 },
                 "translation": {
                     "title": "Tradução",
-                    "caption": "Esta função fornece tradução em tempo real da voz. Os conteúdos traduzidos são apresentados em formato de texto. Pode escolher os idiomas de origem e os idiomas de destino de acordo com as suas necessidades."
+                    "caption": "Este recurso fornece assistência de tradução em tempo real de discursos e todas as traduções serão mostradas em texto. Estão disponíveis vários idiomas para o idioma de origem e de destino."
                 },
                 "modalPopUp": {
                     "heading": "Para começar:",
-                    "point1": "Certifique-se de que o ícone do Lenovo Voice é apresentado no tabuleiro do sistema do Windows.",
-                    "point2": "Abra o ficheiro onde pretende gravar o texto convertido.",
+                    "point1": "Inicie o Lenovo Voice no menu Iniciar e o ícone do Lenovo Voice é exibido no tabuleiro do sistema do Windows.",
+                    "point2": "Abra a aplicação onde pretende introduzir o texto.",
                     "point3": "Clique no ícone do Lenovo Voice no tabuleiro do sistema do Windows e selecione Voz em texto.",
-                    "point4": "Selecione o idioma pretendido e clique no ícone de microfone para começar.",
-                    "point5": "Coloque o cursor onde pretende editar e comece a falar.",
-                    "point6": "Clique no ícone do Lenovo Voice no tabuleiro do sistema do Windows e selecione Traduzir.",
+                    "point4": "Selecione os idiomas de acordo com a sua necessidade e clique no ícone de microfone para começar.",
+                    "point5": "Coloque o cursor na aplicação e comece a falar.",
+                    "point6": "Clique no ícone do Lenovo Voice no tabuleiro do sistema do Windows e selecione Tradução.",
                     "point7": "Selecione os idiomas de origem e destino pretendidos.",
                     "point8": "Dependendo das suas necessidades, defina a entrada de voz da Coluna ou do Microfone.",
-                    "point9": "Clique no ícone de microfone para começar a falar",
+                    "point9": "Clique no ícone de microfone para começar a falar.",
                     "closeText": "fechar",
-                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
+                    "point10": "Certifique-se de que o ícone do Lenovo Voice é apresentado no tabuleiro do sistema do Windows."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",

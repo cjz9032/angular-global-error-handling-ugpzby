@@ -876,7 +876,7 @@
                 "tips2": "Ostavite dodatne komentare u nastavku",
                 "emailAddressLabel": "Ostavite svoju e-adresu ako biste želeli da vas kontaktira Lenovo Vantage tim.",
                 "emailAddress": "Adresa e-pošte",
-                "invalidEmailMsg": "Invalid email address"
+                "invalidEmailMsg": "Nevažeća adrese e-pošte"
             }
         },
         "quickSettings": {
@@ -1997,30 +1997,30 @@
             },
             "voice": {
                 "title": "Glas",
-                "description": "Lenovo Voice pomaže da konvertujete glas u tekst pomoću funkcije Glasa u tekst i pomoću funkcije Prevod obezbeđuje prevod iz glasa u tekst u realnom vremenu.",
+                "description": "Lenovo Voice konvertuje glas u tekst pomoću funkcije Glas u tekst a pomoću funkcije Pomoćnik za prevod pruža pomoć u prevodu govora u realnom vremenu.",
                 "installBtnText": "Instaliraj",
                 "launchBtnText": "Pokreni",
                 "voiceToText": {
                     "title": "Glas u tekst",
-                    "caption": "Ova funkcija vam pomaže da konvertujete glas u tekst."
+                    "caption": "Ova funkcija obezbeđuje funkciju kucanje govora koja konvertuje glas u tekst radi brzog unosa."
                 },
                 "translation": {
                     "title": "Prevod",
-                    "caption": "Ova funkcija obezbeđuje prevod u realnom vremenu za glas. Prevedeni sadržaj je prikazan kao tekst. Možete da odaberete izvorni i ciljni jezik prema vašim potrebama."
+                    "caption": "Ova funkcija pruža pomoć u prevodu govora u realnom vremenu i sve što je prevedeno biće prikazano u tekstu. Za izvorni i ciljni jezik dostupno je više jezika."
                 },
                 "modalPopUp": {
                     "heading": "Prvi koraci:",
-                    "point1": "Uverite se da je ikona Lenovo Voice prikazana u Windows sistemskoj paleti.",
-                    "point2": "Otvorite datoteku gde želite da snimite konvertovani tekst.",
+                    "point1": "Pokrenite Lenovo Voice iz menija Start i ikona Lenovo Voice se prikazuje na Windows sistemskoj paleti.",
+                    "point2": "Otvorite aplikaciju u kojoj želite da kucate tekst.",
                     "point3": "Kliknite na ikonu Lenovo Voice u Windows sistemskoj paleti i izaberite Voice to text (Glas u tekst).",
-                    "point4": "Izaberite željeni jezik i kliknite na ikonu mikrofona za početak.",
-                    "point5": "Stavite kursor gde želite da uredite i počnite da govorite.",
-                    "point6": "Kliknite na ikonu Lenovo Voice u Windows sistemskoj paleti i izaberite Translate (Prevedi).",
-                    "point7": "Izaberite željeni izvorni i ciljni jezik.",
-                    "point8": "U zavisnosti od vaših potreba, podesite unos glasa sa Zvučnika ili Mikrofona.",
-                    "point9": "Kliknite na ikonu mikrofona da biste započeli sa govorom",
+                    "point4": "Izaberite jezike prema svojoj potrebi i kliknite na ikonu mikrofona za početak.",
+                    "point5": "Postavite kursor u aplikaciju i počnite da govorite.",
+                    "point6": "Kliknite na ikonu Lenovo Voice u Windows sistemskoj paleti i izaberite Translation (Prevod).",
+                    "point7": "Izaberite izvorni i ciljni jezik.",
+                    "point8": "U zavisnosti od vaše potrebe, podesite unos glasa sa Zvučnika ili Mikrofona.",
+                    "point9": "Kliknite na ikonu mikrofona da biste započeli sa govorom.",
                     "closeText": "zatvori",
-                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
+                    "point10": "Uverite se da je ikona Lenovo Voice prikazana u Windows sistemskoj paleti."
                 },
                 "modalInstallationFailed": {
                     "btnText": "u redu",

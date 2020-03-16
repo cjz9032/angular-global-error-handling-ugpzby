@@ -876,7 +876,7 @@
                 "tips2": "Wprowadź dodatkowe komentarze poniżej",
                 "emailAddressLabel": "Podaj adres e-mail, jeśli chcesz, aby zespół ds. aplikacji Lenovo Vantage mógł się z Tobą kontaktować.",
                 "emailAddress": "Adres e-mail",
-                "invalidEmailMsg": "Invalid email address"
+                "invalidEmailMsg": "Niepoprawny adres e-mail"
             }
         },
         "quickSettings": {
@@ -1997,30 +1997,30 @@
             },
             "voice": {
                 "title": "Głos",
-                "description": "Funkcja Lenovo Voice pomaga przekształcić Twój głos na tekst za pomocą funkcji Głos na tekst i zapewnia tłumaczenie w czasie rzeczywistym z głosu na tekst za pomocą funkcji tłumaczenia.",
+                "description": "Funkcja Lenovo Voice przekształca Twój głos na tekst za pomocą funkcji Głos na tekst i zapewnia Ci pomoc w postaci tłumaczenia w czasie rzeczywistym dostarczanego przez funkcję Translation Assistant.",
                 "installBtnText": "Zainstaluj",
                 "launchBtnText": "Uruchom",
                 "voiceToText": {
                     "title": "Głos na tekst",
-                    "caption": "Ta funkcja pomaga przekształcić Twój głos na tekst."
+                    "caption": "Ta funkcja przekształcająca głos na tekst umożliwia szybkie głosowe wprowadzanie treści."
                 },
                 "translation": {
                     "title": "Tłumaczenie",
-                    "caption": "Ta funkcja zapewnia tłumaczenie głosu w czasie rzeczywistym. Przetłumaczone treści są wyświetlane jako tekst. Możesz wybrać języki źródłowe i docelowe zgodnie z własnymi potrzebami."
+                    "caption": "Ta funkcja tłumaczy mowę w czasie rzeczywistym i wyświetla całe tłumaczenie w postaci tekstowej. Dostępnych jest wiele języków źródłowych i docelowych."
                 },
                 "modalPopUp": {
                     "heading": "Rozpocznij:",
-                    "point1": "Upewnij się, że ikona funkcji Lenovo Voice jest wyświetlana na pasku zadań systemu Windows.",
-                    "point2": "Otwórz plik, w którym chcesz nagrać przekonwertowany tekst.",
+                    "point1": "Po uruchomieniu Lenovo Voice z menu Start ikona Lenovo Voice będzie widoczna na pasku zadań systemu Windows.",
+                    "point2": "Otwórz aplikację, w której chcesz wpisać tekst.",
                     "point3": "Kliknij ikonę funkcji Lenovo Voice na pasku zadań systemu Windows i wybierz opcję Głos na tekst.",
-                    "point4": "Wybierz żądany język i kliknij ikonę mikrofonu, aby rozpocząć.",
-                    "point5": "Umieść kursor w miejscu, w którym chcesz edytować i zacznij mówić.",
-                    "point6": "Kliknij ikonę funkcji Lenovo Voice na pasku zadań systemu Windows i wybierz opcję Tłumacz.",
-                    "point7": "Wybierz żądany język źródłowy oraz docelowy.",
-                    "point8": "W zależności od potrzeb ustaw wejście głosowe z głośnika lub z mikrofonu.",
-                    "point9": "Kliknij ikonę mikrofonu, aby zacząć mówić",
+                    "point4": "Wybierz żądane języki i kliknij ikonę mikrofonu, aby rozpocząć.",
+                    "point5": "Umieść kursor w aplikacji i zacznij mówić.",
+                    "point6": "Kliknij ikonę funkcji Lenovo Voice na pasku zadań systemu Windows i wybierz opcję Tłumaczenie.",
+                    "point7": "Wybierz język źródłowy i język docelowy.",
+                    "point8": "W zależności od potrzeb wybierz głośnik lub mikrofon jako wejście głosowe.",
+                    "point9": "Kliknij ikonę mikrofonu i zacznij mówić.",
                     "closeText": "zamknij",
-                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
+                    "point10": "Upewnij się, że ikona funkcji Lenovo Voice jest wyświetlana na pasku zadań systemu Windows."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
