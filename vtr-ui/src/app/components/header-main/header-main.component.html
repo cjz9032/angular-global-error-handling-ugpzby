@@ -21,7 +21,6 @@
 		<h1 class="title"
 			id="{{textId}}-header-title"
 			attr.aria-label="{{title}}"
-			role="text"
 			*ngIf="!hideTitle"
 			[innerHTML]="title"></h1>
 		<div class="welcomeText-placeholder"
@@ -29,8 +28,7 @@
 		<ng-content></ng-content>
 		<div *ngIf="forwardLink"
 			class="forward-link">
-			<a routerLink="/{{forwardLink.path}}"><span role="text"
-					class="forward-link-label">{{forwardLink.label}}</span>
+			<a routerLink="/{{forwardLink.path}}"><span class="forward-link-label">{{forwardLink.label}}</span>
 				<fa-icon [icon]="['fas', 'arrow-right']"
 					class="forward-link-icon"></fa-icon>
 			</a>

@@ -22,7 +22,6 @@
 								(toggleOnOff)="onIntelligentCoolingToggle($event)">
 								<div class="alignment pl-5">
 									<div class="well ml-2"
-										role="text"
 										id="power.powerSmartSettings.intelligentCooling.apsHint"
 										attr.aria-label="power.powerSmartSettings.intelligentCooling.apsHint"
 										*ngIf="showIC===3 && !apsStatus">
@@ -30,7 +29,6 @@
 									</div>
 									<div *ngIf="showIC===3 && isShowIntelligentCoolingModes()"
 										class="optimize"
-										role="text"
 										id="power.powerSmartSettings.intelligentCooling.optimize"
 										attr.aria-label="power.powerSmartSettings.intelligentCooling.optimize">
 										{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.optimize' | translate | uppercase }}
@@ -83,7 +81,6 @@
 									<div class="well ml-2"
 										id="powerSmartSettings-maximum-system-protection-note"
 										attr.aria-label="powerSmartSettings-maximum-system-protection-note"
-										role="text"
 										*ngIf="showIC===14">
 										{{ selectedModeText }}
 									</div>
@@ -111,14 +108,12 @@
 							<span [ngClass]="'icomoon icomoon-ic'"></span>
 						</div>
 						<div class="col text-wrap subtitle">
-							<h3 role="text"
-								id="powerSmartSettings.intelligentCooling.title"
+							<h3 id="powerSmartSettings.intelligentCooling.title"
 								attr.aria-label="powerSmartSettings.intelligentCooling.title">
 								<!-- Intelligent Cooling  -->
 								{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.title' | translate}}
 							</h3>
-							<p role="text"
-								id="powerSmartSettings.description"
+							<p id="powerSmartSettings.description"
 								attr.aria-label="powerSmartSettings.description">
 								{{'device.deviceSettings.power.powerSmartSettings.description5' | translate}}
 								<a class="read-more-link"
@@ -135,32 +130,24 @@
 							</p>
 							<div style="display:none"
 								id="readMoreDiv"
-								role="text"
 								#readMoreDiv>
-								<p id="readMoreMode1"
-									role="text">
-									<span role="text"
-										class="cooling-modes"
+								<p id="readMoreMode1">
+									<span class="cooling-modes"
 										id="{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode1' | translate}}">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode1' | translate}}:</span>
 									{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line1' | translate}}
 								</p>
-								<p role="text"
-									id="readMoreMode2">
-									<span role="text"
-										class="cooling-modes"
+								<p id="readMoreMode2">
+									<span class="cooling-modes"
 										id="{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode2' | translate}}">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode2' | translate}}:</span>
 									{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line2' | translate}}
 								</p>
-								<p id="readMoreMode3"
-									role="text">
-									<span role="text"
-										class="cooling-modes"
+								<p id="readMoreMode3">
+									<span class="cooling-modes"
 										id="{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode3' | translate}}">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode3' | translate}}:</span>
 									{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line3' | translate}}
 								</p>
 							</div>
-							<p role="text"
-								class="text-right more-info">
+							<p class="text-right more-info">
 								<!-- Do not need to add keydown.enter event handling for modal dialogue default will work without event handling provided the link is button , a href keyboard support will not work-->
 								<button alt=""
 									class="more-info-button"
@@ -193,19 +180,16 @@
 							<span [ngClass]="'icomoon icomoon-ic'"></span>
 						</div>
 						<div class="col text-wrap subtitle">
-							<h3 role="text"
-								id="powersmartsettings-intelligentCooling-title"
+							<h3 id="powersmartsettings-intelligentCooling-title"
 								attr.aria-label="powersmartsettings-intelligentCooling-title">
 								<!-- Intelligent Cooling  -->
 								{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.title' | translate}}
 							</h3>
-							<p role="text"
-								id="powersmartsettings-dytc6-dec1"
+							<p id="powersmartsettings-dytc6-dec1"
 								attr.aria-label="powersmartsettings-dytc6-dec1">
 								{{'device.deviceSettings.power.powerSmartSettings.dytc6.desc1' | translate}}
 							</p>
-							<p role="text"
-								id="powersmartsettings-dytc6-dec2"
+							<p id="powersmartsettings-dytc6-dec2"
 								attr.aria-label="powersmartsettings-dytc6-dec2">
 								{{'device.deviceSettings.power.powerSmartSettings.dytc6.desc2' | translate}}
 							</p>
@@ -219,41 +203,32 @@
 								</div>
 							</div>
 							<p *ngIf="dytc6IsAutoModeSupported && (dytc6Mode === 'autoMode')"
-								role="text"
 								id="powersmartsettings-dytc6-dec3_1"
 								attr.aria-label="powersmartsettings-dytc6-dec3_1">
 								{{'device.deviceSettings.power.powerSmartSettings.dytc6.desc3_1' | translate}}
 							</p>
 							<p *ngIf="dytc6IsAutoModeSupported && (dytc6Mode === 'manualMode')"
-								role="text"
 								id="powersmartsettings-dytc6-dec3"
 								attr.aria-label="powersmartsettings-dytc6-dec3">
 								{{'device.deviceSettings.power.powerSmartSettings.dytc6.desc3' | translate}}
 							</p>
 							<div *ngIf="isCollapsed"
-								id="readMoreDytc6"
-								role="text">
+								id="readMoreDytc6">
 								<p id="readMoreDytc6Mode1"
-									attr.aria-label="readMoreDytc6Mode1"
-									role="text">
-									<span role="text"
-										class="cooling-modes">
+									attr.aria-label="readMoreDytc6Mode1">
+									<span class="cooling-modes">
 										{{"device.deviceSettings.power.powerSmartSettings.dytc6." + dytc6Mode + ".title1" | translate}}:
 									</span>
 									{{"device.deviceSettings.power.powerSmartSettings.dytc6." + dytc6Mode + ".desc1" | translate}}
 								</p>
-								<p id="readMoreDytc6Mode2"
-									role="text">
-									<span role="text"
-										class="cooling-modes">
+								<p id="readMoreDytc6Mode2">
+									<span class="cooling-modes">
 										{{"device.deviceSettings.power.powerSmartSettings.dytc6." + dytc6Mode + ".title2" | translate}}:
 									</span>
 									{{"device.deviceSettings.power.powerSmartSettings.dytc6." + dytc6Mode + ".desc2" | translate}}
 								</p>
-								<p id="readMoreDytc6Mode3"
-									role="text">
-									<span role="text"
-										class="cooling-modes">
+								<p id="readMoreDytc6Mode3">
+									<span class="cooling-modes">
 										{{"device.deviceSettings.power.powerSmartSettings.dytc6." + dytc6Mode + ".title3" | translate}}:
 									</span>
 									{{"device.deviceSettings.power.powerSmartSettings.dytc6." + dytc6Mode + ".desc3" | translate}}

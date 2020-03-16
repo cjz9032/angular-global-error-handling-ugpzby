@@ -5,7 +5,6 @@
 				<div class="title">{{'systemUpdates.title' | translate}}</div>
 				<div class="description"
 					id="widget-system-update-description"
-					role="text"
 					[dir]="'dir' | translate"
 					[innerHTML]="'dashboard.systemUpdate.subtitle' | translate"></div>
 				<div class="button-box">
@@ -13,8 +12,8 @@
 						metricsEvent="FeatureClick"
 						metricsItem="CheckForSystemUpdatesButton"
 						buttonColor="gray"
-            [isFullWidth]="true"
-            (onClick)="gotoAndCheckSystemUpdate()"
+						[isFullWidth]="true"
+						(onClick)="gotoAndCheckSystemUpdate()"
 						[label]="'dashboard.systemUpdate.checkForSystemUpdates' | translate"></vtr-ui-button>
 				</div>
 			</div>

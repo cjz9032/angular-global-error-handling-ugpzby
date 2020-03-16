@@ -49,15 +49,13 @@
 		<div class="navbar-text clearfix">
 			<span *ngIf="configService.appBrand && configService.appName">
 				<div class="app-title">{{configService.appBrand}}
-					<span role="text"
-						class="app-name">{{configService.appName}}</span>
+					<span class="app-name">{{configService.appName}}</span>
 				</div>
 			</span>
 			<span>
 				<div class="device-type">
 					<span *ngIf="!machineFamilyName">&nbsp;</span>
-					<span role="text"
-						*ngIf="machineFamilyName">{{machineFamilyName}}</span>
+					<span *ngIf="machineFamilyName">{{machineFamilyName}}</span>
 					<vtr-ui-header-warranty *ngIf="machineFamilyName"
 						[pageParent]="'NavBar'"></vtr-ui-header-warranty>
 				</div>
@@ -76,8 +74,7 @@
 			</span>
 			<!-- <fa-icon [icon]="['fas', 'bars']">
 					</fa-icon> -->
-			<span role="text"
-				class="unread-count-tag"
+			<span class="unread-count-tag"
 				*ngIf="appsForYouService.UnreadMessageCount.totalMessage">{{appsForYouService.UnreadMessageCount.totalMessage}}</span>
 		</a>
 		<div class="collapse navbar-collapse"

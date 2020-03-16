@@ -91,8 +91,7 @@
 													</fa-icon>
 												</div> -->
 															<div class="col">
-																<p id="smart-assist-intelligent-security-note"
-																	role="text">
+																<p id="smart-assist-intelligent-security-note">
 																	{{'device.smartAssist.intelligentSecurity.note.description1' | translate}}
 																	<a id="goto_hello_link"
 																		role="link"
@@ -174,8 +173,7 @@
 													</fa-icon>
 												</div> -->
 															<div class="col">
-																<p id="smart-assist-intelligent-security-note"
-																	role="text">
+																<p id="smart-assist-intelligent-security-note">
 																	{{'device.smartAssist.intelligentSecurity.note.description1' | translate}}
 																	<a (click)="launchFaceEnrollment()"
 																		id="thinkpad_goto_hello_link"
@@ -210,13 +208,11 @@
 											[disabled]="!intelligentSecurity.isHPDEnabled">
 											<div class="row fac-control">
 												<div class="col mt-10 facial-recognition"
-													role="text"
 													*ngIf="intelligentSecurity.isZeroTouchLockFacialRecoVisible">
 													<h3 id="smart-assist-zero-touch-lock-faical-recognition-title mt-2">
 														{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.title' | translate}}
 													</h3>
 													<p id="smart-assist-zero-touch-lock-faical-recognition-desc"
-														role="text"
 														attr-aria-label="smart-assist-zero-touch-lock-faical-recognition-desc">
 														{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.caption' | translate}}
 													</p>
@@ -234,11 +230,9 @@
 														class="permission-note p-4">
 														<div class="row">
 															<div *ngIf="!intelligentSecurity.facilRecognitionCameraAccess"
-																class="col pr-3"
-																role="text">
+																class="col pr-3">
 																<span class="mb-0 mt-auto"
-																	id="ztl-facial-recognition-permission-note"
-																	role="text">
+																	id="ztl-facial-recognition-permission-note">
 																	{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.note.permission' | translate}}
 																</span>
 																<button type="button"
@@ -254,11 +248,9 @@
 																</button>
 															</div>
 															<div class="col pl-3"
-																role="text"
 																*ngIf="intelligentSecurity.facilRecognitionCameraAccess && intelligentSecurity.facialRecognitionCameraPrivacyMode">
 																<span class="mb-0 mt-auto"
-																	id="ztl-facial-recognition-privacy-note"
-																	role="text">
+																	id="ztl-facial-recognition-privacy-note">
 																	{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.note.privacyMode' | translate}}
 																</span>
 																<button type="button"
@@ -310,8 +302,7 @@
 													<div class="feature-note p-4">
 														<div class="row blur">
 															<div class="col">
-																<p id="smart-assist-intelligent-security-note"
-																	role="text">
+																<p id="smart-assist-intelligent-security-note">
 																	{{'device.smartAssist.intelligentSecurity.note.description7' | translate}}
 																</p>
 															</div>
@@ -366,8 +357,7 @@
 													<div class="feature-note p-4">
 														<div class="row blur">
 															<div class="col">
-																<p id="smart-assist-zeroTouchLock-note"
-																	role="text">
+																<p id="smart-assist-zeroTouchLock-note">
 																	{{'device.smartAssist.intelligentSecurity.note.description2' | translate}}
 																</p>
 															</div>
@@ -379,22 +369,17 @@
 									</li>
 								</ul>
 								<div class="row">
-									<div class="feature-note p-4 my-4 mx-3"
-										role="text">
-										<p id="smart-assist-intelligent-security-note-desc1"
-											role="text">
+									<div class="feature-note p-4 my-4 mx-3">
+										<p id="smart-assist-intelligent-security-note-desc1">
 											{{'device.smartAssist.intelligentSecurity.note.description3' | translate}}
 										</p>
-										<p id="smart-assist-intelligent-security-note-desc2"
-											role="text">
+										<p id="smart-assist-intelligent-security-note-desc2">
 											{{'device.smartAssist.intelligentSecurity.note.description4' | translate}}
 										</p>
-										<p id="smart-assist-intelligent-security-note-desc3"
-											role="text">
+										<p id="smart-assist-intelligent-security-note-desc3">
 											{{'device.smartAssist.intelligentSecurity.note.description5' | translate}}
 										</p>
-										<p role="text"
-											*ngIf="isThinkPad && intelligentSecurity.isZeroTouchLoginVisible && intelligentSecurity.isZeroTouchLockVisible && (hpdSensorType == 2)"
+										<p *ngIf="isThinkPad && intelligentSecurity.isZeroTouchLoginVisible && intelligentSecurity.isZeroTouchLockVisible && (hpdSensorType == 2)"
 											id="smart-assist-intelligent-security-note-desc4">
 											{{'device.smartAssist.intelligentSecurity.note.description6' | translate}}
 										</p>
@@ -430,10 +415,8 @@
 
 								<div class="intligent-screen">
 									<div class="col-12 px-0">
-										<div class="int-screen-desc"
-											role="text">
-											<p id="smart-assist-intelligent-screen-desc"
-												role="text">
+										<div class="int-screen-desc">
+											<p id="smart-assist-intelligent-screen-desc">
 												{{'device.smartAssist.intelligentScreen.description' | translate}}
 											</p>
 										</div>
@@ -455,10 +438,8 @@
 										</vtr-ui-row-switch>
 										<div class="row"
 											*ngIf="intelligentScreen.isAutoScreenOffNoteVisible">
-											<div class="feature-note auto-screen-off-note p-4"
-												role="text">
-												<p id="smart-assist-auto-screen-off-note"
-													role="text">
+											<div class="feature-note auto-screen-off-note p-4">
+												<p id="smart-assist-auto-screen-off-note">
 													{{'device.smartAssist.intelligentScreen.autoScreenOff.note' | translate}}
 												</p>
 												<!-- <a href="javascript:void();"
@@ -478,8 +459,7 @@
 											[isSwitchChecked]="intelligentScreen.isReadingOrBrowsingEnabled">
 											<div class="pl-4 ml-4 pt-4">
 												<div class="display-dim-title"
-													id="smart-assist-display-slider-title"
-													role="text">
+													id="smart-assist-display-slider-title">
 													{{'device.smartAssist.intelligentScreen.keepMyDisplay.displaySlider.title' | translate}}
 												</div>
 												<vtr-ui-range-slider [rangeSliderId]="'keepMyDisplay'"
@@ -575,8 +555,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col col-12 mb-3 help-heading"
-					role="text">
+				<div class="col col-12 mb-3 help-heading">
 					{{ 'device.deviceSettings.helpful' | translate }}
 				</div>
 			</div>
