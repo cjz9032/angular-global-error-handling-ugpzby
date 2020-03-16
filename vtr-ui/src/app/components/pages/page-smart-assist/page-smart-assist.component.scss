@@ -373,3 +373,25 @@ $fontsize_xs: 1.4rem;
 	padding-top: 0.3rem;
 }
 
+.intelligent-security-image {
+	margin: -2rem -1.8rem 1.5rem;
+
+	& > img {
+		width: 100%;
+	}
+}
+
+.ui-row-switch-block {
+	display: block;
+	margin-left: -1.5rem;
+
+	&.distance {
+		margin-right: -0.7rem;
+	}
+}
+
+.hide-advanced-section-adjusting {
+	margin-left: -15px;
+	padding-left: 15px;
+}
+
