@@ -11,6 +11,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
 import { faCircle } from '@fortawesome/free-solid-svg-icons/faCircle';
 import { faMinus } from '@fortawesome/free-solid-svg-icons/faMinus';
 import { faChevronRight } from '@fortawesome/pro-light-svg-icons/faChevronRight';
+import { faBook } from '@fortawesome/pro-light-svg-icons/faBook';
 import { RouterModule } from '@angular/router';
 import { MetricsModule } from 'src/app/services/metric/metrics.module';
 import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
@@ -47,5 +48,6 @@ export class UiListSupportModule {
 		library.addIcons(faCircle);
 		library.addIcons(faMinus);
 		library.addIcons(faChevronRight);
+		library.addIcons(faBook);
 	}
 }
