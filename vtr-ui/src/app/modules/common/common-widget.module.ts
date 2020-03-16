@@ -15,6 +15,7 @@ import { WidgetSecurityStatusModule } from 'src/app/components/widgets/widget-se
 import { WidgetPoweredByInfoComponent } from 'src/app/components/widgets/widget-powered-by-info/widget-powered-by-info.component';
 import { NgbProgressbarModule } from '@ng-bootstrap/ng-bootstrap';
 import { WidgetHomeSecurityComponent } from 'src/app/components/widgets/widget-home-security/widget-home-security.component';
+import { WidgetSupportModule } from 'src/app/components/widgets/widget-support/widget-support.module';
 
 @NgModule({
 	declarations: [
@@ -23,7 +24,6 @@ import { WidgetHomeSecurityComponent } from 'src/app/components/widgets/widget-h
 		WidgetDeviceUpdateSettingsComponent,
 		WidgetPermissionNoteComponent,
 		WidgetRebootComponent,
-		WidgetSupportComponent,
 		WidgetWarrantyComponent,
 		WidgetPoweredByInfoComponent,
 		WidgetHomeSecurityComponent
@@ -46,6 +46,7 @@ import { WidgetHomeSecurityComponent } from 'src/app/components/widgets/widget-h
 		SharedModule,
 		RouterModule,
 		WidgetSecurityStatusModule,
+		WidgetSupportModule,
 		NgbProgressbarModule,
 	],
 	schemas: [
