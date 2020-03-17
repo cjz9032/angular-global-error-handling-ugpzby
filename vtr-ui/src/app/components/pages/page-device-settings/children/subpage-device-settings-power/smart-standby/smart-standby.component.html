@@ -91,6 +91,7 @@
 									(keydown.enter)="onToggle(timeToggle)"
 									[attr.aria-expanded]="!isCollapsed"
 									#timeToggle
+									tabindex="0"
 									role="button"
 									aria-label="smart standby, time picker-toggle button">
 									<div>
@@ -158,6 +159,7 @@
 								<!-- content end -->
 							</div>
 							<div *ngIf="isAutonomicCapability"
+								tabindex="0"
 								vtrMetrics
 								metricsItem="Open Smart Standby Modal"
 								metricsEvent="featureClick"
@@ -167,6 +169,7 @@
 								[ngClass]="{'disabled': !smartStandby.isEnabled}"
 								class="hyperlink-to-graph"
 								(click)="showUsageGraph()"
+								(keydown.enter)="showUsageGraph()"
 								role="link"
 								attr.aria-label="{{'device.deviceSettings.power.smartStandby.hyperlinkToGraph' | translate}}">
 								{{'device.deviceSettings.power.smartStandby.hyperlinkToGraph' | translate}}
