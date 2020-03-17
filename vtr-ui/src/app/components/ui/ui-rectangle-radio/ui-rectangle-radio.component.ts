@@ -36,7 +36,7 @@ export class UiRectangleRadioComponent implements OnInit, OnChanges, AfterViewIn
 	});
 	firstRadioButton: any;
 	lastRadioButton: any;
-	radioButtons: Array<any> = [];
+	radioButtons: Array<HTMLElement> = [];
 	@ViewChild('radioButton', { static: false }) radioButton: ElementRef<HTMLElement>;
 	selectedRadioButton: any;
 	noRadioButtonSelected = true;
@@ -100,7 +100,7 @@ export class UiRectangleRadioComponent implements OnInit, OnChanges, AfterViewIn
 				break;
 			case this.keyCode.SPACE:
 			case this.keyCode.RETURN:
-				this.setChecked(this.radioButton, true);
+				this.setChecked(this.radioButton.nativeElement, true);
 				break;
 			case this.keyCode.UP:
 				this.setCheckedToPreviousItem(this.radioButton);
@@ -123,33 +123,29 @@ export class UiRectangleRadioComponent implements OnInit, OnChanges, AfterViewIn
 	}
 
 	private setChecked(currentItem, selectItem: boolean) {
+		let currentRadio = [];
+		try {
+			currentRadio = currentItem.querySelectorAll('input[type="radio"]');
+		} catch (error) {
+			currentRadio = currentItem.nativeElement.querySelectorAll('input[type="radio"]');
+		}
 
 		try {
-			let currentRadio = [];
-			try {
-				currentRadio = currentItem.querySelectorAll('input[type="radio"]');
-			} catch (error) {
-				currentRadio = currentItem.nativeElement.querySelectorAll('input[type="radio"]');
-			}
-
 			if (selectItem && currentRadio && !currentRadio[0].checked && !currentRadio[0].disabled) {
-				currentRadio[0].click();
 				this.radioButtons.forEach(radioButton => {
+					radioButton.removeAttribute('aria-checked');
 					radioButton.setAttribute('aria-checked', 'false');
 				});
 				currentItem.setAttribute('aria-checked', 'true');
-				this.setRadioTabIndex(currentItem);
+				currentRadio[0].click();
 			}
-
-			currentItem.focus();
-
-
-
 		}
 		catch (error) {
 			this.logger.exception('setChecked error occurred ::', error);
 		}
 
+		this.setRadioTabIndex(currentItem);
+		currentItem.focus();
 	}
 
 	private setRadioTabIndex(currentItem) {
@@ -170,7 +166,7 @@ export class UiRectangleRadioComponent implements OnInit, OnChanges, AfterViewIn
 				this.setChecked(this.radioButtons[index - 1], false);
 			}
 		} catch (error) {
-			this.logger.exception('setCheckedToPreviousItem error occurred ::', error);
+			this.logger.exception('setRadioButtons error occurred ::', error);
 		}
 	}
 
@@ -187,7 +183,7 @@ export class UiRectangleRadioComponent implements OnInit, OnChanges, AfterViewIn
 			}
 
 		} catch (error) {
-			this.logger.exception('setCheckedToNextItem error occurred ::', error);
+			this.logger.exception('setRadioButtons error occurred ::', error);
 		}
 
 	}
@@ -195,13 +191,8 @@ export class UiRectangleRadioComponent implements OnInit, OnChanges, AfterViewIn
 	private setRadioButtons() {
 		try {
 			if (!this.radioGroup) {
-
 				this.radioGroup = this.getParentRadioGroup(this.radioButton.nativeElement);
-				/* this.radioGroup = this.radioButton.nativeElement.parentElement.parentElement;
-				const rbs = this.radioGroup.querySelectorAll('[role=radio][aria-disabled=false]');
-				if (rbs === undefined || rbs.length <= 1) {
-					this.radioGroup = this.radioButton.nativeElement.parentElement.parentElement.parentElement;
-				} */
+
 			}
 			const rbs = this.radioGroup.querySelectorAll('[role=radio][aria-disabled=false]');
 
@@ -221,34 +212,35 @@ export class UiRectangleRadioComponent implements OnInit, OnChanges, AfterViewIn
 
 			//focus on first non disabled element if not selected any radio items
 			if (this.firstRadioButton && this.noRadioButtonSelected) {
-				this.setRadioFocus(this.firstRadioButton);
+				this.setRadioTabIndex(this.firstRadioButton);
 			}
-			else if (this.selectedRadioButton && !this.noRadioButtonSelected) {
-				this.setRadioFocus(this.selectedRadioButton);
+			else if (!this.noRadioButtonSelected) {
+				this.setRadioTabIndex(this.selectedRadioButton);
 			}
-
 		} catch (error) {
 			this.logger.exception('setRadioButtons error occurred ::', error);
 		}
 	}
-	private setRadioFocus(radioButton) {
-		this.radioButtons.forEach(element => {
-			if (element !== radioButton) {
-				element.tabIndex = -1;
-			}
-			if (element === radioButton) {
-				element.tabIndex = 0;
-			}
-		});
-	}
+
+	/* 	private setRadioFocus(radioButton) {
+			this.radioButtons.forEach(element => {
+				if (element !== radioButton) {
+					element.tabIndex = -1;
+				}
+				if (element === radioButton) {
+					element.tabIndex = 0;
+				}
+			});
+		} */
 
 	private getParentRadioGroup(element) {
-		const roleRadioGroup = "radiogroup";
+		const roleRadioGroup = 'radiogroup';
+		const role = 'role';
 
-		if (element !== undefined && element.getAttribute("role") === roleRadioGroup) {
+		if (element !== undefined && element.getAttribute(role) === roleRadioGroup) {
 			return element;
 		}
-		else if (element !== undefined && element.getAttribute("role") !== roleRadioGroup) {
+		else if (element !== undefined && element.getAttribute(role) !== roleRadioGroup) {
 			return this.getParentRadioGroup(element.parentElement);
 		}
 		else {

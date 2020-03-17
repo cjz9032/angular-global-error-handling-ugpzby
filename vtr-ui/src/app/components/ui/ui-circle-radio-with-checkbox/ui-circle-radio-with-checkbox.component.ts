@@ -38,7 +38,7 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit, AfterViewInit
 	});
 	firstRadioButton: any;
 	lastRadioButton: any;
-	radioButtons: Array<any> = [];
+	radioButtons: Array<HTMLElement> = [];
 	@ViewChild('radioButton', { static: false }) radioButton: ElementRef<HTMLElement>;
 	selectedRadioButton: any;
 	noRadioButtonSelected = true;
@@ -85,7 +85,7 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit, AfterViewInit
 				break;
 			case this.keyCode.SPACE:
 			case this.keyCode.RETURN:
-				this.setChecked(this.radioButton, true);
+				this.setChecked(this.radioButton.nativeElement, true);
 				break;
 			case this.keyCode.UP:
 				this.setCheckedToPreviousItem(this.radioButton);
@@ -115,15 +115,21 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit, AfterViewInit
 			currentRadio = currentItem.nativeElement.querySelectorAll('input[type="radio"]');
 		}
 
-		if (selectItem && currentRadio && !currentRadio[0].checked && !currentRadio[0].disabled) {
-			currentRadio[0].click();
-			this.radioButtons.forEach(radioButton => {
-				radioButton.setAttribute('aria-checked', 'false');
-			});
-			currentItem.setAttribute('aria-checked', 'true');
-			this.setRadioTabIndex(currentItem);
+		try {
+			if (selectItem && currentRadio && !currentRadio[0].checked && !currentRadio[0].disabled) {
+				this.radioButtons.forEach(radioButton => {
+					radioButton.removeAttribute('aria-checked');
+					radioButton.setAttribute('aria-checked', 'false');
+				});
+				currentItem.setAttribute('aria-checked', 'true');
+				currentRadio[0].click();
+			}
+		}
+		catch (error) {
+			this.logger.exception('setChecked error occurred ::', error);
 		}
 
+		this.setRadioTabIndex(currentItem);
 		currentItem.focus();
 	}
 
@@ -191,17 +197,17 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit, AfterViewInit
 
 			//focus on first non disabled element if not selected any radio items
 			if (this.firstRadioButton && this.noRadioButtonSelected) {
-				this.setRadioFocus(this.firstRadioButton);
+				this.setRadioTabIndex(this.firstRadioButton);
 			}
 			else if (!this.noRadioButtonSelected) {
-				this.setRadioFocus(this.selectedRadioButton);
+				this.setRadioTabIndex(this.selectedRadioButton);
 			}
 		} catch (error) {
 			this.logger.exception('setRadioButtons error occurred ::', error);
 		}
 	}
 
-	private setRadioFocus(radioButton) {
+	/* private setRadioFocus(radioButton) {
 		this.radioButtons.forEach(element => {
 			if (element !== radioButton) {
 				element.tabIndex = -1;
@@ -210,15 +216,16 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit, AfterViewInit
 				element.tabIndex = 0;
 			}
 		});
-	}
+	} */
 
 	private getParentRadioGroup(element) {
-		const roleRadioGroup = "radiogroup";
+		const roleRadioGroup = 'radiogroup';
+		const role = 'role';
 
-		if (element !== undefined && element.getAttribute("role") === roleRadioGroup) {
+		if (element !== undefined && element.getAttribute(role) === roleRadioGroup) {
 			return element;
 		}
-		else if (element !== undefined && element.getAttribute("role") !== roleRadioGroup) {
+		else if (element !== undefined && element.getAttribute(role) !== roleRadioGroup) {
 			return this.getParentRadioGroup(element.parentElement);
 		}
 		else {
