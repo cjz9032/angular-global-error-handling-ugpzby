@@ -1,7 +1,7 @@
-<div class='cover' id="{{dropDownId}}"  *ngIf='isDropDownOpen' (click)="toggle()" (keydown.enter)="toggle()"></div>
+<div class='cover' id="{{dropDownId}}"  *ngIf='isDropDownOpen' (click)="toggle(toggleBtn)" (keydown.enter)="toggle(toggleBtn)"></div>
 <section class="vtr-ui-dropdown">
 	<div #toggleBtn class="input" [attr.aria-label]="label+' '+text" role="combobox" [attr.aria-expanded]="isDropDownOpen"
-	[class.opened]="isDropDownOpen" (click)="toggle()" (keydown.enter)="toggle()" tabindex="0">
+	[class.opened]="isDropDownOpen" (click)="toggle(toggleBtn)" (focus)="onDropdownFocus(toggleBtn)" (keydown.enter)="toggle(toggleBtn)" tabindex="0">
 		<div class="time">
 			<span [title]="text">{{ text }} </span>
 		</div>
@@ -14,8 +14,8 @@
 	</div>
 	<div class="list" *ngIf="isDropDownOpen && !disabled" role="listbox">
 		<ul>
-			<li (click)="[select(i,toggleBtn),toggle()]" role="option" (blur)="onItemBlur(last)"
-				(keydown.enter)="[select(i,toggleBtn),toggle()]" tabindex="0" attr.aria-label="{{ i.text }} selected,"
+			<li (click)="[select(i),toggleByItem(last,toggleBtn)]" role="option" (blur)="onItemBlur(last)"
+				(keydown.enter)="[select(i),toggleByItem(last,toggleBtn)]" tabindex="0" attr.aria-label="{{ i.text }} selected,"
 				*ngFor="let i of list; let last = last">
 				<span [title]="i.text">{{ i.text }}</span>
 			</li>

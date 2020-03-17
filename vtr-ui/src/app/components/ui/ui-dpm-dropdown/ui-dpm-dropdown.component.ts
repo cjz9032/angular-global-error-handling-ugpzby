@@ -19,6 +19,8 @@ export class UiDpmDropdownComponent implements OnInit {
 	@Output() change: EventEmitter<any> = new EventEmitter<any>();
 	public isDropDownOpen = false;
 	public text: string;
+	public refocus: boolean = true;
+	public itemBlur:boolean = true;
 	constructor(private translate: TranslateService) { }
 
 	ngOnInit() {
@@ -48,19 +50,19 @@ export class UiDpmDropdownComponent implements OnInit {
 		}
 	}
 
-	public toggle() {
+	public toggle(toggle=null) {
 		if (!this.disabled) {
 			this.isDropDownOpen = !this.isDropDownOpen;
 		}
+		if (toggle) {
+			toggle.focus();
+		}
 	}
 
-	public select(event: DropDownInterval, toggle) {
+	public select(event: DropDownInterval) {
 		this.value = event.value;
 		this.text = event.text;
 		this.change.emit(event);
-		setTimeout(() => {
-			toggle.focus();
-		}, 10);
 	}
 
 	public customCamelCase(value: string) {
@@ -79,8 +81,32 @@ export class UiDpmDropdownComponent implements OnInit {
 	}
 
 	public onItemBlur(isLast) {
-		if (isLast) {
-			this.toggle();
+		if(this.itemBlur){
+			if (isLast) {
+				this.toggle();
+			}
+		}else{
+			this.itemBlur=true;
 		}
+
+	}
+
+	public onDropdownFocus(toggle) {
+		if (this.refocus) {
+			this.refocus = false;
+			toggle.blur();
+			setTimeout(() => {
+				toggle.focus();
+			}, 10);
+		} else {
+			this.refocus = true;
+		}
+	}
+
+	public toggleByItem(last,toggleBtn=null){
+		if(last){
+			this.itemBlur=false;
+		}
+		this.toggle(toggleBtn);
 	}
 }
