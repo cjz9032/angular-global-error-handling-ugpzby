@@ -90,6 +90,7 @@
 													*ngIf="!intelligentSecurity.isZeroTouchLoginAdjustEnabled"
 													[minValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.near' | translate"
 													[minValue]="1"
+													[mediumValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.medium' | translate"
 													[maxValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
 													[maxValue]="3"
 													(sliderChange)="setZeroTouchLoginSensitivity($event)"
@@ -267,7 +268,7 @@
 													<div class="smart-assist-checkbox">
 														<vtr-ui-checkbox [componentId]="'cb-zero-touch-lock'"
 															[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || !intelligentSecurity.facilRecognitionCameraAccess
-												|| intelligentSecurity.facialRecognitionCameraPrivacyMode"
+																|| intelligentSecurity.facialRecognitionCameraPrivacyMode"
 															[value]="intelligentSecurity.isZeroTouchLockFacialRecoEnabled"
 															[checked]="intelligentSecurity.isZeroTouchLockFacialRecoEnabled"
 															[label]="'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.checkBox' | translate"

@@ -11,5 +11,5 @@ export class SmartAssistCapability {
 	public isAPSCapable = false;
 	public isAPSSensorSupported = false;
 	public isAPSHDDStatus = -1;
-	public isHsaIntelligentSecuritySupported: HsaIntelligentSecurityResponse = new HsaIntelligentSecurityResponse(false, false, false);
+	public isHsaIntelligentSecuritySupported: HsaIntelligentSecurityResponse = new HsaIntelligentSecurityResponse(false, 0, false);
 }

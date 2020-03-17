@@ -194,13 +194,13 @@ export class SmartAssistService {
 	}
 
 	public getHsaIntelligentSecurityStatus() {
-		const intelligentSecurityDate = {capacity: false, capability: false, zeroTouchLockDistanceAutoAdjust: true, zeroTouchLockDistance: 0};
+		const intelligentSecurityDate = {capacity: false, capability: 0, zeroTouchLockDistanceAutoAdjust: true, zeroTouchLockDistance: 0};
 		try {
 			if (this.isShellAvailable) {
 				const obj = JSON.parse(this.hsaIntelligentSecurity.getAllSetting());
 				if (obj && obj.errorCode === 0) {
 					intelligentSecurityDate.capacity = obj.capacity;
-					intelligentSecurityDate.capability = obj.Capability;
+					intelligentSecurityDate.capability = obj.capability;
 					intelligentSecurityDate.zeroTouchLockDistanceAutoAdjust = obj.presenceLeaveDistanceAutoAdjust;
 					intelligentSecurityDate.zeroTouchLockDistance = obj.presenceLeaveDistance;
 				}
