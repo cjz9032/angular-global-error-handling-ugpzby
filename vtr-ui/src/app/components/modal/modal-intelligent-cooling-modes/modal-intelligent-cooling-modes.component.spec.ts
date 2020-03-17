@@ -1,78 +1,75 @@
-// import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { NO_ERRORS_SCHEMA } from "@angular/core";
+import { By } from '@angular/platform-browser';
 
-// import { ModalIntelligentCoolingModesComponent } from './modal-intelligent-cooling-modes.component';
-// import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-// import { TranslationModule } from 'src/app/modules/translation.module';
-// import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-// import { TranslateStore } from '@ngx-translate/core';
+import { ModalIntelligentCoolingModesComponent } from "./modal-intelligent-cooling-modes.component";
+import { TranslationModule } from "src/app/modules/translation.module";
+import { NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
+import { TranslateStore } from "@ngx-translate/core";
 
-// describe('ModalIntelligentCoolingModesComponent', () => {
-// 	beforeEach(async(() => {
-// 		TestBed.configureTestingModule({
-// 			declarations: [ModalIntelligentCoolingModesComponent],
-// 			imports: [FontAwesomeModule, TranslationModule],
-// 			providers: [NgbActiveModal, TranslateStore]
-// 		}).compileComponents();
-// 	}));
+describe("ModalIntelligentCoolingModesComponent", () => {
+	let component: ModalIntelligentCoolingModesComponent;
+	let fixture: ComponentFixture<ModalIntelligentCoolingModesComponent>;
+	let activeModal: NgbActiveModal;
 
-// 	describe(':', () => {
+	beforeEach(async(() => {
+		TestBed.configureTestingModule({
+			schemas: [NO_ERRORS_SCHEMA],
+			declarations: [ModalIntelligentCoolingModesComponent],
+			imports: [TranslationModule],
+			providers: [NgbActiveModal, TranslateStore]
+		});
+	}));
 
-// 		function setup() {
-// 			const fixture = TestBed.createComponent(ModalIntelligentCoolingModesComponent);
-// 			const component = fixture.debugElement.componentInstance;
-// 			return { fixture, component };
-// 		}
+	it("should create the app", async(() => {
+		fixture = TestBed.createComponent(
+			ModalIntelligentCoolingModesComponent
+		);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
+		expect(component).toBeTruthy();
+	}));
 
-// 		it('should create the app', (() => {
-// 			const { component } = setup();
-// 			expect(component).toBeTruthy();
-// 		}));
+	it("should call closeModal", async(() => {
+		fixture = TestBed.createComponent(
+			ModalIntelligentCoolingModesComponent
+		);
+		component = fixture.componentInstance;
+		activeModal = TestBed.get(NgbActiveModal);
+		const spy = spyOn(activeModal, "close");
+		component.closeModal();
+		expect(spy).toHaveBeenCalled();
+	}));
 
-// 		it('closeModal calling activeModal close', async(() => {
-// 			const { fixture, component } = setup();
-// 			spyOn(component.activeModal, 'close').and.returnValue(Promise.resolve('close'));
+	it("should call onKeydownHandler", async(() => {
+        fixture = TestBed.createComponent(
+			ModalIntelligentCoolingModesComponent
+		);
+        component = fixture.componentInstance;
+        const spy = spyOn(component, 'closeModal')
+        const event = new KeyboardEvent('keydown');
+        component.onKeydownHandler(event);
+        expect(spy).toHaveBeenCalled()
+    }));
 
-// 			fixture.detectChanges();// ngOnInit
-// 			component.closeModal();
+    it("should call onKeydownEnterHandler", async(() => {
+        fixture = TestBed.createComponent(
+			ModalIntelligentCoolingModesComponent
+		);
+        component = fixture.componentInstance;
+        const spy = spyOn(component, 'closeModal')
+        const event = new KeyboardEvent('keydown');
+        component.onKeydownEnterHandler(event);
+        expect(spy).toHaveBeenCalled()
+    }));
 
-// 			expect(component.activeModal.close).toHaveBeenCalled();
-// 		}));
-
-// 		it('onKeydownHandler calling activeModal close', async(() => {
-// 			const { fixture, component } = setup();
-// 			spyOn(component, 'closeModal');
-
-// 			fixture.detectChanges();// ngOnInit
-// 			component.onKeydownHandler(KeyboardEvent);
-
-// 			expect(component.closeModal).toHaveBeenCalled();
-// 		}));
-
-// 		it('onKeydownEnterHandler calling activeModal close', async(() => {
-// 			const { fixture, component } = setup();
-// 			spyOn(component, 'closeModal');
-
-// 			fixture.detectChanges();// ngOnInit
-// 			component.onKeydownEnterHandler(KeyboardEvent);
-
-// 			expect(component.closeModal).toHaveBeenCalled();
-// 		}));
-
-// 		it('onFocus calling modal focus', (() => {
-// 			const { fixture, component } = setup();
-
-// 			fixture.detectChanges();// ngOnInit
-
-// 			let modal = document.createElement('div');
-// 			modal.setAttribute('class','Intelligent-Cooling-Modes-Modal');
-// 			fixture.debugElement.nativeElement.append(modal);
-// 			component.onFocus();
-
-// 			expect(modal).toBeTruthy();
-// 		}));
-
-
-
-
-// 	});
-// });
+    // it('should call onFocus', async(() => {
+    //     fixture = TestBed.createComponent(
+	// 		ModalIntelligentCoolingModesComponent
+	// 	);
+    //     component = fixture.componentInstance;
+    //     // const modal = fixture.debugElement.query(By.css('.Intelligent-Cooling-Modes-Modal'));
+    //     // const spy = spyOn<any>(modal, 'focus');
+    //     expect(component.onFocus()).toBeTruthy()
+    // }));
+});
