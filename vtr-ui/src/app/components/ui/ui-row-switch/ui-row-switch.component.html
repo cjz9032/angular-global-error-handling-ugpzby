@@ -36,9 +36,10 @@
 							</div>
 							<span *ngIf="caption">
 								<div class="caption"
+									#captionRef
 									id="{{switchId}}-caption"
 									attr.aria-label="{{switchId}}-caption"
-									[innerHTML]="htmlSanitizer(caption.length > 70  && !contentExpand  && readMoreText.length > 0 ? (caption | slice: 0:70) : caption)">
+									[innerHTML]="caption.length > 70  && !contentExpand  && readMoreText.length > 0 ? (caption | slice: 0:70) : caption">
 								</div>
 							</span>
 							<!-- {{ caption. add it only if there is a readmore, else comment it}} -->
