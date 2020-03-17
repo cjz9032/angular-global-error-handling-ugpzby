@@ -2,30 +2,43 @@
 	<div class="row">
 		<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 pl-0 pr-0">
 			<div class="img-preview">
-				<img *ngIf="option.currentMode.toLowerCase() === 'blur'" role="img" id="camera-background-blur-blur-mode"
+				<img *ngIf="option.currentMode.toLowerCase() === 'blur'"
+					role="img"
+					id="camera-background-blur-blur-mode"
 					src="assets/images/camera-background-blur/blur-mode.jpg" />
-				<img *ngIf="option.currentMode.toLowerCase() === 'comic'" role="img" id="camera-background-blur-comic-mode"
+				<img *ngIf="option.currentMode.toLowerCase() === 'comic'"
+					role="img"
+					id="camera-background-blur-comic-mode"
 					src="assets/images/camera-background-blur/comic-mode.jpg" />
-				<img *ngIf="option.currentMode.toLowerCase() === 'sketch'" role="img" id="camera-background-blur-sketch-mode"
+				<img *ngIf="option.currentMode.toLowerCase() === 'sketch'"
+					role="img"
+					id="camera-background-blur-sketch-mode"
 					src="assets/images/camera-background-blur/sketch-mode.jpg" />
 			</div>
 		</div>
 		<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6">
 			<ul class="list-group list-group-flush">
-				<li class="list-group-item border-top">
+				<li class="list-group-item border-top"
+					role="radiogroup"
+					tabindex="0"
+					aria-label="camera mode list, select using arrow keys">
 					<div class="mt-4">
 						<vtr-ui-rounded-rectangle-radio [radioId]="'radio1'"
 							[group]="'radio'"
 							[label]="'device.deviceSettings.displayCamera.camera.camerablur.blurMode' | translate"
 							[value]="'Blur'"
 							[checked]="option.currentMode.toLowerCase() === 'blur'"
-							(change)="onChange($event)"></vtr-ui-rounded-rectangle-radio>
+							(change)="onChange($event)">
+						</vtr-ui-rounded-rectangle-radio>
+
 						<vtr-ui-rounded-rectangle-radio [radioId]="'radio2'"
 							[group]="'radio'"
 							[label]="'device.deviceSettings.displayCamera.camera.camerablur.comicMode' | translate"
 							[value]="'Comic'"
 							[checked]="option.currentMode.toLowerCase() === 'comic'"
-							(change)="onChange($event)"></vtr-ui-rounded-rectangle-radio>
+							(change)="onChange($event)">
+						</vtr-ui-rounded-rectangle-radio>
+
 						<vtr-ui-rounded-rectangle-radio [radioId]="'radio3'"
 							[group]="'radio'"
 							[label]="'device.deviceSettings.displayCamera.camera.camerablur.sketchMode' | translate"

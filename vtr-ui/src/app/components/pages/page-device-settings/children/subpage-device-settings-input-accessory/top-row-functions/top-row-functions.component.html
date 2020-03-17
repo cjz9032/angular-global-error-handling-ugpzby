@@ -23,7 +23,10 @@
 						{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.description' | translate}}
 					</div>
 					<div class="my-3">
-						<div class="col-12 pl-0 d-flex">
+						<div class="col-12 pl-0 d-flex"
+							role="radiogroup"
+							tabindex="0"
+							aria-label=" Function lock selection list, select using arrow keys">
 							<div class="mr-5">
 								<vtr-ui-rectangle-radio [radioId]="'radio1'"
 									[checked]="(topRowKeyObj.primaryFunStatus && topRowKeyObj.fnLockStatus) || (!topRowKeyObj.primaryFunStatus && !topRowKeyObj.fnLockStatus) ? true: false"
@@ -102,7 +105,10 @@
 							{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.description' | translate}}
 						</div>
 					</div>
-					<div class="pl-2 pr-0 mt-5">
+					<div class="pl-2 pr-0 mt-5"
+						role="radiogroup"
+						tabindex="0"
+						aria-label="n Method list, select using arrow keys">
 						<vtr-ui-rounded-rectangle-radio [radioId]="'nMehod_show'"
 							[group]="'topRowKeys'"
 							name="nMehod_show"

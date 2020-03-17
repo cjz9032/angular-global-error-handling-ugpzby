@@ -27,26 +27,31 @@
 									<h5 id="smart-standby-schedule-computer"
 										attr.aria-label="smart-standby-schedule-computer">
 										{{ 'device.deviceSettings.power.smartStandby.subTitle' | translate }}</h5>
-									<vtr-ui-rounded-rectangle-radio [radioId]="'automatic_show'"
-										[group]="'smartStandByBtns'"
-										name="nMehod_show"
-										[label]="'device.deviceSettings.power.smartStandby.automaticMode' | translate"
-										[value]="'Automatic mode'"
-										[checked]="checkbox"
-										(change)="onCheckboxClicked(true);isCollapsed = true"
-										(customKeyEvent)="onCheckboxClicked(false);isCollapsed = true"
-										[disabled]="!smartStandby.isEnabled">
-									</vtr-ui-rounded-rectangle-radio>
-									<vtr-ui-rounded-rectangle-radio [radioId]="'manual_show'"
-										[group]="'smartStandByBtns'"
-										name="fnKeyMehod_show"
-										[label]="'device.deviceSettings.power.smartStandby.manualMode' | translate"
-										[value]="'Manual mode'"
-										[checked]="!checkbox"
-										(change)="onCheckboxClicked(false)"
-										(customKeyEvent)="onCheckboxClicked(true)"
-										[disabled]="!smartStandby.isEnabled">
-									</vtr-ui-rounded-rectangle-radio>
+									<div role="radiogroup"
+										tabindex="0"
+										aria-label="smart stand by more list, select using arrow keys">
+										<vtr-ui-rounded-rectangle-radio [radioId]="'automatic_show'"
+											[group]="'smartStandByBtns'"
+											name="nMehod_show"
+											[label]="'device.deviceSettings.power.smartStandby.automaticMode' | translate"
+											[value]="'Automatic mode'"
+											[checked]="checkbox"
+											(change)="onCheckboxClicked(true);isCollapsed = true"
+											(customKeyEvent)="onCheckboxClicked(false);isCollapsed = true"
+											[disabled]="!smartStandby.isEnabled">
+										</vtr-ui-rounded-rectangle-radio>
+										<vtr-ui-rounded-rectangle-radio [radioId]="'manual_show'"
+											[group]="'smartStandByBtns'"
+											name="fnKeyMehod_show"
+											[label]="'device.deviceSettings.power.smartStandby.manualMode' | translate"
+											[value]="'Manual mode'"
+											[checked]="!checkbox"
+											(change)="onCheckboxClicked(false)"
+											(customKeyEvent)="onCheckboxClicked(true)"
+											[disabled]="!smartStandby.isEnabled">
+										</vtr-ui-rounded-rectangle-radio>
+									</div>
+
 								</div>
 							</div>
 							<div *ngIf="!isAutonomicCapability && smartStandby?.isEnabled"

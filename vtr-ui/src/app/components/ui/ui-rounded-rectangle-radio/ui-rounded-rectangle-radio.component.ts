@@ -180,7 +180,7 @@ export class UiRoundedRectangleRadioComponent implements OnInit, OnChanges, Afte
 	private setRadioButtons() {
 		try {
 			if (!this.radioGroup) {
-				this.radioGroup = this.radioButton.nativeElement.parentElement.parentElement;
+				this.radioGroup = this.getParentRadioGroup(this.radioButton.nativeElement);
 			}
 			const rbs = this.radioGroup.querySelectorAll('[role=radio][aria-disabled=false]');
 
@@ -219,5 +219,19 @@ export class UiRoundedRectangleRadioComponent implements OnInit, OnChanges, Afte
 				element.tabIndex = 0;
 			}
 		});
+	}
+	private getParentRadioGroup(element) {
+		const roleRadioGroup = "radiogroup";
+
+		if (element !== undefined && element.getAttribute("role") === roleRadioGroup) {
+			return element;
+		}
+		else if (element !== undefined && element.getAttribute("role") !== roleRadioGroup) {
+			return this.getParentRadioGroup(element.parentElement);
+		}
+		else {
+			return element;
+		}
+
 	}
 }

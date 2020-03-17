@@ -325,33 +325,40 @@
 
 											<div class="slider-note"
 												[class.blur-1]="!intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)">
-												<vtr-ui-rounded-rectangle-radio [radioId]="'autoScreenLockTimer_fast'"
-													[group]="'autoScreenLockTimer'"
-													name="autoScreenLockTimerFast"
-													[label]="'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.fast' | translate"
-													[value]="'1'"
-													[checked]="intelligentSecurity.autoScreenLockTimer === '1'"
-													(change)="onZeroTouchLockTimerChange($event, '1')"
-													[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)">
-												</vtr-ui-rounded-rectangle-radio>
-												<vtr-ui-rounded-rectangle-radio [radioId]="'autoScreenLockTimer_medium'"
-													[group]="'autoScreenLockTimer'"
-													name="autoScreenLockTimerMedium"
-													[label]="'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.medium' | translate"
-													[value]="'2'"
-													[checked]="intelligentSecurity.autoScreenLockTimer === '2'"
-													(change)="onZeroTouchLockTimerChange($event, '2')"
-													[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)">
-												</vtr-ui-rounded-rectangle-radio>
-												<vtr-ui-rounded-rectangle-radio [radioId]="'autoScreenLockTimer_slow'"
-													[group]="'autoScreenLockTimer'"
-													name="autoScreenLockTimerSlow"
-													[label]="'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.slow' | translate"
-													[value]="'3'"
-													[checked]="intelligentSecurity.autoScreenLockTimer === '3'"
-													(change)="onZeroTouchLockTimerChange($event, '3')"
-													[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)">
-												</vtr-ui-rounded-rectangle-radio>
+												<div ole="radiogroup"
+													tabindex="0"
+													aria-label="automatic screen locker more list, select using arrow keys">
+													<vtr-ui-rounded-rectangle-radio
+														[radioId]="'autoScreenLockTimer_fast'"
+														[group]="'autoScreenLockTimer'"
+														name="autoScreenLockTimerFast"
+														[label]="'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.fast' | translate"
+														[value]="'1'"
+														[checked]="intelligentSecurity.autoScreenLockTimer === '1'"
+														(change)="onZeroTouchLockTimerChange($event, '1')"
+														[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)">
+													</vtr-ui-rounded-rectangle-radio>
+													<vtr-ui-rounded-rectangle-radio
+														[radioId]="'autoScreenLockTimer_medium'"
+														[group]="'autoScreenLockTimer'"
+														name="autoScreenLockTimerMedium"
+														[label]="'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.medium' | translate"
+														[value]="'2'"
+														[checked]="intelligentSecurity.autoScreenLockTimer === '2'"
+														(change)="onZeroTouchLockTimerChange($event, '2')"
+														[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)">
+													</vtr-ui-rounded-rectangle-radio>
+													<vtr-ui-rounded-rectangle-radio
+														[radioId]="'autoScreenLockTimer_slow'"
+														[group]="'autoScreenLockTimer'"
+														name="autoScreenLockTimerSlow"
+														[label]="'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.slow' | translate"
+														[value]="'3'"
+														[checked]="intelligentSecurity.autoScreenLockTimer === '3'"
+														(change)="onZeroTouchLockTimerChange($event, '3')"
+														[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)">
+													</vtr-ui-rounded-rectangle-radio>
+												</div>
 
 												<div class="pt-3">
 													<div class="feature-note p-4">

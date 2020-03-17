@@ -195,11 +195,13 @@ export class UiRectangleRadioComponent implements OnInit, OnChanges, AfterViewIn
 	private setRadioButtons() {
 		try {
 			if (!this.radioGroup) {
-				this.radioGroup = this.radioButton.nativeElement.parentElement.parentElement;
+
+				this.radioGroup = this.getParentRadioGroup(this.radioButton.nativeElement);
+				/* this.radioGroup = this.radioButton.nativeElement.parentElement.parentElement;
 				const rbs = this.radioGroup.querySelectorAll('[role=radio][aria-disabled=false]');
 				if (rbs === undefined || rbs.length <= 1) {
 					this.radioGroup = this.radioButton.nativeElement.parentElement.parentElement.parentElement;
-				}
+				} */
 			}
 			const rbs = this.radioGroup.querySelectorAll('[role=radio][aria-disabled=false]');
 
@@ -238,5 +240,20 @@ export class UiRectangleRadioComponent implements OnInit, OnChanges, AfterViewIn
 				element.tabIndex = 0;
 			}
 		});
+	}
+
+	private getParentRadioGroup(element) {
+		const roleRadioGroup = "radiogroup";
+
+		if (element !== undefined && element.getAttribute("role") === roleRadioGroup) {
+			return element;
+		}
+		else if (element !== undefined && element.getAttribute("role") !== roleRadioGroup) {
+			return this.getParentRadioGroup(element.parentElement);
+		}
+		else {
+			return element;
+		}
+
 	}
 }
