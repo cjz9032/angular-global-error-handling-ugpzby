@@ -1965,7 +1965,7 @@ vtr-container-card {
 .Article-Detail-Modal{
 	&.content-gaming{
 		*:focus{
-		outline: none;
+		// outline: none;
 	}
 	overflow:hidden !important;
 	.modal-dialog{
@@ -2012,8 +2012,15 @@ dl {
 	margin: 0;
 }
 
-button:focus {
-	outline: none;
+button{
+	&:focus{
+		outline: dotted!important;
+		}
+}
+label{
+	&:focus{
+		outline: dotted!important;
+	}
 }
 
 button {
