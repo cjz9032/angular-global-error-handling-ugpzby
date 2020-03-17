@@ -27,6 +27,7 @@ import { WidgetDashboardWarrantyComponent } from 'src/app/components/widgets/wid
 import { FeedbackModule } from '../feedback/feedback.module';
 import { WidgetSystemUpdateComponent } from 'src/app/components/widgets/widget-system-update/widget-system-update.component';
 import { WidgetSupportModule } from 'src/app/components/widgets/widget-support/widget-support.module';
+import { WidgetEnergyStarComponent } from 'src/app/components/widgets/widget-energy-star/widget-energy-star.component';
 
 @NgModule({
 	declarations: [
@@ -34,6 +35,7 @@ import { WidgetSupportModule } from 'src/app/components/widgets/widget-support/w
 		WidgetSwitchIconComponent,
 		WidgetQuicksettingsComponent,
 		WidgetSystemUpdateComponent,
+		WidgetEnergyStarComponent,
 		WidgetDashboardWarrantyComponent
 	],
 	imports: [
