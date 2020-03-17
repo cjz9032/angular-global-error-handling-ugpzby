@@ -1,0 +1,24 @@
+@import '../../../app.theme.scss';
+
+.vtr-widget-energy-star {
+	border-radius: $border_radius;
+	background-color:$light;
+	box-shadow: $drop_shadow;
+	padding: $fontsize_xl;
+	.energy-image {
+		width: 7rem;
+		height: 7rem;
+		flex-grow: 0;
+		flex-shrink: 0;
+	}
+	.description {
+		color: $shade_blue;
+		font-size: $fontsize_xs;
+		font-weight: $weight_light;
+		text-transform: uppercase;
+		letter-spacing: 0.89px;
+		flex-grow: 1;
+		flex-shrink: 1;
+		line-height: 1.4;
+	}
+}
