@@ -129,7 +129,8 @@
 											</div>
 										</div>
 										<!-- hide advanced section -->
-										<div class="pl-5 border-bottom pb-4" *ngIf="zeroTouchLoginShowAdvancedSection">
+										<div class="pl-5 border-bottom pb-4" 
+											*ngIf="zeroTouchLoginShowAdvancedSection">
 											<span class="link-text mt-2 ml-4"
 												role="text"
 												id="smartAssist.intelligentSecurity.zeroTouchLogin.hideAdvSettings"
@@ -239,91 +240,91 @@
 											[isSwitchChecked]="intelligentSecurity.isZeroTouchLockEnabled"
 											(toggleOnOff)="onZeroTouchLockStatusToggle($event)"
 											[theme]="'white'"
-											[disabled]="!intelligentSecurity.isHPDEnabled">
-											<!-- show advanced section -->
-											<div class="pl-5 border-bottom pt-3 pb-4" 
-												*ngIf="!zeroTouchLockShowAdvancedSection">
-												<span class="link-text mt-4"
+											[disabled]="!intelligentSecurity.isHPDEnabled">											
+										</vtr-ui-row-switch>
+										<!-- show advanced section -->
+										<div class="pl-5 border-bottom pb-4" 
+											*ngIf="!zeroTouchLockShowAdvancedSection">
+											<span class="link-text mt-2 ml-4"
+												role="text"
+												id="smartAssist.intelligentSecurity.zeroTouchLock.showAdvSettings"
+												attr-aria-label="smartAssist.intelligentSecurity.zeroTouchLock.showAdvSettings"
+												(click)="zeroTouchLockShowAdvancedSection = true"
+												(keydown.enter)="zeroTouchLockShowAdvancedSection = true">
+												{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.showAdvSettings' | translate}}
+											</span>
+										</div>
+										<!-- facial recognition -->
+										<div class="row fac-control">
+											<div class="col mt-8 ml-4 facial-recognition"
+												role="text"
+												*ngIf="intelligentSecurity.isZeroTouchLockFacialRecoVisible && zeroTouchLockShowAdvancedSection">
+												<h3 id="smart-assist-zero-touch-lock-faical-recognition-title mt-2">
+													{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.title' | translate}}
+												</h3>
+												<p id="smart-assist-zero-touch-lock-faical-recognition-desc"
 													role="text"
-													id="smartAssist.intelligentSecurity.zeroTouchLock.showAdvSettings"
-													attr-aria-label="smartAssist.intelligentSecurity.zeroTouchLock.showAdvSettings"
-													(click)="zeroTouchLockShowAdvancedSection = true"
-													(keydown.enter)="zeroTouchLockShowAdvancedSection = true">
-													{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.showAdvSettings' | translate}}
-												</span>
-											</div>
-											<!-- facial recognition -->
-											<div class="row fac-control">
-												<div class="col mt-10 facial-recognition"
-													role="text"
-													*ngIf="intelligentSecurity.isZeroTouchLockFacialRecoVisible && zeroTouchLockShowAdvancedSection">
-													<h3 id="smart-assist-zero-touch-lock-faical-recognition-title mt-2">
-														{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.title' | translate}}
-													</h3>
-													<p id="smart-assist-zero-touch-lock-faical-recognition-desc"
-														role="text"
-														attr-aria-label="smart-assist-zero-touch-lock-faical-recognition-desc">
-														{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.caption' | translate}}
-													</p>
-													<div class="smart-assist-checkbox">
-														<vtr-ui-checkbox [componentId]="'cb-zero-touch-lock'"
-															[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || !intelligentSecurity.facilRecognitionCameraAccess
-																|| intelligentSecurity.facialRecognitionCameraPrivacyMode"
-															[value]="intelligentSecurity.isZeroTouchLockFacialRecoEnabled"
-															[checked]="intelligentSecurity.isZeroTouchLockFacialRecoEnabled"
-															[label]="'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.checkBox' | translate"
-															(toggle)='onZeroTouchLockFacialRecoChange($event)'>
-														</vtr-ui-checkbox>
-													</div>
-													<div *ngIf="!intelligentSecurity.facilRecognitionCameraAccess || intelligentSecurity.facialRecognitionCameraPrivacyMode"
-														class="permission-note p-4">
-														<div class="row">
-															<div *ngIf="!intelligentSecurity.facilRecognitionCameraAccess"
-																class="col pr-3"
+													attr-aria-label="smart-assist-zero-touch-lock-faical-recognition-desc">
+													{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.caption' | translate}}
+												</p>
+												<div class="smart-assist-checkbox">
+													<vtr-ui-checkbox [componentId]="'cb-zero-touch-lock'"
+														[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || !intelligentSecurity.facilRecognitionCameraAccess
+															|| intelligentSecurity.facialRecognitionCameraPrivacyMode"
+														[value]="intelligentSecurity.isZeroTouchLockFacialRecoEnabled"
+														[checked]="intelligentSecurity.isZeroTouchLockFacialRecoEnabled"
+														[label]="'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.checkBox' | translate"
+														(toggle)='onZeroTouchLockFacialRecoChange($event)'>
+													</vtr-ui-checkbox>
+												</div>
+												<div *ngIf="!intelligentSecurity.facilRecognitionCameraAccess || intelligentSecurity.facialRecognitionCameraPrivacyMode"
+													class="permission-note p-4">
+													<div class="row">
+														<div *ngIf="!intelligentSecurity.facilRecognitionCameraAccess"
+															class="col pr-3"
+															role="text">
+															<span class="mb-0 mt-auto"
+																id="ztl-facial-recognition-permission-note"
 																role="text">
-																<span class="mb-0 mt-auto"
-																	id="ztl-facial-recognition-permission-note"
-																	role="text">
-																	{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.note.permission' | translate}}
-																</span>
-																<button type="button"
-																	class="btn btn-link privacy-button pl-0"
-																	(click)="onClick('ms-settings:privacy-webcam')"
-																	(keydown.enter)="onClick('ms-settings:privacy-webcam')"
-																	id="ztl-facial-recognition-access-url"
-																	role="button"
-																	tabindex="0"
-																	[attr.aria-disabled]="!intelligentSecurity.isZeroTouchLockEnabled"
-																	[disabled]="!intelligentSecurity.isZeroTouchLockEnabled">
-																	{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.note.windowsLink' | translate}}
-																</button>
-															</div>
-															<div class="col pl-3"
-																role="text"
+																{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.note.permission' | translate}}
+															</span>
+															<button type="button"
+																class="btn btn-link privacy-button pl-0"
+																(click)="onClick('ms-settings:privacy-webcam')"
+																(keydown.enter)="onClick('ms-settings:privacy-webcam')"
+																id="ztl-facial-recognition-access-url"
+																role="button"
 																tabindex="0"
-																*ngIf="intelligentSecurity.facilRecognitionCameraAccess && intelligentSecurity.facialRecognitionCameraPrivacyMode">
-																<span class="mb-0 mt-auto"
-																	id="ztl-facial-recognition-privacy-note"
-																	role="text">
-																	{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.note.privacyMode' | translate}}
-																</span>
-																<button type="button"
-																	class="btn btn-link privacy-button pl-0"
-																	(click)="onJumpClick()"
-																	(keydown.enter)="onJumpClick()"
-																	id="ztl-facial-recognition-privacy-url"
-																	role="button"
-																	tabindex="0"
-																	[attr.aria-disabled]="!intelligentSecurity.isZeroTouchLockEnabled"
-																	[disabled]="!intelligentSecurity.isZeroTouchLockEnabled">
-																	{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.note.privacyLink' | translate}}
-																</button>
-															</div>
+																[attr.aria-disabled]="!intelligentSecurity.isZeroTouchLockEnabled"
+																[disabled]="!intelligentSecurity.isZeroTouchLockEnabled">
+																{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.note.windowsLink' | translate}}
+															</button>
+														</div>
+														<div class="col pl-3"
+															role="text"
+															tabindex="0"
+															*ngIf="intelligentSecurity.facilRecognitionCameraAccess && intelligentSecurity.facialRecognitionCameraPrivacyMode">
+															<span class="mb-0 mt-auto"
+																id="ztl-facial-recognition-privacy-note"
+																role="text">
+																{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.note.privacyMode' | translate}}
+															</span>
+															<button type="button"
+																class="btn btn-link privacy-button pl-0"
+																(click)="onJumpClick()"
+																(keydown.enter)="onJumpClick()"
+																id="ztl-facial-recognition-privacy-url"
+																role="button"
+																tabindex="0"
+																[attr.aria-disabled]="!intelligentSecurity.isZeroTouchLockEnabled"
+																[disabled]="!intelligentSecurity.isZeroTouchLockEnabled">
+																{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.note.privacyLink' | translate}}
+															</button>
 														</div>
 													</div>
 												</div>
 											</div>
-										</vtr-ui-row-switch>
+										</div>
 										<!-- distance sensitivity adjusting -- thinkpad section -->
 										<div *ngIf="sensitivityVisibility"
 											class="pl-5 bold-title no-border-bottom pb-4">
