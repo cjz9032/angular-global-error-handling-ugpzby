@@ -8,16 +8,16 @@
 			(keydown.enter)="changeRoute(tab.path)"
 			role="link"
 			id="myDevice-settings-header-menu-{{tab.icon}}"
-			attr.aria-label="myDevice-settings-header-menu-{{tab.icon}}">
+			attr.aria-label="myDevice-settings-header-menu-{{tab.label}">
 			<div class="tab-label"
 				id="myDevice-settings-header-menu-{{tab.icon}}-title"
-				attr.aria-label="myDevice-settings-header-menu-{{tab.icon}}-title"
-				title="{{tab.label}}">
-				<i class="icomoon {{tab.iconClass}}"></i>
-				<span class="text">{{tab.label}}</span>
-			</div>
-			<fa-icon [icon]="['fas', 'square']"
-				class="menu-pointer"></fa-icon>
+			attr.aria-label="myDevice-settings-header-menu-{{tab.icon}}-title"
+			title="{{tab.label}}">
+			<i class="icomoon {{tab.iconClass}}"></i>
+			<span class="text">{{tab.label}}</span>
 		</div>
-	</ng-container>
+		<fa-icon [icon]="['fas', 'square']"
+			class="menu-pointer"></fa-icon>
+</div>
+</ng-container>
 </div>
