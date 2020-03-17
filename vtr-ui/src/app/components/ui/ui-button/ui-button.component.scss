@@ -102,6 +102,16 @@
 				cursor: default;
 				opacity: 0.5;
 			}
+			@media #{$black-on-white} {
+				border: 0.1rem solid $high-contrast-white-disabled !important;
+		
+				
+			}
+			@media #{$white-on-black} {
+				border: 0.1rem solid $high-contrast-black-disabled !important;
+		
+				
+			}
 		}
 
 		.loading {
