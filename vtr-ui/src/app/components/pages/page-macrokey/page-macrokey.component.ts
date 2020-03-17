@@ -98,11 +98,11 @@ export class PageMacrokeyComponent implements OnInit {
 
 		if (!this.isOnline) {
 			this.cardContentPositionC = {
-				FeatureImage: './../../../../assets/cms-cache/GamingPosC.jpg'
+				FeatureImage: 'assets/cms-cache/GamingPosC.jpg'
 			};
 
 			this.cardContentPositionF = {
-				FeatureImage: './../../../../assets/cms-cache/macrokey_offline.jpg'
+				FeatureImage: 'assets/cms-cache/macrokey_offline.jpg'
 			};
 		}
 	}

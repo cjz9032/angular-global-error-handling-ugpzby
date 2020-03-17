@@ -192,34 +192,45 @@ export class MetricService {
 	}
 
 	private handleAppLoadedEvent() {
+		if (this.hasSendAppLoadedEvent) {
+			return;	// send the initialzation metrics once at one session
+		}
+		this.hasSendAppLoadedEvent = true;
+
 		if (!this.dashboardFirstLoaded) {
 			this.dashboardFirstLoaded = Date.now();
 		}
 
-		this.hasSendAppLoadedEvent = true;
+		// the following metrics need to be send when the welcome page was done or the page was loaded at which point the metrics privacy was determined
+		this.sendAppLaunchMetric()
 		this.sendEnvInfoMetric();
 		this.sendAppLoadedMetric(this.dashboardFirstLoaded);
 	}
 
 	public async metricReady() {
-		return this.metricsClient.initializationResolved || this.metricsClient.initPromise;
+		if (this.metricsClient.initializationResolved){
+			 return;
+		 }
+		 await this.metricsClient.initPromise;
 	}
 
-	public onPageLoaded() {
+	public async onPageLoaded() {
 		if (this.dashboardFirstLoaded) {
 			return; 	// run once
 		}
 
 		this.dashboardFirstLoaded = Date.now(); // save the time while app finish loading.
-		if (!this.hasSendAppLoadedEvent) {	// in normal case for first run, if the welcome page was not done, the metrics will be disable.
+		await this.metricReady();
+		if (this.metricsClient.metricsEnabled) {	// in normal case for first run, if the welcome page was not done, the metrics will be disable.
 			this.handleAppLoadedEvent();	// send these metric event in dashboard at the scenarios when welcome page was done.
 		}
 
 		// else the welcome page need to check if it should send the metrics after the metrics option was determined
 	}
 
-	public handleWelcomeDone() {
-		if (!this.hasSendAppLoadedEvent) {
+	public async handleWelcomeDone() {
+		await this.metricReady();
+		if (this.metricsClient.metricsEnabled) {
 			this.handleAppLoadedEvent();
 		}
 	}

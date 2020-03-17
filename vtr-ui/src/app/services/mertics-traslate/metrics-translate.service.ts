@@ -79,9 +79,9 @@ export class MetricsTranslateService {
 	}
 
 	loadBaseAndTargetFile() {
-		this.http.get('./assets/i18n/en.json').subscribe((baseLanguage) => {
+		this.http.get('assets/i18n/en.json').subscribe((baseLanguage) => {
 			if (this.translateService.currentLang) {
-				return this.http.get('./assets/i18n/' + this.translateService.currentLang + '.json').subscribe((targetLanguage) => {
+				return this.http.get('assets/i18n/' + this.translateService.currentLang + '.json').subscribe((targetLanguage) => {
 					this.setTargetLanguage(targetLanguage);
 					this.setBaseLanguage(baseLanguage);
 				});

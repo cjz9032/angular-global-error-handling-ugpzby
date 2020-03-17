@@ -24,10 +24,10 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 
 	title = 'device.deviceSettings.inputAccessories.title';
 	public shortcutKeys: any[] = [];
-	public privacyIcon = '/assets/images/keyboard-images/KeyboarmMap_Icons/Privacy-Screen.png';
-	public kbdBlIcon = '/assets/images/keyboard-images/KeyboarmMap_Icons/KBD-BL.png';
-	public merlynIcon = '/assets/images/keyboard-images/KeyboarmMap_Icons/Merlyn-Perf-mode.png';
-	public zoomIcon = '/assets/images/keyboard-images/KeyboarmMap_Icons/Zoom-app.png';
+	public privacyIcon = 'assets/images/keyboard-images/KeyboarmMap_Icons/Privacy-Screen.png';
+	public kbdBlIcon = 'assets/images/keyboard-images/KeyboarmMap_Icons/KBD-BL.png';
+	public merlynIcon = 'assets/images/keyboard-images/KeyboarmMap_Icons/Merlyn-Perf-mode.png';
+	public zoomIcon = 'assets/images/keyboard-images/KeyboarmMap_Icons/Zoom-app.png';
 	public imagePath = 'assets/images/keyboard-images/KeyboardMap_Images/';
 	public imagePathGrafEvo = 'assets/images/keyboard-images/KeyboardMap_Images/GrafEvo/';
 	public imagePathCS20 = 'assets/images/keyboard-images/KeyboardMap_Images/CS20/';
@@ -83,9 +83,10 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 				this.getKBDLayoutName();
 			}
 			// udk capability
-			const inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability);
-			this.hasUDKCapability = inputAccessoriesCapability.isUdkAvailable;
-
+			const inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, undefined);
+			if (this.inputAccessoriesCapability) {
+				this.hasUDKCapability = inputAccessoriesCapability.isUdkAvailable;
+			}
 			// fnCtrlSwap & fnAsCtrl features hidden in 3.2.001
 
 			// this.getFnCtrlSwapCapability();
@@ -155,7 +156,8 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	initHiddenKbdFnFromCache() {
 		try {
 			this.inputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, undefined);
-			if (this.inputAccessoriesCapability !== undefined) {
+			this.logger.error('initHiddenKbdFnFromCache capability from cache', this.inputAccessoriesCapability);
+			if (this.inputAccessoriesCapability) {
 				this.cacheFound = true;
 				this.keyboardCompatibility = this.inputAccessoriesCapability.isKeyboardMapAvailable;
 				this.keyboardVersion = this.inputAccessoriesCapability.keyboardVersion;
@@ -188,19 +190,19 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	getAdditionalCapabilitiesFromCache() {
 		this.shortcutKeys = [];
 		if (this.additionalCapabilitiesObj.performance) {
-			this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.fourthKeyObj');
+			this.shortcutKeys.push({ text: 'device.deviceSettings.inputAccessories.inputAccessory.fourthKeyObj', id: 'FnQ' });
 		}
 
-		this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.secondKeyObj');
+		this.shortcutKeys.push({ text: 'device.deviceSettings.inputAccessories.inputAccessory.secondKeyObj', id: 'Fn4' });
 
 		if (this.additionalCapabilitiesObj.privacy) {
-			this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.thirdKeyObj');
+			this.shortcutKeys.push({ text: 'device.deviceSettings.inputAccessories.inputAccessory.thirdKeyObj', id: 'FnD' });
 		}
 		if (this.additionalCapabilitiesObj.magnifier) {
-			this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.firstKeyObj');
+			this.shortcutKeys.push({ text: 'device.deviceSettings.inputAccessories.inputAccessory.firstKeyObj', id: 'FnTab' });
 		}
 		if (this.additionalCapabilitiesObj.backLight) {
-			this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.fifthKeyObj');
+			this.shortcutKeys.push({ text: 'device.deviceSettings.inputAccessories.inputAccessory.fifthKeyObj', id: 'FnSpace' });
 		}
 	}
 
@@ -282,18 +284,18 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 				]).then((response: any[]) => {
 					if (response && response.length) {
 						if (response[0]) {
-							this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.fourthKeyObj');
+							this.shortcutKeys.push({ text: 'device.deviceSettings.inputAccessories.inputAccessory.fourthKeyObj', id: 'FnQ' });
 						}
-						this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.secondKeyObj');
+						this.shortcutKeys.push({ text: 'device.deviceSettings.inputAccessories.inputAccessory.secondKeyObj', id: 'Fn4' });
 
 						if (response[1]) {
-							this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.thirdKeyObj');
+							this.shortcutKeys.push({ text: 'device.deviceSettings.inputAccessories.inputAccessory.thirdKeyObj', id: 'FnD' });
 						}
 						if (response[2]) {
-							this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.firstKeyObj');
+							this.shortcutKeys.push({ text: 'device.deviceSettings.inputAccessories.inputAccessory.firstKeyObj', id: 'FnTab' });
 						}
 						if (response[3]) {
-							this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.fifthKeyObj');
+							this.shortcutKeys.push({ text: 'device.deviceSettings.inputAccessories.inputAccessory.fifthKeyObj', id: 'FnSpace' });
 						}
 						this.additionalCapabilitiesObj = {
 							performance: response[0],
@@ -312,7 +314,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 		}
 	}
 	// fnCtrlSwap & fnAsCtrl features hidden in 3.2.001
- 	// FnCtrlSwap feature start here
+	// FnCtrlSwap feature start here
 	/*public getFnCtrlSwapCapability() {
 		try {
 			if (this.keyboardService.isShellAvailable) {
@@ -365,7 +367,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 		}
 	}
 	*/
- 	// FnCtrlSwap feature end here
+	// FnCtrlSwap feature end here
 
 	// FnAsCtrl feature start here
 	/*public getFnAsCtrlCapability() {
@@ -425,7 +427,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 				this.generateLayOutTable(array);
 				break;
 			case 'BELGIUM':
-			case 'FRENCH' :
+			case 'FRENCH':
 			case 'FRENCH_CANADIAN':
 				array = [7, 4, 10, 11, 2, 9, 13, 12];
 				this.generateLayOutTable(array);
@@ -457,7 +459,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 			this.fnCtrlKeyTooltipContent.push(obj);
 		});
 	}
- 	// FnAsCtrl feature end here
+	// FnAsCtrl feature end here
 	public launchProtocol(protocol: string) {
 		if (this.keyboardService.isShellAvailable && protocol && protocol.length > 0) {
 			WinRT.launchUri(protocol);

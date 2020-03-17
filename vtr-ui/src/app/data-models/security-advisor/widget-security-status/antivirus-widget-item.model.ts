@@ -1,12 +1,27 @@
-import { WidgetItem } from './widget-item.model';
-import { Antivirus, EventTypes } from '@lenovo/tan-client-bridge';
-import { CommonService } from '../../../services/common/common.service';
-import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
-import { TranslateService } from '@ngx-translate/core';
+import {
+	WidgetItem
+} from './widget-item.model';
+import {
+	Antivirus,
+	EventTypes
+} from '@lenovo/tan-client-bridge';
+import {
+	CommonService
+} from '../../../services/common/common.service';
+import {
+	LocalStorageKey
+} from '../../../enums/local-storage-key.enum';
+import {
+	TranslateService
+} from '@ngx-translate/core';
+import {
+	AntivirusService
+} from 'src/app/services/security/antivirus.service';
+import { AntivirusCommonData } from '../antivirus-common.data.model';
 
 export class AntivirusWidgetItem extends WidgetItem {
 	currentPage: string;
-	constructor(public antivirus: Antivirus, public commonService: CommonService, public translateService: TranslateService) {
+	constructor(public antivirus: Antivirus, public commonService: CommonService, public translateService: TranslateService, public antivirusService: AntivirusService) {
 		super({
 			id: 'sa-widget-lnk-av',
 			path: 'security/anti-virus',
@@ -19,18 +34,11 @@ export class AntivirusWidgetItem extends WidgetItem {
 		this.translateService.stream('common.securityAdvisor.antiVirus').subscribe((value) => {
 			this.title = value;
 		});
-		const cacheAvStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus);
-		const cacheFwStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus);
-		const cacheCurrentPage = commonService.getLocalStorageValue(LocalStorageKey.SecurityCurrentPage);
 
-		if (antivirus.mcafee || antivirus.windowsDefender || antivirus.others) {
-			this.setPage(antivirus);
-		} else if (cacheAvStatus !== undefined || cacheFwStatus !== undefined) {
-			this.setAntivirusStatus(cacheAvStatus, cacheFwStatus, cacheCurrentPage);
-		}
+		this.setWidgetUI(this.antivirusService.GetAntivirusStatus());
 
 		antivirus.on(EventTypes.avRefreshedEvent, (av) => {
-			this.setPage(av);
+			this.setWidgetUI(this.antivirusService.GetAntivirusStatus());
 		}).on(EventTypes.avStartRefreshEvent, () => {
 			if (this.status === 7) {
 				this.translateService.stream('common.securityAdvisor.loading').subscribe((value) => {
@@ -43,42 +51,18 @@ export class AntivirusWidgetItem extends WidgetItem {
 		});
 	}
 
-	setPage(antiVirus: Antivirus) {
-		if (antiVirus.mcafee && (antiVirus.mcafee.enabled || !antiVirus.others || !antiVirus.others.enabled) && antiVirus.mcafee.expireAt > 0) {
-			this.currentPage = 'mcafee';
-			this.setAntivirusStatus(
-				antiVirus.mcafee.status !== undefined ? antiVirus.mcafee.status : null,
-				antiVirus.mcafee.firewallStatus !== undefined ? antiVirus.mcafee.firewallStatus : null,
-				this.currentPage
-			);
-		} else if (antiVirus.others) {
-			this.currentPage = 'others';
-			this.setAntivirusStatus(
-				antiVirus.others.antiVirus.length > 0 ? antiVirus.others.antiVirus[0].status : null,
-				antiVirus.others.firewall.length > 0 ? antiVirus.others.firewall[0].status : antiVirus.windowsDefender.firewallStatus,
-				this.currentPage
-			);
-		} else {
-			this.currentPage = 'windows';
-			if (antiVirus.windowsDefender) {
-				this.setAntivirusStatus(
-					antiVirus.windowsDefender.status !== undefined ? antiVirus.windowsDefender.status : null,
-					antiVirus.windowsDefender.firewallStatus !== undefined ? antiVirus.windowsDefender.firewallStatus : null,
-					this.currentPage
-				);
-			}
-		}
-		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityCurrentPage, this.currentPage);
+	private setWidgetUI(antivirusCommonData: AntivirusCommonData) {
+		this.currentPage = antivirusCommonData.currentPage;
+		this.setAntivirusStatus(antivirusCommonData.antivirus, antivirusCommonData.firewall);
 	}
 
-	setAntivirusStatus(av: boolean | undefined, fw: boolean | undefined, currentPage: string) {
-		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus, fw !== undefined ? fw : null);
-		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus, av !== undefined ? av : null);
-
-		if (typeof av !== 'boolean' && typeof fw !== 'boolean') { return; }
-		if ((av && fw)
-			|| (av && typeof fw !== 'boolean')
-			|| (fw && typeof av !== 'boolean')) {
+	private setAntivirusStatus(av: boolean | undefined, fw: boolean | undefined) {
+		if (typeof av !== 'boolean' && typeof fw !== 'boolean') {
+			return;
+		}
+		if ((av && fw) ||
+			(av && typeof fw !== 'boolean') ||
+			(fw && typeof av !== 'boolean')) {
 			this.translateService.stream('common.securityAdvisor.enabled').subscribe((value) => {
 				this.detail = value;
 				this.status = 0;

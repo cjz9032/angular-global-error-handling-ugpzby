@@ -21,8 +21,8 @@
                     <input id="radio-performance" class="item-radio-button" type="radio" name="thermalMode"
                         [checked]="thermalModeSettingStatus===3" value="3" (click)="setThermalModeSettingStatus(3)">
                     <label for="radio-performance">
-                        <img class="gaming-header-image" *ngIf="thermalModeSettingStatus!==3" [src]="'./../../../../assets/images/gaming/thermalMode2/rest@2x.png'  | svgInline | async" />
-                        <img class="gaming-header-image" *ngIf="thermalModeSettingStatus===3" [src]="'./../../../../assets/images/gaming/thermalMode2/selected@2x.png'  | svgInline | async" />
+                        <img class="gaming-radio-image-rest" *ngIf="thermalModeSettingStatus!==3" [src]="'assets/images/gaming/thermalMode2/white100@2x.png'  | svgInline | async" />
+                        <img class="gaming-radio-image" *ngIf="thermalModeSettingStatus===3" [src]="'assets/images/gaming/thermalMode2/selected@2x.png'  | svgInline | async" />
                     </label>
                 </div>
                 <div class="item-right">
@@ -41,15 +41,15 @@
                             </div>
                             <div class="oc-description">
                                 <p *ngIf="OCsupportted === 3">
-                                    {{ 'gaming.dashboard.device.thermalMode2Popup.OC.cpu_gpuOC' | translate }} &nbsp; 
+                                    {{ 'gaming.dashboard.device.thermalMode2Popup.OC.cpu_gpuOC' | translate }} &nbsp;
                                     <a *ngIf="gamingCapabilities.advanceCPUOCFeature || gamingCapabilities.advanceGPUOCFeature" class="oc-advance-button" (click)="openWaringModal()">{{ 'gaming.dashboard.device.thermalMode2Popup.OC.advance' | translate }}</a>
                                 </p>
                                 <p *ngIf="OCsupportted === 2">
-                                    {{ 'gaming.dashboard.device.thermalMode2Popup.OC.cpuOC' | translate }} &nbsp; 
+                                    {{ 'gaming.dashboard.device.thermalMode2Popup.OC.cpuOC' | translate }} &nbsp;
                                     <a *ngIf="gamingCapabilities.advanceCPUOCFeature || gamingCapabilities.advanceGPUOCFeature" class="oc-advance-button" (click)="openWaringModal()">{{ 'gaming.dashboard.device.thermalMode2Popup.OC.advance' | translate }}</a>
                                 </p>
                                 <p *ngIf="OCsupportted === 1">
-                                    {{ 'gaming.dashboard.device.thermalMode2Popup.OC.gpuOC' | translate }} &nbsp; 
+                                    {{ 'gaming.dashboard.device.thermalMode2Popup.OC.gpuOC' | translate }} &nbsp;
                                     <a *ngIf="gamingCapabilities.advanceCPUOCFeature || gamingCapabilities.advanceGPUOCFeature" class="oc-advance-button" (click)="openWaringModal()">{{ 'gaming.dashboard.device.thermalMode2Popup.OC.advance' | translate }}</a>
                                 </p>
                             </div>
@@ -57,15 +57,15 @@
                         <ng-container *ngIf="OCsupportted !== driverStatus && driverStatus !== 3">
                             <div class="oc-description">
                                 <p *ngIf="OCsupportted === 3 && driverStatus === 0">
-                                    {{ 'gaming.dashboard.device.thermalMode2Popup.OC.cpu_gpuDriverLack' | translate }} &nbsp; 
+                                    {{ 'gaming.dashboard.device.thermalMode2Popup.OC.cpu_gpuDriverLack' | translate }} &nbsp;
                                     <a class="oc-driver-link" routerLink="/device/system-updates" (click)="closeThermalMode2Modal()">{{ 'gaming.dashboard.device.thermalMode2Popup.OC.goInstall' | translate }}</a>
                                 </p>
                                 <p *ngIf="(OCsupportted === 3 && driverStatus === 1) || (OCsupportted === 2 && driverStatus !== 3)">
-                                    {{ 'gaming.dashboard.device.thermalMode2Popup.OC.cpuDriverLack' | translate }} &nbsp; 
+                                    {{ 'gaming.dashboard.device.thermalMode2Popup.OC.cpuDriverLack' | translate }} &nbsp;
                                     <a class="oc-driver-link" routerLink="/device/system-updates" (click)="closeThermalMode2Modal()">{{ 'gaming.dashboard.device.thermalMode2Popup.OC.goInstall' | translate }}</a>
                                 </p>
                                 <p *ngIf="(OCsupportted === 3 && driverStatus === 2) || (OCsupportted === 1 && driverStatus !== 3)">
-                                    {{ 'gaming.dashboard.device.thermalMode2Popup.OC.gpuDriverLack' | translate }} &nbsp; 
+                                    {{ 'gaming.dashboard.device.thermalMode2Popup.OC.gpuDriverLack' | translate }} &nbsp;
                                     <a class="oc-driver-link" routerLink="/device/system-updates" (click)="closeThermalMode2Modal()">{{ 'gaming.dashboard.device.thermalMode2Popup.OC.goInstall' | translate }}</a>
                                 </p>
                             </div>
@@ -78,8 +78,8 @@
                     <input id="radio-banance" class="item-radio-button" type="radio" name="thermalMode"
                         [checked]="thermalModeSettingStatus===2" value="2" (click)="setThermalModeSettingStatus(2)">
                     <label for="radio-banance">
-                        <img class="gaming-header-image" *ngIf="thermalModeSettingStatus!==2" [src]="'./../../../../assets/images/gaming/thermalMode2/rest@2x.png'  | svgInline | async" />
-                        <img class="gaming-header-image" *ngIf="thermalModeSettingStatus===2" [src]="'./../../../../assets/images/gaming/thermalMode2/selected@2x.png'  | svgInline | async" />
+                        <img class="gaming-radio-image-rest" *ngIf="thermalModeSettingStatus!==2" [src]="'assets/images/gaming/thermalMode2/white100@2x.png'  | svgInline | async" />
+                        <img class="gaming-radio-image" *ngIf="thermalModeSettingStatus===2" [src]="'assets/images/gaming/thermalMode2/selected@2x.png'  | svgInline | async" />
                     </label>
                 </div>
                 <div class="item-right">
@@ -94,8 +94,8 @@
                     <input id="radio-quiet" class="item-radio-button" type="radio" name="thermalMode"
                         [checked]="thermalModeSettingStatus===1" value="1" (click)="setThermalModeSettingStatus(1)">
                     <label for="radio-quiet">
-                        <img class="gaming-header-image" *ngIf="thermalModeSettingStatus!==1" [src]="'./../../../../assets/images/gaming/thermalMode2/rest@2x.png'  | svgInline | async" />
-                        <img class="gaming-header-image" *ngIf="thermalModeSettingStatus===1" [src]="'./../../../../assets/images/gaming/thermalMode2/selected@2x.png'  | svgInline | async" />
+                        <img class="gaming-radio-image-rest" *ngIf="thermalModeSettingStatus!==1" [src]="'assets/images/gaming/thermalMode2/white100@2x.png'  | svgInline | async" />
+                        <img class="gaming-radio-image" *ngIf="thermalModeSettingStatus===1" [src]="'assets/images/gaming/thermalMode2/selected@2x.png'  | svgInline | async" />
                     </label>
                 </div>
                 <div class="item-right">

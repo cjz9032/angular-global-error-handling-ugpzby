@@ -14,6 +14,7 @@ import { LocalInfoService } from 'src/app/services/local-info/local-info.service
 import { UACWidgetItemViewModel } from 'src/app/data-models/security-advisor/widget-security-status/uac-widget-item.model';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { DeviceService } from 'src/app/services/device/device.service';
+import { AntivirusService } from 'src/app/services/security/antivirus.service';
 
 @Component({
 	selector: 'vtr-widget-security-status',
@@ -34,11 +35,12 @@ export class WidgetSecurityStatusComponent implements OnInit {
 		private deviceService: DeviceService,
 		private ngZone: NgZone,
 		private windowsHelloService: WindowsHelloService,
-		private hypSettings: HypothesisService) { }
+		private hypSettings: HypothesisService,
+		private antivirusService: AntivirusService) { }
 
 	ngOnInit() {
 		this.items = [
-			new AntivirusWidgetItem(this.securityAdvisor.antivirus, this.commonService, this.translateService),
+			new AntivirusWidgetItem(this.securityAdvisor.antivirus, this.commonService, this.translateService, this.antivirusService),
 			new PassWordManagerWidgetItem(this.securityAdvisor.passwordManager, this.commonService, this.translateService),
 			new UACWidgetItemViewModel(this.securityAdvisor.uac, this.commonService, this.translateService)
 		];

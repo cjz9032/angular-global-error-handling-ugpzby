@@ -56,6 +56,21 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	dashboardStart: any = new Date();
 	public hideTitle = false;
 
+	supportDatas = {
+		documentation: [
+			{
+				icon: ['fal', 'book'],
+				title: 'support.documentation.listUserGuide',
+				clickItem: 'userGuide',
+				metricsItem: 'Documentation.UserGuideButton',
+				metricsEvent: 'FeatureClick',
+				metricsParent: 'Page.Dashboard'
+			}
+		],
+		needHelp: [],
+		quicklinks: [],
+	};
+
 	heroBannerItems = []; // tile A
 	cardContentPositionB: FeatureContent = new FeatureContent();
 	cardContentPositionC: FeatureContent = new FeatureContent();
@@ -161,7 +176,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		public dashboardService: DashboardService,
 		public qaService: QaService,
 		private modalService: NgbModal,
-		config: NgbModalConfig,
+		private config: NgbModalConfig,
 		public commonService: CommonService,
 		public deviceService: DeviceService,
 		private cmsService: CMSService,
@@ -181,27 +196,31 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		public dccService: DccService,
 		private selfselectService:SelfSelectService
 	) {
+	}
+
+	ngOnInit() {
 		this.getProtocalAction();
-		config.backdrop = 'static';
-		config.keyboard = false;
+		this.config.backdrop = 'static';
+		this.config.keyboard = false;
+		this.isOnline = this.commonService.isOnline;
 		this.deviceService.getMachineInfo().then(() => {
 			this.setDefaultSystemStatus();
+			if (this.dashboardService.isShellAvailable) {
+				this.logger.info('PageDashboardComponent.getSystemInfo');
+				this.getSystemInfo();
+			}
 		});
 		// this.brand = this.deviceService.getMachineInfoSync().brand;
 		this.brand = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType, -1);
 		// Evaluate the translations for QA on language Change
 		// this.qaService.setTranslationService(this.translate);
 		// this.qaService.setCurrentLangTranslations();
-		this.qaService.getQATranslation(translate); // VAN-5872, server switch feature
+		this.qaService.getQATranslation(this.translate); // VAN-5872, server switch feature
 		// this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
 		// 	this.fetchContent();
 		// });
 
-		this.isOnline = this.commonService.isOnline;
-		this.isWarrantyVisible = deviceService.showWarranty;
-	}
-
-	ngOnInit() {
+		this.isWarrantyVisible = this.deviceService.showWarranty;
 		this.dashboardService.isDashboardDisplayed = true;
 		this.getWelcomeText();
 		this.commonService.setSessionStorageValue(SessionStorageKey.DashboardInDashboardPage, true);
@@ -209,11 +228,6 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			this.onNotification(notification);
 		});
 
-		this.isOnline = this.commonService.isOnline;
-		if (this.dashboardService.isShellAvailable) {
-			this.logger.info('PageDashboardComponent.getSystemInfo');
-			this.getSystemInfo();
-		}
 		this.translate
 			.stream([
 				'dashboard.offlineInfo.welcomeToVantage',
@@ -426,7 +440,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			id: '',
 			source: this.sanitizer.sanitize(SecurityContext.HTML, 'VANTAGE'),
 			title: this.sanitizer.sanitize(SecurityContext.HTML, 'Lenovo exclusive offer of Adobe designer suite'),
-			url: '/assets/images/dcc/hero-banner-dcc.jpg',
+			url: 'assets/images/dcc/hero-banner-dcc.jpg',
 			ActionLink: 'dcc-demo',
 			ActionType: 'Internal',
 			DataSource: 'cms'

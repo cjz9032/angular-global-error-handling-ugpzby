@@ -1,14 +1,14 @@
 import { TranslateLoader } from '@ngx-translate/core';
 import { from, of, Observable } from 'rxjs';
 
-import en from '../../../assets/i18n/en.json';
-import ptbr from '../../../assets/i18n/pt-br.json';
-import ja from '../../../assets/i18n/ja.json';
-import es from '../../../assets/i18n/es.json';
-import ru from '../../../assets/i18n/ru.json';
-import zhhans from '../../../assets/i18n/zh-hans.json';
-import de from '../../../assets/i18n/de.json';
-import fr from '../../../assets/i18n/fr.json';
+import en from 'src/assets/i18n/en.json';
+import ptbr from 'src/assets/i18n/pt-br.json';
+import ja from 'src/assets/i18n/ja.json';
+import es from 'src/assets/i18n/es.json';
+import ru from 'src/assets/i18n/ru.json';
+import zhhans from 'src/assets/i18n/zh-hans.json';
+import de from 'src/assets/i18n/de.json';
+import fr from 'src/assets/i18n/fr.json';
 
 // this loader will convert JSON files to JS and add HASH during deployment
 export class WebpackTranslateLoader implements TranslateLoader {

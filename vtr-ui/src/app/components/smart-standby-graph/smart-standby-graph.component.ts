@@ -27,7 +27,7 @@ export class SmartStandbyGraphComponent implements OnInit {
 	}
 
 	private getActivities(): Observable<SmartStandbyActivityModel[]> {
-		return this.http.get<SmartStandbyActivityModel[]>('/assets/activities.json');
+		return this.http.get<SmartStandbyActivityModel[]>('assets/activities.json');
 	}
 
 	private renderChart(data: SmartStandbyActivityModel[]) {

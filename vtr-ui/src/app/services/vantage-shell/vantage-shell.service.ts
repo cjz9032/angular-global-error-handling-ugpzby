@@ -202,7 +202,7 @@ export class VantageShellService {
 	}
 
 	private downloadMetricsPolicy() {
-		return this.http.get<string>('/assets/privacy-json/metrics.json');
+		return this.http.get<string>('assets/privacy-json/metrics.json');
 	}
 
 	/**

@@ -22,7 +22,8 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-sm-12 pb-20 pt-0 px-0" [hidden]="canShowDccDemo$ | async">
+				<div class="col-sm-12 pb-20 pt-0 px-0"
+					[hidden]="canShowDccDemo$ | async">
 					<vtr-widget-carousel [data]="heroBannerItems"
 						order="1"
 						source="title"
@@ -38,7 +39,8 @@
 						link="thumbnailUrl">
 					</vtr-widget-carousel>
 				</div>
-				<div class="col-sm-12 pb-20 pt-0 px-0" [hidden]="!(canShowDccDemo$ | async)">
+				<div class="col-sm-12 pb-20 pt-0 px-0"
+					[hidden]="!(canShowDccDemo$ | async)">
 					<vtr-widget-carousel [data]="heroBannerDemoItems"
 						order="1"
 						source="title"
@@ -122,7 +124,8 @@
 
 	<right-content>
 		<div class="container-fluid">
-			<div class="row">
+			<div class="row"
+				*ngIf="!deviceService.isArm && !deviceService.isSMode">
 				<div class="col-sm-12 col-md-12 pb-20 px-0">
 					<vtr-widget-system-update></vtr-widget-system-update>
 				</div>
@@ -133,6 +136,15 @@
 					<vtr-widget-dashboard-warranty [item]="warrantyData"
 						[isConnected]="isOnline">
 					</vtr-widget-dashboard-warranty>
+				</div>
+			</div>
+
+			<div class="row" *ngIf="!androidService.isAndroid && deviceService.isArm">
+				<div class="col-sm-12 col-md-12 pb-20 px-0">
+					<vtr-widget-support [title]="'support.documentation.title' | translate"
+						[description]="''"
+						[items]="supportDatas.documentation">
+					</vtr-widget-support>
 				</div>
 			</div>
 
@@ -164,6 +176,13 @@
 						[items]="qaService.qas"
 						blockPosition="r4"
 						[linkId]="'dashboard-qa'"></vtr-widget-questions>
+				</div>
+			</div>
+
+			<div class="row"
+				*ngIf="!androidService.isAndroid && deviceService.isArm">
+				<div class="col-sm-12 px-0 pb-20">
+					<vtr-widget-energy-star></vtr-widget-energy-star>
 				</div>
 			</div>
 

@@ -110,7 +110,6 @@ export class AppComponent implements OnInit, OnDestroy {
 		sessionStorage.clear();
 		this.getMachineInfo();
 
-		this.metricService.sendAppLaunchMetric();
 
 		window.onresize = () => { }; // this line is necessary, please do not remove.
 

@@ -47,7 +47,10 @@ export class SvgInlinePipe implements PipeTransform, OnDestroy {
 					});
 				});
 			} else {
-				return Promise.resolve(value);
+				return  new Observable(observer => {
+					observer.next(value);
+					observer.complete();
+				});
 			}
 		} else {
 			return Promise.resolve('null');

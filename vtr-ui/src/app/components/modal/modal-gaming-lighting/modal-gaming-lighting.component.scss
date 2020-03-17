@@ -7,7 +7,7 @@
 		height: 12rem;
 		padding: 3rem 4rem;
 		border-bottom:none;
-		background: url(../../../../assets/images/gaming/light800@2x.jpg) no-repeat center;
+		background: url(~/assets/images/gaming/light800@2x.jpg) no-repeat center;
 		background-size: 100% auto;
 		@media #{$black-on-white} {
 			background: $gaming_darkest;
