@@ -2235,7 +2235,7 @@ export class VantageShellService {
 		return undefined;
 	}
 
-	public getGamingAdvancedOC() {
+	getGamingAdvancedOC() {
 		return undefined;
 	}
 }

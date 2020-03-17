@@ -876,7 +876,7 @@
                 "tips2": "Lütfen ek yorumlarınızı aşağıya bırakın",
                 "emailAddressLabel": "Potansiyel olarak Lenovo Vantage ekibinin sizinle iletişime geçmesini istiyorsanız lütfen e-posta adresinizi belirtin.",
                 "emailAddress": "E-posta adresi",
-                "invalidEmailMsg": "Invalid email address"
+                "invalidEmailMsg": "Geçersiz e-posta adresi"
             }
         },
         "quickSettings": {
@@ -1997,30 +1997,30 @@
             },
             "voice": {
                 "title": "Ses",
-                "description": "Lenovo Voice, Sesten metne işlevi sayesinde sesinizi metne dönüştürmeye yardımcı olur ve Çeviri işlevi sayesinde sesten metne gerçek zamanlı çeviri sağlar.",
+                "description": "Lenovo Voice, Sesten Metne işlevi sayesinde sesinizi metne dönüştürür ve Çeviri Yardımcısı işlevi sayesinde gerçek zamanlı konuşma çevirisi yardımı sağlar.",
                 "installBtnText": "Kur",
                 "launchBtnText": "Başlat",
                 "voiceToText": {
                     "title": "Sesten metne",
-                    "caption": "Bu özellik sesinizin metne dönüştürülmesine yardımcı olur."
+                    "caption": "Bu özellik, hızlı giriş için sesi metne dönüştüren ses ile yazma işlevini sağlar."
                 },
                 "translation": {
                     "title": "Çeviri",
-                    "caption": "Bu özellik sesin gerçek zamanlı çevirisini sağlar. Çevrilen içerikler metin olarak gösterilir. İhtiyacınıza göre kaynak dil ve hedef dil seçebilirsiniz."
+                    "caption": "Bu özellik, konuşmaların gerçek zamanlı çevrilmesi konusunda yardım sağlar ve tüm çevrilenler metin içinde gösterilir. Kaynak ve hedef dil için birden fazla dil kullanılabilir."
                 },
                 "modalPopUp": {
                     "heading": "Başlayın:",
-                    "point1": "Windows sistem tepsisinde Lenovo Voice simgesinin görüntülendiğinden emin olun.",
-                    "point2": "Dönüştürülmüş metni kaydetmek istediğiniz dosyayı açın.",
+                    "point1": "Start (Başlat) Menüsü'nden Lenovo Voice uygulamasını başlatın; Windows sistem tepsisinde Lenovo Voice simgesi görüntülenir.",
+                    "point2": "Metin yazmak istediğiniz uygulamayı açın.",
                     "point3": "Windows sistem tepsisinde Lenovo Voice simgesine tıklayın ve Voice to text (Sesten metne) özelliğini seçin.",
-                    "point4": "İstediğiniz dili seçin ve başlamak için mikrofon simgesine tıklayın.",
-                    "point5": "İmleci düzenlemek istediğiniz yere getirin ve konuşmaya başlayın.",
-                    "point6": "Windows sistem tepsisinde Lenovo Voice simgesine tıklayın ve Translate (Çevir) özelliğini seçin.",
-                    "point7": "İstediğiniz kaynak dili ve hedef dili seçin.",
-                    "point8": "Gereksinimlerinize bağlı olarak ses girişini Hoparlör veya Mikrofon olacak şekilde ayarlayın.",
-                    "point9": "Konuşmaya başlamak için mikrofon simgesine tıklayın",
+                    "point4": "Gereksiniminize bağlı olarak dilleri seçin ve başlamak için mikrofon simgesine tıklayın.",
+                    "point5": "İmleci uygulamaya yerleştirin ve konuşmaya başlayın.",
+                    "point6": "Windows sistem tepsisinde Lenovo Voice simgesine tıklayın ve Translate (Çevir) seçeneğini belirleyin.",
+                    "point7": "Kaynak dilinizi ve hedef dili seçin.",
+                    "point8": "Gereksiniminize bağlı olarak ses girişini Hoparlör veya Mikrofon olacak şekilde ayarlayın.",
+                    "point9": "Konuşmaya başlamak için mikrofon simgesine tıklayın.",
                     "closeText": "kapat",
-                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
+                    "point10": "Windows sistem tepsisinde Lenovo Voice simgesinin görüntülendiğinden emin olun."
                 },
                 "modalInstallationFailed": {
                     "btnText": "tamam",
@@ -2187,6 +2187,7 @@
             "description": "Size yardımcı olmamız için bize ulaşın.",
             "listLenovoCommunity": "Lenovo Topluluğu",
             "listContactCustomerService": "Müşteri Hizmetleri ile iletişim kurun",
+            "listYourVirtualAssistant": "Your virtual assistant",
             "listContactUsOnWechat": "WeChat'te bize ulaşın",
             "weChatDescription": "WeChat'te sorunuzu bizimle paylaşırsanız hızlı bir şekilde yanıt alabilirsiniz",
             "listFindUs": "Sosyal medyada bizi bulun",

@@ -1425,6 +1425,12 @@
 						"description": "Choose a power plan to control the computer performance, system temperature, and power usage.",
 						"currentPowerPlan": {
 							"label": "CURRENT PLAN"
+						},
+						"profile": {
+							"title": "PLAN PROFILE:",
+							"performance": "Max performance:",
+							"temperature": "Max system temperature:",
+							"usage": "Max power usage:"
 						}
 					}
 				}
@@ -2524,6 +2530,7 @@
 			"description": "Contact us to help you out.",
 			"listLenovoCommunity": "Lenovo Community",
 			"listContactCustomerService": "Contact customer service",
+			"listYourVirtualAssistant": "Your virtual assistant",
 			"listContactUsOnWechat": "Contact us on WeChat",
 			"weChatDescription": "Shoot us a question on WeChat and we’ll be sure to respond quickly",
 			"listFindUs": "Find us on social media",
@@ -3562,6 +3569,6 @@
 		}
 	},
 	"cpt": {
-        "title": "Content Preview Tool"
-    }
+		"title": "Content Preview Tool"
+	}
 }

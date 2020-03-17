@@ -876,7 +876,7 @@
                 "tips2": "Kirjoita halutessasi muita kommentteja alle",
                 "emailAddressLabel": "Syötä sähköpostiosoitteesi, jos haluat, että Lenovo Vantage -tiimi ottaa sinuun yhteyttä.",
                 "emailAddress": "Sähköpostiosoite",
-                "invalidEmailMsg": "Invalid email address"
+                "invalidEmailMsg": "Virheellinen sähköpostiosoite"
             }
         },
         "quickSettings": {
@@ -1997,30 +1997,30 @@
             },
             "voice": {
                 "title": "Ääni",
-                "description": "Lenovo Voice muuttaa puheen tekstiksi Puhe tekstiksi -toiminnon avulla ja antaa reaaliaikaisen käännöksen puheesta tekstiksi Käännös-toiminnon avulla.",
+                "description": "Lenovo Voice muuntaa puheesi tekstiksi Puhe tekstiksi -toiminnon avulla ja auttaa puheen kääntämisessä reaaliaikaisesti Käännösavustaja-toiminnon avulla.",
                 "installBtnText": "Asenna",
                 "launchBtnText": "Aloita",
                 "voiceToText": {
                     "title": "Puhe tekstiksi",
-                    "caption": "Tämän ominaisuuden avulla voit muuttaa puheen tekstiksi."
+                    "caption": "Tämä ominaisuus tarjoaa toiminnon, joka muuntaa puheen tekstiksi nopeaa käyttöä varten."
                 },
                 "translation": {
                     "title": "Käännös",
-                    "caption": "Tämän ominaisuuden avulla voit kääntää puhetta reaaliaikaisesti. Käännetty sisältö näytetään tekstinä. Voit valita lähde- ja kohdekielet tarpeen mukaan."
+                    "caption": "Tämä ominaisuus auttaa puheen kääntämisessä reaaliaikaisesti. Kaikki käännökset näytetään tekstinä. Lähde- ja kohdekieliksi on saatavilla useita eri kieliä."
                 },
                 "modalPopUp": {
                     "heading": "Aloittaminen:",
-                    "point1": "Varmista, että Lenovo Voice -kuvake näkyy Windowsin ilmaisinalueella.",
-                    "point2": "Avaa tiedosto, johon haluat tallentaa muutetun tekstin.",
+                    "point1": "Käynnistä Lenovo Voice -ohjelma Käynnistä-valikosta, niin Windowsin ilmaisinalueessa näytetään Lenovo Voice -kuvake.",
+                    "point2": "Avaa sovellus, johon haluat kirjoittaa tekstiä.",
                     "point3": "Napsauta Windowsin ilmaisinalueelta Lenovo Voice -kuvaketta ja valitse Puhe tekstiksi.",
-                    "point4": "Valitse haluamasi kieli ja aloita napsauttamalla mikrofonia.",
-                    "point5": "Siirrä kohdistin kohtaan, jota haluat muokata, ja aloita puhuminen.",
-                    "point6": "Napsauta Windowsin ilmaisinalueelta Lenovo Voice -kuvaketta ja valitse Käännä.",
-                    "point7": "Valitse haluamasi lähde- ja kohdekieli.",
-                    "point8": "Määritä äänisyöttö kaiuttimesta tai mikrofonista tarpeen mukaan.",
-                    "point9": "Napsauta mikrofonikuvaketta ja aloita puhuminen",
+                    "point4": "Valitse tarvitsemasi kielet ja aloita napsauttamalla mikrofonikuvaketta.",
+                    "point5": "Aseta kohdistin sovellukseen ja aloita puhuminen.",
+                    "point6": "Napsauta Windowsin ilmaisinalueelta Lenovo Voice -kuvaketta ja valitse Käännös.",
+                    "point7": "Valitse lähde- ja kohdekielesi.",
+                    "point8": "Määritä äänisyöttö kaiuttimesta tai mikrofonista tarpeidesi mukaan.",
+                    "point9": "Napsauta mikrofonikuvaketta ja aloita puhuminen.",
                     "closeText": "sulje",
-                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
+                    "point10": "Varmista, että Lenovo Voice -kuvake näkyy Windowsin ilmaisinalueella."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -2187,6 +2187,7 @@
             "description": "Ota meihin yhteyttä, niin saat apua.",
             "listLenovoCommunity": "Lenovo-yhteisö",
             "listContactCustomerService": "Ota asiakaspalveluun yhteyttä",
+            "listYourVirtualAssistant": "Your virtual assistant",
             "listContactUsOnWechat": "Ota meihin yhteyttä WeChat-palvelussa",
             "weChatDescription": "Lähetä meille kysymys WeChat-palvelussa, niin vastaamme taatusti pian",
             "listFindUs": "Löydä meidät sosiaalisesta mediasta",

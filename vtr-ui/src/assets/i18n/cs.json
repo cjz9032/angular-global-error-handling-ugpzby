@@ -876,7 +876,7 @@
                 "tips2": "Níže uveďte případné další komentáře",
                 "emailAddressLabel": "Pokud chcete být v případě potřeby kontaktováni týmem aplikace Lenovo Vantage, uveďte svou e-mailovou adresu.",
                 "emailAddress": "E-mailová adresa",
-                "invalidEmailMsg": "Invalid email address"
+                "invalidEmailMsg": "Neplatná e-mailová adresa"
             }
         },
         "quickSettings": {
@@ -1997,30 +1997,30 @@
             },
             "voice": {
                 "title": "Hlas",
-                "description": "Lenovo Voice pomáhá převádět váš hlas do textů funkcí Hlas na text a funkcí Překlad zajišťuje překlad v reálném čase z hlasu do textů.",
+                "description": "Lenovo Voice převádí váš hlas do textů funkcí Hlas na text a funkcí Translation Assistant pomáhá překládat řeč v reálném čase.",
                 "installBtnText": "Nainstalujte si",
                 "launchBtnText": "Spustit",
                 "voiceToText": {
                     "title": "Hlas na text",
-                    "caption": "Tato funkce pomáhá převést váš hlas na texty."
+                    "caption": "Tato funkce poskytuje funkci hlasového diktování, která převádí hlas na text pro rychlé zadání."
                 },
                 "translation": {
                     "title": "Překlad",
-                    "caption": "Tato funkce poskytuje v reálném čase překlad do hlasu. Přeložený obsah se zobrazuje v textech. Podle svých potřeb si můžete vybrat zdrojové jazyky a cílové jazyky."
+                    "caption": "Tato funkce poskytuje pomoc s překladem řeči v reálném čase a veškerý přeložený text se zobrazí v textu. K dispozici je několik zdrojových a cílových jazyků."
                 },
                 "modalPopUp": {
                     "heading": "Jak začít:",
-                    "point1": "Ujistěte se, zda se na hlavním panelu systému Windows zobrazuje ikona Lenovo Voice.",
-                    "point2": "Otevřete soubor, do kterého chcete zapsat převedený text.",
+                    "point1": "Z nabídky Start spusťte program Lenovo Voice a na hlavním panelu Windows se zobrazí ikona Lenovo Voice.",
+                    "point2": "Otevřete aplikaci, do které chcete psát text.",
                     "point3": "Klepněte na ikonu Lenovo Voice na hlavním panelu systému Windows a vyberte možnost Hlas na text.",
-                    "point4": "Vyberte požadovaný jazyk a začněte klepnutím na ikonu mikrofonu.",
-                    "point5": "Umístěte kurzor na místo, kde chcete provést úpravu, a začněte mluvit.",
-                    "point6": "Klepněte na ikonu Lenovo Voice na hlavním panelu systému Windows a vyberte možnost Přeložit.",
-                    "point7": "Vyberte požadovaný zdrojový jazyk a cílový jazyk.",
+                    "point4": "Podle své potřeby vyberte jazyky a začněte kliknutím na ikonu mikrofonu.",
+                    "point5": "Umístěte kurzor do aplikace a začněte mluvit.",
+                    "point6": "Klikněte na ikonu Lenovo Voice na hlavním panelu systému Windows a vyberte možnost Překlad.",
+                    "point7": "Vyberte zdrojový jazyk a cílový jazyk.",
                     "point8": "Podle svých potřeb nastavte hlasový vstup z reproduktoru nebo z mikrofonu.",
-                    "point9": "Klepněte na ikonu mikrofonu a začněte mluvit",
+                    "point9": "Klepněte na ikonu mikrofonu a začněte mluvit.",
                     "closeText": "Zavřít",
-                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
+                    "point10": "Ujistěte se, zda se na hlavním panelu systému Windows zobrazuje ikona Lenovo Voice."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -2187,6 +2187,7 @@
             "description": "Kontaktujte nás, abychom vám mohli pomoci.",
             "listLenovoCommunity": "Komunita Lenovo",
             "listContactCustomerService": "Kontaktovat servisní středisko",
+            "listYourVirtualAssistant": "Your virtual assistant",
             "listContactUsOnWechat": "Kontaktujte nás ve službě WeChat",
             "weChatDescription": "Pošlete nám otázku přes WeChat, určitě vám rychle odpovíme",
             "listFindUs": "Najděte nás na sociálních médiích",

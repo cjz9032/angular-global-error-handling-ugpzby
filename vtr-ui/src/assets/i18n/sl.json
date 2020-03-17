@@ -876,7 +876,7 @@
                 "tips2": "Spodaj napišite morebitne dodatne komentarje",
                 "emailAddressLabel": "Če želite, da ekipa programa Lenovo Vantage po potrebi vzpostavi stik z vami, vnesite svoj e-poštni naslov.",
                 "emailAddress": "E-poštni naslov",
-                "invalidEmailMsg": "Invalid email address"
+                "invalidEmailMsg": "Neveljaven e-poštni naslov"
             }
         },
         "quickSettings": {
@@ -1997,30 +1997,30 @@
             },
             "voice": {
                 "title": "Glas",
-                "description": "Lenovo Voice s funkcijo pretvorbe glasu v besedilo pomaga pretvoriti glas v besedilo, s funkcijo Prevajanje pa zagotavlja prevode iz glasu v besedila v realnem času.",
+                "description": "Lenovo Voice z uporabo tehnologije za pretvorbo glasu v besedilo pretvori vaš glas v besedilo in pomaga pri sprotnem prevajanju govora s pomočnikom za prevajanje.",
                 "installBtnText": "Namestitev",
                 "launchBtnText": "Zaženite",
                 "voiceToText": {
                     "title": "Pretvorba glasu v besedilo",
-                    "caption": "Ta funkcija pomaga pretvoriti glas v besedilo."
+                    "caption": "Ta funkcija omogoča funkcijo glasovnega tipkanja, ki glas pretvori v besedilo in tako omogoča hitrejši vnos."
                 },
                 "translation": {
                     "title": "Prevod",
-                    "caption": "Ta funkcija zagotavlja prevajanje glasu v realnem času. Prevedena vsebina je prikazana kot besedilo. Izvorne in ciljne jezike lahko izberete glede na lastne potrebe."
+                    "caption": "Ta funkcija zagotavlja sprotno pomoč pri prevajanju govora in vse prevedeno bo prikazano v obliki besedila. Za izvorni in ciljni jezik je na voljo več jezikov."
                 },
                 "modalPopUp": {
                     "heading": "Začnimo:",
-                    "point1": "Prepričajte se, da je na sistemskem pladnju Windows prikazana ikona Lenovo Voice.",
-                    "point2": "Odprite datoteko, v katero želite zabeležiti pretvorjeno besedilo.",
+                    "point1": "Lenovo Voice zaženite iz menija Start. V sistemski vrstici za Windows bo prikazana ikona Lenovo Voice.",
+                    "point2": "Odprite aplikacijo, v kateri želite vnesti besedilo.",
                     "point3": "Kliknite ikono Lenovo Voice na sistemskem pladnju Windows in izberite Voice to text (Pretvorba glasu v besedilo).",
-                    "point4": "Izberite želeni jezik in kliknite ikono mikrofona, da začnete.",
-                    "point5": "Kazalec premaknite na mesto, kjer želite urejati, in začnite govoriti.",
-                    "point6": "Kliknite ikono Lenovo Voice na sistemskem pladnju Windows in izberite Translate (Prevajanje).",
-                    "point7": "Izberite želeni izvorni in ciljni jezik.",
+                    "point4": "Izberite želene jezike in kliknite ikono mikrofona, da začnete.",
+                    "point5": "Kazalec postavite v aplikacijo in začnite govoriti.",
+                    "point6": "Kliknite ikono Lenovo Voice v sistemski vrstici za Windows in izberite možnost Translation (Prevajanje).",
+                    "point7": "Izberite izvorni in ciljni jezik.",
                     "point8": "Zvočni vhod nastavite na zvočnik ali mikrofon (odvisno od vaših potreb).",
-                    "point9": "Če želite začeti govoriti, kliknite ikono mikrofona",
+                    "point9": "Če želite začeti govoriti, kliknite ikono mikrofona.",
                     "closeText": "zapri",
-                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
+                    "point10": "Prepričajte se, da je na sistemskem pladnju Windows prikazana ikona Lenovo Voice."
                 },
                 "modalInstallationFailed": {
                     "btnText": "V redu",
@@ -2187,6 +2187,7 @@
             "description": "Za pomoč se obrnite na nas.",
             "listLenovoCommunity": "Skupnost Lenovo",
             "listContactCustomerService": "Obrnite se na storitve za stranke",
+            "listYourVirtualAssistant": "Your virtual assistant",
             "listContactUsOnWechat": "Pišite nam WeChat",
             "weChatDescription": "Vprašanje nam pošljite na WeChat in poskrbeli bomo za hiter odgovor",
             "listFindUs": "Poiščite nas na družabnih medijih",
