@@ -13,6 +13,7 @@
 	[tabIndex]="disabled ?-1:checked? 0 :-1"
 	(keydown)="navigateByKeys($event,radio)">
 	<input id="{{radioId}}"
+		style="display: none;"
 		attr.aria-labelledby="{{radioId}}-title"
 		name="{{group}}"
 		type="radio"

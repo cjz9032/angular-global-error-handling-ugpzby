@@ -9,6 +9,7 @@
 	attr.aria-label="radioId"
 	(keydown)="navigateByKeys($event,radio)">
 	<input id="{{radioId}}"
+		style="display: none;"
 		[attr.aria-label]="radioId"
 		name="{{group}}"
 		type="radio"

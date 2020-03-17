@@ -10,6 +10,7 @@
 	[ngClass]="{'white-theme': theme === 'white','blue-theme': theme === 'blue'}">
 	<div class="checkbox">
 		<input class="checkbox-custom"
+			style="display: none;"
 			attr.aria-labelledby="{{textId}}-{{value}}-label"
 			[attr.aria-disabled]="disabled"
 			[attr.aria-checked]="checked"
