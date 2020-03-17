@@ -876,7 +876,7 @@
                 "tips2": "추가 의견은 아래에 남겨주시기 바랍니다",
                 "emailAddressLabel": "혹시 Lenovo Vantage 팀에게 연락을 받길 원하신다면 이메일 주소를 남겨주시기 바랍니다.",
                 "emailAddress": "이메일 주소",
-                "invalidEmailMsg": "Invalid email address"
+                "invalidEmailMsg": "잘못된 이메일 주소입니다."
             }
         },
         "quickSettings": {
@@ -1997,30 +1997,30 @@
             },
             "voice": {
                 "title": "음성",
-                "description": "Lenovo Voice는 음성에서 텍스트로의 변환 기능을 제공하며 번역 기능을 사용하여 음성에서 텍스트로의 실시간 번역을 제공합니다.",
+                "description": "Lenovo Voice는 음성에서 텍스트로 변환 기능을 사용하여 음성을 텍스트로 변환하고 번역 도우미 기능을 사용하여 실시간 음성 번역을 지원합니다.",
                 "installBtnText": "설치",
                 "launchBtnText": "시작",
                 "voiceToText": {
                     "title": "음성에서 텍스트로",
-                    "caption": "이 기능을 사용하면 음성을 텍스트로 변환할 수 있습니다."
+                    "caption": "이 기능은 빠른 입력을 위해 음성을 텍스트로 변환하는 음성 입력 기능을 제공합니다."
                 },
                 "translation": {
                     "title": "번역",
-                    "caption": "이 기능은 음성으로의 실시간 번역을 제공합니다. 번역된 내용은 텍스트로 표시됩니다. 필요에 따라 소스 언어 및 대상 언어를 선택할 수 있습니다."
+                    "caption": "이 기능은 말하는 내용을 실시간으로 번역하며 번역된 모든 내용이 텍스트로 표시됩니다. 소스 및 대상 언어에 사용할 수 있는 언어가 여러 개 있습니다."
                 },
                 "modalPopUp": {
                     "heading": "시작하기:",
-                    "point1": "Lenovo Voice 아이콘이 Windows 시스템 트레이에 표시되는지 확인하십시오.",
-                    "point2": "변환된 텍스트를 기록할 파일을 여십시오.",
+                    "point1": "시작 메뉴에서 Lenovo Voice를 시작하면 Windows 시스템 트레이에 Lenovo Voice 아이콘이 표시됩니다.",
+                    "point2": "텍스트를 입력할 응용 프로그램을 여십시오.",
                     "point3": "Windows 시스템 트레이에서 Lenovo Voice 아이콘을 클릭하고 음성에서 텍스트로를 선택하십시오.",
-                    "point4": "원하는 언어를 선택하고 마이크 아이콘을 클릭하여 시작하십시오.",
-                    "point5": "편집하려는 곳으로 커서를 이동하고 말하기를 시작하십시오.",
-                    "point6": "Windows 시스템 트레이에서 Lenovo Voice 아이콘을 클릭하고 변환을 선택하십시오.",
-                    "point7": "원하는 소스 언어 및 대상 언어를 선택하십시오.",
+                    "point4": "필요에 따라 언어를 선택하고 마이크 아이콘을 클릭하여 시작하십시오.",
+                    "point5": "응용 프로그램에 커서를 놓고 말하기를 시작하십시오.",
+                    "point6": "Windows 시스템 트레이에서 Lenovo Voice 아이콘을 클릭하고 번역을 선택하십시오.",
+                    "point7": "소스 언어 및 대상 언어를 선택하십시오.",
                     "point8": "필요에 따라 스피커 또는 마이크에서 음성 입력을 설정하십시오.",
-                    "point9": "말하기를 시작하려면 마이크 아이콘을 클릭하십시오",
+                    "point9": "말하기를 시작하려면 마이크 아이콘을 클릭하십시오.",
                     "closeText": "닫기",
-                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
+                    "point10": "Lenovo Voice 아이콘이 Windows 시스템 트레이에 표시되는지 확인하십시오."
                 },
                 "modalInstallationFailed": {
                     "btnText": "확인",

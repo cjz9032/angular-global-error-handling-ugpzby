@@ -876,7 +876,7 @@
                 "tips2": "Weitere Kommentare können Sie unten hinterlassen",
                 "emailAddressLabel": "Geben Sie Ihre E‑Mail-Adresse ein, wenn das Lenovo Vantage-Team Sie kontaktieren darf.",
                 "emailAddress": "E-Mail-Adresse",
-                "invalidEmailMsg": "Invalid email address"
+                "invalidEmailMsg": "Ungültige E-Mail-Adresse"
             }
         },
         "quickSettings": {
@@ -1997,30 +1997,30 @@
             },
             "voice": {
                 "title": "Sprache",
-                "description": "Lenovo Voice hilft Ihnen dabei, Ihre Stimme mit der Funktion \"Sprache zu Text\" in Text umzuwandeln und bietet mit der Übersetzungsfunktion auch die Echtzeit-Übersetzung von Sprache zu Text.",
+                "description": "Lenovo Voice wandelt Ihre Stimme mit der Funktion \"Sprache zu Text\" in Text um und bietet mit dem Übersetzungsassistent auch die Echtzeit-Übersetzung von Sprache.",
                 "installBtnText": "Installieren",
                 "launchBtnText": "Starten",
                 "voiceToText": {
                     "title": "Sprache zu Text",
-                    "caption": "Diese Funktion hilft Ihnen dabei, Ihre Stimme in Text umzuwandeln."
+                    "caption": "Diese Funktion ermöglicht eine schnelle Texteingabe durch die Umwandlung von Sprache in Text."
                 },
                 "translation": {
                     "title": "Übersetzung",
-                    "caption": "Diese Funktion bietet Echtzeit-Übersetzung von Sprache. Die übersetzten Inhalte werden als Text angezeigt. Sie können die Ausgangs‑ und Zielsprachen entsprechend Ihren Anforderungen auswählen."
+                    "caption": "Diese Funktion ermöglicht die Übersetzung von Sprache in Echtzeit – der ausgegebene Text ist bereits übersetzt. Es sind mehrere Ausgangs‑ und Zielsprachen verfügbar."
                 },
                 "modalPopUp": {
                     "heading": "Los geht's:",
-                    "point1": "Stellen Sie sicher, dass das Symbol für Lenovo Voice in der Windows-Taskleiste angezeigt wird.",
-                    "point2": "Öffnen Sie die Datei, in die Sie den konvertierten Text aufzeichnen möchten.",
+                    "point1": "Starten Sie Lenovo Voice aus dem Startmenü. Das Lenovo Voice-Symbol wird in der Windows-Taskleiste angezeigt.",
+                    "point2": "Öffnen Sie die Anwendung, in der Sie Text eingeben möchten.",
                     "point3": "Klicken Sie auf das Symbol für Lenovo Voice in der Windows-Taskleiste und wählen Sie \"Sprache zu Text\" aus.",
-                    "point4": "Wählen Sie die gewünschte Sprache aus und klicken Sie zum Beginnen auf das Mikrofonsymbol.",
-                    "point5": "Setzen Sie den Cursor an die Stelle, an der Ihr Text erscheinen soll und beginnen Sie zu sprechen.",
-                    "point6": "Klicken Sie auf das Symbol für Lenovo Voice in der Windows-Taskleiste und wählen Sie \"Übersetzen\" aus.",
-                    "point7": "Wählen Sie die gewünschte Ausgangs‑ und Zielsprache aus.",
+                    "point4": "Wählen Sie die gewünschten Sprachen aus und klicken Sie zum Beginnen auf das Mikrofonsymbol.",
+                    "point5": "Setzen Sie den Cursor an die gewünschte Stelle in der Anwendung und beginnen Sie zu sprechen.",
+                    "point6": "Klicken Sie auf das Lenovo Voice-Symbol in der Windows-Taskleiste und wählen Sie \"Übersetzung\" aus.",
+                    "point7": "Wählen Sie die Ausgangs‑ und Zielsprache aus.",
                     "point8": "Stellen Sie abhängig von Ihren Anforderungen ein, ob die Spracheingabe vom Lautsprecher oder vom Mikrofon stammt.",
-                    "point9": "Klicken Sie auf das Mikrofonsymbol und beginnen Sie zu sprechen",
+                    "point9": "Klicken Sie auf das Mikrofonsymbol und beginnen Sie zu sprechen.",
                     "closeText": "schließen",
-                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
+                    "point10": "Stellen Sie sicher, dass das Symbol für Lenovo Voice in der Windows-Taskleiste angezeigt wird."
                 },
                 "modalInstallationFailed": {
                     "btnText": "OK",
