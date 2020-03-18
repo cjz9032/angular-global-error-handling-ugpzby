@@ -25,7 +25,7 @@
     "pwa": "http-server -p 4200 ./dist/vtr-ui",
     "wba": "ng build --prod --stats-json & webpack-bundle-analyzer dist/vtr-ui/stats.json",
     "sme": "ng build & source-map-explorer 'dist/vtr-ui/*.js'",
-    "mock-serve": "node --max_old_space_size=8096 ./node_modules/@angular/cli/bin/ng serve -c=mock",
+    "mock-serve": "node --max_old_space_size=8096 ./node_modules/@angular/cli/bin/ng serve -c=mock --watch",
     "remove-console": "node node_modules/jscodeshift/bin/jscodeshift.js -t prebuild/removeConsole.js --extensions=ts --parser=ts src --ignore-pattern=src/app/services/logger/logger.service.ts",
     "detect-console": "node prebuild/detectConsole.js"
   },
