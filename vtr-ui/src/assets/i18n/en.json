@@ -73,7 +73,8 @@
 					"autoClose": "Auto Close",
 					"networkBoost": "Network Boost",
 					"hybridMode": "Hybrid Mode",
-					"touchpadLock": "Touchpad Lock"
+					"touchpadLock": "Touchpad Lock",
+					"overDrive": "Over Drive"
 				},
 				"systemTools": {
 					"power": "Power",

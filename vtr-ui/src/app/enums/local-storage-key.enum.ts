@@ -178,6 +178,9 @@ export enum LocalStorageKey {
 	isSystemDisk = '[LocalStorageKey] isSystemDisk',
 	usedDisk = '[LocalStorageKey] usedDisk',
 	autoSwitchStatus = '[LocalStorageKey] AutoSwitchStatus',
+	// Version 3.3: over drive
+	overDriveFeature = '[LocalStorageKey] OverDriveFeature',
+	overDriveStatus = '[LocalStorageKey] OverDriveStatus',
 
 	// this enum is for macrokey local storage key
 	MacroKeyType = '[LocalStorageKey] MacroKeyType',
