@@ -97,7 +97,7 @@ export class UiDpmDropdownComponent implements OnInit {
 			toggle.blur();
 			setTimeout(() => {
 				toggle.focus();
-			}, 10);
+			}, 100);
 		} else {
 			this.refocus = true;
 		}
