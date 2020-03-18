@@ -785,7 +785,7 @@
             "title": "Q & A für Ihre Maschine",
             "subtitle": "Hier finden Sie hilfreiche Tipps für Ihr Gerät.",
             "question1": "Ihre Dateien sichern und wiederherstellen",
-            "question2": "So frischen Sie Ihren PC auf",
+            "question2": "So setzen Sie Ihren PC auf Originaleinstellungen zurück",
             "question3": "So finden Sie heraus, welche CPU Ihr Computer hat",
             "question4": "Den Akkuverbrauch Ihres Computers überprüfen",
             "question5": "Verwenden Sie Ihren PC wie ein Tablet",
@@ -876,7 +876,7 @@
                 "tips2": "Weitere Kommentare können Sie unten hinterlassen",
                 "emailAddressLabel": "Geben Sie Ihre E‑Mail-Adresse ein, wenn das Lenovo Vantage-Team Sie kontaktieren darf.",
                 "emailAddress": "E-Mail-Adresse",
-                "invalidEmailMsg": "Invalid email address"
+                "invalidEmailMsg": "Ungültige E-Mail-Adresse"
             }
         },
         "quickSettings": {
@@ -2187,6 +2187,7 @@
             "description": "Kontaktieren Sie uns, damit wir Ihnen helfen können.",
             "listLenovoCommunity": "Lenovo-Community",
             "listContactCustomerService": "Kundenservice kontaktieren",
+            "listYourVirtualAssistant": "Your virtual assistant",
             "listContactUsOnWechat": "Auf WeChat kontaktieren",
             "weChatDescription": "Stellen Sie uns eine Frage auf WeChat und wir werden Ihnen schnell antworten.",
             "listFindUs": "Unsere Social-Media-Präsenz",
