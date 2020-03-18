@@ -1,5 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, HostListener, ViewChild, ElementRef } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
@@ -14,7 +13,7 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 	@Input() label: string;
 	@Input() tooltip: string;
 	@Input() value: string;
-	@Input() checked: boolean;
+	@Input() checked = false;
 	@Input() disabled = false;
 	@Input() theme: string;
 	@Input() processIcon = false;
@@ -39,18 +38,24 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 	firstRadioButton: any;
 	lastRadioButton: any;
 	radioButtons: Array<any> = [];
-	@ViewChild('radioButton', { static: false }) radioButton: ElementRef<HTMLElement>;
 	selectedRadioButton: any;
 	noRadioButtonSelected: boolean;
-	constructor(private translate: TranslateService, private logger: LoggerService) {
+	private radioButton: ElementRef<HTMLElement>;
 
+	// once radio button is visible then execute logic
+	@ViewChild('radioButton', { static: false }) set content(element: ElementRef) {
+		if (element) {
+			this.radioButton = element;
+			this.setRadioButtons();
+		}
 	}
 
+	constructor(
+		private logger: LoggerService
+	) { }
+
 	ngOnInit() {
-		// this.translate.stream(this.label).subscribe((result: string) => {
-		// 	this.label = result;
-		// });
-		this.setRadioButtons(); // Set up radio buttons first , last etc and if none selected,set tabindex to first element
+		// this.setRadioButtons(); // Set up radio buttons first , last etc and if none selected,set tabindex to first element
 	}
 
 	onChange(event) {
@@ -73,13 +78,6 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 			return name;
 		}
 	}
-
-	/* checkOnFocus(event, radio) {
-		 this.setRadioButtons();
-		if (!radio.checked) {
-			radio.click();
-		}
-	} */
 
 	radioKBNavigation(event, radio) {
 		this.setRadioButtons();
