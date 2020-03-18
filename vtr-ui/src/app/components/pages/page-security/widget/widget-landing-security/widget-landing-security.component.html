@@ -25,14 +25,17 @@
 				<section class="landing-content col-11 pl-3">
 					<p>{{item.content}}</p>
 					<vtr-ui-button *ngIf="!item.showOwn && item.buttonLink" [label]="item.buttonLabel"
+						linkId="{{item.id}}"
 						[metricsItem]="item.id"
 						[routerPath]="item.buttonLink" [ngClass]="{'white-button':item.status === 'enabled' || item.status === 'installed'}">
 					</vtr-ui-button>
 					<vtr-ui-button *ngIf="item.buttonHref" [label]="item.buttonLabel" [href]="item.buttonHref"
+						linkId="{{item.id}}"
 						[metricsItem]="item.id"
 						[ngClass]="{'white-button':item.status === 'enabled'}">
 					</vtr-ui-button>
 					<vtr-ui-button *ngIf="item.launch" [label]="item.buttonLabel"
+						linkId="{{item.id}}"
 						[metricsItem]="item.id"
 						[ngClass]="{'white-button':item.status === 'enabled'}"
 						(onClick)="item.launch()">

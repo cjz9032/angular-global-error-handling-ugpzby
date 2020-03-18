@@ -7,22 +7,6 @@
 		padding: 0.5rem;
 		position: relative;
 
-		.loadingIcon {
-			position: absolute;
-			left: 45%;
-			top: 40%;
-		}
-
-		.loadingIcon {
-			position: absolute;
-			left: 45%;
-			top: 40%;
-		}
-		.loadingIcon {
-			position: absolute;
-			left: 45%;
-			top: 40%;
-		}
 		.button {
 			
 			padding: 0 2.5rem;
@@ -116,6 +100,9 @@
 
 		.loading {
 			opacity: 0.6;
+			&:hover {
+				background: $gradient_main;
+			}
 		}
 
 		.fullWidth {

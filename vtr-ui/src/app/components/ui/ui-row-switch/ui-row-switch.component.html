@@ -11,8 +11,7 @@
 				[ngClass]="{'flex-grow-1': (isSwitchVisible && !resetTextAsButton),'col-md-11 col-11':(!resetTextAsButton && !isSwitchVisible),'col-md-7': (resetTextAsButton && !isSwitchVisible)}"
 				[ngClass]="{'col-md-8': (type==='auto-updates' || type==='Camera'), 'col-md-10':type===undefined}">
 				<div class="container-fluid p-0">
-					<div class="row m-0"
-						role="text">
+					<div class="row m-0">
 						<div class="col-auto left-icon-column"
 							*ngIf="leftIcon.length > 0">
 							<div class="left-icon-block">
@@ -32,23 +31,21 @@
 						</div>
 						<div class="col">
 							<div class="title"
-								id="{{switchId}}-title"
-								role="text">
+								id="{{switchId}}-title">
 								{{ title }}
 							</div>
 							<span *ngIf="caption">
 								<div class="caption"
+									#captionRef
 									id="{{switchId}}-caption"
 									attr.aria-label="{{switchId}}-caption"
-									role="text"
-									[innerHTML]="htmlSanitizer(caption.length > 70  && !contentExpand  && readMoreText.length > 0 ? (caption | slice: 0:70) : caption)">
+									[innerHTML]="caption.length > 70  && !contentExpand  && readMoreText.length > 0 ? (caption | slice: 0:70) : caption">
 								</div>
 							</span>
 							<!-- {{ caption. add it only if there is a readmore, else comment it}} -->
 							<!-- attr.aria-label="hello {{'read_more_'+ switchId}}" -->
 							<span id="{{'read_more_'+ switchId}}"
 								*ngIf="readMoreText && !contentExpand"
-								role="text"
 								tabindex="0"
 								class="read-more"
 								(click)="onReadMoreClick($event)"
@@ -248,7 +245,7 @@
 
 <!-- Intelligent-security distance sensitivity adjusting tooltip content -->
 <ng-template #smartTooltipRef>
-	<div role="text">
+	<div>
 		{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.tooltipcontent.context1' | translate}}
 	</div>
 	<ul class="smart-tooltip-list">
@@ -257,8 +254,7 @@
 				<div class="col-auto pl-0">
 					<fa-icon [icon]="['fas', 'circle']"></fa-icon>
 				</div>
-				<div class="col"
-					role="text">
+				<div class="col">
 					{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.tooltipcontent.list.line1' | translate}}
 				</div>
 			</div>
@@ -268,8 +264,7 @@
 				<div class="col-auto pl-0">
 					<fa-icon [icon]="['fas', 'circle']"></fa-icon>
 				</div>
-				<div class="col"
-					role="text">
+				<div class="col">
 					{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.tooltipcontent.list.line2' | translate}}
 				</div>
 			</div>
@@ -279,14 +274,13 @@
 				<div class="col-auto pl-0">
 					<fa-icon [icon]="['fas', 'circle']"></fa-icon>
 				</div>
-				<div class="col"
-					role="text">
+				<div class="col">
 					{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.tooltipcontent.list.line3' | translate}}
 				</div>
 			</div>
 		</li>
 	</ul>
-	<div role="text">
+	<div>
 		{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.tooltipcontent.context2' | translate}}
 	</div>
 	<ul class="smart-tooltip-list">
@@ -295,8 +289,7 @@
 				<div class="col-auto pl-0">
 					<fa-icon [icon]="['fas', 'circle']"></fa-icon>
 				</div>
-				<div class="col"
-					role="text">
+				<div class="col">
 					{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.tooltipcontent.list.line4' | translate}}
 				</div>
 			</div>

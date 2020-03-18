@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, HostListener, ViewChild, ElementRef } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 
@@ -7,7 +7,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 	templateUrl: './ui-circle-radio-with-checkbox.component.html',
 	styleUrls: ['./ui-circle-radio-with-checkbox.component.scss']
 })
-export class UiCircleRadioWithCheckboxComponent implements OnInit {
+export class UiCircleRadioWithCheckboxComponent implements OnInit, AfterViewInit {
 
 	@Input() radioId: string;
 	@Input() group: string;
@@ -38,19 +38,22 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 	});
 	firstRadioButton: any;
 	lastRadioButton: any;
-	radioButtons: Array<any> = [];
+	radioButtons: Array<HTMLElement> = [];
 	@ViewChild('radioButton', { static: false }) radioButton: ElementRef<HTMLElement>;
 	selectedRadioButton: any;
-	noRadioButtonSelected: boolean;
+	noRadioButtonSelected = true;
 	constructor(private translate: TranslateService, private logger: LoggerService) {
 
+	}
+	ngAfterViewInit(): void {
+		this.setRadioButtons(); // Set up radio buttons first , last etc and if none selected,set tabindex to first element
 	}
 
 	ngOnInit() {
 		// this.translate.stream(this.label).subscribe((result: string) => {
 		// 	this.label = result;
 		// });
-		this.setRadioButtons(); // Set up radio buttons first , last etc and if none selected,set tabindex to first element
+
 	}
 
 	onChange(event) {
@@ -74,14 +77,7 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 		}
 	}
 
-	/* checkOnFocus(event, radio) {
-		 this.setRadioButtons();
-		if (!radio.checked) {
-			radio.click();
-		}
-	} */
-
-	radioKBNavigation($event, radio) {
+	navigateByKeys($event, radio) {
 		this.setRadioButtons();
 		switch ($event.keyCode) {
 			case this.keyCode.TAB:
@@ -89,7 +85,7 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 				break;
 			case this.keyCode.SPACE:
 			case this.keyCode.RETURN:
-				this.setChecked(this.radioButton, true);
+				this.setChecked(this.radioButton.nativeElement, true);
 				break;
 			case this.keyCode.UP:
 				this.setCheckedToPreviousItem(this.radioButton);
@@ -111,7 +107,7 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 
 	}
 
-	setChecked(currentItem, selectItem: boolean) {
+	private setChecked(currentItem, selectItem: boolean) {
 		let currentRadio = [];
 		try {
 			currentRadio = currentItem.querySelectorAll('input[type="radio"]');
@@ -119,15 +115,21 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 			currentRadio = currentItem.nativeElement.querySelectorAll('input[type="radio"]');
 		}
 
-		if (selectItem && currentRadio && !currentRadio[0].checked && !currentRadio[0].disabled) {
-			currentRadio[0].click();
-			this.radioButtons.forEach(radioButton => {
-				radioButton.setAttribute('aria-checked', 'false');
-			});
-			currentItem.setAttribute('aria-checked', 'true');
-			this.setRadioTabIndex(currentItem);
+		try {
+			if (selectItem && currentRadio && !currentRadio[0].checked && !currentRadio[0].disabled) {
+				this.radioButtons.forEach(radioButton => {
+					radioButton.removeAttribute('aria-checked');
+					radioButton.setAttribute('aria-checked', 'false');
+				});
+				currentItem.setAttribute('aria-checked', 'true');
+				currentRadio[0].click();
+			}
+		}
+		catch (error) {
+			this.logger.exception('setChecked error occurred ::', error);
 		}
 
+		this.setRadioTabIndex(currentItem);
 		currentItem.focus();
 	}
 
@@ -138,7 +140,7 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 		currentItem.tabIndex = 0; // tabitem need not be set to 1 unnecessarly
 	}
 
-	setCheckedToPreviousItem(currentItem) {
+	private setCheckedToPreviousItem(currentItem) {
 		try {
 			let index;
 
@@ -154,7 +156,7 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 	}
 
 
-	setCheckedToNextItem(currentItem) {
+	private setCheckedToNextItem(currentItem) {
 		try {
 			let index;
 
@@ -174,14 +176,15 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 	private setRadioButtons() {
 		try {
 			if (!this.radioGroup) {
-				this.radioGroup = this.radioButton.nativeElement.parentElement.parentElement;
+				this.radioGroup = this.getParentRadioGroup(this.radioButton.nativeElement);
+
 			}
-			const rbs = this.radioGroup.querySelectorAll('[role=radio]');
+			const rbs = this.radioGroup.querySelectorAll('[role=radio][aria-disabled=false]');
 
 			this.radioButtons = [];
 			rbs.forEach(radioButton => {
 				this.radioButtons.push(radioButton);
-				if (!this.firstRadioButton) {
+				if (this.firstRadioButton === undefined || !this.firstRadioButton) {
 					this.firstRadioButton = radioButton;
 				}
 				this.lastRadioButton = radioButton;
@@ -192,21 +195,42 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 				}
 			});
 
+			//focus on first non disabled element if not selected any radio items
 			if (this.firstRadioButton && this.noRadioButtonSelected) {
-				this.firstRadioButton.tabIndex = 0;
-				this.radioButtons.forEach(element => {
-					if (element != this.firstRadioButton) {
-						element.tabIndex = '0';
-					}
-					else {
-						element.tabindex = -1;
-					}
-				});
-				this.firstRadioButton.focus();
-				// this.setRadioTabIndex(this.firstRadioButton);
+				this.setRadioTabIndex(this.firstRadioButton);
+			}
+			else if (!this.noRadioButtonSelected) {
+				this.setRadioTabIndex(this.selectedRadioButton);
 			}
 		} catch (error) {
 			this.logger.exception('setRadioButtons error occurred ::', error);
 		}
+	}
+
+	/* private setRadioFocus(radioButton) {
+		this.radioButtons.forEach(element => {
+			if (element !== radioButton) {
+				element.tabIndex = -1;
+			}
+			if (element === radioButton) {
+				element.tabIndex = 0;
+			}
+		});
+	} */
+
+	private getParentRadioGroup(element) {
+		const roleRadioGroup = 'radiogroup';
+		const role = 'role';
+
+		if (element !== undefined && element.getAttribute(role) === roleRadioGroup) {
+			return element;
+		}
+		else if (element !== undefined && element.getAttribute(role) !== roleRadioGroup) {
+			return this.getParentRadioGroup(element.parentElement);
+		}
+		else {
+			return element;
+		}
+
 	}
 }

@@ -23,63 +23,60 @@
 						<div class="pl-4 mt-3 ml-2">
 							<div>
 								<div *ngIf="isAutonomicCapability"
-									class="schedule_header"
-									role="text">
-									<h5 role="text"
-										id="smart-standby-schedule-computer"
+									class="schedule_header">
+									<h5 id="smart-standby-schedule-computer"
 										attr.aria-label="smart-standby-schedule-computer">
 										{{ 'device.deviceSettings.power.smartStandby.subTitle' | translate }}</h5>
-									<vtr-ui-rounded-rectangle-radio [radioId]="'automatic_show'"
-										[group]="'smartStandByBtns'"
-										name="nMehod_show"
-										[label]="'device.deviceSettings.power.smartStandby.automaticMode' | translate"
-										[value]="'Automatic mode'"
-										[checked]="checkbox"
-										(change)="onCheckboxClicked(true);isCollapsed = true"
-										(customKeyEvent)="onCheckboxClicked(false);isCollapsed = true"
-										[disabled]="!smartStandby.isEnabled">
-									</vtr-ui-rounded-rectangle-radio>
-									<vtr-ui-rounded-rectangle-radio [radioId]="'manual_show'"
-										[group]="'smartStandByBtns'"
-										name="fnKeyMehod_show"
-										[label]="'device.deviceSettings.power.smartStandby.manualMode' | translate"
-										[value]="'Manual mode'"
-										[checked]="!checkbox"
-										(change)="onCheckboxClicked(false)"
-										(customKeyEvent)="onCheckboxClicked(true)"
-										[disabled]="!smartStandby.isEnabled">
-									</vtr-ui-rounded-rectangle-radio>
+									<div role="radiogroup"
+										tabindex="0"
+										aria-label="smart stand by more list, select using arrow keys">
+										<vtr-ui-rounded-rectangle-radio [radioId]="'automatic_show'"
+											[group]="'smartStandByBtns'"
+											name="nMehod_show"
+											[label]="'device.deviceSettings.power.smartStandby.automaticMode' | translate"
+											[value]="'Automatic mode'"
+											[checked]="checkbox"
+											(change)="onCheckboxClicked(true);isCollapsed = true"
+											(customKeyEvent)="onCheckboxClicked(false);isCollapsed = true"
+											[disabled]="!smartStandby.isEnabled">
+										</vtr-ui-rounded-rectangle-radio>
+										<vtr-ui-rounded-rectangle-radio [radioId]="'manual_show'"
+											[group]="'smartStandByBtns'"
+											name="fnKeyMehod_show"
+											[label]="'device.deviceSettings.power.smartStandby.manualMode' | translate"
+											[value]="'Manual mode'"
+											[checked]="!checkbox"
+											(change)="onCheckboxClicked(false)"
+											(customKeyEvent)="onCheckboxClicked(true)"
+											[disabled]="!smartStandby.isEnabled">
+										</vtr-ui-rounded-rectangle-radio>
+									</div>
+
 								</div>
 							</div>
-							<div role="text"
-								*ngIf="!isAutonomicCapability && smartStandby?.isEnabled"
+							<div *ngIf="!isAutonomicCapability && smartStandby?.isEnabled"
 								class="schedule_header">
-								<h5 role="text">{{ 'device.deviceSettings.power.smartStandby.subTitle2' | translate }}
+								<h5>{{ 'device.deviceSettings.power.smartStandby.subTitle2' | translate }}
 								</h5>
 							</div>
 							<div class="schedule"
-								role="text"
 								*ngIf="isAutonomicCapability && checkbox && smartStandby?.isEnabled">
-								<h5 role="text">
+								<h5>
 									{{ 'device.deviceSettings.power.smartStandby.subNote' | translate }}
 								</h5>
 							</div>
 							<div *ngIf="!checkbox && smartStandby?.isEnabled && isAutonomicCapability"
-								role="text"
 								class="schedule">
-								<h5 role="text"
-									id="smartstandby-timer-heading"
+								<h5 id="smartstandby-timer-heading"
 									attr.aria-label="smartstandby-timer-heading">
 									{{ 'device.deviceSettings.power.smartStandby.timer.heading' | translate }}
 								</h5>
-								<span role="text"
-									id="smartstandby-schedule"
+								<span id="smartstandby-schedule"
 									attr.aria-label="smartstandby-schedule">
 									{{smartStandbyService.schedule}}
 								</span>
 								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								<span role="text"
-									id="smartstandby-time"
+								<span id="smartstandby-time"
 									attr.aria-label="smartstandby-time">
 									{{'common.ui.from' | translate}} {{smartStandbyStartTime }}
 									{{'common.ui.to' | translate}} {{smartStandbyEndTime}}
@@ -94,12 +91,12 @@
 									(keydown.enter)="onToggle(timeToggle)"
 									[attr.aria-expanded]="!isCollapsed"
 									#timeToggle
+									tabindex="0"
 									role="button"
 									aria-label="smart standby, time picker-toggle button">
 									<div>
 										<div *ngIf="isCollapsed"
 											class="collapse-text"
-											role="text"
 											id="smartstandby-click-to-change"
 											attr.aria-label="smartstandby-click-to-change">
 											<!-- Expand -->
@@ -107,7 +104,6 @@
 										</div>
 										<div *ngIf="!isCollapsed"
 											class="collapse-text"
-											role="text"
 											id="smartstandby-click-to-change-collapse"
 											attr.aria-label="smartstandby-click-to-change-collapse">
 											<!-- Collapse -->
@@ -147,8 +143,7 @@
 												class="row">
 												<div class="col-md-12 pl-0">
 													<div class="note align-items-center"
-														id="smartStandby-timer-endTimeNote"
-														role="text">
+														id="smartStandby-timer-endTimeNote">
 														{{ 'device.deviceSettings.power.smartStandby.timer.endTimeNote' | translate }}
 													</div>
 												</div>
@@ -164,6 +159,7 @@
 								<!-- content end -->
 							</div>
 							<div *ngIf="isAutonomicCapability"
+								tabindex="0"
 								vtrMetrics
 								metricsItem="Open Smart Standby Modal"
 								metricsEvent="featureClick"
@@ -173,6 +169,7 @@
 								[ngClass]="{'disabled': !smartStandby.isEnabled}"
 								class="hyperlink-to-graph"
 								(click)="showUsageGraph()"
+								(keydown.enter)="showUsageGraph()"
 								role="link"
 								attr.aria-label="{{'device.deviceSettings.power.smartStandby.hyperlinkToGraph' | translate}}">
 								{{'device.deviceSettings.power.smartStandby.hyperlinkToGraph' | translate}}

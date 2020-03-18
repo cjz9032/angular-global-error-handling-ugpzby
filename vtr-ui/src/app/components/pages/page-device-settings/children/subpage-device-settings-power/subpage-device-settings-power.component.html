@@ -158,7 +158,6 @@
 												(toggle)='onAirplaneAutoModeStatusChange($event)'>
 											</vtr-ui-checkbox>
 											<label *ngIf="airplaneAutoDetection"
-												role="text"
 												id="power.batterySettings.airPlanePower.note"
 												attr.aria-label="power.batterySettings.airPlanePower.note"
 												class="auto-detection-note">
@@ -168,7 +167,8 @@
 									</div>
 								</vtr-ui-row-switch>
 							</li>
-							<li *ngIf="showFlipToBootSection$ | async" class="common-li-padding">
+							<li *ngIf="showFlipToBootSection$ | async"
+								class="common-li-padding">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.power.powerSettings.flipToBoot.title' | translate"
 									[name]="'device.deviceSettings.power.powerSettings.flipToBoot.title' | translate"
@@ -296,10 +296,8 @@
 									src="assets/images/energystar.png">
 							</div>
 							<div class="col-9 col-sm-8 col-md-10 pl-0 align-self-center">
-								<p role="text"
-									class="energystar-text"
+								<p class="energystar-text"
 									id="power-energyStar-description"
-									role="text"
 									attr.aria-label="power-energyStar-description">
 									{{'device.deviceSettings.power.energyStar.description' | translate}}
 								</p>

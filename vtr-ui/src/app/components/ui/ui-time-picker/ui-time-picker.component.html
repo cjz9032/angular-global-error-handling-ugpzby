@@ -25,36 +25,30 @@
 						<div class="row">
 							<div class="col align-items-center d-flex justify-content-between">
 								<div class="time-headings">
-									<p role="text"
-										class=""
+									<p class=""
 										id="smartStandby-{{linkId}}-hours"
 										attr.aria-label="smartStandby-{{linkId}}-hours">
 										{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit1' | translate | uppercase }}
 									</p>
 									<span class=""
-										role="text"
 										id="smartStandby-{{linkId}}-hours">{{hours[hour]}}</span>
 								</div>
 								<div class="time-headings">
-									<p role="text"
-										class=""
+									<p class=""
 										id="smartStandby-{{linkId}}-minutes"
 										attr.aria-label="smartStandby-{{linkId}}-minutes">
 										{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit2' | translate | uppercase }}
 									</p>
 									<span class=""
-										role="text"
 										id="smartStandby-{{linkId}}-minutes">{{minutes[minute]}}</span>
 								</div>
 								<div class="time-headings">
-									<p role="text"
-										class=""
+									<p class=""
 										id="smartStandby-{{linkId}}-amPm"
 										attr.aria-label="smartStandby-{{linkId}}-amPm">
 										{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit3' | translate }}
 									</p>
 									<span class=""
-										role="text"
 										id="smartStandby-{{linkId}}-amPm">{{amPms[amPm] | translate}}</span>
 								</div>
 
@@ -87,7 +81,6 @@
 
 										<span>{{hours[prevHour]}}</span><br>
 										<span class="highlight"
-											role="text"
 											id="{{hours[copyHour]}}'hours'"
 											attr.aria-label="{{hours[copyHour]}}, 'hours'">{{hours[copyHour]}}</span><br>
 										<span>{{hours[nextHour]}}</span>
@@ -117,7 +110,6 @@
 
 										<span>{{minutes[prevMinute]}}</span><br>
 										<span class="highlight"
-											role="text"
 											id="{{minutes[copyMinute]}}, 'minutes'"
 											attr.aria-label="{{minutes[copyMinute]}}, 'minutes'">{{minutes[copyMinute]}}</span><br>
 										<span>{{minutes[nextMinute]}}</span>
@@ -136,6 +128,7 @@
 
 									<div class="am-pm highlight"
 										role="radiogroup"
+										aria-label="time list, select using arrow keys"
 										tabindex="0">
 										<span>
 											<label class="inline-block"
@@ -152,8 +145,7 @@
 													tabindex="-1"
 													[checked]="copyAmPm==0"
 													(click)="setAmPm(0)" />
-												<p role="text"
-													class="label-text">{{ amPms[0] | translate }}</p>
+												<p class="label-text">{{ amPms[0] | translate }}</p>
 											</label>
 										</span><br>
 										<span>
@@ -171,8 +163,7 @@
 													value="1"
 													[checked]="copyAmPm==1"
 													(click)="setAmPm(1)" />
-												<p role="text"
-													class="label-text">{{ amPms[1] | translate }}</p>
+												<p class="label-text">{{ amPms[1] | translate }}</p>
 											</label>
 										</span>
 									</div>

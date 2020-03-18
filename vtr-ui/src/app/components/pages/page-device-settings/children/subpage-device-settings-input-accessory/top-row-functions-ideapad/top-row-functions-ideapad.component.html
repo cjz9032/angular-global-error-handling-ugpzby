@@ -4,20 +4,25 @@
 			<div class="col-12 title-blck px-0 d-flex">
 				<div class="col-auto left-icon-column">
 					<div class="left-icon-block">
-						<fa-icon class="left-icon" [icon]="['fal', 'keyboard']"></fa-icon >
+						<fa-icon class="left-icon"
+							[icon]="['fal', 'keyboard']"></fa-icon>
 					</div>
 				</div>
-                <div class="title" role="text"  id="topRowFunctionsIdeapad-title">
-                    {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.title' | translate}}
-                </div>
+				<div class="title"
+					id="topRowFunctionsIdeapad-title">
+					{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.title' | translate}}
+				</div>
 			</div>
-            <div class="col-12 pr-0 caption">
-                <div class="text" role="text" 
-                    id="topRowFunctionsIdeapad-description">
-                    {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.description' | translate}}
-                </div>
+			<div class="col-12 pr-0 caption">
+				<div class="text"
+					id="topRowFunctionsIdeapad-description">
+					{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.description' | translate}}
+				</div>
 				<div class="my-3">
-					<div class="col-12 pl-0 d-flex">
+					<div class="col-12 pl-0 d-flex"
+						role="radiogroup"
+						tabindex="0"
+						aria-label=" Function key selection list, select using arrow keys">
 						<div class="mr-5">
 							<vtr-ui-rectangle-radio [radioId]="'radio1'"
 								[checked]="hotkey$ | async"
@@ -25,8 +30,7 @@
 								[label]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.sFunKey' | translate"
 								[iconName]="'icomoon icomoon-Special-function'"
 								(change)="update$.next(keyType.HOTKEY)"
-								[value]="keyType.HOTKEY"
-								>
+								[value]="keyType.HOTKEY">
 							</vtr-ui-rectangle-radio>
 						</div>
 						<div>
@@ -36,17 +40,20 @@
 								[label]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.fnKey' | translate"
 								[iconName]="'icomoon icomoon-F1-F12-funciton'"
 								(change)="update$.next(keyType.FNKEY)"
-								[value]="keyType.FNKEY"
-								>
+								[value]="keyType.FNKEY">
 							</vtr-ui-rectangle-radio>
 						</div>
 					</div>
-                    <p role="text" class="text mt-3" *ngIf="hotkey$ | async" id="topRowFunctionsIdeapad-note-sFunKey">
-                        {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.note.sFunKey' | translate}}
-                    </p>
-                    <p role="text" class="text mt-3" *ngIf="fnkey$ | async" id="topRowFunctionsIdeapad-note-fnKey">
-                        {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.note.fnKey' | translate}}
-                    </p>
+					<p class="text mt-3"
+						*ngIf="hotkey$ | async"
+						id="topRowFunctionsIdeapad-note-sFunKey">
+						{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.note.sFunKey' | translate}}
+					</p>
+					<p class="text mt-3"
+						*ngIf="fnkey$ | async"
+						id="topRowFunctionsIdeapad-note-fnKey">
+						{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.note.fnKey' | translate}}
+					</p>
 				</div>
 			</div>
 		</div>
