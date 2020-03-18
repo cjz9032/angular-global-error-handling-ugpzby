@@ -168,30 +168,7 @@
 									</div>
 								</vtr-ui-row-switch>
                             </li>
-                            <div *ngIf="microphoneProperties?.currentMode!='NotSupported'">
-							<li class=""
-								*ngIf="microphoneProperties.keyboardNoiseSuppression">
-								<vtr-ui-row-switch
-									[title]="'device.deviceSettings.audio.microphone.suppress.title' | translate"
-									[name]="'device.deviceSettings.audio.microphone.suppress.title' | translate"
-									componentName="Supress Keyboard noise"
-									[caption]=""
-									[isSwitchVisible]=true
-									[leftIcon]="['fal', 'keyboard']"
-									[rightIcon]="helpIcon"
-									[readMoreText]="''"
-									[showChildContent]="true"
-									[theme]="'white'"
-									[tooltipText]="'device.deviceSettings.audio.microphone.suppress.tooltip' | translate"
-									(toggleOnOff)="onToggleOfSuppressKbdNoise($event)"
-									[disabled]="microphoneProperties.disableEffect || microOptimizeModeResponse.current === 'VoiceRecognition'"
-									[isSwitchChecked]="microphoneProperties.keyboardNoiseSuppression"
-									[showLoaderState]="microphoneLoader"
-									[switchId]="'audio-microphone-suppress'">
-								</vtr-ui-row-switch>
-							</li>
-                            </div>
-							<div
+                            <div
 								*ngIf="microphoneProperties?.currentMode && microphoneProperties?.currentMode!='NotSupported' && !isDTmachine">
 								<li class="common-li-padding"
 									*ngIf="microphoneProperties.keyboardNoiseSuppression != undefined">
