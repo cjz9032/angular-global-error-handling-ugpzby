@@ -499,7 +499,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.updatePowerMode();
 	}
 
-	onToggleOfAlwaysOnUsb(value: boolean) {
+	onToggleOfAlwaysOnUsb(event: any) {
+		const value = event.switchValue;
 		this.toggleAlwaysOnUsbFlag = value;
 		switch (this.machineType) {
 			case 1:
@@ -525,7 +526,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}, 100);
 	}
 
-	onToggleOfEasyResume(value: boolean) {
+	onToggleOfEasyResume(event: any) {
+		const value = event.switchValue;
 		switch (this.machineType) {
 			case 1:
 				this.setEasyResumeThinkPad(value);
@@ -537,7 +539,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	onToggleOfAirplanePowerMode(value) {
+	onToggleOfAirplanePowerMode(event) {
+		const value = event.switchValue;
 		switch (this.machineType) {
 			case 1:
 				this.setAirplaneModeThinkPad(value);
@@ -991,7 +994,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 
 	// Start Lenovo Vantage ToolBar
-	public onVantageToolBarStatusToggle(value: boolean) {
+	public onVantageToolBarStatusToggle(event: any) {
+		const value = event.switchValue;
 		this.logger.info('onVantageToolBarStatusToggle', value);
 		try {
 			if (this.powerService.isShellAvailable) {
@@ -1159,7 +1163,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	// 	}
 	// }
 
-	public toggleBCTSwitch(value: boolean) {
+	public toggleBCTSwitch(event: any) {
+		const value = event.switchValue;
 		if (value) {
 			let count = 0;
 			this.thresholdInfo.forEach(battery => {
@@ -1287,7 +1292,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			});
 	}
 
-	onToggleOfFlipToBoot(value: boolean) {
+	onToggleOfFlipToBoot(event: any) {
+		const value = event.switchValue;
 		const status: FlipToBootSetStatus = value ? FlipToBootSetStatusEnum.On : FlipToBootSetStatusEnum.Off;
 		this.powerService.setFlipToBootSettings(status)
 			.then(res => {
