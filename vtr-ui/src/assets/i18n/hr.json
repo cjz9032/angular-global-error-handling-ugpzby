@@ -876,7 +876,7 @@
                 "tips2": "U nastavku unesite bilo kakve dodatne komentare",
                 "emailAddressLabel": "Ostavite svoju adresu e-pošte ako želite da vas tim Lenovo Vantage kontaktira.",
                 "emailAddress": "Adresa e-pošte",
-                "invalidEmailMsg": "Invalid email address"
+                "invalidEmailMsg": "Nevažeća adresa e-pošte"
             }
         },
         "quickSettings": {
@@ -1997,30 +1997,30 @@
             },
             "voice": {
                 "title": "Glas",
-                "description": "Lenovo Voice omogućuje pretvaranje vašeg govora u tekst s pomoću funkcije Govor u tekst i prijevod govora u tekst u stvarnom vremenu s pomoću funkcije Prijevod.",
+                "description": "Lenovo Voice pretvara vaš glas u tekst pomoću glasa u tekst i pruža pomoć u prijevodu govora u stvarnom vremenu uz pomoć prevoditeljskog pomoćnika.",
                 "installBtnText": "Instaliranje",
                 "launchBtnText": "Pokretanje",
                 "voiceToText": {
                     "title": "Govor u tekst",
-                    "caption": "S pomoću ove značajke možete pretvoriti govor u tekst."
+                    "caption": "Ova značajka pruža funkciju glasovnog pisanja koja pretvara glas u tekst za brzi unos."
                 },
                 "translation": {
                     "title": "Prijevod",
-                    "caption": "Ova značajka omogućava prijevod govora u realnom vremenu. Prevedeni se sadržaj prikazuje kao tekst. Možete odabrati izvorne jezike i ciljne jezike prema vlastitim potrebama."
+                    "caption": "Ova značajka pruža pomoć prijevoda govora u stvarnom vremenu a sve prevedeno prikazat će se u tekstualnom obliku. Za izvorni i ciljni jezik dostupno je više jezika."
                 },
                 "modalPopUp": {
                     "heading": "Početak rada:",
-                    "point1": "Provjerite je li ikona Lenovo Voice prikazana u paleti sustava Windows.",
-                    "point2": "Otvorite datoteku u koju želite snimiti pretvoreni tekst.",
+                    "point1": "Pokrenite Lenovo Voice iz izbornika Start, a ikona Lenovo Voice prikazana je u programskoj traci sustava Windows.",
+                    "point2": "Otvorite aplikaciju u kojoj želite upisati tekst.",
                     "point3": "Kliknite ikonu Lenovo Voice u paleti sustava Windows i odaberite funkciju Voice to text (Govor u tekst).",
-                    "point4": "Za početak rada odaberite željeni jezik i kliknite ikonu mikrofona.",
-                    "point5": "Postavite pokazivač na mjesto koje želite urediti i počnite govoriti.",
-                    "point6": "Kliknite ikonu Lenovo Voice u paleti sustava Windows i odaberite Translate (Prevedi).",
-                    "point7": "Odaberite željeni izvorni i ciljni jezik.",
+                    "point4": "Odaberite jezike prema potrebi i kliknite ikonu mikrofona da biste počeli.",
+                    "point5": "Postavite pokazivač u aplikaciju i počnite govoriti.",
+                    "point6": "Kliknite ikonu Lenovo Voice u programskoj traci sustava Windows i odaberite Prijevod.",
+                    "point7": "Odaberite izvorni i ciljni jezik.",
                     "point8": "Ovisno o vašim potrebama, postavite glasovni ulaz iz zvučnika ili iz mikrofona.",
-                    "point9": "Da biste počeli govoriti, kliknite ikonu mikrofona",
+                    "point9": "Kliknite ikonu mikrofona da biste počeli govoriti.",
                     "closeText": "zatvori",
-                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
+                    "point10": "Provjerite je li ikona Lenovo Voice prikazana u paleti sustava Windows."
                 },
                 "modalInstallationFailed": {
                     "btnText": "u redu",
@@ -2187,6 +2187,7 @@
             "description": "Obratite nam se kako bismo vam pomogli.",
             "listLenovoCommunity": "Zajednica oko tvrtke Lenovo",
             "listContactCustomerService": "Kontaktirajte službu za korisnike",
+            "listYourVirtualAssistant": "Your virtual assistant",
             "listContactUsOnWechat": "Kontaktirajte nas na WeChat",
             "weChatDescription": "Pošaljite nam pitanje na WeChat i svakako ćemo brzo odgovoriti",
             "listFindUs": "Pronađite nas na društvenim medijima",
@@ -3507,7 +3508,8 @@
     "notification": {
         "menu": {
             "security": "Znate li? Čak i ako nemate instaliran antivirusni softver, još uvijek vam pružamo osnovnu sigurnosnu zaštitu vašeg uređaja.",
-            "connectedHomeSecurity": "Dobijte praćenje u stvarnom vremenu i upozorenja o mrežnoj sigurnosti vašeg doma. Prvi ćete saznati ako se bilo koji od vaših pametnih uređaja suoči sa sigurnosnim napadom."
+            "connectedHomeSecurity": "Dobijte praćenje u stvarnom vremenu i upozorenja o mrežnoj sigurnosti vašeg doma. Prvi ćete saznati ako se bilo koji od vaših pametnih uređaja suoči sa sigurnosnim napadom.",
+            "hardwareScan": "Sada možete saznati stanje hardverske komponente vašeg sustava."
         }
     },
     "appsForYou": {

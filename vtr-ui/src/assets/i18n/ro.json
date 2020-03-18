@@ -876,7 +876,7 @@
                 "tips2": "Vă rugăm să lăsați orice comentarii suplimentare mai jos",
                 "emailAddressLabel": "Dacă doriți să fiți contactat de către echipa Lenovo Vantage, vă rugăm să ne lăsați adresa dvs. de e-mail.",
                 "emailAddress": "Adresă de e-mail",
-                "invalidEmailMsg": "Invalid email address"
+                "invalidEmailMsg": "Adresa de e-mail nu este validă"
             }
         },
         "quickSettings": {
@@ -1997,30 +1997,30 @@
             },
             "voice": {
                 "title": "Voce",
-                "description": "Lenovo Voice vă ajută să vă convertiți vocea în texte cu ajutorul funcției Voce în text și vă oferă traducere în timp real din voce în texte cu ajutorul funcției Traducere.",
+                "description": "Lenovo Voice converteşte vocea în text cu ajutorul funcţiei Voce în text şi vă oferă asistenţă la traducerea în timp real a vorbirii cu Asistentul pentru traducere.",
                 "installBtnText": "Instalare",
                 "launchBtnText": "Lansare",
                 "voiceToText": {
                     "title": "Voce în text",
-                    "caption": "Această caracteristică vă ajută să vă transformați vocea în texte."
+                    "caption": "Această caracteristică oferă funcţia de tastare vocală care converteşte vocea în text, pentru o introducere rapidă."
                 },
                 "translation": {
                     "title": "Traducere",
-                    "caption": "Această caracteristică oferă traducerea în timp real a vocii. Conținutul tradus este prezentat în texte. Puteți alege limbile sursă și limbile țintă în funcție de nevoile dvs."
+                    "caption": "Această caracteristică oferă asistenţă la traducerea în timp real a vorbirii şi toate traducerile vor fi afişate în text. Pentru limbile sursă şi ţintă sunt disponibile mai multe limbi."
                 },
                 "modalPopUp": {
                     "heading": "Introducere:",
-                    "point1": "Asigurați-vă că pictograma Lenovo Voice este afișată în bara de sistem Windows.",
-                    "point2": "Deschideți fișierul în care doriți să înregistrați textul convertit.",
+                    "point1": "Porniţi Lenovo Voice din meniul Start şi pictograma Lenovo Voice va fi afişată în bara de sistem Windows.",
+                    "point2": "Deschideţi aplicaţia în care doriţi să introduceţi text.",
                     "point3": "Faceți clic pe pictograma Lenovo Voice din bara de sistem Windows și selectați Voice to text.",
-                    "point4": "Selectați limba dorită și faceți clic pe pictograma microfon pentru a începe.",
-                    "point5": "Puneți cursorul în locul în care doriți să editați și începeți să vorbiți.",
-                    "point6": "Faceți clic pe pictograma Lenovo Voice din bara de sistem Windows și selectați Translate.",
-                    "point7": "Selectați limba sursă și limba țintă dorite.",
-                    "point8": "În funcție de nevoile dvs., setați intrarea vocală din Speaker sau din Microphone.",
-                    "point9": "Faceți clic pe pictograma microfon pentru a începe să vorbiți",
+                    "point4": "Pentru a începe, selectaţi limba dorită şi faceţi clic pe pictograma Microfon.",
+                    "point5": "Puneţi cursorul în aplicaţie şi începeţi să vorbiţi.",
+                    "point6": "Faceţi clic pe pictograma Lenovo Voice din bara de sistem Windows şi selectaţi Traducere.",
+                    "point7": "Selectaţi limba sursă şi limba ţintă.",
+                    "point8": "În funcţie de cerinţele dumneavoastră, setaţi intrarea vocală de la Difuzor sau de la Microfon.",
+                    "point9": "Pentru a începe să vorbiţi, faceţi clic pe pictograma Microfon.",
                     "closeText": "închidere",
-                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
+                    "point10": "Asigurați-vă că pictograma Lenovo Voice este afișată în bara de sistem Windows."
                 },
                 "modalInstallationFailed": {
                     "btnText": "OK",
@@ -2187,6 +2187,7 @@
             "description": "Contactați-ne pentru a vă ajuta.",
             "listLenovoCommunity": "Comunitatea Lenovo",
             "listContactCustomerService": "Contactați serviciul pentru clienți",
+            "listYourVirtualAssistant": "Your virtual assistant",
             "listContactUsOnWechat": "Contactați-ne pe WeChat",
             "weChatDescription": "Puneți-ne o întrebare pe WeChat și vă vom răspunde rapid",
             "listFindUs": "Găsiți-ne pe rețelele sociale",
@@ -3507,7 +3508,8 @@
     "notification": {
         "menu": {
             "security": "Ştiaţi că? Chiar dacă nu aveţi instalat software antivirus, vă oferim în continuare protecţie de bază de securitate pentru dispozitivul dvs.",
-            "connectedHomeSecurity": "Obţineţi monitorizare şi alerte în timp real despre securitatea reţelei dvs. de acasă. Veţi fi primul care va şti dacă vreunul dintre dispozitivele dvs. inteligente se confruntă cu un atac de securitate."
+            "connectedHomeSecurity": "Obţineţi monitorizare şi alerte în timp real despre securitatea reţelei dvs. de acasă. Veţi fi primul care va şti dacă vreunul dintre dispozitivele dvs. inteligente se confruntă cu un atac de securitate.",
+            "hardwareScan": "Acum puteți obține informații despre starea de sănătate a componentei hardware a sistemului dvs."
         }
     },
     "appsForYou": {

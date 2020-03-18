@@ -2,7 +2,7 @@
 	<ul class="support-list">
 		<li *ngFor="let item of items">
 			<a role="link"
-				tabindex="100"
+				[tabindex]="item?.metricsParent === 'Page.Dashboard' ? 0 : 100"
 				id="{{item.metricsItem}}"
 				attr.aria-label="{{item.title | translate}}"
 				(click)="itemClick(item, $event)"
@@ -27,7 +27,7 @@
 								<img [src]="item.iconPath|svgInline|async" />
 							</div>
 						</div>
-						<div class="col col-10 item-text">
+						<div class="col col-10 item-text d-flex align-items-center">
 							<div class="title">
 								{{item.title | translate}}
 							</div>
