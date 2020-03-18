@@ -263,13 +263,6 @@
 	.img-block {
 		padding-left: 3rem;
 	}
-	.keyboard-backlight-block {
-		::ng-deep .vtr-ui-switch-row.white-theme {
-			.col-12 {
-				margin-left: 3rem;
-			}
-		}
-	}
 }
 
 .voip {
@@ -278,7 +271,7 @@
 	.app-text {
 		font-size: $fontsize_xs;
 		font-weight: 300;
-		color: $grey_dark
+		color: $grey_dark;
 	}
 
 	.adjust-indent {
@@ -302,10 +295,10 @@
 	vertical-align: middle;
 
 	&.icon-s4b {
-		background: url('src/assets/images/S4B_2016.png') center/cover;
+		background: url('~/assets/images/S4B_2016.png') center/cover;
 	}
 	&.icon-teams {
-		background: url('src/assets/images/Microsoft_Teams_1.0.png') center/cover;
+		background: url('~/assets/images/Microsoft_Teams_1.0.png') center/cover;
 	}
 }
 
@@ -324,10 +317,10 @@
 			height: 4rem;
 
 			&.icon-s4b {
-				background: url('src/assets/images/S4B_2016.png') center/cover;
+				background: url('~/assets/images/S4B_2016.png') center/cover;
 			}
 			&.icon-teams {
-				background: url('src/assets/images/Microsoft_Teams_1.0.png') center/cover;
+				background: url('~/assets/images/Microsoft_Teams_1.0.png') center/cover;
 			}
 		}
 	}

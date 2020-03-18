@@ -1,8 +1,6 @@
 <div class="vtr-widget-switch-icon"
 	[disabled]="isBlocked"
 	[ngClass]="{'disable-state': (disable || isLoading)}"
-	(keyup.enter)="onChange($event)"
-	(click)="onChange($event)"
 	[title]="tooltipText"
 	id="qs-{{switchId}}-switch-icon"
 	attr.aria-label="qs-{{switchId}}-switch-icon"
@@ -13,7 +11,7 @@
 	<button class="switch-container"
 		[ngClass]="[(value && !isLoading) ? 'checked' : 'unchecked', disable ? 'disable-container' : '']"
 		[ngClass]="{'unchecked': isLoading}"
-		[id]="findId(value,disable)">
+		[id]="findId(value,disable)" (click)="onChange($event)" [attr.role]="buttonRole">
 		<div class="title"
 			[ngClass]="{'disable-container' : disable}"
 			id="qs-{{switchId}}-switch-title"

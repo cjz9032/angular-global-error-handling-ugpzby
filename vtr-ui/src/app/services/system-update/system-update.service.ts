@@ -72,6 +72,10 @@ export class SystemUpdateService {
 					criticalAutoUpdates: (response.criticalAutoUpdates === 'ON') ? true : false,
 					recommendedAutoUpdates: (response.recommendedAutoUpdates === 'ON') ? true : false
 				};
+				if(!this.autoUpdateStatus.criticalAutoUpdates) {
+					this.autoUpdateStatus.recommendedAutoUpdates = false;
+					this.setUpdateSchedule(false, false);
+				}
 				this.commonService.sendNotification(UpdateProgress.AutoUpdateStatus, this.autoUpdateStatus);
 			});
 		}

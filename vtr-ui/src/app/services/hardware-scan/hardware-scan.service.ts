@@ -588,6 +588,7 @@ export class HardwareScanService {
 			this.clearLastResponse();
 			this.cancelRequested = false;
 			this.setScanOrRBSFinished(false);
+			this.workDone.next(false);
 			return this.hardwareScanBridge.getRecoverBadSectors(payload, (response: any) => {
 				// Keeping track of the latest response allows the right render when user
 				// navigates to another page and then come back to the Hardware Scan page
@@ -611,6 +612,7 @@ export class HardwareScanService {
             }).finally(() => {
 				this.setIsScanDone(true);
 				this.cleanUp();
+				this.workDone.next(true);
 				this.setScanOrRBSFinished(true);
 			});
 		}
@@ -1221,7 +1223,7 @@ export class HardwareScanService {
 	}
 
 	public getHardwareComponentIcon(moduleName: string) {
-		const iconsBasePath = '/assets/icons/hardware-scan/';
+		const iconsBasePath = 'assets/icons/hardware-scan/';
 
 		if (moduleName in this.iconByModule) {
 			return iconsBasePath + this.iconByModule[moduleName];

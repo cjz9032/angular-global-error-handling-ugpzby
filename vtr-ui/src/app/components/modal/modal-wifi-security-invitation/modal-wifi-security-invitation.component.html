@@ -1,14 +1,14 @@
 <div class="wifi-security-invitation-modal">
-	<div class="content-container" *ngIf="!startJoin">
-		<h1 *ngIf="!joinSuccess" [innerHTML]="header | translate"></h1>
-		<div role="button" class="close-btn" (click)="onCancelClick($event)"
+	<div role="button" class="close-btn" (click)="onCancelClick($event)"
 			id="chs-btn-inviatation-close"
 			vtrMetrics
 			metricsItem="CHSInvitationCloseButton"
 			metricsEvent="featureClick"
 			metricsParent="{{metricsParent}}">
 			<img [src]=" 'assets/icons/Close.svg' | svgInline | async" alt="" srcset="">
-		</div>
+	</div>
+	<div class="content-container" *ngIf="!startJoin">
+		<h1 *ngIf="!joinSuccess" [innerHTML]="header | translate"></h1>
 		<p *ngIf="!joinSuccess" class="description header-description pb-3"
 			[innerHTML]="headerDescription | translate">
 		</p>
@@ -57,14 +57,6 @@
 		</div>
 	</div>
 	<div class="loading-container flex-column" *ngIf="startJoin">
-		<div role="button" id="chs-btn-inviatation-closeButton" class="close-btn"
-			(click)="onCancelClick($event)"
-			vtrMetrics
-			metricsItem="CHSInvitationCloseButton"
-			metricsEvent="featureClick"
-			metricsParent="{{metricsParent}}">
-			<img [src]=" 'assets/icons/Close.svg' | svgInline | async">
-		</div>
 		<div class="spinner-border text-primary progress-spinner" role="status"></div>
 		<div class="connecting mt-5" [innerHTML]="'security.homeprotection.invitationcode.connecting' | translate"></div>
 	</div>

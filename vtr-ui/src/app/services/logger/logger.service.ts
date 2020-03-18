@@ -30,7 +30,12 @@ export class LoggerService {
 	 * get formatted message
 	 */
 	private getMessage(message: string, data: any = {}) {
-		return `v${this.version}:- ${message} | data: ${JSON.stringify(data)}`;
+		let errorMessage = data;
+		if (data && data.message && data.stack) {
+			errorMessage = data.message;
+		}
+
+		return `v${this.version}:- ${message} | data: ${JSON.stringify(errorMessage)}`;
 	}
 
 	public debug(message: string, data: any = {}): void {
@@ -41,7 +46,6 @@ export class LoggerService {
 		}
 	}
 
-	//
 	public error(message: string, data: any = {}): void {
 		if (this.isShellAvailable) {
 			this.logger.error(this.getMessage(message, data));

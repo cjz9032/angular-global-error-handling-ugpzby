@@ -93,7 +93,7 @@ describe('SmartStandbyGraphComponent', () => {
 				expect(data).toEqual(mockActivities);
 			});
 
-			const req = httpTestingController.expectOne('/assets/activities.json');
+			const req = httpTestingController.expectOne('assets/activities.json');
 
 			expect(req.request.method).toBe('GET');
 

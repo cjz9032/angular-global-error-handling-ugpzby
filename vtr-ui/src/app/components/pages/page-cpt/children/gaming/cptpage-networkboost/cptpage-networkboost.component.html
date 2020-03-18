@@ -5,14 +5,15 @@
 </div>
 <div class="row">
     <div class="col-xs-6 col-sm-6">
-        <vtr-container-card order="1" [item]="cardContentPositionF"
-            [type]="'subpage-article'" [ratio]="1">
+        <vtr-container-card order="1" [item]="cardContentPositionC" [type]="'subpage-article'" [ratio]="1"
+            [dynamicmetricsItem]="dynamic_metricsItem" vtrMetrics metricsEvent="ArticleClick"
+            metricsItem="gaming_network-boost_containerCard_positionC" ItemCategory="corner-article">
         </vtr-container-card>
     </div>
     <div class="col-xs-6 col-sm-6">
-        <vtr-container-card order="2"
-            [item]="cardContentPositionC" [type]="'subpage-corner'" [ratio]="2" [cornerShift]="'large'"
-            [dynamicmetricsItem]="dynamic_metricsItem">
+        <vtr-container-card order="2" [item]="cardContentPositionF"
+            [type]="'subpage-corner'" [ratio]="2" [cornerShift]="'large'" vtrMetrics metricsEvent="ArticleClick"
+            metricsItem="gaming_network-boost_containerCard_positionF" ItemCategory="corner-article">
         </vtr-container-card>
     </div>
 </div>

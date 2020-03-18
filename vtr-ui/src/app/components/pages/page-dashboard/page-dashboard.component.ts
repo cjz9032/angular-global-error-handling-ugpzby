@@ -56,6 +56,21 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	dashboardStart: any = new Date();
 	public hideTitle = false;
 
+	supportDatas = {
+		documentation: [
+			{
+				icon: ['fal', 'book'],
+				title: 'support.documentation.listUserGuide',
+				clickItem: 'userGuide',
+				metricsItem: 'Documentation.UserGuideButton',
+				metricsEvent: 'FeatureClick',
+				metricsParent: 'Page.Dashboard'
+			}
+		],
+		needHelp: [],
+		quicklinks: [],
+	};
+
 	heroBannerItems = []; // tile A
 	cardContentPositionB: FeatureContent = new FeatureContent();
 	cardContentPositionC: FeatureContent = new FeatureContent();
@@ -425,7 +440,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			id: '',
 			source: this.sanitizer.sanitize(SecurityContext.HTML, 'VANTAGE'),
 			title: this.sanitizer.sanitize(SecurityContext.HTML, 'Lenovo exclusive offer of Adobe designer suite'),
-			url: '/assets/images/dcc/hero-banner-dcc.jpg',
+			url: 'assets/images/dcc/hero-banner-dcc.jpg',
 			ActionLink: 'dcc-demo',
 			ActionType: 'Internal',
 			DataSource: 'cms'

@@ -785,7 +785,7 @@
             "title": "あなたの機械のQ&A",
             "subtitle": "ご使用のデバイスのお役立ちヒントを探します。",
             "question1": "ファイルをバックアップし、復元する",
-            "question2": "PC を更新する方法",
+            "question2": "PC を初期状態に戻す方法",
             "question3": "ご使用のマシンの CPU を知る方法",
             "question4": "マシンのバッテリーの使用を確認する",
             "question5": "PC をタブレットのように使用する",
@@ -876,7 +876,7 @@
                 "tips2": "追加のコメントを以下に残してください",
                 "emailAddressLabel": "Lenovo Vantage チームから連絡を受ける可能性がある場合は、メール・アドレスを残してください。",
                 "emailAddress": "メール・アドレス",
-                "invalidEmailMsg": "Invalid email address"
+                "invalidEmailMsg": "無効なメール・アドレスです"
             }
         },
         "quickSettings": {
@@ -1997,30 +1997,30 @@
             },
             "voice": {
                 "title": "音声",
-                "description": "Lenovo Voice は、音声テキスト変換機能を使用して音声をテキストに変換し、翻訳機能を使用して音声からテキストへのリアルタイムの翻訳を提供します。",
+                "description": "Lenovo Voice は、音声テキスト変換機能を使用して音声をテキストに変換し、翻訳アシスタントを使用して音声からテキストへのリアルタイムの翻訳支援を提供します。",
                 "installBtnText": "インストール",
                 "launchBtnText": "起動",
                 "voiceToText": {
                     "title": "音声テキスト変換",
-                    "caption": "この機能を使用して音声をテキストに変換できます。"
+                    "caption": "この機能は、すばやく入力できるように、音声をテキストに変換する音声入力機能を提供します。"
                 },
                 "translation": {
                     "title": "翻訳",
-                    "caption": "この機能は音声のリアルタイム翻訳を提供します。翻訳された内容はテキストで表示されます。必要に応じて原文の言語と訳文の言語を選択できます。"
+                    "caption": "この機能は、スピーチのリアルタイム翻訳支援を提供し、翻訳されたものはすべてテキストで表示されます。ソース言語とターゲット言語には複数の言語を使用できます。"
                 },
                 "modalPopUp": {
                     "heading": "使用開始:",
-                    "point1": "Lenovo Voice アイコンが Windows のシステム トレイに表示されていることを確認します。",
-                    "point2": "変換したテキストを記録するファイルを開きます。",
+                    "point1": "「スタート」メニューから Lenovo Voice を起動すると、Windows システム トレイに Lenovo Voice アイコンが表示されます。",
+                    "point2": "テキストを入力するアプリケーションを開きます。",
                     "point3": "Windows システム トレイの Lenovo Voice アイコンをクリックして、「音声テキスト変換」を選択します。",
-                    "point4": "目的の言語を選択し、マイクのアイコンをクリックして開始します。",
-                    "point5": "編集箇所にカーソルを置き、話し始めます。",
+                    "point4": "必要な言語を選択し、マイクのアイコンをクリックして開始します。",
+                    "point5": "アプリケーションにカーソルを置き、話し始めます。",
                     "point6": "Windows システム トレイの Lenovo Voice アイコンをクリックして、「翻訳」を選択します。",
-                    "point7": "目的の原文言語と訳文言語を選択します。",
+                    "point7": "原文言語と訳文言語を選択します。",
                     "point8": "必要に応じて、スピーカーまたはマイクからの音声入力を設定します。",
-                    "point9": "マイクのアイコンをクリックして話し始めます",
+                    "point9": "マイクのアイコンをクリックして話し始めます。",
                     "closeText": "閉じる",
-                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
+                    "point10": "Lenovo Voice アイコンが Windows のシステム トレイに表示されていることを確認します。"
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -2187,6 +2187,7 @@
             "description": "ご不明な点については、当社までお問い合わせください。",
             "listLenovoCommunity": "Lenovo コミュニティー",
             "listContactCustomerService": "カスタマー・サービスへのお問い合わせ",
+            "listYourVirtualAssistant": "仮想アシスタント",
             "listContactUsOnWechat": "WeChat でのお問い合わせ",
             "weChatDescription": "WeChat からご質問をお送りください。すぐに対応いたします",
             "listFindUs": "ソーシャル・メディアのアカウント",
@@ -2593,7 +2594,7 @@
         },
         "question1": {
             "title": "ファイルをバックアップし、復元する",
-            "description": "<div>    <div class='faqInFs4Fb'>        ファイルをバックアップし、復元する    </div>    <hr />    <div class='faqInMb7'>        どんな場合でもバックアップを取っておくのは良いことです。オリジナルに問題が発生した場合に備えて、ファイルのコピーを別のドライブに保存してください。    </div>    <div class='faqInFs3Fb'>        バックアップの設定    </div>    <hr />    <div class='mb-5'>        <span class='faqInFb'>「スタート」</span>ボタンを選択し、<span class='faqInFb'>「設定」</span> > <span class='faqInFb'>「更新とセキュリティ」</span> > <span class='faqInFb'>「バックアップ」</span> > <span class='faqInFb'>「ドライブの追加」</span>の順に選択して、次にバックアップ用の外付けドライブまたはネットワークの場所を選択します。    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/ja/1.1.jpg' />    </div>    <div class='mb-5'>        設定完了。毎時間、ユーザー・フォルダー (C:\\\\Users\\\\username) 内の全ファイルをバックアップします。バックアップするファイル、バックアップの頻度を変更するには、<span class='faqInFb'>「その他のオプション」</span>に進みます。    </div>    <div class='faqInFs3Fb'>        ファイルの復元    </div>    <div class='mb-5'>        重要なファイルやフォルダーが見つからない場合は、以下の手順で元に戻すことができます。    </div>    <div>        <div class='mb-3'>1.タスク バーの検索ボックスに<span class='faqInFb'>「ファイルを復元」</span>と入力して、次に<span class='faqInFb'>「ファイル履歴をファイルを復元」</span>を選択します。</div>        <div class='mb-3'>2.必要なファイルを探し、次に矢印を使って、そのすべてのバージョンを表示します</div>        <div class='mb-3'>3.必要なバージョンが見つかったら、<span class='faqInFb'>「復元」</span>を選択して、元の場所にそれを保存します。別の場所に保存するには、<span class='faqInFb'>「復元」</span>を長押し（または右クリック）し、<span class='faqInFb'>「復元先」</span>を選択して、次に新しい場所を選択します。</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        ファイルをバックアップし、復元する    </div>    <hr />    <div class='faqInMb7'>        どんな場合でもバックアップを取っておくのは良いことです。オリジナルに問題が発生した場合に備えて、ファイルのコピーを別のドライブに保存してください。    </div>    <div class='faqInFs3Fb'>        バックアップの設定    </div>    <hr />    <div class='mb-5'>        <span class='faqInFb'>「スタート」</span>ボタンを選択し、<span class='faqInFb'>「設定」</span> > <span class='faqInFb'>「更新とセキュリティ」</span> > <span class='faqInFb'>「バックアップ」</span> > <span class='faqInFb'>「ドライブの追加」</span>の順に選択して、次にバックアップ用の外付けドライブまたはネットワークの場所を選択します。    </div>    <div class='mb-5'>        <img src='assets/images/qa/ja/1.1.jpg' />    </div>    <div class='mb-5'>        設定完了。毎時間、ユーザー・フォルダー (C:\\\\Users\\\\username) 内の全ファイルをバックアップします。バックアップするファイル、バックアップの頻度を変更するには、<span class='faqInFb'>「その他のオプション」</span>に進みます。    </div>    <div class='faqInFs3Fb'>        ファイルの復元    </div>    <div class='mb-5'>        重要なファイルやフォルダーが見つからない場合は、以下の手順で元に戻すことができます。    </div>    <div>        <div class='mb-3'>1.タスク バーの検索ボックスに<span class='faqInFb'>「ファイルを復元」</span>と入力して、次に<span class='faqInFb'>「ファイル履歴をファイルを復元」</span>を選択します。</div>        <div class='mb-3'>2.必要なファイルを探し、次に矢印を使って、そのすべてのバージョンを表示します</div>        <div class='mb-3'>3.必要なバージョンが見つかったら、<span class='faqInFb'>「復元」</span>を選択して、元の場所にそれを保存します。別の場所に保存するには、<span class='faqInFb'>「復元」</span>を長押し（または右クリック）し、<span class='faqInFb'>「復元先」</span>を選択して、次に新しい場所を選択します。</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -2633,8 +2634,8 @@
             }
         },
         "question2": {
-            "title": "PC を更新する方法",
-            "description": "<div>    <div class='faqInFs4Fb'>        PC を更新する方法    </div>    <hr>    <div class='faqInFs25FbP5'>        症状    </div>    <div class='faqInP5'>        お使いの PC が以前のように機能しておらず、その理由が分からない場合は、個人用ファイルを削除したり、設定を変更したりせずに PC をリフレッシュできます。Windows では PC を「リフレッシュ」できます。PC のリフレッシュは、個人用ファイルを削除せずに、新たにインストールするのに似ています。    </div>    <div class='faqInP5'>        PC のリフレッシュにより、ファイルとカスタマイズした設定は変更されません    </div>    <div class='faqInP5'>        <ul>            <li>PC の設定はデフォルトに戻ります</li>            <li>Windows ストアからのアプリは維持されます</li>            <li>ディスクまたは Web サイトからインストールしたアプリは削除されます</li>            <li>削除したファイルのリストはデスクトップに保存されます</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        影響を受けるブランド    </div>    <div>        <ul>            <li>すべてのデスクトップとラップトップ</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        オペレーション・システム    </div>    <div>        <ul>            <li>Windows 8、8.1、および 10</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        解決法    </div>    <div>        <ul class='list-unstyled'>            <li>                <span class='faqInFbTdP10'>Windows 8/8.1</span>                <ol>                    <li class='faqInP5'>                        <span class='faqInFb'>「設定」</span>をタップまたはクリックします                    </li>                    <li class='faqInP5'>                        <span class='faqInFb'>「更新と回復」</span>をタップまたはクリックします                    </li>                    <li class='faqInP5'>                        <div><span class='faqInFb'>「回復」</span>タップまたはクリックします</div>                        <div class='faqInP5'>「ファイルに影響を与えないように PC をリフレッシュする」から<span class='faqInFb'>「開始する」</span>をタップまたはクリックします。</div>                        <div><img src='./../../../../assets/images/qa/ja/2.1.jpg' /></div>                    </li>                    <li class='faqInP5'>                        <span class='faqInFb'>「次へ」</span>をクリックします。                    </li>                    <li class='faqInP5'>                        <span class='faqInFb'>「リフレッシュ」</span>をクリックし、リフレッシュ・プロセスを開始します。                    </li>                    <li class='faqInP5'>                        リフレッシュ・プロセスが完了すると、デスクトップに「削除されたアプリ」の一覧が表示されます                    </li>                    <li class='faqInP5'>                        システムをリフレッシュしている間に、削除されたアプリを見つけることができます                    </li>                </ol>            </li>            <li class='faqInP10'>                <span class='faqInFbTd'>Windows 10</span>                <ol>                    <li class='faqInP5'> 「スタート」メニューにある検索ツールで、<span class='faqInFb'>「リフレッシュ」</span>を検索します。</li>                    <li class='faqInP5'>                        <div>以下に示す検索結果の<span class='faqInFb'>「ファイルに影響を与えないように PC をリフレッシュする」</span>をクリックします。</div>                        <div><img src='./../../../../assets/images/qa/ja/2.2.jpg' /></div>                    </li>                    <li class='faqInP5'>                        <div><span class='faqInFb'>「ファイルに影響を与えないように PC をリフレッシュする」</span>の見出しのすぐ下にある<span class='faqInFb'>「開始する」</span>ボタンをクリックして、Windows 10 PCのリフレッシュを開始します。</div>                        <div><img src='./../../../../assets/images/qa/ja/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div class='faqInFs25Fb'>        追加情報    </div>    <div>        ほとんどの場合、PC のリフレッシュを開始したら、プロセスは自動的に終了します。ただし、Windows にファイルが見つからない場合は、リカバリー・メディア (通常は DVD ディスクまたは USB フラッシュ・ドライブ) を挿入するように求められます。その場合、必要なことは、ご使用の PC により異なります。    </div>    <div class='faqInP10'>        DVD を使用して、ご使用の PC を Windows 8.1 または Windows RT 8.1 にアップグレードした場合は、そのディスクを使用します。Windows 8.1 または Windows RT 8.1 のメディアがない場合は、Microsoft サポートにご連絡ください。    </div></div>",
+            "title": "PC を初期状態に戻す方法",
+            "description": "<div><div class='faqInFs4Fb'>Windows 10 を初期状態に戻す方法</div><hr><div class='faqInP5'>Windows 10 PC で問題が発生した場合、またはそうした Windows 10 PC を販売している場合は、PC を初期状態に戻す必要があります。初期状態に戻すことにより、ファイルを保存するか削除するかを選択して、すべてのアプリと設定を削除し、新しい Windows をインストールできます。これにより、パフォーマンスの低下などの多くの問題も修正できます。</div><div class='faqInFs25FbP10'>1.Settings アプリを開きます</div><div class='faqInP5'>画面の左下にあるスタート画像のボタンを押して、設定のギア画像を選択します。</div><div class='faqInP5'><img src='assets/images/qa/ja/2.1.jpg' /></div><div class='faqInFs25FbP10'>2.カテゴリのリストから「更新とセキュリティ」を選択します</div><div class='faqInP5'><img src='assets/images/qa/ja/2.2.jpg' /></div><div class='faqInFs25FbP10'>3.左ペインから「回復」に移動する</div><div class='faqInP5'><img src='assets/images/qa/ja/2.3.jpg' /></div><div class='faqInFs25FbP10'>4.初期化処理を開始します</div><div class='faqInP5'>上部の「この PC を初期状態に戻す」見出しの下で、「開始する」ボタンをクリックまたはタップします。</div><div class='faqInP5'><img src='assets/images/qa/ja/2.4.jpg' /></div><div class='faqInFs25FbP10'>5.ファイルを保持するかどうかを選択します</div><div class='faqInP5'>初期化した後、Microsoft アカウントにサインインできます。このアカウントで購入した Windows ストアのアプリは、すべて再インストールされます。</div><div class='faqInP5'><ul><li>「個人用ファイルを保持する」と、アプリと設定は削除されますが、個人用ファイルはすべて保持されます。</li><li>「すべて削除する」と、アプリ、設定、個人用ファイルは削除されます。ファイルのバックアップ・コピーがない場合は、「キャンセル」を押してファイルをバックアップし、この処理を再度開始することができます。</li></ul></div><div class='faqInP5'><img src='assets/images/qa/ja/2.5.jpg' /></div><div class='faqInFs25FbP10'>6.さまざまな追加設定を選択できます</div><div class='faqInP5'>これは、前の手順で「すべて削除する」を選択した場合にのみ表示されます。</div><div class='faqInP5'><img src='assets/images/qa/ja/2.6.1.jpg' /></div><div class='faqInP5'><img src='assets/images/qa/ja/2.6.2.jpg' /></div><div class='faqInFs25FbP10'>7. 概要を読み、続行する準備ができたら「初期状態に戻す」を押します。</div><div class='faqInP5'>Windows はデバイスを初期状態に戻す準備をします。ブルー・スクリーンが表示されるまで待ちます。</div><div class='faqInFs25FbP10'>8.「オプションの選択」が表示されたら、「続行」を選択します。</div><div class='faqInP5'>Windows が再起動し、初期化が開始されます。初期化が起こると、PC が数回再起動する場合があります。</div><hr><div class='faqInFs25FbP10'>コミュニティーの Q&A</div><div class='faqInP5'><b>すべてを削除することを選択した場合、コンピューター内の/コンピューターに接続されているすべてのドライブが消去されますか、または Windows 10 を実行しているドライブのみが消去されますか?</b></div><div class='faqInP5'><i>コミュニティの回答</i></div><div class='faqInP10'>Windows 10 OS のドライブ (通常は C ドライブ) のみが消去されます。コンピューター内の/コンピューターに接続されている他のドライブは影響を受けません。</div><div class='faqInP5'><b>画面が壊れている場合、どうすればよいですか?</b></div><div class='faqInP5'><i>コミュニティの回答</i></div><div class='faqInP10'>残念ながら初期化できません。新しい画面を取得する必要があります。</div><div class='faqInP5'><b>Web サイトにログインした場合、その履歴も削除されますか?</b></div><div class='faqInP5'><i>コミュニティの回答</i></div><div class='faqInP10'>はい、使用しているブラウザによって異なります。ブラウザの履歴を削除するには、ブラウザの設定に移動して履歴を削除します。匿名モードを使用して、履歴を保存しないようにすることもできます。</div><div class='faqInP5'><b>すべてを削除することを選択した場合、パスワードもリセットされますか?</b></div><div class='faqInP5'><i>コミュニティの回答</i></div><div class='faqInP10'>はい、Windows 10 コンピューターを初期状態に戻すと、すべてのユーザー・データが削除されます。これには、ドキュメント、保存されたパスワード、写真、設定、ブラウザ情報、およびアプリケーション・データが含まれます。</div><hr><div class='faqInP5'>リファレンス</div><div class='faqInP5'>Windows 10 を初期状態に戻す方法 – WikiHow。</div></div>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
@@ -2797,7 +2798,7 @@
         },
         "question4": {
             "title": "マシンのバッテリーの使用を確認する",
-            "description": "<div class='faqInFs4Fb'>    マシンのバッテリーの使用を確認する</div><hr><h3 class='faqInFs25FbP10'>症状</h3><p>Windows 10 には、ラップトップのバッテリー残量を表示する、新しい<strong>「バッテリーの使用」</strong>画面が含まれます。この画面では、どのアプリ (デスクトップと Windows 10 の両方の「ユニバーサル」アプリ) が電力を消費しすぎているのかを正確に知ることができます。</p><h3 class='faqInFs25FbP10'>影響を受けるブランド</h3><ul>    <li>Lenovo のラップトップ、デスクトップ</li></ul><h3 class='faqInFs25FbP10'>影響を受けるシステム</h3><ul>    <li>すべて</li></ul><h3 class='faqInFs25FbP10'>オペレーティング・システム</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>解決法</h3><p>この機能は Windows 10で新しく追加されました。従来の<strong>「コントロール パネル」</strong>の表示には格納されていないため、この機能を最初に見つける必要があります。この機能は新しい<strong>「設定」</strong>アプリにあります</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. バッテリー使用画面を見つける</h3></p><p>1.「スタート」メニューから<strong>「設定」</strong>のオプションをクリックまたはタップします</p><p>2.<strong>「設定」</strong>で、<strong>「システム」</strong><strong>「バッテリー節約機能」の順に選択します。 <br /></strong><strong></strong></p><p><img src='./../../../assets/images/qa/ja/4.1.jpg' /></p><p>3.この見出しの下の<strong>「バッテリーの使用」</strong>リンクをクリックまたはタップして、詳細を表示します。</p><p> </p><h3 class='faqInFs25FbP10'>B. 電力使用率を分析する</h3><p>4. バッテリー使用画面を変更して、過去 24 時間、48 時間、または先週からのバッテリー使用量を表示することができます</p><p>5. <strong>「システム」</strong>、<strong>「ディスプレイ」、</strong><strong>「Wi-Fi」</strong>の割合がわかります。これは、システムの処理、ディスプレイで消費された電力を表示します。</p><p>6. <strong>「使用中」</strong>および<strong>「バックグラウンド」</strong>オプションは、バックグラウンドで実行中のアプリと比較して、アプリ使用中の消費電力を示します。</p><p>7. バックグラウンドで電力を消費するアプリがある場合、<strong>「バックグラウンド アプリの設定を変更する」</strong>リンクをクリックまたはタップして、アプリがバックグラウンドで起動しないように設定します。これは、ユニバーサル Windows 10 アプリにのみ有効です。</p><p>8. 下にスクロールすると、アプリの一覧が表示されます。これは、この機能の最も便利なセクションです。一定期間にバッテリーを消費したアプリの一覧を表示します。また、各アプリが使用した電力の割合を示します</p><p><img src='./../../../assets/images/qa/ja/4.2.jpg' /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    マシンのバッテリーの使用を確認する</div><hr><h3 class='faqInFs25FbP10'>症状</h3><p>Windows 10 には、ラップトップのバッテリー残量を表示する、新しい<strong>「バッテリーの使用」</strong>画面が含まれます。この画面では、どのアプリ (デスクトップと Windows 10 の両方の「ユニバーサル」アプリ) が電力を消費しすぎているのかを正確に知ることができます。</p><h3 class='faqInFs25FbP10'>影響を受けるブランド</h3><ul>    <li>Lenovo のラップトップ、デスクトップ</li></ul><h3 class='faqInFs25FbP10'>影響を受けるシステム</h3><ul>    <li>すべて</li></ul><h3 class='faqInFs25FbP10'>オペレーティング・システム</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>解決法</h3><p>この機能は Windows 10で新しく追加されました。従来の<strong>「コントロール パネル」</strong>の表示には格納されていないため、この機能を最初に見つける必要があります。この機能は新しい<strong>「設定」</strong>アプリにあります</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. バッテリー使用画面を見つける</h3></p><p>1.「スタート」メニューから<strong>「設定」</strong>のオプションをクリックまたはタップします</p><p>2.<strong>「設定」</strong>で、<strong>「システム」</strong><strong>「バッテリー節約機能」の順に選択します。 <br /></strong><strong></strong></p><p><img src='assets/images/qa/ja/4.1.jpg' /></p><p>3.この見出しの下の<strong>「バッテリーの使用」</strong>リンクをクリックまたはタップして、詳細を表示します。</p><p> </p><h3 class='faqInFs25FbP10'>B. 電力使用率を分析する</h3><p>4. バッテリー使用画面を変更して、過去 24 時間、48 時間、または先週からのバッテリー使用量を表示することができます</p><p>5. <strong>「システム」</strong>、<strong>「ディスプレイ」、</strong><strong>「Wi-Fi」</strong>の割合がわかります。これは、システムの処理、ディスプレイで消費された電力を表示します。</p><p>6. <strong>「使用中」</strong>および<strong>「バックグラウンド」</strong>オプションは、バックグラウンドで実行中のアプリと比較して、アプリ使用中の消費電力を示します。</p><p>7. バックグラウンドで電力を消費するアプリがある場合、<strong>「バックグラウンド アプリの設定を変更する」</strong>リンクをクリックまたはタップして、アプリがバックグラウンドで起動しないように設定します。これは、ユニバーサル Windows 10 アプリにのみ有効です。</p><p>8. 下にスクロールすると、アプリの一覧が表示されます。これは、この機能の最も便利なセクションです。一定期間にバッテリーを消費したアプリの一覧を表示します。また、各アプリが使用した電力の割合を示します</p><p><img src='assets/images/qa/ja/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -2865,7 +2866,7 @@
         },
         "question5": {
             "title": "PC をタブレットのように使用する",
-            "description": "<div class='faqInFs4Fb'>    PC をタブレットのように使用する</div><hr><p>タブレット モードを使用すると、タッチスクリーン・デバイスを使用しているときに Windows がより直感的で使いやすくなります。</p><h3 class='faqInFs25FbP10'>タブレット モードの使用</h3><p>タブレット モードをオンにするには、タスク バーの<strong>「アクション センター」</strong>を選択してから、 <strong>「タブレット モード」</strong>を選択します。</p><p> </p><p><img src='./../../../assets/images/qa/ja/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>お願い</h3><p>デバイスでタブレット モードが自動的にオンになるかどうかを調べるには、製造元の Web サイトでデバイスを検索してください。この機能のサポート状況は、ハードウェア、インストールされているドライバー、および製造元によるデバイスの設定方法によって異なります。 </p><p> </p><p>タブレット モードでは、アプリは全画面表示になり、作業スペースが広がります。アプリを閉じるには、画面の一番下までドラッグします。</p><p> </p><h3 class='faqInFs25FbP10'>ヒント</h3><p>タスク バーは、PC がタブレット モードのときに使用できますが、画面に追加のスペースが必要な場合は非表示にすることができます。<strong>「スタート」</strong>ボタンを選択し、<strong>「設定」</strong> > <strong>「システム」</strong> > <strong>「タブレット モード」</strong>の順に選択したら、<strong>「タブレット モードでタスク バーを自動的に非表示にする」</strong>をオンにします。非表示のタスクバーを確認するには、画面の下から上にスワイプするか、そこにマウス・カーソルを合わせます。</p><h3 class='faqInFs25FbP10'>2 つのアプリを同時に使う</h3><p>タブレット モードで 2 つのアプリを並べて使用するには、開いているアプリを下に、また横にドラッグします。アプリのスナップ先の位置と、その横にスナップできる、開いているアプリが表示されます。</p><p>このビューでは、次のこともできます。</p><ul>    <li>スナップされている 2 つのアプリの間で共有エッジを使い、同時に両方のアプリのサイズを変更します。</li>    <li>タスク バーの<strong>「タスク ビュー」</strong>を選び、アプリを選択してから端までドラッグして、分割された画面にスナップさせます。</li>    <li>タスク バーの「戻る」ボタンを使用して、現在のアプリに戻ったり、その前に使っていたアプリを開いたりすることができます。</li></ul><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    PC をタブレットのように使用する</div><hr><p>タブレット モードを使用すると、タッチスクリーン・デバイスを使用しているときに Windows がより直感的で使いやすくなります。</p><h3 class='faqInFs25FbP10'>タブレット モードの使用</h3><p>タブレット モードをオンにするには、タスク バーの<strong>「アクション センター」</strong>を選択してから、 <strong>「タブレット モード」</strong>を選択します。</p><p> </p><p><img src='assets/images/qa/ja/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>お願い</h3><p>デバイスでタブレット モードが自動的にオンになるかどうかを調べるには、製造元の Web サイトでデバイスを検索してください。この機能のサポート状況は、ハードウェア、インストールされているドライバー、および製造元によるデバイスの設定方法によって異なります。 </p><p> </p><p>タブレット モードでは、アプリは全画面表示になり、作業スペースが広がります。アプリを閉じるには、画面の一番下までドラッグします。</p><p> </p><h3 class='faqInFs25FbP10'>ヒント</h3><p>タスク バーは、PC がタブレット モードのときに使用できますが、画面に追加のスペースが必要な場合は非表示にすることができます。<strong>「スタート」</strong>ボタンを選択し、<strong>「設定」</strong> > <strong>「システム」</strong> > <strong>「タブレット モード」</strong>の順に選択したら、<strong>「タブレット モードでタスク バーを自動的に非表示にする」</strong>をオンにします。非表示のタスクバーを確認するには、画面の下から上にスワイプするか、そこにマウス・カーソルを合わせます。</p><h3 class='faqInFs25FbP10'>2 つのアプリを同時に使う</h3><p>タブレット モードで 2 つのアプリを並べて使用するには、開いているアプリを下に、また横にドラッグします。アプリのスナップ先の位置と、その横にスナップできる、開いているアプリが表示されます。</p><p>このビューでは、次のこともできます。</p><ul>    <li>スナップされている 2 つのアプリの間で共有エッジを使い、同時に両方のアプリのサイズを変更します。</li>    <li>タスク バーの<strong>「タスク ビュー」</strong>を選び、アプリを選択してから端までドラッグして、分割された画面にスナップさせます。</li>    <li>タスク バーの「戻る」ボタンを使用して、現在のアプリに戻ったり、その前に使っていたアプリを開いたりすることができます。</li></ul><p> </p>",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2904,7 +2905,7 @@
         },
         "question6": {
             "title": "パーソナル・アシスタントの Cortana についてもっと知る",
-            "description": "<div class='faqInFs4Fb'>    パーソナル・アシスタントの Cortana についてもっと知る</div><hr><h3 class='faqInFs25FbP10'>Cortana とは?</h3><hr /><p>Cortana は、デジタル・エージェントです。Cortana は、ユーザーの作業を支援します。</p><p>Cortana を使用すればするほど、ユーザーの体験はよりパーソナライズされたものになります。</p><p>開始するには、検索ボックスに質問を入力するか、マイクを選択して Cortana に話しかけてください。(すべてのタイプの PC で入力できますが、通話するにはマイクが必要です。)</p><p>何を言うべきかわからない場合は、ロック画面に、またタスク バーの検索ボックスを選択すると、Cortana ホームに候補が表示されます。</p><p><img src='./../../../assets/images/qa/ja/6.1.jpg' /></p><ol>    <li>ホーム 2. ノートブック 3. 設定 4. フィードバック</li></ol><p>以下は、Cortana がユーザーのためにできることの例です。</p><ul>    <li>時間、場所、または人に基づいてリマインダーを提供する。</li>    <li>荷物、チーム、興味、およびフライトを追跡する。</li>    <li>メールとテキストを送信する。</li>    <li>カレンダーを管理して、最新の状態に保つ。</li>    <li>リストを作成および管理する。</li>    <li>チャットをしたり、ゲームをしたりする。</li>    <li>ファクト、ファイル、場所、および情報を見つける。</li>    <li>システム上の任意のアプリを開く。</li></ul><h3 class='faqInFs25FbP10'>これを試してください: リマインダーのセット</h3><hr /><p>Cortana ができることの 1 つは、リマインダーをセットすることです。Cortana は、時間、場所、または人に基づき、ユーザーに行うべきことを教えることができます。</p><p>たとえば、「次回 Tanya から電話があったら、彼女におめでとうを言うのを思い出させてください」と入力するか、または言います。</p><p>Tanya から電話を受けると、リマインダーが表示されます。</p><p>追加のボーナス &mdash; Windows Phone または iPhone または Android 用の Cortana を使用している場合は、Cortana を設定して、PC とスマートフォンの間で通知を同期することができます。</p><p><img src='./../../../assets/images/qa/ja/6.2.jpg' /></p><h3 class='faqInFs25FbP10'>コルタナさん</h3><hr /><p>「コルタナさん」と言うとき常にユーザーの声を聞くように Cortana を設定します。タスク バーの検索ボックスを選択して、Cortana ホームを開きます。次に<strong>「設定」</strong>を選択して、<strong>「「コルタナさん」と言ったら Cortana が応答するようにする」</strong>をオンにします。</p><p><img src='./../../../assets/images/qa/ja/6.3.jpg' /></p><p class='faqInFs25FbP10'>お願い</p><p>Cortana は、特定の国/地域でしか利用できません。また、Cortana の機能の一部はどこでも利用できるわけではありません。</p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    パーソナル・アシスタントの Cortana についてもっと知る</div><hr><h3 class='faqInFs25FbP10'>Cortana とは?</h3><hr /><p>Cortana は、デジタル・エージェントです。Cortana は、ユーザーの作業を支援します。</p><p>Cortana を使用すればするほど、ユーザーの体験はよりパーソナライズされたものになります。</p><p>開始するには、検索ボックスに質問を入力するか、マイクを選択して Cortana に話しかけてください。(すべてのタイプの PC で入力できますが、通話するにはマイクが必要です。)</p><p>何を言うべきかわからない場合は、ロック画面に、またタスク バーの検索ボックスを選択すると、Cortana ホームに候補が表示されます。</p><p><img src='assets/images/qa/ja/6.1.jpg' /></p><ol>    <li>ホーム 2. ノートブック 3. 設定 4. フィードバック</li></ol><p>以下は、Cortana がユーザーのためにできることの例です。</p><ul>    <li>時間、場所、または人に基づいてリマインダーを提供する。</li>    <li>荷物、チーム、興味、およびフライトを追跡する。</li>    <li>メールとテキストを送信する。</li>    <li>カレンダーを管理して、最新の状態に保つ。</li>    <li>リストを作成および管理する。</li>    <li>チャットをしたり、ゲームをしたりする。</li>    <li>ファクト、ファイル、場所、および情報を見つける。</li>    <li>システム上の任意のアプリを開く。</li></ul><h3 class='faqInFs25FbP10'>これを試してください: リマインダーのセット</h3><hr /><p>Cortana ができることの 1 つは、リマインダーをセットすることです。Cortana は、時間、場所、または人に基づき、ユーザーに行うべきことを教えることができます。</p><p>たとえば、「次回 Tanya から電話があったら、彼女におめでとうを言うのを思い出させてください」と入力するか、または言います。</p><p>Tanya から電話を受けると、リマインダーが表示されます。</p><p>追加のボーナス &mdash; Windows Phone または iPhone または Android 用の Cortana を使用している場合は、Cortana を設定して、PC とスマートフォンの間で通知を同期することができます。</p><p><img src='assets/images/qa/ja/6.2.jpg' /></p><h3 class='faqInFs25FbP10'>コルタナさん</h3><hr /><p>「コルタナさん」と言うとき常にユーザーの声を聞くように Cortana を設定します。タスク バーの検索ボックスを選択して、Cortana ホームを開きます。次に<strong>「設定」</strong>を選択して、<strong>「「コルタナさん」と言ったら Cortana が応答するようにする」</strong>をオンにします。</p><p><img src='assets/images/qa/ja/6.3.jpg' /></p><p class='faqInFs25FbP10'>お願い</p><p>Cortana は、特定の国/地域でしか利用できません。また、Cortana の機能の一部はどこでも利用できるわけではありません。</p><p> </p>",
             "heading1": "What is Cortana?",
             "para1": "Cortana is your digital agent. She'll help you get things done.",
             "para2": "The more you use Cortana, the more personalized your experience will be.",
@@ -3561,5 +3562,8 @@
             "subtitle2": "オールインワン: 簡素化",
             "body2": "第 9 世代 Intel® Core™ プロセッサーを搭載したオールインワン PC によって、あらゆるデスクトップの強みが光沢のあるディスプレイに詰め込まれていることで、乱雑さが抑えられ、ハードウェアベースのセキュリティーと高解像度のディスプレイが実現されています。"
         }
+    },
+    "cpt": {
+        "title": "Content Preview Tool"
     }
 }

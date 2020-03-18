@@ -114,7 +114,7 @@
 								</div>
 							</div>
 							<div [hidden]="item.status !== 7">
-								<a href="javascript:void(0);"
+								<a href="javascript:void(0);" id="{{linkId}}-{{item.id}}-retry"
 									class="retryLink text-two-ellipsis"
 									(click)="retry(item, $event)">{{item.retryText}}</a>
 							</div>

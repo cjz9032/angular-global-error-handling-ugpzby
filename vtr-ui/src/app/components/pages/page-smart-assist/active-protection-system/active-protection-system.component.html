@@ -40,7 +40,9 @@
 									vtrMetrics
 									metricsEvent="ItemClick"
 									metricsParent="Device.SmartAssist"
-									metricsItem="ActiveProtectionSystem.Sensitivity.Slider">
+									metricsItem="ActiveProtectionSystem.Sensitivity.Slider"
+									metricsValue= "apsSensitivity"
+									>
 								</vtr-ui-aps-slider>
 							</div>
 						</vtr-ui-row-switch>
@@ -100,7 +102,7 @@
 									metricsEvent="FeatureClick"
 									metricsParent="Device.SmartAssist"
 									metricsItem="ActiveProtectionSystem.ManualOverride.Dropdown"
-									[metricsValue]="selectedSnoozeTime">
+									[metricsValue]="manualSnoozeTime">
 								</vtr-ui-dropdown>
 							</section>
 							<section class="col-sm-5">

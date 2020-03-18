@@ -46,7 +46,7 @@ export class DialogService {
 		}
 	}
 
-	wifiSecurityLocationDialog(wifiSecurity: WifiSecurity) {
+	wifiSecurityLocationDialog(wifiSecurity: WifiSecurity): NgbModalRef | undefined {
 		if (this.modalService.hasOpenModals()) {
 			return;
 		}
@@ -66,9 +66,10 @@ export class DialogService {
 			modal.componentInstance.cancelButtonId = 'sa-ws-btn-locationCancel';
 			wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (para) => {
 				if (para) {
-					modal.close();
+					modal.close(true);
 				}
 			});
+			return modal;
 		}
 	}
 

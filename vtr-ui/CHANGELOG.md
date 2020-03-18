@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.5](https://bitbucket.tc.lenovo.com///compare/v1.4.4...v1.4.5) (2020-03-17)
+
+### [1.4.4](https://bitbucket.tc.lenovo.com///compare/v1.4.3...v1.4.4) (2020-03-13)
+
+### [1.4.3](https://bitbucket.tc.lenovo.com///compare/v1.4.2...v1.4.3) (2020-03-13)
+
+### [1.4.2](https://bitbucket.tc.lenovo.com///compare/v1.4.1...v1.4.2) (2020-03-12)
+
+### [1.4.1](https://bitbucket.tc.lenovo.com///compare/v1.3.36...v1.4.1) (2020-03-11)
+
+
+### Bug Fixes
+
+* **VAN-15649:** voip text color ([d07fc3f](https://bitbucket.tc.lenovo.com///commit/d07fc3f78002a554560a812c1c92c0a9d6c189f1))
+* backlight narrow to ideapad ([65ec60b](https://bitbucket.tc.lenovo.com///commit/65ec60b608fe8c31c72da40e5612059119c7abb2))
+
 ### [1.3.37](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.3.36...v1.3.37) (2020-03-10)
 
 ### [1.3.36](https://bitbucket.tc.lenovo.com///compare/v1.3.35...v1.3.36) (2020-03-10)

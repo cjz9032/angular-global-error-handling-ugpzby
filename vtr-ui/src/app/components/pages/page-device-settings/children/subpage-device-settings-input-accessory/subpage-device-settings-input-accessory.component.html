@@ -23,7 +23,7 @@
 						[theme]="'white'"
 						[tabIndex]="0">
 						<ul class="list-group list-group-flush">
-							<li class="pt-3"
+							<li class=""
 								*ngIf="machineType == 1 && keyboardCompatibility">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.inputAccessories.inputAccessory.hiddenKeyboardFunctions.title' | translate"
@@ -35,7 +35,7 @@
 									[switchId]="'inputAccessories-hiddenKeyboardFunctions'">
 									<div class="row pl-3">
 										<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-											<!-- <img src="../../../../../../assets/icons/Hidden keyboard functions.svg" alt="">-->
+											<!-- <img src="assets/icons/Hidden keyboard functions.svg" alt="">-->
                                             <div class="img-preview" id="keyboardMap-background-image" role="img" attr.aria-label="keyboardMap-background-image"
                                                 automationId="keyboardMap.background-image" [ngStyle]="{ 'background-image': 'url(' + image + ')'}">
 												<div class="img-preview"
@@ -72,26 +72,24 @@
 								</vtr-ui-row-switch>
 							</li>
 
-							<li class="pt-3"
+							<li class=""
 								*ngIf="machineType === 1">
 								<vtr-top-row-functions></vtr-top-row-functions>
 							</li>
-							<li class="pt-3"
+							<li class=""
 								*ngIf="machineType === 0 && fnLockCapability">
 								<vtr-top-row-functions-ideapad></vtr-top-row-functions-ideapad>
 							</li>
 
-							<li class="pt-3 keyboard-backlight-block">
-								<div class="w-100" *ngIf="machineType === 1 && isKbdBacklightAvailable">
+							<li class="common-li-padding" *ngIf="machineType === 1 && isKbdBacklightAvailable">
 	                                <vtr-backlight-thinkpad (showHide)="showHideKeyboardBacklight($event)">
 	                                </vtr-backlight-thinkpad>
-								</div>
-								<div class="w-100" *ngIf="machineType === 0 && backlightCapability$ | async">
+							</li>
+							<li class="common-li-padding" *ngIf="machineType === 0 && backlightCapability$ | async">
 									<vtr-backlight [isLastChild]="!showVoipHotkeysSection && !hasUDKCapability"></vtr-backlight>
-								</div>
                             </li>
 
-							<li class="pt-3 voip"
+							<li class="common-li-padding voip"
 								*ngIf="showVoipHotkeysSection">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.title' | translate"
@@ -189,7 +187,7 @@
 								</vtr-ui-row-switch>
 							</li>
 							<!-- fnCtrlSwap & fnAsCtrl features hidden in 3.2.001 -->
-							<!-- <li class="pt-3" *ngIf="machineType == 1 && fnCtrlSwapCapability">
+							<!-- <li class="common-li-padding" *ngIf="machineType == 1 && fnCtrlSwapCapability">
 													<vtr-ui-row-switch
 														[title]="'device.deviceSettings.inputAccessories.fnCtrlKey.title' | translate"
 														componentName="Fn key and Ctrl key swap "
@@ -210,7 +208,7 @@
 													</vtr-ui-row-switch>
 												</li> -->
 
-							<!-- <li class="pt-3" *ngIf="machineType == 1 && fnAsCtrlCapability">
+							<!-- <li class="common-li-padding" *ngIf="machineType == 1 && fnAsCtrlCapability">
 													<vtr-ui-row-switch
 														[title]="'device.deviceSettings.inputAccessories.fnCtrlKey.title2' | translate"
 														componentName="Fn works as Ctrl for frequently used key combinations"
@@ -233,7 +231,7 @@
 													</vtr-ui-row-switch>
 												</li> -->
 
-							<li *ngIf="machineType === 1">
+							<li *ngIf="machineType === 1" class="common-li-padding">
 								<vtr-user-defined-key></vtr-user-defined-key>
 							</li>
 						</ul>

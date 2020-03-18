@@ -113,7 +113,7 @@
 								<!-- ThinkPad section -->
 								<ul class="list-group list-group-flush"
 									*ngIf="isThinkPad">
-									<li>
+									<li class="common-li-padding">
 										<vtr-ui-row-switch [switchId]="'humanPresenceDetection'"
 											[title]="'device.smartAssist.intelligentSecurity.humanPresenceDetection.title' | translate"
 											[componentName]="'HumanPresenceDetection'"
@@ -125,7 +125,7 @@
 											[theme]="'white'">
 										</vtr-ui-row-switch>
 									</li>
-									<li class="pt-3 no-border-bottom">
+									<li class="no-border-bottom common-li-padding">
 										<vtr-ui-row-switch [switchId]="'thinkpadZeroTouchLogin'"
 											[title]="'device.smartAssist.intelligentSecurity.zeroTouchLogin.title' | translate"
 											[caption]=" 'device.smartAssist.intelligentSecurity.zeroTouchLogin.caption' | translate"
@@ -193,10 +193,10 @@
 										</div>
 									</li>
 								</ul>
-								<ul class="list-group list-group-flush pt-3 no-border-bottom"
+								<ul class="list-group list-group-flush no-border-bottom"
 									[class.disabled-overlay]="!intelligentSecurity.isHPDEnabled"
 									*ngIf="intelligentSecurity.isZeroTouchLockVisible">
-									<li class="auto-screen-block">
+									<li class="auto-screen-block common-li-padding">
 										<vtr-ui-row-switch [switchId]="'zeroTouchLock'"
 											[title]="'device.smartAssist.intelligentSecurity.zeroTouchLock.title' | translate"
 											[caption]=" 'device.smartAssist.intelligentSecurity.zeroTouchLock.caption' | translate"

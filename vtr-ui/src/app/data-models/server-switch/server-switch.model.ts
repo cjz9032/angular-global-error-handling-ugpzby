@@ -1,5 +1,5 @@
-import CountryList from "../../../assets/server-switch/CountryList.json";
-import LanguageList from "../../../assets/server-switch/LanguageList.json";
+import CountryList from "src/assets/server-switch/CountryList.json";
+import LanguageList from "src/assets/server-switch/LanguageList.json";
 export class ServerSwitch {
 	public currentUrl: string;
 	public cmsserver: any;

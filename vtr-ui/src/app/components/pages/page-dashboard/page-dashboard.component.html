@@ -139,6 +139,15 @@
 				</div>
 			</div>
 
+			<div class="row" *ngIf="!androidService.isAndroid && deviceService.isArm">
+				<div class="col-sm-12 col-md-12 pb-20 px-0">
+					<vtr-widget-support [title]="'support.documentation.title' | translate"
+						[description]="''"
+						[items]="supportDatas.documentation">
+					</vtr-widget-support>
+				</div>
+			</div>
+
 			<div class="row"
 				*ngIf="!deviceService.isArm && showQuickSettings">
 				<div class="col-sm-12 px-0 pt-3">
@@ -167,6 +176,13 @@
 						[items]="qaService.qas"
 						blockPosition="r4"
 						[linkId]="'dashboard-qa'"></vtr-widget-questions>
+				</div>
+			</div>
+
+			<div class="row"
+				*ngIf="!androidService.isAndroid && deviceService.isArm">
+				<div class="col-sm-12 px-0 pb-20">
+					<vtr-widget-energy-star></vtr-widget-energy-star>
 				</div>
 			</div>
 

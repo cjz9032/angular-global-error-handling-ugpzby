@@ -9,7 +9,7 @@
 					<div class="rounded-card-with-shadow pl-lg-0 col part-position">
 						<div class="d-flex flex-column flex-lg-row" [vtrAppSearchScroller]="['search-anti-virus']">
 							<div class="align-self-center">
-								<img class="img-fluid" src="/assets/images/antivirus/protection.png" />
+								<img class="img-fluid" src="assets/images/antivirus/protection.png" />
 							</div>
 							<div class="col align-self-center mb-5 px-lg-0 mb-lg-0">
 								<div class="subtitle p-0"
@@ -18,7 +18,7 @@
 							</div>
 							<div class="d-lg-none rounded-card-with-shadow bg-white py-4 pl-0 pr-4 col row b-border align-self-center">
 								<img class="align-self-center col-4 mcafee-black-img"
-									[src]=" '/assets/images/antivirus/mcafee_black.png'" />
+									[src]=" 'assets/images/antivirus/mcafee_black.png'" />
 								<div class="align-self-center col-8 p-0">
 									<div class="title"
 										[innerHTML]="'security.antivirus.windowsDefender.topTip' | translate">
@@ -38,7 +38,7 @@
 						</div>
 					</div>
 					<div class="rounded-card-with-shadow bg-white py-4 pl-0 pr-4 col-5 row b-border d-none d-lg-flex">
-						<img class="align-self-center col-4" [src]=" '/assets/images/antivirus/mcafee_black.png'" />
+						<img class="align-self-center col-4" [src]=" 'assets/images/antivirus/mcafee_black.png'" />
 						<div class="align-self-center col-8 p-0">
 							<div class="title" [innerHTML]="'security.antivirus.windowsDefender.topTip' | translate">
 							</div>
@@ -62,12 +62,12 @@
 					<div class="row justify-content-between align-items-center">
 						<div class="row">
 							<img class="mcafee-logo align-self-start"
-								[src]=" '/assets/images/mcafee_logo.svg' | svgInline | async" />
+								[src]=" 'assets/images/mcafee_logo.svg' | svgInline | async" />
 							<div class="title" [innerHTML]="'security.antivirus.mcafee.title' | translate">
 							</div>
 						</div>
 						<div class="flex-column button white-button">
-							<vtr-ui-button class="white-btn" linkId="sa-av-link-subscribe" metricsEvent="itemClick"
+							<vtr-ui-button class="white-btn" linkId="sa-av-btn-buynow" metricsEvent="itemClick"
 								metricsItem="btn.subscribe.no-antivirus" metricsParent="security.antivirus"
 								upperCaseLabel=false btnHeight=true [isDisabled]="isOnline === false"
 								[label]="'security.antivirus.windowsDefender.buyNow' | translate"
@@ -129,7 +129,7 @@
 							<div class="row justify-content-between">
 								<div class="row col-6">
 									<img class="mcafee-logo align-self-start"
-										[src]=" '/assets/images/mcafee_logo.svg' | svgInline | async" />
+										[src]=" 'assets/images/mcafee_logo.svg' | svgInline | async" />
 									<div class="line-height"></div>
 									<div class="title" [innerHTML]="'security.antivirus.mcafee.title' | translate">
 									</div>
@@ -137,13 +137,13 @@
 								<div class="flex-column two-ellipsis-button button col-6 px-0">
 									<vtr-ui-button
 										*ngIf="viewModel.mcafee.subscription === 'trialActive' || viewModel.mcafee.subscription === 'trialInactive'"
-										linkId="sa-av-link-subscribe" metricsEvent="itemClick"
+										linkId="sa-av-btn-subscribe" metricsEvent="itemClick"
 										metricsItem="btn.subscribe" metricsParent="security.antivirus"
 										upperCaseLabel=false btnHeight=true [isDisabled]="isOnline === false"
 										[label]="'security.antivirus.mcafee.trialSubscribe' | translate:{remainingDays: viewModel.mcafee.expireAt}"
 										[href]="viewModel.mcafee.trialUrl"></vtr-ui-button>
 									<vtr-ui-button *ngIf="viewModel.mcafee.subscription === 'licenseActive'"
-										linkId="sa-av-link-subscribe" metricsEvent="itemClick"
+										linkId="sa-av-btn-subscribe" metricsEvent="itemClick"
 										metricsItem="btn.subscribe" metricsParent="security.antivirus"
 										upperCaseLabel=false btnHeight=true [isDisabled]="isOnline === false"
 										[label]="'security.antivirus.mcafee.subscribe' | translate:{remainingDays: viewModel.mcafee.expireAt}"
@@ -280,7 +280,7 @@
 			<div class="row px-0 justify-content-center">
 			  <div class="px-0">
 				<img class="mcafee-logo"
-				  [src]=" '/assets/images/mcafee_logo.svg' | svgInline | async" />
+				  [src]=" 'assets/images/mcafee_logo.svg' | svgInline | async" />
 			  </div>
 			  <p class="text-regular mt-10"
 				*vtrTranslate="'security.antivirus.common.privacyTerms' | translate">
