@@ -2219,7 +2219,7 @@
         "landing": {
             "fully": "为了获得更好的服务来保护您的设备，请继续使用",
             "notFully": "要了解如何更好地保护您的设备，请开始使用",
-            "security101": "安全建议入门",
+            "security101": "安全建议贴士",
             "firewall": "防火墙",
             "pwdHealth": "密码保险箱",
             "vpnSecurity": "VPN 安全顾问",
@@ -2555,7 +2555,7 @@
         "welcomeText7": "让我们开启元气满满的一天，{{firstName}}！",
         "welcomeText8": "要不要来一杯快乐肥宅水？",
         "welcomeText9": "今日关中事，萧何共尔忧",
-        "welcomeText10": "保持冷静，Vantage 就来了",
+        "welcomeText10": "准备好玩转Vantage了吗？",
         "welcomeText11": "Vantage 物美价廉",
         "welcomeText12": "将 Vantage 带回家",
         "welcomeText13": "吃好、睡好，起来接着玩转Vantage！",
