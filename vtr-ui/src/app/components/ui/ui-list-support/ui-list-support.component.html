@@ -2,7 +2,7 @@
 	<ul class="support-list">
 		<li *ngFor="let item of items">
 			<a role="link"
-				tabindex="100"
+				[tabindex]="item?.metricsParent === 'Page.Dashboard' ? 0 : 100"
 				id="{{item.metricsItem}}"
 				attr.aria-label="{{item.title | translate}}"
 				(click)="itemClick(item, $event)"
