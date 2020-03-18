@@ -424,7 +424,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				}
 			});
 		}
-
+		this.batteryService.isInvalidBattery = this.isUnsupportedBattery;
 		if (!(this.batteryIndicator.batteryNotDetected || this.batteryService.isPowerDriverMissing)) {
 
 			// AcAdapter conditions hidden for IdeaPad & IdeaCenter machines

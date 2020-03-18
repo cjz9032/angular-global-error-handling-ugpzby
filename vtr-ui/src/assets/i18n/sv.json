@@ -3508,7 +3508,8 @@
     "notification": {
         "menu": {
             "security": "Visste du detta? Även om du inte har ett antivirusprogram är din enhet fortfarande skyddad med grundläggande säkerhetsfunktioner.",
-            "connectedHomeSecurity": "Du få övervakning i realtid och varningar om nätverkssäkerheten i ditt hem. Du blir den första som får veta om någon av dina smarta enheter utsätts för en säkerhetsattack."
+            "connectedHomeSecurity": "Du få övervakning i realtid och varningar om nätverkssäkerheten i ditt hem. Du blir den första som får veta om någon av dina smarta enheter utsätts för en säkerhetsattack.",
+            "hardwareScan": "Nu kan du få reda på hälsostatusen för systemets maskinvarukomponent."
         }
     },
     "appsForYou": {
