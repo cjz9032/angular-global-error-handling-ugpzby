@@ -248,8 +248,8 @@ export class UiRoundedRectangleRadioComponent implements OnInit, OnChanges, Afte
 				return element;
 			}
 		}
-		catch (error) { }
-		this.logger.exception('getParentRadioGroup error occurred ::', error);
-
+		catch (error) {
+			this.logger.exception('getParentRadioGroup error occurred ::', error);
+		}
 	}
 }
