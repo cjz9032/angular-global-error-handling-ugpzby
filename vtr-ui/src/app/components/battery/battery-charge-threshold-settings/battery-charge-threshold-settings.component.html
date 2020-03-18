@@ -24,6 +24,7 @@
 							[class.disabled]="bctInfo.checkboxValue || isGaugeResetRunning">
 							<div class="btn-group btn-block dropdown-left"
 								ngbDropdown
+								#startAtDrop="ngbDropdown"
 								placement="bottom-right">
 								<button [ngClass]="['btn','btn-outline-shadow',bctInfo.checkboxValue?'disabled':'']"
 									ngbDropdownToggle
@@ -31,7 +32,9 @@
 									[disabled]="bctInfo.checkboxValue?true:false"
 									type="button"
 									id="{{textId}}-start-dropdown"
-									attr.aria-label="{{textId}}-start-dropdown">
+									attr.aria-label="{{textId}}-
+									{{'device.deviceSettings.power.batterySettings.batteryThreshold.options.start' | translate}}.
+									{{startAtDrop.isOpen()?'-':'selected '+bctInfo.startValue+'%.'}}-dropdown">
 									<div class="row d-flex justify-content-between">
 										<div class="col-11 pl-1 pr-1">
 											<div class="select-title"
@@ -55,18 +58,20 @@
 								</button>
 								<div ngbDropdownMenu
 									aria-labelledby=""
-									role="listbox">
+									role="listbox"
+									tabindex="-1">
 									<a [ngClass]="['dropdown-item',item >= bctInfo.stopValue?'disabled':'']"
 										ngbDropdownItem
 										role="option"
-										[tabIndex]="item >= bctInfo.stopValue"
-										*ngFor="let item of startAtChargeOptions"
+										tabindex="{{item === bctInfo.startValue?0:-1}}"
+										*ngFor="let item of startAtChargeOptions;let currentIndex=index;"
 										(click)="[onStartValueChange(item , startToggle), $event.preventDefault()]"
 										(keydown.enter)="onStartValueChange(item , startToggle)"
-										id="{{textId}}-startAtChargeOption-{{item}}"
+										id="{{textId}}-{{startAtChargeOption}}-{{item}}"
+										[attr.aria-selected]="bctInfo.startValue===item?true:false"
 										[disabled]="item >= bctInfo.stopValue"
 										attr.aria-disabled="{{item >= bctInfo.stopValue}}"
-										attr.aria-label="{{textId}}-startAtChargeOption-{{item}}">{{item}}%</a>
+										attr.aria-label="{{textId}}-{{'device.deviceSettings.power.batterySettings.batteryThreshold.options.start' | translate}}-Option-{{item}}">{{item}}%</a>
 								</div>
 							</div>
 						</div>
@@ -78,13 +83,16 @@
 							[class.disabled]="isGaugeResetRunning">
 							<div class="btn-group btn-block dropdown-right"
 								ngbDropdown
+								#stopAtDrop="ngbDropdown"
 								placement="bottom-right">
 								<button [ngClass]="['btn','btn-outline-shadow']"
 									ngbDropdownToggle
 									#endToggle
 									type="button"
 									id="{{textId}}-stop-dropdown"
-									attr.aria-label="{{textId}}-stop-dropdown">
+									attr.aria-label="{{textId}}-
+									{{'device.deviceSettings.power.batterySettings.batteryThreshold.options.stop' | translate}}.
+									{{stopAtDrop.isOpen()?'-':'selected '+bctInfo.stopValue+'%.'}}-dropdown">
 									<div class="row d-flex justify-content-between">
 										<div class="col-11 pl-1 pr-1">
 											<div class="select-title"
@@ -110,14 +118,15 @@
 									<a [ngClass]="['dropdown-item',!bctInfo.checkboxValue && (item <= bctInfo.startValue) ?'disabled':'']"
 										ngbDropdownItem
 										role="option"
-										[tabIndex]="!bctInfo.checkboxValue && (item <= bctInfo.startValue)?-1:0"
-										*ngFor="let item of stopAtChargeOptions"
+										tabindex="{{item === bctInfo.stopValue?0:-1}}"
+										*ngFor="let item of stopAtChargeOptions;let currentIndex=index;"
 										(click)="[onStopValueChange(item , endToggle), $event.preventDefault()]"
 										(keydown.enter)="onStopValueChange(item , endToggle)"
 										id="{{textId}}-stopAtChargeOption-{{item}}"
 										[disabled]="!bctInfo.checkboxValue && (item <= bctInfo.startValue)"
+										[attr.aria-selected]="bctInfo.stopValue===item?true:false"
 										attr.aria-disabled="{{!bctInfo.checkboxValue && (item <= bctInfo.startValue)}}"
-										attr.aria-label="{{textId}}-stopAtChargeOption-{{item}}">{{item}}%</a>
+										attr.aria-label="{{textId}}-{{'device.deviceSettings.power.batterySettings.batteryThreshold.options.stop' | translate}}-Option-{{item}}">{{item}}%</a>
 								</div>
 							</div>
 						</div>
