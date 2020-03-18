@@ -3508,7 +3508,8 @@
     "notification": {
         "menu": {
             "security": "Bunu biliyor muydunuz? Kurulu bir antivirüs yazılımınız olmasa bile, cihazınız için temel güvenlik koruması sağlamaya devam ediyoruz.",
-            "connectedHomeSecurity": "Evde ağ güvenliğinizle ilgili gerçek zamanlı izleme olanağı elde edin ve uyarılar alın. Akıllı cihazlarınızdan herhangi birinin güvenlik saldırısı ile karşı karşıya olup olmadığını bilen ilk kişi siz olursunuz."
+            "connectedHomeSecurity": "Evde ağ güvenliğinizle ilgili gerçek zamanlı izleme olanağı elde edin ve uyarılar alın. Akıllı cihazlarınızdan herhangi birinin güvenlik saldırısı ile karşı karşıya olup olmadığını bilen ilk kişi siz olursunuz.",
+            "hardwareScan": "Artık sistem donanımı bileşeninizin sağlık durumunu öğrenebilirsiniz."
         }
     },
     "appsForYou": {

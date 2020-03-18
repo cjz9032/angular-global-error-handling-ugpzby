@@ -3508,7 +3508,8 @@
     "notification": {
         "menu": {
             "security": "Vedeli ste to? Aj keď nemáte nainštalovaný antivírusový softvér, poskytujeme základnú bezpečnostnú ochranu vášho zariadenia.",
-            "connectedHomeSecurity": "Získajte monitorovanie v reálnom čase a upozornenia týkajúce zabezpečenia siete v domácnosti. Ak bude ktorékoľvek z vašich inteligentných zariadení čeliť bezpečnostnému útoku, dozviete sa o tom ako prví."
+            "connectedHomeSecurity": "Získajte monitorovanie v reálnom čase a upozornenia týkajúce zabezpečenia siete v domácnosti. Ak bude ktorékoľvek z vašich inteligentných zariadení čeliť bezpečnostnému útoku, dozviete sa o tom ako prví.",
+            "hardwareScan": "Teraz môžete získať stav súčasti hardvéru vášho systému."
         }
     },
     "appsForYou": {

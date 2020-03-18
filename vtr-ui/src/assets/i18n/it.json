@@ -3508,7 +3508,8 @@
     "notification": {
         "menu": {
             "security": "Anche se non si dispone di software antivirus installato, viene comunque garantita una protezione di base per il dispositivo.",
-            "connectedHomeSecurity": "È possibile usufruire di una funzione di monitoraggio e creazione di avvisi in tempo reale sulla sicurezza della propria rete a casa. Si verrà a sapere per primi se uno dei propri dispositivi intelligenti è sottoposto a un attacco di sicurezza."
+            "connectedHomeSecurity": "È possibile usufruire di una funzione di monitoraggio e creazione di avvisi in tempo reale sulla sicurezza della propria rete a casa. Si verrà a sapere per primi se uno dei propri dispositivi intelligenti è sottoposto a un attacco di sicurezza.",
+            "hardwareScan": "È ora possibile ottenere lo stato di integrità dei componenti hardware del sistema."
         }
     },
     "appsForYou": {

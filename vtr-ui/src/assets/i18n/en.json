@@ -3513,7 +3513,8 @@
 	"notification": {
 		"menu": {
 			"security": "Do you know? Even you don't have anti-virus software installed, we still provide basic security protection for your device.",
-			"connectedHomeSecurity": "Get real-time monitoring and alerts about your network security at home. You will be the first one to know if any of your smart devices are facing a security attack."
+			"connectedHomeSecurity": "Get real-time monitoring and alerts about your network security at home. You will be the first one to know if any of your smart devices are facing a security attack.",
+			"hardwareScan": "Now you can get your system hardware component's health status."
 		}
 	},
 	"appsForYou": {

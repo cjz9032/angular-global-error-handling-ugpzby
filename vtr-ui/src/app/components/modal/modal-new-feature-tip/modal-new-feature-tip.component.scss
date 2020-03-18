@@ -1,3 +1,5 @@
+@import '../../../app.theme.scss';
+
 $bgOpacity: .6;
 $transition: all .1s;
 .new-feature-tip-dialog {
@@ -110,7 +112,7 @@ $transition: all .1s;
 		background: #fff;
 		border-radius: 1rem;
 		padding: 2.5rem 3rem 2rem;
-		font-size: 1.6rem;
+		font-size: $fontsize_xs;
 		transition: $transition;
 
 		.arrow-pointer {

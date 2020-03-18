@@ -3508,7 +3508,8 @@
     "notification": {
         "menu": {
             "security": "Tiedätkö? Vaikka tietokoneeseen ei ole asennettu virustentorjuntaohjelmistoa, se sisältää silti perussuojauksen.",
-            "connectedHomeSecurity": "Saat reaaliaikaista seurantaa ja ilmoituksia verkon suojauksesta kotona. Olet ensimmäinen, joka tietää, onko jokin älylaitteistasi joutunut hyökkäyksen kohteeksi."
+            "connectedHomeSecurity": "Saat reaaliaikaista seurantaa ja ilmoituksia verkon suojauksesta kotona. Olet ensimmäinen, joka tietää, onko jokin älylaitteistasi joutunut hyökkäyksen kohteeksi.",
+            "hardwareScan": "Nyt voit tarkastaa järjestelmäsi laitteistokomponentin kunnon."
         }
     },
     "appsForYou": {

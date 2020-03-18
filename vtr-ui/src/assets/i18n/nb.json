@@ -3508,7 +3508,8 @@
     "notification": {
         "menu": {
             "security": "Visste du dette? Selv om du ikke har installert antivirusprogramvare, leverer vi fortsatt grunnleggende sikkerhetsbeskyttelse for enheten din.",
-            "connectedHomeSecurity": "Få overvåking og varsler i sanntid om nettverkssikkerheten hjemme. Du er den første som får beskjed om noen av smartenhetene utsettes for et sikkerhetsangrep."
+            "connectedHomeSecurity": "Få overvåking og varsler i sanntid om nettverkssikkerheten hjemme. Du er den første som får beskjed om noen av smartenhetene utsettes for et sikkerhetsangrep.",
+            "hardwareScan": "Nå kan du få tilstandsstatusen til maskinvarekomponentene til systemet ditt."
         }
     },
     "appsForYou": {
