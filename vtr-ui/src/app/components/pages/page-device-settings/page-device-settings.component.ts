@@ -32,6 +32,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 	back = 'BACK';
 	backarrow = '< ';
 	parentPath = 'device';
+	params = { fromTab: true }
 	public menuItems = [
 		{
 			id: 'power',
@@ -142,11 +143,11 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 				return;
 			}
 			// focus same active link element after route change , content loaded.
-			if ((evt instanceof NavigationEnd)) {
+			/* if ((evt instanceof NavigationEnd)) {
 				if (this.activeElement) {
 					this.activeElement.focus();
 				}
-			}
+			} */
 
 		});
 	}
@@ -154,7 +155,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 	hidePowerPage(routeTo: boolean = true) {
 		this.menuItems = this.commonService.removeObjById(this.menuItems, 'power');
 		if (routeTo) {
-			this.router.navigate(['device/device-settings/audio'], { replaceUrl: true });
+			this.router.navigate(['device/device-settings/audio', { queryParams: this.params }], { replaceUrl: true });
 		}
 	}
 

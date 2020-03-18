@@ -16,6 +16,7 @@ export class UiHeaderSubpageComponent implements OnInit, AfterViewInit {
 	@Input() textId: string;
 	@Input() metricsParent: string;
 	fromTab = 'fromTab';
+	pageHeader = 'pageHeader';
 	@ViewChild('pageHeadingRef', { static: false }) pageHeadingRef: ElementRef;
 	constructor(private route: ActivatedRoute) { }
 
@@ -46,6 +47,11 @@ export class UiHeaderSubpageComponent implements OnInit, AfterViewInit {
 				const focusElement = this.pageHeadingRef.nativeElement.querySelector('[tabIndex = \'-1\']') as HTMLElement;
 				if (focusElement) {
 					focusElement.focus();
+				}
+			}
+			else {
+				if (document.getElementById(this.pageHeader) !== undefined) {
+					document.getElementById(this.pageHeader).focus();
 				}
 			}
 
