@@ -2,7 +2,11 @@
 .gaming-help-popup{
 	position: relative;
 	background: $gaming_darkest;
-	color: $gaming_lightest;
+	color: $gaming_lightest;	
+	@media #{$only-small-screen} {
+		width:80%;
+		margin:auto;
+	}
 	.modal-header{
 		height: 7rem;
 		padding: 3rem 4rem;
