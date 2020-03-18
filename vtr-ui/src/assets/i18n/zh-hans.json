@@ -3508,7 +3508,8 @@
     "notification": {
         "menu": {
             "security": "您知道吗？即使您没有安装反病毒软件，我们仍会为您的设备提供基本的安全保护。",
-            "connectedHomeSecurity": "在家中获得有关网络安全的实时监控和警报。您将是第一个知道您的智能设备是否面临安全攻击的人。"
+            "connectedHomeSecurity": "在家中获得有关网络安全的实时监控和警报。您将是第一个知道您的智能设备是否面临安全攻击的人。",
+            "hardwareScan": "现在，让我们看看硬件是不是都正常。"
         }
     },
     "appsForYou": {
