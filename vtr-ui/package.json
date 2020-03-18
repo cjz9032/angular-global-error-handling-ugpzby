@@ -23,10 +23,8 @@
     "release": "standard-version",
     "dev++": "npm run release && git push --follow-tags origin develop",
     "pwa": "http-server -p 4200 ./dist/vtr-ui",
-    "stats": "ng build --prod --stats-json",
-    "analyze": "webpack-bundle-analyzer dist/vtr-ui/stats.json",
-    "dev-stats": "ng build -c=dev --stats-json & webpack-bundle-analyzer dist/vtr-ui/stats.json",
-    "source": "ng build & source-map-explorer 'dist/vtr-ui/*.js'",
+    "wba": "ng build --prod --stats-json & webpack-bundle-analyzer dist/vtr-ui/stats.json",
+    "sme": "ng build & source-map-explorer 'dist/vtr-ui/*.js'",
     "mock-serve": "node --max_old_space_size=8096 ./node_modules/@angular/cli/bin/ng serve -c=mock",
     "remove-console": "node node_modules/jscodeshift/bin/jscodeshift.js -t prebuild/removeConsole.js --extensions=ts --parser=ts src --ignore-pattern=src/app/services/logger/logger.service.ts",
     "detect-console": "node prebuild/detectConsole.js"
