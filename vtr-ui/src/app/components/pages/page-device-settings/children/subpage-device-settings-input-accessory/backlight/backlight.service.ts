@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { from, Observable, Subject } from 'rxjs';
-import { Backlight, BacklightLevel, BacklightMode, BacklightStatus } from './backlight.interface';
+import { Backlight, BacklightLevel, BacklightMode, BacklightStatus, GetBacklightResponse } from './backlight.interface';
 import { VantageShellService } from '../../../../../../services/vantage-shell/vantage-shell.service';
 import { map, shareReplay, takeUntil } from 'rxjs/operators';
+import { ComposerClient, ComposerRequest } from 'composer';
+import { KeyBoardContract } from './backlight.contract';
 
 const CACHE_SIZE = 1;
 
@@ -15,7 +17,8 @@ export class BacklightService {
 	private reload$ = new Subject();
 
 	constructor(
-		private shellService: VantageShellService
+		private shellService: VantageShellService,
+		private composer: ComposerClient
 	) {
 		this.backlightFeature = this.shellService.getBacklight();
 	}
@@ -57,5 +60,27 @@ export class BacklightService {
 				]
 			}]
 		}));
+	}
+
+	getBacklightOnSystemChange(): Observable<GetBacklightResponse> {
+		const request = new ComposerRequest(
+			KeyBoardContract.CONTRACT,
+			KeyBoardContract.GET_BACKLIGHT_ON_SYSTEM_CHANGE,
+			{
+				settingList: [
+					{
+						setting: [
+							{
+								key: 'IntermediateResponseDuration',
+								value: '00:01:00',
+								enabled: 0
+							}
+						]
+					}
+				]
+			},
+			{reportProgress: true}
+		);
+		return this.composer.request<GetBacklightResponse>(request);
 	}
 }

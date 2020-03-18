@@ -65,6 +65,7 @@ import { HardwareDashboardModule } from './hardware-settings/hardware-dashboard.
 import { GamingDashboardModule } from './gaming-dashboard.module';
 import { HardwareScanRoutingModule } from './hardware-scan/hardware-scan-routing.module';
 import { HardwareScanModule } from './hardware-scan/hardware-scan.module';
+import { ComposerClientModule } from 'composer';
 //import { ModalErrorMessageComponent } from '../components/modal/modal-error-message/modal-error-message.component';
 
 @NgModule({
@@ -85,6 +86,7 @@ import { HardwareScanModule } from './hardware-scan/hardware-scan.module';
 		BrowserModule,
 		BrowserAnimationsModule,
 		AppRoutingModule,
+		ComposerClientModule,
 		ServiceWorkerModule.register('ngsw-worker.js', {
 			enabled: environment.production,
 			registrationStrategy: 'registerImmediately'
