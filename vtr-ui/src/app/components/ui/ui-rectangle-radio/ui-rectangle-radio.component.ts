@@ -151,9 +151,6 @@ export class UiRectangleRadioComponent implements OnInit, OnChanges, AfterViewIn
 
 	private setRadioTabIndex(currentItem) {
 		try {
-			if (currentItem === undefined) {
-				currentItem = currentItem.nativeElement;
-			}
 
 			this.radioButtons.forEach(radioButton => {
 				radioButton.tabIndex = -1; // the unchecked item should also be tabbable
@@ -224,13 +221,14 @@ export class UiRectangleRadioComponent implements OnInit, OnChanges, AfterViewIn
 			});
 
 			//focus on first non disabled element if not selected any radio items
-			if (this.firstRadioButton !== undefined && (this.firstRadioButton.tabIndex || this.firstRadioButton.tabIndex !== 0)
-				&& this.noRadioButtonSelected) {
-				this.setRadioTabIndex(this.firstRadioButton);
+			if (this.noRadioButtonSelected && this.firstRadioButton !== undefined
+				&& (this.firstRadioButton.tabIndex || this.firstRadioButton.tabIndex !== 0)
+			) {
+				this.setRadioTabIndex(this.firstRadioButton.nativeElement);
 			}
-			else if (this.selectedRadioButton !== undefined && (this.selectedRadioButton.tabIndex || this.selectedRadioButton.tabIndex !== 0)
-				&& this.noRadioButtonSelected) {
-				this.setRadioTabIndex(this.selectedRadioButton);
+			else if (!this.noRadioButtonSelected && this.selectedRadioButton !== undefined
+				&& (this.selectedRadioButton.tabIndex || this.selectedRadioButton.tabIndex !== 0)) {
+				this.setRadioTabIndex(this.selectedRadioButton.nativeElement);
 			}
 		} catch (error) {
 			this.logger.exception('setRadioButtons error occurred ::', error);
