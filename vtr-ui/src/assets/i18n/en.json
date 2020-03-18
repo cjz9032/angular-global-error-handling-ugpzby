@@ -102,7 +102,7 @@
 					"line9": "<b>Touchpad Lock </b><br> Prevent mistaken inputs by disabling the touchpad while gaming",
 					"line10": "<b>Auto Close </b><br> Clear processes that are not needed for gaming before you start playing to maximize available system resources",
 					"line11": "<b>Thermal Mode </b><br> Set your preferred device profile for fan speed and cooling control",
-					"line12": "<b>Macro key </b><br> Customize your keyboard actions to suit your playing style"
+					"line12": "<b>Macro Key </b><br> Customize your keyboard actions to suit your playing style"
 				},
 				"systemInfo": {
 					"systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
