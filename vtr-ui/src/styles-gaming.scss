@@ -379,7 +379,7 @@
 														}
 														label {
 															color: $white100;
-															margin-left: 0.8rem;															
+															margin-left: 0.8rem;
 															font-size:$fontsize_xs2;
 														}
 													}
@@ -702,29 +702,29 @@
 						.support-list {
 							background-color: $gaming-bg !important;
 							border: none !important;
-	
+
 							button {
 								&:hover {
 									background-color: transparent !important;
 								}
 							}
-	
+
 							.title {
 								color: $gaming_lightest;
 							}
-	
+
 							.arrow {
 								color: $gaming_lightest !important;
 							}
-	
+
 							.description {
 								color: $gaming_grey_lightest;
 								font-size: 1.2rem;
 							}
-	
+
 							li {
 								border-bottom: 0.1rem solid $screen_dark_15 !important;
-	
+
 								a {
 									&:hover {
 										background-color: transparent !important;
@@ -1965,7 +1965,7 @@ vtr-container-card {
 .Article-Detail-Modal{
 	&.content-gaming{
 		*:focus{
-		outline: none;
+		// outline: none;
 	}
 	overflow:hidden !important;
 	.modal-dialog{
@@ -2012,8 +2012,15 @@ dl {
 	margin: 0;
 }
 
-button:focus {
-	outline: none;
+button{
+	&:focus{
+		outline: dotted!important;
+		}
+}
+label{
+	&:focus{
+		outline: dotted!important;
+	}
 }
 
 button {
@@ -2201,7 +2208,7 @@ button {
 	button:focus,
 	span:focus,
 	*:focus {
-		outline: 0 !important;
+	//	outline: 0 !important;
 		box-shadow: none !important;
 	}
 }
