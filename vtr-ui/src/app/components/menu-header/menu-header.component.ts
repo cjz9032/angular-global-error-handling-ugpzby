@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class MenuHeaderComponent implements OnInit {
 
 	@Input() menuItems = [];
+	params = { fromTab: true }
 
 	constructor(public router: Router) { }
 
@@ -36,7 +37,7 @@ export class MenuHeaderComponent implements OnInit {
 			}
 		}
 	}
-	changeRoute(routeValue, queryParams?: any) {
-		this.router.navigate(["/" + routeValue], queryParams);
+	changeRoute(routeValue, params?: any) {
+		this.router.navigate(["/" + routeValue], { queryParams: params });
 	}
 }
