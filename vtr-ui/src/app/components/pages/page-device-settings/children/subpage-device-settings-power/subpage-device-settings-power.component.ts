@@ -855,22 +855,22 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	private getRapidChargeModeStatusIdeaPad() {
-		this.logger.info('Before getRapidChargeModeStatusIdeaNoteBook');
-		if (this.powerService.isShellAvailable) {
-			this.powerService.getRapidChargeModeStatusIdeaNoteBook().then((featureStatus) => {
-				this.logger.info('getRapidChargeModeStatusIdeaNoteBook.then', featureStatus);
-				this.expressChargingStatus = featureStatus;
-				this.updateBatteryLinkStatus(this.expressChargingStatus.available);
-				this.expressChargingCache = featureStatus;
-				this.expressChargingCache.isLoading = this.expressChargingLock;
-				this.commonService.setLocalStorageValue(LocalStorageKey.ExpressChargingCapability, this.expressChargingCache);
-			}).catch((error) => {
-				this.logger.error('getRapidChargeModeStatusIdeaNoteBook', error.message);
-				return EMPTY;
-			});
-		}
-	}
+	// private getRapidChargeModeStatusIdeaPad() {
+	// 	this.logger.info('Before getRapidChargeModeStatusIdeaNoteBook');
+	// 	if (this.powerService.isShellAvailable) {
+	// 		this.powerService.getRapidChargeModeStatusIdeaNoteBook().then((featureStatus) => {
+	// 			this.logger.info('getRapidChargeModeStatusIdeaNoteBook.then', featureStatus);
+	// 			this.expressChargingStatus = featureStatus;
+	// 			this.updateBatteryLinkStatus(this.expressChargingStatus.available);
+	// 			this.expressChargingCache = featureStatus;
+	// 			this.expressChargingCache.isLoading = this.expressChargingLock;
+	// 			this.commonService.setLocalStorageValue(LocalStorageKey.ExpressChargingCapability, this.expressChargingCache);
+	// 		}).catch((error) => {
+	// 			this.logger.error('getRapidChargeModeStatusIdeaNoteBook', error.message);
+	// 			return EMPTY;
+	// 		});
+	// 	}
+	// }
 
 	private async setConservationModeStatusIdeaNoteBook(status: any) {
 		try {
