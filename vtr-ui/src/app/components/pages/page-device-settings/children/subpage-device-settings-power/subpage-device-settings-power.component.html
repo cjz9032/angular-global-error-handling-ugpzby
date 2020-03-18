@@ -46,14 +46,14 @@
 									[rightIcon]="['far', 'question-circle']"
 									[showChildContent]="true"
 									[isSwitchChecked]="chargeThresholdStatus"
-									(toggleOnOff)="toggleBCTSwitch($event.switchValue)"
+									(toggleOnOff)="toggleBCTSwitch($event)"
 									[switchId]="'ds-power-battery-threshold'"
-									[isDisabled]="batteryService.isGaugeResetRunning"
+									[isDisabled]="batteryService.isGaugeResetRunning || batteryService.isInvalidBattery"
 									[tooltipText]="'device.deviceSettings.power.batterySettings.batteryThreshold.tooltip' | translate">
 									<div *ngIf="chargeThresholdStatus">
 										<vtr-battery-charge-threshold-settings [title]="'device.deviceSettings.power.batterySettings.batteryThreshold.settings.title'
 												+ thresholdInfo[0].batteryNum | translate"
-											[isGaugeResetRunning]="batteryService.isGaugeResetRunning"
+											[isDisabled]="batteryService.isGaugeResetRunning || batteryService.isInvalidBattery"
 											[bctInfo]="thresholdInfo[0]"
 											[textId]="thresholdInfo[0].batteryNum===1?'threshold-primary-battery': 'threshold-secondary-battery'"
 											(changeBCTInfo)="onBCTInfoChange($event, 0)"
@@ -62,7 +62,7 @@
 
 										<vtr-battery-charge-threshold-settings *ngIf="thresholdInfo.length===2"
 											[title]="'device.deviceSettings.power.batterySettings.batteryThreshold.settings.title2' | translate"
-											[isGaugeResetRunning]="batteryService.isGaugeResetRunning"
+											[isDisabled]="batteryService.isGaugeResetRunning || batteryService.isInvalidBattery"
 											[bctInfo]="thresholdInfo[1]"
 											[textId]="'threshold-secondary-battery'"
 											(changeBCTInfo)="onBCTInfoChange($event, 1)"
@@ -148,7 +148,7 @@
 									[isSwitchChecked]="toggleAirplanePowerModeFlag"
 									[showChildContent]=true
 									[switchId]="'ds-power-battery-airplane'"
-									(toggleOnOff)="onToggleOfAirplanePowerMode($event.switchValue)">
+									(toggleOnOff)="onToggleOfAirplanePowerMode($event)">
 									<div class="row">
 										<div class="col px-5">
 											<vtr-ui-checkbox [componentId]="'cb-airplane-mode'"
@@ -180,7 +180,7 @@
 									[rightIcon]="['far', 'question-circle']"
 									[tooltipText]="'device.deviceSettings.power.powerSettings.flipToBoot.tooltip' | translate"
 									[switchId]="'ds-power-flipToBoot'"
-									(toggleOnOff)="onToggleOfFlipToBoot($event.switchValue)">
+									(toggleOnOff)="onToggleOfFlipToBoot($event)">
 								</vtr-ui-row-switch>
 							</li>
 							<li class="common-li-padding"
@@ -197,7 +197,7 @@
 									[showChildContent]="true"
 									[tooltipText]=""
 									[switchId]="'ds-power-alwaysUSB'"
-									(toggleOnOff)="onToggleOfAlwaysOnUsb($event.switchValue)">
+									(toggleOnOff)="onToggleOfAlwaysOnUsb($event)">
 									<div class="row">
 										<div class="col-auto justify-content-start align-items-center pr-2">
 											<i class="icomoon icomoon-LE-Charging-USB2x"></i>
@@ -238,7 +238,7 @@
 									[rightIcon]="['far', 'question-circle']"
 									[tooltipText]="'device.deviceSettings.power.powerSettings.easyResume.tooltip' | translate"
 									[switchId]="'ds-power-easyResume'"
-									(toggleOnOff)="onToggleOfEasyResume($event.switchValue)">
+									(toggleOnOff)="onToggleOfEasyResume($event)">
 								</vtr-ui-row-switch>
 							</li>
 						</ul>
@@ -271,7 +271,7 @@
 									[leftIcon]="['fal', 'thumbtack']"
 									[isSwitchChecked]="vantageToolbarStatus.status"
 									[switchId]="'ds-power-otherSettings-toolBar'"
-									(toggleOnOff)="onVantageToolBarStatusToggle($event.switchValue)">
+									(toggleOnOff)="onVantageToolBarStatusToggle($event)">
 								</vtr-ui-row-switch>
 							</li>
 						</ul>

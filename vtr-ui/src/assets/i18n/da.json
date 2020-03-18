@@ -876,7 +876,7 @@
                 "tips2": "Skriv eventuelle andre kommentarer nedenfor",
                 "emailAddressLabel": "Angiv din e-mailadresse, hvis du vil have mulighed for at blive kontaktet af Lenovo Vantage-teamet.",
                 "emailAddress": "E-mailadresse",
-                "invalidEmailMsg": "Invalid email address"
+                "invalidEmailMsg": "Ugyldig mailadresse"
             }
         },
         "quickSettings": {
@@ -1997,30 +1997,30 @@
             },
             "voice": {
                 "title": "stemme",
-                "description": "Lenovo Voice hjælper med at konvertere din tale til tekst med funktionen Tale til tekst og giver mulighed for realtidsoversættelse fra tale til tekst med oversættelsesfunktionen.",
+                "description": "Lenovo Voice konverterer din tale til tekst med funktionen Tale til tekst og hjælper med realtidsoversættelse af tale med oversættelsesassistenten.",
                 "installBtnText": "Installér",
                 "launchBtnText": "Start",
                 "voiceToText": {
                     "title": "Tale til tekst",
-                    "caption": "Med denne funktion kan du konvertere din tale til tekst."
+                    "caption": "Denne funktion giver mulighed for at benytte stemmeskrivning, som konverterer tale til tekst, så du hurtigt kan skrive tekst."
                 },
                 "translation": {
                     "title": "Oversættelse",
-                    "caption": "Denne funktion giver realtidsoversættelse af det, der siges. Det oversatte indhold vises som tekst. Du kan vælge kildesprog og målsprog i henhold til dine behov."
+                    "caption": "Denne funktion hjælper med oversættelse i realtid af tale, og alt det oversatte vises som tekst. Flere sprog er tilgængelige som kilde- og målsprog."
                 },
                 "modalPopUp": {
                     "heading": "Kom i gang:",
-                    "point1": "Tjek, at Lenovo Voice-ikonet vises i systembakken i Windows.",
-                    "point2": "Åbn den fil, hvor den konverterede tekst skal optages.",
+                    "point1": "Start Lenovo Voice fra menuen Start, så vises Lenovo Voice-ikonet på proceslinjen i Windows.",
+                    "point2": "Åbn det program, du vil skrive tekst i.",
                     "point3": "Klik på Lenovo Voice-ikonet i systembakken i Windows, og vælg Tale til tekst.",
-                    "point4": "Vælg det ønskede sprog, og klik på mikrofonikonet for at starte.",
-                    "point5": "Placer markøren på det sted, du vil redigere, og begynd at tale.",
-                    "point6": "Klik på Lenovo Voice-ikonet i systembakken i Windows, og vælg Oversæt.",
-                    "point7": "Vælg det ønskede kildesprog og målsprog.",
-                    "point8": "Angiv stemmeinput fra højttaler eller fra mikrofon afhængigt af dine behov.",
-                    "point9": "Klik på mikrofonikonet for at begynde at tale",
+                    "point4": "Vælg de ønskede sprog, og klik på mikrofonikonet for at starte.",
+                    "point5": "Anbring markøren i programmet, og begynd at tale.",
+                    "point6": "Klik på Lenovo Voice-ikonet i systembakken i Windows, og vælg Oversættelse.",
+                    "point7": "Vælg kildesprog og målsprog.",
+                    "point8": "Angiv stemmeinput fra højttaler eller fra mikrofon afhængigt af dit behov.",
+                    "point9": "Klik på mikrofonikonet for at begynde at tale.",
                     "closeText": "luk",
-                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
+                    "point10": "Tjek, at Lenovo Voice-ikonet vises i systembakken i Windows."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -2187,6 +2187,7 @@
             "description": "Kontakt os for at få hjælp.",
             "listLenovoCommunity": "Lenovo-gruppe",
             "listContactCustomerService": "Kontakt kundeservice",
+            "listYourVirtualAssistant": "Your virtual assistant",
             "listContactUsOnWechat": "Kontakt os på WeChat",
             "weChatDescription": "Stil os et spørgsmål på WeChat. Vi vender hurtigt tilbage med svar",
             "listFindUs": "Find os på sociale medier",
@@ -3507,7 +3508,8 @@
     "notification": {
         "menu": {
             "security": "Vidste du det? Selvom du ikke har et antivirusprogram installeret, tilbyder vi stadig en grundlæggende sikkerhedsbeskyttelse til din enhed.",
-            "connectedHomeSecurity": "Få overvågning i realtid og advarsler om din netværkssikkerhed derhjemme. Du er den første, der får det at vide, hvis nogen af dine smart-enheder er udsat for et sikkerhedsangreb."
+            "connectedHomeSecurity": "Få overvågning i realtid og advarsler om din netværkssikkerhed derhjemme. Du er den første, der får det at vide, hvis nogen af dine smart-enheder er udsat for et sikkerhedsangreb.",
+            "hardwareScan": "Nu kan du få vist helbredsstatus for dine systemhardwarekomponenter."
         }
     },
     "appsForYou": {

@@ -1425,6 +1425,12 @@
 						"description": "Choose a power plan to control the computer performance, system temperature, and power usage.",
 						"currentPowerPlan": {
 							"label": "CURRENT PLAN"
+						},
+						"profile": {
+							"title": "PLAN PROFILE:",
+							"performance": "Max performance:",
+							"temperature": "Max system temperature:",
+							"usage": "Max power usage:"
 						}
 					}
 				}
@@ -2524,6 +2530,7 @@
 			"description": "Contact us to help you out.",
 			"listLenovoCommunity": "Lenovo Community",
 			"listContactCustomerService": "Contact customer service",
+			"listYourVirtualAssistant": "Your virtual assistant",
 			"listContactUsOnWechat": "Contact us on WeChat",
 			"weChatDescription": "Shoot us a question on WeChat and we’ll be sure to respond quickly",
 			"listFindUs": "Find us on social media",
@@ -3506,7 +3513,8 @@
 	"notification": {
 		"menu": {
 			"security": "Do you know? Even you don't have anti-virus software installed, we still provide basic security protection for your device.",
-			"connectedHomeSecurity": "Get real-time monitoring and alerts about your network security at home. You will be the first one to know if any of your smart devices are facing a security attack."
+			"connectedHomeSecurity": "Get real-time monitoring and alerts about your network security at home. You will be the first one to know if any of your smart devices are facing a security attack.",
+			"hardwareScan": "Now you can get your system hardware component's health status."
 		}
 	},
 	"appsForYou": {
@@ -3562,6 +3570,6 @@
 		}
 	},
 	"cpt": {
-        "title": "Content Preview Tool"
-    }
+		"title": "Content Preview Tool"
+	}
 }

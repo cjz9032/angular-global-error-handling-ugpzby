@@ -24,6 +24,7 @@ export class SupportService {
 	warrantyData: { info: any, cache: boolean };
 	warrantyNormalUrl = 'https://pcsupport.lenovo.com/us/en/warrantylookup';
 	warrantyDataCache: { info: any, cache: boolean };
+	supportDatas: any;
 
 	constructor(
 		private shellService: VantageShellService,

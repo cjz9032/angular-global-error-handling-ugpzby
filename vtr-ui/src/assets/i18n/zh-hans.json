@@ -876,7 +876,7 @@
                 "tips2": "如有任何其他意见，请在下面提出",
                 "emailAddressLabel": "如果您想与 Lenovo Vantage 团队联系，请留下您的电子邮件地址。",
                 "emailAddress": "电子邮件地址",
-                "invalidEmailMsg": "Invalid email address"
+                "invalidEmailMsg": "电子邮件地址无效"
             }
         },
         "quickSettings": {
@@ -1997,30 +1997,30 @@
             },
             "voice": {
                 "title": "语音",
-                "description": "联想语音可通过语音转文本功能帮助您将语音转换为文本，并通过翻译功能提供从语音到文本的实时翻译。",
+                "description": "联想语音可通过语音转文本功能将语音转换为文本，并通过翻译助手功能提供实时语音翻译帮助。",
                 "installBtnText": "安装",
                 "launchBtnText": "启动",
                 "voiceToText": {
                     "title": "语音转文本",
-                    "caption": "此功能有助于将语音转换为文本。"
+                    "caption": "此功能提供语音键入功能，可将语音转换为文本以实现快速输入。"
                 },
                 "translation": {
                     "title": "翻译",
-                    "caption": "此功能提供对语音的实时翻译。译文以文本形式显示。您可以根据需要选择源语言和目标语言。"
+                    "caption": "此功能提供语音的实时翻译帮助，所有翻译的内容都将以文本形式显示。源语言和目标语言涵盖多种语言。"
                 },
                 "modalPopUp": {
                     "heading": "如何开始使用：",
-                    "point1": "确保 Windows 系统托盘中显示联想语音图标。",
-                    "point2": "打开要记录转换文本的文件。",
+                    "point1": "从“开始”菜单中启动联想语音，联想语音图标将显示在 Windows 系统托盘中。",
+                    "point2": "打开要在其中键入文本的应用程序。",
                     "point3": "单击 Windows 系统托盘中的联想语音图标，然后选择语音转文本。",
-                    "point4": "选择所需的语言，然后单击麦克风图标开始。",
-                    "point5": "将光标放在要编辑的位置并开始说话。",
-                    "point6": "单击 Windows 系统托盘中的联想语音图标，然后选择翻译。",
-                    "point7": "选择所需的源语言和目标语言。",
+                    "point4": "选择您需要的语言，然后单击麦克风图标开始。",
+                    "point5": "将光标放在应用程序中，然后开始讲话。",
+                    "point6": "单击 Windows 系统托盘中的联想语音图标，然后选择“翻译”。",
+                    "point7": "选择源语言和目标语言。",
                     "point8": "根据您的需要，从扬声器或麦克风处设置语音输入。",
-                    "point9": "单击麦克风图标开始说话",
+                    "point9": "单击麦克风图标开始说话。",
                     "closeText": "关闭",
-                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
+                    "point10": "确保 Windows 系统托盘中显示联想语音图标。"
                 },
                 "modalInstallationFailed": {
                     "btnText": "确定",
@@ -2187,6 +2187,7 @@
             "description": "请联系我们以便为您提供帮助。",
             "listLenovoCommunity": "Lenovo 社区",
             "listContactCustomerService": "联系客户服务部门",
+            "listYourVirtualAssistant": "您的虚拟助手",
             "listContactUsOnWechat": "通过微信联系我们",
             "weChatDescription": "在微信上向我们提问，我们定会迅速回复",
             "listFindUs": "在社交媒体上找到我们",
@@ -2218,7 +2219,7 @@
         "landing": {
             "fully": "为了获得更好的服务来保护您的设备，请继续使用",
             "notFully": "要了解如何更好地保护您的设备，请开始使用",
-            "security101": "安全建议入门",
+            "security101": "安全建议贴士",
             "firewall": "防火墙",
             "pwdHealth": "密码保险箱",
             "vpnSecurity": "VPN 安全顾问",
@@ -2554,7 +2555,7 @@
         "welcomeText7": "让我们开启元气满满的一天，{{firstName}}！",
         "welcomeText8": "要不要来一杯快乐肥宅水？",
         "welcomeText9": "今日关中事，萧何共尔忧",
-        "welcomeText10": "保持冷静，Vantage 就来了",
+        "welcomeText10": "准备好玩转Vantage了吗？",
         "welcomeText11": "Vantage 物美价廉",
         "welcomeText12": "将 Vantage 带回家",
         "welcomeText13": "吃好、睡好，起来接着玩转Vantage！",
@@ -2569,7 +2570,7 @@
         "welcomeTextWithoutUserName7": "让我们开启元气满满的一天！",
         "welcomeTextWithoutUserName8": "要不要来一杯快乐肥宅水？",
         "welcomeTextWithoutUserName9": "今日关中事，萧何共尔忧",
-        "welcomeTextWithoutUserName10": "保持冷静，Vantage 就来了",
+        "welcomeTextWithoutUserName10": "准备好玩转Vantage了吗？",
         "welcomeTextWithoutUserName11": "Vantage 物美价廉",
         "welcomeTextWithoutUserName12": "将 Vantage 带回家",
         "welcomeTextWithoutUserName13": "吃好、睡好，起来接着玩转Vantage！",
@@ -3507,7 +3508,8 @@
     "notification": {
         "menu": {
             "security": "您知道吗？即使您没有安装反病毒软件，我们仍会为您的设备提供基本的安全保护。",
-            "connectedHomeSecurity": "在家中获得有关网络安全的实时监控和警报。您将是第一个知道您的智能设备是否面临安全攻击的人。"
+            "connectedHomeSecurity": "在家中获得有关网络安全的实时监控和警报。您将是第一个知道您的智能设备是否面临安全攻击的人。",
+            "hardwareScan": "现在，让我们看看硬件是不是都正常。"
         }
     },
     "appsForYou": {
