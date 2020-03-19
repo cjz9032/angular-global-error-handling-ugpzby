@@ -2012,15 +2012,22 @@ dl {
 	margin: 0;
 }
 
-button{
+.btn{
 	&:focus{
-		outline: dotted!important;
+		outline: 2px dotted !important;
+		}
+	}
+
+.enable-button{
+	&:focus{
+		outline: 2px dotted !important;
 		}
 }
-label{
+button{
 	&:focus{
-		outline: dotted!important;
+		outline: 2px dotted !important;
 	}
+
 }
 
 button {
