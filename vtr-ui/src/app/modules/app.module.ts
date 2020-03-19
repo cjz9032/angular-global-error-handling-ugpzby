@@ -40,7 +40,7 @@ import { faPlusCircle } from '@fortawesome/free-solid-svg-icons/faPlusCircle';
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons/faQuestionCircle';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons/faTimesCircle';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { GlobalErrorHandler } from '../services/error-handler/global.service';
+import { ChunkLoadErrorHandler } from '../services/error-handler/global.service';
 import { HomeComponent } from './../components/home/home.component';
 import { HttpClient } from '@angular/common/http';
 import { MetricsTranslateService } from '../services/mertics-traslate/metrics-translate.service';
@@ -130,7 +130,7 @@ import { CommsService } from '../services/comms/comms.service';
 		CommsService,
 		{
 			provide: ErrorHandler,
-			useClass: GlobalErrorHandler
+			useClass: ChunkLoadErrorHandler
 		}
 	],
 	entryComponents: [
