@@ -1051,7 +1051,7 @@
                     "NotGood": "<b>バッテリーは良好な状態ではありません。</b>",
                     "NotSupportACAdapter": "<b>AC アダプターがサポートされていません。</b>",
                     "LimitedACAdapterSupport": "<b>ACアダプターが十分な電力を供給できません。</b>",
-                    "MissingDriver": "<b>Lenovo Power Managerドライバー</b>がインストールされていないか、正しく機能していません。Windows Update を実行して。最新のドライバーをインストールしてください。また、ドライバーを<a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">ここ</a>からインストールすることもできます。インストール後に、コンピューターを再起動します。",
+                    "MissingDriver": "<b>Lenovo Power Manager ドライバー</b>がインストールされていないか、正しく機能していません。Windows Update を実行するか、手動で<a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">ここ</a>からインストールしてください。インストール後に、コンピューターを再起動します。",
                     "StoreLimitation": "<b>バッテリーはフル充電容量の {{value}}%</b> しか充電できません。",
                     "HighTemperature": "<b>バッテリー温度が高温になりすぎた</b>ので、<b>放電</b>を中止しました。",
                     "TrickleCharge": "バッテリーは<b>完全に放電</b>しています。再充電してください。再充電には 10 時間以上かかる場合があります。",
@@ -1330,6 +1330,12 @@
                         "description": "電源プランを選択して、コンピューターのパフォーマンス、システム温度、および電力使用率を制御します。",
                         "currentPowerPlan": {
                             "label": "現在のプラン"
+                        },
+                        "profile": {
+                            "title": "PLAN PROFILE:",
+                            "performance": "Max performance:",
+                            "temperature": "Max system temperature:",
+                            "usage": "Max power usage:"
                         }
                     }
                 },
@@ -2438,7 +2444,6 @@
                 "title": "セキュリティーの健全性",
                 "deviceName1": "信頼できるソースからのアプリ",
                 "deviceName2": "開発者モード",
-                "deviceName3": "UAC 通知",
                 "deviceName4": "アンチウイルスの可用性",
                 "deviceName5": "ハードディスク・ドライブの暗号化",
                 "deviceName6": "ファイアウォールの可用性",

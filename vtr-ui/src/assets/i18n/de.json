@@ -1051,7 +1051,7 @@
                     "NotGood": "<b>Der Akku befindet sich nicht in einem guten Zustand.</b>",
                     "NotSupportACAdapter": "<b>Netzteil wird nicht unterstützt.</b>",
                     "LimitedACAdapterSupport": "<b>Netzteil kann nicht genügend Strom liefern.</b>",
-                    "MissingDriver": "Der <b>Lenovo Power Manager-Treiber</b> ist nicht installiert oder funktioniert nicht ordnungsgemäß. Führen Sie Windows Update aus, um den aktuellen Treiber zu installieren. Sie können den Treiber auch von <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">hier</a> installieren. Starten Sie den Computer nach der Installation neu.",
+                    "MissingDriver": "Der <b>Lenovo Power Manager-Treiber</b> ist nicht installiert oder funktioniert nicht ordnungsgemäß. Führen Sie Windows Update aus oder installieren Sie den Treiber manuell von <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">hier</a>. Starten Sie den Computer nach der Installation neu.",
                     "StoreLimitation": "Der Akku kann <b>nur {{value}}% der ursprünglichen vollen Ladekapazität</b> speichern.",
                     "HighTemperature": "Das <b>Entladen</b> wurde gestoppt, da die <b>Temperatur des Akkus zu hoch</b> ist.",
                     "TrickleCharge": "Der Akku wurde <b>komplett entladen</b> und muss aufgeladen werden. Das kann zehn Stunden oder länger dauern.",
@@ -1330,6 +1330,12 @@
                         "description": "Wählen Sie ein Energieschema, um Leistung, Systemtemperatur und Energieverbrauch des Computers zu steuern.",
                         "currentPowerPlan": {
                             "label": "AKTUELLES SCHEMA"
+                        },
+                        "profile": {
+                            "title": "PLAN PROFILE:",
+                            "performance": "Max performance:",
+                            "temperature": "Max system temperature:",
+                            "usage": "Max power usage:"
                         }
                     }
                 },
@@ -2438,7 +2444,6 @@
                 "title": "Sicherheitszustand",
                 "deviceName1": "Apps von vertrauenswürdigen Quellen",
                 "deviceName2": "Entwicklermodus",
-                "deviceName3": "Benutzerkontensteuerung-Benachrichtigung",
                 "deviceName4": "Antivirus-Verfügbarkeit",
                 "deviceName5": "Festplattenlaufwerk-Verschlüsselung",
                 "deviceName6": "Firewall-Verfügbarkeit",
