@@ -39,6 +39,9 @@ export class DashboardService {
 	welcomeText = '';
 	welcomeTextWithoutUserName = '';
 
+	public cmsContentCache : any = null;
+	public cmsLanguageCache : string = null;
+
 	constructor(
 		shellService: VantageShellService,
 		commonService: CommonService,
