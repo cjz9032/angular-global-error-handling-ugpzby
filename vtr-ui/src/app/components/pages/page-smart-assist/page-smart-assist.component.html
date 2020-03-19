@@ -396,7 +396,7 @@
 									<vtr-ui-button [linkId]="'intelligentSecurity_reset_btn'"
 										(onClick)="onResetDefaultSettings($event)"
 										(keydown.enter)="onResetDefaultSettings($event)"
-										[upperCaseLabel]=true
+										[upperCaseLabel]="true"
 										[label]="'device.smartAssist.intelligentSecurity.resetToDefault' | translate"
 										metricsParent="Pages.SmartAssist.security"
 										metricsItem="btn.Reset To Default Settings"></vtr-ui-button>

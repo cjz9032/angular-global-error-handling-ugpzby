@@ -159,7 +159,7 @@
 										metricsParent="Modern Preload"
 										#redeemCodeCopy
 										id="modern-preload-button-redeem-code-copy-{{app.udcId}}"
-										[ngxClipboard]
+										ngxClipboard
 										(keydown.enter)="copy(app.activationCode, 'redeemCodeCopy')"
 										[cbContent]="app.activationCode">
 										<fa-icon *ngIf="app.isShowActiveCode"
@@ -190,7 +190,7 @@
 									metricsParent="Modern Preload"
 									#redeemUrlCopy
 									id="modern-preload-button-redeem-url-copy-{{app.udcId}}"
-									[ngxClipboard]
+									ngxClipboard
 									(keydown.enter)="copy(app.redemptionURL, 'redeemUrlCopy')"
 									[cbContent]="app.redemptionURL">
 									<fa-icon [icon]="['fal', 'copy']"></fa-icon>

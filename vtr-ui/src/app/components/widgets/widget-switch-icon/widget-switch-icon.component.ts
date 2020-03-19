@@ -16,7 +16,7 @@ export class WidgetSwitchIconComponent implements OnInit {
 	@Input() title: string;
 	@Input() iconDefinition: string;
 	@Input() offIconDefinition: string; // when feature is off
-	@Input() value: boolean = false;
+	@Input() value = false;
 	@Input() isBlocked = false;
 	@Input() tooltipText = '';
 	@Input() disable = false;

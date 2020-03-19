@@ -14,7 +14,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 })
 
 export class CameraControlComponent implements OnInit, OnDestroy {
-	@Input() cameraSettings: any = new CameraSettingsResponse();
+	@Input() cameraSettings: CameraSettingsResponse = new CameraSettingsResponse();
 	@Input() cameraFeatureAccess: CameraFeatureAccess;
 	@Input() manualRefresh: any;
 	@Input() disabledAll = false;
@@ -315,15 +315,15 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public onBrightnessSliderChange($event: any ) {
+	public onBrightnessSliderChange($event: ChangeContext) {
 		this.logger.info('Brightness changed', $event);
 		this.brightnessChange.emit($event);
 	}
-	public onContrastSliderChange($event: any ) {
+	public onContrastSliderChange($event: ChangeContext) {
 		this.logger.info('Contrast changed', $event);
 		this.contrastChange.emit($event);
 	}
-	public onExposureSliderChange($event: any ) {
+	public onExposureSliderChange($event: ChangeContext) {
 		this.logger.info('exposure changed', $event);
 		this.exposureChange.emit($event);
 	}

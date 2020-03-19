@@ -2,7 +2,6 @@ import { Component, OnInit, Input } from '@angular/core';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { BaseComponent } from '../../base/base.component';
 import { Router, NavigationEnd } from '@angular/router';
-import { IconName, IconPrefix } from '@fortawesome/fontawesome-svg-core';
 
 @Component({
 	selector: 'vtr-ui-list-chevron',
@@ -46,8 +45,6 @@ export class UiListChevronComponent extends BaseComponent implements OnInit {
 		6: 'circle'
 	};
 
-	fas: IconPrefix = "fas";
-
 	constructor(private deviceService: DeviceService, public router: Router) { super(); }
 
 
@@ -62,8 +59,8 @@ export class UiListChevronComponent extends BaseComponent implements OnInit {
 	}
 
 
-	getItemStatusIconClass(item): IconName {
-		let itemStatIconClass : IconName = "goodreads";
+	getItemStatusIconClass(item) {
+		let itemStatIconClass = 'good';
 		if (item.status !== undefined && item.status !== '') {
 			if (this.itemStatusIconClass.hasOwnProperty(item.status)) {
 				itemStatIconClass = this.itemStatusIconClass[item.status];

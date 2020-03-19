@@ -2,7 +2,6 @@
 	"name": "vtr-ui",
 	"version": "1.4.6",
 	"scripts": {
-		"postinstall": "ngcc",
 		"build:dev": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build -c=dev",
 		"build:dev1": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng test --watch=false --browsers=ChromeHeadless --code-coverage",
 		"build:dev2": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build -c=dev  && node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng test --watch=false --browsers=ChromeHeadless --code-coverage",
@@ -37,7 +36,6 @@
 		"@angular/compiler": "~9.0.6",
 		"@angular/core": "~9.0.6",
 		"@angular/forms": "~9.0.6",
-		"@angular/localize": "^9.0.6",
 		"@angular/platform-browser": "~9.0.6",
 		"@angular/platform-browser-dynamic": "~9.0.6",
 		"@angular/router": "~9.0.6",
