@@ -52,7 +52,7 @@ export class UiDpmDropdownComponent implements OnInit {
 		}
 	}
 
-	public select(event: DropDownInterval, toggle) {
+	public select(event: any, toggle) {
 		this.value = event.value;
 		this.text = event.text;
 		this.change.emit(event);

@@ -13,7 +13,7 @@ export class WidgetQaComponent implements OnInit {
   openId = null;
   questions;
   isCollapse = false;
-  metricsValue: string;
+  metricsValue: any;
 
   constructor(
 	  private qaService: SecurityQaService,

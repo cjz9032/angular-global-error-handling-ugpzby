@@ -33,8 +33,8 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, OnDes
 	@ViewChild('childContent', { static: false }) childContent: any;
 
 	// Use Fort Awesome Font Awesome Icon Reference Array (library, icon class) ['fas', 'arrow-right']
-	@Input() rightIcon = [];
-	@Input() leftIcon = [];
+	@Input() rightIcon: any;
+	@Input() leftIcon: any;
 	@Input() showChildContent = false;
 	@Input() readMoreText = '';
 	@Input() title = '';
@@ -75,6 +75,9 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, OnDes
 	@ViewChild('rightToolTip3', { static: false }) rightToolTip3: ElementRef;
 	scrollEvent = new Subject();
 	subscriptionList = [];
+
+	autoCloseTrue: boolean = true;
+	autoCloseFalse: boolean = false;
 
 	constructor(
 		public modalService: NgbModal,

@@ -27,7 +27,7 @@
 								*ngIf="item.status !== undefined && item.status !== '' && item.status !== 4">
 								<div class="icon-bkg"
 									id="{{'icon-' + getItemStatusIconClass(item) + '-' + item.id}}">
-									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
+									<fa-icon [icon]="[fas, getItemStatusIconClass(item)]"></fa-icon>
 								</div>
 							</div>
 							<div *ngIf="item.status === 4"

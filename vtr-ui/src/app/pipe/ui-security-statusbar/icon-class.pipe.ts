@@ -2,7 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({ name: 'iconClass' })
 export class IconClassPipe implements PipeTransform {
-	transform(value: string): string {
+	transform(value: any): string {
 		switch (value) {
 			case 'enabled':
 				return 'icon-check';

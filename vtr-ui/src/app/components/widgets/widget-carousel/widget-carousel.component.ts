@@ -22,11 +22,11 @@ export class WidgetCarouselComponent implements OnInit, OnChanges {
 	@Input() data: any;
 	@Input() interval: number;
 	@Input() keyboard: boolean;
-	@Input() pauseOnHover: boolean;
+	@Input() pauseOnHover: any;
 	@Input() showNavigationArrows: boolean;
 	@Input() showNavigationIndicators: boolean;
 	@Input() wrap: boolean;
-	@Input() order: number;
+	@Input() order: string;
 	@Input() carouselId: string;
 
 

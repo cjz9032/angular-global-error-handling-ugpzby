@@ -18,7 +18,7 @@
 						[linkId]="'su_install_all_updates'"
 						(onClick)="onInstallAllUpdates($event)"
 						[isDisabled]="!((criticalUpdates && criticalUpdates.length > 0) || (recommendedUpdates && recommendedUpdates.length > 0) || (optionalUpdates && optionalUpdates.length > 0))"
-						[upperCaseLabel]="true"
+						[upperCaseLabel]=true
 						[label]="'systemUpdates.availableUpdates.installAllUpdates' | translate"
 						metricsParent="Pages.SystemUpdate.NewUpdateAvailable"
 						metricsItem="btn.Install all updates"></vtr-ui-button>
@@ -147,7 +147,7 @@
 							<vtr-ui-button (onClick)="onInstallSelectedUpdates($event)"
 								[linkId]="'su_install_selected_updates'"
 								[isDisabled]="!isUpdateSelected"
-								[upperCaseLabel]="true"
+								[upperCaseLabel]=true
 								[label]="'systemUpdates.availableUpdates.installSelectedUpdates' | translate"
 								metricsParent="Pages.SystemUpdate.NewUpdateAvailable"
 								metricsItem="btn.Install selected updates"></vtr-ui-button>
