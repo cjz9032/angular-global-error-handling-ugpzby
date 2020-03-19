@@ -163,7 +163,7 @@ describe("CMSService", () => {
 		service.requestCMSContent(queryParams, locInfo).subscribe({
 			complete() {}
 		})
-		expect(spy).not.toHaveBeenCalled()		
+		expect(spy).not.toHaveBeenCalled()
 	}));
 
 	it('should call getCMSContent - if results', async(() => {
@@ -182,16 +182,9 @@ describe("CMSService", () => {
 			Segment: 'Consumer',
 			Brand: 'Lenovo',
 		}
-		let subscriber = {
-			next(res) {
-				return res
-			},
-			complete() {
-				return
-			}
-		}
+
 		const spy = spyOn<any>(commService, 'endpointGetCall').and.returnValue(of(data))
-		service.getCMSContent(CMSOption, subscriber)
+		service.getCMSContent(CMSOption)
 		expect(spy).toHaveBeenCalled()
 	}));
 
@@ -212,34 +205,34 @@ describe("CMSService", () => {
 			Brand: 'Lenovo',
 		}
 		const dataE: any = {}
-		const subscriber = {
-			next(res) {
-				return res
-			},
-			complete() {
-				return
-			},
-			error(err) {
-				return err
-			}
-		}
+		// const subscriber = {
+		// 	next(res) {
+		// 		return res
+		// 	},
+		// 	complete() {
+		// 		return
+		// 	},
+		// 	error(err) {
+		// 		return err
+		// 	}
+		// }
 		const spy = spyOn<any>(commService, 'endpointGetCall').and.returnValue(of(dataE))
-		service.getCMSContent(CMSOption, subscriber)
+		service.getCMSContent(CMSOption)
 		expect(spy).toHaveBeenCalled()
 	}));
 
 	it('should call getCMSContent - error', async(() => {
-		const subscriber = {
-			next(res) {
-				return res
-			},
-			complete() {
-				return
-			},
-			error(err) {
-				return err
-			}
-		}
+		// const subscriber = {
+		// 	next(res) {
+		// 		return res
+		// 	},
+		// 	complete() {
+		// 		return
+		// 	},
+		// 	error(err) {
+		// 		return err
+		// 	}
+		// }
 		const CMSOption = {
 			Lang: 'en',
 			GEO: 'us',
@@ -251,7 +244,7 @@ describe("CMSService", () => {
 		service = TestBed.get(CMSService)
 		commService = TestBed.get(CommsService)
 		const spy = spyOn<any>(commService, 'endpointGetCall').and.returnValue(throwError({status: 404}))
-		service.getCMSContent(CMSOption, subscriber)
+		service.getCMSContent(CMSOption);
 		expect(spy).toHaveBeenCalled()
 	}));
 

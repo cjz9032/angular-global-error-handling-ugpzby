@@ -25,7 +25,7 @@
 				<div class="col-sm-12 pb-20 pt-0 px-0"
 					[hidden]="canShowDccDemo$ | async">
 					<vtr-widget-carousel [data]="heroBannerItems"
-						order="1"
+						order=1
 						source="title"
 						[interval]="5000"
 						cardTitle="title"
@@ -42,7 +42,7 @@
 				<div class="col-sm-12 pb-20 pt-0 px-0"
 					[hidden]="!(canShowDccDemo$ | async)">
 					<vtr-widget-carousel [data]="heroBannerDemoItems"
-						order="1"
+						order=1
 						source="title"
 						[interval]="5000"
 						cardTitle="title"
@@ -58,7 +58,7 @@
 				</div>
 				<div class="col-12 px-0 d-flex custom-card-container">
 					<div class="custom-card pb-20 card-left">
-						<vtr-container-card order="2"
+						<vtr-container-card order=2
 							[item]="cardContentPositionB"
 							[isOfflineArm]="(deviceService.isArm && !isOnline) || (deviceService.isArm && cardContentPositionB.isLocal)"
 							[type]="'corner'"
@@ -70,7 +70,7 @@
 						</vtr-container-card>
 					</div>
 					<div class="custom-card pb-20 card-right">
-						<vtr-container-card order="3"
+						<vtr-container-card order=3
 							[item]="cardContentPositionC"
 							[isOfflineArm]="(deviceService.isArm && !isOnline) || (deviceService.isArm && cardContentPositionC.isLocal)"
 							[type]="'corner'"
@@ -82,7 +82,7 @@
 					</div>
 				</div>
 				<div class="col-sm-12 pb-20 px-0">
-					<vtr-container-card order="4"
+					<vtr-container-card order=4
 						[item]="cardContentPositionD"
 						[isOfflineArm]="(deviceService.isArm && !isOnline) || (deviceService.isArm && cardContentPositionD.isLocal)"
 						[type]="'highlight'"
@@ -95,7 +95,7 @@
 				<div class="col-12 px-0 d-flex custom-card-container">
 					<div class="custom-card pb-20 card-left"
 						[hidden]="deviceService.isSMode">
-						<vtr-container-card order="5"
+						<vtr-container-card order=5
 							[item]="cardContentPositionE"
 							[isOfflineArm]="(deviceService.isArm && !isOnline) || (deviceService.isArm && cardContentPositionE.isLocal)"
 							[type]="'article'"
@@ -107,7 +107,7 @@
 					</div>
 					<div class="custom-card pb-20 card-right"
 						[hidden]="deviceService.isSMode">
-						<vtr-container-card order="6"
+						<vtr-container-card order=6
 							[item]="cardContentPositionF"
 							[isOfflineArm]="(deviceService.isArm && !isOnline) || (deviceService.isArm && cardContentPositionF.isLocal)"
 							[type]="'article'"

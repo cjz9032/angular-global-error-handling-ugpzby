@@ -1,21 +1,34 @@
 <div class="row">
-    <div class="col">
-        <h1>{{title}}</h1>
-    </div>
+	<div class="col">
+		<h1>{{title}}</h1>
+	</div>
 </div>
 <div class="row">
-    <div class="col-xs-6 col-sm-6">
-        <vtr-container-card order="1" [item]="cardContentPositionC" [type]="'subpage-article'" [ratio]="1"
-            id="lighting_customize_crm_card_A" aria-label="lighting_customize_crm_card_A" vtrMetrics
-            metricsEvent="ArticleClick" metricsItem="gaming_lighting_containerCard_positionC"
-            ItemCategory="corner-article">
-        </vtr-container-card>
-    </div>
-    <div class="col-xs-6 col-sm-6">
-        <vtr-container-card order="2" [item]="cardContentPositionF"
-            [type]="'subpage-corner'" [ratio]="2" [cornerShift]="'large'" id="lighting_customize_crm_card_B"
-            aria-label="lighting_customize_crm_card_B" vtrMetrics metricsEvent="ArticleClick"
-            metricsItem="gaming_lighting_containerCard_positionF" ItemCategory="corner-article">
-        </vtr-container-card>
-    </div>
+	<div class="col-xs-6 col-sm-6">
+		<vtr-container-card order=1
+			[item]="cardContentPositionC"
+			[type]="'subpage-article'"
+			[ratio]="1"
+			id="lighting_customize_crm_card_A"
+			aria-label="lighting_customize_crm_card_A"
+			vtrMetrics
+			metricsEvent="ArticleClick"
+			metricsItem="gaming_lighting_containerCard_positionC"
+			ItemCategory="corner-article">
+		</vtr-container-card>
+	</div>
+	<div class="col-xs-6 col-sm-6">
+		<vtr-container-card order=2
+			[item]="cardContentPositionF"
+			[type]="'subpage-corner'"
+			[ratio]="2"
+			[cornerShift]="'large'"
+			id="lighting_customize_crm_card_B"
+			aria-label="lighting_customize_crm_card_B"
+			vtrMetrics
+			metricsEvent="ArticleClick"
+			metricsItem="gaming_lighting_containerCard_positionF"
+			ItemCategory="corner-article">
+		</vtr-container-card>
+	</div>
 </div>
