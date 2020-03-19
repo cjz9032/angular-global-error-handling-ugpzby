@@ -10,11 +10,15 @@ export class WindowsVersionService {
 	private readonly VERSION_REDSTONE_4 = 17134;
 
 	private regexp: RegExp = /Edge\/(\d+).(\d+)$/gm;
+	private build: number = undefined;
 
 	public get currentBuildVersion() : number | null {
-		const result = this.regexp.exec(navigator.userAgent);
+		if (this.build === undefined) {
+			const result = this.regexp.exec(navigator.userAgent);
+			this.build = Array.isArray(result) ? Number(result[2]) : null;
+		}
 
-		return Array.isArray(result) ? Number(result[2]) : null;
+		return this.build;
 	}
 
 	public is20H1(): boolean {

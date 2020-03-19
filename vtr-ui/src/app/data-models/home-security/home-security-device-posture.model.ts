@@ -56,8 +56,9 @@ export class HomeSecurityDevicePosture {
 			this.assignValue(devicePostures, item.vulnerable, 2);
 		} else if (config.indexOf('firewall') !== -1) {
 			this.assignValue(devicePostures, item.vulnerable, 3);
-		} else if (config.indexOf('apps') !== -1 && this.windowsVersionService.isOlderThan20H1()) {
+		} else if (config.indexOf('apps') !== -1) {
 			this.assignValue(devicePostures, item.vulnerable, 4);
+			devicePostures[4].isHidden = !this.windowsVersionService.isOlderThan20H1();
 		} else if (config.indexOf('developer') !== -1) {
 			this.assignValue(devicePostures, item.vulnerable, 5);
 		} else if (config.indexOf('windows') !== -1) {
