@@ -32,6 +32,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 	back = 'BACK';
 	backarrow = '< ';
 	parentPath = 'device';
+	params = { fromTab: true }
 	public menuItems = [
 		{
 			id: 'power',
@@ -142,28 +143,19 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 				return;
 			}
 			// focus same active link element after route change , content loaded.
-			if (this.activeElement) {
-				this.activeElement.focus();
-			}
-
-			// window.scrollTo(0, 0);
-			/* const focusParentElement = this.hsRouterOutlet.nativeElement.lastElementChild;
-			if (focusParentElement) {
-				focusParentElement.focus();
-				this.logger.info('aa 1:: ' + this.hsRouterOutlet.nativeElement);
-				this.logger.info('aa 2:: ' + focusParentElement);
+			/* if ((evt instanceof NavigationEnd)) {
+				if (this.activeElement) {
+					this.activeElement.focus();
+				}
 			} */
-			/* const subPageRootElement = document.getElementsByClassName('vtr-subpage') as HTMLCollection;
-			const element = subPageRootElement[0].querySelector('[tabindex = \'0\']') as HTMLElement;
-			element.focus(); */
-			// vtr - subpage
+
 		});
 	}
 
 	hidePowerPage(routeTo: boolean = true) {
 		this.menuItems = this.commonService.removeObjById(this.menuItems, 'power');
 		if (routeTo) {
-			this.router.navigate(['device/device-settings/audio'], { replaceUrl: true });
+			this.router.navigate(['device/device-settings/audio', { queryParams: this.params }], { replaceUrl: true });
 		}
 	}
 

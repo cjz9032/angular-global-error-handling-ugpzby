@@ -9,7 +9,7 @@
 					attr.aria-label="dashboard-quick-settings-title">{{'dashboard.quickSettings.title' | translate}}
 				</div>
 				<div [ngClass]="cameraStatus.available ? 'widget-icon-3': 'widget-icon-2'">
-					<div class="">
+					<div>
 						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-FA-Microphone2x'"
 							[offIconDefinition]="'icomoon icomoon-FA-Microphone---slash2x'"
 							[value]="microphoneStatus.status && microphoneStatus.permission && !microPhoneGreyOut"
@@ -21,11 +21,11 @@
 							[isBlocked]="!microphoneStatus.status || !microphoneStatus.permission"
 							(toggle)="onMicrophoneStatusToggle($event)"
 							[disable]="!(microphoneStatus.permission && microphoneStatus.available && quickSettingsWidget[0].state) || microPhoneGreyOut"
-							[isLoading]="microphoneStatus.isLoading">
+							[isLoading]="microphoneStatus.isLoading"
+							[buttonRole]="'button'">
 						</vtr-widget-switch-icon>
 					</div>
-					<div *ngIf="cameraStatus.available"
-						class="">
+					<div *ngIf="cameraStatus.available">
 						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-Camera'"
 							[offIconDefinition]="'icomoon icomoon-Camera-slash'"
 							[value]="!cameraStatus.status && cameraStatus.permission && !cameraPrivacyGreyOut"
@@ -38,11 +38,11 @@
 							[isCamera]="true"
 							(toggle)="onCameraStatusToggle($event)"
 							[disable]="!(cameraStatus.available && cameraStatus.permission && quickSettingsWidget[1].state) || cameraPrivacyGreyOut"
-							[isLoading]="cameraStatus.isLoading">
+							[isLoading]="cameraStatus.isLoading"
+							[buttonRole]="'button'">
 						</vtr-widget-switch-icon>
 					</div>
-					<div *ngIf="!deviceService.isSMode"
-						class="">
+					<div *ngIf="!deviceService.isSMode">
 						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-quick-setting-system-update'"
 							[offIconDefinition]="'icomoon icomoon-quick-setting-system-update'"
 							[value]="true"
@@ -56,7 +56,8 @@
 							(toggle)="onSystemUpdateToggle($event)"
 							[disable]="false"
 							[isLoading]="false"
-							[hideOnOffLabel]="true">
+							[hideOnOffLabel]="true"
+							[buttonRole]="'link'">
 						</vtr-widget-switch-icon>
 					</div>
 					<!-- <div *ngIf="vantageToolbarStatus.available"
@@ -140,7 +141,7 @@
 							class="btn btn-link privacy-button pl-0"
 							(click)="onClick('ms-settings:privacy-microphone')"
 							id="qs-microphone-access-link"
-							attr.aria-label="qs-microphone-access-link">
+							attr.aria-label="qs-microphone-access-link" role="link">
 							{{'dashboard.quickSettings.note.accessUrl' | translate}}
 						</button>
 					</div>
@@ -164,7 +165,7 @@
 							class="btn btn-link privacy-button pl-0"
 							(click)="onClick('ms-settings:privacy-webcam')"
 							id="qs-camera-access-link"
-							attr.aria-label="qs-camera-access-link">
+							attr.aria-label="qs-camera-access-link" role="link">
 							{{'dashboard.quickSettings.note.accessUrl' | translate}}
 						</button>
 					</div>
@@ -190,7 +191,7 @@
 								class="btn btn-link privacy-button pl-0"
 								(click)="onClick('ms-settings:privacy-microphone')"
 								id="qs-microphone-dt-machine-access-ink"
-								attr.aria-label="qs-microphone-dt-machine-access-ink">
+								attr.aria-label="qs-microphone-dt-machine-access-ink" role="link">
 								{{'dashboard.quickSettings.note.accessUrl' | translate}}
 							</button>
 						</div>
@@ -206,7 +207,7 @@
 							class="btn btn-link privacy-button pl-0"
 							(click)="onClick('ms-settings:privacy-webcam')"
 							id="qs-microphone-camera-access-ink"
-							attr.aria-label="qs-microphone-camera-access-ink">
+							attr.aria-label="qs-microphone-camera-access-ink" role="link">
 							{{'dashboard.quickSettings.note.accessUrl' | translate}}
 						</button>
 					</div>

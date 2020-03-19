@@ -876,7 +876,7 @@
                 "tips2": "Nižšie uveďte doplňujúce komentáre",
                 "emailAddressLabel": "Ak chcete, aby vás tím Lenovo Vantage kontaktoval, zanechajte svoju e-mailovú adresu.",
                 "emailAddress": "E-mailová adresa",
-                "invalidEmailMsg": "Invalid email address"
+                "invalidEmailMsg": "Neplatná E-mailová adresa"
             }
         },
         "quickSettings": {
@@ -1997,30 +1997,30 @@
             },
             "voice": {
                 "title": "Hlas",
-                "description": "Aplikácia Lenovo Voice umožňuje prevádzať hlas na text pomocou funkcie Hlas na text a prekladať hlas na text v reálnom čase pomocou funkcie Preklad.",
+                "description": "Aplikácia Lenovo Voice umožňuje prevádzať hlas na text pomocou a poskytuje pomocníka prekladu reči v reálnom čase vďaka funkcii Translation Assistant.",
                 "installBtnText": "Nainštalovať",
                 "launchBtnText": "Spustiť",
                 "voiceToText": {
                     "title": "Hlas na text",
-                    "caption": "Táto funkcia umožňuje prevádzať hlas na text."
+                    "caption": "Táto funkcia poskytuje funkciu písania hlasom, ktorá prevádza hlas na text a umožňuje rýchle zadávanie."
                 },
                 "translation": {
                     "title": "Preklad",
-                    "caption": "Táto funkcia umožňuje prekladať hlas v reálnom čase. Preložený obsah sa zobrazuje vo forme textu. Môžete vybrať zdrojový a cieľový jazyk podľa svojich potrieb."
+                    "caption": "Táto funkcia poskytuje pomoc prekladom reči v reálnom čase. Preložený obsah sa zobrazí v textovej podobe. Pre zdrojový a cieľový jazyk je k dispozícii viac jazykov."
                 },
                 "modalPopUp": {
                     "heading": "Začíname:",
-                    "point1": "Skontrolujte, či je v oblasti oznámení systému Windows zobrazená ikona aplikácie Lenovo Voice.",
-                    "point2": "Otvorte súbor, do ktorého chcete zapisovať prevedený text.",
+                    "point1": "Spustite program Lenovo Voice z ponuky Štart a na paneli úloh systému Windows sa zobrazí ikona Lenovo Voice.",
+                    "point2": "Otvorte aplikáciu, do ktorej chcete zadať text.",
                     "point3": "Kliknite na ikonu aplikácie Lenovo Voice v oblasti oznámení systému Windows a vyberte položku Hlas na text.",
-                    "point4": "Vyberte požadovaný jazyk a začnite kliknutím na ikonu mikrofónu.",
-                    "point5": "Umiestnite kurzor na miesto, kde chcete vykonávať úpravy, a začnite hovoriť.",
+                    "point4": "Vyberte si potrebné jazyky a začnite kliknutím na ikonu mikrofónu.",
+                    "point5": "Umiestnite kurzor do aplikácie a začnite hovoriť.",
                     "point6": "Kliknite na ikonu aplikácie Lenovo Voice v oblasti oznámení systému Windows a vyberte položku Preložiť.",
-                    "point7": "Vyberte požadovaný zdrojový jazyk a cieľový jazyk.",
+                    "point7": "Vyberte zdrojový jazyk a cieľový jazyk.",
                     "point8": "V závislosti od svojich potrieb nastavte hlasový vstup z reproduktora alebo mikrofónu.",
                     "point9": "Kliknite na ikonu mikrofónu a začnite hovoriť.",
                     "closeText": "zatvoriť",
-                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
+                    "point10": "Skontrolujte, či je v oblasti oznámení systému Windows zobrazená ikona aplikácie Lenovo Voice."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -2187,6 +2187,7 @@
             "description": "Kontaktujte nás, aby sme vám pomohli.",
             "listLenovoCommunity": "Komunita Lenovo",
             "listContactCustomerService": "Kontaktujte služby zákazníkom",
+            "listYourVirtualAssistant": "Your virtual assistant",
             "listContactUsOnWechat": "Kontaktujte nás cez WeChat",
             "weChatDescription": "Položte nám otázku cez WeChat a my vám rýchlo odpovieme",
             "listFindUs": "Vyhľadajte nás v sociálnych médiách",
@@ -3507,7 +3508,8 @@
     "notification": {
         "menu": {
             "security": "Vedeli ste to? Aj keď nemáte nainštalovaný antivírusový softvér, poskytujeme základnú bezpečnostnú ochranu vášho zariadenia.",
-            "connectedHomeSecurity": "Získajte monitorovanie v reálnom čase a upozornenia týkajúce zabezpečenia siete v domácnosti. Ak bude ktorékoľvek z vašich inteligentných zariadení čeliť bezpečnostnému útoku, dozviete sa o tom ako prví."
+            "connectedHomeSecurity": "Získajte monitorovanie v reálnom čase a upozornenia týkajúce zabezpečenia siete v domácnosti. Ak bude ktorékoľvek z vašich inteligentných zariadení čeliť bezpečnostnému útoku, dozviete sa o tom ako prví.",
+            "hardwareScan": "Teraz môžete získať stav súčasti hardvéru vášho systému."
         }
     },
     "appsForYou": {

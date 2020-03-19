@@ -19,6 +19,7 @@ import { faCommentAlt } from '@fortawesome/pro-light-svg-icons/faCommentAlt';
 import { faShareAlt } from '@fortawesome/pro-light-svg-icons/faShareAlt';
 import { faTicketAlt } from '@fortawesome/pro-light-svg-icons/faTicketAlt';
 import { faBriefcase } from '@fortawesome/pro-light-svg-icons/faBriefcase';
+import { faRobot } from '@fortawesome/pro-light-svg-icons/faRobot';
 import { faHeart as falHeart } from '@fortawesome/pro-light-svg-icons/faHeart';
 import { CommonPipeModule } from '../common/common-pipe.module';
 import { ModalLicenseComponent } from 'src/app/components/modal/modal-license/modal-license.component';
@@ -70,11 +71,14 @@ import { LicensesService } from 'src/app/services/licenses/licenses.service';
 })
 export class SupportModule {
 	constructor(library: FaIconLibrary) {
-		library.addIcons(faBook);
-		library.addIcons(faCommentAlt);
-		library.addIcons(faShareAlt);
-		library.addIcons(faTicketAlt);
-		library.addIcons(faBriefcase);
-		library.addIcons(falHeart);
+		library.addIcons(
+			faBook,
+			faCommentAlt,
+			faShareAlt,
+			faTicketAlt,
+			faBriefcase,
+			falHeart,
+			faRobot,
+		);
 	}
 }

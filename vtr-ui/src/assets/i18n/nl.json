@@ -876,7 +876,7 @@
                 "tips2": "Laat hieronder eventuele aanvullende opmerkingen achter",
                 "emailAddressLabel": "Geef uw e-mailadres op als u de mogelijkheid wilt bieden dat het Lenovo Vantage-team contact met u opneemt.",
                 "emailAddress": "E-mailadres",
-                "invalidEmailMsg": "Invalid email address"
+                "invalidEmailMsg": "Ongeldig e-mailadres"
             }
         },
         "quickSettings": {
@@ -1997,30 +1997,30 @@
             },
             "voice": {
                 "title": "Spraak",
-                "description": "Lenovo Voice helpt bij het converteren van uw stem naar teksten met de functie Stem naar tekst en biedt realtime vertaling van Stem naar tekst met de vertaalfunctie.",
+                "description": "Lenovo Voice zet uw gesproken woorden om in tekst via de functie Voice to Text en assisteert met behulp van de Translation Assistant bij real-time vertalingen van spraak naar tekst.",
                 "installBtnText": "Installeer",
                 "launchBtnText": "Starten",
                 "voiceToText": {
                     "title": "Stem naar tekst",
-                    "caption": "Met deze functie kunt u uw stem omzetten in tekst."
+                    "caption": "Met deze functie kunt u spraak in tekst omzetten en zo snel invoeren."
                 },
                 "translation": {
                     "title": "Vertaling",
-                    "caption": "Deze functie biedt realtime vertaling naar stem. De vertaalde inhoud wordt in tekst weergegeven. U kunt de bron- en doeltalen kiezen, afgestemd op uw behoeften."
+                    "caption": "Deze functie vertaalt gesproken woorden in real-time en zet de vertaling om in tekst. Er zijn meerdere talen beschikbaar voor de brontekst en de vertaling daarvan."
                 },
                 "modalPopUp": {
                     "heading": "Aan de slag:",
-                    "point1": "Zorg ervoor dat het Lenovo Voice-pictogram in het systeemvak van Windows wordt afgebeeld.",
-                    "point2": "Open het bestand waarin u de geconverteerde tekst wilt opslaan.",
+                    "point1": "Als u Lenovo Voice opstart vanuit het menu Start, wordt het Lenovo Voice-pictogram weergegeven in het systeemvak van Windows.",
+                    "point2": "Open de toepassing waarin u tekst wilt typen.",
                     "point3": "Klik op het Lenovo Voice-pictogram in het systeemvak van Windows en selecteer Stem naar tekst.",
-                    "point4": "Selecteer de gewenste taal en klik op het pictogram van de microfoon om te beginnen.",
-                    "point5": "Plaats de cursor op de positie waar u wilt bewerken en begin te spreken.",
-                    "point6": "Klik op het Lenovo Voice-pictogram in het systeemvak van Windows en selecteer Vertalen.",
-                    "point7": "Selecteer de gewenste bron- en doeltaal.",
-                    "point8": "Stel de steminvoer vanaf een luidspreker of vanaf een microfoon in, afhankelijk van uw behoeften.",
-                    "point9": "Klik op het pictogram microfoon om te beginnen met spreken",
+                    "point4": "Selecteer de gewenste talen en klik op het pictogram van de microfoon om te beginnen.",
+                    "point5": "Plaats de cursor in de toepassing en begin met spreken.",
+                    "point6": "Klik op het Lenovo Voice-pictogram in het systeemvak van Windows en selecteer Translation.",
+                    "point7": "Selecteer de gewenste taal voor brontekst en vertaling.",
+                    "point8": "Stel naar behoefte de spraakinvoer in op Microphone of Speaker.",
+                    "point9": "Klik op het microfoonpictogram en begin met spreken.",
                     "closeText": "sluiten",
-                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
+                    "point10": "Zorg ervoor dat het Lenovo Voice-pictogram in het systeemvak van Windows wordt afgebeeld."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -2187,6 +2187,7 @@
             "description": "Neem voor hulp contact met ons op.",
             "listLenovoCommunity": "Lenovo-community",
             "listContactCustomerService": "Neem contact op met de klantenservice",
+            "listYourVirtualAssistant": "Your virtual assistant",
             "listContactUsOnWechat": "Neem contact op met ons op WeChat",
             "weChatDescription": "Vuur een vraag op ons af op WeChat en we zullen snel antwoorden",
             "listFindUs": "Vind ons op social media",
@@ -3507,7 +3508,8 @@
     "notification": {
         "menu": {
             "security": "Wist u dat? Zelfs als er geen antivirussoftware op uw computer is geïnstalleerd, bieden wij nog steeds basisbescherming voor uw apparaat.",
-            "connectedHomeSecurity": "Ontvang realtime controle en meldingen over de beveiliging van uw thuisnetwerk. U hoort het als eerste als een van uw slimme apparaten met een beveiligingsaanval wordt geconfronteerd."
+            "connectedHomeSecurity": "Ontvang realtime controle en meldingen over de beveiliging van uw thuisnetwerk. U hoort het als eerste als een van uw slimme apparaten met een beveiligingsaanval wordt geconfronteerd.",
+            "hardwareScan": "U kunt nu de conditie van het onderdeel van uw systeemhardware opvragen."
         }
     },
     "appsForYou": {

@@ -142,6 +142,7 @@ export class UiRectangleRadioComponent implements OnInit, OnChanges, AfterViewIn
 		}
 		catch (error) {
 			this.logger.exception('setChecked error occurred ::', error);
+
 		}
 
 		this.setRadioTabIndex(currentItem);
@@ -149,10 +150,19 @@ export class UiRectangleRadioComponent implements OnInit, OnChanges, AfterViewIn
 	}
 
 	private setRadioTabIndex(currentItem) {
-		this.radioButtons.forEach(radioButton => {
-			radioButton.tabIndex = -1; // the unchecked item should also be tabbable
-		});
-		currentItem.tabIndex = 0; // tabitem need not be set to 1 unnecessarly
+		try {
+
+			this.radioButtons.forEach(radioButton => {
+				radioButton.tabIndex = -1; // the unchecked item should also be tabbable
+			});
+			if (currentItem !== undefined && currentItem.tabIndex && currentItem.tabIndex !== 0) {
+				currentItem.tabIndex = 0; // tabitem need not be set to 1 unnecessarly
+			}
+
+		}
+		catch (error) {
+			this.logger.exception('setRadioTabIndex error occurred ::', error);
+		}
 	}
 
 	private setCheckedToPreviousItem(currentItem) {
@@ -166,7 +176,7 @@ export class UiRectangleRadioComponent implements OnInit, OnChanges, AfterViewIn
 				this.setChecked(this.radioButtons[index - 1], false);
 			}
 		} catch (error) {
-			this.logger.exception('setRadioButtons error occurred ::', error);
+			this.logger.exception('setCheckedToPreviousItem error occurred ::', error);
 		}
 	}
 
@@ -211,41 +221,49 @@ export class UiRectangleRadioComponent implements OnInit, OnChanges, AfterViewIn
 			});
 
 			//focus on first non disabled element if not selected any radio items
-			if (this.firstRadioButton && this.noRadioButtonSelected) {
-				this.setRadioTabIndex(this.firstRadioButton);
+			if (this.noRadioButtonSelected && this.firstRadioButton !== undefined
+				&& (this.firstRadioButton.tabIndex || this.firstRadioButton.tabIndex !== 0)
+			) {
+				this.setRadioTabIndex(this.firstRadioButton.nativeElement);
 			}
-			else if (!this.noRadioButtonSelected) {
-				this.setRadioTabIndex(this.selectedRadioButton);
+			else if (!this.noRadioButtonSelected && this.selectedRadioButton !== undefined
+				&& (this.selectedRadioButton.tabIndex || this.selectedRadioButton.tabIndex !== 0)) {
+				this.setRadioTabIndex(this.selectedRadioButton.nativeElement);
 			}
 		} catch (error) {
 			this.logger.exception('setRadioButtons error occurred ::', error);
 		}
 	}
 
-	/* 	private setRadioFocus(radioButton) {
-			this.radioButtons.forEach(element => {
-				if (element !== radioButton) {
-					element.tabIndex = -1;
-				}
-				if (element === radioButton) {
-					element.tabIndex = 0;
-				}
-			});
-		} */
+	/* private setRadioFocus(radioButton) {
+		this.radioButtons.forEach(element => {
+			if (element !== radioButton) {
+				element.tabIndex = -1;
+			}
+			if (element === radioButton) {
+				element.tabIndex = 0;
+			}
+		});
+	} */
 
 	private getParentRadioGroup(element) {
-		const roleRadioGroup = 'radiogroup';
-		const role = 'role';
+		try {
+			const roleRadioGroup = 'radiogroup';
+			const role = 'role';
 
-		if (element !== undefined && element.getAttribute(role) === roleRadioGroup) {
-			return element;
+			if (element !== undefined && element.getAttribute(role) === roleRadioGroup) {
+				return element;
+			}
+			else if (element !== undefined && element.getAttribute(role) !== roleRadioGroup) {
+				return this.getParentRadioGroup(element.parentElement);
+			}
+			else {
+				return element;
+			}
 		}
-		else if (element !== undefined && element.getAttribute(role) !== roleRadioGroup) {
-			return this.getParentRadioGroup(element.parentElement);
-		}
-		else {
-			return element;
-		}
+		catch (error) {
+			this.logger.exception('getParentRadioGroup error occurred ::', error);
 
+		}
 	}
 }

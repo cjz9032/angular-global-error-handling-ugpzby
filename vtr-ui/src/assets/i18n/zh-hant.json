@@ -876,7 +876,7 @@
                 "tips2": "請在下方將任何其他意見告訴我們",
                 "emailAddressLabel": "如果您希望 Lenovo Vantage 團隊與您聯絡，請留下您的電子郵件地址。",
                 "emailAddress": "電子郵件地址",
-                "invalidEmailMsg": "Invalid email address"
+                "invalidEmailMsg": "無效的電子郵件地址"
             }
         },
         "quickSettings": {
@@ -1997,30 +1997,30 @@
             },
             "voice": {
                 "title": "語音",
-                "description": "Lenovo Voice 可使用語音到文字功能，協助將您的語音轉換為文字，並使用翻譯功能提供從語音到文字的即時翻譯。",
+                "description": "Lenovo Voice 可使用語音轉文字功能將您的聲音轉換為文字，並使用翻譯助理功能進行即時語音翻譯。",
                 "installBtnText": "安裝",
                 "launchBtnText": "啟動",
                 "voiceToText": {
                     "title": "語音到文字",
-                    "caption": "此功能可協助將您的語音轉換為文字。"
+                    "caption": "此功能提供語音輸入功能、可將語音轉換為文字以快速輸入。"
                 },
                 "translation": {
                     "title": "翻譯",
-                    "caption": "此功能提供語音的即時翻譯。翻譯的內容顯示在文字中。您可以根據需求選擇來源語言和目標語言。"
+                    "caption": "此功能可協助即時翻譯語音，所有翻譯的內容都會以文字形式顯示。來源語言及目標語言皆有多語種可供選擇。"
                 },
                 "modalPopUp": {
                     "heading": "開始使用：",
-                    "point1": "確保 Lenovo Voice 圖示有顯示在 Windows 系統匣中。",
-                    "point2": "開啟要用來記錄轉換文字的檔案。",
+                    "point1": "請由開始功能表開啟 Lenovo Voice，Lenovo Voice 圖示將顯示於 Windows 系統匣內。",
+                    "point2": "開啟要輸入文字的應用程式。",
                     "point3": "按一下 Windows 系統匣中的 Lenovo Voice 圖示，然後選取「語音到文字」。",
                     "point4": "選取所需的語言，然後按一下麥克風圖示開始。",
-                    "point5": "將游標放在要編輯的位置並開始說話。",
+                    "point5": "將游標放在應用程式上，然後開始說話。",
                     "point6": "按一下 Windows 系統匣中的 Lenovo Voice 圖示，然後選取「翻譯」。",
-                    "point7": "選擇所需的來源語言和目標語言。",
+                    "point7": "選擇來源語言和目標語言。",
                     "point8": "根據您的需求，設定從喇叭或麥克風輸入語音。",
-                    "point9": "按一下麥克風圖示開始說話",
+                    "point9": "按一下麥克風圖示開始說話。",
                     "closeText": "關閉",
-                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
+                    "point10": "確保 Lenovo Voice 圖示有顯示在 Windows 系統匣中。"
                 },
                 "modalInstallationFailed": {
                     "btnText": "確定",
@@ -2187,6 +2187,7 @@
             "description": "請聯絡我們以便為您提供協助。",
             "listLenovoCommunity": "Lenovo 社群",
             "listContactCustomerService": "聯絡客戶服務",
+            "listYourVirtualAssistant": "Your virtual assistant",
             "listContactUsOnWechat": "透過 WeChat 聯絡我們",
             "weChatDescription": "透過 WeChat 向我們提問，我們一定會盡快回覆",
             "listFindUs": "透過社交媒體追蹤我們",
@@ -3507,7 +3508,8 @@
     "notification": {
         "menu": {
             "security": "您知道嗎？即使您沒有安裝防毒軟體，我們仍會為您的裝置提供基本的安全保護。",
-            "connectedHomeSecurity": "在家中取得有關網路安全的即時監視和警示。您將是最先知道您的智慧型裝置是否面臨安全攻擊的人。"
+            "connectedHomeSecurity": "在家中取得有關網路安全的即時監視和警示。您將是最先知道您的智慧型裝置是否面臨安全攻擊的人。",
+            "hardwareScan": "現在，您可以取得系統硬體元件的性能狀態。"
         }
     },
     "appsForYou": {

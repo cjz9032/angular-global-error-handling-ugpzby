@@ -876,7 +876,7 @@
                 "tips2": "追加のコメントを以下に残してください",
                 "emailAddressLabel": "Lenovo Vantage チームから連絡を受ける可能性がある場合は、メール・アドレスを残してください。",
                 "emailAddress": "メール・アドレス",
-                "invalidEmailMsg": "Invalid email address"
+                "invalidEmailMsg": "無効なメール・アドレスです"
             }
         },
         "quickSettings": {
@@ -1997,30 +1997,30 @@
             },
             "voice": {
                 "title": "音声",
-                "description": "Lenovo Voice は、音声テキスト変換機能を使用して音声をテキストに変換し、翻訳機能を使用して音声からテキストへのリアルタイムの翻訳を提供します。",
+                "description": "Lenovo Voice は、音声テキスト変換機能を使用して音声をテキストに変換し、翻訳アシスタントを使用して音声からテキストへのリアルタイムの翻訳支援を提供します。",
                 "installBtnText": "インストール",
                 "launchBtnText": "起動",
                 "voiceToText": {
                     "title": "音声テキスト変換",
-                    "caption": "この機能を使用して音声をテキストに変換できます。"
+                    "caption": "この機能は、すばやく入力できるように、音声をテキストに変換する音声入力機能を提供します。"
                 },
                 "translation": {
                     "title": "翻訳",
-                    "caption": "この機能は音声のリアルタイム翻訳を提供します。翻訳された内容はテキストで表示されます。必要に応じて原文の言語と訳文の言語を選択できます。"
+                    "caption": "この機能は、スピーチのリアルタイム翻訳支援を提供し、翻訳されたものはすべてテキストで表示されます。ソース言語とターゲット言語には複数の言語を使用できます。"
                 },
                 "modalPopUp": {
                     "heading": "使用開始:",
-                    "point1": "Lenovo Voice アイコンが Windows のシステム トレイに表示されていることを確認します。",
-                    "point2": "変換したテキストを記録するファイルを開きます。",
+                    "point1": "「スタート」メニューから Lenovo Voice を起動すると、Windows システム トレイに Lenovo Voice アイコンが表示されます。",
+                    "point2": "テキストを入力するアプリケーションを開きます。",
                     "point3": "Windows システム トレイの Lenovo Voice アイコンをクリックして、「音声テキスト変換」を選択します。",
-                    "point4": "目的の言語を選択し、マイクのアイコンをクリックして開始します。",
-                    "point5": "編集箇所にカーソルを置き、話し始めます。",
+                    "point4": "必要な言語を選択し、マイクのアイコンをクリックして開始します。",
+                    "point5": "アプリケーションにカーソルを置き、話し始めます。",
                     "point6": "Windows システム トレイの Lenovo Voice アイコンをクリックして、「翻訳」を選択します。",
-                    "point7": "目的の原文言語と訳文言語を選択します。",
+                    "point7": "原文言語と訳文言語を選択します。",
                     "point8": "必要に応じて、スピーカーまたはマイクからの音声入力を設定します。",
-                    "point9": "マイクのアイコンをクリックして話し始めます",
+                    "point9": "マイクのアイコンをクリックして話し始めます。",
                     "closeText": "閉じる",
-                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
+                    "point10": "Lenovo Voice アイコンが Windows のシステム トレイに表示されていることを確認します。"
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -2187,6 +2187,7 @@
             "description": "ご不明な点については、当社までお問い合わせください。",
             "listLenovoCommunity": "Lenovo コミュニティー",
             "listContactCustomerService": "カスタマー・サービスへのお問い合わせ",
+            "listYourVirtualAssistant": "仮想アシスタント",
             "listContactUsOnWechat": "WeChat でのお問い合わせ",
             "weChatDescription": "WeChat からご質問をお送りください。すぐに対応いたします",
             "listFindUs": "ソーシャル・メディアのアカウント",
@@ -3507,7 +3508,8 @@
     "notification": {
         "menu": {
             "security": "ご存知ですか。ウイルス対策ソフトウェアをインストールしていない場合でも、デバイスの基本的なセキュリティ保護を提供します。",
-            "connectedHomeSecurity": "自宅でネットワーク・セキュリティに関するリアルタイムの監視とアラートを実現します。スマート・デバイスのいずれかがセキュリティ攻撃に直面しているかどうかを知る最初の人物になります。"
+            "connectedHomeSecurity": "自宅でネットワーク・セキュリティに関するリアルタイムの監視とアラートを実現します。スマート・デバイスのいずれかがセキュリティ攻撃に直面しているかどうかを知る最初の人物になります。",
+            "hardwareScan": "これで、システム・ハードウェア・コンポーネントの正常性状態を取得できます。"
         }
     },
     "appsForYou": {

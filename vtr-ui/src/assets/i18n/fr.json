@@ -876,7 +876,7 @@
                 "tips2": "Veuillez ajouter tout commentaire supplémentaire ci-dessous",
                 "emailAddressLabel": "Indiquez votre adresse e-mail si vous souhaitez être contacté par l'équipe Lenovo Vantage.",
                 "emailAddress": "Adresse e-mail",
-                "invalidEmailMsg": "Invalid email address"
+                "invalidEmailMsg": "Adresse e-mail non valide"
             }
         },
         "quickSettings": {
@@ -1997,30 +1997,30 @@
             },
             "voice": {
                 "title": "Voix",
-                "description": "Lenovo Voice vous aide à convertir votre voix en texte avec la fonction de la conversion de la parole en texte et vous offre une traduction en temps réel de la parole en texte grâce à la fonction de traduction.",
+                "description": "Lenovo Voice convertit votre voix en texte avec la fonction de la conversion de la parole en texte et vous offre une traduction en temps réel de la parole grâce à l'assistant de traduction.",
                 "installBtnText": "Installer",
                 "launchBtnText": "Lancer",
                 "voiceToText": {
                     "title": "Conversion de la parole en texte",
-                    "caption": "Cette fonctionnalité vous permet de convertir votre voix en texte."
+                    "caption": "Cette fonction permet de convertir une saisie vocale en texte pour une saisie rapide."
                 },
                 "translation": {
                     "title": "Traduction",
-                    "caption": "Cette fonctionnalité permet de traduire en temps réel la parole. Les contenus traduits s'affichent en texte. Vous pouvez choisir les langues source et les langues cible en fonction de vos besoins."
+                    "caption": "Cette fonction permet d'obtenir un assistant de traduction en temps réel des discours qui sera affichée dans le texte. Plusieurs langues sont disponibles pour les langues source et cible."
                 },
                 "modalPopUp": {
                     "heading": "Démarrer :",
-                    "point1": "Vérifiez que l'icône Lenovo Voice s'affiche dans la barre d'état système Windows.",
-                    "point2": "Ouvrez le fichier dans lequel vous souhaitez enregistrer le texte converti.",
+                    "point1": "Lancez Lenovo Voice à partir du menu Démarrer et l'icône de Lenovo Voice s'affiche dans la barre d'état système Windows.",
+                    "point2": "Ouvrez l'application dans laquelle vous souhaitez taper du texte.",
                     "point3": "Cliquez sur l'icône Lenovo Voice dans la barre d'état système Windows et sélectionnez Conversion de la parole en texte.",
-                    "point4": "Sélectionnez la langue de votre choix et cliquez sur l'icône du micro pour démarrer.",
-                    "point5": "Placez le curseur à l'endroit où vous souhaitez effectuer une modification et commencez à parler.",
-                    "point6": "Cliquez sur l'icône Lenovo Voice dans la barre d'état système Windows et sélectionnez Traduire.",
+                    "point4": "Sélectionnez les langues de votre choix et cliquez sur l'icône du micro pour démarrer.",
+                    "point5": "Placez le curseur dans l'application et commencez à parler.",
+                    "point6": "Cliquez sur l'icône Lenovo Voice dans la barre d'état système Windows et sélectionnez Traduction.",
                     "point7": "Sélectionnez la langue source et la langue cible souhaitées.",
                     "point8": "En fonction de vos besoins, définissez la saisie vocale à partir du haut-parleur ou du micro.",
-                    "point9": "Cliquez sur l'icône du micro pour commencer à parler",
+                    "point9": "Cliquez sur l'icône du micro pour commencer à parler.",
                     "closeText": "fermer",
-                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
+                    "point10": "Vérifiez que l'icône Lenovo Voice s'affiche dans la barre d'état système Windows."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -2187,6 +2187,7 @@
             "description": "Contactez-nous pour obtenir de l'aide.",
             "listLenovoCommunity": "Communauté Lenovo",
             "listContactCustomerService": "Contacter le service client",
+            "listYourVirtualAssistant": "Your virtual assistant",
             "listContactUsOnWechat": "Nous contacter sur WeChat",
             "weChatDescription": "Posez-nous une question sur WeChat et nous y répondrons rapidement",
             "listFindUs": "Nous trouver sur les médias sociaux",
@@ -3507,7 +3508,8 @@
     "notification": {
         "menu": {
             "security": "Le saviez-vous ? Même si vous n'avez pas installé de logiciel antivirus, nous proposons toujours une protection de base pour votre périphérique.",
-            "connectedHomeSecurity": "Profitez d'une surveillance et d'alertes en temps réel concernant la sécurité de votre réseau à domicile. Vous serez le premier informé si l'un de vos périphériques intelligents est confronté à une attaque de sécurité."
+            "connectedHomeSecurity": "Profitez d'une surveillance et d'alertes en temps réel concernant la sécurité de votre réseau à domicile. Vous serez le premier informé si l'un de vos périphériques intelligents est confronté à une attaque de sécurité.",
+            "hardwareScan": "Vous pouvez maintenant accéder à l'état d'intégrité des composants matériels de votre système."
         }
     },
     "appsForYou": {

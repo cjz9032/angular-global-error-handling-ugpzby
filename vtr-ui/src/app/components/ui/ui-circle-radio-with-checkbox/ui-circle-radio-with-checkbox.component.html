@@ -5,7 +5,7 @@
 	[tabIndex]="disabled ?-1:checked? 0 :-1"
 	[attr.aria-disabled]="disabled"
 	[attr.aria-checked]="checked"
-	attr.aria-label="radioId"
+	[attr.aria-label]="radioId"
 	(keydown)="navigateByKeys($event,radio)"
 	[ngClass]="{'white-theme': theme === 'white','blue-theme': theme === 'blue'}">
 	<div class="checkbox">
@@ -15,7 +15,6 @@
 			[attr.aria-disabled]="disabled"
 			[attr.aria-checked]="checked"
 			[attr.aria-label]="radioId"
-			attr.aria-label="{{ radioId }}"
 			id="{{radioId}}"
 			name="{{group}}"
 			type="radio"

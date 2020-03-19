@@ -95,9 +95,13 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 							this.removeObjByValue(BacklightStatusEnum.LEVEL_1);
 							this.removeObjByValue(BacklightStatusEnum.LEVEL_2);
 							this.removeObjByValue(BacklightStatusEnum.OFF);
+							this.showHide.emit(false);
+
 						}
 					}).catch(error => {
 						this.logger.error('BacklightThinkpadComponent:GetKBDBacklightCapability', error.message);
+						this.showHide.emit(false);
+
 						return EMPTY;
 					});
 			}
@@ -223,6 +227,7 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 								this.removeObjByValue(BacklightStatusEnum.OFF);
 								this.removeObjByValue(BacklightStatusEnum.LEVEL_1);
 								this.removeObjByValue(BacklightStatusEnum.LEVEL_2);
+								this.showHide.emit(false);
 								break;
 						}
 					}).catch(error => {
