@@ -623,7 +623,7 @@ export class VantageShellService {
 					{
 						ssid: 'lenovo',
 						info: '2019/7/1 13:15:32',
-						good: 0
+						good: '0'
 					}
 				],
 				isLocationServiceOn: true,
@@ -1275,7 +1275,7 @@ export class VantageShellService {
 				const deviceFilterResult = await this.phoenix.deviceFilter.eval(filter);
 				// console.log('In VantageShellService.deviceFilter. Filter: ', JSON.stringify(filter), deviceFilterResult);
 				return deviceFilterResult;
-			} catch (error) {}
+			} catch (error) { }
 			return true;
 			// return await this.phoenix.deviceFilter(filter);
 		}
@@ -2213,25 +2213,25 @@ export class VantageShellService {
 		return undefined;
 	}
 
-	public getPowerDPM(){
+	public getPowerDPM() {
 		return undefined;
 	}
 
 	public getInstalledApplicationList() {
 		if (this.phoenix) {
-				const installedAppList: any = {
-					installedAppList: [{
-						name: 'Google Chrome',
-						description: ''
-						}, {
-						name: 'Internet Explorer',
-						description: ''
-						}, {
-						name: 'candy crush saga',
-						description: ''
-						}]
-				};
-				return installedAppList;
+			const installedAppList: any = {
+				installedAppList: [{
+					name: 'Google Chrome',
+					description: ''
+				}, {
+					name: 'Internet Explorer',
+					description: ''
+				}, {
+					name: 'candy crush saga',
+					description: ''
+				}]
+			};
+			return installedAppList;
 		}
 		return undefined;
 	}
