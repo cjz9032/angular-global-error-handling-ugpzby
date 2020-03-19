@@ -9,7 +9,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 	styleUrls: ['./display-color-temp.component.scss']
 })
 export class DisplayColorTempComponent implements OnInit {
-	@Input() displayColorTempSettings: EyeCareMode;
+	@Input() displayColorTempSettings: any;
 	@Input() enableSlider: boolean;
 	@Input() disableReset = false;
 	@Input() manualRefresh: any;

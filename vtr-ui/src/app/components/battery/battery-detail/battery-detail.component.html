@@ -221,15 +221,15 @@
 										class="fcc-tooltip-icon"
 										triggers="manual"
 										placement="left"
-										autoClose="false"
+										[autoClose]=false
 										[ngbTooltip]="fcctooltipRef"
 										#fccTooltip="ngbTooltip"
-										autoClose="true"
+										[autoClose]="true"
 										[icon]="['far', 'question-circle']"
 										container="vtr-root"
 										tooltipClass="vtr-tooltip  fcc-note-tooltip"
-										(click)="onFccIconClick(fccTooltip, $event)"
-										(keydown.enter)="onFccIconClick(fccTooltip, $event)">
+										(click)="onFccIconClick(fccTooltip)"
+										(keydown.enter)="onFccIconClick(fccTooltip)">
 									</fa-icon>
 								</span>
 							</div>

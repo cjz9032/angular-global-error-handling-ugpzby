@@ -68,7 +68,7 @@ export class UiApsSliderComponent implements OnInit, AfterContentChecked {
 	 * Its two way binding event
 	 * @param $event event data from ng5-slider component
 	 */
-	public onValueChange($event: ChangeContext) {
+	public onValueChange($event: any ) {
 		this.valueChange.emit($event);
 	}
 
@@ -76,7 +76,7 @@ export class UiApsSliderComponent implements OnInit, AfterContentChecked {
 	 *  This event is fired when user changes slider value by dragging or by keyboard
 	 * @param $event event data from ng5-slider component
 	 */
-	public onChange($event: ChangeContext) {
+	public onChange($event: any) {
         this.change.emit($event);
     }
 

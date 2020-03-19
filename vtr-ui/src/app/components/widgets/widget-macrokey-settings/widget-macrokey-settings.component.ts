@@ -61,8 +61,8 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 	];
 	tooltips_value: any = '';
 	numberSelected;
-	isNumpad: Boolean = true;
-	isRecording: Boolean = false;
+	isNumpad: boolean = true;
+	isRecording: boolean = false;
 	recordedKeyData: any;
 	gamingProperties: GamingAllCapabilities = new GamingAllCapabilities();
 	macroKeyTypeStatus: MacroKeyTypeStatus = new MacroKeyTypeStatus();

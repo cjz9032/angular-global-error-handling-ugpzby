@@ -3,7 +3,7 @@ export interface UpdateHistory {
 	packageID: string;
 	packageName: string;
 	packageReleaseDate: string;
-	packageSize: string;
+	packageSize: number;
 	rebootType: string;
 	status: string;
 	utcInstallDate: string;

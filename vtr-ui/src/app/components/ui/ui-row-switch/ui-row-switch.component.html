@@ -126,10 +126,10 @@
 						role="img"
 						triggers="manual"
 						placement="left"
-						autoClose="false"
+						[autoClose]=false
 						[ngbTooltip]="tooltipRef"
 						#rightToolTip1="ngbTooltip"
-						autoClose="true"
+						[autoClose]=true
 						[icon]="rightIcon"
 						container="vtr-root"
 						tooltipClass="vtr-tooltip"
@@ -148,7 +148,7 @@
 						placement="left"
 						[ngbTooltip]="smartTooltipRef"
 						#rightToolTip2="ngbTooltip"
-						autoClose="true"
+						[autoClose]=true
 						[icon]="rightIcon"
 						container="vtr-root"
 						tooltipClass="vtr-tooltip"
@@ -167,7 +167,7 @@
 						placement="left"
 						[ngbTooltip]="fnCtrltoolTipRef"
 						#rightToolTip3="ngbTooltip"
-						autoClose="true"
+						[autoClose]=true
 						[icon]="rightIcon"
 						container="vtr-root"
 						tooltipClass="vtr-tooltip fnctrl-tooltip"
