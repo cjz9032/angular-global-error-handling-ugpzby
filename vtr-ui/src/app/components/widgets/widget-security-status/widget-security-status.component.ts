@@ -27,6 +27,7 @@ export class WidgetSecurityStatusComponent implements OnInit {
 	items: Array<WidgetItem>;
 	region: string;
 	pluginSupport: boolean;
+	refreshTimeout;
 
 	@Input() linkId: string;
 	constructor(
@@ -140,13 +141,25 @@ export class WidgetSecurityStatusComponent implements OnInit {
 		}
 	}
 
-	@HostListener('window: focus')
+	@HostListener('window:focus')
 	onFocus(): void {
-		const id = document.activeElement.id;
-		if (id !== 'sa-av-button-launch-mcafee') {
+		this.refreshPage(document.activeElement.id);
+	}
+
+	@HostListener('document:click', ['$event'])
+	onClick(event) {
+		this.refreshPage(event.target.id);
+	}
+
+	refreshPage(id: string) {
+		clearTimeout(this.refreshTimeout);
+		this.refreshTimeout = setTimeout(() => {
+			if (id === 'sa-av-button-launch-mcafee' || id === 'sa-av-link-subscribe' || id === 'sa-av-btn-subscribe') {
+				return;
+			}
 			this.securityAdvisor.refresh();
 			this.showVpn();
-		}
+		}, 100)
 	}
 
 }
