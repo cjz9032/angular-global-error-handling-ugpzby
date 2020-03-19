@@ -227,6 +227,19 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		}
 	}
 
+	@HostListener('window:keydown', ['$event'])
+	scrollUpDown($event: KeyboardEvent) {
+		if ($event.keyCode === 38 || $event.keyCode === 40) {
+			const activeDom: any = document.activeElement;
+			if (activeDom && activeDom.id.includes('menu-main')) {
+				const contentArea = document.querySelector('.vtr-app.container-fluid') as HTMLElement;
+				contentArea.focus();
+				$event.stopPropagation();
+				$event.preventDefault();
+			}
+		}
+	}
+
 	private loadMenuOptions(machineType: number) {
 		// if IdeaPad or ThinkPad then call below function
 		if (machineType === 0 || machineType === 1) {
