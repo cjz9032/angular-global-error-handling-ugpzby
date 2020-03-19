@@ -1,5 +1,6 @@
 import { DevicePosture, DeviceCondition} from '@lenovo/tan-client-bridge';
 import { TranslateService } from '@ngx-translate/core';
+import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
 
 class DevicePostureDetail {
 	status: number;
@@ -16,7 +17,11 @@ class DevicePostureDetail {
 export class HomeSecurityDevicePosture {
 	homeDevicePosture: DevicePostureDetail[] = [];
 
-	constructor(devicePosture?: DevicePosture, cacheDevicePosture?: HomeSecurityDevicePosture, public translate?: TranslateService) {
+	constructor(
+		private windowsVersionService: WindowsVersionService,
+		devicePosture?: DevicePosture,
+		cacheDevicePosture?: HomeSecurityDevicePosture,
+		public translate?: TranslateService) {
 		if (devicePosture && devicePosture.value.length > 0) {
 			if (cacheDevicePosture) {
 				this.createHomeDevicePosture(devicePosture.value, cacheDevicePosture);
@@ -51,7 +56,7 @@ export class HomeSecurityDevicePosture {
 			this.assignValue(devicePostures, item.vulnerable, 2);
 		} else if (config.indexOf('firewall') !== -1) {
 			this.assignValue(devicePostures, item.vulnerable, 3);
-		} else if (config.indexOf('apps') !== -1) {
+		} else if (config.indexOf('apps') !== -1 && this.windowsVersionService.isOlderThan20H1()) {
 			this.assignValue(devicePostures, item.vulnerable, 4);
 		} else if (config.indexOf('developer') !== -1) {
 			this.assignValue(devicePostures, item.vulnerable, 5);

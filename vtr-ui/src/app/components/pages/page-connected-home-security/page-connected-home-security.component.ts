@@ -31,6 +31,7 @@ import { CMSService } from 'src/app/services/cms/cms.service';
 import { HomeSecurityDevicePosture } from 'src/app/data-models/home-security/home-security-device-posture.model';
 import { DeviceLocationPermission } from 'src/app/data-models/home-security/device-location-permission.model';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
 
 
 @Component({
@@ -70,7 +71,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 	devicePostureEventHandler = (devicePosture: DevicePosture) => {
 		if (devicePosture && devicePosture.value.length > 0) {
 			const cacheDevicePosture = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture);
-			this.homeSecurityDevicePosture = new HomeSecurityDevicePosture(devicePosture, cacheDevicePosture, this.translateService);
+			this.homeSecurityDevicePosture = new HomeSecurityDevicePosture(this.windowsVersionService, devicePosture, cacheDevicePosture, this.translateService);
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture, {
 				homeDevicePosture: this.homeSecurityDevicePosture.homeDevicePosture
 			});
@@ -134,10 +135,11 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		private modalService: NgbModal,
 		private commonService: CommonService,
 		private cmsService: CMSService,
+		private windowsVersionService: WindowsVersionService
 	) { }
 
 	ngOnInit() {
-		this.homeSecurityDevicePosture = new HomeSecurityDevicePosture();
+		this.homeSecurityDevicePosture = new HomeSecurityDevicePosture(this.windowsVersionService);
 		this.chs = this.vantageShellService.getConnectedHomeSecurity();
 		this.devicePosture = this.vantageShellService.getDevicePosture();
 		if (this.vantageShellService.getSecurityAdvisor()) {
@@ -199,7 +201,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		}
 		const cacheDevicePosture = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture);
 		if (this.devicePosture && this.devicePosture.value.length > 0) {
-			this.homeSecurityDevicePosture = new HomeSecurityDevicePosture(this.devicePosture, cacheDevicePosture, this.translateService);
+			this.homeSecurityDevicePosture = new HomeSecurityDevicePosture(this.windowsVersionService, this.devicePosture, cacheDevicePosture, this.translateService);
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture, {
 				homeDevicePosture: this.homeSecurityDevicePosture.homeDevicePosture
 			});
