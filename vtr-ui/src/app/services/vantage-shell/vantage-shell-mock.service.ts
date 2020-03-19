@@ -1284,6 +1284,7 @@ export class VantageShellService {
 	public calcDeviceFilter(filter) {
 		return Promise.resolve({
 			ConnectedHomeSecurity: true,
+			HardwareScan: true,
 			FeatureSearch: null,
 			TileBSource: 'UPE'
 		});
