@@ -37,9 +37,16 @@ export class UiRectangleRadioComponent implements OnInit, OnChanges, AfterViewIn
 	firstRadioButton: any;
 	lastRadioButton: any;
 	radioButtons: Array<HTMLElement> = [];
-	@ViewChild('radioButton', { static: false }) radioButton: ElementRef<HTMLElement>;
 	selectedRadioButton: any;
 	noRadioButtonSelected = true;
+	private radioButton: ElementRef<HTMLElement>;
+	// once radio button is visible then execute logic
+	@ViewChild('radioButton', { static: false }) set content(element: ElementRef) {
+		if (element) {
+			this.radioButton = element;
+			this.setRadioButtons();
+		}
+	}
 
 	constructor(private logger: LoggerService) { }
 
