@@ -38,7 +38,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 	notificationSubscription: Subscription;
 	common: AntivirusCommon;
 	isLaunchMcAfeeId: boolean;
-	refreshTimeout;
+	refreshTimeout: ReturnType<typeof setTimeout>;
 
 	@HostListener('window:focus')
 	onFocus(): void {

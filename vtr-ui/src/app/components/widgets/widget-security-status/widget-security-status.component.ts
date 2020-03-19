@@ -27,7 +27,7 @@ export class WidgetSecurityStatusComponent implements OnInit {
 	items: Array<WidgetItem>;
 	region: string;
 	pluginSupport: boolean;
-	refreshTimeout;
+	refreshTimeout: ReturnType<typeof setTimeout>;
 
 	@Input() linkId: string;
 	constructor(
