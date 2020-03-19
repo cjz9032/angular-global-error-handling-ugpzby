@@ -424,7 +424,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 				} else {
 					const msg = `Performance: Dashboard page not have this language contents, ${callCmsUsedTime}ms`;
 					this.logger.info(msg);
-					this.fetchContent('en');
+					// this.fetchContent('en'); if cms server return nothing, it would retry infinitely
 				}
 			},
 			(error) => {
