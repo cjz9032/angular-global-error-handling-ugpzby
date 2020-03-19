@@ -94,13 +94,7 @@
 		],
 		"no-unused-variable": true,
 		"no-duplicate-imports": true,
-		"no-duplicate-variable": true,
-		"no-import-side-effect": [
-			true,
-			{
-			  "ignore-module": "(core-js/.*|zone\\.js/.*|@angular/localize/init)$"
-			}
-		  ]
+		"no-duplicate-variable": true
 	},
 	"rulesDirectory": [
 		"codelyzer"

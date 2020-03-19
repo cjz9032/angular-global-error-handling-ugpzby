@@ -17,11 +17,11 @@ export class UiButtonHWScanComponent implements OnInit {
 
 	@Input() metricsItem: string;
 	@Input() metricsParent: string;
-	@Input() metricsValue: any;
+	@Input() metricsValue: string;
 	@Input() metricsEvent: string = 'FeatureClick';
 	@Input() metricsParam: string;
 	@Input() metricsItemPosition: string;
-	@Input() metricsPageNumber: any;
+	@Input() metricsPageNumber: string;
 	@Input() metricsItemID: string;
 	@Input() metricsItemCategory: string;
 	@Input() isDisabled = false;

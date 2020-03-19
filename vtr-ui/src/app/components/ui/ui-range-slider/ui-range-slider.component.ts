@@ -75,7 +75,7 @@ export class UiRangeSliderComponent implements OnInit, AfterContentChecked {
 	 * Its two way binding event
 	 * @param $event event data from ng5-slider component
 	 */
-	public onValueChange($event: any ) {
+	public onValueChange($event: ChangeContext) {
 		this.valueChange.emit($event);
 	}
 

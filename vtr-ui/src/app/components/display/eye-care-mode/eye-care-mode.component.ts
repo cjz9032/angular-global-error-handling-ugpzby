@@ -9,7 +9,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 	styleUrls: ['./eye-care-mode.component.scss']
 })
 export class EyeCareModeComponent implements OnInit, OnChanges {
-	@Input() eyeCareModeSettings: any = new EyeCareMode();
+	@Input() eyeCareModeSettings: EyeCareMode = new EyeCareMode();
 	@Input() enableSlider: boolean;
 	@Input() enableSunsetToSunrise: boolean;
 	@Input() sunsetToSunriseStatus: any;
@@ -61,10 +61,10 @@ export class EyeCareModeComponent implements OnInit, OnChanges {
 		this.logger.info('Reset Temperature');
 		this.resetTemparature.emit($event);
 	}
-	public onEyeCareTemparatureChange($event: any) {
+	public onEyeCareTemparatureChange($event: ChangeContext) {
 		this.eyeCareTemparatureChange.emit($event);
 	}
-	public onEyeCareTemparatureValueChange($event: any) {
+	public onEyeCareTemparatureValueChange($event: ChangeContext) {
 		this.eyeCareTemparatureValueChange.emit($event);
 	}
 	public onSunsetToSunrise() {

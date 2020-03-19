@@ -36,7 +36,7 @@ export class MetricsDirective {
 	@Input('vtrMetrics') composedItem: any;
 	@Input() metricsItem: string;
 	@Input() metricsEvent: string;
-	@Input() metricsValue: any;
+	@Input() metricsValue: string;
 	@Input() metricsParent: string;
 	@Input() metricsParam: string;
 
@@ -45,7 +45,7 @@ export class MetricsDirective {
 	@Input() metricsItemCategory: string;
 	@Input() metricsItemPosition: string;
 	@Input() metricsViewOrder: string;
-	@Input() metricsPageNumber: any = '1';
+	@Input() metricsPageNumber = '1';
 
 	@Input() metricsSettingName: string;
 	@Input() metricsSettingParm: string;

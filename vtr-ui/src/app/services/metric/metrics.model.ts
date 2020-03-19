@@ -5,7 +5,7 @@ export interface MetricsData {
 	ItemName?: string;
 	ItemParent?: string;
 	ItemParm?: string;
-	ItemValue?: boolean;
+	ItemValue?: string;
 	viewOrder?: number;
 	ItemID?: string;
 	ItemCategory?: string;
@@ -50,7 +50,7 @@ export class ArticleDisplay extends IMetricEvent {
 	}
 
 	public ItemParm: string;
-	public ItemValue: boolean;
+	public ItemValue: string;
 	public UPE: boolean;
 }
 
@@ -128,7 +128,7 @@ export class FeatureClick extends IMetricEvent {
 
 	public ItemName: string;
 	public ItemParent: string;
-	public ItemValue?: boolean;
+	public ItemValue?: string;
 	public ItemParm?: string;
 
 }

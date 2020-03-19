@@ -623,7 +623,7 @@ export class VantageShellService {
 					{
 						ssid: 'lenovo',
 						info: '2019/7/1 13:15:32',
-						good: 0
+						good: '0'
 					}
 				],
 				isLocationServiceOn: true,
