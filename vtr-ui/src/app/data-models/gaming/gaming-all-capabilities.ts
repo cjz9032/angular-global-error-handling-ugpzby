@@ -27,6 +27,6 @@ export class GamingAllCapabilities {
 	public fbnetFilter = false;
 	public ledDriver = false;
 	public touchpadLockStatus = false;
-	// Version 3.3
-	public overDriveFeature = true;
+	// Version 3.3 over drive
+	public overDriveFeature = false;
 }
