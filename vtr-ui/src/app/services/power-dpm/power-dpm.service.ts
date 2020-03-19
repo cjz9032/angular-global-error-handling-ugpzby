@@ -14,9 +14,10 @@ export class PowerDpmService implements OnDestroy {
 	private _currentPowerPlanObs: Observable<PowerPlan>;
 	private allPowerPlansCache: AllPowerPlans;
 	private refreshInterval;
+	private currentRequestId: number = 0;
 	// private mockResponse = {
 	// 	activePowerPlan: 'Balanced',
-	// 	powerButtonAction: 1,
+	// 	powerButtonAction: 0,
 	// 	passwordOnStandby: 1,
 	// 	dbcOnLockEvent: 0,
 	// 	powerMeter: 37,
@@ -131,7 +132,6 @@ export class PowerDpmService implements OnDestroy {
 	// 		},]
 	// 	}]
 	// };
-
 	constructor(
 		private shellService: VantageShellService,
 		private commonService: CommonService) {
@@ -212,7 +212,7 @@ export class PowerDpmService implements OnDestroy {
 	}
 	private getCurrentPowerPlan(allPowerPlans: AllPowerPlans): PowerPlan {
 		let currentPowerPlan = null;
-		if(allPowerPlans){
+		if (allPowerPlans) {
 			let currentPowerPlanName = allPowerPlans.activePowerPlan;
 			if (currentPowerPlanName && allPowerPlans.powerPlanList) {
 				currentPowerPlan = allPowerPlans.powerPlanList.find(p => p.powerPlanName == currentPowerPlanName);
@@ -234,59 +234,73 @@ export class PowerDpmService implements OnDestroy {
 
 	private getAllPowerPlans() {
 		if (this.devicePowerDPM) {
+			const requestId = new Date().getTime();
+			this.currentRequestId = requestId;
 			this.devicePowerDPM.getAllPowerPlans().then(response => {
-				//response = this.mockResponse;
-				this.resolveCommonResponse(response);
+				// response = this.mockResponse;
+				this.resolveCommonResponse(response, requestId);
 			});
 		}
 	}
 	public setPowerButton(action: string) {
 		if (this.devicePowerDPM) {
+			const requestId = new Date().getTime();
+			this.currentRequestId = requestId;
 			return this.devicePowerDPM.setPowerButton(action).then(response => {
-				// response = this.mockResponse;
-				this.resolveCommonResponse(response);
+				// response = this.mockSetResponse;
+				this.resolveCommonResponse(response, requestId);
 			});
 		}
 		return undefined;
 	}
 	public setSignInOption(option: string) {
 		if (this.devicePowerDPM) {
+			const requestId = new Date().getTime();
+			this.currentRequestId = requestId;
 			return this.devicePowerDPM.setSignInOption(option).then(response => {
 				// response = this.mockResponse;
-				this.resolveCommonResponse(response);
+				this.resolveCommonResponse(response, requestId);
 			});
 		}
 	}
 
 	public setTurnoffDisplay(option: string) {
 		if (this.devicePowerDPM) {
+			const requestId = new Date().getTime();
+			this.currentRequestId = requestId;
 			return this.devicePowerDPM.setTurnoffDisplay(option).then(response => {
 				// response = this.mockResponse;
-				this.resolveCommonResponse(response);
+				this.resolveCommonResponse(response, requestId);
 			});
 		}
 	}
 	public setTurnoffHDD(option: string) {
 		if (this.devicePowerDPM) {
+			const requestId = new Date().getTime();
+			this.currentRequestId = requestId;
 			return this.devicePowerDPM.setTurnoffHDD(option).then(response => {
 				// response = this.mockResponse;
-				this.resolveCommonResponse(response);
+				this.resolveCommonResponse(response, requestId);
 			});
 		}
 	}
 	public setSleepAfter(option: string) {
 		if (this.devicePowerDPM) {
+			const requestId = new Date().getTime();
+			this.currentRequestId = requestId;
 			return this.devicePowerDPM.setSleepAfter(option).then(response => {
 				// response = this.mockResponse;
-				this.resolveCommonResponse(response);
+				this.resolveCommonResponse(response, requestId);
 			});
 		}
 	}
 	public setHibernateAfter(option: string) {
 		if (this.devicePowerDPM) {
+			const requestId = new Date().getTime();
+			this.currentRequestId = requestId;
 			return this.devicePowerDPM.setHibernateAfter(option).then(response => {
 				// response = this.mockResponse;
-				this.resolveCommonResponse(response);
+				this.resolveCommonResponse(response, requestId);
 			});
 		}
 	}
@@ -299,15 +313,17 @@ export class PowerDpmService implements OnDestroy {
 			this.allPowerPlansSubject.next(this.allPowerPlansCache);
 		}
 		if (this.devicePowerDPM) {
+			const requestId = new Date().getTime();
+			this.currentRequestId = requestId;
 			return this.devicePowerDPM.setCurrentPowerPlan(planName).then(response => {
 				// response = this.mockResponse;
-				this.resolveCommonResponse(response);
+				this.resolveCommonResponse(response, requestId);
 			});
 		}
 	}
 
-	private resolveCommonResponse(response: any) {
-		if (response) {
+	private resolveCommonResponse(response: any, requestId: number) {
+		if (response && this.currentRequestId === requestId) {
 			if (this.allPowerPlansSubject) {
 				this.allPowerPlansSubject.next(response);
 			}
