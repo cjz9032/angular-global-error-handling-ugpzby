@@ -30,7 +30,7 @@
 				id="macrokey_numpad-{{number.key}}" (click)="numberClicked(number)" vtrMetrics
 				[metricsItem]="'macrokey_numpad-'+number.key" metricsEvent="featureClick"
 				[metricsParam]="'macrokey_numpad-'+number.key" metricsValue="{{number.key}}"
-				(keyup.enter)="numberClicked(number); $event.target.focus();" tabindex="1"
+				(keyup.enter)="numberClicked(number);" tabindex="1"
 				[attr.aria-label]="(number.status) ? 
 				('gaming.macroKey.narrator.numberInput.title' | translate)+' '+number.key+' '+ (selectedNumber && number.key === selectedNumber.key ? ('gaming.macroKey.narrator.numberInput.isSelected' | translate):'')+' '+('gaming.macroKey.narrator.numberInput.bundled' | translate) : 
 				('gaming.macroKey.narrator.numberInput.title' | translate)+' '+number.key+' '+ (selectedNumber && number.key === selectedNumber.key ? ('gaming.macroKey.narrator.numberInput.isSelected' | translate):'')+' '+('gaming.macroKey.narrator.numberInput.unbundled' | translate)"

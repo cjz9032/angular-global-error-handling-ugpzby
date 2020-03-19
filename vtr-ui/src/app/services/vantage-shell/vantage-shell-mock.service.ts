@@ -623,7 +623,7 @@ export class VantageShellService {
 					{
 						ssid: 'lenovo',
 						info: '2019/7/1 13:15:32',
-						good: '0'
+						good: 0
 					}
 				],
 				isLocationServiceOn: true,
@@ -1284,6 +1284,7 @@ export class VantageShellService {
 	public calcDeviceFilter(filter) {
 		return Promise.resolve({
 			ConnectedHomeSecurity: true,
+			HardwareScan: true,
 			FeatureSearch: null,
 			TileBSource: 'UPE'
 		});

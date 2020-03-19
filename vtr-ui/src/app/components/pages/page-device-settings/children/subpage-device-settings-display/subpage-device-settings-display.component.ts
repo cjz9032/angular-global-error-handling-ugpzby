@@ -1134,7 +1134,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		}
 	}
 
-	public onCameraBackgroundOptionChange(isEnabling: boolean, mode: string) {
+	public onCameraBackgroundOptionChange(isEnabling: boolean, mode: any) {
 		this.logger.debug('onCameraBackgroundOptionChange: ' + isEnabling + ', ' + mode);
 		if (mode !== '') {
 			this.cameraBlur.currentMode = mode;

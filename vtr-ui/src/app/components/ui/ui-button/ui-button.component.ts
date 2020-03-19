@@ -12,7 +12,7 @@ export class UiButtonComponent implements OnInit {
 	@Input() isHalfWidth: boolean;
 	@Input() vtrMetricEnabled: any;
 	@Input() alreadyJoinGroup = 'unjoined';
-	@Input() upperCaseLabel = true;
+	@Input() upperCaseLabel: any = true;
 	@Input() capitalizeLabel = false;
 	@Output() onClick = new EventEmitter<any>();
 
@@ -20,16 +20,16 @@ export class UiButtonComponent implements OnInit {
 
 	@Input() metricsItem: string;
 	@Input() metricsParent: string;
-	@Input() metricsValue: string;
+	@Input() metricsValue: any;
 	@Input() metricsEvent = 'FeatureClick';
 	@Input() metricsParam: string;
 	@Input() metricsItemPosition: string;
-	@Input() metricsPageNumber: string;
+	@Input() metricsPageNumber: any;
 	@Input() metricsItemID: string;
 	@Input() metricsItemCategory: string;
 	@Input() isDisabled = false;
 	@Input() isRegular = false;
-	@Input() btnHeight = false;
+	@Input() btnHeight: any = false;
 	@Input() isGradient = false;
 	@Input() buttonColor: string;
 	@Input() title: string;
@@ -40,7 +40,8 @@ export class UiButtonComponent implements OnInit {
 	@Input() tabIndex = 0; // please use this one if you need special tabindex.
 	@Input() isLoading = false;
 
-	constructor() { }
+	constructor() { 
+	}
 
 	onClickButton(event) {
 		window.getSelection().empty();

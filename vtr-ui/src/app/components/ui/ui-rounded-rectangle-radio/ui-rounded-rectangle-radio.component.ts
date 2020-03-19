@@ -12,7 +12,7 @@ export class UiRoundedRectangleRadioComponent implements OnInit, OnChanges, Afte
 	@Input() group: string;
 	@Input() label: string;
 	@Input() tooltip: string;
-	@Input() value: string;
+	@Input() value: any;
 	@Input() checked = false;
 	@Input() disabled = false;
 	@Input() name: string;

@@ -1,5 +1,4 @@
-import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
@@ -14,7 +13,7 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit, AfterViewInit
 	@Input() label: string;
 	@Input() tooltip: string;
 	@Input() value: string;
-	@Input() checked: boolean;
+	@Input() checked = false;
 	@Input() disabled = false;
 	@Input() theme: string;
 	@Input() processIcon = false;
@@ -38,22 +37,28 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit, AfterViewInit
 	});
 	firstRadioButton: any;
 	lastRadioButton: any;
-	radioButtons: Array<HTMLElement> = [];
-	@ViewChild('radioButton', { static: false }) radioButton: ElementRef<HTMLElement>;
+	radioButtons: Array<any> = [];
 	selectedRadioButton: any;
-	noRadioButtonSelected = true;
-	constructor(private translate: TranslateService, private logger: LoggerService) {
+	noRadioButtonSelected: boolean;
+	private radioButton: ElementRef<HTMLElement>;
 
+	// once radio button is visible then execute logic
+	@ViewChild('radioButton', { static: false }) set content(element: ElementRef) {
+		if (element) {
+			this.radioButton = element;
+			this.setRadioButtons();
+		}
 	}
 	ngAfterViewInit(): void {
 		this.setRadioButtons(); // Set up radio buttons first , last etc and if none selected,set tabindex to first element
 	}
 
-	ngOnInit() {
-		// this.translate.stream(this.label).subscribe((result: string) => {
-		// 	this.label = result;
-		// });
+	constructor(
+		private logger: LoggerService
+	) { }
 
+	ngOnInit() {
+		// this.setRadioButtons(); // Set up radio buttons first , last etc and if none selected,set tabindex to first element
 	}
 
 	onChange(event) {

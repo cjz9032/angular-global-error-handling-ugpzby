@@ -250,6 +250,10 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		this.getSelfSelectStatus();
 		this.canShowDccDemo$ = this.dccService.canShowDccDemo();
 		this.launchProtocol();
+		this.hideTitleInCommercial();
+	}
+
+	private hideTitleInCommercial(){
 		this.selfselectService.getConfig().then((re)=>{
 			this.hideTitle = re.usageType === SegmentConst.Commercial;
 		})
@@ -424,7 +428,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 				} else {
 					const msg = `Performance: Dashboard page not have this language contents, ${callCmsUsedTime}ms`;
 					this.logger.info(msg);
-					this.fetchContent('en');
+					// this.fetchContent('en'); if cms server return nothing, it would retry infinitely
 				}
 			},
 			(error) => {
@@ -910,6 +914,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 					if (this.isOnline) {
 						this.fetchContent();
 					}
+					this.hideTitleInCommercial();
 					break;
 				default:
 					break;
