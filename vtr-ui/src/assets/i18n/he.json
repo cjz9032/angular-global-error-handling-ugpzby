@@ -1051,7 +1051,7 @@
                     "NotGood": "<b>הסוללה אינה במצב תקין.</b>",
                     "NotSupportACAdapter": "<span dir='rtl'><b>מתאם ה-AC אינו נתמך.</b></span>",
                     "LimitedACAdapterSupport": "<b>מתאם AC לא יכול לספק מספיק חשמל.</b>",
-                    "MissingDriver": "<b>מנהל התקן Lenovo Power Manager</b> אינו מותקן או שאינו פועל כראוי. הפעילו את Windows Update כדי להתקין את מנהל ההתקן העדכני ביותר. ניתן גם להתקין את מנהל ההתקן מ <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">כאן</a>. לאחר ההתקנה, הפעילו מחדש את המחשב.",
+                    "MissingDriver": "<b>מנהל התקן Lenovo Power Manager</b> אינו מותקן או שאינו פועל כראוי. יש להפעיל את Windows Update או להתקין את התוכנית באופן ידני <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">מכאן</a>. לאחר ההתקנה, הפעילו מחדש את המחשב.",
                     "StoreLimitation": "<b>הסוללה יכולה לאחסן רק {{value}}% מתוך</b> קיבולת הטעינה המקורית שלה.",
                     "HighTemperature": "<b>הפריקה</b> נעצרה מכיוון <b>שטמפרטורת הסוללה גבוהה מדי.</b>",
                     "TrickleCharge": "הסוללה <b>התרוקנה לחלוטין</b> ויש לטעון אותה מחדש. התהליך עשוי לארוך עשר שעות או יותר.",
@@ -1330,6 +1330,12 @@
                         "description": "בחרו תוכנית צריכת חשמל כדי לשלוט בביצועי המחשב, בטמפרטורת המערכת ובצריכת החשמל.",
                         "currentPowerPlan": {
                             "label": "תוכנית נוכחית"
+                        },
+                        "profile": {
+                            "title": "PLAN PROFILE:",
+                            "performance": "Max performance:",
+                            "temperature": "Max system temperature:",
+                            "usage": "Max power usage:"
                         }
                     }
                 },
@@ -2438,7 +2444,6 @@
                 "title": "תקינות האבטחה",
                 "deviceName1": "יישומים ממקורות מהימנים",
                 "deviceName2": "מצב מפתח",
-                "deviceName3": "הודעת UAC",
                 "deviceName4": "זמינות אנטי-וירוס",
                 "deviceName5": "הצפנת כונן קשיח",
                 "deviceName6": "זמינות חומת אש",
