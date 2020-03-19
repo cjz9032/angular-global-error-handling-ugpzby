@@ -1,6 +1,6 @@
 {
   "name": "vtr-ui",
-  "version": "1.4.6",
+  "version": "1.4.7",
   "scripts": {
     "build:dev": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build -c=dev",
     "build:dev1": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng test --watch=false --browsers=ChromeHeadless --code-coverage",
@@ -26,7 +26,7 @@
     "wba": "ng build --prod --stats-json & webpack-bundle-analyzer dist/vtr-ui/stats.json",
     "sme": "ng build & source-map-explorer 'dist/vtr-ui/*.js'",
     "mock-serve": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng serve -c=mock --watch",
-    "remove-console": "node node_modules/jscodeshift/bin/jscodeshift.js -t prebuild/removeConsole.js --extensions=ts --parser=ts src --ignore-pattern=src/app/services/logger/logger.service.ts",
+    "remove-console": "npx jscodeshift -t prebuild/removeConsole.js --extensions=ts --parser=ts src --ignore-config=./prebuild/jscodeshiftIgnore",
     "detect-console": "node prebuild/detectConsole.js"
   },
   "private": true,

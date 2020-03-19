@@ -29,7 +29,7 @@ export class CMSService {
 	segment: string; // VAN-5872, server switch feature
 	localInfo: any;
 	defaultInfo = { Lang: 'en', GEO: 'us', OEM: 'Lenovo', OS: 'Windows', Segment: 'Consumer', Brand: 'Lenovo' };
-
+	fetchRequestMap = {};
 	constructor(
 		private commsService: CommsService,
 		private vantageShellService: VantageShellService,
@@ -93,19 +93,13 @@ export class CMSService {
 			return new Observable(subscriber => {
 				this.localInfoService.getLocalInfo().then(result => {
 					this.localInfo = result;
-					this.requestCMSContent(queryParams, this.localInfo).subscribe((result2: any) => {
-						subscriber.next(result2);
-					});
-				}).catch(e => {
-					this.requestCMSContent(queryParams, this.defaultInfo).subscribe((result2: any) => {
-						subscriber.next(result2);
-					});
+				}).finally(()=>{
+					this.requestCMSContent(queryParams, this.localInfo || this.defaultInfo ).subscribe(subscriber);
 				});
 			});
 		} else {
 			return this.requestCMSContent(queryParams, this.localInfo);
 		}
-
 	}
 
 	requestCMSContent(queryParams, locInfo) {
@@ -123,40 +117,38 @@ export class CMSService {
 
 		return new Observable(subscriber => {
 			if (this.commonService.isOnline) {
-				this.getCMSContent(CMSOption, subscriber);
+				this.getCMSContent(CMSOption).then(response => {
+					subscriber.next(response.Results);
+				}).catch(ex => {
+					subscriber.error(ex);
+				});
 			} else {
 				this.commonService.notification.subscribe((notification: AppNotification) => {
 					if (notification && notification.type === NetworkStatus.Online) {
-						this.getCMSContent(CMSOption, subscriber);
+						this.getCMSContent(CMSOption).then(response => {
+							subscriber.next(response.Results);
+						}).catch(ex => {
+							subscriber.error(ex);
+						});
 					}
 				});
 			}
 		});
 	}
 
-	getCMSContent(CMSOption: any, subscriber: any) {
-		this.commsService.endpointGetCall(
-			/*'/api/v1/features', Object.assign(defaults, queryParams), {}*/
-			'/api/v1/features', CMSOption, httpOptions// VAN-5872, server switch feature
-		).subscribe((response: any) => {
-			/* this.devService.writeLog('getCMSContent ', JSON.stringify(response.Results)); */
-			this.filterCMSContent(response.Results).then(
-				(result) => {
-					// this.devService.writeLog('getCMSContent::filterCMSContent::result', JSON.stringify(result));
-					subscriber.next(result);
-					subscriber.complete();
-				},
-				(reason) => {
-					// this.devService.writeLog('getCMSContent::error', reason);
-					// console.log('getCMSContent::error', reason);
-					subscriber.error(reason);
-				}
-			);
-		},
-			error => {
-				subscriber.error(error);
-			}
-		);
+	async getCMSContent(CMSOption: any) {
+		const requestKey = CMSOption ? JSON.stringify(CMSOption) : 'default_request_key';
+		if (!this.fetchRequestMap[requestKey]) {
+			this.fetchRequestMap[requestKey] = this.commsService.endpointGetCall(
+				'/api/v1/features', CMSOption, httpOptions// VAN-5872, server switch feature
+			).toPromise();
+		};
+
+		try {
+			return await this.fetchRequestMap[requestKey];
+		} finally {
+			this.fetchRequestMap[requestKey] = null;
+		}
 	}
 
 	fetchCMSArticleCategories(queryParams) {
@@ -210,17 +202,15 @@ export class CMSService {
 	}
 
 
-	fetchCMSArticles(queryParams, returnAll = false) {
+	async fetchCMSArticles(queryParams, returnAll = false) {
 		if (!this.localInfo) {
-			return this.localInfoService.getLocalInfo().then(result => {
-				this.localInfo = result;
-				return this.requestCMSArticles(queryParams, this.localInfo);
-			}).catch(e => {
-				return this.requestCMSArticles(queryParams, this.defaultInfo);
-			});
-		} else {
-			return this.requestCMSArticles(queryParams, this.localInfo);
+			try {
+				this.localInfo = await this.localInfoService.getLocalInfo();
+			} catch (ex) {}
 		}
+
+		const localInfo = this.localInfo || this.defaultInfo;
+		return this.requestCMSArticles(queryParams, localInfo);
 	}
 
 
@@ -262,18 +252,15 @@ export class CMSService {
 	}
 
 
-	fetchCMSArticle(articleId, queryParams?) {
+	async fetchCMSArticle(articleId, queryParams?) {
 		if (!this.localInfo) {
-			return this.localInfoService.getLocalInfo().then(result => {
-				this.localInfo = result;
-				return this.requestCMSArticle(articleId, this.localInfo, queryParams);
-			}).catch(e => {
-				return this.requestCMSArticle(articleId, this.defaultInfo, queryParams);
-			});
-		} else {
-			return this.requestCMSArticle(articleId, this.localInfo, queryParams);
+			try {
+				this.localInfo = await this.localInfoService.getLocalInfo();
+			} catch (ex) {}
 		}
 
+		const localInfo = this.localInfo || this.defaultInfo;
+		return this.requestCMSArticle(articleId, localInfo, queryParams);
 	}
 
 	requestCMSArticle(articleId, locInfo, queryParams?) {
