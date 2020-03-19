@@ -400,12 +400,12 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	}
 
 	private fetchCMSContent(lang?: string) {
-		// const cmsLang = this.dashboardService.cmsLanguageCache;
-		// const cmsContent = this.dashboardService.cmsContentCache;
-		// if (cmsLang === lang && cmsContent?.length > 0) {
-		// 	this.populateCMSContent(this.dashboardService.cmsContentCache);
-		// 	return;
-		// }
+		const cmsLang = this.dashboardService.cmsLanguageCache;
+		const cmsContent = this.dashboardService.cmsContentCache;
+		if (cmsLang === lang && cmsContent?.length > 0) {
+			this.populateCMSContent(this.dashboardService.cmsContentCache);
+			return;
+		}
 
 		const callCmsStartTime: any = new Date();
 		let queryOptions: any = {
