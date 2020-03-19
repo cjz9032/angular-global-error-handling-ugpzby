@@ -27,7 +27,7 @@ import { SecureMath } from '@lenovo/tan-client-bridge';
 import { DccService } from 'src/app/services/dcc/dcc.service';
 import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
-import {SelfSelectService,SegmentConst} from 'src/app/services/self-select/self-select.service';
+import { SelfSelectService, SegmentConst } from 'src/app/services/self-select/self-select.service';
 interface IConfigItem {
 	id: string;
 	template: string;
@@ -175,7 +175,6 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		private router: Router,
 		public dashboardService: DashboardService,
 		public qaService: QaService,
-		private modalService: NgbModal,
 		private config: NgbModalConfig,
 		public commonService: CommonService,
 		public deviceService: DeviceService,
@@ -194,7 +193,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		private adPolicyService: AdPolicyService,
 		private sanitizer: DomSanitizer,
 		public dccService: DccService,
-		private selfselectService:SelfSelectService
+		private selfselectService: SelfSelectService
 	) {
 	}
 
@@ -253,8 +252,8 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		this.hideTitleInCommercial();
 	}
 
-	private hideTitleInCommercial(){
-		this.selfselectService.getConfig().then((re)=>{
+	private hideTitleInCommercial() {
+		this.selfselectService.getConfig().then((re) => {
 			this.hideTitle = re.usageType === SegmentConst.Commercial;
 		})
 	}
@@ -401,6 +400,13 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	}
 
 	private fetchCMSContent(lang?: string) {
+		const cmsLang = this.dashboardService.cmsLanguageCache;
+		const cmsContent = this.dashboardService.cmsContentCache;
+		if (cmsLang === lang && cmsContent?.length > 0) {
+			this.populateCMSContent(this.dashboardService.cmsContentCache);
+			return;
+		}
+
 		const callCmsStartTime: any = new Date();
 		let queryOptions: any = {
 			Page: 'dashboard'
@@ -417,13 +423,10 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 				const callCmsEndTime: any = new Date();
 				const callCmsUsedTime = callCmsEndTime - callCmsStartTime;
 				if (response && response.length > 0) {
+					this.dashboardService.cmsContentCache = response;
+					this.dashboardService.cmsLanguageCache = lang;
 					this.logger.info(`Performance: Dashboard page get cms content, ${callCmsUsedTime}ms`);
-					this.getCMSHeroBannerItems(response);
-					this.getCMSCardContentB(response);
-					this.getCMSCardContentC(response);
-					this.getCMSCardContentD(response);
-					this.getCMSCardContentE(response);
-					this.getCMSCardContentF(response);
+					this.populateCMSContent(response);
 
 				} else {
 					const msg = `Performance: Dashboard page not have this language contents, ${callCmsUsedTime}ms`;
@@ -435,6 +438,15 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 				this.logger.info('fetchCMSContent error', error);
 			}
 		);
+	}
+
+	private populateCMSContent(response: any) {
+		this.getCMSHeroBannerItems(response);
+		this.getCMSCardContentB(response);
+		this.getCMSCardContentC(response);
+		this.getCMSCardContentD(response);
+		this.getCMSCardContentE(response);
+		this.getCMSCardContentF(response);
 	}
 
 	getHeroBannerDemoItems() {

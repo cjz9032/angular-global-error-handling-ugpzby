@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.7](https://bitbucket.tc.lenovo.com///compare/v1.4.6...v1.4.7) (2020-03-19)
+
+
+### Features
+
+* **device health:** add WindowsVersion service, hide sideload if 20H1 ([599c018](https://bitbucket.tc.lenovo.com///commit/599c018431496d5fc9be2a0277fafe1f4b5515dd))
+* **device health:** hide the bar, get regex match correctly ([033d003](https://bitbucket.tc.lenovo.com///commit/033d0032c3a723d5ff5014bc97e73dd0bee44f00))
+* **environment:** update CMS API root for dev ([9661672](https://bitbucket.tc.lenovo.com///commit/9661672b7f8e54011bf1d17cc736a0efe059ac6e))
+
 ### [1.4.6](https://bitbucket.tc.lenovo.com///compare/v1.4.5...v1.4.6) (2020-03-18)
 
 ### [1.4.5](https://bitbucket.tc.lenovo.com///compare/v1.4.4...v1.4.5) (2020-03-17)
