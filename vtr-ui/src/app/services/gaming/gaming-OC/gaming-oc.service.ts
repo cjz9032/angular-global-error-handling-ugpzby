@@ -1,6 +1,8 @@
 import { VantageShellService } from './../../vantage-shell/vantage-shell.service';
 import { LoggerService } from '../../logger/logger.service';
+import { Injectable } from '@angular/core';
 
+@Injectable()
 export class GamingOCService {
   private gamingOverClock: any;
   public isShellAvailable = false;
@@ -8,11 +10,11 @@ export class GamingOCService {
   constructor(
 	shellService: VantageShellService,
 	private logger: LoggerService
-  ) { 
-    this.gamingOverClock = shellService.getGamingThermalMode();
-    if(this.gamingOverClock) {
-      this.isShellAvailable = true;
-    }
+  ) {
+	this.gamingOverClock = shellService.getGamingThermalMode();
+	if(this.gamingOverClock) {
+		this.isShellAvailable = true;
+	}
   }
 
 	getPerformanceOCSetting(): Promise<any> {

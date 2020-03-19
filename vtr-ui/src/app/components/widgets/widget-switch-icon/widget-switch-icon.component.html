@@ -6,7 +6,7 @@
 	attr.aria-label="qs-{{switchId}}-switch-icon"
 	vtrMetrics
 	metricsEvent="featureClick"
-	[metricsValue]="!value"
+	[metricsValue]=!value
 	[metricsItem]="metricsItem">
 	<button class="switch-container"
 		[ngClass]="[(value && !isLoading) ? 'checked' : 'unchecked', disable ? 'disable-container' : '']"

@@ -40,7 +40,7 @@
 									metricsEvent="ItemClick"
 									metricsParent="Device.SmartAssist"
 									metricsItem="ActiveProtectionSystem.Sensitivity.Slider"
-									metricsValue= "apsSensitivity"
+									metricsValue= "{{apsSensitivity}}"
 									>
 								</vtr-ui-aps-slider>
 							</div>
@@ -55,7 +55,7 @@
 									[metricsEvent]="'ItemClick'"
 									[metricsParent]="'Device.SmartAssist'"
 									[metricsItem]="'ActiveProtectionSystem.AutoDisable'"
-									[metricsValue]="repeatShock">
+									>
 									<span [ngClass]="{'disabled': !apsStatus}"
 										id="aps-toggle-checkbox-text"
 										attr.aria-label="aps-toggle-checkbox-text">
@@ -100,7 +100,7 @@
 									metricsEvent="FeatureClick"
 									metricsParent="Device.SmartAssist"
 									metricsItem="ActiveProtectionSystem.ManualOverride.Dropdown"
-									[metricsValue]="manualSnoozeTime">
+									>
 								</vtr-ui-dropdown>
 							</section>
 							<section class="col-sm-5">

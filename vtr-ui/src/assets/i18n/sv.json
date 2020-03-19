@@ -1051,7 +1051,7 @@
                     "NotGood": "<b>Batteriet är inte i gott skick.</b>",
                     "NotSupportACAdapter": "<b>Nätadaptern stöds inte.</b>",
                     "LimitedACAdapterSupport": "<b>Nätadaptern ger inte tillräcklig strömförsörjning.</b>",
-                    "MissingDriver": "<b>Drivrutinen för Lenovo Power Manager</b> har inte installerats eller fungerar inte korrekt. Kör Windows Update för att installera den senaste drivrutinen. Du kan även installera drivrutinen <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">härifrån</a>. Starta om datorn efter installationen.",
+                    "MissingDriver": "<b>Drivrutinen för Lenovo Power Manager</b> har inte installerats eller fungerar inte korrekt. Kör Windows Update eller installera programmet manuellt <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">här</a>. Starta om datorn efter installationen.",
                     "StoreLimitation": "<b>Batteriet kan endast lagra {{value}}% av</b> sin ursprungliga laddningskapacitet.",
                     "HighTemperature": "<b>Urladdning</b> har stoppats på grund av att <b>batteritemperaturen är för hög.</b>",
                     "TrickleCharge": "Batteriet var <b>helt urladdat</b> och måste laddas. Det kan ta tio timmer eller mer.",
@@ -1330,6 +1330,12 @@
                         "description": "Välj ett energischema för att styra datorprestanda, systemtemperatur och energiförbrukning.",
                         "currentPowerPlan": {
                             "label": "AKTUELLT SCHEMA"
+                        },
+                        "profile": {
+                            "title": "PLAN PROFILE:",
+                            "performance": "Max performance:",
+                            "temperature": "Max system temperature:",
+                            "usage": "Max power usage:"
                         }
                     }
                 },
@@ -2438,7 +2444,6 @@
                 "title": "Säkerhetstillstånd",
                 "deviceName1": "Appar från betrodda källor",
                 "deviceName2": "Utvecklarläge",
-                "deviceName3": "UAC-meddelande",
                 "deviceName4": "Tillgång till antivirusprogram",
                 "deviceName5": "Hårddiskkryptering",
                 "deviceName6": "Tillgång till brandvägg",

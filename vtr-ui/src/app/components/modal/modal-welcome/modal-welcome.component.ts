@@ -156,14 +156,19 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 				forced: true
 			});
 
-			const toolbarSettingData = {
-				ItemType: 'SettingUpdate',
-				SettingName: 'Enable Lenovo Vantage Toolbar',
-				SettingValue: this.vantageToolbar ? 'Enabled' : 'Disabled',
-				SettingParent: 'WelcomePage'
-			};
+			if(this.vantageToolbarStatus && this.vantageToolbarStatus.available) {
+				const toolbarSettingData = {
+					ItemType: 'SettingUpdate',
+					SettingName: 'Enable Lenovo Vantage Toolbar',
+					SettingValue: this.vantageToolbar ? 'Enabled' : 'Disabled',
+					SettingParent: 'WelcomePage'
+				};
 
-			this.metrics.sendAsync(toolbarSettingData);
+				this.metrics.sendAsync(toolbarSettingData);
+			}
+			else {
+				this.logger.info(`Won't send Vantage toolbar metric for it is not available.`);
+			}
 
 			const usageData = {
 				ItemType: 'SettingUpdate',
