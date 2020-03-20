@@ -122,7 +122,7 @@ export class HandleProtocolService {
 	const semantic = url.pathname;
 	const query = url.search;
 
-	if (!schema || schema !== this.vantage3xSchema || !semantic) return '';
+	if (schema !== this.vantage3xSchema || !semantic) return '';
 
 	const path: string | undefined = this.semanticToPath[semantic];
 	if (!path) return '';
@@ -138,7 +138,7 @@ export class HandleProtocolService {
 	const query = url.search;
 	const queryParams = url.searchParams;
 
-	if (!schema || !this.backwardCompatibilitySchemas.includes(schema) || pathName !== 'PARAM') return '';
+	if (!this.backwardCompatibilitySchemas.includes(schema) || pathName !== 'PARAM') return '';
 
 	const featureId: string | null = queryParams.get('featureId');
 	if (featureId) {
