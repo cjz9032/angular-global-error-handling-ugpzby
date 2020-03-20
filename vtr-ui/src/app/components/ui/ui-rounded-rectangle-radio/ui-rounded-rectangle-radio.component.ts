@@ -47,7 +47,7 @@ export class UiRoundedRectangleRadioComponent implements OnInit, OnChanges, Afte
 			this.setRadioButtons();
 		}
 	}
-
+	radioLabel = 'radio.';
 	constructor(private logger: LoggerService) {
 	}
 
@@ -84,12 +84,26 @@ export class UiRoundedRectangleRadioComponent implements OnInit, OnChanges, Afte
 			this.customKeyEvent.emit({ customeEvent: AppEvent.RIGHT });
 		}
 	}
+	changeOnKeyPress(radio: HTMLInputElement) {
+		if (!this.checked) {
+			this.checked = !this.checked;
+			radio.value = String(this.checked);
+			let event = { type: 'change', target: radio };
+			this.onChange(event);
+			const metricsData = {
+				itemParent: 'Device.MyDeviceSettings',
+				ItemType: 'FeatureClick',
+				itemName: this.radioLabel + this.label,
+				value: this.checked
+			};
+			this.metrics.sendMetrics(metricsData);
+		}
+	}
+
+
 	navigateByKeys($event, radio) {
 		this.setRadioButtons();
 		switch ($event.keyCode) {
-			case this.keyCode.TAB:
-				// this.checkOnFocus(event, radio);
-				break;
 			case this.keyCode.SPACE:
 			case this.keyCode.RETURN:
 				this.setChecked(this.radioButton.nativeElement, true);
@@ -114,31 +128,41 @@ export class UiRoundedRectangleRadioComponent implements OnInit, OnChanges, Afte
 
 	}
 
-	private setChecked(currentItem, selectItem: boolean) {
-		let currentRadio = [];
-		try {
-			currentRadio = currentItem.querySelectorAll('input[type="radio"]');
-		} catch (error) {
-			currentRadio = currentItem.nativeElement.querySelectorAll('input[type="radio"]');
-		}
-
+	private setChecked(currentRadioButton: HTMLElement, selectItem: boolean) {
+		let currentRadio: any;
+		currentRadio = currentRadioButton.querySelectorAll('input[type="radio"]');
 		try {
 			if (selectItem && currentRadio && !currentRadio[0].checked && !currentRadio[0].disabled) {
-				this.radioButtons.forEach(radioButton => {
-					radioButton.removeAttribute('aria-checked');
-					radioButton.setAttribute('aria-checked', 'false');
-				});
-				currentItem.setAttribute('aria-checked', 'true');
-				currentRadio[0].click();
+				try {
+					this.radioButtons.forEach(radioButton => {
+						radioButton.removeAttribute('aria-checked');
+						radioButton.setAttribute('aria-checked', 'false');
+					});
+					currentRadioButton.removeAttribute('aria-checked');
+					currentRadioButton.setAttribute('aria-checked', 'true');
+					currentRadio[0].click();
+				}
+				catch (error) {
+					this.logger.exception('setChecked error occurred while selecting the current element ::', error);
+				}
+			}
+			else {
+				try {
+					if (!selectItem) {
+						// this.setRadioTabIndex(currentRadioButton);
+						currentRadioButton.focus();
+					}
+
+				}
+				catch (error) {
+					this.logger.exception('setChecked error occurred while focusing currentRadioButton only::', error);
+				}
 			}
 		}
 		catch (error) {
 			this.logger.exception('setChecked error occurred ::', error);
-
 		}
 
-		this.setRadioTabIndex(currentItem);
-		currentItem.focus();
 	}
 
 	private setRadioTabIndex(currentItem) {
@@ -213,15 +237,15 @@ export class UiRoundedRectangleRadioComponent implements OnInit, OnChanges, Afte
 			});
 
 			//focus on first non disabled element if not selected any radio items
-			if (this.noRadioButtonSelected && this.firstRadioButton !== undefined
-				&& (this.firstRadioButton.tabIndex || this.firstRadioButton.tabIndex !== 0)
-			) {
-				this.setRadioTabIndex(this.firstRadioButton.nativeElement);
-			}
-			else if (!this.noRadioButtonSelected && this.selectedRadioButton !== undefined
-				&& (this.selectedRadioButton.tabIndex || this.selectedRadioButton.tabIndex !== 0)) {
-				this.setRadioTabIndex(this.selectedRadioButton.nativeElement);
-			}
+			/* 	if (this.noRadioButtonSelected && this.firstRadioButton !== undefined
+					&& (this.firstRadioButton.tabIndex || this.firstRadioButton.tabIndex !== 0)
+				) {
+					this.setRadioTabIndex(this.firstRadioButton.nativeElement);
+				}
+				else if (!this.noRadioButtonSelected && this.selectedRadioButton !== undefined
+					&& (this.selectedRadioButton.tabIndex || this.selectedRadioButton.tabIndex !== 0)) {
+					this.setRadioTabIndex(this.selectedRadioButton.nativeElement);
+				} */
 		} catch (error) {
 			this.logger.exception('setRadioButtons error occurred ::', error);
 		}
