@@ -6,6 +6,7 @@ import { CommonService } from '../common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { PowerPlan } from 'src/app/data-models/dpm/power-plan.model';
 import { map, filter } from 'rxjs/operators';
+import { LoggerService } from '../logger/logger.service';
 @Injectable({ providedIn: 'root' })
 export class PowerDpmService implements OnDestroy {
 
@@ -132,7 +133,9 @@ export class PowerDpmService implements OnDestroy {
 	// 		},]
 	// 	}]
 	// };
+
 	constructor(
+		private loggerService: LoggerService,
 		private shellService: VantageShellService,
 		private commonService: CommonService) {
 		this.devicePowerDPM = this.shellService.getPowerDPM();
@@ -236,6 +239,7 @@ export class PowerDpmService implements OnDestroy {
 		if (this.devicePowerDPM) {
 			const requestId = new Date().getTime();
 			this.currentRequestId = requestId;
+			this.loggerService.info("DPM getAllPowerPlans, requestId:" + requestId);
 			this.devicePowerDPM.getAllPowerPlans().then(response => {
 				// response = this.mockResponse;
 				this.resolveCommonResponse(response, requestId);
@@ -246,8 +250,9 @@ export class PowerDpmService implements OnDestroy {
 		if (this.devicePowerDPM) {
 			const requestId = new Date().getTime();
 			this.currentRequestId = requestId;
+			this.loggerService.info("DPM setPowerButton, requestId:" + requestId);
 			return this.devicePowerDPM.setPowerButton(action).then(response => {
-				// response = this.mockSetResponse;
+				// response = this.mockResponse;
 				this.resolveCommonResponse(response, requestId);
 			});
 		}
@@ -257,6 +262,7 @@ export class PowerDpmService implements OnDestroy {
 		if (this.devicePowerDPM) {
 			const requestId = new Date().getTime();
 			this.currentRequestId = requestId;
+			this.loggerService.info("DPM setSignInOption, requestId:" + requestId);
 			return this.devicePowerDPM.setSignInOption(option).then(response => {
 				// response = this.mockResponse;
 				this.resolveCommonResponse(response, requestId);
@@ -268,6 +274,7 @@ export class PowerDpmService implements OnDestroy {
 		if (this.devicePowerDPM) {
 			const requestId = new Date().getTime();
 			this.currentRequestId = requestId;
+			this.loggerService.info("DPM setTurnoffDisplay, requestId:" + requestId);
 			return this.devicePowerDPM.setTurnoffDisplay(option).then(response => {
 				// response = this.mockResponse;
 				this.resolveCommonResponse(response, requestId);
@@ -278,6 +285,7 @@ export class PowerDpmService implements OnDestroy {
 		if (this.devicePowerDPM) {
 			const requestId = new Date().getTime();
 			this.currentRequestId = requestId;
+			this.loggerService.info("DPM setTurnoffHDD, requestId:" + requestId);
 			return this.devicePowerDPM.setTurnoffHDD(option).then(response => {
 				// response = this.mockResponse;
 				this.resolveCommonResponse(response, requestId);
@@ -288,6 +296,7 @@ export class PowerDpmService implements OnDestroy {
 		if (this.devicePowerDPM) {
 			const requestId = new Date().getTime();
 			this.currentRequestId = requestId;
+			this.loggerService.info("DPM setSleepAfter, requestId:" + requestId);
 			return this.devicePowerDPM.setSleepAfter(option).then(response => {
 				// response = this.mockResponse;
 				this.resolveCommonResponse(response, requestId);
@@ -298,6 +307,7 @@ export class PowerDpmService implements OnDestroy {
 		if (this.devicePowerDPM) {
 			const requestId = new Date().getTime();
 			this.currentRequestId = requestId;
+			this.loggerService.info("DPM setHibernateAfter, requestId:" + requestId);
 			return this.devicePowerDPM.setHibernateAfter(option).then(response => {
 				// response = this.mockResponse;
 				this.resolveCommonResponse(response, requestId);
@@ -310,11 +320,13 @@ export class PowerDpmService implements OnDestroy {
 			this.allPowerPlansCache.activePowerPlan = planName;
 		}
 		if (this.allPowerPlansSubject) {
+			this.loggerService.info("DPM setCurrentPowerPlan notify UI to refresh by cache, planName:" + planName);
 			this.allPowerPlansSubject.next(this.allPowerPlansCache);
 		}
 		if (this.devicePowerDPM) {
 			const requestId = new Date().getTime();
 			this.currentRequestId = requestId;
+			this.loggerService.info("DPM setCurrentPowerPlan, requestId:" + requestId);
 			return this.devicePowerDPM.setCurrentPowerPlan(planName).then(response => {
 				// response = this.mockResponse;
 				this.resolveCommonResponse(response, requestId);
@@ -325,6 +337,7 @@ export class PowerDpmService implements OnDestroy {
 	private resolveCommonResponse(response: any, requestId: number) {
 		if (response && this.currentRequestId === requestId) {
 			if (this.allPowerPlansSubject) {
+				this.loggerService.info("DPM resolveCommonResponse notify UI to refresh, requestId:" + requestId + ",currentRequestId:" + this.currentRequestId);
 				this.allPowerPlansSubject.next(response);
 			}
 			this.updateCache(response);
