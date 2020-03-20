@@ -14,8 +14,8 @@ describe('QaService', () => {
 	let service: QaService;
 	let translate: TranslateService;
 	let http: HttpTestingController;
-	const TRANSLATIONS_EN = require('assets/i18n/en.json');
-	const TRANSLATIONS_FR = require('assets/i18n/fr.json');
+	const TRANSLATIONS_EN =  'assets/i18n/en.json';
+	const TRANSLATIONS_FR = 'assets/i18n/fr.json';
 
 	let imagePath = 'assets/images/qa';
 	let qas: QA[] = [
