@@ -1051,7 +1051,7 @@
                     "NotGood": "<b>Batteriet er ikke i god stand.</b>",
                     "NotSupportACAdapter": "<b>Strømadapteret støttes ikke.</b>",
                     "LimitedACAdapterSupport": "<b>STRØM adapteren kan ikke gi nok strøm.</b>",
-                    "MissingDriver": "<b>Driveren for Lenovo Power Manager</b> er ikke installert, eller virker ikke som den skal. Kjør Windows Update for å installere den nyeste driveren. Du kan også installere driveren <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">herfra</a>. Etter installeringen må du starte datamaskinen på nytt.",
+                    "MissingDriver": "<b>Driveren for Lenovo Power Manager</b> er ikke installert, eller virker ikke som den skal. Kjør Windows Update, eller installer den manuelt fra <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">her</a>. Etter installeringen må du starte datamaskinen på nytt.",
                     "StoreLimitation": "<b>Batteriet kan bare lagre {{value}}% av</b> opprinnelig full ladekapasitet.",
                     "HighTemperature": "<b>Utladingen</b> har stoppet fordi <b>batteritemperaturen er for høy.</b>",
                     "TrickleCharge": "Batteriet ble <b>helt utladet</b> og må lades opp på nytt. Dette kan ta ti timer eller mer.",
@@ -1330,6 +1330,12 @@
                         "description": "Velg en strømplan for å styre datamaskinens ytelse, systemets temperatur og strømbruk.",
                         "currentPowerPlan": {
                             "label": "GJELDENDE PLAN"
+                        },
+                        "profile": {
+                            "title": "PLAN PROFILE:",
+                            "performance": "Max performance:",
+                            "temperature": "Max system temperature:",
+                            "usage": "Max power usage:"
                         }
                     }
                 },
@@ -2438,7 +2444,6 @@
                 "title": "Sikkerhetstilstand",
                 "deviceName1": "Apper fra klarerte kilder",
                 "deviceName2": "Utviklermodus",
-                "deviceName3": "UAC-varsling",
                 "deviceName4": "Antivirus-tilgjengelighet",
                 "deviceName5": "Koding av harddisk",
                 "deviceName6": "Tilgjengelighet av brannmur",
@@ -3508,7 +3513,8 @@
     "notification": {
         "menu": {
             "security": "Visste du dette? Selv om du ikke har installert antivirusprogramvare, leverer vi fortsatt grunnleggende sikkerhetsbeskyttelse for enheten din.",
-            "connectedHomeSecurity": "Få overvåking og varsler i sanntid om nettverkssikkerheten hjemme. Du er den første som får beskjed om noen av smartenhetene utsettes for et sikkerhetsangrep."
+            "connectedHomeSecurity": "Få overvåking og varsler i sanntid om nettverkssikkerheten hjemme. Du er den første som får beskjed om noen av smartenhetene utsettes for et sikkerhetsangrep.",
+            "hardwareScan": "Nå kan du få tilstandsstatusen til maskinvarekomponentene til systemet ditt."
         }
     },
     "appsForYou": {

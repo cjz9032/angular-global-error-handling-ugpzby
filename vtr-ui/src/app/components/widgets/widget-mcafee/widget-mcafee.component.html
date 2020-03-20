@@ -20,13 +20,11 @@
 			[linkId]="'sa-av-btn-launchmcafee'"></vtr-ui-button>
 		<vtr-ui-button *ngIf="!install"
 			linkId="sa-av-btn-getMcafee"
-			metricsEvent="FeatureClick"
-			metricsItem="getMcafee"
-			metricsParent="security.antivirus"
 			upperCaseLabel=false
 			btnHeight=true
 			[isDisabled]="isOnline === false"
-			[href]="common.urlGetMcAfee"
+			(click)="common.openMcAfeePurchase()"
+			[isLoading]="common.purchaseBtnIsLoading"
 			[label]="'security.antivirus.mcafee.getMacfee' | translate"
 			[upperCaseLabel]="false"></vtr-ui-button>
 	</div>

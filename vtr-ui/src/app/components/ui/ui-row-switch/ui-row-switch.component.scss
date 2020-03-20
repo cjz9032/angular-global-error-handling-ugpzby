@@ -186,6 +186,10 @@
 .smart-tooltip-list {
 	padding: 0;
 	list-style: none;
+	.custom-padding{
+		padding-right: 4px;
+		margin-top: 1px;
+	}
 	fa-icon {
 		color: $dark;
 		font-size: 0.5rem;

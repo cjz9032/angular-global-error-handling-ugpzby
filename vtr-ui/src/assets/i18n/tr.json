@@ -1051,7 +1051,7 @@
                     "NotGood": "<b>Pil iyi durumda değil.</b>",
                     "NotSupportACAdapter": "<b>AC bağdaştırıcısı desteklenmiyor.</b>",
                     "LimitedACAdapterSupport": "<b>AC bağdaştırıcısı yeterli güç sağlayamıyor.</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager sürücüsü</b> yüklü değil veya düzgün çalışmıyor. En son sürücüyü yüklemek için lütfen Windows Update'i çalıştırın. Sürücüyü <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">buradan</a> da yükleyebilirsiniz. Kurulumdan sonra bilgisayarınızı yeniden başlatın.",
+                    "MissingDriver": "<b>Lenovo Power Manager sürücüsü</b> yüklü değil veya düzgün çalışmıyor. Lütfen Windows Update'i çalıştırın veya <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">buradan</a> manuel olarak yükleyin. Kurulumdan sonra bilgisayarınızı yeniden başlatın.",
                     "StoreLimitation": "<b>Pil orijinal tam dolum kapasitesinin yalnızca {{value}}% kadarını</b> depolayabilir.",
                     "HighTemperature": "<b>Pil çok ısındığı için</b> <b>boşaltma</b> işlemi durduruldu.",
                     "TrickleCharge": "Pil <b>tamamen boşaldı</b> ve yeniden doldurulması gerekiyor. Doldurma işlemi on saat ya da daha fazla sürebilir.",
@@ -1330,6 +1330,12 @@
                         "description": "Bilgisayar performansını, sistem sıcaklığını ve güç kullanımını denetlemek için bir güç planı seçin.",
                         "currentPowerPlan": {
                             "label": "GEÇERLİ PLAN"
+                        },
+                        "profile": {
+                            "title": "PLAN PROFILE:",
+                            "performance": "Max performance:",
+                            "temperature": "Max system temperature:",
+                            "usage": "Max power usage:"
                         }
                     }
                 },
@@ -2438,7 +2444,6 @@
                 "title": "Güvenlik Durumu",
                 "deviceName1": "Güvenilen Kaynaklardan Uygulamalar",
                 "deviceName2": "Geliştirici Kipi",
-                "deviceName3": "UAC Bildirimi",
                 "deviceName4": "Virüsten Koruma Kullanılabilirliği",
                 "deviceName5": "Sabit Sürücü Şifrelemesi",
                 "deviceName6": "Güvenlik Duvarı Kullanılabilirliği",
@@ -3508,7 +3513,8 @@
     "notification": {
         "menu": {
             "security": "Bunu biliyor muydunuz? Kurulu bir antivirüs yazılımınız olmasa bile, cihazınız için temel güvenlik koruması sağlamaya devam ediyoruz.",
-            "connectedHomeSecurity": "Evde ağ güvenliğinizle ilgili gerçek zamanlı izleme olanağı elde edin ve uyarılar alın. Akıllı cihazlarınızdan herhangi birinin güvenlik saldırısı ile karşı karşıya olup olmadığını bilen ilk kişi siz olursunuz."
+            "connectedHomeSecurity": "Evde ağ güvenliğinizle ilgili gerçek zamanlı izleme olanağı elde edin ve uyarılar alın. Akıllı cihazlarınızdan herhangi birinin güvenlik saldırısı ile karşı karşıya olup olmadığını bilen ilk kişi siz olursunuz.",
+            "hardwareScan": "Artık sistem donanımı bileşeninizin sağlık durumunu öğrenebilirsiniz."
         }
     },
     "appsForYou": {

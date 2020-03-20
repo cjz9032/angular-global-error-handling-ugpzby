@@ -15,10 +15,6 @@
 		width: 100%;
 		overflow-x: hidden;
 		overflow-y: auto;
-		display: none;
-		&.show {
-			display: block;
-		}
 	}
 
 	.article-body {
@@ -31,10 +27,6 @@
 		width: 100%;
 		height: 100%;
 		overflow: hidden;
-		display: none;
-		&.show {
-			display: block;
-		}
 	}
 	.article-frame{
 		width: 100% !important;

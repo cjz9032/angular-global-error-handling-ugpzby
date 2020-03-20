@@ -1052,7 +1052,7 @@
                     "NotGood": "<b>电池状况不佳。</b>",
                     "NotSupportACAdapter": "<b>不支持交流电源适配器。</b>",
                     "LimitedACAdapterSupport": "<b>交流电源适配器无法提供足够的电量。</b>",
-                    "MissingDriver": "未安装 <b>Lenovo Power Manager 驱动程序</b>，或其无法正常工作。请运行 Windows 更新或者点击<a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">这里</a>安装最新的驱动程序。安装后需要重启计算机。",
+                    "MissingDriver": "未安装 <b>Lenovo Power Manager 驱动程序</b>，或其无法正常工作。请运行 Windows Update 或从<a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">此处</a>进行手动安装。安装后，重新启动计算机。",
                     "StoreLimitation": "<b>电池仅能存储其原始完全充电电量的 {{value}}%</b>。",
                     "HighTemperature": "<b>由于电池温度过高</b>，电池已停止<b>放电</b>。",
                     "TrickleCharge": "电池已<b>完全放电</b>，需要再次充电。此过程可能耗时 10 小时或更长时间。",
@@ -1330,6 +1330,12 @@
                         "description": "选择一项电源计划以控制计算机性能、系统温度及电源使用情况。",
                         "currentPowerPlan": {
                             "label": "当前计划"
+                        },
+                        "profile": {
+                            "title": "PLAN PROFILE:",
+                            "performance": "Max performance:",
+                            "temperature": "Max system temperature:",
+                            "usage": "Max power usage:"
                         }
                     }
                 },
@@ -2219,7 +2225,7 @@
         "landing": {
             "fully": "为了获得更好的服务来保护您的设备，请继续使用",
             "notFully": "要了解如何更好地保护您的设备，请开始使用",
-            "security101": "安全建议入门",
+            "security101": "安全建议贴士",
             "firewall": "防火墙",
             "pwdHealth": "密码保险箱",
             "vpnSecurity": "VPN 安全顾问",
@@ -2438,7 +2444,6 @@
                 "title": "安全性状况",
                 "deviceName1": "可信来源的应用程序",
                 "deviceName2": "开发人员模式",
-                "deviceName3": "UAC 通知",
                 "deviceName4": "病毒防护可用性",
                 "deviceName5": "硬盘加密",
                 "deviceName6": "防火墙可用性",
@@ -2555,7 +2560,7 @@
         "welcomeText7": "让我们开启元气满满的一天，{{firstName}}！",
         "welcomeText8": "要不要来一杯快乐肥宅水？",
         "welcomeText9": "今日关中事，萧何共尔忧",
-        "welcomeText10": "保持冷静，Vantage 就来了",
+        "welcomeText10": "准备好玩转Vantage了吗？",
         "welcomeText11": "Vantage 物美价廉",
         "welcomeText12": "将 Vantage 带回家",
         "welcomeText13": "吃好、睡好，起来接着玩转Vantage！",
@@ -2570,7 +2575,7 @@
         "welcomeTextWithoutUserName7": "让我们开启元气满满的一天！",
         "welcomeTextWithoutUserName8": "要不要来一杯快乐肥宅水？",
         "welcomeTextWithoutUserName9": "今日关中事，萧何共尔忧",
-        "welcomeTextWithoutUserName10": "保持冷静，Vantage 就来了",
+        "welcomeTextWithoutUserName10": "准备好玩转Vantage了吗？",
         "welcomeTextWithoutUserName11": "Vantage 物美价廉",
         "welcomeTextWithoutUserName12": "将 Vantage 带回家",
         "welcomeTextWithoutUserName13": "吃好、睡好，起来接着玩转Vantage！",
@@ -3508,7 +3513,8 @@
     "notification": {
         "menu": {
             "security": "您知道吗？即使您没有安装反病毒软件，我们仍会为您的设备提供基本的安全保护。",
-            "connectedHomeSecurity": "在家中获得有关网络安全的实时监控和警报。您将是第一个知道您的智能设备是否面临安全攻击的人。"
+            "connectedHomeSecurity": "在家中获得有关网络安全的实时监控和警报。您将是第一个知道您的智能设备是否面临安全攻击的人。",
+            "hardwareScan": "现在，让我们看看硬件是不是都正常。"
         }
     },
     "appsForYou": {

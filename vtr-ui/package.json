@@ -1,6 +1,6 @@
 {
   "name": "vtr-ui",
-  "version": "1.4.5",
+  "version": "1.4.8",
   "scripts": {
     "build:dev": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build -c=dev",
     "build:dev1": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng test --watch=false --browsers=ChromeHeadless --code-coverage",
@@ -23,12 +23,10 @@
     "release": "standard-version",
     "dev++": "npm run release && git push --follow-tags origin develop",
     "pwa": "http-server -p 4200 ./dist/vtr-ui",
-    "stats": "ng build --prod --stats-json",
-    "analyze": "webpack-bundle-analyzer dist/vtr-ui/stats.json",
-    "dev-stats": "ng build -c=dev --stats-json & webpack-bundle-analyzer dist/vtr-ui/stats.json",
-    "source": "ng build & source-map-explorer 'dist/vtr-ui/*.js'",
-    "mock-serve": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng serve --port 4200 -c=mock",
-    "remove-console": "node node_modules/jscodeshift/bin/jscodeshift.js -t prebuild/removeConsole.js --extensions=ts --parser=ts src --ignore-pattern=src/app/services/logger/logger.service.ts",
+    "wba": "ng build --prod --stats-json & webpack-bundle-analyzer dist/vtr-ui/stats.json",
+    "sme": "ng build & source-map-explorer 'dist/vtr-ui/*.js'",
+    "mock-serve": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng serve -c=mock --watch",
+    "remove-console": "npx jscodeshift -t prebuild/removeConsole.js --extensions=ts --parser=ts src --ignore-config=./prebuild/jscodeshiftIgnore",
     "detect-console": "node prebuild/detectConsole.js"
   },
   "private": true,
@@ -92,7 +90,7 @@
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "jscodeshift": "^0.7.0",
-    "karma": "~4.1.0",
+    "karma": "^4.4.1",
     "karma-chrome-launcher": "~2.2.0",
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~2.0.1",
@@ -100,7 +98,7 @@
     "protractor": "~5.4.0",
     "recursive-readdir": "^2.2.2",
     "standard-version": "7.1.0",
-    "ts-node": "~7.0.0",
+    "ts-node": "^8.7.0",
     "tslint": "^6.0.0",
     "typescript": "~3.7.5"
   },

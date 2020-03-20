@@ -1,7 +1,9 @@
 import {
 	Component,
 	OnInit,
-	Input
+	Input,
+	Output,
+	EventEmitter
 } from '@angular/core';
 import {
 	NgbModal
@@ -21,12 +23,7 @@ import {
 import {
 	SessionStorageKey
 } from 'src/app/enums/session-storage-key-enum';
-import {
-	DialogService
-} from 'src/app/services/dialog/dialog.service';
-import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { ConfigService } from 'src/app/services/config/config.service';
-import { EventTypes } from '@lenovo/tan-client-bridge';
 
 @Component({
 	selector: 'wifi-security',
@@ -43,16 +40,12 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	showMore = false;
 	hasMore: boolean;
 	locatorButtonDisable = false;
-	wsSetStateFinishEventHandler = () => {
-		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecuritySetState, 'no');
-		this.switchDisabled = false;
-	}
+	@Output() toggleChange = new EventEmitter<void>()
 
 	constructor(
 		public modalService: NgbModal,
 		private commonService: CommonService,
 		public	deviceService: DeviceService,
-		private dialogService: DialogService,
 		private configService: ConfigService
 	) {
 		super();
@@ -62,24 +55,10 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 		if (this.configService) {
 			this.isShowMore = !this.configService.showCHS;
 		}
-		if (this.data && this.data.wifiSecurity) {
-			this.data.wifiSecurity.on(EventTypes.wsSetStateFinishEvent, this.wsSetStateFinishEventHandler);
-		}
 	}
 
-	onToggleChange($event: any) {
-		if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage) === true) {
-			this.switchDisabled = true;
-			if (this.data.isLWSEnabled) {
-				this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecuritySetState, 'yes');
-				this.data.wifiSecurity.disableWifiSecurity();
-			} else {
-				this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecuritySetState, 'yes');
-				this.data.wifiSecurity.enableWifiSecurity().catch(() => {
-					this.dialogService.wifiSecurityLocationDialog(this.data.wifiSecurity);
-				});
-			}
-		}
+	noticeToggleChange() {
+		this.toggleChange.emit();
 	}
 
 	clickShowMore(): boolean {
@@ -99,15 +78,4 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 		}
 		return false;
 	}
-
-	isDisableToggle(): boolean {
-		if (this.data.isLWSEnabled === undefined) {
-			this.switchDisabled = true;
-			return true;
-		} else {
-			this.switchDisabled = false;
-			return false;
-		}
-	}
-
 }
