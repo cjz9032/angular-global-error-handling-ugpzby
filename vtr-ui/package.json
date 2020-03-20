@@ -1,6 +1,6 @@
 {
   "name": "vtr-ui",
-  "version": "1.4.7",
+  "version": "1.4.8",
   "scripts": {
     "build:dev": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build -c=dev",
     "build:dev1": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng test --watch=false --browsers=ChromeHeadless --code-coverage",
@@ -46,7 +46,7 @@
     "@fortawesome/free-regular-svg-icons": "^5.12.0",
     "@fortawesome/free-solid-svg-icons": "^5.12.0",
     "@fortawesome/pro-light-svg-icons": "^5.12.0",
-    "@lenovo/tan-client-bridge": "10.2004.0.unstablelatest",
+    "@lenovo/tan-client-bridge": "10.2004.0-alpha.5",
     "@ng-bootstrap/ng-bootstrap": "^6.0.0",
     "@ngx-translate/core": "^12.1.1",
     "@ngx-translate/http-loader": "^4.0.0",
