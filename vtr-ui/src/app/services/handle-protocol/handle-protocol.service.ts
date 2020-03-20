@@ -74,7 +74,7 @@ export class HandleProtocolService {
 	}
   }
 
-  public decodeBase64String(args: string) {
+  private decodeBase64String(args: string) {
 	try {
 		return atob(args);
 	} catch(e) {
@@ -82,7 +82,7 @@ export class HandleProtocolService {
 	}
   }
 
-  public constructURL(args: string) : URL | undefined {
+  private constructURL(args: string) : URL | undefined {
 	try {
 		return new URL(args);
 	} catch(e) {
@@ -90,7 +90,7 @@ export class HandleProtocolService {
 	}
   }
 
-  public processUrl(args: string) : string {
+  private processUrl(args: string) : string {
 	let url = this.constructURL(args);
 	if (!url) return args;
 
@@ -115,7 +115,7 @@ export class HandleProtocolService {
 	return `${homePageUrl}${newUrl}`;
   }
 
-  public convertToUrlAssumeProtocolIs3x(rawData: string) : string {
+  private convertToUrlAssumeProtocolIs3x(rawData: string) : string {
 	let url = this.constructURL(rawData);
 	if (!url) return '';
 	const schema = url.protocol;
@@ -130,7 +130,7 @@ export class HandleProtocolService {
 	return `${path}${query}`;
   }
 
-  public convertToUrlAssumeProtocolIs2x(rawData: string) : string {
+  private convertToUrlAssumeProtocolIs2x(rawData: string) : string {
 	let url = this.constructURL(rawData);
 	if (!url) return '';
 	const schema = url.protocol;
