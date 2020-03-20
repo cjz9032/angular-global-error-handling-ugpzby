@@ -32,22 +32,22 @@
 			"forArm": false,
 			"subitems": [
 				{
-				"id": "wifi-security",
-				"label": "common.menu.security.sub3",
-				"path": null,
-				"icon": null,
-				"metricsEvent": "itemClick",
-				"metricsParent": "navbar",
-				"metricsItem": "link.wifisecurity",
-				"routerLinkActiveOptions": {
-					"exact": true
-				},
-				"subitems": [],
-				"pre": [
-					"assets/images/coronet-logo-gaming.svg"
-				]
-			}
-		]
+					"id": "wifi-security",
+					"label": "common.menu.security.sub3",
+					"path": null,
+					"icon": null,
+					"metricsEvent": "itemClick",
+					"metricsParent": "navbar",
+					"metricsItem": "link.wifisecurity",
+					"routerLinkActiveOptions": {
+						"exact": true
+					},
+					"subitems": [],
+					"pre": [
+						"assets/images/coronet-logo-gaming.svg"
+					]
+				}
+			]
 		},
 		{
 			"id": "support",
@@ -310,7 +310,7 @@
 			]
 		},
 		{
-			"id": "wifi-security",
+			"id": "security",
 			"label": "common.menu.security.title",
 			"path": "security/wifi-security",
 			"icon": [
@@ -324,22 +324,22 @@
 			"forArm": false,
 			"subitems": [
 				{
-				"id": "wifi-security",
-				"label": "common.menu.security.sub3",
-				"path": null,
-				"icon": null,
-				"metricsEvent": "itemClick",
-				"metricsParent": "navbar",
-				"metricsItem": "link.wifisecurity",
-				"routerLinkActiveOptions": {
-					"exact": true
-				},
-				"subitems": [],
-				"pre": [
-					"assets/images/coronet-logo.svg"
-				]
-			}
-		]
+					"id": "wifi-security",
+					"label": "common.menu.security.sub3",
+					"path": null,
+					"icon": null,
+					"metricsEvent": "itemClick",
+					"metricsParent": "navbar",
+					"metricsItem": "link.wifisecurity",
+					"routerLinkActiveOptions": {
+						"exact": true
+					},
+					"subitems": [],
+					"pre": [
+						"assets/images/coronet-logo.svg"
+					]
+				}
+			]
 		},
 		{
 			"id": "support",
@@ -436,7 +436,5 @@
 		"forArm": false,
 		"subitems": []
 	},
-	"betaItem": [
-		
-	]
+	"betaItem": []
 }
