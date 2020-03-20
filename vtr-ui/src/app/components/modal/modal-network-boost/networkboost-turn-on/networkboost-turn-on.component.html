@@ -3,10 +3,10 @@
     <div class="vtr-modal-turn-on">
       <div class="modal-body">
         <div class="btn-close">
-            <button type="button" class="close" id="closeButton" (click)="notNowAction(false)" tabindex="1"
+            <a type="button" class="close" id="closeButton" (click)="notNowAction(false)" tabindex="1"
             attr.aria-label="{{'gaming.narrator.networkBoost.common.close' | translate}}" (keyup.enter)="notNowAction(false)">
               <fa-icon [icon]="['fal', 'times']"></fa-icon>
-            </button>
+		</a>
         </div>
           <div class="content-body">
           <h1>{{ 'gaming.networkBoost.modalTurn.title'  | translate }}</h1>
