@@ -38,7 +38,7 @@
 		}
 
 		&.checked {
-			border: 1px solid $go;
+			box-shadow: 0px 0px 0.1rem $go;
 			background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
 			// outline: none;
 
@@ -51,12 +51,12 @@
 				color: $light;
 			}
 			&:focus {
-				box-shadow: .2rem .2rem $go;
+				box-shadow: 0px 0px 0.1rem $go, .3rem .3rem $go;
 			}
 		}
 
 		&.unchecked {
-			border: 1px solid $shade_lighter;
+			box-shadow: 0px 0px 0.1rem $shade_lighter;
 			background: linear-gradient($gradient_angle, $shade_lighter 0%, $light 100%);
 			// outline: none;
 
@@ -70,7 +70,7 @@
 			}
 
 			&:focus {
-				box-shadow: .2rem .2rem $shade_lighter;
+				box-shadow: 0px 0px 0.1rem $shade_lighter, .3rem .3rem $shade_lighter;
 			}
 		}
 
