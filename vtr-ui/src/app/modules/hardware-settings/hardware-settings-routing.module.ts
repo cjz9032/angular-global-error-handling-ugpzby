@@ -9,10 +9,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { SubpageDeviceSettingsAudioComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-audio/subpage-device-settings-audio.component';
 import { SubpageDeviceSettingsDisplayComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-display/subpage-device-settings-display.component';
 import { SubpageDeviceSettingsInputAccessoryComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/subpage-device-settings-input-accessory.component';
-import { SubpageDeviceSettingsPowerComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-power/subpage-device-settings-power.component';
-import { SubpageDeviceSettingsPowerDpmComponent } from "../../components/pages/page-device-settings/children/subpage-device-settings-power-dpm/subpage-device-settings-power-dpm.component";
-import { SubpageDeviceSettingsPowerDpmGuard } from "../../components/pages/page-device-settings/children/subpage-device-settings-power-dpm/subpage-device-settings-power-dpm.guard";
-
 import { NonGamingGuard } from 'src/app/services/guard/non-gaming-guard';
 import { NonArmGuard } from 'src/app/services/guard/non-arm-guard';
 import { NonSmodeGuard } from 'src/app/services/guard/non-smode-guard';

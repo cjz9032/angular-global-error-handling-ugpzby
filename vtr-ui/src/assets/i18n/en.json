@@ -102,7 +102,7 @@
 					"line9": "<b>Touchpad Lock </b><br> Prevent mistaken inputs by disabling the touchpad while gaming",
 					"line10": "<b>Auto Close </b><br> Clear processes that are not needed for gaming before you start playing to maximize available system resources",
 					"line11": "<b>Thermal Mode </b><br> Set your preferred device profile for fan speed and cooling control",
-					"line12": "<b>Macro key </b><br> Customize your keyboard actions to suit your playing style"
+					"line12": "<b>Macro key </b><br> Customize your keyboard actions to suit your playing style"
 				},
 				"systemInfo": {
 					"systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
@@ -1060,7 +1060,7 @@
 					"NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
 					"LimitedACAdapterSupport": "<b>AC adapter cannot provide enough power.</b>",
 					"LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter.",
-					"MissingDriver": "<b>The Lenovo Power Manager driver</b> is not installed or not working properly. Please run Windows Update to install the latest driver. You also can install the driver from <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">here</a>. After the installation, restart your computer.",
+					"MissingDriver": "<b>The Lenovo Power Manager driver</b> is not installed or not working properly. Please run Windows Update or manually install it from <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">here</a>. After the installation, restart your computer.",
 					"StoreLimitation": "<b>The battery can only store {{value}}% of</b> it's original full charge capacity.",
 					"HighTemperature": "<b>Discharging</b> has been stopped because the <b>battery temperature is too high.</b>",
 					"TrickleCharge": "The battery was <b>completely discharged</b> and needs to be recharged. This might take ten hours or more.",
@@ -3513,7 +3513,8 @@
 	"notification": {
 		"menu": {
 			"security": "Do you know? Even you don't have anti-virus software installed, we still provide basic security protection for your device.",
-			"connectedHomeSecurity": "Get real-time monitoring and alerts about your network security at home. You will be the first one to know if any of your smart devices are facing a security attack."
+			"connectedHomeSecurity": "Get real-time monitoring and alerts about your network security at home. You will be the first one to know if any of your smart devices are facing a security attack.",
+			"hardwareScan": "Now you can get your system hardware component's health status."
 		}
 	},
 	"appsForYou": {

@@ -1051,7 +1051,7 @@
                     "NotGood": "<b>Baterija ni v dobrem stanju.</b>",
                     "NotSupportACAdapter": "<b>Napajalnik ni podprt.</b>",
                     "LimitedACAdapterSupport": "<b>Napajalnik ni dovolj zmogljiv.</b>",
-                    "MissingDriver": "<b>Gonilnik za Lenovo Power Manager</b> ni nameščen ali ne deluje pravilno. Zaženite Windows Update, da namestite najnovejši gonilnik. Gonilnik lahko dobite tudi <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">tukaj</a>. Po končani namestitvi znova zaženite računalnik.",
+                    "MissingDriver": "<b>Gonilnik za Lenovo Power Manager</b> ni nameščen ali ne deluje pravilno. Zaženite Windows Update ali gonilnik namestite ročno <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">tukaj</a>. Po končani namestitvi znova zaženite računalnik.",
                     "StoreLimitation": "<b>Baterija lahko shrani samo do {{value}}%</b> svoje prvotne polne zmogljivosti polnjenja.",
                     "HighTemperature": "<b>Praznjenje</b> je ustavljeno, ker je <b>temperatura baterije previsoka.</b>",
                     "TrickleCharge": "Baterija je <b>popolnoma izpraznjena</b> in jo je treba znova napolniti. To lahko traja deset ali več ur.",
@@ -1330,6 +1330,12 @@
                         "description": "Izberite načrt porabe za nadzorovanje učinkovitosti delovanja, temperature sistema in porabo energije računalnika.",
                         "currentPowerPlan": {
                             "label": "TRENUTNI NAČRT"
+                        },
+                        "profile": {
+                            "title": "PLAN PROFILE:",
+                            "performance": "Max performance:",
+                            "temperature": "Max system temperature:",
+                            "usage": "Max power usage:"
                         }
                     }
                 },
@@ -2438,7 +2444,6 @@
                 "title": "Varnost zdravje",
                 "deviceName1": "Aplikacije iz zaupanja vrednih virov",
                 "deviceName2": "Način za razvijalce",
-                "deviceName3": "UAC obvestilo",
                 "deviceName4": "Razpoložljivost protivirusnih programov",
                 "deviceName5": "Šifriranje trdega diska",
                 "deviceName6": "Razpoložljivost požarnega zidu",
@@ -3508,7 +3513,8 @@
     "notification": {
         "menu": {
             "security": "Ali veste? Čeprav nimate nameščene protivirusne programske opreme, še vedno zagotavljamo osnovno varnostno zaščito za vašo napravo.",
-            "connectedHomeSecurity": "Zagotovite si nadzor v realnem času in prejemajte opozorila o varnosti omrežja doma. Prvi boste vedeli, ali je varnost katere od vaših pametnih naprav napadena."
+            "connectedHomeSecurity": "Zagotovite si nadzor v realnem času in prejemajte opozorila o varnosti omrežja doma. Prvi boste vedeli, ali je varnost katere od vaših pametnih naprav napadena.",
+            "hardwareScan": "Zdaj lahko pridobite stanje komponent strojne opreme vašega sistema."
         }
     },
     "appsForYou": {

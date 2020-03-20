@@ -1051,7 +1051,7 @@
                     "NotGood": "<b>Stav baterie není dobrý.</b>",
                     "NotSupportACAdapter": "<b>Napájecí adaptér není podporován.</b>",
                     "LimitedACAdapterSupport": "<b>Síťový adaptér nemůže poskytnout dostatek energie.</b>",
-                    "MissingDriver": "<b>Ovladač Lenovo Power Manager</b> není nainstalován nebo nefunguje správně. Spusťte službu Windows Update a nainstalujte nejnovější ovladač. Ovladač můžete nainstalovat také <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">odtud</a>. Po instalaci restartujte počítač.",
+                    "MissingDriver": "<b>Ovladač Lenovo Power Manager</b> není nainstalován nebo nefunguje správně. Spusťte službu Windows Update nebo ji nainstalujte ručně <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">odtud</a>. Po instalaci restartujte počítač.",
                     "StoreLimitation": "<b>Baterie je schopna se nabít pouze na {{value}}%</b> své původní kapacity.",
                     "HighTemperature": "<b>Vybíjení</b> bylo zastaveno kvůli <b>přehřátí baterie</b>.",
                     "TrickleCharge": "Baterie je <b>zcela vybitá</b> a je třeba ji nabít. To může trvat deset i více hodin.",
@@ -1330,6 +1330,12 @@
                         "description": "Vyberte schéma napájení, kterým chcete řídit výkon počítače, teplotu systému a spotřebu energie.",
                         "currentPowerPlan": {
                             "label": "AKTUÁLNÍ SCHÉMA"
+                        },
+                        "profile": {
+                            "title": "PLAN PROFILE:",
+                            "performance": "Max performance:",
+                            "temperature": "Max system temperature:",
+                            "usage": "Max power usage:"
                         }
                     }
                 },
@@ -2438,7 +2444,6 @@
                 "title": "Stav zabezpečení",
                 "deviceName1": "Aplikace z důvěryhodných zdrojů",
                 "deviceName2": "Režim pro vývojáře",
-                "deviceName3": "Oznámení UAC",
                 "deviceName4": "Dostupnost antivirového programu",
                 "deviceName5": "Šifrování pevného disku",
                 "deviceName6": "Dostupnost brány firewall",
@@ -3508,7 +3513,8 @@
     "notification": {
         "menu": {
             "security": "Víte, že…? I když nemáte nainstalovaný antivirový software, stále poskytujeme základní bezpečnostní ochranu pro vaše zařízení.",
-            "connectedHomeSecurity": "Získejte sledování v reálném čase a upozornění na zabezpečení vaší domácí sítě. A jako první se dozvíte, zda některé z vašich chytrých zařízení čelí bezpečnostnímu útoku."
+            "connectedHomeSecurity": "Získejte sledování v reálném čase a upozornění na zabezpečení vaší domácí sítě. A jako první se dozvíte, zda některé z vašich chytrých zařízení čelí bezpečnostnímu útoku.",
+            "hardwareScan": "Nyní můžete zjistit stav hardwaru součásti systému."
         }
     },
     "appsForYou": {

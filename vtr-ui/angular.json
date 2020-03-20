@@ -174,15 +174,15 @@
 									"with": "src/app/services/vantage-shell/vantage-shell-mock.service.ts"
 								}
 							],
-							"optimization": true,
-							"outputHashing": "all",
-							"sourceMap": true,
-							"extractCss": true,
-							"namedChunks": true,
-							"aot": true,
+							"optimization": false,
+							"outputHashing": "none",
+							"sourceMap": false,
+							"extractCss": false,
+							"namedChunks": false,
+							"aot": false,
 							"extractLicenses": false,
 							"vendorChunk": false,
-							"buildOptimizer": true,
+							"buildOptimizer": false,
 							"budgets": [
 								{
 									"type": "initial",

@@ -6,7 +6,7 @@
 			[disabled]="isDisabled || isLoading"
 			type="button"
 			class="btn button {{getButtonColor(buttonColor)}} d-flex align-items-center justify-content-center"
-			vtrMetrics
+			[vtrMetrics]="vtrMetricEnabled"
 			[routerLink]="routerPath"
 			routerLinkActive="active"
 			[href]="href"

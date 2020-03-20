@@ -70,13 +70,11 @@
 		<vtr-ui-button class="normal-button button"
 			[ngClass]="{'visible': !url}"
 			linkId="sa-av-btn-subscribe"
-			metricsEvent="itemClick"
-			metricsItem="subscribe"
-			metricsParent="security.antivirus"
 			upperCaseLabel=false
 			btnHeight=true
 			[isDisabled]="isOnline === false"
 			[label]="'security.antivirus.windowsDefender.buyNow' | translate"
-			[href]="url"></vtr-ui-button>
+			[isLoading]="common.purchaseBtnIsLoading"
+			(click)="common.openMcAfeePurchase()"></vtr-ui-button>
     </li>
 </ul>

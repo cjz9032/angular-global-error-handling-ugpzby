@@ -16,6 +16,7 @@
 		<wifi-security [data]="wifiHomeViewModel"
 			[switchDisabled]="switchDisabled"
 			[vtrAppSearchScroller]="['search-wifi-security']"
+			(toggleChange) = "onToggleChange()"
 			></wifi-security>
 
 		<vtr-threat-locator *ngIf="region !== 'cn'"></vtr-threat-locator>

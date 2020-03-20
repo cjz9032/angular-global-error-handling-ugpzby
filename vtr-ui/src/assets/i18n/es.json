@@ -1051,7 +1051,7 @@
                     "NotGood": "<b>La batería no está en buen estado.</b>",
                     "NotSupportACAdapter": "<b>El adaptador de CA no es compatible.</b>",
                     "LimitedACAdapterSupport": "<b>El adaptador de CA no puede proporcionar suficiente energía.</b>",
-                    "MissingDriver": "<b>El controlador Lenovo Power Manager</b> no está instalado o no funciona correctamente. Ejecute Windows Update para instalar el controlador más reciente. También puede instalar el controlador desde <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">aquí</a>. Reinicie el sistema después de la instalación.",
+                    "MissingDriver": "<b>El controlador Lenovo Power Manager</b> no está instalado o no funciona correctamente. Ejecute Windows Update o instálelo manualmente desde <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">aquí</a>. Reinicie el sistema después de la instalación.",
                     "StoreLimitation": "<b>La batería solo puede almacenar un {{value}}% de</b> su capacidad de carga original.",
                     "HighTemperature": "Se interrumpió la <b>descarga</b> debido a que la <b>temperatura de la batería es demasiado alta.</b>",
                     "TrickleCharge": "La batería se <b>descargó completamente</b> y se debe volver a cargar. El proceso podría tomar diez horas o más.",
@@ -1330,6 +1330,12 @@
                         "description": "Elija un plan de energía para controlar el rendimiento de la computadora, la temperatura del sistema y el uso de energía.",
                         "currentPowerPlan": {
                             "label": "PLAN ACTUAL"
+                        },
+                        "profile": {
+                            "title": "PLAN PROFILE:",
+                            "performance": "Max performance:",
+                            "temperature": "Max system temperature:",
+                            "usage": "Max power usage:"
                         }
                     }
                 },
@@ -2438,7 +2444,6 @@
                 "title": "Estado de seguridad",
                 "deviceName1": "Aplicaciones de fuentes confiables",
                 "deviceName2": "Modo de desarrollador",
-                "deviceName3": "Notificación UAC",
                 "deviceName4": "Disponibilidad de antivirus",
                 "deviceName5": "Cifrado de unidad de disco duro",
                 "deviceName6": "Disponibilidad de cortafuegos",
@@ -3508,7 +3513,8 @@
     "notification": {
         "menu": {
             "security": "¿Sabía usted? Incluso si no tiene instalado software antivirus, aun así proporcionamos protección básica de seguridad para su dispositivo.",
-            "connectedHomeSecurity": "Obtenga supervisión y alertas en tiempo real sobre la seguridad de su red en el hogar. Será el primero en saber si alguno de sus dispositivos inteligentes está enfrentando un ataque de seguridad."
+            "connectedHomeSecurity": "Obtenga supervisión y alertas en tiempo real sobre la seguridad de su red en el hogar. Será el primero en saber si alguno de sus dispositivos inteligentes está enfrentando un ataque de seguridad.",
+            "hardwareScan": "Ahora puede obtener el estado de mantenimiento del componente de hardware del sistema."
         }
     },
     "appsForYou": {

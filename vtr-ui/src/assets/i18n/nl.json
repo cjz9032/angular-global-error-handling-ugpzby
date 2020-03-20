@@ -1051,7 +1051,7 @@
                     "NotGood": "<b>De batterij is niet in goede staat.</b>",
                     "NotSupportACAdapter": "<b>De netvoedingsadapter wordt niet ondersteund.</b>",
                     "LimitedACAdapterSupport": "<b>De netvoedingsadapter kan niet voldoende stroom leveren.</b>",
-                    "MissingDriver": "<b>Het stuurprogramma voor Lenovo Power Manager</b> is niet geïnstalleerd of werkt niet goed. Voer Windows Update uit om het meest recente stuurprogramma te installeren. U kunt het stuurprogramma ook vanaf <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">hier</a> installeren. Start uw computer na het installeren opnieuw op.",
+                    "MissingDriver": "<b>Het stuurprogramma voor Lenovo Power Manager</b> is niet geïnstalleerd of werkt niet goed. Voer Windows Update uit of installeer het handmatig van <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">hier</a>. Start uw computer na het installeren opnieuw op.",
                     "StoreLimitation": "<b>De batterij kan slechts {{value}}% van</b> de oorspronkelijke volledige laadcapaciteit opslaan.",
                     "HighTemperature": "<b>Het ontladen</b> is gestopt omdat de <b>batterij te heet is geworden.</b>",
                     "TrickleCharge": "De batterij is <b>volledig ontladen</b> en moet opnieuw worden opgeladen. Dit kan tien uur of langer duren.",
@@ -1330,6 +1330,12 @@
                         "description": "Kies een energieschema om de prestaties, de systeemtemperatuur en het energieverbruik van de computer te regelen.",
                         "currentPowerPlan": {
                             "label": "HUIDIG SCHEMA"
+                        },
+                        "profile": {
+                            "title": "PLAN PROFILE:",
+                            "performance": "Max performance:",
+                            "temperature": "Max system temperature:",
+                            "usage": "Max power usage:"
                         }
                     }
                 },
@@ -2438,7 +2444,6 @@
                 "title": "Beveiligingsstatus",
                 "deviceName1": "Apps van vertrouwde bronnen",
                 "deviceName2": "Ontwikkelaarsmodus",
-                "deviceName3": "UAC-melding",
                 "deviceName4": "Beschikbaarheid van antivirus",
                 "deviceName5": "Versleuteling van vaste schijf",
                 "deviceName6": "Beschikbaarheid van firewall",
@@ -3508,7 +3513,8 @@
     "notification": {
         "menu": {
             "security": "Wist u dat? Zelfs als er geen antivirussoftware op uw computer is geïnstalleerd, bieden wij nog steeds basisbescherming voor uw apparaat.",
-            "connectedHomeSecurity": "Ontvang realtime controle en meldingen over de beveiliging van uw thuisnetwerk. U hoort het als eerste als een van uw slimme apparaten met een beveiligingsaanval wordt geconfronteerd."
+            "connectedHomeSecurity": "Ontvang realtime controle en meldingen over de beveiliging van uw thuisnetwerk. U hoort het als eerste als een van uw slimme apparaten met een beveiligingsaanval wordt geconfronteerd.",
+            "hardwareScan": "U kunt nu de conditie van het onderdeel van uw systeemhardware opvragen."
         }
     },
     "appsForYou": {

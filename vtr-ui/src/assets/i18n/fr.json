@@ -1051,7 +1051,7 @@
                     "NotGood": "<b>La batterie n'est pas en bon état.</b>",
                     "NotSupportACAdapter": "<b>L'adaptateur secteur n'est pas pris en charge.</b>",
                     "LimitedACAdapterSupport": "<b>L'adaptateur secteur ne parvient pas à fournir suffisamment d'énergie.</b>",
-                    "MissingDriver": "<b>Le pilote Lenovo Power Manager</b> n'est pas installé ou ne fonctionne pas correctement. Veuillez exécuter Windows Update pour installer la dernière version du pilote. Vous pouvez également installer le pilote à partir <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">d'ici</a>. Après l'installation, redémarrez votre ordinateur.",
+                    "MissingDriver": "<b>Le pilote Lenovo Power Manager</b> n'est pas installé ou ne fonctionne pas correctement. Veuillez exécuter Windows Update ou l'installer manuellement depuis <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">ici</a>. Après l'installation, redémarrez votre ordinateur.",
                     "StoreLimitation": "<b>La batterie peut seulement stocker {{value}}% de</b> sa capacité de charge totale initiale.",
                     "HighTemperature": "Le <b>déchargement</b> a été interrompu, car la <b>température de la batterie est trop élevée.</b>",
                     "TrickleCharge": "La batterie est <b>complètement déchargée</b> et doit être rechargée. Cette opération peut durer plus de dix heures.",
@@ -1330,6 +1330,12 @@
                         "description": "Choisissez un mode de gestion de l'alimentation pour contrôler les performances, la température système et l'utilisation de l'alimentation de l'ordinateur.",
                         "currentPowerPlan": {
                             "label": "MODE ACTUEL"
+                        },
+                        "profile": {
+                            "title": "PLAN PROFILE:",
+                            "performance": "Max performance:",
+                            "temperature": "Max system temperature:",
+                            "usage": "Max power usage:"
                         }
                     }
                 },
@@ -2438,7 +2444,6 @@
                 "title": "État de santé de la sécurité",
                 "deviceName1": "Applications provenant de sources fiables",
                 "deviceName2": "Mode développeur",
-                "deviceName3": "Notification UAC",
                 "deviceName4": "Disponibilité de l'antivirus",
                 "deviceName5": "Chiffrement du disque dur",
                 "deviceName6": "Disponibilité du pare-feu",
@@ -3508,7 +3513,8 @@
     "notification": {
         "menu": {
             "security": "Le saviez-vous ? Même si vous n'avez pas installé de logiciel antivirus, nous proposons toujours une protection de base pour votre périphérique.",
-            "connectedHomeSecurity": "Profitez d'une surveillance et d'alertes en temps réel concernant la sécurité de votre réseau à domicile. Vous serez le premier informé si l'un de vos périphériques intelligents est confronté à une attaque de sécurité."
+            "connectedHomeSecurity": "Profitez d'une surveillance et d'alertes en temps réel concernant la sécurité de votre réseau à domicile. Vous serez le premier informé si l'un de vos périphériques intelligents est confronté à une attaque de sécurité.",
+            "hardwareScan": "Vous pouvez maintenant accéder à l'état d'intégrité des composants matériels de votre système."
         }
     },
     "appsForYou": {
