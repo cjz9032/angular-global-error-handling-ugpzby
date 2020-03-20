@@ -67,11 +67,11 @@
 							</div>
 						</div>
 						<div class="flex-column button white-button">
-							<vtr-ui-button class="white-btn" linkId="sa-av-btn-buynow" metricsEvent="itemClick"
-								metricsItem="btn.subscribe.no-antivirus" metricsParent="security.antivirus"
+							<vtr-ui-button class="white-btn" linkId="sa-av-btn-subscribe"
 								upperCaseLabel=false btnHeight=true [isDisabled]="isOnline === false"
 								[label]="'security.antivirus.windowsDefender.buyNow' | translate"
-								[href]="common.urlGetMcAfee"></vtr-ui-button>
+								[isLoading]="common.purchaseBtnIsLoading"
+								(click)="common.openMcAfeePurchase()"></vtr-ui-button>
 						</div>
 					</div>
 					<div class="divider"></div>
@@ -110,18 +110,18 @@
 								class="d-none d-xl-block">
 								<p class="subtitle sub-font"
 									*vtrTranslate="'security.antivirus.mcafee.trialContent' | translate:{remainingDays: viewModel.mcafee.expireAt }">
-									<a id="sa-av-link-subscribe" vtrMetrics metricsEvent="itemClick"
-										metricsItem="link.subscribe" metricsParent="security.antivirus"
-										href="{{viewModel.mcafee.trialUrl}}" target="_blank"></a>
+									<a id="sa-av-link-subscribe"
+										href="javascript:void(0)"
+										(click)="common.openMcAfeePurchase()" target="_blank"></a>
 								</p>
 							</div>
 							<div *ngIf="viewModel.mcafee.subscription === 'licenseActive'"
 								class="d-none d-xl-block">
 								<p class="subtitle sub-font"
 									*vtrTranslate="'security.antivirus.mcafee.subscribeContent' | translate:{remainingDays: viewModel.mcafee.expireAt }">
-									<a id="sa-av-link-subscribe" vtrMetrics metricsEvent="itemClick"
-										metricsItem="link.subscribe" metricsParent="security.antivirus"
-										href="{{common.urlGetMcAfee}}" target="_blank"></a>
+									<a id="sa-av-link-subscribe"
+										href="javascript:void(0)"
+										(click)="common.openMcAfeePurchase()" target="_blank"></a>
 								</p>
 							</div>
 						</div>
@@ -137,17 +137,17 @@
 								<div class="flex-column two-ellipsis-button button col-6 px-0">
 									<vtr-ui-button
 										*ngIf="viewModel.mcafee.subscription === 'trialActive' || viewModel.mcafee.subscription === 'trialInactive'"
-										linkId="sa-av-btn-subscribe" metricsEvent="itemClick"
-										metricsItem="btn.subscribe" metricsParent="security.antivirus"
+										linkId="sa-av-btn-subscribe"
 										upperCaseLabel=false btnHeight=true [isDisabled]="isOnline === false"
 										[label]="'security.antivirus.mcafee.trialSubscribe' | translate:{remainingDays: viewModel.mcafee.expireAt}"
-										[href]="viewModel.mcafee.trialUrl"></vtr-ui-button>
+										[isLoading]="common.purchaseBtnIsLoading"
+										(click)="common.openMcAfeePurchase()"></vtr-ui-button>
 									<vtr-ui-button *ngIf="viewModel.mcafee.subscription === 'licenseActive'"
-										linkId="sa-av-btn-subscribe" metricsEvent="itemClick"
-										metricsItem="btn.subscribe" metricsParent="security.antivirus"
+										linkId="sa-av-btn-subscribe"
 										upperCaseLabel=false btnHeight=true [isDisabled]="isOnline === false"
 										[label]="'security.antivirus.mcafee.subscribe' | translate:{remainingDays: viewModel.mcafee.expireAt}"
-										[href]="common.urlGetMcAfee"></vtr-ui-button>
+										[isLoading]="common.purchaseBtnIsLoading"
+										(click)="common.openMcAfeePurchase()"></vtr-ui-button>
 									<div class="subtitle text-center"
 										[innerHTML]="'security.antivirus.mcafee.discount' | translate">
 									</div>
@@ -171,17 +171,17 @@
 							class="d-xl-none d-block">
 							<p class="subtitle sub-font"
 								*vtrTranslate="'security.antivirus.mcafee.trialContent' | translate:{remainingDays: viewModel.mcafee.expireAt }">
-								<a id="sa-av-link-subscribe" vtrMetrics metricsEvent="itemClick"
-									metricsItem="link.subscribe500" metricsParent="security.antivirus"
-									href="{{viewModel.mcafee.trialUrl}}" target="_blank"></a>
+								<a id="sa-av-link-subscribe"
+									href="javascript:void(0)"
+									(click)="common.openMcAfeePurchase()" target="_blank"></a>
 							</p>
 						</div>
 						<div *ngIf="viewModel.mcafee.subscription === 'licenseActive'" class="d-block d-xl-none">
 							<p class="subtitle sub-font"
 								*vtrTranslate="'security.antivirus.mcafee.subscribeContent' | translate:{remainingDays: viewModel.mcafee.expireAt }">
-								<a id="sa-av-link-subscribe" vtrMetrics metricsEvent="itemClick"
-									metricsItem="link.subscribe500" metricsParent="security.antivirus"
-									href="{{common.urlGetMcAfee}}" target="_blank"></a>
+								<a id="sa-av-link-subscribe"
+									href="javascript:void(0)"
+									(click)="common.openMcAfeePurchase()" target="_blank"></a>
 							</p>
 						</div>
 					</div>
