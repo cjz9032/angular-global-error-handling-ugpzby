@@ -130,14 +130,14 @@
 		.btn-gray {
 			background: $gradient_gray;
 			color: $shade_blue;
-			border: 0.1rem solid $grey_dark;
+			box-shadow: 0 0 0 0.1rem $grey_dark;
 			&:hover {
 				background: linear-gradient(90deg, $grey_lighter 0%, $grey_lighter 100%);
 			}
 		}
 		.btn-in-red-bg {
 			color: $stop_dark;
-			border: 0.1rem solid $alt;
+			box-shadow: 0 0 0 0.1rem $alt;
 			&:focus::after {
 				border: thin solid $orange;
 			}
