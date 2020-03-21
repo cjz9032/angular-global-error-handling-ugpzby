@@ -55,7 +55,7 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit, AfterViewInit
 	radioLabel = 'radio.';
 
 	ngAfterViewInit(): void {
-		// this.setRadioButtons(); // Set up radio buttons first , last etc and if none selected,set tabindex to first element
+		this.setRadioButtons(); // Set up radio buttons first , last etc and if none selected,set tabindex to first element
 	}
 
 	constructor(
@@ -140,12 +140,6 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit, AfterViewInit
 		try {
 			if (selectItem && currentRadio && !currentRadio[0].checked && !currentRadio[0].disabled) {
 				try {
-					/* this.radioButtons.forEach(radioButton => {
-						radioButton.removeAttribute('aria-checked');
-						radioButton.setAttribute('aria-checked', 'false');
-					});
-					currentRadioButton.removeAttribute('aria-checked');
-					currentRadioButton.setAttribute('aria-checked', 'true'); */
 					this.setRadioAriaChecked(currentRadio[0]);
 					currentRadio[0].click();
 				}
@@ -235,11 +229,7 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit, AfterViewInit
 
 	private setRadioButtons() {
 		try {
-			if (!this.radioGroup) {
-				this.radioGroup = this.getParentRadioGroup(this.radioButton.nativeElement);
-
-			}
-			const rbs = this.radioGroup.querySelectorAll('[role=radio][aria-disabled=false]');
+			const rbs = this.getRadioGroup();
 
 			this.radioButtons = [];
 			rbs.forEach(radioButton => {
@@ -256,18 +246,34 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit, AfterViewInit
 			});
 
 			//focus on first non disabled element if not selected any radio items
-			/* 	if (this.noRadioButtonSelected && this.firstRadioButton !== undefined
-					&& (this.firstRadioButton.tabIndex || this.firstRadioButton.tabIndex !== 0)
-				) {
-					this.setRadioTabIndex(this.firstRadioButton.nativeElement);
-				}
-				else if (!this.noRadioButtonSelected && this.selectedRadioButton !== undefined
-					&& (this.selectedRadioButton.tabIndex || this.selectedRadioButton.tabIndex !== 0)) {
-					this.setRadioTabIndex(this.selectedRadioButton.nativeElement);
-				} */
+			if (this.noRadioButtonSelected && this.firstRadioButton !== undefined
+				&& (this.firstRadioButton.tabIndex || this.firstRadioButton.tabIndex !== 0)
+			) {
+				this.setRadioTabIndex(this.firstRadioButton.nativeElement);
+			}
+			else if (!this.noRadioButtonSelected && this.selectedRadioButton !== undefined
+				&& (this.selectedRadioButton.tabIndex || this.selectedRadioButton.tabIndex !== 0)) {
+				this.setRadioTabIndex(this.selectedRadioButton.nativeElement);
+			}
 		} catch (error) {
 			this.logger.exception('setRadioButtons error occurred ::', error);
 		}
+	}
+
+	private getRadioGroup() {
+
+		// commented to remove the dependency from radiogroup role of parent this component
+		if (!this.radioGroup) {
+			this.radioGroup = this.getParentRadioGroup(this.radioButton.nativeElement, 10);
+		}
+
+		// search by radio class and aria-disabled
+		const query = `[class*=${this.group}][aria-disabled=false]`;
+		// search by only role and aria-disabled
+		// const query = '[role=radio][aria-disabled=false]';
+		return this.radioGroup.querySelectorAll(query);
+		// return Array.from(this.radioGroup.querySelectorAll(query));
+
 	}
 
 	/* private setRadioFocus(radioButton) {
@@ -281,16 +287,18 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit, AfterViewInit
 		});
 	} */
 
-	private getParentRadioGroup(element) {
+
+	private getParentRadioGroup(element, topUpLevel: number) {
 		try {
 			const roleRadioGroup = 'radiogroup';
 			const role = 'role';
 
-			if (element !== undefined && element.getAttribute(role) === roleRadioGroup) {
+			if (element && element.getAttribute(role) === roleRadioGroup) {
 				return element;
 			}
-			else if (element !== undefined && element.getAttribute(role) !== roleRadioGroup) {
-				return this.getParentRadioGroup(element.parentElement);
+			else if (element && element.parentElement
+				&& element.getAttribute(role) !== roleRadioGroup && topUpLevel > 0) {
+				return this.getParentRadioGroup(element.parentElement, --topUpLevel);
 			}
 			else {
 				return element;

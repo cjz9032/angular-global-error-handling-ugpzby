@@ -18,7 +18,6 @@ export class UiRoundedRectangleRadioComponent implements OnInit, OnChanges, Afte
 	@Input() disabled = false;
 	@Input() name: string;
 	@Input() isLarge = false;
-
 	@Output() change: EventEmitter<any> = new EventEmitter();
 	@Output() customKeyEvent = new EventEmitter();
 	hideIcon = false;
@@ -38,7 +37,7 @@ export class UiRoundedRectangleRadioComponent implements OnInit, OnChanges, Afte
 	});
 	firstRadioButton: any;
 	lastRadioButton: any;
-	radioButtons: Array<HTMLElement> = [];
+	radioButtons: Array<any> = [];
 	selectedRadioButton: any;
 	noRadioButtonSelected = true;
 	private radioButton: ElementRef<HTMLElement>;
@@ -89,14 +88,14 @@ export class UiRoundedRectangleRadioComponent implements OnInit, OnChanges, Afte
 	}
 	changeRadioOnKeyPress($event, radio: HTMLInputElement) {
 
-		if (!this.checked) {
+		if (!this.checked) { // on only radio change
 			// this.checked = !this.checked;
 			radio.value = this.value;
 			// radio.checked = this.checked;
 			const $customEvent = { type: 'change', target: radio };
 			this.onChange($customEvent);
 			const metricsData = {
-				// itemParent: this.metricsParent,
+				itemParent: this.metricsParent,
 				ItemType: 'FeatureClick',
 				itemName: this.radioLabel + this.label,
 				value: !this.checked
@@ -140,12 +139,6 @@ export class UiRoundedRectangleRadioComponent implements OnInit, OnChanges, Afte
 		try {
 			if (selectItem && currentRadio && !currentRadio[0].checked && !currentRadio[0].disabled) {
 				try {
-					/* this.radioButtons.forEach(radioButton => {
-						radioButton.removeAttribute('aria-checked');
-						radioButton.setAttribute('aria-checked', 'false');
-					});
-					currentRadioButton.removeAttribute('aria-checked');
-					currentRadioButton.setAttribute('aria-checked', 'true'); */
 					this.setRadioAriaChecked(currentRadio[0]);
 					currentRadio[0].click();
 				}
@@ -235,11 +228,7 @@ export class UiRoundedRectangleRadioComponent implements OnInit, OnChanges, Afte
 
 	private setRadioButtons() {
 		try {
-			if (!this.radioGroup) {
-				this.radioGroup = this.getParentRadioGroup(this.radioButton.nativeElement);
-
-			}
-			const rbs = this.radioGroup.querySelectorAll('[role=radio][aria-disabled=false]');
+			const rbs = this.getRadioGroup();
 
 			this.radioButtons = [];
 			rbs.forEach(radioButton => {
@@ -256,18 +245,34 @@ export class UiRoundedRectangleRadioComponent implements OnInit, OnChanges, Afte
 			});
 
 			//focus on first non disabled element if not selected any radio items
-			/* 	if (this.noRadioButtonSelected && this.firstRadioButton !== undefined
-					&& (this.firstRadioButton.tabIndex || this.firstRadioButton.tabIndex !== 0)
-				) {
-					this.setRadioTabIndex(this.firstRadioButton.nativeElement);
-				}
-				else if (!this.noRadioButtonSelected && this.selectedRadioButton !== undefined
-					&& (this.selectedRadioButton.tabIndex || this.selectedRadioButton.tabIndex !== 0)) {
-					this.setRadioTabIndex(this.selectedRadioButton.nativeElement);
-				} */
+			if (this.noRadioButtonSelected && this.firstRadioButton !== undefined
+				&& (this.firstRadioButton.tabIndex || this.firstRadioButton.tabIndex !== 0)
+			) {
+				this.setRadioTabIndex(this.firstRadioButton.nativeElement);
+			}
+			else if (!this.noRadioButtonSelected && this.selectedRadioButton !== undefined
+				&& (this.selectedRadioButton.tabIndex || this.selectedRadioButton.tabIndex !== 0)) {
+				this.setRadioTabIndex(this.selectedRadioButton.nativeElement);
+			}
 		} catch (error) {
 			this.logger.exception('setRadioButtons error occurred ::', error);
 		}
+	}
+
+	private getRadioGroup() {
+
+		// commented to remove the dependency from radiogroup role of parent this component
+		if (!this.radioGroup) {
+			this.radioGroup = this.getParentRadioGroup(this.radioButton.nativeElement, 10);
+		}
+
+		// search by radio class and aria-disabled
+		const query = `[class*=${this.group}][aria-disabled=false]`;
+		// search by only role and aria-disabled
+		// const query = '[role=radio][aria-disabled=false]';
+		return this.radioGroup.querySelectorAll(query);
+		// return Array.from(this.radioGroup.querySelectorAll(query));
+
 	}
 
 	/* private setRadioFocus(radioButton) {
@@ -281,16 +286,18 @@ export class UiRoundedRectangleRadioComponent implements OnInit, OnChanges, Afte
 		});
 	} */
 
-	private getParentRadioGroup(element) {
+
+	private getParentRadioGroup(element, topUpLevel: number) {
 		try {
 			const roleRadioGroup = 'radiogroup';
 			const role = 'role';
 
-			if (element !== undefined && element.getAttribute(role) === roleRadioGroup) {
+			if (element && element.getAttribute(role) === roleRadioGroup) {
 				return element;
 			}
-			else if (element !== undefined && element.getAttribute(role) !== roleRadioGroup) {
-				return this.getParentRadioGroup(element.parentElement);
+			else if (element && element.parentElement
+				&& element.getAttribute(role) !== roleRadioGroup && topUpLevel > 0) {
+				return this.getParentRadioGroup(element.parentElement, --topUpLevel);
 			}
 			else {
 				return element;
