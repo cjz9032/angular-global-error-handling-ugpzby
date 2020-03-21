@@ -20,8 +20,8 @@
 		(change)="onChange($event)"
 		vtrMetrics
 		metricsEvent="featureClick"
-		[metricsItem]="'radio.'+label"
-		[metricsValue]="!radio.checked"
+		[metricsItem]="radioLabel+label"
+		[metricsValue]="checked"
 		tabindex="-1"
 		[attr.aria-checked]="checked" />
 	<label for="{{radioId}}">

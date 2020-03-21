@@ -23,12 +23,12 @@
 		#radio
 		(click)="onChange(value)"
 		aria-hidden="true"
-		tabindex="-1" />
-	<label for="{{radioId}}"
+		tabindex="-1"
 		vtrMetrics
 		metricsEvent="featureClick"
-		[metricsItem]="name"
-		[metricsValue]="value"
+		[metricsItem]="radioLabel+label"
+		[metricsValue]="checked" />
+	<label for="{{radioId}}"
 		id="{{radioId}}"
 		attr.aria-labelledby="{{radioId}}-title">
 		<fa-layers [fixedWidth]="true"

@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, ViewChild } from '@angular/core';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { AppEvent } from './../../../enums/app-event.enum';
+import { MetricService } from 'src/app/services/metric/metric.service';
 
 @Component({
 	selector: 'vtr-ui-rounded-rectangle-radio',
@@ -22,6 +23,7 @@ export class UiRoundedRectangleRadioComponent implements OnInit, OnChanges, Afte
 	@Output() customKeyEvent = new EventEmitter();
 	hideIcon = false;
 	@Input() radioGroup: any;
+	@Input() metricsParent = 'Device.MyDeviceSettings';
 	// These following instance variables added for Keyboard navigation to radio button.
 	keyCode = Object.freeze({
 		TAB: 9,
@@ -40,6 +42,7 @@ export class UiRoundedRectangleRadioComponent implements OnInit, OnChanges, Afte
 	selectedRadioButton: any;
 	noRadioButtonSelected = true;
 	private radioButton: ElementRef<HTMLElement>;
+	radioLabel = 'radio.';
 	// once radio button is visible then execute logic
 	@ViewChild('radioButton', { static: false }) set content(element: ElementRef) {
 		if (element) {
@@ -47,8 +50,8 @@ export class UiRoundedRectangleRadioComponent implements OnInit, OnChanges, Afte
 			this.setRadioButtons();
 		}
 	}
-	radioLabel = 'radio.';
-	constructor(private logger: LoggerService) {
+
+	constructor(private logger: LoggerService, public metrics: MetricService) {
 	}
 
 	ngOnInit() {
@@ -84,17 +87,19 @@ export class UiRoundedRectangleRadioComponent implements OnInit, OnChanges, Afte
 			this.customKeyEvent.emit({ customeEvent: AppEvent.RIGHT });
 		}
 	}
-	changeOnKeyPress(radio: HTMLInputElement) {
+	changeRadioOnKeyPress($event, radio: HTMLInputElement) {
+
 		if (!this.checked) {
-			this.checked = !this.checked;
-			radio.value = String(this.checked);
-			let event = { type: 'change', target: radio };
-			this.onChange(event);
+			// this.checked = !this.checked;
+			radio.value = this.value;
+			// radio.checked = this.checked;
+			const $customEvent = { type: 'change', target: radio };
+			this.onChange($customEvent);
 			const metricsData = {
-				itemParent: 'Device.MyDeviceSettings',
+				// itemParent: this.metricsParent,
 				ItemType: 'FeatureClick',
 				itemName: this.radioLabel + this.label,
-				value: this.checked
+				value: !this.checked
 			};
 			this.metrics.sendMetrics(metricsData);
 		}
@@ -106,7 +111,8 @@ export class UiRoundedRectangleRadioComponent implements OnInit, OnChanges, Afte
 		switch ($event.keyCode) {
 			case this.keyCode.SPACE:
 			case this.keyCode.RETURN:
-				this.setChecked(this.radioButton.nativeElement, true);
+				this.changeRadioOnKeyPress($event, radio);
+				//this.setChecked(this.radioButton.nativeElement, true);
 				break;
 			case this.keyCode.UP:
 				this.setCheckedToPreviousItem(this.radioButton);
@@ -134,12 +140,13 @@ export class UiRoundedRectangleRadioComponent implements OnInit, OnChanges, Afte
 		try {
 			if (selectItem && currentRadio && !currentRadio[0].checked && !currentRadio[0].disabled) {
 				try {
-					this.radioButtons.forEach(radioButton => {
+					/* this.radioButtons.forEach(radioButton => {
 						radioButton.removeAttribute('aria-checked');
 						radioButton.setAttribute('aria-checked', 'false');
 					});
 					currentRadioButton.removeAttribute('aria-checked');
-					currentRadioButton.setAttribute('aria-checked', 'true');
+					currentRadioButton.setAttribute('aria-checked', 'true'); */
+					this.setRadioAriaChecked(currentRadio[0]);
 					currentRadio[0].click();
 				}
 				catch (error) {
@@ -165,14 +172,26 @@ export class UiRoundedRectangleRadioComponent implements OnInit, OnChanges, Afte
 
 	}
 
-	private setRadioTabIndex(currentItem) {
+	private setRadioAriaChecked(currentRadioButton) {
+		try {
+			this.radioButtons.forEach(radioButton => {
+				radioButton.removeAttribute('aria-checked');
+				radioButton.setAttribute('aria-checked', 'false');
+			});
+			currentRadioButton.removeAttribute('aria-checked');
+			currentRadioButton.setAttribute('aria-checked', 'true');
+		} catch (error) {
+			this.logger.exception('setRadioAriaChecked error occurred ::', error);
+		}
+	}
+	private setRadioTabIndex(currentRadioButton) {
 		try {
 
 			this.radioButtons.forEach(radioButton => {
 				radioButton.tabIndex = -1; // the unchecked item should also be tabbable
 			});
-			if (currentItem !== undefined && currentItem.tabIndex && currentItem.tabIndex !== 0) {
-				currentItem.tabIndex = 0; // tabitem need not be set to 1 unnecessarly
+			if (currentRadioButton !== undefined && currentRadioButton.tabIndex && currentRadioButton.tabIndex !== 0) {
+				currentRadioButton.tabIndex = 0; // tabitem need not be set to 1 unnecessarly
 			}
 
 		}

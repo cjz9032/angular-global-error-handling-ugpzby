@@ -23,6 +23,8 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit, AfterViewInit
 	@Input() customIcon = '';
 	@Input() hideIcon = false;
 	@Input() processLabel = true;
+	@Input() metricsParent = 'Device.MyDeviceSettings';
+
 	@Output() optionChange: EventEmitter<any> = new EventEmitter();
 	// These following instance variables added for Keyboard navigation to radio button.
 	keyCode = Object.freeze({
@@ -85,18 +87,19 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit, AfterViewInit
 			return name;
 		}
 	}
+	changeRadioOnKeyPress($event, radio: HTMLInputElement) {
 
-	changeOnKeyPress(radio: HTMLInputElement) {
-		if (!this.checked) {
-			this.checked = !this.checked;
-			radio.value = String(this.checked);
-			let event = { type: 'change', target: radio };
-			this.onChange(event);
+		if (!this.checked) { // on only radio change
+			// this.checked = !this.checked;
+			radio.value = this.value;
+			// radio.checked = this.checked;
+			const $customEvent = { type: 'change', target: radio };
+			this.onChange($customEvent);
 			const metricsData = {
-				itemParent: 'Device.MyDeviceSettings',
+				itemParent: this.metricsParent,
 				ItemType: 'FeatureClick',
 				itemName: this.radioLabel + this.label,
-				value: this.checked
+				value: !this.checked
 			};
 			this.metrics.sendMetrics(metricsData);
 		}
@@ -108,7 +111,8 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit, AfterViewInit
 		switch ($event.keyCode) {
 			case this.keyCode.SPACE:
 			case this.keyCode.RETURN:
-				this.setChecked(this.radioButton.nativeElement, true);
+				this.changeRadioOnKeyPress($event, radio);
+				//this.setChecked(this.radioButton.nativeElement, true);
 				break;
 			case this.keyCode.UP:
 				this.setCheckedToPreviousItem(this.radioButton);
@@ -136,12 +140,13 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit, AfterViewInit
 		try {
 			if (selectItem && currentRadio && !currentRadio[0].checked && !currentRadio[0].disabled) {
 				try {
-					this.radioButtons.forEach(radioButton => {
+					/* this.radioButtons.forEach(radioButton => {
 						radioButton.removeAttribute('aria-checked');
 						radioButton.setAttribute('aria-checked', 'false');
 					});
 					currentRadioButton.removeAttribute('aria-checked');
-					currentRadioButton.setAttribute('aria-checked', 'true');
+					currentRadioButton.setAttribute('aria-checked', 'true'); */
+					this.setRadioAriaChecked(currentRadio[0]);
 					currentRadio[0].click();
 				}
 				catch (error) {
@@ -167,14 +172,26 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit, AfterViewInit
 
 	}
 
-	private setRadioTabIndex(currentItem) {
+	private setRadioAriaChecked(currentRadioButton) {
+		try {
+			this.radioButtons.forEach(radioButton => {
+				radioButton.removeAttribute('aria-checked');
+				radioButton.setAttribute('aria-checked', 'false');
+			});
+			currentRadioButton.removeAttribute('aria-checked');
+			currentRadioButton.setAttribute('aria-checked', 'true');
+		} catch (error) {
+			this.logger.exception('setRadioAriaChecked error occurred ::', error);
+		}
+	}
+	private setRadioTabIndex(currentRadioButton) {
 		try {
 
 			this.radioButtons.forEach(radioButton => {
 				radioButton.tabIndex = -1; // the unchecked item should also be tabbable
 			});
-			if (currentItem !== undefined && currentItem.tabIndex && currentItem.tabIndex !== 0) {
-				currentItem.tabIndex = 0; // tabitem need not be set to 1 unnecessarly
+			if (currentRadioButton !== undefined && currentRadioButton.tabIndex && currentRadioButton.tabIndex !== 0) {
+				currentRadioButton.tabIndex = 0; // tabitem need not be set to 1 unnecessarly
 			}
 
 		}
