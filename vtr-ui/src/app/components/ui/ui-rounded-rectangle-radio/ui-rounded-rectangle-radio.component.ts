@@ -112,6 +112,8 @@ export class UiRoundedRectangleRadioComponent implements OnInit, OnChanges, Afte
 			case this.keyCode.RETURN:
 				this.changeRadioOnKeyPress($event, radio);
 				//this.setChecked(this.radioButton.nativeElement, true);
+				$event.stopPropagation();
+				$event.preventDefault();
 				break;
 			case this.keyCode.UP:
 				this.setCheckedToPreviousItem(this.radioButton);
