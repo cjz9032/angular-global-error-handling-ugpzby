@@ -360,7 +360,37 @@
 			"pre": [
 				"assets/images/support/svg_icon_about_us.svg"
 			],
-			"subitems": []
+			"subitems": [
+				{
+					"id": "support",
+					"label": "common.menu.support",
+					"path":null,
+					"icon": null,
+					"metricsEvent": "itemClick",
+					"metricsParent": "navbar",
+					"metricsItem": "link.support",
+					"routerLinkActiveOptions": {
+						"exact": true},
+						"forArm": false,
+						"sMode": true,
+					"subitems": []
+					},
+				{
+					"id": "smart-performance",
+					"label": "gaming.common.menu.smartPerformance",
+					"path": "smart-performance",
+					"icon": "",
+					"metricsEvent": "itemClick",
+					"externallink": false,
+					"metricsParent": "navbar",
+					"metricsItem": "",
+					"sMode": true,
+					"routerLinkActiveOptions": {
+						"exact": true
+					},
+					"subitems": []
+				}
+			]
 		},
 		{
 			"id": "home-security",

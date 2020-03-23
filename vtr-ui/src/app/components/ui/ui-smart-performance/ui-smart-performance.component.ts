@@ -77,7 +77,24 @@ updateSubItemsList(subItem) {
 	}
 }
 changeScanEvent(){
-	this.isScanning=true;
+	
+	if (this.smartPerformanceService.isShellAvailable) {
+		this.smartPerformanceService
+			.getReadiness()
+			.then((getReadinessFromService: any) => {
+				this.logger.info('ScanNow.getReadiness.then', getReadinessFromService);
+				if(getReadinessFromService){
+					this.isScanning = true;
+				}
+				else{
+					this.isScanning = false;
+				}
+			})
+			.catch(error => {
+			 
+			});
+	}
+	//this.isScanning=true;
 	this.isScanningCompleted=false;
 }
 ScanNow()
