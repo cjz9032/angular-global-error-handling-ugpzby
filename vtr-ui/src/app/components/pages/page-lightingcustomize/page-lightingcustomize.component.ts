@@ -118,11 +118,11 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 
 		if (!this.isOnline) {
 			this.cardContentPositionC = {
-				FeatureImage: './../../../../assets/cms-cache/GamingPosC.jpg'
+				FeatureImage: 'assets/cms-cache/GamingPosC.jpg'
 			};
 
 			this.cardContentPositionF = {
-				FeatureImage: './../../../../assets/cms-cache/lighting_offline.jpg'
+				FeatureImage: 'assets/cms-cache/lighting_offline.jpg'
 			};
 		}
 	}
@@ -134,9 +134,10 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 		}
 	}
 	public getLayOutversion() {
-		if (this.commonService.getLocalStorageValue(LocalStorageKey.ledLayoutVersion) !== undefined) {
-			this.ledlayoutversion = this.commonService.getLocalStorageValue(LocalStorageKey.ledLayoutVersion);
-		} else {
+		let ledSetFeature = this.commonService.getLocalStorageValue(LocalStorageKey.ledSetFeature);
+		let ledDriver = this.commonService.getLocalStorageValue(LocalStorageKey.ledDriver);
+		this.ledlayoutversion = this.commonService.getLocalStorageValue(LocalStorageKey.ledLayoutVersion);
+		if(!ledSetFeature || !ledDriver || this.ledlayoutversion === undefined){
 			this.router.navigate(['/device-gaming']);
 		}
 	}

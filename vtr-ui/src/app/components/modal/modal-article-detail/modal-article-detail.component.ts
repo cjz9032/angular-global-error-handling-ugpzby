@@ -17,11 +17,18 @@ export class ModalArticleDetailComponent implements OnInit, AfterViewInit {
 	articleId: string;
 	articleTitle = '';
 	articleImage = '';
-	articleBody: SafeHtml = '<div class="spinner-content"><div class="spinner-border text-primary progress-spinner" role="status"></div></div>';
+	articleBody: SafeHtml = '';
 	articleCategory: string;
 	metricClient: any;
 	enterTime: number;
 	metricsParent = '';
+
+	AllContentStatus = {
+		Loading: 1,
+		Empty: 2,
+		Content: 3,
+	}
+	contentStatus = this.AllContentStatus.Loading;
 
 	constructor(
 		public activeModal: NgbActiveModal,
@@ -54,16 +61,17 @@ export class ModalArticleDetailComponent implements OnInit, AfterViewInit {
 						.replace(/(<\/video>)/gi, '</iframe>')
 						.replace(/(autoplay=\")/gi, 'allow="');
 					this.articleBody = this.sanitizer.bypassSecurityTrustHtml(replaceBody);
+					this.contentStatus = this.AllContentStatus.Content;
 					if (response.Results.Category && response.Results.Category.length > 0) {
 						this.articleCategory = response.Results.Category.map((category: any) => category.Id).join(' ');
 					}
 				} else {
 					this.articleTitle = response.title;
-					this.articleBody = '';
+					this.contentStatus = this.AllContentStatus.Empty;
 				}
 			},
 			error => {
-				this.articleBody = '<div class=\'alert alert-danger\'>Some Error Occurs Please Try again later</div>';
+				this.contentStatus = this.AllContentStatus.Empty;
 				this.logger.error('fetchCMSContent error', error);
 			}
 		);

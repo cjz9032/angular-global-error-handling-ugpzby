@@ -106,18 +106,19 @@ export class UPEService {
 		try {
 			const httpResponse = await this.commsService.callUpeApi(
 				`${upeEssential.upeUrlBase}/upe/recommendation/v2/recommends`, queryParam
-			).toPromise() as any;
+			) as any;
 
-			if (httpResponse.status === 200 && httpResponse.body) {
+			if (httpResponse.status === 200 && httpResponse.body.results) {
 				return {
 					success: true,
 					content: httpResponse.body.results
 				};
 			} else {
 				content = `get article failed upon http request(unknown)`;
+				errorCode = httpResponse.status;
 			}
 		} catch (ex) {
-			content = `get article failed upon http request`;
+			content = ex.message;
 			errorCode = ex.status;
 		}
 
@@ -135,7 +136,11 @@ export class UPEService {
 
 		const result = await this.httpRequestForTags(upeEssential);
 		if (result.success) {
-			this.channelTags = result.content ? result.content : [];
+			if (result.content && result.content.length > 0) {
+				this.channelTags = result.content.map(item => item.toString());	// VAN-15331 The API does not return string array as spec, but another api need string array
+			} else {
+				this.channelTags = [];
+			}
 			this.commonService.setLocalStorageValue(LocalStorageKey.UPEChannelTags, this.channelTags);
 		}
 
@@ -204,7 +209,7 @@ export class UPEService {
 				EnclosureType: systeminfo.enclosureType,
 				UpeTags: channelTags
 			},
-			filterItemSize: 3,
+			// filterItemSize: 3,
 			positions: upeParams.positions
 		};
 		return queryParam;

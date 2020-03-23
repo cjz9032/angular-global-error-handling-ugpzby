@@ -110,7 +110,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		{
 			readMoreText: '',
 			rightImageSource: ['far', 'question-circle'],
-			leftImageSource: '../../../../../../assets/icons/Icon_critical_updates_20px.svg',
+			leftImageSource: 'assets/icons/Icon_critical_updates_20px.svg',
 			header: 'systemUpdates.autoUpdateSettings.critical.title',
 			name: 'critical-updates',
 			subHeader: '',
@@ -124,7 +124,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		{
 			readMoreText: '',
 			rightImageSource: ['far', 'question-circle'],
-			leftImageSource: '../../../../../../assets/icons/Icon_recommended_updates_20px.svg',
+			leftImageSource: 'assets/icons/Icon_recommended_updates_20px.svg',
 			header: 'systemUpdates.autoUpdateSettings.recommended.title',
 			name: 'recommended-updates',
 			subHeader: '',
@@ -138,7 +138,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		{
 			readMoreText: '',
 			rightImageSource: '',
-			leftImageSource: '../../../../../../assets/icons/Icon_Windows_Update_20px.svg',
+			leftImageSource: 'assets/icons/Icon_Windows_Update_20px.svg',
 			header: 'systemUpdates.autoUpdateSettings.windows.title',
 			name: 'windows-updates',
 			subHeader: '',
@@ -247,13 +247,15 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 	private initSupportCard() {
-		Object.assign(this.supportWebsiteCard, {
-			Id: 'LenovoSupportWebsite',
-			Title: this.translate.instant('systemUpdates.support.title'),
-			FeatureImage: 'assets/images/support.jpg',
-			ActionType: 'External',
-			ActionLink: this.supportLink,
-		})
+		this.translate.stream('systemUpdates.support.title').subscribe((value) => {
+			this.supportWebsiteCard = {
+				Id: 'LenovoSupportWebsite',
+				Title: value,
+				FeatureImage: 'assets/images/support.jpg',
+				ActionType: 'External',
+				ActionLink: this.supportLink,
+			}
+		});
 	}
 
 	popRebootDialogIfNecessary() {
@@ -334,6 +336,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		} else {
 			this.supportLink = 'https://support.lenovo.com/contactus';
 		}
+		this.supportWebsiteCard.ActionLink = this.supportLink;
 	}
 
 	private setUpdateTitle(titleStatusCode: number = 0) {

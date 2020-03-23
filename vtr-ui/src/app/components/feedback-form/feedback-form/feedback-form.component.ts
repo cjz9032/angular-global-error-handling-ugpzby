@@ -14,6 +14,7 @@ export class FeedbackFormComponent implements OnInit {
 	feedbackSuccess = false;
 	leftTime = 3;
 	countryCode = '';
+	public isSubmitted = false;
 
 	private metrics: any;
 
@@ -30,9 +31,9 @@ export class FeedbackFormComponent implements OnInit {
 			question: 'dashboard.feedback.form.question7'
 		},
 		{
-			idYes: 'feedback-qa-new-style-yes',
-			idNo: 'feedback-qa-new-style-no',
-			name: 'qaNewStyle',
+			idYes: 'feedback-cus-support-usage-yes',
+			idNo: 'feedback-cus-support-usage-no',
+			name: 'cusSupportusage',
 			question: 'dashboard.feedback.form.question8'
 		}
 	];
@@ -63,6 +64,14 @@ export class FeedbackFormComponent implements OnInit {
 		 });
 	 }
 	public onFeedBackSubmit(): void {
+		this.isSubmitted = true;
+		if(!this.feedbackForm.value.userEmail){
+			this.prepareDataTosubmit();
+		} else if(this.feedbackForm.value.userEmail && !this.feedbackForm.get('userEmail').invalid){
+			this.prepareDataTosubmit();
+		}
+	}
+	prepareDataTosubmit(){
 		const formData = this.feedbackForm.value;
 		const data = {
 			ItemType: 'UserFeedback',
@@ -71,7 +80,7 @@ export class FeedbackFormComponent implements OnInit {
 			Content: formData.userComment,
 			UserEmail: formData.userEmail,
 			QA: {
-				QaNewStyle: formData.qaNewStyle,
+				Cus_Support_usage: formData.cusSupportusage,
 				SystemUpdateAwareness: formData.systemUpdateAwareness,
 				RemommendVantageToFriend: formData.remommendVantageToFriend
 			}
@@ -91,13 +100,14 @@ export class FeedbackFormComponent implements OnInit {
 	}
 
 	private createFeedbackForm(): void {
+		const emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 		this.feedbackForm = new FormGroup({
-			userEmail: new FormControl('', [Validators.required, Validators.email]),
+			userEmail: new FormControl('', [Validators.required, Validators.pattern(emailPattern)]),
 			userComment: new FormControl('', [
 				Validators.required,
 				Validators.minLength(1)
 			]),
-			qaNewStyle: new FormControl(null),
+			cusSupportusage: new FormControl(null),
 			systemUpdateAwareness: new FormControl(null),
 			remommendVantageToFriend: new FormControl(null)
 		});

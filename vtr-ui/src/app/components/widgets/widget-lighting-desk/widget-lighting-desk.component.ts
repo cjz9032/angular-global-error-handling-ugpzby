@@ -373,7 +373,7 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
             this.lightingProfileCurrentDetail.panelImageType = currentNameImg[0].panelImageType;
             this.lightingProfileCurrentDetail.length = lightingProfileByIdRes.lightInfo.length;
             if(lightingCapabilitiesRes.LightPanelType.indexOf(16)>-1){
-              this.lightingProfileCurrentDetail.panelImage = './../../../../assets/images/gaming/lighting/lighting-ui-new/T550_water_cold.png';
+              this.lightingProfileCurrentDetail.panelImage = 'assets/images/gaming/lighting/lighting-ui-new/T550_water_cold.png';
             }else{
               this.lightingProfileCurrentDetail.panelImage = currentNameImg[0].panelImage;
             }
@@ -496,15 +496,15 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
   public imgDefaultOff(){
      if(this.currentProfileId === 0){
         if(this.lightingCapabilities.LightPanelType.indexOf(4)>-1){
-          this.lightingProfileCurrentDetail.panelImage = "./../../../../assets/images/gaming/lighting/lighting-ui-new/T550_wind_cold.png";
+          this.lightingProfileCurrentDetail.panelImage = "assets/images/gaming/lighting/lighting-ui-new/T550_wind_cold.png";
         }else if(this.lightingCapabilities.LightPanelType.indexOf(16)>-1){
-          this.lightingProfileCurrentDetail.panelImage = "./../../../../assets/images/gaming/lighting/lighting-ui-new/T550_water_cold.png";
+          this.lightingProfileCurrentDetail.panelImage = "assets/images/gaming/lighting/lighting-ui-new/T550_water_cold.png";
         }else if(this.lightingCapabilities.LightPanelType.indexOf(64)>-1){
-          this.lightingProfileCurrentDetail.panelImage = "./../../../../assets/images/gaming/lighting/lighting-ui-new/T550_big_y.png";  
+          this.lightingProfileCurrentDetail.panelImage = "assets/images/gaming/lighting/lighting-ui-new/T550_big_y.png";  
         }else if(this.lightingCapabilities.LightPanelType.indexOf(128)>-1){
-          this.lightingProfileCurrentDetail.panelImage = "./../../../../assets/images/gaming/lighting/lighting-ui-new/T550G_front_line.png";  
+          this.lightingProfileCurrentDetail.panelImage = "assets/images/gaming/lighting/lighting-ui-new/T550G_front_line.png";  
         }else if(this.lightingCapabilities.LightPanelType.indexOf(256)>-1){
-          this.lightingProfileCurrentDetail.panelImage = "./../../../../assets/images/gaming/lighting/lighting-ui-new/T550_front.png";  
+          this.lightingProfileCurrentDetail.panelImage = "assets/images/gaming/lighting/lighting-ui-new/T550_front.png";  
         }
      }
   }

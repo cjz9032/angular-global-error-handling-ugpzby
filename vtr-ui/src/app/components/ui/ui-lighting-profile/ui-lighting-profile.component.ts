@@ -301,7 +301,7 @@ export class UiLightingProfileComponent implements OnInit {
 		new Options(4, 'gaming.lightingProfile.lightingSingleLightingOption.option4.title', "'gaming.lightingProfile.lightingSingleLightingOptionnarrator.option4.title'")
 	];
 
-	public imagePath = './../../../../assets/images/gaming/lighting';
+	public imagePath = 'assets/images/gaming/lighting';
 	public panelImage1: string;
 	public panelImage2: string;
 	defaultLanguage: any;

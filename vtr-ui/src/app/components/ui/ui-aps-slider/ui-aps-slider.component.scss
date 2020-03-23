@@ -102,7 +102,7 @@ but not to any other element on the page. using ::ng-deep
 		}
 
 		.label {
-			font-size: 1.2rem;
+			font-size: $fontsize_xs;
 			font-weight: 300;
 			line-height: 2.3rem;
 			color: $shade_dark;

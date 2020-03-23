@@ -419,8 +419,7 @@
 								(keydown.enter)="onLogout(); onMenuItemClick(item)">{{ isLoggingOut ? ('lenovoId.loggingOut' | translate) : ('lenovoId.logout' | translate) }}</a>
 						</div>
 					</li>
-					<div *ngIf="item.id==='home-security'"
-						class="d-none">
+					<div class="d-none">
 						<img *ngFor="let i of preloadImages"
 							[src]="i"
 							alt="">

@@ -77,7 +77,7 @@
 				display: inline-block;
 				background-repeat: no-repeat no-repeat;
 				pointer-events: none;
-				background-image: url("../../../../assets/images/UACLogo.png");
+				background-image: url("~/assets/images/UACLogo.png");
 				background-position: center;
 			}
 		}
@@ -186,6 +186,10 @@
 .smart-tooltip-list {
 	padding: 0;
 	list-style: none;
+	.custom-padding{
+		padding-right: 4px;
+		margin-top: 1px;
+	}
 	fa-icon {
 		color: $dark;
 		font-size: 0.5rem;

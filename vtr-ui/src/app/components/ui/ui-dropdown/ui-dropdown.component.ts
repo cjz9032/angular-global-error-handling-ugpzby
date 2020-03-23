@@ -22,6 +22,7 @@ import {
 })
 export class UiDropDownComponent implements OnInit, OnChanges {
 	@Input() dropDownId;
+	@Input() dropDownName;
 	@Input() list: DropDownInterval[];
 	@Input() value: number;
 	@Input() disabled = false;
@@ -34,17 +35,17 @@ export class UiDropDownComponent implements OnInit, OnChanges {
 	constructor(private translate: TranslateService) { }
 
 	ngOnInit() {
-        this.setDropDownValue();
-    }
+		this.setDropDownValue();
+	}
 
 	ngOnChanges(changes: SimpleChanges) {
 		// only run when property "data" changed
 		if (changes['value']) {
-            this.setDropDownValue();
-        }
+			this.setDropDownValue();
+		}
 	}
 
-	
+
 	private setDropDownValue() {
 		if (this.list) {
 			const interval = this.list.find((ddi: DropDownInterval) => {

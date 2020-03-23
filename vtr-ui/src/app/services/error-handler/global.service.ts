@@ -1,33 +1,25 @@
 import { ErrorHandler, Injectable } from '@angular/core';
-import { LoggerService } from '../logger/logger.service';
-import { PromiseError } from 'src/app/data-models/common/promise-error.model';
 import { ChunkLoadError } from 'src/app/data-models/common/chunk-load-error.model';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
 	providedIn: 'root'
 })
 
-export class GlobalErrorHandler implements ErrorHandler {
-	constructor(private logger: LoggerService) { }
+export class ChunkLoadErrorHandler implements ErrorHandler {
+	constructor() { }
 
 	handleError(error) {
-        let errorMessage;
-        if (error.stack) {
-			errorMessage = JSON.stringify({ message: error.message, stackTrace: error.stack });
-		} else {
-			errorMessage = JSON.stringify({ message: error });
+		if (!error) return;
+
+		if (!environment.production) {
+			console.error(error);
 		}
 
-        if (this.isPromiseError(error) && this.isChunkLoadError(error.rejection)) {
+        if (this.isChunkLoadError(error) || this.isChunkLoadError(error.rejection)) {
 			window.location.reload(true);
 		}
-
-        this.logger.error('GlobalErrorHandler: uncaught exception', errorMessage);
     }
-
-	isPromiseError(error: PromiseError | any): error is PromiseError {
-		return Boolean(error && (error as PromiseError).rejection);
-	}
 
 	isChunkLoadError(error: ChunkLoadError | any): error is ChunkLoadError {
 		return Boolean(error && (error as ChunkLoadError).name === 'ChunkLoadError');

@@ -2,6 +2,91 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.9](https://bitbucket.tc.lenovo.com///compare/v1.4.7...v1.4.9) (2020-03-20)
+
+### [1.4.8](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.4.7...v1.4.8) (2020-03-20)
+
+### [1.4.7](https://bitbucket.tc.lenovo.com///compare/v1.4.6...v1.4.7) (2020-03-19)
+
+
+### Features
+
+* **device health:** add WindowsVersion service, hide sideload if 20H1 ([599c018](https://bitbucket.tc.lenovo.com///commit/599c018431496d5fc9be2a0277fafe1f4b5515dd))
+* **device health:** hide the bar, get regex match correctly ([033d003](https://bitbucket.tc.lenovo.com///commit/033d0032c3a723d5ff5014bc97e73dd0bee44f00))
+* **environment:** update CMS API root for dev ([9661672](https://bitbucket.tc.lenovo.com///commit/9661672b7f8e54011bf1d17cc736a0efe059ac6e))
+
+### [1.4.6](https://bitbucket.tc.lenovo.com///compare/v1.4.5...v1.4.6) (2020-03-18)
+
+### [1.4.5](https://bitbucket.tc.lenovo.com///compare/v1.4.4...v1.4.5) (2020-03-17)
+
+### [1.4.4](https://bitbucket.tc.lenovo.com///compare/v1.4.3...v1.4.4) (2020-03-13)
+
+### [1.4.3](https://bitbucket.tc.lenovo.com///compare/v1.4.2...v1.4.3) (2020-03-13)
+
+### [1.4.2](https://bitbucket.tc.lenovo.com///compare/v1.4.1...v1.4.2) (2020-03-12)
+
+### [1.4.1](https://bitbucket.tc.lenovo.com///compare/v1.3.36...v1.4.1) (2020-03-11)
+
+
+### Bug Fixes
+
+* **VAN-15649:** voip text color ([d07fc3f](https://bitbucket.tc.lenovo.com///commit/d07fc3f78002a554560a812c1c92c0a9d6c189f1))
+* backlight narrow to ideapad ([65ec60b](https://bitbucket.tc.lenovo.com///commit/65ec60b608fe8c31c72da40e5612059119c7abb2))
+
+### [1.3.37](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.3.36...v1.3.37) (2020-03-10)
+
+### [1.3.36](https://bitbucket.tc.lenovo.com///compare/v1.3.35...v1.3.36) (2020-03-10)
+
+### [1.3.35](https://bitbucket.tc.lenovo.com///compare/v1.3.34...v1.3.35) (2020-03-10)
+
+### [1.3.34](https://bitbucket.tc.lenovo.com///compare/v1.3.33...v1.3.34) (2020-03-09)
+
+### [1.3.33](https://bitbucket.tc.lenovo.com///compare/v1.3.32...v1.3.33) (2020-03-09)
+
+### [1.3.32](https://bitbucket.tc.lenovo.com///compare/v1.3.31...v1.3.32) (2020-03-09)
+
+### [1.3.31](https://bitbucket.tc.lenovo.com///compare/v1.3.30...v1.3.31) (2020-03-09)
+
+### [1.3.30](https://bitbucket.tc.lenovo.com///compare/v1.3.29...v1.3.30) (2020-03-09)
+
+### [1.3.29](https://bitbucket.tc.lenovo.com///compare/v1.3.28...v1.3.29) (2020-03-06)
+
+### [1.3.28](https://bitbucket.tc.lenovo.com///compare/v1.3.27...v1.3.28) (2020-03-06)
+
+### [1.3.27](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.3.25...v1.3.27) (2020-03-05)
+
+
+### Features
+
+* **cpt:** remove CPT ([59117ba](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/59117ba57bfe9a8da7183272f0f6e61dd294326d))
+* **smart performance:** remove Smart Performance UI ([ed6fceb](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/ed6fceb4d87b281075e000f3edd32eb052edd996))
+
+## [1.3.26](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.3.25...v1.3.26) (2020-03-05)
+
+
+### Features
+
+* **cpt:** remove CPT ([59117ba](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/59117ba57bfe9a8da7183272f0f6e61dd294326d))
+* **smart performance:** remove Smart Performance UI ([ed6fceb](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/ed6fceb4d87b281075e000f3edd32eb052edd996))
+
+### [1.3.25](https://bitbucket.tc.lenovo.com///compare/v1.3.24...v1.3.25) (2020-03-05)
+
+### [1.3.24](https://bitbucket.tc.lenovo.com///compare/v1.3.23...v1.3.24) (2020-03-05)
+
+### [1.3.23](https://bitbucket.tc.lenovo.com///compare/v1.3.22...v1.3.23) (2020-03-05)
+
+### [1.3.22](https://bitbucket.tc.lenovo.com///compare/v1.3.21...v1.3.22) (2020-03-05)
+
+### [1.3.21](https://bitbucket.tc.lenovo.com///compare/v1.3.20...v1.3.21) (2020-03-04)
+
+### [1.3.20](https://bitbucket.tc.lenovo.com///compare/v1.3.19...v1.3.20) (2020-03-04)
+
+### [1.3.19](https://bitbucket.tc.lenovo.com///compare/v1.3.18...v1.3.19) (2020-03-03)
+
+### [1.3.18](https://bitbucket.tc.lenovo.com///compare/v1.3.17...v1.3.18) (2020-03-03)
+
+### [1.3.17](https://bitbucket.tc.lenovo.com///compare/v1.3.16...v1.3.17) (2020-03-02)
+
 ### [1.3.16](https://bitbucket.tc.lenovo.com///compare/v1.3.15...v1.3.16) (2020-02-28)
 
 ### [1.3.15](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.3.14...v1.3.15) (2020-02-28)

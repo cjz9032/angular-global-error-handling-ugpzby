@@ -8,6 +8,9 @@
 	.gaming-header-image {
 		height: 4rem;
 		margin-top: 0.8rem;
+		@media #{$black-on-white}{
+			background-color: $high-contrast-grey;
+			}			
 	}
 	.help-box {
 		height: 4rem;
@@ -38,7 +41,7 @@
         .item {
             background: transparent;
             padding: 2rem 0rem;
-			font-size: 1.8rem;
+			font-size: 1.6rem;
 			line-height: 2rem;
 			color: $white100;
             border: none;
@@ -60,7 +63,7 @@
                     font-weight: bold;
                 }
                 .mode-status {
-                    font-size: 1.6rem;
+                    font-size: 1.4rem;
 					line-height: 2rem;
 					color: $shade_light;
                 }
@@ -144,7 +147,7 @@
 									line-height: 2.4rem;
 									margin-left: 1.1rem;
 									@media #{$black-on-white} {
-										color: $gaming_lightest;
+										color: $high-contrast-grey;
 									}
 									@media #{$white-on-black} {
 										color: $gaming_lightest;

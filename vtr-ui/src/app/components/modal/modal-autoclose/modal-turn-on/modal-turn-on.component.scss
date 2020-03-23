@@ -154,6 +154,12 @@ ui-popover-turn-on {
 	}
 
 	.btn-close {
+		@media #{$black-on-white}{
+			color: $high-contrast-grey;
+			}
+			@media #{$white-on-black}{
+			color: $high-contrast-grey;
+			}
 		button.close {
 			&:hover {
 				opacity: 0.75;

@@ -26,7 +26,6 @@ import { MetricService } from 'src/app/services/metric/metric.service';
 export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	public segmentConst = SegmentConst;
 	public vantageToolbarStatus = new FeatureStatus(false, true);
-	public direction = 'ltr';
 	progress = 49;
 	isInterestProgressChanged = false;
 	page = 1;
@@ -67,17 +66,25 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		private metricService: MetricService) {
 		this.metrics = shellService.getMetrics();
 
-		this.privacyPolicy = this.metrics.metricsEnabled;
-		const self = this;
-		shellService.getMetricsPolicy((result) => {
-			self.privacyPolicy = result;
-		});
+		this.initMetricOption(shellService);
 		deviceService.getMachineInfo().then((val) => {
 			this.machineInfo = val;
 		});
+	}
 
-		if (this.languageService.currentLanguage.toLowerCase() === 'ar' || this.languageService.currentLanguage.toLowerCase() === 'he' ) {
-			this.direction = 'rtl';
+	async initMetricOption(shellService) {
+		const userDeterminePrivacy = this.commonService.getLocalStorageValue(
+			LocalStorageKey.UserDeterminePrivacy
+		);
+
+		// if user has ever setup the privacy option, the UI should keep it.
+		if (userDeterminePrivacy) {
+			await this.metricService.metricReady();
+			this.privacyPolicy = this.metrics.metricsEnabled;
+		} else {
+			shellService.getMetricsPolicy((result) => {
+				this.privacyPolicy = result;
+			});
 		}
 	}
 
@@ -125,6 +132,9 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			this.page = page;
 			this.progress = 49;
 			tutorialData = new WelcomeTutorial(1, this.tutorialVersion, false);
+			if (this.deviceService.isGaming) {
+				this.commonService.setLocalStorageValue(LocalStorageKey.GamingTutorial, tutorialData);
+			}
 			this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, tutorialData);
 		} else {
 			const buttonClickData = {
@@ -146,14 +156,19 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 				forced: true
 			});
 
-			const toolbarSettingData = {
-				ItemType: 'SettingUpdate',
-				SettingName: 'Enable Lenovo Vantage Toolbar',
-				SettingValue: this.vantageToolbar ? 'Enabled' : 'Disabled',
-				SettingParent: 'WelcomePage'
-			};
+			if(this.vantageToolbarStatus && this.vantageToolbarStatus.available) {
+				const toolbarSettingData = {
+					ItemType: 'SettingUpdate',
+					SettingName: 'Enable Lenovo Vantage Toolbar',
+					SettingValue: this.vantageToolbar ? 'Enabled' : 'Disabled',
+					SettingParent: 'WelcomePage'
+				};
 
-			this.metrics.sendAsync(toolbarSettingData);
+				this.metrics.sendAsync(toolbarSettingData);
+			}
+			else {
+				this.logger.info(`Won't send Vantage toolbar metric for it is not available.`);
+			}
 
 			const usageData = {
 				ItemType: 'SettingUpdate',
@@ -322,7 +337,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
 	getNextIdById(id: string, reverse?: boolean): string {
 		const idArrayPage1 = ['tutorial_next_btn'];
-		let idArrayPage2 = [
+		let idArrayPage2 = this.deviceService.isGaming ? [] : [
 			'segment-choose-personal-use',
 			'segment-choose-business-use',
 			'segment-choose-custom-use',

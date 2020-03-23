@@ -14,6 +14,10 @@ import * as phoenix from '@lenovo/tan-client-bridge';
 import { AntivirusCommon } from 'src/app/data-models/security-advisor/antivirus-common.model';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { TranslateService } from '@ngx-translate/core';
+import { AntivirusService } from 'src/app/services/security/antivirus.service';
+import { MetricService } from 'src/app/services/metric/metric.service';
+import { MetricsTranslateService } from 'src/app/services/mertics-traslate/metrics-translate.service';
+import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 
 @Component({
 	selector: 'vtr-page-security-antivirus',
@@ -33,13 +37,17 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 	isOnline = true;
 	notificationSubscription: Subscription;
 	common: AntivirusCommon;
+	isLaunchMcAfeeId: boolean;
+	refreshTimeout: ReturnType<typeof setTimeout>;
 
 	@HostListener('window:focus')
 	onFocus(): void {
-		const id = document.activeElement.id;
-		if (id !== 'sa-av-button-launch-mcafee') {
-			this.antiVirus.refresh();
-		}
+		this.refreshPage(document.activeElement.id);
+	}
+
+	@HostListener('document:click', ['$event'])
+	onClick(event) {
+		this.refreshPage(event.target.id);
 	}
 
 	constructor(
@@ -51,6 +59,10 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 		private router: Router,
 		private localInfoService: LocalInfoService,
 		public translate: TranslateService,
+		public metrics: MetricService,
+		public metricsTranslateService: MetricsTranslateService,
+		public hypSettings: HypothesisService,
+		private antivirusService: AntivirusService
 	) { }
 
 	ngOnInit() {
@@ -61,8 +73,8 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
-		this.common = new AntivirusCommon(this.antiVirus, this.isOnline, this.localInfoService, this.commonService, this.translate);
-		this.viewModel = new AntiVirusViewModel(this.antiVirus, this.commonService, this.translate);
+		this.common = new AntivirusCommon(this.antiVirus, this.isOnline, this.localInfoService, this.commonService, this.translate, this.metrics, this.metricsTranslateService, this.hypSettings);
+		this.viewModel = new AntiVirusViewModel(this.antiVirus, this.commonService, this.translate, this.antivirusService);
 
 		if (!this.guard.previousPageName.startsWith('Security')) {
 			this.antiVirus.refresh();
@@ -70,10 +82,8 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		if (this.router.routerState.snapshot.url.indexOf('security') === -1) {
-			if (this.securityAdvisor.wifiSecurity) {
-				this.securityAdvisor.wifiSecurity.cancelGetWifiSecurityState();
-			}
+		if (this.securityAdvisor.wifiSecurity) {
+			this.securityAdvisor.wifiSecurity.cancelGetWifiSecurityState();
 		}
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
@@ -139,6 +149,16 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 
 	public retry(type) {
 		this.viewModel.retry(type);
+	}
+
+	refreshPage(id: string) {
+		clearTimeout(this.refreshTimeout);
+		this.refreshTimeout = setTimeout(() => {
+			if (id === 'sa-av-button-launch-mcafee' || id === 'sa-av-link-subscribe' || id === 'sa-av-btn-subscribe') {
+				return;
+			}
+			this.antiVirus.refresh();
+		}, 100)
 	}
 
 }

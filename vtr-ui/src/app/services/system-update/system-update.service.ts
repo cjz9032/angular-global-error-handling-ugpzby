@@ -72,6 +72,10 @@ export class SystemUpdateService {
 					criticalAutoUpdates: (response.criticalAutoUpdates === 'ON') ? true : false,
 					recommendedAutoUpdates: (response.recommendedAutoUpdates === 'ON') ? true : false
 				};
+				if(!this.autoUpdateStatus.criticalAutoUpdates && this.autoUpdateStatus.recommendedAutoUpdates) {
+					this.autoUpdateStatus.recommendedAutoUpdates = false;
+					this.setUpdateSchedule(false, false);
+				}
 				this.commonService.sendNotification(UpdateProgress.AutoUpdateStatus, this.autoUpdateStatus);
 			});
 		}
@@ -152,6 +156,7 @@ export class SystemUpdateService {
 					const payload = { ...response, status };
 					this.isInstallationSuccess = this.getInstallationSuccess(payload);
 					this.commonService.sendNotification(UpdateProgress.UpdateCheckCompleted, payload);
+					this.getScheduleUpdateStatus(false);
 				}
 			}).catch((error) => {
 				this.percentCompleted = 0;

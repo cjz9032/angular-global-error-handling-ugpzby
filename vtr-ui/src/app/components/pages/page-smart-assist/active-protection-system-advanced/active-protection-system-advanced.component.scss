@@ -5,13 +5,13 @@
     color: $purple_navy;
 }
 .input-item{
-    padding: 0;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding: 2rem 0 0;
+    border-bottom: 0.1rem solid rgba(0,0,0,0.1);
     &:first-child{
-        padding: 1.5rem 0;
+        padding: 0.9rem 0 1.5rem;
     }
     &:last-child{
-        margin-bottom: 3rem;
+        margin-bottom: 2rem;
     }
     .dropdown{
 		padding-right: 2rem;

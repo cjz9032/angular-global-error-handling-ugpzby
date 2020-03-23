@@ -27,7 +27,7 @@ import { SecureMath } from '@lenovo/tan-client-bridge';
 import { DccService } from 'src/app/services/dcc/dcc.service';
 import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
-
+import { SelfSelectService, SegmentConst } from 'src/app/services/self-select/self-select.service';
 interface IConfigItem {
 	id: string;
 	template: string;
@@ -54,6 +54,22 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	public isWarrantyVisible = false;
 	public showQuickSettings = true;
 	dashboardStart: any = new Date();
+	public hideTitle = false;
+
+	supportDatas = {
+		documentation: [
+			{
+				icon: ['fal', 'book'],
+				title: 'support.documentation.listUserGuide',
+				clickItem: 'userGuide',
+				metricsItem: 'Documentation.UserGuideButton',
+				metricsEvent: 'FeatureClick',
+				metricsParent: 'Page.Dashboard'
+			}
+		],
+		needHelp: [],
+		quicklinks: [],
+	};
 
 	heroBannerItems = []; // tile A
 	cardContentPositionB: FeatureContent = new FeatureContent();
@@ -159,8 +175,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		private router: Router,
 		public dashboardService: DashboardService,
 		public qaService: QaService,
-		private modalService: NgbModal,
-		config: NgbModalConfig,
+		private config: NgbModalConfig,
 		public commonService: CommonService,
 		public deviceService: DeviceService,
 		private cmsService: CMSService,
@@ -177,29 +192,34 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		public warrantyService: WarrantyService,
 		private adPolicyService: AdPolicyService,
 		private sanitizer: DomSanitizer,
-		public dccService: DccService
+		public dccService: DccService,
+		private selfselectService: SelfSelectService
 	) {
+	}
+
+	ngOnInit() {
 		this.getProtocalAction();
-		config.backdrop = 'static';
-		config.keyboard = false;
+		this.config.backdrop = 'static';
+		this.config.keyboard = false;
+		this.isOnline = this.commonService.isOnline;
 		this.deviceService.getMachineInfo().then(() => {
 			this.setDefaultSystemStatus();
+			if (this.dashboardService.isShellAvailable) {
+				this.logger.info('PageDashboardComponent.getSystemInfo');
+				this.getSystemInfo();
+			}
 		});
 		// this.brand = this.deviceService.getMachineInfoSync().brand;
 		this.brand = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType, -1);
 		// Evaluate the translations for QA on language Change
 		// this.qaService.setTranslationService(this.translate);
 		// this.qaService.setCurrentLangTranslations();
-		this.qaService.getQATranslation(translate); // VAN-5872, server switch feature
+		this.qaService.getQATranslation(this.translate); // VAN-5872, server switch feature
 		// this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
 		// 	this.fetchContent();
 		// });
 
-		this.isOnline = this.commonService.isOnline;
-		this.isWarrantyVisible = deviceService.showWarranty;
-	}
-
-	ngOnInit() {
+		this.isWarrantyVisible = this.deviceService.showWarranty;
 		this.dashboardService.isDashboardDisplayed = true;
 		this.getWelcomeText();
 		this.commonService.setSessionStorageValue(SessionStorageKey.DashboardInDashboardPage, true);
@@ -207,11 +227,6 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			this.onNotification(notification);
 		});
 
-		this.isOnline = this.commonService.isOnline;
-		if (this.dashboardService.isShellAvailable) {
-			this.logger.info('PageDashboardComponent.getSystemInfo');
-			this.getSystemInfo();
-		}
 		this.translate
 			.stream([
 				'dashboard.offlineInfo.welcomeToVantage',
@@ -234,6 +249,13 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		this.getSelfSelectStatus();
 		this.canShowDccDemo$ = this.dccService.canShowDccDemo();
 		this.launchProtocol();
+		this.hideTitleInCommercial();
+	}
+
+	private hideTitleInCommercial() {
+		this.selfselectService.getConfig().then((re) => {
+			this.hideTitle = re.usageType === SegmentConst.Commercial;
+		})
 	}
 
 	private getProtocalAction() {
@@ -308,6 +330,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			if (textIndex === 8 && this.translate.currentLang.toLocaleLowerCase() !== 'en') {
 				textIndex = 9;
 			}
+			if (textIndex === 4) { textIndex = 5; }
 			this.dashboardService.welcomeText = `lenovoId.welcomeText${textIndex}`;
 			this.dashboardService.welcomeTextWithoutUserName = `lenovoId.welcomeTextWithoutUserName${textIndex}`;
 			this.commonService.setLocalStorageValue(
@@ -378,6 +401,13 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	}
 
 	private fetchCMSContent(lang?: string) {
+		const cmsLang = this.dashboardService.cmsLanguageCache;
+		const cmsContent = this.dashboardService.cmsContentCache;
+		if (cmsLang === lang && cmsContent?.length > 0) {
+			this.populateCMSContent(this.dashboardService.cmsContentCache);
+			return;
+		}
+
 		const callCmsStartTime: any = new Date();
 		let queryOptions: any = {
 			Page: 'dashboard'
@@ -394,24 +424,30 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 				const callCmsEndTime: any = new Date();
 				const callCmsUsedTime = callCmsEndTime - callCmsStartTime;
 				if (response && response.length > 0) {
+					this.dashboardService.cmsContentCache = response;
+					this.dashboardService.cmsLanguageCache = lang;
 					this.logger.info(`Performance: Dashboard page get cms content, ${callCmsUsedTime}ms`);
-					this.getCMSHeroBannerItems(response);
-					this.getCMSCardContentB(response);
-					this.getCMSCardContentC(response);
-					this.getCMSCardContentD(response);
-					this.getCMSCardContentE(response);
-					this.getCMSCardContentF(response);
+					this.populateCMSContent(response);
 
 				} else {
 					const msg = `Performance: Dashboard page not have this language contents, ${callCmsUsedTime}ms`;
 					this.logger.info(msg);
-					this.fetchContent('en');
+					// this.fetchContent('en'); if cms server return nothing, it would retry infinitely
 				}
 			},
 			(error) => {
 				this.logger.info('fetchCMSContent error', error);
 			}
 		);
+	}
+
+	private populateCMSContent(response: any) {
+		this.getCMSHeroBannerItems(response);
+		this.getCMSCardContentB(response);
+		this.getCMSCardContentC(response);
+		this.getCMSCardContentD(response);
+		this.getCMSCardContentE(response);
+		this.getCMSCardContentF(response);
 	}
 
 	getHeroBannerDemoItems() {
@@ -421,7 +457,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			id: '',
 			source: this.sanitizer.sanitize(SecurityContext.HTML, 'VANTAGE'),
 			title: this.sanitizer.sanitize(SecurityContext.HTML, 'Lenovo exclusive offer of Adobe designer suite'),
-			url: '/assets/images/dcc/hero-banner-dcc.jpg',
+			url: 'assets/images/dcc/hero-banner-dcc.jpg',
 			ActionLink: 'dcc-demo',
 			ActionType: 'Internal',
 			DataSource: 'cms'
@@ -586,9 +622,9 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		try {
 			const response = await this.upeService.fetchUPEContent({ positions });
 			contentCards.forEach(cardItem => {
-				let articles = this.upeService.filterItems(response, cardItem.template, cardItem.position);
+				const articles = this.cmsService.getOneCMSContent(response, cardItem.template, cardItem.position);
 				if (cardItem.position === 'position-A') {
-					articles = articles.map((record) => {
+					const bannerArticles = articles.map((record) => {
 						return {
 							albumId: 1,
 							id: record.Id,
@@ -601,9 +637,9 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 						};
 					});
 
-					if (articles && articles.length) {
-						this[cardItem.cardPosition] = articles;
-						this.dashboardService[cardItem.dashboardCache] = articles;
+					if (bannerArticles && bannerArticles.length) {
+						this[cardItem.cardPosition] = bannerArticles;
+						this.dashboardService[cardItem.dashboardCache] = bannerArticles;
 						this.upeRequestResult[cardItem.id] = true;
 					}
 				} else {
@@ -891,6 +927,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 					if (this.isOnline) {
 						this.fetchContent();
 					}
+					this.hideTitleInCommercial();
 					break;
 				default:
 					break;

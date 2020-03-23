@@ -157,7 +157,9 @@ export class MetricHelper {
 					desc: 'ok'
 				});
 			},
-			metricsEnabled: false
+			metricsEnabled: false,
+			initializationResolved: true,
+			initPromise: Promise.resolve(false)
 		};
 	}
 }

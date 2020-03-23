@@ -30,7 +30,7 @@
 										attr.aria-label="smartStandby-{{linkId}}-hours">
 										{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit1' | translate | uppercase }}
 									</p>
-									<span class="">{{hours[hour]}}</span>
+									<span class="" role="text" id="smartStandby-{{linkId}}-hours">{{hours[hour]}}</span>
 								</div>
 								<div class="time-headings">
 									<p role="text"
@@ -39,7 +39,7 @@
 										attr.aria-label="smartStandby-{{linkId}}-minutes">
 										{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit2' | translate | uppercase }}
 									</p>
-									<span class="">{{minutes[minute]}}</span>
+									<span class="" role="text" id="smartStandby-{{linkId}}-minutes">{{minutes[minute]}}</span>
 								</div>
 								<div class="time-headings">
 									<p role="text"
@@ -48,7 +48,7 @@
 										attr.aria-label="smartStandby-{{linkId}}-amPm">
 										{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit3' | translate }}
 									</p>
-									<span class="">{{amPms[amPm] | translate}}</span>
+									<span class="" role="text" id="smartStandby-{{linkId}}-amPm">{{amPms[amPm] | translate}}</span>
 								</div>
 
 								<div class="toggle-icon align-right"

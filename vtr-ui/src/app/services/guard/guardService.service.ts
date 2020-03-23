@@ -127,8 +127,8 @@ export class GuardService {
 			ItemType: 'PageView',
 			PageName: activatedRouteSnapshot.data.pageName,
 			PageDuration: focusDuration, // this.duration + parseInt(`${Math.floor((Date.now() - this.interTime) / 1000)}`, 10),
-			PageDurationBlur: blurDuration
-			// PageContext: this.pageContext, // value coming as undefined
+			PageDurationBlur: blurDuration,
+			PageContext: this.pageContext
 		};
         this.previousPageName = activatedRouteSnapshot.data.pageName;
         this.metrics.sendAsync(data);

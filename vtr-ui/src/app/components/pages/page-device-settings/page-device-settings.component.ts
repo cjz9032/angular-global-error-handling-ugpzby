@@ -269,7 +269,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			Title: '',
 			ShortTitle: '',
 			Description: '',
-			FeatureImage: './../../../../assets/cms-cache/Alexa4x3-zone1.jpg',
+			FeatureImage: 'assets/cms-cache/Alexa4x3-zone1.jpg',
 			Action: '',
 			ActionType: 'External',
 			ActionLink: null,

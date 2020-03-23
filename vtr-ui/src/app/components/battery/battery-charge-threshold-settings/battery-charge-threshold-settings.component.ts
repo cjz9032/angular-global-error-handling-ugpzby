@@ -14,7 +14,7 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 	@Input() displayNoteOnly = false;
 	@Input() showBCTWarningNote: boolean;
 	@Input() textId = '';
-	@Input() isGaugeResetRunning = false;
+	@Input() isDisabled = false;
 	@Input() bctInfo: ChargeThreshold;
 
 	@Output() changeBCTInfo = new EventEmitter<ChargeThreshold>();

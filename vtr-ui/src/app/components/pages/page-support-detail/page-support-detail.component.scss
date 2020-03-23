@@ -20,9 +20,9 @@
 	.left-container {
 		padding: 2.4rem;
 		.description-container {
-			font-size: $fontsize_xs;
+			font-size: $fontsize_sm;
 			display: block;
-			overflow: auto;
+			overflow-y: auto;
 			color: $grey_dark;
 			font-weight: $weight_light;
 		}
@@ -108,19 +108,6 @@
 
 .icon {
 	color: $main;
-}
-
-.btn-label {
-	height: 4.5rem;
-	margin: 1rem 0;
-	padding: 0 2rem;
-	border-radius: 2.25rem;
-	background: $gradient_main;
-	color: $light;
-	font-size: $fontsize_xs;
-	font-weight: $weight_bold;
-	text-align: center;
-	text-transform: uppercase;
 }
 
 //FAQ

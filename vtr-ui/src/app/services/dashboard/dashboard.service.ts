@@ -39,6 +39,9 @@ export class DashboardService {
 	welcomeText = '';
 	welcomeTextWithoutUserName = '';
 
+	public cmsContentCache : any = null;
+	public cmsLanguageCache : string = null;
+
 	constructor(
 		shellService: VantageShellService,
 		commonService: CommonService,
@@ -228,7 +231,7 @@ export class DashboardService {
 				id: 1,
 				source: 'Vantage',
 				title: this.translateString['dashboard.offlineInfo.welcomeToVantage'] ,
-				url: '/assets/cms-cache/offline/Default-SMB-Welcome.jpg',
+				url: 'assets/cms-cache/offline/Default-SMB-Welcome.jpg',
 				ActionLink: null
 			}
 		];
@@ -236,7 +239,7 @@ export class DashboardService {
 			Title: this.translateString['common.menu.support'],
 			ShortTitle: '',
 			Description: '',
-			FeatureImage: '/assets/cms-cache/offline/Default-SMB-Support.jpg',
+			FeatureImage: 'assets/cms-cache/offline/Default-SMB-Support.jpg',
 			Action: '',
 			ActionType: 'Internal',
 			ActionLink: 'lenovo-vantage3:support',
@@ -255,7 +258,7 @@ export class DashboardService {
 			Title: this.translateString['common.menu.device.sub2'],
 			ShortTitle: '',
 			Description: '',
-			FeatureImage: '/assets/cms-cache/offline/Default-SMB-Device-Settings.jpg',
+			FeatureImage: 'assets/cms-cache/offline/Default-SMB-Device-Settings.jpg',
 			Action: '',
 			ActionType: 'Internal',
 			ActionLink: 'lenovo-vantage3:device-settings',
@@ -274,7 +277,7 @@ export class DashboardService {
 			Title: this.translateString['dashboard.offlineInfo.systemHealth'],
 			ShortTitle: '',
 			Description: '',
-			FeatureImage: '/assets/cms-cache/offline/Default-SMB-My-Device.jpg',
+			FeatureImage: 'assets/cms-cache/offline/Default-SMB-My-Device.jpg',
 			Action: '',
 			ActionType: 'Internal',
 			ActionLink: 'lenovo-vantage3:device',
@@ -293,7 +296,7 @@ export class DashboardService {
 			Title: this.translateString['settings.preferenceSettings'],
 			ShortTitle: '',
 			Description: '',
-			FeatureImage: '/assets/cms-cache/offline/Default-Preference-Settings.jpg',
+			FeatureImage: 'assets/cms-cache/offline/Default-Preference-Settings.jpg',
 			Action: this.translateString['systemUpdates.readMore'],
 			ActionType: 'Internal',
 			ActionLink: 'lenovo-vantage3:preference',
@@ -312,7 +315,7 @@ export class DashboardService {
 			Title: this.translateString['systemUpdates.title'],
 			ShortTitle: '',
 			Description: '',
-			FeatureImage: '/assets/cms-cache/offline/Default-SMB-System-Update.jpg',
+			FeatureImage: 'assets/cms-cache/offline/Default-SMB-System-Update.jpg',
 			Action: this.translateString['systemUpdates.readMore'],
 			ActionType: 'Internal',
 			ActionLink: 'lenovo-vantage3:system-updates',

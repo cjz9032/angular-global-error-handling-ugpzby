@@ -30,7 +30,7 @@ export class ModalGamingThermalMode2Component implements OnInit {
   public isPerformancOCSetted = false;
   // @Output() thermalModeMsg = new EventEmitter<number>();
   @Output() OCSettingsMsg = new EventEmitter<number>();
-  
+
   constructor(
     private modalService: NgbModal,
     private activeModalService: NgbActiveModal,
@@ -71,7 +71,7 @@ export class ModalGamingThermalMode2Component implements OnInit {
     this.registerThermalModeChangeEvent();
   }
 
-  ngOnDestory() {
+  ngOnDestroy() {
     this.unRegisterThermalModeChangeEvent();
   }
 

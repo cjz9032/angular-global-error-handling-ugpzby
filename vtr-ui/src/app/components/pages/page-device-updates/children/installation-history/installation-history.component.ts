@@ -22,7 +22,6 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 	public installationHistory: Array<UpdateHistory> = [];
 	private notificationSubscription: Subscription;
 	public showAll = false;
-	public direction = 'ltr';
 
 	constructor(
 		public systemUpdateService: SystemUpdateService,
@@ -33,9 +32,6 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 		const cashData = this.commonService.getLocalStorageValue(LocalStorageKey.SystemUpdateInstallationHistoryList);
 		if (typeof(cashData) !== 'undefined' && cashData.length > 0) {
 			this.installationHistory = cashData;
-		}
-		if (this.languageService.currentLanguage.toLowerCase() === 'ar' || this.languageService.currentLanguage.toLowerCase() === 'he' ) {
-			this.direction = 'rtl';
 		}
 	}
 

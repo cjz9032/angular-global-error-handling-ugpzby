@@ -4,7 +4,7 @@
 	</div>
 	<ul class="qa_list">
 		<li class="qa_item" *ngFor="let item of questions; let i = index">
-			<a href="javascript:void(0);" (click)="openAccordion(i)">
+			<a href="javascript:void(0);" (click)="openAccordion(i)" id="sa-ov-widget-link-question-{{i+1}}">
 				<div class="d-flex align-items-center row">
 					<div class="d-flex col-10">
 						<fa-icon [icon]="['fal', item.icon]" class="item-icon d-flex align-items-center"></fa-icon>

@@ -27,7 +27,7 @@
 						[innerHTML]="list.status | statusText | translate">
 					</span>
 			</h3>
-			<a [hidden]="list.status !== 'failedLoad'"
+			<a [hidden]="list.status !== 'failedLoad'" id="sa-av-link-retry"
 				href="javascript:void(0);"
 				(click)="retry(list);">{{'common.ui.retry' | translate}}</a>
         </div>
@@ -69,14 +69,12 @@
     <li *ngIf="windowsDefender" class="row justify-content-center">
 		<vtr-ui-button class="normal-button button"
 			[ngClass]="{'visible': !url}"
-			linkId="sa-av-link-subscribe"
-			metricsEvent="itemClick"
-			metricsItem="subscribe"
-			metricsParent="security.antivirus"
+			linkId="sa-av-btn-subscribe"
 			upperCaseLabel=false
 			btnHeight=true
 			[isDisabled]="isOnline === false"
 			[label]="'security.antivirus.windowsDefender.buyNow' | translate"
-			[href]="url"></vtr-ui-button>
+			[isLoading]="common.purchaseBtnIsLoading"
+			(click)="common.openMcAfeePurchase()"></vtr-ui-button>
     </li>
 </ul>

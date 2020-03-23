@@ -24,6 +24,12 @@
         }
       }
     }
+
+    .custom-control-input {
+      z-index: 1;
+      width: 2rem;
+      height: 2rem;
+    }
   }
 
   .white-button {
@@ -39,15 +45,15 @@
   }
 
   .badge {
-	height: 1.5rem;
-	line-height: 1.5rem;
+	  height: 1.5rem;
+	  line-height: 1.5rem;
     text-transform: uppercase;
     color: $light;
     border-radius: 1rem;
     font-size: 1rem;
     padding: 0 1rem;
-	justify-self: end;
-	max-width: 12rem;
+	  justify-self: end;
+	  max-width: 12rem;
   }
 
   .status-enabled {

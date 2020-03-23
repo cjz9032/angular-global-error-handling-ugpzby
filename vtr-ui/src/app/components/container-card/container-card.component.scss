@@ -43,15 +43,6 @@
 	}
 
 	&.card-corner {
-		@media #{$breakpoint_xl} {
-			height: 20rem !important;
-		}
-		@media #{$breakpoint_lg} {
-			height: 17.6rem !important;
-		}
-		@media #{$breakpoint_sm} {
-			height: 15.7rem !important;
-		}
 		.content {
 			position: relative;
 			z-index: 1;
@@ -64,7 +55,7 @@
 				text-decoration: none;
 				cursor: pointer;
 				width: 100%;
-				height: 100% !important;
+				height: 100%;
 				position: relative;
 				display: block;
 				border-radius: $border_radius;
@@ -325,15 +316,6 @@
 	}
 
 	&.card-highlight {
-		@media #{$breakpoint_xl} {
-			height: 20rem !important;
-		}
-		@media #{$breakpoint_lg} {
-			height: 17.6rem !important;
-		}
-		@media #{$breakpoint_sm} {
-			height: 15.7rem !important;
-		}
 		.content {
 			position: relative;
 			z-index: 1;
@@ -346,7 +328,7 @@
 				text-decoration: none;
 				cursor: pointer;
 				width: 100%;
-				height: 100% !important;
+				height: 100%;
 				display: block;
 				border-radius: $border_radius;
 				overflow: hidden;

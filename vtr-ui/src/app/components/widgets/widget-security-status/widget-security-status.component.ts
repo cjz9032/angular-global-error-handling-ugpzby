@@ -14,6 +14,7 @@ import { LocalInfoService } from 'src/app/services/local-info/local-info.service
 import { UACWidgetItemViewModel } from 'src/app/data-models/security-advisor/widget-security-status/uac-widget-item.model';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { DeviceService } from 'src/app/services/device/device.service';
+import { AntivirusService } from 'src/app/services/security/antivirus.service';
 
 @Component({
 	selector: 'vtr-widget-security-status',
@@ -25,6 +26,8 @@ export class WidgetSecurityStatusComponent implements OnInit {
 	@Input() securityAdvisor: SecurityAdvisor;
 	items: Array<WidgetItem>;
 	region: string;
+	pluginSupport: boolean;
+	refreshTimeout: ReturnType<typeof setTimeout>;
 
 	@Input() linkId: string;
 	constructor(
@@ -33,11 +36,12 @@ export class WidgetSecurityStatusComponent implements OnInit {
 		private deviceService: DeviceService,
 		private ngZone: NgZone,
 		private windowsHelloService: WindowsHelloService,
-		private hypSettings: HypothesisService) { }
+		private hypSettings: HypothesisService,
+		private antivirusService: AntivirusService) { }
 
 	ngOnInit() {
 		this.items = [
-			new AntivirusWidgetItem(this.securityAdvisor.antivirus, this.commonService, this.translateService),
+			new AntivirusWidgetItem(this.securityAdvisor.antivirus, this.commonService, this.translateService, this.antivirusService),
 			new PassWordManagerWidgetItem(this.securityAdvisor.passwordManager, this.commonService, this.translateService),
 			new UACWidgetItemViewModel(this.securityAdvisor.uac, this.commonService, this.translateService)
 		];
@@ -47,6 +51,14 @@ export class WidgetSecurityStatusComponent implements OnInit {
 		}).catch(() => {
 			this.region = 'us';
 			this.showVpn();
+		});
+
+		this.hypSettings.getFeatureSetting('SecurityAdvisor').then((result) => {
+			this.pluginSupport = result === 'true';
+		}).catch((e) => {
+			this.pluginSupport = false;
+		}).finally(() => {
+			this.showUac();
 		});
 
 		const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
@@ -107,6 +119,13 @@ export class WidgetSecurityStatusComponent implements OnInit {
 		}
 	}
 
+	showUac() {
+		const uacItem = this.items.find(item => item.id.startsWith('sa-widget-lnk-uac'));
+		if (!this.pluginSupport && uacItem) {
+			this.items = this.items.filter(item => !item.id.startsWith('sa-widget-lnk-uac'));
+		}
+	}
+
 	showWifiSecurityItem() {
 		const wifiSecurityItem = this.items.find(item => item.id.startsWith('sa-widget-lnk-ws'));
 		if (this.securityAdvisor.wifiSecurity.isSupported) {
@@ -122,13 +141,25 @@ export class WidgetSecurityStatusComponent implements OnInit {
 		}
 	}
 
-	@HostListener('window: focus')
+	@HostListener('window:focus')
 	onFocus(): void {
-		const id = document.activeElement.id;
-		if (id !== 'sa-av-button-launch-mcafee') {
+		this.refreshPage(document.activeElement.id);
+	}
+
+	@HostListener('document:click', ['$event'])
+	onClick(event) {
+		this.refreshPage(event.target.id);
+	}
+
+	refreshPage(id: string) {
+		clearTimeout(this.refreshTimeout);
+		this.refreshTimeout = setTimeout(() => {
+			if (id === 'sa-av-button-launch-mcafee' || id === 'sa-av-link-subscribe' || id === 'sa-av-btn-subscribe') {
+				return;
+			}
 			this.securityAdvisor.refresh();
 			this.showVpn();
-		}
+		}, 100)
 	}
 
 }

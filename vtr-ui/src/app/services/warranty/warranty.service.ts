@@ -13,7 +13,7 @@ export class WarrantyService {
 
 	private warranty: any;
 	private sysinfo: any;
-	private sn: any;
+	private warrantyURl = 'https://pcsupport.lenovo.com/warrantylookup';
 
 	constructor(
 		private shellService: VantageShellService,
@@ -34,12 +34,6 @@ export class WarrantyService {
 		try {
 			if (this.sysinfo && this.warranty) {
 				return new Observable((observer) => {
-					// from local storage
-					const cacheWarranty = this.commonService.getLocalStorageValue(LocalStorageKey.LastWarrantyStatus);
-					if (cacheWarranty && cacheWarranty.version > 0) {
-						cacheWarranty.dayDiff = this.getDayDiff(cacheWarranty.startDate, cacheWarranty.endDate);
-						observer.next(cacheWarranty);
-					}
 					// first launch will not have data, below code will break
 					const warrantyResult = {
 						endDate: null,
@@ -49,7 +43,15 @@ export class WarrantyService {
 						version: 0,
 					};
 					this.deviceService.getMachineInfo().then((machineInfo) => {
-						if (machineInfo && machineInfo.serialnumber) { this.sn = machineInfo.serialnumber; }
+						if (machineInfo && machineInfo.serialnumber) {
+							this.setWarrantyUrl(machineInfo.serialnumber)
+						}
+						// from local storage
+						const cacheWarranty = this.commonService.getLocalStorageValue(LocalStorageKey.LastWarrantyStatus);
+						if (cacheWarranty && cacheWarranty.version > 0) {
+							cacheWarranty.dayDiff = this.getDayDiff(cacheWarranty.startDate, cacheWarranty.endDate);
+							observer.next(cacheWarranty);
+						}
 						// machineInfo.serialnumber = 'MP1FCJBF';
 						// 'PC0G9X77' 'R9T6M3E' 'R90HTPEU' 'MP1FCJBF' machineInfo.serialnumber
 						this.warranty.getWarrantyInformation(machineInfo.serialnumber).then(
@@ -86,11 +88,12 @@ export class WarrantyService {
 		}
 	}
 
+	setWarrantyUrl(sn: string) {
+			this.warrantyURl =  `https://pcsupport.lenovo.com/warrantylookup?sn=${sn}&upgrade&cid=ww:apps:pikjhe&utm_source=Companion&utm_medium=Native&utm_campaign=Warranty`;
+	}
+
 	getWarrantyUrl(): string {
-		if (this.sn) {
-			return `https://pcsupport.lenovo.com/warrantylookup?sn=${this.sn}&upgrade&cid=ww:apps:pikjhe&utm_source=Companion&utm_medium=Native&utm_campaign=Warranty`;
-		}
-		return `https://pcsupport.lenovo.com/warrantylookup`;
+		return this.warrantyURl;
 	}
 
 	getRoundYear(dayDiff: number) {

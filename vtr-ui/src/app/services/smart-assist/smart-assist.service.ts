@@ -27,7 +27,7 @@ export class SmartAssistService {
 		this.activeProtectionSystem = shellService.getActiveProtectionSystem(); // getting APS Object from //vantage-shell.service
 		this.lenovoVoice = shellService.getLenovoVoice();
 		this.superResolution = shellService.getSuperResolution();
-		this.shellVersion = shellService.getShellVersion();
+		// this.shellVersion = shellService.getShellVersion();
 
 		this.activeProtectionSystem ? this.isAPSavailable = true : this.isAPSavailable = false;
 		if (this.intelligentSensing && this.intelligentMedia && this.lenovoVoice && this.superResolution) {

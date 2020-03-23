@@ -73,7 +73,7 @@ describe('WidgetLegionEdgeComponent', () => {
 	// 	fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
 	// 	fixture.detectChanges();
 	// 	const compiled = fixture.debugElement.nativeElement;
-	// 	expect(compiled.querySelector('div.justify-content-between>img').src).toContain('/assets/images/gaming/legionEdge.png');
+	// 	expect(compiled.querySelector('div.justify-content-between>img').src).toContain('assets/images/gaming/legionEdge.png');
 	// }));
 
 	it('should render the Question icon image on legion edge container', async(() => {
@@ -406,7 +406,7 @@ describe('WidgetLegionEdgeComponent', () => {
 		tick(10);
 		fixture.detectChanges();
 		component.toggleOnOffRamOCStatus({ target: { value: true, name: 'gaming.dashboard.device.legionEdge.autoClose' } });
-		expect(component.setAutoCloseStatus).toHaveBeenCalled(); 'gaming.dashboard.device.legionEdge.networkBoost'
+		expect(component.setAutoCloseStatus).toHaveBeenCalled();
 	}));
 
 	it('networkboost on off', fakeAsync(() => {

@@ -104,13 +104,13 @@
 
 		.mcafee {
 			.vtr-widget-offline-info {
-				@media #{$mediaquery_xl} {
+				@media #{$breakpoint_xl} {
 					position: relative;
 					top: -13rem;
 				}
 			}
 
-			@media #{$mediaquery_xl} {
+			@media #{$breakpoint_xl} {
 				position: relative;
 				// margin-top: 12rem;
 			}
@@ -202,7 +202,7 @@
 				}
 
 				.xl-display {
-					@media #{$mediaquery_xl} {
+					@media #{$breakpoint_xl} {
 						flex-direction: column;
 						position: relative;
 					}

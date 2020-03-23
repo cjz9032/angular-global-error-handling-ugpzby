@@ -57,19 +57,22 @@
 	}
 }
 
-:host ::ng-deep {
-	.spinner-content {
-		width: 100%;
-		height: calc(83vh - 1rem);
-		display: flex;
-		justify-content: center;
-		align-items: center;
+.spinner-content,
+.empty-content {
+	width: 100%;
+	height: calc(100vh - 13.5rem);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
-		.spinner-border {
-			width: 5rem !important;
-			height: 5rem !important;
-			padding: 5rem;
-			margin-bottom: 6rem;
-		}
+	img {
+		width: 75%;
+	}
+
+	.spinner-border {
+		width: 5rem !important;
+		height: 5rem !important;
+		padding: 5rem;
+		margin-bottom: 6rem;
 	}
 }

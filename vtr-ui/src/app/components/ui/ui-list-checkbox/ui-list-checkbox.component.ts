@@ -38,7 +38,6 @@ export class UiListCheckboxComponent implements OnInit {
 	public severity = UpdateInstallSeverity.Optional;
 	public packageName: string;
 	public packageID: string;
-	public direction = 'ltr';
 	// Random number is used to have unique id of each input field
 	randomNumber: number = Math.floor(new Date().valueOf() * SecureMath.random());
 
@@ -52,9 +51,6 @@ export class UiListCheckboxComponent implements OnInit {
 		private languageService: LanguageService
 	) {
 		this.translateString();
-		if (this.languageService.currentLanguage.toLowerCase() === 'ar' || this.languageService.currentLanguage.toLowerCase() === 'he' ) {
-			this.direction = 'rtl';
-		}
 	}
 
 	ngOnInit() {

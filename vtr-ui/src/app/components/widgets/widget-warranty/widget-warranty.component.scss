@@ -9,15 +9,15 @@
 	letter-spacing: 0;
 
 	&.in-warranty {
-		background-image: url("../../../../assets/images/warranty-bg.png"), linear-gradient(to left bottom, #4980FC, #2E62D9);
+		background-image: url("~/assets/images/warranty-bg.png"), linear-gradient(to left bottom, #4980FC, #2E62D9);
 	}
 
 	&.expired {
-		background-image: url("../../../../assets/images/warranty-bg.png"), linear-gradient(to left top, #F17F14, #ED4E04);
+		background-image: url("~/assets/images/warranty-bg.png"), linear-gradient(to left top, #F17F14, #ED4E04);
 	}
 
 	&.not-found {
-		background-image: url("../../../../assets/images/warranty-bg.png"), linear-gradient(to left bottom, #bbb, #888);
+		background-image: url("~/assets/images/warranty-bg.png"), linear-gradient(to left bottom, #bbb, #888);
 	}
 
 	.title {
