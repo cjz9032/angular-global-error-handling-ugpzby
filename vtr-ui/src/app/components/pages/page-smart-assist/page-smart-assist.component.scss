@@ -387,3 +387,16 @@ $fontsize_xs: 1.4rem;
 		}
 	}
 }
+
+.zeroTouch-DistanceAdjust {
+	width: 100%;
+
+	.zeroTouchReadMore {
+		font-size: $body;
+		font-weight: $weight_light;
+		.read-more-link {
+			list-style: none;
+			text-decoration: underline;
+		}
+	}
+}

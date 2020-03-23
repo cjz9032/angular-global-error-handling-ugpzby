@@ -1891,6 +1891,12 @@
 							"near": "Near",
 							"medium": "Middle",
 							"far": "Far"
+						},
+						"readMore": {
+							"line1": "There are three options. In each range, when human movements are not detected, your screen will be locked accordingly. ",
+							"line2": "• Near: 0.9 meter ",
+							"line3": "• Middle: 1.2 meter ",
+							"line4": "• Far: 1.5 meter "
 						}
 					}
 				},

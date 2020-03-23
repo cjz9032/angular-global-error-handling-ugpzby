@@ -435,7 +435,6 @@
 											<vtr-ui-row-switch [switchId]="'smartAssist-intelligentSecurity-zeroTouchLock-distanceSensitivityAutoAdjusting'"
 												*ngIf="zeroTouchPresenceLeaveDistanceAutoAdjustCapability"
 												[title]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.title' | translate"
-												[caption]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.caption' | translate"
 												[isSwitchVisible]="true"
 												[showChildContent]="true"
 												[isSwitchChecked]="hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust"
@@ -444,6 +443,48 @@
 												[readMoreText] = "'Read more'"
 												[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || !hsaIntelligentSecurity.capacity"
 												[toolTipStatus]='true'>
+												<div class="col text-wrap zeroTouch-DistanceAdjust">
+													<p role="text"
+														class="zeroTouchReadMore"
+														id="zeroTouchLock-DistanceAdjust"
+														attr.aria-label="zeroTouch.DistanceAdjust">
+														{{'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.caption' | translate}}
+														<a class="read-more-link"
+															#readMoreLink
+															*ngIf="!readMoreClick && !intelligentSecurity.isZeroTouchLockEnabled"
+															href="javascript:void(0)"
+															(click)="readMoreLink.blur();readMore(readMoreDiv)"
+															(keydown.enter)="readMoreLink.blur();readMore(readMoreDiv);"
+															tabindex="0"
+															role="link"
+															id="zeroTouchLock-DistanceAdjust-read-more"
+															attr.aria-label="zeroTouchLock-DistanceAdjust-read-more">
+															{{'device.deviceSettings.power.powerSmartSettings.readMore' | translate}}</a>
+													</p>
+													<div style="display:none"
+														*ngIf="!intelligentSecurity.isZeroTouchLockEnabled"
+														id="zeroTouchLock-DistanceAdjust-readMoreDiv"
+														class="zeroTouchReadMore"
+														role="text"
+														#readMoreDiv>
+														<p id="zeroTouchLock-DistanceAdjust-readMoreMode1"
+															role="text">
+															{{'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.readMore.line1' | translate}}
+														</p>
+														<p id="zeroTouchLock-DistanceAdjust-readMoreMode2"
+															role="text">
+															{{'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.readMore.line2' | translate}}
+														</p>
+														<p id="zeroTouchLock-DistanceAdjust-readMoreMode3"
+															role="text">
+															{{'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.readMore.line3' | translate}}
+														</p>
+														<p id="zeroTouchLock-DistanceAdjust-readMoreMode4"
+															role="text">
+															{{'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.readMore.line4' | translate}}
+														</p>
+													</div>
+												</div>	
 											</vtr-ui-row-switch>
 											<div class="slider-note">
 												<vtr-ui-range-slider [rangeSliderId]="'smartAssist-intelligentSecurity-zeroTouchLock-distanceSensitivityAdjusting'"

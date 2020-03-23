@@ -68,6 +68,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	public zeroTouchLockShowAdvancedSection = false;
 	public zeroTouchPresenceLeaveDistanceCapability = false;
 	public zeroTouchPresenceLeaveDistanceAutoAdjustCapability = false;
+	public readMoreClick = false;
 
 	headerMenuItems: PageAnchorLink[] = [
 		{
@@ -579,6 +580,12 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		} catch (error) {
 			this.logger.error('onZeroTouchLockDistanceSensitivityAdjustToggle' + error.message);
 		}
+	}
+
+	readMore(readMoreDiv: HTMLElement) {
+		this.readMoreClick = true;
+		readMoreDiv.style.display = 'block';
+		readMoreDiv.focus();
 	}
 
 	public SetZeroTouchLockDistanceSensitivity(event: ChangeContext) {
