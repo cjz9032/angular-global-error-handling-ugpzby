@@ -247,7 +247,7 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit, AfterViewInit
 				}
 			});
 
-			//focus on first non disabled element if not selected any radio items
+			// focus on first non disabled element if not selected any radio items
 			if (this.noRadioButtonSelected && this.firstRadioButton !== undefined
 				&& (this.firstRadioButton.tabIndex || this.firstRadioButton.tabIndex !== 0)
 			) {
