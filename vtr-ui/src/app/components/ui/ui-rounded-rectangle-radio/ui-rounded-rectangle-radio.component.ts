@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, ViewChild } from '@angular/core';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { AppEvent } from './../../../enums/app-event.enum';
 import { MetricService } from 'src/app/services/metric/metric.service';
+import { AppEvent } from './../../../enums/app-event.enum';
 
 @Component({
 	selector: 'vtr-ui-rounded-rectangle-radio',
@@ -111,7 +111,7 @@ export class UiRoundedRectangleRadioComponent implements OnInit, OnChanges, Afte
 			case this.keyCode.SPACE:
 			case this.keyCode.RETURN:
 				this.changeRadioOnKeyPress($event, radio);
-				//this.setChecked(this.radioButton.nativeElement, true);
+				// this.setChecked(this.radioButton.nativeElement, true);
 				$event.stopPropagation();
 				$event.preventDefault();
 				break;
@@ -246,7 +246,7 @@ export class UiRoundedRectangleRadioComponent implements OnInit, OnChanges, Afte
 				}
 			});
 
-			//focus on first non disabled element if not selected any radio items
+			// focus on first non disabled element if not selected any radio items
 			if (this.noRadioButtonSelected && this.firstRadioButton !== undefined
 				&& (this.firstRadioButton.tabIndex || this.firstRadioButton.tabIndex !== 0)
 			) {

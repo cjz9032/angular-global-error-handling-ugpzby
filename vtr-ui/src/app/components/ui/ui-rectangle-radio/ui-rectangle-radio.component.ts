@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, ViewChild } from '@angular/core';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { AppEvent } from './../../../enums/app-event.enum';
 import { MetricService } from 'src/app/services/metric/metric.service';
+import { AppEvent } from './../../../enums/app-event.enum';
 
 @Component({
 	selector: 'vtr-ui-rectangle-radio',

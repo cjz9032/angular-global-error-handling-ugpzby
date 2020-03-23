@@ -1,16 +1,16 @@
-import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
-import { PowerService } from 'src/app/services/power/power.service';
-import { SmartStandby } from 'src/app/data-models/device/smart-standby.model';
-import { CommonService } from 'src/app/services/common/common.service';
-import { AppNotification } from 'src/app/data-models/common/app-notification.model';
-import { Subscription } from 'rxjs/internal/Subscription';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { LoggerService } from 'src/app/services/logger/logger.service';
-import { EMPTY } from 'rxjs';
-import { TranslateService } from '@ngx-translate/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { SmartStandbyService } from 'src/app/services/smart-standby/smart-standby.service';
+import { TranslateService } from '@ngx-translate/core';
+import { EMPTY } from 'rxjs';
+import { Subscription } from 'rxjs/internal/Subscription';
 import { ModalSmartStandByComponent } from 'src/app/components/modal/modal-smart-stand-by/modal-smart-stand-by.component';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { SmartStandby } from 'src/app/data-models/device/smart-standby.model';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { CommonService } from 'src/app/services/common/common.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { PowerService } from 'src/app/services/power/power.service';
+import { SmartStandbyService } from 'src/app/services/smart-standby/smart-standby.service';
 
 
 @Component({

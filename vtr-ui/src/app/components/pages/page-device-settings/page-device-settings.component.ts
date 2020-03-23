@@ -1,23 +1,22 @@
-import { Component, OnDestroy, OnInit, ElementRef, ViewChild } from '@angular/core';
-import { QaService } from '../../../services/qa/qa.service';
-import { CMSService } from 'src/app/services/cms/cms.service';
-import { DeviceService } from 'src/app/services/device/device.service';
-import { CommonService } from 'src/app/services/common/common.service';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
+import { EMPTY } from 'rxjs';
+import { Subscription } from 'rxjs/internal/Subscription';
+import { DolbyModeResponse } from 'src/app/data-models/audio/dolby-mode-response';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
+import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { AudioService } from 'src/app/services/audio/audio.service';
-import { Microphone } from 'src/app/data-models/audio/microphone.model';
-import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
-import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
-import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
-import { AppNotification } from 'src/app/data-models/common/app-notification.model';
-import { Subscription } from 'rxjs/internal/Subscription';
-import { LoggerService } from 'src/app/services/logger/logger.service';
-import { EMPTY } from 'rxjs';
-import { Router, NavigationEnd } from '@angular/router';
-import { DolbyModeResponse } from 'src/app/data-models/audio/dolby-mode-response';
+import { CMSService } from 'src/app/services/cms/cms.service';
+import { CommonService } from 'src/app/services/common/common.service';
+import { DeviceService } from 'src/app/services/device/device.service';
 import { GuardService } from 'src/app/services/guard/guardService.service';
 import { NonArmGuard } from 'src/app/services/guard/non-arm-guard';
 import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { QaService } from '../../../services/qa/qa.service';
 
 @Component({
 	selector: 'vtr-page-device-settings',

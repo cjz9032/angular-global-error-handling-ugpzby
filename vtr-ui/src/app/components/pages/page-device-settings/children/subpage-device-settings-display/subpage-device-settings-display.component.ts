@@ -1,28 +1,28 @@
-import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, EventEmitter, NgZone, AfterViewInit } from '@angular/core';
-import { CameraDetail, CameraSettingsResponse, CameraFeatureAccess, EyeCareModeResponse } from 'src/app/data-models/camera/camera-detail.model';
-import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
-import { Subscription, EMPTY, Subject } from 'rxjs';
-import { DisplayService } from 'src/app/services/display/display.service';
-import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
+import { AfterViewInit, ChangeDetectionStrategy, Component, EventEmitter, NgZone, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ChangeContext } from 'ng5-slider';
+import { EMPTY, Subject, Subscription } from 'rxjs';
+import { takeWhile } from 'rxjs/operators';
+import { CameraBlur } from 'src/app/data-models/camera/camera-blur-model';
+import { CameraDetail, CameraFeatureAccess, CameraSettingsResponse, EyeCareModeResponse } from 'src/app/data-models/camera/camera-detail.model';
 import { EyeCareMode, SunsetToSunriseStatus } from 'src/app/data-models/camera/eyeCareMode.model';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
+import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
+import { EyeCareModeCapability } from 'src/app/data-models/device/eye-care-mode-capability.model';
+import { DeviceMonitorStatus } from 'src/app/enums/device-monitor-status.enum';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
+import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
+import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
+import { CameraFeedService } from 'src/app/services/camera/camera-feed/camera-feed.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { DeviceService } from 'src/app/services/device/device.service';
-import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
-import { AppNotification } from 'src/app/data-models/common/app-notification.model';
-import { DeviceMonitorStatus } from 'src/app/enums/device-monitor-status.enum';
-import { CameraFeedService } from 'src/app/services/camera/camera-feed/camera-feed.service';
-import { CameraBlur } from 'src/app/data-models/camera/camera-blur-model';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
-import { ActivatedRoute } from '@angular/router';
-import { takeWhile } from 'rxjs/operators';
-import { EyeCareModeCapability } from 'src/app/data-models/device/eye-care-mode-capability.model';
+import { DisplayService } from 'src/app/services/display/display.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { WhiteListCapability } from '../../../../../data-models/eye-care-mode/white-list-capability.interface';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { Md5 } from 'ts-md5';
-import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
+import { WhiteListCapability } from '../../../../../data-models/eye-care-mode/white-list-capability.interface';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-display',

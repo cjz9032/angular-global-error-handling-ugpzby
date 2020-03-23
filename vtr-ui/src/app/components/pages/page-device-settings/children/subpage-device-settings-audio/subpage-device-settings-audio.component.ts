@@ -1,18 +1,18 @@
-import { Component, OnInit, OnDestroy, EventEmitter } from '@angular/core';
-import { AudioService } from 'src/app/services/audio/audio.service';
-import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
-import { Microphone } from 'src/app/data-models/audio/microphone.model';
-import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
+import { Component, EventEmitter, OnDestroy, OnInit } from '@angular/core';
+import { EMPTY, Subscription } from 'rxjs';
 import { DolbyModeResponse } from 'src/app/data-models/audio/dolby-mode-response';
 import { MicrophoneOptimizeModes } from 'src/app/data-models/audio/microphone-optimize-modes';
-import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
-import { CommonService } from 'src/app/services/common/common.service';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
-import { Subscription, EMPTY } from 'rxjs';
+import { Microphone } from 'src/app/data-models/audio/microphone.model';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
-import { LoggerService } from 'src/app/services/logger/logger.service';
+import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
+import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
 import { DolbyAudioToggleCapability } from 'src/app/data-models/device/dolby-audio-toggle-capability';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
+import { AudioService } from 'src/app/services/audio/audio.service';
+import { CommonService } from 'src/app/services/common/common.service';
+import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 
@@ -58,11 +58,11 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		private commonService: CommonService,
 		private vantageShellService: VantageShellService) {
 
-			this.Windows = vantageShellService.getWindows();
-			if (this.Windows) {
-				this.microphoneDevice = this.Windows.Devices.Enumeration.DeviceAccessInformation
-					.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.audioCapture);
-			}
+		this.Windows = vantageShellService.getWindows();
+		if (this.Windows) {
+			this.microphoneDevice = this.Windows.Devices.Enumeration.DeviceAccessInformation
+				.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.audioCapture);
+		}
 	}
 
 	ngOnInit() {
@@ -84,8 +84,8 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		}
 
 		if (this.microphoneDevice) {
-			this.microphnePermissionHandler = (args: any) =>{
-				if(args && args.status) {
+			this.microphnePermissionHandler = (args: any) => {
+				if (args && args.status) {
 					switch (args.status) {
 						case 1:
 							this.microphoneProperties.permission = true;
@@ -621,7 +621,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			this.microphoneProperties.muteDisabled = msg.muteDisabled;
 		}
 		if (msg.hasOwnProperty('volume')) {
-			this.logger.info('*****ready to change volume ' + msg.volume);this.microphoneProperties.volume = msg.volume;
+			this.logger.info('*****ready to change volume ' + msg.volume); this.microphoneProperties.volume = msg.volume;
 		}
 		if (msg.hasOwnProperty('permission')) {
 			this.microphoneProperties.permission = msg.permission;
