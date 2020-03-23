@@ -1053,7 +1053,7 @@
                     "NotGood": "<b>البطارية ليست بحالة جيدة.</b>",
                     "NotSupportACAdapter": "<span dir='rtl'><b>محول التيار المتردد غير مدعوم.</b></span>",
                     "LimitedACAdapterSupport": "<b>لا يمكن أن يوفر محول التيار المتردد طاقة كافية.</b>",
-                    "MissingDriver": "<b>برنامج تشغيل Lenovo Power Manager</b> غير مثبت أو لا يعمل بشكل صحيح. يرجى تشغيل Windows Update لتثبيت أحدث برنامج تشغيل. يمكنك أيضًا تثبيت برنامج التشغيل من <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">هنا</a>. بعد التثبيت، أعد تشغيل الكمبيوتر.",
+                    "MissingDriver": "<b>برنامج تشغيل Lenovo Power Manager</b> غير مثبت أو لا يعمل بشكل صحيح. يرجى تشغيل Windows Update أو تثبيته يدوياً من <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">هنا</a>. بعد التثبيت، أعد تشغيل الكمبيوتر.",
                     "StoreLimitation": "<b>بإمكان البطارية تخزين فقط {{value}}% من</b> سعة شحنتها الأصلية.",
                     "HighTemperature": "<b>تم إيقاف التفريغ</b> لأن <b>درجة حرارة البطارية مرتفعة أكثر من اللازم.</b>",
                     "TrickleCharge": "تم <b>تفريغ البطارية بشكل كامل</b> ويجب إعادة شحنها. قد تستغرق هذه العملية 10 ساعات أو أكثر.",
@@ -1332,6 +1332,12 @@
                         "description": "اختر مخطط طاقة للتحكم في أداء الكمبيوتر ودرجة حرارة النظام واستخدام الطاقة.",
                         "currentPowerPlan": {
                             "label": "المخطط الحالي"
+                        },
+                        "profile": {
+                            "title": "PLAN PROFILE:",
+                            "performance": "Max performance:",
+                            "temperature": "Max system temperature:",
+                            "usage": "Max power usage:"
                         }
                     }
                 },
@@ -2440,7 +2446,6 @@
                 "title": "سلامة الأمن",
                 "deviceName1": "تطبيقات من مصادر موثوقة",
                 "deviceName2": "وضع المطور",
-                "deviceName3": "إعلام UAC",
                 "deviceName4": "توفر برامج مكافحه الفيروسات",
                 "deviceName5": "تشفير محرك الأقراص الثابتة",
                 "deviceName6": "توفر جدار الحماية",

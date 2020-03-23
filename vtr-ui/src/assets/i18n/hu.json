@@ -1051,7 +1051,7 @@
                     "NotGood": "<b>Az akkumulátor nincs jó állapotban.</b>",
                     "NotSupportACAdapter": "<b>A hálózati adapter nem támogatott.</b>",
                     "LimitedACAdapterSupport": "<b>A hálózati adapter nem képes elegendő energiát szolgáltatni.</b>",
-                    "MissingDriver": "<b>A Lenovo Power Manager illesztőprogramja</b> nincs telepítve, vagy nem működik megfelelően. Futtassa a Windows Update programot a legújabb illesztőprogram telepítéséhez. A <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">helyről letöltött illesztőprogramot itt</a> is telepítheti. A telepítés után indítsa újra a számítógépet.",
+                    "MissingDriver": "<b>A Lenovo Power Manager illesztőprogramja</b> nincs telepítve, vagy nem működik megfelelően. Kérjük, futtassa a Windows Update szolgáltatást, vagy telepítse manuálisan <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">innen</a>. A telepítés után indítsa újra a számítógépet.",
                     "StoreLimitation": "<b>Az akkumulátor csak az eredeti teljes töltési kapacitás {{value}}%-át</b> tudja tárolni.",
                     "HighTemperature": "A <b>lemerítés</b> leállt, mert az <b>akkumulátor túl meleg.</b>",
                     "TrickleCharge": "Az akkumulátor <b>teljesen lemerült</b>, fel kell tölteni. Ez akár 10 órán át vagy tovább is eltarthat.",
@@ -1330,6 +1330,12 @@
                         "description": "Válasszon egy energiasémát, amely vezérli a számítógép teljesítményét, a rendszer hőmérsékletét és az energiafelhasználást.",
                         "currentPowerPlan": {
                             "label": "AKTUÁLIS SÉMA"
+                        },
+                        "profile": {
+                            "title": "PLAN PROFILE:",
+                            "performance": "Max performance:",
+                            "temperature": "Max system temperature:",
+                            "usage": "Max power usage:"
                         }
                     }
                 },
@@ -2438,7 +2444,6 @@
                 "title": "Biztonsági állapot",
                 "deviceName1": "Megbízható forrásból származó alkalmazások",
                 "deviceName2": "Fejlesztői üzemmód",
-                "deviceName3": "UAC-értesítés",
                 "deviceName4": "Vírusvédelem elérhetősége",
                 "deviceName5": "Merevlemez-titkosítás",
                 "deviceName6": "Tűzfal elérhetősége",

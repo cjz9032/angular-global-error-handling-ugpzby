@@ -1051,7 +1051,7 @@
                     "NotGood": "<b>Akumulator nie jest w dobrym stanie.</b>",
                     "NotSupportACAdapter": "<b>Zasilacz nie jest obsługiwany.</b>",
                     "LimitedACAdapterSupport": "<b>Zasilacz nie zapewnia wystarczającej mocy.</b>",
-                    "MissingDriver": "<b>Sterownik Lenovo Power Manager</b> nie jest zainstalowany lub nie działa poprawnie. Uruchom usługę Windows Update, aby zainstalować najnowszy sterownik. Możesz także zainstalować sterownik <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">stąd</a>. Po zakończeniu instalacji, ponownie uruchom komputer.",
+                    "MissingDriver": "<b>Sterownik Lenovo Power Manager</b> nie jest zainstalowany lub nie działa poprawnie. Uruchom Windows Update lub ręcznie zainstaluj <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">tutaj</a>. Po zakończeniu instalacji, ponownie uruchom komputer.",
                     "StoreLimitation": "<b>Pojemność akumulatora to tylko {{value}}% pierwotnej pojemności</b> po pełnym naładowaniu.",
                     "HighTemperature": "<b>Rozładowywanie</b> zostało zatrzymane, ponieważ <b>temperatura akumulatora jest zbyt wysoka.</b>",
                     "TrickleCharge": "Akumulator <b>całkowicie się rozładował</b> i należy go ponownie naładować. Może to zająć dziesięć godzin lub więcej.",
@@ -1330,6 +1330,12 @@
                         "description": "Wybierz plan zasilania, aby kontrolować wydajność, temperaturę komputera i zużycie energii.",
                         "currentPowerPlan": {
                             "label": "OBECNY PLAN"
+                        },
+                        "profile": {
+                            "title": "PLAN PROFILE:",
+                            "performance": "Max performance:",
+                            "temperature": "Max system temperature:",
+                            "usage": "Max power usage:"
                         }
                     }
                 },
@@ -2438,7 +2444,6 @@
                 "title": "Bezpieczeństwo",
                 "deviceName1": "Aplikacje z zaufanych źródeł",
                 "deviceName2": "Tryb dewelopera",
-                "deviceName3": "Powiadomienie UAC",
                 "deviceName4": "Dostępność oprogramowania antywirusowego",
                 "deviceName5": "Szyfrowanie dysku twardego",
                 "deviceName6": "Dostępność zapory sieciowej",

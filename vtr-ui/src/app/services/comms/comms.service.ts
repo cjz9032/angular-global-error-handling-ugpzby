@@ -48,7 +48,7 @@ export class CommsService {
 			this.cmsHost = await this.getCmsHostFromReg();
 		}
 
-		return  this.cmsHost || this.env.cmsApiRoot;
+		return this.cmsHost || this.env.cmsApiRoot;
 	}
 
 	handleAPIError(method, err) {
@@ -74,9 +74,16 @@ export class CommsService {
 		});
 	}
 
-	callUpeApi(url, queryParams: any = {}) {
+	async callUpeApi(url, queryParams: any = {}) {
 		// const url = this.env.upeApiRoot + api;
+		if (!Windows) {
+			return this.callUpeApiByWeb(url, queryParams);
+		} else {
+			return this.callUpeApiByShell(url, queryParams);
+		}
+	}
 
+	private async callUpeApiByWeb(url, queryParams: any = {}) {
 		const reqHeader = new HttpHeaders({
 			'Content-Type': 'application/json;charset=UTF-8'
 		});
@@ -86,11 +93,28 @@ export class CommsService {
 			{
 				observe: 'response',
 				headers: reqHeader
-			});
+			}).toPromise();
+	}
+
+	private async callUpeApiByShell(strUrl, queryParams: any = {}) {
+		const client = new Windows.Web.Http.HttpClient();
+		const url = new Windows.Foundation.Uri(strUrl);
+		const request = new Windows.Web.Http.HttpRequestMessage(Windows.Web.Http.HttpMethod.post, url);
+		request.content = new Windows.Web.Http.HttpStringContent(JSON.stringify(queryParams),
+			Windows.Storage.Streams.UnicodeEncoding.utf8,
+			'application/json;charset=UTF-8');
+		const response = await client.sendRequestAsync(request);
+		let content;
+		if (response.statusCode === 200) {
+			content = await response.content.readAsStringAsync();
+			content = content && JSON.parse(content);
+		};
+
+		return { status: response.statusCode, body: content };
 	}
 
 	async makeTagRequest(strUrl, headers: any = {}) {
-		//return this.http.get(url, { observe: 'response', headers });
+		// return this.http.get(url, { observe: 'response', headers });
 		if (!Windows) {
 			throw new Error('unknow error');
 		}
@@ -106,6 +130,9 @@ export class CommsService {
 		}
 
 		const response = await client.sendRequestAsync(request);
+		if (response.statusCode !== 200) {
+			throw { status: response.statusCode }
+		};
 		return await response.content.readAsStringAsync();
 	}
 

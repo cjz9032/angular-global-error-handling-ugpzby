@@ -424,7 +424,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				}
 			});
 		}
-		this.batteryService.isInvalidBattery = this.isUnsupportedBattery;
+		this.batteryService.isInvalidBattery = this.isUnsupportedBattery || this.batteryHealth === 3;
 		if (!(this.batteryIndicator.batteryNotDetected || this.batteryService.isPowerDriverMissing)) {
 
 			// AcAdapter conditions hidden for IdeaPad & IdeaCenter machines
@@ -490,42 +490,42 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	private getBatterySettings() {
 		if (this.isThinkPad) {
 			this.getBatteryThresholdInformation();
-			this.getAirplaneModeCapabilityThinkPad();
+			// this.getAirplaneModeCapabilityThinkPad();
 		} else {
 			// this.getConservationModeStatusIdeaPad();
-			this.getRapidChargeModeStatusIdeaPad();
+			// this.getRapidChargeModeStatusIdeaPad();
 		}
 	}
 
-	private getAirplaneModeCapabilityThinkPad() {
-		this.logger.info('Before getAirplaneModeCapabilityThinkPad.then ');
-		if (this.powerService.isShellAvailable) {
-			this.powerService.getAirplaneModeCapabilityThinkPad().then((value) => {
-				this.logger.info('getAirplaneModeCapabilityThinkPad.then ==>', value);
-				if (value) {
-					this.getAirplaneModeThinkPad()
-				} else {
-					this.commonService.sendNotification('AirplaneModeStatus', {isCapable: value, isEnabled: false});
-				}
-			}).catch((error) => {
-				this.logger.error('getAirplaneModeCapabilityThinkPad Error ==> ', error.message);
-				return EMPTY;
-			});
-		}
-	}
+	// private getAirplaneModeCapabilityThinkPad() {
+	// 	this.logger.info('Before getAirplaneModeCapabilityThinkPad.then ');
+	// 	if (this.powerService.isShellAvailable) {
+	// 		this.powerService.getAirplaneModeCapabilityThinkPad().then((value) => {
+	// 			this.logger.info('getAirplaneModeCapabilityThinkPad.then ==>', value);
+	// 			if (value) {
+	// 				this.getAirplaneModeThinkPad()
+	// 			} else {
+	// 				this.commonService.sendNotification('AirplaneModeStatus', {isCapable: value, isEnabled: false});
+	// 			}
+	// 		}).catch((error) => {
+	// 			this.logger.error('getAirplaneModeCapabilityThinkPad Error ==> ', error.message);
+	// 			return EMPTY;
+	// 		});
+	// 	}
+	// }
 
-	private getAirplaneModeThinkPad() {
-		if (this.powerService.isShellAvailable) {
-			this.powerService.getAirplaneModeThinkPad().then((airPlanePowerMode: any) => {
-				this.logger.info('getAirplaneModeThinkPad.then', airPlanePowerMode);
-				this.batteryIndicator.isAirplaneMode = airPlanePowerMode;
-				this.commonService.sendNotification('AirplaneModeStatus', {isCapable: true, isEnabled: airPlanePowerMode});
-			}).catch(error => {
-				this.logger.error('getAirplaneModeThinkPad', error.message);
-				return EMPTY;
-			});
-		}
-	}
+	// private getAirplaneModeThinkPad() {
+	// 	if (this.powerService.isShellAvailable) {
+	// 		this.powerService.getAirplaneModeThinkPad().then((airPlanePowerMode: any) => {
+	// 			this.logger.info('getAirplaneModeThinkPad.then', airPlanePowerMode);
+	// 			this.batteryIndicator.isAirplaneMode = airPlanePowerMode;
+	// 			this.commonService.sendNotification('AirplaneModeStatus', {isCapable: true, isEnabled: airPlanePowerMode});
+	// 		}).catch(error => {
+	// 			this.logger.error('getAirplaneModeThinkPad', error.message);
+	// 			return EMPTY;
+	// 		});
+	// 	}
+	// }
 
 	// private getConservationModeStatusIdeaPad() {
 	// 	this.logger.info('Before getConservationModeStatusIdeaNoteBook');
@@ -546,18 +546,18 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	// 	}
 	// }
 
-	private getRapidChargeModeStatusIdeaPad() {
-		this.logger.info('Before getRapidChargeModeStatusIdeaNoteBook');
-		if (this.powerService.isShellAvailable) {
-			this.powerService.getRapidChargeModeStatusIdeaNoteBook().then((featureStatus) => {
-				this.logger.info('getRapidChargeModeStatusIdeaNoteBook.then', featureStatus);
-				this.commonService.sendNotification('ExpressChargingStatus', {available: featureStatus.available, status: featureStatus.status});
-			}).catch((error) => {
-				this.logger.error('getRapidChargeModeStatusIdeaNoteBook', error.message);
-				return EMPTY;
-			});
-		}
-	}
+	// private getRapidChargeModeStatusIdeaPad() {
+	// 	this.logger.info('Before getRapidChargeModeStatusIdeaNoteBook');
+	// 	if (this.powerService.isShellAvailable) {
+	// 		this.powerService.getRapidChargeModeStatusIdeaNoteBook().then((featureStatus) => {
+	// 			this.logger.info('getRapidChargeModeStatusIdeaNoteBook.then', featureStatus);
+	// 			this.commonService.sendNotification('ExpressChargingStatus', {available: featureStatus.available, status: featureStatus.status});
+	// 		}).catch((error) => {
+	// 			this.logger.error('getRapidChargeModeStatusIdeaNoteBook', error.message);
+	// 			return EMPTY;
+	// 		});
+	// 	}
+	// }
 
 	/**
 	 * shows a battery details modal

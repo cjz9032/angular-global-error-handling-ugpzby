@@ -1051,7 +1051,7 @@
                     "NotGood": "<b>Baterija nije u dobrom stanju.</b>",
                     "NotSupportACAdapter": "<b>Prilagodnik izmjeničnog napona nije podržan.</b>",
                     "LimitedACAdapterSupport": "<b>Prilagodnik izmjeničnog napona ne može pružiti dovoljno energije.</b>",
-                    "MissingDriver": "<b>Upravljački program Lenovo Power Manager</b> nije instaliran ili ne radi pravilno. Pokrenite Windows Update za instalaciju najnovijeg upravljačkog programa. Upravljački program za instalaciju također možete preuzeti <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">ovdje</a>. Nakon instalacije ponovo pokrenite računalo.",
+                    "MissingDriver": "<b>Upravljački program Lenovo Power Manager</b> nije instaliran ili ne radi pravilno. Pokrenite Windows Update ili ga ručno instalirajte <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">odavde</a>. Nakon instalacije ponovo pokrenite računalo.",
                     "StoreLimitation": "<b>Baterija može pohraniti samo {{value}}% od</b> svojeg punog izvornog kapaciteta.",
                     "HighTemperature": "<b>Pražnjenje</b> je zaustavljeno jer je <b>temperatura baterije previsoka.</b>",
                     "TrickleCharge": "Baterija je <b>potpuno ispražnjena</b> i mora se napuniti. To možete potrajati više od deset sati.",
@@ -1330,6 +1330,12 @@
                         "description": "Odaberite plan napajanja da bist eupravljali performansama računala, temperaturom sustava i potrošnjom energije.",
                         "currentPowerPlan": {
                             "label": "TRENUTNI PLAN"
+                        },
+                        "profile": {
+                            "title": "PLAN PROFILE:",
+                            "performance": "Max performance:",
+                            "temperature": "Max system temperature:",
+                            "usage": "Max power usage:"
                         }
                     }
                 },
@@ -2438,7 +2444,6 @@
                 "title": "Stanje sigurnosti",
                 "deviceName1": "Aplikacije iz pouzdanih izvora",
                 "deviceName2": "Način rada za razvojne inženjere",
-                "deviceName3": "Obavijest kontrole korisničkog računa (UAC)",
                 "deviceName4": "Dostupnost antivirusnih programa",
                 "deviceName5": "Šifriranje tvrdog diska",
                 "deviceName6": "Dostupnost vatrozida",

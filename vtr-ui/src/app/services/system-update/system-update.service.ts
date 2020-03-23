@@ -72,7 +72,7 @@ export class SystemUpdateService {
 					criticalAutoUpdates: (response.criticalAutoUpdates === 'ON') ? true : false,
 					recommendedAutoUpdates: (response.recommendedAutoUpdates === 'ON') ? true : false
 				};
-				if(!this.autoUpdateStatus.criticalAutoUpdates) {
+				if(!this.autoUpdateStatus.criticalAutoUpdates && this.autoUpdateStatus.recommendedAutoUpdates) {
 					this.autoUpdateStatus.recommendedAutoUpdates = false;
 					this.setUpdateSchedule(false, false);
 				}

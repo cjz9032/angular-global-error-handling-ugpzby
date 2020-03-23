@@ -199,15 +199,15 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
             // expect(component.startMonitorHandler).toHaveBeenCalled()
         });
 
-        it('onDolbySeetingRadioChange should call', async () => {
-            const { fixture, component, audioService, } = setup();
-            spyOn(audioService, 'setDolbyMode').and.callThrough();
-            await component.onDolbySeetingRadioChange(new Event('click'));
-            fixture.detectChanges();
-            expect(component.dolbyModeResponse.currentMode).toEqual(dolbyModeResponse.currentMode);
-            expect(audioService.setDolbyMode).toBeDefined();
+        // it('onDolbySeetingRadioChange should call', async () => {
+        //     const { fixture, component, audioService, } = setup();
+        //     spyOn(audioService, 'setDolbyMode').and.callThrough();
+        //     await component.onDolbySeetingRadioChange(new Event('click'));
+        //     fixture.detectChanges();
+        //     expect(component.dolbyModeResponse.currentMode).toEqual(dolbyModeResponse.currentMode);
+        //     expect(audioService.setDolbyMode).toBeDefined();
 
-        });
+        // });
         it('onAutomaticDolbyAudioToggleOnOff should call', async () => {
             const { fixture, component } = setup();
             await component.onAutomaticDolbyAudioToggleOnOff(new Event('click'));

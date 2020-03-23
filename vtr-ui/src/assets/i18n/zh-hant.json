@@ -1051,7 +1051,7 @@
                     "NotGood": "<b>電池狀況不佳。</b>",
                     "NotSupportACAdapter": "<b>不支援 AC 整流器。</b>",
                     "LimitedACAdapterSupport": "<b>AC 整流器無法提供足夠的電力。</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager 驅動程式</b>未安裝或無法正常運作。請執行 Windows Update 以安裝最新的驅動程式。您也可以從<a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">這裡</a>安裝驅動程式。安裝之後，重新啟動電腦。",
+                    "MissingDriver": "<b>Lenovo Power Manager 驅動程式</b>未安裝或無法正常運作。請執行 Windows Update 或從<a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">這裡</a>手動安裝。安裝之後，重新啟動電腦。",
                     "StoreLimitation": "<b>電池只能儲存其原始充飽容量的 {{value}}%</b>。",
                     "HighTemperature": "因為<b>電池溫度過高</b>，已停止<b>放電。</b>",
                     "TrickleCharge": "電池已<b>完全放電</b>，而且必須重新充電。這可能需要十小時或更長的時間。",
@@ -1330,6 +1330,12 @@
                         "description": "選擇電源計劃以控制電腦效能、系統溫度和電源使用情形。",
                         "currentPowerPlan": {
                             "label": "目前計劃"
+                        },
+                        "profile": {
+                            "title": "PLAN PROFILE:",
+                            "performance": "Max performance:",
+                            "temperature": "Max system temperature:",
+                            "usage": "Max power usage:"
                         }
                     }
                 },
@@ -2438,7 +2444,6 @@
                 "title": "安全性健康情況",
                 "deviceName1": "來自可信任來源的應用程式",
                 "deviceName2": "開發人員模式",
-                "deviceName3": "UAC 通知",
                 "deviceName4": "防毒可用性",
                 "deviceName5": "硬碟加密",
                 "deviceName6": "防火牆可用性",

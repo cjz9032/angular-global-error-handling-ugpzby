@@ -85,6 +85,10 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 			}
 		});
 	};
+	wsSetStateFinishEventHandler = () => {
+		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecuritySetState, 'no');
+		this.switchDisabled = false;
+	}
 
 	constructor(
 		public activeRouter: ActivatedRoute,
@@ -117,7 +121,8 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 
 		this.wifiSecurity.on(EventTypes.wsPluginMissingEvent, this.wsPluginMissingEventHandler)
 		.on(EventTypes.wsStateEvent, this.wsStateEventHandler)
-		.on(EventTypes.wsIsLocationServiceOnEvent, this.wsIsLocationServiceOnEventHandler);
+		.on(EventTypes.wsIsLocationServiceOnEvent, this.wsIsLocationServiceOnEventHandler)
+		.on(EventTypes.wsSetStateFinishEvent, this.wsSetStateFinishEventHandler);
 
 		this.isOnline = this.commonService.isOnline;
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
@@ -221,6 +226,21 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		});
 
 		articleDetailModal.componentInstance.articleId = this.securityHealthArticleId;
+	}
+
+	onToggleChange() {
+		if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage) === true) {
+			this.switchDisabled = true;
+			if (this.wifiHomeViewModel.isLWSEnabled) {
+				this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecuritySetState, 'yes');
+				this.wifiSecurity.disableWifiSecurity();
+			} else {
+				this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecuritySetState, 'yes');
+				this.wifiSecurity.enableWifiSecurity().catch(() => {
+					this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
+				});
+			}
+		}
 	}
 
 	private onNotification(notification: AppNotification) {

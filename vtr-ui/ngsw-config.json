@@ -37,6 +37,7 @@
 			"name": "cms",
 			"urls": [
 				"https://vantage-qa.csw.lenovo.com/**",
+				"https://vantage-qa-2.csw.lenovo.com/**",
 				"https://vantage-stage.csw.lenovo.com/**",
 				"https://vantage.csw.lenovo.com/**",
 				"https://cms.csw.lenovo.com/**"
