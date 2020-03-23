@@ -5,9 +5,13 @@ import { PageSettingsComponent } from '../components/pages/page-settings/page-se
 import { PageDashboardComponent } from '../components/pages/page-dashboard/page-dashboard.component';
 import { PageDeviceGamingComponent } from '../components/pages/page-device-gaming/page-device-gaming.component';
 import { GuardService } from 'src/app/services/guard/guardService.service';
+import { HandleProtocolService, protocolUrl } from '../services/handle-protocol/handle-protocol.service';
 
 const routes: Routes = [
-
+	{
+		matcher: protocolUrl,
+		canActivate: [HandleProtocolService]
+	},
 	{
 		path: 'dashboard',
 		component: PageDashboardComponent,

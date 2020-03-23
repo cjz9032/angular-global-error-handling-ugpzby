@@ -1,9 +1,15 @@
 import { Injectable } from '@angular/core';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlSegment, UrlMatchResult, UrlTree, Router, UrlSegmentGroup, Route } from '@angular/router';
+import { GuardConstants } from '../guard/guard-constants';
+
+export function protocolUrl(url: UrlSegment[], group: UrlSegmentGroup, route: Route) : UrlMatchResult {
+	return url.length === 1 && url[0].path.includes('?protocol=') ? ({consumed: url}) : null;
+}
 
 @Injectable({
   providedIn: 'root'
 })
-export class HandleProtocolService {
+export class HandleProtocolService implements CanActivate {
   vantage3xSchema = 'lenovo-vantage3:';
   semanticToPath: { [semantic: string]: string } = {
 	'dashboard': '',
@@ -65,7 +71,10 @@ export class HandleProtocolService {
 	'f45a1a5c-44eb-42c3-b361-025ed702dd7c': 'modern-preload',
   }
 
-  constructor() { }
+  constructor(
+	private guardConstants: GuardConstants,
+	private router: Router
+  ) { }
 
   public initializeUrl() {
 	const url = this.processUrl(window.location.href);
@@ -90,29 +99,37 @@ export class HandleProtocolService {
 	}
   }
 
+  public isRedirectUrlNeeded(args: string) : [boolean, string] {
+	let tempUrl = this.processPath(args);
+	if (tempUrl !== args) return [true, tempUrl];
+
+	return [false, ''];
+  }
+
   private processUrl(args: string) : string {
 	let url = this.constructURL(args);
 	if (!url) return args;
 
-	let hash = url.hash;
-	let characteristicCode = '#/?protocol=';
-	if (!hash.startsWith(characteristicCode)) return args;
+	const homePageUrl = `${url.origin}${url.pathname}`;
+	const newPath = this.processPath(url.hash.substring(1));
 
-	let origin = url.origin;
-	let pathname = url.pathname;
-	let homePageUrl = `${origin}${pathname}#/`;
-	let encodedProtocol = hash.slice(hash.indexOf(characteristicCode) + characteristicCode.length);
+	return `${homePageUrl}#${newPath}`;
+  }
 
+  private processPath(path: string) : string {
+	const characteristicCode = '/?protocol=';
+	if (!path.startsWith(characteristicCode)) return path;
+
+	let encodedProtocol = path.slice(path.indexOf(characteristicCode) + characteristicCode.length);
 	let originalProtocol = this.decodeBase64String(encodedProtocol);
-	if (!originalProtocol) return homePageUrl;
+	if (!originalProtocol) return '/';
 
-	let newUrl = this.convertToUrlAssumeProtocolIs3x(originalProtocol);
-	if (!newUrl) {
-		newUrl = this.convertToUrlAssumeProtocolIs2x(originalProtocol);
+	let newPath = this.convertToUrlAssumeProtocolIs3x(originalProtocol);
+	if (!newPath) {
+		newPath = this.convertToUrlAssumeProtocolIs2x(originalProtocol);
 	}
-	if (!newUrl) return homePageUrl;
 
-	return `${homePageUrl}${newUrl}`;
+	return `/${newPath}`;
   }
 
   private convertToUrlAssumeProtocolIs3x(rawData: string) : string {
@@ -159,6 +176,12 @@ export class HandleProtocolService {
 	}
 
 	return '';
+  }
+
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) : boolean | UrlTree {
+	const checkResult = this.isRedirectUrlNeeded(route.url.toString())
+	if (checkResult[0]) return this.router.parseUrl(checkResult[1]);
+	return this.guardConstants.defaultRoute;
   }
 }
 
