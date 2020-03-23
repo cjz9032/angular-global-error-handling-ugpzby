@@ -35,11 +35,14 @@
 								[theme]="'white'"
 								(toggle)="onCardCollapse($event)">
 								<!-- image -->
-								<!-- <div class="intelligent-security-img-preview" id="intelligent-security-image" role="img" attr.aria-label="intelligent-security-image"
-                                    automationId="intelligent-security-image" [ngStyle]="{ 'background-image': 'url(' + image + ')'}">				
-								</div> -->
 								<div class="no-border-bottom pb-3 intelligent-security-image">
-									<img [src]="image"/>
+									<img [src]="image" id="intelligent-security-image"/>
+									<div class="intelligent-security-image-word">
+										<p class="intelligent-security-image-word-title"
+											id="intelligent-security-image-word-title">{{'device.smartAssist.intelligentSecurity.image.title'}}</p>
+										<p class="intelligent-security-image-word-description"
+											id="intelligent-security-image-word-description">{{'device.smartAssist.intelligentSecurity.image.description'}}</p>
+									</div>
 								</div>
 								<!-- ideaPad section -- zeroTouchLogin -->
 								<ul class="list-group list-group-flush"
@@ -59,10 +62,11 @@
 											[tooltipText]=" 'device.smartAssist.intelligentSecurity.zeroTouchLogin.tooltip' | translate">
 										</vtr-ui-row-switch>
 										<!-- show advanced section -->
-										<div class="pl-5 border-bottom pb-4" *ngIf="!zeroTouchLoginShowAdvancedSection">
+										<div class="pl-5 border-bottom pb-4" 
+											*ngIf="!zeroTouchLoginShowAdvancedSection">
 											<span class="link-text mt-2 ml-4"
 												role="text"
-												id="smartAssist.intelligentSecurity.zeroTouchLogin.showAdvSettings"
+												id="smartAssist-intelligentSecurity-zeroTouchLogin-showAdvSettings"
 												attr-aria-label="smartAssist.intelligentSecurity.zeroTouchLogin.showAdvSettings"
 												(click)="zeroTouchLoginShowAdvancedSection = true"
 												(keydown.enter)="zeroTouchLoginShowAdvancedSection = true">
@@ -133,7 +137,7 @@
 											*ngIf="zeroTouchLoginShowAdvancedSection">
 											<span class="link-text mt-2 ml-4"
 												role="text"
-												id="smartAssist.intelligentSecurity.zeroTouchLogin.hideAdvSettings"
+												id="smartAssist-intelligentSecurity-zeroTouchLogin-hideAdvSettings"
 												attr.aria-label="smartAssist.intelligentSecurity.zeroTouchLogin.hideAdvSettings"
 												(click)="zeroTouchLoginShowAdvancedSection = false"
 												(keydown.enter)="zeroTouchLoginShowAdvancedSection = false">
@@ -247,7 +251,7 @@
 											*ngIf="!zeroTouchLockShowAdvancedSection">
 											<span class="link-text mt-2 ml-4"
 												role="text"
-												id="smartAssist.intelligentSecurity.zeroTouchLock.showAdvSettings"
+												id="smartAssist-intelligentSecurity-zeroTouchLock-showAdvSettings"
 												attr-aria-label="smartAssist.intelligentSecurity.zeroTouchLock.showAdvSettings"
 												(click)="zeroTouchLockShowAdvancedSection = true"
 												(keydown.enter)="zeroTouchLockShowAdvancedSection = true">
@@ -428,7 +432,7 @@
 										<!-- distance sensitivity adjusting -- ideapad section -->
 										<div class="pl-5 bold-title no-border-bottom pb-4"
 											*ngIf="intelligentSecurity.isDistanceSensitivityVisible && zeroTouchLockShowAdvancedSection">
-											<vtr-ui-row-switch [switchId]="'zeroTouchLockDistanceSensitivity'"
+											<vtr-ui-row-switch [switchId]="'smartAssist-intelligentSecurity-zeroTouchLock-distanceSensitivityAutoAdjusting'"
 												*ngIf="zeroTouchPresenceLeaveDistanceAutoAdjustCapability"
 												[title]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.title' | translate"
 												[caption]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.caption' | translate"
@@ -437,12 +441,12 @@
 												[isSwitchChecked]="hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust"
 												(toggleOnOff)="onZeroTouchLockDistanceSensitivityAdjustToggle($event)"
 												[theme]="'white'"
+												[readMoreText] = "'Read more'"
 												[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || !hsaIntelligentSecurity.capacity"
-												[toolTipStatus]='true'
-												[rightIcon]="['far', 'question-circle']">
+												[toolTipStatus]='true'>
 											</vtr-ui-row-switch>
 											<div class="slider-note">
-												<vtr-ui-range-slider [rangeSliderId]="'zeroTouchLockDistanceSensitivity'"
+												<vtr-ui-range-slider [rangeSliderId]="'smartAssist-intelligentSecurity-zeroTouchLock-distanceSensitivityAdjusting'"
 													[manualRefresh]="manualRefresh"
 													*ngIf="zeroTouchPresenceLeaveDistanceCapability && !hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust"
 													[minValueLegend]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.options.near' | translate"
@@ -465,7 +469,7 @@
 											*ngIf="zeroTouchLockShowAdvancedSection">
 											<span class="link-text mt-2 ml-4"
 												role="text"
-												id="smartAssist.intelligentSecurity.zeroTouchLock.hideAdvSettings"
+												id="smartAssist-intelligentSecurity-zeroTouchLock-hideAdvSettings"
 												attr.aria-label="smartAssist.intelligentSecurity.zeroTouchLock.hideAdvSettings"
 												(click)="zeroTouchLockShowAdvancedSection = false"
 												(keydown.enter)="zeroTouchLockShowAdvancedSection = false">

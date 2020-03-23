@@ -1844,6 +1844,10 @@
 			"intelligentSecurity": {
 				"title": "Intelligent Security",
 				"readMore": "Read more",
+				"image": {
+					"title": "Intelligent security",
+					"description": "Buckles up your PC with intelligent  sensing technology, protects your  privacy, and saves your battery power."
+				},
 				"HumanPresenceDetection": {
 					"title": "Human Presence Detection",
 					"tooltip": "Click here to reset the human presence detection settings."
