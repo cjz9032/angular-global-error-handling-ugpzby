@@ -323,8 +323,5 @@
 			}
 		}
 	},
-	"defaultProject": "vtr-ui",
-	"cli": {
-		"analytics": false
-	}
+	"defaultProject": "vtr-ui"
 }
