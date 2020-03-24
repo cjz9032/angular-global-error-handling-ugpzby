@@ -788,7 +788,7 @@ export class VantageShellService {
 					this.state === CHSAccountState.trial ? CHSAccountState.trialExpired : CHSAccountState.standard;
 			},
 			visitWebConsole(feature: string) {
-				WinRT.launchUri(`https://homesecurity.coro.net/`);
+				WinRT.launchUri(`https://chs.lenovo.com/`);
 				this.account.state =
 					this.state === CHSAccountState.trial ? CHSAccountState.trialExpired : CHSAccountState.standard;
 			}
