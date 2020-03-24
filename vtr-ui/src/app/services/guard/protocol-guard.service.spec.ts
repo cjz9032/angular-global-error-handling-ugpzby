@@ -1,17 +1,17 @@
 import { TestBed } from '@angular/core/testing';
 
-import { HandleProtocolService } from './handle-protocol.service';
+import { ProtocolGuardService } from './protocol-guard.service';
 import { Injector } from '@angular/core';
 
-describe('HandleProtocolService', () => {
-  let service: HandleProtocolService;
+describe('service', () => {
+  let service: ProtocolGuardService;
   beforeEach(() => {
 	const injector = Injector.create({
 		providers: [
-		  { provide: HandleProtocolService, useClass: HandleProtocolService, deps: []},
+		  { provide: ProtocolGuardService, useClass: ProtocolGuardService, deps: []},
 		]
 	  });
-	service = injector.get(HandleProtocolService);
+	service = injector.get(ProtocolGuardService);
   });
 
   it('should be created', () => {
@@ -29,40 +29,39 @@ describe('HandleProtocolService', () => {
 	expect(service['constructURL'](url)).toEqual(undefined);
   });
 
-  it('processUrl with invalid url', () => {
-	const url = 'this-is-a-invalid-url';
-	const spy = spyOn<any>(service, 'constructURL').and.returnValue(undefined);
-	expect(service['processUrl'](url)).toEqual('this-is-a-invalid-url');
+  it('processPath with non-protocol path', () => {
+	const path = 'this-is-a-invalid-url';
+	expect(service['processPath'](path)).toEqual('this-is-a-invalid-url');
   });
 
-  it('processUrl with non-protocol url', () => {
-	const url = 'https://vantage.csw.lenovo.com/#/security/wifi-security';
-	expect(service['processUrl'](url)).toEqual('https://vantage.csw.lenovo.com/#/security/wifi-security');
+  it('processPath with non-protocol url', () => {
+	const path = '/security/wifi-security';
+	expect(service['processPath'](path)).toEqual('/security/wifi-security');
   });
 
-  it('processUrl with invalid base64', () => {
-	const url = 'https://vantage.csw.lenovo.com/#/?protocol=1';
-	expect(service['processUrl'](url)).toEqual('https://vantage.csw.lenovo.com/#/');
+  it('processPath with invalid base64', () => {
+	const path = '/?protocol=1';
+	expect(service['processPath'](path)).toEqual('/');
   });
 
-  it('processUrl with old protocol', () => {
-	const url = 'https://vantage.csw.lenovo.com/#/?protocol=bGVub3ZvLWNvbXBhbmlvbjo/ZmVhdHVyZUlkPTZGNDg2Q0Y1LTVENTEtNEFFOC1BQkE5LTA4OUI1Q0I5NjQyMA==';
+  it('processPath with old protocol', () => {
+	const path = '/?protocol=bGVub3ZvLWNvbXBhbmlvbjo/ZmVhdHVyZUlkPTZGNDg2Q0Y1LTVENTEtNEFFOC1BQkE5LTA4OUI1Q0I5NjQyMA==';
 	const spy3x = spyOn<any>(service, 'convertToUrlAssumeProtocolIs3x').and.returnValue('');
 	const spy2x = spyOn<any>(service, 'convertToUrlAssumeProtocolIs2x').and.returnValue('security/wifi-security');
-	expect(service['processUrl'](url)).toEqual('https://vantage.csw.lenovo.com/#/security/wifi-security');
+	expect(service['processPath'](path)).toEqual('/security/wifi-security');
   });
 
-  it('processUrl with old invalid protocol', () => {
-	const url = 'https://vantage.csw.lenovo.com/#/?protocol=bGVub3ZvLWNvbXBhbmlvbjo/ZmVhdHVyZUlkPTZGNDg2Q0Y1LTVENTEtNEFFOC1BQkE5LTA4OUI1Q0I5NjQyMA==';
+  it('processPath with old invalid protocol', () => {
+	const url = '/?protocol=bGVub3ZvLWNvbXBhbmlvbjo/ZmVhdHVyZUlkPTZGNDg2Q0Y1LTVENTEtNEFFOC1BQkE5LTA4OUI1Q0I5NjQyMA==';
 	const spy3x = spyOn<any>(service, 'convertToUrlAssumeProtocolIs3x').and.returnValue('');
 	const spy2x = spyOn<any>(service, 'convertToUrlAssumeProtocolIs2x').and.returnValue('');
-	expect(service['processUrl'](url)).toEqual('https://vantage.csw.lenovo.com/#/');
+	expect(service['processPath'](url)).toEqual('/');
   });
 
-  it('processUrl with new protocol', () => {
-	const url = 'https://vantage.csw.lenovo.com/#/?protocol=bGVub3ZvLXZhbnRhZ2UzOmRldmljZS1zZXR0aW5ncw==';
+  it('processPath with new protocol', () => {
+	const url = '/?protocol=bGVub3ZvLXZhbnRhZ2UzOmRldmljZS1zZXR0aW5ncw==';
 	const spy = spyOn<any>(service, 'convertToUrlAssumeProtocolIs3x').and.returnValue('device/device-settings/power');
-	expect(service['processUrl'](url)).toEqual('https://vantage.csw.lenovo.com/#/device/device-settings/power');
+	expect(service['processPath'](url)).toEqual('/device/device-settings/power');
   });
 
   it('decode base64 string short', () => {
@@ -172,5 +171,17 @@ describe('HandleProtocolService', () => {
   it('convertToUrlAssumeProtocolIs2x non-url string', () => {
 	const protocol = 'general-string';
     expect(service['convertToUrlAssumeProtocolIs2x'](protocol)).toEqual('');
+  });
+
+  it('isRedirectUrlNeeded needed', () => {
+	const path = '/?protocol=bGVub3ZvLXZhbnRhZ2UzOmRldmljZS1zZXR0aW5ncw==';
+	const spy = spyOn<any>(service, 'processPath').and.returnValue('/device/device-settings/power');
+    expect(service['isRedirectUrlNeeded'](path)).toEqual([true, '/device/device-settings/power']);
+  });
+
+  it('isRedirectUrlNeeded is not needed', () => {
+	const path = '/device/device-settings/power';
+	const spy = spyOn<any>(service, 'processPath').and.returnValue('/device/device-settings/power');
+    expect(service['isRedirectUrlNeeded'](path)).toEqual([false, '']);
   });
 });

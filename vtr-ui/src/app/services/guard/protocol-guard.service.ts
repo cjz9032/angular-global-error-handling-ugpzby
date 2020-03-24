@@ -1,15 +1,12 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlSegment, UrlMatchResult, UrlTree, Router, UrlSegmentGroup, Route } from '@angular/router';
-import { GuardConstants } from '../guard/guard-constants';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlSegment, UrlMatchResult, UrlTree, Router } from '@angular/router';
+import { GuardConstants } from './guard-constants';
 
-export function protocolUrl(url: UrlSegment[], group: UrlSegmentGroup, route: Route) : UrlMatchResult {
-	return url.length === 1 && url[0].path.includes('?protocol=') ? ({consumed: url}) : null;
-}
 
 @Injectable({
   providedIn: 'root'
 })
-export class HandleProtocolService implements CanActivate {
+export class ProtocolGuardService implements CanActivate {
   vantage3xSchema = 'lenovo-vantage3:';
   semanticToPath: { [semantic: string]: string } = {
 	'dashboard': '',
@@ -76,13 +73,6 @@ export class HandleProtocolService implements CanActivate {
 	private router: Router
   ) { }
 
-  public initializeUrl() {
-	const url = this.processUrl(window.location.href);
-	if (url !== window.location.href) {
-		window.location.href = url;
-	}
-  }
-
   private decodeBase64String(args: string) {
 	try {
 		return atob(args);
@@ -104,16 +94,6 @@ export class HandleProtocolService implements CanActivate {
 	if (tempUrl !== args) return [true, tempUrl];
 
 	return [false, ''];
-  }
-
-  private processUrl(args: string) : string {
-	let url = this.constructURL(args);
-	if (!url) return args;
-
-	const homePageUrl = `${url.origin}${url.pathname}`;
-	const newPath = this.processPath(url.hash.substring(1));
-
-	return `${homePageUrl}#${newPath}`;
   }
 
   private processPath(path: string) : string {
@@ -179,9 +159,17 @@ export class HandleProtocolService implements CanActivate {
   }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) : boolean | UrlTree {
-	const checkResult = this.isRedirectUrlNeeded(route.url.toString())
+	const path = window.location.href.slice(window.location.href.indexOf('#') + 1);
+	const checkResult = this.isRedirectUrlNeeded(path);
 	if (checkResult[0]) return this.router.parseUrl(checkResult[1]);
 	return this.guardConstants.defaultRoute;
   }
+}
+
+export function protocolUrl(url: UrlSegment[]) : UrlMatchResult {
+	if (window.location.href.includes('/?protocol=') && url.length === 0) {
+		return {consumed: url};
+	}
+	return null;
 }
 
