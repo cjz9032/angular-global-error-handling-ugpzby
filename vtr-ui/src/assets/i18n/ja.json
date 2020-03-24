@@ -3043,7 +3043,7 @@
         "loadingComponents": "コンポーネントをロード中",
         "hardwareComponents": "ハードウェア・コンポーネント",
         "loadingDevices": "デバイスのロード中",
-        "select": "ツールバーで",
+        "select": "選択",
         "deselect": "選択解除",
         "allOptions": "すべてのオプション",
         "latestResult": "最新の結果",
