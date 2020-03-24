@@ -22,6 +22,7 @@
 				metricsPageNumber="{{metricsDatas.pageNumber}}"
 				(click)="clickContent()">
 				<div *ngIf="item.Thumbnail"
+					title=""
 					class="image"
 					[style.background-image]="'url('+item.Thumbnail+')'">
 					<div *ngIf="item.Logo"
@@ -84,6 +85,7 @@
 				metricsPageNumber="{{metricsDatas.pageNumber}}"
 				(click)="clickContent()">
 				<div *ngIf="item.FeatureImage"
+					title=""
 					class="image"
 					[style.background-image]="'url('+item.FeatureImage+')'">
 					<div *ngIf="item.BrandImage"
