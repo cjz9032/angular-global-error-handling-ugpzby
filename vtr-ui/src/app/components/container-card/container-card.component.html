@@ -299,8 +299,7 @@
 
 	<div class="container-card card-subpage-corner"
 		*ngIf="type === 'subpage-corner'"
-		#containerCardCornerArticle
-		[style.height.px]="containerCardCornerArticle.clientWidth / ratio">
+		#containerCardCornerArticle>
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col col-12 content">
@@ -318,7 +317,6 @@
 						[metricsItemPosition]="sideFlag + order"
 						[metricsItemID]="item.Id"
 						[style.background-image]="'url(' + item.FeatureImage + ')'"
-						[style.height.px]="containerCardCornerArticle.clientWidth / ratio"
 						id="{{containerCardId+'-article_link'}}">
 						<div class="inner-content">
 							<div *ngIf="item.Title"
@@ -354,13 +352,11 @@
 
 	<div class="container-card card-subpage-partner-corner"
 		*ngIf="type === 'subpage-partner-corner'"
-		#containerCardSidebarPartnerCorner
-		[style.height.px]="containerCardSidebarPartnerCorner.clientWidth / ratio">
+		#containerCardSidebarPartnerCorner>
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col col-12 image"
-					[style.background-image]="'url(' + item.FeatureImage + ')'"
-					[style.height.px]="containerCardSidebarPartnerCorner.clientWidth / ratio">
+					[style.background-image]="'url(' + item.FeatureImage + ')'">
 					<div *ngIf="item.BrandImage || item.BrandName"
 						class="logo">
 						<span class="logo-img">
