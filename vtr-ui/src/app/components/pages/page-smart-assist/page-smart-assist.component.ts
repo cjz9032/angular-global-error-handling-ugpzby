@@ -68,7 +68,8 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	public zeroTouchLockShowAdvancedSection = false;
 	public zeroTouchPresenceLeaveDistanceCapability = false;
 	public zeroTouchPresenceLeaveDistanceAutoAdjustCapability = false;
-	public readMoreClick = false;
+	public zeroTouchLoginDistanceReadMoreClick = false;
+	public zeroTouchLockDistanceReadMoreClick = false;
 
 	headerMenuItems: PageAnchorLink[] = [
 		{

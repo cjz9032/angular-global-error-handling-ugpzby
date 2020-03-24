@@ -626,7 +626,7 @@ export class VantageShellService {
 	public getHsaIntelligentSecurity(): any {
 		try {
 		    const win: any = window;
-		    if (win.VantageShellExtension && win.VantageShellExtension.SmartSenseRpcClient) {
+		    if (win.VantageShellExtension && win.VantageShellExtension.HumanPresenceDetectionRpcClient) {
 				  return new win.VantageShellExtension.HumanPresenceDetectionRpcClient();
 		    }
 	    } catch (error) {

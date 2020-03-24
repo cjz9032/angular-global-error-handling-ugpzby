@@ -1905,11 +1905,23 @@
 				},
 				"distanceSensitivityAdjusting": {
 					"title": "DISTANCE SENSITIVITY ADJUSTING",
-					"caption": "Distance Sensitivity Adjusting will automatically update the detection distance via an AI engine.",
+					"caption": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy. ",
 					"options": {
 						"near": "Near",
 						"medium": "Middle",
 						"far": "Far"
+					},
+					"readMoreForSensor1": {
+						"line1": "There are three options. In each range, when human movements are detected, your screen will be waked up accordingly. ",
+						"line2": "• Near: 0.4 meter ",
+						"line3": "• Middle: 0.6 meter ",
+						"line4": "• Far: 1.2 meter "
+					},
+					"readMoreForSensor2": {
+						"line1": "There are three options. In each range, when human movements are detected, your screen will be waked up accordingly. ",
+						"line2": "• Near: 0.2-0.55 meter ",
+						"line3": "• Middle: 0.2-1.0 meter ",
+						"line4": "• Far: 0.2-1.5 meter "
 					},
 					"tooltipcontent": {
 						"context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",

@@ -4,5 +4,6 @@ export class HsaIntelligentSecurityResponse {
         public zeroTouchLockDistanceAutoAdjust: boolean, 
         public zeroTouchLockDistance: number = 1,
         public capability: number = 0, 
+        public sensorType: number = 0,
     ) {}
 }

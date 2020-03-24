@@ -76,17 +76,75 @@
 										<!-- login distance sensitivity adjust -->
 										<div class="pl-5 bold-title no-border-bottom pb-4"
 											*ngIf="intelligentSecurity.isDistanceSensitivityVisible && zeroTouchLoginShowAdvancedSection">
-											<vtr-ui-row-switch [switchId]="'distanceSensitivity'"
-												[title]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title' | translate"
-												[caption]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.caption' | translate"
+											<vtr-ui-row-switch [switchId]="'smartAssist-intelligentSecurity-zeroTouchLogin-distanceSensitivityAutoAdjusting'"
+												[title]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title' | translate"												
 												[isSwitchVisible]="true"
-												[showChildContent]="intelligentSecurity.isZeroTouchLoginAdjustEnabled"
+												[showChildContent]="true"
 												[isSwitchChecked]="intelligentSecurity.isZeroTouchLoginAdjustEnabled"
 												(toggleOnOff)="onDistanceSensitivityAdjustToggle($event)"
 												[theme]="'white'"
 												[disabled]="!intelligentSecurity.isZeroTouchLoginEnabled"
 												[toolTipStatus]='true'
 												[rightIcon]="['far', 'question-circle']">
+												<div class="col text-wrap zeroTouch-DistanceAdjust">
+													<p role="text"
+														class="zeroTouchReadMore"
+														id="zeroTouchLogin-DistanceAdjust"
+														attr.aria-label="zeroTouch.DistanceAdjust">
+														{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.caption' | translate}}
+														<a class="read-more-link"
+															*ngIf="!zeroTouchLoginDistanceReadMoreClick && !intelligentSecurity.isZeroTouchLoginAdjustEnabled"
+															href="javascript:void(0)"
+															(click)="zeroTouchLoginDistanceReadMoreClick = true"
+															(keydown.enter)="zeroTouchLoginDistanceReadMoreClick = true"
+															tabindex="0"
+															role="link"
+															id="zeroTouchLogin-DistanceAdjust-read-more"
+															attr.aria-label="zeroTouchLogin-DistanceAdjust-read-more">
+															{{'device.deviceSettings.power.powerSmartSettings.readMore' | translate}}</a>
+													</p>
+													<div class="zeroTouchReadMore"
+														*ngIf="zeroTouchLoginDistanceReadMoreClick && !intelligentSecurity.isZeroTouchLoginAdjustEnabled"
+														id="zeroTouchLogin-DistanceAdjust-readMoreDiv"
+														role="text">
+														<div *ngIf="hsaIntelligentSecurity.sensorType == 2">
+															<p id="zeroTouchLogin-DistanceAdjust-readMoreMode1"
+																role="text">
+																{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.readMoreForSensor2.line1' | translate}}
+															</p>
+															<p id="zeroTouchLogin-DistanceAdjust-readMoreMode2"
+																role="text">
+																{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.readMoreForSensor2.line2' | translate}}
+															</p>
+															<p id="zeroTouchLogin-DistanceAdjust-readMoreMode3"
+																role="text">
+																{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.readMoreForSensor2.line3' | translate}}
+															</p>
+															<p id="zeroTouchLogin-DistanceAdjust-readMoreMode4"
+																role="text">
+																{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.readMoreForSensor2.line4' | translate}}
+															</p>
+														</div>
+														<div *ngIf="hsaIntelligentSecurity.sensorType != 2">
+															<p id="zeroTouchLogin-DistanceAdjust-readMoreMode1"
+																role="text">
+																{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.readMoreForSensor1.line1' | translate}}
+															</p>
+															<p id="zeroTouchLogin-DistanceAdjust-readMoreMode2"
+																role="text">
+																{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.readMoreForSensor1.line2' | translate}}
+															</p>
+															<p id="zeroTouchLogin-DistanceAdjust-readMoreMode3"
+																role="text">
+																{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.readMoreForSensor1.line3' | translate}}
+															</p>
+															<p id="zeroTouchLogin-DistanceAdjust-readMoreMode4"
+																role="text">
+																{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.readMoreForSensor1.line4' | translate}}
+															</p>
+														</div>
+													</div>
+												</div>
 											</vtr-ui-row-switch>
 											<div class="slider-note">
 												<vtr-ui-range-slider [rangeSliderId]="'distanceSensitivity'"
@@ -431,7 +489,7 @@
 										</div>
 										<!-- distance sensitivity adjusting -- ideapad section -->
 										<div class="pl-5 bold-title no-border-bottom pb-4"
-											*ngIf="intelligentSecurity.isDistanceSensitivityVisible && zeroTouchLockShowAdvancedSection">
+											*ngIf="zeroTouchLockShowAdvancedSection">
 											<vtr-ui-row-switch [switchId]="'smartAssist-intelligentSecurity-zeroTouchLock-distanceSensitivityAutoAdjusting'"
 												*ngIf="zeroTouchPresenceLeaveDistanceAutoAdjustCapability"
 												[title]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.title' | translate"
@@ -449,10 +507,10 @@
 														attr.aria-label="zeroTouch.DistanceAdjust">
 														{{'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.caption' | translate}}
 														<a class="read-more-link"
-															*ngIf="!readMoreClick && !hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust"
+															*ngIf="!zeroTouchLockDistanceReadMoreClick && !hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust"
 															href="javascript:void(0)"
-															(click)="readMoreClick = true"
-															(keydown.enter)="readMoreClick = true"
+															(click)="zeroTouchLockDistanceReadMoreClick = true"
+															(keydown.enter)="zeroTouchLockDistanceReadMoreClick = true"
 															tabindex="0"
 															role="link"
 															id="zeroTouchLock-DistanceAdjust-read-more"
@@ -460,7 +518,7 @@
 															{{'device.deviceSettings.power.powerSmartSettings.readMore' | translate}}</a>
 													</p>
 													<div class="zeroTouchReadMore"
-														*ngIf="readMoreClick && !hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust"
+														*ngIf="zeroTouchLockDistanceReadMoreClick && !hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust"
 														id="zeroTouchLock-DistanceAdjust-readMoreDiv"
 														role="text">
 														<p id="zeroTouchLock-DistanceAdjust-readMoreMode1"
