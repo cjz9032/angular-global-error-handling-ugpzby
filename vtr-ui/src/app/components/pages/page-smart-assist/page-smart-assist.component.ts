@@ -582,12 +582,6 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	readMore(readMoreDiv: HTMLElement) {
-		this.readMoreClick = true;
-		readMoreDiv.style.display = 'block';
-		readMoreDiv.focus();
-	}
-
 	public SetZeroTouchLockDistanceSensitivity(event: ChangeContext) {
 		this.hsaIntelligentSecurity.zeroTouchLockDistance = event.value;
 		try {

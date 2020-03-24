@@ -440,7 +440,6 @@
 												[isSwitchChecked]="hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust"
 												(toggleOnOff)="onZeroTouchLockDistanceSensitivityAdjustToggle($event)"
 												[theme]="'white'"
-												[readMoreText] = "'Read more'"
 												[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || !hsaIntelligentSecurity.capacity"
 												[toolTipStatus]='true'>
 												<div class="col text-wrap zeroTouch-DistanceAdjust">
@@ -450,23 +449,20 @@
 														attr.aria-label="zeroTouch.DistanceAdjust">
 														{{'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.caption' | translate}}
 														<a class="read-more-link"
-															#readMoreLink
-															*ngIf="!readMoreClick && !intelligentSecurity.isZeroTouchLockEnabled"
+															*ngIf="!readMoreClick && !hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust"
 															href="javascript:void(0)"
-															(click)="readMoreLink.blur();readMore(readMoreDiv)"
-															(keydown.enter)="readMoreLink.blur();readMore(readMoreDiv);"
+															(click)="readMoreClick = true"
+															(keydown.enter)="readMoreClick = true"
 															tabindex="0"
 															role="link"
 															id="zeroTouchLock-DistanceAdjust-read-more"
 															attr.aria-label="zeroTouchLock-DistanceAdjust-read-more">
 															{{'device.deviceSettings.power.powerSmartSettings.readMore' | translate}}</a>
 													</p>
-													<div style="display:none"
-														*ngIf="!intelligentSecurity.isZeroTouchLockEnabled"
+													<div class="zeroTouchReadMore"
+														*ngIf="readMoreClick && !hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust"
 														id="zeroTouchLock-DistanceAdjust-readMoreDiv"
-														class="zeroTouchReadMore"
-														role="text"
-														#readMoreDiv>
+														role="text">
 														<p id="zeroTouchLock-DistanceAdjust-readMoreMode1"
 															role="text">
 															{{'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.readMore.line1' | translate}}
