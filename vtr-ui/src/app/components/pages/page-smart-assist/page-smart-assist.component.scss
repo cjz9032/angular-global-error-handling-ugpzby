@@ -389,11 +389,12 @@ $fontsize_xs: 1.4rem;
 }
 
 .zeroTouch-DistanceAdjust {
-	width: 100%;
+	width: 95%;
 
 	.zeroTouchReadMore {
-		font-size: $body;
+		font-size: $fontsize_xs;
 		font-weight: $weight_light;
+		color: $grey_dark;
 		.read-more-link {
 			list-style: none;
 			text-decoration: underline;
