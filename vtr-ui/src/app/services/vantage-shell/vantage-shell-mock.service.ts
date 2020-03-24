@@ -549,6 +549,9 @@ export class VantageShellService {
 				},
 				openMcAfeeRegistry() {
 					return Promise.resolve(true);
+				},
+				openMcAfeePurchaseUrl() {
+					return Promise.resolve(true);
 				}
 			},
 			passwordManager: {
