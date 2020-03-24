@@ -1859,7 +1859,7 @@
 				"zeroTouchLogin": {
 					"title": "Zero Touch Login",
 					"caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it.",
-					"tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+					"tooltip": "When you are in front of your computer or approaching it (within 1.2 or 1.5 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
 				},
 				"zeroTouchLock": {
 					"title": "Zero Touch Lock",
@@ -1892,7 +1892,10 @@
 							"medium": "Middle",
 							"far": "Far"
 						},
-						"readMore": {
+						"readMoreForSensor1": {
+							"line1": "If no human movement is detected within 1.2 meter,  it will recognize as human leave and lock the screen."
+						},
+						"readMoreForSensor2": {
 							"line1": "There are three options. In each range, when human movements are not detected, your screen will be locked accordingly. ",
 							"line2": "• Near: 0.9 meter ",
 							"line3": "• Middle: 1.2 meter ",
@@ -1938,9 +1941,9 @@
 				"note": {
 					"description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
 					"description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect any personal data.",
-					"description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
-					"description4": "2. If your computer is in hibernation mode or has been turned off, Zero Touch Login will not work.",
-					"description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login.",
+					"description3": "1. If your computer supports multiple modes, be aware this feature might not work appropriately in Tent, Tablet, or Stand mode and Detached mode. Please refer to User Guide for your device modes.",
+					"description4": "2. If your computer is in hibernation mode or has been turned off，Auto IR camera login will not work.",
+					"description5": "3. Please adjust your computer screen to an appropriate angle so that the IR camera can recognize your face for auto login. The recommended screen angle is 105 to 120 degree.",
 					"description6": "4. If the Airplane mode is enabled on your computer, these features are disabled.",
 					"description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
 				},

@@ -84,8 +84,7 @@
 												(toggleOnOff)="onDistanceSensitivityAdjustToggle($event)"
 												[theme]="'white'"
 												[disabled]="!intelligentSecurity.isZeroTouchLoginEnabled"
-												[toolTipStatus]='true'
-												[rightIcon]="['far', 'question-circle']">
+												[toolTipStatus]='true'>
 												<div class="col text-wrap zeroTouch-DistanceAdjust">
 													<p role="text"
 														class="zeroTouchReadMore"
@@ -493,7 +492,7 @@
 											<vtr-ui-row-switch [switchId]="'smartAssist-intelligentSecurity-zeroTouchLock-distanceSensitivityAutoAdjusting'"
 												*ngIf="zeroTouchPresenceLeaveDistanceAutoAdjustCapability"
 												[title]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.title' | translate"
-												[isSwitchVisible]="true"
+												[isSwitchVisible]="hsaIntelligentSecurity.sensorType == 2"
 												[showChildContent]="true"
 												[isSwitchChecked]="hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust"
 												(toggleOnOff)="onZeroTouchLockDistanceSensitivityAdjustToggle($event)"
@@ -521,29 +520,37 @@
 														*ngIf="zeroTouchLockDistanceReadMoreClick && !hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust"
 														id="zeroTouchLock-DistanceAdjust-readMoreDiv"
 														role="text">
-														<p id="zeroTouchLock-DistanceAdjust-readMoreMode1"
-															role="text">
-															{{'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.readMore.line1' | translate}}
-														</p>
-														<p id="zeroTouchLock-DistanceAdjust-readMoreMode2"
-															role="text">
-															{{'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.readMore.line2' | translate}}
-														</p>
-														<p id="zeroTouchLock-DistanceAdjust-readMoreMode3"
-															role="text">
-															{{'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.readMore.line3' | translate}}
-														</p>
-														<p id="zeroTouchLock-DistanceAdjust-readMoreMode4"
-															role="text">
-															{{'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.readMore.line4' | translate}}
-														</p>
+														<div *ngIf="hsaIntelligentSecurity.sensorType == 1">
+															<p id="zeroTouchLock-DistanceAdjust-readMoreMode"
+																role="text">
+																{{'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.readMoreForSensor1.line1' | translate}}
+															</p>
+														</div>
+														<div *ngIf="hsaIntelligentSecurity.sensorType == 2">
+															<p id="zeroTouchLock-DistanceAdjust-readMoreMode1"
+																role="text">
+																{{'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.readMoreForSensor2.line1' | translate}}
+															</p>
+															<p id="zeroTouchLock-DistanceAdjust-readMoreMode2"
+																role="text">
+																{{'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.readMoreForSensor2.line2' | translate}}
+															</p>
+															<p id="zeroTouchLock-DistanceAdjust-readMoreMode3"
+																role="text">
+																{{'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.readMoreForSensor2.line3' | translate}}
+															</p>
+															<p id="zeroTouchLock-DistanceAdjust-readMoreMode4"
+																role="text">
+																{{'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.readMoreForSensor2.line4' | translate}}
+															</p>
+														</div>														
 													</div>
 												</div>	
 											</vtr-ui-row-switch>
 											<div class="slider-note">
 												<vtr-ui-range-slider [rangeSliderId]="'smartAssist-intelligentSecurity-zeroTouchLock-distanceSensitivityAdjusting'"
 													[manualRefresh]="manualRefresh"
-													*ngIf="zeroTouchPresenceLeaveDistanceCapability && !hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust"
+													*ngIf="zeroTouchPresenceLeaveDistanceCapability && !hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust && hsaIntelligentSecurity.sensorType == 2"
 													[minValueLegend]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.options.near' | translate"
 													[minValue]="0"
 													[mediumValueLegend]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.options.medium' | translate"												
