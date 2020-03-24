@@ -158,7 +158,7 @@ export class ProtocolGuardService implements CanActivate {
 	return '';
   }
 
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) : boolean | UrlTree {
+  public canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) : boolean | UrlTree {
 	const path = window.location.href.slice(window.location.href.indexOf('#') + 1);
 	const checkResult = this.isRedirectUrlNeeded(path);
 	if (checkResult[0]) return this.router.parseUrl(checkResult[1]);

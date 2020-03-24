@@ -1,17 +1,31 @@
-import { TestBed } from '@angular/core/testing';
-
-import { ProtocolGuardService } from './protocol-guard.service';
+import { ProtocolGuardService, protocolUrl } from './protocol-guard.service';
 import { Injector } from '@angular/core';
+import { UrlSegment, ActivatedRouteSnapshot, RouterStateSnapshot, Router, RouterModule } from '@angular/router';
+import { GuardConstants } from './guard-constants';
+import { TestBed } from '@angular/core/testing';
+import { BrowserDynamicTestingModule, platformBrowserDynamicTesting } from '@angular/platform-browser-dynamic/testing';
 
 describe('service', () => {
   let service: ProtocolGuardService;
   beforeEach(() => {
-	const injector = Injector.create({
+	const spy = jasmine.createSpyObj('GuardConstants', ['test']);
+	const routeSpy = jasmine.createSpyObj('Router', ['parseUrl']);
+	TestBed.resetTestEnvironment();
+	TestBed.initTestEnvironment(BrowserDynamicTestingModule, platformBrowserDynamicTesting());
+	TestBed.configureTestingModule({
 		providers: [
-		  { provide: ProtocolGuardService, useClass: ProtocolGuardService, deps: []},
+			{
+				provide: Router,
+				useValue: routeSpy
+			},
+			{
+				provide: GuardConstants,
+				useValue: spy
+			},
+			ProtocolGuardService
 		]
-	  });
-	service = injector.get(ProtocolGuardService);
+	})
+	service = TestBed.get(ProtocolGuardService);
   });
 
   it('should be created', () => {
@@ -183,5 +197,16 @@ describe('service', () => {
 	const path = '/device/device-settings/power';
 	const spy = spyOn<any>(service, 'processPath').and.returnValue('/device/device-settings/power');
     expect(service['isRedirectUrlNeeded'](path)).toEqual([false, '']);
+  });
+
+  it('canActivate return default route', () => {
+	const defaultRoute = service['guardConstants']['defaultRoute'];
+	expect(service['canActivate'](null, null)).toEqual(defaultRoute);
+  })
+});
+
+describe('matcher', () =>{
+  it('protocol matcher function not match', () => {
+	expect(protocolUrl([new UrlSegment('/any/path', {})])).toEqual(null);
   });
 });
