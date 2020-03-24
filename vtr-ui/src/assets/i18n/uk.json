@@ -1332,10 +1332,10 @@
                             "label": "ПОТОЧНИЙ ПЛАН"
                         },
                         "profile": {
-                            "title": "PLAN PROFILE:",
-                            "performance": "Max performance:",
-                            "temperature": "Max system temperature:",
-                            "usage": "Max power usage:"
+                            "title": "ПРОФІЛЬ ПЛАНУ:",
+                            "performance": "Макс. потужність:",
+                            "temperature": "Макс. температура системи:",
+                            "usage": "Макс. енергоспоживання:"
                         }
                     }
                 },

@@ -1332,10 +1332,10 @@
                             "label": "HUIDIG SCHEMA"
                         },
                         "profile": {
-                            "title": "PLAN PROFILE:",
-                            "performance": "Max performance:",
-                            "temperature": "Max system temperature:",
-                            "usage": "Max power usage:"
+                            "title": "SCHEMA PROFIEL:",
+                            "performance": "Maximale prestaties:",
+                            "temperature": "Maximale systeemtemperatuur:",
+                            "usage": "Maximaal energieverbruik:"
                         }
                     }
                 },

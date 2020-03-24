@@ -1334,10 +1334,10 @@
                             "label": "المخطط الحالي"
                         },
                         "profile": {
-                            "title": "PLAN PROFILE:",
-                            "performance": "Max performance:",
-                            "temperature": "Max system temperature:",
-                            "usage": "Max power usage:"
+                            "title": "ملف تعريف الخطة:",
+                            "performance": "أقصى أداء:",
+                            "temperature": "أقصى درجة حرارة للنظام",
+                            "usage": "أقصى استخدام للطاقة:"
                         }
                     }
                 },

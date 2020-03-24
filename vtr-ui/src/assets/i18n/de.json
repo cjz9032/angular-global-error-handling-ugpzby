@@ -1332,10 +1332,10 @@
                             "label": "AKTUELLES SCHEMA"
                         },
                         "profile": {
-                            "title": "PLAN PROFILE:",
-                            "performance": "Max performance:",
-                            "temperature": "Max system temperature:",
-                            "usage": "Max power usage:"
+                            "title": "SCHEMAPROFIL:",
+                            "performance": "Max. Leistung:",
+                            "temperature": "Max. Systemtemperatur:",
+                            "usage": "Max. Energieverbrauch:"
                         }
                     }
                 },

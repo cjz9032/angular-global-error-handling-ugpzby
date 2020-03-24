@@ -1332,10 +1332,10 @@
                             "label": "NYKYINEN VIRRANKÄYTTÖSUUNNITELMA"
                         },
                         "profile": {
-                            "title": "PLAN PROFILE:",
-                            "performance": "Max performance:",
-                            "temperature": "Max system temperature:",
-                            "usage": "Max power usage:"
+                            "title": "SUUNNITELMAN PROFIILI:",
+                            "performance": "Suorituskyky enintään:",
+                            "temperature": "Järjestelmän lämpötila enintään:",
+                            "usage": "Virrankäyttö enintään:"
                         }
                     }
                 },

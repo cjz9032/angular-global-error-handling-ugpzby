@@ -1332,10 +1332,10 @@
                             "label": "PIANO CORRENTE"
                         },
                         "profile": {
-                            "title": "PLAN PROFILE:",
-                            "performance": "Max performance:",
-                            "temperature": "Max system temperature:",
-                            "usage": "Max power usage:"
+                            "title": "PIANO DEL PROFILO:",
+                            "performance": "Prestazioni massime:",
+                            "temperature": "Temperatura massima di sistema:",
+                            "usage": "Massimo consumo energetico:"
                         }
                     }
                 },

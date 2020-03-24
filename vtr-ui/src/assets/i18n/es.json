@@ -1332,10 +1332,10 @@
                             "label": "PLAN ACTUAL"
                         },
                         "profile": {
-                            "title": "PLAN PROFILE:",
-                            "performance": "Max performance:",
-                            "temperature": "Max system temperature:",
-                            "usage": "Max power usage:"
+                            "title": "PLAN DE PERFIL:",
+                            "performance": "Rendimiento máximo:",
+                            "temperature": "Temperatura máxima del sistema:",
+                            "usage": "Uso máximo de energía:"
                         }
                     }
                 },
