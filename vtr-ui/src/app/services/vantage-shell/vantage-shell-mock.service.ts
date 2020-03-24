@@ -1275,7 +1275,7 @@ export class VantageShellService {
 	public async deviceFilter(filter) {
 		if (this.phoenix) {
 			try {
-				const deviceFilterResult = await this.phoenix.deviceFilter.eval(filter);
+				const deviceFilterResult = await this.phoenix.deviceFilter.deviceFilterEval(filter);
 				// console.log('In VantageShellService.deviceFilter. Filter: ', JSON.stringify(filter), deviceFilterResult);
 				return deviceFilterResult;
 			} catch (error) {}
