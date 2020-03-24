@@ -334,13 +334,14 @@ export class AppsForYouService {
 		this.isCancelInstall = false;
 	}
 
-	initUnreadMessage(reInit = false) {
-		if (reInit) {
-			this.UnreadMessageCount.totalMessage = 0;
-			this.UnreadMessageCount.lmaMenuClicked = false;
-			this.UnreadMessageCount.adobeMenuClicked = false;
-			this.UnreadMessageCount.dccMenuClicked = false;
-		}
+	resetUnreadMessageCounter() {
+		this.UnreadMessageCount.totalMessage = 0;
+		this.UnreadMessageCount.lmaMenuClicked = false;
+		this.UnreadMessageCount.adobeMenuClicked = false;
+		this.UnreadMessageCount.dccMenuClicked = false;
+	}
+
+	initUnreadMessage() {
 		const cacheUnreadMessageCount = this.commonService.getLocalStorageValue(
 			LocalStorageKey.UnreadMessageCount,
 			undefined
@@ -411,7 +412,8 @@ export class AppsForYouService {
 				case SelfSelectEvent.SegmentChange:
 					this.localInfoService.getLocalInfo().then(result => {
 						this.localInfo = result;
-						this.initUnreadMessage(true);
+						this.resetUnreadMessageCounter();
+						this.initUnreadMessage();
 					}).catch(e => {
 						this.localInfo = undefined;
 					});
