@@ -211,6 +211,7 @@
 	}
 
 	&.card-subpage-corner {
+		height: 22rem;
 		.content {
 			position: relative;
 			z-index: 1;
@@ -475,8 +476,9 @@
 	}
 
 	&.card-subpage-partner-corner {
+		height: 22rem;
 		.image {
-			// height: 60%;
+			height: 100%;
 			background-size: cover;
 			background-position: center center;
 			background-repeat: no-repeat;
