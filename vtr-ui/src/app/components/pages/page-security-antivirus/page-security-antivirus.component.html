@@ -76,7 +76,7 @@
 					</div>
 					<div class="divider"></div>
 					<div class="subtitle" [innerHTML]="'security.antivirus.windowsDefender.buy' | translate"></div>
-					<vtr-widget-mcafee-state [windowsDefender]="true" [url]="common.urlGetMcAfee" [isOnline]="isOnline">
+					<vtr-widget-mcafee-state [windowsDefender]="true" [url]="common.urlGetMcAfee" [common]="common" [isOnline]="isOnline">
 					</vtr-widget-mcafee-state>
 					<div class="subtitle mt-5 text-center"
 						[innerHTML]="'security.antivirus.mcafee.discount' | translate"></div>
@@ -88,6 +88,7 @@
 					<div class="subtitle" [innerHTML]="'security.antivirus.windowsDefender.onlyBasic' | translate">
 					</div>
 					<vtr-widget-mcafee-state [windowsDefender]="true"
+						[common]="common"
 						(retryClick)="retry($event)"
 						[statusList]="viewModel.windowsDefenderstatusList" [isOnline]="isOnline">
 					</vtr-widget-mcafee-state>
