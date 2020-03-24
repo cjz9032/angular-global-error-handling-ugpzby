@@ -37,6 +37,7 @@
 						[style.background-image]="'url(' + item.FeatureImage + ')'"
 						[style.height.px]="containerCardCorner.clientWidth / ratio">
 						<div class="inner-content"
+							title=""
 							*ngIf="!isOfflineArm">
 							<div *ngIf="item.Title"
 								class="title text-ellipsis"
@@ -165,7 +166,8 @@
 						[style.background-image]="'url(' + item.FeatureImage + ')'"
 						[style.height.px]="containerCardHighlight.clientWidth / ratio"
 						style="background-color: #2f3447;">
-						<div class="inner-content">
+						<div class="inner-content"
+							title="">
 							<div *ngIf="item.Title && !isOfflineArm"
 								[title]="item.Title | htmlText"
 								class="title text-ellipsis"
@@ -196,7 +198,8 @@
 				[metricsItemID]="item.Id"
 				target="_blank"
 				rel="noopener">
-				<div class="row">
+				<div class="row"
+					title="">
 					<div class="card-image"
 						[style.background-image]="'url(' + item.FeatureImage + ')'">
 						<div *ngIf="item.BrandImage || item.BrandName"
@@ -254,7 +257,8 @@
 				[metricsItemID]="item.Id"
 				target="_blank"
 				rel="noopener">
-				<div class="row">
+				<div class="row"
+					title="">
 					<div class="card-image"
 						[style.background-image]="'url(' + item.FeatureImage + ')'">
 						<div *ngIf="item.BrandImage || item.BrandName"
@@ -318,7 +322,8 @@
 						[metricsItemID]="item.Id"
 						[style.background-image]="'url(' + item.FeatureImage + ')'"
 						id="{{containerCardId+'-article_link'}}">
-						<div class="inner-content">
+						<div class="inner-content"
+							title="">
 							<div *ngIf="item.Title"
 								class="title text-ellipsis"
 								[title]="item.Title | htmlText"
@@ -355,7 +360,16 @@
 		#containerCardSidebarPartnerCorner>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col col-12 image"
+				<a class="col col-12 image"
+					[attr.href]="!item.ActionLink ? null : (item.ActionLink | sanitize : 'resourceUrl')"
+					target="_blank"
+					rel="noopener"
+					vtrMetrics
+					id="{{containerCardId+'_side_article'}}"
+					metricsEvent="docClick"
+					[metricsItemID]="item.Id"
+					[metricsItemPosition]="sideFlag + order"
+					metricsItemCategory="partnerarticle"
 					[style.background-image]="'url(' + item.FeatureImage + ')'">
 					<div *ngIf="item.BrandImage || item.BrandName"
 						class="logo">
@@ -367,29 +381,20 @@
 							role="textbox">{{item.BrandName}}</span>
 					</div>
 					<div class="row">
-						<a [attr.href]="!item.ActionLink ? null : (item.ActionLink | sanitize : 'resourceUrl')"
-							target="_blank"
-							rel="noopener"
-							vtrMetrics
-							id="{{containerCardId+'_side_article'}}"
-							metricsEvent="docClick"
-							[metricsItemID]="item.Id"
-							[metricsItemPosition]="sideFlag + order"
-							metricsItemCategory="partnerarticle">
-							<div class="col col-12 content">
-								<div *ngIf="item.Title"
-									class="title text-two-ellipsis"
-									[title]="item.Title | htmlText"
-									[innerHtml]="item.Title"
-									id="{{containerCardId+'-title'}}"
-									role="link"></div>
-								<div *ngIf="item.ActionLink"
-									class="read-more">
-								</div>
+						<div class="col col-12 content"
+							title="">
+							<div *ngIf="item.Title"
+								class="title text-two-ellipsis"
+								[title]="item.Title | htmlText"
+								[innerHtml]="item.Title"
+								id="{{containerCardId+'-title'}}"
+								role="link"></div>
+							<div *ngIf="item.ActionLink"
+								class="read-more">
 							</div>
-						</a>
+						</div>
 					</div>
-				</div>
+				</a>
 			</div>
 			<vtr-container-card-offline [containerCardId]="containerCardId"
 				*ngIf="!isOnline"></vtr-container-card-offline>
