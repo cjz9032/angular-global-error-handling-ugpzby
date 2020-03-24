@@ -29,7 +29,7 @@
 										id="smart-standby-schedule-computer"
 										attr.aria-label="smart-standby-schedule-computer">
 										{{ 'device.deviceSettings.power.smartStandby.subTitle' | translate }}</h5>
-									<vtr-ui-rounded-rectangle-radio [radioId]="'automatic_show'"
+									<vtr-ui-rounded-rectangle-radio [radioId]="'Automatic mode'"
 										[group]="'smartStandByBtns'"
 										name="nMehod_show"
 										[label]="'device.deviceSettings.power.smartStandby.automaticMode' | translate"
@@ -39,7 +39,7 @@
 										(customKeyEvent)="onCheckboxClicked(false);isCollapsed = true"
 										[disabled]="!smartStandby.isEnabled">
 									</vtr-ui-rounded-rectangle-radio>
-									<vtr-ui-rounded-rectangle-radio [radioId]="'manual_show'"
+									<vtr-ui-rounded-rectangle-radio [radioId]="'Manual mode'"
 										[group]="'smartStandByBtns'"
 										name="fnKeyMehod_show"
 										[label]="'device.deviceSettings.power.smartStandby.manualMode' | translate"
