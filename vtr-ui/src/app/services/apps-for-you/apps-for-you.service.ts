@@ -263,19 +263,22 @@ export class AppsForYouService {
 	public getAppStatus(appGuid) {
 		const findItem = this.cachedAppStatusArray.find(item => item.key === appGuid);
 		const appStatus = findItem ? findItem.value : undefined;
-		if (!appStatus) {
-			this.systemUpdateBridge.getAppStatus(appGuid).then(status => {
-				if (this.cachedAppStatusArray.findIndex(i => i.key === appGuid) === -1) {
-					this.cachedAppStatusArray.push({
-						key: appGuid,
-						value: status
-					});
-				}
-				this.commonService.sendNotification(AppsForYouEnum.GetAppStatusResult, status);
-			});
-		} else {
+		if (appStatus) {
 			this.commonService.sendNotification(AppsForYouEnum.GetAppStatusResult, appStatus);
 		}
+		this.systemUpdateBridge.getAppStatus(appGuid).then(status => {
+			if (status && !findItem) {
+				this.cachedAppStatusArray.push({
+					key: appGuid,
+					value: status
+				});
+			} else if (status && findItem) {
+				this.updateCachedAppStatus(appGuid, status);
+			}
+			if (status && status !== appStatus) {
+				this.commonService.sendNotification(AppsForYouEnum.GetAppStatusResult, status);
+			}
+		});
 	}
 
 	private updateCachedAppStatus(appGuid, status) {
