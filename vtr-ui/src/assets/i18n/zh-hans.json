@@ -1332,7 +1332,7 @@
                             "label": "当前计划"
                         },
                         "profile": {
-                            "title": "计划概要文件：",
+                            "title": "计划配置概要：",
                             "performance": "最高性能：",
                             "temperature": "最高系统温度：",
                             "usage": "最高电源使用量："
