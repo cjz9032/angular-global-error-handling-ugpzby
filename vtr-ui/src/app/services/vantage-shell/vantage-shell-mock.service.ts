@@ -635,6 +635,7 @@ export class VantageShellService {
 				isLWSPluginInstalled: true,
 				hasSystemPermissionShowed: true,
 				isSupported: true,
+				changeWifiSecurity: false,
 				launchLocationPrivacy() {
 					return Promise.resolve(true);
 				},
