@@ -1332,10 +1332,10 @@
                             "label": "目前計劃"
                         },
                         "profile": {
-                            "title": "PLAN PROFILE:",
-                            "performance": "Max performance:",
-                            "temperature": "Max system temperature:",
-                            "usage": "Max power usage:"
+                            "title": "計劃設定檔：",
+                            "performance": "最高效能：",
+                            "temperature": "最高系統溫度：",
+                            "usage": "最高電源用量："
                         }
                     }
                 },

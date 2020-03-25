@@ -1332,10 +1332,10 @@
                             "label": "TRENUTNI PLAN"
                         },
                         "profile": {
-                            "title": "PLAN PROFILE:",
-                            "performance": "Max performance:",
-                            "temperature": "Max system temperature:",
-                            "usage": "Max power usage:"
+                            "title": "PLAN PROFILA:",
+                            "performance": "Maks. performanse:",
+                            "temperature": "Maks. temperatura sistema:",
+                            "usage": "Maks. korišćenje napajanja:"
                         }
                     }
                 },

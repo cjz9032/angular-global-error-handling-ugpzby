@@ -1332,10 +1332,10 @@
                             "label": "PLAN ACTUAL"
                         },
                         "profile": {
-                            "title": "PLAN PROFILE:",
-                            "performance": "Max performance:",
-                            "temperature": "Max system temperature:",
-                            "usage": "Max power usage:"
+                            "title": "PROFILUL PLANULUI:",
+                            "performance": "Performanța maximă:",
+                            "temperature": "Temperatura maximă a sistemului:",
+                            "usage": "Consumul maxim de energie:"
                         }
                     }
                 },

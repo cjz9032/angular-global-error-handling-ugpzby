@@ -1332,10 +1332,10 @@
                             "label": "AKTUÁLIS SÉMA"
                         },
                         "profile": {
-                            "title": "PLAN PROFILE:",
-                            "performance": "Max performance:",
-                            "temperature": "Max system temperature:",
-                            "usage": "Max power usage:"
+                            "title": "SÉMAPROFIL:",
+                            "performance": "Teljesítmény maximalizálása:",
+                            "temperature": "Rendszerhőmérséklet maximalizálása:",
+                            "usage": "Energiahasználat maximalizálása:"
                         }
                     }
                 },

@@ -1332,10 +1332,10 @@
                             "label": "PLÁN PRÚDU"
                         },
                         "profile": {
-                            "title": "PLAN PROFILE:",
-                            "performance": "Max performance:",
-                            "temperature": "Max system temperature:",
-                            "usage": "Max power usage:"
+                            "title": "PROFIL PLÁNU:",
+                            "performance": "Max. výkon:",
+                            "temperature": "Max. teplota systému:",
+                            "usage": "Max. spotreba:"
                         }
                     }
                 },

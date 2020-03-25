@@ -1332,10 +1332,10 @@
                             "label": "MODE ACTUEL"
                         },
                         "profile": {
-                            "title": "PLAN PROFILE:",
-                            "performance": "Max performance:",
-                            "temperature": "Max system temperature:",
-                            "usage": "Max power usage:"
+                            "title": "PROFIL DU MODE :",
+                            "performance": "Performances maximales :",
+                            "temperature": "Température du système maximale :",
+                            "usage": "Utilisation de l'alimentation maximale :"
                         }
                     }
                 },

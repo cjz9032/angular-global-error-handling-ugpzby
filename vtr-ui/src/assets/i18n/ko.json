@@ -1332,10 +1332,10 @@
                             "label": "현재 계획"
                         },
                         "profile": {
-                            "title": "PLAN PROFILE:",
-                            "performance": "Max performance:",
-                            "temperature": "Max system temperature:",
-                            "usage": "Max power usage:"
+                            "title": "플랜 프로파일:",
+                            "performance": "최대 성능:",
+                            "temperature": "최대 시스템 온도:",
+                            "usage": "최대 전력 사용량:"
                         }
                     }
                 },

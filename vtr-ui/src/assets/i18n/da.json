@@ -1332,10 +1332,10 @@
                             "label": "NUVÆRENDE PLAN"
                         },
                         "profile": {
-                            "title": "PLAN PROFILE:",
-                            "performance": "Max performance:",
-                            "temperature": "Max system temperature:",
-                            "usage": "Max power usage:"
+                            "title": "PLANPROFIL:",
+                            "performance": "Maks. ydeevne:",
+                            "temperature": "Maks. systemtemperatur:",
+                            "usage": "Maks. strømforbrug:"
                         }
                     }
                 },

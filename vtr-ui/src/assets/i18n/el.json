@@ -1332,10 +1332,10 @@
                             "label": "ΤΡΕΧΟΝ ΣΧΕΔΙΟ"
                         },
                         "profile": {
-                            "title": "PLAN PROFILE:",
-                            "performance": "Max performance:",
-                            "temperature": "Max system temperature:",
-                            "usage": "Max power usage:"
+                            "title": "ΠΡΟΦΙΛ ΣΧΕΔΙΟΥ:",
+                            "performance": "Μέγιστη απόδοση:",
+                            "temperature": "Μέγιστη θερμοκρασία συστήματος:",
+                            "usage": "Μέγιστη χρήση ενέργειας:"
                         }
                     }
                 },

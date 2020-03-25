@@ -1332,10 +1332,10 @@
                             "label": "GJELDENDE PLAN"
                         },
                         "profile": {
-                            "title": "PLAN PROFILE:",
-                            "performance": "Max performance:",
-                            "temperature": "Max system temperature:",
-                            "usage": "Max power usage:"
+                            "title": "ABONNEMENTSPROFIL:",
+                            "performance": "Maks. ytelse:",
+                            "temperature": "Maks. systemtemperatur:",
+                            "usage": "Maks. strømbruk:"
                         }
                     }
                 },

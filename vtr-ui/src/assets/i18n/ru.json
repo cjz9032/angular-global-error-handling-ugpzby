@@ -1332,10 +1332,10 @@
                             "label": "ТЕКУЩИЙ ПЛАН"
                         },
                         "profile": {
-                            "title": "PLAN PROFILE:",
-                            "performance": "Max performance:",
-                            "temperature": "Max system temperature:",
-                            "usage": "Max power usage:"
+                            "title": "ПРОФИЛЬ ПЛАНА:",
+                            "performance": "Максимальная производительность:",
+                            "temperature": "Максимальная температура системы:",
+                            "usage": "Максимальное энергопотребление:"
                         }
                     }
                 },

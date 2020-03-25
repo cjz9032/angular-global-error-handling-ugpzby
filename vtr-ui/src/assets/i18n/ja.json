@@ -1332,10 +1332,10 @@
                             "label": "現在のプラン"
                         },
                         "profile": {
-                            "title": "PLAN PROFILE:",
-                            "performance": "Max performance:",
-                            "temperature": "Max system temperature:",
-                            "usage": "Max power usage:"
+                            "title": "プラン・プロファイル:",
+                            "performance": "最大パフォーマンス:",
+                            "temperature": "最大システム温度:",
+                            "usage": "最大電源使用率:"
                         }
                     }
                 },
