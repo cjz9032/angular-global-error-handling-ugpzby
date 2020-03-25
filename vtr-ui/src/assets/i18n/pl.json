@@ -1514,8 +1514,8 @@
                     "title": "Wyświetlanie",
                     "displayColorTemperature": {
                         "title": "Temperatura barwowa ekranu",
-                        "description": "Użytkownik może dostosowywać temperaturę barwową ekranu i regulować ilość niebieskiego światła, aby zredukować zmęczenie oczu. W okresie od zachodu do wschodu słońca ustawiaj cieplejsze kolory, które nie zaburzają snu.",
-                        "link": {
+						"description": "Możesz dostosowywać temperaturę barwową ekranu, odfiltrowując niebieskie światło męczące oczy. Z kolei w okresie od zachodu do wschodu słońca ustawiaj cieplejsze kolory, które nie zaburzają snu.",
+						"link": {
                             "click": "Kliknij",
                             "here": "tutaj",
                             "rest": "aby zmienić temperaturę barwową."
