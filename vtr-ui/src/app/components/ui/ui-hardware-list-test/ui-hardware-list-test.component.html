@@ -12,7 +12,7 @@
 				</div>
 				<a href="javascript:void(0);"
 					(click)="item.collapsed = !item.collapsed"
-					[ngClass]="{'angle': item.collapsed, 'rotate': !item.collapsed}">
+					[ngClass]="{'rotate': !item.collapsed}">
 					<fa-icon [icon]="['fal', 'angle-up']"
 						[attr.aria-expanded]="item.collapsed"
 						aria-controls="{{ id }}">
