@@ -1,30 +1,23 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output, TemplateRef } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { PowerService } from 'src/app/services/power/power.service';
-import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
-import { CommonService } from 'src/app/services/common/common.service';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { EventTypes } from '@lenovo/tan-client-bridge';
-import { ChargeThresholdInformation } from 'src/app/enums/battery-information.enum';
-import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { BehaviorSubject, combineLatest, EMPTY, from, of, pipe, range, timer, zip } from 'rxjs';
 import { Subscription } from 'rxjs/internal/Subscription';
-import { BehaviorSubject, EMPTY, pipe, zip, range, timer, from, combineLatest, of } from 'rxjs';
-import { FlipToBootSetStatus } from '../../../../../services/power/flipToBoot.interface';
-import {
-	FlipToBootCurrentModeEnum,
-	FlipToBootErrorCodeEnum,
-	FlipToBootSetStatusEnum,
-	FlipToBootSupportedEnum
-} from '../../../../../services/power/flipToBoot.enum';
-import { MetricService } from '../../../../../services/metric/metric.service';
+import { debounce, finalize, map, mergeMap, retryWhen, switchMap, tap } from 'rxjs/operators';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { AlwaysOnUSBCapability } from 'src/app/data-models/device/always-on-usb.model';
-import { BatteryChargeThresholdCapability } from 'src/app/data-models/device/battery-charge-threshold-capability.model';
-import { LoggerService } from 'src/app/services/logger/logger.service';
-import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
-import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
-import { retryWhen, map, mergeMap, tap, finalize, takeWhile, switchMap, debounce } from 'rxjs/operators';
 import { ChargeThreshold } from 'src/app/data-models/device/charge-threshold.model';
+import { ChargeThresholdInformation } from 'src/app/enums/battery-information.enum';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
+import { CommonService } from 'src/app/services/common/common.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { PowerService } from 'src/app/services/power/power.service';
+import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { MetricService } from '../../../../../services/metric/metric.service';
+import { FlipToBootCurrentModeEnum, FlipToBootErrorCodeEnum, FlipToBootSetStatusEnum, FlipToBootSupportedEnum } from '../../../../../services/power/flipToBoot.enum';
+import { FlipToBootSetStatus } from '../../../../../services/power/flipToBoot.interface';
 
 enum PowerMode {
 	Sleep = 'ChargeFromSleep',
@@ -726,7 +719,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				this.logger.info('setAirplaneModeThinkPad.then', response);
 				this.toggleAirplanePowerModeFlag = value;
 				this.commonService.sendNotification('AirplaneModeStatus',
-					{isCapable: true, isEnabled: value});
+					{ isCapable: true, isEnabled: value });
 				this.airplanePowerCache.toggleState.status = this.toggleAirplanePowerModeFlag;
 				this.commonService.setLocalStorageValue(LocalStorageKey.AirplanePowerModeCapability, this.airplanePowerCache);
 				// this.getAirplaneModeThinkPad();

@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, ViewChild } from '@angular/core';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { MetricService } from 'src/app/services/metric/metric.service';
 import { AppEvent } from './../../../enums/app-event.enum';
 
 @Component({
@@ -17,10 +18,9 @@ export class UiRectangleRadioComponent implements OnInit, OnChanges, AfterViewIn
 	@Input() disabled: boolean;
 	@Input() iconName: string;
 	@Output() customKeyEvent = new EventEmitter();
-
 	@Output() change: EventEmitter<any> = new EventEmitter();
 	hideIcon: boolean = false;
-
+	@Input() metricsParent = 'Device.MyDeviceSettings';
 	@Input() radioGroup: any;
 	// These following instance variables added for Keyboard navigation to radio button.
 	keyCode = Object.freeze({
@@ -37,11 +37,19 @@ export class UiRectangleRadioComponent implements OnInit, OnChanges, AfterViewIn
 	firstRadioButton: any;
 	lastRadioButton: any;
 	radioButtons: Array<HTMLElement> = [];
-	@ViewChild('radioButton', { static: false }) radioButton: ElementRef<HTMLElement>;
 	selectedRadioButton: any;
 	noRadioButtonSelected = true;
+	private radioButton: ElementRef<HTMLElement>;
+	// once radio button is visible then execute logic
+	@ViewChild('radioButton', { static: false }) set content(element: ElementRef) {
+		if (element) {
+			this.radioButton = element;
+			this.setRadioButtons();
+		}
+	}
+	radioLabel = 'radio.';
 
-	constructor(private logger: LoggerService) { }
+	constructor(private logger: LoggerService, public metrics: MetricService) { }
 
 	ngOnInit() {
 	}
@@ -92,15 +100,34 @@ export class UiRectangleRadioComponent implements OnInit, OnChanges, AfterViewIn
 				break;
 		}
 	}
+	changeRadioOnKeyPress($event, radio: HTMLInputElement) {
+
+		if (!this.checked) { // on only radio change
+			// this.checked = !this.checked;
+			radio.value = this.value;
+			// radio.checked = this.checked;
+			const $customEvent = { type: 'change', target: radio };
+			this.onChange($customEvent);
+			const metricsData = {
+				itemParent: this.metricsParent,
+				ItemType: 'FeatureClick',
+				itemName: this.radioLabel + this.label,
+				value: !this.checked
+			};
+			this.metrics.sendMetrics(metricsData);
+		}
+	}
+
+
 	navigateByKeys($event, radio) {
 		this.setRadioButtons();
 		switch ($event.keyCode) {
-			case this.keyCode.TAB:
-				// this.checkOnFocus(event, radio);
-				break;
 			case this.keyCode.SPACE:
 			case this.keyCode.RETURN:
-				this.setChecked(this.radioButton.nativeElement, true);
+				this.changeRadioOnKeyPress($event, radio);
+				//this.setChecked(this.radioButton.nativeElement, true);
+				$event.stopPropagation();
+				$event.preventDefault();
 				break;
 			case this.keyCode.UP:
 				this.setCheckedToPreviousItem(this.radioButton);
@@ -122,41 +149,58 @@ export class UiRectangleRadioComponent implements OnInit, OnChanges, AfterViewIn
 
 	}
 
-	private setChecked(currentItem, selectItem: boolean) {
-		let currentRadio = [];
-		try {
-			currentRadio = currentItem.querySelectorAll('input[type="radio"]');
-		} catch (error) {
-			currentRadio = currentItem.nativeElement.querySelectorAll('input[type="radio"]');
-		}
-
+	private setChecked(currentRadioButton: HTMLElement, selectItem: boolean) {
+		let currentRadio: any;
+		currentRadio = currentRadioButton.querySelectorAll('input[type="radio"]');
 		try {
 			if (selectItem && currentRadio && !currentRadio[0].checked && !currentRadio[0].disabled) {
-				this.radioButtons.forEach(radioButton => {
-					radioButton.removeAttribute('aria-checked');
-					radioButton.setAttribute('aria-checked', 'false');
-				});
-				currentItem.setAttribute('aria-checked', 'true');
-				currentRadio[0].click();
+				try {
+					this.setRadioAriaChecked(currentRadio[0]);
+					currentRadio[0].click();
+				}
+				catch (error) {
+					this.logger.exception('setChecked error occurred while selecting the current element ::', error);
+				}
+			}
+			else {
+				try {
+					if (!selectItem) {
+						// this.setRadioTabIndex(currentRadioButton);
+						currentRadioButton.focus();
+					}
+
+				}
+				catch (error) {
+					this.logger.exception('setChecked error occurred while focusing currentRadioButton only::', error);
+				}
 			}
 		}
 		catch (error) {
 			this.logger.exception('setChecked error occurred ::', error);
-
 		}
 
-		this.setRadioTabIndex(currentItem);
-		currentItem.focus();
 	}
 
-	private setRadioTabIndex(currentItem) {
+	private setRadioAriaChecked(currentRadioButton) {
+		try {
+			this.radioButtons.forEach(radioButton => {
+				radioButton.removeAttribute('aria-checked');
+				radioButton.setAttribute('aria-checked', 'false');
+			});
+			currentRadioButton.removeAttribute('aria-checked');
+			currentRadioButton.setAttribute('aria-checked', 'true');
+		} catch (error) {
+			this.logger.exception('setRadioAriaChecked error occurred ::', error);
+		}
+	}
+	private setRadioTabIndex(currentRadioButton) {
 		try {
 
 			this.radioButtons.forEach(radioButton => {
 				radioButton.tabIndex = -1; // the unchecked item should also be tabbable
 			});
-			if (currentItem !== undefined && currentItem.tabIndex && currentItem.tabIndex !== 0) {
-				currentItem.tabIndex = 0; // tabitem need not be set to 1 unnecessarly
+			if (currentRadioButton !== undefined && currentRadioButton.tabIndex && currentRadioButton.tabIndex !== 0) {
+				currentRadioButton.tabIndex = 0; // tabitem need not be set to 1 unnecessarly
 			}
 
 		}
@@ -200,11 +244,7 @@ export class UiRectangleRadioComponent implements OnInit, OnChanges, AfterViewIn
 
 	private setRadioButtons() {
 		try {
-			if (!this.radioGroup) {
-				this.radioGroup = this.getParentRadioGroup(this.radioButton.nativeElement);
-
-			}
-			const rbs = this.radioGroup.querySelectorAll('[role=radio][aria-disabled=false]');
+			const rbs = this.getRadioGroup();
 
 			this.radioButtons = [];
 			rbs.forEach(radioButton => {
@@ -235,6 +275,22 @@ export class UiRectangleRadioComponent implements OnInit, OnChanges, AfterViewIn
 		}
 	}
 
+	private getRadioGroup() {
+
+		// commented to remove the dependency from radiogroup role of parent this component
+		if (!this.radioGroup) {
+			this.radioGroup = this.getParentRadioGroup(this.radioButton.nativeElement, 10);
+		}
+
+		// search by radio class and aria-disabled
+		const query = `[class*=${this.group}][aria-disabled=false]`;
+		// search by only role and aria-disabled
+		// const query = '[role=radio][aria-disabled=false]';
+		return this.radioGroup.querySelectorAll(query);
+		// return Array.from(this.radioGroup.querySelectorAll(query));
+
+	}
+
 	/* private setRadioFocus(radioButton) {
 		this.radioButtons.forEach(element => {
 			if (element !== radioButton) {
@@ -246,16 +302,18 @@ export class UiRectangleRadioComponent implements OnInit, OnChanges, AfterViewIn
 		});
 	} */
 
-	private getParentRadioGroup(element) {
+
+	private getParentRadioGroup(element, topUpLevel: number) {
 		try {
 			const roleRadioGroup = 'radiogroup';
 			const role = 'role';
 
-			if (element !== undefined && element.getAttribute(role) === roleRadioGroup) {
+			if (element && element.getAttribute(role) === roleRadioGroup) {
 				return element;
 			}
-			else if (element !== undefined && element.getAttribute(role) !== roleRadioGroup) {
-				return this.getParentRadioGroup(element.parentElement);
+			else if (element && element.parentElement
+				&& element.getAttribute(role) !== roleRadioGroup && topUpLevel > 0) {
+				return this.getParentRadioGroup(element.parentElement, --topUpLevel);
 			}
 			else {
 				return element;

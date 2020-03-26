@@ -118,7 +118,7 @@ export class CMSService {
 		return new Observable(subscriber => {
 			if (this.commonService.isOnline) {
 				this.getCMSContent(CMSOption).then(response => {
-					subscriber.next(response.Results);
+					subscriber.next(response);
 				}).catch(ex => {
 					subscriber.error(ex);
 				});
@@ -126,7 +126,7 @@ export class CMSService {
 				this.commonService.notification.subscribe((notification: AppNotification) => {
 					if (notification && notification.type === NetworkStatus.Online) {
 						this.getCMSContent(CMSOption).then(response => {
-							subscriber.next(response.Results);
+							subscriber.next(response);
 						}).catch(ex => {
 							subscriber.error(ex);
 						});
@@ -145,7 +145,8 @@ export class CMSService {
 		};
 
 		try {
-			return await this.fetchRequestMap[requestKey];
+			const response = await this.fetchRequestMap[requestKey];
+			return await this.filterCMSContent(response.Results);
 		} finally {
 			this.fetchRequestMap[requestKey] = null;
 		}
