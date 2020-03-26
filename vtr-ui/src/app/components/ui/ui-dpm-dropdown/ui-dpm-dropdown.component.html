@@ -14,7 +14,8 @@
 	</div>
 	<div #toggleBtn class="input" [attr.aria-label]="label+' '+text" role="combobox"
 		[attr.aria-expanded]="isDropDownOpen" [class.opened]="isDropDownOpen" (click)="toggle(toggleBtn)"
-		(focus)="onDropdownFocus(toggleBtn)" (keydown.enter)="toggle(toggleBtn)" tabindex="0">
+		(focus)="onDropdownFocus(toggleBtn)" (keydown.enter)="toggle(toggleBtn)" tabindex="0"
+		id="{{dropDownId}}">
 		<div class="time">
 			<span [title]="text">{{ text }} </span>
 		</div>
@@ -27,10 +28,11 @@
 	</div>
 	<div class="list" *ngIf="isDropDownOpen && !disabled" role="listbox">
 		<ul>
-			<li (click)="[select(i),toggleByItem(last,toggleBtn)]" role="option" (blur)="onItemBlur(last)"
-				(keydown.enter)="[select(i),toggleByItem(last,toggleBtn)]" tabindex="0"
-				attr.aria-label="{{ i.text }} selected," *ngFor="let i of list; let last = last">
-				<span [title]="i.text">{{ i.text }}</span>
+			<li *ngFor="let item of list; last as isLast;index as i" id="{{dropDownId}}-item-{{i}}" tabindex="0"
+				(click)="[select(item),toggleByItem(isLast,toggleBtn)]"  (blur)="onItemBlur(isLast)"
+				(keydown.enter)="[select(item),toggleByItem(isLast,toggleBtn)]"
+				role="option" attr.aria-label="{{ item.text }} selected,">
+				<span [title]="item.text">{{ item.text }}</span>
 			</li>
 		</ul>
 	</div>
