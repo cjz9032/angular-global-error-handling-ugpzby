@@ -247,13 +247,15 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 	private initSupportCard() {
-		Object.assign(this.supportWebsiteCard, {
-			Id: 'LenovoSupportWebsite',
-			Title: this.translate.instant('systemUpdates.support.title'),
-			FeatureImage: 'assets/images/support.jpg',
-			ActionType: 'External',
-			ActionLink: this.supportLink,
-		})
+		this.translate.stream('systemUpdates.support.title').subscribe((value) => {
+			this.supportWebsiteCard = {
+				Id: 'LenovoSupportWebsite',
+				Title: value,
+				FeatureImage: 'assets/images/support.jpg',
+				ActionType: 'External',
+				ActionLink: this.supportLink,
+			}
+		});
 	}
 
 	popRebootDialogIfNecessary() {
@@ -334,6 +336,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		} else {
 			this.supportLink = 'https://support.lenovo.com/contactus';
 		}
+		this.supportWebsiteCard.ActionLink = this.supportLink;
 	}
 
 	private setUpdateTitle(titleStatusCode: number = 0) {

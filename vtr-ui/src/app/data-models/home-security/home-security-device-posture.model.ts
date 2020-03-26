@@ -1,5 +1,6 @@
 import { DevicePosture, DeviceCondition} from '@lenovo/tan-client-bridge';
 import { TranslateService } from '@ngx-translate/core';
+import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
 
 class DevicePostureDetail {
 	status: number;
@@ -16,7 +17,11 @@ class DevicePostureDetail {
 export class HomeSecurityDevicePosture {
 	homeDevicePosture: DevicePostureDetail[] = [];
 
-	constructor(devicePosture?: DevicePosture, cacheDevicePosture?: HomeSecurityDevicePosture, public translate?: TranslateService) {
+	constructor(
+		private windowsVersionService: WindowsVersionService,
+		devicePosture?: DevicePosture,
+		cacheDevicePosture?: HomeSecurityDevicePosture,
+		public translate?: TranslateService) {
 		if (devicePosture && devicePosture.value.length > 0) {
 			if (cacheDevicePosture) {
 				this.createHomeDevicePosture(devicePosture.value, cacheDevicePosture);
@@ -53,12 +58,11 @@ export class HomeSecurityDevicePosture {
 			this.assignValue(devicePostures, item.vulnerable, 3);
 		} else if (config.indexOf('apps') !== -1) {
 			this.assignValue(devicePostures, item.vulnerable, 4);
+			devicePostures[4].isHidden = !this.windowsVersionService.isOlderThan20H1();
 		} else if (config.indexOf('developer') !== -1) {
 			this.assignValue(devicePostures, item.vulnerable, 5);
 		} else if (config.indexOf('windows') !== -1) {
 			this.assignValue(devicePostures, item.vulnerable, 6);
-		} else if (config.indexOf('uac') !== -1) {
-			this.assignValue(devicePostures, item.vulnerable, 7);
 		}
 	}
 
@@ -79,7 +83,6 @@ export class HomeSecurityDevicePosture {
 			'security.homeprotection.securityhealth.deviceName1',
 			'security.homeprotection.securityhealth.deviceName2',
 			'security.homeprotection.securityhealth.deviceName7',
-			'security.homeprotection.securityhealth.deviceName3',
 		];
 		const devicePostures = titles.map((value) => {
 			this.translate.stream(value).subscribe((res) => {

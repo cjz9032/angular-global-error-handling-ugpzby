@@ -21,7 +21,7 @@
 					<div class="row">
 						<!--start of left dropdown box for action in row-->
 						<div class="col-12 px-5 pb-4"
-							[class.disabled]="bctInfo.checkboxValue || isGaugeResetRunning">
+							[class.disabled]="bctInfo.checkboxValue || isDisabled">
 							<div class="btn-group btn-block dropdown-left"
 								ngbDropdown
 								placement="bottom-right">
@@ -73,7 +73,7 @@
 					<div class="row">
 						<!--start of right dropdown box for action in row-->
 						<div class="col-12 px-5 pb-4"
-							[class.disabled]="isGaugeResetRunning">
+							[class.disabled]="isDisabled">
 							<div class="btn-group btn-block dropdown-right"
 								ngbDropdown
 								placement="bottom-right">
@@ -121,10 +121,10 @@
 					</div>
 					<div class="row"
 						*ngIf="!displayNoteOnly"
-						[class.disabled]="isGaugeResetRunning">
+						[class.disabled]="isDisabled">
 						<div class="col px-5">
 							<vtr-ui-checkbox [componentId]="'cb' + textId"
-								[disabled]="isGaugeResetRunning"
+								[disabled]="isDisabled"
 								[value]="bctInfo.checkboxValue"
 								[checked]="bctInfo.checkboxValue"
 								[label]="'device.deviceSettings.power.batterySettings.batteryThreshold.options.checkboxText' | translate"

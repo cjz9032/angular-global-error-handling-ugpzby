@@ -3,7 +3,7 @@
 .vtr-widget-switch-icon {
 	display: inline-block;
 	cursor: pointer;
-	outline: none;
+	// outline: none;
 	.loader {
 		position: absolute;
 		top: 50%;
@@ -38,9 +38,9 @@
 		}
 
 		&.checked {
-			border: 1px solid $go;
+			box-shadow: 0px 0px 0.1rem 0.1rem $go;
 			background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
-			outline: none;
+			// outline: none;
 
 			.title {
 				color: $light;
@@ -50,12 +50,15 @@
 				background: linear-gradient($gradient_angle_reverse, $go 0%, $go_lighter 100%);
 				color: $light;
 			}
+			&:focus {
+				box-shadow: 0px 0px 0.1rem 0.1rem $go;
+			}
 		}
 
 		&.unchecked {
-			border: 1px solid $shade_lighter;
+			box-shadow: 0px 0px 0.1rem 0.1rem $shade_lighter;
 			background: linear-gradient($gradient_angle, $shade_lighter 0%, $light 100%);
-			outline: none;
+			// outline: none;
 
 			.title {
 				color: $shade_darker;
@@ -64,6 +67,10 @@
 			.icon-container {
 				background: linear-gradient($gradient_angle_reverse, $shade_lighter 0%, $light 100%);
 				color: $shade_darker;
+			}
+
+			&:focus {
+				box-shadow: 0px 0px 0.1rem 0.1rem $shade_lighter;
 			}
 		}
 

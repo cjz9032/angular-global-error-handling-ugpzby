@@ -302,6 +302,12 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 				// 	return;
 				// }
 				this.eyeCareModeStatus.status = this.eyeCareModeCache.toggleStatus;
+				if (this.eyeCareModeCache.eyeCareDataSource.minimum < 3400) {
+					this.eyeCareModeCache.eyeCareDataSource.minimum = 3400;
+				}
+				// if (this.eyeCareModeCache.eyeCareDataSource.current < 3400) {
+				// 	this.eyeCareModeCache.eyeCareDataSource.current = 3400
+				// }
 				this.eyeCareDataSource = this.eyeCareModeCache.eyeCareDataSource;
 				this.enableSlider = this.eyeCareModeCache.enableSlider;
 				this.enableSunsetToSunrise = this.eyeCareModeCache.enableSunsetToSunrise;
@@ -323,6 +329,12 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 				if (!this.displayColorTempDataSource.available) {
 					return;
 				}
+				if (this.displayColorTempCache.minimum < 3400) {
+					this.displayColorTempCache.minimum = 3400;
+				}
+				// if (this.displayColorTempCache.current < 3400) {
+				// 	this.displayColorTempCache.current = 3400;
+				// }
 				this.displayColorTempDataSource.current = this.displayColorTempCache.current;
 				this.displayColorTempDataSource.maximum = this.displayColorTempCache.maximum;
 				this.displayColorTempDataSource.minimum = this.displayColorTempCache.minimum;
@@ -632,6 +644,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 								this.getEyeCareModeStatus(true);
 								this.getDisplayColorTemperature();
 								this.getDaytimeColorTemperature();
+								this.resetMinimumTo3400();
 								break;
 							case false:
 								return;
@@ -642,6 +655,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 								this.getEyeCareModeStatus();
 								this.getDisplayColorTemperature();
 								this.getDaytimeColorTemperature();
+								this.resetMinimumTo3400();
 								return result;
 						}
 					})
@@ -654,6 +668,58 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 			return EMPTY;
 
 		}
+	}
+
+	resetMinimumTo3400() {
+		Promise.all([
+			this.displayService.getEyeCareModeState(),
+			this.displayService.getDisplayColortemperature(),
+			this.displayService.getDaytimeColorTemperature()
+		]).then(([status, displayColorTemperature, daytimeColorTemperature]) => {
+			if (!status.status) {
+				if (displayColorTemperature.current < 3400) {
+					if (!this.isSet.isSetEyecaremodeValue) {
+						this.onEyeCareTemparatureChange({value: 3400});
+					}
+					if (daytimeColorTemperature.current < 3400) {
+						if (!this.isSet.isSetDaytimeColorTemperatureValue) {
+							this.onSetChangeDisplayColorTemp({value: 3400});
+						}
+					} else {
+						if (!this.isSet.isSetDaytimeColorTemperatureValue) {
+							this.onSetChangeDisplayColorTemp({value: daytimeColorTemperature.current});
+						}
+					}
+				} else {
+					if (daytimeColorTemperature.current < 3400) {
+						if (!this.isSet.isSetDaytimeColorTemperatureValue) {
+							this.onSetChangeDisplayColorTemp({value: 3400});
+						}
+					}
+				}
+			} else {
+				if (daytimeColorTemperature.current < 3400) {
+					if (!this.isSet.isSetDaytimeColorTemperatureValue) {
+						this.onSetChangeDisplayColorTemp({value: 3400});
+					}
+					if (displayColorTemperature.current < 3400) {
+						if (!this.isSet.isSetEyecaremodeValue) {
+							this.onEyeCareTemparatureChange({value: 3400});
+						}
+					} else {
+						if (!this.isSet.isSetEyecaremodeValue) {
+							this.onEyeCareTemparatureChange({value: displayColorTemperature.current});
+						}
+					}
+				} else {
+					if (displayColorTemperature.current < 3400) {
+						if (!this.isSet.isSetEyecaremodeValue) {
+							this.onEyeCareTemparatureChange({value: 3400});
+						}
+					}
+				}
+			}
+		})
 	}
 
 	private setEyeCareModeStatus(value: boolean) {

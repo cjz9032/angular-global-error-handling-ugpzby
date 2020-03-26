@@ -785,7 +785,7 @@
             "title": "关于计算机的常见问题解答​",
             "subtitle": "查找适用于设备的有用提示。",
             "question1": "备份和恢复文件",
-            "question2": "如何刷新您的电脑",
+            "question2": "如何重置您的电脑",
             "question3": "如何了解计算机的 CPU 情况",
             "question4": "检查计算机的电池使用情况",
             "question5": "像使用平板电脑一样使用您的计算机",
@@ -876,7 +876,7 @@
                 "tips2": "如有任何其他意见，请在下面提出",
                 "emailAddressLabel": "如果您想与 Lenovo Vantage 团队联系，请留下您的电子邮件地址。",
                 "emailAddress": "电子邮件地址",
-                "invalidEmailMsg": "Invalid email address"
+                "invalidEmailMsg": "电子邮件地址无效"
             }
         },
         "quickSettings": {
@@ -1052,7 +1052,7 @@
                     "NotGood": "<b>电池状况不佳。</b>",
                     "NotSupportACAdapter": "<b>不支持交流电源适配器。</b>",
                     "LimitedACAdapterSupport": "<b>交流电源适配器无法提供足够的电量。</b>",
-                    "MissingDriver": "未安装 <b>Lenovo Power Manager 驱动程序</b>，或其无法正常工作。请运行 Windows 更新或者点击<a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">这里</a>安装最新的驱动程序。安装后需要重启计算机。",
+                    "MissingDriver": "未安装 <b>Lenovo Power Manager 驱动程序</b>，或其无法正常工作。请运行 Windows Update 或从<a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">此处</a>进行手动安装。安装后，重新启动计算机。",
                     "StoreLimitation": "<b>电池仅能存储其原始完全充电电量的 {{value}}%</b>。",
                     "HighTemperature": "<b>由于电池温度过高</b>，电池已停止<b>放电</b>。",
                     "TrickleCharge": "电池已<b>完全放电</b>，需要再次充电。此过程可能耗时 10 小时或更长时间。",
@@ -1330,6 +1330,12 @@
                         "description": "选择一项电源计划以控制计算机性能、系统温度及电源使用情况。",
                         "currentPowerPlan": {
                             "label": "当前计划"
+                        },
+                        "profile": {
+                            "title": "计划配置概要：",
+                            "performance": "最高性能：",
+                            "temperature": "最高系统温度：",
+                            "usage": "最高电源使用量："
                         }
                     }
                 },
@@ -1508,8 +1514,8 @@
                     "title": "显示",
                     "displayColorTemperature": {
                         "title": "显示色温",
-                        "description": "您可以调节显示屏色温以过滤掉蓝光，从而减轻视疲劳。在日落到日出期间将显示屏调整为暖色调，以帮助您入睡。",
-                        "link": {
+						"description": "您可以调节显示屏色温以过滤蓝光，从而减轻视疲劳。在日落到日出期间将显示屏调整为暖色调，以帮助您入睡。",
+						"link": {
                             "click": "单击",
                             "here": "此处",
                             "rest": "以更改色温。"
@@ -1997,30 +2003,30 @@
             },
             "voice": {
                 "title": "语音",
-                "description": "联想语音可通过语音转文本功能帮助您将语音转换为文本，并通过翻译功能提供从语音到文本的实时翻译。",
+                "description": "联想语音可通过语音转文本功能将语音转换为文本，并通过翻译助手功能提供实时语音翻译帮助。",
                 "installBtnText": "安装",
                 "launchBtnText": "启动",
                 "voiceToText": {
                     "title": "语音转文本",
-                    "caption": "此功能有助于将语音转换为文本。"
+                    "caption": "此功能提供语音键入功能，可将语音转换为文本以实现快速输入。"
                 },
                 "translation": {
                     "title": "翻译",
-                    "caption": "此功能提供对语音的实时翻译。译文以文本形式显示。您可以根据需要选择源语言和目标语言。"
+                    "caption": "此功能提供语音的实时翻译帮助，所有翻译的内容都将以文本形式显示。源语言和目标语言涵盖多种语言。"
                 },
                 "modalPopUp": {
                     "heading": "如何开始使用：",
-                    "point1": "确保 Windows 系统托盘中显示联想语音图标。",
-                    "point2": "打开要记录转换文本的文件。",
+                    "point1": "从“开始”菜单中启动联想语音，联想语音图标将显示在 Windows 系统托盘中。",
+                    "point2": "打开要在其中键入文本的应用程序。",
                     "point3": "单击 Windows 系统托盘中的联想语音图标，然后选择语音转文本。",
-                    "point4": "选择所需的语言，然后单击麦克风图标开始。",
-                    "point5": "将光标放在要编辑的位置并开始说话。",
-                    "point6": "单击 Windows 系统托盘中的联想语音图标，然后选择翻译。",
-                    "point7": "选择所需的源语言和目标语言。",
+                    "point4": "选择您需要的语言，然后单击麦克风图标开始。",
+                    "point5": "将光标放在应用程序中，然后开始讲话。",
+                    "point6": "单击 Windows 系统托盘中的联想语音图标，然后选择“翻译”。",
+                    "point7": "选择源语言和目标语言。",
                     "point8": "根据您的需要，从扬声器或麦克风处设置语音输入。",
-                    "point9": "单击麦克风图标开始说话",
+                    "point9": "单击麦克风图标开始说话。",
                     "closeText": "关闭",
-                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
+                    "point10": "确保 Windows 系统托盘中显示联想语音图标。"
                 },
                 "modalInstallationFailed": {
                     "btnText": "确定",
@@ -2187,6 +2193,7 @@
             "description": "请联系我们以便为您提供帮助。",
             "listLenovoCommunity": "Lenovo 社区",
             "listContactCustomerService": "联系客户服务部门",
+            "listYourVirtualAssistant": "您的虚拟助手",
             "listContactUsOnWechat": "通过微信联系我们",
             "weChatDescription": "在微信上向我们提问，我们定会迅速回复",
             "listFindUs": "在社交媒体上找到我们",
@@ -2218,7 +2225,7 @@
         "landing": {
             "fully": "为了获得更好的服务来保护您的设备，请继续使用",
             "notFully": "要了解如何更好地保护您的设备，请开始使用",
-            "security101": "安全建议入门",
+            "security101": "安全建议贴士",
             "firewall": "防火墙",
             "pwdHealth": "密码保险箱",
             "vpnSecurity": "VPN 安全顾问",
@@ -2437,7 +2444,6 @@
                 "title": "安全性状况",
                 "deviceName1": "可信来源的应用程序",
                 "deviceName2": "开发人员模式",
-                "deviceName3": "UAC 通知",
                 "deviceName4": "病毒防护可用性",
                 "deviceName5": "硬盘加密",
                 "deviceName6": "防火墙可用性",
@@ -2554,7 +2560,7 @@
         "welcomeText7": "让我们开启元气满满的一天，{{firstName}}！",
         "welcomeText8": "要不要来一杯快乐肥宅水？",
         "welcomeText9": "今日关中事，萧何共尔忧",
-        "welcomeText10": "保持冷静，Vantage 就来了",
+        "welcomeText10": "准备好玩转Vantage了吗？",
         "welcomeText11": "Vantage 物美价廉",
         "welcomeText12": "将 Vantage 带回家",
         "welcomeText13": "吃好、睡好，起来接着玩转Vantage！",
@@ -2569,7 +2575,7 @@
         "welcomeTextWithoutUserName7": "让我们开启元气满满的一天！",
         "welcomeTextWithoutUserName8": "要不要来一杯快乐肥宅水？",
         "welcomeTextWithoutUserName9": "今日关中事，萧何共尔忧",
-        "welcomeTextWithoutUserName10": "保持冷静，Vantage 就来了",
+        "welcomeTextWithoutUserName10": "准备好玩转Vantage了吗？",
         "welcomeTextWithoutUserName11": "Vantage 物美价廉",
         "welcomeTextWithoutUserName12": "将 Vantage 带回家",
         "welcomeTextWithoutUserName13": "吃好、睡好，起来接着玩转Vantage！",
@@ -2634,8 +2640,8 @@
             }
         },
         "question2": {
-            "title": "如何刷新您的电脑",
-            "description": "<div>    <div class='faqInFs4Fb'>        如何刷新您的电脑    </div>    <hr>    <div class='faqInFs25FbP5'>        症状    </div>    <div class='faqInP5'>        如果您的电脑性能不如从前却不知道原因，则可以刷新您的电脑，这不会删除任何个人文件或更改您的设置。Windows 可以“刷新”您的电脑，这就像在不删除个人文件的情况下进行全新安装。    </div>    <div class='faqInP5'>        刷新电脑会发生以下结果：您的文件和个性化设置将不会更改    </div>    <div class='faqInP5'>        <ul>            <li>您的电脑设置将恢复为缺省设置</li>            <li>来自 Windows 应用商店的应用程序将会保留</li>            <li>从磁盘或网站安装的应用程序将被删除</li>            <li>已删除文件的列表将保存在您的桌面上</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        受影响的品牌    </div>    <div>        <ul>            <li>所有台式机和笔记本电脑</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        操作系统    </div>    <div>        <ul>            <li>Windows 8、8.1 和 10</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        解决方案    </div>    <div>        <ul class='list-unstyled'>            <li>                <span class='faqInFbTdP10'>Windows 8/8.1</span>                <ol>                    <li class='faqInP5'>                        轻触或单击<span class='faqInFb'>设置</span>                    </li>                    <li class='faqInP5'>                        轻触或单击<span class='faqInFb'>更新和恢复</span>                    </li>                    <li class='faqInP5'>                        <div>轻触或单击<span class='faqInFb'>恢复</span></div>                        <div class='faqInP5'>在恢复电脑而不影响您的文件下，轻触或单击<span class='faqInFb'>开始。</span></div>                        <div><img src='assets/images/qa/zh-hans/2.1.jpg' /></div>                    </li>                    <li class='faqInP5'>                        单击<span class='faqInFb'>“下一步”</span>。                    </li>                    <li class='faqInP5'>                        请单击<span class='faqInFb'>“刷新”</span>开始刷新过程。                    </li>                    <li class='faqInP5'>                        刷新过程完成后，可在桌面上找到“已删除的应用”列表                    </li>                    <li class='faqInP5'>                        可以找到刷新系统时删除的应用程序                    </li>                </ol>            </li>            <li class='faqInP10'>                <span class='faqInFbTd'>Windows 10</span>                <ol>                    <li class='faqInP5'> 在开始菜单提供的搜索工具中搜索<span class='faqInFb'>刷新</span>，</li>                    <li class='faqInP5'>                        <div>在搜索结果中单击<span class='faqInFb'>“恢复电脑而不影响你的文件”</span>，如下所示。</div>                        <div><img src='assets/images/qa/zh-hans/2.2.jpg' /></div>                    </li>                    <li class='faqInP5'>                        <div>单击<span class='faqInFb'>“恢复电脑而不影响你的文件”</span>标题下方的<span class='faqInFb'>开始</span>按钮开始刷新您的 Windows 10 电脑。</div>                        <div><img src='assets/images/qa/zh-hans/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div class='faqInFs25Fb'>        其他信息    </div>    <div>        大多数情况下，开始刷新电脑后，它将自己完成该过程。但是，如果 Windows 需要缺少的文件，将会要求您插入恢复盘，通常是 DVD 光盘或 U 盘。如果发生这种情况，所需介质取决于您的电脑。    </div>    <div class='faqInP10'>        如果曾使用 DVD 光盘将电脑升级到 Windows 8.1 或 Windows RT 8.1，请使用该光盘。如果没有 Windows 8.1 或 Windows RT 8.1 介质，请联系 Microsoft 支持。    </div></div>",
+            "title": "如何重置您的电脑",
+            "description": "<div><div class='faqInFs4Fb'>如何重置 Windows 10</div><hr><div class='faqInP5'>如果您的 Windows 10 电脑出现问题或将要出售，则应将其重置。通过执行重置，您可以选择保留或删除文件，删除所有应用程序和设置并安装 Windows 的新副本。这也可以解决诸如性能降低等许多问题。</div><div class='faqInFs25FbP10'>1.打开“设置”应用程序</div><div class='faqInP5'>按下任务栏的“开始”按钮（通常在左下方），然后选择“设置”按钮。</div><div class='faqInP5'><img src='assets/images/qa/zh-hans/2.1.jpg' /></div><div class='faqInFs25FbP10'>2.从类别列表中选择“更新和安全”</div><div class='faqInP5'><img src='assets/images/qa/zh-hans/2.2.jpg' /></div><div class='faqInFs25FbP10'>3.从菜单中选择“恢复”</div><div class='faqInP5'><img src='assets/images/qa/zh-hans/2.3.jpg' /></div><div class='faqInFs25FbP10'>4.开始重置此电脑</div><div class='faqInP5'>在顶部的“重置此电脑”标题下，单击或点击“开始”按钮。</div><div class='faqInP5'><img src='assets/images/qa/zh-hans/2.4.jpg' /></div><div class='faqInFs25FbP10'>5.选择是否保留文件</div><div class='faqInP5'>重置后，您可以登录到您的 Microsoft 帐户。使用此帐户购买的所有 Windows 应用商店应用程序都将重新安装。</div><div class='faqInP5'><ul><li>“保留我的文件”会删除您的应用程序和设置，但会保留您的所有个人文件。</li><li>“删除所有内容”会删除您的应用程序、设置和个人文件。如果没有文件的备份副本，则可能需要按“取消”，将其备份，然后重新开始此过程。</li></ul></div><div class='faqInP5'><img src='assets/images/qa/zh-hans/2.5.jpg' /></div><div class='faqInFs25FbP10'>6.您可以选择其他附加设置</div><div class='faqInP5'>仅在上一步中选择“删除所有内容”时，此选项才会显示。</div><div class='faqInP5'><img src='assets/images/qa/zh-hans/2.6.1.jpg' /></div><div class='faqInP5'><img src='assets/images/qa/zh-hans/2.6.2.jpg' /></div><div class='faqInFs25FbP10'>7. 阅读概述，并在准备好进行继续操作时按“重置”。</div><div class='faqInP5'>Windows 将准备重置您的设备。只需等待至您进入蓝屏。</div><div class='faqInFs25FbP10'>8.当“选择一个选项”出现时，选择“继续”。</div><div class='faqInP5'>Windows 将重新启动并开始重置。重置时，您的电脑可能会重启几次。</div><hr><div class='faqInFs25FbP10'>社区常见问题解答</div><div class='faqInP5'><b>如果我选择删除所有内容，它是删除计算机中/连接到我的计算机的所有驱动器，还是仅删除运行 Windows 10 的驱动器？</b></div><div class='faqInP5'><i>社区答案</i></div><div class='faqInP10'>它只会删除 Windows 10 操作系统驱动器（通常为 C盘），其他驱动器将不受影响。</div><div class='faqInP5'><b>如果屏幕坏了，我可以执行此操作吗？</b></div><div class='faqInP5'><i>社区答案</i></div><div class='faqInP10'>很遗憾，您不能。您需要换一个新屏幕。</div><div class='faqInP5'><b>如果我已登录任何网站，该历史记录也会被删除吗？</b></div><div class='faqInP5'><i>社区答案</i></div><div class='faqInP10'>是的，具体取决于您使用的浏览器。要删除浏览器历史记录，只需转至浏览器中的设置并删除历史记录即可。您也可以使用隐身模式避免保存历史记录。</div><div class='faqInP5'><b>如果我选择删除所有内容，是否也会重置密码？</b></div><div class='faqInP5'><i>社区答案</i></div><div class='faqInP10'>是的，一旦您重置 Windows 10 计算机，它将删除所有用户数据。这包括文档、存储的密码、图片、首选设置、浏览器信息和应用程序数据。</div><hr><div class='faqInP5'>参考</div><div class='faqInP5'>如何重置 Windows 10 – WikiHow。</div></div>",
             "heading1": "症状",
             "para1": {
                 "span1": "如果您的电脑性能不如从前却不知道原因，则可以刷新您的电脑，这不会删除​任何个人文件或更改您的设置。",
@@ -3507,7 +3513,8 @@
     "notification": {
         "menu": {
             "security": "您知道吗？即使您没有安装反病毒软件，我们仍会为您的设备提供基本的安全保护。",
-            "connectedHomeSecurity": "在家中获得有关网络安全的实时监控和警报。您将是第一个知道您的智能设备是否面临安全攻击的人。"
+            "connectedHomeSecurity": "在家中获得有关网络安全的实时监控和警报。您将是第一个知道您的智能设备是否面临安全攻击的人。",
+            "hardwareScan": "现在，让我们看看硬件是不是都正常。"
         }
     },
     "appsForYou": {

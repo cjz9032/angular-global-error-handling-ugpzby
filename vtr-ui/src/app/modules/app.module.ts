@@ -4,9 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CommonPipeModule } from './common/common-pipe.module';
 import { CommonService } from '../services/common/common.service';
 import { CommonUiModule } from './common/common-ui.module';
-import { CommsService } from '../services/comms/comms.service';
 import { CookieService } from 'ngx-cookie-service';
-import { CUSTOM_ELEMENTS_SCHEMA, ErrorHandler, NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule, ErrorHandler } from '@angular/core';
 import { DevService } from '../services/dev/dev.service';
 import { DisplayService } from '../services/display/display.service';
 import { environment } from 'src/environments/environment';
@@ -41,6 +40,7 @@ import { faPlusCircle } from '@fortawesome/free-solid-svg-icons/faPlusCircle';
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons/faQuestionCircle';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons/faTimesCircle';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { ChunkLoadErrorHandler } from '../services/error-handler/global.service';
 import { HomeComponent } from './../components/home/home.component';
 import { HttpClient } from '@angular/common/http';
 import { MetricsTranslateService } from '../services/mertics-traslate/metrics-translate.service';
@@ -65,7 +65,8 @@ import { HardwareDashboardModule } from './hardware-settings/hardware-dashboard.
 import { GamingDashboardModule } from './gaming-dashboard.module';
 import { HardwareScanRoutingModule } from './hardware-scan/hardware-scan-routing.module';
 import { HardwareScanModule } from './hardware-scan/hardware-scan.module';
-//import { ModalErrorMessageComponent } from '../components/modal/modal-error-message/modal-error-message.component';
+import { CommsService } from '../services/comms/comms.service';
+// import { ModalErrorMessageComponent } from '../components/modal/modal-error-message/modal-error-message.component';
 
 @NgModule({
 	declarations: [
@@ -76,10 +77,10 @@ import { HardwareScanModule } from './hardware-scan/hardware-scan.module';
 		ModalDccDetailComponent,
 		ModalServerSwitchComponent,
 		ModalAppUpdateAvailableComponent,
-		//PageSettingsComponent,
+		// PageSettingsComponent,
 		ModalNewFeatureTipComponent,
 		PageSettingsComponent
-		//ModalErrorMessageComponent
+		// ModalErrorMessageComponent
 	],
 	imports: [
 		BrowserModule,
@@ -126,6 +127,11 @@ import { HardwareScanModule } from './hardware-scan/hardware-scan.module';
 		DisplayService,
 		CookieService,
 		NewFeatureTipService,
+		CommsService,
+		{
+			provide: ErrorHandler,
+			useClass: ChunkLoadErrorHandler
+		}
 	],
 	entryComponents: [
 		ModalWelcomeComponent,
@@ -134,7 +140,7 @@ import { HardwareScanModule } from './hardware-scan/hardware-scan.module';
 		ModalServerSwitchComponent,
 		ModalAppUpdateAvailableComponent,
 		ModalNewFeatureTipComponent
-		//ModalErrorMessageComponent
+		// ModalErrorMessageComponent
 	],
 	bootstrap: [ AppComponent ],
 	schemas: [ CUSTOM_ELEMENTS_SCHEMA ]

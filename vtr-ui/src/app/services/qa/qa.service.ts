@@ -18,6 +18,14 @@ export class QaService {
 			dislike: false,
 		},
 		{
+			id: 2,
+			category: 'q&a',
+			path: '/device/support-detail/2',
+			iconPath: `${this.imagePath}/svg_icon_qa_reset.svg`,
+			like: false,
+			dislike: false,
+		},
+		{
 			id: 3,
 			category: 'q&a',
 			path: '/device/support-detail/3',

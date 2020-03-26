@@ -785,7 +785,7 @@
             "title": "Pitanja i odgovori za vaš stroj",
             "subtitle": "Pronađite neke korisne savete za uređaj.",
             "question1": "Pravljenje rezervne kopije i vraćanje datoteka u prethodno stanje",
-            "question2": "Kako da osvežite računar",
+            "question2": "Uspostavljanje početne vrednosti računara",
             "question3": "Kako da saznate CPU mašine",
             "question4": "Proverite iskorišćenost baterije mašine",
             "question5": "Korišćenje računara kao tableta",
@@ -876,7 +876,7 @@
                 "tips2": "Ostavite dodatne komentare u nastavku",
                 "emailAddressLabel": "Ostavite svoju e-adresu ako biste želeli da vas kontaktira Lenovo Vantage tim.",
                 "emailAddress": "Adresa e-pošte",
-                "invalidEmailMsg": "Invalid email address"
+                "invalidEmailMsg": "Nevažeća adrese e-pošte"
             }
         },
         "quickSettings": {
@@ -1051,7 +1051,7 @@
                     "NotGood": "<b>Baterija nije u dobrom stanju.</b>",
                     "NotSupportACAdapter": "<b>Adapter za naizmeničnu struju nije podržan.</b>",
                     "LimitedACAdapterSupport": "<b>Adapter za naizmeničnu struju ne može da obezbedi dovoljno napajanje.</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager upravljački program</b> nije instaliran ili ne radi ispravno. Pokrenite Windows Update da biste instalirali najnoviji upravljački program. Upravljački program možete da instalirate sa lokacije koja se nalazi <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">ovde</a>. Nakon instalacije, ponovo pokrenite računar.",
+                    "MissingDriver": "<b>Lenovo Power Manager upravljački program</b> nije instaliran ili ne radi ispravno. Pokrenite Windows Update ili ga ručno instalirajte <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">odavde</a>. Nakon instalacije, ponovo pokrenite računar.",
                     "StoreLimitation": "<b>Baterija može da uskladišti samo {{value}}%</b> svog originalnog punog kapaciteta.",
                     "HighTemperature": "<b>Pražnjenje</b> je zaustavljeno zato što je <b>temperatura baterije previsoka.</b>",
                     "TrickleCharge": "Baterija je u <b>potpunosti ispražnjena</b> i mora da se napuni. To može potrajati deset sati ili duže.",
@@ -1330,6 +1330,12 @@
                         "description": "Odaberite plan napajanja da biste kontrolisali performanse računara, temperaturu sistema i potrošnju struje.",
                         "currentPowerPlan": {
                             "label": "TRENUTNI PLAN"
+                        },
+                        "profile": {
+                            "title": "PLAN PROFILA:",
+                            "performance": "Maks. performanse:",
+                            "temperature": "Maks. temperatura sistema:",
+                            "usage": "Maks. korišćenje napajanja:"
                         }
                     }
                 },
@@ -1508,8 +1514,8 @@
                     "title": "Ekran",
                     "displayColorTemperature": {
                         "title": "Temperatura boje ekrana",
-                        "description": "Temperaturu boja ekrana možete da prilagodite tako da filtrira plavo svetlo i smanji naprezanje očiju. Podešava prikaze na toplije boje između zalaska i izlaska sunca kako biste bolje spavali.",
-                        "link": {
+						"description": "Temperaturu boja ekrana možete da prilagodite tako da filtrira plavo svetlo i smanji naprezanje očiju. Podešava prikaze na toplije boje između zalaska i izlaska sunca kako biste bolje spavali.",
+						"link": {
                             "click": "Kliknite",
                             "here": "ovde",
                             "rest": "da biste promenili temperaturu boje."
@@ -1997,30 +2003,30 @@
             },
             "voice": {
                 "title": "Glas",
-                "description": "Lenovo Voice pomaže da konvertujete glas u tekst pomoću funkcije Glasa u tekst i pomoću funkcije Prevod obezbeđuje prevod iz glasa u tekst u realnom vremenu.",
+                "description": "Lenovo Voice konvertuje glas u tekst pomoću funkcije Glas u tekst a pomoću funkcije Pomoćnik za prevod pruža pomoć u prevodu govora u realnom vremenu.",
                 "installBtnText": "Instaliraj",
                 "launchBtnText": "Pokreni",
                 "voiceToText": {
                     "title": "Glas u tekst",
-                    "caption": "Ova funkcija vam pomaže da konvertujete glas u tekst."
+                    "caption": "Ova funkcija obezbeđuje funkciju kucanje govora koja konvertuje glas u tekst radi brzog unosa."
                 },
                 "translation": {
                     "title": "Prevod",
-                    "caption": "Ova funkcija obezbeđuje prevod u realnom vremenu za glas. Prevedeni sadržaj je prikazan kao tekst. Možete da odaberete izvorni i ciljni jezik prema vašim potrebama."
+                    "caption": "Ova funkcija pruža pomoć u prevodu govora u realnom vremenu i sve što je prevedeno biće prikazano u tekstu. Za izvorni i ciljni jezik dostupno je više jezika."
                 },
                 "modalPopUp": {
                     "heading": "Prvi koraci:",
-                    "point1": "Uverite se da je ikona Lenovo Voice prikazana u Windows sistemskoj paleti.",
-                    "point2": "Otvorite datoteku gde želite da snimite konvertovani tekst.",
+                    "point1": "Pokrenite Lenovo Voice iz menija Start i ikona Lenovo Voice se prikazuje na Windows sistemskoj paleti.",
+                    "point2": "Otvorite aplikaciju u kojoj želite da kucate tekst.",
                     "point3": "Kliknite na ikonu Lenovo Voice u Windows sistemskoj paleti i izaberite Voice to text (Glas u tekst).",
-                    "point4": "Izaberite željeni jezik i kliknite na ikonu mikrofona za početak.",
-                    "point5": "Stavite kursor gde želite da uredite i počnite da govorite.",
-                    "point6": "Kliknite na ikonu Lenovo Voice u Windows sistemskoj paleti i izaberite Translate (Prevedi).",
-                    "point7": "Izaberite željeni izvorni i ciljni jezik.",
-                    "point8": "U zavisnosti od vaših potreba, podesite unos glasa sa Zvučnika ili Mikrofona.",
-                    "point9": "Kliknite na ikonu mikrofona da biste započeli sa govorom",
+                    "point4": "Izaberite jezike prema svojoj potrebi i kliknite na ikonu mikrofona za početak.",
+                    "point5": "Postavite kursor u aplikaciju i počnite da govorite.",
+                    "point6": "Kliknite na ikonu Lenovo Voice u Windows sistemskoj paleti i izaberite Translation (Prevod).",
+                    "point7": "Izaberite izvorni i ciljni jezik.",
+                    "point8": "U zavisnosti od vaše potrebe, podesite unos glasa sa Zvučnika ili Mikrofona.",
+                    "point9": "Kliknite na ikonu mikrofona da biste započeli sa govorom.",
                     "closeText": "zatvori",
-                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
+                    "point10": "Uverite se da je ikona Lenovo Voice prikazana u Windows sistemskoj paleti."
                 },
                 "modalInstallationFailed": {
                     "btnText": "u redu",
@@ -2187,6 +2193,7 @@
             "description": "Kontaktirajte nas da bismo vam pomogli.",
             "listLenovoCommunity": "Lenovo zajednica",
             "listContactCustomerService": "Kontaktirajte službu za korisnike",
+            "listYourVirtualAssistant": "Your virtual assistant",
             "listContactUsOnWechat": "Kontaktirajte nas na WeChat",
             "weChatDescription": "Pošaljite nam pitanje na WeChat i budite sigurni da ćemo vam brzo odgovoriti",
             "listFindUs": "Potražite nas na društvenim mrežama",
@@ -2437,7 +2444,6 @@
                 "title": "Stanje bezbednosti",
                 "deviceName1": "Aplikacije iz pouzdanih izvora",
                 "deviceName2": "Režim rada za projektante",
-                "deviceName3": "Obaveštenje kontrole korisničkog naloga (UAC)",
                 "deviceName4": "Dostupnost antivirusnog programa",
                 "deviceName5": "Šifrovanje hard diska",
                 "deviceName6": "Dostupnost zaštitnog zida",
@@ -2633,8 +2639,8 @@
             }
         },
         "question2": {
-            "title": "Kako da osvežite računar",
-            "description": "<div>    <div class='faqInFs4Fb'>        Kako da osvežite računar    </div>    <hr>    <div class='faqInFs25FbP5'>        Simptom    </div>    <div class='faqInP5'>        Ako performanse računara više nisu kao što su bile, a ne znate razlog tome, možete da osvežite računar bez brisanja ličnih datoteka ili promene postavki. Windows može da „osveži“ računar tako da je to više nalik novoj instalaciji bez brisanja ličnih datoteka.    </div>    <div class='faqInP5'>        Osvežite računar i evo šta će se desiti: neće doći do promene vaših datoteka i personalizovanih postavki    </div>    <div class='faqInP5'>        <ul>            <li>Postavke računara će biti vraćene na podrazumevane vrednosti</li>            <li>Aplikacije iz Windows prodavnice će biti zadržane</li>            <li>Aplikacije koje ste instalirali sa diska ili veb lokacije će biti uklonjene</li>            <li>Lista uklonjenih datoteka će biti sačuvana na radnoj površini</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Brendovi na koje ovo utiče    </div>    <div>        <ul>            <li>Svi stoni i laptop računari</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Operativni sistem    </div>    <div>        <ul>            <li>Windows 8, 8.1 i 10</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Rešenje    </div>    <div>        <ul class='list-unstyled'>            <li>                <span class='faqInFbTdP10'>Windows 8/8.1</span>                <ol>                    <li class='faqInP5'>                        Dodirnite ili kliknite na <span class='faqInFb'> Settings </span>(Postavke)                    </li>                    <li class='faqInP5'>                        Dodirnite ili kliknite na <span class='faqInFb'> Update and recovery</span> (Ažuriranje i oporavak)                    </li>                    <li class='faqInP5'>                        <div>Dodirnite ili kliknite na <span class='faqInFb'> Recovery</span> (Oporavak)</div>                        <div class='faqInP5'>U odeljku „Refresh your PC without affecting your files“ (Osvežavanje računara bez uticaja na datoteke), dodirnite ili kliknite na <span class='faqInFb'> Get started</span> (Prvi koraci).</div>                        <div><img src='assets/images/qa/2.1.jpg' /></div>                    </li>                    <li class='faqInP5'>                        Kliknite na <span class='faqInFb'> „Next“</span> (Dalje).                    </li>                    <li class='faqInP5'>                        Kliknite na dugme <span class='faqInFb'> „Refresh“ </span>(Osveži) da biste započeli proces osvežavanja.                    </li>                    <li class='faqInP5'>                        Kada se završi proces osvežavanja, listu „Removed Apps“ (Uklonjene aplikacije) možete da pronađete na radnoj površini                    </li>                    <li class='faqInP5'>                        Uklonjene aplikacije možete pronaći prilikom osvežavanja sistema                    </li>                </ol>            </li>            <li class='faqInP10'>                <span class='faqInFbTd'>Windows 10</span>                <ol>                    <li class='faqInP5'> Potražite <span class='faqInFb'> refresh </span>(osvežavanje) u alatki za pretragu dostupnu u meniju Start.</li>                    <li class='faqInP5'>                        <div>U rezultatima pretrage kliknite na <span class='faqInFb'> „Refresh your PC without affecting your files“</span> (Osvežite računar bez uticaja na datoteke) kao što je prikazano ispod.</div>                        <div><img src='assets/images/qa/2.2.jpg' /></div>                    </li>                    <li class='faqInP5'>                        <div>Kliknite na dugme <span class='faqInFb'> Get started </span> (Prvi koraci) tik ispod zaglavlja<span class='faqInFb'> „Refresh your PC without affecting your files“</span> (Osvežite računar bez uticaja na datoteke) da biste započeli osvežavanje računara sa operativnim sistemom Windows 10.</div>                        <div><img src='assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div class='faqInFs25Fb'>        Dodatne informacije    </div>    <div>        U većini slučajeva, nakon što započnete osvežavanje računara, sam će se završiti. Međutim, ako su operativnom sistemu Windows potrebne datoteke koje nedostaju, od vas će biti zatraženo da postavite medijume za oporavak. To su obično DVD disk ili USB disk. Ako se to dogodi, od računara zavisi šta vam je potrebno.    </div>    <div class='faqInP10'>        Ako ste nadogradili računar na Windows 8.1 ili Windows RT 8.1 sa DVD diskom, koristite taj disk. Ako nemate Windows 8.1 ili Windows RT 8.1 medij, obratite se Microsoft podršci.    </div></div>",
+            "title": "Uspostavljanje početne vrednosti računara",
+            "description": "<div><div class='faqInFs4Fb'>Kako se uspostavljaju početne vrednosti operativnog sistema Windows 10</div><hr><div class='faqInP5'>Ako vaš Windows 10 računar ima problema ili ako ga prodajete, trebalo bi da uspostavite početne vrednosti računara. Uspostavljanje početnih vrednosti računara vam omogućavaju da odaberete da li da sačuvate ili uklonite datoteke, da uklonite sve aplikacije i postavke i da instalirate novu kopiju operativnog sistema Windows. To može da reši i mnoge probleme kao što su spori rad.</div><div class='faqInFs25FbP10'>1. Otvorite aplikaciju Settings (Postavke)</div><div class='faqInP5'>Pritisnite dugme „Pokreni sliku“ koje se nalazi u donjem levom uglu ekrana i odaberite sliku zupčanika za postavke.</div><div class='faqInP5'><img src='assets/images/qa/2.1.jpg' /></div><div class='faqInFs25FbP10'>2. Izaberite „Ispravka i bezbednost“ sa liste kategorija</div><div class='faqInP5'><img src='assets/images/qa/2.2.jpg' /></div><div class='faqInFs25FbP10'>3. Kretanje do oporavka iz levog okna</div><div class='faqInP5'><img src='assets/images/qa/2.3.jpg' /></div><div class='faqInFs25FbP10'>4. Započnite proces uspostavljanja početnih vrednosti</div><div class='faqInP5'>Na vrhu, u okviru naslova „Uspostavite početne vrednosti ovog računara“, kliknite ili dodirnite dugme „Prvi koraci“.</div><div class='faqInP5'><img src='assets/images/qa/2.4.jpg' /></div><div class='faqInFs25FbP10'>5. Odaberite da li želite da zadržite datoteke ili ne</div><div class='faqInP5'>Nakon što uspostavite početne vrednosti, možete da se prijavite na Microsoft nalog. Sve aplikacije za Windows prodavnicu koje su kupljene u okviru ovog naloga će se ponovo instalirati.</div><div class='faqInP5'><ul><li>„Zadrži moje datoteke“ uklanja vaše aplikacije i postavke, ali zadržava sve lične datoteke.</li><li>„Ukloni sve“ briše aplikacije, postavke i lične datoteke. Ako nemate rezervnu kopiju datoteka, možda ćete želeti da kliknete na dugme „Otkaži“, napravite njihovu rezervnu kopiju i ponovo započnete proces.</li></ul></div><div class='faqInP5'><img src='assets/images/qa/2.5.jpg' /></div><div class='faqInFs25FbP10'>6. Možete odabrati različite dodatne postavke</div><div class='faqInP5'>Ovo će se prikazati samo ako ste u prethodnom koraku izabrali opciju „Ukloni sve“.</div><div class='faqInP5'><img src='assets/images/qa/2.6.1.jpg' /></div><div class='faqInP5'><img src='assets/images/qa/2.6.2.jpg' /></div><div class='faqInFs25FbP10'>7.Pročitajte pregled i pritisnite dugme „Uspostavi početne vrednosti“ kada budete bili spremni za nastavak.</div><div class='faqInP5'>Windows će se pripremiti za uspostavljanje početnih vrednosti uređaja. Jednostavno sačekajte da dođete do plavog ekrana.</div><div class='faqInFs25FbP10'>8. Kada se pojavi opcija „Odaberi opciju“, kliknite na dugme „Nastavi“.</div><div class='faqInP5'>Windows će se ponovo pokrenuti i započeti uspostavljanje početnih vrednosti. Računar može nekoliko puta ponovo da se pokrene tokom uspostavljanja početnih vrednosti.</div><hr><div class='faqInFs25FbP10'>Pitanja i odgovori zajednice</div><div class='faqInP5'><b>Ako odaberem da uklonim sve, da li se brišu sve disk jedinice na/povezane sa mojim računarom ili samo ona na kojoj mi je pokrenut operativni sistem Windows 10?</b></div><div class='faqInP5'><i>Odgovor zajednice</i></div><div class='faqInP10'>Obrisaće samo disk jedinicu sa Windows 10 OS (obično C: drive). Neće uticati na ostale disk jedinice na/povezane sa vašim računarom.</div><div class='faqInP5'><b>Kako to mogu da uradim ako je ekran slomljen?</b></div><div class='faqInP5'><i>Odgovor zajednice</i></div><div class='faqInP10'>Ne možete, nažalost. Moraćete da nabavite novi ekran.</div><div class='faqInP5'><b>Ako sam se prijavio na bilo koju veb-lokaciju, da li će i ta istorija biti uklonjena?</b></div><div class='faqInP5'><i>Odgovor zajednice</i></div><div class='faqInP10'>Da, u zavisnosti od pregledača koji koristite. Da biste uklonili istoriju pregledača, samo idite do postavki u pregledaču i izbrišite istoriju. Možete i da koristite inkognito režime da biste izbegli čuvanje istorije.</div><div class='faqInP5'><b>Ako odaberem da uklonim sve, da li će i za moju lozinku biti uspostavljene početne vrednosti?</b></div><div class='faqInP5'><i>Odgovor zajednice</i></div><div class='faqInP10'>Da, kada ponovo pokrenete Windows 10 računar, ukloniće sve korisničke podatke. To obuhvata dokumenta, uskladištene lozinke, slike, željene postavke, informacije o pregledaču i podatke o aplikaciji.</div><hr><div class='faqInP5'>Referenca</div><div class='faqInP5'>Kako se uspostavljaju početne vrednosti operativnog sistema Windows 10 – WikiHow.</div></div>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
@@ -3507,7 +3513,8 @@
     "notification": {
         "menu": {
             "security": "Da li znate? Čak i da nemate instaliran antivirusni softver, mi vam i dalje pružamo osnovnu bezbednosnu zaštitu za uređaj.",
-            "connectedHomeSecurity": "Nabavite nadzor i upozorenja u realnom vremenu o bezbednosti mreže kod kuće. Bićete prvi koji će znati da li se neki od pametnih uređaja suočavaju sa bezbednosnim napadom."
+            "connectedHomeSecurity": "Nabavite nadzor i upozorenja u realnom vremenu o bezbednosti mreže kod kuće. Bićete prvi koji će znati da li se neki od pametnih uređaja suočavaju sa bezbednosnim napadom.",
+            "hardwareScan": "Sada možete dobiti status stanja hardverske komponente sistema."
         }
     },
     "appsForYou": {

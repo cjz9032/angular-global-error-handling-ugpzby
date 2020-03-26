@@ -6,7 +6,7 @@ import { EventTypes, PluginMissingError } from '@lenovo/tan-client-bridge';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { CommonService } from '../../../services/common/common.service';
 import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
-import { WifiHomeViewModel, SecurityHealthViewModel, } from 'src/app/data-models/security-advisor/wifisecurity.model';
+import { WifiHomeViewModel } from 'src/app/data-models/security-advisor/wifisecurity.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
@@ -39,7 +39,6 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	homeSecurity: phoenix.ConnectedHomeSecurity;
 	isShowInvitationCode: boolean;
 	wifiHomeViewModel: WifiHomeViewModel;
-	securityHealthViewModel: SecurityHealthViewModel;
 	securityHealthArticleId = '9CEBB4794F534648A64C5B376FBC2E39';
 	securityHealthArticleCategory: string;
 	cancelClick = false;
@@ -50,6 +49,30 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	intervalId: number;
 	interval = 15000;
 	segmentConst = SegmentConst;
+	wsPluginMissingEventHandler = () => {
+		this.handleError(new PluginMissingError());
+	};
+	wsStateEventHandler = (value) => {
+		if (value) {
+			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, value);
+			this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.commonService);
+		}
+	};
+	wsIsLocationServiceOnEventHandler = (value) => {
+		this.ngZone.run(() => {
+			if (value !== undefined) {
+				this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.commonService);
+				if (!value && this.wifiSecurity.state === 'enabled' && this.wifiSecurity.hasSystemPermissionShowed) {
+					this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
+				} else if (value) {
+					if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag) === 'yes') {
+						this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag, 'no');
+						this.wifiSecurity.enableWifiSecurity();
+					}
+				}
+			}
+		});
+	};
 
 	constructor(
 		public activeRouter: ActivatedRoute,
@@ -71,13 +94,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		this.homeSecurity = this.shellService.getConnectedHomeSecurity();
 		this.segment = this.commonService.getLocalStorageValue(LocalStorageKey.LocalInfoSegment, this.segmentConst.Consumer);
 		this.wifiSecurity = this.securityAdvisor.wifiSecurity;
-		this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.commonService, this.ngZone, this.dialogService);
-		this.securityHealthViewModel = new SecurityHealthViewModel(this.wifiSecurity, this.commonService, this.translate, this.ngZone);
-		this.wifiSecurity.on('cancelClick', () => {
-			this.cancelClick = true;
-		}).on('cancelClickFinish', () => {
-			this.cancelClick = false;
-		});
+		this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.commonService);
 		this.localInfoService.getLocalInfo().then(result => {
 			this.region = result.GEO;
 		}).catch(e => {
@@ -85,9 +102,10 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		});
 		this.fetchCMSArticles();
 
-		this.wifiSecurity.on(EventTypes.wsPluginMissingEvent, () => {
-			this.handleError(new PluginMissingError());
-		});
+		this.wifiSecurity.on(EventTypes.wsPluginMissingEvent, this.wsPluginMissingEventHandler)
+		.on(EventTypes.wsStateEvent, this.wsStateEventHandler)
+		.on(EventTypes.wsIsLocationServiceOnEvent, this.wsIsLocationServiceOnEventHandler);
+
 		this.isOnline = this.commonService.isOnline;
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
@@ -126,9 +144,12 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	ngOnDestroy() {
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage, false);
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog, false);
-		if (this.securityAdvisor.wifiSecurity) {
-			this.securityAdvisor.wifiSecurity.cancelGetWifiHistory();
-			this.securityAdvisor.wifiSecurity.cancelGetWifiSecurityState();
+		if (this.wifiSecurity) {
+			this.wifiSecurity.cancelGetWifiHistory();
+			this.wifiSecurity.cancelGetWifiSecurityState();
+			this.wifiSecurity.off(EventTypes.wsPluginMissingEvent, this.wsPluginMissingEventHandler);
+			this.wifiSecurity.off(EventTypes.wsStateEvent, this.wsStateEventHandler);
+			this.wifiSecurity.off(EventTypes.wsIsLocationServiceOnEvent, this.wsIsLocationServiceOnEventHandler);
 		}
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
@@ -171,21 +192,6 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		});
 	}
 
-	enableWiFiSecurity(event): void {
-		if (this.wifiSecurity) {
-			this.wifiSecurity.enableWifiSecurity().then((res) => {
-				if (res === true) {
-					this.wifiHomeViewModel.isLWSEnabled = true;
-				} else {
-					this.wifiHomeViewModel.isLWSEnabled = false;
-				}
-			}
-				, (error) => {
-					this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
-				});
-		}
-	}
-
 	openSecurityHealthArticle(): void {
 		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
 			size: 'lg',
@@ -202,6 +208,18 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		});
 
 		articleDetailModal.componentInstance.articleId = this.securityHealthArticleId;
+	}
+
+	onToggleChange() {
+		if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage) === true) {
+			if (this.wifiHomeViewModel.isLWSEnabled) {
+				this.wifiSecurity.disableWifiSecurity();
+			} else {
+				this.wifiSecurity.enableWifiSecurity().catch(() => {
+					this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
+				});
+			}
+		}
 	}
 
 	private onNotification(notification: AppNotification) {

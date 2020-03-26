@@ -66,7 +66,12 @@ export class DialogService {
 			modal.componentInstance.cancelButtonId = 'sa-ws-btn-locationCancel';
 			wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (para) => {
 				if (para) {
-					modal.close();
+					modal.close(true);
+				}
+			});
+			modal.result.then((res) => {
+				if (res === 'cancelClick' && wifiSecurity && wifiSecurity.state === 'enabled') {
+					wifiSecurity.disableWifiSecurity();
 				}
 			});
 		}

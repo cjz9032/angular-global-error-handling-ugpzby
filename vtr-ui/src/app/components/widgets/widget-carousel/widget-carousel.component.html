@@ -1,5 +1,5 @@
 <div class="vtr-widget-carousel"
-	#carouselContainer
+	#carouselContainer  (swipeleft)= "swipe($event.type)" (swiperight)= "swipe($event.type)" 
 	[style.height.px]="carouselContainer.clientWidth * 340 / 944">
 	<ngb-carousel tabindex="-1" *ngIf="carouselModel"
 		[showNavigationArrows]="carouselModel.length>1"

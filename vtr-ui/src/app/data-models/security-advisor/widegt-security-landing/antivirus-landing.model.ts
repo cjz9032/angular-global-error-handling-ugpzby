@@ -32,7 +32,8 @@ export class AntiVirusLandingViewModel {
 		title: 'security.landing.firewall',
 		content: 'security.landing.firewallContent',
 		buttonLabel: 'security.landing.goFirewall',
-		buttonLink: '/security/anti-virus',
+		buttonLink: '',
+		buttonHref: '',
 		noneCheck: true,
 		detail: '',
 		id: 'sa-ov-link-firewall'
@@ -91,6 +92,11 @@ export class AntiVirusLandingViewModel {
 
 	private setLandingPageUI(antivirusCommonData: AntivirusCommonData) {
 		this.currentPage = antivirusCommonData.currentPage;
+		if (antivirusCommonData.firewallLink.includes('ms-settings')) {
+			this.fwStatus.buttonHref = antivirusCommonData.firewallLink;
+		} else {
+			this.fwStatus.buttonLink = antivirusCommonData.firewallLink;
+		}
 		this.setAntivirusStatus(antivirusCommonData.antivirus, antivirusCommonData.firewall);
 	}
 

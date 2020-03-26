@@ -785,7 +785,7 @@
             "title": "Kysymyksiä ja vastauksia koneellesi",
             "subtitle": "Löydä laitetta koskevia hyödyllisiä ohjeita.",
             "question1": "Tiedostojen varmuuskopiointi ja palauttaminen",
-            "question2": "Tietokoneen siivoaminen",
+            "question2": "Tietokoneen oletusasetusten palauttaminen",
             "question3": "Koneen suorittimen tunnistaminen",
             "question4": "Tarkista koneen akun käyttö",
             "question5": "Tietokoneen käyttö taulutietokoneen tavoin",
@@ -876,7 +876,7 @@
                 "tips2": "Kirjoita halutessasi muita kommentteja alle",
                 "emailAddressLabel": "Syötä sähköpostiosoitteesi, jos haluat, että Lenovo Vantage -tiimi ottaa sinuun yhteyttä.",
                 "emailAddress": "Sähköpostiosoite",
-                "invalidEmailMsg": "Invalid email address"
+                "invalidEmailMsg": "Virheellinen sähköpostiosoite"
             }
         },
         "quickSettings": {
@@ -1051,7 +1051,7 @@
                     "NotGood": "<b>Akun toimintakunto on huono.</b>",
                     "NotSupportACAdapter": "<b>Verkkolaite ei ole tuettu.</b>",
                     "LimitedACAdapterSupport": "<b>Verkkolaite ei pysty tuottamaan riittävästi virtaa.</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager -ajuria</b> ei ole asennettu, tai se ei toimi oikein. Suorita Windows Update ja asenna uusin ajuri. Voit myös asentaa ajurin <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">täältä</a>. Käynnistä tietokone uudelleen asennuksen jälkeen.",
+                    "MissingDriver": "<b>Lenovo Power Manager -ajuria</b> ei ole asennettu, tai se ei toimi oikein. Suorita Windows Update -ohjelmisto tai asenna se manuaalisesti <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">tästä</a>. Käynnistä tietokone uudelleen asennuksen jälkeen.",
                     "StoreLimitation": "<b>Akku voi tallentaa vain {{value}}%</b> sen alkuperäisestä täydestä varauskapasiteetista.",
                     "HighTemperature": "<b>Latauksen purkaminen</b> on keskeytetty <b>akun korkean lämpötilan vuoksi.</b>",
                     "TrickleCharge": "Akun lataus on <b>purettu kokonaan</b>, ja akku on ladattava uudelleen. Tämä saattaa kestää yli kymmenen tuntia.",
@@ -1330,6 +1330,12 @@
                         "description": "Valitse virrankäyttösuunnitelma tietokoneen suorituskykyvyn, järjestelmän lämpötilan ja virrankäytön hallintaa varten.",
                         "currentPowerPlan": {
                             "label": "NYKYINEN VIRRANKÄYTTÖSUUNNITELMA"
+                        },
+                        "profile": {
+                            "title": "SUUNNITELMAN PROFIILI:",
+                            "performance": "Suorituskyky enintään:",
+                            "temperature": "Järjestelmän lämpötila enintään:",
+                            "usage": "Virrankäyttö enintään:"
                         }
                     }
                 },
@@ -1508,8 +1514,8 @@
                     "title": "Näyttö",
                     "displayColorTemperature": {
                         "title": "Näytön värilämpötila",
-                        "description": "Voit säätää näytön värilämpötilaa suodattamaan sinistä valoa niin, että rasitus silmille vähenee Säätää näytön värit lämpimämmiksi auringonlaskusta auringonnousuun helpottamaan nukkumista.",
-                        "link": {
+						"description": "Voit säätää näyttösi värilämpötilaa suodattamaan sinistä valoa pois, jolloin silmien rasitus vähenee. Säätää näytön värit lämpimämmiksi auringonlaskusta auringonnousuun helpottamaan nukkumista.",
+						"link": {
                             "click": "Napsauta",
                             "here": "tätä",
                             "rest": "muuttaaksesi värilämpötilaa."
@@ -1997,30 +2003,30 @@
             },
             "voice": {
                 "title": "Ääni",
-                "description": "Lenovo Voice muuttaa puheen tekstiksi Puhe tekstiksi -toiminnon avulla ja antaa reaaliaikaisen käännöksen puheesta tekstiksi Käännös-toiminnon avulla.",
+                "description": "Lenovo Voice muuntaa puheesi tekstiksi Puhe tekstiksi -toiminnon avulla ja auttaa puheen kääntämisessä reaaliaikaisesti Käännösavustaja-toiminnon avulla.",
                 "installBtnText": "Asenna",
                 "launchBtnText": "Aloita",
                 "voiceToText": {
                     "title": "Puhe tekstiksi",
-                    "caption": "Tämän ominaisuuden avulla voit muuttaa puheen tekstiksi."
+                    "caption": "Tämä ominaisuus tarjoaa toiminnon, joka muuntaa puheen tekstiksi nopeaa käyttöä varten."
                 },
                 "translation": {
                     "title": "Käännös",
-                    "caption": "Tämän ominaisuuden avulla voit kääntää puhetta reaaliaikaisesti. Käännetty sisältö näytetään tekstinä. Voit valita lähde- ja kohdekielet tarpeen mukaan."
+                    "caption": "Tämä ominaisuus auttaa puheen kääntämisessä reaaliaikaisesti. Kaikki käännökset näytetään tekstinä. Lähde- ja kohdekieliksi on saatavilla useita eri kieliä."
                 },
                 "modalPopUp": {
                     "heading": "Aloittaminen:",
-                    "point1": "Varmista, että Lenovo Voice -kuvake näkyy Windowsin ilmaisinalueella.",
-                    "point2": "Avaa tiedosto, johon haluat tallentaa muutetun tekstin.",
+                    "point1": "Käynnistä Lenovo Voice -ohjelma Käynnistä-valikosta, niin Windowsin ilmaisinalueessa näytetään Lenovo Voice -kuvake.",
+                    "point2": "Avaa sovellus, johon haluat kirjoittaa tekstiä.",
                     "point3": "Napsauta Windowsin ilmaisinalueelta Lenovo Voice -kuvaketta ja valitse Puhe tekstiksi.",
-                    "point4": "Valitse haluamasi kieli ja aloita napsauttamalla mikrofonia.",
-                    "point5": "Siirrä kohdistin kohtaan, jota haluat muokata, ja aloita puhuminen.",
-                    "point6": "Napsauta Windowsin ilmaisinalueelta Lenovo Voice -kuvaketta ja valitse Käännä.",
-                    "point7": "Valitse haluamasi lähde- ja kohdekieli.",
-                    "point8": "Määritä äänisyöttö kaiuttimesta tai mikrofonista tarpeen mukaan.",
-                    "point9": "Napsauta mikrofonikuvaketta ja aloita puhuminen",
+                    "point4": "Valitse tarvitsemasi kielet ja aloita napsauttamalla mikrofonikuvaketta.",
+                    "point5": "Aseta kohdistin sovellukseen ja aloita puhuminen.",
+                    "point6": "Napsauta Windowsin ilmaisinalueelta Lenovo Voice -kuvaketta ja valitse Käännös.",
+                    "point7": "Valitse lähde- ja kohdekielesi.",
+                    "point8": "Määritä äänisyöttö kaiuttimesta tai mikrofonista tarpeidesi mukaan.",
+                    "point9": "Napsauta mikrofonikuvaketta ja aloita puhuminen.",
                     "closeText": "sulje",
-                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
+                    "point10": "Varmista, että Lenovo Voice -kuvake näkyy Windowsin ilmaisinalueella."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -2187,6 +2193,7 @@
             "description": "Ota meihin yhteyttä, niin saat apua.",
             "listLenovoCommunity": "Lenovo-yhteisö",
             "listContactCustomerService": "Ota asiakaspalveluun yhteyttä",
+            "listYourVirtualAssistant": "Your virtual assistant",
             "listContactUsOnWechat": "Ota meihin yhteyttä WeChat-palvelussa",
             "weChatDescription": "Lähetä meille kysymys WeChat-palvelussa, niin vastaamme taatusti pian",
             "listFindUs": "Löydä meidät sosiaalisesta mediasta",
@@ -2437,7 +2444,6 @@
                 "title": "Suojauksen kunto",
                 "deviceName1": "Sovellukset luotetuista lähteistä",
                 "deviceName2": "Kehittäjätila",
-                "deviceName3": "Käyttäjätilien valvontailmoitus",
                 "deviceName4": "Virustentorjunnan saatavuus",
                 "deviceName5": "Kiintolevyaseman salaus",
                 "deviceName6": "Palomuurin saatavuus",
@@ -2633,8 +2639,8 @@
             }
         },
         "question2": {
-            "title": "Tietokoneen siivoaminen",
-            "description": "<div>    <div class='faqInFs4Fb'>        Tietokoneen siivoaminen    </div>    <hr>    <div class='faqInFs25FbP5'>        Tilanne    </div>    <div class='faqInP5'>        Jos tietokoneesi ei toimi yhtä hyvin kuin aiemmin etkä tiedä miksi, voit päivittää tietokoneen poistamatta henkilökohtaisia tiedostoja tai muuttamatta asetuksia. Windows voi ”päivittää” tietokoneen niin, että se on kuin vasta asennettu ilman, että henkilökohtaisia tiedostojasi poistetaan.    </div>    <div class='faqInP5'>        Siivoa tietokone -toiminnossa tapahtuu seuraava: tiedostot ja mukautetut asetukset eivät muutu    </div>    <div class='faqInP5'>        <ul>            <li>Tietokoneen asetukset muutetaan takaisin oletusasetuksiksi</li>            <li>Windows-kaupan sovellukset säilyvät</li>            <li>Ohjelmat, jotka on asennettu levyltä tai verkkosivustosta, poistetaan</li>            <li>Luettelo poistetuista tiedostoista tallennetaan työpöydälle</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Tuotemerkit, joita tämä koskee    </div>    <div>        <ul>            <li>Kaikki pöytätietokoneet ja kannettavat</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Käyttöjärjestelmä    </div>    <div>        <ul>            <li>Windows 8, 8.1 ja 10</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Ratkaisu    </div>    <div>        <ul class='list-unstyled'>            <li>                <span class='faqInFbTdP10'>Windows 8/8.1</span>                <ol>                    <li class='faqInP5'>                        Valitse <span class='faqInFb'> Asetukset </span>                    </li>                    <li class='faqInP5'>                        Valitse <span class='faqInFb'> Päivitys ja palautus</span>                    </li>                    <li class='faqInP5'>                        <div>Valitse <span class='faqInFb'> Palautus</span></div>                        <div class='faqInP5'>Valitse Siivoa tietokone vaikuttamatta tiedostoihisi -kohdassa <span class='faqInFb'> Aloittaminen.</span></div>                        <div><img src='assets/images/qa/2.1.jpg'  /></div>                    </li>                    <li class='faqInP5'>                        Napauta <span class='faqInFb'> 'Seuraava'</span>.                    </li>                    <li class='faqInP5'>                        Aloita päivitysprosessi valitsemalla <span class='faqInFb'> 'Päivitä'</span>.                    </li>                    <li class='faqInP5'>                        Kun päivitysprosessi on valmis, voit etsiä Poistetut sovellukset -luettelon työpöydältä                    </li>                    <li class='faqInP5'>                        Voit etsiä poistetut sovellukset samalla, kun päivität järjestelmän                    </li>                </ol>            </li>            <li class='faqInP10'>                <span class='faqInFbTd'>Windows 10</span>                <ol>                    <li class='faqInP5'> Etsi <span class='faqInFb'> Päivitys </span>aloitusvalikon hakutyökalussa.</li>                    <li class='faqInP5'>                        <div>Valitse <span class='faqInFb'> 'Siivoa tietokoneesi vaikuttamatta tiedostoihin'</span> alla näkyvistä hakutuloksista.</div>                        <div><img src='assets/images/qa/2.2.jpg'  /></div>                    </li>                    <li class='faqInP5'>                        <div>Aloita Windows 10 -tietokoneesi päivitys valitsemalla <span class='faqInFb'> Aloitus </span>-painike heti otsikon <span class='faqInFb'> 'Siivoa tietokone vaikuttamatta tiedostoihisi'</span> alla.</div>                        <div><img src='assets/images/qa/2.3.jpg'  /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div class='faqInFs25Fb'>        Lisätietoja    </div>    <div>        Useimmiten, kun aloitat tietokoneen siivoamisen, se suorittaa toiminnon loppuun itse. Jos Windows kuitenkin tarvitsee puuttuvia tiedostoja, ohjelma pyytää asettamaan tietokoneeseen elvytystietovälineen, joka on yleensä DVD-levy tai muistitikku. Jos näin käy, tarvittavat toimenpiteet riippuvat tietokoneestasi.    </div>    <div class='faqInP10'>        Jos olet päivittänyt tietokoneesi Windows 8.1- tai Windows RT 8.1 -versioon DVD-levyn avulla, käytä kyseistä levyä. Jos sinulla ei ole Windows 8.1 tai Windows RT 8.1 -tietovälinettä, ota yhteys Microsoftin tukipalveluun.    </div></div>",
+            "title": "Tietokoneen oletusasetusten palauttaminen",
+            "description": "<div><div class='faqInFs4Fb'>Windows 10:n palauttaminen oletusasetuksiin</div><hr><div class='faqInP5'>Jos Windows 10 -tietokoneessasi on ongelmia tai olet myymässä sitä, sinun tulisi palauttaa se oletusasetuksiin. Kun palautat tietokoneen oletusasetuksiin, voit säilyttää tai poistaa tiedostosi, poistaa kaikki sovellukset ja asetukset sekä asentaa tuoreen Windows-kopion. Se voi myös korjata useita ongelmia, kuten hidastuneen suorituskyvyn.</div><div class='faqInFs25FbP10'>1. Avaa Asetukset-sovellus</div><div class='faqInP5'>Paina Aloitus-kuvapainiketta näyttösi vasemmasta alakulmasta ja valitse asetusten hammasrataskuvake.</div><div class='faqInP5'><img src='assets/images/qa/2.1.jpg' /></div><div class='faqInFs25FbP10'>2. Valitse luokkien luettelosta Päivittäminen ja suojaus</div><div class='faqInP5'><img src='assets/images/qa/2.2.jpg' /></div><div class='faqInFs25FbP10'>3. Valitse vasemmanpuoleisesta paneelista Palauttaminen</div><div class='faqInP5'><img src='assets/images/qa/2.3.jpg' /></div><div class='faqInFs25FbP10'>4. Käynnistä palautusprosessi</div><div class='faqInP5'>Napsauta tai napauta Aloita-painiketta ylälaidassa olevan Palauta tietokoneen oletusasetukset -otsikon alta.</div><div class='faqInP5'><img src='assets/images/qa/2.4.jpg' /></div><div class='faqInFs25FbP10'>5. Valitse, haluatko säilyttää tiedostosi vai et</div><div class='faqInP5'>Kun tietokoneen oletusasetukset on palautettu, voit kirjautua sisään Microsoft-tilillesi. Kaikki tällä tilillä ostetut Windows Store -sovellukset asennetaan uudelleen.</div><div class='faqInP5'><ul><li>Säilytä tiedostoni -vaihtoehto poistaa sovelluksesi ja asetuksesi, mutta säilyttää kaikki henkilökohtaiset tiedostosi.</li><li>Poista kaikki -vaihtoehto poistaa sovelluksesi, asetuksesi ja henkilökohtaiset tiedostosi. Jos sinulla ei ole varmuuskopiota tiedostoistasi, voit painaa Peruuta, varmuuskopioida ne ja aloittaa prosessin alusta.</li></ul></div><div class='faqInP5'><img src='assets/images/qa/2.5.jpg' /></div><div class='faqInFs25FbP10'>6. Voit valita erilaisia lisäasetuksia</div><div class='faqInP5'>Tämä vaihtoehto näytetään vain, jos valitsit \"Poista kaikki\" -vaihtoehdon edellisessä vaiheessa.</div><div class='faqInP5'><img src='assets/images/qa/2.6.1.jpg' /></div><div class='faqInP5'><img src='assets/images/qa/2.6.2.jpg' /></div><div class='faqInFs25FbP10'>7. Lue yleiskatsaus ja paina Palauta, kun olet valmis jatkamaan.</div><div class='faqInP5'>Windows valmistautuu palauttamaan laitteesi oletusasetukset. Odota, kunnes näet sinisen ruudun.</div><div class='faqInFs25FbP10'>8. Kun näet \"Valitse vaihtoehto\" -tekstin, valitse Jatka.</div><div class='faqInP5'>Windows käynnistyy uudelleen ja aloittaa oletusasetusten palauttamisen. Tietokoneesi saattaa käynnistyä uudelleen useita kertoja, kun oletusasetuksia palautetaan.</div><hr><div class='faqInFs25FbP10'>Yhteisön kysymykset ja vastaukset</div><div class='faqInP5'><b>Jos päätän poistaa kaiken, tyhjennetäänkö kaikki tietokoneeseeni liitetyt/kytketyt asemat vai ainoastaan Windows 10 -käyttöjärjestelmän sisältävä asema?</b></div><div class='faqInP5'><i>Yhteisön vastaus</i></div><div class='faqInP10'>Vain Windows 10 -käyttöjärjestelmän sisältävä asema tyhjennetään (tavallisesti C:-asema). Muut tietokoneeseen liitetyt/kytketyt asemat eivät muutu.</div><div class='faqInP5'><b>Miten suoritan tämän toimenpiteen, jos näyttöni on rikki?</b></div><div class='faqInP5'><i>Yhteisön vastaus</i></div><div class='faqInP10'>Valitettavasti se ei ole mahdollista. Sinun täytyy hankkia uusi näyttö.</div><div class='faqInP5'><b>Jos olet kirjautunut sisään verkkosivustolle, poistetaanko myös sen historia?</b></div><div class='faqInP5'><i>Yhteisön vastaus</i></div><div class='faqInP10'>Kyllä, riippuen käyttämästäsi selaimesta. Jos haluat poistaa selainhistoriasi, avaa selaimesi asetukset ja poista historiasi. Voit myös käyttää yksityistä tilaa välttyäksesi historiasi tallentamiselta.</div><div class='faqInP5'><b>Jos päätän poistaa kaiken, nollataanko myös salasanani?</b></div><div class='faqInP5'><i>Yhteisön vastaus</i></div><div class='faqInP10'>Kyllä. Kun palautat Windows 10 -tietokoneesi oletusasetuksiin, kaikki käyttäjätiedot poistetaan. Tämä sisältää asiakirjat, tallennetut salasanat, kuvat, määritetyt asetukset, selaintiedot ja sovellustiedot.</div><hr><div class='faqInP5'>Viite</div><div class='faqInP5'>Windows 10:n palauttaminen oletusasetuksiin – WikiHow.</div></div>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
@@ -3507,7 +3513,8 @@
     "notification": {
         "menu": {
             "security": "Tiedätkö? Vaikka tietokoneeseen ei ole asennettu virustentorjuntaohjelmistoa, se sisältää silti perussuojauksen.",
-            "connectedHomeSecurity": "Saat reaaliaikaista seurantaa ja ilmoituksia verkon suojauksesta kotona. Olet ensimmäinen, joka tietää, onko jokin älylaitteistasi joutunut hyökkäyksen kohteeksi."
+            "connectedHomeSecurity": "Saat reaaliaikaista seurantaa ja ilmoituksia verkon suojauksesta kotona. Olet ensimmäinen, joka tietää, onko jokin älylaitteistasi joutunut hyökkäyksen kohteeksi.",
+            "hardwareScan": "Nyt voit tarkastaa järjestelmäsi laitteistokomponentin kunnon."
         }
     },
     "appsForYou": {

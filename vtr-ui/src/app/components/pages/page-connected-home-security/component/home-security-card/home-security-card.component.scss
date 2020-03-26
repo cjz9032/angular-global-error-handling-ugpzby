@@ -13,13 +13,13 @@
 			padding: 2rem;
 			.title {
 				color: $shade_blue;
-				font-size: 2rem;
+				font-size: 2.4rem;
 				font-weight: $weight_bold;
 			}
 
 			.description {
 				color: $shade_blue;
-				font-size: 1.6rem;
+				font-size: 1.4rem;
 				font-weight: 400;
 				overflow: hidden;
 				margin-bottom: 4rem;
@@ -34,16 +34,15 @@
 		bottom: 2rem;
 	}
 
-	@media #{$medium-screen} {
+	@media #{$medium-screen, $large-screen-1} {
 		.content {
 			.container-fluid:nth-child(2n + 1) {
-				border-right: 0;
 				border-bottom: 0.1rem solid #e6e6e6;
 			}
 		}
 	}
 
-	@media #{$small-screen}{
+	@media #{$small-screen, $mediaquery_X45}{
 		.content {
 			.container-fluid:nth-child(2n + 1) {
 				border-right: 0;

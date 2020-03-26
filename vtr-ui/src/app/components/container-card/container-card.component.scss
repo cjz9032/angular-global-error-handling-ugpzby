@@ -211,6 +211,7 @@
 	}
 
 	&.card-subpage-corner {
+		height: 22rem;
 		.content {
 			position: relative;
 			z-index: 1;
@@ -345,15 +346,15 @@
 					z-index: 1;
 					display: flex;
 					padding: 2rem 2.5rem;
-					// justify-content: flex-end;
-					// align-items: center;
-
+					width: 100%;
+					height: 100%;
 
 					.title {
 						color: $light;
 						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
 						cursor: pointer;
 						font-size: $fontsize_xl2;
+						height: calc(#{$fontsize_xl2} * 1.4)
 					}
 				}
 			}
@@ -475,21 +476,18 @@
 	}
 
 	&.card-subpage-partner-corner {
+		height: 22rem;
 		.image {
-			// height: 60%;
+			height: 100%;
+			width: 100%;
+			text-decoration: none;
+			display: block;
+			border-radius: $border_radius;
+			overflow: hidden;
 			background-size: cover;
 			background-position: center center;
 			background-repeat: no-repeat;
 			border-radius: $border_radius;
-
-			a {
-				text-decoration: none;
-				width: 100%;
-				height: 100%;
-				display: block;
-				border-radius: $border_radius;
-				overflow: hidden;
-			}
 		}
 
 		.default-cursor {

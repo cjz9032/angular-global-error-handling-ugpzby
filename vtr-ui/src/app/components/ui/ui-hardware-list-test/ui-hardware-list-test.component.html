@@ -3,7 +3,7 @@
 		<li class="list-group-item" *ngFor="let item of items; let id = index"
 			[ngClass]="{'isSelected-item' : item.selected || item.indeterminate}">
 			<div class="module">
-				<div class="custom-control form-control-lg custom-checkbox">
+				<div class="custom-control custom-checkbox">
 					<input id="{{ item.id }}" type="checkbox" class="custom-control-input"
 						[indeterminate]="item.indeterminate" [(ngModel)]="item.selected"
 						(change)="onSelectAllChildren(item.id)" (click)="onSelectAllChildren(item.id)" />
@@ -18,7 +18,7 @@
 			<div id="{{ id }}" class="sub-module" [ngbCollapse]="!item.collapsed">
 				<ul class="list-group">
 					<li class="list-group-item" *ngFor="let test of item.tests" (change)=onCheckChildren(item.id)>
-						<div class="custom-control form-control-lg custom-checkbox">
+						<div class="custom-control custom-checkbox">
 							<input id="{{ test.id + id }}" type="checkbox" class="custom-control-input"
 								[(ngModel)]="test.selected" />
 							<label class="custom-control-label name-test"
