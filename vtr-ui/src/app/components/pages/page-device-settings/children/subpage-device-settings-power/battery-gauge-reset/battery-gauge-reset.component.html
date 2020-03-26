@@ -144,6 +144,7 @@
 										metricsParent="Page.Settings"
 										metricsEvent="FeatureClick"
 										[isRegular]="true"
+										[autoFocus]="autoFocusButton"
 										[disabled]="(batteryService.isGaugeResetRunning &&
 											(batteryService.gaugeResetInfo.length > 1 && !battery.isResetRunning)) ||
 											!batteryService.isAcAttached"
@@ -152,7 +153,8 @@
 											!batteryService.isAcAttached)?-1:0"
 										linkId="myDevice-settings-battery-gauge-reset-stop-btn{{i+1}}"
 										[label]="battery.isResetRunning? ('device.deviceSettings.power.batterySettings.gaugeReset.btnLabel.stop'|translate): ('device.deviceSettings.power.batterySettings.gaugeReset.btnLabel.reset' | translate)"
-										(click)="onBatteryGaugeReset(i)"></vtr-ui-button>
+										(keydown)="onKeyPressBatteryGaugeReset(i,$event)"
+										(click)="onBatteryGaugeReset(i,$event)"></vtr-ui-button>
 								</div>
 							</div>
 						</div>
