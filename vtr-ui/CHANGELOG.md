@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.14](https://bitbucket.tc.lenovo.com///compare/v1.4.12...v1.4.14) (2020-03-26)
+
+
+### Bug Fixes
+
+* **VAN-15964:** ecm new description i18n ([ac7e994](https://bitbucket.tc.lenovo.com///commit/ac7e99467f2ac03246d7a061dde54d520eec06c2))
+* **VAN-15964:** ecm new description i18n ([fa87148](https://bitbucket.tc.lenovo.com///commit/fa8714890ecb1873c79cb282d7997becef555112))
+
 ### [1.4.13](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.4.12...v1.4.13) (2020-03-25)
 
 
