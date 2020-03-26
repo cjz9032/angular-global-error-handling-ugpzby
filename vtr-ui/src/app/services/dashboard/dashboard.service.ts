@@ -41,6 +41,7 @@ export class DashboardService {
 
 	public cmsContentCache : any = null;
 	public cmsLanguageCache : string = null;
+	public cmsSegmentCache : string = null;
 
 	constructor(
 		shellService: VantageShellService,

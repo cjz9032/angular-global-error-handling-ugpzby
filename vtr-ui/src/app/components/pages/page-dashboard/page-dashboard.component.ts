@@ -28,6 +28,7 @@ import { DccService } from 'src/app/services/dcc/dcc.service';
 import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
 import { SelfSelectService, SegmentConst } from 'src/app/services/self-select/self-select.service';
+import { Subscription } from 'rxjs/internal/Subscription';
 interface IConfigItem {
 	id: string;
 	template: string;
@@ -55,6 +56,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	public showQuickSettings = true;
 	dashboardStart: any = new Date();
 	public hideTitle = false;
+	private subscription: Subscription;
 
 	supportDatas = {
 		documentation: [
@@ -223,7 +225,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		this.dashboardService.isDashboardDisplayed = true;
 		this.getWelcomeText();
 		this.commonService.setSessionStorageValue(SessionStorageKey.DashboardInDashboardPage, true);
-		this.commonService.notification.subscribe((notification: AppNotification) => {
+		this.subscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
 
@@ -298,6 +300,9 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		this.dashboardService.isDashboardDisplayed = false;
 		this.commonService.setSessionStorageValue(SessionStorageKey.DashboardInDashboardPage, false);
 		this.qaService.destroyChangeSubscribed();
+		if(this.subscription){
+			this.subscription.unsubscribe();
+		}
 	}
 
 	private getWelcomeText() {
@@ -403,8 +408,11 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	private fetchCMSContent(lang?: string) {
 		const cmsLang = this.dashboardService.cmsLanguageCache;
 		const cmsContent = this.dashboardService.cmsContentCache;
-		if (cmsLang === lang && cmsContent?.length > 0) {
-			this.populateCMSContent(this.dashboardService.cmsContentCache);
+		const cmsSegment = this.dashboardService.cmsSegmentCache;
+		const selfSelectConfig = this.commonService.getLocalStorageValue(LocalStorageKey.ChangedSelfSelectConfig, undefined);
+
+		if (cmsSegment === selfSelectConfig?.segment && cmsLang === lang && cmsContent?.length > 0) {
+			this.populateCMSContent(cmsContent);
 			return;
 		}
 
@@ -419,6 +427,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 				GEO: 'US'
 			};
 		}
+
 		this.cmsService.fetchCMSContent(queryOptions).subscribe(
 			(response: any) => {
 				const callCmsEndTime: any = new Date();
@@ -426,6 +435,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 				if (response && response.length > 0) {
 					this.dashboardService.cmsContentCache = response;
 					this.dashboardService.cmsLanguageCache = lang;
+					this.dashboardService.cmsSegmentCache = selfSelectConfig.segment;
 					this.logger.info(`Performance: Dashboard page get cms content, ${callCmsUsedTime}ms`);
 					this.populateCMSContent(response);
 
@@ -476,7 +486,8 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 					url: record.FeatureImage,
 					ActionLink: record.ActionLink,
 					ActionType: record.ActionType,
-					DataSource: 'cms'
+					DataSource: 'cms',
+					OverlayTheme: record.OverlayTheme ? record.OverlayTheme : '',
 				};
 			});
 		if (heroBannerItems && heroBannerItems.length && this.cmsHeroBannerChanged(heroBannerItems, this.heroBannerItemsCms)) {
@@ -633,7 +644,8 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 							url: record.FeatureImage,
 							ActionLink: record.ActionLink,
 							ActionType: record.ActionType,
-							DataSource: 'upe'
+							DataSource: 'upe',
+							OverlayTheme: record.OverlayTheme ? record.OverlayTheme : '',
 						};
 					});
 
