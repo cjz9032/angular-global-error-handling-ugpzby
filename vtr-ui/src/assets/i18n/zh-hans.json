@@ -1332,10 +1332,10 @@
                             "label": "当前计划"
                         },
                         "profile": {
-                            "title": "PLAN PROFILE:",
-                            "performance": "Max performance:",
-                            "temperature": "Max system temperature:",
-                            "usage": "Max power usage:"
+                            "title": "计划配置概要：",
+                            "performance": "最高性能：",
+                            "temperature": "最高系统温度：",
+                            "usage": "最高电源使用量："
                         }
                     }
                 },
@@ -1514,8 +1514,8 @@
                     "title": "显示",
                     "displayColorTemperature": {
                         "title": "显示色温",
-                        "description": "您可以调节显示屏色温以过滤掉蓝光，从而减轻视疲劳。在日落到日出期间将显示屏调整为暖色调，以帮助您入睡。",
-                        "link": {
+						"description": "您可以调节显示屏色温以过滤蓝光，从而减轻视疲劳。在日落到日出期间将显示屏调整为暖色调，以帮助您入睡。",
+						"link": {
                             "click": "单击",
                             "here": "此处",
                             "rest": "以更改色温。"

@@ -1332,10 +1332,10 @@
                             "label": "GEÇERLİ PLAN"
                         },
                         "profile": {
-                            "title": "PLAN PROFILE:",
-                            "performance": "Max performance:",
-                            "temperature": "Max system temperature:",
-                            "usage": "Max power usage:"
+                            "title": "PLAN PROFİLİ:",
+                            "performance": "Maksimum performans:",
+                            "temperature": "Maksimum sistem sıcaklığı:",
+                            "usage": "Maksimum güç kullanımı:"
                         }
                     }
                 },
@@ -1514,8 +1514,8 @@
                     "title": "Ekran",
                     "displayColorTemperature": {
                         "title": "Ekran rengi sıcaklığı",
-                        "description": "Mavi ışığı filtrelemek ve göz yorgunluğunu azaltmak için ekranınızın renk sıcaklığını ayarlayabilirsiniz. Uyumanıza yardımcı olmak için ekranları günbatımı ile güneşin doğuşuna kadar daha sıcak renklere ayarlar.",
-                        "link": {
+						"description": "Mavi ışığı filtrelemek ve göz yorgunluğunu azaltmak için ekranınızın renk sıcaklığını ayarlayabilirsiniz. Uyumanıza yardımcı olmak için ekranları günbatımı ile güneşin doğuşuna kadar daha sıcak renklere ayarlar.",
+						"link": {
                             "click": "Renk sıcaklığını değiştirmek için",
                             "here": "buraya",
                             "rest": "tıklayın."

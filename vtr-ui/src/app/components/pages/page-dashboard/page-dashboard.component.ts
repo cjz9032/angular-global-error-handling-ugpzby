@@ -455,8 +455,8 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		this.heroBannerDemoItems = [{
 			albumId: 1,
 			id: '',
-			source: this.sanitizer.sanitize(SecurityContext.HTML, 'VANTAGE'),
-			title: this.sanitizer.sanitize(SecurityContext.HTML, 'Lenovo exclusive offer of Adobe designer suite'),
+			source: 'VANTAGE',
+			title: 'Lenovo exclusive offer of Adobe designer suite',
 			url: 'assets/images/dcc/hero-banner-dcc.jpg',
 			ActionLink: 'dcc-demo',
 			ActionType: 'Internal',
@@ -471,12 +471,13 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 				return {
 					albumId: 1,
 					id: record.Id,
-					source: this.sanitizer.sanitize(SecurityContext.HTML, record.Title),
-					title: this.sanitizer.sanitize(SecurityContext.HTML, record.Description),
+					source: record.Title,
+					title: record.Description,
 					url: record.FeatureImage,
 					ActionLink: record.ActionLink,
 					ActionType: record.ActionType,
-					DataSource: 'cms'
+					DataSource: 'cms',
+					OverlayTheme: record.OverlayTheme ? record.OverlayTheme : '',
 				};
 			});
 		if (heroBannerItems && heroBannerItems.length && this.cmsHeroBannerChanged(heroBannerItems, this.heroBannerItemsCms)) {
@@ -628,12 +629,13 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 						return {
 							albumId: 1,
 							id: record.Id,
-							source: this.sanitizer.sanitize(SecurityContext.HTML, record.Title),
-							title: this.sanitizer.sanitize(SecurityContext.HTML, record.Description),
+							source: record.Title,
+							title: record.Description,
 							url: record.FeatureImage,
 							ActionLink: record.ActionLink,
 							ActionType: record.ActionType,
-							DataSource: 'upe'
+							DataSource: 'upe',
+							OverlayTheme: record.OverlayTheme ? record.OverlayTheme : '',
 						};
 					});
 

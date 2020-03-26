@@ -1516,7 +1516,7 @@
 					"title": "Display",
 					"displayColorTemperature": {
 						"title": "Display color temperature",
-						"description": "You can adjust the color temperature of your display to emit blue light and reduce eye strain. Adjusts displays to warmer colors during sunset to sunrise to help you sleep.",
+						"description": "You can adjust the color temperature of your display to filter blue light and reduce eye strain. Adjusts displays to warmer colors during sunset to sunrise to help you sleep.",
 						"link": {
 							"click": "Click",
 							"here": "here",

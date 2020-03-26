@@ -1332,10 +1332,10 @@
                             "label": "PLAN ACTUAL"
                         },
                         "profile": {
-                            "title": "PLAN PROFILE:",
-                            "performance": "Max performance:",
-                            "temperature": "Max system temperature:",
-                            "usage": "Max power usage:"
+                            "title": "PROFILUL PLANULUI:",
+                            "performance": "Performanța maximă:",
+                            "temperature": "Temperatura maximă a sistemului:",
+                            "usage": "Consumul maxim de energie:"
                         }
                     }
                 },
@@ -1514,8 +1514,8 @@
                     "title": "Afișaj",
                     "displayColorTemperature": {
                         "title": "Temperatură culoare afișaj",
-                        "description": "Puteți ajusta temperatura culorii ecranului dvs. pentru a filtra lumina albastră protejându-vă ochii. Ajustează ecranul astfel încât să afișeze culori mai calde între apusul și răsăritul soarelui, pentru a nu vă afecta somnul.",
-                        "link": {
+						"description": "Puteți regla temperatura culorii afișajului pentru a filtra lumina albastră și pentru a reduce oboseala ochilor. Ajustează ecranul astfel încât să afișeze culori mai calde între apusul și răsăritul soarelui, pentru a nu vă afecta somnul.",
+						"link": {
                             "click": "Clic",
                             "here": "aici",
                             "rest": "pentru a modifica temperatura culorii."
