@@ -30,12 +30,13 @@ import { FeatureContent } from 'src/app/data-models/common/feature-content.model
 import { SelfSelectService, SegmentConst } from 'src/app/services/self-select/self-select.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 interface IConfigItem {
-	id: string;
-	template: string;
-	position: string;
-	cardPosition: string;
-	cmsCardPosition: string;
-	dashboardCache: string;
+	cardId: string,
+	displayContent: any;
+	template: string,
+	positionParam: string,
+	tileSource: string,
+	cmsContent: any,
+	upeContent: any
 }
 
 @Component({
@@ -73,105 +74,65 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		quicklinks: [],
 	};
 
-	heroBannerItems = []; // tile A
-	cardContentPositionB: FeatureContent = new FeatureContent();
-	cardContentPositionC: FeatureContent = new FeatureContent();
-	cardContentPositionD: FeatureContent = new FeatureContent();
-	cardContentPositionE: FeatureContent = new FeatureContent();
-	cardContentPositionF: FeatureContent = new FeatureContent();
-
 	heroBannerDemoItems = [];
 	canShowDccDemo$: Promise<boolean>;
 
-	heroBannerItemsCms: any[]; // tile A
-	cardContentPositionBCms: FeatureContent = new FeatureContent();
-	cardContentPositionCCms: FeatureContent = new FeatureContent();
-	cardContentPositionDCms: FeatureContent = new FeatureContent();
-	cardContentPositionECms: FeatureContent = new FeatureContent();
-	cardContentPositionFCms: FeatureContent = new FeatureContent();
-
-	upeRequestResult = {
-		tileA: true,
-		tileB: true,
-		tileC: true,
-		tileD: true,
-		tileE: true,
-		tileF: true
-	};
-
-	cmsRequestResult = {
-		tileA: false,
-		tileB: false,
-		tileC: false,
-		tileD: false,
-		tileE: false,
-		tileF: false
-	};
-
-	tileSource = {
-		tileA: 'CMS',
-		tileB: 'CMS',
-		tileC: 'CMS',
-		tileD: 'CMS',
-		tileE: 'CMS',
-		tileF: 'CMS'
-	};
-
-	configDic = [
-		{
-			id: 'tileA',
+	contentCards = {
+		positionA: {
+			displayContent: [],
 			template: 'home-page-hero-banner',
-			position: 'position-A',
-			cardPosition: 'heroBannerItems',
-			cmsCardPosition: 'heroBannerItemsCms',
-			dashboardCache: 'heroBannerItemsOnline'
+			cardId: 'positionA',
+			positionParam: 'position-A',
+			tileSource: 'CMS',
+			cmsContent: undefined,
+			upeContent: undefined
 		},
-		{
+		positionB: {
+			displayContent: new FeatureContent(),
 			template: 'half-width-title-description-link-image',
-			position: 'position-B',
-			id: 'tileB',
-			cardPosition: 'cardContentPositionB',
-			cmsCardPosition: 'cardContentPositionBCms',
-			dashboardCache: 'cardContentPositionBOnline'
+			cardId: 'positionB',
+			positionParam: 'position-B',
+			tileSource: 'CMS',
+			cmsContent: undefined,
+			upeContent: undefined
 		},
-		{
+		positionC: {
+			displayContent: new FeatureContent(),
 			template: 'half-width-title-description-link-image',
-			position: 'position-C',
-			id: 'tileC',
-			cardPosition: 'cardContentPositionC',
-			cmsCardPosition: 'cardContentPositionCCms',
-			dashboardCache: 'cardContentPositionCOnline'
+			cardId: 'positionC',
+			positionParam: 'position-C',
+			tileSource: 'CMS',
+			cmsContent: undefined,
+			upeContent: undefined
 		},
-		{
+		positionD: {
+			displayContent: new FeatureContent(),
 			template: 'full-width-title-image-background',
-			position: 'position-D',
-			id: 'tileD',
-			cardPosition: 'cardContentPositionD',
-			cmsCardPosition: 'cardContentPositionDCms',
-			dashboardCache: 'cardContentPositionDOnline'
+			cardId: 'positionD',
+			positionParam: 'position-D',
+			tileSource: 'CMS',
+			cmsContent: undefined,
+			upeContent: undefined
 		},
-		{
+		positionE: {
+			displayContent: new FeatureContent(),
 			template: 'half-width-top-image-title-link',
-			position: 'position-E',
-			id: 'tileE',
-			cardPosition: 'cardContentPositionE',
-			cmsCardPosition: 'cardContentPositionECms',
-			dashboardCache: 'cardContentPositionEOnline'
+			cardId: 'positionE',
+			positionParam: 'position-E',
+			tileSource: 'CMS',
+			cmsContent: undefined,
+			upeContent: undefined
 		},
-		{
+		positionF: {
+			displayContent: new FeatureContent(),
 			template: 'half-width-top-image-title-link',
-			position: 'position-F',
-			id: 'tileF',
-			cardPosition: 'cardContentPositionF',
-			cmsCardPosition: 'cardContentPositionFCms',
-			dashboardCache: 'cardContentPositionFOnline'
+			cardId: 'positionF',
+			positionParam: 'position-F',
+			tileSource: 'CMS',
+			cmsContent: undefined,
+			upeContent: undefined
 		}
-	];
-
-	/*forwardLink = {
-		path: 'dashboard-customize',
-		label: 'Customize Dashboard'
-	};*/
+	};
 
 	constructor(
 		private router: Router,
@@ -211,15 +172,8 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 				this.getSystemInfo();
 			}
 		});
-		// this.brand = this.deviceService.getMachineInfoSync().brand;
 		this.brand = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType, -1);
-		// Evaluate the translations for QA on language Change
-		// this.qaService.setTranslationService(this.translate);
-		// this.qaService.setCurrentLangTranslations();
 		this.qaService.getQATranslation(this.translate); // VAN-5872, server switch feature
-		// this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-		// 	this.fetchContent();
-		// });
 
 		this.isWarrantyVisible = this.deviceService.showWarranty;
 		this.dashboardService.isDashboardDisplayed = true;
@@ -242,7 +196,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			.subscribe((result) => {
 				this.dashboardService.translateString = result;
 				this.dashboardService.setDefaultCMSContent();
-				this.getPreviousContent();
+				this.getOfflineContent();
 				this.fetchContent();
 				this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
 					this.fetchContent();
@@ -353,46 +307,17 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	}
 
 	private fetchContent(lang?: string) {
-		// reset upe request result
-		this.upeRequestResult = {
-			tileA: true,
-			tileB: true,
-			tileC: true,
-			tileD: true,
-			tileE: true,
-			tileF: true
-		};
-		// reset cms request result
-		this.cmsRequestResult = {
-			tileA: false,
-			tileB: false,
-			tileC: false,
-			tileD: false,
-			tileE: false,
-			tileF: false
-		};
 
+		// apply online cache
 		if (this.isOnline) {
-			if (this.dashboardService.heroBannerItemsOnline.length > 0) {
-				this.heroBannerItems = this.dashboardService.heroBannerItemsOnline;
-			}
-			if (this.dashboardService.cardContentPositionBOnline) {
-				this.cardContentPositionB = this.dashboardService.cardContentPositionBOnline;
-			}
-			if (this.dashboardService.cardContentPositionCOnline) {
-				this.cardContentPositionC = this.dashboardService.cardContentPositionCOnline;
-			}
-			if (this.dashboardService.cardContentPositionDOnline) {
-				this.cardContentPositionD = this.dashboardService.cardContentPositionDOnline;
-			}
-			if (this.dashboardService.cardContentPositionEOnline) {
-				this.cardContentPositionE = this.dashboardService.cardContentPositionEOnline;
-			}
-			if (this.dashboardService.cardContentPositionFOnline) {
-				this.cardContentPositionF = this.dashboardService.cardContentPositionFOnline;
-			}
+			Object.keys(this.contentCards).forEach(cardId => {
+				if (this.dashboardService.onlineCardContent[cardId]) {
+					this.contentCards[cardId].displayContent = this.dashboardService.onlineCardContent[cardId];
+				}
+			});
 		}
 
+		// fetch new online content
 		this.getTileSource().then(() => {
 			this.fetchCMSContent(lang);
 			this.fetchUPEContent();
@@ -451,17 +376,101 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		);
 	}
 
+	async fetchUPEContent() {
+		const positions = Object.values(this.contentCards)
+			.filter(contentCard => contentCard.tileSource === 'UPE')
+			.map(contentCard => contentCard.positionParam);
+
+		if (positions.length === 0) {
+			return;
+		}
+
+		const startCallUPE: any = new Date();
+		const response = await this.upeService.fetchUPEContent({ positions });
+		const endCallUPE: any = new Date();
+		this.logger.info(`Performance: Dashboard page get cms content, ${endCallUPE - startCallUPE}ms`);
+		this.populateUPEContent(response);
+	}
+
+
+	private formalizeContent(contents, position, dataSource) {
+		contents.forEach(content => {
+			if (content.BrandName) {
+				content.BrandName = content.BrandName.split('|')[0]; // formalize BrandName
+			}
+			content.DataSource = dataSource;
+		});
+
+		if (position === 'position-A') {
+			return contents.map((record) => {
+				return {
+					albumId: 1,
+					id: record.Id,
+					source: record.Title,
+					title: record.Description,
+					url: record.FeatureImage,
+					ActionLink: record.ActionLink,
+					ActionType: record.ActionType,
+					OverlayTheme: record.OverlayTheme ? record.OverlayTheme : '',
+					DataSource: record.DataSource
+				};
+			});
+
+		} else {
+			return contents[0];
+		}
+	}
+
 	private populateCMSContent(response: any) {
-		this.getCMSHeroBannerItems(response);
-		this.getCMSCardContentB(response);
-		this.getCMSCardContentC(response);
-		this.getCMSCardContentD(response);
-		this.getCMSCardContentE(response);
-		this.getCMSCardContentF(response);
+		const dataSource = 'cms';
+		const contentCards: IConfigItem[] = Object.values(this.contentCards);
+
+		contentCards.forEach(contentCard => {
+			let contents: any = this.cmsService.getOneCMSContent(response, contentCard.template, contentCard.positionParam);
+			if (contents && contents.length > 0) {
+				contents = this.formalizeContent(contents, contentCard.positionParam, dataSource);
+				contentCard.cmsContent = contents;
+				if ((contentCard.tileSource === 'CMS' || contentCard.upeContent === null) && contentCard.cmsContent) {	// contentCard.upeContent === null means no upe content
+					this.dashboardService.onlineCardContent[contentCard.cardId] = contentCard.cmsContent;
+
+					if (contentCard.cardId === 'positionA'
+						&& !this.cmsHeroBannerChanged(contentCard.displayContent, this.dashboardService.onlineCardContent[contentCard.cardId])) {
+						return;	// don't need to update, developer said this could present the refresh of positionA
+					}
+					contentCard.displayContent = this.dashboardService.onlineCardContent[contentCard.cardId];
+				} // else do nothing
+			} // else do nothing
+		});
+	}
+
+
+	private populateUPEContent(response: any) {
+		const dataSource = 'upe';
+		const contentCards: IConfigItem[] = Object.values(this.contentCards).filter(contentCard => {
+			return contentCard.tileSource === 'UPE'
+		});
+
+		contentCards.forEach(contentCard => {
+			let contents: any = this.cmsService.getOneCMSContent(response, contentCard.template, contentCard.positionParam);
+			contentCard.upeContent = null;
+			if (contents && contents.length > 0) {
+				contents = this.formalizeContent(contents, contentCard.positionParam, dataSource);
+				contentCard.upeContent = contents;
+				this.dashboardService.onlineCardContent[contentCard.cardId] = contentCard.upeContent;
+			} else if (contentCard.cmsContent) {
+				this.dashboardService.onlineCardContent[contentCard.cardId] = contentCard.cmsContent;
+			} // else do nothing
+
+			if (contentCard.cardId === 'positionA'
+				&& !this.cmsHeroBannerChanged(contentCard.displayContent, this.dashboardService.onlineCardContent[contentCard.cardId])) {
+				return;	// don't need to update, developer said this could present the refresh of positionA
+			}
+
+			contentCard.displayContent = this.dashboardService.onlineCardContent[contentCard.cardId];
+		});
 	}
 
 	getHeroBannerDemoItems() {
-		this.cmsRequestResult.tileA = true;
 		this.heroBannerDemoItems = [{
 			albumId: 1,
 			id: '',
@@ -472,32 +481,6 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			ActionType: 'Internal',
 			DataSource: 'cms'
 		}];
-	}
-
-	getCMSHeroBannerItems(response) {
-		const heroBannerItems = this.cmsService
-			.getOneCMSContent(response, 'home-page-hero-banner', 'position-A')
-			.map((record, index) => {
-				return {
-					albumId: 1,
-					id: record.Id,
-					source: record.Title,
-					title: record.Description,
-					url: record.FeatureImage,
-					ActionLink: record.ActionLink,
-					ActionType: record.ActionType,
-					DataSource: 'cms',
-					OverlayTheme: record.OverlayTheme ? record.OverlayTheme : '',
-				};
-			});
-		if (heroBannerItems && heroBannerItems.length && this.cmsHeroBannerChanged(heroBannerItems, this.heroBannerItemsCms)) {
-			this.heroBannerItemsCms = heroBannerItems;
-			this.cmsRequestResult.tileA = true;
-			if (!this.upeRequestResult.tileA || this.tileSource.tileA === 'CMS') {
-				this.heroBannerItems = this.heroBannerItemsCms;
-				this.dashboardService.heroBannerItemsOnline = this.heroBannerItemsCms;
-			}
-		}
 	}
 
 	cmsHeroBannerChanged(bannerItems1, bannerItems2) {
@@ -525,205 +508,46 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		return result;
 	}
 
-	getCMSCardContentB(response) {
-		const cardContentPositionB = this.cmsService.getOneCMSContent(
-			response,
-			'half-width-title-description-link-image',
-			'position-B'
-		)[0];
-		if (cardContentPositionB) {
-			this.cardContentPositionBCms = cardContentPositionB;
-			if (this.cardContentPositionBCms.BrandName) {
-				this.cardContentPositionBCms.BrandName = this.cardContentPositionBCms.BrandName.split('|')[0];
-			}
-			this.cardContentPositionBCms.DataSource = 'cms';
-			this.cmsRequestResult.tileB = true;
-			if (!this.upeRequestResult.tileB || this.tileSource.tileB === 'CMS') {
-				this.cardContentPositionB = this.cardContentPositionBCms;
-				this.dashboardService.cardContentPositionBOnline = this.cardContentPositionBCms;
-			}
-		}
-	}
-
-	getCMSCardContentC(response) {
-		const cardContentPositionC = this.cmsService.getOneCMSContent(
-			response,
-			'half-width-title-description-link-image',
-			'position-C'
-		)[0];
-		if (cardContentPositionC) {
-			this.cardContentPositionCCms = cardContentPositionC;
-			if (this.cardContentPositionC.BrandName) {
-				this.cardContentPositionC.BrandName = this.cardContentPositionC.BrandName.split('|')[0];
-			}
-			this.cardContentPositionCCms.DataSource = 'cms';
-			this.cmsRequestResult.tileC = true;
-			if (!this.upeRequestResult.tileC || this.tileSource.tileC === 'CMS') {
-				this.cardContentPositionC = this.cardContentPositionCCms;
-				this.dashboardService.cardContentPositionCOnline = this.cardContentPositionCCms;
-			}
-		}
-	}
-
-	getCMSCardContentD(response) {
-		const cardContentPositionD = this.cmsService.getOneCMSContent(
-			response,
-			'full-width-title-image-background',
-			'position-D'
-		)[0];
-		if (cardContentPositionD) {
-			this.cardContentPositionDCms = cardContentPositionD;
-			this.cardContentPositionDCms.DataSource = 'cms';
-			this.cmsRequestResult.tileD = true;
-			if (!this.upeRequestResult.tileD || this.tileSource.tileD === 'CMS') {
-				this.cardContentPositionD = this.cardContentPositionDCms;
-				this.dashboardService.cardContentPositionDOnline = this.cardContentPositionDCms;
-			}
-		}
-	}
-
-	getCMSCardContentE(response) {
-		const cardContentPositionE = this.cmsService.getOneCMSContent(
-			response,
-			'half-width-top-image-title-link',
-			'position-E'
-		)[0];
-		if (cardContentPositionE) {
-			this.cardContentPositionECms = cardContentPositionE;
-			this.cardContentPositionECms.DataSource = 'cms';
-			this.cmsRequestResult.tileE = true;
-			if (!this.upeRequestResult.tileE || this.tileSource.tileE === 'CMS') {
-				this.cardContentPositionE = this.cardContentPositionECms;
-				this.dashboardService.cardContentPositionEOnline = this.cardContentPositionECms;
-			}
-		}
-	}
-
-	getCMSCardContentF(response) {
-		const cardContentPositionF = this.cmsService.getOneCMSContent(
-			response,
-			'half-width-top-image-title-link',
-			'position-F'
-		)[0];
-		if (cardContentPositionF) {
-			this.cardContentPositionFCms = cardContentPositionF;
-			this.cardContentPositionFCms.DataSource = 'cms';
-			this.cmsRequestResult.tileF = true;
-			if (!this.upeRequestResult.tileF || this.tileSource.tileF === 'CMS') {
-				this.cardContentPositionF = this.cardContentPositionFCms;
-				this.dashboardService.cardContentPositionFOnline = this.cardContentPositionFCms;
-			}
-		}
-	}
-
-	async fetchUPEContent() {
-		const positions = [];
-		const contentCards: IConfigItem[] = [];
-		this.configDic.forEach(cardItem => {
-			if (this.tileSource[cardItem.id] === 'UPE') {
-				positions.push(cardItem.position);
-				contentCards.push(cardItem);
-			}
-		});
-
-		if (positions.length === 0) {
-			return;
-		}
+	private async getTileSource() {
+		const allPositions = ['positionA', 'positionB', 'positionC', 'positionD', 'positionE', 'positionF'];
+		let upePositions = [];
 
 		try {
-			const response = await this.upeService.fetchUPEContent({ positions });
-			contentCards.forEach(cardItem => {
-				const articles = this.cmsService.getOneCMSContent(response, cardItem.template, cardItem.position);
-				if (cardItem.position === 'position-A') {
-					const bannerArticles = articles.map((record) => {
-						return {
-							albumId: 1,
-							id: record.Id,
-							source: record.Title,
-							title: record.Description,
-							url: record.FeatureImage,
-							ActionLink: record.ActionLink,
-							ActionType: record.ActionType,
-							DataSource: 'upe',
-							OverlayTheme: record.OverlayTheme ? record.OverlayTheme : '',
-						};
-					});
+			const hyp = await this.hypService.getAllSettings() as any;
+			if (hyp.TileSource && hyp.TileSource === 'UPE_*') {	// 1. TileSource like UPE_*
 
-					if (bannerArticles && bannerArticles.length) {
-						this[cardItem.cardPosition] = bannerArticles;
-						this.dashboardService[cardItem.dashboardCache] = bannerArticles;
-						this.upeRequestResult[cardItem.id] = true;
-					}
-				} else {
-					const article = articles[0];
-					if (article) {
-						if (article.BrandName) {
-							article.BrandName = article.BrandName.split('|')[0];
-						}
-						article.DataSource = 'upe';
-						this[cardItem.cardPosition] = article;
-						this.dashboardService[cardItem.dashboardCache] = article;
-						this.upeRequestResult[cardItem.id] = true;
-					}
-				}
-			});
+				upePositions = allPositions;
+
+			} else if (hyp.TileSource && hyp.TileSource.startsWith('UPE')) {
+
+				const tileSource = hyp.TileSource.toUpperCase();
+				upePositions = allPositions.filter(position => {
+					const lastLetter = position.substr(-1, 1);
+					return tileSource.indexOf(`_${lastLetter}`) !== -1;		// 2. TileSource like UPE_A_B_C_X
+				});
+
+			} else if (hyp.TileBSource === 'UPE') {	// 3. TileSource like empty/null/unknown value, check TileBSource for compatible
+
+				upePositions.push('positionB');
+
+			} // else do nothing
 		} catch (ex) {
-			this.logger.info(`Cause by error: ${ex}, position-B load CMS content.`);
-			contentCards.forEach(cardItem => {
-				this.upeRequestResult[cardItem.id] = false;
-				if (this.cmsRequestResult[cardItem.id]) {
-					this[cardItem.cardPosition] = this[cardItem.cmsCardPosition];
-					this.dashboardService[cardItem.dashboardCache] = this[cardItem.cmsCardPosition];
-				}
-			});
+			this.logger.info(`get tile source failed.${ex.message}`);
 		}
-	}
 
-	private getTileSource() {
-		return new Promise((resolve) => {
-			this.hypService.getAllSettings().then(
-				(hyp: any) => {
-					const positions = ['A', 'B', 'C', 'D', 'E', 'F'];
+		allPositions.forEach(position => {
+			this.contentCards[position].tileSource = 'CMS';
+		});
 
-					if (hyp.TileSource && hyp.TileSource === 'UPE_*') {	// 1. TileSource like UPE_*
-						positions.forEach(position => {
-							this.tileSource[`tile${position}`] = 'UPE';
-						});
-					} else if (hyp.TileSource && hyp.TileSource.startsWith('UPE')) {	// 2. TileSource like UPE_A_B_C_X
-						const tileSource = hyp.TileSource.toUpperCase();
-						positions.forEach(position => {
-							if (tileSource.indexOf(`_${position}`) !== -1) {		// TileSource contains _A, _B, _X ...
-								this.tileSource[`tile${position}`] = 'UPE';			// like this.tileSource[tileA] = 'UPE'
-							} else {
-								this.tileSource[`tile${position}`] = 'CMS';
-							}
-						});
-					} else {	// 3. TileSource like empty/null/unknown value
-						positions.forEach(position => {
-							this.tileSource[`tile${position}`] = 'CMS';
-						});
-
-						// compatible with the older configuration
-						this.tileSource.tileB = hyp.TileBSource === 'UPE' ? 'UPE' : 'CMS';
-					}
-
-					resolve();
-				},
-				() => {
-					resolve();
-					this.logger.info('get tile source failed.');
-				}
-			);
+		upePositions.forEach(position => {
+			this.contentCards[position].tileSource = 'UPE';
 		});
 	}
 
-	private getPreviousContent() {
-		this.heroBannerItems = this.dashboardService.heroBannerItems;
-		this.cardContentPositionB = this.dashboardService.cardContentPositionB;
-		this.cardContentPositionC = this.dashboardService.cardContentPositionC;
-		this.cardContentPositionD = this.dashboardService.cardContentPositionD;
-		this.cardContentPositionE = this.dashboardService.cardContentPositionE;
-		this.cardContentPositionF = this.dashboardService.cardContentPositionF;
+	private getOfflineContent() {
+		Object.keys(this.contentCards).forEach(cardId => {	// 'positionA', 'positionB'...'positionF'
+			this.contentCards[cardId].displayContent = this.dashboardService.offlineCardContent[cardId];
+		});
 	}
 
 	private setDefaultSystemStatus() {
@@ -923,10 +747,9 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 				case NetworkStatus.Offline:
 					this.isOnline = notification.payload.isOnline;
 					if (!this.isOnline) {
-						this.getPreviousContent();
+						this.getOfflineContent();
 					} else {
 						this.fetchContent();
-						// this.fetchUPEContent();
 						this.getWarrantyInfo();
 					}
 					break;
