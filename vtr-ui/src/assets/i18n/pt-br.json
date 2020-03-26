@@ -1332,10 +1332,10 @@
                             "label": "PLANO ATUAL"
                         },
                         "profile": {
-                            "title": "PLAN PROFILE:",
-                            "performance": "Max performance:",
-                            "temperature": "Max system temperature:",
-                            "usage": "Max power usage:"
+                            "title": "PERFIL DO PLANO:",
+                            "performance": "Desempenho máx.:",
+                            "temperature": "Temperatura máx. do sistema:",
+                            "usage": "Utilização máx. de energia:"
                         }
                     }
                 },
@@ -1514,8 +1514,8 @@
                     "title": "Monitor",
                     "displayColorTemperature": {
                         "title": "Temperatura das cores do monitor",
-                        "description": "Você pode ajustar a temperatura das cores do monitor para filtrar a luz azul e reduzir a tensão ocular. O recurso ajusta as cores mais quentes durante o pôr do sol até o nascer do sol para ajudá-lo a dormir.",
-                        "link": {
+						"description": "Você pode ajustar a temperatura das cores do monitor para filtrar a luz azul e reduzir a tensão ocular. Ajusta os monitores para cores mais quentes durante o pôr do sol até o nascer do sol para ajudá-lo a dormir.",
+						"link": {
                             "click": "Clique",
                             "here": "aqui",
                             "rest": "para alterar a temperatura das cores."

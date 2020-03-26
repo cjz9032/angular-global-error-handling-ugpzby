@@ -1332,10 +1332,10 @@
                             "label": "現在のプラン"
                         },
                         "profile": {
-                            "title": "PLAN PROFILE:",
-                            "performance": "Max performance:",
-                            "temperature": "Max system temperature:",
-                            "usage": "Max power usage:"
+                            "title": "プラン・プロファイル:",
+                            "performance": "最大パフォーマンス:",
+                            "temperature": "最大システム温度:",
+                            "usage": "最大電源使用率:"
                         }
                     }
                 },
@@ -1514,8 +1514,8 @@
                     "title": "ディスプレイ",
                     "displayColorTemperature": {
                         "title": "ディスプレイの色温度",
-                        "description": "ディスプレイの色温度を調整してブルーライトを除去し、目の負担を軽減できます。日没から日の出まではディスプレイを暖色系に調整すると睡眠の助けになります。",
-                        "link": {
+						"description": "ディスプレイの色温度を調整してブルーライトを除去し、目の負担を軽減できます。日没から日の出まではディスプレイを暖色系に調整すると睡眠の助けになります。",
+						"link": {
                             "click": "色温度を変更するには",
                             "here": "ここ",
                             "rest": "をクリックしてください。"
@@ -3043,7 +3043,7 @@
         "loadingComponents": "コンポーネントをロード中",
         "hardwareComponents": "ハードウェア・コンポーネント",
         "loadingDevices": "デバイスのロード中",
-        "select": "ツールバーで",
+        "select": "選択",
         "deselect": "選択解除",
         "allOptions": "すべてのオプション",
         "latestResult": "最新の結果",

@@ -56,12 +56,12 @@
 								</div>
 								<div class="col-5 align-items-center text-right sm-device-responsive row flex-wrap-reverse justify-content-end">
 									<vtr-ui-switch-onoff
-										[ngClass]="{'switch-disable': data.isLWSEnabled === undefined || switchDisabled}"
+										[ngClass]="{'switch-disable': data.isLWSEnabled === undefined || data.wifiSecurity?.changeWifiSecurity}"
 										name="wifisecurity"
 										[value]="data.isLWSEnabled"
 										[onOffSwitchId]="'sa-ws-switch'"
-										[disabled]="data.isLWSEnabled === undefined || switchDisabled"
-										(toggle)="onToggleChange($event)"></vtr-ui-switch-onoff>
+										[disabled]="data.isLWSEnabled === undefined || data.wifiSecurity?.changeWifiSecurity"
+										(toggle)="noticeToggleChange()"></vtr-ui-switch-onoff>
 								</div>
 							</div>
 						</div>

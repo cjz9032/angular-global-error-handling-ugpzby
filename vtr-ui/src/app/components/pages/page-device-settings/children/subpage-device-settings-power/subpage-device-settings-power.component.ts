@@ -685,6 +685,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				this.logger.info('getAirplaneModeCapabilityThinkPad.then ==>', value);
 				this.showAirplanePowerModeSection = value;
 				this.updatePowerLinkStatus(this.showAirplanePowerModeSection);
+				this.commonService.sendNotification('AirplaneModeStatus',
+				{isCapable: value, isEnabled: false});
 				if (this.showAirplanePowerModeSection) {
 					this.getAirplaneModeThinkPad();
 				}
@@ -703,7 +705,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				this.logger.info('getAirplaneModeThinkPad.then', airPlanePowerMode);
 				this.toggleAirplanePowerModeFlag = airPlanePowerMode;
 				this.commonService.sendNotification('AirplaneModeStatus',
-					this.toggleAirplanePowerModeFlag);
+					{isCapable: true, isEnabled: airPlanePowerMode});
 				this.airplanePowerCache.toggleState.status = this.toggleAirplanePowerModeFlag;
 				this.commonService.setLocalStorageValue(LocalStorageKey.AirplanePowerModeCapability, this.airplanePowerCache);
 			}).catch(error => {

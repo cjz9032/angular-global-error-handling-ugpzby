@@ -463,9 +463,9 @@ export class VantageShellService {
 	 * returns CameraPrivacy object from VantageShellService of JS Bridge
 	 */
 	public async deviceFilter(filter) {
-        if (this.phoenix) {
+		if (this.phoenix) {
 			try {
-				const deviceFilterResult = await this.phoenix.deviceFilter.eval(filter);
+				const deviceFilterResult = await this.phoenix.deviceFilter.deviceFilterEval(filter);
 				// console.log('In VantageShellService.deviceFilter. Filter: ', JSON.stringify(filter), deviceFilterResult);
 				return deviceFilterResult;
 			} catch (error) {}

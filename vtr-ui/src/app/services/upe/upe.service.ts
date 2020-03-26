@@ -37,12 +37,6 @@ export class UPEService {
 		this.channelTags = this.commonService.getLocalStorageValue(LocalStorageKey.UPEChannelTags);
 	}
 
-	public filterItems(results, template, position) {
-		return results.filter((record) => {
-			return record.Template === template && record.Position === position;
-		}).sort((a, b) => a.Priority.localeCompare(b.Priority));
-	}
-
 	public async fetchUPEContent(params: IGetContentParam) {
 		if (!params.positions) {
 			throw new Error('invaild positions for fetching upe content');

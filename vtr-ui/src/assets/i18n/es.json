@@ -1332,10 +1332,10 @@
                             "label": "PLAN ACTUAL"
                         },
                         "profile": {
-                            "title": "PLAN PROFILE:",
-                            "performance": "Max performance:",
-                            "temperature": "Max system temperature:",
-                            "usage": "Max power usage:"
+                            "title": "PLAN DE PERFIL:",
+                            "performance": "Rendimiento máximo:",
+                            "temperature": "Temperatura máxima del sistema:",
+                            "usage": "Uso máximo de energía:"
                         }
                     }
                 },
@@ -1514,8 +1514,8 @@
                     "title": "Pantalla",
                     "displayColorTemperature": {
                         "title": "Temperatura del color de visualización",
-                        "description": "Puede ajustar la temperatura del color de la pantalla para filtrar la luz azul y reducir el esfuerzo para los ojos. Ajusta la pantalla a colores más cálidos desde el atardecer al amanecer para ayudarle a dormir.",
-                        "link": {
+						"description": "Puede ajustar la temperatura del color de la pantalla para filtrar la luz azul y reducir el esfuerzo para los ojos. Ajusta la pantalla a colores más cálidos desde el atardecer al amanecer para ayudarle a dormir.",
+						"link": {
                             "click": "Haga clic",
                             "here": "aquí",
                             "rest": "para cambiar la temperatura de color."

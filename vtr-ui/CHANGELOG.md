@@ -7,6 +7,31 @@ All notable changes to this project will be documented in this file. See [standa
 ### [1.5.1](https://bitbucket.tc.lenovo.com///compare/v1.4.7...v1.5.1) (2020-03-23)
 
 ## [1.5.0](https://bitbucket.tc.lenovo.com///compare/v1.4.1...v1.5.0) (2020-03-12)
+### [1.4.14](https://bitbucket.tc.lenovo.com///compare/v1.4.12...v1.4.14) (2020-03-26)
+
+
+### Bug Fixes
+
+* **VAN-15964:** ecm new description i18n ([ac7e994](https://bitbucket.tc.lenovo.com///commit/ac7e99467f2ac03246d7a061dde54d520eec06c2))
+* **VAN-15964:** ecm new description i18n ([fa87148](https://bitbucket.tc.lenovo.com///commit/fa8714890ecb1873c79cb282d7997becef555112))
+
+### [1.4.13](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.4.12...v1.4.13) (2020-03-25)
+
+
+### Bug Fixes
+
+* **VAN-15964:** ecm new description i18n ([ac7e994](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/ac7e99467f2ac03246d7a061dde54d520eec06c2))
+* **VAN-15964:** ecm new description i18n ([fa87148](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/fa8714890ecb1873c79cb282d7997becef555112))
+
+### [1.4.12](https://bitbucket.tc.lenovo.com///compare/v1.4.11...v1.4.12) (2020-03-24)
+
+### [1.4.11](https://bitbucket.tc.lenovo.com///compare/v1.4.10...v1.4.11) (2020-03-23)
+
+### [1.4.10](https://bitbucket.tc.lenovo.com///compare/v1.4.9...v1.4.10) (2020-03-23)
+
+### [1.4.9](https://bitbucket.tc.lenovo.com///compare/v1.4.7...v1.4.9) (2020-03-20)
+
+### [1.4.8](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.4.7...v1.4.8) (2020-03-20)
 
 ### [1.4.7](https://bitbucket.tc.lenovo.com///compare/v1.4.6...v1.4.7) (2020-03-19)
 

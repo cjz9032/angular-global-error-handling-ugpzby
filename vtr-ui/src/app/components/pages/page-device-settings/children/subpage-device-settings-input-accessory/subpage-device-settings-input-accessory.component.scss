@@ -28,7 +28,7 @@
 	.img-preview {
 		background-size: 100% 100%;
 		width: 100%;
-		min-height: 33vh;
+		//min-height: 33vh;
 		height: auto;
 		margin-top: 1rem;
 		@media #{$breakpoint_sm} {
@@ -322,6 +322,23 @@
 			&.icon-teams {
 				background: url('~/assets/images/Microsoft_Teams_1.0.png') center/cover;
 			}
+		}
+	}
+	.keyboard-mapping-background {
+		position: relative;
+		.keyboard-bg {
+			width: 100%;
+			height: auto;
+		}
+		.keyboard-layer {
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			z-index: 1;
+			width: 100%;
+			height: auto;
 		}
 	}
 }
