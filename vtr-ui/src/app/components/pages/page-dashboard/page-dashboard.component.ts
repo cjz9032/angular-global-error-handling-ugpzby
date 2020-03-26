@@ -476,7 +476,8 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 					url: record.FeatureImage,
 					ActionLink: record.ActionLink,
 					ActionType: record.ActionType,
-					DataSource: 'cms'
+					DataSource: 'cms',
+					OverlayTheme: record.OverlayTheme ? record.OverlayTheme : '',
 				};
 			});
 		if (heroBannerItems && heroBannerItems.length && this.cmsHeroBannerChanged(heroBannerItems, this.heroBannerItemsCms)) {
@@ -633,7 +634,8 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 							url: record.FeatureImage,
 							ActionLink: record.ActionLink,
 							ActionType: record.ActionType,
-							DataSource: 'upe'
+							DataSource: 'upe',
+							OverlayTheme: record.OverlayTheme ? record.OverlayTheme : '',
 						};
 					});
 
