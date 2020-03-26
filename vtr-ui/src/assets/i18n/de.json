@@ -1332,10 +1332,10 @@
                             "label": "AKTUELLES SCHEMA"
                         },
                         "profile": {
-                            "title": "PLAN PROFILE:",
-                            "performance": "Max performance:",
-                            "temperature": "Max system temperature:",
-                            "usage": "Max power usage:"
+                            "title": "SCHEMAPROFIL:",
+                            "performance": "Max. Leistung:",
+                            "temperature": "Max. Systemtemperatur:",
+                            "usage": "Max. Energieverbrauch:"
                         }
                     }
                 },
@@ -1514,8 +1514,8 @@
                     "title": "Anzeigen",
                     "displayColorTemperature": {
                         "title": "Farbtemperatur der Anzeige",
-                        "description": "Sie können die Farbtemperatur der Anzeige so anpassen, dass blaues Licht gefiltert und Ihre Augen geschont werden. Stellt die Farbtemperatur der Anzeige in der Zeit zwischen Sonnenuntergang und ‑aufgang auf wärmere Farben ein, um Ihnen das Einschlafen zu erleichtern.",
-                        "link": {
+						"description": "Sie können die Farbtemperatur der Anzeige so anpassen, dass blaues Licht gefiltert und Ihre Augen geschont werden. Stellt die Farbtemperatur der Anzeige in der Zeit zwischen Sonnenuntergang und ‑aufgang auf wärmere Farben ein, um Ihnen das Einschlafen zu erleichtern.",
+						"link": {
                             "click": "Klicken Sie",
                             "here": "hier",
                             "rest": "um die Farbtemperatur zu ändern."

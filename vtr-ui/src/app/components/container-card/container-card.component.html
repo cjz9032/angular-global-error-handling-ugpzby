@@ -37,6 +37,7 @@
 						[style.background-image]="'url(' + item.FeatureImage + ')'"
 						[style.height.px]="containerCardCorner.clientWidth / ratio">
 						<div class="inner-content"
+							title=""
 							*ngIf="!isOfflineArm">
 							<div *ngIf="item.Title"
 								class="title text-ellipsis"
@@ -165,7 +166,8 @@
 						[style.background-image]="'url(' + item.FeatureImage + ')'"
 						[style.height.px]="containerCardHighlight.clientWidth / ratio"
 						style="background-color: #2f3447;">
-						<div class="inner-content">
+						<div class="inner-content"
+							title="">
 							<div *ngIf="item.Title && !isOfflineArm"
 								[title]="item.Title | htmlText"
 								class="title text-ellipsis"
@@ -196,7 +198,8 @@
 				[metricsItemID]="item.Id"
 				target="_blank"
 				rel="noopener">
-				<div class="row">
+				<div class="row"
+					title="">
 					<div class="card-image"
 						[style.background-image]="'url(' + item.FeatureImage + ')'">
 						<div *ngIf="item.BrandImage || item.BrandName"
@@ -254,7 +257,8 @@
 				[metricsItemID]="item.Id"
 				target="_blank"
 				rel="noopener">
-				<div class="row">
+				<div class="row"
+					title="">
 					<div class="card-image"
 						[style.background-image]="'url(' + item.FeatureImage + ')'">
 						<div *ngIf="item.BrandImage || item.BrandName"
@@ -299,8 +303,7 @@
 
 	<div class="container-card card-subpage-corner"
 		*ngIf="type === 'subpage-corner'"
-		#containerCardCornerArticle
-		[style.height.px]="containerCardCornerArticle.clientWidth / ratio">
+		#containerCardCornerArticle>
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col col-12 content">
@@ -318,9 +321,9 @@
 						[metricsItemPosition]="sideFlag + order"
 						[metricsItemID]="item.Id"
 						[style.background-image]="'url(' + item.FeatureImage + ')'"
-						[style.height.px]="containerCardCornerArticle.clientWidth / ratio"
 						id="{{containerCardId+'-article_link'}}">
-						<div class="inner-content">
+						<div class="inner-content"
+							title="">
 							<div *ngIf="item.Title"
 								class="title text-ellipsis"
 								[title]="item.Title | htmlText"
@@ -354,13 +357,20 @@
 
 	<div class="container-card card-subpage-partner-corner"
 		*ngIf="type === 'subpage-partner-corner'"
-		#containerCardSidebarPartnerCorner
-		[style.height.px]="containerCardSidebarPartnerCorner.clientWidth / ratio">
+		#containerCardSidebarPartnerCorner>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col col-12 image"
-					[style.background-image]="'url(' + item.FeatureImage + ')'"
-					[style.height.px]="containerCardSidebarPartnerCorner.clientWidth / ratio">
+				<a class="col col-12 image"
+					[attr.href]="!item.ActionLink ? null : (item.ActionLink | sanitize : 'resourceUrl')"
+					target="_blank"
+					rel="noopener"
+					vtrMetrics
+					id="{{containerCardId+'_side_article'}}"
+					metricsEvent="docClick"
+					[metricsItemID]="item.Id"
+					[metricsItemPosition]="sideFlag + order"
+					metricsItemCategory="partnerarticle"
+					[style.background-image]="'url(' + item.FeatureImage + ')'">
 					<div *ngIf="item.BrandImage || item.BrandName"
 						class="logo">
 						<span class="logo-img">
@@ -371,29 +381,20 @@
 							role="textbox">{{item.BrandName}}</span>
 					</div>
 					<div class="row">
-						<a [attr.href]="!item.ActionLink ? null : (item.ActionLink | sanitize : 'resourceUrl')"
-							target="_blank"
-							rel="noopener"
-							vtrMetrics
-							id="{{containerCardId+'_side_article'}}"
-							metricsEvent="docClick"
-							[metricsItemID]="item.Id"
-							[metricsItemPosition]="sideFlag + order"
-							metricsItemCategory="partnerarticle">
-							<div class="col col-12 content">
-								<div *ngIf="item.Title"
-									class="title text-two-ellipsis"
-									[title]="item.Title | htmlText"
-									[innerHtml]="item.Title"
-									id="{{containerCardId+'-title'}}"
-									role="link"></div>
-								<div *ngIf="item.ActionLink"
-									class="read-more">
-								</div>
+						<div class="col col-12 content"
+							title="">
+							<div *ngIf="item.Title"
+								class="title text-two-ellipsis"
+								[title]="item.Title | htmlText"
+								[innerHtml]="item.Title"
+								id="{{containerCardId+'-title'}}"
+								role="link"></div>
+							<div *ngIf="item.ActionLink"
+								class="read-more">
 							</div>
-						</a>
+						</div>
 					</div>
-				</div>
+				</a>
 			</div>
 			<vtr-container-card-offline [containerCardId]="containerCardId"
 				*ngIf="!isOnline"></vtr-container-card-offline>

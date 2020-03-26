@@ -1332,10 +1332,10 @@
                             "label": "PLÁN PRÚDU"
                         },
                         "profile": {
-                            "title": "PLAN PROFILE:",
-                            "performance": "Max performance:",
-                            "temperature": "Max system temperature:",
-                            "usage": "Max power usage:"
+                            "title": "PROFIL PLÁNU:",
+                            "performance": "Max. výkon:",
+                            "temperature": "Max. teplota systému:",
+                            "usage": "Max. spotreba:"
                         }
                     }
                 },
@@ -1514,8 +1514,8 @@
                     "title": "Obrazovka",
                     "displayColorTemperature": {
                         "title": "Teplota farieb obrazovky",
-                        "description": "Môžete upraviť teplotu farieb obrazovky a vyžarovanie modrého svetla na zníženie únavy zraku. Táto funkcia prispôsobuje farby zobrazovacích jednotiek na teplejšie tóny pri západe a východe slnka, aby ste mohli lepšie spať.",
-                        "link": {
+						"description": "Môžete upraviť teplotu farieb obrazovky a vyžarovanie modrého svetla na zníženie únavy zraku. Táto funkcia prispôsobuje farby zobrazovacích jednotiek na teplejšie tóny pri západe a východe slnka, aby ste mohli lepšie spať.",
+						"link": {
                             "click": "Kliknite",
                             "here": "sem",
                             "rest": "a zmeňte teplotu farieb."

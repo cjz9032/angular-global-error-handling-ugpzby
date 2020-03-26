@@ -32,7 +32,6 @@ import { ConfigService } from 'src/app/services/config/config.service';
 })
 export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	@Input() data: WifiHomeViewModel;
-	@Input() switchDisabled = false;
 	isShowMore = true; // less info, more info
 	isShowMoreLink = true; // show more link
 	isWifiSecurityEnabled = true;

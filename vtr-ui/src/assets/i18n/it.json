@@ -1332,10 +1332,10 @@
                             "label": "PIANO CORRENTE"
                         },
                         "profile": {
-                            "title": "PLAN PROFILE:",
-                            "performance": "Max performance:",
-                            "temperature": "Max system temperature:",
-                            "usage": "Max power usage:"
+                            "title": "PIANO DEL PROFILO:",
+                            "performance": "Prestazioni massime:",
+                            "temperature": "Temperatura massima di sistema:",
+                            "usage": "Massimo consumo energetico:"
                         }
                     }
                 },
@@ -1514,8 +1514,8 @@
                     "title": "Schermo",
                     "displayColorTemperature": {
                         "title": "Temperatura colore schermo",
-                        "description": "Puoi regolare la temperatura del colore dello schermo per filtrare la luce blu e ridurre l'affaticamento degli occhi. Ti consente di regolare lo schermo con colori più caldi dal tramonto all'alba, per favorire il riposo notturno.",
-                        "link": {
+						"description": "È possibile regolare la temperatura del colore dello schermo per filtrare la luce blu e ridurre l'affaticamento degli occhi. Consente di regolare gli schermi con colori più caldi dal tramonto all'alba, per favorire il riposo notturno.",
+						"link": {
                             "click": "Fare clic",
                             "here": "qui",
                             "rest": "per modificare la temperatura del colore."
