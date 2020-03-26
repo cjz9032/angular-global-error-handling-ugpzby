@@ -61,34 +61,34 @@ export class ActiveProtectionSystemAdvancedComponent implements OnInit {
 	constructor(private smartAssist: SmartAssistService, private translate: TranslateService) { }
 
 	ngOnInit() {
-        this.populateIntervals();
-        this.initAPSAdvanced();
-    }
+		this.populateIntervals();
+		this.initAPSAdvanced();
+	}
 	initAPSAdvanced() {
 		this.smartAssist
 			.getPenSetting()
 			.then(res => {
-            this.penStatus = res;
-            this.smartAssist
-                .getPenDelayTime()
-                .then(response => {
-                this.penDelay = response;
-            })
-                .catch(error => {});
-        })
-			.catch(error => {});
+				this.penStatus = res;
+				this.smartAssist
+					.getPenDelayTime()
+					.then(response => {
+						this.penDelay = response;
+					})
+					.catch(error => { });
+			})
+			.catch(error => { });
 		this.smartAssist
 			.getTouchInputSetting()
 			.then(res => {
-            this.touchStatus = res;
-        })
-			.catch(error => {});
+				this.touchStatus = res;
+			})
+			.catch(error => { });
 		this.smartAssist
 			.getPSensorSetting()
 			.then(res => {
-            this.pSensorStatus = res;
-        })
-			.catch(error => {});
+				this.pSensorStatus = res;
+			})
+			.catch(error => { });
 	}
 	setPenSetting(event) {
 		const value = !this.penStatus;
@@ -96,55 +96,56 @@ export class ActiveProtectionSystemAdvancedComponent implements OnInit {
 		this.smartAssist
 			.setPenSetting(value)
 			.then(res => {
-            this.smartAssist
-                .getPenDelayTime()
-                .then(response => {
-                this.penDelay = response;
-            })
-                .catch(error => {});
-        })
-			.catch(err => {});
+				this.smartAssist
+					.getPenDelayTime()
+					.then(response => {
+						this.penDelay = response;
+					})
+					.catch(error => { });
+			})
+			.catch(err => { });
 	}
 	setPenDelayTime(event) {
 		const value = event.value;
+		this.penDelay = value;
 		this.smartAssist
 			.setPenDelayTime(value)
 			.then(res => {
-            this.smartAssist
-                .getPenDelayTime()
-                .then(response => {
-                this.penDelay = response;
-            })
-                .catch(error => {});
-        })
-			.catch(err => {});
+				this.smartAssist
+					.getPenDelayTime()
+					.then(response => {
+						this.penDelay = response;
+					})
+					.catch(error => { });
+			})
+			.catch(err => { });
 	}
 	setTouchInputSetting(event) {
 		const value = !this.touchStatus;
 		this.smartAssist
 			.setTouchInputSetting(value)
 			.then(res => {
-            this.smartAssist
-                .getTouchInputSetting()
-                .then(response => {
-                this.touchStatus = response;
-            })
-                .catch(error => {});
-        })
-			.catch(err => {});
+				this.smartAssist
+					.getTouchInputSetting()
+					.then(response => {
+						this.touchStatus = response;
+					})
+					.catch(error => { });
+			})
+			.catch(err => { });
 	}
 	setPSensorSetting(event) {
 		const value = !this.pSensorStatus;
 		this.smartAssist
 			.setPSensorSetting(value)
 			.then(res => {
-            this.smartAssist
-                .getPSensorSetting()
-                .then(response => {
-                this.pSensorStatus = response;
-            })
-                .catch(error => {});
-        })
-			.catch(err => {});
+				this.smartAssist
+					.getPSensorSetting()
+					.then(response => {
+						this.pSensorStatus = response;
+					})
+					.catch(error => { });
+			})
+			.catch(err => { });
 	}
 }
