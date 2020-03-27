@@ -1902,6 +1902,11 @@ export class VantageShellService {
 			getThermalModeStatus: this.getPromise(true),
 			setThermalModeStatus: this.getPromise(true),
 			regThermalModeEvent: this.getPromise(true),
+			getAutoSwitchStatus: this.getPromise(true),
+			regThermalModeRealStatusEvent: this.getPromise(true),
+			setAutoSwitchStatus: this.getPromise(true),
+			getThermalModeRealStatus: this.getPromise(true),
+
 		};
 		return gamingThermalMode;
 	}
