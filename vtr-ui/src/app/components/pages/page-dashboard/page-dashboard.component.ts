@@ -331,16 +331,6 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	}
 
 	private fetchCMSContent(lang?: string) {
-		const cmsLang = this.dashboardService.cmsLanguageCache;
-		const cmsContent = this.dashboardService.cmsContentCache;
-		const cmsSegment = this.dashboardService.cmsSegmentCache;
-		const selfSelectConfig = this.commonService.getLocalStorageValue(LocalStorageKey.ChangedSelfSelectConfig, undefined);
-
-		if (cmsSegment === selfSelectConfig?.segment && cmsLang === lang && cmsContent?.length > 0) {
-			this.populateCMSContent(cmsContent);
-			return;
-		}
-
 		const callCmsStartTime: any = new Date();
 		let queryOptions: any = {
 			Page: 'dashboard'
@@ -358,9 +348,6 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 				const callCmsEndTime: any = new Date();
 				const callCmsUsedTime = callCmsEndTime - callCmsStartTime;
 				if (response && response.length > 0) {
-					this.dashboardService.cmsContentCache = response;
-					this.dashboardService.cmsLanguageCache = lang;
-					this.dashboardService.cmsSegmentCache = selfSelectConfig.segment;
 					this.logger.info(`Performance: Dashboard page get cms content, ${callCmsUsedTime}ms`);
 					this.populateCMSContent(response);
 
