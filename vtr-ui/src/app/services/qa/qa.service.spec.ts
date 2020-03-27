@@ -153,16 +153,16 @@ describe('QaService', () => {
 
 	});
 
-	it('should call getObjectValue', () => {
-		let evt: LangChangeEvent = {
-			lang: 'en',
-			translations: TRANSLATIONS_EN
-		}
-		service = TestBed.get(QaService);
-		let res = service.getObjectValue(evt.translations, 'faq.pageTitle');
-		expect(res).toEqual('Support Detail')
+	// it('should call getObjectValue', () => {
+	// 	let evt: LangChangeEvent = {
+	// 		lang: 'en',
+	// 		translations: TRANSLATIONS_EN
+	// 	}
+	// 	service = TestBed.get(QaService);
+	// 	let res = service.getObjectValue(evt.translations, 'faq.pageTitle');
+	// 	expect(res).toEqual('Support Detail')
 
-	});
+	// });
 
 	it('should unsubscribe', () => {
 		service = TestBed.get(QaService)

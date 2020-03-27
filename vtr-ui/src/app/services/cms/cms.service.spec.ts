@@ -188,65 +188,65 @@ describe("CMSService", () => {
 		expect(spy).toHaveBeenCalled()
 	}));
 
-	it('should call getCMSContent - if reason', async(() => {
-		service = TestBed.get(CMSService)
-		commService = TestBed.get(CommsService)
-		// const httpOptions = {
-		// 	headers: new HttpHeaders({
-		// 		'Content-Type': 'application/json',
-		// 	})
-		// };
-		const CMSOption = {
-			Lang: 'en',
-			GEO: 'us',
-			OEM: 'Lenovo',
-			OS: 'Windows',
-			Segment: 'Consumer',
-			Brand: 'Lenovo',
-		}
-		const dataE: any = {}
-		// const subscriber = {
-		// 	next(res) {
-		// 		return res
-		// 	},
-		// 	complete() {
-		// 		return
-		// 	},
-		// 	error(err) {
-		// 		return err
-		// 	}
-		// }
-		const spy = spyOn<any>(commService, 'endpointGetCall').and.returnValue(of(dataE))
-		service.getCMSContent(CMSOption)
-		expect(spy).toHaveBeenCalled()
-	}));
+	// it('should call getCMSContent - if reason', async(() => {
+	// 	service = TestBed.get(CMSService)
+	// 	commService = TestBed.get(CommsService)
+	// 	// const httpOptions = {
+	// 	// 	headers: new HttpHeaders({
+	// 	// 		'Content-Type': 'application/json',
+	// 	// 	})
+	// 	// };
+	// 	const CMSOption = {
+	// 		Lang: 'en',
+	// 		GEO: 'us',
+	// 		OEM: 'Lenovo',
+	// 		OS: 'Windows',
+	// 		Segment: 'Consumer',
+	// 		Brand: 'Lenovo',
+	// 	}
+	// 	const dataE: any = {}
+	// 	// const subscriber = {
+	// 	// 	next(res) {
+	// 	// 		return res
+	// 	// 	},
+	// 	// 	complete() {
+	// 	// 		return
+	// 	// 	},
+	// 	// 	error(err) {
+	// 	// 		return err
+	// 	// 	}
+	// 	// }
+	// 	const spy = spyOn<any>(commService, 'endpointGetCall').and.returnValue(of(dataE))
+	// 	service.getCMSContent(CMSOption)
+	// 	expect(spy).toHaveBeenCalled()
+	// }));
 
-	it('should call getCMSContent - error', async(() => {
-		// const subscriber = {
-		// 	next(res) {
-		// 		return res
-		// 	},
-		// 	complete() {
-		// 		return
-		// 	},
-		// 	error(err) {
-		// 		return err
-		// 	}
-		// }
-		const CMSOption = {
-			Lang: 'en',
-			GEO: 'us',
-			OEM: 'Lenovo',
-			OS: 'Windows',
-			Segment: 'Consumer',
-			Brand: 'Lenovo',
-		}
-		service = TestBed.get(CMSService)
-		commService = TestBed.get(CommsService)
-		const spy = spyOn<any>(commService, 'endpointGetCall').and.returnValue(throwError({status: 404}))
-		service.getCMSContent(CMSOption);
-		expect(spy).toHaveBeenCalled()
-	}));
+	// it('should call getCMSContent - error', async(() => {
+	// 	// const subscriber = {
+	// 	// 	next(res) {
+	// 	// 		return res
+	// 	// 	},
+	// 	// 	complete() {
+	// 	// 		return
+	// 	// 	},
+	// 	// 	error(err) {
+	// 	// 		return err
+	// 	// 	}
+	// 	// }
+	// 	const CMSOption = {
+	// 		Lang: 'en',
+	// 		GEO: 'us',
+	// 		OEM: 'Lenovo',
+	// 		OS: 'Windows',
+	// 		Segment: 'Consumer',
+	// 		Brand: 'Lenovo',
+	// 	}
+	// 	service = TestBed.get(CMSService)
+	// 	commService = TestBed.get(CommsService)
+	// 	const spy = spyOn<any>(commService, 'endpointGetCall').and.returnValue(throwError({status: 404}))
+	// 	service.getCMSContent(CMSOption);
+	// 	expect(spy).toHaveBeenCalled()
+	// }));
 
 	it('should call fetchCMSArticleCategories', async(() => {
 		const results = {
