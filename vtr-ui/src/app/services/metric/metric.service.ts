@@ -21,7 +21,7 @@ export class MetricService {
 	private suspendDurationCounter;
 	private dashboardFirstLoaded = 0;
 	private hasSendAppLoadedEvent = false;
-
+	public readonly isFirstLaunch: boolean;
 	constructor(
 		private shellService: VantageShellService,
 		private timerService: DurationCounterService,
@@ -29,6 +29,10 @@ export class MetricService {
 		private commonService: CommonService,
 	) {
 		this.metricsClient = this.shellService.getMetrics();
+		this.isFirstLaunch = !this.commonService.getLocalStorageValue(LocalStorageKey.HadRunApp);
+		if (this.isFirstLaunch) {
+			this.commonService.setLocalStorageValue(LocalStorageKey.HadRunApp, true);
+		}
 
 		if (this.metricsClient) {
 			MetricHelper.initializeMetricClient(this.metricsClient, shellService, commonService, hypothesisService);
@@ -115,7 +119,6 @@ export class MetricService {
 		const scale = window.devicePixelRatio || 1;
 		const displayWidth = window.screen.width;
 		const displayHeight = window.screen.height;
-		const isFirstLaunch: boolean = !this.commonService.getLocalStorageValue(LocalStorageKey.HadRunApp);
 		this.metricsClient.sendAsync(
 			new GetEnvInfo({
 				imcVersion,
@@ -126,7 +129,7 @@ export class MetricService {
 					displayHeight * scale / 100
 				) * 100}`,
 				scalingSize: scale, // this value would is accurate in edge
-				isFirstLaunch
+				isFirstLaunch: this.isFirstLaunch
 			})
 		);
 	}
