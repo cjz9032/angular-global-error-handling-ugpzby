@@ -170,9 +170,6 @@ export class ArticleClick extends IMetricEvent {
 }
 
 export class ArticleView extends IMetricEvent {
-	public metricsItem: string;
-	public metricsParent: string;
-
 	constructor(itemID, itemParent, itemCategory, duration: number, docReadPosition: number, mediaReadPosition: number) {
 		super();
 		this.ItemType = EventName.FeatureClick;
@@ -188,6 +185,7 @@ export class ArticleView extends IMetricEvent {
 	public ItemParent: string;
 	public ItemCategory: string;
 	public Duration: number;
+	public DurationBlur: number;
 	public DocReadPosition: number;
 	public MediaReadPosition: number;
 }
