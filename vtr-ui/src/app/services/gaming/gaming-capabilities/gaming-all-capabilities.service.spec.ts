@@ -35,7 +35,7 @@ describe('Shared service:', () => {
     shellService = TestBed.get(VantageShellService);
   });
   
-  fdescribe('GamingAllCapabilitiesService', () => {
+  describe('GamingAllCapabilitiesService', () => {
 
     function setup() {
       // tslint:disable-next-line: no-shadowed-variable
