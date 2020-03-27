@@ -746,10 +746,11 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 				.getEyeCareModeState()
 				.then((featureStatus: FeatureStatus) => {
 					this.logger.debug('getEyeCareModeState.then', featureStatus);
-					this.eyeCareModeStatus = featureStatus;
 					if (this.isSet.isSetEyecaremodeStatus) {
 						this.eyeCareModeStatus.status = this.setValues.SetEyecaremodeStatus;
 						this.isSet.isSetEyecaremodeStatus = false;
+					} else {
+						this.eyeCareModeStatus = featureStatus;
 					}
 					if (!isMissingGraphicDriver) {
 						this.enableSlider = featureStatus.status;
