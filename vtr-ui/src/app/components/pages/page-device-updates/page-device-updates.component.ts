@@ -511,7 +511,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 				centered: true,
 				windowClass: 'common-confirmation-modal'
 			});
-		//VAN-16194 touch screen cannot show this modal
+		// VAN-16194 touch screen cannot show this modal
 		this.changeCheckboxDisplay('none');
 		setTimeout(() => {
 			this.changeCheckboxDisplay('');
@@ -968,9 +968,9 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 	private changeCheckboxDisplay(displayValue: string) {
-		const elementCheckbox = document.querySelectorAll('.custom-control-input');
-		for (let i = 0; i < elementCheckbox.length; i++) {
-			(elementCheckbox[i] as HTMLElement).style.display = displayValue;
-		}
+		const elementCheckboxes = document.querySelectorAll('.custom-control-input');
+		elementCheckboxes.forEach((elementCheckbox: HTMLElement) => {
+			elementCheckbox.style.display = displayValue;
+		});
 	}
 }
