@@ -102,7 +102,7 @@
 					"line9": "<b>Touchpad Lock </b><br> Prevent mistaken inputs by disabling the touchpad while gaming",
 					"line10": "<b>Auto Close </b><br> Clear processes that are not needed for gaming before you start playing to maximize available system resources",
 					"line11": "<b>Thermal Mode </b><br> Set your preferred device profile for fan speed and cooling control",
-					"line12": "<b>Macro key </b><br> Customize your keyboard actions to suit your playing style"
+					"line12": "<b>Macro key </b><br> Customize your keyboard actions to suit your playing style"
 				},
 				"systemInfo": {
 					"systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
@@ -1060,7 +1060,7 @@
 					"NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
 					"LimitedACAdapterSupport": "<b>AC adapter cannot provide enough power.</b>",
 					"LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter.",
-					"MissingDriver": "<b>The Lenovo Power Manager driver</b> is not installed or not working properly. Please run Windows Update to install the latest driver. You also can install the driver from <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">here</a>. After the installation, restart your computer.",
+					"MissingDriver": "<b>The Lenovo Power Manager driver</b> is not installed or not working properly. Please run Windows Update or manually install it from <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">here</a>. After the installation, restart your computer.",
 					"StoreLimitation": "<b>The battery can only store {{value}}% of</b> it's original full charge capacity.",
 					"HighTemperature": "<b>Discharging</b> has been stopped because the <b>battery temperature is too high.</b>",
 					"TrickleCharge": "The battery was <b>completely discharged</b> and needs to be recharged. This might take ten hours or more.",
@@ -1425,6 +1425,12 @@
 						"description": "Choose a power plan to control the computer performance, system temperature, and power usage.",
 						"currentPowerPlan": {
 							"label": "CURRENT PLAN"
+						},
+						"profile": {
+							"title": "PLAN PROFILE:",
+							"performance": "Max performance:",
+							"temperature": "Max system temperature:",
+							"usage": "Max power usage:"
 						}
 					}
 				}
@@ -1510,7 +1516,7 @@
 					"title": "Display",
 					"displayColorTemperature": {
 						"title": "Display color temperature",
-						"description": "You can adjust the color temperature of your display to emit blue light and reduce eye strain. Adjusts displays to warmer colors during sunset to sunrise to help you sleep.",
+						"description": "You can adjust the color temperature of your display to filter blue light and reduce eye strain. Adjusts displays to warmer colors during sunset to sunrise to help you sleep.",
 						"link": {
 							"click": "Click",
 							"here": "here",
@@ -1846,7 +1852,7 @@
 				"readMore": "Read more",
 				"image": {
 					"title": "Intelligent security",
-					"description": "Buckles up your PC with intelligent  sensing technology, protects your  privacy, and saves your battery power."
+					"description": "Buckles up your PC with intelligent sensing technology, protects your privacy, and saves your battery power."
 				},
 				"HumanPresenceDetection": {
 					"title": "Human Presence Detection",
@@ -1859,7 +1865,12 @@
 				"zeroTouchLogin": {
 					"title": "Zero Touch Login",
 					"caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it.",
-					"tooltip": "When you are in front of your computer or approaching it (within 1.2 or 1.5 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+					"tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+				},
+				"zeroTouchLoginForIdea": {
+					"title": "Zero Touch Login",
+					"caption": "Experience the zero touch wake and login function to improve your work efficiency. You need register your face in Windows Hello to active the auto login function.",
+					"tooltip": "When you are in front of your computer or approaching it (within 1.2 or 1.5 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer. The maximum detecting distance depends on the sensor capability. You could refer to your user guide for the exact value."
 				},
 				"zeroTouchLock": {
 					"title": "Zero Touch Lock",
@@ -1875,7 +1886,7 @@
 					},
 					"facialRecognition": {
 						"title": "FACIAL RECOGNITION",
-						"caption": "You can enable the facial recognition feature and allow it to access your camera. This tool captures your image in order to accurately recognize your presence or detect when you have left your device unattended. This data is processed locally on your device. Lenovo does not access or use it.",
+						"caption": "Active FACIAL RECOGNITION feature to improve the recognition performance and avoid unintentionally screen lock in some cases, especially when you sit and lean against chair back. This featue is processed locally on your device. Lenovo does not access or use it.",
 						"checkBox": "Turn on the camera and enable this feature",
 						"note": {
 							"permission": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
@@ -1885,21 +1896,18 @@
 						}
 					},
 					"distanceSensitivityAdjusting": {
-						"title": "DISTANCE SENSITIVITY ADJUSTING",
-						"caption": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy. ",
+						"title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
+						"caption": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy.",
 						"options": {
 							"near": "Near",
 							"medium": "Middle",
 							"far": "Far"
 						},
-						"readMoreForSensor1": {
-							"line1": "If no human movement is detected within 1.2 meter,  it will recognize as human leave and lock the screen."
-						},
-						"readMoreForSensor2": {
-							"line1": "There are three options. In each range, when human movements are not detected, your screen will be locked accordingly. ",
-							"line2": "• Near: 0.9 meter ",
-							"line3": "• Middle: 1.2 meter ",
-							"line4": "• Far: 1.5 meter "
+						"readMore": {
+							"line1": "It will lock your screen to avoid unauthorized access to your device if not able to detecting any movement within the specific distance. Adjust the distance according to your preference.",
+							"line2": "• Near: 0.9 meter",
+							"line3": "• Middle: 1.2 meter",
+							"line4": "• Far: 1.5 meter"
 						}
 					}
 				},
@@ -1908,23 +1916,11 @@
 				},
 				"distanceSensitivityAdjusting": {
 					"title": "DISTANCE SENSITIVITY ADJUSTING",
-					"caption": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy. ",
+					"caption": "Distance Sensitivity Adjusting will automatically update the detection distance via an AI engine.",
 					"options": {
 						"near": "Near",
 						"medium": "Middle",
 						"far": "Far"
-					},
-					"readMoreForSensor1": {
-						"line1": "There are three options. In each range, when human movements are detected, your screen will be waked up accordingly. ",
-						"line2": "• Near: 0.4 meter ",
-						"line3": "• Middle: 0.6 meter ",
-						"line4": "• Far: 1.2 meter "
-					},
-					"readMoreForSensor2": {
-						"line1": "There are three options. In each range, when human movements are detected, your screen will be waked up accordingly. ",
-						"line2": "• Near: 0.2-0.55 meter ",
-						"line3": "• Middle: 0.2-1.0 meter ",
-						"line4": "• Far: 0.2-1.5 meter "
 					},
 					"tooltipcontent": {
 						"context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1938,12 +1934,33 @@
 						}
 					}
 				},
+				"distanceSensitivityAdjustingForIdea": {
+					"title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
+					"caption": "This feature will automatically adjust the detecting distance of any movement to wake up system. Turn it off, you can maually adjust the dectecting sensitivity based on your preference.",
+					"options": {
+						"near": "Near",
+						"medium": "Middle",
+						"far": "Far"
+					},
+					"readMoreForSensor1": {
+						"line1": "There are three options. In each range, when human movements are detected, your screen will be waked up accordingly.",
+						"line2": "• Near: 0-0.4 meter",
+						"line3": "• Middle: 0-0.6 meter",
+						"line4": "• Far: 0-1.2 meter"
+					},
+					"readMoreForSensor2": {
+						"line1": "There are three options. In each range, when human movements are detected, your screen will be waked up accordingly.",
+						"line2": "• Near: 0.2-0.55 meter",
+						"line3": "• Middle: 0.2-1.0 meter",
+						"line4": "• Far: 0.2-1.5 meter"
+					}
+				},
 				"note": {
 					"description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
 					"description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect any personal data.",
-					"description3": "1. If your computer supports multiple modes, be aware this feature might not work appropriately in Tent, Tablet, or Stand mode and Detached mode. Please refer to User Guide for your device modes.",
-					"description4": "2. If your computer is in hibernation mode or has been turned off，Auto IR camera login will not work.",
-					"description5": "3. Please adjust your computer screen to an appropriate angle so that the IR camera can recognize your face for auto login. The recommended screen angle is 105 to 120 degree.",
+					"description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
+					"description4": "2. If your computer is in hibernation mode or has been turned off, Zero Touch Login will not work.",
+					"description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login.",
 					"description6": "4. If the Airplane mode is enabled on your computer, these features are disabled.",
 					"description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
 				},
@@ -2558,6 +2575,7 @@
 			"description": "Contact us to help you out.",
 			"listLenovoCommunity": "Lenovo Community",
 			"listContactCustomerService": "Contact customer service",
+			"listYourVirtualAssistant": "Your virtual assistant",
 			"listContactUsOnWechat": "Contact us on WeChat",
 			"weChatDescription": "Shoot us a question on WeChat and we’ll be sure to respond quickly",
 			"listFindUs": "Find us on social media",
@@ -3540,7 +3558,8 @@
 	"notification": {
 		"menu": {
 			"security": "Do you know? Even you don't have anti-virus software installed, we still provide basic security protection for your device.",
-			"connectedHomeSecurity": "Get real-time monitoring and alerts about your network security at home. You will be the first one to know if any of your smart devices are facing a security attack."
+			"connectedHomeSecurity": "Get real-time monitoring and alerts about your network security at home. You will be the first one to know if any of your smart devices are facing a security attack.",
+			"hardwareScan": "Now you can get your system hardware component's health status."
 		}
 	},
 	"appsForYou": {
@@ -3596,6 +3615,6 @@
 		}
 	},
 	"cpt": {
-        "title": "Content Preview Tool"
-    }
+		"title": "Content Preview Tool"
+	}
 }

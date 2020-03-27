@@ -68,8 +68,6 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	public zeroTouchLockShowAdvancedSection = false;
 	public zeroTouchPresenceLeaveDistanceCapability = false;
 	public zeroTouchPresenceLeaveDistanceAutoAdjustCapability = false;
-	public zeroTouchLoginDistanceReadMoreClick = false;
-	public zeroTouchLockDistanceReadMoreClick = false;
 
 	headerMenuItems: PageAnchorLink[] = [
 		{
@@ -181,6 +179,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				this.isAPSAvailable = this.smartAssistCache.isAPSAvailable;
 				this.hpdSensorType = this.smartAssistCache.hpdSensorType;
 				this.sensitivityVisibility = this.smartAssistCache.sensitivityVisibility;
+				this.image = this.smartAssistCache.image;
 			} else {
 				this.smartAssistCache = new SmartAssistCache();
 				this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
@@ -189,6 +188,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				this.smartAssistCache.isAPSAvailable = this.isAPSAvailable;
 				this.smartAssistCache.hpdSensorType = this.hpdSensorType;
 				this.smartAssistCache.sensitivityVisibility = this.sensitivityVisibility;
+				this.smartAssistCache.image = this.image;
 				this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
 			}
 		} catch (error) {
@@ -293,6 +293,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				this.hsaIntelligentSecurity = this.smartAssistCapability.isHsaIntelligentSecuritySupported;
 				this.getHsaIntelligentSecurityStatus();
 			}
+			this.smartAssistCache.image = this.image;
 			this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
 		}
 	}
