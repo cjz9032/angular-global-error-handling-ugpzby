@@ -279,6 +279,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 
 	initDataFromCache() {
 		try {
+			this.initEyeCareModeFromCache();
 			this.initCameraPrivacyFromCache();
 			this.initPriorityControlFromCache();
 		} catch (error) {
