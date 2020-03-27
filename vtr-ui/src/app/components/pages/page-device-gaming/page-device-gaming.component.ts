@@ -140,8 +140,8 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 			Page: 'dashboard'
 		};
 		if (this.isOnline) {
-			if (this.dashboardService.cardContentPositionDOnline) {
-				this.cardContentPositionD = this.dashboardService.cardContentPositionDOnline;
+			if (this.dashboardService.onlineCardContent.positionD) {
+				this.cardContentPositionD = this.dashboardService.onlineCardContent.positionD;
 			}
 		}
 		this.cmsService.fetchCMSContent(queryOptions).subscribe(
@@ -149,7 +149,7 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 				const callCmsEndTime: any = new Date();
 				const callCmsUsedTime = callCmsEndTime - callCmsStartTime;
 				if (response && response.length > 0) {
-					if (!this.dashboardService.cardContentPositionDOnline) {
+					if (!this.dashboardService.onlineCardContent.positionD) {
 						const cardContentPositionD = this.cmsService.getOneCMSContent(
 							response,
 							'full-width-title-image-background',
@@ -157,10 +157,10 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 						)[0];
 						if (cardContentPositionD) {
 							this.cardContentPositionD = cardContentPositionD;
-							this.dashboardService.cardContentPositionDOnline = cardContentPositionD;
+							this.dashboardService.onlineCardContent.positionD = cardContentPositionD;
 						}
 					} else {
-						this.cardContentPositionD = this.dashboardService.cardContentPositionDOnline;
+						this.cardContentPositionD = this.dashboardService.onlineCardContent.positionD;
 					}
 				} else {
 					const msg = `Performance: Dashboard page not have this language contents, ${callCmsUsedTime}ms`;
@@ -175,7 +175,7 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 	public onConnectivityClick($event: any) {}
 
 	private getPreviousContent() {
-		this.cardContentPositionD = this.dashboardService.cardContentPositionD;
+		this.cardContentPositionD = this.dashboardService.offlineCardContent.positionD;
 	}
 
 	private getSystemInfo() {
