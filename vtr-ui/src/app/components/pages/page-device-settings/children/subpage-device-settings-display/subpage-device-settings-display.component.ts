@@ -569,15 +569,11 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		this.enableSlider = false;
 		this.logger.debug('onEyeCareModeStatusToggle', this.eyeCareModeStatus.status);
 		if (event.switchValue) {
-			// toggle on
 			if (this.eyeCareDataSource.current < 3400 && !this.isSet.isSetEyecaremodeValue) {
-				// 下面那行
 				this.onEyeCareTemparatureChange({value: 3400});
 			}
 		} else {
-			// toggle off
 			if (this.displayColorTempCache.current < 3400 && !this.isSet.isSetDaytimeColorTemperatureValue) {
-				// 上面那行
 				this.onSetChangeDisplayColorTemp({value: 3400});
 			}
 		}
@@ -690,23 +686,11 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 			this.displayService.getDaytimeColorTemperature()
 		]).then(([status, displayColorTemperature, daytimeColorTemperature]) => {
 			if (status.status) {
-				// toggle on
-				// if (daytimeColorTemperature.current < 3400 && !this.isSet.isSetDaytimeColorTemperatureValue) {
-				// 	// 上面那行
-				// 	this.onSetChangeDisplayColorTemp({value: 3400}, 'True');
-				// }
 				if (displayColorTemperature.current < 3400 && !this.isSet.isSetEyecaremodeValue) {
-					// 下面那行
 					this.onEyeCareTemparatureChange({value: 3400});
 				}
 			} else {
-				// toggle off
-				// if (displayColorTemperature.current < 3400 && !this.isSet.isSetEyecaremodeValue) {
-				// 	// 下面那行
-				// 	this.onEyeCareTemparatureChange({value: 3400}, 'True');
-				// }
 				if (daytimeColorTemperature.current < 3400 && !this.isSet.isSetDaytimeColorTemperatureValue) {
-					// 上面那行
 					this.onSetChangeDisplayColorTemp({value: 3400});
 				}
 			}
@@ -839,15 +823,11 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 							this.eyeCareDataSource.current = response.colorTemperature;
 							this.eyeCareModeStatus.status = response.eyecaremodeState;
 							if (this.eyeCareModeStatus.status) {
-								// toggle on
 								if (this.eyeCareDataSource.current < 3400 && !this.isSet.isSetEyecaremodeValue) {
-									// 下面那行
 									this.onEyeCareTemparatureChange({value: 3400});
 								}
 							} else {
-								// toggle off
 								if (this.displayColorTempCache.current < 3400 && !this.isSet.isSetDaytimeColorTemperatureValue) {
-									// 上面那行
 									this.onSetChangeDisplayColorTemp({value: 3400});
 								}
 							}
