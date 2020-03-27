@@ -4,14 +4,15 @@ import { CMSService } from 'src/app/services/cms/cms.service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { ActivatedRoute } from '@angular/router';
-import { TimerService } from 'src/app/services/timer/timer.service';
+import { DurationCounterService } from 'src/app/services/timer/timer-service-ex.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { MetricService } from 'src/app/services/metric/metric.service';
 
 @Component({
 	selector: 'vtr-modal-article-detail',
 	templateUrl: './modal-article-detail.component.html',
 	styleUrls: ['./modal-article-detail.component.scss'],
-	providers: [TimerService]
+	providers: [DurationCounterService]
 })
 export class ModalArticleDetailComponent implements OnInit, AfterViewInit {
 	articleId: string;
@@ -19,9 +20,10 @@ export class ModalArticleDetailComponent implements OnInit, AfterViewInit {
 	articleImage = '';
 	articleBody: SafeHtml = '';
 	articleCategory: string;
-	metricClient: any;
 	enterTime: number;
 	metricsParent = '';
+	focusDurationCounter = null;
+	blurDurationCounter = null;
 
 	AllContentStatus = {
 		Loading: 1,
@@ -33,14 +35,12 @@ export class ModalArticleDetailComponent implements OnInit, AfterViewInit {
 	constructor(
 		public activeModal: NgbActiveModal,
 		private cmsService: CMSService,
-		vantageShellService: VantageShellService,
 		private activatedRoute: ActivatedRoute,
 		private sanitizer: DomSanitizer,
-		private element: ElementRef,
-		private timerService: TimerService,
-		private logger: LoggerService
+		private timerService: DurationCounterService,
+		private logger: LoggerService,
+		private metricService: MetricService
 	) {
-		this.metricClient = vantageShellService.getMetrics();
 		this.metricsParent = this.getPageName(activatedRoute) + '.Article';
 	}
 
@@ -76,7 +76,8 @@ export class ModalArticleDetailComponent implements OnInit, AfterViewInit {
 			}
 		);
 
-		this.timerService.start();
+		this.focusDurationCounter = this.timerService.getFocusDurationCounter();
+		this.blurDurationCounter = this.timerService.getBlurDurationCounter();
 	}
 
 	ngAfterViewInit() {
@@ -86,11 +87,11 @@ export class ModalArticleDetailComponent implements OnInit, AfterViewInit {
 	private getPageName(activatedRoute: ActivatedRoute) {
 		try {
 			return activatedRoute.children[0].firstChild.routeConfig.data.pageName;
-		} catch (ex) {}
+		} catch (ex) { }
 
 		try {
 			return activatedRoute.firstChild.snapshot.data.pageName;
-		} catch (ex) {}
+		} catch (ex) { }
 
 		return undefined;
 	}
@@ -106,26 +107,25 @@ export class ModalArticleDetailComponent implements OnInit, AfterViewInit {
 	}
 
 	sendArticleViewMetric() {
-		if (this.metricClient) {
-			const modalElement = this.element.nativeElement.closest('ngb-modal-window');
-			const articleBox = document.querySelector('.article-content') as HTMLElement;
-			const articleContent = document.querySelector('.article-body') as HTMLElement;
-			let DocReadPosition = -1;
-			if (articleBox && articleContent) {
-				DocReadPosition = (articleBox.scrollTop + articleBox.offsetHeight) * 100 / articleContent.offsetHeight;
-				DocReadPosition = Math.round(DocReadPosition);
-			}
-			const metricsData = {
-				ItemType: 'ArticleView',
-				ItemID: this.articleId,
-				ItemParent: this.metricsParent,
-				ItemCategory: this.articleCategory,
-				Duration: this.timerService.stop(),
-				DocReadPosition,
-				MediaReadPosition: 0
-			};
-			this.metricClient.sendAsync(metricsData);
+		const viewPort = document.querySelector('.modal-body .article-content') as HTMLElement;
+		let DocReadPosition = -1;
+		if (viewPort) {
+			DocReadPosition = (viewPort.scrollTop + viewPort.clientHeight) * 100 / viewPort.scrollHeight;
+			DocReadPosition = Math.round(DocReadPosition);
 		}
+		const focusDuration = this.focusDurationCounter !== null ? this.focusDurationCounter.getDuration() : 0;
+		const blurDuration = this.blurDurationCounter !== null ? this.blurDurationCounter.getDuration() : 0;
+		const metricsData = {
+			ItemType: 'ArticleView',
+			ItemID: this.articleId,
+			ItemParent: this.metricsParent,
+			ItemCategory: this.articleCategory,
+			Duration: focusDuration, // this.duration + parseInt(`${Math.floor((Date.now() - this.interTime) / 1000)}`, 10),
+			DurationBlur: blurDuration,
+			DocReadPosition,
+			MediaReadPosition: 0
+		};
+		this.metricService.sendArticleView(metricsData);
 	}
 
 	closeModal() {
