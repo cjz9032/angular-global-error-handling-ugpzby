@@ -1902,6 +1902,25 @@
 	button.close{
 		opacity:1 !important
 		}
+
+
+		.btn{
+			&:focus{
+				outline: 1px dotted !important;
+				}
+			}
+
+		.enable-button{
+			&:focus{
+				outline: 1px dotted !important;
+				}
+		}
+		button{
+			&:focus{
+				outline: 1px dotted !important;
+			}
+
+		}
 }
 
 
@@ -2017,23 +2036,7 @@ dl {
 	margin: 0;
 }
 
-.btn{
-	&:focus{
-		outline: 2px dotted !important;
-		}
-	}
 
-.enable-button{
-	&:focus{
-		outline: 2px dotted !important;
-		}
-}
-button{
-	&:focus{
-		outline: 2px dotted !important;
-	}
-
-}
 
 button {
 	outline: none;
