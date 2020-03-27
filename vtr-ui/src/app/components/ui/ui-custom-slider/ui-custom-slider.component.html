@@ -1,0 +1,43 @@
+<div class="vtr-ui-custom-slider">
+	<!-- <form>
+		<fieldset class="form-group">
+			<legend>Sliders</legend>
+			<label for="customRange1">Example range</label>
+			<input type="range"
+				#customRange
+				class="custom-range"
+				id="customRange1"
+				[step]="step"
+				[min]="minValue"
+				[max]="maxValue" /> -->
+	<!-- <datalist id="tickmarks">
+				<option value="0"></option>
+				<option value="1"></option>
+				<option value="2"></option>
+				<option value="3"></option>
+				<option value="4"></option>
+				<option value="5"></option>
+				<option value="6"></option>
+				<option value="7"></option>
+				<option value="8"></option>
+				<option value="9"></option>
+				<option value="10"></option>
+			</datalist> -->
+	<!-- <div class="d-flex justify-content-between">
+				<span class="badge">Primary</span>
+				<span class="badge">Secondary</span>
+				<span class="badge">Success</span>
+			</div>
+		</fieldset>
+	</form> -->
+
+	<div class="range range-primary">
+		<input type="range"
+			#customRange
+			name="range"
+			min="1"
+			max="100"
+			value="50"
+			onchange="rangePrimary.value=value">
+	</div>
+</div>

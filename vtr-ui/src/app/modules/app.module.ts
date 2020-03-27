@@ -66,6 +66,7 @@ import { GamingDashboardModule } from './gaming-dashboard.module';
 import { HardwareScanRoutingModule } from './hardware-scan/hardware-scan-routing.module';
 import { HardwareScanModule } from './hardware-scan/hardware-scan.module';
 import { CommsService } from '../services/comms/comms.service';
+import { UiCustomSliderModule } from '../components/ui/ui-custom-slider/ui-custom-slider.module';
 // import { ModalErrorMessageComponent } from '../components/modal/modal-error-message/modal-error-message.component';
 
 @NgModule({
@@ -94,7 +95,7 @@ import { CommsService } from '../services/comms/comms.service';
 			loader: {
 				provide: TranslateLoader,
 				useClass: WebpackTranslateLoader,
-				deps: [ HttpClient ]
+				deps: [HttpClient]
 			},
 			missingTranslationHandler: {
 				provide: MissingTranslationHandler,
@@ -118,8 +119,16 @@ import { CommsService } from '../services/comms/comms.service';
 		GamingDashboardModule,
 		HardwareScanModule,
 		HardwareScanRoutingModule,
+		UiCustomSliderModule
 	],
-	exports: [ NavbarModule, RouterModule, CommonPipeModule, CommonUiModule, ModernPreloadModule, PageLayoutModule ],
+	exports: [
+		NavbarModule,
+		RouterModule,
+		CommonPipeModule,
+		CommonUiModule,
+		ModernPreloadModule,
+		PageLayoutModule,
+		UiCustomSliderModule],
 	providers: [
 		CommonService,
 		MetricsTranslateService,
@@ -142,8 +151,8 @@ import { CommsService } from '../services/comms/comms.service';
 		ModalNewFeatureTipComponent
 		// ModalErrorMessageComponent
 	],
-	bootstrap: [ AppComponent ],
-	schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+	bootstrap: [AppComponent],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {
 	constructor(library: FaIconLibrary) {
