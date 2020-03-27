@@ -247,7 +247,10 @@ export class AppComponent implements OnInit, OnDestroy {
 		}
 		this.commonService.setLocalStorageValue(LocalStorageKey.MachineFamilyName, value.family);
 		this.commonService.setLocalStorageValue(LocalStorageKey.SubBrand, value.subBrand.toLowerCase());
-		this.setFirstRun(value);
+
+		if (this.metricService.isFirstLaunch) {
+			this.metricService.sendFirstRunEvent(value);
+		}
 
 		// When startup try to login Lenovo ID silently (in background),
 		//  if user has already logged in before, this call will login automatically and update UI
@@ -260,20 +263,7 @@ export class AppComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	private setFirstRun(value: any) {
-		try {
-			const hadRunApp: boolean = this.commonService.getLocalStorageValue(LocalStorageKey.HadRunApp);
-			const appFirstRun = !hadRunApp;
-			if (this.deviceService.isShellAvailable) {
-				if (appFirstRun) {
-					this.commonService.setLocalStorageValue(LocalStorageKey.HadRunApp, true);
-					this.metricService.sendFirstRunEvent(value);
-				}
-			}
-		} catch (e) {
-			this.vantageShellService.getLogger().error(JSON.stringify(e));
-		}
-	}
+
 	private checkIsDesktopOrAllInOneMachine() {
 		try {
 			if (this.deviceService.isShellAvailable) {
