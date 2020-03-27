@@ -239,15 +239,15 @@ describe('BatteryCardComponent', () => {
 	// 	expect(component.batteryIndicator.isChargeThresholdOn).toEqual(true);
 	// });
 
-	it('should call onNotification - inner if', () => {
-		const airplaneModeNotification: AppNotification = {
-			type: 'AirplaneModeStatus',
-			payload: true
-		};
-		component.batteryIndicator = new BatteryIndicator();
-		component.onNotification(airplaneModeNotification);
-		expect(component.batteryIndicator.isAirplaneMode).toEqual(true);
-	});
+	// it('should call onNotification - inner if', () => {
+	// 	const airplaneModeNotification: AppNotification = {
+	// 		type: 'AirplaneModeStatus',
+	// 		payload: true
+	// 	};
+	// 	component.batteryIndicator = new BatteryIndicator();
+	// 	component.onNotification(airplaneModeNotification);
+	// 	expect(component.batteryIndicator.isAirplaneMode).toEqual(true);
+	// });
 
 	it('should call getBatteryCondition - isPowerDriverMissing is true', () => {
 		component.batteryGauge = { ...batteryGuage };
