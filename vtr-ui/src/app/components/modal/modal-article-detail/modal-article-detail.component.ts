@@ -4,7 +4,7 @@ import { CMSService } from 'src/app/services/cms/cms.service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { ActivatedRoute } from '@angular/router';
-import { TimerServiceEx } from 'src/app/services/timer/timer-service-ex.service';
+import { DurationCounterService } from 'src/app/services/timer/timer-service-ex.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from 'src/app/services/metric/metric.service';
 
@@ -12,7 +12,7 @@ import { MetricService } from 'src/app/services/metric/metric.service';
 	selector: 'vtr-modal-article-detail',
 	templateUrl: './modal-article-detail.component.html',
 	styleUrls: ['./modal-article-detail.component.scss'],
-	providers: [TimerServiceEx]
+	providers: [DurationCounterService]
 })
 export class ModalArticleDetailComponent implements OnInit, AfterViewInit {
 	articleId: string;
@@ -37,7 +37,7 @@ export class ModalArticleDetailComponent implements OnInit, AfterViewInit {
 		private cmsService: CMSService,
 		private activatedRoute: ActivatedRoute,
 		private sanitizer: DomSanitizer,
-		private timerService: TimerServiceEx,
+		private timerService: DurationCounterService,
 		private logger: LoggerService,
 		private metricService: MetricService
 	) {

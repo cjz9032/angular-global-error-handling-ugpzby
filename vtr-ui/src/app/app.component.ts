@@ -27,7 +27,7 @@ import { AppUpdateService } from './services/app-update/app-update.service';
 import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.service';
 import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
 import { MetricService } from './services/metric/metric.service';
-import { TimerServiceEx } from 'src/app/services/timer/timer-service-ex.service';
+import { DurationCounterService } from 'src/app/services/timer/timer-service-ex.service';
 // import { AppUpdateService } from './services/app-update/app-update.service';
 import { VantageFocusHelper } from 'src/app/services/timer/vantage-focus.helper';
 import { SegmentConst } from './services/self-select/self-select.service';
