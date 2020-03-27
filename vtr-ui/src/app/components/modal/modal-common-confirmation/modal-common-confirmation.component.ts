@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, HostListener, OnDestroy } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, HostListener } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { WinRT } from '@lenovo/tan-client-bridge';
 
@@ -7,7 +7,7 @@ import { WinRT } from '@lenovo/tan-client-bridge';
 	templateUrl: './modal-common-confirmation.component.html',
 	styleUrls: ['./modal-common-confirmation.component.scss']
 })
-export class ModalCommonConfirmationComponent implements OnInit, OnDestroy {
+export class ModalCommonConfirmationComponent implements OnInit {
 	@Input() header: string;
 	@Input() description: string;
 	@Input() url: string;
@@ -24,19 +24,6 @@ export class ModalCommonConfirmationComponent implements OnInit, OnDestroy {
 	constructor(public activeModal: NgbActiveModal) { }
 
 	ngOnInit() {
-		this.changeCheckboxDisplay('none');
-	}
-
-	ngOnDestroy() {
-		this.changeCheckboxDisplay('');
-	}
-	
-	//VAN-16194 touch screen cannot show this modal
-	private changeCheckboxDisplay(displayValue: string) {
-		const elementCheckbox = document.querySelectorAll('.custom-control-input');
-		for (let i = 0; i < elementCheckbox.length; i++) {
-			(elementCheckbox[i] as HTMLElement).style.display = displayValue;
-		}
 	}
 
 	// closeModal() {
