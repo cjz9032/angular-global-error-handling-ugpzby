@@ -511,6 +511,11 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 				centered: true,
 				windowClass: 'common-confirmation-modal'
 			});
+		// VAN-16194 touch screen cannot show this modal
+		this.changeCheckboxDisplay('none');
+		setTimeout(() => {
+			this.changeCheckboxDisplay('');
+		}, 0);
 		let removeDelayedUpdates = false;
 		let updatesToInstall = [];
 
@@ -959,6 +964,13 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		});
 		this.translate.stream(this.neverCheckedText).subscribe((res) => {
 			this.neverCheckedText = res;
+		});
+	}
+
+	private changeCheckboxDisplay(displayValue: string) {
+		const elementCheckboxes = document.querySelectorAll('.custom-control-input');
+		elementCheckboxes.forEach((elementCheckbox: HTMLElement) => {
+			elementCheckbox.style.display = displayValue;
 		});
 	}
 }
