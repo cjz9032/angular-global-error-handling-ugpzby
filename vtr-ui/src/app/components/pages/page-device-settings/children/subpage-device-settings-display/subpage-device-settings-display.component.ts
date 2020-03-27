@@ -568,6 +568,19 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		this.eyeCareModeStatus.status = event.switchValue;
 		this.enableSlider = false;
 		this.logger.debug('onEyeCareModeStatusToggle', this.eyeCareModeStatus.status);
+		if (event.switchValue) {
+			// toggle on
+			if (this.eyeCareDataSource.current < 3400 && !this.isSet.isSetEyecaremodeValue) {
+				// 下面那行
+				this.onEyeCareTemparatureChange({value: 3400});
+			}
+		} else {
+			// toggle off
+			if (this.displayColorTempCache.current < 3400 && !this.isSet.isSetDaytimeColorTemperatureValue) {
+				// 上面那行
+				this.onSetChangeDisplayColorTemp({value: 3400});
+			}
+		}
 		try {
 			if (this.displayService.isShellAvailable) {
 				this.displayService.setEyeCareModeState(this.eyeCareModeStatus.status)
@@ -676,47 +689,25 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 			this.displayService.getDisplayColortemperature(),
 			this.displayService.getDaytimeColorTemperature()
 		]).then(([status, displayColorTemperature, daytimeColorTemperature]) => {
-			if (!status.status) {
-				if (displayColorTemperature.current < 3400) {
-					if (!this.isSet.isSetEyecaremodeValue) {
-						this.onEyeCareTemparatureChange({value: 3400});
-					}
-					if (daytimeColorTemperature.current < 3400) {
-						if (!this.isSet.isSetDaytimeColorTemperatureValue) {
-							this.onSetChangeDisplayColorTemp({value: 3400});
-						}
-					} else {
-						if (!this.isSet.isSetDaytimeColorTemperatureValue) {
-							this.onSetChangeDisplayColorTemp({value: daytimeColorTemperature.current});
-						}
-					}
-				} else {
-					if (daytimeColorTemperature.current < 3400) {
-						if (!this.isSet.isSetDaytimeColorTemperatureValue) {
-							this.onSetChangeDisplayColorTemp({value: 3400});
-						}
-					}
+			if (status.status) {
+				// toggle on
+				// if (daytimeColorTemperature.current < 3400 && !this.isSet.isSetDaytimeColorTemperatureValue) {
+				// 	// 上面那行
+				// 	this.onSetChangeDisplayColorTemp({value: 3400}, 'True');
+				// }
+				if (displayColorTemperature.current < 3400 && !this.isSet.isSetEyecaremodeValue) {
+					// 下面那行
+					this.onEyeCareTemparatureChange({value: 3400});
 				}
 			} else {
-				if (daytimeColorTemperature.current < 3400) {
-					if (!this.isSet.isSetDaytimeColorTemperatureValue) {
-						this.onSetChangeDisplayColorTemp({value: 3400});
-					}
-					if (displayColorTemperature.current < 3400) {
-						if (!this.isSet.isSetEyecaremodeValue) {
-							this.onEyeCareTemparatureChange({value: 3400});
-						}
-					} else {
-						if (!this.isSet.isSetEyecaremodeValue) {
-							this.onEyeCareTemparatureChange({value: displayColorTemperature.current});
-						}
-					}
-				} else {
-					if (displayColorTemperature.current < 3400) {
-						if (!this.isSet.isSetEyecaremodeValue) {
-							this.onEyeCareTemparatureChange({value: 3400});
-						}
-					}
+				// toggle off
+				// if (displayColorTemperature.current < 3400 && !this.isSet.isSetEyecaremodeValue) {
+				// 	// 下面那行
+				// 	this.onEyeCareTemparatureChange({value: 3400}, 'True');
+				// }
+				if (daytimeColorTemperature.current < 3400 && !this.isSet.isSetDaytimeColorTemperatureValue) {
+					// 上面那行
+					this.onSetChangeDisplayColorTemp({value: 3400});
 				}
 			}
 		})
@@ -847,6 +838,19 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 							this.setValues.SetScheduleStatus = $featureStatus.status;
 							this.eyeCareDataSource.current = response.colorTemperature;
 							this.eyeCareModeStatus.status = response.eyecaremodeState;
+							if (this.eyeCareModeStatus.status) {
+								// toggle on
+								if (this.eyeCareDataSource.current < 3400 && !this.isSet.isSetEyecaremodeValue) {
+									// 下面那行
+									this.onEyeCareTemparatureChange({value: 3400});
+								}
+							} else {
+								// toggle off
+								if (this.displayColorTempCache.current < 3400 && !this.isSet.isSetDaytimeColorTemperatureValue) {
+									// 上面那行
+									this.onSetChangeDisplayColorTemp({value: 3400});
+								}
+							}
 							// this.isEyeCareMode = this.eyeCareModeStatus.status;
 							this.enableSlider = response.eyecaremodeState;
 							this.commonService.setSessionStorageValue(SessionStorageKey.DashboardEyeCareMode, this.eyeCareModeStatus);
