@@ -30,13 +30,13 @@ import { FeatureContent } from 'src/app/data-models/common/feature-content.model
 import { SelfSelectService, SegmentConst } from 'src/app/services/self-select/self-select.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 interface IConfigItem {
-	cardId: string,
+	cardId: string;
 	displayContent: any;
-	template: string,
-	positionParam: string,
-	tileSource: string,
-	cmsContent: any,
-	upeContent: any
+	template: string;
+	positionParam: string;
+	tileSource: string;
+	cmsContent: any;
+	upeContent: any;
 }
 
 @Component({
