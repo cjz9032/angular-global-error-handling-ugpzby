@@ -134,9 +134,10 @@
 	}
 
 	.faqInFs3Fb {
-		font-size: 3.6rem;
-		font-weight: $weight_light;
+		font-size: 1.4rem;
+		font-weight: $weight_bold;
 		color: $shade_blue;
+		text-transform: uppercase;
 	}
 
 	.faqInFb {
@@ -156,10 +157,11 @@
 		color: $shade_blue;
 	}
 	.faqInFs25FbP10 {
-		font-size: 3.6rem;
-		font-weight: $weight_light;
+		font-size: 1.4rem;
+		font-weight: $weight_bold;
 		padding: 1rem 0;
 		color: $shade_blue;
+		text-transform: uppercase;
 	}
 	.faqInP5 {
 		padding: 0.5rem 0;

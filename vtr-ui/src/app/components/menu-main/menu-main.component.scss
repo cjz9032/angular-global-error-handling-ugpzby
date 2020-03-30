@@ -91,10 +91,10 @@
 			}
 
 			.app-title {
-				font-size: $sub_title;
-
+				font-size: $fontsize_lg;
+				text-transform: uppercase;
+				font-weight: $weight_light;
 				.app-name {
-					text-transform: uppercase;
 					font-weight: $weight_bold;
 				}
 

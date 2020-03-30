@@ -2,6 +2,47 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.18](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.4.17...v1.4.18) (2020-03-30)
+
+
+### Features
+
+* **VAN-16047:** change the minimum color temperature to 3400k in eye care mode ([9802f75](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/9802f7566989a9f2f80e2a506ef91f202a1d5525))
+
+### [1.4.17](https://bitbucket.tc.lenovo.com///compare/v1.4.15...v1.4.17) (2020-03-30)
+
+
+### Features
+
+* **license:** update approved licence file ([405fb01](https://bitbucket.tc.lenovo.com///commit/405fb018bccb02ce4a9e65ebee69f9790cbeadc7))
+* **VAN-16047:** change the minimum color temperature to 3400k in eye care mode ([2235065](https://bitbucket.tc.lenovo.com///commit/22350658b235a2fee728f3131100ec9f5adab494))
+
+
+### Bug Fixes
+
+* **VAN-16047:** ecm to 3400 ([be04d35](https://bitbucket.tc.lenovo.com///commit/be04d35b560ca652fb021365fcffe6dfe7cfb875))
+* **VAN-16047:** ecm to 3400 ([24bd0fb](https://bitbucket.tc.lenovo.com///commit/24bd0fbf4b56a6c5061d7ae3d0062c03ecad312e))
+
+### [1.4.16](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.4.15...v1.4.16) (2020-03-30)
+
+
+### Features
+
+* **VAN-16047:** change the minimum color temperature to 3400k in eye care mode ([2235065](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/22350658b235a2fee728f3131100ec9f5adab494))
+
+
+### Bug Fixes
+
+* **VAN-16047:** ecm to 3400 ([be04d35](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/be04d35b560ca652fb021365fcffe6dfe7cfb875))
+* **VAN-16047:** ecm to 3400 ([24bd0fb](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/24bd0fbf4b56a6c5061d7ae3d0062c03ecad312e))
+
+### [1.4.15](https://bitbucket.tc.lenovo.com///compare/v1.4.14...v1.4.15) (2020-03-27)
+
+
+### Features
+
+* **VAN-16047:** change the minimum color temperature to 3400k in eye care mode ([edf937f](https://bitbucket.tc.lenovo.com///commit/edf937f948f325f51cd7bc22700b4c1dbdf50d9b))
+
 ### [1.4.14](https://bitbucket.tc.lenovo.com///compare/v1.4.12...v1.4.14) (2020-03-26)
 
 
