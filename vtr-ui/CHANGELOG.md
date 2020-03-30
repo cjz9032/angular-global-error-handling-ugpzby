@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.16](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.4.15...v1.4.16) (2020-03-30)
+
+
+### Features
+
+* **VAN-16047:** change the minimum color temperature to 3400k in eye care mode ([2235065](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/22350658b235a2fee728f3131100ec9f5adab494))
+
+
+### Bug Fixes
+
+* **VAN-16047:** ecm to 3400 ([be04d35](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/be04d35b560ca652fb021365fcffe6dfe7cfb875))
+* **VAN-16047:** ecm to 3400 ([24bd0fb](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/24bd0fbf4b56a6c5061d7ae3d0062c03ecad312e))
+
 ### [1.4.15](https://bitbucket.tc.lenovo.com///compare/v1.4.14...v1.4.15) (2020-03-27)
 
 
