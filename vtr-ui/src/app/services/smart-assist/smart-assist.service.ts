@@ -209,29 +209,43 @@ export class SmartAssistService {
 			}
 		}catch (error) {
 			//throw new Error(error.message);
-			return Promise.reject(error);
+			return Promise.reject(error.message);
 		}
 	}
 
-	public setZeroTouchLockDistanceSensitivityAutoAdjust (value: boolean):Promise<boolean> {
+	public setZeroTouchLockDistanceSensitivityAutoAdjust(value: boolean):Promise<number> {
 		try {
 			if (this.isShellAvailable) {
-				const data = this.hsaIntelligentSecurity.setPresenceLeaveDistanceAutoAdjust(value);
+				const result = this.hsaIntelligentSecurity.setPresenceLeaveDistanceAutoAdjust(value);
+				return Promise.resolve(result);
 			}
-			return undefined;
 		} catch (error) {
-            throw new Error(error.message);
+			//throw new Error(error.message);
+			return Promise.reject(error.message);
 		}
 	}
 
-	public setZeroTouchLockDistanceSensitivity (value: number):Promise<number> {
+	public setZeroTouchLockDistanceSensitivity(value: number):Promise<number> {
 		try {
 			if (this.isShellAvailable) {
-				const data = this.hsaIntelligentSecurity.setPresenceLeaveDistance(value);
+				const result = this.hsaIntelligentSecurity.setPresenceLeaveDistance(value);
+				return Promise.resolve(result);
 			}
-			return undefined;
 		} catch (error) {
-            throw new Error(error.message);
+			//throw new Error(error.message);
+			return Promise.reject(error.message);
+		}
+	}
+
+	public resetHSAHPDSetting():Promise<number> {
+		try {
+			if (this.isShellAvailable) {
+				const result = this.hsaIntelligentSecurity.resetAllSetting();
+				return Promise.resolve(result);
+			}
+		} catch (error) {
+			//throw new Error(error.message);
+			return Promise.reject(error.message);
 		}
 	}
 

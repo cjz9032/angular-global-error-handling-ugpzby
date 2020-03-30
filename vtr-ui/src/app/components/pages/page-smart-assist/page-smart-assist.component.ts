@@ -564,8 +564,8 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 						this.zeroTouchPresenceLeaveDistanceAutoAdjustCapability = (response.capability && 0x100) != 0;
 						this.zeroTouchPresenceLeaveDistanceCapability = (response.capability && 0x80) != 0;
 						this.hsaIntelligentSecurity = response;
-					}).catch(error => {
-						this.logger.error('getHsaIntelligentSecurityStatus error: ', error);
+					}).catch((error) => {
+						this.logger.error('getHsaIntelligentSecurityStatus error: ', error.message);
 					});
 			}
 		} catch (error) {
@@ -577,7 +577,12 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		this.hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust = event.switchValue;
 		try {
 			if (this.smartAssist.isShellAvailable) {
-				this.smartAssist.setZeroTouchLockDistanceSensitivityAutoAdjust(event.switchValue);
+				this.smartAssist.setZeroTouchLockDistanceSensitivityAutoAdjust(event.switchValue)
+					.then((response) => {
+						if(response != 0) {
+							this.logger.error('onZeroTouchLockDistanceSensitivityAdjustToggle error.')
+						}
+					});
 			}
 		} catch (error) {
 			this.logger.error('onZeroTouchLockDistanceSensitivityAdjustToggle' + error.message);
@@ -588,7 +593,12 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		this.hsaIntelligentSecurity.zeroTouchLockDistance = event.value;
 		try {
 			if (this.smartAssist.isShellAvailable) {
-				this.smartAssist.setZeroTouchLockDistanceSensitivity(event.value);
+				this.smartAssist.setZeroTouchLockDistanceSensitivity(event.value)
+					.then((response) => {
+						if(response != 0) {
+							this.logger.error('SetZeroTouchLockDistanceSensitivity error.')
+						}
+					});
 			}
 		} catch (error) {
 			this.logger.error('onZeroTouchLockDistanceSensitivity' + error.message);
@@ -679,6 +689,13 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				}
 			});
 		}
+
+		this.smartAssist.resetHSAHPDSetting()
+			.then((response) => {
+				if(response == 0) {
+					this.getHsaIntelligentSecurityStatus();
+				}
+			});
 	}
 
 	private getVideoPauseResumeStatus() {
