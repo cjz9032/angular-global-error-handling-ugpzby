@@ -569,7 +569,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		this.enableSlider = false;
 		this.logger.debug('onEyeCareModeStatusToggle', this.eyeCareModeStatus.status);
 		if (event.switchValue) {
-			if (this.eyeCareDataSource.current < 3400 && !this.isSet.isSetEyecaremodeValue) {
+			if (this.eyeCareModeCache.eyeCareDataSource.current < 3400 && !this.isSet.isSetEyecaremodeValue) {
 				this.onEyeCareTemparatureChange({value: 3400});
 			}
 		} else {
@@ -823,7 +823,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 							this.eyeCareDataSource.current = response.colorTemperature;
 							this.eyeCareModeStatus.status = response.eyecaremodeState;
 							if (this.eyeCareModeStatus.status) {
-								if (this.eyeCareDataSource.current < 3400 && !this.isSet.isSetEyecaremodeValue) {
+								if (this.eyeCareModeCache.eyeCareDataSource.current < 3400 && !this.isSet.isSetEyecaremodeValue) {
 									this.onEyeCareTemparatureChange({value: 3400});
 								}
 							} else {
