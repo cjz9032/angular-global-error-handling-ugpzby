@@ -31,6 +31,7 @@ import { DurationCounterService } from 'src/app/services/timer/timer-service-ex.
 // import { AppUpdateService } from './services/app-update/app-update.service';
 import { VantageFocusHelper } from 'src/app/services/timer/vantage-focus.helper';
 import { SegmentConst } from './services/self-select/self-select.service';
+import { NotificationType } from './components/notification/notification.component';
 
 declare var Windows;
 @Component({
@@ -49,6 +50,8 @@ export class AppComponent implements OnInit, OnDestroy {
 	private isServerSwitchEnabled = true;
 	private shellVersion;
 	private newTutorialVersion = '3.1.2';
+	public isStage = window.location.href.indexOf('stage') >= 0;
+	public notificationType = NotificationType.Banner;
 
 	constructor(
 		private displayService: DisplayService,
