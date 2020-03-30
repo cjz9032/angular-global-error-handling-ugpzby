@@ -64,8 +64,8 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	public superResolution = new FeatureStatus(false, true);
 	public hsaIntelligentSecurity = new HsaIntelligentSecurityResponse(false, false);
 	public image = '/assets/images/smart-assist/intelligent-security/HPDv20.png';
-	public zeroTouchLoginShowAdvancedSection = false;
-	public zeroTouchLockShowAdvancedSection = false;
+	public zeroTouchLoginShowAdvancedSection;
+	public zeroTouchLockShowAdvancedSection;
 	public zeroTouchPresenceLeaveDistanceCapability = false;
 	public zeroTouchPresenceLeaveDistanceAutoAdjustCapability = false;
 
@@ -154,6 +154,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		if (this.smartAssist.isShellAvailable) {
 			this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 			this.smartAssistCapability = this.commonService.getLocalStorageValue(LocalStorageKey.SmartAssistCapability, undefined);
+			this.getHPDAdvancedSetting();
 			this.initVisibility();
 			this.setIsThinkPad(this.machineType === 1);
 			this.setIntelligentSecurity();
@@ -554,6 +555,30 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			.then((isSuccess: boolean) => {
 				this.logger.info(`onDistanceSensitivityAdjustToggle.setZeroTouchLoginAdjustStatus ${isSuccess}`, this.intelligentSecurity.isZeroTouchLoginAdjustEnabled);
 			});
+	}
+
+	getHPDAdvancedSetting() {
+		try {
+			if (this.smartAssist.isShellAvailable) {
+				this.smartAssist.getHPDAdvancedSettings()
+					.then((response) => {
+						this.zeroTouchLoginShowAdvancedSection = response.zeroTouchLoginAdvanced;
+						this.zeroTouchLockShowAdvancedSection = response.zeroTouchLockAdvanced;
+					});
+			}
+		} catch (error) {
+			this.logger.error('getHPDAdvancedSetting error: ', error.message);
+		}
+	}
+
+	setHPDAdvancedSetting(section: string, value: boolean) {
+		try {
+			if (this.smartAssist.isShellAvailable) {
+				this.smartAssist.setHPDAdvancedSettings(section, value);
+			}
+		} catch (error) {
+			this.logger.error('setHPDAdvancedSetting error: ', error.message);
+		}
 	}
 
 	public getHsaIntelligentSecurityStatus() {

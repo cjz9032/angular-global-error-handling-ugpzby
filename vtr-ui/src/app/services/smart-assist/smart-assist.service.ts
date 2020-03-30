@@ -17,6 +17,10 @@ export class SmartAssistService {
 	private lenovoVoice;
 	private superResolution;
 	private hsaIntelligentSecurity;
+	private hpdAdvancedSettings = {
+		zeroTouchLoginAdvanced: false,
+		zeroTouchLockAdvanced: false
+	}
 
 	public isShellAvailable = false;
 	public isAPSavailable = false;
@@ -191,6 +195,15 @@ export class SmartAssistService {
 	 */
 	public setSelectedLockTimer(value: string): Promise<boolean> {
 		return this.intelligentSensing.SetHPDLeaveWaitSetting(value);
+	}
+
+	public getHPDAdvancedSettings() {
+		return Promise.resolve(this.hpdAdvancedSettings);
+	}
+
+	public setHPDAdvancedSettings(section: string, value: boolean) {
+		section == 'zeroTouchLogin' ? this.hpdAdvancedSettings.zeroTouchLoginAdvanced = value : this.hpdAdvancedSettings.zeroTouchLockAdvanced = value;
+		return Promise.resolve(true);
 	}
 
 	public getHsaIntelligentSecurityStatus() {

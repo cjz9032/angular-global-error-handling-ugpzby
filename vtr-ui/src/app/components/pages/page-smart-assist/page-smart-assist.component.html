@@ -68,8 +68,8 @@
 												role="text"
 												id="smartAssist-intelligentSecurity-zeroTouchLogin-showAdvSettings"
 												attr-aria-label="smartAssist.intelligentSecurity.zeroTouchLogin.showAdvSettings"
-												(click)="zeroTouchLoginShowAdvancedSection = true"
-												(keydown.enter)="zeroTouchLoginShowAdvancedSection = true">
+												(click)="setHPDAdvancedSetting('zeroTouchLogin', true)"
+												(keydown.enter)="setHPDAdvancedSetting('zeroTouchLogin', true)">
 												{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.showAdvSettings' | translate}}
 											</span>
 										</div>
@@ -182,8 +182,8 @@
 												role="text"
 												id="smartAssist-intelligentSecurity-zeroTouchLogin-hideAdvSettings"
 												attr.aria-label="smartAssist.intelligentSecurity.zeroTouchLogin.hideAdvSettings"
-												(click)="zeroTouchLoginShowAdvancedSection = false"
-												(keydown.enter)="zeroTouchLoginShowAdvancedSection = false">
+												(click)="setHPDAdvancedSetting('zeroTouchLogin', false)"
+												(keydown.enter)="setHPDAdvancedSetting('zeroTouchLogin', false)">
 												{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.hideAdvSettings' | translate}}
 											</span>
 										</div>
@@ -296,8 +296,8 @@
 												role="text"
 												id="smartAssist-intelligentSecurity-zeroTouchLock-showAdvSettings"
 												attr-aria-label="smartAssist.intelligentSecurity.zeroTouchLock.showAdvSettings"
-												(click)="zeroTouchLockShowAdvancedSection = true"
-												(keydown.enter)="zeroTouchLockShowAdvancedSection = true">
+												(click)="setHPDAdvancedSetting('zeroTouchLock', true)"
+												(keydown.enter)="setHPDAdvancedSetting('zeroTouchLock', true)">
 												{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.showAdvSettings' | translate}}
 											</span>
 										</div>
@@ -496,8 +496,8 @@
 												role="text"
 												id="smartAssist-intelligentSecurity-zeroTouchLock-hideAdvSettings"
 												attr.aria-label="smartAssist.intelligentSecurity.zeroTouchLock.hideAdvSettings"
-												(click)="zeroTouchLockShowAdvancedSection = false"
-												(keydown.enter)="zeroTouchLockShowAdvancedSection = false">
+												(click)="setHPDAdvancedSetting('zeroTouchLock', false)"
+												(keydown.enter)="setHPDAdvancedSetting('zeroTouchLock', false)">
 												{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.hideAdvSettings' | translate}}
 											</span>
 										</div>
