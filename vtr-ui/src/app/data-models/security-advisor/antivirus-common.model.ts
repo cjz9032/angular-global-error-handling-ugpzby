@@ -82,13 +82,15 @@ export class AntivirusCommon {
 		this.urlGetMcAfee = `https://home.mcafee.com/root/campaign.aspx?cid=233426&affid=714&culture=${this.getLanguageIdentifier()}`;
 	}
 
-	openMcAfeePurchase() {
+	openMcAfeePurchase(type?: string) {
 		const metricsData = {
 			ItemParent: this.metricsParent,
 			ItemName: this.metricsTranslateService.translate('launchMcAfeeBuy.noAPIRequested'),
 			ItemType: 'FeatureClick'
 		};
-		this.purchaseBtnIsLoading = true;
+		if (type === 'button') {
+			this.purchaseBtnIsLoading = true;
+		}
 		let purchaseRes;
 		if (this.mcafee && this.mcafee.additionalCapabilities
 			&& this.mcafee.additionalCapabilities.includes('LaunchMcAfeeBuy')
