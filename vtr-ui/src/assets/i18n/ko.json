@@ -785,7 +785,7 @@
             "title": "당신의 기계에 대한 Q & A",
             "subtitle": "장치에 관한 유용한 팁을 찾을 수 있습니다.",
             "question1": "파일 백업 및 복원",
-            "question2": "PC를 새로 고치는 방법",
+            "question2": "PC를 초기화하는 방법",
             "question3": "컴퓨터의 CPU를 아는 방법",
             "question4": "시스템의 배터리 사용 확인",
             "question5": "태블릿 같은 PC 사용",
@@ -876,7 +876,7 @@
                 "tips2": "추가 의견은 아래에 남겨주시기 바랍니다",
                 "emailAddressLabel": "혹시 Lenovo Vantage 팀에게 연락을 받길 원하신다면 이메일 주소를 남겨주시기 바랍니다.",
                 "emailAddress": "이메일 주소",
-                "invalidEmailMsg": "Invalid email address"
+                "invalidEmailMsg": "잘못된 이메일 주소입니다."
             }
         },
         "quickSettings": {
@@ -1051,7 +1051,7 @@
                     "NotGood": "<b>배터리의 상태가 좋지 않습니다.</b>",
                     "NotSupportACAdapter": "<b>AC 어댑터가 지원되지 않습니다.</b>",
                     "LimitedACAdapterSupport": "<b>AC 어댑터는 충분한 전원을 공급하지 못합니다.</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager 드라이버</b>가 설치되어 있지 않거나 올바르게 작동하지 않습니다. 최신 드라이버를 설치하려면 Windows 업데이트를 실행하십시오. <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">여기</a>에서 드라이버를 설치할 수도 있습니다. 설치한 후 컴퓨터를 다시 시작하십시오.",
+                    "MissingDriver": "<b>Lenovo Power Manager 드라이버</b>가 설치되어 있지 않거나 올바르게 작동하지 않습니다. Windows 업데이트를 실행하거나 <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">여기</a>에서 수동으로 설치하십시오. 설치한 후 컴퓨터를 다시 시작하십시오.",
                     "StoreLimitation": "<b>배터리는 원래 완전 충전 용량의 {{value}}%만</b> 저장할 수 있습니다.",
                     "HighTemperature": "배터리 온도가 너무 높아 <b>방전</b>이 <b>중단되었습니다.</b>",
                     "TrickleCharge": "배터리가 <b>완전히 방전되어</b> 다시 충전해야 합니다. 이 작업은 10시간 이상이 소요될 수 있습니다.",
@@ -1330,6 +1330,12 @@
                         "description": "전원 계획을 선택하여 컴퓨터 성능, 시스템 온도 및 전력 사용량을 제어합니다.",
                         "currentPowerPlan": {
                             "label": "현재 계획"
+                        },
+                        "profile": {
+                            "title": "플랜 프로파일:",
+                            "performance": "최대 성능:",
+                            "temperature": "최대 시스템 온도:",
+                            "usage": "최대 전력 사용량:"
                         }
                     }
                 },
@@ -1508,8 +1514,8 @@
                     "title": "디스플레이",
                     "displayColorTemperature": {
                         "title": "디스플레이 색상 온도",
-                        "description": "디스플레이의 색상 온도를 조절하여 블루라이트를 필터링하고 눈의 피로감을 줄일 수 있습니다. 일몰 때부터 일출 때까지 따뜻한 색상으로 디스플레이를 조정하여 수면에 도움이 됩니다.",
-                        "link": {
+						"description": "디스플레이의 색상 온도를 조절하여 블루라이트를 필터링하고 눈의 피로감을 줄일 수 있습니다. 일몰 때부터 일출 때까지 따뜻한 색상으로 디스플레이를 조정하여 수면에 도움이 됩니다.",
+						"link": {
                             "click": "색 온도를 바꾸려면",
                             "here": "여기",
                             "rest": "를 클릭하십시오."
@@ -1997,30 +2003,30 @@
             },
             "voice": {
                 "title": "음성",
-                "description": "Lenovo Voice는 음성에서 텍스트로의 변환 기능을 제공하며 번역 기능을 사용하여 음성에서 텍스트로의 실시간 번역을 제공합니다.",
+                "description": "Lenovo Voice는 음성에서 텍스트로 변환 기능을 사용하여 음성을 텍스트로 변환하고 번역 도우미 기능을 사용하여 실시간 음성 번역을 지원합니다.",
                 "installBtnText": "설치",
                 "launchBtnText": "시작",
                 "voiceToText": {
                     "title": "음성에서 텍스트로",
-                    "caption": "이 기능을 사용하면 음성을 텍스트로 변환할 수 있습니다."
+                    "caption": "이 기능은 빠른 입력을 위해 음성을 텍스트로 변환하는 음성 입력 기능을 제공합니다."
                 },
                 "translation": {
                     "title": "번역",
-                    "caption": "이 기능은 음성으로의 실시간 번역을 제공합니다. 번역된 내용은 텍스트로 표시됩니다. 필요에 따라 소스 언어 및 대상 언어를 선택할 수 있습니다."
+                    "caption": "이 기능은 말하는 내용을 실시간으로 번역하며 번역된 모든 내용이 텍스트로 표시됩니다. 소스 및 대상 언어에 사용할 수 있는 언어가 여러 개 있습니다."
                 },
                 "modalPopUp": {
                     "heading": "시작하기:",
-                    "point1": "Lenovo Voice 아이콘이 Windows 시스템 트레이에 표시되는지 확인하십시오.",
-                    "point2": "변환된 텍스트를 기록할 파일을 여십시오.",
+                    "point1": "시작 메뉴에서 Lenovo Voice를 시작하면 Windows 시스템 트레이에 Lenovo Voice 아이콘이 표시됩니다.",
+                    "point2": "텍스트를 입력할 응용 프로그램을 여십시오.",
                     "point3": "Windows 시스템 트레이에서 Lenovo Voice 아이콘을 클릭하고 음성에서 텍스트로를 선택하십시오.",
-                    "point4": "원하는 언어를 선택하고 마이크 아이콘을 클릭하여 시작하십시오.",
-                    "point5": "편집하려는 곳으로 커서를 이동하고 말하기를 시작하십시오.",
-                    "point6": "Windows 시스템 트레이에서 Lenovo Voice 아이콘을 클릭하고 변환을 선택하십시오.",
-                    "point7": "원하는 소스 언어 및 대상 언어를 선택하십시오.",
+                    "point4": "필요에 따라 언어를 선택하고 마이크 아이콘을 클릭하여 시작하십시오.",
+                    "point5": "응용 프로그램에 커서를 놓고 말하기를 시작하십시오.",
+                    "point6": "Windows 시스템 트레이에서 Lenovo Voice 아이콘을 클릭하고 번역을 선택하십시오.",
+                    "point7": "소스 언어 및 대상 언어를 선택하십시오.",
                     "point8": "필요에 따라 스피커 또는 마이크에서 음성 입력을 설정하십시오.",
-                    "point9": "말하기를 시작하려면 마이크 아이콘을 클릭하십시오",
+                    "point9": "말하기를 시작하려면 마이크 아이콘을 클릭하십시오.",
                     "closeText": "닫기",
-                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
+                    "point10": "Lenovo Voice 아이콘이 Windows 시스템 트레이에 표시되는지 확인하십시오."
                 },
                 "modalInstallationFailed": {
                     "btnText": "확인",
@@ -2187,6 +2193,7 @@
             "description": "도움이 필요한 경우 Lenovo에 문의하십시오.",
             "listLenovoCommunity": "Lenovo 커뮤니티",
             "listContactCustomerService": "고객 서비스에 문의하기",
+            "listYourVirtualAssistant": "Your virtual assistant",
             "listContactUsOnWechat": "WeChat에 문의하기",
             "weChatDescription": "WeChat서 질문하면, 신속하게 응답할 수 있습니다.",
             "listFindUs": "소셜 미디어에서 찾으십시오.",
@@ -2437,7 +2444,6 @@
                 "title": "보안 상태",
                 "deviceName1": "신뢰할 수 있는 출처 앱",
                 "deviceName2": "개발자 모드",
-                "deviceName3": "UAC 알림",
                 "deviceName4": "바이러스 백신 사용 가능성",
                 "deviceName5": "하드 드라이브 암호화",
                 "deviceName6": "방화벽 사용 가능성",
@@ -2633,8 +2639,8 @@
             }
         },
         "question2": {
-            "title": "PC를 새로 고치는 방법",
-            "description": "<div>    <div class='faqInFs4Fb'>        PC를 새로 고치는 방법    </div>    <hr>    <div class='faqInFs25FbP5'>        증상    </div>    <div class='faqInP5'>        PC가 수행한 작업을 수행한 경우는 물론이고 작업을 수행하지 않는 경우 및 그 이유를 모르는 경우, 개인 파일을 삭제하거나 설정을 변경하지 않고 PC를 새로 고칠 수 있습니다. Windows는 개인 파일을 삭제하지 않고 새로 설치하는 것과 비슷하게 PC를 \"새로 고칠\" 수 있습니다.    </div>    <div class='faqInP5'>        PC를 새로 고치면, 파일과 사용자 설정 설정이 변경되지 않습니다    </div>    <div class='faqInP5'>        <ul>            <li>PC 설정이 기본값으로 다시 변경됨</li>            <li>Windows 스토어의 앱이 보관됨</li>            <li>디스크 또는 웹 사이트에서 설치한 앱이 제거됨</li>            <li>제거된 파일 목록이 바탕 화면에 저장됨</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        영향을 받는 브랜드    </div>    <div>        <ul>            <li>모든 데스크탑 및 노트북</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        운영 체제    </div>    <div>        <ul>            <li>Windows 8, 8.1 및 10</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        해결 방법    </div>    <div>        <ul class='list-unstyled'>            <li>                <span class='faqInFbTdP10'>Windows 8/8.1</span>                <ol>                    <li class='faqInP5'>                        <span class='faqInFb'>설정</span>을 누르거나 클릭                    </li>                    <li class='faqInP5'>                        <span class='faqInFb'>업데이트 및 복구</span>를 누르거나 클릭                    </li>                    <li class='faqInP5'>                        <div><span class='faqInFb'>복구</span>를 누르거나 클릭</div>                        <div class='faqInP5'>PC 새로 고치기에서 파일에 영향을 주지 않고 <span class='faqInFb'>시작하기</span>를 누르거나 클릭하십시오.</div>                        <div><img src='assets/images/qa/2.1.jpg' /></div>                    </li>                    <li class='faqInP5'>                        <span class='faqInFb'>'다음'</span>을 클릭하십시오.                    </li>                    <li class='faqInP5'>                        <span class='faqInFb'>'새로 고침'</span>을 클릭하여 새로 고침 프로세스를 시작하십시오.                    </li>                    <li class='faqInP5'>                        새로 고침 프로세스가 완료되면, 바탕 화면에서 제거된 앱 목록을 찾을 수 있습니다                    </li>                    <li class='faqInP5'>                        시스템을 새로 고치는 동안 제거 된 앱을 찾을 수 있습니다                    </li>                </ol>            </li>            <li class='faqInP10'>                <span class='faqInFbTd'>Windows 10</span>                <ol>                    <li class='faqInP5'> 시작 메뉴에서 사용할 수 있는 검색 도구에서 <span class='faqInFb'>새로 고침</span>을 검색합니다.</li>                    <li class='faqInP5'>                        <div>아래와 같이 검색 결과에서 <span class='faqInFb'>'파일에 영향을 주지 않고 PC 새로 고침'</span>을 클릭하십시오.</div>                        <div><img src='assets/images/qa/2.2.jpg' /></div>                    </li>                    <li class='faqInP5'>                        <div><span class='faqInFb'>'파일에 영향을 주지 않고 PC 새로 고침'</span> 제목 바로 아래에 있는 <span class='faqInFb'>시작하기</span> 버튼을 클릭하여 Windows 10 PC 새로 고침을 시작하십시오.</div>                        <div><img src='assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div class='faqInFs25Fb'>        추가 정보    </div>    <div>        대부분의 경우, PC를 새로 고치기 시작하면 PC가 자체적으로 완료됩니다. 그러나 Windows에 누락된 파일이 필요한 경우, 복구 미디어(일반적으로 DVD 디스크 또는 썸 드라이브)를 삽입하라는 메시지가 표시됩니다. 그런 경우, PC에 따라 필요한 사항이 달라집니다.    </div>    <div class='faqInP10'>        DVD를 사용하여 PC를 Windows 8.1 또는 Windows RT 8.1로 업그레이드한 경우, 해당 디스크를 사용하십시오. Windows 8.1 또는 Windows RT 8.1 미디어가 없는 경우, Microsoft 지원에 문의하십시오.    </div></div>",
+            "title": "PC를 초기화하는 방법",
+            "description": "<div><div class='faqInFs4Fb'>Windows 10 초기화하는 방법</div><hr><div class='faqInP5'>Windows 10에서 문제가 발생하거나 판매하려는 경우 초기화해야 합니다. 초기화하면 파일을 보존하거나 제거하도록 선택하고 모든 앱 및 설정을 제거할 수 있으며 새로운 Windows 사본을 설치할 수 있습니다. 또한 재설정하면 성능 저하와 같은 여러 문제를 해결할 수 있습니다.</div><div class='faqInFs25FbP10'>1. 설정 앱 열기</div><div class='faqInP5'>화면 왼쪽 하단에 있는 시작 이미지 버튼을 누르고 설정 기어 이미지를 선택하십시오.</div><div class='faqInP5'><img src='assets/images/qa/2.1.jpg' /></div><div class='faqInFs25FbP10'>2. 범주 목록에서 업데이트 및 보안 선택</div><div class='faqInP5'><img src='assets/images/qa/2.2.jpg' /></div><div class='faqInFs25FbP10'>3. 왼쪽 창에서 복구로 이동</div><div class='faqInP5'><img src='assets/images/qa/2.3.jpg' /></div><div class='faqInFs25FbP10'>4. 초기화 프로세스 시작</div><div class='faqInP5'>맨 위의 \"이 PC 초기화\" 제목 아래에 있는 시작 버튼을 클릭하거나 탭하십시오.</div><div class='faqInP5'><img src='assets/images/qa/2.4.jpg' /></div><div class='faqInFs25FbP10'>5. 파일 보관 여부 선택</div><div class='faqInP5'>초기화한 후 Microsoft 계정에 로그인 할 수 있습니다. 이 계정으로 구입한 모든 Windows 스토어 앱은 재설치됩니다.</div><div class='faqInP5'><ul><li>내 파일 유지를 하면 앱과 설정이 제거되지만 모든 개인 파일은 그대로 유지됩니다.</li><li>모든 항목 제거를 하면 앱, 설정 및 개인 파일이 지워집니다. 백업된 파일 복사본이 없는 경우, 취소를 누르고 백업한 다음 이 프로세스를 다시 시작할 수 있습니다.</li></ul></div><div class='faqInP5'><img src='assets/images/qa/2.5.jpg' /></div><div class='faqInFs25FbP10'>6. 다양한 추가 설정을 선택할 수 있습니다</div><div class='faqInP5'>이는 이전 단계에서 \"모두 제거\"를 선택한 경우에만 표시됩니다.</div><div class='faqInP5'><img src='assets/images/qa/2.6.1.jpg' /></div><div class='faqInP5'><img src='assets/images/qa/2.6.2.jpg' /></div><div class='faqInFs25FbP10'>7.개요를 읽은 다음 진행할 준비가 되면 초기화를 누르십시오.</div><div class='faqInP5'>Windows에서 장치를 초기화할 준비를 합니다. 블루 스크린이 표시될 때까지 기다리십시오.</div><div class='faqInFs25FbP10'>8. \"옵션 선택\"이 나타나면 계속을 선택합니다.</div><div class='faqInP5'>Windows가 다시 시작되어 초기화를 시작합니다. 초기화가 진행되는 동안 PC가 여러 번 재부팅될 수 있습니다.</div><hr><div class='faqInFs25FbP10'>커뮤니티 Q&A</div><div class='faqInP5'><b>모든 것을 제거하도록 선택한 경우 컴퓨터에 연결된 모든 드라이브가 삭제됩니까, 아니면 Windows 10을 실행하고 있는 드라이브만 삭제됩니까?</b></div><div class='faqInP5'><i>커뮤니티 응답</i></div><div class='faqInP10'>Windows 10 OS 드라이브(보통 C: 드라이브)만 삭제합니다. 컴퓨터에 연결된 기타 드라이브는 영향을 받지 않습니다.</div><div class='faqInP5'><b>화면이 끊긴 경우 어떻게 이 방법을 사용할 수 있습니까?</b></div><div class='faqInP5'><i>커뮤니티 응답</i></div><div class='faqInP10'>죄송하지만 이 경우에는 불가능합니다. 새로운 화면을 가져와야 합니다.</div><div class='faqInP5'><b>웹 사이트에 로그인 한 경우 기록도 함께 제거됩니까?</b></div><div class='faqInP5'><i>커뮤니티 응답</i></div><div class='faqInP10'>예. 사용 중인 브라우저에 따라 달라집니다. 브라우저 기록을 제거하려면 브라우저 설정으로 이동하여 기록을 삭제하기만 하면 됩니다. 익명 모드를 사용하여 기록을 저장하지 않을 수도 있습니다.</div><div class='faqInP5'><b>모든 항목을 제거하도록 선택한 경우 암호도 초기화됩니까?</b></div><div class='faqInP5'><i>커뮤니티 응답</i></div><div class='faqInP10'>예, Windows 10 컴퓨터를 초기화하면 모든 사용자 데이터가 제거됩니다. 여기에는 문서, 저장된 암호, 그림, 기본 설정, 브라우저 정보 및 응용 프로그램 데이터가 포함됩니다.</div><hr><div class='faqInP5'>참조</div><div class='faqInP5'>Windows 10 초기화하는 방법 – WikiHow.</div></div>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
@@ -3507,7 +3513,8 @@
     "notification": {
         "menu": {
             "security": "알고 있습니다? 바이러스 백신 소프트웨어가 설치되어 있지 않더라도, 장치에 대한 기본 보안 보호 기능이 제공됩니다.",
-            "connectedHomeSecurity": "가정에서 네트워크 보안에 대한 실시간 모니터링 및 경고를 얻습니다. 스마트 장치가 보안 공격을 하고 있는 경우, 첫 번째 사용자는 이를 확인할 수 있습니다."
+            "connectedHomeSecurity": "가정에서 네트워크 보안에 대한 실시간 모니터링 및 경고를 얻습니다. 스마트 장치가 보안 공격을 하고 있는 경우, 첫 번째 사용자는 이를 확인할 수 있습니다.",
+            "hardwareScan": "이제 시스템 하드웨어 구성 요소의 상태를 볼 수 있습니다."
         }
     },
     "appsForYou": {

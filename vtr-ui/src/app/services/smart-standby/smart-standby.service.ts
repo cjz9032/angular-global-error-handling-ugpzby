@@ -40,7 +40,8 @@ export class SmartStandbyService {
 			if (this.getSelectedDays(2).length > 0) {
 				dayText = this.getSelectedDays(2);
 			}
-			dayText += ', ' + this.translate.instant('device.deviceSettings.power.smartStandby.days.weekends');
+			dayText += this.getSelectedDays(2).length !== 0 ? ', ' + this.translate.instant('device.deviceSettings.power.smartStandby.days.weekends'):
+			this.translate.instant('device.deviceSettings.power.smartStandby.days.weekends');
 		} else {
 			dayText = this.getSelectedDays(0);
 		}

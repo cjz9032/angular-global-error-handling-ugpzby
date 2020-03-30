@@ -1,5 +1,5 @@
-import { Component, Input, OnInit, SimpleChanges, OnChanges } from '@angular/core';
-import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import { Component, Input, OnInit, SimpleChanges, OnChanges, ViewChild } from '@angular/core';
+import { NgbCarouselConfig, NgbCarousel } from '@ng-bootstrap/ng-bootstrap';
 import { CommonService } from 'src/app/services/common/common.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
@@ -13,6 +13,7 @@ import { CardService, CardOverlayTheme } from 'src/app/services/card/card.servic
 })
 
 export class WidgetCarouselComponent implements OnInit, OnChanges {
+	@ViewChild(NgbCarousel) carouselContainer;
 	// images = [1, 2, 3].map(() => `https://picsum.photos/900/500?random&t=${Math.random()}`);
 	carouselModel: CarouselModel[] = [];
 	@Input() cardTitle: string;
@@ -40,7 +41,6 @@ export class WidgetCarouselComponent implements OnInit, OnChanges {
 	}
 
 	ngOnInit() {
-
 		this.config.interval = typeof this.interval !== 'undefined' ? this.interval : 5000;
 		this.config.keyboard = typeof this.keyboard !== 'undefined' ? this.keyboard : true;
 		this.config.pauseOnHover = typeof this.pauseOnHover !== 'undefined' ? this.pauseOnHover : true;
@@ -81,7 +81,6 @@ export class WidgetCarouselComponent implements OnInit, OnChanges {
 
 	parseToCarouselModel() {
 		this.carouselModel = [];
-
 		for (const carousel of this.data) {
 			this.carouselModel.push({
 				id: carousel.id,
@@ -103,6 +102,17 @@ export class WidgetCarouselComponent implements OnInit, OnChanges {
 		return this.cardService.linkClicked(actionType, actionLink);
 	}
 
+	public swipe(e) {
+		if (this.carouselModel && this.carouselModel.length > 1) {
+			if (e.toLowerCase() === 'swiperight') {
+				this.carouselContainer.prev();
+			} else {
+				if (e.toLowerCase() === 'swipeleft') {
+					this.carouselContainer.next();
+				}
+			}
+		}
+	}
 	private onNotification(notification: AppNotification) {
 		if (notification) {
 			switch (notification.type) {

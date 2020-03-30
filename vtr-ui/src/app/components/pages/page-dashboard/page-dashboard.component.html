@@ -24,8 +24,8 @@
 			<div class="row">
 				<div class="col-sm-12 pb-20 pt-0 px-0"
 					[hidden]="canShowDccDemo$ | async">
-					<vtr-widget-carousel [data]="heroBannerItems"
-						order="1"
+					<vtr-widget-carousel [data]="contentCards.positionA.displayContent"
+						order=1
 						source="title"
 						[interval]="5000"
 						cardTitle="title"
@@ -42,7 +42,7 @@
 				<div class="col-sm-12 pb-20 pt-0 px-0"
 					[hidden]="!(canShowDccDemo$ | async)">
 					<vtr-widget-carousel [data]="heroBannerDemoItems"
-						order="1"
+						order=1
 						source="title"
 						[interval]="5000"
 						cardTitle="title"
@@ -58,9 +58,9 @@
 				</div>
 				<div class="col-12 px-0 d-flex custom-card-container">
 					<div class="custom-card pb-20 card-left">
-						<vtr-container-card order="2"
-							[item]="cardContentPositionB"
-							[isOfflineArm]="(deviceService.isArm && !isOnline) || (deviceService.isArm && cardContentPositionB.isLocal)"
+						<vtr-container-card order=2
+							[item]="contentCards.positionB.displayContent"
+							[isOfflineArm]="(deviceService.isArm && !isOnline) || (deviceService.isArm && contentCards.positionB.displayContent.isLocal)"
 							[type]="'corner'"
 							[ratio]="2"
 							[cornerShift]="'large'"
@@ -70,9 +70,9 @@
 						</vtr-container-card>
 					</div>
 					<div class="custom-card pb-20 card-right">
-						<vtr-container-card order="3"
-							[item]="cardContentPositionC"
-							[isOfflineArm]="(deviceService.isArm && !isOnline) || (deviceService.isArm && cardContentPositionC.isLocal)"
+						<vtr-container-card order=3
+							[item]="contentCards.positionC.displayContent"
+							[isOfflineArm]="(deviceService.isArm && !isOnline) || (deviceService.isArm && contentCards.positionC.displayContent.isLocal)"
 							[type]="'corner'"
 							[ratio]="2"
 							[containerCardId]="'dashboard-lnk-content-c'"
@@ -82,9 +82,9 @@
 					</div>
 				</div>
 				<div class="col-sm-12 pb-20 px-0">
-					<vtr-container-card order="4"
-						[item]="cardContentPositionD"
-						[isOfflineArm]="(deviceService.isArm && !isOnline) || (deviceService.isArm && cardContentPositionD.isLocal)"
+					<vtr-container-card order=4
+						[item]="contentCards.positionD.displayContent"
+						[isOfflineArm]="(deviceService.isArm && !isOnline) || (deviceService.isArm && contentCards.positionD.displayContent.isLocal)"
 						[type]="'highlight'"
 						[ratio]="4"
 						[containerCardId]="'dashboard-lnk-content-d'"
@@ -95,9 +95,9 @@
 				<div class="col-12 px-0 d-flex custom-card-container">
 					<div class="custom-card pb-20 card-left"
 						[hidden]="deviceService.isSMode">
-						<vtr-container-card order="5"
-							[item]="cardContentPositionE"
-							[isOfflineArm]="(deviceService.isArm && !isOnline) || (deviceService.isArm && cardContentPositionE.isLocal)"
+						<vtr-container-card order=5
+							[item]="contentCards.positionE.displayContent"
+							[isOfflineArm]="(deviceService.isArm && !isOnline) || (deviceService.isArm && contentCards.positionE.displayContent.isLocal)"
 							[type]="'article'"
 							[ratio]="1"
 							[containerCardId]="'dashboard-lnk-content-e'"
@@ -107,9 +107,9 @@
 					</div>
 					<div class="custom-card pb-20 card-right"
 						[hidden]="deviceService.isSMode">
-						<vtr-container-card order="6"
-							[item]="cardContentPositionF"
-							[isOfflineArm]="(deviceService.isArm && !isOnline) || (deviceService.isArm && cardContentPositionF.isLocal)"
+						<vtr-container-card order=6
+							[item]="contentCards.positionF.displayContent"
+							[isOfflineArm]="(deviceService.isArm && !isOnline) || (deviceService.isArm && contentCards.positionF.displayContent.isLocal)"
 							[type]="'article'"
 							[ratio]="1"
 							[containerCardId]="'dashboard-lnk-content-f'"
@@ -136,6 +136,15 @@
 					<vtr-widget-dashboard-warranty [item]="warrantyData"
 						[isConnected]="isOnline">
 					</vtr-widget-dashboard-warranty>
+				</div>
+			</div>
+
+			<div class="row" *ngIf="!androidService.isAndroid && deviceService.isArm">
+				<div class="col-sm-12 col-md-12 pb-20 px-0">
+					<vtr-widget-support [title]="'support.documentation.title' | translate"
+						[description]="''"
+						[items]="supportDatas.documentation">
+					</vtr-widget-support>
 				</div>
 			</div>
 
@@ -167,6 +176,13 @@
 						[items]="qaService.qas"
 						blockPosition="r4"
 						[linkId]="'dashboard-qa'"></vtr-widget-questions>
+				</div>
+			</div>
+
+			<div class="row"
+				*ngIf="!androidService.isAndroid && deviceService.isArm">
+				<div class="col-sm-12 px-0 pb-20">
+					<vtr-widget-energy-star></vtr-widget-energy-star>
 				</div>
 			</div>
 

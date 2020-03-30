@@ -176,7 +176,7 @@ export class MetricsDirective {
 
 	@HostListener('click', ['$event'])
 	async onclick(event) {
-		if (!this.metrics) {
+		if (!this.metrics || this.composedItem === false) {
 			return;
 		}
 

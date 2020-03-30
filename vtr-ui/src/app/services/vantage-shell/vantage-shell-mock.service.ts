@@ -549,6 +549,9 @@ export class VantageShellService {
 				},
 				openMcAfeeRegistry() {
 					return Promise.resolve(true);
+				},
+				openMcAfeePurchaseUrl() {
+					return Promise.resolve(true);
 				}
 			},
 			passwordManager: {
@@ -632,6 +635,7 @@ export class VantageShellService {
 				isLWSPluginInstalled: true,
 				hasSystemPermissionShowed: true,
 				isSupported: true,
+				changeWifiSecurity: false,
 				launchLocationPrivacy() {
 					return Promise.resolve(true);
 				},
@@ -785,7 +789,7 @@ export class VantageShellService {
 					this.state === CHSAccountState.trial ? CHSAccountState.trialExpired : CHSAccountState.standard;
 			},
 			visitWebConsole(feature: string) {
-				WinRT.launchUri(`https://homesecurity.coro.net/`);
+				WinRT.launchUri(`https://chs.lenovo.com/`);
 				this.account.state =
 					this.state === CHSAccountState.trial ? CHSAccountState.trialExpired : CHSAccountState.standard;
 			}
@@ -1272,7 +1276,7 @@ export class VantageShellService {
 	public async deviceFilter(filter) {
 		if (this.phoenix) {
 			try {
-				const deviceFilterResult = await this.phoenix.deviceFilter.eval(filter);
+				const deviceFilterResult = await this.phoenix.deviceFilter.deviceFilterEval(filter);
 				// console.log('In VantageShellService.deviceFilter. Filter: ', JSON.stringify(filter), deviceFilterResult);
 				return deviceFilterResult;
 			} catch (error) {}
@@ -1284,6 +1288,7 @@ export class VantageShellService {
 	public calcDeviceFilter(filter) {
 		return Promise.resolve({
 			ConnectedHomeSecurity: true,
+			HardwareScan: true,
 			FeatureSearch: null,
 			TileBSource: 'UPE'
 		});
@@ -1897,6 +1902,11 @@ export class VantageShellService {
 			getThermalModeStatus: this.getPromise(true),
 			setThermalModeStatus: this.getPromise(true),
 			regThermalModeEvent: this.getPromise(true),
+			getAutoSwitchStatus: this.getPromise(true),
+			regThermalModeRealStatusEvent: this.getPromise(true),
+			setAutoSwitchStatus: this.getPromise(true),
+			getThermalModeRealStatus: this.getPromise(true),
+
 		};
 		return gamingThermalMode;
 	}
@@ -2235,7 +2245,7 @@ export class VantageShellService {
 		return undefined;
 	}
 
-	public getGamingAdvancedOC() {
+	getGamingAdvancedOC() {
 		return undefined;
 	}
 }

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { MetricConst } from 'src/app/enums/metrics.enum';
-import { AppAction, GetEnvInfo, AppLoaded, FirstRun, TaskAction } from 'src/app/services/metric/metrics.model';
-import { TimerServiceEx } from 'src/app/services/timer/timer-service-ex.service';
+import { AppAction, GetEnvInfo, AppLoaded, FirstRun, TaskAction, ArticleView } from 'src/app/services/metric/metrics.model';
+import { DurationCounterService } from 'src/app/services/timer/timer-service-ex.service';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { MetricHelper } from './metrics.helper';
 import { CommonService } from '../common/common.service';
@@ -21,14 +21,18 @@ export class MetricService {
 	private suspendDurationCounter;
 	private dashboardFirstLoaded = 0;
 	private hasSendAppLoadedEvent = false;
-
+	public readonly isFirstLaunch: boolean;
 	constructor(
 		private shellService: VantageShellService,
-		private timerService: TimerServiceEx,
+		private timerService: DurationCounterService,
 		hypothesisService: HypothesisService,
 		private commonService: CommonService,
 	) {
 		this.metricsClient = this.shellService.getMetrics();
+		this.isFirstLaunch = !this.commonService.getLocalStorageValue(LocalStorageKey.HadRunApp);
+		if (this.isFirstLaunch) {
+			this.commonService.setLocalStorageValue(LocalStorageKey.HadRunApp, true);
+		}
 
 		if (this.metricsClient) {
 			MetricHelper.initializeMetricClient(this.metricsClient, shellService, commonService, hypothesisService);
@@ -115,7 +119,6 @@ export class MetricService {
 		const scale = window.devicePixelRatio || 1;
 		const displayWidth = window.screen.width;
 		const displayHeight = window.screen.height;
-		const isFirstLaunch: boolean = !this.commonService.getLocalStorageValue(LocalStorageKey.HadRunApp);
 		this.metricsClient.sendAsync(
 			new GetEnvInfo({
 				imcVersion,
@@ -126,7 +129,7 @@ export class MetricService {
 					displayHeight * scale / 100
 				) * 100}`,
 				scalingSize: scale, // this value would is accurate in edge
-				isFirstLaunch
+				isFirstLaunch: this.isFirstLaunch
 			})
 		);
 	}
@@ -189,6 +192,10 @@ export class MetricService {
 			response,
 			0
 		));
+	}
+
+	public sendArticleView(articleView: ArticleView) {
+		this.metricsClient.sendAsync(articleView);
 	}
 
 	private handleAppLoadedEvent() {

@@ -12,7 +12,7 @@
 		<div class="container-fluid">
 			<div class="row"
 				*ngIf="!isOnline">
-				<div class="col col-12 px-0 pt-0 pb-40">
+				<div class="col col-12 px-0 pt-0 pb-24">
 					<vtr-widget-offline-info [isButtonVisible]="false"
 						[isSubtitleVisible]="false"
 						[title]="'dashboard.offlineInfo.title' | translate"
@@ -24,7 +24,7 @@
 			</div>
 			<div class="row no-gutters"
 				*ngIf="!isOnline">
-				<div class="col-12 col-sm-6 pb-40 offline-article"
+				<div class="col-12 col-sm-6 pb-24 offline-article"
 					*ngFor="let offlineImage of offlineImages">
 					<div class="offline-article-item">
 						<img class="w-100"
@@ -35,7 +35,7 @@
 
 			<div class="row"
 				*ngIf="articleCategories.length > 0 && isOnline">
-				<div class="col col-12 px-0 pt-0 pb-40">
+				<div class="col col-12 px-0 pt-0 pb-24">
 					<div class="card quick-access">
 						<div class="quick-access-title">
 							{{ 'support.quickAccess.categories' | translate }}</div>
@@ -74,7 +74,7 @@
 
 			<div class="row"
 				*ngIf="articlesType !== 'loading'">
-				<div class="col-md-6 pb-20 card-left"
+				<div class="col-md-6 pb-24 card-left"
 					*ngIf="articles.leftTop.length > 0">
 					<vtr-container-article [items]="articles.leftTop"
 						*ngIf="isOnline"
@@ -97,7 +97,7 @@
 						[type]="articlesType">
 					</vtr-container-article>
 				</div>
-				<div class="col-md-6 pb-20 card-right"
+				<div class="col-md-6 pb-24 card-right"
 					*ngIf="articles.middleTop.length > 0">
 					<vtr-container-article [items]="articles.middleTop"
 						*ngIf="isOnline"
@@ -139,7 +139,7 @@
 			<div class="row"
 				[vtrAppSearchScroller]="['search-warranty']"
 				*ngIf="warrantyData && warrantyData.info && warrantyData.info.status >= 0 && deviceService.showWarranty">
-				<div class="col col-12 px-0 pt-0 pb-40">
+				<div class="col col-12 px-0 pt-0 pb-24">
 					<vtr-widget-warranty [item]="warrantyData" [year]="warrantyYear"
 						[isConnected]="isOnline"></vtr-widget-warranty>
 				</div>
@@ -147,7 +147,7 @@
 
 			<div class="row"
 				[vtrAppSearchScroller]="['search-feedback']">
-				<div class="col col-12 px-0 pt-0 pb-40">
+				<div class="col col-12 px-0 pt-0 pb-24">
 					<vtr-widget-feedback [title]="'dashboard.feedback.title' | translate"
 						[description]="'dashboard.feedback.subtitle' | translate"
 						[actionName]="'dashboard.feedback.button' | translate"
@@ -159,7 +159,7 @@
 
 			<div class="row"
 				[vtrAppSearchScroller]="['search-user-guide']">
-				<div class="col col-12 px-0 pt-0 pb-40">
+				<div class="col col-12 px-0 pt-0 pb-24">
 					<vtr-widget-support [title]="'support.documentation.title' | translate"
 						[description]="''"
 						[items]="supportDatas.documentation">
@@ -169,7 +169,7 @@
 
 			<div class="row"
 				[vtrAppSearchScroller]="['search-lenovo-help']">
-				<div class="col col-12 px-0 pt-0 pb-40">
+				<div class="col col-12 px-0 pt-0 pb-24">
 					<vtr-widget-support [title]="'support.needHelp.title' | translate"
 						[description]="'support.needHelp.description' | translate"
 						[items]="supportDatas.needHelp"></vtr-widget-support>
@@ -178,7 +178,7 @@
 
 			<div class="row"
 				[vtrAppSearchScroller]="['search-lenovo-service']">
-				<div class="col col-12 px-0 pt-0 pb-40">
+				<div class="col col-12 px-0 pt-0 pb-24">
 					<vtr-widget-support [title]="'support.quicklinks.title' | translate"
 						[description]="''"
 						[items]="supportDatas.quicklinks"></vtr-widget-support>
@@ -186,7 +186,7 @@
 			</div>
 			<div class="row d-none d-lg-block"
 				*ngIf="articlesType !== 'loading' && articles.right.length > 0">
-				<div class="col col-12 px-0 pt-0 pb-40">
+				<div class="col col-12 px-0 pt-0 pb-24">
 					<vtr-container-article [items]="articles.right"
 						*ngIf="isOnline"
 						[startIndex]="5"

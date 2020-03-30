@@ -8,7 +8,7 @@
 
 	<left-content>
 		<div class="container-fluid">
-				<div class="row card mb-5">
+				<div class="row card mb-5" [dir]="'dir' | translate">
 					<div class="col left-container">
 						<div class="row description-container">
 							<div class="col"
@@ -75,17 +75,16 @@
 												{{'faq.footer.body' | translate}}
 											</div>
 											<div class="col-auto ">
-												<!-- <button class="btn btn-label">Go To Forum</button> -->
-												<!-- <button class="btn btn-label"><a href="https://forums.lenovo.com/"
-														target="_blank">{{'faq.footer.button' | translate}}</a>
-													</button> -->
-												<button class="btn btn-label"
-													(click)="onNavigate()">{{'faq.footer.button' | translate}}
-												</button>
-												<!-- <button class="btn btn-label"
-													onclick="window.open('https://forums.lenovo.com/', '_blank')">Go
-													To Forum
-												</button> -->
+												<div class="pr-0">
+													<vtr-ui-button 
+														metricsItem="supportDetail.goToForum"
+														[isFullWidth]="true"
+														[btnHeight]="true"
+														(onClick)="onNavigate()"
+														[linkId]="'support-detail-go-to-forum-btn'"
+														[label]="'faq.footer.button' | translate">
+													</vtr-ui-button>
+												</div>
 											</div>
 										</div>
 									</div>

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, SecurityContext } from '@angular/core';
 import { HttpHeaders } from '@angular/common/http';
 
 import { CommsService } from '../comms/comms.service';
@@ -13,6 +13,7 @@ import { DevService } from '../dev/dev.service';
 import { LoggerService } from '../logger/logger.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { throwError } from 'rxjs';
+import { DomSanitizer } from '@angular/platform-browser';
 
 const httpOptions = {
 	headers: new HttpHeaders({
@@ -29,18 +30,19 @@ export class CMSService {
 	segment: string; // VAN-5872, server switch feature
 	localInfo: any;
 	defaultInfo = { Lang: 'en', GEO: 'us', OEM: 'Lenovo', OS: 'Windows', Segment: 'Consumer', Brand: 'Lenovo' };
-
+	fetchRequestMap = {};
 	constructor(
 		private commsService: CommsService,
 		private vantageShellService: VantageShellService,
 		private localInfoService: LocalInfoService,
 		private commonService: CommonService, // VAN-5872, server switch feature,
 		private devService: DevService,
-		private logger: LoggerService
+		private logger: LoggerService,
+		private sanitizer: DomSanitizer
 	) {
 		localInfoService.getLocalInfo().then(result => {
 			this.localInfo = result;
-		}).catch(e => {});
+		}).catch(e => { });
 	}
 
 	deviceFilter(filters) {
@@ -93,19 +95,13 @@ export class CMSService {
 			return new Observable(subscriber => {
 				this.localInfoService.getLocalInfo().then(result => {
 					this.localInfo = result;
-					this.requestCMSContent(queryParams, this.localInfo).subscribe((result2: any) => {
-						subscriber.next(result2);
-					});
-				}).catch(e => {
-					this.requestCMSContent(queryParams, this.defaultInfo).subscribe((result2: any) => {
-						subscriber.next(result2);
-					});
+				}).finally(() => {
+					this.requestCMSContent(queryParams, this.localInfo || this.defaultInfo).subscribe(subscriber);
 				});
 			});
 		} else {
 			return this.requestCMSContent(queryParams, this.localInfo);
 		}
-
 	}
 
 	requestCMSContent(queryParams, locInfo) {
@@ -123,40 +119,39 @@ export class CMSService {
 
 		return new Observable(subscriber => {
 			if (this.commonService.isOnline) {
-				this.getCMSContent(CMSOption, subscriber);
+				this.getCMSContent(CMSOption).then(response => {
+					subscriber.next(response);
+				}).catch(ex => {
+					subscriber.error(ex);
+				});
 			} else {
 				this.commonService.notification.subscribe((notification: AppNotification) => {
 					if (notification && notification.type === NetworkStatus.Online) {
-						this.getCMSContent(CMSOption, subscriber);
+						this.getCMSContent(CMSOption).then(response => {
+							subscriber.next(response);
+						}).catch(ex => {
+							subscriber.error(ex);
+						});
 					}
 				});
 			}
 		});
 	}
 
-	getCMSContent(CMSOption: any, subscriber: any) {
-		this.commsService.endpointGetCall(
-			/*'/api/v1/features', Object.assign(defaults, queryParams), {}*/
-			'/api/v1/features', CMSOption, httpOptions// VAN-5872, server switch feature
-		).subscribe((response: any) => {
-			/* this.devService.writeLog('getCMSContent ', JSON.stringify(response.Results)); */
-			this.filterCMSContent(response.Results).then(
-				(result) => {
-					// this.devService.writeLog('getCMSContent::filterCMSContent::result', JSON.stringify(result));
-					subscriber.next(result);
-					subscriber.complete();
-				},
-				(reason) => {
-					// this.devService.writeLog('getCMSContent::error', reason);
-					// console.log('getCMSContent::error', reason);
-					subscriber.error(reason);
-				}
-			);
-		},
-			error => {
-				subscriber.error(error);
-			}
-		);
+	async getCMSContent(CMSOption: any) {
+		const requestKey = CMSOption ? JSON.stringify(CMSOption) : 'default_request_key';
+		if (!this.fetchRequestMap[requestKey]) {
+			this.fetchRequestMap[requestKey] = this.commsService.endpointGetCall(
+				'/api/v1/features', CMSOption, httpOptions// VAN-5872, server switch feature
+			).toPromise();
+		};
+
+		try {
+			const response = await this.fetchRequestMap[requestKey];
+			return await this.filterCMSContent(response.Results);
+		} finally {
+			this.fetchRequestMap[requestKey] = null;
+		}
 	}
 
 	fetchCMSArticleCategories(queryParams) {
@@ -210,17 +205,15 @@ export class CMSService {
 	}
 
 
-	fetchCMSArticles(queryParams, returnAll = false) {
+	async fetchCMSArticles(queryParams, returnAll = false) {
 		if (!this.localInfo) {
-			return this.localInfoService.getLocalInfo().then(result => {
-				this.localInfo = result;
-				return this.requestCMSArticles(queryParams, this.localInfo);
-			}).catch(e => {
-				return this.requestCMSArticles(queryParams, this.defaultInfo);
-			});
-		} else {
-			return this.requestCMSArticles(queryParams, this.localInfo);
+			try {
+				this.localInfo = await this.localInfoService.getLocalInfo();
+			} catch (ex) { }
 		}
+
+		const localInfo = this.localInfo || this.defaultInfo;
+		return this.requestCMSArticles(queryParams, localInfo);
 	}
 
 
@@ -262,18 +255,15 @@ export class CMSService {
 	}
 
 
-	fetchCMSArticle(articleId, queryParams?) {
+	async fetchCMSArticle(articleId, queryParams?) {
 		if (!this.localInfo) {
-			return this.localInfoService.getLocalInfo().then(result => {
-				this.localInfo = result;
-				return this.requestCMSArticle(articleId, this.localInfo, queryParams);
-			}).catch(e => {
-				return this.requestCMSArticle(articleId, this.defaultInfo, queryParams);
-			});
-		} else {
-			return this.requestCMSArticle(articleId, this.localInfo, queryParams);
+			try {
+				this.localInfo = await this.localInfoService.getLocalInfo();
+			} catch (ex) { }
 		}
 
+		const localInfo = this.localInfo || this.defaultInfo;
+		return this.requestCMSArticle(articleId, localInfo, queryParams);
 	}
 
 	requestCMSArticle(articleId, locInfo, queryParams?) {
@@ -294,8 +284,8 @@ export class CMSService {
 						resolve(response);
 					},
 					error => {
-                        reject('fetchCMSArticle error');
-                    }
+						reject('fetchCMSArticle error');
+					}
 				);
 		});
 	}
@@ -310,6 +300,15 @@ export class CMSService {
 					this.getDateTime(record.DisplayStartDate) <= new Date().getTime()
 				)
 			);
+		}).filter(record => {
+			try {
+				record.Title = this.sanitizer.sanitize(SecurityContext.HTML, record.Title);
+				record.Description = this.sanitizer.sanitize(SecurityContext.HTML, record.Description);
+			} catch (ex) {
+				this.logger.error('CMSService.sanitize error:', ex.message);
+				return false;
+			}
+			return true;
 		}).sort(this.sortCmsContent.bind(this));
 	}
 
@@ -321,11 +320,11 @@ export class CMSService {
 	}
 
 	getDateTime(date: any): number {
-		try{
+		try {
 			if (date && typeof date === 'string') {
 				return new Date(date.replace(/\./g, '\/')).getTime();
 			}
-		}catch(e){}
+		} catch (e) { }
 		return -1;
 	}
 

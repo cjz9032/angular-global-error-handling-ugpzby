@@ -10,6 +10,7 @@ export class UiButtonComponent implements OnInit {
 	@Input() label: string;
 	@Input() isFullWidth: boolean;
 	@Input() isHalfWidth: boolean;
+	@Input() vtrMetricEnabled: any;
 	@Input() alreadyJoinGroup = 'unjoined';
 	@Input() upperCaseLabel = true;
 	@Input() capitalizeLabel = false;

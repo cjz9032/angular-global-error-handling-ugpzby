@@ -58,7 +58,6 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 				clickItem: 'userGuide',
 				metricsItem: 'Documentation.UserGuideButton',
 				metricsEvent: 'FeatureClick',
-				metricsParent: 'Page.Support'
 			}
 		],
 		needHelp: [],
@@ -70,7 +69,6 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		url: 'https://community.lenovo.com',
 		metricsItem: 'NeedHelp.LenovoCommunityButton',
 		metricsEvent: 'FeatureClick',
-		metricsParent: 'Page.Support'
 	};
 	listContactCustomerService = {
 		icon: ['fal', 'share-alt'],
@@ -78,15 +76,26 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		url: 'https://support.lenovo.com/contactus?serialnumber=',
 		metricsItem: 'NeedHelp.ContactCustomerServiceButton',
 		metricsEvent: 'FeatureClick',
-		metricsParent: 'Page.Support'
 	};
+	listYourVirtualAssistant = {
+		icon: ['fal', 'robot'],
+		title: 'support.needHelp.listYourVirtualAssistant',
+		url: 'https://lena.lenovo.com/lena',
+		metricsItem: 'NeedHelp.YourVirtualAssistantButton',
+		metricsEvent: 'FeatureClick',
+	};
+	yourVirtualAssistantArr = [
+		{ Lang: 'ja', GEO: 'jp', url: 'https://jp.lena.lenovo.com/lena?country=Japan&language=Japanese' },
+		{ Lang: 'en', GEO: 'in', url: 'https://lena.lenovo.com/lena?country=India&language=English' },
+		{ Lang: 'en', GEO: 'ph', url: 'https://lena.lenovo.com/lena?country=Philippines&language=English' },
+		{ Lang: 'en', isDefault: true, url: 'https://lena.lenovo.com/lena' },
+	]
 	listFindUs = {
 		icon: ['fal', 'heart'],
 		title: 'support.needHelp.listFindUs',
 		clickItem: 'findUs',
 		metricsItem: 'NeedHelp.FindUsButton',
 		metricsEvent: 'FeatureClick',
-		metricsParent: 'Page.Support'
 	};
 	listServiceProvider = {
 		icon: ['fal', 'briefcase'],
@@ -94,7 +103,6 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		url: 'https://www.lenovo.com/us/en/ordersupport/',
 		metricsItem: 'Quicklinks.ServiceProviderButton',
 		metricsEvent: 'FeatureClick',
-		metricsParent: 'Page.Support'
 	};
 	listAboutLenovoVantage = {
 		iconPath: 'assets/images/support/svg_icon_about_us.svg',
@@ -102,7 +110,6 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		clickItem: 'about',
 		metricsItem: 'Quicklinks.AboutLenovoVantageButton',
 		metricsEvent: 'FeatureClick',
-		metricsParent: 'Page.Support'
 	};
 
 	// cpt
@@ -212,16 +219,36 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 	}
 
 	setShowList() {
-		this.supportDatas.needHelp.push(
-			this.listLenovoCommunity,
-			this.listFindUs,
-		);
+		if (this.supportService.supportDatas) {
+			this.supportDatas = this.supportService.supportDatas;
+			return;
+		}
+		this.supportDatas.needHelp.push(this.listLenovoCommunity);
 		this.supportService.getSerialnumber().then(sn => {
 			this.listContactCustomerService.url = `https://support.lenovo.com/contactus?serialnumber=${sn}`;
-			this.supportDatas.needHelp.splice(1, 0, this.listContactCustomerService);
+			this.supportDatas.needHelp.push(this.listContactCustomerService);
+			let isListYourVirtualAssistantEnabled = false
+			this.localInfoService.getLocalInfo().then(info => {
+				const GEO = info.GEO;
+				const Lang = info.Lang;
+				const findUrlItem = this.yourVirtualAssistantArr.find(y => y.GEO === GEO && y.Lang === Lang);
+				if (findUrlItem) {
+					this.listYourVirtualAssistant.url = findUrlItem.url;
+					isListYourVirtualAssistantEnabled = true;
+				} else {
+					const findUrlItemDefault = this.yourVirtualAssistantArr.find(y => y.isDefault && y.Lang === Lang);
+					if (findUrlItemDefault) {
+						this.listYourVirtualAssistant.url = findUrlItemDefault.url;
+						isListYourVirtualAssistantEnabled = true;
+					}
+				}
+				if (isListYourVirtualAssistantEnabled) { this.supportDatas.needHelp.push(this.listYourVirtualAssistant); }
+				this.supportDatas.needHelp.push(this.listFindUs);
+				this.supportService.supportDatas = this.supportDatas;
+			});
 		});
-		this.supportDatas.quicklinks.push(this.listAboutLenovoVantage);
 
+		this.supportDatas.quicklinks.push(this.listAboutLenovoVantage);
 		// cpt
 		if (this.isCPTEnabled) {
 			this.supportDatas.quicklinks.push(this.listCpt);

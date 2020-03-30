@@ -785,7 +785,7 @@
             "title": "Pytania i odpowiedzi dotyczące Twojego komputera",
             "subtitle": "Zobacz praktyczne wskazówki dotyczące Twojego urządzenia.",
             "question1": "Tworzenie kopii zapasowych plików i ich przywracanie",
-            "question2": "Jak odświeżyć komputer",
+            "question2": "Jak zresetować komputer",
             "question3": "Jak sprawdzić procesor komputera",
             "question4": "Jak sprawdzić poziom wykorzystania akumulatora urządzenia",
             "question5": "Używanie komputera jak tabletu",
@@ -876,7 +876,7 @@
                 "tips2": "Wprowadź dodatkowe komentarze poniżej",
                 "emailAddressLabel": "Podaj adres e-mail, jeśli chcesz, aby zespół ds. aplikacji Lenovo Vantage mógł się z Tobą kontaktować.",
                 "emailAddress": "Adres e-mail",
-                "invalidEmailMsg": "Invalid email address"
+                "invalidEmailMsg": "Niepoprawny adres e-mail"
             }
         },
         "quickSettings": {
@@ -1051,7 +1051,7 @@
                     "NotGood": "<b>Akumulator nie jest w dobrym stanie.</b>",
                     "NotSupportACAdapter": "<b>Zasilacz nie jest obsługiwany.</b>",
                     "LimitedACAdapterSupport": "<b>Zasilacz nie zapewnia wystarczającej mocy.</b>",
-                    "MissingDriver": "<b>Sterownik Lenovo Power Manager</b> nie jest zainstalowany lub nie działa poprawnie. Uruchom usługę Windows Update, aby zainstalować najnowszy sterownik. Możesz także zainstalować sterownik <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">stąd</a>. Po zakończeniu instalacji, ponownie uruchom komputer.",
+                    "MissingDriver": "<b>Sterownik Lenovo Power Manager</b> nie jest zainstalowany lub nie działa poprawnie. Uruchom Windows Update lub ręcznie zainstaluj <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">tutaj</a>. Po zakończeniu instalacji, ponownie uruchom komputer.",
                     "StoreLimitation": "<b>Pojemność akumulatora to tylko {{value}}% pierwotnej pojemności</b> po pełnym naładowaniu.",
                     "HighTemperature": "<b>Rozładowywanie</b> zostało zatrzymane, ponieważ <b>temperatura akumulatora jest zbyt wysoka.</b>",
                     "TrickleCharge": "Akumulator <b>całkowicie się rozładował</b> i należy go ponownie naładować. Może to zająć dziesięć godzin lub więcej.",
@@ -1330,6 +1330,12 @@
                         "description": "Wybierz plan zasilania, aby kontrolować wydajność, temperaturę komputera i zużycie energii.",
                         "currentPowerPlan": {
                             "label": "OBECNY PLAN"
+                        },
+                        "profile": {
+                            "title": "PROFIL PLANU:",
+                            "performance": "Maks. wydajność:",
+                            "temperature": "Maks. temperatura systemu:",
+                            "usage": "Maks. zużycie energii:"
                         }
                     }
                 },
@@ -1508,8 +1514,8 @@
                     "title": "Wyświetlanie",
                     "displayColorTemperature": {
                         "title": "Temperatura barwowa ekranu",
-                        "description": "Użytkownik może dostosowywać temperaturę barwową ekranu i regulować ilość niebieskiego światła, aby zredukować zmęczenie oczu. W okresie od zachodu do wschodu słońca ustawiaj cieplejsze kolory, które nie zaburzają snu.",
-                        "link": {
+						"description": "Możesz dostosowywać temperaturę barwową ekranu, odfiltrowując niebieskie światło męczące oczy. Z kolei w okresie od zachodu do wschodu słońca ustawiaj cieplejsze kolory, które nie zaburzają snu.",
+						"link": {
                             "click": "Kliknij",
                             "here": "tutaj",
                             "rest": "aby zmienić temperaturę barwową."
@@ -1997,30 +2003,30 @@
             },
             "voice": {
                 "title": "Głos",
-                "description": "Funkcja Lenovo Voice pomaga przekształcić Twój głos na tekst za pomocą funkcji Głos na tekst i zapewnia tłumaczenie w czasie rzeczywistym z głosu na tekst za pomocą funkcji tłumaczenia.",
+                "description": "Funkcja Lenovo Voice przekształca Twój głos na tekst za pomocą funkcji Głos na tekst i zapewnia Ci pomoc w postaci tłumaczenia w czasie rzeczywistym dostarczanego przez funkcję Translation Assistant.",
                 "installBtnText": "Zainstaluj",
                 "launchBtnText": "Uruchom",
                 "voiceToText": {
                     "title": "Głos na tekst",
-                    "caption": "Ta funkcja pomaga przekształcić Twój głos na tekst."
+                    "caption": "Ta funkcja przekształcająca głos na tekst umożliwia szybkie głosowe wprowadzanie treści."
                 },
                 "translation": {
                     "title": "Tłumaczenie",
-                    "caption": "Ta funkcja zapewnia tłumaczenie głosu w czasie rzeczywistym. Przetłumaczone treści są wyświetlane jako tekst. Możesz wybrać języki źródłowe i docelowe zgodnie z własnymi potrzebami."
+                    "caption": "Ta funkcja tłumaczy mowę w czasie rzeczywistym i wyświetla całe tłumaczenie w postaci tekstowej. Dostępnych jest wiele języków źródłowych i docelowych."
                 },
                 "modalPopUp": {
                     "heading": "Rozpocznij:",
-                    "point1": "Upewnij się, że ikona funkcji Lenovo Voice jest wyświetlana na pasku zadań systemu Windows.",
-                    "point2": "Otwórz plik, w którym chcesz nagrać przekonwertowany tekst.",
+                    "point1": "Po uruchomieniu Lenovo Voice z menu Start ikona Lenovo Voice będzie widoczna na pasku zadań systemu Windows.",
+                    "point2": "Otwórz aplikację, w której chcesz wpisać tekst.",
                     "point3": "Kliknij ikonę funkcji Lenovo Voice na pasku zadań systemu Windows i wybierz opcję Głos na tekst.",
-                    "point4": "Wybierz żądany język i kliknij ikonę mikrofonu, aby rozpocząć.",
-                    "point5": "Umieść kursor w miejscu, w którym chcesz edytować i zacznij mówić.",
-                    "point6": "Kliknij ikonę funkcji Lenovo Voice na pasku zadań systemu Windows i wybierz opcję Tłumacz.",
-                    "point7": "Wybierz żądany język źródłowy oraz docelowy.",
-                    "point8": "W zależności od potrzeb ustaw wejście głosowe z głośnika lub z mikrofonu.",
-                    "point9": "Kliknij ikonę mikrofonu, aby zacząć mówić",
+                    "point4": "Wybierz żądane języki i kliknij ikonę mikrofonu, aby rozpocząć.",
+                    "point5": "Umieść kursor w aplikacji i zacznij mówić.",
+                    "point6": "Kliknij ikonę funkcji Lenovo Voice na pasku zadań systemu Windows i wybierz opcję Tłumaczenie.",
+                    "point7": "Wybierz język źródłowy i język docelowy.",
+                    "point8": "W zależności od potrzeb wybierz głośnik lub mikrofon jako wejście głosowe.",
+                    "point9": "Kliknij ikonę mikrofonu i zacznij mówić.",
                     "closeText": "zamknij",
-                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
+                    "point10": "Upewnij się, że ikona funkcji Lenovo Voice jest wyświetlana na pasku zadań systemu Windows."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -2187,6 +2193,7 @@
             "description": "Jeżeli potrzebujesz pomocy, skontaktuj się z nami.",
             "listLenovoCommunity": "Społeczność Lenovo",
             "listContactCustomerService": "Skontaktuj się z działem obsługi klienta",
+            "listYourVirtualAssistant": "Your virtual assistant",
             "listContactUsOnWechat": "Skontaktuj się z nami za pomocą aplikacji WeChat",
             "weChatDescription": "Zadaj nam pytanie za pomocą aplikacji WeChat, aby szybko otrzymać odpowiedź",
             "listFindUs": "Znajdź nas w mediach społecznościowych",
@@ -2437,7 +2444,6 @@
                 "title": "Bezpieczeństwo",
                 "deviceName1": "Aplikacje z zaufanych źródeł",
                 "deviceName2": "Tryb dewelopera",
-                "deviceName3": "Powiadomienie UAC",
                 "deviceName4": "Dostępność oprogramowania antywirusowego",
                 "deviceName5": "Szyfrowanie dysku twardego",
                 "deviceName6": "Dostępność zapory sieciowej",
@@ -2633,8 +2639,8 @@
             }
         },
         "question2": {
-            "title": "Jak odświeżyć komputer",
-            "description": "<div>    <div class='faqInFs4Fb'>        Jak odświeżyć komputer    </div>    <hr>    <div class='faqInFs25FbP5'>        Objaw    </div>    <div class='faqInP5'>        Jeśli Twój komputer nie działa tak dobrze jak kiedyś, a nie wiesz dlaczego, możesz go odświeżyć, nie usuwając żadnych osobistych plików ani nie zmieniając ustawień. System Windows może „odświeżyć” komputer, czyli dokonać praktycznie nowej instalacji, ale bez usuwania osobistych plików użytkownika.    </div>    <div class='faqInP5'>        Odświeżenie komputera ma następujące skutki: Twoje pliki i spersonalizowane ustawienia nie ulegną zmianie    </div>    <div class='faqInP5'>        <ul>            <li>Ustawienia komputera zostaną zmienione z powrotem na domyślne</li>            <li>Aplikacje ze Sklepu Windows zostaną zachowane</li>            <li>Aplikacje zainstalowane przez Ciebie z płyty lub Internetu zostaną usunięte</li>            <li>Na pulpicie zostanie zapisana lista usuniętych plików</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Marki, w których problem występuje    </div>    <div>        <ul>            <li>Wszystkie komputery stacjonarne i laptopy</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        System operacyjny    </div>    <div>        <ul>            <li>Windows 8, 8.1 i 10</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Rozwiązanie    </div>    <div>        <ul class='list-unstyled'>            <li>                <span class='faqInFbTdP10'>Windows 8/8.1</span>                <ol>                    <li class='faqInP5'>                        Dotknij lub kliknij opcję <span class='faqInFb'>Ustawienia</span>                    </li>                    <li class='faqInP5'>                        Dotknij lub kliknij opcję <span class='faqInFb'>Aktualizacje i odzyskiwanie</span>                    </li>                    <li class='faqInP5'>                        <div>Dotknij lub kliknij opcję <span class='faqInFb'>Odzyskiwanie</span></div>                        <div class='faqInP5'>W sekcji Odśwież komputer z zachowaniem istniejących plików dotknij lub kliknij pozycję <span class='faqInFb'>Rozpocznij</span>.</div>                        <div><img src='assets/images/qa/2.1.jpg' /></div>                    </li>                    <li class='faqInP5'>                        Kliknij przycisk <span class='faqInFb'>Dalej</span>.                    </li>                    <li class='faqInP5'>                        Kliknij przycisk <span class='faqInFb'>Odśwież</span>, aby rozpocząć proces odświeżania.                    </li>                    <li class='faqInP5'>                        Po zakończeniu odświeżania na pulpicie znajduje się lista Usunięte aplikacje                    </li>                    <li class='faqInP5'>                        Zawiera ona spis aplikacji usuniętych podczas odświeżania systemu                    </li>                </ol>            </li>            <li class='faqInP10'>                <span class='faqInFbTd'>Windows 10</span>                <ol>                    <li class='faqInP5'> W menu Start w polu wyszukiwania wpisz słowo <span class='faqInFb'>odśwież</span>.</li>                    <li class='faqInP5'>                        <div>Na liście wyników kliknij pozycję <span class='faqInFb'>Odśwież komputer z zachowaniem istniejących plików</span>, jak pokazano niżej.</div>                        <div><img src='assets/images/qa/2.2.jpg' /></div>                    </li>                    <li class='faqInP5'>                        <div>Kliknij przycisk <span class='faqInFb'>Rozpocznij</span> znajdujący się tuż pod nagłówkiem<span class='faqInFb'>Odśwież komputer z zachowaniem istniejących plików</span>, aby rozpocząć odświeżanie swojego komputera z systemem Windows 10.</div>                        <div><img src='assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div class='faqInFs25Fb'>        Dodatkowe informacje    </div>    <div>        Najczęściej rozpoczęty proces odświeżania komputera jest wykonywany aż do końca automatycznie. Jeśli jednak w systemie Windows brakuje niezbędnych plików, zobaczysz monit o włożenie nośnika odzyskiwania, którym zazwyczaj jest dysk DVD lub pamięć USB. Gdy dojdzie do takiej sytuacji, potrzebne zasoby zależą od konkretnego komputera.    </div>    <div class='faqInP10'>        Jeżeli komputer był uaktualniany do systemu Windows 8.1 lub Windows RT 8.1 za pomocą dysku DVD, użyj tego dysku. Jeżeli nie masz nośnika z systemem Windows 8.1 lub Windows RT 8.1, skontaktuj się z pomocą techniczną Microsoft.    </div></div>",
+            "title": "Jak zresetować komputer",
+            "description": "<div><div class='faqInFs4Fb'>Jak zresetować ustawienia systemu Windows 10</div><hr><div class='faqInP5'>Jeśli na komputerze z systemem Windows 10 występują problemy lub jeśli zamierzasz go sprzedać, zresetuj ustawienia systemu. Wykonanie procedury resetowania ustawień pozwala zachować lub usunąć pliki, usunąć wszystkie aplikacje i ustawienia oraz zainstalować nową kopię systemu Windows. Zresetowanie ustawień może również rozwiązać wiele problemów, takich jak niska wydajność komputera.</div><div class='faqInFs25FbP10'>1. Otwórz aplikację Ustawienia</div><div class='faqInP5'>Naciśnij przycisk Start Obraz, który znajduje się w lewym dolnym rogu ekranu, i wybierz ustawienia oznaczone ikoną koła zębatego Obraz.</div><div class='faqInP5'><img src='assets/images/qa/2.1.jpg' /></div><div class='faqInFs25FbP10'>2. Z listy kategorii wybierz opcję Aktualizacja i zabezpieczenia</div><div class='faqInP5'><img src='assets/images/qa/2.2.jpg' /></div><div class='faqInFs25FbP10'>3. W okienku po lewej stronie wybierz opcję Odzyskiwanie</div><div class='faqInP5'><img src='assets/images/qa/2.3.jpg' /></div><div class='faqInFs25FbP10'>4. Rozpocznij proces resetowania ustawień</div><div class='faqInP5'>Poniżej nagłówka „Resetuj ustawienia komputera do stanu początkowego” widocznego u góry kliknij lub naciśnij przycisk Rozpocznij.</div><div class='faqInP5'><img src='assets/images/qa/2.4.jpg' /></div><div class='faqInFs25FbP10'>5. Określ, czy chcesz zachować swoje pliki</div><div class='faqInP5'>Po zresetowaniu ustawień możesz zalogować się na swoje konto Microsoft. Wszelkie aplikacje ze Sklepu Windows zakupione na tym koncie zostaną ponownie zainstalowane.</div><div class='faqInP5'><ul><li>Wybór opcji Zachowaj moje pliki powoduje usunięcie aplikacji i ustawień przy jednoczesnym zachowaniu wszystkich plików osobistych.</li><li>Wybór opcji Usuń wszystko powoduje usunięcie aplikacji, ustawień i plików osobistych. Jeśli nie masz wykonanej kopii zapasowej plików, możesz nacisnąć przycisk Anuluj, wykonać kopię zapasową i ponownie rozpocząć proces.</li></ul></div><div class='faqInP5'><img src='assets/images/qa/2.5.jpg' /></div><div class='faqInFs25FbP10'>6. Możesz wybrać różne dodatkowe ustawienia</div><div class='faqInP5'>Wyświetlą się one wyłącznie, jeśli w poprzednim kroku wybrano opcję „Usuń wszystko”.</div><div class='faqInP5'><img src='assets/images/qa/2.6.1.jpg' /></div><div class='faqInP5'><img src='assets/images/qa/2.6.2.jpg' /></div><div class='faqInFs25FbP10'>7. Zapoznaj się z przeglądem informacji i naciśnij opcję Resetuj, aby kontynuować.</div><div class='faqInP5'>System Windows przygotuje się do zresetowania urządzenia. Wystarczy, że poczekasz, aż pojawi się niebieski ekran.</div><div class='faqInFs25FbP10'>8. Gdy pojawi się komunikat „Wybierz opcję”, wybierz opcję Kontynuuj.</div><div class='faqInP5'>System Windows uruchomi się ponownie i rozpocznie resetowanie. W trakcie resetowania komputer może kilka razy ponownie się uruchomić.</div><hr><div class='faqInFs25FbP10'>Pytania i odpowiedzi — społeczność</div><div class='faqInP5'><b>Jeśli zdecyduję się usunąć wszystko, to czy spowoduje to wymazanie wszystkich dysków zamontowanych w moim komputerze lub podłączonych do niego, czy też tylko tego, na którym używam systemu Windows 10?</b></div><div class='faqInP5'><i>Odpowiedź społeczności</i></div><div class='faqInP10'>Skasowany zostanie tylko dysk systemu Windows 10 (zwykle jest to dysk C:). Ta procedura nie wpłynie na inne dyski zamontowane w komputerze lub podłączone do niego.</div><div class='faqInP5'><b>Jak mogę to zrobić, jeśli mój ekran jest zepsuty?</b></div><div class='faqInP5'><i>Odpowiedź społeczności</i></div><div class='faqInP10'>Niestety, w takim przypadku nie możesz tego zrobić. Trzeba będzie zakupić nowy ekran.</div><div class='faqInP5'><b>Jeśli zaloguję się na jakiejś stronie internetowej, to czy historia tych odwiedzin również zostanie usunięta?</b></div><div class='faqInP5'><i>Odpowiedź społeczności</i></div><div class='faqInP10'>Tak, w zależności od używanej przeglądarki. Aby usunąć historię przeglądarki, wystarczy przejść do ustawień w przeglądarce i usunąć historię. Możesz także używać trybów incognito, aby uniknąć zapisywania historii.</div><div class='faqInP5'><b>Czy jeśli zdecyduję się usunąć wszystko, moje hasło również zostanie zresetowane?</b></div><div class='faqInP5'><i>Odpowiedź społeczności</i></div><div class='faqInP10'>Tak, po zresetowaniu komputera z systemem Windows 10 zostaną usunięte także wszystkie dane użytkownika. Dotyczy to dokumentów, zapisanych haseł, zdjęć, preferowanych ustawień, informacji o przeglądarce i danych aplikacji.</div><hr><div class='faqInP5'>Referencje</div><div class='faqInP5'>Jak zresetować ustawienia systemu Windows 10 — WikiHow.</div></div>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
@@ -3507,7 +3513,8 @@
     "notification": {
         "menu": {
             "security": "Czy wiesz? Nawet jeśli nie masz zainstalowanego oprogramowania antywirusowego, nadal zapewniamy podstawową ochronę twojego urządzenia.",
-            "connectedHomeSecurity": "Zyskaj monitorowanie w czasie rzeczywistym i otrzymuj alerty dotyczące bezpieczeństwa sieci w domu. Jako pierwszy dowiesz się, czy któreś z twoich inteligentnych urządzeń jest narażone na zagrożenia."
+            "connectedHomeSecurity": "Zyskaj monitorowanie w czasie rzeczywistym i otrzymuj alerty dotyczące bezpieczeństwa sieci w domu. Jako pierwszy dowiesz się, czy któreś z twoich inteligentnych urządzeń jest narażone na zagrożenia.",
+            "hardwareScan": "Teraz możesz uzyskać informacje o kondycji komponentu sprzętowego systemu."
         }
     },
     "appsForYou": {

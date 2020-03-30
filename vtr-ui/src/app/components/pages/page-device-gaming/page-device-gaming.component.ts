@@ -1,4 +1,4 @@
-import { Component, OnInit, DoCheck, AfterViewInit } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MockService } from '../../../services/mock/mock.service';
 import { QaService } from '../../../services/qa/qa.service';
@@ -30,9 +30,8 @@ import { DialogService } from 'src/app/services/dialog/dialog.service';
 	styleUrls: [ './page-device-gaming.component.scss' ],
 	providers: [ NgbModalConfig, NgbModal ]
 })
-export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit {
+export class PageDeviceGamingComponent implements OnInit, DoCheck {
 	public static allCapablitiyFlag = false;
-	dashboardStart: any = new Date();
 	submit = 'Submit';
 	feedbackButtonText = this.submit;
 	securityAdvisor: SecurityAdvisor;
@@ -128,20 +127,14 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 		}
 	}
 
-	ngAfterViewInit() {
-		const dashboardEnd: any = new Date();
-		const dashboardTime = dashboardEnd - this.dashboardStart;
-		this.loggerService.info(`Performance: Dashboard load time after view init. ${dashboardTime}ms`);
-	}
-
 	fetchCmsContents(lang?: string) {
 		const callCmsStartTime: any = new Date();
 		const queryOptions: any = {
 			Page: 'dashboard'
 		};
 		if (this.isOnline) {
-			if (this.dashboardService.cardContentPositionDOnline) {
-				this.cardContentPositionD = this.dashboardService.cardContentPositionDOnline;
+			if (this.dashboardService.onlineCardContent.positionD) {
+				this.cardContentPositionD = this.dashboardService.onlineCardContent.positionD;
 			}
 		}
 		this.cmsService.fetchCMSContent(queryOptions).subscribe(
@@ -149,7 +142,7 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 				const callCmsEndTime: any = new Date();
 				const callCmsUsedTime = callCmsEndTime - callCmsStartTime;
 				if (response && response.length > 0) {
-					if (!this.dashboardService.cardContentPositionDOnline) {
+					if (!this.dashboardService.onlineCardContent.positionD) {
 						const cardContentPositionD = this.cmsService.getOneCMSContent(
 							response,
 							'full-width-title-image-background',
@@ -157,10 +150,10 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 						)[0];
 						if (cardContentPositionD) {
 							this.cardContentPositionD = cardContentPositionD;
-							this.dashboardService.cardContentPositionDOnline = cardContentPositionD;
+							this.dashboardService.onlineCardContent.positionD = cardContentPositionD;
 						}
 					} else {
-						this.cardContentPositionD = this.dashboardService.cardContentPositionDOnline;
+						this.cardContentPositionD = this.dashboardService.onlineCardContent.positionD;
 					}
 				} else {
 					const msg = `Performance: Dashboard page not have this language contents, ${callCmsUsedTime}ms`;
@@ -175,7 +168,7 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 	public onConnectivityClick($event: any) {}
 
 	private getPreviousContent() {
-		this.cardContentPositionD = this.dashboardService.cardContentPositionD;
+		this.cardContentPositionD = this.dashboardService.offlineCardContent.positionD;
 	}
 
 	private getSystemInfo() {

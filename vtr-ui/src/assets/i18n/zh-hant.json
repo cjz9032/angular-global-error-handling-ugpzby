@@ -785,7 +785,7 @@
             "title": "您機器的問答",
             "subtitle": "尋找您裝置適用的實用提示。",
             "question1": "備份及還原檔案",
-            "question2": "如何重新整理電腦",
+            "question2": "如何重設您的電腦",
             "question3": "如何知道電腦的 CPU",
             "question4": "檢查電腦的電池使用情況",
             "question5": "將電腦當作平板電腦使用",
@@ -876,7 +876,7 @@
                 "tips2": "請在下方將任何其他意見告訴我們",
                 "emailAddressLabel": "如果您希望 Lenovo Vantage 團隊與您聯絡，請留下您的電子郵件地址。",
                 "emailAddress": "電子郵件地址",
-                "invalidEmailMsg": "Invalid email address"
+                "invalidEmailMsg": "無效的電子郵件地址"
             }
         },
         "quickSettings": {
@@ -1051,7 +1051,7 @@
                     "NotGood": "<b>電池狀況不佳。</b>",
                     "NotSupportACAdapter": "<b>不支援 AC 整流器。</b>",
                     "LimitedACAdapterSupport": "<b>AC 整流器無法提供足夠的電力。</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager 驅動程式</b>未安裝或無法正常運作。請執行 Windows Update 以安裝最新的驅動程式。您也可以從<a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">這裡</a>安裝驅動程式。安裝之後，重新啟動電腦。",
+                    "MissingDriver": "<b>Lenovo Power Manager 驅動程式</b>未安裝或無法正常運作。請執行 Windows Update 或從<a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">這裡</a>手動安裝。安裝之後，重新啟動電腦。",
                     "StoreLimitation": "<b>電池只能儲存其原始充飽容量的 {{value}}%</b>。",
                     "HighTemperature": "因為<b>電池溫度過高</b>，已停止<b>放電。</b>",
                     "TrickleCharge": "電池已<b>完全放電</b>，而且必須重新充電。這可能需要十小時或更長的時間。",
@@ -1330,6 +1330,12 @@
                         "description": "選擇電源計劃以控制電腦效能、系統溫度和電源使用情形。",
                         "currentPowerPlan": {
                             "label": "目前計劃"
+                        },
+                        "profile": {
+                            "title": "計劃設定檔：",
+                            "performance": "最高效能：",
+                            "temperature": "最高系統溫度：",
+                            "usage": "最高電源用量："
                         }
                     }
                 },
@@ -1508,8 +1514,8 @@
                     "title": "顯示",
                     "displayColorTemperature": {
                         "title": "顯示器色溫",
-                        "description": "您可以調整顯示器的色溫，以濾除藍光並減輕眼睛疲勞。在日落到日出期間，將顯示器調整為暖色，以幫助您入睡。",
-                        "link": {
+						"description": "您可以調整顯示器的色溫，以過濾藍光並減輕眼睛疲勞。在日落到日出期間，將顯示器調整為暖色，以幫助您入睡。",
+						"link": {
                             "click": "按一下",
                             "here": "這裡",
                             "rest": "以變更色溫。"
@@ -1997,30 +2003,30 @@
             },
             "voice": {
                 "title": "語音",
-                "description": "Lenovo Voice 可使用語音到文字功能，協助將您的語音轉換為文字，並使用翻譯功能提供從語音到文字的即時翻譯。",
+                "description": "Lenovo Voice 可使用語音轉文字功能將您的聲音轉換為文字，並使用翻譯助理功能進行即時語音翻譯。",
                 "installBtnText": "安裝",
                 "launchBtnText": "啟動",
                 "voiceToText": {
                     "title": "語音到文字",
-                    "caption": "此功能可協助將您的語音轉換為文字。"
+                    "caption": "此功能提供語音輸入功能、可將語音轉換為文字以快速輸入。"
                 },
                 "translation": {
                     "title": "翻譯",
-                    "caption": "此功能提供語音的即時翻譯。翻譯的內容顯示在文字中。您可以根據需求選擇來源語言和目標語言。"
+                    "caption": "此功能可協助即時翻譯語音，所有翻譯的內容都會以文字形式顯示。來源語言及目標語言皆有多語種可供選擇。"
                 },
                 "modalPopUp": {
                     "heading": "開始使用：",
-                    "point1": "確保 Lenovo Voice 圖示有顯示在 Windows 系統匣中。",
-                    "point2": "開啟要用來記錄轉換文字的檔案。",
+                    "point1": "請由開始功能表開啟 Lenovo Voice，Lenovo Voice 圖示將顯示於 Windows 系統匣內。",
+                    "point2": "開啟要輸入文字的應用程式。",
                     "point3": "按一下 Windows 系統匣中的 Lenovo Voice 圖示，然後選取「語音到文字」。",
                     "point4": "選取所需的語言，然後按一下麥克風圖示開始。",
-                    "point5": "將游標放在要編輯的位置並開始說話。",
+                    "point5": "將游標放在應用程式上，然後開始說話。",
                     "point6": "按一下 Windows 系統匣中的 Lenovo Voice 圖示，然後選取「翻譯」。",
-                    "point7": "選擇所需的來源語言和目標語言。",
+                    "point7": "選擇來源語言和目標語言。",
                     "point8": "根據您的需求，設定從喇叭或麥克風輸入語音。",
-                    "point9": "按一下麥克風圖示開始說話",
+                    "point9": "按一下麥克風圖示開始說話。",
                     "closeText": "關閉",
-                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
+                    "point10": "確保 Lenovo Voice 圖示有顯示在 Windows 系統匣中。"
                 },
                 "modalInstallationFailed": {
                     "btnText": "確定",
@@ -2187,6 +2193,7 @@
             "description": "請聯絡我們以便為您提供協助。",
             "listLenovoCommunity": "Lenovo 社群",
             "listContactCustomerService": "聯絡客戶服務",
+            "listYourVirtualAssistant": "Your virtual assistant",
             "listContactUsOnWechat": "透過 WeChat 聯絡我們",
             "weChatDescription": "透過 WeChat 向我們提問，我們一定會盡快回覆",
             "listFindUs": "透過社交媒體追蹤我們",
@@ -2437,7 +2444,6 @@
                 "title": "安全性健康情況",
                 "deviceName1": "來自可信任來源的應用程式",
                 "deviceName2": "開發人員模式",
-                "deviceName3": "UAC 通知",
                 "deviceName4": "防毒可用性",
                 "deviceName5": "硬碟加密",
                 "deviceName6": "防火牆可用性",
@@ -2633,8 +2639,8 @@
             }
         },
         "question2": {
-            "title": "如何重新整理電腦",
-            "description": "<div>    <div class='faqInFs4Fb'>        如何重新整理電腦    </div>    <hr>    <div class='faqInFs25FbP5'>        問題狀況    </div>    <div class='faqInP5'>        如果電腦執行性能不若以往，且您不知道原因，這時您可以在不刪除任何個人檔案或變更設定的情況下重新整理您的電腦。Windows 可以「重新整理」您的電腦，在不刪除您的個人檔案情況下，使您的電腦像是全新安裝。    </div>    <div class='faqInP5'>        重新整理電腦時，將發生下列情況：您的檔案和個人化設定完全不會變更    </div>    <div class='faqInP5'>        <ul>            <li>您的電腦設定將變更回預設值</li>            <li>來自 Windows 市集的應用程式將被保留</li>            <li>您自光碟或網站所安裝的應用程序將予以刪除</li>            <li>已刪除檔案的清單將儲存在桌面上</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        受影響的品牌    </div>    <div>        <ul>            <li>所有桌上型電腦和筆記型電腦</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        作業系統    </div>    <div>        <ul>            <li>Windows 8、8.1 與 10</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        解決方案    </div>    <div>        <ul class='list-unstyled'>            <li>                <span class='faqInFbTdP10'>Windows 8/8.1</span>                <ol>                    <li class='faqInP5'>                        輕點或按一下<span class='faqInFb'>設定</span>                    </li>                    <li class='faqInP5'>                        輕點或按一下<span class='faqInFb'>更新與復原</span>                    </li>                    <li class='faqInP5'>                        <div>輕點或按一下<span class='faqInFb'>復原</span></div>                        <div class='faqInP5'>在不影響檔案的情況下重新整理您的電腦，或者輕點或按一下<span class='faqInFb'>開始使用</span>。</div>                        <div><img src='assets/images/qa/2.1.jpg' /></div>                    </li>                    <li class='faqInP5'>                        按一下<span class='faqInFb'>「下一步」</span>。                    </li>                    <li class='faqInP5'>                        按一下<span class='faqInFb'>「重新整理」 </span>啟動重新整理作業。                    </li>                    <li class='faqInP5'>                        重新整理作業完成之後，您可以在桌面上找到「已移除的應用程式」清單                    </li>                    <li class='faqInP5'>                        您可以一邊尋找已移除應用程式，一邊重新整理系統                    </li>                </ol>            </li>            <li class='faqInP10'>                <span class='faqInFbTd'>Windows 10</span>                <ol>                    <li class='faqInP5'> 在「開始」功能表中所提供的搜尋方塊中，搜尋<span class='faqInFb'>重新整理</span>。</li>                    <li class='faqInP5'>                        <div>在搜尋結果中，按一下<span class='faqInFb'>「在不影響檔案的情況下重新整理您的電腦」</span>，如下所示。</div>                        <div><img src='assets/images/qa/2.2.jpg' /></div>                    </li>                    <li class='faqInP5'>                        <div>按一下<span class='faqInFb'>在不影響檔案的情況下重新整理您的電腦</span>標題下方的<span class='faqInFb'>入門</span>按鈕，開始重新整理 Windows 10 電腦。</div>                        <div><img src='assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div class='faqInFs25Fb'>        其他資訊    </div>    <div>        在大多數情況下，開始重新整理電腦後，整個作業將自行完成。然而，如果 Windows 需要遺失的檔案，則其會要求您插入還原媒體，通常是 DVD 光碟或隨身碟。如果發生這種情況，則您將依據所用電腦而需要不同的媒體。    </div>    <div class='faqInP10'>        如果使用 DVD 將電腦升級到 Windows 8.1 或 Windows RT 8.1，請使用該光碟。如果您沒有 Windows 8.1 或 Windows RT 8.1 媒體，請與 Microsoft 支援服務聯繫。    </div></div>",
+            "title": "如何重設您的電腦",
+            "description": "<div><div class='faqInFs4Fb'>如何重設 Windows 10</div><hr><div class='faqInP5'>如果您的 Windows 10 電腦遇到問題，或您要將它出售，請重設該電腦。執行重設可讓您選擇保留或移除您的檔案，移除所有應用程式和設定，並安裝 Windows 的新副本。這也可以修正許多問題，例如效能降低。</div><div class='faqInFs25FbP10'>1.開啟「設定」應用程式</div><div class='faqInP5'>按下螢幕左下角的「開始」影像按鈕，然後選擇「設定」齒輪影像。</div><div class='faqInP5'><img src='assets/images/qa/2.1.jpg' /></div><div class='faqInFs25FbP10'>2.在類別清單中選取「更新和安全性」</div><div class='faqInP5'><img src='assets/images/qa/2.2.jpg' /></div><div class='faqInFs25FbP10'>3.在左窗格中導覽至「復原」</div><div class='faqInP5'><img src='assets/images/qa/2.3.jpg' /></div><div class='faqInFs25FbP10'>4.開始重設程序</div><div class='faqInP5'>在頂部的「重設此電腦」標題底下，按一下或點選「開始」按鈕。</div><div class='faqInP5'><img src='assets/images/qa/2.4.jpg' /></div><div class='faqInFs25FbP10'>5.選擇是否保留您的檔案</div><div class='faqInP5'>重設之後，您可以登入您的 Microsoft 帳戶。使用此帳戶購買的所有 Windows 市集應用程式都將重新安裝。</div><div class='faqInP5'><ul><li>「保留我的檔案」會移除應用程式和設定，但會保留您的所有個人檔案。</li><li>「移除所有項目」會清除您的應用程式、設定和個人檔案。如果您沒有檔案的備份副本，建議您按下「取消」，將檔案備份，然後重新開始此程序。</li></ul></div><div class='faqInP5'><img src='assets/images/qa/2.5.jpg' /></div><div class='faqInFs25FbP10'>6.您可以選擇不同的其他設定</div><div class='faqInP5'>只有當您在上一步中選取了「移除所有項目」時，此選項才會顯示。</div><div class='faqInP5'><img src='assets/images/qa/2.6.1.jpg' /></div><div class='faqInP5'><img src='assets/images/qa/2.6.2.jpg' /></div><div class='faqInFs25FbP10'>7. 閱讀概觀，當您準備好繼續進行時按下「重設」。</div><div class='faqInP5'>Windows 將準備重設您的裝置。此時只需等待，直到您進入藍色畫面。</div><div class='faqInFs25FbP10'>8.當「選擇選項」出現時，選取「繼續」。</div><div class='faqInP5'>Windows 將重新啟動並開始重設。進行重設期間，您的電腦可能會重新開機數次。</div><hr><div class='faqInFs25FbP10'>社群問答集</div><div class='faqInP5'><b>如果我選擇移除所有項目，我電腦內部/連接的所有磁碟機都會清除內容，還是只有執行 Windows 10 所在的磁碟機會清除內容？</b></div><div class='faqInP5'><i>社群回答</i></div><div class='faqInP10'>只會清除 Windows 10 作業系統磁碟機（通常是 C: 磁碟機）。電腦內部/連接的其他磁碟機將不受影響。</div><div class='faqInP5'><b>如果螢幕壞了，我該如何執行此操作？</b></div><div class='faqInP5'><i>社群回答</i></div><div class='faqInP10'>很不幸地，這種情況下您無法執行此操作。您需要取得新螢幕。</div><div class='faqInP5'><b>如果我已登入任何網站，相關的歷程記錄也會移除嗎？</b></div><div class='faqInP5'><i>社群回答</i></div><div class='faqInP10'>是的，具體取決於您使用的瀏覽器。如果要移除您的瀏覽器歷程記錄，只要進入瀏覽器中的設定並刪除歷程記錄即可。您也可以使用匿名模式以避免儲存歷程記錄。</div><div class='faqInP5'><b>如果我選擇移除所有項目，是否也會重設我的密碼？</b></div><div class='faqInP5'><i>社群回答</i></div><div class='faqInP10'>是的，一旦重設您的 Windows 10 電腦，也將移除所有使用者資料。這包括文件、儲存的密碼、圖片、偏好設定、瀏覽器資訊和應用程式資料。</div><hr><div class='faqInP5'>參考</div><div class='faqInP5'>如何重設 Windows 10 – WikiHow。</div></div>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
@@ -3507,7 +3513,8 @@
     "notification": {
         "menu": {
             "security": "您知道嗎？即使您沒有安裝防毒軟體，我們仍會為您的裝置提供基本的安全保護。",
-            "connectedHomeSecurity": "在家中取得有關網路安全的即時監視和警示。您將是最先知道您的智慧型裝置是否面臨安全攻擊的人。"
+            "connectedHomeSecurity": "在家中取得有關網路安全的即時監視和警示。您將是最先知道您的智慧型裝置是否面臨安全攻擊的人。",
+            "hardwareScan": "現在，您可以取得系統硬體元件的性能狀態。"
         }
     },
     "appsForYou": {

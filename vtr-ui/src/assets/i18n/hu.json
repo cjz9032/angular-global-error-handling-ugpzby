@@ -785,7 +785,7 @@
             "title": "Kérdések és válaszok a gépedhez",
             "subtitle": "Ismerjen meg hasznos tippeket eszközével kapcsolatban.",
             "question1": "Fájlok biztonsági mentése és visszaállítása",
-            "question2": "A számítógép frissítése",
+            "question2": "A számítógép visszaállítása alapállapotba",
             "question3": "A számítógép CPU-típusának megtekintése",
             "question4": "A gép akkumulátorhasználatának ellenőrzése",
             "question5": "A számítógép táblagépként történő használata",
@@ -876,7 +876,7 @@
                 "tips2": "Ha van további megjegyzése, írja le alább.",
                 "emailAddressLabel": "Ha szeretné, hogy a Lenovo Vantage csapata felvehesse Önnel a kapcsolatot, adja meg az e-mail-címét.",
                 "emailAddress": "E-mail-cím",
-                "invalidEmailMsg": "Invalid email address"
+                "invalidEmailMsg": "Érvénytelen e-mail-cím"
             }
         },
         "quickSettings": {
@@ -1051,7 +1051,7 @@
                     "NotGood": "<b>Az akkumulátor nincs jó állapotban.</b>",
                     "NotSupportACAdapter": "<b>A hálózati adapter nem támogatott.</b>",
                     "LimitedACAdapterSupport": "<b>A hálózati adapter nem képes elegendő energiát szolgáltatni.</b>",
-                    "MissingDriver": "<b>A Lenovo Power Manager illesztőprogramja</b> nincs telepítve, vagy nem működik megfelelően. Futtassa a Windows Update programot a legújabb illesztőprogram telepítéséhez. A <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">helyről letöltött illesztőprogramot itt</a> is telepítheti. A telepítés után indítsa újra a számítógépet.",
+                    "MissingDriver": "<b>A Lenovo Power Manager illesztőprogramja</b> nincs telepítve, vagy nem működik megfelelően. Kérjük, futtassa a Windows Update szolgáltatást, vagy telepítse manuálisan <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">innen</a>. A telepítés után indítsa újra a számítógépet.",
                     "StoreLimitation": "<b>Az akkumulátor csak az eredeti teljes töltési kapacitás {{value}}%-át</b> tudja tárolni.",
                     "HighTemperature": "A <b>lemerítés</b> leállt, mert az <b>akkumulátor túl meleg.</b>",
                     "TrickleCharge": "Az akkumulátor <b>teljesen lemerült</b>, fel kell tölteni. Ez akár 10 órán át vagy tovább is eltarthat.",
@@ -1330,6 +1330,12 @@
                         "description": "Válasszon egy energiasémát, amely vezérli a számítógép teljesítményét, a rendszer hőmérsékletét és az energiafelhasználást.",
                         "currentPowerPlan": {
                             "label": "AKTUÁLIS SÉMA"
+                        },
+                        "profile": {
+                            "title": "SÉMAPROFIL:",
+                            "performance": "Teljesítmény maximalizálása:",
+                            "temperature": "Rendszerhőmérséklet maximalizálása:",
+                            "usage": "Energiahasználat maximalizálása:"
                         }
                     }
                 },
@@ -1508,8 +1514,8 @@
                     "title": "Megjelenítés",
                     "displayColorTemperature": {
                         "title": "A képernyő színhőmérséklete",
-                        "description": "Beállíthatja a képernyő színhőmérsékletét oly módon, hogy a kék fény kiszűrésével csökkentse a szem igénybevételét. Napnyugta és napkelte között állítson be melegebb színeket, hogy segítse az alvást.",
-                        "link": {
+						"description": "Beállíthatja a képernyő színhőmérsékletét oly módon, hogy a kék fény kiszűrésével csökkentse a szem igénybevételét. Napnyugta és napkelte között állítson be melegebb színeket, hogy segítse az alvást.",
+						"link": {
                             "click": "Kattintson",
                             "here": "innen",
                             "rest": "a színhőmérséklet beállításához."
@@ -1997,30 +2003,30 @@
             },
             "voice": {
                 "title": "Hang",
-                "description": "A Lenovo Voice „Hang szöveggé” funkciójával szöveggé alakíthatja át a hangot. A Fordítás funkció valós időben biztosít a hang szöveggé alakításával.",
+                "description": "A Lenovo Voice „Hang szöveggé” funkciójával írott szöveggé alakíthatja a diktált tartalmakat, a Translation Assistant segítségével pedig valós időben lefordíthatja a beszédhangot.",
                 "installBtnText": "Telepítse",
                 "launchBtnText": "Indítás",
                 "voiceToText": {
                     "title": "Hang szöveggé",
-                    "caption": "A funkcióval szöveggé alakítható a hangos bevitel."
+                    "caption": "Ezzel a funkcióval a hangjával gépelhet: a rendszer képes írott szöveggé alakítani a diktált tartalmakat, így gyorsabban beviheti őket a gépbe."
                 },
                 "translation": {
                     "title": "Fordítás",
-                    "caption": "A funkció a hang valós idejű fordítását biztosítja. A lefordított tartalom szövegként jelenik meg. A forrás- és a célnyelvet igény szerint választhatja ki."
+                    "caption": "A funkcióhoz valós idejű fordítási támogatás is tartozik, a lefordított szöveg egyből írásos formában jelenik meg. Több különböző forrás- és célnyelv érhető el."
                 },
                 "modalPopUp": {
                     "heading": "Kezdő lépések:",
-                    "point1": "Győződjön meg arról, hogy a Lenovo Voice ikonja látható a Windows tálcáján.",
-                    "point2": "Nyissa meg azt a fájlt, amelybe rögzíteni szeretné a konvertált szöveget.",
+                    "point1": "Indítsa el a Lenovo Voice funkciót a Start menüből. Ezt követően a Lenovo Voice ikonja meg fog jelenni a Windows tálcáján.",
+                    "point2": "Nyissa meg az alkalmazást, amelybe szeretne szöveget bevinni.",
                     "point3": "Kattintson a Lenovo Voice ikonjára a Windows tálcáján, és válassza a Hang szöveggé parancsot.",
-                    "point4": "Válassza ki a kívánt nyelvet, és a kezdéshez kattintson a mikrofon ikonra.",
-                    "point5": "Vigye a kurzort a szerkesztés helyére, és kezdjen beszélni.",
+                    "point4": "Válassza ki a kívánt nyelveket, és a kezdéshez kattintson a mikrofon ikonra.",
+                    "point5": "Vigye a kurzort az alkalmazásba, majd kezdjen el beszélni.",
                     "point6": "Kattintson a Lenovo Voice ikonjára a Windows tálcáján, és válassza a Fordítás parancsot.",
                     "point7": "Válassza ki a forrásnyelvet és a célnyelvet.",
                     "point8": "Szükség szerint állítsa be a hangbemenetet (Hangszóró vagy Mikrofon).",
-                    "point9": "Kattintson a mikrofon ikonra, és kezdjen beszélni",
+                    "point9": "Kattintson a mikrofon ikonra, és kezdjen beszélni-",
                     "closeText": "bezárás",
-                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
+                    "point10": "Győződjön meg arról, hogy a Lenovo Voice ikonja látható a Windows tálcáján."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -2187,6 +2193,7 @@
             "description": "Lépjen kapcsolatba velünk, hogy segíthessünk.",
             "listLenovoCommunity": "Lenovo Közösség",
             "listContactCustomerService": "Kapcsolatfelvétel az ügyfélszolgálattal",
+            "listYourVirtualAssistant": "Your virtual assistant",
             "listContactUsOnWechat": "Kapcsolatfelvétel WeChaten",
             "weChatDescription": "Küldje át kérdését WeChaten, és gyorsan megválaszoljuk",
             "listFindUs": "Találjon meg minket a közösségi médiában",
@@ -2437,7 +2444,6 @@
                 "title": "Biztonsági állapot",
                 "deviceName1": "Megbízható forrásból származó alkalmazások",
                 "deviceName2": "Fejlesztői üzemmód",
-                "deviceName3": "UAC-értesítés",
                 "deviceName4": "Vírusvédelem elérhetősége",
                 "deviceName5": "Merevlemez-titkosítás",
                 "deviceName6": "Tűzfal elérhetősége",
@@ -2633,8 +2639,8 @@
             }
         },
         "question2": {
-            "title": "A számítógép frissítése",
-            "description": "<div>    <div class='faqInFs4Fb'>        A számítógép frissítése    </div>    <hr>    <div class='faqInFs25FbP5'>        Tünet    </div>    <div class='faqInP5'>        Ha a számítógép nem működik olyan jól, mint korábban, és nem tudja ennek okát, frissítheti számítógépét anélkül, hogy törölné a személyes fájljait vagy módosítaná a beállításokat. A Windows képes a személyes fájlok törlése nélkül úgy „felújítani” a számítógépet, hogy jobban hasonlítson egy friss telepítésre.    </div>    <div class='faqInP5'>        A Windows felújítása során a következő történik: fájljai és személyre szabott beállításai nem módosulnak    </div>    <div class='faqInP5'>        <ul>            <li>A számítógép beállításai visszaállna az alapértelmezett értékekre</li>            <li>A Windows Áruházból letöltött alkalmazások megmaradnak</li>            <li>A lemezről vagy webhelyekről telepített alkalmazások törlődnek</li>            <li>A rendszer az asztalra menti az eltávolított fájlok listáját</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Érintett márkák    </div>    <div>        <ul>            <li>Minden asztali számítógép és laptop</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Operációs rendszer    </div>    <div>        <ul>            <li>Windows 8, 8.1 és 10</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Megoldás    </div>    <div>        <ul class='list-unstyled'>            <li>                <span class='faqInFbTdP10'>Windows 8/8.1</span>                <ol>                    <li class='faqInP5'>                        Kattintson vagy koppintson a <span class='faqInFb'> Gépház</span> lehetőségre                    </li>                    <li class='faqInP5'>                        Kattintson vagy koppintson a <span class='faqInFb'> Frissítés és helyreállítás</span> lehetőségre                    </li>                    <li class='faqInP5'>                        <div>Kattintson vagy koppintson a <span class='faqInFb'> Helyreállítás</span> lehetőségre</div>                        <div class='faqInP5'>A Windows felújítása a saját fájlok megőrzésével területen kattintson vagy koppintson az <span class='faqInFb'> Első lépések</span> elemre.</div>                        <div><img src='assets/images/qa/2.1.jpg' /></div>                    </li>                    <li class='faqInP5'>                        Kattintson a <span class='faqInFb'> Tovább</span> elemre.                    </li>                    <li class='faqInP5'>                        A felújítási folyamat megkezdéséhez kattintson a <span class='faqInFb'> Frissítés </span>lehetőségre.                    </li>                    <li class='faqInP5'>                        A felújítási folyamat befejezése után az eltávolított alkalmazások listája az asztalon lesz megtalálható                    </li>                    <li class='faqInP5'>                        A rendszer felújítása közben megtalálhatók az eltávolított alkalmazások                    </li>                </ol>            </li>            <li class='faqInP10'>                <span class='faqInFbTd'>Windows 10</span>                <ol>                    <li class='faqInP5'> Keressen rá a <span class='faqInFb'> felújítás </span>szóra a Start menü keresőeszközével.</li>                    <li class='faqInP5'>                        <div>Kattintson <span class='faqInFb'> A Windows felújítása a saját fájlok megőrzésével</span> lehetőségre a keresési eredmények között az alább látható módon.</div>                        <div><img src='assets/images/qa/2.2.jpg' /></div>                    </li>                    <li class='faqInP5'>                        <div>Kattintson az <span class='faqInFb'> Első lépések </span> gombra <span class='faqInFb'> A Windows felújítása a saját fájlok megőrzésével</span> lehetőségre a Windows 10 rendszert futtató számítógép felújításához.</div>                        <div><img src='assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div class='faqInFs25Fb'>        További információk    </div>    <div>        A legtöbb esetben a számítógép felújításának megkezdése után a folyamat magától befejeződik. Ha azonban a Windowsnak hiányzó fájlokra van szüksége, bekéri a helyreállítási adathordozót, amely általában egy DVD-lemez vagy egy USB-meghajtó. Ha ez történik, akkor a számítógéptől függ, hogy mire van szükség.    </div>    <div class='faqInP10'>        Ha DVD-vel frissítette a számítógépet a Windows 8.1 vagy a Windows RT 8.1 rendszerre, használja a frissítőlemezt. Ha nincs a Windows 8.1 vagy Windows RT 8.1 rendszert tartalmazó adathordozója, forduljon a Microsoft ügyfélszolgálatához.    </div></div>",
+            "title": "A számítógép visszaállítása alapállapotba",
+            "description": "<div><div class='faqInFs4Fb'>A Windows 10 visszaállítása alapállapotba</div><hr><div class='faqInP5'>Ha a Windows 10 rendszert futtató számítógépen problémák merültek fel, vagy szeretné eladni a gépet, állítsa vissza alapállapotba. Az alapállapotba való visszaállításkor megadhatja, hogy megőrzi vagy eltávolítja a fájlokat. Ilyenkor a rendszer eltávolítja az összes alkalmazást és beállítást, és telepít egy új Windows-példányt. Ezzel számos problémát megoldhat, például a gyenge teljesítményt.</div><div class='faqInFs25FbP10'>1. Nyissa meg a Beállítások alkalmazást.</div><div class='faqInP5'>Nyomja meg a Start menü gombját, amely a képernyő bal alsó sarkában található, majd válassza ki a Beállítások fogaskerék ikonját.</div><div class='faqInP5'><img src='assets/images/qa/2.1.jpg' /></div><div class='faqInFs25FbP10'>2. A kategóriák listájából válassza ki a Frissítés és biztonság lehetőséget.</div><div class='faqInP5'><img src='assets/images/qa/2.2.jpg' /></div><div class='faqInFs25FbP10'>3. Nyissa meg a bal oldali panelen látható Helyreállítás menüt.</div><div class='faqInP5'><img src='assets/images/qa/2.3.jpg' /></div><div class='faqInFs25FbP10'>4. Indítsa el a visszaállítási folyamatot.</div><div class='faqInP5'>A fent látható „Gép alaphelyzetbe állítása” címszó alatt kattintson vagy koppintson a Kezdés gombra.</div><div class='faqInP5'><img src='assets/images/qa/2.4.jpg' /></div><div class='faqInFs25FbP10'>5. Válassza ki, hogy meg kívánja-e őrizni a fájljait.</div><div class='faqInP5'>Az alapállapotba állítást követően bejelentkezhet a saját Microsoft-fiókjába. Az e fiókkal vásárolt Windows Áruházbeli alkalmazások újratelepülnek.</div><div class='faqInP5'><ul><li>Ha a „Fájlok megtartása” lehetőséget választja, a rendszer eltávolítja az alkalmazásokat és a beállításokat, de az Ön személyes fájljai megmaradnak.</li><li>Ha a „Minden elem eltávolítása” lehetőséget választja, a rendszer az alkalmazásokat, a beállításokat és a személyes fájlokat egyaránt törli. Ha nincs biztonsági mentése a fájlokról, érdemes lehet a Mégse lehetőséget választani, biztonsági mentést készíteni, majd újraindítani a folyamatot.</li></ul></div><div class='faqInP5'><img src='assets/images/qa/2.5.jpg' /></div><div class='faqInFs25FbP10'>6. Ezenfelül további beállításokat is megadhat.</div><div class='faqInP5'>Ez a lehetőség csak akkor jelenik meg, ha az előző lépésben a „Minden elem eltávolítása” lehetőséget választotta.</div><div class='faqInP5'><img src='assets/images/qa/2.6.1.jpg' /></div><div class='faqInP5'><img src='assets/images/qa/2.6.2.jpg' /></div><div class='faqInFs25FbP10'>7. Olvassa el az áttekintést, és nyomja meg az Alaphelyzetbe állítás gombot, ha készen áll a folytatásra.</div><div class='faqInP5'>A Windows felkészül az eszköz alaphelyzetbe állítására. Várja meg, hogy megjelenjen a kék képernyő.</div><div class='faqInFs25FbP10'>8. Ha megjelenik a „Válasszon beállítást” lehetőség, válassza a Folytatás lehetőséget.</div><div class='faqInP5'>A Windows újraindul, és megkezdi az alaphelyzetbe állítást. Az alapállapot visszaállítása során a számítógép többször újraindul.</div><hr><div class='faqInFs25FbP10'>Közösségi kérdések és válaszok</div><div class='faqInP5'><b>Ha a „Minden elem eltávolítása” lehetőséget választom, azzal a számítógépbe szerelt/számítógéphez csatlakoztatott összes meghajtóról letörlök mindent, vagy csak arról, amelyen a Windows 10 fut?</b></div><div class='faqInP5'><i>Közösségi válasz</i></div><div class='faqInP10'>Ezzel csak a Windows 10 operációs rendszer meghajtójának (általában a C: meghajtó) tartalmát törli. A számítógépbe szerelt/számítógéphez csatlakoztatott többi meghajtót a művelet nem érinti.</div><div class='faqInP5'><b>Hogyan lehet elvégezni a műveletet, ha a képernyőm nem működik?</b></div><div class='faqInP5'><i>Közösségi válasz</i></div><div class='faqInP10'>Sajnos sehogy. Be kell szereltetnie egy új képernyőt.</div><div class='faqInP5'><b>A rendszer a weboldalakat érintő bejelentkezési előzményeket is törli?</b></div><div class='faqInP5'><i>Közösségi válasz</i></div><div class='faqInP10'>Igen, attól függően, hogy milyen böngészőt használ. A böngészési előzményeinek eltávolításához nyissa meg a böngésző beállításait, és törölje az előzményeket. Ha nem szeretné, hogy a böngésző rögzítse az előzményeket, használja az inkognitómódot.</div><div class='faqInP5'><b>Ha a „Minden elem eltávolítása” lehetőséget választom, azzal a jelszavam is alaphelyzetbe áll?</b></div><div class='faqInP5'><i>Közösségi válasz</i></div><div class='faqInP10'>Igen, a Windows 10 rendszerű számítógép alapállapotba való visszaállításával az összes felhasználói adat is törlődik. Ezek közé tartoznak a dokumentumok, a mentett jelszavak, a képek, az előnyben részesített beállítások, a böngészési adatok és az alkalmazásadatok.</div><hr><div class='faqInP5'>Referencia</div><div class='faqInP5'>A Windows 10 visszaállítása alapállapotba – WikiHow.</div></div>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
@@ -3507,7 +3513,8 @@
     "notification": {
         "menu": {
             "security": "Tudta ezt? Ha Ön semmilyen antivírus szoftvert nem telepített az eszközére, mi akkor is gondoskodunk egy alapvető biztonsági védelemről.",
-            "connectedHomeSecurity": "Gondoskodjon otthoni hálózatának valós idejű felügyeletéről és az azonnali értesítésekről. Ön fog elsőként értesülni arról, ha valamelyik okos eszközének biztonságát valamilyen fenyegetés veszélyezteti."
+            "connectedHomeSecurity": "Gondoskodjon otthoni hálózatának valós idejű felügyeletéről és az azonnali értesítésekről. Ön fog elsőként értesülni arról, ha valamelyik okos eszközének biztonságát valamilyen fenyegetés veszélyezteti.",
+            "hardwareScan": "Mostantól megtekintheti a rendszer hardvereszközeinek az állapotát."
         }
     },
     "appsForYou": {
