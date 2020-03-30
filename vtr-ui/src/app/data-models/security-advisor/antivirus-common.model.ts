@@ -85,7 +85,7 @@ export class AntivirusCommon {
 	openMcAfeePurchase() {
 		const metricsData = {
 			ItemParent: this.metricsParent,
-			ItemName: this.metricsTranslateService.translate('launchMcAfeeBuy.failed'),
+			ItemName: this.metricsTranslateService.translate('launchMcAfeeBuy.noAPIRequested'),
 			ItemType: 'FeatureClick'
 		};
 		this.purchaseBtnIsLoading = true;
@@ -97,11 +97,13 @@ export class AntivirusCommon {
 				purchaseRes = response;
 				this.purchaseBtnIsLoading = false;
 				if (response && response.result === false) {
+					metricsData.ItemName = this.metricsTranslateService.translate('launchMcAfeeBuy.failed');
 					WinRT.launchUri(this.urlGetMcAfee);
 				}
 				metricsData.ItemName = this.metricsTranslateService.translate('launchMcAfeeBuy.success');
 			}).catch(() => {
 				this.purchaseBtnIsLoading = false;
+				metricsData.ItemName = this.metricsTranslateService.translate('launchMcAfeeBuy.failed');
 				WinRT.launchUri(this.urlGetMcAfee);
 			}).finally(() => {
 				this.metrics.sendMetrics(metricsData);
