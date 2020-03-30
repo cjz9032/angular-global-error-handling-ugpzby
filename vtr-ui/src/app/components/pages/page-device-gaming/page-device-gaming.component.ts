@@ -1,4 +1,4 @@
-import { Component, OnInit, DoCheck, AfterViewInit } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MockService } from '../../../services/mock/mock.service';
 import { QaService } from '../../../services/qa/qa.service';
@@ -30,9 +30,8 @@ import { DialogService } from 'src/app/services/dialog/dialog.service';
 	styleUrls: [ './page-device-gaming.component.scss' ],
 	providers: [ NgbModalConfig, NgbModal ]
 })
-export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit {
+export class PageDeviceGamingComponent implements OnInit, DoCheck {
 	public static allCapablitiyFlag = false;
-	dashboardStart: any = new Date();
 	submit = 'Submit';
 	feedbackButtonText = this.submit;
 	securityAdvisor: SecurityAdvisor;
@@ -126,12 +125,6 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 				setTimeout(() => this.dialogService.openModernPreloadModal());
 			}
 		}
-	}
-
-	ngAfterViewInit() {
-		const dashboardEnd: any = new Date();
-		const dashboardTime = dashboardEnd - this.dashboardStart;
-		this.loggerService.info(`Performance: Dashboard load time after view init. ${dashboardTime}ms`);
 	}
 
 	fetchCmsContents(lang?: string) {
