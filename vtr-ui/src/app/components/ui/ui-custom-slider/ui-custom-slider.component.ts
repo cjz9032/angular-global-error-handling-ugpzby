@@ -40,6 +40,7 @@ export class UiCustomSliderComponent implements OnInit, OnDestroy, AfterContentC
 		if (element) {
 			this.customRange = element.nativeElement;
 			this.mouseMoveEvent = this.onMouseMoveEvent.bind(this);
+			this.onMouseMoveEvent();
 			this.customRange.addEventListener('mousemove', this.mouseMoveEvent);
 		}
 	}
@@ -49,7 +50,8 @@ export class UiCustomSliderComponent implements OnInit, OnDestroy, AfterContentC
 	onMouseMoveEvent() {
 		const x = this.customRange.value;
 		const color = 'linear-gradient(90deg, rgba(41, 85, 188, 1)' + x + '% , rgb(214, 214, 214)' + x + '%)';
-		this.customRange.style.background = color;
+		this.customRange.style.backgroundImage = color;
+		this.customRange.style.borderRadius = '5px';
 	}
 
 	ngOnInit() {
