@@ -560,7 +560,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	getHPDAdvancedSetting() {
 		try {
 			if (this.smartAssist.isShellAvailable) {
-				this.smartAssist.getHPDAdvancedSettings()
+				this.smartAssist.getHPDAdvancedSetting()
 					.then((response) => {
 						this.zeroTouchLoginShowAdvancedSection = response.zeroTouchLoginAdvanced;
 						this.zeroTouchLockShowAdvancedSection = response.zeroTouchLockAdvanced;
@@ -574,7 +574,12 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	setHPDAdvancedSetting(section: string, value: boolean) {
 		try {
 			if (this.smartAssist.isShellAvailable) {
-				this.smartAssist.setHPDAdvancedSettings(section, value);
+				this.smartAssist.setHPDAdvancedSetting(section, value)
+					.then((response) => {
+						if (response) {
+							this.getHPDAdvancedSetting();
+						}
+					});
 			}
 		} catch (error) {
 			this.logger.error('setHPDAdvancedSetting error: ', error.message);

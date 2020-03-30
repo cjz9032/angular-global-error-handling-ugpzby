@@ -197,11 +197,11 @@ export class SmartAssistService {
 		return this.intelligentSensing.SetHPDLeaveWaitSetting(value);
 	}
 
-	public getHPDAdvancedSettings() {
+	public getHPDAdvancedSetting() {
 		return Promise.resolve(this.hpdAdvancedSettings);
 	}
 
-	public setHPDAdvancedSettings(section: string, value: boolean) {
+	public setHPDAdvancedSetting(section: string, value: boolean) {
 		section == 'zeroTouchLogin' ? this.hpdAdvancedSettings.zeroTouchLoginAdvanced = value : this.hpdAdvancedSettings.zeroTouchLockAdvanced = value;
 		return Promise.resolve(true);
 	}
