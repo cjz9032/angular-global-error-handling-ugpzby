@@ -67,6 +67,7 @@ import { HardwareScanRoutingModule } from './hardware-scan/hardware-scan-routing
 import { HardwareScanModule } from './hardware-scan/hardware-scan.module';
 import { CommsService } from '../services/comms/comms.service';
 import { UiCustomSliderModule } from '../components/ui/ui-custom-slider/ui-custom-slider.module';
+import { UICustomRadioModule } from '../components/ui/ui-custom-radio/ui-custom-radio.module';
 // import { ModalErrorMessageComponent } from '../components/modal/modal-error-message/modal-error-message.component';
 
 @NgModule({
@@ -119,7 +120,8 @@ import { UiCustomSliderModule } from '../components/ui/ui-custom-slider/ui-custo
 		GamingDashboardModule,
 		HardwareScanModule,
 		HardwareScanRoutingModule,
-		UiCustomSliderModule
+		UiCustomSliderModule,
+		UICustomRadioModule
 	],
 	exports: [
 		NavbarModule,
