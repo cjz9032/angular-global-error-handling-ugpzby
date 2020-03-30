@@ -206,6 +206,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		this.dataSource = new CameraDetail();
 		this.cameraFeatureAccess = new CameraFeatureAccess();
 		this.eyeCareDataSource = new EyeCareMode();
+		this.initEyeCareModeFromCache();
 		this.Windows = vantageShellService.getWindows();
 		if (this.Windows) {
 			this.DeviceInformation = this.Windows.Devices.Enumeration.DeviceInformation;
@@ -279,7 +280,6 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 
 	initDataFromCache() {
 		try {
-			this.initEyeCareModeFromCache();
 			this.initCameraPrivacyFromCache();
 			this.initPriorityControlFromCache();
 		} catch (error) {
@@ -309,8 +309,8 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 				// if (this.eyeCareModeCache.eyeCareDataSource.current < 3400) {
 				// 	this.eyeCareModeCache.eyeCareDataSource.current = 3400
 				// }
-				this.eyeCareDataSource = this.eyeCareModeCache.eyeCareDataSource;
 				this.enableSlider = this.eyeCareModeCache.enableSlider;
+				this.eyeCareDataSource = this.eyeCareModeCache.eyeCareDataSource;
 				this.enableSunsetToSunrise = this.eyeCareModeCache.enableSunsetToSunrise;
 				this.sunsetToSunriseModeStatus = this.eyeCareModeCache.sunsetToSunriseStatus;
 			} else {
