@@ -74,21 +74,12 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, After
 
 	ngAfterViewInit(): void {
 		try {
-
-			const anchors = this.captionRef.nativeElement.querySelectorAll('a') as HTMLAnchorElement[];
-			anchors.forEach(element => {
-				let automationID = element.getAttribute('id');
-				if (element.getAttribute('aria-label')) {
-					automationID = element.getAttribute('aria-label')
-				}
-				else if (element.getAttribute('attr.aria-label')) {
-					automationID = element.getAttribute('attr.aria-label')
-				}
-				element.setAttribute('id', automationID);
-			});
+			Array.from(this.captionRef.nativeElement.querySelectorAll('a'))
+				.forEach((element: any) => {
+					element.setAttribute('id', 'modern-standby-link');
+				});
 		}
 		catch (error) {
-
 
 		}
 	}
