@@ -8,6 +8,7 @@
 	$thumb-radius: 25px;
 	$track-height: 6px;
 	$track-radius: 5px;
+	--slider-value: 0%;
 
 	@mixin slider-thumb() {
 		-webkit-appearance: none !important;
@@ -47,8 +48,8 @@
 		position: relative;
 		height: $track-height;
 		margin-top: 20px;
-		background-color: $grey_light;
-		border-radius: 5px;
+		// background-color: $grey_light;
+		// border-radius: 5px;
 		cursor: pointer;
 
 		// Hack for MS Edge
@@ -69,6 +70,13 @@
 			background-color: transparent;
 			height: $track-height;
 			cursor: pointer;
+			border-radius: $track-radius;
+			background: linear-gradient(
+				90deg,
+				rgba(41, 85, 188, 1) var(--slider-value),
+				rgb(214, 214, 214) var(--slider-value)
+			);
+
 			// Hack for MS Edge
 			@supports (-ms-ime-align: auto) {
 				height: $slider-height;
@@ -79,6 +87,11 @@
 			height: 4px;
 			border-radius: $track-radius;
 			background-color: $grey_light;
+			background: linear-gradient(
+				90deg,
+				rgba(41, 85, 188, 1) var(--slider-value),
+				rgb(214, 214, 214) var(--slider-value)
+			);
 			margin: 0 5px;
 		}
 

@@ -48,10 +48,14 @@ export class UiCustomSliderComponent implements OnInit, OnDestroy, AfterContentC
 	constructor(private loggerService: LoggerService) { }
 
 	onMouseMoveEvent() {
-		const x = this.customRange.value;
-		const color = 'linear-gradient(90deg, rgba(41, 85, 188, 1)' + x + '% , rgb(214, 214, 214)' + x + '%)';
-		this.customRange.style.backgroundImage = color;
-		this.customRange.style.borderRadius = '5px';
+		const value = this.customRange.value;
+		// const color = 'linear-gradient(90deg, rgba(41, 85, 188, 1)' + x + '% , rgb(214, 214, 214)' + x + '%)';
+		// this.customRange.style.backgroundImage = color;
+		// this.customRange.style.borderRadius = '5px';
+		this.customRange.style.setProperty(
+			'--slider-value',
+			`${value}%`
+		);
 	}
 
 	ngOnInit() {
