@@ -282,9 +282,9 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			const activeDom: any = document.activeElement;
 			if (activeDom && activeDom.id.includes('menu-main')) {
 				const contentArea = document.querySelector('.vtr-app.container-fluid') as HTMLElement;
-				//contentArea.focus();
-				//$event.stopPropagation();
-				//$event.preventDefault();
+				contentArea.focus();
+				$event.stopPropagation();
+				$event.preventDefault();
 			}
 		}
 
