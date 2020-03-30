@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, SecurityContext, AfterViewInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, SecurityContext } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { NgbModal, NgbModalConfig, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
@@ -44,7 +44,7 @@ interface IConfigItem {
 	templateUrl: './page-dashboard.component.html',
 	styleUrls: ['./page-dashboard.component.scss']
 })
-export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit {
+export class PageDashboardComponent implements OnInit, OnDestroy {
 
 	offlineConnection = 'offline-connection';
 	public systemStatus: Status[] = [];
@@ -55,7 +55,6 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	public warrantyData: { info: { endDate: null; status: 2; startDate: null; url: string }; cache: boolean };
 	public isWarrantyVisible = false;
 	public showQuickSettings = true;
-	dashboardStart: any = new Date();
 	public hideTitle = false;
 	private subscription: Subscription;
 
@@ -244,11 +243,6 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		}
 	}
 
-	ngAfterViewInit() {
-		const dashboardEnd: any = new Date();
-		const dashboardTime = dashboardEnd - this.dashboardStart;
-		this.logger.info(`Performance: Dashboard load time after view init. ${dashboardTime}ms`);
-	}
 
 	ngOnDestroy() {
 		this.dashboardService.isDashboardDisplayed = false;
