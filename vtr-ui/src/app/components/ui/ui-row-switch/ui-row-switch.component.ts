@@ -21,8 +21,8 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, After
 	@ViewChild('childContent', { static: false }) childContent: any;
 
 	// Use Fort Awesome Font Awesome Icon Reference Array (library, icon class) ['fas', 'arrow-right']
-	@Input() rightIcon = [];
-	@Input() leftIcon = [];
+	@Input() rightIcon: any = [];
+	@Input() leftIcon: any = [];
 	@Input() showChildContent = false;
 	@Input() readMoreText = '';
 	@Input() title = '';
