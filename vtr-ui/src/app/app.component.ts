@@ -68,6 +68,7 @@ export class AppComponent implements OnInit, OnDestroy {
 		private metricService: MetricService,
 		// private appUpdateService: AppUpdateService
 	) {
+		this.patchNgbModalOpen();
 		// to check web and js bridge version in browser console
 		const win: any = window;
 		this.shellVersion = this.vantageShellService.getShellVersion();
@@ -137,9 +138,28 @@ export class AppComponent implements OnInit, OnDestroy {
 		this.setRunVersionToRegistry();
 	}
 
+	onDragStart(event: DragEvent): boolean {
+		return false;
+	}
+
+	onDrop(event: DragEvent): boolean {
+		return false;
+	}
+
 	ngOnDestroy() {
 		if (this.subscription) {
 			this.subscription.unsubscribe();
+		}
+	}
+
+	private patchNgbModalOpen() {
+		const original = NgbModal.prototype.open;
+		// tslint:disable-next-line: only-arrow-functions
+		NgbModal.prototype.open = function() : NgbModalRef {
+			if (arguments.length > 1 && 'container' in arguments[1] === false) {
+				Object.assign(arguments[1], { container: 'vtr-root div' });
+			}
+			return original.apply(this, arguments);
 		}
 	}
 
