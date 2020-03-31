@@ -127,7 +127,7 @@
 
 		</div>
 		<div class="feature-note p-3 mt-2"
-			*ngIf="batteryIndicator.isChargeThresholdOn || batteryService.isGaugeResetRunning">
+			*ngIf="!batteryService.isInvalidBattery && (batteryIndicator.isChargeThresholdOn || batteryService.isGaugeResetRunning) ">
 			<div class="row" id="myDevice-settings-batteryGauge-note">
 				<p
 					role="text">

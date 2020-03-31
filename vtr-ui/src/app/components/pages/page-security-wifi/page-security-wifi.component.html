@@ -14,7 +14,6 @@
 				[isButtonVisible]="false"></vtr-widget-offline-info>
 		</div>
 		<wifi-security [data]="wifiHomeViewModel"
-			[switchDisabled]="switchDisabled"
 			[vtrAppSearchScroller]="['search-wifi-security']"
 			(toggleChange) = "onToggleChange()"
 			></wifi-security>
@@ -34,9 +33,7 @@
 				<vtr-widget-powered-by-info [title]="'homeSecurity.overview.poweredBy'"
 					[detail]="'common.securityAdvisor.privacyPolicyAndTermsOfService'"
 					[imgUrl]="'assets/images/coronet-logo.svg'"
-					linkId="sa-wifi-lnk"
-					privacyUrl="https://homesecurity.coro.net/"
-					termsUrl="https://homesecurity.coro.net/">
+					linkId="sa-wifi-lnk">
 				</vtr-widget-powered-by-info>
 			</div>
 		</div>
@@ -73,9 +70,7 @@
 			<vtr-widget-powered-by-info [title]="'homeSecurity.overview.poweredBy'"
 				[detail]="'common.securityAdvisor.privacyPolicyAndTermsOfService'"
 				[imgUrl]="'assets/images/coronet-logo.svg'"
-				linkId="sa-wifi-lnk"
-				privacyUrl="https://homesecurity.coro.net/"
-				termsUrl="https://homesecurity.coro.net/">
+				linkId="sa-wifi-lnk">
 			</vtr-widget-powered-by-info>
 		</div>
 	</div>

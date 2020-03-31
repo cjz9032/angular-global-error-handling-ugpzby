@@ -23,6 +23,7 @@
 						id="settings-messages">
 						<vtr-container-collapsible name="SettingsMessage"
 							[tabIndex]="0"
+							collapseLinkId="settings-message"
 							[cardTitle]="'settings.messagesInLenovoVantage' | translate"
 							[isCollapsed]="false">
 							<ul class="list-group list-group-flush">
@@ -80,6 +81,7 @@
 						*ngIf="segmentTag !== segmentConst.Commercial">
 						<vtr-container-collapsible [tabIndex]="0"
 							name="SettingsBeta"
+							collapseLinkId="settings-beta"
 							[cardTitle]="'settings.betaSettingTitle' | translate "
 							[isCollapsed]="false">
 							<ul class="list-group list-group-flush">
@@ -105,6 +107,7 @@
 						id="settings-other-settings">
 						<vtr-container-collapsible [tabIndex]="0"
 							name="SettingsOther"
+							collapseLinkId="settings-other"
 							[cardTitle]="'settings.OtherSettings' | translate "
 							[isCollapsed]="false">
 							<ul class="list-group list-group-flush">
@@ -154,6 +157,7 @@
 							}">
 						<vtr-container-collapsible [tabIndex]="0"
 							name="SettingsUserProfile"
+							collapseLinkId="settings-user-profile"
 							[cardTitle]=" 'settings.userProfile' | translate "
 							[isCollapsed]="true">
 							<div class="row m-0 vtr-col-pad" [hidden]="deviceService.isGaming">

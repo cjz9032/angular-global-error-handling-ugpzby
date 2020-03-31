@@ -30,6 +30,7 @@ export enum LocalStorageKey {
 	SecurityOthersAntiStatusList = '[LocalStorageKey] SecurityOthersAntiStatusList',
 	SecurityOthersFirewallStatusList = '[LocalStorageKey] SecurityOthersFirewallStatusList',
 	SecurityCurrentPage = '[LocalStorageKey] SecurityCurrentPage',
+	SecurityFirewallLink = '[LocalStorageKey] SecurityFirewallLink',
 	SecurityWifiSecurityState = '[LocalStorageKey] SecurityWifiSecurityState',
 	SecurityWifiSecurityHistorys = '[LocalStorageKey] SecurityWifiSecurityHistorys',
 	SecurityWifiSecurityIsLocationServiceOn = '[LocalStorageKey] SecurityWifiSecurityIsLocationServiceOn',

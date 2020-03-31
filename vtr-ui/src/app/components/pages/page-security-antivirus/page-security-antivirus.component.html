@@ -71,12 +71,12 @@
 								upperCaseLabel=false btnHeight=true [isDisabled]="isOnline === false"
 								[label]="'security.antivirus.windowsDefender.buyNow' | translate"
 								[isLoading]="common.purchaseBtnIsLoading"
-								(click)="common.openMcAfeePurchase()"></vtr-ui-button>
+								(click)="common.openMcAfeePurchase('button')"></vtr-ui-button>
 						</div>
 					</div>
 					<div class="divider"></div>
 					<div class="subtitle" [innerHTML]="'security.antivirus.windowsDefender.buy' | translate"></div>
-					<vtr-widget-mcafee-state [windowsDefender]="true" [url]="common.urlGetMcAfee" [isOnline]="isOnline">
+					<vtr-widget-mcafee-state [windowsDefender]="true" [url]="common.urlGetMcAfee" [common]="common" [isOnline]="isOnline">
 					</vtr-widget-mcafee-state>
 					<div class="subtitle mt-5 text-center"
 						[innerHTML]="'security.antivirus.mcafee.discount' | translate"></div>
@@ -88,6 +88,7 @@
 					<div class="subtitle" [innerHTML]="'security.antivirus.windowsDefender.onlyBasic' | translate">
 					</div>
 					<vtr-widget-mcafee-state [windowsDefender]="true"
+						[common]="common"
 						(retryClick)="retry($event)"
 						[statusList]="viewModel.windowsDefenderstatusList" [isOnline]="isOnline">
 					</vtr-widget-mcafee-state>
@@ -141,13 +142,13 @@
 										upperCaseLabel=false btnHeight=true [isDisabled]="isOnline === false"
 										[label]="'security.antivirus.mcafee.trialSubscribe' | translate:{remainingDays: viewModel.mcafee.expireAt}"
 										[isLoading]="common.purchaseBtnIsLoading"
-										(click)="common.openMcAfeePurchase()"></vtr-ui-button>
+										(click)="common.openMcAfeePurchase('button')"></vtr-ui-button>
 									<vtr-ui-button *ngIf="viewModel.mcafee.subscription === 'licenseActive'"
 										linkId="sa-av-btn-subscribe"
 										upperCaseLabel=false btnHeight=true [isDisabled]="isOnline === false"
 										[label]="'security.antivirus.mcafee.subscribe' | translate:{remainingDays: viewModel.mcafee.expireAt}"
 										[isLoading]="common.purchaseBtnIsLoading"
-										(click)="common.openMcAfeePurchase()"></vtr-ui-button>
+										(click)="common.openMcAfeePurchase('button')"></vtr-ui-button>
 									<div class="subtitle text-center"
 										[innerHTML]="'security.antivirus.mcafee.discount' | translate">
 									</div>

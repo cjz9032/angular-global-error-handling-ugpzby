@@ -16,7 +16,7 @@ import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.servic
 const audioServiceMock = jasmine.createSpyObj('AudioService', ['isShellAvailable', 'getDolbyFeatureStatus', 'setDolbyOnOff']);
 const gamingThermalModeServiceMock = jasmine.createSpyObj('GamingThermalModeService', ['isShellAvailable', 'getThermalModeStatus', 'setThermalModeStatus', 'regThermalModeEvent']);
 
-describe("WidgetQuicksettingsListComponent", function () {
+xdescribe("WidgetQuicksettingsListComponent", function () {
 	let component: WidgetQuicksettingsListComponent;
 	let fixture: ComponentFixture<WidgetQuicksettingsListComponent>;
 	let router: Router;

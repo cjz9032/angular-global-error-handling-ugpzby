@@ -1332,10 +1332,10 @@
                             "label": "TRENUTNI PLAN"
                         },
                         "profile": {
-                            "title": "PLAN PROFILE:",
-                            "performance": "Max performance:",
-                            "temperature": "Max system temperature:",
-                            "usage": "Max power usage:"
+                            "title": "PLAN PROFILA:",
+                            "performance": "Maks. performanse:",
+                            "temperature": "Maks. temperatura sistema:",
+                            "usage": "Maks. korišćenje napajanja:"
                         }
                     }
                 },
@@ -1514,8 +1514,8 @@
                     "title": "Ekran",
                     "displayColorTemperature": {
                         "title": "Temperatura boje ekrana",
-                        "description": "Temperaturu boja ekrana možete da prilagodite tako da filtrira plavo svetlo i smanji naprezanje očiju. Podešava prikaze na toplije boje između zalaska i izlaska sunca kako biste bolje spavali.",
-                        "link": {
+						"description": "Temperaturu boja ekrana možete da prilagodite tako da filtrira plavo svetlo i smanji naprezanje očiju. Podešava prikaze na toplije boje između zalaska i izlaska sunca kako biste bolje spavali.",
+						"link": {
                             "click": "Kliknite",
                             "here": "ovde",
                             "rest": "da biste promenili temperaturu boje."
