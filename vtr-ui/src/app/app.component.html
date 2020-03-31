@@ -2,7 +2,10 @@
 	tabindex="-1"
 	attr.aria-label="{{ pageTitle | translate }}"
 	id="main-wrapper"
-	role="document">
+	role="document"
+	(dragstart)="onDragStart($event)"
+	(drop)="onDrop($event)"
+	>
 	<vtr-menu-main
 		[hidden]="!isMachineInfoLoaded || deviceService.isAndroid"
 		[loadMenuItem]="machineInfo"

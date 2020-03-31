@@ -137,6 +137,14 @@ export class AppComponent implements OnInit, OnDestroy {
 		this.setRunVersionToRegistry();
 	}
 
+	onDragStart(event: DragEvent): boolean {
+		return false;
+	}
+
+	onDrop(event: DragEvent): boolean {
+		return false;
+	}
+
 	ngOnDestroy() {
 		if (this.subscription) {
 			this.subscription.unsubscribe();
