@@ -2,29 +2,21 @@
 
 .vtr-ui-custom-slider {
 	padding: 10px;
-	$slider-height: 35px;
+	$slider-height: 30px;
 	$thumb-size: 25px;
 	$thumb-focus-size: 32px;
 	$thumb-radius: 25px;
 	$track-height: 6px;
 	$track-radius: 5px;
-	--slider-value: 0%;
 
 	@mixin slider-thumb() {
-		-webkit-appearance: none !important;
-		-moz-appearance: none !important;
-		-ms-appearance: none !important;
-		-o-appearance: none !important;
-		appearance: none !important;
-
+		appearance: none;
+		border: none;
 		width: $thumb-size;
 		height: $thumb-size;
-		color: rgb(255, 255, 255);
-		text-align: center;
-		white-space: nowrap;
-		vertical-align: baseline;
-		border-radius: $thumb-radius;
-		background: linear-gradient(90deg, $blue-lighter 0%, $blue-light 100%);
+		background-color: $blue-light;
+		border-radius: 50%;
+		margin: 0 3px;
 	}
 
 	@mixin slider-disabled {
@@ -43,99 +35,80 @@
 		background: $blue-light;
 	}
 
-	.range {
-		// display: table;
-		position: relative;
-		height: $track-height;
-		margin-top: 20px;
-		// background-color: $grey_light;
-		// border-radius: 5px;
+	input[type="range"] {
+		-webkit-appearance: none;
+		appearance: none;
+		height: $slider-height;
+		width: 100%;
+		border: none;
 		cursor: pointer;
 
-		// Hack for MS Edge
-		@supports (-ms-ime-align: auto) {
-			background-color: transparent;
-		}
+		/* start ms edge browser */
 
-		input[type="range"] {
-			-webkit-appearance: none !important;
-			-moz-appearance: none !important;
-			-ms-appearance: none !important;
-			-o-appearance: none !important;
-			appearance: none !important;
-
-			outline: none;
-			display: table-cell;
-			width: 100%;
-			background-color: transparent;
+		&::-ms-track {
+			-webkit-appearance: none;
+			appearance: none;
 			height: $track-height;
-			cursor: pointer;
-			border-radius: $track-radius;
-			background: linear-gradient(
-				90deg,
-				rgba(41, 85, 188, 1) var(--slider-value),
-				rgb(214, 214, 214) var(--slider-value)
-			);
-
-			// Hack for MS Edge
-			@supports (-ms-ime-align: auto) {
-				height: $slider-height;
-			}
-		}
-
-		input[type="range"]::-ms-track {
-			height: 4px;
-			border-radius: $track-radius;
-			background-color: $grey_light;
-			background: linear-gradient(
-				90deg,
-				rgba(41, 85, 188, 1) var(--slider-value),
-				rgb(214, 214, 214) var(--slider-value)
-			);
 			margin: 0 5px;
 		}
-
-		input[type="range"]::-ms-thumb {
-			margin: 0 3px;
-		}
-
-		input[type="range"]::-webkit-slider-thumb {
+		&::-ms-thumb {
 			@include slider-thumb();
 		}
 
-		input[type="range"]::-moz-slider-thumb {
+		&::-ms-fill-lower {
+			/* top-left | top-right | bottom-right | bottom-left */
+			border-radius: $track-radius 0 0 $track-radius;
+			background: transparent linear-gradient(270deg, $blue-light 0%, $blue-lighter 100%) 0% 0% no-repeat
+				padding-box;
+		}
+		&::-ms-fill-upper {
+			/* top-left | top-right | bottom-right | bottom-left */
+			border-radius: 0 $track-radius $track-radius 0;
+			background: $grey_light;
+		}
+
+		/* end ms edge browser */
+
+		/* start chromium browser */
+
+		&::-webkit-slider-thumb {
 			@include slider-thumb();
 		}
 
-		// .range.range-primary input[type="range"]::-webkit-slider-thumb {
-		// 	background: linear-gradient(90, $blue-light 100%, $blue-lighter 100%);
-		// }
-		// .range.range-primary input[type="range"]::-moz-slider-thumb {
-		// 	background: linear-gradient(90, $blue-light 100%, $blue-lighter 100%);
-		// }
-		.range-primary input[type="range"] {
-			outline-color: rgb(66, 139, 202);
+		&::-webkit-slider-runnable-track {
+			background: $grey_light;
 		}
 
-		input[type="range"]::-webkit-slider-thumb {
+		&:focus::-webkit-slider-thumb {
 			@include slider-focus();
 		}
-		input[type="range"]::-moz-slider-thumb {
-			@include slider-focus();
-		}
-
-		input[type="range"]:active::-webkit-slider-thumb {
+		&:active::-webkit-slider-thumb {
 			@include slider-active();
 		}
-		input[type="range"]:active::-moz-slider-thumb {
-			@include slider-active();
+		&:disabled::-webkit-slider-thumb {
+			@include slider-disabled();
 		}
 
-		input[type="range"]:disabled::-webkit-slider-thumb {
-			@include slider-disabled();
-		}
-		input[type="range"]:disabled::-moz-slider-thumb {
-			@include slider-disabled();
-		}
+		/* end chromium browser */
+
+		/* start mozilla browser */
+
+		// &::-moz-slider-thumb {
+		// 	@include slider-thumb();
+		// }
+
+		// &:focus::-moz-slider-thumb {
+		// 	@include slider-focus();
+		// }
+
+		// &:active::-moz-slider-thumb {
+		// 	@include slider-active();
+		// }
+
+		// &:disabled::-moz-slider-thumb {
+		// 	@include slider-disabled();
+		// }
+
+		/* end mozilla browser */
 	}
 }

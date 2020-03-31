@@ -5,8 +5,6 @@ import {
 	Output,
 	EventEmitter,
 	AfterContentChecked,
-	ViewChild,
-	ElementRef,
 	OnDestroy,
 } from '@angular/core';
 import { LoggerService } from 'src/app/services/logger/logger.service';
@@ -32,39 +30,14 @@ export class UiCustomSliderComponent implements OnInit, OnDestroy, AfterContentC
 	@Output() sliderChange: any = new EventEmitter();
 	@Output() valueChange: any = new EventEmitter();
 	@Output() valueChangeEnd: any = new EventEmitter();
-	private customRange;
-	private mouseMoveEvent;
-
-	@ViewChild('customRange', { static: false }) set content(element: ElementRef) {
-		// when camera preview video element is visible then start camera feed
-		if (element) {
-			this.customRange = element.nativeElement;
-			this.mouseMoveEvent = this.onMouseMoveEvent.bind(this);
-			this.onMouseMoveEvent();
-			this.customRange.addEventListener('mousemove', this.mouseMoveEvent);
-		}
-	}
 
 	constructor(private loggerService: LoggerService) { }
-
-	onMouseMoveEvent() {
-		const value = this.customRange.value;
-		// const color = 'linear-gradient(90deg, rgba(41, 85, 188, 1)' + x + '% , rgb(214, 214, 214)' + x + '%)';
-		// this.customRange.style.backgroundImage = color;
-		// this.customRange.style.borderRadius = '5px';
-		this.customRange.style.setProperty(
-			'--slider-value',
-			`${value}%`
-		);
-	}
 
 	ngOnInit() {
 
 	}
 
-	ngOnDestroy() {
-		this.customRange.removeEventListener('mousemove', this.mouseMoveEvent);
-	}
+	ngOnDestroy() {	}
 
 	// ngOnChanges(changes: SimpleChanges): void {
 	// 	if (changes.enableSlider) {
