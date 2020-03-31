@@ -720,6 +720,8 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 			this.displayService
 				.getEyeCareModeState()
 				.then((featureStatus: FeatureStatus) => {
+					this.logger.debug('isSetEyecaremodeStatus ', this.isSet.isSetEyecaremodeStatus);
+					this.logger.debug('Current setValues', this.setValues);
 					this.logger.debug('getEyeCareModeState.then', featureStatus);
 					if (this.isSet.isSetEyecaremodeStatus) {
 						this.eyeCareModeStatus.status = this.setValues.SetEyecaremodeStatus;
@@ -793,7 +795,13 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 					.resetEyeCareMode().then((resetData: any) => {
 						this.logger.debug('SubpageDeviceSettingsDisplayComponent.onResetTemparature: on api reset data', resetData);
 						this.eyeCareDataSource.current = resetData.colorTemperature;
-						this.eyeCareModeStatus.status = resetData.eyecaremodeState;
+						this.logger.debug('isSetEyecaremodeStatus ', this.isSet.isSetEyecaremodeStatus);
+						this.logger.debug('Current setValues', this.setValues);
+						if (this.isSet.isSetEyecaremodeStatus) {
+							this.eyeCareModeStatus.status = this.setValues.SetEyecaremodeStatus;
+						} else {
+							this.eyeCareModeStatus.status = resetData.eyecaremodeState;
+						}
 						this.enableSlider = resetData.eyecaremodeState;
 						this.sunsetToSunriseModeStatus.status = resetData.autoEyecaremodeState;
 						this.eyeCareModeCache.toggleStatus = this.eyeCareModeStatus.status;
@@ -821,7 +829,13 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 							this.isSet.isSetScheduleStatus = true;
 							this.setValues.SetScheduleStatus = $featureStatus.status;
 							this.eyeCareDataSource.current = response.colorTemperature;
-							this.eyeCareModeStatus.status = response.eyecaremodeState;
+							this.logger.debug('isSetEyecaremodeStatus ', this.isSet.isSetEyecaremodeStatus);
+							this.logger.debug('Current setValues', this.setValues);
+							if (this.isSet.isSetEyecaremodeStatus) {
+								this.eyeCareModeStatus.status = this.setValues.SetEyecaremodeStatus;
+							} else {
+								this.eyeCareModeStatus.status = response.eyecaremodeState;
+							}
 							if (this.eyeCareModeStatus.status) {
 								if (this.eyeCareModeCache.eyeCareDataSource && this.eyeCareModeCache.eyeCareDataSource.current < 3400 && !this.isSet.isSetEyecaremodeValue) {
 									this.onEyeCareTemparatureChange({value: 3400});
@@ -1096,10 +1110,17 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 			await this.displayService.statusChangedLocationPermission(this.getLocationPermissionStatus.bind(this));
 		}
 	}
+
 	public getResetColorTemparatureCallBack(resetData: any) {
 		this.logger.debug('called from eyecare monitor', JSON.stringify(resetData));
 		this.eyeCareDataSource.current = resetData.colorTemperature;
-		this.eyeCareModeStatus.status = resetData.eyecaremodeState;
+		this.logger.debug('isSetEyecaremodeStatus ', this.isSet.isSetEyecaremodeStatus);
+		this.logger.debug('Current setValues', this.setValues);
+		if (this.isSet.isSetEyecaremodeStatus) {
+			this.eyeCareModeStatus.status = this.setValues.SetEyecaremodeStatus;
+		} else {
+			this.eyeCareModeStatus.status = resetData.eyecaremodeState;
+		}
 		this.enableSlider = resetData.eyecaremodeState;
 		this.sunsetToSunriseModeStatus.status = resetData.autoEyecaremodeState;
 
