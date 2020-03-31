@@ -25,7 +25,7 @@
 					<div class="row pt-5 smart-assist-card"
 						id="security"
 						*ngIf="intelligentSecurity.isIntelligentSecuritySupported">
-						<div class="col-12 px-0">
+						<div class="col-12 px-0 intelligent-security-block">
 							<vtr-container-collapsible [collapseLinkId]="'intelligentSecurity'"
 								[tabIndex]="0"
 								[cardTitle]="'device.smartAssist.intelligentSecurity.title' | translate"
@@ -37,7 +37,7 @@
 								<!-- IdeaPad section -->
 								<ul class="list-group list-group-flush"
 									*ngIf="!isThinkPad">
-									<li class="no-border-bottom ">
+									<li class="no-border-bottom common-li-padding">
 										<vtr-ui-row-switch [switchId]="'zeroTouchLogin'"
 											[title]="'device.smartAssist.intelligentSecurity.zeroTouchLogin.title' | translate"
 											[caption]=" 'device.smartAssist.intelligentSecurity.zeroTouchLogin.caption' | translate"

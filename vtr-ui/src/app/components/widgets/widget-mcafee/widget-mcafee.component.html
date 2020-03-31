@@ -23,7 +23,8 @@
 			upperCaseLabel=false
 			btnHeight=true
 			[isDisabled]="isOnline === false"
-			(click)="common.openMcAfeePurchase()"
+			[vtrMetricEnabled]="false"
+			(click)="common.openMcAfeePurchase('button')"
 			[isLoading]="common.purchaseBtnIsLoading"
 			[label]="'security.antivirus.mcafee.getMacfee' | translate"
 			[upperCaseLabel]="false"></vtr-ui-button>

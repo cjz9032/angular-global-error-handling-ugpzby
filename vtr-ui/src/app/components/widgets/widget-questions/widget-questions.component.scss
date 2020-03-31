@@ -6,14 +6,14 @@
 	box-shadow: $drop_shadow;
 	padding: $fontsize_xl;
 	.title {
-		color: $main_darker;
+		color: $QA_dark;
 		font-size: $fontsize_xl;
-		font-weight: $weight_medium;
+		font-weight: $weight_600;
 	}
 	.description {
-		color: $main_shade;
+		color: $grey_dark;
 		font-size: $fontsize_xs;
-		font-weight: $weight_medium;
+		font-weight: $weight_light;
 	}
 	@media #{$black-on-white} {
 		border: 0.1rem solid $dark;

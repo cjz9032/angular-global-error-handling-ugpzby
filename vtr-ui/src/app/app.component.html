@@ -2,13 +2,16 @@
 	tabindex="-1"
 	attr.aria-label="{{ pageTitle | translate }}"
 	id="main-wrapper"
-	role="document">
+	role="document"
+	(dragstart)="onDragStart($event)"
+	(drop)="onDrop($event)"
+	>
 	<vtr-menu-main
 		[hidden]="!isMachineInfoLoaded || deviceService.isAndroid"
 		[loadMenuItem]="machineInfo"
 		>
 	</vtr-menu-main>
-	<div tabindex="0" class="vtr-app container-fluid"
+	<div tabindex="-1" class="vtr-app container-fluid"
 		[ngClass]="{'is-android': deviceService.isAndroid}">
 		<div class="row">
 			<div class="col p-0">

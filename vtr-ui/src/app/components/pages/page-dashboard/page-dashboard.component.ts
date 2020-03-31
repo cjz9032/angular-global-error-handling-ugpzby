@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, SecurityContext, AfterViewInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, SecurityContext } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { NgbModal, NgbModalConfig, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
@@ -44,7 +44,7 @@ interface IConfigItem {
 	templateUrl: './page-dashboard.component.html',
 	styleUrls: ['./page-dashboard.component.scss']
 })
-export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit {
+export class PageDashboardComponent implements OnInit, OnDestroy {
 
 	offlineConnection = 'offline-connection';
 	public systemStatus: Status[] = [];
@@ -55,7 +55,6 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	public warrantyData: { info: { endDate: null; status: 2; startDate: null; url: string }; cache: boolean };
 	public isWarrantyVisible = false;
 	public showQuickSettings = true;
-	dashboardStart: any = new Date();
 	public hideTitle = false;
 	private subscription: Subscription;
 
@@ -244,11 +243,6 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		}
 	}
 
-	ngAfterViewInit() {
-		const dashboardEnd: any = new Date();
-		const dashboardTime = dashboardEnd - this.dashboardStart;
-		this.logger.info(`Performance: Dashboard load time after view init. ${dashboardTime}ms`);
-	}
 
 	ngOnDestroy() {
 		this.dashboardService.isDashboardDisplayed = false;
@@ -364,19 +358,31 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	}
 
 	async fetchUPEContent() {
-		const positions = Object.values(this.contentCards)
-			.filter(contentCard => contentCard.tileSource === 'UPE')
-			.map(contentCard => contentCard.positionParam);
-
-		if (positions.length === 0) {
+		const upeContentCards = Object.values(this.contentCards).filter(contentCard => contentCard.tileSource === 'UPE');
+		if (upeContentCards.length === 0) {
 			return;
 		}
 
+		const upePositions = upeContentCards.map(contentCard => contentCard.positionParam);
 		const startCallUPE: any = new Date();
-		const response = await this.upeService.fetchUPEContent({ positions });
-		const endCallUPE: any = new Date();
-		this.logger.info(`Performance: Dashboard page get cms content, ${endCallUPE - startCallUPE}ms`);
-		this.populateUPEContent(response);
+		try {
+			const response = await this.upeService.fetchUPEContent({ positions: upePositions });
+			const endCallUPE: any = new Date();
+			this.logger.info(`Performance: Dashboard page get cms content, ${endCallUPE - startCallUPE}ms`);
+			this.populateUPEContent(response, upeContentCards);
+		} catch (ex) {
+			upeContentCards.forEach(contentCard => {
+				contentCard.upeContent = null;
+
+				if (contentCard.cmsContent) {
+					this.dashboardService.onlineCardContent[contentCard.cardId] = contentCard.cmsContent;
+				} // else do nothing
+
+				if (this.dashboardService.onlineCardContent[contentCard.cardId]) {
+					contentCard.displayContent = this.dashboardService.onlineCardContent[contentCard.cardId];
+				}
+			});
+		}
 	}
 
 
@@ -431,11 +437,8 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	}
 
 
-	private populateUPEContent(response: any) {
+	private populateUPEContent(response: any, contentCards: IConfigItem[]) {
 		const dataSource = 'upe';
-		const contentCards: IConfigItem[] = Object.values(this.contentCards).filter(contentCard => {
-			return contentCard.tileSource === 'UPE'
-		});
 
 		contentCards.forEach(contentCard => {
 			let contents: any = this.cmsService.getOneCMSContent(response, contentCard.template, contentCard.positionParam);
@@ -453,7 +456,9 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 				return;	// don't need to update, developer said this could present the refresh of positionA
 			}
 
-			contentCard.displayContent = this.dashboardService.onlineCardContent[contentCard.cardId];
+			if (this.dashboardService.onlineCardContent[contentCard.cardId]) {
+				contentCard.displayContent = this.dashboardService.onlineCardContent[contentCard.cardId];
+			}
 		});
 	}
 
