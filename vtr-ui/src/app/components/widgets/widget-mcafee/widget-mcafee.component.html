@@ -23,6 +23,7 @@
 			upperCaseLabel=false
 			btnHeight=true
 			[isDisabled]="isOnline === false"
+			[vtrMetricEnabled]="false"
 			(click)="common.openMcAfeePurchase('button')"
 			[isLoading]="common.purchaseBtnIsLoading"
 			[label]="'security.antivirus.mcafee.getMacfee' | translate"
