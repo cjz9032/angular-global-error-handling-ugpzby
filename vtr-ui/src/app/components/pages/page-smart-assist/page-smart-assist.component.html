@@ -77,8 +77,7 @@
 										<div class="pl-5 bold-title no-border-bottom pb-4"
 											*ngIf="intelligentSecurity.isDistanceSensitivityVisible && zeroTouchLoginShowAdvancedSection">
 											<vtr-ui-row-switch [switchId]="'smartAssist-intelligentSecurity-zeroTouchLogin-distanceSensitivityAutoAdjusting'"
-												[title]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.title' | translate"
-												[caption]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.caption' | translate"
+												[title]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.title' | translate"												
 												[isSwitchVisible]="true"
 												[showChildContent]="true"
 												[isSwitchChecked]="intelligentSecurity.isZeroTouchLoginAdjustEnabled"
@@ -86,47 +85,51 @@
 												[theme]="'white'"
 												[disabled]="!intelligentSecurity.isZeroTouchLoginEnabled"
 												[toolTipStatus]='true'>
-												<!-- read more text -->
 												<div class="col text-wrap zeroTouch-DistanceAdjust">
-													<div class="mt-3 zeroTouchReadMore"
-														*ngIf="!intelligentSecurity.isZeroTouchLoginAdjustEnabled"
-														id="zeroTouchLogin-DistanceAdjust-readMoreDiv"
-														role="text">
-														<div *ngIf="hsaIntelligentSecurity.sensorType == 2">
+													<div class="mt-3 zeroTouchReadMore">
+														<p *ngIf="intelligentSecurity.isZeroTouchLoginAdjustEnabled"
+															id="zeroTouchLogin-DistanceAdjust-statusOn"
+															role="text">
+															{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.captionOn' | translate}}
+														</p>
+														<div *ngIf="!intelligentSecurity.isZeroTouchLoginAdjustEnabled"
+															role="text">
+															<p id="zeroTouchLogin-DistanceAdjust-statusOff"
+																role="text">
+																{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.captionOff' | translate}}
+															</p>
 															<p id="zeroTouchLogin-DistanceAdjust-readMoreMode1"
 																role="text">
-																{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.readMoreForSensor2.line1' | translate}}
+																{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.readMore' | translate}}
 															</p>
-															<p id="zeroTouchLogin-DistanceAdjust-readMoreMode2"
-																role="text">
-																{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.readMoreForSensor2.line2' | translate}}
-															</p>
-															<p id="zeroTouchLogin-DistanceAdjust-readMoreMode3"
-																role="text">
-																{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.readMoreForSensor2.line3' | translate}}
-															</p>
-															<p id="zeroTouchLogin-DistanceAdjust-readMoreMode4"
-																role="text">
-																{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.readMoreForSensor2.line4' | translate}}
-															</p>
-														</div>
-														<div *ngIf="hsaIntelligentSecurity.sensorType != 2">
-															<p id="zeroTouchLogin-DistanceAdjust-readMoreMode1"
-																role="text">
-																{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.readMoreForSensor1.line1' | translate}}
-															</p>
-															<p id="zeroTouchLogin-DistanceAdjust-readMoreMode2"
-																role="text">
-																{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.readMoreForSensor1.line2' | translate}}
-															</p>
-															<p id="zeroTouchLogin-DistanceAdjust-readMoreMode3"
-																role="text">
-																{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.readMoreForSensor1.line3' | translate}}
-															</p>
-															<p id="zeroTouchLogin-DistanceAdjust-readMoreMode4"
-																role="text">
-																{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.readMoreForSensor1.line4' | translate}}
-															</p>
+															<div *ngIf="hsaIntelligentSecurity.sensorType == 2">
+																<p id="zeroTouchLogin-DistanceAdjust-readMoreMode2"
+																	role="text">
+																	{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.readMoreForSensor2.line1' | translate}}
+																</p>
+																<p id="zeroTouchLogin-DistanceAdjust-readMoreMode3"
+																	role="text">
+																	{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.readMoreForSensor2.line2' | translate}}
+																</p>
+																<p id="zeroTouchLogin-DistanceAdjust-readMoreMode4"
+																	role="text">
+																	{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.readMoreForSensor2.line3' | translate}}
+																</p>
+															</div>
+															<div *ngIf="hsaIntelligentSecurity.sensorType != 2">
+																<p id="zeroTouchLogin-DistanceAdjust-readMoreMode2"
+																	role="text">
+																	{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.readMoreForSensor1.line1' | translate}}
+																</p>
+																<p id="zeroTouchLogin-DistanceAdjust-readMoreMode3"
+																	role="text">
+																	{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.readMoreForSensor1.line2' | translate}}
+																</p>
+																<p id="zeroTouchLogin-DistanceAdjust-readMoreMode4"
+																	role="text">
+																	{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.readMoreForSensor1.line3' | translate}}
+																</p>
+															</div>
 														</div>
 													</div>
 												</div>
@@ -435,7 +438,6 @@
 											<vtr-ui-row-switch [switchId]="'smartAssist-intelligentSecurity-zeroTouchLock-distanceSensitivityAutoAdjusting'"
 												*ngIf="zeroTouchPresenceLeaveDistanceAutoAdjustCapability"
 												[title]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.title' | translate"
-												[caption]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.caption' | translate"
 												[isSwitchVisible]="true"
 												[showChildContent]="true"
 												[isSwitchChecked]="hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust"
@@ -443,13 +445,19 @@
 												[theme]="'white'"
 												[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || !hsaIntelligentSecurity.capacity"
 												[toolTipStatus]='true'>
-												<!-- read more text -->
 												<div class="col text-wrap zeroTouch-DistanceAdjust">
-													<div class="mt-3 zeroTouchReadMore"
-														*ngIf="!hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust"
-														id="zeroTouchLock-DistanceAdjust-readMoreDiv"
-														role="text">
-														<div>
+													<div class="mt-3 zeroTouchReadMore">
+														<p id="zeroTouchLock-DistanceAdjust-statusOn"
+															*ngIf="hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust"
+															role="text">
+															{{'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.captionOn' | translate}}
+														</p>
+														<div *ngIf="!hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust"
+															role="text">
+															<p id="zeroTouchLock-DistanceAdjust-statusOff"
+																role="text">
+																{{'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.captionOff' | translate}}
+															</p>
 															<p id="zeroTouchLock-DistanceAdjust-readMoreMode1"
 																role="text">
 																{{'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.readMore.line1' | translate}}
@@ -461,12 +469,8 @@
 															<p id="zeroTouchLock-DistanceAdjust-readMoreMode3"
 																role="text">
 																{{'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.readMore.line3' | translate}}
-															</p>
-															<p id="zeroTouchLock-DistanceAdjust-readMoreMode4"
-																role="text">
-																{{'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.readMore.line4' | translate}}
-															</p>
-														</div>														
+															</p>													
+														</div>
 													</div>
 												</div>	
 											</vtr-ui-row-switch>
@@ -628,14 +632,22 @@
 											role="text">
 											{{'device.smartAssist.intelligentSecurity.note.description3' | translate}}
 										</p>
-										<p id="smart-assist-intelligent-security-note-desc2"
-											role="text">
-											{{'device.smartAssist.intelligentSecurity.note.description4' | translate}}
-										</p>
-										<p id="smart-assist-intelligent-security-note-desc3"
-											role="text">
-											{{'device.smartAssist.intelligentSecurity.note.description5' | translate}}
-										</p>
+										<div>
+											<p id="smart-assist-intelligent-security-note-desc2"
+												role="text">
+												{{'device.smartAssist.intelligentSecurity.note.description4' | translate}}
+											</p>
+											<div class="ml-4">
+												<p id="smart-assist-intelligent-security-note-desc2a"
+													role="text">
+													{{'device.smartAssist.intelligentSecurity.note.description5a' | translate}}
+												</p>
+												<p id="smart-assist-intelligent-security-note-desc2b"
+													role="text">
+													{{'device.smartAssist.intelligentSecurity.note.description5b' | translate}}
+												</p>
+											</div>
+										</div>										
 										<p role="text"
 											*ngIf="isThinkPad && intelligentSecurity.isZeroTouchLoginVisible && intelligentSecurity.isZeroTouchLockVisible && (hpdSensorType == 2)"
 											id="smart-assist-intelligent-security-note-desc4">

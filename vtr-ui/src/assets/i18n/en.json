@@ -1869,8 +1869,8 @@
 				},
 				"zeroTouchLoginForIdea": {
 					"title": "Zero Touch Login",
-					"caption": "Experience the zero touch wake and login function to improve your work efficiency. You need register your face in Windows Hello to active the auto login function.",
-					"tooltip": "When you are in front of your computer or approaching it (within 1.2 or 1.5 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer. <br>The maximum detecting distance depends on the sensor capability. You could refer to your user guide for the exact value."
+					"caption": "This feature eanbles you to improve the work efficiency by automatically waking up or logging in your computer. To use the feature, you need to register your face in Windows Hello.",
+					"tooltip": "When you are in front of your computer or approaching it (within 1.2 or 1.5 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer. <br>Depending on the sensor capability, the maximum detecting distance varies. Refer to the User Guide that comes with your computer for details."
 				},
 				"zeroTouchLock": {
 					"title": "Zero Touch Lock",
@@ -1886,7 +1886,7 @@
 					},
 					"facialRecognition": {
 						"title": "FACIAL RECOGNITION",
-						"caption": "Active FACIAL RECOGNITION feature to improve the recognition performance and avoid unintentionally screen lock in some cases, especially when you sit and lean against chair back. This featue is processed locally on your device. Lenovo does not access or use it.",
+						"caption": "This feature helps to improve the recognition performance and avoid unexpected screen lock especially when you lean back in your chair. This feature is processded locally on your device. Lenovo does not access or use it.",
 						"checkBox": "Turn on the camera and enable this feature",
 						"note": {
 							"permission": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
@@ -1897,17 +1897,17 @@
 					},
 					"distanceSensitivityAdjusting": {
 						"title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-						"caption": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy.",
+						"captionOn": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, you can maually adjust the dectecting sensitivity based on your preference.",
+						"captionOff": "The accuracy varies by body size, posture, and frequency of movement. When this feature is diabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
 						"options": {
 							"near": "Near",
 							"medium": "Middle",
 							"far": "Far"
 						},
 						"readMore": {
-							"line1": "It will lock your screen to avoid unauthorized access to your device if not able to detecting any movement within the specific distance. Adjust the distance according to your preference.",
-							"line2": "• Near: 0.9 meter",
-							"line3": "• Middle: 1.2 meter",
-							"line4": "• Far: 1.5 meter"
+							"line1": "• Near: 0.9 meter",
+							"line2": "• Middle: 1.2 meter",
+							"line3": "• Far: 1.5 meter"
 						}
 					}
 				},
@@ -1936,32 +1936,33 @@
 				},
 				"distanceSensitivityAdjustingForIdea": {
 					"title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-					"caption": "This feature will automatically adjust the detecting distance of any movement to wake up system. Turn it off, you can maually adjust the dectecting sensitivity based on your preference.",
+					"captionOn": "Enable this feature to automatically adjust the detecting distance of movements to wake up the system. Turn it off, you can maually adjust the dectecting sensitivity based on your preference.",
+					"captionOff": "When this feature is diabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
 					"options": {
 						"near": "Near",
 						"medium": "Middle",
 						"far": "Far"
 					},
+					"readMore": "There are three options. In each range, when human movements are detected, your screen will be waked up accordingly.",
 					"readMoreForSensor1": {
-						"line1": "There are three options. In each range, when human movements are detected, your screen will be waked up accordingly.",
-						"line2": "• Near: 0-0.4 meter",
-						"line3": "• Middle: 0-0.6 meter",
-						"line4": "• Far: 0-1.2 meter"
+						"line1": "• Near: 0-0.4 meter",
+						"line2": "• Middle: 0-0.6 meter",
+						"line3": "• Far: 0-1.2 meter"
 					},
 					"readMoreForSensor2": {
-						"line1": "There are three options. In each range, when human movements are detected, your screen will be waked up accordingly.",
-						"line2": "• Near: 0.2-0.55 meter",
-						"line3": "• Middle: 0.2-1.0 meter",
-						"line4": "• Far: 0.2-1.5 meter"
+						"line1": "• Near: 0.2-0.55 meter",
+						"line2": "• Middle: 0.2-1.0 meter",
+						"line3": "• Far: 0.2-1.5 meter"
 					}
 				},
 				"note": {
 					"description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
 					"description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect any personal data.",
-					"description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
-					"description4": "2. If your computer is in hibernation mode or has been turned off, Zero Touch Login will not work.",
-					"description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login.",
-					"description6": "4. If the Airplane mode is enabled on your computer, these features are disabled.",
+					"description3": "1. To use above functions, please adjust your screen to an approriate angle so that your face can be recognized.",
+					"description4": "2. Above functions are not supported when:",
+					"description5a": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, Please refer to User Guide that comes with it.",
+					"description5b": "b. Your computer is in hibernation mode or has been turned off.",
+					"description6": "3. If the Airplane mode is enabled on your computer, these features are disabled.",
 					"description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
 				},
 				"WindowsLink": {
