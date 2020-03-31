@@ -15,17 +15,16 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 	styleUrls: ['./ui-custom-slider.component.scss']
 })
 export class UiCustomSliderComponent implements OnInit, OnDestroy, AfterContentChecked {
-	@Input() enableSlider;
-	@Input() rangeSliderId;
+	@Input() isDisabled = false;
+	@Input() rangeSliderId = 'rangeSlider';
 	@Input() value = 0; // initial slider value
-	@Input() minValue = 0; // slider minimum end value
-	@Input() maxValue = 10; // slider maximum end value
+	@Input() min = 0; // slider minimum end value
+	@Input() max = 10; // slider maximum end value
 	@Input() step = 1; // ticks or steps to change on each slide
-	@Input() minValueLegend = ''; // label to display at the start of slider
-	@Input() mediumValueLegend = ''; // label to display at the center of slider
-	@Input() maxValueLegend = ''; // label to display at the end of slider
-	@Input() stepsArray: Array<any>; // array with legend value for Eye care
-	@Input() manualRefresh = new EventEmitter<void>();
+	@Input() minLegend = ''; // label to display at the start of slider
+	@Input() midLegend = ''; // label to display at the center of slider
+	@Input() maxLegend = ''; // label to display at the end of slider
+	// @Input() stepsArray: Array<string> = []; // array with legend value for Eye care
 
 	@Output() sliderChange: any = new EventEmitter();
 	@Output() valueChange: any = new EventEmitter();
