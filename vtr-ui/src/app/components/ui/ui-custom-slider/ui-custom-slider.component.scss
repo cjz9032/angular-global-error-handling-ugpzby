@@ -9,7 +9,7 @@
 	$track-height: 6px;
 	$track-radius: 5px;
 
-	@mixin slider-thumb() {
+	@mixin thumb-style() {
 		appearance: none;
 		border: none;
 		width: $thumb-size;
@@ -19,18 +19,24 @@
 		margin: 0 3px;
 	}
 
-	@mixin slider-disabled {
+	@mixin thumb-disabled {
 		box-shadow: none;
 		background: $grey_light;
 	}
 
+	@mixin track-disabled {
+		border: 1px solid $grey_light;
+		background: $grey_lighter;
+		border-radius: $track-radius;
+	}
+
 	// slider thumb pressed
-	@mixin slider-active {
+	@mixin thumb-active {
 		box-shadow: none;
 		background: $blue-lighter;
 	}
 
-	@mixin slider-focus {
+	@mixin thumb-focus {
 		box-shadow: 0 0 0 1px $light, 0 0 0 2px $menu_hover;
 		background: $blue-light;
 	}
@@ -45,6 +51,10 @@
 		outline: none;
 		background: transparent; /* Otherwise white in Chrome */
 
+		&:disabled {
+			cursor: not-allowed;
+		}
+
 		/* start ms edge browser */
 
 		&::-ms-track {
@@ -54,7 +64,7 @@
 			margin: 0 5px;
 		}
 		&::-ms-thumb {
-			@include slider-thumb();
+			@include thumb-style();
 			margin-top: 0px !important;
 		}
 
@@ -70,12 +80,24 @@
 			background: $grey_light;
 		}
 
+		&:disabled {
+			&::-ms-thumb {
+				@include thumb-disabled();
+			}
+			&::-ms-fill-lower {
+				@include track-disabled();
+				background: $grey_light;
+			}
+			&::-ms-fill-upper {
+				@include track-disabled();
+			}
+		}
 		/* end ms edge browser */
 
 		/* start chromium browser */
 
 		&::-webkit-slider-thumb {
-			@include slider-thumb();
+			@include thumb-style();
 			margin-top: -10px;
 		}
 
@@ -87,33 +109,35 @@
 		}
 
 		&:focus::-webkit-slider-thumb {
-			@include slider-focus();
+			@include thumb-focus();
 		}
 		&:active::-webkit-slider-thumb {
-			@include slider-active();
+			@include thumb-active();
 		}
 		&:disabled::-webkit-slider-thumb {
-			@include slider-disabled();
+			@include thumb-disabled();
 		}
-
+		&:disabled::-webkit-slider-runnable-track {
+			@include track-disabled();
+		}
 		/* end chromium browser */
 
 		/* start mozilla browser */
 
 		// &::-moz-slider-thumb {
-		// 	@include slider-thumb();
+		// 	@include thumb-style();
 		// }
 
 		// &:focus::-moz-slider-thumb {
-		// 	@include slider-focus();
+		// 	@include thumb-focus();
 		// }
 
 		// &:active::-moz-slider-thumb {
-		// 	@include slider-active();
+		// 	@include thumb-active();
 		// }
 
 		// &:disabled::-moz-slider-thumb {
-		// 	@include slider-disabled();
+		// 	@include thumb-disabled();
 		// }
 
 		/* end mozilla browser */
