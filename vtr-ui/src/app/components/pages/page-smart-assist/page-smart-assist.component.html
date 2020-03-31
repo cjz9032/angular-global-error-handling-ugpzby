@@ -65,7 +65,7 @@
 										<div class="pl-5 border-bottom pb-4" 
 											*ngIf="!zeroTouchLoginShowAdvancedSection">
 											<span class="link-text mt-2 ml-4"
-												role="text"
+												role="button"
 												id="smartAssist-intelligentSecurity-zeroTouchLogin-showAdvSettings"
 												attr-aria-label="smartAssist.intelligentSecurity.zeroTouchLogin.showAdvSettings"
 												(click)="setHPDAdvancedSetting('zeroTouchLogin', true)"
@@ -179,7 +179,7 @@
 										<div class="pl-5 border-bottom pb-4" 
 											*ngIf="zeroTouchLoginShowAdvancedSection">
 											<span class="link-text mt-2 ml-4"
-												role="text"
+												role="button"
 												id="smartAssist-intelligentSecurity-zeroTouchLogin-hideAdvSettings"
 												attr.aria-label="smartAssist.intelligentSecurity.zeroTouchLogin.hideAdvSettings"
 												(click)="setHPDAdvancedSetting('zeroTouchLogin', false)"
@@ -293,7 +293,7 @@
 										<div class="pl-5 border-bottom pb-4" 
 											*ngIf="!zeroTouchLockShowAdvancedSection">
 											<span class="link-text mt-2 ml-4"
-												role="text"
+												role="button"
 												id="smartAssist-intelligentSecurity-zeroTouchLock-showAdvSettings"
 												attr-aria-label="smartAssist.intelligentSecurity.zeroTouchLock.showAdvSettings"
 												(click)="setHPDAdvancedSetting('zeroTouchLock', true)"
@@ -340,7 +340,7 @@
 																(click)="onClick('ms-settings:privacy-webcam')"
 																(keydown.enter)="onClick('ms-settings:privacy-webcam')"
 																id="ztl-facial-recognition-access-url"
-																role="button"
+																role="link"
 																tabindex="0"
 																[attr.aria-disabled]="!intelligentSecurity.isZeroTouchLockEnabled"
 																[disabled]="!intelligentSecurity.isZeroTouchLockEnabled">
@@ -361,7 +361,7 @@
 																(click)="onJumpClick()"
 																(keydown.enter)="onJumpClick()"
 																id="ztl-facial-recognition-privacy-url"
-																role="button"
+																role="link"
 																tabindex="0"
 																[attr.aria-disabled]="!intelligentSecurity.isZeroTouchLockEnabled"
 																[disabled]="!intelligentSecurity.isZeroTouchLockEnabled">
@@ -493,7 +493,7 @@
 										<div class="pl-5 border-bottom pb-4" 
 											*ngIf="zeroTouchLockShowAdvancedSection">
 											<span class="link-text mt-2 ml-4"
-												role="text"
+												role="button"
 												id="smartAssist-intelligentSecurity-zeroTouchLock-hideAdvSettings"
 												attr.aria-label="smartAssist.intelligentSecurity.zeroTouchLock.hideAdvSettings"
 												(click)="setHPDAdvancedSetting('zeroTouchLock', false)"

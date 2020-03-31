@@ -1870,7 +1870,7 @@
 				"zeroTouchLoginForIdea": {
 					"title": "Zero Touch Login",
 					"caption": "Experience the zero touch wake and login function to improve your work efficiency. You need register your face in Windows Hello to active the auto login function.",
-					"tooltip": "When you are in front of your computer or approaching it (within 1.2 or 1.5 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer. The maximum detecting distance depends on the sensor capability. You could refer to your user guide for the exact value."
+					"tooltip": "When you are in front of your computer or approaching it (within 1.2 or 1.5 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer. <br>The maximum detecting distance depends on the sensor capability. You could refer to your user guide for the exact value."
 				},
 				"zeroTouchLock": {
 					"title": "Zero Touch Lock",
