@@ -6,7 +6,9 @@ import { GamingAdvancedOCService } from 'src/app/services/gaming/gaming-advanced
 import { CommonService } from 'src/app/services/common/common.service';
 import { ModalGamingPromptComponent } from './../../modal/modal-gaming-prompt/modal-gaming-prompt.component';
 import { AdvancedOCItemUnit } from 'src/app/data-models/gaming/advanced-overclock-unit';
+import { MetricService } from 'src/app/services/metric/metric.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { TimerService } from 'src/app/services/timer/timer.service';
 
 @Component({
   selector: 'vtr-modal-gaming-advanced-oc',
@@ -65,6 +67,8 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
     public gamingCapabilityService: GamingAllCapabilitiesService,
     private gamingAdvancedOCService: GamingAdvancedOCService,
     private logger: LoggerService,
+    private metrics: MetricService,
+    private timer: TimerService
   ) { }
 
   ngOnInit() {
@@ -72,13 +76,18 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
     this.advanceCPUOCFeature = this.gamingCapabilityService.getCapabilityFromCache( LocalStorageKey.advanceCPUOCFeature);
     this.logger.info('advanceCPUOCFeature init cache:' + this.advanceCPUOCFeature + ';  advanceGPUOCFeature init cache:' + this.advanceGPUOCFeature + ' ;');
     this.getAdvancedOCInfo();
+    this.timer.start();
   }
   closeModal() {
     if(this.isChange) {
       this.openSaveChangeModal();
     }else{
       this.activeModal.close('close');
+
+      this.sendPageViewMetricsData();
     }
+
+    this.sendFeatureClickMetrics(JSON.parse(`{"ItemName":"advancedoc_close"}`));
   }
 
   public getAdvancedOCInfo() {
@@ -159,7 +168,11 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
         this.isChange = false;
         this.activeModal.close('close');
       }
-    });
+
+      this.sendOCChangedMetricsData(emmitedValue);
+     });
+
+    this.sendFeatureClickMetrics(JSON.parse(`{"ItemName":"advancedoc_savechange_warningmodal"}`));
   }
 
   public setAdvancedOCInfo(advancedOCInfo) {
@@ -195,7 +208,13 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
         this.setToDefaultValue(this.advancedOCInfo.gpuParameterList);
         this.setAdvancedOCInfo(this.advancedOCInfo);
       }
-    });
+
+      this.sendFeatureClickMetrics(JSON.parse(`{"ItemParent":"Gaming.AdvancedOC.SetToDefaultWarningModal",
+      "ItemName":"advancedoc_settodefaultwarningmodal_btn",
+      "ItemValue":"${emmitedValue === 1 ? "ok" : emmitedValue === 2 ? "cancel" : "close"}"}`));
+     });
+
+    this.sendFeatureClickMetrics(JSON.parse(`{"ItemName":"advancedoc_settodefault_warningmodal"}`));
   }
 
   public setToDefaultValue(list) {
@@ -204,5 +223,71 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
           list[i].OCValue = Number(list[i].defaultValue);
         }
       }
+  }
+
+  /**
+  * metrics collection for advancedoc feature
+  * @param metricsdata 
+  */
+  public sendFeatureClickMetrics(metricsdata:any) {
+    try{
+      const metricData = {
+        ItemType: Object.prototype.hasOwnProperty.call(metricsdata, 'ItmeType') ? metricsdata.ItemType : 'FeatureClick',
+        ItemParent: Object.prototype.hasOwnProperty.call(metricsdata, 'ItemParent') ? metricsdata.ItemParent : 'Gaming.AdvancedOC'
+      };
+      Object.keys(metricsdata).forEach((key) => {
+        if(metricsdata[key]) {
+          metricData[key] = metricsdata[key];
+        }
+      });
+      if (this.metrics && this.metrics.sendMetrics) {
+        this.metrics.sendMetrics(metricData);
+      }
+    } catch (error) {}
+  }
+  /**
+   * metrics collection of OC parameter changed
+   * @param occhangedinfo 
+   */
+  public sendOCChangedMetricsData(occhangedinfo:any) {
+    try{
+      let parameterValue = {};
+      if (occhangedinfo === 1) {
+        if (Object.prototype.hasOwnProperty.call(this.advancedOCInfo, 'cpuParameterList')) {
+          for (let i = 0; i < this.advancedOCInfo.cpuParameterList.length; i += 1) {
+            parameterValue[this.itemUnit.cpuOCNames['cpuOCName' + this.advancedOCInfo.cpuParameterList[i].tuneId]] = this.advancedOCInfo.cpuParameterList[i].OCValue;
+          }
+        }
+        if (Object.prototype.hasOwnProperty.call(this.advancedOCInfo, 'gpuParameterList')) {
+          for (let i = 0; i < this.advancedOCInfo.gpuParameterList.length; i += 1) {
+            parameterValue[this.itemUnit.gpuOCNames['gpuOCName' + this.advancedOCInfo.gpuParameterList[i].tuneId]] = this.advancedOCInfo.gpuParameterList[i].OCValue;
+          }
+        }
+      }
+  
+      this.sendFeatureClickMetrics(JSON.parse(`{"ItemParent":"Gaming.AdvancedOC.SaveChangeWarningModal","ItemName":"advancedoc_savechangewarningmodal_btn",
+        "ItemValue":"${occhangedinfo === 1 ? "save" : occhangedinfo === 2 ? "don't save" : "close"}",
+        "ItemParam":${(occhangedinfo === 1 && Object.keys(parameterValue).length !== 0) ? JSON.stringify(parameterValue) : null}}`));
+  
+      if (occhangedinfo === 1 || occhangedinfo === 2) {
+        this.sendPageViewMetricsData();
+      }
+    } catch (error) {}
+  }
+  /**
+   * page view metrics collection for advanced oc feature
+   */
+  public sendPageViewMetricsData() {
+    try{
+      const pageViewMetrics = {
+        ItemType: 'PageView',
+        PageName: 'Gaming.AdvancedOC',
+        PageContext: 'AdvancedOC settings page',
+        PageDuration: this.timer.stop()
+      };
+      if (this.metrics && this.metrics.sendMetrics) {
+        this.metrics.sendMetrics(pageViewMetrics);
+      }
+    } catch (error) {}
   }
 }

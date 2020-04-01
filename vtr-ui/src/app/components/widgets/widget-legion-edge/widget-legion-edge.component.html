@@ -17,7 +17,8 @@
 	</div>
 	<div class="row">
 		<div class="col legionEdge-list-items">
-			<div class="item" *ngIf = "gamingCapabilities.thermalModeVersion === 2 && gamingCapabilities.smartFanFeature" (click)="openThermalMode2Modal()">
+			<div class="item" *ngIf = "gamingCapabilities.thermalModeVersion === 2 && gamingCapabilities.smartFanFeature" (click)="openThermalMode2Modal()"
+			vtrMetrics metricsEvent="featureClick" metricsItem="legion_edge_thermalmode_link" metricsParent="Gaming.Dashboard">
 				<div class="item-left">
 					<div class="title">{{'gaming.dashboard.device.quickSettings.title' | translate}}</div>
 					<div class="mode-status">

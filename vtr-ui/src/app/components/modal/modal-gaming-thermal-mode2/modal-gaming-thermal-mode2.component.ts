@@ -11,6 +11,7 @@ import { GamingOCService } from 'src/app/services/gaming/gaming-OC/gaming-oc.ser
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { EventTypes } from '@lenovo/tan-client-bridge';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { TimerService } from 'src/app/services/timer/timer.service';
 
 @Component({
   selector: 'vtr-modal-gaming-thermal-mode2',
@@ -28,6 +29,7 @@ export class ModalGamingThermalMode2Component implements OnInit {
   public autoSwitchStatus = false;
   public isThermalModeSetted = false;
   public isPerformancOCSetted = false;
+  private metrics: any;
   // @Output() thermalModeMsg = new EventEmitter<number>();
   @Output() OCSettingsMsg = new EventEmitter<number>();
 
@@ -39,7 +41,8 @@ export class ModalGamingThermalMode2Component implements OnInit {
     private gamingCapabilityService: GamingAllCapabilitiesService,
     private thermalModeService: GamingThermalModeService,
     private gamingOCService: GamingOCService,
-    private logger: LoggerService
+    private logger: LoggerService,
+    private timer: TimerService
   ) {
     // get capabilities from cache
     this.gamingCapabilities.desktopType = this.gamingCapabilityService.getCapabilityFromCache(LocalStorageKey.desktopType);
@@ -69,6 +72,8 @@ export class ModalGamingThermalMode2Component implements OnInit {
     this.getPerformanceOCSetting();
     this.getAutoSwitchStatus();
     this.registerThermalModeChangeEvent();
+    this.metrics = this.shellServices.getMetrics();
+    this.timer.start();
   }
 
   ngOnDestroy() {
@@ -108,6 +113,16 @@ export class ModalGamingThermalMode2Component implements OnInit {
 
   closeThermalMode2Modal() {
     this.activeModalService.close();
+
+    const pageViewMetrics = {
+			ItemType: 'PageView',
+			PageName: 'Gaming.ThermalMode',
+			PageContext: 'ThermalMode settings page',
+			PageDuration: this.timer.stop()
+    };
+    if (this.metrics && this.metrics.sendAsync) {
+      this.metrics.sendAsync(pageViewMetrics);
+    }
   }
 
   getThermalModeSettingStatus() {
@@ -143,6 +158,9 @@ export class ModalGamingThermalMode2Component implements OnInit {
             this.logger.error(`Modal-ThermalMode2-SetThermalModeSettingStatus: return value: ${res}, thermalmode setting unchanged`);
           }
         });
+
+        this.sendFeatureClickMetrics(JSON.parse(`{"ItemName":"thermalmode_mode_change",
+        "ItemValue":"${(value === 1) ? "Quiet Mode" : (value === 2) ? "Balance Mode" : "Performance Mode"}"}`));
       } catch (error) {
         this.thermalModeSettingStatus = prevThermalModeStatus;
         this.commonService.setLocalStorageValue(LocalStorageKey.CurrentThermalModeStatus, this.thermalModeSettingStatus);
@@ -214,6 +232,8 @@ export class ModalGamingThermalMode2Component implements OnInit {
       this.logger.error(`Modal-ThermalMode2-SetPerformanceOCSetting: set fail; Error message: `, error.message);
       throw new Error(error.message);
     }
+
+    this.sendFeatureClickMetrics(JSON.parse(`{"ItemName":"thermalmode_enableOC","ItemValue":"${this.OCSettings ? "checked" : "unchecked"}"}`));
   }
 
   getAutoSwitchStatus() {
@@ -296,10 +316,36 @@ export class ModalGamingThermalMode2Component implements OnInit {
       if(emmitedValue === 1) {
         this.openAdvancedOCModal()
       }
+
+      this.sendFeatureClickMetrics(JSON.parse(`{"ItemParent":"Gaming.OCWarningModal","ItemName":"ocwarningmodal_btn",
+      "ItemValue":"${emmitedValue === 1 ? "proceed" : emmitedValue === 2 ? "cancle" : "close"}"}`));
      });
+
+    this.sendFeatureClickMetrics(JSON.parse(`{"ItemName":"thermalmode_advacedoc_warningmodal"}`));
 	}
   openAdvancedOCModal(){
 		this.modalService.open(ModalGamingAdvancedOCComponent, { backdrop:'static', windowClass: 'modal-fun' });
 	}
   // fengxu end
+
+  /**
+   * metrics collection for thermalmode feature
+   * @param metricsdata 
+   */
+  public sendFeatureClickMetrics(metricsdata:any) {
+    try{
+      const metricData = {
+        ItemType: Object.prototype.hasOwnProperty.call(metricsdata, 'ItmeType') ? metricsdata.ItemType : 'FeatureClick',
+        ItemParent: Object.prototype.hasOwnProperty.call(metricsdata, 'ItemParent') ? metricsdata.ItemParent : 'Gaming.ThermalMode'
+      };
+      Object.keys(metricsdata).forEach((key) => {
+        if(metricsdata[key]) {
+          metricData[key] = metricsdata[key];
+        }
+      });
+      if (this.metrics && this.metrics.sendAsync) {
+        this.metrics.sendAsync(metricData);
+      }
+    } catch (error) {}
+  }
 }

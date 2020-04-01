@@ -4,7 +4,8 @@
     </div>
     <div class="modal-main" *ngIf="!loading">
         <div class="modal-header">
-            <button type="button" tabindex="1" class="close" aria-label="close" (click)="closeThermalMode2Modal()">
+            <button type="button" tabindex="1" class="close" aria-label="close" (click)="closeThermalMode2Modal()"
+            vtrMetrics metricsEvent="featureClick" metricsItem="thermalmode_close" metricsParent="Gaming.ThermalMode">
                 ×
             </button>
             <div class="header-text">
@@ -58,15 +59,15 @@
                             <div class="oc-description">
                                 <p *ngIf="OCsupportted === 3 && driverStatus === 0">
                                     {{ 'gaming.dashboard.device.thermalMode2Popup.OC.cpu_gpuDriverLack' | translate }} &nbsp;
-                                    <a class="oc-driver-link" routerLink="/device/system-updates" (click)="closeThermalMode2Modal()">{{ 'gaming.dashboard.device.thermalMode2Popup.OC.goInstall' | translate }}</a>
+                                    <a class="oc-driver-link" routerLink="/device/system-updates" (click)="closeThermalMode2Modal()" vtrMetrics metricsEvent="featureClick" metricsItem="thermalmode_goinstalldriver" metricsParent="Gaming.ThermalMode">{{ 'gaming.dashboard.device.thermalMode2Popup.OC.goInstall' | translate }}</a>
                                 </p>
                                 <p *ngIf="(OCsupportted === 3 && driverStatus === 1) || (OCsupportted === 2 && driverStatus !== 3)">
                                     {{ 'gaming.dashboard.device.thermalMode2Popup.OC.cpuDriverLack' | translate }} &nbsp;
-                                    <a class="oc-driver-link" routerLink="/device/system-updates" (click)="closeThermalMode2Modal()">{{ 'gaming.dashboard.device.thermalMode2Popup.OC.goInstall' | translate }}</a>
+                                    <a class="oc-driver-link" routerLink="/device/system-updates" (click)="closeThermalMode2Modal()" vtrMetrics metricsEvent="featureClick" metricsItem="thermalmode_goinstalldriver" metricsParent="Gaming.ThermalMode">{{ 'gaming.dashboard.device.thermalMode2Popup.OC.goInstall' | translate }}</a>
                                 </p>
                                 <p *ngIf="(OCsupportted === 3 && driverStatus === 2) || (OCsupportted === 1 && driverStatus !== 3)">
                                     {{ 'gaming.dashboard.device.thermalMode2Popup.OC.gpuDriverLack' | translate }} &nbsp;
-                                    <a class="oc-driver-link" routerLink="/device/system-updates" (click)="closeThermalMode2Modal()">{{ 'gaming.dashboard.device.thermalMode2Popup.OC.goInstall' | translate }}</a>
+                                    <a class="oc-driver-link" routerLink="/device/system-updates" (click)="closeThermalMode2Modal()" vtrMetrics metricsEvent="featureClick" metricsItem="thermalmode_goinstalldriver" metricsParent="Gaming.ThermalMode">{{ 'gaming.dashboard.device.thermalMode2Popup.OC.goInstall' | translate }}</a>
                                 </p>
                             </div>
                         </ng-container>
@@ -108,7 +109,7 @@
             <div class="item-auto-switch">
                 <div class="auto-switch-left">
                     <div class="auto-switch-toggle">
-                        <vtr-ui-toggle (toggleStatus)="setAutoSwitchStatus($event)" [value]="autoSwitchStatus">
+                        <vtr-ui-toggle (toggleStatus)="setAutoSwitchStatus($event)" [value]="autoSwitchStatus" [onOffSwitchId]="'thermalmode_autoPerformanceSwitch'" [parentId]="'Gaming.ThermalMode'">
                         </vtr-ui-toggle>
                     </div>
                 </div>
