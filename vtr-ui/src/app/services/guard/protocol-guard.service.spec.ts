@@ -103,9 +103,9 @@ describe('service', () => {
     expect(service['convertToUrlAssumeProtocolIs3x'](protocol)).toEqual('');
   });
 
-  it('convertToUrlAssumeProtocolIs3x invalid 3.x like protocol', () => {
-	const protocol = 'lenovo-vantage3:not-exist';
-    expect(service['convertToUrlAssumeProtocolIs3x'](protocol)).toEqual('');
+  it('convertToUrlAssumeProtocolIs3x new not exist protocol', () => {
+	const protocol = 'lenovo-vantage3:not-exist-protocol';
+    expect(service['convertToUrlAssumeProtocolIs3x'](protocol)).toEqual('not-exist-protocol');
   });
 
   it('convertToUrlAssumeProtocolIs3x empty args', () => {

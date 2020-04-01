@@ -121,8 +121,10 @@ export class ProtocolGuardService implements CanActivate {
 
 	if (schema !== this.vantage3xSchema || !semantic) return '';
 
-	const path: string | undefined = this.semanticToPath[semantic];
-	if (!path) return '';
+	let path: string | undefined = this.semanticToPath[semantic];
+	if (!path) {
+		path = semantic;
+	}
 
 	return `${path}${query}`;
   }
