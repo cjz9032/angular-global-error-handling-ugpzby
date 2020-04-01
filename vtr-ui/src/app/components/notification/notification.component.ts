@@ -12,10 +12,10 @@ export enum NotificationType {
 
 export class NotificationComponent {
 	@Input() type: string;
-	isCloseBanner = false;
+	isClose = false;
 	notificationType = NotificationType;
 
-	closeBanner() {
-		this.isCloseBanner = true;
+	close() {
+		this.isClose = true;
 	}
 }

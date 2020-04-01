@@ -1,4 +1,5 @@
-import { Component, OnInit, HostListener, OnDestroy } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, OnInit, HostListener, OnDestroy, Inject } from '@angular/core';
 import { Router, NavigationEnd, ActivatedRoute, ParamMap } from '@angular/router';
 import { DisplayService } from './services/display/display.service';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
@@ -50,7 +51,6 @@ export class AppComponent implements OnInit, OnDestroy {
 	private isServerSwitchEnabled = true;
 	private shellVersion;
 	private newTutorialVersion = '3.1.2';
-	public isStage = window.location.href.indexOf('stage') >= 0;
 	public notificationType = NotificationType.Banner;
 
 	constructor(
@@ -70,6 +70,7 @@ export class AppComponent implements OnInit, OnDestroy {
 		private appsForYouService: AppsForYouService,
 		private metricService: MetricService,
 		// private appUpdateService: AppUpdateService
+		@Inject(DOCUMENT) public document: Document
 	) {
 		this.patchNgbModalOpen();
 		// to check web and js bridge version in browser console

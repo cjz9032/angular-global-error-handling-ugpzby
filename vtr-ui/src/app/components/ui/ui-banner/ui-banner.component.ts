@@ -6,12 +6,13 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./ui-banner.component.scss']
 })
 export class UiBannerComponent {
-	@Output() bannerClose: EventEmitter<any> = new EventEmitter();
+	// tslint:disable-next-line:no-output-native
+	@Output() close: EventEmitter<any> = new EventEmitter();
 	constructor() {}
 
 
 	onCloseClick(event) {
-		this.bannerClose.emit();
+		this.close.emit();
 	}
 
 }
