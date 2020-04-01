@@ -30,7 +30,7 @@
 
 					.collapse-text {
 						display: inline-block;
-						color: $shade_blue;
+						color: $grey_dark;
 						font-size: $fontsize_xs;
 						font-weight: $weight_light;
 						margin-right: 0.6rem;
@@ -46,10 +46,10 @@
 					}
 
 					&:hover {
-						opacity: .7;
+						opacity: 1;
 
 						.collapse-text {
-							text-decoration: none;
+							text-decoration: underline;
 						}
 					}
 				}
