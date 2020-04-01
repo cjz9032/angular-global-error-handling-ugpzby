@@ -89,11 +89,11 @@ export class UiListCheckboxComponent implements OnInit {
 		}
 	}
 
-	onTooltipClick(update: AvailableUpdateDetail, tooltip, canOpen = false) {
+	onTooltipClick(update: AvailableUpdateDetail, tooltip) {
 		if (tooltip) {
 			if (tooltip.isOpen()) {
 				tooltip.close();
-			} else if (canOpen) {
+			} else{
 				this.initSystemUpdateToolTip(update);
 				tooltip.open();
 				this.currentToolTip = tooltip;

@@ -31,11 +31,11 @@ export class AutoupdateSettingsComponent extends BaseComponent implements OnInit
 		}
 	}
 
-	onQuestionMarkClick(tooltip, canOpen = false) {
+	onQuestionMarkClick(tooltip) {
 		if (tooltip) {
 			if (tooltip.isOpen()) {
 				tooltip.close();
-			} else if (canOpen) {
+			} else {
 				tooltip.open();
 			}
 		}
