@@ -61,8 +61,8 @@
 			metricsEvent="itemClick"
 			metricsItem="launch mcafee"
 			metricsParent="security.antivirus"
-			upperCaseLabel=false
-			btnHeight=true
+			[upperCaseLabel]=false
+			[btnHeight]=true
 			[label]="'security.antivirus.mcafee.launch' | translate"
 			(onClick)="common.launch()"></vtr-ui-button>
     </li>
@@ -70,8 +70,8 @@
 		<vtr-ui-button class="normal-button button"
 			[ngClass]="{'visible': !url}"
 			linkId="sa-av-btn-subscribe"
-			upperCaseLabel=false
-			btnHeight=true
+			[upperCaseLabel]=false
+			[btnHeight]=true
 			[isDisabled]="isOnline === false"
 			[label]="'security.antivirus.windowsDefender.buyNow' | translate"
 			[isLoading]="common.purchaseBtnIsLoading"

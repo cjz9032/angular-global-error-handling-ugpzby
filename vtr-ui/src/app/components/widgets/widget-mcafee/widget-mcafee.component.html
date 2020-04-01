@@ -12,16 +12,16 @@
 			metricsEvent="FeatureClick"
 			metricsItem="launchMcafee"
 			metricsParent="security.antivirus"
-			upperCaseLabel=false
-			btnHeight=true
+			[upperCaseLabel]=false
+			[btnHeight]=true
 			(onClick)="common.launch()"
 			[label]="'security.antivirus.mcafee.launch' | translate"
 			[upperCaseLabel]="false"
 			[linkId]="'sa-av-btn-launchmcafee'"></vtr-ui-button>
 		<vtr-ui-button *ngIf="!install"
 			linkId="sa-av-btn-getMcafee"
-			upperCaseLabel=false
-			btnHeight=true
+			[upperCaseLabel]=false
+			[btnHeight]=true
 			[isDisabled]="isOnline === false"
 			[vtrMetricEnabled]="false"
 			(click)="common.openMcAfeePurchase('button')"
