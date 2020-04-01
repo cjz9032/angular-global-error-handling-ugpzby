@@ -1,11 +1,33 @@
 <div class="vtr-ui-custom-slider">
 	<div class="range">
-		<input type="range" [disabled]="isDisabled" [name]="rangeSliderId" [id]="rangeSliderId" [aria-valuemin]="min"
-			[aria-valuemax]="max" [(aria-valuenow)]="value" [min]="min" [max]="max" [(value)]="value" [step]="step">
-		<div class="d-flex justify-content-between legends" [class.legends-disabled]="isDisabled">
-			<span *ngIf="minLegend?.length>0">{{ minLegend }}</span>
-			<span *ngIf="midLegend?.length>0">{{ midLegend }}</span>
-			<span *ngIf="maxLegend?.length>0">{{ maxLegend }}</span>
+		<input type="range"
+			role="slider"
+			[disabled]="isDisabled"
+			[name]="sliderId"
+			[id]="sliderId"
+			[attr.aria-valuemin]="min"
+			[attr.aria-valuemax]="max"
+			[attr.aria-valuenow]="value"
+			[min]="min"
+			[max]="max"
+			[(value)]="value"
+			(input)="onInputChange($event.target.value)"
+			(change)="onValueChange($event.target.value)"
+			[step]="step">
+		<div class="d-flex justify-content-between legends"
+			[class.legends-disabled]="isDisabled">
+			<span *ngIf="minLegend?.length>0"
+				[attr.aria-label]="minLegend">
+				{{ minLegend }}
+			</span>
+			<span *ngIf="midLegend?.length>0"
+				[attr.aria-label]="midLegend">
+				{{ midLegend }}
+			</span>
+			<div *ngIf="maxLegend?.length>0"
+				[attr.aria-label]="maxLegend">
+				{{ maxLegend }}
+			</div>
 		</div>
 	</div>
 </div>

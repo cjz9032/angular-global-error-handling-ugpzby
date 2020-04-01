@@ -13,9 +13,7 @@ export class MenuHeaderComponent implements OnInit {
 
 	constructor(public router: Router) { }
 
-	ngOnInit() {
-		console.log(this.menuItems.toString());
-	}
+	ngOnInit() {}
 
 	/* getActiveTab() {
 		let activeTab = {};
