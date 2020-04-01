@@ -29,9 +29,9 @@
 				</div>
 				<div class="item-right">
 					<div  class="icon">
-						<img  class="pngStatus" *ngIf = "thermalModeRealStatus === 3" [src] = " 'assets/images/gaming/thermalMode2/performance.png' | svgInline | async">
-						<img class="pngStatus" *ngIf = "thermalModeRealStatus === 2" [src] = " 'assets/images/gaming/thermalMode2/balance.png' | svgInline | async">
-						<img class="pngStatus" *ngIf = "thermalModeRealStatus === 1" [src] = " 'assets/images/gaming/thermalMode2/quiet.png' | svgInline | async ">
+						<img class="pngStatus performance" *ngIf = "thermalModeRealStatus === 3">
+						<img class="pngStatus balance" *ngIf = "thermalModeRealStatus === 2">
+						<img class="pngStatus quiet" *ngIf = "thermalModeRealStatus === 1">
 					</div>
 				</div>
 			</div>
