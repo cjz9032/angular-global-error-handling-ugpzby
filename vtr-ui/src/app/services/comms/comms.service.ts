@@ -76,12 +76,7 @@ export class CommsService {
 
 	async callUpeApi(url, queryParams: any = {}) {
 		// const url = this.env.upeApiRoot + api;
-		const useShellApi: any = Windows ? true : false;
-		if (useShellApi) {
-			return this.callUpeApiByShell(url, queryParams);
-		} else {
-			return this.callUpeApiByWeb(url, queryParams);
-		}
+		return this.callUpeApiByWeb(url, queryParams);
 	}
 
 	private async callUpeApiByWeb(url, queryParams: any = {}) {
@@ -97,6 +92,7 @@ export class CommsService {
 			}).toPromise();
 	}
 
+	// if the content contain Unicode, the CRI could return wrong encoding content in some certain machines.
 	private async callUpeApiByShell(strUrl, queryParams: any = {}) {
 		const client = new Windows.Web.Http.HttpClient();
 		const url = new Windows.Foundation.Uri(strUrl);
