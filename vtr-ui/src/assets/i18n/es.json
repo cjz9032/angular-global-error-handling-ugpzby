@@ -795,6 +795,7 @@
             "back": "ATRÁS",
             "on": "ON",
             "off": "OFF",
+            "close": "Cerrar",
             "collapse": "Contraer",
             "expand": "Expandir",
             "loader": "Obteniendo el estado",

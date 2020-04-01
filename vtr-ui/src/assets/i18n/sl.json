@@ -795,6 +795,7 @@
             "back": "NAZAJ",
             "on": "ON",
             "off": "OFF",
+            "close": "Zapri",
             "collapse": "Strni",
             "expand": "Razširi",
             "loader": "Pridobivanje <br> statusa",

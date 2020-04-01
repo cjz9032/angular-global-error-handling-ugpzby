@@ -795,6 +795,7 @@
             "back": "返回",
             "on": "ON",
             "off": "OFF",
+            "close": "关闭",
             "collapse": "折叠",
             "expand": "展开",
             "loader": "获取状态",

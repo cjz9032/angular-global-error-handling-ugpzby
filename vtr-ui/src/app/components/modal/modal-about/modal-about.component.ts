@@ -42,7 +42,7 @@ export class ModalAboutComponent implements OnInit, AfterViewInit {
 	}
 
 	ngAfterViewInit() {
-		setTimeout(() => { document.getElementById('about-dialog').parentElement.parentElement.parentElement.parentElement.focus(); }, 0);
+		setTimeout(() => { this.initModalFocus(); }, 0);
 	}
 
 	agreementClicked() {
@@ -65,9 +65,12 @@ export class ModalAboutComponent implements OnInit, AfterViewInit {
 		this.activeModal.close('close');
 	}
 
+	initModalFocus() {
+		(document.querySelector('.About-Modal') as HTMLElement).focus();
+	}
+
 	@HostListener('window: focus')
 	onFocus(): void {
-		const modal = document.querySelector('.About-Modal') as HTMLElement;
-		modal.focus();
+		this.initModalFocus();
 	}
 }
