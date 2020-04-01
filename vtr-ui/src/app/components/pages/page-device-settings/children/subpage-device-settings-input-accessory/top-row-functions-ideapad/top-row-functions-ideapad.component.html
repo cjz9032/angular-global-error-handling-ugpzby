@@ -12,7 +12,7 @@
                 </div>
 			</div>
             <div class="col-12 pr-0 caption">
-                <div class="text" role="text" 
+                <div class="text" role="text"
                     id="topRowFunctionsIdeapad-description">
                     {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.description' | translate}}
                 </div>
@@ -26,7 +26,7 @@
 								[iconName]="'icomoon icomoon-Special-function'"
 								(change)="update$.next(keyType.HOTKEY)"
 								[value]="keyType.HOTKEY"
-								>
+								[isTopRowFunction]="true">
 							</vtr-ui-rectangle-radio>
 						</div>
 						<div>
@@ -37,7 +37,7 @@
 								[iconName]="'icomoon icomoon-F1-F12-funciton'"
 								(change)="update$.next(keyType.FNKEY)"
 								[value]="keyType.FNKEY"
-								>
+								[isTopRowFunction]="true">
 							</vtr-ui-rectangle-radio>
 						</div>
 					</div>

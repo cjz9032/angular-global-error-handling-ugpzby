@@ -1673,8 +1673,8 @@
 						"subSection": {
 							"description": "To switch the above two functions, press Fn+Esc.",
 							"radioButton": {
-								"sFunKey": "SPECIAL FUNCTION",
-								"fnKey": "F1-F12 FUNCTION"
+								"sFunKey": "SPECIAL<br>FUNCTION",
+								"fnKey": "F1-F12<br>FUNCTION"
 							}
 						},
 						"subSectionTwo": {
