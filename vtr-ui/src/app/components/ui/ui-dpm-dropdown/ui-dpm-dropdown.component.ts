@@ -20,7 +20,7 @@ export class UiDpmDropdownComponent implements OnInit {
 	public isDropDownOpen = false;
 	public text: string;
 	public refocus: boolean = true;
-	public itemBlur:boolean = true;
+	public itemBlur: boolean = true;
 	constructor(private translate: TranslateService) { }
 
 	ngOnInit() {
@@ -50,7 +50,7 @@ export class UiDpmDropdownComponent implements OnInit {
 		}
 	}
 
-	public toggle(toggle=null) {
+	public toggle(toggle = null) {
 		if (!this.disabled) {
 			this.isDropDownOpen = !this.isDropDownOpen;
 		}
@@ -59,7 +59,7 @@ export class UiDpmDropdownComponent implements OnInit {
 		}
 	}
 
-	public select(event: DropDownInterval) {
+	public select(event: DPMDropDownInterval) {
 		this.value = event.value;
 		this.text = event.text;
 		this.change.emit(event);
@@ -81,12 +81,12 @@ export class UiDpmDropdownComponent implements OnInit {
 	}
 
 	public onItemBlur(isLast) {
-		if(this.itemBlur){
+		if (this.itemBlur) {
 			if (isLast) {
 				this.toggle();
 			}
-		}else{
-			this.itemBlur=true;
+		} else {
+			this.itemBlur = true;
 		}
 
 	}
@@ -103,9 +103,9 @@ export class UiDpmDropdownComponent implements OnInit {
 		}
 	}
 
-	public toggleByItem(last,toggleBtn=null){
-		if(last){
-			this.itemBlur=false;
+	public toggleByItem(last, toggleBtn = null) {
+		if (last) {
+			this.itemBlur = false;
 		}
 		this.toggle(toggleBtn);
 	}
