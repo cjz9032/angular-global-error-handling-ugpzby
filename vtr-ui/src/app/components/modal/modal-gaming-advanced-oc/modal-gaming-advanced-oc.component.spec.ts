@@ -9,6 +9,8 @@ import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { MetricService } from 'src/app/services/metric/metric.service';
+import { TimerService } from 'src/app/services/timer/timer.service';
 import { Gaming } from './../../../enums/gaming.enum';
 import { of } from 'rxjs';
 
@@ -30,6 +32,14 @@ const advancedOCService = jasmine.createSpyObj('GamingAdvancedOCService', [
 	'setAdvancedOCInfo',
 	'getAdvancedOCInfoCache',
 	'setAdvancedOCInfoCache'
+]);
+
+const metricService = jasmine.createSpyObj('MetricService', [
+	'sendMetrics',
+]);
+const timerService = jasmine.createSpyObj('TimerService', [
+    'start',
+    'stop'
 ]);
 
 const gamingAllCapabilitiesService = jasmine.createSpyObj('GamingAllCapabilitiesService', [
@@ -73,6 +83,8 @@ describe('ModalGamingAdvancedOCComponent : ', () => {
 	advancedOCService.setAdvancedOCInfo.and.returnValue(Promise.resolve(true));
 	advancedOCService.getAdvancedOCInfoCache.and.returnValue(advancedOCInfo);
     advancedOCService.setAdvancedOCInfoCache.and.returnValue(true);
+    metricService.sendMetrics.and.returnValue(true);
+    timerService.stop.and.returnValue(2);
     // gamingAllCapabilitiesService.getCapabilityFromCache.and.returnValue(true);
 
     beforeEach(async(() => {
@@ -86,6 +98,8 @@ describe('ModalGamingAdvancedOCComponent : ', () => {
                 NgbActiveModal,
                 { provide: GamingAllCapabilitiesService, useValue: gamingAllCapabilitiesService },
                 { provide: GamingAdvancedOCService, useValue: advancedOCService},
+                { provide: MetricService, useValue: metricService},
+                { provide: TimerService, useValue: timerService},
             ]
         })
         .compileComponents();
