@@ -5,6 +5,7 @@ import { WidgetLightingNotebookComponent } from './widget-lighting-notebook.comp
 import { Pipe, NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { MetricService } from '../../../../../src/app/services/metric/metric.service';
 
 const gamingLightingServiceMock = jasmine.createSpyObj('GamingLightingService', ['getLightingProfileId', 'getLightingProfileById', 'setLightingProfileId', 'setLightingProfileBrightness',
     'isShellAvailable', 'getLightingCapabilities', 'setLightingDefaultProfileById', 'setLightingProfileEffectColor', 'checkAreaColorFn', 'regLightingProfileIdChangeEvent']);
@@ -55,6 +56,8 @@ const toggleStatus: any = {
     "profileId1": { "status": false, "defaultStatus": "undefined" },
     "profileId3": { "status": true, "defaultStatus": "undefined" }
 };
+const metricsMock = jasmine.createSpyObj('MetricService',['sendMetrics']);
+
 describe('WidgetLightingNotebookComponent', () => {
     let component: WidgetLightingNotebookComponent;
     let fixture: ComponentFixture<WidgetLightingNotebookComponent>;
@@ -72,7 +75,8 @@ describe('WidgetLightingNotebookComponent', () => {
             providers: [
                 NgbModal,NgbActiveModal,
                 { provide: GamingLightingService, useValue: gamingLightingServiceMock },
-                { provide: CommonService, useValue: commonServiceMock }
+                { provide: CommonService, useValue: commonServiceMock },
+                { provide: MetricService, useValue: metricsMock },
             ],
             imports: [HttpClientModule]
         })
