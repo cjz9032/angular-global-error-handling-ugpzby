@@ -795,6 +795,7 @@
             "back": "TERUG",
             "on": "ON",
             "off": "OFF",
+            "close": "Sluiten",
             "collapse": "Samenvouwen",
             "expand": "Uitvouwen",
             "loader": "Status <br> ophalen",

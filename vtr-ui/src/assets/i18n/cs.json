@@ -795,6 +795,7 @@
             "back": "ZPĚT",
             "on": "ON",
             "off": "OFF",
+            "close": "Zavřít",
             "collapse": "Sbalit",
             "expand": "Rozbalit",
             "loader": "Načítání <br> Status",
