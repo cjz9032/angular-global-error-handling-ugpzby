@@ -1,12 +1,12 @@
-import { Component, OnInit, OnDestroy, Input } from '@angular/core';
-import { BatteryGaugeReset } from 'src/app/data-models/device/battery-gauge-reset.model';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ModalBatteryChargeThresholdComponent } from 'src/app/components/modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
-import { PowerService } from 'src/app/services/power/power.service';
-import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
-import { LoggerService } from 'src/app/services/logger/logger.service';
-import { CommonService } from 'src/app/services/common/common.service';
 import { Subscription } from 'rxjs';
+import { ModalBatteryChargeThresholdComponent } from 'src/app/components/modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
+import { BatteryGaugeReset } from 'src/app/data-models/device/battery-gauge-reset.model';
+import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
+import { CommonService } from 'src/app/services/common/common.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { PowerService } from 'src/app/services/power/power.service';
 
 @Component({
 	selector: 'vtr-battery-gauge-reset',
@@ -24,7 +24,19 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 	// gaugeResetBtnStatus: boolean[];
 	is12HrsFormat = false;
 	systemTimeFormatSubscription: Subscription;
-
+	autoFocusButton = false;
+	// These following instance variables added for Keyboard navigation to radio button.
+	keyCode = Object.freeze({
+		TAB: 9,
+		RETURN: 13,
+		SPACE: 32,
+		END: 35,
+		HOME: 36,
+		LEFT: 37,
+		UP: 38,
+		RIGHT: 39,
+		DOWN: 40
+	});
 	constructor(private logger: LoggerService, public modalService: NgbModal, public powerService: PowerService, public batteryService: BatteryDetailService, private commonService: CommonService) { }
 
 	ngOnInit() {
@@ -46,7 +58,27 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 		// this.getBatteryGaugeResetInfo(this.batteryGaugeResetInfo);
 	}
 
-	onBatteryGaugeReset(index) {
+
+	/* @HostListener('window:keydown', ['$event']) */
+	onKeyPressBatteryGaugeReset(index, $event: KeyboardEvent) {
+		try {
+			if ($event.keyCode === this.keyCode.SPACE || $event.keyCode === this.keyCode.RETURN) {
+				this.autoFocusButton = true; // flag to focus monitoring ,highlighting when using keyboard/ narrator for accessibility.
+				$event.preventDefault();
+				$event.stopPropagation();
+				this.onBatteryGaugeReset(index, $event);
+			}
+		}
+		catch (error) {
+
+		}
+
+	}
+
+	onBatteryGaugeReset(index, $event) {
+		if ($event.type === 'click') {
+			this.autoFocusButton = false; // flag to hide focus outline when clicked.
+		}
 		let modalRef;
 		modalRef = this.modalService.open(ModalBatteryChargeThresholdComponent, {
 			backdrop: 'static',
@@ -67,6 +99,7 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 			modalRef.componentInstance.description2 = 'device.deviceSettings.power.batterySettings.gaugeReset.popup.description2';
 			modalRef.componentInstance.positiveResponseText = 'device.deviceSettings.power.batterySettings.gaugeReset.popup.continue';
 		}
+		const activeElement = document.activeElement as HTMLElement;
 		modalRef.result.then(
 			result => {
 				if (result === 'positive') {
@@ -74,6 +107,12 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 						this.startBatteryGaugeReset(index);
 					} else {
 						this.stopBatteryGaugeReset(index);
+					}
+					this.modalService.dismissAll();
+				}
+				else {
+					if (this.autoFocusButton) {
+						activeElement.focus();
 					}
 
 				}

@@ -17,6 +17,15 @@
 	position: relative;
 	width: 100%;
 
+	@media #{$black-on-white} {
+		background: $light !important;
+		border: 0.1rem solid $dark;
+	}
+	@media #{$white-on-black} {
+		background: $dark !important;
+		border: 0.1rem solid $light;
+	}
+
 	.img-con {
 		height: 28rem;
 		display: flex;

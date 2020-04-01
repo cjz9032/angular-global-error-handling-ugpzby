@@ -2,8 +2,8 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col">
-				<div class="title">{{title}}</div>
-				<div class="description">{{description}}</div>
+				<div class="title" id="su_auto_updates_title" role="text">{{title}}</div>
+				<div class="description" id="su_auto_updates_desc" role="text">{{description}}</div>
 			</div>
 		</div>
 		<div class="row">
@@ -31,16 +31,20 @@
 												[isSwitchDisable]="item.isDisabled"
 												[disabled]="item.isDisabled">
 											</vtr-ui-switch-onoff>
-
 											<fa-icon class="question"
+												tabindex="0"
 												triggers="click:blur"
 												placement="auto"
 												id="{{'su_auto_updates_question_circle_' + item.name}}"
-												tabindex="0"
+												attr.aria-label="{{item.name + 'question mark'}}"
 												[ngbTooltip]="item.tooltipText"
+												#tooltip="ngbTooltip"
 												[icon]="['far', 'question-circle']"
 												container="vtr-root"
-												tooltipClass="vtr-tooltip"></fa-icon>
+												tooltipClass="vtr-tooltip"
+												(click)="onQuestionMarkClick(tooltip)"
+												(keydown.enter)="onQuestionMarkClick(tooltip)">
+											</fa-icon>
 										</div>
 										<a href="javascript:void();"
 											class="link-text"

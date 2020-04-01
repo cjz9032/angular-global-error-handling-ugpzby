@@ -1,23 +1,22 @@
-import { Component, OnDestroy, OnInit, ElementRef, ViewChild } from '@angular/core';
-import { QaService } from '../../../services/qa/qa.service';
-import { CMSService } from 'src/app/services/cms/cms.service';
-import { DeviceService } from 'src/app/services/device/device.service';
-import { CommonService } from 'src/app/services/common/common.service';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
+import { EMPTY } from 'rxjs';
+import { Subscription } from 'rxjs/internal/Subscription';
+import { DolbyModeResponse } from 'src/app/data-models/audio/dolby-mode-response';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
+import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { AudioService } from 'src/app/services/audio/audio.service';
-import { Microphone } from 'src/app/data-models/audio/microphone.model';
-import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
-import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
-import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
-import { AppNotification } from 'src/app/data-models/common/app-notification.model';
-import { Subscription } from 'rxjs/internal/Subscription';
-import { LoggerService } from 'src/app/services/logger/logger.service';
-import { EMPTY } from 'rxjs';
-import { Router, NavigationEnd } from '@angular/router';
-import { DolbyModeResponse } from 'src/app/data-models/audio/dolby-mode-response';
+import { CMSService } from 'src/app/services/cms/cms.service';
+import { CommonService } from 'src/app/services/common/common.service';
+import { DeviceService } from 'src/app/services/device/device.service';
 import { GuardService } from 'src/app/services/guard/guardService.service';
 import { NonArmGuard } from 'src/app/services/guard/non-arm-guard';
 import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { QaService } from '../../../services/qa/qa.service';
 
 @Component({
 	selector: 'vtr-page-device-settings',
@@ -32,11 +31,13 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 	back = 'BACK';
 	backarrow = '< ';
 	parentPath = 'device';
+	params = { fromTab: true }
 	public menuItems = [
 		{
 			id: 'power',
 			label: 'device.deviceSettings.power.title',
 			path: 'device-settings/power',
+			params: { fromTab: true },
 			icon: 'power',
 			iconClass: 'icomoon-power_nav',
 			canDeactivate: [GuardService],
@@ -47,6 +48,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			id: 'audio',
 			label: 'device.deviceSettings.audio.title',
 			path: 'device-settings/audio',
+			params: { fromTab: true },
 			icon: 'audio',
 			iconClass: 'icomoon-audio',
 			canDeactivate: [GuardService],
@@ -57,6 +59,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			id: 'display-camera',
 			label: 'device.deviceSettings.displayCamera.title',
 			path: 'device-settings/display-camera',
+			params: { fromTab: true },
 			icon: 'display-camera',
 			iconClass: 'icomoon-display_camera',
 			canDeactivate: [GuardService],
@@ -67,6 +70,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			id: 'input-accessories',
 			label: 'device.deviceSettings.inputAccessories.title',
 			path: 'device-settings/input-accessories',
+			params: { fromTab: true },
 			icon: 'input-accessories',
 			iconClass: 'icomoon-input_accessories',
 			canDeactivate: [GuardService],
@@ -138,28 +142,19 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 				return;
 			}
 			// focus same active link element after route change , content loaded.
-			if (this.activeElement) {
-				this.activeElement.focus();
-			}
-
-			// window.scrollTo(0, 0);
-			/* const focusParentElement = this.hsRouterOutlet.nativeElement.lastElementChild;
-			if (focusParentElement) {
-				focusParentElement.focus();
-				this.logger.info('aa 1:: ' + this.hsRouterOutlet.nativeElement);
-				this.logger.info('aa 2:: ' + focusParentElement);
+			/* if ((evt instanceof NavigationEnd)) {
+				if (this.activeElement) {
+					this.activeElement.focus();
+				}
 			} */
-			/* const subPageRootElement = document.getElementsByClassName('vtr-subpage') as HTMLCollection;
-			const element = subPageRootElement[0].querySelector('[tabindex = \'0\']') as HTMLElement;
-			element.focus(); */
-			// vtr - subpage
+
 		});
 	}
 
 	hidePowerPage(routeTo: boolean = true) {
 		this.menuItems = this.commonService.removeObjById(this.menuItems, 'power');
 		if (routeTo) {
-			this.router.navigate(['device/device-settings/audio'], { replaceUrl: true });
+			this.router.navigate(['device/device-settings/audio', { queryParams: this.params }], { replaceUrl: true });
 		}
 	}
 
@@ -203,7 +198,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 				const inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability);
 				let isAvailable = false;
 				if (inputAccessoriesCapability && (inputAccessoriesCapability.isKeyboardMapAvailable || inputAccessoriesCapability.isUdkAvailable)) {
-					isAvailable = inputAccessoriesCapability.isKeyboardMapAvailable || inputAccessoriesCapability.isUdkAvailable ;
+					isAvailable = inputAccessoriesCapability.isKeyboardMapAvailable || inputAccessoriesCapability.isUdkAvailable;
 				} else {
 					await this.keyboardService.GetAllCapability().then((response => {
 						isAvailable = (response != null && (Object.keys(response).indexOf('keyboardMapCapability') !== -1 || (Object.keys(response).indexOf('isUdkAvailable') !== -1))) ? true : false;

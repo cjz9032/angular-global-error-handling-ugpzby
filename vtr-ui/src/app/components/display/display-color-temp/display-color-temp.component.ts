@@ -1,6 +1,6 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import { EyeCareMode } from 'src/app/data-models/camera/eyeCareMode.model';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ChangeContext } from 'ng5-slider';
+import { EyeCareMode } from 'src/app/data-models/camera/eyeCareMode.model';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({

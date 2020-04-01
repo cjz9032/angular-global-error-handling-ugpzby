@@ -243,13 +243,13 @@
 					padding: 2.4rem;
 					height: 100%;
 					@media #{$black-on-white} {
-						border:1px solid;
-						border-bottom: 1px solid !important;
+						
+						border-bottom: 1px solid $dark !important;
 						border-radius: 1rem;
 					}
 					@media #{$white-on-black} {
-						border: 1px solid;
-						border-bottom: 1px solid !important;
+						
+						border-bottom: 1px solid $light !important;
 						border-radius: 1rem;
 					}
 
@@ -637,7 +637,7 @@
 		border-radius: $border_radius;
 	}
 	@media #{$white-on-black} {
-		border: 0.1rem solid $dark ;
+		border: 0.1rem solid $light ;
 
 		border-radius: $border_radius;
 	}
@@ -646,6 +646,6 @@
 }
 
 .spinner-border {
-	height: 50px;
-	width: 50px;
+  height: 50px;
+  width: 50px;
 }

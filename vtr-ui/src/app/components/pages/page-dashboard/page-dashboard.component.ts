@@ -358,19 +358,31 @@ export class PageDashboardComponent implements OnInit, OnDestroy {
 	}
 
 	async fetchUPEContent() {
-		const positions = Object.values(this.contentCards)
-			.filter(contentCard => contentCard.tileSource === 'UPE')
-			.map(contentCard => contentCard.positionParam);
-
-		if (positions.length === 0) {
+		const upeContentCards = Object.values(this.contentCards).filter(contentCard => contentCard.tileSource === 'UPE');
+		if (upeContentCards.length === 0) {
 			return;
 		}
 
+		const upePositions = upeContentCards.map(contentCard => contentCard.positionParam);
 		const startCallUPE: any = new Date();
-		const response = await this.upeService.fetchUPEContent({ positions });
-		const endCallUPE: any = new Date();
-		this.logger.info(`Performance: Dashboard page get cms content, ${endCallUPE - startCallUPE}ms`);
-		this.populateUPEContent(response);
+		try {
+			const response = await this.upeService.fetchUPEContent({ positions: upePositions });
+			const endCallUPE: any = new Date();
+			this.logger.info(`Performance: Dashboard page get cms content, ${endCallUPE - startCallUPE}ms`);
+			this.populateUPEContent(response, upeContentCards);
+		} catch (ex) {
+			upeContentCards.forEach(contentCard => {
+				contentCard.upeContent = null;
+
+				if (contentCard.cmsContent) {
+					this.dashboardService.onlineCardContent[contentCard.cardId] = contentCard.cmsContent;
+				} // else do nothing
+
+				if (this.dashboardService.onlineCardContent[contentCard.cardId]) {
+					contentCard.displayContent = this.dashboardService.onlineCardContent[contentCard.cardId];
+				}
+			});
+		}
 	}
 
 
@@ -425,11 +437,8 @@ export class PageDashboardComponent implements OnInit, OnDestroy {
 	}
 
 
-	private populateUPEContent(response: any) {
+	private populateUPEContent(response: any, contentCards: IConfigItem[]) {
 		const dataSource = 'upe';
-		const contentCards: IConfigItem[] = Object.values(this.contentCards).filter(contentCard => {
-			return contentCard.tileSource === 'UPE'
-		});
 
 		contentCards.forEach(contentCard => {
 			let contents: any = this.cmsService.getOneCMSContent(response, contentCard.template, contentCard.positionParam);
@@ -447,7 +456,9 @@ export class PageDashboardComponent implements OnInit, OnDestroy {
 				return;	// don't need to update, developer said this could present the refresh of positionA
 			}
 
-			contentCard.displayContent = this.dashboardService.onlineCardContent[contentCard.cardId];
+			if (this.dashboardService.onlineCardContent[contentCard.cardId]) {
+				contentCard.displayContent = this.dashboardService.onlineCardContent[contentCard.cardId];
+			}
 		});
 	}
 

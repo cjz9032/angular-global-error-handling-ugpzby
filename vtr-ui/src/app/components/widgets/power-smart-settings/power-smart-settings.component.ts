@@ -1,20 +1,14 @@
-import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
-import { PowerService } from 'src/app/services/power/power.service';
-import {
-	ICModes,
-	IntelligentCoolingMode,
-	IntelligentCoolingModes,
-	IntelligentCoolingHardware,
-	DYTC6Modes
-} from 'src/app/enums/intelligent-cooling.enum';
-import { TranslateService } from '@ngx-translate/core';
-import { CommonService } from 'src/app/services/common/common.service';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ModalIntelligentCoolingModesComponent } from '../../modal/modal-intelligent-cooling-modes/modal-intelligent-cooling-modes.component';
-import { IntelligentCoolingCapability } from 'src/app/data-models/device/intelligent-cooling-capability.model';
-import { LoggerService } from 'src/app/services/logger/logger.service';
+import { TranslateService } from '@ngx-translate/core';
 import { EMPTY } from 'rxjs';
+import { IntelligentCoolingCapability } from 'src/app/data-models/device/intelligent-cooling-capability.model';
+import { DYTC6Modes, ICModes, IntelligentCoolingHardware, IntelligentCoolingMode, IntelligentCoolingModes } from 'src/app/enums/intelligent-cooling.enum';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { CommonService } from 'src/app/services/common/common.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { PowerService } from 'src/app/services/power/power.service';
+import { ModalIntelligentCoolingModesComponent } from '../../modal/modal-intelligent-cooling-modes/modal-intelligent-cooling-modes.component';
 
 const thinkpad = 1;
 const ideapad = 0;
@@ -46,7 +40,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 	legacyManualModeCapability = true;
 	public dytc6Mode: string = DYTC6Modes.Manual;
 	public dytc6IsAutoModeSupported = true;
-    private amtCapabilityInterval: any;
+	private amtCapabilityInterval: any;
 	@Output() isPowerSmartSettingHidden = new EventEmitter<any>();
 
 	constructor(
@@ -57,10 +51,10 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 		public modalService: NgbModal) { }
 
 	ngOnInit() {
-        this.initDataFromCache();
-        this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
+		this.initDataFromCache();
+		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 
-        if (thinkpad === this.machineType || this.isYogo730()) {
+		if (thinkpad === this.machineType || this.isYogo730()) {
 			this.add = 0; // thinkpad
 			this.checkDriverForThinkPad();
 		} else if (ideapad === this.machineType) {
@@ -69,7 +63,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 		} else {
 			this.hidePowerSmartSetting();
 		}
-    }
+	}
 
 	initDataFromCache() {
 		this.cache = this.commonService.getLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, undefined);
@@ -140,8 +134,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 		let isYogo730 = false;
 		const regExForYoga730 = /YOGA 730/gi;
 		if (cacheMachineFamilyName && (cacheMachineFamilyName.search(regExForYoga730) !== -1)) {
-            isYogo730 = true;
-        }
+			isYogo730 = true;
+		}
 		return isYogo730;
 	}
 	onIntelligentCoolingToggle(event, isSetManualMode: boolean = true) {
@@ -165,19 +159,19 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 	}
 
 	changeQuietCool(event) {
-        this.setManualModeSetting(IntelligentCoolingModes.Cool);
-    }
+		this.setManualModeSetting(IntelligentCoolingModes.Cool);
+	}
 
 	changePerformance(event) {
-        this.setManualModeSetting(IntelligentCoolingModes.Performance);
-    }
+		this.setManualModeSetting(IntelligentCoolingModes.Performance);
+	}
 
 	changeBatterySaving(event) {
-        this.setManualModeSetting(IntelligentCoolingModes.BatterySaving);
-    }
+		this.setManualModeSetting(IntelligentCoolingModes.BatterySaving);
+	}
 
 	public showMoreDytc6() {
-        this.isCollapsed = !this.isCollapsed;
+		this.isCollapsed = !this.isCollapsed;
 	}
 
 	// Start Power Smart Settings for IdeaPad
@@ -242,14 +236,14 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 	}
 
 	callbackForStartMonitorICIdeapad(response: any) {
-        this.initPowerSmartSettingsUIForIdeaPad(response);
-    }
+		this.initPowerSmartSettingsUIForIdeaPad(response);
+	}
 
 	startMonitorForICIdeapad() {
 		try {
 			if (this.powerService.isShellAvailable) {
 				this.powerService.startMonitorForICIdeapad(this.callbackForStartMonitorICIdeapad.bind(this))
-					.then((value: boolean) => {}).catch(error => {
+					.then((value: boolean) => { }).catch(error => {
 						this.logger.error('startMonitorForICIdeapad', error.message);
 						return EMPTY;
 					});
@@ -264,7 +258,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 		try {
 			if (this.powerService.isShellAvailable) {
 				this.powerService.stopMonitorForICIdeapad()
-					.then((value: boolean) => {}).catch(error => {
+					.then((value: boolean) => { }).catch(error => {
 						this.logger.error('stopMonitorForICIdeapad', error.message);
 						return EMPTY;
 					});
@@ -367,20 +361,20 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				this.tIOCapability = 0 !== (await this.getLegacyTIOCapability());
 				this.legacyManualModeCapability = await this.getLegacyManualModeCapability();
 				if (this.cQLCapability || this.tIOCapability || this.legacyManualModeCapability) {
-                    // Legacy Capable or DYTC 3.0
-                    this.captionText = this.translate.instant('device.deviceSettings.power.powerSmartSettings.description3');
-                    this.cache.captionText = 'device.deviceSettings.power.powerSmartSettings.description3';
-                    this.showIC = 3;
-                    this.intelligentCoolingModes = IntelligentCoolingHardware.Legacy;
-                    this.apsStatus = await this.getAPSState();
-                    // Start of fix for VAN-6839, changing appStatus true , to fix for VAN-6839.
-                    if (this.tIOCapability) {
+					// Legacy Capable or DYTC 3.0
+					this.captionText = this.translate.instant('device.deviceSettings.power.powerSmartSettings.description3');
+					this.cache.captionText = 'device.deviceSettings.power.powerSmartSettings.description3';
+					this.showIC = 3;
+					this.intelligentCoolingModes = IntelligentCoolingHardware.Legacy;
+					this.apsStatus = await this.getAPSState();
+					// Start of fix for VAN-6839, changing appStatus true , to fix for VAN-6839.
+					if (this.tIOCapability) {
 						this.apsStatus = true;
 					}
-                    this.cache.apsState = this.apsStatus;
-                    // end of fix for VAN-6839, changing appStatus true , to fix for VAN-6839.
+					this.cache.apsState = this.apsStatus;
+					// end of fix for VAN-6839, changing appStatus true , to fix for VAN-6839.
 
-                    if ((this.cQLCapability || this.tIOCapability) && this.apsStatus) {
+					if ((this.cQLCapability || this.tIOCapability) && this.apsStatus) {
 						this.showIntelligentCoolingToggle = true;
 						this.enableIntelligentCoolingToggle = await this.getLegacyAutoModeState();
 
@@ -389,13 +383,13 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 					} else {
 						this.showIntelligentCoolingToggle = false;
 					}
-                    const modeStatus = await this.getLegacyManualModeState();
-                    const modeType = modeStatus ? ICModes.Cool : ICModes.Performance;
-                    const mode = IntelligentCoolingModes.getMode(modeType);
-                    this.setPerformanceAndCool(mode);
-                } else {
-                    this.hidePowerSmartSetting();
-                }
+					const modeStatus = await this.getLegacyManualModeState();
+					const modeType = modeStatus ? ICModes.Cool : ICModes.Performance;
+					const mode = IntelligentCoolingModes.getMode(modeType);
+					this.setPerformanceAndCool(mode);
+				} else {
+					this.hidePowerSmartSetting();
+				}
 			}
 		} catch (error) {
 			this.logger.error('initPowerSmartSettingsForThinkPad', error.message);
@@ -478,27 +472,27 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 	private setPerformanceAndCool(mode: IntelligentCoolingMode) {
 		switch (mode.type) {
 			case ICModes.Cool:
-                this.radioQuietCool = true;
-                this.radioPerformance = false;
-                this.radioBatterySaving = false;
-                // this.enableIntelligentCoolingToggle = false;
-                break;
+				this.radioQuietCool = true;
+				this.radioPerformance = false;
+				this.radioBatterySaving = false;
+				// this.enableIntelligentCoolingToggle = false;
+				break;
 			case ICModes.Performance:
-                this.radioPerformance = true;
-                this.radioQuietCool = false;
-                this.radioBatterySaving = false;
-                // this.enableIntelligentCoolingToggle = false;
-                break;
+				this.radioPerformance = true;
+				this.radioQuietCool = false;
+				this.radioBatterySaving = false;
+				// this.enableIntelligentCoolingToggle = false;
+				break;
 			case ICModes.Error:
-                const customEvent = { switchValue: true };
-                this.onIntelligentCoolingToggle(customEvent);
-                this.enableIntelligentCoolingToggle = true;
-                break;
+				const customEvent = { switchValue: true };
+				this.onIntelligentCoolingToggle(customEvent);
+				this.enableIntelligentCoolingToggle = true;
+				break;
 			case IntelligentCoolingModes.BatterySaving.ideapadType4:
-                this.radioPerformance = false;
-                this.radioQuietCool = false;
-                this.radioBatterySaving = true;
-                break;
+				this.radioPerformance = false;
+				this.radioQuietCool = false;
+				this.radioBatterySaving = true;
+				break;
 		}
 		this.cache.mode = mode;
 		this.cache.showIC = this.showIC;
@@ -541,7 +535,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 			} else if (this.powerService.isShellAvailable) {
 				this.powerService
 					.setAutoModeSetting(event.switchValue)
-					.then((value: boolean) => {})
+					.then((value: boolean) => { })
 					.catch(error => {
 						this.logger.error('setAutoModeSetting', error.message);
 						return EMPTY;
@@ -569,8 +563,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				this.powerService
 					.setManualModeSetting(mode.type)
 					.then((value: boolean) => {
-                    this.setPerformanceAndCool(mode);
-                })
+						this.setPerformanceAndCool(mode);
+					})
 					.catch(error => {
 						this.logger.error('setManualModeSetting', error.message);
 						return false;
@@ -648,9 +642,9 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 	private async getLegacyManualModeState() {
 		try {
 			if (this.powerService.isShellAvailable) {
-                const mode1 = await this.powerService.getLegacyManualModeState();
-                return mode1;
-            }
+				const mode1 = await this.powerService.getLegacyManualModeState();
+				return mode1;
+			}
 		} catch (error) {
 			this.logger.error('getLegacyManualModeState', error.message);
 			return EMPTY;
@@ -706,7 +700,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 	// =================== End Power Smart Settings for ThinkPad
 
 	coolingModesPopUp() {
-        this.modalService.open(ModalIntelligentCoolingModesComponent, {
+		this.modalService.open(ModalIntelligentCoolingModesComponent, {
 			backdrop: 'static',
 			size: 'lg',
 			keyboard: false,
@@ -723,7 +717,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 			reason => {
 			}
 		);
-    }
+	}
 
 
 	readMore(readMoreDiv: HTMLElement) {

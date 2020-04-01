@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.3](https://bitbucket.tc.lenovo.com///compare/v1.4.18...v1.5.3) (2020-03-31)
+
+
+### Bug Fixes
+
+* **app component:** container selector updated ([5e8c92c](https://bitbucket.tc.lenovo.com///commit/5e8c92cfc89385224fd0206d53a07648dbc99860))
+* **app component:** patch ngbmodal to have vtr-root as the container ([6800909](https://bitbucket.tc.lenovo.com///commit/6800909106de138e7eaaa5158790a3fcebb96bf3))
+* **dom:** move the unsafe js to angular ([c515420](https://bitbucket.tc.lenovo.com///commit/c515420deda356882560d10631922218298c09e6))
+* **mock:** mocking openMcAfeePurchaseUrl() ([b3dadf9](https://bitbucket.tc.lenovo.com///commit/b3dadf9aa2279cc86a55e1e42ac6c592034b079f))
+
+### [1.5.2](https://bitbucket.tc.lenovo.com///compare/v1.5.1...v1.5.2) (2020-03-23)
+
+### [1.5.1](https://bitbucket.tc.lenovo.com///compare/v1.4.11...v1.5.1) (2020-03-23)
+
+## [1.5.0](https://bitbucket.tc.lenovo.com///compare/v1.4.1...v1.5.0) (2020-03-12)
+
+### [1.5.2](https://bitbucket.tc.lenovo.com///compare/v1.5.1...v1.5.2) (2020-03-23)
+
+### [1.5.1](https://bitbucket.tc.lenovo.com///compare/v1.4.7...v1.5.1) (2020-03-23)
+
+## [1.5.0](https://bitbucket.tc.lenovo.com///compare/v1.4.1...v1.5.0) (2020-03-12)
 ### [1.4.18](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.4.17...v1.4.18) (2020-03-30)
 
 
