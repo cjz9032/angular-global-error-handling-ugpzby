@@ -1869,8 +1869,8 @@
 				},
 				"zeroTouchLoginForIdea": {
 					"title": "Zero Touch Login",
-					"caption": "This feature eanbles you to improve the work efficiency by automatically waking up or logging in your computer. To use the feature, you need to register your face in Windows Hello.",
-					"tooltip": "When you are in front of your computer or approaching it (within 1.2 or 1.5 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer. <br>Depending on the sensor capability, the maximum detecting distance varies. Refer to the User Guide that comes with your computer for details."
+					"caption": "This feature enables you to improve the work efficiency by automatically waking up or logging in your computer. To use the feature, you need to register your face in Windows Hello.",
+					"tooltip": "When you are in front of your computer or approaching it (within 1.2 or 1.5 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer. <br>Depending on the sensor capability, the maximum detecting distance varies. Refer to the <i>User Guide</i> that comes with your computer for details."
 				},
 				"zeroTouchLock": {
 					"title": "Zero Touch Lock",
