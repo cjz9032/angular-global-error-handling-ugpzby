@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { AdPolicyService } from '../ad-policy/ad-policy.service';
 import { DeviceService } from '../device/device.service';
-import { TimerServiceEx } from 'src/app/services/timer/timer-service-ex.service';
+import { DurationCounterService } from 'src/app/services/timer/timer-service-ex.service';
 import { GuardConstants } from './guard-constants';
 
 @Injectable({
@@ -28,7 +28,7 @@ export class GuardService {
 		private adPolicy: AdPolicyService,
 		private deviceService: DeviceService,
 		private guardConstants: GuardConstants,
-		private timerService: TimerServiceEx) {
+		private timerService: DurationCounterService) {
 
 		this.metrics = shellService.getMetrics();
 

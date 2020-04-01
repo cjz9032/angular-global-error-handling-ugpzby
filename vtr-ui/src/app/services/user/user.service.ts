@@ -18,6 +18,7 @@ import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import AES from 'crypto-js/aes';
 import enc_utf8 from 'crypto-js/enc-utf8';
+import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 
 declare var Windows;
 
@@ -81,7 +82,8 @@ export class UserService {
 		private translate: TranslateService,
 		public deviceService: DeviceService,
 		private localInfoService: LocalInfoService,
-		private modalService: NgbModal
+		private modalService: NgbModal,
+		private hypSettings: HypothesisService
 	) {
 		this.translate.stream('lenovoId.user').subscribe((firstName) => {
 			if (!this.auth && firstName !== 'lenovoId.user') {
@@ -441,7 +443,6 @@ export class UserService {
 	}
 
 	isLenovoIdSupported() {
-		// VAN-7119 add version check, if client version below 1908, hide the LID function
 		return this.lidSupported;
 	}
 
@@ -460,17 +461,30 @@ export class UserService {
 
 	private updateLidSupported() {
 		let lidSupported = true;
-		if (typeof Windows !== 'undefined') {
-			const packageVersion = Windows.ApplicationModel.Package.current.id.version;
-			if (packageVersion.minor < 1908) {
-				lidSupported = false;
+		this.hypSettings.getFeatureSetting('LenovoId').then((result) => {
+			if (!result) {
+				this.lidSupported = true;
+			} else {
+				this.lidSupported = result === 'true';
 			}
-		}
-		this.localInfoService.getLocalInfo().then(localInfo => {
-			if (localInfo && localInfo.Segment === SegmentConst.Commercial) {
-				lidSupported = false;
+		}).catch((error) => {
+			this.lidSupported = true;
+			this.devService.writeLog('updateLidSupported(): Exception happen when read Lenovo ID Hypothesis switch - ', error);
+		}).finally(() => {
+			if (this.lidSupported) {
+				if (typeof Windows !== 'undefined') {
+					const packageVersion = Windows.ApplicationModel.Package.current.id.version;
+					if (packageVersion.minor < 1908) {
+						lidSupported = false;
+					}
+				}
+				this.localInfoService.getLocalInfo().then(localInfo => {
+					if (localInfo && localInfo.Segment === SegmentConst.Commercial) {
+						lidSupported = false;
+					}
+					this.lidSupported = lidSupported;
+				});
 			}
-			this.lidSupported = lidSupported;
 		});
 	}
 }

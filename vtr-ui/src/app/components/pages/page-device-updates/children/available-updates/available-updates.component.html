@@ -3,14 +3,14 @@
 		<div class="row">
 			<div class="col">
 				<div class="header">
-					<div class="heading" id="su_availableUpdates" role="article">{{'systemUpdates.availableUpdates.title' | translate}}</div>
+					<div class="heading" id="su_availableUpdates" role="text">{{'systemUpdates.availableUpdates.title' | translate}}</div>
 				</div>
 			</div>
 		</div>
 
 		<div class="row no-gutters">
 			<div class="col-sm-12 col-md-12 col-lg-8">
-				<div class="text-regular">{{'systemUpdates.availableUpdates.description' | translate}}</div>
+				<div class="text-regular" id="su_availableUpdates_desc" role="text">{{'systemUpdates.availableUpdates.description' | translate}}</div>
 			</div>
 			<div class="col-sm-12 col-md-12 col-lg-4">
 				<div class="button-box shift-right">
@@ -65,7 +65,7 @@
 					*ngIf="criticalUpdates && criticalUpdates.length > 0">
 					<div class="col">
 						<div class="header">
-							<div class="heading" id="su_criticalUpdates" role="article">{{criticalUpdates.length}}
+							<div class="heading" id="su_criticalUpdates" role="text">{{criticalUpdates.length}}
 								{{'systemUpdates.criticalUpdates' | translate}}</div>
 							<vtr-ui-list-checkbox (checkChange)="onCheckChange($event)"
 								[isInstallationCompleted]="isInstallationCompleted"
@@ -80,7 +80,7 @@
 					*ngIf="recommendedUpdates && recommendedUpdates.length > 0">
 					<div class="col">
 						<div class="header">
-							<div class="heading" id="su_recommendedUpdates" role="article">{{recommendedUpdates.length}}
+							<div class="heading" id="su_recommendedUpdates" role="text">{{recommendedUpdates.length}}
 								{{'systemUpdates.recommendedUpdates' | translate}}</div>
 							<vtr-ui-list-checkbox (checkChange)="onCheckChange($event)"
 								(ignoreUpdate)="onIgnoreUpdate($event)"
@@ -95,7 +95,7 @@
 					*ngIf="optionalUpdates && optionalUpdates.length > 0">
 					<div class="col">
 						<div class="header">
-							<div class="heading" id="su_optionalUpdates" role="article">{{optionalUpdates.length}}
+							<div class="heading" id="su_optionalUpdates" role="text">{{optionalUpdates.length}}
 									{{'systemUpdates.optionalUpdates' | translate}}</div>
 							<vtr-ui-list-checkbox (checkChange)="onCheckChange($event)"
 								(ignoreUpdate)="onIgnoreUpdate($event)"
@@ -111,11 +111,13 @@
 					<div class="col">
 						<div class="header">
 							<div class="row d-flex justify-content-between w-100">
-								<div class="heading" id="su_ignoredUpdates" role="article">{{ignoredUpdates.length}}
+								<div class="heading" id="su_ignoredUpdates" role="text">{{ignoredUpdates.length}}
 									{{'systemUpdates.ignoredUpdates' | translate}}</div>
 								<div class="px-3 collapse-control"
 									id="su-col-exp-ignore"
 									aria-label="su-col-exp-ignore"
+									tabindex="0"
+									(keydown.enter)="onToggle()"
 									(click)="onToggle()">
 									<div *ngIf="isCollapsed"
 										class="collapse-text">

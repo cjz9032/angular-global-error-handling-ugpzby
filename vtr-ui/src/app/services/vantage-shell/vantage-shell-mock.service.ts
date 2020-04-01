@@ -1279,7 +1279,7 @@ export class VantageShellService {
 				const deviceFilterResult = await this.phoenix.deviceFilter.deviceFilterEval(filter);
 				// console.log('In VantageShellService.deviceFilter. Filter: ', JSON.stringify(filter), deviceFilterResult);
 				return deviceFilterResult;
-			} catch (error) {}
+			} catch (error) { }
 			return true;
 			// return await this.phoenix.deviceFilter(filter);
 		}
@@ -1902,6 +1902,11 @@ export class VantageShellService {
 			getThermalModeStatus: this.getPromise(true),
 			setThermalModeStatus: this.getPromise(true),
 			regThermalModeEvent: this.getPromise(true),
+			getAutoSwitchStatus: this.getPromise(true),
+			regThermalModeRealStatusEvent: this.getPromise(true),
+			setAutoSwitchStatus: this.getPromise(true),
+			getThermalModeRealStatus: this.getPromise(true),
+
 		};
 		return gamingThermalMode;
 	}
@@ -2217,25 +2222,25 @@ export class VantageShellService {
 		return undefined;
 	}
 
-	public getPowerDPM(){
+	public getPowerDPM() {
 		return undefined;
 	}
 
 	public getInstalledApplicationList() {
 		if (this.phoenix) {
-				const installedAppList: any = {
-					installedAppList: [{
-						name: 'Google Chrome',
-						description: ''
-						}, {
-						name: 'Internet Explorer',
-						description: ''
-						}, {
-						name: 'candy crush saga',
-						description: ''
-						}]
-				};
-				return installedAppList;
+			const installedAppList: any = {
+				installedAppList: [{
+					name: 'Google Chrome',
+					description: ''
+				}, {
+					name: 'Internet Explorer',
+					description: ''
+				}, {
+					name: 'candy crush saga',
+					description: ''
+				}]
+			};
+			return installedAppList;
 		}
 		return undefined;
 	}
@@ -2243,4 +2248,5 @@ export class VantageShellService {
 	getGamingAdvancedOC() {
 		return undefined;
 	}
+
 }

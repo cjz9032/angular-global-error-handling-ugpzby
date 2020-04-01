@@ -1,26 +1,14 @@
+import { AfterViewInit, Component, ElementRef, EventEmitter, Input, NgZone, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { TranslateService } from '@ngx-translate/core';
+import { Subject } from 'rxjs';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { throttleTime } from 'rxjs/operators';
-import { Subject } from 'rxjs';
-import {
-	Component,
-	OnInit,
-	Input,
-	ViewChild,
-	Output,
-	EventEmitter,
-	ElementRef,
-	OnDestroy,
-	NgZone,
-	SecurityContext
-} from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { DeviceService } from 'src/app/services/device/device.service';
+import { BaseComponent } from '../../base/base.component';
 import { ModalBatteryChargeThresholdComponent } from '../../modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
 import { ModalRebootConfirmComponent } from '../../modal/modal-reboot-confirm/modal-reboot-confirm.component';
-import { BaseComponent } from '../../base/base.component';
-import { DeviceService } from 'src/app/services/device/device.service';
-import { TranslateService } from '@ngx-translate/core';
 import { ModalVoiceComponent } from '../../modal/modal-voice/modal-voice.component';
-import {DomSanitizer} from '@angular/platform-browser';
 
 
 @Component({
@@ -29,12 +17,12 @@ import {DomSanitizer} from '@angular/platform-browser';
 	styleUrls: ['./ui-row-switch.component.scss'],
 	exportAs: 'uiRowSwitch'
 })
-export class UiRowSwitchComponent extends BaseComponent implements OnInit, OnDestroy {
+export class UiRowSwitchComponent extends BaseComponent implements OnInit, AfterViewInit, OnDestroy {
 	@ViewChild('childContent', { static: false }) childContent: any;
 
 	// Use Fort Awesome Font Awesome Icon Reference Array (library, icon class) ['fas', 'arrow-right']
-	@Input() rightIcon = [];
-	@Input() leftIcon = [];
+	@Input() rightIcon: any = [];
+	@Input() leftIcon: any = [];
 	@Input() showChildContent = false;
 	@Input() readMoreText = '';
 	@Input() title = '';
@@ -73,6 +61,7 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, OnDes
 	@ViewChild('rightToolTip1', { static: false }) rightToolTip1: ElementRef;
 	@ViewChild('rightToolTip2', { static: false }) rightToolTip2: ElementRef;
 	@ViewChild('rightToolTip3', { static: false }) rightToolTip3: ElementRef;
+	@ViewChild('captionRef', { static: false }) captionRef: ElementRef;
 	scrollEvent = new Subject();
 	subscriptionList = [];
 
@@ -80,9 +69,20 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, OnDes
 		public modalService: NgbModal,
 		private deviceService: DeviceService,
 		private translate: TranslateService,
-		protected html_sanitizer:DomSanitizer,
 		private ngZone: NgZone
 	) { super(); }
+
+	ngAfterViewInit(): void {
+		try {
+			Array.from(this.captionRef.nativeElement.querySelectorAll('a'))
+				.forEach((element: any) => {
+					element.setAttribute('id', 'modern-standby-link');
+				});
+		}
+		catch (error) {
+
+		}
+	}
 
 
 	ngOnInit() {
@@ -101,6 +101,7 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, OnDes
 
 	public onOnOffChange($event) {
 		// if (this.title === 'Battery Charge Threshold') {
+		const activeElement = document.activeElement as HTMLElement;
 		if (this.title === this.translate.instant('device.deviceSettings.power.batterySettings.batteryThreshold.title')) {
 			this.isSwitchChecked = !this.isSwitchChecked;
 			if (this.isSwitchChecked) {
@@ -122,10 +123,8 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, OnDes
 							this.toggleOnOff.emit($event);
 						} else if (result === 'negative') {
 							this.isSwitchChecked = !this.isSwitchChecked;
-							if (document.getElementById('ds-power-battery-threshold-onOffButton')) {
-								document.getElementById('ds-power-battery-threshold-onOffButton').focus();
-							}
 						}
+						activeElement.focus();
 					},
 					reason => {
 					}
@@ -139,6 +138,7 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, OnDes
 		this.rebootConfirm($event);
 	}
 	public rebootConfirm($event) {
+		const activeElement = document.activeElement as HTMLElement;
 		if (this.title === this.translate.instant('device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionTwo.title') || this.isRebootRequired) {
 			this.isSwitchChecked = !this.isSwitchChecked;
 			const modalRef = this.modalService.open(ModalRebootConfirmComponent, {
@@ -159,6 +159,7 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, OnDes
 					} else if (result === 'close') {
 						this.isSwitchChecked = !this.isSwitchChecked;
 					}
+					activeElement.focus();
 				},
 				reason => {
 				}
@@ -178,9 +179,7 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, OnDes
 		this.toggleToolTip(tooltip, true);
 		this.tooltipClick.emit($event);
 	}
-    htmlSanitizer(html_content){
-		return this.html_sanitizer.bypassSecurityTrustHtml(this.html_sanitizer.sanitize(SecurityContext.HTML, html_content));
-	}
+
 	checkToolTips() {
 		// console.log('==THROTTLE');
 		const subscription = this.scrollEvent.asObservable().pipe(throttleTime(100)).subscribe(event => {

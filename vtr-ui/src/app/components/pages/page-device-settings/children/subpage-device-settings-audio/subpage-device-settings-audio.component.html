@@ -23,14 +23,11 @@
 						[theme]="'blue'"
 						[collapseLinkId]="'audio-smart-settings'">
 						<div class="row">
-							<div class="col-auto text-wrap subtitle"
-								role="text">
-								<h3 role="text"
-									id="audio-audioSmartSettings-sub-title"
+							<div class="col-auto text-wrap subtitle">
+								<h3 id="audio-audioSmartSettings-sub-title"
 									attr.aria-label="{{'device.deviceSettings.audio.audioSmartsettings.subtitle' | translate }}">
 									{{'device.deviceSettings.audio.audioSmartsettings.subtitle' | translate }}</h3>
-								<p role="text"
-									id="audio-audioSmartSettings-description"
+								<p id="audio-audioSmartSettings-description"
 									attr.aria-label="{{'device.deviceSettings.audio.audioSmartsettings.description' | translate }}">
 									{{'device.deviceSettings.audio.audioSmartsettings.description' | translate }}</p>
 							</div>
@@ -106,7 +103,6 @@
 						[isCollapsed]="false"
 						[allowCollapse]="true"
 						[theme]="'white'"
-						(toggle)="onCardCollapse($event)"
 						[collapseLinkId]="'audio-microphone'">
 						<vtr-widget-permission-note
 							[noteTitle]="'device.deviceSettings.audio.microphone.note.title' | translate"
@@ -151,17 +147,16 @@
 									<div class="row">
 										<div class="microphone-slider-margin"></div>
 										<div class="col-11">
-											<vtr-ui-range-slider
-												[minValueLegend]="'device.deviceSettings.audio.microphone.volume.options.silent' | translate"
-												[minValue]="0"
-												[maxValueLegend]="'device.deviceSettings.audio.microphone.volume.options.loud' | translate"
-												[maxValue]="100"
-												(sliderChange)="setVolume($event)"
-												[enableSlider]="!microphoneProperties.permission"
+											<vtr-ui-custom-slider
+												[minLegend]="'device.deviceSettings.audio.microphone.volume.options.silent' | translate"
+												[min]=0
+												[maxLegend]="'device.deviceSettings.audio.microphone.volume.options.loud' | translate"
+												[max]=100
+												(valueChanged)="setVolume($event)"
+												[isDisabled]="!microphoneProperties.permission"
 												[value]="microphoneProperties.volume"
-												[manualRefresh]="manualRefresh"
-												[rangeSliderId]="'audio-microphone-volume'">
-											</vtr-ui-range-slider>
+												[sliderId]="'audio-microphone-volume'">
+											</vtr-ui-custom-slider>
 										</div>
 										<div class="col-2"></div>
 									</div>

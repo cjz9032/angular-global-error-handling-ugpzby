@@ -10,7 +10,7 @@
 				[minValueLegend]="'device.deviceSettings.displayCamera.display.dispColorTemp.options.warm' | translate"
 				[maxValueLegend]="'device.deviceSettings.displayCamera.display.dispColorTemp.options.cold' | translate"
 				(sliderChange)="onDisplayColorTemparatureChange($event)"
-				[(value)]="displayColorTempSettings.current"
+				[(value)]="$any(displayColorTempSettings).current"
 				(valueChangeEnd)="dragChangeValue($event)"
 				[rangeSliderId]="'day-time-color-temp'">
 			</vtr-ui-range-slider>

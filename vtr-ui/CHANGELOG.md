@@ -2,6 +2,81 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.4](https://bitbucket.tc.lenovo.com///compare/v1.5.3...v1.5.4) (2020-04-01)
+
+
+### Features
+
+* **dashlane logo:** relpace with new dashlane logo ([29b3b13](https://bitbucket.tc.lenovo.com///commit/29b3b1368178a0db536e12b29053a7fe16acd94b))
+
+
+### Bug Fixes
+
+* **ui:** fix ivy error reported in custom slider ([b56cb2b](https://bitbucket.tc.lenovo.com///commit/b56cb2bc80cc473682eac3068fee9e67d6c16e1a))
+* fix some type binding errors ([a8e9cad](https://bitbucket.tc.lenovo.com///commit/a8e9cad4a3820b0e3d3e1bcd24c6ead0c0dcdd91))
+
+### [1.5.3](https://bitbucket.tc.lenovo.com///compare/v1.4.18...v1.5.3) (2020-03-31)
+
+
+### Bug Fixes
+
+* **app component:** container selector updated ([5e8c92c](https://bitbucket.tc.lenovo.com///commit/5e8c92cfc89385224fd0206d53a07648dbc99860))
+* **app component:** patch ngbmodal to have vtr-root as the container ([6800909](https://bitbucket.tc.lenovo.com///commit/6800909106de138e7eaaa5158790a3fcebb96bf3))
+* **dom:** move the unsafe js to angular ([c515420](https://bitbucket.tc.lenovo.com///commit/c515420deda356882560d10631922218298c09e6))
+* **mock:** mocking openMcAfeePurchaseUrl() ([b3dadf9](https://bitbucket.tc.lenovo.com///commit/b3dadf9aa2279cc86a55e1e42ac6c592034b079f))
+
+### [1.5.2](https://bitbucket.tc.lenovo.com///compare/v1.5.1...v1.5.2) (2020-03-23)
+
+### [1.5.1](https://bitbucket.tc.lenovo.com///compare/v1.4.11...v1.5.1) (2020-03-23)
+
+## [1.5.0](https://bitbucket.tc.lenovo.com///compare/v1.4.1...v1.5.0) (2020-03-12)
+
+### [1.5.2](https://bitbucket.tc.lenovo.com///compare/v1.5.1...v1.5.2) (2020-03-23)
+
+### [1.5.1](https://bitbucket.tc.lenovo.com///compare/v1.4.7...v1.5.1) (2020-03-23)
+
+## [1.5.0](https://bitbucket.tc.lenovo.com///compare/v1.4.1...v1.5.0) (2020-03-12)
+### [1.4.18](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.4.17...v1.4.18) (2020-03-30)
+
+
+### Features
+
+* **VAN-16047:** change the minimum color temperature to 3400k in eye care mode ([9802f75](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/9802f7566989a9f2f80e2a506ef91f202a1d5525))
+
+### [1.4.17](https://bitbucket.tc.lenovo.com///compare/v1.4.15...v1.4.17) (2020-03-30)
+
+
+### Features
+
+* **license:** update approved licence file ([405fb01](https://bitbucket.tc.lenovo.com///commit/405fb018bccb02ce4a9e65ebee69f9790cbeadc7))
+* **VAN-16047:** change the minimum color temperature to 3400k in eye care mode ([2235065](https://bitbucket.tc.lenovo.com///commit/22350658b235a2fee728f3131100ec9f5adab494))
+
+
+### Bug Fixes
+
+* **VAN-16047:** ecm to 3400 ([be04d35](https://bitbucket.tc.lenovo.com///commit/be04d35b560ca652fb021365fcffe6dfe7cfb875))
+* **VAN-16047:** ecm to 3400 ([24bd0fb](https://bitbucket.tc.lenovo.com///commit/24bd0fbf4b56a6c5061d7ae3d0062c03ecad312e))
+
+### [1.4.16](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.4.15...v1.4.16) (2020-03-30)
+
+
+### Features
+
+* **VAN-16047:** change the minimum color temperature to 3400k in eye care mode ([2235065](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/22350658b235a2fee728f3131100ec9f5adab494))
+
+
+### Bug Fixes
+
+* **VAN-16047:** ecm to 3400 ([be04d35](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/be04d35b560ca652fb021365fcffe6dfe7cfb875))
+* **VAN-16047:** ecm to 3400 ([24bd0fb](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/24bd0fbf4b56a6c5061d7ae3d0062c03ecad312e))
+
+### [1.4.15](https://bitbucket.tc.lenovo.com///compare/v1.4.14...v1.4.15) (2020-03-27)
+
+
+### Features
+
+* **VAN-16047:** change the minimum color temperature to 3400k in eye care mode ([edf937f](https://bitbucket.tc.lenovo.com///commit/edf937f948f325f51cd7bc22700b4c1dbdf50d9b))
+
 ### [1.4.14](https://bitbucket.tc.lenovo.com///compare/v1.4.12...v1.4.14) (2020-03-26)
 
 
