@@ -89,7 +89,7 @@ import { GamingOCService } from '../services/gaming/gaming-OC/gaming-oc.service'
 		PageLayoutModule
 	],
 	exports: [TranslateModule, ContainerCardModule, MetricsModule, WidgetOfflineModule],
-	providers: [MockService, DialogService,GamingOCService],
+	providers: [MockService, DialogService],
 	entryComponents: [
 		WidgetLegionEdgeComponent,
 		ModalGamingLegionedgeComponent,
