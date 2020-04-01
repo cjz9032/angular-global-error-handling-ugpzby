@@ -15,7 +15,7 @@
 					(onClick)="openTrialModal()"
 					[label]="'homeSecurity.card.startTrial' | translate"
 					[isDisabled]="location?.isLoading"
-					btnHeight=true
+					[btnHeight]=true
 					linkId="chs-card-btn-startTrial">
 				</vtr-ui-button>
 			</div>
@@ -35,7 +35,7 @@
 					[label]="'homeSecurity.card.join' | translate"
 					[isDisabled]="location?.isLoading"
 					buttonColor="gray"
-					btnHeight=true
+					[btnHeight]=true
 					(onClick)="joinGroup()"
 					linkId="chs-card-btn-joinGroup">
 				</vtr-ui-button>

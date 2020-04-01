@@ -5,9 +5,7 @@ import {
 	Output,
 	EventEmitter,
 	AfterContentChecked,
-	ViewChild,
-	ElementRef,
-	OnDestroy,
+	OnDestroy
 } from '@angular/core';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 
@@ -16,63 +14,35 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 	templateUrl: './ui-custom-slider.component.html',
 	styleUrls: ['./ui-custom-slider.component.scss']
 })
-export class UiCustomSliderComponent implements OnInit, OnDestroy, AfterContentChecked {
-	@Input() enableSlider;
-	@Input() rangeSliderId;
-	@Input() value = 0; // initial slider value
-	@Input() minValue = 0; // slider minimum end value
-	@Input() maxValue = 10; // slider maximum end value
+export class UiCustomSliderComponent
+	implements OnInit, OnDestroy, AfterContentChecked {
+	@Input() isDisabled = false;
+	@Input() rangeSliderId = 'rangeSlider';
+	@Input() value: Event | number = 0; // initial slider value
+	@Input() min = 0; // slider minimum end value
+	@Input() max = 10; // slider maximum end value
 	@Input() step = 1; // ticks or steps to change on each slide
-	@Input() minValueLegend = ''; // label to display at the start of slider
-	@Input() mediumValueLegend = ''; // label to display at the center of slider
-	@Input() maxValueLegend = ''; // label to display at the end of slider
-	@Input() stepsArray: Array<any>; // array with legend value for Eye care
-	@Input() manualRefresh = new EventEmitter<void>();
+	@Input() minLegend = ''; // label to display at the start of slider
+	@Input() midLegend = ''; // label to display at the center of slider
+	@Input() maxLegend = ''; // label to display at the end of slider
+	// @Input() stepsArray: Array<string> = []; // array with legend value for Eye care
 
 	@Output() sliderChange: any = new EventEmitter();
 	@Output() valueChange: any = new EventEmitter();
 	@Output() valueChangeEnd: any = new EventEmitter();
-	private customRange;
-	private mouseMoveEvent;
 
-	@ViewChild('customRange', { static: false }) set content(element: ElementRef) {
-		// when camera preview video element is visible then start camera feed
-		if (element) {
-			this.customRange = element.nativeElement;
-			this.mouseMoveEvent = this.onMouseMoveEvent.bind(this);
-			this.onMouseMoveEvent();
-			this.customRange.addEventListener('mousemove', this.mouseMoveEvent);
-		}
-	}
+	constructor(private loggerService: LoggerService) {}
 
-	constructor(private loggerService: LoggerService) { }
+	ngOnInit() {}
 
-	onMouseMoveEvent() {
-		const value = this.customRange.value;
-		// const color = 'linear-gradient(90deg, rgba(41, 85, 188, 1)' + x + '% , rgb(214, 214, 214)' + x + '%)';
-		// this.customRange.style.backgroundImage = color;
-		// this.customRange.style.borderRadius = '5px';
-		this.customRange.style.setProperty(
-			'--slider-value',
-			`${value}%`
-		);
-	}
-
-	ngOnInit() {
-
-	}
-
-	ngOnDestroy() {
-		this.customRange.removeEventListener('mousemove', this.mouseMoveEvent);
-	}
+	ngOnDestroy() {}
 
 	// ngOnChanges(changes: SimpleChanges): void {
 	// 	if (changes.enableSlider) {
 	// 		this.options = Object.assign({}, this.options, { disabled: this.enableSlider });
 	// 	}
 	// }
-	ngAfterContentChecked() {
-	}
+	ngAfterContentChecked() {}
 	/**
 	 * This event is fired when value property is changed programmatically.
 	 * Its two way binding event

@@ -1,42 +1,11 @@
 <div class="vtr-ui-custom-slider">
-	<!-- <form>
-		<fieldset class="form-group">
-			<legend>Sliders</legend>
-			<label for="customRange1">Example range</label>
-			<input type="range"
-				#customRange
-				class="custom-range"
-				id="customRange1"
-				[step]="step"
-				[min]="minValue"
-				[max]="maxValue" /> -->
-	<!-- <datalist id="tickmarks">
-				<option value="0"></option>
-				<option value="1"></option>
-				<option value="2"></option>
-				<option value="3"></option>
-				<option value="4"></option>
-				<option value="5"></option>
-				<option value="6"></option>
-				<option value="7"></option>
-				<option value="8"></option>
-				<option value="9"></option>
-				<option value="10"></option>
-			</datalist> -->
-	<!-- <div class="d-flex justify-content-between">
-				<span class="badge">Primary</span>
-				<span class="badge">Secondary</span>
-				<span class="badge">Success</span>
-			</div>
-		</fieldset>
-	</form> -->
-
-	<div class="range range-primary">
-		<input #customRange
-			type="range"
-			name="range"
-			min="1"
-			max="100"
-			value="10">
+	<div class="range">
+		<input type="range" [disabled]="isDisabled" [name]="rangeSliderId" [id]="rangeSliderId" [aria-valuemin]="min"
+			[aria-valuemax]="max" [(aria-valuenow)]="value" [min]="min" [max]="max" [(value)]="value" [step]="step">
+		<div class="d-flex justify-content-between legends" [class.legends-disabled]="isDisabled">
+			<span *ngIf="minLegend?.length>0">{{ minLegend }}</span>
+			<span *ngIf="midLegend?.length>0">{{ midLegend }}</span>
+			<span *ngIf="maxLegend?.length>0">{{ maxLegend }}</span>
+		</div>
 	</div>
 </div>
