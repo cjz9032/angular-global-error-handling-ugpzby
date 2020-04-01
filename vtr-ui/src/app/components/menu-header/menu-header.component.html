@@ -3,9 +3,10 @@
 		<div class="menu-header-tab {{tab.prop}}"
 			tabindex="0"
 			[routerLink]="'/'+tab.path"
-			routerLinkActive="active"
-			[queryParams]="params"
-			(keydown.enter)="changeRoute(tab.path,params)"
+			[routerLinkActive]="['active']"
+			[routerLinkActiveOptions]="{exact: false}"
+			[queryParams]="tab.params"
+			(keydown.enter)="changeRoute(tab.path,tab.params)"
 			role="link"
 			id="myDevice-settings-header-menu-{{tab.icon}}"
 			attr.aria-label="myDevice-settings-header-menu-{{tab.label}">

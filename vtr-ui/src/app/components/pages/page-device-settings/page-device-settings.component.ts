@@ -37,7 +37,6 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			id: 'power',
 			label: 'device.deviceSettings.power.title',
 			path: 'device-settings/power',
-			params: { fromTab: true },
 			icon: 'power',
 			iconClass: 'icomoon-power_nav',
 			canDeactivate: [GuardService],

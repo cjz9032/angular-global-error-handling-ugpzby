@@ -1,7 +1,8 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChildren, QueryList } from '@angular/core';
 import { SecureMath } from '@lenovo/tan-client-bridge';
 import { ChargeThreshold } from 'src/app/data-models/device/charge-threshold.model';
 import { CommonService } from 'src/app/services/common/common.service';
+import { NgbDropdown } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
 	selector: 'vtr-battery-charge-threshold-settings',
@@ -35,6 +36,7 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 	stopAtChargeInput = 'stopAtCharge';
 	isCheckedAutoInput = 'is-auto-battery-threshold-settings';
 	public selectedOptionsData: any = {};
+	@ViewChildren(NgbDropdown) dropDowns: QueryList<NgbDropdown>;
 
 	constructor(private commonService: CommonService) { }
 
@@ -70,5 +72,50 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 		this.autoChecked.emit(bctInfo);
 	}
 
+	closeAllDD() {
+		// Close all dropdowns
+		this.dropDowns.toArray().forEach(elem => {
+			elem.close();
+		});
+		// Open the dropdown that was clicked on
+		// activeDropdown.open();
+	}
+
+	closeAllOtherDD(activeDropdown: NgbDropdown) {
+		// Close all dropdowns
+		// this.activeDropdown = activeDropdown;
+		this.dropDowns.toArray().forEach(elem => {
+			if (activeDropdown !== elem) {
+				elem.close();
+			}
+		});
+	}
+
+	showHideMenuOfItem($event, activeDropdown: NgbDropdown) {
+		if (($event.shiftKey && $event.keyCode === 9) || $event.keyCode === 9) {
+			const sourceElement = $event.srcElement as HTMLAnchorElement;
+			const menuElement = sourceElement.parentElement.parentElement;
+			const anchors = Array.from(menuElement.querySelectorAll('[class*=dropdown-item][aria-disabled=false][tabindex]:not([tabindex="-1"])'));
+			const currentIndex = anchors.indexOf(sourceElement);
+			let nextIndex
+
+			if ($event.shiftKey && $event.keyCode === 9) {
+				nextIndex = currentIndex - 1;
+				if (nextIndex < 0) {
+					activeDropdown.close();
+					// this.closeAllDD();
+				}
+			}
+
+			if ($event.keyCode === 9) {
+				nextIndex = currentIndex + 1;
+				if (nextIndex >= anchors.length) {
+					activeDropdown.close();
+					// this.closeAllDD();
+				}
+			}
+		}
+
+	}
 
 }
