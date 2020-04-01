@@ -82,7 +82,6 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
   }
 
   public getAdvancedOCInfo() {
-    try {
 			const advancedInfoCache = this.gamingAdvancedOCService.getAdvancedOCInfoCache();
       if(advancedInfoCache){
         this.loading = false;
@@ -96,13 +95,9 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
           this.gamingAdvancedOCService.setAdvancedOCInfoCache(response);
         }
       });
-		} catch (error) {
-			throw new Error('getAdvancedOCInfo ' + error.message);
-		}
   }
 
   public setRangeValue (event,idx,type,tuneId,isAddReduceBtn) {
-    try {
 			this.logger.info(`setRangeValue event: ${event} ; isAddReduceBtn: ${isAddReduceBtn}`);
       const arr1 = [2,77,34,79,102,106];
       this.isChange = true;
@@ -118,38 +113,31 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
       }else{
         this.advancedOCInfo[type][idx].OCValue = event;
       }
-    } catch (error) {
-			throw new Error('setRangeValue ' + error.message);
-		}
   }
 
-  public pairwiseAssociation (tuneId, event) {
-    try {
-			if(tuneId === 2 || tuneId === 77){
-              this.advancedOCInfo.cpuParameterList.filter(x => {
-                if(x.tuneId === 77 || x.tuneId === 2){
-                  x.OCValue = event;
-                }
-              });
-        this.logger.info('pairwiseAssociation cpuParameterList 1',this.advancedOCInfo.cpuParameterList);
-            }else if(tuneId === 34 || tuneId === 79){
-              this.advancedOCInfo.cpuParameterList.filter(x => {
-                if(x.tuneId === 79 || x.tuneId === 34){
-                  x.OCValue = event;
-                }
-              });
-        this.logger.info('pairwiseAssociation cpuParameterList 2',this.advancedOCInfo.cpuParameterList);
-            }else if(tuneId === 102 || tuneId === 106){
-              this.advancedOCInfo.cpuParameterList.filter(x => {
-                if(x.tuneId === 106 || x.tuneId === 102){
-                  x.OCValue = event;
-                }
-              });
-        this.logger.info('pairwiseAssociation cpuParameterList 3',this.advancedOCInfo.cpuParameterList);
-            }
-		} catch (error) {
-			throw new Error('pairwiseAssociation ' + error.message);
-		}
+  public pairwiseAssociation(tuneId, event) {
+      if (tuneId === 2 || tuneId === 77) {
+        this.advancedOCInfo.cpuParameterList.filter(x => {
+          if (x.tuneId === 77 || x.tuneId === 2) {
+            x.OCValue = event;
+          }
+        });
+        this.logger.info('pairwiseAssociation cpuParameterList 1', this.advancedOCInfo.cpuParameterList);
+      } else if (tuneId === 34 || tuneId === 79) {
+        this.advancedOCInfo.cpuParameterList.filter(x => {
+          if (x.tuneId === 79 || x.tuneId === 34) {
+            x.OCValue = event;
+          }
+        });
+        this.logger.info('pairwiseAssociation cpuParameterList 2', this.advancedOCInfo.cpuParameterList);
+      } else if (tuneId === 102 || tuneId === 106) {
+        this.advancedOCInfo.cpuParameterList.filter(x => {
+          if (x.tuneId === 106 || x.tuneId === 102) {
+            x.OCValue = event;
+          }
+        });
+        this.logger.info('pairwiseAssociation cpuParameterList 3', this.advancedOCInfo.cpuParameterList);
+      }
   }
 
   public openSaveChangeModal () {
@@ -174,18 +162,23 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
     });
   }
 
-  public setAdvancedOCInfo (advancedOCInfo) {
-    this.gamingAdvancedOCService.setAdvancedOCInfo(advancedOCInfo).then((response) => {
-      this.logger.info(`setAdvancedOCInfo response: ${response} ; advancedOCInfo: ${JSON.stringify(advancedOCInfo)}`);
-      if (response) {
-  this.gamingAdvancedOCService.setAdvancedOCInfoCache(advancedOCInfo);
-      }else{
-  const advancedInfoCache = this.gamingAdvancedOCService.getAdvancedOCInfoCache();
-  if(advancedInfoCache){
-    this.advancedOCInfo = advancedInfoCache;
-  }
-}
-    });
+  public setAdvancedOCInfo(advancedOCInfo) {
+    try{
+      this.gamingAdvancedOCService.setAdvancedOCInfo(advancedOCInfo).then((response) => {
+        this.logger.info(`setAdvancedOCInfo response: ${response} ; advancedOCInfo: ${JSON.stringify(advancedOCInfo)}`);
+        if (response) {
+          this.gamingAdvancedOCService.setAdvancedOCInfoCache(advancedOCInfo);
+        } else {
+          const advancedInfoCache = this.gamingAdvancedOCService.getAdvancedOCInfoCache();
+          if (advancedInfoCache) {
+            this.advancedOCInfo = advancedInfoCache;
+          }
+        }
+      });
+    }catch (error) {
+      throw new Error('setAdvancedOCInfo ' + error.message);
+    }
+    
   }
 
   public openSetToDefaultModal () {
@@ -205,15 +198,11 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
     });
   }
 
-  public setToDefaultValue (list) {
-    try {
-			if(list.length > 0){
-        for(let i=0;i<=list.length-1;i++){
+  public setToDefaultValue(list) {
+      if (list.length > 0) {
+        for (let i = 0; i <= list.length - 1; i++) {
           list[i].OCValue = Number(list[i].defaultValue);
         }
       }
-		} catch (error) {
-			throw new Error('setToDefaultValue ' + error.message);
-		}
   }
 }
