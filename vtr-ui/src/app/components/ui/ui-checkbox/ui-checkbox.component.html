@@ -25,14 +25,12 @@
 	<!-- <span class="checkmark"></span> -->
 	<label *ngIf="hasChild; else elseBlock"
 		class="custom-control-label"
-		[for]="componentId"
-		role="text">
+		[for]="componentId">
 		<ng-content></ng-content>
 	</label>
 	<ng-template #elseBlock>
 		<label [for]="componentId"
-			class="custom-control-label"
-			role="text">
+			class="custom-control-label">
 			{{ label }}
 		</label>
 	</ng-template>

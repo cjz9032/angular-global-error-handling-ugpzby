@@ -795,6 +795,7 @@
             "back": "ΠΙΣΩ",
             "on": "ON",
             "off": "OFF",
+            "close": "Κλείσιμο",
             "collapse": "Σύμπτυξη",
             "expand": "Επέκταση",
             "loader": "Λήψη της κατάστασης <br>",
@@ -1051,7 +1052,7 @@
                     "NotGood": "<b>Η μπαταρία δεν είναι σε καλή κατάσταση.</b>",
                     "NotSupportACAdapter": "<b>Δεν υποστηρίζεται ο μετασχηματιστής εναλλασσόμενου ρεύματος.</b>",
                     "LimitedACAdapterSupport": "<b>Ο μετασχηματιστής AC δεν μπορεί να παρέχει επαρκή ισχύ.</b>",
-                    "MissingDriver": "<b>Το πρόγραμμα οδήγησης του Lenovo Power Manager</b> δεν είναι εγκατεστημένο ή δεν λειτουργεί σωστά. Εκτελέστε το Windows Update για να εγκαταστήσετε το πιο πρόσφατο πρόγραμμα οδήγησης. Μπορείτε επίσης να εγκαταστήσετε το πρόγραμμα οδήγησης από <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">εδώ</a>. Μετά την εγκατάσταση, επανεκκινήστε τον υπολογιστή σας.",
+                    "MissingDriver": "<b>Το πρόγραμμα οδήγησης του Lenovo Power Manager</b> δεν είναι εγκατεστημένο ή δεν λειτουργεί σωστά. Εκτελέστε το Windows Update ή εγκαταστήστε το χειροκίνητα από <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">εδώ</a>. Μετά την εγκατάσταση, επανεκκινήστε τον υπολογιστή σας.",
                     "StoreLimitation": "<b>Η μπαταρία μπορεί να αποθηκεύσει μόνο το {{value}}% από</b> την αρχική της χωρητικότητα πλήρους φόρτισης.",
                     "HighTemperature": "Η <b>αποφόρτιση</b> διακόπηκε, επειδή η <b>θερμοκρασία της μπαταρίας είναι πολύ υψηλή.</b>",
                     "TrickleCharge": "Η μπαταρία <b>αποφορτίστηκε εντελώς</b> και πρέπει να ξαναφορτιστεί. Η διαδικασία ενδέχεται να διαρκέσει δέκα ώρες ή και περισσότερο.",
@@ -1330,6 +1331,12 @@
                         "description": "Επιλέξτε ένα σχέδιο παροχής ενέργειας για να ελέγξετε την απόδοση, τη θερμοκρασία του συστήματος και τη χρήση ενέργειας του υπολογιστή.",
                         "currentPowerPlan": {
                             "label": "ΤΡΕΧΟΝ ΣΧΕΔΙΟ"
+                        },
+                        "profile": {
+                            "title": "ΠΡΟΦΙΛ ΣΧΕΔΙΟΥ:",
+                            "performance": "Μέγιστη απόδοση:",
+                            "temperature": "Μέγιστη θερμοκρασία συστήματος:",
+                            "usage": "Μέγιστη χρήση ενέργειας:"
                         }
                     }
                 },
@@ -1508,8 +1515,8 @@
                     "title": "Παρουσίαση",
                     "displayColorTemperature": {
                         "title": "Θερμοκρασία χρωμάτων οθόνης",
-                        "description": "Μπορείτε να ρυθμίσετε τη θερμοκρασία των χρωμάτων της οθόνης για φιλτράρισμα του μπλε φωτός και μείωση της κόπωσης των ματιών. Ρυθμίστε τις οθόνες σε θερμότερα χρώματα για το χρονικό διάστημα από τη δύση έως την ανατολή του ηλίου ώστε να έχετε καλύτερο ύπνο.",
-                        "link": {
+						"description": "Μπορείτε να ρυθμίσετε τη θερμοκρασία των χρωμάτων της οθόνης για φιλτράρισμα του μπλε φωτός και μείωση της κόπωσης των ματιών. Ρυθμίστε τις οθόνες σε θερμότερα χρώματα για το χρονικό διάστημα από τη δύση έως την ανατολή του ηλίου ώστε να έχετε καλύτερο ύπνο.",
+						"link": {
                             "click": "Κάντε κλικ",
                             "here": "εδώ",
                             "rest": "για να αλλάξετε τη θερμοκρασία των χρωμάτων."
@@ -2438,7 +2445,6 @@
                 "title": "Εύρυθμη λειτουργία ασφαλείας",
                 "deviceName1": "Εφαρμογές από αξιόπιστες πηγές",
                 "deviceName2": "Λειτουργία προγραμματιστή",
-                "deviceName3": "Ειδοποίηση UAC",
                 "deviceName4": "Διαθεσιμότητα προστασίας από ιούς",
                 "deviceName5": "Κρυπτογράφηση σκληρού δίσκου",
                 "deviceName6": "Διαθεσιμότητα τείχους προστασίας",
@@ -3320,7 +3326,7 @@
         },
         "scanCompletePage": {
             "title": "System scan is complete",
-            "description": "Here is what we found on your Lenovo Vantage 720s.",
+            "description": "Here is what we found on your ",
             "scanRates": "Our scan rates your PC at: ",
             "summary": "Summary",
             "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
@@ -3355,7 +3361,7 @@
             "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
-            "title": "All is well with your Ideapad 720s",
+            "title": "All is well with your ",
             "serialNumber": "Serial number: ",
             "subTitle": "You are subscribed to Lenovo Smart Performance Service",
             "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
@@ -3508,7 +3514,8 @@
     "notification": {
         "menu": {
             "security": "Γνωρίζετε; Ακόμη και αν δεν έχετε εγκατεστημένο λογισμικό προστασίας από ιούς, συνεχίζουμε να παρέχουμε βασική προστασία ασφαλείας για τη συσκευή σας.",
-            "connectedHomeSecurity": "Αποκτήστε παρακολούθηση και ειδοποιήσεις σε πραγματικό χρόνο σχετικά με την ασφάλεια του δικτύου σας στο σπίτι. Θα είστε ο πρώτος που θα μάθετε εάν κάποια από τις έξυπνες συσκευές σας αντιμετωπίζει επίθεση ασφαλείας."
+            "connectedHomeSecurity": "Αποκτήστε παρακολούθηση και ειδοποιήσεις σε πραγματικό χρόνο σχετικά με την ασφάλεια του δικτύου σας στο σπίτι. Θα είστε ο πρώτος που θα μάθετε εάν κάποια από τις έξυπνες συσκευές σας αντιμετωπίζει επίθεση ασφαλείας.",
+            "hardwareScan": "Τώρα, μπορείτε να δείτε την κατάσταση εύρυθμης λειτουργίας του εξαρτήματος του συστήματός σας."
         }
     },
     "appsForYou": {

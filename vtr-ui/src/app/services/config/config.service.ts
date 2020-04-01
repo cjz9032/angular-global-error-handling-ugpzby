@@ -468,7 +468,7 @@ export class ConfigService {
 	updateWifiMenu(menu, wifiIsSupport) {
 		const securityItem = menu.find((item) => item.id === 'security');
 		if (menu.find((item) => item.id === 'wifi-security')
-		|| (securityItem && securityItem.subitems.find((item) => item.id === 'wifi-security'))) {
+			|| (securityItem && securityItem.subitems.find((item) => item.id === 'wifi-security'))) {
 			this.supportFilter(menu, 'wifi-security', wifiIsSupport);
 			return;
 		}
@@ -579,24 +579,27 @@ export class ConfigService {
 	}
 
 	showNewFeatureTipsWithMenuItems() {
-		const newFeatureVersion = 3.002000;
 		const welcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
-		if (!welcomeTutorial || !welcomeTutorial.isDone) {
-			this.commonService.setLocalStorageValue(LocalStorageKey.NewFeatureTipsVersion, newFeatureVersion);
+		if (!welcomeTutorial || !welcomeTutorial.isDone || window.innerWidth < 1200) {
+			this.commonService.setLocalStorageValue(LocalStorageKey.NewFeatureTipsVersion, this.commonService.newFeatureVersion);
 			return;
 		}
-		const newFeatureTipsShowComplete = this.commonService.getLocalStorageValue(LocalStorageKey.NewFeatureTipsVersion);
-		if ((!newFeatureTipsShowComplete || newFeatureTipsShowComplete < newFeatureVersion)
-			&& Array.isArray(this.menu)) {
-			const securityItem = this.menu.find((item: any) => item.id === 'security');
-			const chsItem = this.menu.find((item: any) => item.id === 'home-security');
-			let isHideMenuToggle = true;
-			if (window.innerWidth < 1200) { isHideMenuToggle = false; }
-			if ((securityItem || chsItem) && isHideMenuToggle) {
-				this.newFeatureTipService.create();
+		this.localInfoService.getLocalInfo().then(localInfo => {
+			if (localInfo.Segment !== SegmentConst.Consumer) {
+				this.commonService.setLocalStorageValue(LocalStorageKey.NewFeatureTipsVersion, this.commonService.newFeatureVersion);
+				return;
 			}
-			this.commonService.setLocalStorageValue(LocalStorageKey.NewFeatureTipsVersion, newFeatureVersion);
-		}
+			const lastVersion = this.commonService.getLocalStorageValue(LocalStorageKey.NewFeatureTipsVersion);
+			if ((!lastVersion || lastVersion < this.commonService.newFeatureVersion) && Array.isArray(this.menu)) {
+				const idArr = ['security', 'home-security', 'hardware-scan']
+				const isIncludesItem = this.menu.find(item => idArr.includes(item.id))
+				if (isIncludesItem) {
+					if (lastVersion > 0) { this.commonService.lastFeatureVersion = lastVersion; }
+					this.newFeatureTipService.create();
+				}
+				this.commonService.setLocalStorageValue(LocalStorageKey.NewFeatureTipsVersion, this.commonService.newFeatureVersion);
+			}
+		});
 	}
 
 	private filterMenu(menu: Array<any>, segment: string): Array<any> {

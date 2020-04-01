@@ -164,7 +164,7 @@ input.wifi-checked + .switch.switch-xs > small {
 	.switch {
 		background: #e6eaeb !important;
 		@media #{$black-on-white} {
-			background: $high-contrast-black-disabled !important;
+			background: $high-contrast-white-disabled !important;  
 		}
 		@media #{$white-on-black} {
 			background: $high-contrast-black-disabled !important;

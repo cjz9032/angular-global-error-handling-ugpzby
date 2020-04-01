@@ -795,6 +795,7 @@
             "back": "ZPĚT",
             "on": "ON",
             "off": "OFF",
+            "close": "Zavřít",
             "collapse": "Sbalit",
             "expand": "Rozbalit",
             "loader": "Načítání <br> Status",
@@ -1051,7 +1052,7 @@
                     "NotGood": "<b>Stav baterie není dobrý.</b>",
                     "NotSupportACAdapter": "<b>Napájecí adaptér není podporován.</b>",
                     "LimitedACAdapterSupport": "<b>Síťový adaptér nemůže poskytnout dostatek energie.</b>",
-                    "MissingDriver": "<b>Ovladač Lenovo Power Manager</b> není nainstalován nebo nefunguje správně. Spusťte službu Windows Update a nainstalujte nejnovější ovladač. Ovladač můžete nainstalovat také <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">odtud</a>. Po instalaci restartujte počítač.",
+                    "MissingDriver": "<b>Ovladač Lenovo Power Manager</b> není nainstalován nebo nefunguje správně. Spusťte službu Windows Update nebo ji nainstalujte ručně <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">odtud</a>. Po instalaci restartujte počítač.",
                     "StoreLimitation": "<b>Baterie je schopna se nabít pouze na {{value}}%</b> své původní kapacity.",
                     "HighTemperature": "<b>Vybíjení</b> bylo zastaveno kvůli <b>přehřátí baterie</b>.",
                     "TrickleCharge": "Baterie je <b>zcela vybitá</b> a je třeba ji nabít. To může trvat deset i více hodin.",
@@ -1330,6 +1331,12 @@
                         "description": "Vyberte schéma napájení, kterým chcete řídit výkon počítače, teplotu systému a spotřebu energie.",
                         "currentPowerPlan": {
                             "label": "AKTUÁLNÍ SCHÉMA"
+                        },
+                        "profile": {
+                            "title": "PROFIL PLÁNU:",
+                            "performance": "Max. výkon:",
+                            "temperature": "Max. teplota systému:",
+                            "usage": "Max. spotřeba energie:"
                         }
                     }
                 },
@@ -1508,8 +1515,8 @@
                     "title": "Displej",
                     "displayColorTemperature": {
                         "title": "Teplota barev displeje",
-                        "description": "Můžete upravit teplotu barev displeje tak, aby odfiltroval modré světlo a snížil tak únavu očí. Přizpůsobuje displeje teplejším barvám při západu a východu slunce, aby vám pomohl spát.",
-                        "link": {
+						"description": "Můžete upravit teplotu barev displeje tak, aby odfiltroval modré světlo a snížil tak únavu očí. Přizpůsobuje displeje teplejším barvám při západu a východu slunce, aby vám pomohl spát.",
+						"link": {
                             "click": "Kliknutím",
                             "here": "sem",
                             "rest": "změňte teplotu barev."
@@ -2438,7 +2445,6 @@
                 "title": "Stav zabezpečení",
                 "deviceName1": "Aplikace z důvěryhodných zdrojů",
                 "deviceName2": "Režim pro vývojáře",
-                "deviceName3": "Oznámení UAC",
                 "deviceName4": "Dostupnost antivirového programu",
                 "deviceName5": "Šifrování pevného disku",
                 "deviceName6": "Dostupnost brány firewall",
@@ -3320,7 +3326,7 @@
         },
         "scanCompletePage": {
             "title": "System scan is complete",
-            "description": "Here is what we found on your Lenovo Vantage 720s.",
+            "description": "Here is what we found on your ",
             "scanRates": "Our scan rates your PC at: ",
             "summary": "Summary",
             "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
@@ -3355,7 +3361,7 @@
             "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
-            "title": "All is well with your Ideapad 720s",
+            "title": "All is well with your ",
             "serialNumber": "Serial number: ",
             "subTitle": "You are subscribed to Lenovo Smart Performance Service",
             "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
@@ -3508,7 +3514,8 @@
     "notification": {
         "menu": {
             "security": "Víte, že…? I když nemáte nainstalovaný antivirový software, stále poskytujeme základní bezpečnostní ochranu pro vaše zařízení.",
-            "connectedHomeSecurity": "Získejte sledování v reálném čase a upozornění na zabezpečení vaší domácí sítě. A jako první se dozvíte, zda některé z vašich chytrých zařízení čelí bezpečnostnímu útoku."
+            "connectedHomeSecurity": "Získejte sledování v reálném čase a upozornění na zabezpečení vaší domácí sítě. A jako první se dozvíte, zda některé z vašich chytrých zařízení čelí bezpečnostnímu útoku.",
+            "hardwareScan": "Nyní můžete zjistit stav hardwaru součásti systému."
         }
     },
     "appsForYou": {

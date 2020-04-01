@@ -795,6 +795,7 @@
             "back": "TILBAKE",
             "on": "ON",
             "off": "OFF",
+            "close": "Lukk",
             "collapse": "Komprimer",
             "expand": "Utvid",
             "loader": "Henter <br> status",
@@ -1051,7 +1052,7 @@
                     "NotGood": "<b>Batteriet er ikke i god stand.</b>",
                     "NotSupportACAdapter": "<b>Strømadapteret støttes ikke.</b>",
                     "LimitedACAdapterSupport": "<b>STRØM adapteren kan ikke gi nok strøm.</b>",
-                    "MissingDriver": "<b>Driveren for Lenovo Power Manager</b> er ikke installert, eller virker ikke som den skal. Kjør Windows Update for å installere den nyeste driveren. Du kan også installere driveren <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">herfra</a>. Etter installeringen må du starte datamaskinen på nytt.",
+                    "MissingDriver": "<b>Driveren for Lenovo Power Manager</b> er ikke installert, eller virker ikke som den skal. Kjør Windows Update, eller installer den manuelt fra <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">her</a>. Etter installeringen må du starte datamaskinen på nytt.",
                     "StoreLimitation": "<b>Batteriet kan bare lagre {{value}}% av</b> opprinnelig full ladekapasitet.",
                     "HighTemperature": "<b>Utladingen</b> har stoppet fordi <b>batteritemperaturen er for høy.</b>",
                     "TrickleCharge": "Batteriet ble <b>helt utladet</b> og må lades opp på nytt. Dette kan ta ti timer eller mer.",
@@ -1330,6 +1331,12 @@
                         "description": "Velg en strømplan for å styre datamaskinens ytelse, systemets temperatur og strømbruk.",
                         "currentPowerPlan": {
                             "label": "GJELDENDE PLAN"
+                        },
+                        "profile": {
+                            "title": "ABONNEMENTSPROFIL:",
+                            "performance": "Maks. ytelse:",
+                            "temperature": "Maks. systemtemperatur:",
+                            "usage": "Maks. strømbruk:"
                         }
                     }
                 },
@@ -1508,8 +1515,8 @@
                     "title": "Skjerm",
                     "displayColorTemperature": {
                         "title": "Skjermens fargetemperatur",
-                        "description": "Du kan justere skjermens fargetemperatur til å filtrere ut blått lys og redusere belastningen på øynene. Justerer skjermer til varmere farger fra solnedgang til soloppgang slik at du får sove bedre.",
-                        "link": {
+						"description": "Du kan justere skjermens fargetemperatur til å filtrere ut blått lys og redusere belastningen på øynene. Justerer skjermer til varmere farger fra solnedgang til soloppgang slik at du får sove bedre.",
+						"link": {
                             "click": "Klikk på",
                             "here": "her",
                             "rest": "for å endre fargetemperaturen."
@@ -2438,7 +2445,6 @@
                 "title": "Sikkerhetstilstand",
                 "deviceName1": "Apper fra klarerte kilder",
                 "deviceName2": "Utviklermodus",
-                "deviceName3": "UAC-varsling",
                 "deviceName4": "Antivirus-tilgjengelighet",
                 "deviceName5": "Koding av harddisk",
                 "deviceName6": "Tilgjengelighet av brannmur",
@@ -3320,7 +3326,7 @@
         },
         "scanCompletePage": {
             "title": "System scan is complete",
-            "description": "Here is what we found on your Lenovo Vantage 720s.",
+            "description": "Here is what we found on your ",
             "scanRates": "Our scan rates your PC at: ",
             "summary": "Summary",
             "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
@@ -3355,7 +3361,7 @@
             "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
-            "title": "All is well with your Ideapad 720s",
+            "title": "All is well with your ",
             "serialNumber": "Serial number: ",
             "subTitle": "You are subscribed to Lenovo Smart Performance Service",
             "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
@@ -3508,7 +3514,8 @@
     "notification": {
         "menu": {
             "security": "Visste du dette? Selv om du ikke har installert antivirusprogramvare, leverer vi fortsatt grunnleggende sikkerhetsbeskyttelse for enheten din.",
-            "connectedHomeSecurity": "Få overvåking og varsler i sanntid om nettverkssikkerheten hjemme. Du er den første som får beskjed om noen av smartenhetene utsettes for et sikkerhetsangrep."
+            "connectedHomeSecurity": "Få overvåking og varsler i sanntid om nettverkssikkerheten hjemme. Du er den første som får beskjed om noen av smartenhetene utsettes for et sikkerhetsangrep.",
+            "hardwareScan": "Nå kan du få tilstandsstatusen til maskinvarekomponentene til systemet ditt."
         }
     },
     "appsForYou": {

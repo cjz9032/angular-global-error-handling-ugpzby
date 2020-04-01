@@ -1,6 +1,6 @@
-import { Component, OnInit, Input, EventEmitter, Output, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { ChangeContext } from 'ng5-slider';
-import { EyeCareMode, SunsetToSunriseStatus } from 'src/app/data-models/camera/eyeCareMode.model';
+import { EyeCareMode } from 'src/app/data-models/camera/eyeCareMode.model';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({

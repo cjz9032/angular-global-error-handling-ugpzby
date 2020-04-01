@@ -6,7 +6,7 @@
 			[disabled]="isDisabled || isLoading"
 			type="button"
 			class="btn button {{getButtonColor(buttonColor)}} d-flex align-items-center justify-content-center"
-			vtrMetrics
+			[vtrMetrics]="vtrMetricEnabled"
 			[routerLink]="routerPath"
 			routerLinkActive="active"
 			[href]="href"
@@ -33,9 +33,12 @@
 						'disable': isDisabled,
 						'loading': isLoading}"
 			(click)="onClickButton($event)">
-			<span [hidden]="!isLoading" class="mr-3 mt-1 mb-1 flex-shrink-0 spinner-border progress-spinner" role="status">
+			<span [hidden]="!isLoading"
+				class="mr-3 mt-1 mb-1 flex-shrink-0 spinner-border progress-spinner"
+				role="status">
 			</span>
-			<span class="text" [innerHTML]="label"></span>
+			<span class="text"
+				[innerHTML]="label"></span>
 		</button>
 		<button *ngIf="alreadyJoinGroup === 'joined'"
 			title="{{tooltip?label:''}}"

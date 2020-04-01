@@ -1,39 +1,39 @@
-import { Component, OnInit, HostListener, ViewChild, Input, ElementRef, ViewContainerRef, OnDestroy } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Component, ElementRef, HostListener, Input, OnDestroy, OnInit, QueryList, ViewChild, ViewChildren, ViewContainerRef } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { NgbDropdown, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
+import { Observable, Subscription } from 'rxjs';
+import { catchError, map, tap } from 'rxjs/operators';
+import { AppSearchService } from 'src/app/beta/app-search/app-search.service';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
+import { AdPolicyId } from 'src/app/enums/ad-policy-id.enum';
+import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
+import { LenovoIdStatus } from 'src/app/enums/lenovo-id-key.enum';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { MenuItem } from 'src/app/enums/menuItem.enum';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
+import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.service';
+import { CardService } from 'src/app/services/card/card.service';
+import { CommonService } from 'src/app/services/common/common.service';
+import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
+import { DialogService } from 'src/app/services/dialog/dialog.service';
+import { FeedbackService } from 'src/app/services/feedback/feedback.service';
+import { HardwareScanService } from 'src/app/services/hardware-scan/hardware-scan.service';
+import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
+import { LanguageService } from 'src/app/services/language/language.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { ModernPreloadService } from 'src/app/services/modern-preload/modern-preload.service';
+import { NewFeatureTipService } from 'src/app/services/new-feature-tip/new-feature-tip.service';
+import { StringBooleanEnum } from '../../data-models/common/common.interface';
 import { ConfigService } from '../../services/config/config.service';
 import { DeviceService } from '../../services/device/device.service';
 import { UserService } from '../../services/user/user.service';
-import { CommonService } from 'src/app/services/common/common.service';
-import { AppNotification } from 'src/app/data-models/common/app-notification.model';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { VantageShellService } from '../../services/vantage-shell/vantage-shell.service';
-import { LoggerService } from 'src/app/services/logger/logger.service';
-import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
-import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
-import { LanguageService } from 'src/app/services/language/language.service';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ModernPreloadService } from 'src/app/services/modern-preload/modern-preload.service';
-import { NetworkStatus } from 'src/app/enums/network-status.enum';
-import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
-import { AdPolicyId } from 'src/app/enums/ad-policy-id.enum';
-import { Observable, Subscription } from 'rxjs';
-import { HardwareScanService } from 'src/app/services/hardware-scan/hardware-scan.service';
-import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
-import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
-import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.service';
-import { AppSearchService } from 'src/app/beta/app-search/app-search.service';
-import { TopRowFunctionsIdeapadService } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.service';
-import { catchError, map, tap } from 'rxjs/operators';
-import { MenuItem } from 'src/app/enums/menuItem.enum';
-import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
-import { DialogService } from 'src/app/services/dialog/dialog.service';
-import { NewFeatureTipService } from 'src/app/services/new-feature-tip/new-feature-tip.service';
-import { CardService } from 'src/app/services/card/card.service';
-import { BacklightService } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.service';
-import { StringBooleanEnum } from '../../data-models/common/common.interface';
 import { BacklightLevelEnum } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.enum';
-import { LenovoIdStatus } from 'src/app/enums/lenovo-id-key.enum';
-import { FeedbackService } from 'src/app/services/feedback/feedback.service';
+import { BacklightService } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.service';
+import { TopRowFunctionsIdeapadService } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.service';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -86,6 +86,8 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		`;
 	gamingLogo = 'assets/images/gaming/gaming-logo-small.png';
 	private backlightCapabilitySubscription: Subscription;
+	@ViewChildren(NgbDropdown) dropDowns: QueryList<NgbDropdown>;
+	// activeDropdown: NgbDropdown;
 
 	get appsForYouEnum() { return AppsForYouEnum; }
 
@@ -225,6 +227,67 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		if (!event.fromSearchBox && !event.fromSearchMenu) {
 			this.updateSearchBoxState(false);
 		}
+	}
+
+	closeAllDD() {
+		// Close all dropdowns
+		this.dropDowns.toArray().forEach(elem => {
+			elem.close();
+		});
+		// Open the dropdown that was clicked on
+		// activeDropdown.open();
+	}
+
+	closeAllOtherDD(activeDropdown: NgbDropdown) {
+		// Close all dropdowns
+		// this.activeDropdown = activeDropdown;
+		this.dropDowns.toArray().forEach(elem => {
+			if (activeDropdown !== elem) {
+				elem.close();
+			}
+		});
+	}
+
+	showHideMenuOfItem($event, activeDropdown: NgbDropdown) {
+		if (($event.shiftKey && $event.keyCode === 9) || $event.keyCode === 9) {
+			const sourceElement = $event.srcElement as HTMLAnchorElement;
+			const menuElement = sourceElement.parentElement.parentElement;
+			const anchors = Array.from(menuElement.querySelectorAll('[class*=dropdown-item]'));
+			const currentIndex = anchors.indexOf(sourceElement);
+			let nextIndex
+
+			if ($event.shiftKey && $event.keyCode === 9) {
+				nextIndex = currentIndex - 1;
+				if (nextIndex < 0) {
+					activeDropdown.close();
+					// this.closeAllDD();
+				}
+			}
+
+			if ($event.keyCode === 9) {
+				nextIndex = currentIndex + 1;
+				if (nextIndex >= anchors.length) {
+					activeDropdown.close();
+					// this.closeAllDD();
+				}
+			}
+		}
+
+	}
+
+
+	@HostListener('window:keydown', ['$event'])
+	scrollUpDown($event: KeyboardEvent) {
+		if ($event.keyCode === 38 || $event.keyCode === 40) {
+			const activeDom: any = document.activeElement;
+			if (activeDom && activeDom.id.includes('menu-main')) {
+				const contentArea = document.querySelector('.vtr-app.container-fluid') as HTMLElement;
+				contentArea.focus();
+				$event.stopPropagation();
+				$event.preventDefault();
+			}
+		}
+
 	}
 
 	private loadMenuOptions(machineType: number) {

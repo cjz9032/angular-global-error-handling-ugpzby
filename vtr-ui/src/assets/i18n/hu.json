@@ -795,6 +795,7 @@
             "back": "VISSZA",
             "on": "ON",
             "off": "OFF",
+            "close": "Bezárás",
             "collapse": "Összecsukás",
             "expand": "Kibontás",
             "loader": "Állapot <br> lekérése",
@@ -1051,7 +1052,7 @@
                     "NotGood": "<b>Az akkumulátor nincs jó állapotban.</b>",
                     "NotSupportACAdapter": "<b>A hálózati adapter nem támogatott.</b>",
                     "LimitedACAdapterSupport": "<b>A hálózati adapter nem képes elegendő energiát szolgáltatni.</b>",
-                    "MissingDriver": "<b>A Lenovo Power Manager illesztőprogramja</b> nincs telepítve, vagy nem működik megfelelően. Futtassa a Windows Update programot a legújabb illesztőprogram telepítéséhez. A <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">helyről letöltött illesztőprogramot itt</a> is telepítheti. A telepítés után indítsa újra a számítógépet.",
+                    "MissingDriver": "<b>A Lenovo Power Manager illesztőprogramja</b> nincs telepítve, vagy nem működik megfelelően. Kérjük, futtassa a Windows Update szolgáltatást, vagy telepítse manuálisan <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">innen</a>. A telepítés után indítsa újra a számítógépet.",
                     "StoreLimitation": "<b>Az akkumulátor csak az eredeti teljes töltési kapacitás {{value}}%-át</b> tudja tárolni.",
                     "HighTemperature": "A <b>lemerítés</b> leállt, mert az <b>akkumulátor túl meleg.</b>",
                     "TrickleCharge": "Az akkumulátor <b>teljesen lemerült</b>, fel kell tölteni. Ez akár 10 órán át vagy tovább is eltarthat.",
@@ -1330,6 +1331,12 @@
                         "description": "Válasszon egy energiasémát, amely vezérli a számítógép teljesítményét, a rendszer hőmérsékletét és az energiafelhasználást.",
                         "currentPowerPlan": {
                             "label": "AKTUÁLIS SÉMA"
+                        },
+                        "profile": {
+                            "title": "SÉMAPROFIL:",
+                            "performance": "Teljesítmény maximalizálása:",
+                            "temperature": "Rendszerhőmérséklet maximalizálása:",
+                            "usage": "Energiahasználat maximalizálása:"
                         }
                     }
                 },
@@ -1508,8 +1515,8 @@
                     "title": "Megjelenítés",
                     "displayColorTemperature": {
                         "title": "A képernyő színhőmérséklete",
-                        "description": "Beállíthatja a képernyő színhőmérsékletét oly módon, hogy a kék fény kiszűrésével csökkentse a szem igénybevételét. Napnyugta és napkelte között állítson be melegebb színeket, hogy segítse az alvást.",
-                        "link": {
+						"description": "Beállíthatja a képernyő színhőmérsékletét oly módon, hogy a kék fény kiszűrésével csökkentse a szem igénybevételét. Napnyugta és napkelte között állítson be melegebb színeket, hogy segítse az alvást.",
+						"link": {
                             "click": "Kattintson",
                             "here": "innen",
                             "rest": "a színhőmérséklet beállításához."
@@ -2438,7 +2445,6 @@
                 "title": "Biztonsági állapot",
                 "deviceName1": "Megbízható forrásból származó alkalmazások",
                 "deviceName2": "Fejlesztői üzemmód",
-                "deviceName3": "UAC-értesítés",
                 "deviceName4": "Vírusvédelem elérhetősége",
                 "deviceName5": "Merevlemez-titkosítás",
                 "deviceName6": "Tűzfal elérhetősége",
@@ -3320,7 +3326,7 @@
         },
         "scanCompletePage": {
             "title": "System scan is complete",
-            "description": "Here is what we found on your Lenovo Vantage 720s.",
+            "description": "Here is what we found on your ",
             "scanRates": "Our scan rates your PC at: ",
             "summary": "Summary",
             "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
@@ -3355,7 +3361,7 @@
             "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
-            "title": "All is well with your Ideapad 720s",
+            "title": "All is well with your ",
             "serialNumber": "Serial number: ",
             "subTitle": "You are subscribed to Lenovo Smart Performance Service",
             "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
@@ -3508,7 +3514,8 @@
     "notification": {
         "menu": {
             "security": "Tudta ezt? Ha Ön semmilyen antivírus szoftvert nem telepített az eszközére, mi akkor is gondoskodunk egy alapvető biztonsági védelemről.",
-            "connectedHomeSecurity": "Gondoskodjon otthoni hálózatának valós idejű felügyeletéről és az azonnali értesítésekről. Ön fog elsőként értesülni arról, ha valamelyik okos eszközének biztonságát valamilyen fenyegetés veszélyezteti."
+            "connectedHomeSecurity": "Gondoskodjon otthoni hálózatának valós idejű felügyeletéről és az azonnali értesítésekről. Ön fog elsőként értesülni arról, ha valamelyik okos eszközének biztonságát valamilyen fenyegetés veszélyezteti.",
+            "hardwareScan": "Mostantól megtekintheti a rendszer hardvereszközeinek az állapotát."
         }
     },
     "appsForYou": {

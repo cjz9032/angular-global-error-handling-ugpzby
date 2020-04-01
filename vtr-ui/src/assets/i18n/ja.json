@@ -795,6 +795,7 @@
             "back": "戻る",
             "on": "ON",
             "off": "OFF",
+            "close": "閉じる",
             "collapse": "折りたたみ",
             "expand": "展開",
             "loader": "取得ステータス",
@@ -1051,7 +1052,7 @@
                     "NotGood": "<b>バッテリーは良好な状態ではありません。</b>",
                     "NotSupportACAdapter": "<b>AC アダプターがサポートされていません。</b>",
                     "LimitedACAdapterSupport": "<b>ACアダプターが十分な電力を供給できません。</b>",
-                    "MissingDriver": "<b>Lenovo Power Managerドライバー</b>がインストールされていないか、正しく機能していません。Windows Update を実行して。最新のドライバーをインストールしてください。また、ドライバーを<a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">ここ</a>からインストールすることもできます。インストール後に、コンピューターを再起動します。",
+                    "MissingDriver": "<b>Lenovo Power Manager ドライバー</b>がインストールされていないか、正しく機能していません。Windows Update を実行するか、手動で<a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">ここ</a>からインストールしてください。インストール後に、コンピューターを再起動します。",
                     "StoreLimitation": "<b>バッテリーはフル充電容量の {{value}}%</b> しか充電できません。",
                     "HighTemperature": "<b>バッテリー温度が高温になりすぎた</b>ので、<b>放電</b>を中止しました。",
                     "TrickleCharge": "バッテリーは<b>完全に放電</b>しています。再充電してください。再充電には 10 時間以上かかる場合があります。",
@@ -1330,6 +1331,12 @@
                         "description": "電源プランを選択して、コンピューターのパフォーマンス、システム温度、および電力使用率を制御します。",
                         "currentPowerPlan": {
                             "label": "現在のプラン"
+                        },
+                        "profile": {
+                            "title": "プラン・プロファイル:",
+                            "performance": "最大パフォーマンス:",
+                            "temperature": "最大システム温度:",
+                            "usage": "最大電源使用率:"
                         }
                     }
                 },
@@ -1508,8 +1515,8 @@
                     "title": "ディスプレイ",
                     "displayColorTemperature": {
                         "title": "ディスプレイの色温度",
-                        "description": "ディスプレイの色温度を調整してブルーライトを除去し、目の負担を軽減できます。日没から日の出まではディスプレイを暖色系に調整すると睡眠の助けになります。",
-                        "link": {
+						"description": "ディスプレイの色温度を調整してブルーライトを除去し、目の負担を軽減できます。日没から日の出まではディスプレイを暖色系に調整すると睡眠の助けになります。",
+						"link": {
                             "click": "色温度を変更するには",
                             "here": "ここ",
                             "rest": "をクリックしてください。"
@@ -2438,7 +2445,6 @@
                 "title": "セキュリティーの健全性",
                 "deviceName1": "信頼できるソースからのアプリ",
                 "deviceName2": "開発者モード",
-                "deviceName3": "UAC 通知",
                 "deviceName4": "アンチウイルスの可用性",
                 "deviceName5": "ハードディスク・ドライブの暗号化",
                 "deviceName6": "ファイアウォールの可用性",
@@ -3038,7 +3044,7 @@
         "loadingComponents": "コンポーネントをロード中",
         "hardwareComponents": "ハードウェア・コンポーネント",
         "loadingDevices": "デバイスのロード中",
-        "select": "ツールバーで",
+        "select": "選択",
         "deselect": "選択解除",
         "allOptions": "すべてのオプション",
         "latestResult": "最新の結果",
@@ -3320,7 +3326,7 @@
         },
         "scanCompletePage": {
             "title": "System scan is complete",
-            "description": "Here is what we found on your Lenovo Vantage 720s.",
+            "description": "Here is what we found on your ",
             "scanRates": "Our scan rates your PC at: ",
             "summary": "Summary",
             "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
@@ -3355,7 +3361,7 @@
             "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
-            "title": "All is well with your Ideapad 720s",
+            "title": "All is well with your ",
             "serialNumber": "Serial number: ",
             "subTitle": "You are subscribed to Lenovo Smart Performance Service",
             "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
@@ -3508,7 +3514,8 @@
     "notification": {
         "menu": {
             "security": "ご存知ですか。ウイルス対策ソフトウェアをインストールしていない場合でも、デバイスの基本的なセキュリティ保護を提供します。",
-            "connectedHomeSecurity": "自宅でネットワーク・セキュリティに関するリアルタイムの監視とアラートを実現します。スマート・デバイスのいずれかがセキュリティ攻撃に直面しているかどうかを知る最初の人物になります。"
+            "connectedHomeSecurity": "自宅でネットワーク・セキュリティに関するリアルタイムの監視とアラートを実現します。スマート・デバイスのいずれかがセキュリティ攻撃に直面しているかどうかを知る最初の人物になります。",
+            "hardwareScan": "これで、システム・ハードウェア・コンポーネントの正常性状態を取得できます。"
         }
     },
     "appsForYou": {

@@ -119,12 +119,13 @@
 						</a>
 					</li>
 					<li ngbDropdown
-						#menudropdown="ngbDropdown"
+						#menuDropDown="ngbDropdown"
 						*ngIf="item.subitems.length>0
 						&&isCommomItem(item)
 						&&showItem(item)"
 						class="nav-item dropdown"
-						(mouseleave)="menudropdown.close()"
+						(mouseover)="[closeAllOtherDD(menuDropDown),menuDropDown.open()]"
+						(mouseleave)="menuDropDown.close()"
 						[ngClass]="{'active': isParentActive(item)}">
 						<a ngbDropdownToggle
 							class="nav-link dropdown-toggle {{item.id}}"
@@ -132,7 +133,7 @@
 							vtrMetrics
 							tabindex="1"
 							id="menu-main-nav-lnk-dropdown-toggle-{{item.id}}"
-							attr.aria-label="menu-main-nav-lnk-dropdown-toggle-{{item.id}}"
+							attr.aria-label="{{item.id}}"
 							attr.new-tip-id="new-tip-{{item.id}}"
 							[metricsEvent]="item.metricsEvent"
 							[metricsParent]="item.metricsParent"
@@ -143,8 +144,9 @@
 							aria-haspopup="true"
 							aria-expanded="false"
 							href="javascript:void(0)"
-							(click)="onMenuItemClick(item);"
-							(keydown.enter)="onMenuItemClick(item); menuItemKeyDown(item.path)"
+							(focus)="[closeAllOtherDD(menuDropDown),menuDropDown.open()]"
+							(click)="onMenuItemClick(item)"
+							(keydown.enter)="[onMenuItemClick(item),menuItemKeyDown(item.path)]"
 							role="button"
 							*ngIf="item.label | translate">
 							<div class="icon">
@@ -177,8 +179,9 @@
 									target="_blank"
 									rel="noopener"
 									href="javascript:void(0)"
-									(click)="onMenuItemClick(subitem); openExternalLink(subitem.path)"
-									(keydown.enter)="onMenuItemClick(subitem); openExternalLink(subitem.path)">{{subitem.label | translate}}</a>
+									(keydown)="showHideMenuOfItem($event,menuDropDown)"
+									(click)="[onMenuItemClick(subitem),openExternalLink(subitem.path)]"
+									(keydown.enter)="[onMenuItemClick(subitem), openExternalLink(subitem.path)]">{{subitem.label | translate}}</a>
 								<a ngbDropdownItem
 									*ngIf="!subitem.externallink && showItem(subitem)"
 									vtrMetrics
@@ -193,7 +196,8 @@
 									class="dropdown-item link"
 									routerLink="/{{item.path}}/{{subitem.path}}"
 									(click)="onMenuItemClick(subitem)"
-									(keydown.enter)="onMenuItemClick(subitem); menuItemKeyDown(item.path, subitem.path)"
+									(keydown)="showHideMenuOfItem($event,menuDropDown)"
+									(keydown.enter)="[onMenuItemClick(subitem), menuItemKeyDown(item.path, subitem.path)]"
 									href="javascript:void(0)"
 									role="menuitem">{{subitem.label | translate}}</a>
 							</span>
@@ -242,6 +246,9 @@
 						</div>
 					</li>
 					<li ngbDropdown
+						#menuDropDown="ngbDropdown"
+						(mouseover)="[closeAllOtherDD(menuDropDown),menuDropDown.open()]"
+						(mouseleave)="menuDropDown.close()"
 						*ngIf="item.id==='user' && languageService.isLanguageLoaded"
 						class="nav-item dropdown">
 						<!-- <a class="nav-link dropdown-toggle {{item.id}}"
@@ -268,6 +275,7 @@
 							aria-haspopup="true"
 							aria-expanded="false"
 							href="javascript:void(0)"
+							(focus)="[closeAllOtherDD(menuDropDown),menuDropDown.open()]"
 							(click)="onMenuItemClick(item)"
 							(keydown.enter)="onMenuItemClick(item)">
 							<div class="user-initials">
@@ -297,8 +305,9 @@
 								[routerLink]="['/apps-for-you/'+appsForYouEnum.AppGuidLenovoMigrationAssistant]"
 								tabindex="1"
 								href="javascript:void(0)"
+								(keydown)="showHideMenuOfItem($event,menuDropDown)"
 								(click)="onMenuItemClick(item, $event)"
-								(keydown.enter)="onMenuItemClick(item, $event); menuItemKeyDown('apps-for-you', appsForYouEnum.AppGuidLenovoMigrationAssistant)"
+								(keydown.enter)="[onMenuItemClick(item, $event), menuItemKeyDown('apps-for-you', appsForYouEnum.AppGuidLenovoMigrationAssistant)]"
 								href="javascript:void(0)">
 								{{ 'appsForYou.menuText.lenovoMigrationAssistant' | translate }}
 								<span class="unread-tag"
@@ -316,8 +325,9 @@
 								metricsItem="AdobecRedemptionButton"
 								[routerLink]="['/apps-for-you/'+ appsForYouEnum.AppGuidAdobeCreativeCloud]"
 								href="javascript:void(0)"
+								(keydown)="showHideMenuOfItem($event,menuDropDown)"
 								(click)="onMenuItemClick(item, $event)"
-								(keydown.enter)="onMenuItemClick(item, $event); menuItemKeyDown('/apps-for-you/', appsForYouEnum.AppGuidAdobeCreativeCloud)"
+								(keydown.enter)="[onMenuItemClick(item, $event), menuItemKeyDown('/apps-for-you/', appsForYouEnum.AppGuidAdobeCreativeCloud)]"
 								href="javascript:void(0)">
 								{{ 'appsForYou.menuText.adobeRedemption' | translate }}
 								<span class="unread-tag"
@@ -333,6 +343,7 @@
 								[metricsEvent]="item.metricsEvent"
 								[metricsParent]="item.metricsParent"
 								metricsItem="DccRedemptionButton"
+								(keydown)="showHideMenuOfItem($event,menuDropDown)"
 								(click)="onMenuItemClick(item, $event)"
 								(keydown.enter)="onMenuItemClick(item, $event)"
 								href="javascript:void(0)">
@@ -351,6 +362,7 @@
 								metricsItem="ModernPreloadButton"
 								class="dropdown-item link"
 								href="javascript:void(0)"
+								(keydown)="showHideMenuOfItem($event,menuDropDown)"
 								(click)="openModernPreloadModal()">{{ 'modernPreload.title' | translate }}</a>
 							<a ngbDropdownItem
 								vtrMetrics
@@ -363,8 +375,9 @@
 								class="dropdown-item link"
 								href="javascript:void(0)"
 								routerLink="settings"
+								(keydown)="showHideMenuOfItem($event,menuDropDown)"
 								(click)="onMenuItemClick(item)"
-								(keydown.enter)="onMenuItemClick(item); menuItemKeyDown('settings')">{{ 'settings.preferenceSettings' | translate }}</a>
+								(keydown.enter)="[onMenuItemClick(item), menuItemKeyDown('settings')]">{{ 'settings.preferenceSettings' | translate }}</a>
 							<a ngbDropdownItem
 								*ngIf="commonService.isOnline"
 								vtrMetrics
@@ -376,6 +389,7 @@
 								metricsItem="GiveFeedbackButton"
 								class="dropdown-item link"
 								href="javascript:void(0)"
+								(keydown)="showHideMenuOfItem($event,menuDropDown)"
 								(click)="openFeedbackModal()">{{ 'dashboard.feedback.title' | translate }}</a>
 							<a ngbDropdownItem
 								*ngIf="!deviceService.isArm && !userService.auth && !userService.starter && commonService.isOnline && userService.isLenovoIdSupported()"
@@ -388,8 +402,9 @@
 								metricsItem="LenovoIdSignInButton"
 								class="dropdown-item link"
 								href="javascript:void(0)"
+								(keydown)="showHideMenuOfItem($event,menuDropDown)"
 								(click)="OpenLenovoId('NavigationLenovoAccount.Submenu'); onMenuItemClick(item)"
-								(keydown.enter)="OpenLenovoId('NavigationLenovoAccount.Submenu'); onMenuItemClick(item)">{{'lenovoId.login' | translate}}</a>
+								(keydown.enter)="[OpenLenovoId('NavigationLenovoAccount.Submenu'), onMenuItemClick(item)]">{{'lenovoId.login' | translate}}</a>
 							<a ngbDropdownItem
 								*ngIf="!deviceService.isArm && !userService.auth && userService.starter && commonService.isOnline && userService.isLenovoIdSupported()"
 								vtrMetrics
@@ -401,8 +416,9 @@
 								metricsItem="LenovoIdStarterIdButton"
 								class="dropdown-item link"
 								href="javascript:void(0)"
+								(keydown)="showHideMenuOfItem($event,menuDropDown)"
 								(click)="OpenLenovoId('NavigationLenovoAccount.Submenu'); onMenuItemClick(item)"
-								(keydown.enter)="OpenLenovoId('NavigationLenovoAccount.Submenu'); onMenuItemClick(item)">{{'lenovoId.unlockExclusives' | translate}}</a>
+								(keydown.enter)="[OpenLenovoId('NavigationLenovoAccount.Submenu'), onMenuItemClick(item)]">{{'lenovoId.unlockExclusives' | translate}}</a>
 							<a ngbDropdownItem
 								*ngIf="!deviceService.isArm && userService.auth && commonService.isOnline && userService.isLenovoIdSupported()"
 								vtrMetrics
@@ -414,9 +430,10 @@
 								metricsItem="LenovoIdSignOutButton"
 								class="dropdown-item link"
 								href="javascript:void(0)"
+								(keydown)="showHideMenuOfItem($event,menuDropDown)"
 								(click)="onLogout(); onMenuItemClick(item)"
 								[class.disabled]="isLoggingOut"
-								(keydown.enter)="onLogout(); onMenuItemClick(item)">{{ isLoggingOut ? ('lenovoId.loggingOut' | translate) : ('lenovoId.logout' | translate) }}</a>
+								(keydown.enter)="[onLogout(), onMenuItemClick(item)]">{{ isLoggingOut ? ('lenovoId.loggingOut' | translate) : ('lenovoId.logout' | translate) }}</a>
 						</div>
 					</li>
 					<div class="d-none">

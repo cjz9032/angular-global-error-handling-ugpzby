@@ -31,10 +31,15 @@
 				display: inline-block;
 			}
 		}
+		&.active {
+			.tab-label {
+				font-weight: $weight_600;
+			}
+		}
 
 		.tab-label {
 			font-size: $fontsize_lg;
-			font-weight: $weight_600;
+			font-weight: $weight_regular;
 			padding-bottom: 2rem;
 			cursor: pointer;
 			.icomoon {

@@ -15,7 +15,7 @@
 						<div class="row justify-content-center align-items-center ">
 							<div class="col-auto px-1 title1 uppercase text-center">
 								{{ "welcometutorial.title2" | translate }}
-								<span role="text">{{ "welcometutorial.title3" | translate }}</span>
+								<span>{{ "welcometutorial.title3" | translate }}</span>
 							</div>
 						</div>
 					</div>
@@ -187,21 +187,17 @@
 					</div>
 					<div class="row privacy-check mt-3"
 						*ngIf="vantageToolbarStatus.available">
-						<div class="custom-control custom-checkbox pl-0">
+						 <div class="custom-control custom-checkbox pl-0">
 							<input type="checkbox"
-								tabindex="-1"
 								(click)="saveToolbar($event)"
 								[checked]="vantageToolbar"
 								class="custom-control-input"
-								id="chkbox-vantage-toolbar"
-								role="checkbox">
+								id="welcome-toolbar-label">
 							<label class="custom-control-label"
 								dir="{{'dir' | translate}}"
 								tabindex="0"
 								(keypress)="onKeyPress($event)"
-								id="welcome-toolbar-label"
-								role="checkbox"
-								for="chkbox-vantage-toolbar">
+								for="welcome-toolbar-label">
 								{{ "welcometutorial.toolbartitle" | translate }}
 							</label>
 						</div>
@@ -210,18 +206,14 @@
 					<div class="row privacy-check mt-3">
 						<div class="custom-control custom-checkbox pl-0">
 							<input type="checkbox"
-								tabindex="-1"
 								(click)="savePrivacy($event, 'PRIVACYPOLICY')"
 								[checked]="privacyPolicy"
 								class="custom-control-input"
-								id="defaultUnchecked"
-								attr.aria-label="defaultUnchecked">
+								id="welcome-privacy-label">
 							<label class="custom-control-label"
 								tabindex="0"
-								id="welcome-privacy-label"
-								role="checkbox"
 								(keypress)="onKeyPress($event)"
-								for="defaultUnchecked">
+								for="welcome-privacy-label">
 								{{ "welcometutorial.privacytitle" | translate }}
 								<a class="linktext"
 									tabindex="0"
@@ -231,7 +223,6 @@
 									href="#"
 									rel="noopener"
 									[innerHTML]="'welcometutorial.privacypolicy' | translate">
-									<!-- Lenovo's Privacy Policy -->
 								</a>
 							</label>
 						</div>
@@ -242,6 +233,7 @@
 					<div class="col-auto"
 						(keypress)="btnDoneOnKeyPress($event)">
 						<vtr-ui-button [tabIndex]='0'
+							[vtrMetricEnabled]="false"
 							[tooltip]="false"
 							[label]="'welcometutorial.done' | translate"
 							[btnHeight]=true

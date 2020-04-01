@@ -795,6 +795,7 @@
             "back": "NAZAD",
             "on": "ON",
             "off": "OFF",
+            "close": "Zatvori",
             "collapse": "Skupi",
             "expand": "Raširi",
             "loader": "Status <br> preuzimanja",
@@ -1051,7 +1052,7 @@
                     "NotGood": "<b>Baterija nije u dobrom stanju.</b>",
                     "NotSupportACAdapter": "<b>Adapter za naizmeničnu struju nije podržan.</b>",
                     "LimitedACAdapterSupport": "<b>Adapter za naizmeničnu struju ne može da obezbedi dovoljno napajanje.</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager upravljački program</b> nije instaliran ili ne radi ispravno. Pokrenite Windows Update da biste instalirali najnoviji upravljački program. Upravljački program možete da instalirate sa lokacije koja se nalazi <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">ovde</a>. Nakon instalacije, ponovo pokrenite računar.",
+                    "MissingDriver": "<b>Lenovo Power Manager upravljački program</b> nije instaliran ili ne radi ispravno. Pokrenite Windows Update ili ga ručno instalirajte <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">odavde</a>. Nakon instalacije, ponovo pokrenite računar.",
                     "StoreLimitation": "<b>Baterija može da uskladišti samo {{value}}%</b> svog originalnog punog kapaciteta.",
                     "HighTemperature": "<b>Pražnjenje</b> je zaustavljeno zato što je <b>temperatura baterije previsoka.</b>",
                     "TrickleCharge": "Baterija je u <b>potpunosti ispražnjena</b> i mora da se napuni. To može potrajati deset sati ili duže.",
@@ -1330,6 +1331,12 @@
                         "description": "Odaberite plan napajanja da biste kontrolisali performanse računara, temperaturu sistema i potrošnju struje.",
                         "currentPowerPlan": {
                             "label": "TRENUTNI PLAN"
+                        },
+                        "profile": {
+                            "title": "PLAN PROFILA:",
+                            "performance": "Maks. performanse:",
+                            "temperature": "Maks. temperatura sistema:",
+                            "usage": "Maks. korišćenje napajanja:"
                         }
                     }
                 },
@@ -1508,8 +1515,8 @@
                     "title": "Ekran",
                     "displayColorTemperature": {
                         "title": "Temperatura boje ekrana",
-                        "description": "Temperaturu boja ekrana možete da prilagodite tako da filtrira plavo svetlo i smanji naprezanje očiju. Podešava prikaze na toplije boje između zalaska i izlaska sunca kako biste bolje spavali.",
-                        "link": {
+						"description": "Temperaturu boja ekrana možete da prilagodite tako da filtrira plavo svetlo i smanji naprezanje očiju. Podešava prikaze na toplije boje između zalaska i izlaska sunca kako biste bolje spavali.",
+						"link": {
                             "click": "Kliknite",
                             "here": "ovde",
                             "rest": "da biste promenili temperaturu boje."
@@ -2438,7 +2445,6 @@
                 "title": "Stanje bezbednosti",
                 "deviceName1": "Aplikacije iz pouzdanih izvora",
                 "deviceName2": "Režim rada za projektante",
-                "deviceName3": "Obaveštenje kontrole korisničkog naloga (UAC)",
                 "deviceName4": "Dostupnost antivirusnog programa",
                 "deviceName5": "Šifrovanje hard diska",
                 "deviceName6": "Dostupnost zaštitnog zida",
@@ -3320,7 +3326,7 @@
         },
         "scanCompletePage": {
             "title": "System scan is complete",
-            "description": "Here is what we found on your Lenovo Vantage 720s.",
+            "description": "Here is what we found on your ",
             "scanRates": "Our scan rates your PC at: ",
             "summary": "Summary",
             "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
@@ -3355,7 +3361,7 @@
             "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
-            "title": "All is well with your Ideapad 720s",
+            "title": "All is well with your ",
             "serialNumber": "Serial number: ",
             "subTitle": "You are subscribed to Lenovo Smart Performance Service",
             "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
@@ -3508,7 +3514,8 @@
     "notification": {
         "menu": {
             "security": "Da li znate? Čak i da nemate instaliran antivirusni softver, mi vam i dalje pružamo osnovnu bezbednosnu zaštitu za uređaj.",
-            "connectedHomeSecurity": "Nabavite nadzor i upozorenja u realnom vremenu o bezbednosti mreže kod kuće. Bićete prvi koji će znati da li se neki od pametnih uređaja suočavaju sa bezbednosnim napadom."
+            "connectedHomeSecurity": "Nabavite nadzor i upozorenja u realnom vremenu o bezbednosti mreže kod kuće. Bićete prvi koji će znati da li se neki od pametnih uređaja suočavaju sa bezbednosnim napadom.",
+            "hardwareScan": "Sada možete dobiti status stanja hardverske komponente sistema."
         }
     },
     "appsForYou": {

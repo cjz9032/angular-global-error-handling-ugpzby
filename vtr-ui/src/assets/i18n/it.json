@@ -795,6 +795,7 @@
             "back": "INDIETRO",
             "on": "ON",
             "off": "OFF",
+            "close": "Chiudi",
             "collapse": "Riduci",
             "expand": "Espandi",
             "loader": "Stato di<br> recupero",
@@ -1051,7 +1052,7 @@
                     "NotGood": "<b>La batteria non è in buone condizioni.</b>",
                     "NotSupportACAdapter": "<b>L'adattatore CA non è supportato.</b>",
                     "LimitedACAdapterSupport": "<b>L'adattatore CA non è in grado di fornire energia sufficiente.</b>",
-                    "MissingDriver": "<b>Il driver Lenovo Power Manager</b> non è installato o non funziona correttamente. Eseguire Windows Update per installare il driver più recente. È anche possibile installare il driver da <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">qui</a>. Al termine dell'installazione, riavviare il computer.",
+                    "MissingDriver": "<b>Il driver Lenovo Power Manager</b> non è installato o non funziona correttamente. Eseguire Windows Update o installarlo manualmente da <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">qui</a>. Al termine dell'installazione, riavviare il computer.",
                     "StoreLimitation": "<b>La batteria può mantenere solo il {{value}}% della</b> sua capacità di carica completa originale.",
                     "HighTemperature": "<b>Lo scaricamento</b> è stato interrotto poiché la <b>temperatura della batteria è troppo elevata.</b>",
                     "TrickleCharge": "La batteria è <b>completamente scarica</b> e deve essere ricaricata. Questa operazione potrebbe richiedere almeno dieci ore.",
@@ -1330,6 +1331,12 @@
                         "description": "Selezionare un piano di alimentazione per controllare le prestazioni del computer, la temperatura del sistema e l'utilizzo dell'alimentazione.",
                         "currentPowerPlan": {
                             "label": "PIANO CORRENTE"
+                        },
+                        "profile": {
+                            "title": "PIANO DEL PROFILO:",
+                            "performance": "Prestazioni massime:",
+                            "temperature": "Temperatura massima di sistema:",
+                            "usage": "Massimo consumo energetico:"
                         }
                     }
                 },
@@ -1508,8 +1515,8 @@
                     "title": "Schermo",
                     "displayColorTemperature": {
                         "title": "Temperatura colore schermo",
-                        "description": "Puoi regolare la temperatura del colore dello schermo per filtrare la luce blu e ridurre l'affaticamento degli occhi. Ti consente di regolare lo schermo con colori più caldi dal tramonto all'alba, per favorire il riposo notturno.",
-                        "link": {
+						"description": "È possibile regolare la temperatura del colore dello schermo per filtrare la luce blu e ridurre l'affaticamento degli occhi. Consente di regolare gli schermi con colori più caldi dal tramonto all'alba, per favorire il riposo notturno.",
+						"link": {
                             "click": "Fare clic",
                             "here": "qui",
                             "rest": "per modificare la temperatura del colore."
@@ -2438,7 +2445,6 @@
                 "title": "Integrità protezione",
                 "deviceName1": "App da fonti affidabili",
                 "deviceName2": "Modalità sviluppatore",
-                "deviceName3": "Notifica Controllo dell'account utente",
                 "deviceName4": "Disponibilità antivirus",
                 "deviceName5": "Crittografia unità disco fisso",
                 "deviceName6": "Disponibilità firewall",
@@ -3320,7 +3326,7 @@
         },
         "scanCompletePage": {
             "title": "System scan is complete",
-            "description": "Here is what we found on your Lenovo Vantage 720s.",
+            "description": "Here is what we found on your ",
             "scanRates": "Our scan rates your PC at: ",
             "summary": "Summary",
             "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
@@ -3355,7 +3361,7 @@
             "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
-            "title": "All is well with your Ideapad 720s",
+            "title": "All is well with your ",
             "serialNumber": "Serial number: ",
             "subTitle": "You are subscribed to Lenovo Smart Performance Service",
             "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
@@ -3508,7 +3514,8 @@
     "notification": {
         "menu": {
             "security": "Anche se non si dispone di software antivirus installato, viene comunque garantita una protezione di base per il dispositivo.",
-            "connectedHomeSecurity": "È possibile usufruire di una funzione di monitoraggio e creazione di avvisi in tempo reale sulla sicurezza della propria rete a casa. Si verrà a sapere per primi se uno dei propri dispositivi intelligenti è sottoposto a un attacco di sicurezza."
+            "connectedHomeSecurity": "È possibile usufruire di una funzione di monitoraggio e creazione di avvisi in tempo reale sulla sicurezza della propria rete a casa. Si verrà a sapere per primi se uno dei propri dispositivi intelligenti è sottoposto a un attacco di sicurezza.",
+            "hardwareScan": "È ora possibile ottenere lo stato di integrità dei componenti hardware del sistema."
         }
     },
     "appsForYou": {

@@ -1,8 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { IconProp, IconPrefix } from '@fortawesome/fontawesome-svg-core';
 
 @Pipe({ name: 'iconName' })
 export class IconNamePipe implements PipeTransform {
-	transform(value: string): Array<string> {
+	transform(value: string): any {
 		switch (value) {
 			case 'enabled':
 				return ['fas', 'check'];

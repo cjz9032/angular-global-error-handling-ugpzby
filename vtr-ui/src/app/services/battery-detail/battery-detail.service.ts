@@ -17,6 +17,8 @@ export class BatteryDetailService {
 	gaugeResetInfo: BatteryGaugeReset[];
 	isPowerDriverMissing: boolean;
 	isGaugeResetRunning: boolean;
+	isInvalidBattery: boolean;
+
 	chargeThresholdInfo: BehaviorSubject<ChargeThreshold[]>;
 
 	public isShellAvailable = false;

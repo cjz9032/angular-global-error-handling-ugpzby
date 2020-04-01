@@ -1,6 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, SimpleChanges, OnChanges } from '@angular/core';
-import { DaysOfWeek } from 'src/app/enums/days-of-week.enum';
-import { AllDays } from 'src/app/data-models/device/all-days.model';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { CommonService } from 'src/app/services/common/common.service';
 import { SmartStandbyService } from 'src/app/services/smart-standby/smart-standby.service';

@@ -1,19 +1,6 @@
-import {
-	Component,
-	OnInit,
-	Input,
-	Output,
-	EventEmitter,
-	SimpleChanges,
-	OnChanges
-} from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import {
-	DropDownInterval
-} from 'src/app/data-models/common/drop-down-interval.model';
-import {
-	faThemeisle
-} from '@fortawesome/free-brands-svg-icons';
+import { DropDownInterval } from 'src/app/data-models/common/drop-down-interval.model';
 
 @Component({
 	selector: 'vtr-ui-dropdown',

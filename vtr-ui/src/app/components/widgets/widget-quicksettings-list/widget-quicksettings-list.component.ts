@@ -171,6 +171,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 	wsStateEventHandler = (value) => {
 		if (value) {
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, value);
+			this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.commonService);
 			if (this.wifiSecurity.isLocationServiceOn !== undefined) {
 				if (value === 'enabled' && this.wifiHomeViewModel.isLWSEnabled === true) {
 					this.quickSettings[2].isChecked = true;
@@ -178,14 +179,15 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 					this.quickSettings[2].isChecked = false;
 				}
 			}
-			this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.commonService);
 		}
 	};
 	wsIsLocationServiceOnEventHandler = (value) => {
 		this.ngZone.run(() => {
 			if (value !== undefined) {
+				this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.commonService);
 				if (!value && this.wifiSecurity.state === 'enabled' && this.wifiSecurity.hasSystemPermissionShowed) {
 					this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
+					this.quickSettings[2].isChecked = false;
 				} else if (value) {
 					if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag) === 'yes') {
 						this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag, 'no');
@@ -193,13 +195,12 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 							this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.commonService);
 						});
 					}
-					if (this.wifiHomeViewModel.isLWSEnabled === true) {
+					if (this.wifiHomeViewModel.isLWSEnabled) {
 						this.quickSettings[2].isChecked = true;
 					} else {
 						this.quickSettings[2].isChecked = false;
 					}
 				}
-				this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.commonService);
 			}
 		});
 	};

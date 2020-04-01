@@ -795,6 +795,7 @@
             "back": "ÎNAPOI",
             "on": "ON",
             "off": "OFF",
+            "close": "Închidere",
             "collapse": "Restrângere",
             "expand": "Extindere",
             "loader": "Obținerea <br> statutului",
@@ -1051,7 +1052,7 @@
                     "NotGood": "<b>Bateria nu este în stare bună.</b>",
                     "NotSupportACAdapter": "<b>Adaptorul c.a. nu este acceptat.</b>",
                     "LimitedACAdapterSupport": "<b>Adaptorul c.a. nu poate furniza suficientă putere.</b>",
-                    "MissingDriver": "<b>Driverul Lenovo Power Manager</b> nu este instalat sau nu funcționează corect. Rulaţi Windows Update pentru a instala cel mai recent driver. Puteți instala driverul și de <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">aici</a>. După instalare, reporniţi computerul.",
+                    "MissingDriver": "<b>Driverul Lenovo Power Manager</b> nu este instalat sau nu funcționează corect. Rulați Windows Update sau instalați aplicația manual de <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">aici</a>. După instalare, reporniți computerul.",
                     "StoreLimitation": "<b>Bateria poate stoca doar {{value}}% din</b> capacitatea iniţială completă de încărcare.",
                     "HighTemperature": "<b>Descărcarea</b> a fost oprită, deoarece <b>temperatura bateriei este prea mare.</b>",
                     "TrickleCharge": "Bateria a fost <b>descărcată complet</b> şi trebuie reîncărcată. Această operaţiune poate dura zece ore sau mai mult.",
@@ -1330,6 +1331,12 @@
                         "description": "Alegeți un plan de alimentare pentru a controla performanța computerului, temperatura sistemului și consumul de energie.",
                         "currentPowerPlan": {
                             "label": "PLAN ACTUAL"
+                        },
+                        "profile": {
+                            "title": "PROFILUL PLANULUI:",
+                            "performance": "Performanța maximă:",
+                            "temperature": "Temperatura maximă a sistemului:",
+                            "usage": "Consumul maxim de energie:"
                         }
                     }
                 },
@@ -1508,8 +1515,8 @@
                     "title": "Afișaj",
                     "displayColorTemperature": {
                         "title": "Temperatură culoare afișaj",
-                        "description": "Puteți ajusta temperatura culorii ecranului dvs. pentru a filtra lumina albastră protejându-vă ochii. Ajustează ecranul astfel încât să afișeze culori mai calde între apusul și răsăritul soarelui, pentru a nu vă afecta somnul.",
-                        "link": {
+						"description": "Puteți regla temperatura culorii afișajului pentru a filtra lumina albastră și pentru a reduce oboseala ochilor. Ajustează ecranul astfel încât să afișeze culori mai calde între apusul și răsăritul soarelui, pentru a nu vă afecta somnul.",
+						"link": {
                             "click": "Clic",
                             "here": "aici",
                             "rest": "pentru a modifica temperatura culorii."
@@ -2438,7 +2445,6 @@
                 "title": "Sănătatea securității",
                 "deviceName1": "Aplicații din surse de încredere",
                 "deviceName2": "Mod dezvoltator",
-                "deviceName3": "Notificare UAC",
                 "deviceName4": "Disponibilitate antivirus",
                 "deviceName5": "Criptare unitate HDD",
                 "deviceName6": "Disponibilitate paravan de protecție",
@@ -3320,7 +3326,7 @@
         },
         "scanCompletePage": {
             "title": "System scan is complete",
-            "description": "Here is what we found on your Lenovo Vantage 720s.",
+            "description": "Here is what we found on your ",
             "scanRates": "Our scan rates your PC at: ",
             "summary": "Summary",
             "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
@@ -3355,7 +3361,7 @@
             "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
-            "title": "All is well with your Ideapad 720s",
+            "title": "All is well with your ",
             "serialNumber": "Serial number: ",
             "subTitle": "You are subscribed to Lenovo Smart Performance Service",
             "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
@@ -3508,7 +3514,8 @@
     "notification": {
         "menu": {
             "security": "Ştiaţi că? Chiar dacă nu aveţi instalat software antivirus, vă oferim în continuare protecţie de bază de securitate pentru dispozitivul dvs.",
-            "connectedHomeSecurity": "Obţineţi monitorizare şi alerte în timp real despre securitatea reţelei dvs. de acasă. Veţi fi primul care va şti dacă vreunul dintre dispozitivele dvs. inteligente se confruntă cu un atac de securitate."
+            "connectedHomeSecurity": "Obţineţi monitorizare şi alerte în timp real despre securitatea reţelei dvs. de acasă. Veţi fi primul care va şti dacă vreunul dintre dispozitivele dvs. inteligente se confruntă cu un atac de securitate.",
+            "hardwareScan": "Acum puteți obține informații despre starea de sănătate a componentei hardware a sistemului dvs."
         }
     },
     "appsForYou": {

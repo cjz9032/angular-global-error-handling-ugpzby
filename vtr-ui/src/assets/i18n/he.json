@@ -795,6 +795,7 @@
             "back": "חזרה",
             "on": "ON",
             "off": "OFF",
+            "close": "סגירה",
             "collapse": "כיווץ",
             "expand": "הרחבה",
             "loader": "מאחזר <br> סטטוס",
@@ -1051,7 +1052,7 @@
                     "NotGood": "<b>הסוללה אינה במצב תקין.</b>",
                     "NotSupportACAdapter": "<span dir='rtl'><b>מתאם ה-AC אינו נתמך.</b></span>",
                     "LimitedACAdapterSupport": "<b>מתאם AC לא יכול לספק מספיק חשמל.</b>",
-                    "MissingDriver": "<b>מנהל התקן Lenovo Power Manager</b> אינו מותקן או שאינו פועל כראוי. הפעילו את Windows Update כדי להתקין את מנהל ההתקן העדכני ביותר. ניתן גם להתקין את מנהל ההתקן מ <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">כאן</a>. לאחר ההתקנה, הפעילו מחדש את המחשב.",
+                    "MissingDriver": "<b>מנהל התקן Lenovo Power Manager</b> אינו מותקן או שאינו פועל כראוי. יש להפעיל את Windows Update או להתקין את התוכנית באופן ידני <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">מכאן</a>. לאחר ההתקנה, הפעילו מחדש את המחשב.",
                     "StoreLimitation": "<b>הסוללה יכולה לאחסן רק {{value}}% מתוך</b> קיבולת הטעינה המקורית שלה.",
                     "HighTemperature": "<b>הפריקה</b> נעצרה מכיוון <b>שטמפרטורת הסוללה גבוהה מדי.</b>",
                     "TrickleCharge": "הסוללה <b>התרוקנה לחלוטין</b> ויש לטעון אותה מחדש. התהליך עשוי לארוך עשר שעות או יותר.",
@@ -1330,6 +1331,12 @@
                         "description": "בחרו תוכנית צריכת חשמל כדי לשלוט בביצועי המחשב, בטמפרטורת המערכת ובצריכת החשמל.",
                         "currentPowerPlan": {
                             "label": "תוכנית נוכחית"
+                        },
+                        "profile": {
+                            "title": "פרופיל תוכנית:",
+                            "performance": "ביצועים מרביים:",
+                            "temperature": "טמפרטורת מערכת מרבית:",
+                            "usage": "צריכת חשמל מרבית:"
                         }
                     }
                 },
@@ -1508,8 +1515,8 @@
                     "title": "תצוגה",
                     "displayColorTemperature": {
                         "title": "טמפרטורת צבע התצוגה",
-                        "description": "ניתן להתאים את טמפרטורת הצבע של התצוגה כדי לסנן את האור הכחול ולהפחית את אימוץ העיניים. כוונון התצוגות לצבעים חמים יותר במהלך השקיעה ועד הזריחה כדי לעזור לכם לישון.",
-                        "link": {
+						"description": "ניתן להתאים את טמפרטורת הצבע של התצוגה כדי לסנן את האור הכחול ולהפחית את אימוץ העיניים. כוונון התצוגות לצבעים חמים יותר במהלך השקיעה ועד הזריחה כדי לעזור לכם לישון.",
+						"link": {
                             "click": "לחצו",
                             "here": "כאן",
                             "rest": "כדי לשנות את טמפרטורת הצבע."
@@ -2438,7 +2445,6 @@
                 "title": "תקינות האבטחה",
                 "deviceName1": "יישומים ממקורות מהימנים",
                 "deviceName2": "מצב מפתח",
-                "deviceName3": "הודעת UAC",
                 "deviceName4": "זמינות אנטי-וירוס",
                 "deviceName5": "הצפנת כונן קשיח",
                 "deviceName6": "זמינות חומת אש",
@@ -3320,7 +3326,7 @@
         },
         "scanCompletePage": {
             "title": "System scan is complete",
-            "description": "Here is what we found on your Lenovo Vantage 720s.",
+            "description": "Here is what we found on your ",
             "scanRates": "Our scan rates your PC at: ",
             "summary": "Summary",
             "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
@@ -3355,7 +3361,7 @@
             "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
-            "title": "All is well with your Ideapad 720s",
+            "title": "All is well with your ",
             "serialNumber": "Serial number: ",
             "subTitle": "You are subscribed to Lenovo Smart Performance Service",
             "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
@@ -3508,7 +3514,8 @@
     "notification": {
         "menu": {
             "security": "האם אתם יודעים? גם אם אין לכם תוכנת אנטי-וירוס מותקנת, אנחנו עדיין מספקים הגנת אבטחה בסיסית למכשיר שלכם.",
-            "connectedHomeSecurity": "קבלו ניטור והתראות בזמן אמת לאבטחת הרשת הביתית. תהיו הראשונים לדעת אם אחד מהמכשירים החכמים שלכם מתמודד עם מתקפת אבטחה."
+            "connectedHomeSecurity": "קבלו ניטור והתראות בזמן אמת לאבטחת הרשת הביתית. תהיו הראשונים לדעת אם אחד מהמכשירים החכמים שלכם מתמודד עם מתקפת אבטחה.",
+            "hardwareScan": "כעת תוכלו לקבל את מצב התקינות של רכיב החומרה של המערכת."
         }
     },
     "appsForYou": {

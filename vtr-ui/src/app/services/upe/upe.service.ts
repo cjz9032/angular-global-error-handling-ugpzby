@@ -37,12 +37,6 @@ export class UPEService {
 		this.channelTags = this.commonService.getLocalStorageValue(LocalStorageKey.UPEChannelTags);
 	}
 
-	public filterItems(results, template, position) {
-		return results.filter((record) => {
-			return record.Template === template && record.Position === position;
-		}).sort((a, b) => a.Priority.localeCompare(b.Priority));
-	}
-
 	public async fetchUPEContent(params: IGetContentParam) {
 		if (!params.positions) {
 			throw new Error('invaild positions for fetching upe content');
@@ -106,18 +100,19 @@ export class UPEService {
 		try {
 			const httpResponse = await this.commsService.callUpeApi(
 				`${upeEssential.upeUrlBase}/upe/recommendation/v2/recommends`, queryParam
-			).toPromise() as any;
+			) as any;
 
-			if (httpResponse.status === 200 && httpResponse.body) {
+			if (httpResponse.status === 200 && httpResponse.body.results) {
 				return {
 					success: true,
 					content: httpResponse.body.results
 				};
 			} else {
 				content = `get article failed upon http request(unknown)`;
+				errorCode = httpResponse.status;
 			}
 		} catch (ex) {
-			content = `get article failed upon http request`;
+			content = ex.message;
 			errorCode = ex.status;
 		}
 
