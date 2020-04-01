@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { environment } from '../../../../environments/environment';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
@@ -12,7 +12,7 @@ declare var window;
 	templateUrl: './modal-about.component.html',
 	styleUrls: ['./modal-about.component.scss']
 })
-export class ModalAboutComponent implements OnInit, AfterViewInit {
+export class ModalAboutComponent implements OnInit {
 
 	buildVersion = environment.appVersion;
 	shellVersion: string;
@@ -39,10 +39,6 @@ export class ModalAboutComponent implements OnInit, AfterViewInit {
 		}
 		const jsBridgeVersion = this.shellService.getVersion();
 		this.bridgeVersion = (jsBridgeVersion) ? jsBridgeVersion : '';
-	}
-
-	ngAfterViewInit() {
-		setTimeout(() => { this.initModalFocus(); }, 0);
 	}
 
 	agreementClicked() {

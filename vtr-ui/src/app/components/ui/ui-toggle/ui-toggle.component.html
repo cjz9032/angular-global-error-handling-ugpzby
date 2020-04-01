@@ -1,7 +1,7 @@
 <button class="toggle-button"
 	[ngClass]="{'selected': value}"
 	tabindex="1"
-	id="{{onOffSwitchId+'_checkbox'}}"
+	id="{{value ? onOffSwitchId+'_toggle_on' : onOffSwitchId+'_toggle_off'}}"
 	(click)="sendChangeEvent($event)"
 	[value]="value"
 	[name]="onOffSwitchId"
