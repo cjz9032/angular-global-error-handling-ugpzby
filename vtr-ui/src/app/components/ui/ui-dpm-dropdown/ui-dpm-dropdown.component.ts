@@ -1,8 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, SimpleChanges, OnChanges } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { DropDownInterval } from 'src/app/data-models/common/drop-down-interval.model';
 import { DPMDropDownInterval } from 'src/app/data-models/common/dpm-drop-down-interval.model';
-import { SelectMultipleControlValueAccessor } from '@angular/forms';
 
 @Component({
 	selector: 'vtr-ui-dpm-dropdown',
@@ -37,7 +35,7 @@ export class UiDpmDropdownComponent implements OnInit {
 
 	private setDropDownValue() {
 		if (this.list) {
-			const interval = this.list.find((ddi: DropDownInterval) => {
+			const interval = this.list.find((ddi: DPMDropDownInterval) => {
 				return (this.value === ddi.value);
 			});
 			if (interval) {
@@ -59,7 +57,7 @@ export class UiDpmDropdownComponent implements OnInit {
 		}
 	}
 
-	public select(event: DropDownInterval) {
+	public select(event: DPMDropDownInterval) {
 		this.value = event.value;
 		this.text = event.text;
 		this.change.emit(event);
