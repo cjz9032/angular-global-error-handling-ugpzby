@@ -48,6 +48,9 @@ button:focus{
 			margin-bottom: 1rem;
 			display: flex;
 			align-items: center;
+            @media #{$high-contrast} {
+                border: 1px solid $highContrastGray;
+            }
 			.item-left {
 				position: relative;
 				cursor: pointer;

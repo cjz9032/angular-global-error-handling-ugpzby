@@ -2070,6 +2070,10 @@ button {
 			border-radius: 0.6rem;
 		}
 		.gaming-modal-fun {
+	            border-radius: .6rem;
+	            @media #{$high-contrast} {
+	                border: 1px solid $highContrastGray;
+	            }
 			.modal-loading {
 				font-size: 10rem;
 				color: $main;
@@ -2101,12 +2105,6 @@ button {
 						padding: 0.5rem 0 2rem 0;
 						line-height: 2rem;
 					}
-					@media #{$black-on-white} {
-						background: $gaming_darkest;
-					}
-					@media #{$white-on-black} {
-						background: $gaming_darkest;
-					}
 					.close {
 						width: 3.2rem;
 						height: 3.2rem;
@@ -2121,12 +2119,6 @@ button {
 						padding: 0;
 						letter-spacing: normal;
 						font-family: "SegoeUI";
-						@media #{$black-on-white} {
-							color: $gaming_lightest;
-						}
-						@media #{$white-on-black} {
-							color: $gaming_lightest;
-						}
 					}
 				}
 				.modal-body {
@@ -2135,12 +2127,6 @@ button {
 					overflow-y: auto;
 					overflow-x: hidden;
 					width: 100%;
-					@media #{$black-on-white} {
-						border: 0.1rem solid $gaming_darkest;
-					}
-					@media #{$white-on-black} {
-						border: 0.1rem solid $gaming_darkest;
-					}
 				}
 				.modal-footer {
 					padding: 0;

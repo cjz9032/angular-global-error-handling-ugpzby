@@ -146,7 +146,8 @@ $button_red_shadow: rgba(237, 88, 73, 0.25);
 $screen_light_15: rgba(255, 255, 255, 0.15);
 
 //gaming3.2.1 start ------------------------
-
+// $high-contrast gray
+$highContrastGray: #999999;
 //below are colors
 
 $blueFill: #257eff;
@@ -413,6 +414,7 @@ $mediaquery_XXL350X: "only screen and (min-width: 1601px) and (max-width: 4000px
 
 /*media query for high contrast mode*/
 $high-contrast-grey: #c0c0c0;
+$high-contrast: "screen and (-ms-high-contrast)";
 $black-on-white: "screen and (-ms-high-contrast: black-on-white)";
 $white-on-black: "screen and (-ms-high-contrast: white-on-black)";
 $screen_dark_01: rgba(0, 0, 0, 0.01);
