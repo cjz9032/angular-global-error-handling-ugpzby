@@ -343,9 +343,10 @@ $fontsize_xs: 1.4rem;
 }
 
 .bold-title-idea {
+	margin-top: -1rem;
 	::ng-deep .vtr-ui-switch-row.white-theme {
 		.title {
-			line-height: 3.0rem;
+			line-height: 3.5rem;
 			font-weight: $weight_bold !important;
 			font-size: $fontsize_xs !important;
 			color: $shade_blue !important;
