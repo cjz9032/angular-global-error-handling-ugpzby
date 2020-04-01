@@ -497,7 +497,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		}
 		@media #{$white-on-black} {
 			border: 0.1rem solid $light;
-			
+
 		}
 	}
 }
@@ -911,7 +911,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	}
 
 	&.tooltip {
-		font-size: 1.6rem;
+		font-size: $fontsize_xs;
 		border-radius: 1rem;
 
 		ul {
@@ -931,13 +931,13 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	.tooltip-inner {
 		background: $light;
 		border-radius: 1rem;
-		padding: 3rem;
-		color: $main_darker;
+		padding: 2.4rem;
+		color: $grey_dark;
 		text-align: left;
 		max-width: 40rem;
 
 		span {
-			font-weight: bold;
+			font-weight: $weight_600;
 		}
 
 		.reboot-text {
@@ -952,12 +952,12 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		}
 
 		.read {
-			color: $main;
+			color: $menu_hover;
 			text-decoration: underline;
 		}
 
 		.ignore {
-			color: $main;
+			color: $menu_hover;
 			text-decoration: underline;
 		}
 	}
