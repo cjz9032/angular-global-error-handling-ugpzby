@@ -413,17 +413,14 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 			// 	'Successfully got response from Bridge',
 			// 	JSON.stringify(res)
 			// );
-			if (
-				(!res.hasOwnProperty('state') || res.state != false) &&
-				res.last_scan_results
-			) {
+			if (res.lastscanresults) {
                 this.historyRes = {
 					Tune: res.Tune,
 					Boost: res.Boost,
 					Secure: res.Secure
 				};
                 // console.log(JSON.stringify(this.historyRes));
-                this.historyScanResults = res.last_scan_results || [];
+                this.historyScanResults = res.lastscanresults || [];
             } else {
 				this.historyScanResults = [];
 				this.historyRes = {};

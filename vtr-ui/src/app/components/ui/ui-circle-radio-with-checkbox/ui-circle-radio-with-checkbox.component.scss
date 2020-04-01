@@ -32,9 +32,15 @@
 
 		.checkbox-custom:checked+.checkbox-custom-label>.icomoon::before {
 			color: $foreground;
-
 		}
 
+		.checkbox-custom:disabled+.checkbox-custom-label>.icomoon::before {
+			color: $circle_checkbox_disabled;
+		}
+
+		.checkbox-custom:disabled:checked+.checkbox-custom-label>.icomoon::before {
+			color: #FFFFFF;
+		}
 
 		.checkbox-custom+.checkbox-custom-label {
 			position: absolute;
@@ -50,6 +56,13 @@
 			border-radius: 50%;
 		}
 
+		.checkbox-custom:disabled+.checkbox-custom-label {
+			border: 0.1rem solid $circle_checkbox_disabled;
+		}
+
+		.checkbox-custom:disabled:checked+.checkbox-custom-label {
+			background: $circle_checkbox_disabled;
+		}
 
 		.title {
 			position: absolute;
@@ -63,7 +76,9 @@
 			//top: 75px;
 			// white-space: nowrap;
 		}
-
+		.disabled-title {
+			color: $circle_checkbox_disabled;
+		}
 		.checkbox-custom:checked+.checkbox-custom-label {
 			background-color: $background;
 			@media #{$white-on-black}{
@@ -93,7 +108,7 @@
 
 		}
 
-		.icon-circle{
+		.icon-circle {
 			position: absolute;
 			right: -2.5rem;
 			top: 0.5rem;
@@ -105,9 +120,17 @@
 			}
 			@media #{$white-on-black} {
 				color: $light;
-
-	}
+			}
 		}
+
+		.check-circle-disabled {
+			color: $circle_checkbox_disabled !important;
+		}
+
+		.icon-circle-disabled {
+			color: $light !important;
+		}
+
 	}
 }
 
@@ -120,5 +143,8 @@
 	}
 	.icon-circle {
 		color: $light;
+	}
+	.check-circle-disabled {
+		color: $circle_checkbox_disabled !important;
 	}
 }
