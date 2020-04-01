@@ -30,6 +30,16 @@ export class AutoupdateSettingsComponent extends BaseComponent implements OnInit
 			this.deviceService.launchUri(path);
 		}
 	}
+
+	onQuestionMarkClick(tooltip, canOpen = false) {
+		if (tooltip) {
+			if (tooltip.isOpen()) {
+				tooltip.close();
+			} else if (canOpen) {
+				tooltip.open();
+			}
+		}
+	}
 }
 
 

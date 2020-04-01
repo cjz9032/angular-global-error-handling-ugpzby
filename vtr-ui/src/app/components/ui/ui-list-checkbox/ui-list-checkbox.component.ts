@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, HostListener } from '@angular/core';
 import { NgbTooltip, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
 import { SecureMath } from '@lenovo/tan-client-bridge';
@@ -43,6 +43,7 @@ export class UiListCheckboxComponent implements OnInit {
 
 	public notInstalledText = 'systemUpdates.notInstalled';
 	public notAvailableText = 'systemUpdates.notAvailable';
+	private currentToolTip;
 
 	constructor(
 		private commonService: CommonService,
@@ -60,35 +61,63 @@ export class UiListCheckboxComponent implements OnInit {
 		this.checkChange.emit($event);
 	}
 
-	onTooltipClick(update: AvailableUpdateDetail, tooltip: NgbTooltip) {
-		if (tooltip && !tooltip.isOpen()) {
-			this.packageID = update.packageID;
-			this.isIgnored = update.isIgnored;
-			this.severity = update.packageSeverity;
-			this.packageName = update.packageName;
-			this.isReadMeAvailable = false;
-			this.manufacturer = update.packageVendor;
-			this.version = update.packageVersion;
-			this.downloadSize = this.commonService.formatBytes(parseInt(update.packageSize, 10));
-			this.diskSpaceNeeded = this.commonService.formatBytes(parseInt(update.diskSpaceRequired, 10));
-			this.readMeUrl = update.readmeUrl;
-			this.packageRebootType = update.packageRebootType;
-			if (this.readMeUrl && this.readMeUrl.length > 0 && this.readMeUrl.startsWith('http', 0)) {
-				this.isReadMeAvailable = true;
-			}
-			this.installedVersion = update.currentInstalledVersion;
+	initSystemUpdateToolTip(update: AvailableUpdateDetail) {
+		this.packageID = update.packageID;
+		this.isIgnored = update.isIgnored;
+		this.severity = update.packageSeverity;
+		this.packageName = update.packageName;
+		this.isReadMeAvailable = false;
+		this.manufacturer = update.packageVendor;
+		this.version = update.packageVersion;
+		this.downloadSize = this.commonService.formatBytes(parseInt(update.packageSize, 10));
+		this.diskSpaceNeeded = this.commonService.formatBytes(parseInt(update.diskSpaceRequired, 10));
+		this.readMeUrl = update.readmeUrl;
+		this.packageRebootType = update.packageRebootType;
+		if (this.readMeUrl && this.readMeUrl.length > 0 && this.readMeUrl.startsWith('http', 0)) {
+			this.isReadMeAvailable = true;
+		}
+		this.installedVersion = update.currentInstalledVersion;
 
-			if (update.currentInstalledVersion === null || update.currentInstalledVersion === undefined) {
-				this.installedVersionStatus = 1; // notInstalledText;
-			} else if (update.currentInstalledVersion.trim() === '' || update.currentInstalledVersion.trim().length === 0) {
-				this.installedVersionStatus = 1; // notInstalledText;
-			} else if (update.currentInstalledVersion === '0') {
-				this.installedVersionStatus = 2; // notAvailableText;
-			} else {
-				this.installedVersionStatus = 0;
+		if (update.currentInstalledVersion === null || update.currentInstalledVersion === undefined) {
+			this.installedVersionStatus = 1; // notInstalledText;
+		} else if (update.currentInstalledVersion.trim() === '' || update.currentInstalledVersion.trim().length === 0) {
+			this.installedVersionStatus = 1; // notInstalledText;
+		} else if (update.currentInstalledVersion === '0') {
+			this.installedVersionStatus = 2; // notAvailableText;
+		} else {
+			this.installedVersionStatus = 0;
+		}
+	}
+
+	onTooltipClick(update: AvailableUpdateDetail, tooltip, canOpen = false) {
+		if (tooltip) {
+			if (tooltip.isOpen()) {
+				tooltip.close();
+			} else if (canOpen) {
+				this.initSystemUpdateToolTip(update);
+				tooltip.open();
+				this.currentToolTip = tooltip;
 			}
 		}
 	}
+
+	@HostListener('window:keyup', ['$event'])
+	onKeyUp(event: KeyboardEvent) {
+		if ((event.shiftKey && event.key === 'Tab') || event.key === 'Tab') {
+			const activeId = document.activeElement.id || '';
+			this.CloseToolTip(activeId);
+		}
+	}
+
+	CloseToolTip(activeId){
+		if(activeId && activeId.indexOf("su_item_question_mark_") < 0 &&
+			activeId.indexOf("su-package-readme-") < 0 &&
+			activeId.indexOf("su-ignore-update-") < 0 &&
+			activeId.indexOf("su-unignore-update-") < 0 && this.currentToolTip && this.currentToolTip.isOpen()){
+				this.currentToolTip.close();
+		}
+	}
+
 
 	public onReadMoreClick($event) {
 		this.readMore.emit($event);
