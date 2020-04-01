@@ -16,6 +16,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
 import { LanguageService } from 'src/app/services/language/language.service';
 import { MetricService } from 'src/app/services/metric/metric.service';
+import { GamingScenario } from 'src/app/enums/gaming-scenario.enum';
 
 @Component({
 	selector: 'vtr-modal-welcome',
@@ -25,6 +26,7 @@ import { MetricService } from 'src/app/services/metric/metric.service';
 })
 export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	public segmentConst = SegmentConst;
+	public gamingScenarios= GamingScenario;
 	public vantageToolbarStatus = new FeatureStatus(false, true);
 	progress = 49;
 	isInterestProgressChanged = false;
@@ -39,6 +41,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		}
 	};
 	usageType = null;
+	gamingScenario = null;
 	interests = [];
 	hideMoreInterestBtn = false;
 	welcomeStart: any = new Date();
@@ -170,6 +173,16 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 				this.logger.info(`Won't send Vantage toolbar metric for it is not available.`);
 			}
 
+			if (this.deviceService.isGaming && this.gamingScenario) {
+				const gamingScenarioData = {
+					ItemType: 'SettingUpdate',
+					SettingName: 'Gaming Usage Scenario',
+					SettingValue: this.gamingScenario,
+					SettingParent: 'WelcomePage'
+				};
+				this.metrics.sendAsync(gamingScenarioData);
+			}
+
 			const usageData = {
 				ItemType: 'SettingUpdate',
 				SettingName: 'UsageType',
@@ -268,6 +281,10 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		this.selfSelectService.usageType = this.usageType;
 	}
 
+	saveGamingScenario(value) {
+		this.gamingScenario = value;
+	}
+
 	saveToolbar($event) {
 		this.vantageToolbar = $event.target.checked;
 	}
@@ -337,7 +354,11 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
 	getNextIdById(id: string, reverse?: boolean): string {
 		const idArrayPage1 = ['tutorial_next_btn'];
-		let idArrayPage2 = this.deviceService.isGaming ? [] : [
+		let idArrayPage2 = this.deviceService.isGaming ? [
+			'gaming-scenario-choose-gaming',
+			'gaming-scenario-choose-gamingAndWork',
+			'gaming-scenario-choose-nonGaming'
+		] : [
 			'segment-choose-personal-use',
 			'segment-choose-business-use',
 			'segment-choose-custom-use',
