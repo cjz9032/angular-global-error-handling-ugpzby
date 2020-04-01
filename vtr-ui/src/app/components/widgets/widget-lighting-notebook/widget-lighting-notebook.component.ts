@@ -6,6 +6,7 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 import { EventTypes } from '@lenovo/tan-client-bridge';
 import { LightingDataList } from 'src/app/data-models/gaming/lighting-new-version/lighting-data-list';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { MetricService } from '../../../../../src/app/services/metric/metric.service';
 
 @Component({
   selector: 'vtr-widget-lighting-notebook',
@@ -34,7 +35,6 @@ export class WidgetLightingNotebookComponent implements OnInit {
   public isEffectChange:boolean;
   public isValChange:boolean = true;
   public showOptions:boolean;
-  private metrics:any;
 
   @HostListener('document:click', ['$event']) onClick(event) {
     this.isSetDefault =false;
@@ -45,10 +45,9 @@ export class WidgetLightingNotebookComponent implements OnInit {
     private commonService: CommonService,
     private gamingLightingService: GamingLightingService,
     public shellServices: VantageShellService,
-    private logger: LoggerService
-  ) {
-    this.metrics = this.shellServices.getMetrics();
-   }
+    private logger: LoggerService,
+    private metrics: MetricService
+  ) {}
 
   ngOnInit() {
     this.initProfileId();
@@ -623,8 +622,8 @@ export class WidgetLightingNotebookComponent implements OnInit {
           metricData[key] = metricsdata[key];
         }
       });
-      if (this.metrics && this.metrics.sendAsync) {
-        this.metrics.sendAsync(metricData);
+      if (this.metrics && this.metrics.sendMetrics) {
+        this.metrics.sendMetrics(metricData);
       }
     } catch (error) {}
   }

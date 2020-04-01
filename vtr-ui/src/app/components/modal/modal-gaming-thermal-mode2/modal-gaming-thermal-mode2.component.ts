@@ -12,6 +12,7 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 import { EventTypes } from '@lenovo/tan-client-bridge';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
+import { MetricService } from 'src/app/services/metric/metric.service';
 
 @Component({
   selector: 'vtr-modal-gaming-thermal-mode2',
@@ -29,7 +30,6 @@ export class ModalGamingThermalMode2Component implements OnInit {
   public autoSwitchStatus = false;
   public isThermalModeSetted = false;
   public isPerformancOCSetted = false;
-  private metrics: any;
   // @Output() thermalModeMsg = new EventEmitter<number>();
   @Output() OCSettingsMsg = new EventEmitter<number>();
 
@@ -42,7 +42,8 @@ export class ModalGamingThermalMode2Component implements OnInit {
     private thermalModeService: GamingThermalModeService,
     private gamingOCService: GamingOCService,
     private logger: LoggerService,
-    private timer: TimerService
+    private timer: TimerService,
+    private metrics: MetricService
   ) {
     // get capabilities from cache
     this.gamingCapabilities.desktopType = this.gamingCapabilityService.getCapabilityFromCache(LocalStorageKey.desktopType);
@@ -72,7 +73,6 @@ export class ModalGamingThermalMode2Component implements OnInit {
     this.getPerformanceOCSetting();
     this.getAutoSwitchStatus();
     this.registerThermalModeChangeEvent();
-    this.metrics = this.shellServices.getMetrics();
     this.timer.start();
   }
 
@@ -120,8 +120,8 @@ export class ModalGamingThermalMode2Component implements OnInit {
 			PageContext: 'ThermalMode settings page',
 			PageDuration: this.timer.stop()
     };
-    if (this.metrics && this.metrics.sendAsync) {
-      this.metrics.sendAsync(pageViewMetrics);
+    if (this.metrics && this.metrics.sendMetrics) {
+      this.metrics.sendMetrics(pageViewMetrics);
     }
   }
 
@@ -343,8 +343,8 @@ export class ModalGamingThermalMode2Component implements OnInit {
           metricData[key] = metricsdata[key];
         }
       });
-      if (this.metrics && this.metrics.sendAsync) {
-        this.metrics.sendAsync(metricData);
+      if (this.metrics && this.metrics.sendMetrics) {
+        this.metrics.sendMetrics(metricData);
       }
     } catch (error) {}
   }
