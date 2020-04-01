@@ -10,6 +10,15 @@ import { TranslateService } from '@ngx-translate/core';
 import { SegmentConst } from '../self-select/self-select.service';
 import { LocalInfoService } from '../local-info/local-info.service';
 import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
+interface IContentGroup {
+	positionA: any[];
+	positionB: FeatureContent;
+	positionC: FeatureContent;
+	positionD: FeatureContent;
+	positionE: FeatureContent;
+	positionF: FeatureContent;
+}
+
 @Injectable({
 	providedIn: 'root'
 })
@@ -22,25 +31,26 @@ export class DashboardService {
 	public isShellAvailable = false;
 	public isDashboardDisplayed = false;
 	private commonService: CommonService;
-	public heroBannerItems = [];
-	public cardContentPositionB: FeatureContent = new FeatureContent();
-	public cardContentPositionC: FeatureContent = new FeatureContent();
-	public cardContentPositionD: FeatureContent = new FeatureContent();
-	public cardContentPositionE: FeatureContent = new FeatureContent();
-	public cardContentPositionF: FeatureContent = new FeatureContent();
-	public heroBannerItemsOnline = [];
-	public cardContentPositionBOnline: FeatureContent;
-	public cardContentPositionCOnline: FeatureContent;
-	public cardContentPositionDOnline: FeatureContent;
-	public cardContentPositionEOnline: FeatureContent;
-	public cardContentPositionFOnline: FeatureContent;
+	offlineCardContent: IContentGroup = {
+		positionA: null,
+		positionB: null,
+		positionC: null,
+		positionD: null,
+		positionE: null,
+		positionF: null
+	};
+	onlineCardContent: IContentGroup = {
+		positionA: null,
+		positionB: null,
+		positionC: null,
+		positionD: null,
+		positionE: null,
+		positionF: null
+	};
 	translateString: any;
 
 	welcomeText = '';
 	welcomeTextWithoutUserName = '';
-
-	public cmsContentCache : any = null;
-	public cmsLanguageCache : string = null;
 
 	constructor(
 		shellService: VantageShellService,
@@ -48,7 +58,7 @@ export class DashboardService {
 		private deviceService: DeviceService,
 		private translate: TranslateService,
 		private localInfoService: LocalInfoService
-		) {
+	) {
 		this.dashboard = shellService.getDashboard();
 		this.eyeCareMode = shellService.getEyeCareMode();
 		this.sysinfo = null;
@@ -225,17 +235,17 @@ export class DashboardService {
 		if (!this.translateString) {
 			return;
 		}
-		this.heroBannerItems = [
+		this.offlineCardContent.positionA = [
 			{
 				albumId: 1,
 				id: 1,
 				source: 'Vantage',
-				title: this.translateString['dashboard.offlineInfo.welcomeToVantage'] ,
+				title: this.translateString['dashboard.offlineInfo.welcomeToVantage'],
 				url: 'assets/cms-cache/offline/Default-SMB-Welcome.jpg',
 				ActionLink: null
 			}
 		];
-		this.cardContentPositionB = {
+		this.offlineCardContent.positionB = {
 			Title: this.translateString['common.menu.support'],
 			ShortTitle: '',
 			Description: '',
@@ -254,7 +264,7 @@ export class DashboardService {
 			isLocal: true
 		};
 
-		this.cardContentPositionC = {
+		this.offlineCardContent.positionC = {
 			Title: this.translateString['common.menu.device.sub2'],
 			ShortTitle: '',
 			Description: '',
@@ -273,7 +283,7 @@ export class DashboardService {
 			isLocal: true
 		};
 
-		this.cardContentPositionD = {
+		this.offlineCardContent.positionD = {
 			Title: this.translateString['dashboard.offlineInfo.systemHealth'],
 			ShortTitle: '',
 			Description: '',
@@ -292,7 +302,7 @@ export class DashboardService {
 			isLocal: true
 		};
 
-		this.cardContentPositionE = {
+		this.offlineCardContent.positionE = {
 			Title: this.translateString['settings.preferenceSettings'],
 			ShortTitle: '',
 			Description: '',
@@ -311,7 +321,7 @@ export class DashboardService {
 			isLocal: true
 		};
 
-		this.cardContentPositionF = {
+		this.offlineCardContent.positionF = {
 			Title: this.translateString['systemUpdates.title'],
 			ShortTitle: '',
 			Description: '',

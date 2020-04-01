@@ -50,7 +50,7 @@
 													</div>
 													<div class="col update-info">
 													<span class="title"
-														[ngClass]="{'light-title':item.lightTitle}">
+														[ngClass]="{'light-title':$any(item).lightTitle}">
 														<span id="{{'su_history_'+item.packageID}}" role="listitem"><b>{{item.packageDesc}}</b> - {{item.version}}</span>
 														<div class="row">
 																<div class="col">
@@ -64,7 +64,7 @@
 																	<div class="col">
 																		<span class="installation-details">
 																			{{'systemUpdates.installationHistory.packageSize' | translate}}
-																			{{commonService.formatBytes(item.packageSize)}}
+																			{{commonService.formatBytes($any(item).packageSize)}}
 																		</span>
 																	</div>
 																</div>

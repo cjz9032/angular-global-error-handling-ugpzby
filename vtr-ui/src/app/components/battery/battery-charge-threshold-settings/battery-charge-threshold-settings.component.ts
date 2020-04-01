@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { SecureMath } from '@lenovo/tan-client-bridge';
 import { ChargeThreshold } from 'src/app/data-models/device/charge-threshold.model';
 import { CommonService } from 'src/app/services/common/common.service';
@@ -24,7 +24,8 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 	chargeOptions: number[] = [40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100];
 	startAtChargeOptions: number[] = this.chargeOptions.slice(0, this.chargeOptions.length - 1);
 	stopAtChargeOptions: number[] = this.chargeOptions.slice(1, this.chargeOptions.length);
-
+	hyphen = '-'
+	startAtChargeOption = "startAtChargeOption"
 
 	// Random number is used to have unique id of each input field
 	randomNumber: number = Math.floor(new Date().valueOf() * SecureMath.random());
@@ -68,4 +69,6 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 		}
 		this.autoChecked.emit(bctInfo);
 	}
+
+
 }

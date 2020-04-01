@@ -56,11 +56,11 @@
 								</div>
 								<div class="col-5 align-items-center text-right sm-device-responsive row flex-wrap-reverse justify-content-end">
 									<vtr-ui-switch-onoff
-										[ngClass]="{'switch-disable': data.isLWSEnabled === undefined || switchDisabled}"
+										[ngClass]="{'switch-disable': data.isLWSEnabled === undefined || data.wifiSecurity?.changeWifiSecurity}"
 										name="wifisecurity"
 										[value]="data.isLWSEnabled"
 										[onOffSwitchId]="'sa-ws-switch'"
-										[disabled]="data.isLWSEnabled === undefined || switchDisabled"
+										[disabled]="data.isLWSEnabled === undefined || data.wifiSecurity?.changeWifiSecurity"
 										(toggle)="noticeToggleChange()"></vtr-ui-switch-onoff>
 								</div>
 							</div>
@@ -84,11 +84,11 @@
 														<fa-icon [icon]="['fal', 'wifi']"
 															class="menu-pointer"></fa-icon>
 														<span class="circle"
-															[ngClass]="{'green':history.good == 0,'red':history.good != 0}">
+															[ngClass]="{'green':history.good == '0','red':history.good != '0'}">
 															<fa-icon [icon]="['fas', 'check']"
-																*ngIf="history.good == 0"></fa-icon>
+																*ngIf="history.good == '0'"></fa-icon>
 															<fa-icon [icon]="['fas', 'times']"
-																*ngIf="history.good != 0"></fa-icon>
+																*ngIf="history.good != '0'"></fa-icon>
 														</span>
 													</span>
 												</div>

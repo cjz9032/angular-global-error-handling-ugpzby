@@ -5,12 +5,10 @@
 		<h1 id="ds-threshold-popup"
 			attr.aria-label="ds-threshold-popup"
 			[innerHTML]="title | translate"></h1>
-		<p role="text"
-			id="ds-thresholdpopup-description1"
+		<p id="ds-thresholdpopup-description1"
 			attr.aria-label="ds-thresholdpopup-description1"
 			[innerHTML]="description1 | translate"></p>
-		<p role="text"
-			id="ds-thresholdpopup-description2"
+		<p id="ds-thresholdpopup-description2"
 			attr.aria-label="ds-thresholdpopup-description2"
 			[innerHTML]="description2 | translate"></p>
 		<hr aria-hidden="true">
@@ -24,16 +22,16 @@
 				{{positiveResponseText | translate}}
 			</button>
 			<a id="battery-threshold-popup-cancel"
+				href="javascript:void();"
 				attr.aria-label="battery-threshold-popup-cancel"
 				role="button"
 				tabindex="0"
-				(keydown.enter)="closeModal()"
 				(click)="closeModal()"
 				class="cancel-link active">{{negativeResponseText | translate}}</a>
 		</div>
 	</div>
 	<a role="link"
-		href="javascript:;"
+		href="javascript:void();"
 		class="close-btn"
 		vtrMetrics
 		metricsItem="ThresholdCloseButton"
@@ -42,8 +40,6 @@
 		tabindex="0"
 		id="ds-threshold-popup-close-button"
 		aria-label="close modal"
-		(click)="closeModal()"
-		(keydown.enter)="closeModal()"
 		(click)="closeModal()">
 		<img [src]=" 'assets/icons/Close.svg' | svgInline | async"
 			alt=""

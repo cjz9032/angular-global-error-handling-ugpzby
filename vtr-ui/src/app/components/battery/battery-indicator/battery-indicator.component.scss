@@ -106,7 +106,6 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 			}
 			@media #{$white-on-black} {
 						border:none;
-
 			}
 		}
 
@@ -137,13 +136,10 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 				@media #{$black-on-white} {
 					background: $light;
 					border: 0.1rem solid $dark;
-
 				}
 				@media #{$white-on-black} {
 					background: $dark;
 					border: 0.1rem solid $light;
-
-
 				}
 			}
 
@@ -164,13 +160,9 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 					flex-shrink: 0;
 					@media #{$black-on-white} {
 						background: $dark;
-
-
 					}
 					@media #{$white-on-black} {
 						background: $light;
-
-
 					}
 				}
 

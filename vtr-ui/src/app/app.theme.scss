@@ -125,6 +125,7 @@ $note_border: #ecf0f1;
 $dim_gray: #707070;
 $solitude: #fbfcfc;
 $gray_out: #99A4AE;
+$QA_dark: #194A65;
 
 // updated button color, hover & active effect
 $btn_primary_color: #0073ff;
@@ -198,6 +199,8 @@ $weight_bold: 700;
 $weight_black: 900;
 $weight_600: 600;
 
+$font_family_semilight: 'Segoe UI Semilight';
+
 $shift_up_small: -6rem;
 $shift_up_medium: -14rem;
 
@@ -226,6 +229,7 @@ $gradient_gray: linear-gradient(90deg, $grey_lighter 0%, $light 100%);
 $blue_gradient: linear-gradient(90deg, $blue-light 0%, $blue-light 100%);
 $green_gradient: linear-gradient(135deg, $green_darker 0%, $green_light 100%);
 $black_gradient: linear-gradient(122deg, $black_dark 0%, $black_light 100%);
+$gradient_blue: linear-gradient(270deg, $button_gradient_end 0%, $button_gradient_start 100%);
 
 //RESPONSIVE EFFORT - WIP - Using the font sizes below will standardize all font sizes throughout the app
 $fontsize_xl4: 4.6rem;
@@ -418,3 +422,4 @@ $high-contrast-white-disabled: #600000;
 //$high-contrast-grey: #767879;
 $high-contrast-black-textselected: #1aebff;
 $high-contrast-black-disabled: #3be23b;
+$high-contrast-black-yellow: #FFFF00;

@@ -27,7 +27,7 @@
 								*ngIf="item.status !== undefined && item.status !== '' && item.status !== 4">
 								<div class="icon-bkg"
 									id="{{'icon-' + getItemStatusIconClass(item) + '-' + item.id}}">
-									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
+									<fa-icon [icon]="['fas', $any(getItemStatusIconClass(item))]"></fa-icon>
 								</div>
 							</div>
 							<div *ngIf="item.status === 4"
@@ -92,7 +92,7 @@
 								*ngIf="item.status !== undefined && item.status !== '' && item.status !== 4 && item.status !== 7">
 								<div class="icon-bkg"
 									id="{{'icon-' + getItemStatusIconClass(item) + '-' + item.id}}">
-									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
+									<fa-icon [icon]="['fas', $any(getItemStatusIconClass(item))]"></fa-icon>
 								</div>
 							</div>
 							<div *ngIf="item.status === 4"
@@ -154,7 +154,7 @@
 								*ngIf="item.status !== undefined && item.status !== '' && item.status !== 4">
 								<div class="icon-bkg"
 									id="{{'icon-' + getItemStatusIconClass(item) + '-' + item.id}}">
-									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
+									<fa-icon [icon]="['fas', $any(getItemStatusIconClass(item))]"></fa-icon>
 								</div>
 							</div>
 							<div *ngIf="item.status === 4"
@@ -206,7 +206,7 @@
 								*ngIf="item.status !== undefined && item.status !== '' && item.status !== 4">
 								<div class="icon-bkg"
 									id="{{'icon-' + getItemStatusIconClass(item) + '-' + item.id}}">
-									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
+									<fa-icon [icon]="['fas', $any(getItemStatusIconClass(item))]"></fa-icon>
 								</div>
 
 							</div>
@@ -264,7 +264,7 @@
 								*ngIf="item.status !== undefined && item.status !== '' && item.status !== 4">
 								<div class="icon-bkg"
 									id="{{'icon-' + getItemStatusIconClass(item) + '-' + item.id}}">
-									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
+									<fa-icon [icon]="['fas', $any(getItemStatusIconClass(item))]"></fa-icon>
 								</div>
 							</div>
 							<div *ngIf="item.status === 4"
@@ -316,7 +316,7 @@
 								*ngIf="item.status !== undefined && item.status !== '' && item.status !== 4">
 								<div class="icon-bkg"
 									id="{{'icon-' + getItemStatusIconClass(item) + '-' + item.id}}">
-									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
+									<fa-icon [icon]="['fas', $any(getItemStatusIconClass(item))]"></fa-icon>
 								</div>
 
 							</div>

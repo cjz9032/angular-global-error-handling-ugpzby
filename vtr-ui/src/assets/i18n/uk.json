@@ -1332,10 +1332,10 @@
                             "label": "ПОТОЧНИЙ ПЛАН"
                         },
                         "profile": {
-                            "title": "PLAN PROFILE:",
-                            "performance": "Max performance:",
-                            "temperature": "Max system temperature:",
-                            "usage": "Max power usage:"
+                            "title": "ПРОФІЛЬ ПЛАНУ:",
+                            "performance": "Макс. потужність:",
+                            "temperature": "Макс. температура системи:",
+                            "usage": "Макс. енергоспоживання:"
                         }
                     }
                 },
@@ -1514,8 +1514,8 @@
                     "title": "Дисплей",
                     "displayColorTemperature": {
                         "title": "Температура кольору екрана",
-                        "description": "Щоб очі менше втомлювалися, ви можете налаштувати колірну температуру екрана, щоб відфільтровувати синє світло. У період від заходу до сходу сонця встановлюйте на екрані тепліші кольори – це допоможе вам краще заснути.",
-                        "link": {
+						"description": "Щоб очі менше втомлювалися, ви можете налаштувати колірну температуру екрана, щоб відфільтровувати синє світло. У період від заходу до сходу сонця встановлюйте на екрані тепліші кольори – це допоможе вам краще заснути.",
+						"link": {
                             "click": "Натисніть",
                             "here": "тут",
                             "rest": "щоб змінити колірну температуру."
@@ -3325,7 +3325,7 @@
         },
         "scanCompletePage": {
             "title": "System scan is complete",
-            "description": "Here is what we found on your Lenovo Vantage 720s.",
+            "description": "Here is what we found on your ",
             "scanRates": "Our scan rates your PC at: ",
             "summary": "Summary",
             "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
@@ -3360,7 +3360,7 @@
             "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
-            "title": "All is well with your Ideapad 720s",
+            "title": "All is well with your ",
             "serialNumber": "Serial number: ",
             "subTitle": "You are subscribed to Lenovo Smart Performance Service",
             "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",

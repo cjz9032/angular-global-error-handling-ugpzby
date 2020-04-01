@@ -46,7 +46,7 @@ export class DialogService {
 		}
 	}
 
-	wifiSecurityLocationDialog(wifiSecurity: WifiSecurity): NgbModalRef | undefined {
+	wifiSecurityLocationDialog(wifiSecurity: WifiSecurity) {
 		if (this.modalService.hasOpenModals()) {
 			return;
 		}
@@ -69,7 +69,11 @@ export class DialogService {
 					modal.close(true);
 				}
 			});
-			return modal;
+			modal.result.then((res) => {
+				if (res === 'cancelClick' && wifiSecurity && wifiSecurity.state === 'enabled') {
+					wifiSecurity.disableWifiSecurity();
+				}
+			});
 		}
 	}
 
