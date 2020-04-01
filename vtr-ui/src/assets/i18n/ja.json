@@ -795,6 +795,7 @@
             "back": "戻る",
             "on": "ON",
             "off": "OFF",
+            "close": "閉じる",
             "collapse": "折りたたみ",
             "expand": "展開",
             "loader": "取得ステータス",

@@ -20,7 +20,7 @@ export class UiButtonComponent implements OnInit, AfterViewInit {
 
 	@Input() metricsItem: string;
 	@Input() metricsParent: string;
-	@Input() metricsValue: string;
+	@Input() metricsValue: any;
 	@Input() metricsEvent = 'FeatureClick';
 	@Input() metricsParam: string;
 	@Input() metricsItemPosition: string;

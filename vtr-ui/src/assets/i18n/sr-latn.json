@@ -795,6 +795,7 @@
             "back": "NAZAD",
             "on": "ON",
             "off": "OFF",
+            "close": "Zatvori",
             "collapse": "Skupi",
             "expand": "Raširi",
             "loader": "Status <br> preuzimanja",

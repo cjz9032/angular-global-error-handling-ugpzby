@@ -795,6 +795,7 @@
             "back": "INDIETRO",
             "on": "ON",
             "off": "OFF",
+            "close": "Chiudi",
             "collapse": "Riduci",
             "expand": "Espandi",
             "loader": "Stato di<br> recupero",

@@ -1,6 +1,6 @@
 {
   "name": "vtr-ui",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "scripts": {
     "build:dev": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build -c=dev",
     "build:dev1": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng test --watch=false --browsers=ChromeHeadless --code-coverage",
@@ -36,6 +36,7 @@
     "@angular/compiler": "~9.1.0",
     "@angular/core": "~9.1.0",
     "@angular/forms": "~9.1.0",
+    "@angular/localize": "^9.1.0",
     "@angular/platform-browser": "~9.1.0",
     "@angular/platform-browser-dynamic": "~9.1.0",
     "@angular/router": "~9.1.0",
@@ -101,7 +102,7 @@
     "recursive-readdir": "^2.2.2",
     "standard-version": "7.1.0",
     "ts-node": "^8.7.0",
-    "tslint": "^6.0.0",
+    "tslint": "^6.1.0",
     "typescript": "~3.7.5"
   },
   "husky": {

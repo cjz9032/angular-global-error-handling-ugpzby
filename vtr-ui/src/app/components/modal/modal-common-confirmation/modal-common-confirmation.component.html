@@ -8,7 +8,9 @@
 		id="modal_confirm_close"
 		role="button"
 		class="close-btn"
-		(click)="onCancelClick($event)">
+		(click)="onCancelClick($event)"
+		tabindex="0"
+		(keydown.enter)="onCancelClick($event)">
 		<img [src]=" 'assets/icons/Close.svg' | svgInline | async"
 			alt=""
 			srcset="">
@@ -49,6 +51,8 @@
 				[metricsParent]="metricsParent"
 				class="btn btn-default modal-button-cancel"
 				id="modal_confirm_cancel"
+				tabindex="0"
+				(keydown.enter)="onCancelClick($event)"
 				(click)="onCancelClick($event)">
 				{{CancelText | translate}}
 			</div>

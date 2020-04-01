@@ -111,6 +111,7 @@ export class SupportService {
 		const aboutModal: NgbModalRef = this.modalService.open(ModalAboutComponent, {
 			backdrop: true,
 			centered: true,
+			ariaLabelledBy: 'about-modal-basic-title',
 			windowClass: 'About-Modal'
 		});
 	}

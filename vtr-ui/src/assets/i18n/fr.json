@@ -795,6 +795,7 @@
             "back": "RETOUR",
             "on": "ON",
             "off": "OFF",
+            "close": "Fermer",
             "collapse": "Réduire",
             "expand": "Développer",
             "loader": "Récupération du statut <br>",

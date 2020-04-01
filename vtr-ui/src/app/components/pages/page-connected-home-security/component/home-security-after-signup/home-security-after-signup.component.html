@@ -70,7 +70,7 @@
 					(onClick)="common.upgrade()"
 					[isDisabled]="!common"
 					linkId="chs-btn-buyNow"
-					btnHeight=true
+					[btnHeight]=true
 					[label]="'homeSecurity.overview.buyNow' | translate">
 				</vtr-ui-button>
 				<vtr-ui-button *ngIf="account?.state === 'standardExpired'"
@@ -79,7 +79,7 @@
 					(onClick)="common.upgrade()"
 					[isDisabled]="!common"
 					linkId="chs-btn-renew"
-					btnHeight=true
+					[btnHeight]=true
 					[label]="'homeSecurity.overview.renewNow' | translate">
 				</vtr-ui-button>
 				<vtr-ui-button
@@ -88,7 +88,7 @@
 					(onClick)="common.upgrade()"
 					[isDisabled]="!common"
 					linkId="chs-btn-extendNow"
-					btnHeight=true
+					[btnHeight]=true
 					[label]="'homeSecurity.overview.extendNow' | translate">
 				</vtr-ui-button>
 			</div>
@@ -111,7 +111,7 @@
 				(onClick)="common.openCoronet()"
 				[isDisabled]="!common?.connectedHomeSecurity"
 				linkId="chs-btn-goToDashboard"
-				btnHeight=true
+				[btnHeight]=true
 				[label]="'homeSecurity.overview.goDashboard' | translate">
 			</vtr-ui-button>
 		</div>
@@ -129,7 +129,7 @@
 				[isDisabled]="!common?.connectedHomeSecurity"
 				linkId="chs-btn-disconnect"
 				buttonColor="red"
-				btnHeight=true
+				[btnHeight]=true
 				[label]="'homeSecurity.overview.disconnect' | translate">
 			</vtr-ui-button>
 		</div>
