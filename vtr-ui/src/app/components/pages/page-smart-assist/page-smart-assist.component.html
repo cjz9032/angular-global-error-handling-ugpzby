@@ -74,7 +74,7 @@
 											</span>
 										</div>
 										<!-- login distance sensitivity adjust -->
-										<div class="pl-5 bold-title no-border-bottom pb-4"
+										<div class="pl-5 bold-title-idea no-border-bottom pb-4"
 											*ngIf="intelligentSecurity.isDistanceSensitivityVisible && zeroTouchLoginShowAdvancedSection">
 											<vtr-ui-row-switch [switchId]="'smartAssist-intelligentSecurity-zeroTouchLogin-distanceSensitivityAutoAdjusting'"
 												[title]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.title' | translate"												
@@ -86,7 +86,7 @@
 												[disabled]="!intelligentSecurity.isZeroTouchLoginEnabled"
 												[toolTipStatus]='true'>
 												<div class="col text-wrap zeroTouch-DistanceAdjust">
-													<div class="mt-3 zeroTouchReadMore">
+													<div class="zeroTouchReadMore">
 														<p *ngIf="intelligentSecurity.isZeroTouchLoginAdjustEnabled"
 															id="zeroTouchLogin-DistanceAdjust-statusOn"
 															role="text">
@@ -433,7 +433,7 @@
 											</div>
 										</div>
 										<!-- distance sensitivity adjusting -- ideapad section -->
-										<div class="pl-5 bold-title no-border-bottom pb-4"
+										<div class="pl-5 bold-title-idea no-border-bottom pb-4"
 											*ngIf="zeroTouchLockShowAdvancedSection">
 											<vtr-ui-row-switch [switchId]="'smartAssist-intelligentSecurity-zeroTouchLock-distanceSensitivityAutoAdjusting'"
 												*ngIf="zeroTouchPresenceLeaveDistanceAutoAdjustCapability"
@@ -446,7 +446,7 @@
 												[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || !hsaIntelligentSecurity.capacity"
 												[toolTipStatus]='true'>
 												<div class="col text-wrap zeroTouch-DistanceAdjust">
-													<div class="mt-3 zeroTouchReadMore">
+													<div class="zeroTouchReadMore">
 														<p id="zeroTouchLock-DistanceAdjust-statusOn"
 															*ngIf="hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust"
 															role="text">
@@ -638,10 +638,20 @@
 												{{'device.smartAssist.intelligentSecurity.note.description4' | translate}}
 											</p>
 											<div class="ml-4">
-												<p id="smart-assist-intelligent-security-note-desc2a"
-													role="text">
-													{{'device.smartAssist.intelligentSecurity.note.description5a' | translate}}
-												</p>
+												<div class="note-italic">
+													<span id="smart-assist-intelligent-security-note-desc2a1"
+														role="text">
+														{{'device.smartAssist.intelligentSecurity.note.description5a1' | translate}}
+													</span>
+													<i id="smart-assist-intelligent-security-note-desc2a2"
+														role="text">
+														{{'device.smartAssist.intelligentSecurity.note.description5a2' | translate}}
+													</i>
+													<span id="smart-assist-intelligent-security-note-desc2a3"
+														role="text">
+														{{'device.smartAssist.intelligentSecurity.note.description5a3' | translate}}
+													</span>
+												</div>
 												<p id="smart-assist-intelligent-security-note-desc2b"
 													role="text">
 													{{'device.smartAssist.intelligentSecurity.note.description5b' | translate}}

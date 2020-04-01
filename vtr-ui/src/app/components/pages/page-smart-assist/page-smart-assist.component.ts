@@ -63,7 +63,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	public isSuperResolutionLoading = true;
 	public superResolution = new FeatureStatus(false, true);
 	public hsaIntelligentSecurity = new HsaIntelligentSecurityResponse(false, false);
-	public image = '/assets/images/smart-assist/intelligent-security/HPDv20.png';
+	public image = '';
 	public zeroTouchLoginShowAdvancedSection: boolean;
 	public zeroTouchLockShowAdvancedSection: boolean;
 	public zeroTouchPresenceLeaveDistanceCapability = false;
@@ -294,6 +294,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				this.hsaIntelligentSecurity = this.smartAssistCapability.isHsaIntelligentSecuritySupported;
 				this.getHsaIntelligentSecurityStatus();
 			}
+			this.image = '/assets/images/smart-assist/intelligent-security/HPD_Image.png';
 			this.smartAssistCache.image = this.image;
 			this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
 		}

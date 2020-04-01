@@ -1936,7 +1936,7 @@
 				},
 				"distanceSensitivityAdjustingForIdea": {
 					"title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-					"captionOn": "Enable this feature to automatically adjust the detecting distance of movements to wake up the system. Turn it off, you can maually adjust the dectecting sensitivity based on your preference.",
+					"captionOn": "Enable this feature to automatically adjust the detecting distance of movements to wake up the system. Turn it off to manually adjust the detecting sensitivity based on your preference.",
 					"captionOff": "When this feature is diabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
 					"options": {
 						"near": "Near",
@@ -1960,7 +1960,9 @@
 					"description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect any personal data.",
 					"description3": "1. To use above functions, please adjust your screen to an approriate angle so that your face can be recognized.",
 					"description4": "2. Above functions are not supported when:",
-					"description5a": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, Please refer to User Guide that comes with it.",
+					"description5a1": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to ",
+					"description5a2": "User Guide ",
+					"description5a3": "that comes with it.",
 					"description5b": "b. Your computer is in hibernation mode or has been turned off.",
 					"description6": "3. If the Airplane mode is enabled on your computer, these features are disabled.",
 					"description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."

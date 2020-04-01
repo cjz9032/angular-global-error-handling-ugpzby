@@ -342,6 +342,17 @@ $fontsize_xs: 1.4rem;
 	}
 }
 
+.bold-title-idea {
+	::ng-deep .vtr-ui-switch-row.white-theme {
+		.title {
+			line-height: 3.0rem;
+			font-weight: $weight_bold !important;
+			font-size: $fontsize_xs !important;
+			color: $shade_blue !important;
+		}
+	}
+}
+
 .display-dim-title {
 	font-size: $fontsize_xs;
 	color: $shade_blue;
@@ -401,4 +412,10 @@ $fontsize_xs: 1.4rem;
 			text-decoration: underline;
 		}
 	}
+}
+
+.note-italic {
+	font-size: $fontsize_xs;
+	font-weight: $weight_light;
+	color: $shade_blue;
 }
