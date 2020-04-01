@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.4](https://bitbucket.tc.lenovo.com///compare/v1.5.3...v1.5.4) (2020-04-01)
+
+
+### Features
+
+* **dashlane logo:** relpace with new dashlane logo ([29b3b13](https://bitbucket.tc.lenovo.com///commit/29b3b1368178a0db536e12b29053a7fe16acd94b))
+
+
+### Bug Fixes
+
+* **ui:** fix ivy error reported in custom slider ([b56cb2b](https://bitbucket.tc.lenovo.com///commit/b56cb2bc80cc473682eac3068fee9e67d6c16e1a))
+* fix some type binding errors ([a8e9cad](https://bitbucket.tc.lenovo.com///commit/a8e9cad4a3820b0e3d3e1bcd24c6ead0c0dcdd91))
+
 ### [1.5.3](https://bitbucket.tc.lenovo.com///compare/v1.4.18...v1.5.3) (2020-03-31)
 
 

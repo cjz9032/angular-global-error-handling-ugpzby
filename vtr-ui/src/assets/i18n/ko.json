@@ -795,6 +795,7 @@
             "back": "뒤로",
             "on": "ON",
             "off": "OFF",
+            "close": "닫기",
             "collapse": "축소",
             "expand": "확장",
             "loader": "페치 상태",

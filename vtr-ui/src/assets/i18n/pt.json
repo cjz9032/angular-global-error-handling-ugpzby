@@ -795,6 +795,7 @@
             "back": "RETROCEDER",
             "on": "ON",
             "off": "OFF",
+            "close": "Fechar",
             "collapse": "Fechar",
             "expand": "Expandir",
             "loader": "Buscando <br> Status",

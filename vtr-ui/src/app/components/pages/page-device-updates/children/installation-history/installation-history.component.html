@@ -16,6 +16,7 @@
 										<div class="col col-3 sort-order">
 											<a id="su_installation_update_sort_order" role="link"
 												tabindex="0"
+												(keydown.enter)="toggleSortOrder()"
 												(click)="toggleSortOrder()">
 												<div class="sort-heading-text">{{'systemUpdates.installationHistory.sortByDate' | translate}}</div>
 												<div class="sort-icon">
@@ -50,7 +51,7 @@
 													</div>
 													<div class="col update-info">
 													<span class="title"
-														[ngClass]="{'light-title':item.lightTitle}">
+														[ngClass]="{'light-title':$any(item).lightTitle}">
 														<span id="{{'su_history_'+item.packageID}}" role="listitem"><b>{{item.packageDesc}}</b> - {{item.version}}</span>
 														<div class="row">
 																<div class="col">
@@ -64,7 +65,7 @@
 																	<div class="col">
 																		<span class="installation-details">
 																			{{'systemUpdates.installationHistory.packageSize' | translate}}
-																			{{commonService.formatBytes(item.packageSize)}}
+																			{{commonService.formatBytes($any(item).packageSize)}}
 																		</span>
 																	</div>
 																</div>
@@ -98,9 +99,9 @@
 											<div class="expand"  id="{{'su_installation_update_expand_'+item.packageID}}" role="button">
 												<a href="javascript:;" (click)="toggleExpand(item.packageID)"
 													tabindex="0">
-													<fa-icon *ngIf="expandedRecordId!==item.packageID"
+													<fa-icon *ngIf="expandedRecordId!==item.packageID" attr.aria-label="{{'expand' + item.packageID + 'detail info'}}"
 														[icon]="['fas', 'plus-circle']"></fa-icon>
-													<fa-icon *ngIf="expandedRecordId===item.packageID"
+													<fa-icon *ngIf="expandedRecordId===item.packageID" attr.aria-label="{{'collapse' + item.packageID + 'detail info'}}"
 														[icon]="['fas', 'minus-circle']"></fa-icon>
 												</a>
 											</div>

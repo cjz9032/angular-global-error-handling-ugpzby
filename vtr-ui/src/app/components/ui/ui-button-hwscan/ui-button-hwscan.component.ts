@@ -17,7 +17,7 @@ export class UiButtonHWScanComponent implements OnInit {
 
 	@Input() metricsItem: string;
 	@Input() metricsParent: string;
-	@Input() metricsValue: string;
+	@Input() metricsValue: any;
 	@Input() metricsEvent: string = 'FeatureClick';
 	@Input() metricsParam: string;
 	@Input() metricsItemPosition: string;

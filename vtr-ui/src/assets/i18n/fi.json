@@ -795,6 +795,7 @@
             "back": "EDELLINEN",
             "on": "ON",
             "off": "OFF",
+            "close": "Sulje",
             "collapse": "Kutista",
             "expand": "Laajenna",
             "loader": "Noutaminen <br> Tila",

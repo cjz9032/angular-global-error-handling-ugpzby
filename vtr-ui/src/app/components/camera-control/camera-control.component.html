@@ -39,7 +39,7 @@
 						[maxValue]="cameraSettings.brightness.max"
 						[manualRefresh]="manualRefresh"
 						[enableSlider]="disabledAll"
-						[(value)]="cameraSettings.brightness.value"
+						[(value)]="$any(cameraSettings).brightness.value"
 						(sliderChange)="onBrightnessSliderChange($event)"
 						[rangeSliderId]="'cameraSettings-brightness'">
 					</vtr-ui-range-slider>
@@ -57,7 +57,7 @@
 						[maxValue]="cameraSettings.contrast.max"
 						[manualRefresh]="manualRefresh"
 						[enableSlider]="disabledAll"
-						[(value)]="cameraSettings.contrast.value"
+						[(value)]="$any(cameraSettings).contrast.value"
 						(sliderChange)="onContrastSliderChange($event)"
 						[rangeSliderId]="'cameraSettings-contrast'">
 					</vtr-ui-range-slider>
@@ -86,7 +86,7 @@
 							[maxValue]="cameraSettings.exposure.max"
 							[enableSlider]="disabledAll"
 							[manualRefresh]="manualRefresh"
-							[(value)]="cameraSettings.exposure.value"
+							[(value)]="$any(cameraSettings).exposure.value"
 							(sliderChange)="onExposureSliderChange($event)"
 							[rangeSliderId]="'cameraSettings-autoExposure'">
 						</vtr-ui-range-slider>

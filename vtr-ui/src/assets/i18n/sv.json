@@ -795,6 +795,7 @@
             "back": "TILLBAKA",
             "on": "ON",
             "off": "OFF",
+            "close": "Stäng",
             "collapse": "Komprimera",
             "expand": "Utöka",
             "loader": "Hämtar <br> status",

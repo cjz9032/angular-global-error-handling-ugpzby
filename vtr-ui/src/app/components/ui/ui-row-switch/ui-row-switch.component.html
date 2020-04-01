@@ -66,7 +66,7 @@
 					*ngIf="resetText.length > 0">
 					<!-- attr.aria-label="three  {{switchId+ '-reset-btn'}}"   -->
 					<button id="{{switchId+ '-reset-btn'}}"
-						title={{resetText}}
+						title="{{resetText}}"
 						tabindex="0"
 						type="button"
 						[disabled]="disabledAll"
@@ -124,10 +124,8 @@
 						role="img"
 						triggers="manual"
 						placement="left"
-						autoClose="false"
 						[ngbTooltip]="tooltipRef"
 						#rightToolTip1="ngbTooltip"
-						autoClose="true"
 						[icon]="rightIcon"
 						container="vtr-root"
 						tooltipClass="vtr-tooltip"
@@ -146,7 +144,7 @@
 						placement="left"
 						[ngbTooltip]="smartTooltipRef"
 						#rightToolTip2="ngbTooltip"
-						autoClose="true"
+						[autoClose]="true"
 						[icon]="rightIcon"
 						container="vtr-root"
 						tooltipClass="vtr-tooltip"
@@ -165,7 +163,7 @@
 						placement="left"
 						[ngbTooltip]="fnCtrltoolTipRef"
 						#rightToolTip3="ngbTooltip"
-						autoClose="true"
+						[autoClose]="true"
 						[icon]="rightIcon"
 						container="vtr-root"
 						tooltipClass="vtr-tooltip fnctrl-tooltip"

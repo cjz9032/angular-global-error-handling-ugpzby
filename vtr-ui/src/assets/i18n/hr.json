@@ -795,6 +795,7 @@
             "back": "NATRAG",
             "on": "ON",
             "off": "OFF",
+            "close": "Zatvori",
             "collapse": "Sažmi",
             "expand": "Proširi",
             "loader": "Preuzimanje <br>statusa",

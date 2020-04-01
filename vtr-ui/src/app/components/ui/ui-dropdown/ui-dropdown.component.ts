@@ -13,7 +13,7 @@ export class UiDropDownComponent implements OnInit, OnChanges {
 	@Input() list: DropDownInterval[];
 	@Input() value: number;
 	@Input() disabled = false;
-	@Input() textCase = 'default';
+	@Input() textCase: string;
 	@Output() change: EventEmitter<any> = new EventEmitter<any>();
 	public isDropDownOpen = false;
 	public name = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.select');
