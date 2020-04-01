@@ -10,9 +10,9 @@
 			[attr.aria-valuenow]="value"
 			[min]="min"
 			[max]="max"
-			[(value)]="value"
-			(input)="onInputChange($event.target.value)"
-			(change)="onValueChange($event.target.value)"
+			[(ngModel)]="value"
+			(input)="onInputChange($event)"
+			(change)="onValueChange($event)"
 			[step]="step">
 		<div class="d-flex justify-content-between legends"
 			[class.legends-disabled]="isDisabled">
