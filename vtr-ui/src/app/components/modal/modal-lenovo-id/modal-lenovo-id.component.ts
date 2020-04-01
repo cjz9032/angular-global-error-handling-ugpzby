@@ -17,7 +17,7 @@ import AES from 'crypto-js/aes';
 	templateUrl: './modal-lenovo-id.component.html',
 	styleUrls: ['./modal-lenovo-id.component.scss']
 })
-export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy {
+export class ModalLenovoIdComponent implements OnInit, OnDestroy {
 	public isOnline = true;
 	public isBroswerVisible = false; // show or hide web browser, hide or show progress spinner
 	private metrics: any;
@@ -60,15 +60,8 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 		}
 	}
 
-	async ngOnInit() {
-		if (!this.webView) {
-			this.devService.writeLog('ModalLenovoIdComponent constructor: webView object is undefined, critical error exit!');
-			this.activeModal.close('Null webView object');
-			return;
-		}
-
+	private async initWebViewAsync() {
 		await this.webView.create(this.userService.webDom);
-
 		await this.webView.show();
 		this.eventBind = this.onEvent.bind(this);
 		this.startBind = this.onNavigationStart.bind(this);
@@ -76,7 +69,17 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 		this.webView.addEventListener('eventtriggered', this.eventBind);
 		this.webView.addEventListener('navigationstarting', this.startBind);
 		this.webView.addEventListener('navigationcompleted', this.completeBInd);
+		this.loadLoginUrl();
+	}
 
+	ngOnInit() {
+		if (!this.webView) {
+			this.devService.writeLog('ModalLenovoIdComponent constructor: webView object is undefined, critical error exit!');
+			this.activeModal.close('Null webView object');
+			return;
+		}
+
+		this.initWebViewAsync();
 	}
 
 	onEvent(e) {
@@ -272,7 +275,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 		return supportedLangs.includes(lang, 0);
 	}
 
-	ngAfterViewInit() {
+	loadLoginUrl() {
 		const self = this;
 		// Get logon url and navigate to it
 		self.userService.getLoginUrl().then((result) => {
