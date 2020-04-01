@@ -63,7 +63,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	public isSuperResolutionLoading = true;
 	public superResolution = new FeatureStatus(false, true);
 	public hsaIntelligentSecurity = new HsaIntelligentSecurityResponse(false, false);
-	public image = '';
+	public image = '/assets/images/smart-assist/intelligent-security/HPD_Image.png';
 	public zeroTouchLoginShowAdvancedSection: boolean;
 	public zeroTouchLockShowAdvancedSection: boolean;
 	public zeroTouchPresenceLeaveDistanceCapability = false;
@@ -180,7 +180,6 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				this.isAPSAvailable = this.smartAssistCache.isAPSAvailable;
 				this.hpdSensorType = this.smartAssistCache.hpdSensorType;
 				this.sensitivityVisibility = this.smartAssistCache.sensitivityVisibility;
-				this.image = this.smartAssistCache.image;
 			} else {
 				this.smartAssistCache = new SmartAssistCache();
 				this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
@@ -189,7 +188,6 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				this.smartAssistCache.isAPSAvailable = this.isAPSAvailable;
 				this.smartAssistCache.hpdSensorType = this.hpdSensorType;
 				this.smartAssistCache.sensitivityVisibility = this.sensitivityVisibility;
-				this.smartAssistCache.image = this.image;
 				this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
 			}
 		} catch (error) {
@@ -294,8 +292,6 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				this.hsaIntelligentSecurity = this.smartAssistCapability.isHsaIntelligentSecuritySupported;
 				this.getHsaIntelligentSecurityStatus();
 			}
-			this.image = '/assets/images/smart-assist/intelligent-security/HPD_Image.png';
-			this.smartAssistCache.image = this.image;
 			this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
 		}
 	}

@@ -9,5 +9,4 @@ export class SmartAssistCache {
 	public isAPSAvailable = false;
 	public hpdSensorType = 0;
 	public sensitivityVisibility: boolean;
-	public image = '';
 }
