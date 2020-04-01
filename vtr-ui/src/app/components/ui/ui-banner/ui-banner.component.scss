@@ -1,0 +1,20 @@
+@import "../../../app.theme.scss";
+
+.vtr-ui-banner {
+	width: 500px;
+	background-color: #df6c01;
+	font-size: $fontsize_xs;
+	font-weight: $weight_600;
+	color: white;
+	padding: 1rem 2rem;
+	position: fixed;
+	z-index: 10000;
+	right: 0;
+	left: 0;
+	top: 9rem;
+	margin: 0 auto;
+
+	.close-btn {
+		float: right;
+	}
+}

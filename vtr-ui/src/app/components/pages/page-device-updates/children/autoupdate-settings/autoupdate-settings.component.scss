@@ -37,8 +37,9 @@
 
 		fa-icon {
 			color: $main;
-			font-size: 1.8rem;
+			font-size: $fontsize_sm;
 			padding-left: 0.5rem;
+			padding-top: 0.2rem;
 
 			&.question {
 				cursor: pointer;

@@ -1,6 +1,7 @@
 {
 	"dir": "ltr",
 	"dirClass": "ltr",
+	"nonProduction": "You're now visiting the non-production version of Lenovo Vantage!",
 	"gaming": {
 		"dashboard": {
 			"device": {

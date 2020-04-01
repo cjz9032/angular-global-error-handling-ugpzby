@@ -32,20 +32,21 @@
 									[disabled]="bctInfo.checkboxValue?true:false"
 									type="button"
 									id="{{textId}}-start-dropdown"
-									attr.aria-label="{{textId}}-
+									(focus)="[closeAllOtherDD(startAtDrop)]"
+									attr.aria-label="{{title}}-
 									{{'device.deviceSettings.power.batterySettings.batteryThreshold.options.start' | translate}}.
 									{{startAtDrop.isOpen()?'-':'selected '+bctInfo.startValue+'%.'}}-dropdown">
 									<div class="row d-flex justify-content-between">
 										<div class="col-11 pl-1 pr-1">
 											<div class="select-title"
 												id="{{textId}}-startcharge"
-												attr.aria-label="{{textId}}-startcharge">
+												attr.aria-label="{{title}}-startcharge">
 												{{'device.deviceSettings.power.batterySettings.batteryThreshold.options.start' | translate}}
 											</div>
 
 											<div class="select-text text-left"
 												id="{{textId}}-selectedstartcharge"
-												attr.aria-label="{{textId}}-selectedstartcharge">
+												attr.aria-label="{{title}}-selectedstartcharge">
 												{{bctInfo.startValue}}%
 											</div>
 										</div>
@@ -66,12 +67,13 @@
 										tabindex="{{item === bctInfo.startValue?0:-1}}"
 										*ngFor="let item of startAtChargeOptions;let currentIndex=index;"
 										(click)="[onStartValueChange(item , startToggle), $event.preventDefault()]"
+										(keydown)="showHideMenuOfItem($event,startAtDrop)"
 										(keydown.enter)="onStartValueChange(item , startToggle)"
 										id="{{textId}}-{{startAtChargeOption}}-{{item}}"
 										[attr.aria-selected]="bctInfo.startValue===item?true:false"
 										[disabled]="item >= bctInfo.stopValue"
 										attr.aria-disabled="{{item >= bctInfo.stopValue}}"
-										attr.aria-label="{{textId}}-{{'device.deviceSettings.power.batterySettings.batteryThreshold.options.start' | translate}}-Option-{{item}}">{{item}}%</a>
+										attr.aria-label="{{title}}-{{'device.deviceSettings.power.batterySettings.batteryThreshold.options.start' | translate}}-option-{{item}}">{{item}}%</a>
 								</div>
 							</div>
 						</div>
@@ -90,19 +92,20 @@
 									#endToggle
 									type="button"
 									id="{{textId}}-stop-dropdown"
-									attr.aria-label="{{textId}}-
+									(focus)="[closeAllOtherDD(stopAtDrop)]"
+									attr.aria-label="{{title}}-
 									{{'device.deviceSettings.power.batterySettings.batteryThreshold.options.stop' | translate}}.
 									{{stopAtDrop.isOpen()?'-':'selected '+bctInfo.stopValue+'%.'}}-dropdown">
 									<div class="row d-flex justify-content-between">
 										<div class="col-11 pl-1 pr-1">
 											<div class="select-title"
 												id="{{textId}}-stopcharge"
-												attr.aria-label="{{textId}}-stopcharge">
+												attr.aria-label="{{title}}-stopcharge">
 												{{'device.deviceSettings.power.batterySettings.batteryThreshold.options.stop' | translate}}
 											</div>
 											<div class="select-text text-left"
 												id="{{textId}}-selectedStopAtCharge"
-												attr.aria-label="{{textId}}-selectedStopAtCharge">
+												attr.aria-label="{{title}}-selectedStopAtCharge">
 												{{bctInfo.stopValue}}%
 											</div>
 										</div>
@@ -121,12 +124,13 @@
 										tabindex="{{item === bctInfo.stopValue?0:-1}}"
 										*ngFor="let item of stopAtChargeOptions;let currentIndex=index;"
 										(click)="[onStopValueChange(item , endToggle), $event.preventDefault()]"
+										(keydown)="showHideMenuOfItem($event,stopAtDrop)"
 										(keydown.enter)="onStopValueChange(item , endToggle)"
 										id="{{textId}}-stopAtChargeOption-{{item}}"
 										[disabled]="!bctInfo.checkboxValue && (item <= bctInfo.startValue)"
 										[attr.aria-selected]="bctInfo.stopValue===item?true:false"
 										attr.aria-disabled="{{!bctInfo.checkboxValue && (item <= bctInfo.startValue)}}"
-										attr.aria-label="{{textId}}-{{'device.deviceSettings.power.batterySettings.batteryThreshold.options.stop' | translate}}-Option-{{item}}">{{item}}%</a>
+										attr.aria-label="{{title}}-{{'device.deviceSettings.power.batterySettings.batteryThreshold.options.stop' | translate}}-Option-{{item}}">{{item}}%</a>
 								</div>
 							</div>
 						</div>
