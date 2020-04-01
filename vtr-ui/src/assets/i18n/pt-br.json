@@ -795,6 +795,7 @@
             "back": "VOLTAR",
             "on": "ON",
             "off": "OFF",
+            "close": "Fechar",
             "collapse": "Recolher",
             "expand": "Expandir",
             "loader": "Buscando <br> Status",

@@ -795,6 +795,7 @@
             "back": "ZURÜCK",
             "on": "ON",
             "off": "OFF",
+            "close": "Schließen",
             "collapse": "Ausblenden",
             "expand": "Erweitern",
             "loader": "Abrufen des <br> Status",
