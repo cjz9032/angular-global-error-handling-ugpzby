@@ -2,13 +2,13 @@
 	<div class="widget-title" title="">
 		{{'gaming.dashboard.device.systemTools.header' | translate}}
 	</div>
-	<div class="widget-container">
+	<div class="widget-container" id="gaming_system_tools" role="article">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col">
 					<ul class="system-tool-icons d-flex justify-content-around">
 						<li>
-							<a id="systemtools_systemupdates" aria-label="system update" vtrMetrics
+							<a id="gaming_dashboard_systemtools_systemupdates" aria-label="system update" vtrMetrics
 								[metricsItem]="'systemtools_system_update'" metricsEvent="featureClick" metricsParent="Gaming.Dashboard"
 								routerLink="/device/system-updates" tabindex="1" role="link">
 								<figure>
@@ -23,7 +23,7 @@
 							</a>
 						</li>
 						<li *ngIf="gamingProperties.macroKeyFeature">
-							<a id="systemtools_macrokey" aria-label="macro key" vtrMetrics
+							<a id="gaming_dashboard_systemtools_macrokey" aria-label="macro key" vtrMetrics
 								[metricsItem]="'systemtools_macro_key'" metricsEvent="featureClick" metricsParent="Gaming.Dashboard"
 								routerLink="/gaming/macrokey" tabindex="1" role="link">
 								<figure>
@@ -37,7 +37,7 @@
 							</a>
 						</li>
 						<li>
-							<a id="systemtools_power" aria-label="power" vtrMetrics
+							<a id="gaming_dashboard_systemtools_power" aria-label="power" vtrMetrics
 								[metricsItem]="'systemtools_power'" metricsEvent="featureClick" metricsParent="Gaming.Dashboard"
 								routerLink="/device/device-settings/power" tabindex="1" role="link">
 								<figure>
@@ -52,7 +52,7 @@
 							</a>
 						</li>
 						<li>
-							<a id="systemtools_displaycamera" aria-label="media" vtrMetrics
+							<a id="gaming_dashboard_systemtools_displaycamera" aria-label="media" vtrMetrics
 								[metricsItem]="'systemtools_media'" metricsEvent="featureClick" metricsParent="Gaming.Dashboard" tabindex="1"
 								routerLink="/device/device-settings/display-camera" role="link">
 								<figure>
@@ -68,7 +68,7 @@
 						</li>
 
 						<li *ngIf="showHWScanMenu">
-							<a id="systemtools_hardware_scan" aria-label="hardware scan" vtrMetrics
+							<a id="gaming_dashboard_systemtools_hardware_scan" aria-label="hardware scan" vtrMetrics
 								[metricsItem]="'systemtools_hardware_scan'" metricsEvent="featureClick" metricsParent="Gaming.Dashboard"
 								routerLink="/beta/hardware-scan" tabindex="1" role="link" aria-label="hardware scan">
 								<figure>
