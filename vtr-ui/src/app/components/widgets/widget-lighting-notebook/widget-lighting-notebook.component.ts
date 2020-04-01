@@ -34,6 +34,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
   public isEffectChange:boolean;
   public isValChange:boolean = true;
   public showOptions:boolean;
+  private metrics:any;
 
   @HostListener('document:click', ['$event']) onClick(event) {
     this.isSetDefault =false;
@@ -45,7 +46,9 @@ export class WidgetLightingNotebookComponent implements OnInit {
     private gamingLightingService: GamingLightingService,
     public shellServices: VantageShellService,
     private logger: LoggerService
-  ) { }
+  ) {
+    this.metrics = this.shellServices.getMetrics();
+   }
 
   ngOnInit() {
     this.initProfileId();
@@ -272,6 +275,8 @@ export class WidgetLightingNotebookComponent implements OnInit {
           }
         })
       }
+
+      this.sendFeatureClickMetrics(JSON.parse(`{"ItemName":"lighting_brightness","ItemValue":"${event[0]}"}`));
     } catch (error) {}
   }
 
@@ -302,6 +307,8 @@ export class WidgetLightingNotebookComponent implements OnInit {
            }
          })
        }
+
+      this.sendFeatureClickMetrics(JSON.parse(`{"ItemName":"lighting_speed","ItemValue":"${event[0]}"}`));
      } catch (error) {}
   }
 
@@ -384,6 +391,8 @@ export class WidgetLightingNotebookComponent implements OnInit {
           }
         })
       }
+
+      this.sendFeatureClickMetrics(JSON.parse(`{"ItemName":"lighting_color_change","ItemValue":"${event}"}`));
     } catch (error) {}
   }
   
@@ -599,4 +608,24 @@ export class WidgetLightingNotebookComponent implements OnInit {
     }
   }
 
+  /**
+   * metrics collection for lighting feature of notebook machine
+   * @param metricsdata 
+   */
+  public sendFeatureClickMetrics(metricsdata:any) {
+    try {
+      const metricData = {
+        ItemType: Object.prototype.hasOwnProperty.call(metricsdata, 'ItmeType') ? metricsdata.ItemType : 'FeatureClick',
+        ItemParent: Object.prototype.hasOwnProperty.call(metricsdata, 'ItemParent') ? metricsdata.ItemParent : 'Gaming.Lighting'
+      };
+      Object.keys(metricsdata).forEach((key) => {
+        if(metricsdata[key]) {
+          metricData[key] = metricsdata[key];
+        }
+      });
+      if (this.metrics && this.metrics.sendAsync) {
+        this.metrics.sendAsync(metricData);
+      }
+    } catch (error) {}
+  }
 }

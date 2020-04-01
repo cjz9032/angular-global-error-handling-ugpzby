@@ -2248,4 +2248,7 @@ export class VantageShellService {
 	getGamingAdvancedOC() {
 		return undefined;
 	}
+	getGamingOverDrive() {
+		return undefined;
+	}
 }

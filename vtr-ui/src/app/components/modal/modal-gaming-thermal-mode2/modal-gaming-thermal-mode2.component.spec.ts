@@ -310,7 +310,7 @@ describe('ModalGamingThermalMode2Component', () => {
         it('ngOnDestory', () => {
             spyOn(component, 'unRegisterThermalModeChangeEvent').and.callThrough();
             expect(component.unRegisterThermalModeChangeEvent).toHaveBeenCalledTimes(0);
-            component.ngOnDestory();
+            component.ngOnDestroy();
             expect(component.unRegisterThermalModeChangeEvent).toHaveBeenCalledTimes(1);
         })
     })

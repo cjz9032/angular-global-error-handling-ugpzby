@@ -48,6 +48,9 @@ button:focus{
 			margin-bottom: 1rem;
 			display: flex;
 			align-items: center;
+            @media #{$high-contrast} {
+                border: 1px solid $highContrastGray;
+            }
 			.item-left {
 				position: relative;
 				cursor: pointer;
@@ -68,12 +71,22 @@ button:focus{
 					width: 3.2rem;
 					height: 3.2rem;
 					margin-bottom: 0rem;
-					img {
+					.gaming-radio-image-rest {
+						background-image: url(~/assets/images/gaming/thermalMode2/white100@2x.png);
+						background-size: cover;
 						width: 3.2rem;
 						height: 3.2rem;
-					}
-					.gaming-radio-image-rest {
 						opacity: .2;
+						@media #{$high-contrast} {
+							background-image: url(~/assets/images/gaming/thermalMode2/gray@2x.png);
+							opacity: 1;
+						}
+					}
+					.gaming-radio-image-selected {
+						background-image: url(~/assets/images/gaming/thermalMode2/selected@2x.png);
+						background-size: cover;
+						width: 3.2rem;
+						height: 3.2rem;
 					}
 				}
 			}
