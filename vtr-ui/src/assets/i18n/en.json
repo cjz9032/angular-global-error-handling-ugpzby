@@ -1854,6 +1854,10 @@
 					"title": "Intelligent security",
 					"description": "Buckles up your PC with intelligent sensing technology, protects your privacy, and saves your battery power."
 				},
+				"advancedSettings": {
+					"showAdvSettings": "ADVANCED SETTINGS",
+					"hideAdvSettings": "HIDE ADVANCED SETTINGS"
+				},
 				"HumanPresenceDetection": {
 					"title": "Human Presence Detection",
 					"tooltip": "Click here to reset the human presence detection settings."
@@ -1898,7 +1902,7 @@
 					"distanceSensitivityAdjusting": {
 						"title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
 						"captionOn": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, you can maually adjust the dectecting sensitivity based on your preference.",
-						"captionOff": "The accuracy varies by body size, posture, and frequency of movement. When this feature is diabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
+						"captionOff": "The accuracy varies by body size, posture, and frequency of movement. When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
 						"options": {
 							"near": "Near",
 							"medium": "Middle",
@@ -1937,7 +1941,7 @@
 				"distanceSensitivityAdjustingForIdea": {
 					"title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
 					"captionOn": "Enable this feature to automatically adjust the detecting distance of movements to wake up the system. Turn it off to manually adjust the detecting sensitivity based on your preference.",
-					"captionOff": "When this feature is diabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
+					"captionOff": "When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
 					"options": {
 						"near": "Near",
 						"medium": "Middle",

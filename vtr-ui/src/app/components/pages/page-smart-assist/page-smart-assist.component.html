@@ -70,14 +70,14 @@
 												attr-aria-label="smartAssist.intelligentSecurity.zeroTouchLogin.showAdvSettings"
 												(click)="setHPDAdvancedSetting('zeroTouchLogin', true)"
 												(keydown.enter)="setHPDAdvancedSetting('zeroTouchLogin', true)">
-												{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.showAdvSettings' | translate}}
+												{{'device.smartAssist.intelligentSecurity.advancedSettings.showAdvSettings' | translate}}
 											</span>
 										</div>
 										<!-- login distance sensitivity adjust -->
 										<div class="pl-5 bold-title-idea no-border-bottom pb-4"
 											*ngIf="intelligentSecurity.isDistanceSensitivityVisible && zeroTouchLoginShowAdvancedSection">
 											<vtr-ui-row-switch [switchId]="'smartAssist-intelligentSecurity-zeroTouchLogin-distanceSensitivityAutoAdjusting'"
-												[title]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.title' | translate"												
+												[title]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.title' | translate"
 												[isSwitchVisible]="true"
 												[showChildContent]="true"
 												[isSwitchChecked]="intelligentSecurity.isZeroTouchLoginAdjustEnabled"
@@ -152,6 +152,7 @@
 													metricsValue="{{intelligentSecurity.zeroTouchLoginDistance}}">
 												</vtr-ui-range-slider>
 												<div class="pt-3"
+													[ngClass]="{'zeroTouchLoginDistanceNote': intelligentSecurity.isZeroTouchLoginAdjustEnabled}"
 													[class.blur-1]="!intelligentSecurity.isZeroTouchLoginEnabled"
 													*ngIf="intelligentSecurity.isWindowsHelloRegistered">
 													<div class="feature-note p-4">
@@ -179,7 +180,8 @@
 											</div>
 										</div>
 										<!-- hide advanced section -->
-										<div class="pl-5 border-bottom pb-4" 
+										<div class="pl-5 border-bottom pb-4"
+											[ngClass]="{'zeroTouchHideAdv': intelligentSecurity.isZeroTouchLoginAdjustEnabled && !intelligentSecurity.isWindowsHelloRegistered}"
 											*ngIf="zeroTouchLoginShowAdvancedSection">
 											<span class="link-text mt-2 ml-4"
 												role="button"
@@ -187,7 +189,7 @@
 												attr.aria-label="smartAssist.intelligentSecurity.zeroTouchLogin.hideAdvSettings"
 												(click)="setHPDAdvancedSetting('zeroTouchLogin', false)"
 												(keydown.enter)="setHPDAdvancedSetting('zeroTouchLogin', false)">
-												{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.hideAdvSettings' | translate}}
+												{{'device.smartAssist.intelligentSecurity.advancedSettings.hideAdvSettings' | translate}}
 											</span>
 										</div>
 									</li>
@@ -301,7 +303,7 @@
 												attr-aria-label="smartAssist.intelligentSecurity.zeroTouchLock.showAdvSettings"
 												(click)="setHPDAdvancedSetting('zeroTouchLock', true)"
 												(keydown.enter)="setHPDAdvancedSetting('zeroTouchLock', true)">
-												{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.showAdvSettings' | translate}}
+												{{'device.smartAssist.intelligentSecurity.advancedSettings.showAdvSettings' | translate}}
 											</span>
 										</div>
 										<!-- facial recognition -->
@@ -469,10 +471,10 @@
 															<p id="zeroTouchLock-DistanceAdjust-readMoreMode3"
 																role="text">
 																{{'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.readMore.line3' | translate}}
-															</p>													
+															</p>
 														</div>
 													</div>
-												</div>	
+												</div>
 											</vtr-ui-row-switch>
 											<div class="slider-note">
 												<vtr-ui-range-slider [rangeSliderId]="'smartAssist-intelligentSecurity-zeroTouchLock-distanceSensitivityAdjusting'"
@@ -480,7 +482,7 @@
 													*ngIf="zeroTouchPresenceLeaveDistanceCapability && !hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust"
 													[minValueLegend]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.options.near' | translate"
 													[minValue]="0"
-													[mediumValueLegend]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.options.medium' | translate"												
+													[mediumValueLegend]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.options.medium' | translate"
 													[maxValueLegend]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.options.far' | translate"
 													[maxValue]="2"
 													(sliderChange)="SetZeroTouchLockDistanceSensitivity($event)"
@@ -494,7 +496,8 @@
 											</div>
 										</div>
 										<!-- hide advanced section -->
-										<div class="pl-5 border-bottom pb-4" 
+										<div class="pl-5 border-bottom pb-4"
+											[ngClass]="{'zeroTouchHideAdv': hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust}"
 											*ngIf="zeroTouchLockShowAdvancedSection">
 											<span class="link-text mt-2 ml-4"
 												role="button"
@@ -502,7 +505,7 @@
 												attr.aria-label="smartAssist.intelligentSecurity.zeroTouchLock.hideAdvSettings"
 												(click)="setHPDAdvancedSetting('zeroTouchLock', false)"
 												(keydown.enter)="setHPDAdvancedSetting('zeroTouchLock', false)">
-												{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.hideAdvSettings' | translate}}
+												{{'device.smartAssist.intelligentSecurity.advancedSettings.hideAdvSettings' | translate}}
 											</span>
 										</div>
 									</li>
@@ -657,7 +660,7 @@
 													{{'device.smartAssist.intelligentSecurity.note.description5b' | translate}}
 												</p>
 											</div>
-										</div>										
+										</div>
 										<p role="text"
 											*ngIf="isThinkPad && intelligentSecurity.isZeroTouchLoginVisible && intelligentSecurity.isZeroTouchLockVisible && (hpdSensorType == 2)"
 											id="smart-assist-intelligent-security-note-desc4">
