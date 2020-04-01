@@ -5,7 +5,7 @@ import {
 	Output,
 	EventEmitter,
 	AfterContentChecked,
-	OnDestroy,
+	OnDestroy
 } from '@angular/core';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 
@@ -14,10 +14,11 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 	templateUrl: './ui-custom-slider.component.html',
 	styleUrls: ['./ui-custom-slider.component.scss']
 })
-export class UiCustomSliderComponent implements OnInit, OnDestroy, AfterContentChecked {
+export class UiCustomSliderComponent
+	implements OnInit, OnDestroy, AfterContentChecked {
 	@Input() isDisabled = false;
 	@Input() rangeSliderId = 'rangeSlider';
-	@Input() value = 0; // initial slider value
+	@Input() value: Event | number = 0; // initial slider value
 	@Input() min = 0; // slider minimum end value
 	@Input() max = 10; // slider maximum end value
 	@Input() step = 1; // ticks or steps to change on each slide
@@ -30,21 +31,18 @@ export class UiCustomSliderComponent implements OnInit, OnDestroy, AfterContentC
 	@Output() valueChange: any = new EventEmitter();
 	@Output() valueChangeEnd: any = new EventEmitter();
 
-	constructor(private loggerService: LoggerService) { }
+	constructor(private loggerService: LoggerService) {}
 
-	ngOnInit() {
+	ngOnInit() {}
 
-	}
-
-	ngOnDestroy() {	}
+	ngOnDestroy() {}
 
 	// ngOnChanges(changes: SimpleChanges): void {
 	// 	if (changes.enableSlider) {
 	// 		this.options = Object.assign({}, this.options, { disabled: this.enableSlider });
 	// 	}
 	// }
-	ngAfterContentChecked() {
-	}
+	ngAfterContentChecked() {}
 	/**
 	 * This event is fired when value property is changed programmatically.
 	 * Its two way binding event

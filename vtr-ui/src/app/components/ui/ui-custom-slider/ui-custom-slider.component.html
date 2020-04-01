@@ -1,18 +1,8 @@
 <div class="vtr-ui-custom-slider">
 	<div class="range">
-		<input type="range"
-			[disabled]="isDisabled"
-			[name]="rangeSliderId"
-			[id]="rangeSliderId"
-			[aria-valuemin]="min"
-			[aria-valuemax]="max"
-			[(aria-valuenow)]="value"
-			[min]="min"
-			[max]="max"
-			[(value)]="value"
-			[step]="step">
-		<div class="d-flex justify-content-between legends"
-			[class.legends-disabled]="isDisabled">
+		<input type="range" [disabled]="isDisabled" [name]="rangeSliderId" [id]="rangeSliderId" [aria-valuemin]="min"
+			[aria-valuemax]="max" [(aria-valuenow)]="value" [min]="min" [max]="max" [(value)]="value" [step]="step">
+		<div class="d-flex justify-content-between legends" [class.legends-disabled]="isDisabled">
 			<span *ngIf="minLegend?.length>0">{{ minLegend }}</span>
 			<span *ngIf="midLegend?.length>0">{{ midLegend }}</span>
 			<span *ngIf="maxLegend?.length>0">{{ maxLegend }}</span>
