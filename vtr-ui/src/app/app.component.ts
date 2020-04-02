@@ -31,6 +31,7 @@ import { DurationCounterService } from 'src/app/services/timer/timer-service-ex.
 // import { AppUpdateService } from './services/app-update/app-update.service';
 import { VantageFocusHelper } from 'src/app/services/timer/vantage-focus.helper';
 import { SegmentConst } from './services/self-select/self-select.service';
+import { StoreRatingService } from './services/store-rating/store-rating.service';
 
 declare var Windows;
 @Component({
@@ -66,6 +67,7 @@ export class AppComponent implements OnInit, OnDestroy {
 		private appUpdateService: AppUpdateService,
 		private appsForYouService: AppsForYouService,
 		private metricService: MetricService,
+		private storeRating: StoreRatingService
 		// private appUpdateService: AppUpdateService
 	) {
 		this.patchNgbModalOpen();
@@ -437,6 +439,8 @@ export class AppComponent implements OnInit, OnDestroy {
 								}
 							}
 						}).catch((error) => { });
+
+					this.storeRating.showRatingAsync();
 					break;
 				default:
 					break;

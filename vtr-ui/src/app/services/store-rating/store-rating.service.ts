@@ -3,6 +3,8 @@ import { CommonService } from '../common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { HypothesisService } from '../hypothesis/hypothesis.service';
 import { LoggerService } from '../logger/logger.service';
+import { ModalStoreRatingComponent } from 'src/app/components/modal/modal-store-rating/modal-store-rating.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Injectable({
 	providedIn: 'root'
@@ -17,11 +19,15 @@ export class StoreRatingService {
 		private commonService: CommonService,
 		private hypothesis: HypothesisService,
 		private logger: LoggerService,
+		private ngModal: NgbModal,
 	) { }
 
 	public async showRatingAsync() {
 		if (await this.canPromptRating()) {
-			// todo: show rating UI
+			this.ngModal.open(ModalStoreRatingComponent, {
+				backdrop: 'static',
+				centered: true,
+			});
 
 			this.commonService.setLocalStorageValue(LocalStorageKey.RatingLastPromptTime, new Date());
 			this.addRatingPromptCount();

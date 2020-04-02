@@ -1,0 +1,30 @@
+@import '../../../app.theme.scss';
+.vtr-modal-store-rating{
+    display: flex;
+    flex-direction: column;
+
+    .close-button{
+        font-size: 3.5rem;
+        align-self: flex-end;   
+        padding:0 10px;
+        cursor: pointer;
+        margin: 1px;
+    }
+
+    .modal-content{
+        font-size: 2rem;
+        padding-bottom: 40px;
+        text-align: center;
+    }
+
+    .modal-bottom{
+        display: flex;
+        .modal-btn{
+            font-size: 4.5rem;
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+}

@@ -68,6 +68,7 @@ import { HardwareScanModule } from './hardware-scan/hardware-scan.module';
 import { CommsService } from '../services/comms/comms.service';
 import { UiCustomSliderModule } from '../components/ui/ui-custom-slider/ui-custom-slider.module';
 // import { ModalErrorMessageComponent } from '../components/modal/modal-error-message/modal-error-message.component';
+import { ModalStoreRatingComponent } from '../components/modal/modal-store-rating/modal-store-rating.component';
 
 @NgModule({
 	declarations: [
@@ -80,7 +81,8 @@ import { UiCustomSliderModule } from '../components/ui/ui-custom-slider/ui-custo
 		ModalAppUpdateAvailableComponent,
 		// PageSettingsComponent,
 		ModalNewFeatureTipComponent,
-		PageSettingsComponent
+		PageSettingsComponent,
+		ModalStoreRatingComponent
 		// ModalErrorMessageComponent
 	],
 	imports: [

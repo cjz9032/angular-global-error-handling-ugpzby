@@ -1,0 +1,16 @@
+<div class="vtr-modal-store-rating">
+    <button class="close-button" (click)="onBtnCloseClicked($event)" tabindex="0">
+        <fa-icon [icon]="faTimesCircle" ></fa-icon>
+    </button>
+    <p class="modal-content" tabindex="-1" role="article">
+        We need your feedbakck.
+    </p>
+    <div class="modal-bottom">
+        <button class="modal-btn btn-light" (click)="onBtnDislikeClicked($event)"> 
+            <fa-icon [icon]="faFrown"></fa-icon>
+        </button>
+        <button  class="modal-btn btn-dark" (click)="onBtnLikeClicked($event)">
+            <fa-icon [icon]="faSmileBeam"></fa-icon>
+        </button>
+    </div>
+</div>
