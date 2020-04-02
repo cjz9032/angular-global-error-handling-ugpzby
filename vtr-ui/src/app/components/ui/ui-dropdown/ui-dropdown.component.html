@@ -33,40 +33,60 @@
 		#toggleBtn
 		class="ui-btn-dropdown"
 		type="button"
-		id="textCase === 'oled' ? {{name}} : dropdown-{{dropDownId}}"
-		attr.aria-label = "{{dropDownId}}"
+		id="{{ dropDownId }}"
+		attr.aria-label="{{ settingCustomAriaLabel() }}"
 		aria-haspopup="true"
 		[attr.aria-expanded]="isDropDownOpen"
 		[disabled]="disabled"
 		(click)="isDropDownOpen = !isDropDownOpen"
+		tabindex="0"
 	>
-		{{ name }}
-		{{
-			textCase === "oled"
-				? (placeholder | lowercase)
-				: (placeholder | titlecase)
-		}}
+		<div aria-hidden="true">
+			{{ name }}
+			{{
+				textCase === "oled"
+					? (placeholder | lowercase)
+					: (placeholder | titlecase)
+			}}
+		</div>
 		<span
-			><fa-icon class="chevron" [icon]="isDropDownOpen ? ['fal', 'chevron-up'] : ['fal', 'chevron-down']">
+			><fa-icon
+				class="chevron"
+				[icon]="
+					isDropDownOpen
+						? ['fal', 'chevron-up']
+						: ['fal', 'chevron-down']
+				"
+			>
 			</fa-icon
 		></span>
 	</button>
 	<div
 		class="ui-menu-dropdown"
 		*ngIf="isDropDownOpen && !disabled"
-		attr.aria-labelledby="{{dropDownId}}-{{name}}-{{placeholder}}"
 		role="listbox"
 	>
 		<a
 			*ngFor="let i of list"
 			role="option"
-			id="{{i.text}}"
+			id="{{ i.text }}"
 			(click)="select(i, toggleBtn)"
+			(keydown.enter)="
+				select(i, toggleBtn); isDropDownOpen = !isDropDownOpen
+			"
 			vtrMetrics
 			metricsEvent="FeatureClick"
 			[metricsItem]="dropDownName"
 			[metricsValue]="i"
-			>{{ textCase === 'oled' ? customCamelCase(i.text) : (i.text | titlecase)}}</a
+			tabindex="0"
+			attr.aria-selected="{{
+				value && list[value].text === i.text ? true : false
+			}}"
+			>{{
+				textCase === "oled"
+					? customCamelCase(i.text)
+					: (i.text | titlecase)
+			}}</a
 		>
 	</div>
 </div>
