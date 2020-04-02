@@ -1,8 +1,9 @@
-import { Component, EventEmitter, Input, OnInit, Output, ViewChildren, QueryList } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, QueryList, ViewChildren } from '@angular/core';
 import { SecureMath } from '@lenovo/tan-client-bridge';
+import { NgbDropdown, NgbDropdownToggle } from '@ng-bootstrap/ng-bootstrap';
 import { ChargeThreshold } from 'src/app/data-models/device/charge-threshold.model';
 import { CommonService } from 'src/app/services/common/common.service';
-import { NgbDropdown } from '@ng-bootstrap/ng-bootstrap';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-battery-charge-threshold-settings',
@@ -26,7 +27,14 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 	startAtChargeOptions: number[] = this.chargeOptions.slice(0, this.chargeOptions.length - 1);
 	stopAtChargeOptions: number[] = this.chargeOptions.slice(1, this.chargeOptions.length);
 	hyphen = '-'
-	startAtChargeOption = "startAtChargeOption"
+	startAtChargeOption = 'startAtChargeOption';
+	stopAtChargeOption = 'stopAtChargeOption';
+	option = 'option';
+	selected = 'selected';
+	off = 'off'
+	ddStartAtChargeDescription = this.translate.instant('device.deviceSettings.power.batterySettings.batteryThreshold.options.start');
+	ddStopAtChargeDescription = this.translate.instant('device.deviceSettings.power.batterySettings.batteryThreshold.options.stop');
+
 
 	// Random number is used to have unique id of each input field
 	randomNumber: number = Math.floor(new Date().valueOf() * SecureMath.random());
@@ -38,9 +46,20 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 	public selectedOptionsData: any = {};
 	@ViewChildren(NgbDropdown) dropDowns: QueryList<NgbDropdown>;
 
-	constructor(private commonService: CommonService) { }
 
-	ngOnInit() { }
+	constructor(private commonService: CommonService, private translate: TranslateService) { }
+
+	ngOnInit() {
+		this.translate.stream('device.deviceSettings.power.batterySettings.batteryThreshold.options.start').subscribe((value) => {
+			this.ddStartAtChargeDescription = value;
+		});
+
+		this.translate.stream('device.deviceSettings.power.batterySettings.batteryThreshold.options.start').subscribe((value) => {
+			this.ddStartAtChargeDescription = value;
+		});
+
+
+	}
 
 	onStartValueChange(startVal: number, button: HTMLElement) {
 		const bctInfo = this.commonService.cloneObj(this.bctInfo);
@@ -113,6 +132,17 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 					activeDropdown.close();
 					// this.closeAllDD();
 				}
+			}
+		}
+
+	}
+
+	focusOnSelected($event: Event, dd: NgbDropdown, type, value) {
+		// dropdown-toggle will be toggled when pressed on enter
+		if (dd.isOpen()) {
+			const focusElement = document.querySelector(`#${this.textId}-${type}-${value}`) as HTMLElement;
+			if (focusElement) {
+				focusElement.focus();
 			}
 		}
 
