@@ -124,25 +124,32 @@
 				border-radius: 1.5rem;
 				background: linear-gradient($gradient_angle_reverse, $main_darkest 0%, $main_darker 100%);
 
-				::ng-deep .mat-progress-bar-fill::after {
+				 ::ng-deep .mat-progress-bar-fill::after {
 					background: linear-gradient(90deg, $go 0%, $go 100%);
 				}
 
-				::ng-deep .mat-progress-bar-buffer {
+				 ::ng-deep .mat-progress-bar-buffer {
 					background: $light;
 				}
 
-				::ng-deep .mat-progress-bar {
+				 ::ng-deep .mat-progress-bar {
 					border-radius: 0.4rem;
 				}
 
-				.progress {
+				::ng-deep .progress {
 					height: 0.2rem;
 
 					.progress-bar {
-						height: 0.8rem;
 						border-radius: 0.8rem;
 						margin-top: -0.3rem;
+
+						@media #{$black-on-white} {
+							background: $high-contrast-blue !important;
+						}
+
+						@media #{$white-on-black} {
+							background: $high-contrast-blue !important;
+						}
 
 						&.bg-info {
 							background: linear-gradient(90deg, $go_light 0%, $go_dark 100%) !important;
@@ -167,6 +174,10 @@
 				color: $light;
 				text-decoration: none;
 			}
+		}
+
+		.su-header {
+			padding-bottom: 1.5rem;
 		}
 	}
 }
