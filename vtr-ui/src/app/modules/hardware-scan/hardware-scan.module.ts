@@ -11,6 +11,7 @@ import { ModalScheduleScanCollisionComponent } from '../../components/modal/moda
 import { ModalHardwareScanCustomizeComponent } from '../../components/modal/modal-hardware-scan-customize/modal-hardware-scan-customize.component';
 import { ModalRecoverConfirmComponent } from '../../components/modal/modal-recover-confirm/modal-recover-confirm.component';
 import { PageHardwareScanComponent } from '../../components/pages/page-hardwarescan/page-hardware-scan.component';
+import { HardwareScanHeaderPagesComponent } from '../../components/pages/page-hardwarescan/children/hardware-scan-header-pages/hardware-scan-header-pages.component';
 import { UiHardwareListComponent } from '../../components/ui/ui-hardware-list/ui-hardware-list.component';
 import { UiListScheduledScanComponent } from '../../components/ui/ui-list-scheduled-scan/ui-list-scheduled-scan.component';
 import { WidgetHardwareScanItemComponent } from '../../components/widgets/widget-hardware-scan-item/widget-hardware-scan-item.component';
@@ -40,6 +41,8 @@ import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons/faExclama
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons/faQuestionCircle';
 import { faAngleUp } from '@fortawesome/pro-light-svg-icons/faAngleUp';
 import { faBan } from '@fortawesome/free-solid-svg-icons/faBan';
+import { HardwareScanExecutingHeaderComponent } from '../../components/pages/page-hardwarescan/children/hardware-scan-header-pages/hardware-scan-executing-header/hardware-scan-executing-header.component';
+import { HardwareScanWaitSelectHeaderComponent } from '../../components/pages/page-hardwarescan/children/hardware-scan-header-pages/hardware-scan-wait-select-header/hardware-scan-wait-select-header.component';
 
 @NgModule({
 	declarations: [
@@ -63,7 +66,10 @@ import { faBan } from '@fortawesome/free-solid-svg-icons/faBan';
 		WidgetScheduleScanComponent,
 		HardwareComponentsComponent,
 		HardwareViewResultsComponent,
-		RecoverBadSectorsComponent
+		RecoverBadSectorsComponent,
+		HardwareScanHeaderPagesComponent,
+		HardwareScanExecutingHeaderComponent,
+		HardwareScanWaitSelectHeaderComponent
 	],
 	imports: [
 		CommonModule,
