@@ -28,7 +28,7 @@ $normalPadding: 2.4rem;
 			color: $shade_blue;
 			padding-left: $normalPadding;
 		}
-		
+
 		.feedback-form {
 			padding: 0 $normalPadding;
 			max-height: calc(98vh - 20rem);
@@ -45,6 +45,7 @@ $normalPadding: 2.4rem;
 
 		.qa-item {
 			margin-bottom: 2.5rem;
+
 			.question {
 				font-size: $body;
 				color: $shade_blue;
@@ -66,26 +67,14 @@ $normalPadding: 2.4rem;
 			}
 
 			.form-check-input {
-				width: 2rem;
-				height: 2rem;
+				width: calc(100% + 0.4rem);
+				height: 2.4rem;
+				margin-left: -0.2rem;
 				margin-right: 0;
 				opacity: 0;
 				z-index: -1;
 			}
 
-			.form-check-input:checked~label::after {
-				color: #fff;
-				background-color: $menu_hover;
-				width: 1.4rem;
-				height: 1.4rem;
-				margin: 0.3rem 0 0 0.3rem;
-				@media #{$black-on-white} {
-					background-color: $high-contrast-white-textselected;
-				}
-				@media #{$white-on-black} {
-					background-color: $high-contrast-black-textselected;
-				}
-			}
 			label {
 				font-size: $body;
 				padding-left: 2.8rem;
@@ -94,20 +83,7 @@ $normalPadding: 2.4rem;
 				position: relative;
 				margin-bottom: 0;
 
-				&::before {
-					border-radius: 50%;
-					position: absolute;
-					top: 0;
-					left: 0;
-					display: block;
-					width: 2rem;
-					height: 2rem;
-					pointer-events: none;
-					content: "";
-					background-color: #fff;
-					border: 1px solid $shade_blue;
-				}
-
+				&::before,
 				&::after {
 					border-radius: 50%;
 					position: absolute;
@@ -117,40 +93,101 @@ $normalPadding: 2.4rem;
 					width: 2rem;
 					height: 2rem;
 					content: "";
+				}
+
+				&::before {
+					pointer-events: none;
+					background-color: #fff;
+					border: 1px solid $shade_blue;
+				}
+
+				&::after {
 					background: no-repeat 50%/50% 50%;
-					
 				}
 			}
+
+			.form-check-label-out {
+				position: absolute;
+
+				&::before {
+					width: 2.6rem;
+					height: 2.6rem;
+					left: -0.3rem;
+					top: -0.3rem;
+					background: none;
+					border: none;
+				}
+			}
+
+			.form-check-input:focus~.form-check-label-out {
+				&::before {
+					border: 0.1rem solid $menu_hover;
+				}
+			}
+
+			.form-check-input:checked~label::after {
+				color: #fff;
+				background-color: $menu_hover;
+				width: 1.4rem;
+				height: 1.4rem;
+				margin: 0.3rem 0 0 0.3rem;
+
+				@media #{$black-on-white} {
+					background-color: $high-contrast-white-textselected;
+				}
+
+				@media #{$white-on-black} {
+					background-color: $high-contrast-black-textselected;
+				}
+			}
+
 			.likely-content {
 				display: flex;
 				justify-content: space-between;
 				flex-wrap: wrap;
 				margin: 0 -1rem;
+
 				.likely-text {
 					padding: 0 1rem;
 					width: 49%;
 					font-size: $body;
 				}
+
 				.form-check-inline {
 					margin-right: 0;
+
+					.form-check-input {
+						width: 4rem;
+						height: 5rem;
+						margin-left: 0;
+					}
 				}
+
 				.form-check-input:checked~label::after {
 					margin: 0.3rem 0 0 1.3rem;
 				}
+
 				label {
 					height: 4.8rem;
 					padding-left: 0;
 					text-align: center;
 					width: 4rem;
 					padding: 0 1rem;
+
 					&::before {
 						top: 2.4rem;
 						margin-left: 1rem;
 					}
+
 					&::after {
 						top: 2.4rem;
 						margin-left: 1rem;
-						
+					}
+				}
+
+				.form-check-label-out {
+					&::before {
+						top: 2.1rem;
 					}
 				}
 			}
@@ -166,7 +203,8 @@ $normalPadding: 2.4rem;
 			margin-bottom: 1.5rem;
 		}
 
-		.user-comment, .user-email {
+		.user-comment,
+		.user-email {
 			border: 1px solid $shade_lighter;
 			border-radius: 5px;
 			background-color: #FFFFFF;
@@ -183,18 +221,22 @@ $normalPadding: 2.4rem;
 				border-color: $main;
 			}
 		}
-		.user-email {		
-			height: 6rem;			
+
+		.user-email {
+			height: 6rem;
 		}
-		.invalid-email{
+
+		.invalid-email {
 			background: $text_light 0% 0% no-repeat padding-box;
 			border: 1px solid $button_red_start;
 			color: $button_red_start;
 		}
-		.email-error-msg{
+
+		.email-error-msg {
 			font-size: $base;
 			color: $button_red_start;
 		}
+
 		.comment-count {
 			color: $grey_dark;
 			font-size: $caption;
@@ -222,25 +264,31 @@ $normalPadding: 2.4rem;
 			border-top: 0.2rem solid transparent;
 			border-bottom: 0.2rem solid $menu_hover;
 			color: $blue-lighter;
+
 			&:hover {
 				color: $menu_hover;
 				border-bottom: 0.2rem solid transparent;
 			}
 		}
 	}
+
 	@media screen and (max-height: 750px) {
 		.content {
+
 			.qa-item,
 			.user-comment {
 				margin-bottom: 2rem;
 			}
+
 			.qa-item .question {
 				margin-bottom: 0.6rem;
 			}
+
 			.user-comment {
 				height: 10rem;
 			}
-			.user-email{
+
+			.user-email {
 				height: 5rem;
 			}
 		}
@@ -297,12 +345,14 @@ $normalPadding: 2.4rem;
 			height: 100%;
 		}
 	}
+
 	@media #{$black-on-white} {
-		border: 1px solid $dark !important ;
+		border: 1px solid $dark !important;
 		border-radius: 1rem;
 	}
+
 	@media #{$white-on-black} {
-		border: 1px solid $light !important ;
+		border: 1px solid $light !important;
 		border-radius: 1rem;
 	}
 }

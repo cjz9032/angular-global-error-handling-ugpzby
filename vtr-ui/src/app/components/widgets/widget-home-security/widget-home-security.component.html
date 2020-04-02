@@ -61,18 +61,7 @@
 				<div class="peace-of-mind row">
 					<div class="col">
 						<div class="sub-heading">{{'security.homeprotection.homesecurity.subtitle' | translate}}</div>
-						<div class="text-regular" *vtrTranslate="'security.homeprotection.homesecurity.subtitleDescribe' | translate">
-							<a vtrMetrics  id="sa-ws-lnk-CHS-here"
-								metricsEvent="ArticleClick"
-								metricsItem="learnMoreAboutSecurityHealth"
-								metricsItemPosition="1"
-								metricsPageNumber="1"
-								[metricsItemID]="peaceOfMindArticleId"
-								[metricsItemCategory]="peaceOfMindArticleCategory"
-								href="javascript:void(0)"
-								(click)="openPeaceOfMindArticle()"
-								target="_blank"></a>
-						</div>
+						<div class="text-regular" [innerHTML]="'security.homeprotection.homesecurity.subtitleDescribe' | translate"></div>
 					</div>
 				</div>
 			</div>

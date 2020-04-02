@@ -16,6 +16,7 @@ export class FeedbackService {
 			backdrop: true,
 			size: 'lg',
 			centered: true,
+			ariaLabelledBy: 'feedback-dialog-basic-title',
 			windowClass: 'feedback-modal'
 		});
 	}
