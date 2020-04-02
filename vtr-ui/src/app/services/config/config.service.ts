@@ -359,7 +359,9 @@ export class ConfigService {
 				assistCapability.isIntelligentMediaSupported.available ||
 				assistCapability.isIntelligentScreenSupported ||
 				assistCapability.isSuperResolutionSupported.available ||
-				assistCapability.isAPSSupported;
+				assistCapability.isAPSSupported ||
+				((assistCapability.isHsaIntelligentSecuritySupported.capability && 0x100) != 0) ||
+				((assistCapability.isHsaIntelligentSecuritySupported.capability && 0x80) != 0);
 
 			if (this.isSmartAssistAvailable) {
 				this.addSmartAssistMenu(this.menu);
