@@ -32,6 +32,9 @@ import { DurationCounterService } from 'src/app/services/timer/timer-service-ex.
 import { VantageFocusHelper } from 'src/app/services/timer/vantage-focus.helper';
 import { SegmentConst } from './services/self-select/self-select.service';
 import { StoreRatingService } from './services/store-rating/store-rating.service';
+import { UpdateProgress } from './enums/update-progress.enum';
+import { HardwareScanProgress } from './enums/hw-scan-progress.enum';
+import { SecurityAdvisorNotifications } from './enums/security-advisor-notifications.enum';
 
 declare var Windows;
 @Component({
@@ -157,7 +160,7 @@ export class AppComponent implements OnInit, OnDestroy {
 	private patchNgbModalOpen() {
 		const original = NgbModal.prototype.open;
 		// tslint:disable-next-line: only-arrow-functions
-		NgbModal.prototype.open = function() : NgbModalRef {
+		NgbModal.prototype.open = function (): NgbModalRef {
 			if (arguments.length > 1 && 'container' in arguments[1] === false) {
 				Object.assign(arguments[1], { container: 'vtr-root div' });
 			}
@@ -192,7 +195,7 @@ export class AppComponent implements OnInit, OnDestroy {
 			if (this.deviceService.isGaming) {
 				if (gamingTutorial) {
 					tutorial = gamingTutorial;
-				} else if (tutorial && tutorial.isDone && tutorial.tutorialVersion === ''){
+				} else if (tutorial && tutorial.isDone && tutorial.tutorialVersion === '') {
 					tutorial.tutorialVersion = this.newTutorialVersion;// 3.1.6 will save tutorial empty version in gaming
 					this.commonService.setLocalStorageValue(LocalStorageKey.GamingTutorial, tutorial);
 					this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, tutorial);
@@ -441,6 +444,19 @@ export class AppComponent implements OnInit, OnDestroy {
 						}).catch((error) => { });
 
 					this.storeRating.showRatingAsync();
+					break;
+				case UpdateProgress.UpdateCheckCompleted:
+				case UpdateProgress.InstallationComplete:
+				case SecurityAdvisorNotifications.WifiSecurityTurnedOn:
+					this.logger.info(`store rating should show in next start marked. ${notification.type}`);
+					this.storeRating.markPromptRatingNextLaunch(true);
+					break;
+				case HardwareScanProgress.ScanResponse:
+				case HardwareScanProgress.RecoverResponse:
+					this.logger.info(`store rating should show in next start marked. ${notification.type}. ${notification.payload ? notification.payload.status : 'null'}`);
+					if (notification.payload && notification.payload.status === true) {
+						this.storeRating.markPromptRatingNextLaunch(true);
+					}
 					break;
 				default:
 					break;

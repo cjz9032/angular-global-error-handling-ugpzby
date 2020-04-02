@@ -19,6 +19,7 @@ import { ConfigService } from 'src/app/services/config/config.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { SegmentConst } from 'src/app/services/self-select/self-select.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
+import { SecurityAdvisorNotifications } from 'src/app/enums/security-advisor-notifications.enum';
 
 interface WifiSecurityState {
 	state: string; // enabled,disabled,never-used
@@ -215,7 +216,10 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 			if (this.wifiHomeViewModel.isLWSEnabled) {
 				this.wifiSecurity.disableWifiSecurity();
 			} else {
-				this.wifiSecurity.enableWifiSecurity().catch(() => {
+				this.wifiSecurity.enableWifiSecurity().then(()=>{
+					this.commonService.sendNotification(SecurityAdvisorNotifications.WifiSecurityTurnedOn);
+				})
+				.catch(() => {
 					this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
 				});
 			}
