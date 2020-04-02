@@ -113,6 +113,17 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck {
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
+		// Remove focus when the mouse is being used
+		document.body.addEventListener('mousedown', () => {
+			document.body.classList.remove('focus-enable');
+		});
+
+		// Re-enable focus styling when Tab is pressed
+		document.body.addEventListener('keydown', (event) => {
+			if (event.keyCode === 9) {
+				document.body.classList.add('focus-enable');
+			}
+		});
 	}
 
 	ngDoCheck(): void {
