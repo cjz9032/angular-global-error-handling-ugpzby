@@ -1,9 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output, QueryList, ViewChildren } from '@angular/core';
 import { SecureMath } from '@lenovo/tan-client-bridge';
-import { NgbDropdown, NgbDropdownToggle } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDropdown } from '@ng-bootstrap/ng-bootstrap';
+import { TranslateService } from '@ngx-translate/core';
 import { ChargeThreshold } from 'src/app/data-models/device/charge-threshold.model';
 import { CommonService } from 'src/app/services/common/common.service';
-import { TranslateService } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-battery-charge-threshold-settings',
@@ -45,9 +45,9 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 	isCheckedAutoInput = 'is-auto-battery-threshold-settings';
 	public selectedOptionsData: any = {};
 	@ViewChildren(NgbDropdown) dropDowns: QueryList<NgbDropdown>;
-
-
+	timeOut = 100;
 	constructor(private commonService: CommonService, private translate: TranslateService) { }
+
 
 	ngOnInit() {
 		this.translate.stream('device.deviceSettings.power.batterySettings.batteryThreshold.options.start').subscribe((value) => {
@@ -67,8 +67,17 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 			bctInfo.startValue = startVal;
 			this.changeBCTInfo.emit(bctInfo);
 		}
-		activeDropdown.close();
-		button.focus();
+		this.delayButtonFocus(activeDropdown, button);
+	}
+	// this added to introduce the delay between option selection , and focus back on button to fix issue with narrator reading collapsed twice.
+	delayButtonFocus(activeDropdown: NgbDropdown, button: HTMLElement) {
+		if (activeDropdown.isOpen()) {
+			activeDropdown.close();
+		}
+		document.body.focus();
+		setTimeout(() => {
+			button.focus();
+		}, this.timeOut);
 	}
 
 	onStopValueChange(stopVal: number, activeDropdown: NgbDropdown, button: HTMLElement) {
@@ -80,8 +89,8 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 			}
 			this.changeBCTInfo.emit(bctInfo);
 		}
-		activeDropdown.close();
-		button.focus();
+		this.delayButtonFocus(activeDropdown, button);
+
 	}
 
 	public toggleAutoChargeSettings($event: boolean) {
