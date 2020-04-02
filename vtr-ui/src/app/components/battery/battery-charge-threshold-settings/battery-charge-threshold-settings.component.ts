@@ -61,16 +61,17 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 
 	}
 
-	onStartValueChange(startVal: number, button: HTMLElement) {
+	onStartValueChange(startVal: number, activeDropdown: NgbDropdown, button: HTMLElement) {
 		const bctInfo = this.commonService.cloneObj(this.bctInfo);
 		if (bctInfo.startValue !== startVal) {
 			bctInfo.startValue = startVal;
 			this.changeBCTInfo.emit(bctInfo);
 		}
+		activeDropdown.close();
 		button.focus();
 	}
 
-	onStopValueChange(stopVal: number, button: HTMLElement) {
+	onStopValueChange(stopVal: number, activeDropdown: NgbDropdown, button: HTMLElement) {
 		const bctInfo: ChargeThreshold = this.commonService.cloneObj(this.bctInfo);
 		if (bctInfo.stopValue !== stopVal) {
 			bctInfo.stopValue = stopVal;
@@ -79,6 +80,7 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 			}
 			this.changeBCTInfo.emit(bctInfo);
 		}
+		activeDropdown.close();
 		button.focus();
 	}
 
@@ -137,9 +139,9 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 
 	}
 
-	focusOnSelected($event: Event, dd: NgbDropdown, type, value) {
+	focusOnSelected($event: Event, activeDropdown: NgbDropdown, type, value) {
 		// dropdown-toggle will be toggled when pressed on enter
-		if (dd.isOpen()) {
+		if (activeDropdown.isOpen()) {
 			const focusElement = document.querySelector(`#${this.textId}-${type}-${value}`) as HTMLElement;
 			if (focusElement) {
 				focusElement.focus();

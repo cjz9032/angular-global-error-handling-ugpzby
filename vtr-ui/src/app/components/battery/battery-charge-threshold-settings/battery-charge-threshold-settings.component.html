@@ -24,20 +24,20 @@
 							[class.disabled]="bctInfo.checkboxValue || isDisabled">
 							<div class="btn-group btn-block dropdown-left"
 								ngbDropdown
-								#startAtDrop="ngbDropdown"
+								#startAtDropDown="ngbDropdown"
 								placement="bottom-right">
 								<button [ngClass]="['btn','btn-outline-shadow',bctInfo.checkboxValue?'disabled':'']"
 									ngbDropdownToggle
 									#startToggle
 									[disabled]="bctInfo.checkboxValue?true:false"
 									id="{{textId}}-start-dropdown"
-									(focus)="[closeAllOtherDD(startAtDrop)]"
+									(focus)="[closeAllOtherDD(startAtDropDown)]"
 									role="combobox"
 									attr.aria-haspopup="true"
 									attr.aria-label="{{title}}-{{ddStartAtChargeDescription}}-{{bctInfo.startValue}}%-{{option}}-
 									{{startAtChargeOptions.indexOf(bctInfo.startValue)+1}}-{{off}}-{{startAtChargeOptions.length}}-{{selected}}"
 									(keyup.enter)="[$event.stopPropagation(),
-									focusOnSelected($event,startAtDrop,startAtChargeOption,bctInfo.startValue)]">
+									focusOnSelected($event,startAtDropDown,startAtChargeOption,bctInfo.startValue)]">
 									<div class="row d-flex justify-content-between">
 										<div class="col-11 pl-1 pr-1">
 											<div class="select-title"
@@ -60,7 +60,7 @@
 									</div>
 								</button>
 								<div ngbDropdownMenu
-									attr.aria-hidden="true"
+									attr.aria-labelledby="{{textId}}-start-dropdown"
 									role="listbox"
 									tabindex="-1">
 									<a [ngClass]="['dropdown-item',item >= bctInfo.stopValue?'disabled':'']"
@@ -68,9 +68,9 @@
 										role="option"
 										tabindex="{{item === bctInfo.startValue?0:-1}}"
 										*ngFor="let item of startAtChargeOptions;let currentIndex=index;"
-										(click)="[onStartValueChange(item , startToggle), $event.preventDefault()]"
-										(keydown)="showHideMenuOfItem($event,startAtDrop)"
-										(keydown.enter)="onStartValueChange(item , startToggle)"
+										(click)="[onStartValueChange(item , startAtDropDown,startToggle), $event.preventDefault()]"
+										(keydown.enter)="[onStartValueChange(item ,startAtDropDown, startToggle),$event.preventDefault()]"
+										(keydown)="showHideMenuOfItem($event,startAtDropDown)"
 										id="{{textId}}-{{startAtChargeOption}}-{{item}}"
 										[attr.aria-selected]="bctInfo.startValue===item?true:false"
 										[disabled]="item >= bctInfo.stopValue"
@@ -87,17 +87,17 @@
 							[class.disabled]="isDisabled">
 							<div class="btn-group btn-block dropdown-right"
 								ngbDropdown
-								#stopAtDrop="ngbDropdown"
+								#stopAtDropDown="ngbDropdown"
 								placement="bottom-right">
 								<button [ngClass]="['btn','btn-outline-shadow']"
 									ngbDropdownToggle
 									#endToggle
 									id="{{textId}}-stop-dropdown"
-									(focus)="[closeAllOtherDD(stopAtDrop)]"
+									(focus)="[closeAllOtherDD(stopAtDropDown)]"
 									role="combobox"
 									attr.aria-label="{{title}}-{{ddStopAtChargeDescription}}-{{bctInfo.stopValue}}%-{{option}}-{{stopAtChargeOptions.indexOf(bctInfo.stopValue)+1}}-{{off}}-{{stopAtChargeOptions.length}}-{{selected}}"
 									(keyup.enter)="[$event.stopPropagation(),
-									focusOnSelected($event,stopAtDrop,stopAtChargeOption,bctInfo.stopValue)]">
+									focusOnSelected($event,stopAtDropDown,stopAtChargeOption,bctInfo.stopValue)]">
 									<div class="row d-flex justify-content-between"
 										aria-hidden="true">
 										<div class="col-11 pl-1 pr-1">
@@ -121,6 +121,7 @@
 								</button>
 								<div ngbDropdownMenu
 									id="{{textId}}-stop-at-charge-menu"
+									attr.aria-labelledby="{{textId}}-stop-dropdown"
 									role="listbox"
 									tabindex="-1">
 									<a [ngClass]="['dropdown-item',!bctInfo.checkboxValue && (item <= bctInfo.startValue) ?'disabled':'']"
@@ -128,9 +129,9 @@
 										role="option"
 										tabindex="{{item === bctInfo.stopValue?0:-1}}"
 										*ngFor="let item of stopAtChargeOptions;let currentIndex=index;"
-										(click)="[onStopValueChange(item , endToggle), $event.preventDefault()]"
-										(keydown)="showHideMenuOfItem($event,stopAtDrop)"
-										(keydown.enter)="onStopValueChange(item , endToggle)"
+										(click)="[onStopValueChange(item ,stopAtDropDown, endToggle), $event.preventDefault()]"
+										(keydown.enter)="[onStopValueChange(item,stopAtDropDown,endToggle),$event.preventDefault()]"
+										(keydown)="showHideMenuOfItem($event,stopAtDropDown)"
 										id="{{textId}}-{{stopAtChargeOption}}-{{item}}"
 										[disabled]="!bctInfo.checkboxValue && (item <= bctInfo.startValue)"
 										[attr.aria-selected]="bctInfo.stopValue===item?true:false"
