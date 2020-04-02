@@ -31,7 +31,7 @@ export class AntivirusService {
 		this.cacheAvStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus);
 		this.cacheFwStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus);
 		this.cacheCurrentPage = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityCurrentPage);
-		this.cacheFirewallLink = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityFirewallLink);
+		this.cacheFirewallLink = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityFirewallLink, '/security/anti-virus');
 		this.antivirusCommonData = new AntivirusCommonData();
 	}
 
@@ -55,6 +55,7 @@ export class AntivirusService {
 			this.antivirusCommonData.isMcAfeeInstalled = true;
 			av = antiVirus.mcafee.status;
 			fw = antiVirus.mcafee.firewallStatus;
+			this.antivirusCommonData.firewallLink = '/security/anti-virus';
 		} else if (antiVirus.others && antiVirus.others.enabled) {
 			this.antivirusCommonData.currentPage = 'others';
 			this.antivirusCommonData.isMcAfeeInstalled = Boolean(antiVirus.mcafee);
@@ -73,6 +74,7 @@ export class AntivirusService {
 				av = antiVirus.windowsDefender.status;
 				fw = antiVirus.windowsDefender.firewallStatus;
 			}
+			this.antivirusCommonData.firewallLink = '/security/anti-virus';
 		}
 
 		this.setAntivirusStatus(av, fw);

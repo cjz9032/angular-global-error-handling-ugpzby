@@ -1,0 +1,7 @@
+<aside class="vtr-notification"
+	*ngIf="!isClose">
+	<vtr-ui-banner
+		*ngIf="type === notificationType.Banner"
+		(close)="close()"
+	></vtr-ui-banner>
+</aside>

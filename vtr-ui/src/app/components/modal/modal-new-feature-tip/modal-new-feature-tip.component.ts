@@ -1,7 +1,6 @@
-import { Component, OnInit, Input, Output, EventEmitter, ViewContainerRef, ElementRef, HostListener, OnDestroy } from '@angular/core';
-import { NewFeatureTipService } from 'src/app/services/new-feature-tip/new-feature-tip.service';
+import { Component, OnInit, Input, Output, EventEmitter, ElementRef, HostListener, OnDestroy } from '@angular/core';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { ConfigService } from 'src/app/services/config/config.service';
+import { CommonService } from 'src/app/services/common/common.service';
 
 @Component({
 	selector: 'vtr-modal-new-feature-tip',
@@ -42,13 +41,10 @@ export class ModalNewFeatureTipComponent implements OnInit, OnDestroy {
 	metrics: any;
 
 	constructor(
-		private viewContainerRef: ViewContainerRef,
 		private element: ElementRef,
-		private configService: ConfigService,
-		newFeatureTipService: NewFeatureTipService,
+		private commonService: CommonService,
 		private shellService: VantageShellService,
 	) {
-		newFeatureTipService.viewContainer = this.viewContainerRef;
 		this.metrics = this.shellService.getMetrics();
 	}
 
@@ -131,7 +127,7 @@ export class ModalNewFeatureTipComponent implements OnInit, OnDestroy {
 		const homeSecurityMenu = this.newTipIdSelector(this.allNewTips.homeSecurity.tipId);
 		const hardwareScanMenu = this.newTipIdSelector(this.allNewTips.hardwareScan.tipId);
 
-		const lastFeatureVersion = this.configService.lastFeatureVersion;
+		const lastFeatureVersion = this.commonService.lastFeatureVersion;
 
 		if (this.isShowMenuTips(securityMenu, this.allNewTips.security.version, lastFeatureVersion)) {
 			this.setDescAndTipId(this.allNewTips.security);

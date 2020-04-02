@@ -40,7 +40,7 @@ class SuspendDuration implements IDuration {
 @Injectable({
   providedIn: 'root'
 })
-export class TimerServiceEx {
+export class DurationCounterService {
 	private activeFocusCounter = 0;
 	private activeBlurCounter = 0;
 	private suspendCounter = 0;

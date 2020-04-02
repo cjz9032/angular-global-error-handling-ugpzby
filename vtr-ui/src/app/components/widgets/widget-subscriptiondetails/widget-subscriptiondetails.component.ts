@@ -4,7 +4,8 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { CommonService } from 'src/app/services/common/common.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalSmartPerformanceSubscribeComponent } from '../../modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
-
+import { v4 as uuid } from 'uuid';
+import { formatDate } from '@angular/common';
 @Component({
   selector: 'vtr-widget-subscriptiondetails',
   templateUrl: './widget-subscriptiondetails.component.html',
@@ -19,9 +20,16 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 	strStatus:any;
 	givenDate:Date;
 	public today = new Date();
+	myDate = new Date();
   constructor(private translate: TranslateService,private modalService: NgbModal,private commonService: CommonService) {
 	}
-
+	public localSubscriptionDetails = [
+		{
+			UUID: uuid(),
+			StartDate: formatDate(new Date(), 'yyyy/MM/dd', 'en'),
+			EndDate: formatDate(this.myDate.setDate(new Date().getDate() + 90), 'yyyy/MM/dd', 'en')
+		}
+	];
   ngOnInit() {
     this.isSubscribed=this.commonService.getLocalStorageValue(LocalStorageKey.IsSubscribed);
 	if(this.isSubscribed)
@@ -56,7 +64,10 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
         centered: true,
         windowClass: 'subscribe-modal',
 
-    });
+	});
+	// this.commonService.setLocalStorageValue(LocalStorageKey.IsSubscribed, true);
+	// this.commonService.setLocalStorageValue(LocalStorageKey.SubscribtionDetails, this.localSubscriptionDetails);
+	// location.reload();
 }
 
 }

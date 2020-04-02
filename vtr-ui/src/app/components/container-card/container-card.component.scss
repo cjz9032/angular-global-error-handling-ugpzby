@@ -240,22 +240,22 @@
 				.inner-content {
 					position: relative;
 					z-index: 1;
-					padding: 2rem;
+					padding: 2.4rem;
 					height: 100%;
 					@media #{$black-on-white} {
-						border:1px solid;
-						border-bottom: 1px solid !important;
+						
+						border-bottom: 1px solid $dark !important;
 						border-radius: 1rem;
 					}
 					@media #{$white-on-black} {
-						border: 1px solid;
-						border-bottom: 1px solid !important;
+						
+						border-bottom: 1px solid $light !important;
 						border-radius: 1rem;
 					}
 
-					@media #{$mediaquery_X1} {
-						padding: 2rem;
-					}
+					// @media #{$mediaquery_X1} {
+					// 	padding: 2rem;
+					// }
 
 					// @media #{$mediaquery_10} {
 					// 	padding: 1.5rem 2rem;
@@ -495,24 +495,24 @@
 		}
 
 		.content {
-			padding: 2rem;
+			padding: 2.4rem;
 			cursor: pointer;
 
-			@media #{$mediaquery_X1} {
-				padding: 2rem;
-			}
+			// @media #{$mediaquery_X1} {
+			// 	padding: 2rem;
+			// }
 
-			@media #{$mediaquery_10} {
-				padding: 1.5rem 2rem;
-			}
+			// @media #{$mediaquery_10} {
+			// 	padding: 1.5rem 2rem;
+			// }
 
-			@media #{$mediaquery_X7} {
-				padding: 1.5rem;
-			}
+			// @media #{$mediaquery_X7} {
+			// 	padding: 1.5rem;
+			// }
 
-			@media #{$mediaquery_18} {
-				padding: 1.5rem;
-			}
+			// @media #{$mediaquery_18} {
+			// 	padding: 1.5rem;
+			// }
 
 			.title {
 				color: $light;
@@ -637,7 +637,7 @@
 		border-radius: $border_radius;
 	}
 	@media #{$white-on-black} {
-		border: 0.1rem solid $dark ;
+		border: 0.1rem solid $light ;
 
 		border-radius: $border_radius;
 	}
@@ -646,6 +646,6 @@
 }
 
 .spinner-border {
-	height: 50px;
-	width: 50px;
+  height: 50px;
+  width: 50px;
 }

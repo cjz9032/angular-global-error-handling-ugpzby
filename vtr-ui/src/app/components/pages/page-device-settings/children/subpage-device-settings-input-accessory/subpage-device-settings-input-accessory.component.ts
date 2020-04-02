@@ -1,19 +1,19 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
-import { CommonService } from 'src/app/services/common/common.service';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
 import WinRT from '@lenovo/tan-client-bridge/src/util/winrt';
-import { LoggerService } from 'src/app/services/logger/logger.service';
-import { VoipErrorCodeEnum } from '../../../../../enums/voip.enum';
-import { VoipApp } from '../../../../../data-models/input-accessories/voip.model';
 import { EMPTY, Observable, Subscription } from 'rxjs';
-import { TopRowFunctionsIdeapadService } from './top-row-functions-ideapad/top-row-functions-ideapad.service';
-import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
-import { BacklightService } from './backlight/backlight.service';
 import { map } from 'rxjs/operators';
+import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { CommonService } from 'src/app/services/common/common.service';
+import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 import { StringBooleanEnum } from '../../../../../data-models/common/common.interface';
+import { VoipApp } from '../../../../../data-models/input-accessories/voip.model';
+import { VoipErrorCodeEnum } from '../../../../../enums/voip.enum';
 import { BacklightLevelEnum } from './backlight/backlight.enum';
+import { BacklightService } from './backlight/backlight.service';
+import { TopRowFunctionsIdeapadService } from './top-row-functions-ideapad/top-row-functions-ideapad.service';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-input-accessory',

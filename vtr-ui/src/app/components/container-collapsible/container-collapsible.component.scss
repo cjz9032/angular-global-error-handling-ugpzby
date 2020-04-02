@@ -13,17 +13,6 @@
 			.card-header {
 				background: none;
 				border-color: $border;
-				// @media #{$black-on-white} {
-				// 	border:0.1rem solid;
-				// 	border-top-left-radius: 1rem;
-				// 	border-top-right-radius: 1rem;
-				// }
-				// @media #{$white-on-black} {
-				// 	border:0.1rem solid;
-				// 	border-top-left-radius: 1rem;
-				// 	border-top-right-radius: 1rem;
-				// }
-
 				&.hide-border-bottom{
 					border-bottom: none;
 				}
@@ -32,7 +21,7 @@
 					color: $color;
 					font-size: $fontsize_lg;
 					line-height: 3rem;
-					font-weight: $weight_regular;
+					font-weight: $weight_light;
 					text-transform: none;
 				}
 
@@ -41,7 +30,7 @@
 
 					.collapse-text {
 						display: inline-block;
-						color: $shade_blue;
+						color: $grey_dark;
 						font-size: $fontsize_xs;
 						font-weight: $weight_light;
 						margin-right: 0.6rem;
@@ -57,10 +46,10 @@
 					}
 
 					&:hover {
-						opacity: .7;
+						opacity: 1;
 
 						.collapse-text {
-							text-decoration: none;
+							text-decoration: underline;
 						}
 					}
 				}

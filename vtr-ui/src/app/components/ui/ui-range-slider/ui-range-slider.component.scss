@@ -20,7 +20,7 @@ but not to any other element on the page. using ::ng-deep
 			}
 			/* slider selected area*/
 			.ng5-slider-selection {
-				background: $main;
+				background: $menu_hover 0% 0% no-repeat padding-box;
 				@media #{$white-on-black} {
 					background-color: $highlight_bright;
 					border: none;
@@ -36,8 +36,7 @@ but not to any other element on the page. using ::ng-deep
 				height: $thumb-size;
 				width: $thumb-size;
 				border-radius: 2.8rem;
-				background: linear-gradient($gradient_angle_reverse, $main_light 0%, $main 100%),
-					linear-gradient($gradient_angle, $light 0%, $light 100%);
+				background: transparent $gradient_blue 0% 0% no-repeat padding-box;
 
 				@media #{$white-on-black} {
 					border: 1px solid #fff;
@@ -117,30 +116,24 @@ but not to any other element on the page. using ::ng-deep
 			font-size: $fontsize_xs;
 			font-weight: 300;
 			line-height: 2.3rem;
-			color: $shade_dark;
+			color: $grey_dark;
 		}
 	}
 	.disable-slider-pointer {
 		.ng5-slider {
 			.ng5-slider-pointer, .ng5-slider-selection {
 				background: #8b91a2 !important;
+				@media #{$white-on-black} {
+					background: $high-contrast-black-disabled !important;
+					border: none;
+				}
+				@media #{$black-on-white} {
+					background: $high-contrast-white-disabled !important;
+					border: none;
+				}
 			}
 		}
 	}
 
-	// [disabled].ng5-slider .ng5-slider-pointer {
-	// 	background-color: initial;
-	// }
-
-	// [disabled].ng5-slider .ng5-slider-selection {
-	// 	@media #{$white-on-black}{
-	// 		background-color: $go_dark;
-
-	// 	}
-	// 	@media #{$black-on-white}{
-
-	// 		background-color: $high-contrast-white-disabled;
-
-	// 	}
-	// }
+	
 }

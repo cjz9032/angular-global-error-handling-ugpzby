@@ -17,6 +17,7 @@
 					<label [for]="id"
 						attr.aria-label="{{label}}, {{hours[hour]}}, 'hours', {{minutes[minute]}}, 'minutes', {{amPms[amPm] | translate}}"
 						[attr.aria-expanded]="showDropDown"
+						#combo
 						tabindex="0"
 						class="dropbtn"
 						role="combobox"
@@ -24,31 +25,34 @@
 						<div class="row">
 							<div class="col align-items-center d-flex justify-content-between">
 								<div class="time-headings">
-									<p role="text"
-										class=""
+									<p class=""
 										id="smartStandby-{{linkId}}-hours"
-										attr.aria-label="smartStandby-{{linkId}}-hours">
+										role="text">
 										{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit1' | translate | uppercase }}
 									</p>
-									<span class="" role="text" id="{{hours[copyHour]}}-{{linkId}}-'hours'">{{hours[hour]}}</span>
+									<span class=""
+										role="text"
+										id="{{linkId}}-hours-value">{{hours[hour]}}</span>
 								</div>
 								<div class="time-headings">
-									<p role="text"
-										class=""
+									<p class=""
 										id="smartStandby-{{linkId}}-minutes"
-										attr.aria-label="smartStandby-{{linkId}}-minutes">
+										role="text">
 										{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit2' | translate | uppercase }}
 									</p>
-									<span class="" role="text" id="{{minutes[copyMinute]}}-{{linkId}}-'minutes'">{{minutes[minute]}}</span>
+									<span class=""
+										role="text"
+										id="{{linkId}}-minutes-value">{{minutes[minute]}}</span>
 								</div>
 								<div class="time-headings">
-									<p role="text"
-										class=""
+									<p class=""
 										id="smartStandby-{{linkId}}-amPm"
-										attr.aria-label="smartStandby-{{linkId}}-amPm">
+										role="text">
 										{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit3' | translate }}
 									</p>
-									<span class="" role="text" id="{{linkId}}-value-{{amPms[copyAmPm]}}">{{amPms[amPm] | translate}}</span>
+									<span class=""
+										role="text"
+										id="{{linkId}}-amPm-value">{{amPms[amPm] | translate}}</span>
 								</div>
 
 								<div class="toggle-icon align-right"
@@ -80,8 +84,6 @@
 
 										<span>{{hours[prevHour]}}</span><br>
 										<span class="highlight"
-											role="text"
-											tabindex="0"
 											id="{{hours[copyHour]}}'hours'"
 											attr.aria-label="{{hours[copyHour]}}, 'hours'">{{hours[copyHour]}}</span><br>
 										<span>{{hours[nextHour]}}</span>
@@ -111,8 +113,6 @@
 
 										<span>{{minutes[prevMinute]}}</span><br>
 										<span class="highlight"
-											role="text"
-											tabindex="0"
 											id="{{minutes[copyMinute]}}, 'minutes'"
 											attr.aria-label="{{minutes[copyMinute]}}, 'minutes'">{{minutes[copyMinute]}}</span><br>
 										<span>{{minutes[nextMinute]}}</span>
@@ -131,6 +131,7 @@
 
 									<div class="am-pm highlight"
 										role="radiogroup"
+										aria-label="time list, select using arrow keys"
 										tabindex="0">
 										<span>
 											<label class="inline-block"
@@ -147,8 +148,7 @@
 													tabindex="-1"
 													[checked]="copyAmPm==0"
 													(click)="setAmPm(0)" />
-												<p role="text"
-													class="label-text">{{ amPms[0] | translate }}</p>
+												<p class="label-text">{{ amPms[0] | translate }}</p>
 											</label>
 										</span><br>
 										<span>
@@ -166,8 +166,7 @@
 													value="1"
 													[checked]="copyAmPm==1"
 													(click)="setAmPm(1)" />
-												<p role="text"
-													class="label-text">{{ amPms[1] | translate }}</p>
+												<p class="label-text">{{ amPms[1] | translate }}</p>
 											</label>
 										</span>
 									</div>
@@ -181,14 +180,14 @@
 									tabindex="0"
 									role="button"
 									(click)="setTimer()"
-									(keydown.enter)="setTimer()"
+									(keydown.enter)="[setTimer(),combo.focus()]"
 									id="smartStandby-{{linkId}}-done-icon"
 									aria-label="'confirm changes'"></fa-icon>
 								<fa-icon [icon]="['fal', 'times']"
 									tabindex="0"
 									role="button"
 									(click)="clearSettings()"
-									(keydown.enter)="clearSettings()"
+									(keydown.enter)="[clearSettings(),combo.focus()]"
 									id="smartStandby-{{linkId}}-close-icon"
 									aria-label="'cancel changes'"></fa-icon>
 							</div>

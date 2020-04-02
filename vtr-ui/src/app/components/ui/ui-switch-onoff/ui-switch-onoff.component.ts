@@ -1,11 +1,11 @@
-import { Component, OnInit, Input, Output, EventEmitter, OnDestroy } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { CommonService } from '../../../services/common/common.service';
 
 @Component({
 	selector: 'vtr-ui-switch-onoff',
 	templateUrl: './ui-switch-onoff.component.html',
-	styleUrls: [ './ui-switch-onoff.component.scss' ]
+	styleUrls: ['./ui-switch-onoff.component.scss']
 })
 export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 	@Output() toggle: EventEmitter<any> = new EventEmitter();
@@ -22,7 +22,7 @@ export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 
 	size = 'switch-xs';
 
-	constructor(public commonService: CommonService) {}
+	constructor(public commonService: CommonService) { }
 
 	ngOnInit() {
 		this.readonly = this.readonly || false;

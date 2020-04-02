@@ -379,7 +379,7 @@
 														}
 														label {
 															color: $white100;
-															margin-left: 0.8rem;															
+															margin-left: 0.8rem;
 															font-size:$fontsize_xs2;
 														}
 													}
@@ -702,29 +702,29 @@
 						.support-list {
 							background-color: $gaming-bg !important;
 							border: none !important;
-	
+
 							button {
 								&:hover {
 									background-color: transparent !important;
 								}
 							}
-	
+
 							.title {
 								color: $gaming_lightest;
 							}
-	
+
 							.arrow {
 								color: $gaming_lightest !important;
 							}
-	
+
 							.description {
 								color: $gaming_grey_lightest;
 								font-size: 1.2rem;
 							}
-	
+
 							li {
 								border-bottom: 0.1rem solid $screen_dark_15 !important;
-	
+
 								a {
 									&:hover {
 										background-color: transparent !important;
@@ -1900,6 +1900,23 @@
 	}
 }
 
+body.focus-enable{
+	.is-gaming {
+		.btn,.enable-button,button{
+			&:focus{
+				outline: 1px dotted !important;
+				}
+		}
+		*:focus {
+		outline: 1px dotted !important;
+		box-shadow: none !important;
+	}
+		button.close{
+		opacity:1 !important
+		}	
+	}
+}
+
 .gaming-help-modal {
 	.modal-dialog {
 		width: 80rem;
@@ -1965,7 +1982,7 @@ vtr-container-card {
 .Article-Detail-Modal{
 	&.content-gaming{
 		*:focus{
-		outline: none;
+		 outline: none;
 	}
 	overflow:hidden !important;
 	.modal-dialog{
@@ -2012,9 +2029,7 @@ dl {
 	margin: 0;
 }
 
-button:focus {
-	outline: none;
-}
+
 
 button {
 	outline: none;
@@ -2194,7 +2209,6 @@ button {
 	//   transform: scale(0.96);
 	// }
 }
-
 .is-gaming,
 .gaming-help-popup,
 .battery-modal-size {

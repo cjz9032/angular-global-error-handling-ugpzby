@@ -26,6 +26,7 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 		metricsItemClose: 'close dialog',
 		metricsItemPopup: '',
 		popupWindowTitle: '',
+		automationId:'macrokey_clear_records_dialog',
 	};
 
 	constructor() { }
@@ -77,6 +78,7 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 				this.modalContent.metricsItemClose = 'close dialog';
 				this.modalContent.metricsItemPopup = 'macrokey_10s_timeout_popup';
 				this.modalContent.popupWindowTitle = '10 second time out window';
+				this.modalContent.automationId = 'macrokey_10s_timeout_dialog';
 
 				this.showModal = !this.showModal;
 				this.toggleRecording(true);
@@ -88,6 +90,7 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 				this.modalContent.metricsItemClose = 'close dialog';
 				this.modalContent.metricsItemPopup = 'macrokey_20s_timeout_popup';
 				this.modalContent.popupWindowTitle = '20 second time out window';
+				this.modalContent.automationId = 'macrokey_20s_timeout_dialog';
 				this.showModal = !this.showModal;
 				this.toggleRecording(true);
 			}
@@ -97,6 +100,7 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 				this.modalContent.metricsItemId = 'macrokey_maximum_input_dialog_ok_button';
 				this.modalContent.popupWindowTitle = 'Maximum Input Reached window';
 				this.modalContent.metricsItemClose = 'close dialog';
+				this.modalContent.automationId = 'macrokey_maximum_input_dialog';
 				this.showModal = !this.showModal;
 				this.toggleRecording();
 			}
