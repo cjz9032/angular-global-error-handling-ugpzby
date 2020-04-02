@@ -142,11 +142,13 @@
 		&:active::-webkit-slider-thumb {
 			@include thumb-active();
 		}
-		&:disabled::-webkit-slider-thumb {
-			@include thumb-disabled();
-		}
-		&:disabled::-webkit-slider-runnable-track {
-			@include track-disabled();
+		&:disabled {
+			&::-webkit-slider-thumb {
+				@include thumb-disabled();
+			}
+			&::-webkit-slider-runnable-track {
+				@include track-disabled();
+			}
 		}
 		/* end chromium browser */
 

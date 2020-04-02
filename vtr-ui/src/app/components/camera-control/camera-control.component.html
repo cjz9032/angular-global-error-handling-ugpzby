@@ -34,15 +34,14 @@
 						<!-- Brightness -->
 						{{'device.deviceSettings.displayCamera.camera.brightness' | translate}}
 					</div>
-					<vtr-ui-range-slider [step]="cameraSettings.brightness.step"
-						[minValue]="cameraSettings.brightness.min"
-						[maxValue]="cameraSettings.brightness.max"
-						[manualRefresh]="manualRefresh"
-						[enableSlider]="disabledAll"
-						[(value)]="$any(cameraSettings).brightness.value"
+					<vtr-ui-custom-slider [step]="cameraSettings.brightness.step"
+						[min]="cameraSettings.brightness.min"
+						[max]="cameraSettings.brightness.max"
+						[isDisabled]="disabledAll"
+						[value]="cameraSettings.brightness.value"
 						(sliderChange)="onBrightnessSliderChange($event)"
-						[rangeSliderId]="'cameraSettings-brightness'">
-					</vtr-ui-range-slider>
+						[sliderId]="'cameraSettings-brightness'">
+					</vtr-ui-custom-slider >
 				</li>
 				<li class="list-group-item"
 					*ngIf="cameraSettings.contrast && cameraSettings.contrast.supported">
@@ -52,15 +51,14 @@
 						<!-- Contrast -->
 						{{'device.deviceSettings.displayCamera.camera.contrast' | translate}}
 					</div>
-					<vtr-ui-range-slider [step]="cameraSettings.contrast.step"
-						[minValue]="cameraSettings.contrast.min"
-						[maxValue]="cameraSettings.contrast.max"
-						[manualRefresh]="manualRefresh"
-						[enableSlider]="disabledAll"
-						[(value)]="$any(cameraSettings).contrast.value"
+					<vtr-ui-custom-slider [step]="cameraSettings.contrast.step"
+						[min]="cameraSettings.contrast.min"
+						[max]="cameraSettings.contrast.max"
+						[isDisabled]="disabledAll"
+						[value]="cameraSettings.contrast.value"
 						(sliderChange)="onContrastSliderChange($event)"
-						[rangeSliderId]="'cameraSettings-contrast'">
-					</vtr-ui-range-slider>
+						[sliderId]="'cameraSettings-contrast'">
+					</vtr-ui-custom-slider>
 				</li>
 				<li class="list-group-item"
 					*ngIf="cameraSettings.exposure && cameraSettings.exposure.autoModeSupported">
@@ -80,16 +78,15 @@
 						</div>
 					</div>
 					<div *ngIf="!cameraFeatureAccess.exposureAutoValue">
-						<vtr-ui-range-slider [hidden]="!cameraFeatureAccess.showAutoExposureSlider"
+						<vtr-ui-custom-slider [hidden]="!cameraFeatureAccess.showAutoExposureSlider"
 							[step]="cameraSettings.exposure.step"
-							[minValue]="cameraSettings.exposure.min"
-							[maxValue]="cameraSettings.exposure.max"
-							[enableSlider]="disabledAll"
-							[manualRefresh]="manualRefresh"
-							[(value)]="$any(cameraSettings).exposure.value"
+							[min]="cameraSettings.exposure.min"
+							[max]="cameraSettings.exposure.max"
+							[isDisabled]="disabledAll"
+							[value]="cameraSettings.exposure.value"
 							(sliderChange)="onExposureSliderChange($event)"
-							[rangeSliderId]="'cameraSettings-autoExposure'">
-						</vtr-ui-range-slider>
+							[sliderId]="'cameraSettings-autoExposure'">
+						</vtr-ui-custom-slider>
 					</div>
 				</li>
 				<li class="list-group-item"
