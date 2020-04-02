@@ -71,7 +71,7 @@
 			</vtr-ui-button>
 		</div>
 		<div class="stop-button">
-			<vtr-ui-button id="gaming_macrokey_stoprecording" [tabIndex]="1" aria-label="gaming macrokey stoprecording"
+			<vtr-ui-button id="gaming_macrokey_stoprecording" role="button" [tabIndex]="1" aria-label="gaming macrokey stoprecording"
 				metricsEvent="featureClick" [metricsItem]="'macrokey_stop_recording'"
 				[label]="'gaming.macroKey.details.buttons.stop' | translate" [btnHeight]=true [isGradient]=true
 				(onClick)="onStopClicked($event)">
