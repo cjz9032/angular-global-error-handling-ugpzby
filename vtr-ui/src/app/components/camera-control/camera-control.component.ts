@@ -1,9 +1,19 @@
-import { Component, OnInit, Input, ViewChild, OnDestroy, ElementRef, Output, EventEmitter, NgZone, HostListener } from '@angular/core';
+import {
+	Component,
+	OnInit,
+	Input,
+	ViewChild,
+	OnDestroy,
+	ElementRef,
+	Output,
+	EventEmitter,
+	NgZone,
+	HostListener
+} from '@angular/core';
 import { CameraDetail, CameraSettingsResponse, CameraFeatureAccess } from 'src/app/data-models/camera/camera-detail.model';
 import { CameraFeedService } from 'src/app/services/camera/camera-feed/camera-feed.service';
 import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
 import { Subscription } from 'rxjs/internal/Subscription';
-import { ChangeContext } from 'ng5-slider';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 
@@ -18,9 +28,9 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	@Input() cameraFeatureAccess: CameraFeatureAccess;
 	@Input() manualRefresh: any;
 	@Input() disabledAll = false;
-	@Output() brightnessChange: EventEmitter<ChangeContext> = new EventEmitter();
-	@Output() contrastChange: EventEmitter<ChangeContext> = new EventEmitter();
-	@Output() exposureChange: EventEmitter<ChangeContext> = new EventEmitter();
+	@Output() brightnessChange: EventEmitter<number> = new EventEmitter();
+	@Output() contrastChange: EventEmitter<number> = new EventEmitter();
+	@Output() exposureChange: EventEmitter<number> = new EventEmitter();
 	@Output() exposureToggle: EventEmitter<any> = new EventEmitter();
 	@Output() cameraAvailable: EventEmitter<boolean> = new EventEmitter();
 	@Output() cameraDisable: EventEmitter<boolean> = new EventEmitter();
@@ -315,16 +325,22 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public onBrightnessSliderChange($event: ChangeContext) {
+	public onBrightnessSliderChange($event: any) {
 		this.logger.info('Brightness changed', $event);
-		this.brightnessChange.emit($event);
+		const value = parseInt($event.value, 10);
+		this.cameraSettings.brightness.value = value;
+		this.brightnessChange.emit(value);
 	}
-	public onContrastSliderChange($event: ChangeContext) {
+	public onContrastSliderChange($event: any) {
 		this.logger.info('Contrast changed', $event);
-		this.contrastChange.emit($event);
+		const value = parseInt($event.value, 10);
+		this.cameraSettings.contrast.value = value;
+		this.contrastChange.emit(value);
 	}
-	public onExposureSliderChange($event: ChangeContext) {
+	public onExposureSliderChange($event: any) {
 		this.logger.info('exposure changed', $event);
-		this.exposureChange.emit($event);
+		const value = parseInt($event.value, 10);
+		this.cameraSettings.exposure.value = value;
+		this.exposureChange.emit(value);
 	}
 }

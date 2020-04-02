@@ -214,12 +214,12 @@
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.displayCamera.display.oledPowerSettings.title' | translate"
 									componentName="Oled Power Settings"
-									[name]="'device.deviceSettings.displayCamera.display.oledPowerSettings.title' | translate"
 									[isSwitchVisible]="false"
 									[isLastChild]="false"
 									[leftIcon]="['fal', 'tv']"
 									[showChildContent]="true"
 									[isSwitchChecked]="eyeCareModeStatus.status"
+									[switchId]="'oled-power-settings'"
 									(toggleOnOff)="onEyeCareModeStatusToggle($event)"
 									[theme]="'white'">
 									<div class="row">
@@ -291,7 +291,6 @@
 								<vtr-ui-row-switch [switchId]="'camera-privacy-mode'"
 									[title]="'device.deviceSettings.displayCamera.camera.cameraPrivacy.title' | translate"
 									componentName="Camera Privacy Mode"
-									[name]="'device.deviceSettings.displayCamera.camera.cameraPrivacy.title' | translate"
 									[isSwitchVisible]="true"
 									[showChildContent]="true"
 									[leftIcon]="['fal', 'camera']"
@@ -321,7 +320,8 @@
 															class="btn btn-link privacy-button pl-0"
 															(click)="onClick('ms-settings:privacy-webcam')"
 															id="camera-privacy-mode-access-url"
-															attr.aria-label="camera-privacy-mode-access-url" role="link">
+															attr.aria-label="camera-privacy-mode-access-url"
+															role="link">
 															{{'dashboard.quickSettings.note.accessUrl' | translate}}
 														</button>
 													</div>
@@ -335,7 +335,6 @@
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.displayCamera.camera.camera.title' | translate"
 									componentName="Camera"
-									[name]="'device.deviceSettings.displayCamera.camera.camera.title' | translate"
 									[type]="'Camera'"
 									[isSwitchVisible]="false"
 									[isLastChild]="!cameraBlur.available || cameraBlur.errorCode !== 0"
@@ -368,7 +367,8 @@
 															class="btn btn-link privacy-button pl-0"
 															(click)="onClick('ms-settings:privacy-webcam')"
 															id="device-settings-camera-access-url"
-															attr.aria-label="device-settings-camera-access-url" role="link">
+															attr.aria-label="device-settings-camera-access-url"
+															role="link">
 															{{'dashboard.quickSettings.note.accessUrl' | translate}}
 														</button>
 													</div>

@@ -1,4 +1,5 @@
-import { Component, OnInit, HostListener, OnDestroy } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, OnInit, HostListener, OnDestroy, Inject } from '@angular/core';
 import { Router, NavigationEnd, ActivatedRoute, ParamMap } from '@angular/router';
 import { DisplayService } from './services/display/display.service';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
@@ -31,6 +32,7 @@ import { DurationCounterService } from 'src/app/services/timer/timer-service-ex.
 // import { AppUpdateService } from './services/app-update/app-update.service';
 import { VantageFocusHelper } from 'src/app/services/timer/vantage-focus.helper';
 import { SegmentConst } from './services/self-select/self-select.service';
+import { NotificationType } from './components/notification/notification.component';
 
 declare var Windows;
 @Component({
@@ -49,6 +51,7 @@ export class AppComponent implements OnInit, OnDestroy {
 	private isServerSwitchEnabled = true;
 	private shellVersion;
 	private newTutorialVersion = '3.1.2';
+	public notificationType = NotificationType.Banner;
 
 	constructor(
 		private displayService: DisplayService,
@@ -67,6 +70,7 @@ export class AppComponent implements OnInit, OnDestroy {
 		private appsForYouService: AppsForYouService,
 		private metricService: MetricService,
 		// private appUpdateService: AppUpdateService
+		@Inject(DOCUMENT) public document: Document
 	) {
 		this.patchNgbModalOpen();
 		// to check web and js bridge version in browser console

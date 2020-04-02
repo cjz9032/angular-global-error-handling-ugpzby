@@ -13,9 +13,9 @@ export class MenuHeaderComponent implements OnInit {
 
 	constructor(public router: Router) { }
 
-	ngOnInit() { }
+	ngOnInit() {}
 
-	getActiveTab() {
+	/* getActiveTab() {
 		let activeTab = {};
 		this.menuItems.forEach((d, i) => {
 			if (d.active) {
@@ -36,8 +36,13 @@ export class MenuHeaderComponent implements OnInit {
 				item.active = true;
 			}
 		}
-	}
+	} */
 	changeRoute(routeValue, params?: any) {
-		this.router.navigate(["/" + routeValue], { queryParams: params });
+		if (params) {
+			this.router.navigate(["/" + routeValue], { queryParams: params });
+		}
+		else {
+			this.router.navigate(["/" + routeValue]);
+		}
 	}
 }

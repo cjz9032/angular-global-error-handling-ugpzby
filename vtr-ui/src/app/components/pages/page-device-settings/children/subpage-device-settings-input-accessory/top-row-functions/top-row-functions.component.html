@@ -36,7 +36,7 @@
 									[disabled]="topRowKeyObj.stickyFunStatus"
 									(change)="onChangeFunType(topRowKeyObj.primaryFunStatus)"
 									(customKeyEvent)="updateFocusAndSelection($event, !topRowKeyObj.primaryFunStatus)"
-									[value]="(topRowKeyObj.primaryFunStatus && topRowKeyObj.fnLockStatus) || (!topRowKeyObj.primaryFunStatus && !topRowKeyObj.fnLockStatus) ? true: false">
+									[value]="(topRowKeyObj.primaryFunStatus && topRowKeyObj.fnLockStatus) || (!topRowKeyObj.primaryFunStatus && !topRowKeyObj.fnLockStatus) ? 'true': 'false'">
 								</vtr-ui-rectangle-radio>
 							</div>
 							<div>
@@ -48,7 +48,7 @@
 									[disabled]="topRowKeyObj.stickyFunStatus"
 									(change)="onChangeFunType(!topRowKeyObj.primaryFunStatus)"
 									(customKeyEvent)="updateFocusAndSelection($event, topRowKeyObj.primaryFunStatus)"
-									[value]="(topRowKeyObj.primaryFunStatus && topRowKeyObj.fnLockStatus) || (!topRowKeyObj.primaryFunStatus && !topRowKeyObj.fnLockStatus) ? false: true">
+									[value]="(topRowKeyObj.primaryFunStatus && topRowKeyObj.fnLockStatus) || (!topRowKeyObj.primaryFunStatus && !topRowKeyObj.fnLockStatus) ? 'false': 'true'">
 								</vtr-ui-rectangle-radio>
 							</div>
 						</div>

@@ -87,6 +87,7 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 							this.modes = [];
 							this.cacheData.modes = this.modes;
 							this.commonService.setLocalStorageValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData)
+							this.showHide.emit(false);
 							return;
 						}
 						if (res) {

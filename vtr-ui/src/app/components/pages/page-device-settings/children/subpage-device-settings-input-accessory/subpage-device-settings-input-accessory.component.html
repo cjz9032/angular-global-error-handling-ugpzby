@@ -35,7 +35,7 @@
 									[switchId]="'inputAccessories-hiddenKeyboardFunctions'">
 									<div class="row pl-3">
 										<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                                            <!-- <div class="img-preview" id="keyboardMap-background-image" role="img" attr.aria-label="keyboardMap-background-image"
+											<!-- <div class="img-preview" id="keyboardMap-background-image" role="img" attr.aria-label="keyboardMap-background-image"
                                                 automationId="keyboardMap.background-image" [ngStyle]="{ 'background-image': 'url(' + image + ')'}">
 												<div class="img-preview"
 													[style.background-image]="additionalCapabilitiesObj.privacy ? 'url(' + privacyIcon + ')': ''">
@@ -51,12 +51,24 @@
 												</div>
 											</div> -->
 											<div class="keyboard-mapping-background">
-												<img class="keyboard-bg img-preview" id="keyboardMap-background-image" role="img" attr.aria-label="keyboardMap-background-image"
-                                                automationId="keyboardMap.background-image" [src]="image"/>
-												<img *ngIf="additionalCapabilitiesObj.privacy" class="keyboard-layer img-preview" [src]="privacyIcon"/>
-												<img *ngIf="additionalCapabilitiesObj.backLight" class="keyboard-layer img-preview" [src]="kbdBlIcon"/>
-												<img *ngIf="additionalCapabilitiesObj.performance" class="keyboard-layer img-preview" [src]="merlynIcon"/>
-												<img *ngIf="additionalCapabilitiesObj.magnifier" class="keyboard-layer img-preview" [src]="zoomIcon"/>
+												<img class="keyboard-bg img-preview"
+													id="keyboardMap-background-image"
+													role="img"
+													attr.aria-label="keyboardMap-background-image"
+													automationId="keyboardMap.background-image"
+													[src]="image" />
+												<img *ngIf="additionalCapabilitiesObj.privacy"
+													class="keyboard-layer img-preview"
+													[src]="privacyIcon" />
+												<img *ngIf="additionalCapabilitiesObj.backLight"
+													class="keyboard-layer img-preview"
+													[src]="kbdBlIcon" />
+												<img *ngIf="additionalCapabilitiesObj.performance"
+													class="keyboard-layer img-preview"
+													[src]="merlynIcon" />
+												<img *ngIf="additionalCapabilitiesObj.magnifier"
+													class="keyboard-layer img-preview"
+													[src]="zoomIcon" />
 											</div>
 										</div>
 									</div>
@@ -142,7 +154,7 @@
 														[radioId]="'voip-hotkeys-rectangle-radio' + i"
 														[iconName]="'app-icon ' + iconName[installedApp.appName]"
 														[label]="voipAppName[installedApp.appName]"
-														[value]='installedApp.appName'
+														[value]="''+installedApp.appName"
 														[group]="'app'"
 														[checked]="installedApp.isSelected"
 														(change)="setVoipHotkeysSettings(installedApp)"

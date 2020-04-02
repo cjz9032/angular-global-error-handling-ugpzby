@@ -1,42 +1,24 @@
-<div
-	class="vtr-widget-switch-icon"
-	[ngClass]="{ 'disable-state': disable || isLoading }"
+<div class="vtr-widget-switch-icon"
+	[ngClass]="{'disable-state': (disable || isLoading)}"
 	[title]="tooltipText"
-	id="qs-{{ switchId }}-switch-icon"
-	vtrMetrics
-	metricsEvent="featureClick"
-	[metricsValue]="!value"
-	[metricsItem]="metricsItem"
->
-	<button
-		class="switch-container"
-		[disabled]="isBlocked"
-		[ngClass]="[
-			value && !isLoading ? 'checked' : 'unchecked',
-			disable ? 'disable-container' : ''
-		]"
-		[ngClass]="{ unchecked: isLoading }"
-		[id]="findId(value, disable)"
+	id="qs-{{switchId}}-switch-icon"
+	attr.aria-label="qs-{{switchId}}-switch-icon">
+	<button class="switch-container"
+		vtrMetrics
+		metricsEvent="featureClick"
+		[metricsValue]="!value"
+		[metricsItem]="metricsItem"
+		[ngClass]="{'checked': (value && !isLoading),
+			'unchecked': (isLoading || !value),
+			'disable-container': disable}"
+		[id]="findId(value,disable)"
 		(click)="onChange($event)"
-		attr.aria-label="{{ switchId }}-{{
-			value && switchId !== 'system-update'
-				? 'on'
-				: !value && switchId !== 'system-update'
-				? 'off'
-				: 'link'
-		}}"
-		[attr.role]="buttonRole"
-	>
-		<div
-			class="title"
-			[ngClass]="{ 'disable-container': disable }"
-			id="qs-{{ switchId }}-switch-title"
-			aria-hidden="true"
-		>
-			{{ title }}
-		</div>
-		<div
-			*ngIf="!isLoading"
+		[attr.role]="buttonRole">
+		<div class="title"
+			[ngClass]="{'disable-container' : disable}"
+			id="qs-{{switchId}}-switch-title"
+			attr.aria-label="qs-{{switchId}}-switch-title">{{ title }}</div>
+		<div *ngIf="!isLoading"
 			class="icon-container d-block"
 			[ngClass]="{ 'disable-container': disable }"
 		>
@@ -66,8 +48,12 @@
 		<div class="row" [ngClass]="{ 'is-visible': hideOnOffLabel }">
 			<div class="col">
 				<div class="switch-on-off">
+<<<<<<< HEAD
 					<div
 						*ngIf="!value && !isLoading"
+=======
+					<div *ngIf="!value && !isLoading"
+>>>>>>> develop
 						class="switch-label off-label"
 						id="qs-{{ switchId }}-switch-off"
 						aria-hidden="true"
@@ -77,8 +63,12 @@
 						}}</span>
 						<span *ngIf="disable">&nbsp;</span>
 					</div>
+<<<<<<< HEAD
 					<div
 						*ngIf="value && !isLoading"
+=======
+					<div *ngIf="value && !isLoading"
+>>>>>>> develop
 						class="switch-label on-label"
 						id="qs-{{ switchId }}-switch-on"
 						aria-hidden="true"

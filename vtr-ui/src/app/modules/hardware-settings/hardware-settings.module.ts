@@ -99,6 +99,7 @@ import { BacklightModule } from '../../components/pages/page-device-settings/chi
 import { SubpageDeviceSettingsPowerContainerComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-power-container/subpage-device-settings-power-container.component';
 
 import { BacklightThinkpadComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight-thinkpad/backlight-thinkpad.component';
+import { UiCustomSliderModule } from 'src/app/components/ui/ui-custom-slider/ui-custom-slider.module';
 
 @NgModule({
 	declarations: [
@@ -143,7 +144,6 @@ import { BacklightThinkpadComponent } from 'src/app/components/pages/page-device
 		PowerSettingsComponent,
 		SubpageDeviceSettingsPowerDpmComponent,
 		SubpageDeviceSettingsPowerContainerComponent,
-
 		BacklightThinkpadComponent
 	],
 	imports: [
@@ -165,7 +165,8 @@ import { BacklightThinkpadComponent } from 'src/app/components/pages/page-device
 		NgbCollapseModule,
 		PageLayoutModule,
 		SettingsPageLayoutModule,
-		BacklightModule
+		BacklightModule,
+		UiCustomSliderModule
 	],
 	exports: [
 		CommonModule,
@@ -176,6 +177,7 @@ import { BacklightThinkpadComponent } from 'src/app/components/pages/page-device
 		SettingsPageLayoutModule,
 		RouterModule,
 		HeaderMainModule,
+		UiCustomSliderModule
 	],
 	providers: [{ provide: BaseCameraDetail, useClass: CameraDetailMockService }],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]

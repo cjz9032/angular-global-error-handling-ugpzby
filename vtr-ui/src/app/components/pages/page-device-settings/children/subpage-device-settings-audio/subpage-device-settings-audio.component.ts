@@ -22,8 +22,6 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 	styleUrls: ['./subpage-device-settings-audio.component.scss']
 })
 export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
-	public manualRefresh: EventEmitter<void> = new EventEmitter<void>();
-
 	title = 'device.deviceSettings.audio.subtitle';
 	headerCaption = 'device.deviceSettings.audio.description';
 
@@ -413,7 +411,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public setVolume(event) {
+	public setVolume(event: any) {
 		const volume = event.value;
 		try {
 			this.microphoneProperties.volume = volume;
@@ -421,8 +419,8 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 
 			if (this.audioService.isShellAvailable) {
 				this.audioService.setMicrophoneVolume(volume)
-					.then((value) => {
-						this.logger.info('setVolume', value);
+					.then((response) => {
+						this.logger.info('setVolume', {response, volume});
 					}).catch(error => {
 						this.logger.error('setVolume', error.message);
 						return EMPTY;
@@ -565,12 +563,6 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			'device.deviceSettings.audio.microphone.optimize.options.MultipleVoices',
 			'device.deviceSettings.audio.microphone.optimize.options.VoiceRecognition'];
 		this.microOptimizeModeResponse = new MicrophoneOptimizeModes(optimizeMode, '');
-	}
-
-	public onCardCollapse(isCollapsed: boolean) {
-		if (!isCollapsed) {
-			this.manualRefresh.emit();
-		}
 	}
 
 	initMicrophoneFromCache() {
