@@ -1,5 +1,4 @@
 <div class="vtr-widget-switch-icon"
-	[disabled]="isBlocked"
 	[ngClass]="{'disable-state': (disable || isLoading)}"
 	[title]="tooltipText"
 	id="qs-{{switchId}}-switch-icon"
@@ -9,9 +8,12 @@
 	[metricsValue]="!value"
 	[metricsItem]="metricsItem">
 	<button class="switch-container"
-		[ngClass]="[(value && !isLoading) ? 'checked' : 'unchecked', disable ? 'disable-container' : '']"
-		[ngClass]="{'unchecked': isLoading}"
-		[id]="findId(value,disable)" (click)="onChange($event)" [attr.role]="buttonRole">
+		[ngClass]="{'checked': (value && !isLoading),
+			'unchecked': (isLoading || !value),
+			'disable-container': disable}"
+		[id]="findId(value,disable)"
+		(click)="onChange($event)"
+		[attr.role]="buttonRole">
 		<div class="title"
 			[ngClass]="{'disable-container' : disable}"
 			id="qs-{{switchId}}-switch-title"
@@ -39,14 +41,14 @@
 			[ngClass]="{'is-visible' : hideOnOffLabel}">
 			<div class="col">
 				<div class="switch-on-off">
-					<div *ngIf="!value && !isLoading"						
+					<div *ngIf="!value && !isLoading"
 						class="switch-label off-label"
 						id="qs-{{switchId}}-switch-off"
 						attr.aria-label="qs-{{switchId}}-switch-off">
 						<span *ngIf="!disable">{{'common.ui.off' | translate}}</span>
 						<span *ngIf="disable">&nbsp;</span>
 					</div>
-					<div *ngIf="value && !isLoading"						
+					<div *ngIf="value && !isLoading"
 						class="switch-label on-label"
 						id="qs-{{switchId}}-switch-on"
 						attr.aria-label="qs-{{switchId}}-switch-on">
