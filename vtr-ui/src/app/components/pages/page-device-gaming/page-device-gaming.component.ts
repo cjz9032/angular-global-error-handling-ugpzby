@@ -12,7 +12,6 @@ import { CMSService } from 'src/app/services/cms/cms.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { LenovoIdKey } from 'src/app/enums/lenovo-id-key.enum';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
-import { FeedbackFormComponent } from '../../feedback-form/feedback-form/feedback-form.component';
 import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
 import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
@@ -112,6 +111,17 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck {
 
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
+		});
+		// Remove focus when the mouse is being used
+		document.body.addEventListener('mousedown', () => {
+			document.body.classList.remove('focus-enable');
+		});
+
+		// Re-enable focus styling when Tab is pressed
+		document.body.addEventListener('keydown', (event) => {
+			if (event.keyCode === 9) {
+				document.body.classList.add('focus-enable');
+			}
 		});
 	}
 
@@ -416,12 +426,4 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck {
 		}
 	}
 
-	onFeedbackModal() {
-		this.modalService.open(FeedbackFormComponent, {
-			backdrop: true,
-			size: 'lg',
-			centered: true,
-			windowClass: 'feedback-modal'
-		});
-	}
 }

@@ -22,6 +22,7 @@
 				<div *ngIf="!showProgress" class="row">
 					<div class="col button-row">
 						<button [ngClass]="{'action-button': !disableQuickScan, 'action-button-disable': disableQuickScan}"
+							tabindex="1"
 							[title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
 							[disabled]="disableQuickScan"
 							(click)="onQuickScan()">{{buttonText}}</button>
@@ -30,6 +31,8 @@
 							metricsEvent="FeatureClick"
 							metricsParent="HardwareScan"
 							metricsItem="HardwareScan.CustomizeScan"
+							href="javascript:void();"
+							tabindex="1"
 							[title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
 							[ngClass]="{'action-anchor': !disableQuickScan, 'disabled-anchor': disableQuickScan}" (click)="onAnchor()">{{anchorText}}
 						</a>

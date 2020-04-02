@@ -1,7 +1,7 @@
 <div class="vtr-feedback-form"
 	id="feedback-form-dialog">
 	<div class="content">
-		<div class="title">{{ 'dashboard.feedback.title' | translate }}</div>
+		<div class="title" id="feedback-dialog-basic-title">{{ 'dashboard.feedback.title' | translate }}</div>
 		<form name="feedBack"
 			class="feedback-form"
 			[formGroup]="feedbackForm"
@@ -17,30 +17,28 @@
 					*ngIf="qa.idYes">
 					<input class="form-check-input"
 						type="radio"
-						tabindex="-1"
 						[formControlName]="qa.name"
 						[name]="qa.name"
 						[id]="qa.idYes"
-						[attr.aria-label]="qa.idYes"
-						[value]="true">
-					<label class="form-check-label"
 						[tabindex]="feedbackSuccess ? -1 : 0"
 						(keyup.enter)="setRadioStatus(qa.name, true)"
+						[value]="true">
+					<label class="form-check-label-out"></label>
+					<label class="form-check-label"
 						[for]="qa.idYes">{{'dashboard.feedback.form.yes' | translate}}</label>
 				</div>
 				<div class="form-check form-check-inline"
 					*ngIf="qa.idNo">
 					<input class="form-check-input"
 						type="radio"
-						tabindex="-1"
 						[formControlName]="qa.name"
 						[name]="qa.name"
 						[id]="qa.idNo"
-						[attr.aria-label]="qa.idNo"
-						[value]="false">
-					<label class="form-check-label"
 						[tabindex]="feedbackSuccess ? -1 : 0"
 						(keyup.enter)="setRadioStatus(qa.name, false)"
+						[value]="false">
+					<label class="form-check-label-out"></label>
+					<label class="form-check-label"
 						[for]="qa.idNo">{{'dashboard.feedback.form.no' | translate}}</label>
 				</div>
 				<div class="likely-content"
@@ -49,14 +47,14 @@
 						*ngFor="let likely of qa.likelyValues">
 						<input class="form-check-input"
 							type="radio"
-							tabindex="-1"
 							[formControlName]="qa.name"
 							[name]="qa.name"
 							[id]="'feedback-likely-' + likely"
-							[value]="likely">
-						<label class="form-check-label"
 							[tabindex]="feedbackSuccess ? -1 : 0"
 							(keyup.enter)="setLikelyStatus(qa.name, likely)"
+							[value]="likely">
+						<label class="form-check-label-out"></label>
+						<label class="form-check-label"
 							[for]="'feedback-likely-' + likely">{{ likely }}</label>
 					</div>
 					<div class="w-100 mb-1"></div>
@@ -134,20 +132,20 @@
 		</div>
 	</div>
 
-	<a role="button"
-		href="javascript:;"
+	<div role="button"
 		class="close-btn"
+		tabindex="0"
 		id="feedback-modal-btn-close"
-		attr.aria-label="feedback-modal-btn-close"
+		[attr.aria-label]="'common.ui.close' | translate"
 		vtrMetrics
 		metricsItem="btn.close"
 		metricsEvent="featureClick"
 		metricsParent="Dialog.Feedback"
 		data-dismiss="modal"
-		(click)="activeModal.dismiss('Cross click')"
-		aria-label="Close">
+		(keydown.enter)="activeModal.dismiss('Cross click')"
+		(click)="activeModal.dismiss('Cross click')">
 		<img [src]=" 'assets/icons/Close.svg' | svgInline | async"
 			alt=""
 			srcset="">
-	</a>
+	</div>
 </div>

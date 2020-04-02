@@ -110,12 +110,14 @@
 							#appsForYouImageContent
 							[style.height.px]="appsForYouImageContent.clientWidth / 5">
 							<div *ngFor="let screenshot of appDetails.screenshots, let i = index"
+								tabindex="0"
 								class="screenshot-img position-{{screenshot.position}}"
 								id="{{screenshot.id}}"
 								vtrMetrics
 								metricsItem="AppsForYouScreenshot"
 								metricsEvent="FeatureClick"
 								[metricsParent]="metricsParent"
+								(keyup.enter)="openScreenshotModal(screenshot.imageUrl)"
 								(click)="openScreenshotModal(screenshot.imageUrl)">
 								<img [src]="screenshot.imageUrl" />
 							</div>

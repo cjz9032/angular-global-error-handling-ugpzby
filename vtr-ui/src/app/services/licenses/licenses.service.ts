@@ -28,6 +28,7 @@ export class LicensesService {
 			backdrop: true,
 			size: 'lg',
 			centered: true,
+			ariaLabelledBy: 'license-agreement-dialog-basic-title',
 			windowClass: 'license-Modal'
 		});
 		licenseModal.componentInstance.url = agreementUrl;
@@ -46,6 +47,7 @@ export class LicensesService {
 			backdrop: true,
 			size: 'lg',
 			centered: true,
+			ariaLabelledBy: 'other-software-licenses-dialog-basic-title',
 			windowClass: 'license-Modal'
 		});
 		licenseModal.componentInstance.url = openSourceUrl;
