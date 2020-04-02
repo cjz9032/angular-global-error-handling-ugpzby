@@ -26,7 +26,7 @@ import { GamingScenario } from 'src/app/enums/gaming-scenario.enum';
 })
 export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	public segmentConst = SegmentConst;
-	public gamingScenarios= GamingScenario;
+	public gamingScenarios = GamingScenario;
 	public vantageToolbarStatus = new FeatureStatus(false, true);
 	progress = 49;
 	isInterestProgressChanged = false;
