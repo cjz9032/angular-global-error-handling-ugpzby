@@ -33,24 +33,22 @@
 									id="{{textId}}-start-dropdown"
 									(focus)="[closeAllOtherDD(startAtDrop)]"
 									role="combobox"
-									attr.aria-labelledby="{{textId}}-title {{textId}}-start-at-charge {{textId}}-sel-start-at-charge {{textId}}-start-at-charge-sel-option {{textId}}-start-at-charge-sel-option-desc">
+									attr.aria-labelledby="{{textId}}-title {{textId}}-start-at {{textId}}-start-at-sel {{textId}}-start-at-sel-option-desc">
 									<div [hidden]="true"
-										attr.aria-hidden="true"
-										id="{{textId}}-start-at-charge-select-description">
-										<span id="{{textId}}-start-at-charge-sel-option">option</span>
-										<span id="{{textId}}-start-at-charge-sel-option-desc">
-											{{startAtChargeOptions.indexOf(bctInfo.startValue)+1}}-off-{{startAtChargeOptions.length}}-selected
+										attr.aria-hidden="true">
+										<span id="{{textId}}-start-at-sel-option-desc">
+											option-{{startAtChargeOptions.indexOf(bctInfo.startValue)+1}}-off-{{startAtChargeOptions.length}}-selected
 										</span>
 									</div>
 									<div class="row d-flex justify-content-between">
 										<div class="col-11 pl-1 pr-1">
 											<div class="select-title"
-												id="{{textId}}-start-at-charge">
+												id="{{textId}}-start-at">
 												{{'device.deviceSettings.power.batterySettings.batteryThreshold.options.start' | translate}}
 											</div>
 
 											<div class="select-text text-left"
-												id="{{textId}}-sel-start-at-charge">
+												id="{{textId}}-start-at-sel">
 												{{bctInfo.startValue}}%
 											</div>
 										</div>
@@ -98,23 +96,21 @@
 									id="{{textId}}-stop-dropdown"
 									(focus)="[closeAllOtherDD(stopAtDrop)]"
 									role="combobox"
-									attr.aria-labelledby="{{textId}}-title {{textId}}-stop-at-charge {{textId}}-sel-stop-at-charge {{textId}}-stop-at-charge-sel-option {{textId}}-stop-at-charge-sel-option-desc">
+									attr.aria-labelledby="{{textId}}-title {{textId}}-stop-at {{textId}}-stop-at-sel {{textId}}-stop-at-sel-option-desc">
 									<div [hidden]="true"
-										aria-hidden="true"
-										id="{{textId}}-stop-at-charge-select-description">
-										<span id="{{textId}}-stop-at-charge-sel-option">option</span>
-										<span id="{{textId}}-stop-at-charge-sel-option-desc">
-											{{stopAtChargeOptions.indexOf(bctInfo.stopValue)+1}}-off-{{stopAtChargeOptions.length}}-selected
+										attr.aria-hidden="true">
+										<span id="{{textId}}-stop-at-sel-option-desc">
+											option-{{stopAtChargeOptions.indexOf(bctInfo.stopValue)+1}}-off-{{stopAtChargeOptions.length}}-selected
 										</span>
 									</div>
 									<div class="row d-flex justify-content-between">
 										<div class="col-11 pl-1 pr-1">
 											<div class="select-title"
-												id="{{textId}}-stop-at-charge">
+												id="{{textId}}-stop-at">
 												{{'device.deviceSettings.power.batterySettings.batteryThreshold.options.stop' | translate}}
 											</div>
 											<div class="select-text text-left"
-												id="{{textId}}-sel-stop-at-charge">
+												id="{{textId}}-stop-at-sel">
 												{{bctInfo.stopValue}}%
 											</div>
 										</div>
