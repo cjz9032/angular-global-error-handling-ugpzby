@@ -1,6 +1,6 @@
 import { NetworkStatus } from './../../../enums/network-status.enum';
 import { of } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { DeviceService } from './../../../services/device/device.service';
 import { TranslateService } from '@ngx-translate/core';
 import { DashboardService } from './../../../services/dashboard/dashboard.service';
@@ -10,14 +10,11 @@ import { CMSService } from './../../../services/cms/cms.service';
 import { CommonService } from './../../../services/common/common.service';
 import { Title } from '@angular/platform-browser';
 import { NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA, Pipe } from '@angular/core';
-import { UiLightingProfileComponent } from './../../ui/ui-lighting-profile/ui-lighting-profile.component';
-import { ContainerCardComponent } from './../../container-card/container-card.component';
-import { PageLayoutComponent } from './../../page-layout/page-layout.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { PageLightingcustomizeComponent } from './page-lightingcustomize.component';
-import { WidgetOfflineInfoComponent } from '../../widgets/widget-offline-info/widget-offline-info.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Gaming } from './../../../enums/gaming.enum';
+import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 const cmsMock = {
 	Results: [{
@@ -39,7 +36,7 @@ const cmsMock = {
 describe('PageLightingcustomizeComponent', () => {
 	let component: PageLightingcustomizeComponent;
 	let fixture: ComponentFixture<PageLightingcustomizeComponent>;
-	const routerMock = { params: of({ id: 1 }) };
+	const routerMock = { params: of({ id: 1 })};
 	const titleServiceMock = { setTitle: (title) => title };
 	const deviceServiceMock = { getMachineInfo: () => Promise.resolve({ serialnumber: 1234 }), getMachineInfoSync: () => { } };
 	const translateServiceMock = { onLangChange: of('en') };
@@ -61,14 +58,11 @@ describe('PageLightingcustomizeComponent', () => {
 		TestBed.configureTestingModule({
 			declarations: [
 				PageLightingcustomizeComponent,
-				PageLayoutComponent,
-				ContainerCardComponent,
-				UiLightingProfileComponent,
-				WidgetOfflineInfoComponent,
 				mockPipe({ name: 'translate' }),
 				mockPipe({ name: 'sanitize' }),
 				mockPipe({ name: 'htmlText' })],
 			providers: [
+				NgbModal,NgbActiveModal,
 				{ provide: Title, useValue: titleServiceMock },
 				{ provide: CommonService, useValue: commonServiceMock },
 				{ provide: CMSService, useValue: cmsServiceMock },
@@ -76,11 +70,10 @@ describe('PageLightingcustomizeComponent', () => {
 				{ provide: VantageShellService, useValue: shellServiceMock },
 				{ provide: DashboardService, useValue: {} },
 				{ provide: TranslateService, useValue: translateServiceMock },
-				{ provide: DeviceService, useValue: deviceServiceMock },
-				{ provide: HttpClient, useValue: {} }],
+				{ provide: DeviceService, useValue: deviceServiceMock }],
 			schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA], 
 			imports: [
-				RouterTestingModule.withRoutes([]),
+				RouterTestingModule.withRoutes([]),HttpClientModule
 			],
 		}).compileComponents();
 	}));
