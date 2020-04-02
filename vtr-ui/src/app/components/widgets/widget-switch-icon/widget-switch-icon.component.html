@@ -1,8 +1,7 @@
 <div class="vtr-widget-switch-icon"
 	[ngClass]="{'disable-state': (disable || isLoading)}"
 	[title]="tooltipText"
-	id="qs-{{switchId}}-switch-icon"
-	attr.aria-label="qs-{{switchId}}-switch-icon">
+	id="qs-{{switchId}}-switch-icon">
 	<button class="switch-container"
 		vtrMetrics
 		metricsEvent="featureClick"
@@ -13,11 +12,12 @@
 			'disable-container': disable}"
 		[id]="findId(value,disable)"
 		(click)="onChange($event)"
+		attr.aria-label="{{switchIdLabel()}}"
 		[attr.role]="buttonRole">
 		<div class="title"
 			[ngClass]="{'disable-container' : disable}"
 			id="qs-{{switchId}}-switch-title"
-			attr.aria-label="qs-{{switchId}}-switch-title">{{ title }}</div>
+			aria-hidden="true">{{ title }}</div>
 		<div *ngIf="!isLoading"
 			class="icon-container d-block"
 			[ngClass]="{ 'disable-container': disable }"
@@ -48,12 +48,7 @@
 		<div class="row" [ngClass]="{ 'is-visible': hideOnOffLabel }">
 			<div class="col">
 				<div class="switch-on-off">
-<<<<<<< HEAD
-					<div
-						*ngIf="!value && !isLoading"
-=======
 					<div *ngIf="!value && !isLoading"
->>>>>>> develop
 						class="switch-label off-label"
 						id="qs-{{ switchId }}-switch-off"
 						aria-hidden="true"
@@ -63,12 +58,7 @@
 						}}</span>
 						<span *ngIf="disable">&nbsp;</span>
 					</div>
-<<<<<<< HEAD
-					<div
-						*ngIf="value && !isLoading"
-=======
 					<div *ngIf="value && !isLoading"
->>>>>>> develop
 						class="switch-label on-label"
 						id="qs-{{ switchId }}-switch-on"
 						aria-hidden="true"

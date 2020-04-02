@@ -59,4 +59,22 @@ export class WidgetSwitchIconComponent implements OnInit {
 
 	}
 
+	switchIdLabel() {
+		if(this.switchId === 'microphone' && !this.value && !this.isLoading) {
+			return this.switchId + '-off'
+		}
+		if(this.switchId === 'microphone' && this.value && !this.isLoading) {
+			return this.switchId + '-on'
+		}
+		if(this.switchId === 'camera' && !this.value && !this.isLoading) {
+			return this.switchId + '-off'
+		}
+		if(this.switchId === 'camera' && this.value && !this.isLoading) {
+			return this.switchId + '-on'
+		}
+		if(this.switchId === 'system-update') {
+			return this.switchId
+		}
+	}
+
 }

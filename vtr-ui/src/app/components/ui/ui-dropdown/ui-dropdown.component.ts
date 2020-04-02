@@ -23,7 +23,6 @@ export class UiDropDownComponent implements OnInit, OnChanges {
 
 	ngOnInit() {
 		this.setDropDownValue();
-		this.settingCustomAriaLabel()
 	}
 
 	ngOnChanges(changes: SimpleChanges) {
@@ -56,7 +55,7 @@ export class UiDropDownComponent implements OnInit, OnChanges {
 	settingCustomAriaLabel() {
 		if(this.value) {
 			const customAriaLabel = this.list.find((item, i) => i === this.value ? item : '')
-			return customAriaLabel ? this.dropDownId + customAriaLabel.text + 'selected' : this.dropDownId
+			return customAriaLabel ? this.dropDownId + '-' +customAriaLabel.text + '-selected' : this.dropDownId
 		} else {
 			return this.dropDownId
 		}
