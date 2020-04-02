@@ -23,18 +23,33 @@
 				<div class="content-page-1 font-14-semi"
 					id="welcome-body-scroll">
 					<div class="row no-gutters">
-						<div class="col-auto title2"
+						<div class="col-auto title2" *ngIf="!deviceService.isGaming"
 							[innerHTML]="'welcometutorial.description'| translate">
+						</div>
+						<div class="col-auto title2" *ngIf="deviceService.isGaming"
+							[innerHTML]="'welcometutorial.gaming.gamingDescription'| translate">
 						</div>
 					</div>
 					<div class="row no-gutters justify-content-center align-items-center"
-						*ngIf="!deviceService.isArm">
+						[hidden]="deviceService.isArm || deviceService.isGaming">
 						<div class="col-auto title2">
 							<ul>
 								<li>{{"welcometutorial.bullets1" | translate }}</li>
 								<li *ngIf="machineInfo && machineInfo.brand!=='think'">
 									{{"welcometutorial.bullets2" | translate }}</li>
 								<li>{{"welcometutorial.bullets3" | translate }}</li>
+							</ul>
+						</div>
+					</div>
+					<div class="row no-gutters"
+						[hidden]="deviceService.isArm || !deviceService.isGaming">
+						<div class="col-auto title2">
+							<ul>
+								<li>{{"welcometutorial.gaming.gamingFeature1" | translate }}</li>
+								<li>{{"welcometutorial.gaming.gamingFeature2" | translate }}</li>
+								<li>{{"welcometutorial.gaming.gamingFeature3" | translate }}</li>
+								<li>{{"welcometutorial.gaming.gamingFeature4" | translate }}</li>
+								<li>{{"welcometutorial.gaming.gamingFeature5" | translate }}</li>
 							</ul>
 						</div>
 					</div>
