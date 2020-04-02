@@ -66,6 +66,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 						this.commonService.setLocalStorageValue(LocalStorageKey.SmartStandbyCapability, this.cache);
 						if (this.smartStandby.isCapable) {
 							this.setSmartStandbySection();
+							this.autonomicCapabilityCheck();
 						}
 					}
 					this.smartStandbyCapability.emit(this.smartStandby.isCapable);
@@ -110,14 +111,13 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	}
 
 	initSmartStandby() {
-		this.autonomicCapabilityCheck();
 		this.initDataFromCache();
 		this.splitStartEndTime();
 	}
 
 	autonomicCapabilityCheck() {
-		this.getSmartStandbyIsAutonomic();
 		this.getIsAutonomicCapability();
+		this.getSmartStandbyIsAutonomic();
 	}
 	initDataFromCache() {
 		this.cache = this.commonService.getLocalStorageValue(LocalStorageKey.SmartStandbyCapability, undefined);
