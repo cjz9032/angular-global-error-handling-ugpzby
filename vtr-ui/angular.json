@@ -321,6 +321,46 @@
 					}
 				}
 			}
+		},
+		"composer": {
+			"projectType": "library",
+			"root": "projects/composer",
+			"sourceRoot": "projects/composer/src",
+			"prefix": "lib",
+			"architect": {
+				"build": {
+					"builder": "@angular-devkit/build-ng-packagr:build",
+					"options": {
+						"tsConfig": "projects/composer/tsconfig.lib.json",
+						"project": "projects/composer/ng-package.json"
+					},
+					"configurations": {
+						"production": {
+							"tsConfig": "projects/composer/tsconfig.lib.prod.json"
+						}
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"main": "projects/composer/src/test.ts",
+						"tsConfig": "projects/composer/tsconfig.spec.json",
+						"karmaConfig": "projects/composer/karma.conf.js"
+					}
+				},
+				"lint": {
+					"builder": "@angular-devkit/build-angular:tslint",
+					"options": {
+						"tsConfig": [
+							"projects/composer/tsconfig.lib.json",
+							"projects/composer/tsconfig.spec.json"
+						],
+						"exclude": [
+							"**/node_modules/**"
+						]
+					}
+				}
+			}
 		}
 	},
 	"defaultProject": "vtr-ui"
