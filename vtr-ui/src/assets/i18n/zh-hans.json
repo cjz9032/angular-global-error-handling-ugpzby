@@ -1,4 +1,5 @@
 {
+	"nonProduction": "您现在正在访问Lenovo Vantage的非生产版本！",
     "gaming": {
         "dashboard": {
             "device": {
@@ -795,6 +796,7 @@
             "back": "返回",
             "on": "ON",
             "off": "OFF",
+            "close": "关闭",
             "collapse": "折叠",
             "expand": "展开",
             "loader": "获取状态",
@@ -2715,21 +2717,21 @@
         },
         "question3": {
             "title": "如何了解计算机的 CPU 情况",
-            "description": "<div class='faqInFs4Fb'>    如何了解计算机的 CPU 情况</div><hr><h3 class='faqInFs25FbP10'>症状</h3><p>“32 位”和“64 位”是指计算机处理器（也称为 CPU）处理信息的方式。64 位版本的 Windows 可比 32 位的系统更高效地处理大量随机存取内存（RAM）。</p><h3 class='faqInFs25FbP10'>受影响的品牌</h3><p>上述症状与以下系统相关，但并不限于以下系统：</p><ul>    <li>所有台式机和笔记本电脑</li></ul><h3 class='faqInFs25FbP10'>操作系统</h3><ul>    <li>Windows 7、8、10</li></ul><h3 class='faqInFs25FbP10'>解决方案</h3><p><strong><u>Windows 7 或 Vista</u></strong></p><ol>    <li>单击<strong>开始按钮</strong>（<strong>开始按钮</strong>图片），然后右键单击计算机，最后单击属性打开系统  </li>    <li>在“系统”下，可查看系统类型。</li></ol><p><strong><u>Windows 8 和 Windows 10</u></strong></p><p><strong>方法 1：</strong>在控制面板中查看系统窗口</p><ol>    <li>从屏幕右边缘扫入，然后点击<strong>搜索</strong>。如果使用的是鼠标，请将指针指向屏幕右下角，然后单击<strong>搜索</strong>。</li>    <li>在搜索框中输入<strong>系统</strong>，然后轻触或单击<strong>设置</strong>。</li>    <li>轻触或单击<strong>系统</strong></li>    <li>如果运行的是 Windows 8 64 位版本，系统标题下的系统类型字段中将显示<strong>64 位操作系统</strong>。如果运行的是 <strong>Windows 8</strong> 32 <strong>位版本</strong>，系统标题下的系统类型字段中将显示<strong>32 位操作</strong>系统。<br /> </li></ol><p><strong>方法 2：</strong>查看系统信息窗口</p><ol>    <li>从屏幕右边缘扫入，然后点击<strong>搜索</strong>。如果使用的是鼠标，请将指针指向屏幕右下角，然后单击<strong>搜索。</strong></li>    <li>在搜索框中，输入<strong>系统信息</strong></li>    <li>轻触或单击<strong>系统</strong>，然后轻触或单击<strong>系统信息</strong>，最后单击<strong>系统摘要。</strong></li>    <li>如果运行的是 Windows 8 <strong>64 位</strong>版本<strong>，</strong>项目标题下的<strong>系统类型</strong>字段中将显示基于 x64 的电脑。<br /><br />如果运行的是 Windows 8 <strong>32 位</strong>版本，项目标题下的<strong>系统类型</strong>字段中将显示基于 x86 的电脑。 </li></ol><p> </p>",
-            "heading1": "症状",
+            "description": "<div class='faqInFs4Fb'>    如何了解计算机的 CPU 情况</div><hr><h3 class='faqInFs25FbP10'>介绍</h3><p>“32 位”和“64 位”是指计算机处理器（也称为 CPU）处理信息的方式。64 位版本的 Windows 可比 32 位的系统更高效地处理大量随机存取内存（RAM）。</p><h3 class='faqInFs25FbP10'>受影响的品牌</h3><p>上述介绍与以下系统相关，但并不限于以下系统：</p><ul>    <li>所有台式机和笔记本电脑</li></ul><h3 class='faqInFs25FbP10'>操作系统</h3><ul>    <li>Windows 7、8、10</li></ul><h3 class='faqInFs25FbP10'>查看方法</h3><p><strong><u>Windows 7 或 Vista</u></strong></p><ol>    <li>单击<strong>开始按钮</strong>，然后右键单击计算机，最后单击属性打开系统  </li>    <li>在“系统”下，可查看系统类型。</li></ol><p><strong><u>Windows 8 和 Windows 10</u></strong></p><p><strong>方法 1：</strong>在控制面板中查看系统窗口</p><ol>    <li>从屏幕右边缘扫入，然后点击<strong>搜索</strong>。如果使用的是鼠标，请将指针指向屏幕右下角，然后单击<strong>搜索</strong>。</li>    <li>在搜索框中输入<strong>系统</strong>，然后轻触或单击<strong>设置</strong>。</li>    <li>轻触或单击<strong>系统</strong></li>    <li>如果运行的是 Windows 8 64 位版本，系统标题下的系统类型字段中将显示<strong>64 位操作系统</strong>。如果运行的是 <strong>Windows 8</strong> 32 <strong>位版本</strong>，系统标题下的系统类型字段中将显示<strong>32 位操作</strong>系统。<br /> </li></ol><p><strong>方法 2：</strong>查看系统信息窗口</p><ol>    <li>从屏幕右边缘扫入，然后点击<strong>搜索</strong>。如果使用的是鼠标，请将指针指向屏幕右下角，然后单击<strong>搜索。</strong></li>    <li>在搜索框中，输入<strong>系统信息</strong></li>    <li>轻触或单击<strong>系统</strong>，然后轻触或单击<strong>系统信息</strong>，最后单击<strong>系统摘要。</strong></li>    <li>如果运行的是 Windows 8 <strong>64 位</strong>版本<strong>，</strong>项目标题下的<strong>系统类型</strong>字段中将显示基于 x64 的电脑。<br /><br />如果运行的是 Windows 8 <strong>32 位</strong>版本，项目标题下的<strong>系统类型</strong>字段中将显示基于 x86 的电脑。 </li></ol><p> </p>",
+            "heading1": "介绍",
             "para1": "“32 位”​和“64 位”是指计算机处理器（也称为 CPU）处理信息的方式。64 位版本的 Windows 可比 32 位的系统更高效地处理大量随机存取内存（RAM）。",
             "heading2": "受影响的品牌",
-            "para2": "上述症状与以下系统相关，但并不限于以下系统：",
+            "para2": "上述介绍与以下系统相关，但并不限于以下系统：",
             "para3": "所有台式机和笔记本电脑",
             "heading3": "操作系统",
             "para4": "Windows 7、8、10",
-            "heading4": "解决方案",
+            "heading4": "查看方法",
             "para5": "Windows 7 或 Vista",
             "para6": {
                 "span1": {
                     "line1": "单击",
                     "line2": "“开始”",
-                    "line3": "按钮（“开始”按钮图片），然后右键单击“计算机”，最后单击“属性”打开“系统”"
+                    "line3": "按钮，然后右键单击“计算机”，最后单击“属性”打开“系统”"
                 },
                 "span2": "在“系统”下，可查看系统类型。"
             },
@@ -2978,6 +2980,17 @@
             "politics": "政治",
             "music": "音乐",
             "science": "科学"
+        },
+		"gaming": {
+            "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
+            "gamingFeature1": "-Computer status monitor",
+            "gamingFeature2": "-Performance mode & overclocking",
+            "gamingFeature3": "-Lighting",
+            "gamingFeature4": "-Network Boost",
+            "gamingFeature5": "-Auto Close",
+            "gamingOnly": "Gaming",
+            "gamingAndWork": "Gaming & Work",
+            "nonGaming": "Non-Gaming"
         }
     },
     "settings": {

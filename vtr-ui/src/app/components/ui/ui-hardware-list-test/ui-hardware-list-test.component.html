@@ -10,10 +10,14 @@
 					<label class="custom-control-label name" for="{{ item.id }}">{{ item.name }} - <span
 							class="subname">{{ item.subname }}</span></label>
 				</div>
-				<fa-icon [icon]="['fal', 'angle-up']" [ngClass]="{'angle': item.collapsed, 'rotate': !item.collapsed}"
-					(click)="item.collapsed = !item.collapsed" [attr.aria-expanded]="item.collapsed"
-					aria-controls="{{ id }}">
-				</fa-icon>
+				<a href="javascript:void(0);"
+					(click)="item.collapsed = !item.collapsed"
+					[ngClass]="{'rotate': !item.collapsed}">
+					<fa-icon [icon]="['fal', 'angle-up']"
+						[attr.aria-expanded]="item.collapsed"
+						aria-controls="{{ id }}">
+					</fa-icon>
+				</a>
 			</div>
 			<div id="{{ id }}" class="sub-module" [ngbCollapse]="!item.collapsed">
 				<ul class="list-group">
@@ -30,9 +34,9 @@
 		</li>
 	</ul>
 	<div class="options">
-		<a class="select-item" (click)="onSelectAll()">{{select}}</a>
+		<a class="select-item" href="javascript:void(0);" (click)="onSelectAll()">{{select}}</a>
 		<span class="select-item-subtitle">/</span>
-		<a class="select-item" (click)="onDeselectAll()">{{deselect}}</a>
+		<a class="select-item" href="javascript:void(0);" (click)="onDeselectAll()">{{deselect}}</a>
 	</div>
 
 </div>

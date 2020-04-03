@@ -327,11 +327,12 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		this.timerService.start();
 		this.hardwareScanService.setLoadingStatus(false);
 		this.hardwareScanService.reloadItemsToScan(true);
-		this.itemsToDisplay = this.getItemToDisplay();
 		this.hardwareScanService.initLoadingModules(this.culture);
 
 		this.hardwareScanService.isHardwareModulesLoaded().subscribe((loaded) => {
 			if (loaded) {
+				this.itemsToDisplay = this.getItemToDisplay();
+
 				const taskResult = {
 					Result: 'Pass'
 				};

@@ -55,8 +55,6 @@ export class ConfigService {
 	public countryCodes = ['us', 'ca', 'gb', 'ie', 'de', 'fr', 'es', 'it', 'au'];
 	subscription: Subscription;
 	private isSmartAssistAvailable = false;
-	lastFeatureVersion = 0;
-	newFeatureVersion = 3.002005;
 
 	constructor(
 		private betaService: BetaService,
@@ -583,23 +581,23 @@ export class ConfigService {
 	showNewFeatureTipsWithMenuItems() {
 		const welcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
 		if (!welcomeTutorial || !welcomeTutorial.isDone || window.innerWidth < 1200) {
-			this.commonService.setLocalStorageValue(LocalStorageKey.NewFeatureTipsVersion, this.newFeatureVersion);
+			this.commonService.setLocalStorageValue(LocalStorageKey.NewFeatureTipsVersion, this.commonService.newFeatureVersion);
 			return;
 		}
 		this.localInfoService.getLocalInfo().then(localInfo => {
 			if (localInfo.Segment !== SegmentConst.Consumer) {
-				this.commonService.setLocalStorageValue(LocalStorageKey.NewFeatureTipsVersion, this.newFeatureVersion);
+				this.commonService.setLocalStorageValue(LocalStorageKey.NewFeatureTipsVersion, this.commonService.newFeatureVersion);
 				return;
 			}
 			const lastVersion = this.commonService.getLocalStorageValue(LocalStorageKey.NewFeatureTipsVersion);
-			if ((!lastVersion || lastVersion < this.newFeatureVersion) && Array.isArray(this.menu)) {
+			if ((!lastVersion || lastVersion < this.commonService.newFeatureVersion) && Array.isArray(this.menu)) {
 				const idArr = ['security', 'home-security', 'hardware-scan']
 				const isIncludesItem = this.menu.find(item => idArr.includes(item.id))
 				if (isIncludesItem) {
-					if (lastVersion > 0) { this.lastFeatureVersion = lastVersion; }
+					if (lastVersion > 0) { this.commonService.lastFeatureVersion = lastVersion; }
 					this.newFeatureTipService.create();
 				}
-				this.commonService.setLocalStorageValue(LocalStorageKey.NewFeatureTipsVersion, this.newFeatureVersion);
+				this.commonService.setLocalStorageValue(LocalStorageKey.NewFeatureTipsVersion, this.commonService.newFeatureVersion);
 			}
 		});
 	}

@@ -24,6 +24,8 @@ export class CommonService {
 	private RS5Version = 17600;
 	public osVersion = 0;
 	public systemTimeFormat12Hrs: BehaviorSubject<boolean> = new BehaviorSubject(false);
+	public lastFeatureVersion = 0;
+	public newFeatureVersion = 3.002005;
 
 	constructor() {
 		this.notificationSubject = new BehaviorSubject<AppNotification>(

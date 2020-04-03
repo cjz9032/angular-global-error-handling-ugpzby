@@ -32,6 +32,10 @@ export class ModalAppsForYouScreenshotComponent implements OnInit, OnDestroy, Af
 		this.activeModal.close('close');
 	}
 
+	@HostListener('document:keydown.escape', ['$event'])
+	onPressEscape(event: KeyboardEvent) {
+		this.closeModal();
+	}
 
 	@HostListener('window: focus')
 	onFocus(): void {

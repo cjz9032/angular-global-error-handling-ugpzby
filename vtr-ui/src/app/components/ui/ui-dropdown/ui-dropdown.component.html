@@ -1,4 +1,4 @@
-<div class='cover' id="{{dropDownId}}" attr.aria-label="{{dropDownId}}" *ngIf='isDropDownOpen' [attr.aria-hidden]="!isDropDownOpen" (click)="toggle()" (keydown.enter)="toggle()" tabindex="0"></div>
+<!-- <div class='cover' id="{{dropDownId}}" attr.aria-label="{{dropDownId}}" *ngIf='isDropDownOpen' [attr.aria-hidden]="!isDropDownOpen" (click)="toggle()" (keydown.enter)="toggle()" tabindex="0"></div>
 <section class="vtr-ui-dropdown">
 	<div #toggleBtn class="input" (click)="toggle()" (keydown.enter)="toggle()" id="{{dropDownId}}" role="combobox" [attr.aria-expanded]="isDropDownOpen" aria-haspopup="true" tabindex="0">
 		<div class="list" *ngIf="isDropDownOpen && !disabled" role="listbox" tabindex="0" [attr.aria-hidden]="!isDropDownOpen">
@@ -26,4 +26,47 @@
 		</p>
 	</div>
 
-</section>
+</section> -->
+
+<div class="ui-dropdown">
+	<button
+		#toggleBtn
+		class="ui-btn-dropdown"
+		type="button"
+		id="textCase === 'oled' ? {{name}} : dropdown-{{dropDownId}}"
+		attr.aria-label = "{{dropDownId}}"
+		aria-haspopup="true"
+		[attr.aria-expanded]="isDropDownOpen"
+		[disabled]="disabled"
+		(click)="isDropDownOpen = !isDropDownOpen"
+	>
+		{{ name }}
+		{{
+			textCase === "oled"
+				? (placeholder | lowercase)
+				: (placeholder | titlecase)
+		}}
+		<span
+			><fa-icon class="chevron" [icon]="isDropDownOpen ? ['fal', 'chevron-up'] : ['fal', 'chevron-down']">
+			</fa-icon
+		></span>
+	</button>
+	<div
+		class="ui-menu-dropdown"
+		*ngIf="isDropDownOpen && !disabled"
+		attr.aria-labelledby="{{dropDownId}}-{{name}}-{{placeholder}}"
+		role="listbox"
+	>
+		<a
+			*ngFor="let i of list"
+			role="option"
+			id="{{i.text}}"
+			(click)="select(i, toggleBtn)"
+			vtrMetrics
+			metricsEvent="FeatureClick"
+			[metricsItem]="dropDownName"
+			[metricsValue]="i"
+			>{{ textCase === 'oled' ? customCamelCase(i.text) : (i.text | titlecase)}}</a
+		>
+	</div>
+</div>

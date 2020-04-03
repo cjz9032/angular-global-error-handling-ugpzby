@@ -147,7 +147,7 @@
 							(focus)="[closeAllOtherDD(menuDropDown),menuDropDown.open()]"
 							(click)="onMenuItemClick(item)"
 							(keydown.enter)="[onMenuItemClick(item),menuItemKeyDown(item.path)]"
-							role="button"
+							role="menu"
 							*ngIf="item.label | translate">
 							<div class="icon">
 								<fa-icon [icon]="item.icon"
@@ -269,7 +269,7 @@
 							id="navbarDropdown"
 							attr.aria-label="navbarDropdown"
 							[ngClass]="{'dropdown-toggle': true}"
-							role="button"
+							role="menu"
 							tabindex="1"
 							data-toggle="dropdown"
 							aria-haspopup="true"

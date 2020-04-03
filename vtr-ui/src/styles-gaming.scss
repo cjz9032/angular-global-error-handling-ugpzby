@@ -1898,31 +1898,24 @@
 			}
 		}
 	}
-
-	button.close{
-		opacity:1 !important
-		}
-
-
-		.btn{
-			&:focus{
-				outline: 1px dotted !important;
-				}
-			}
-
-		.enable-button{
-			&:focus{
-				outline: 1px dotted !important;
-				}
-		}
-		button{
-			&:focus{
-				outline: 1px dotted !important;
-			}
-
-		}
 }
 
+body.focus-enable{
+	.is-gaming {
+		.btn,.enable-button,button{
+			&:focus{
+				outline: 1px dotted !important;
+				}
+		}
+		*:focus {
+		outline: 1px dotted !important;
+		box-shadow: none !important;
+	}
+		button.close{
+		opacity:1 !important
+		}	
+	}
+}
 
 .gaming-help-modal {
 	.modal-dialog {
@@ -1989,7 +1982,7 @@ vtr-container-card {
 .Article-Detail-Modal{
 	&.content-gaming{
 		*:focus{
-		// outline: none;
+		 outline: none;
 	}
 	overflow:hidden !important;
 	.modal-dialog{
@@ -2202,14 +2195,13 @@ button {
 	//   transform: scale(0.96);
 	// }
 }
-
 .is-gaming,
 .gaming-help-popup,
 .battery-modal-size {
 	button:focus,
 	span:focus,
 	*:focus {
-	//	outline: 0 !important;
+		outline: 0 !important;
 		box-shadow: none !important;
 	}
 }
