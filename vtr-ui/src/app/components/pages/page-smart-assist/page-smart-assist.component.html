@@ -66,21 +66,18 @@
 												[rightIcon]="['far', 'question-circle']">
 											</vtr-ui-row-switch>
 											<div class="slider-note">
-												<vtr-ui-range-slider [rangeSliderId]="'distanceSensitivity'"
-													[manualRefresh]="manualRefresh"
+												<vtr-ui-custom-slider [sliderId]="'distanceSensitivity'"
 													*ngIf="!intelligentSecurity.isZeroTouchLoginAdjustEnabled"
-													[minValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.near' | translate"
-													[minValue]="1"
-													[maxValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
-													[maxValue]="3"
+													[minLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.near' | translate"
+													[min]="1"
+													[maxLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
+													[max]="3"
 													(sliderChange)="setZeroTouchLoginSensitivity($event)"
 													[value]="intelligentSecurity.zeroTouchLoginDistance"
-													[enableSlider]="!intelligentSecurity.isZeroTouchLoginEnabled"
-													vtrMetrics
+													[isDisabled]="!intelligentSecurity.isZeroTouchLoginEnabled"
 													[metricsItem]="'distanceSensitivity'"
-													metricsEvent="featureClick"
-													metricsValue="{{intelligentSecurity.zeroTouchLoginDistance}}">
-												</vtr-ui-range-slider>
+													[metricsValue]="intelligentSecurity.zeroTouchLoginDistance">
+												</vtr-ui-custom-slider>
 												<div class="pt-3"
 													[class.blur-1]="!intelligentSecurity.isZeroTouchLoginEnabled"
 													*ngIf="intelligentSecurity.isWindowsHelloRegistered">
@@ -149,20 +146,17 @@
 											<!-- Add appropriate [enableSlider]="!intelligentSecurity.isZeroTouchLoginAdjustEnabled" -->
 											<div class="slider-note"
 												[class.disabled]="!intelligentSecurity.isZeroTouchLoginEnabled || !intelligentSecurity.isHPDEnabled">
-												<vtr-ui-range-slider [rangeSliderId]="'thinkpadDistanceSensitivity'"
-													[manualRefresh]="manualRefresh"
-													[minValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.near' | translate"
-													[minValue]="1"
-													[maxValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
-													[maxValue]="3"
+												<vtr-ui-custom-slider [sliderId]="'thinkpadDistanceSensitivity'"
+													[minLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.near' | translate"
+													[min]="1"
+													[maxLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
+													[max]="3"
 													(sliderChange)="setZeroTouchLoginSensitivity($event)"
 													[value]="intelligentSecurity.zeroTouchLoginDistance"
-													[enableSlider]="!intelligentSecurity.isHPDEnabled || !intelligentSecurity.isZeroTouchLoginEnabled"
-													vtrMetrics
+													[isDisabled]="!intelligentSecurity.isHPDEnabled || !intelligentSecurity.isZeroTouchLoginEnabled"
 													[metricsItem]="'thinkpadDistanceSensitivity'"
-													metricsEvent="featureClick"
-													metricsValue="{{intelligentSecurity.zeroTouchLoginDistance}}">
-												</vtr-ui-range-slider>
+													[metricsValue]="intelligentSecurity.zeroTouchLoginDistance">
+												</vtr-ui-custom-slider>
 												<div class="pt-3"
 													[class.blur-1]="!intelligentSecurity.isZeroTouchLoginEnabled || !intelligentSecurity.isHPDEnabled"
 													*ngIf="intelligentSecurity.isWindowsHelloRegistered">
@@ -282,21 +276,18 @@
 											</vtr-ui-row-switch>
 											<div class="slider-note"
 												[class.disabled]="!intelligentSecurity.isZeroTouchLockEnabled">
-												<vtr-ui-range-slider [rangeSliderId]="'thinkpadSensitivity'"
-													[manualRefresh]="manualRefresh"
-													[minValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.near' | translate"
-													[minValue]="1"
+												<vtr-ui-custom-slider [sliderId]="'thinkpadSensitivity'"
+													[minLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.near' | translate"
 													(sliderChange)="setHPDLeaveSensitivitySetting($event)"
-													[mediumValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.medium' | translate"
-													[maxValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
-													[maxValue]="3"
-													[value]="sesnsitivityAdjustVal"
-													[enableSlider]="!intelligentSecurity.isZeroTouchLockEnabled || !intelligentSecurity.isHPDEnabled"
-													vtrMetrics
+													[mediumLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.medium' | translate"
+													[maxLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
+													[min]="1"
+													[max]="3"
+													[value]="sensitivityAdjustVal"
+													[isDisabled]="!intelligentSecurity.isZeroTouchLockEnabled || !intelligentSecurity.isHPDEnabled"
 													[metricsItem]="'thinkpadSensitivity'"
-													metricsEvent="featureClick"
-													metricsValue="{{sesnsitivityAdjustVal}}">
-												</vtr-ui-range-slider>
+													[metricsValue]="sensitivityAdjustVal">
+												</vtr-ui-custom-slider>
 												<div class="pt-3"
 													[class.blur-1]="!intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)">
 													<div class="feature-note p-4">
@@ -469,16 +460,17 @@
 													id="smart-assist-display-slider-title">
 													{{'device.smartAssist.intelligentScreen.keepMyDisplay.displaySlider.title' | translate}}
 												</div>
-												<vtr-ui-range-slider [rangeSliderId]="'keepMyDisplay'"
-													[manualRefresh]="manualRefresh"
-													[minValueLegend]="'device.smartAssist.intelligentScreen.keepMyDisplay.displaySlider.startTime' | translate"
-													[minValue]="0"
-													[maxValueLegend]="'device.smartAssist.intelligentScreen.keepMyDisplay.displaySlider.endTime' | translate"
-													[maxValue]="60"
+												<vtr-ui-custom-slider [sliderId]="'keepMyDisplay'"
+													[minLegend]="'device.smartAssist.intelligentScreen.keepMyDisplay.displaySlider.startTime' | translate"
+													[maxLegend]="'device.smartAssist.intelligentScreen.keepMyDisplay.displaySlider.endTime' | translate"
+													[min]="0"
+													[max]="60"
 													[value]="intelligentScreen.readingOrBrowsingTime"
-													[enableSlider]="!intelligentScreen.isReadingOrBrowsingEnabled"
-													(valueChangeEnd)="onDisplayDimTimeChange($event)">
-												</vtr-ui-range-slider>
+													[isDisabled]="!intelligentScreen.isReadingOrBrowsingEnabled"
+													[metricsItem]="'keepMyDisplay'"
+													[metricsValue]="intelligentScreen.readingOrBrowsingTime"
+													(sliderChange)="onDisplayDimTimeChange($event)">
+												</vtr-ui-custom-slider>
 											</div>
 										</vtr-ui-row-switch>
 									</li>

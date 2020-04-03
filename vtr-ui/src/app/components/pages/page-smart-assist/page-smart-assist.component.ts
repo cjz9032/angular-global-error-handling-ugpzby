@@ -57,7 +57,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	private windowsObj: any;
 	public hpdSensorType = 0;
 	public sensitivityVisibility = false;
-	public sesnsitivityAdjustVal: number;
+	public sensitivityAdjustVal: number;
 	smartAssistCache: SmartAssistCache;
 	public isSuperResolutionLoading = true;
 	public superResolution = new FeatureStatus(false, true);
@@ -248,7 +248,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 
 	// invoke HPD related JS bridge calls
 	private initSmartAssist(isFirstTimeLoad: boolean) {
-		this.logger.info('PageSmartAssistComponent.initSmartAssist', {isFirstTimeLoad});
+		this.logger.info('PageSmartAssistComponent.initSmartAssist', { isFirstTimeLoad });
 		this.apsAvailability();
 
 		if (this.smartAssistCapability === undefined) {
@@ -302,7 +302,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	public async getHPDLeaveSensitivityStatus() {
 		try {
 			await this.smartAssist.getHPDLeaveSensitivity().then((value: any) => {
-				this.sesnsitivityAdjustVal = value || 2;
+				this.sensitivityAdjustVal = value || 2;
 				this.logger.info('getHPDLeaveSensitivity value----->', value);
 			});
 		} catch (error) {
@@ -311,11 +311,12 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public setHPDLeaveSensitivitySetting(event) {
-		this.sesnsitivityAdjustVal = event.value;
+	public setHPDLeaveSensitivitySetting($event) {
+		const value = $event.value;
+		this.sensitivityAdjustVal = value;
 		try {
-			this.smartAssist.SetHPDLeaveSensitivitySetting(event.value).then((value: any) => {
-				this.logger.info('setHPDLeaveSensitivitySetting value----->', value);
+			this.smartAssist.SetHPDLeaveSensitivitySetting(value).then((response: any) => {
+				this.logger.info('setHPDLeaveSensitivitySetting value----->', { value, response });
 			});
 		} catch (error) {
 			this.logger.error('setHPDLeaveSensitivitySetting', error.message);
@@ -480,16 +481,17 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			});
 	}
 
-	public setZeroTouchLoginSensitivity(event: ChangeContext) {
-		this.logger.info('setZeroTouchLoginSensitivity', event);
-		this.intelligentSecurity.zeroTouchLoginDistance = event.value;
+	public setZeroTouchLoginSensitivity($event: any) {
+		const value = $event.value;
+		this.logger.info('setZeroTouchLoginSensitivity', value);
+		this.intelligentSecurity.zeroTouchLoginDistance = value;
 
 		this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
 		this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
 
-		this.smartAssist.setZeroTouchLoginDistance(event.value)
+		this.smartAssist.setZeroTouchLoginDistance(value)
 			.then((isSuccess: boolean) => {
-				this.logger.info(`setZeroTouchLoginSensitivity.setSelectedLockTimer ${isSuccess}`, event.value);
+				this.logger.info(`setZeroTouchLoginSensitivity.setSelectedLockTimer ${isSuccess}`, value);
 			});
 	}
 
@@ -541,15 +543,15 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			});
 	}
 
-	public onDisplayDimTimeChange($event: ChangeContext) {
-		this.intelligentScreen.readingOrBrowsingTime = $event.value;
-
+	public onDisplayDimTimeChange($event: any) {
+		const value = $event.value;
+		this.intelligentScreen.readingOrBrowsingTime = value;
 		this.smartAssistCache.intelligentScreen = this.intelligentScreen;
 		this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
 
-		this.smartAssist.setReadingOrBrowsingTime($event.value)
+		this.smartAssist.setReadingOrBrowsingTime(value)
 			.then((isSuccess: boolean) => {
-				this.logger.info(`onZeroTouchLockTimerChange.setSelectedLockTimer ${isSuccess}`, $event.value);
+				this.logger.info(`onZeroTouchLockTimerChange.setSelectedLockTimer ${isSuccess}`, value);
 			});
 	}
 
