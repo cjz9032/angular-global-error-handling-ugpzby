@@ -730,6 +730,9 @@ export class SystemUpdateService {
 					} else if (update.isIgnored && update.packageID === pack && update.dependedByPackages !== '') {
 						result = this.isUpdateDependedByUnIgnoredPackage(updateList, update.dependedByPackages);
 					}
+					if (result) {
+						break;
+					}
 				}
 			}
 			if (result) {
