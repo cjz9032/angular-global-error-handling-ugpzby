@@ -23,18 +23,33 @@
 				<div class="content-page-1 font-14-semi"
 					id="welcome-body-scroll">
 					<div class="row no-gutters">
-						<div class="col-auto title2"
+						<div class="col-auto title2" *ngIf="!deviceService.isGaming"
 							[innerHTML]="'welcometutorial.description'| translate">
+						</div>
+						<div class="col-auto title2" *ngIf="deviceService.isGaming"
+							[innerHTML]="'welcometutorial.gaming.gamingDescription'| translate">
 						</div>
 					</div>
 					<div class="row no-gutters justify-content-center align-items-center"
-						*ngIf="!deviceService.isArm">
+						[hidden]="deviceService.isArm || deviceService.isGaming">
 						<div class="col-auto title2">
 							<ul>
 								<li>{{"welcometutorial.bullets1" | translate }}</li>
 								<li *ngIf="machineInfo && machineInfo.brand!=='think'">
 									{{"welcometutorial.bullets2" | translate }}</li>
 								<li>{{"welcometutorial.bullets3" | translate }}</li>
+							</ul>
+						</div>
+					</div>
+					<div class="row no-gutters"
+						[hidden]="deviceService.isArm || !deviceService.isGaming">
+						<div class="col-auto title2">
+							<ul>
+								<li>{{"welcometutorial.gaming.gamingFeature1" | translate }}</li>
+								<li>{{"welcometutorial.gaming.gamingFeature2" | translate }}</li>
+								<li>{{"welcometutorial.gaming.gamingFeature3" | translate }}</li>
+								<li>{{"welcometutorial.gaming.gamingFeature4" | translate }}</li>
+								<li>{{"welcometutorial.gaming.gamingFeature5" | translate }}</li>
 							</ul>
 						</div>
 					</div>
@@ -69,14 +84,13 @@
 				</div>
 				<div class="content-page-2"
 					id="welcome-body-scroll">
-					<div class="row justify-content-center align-items-center font-14-bold mb-20"
-						[hidden]="deviceService.isGaming">
+					<div class="row justify-content-center align-items-center font-14-bold mb-20">
 						<div class="col-auto title2 uppercase text-center">
 							{{ "welcometutorial.subtitle1" | translate }}
 						</div>
 					</div>
 					<div class="row mb-5"
-						[hidden]="deviceService.isGaming"
+						*ngIf="!deviceService.isGaming"
 						[ngClass]="{'radio-is-selected' : usageType !== null && usageType !== segmentConst.Gaming}">
 						<div class="col-4 device-image-content d-flex justify-content-center">
 							<div class="device-image"
@@ -150,6 +164,80 @@
 						</div>
 					</div>
 
+					<div class="row mb-5"
+						*ngIf="deviceService.isGaming"
+						[ngClass]="{'radio-is-selected' : gamingScenario !== null}">
+						<div class="col-4 device-image-content d-flex justify-content-center">
+							<div class="device-image"
+								id="gamingScenario_gaming"
+								attr.aria-label="gamingScenario_gaming"
+								(click)="saveGamingScenario(gamingScenarios.Gaming)">
+								<input type="radio"
+									name="radio"
+									id="gamingRadio"
+									value="gaming"
+									[checked]="gamingScenario && gamingScenario === gamingScenarios.Gaming"
+									#gamingRadio />
+								<img for="gamingRadio"
+									alt="Gaming"
+									src="assets/images/welcome/gaming-only.jpg"
+									class="" />
+								<label for="gamingRadio"
+									tabindex="0"
+									id="gaming-scenario-choose-gaming"
+									role="radio"
+									(keypress)="onKeyPress($event)"
+									class="centered">{{ "welcometutorial.gaming.gamingOnly" | translate }}</label>
+							</div>
+						</div>
+						<div class="col-4 device-image-content d-flex justify-content-center">
+							<div class="device-image"
+								id="gamingScenario_gamingAndWork"
+								attr.aria-label="gamingScenario_gamingAndWork"
+								(click)="saveGamingScenario(gamingScenarios.GamingAndWork)">
+								<input type="radio"
+									name="radio"
+									id="gamingAndWorkRadio"
+									value="gamingAndWork"
+									[checked]="gamingScenario && gamingScenario === gamingScenarios.GamingAndWork"
+									#gamingAndWorkRadio />
+								<img alt="Gaming & Work"
+									for="gamingAndWorkRadio"
+									src="assets/images/welcome/gaming-work.jpg"
+									class="business" />
+								<label for="gamingAndWorkRadio"
+									tabindex="0"
+									role="radio"
+									id="gaming-scenario-choose-gamingAndWork"
+									(keypress)="onKeyPress($event)"
+									class="centered">{{ "welcometutorial.gaming.gamingAndWork" | translate }}</label>
+							</div>
+						</div>
+						<div class="col-4 device-image-content d-flex justify-content-center">
+							<div class="device-image"
+								id="gamingScenario_nonGaming"
+								attr.aria-label="gamingScenario_nonGaming"
+								(click)="saveGamingScenario(gamingScenarios.NonGaming)">
+								<input type="radio"
+									name="radio"
+									id="nonGamingRadio"
+									value="nonGaming"
+									[checked]="gamingScenario && gamingScenario === gamingScenarios.NonGaming"
+									#nonGamingRadio />
+								<img alt="Non Gaming"
+									for="nonGamingRadio"
+									src="assets/images/welcome/non-gaming.jpg"
+									class="custom" />
+								<label for="nonGamingRadio"
+									tabindex="0"
+									role="radio"
+									id="gaming-scenario-choose-nonGaming"
+									(keypress)="onKeyPress($event)"
+									class="centered">{{ "welcometutorial.gaming.nonGaming" | translate }} </label>
+							</div>
+						</div>
+					</div>
+
 					<div class="row justify-content-center align-items-center font-14-bold col-12 mb-20">
 						<div class="col-auto title2 uppercase text-center">
 							{{ "welcometutorial.subtitle2" | translate}}
@@ -187,21 +275,17 @@
 					</div>
 					<div class="row privacy-check mt-3"
 						*ngIf="vantageToolbarStatus.available">
-						<div class="custom-control custom-checkbox pl-0">
+						 <div class="custom-control custom-checkbox pl-0">
 							<input type="checkbox"
-								tabindex="-1"
 								(click)="saveToolbar($event)"
 								[checked]="vantageToolbar"
 								class="custom-control-input"
-								id="chkbox-vantage-toolbar"
-								role="checkbox">
+								id="welcome-toolbar-label">
 							<label class="custom-control-label"
 								dir="{{'dir' | translate}}"
 								tabindex="0"
 								(keypress)="onKeyPress($event)"
-								id="welcome-toolbar-label"
-								role="checkbox"
-								for="chkbox-vantage-toolbar">
+								for="welcome-toolbar-label">
 								{{ "welcometutorial.toolbartitle" | translate }}
 							</label>
 						</div>
@@ -210,18 +294,14 @@
 					<div class="row privacy-check mt-3">
 						<div class="custom-control custom-checkbox pl-0">
 							<input type="checkbox"
-								tabindex="-1"
 								(click)="savePrivacy($event, 'PRIVACYPOLICY')"
 								[checked]="privacyPolicy"
 								class="custom-control-input"
-								id="defaultUnchecked"
-								attr.aria-label="defaultUnchecked">
+								id="welcome-privacy-label">
 							<label class="custom-control-label"
 								tabindex="0"
-								id="welcome-privacy-label"
-								role="checkbox"
 								(keypress)="onKeyPress($event)"
-								for="defaultUnchecked">
+								for="welcome-privacy-label">
 								{{ "welcometutorial.privacytitle" | translate }}
 								<a class="linktext"
 									tabindex="0"
@@ -231,7 +311,6 @@
 									href="#"
 									rel="noopener"
 									[innerHTML]="'welcometutorial.privacypolicy' | translate">
-									<!-- Lenovo's Privacy Policy -->
 								</a>
 							</label>
 						</div>

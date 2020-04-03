@@ -538,6 +538,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			modalRef.dismiss();
 			// its normal update type installation which doesn't require rebooting/power-off
 			document.querySelector('.vtr-app.container-fluid').scrollTop = 120;
+			document.getElementById('system-update-back-btn').focus();
 			this.installUpdateBySource(isInstallAll, removeDelayedUpdates, updatesToInstall);
 			return;
 		}
@@ -554,6 +555,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					} else {
 						removeDelayedUpdates = true;
 					}
+					document.getElementById('system-update-back-btn').focus();
 					this.installUpdateBySource(isInstallAll, removeDelayedUpdates, updatesToInstall);
 				}
 			});

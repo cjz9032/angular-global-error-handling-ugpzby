@@ -31,22 +31,29 @@
 			tabindex="-1">
 		<label for="{{radioId}}"
 			class="checkbox-custom-label"
+			[style.cursor]="disabled?'default': 'pointer'"
 			id="{{ radioId }}"
 			attr.aria-label="{{radioId}}">
 			<div *ngIf="!hideIcon"
+				[style.cursor]="disabled?'default': 'pointer'"
 				[ngClass]="'icomoon icomoon-'+getIconName(value)"></div>
 			<div *ngIf="customIcon && customIcon.length>0"
+				[style.cursor]="disabled?'default': 'pointer'"
 				[ngClass]="'icomoon icomoon-'+customIcon"></div>
 			<fa-layers [fixedWidth]="true"
-				*ngIf="checked">
+				*ngIf="checked"
+				[style.cursor]="disabled?'default': 'pointer'">
 				<fa-icon class="icon-circle"
+					[class.icon-circle-disabled]="disabled"
 					[icon]="['fas', 'circle']"></fa-icon>
 				<fa-icon class="check-circle"
+					[class.check-circle-disabled]="disabled"
 					[icon]="['far', 'check-circle']"></fa-icon>
 			</fa-layers>
 
 		</label>
 		<div [ngClass]="['title','text-center']"
+			[class.disabled-title]="disabled"
 			id="{{textId}}-{{value}}-label"
 			[attr.aria-disabled]="disabled"
 			[attr.aria-checked]="checked">{{processLabel ? (label | capitalizeFirst) : label}}</div>

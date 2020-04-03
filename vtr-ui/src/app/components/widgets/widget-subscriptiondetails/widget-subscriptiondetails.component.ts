@@ -58,16 +58,16 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
   }
 
   openSubscribeModal() {
-    // this.modalService.open(ModalSmartPerformanceSubscribeComponent, {
-    //     backdrop: 'static',
-    //     size: 'lg',
-    //     centered: true,
-    //     windowClass: 'subscribe-modal',
+    this.modalService.open(ModalSmartPerformanceSubscribeComponent, {
+        backdrop: 'static',
+        size: 'lg',
+        centered: true,
+        windowClass: 'subscribe-modal',
 
-	// });
-	this.commonService.setLocalStorageValue(LocalStorageKey.IsSubscribed, true);
-	this.commonService.setLocalStorageValue(LocalStorageKey.SubscribtionDetails, this.localSubscriptionDetails);
-	location.reload();
+	});
+	// this.commonService.setLocalStorageValue(LocalStorageKey.IsSubscribed, true);
+	// this.commonService.setLocalStorageValue(LocalStorageKey.SubscribtionDetails, this.localSubscriptionDetails);
+	// location.reload();
 }
 
 }

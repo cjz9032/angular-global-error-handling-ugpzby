@@ -86,7 +86,6 @@
 								*ngIf="expressChargingStatus?.available">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.power.batterySettings.expressCharging.title' | translate"
-									[name]="'device.deviceSettings.power.batterySettings.expressCharging.title' | translate"
 									[caption]="'device.deviceSettings.power.batterySettings.expressCharging.description' | translate"
 									[isSwitchVisible]=true
 									[isLastChild]="!conservationModeStatus.available"
@@ -104,7 +103,6 @@
 								*ngIf="conservationModeStatus?.available">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.power.batterySettings.conservationMode.title' | translate"
-									[name]="'device.deviceSettings.power.batterySettings.conservationMode.title' | translate"
 									[caption]="'device.deviceSettings.power.batterySettings.conservationMode.description' | translate"
 									[isSwitchVisible]=true
 									[isLastChild]=true
@@ -140,7 +138,6 @@
 								*ngIf="showAirplanePowerModeSection">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.power.batterySettings.airPlanePower.title' | translate"
-									[name]="'device.deviceSettings.power.batterySettings.airPlanePower.title' | translate"
 									[caption]="'device.deviceSettings.power.batterySettings.airPlanePower.description' | translate"
 									[isSwitchVisible]=true
 									[leftIcon]="['fal', 'plane']"
@@ -171,7 +168,6 @@
 								class="common-li-padding">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.power.powerSettings.flipToBoot.title' | translate"
-									[name]="'device.deviceSettings.power.powerSettings.flipToBoot.title' | translate"
 									[caption]="'device.deviceSettings.power.powerSettings.flipToBoot.description' | translate"
 									[isSwitchVisible]=true
 									[isLastChild]=false
@@ -187,7 +183,6 @@
 								*ngIf="!isDesktopMachine && alwaysOnUSBStatus.available">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.power.powerSettings.alwaysUSB.title' | translate"
-									[name]="'device.deviceSettings.power.powerSettings.alwaysUSB.title' | translate"
 									[caption]="'device.deviceSettings.power.powerSettings.alwaysUSB.description' | translate"
 									[isSwitchVisible]=true
 									[isLastChild]="!showEasyResumeSection"
@@ -229,7 +224,6 @@
 								*ngIf="!isDesktopMachine && showEasyResumeSection">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.power.powerSettings.easyResume.title' | translate"
-									[name]="'device.deviceSettings.power.powerSettings.easyResume.title' | translate"
 									[caption]="'device.deviceSettings.power.powerSettings.easyResume.description' | translate"
 									[isSwitchVisible]=true
 									[isLastChild]=true
@@ -263,7 +257,6 @@
 							<li class="">
 								<vtr-ui-row-switch
 									[componentName]="'device.deviceSettings.power.otherSettings.title' | translate"
-									[name]="'device.deviceSettings.power.otherSettings.title' | translate"
 									[title]="'device.deviceSettings.power.otherSettings.vantageToolbar.title' | translate"
 									[caption]="'device.deviceSettings.power.otherSettings.vantageToolbar.description' | translate"
 									[isSwitchVisible]=true

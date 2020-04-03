@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { environment } from '../../../../environments/environment';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
@@ -12,7 +12,7 @@ declare var window;
 	templateUrl: './modal-about.component.html',
 	styleUrls: ['./modal-about.component.scss']
 })
-export class ModalAboutComponent implements OnInit, AfterViewInit {
+export class ModalAboutComponent implements OnInit {
 
 	buildVersion = environment.appVersion;
 	shellVersion: string;
@@ -41,10 +41,6 @@ export class ModalAboutComponent implements OnInit, AfterViewInit {
 		this.bridgeVersion = (jsBridgeVersion) ? jsBridgeVersion : '';
 	}
 
-	ngAfterViewInit() {
-		setTimeout(() => { document.getElementById('about-dialog').parentElement.parentElement.parentElement.parentElement.focus(); }, 0);
-	}
-
 	agreementClicked() {
 		this.licensesService.openLicensesAgreement();
 		this.closeModal();
@@ -65,9 +61,12 @@ export class ModalAboutComponent implements OnInit, AfterViewInit {
 		this.activeModal.close('close');
 	}
 
+	initModalFocus() {
+		(document.querySelector('.About-Modal') as HTMLElement).focus();
+	}
+
 	@HostListener('window: focus')
 	onFocus(): void {
-		const modal = document.querySelector('.About-Modal') as HTMLElement;
-		modal.focus();
+		this.initModalFocus();
 	}
 }
