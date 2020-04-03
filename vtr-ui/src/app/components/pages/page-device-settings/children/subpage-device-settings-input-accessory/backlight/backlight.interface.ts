@@ -44,4 +44,5 @@ export interface BacklightMode {
 	checked: boolean;
 	value: BacklightStatusEnum;
 	title: string;
+	disabled: boolean;
 }

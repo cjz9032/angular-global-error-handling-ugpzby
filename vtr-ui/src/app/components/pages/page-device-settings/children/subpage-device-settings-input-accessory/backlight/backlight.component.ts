@@ -33,23 +33,27 @@ export class BacklightComponent implements OnInit, OnDestroy {
 		{
 			title: 'device.deviceSettings.inputAccessories.backlight.level.low',
 			value: BacklightStatusEnum.LEVEL_1,
-			checked: false
+			checked: false,
+			disabled: false
 		},
 		{
 			title: 'device.deviceSettings.inputAccessories.backlight.level.high',
 			value: BacklightStatusEnum.LEVEL_2,
-			checked: false
+			checked: false,
+			disabled: false
 		},
 		{
 			title: 'device.deviceSettings.inputAccessories.backlight.level.off',
 			value: BacklightStatusEnum.OFF,
-			checked: false
+			checked: false,
+			disabled: false
 		},
 	];
 	modeAuto: BacklightMode = {
 		title: 'device.deviceSettings.inputAccessories.backlight.level.auto',
 		value: BacklightStatusEnum.AUTO,
-		checked: false
+		checked: false,
+		disabled: false
 	};
 
 	private backlightFlat$: Observable<BacklightStatus | BacklightLevel>;
@@ -129,7 +133,9 @@ export class BacklightComponent implements OnInit, OnDestroy {
 			.subscribe((status) => {
 				for (const mode of this.modes) {
 					mode.checked = mode.value === status.value;
+					mode.disabled = status.value === BacklightStatusEnum.DISABLED_OFF;
 					if (status.value === BacklightStatusEnum.DISABLED_OFF && mode.value === BacklightStatusEnum.OFF) {
+						mode.disabled = false;
 						mode.checked = true;
 					}
 				}
@@ -142,7 +148,9 @@ export class BacklightComponent implements OnInit, OnDestroy {
 			.subscribe((status) => {
 				for (const mode of this.modes) {
 					mode.checked = mode.value === status.value;
+					mode.disabled = status.value === BacklightStatusEnum.DISABLED_OFF;
 					if (status.value === BacklightStatusEnum.DISABLED_OFF && mode.value === BacklightStatusEnum.OFF) {
+						mode.disabled = false;
 						mode.checked = true;
 					}
 				}
@@ -165,7 +173,9 @@ export class BacklightComponent implements OnInit, OnDestroy {
 				this.isSwitchChecked = res.value !== BacklightStatusEnum.OFF;
 				for (const modeItem of this.modes) {
 					modeItem.checked = res.value === modeItem.value;
+					modeItem.disabled = res.value === BacklightStatusEnum.DISABLED_OFF;
 					if (res.value === BacklightStatusEnum.DISABLED_OFF && modeItem.value === BacklightStatusEnum.OFF) {
+						modeItem.disabled = false;
 						modeItem.checked = true;
 					}
 				}
@@ -194,13 +204,15 @@ export class BacklightComponent implements OnInit, OnDestroy {
 			this.update$.next({
 				title: 'device.deviceSettings.inputAccessories.backlight.level.low',
 				value: BacklightStatusEnum.LEVEL_1,
-				checked: false
+				checked: false,
+				disabled: false
 			});
 		} else {
 			this.update$.next({
 				title: 'device.deviceSettings.inputAccessories.backlight.level.off',
 				value: BacklightStatusEnum.OFF,
-				checked: false
+				checked: false,
+				disabled: false
 			});
 		}
 	}
