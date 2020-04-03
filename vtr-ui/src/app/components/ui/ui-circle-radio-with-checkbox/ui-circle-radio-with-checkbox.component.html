@@ -1,15 +1,16 @@
-<div class="vtr-ui-circle-radio-with-checkbox col-aut0 px-0"
+<div class="vtr-ui-circle-radio-with-checkbox col-aut0 px-0 {{group}}"
 	attr.aria-labelledby="{{textId}}-{{value}}-label"
 	#radioButton
 	role="radio"
-	[tabIndex]="checked? 0 :-1"
+	[tabIndex]="disabled ?-1:checked? 0 :-1"
 	[attr.aria-disabled]="disabled"
 	[attr.aria-checked]="checked"
-	attr.aria-label="radioId"
-	(keydown)="radioKBNavigation($event,radio)"
+	[attr.aria-label]="radioId"
+	(keydown)="navigateByKeys($event,radio)"
 	[ngClass]="{'white-theme': theme === 'white','blue-theme': theme === 'blue'}">
 	<div class="checkbox">
 		<input class="checkbox-custom"
+			style="display: none;"
 			attr.aria-labelledby="{{textId}}-{{value}}-label"
 			[attr.aria-disabled]="disabled"
 			[attr.aria-checked]="checked"
@@ -17,35 +18,42 @@
 			id="{{radioId}}"
 			name="{{group}}"
 			type="radio"
-			attr.aria-label="{{ radioId }}"
 			[value]="value"
 			[checked]="checked"
 			[disabled]="disabled"
 			#radio
 			(change)="onChange($event)"
 			vtrMetrics
+			[metricsParent]="this.metricsParent"
 			metricsEvent="featureClick"
-			[metricsItem]="'radio.'+label"
-			[metricsValue]="!radio.checked"
+			[metricsItem]="radioLabel+label"
+			[metricsValue]="checked"
 			tabindex="-1">
 		<label for="{{radioId}}"
 			class="checkbox-custom-label"
+			[style.cursor]="disabled?'default': 'pointer'"
 			id="{{ radioId }}"
 			attr.aria-label="{{radioId}}">
 			<div *ngIf="!hideIcon"
+				[style.cursor]="disabled?'default': 'pointer'"
 				[ngClass]="'icomoon icomoon-'+getIconName(value)"></div>
 			<div *ngIf="customIcon && customIcon.length>0"
+				[style.cursor]="disabled?'default': 'pointer'"
 				[ngClass]="'icomoon icomoon-'+customIcon"></div>
 			<fa-layers [fixedWidth]="true"
-				*ngIf="checked">
+				*ngIf="checked"
+				[style.cursor]="disabled?'default': 'pointer'">
 				<fa-icon class="icon-circle"
+					[class.icon-circle-disabled]="disabled"
 					[icon]="['fas', 'circle']"></fa-icon>
 				<fa-icon class="check-circle"
+					[class.check-circle-disabled]="disabled"
 					[icon]="['far', 'check-circle']"></fa-icon>
 			</fa-layers>
 
 		</label>
 		<div [ngClass]="['title','text-center']"
+			[class.disabled-title]="disabled"
 			id="{{textId}}-{{value}}-label"
 			[attr.aria-disabled]="disabled"
 			[attr.aria-checked]="checked">{{processLabel ? (label | capitalizeFirst) : label}}</div>

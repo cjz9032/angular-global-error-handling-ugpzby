@@ -9,12 +9,13 @@ import { Router } from '@angular/router';
 export class MenuHeaderComponent implements OnInit {
 
 	@Input() menuItems = [];
+	params = { fromTab: true }
 
 	constructor(public router: Router) { }
 
-	ngOnInit() { }
+	ngOnInit() {}
 
-	getActiveTab() {
+	/* getActiveTab() {
 		let activeTab = {};
 		this.menuItems.forEach((d, i) => {
 			if (d.active) {
@@ -35,8 +36,13 @@ export class MenuHeaderComponent implements OnInit {
 				item.active = true;
 			}
 		}
-	}
-	changeRoute(routeValue, queryParams?: any) {
-		this.router.navigate(["/" + routeValue], queryParams);
+	} */
+	changeRoute(routeValue, params?: any) {
+		if (params) {
+			this.router.navigate(["/" + routeValue], { queryParams: params });
+		}
+		else {
+			this.router.navigate(["/" + routeValue]);
+		}
 	}
 }

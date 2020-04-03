@@ -1,20 +1,22 @@
 <div class="vtr-widget-carousel"
-	#carouselContainer
+	#carouselContainer  (swipeleft)= "swipe($event.type)" (swiperight)= "swipe($event.type)" 
 	[style.height.px]="carouselContainer.clientWidth * 340 / 944">
-	<ngb-carousel tabindex="-1" *ngIf="carouselModel"
+	<ngb-carousel tabindex="-1"
+		*ngIf="carouselModel"
 		[showNavigationArrows]="carouselModel.length>1"
 		[showNavigationIndicators]="carouselModel.length>1">
 		<ng-template *ngFor="let model of carouselModel let cIndex = index"
-			ngbSlide id="ngb-slide-{{cIndex}}">
+			ngbSlide
+			id="ngb-slide-{{cIndex}}">
 			<a [href]="model.link"
+				tabindex="0"
 				vtrMetrics
 				id="{{carouselId}}-{{cIndex}}"
-				attr.aria-label="{{carouselId}}-{{cIndex}}"
 				metricsEvent="articleclick"
 				[metricsItemID]="model.id"
-				[metricsItemPosition]="order"
+				[metricsItemPosition]="''+order"
 				[metricsParent]="'dashboard'"
-				[metricsPageNumber]="cIndex + 1"
+				[metricsPageNumber]="'' + cIndex + 1"
 				[metricsParam]="model.dataSource"
 				target="_blank"
 				rel="noopener"
@@ -22,15 +24,17 @@
 				[ngClass]="{'no-link': !model.link}"
 				(click)="linkClicked($event, model.linkType, model.link)">
 				<div class="image img-fluid"
-						[class.overlay-dark]="model.overlayThemeDark"
-						[style.backgroundImage]="'url(' + model.image + ')'"
-						[style.height.px]="carouselContainer.clientWidth * 340 / 944"></div>
+					[class.overlay-dark]="model.overlayThemeDark"
+					[style.backgroundImage]="'url(' + model.image + ')'"
+					[style.height.px]="carouselContainer.clientWidth * 340 / 944"></div>
 				<div class="carousel-caption">
 					<h3 class="source"
+						attr.aria-label={{model.source}}
 						[title]="model.source | htmlText"
 						[innerHTML]="model.source"
 						id="{{carouselId}}-{{cIndex}}-source"></h3>
 					<h2 class="title"
+						attr.aria-label={{model.cardTitle}}
 						[title]="model.cardTitle | htmlText"
 						[innerHTML]="model.cardTitle"
 						id="{{carouselId}}-{{cIndex}}-title"></h2>

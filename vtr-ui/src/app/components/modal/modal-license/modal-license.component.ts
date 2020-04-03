@@ -46,9 +46,7 @@ export class ModalLicenseComponent implements OnInit, OnDestroy {
 			}
 		});
 		this.timerService.start();
-		setTimeout(() => {
-			(document.querySelector('#license-dialog-empty') as HTMLElement).focus();
-		}, 0);
+		setTimeout(() => { this.initModalFocus(); }, 0);
 	}
 
 	ngOnDestroy() {
@@ -87,10 +85,26 @@ export class ModalLicenseComponent implements OnInit, OnDestroy {
 		this.activeModal.close('close');
 	}
 
+	initModalFocus() {
+		(document.querySelector('.license-Modal') as HTMLElement).focus();
+	}
+
 	@HostListener('window: focus')
 	onFocus(): void {
 		if (!this.licenseModalMetrics || !this.licenseModalMetrics.closeButton || document.activeElement.id !== `btn-${this.licenseModalMetrics.closeButton}`) {
-			(document.querySelector('.license-Modal') as HTMLElement).focus();
+			this.initModalFocus();
+		}
+	}
+
+	@HostListener('keydown', ['$event'])
+	onKeyDown(event: KeyboardEvent) {
+		if (!event.shiftKey &&
+			event.key === 'Tab' &&
+			this.type !== 'txt' &&
+			document.activeElement &&
+			document.activeElement.className.includes('close-btn')
+		) {
+			(document.getElementById('license-agreement-iframe') as HTMLIFrameElement).contentWindow.document.body.focus();
 		}
 	}
 }

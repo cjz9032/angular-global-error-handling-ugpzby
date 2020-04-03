@@ -1,35 +1,34 @@
+import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, ViewChild } from '@angular/core';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { MetricService } from 'src/app/services/metric/metric.service';
 import { AppEvent } from './../../../enums/app-event.enum';
-import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
+import { UICustomRadio } from '../ui-custom-radio/ui-custom-radio';
 
 @Component({
 	selector: 'vtr-ui-rounded-rectangle-radio',
 	templateUrl: './ui-rounded-rectangle-radio.component.html',
 	styleUrls: ['./ui-rounded-rectangle-radio.component.scss']
 })
-export class UiRoundedRectangleRadioComponent implements OnInit, OnChanges {
+export class UiRoundedRectangleRadioComponent extends UICustomRadio implements OnInit, OnChanges, AfterViewInit {
 	@Input() radioId: string;
-	@Input() group: string;
-	@Input() label: string;
 	@Input() tooltip: string;
-	@Input() value: string;
-	@Input() checked = false;
 	@Input() disabled = false;
 	@Input() name: string;
 	@Input() isLarge = false;
-
 	@Output() change: EventEmitter<any> = new EventEmitter();
 	@Output() customKeyEvent = new EventEmitter();
 	hideIcon = false;
-	keyCode = Object.freeze({
-		LEFT: 37,
-		RIGHT: 39,
-		UP: 38,
-		DOWN: 40
-	});
-	constructor() {
+
+
+	constructor(logger: LoggerService, metrics: MetricService) {
+		super(logger, metrics);
 	}
 
 	ngOnInit() {
+	}
+
+	ngAfterViewInit(): void {
+		this.setRadioButtons(); // Set up radio buttons first , last etc and if none selected,set tabindex to first element
 	}
 
 	ngOnChanges(changes) {
@@ -51,11 +50,12 @@ export class UiRoundedRectangleRadioComponent implements OnInit, OnChanges {
 		this.change.emit(event);
 	}
 	onkeyPress($event) {
-		const { keyCode } =  $event;
-		if (keyCode === this.keyCode.LEFT ) {
-			this.customKeyEvent.emit({customeEvent: AppEvent.LEFT});
-		}  else if (keyCode === this.keyCode.RIGHT) {
-			this.customKeyEvent.emit({customeEvent: AppEvent.RIGHT});
+		const { keyCode } = $event;
+		if (keyCode === this.keyCode.LEFT) {
+			this.customKeyEvent.emit({ customeEvent: AppEvent.LEFT });
+		} else if (keyCode === this.keyCode.RIGHT) {
+			this.customKeyEvent.emit({ customeEvent: AppEvent.RIGHT });
 		}
 	}
+
 }

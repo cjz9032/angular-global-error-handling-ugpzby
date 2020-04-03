@@ -66,6 +66,10 @@ import { GamingDashboardModule } from './gaming-dashboard.module';
 import { HardwareScanRoutingModule } from './hardware-scan/hardware-scan-routing.module';
 import { HardwareScanModule } from './hardware-scan/hardware-scan.module';
 import { CommsService } from '../services/comms/comms.service';
+import { UiCustomSliderModule } from '../components/ui/ui-custom-slider/ui-custom-slider.module';
+import { UICustomRadioModule } from '../components/ui/ui-custom-radio/ui-custom-radio.module';
+import { NotificationComponent } from 'src/app/components/notification/notification.component';
+import { UiBannerComponent } from 'src/app/components/ui/ui-banner/ui-banner.component';
 // import { ModalErrorMessageComponent } from '../components/modal/modal-error-message/modal-error-message.component';
 import { ComposerClientModule } from 'composer';
 
@@ -80,8 +84,10 @@ import { ComposerClientModule } from 'composer';
 		ModalAppUpdateAvailableComponent,
 		// PageSettingsComponent,
 		ModalNewFeatureTipComponent,
-		PageSettingsComponent
+		PageSettingsComponent,
 		// ModalErrorMessageComponent
+		NotificationComponent,
+		UiBannerComponent
 	],
 	imports: [
 		BrowserModule,
@@ -96,7 +102,7 @@ import { ComposerClientModule } from 'composer';
 			loader: {
 				provide: TranslateLoader,
 				useClass: WebpackTranslateLoader,
-				deps: [ HttpClient ]
+				deps: [HttpClient]
 			},
 			missingTranslationHandler: {
 				provide: MissingTranslationHandler,
@@ -120,8 +126,17 @@ import { ComposerClientModule } from 'composer';
 		GamingDashboardModule,
 		HardwareScanModule,
 		HardwareScanRoutingModule,
+		UiCustomSliderModule,
+		UICustomRadioModule
 	],
-	exports: [ NavbarModule, RouterModule, CommonPipeModule, CommonUiModule, ModernPreloadModule, PageLayoutModule ],
+	exports: [
+		NavbarModule,
+		RouterModule,
+		CommonPipeModule,
+		CommonUiModule,
+		ModernPreloadModule,
+		PageLayoutModule,
+		UiCustomSliderModule],
 	providers: [
 		CommonService,
 		MetricsTranslateService,
@@ -144,8 +159,8 @@ import { ComposerClientModule } from 'composer';
 		ModalNewFeatureTipComponent
 		// ModalErrorMessageComponent
 	],
-	bootstrap: [ AppComponent ],
-	schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+	bootstrap: [AppComponent],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {
 	constructor(library: FaIconLibrary) {

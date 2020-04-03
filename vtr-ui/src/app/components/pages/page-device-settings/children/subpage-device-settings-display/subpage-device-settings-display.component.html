@@ -36,9 +36,8 @@
 									[showChildContent]="true"
 									[theme]="'white'"
 									[switchId]="'day-time-color-temp'">
-									<div class="displayColorTemperatureLink"
-										role="text">
-										<span role="text"
+									<div class="displayColorTemperatureLink">
+										<span
 											id="displayColorTemperature-link-click">{{'device.deviceSettings.displayCamera.display.displayColorTemperature.link.click' | translate}}</span>&nbsp;
 										<a id="goto-nightlight-link"
 											href="javascript:void()"
@@ -46,7 +45,7 @@
 											attr.aria-label="goto-nightlight-link"
 											(click)="launchProtocol('ms-settings:nightlight')"
 											(keydown.enter)="launchProtocol('ms-settings:nightlight')">{{'device.deviceSettings.displayCamera.display.displayColorTemperature.link.here' | translate}}</a>&nbsp;
-										<span role="text"
+										<span
 											id="displayColorTemperature-link">{{'device.deviceSettings.displayCamera.display.displayColorTemperature.link.rest' | translate}}</span>
 									</div>
 								</vtr-ui-row-switch>
@@ -173,8 +172,7 @@
 									[switchId]="'privacy-guard'">
 									<div class="row">
 										<div class="col d-flex justify-content-between pt-2 pr-3">
-											<p role="text"
-												class="privacy-guard-caption"
+											<p class="privacy-guard-caption"
 												id="privacy-guard-description"
 												attr.aria-label="privacy guard description, {{'device.deviceSettings.displayCamera.display.privacyGuard.description' | translate}}">
 												{{'device.deviceSettings.displayCamera.display.privacyGuard.description' | translate}}
@@ -216,12 +214,12 @@
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.displayCamera.display.oledPowerSettings.title' | translate"
 									componentName="Oled Power Settings"
-									[name]="'device.deviceSettings.displayCamera.display.oledPowerSettings.title' | translate"
 									[isSwitchVisible]="false"
 									[isLastChild]="false"
 									[leftIcon]="['fal', 'tv']"
 									[showChildContent]="true"
 									[isSwitchChecked]="eyeCareModeStatus.status"
+									[switchId]="'oled-power-settings'"
 									(toggleOnOff)="onEyeCareModeStatusToggle($event)"
 									[theme]="'white'">
 									<div class="row">
@@ -293,7 +291,6 @@
 								<vtr-ui-row-switch [switchId]="'camera-privacy-mode'"
 									[title]="'device.deviceSettings.displayCamera.camera.cameraPrivacy.title' | translate"
 									componentName="Camera Privacy Mode"
-									[name]="'device.deviceSettings.displayCamera.camera.cameraPrivacy.title' | translate"
 									[isSwitchVisible]="true"
 									[showChildContent]="true"
 									[leftIcon]="['fal', 'camera']"
@@ -314,8 +311,7 @@
 														</fa-icon>
 													</div>
 													<div class="col-11 pr-0 pl-2">
-														<p role="text"
-															class="mb-0 mt-auto"
+														<p class="mb-0 mt-auto"
 															id="camera-privacy-mode-note"
 															attr.aria-label="camera-privacy-mode-note">
 															{{'dashboard.quickSettings.note.cameraPrivacyNote' | translate}}
@@ -324,7 +320,8 @@
 															class="btn btn-link privacy-button pl-0"
 															(click)="onClick('ms-settings:privacy-webcam')"
 															id="camera-privacy-mode-access-url"
-															attr.aria-label="camera-privacy-mode-access-url" role="link">
+															attr.aria-label="camera-privacy-mode-access-url"
+															role="link">
 															{{'dashboard.quickSettings.note.accessUrl' | translate}}
 														</button>
 													</div>
@@ -338,7 +335,6 @@
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.displayCamera.camera.camera.title' | translate"
 									componentName="Camera"
-									[name]="'device.deviceSettings.displayCamera.camera.camera.title' | translate"
 									[type]="'Camera'"
 									[isSwitchVisible]="false"
 									[isLastChild]="!cameraBlur.available || cameraBlur.errorCode !== 0"
@@ -362,8 +358,7 @@
 														</fa-icon>
 													</div>
 													<div class="col-11 pr-0 pl-2">
-														<p role="text"
-															class="mb-0 mt-auto"
+														<p class="mb-0 mt-auto"
 															id="device-settings-camera-privacy-note"
 															attr.aria-label="device-settings-camera-privacy-note">
 															{{'dashboard.quickSettings.note.cameraPrivacyNote' | translate}}
@@ -372,7 +367,8 @@
 															class="btn btn-link privacy-button pl-0"
 															(click)="onClick('ms-settings:privacy-webcam')"
 															id="device-settings-camera-access-url"
-															attr.aria-label="device-settings-camera-access-url" role="link">
+															attr.aria-label="device-settings-camera-access-url"
+															role="link">
 															{{'dashboard.quickSettings.note.accessUrl' | translate}}
 														</button>
 													</div>

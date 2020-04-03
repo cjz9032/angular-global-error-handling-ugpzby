@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, SecurityContext } from '@angular/core';
 import { HttpHeaders } from '@angular/common/http';
 
 import { CommsService } from '../comms/comms.service';
@@ -13,6 +13,7 @@ import { DevService } from '../dev/dev.service';
 import { LoggerService } from '../logger/logger.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { throwError } from 'rxjs';
+import { DomSanitizer } from '@angular/platform-browser';
 
 const httpOptions = {
 	headers: new HttpHeaders({
@@ -36,11 +37,12 @@ export class CMSService {
 		private localInfoService: LocalInfoService,
 		private commonService: CommonService, // VAN-5872, server switch feature,
 		private devService: DevService,
-		private logger: LoggerService
+		private logger: LoggerService,
+		private sanitizer: DomSanitizer
 	) {
 		localInfoService.getLocalInfo().then(result => {
 			this.localInfo = result;
-		}).catch(e => {});
+		}).catch(e => { });
 	}
 
 	deviceFilter(filters) {
@@ -93,8 +95,8 @@ export class CMSService {
 			return new Observable(subscriber => {
 				this.localInfoService.getLocalInfo().then(result => {
 					this.localInfo = result;
-				}).finally(()=>{
-					this.requestCMSContent(queryParams, this.localInfo || this.defaultInfo ).subscribe(subscriber);
+				}).finally(() => {
+					this.requestCMSContent(queryParams, this.localInfo || this.defaultInfo).subscribe(subscriber);
 				});
 			});
 		} else {
@@ -207,7 +209,7 @@ export class CMSService {
 		if (!this.localInfo) {
 			try {
 				this.localInfo = await this.localInfoService.getLocalInfo();
-			} catch (ex) {}
+			} catch (ex) { }
 		}
 
 		const localInfo = this.localInfo || this.defaultInfo;
@@ -257,7 +259,7 @@ export class CMSService {
 		if (!this.localInfo) {
 			try {
 				this.localInfo = await this.localInfoService.getLocalInfo();
-			} catch (ex) {}
+			} catch (ex) { }
 		}
 
 		const localInfo = this.localInfo || this.defaultInfo;
@@ -282,8 +284,8 @@ export class CMSService {
 						resolve(response);
 					},
 					error => {
-                        reject('fetchCMSArticle error');
-                    }
+						reject('fetchCMSArticle error');
+					}
 				);
 		});
 	}
@@ -298,6 +300,15 @@ export class CMSService {
 					this.getDateTime(record.DisplayStartDate) <= new Date().getTime()
 				)
 			);
+		}).filter(record => {
+			try {
+				record.Title = this.sanitizer.sanitize(SecurityContext.HTML, record.Title);
+				record.Description = this.sanitizer.sanitize(SecurityContext.HTML, record.Description);
+			} catch (ex) {
+				this.logger.error('CMSService.sanitize error:', ex.message);
+				return false;
+			}
+			return true;
 		}).sort(this.sortCmsContent.bind(this));
 	}
 
@@ -309,11 +320,11 @@ export class CMSService {
 	}
 
 	getDateTime(date: any): number {
-		try{
+		try {
 			if (date && typeof date === 'string') {
 				return new Date(date.replace(/\./g, '\/')).getTime();
 			}
-		}catch(e){}
+		} catch (e) { }
 		return -1;
 	}
 

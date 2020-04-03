@@ -7,14 +7,16 @@
 			<div class="spinner-border text-primary progress-spinner" role="status"></div>
 		</div>
 	</div>
-	<a href="javascript:;"
+	<div tabindex="0"
 		role="button"
 		class="close-btn"
+		[attr.aria-label]="'common.ui.close' | translate"
 		vtrMetrics
 		metricsItem="AppsForYouScreenshotCloseButton"
 		metricsEvent="FeatureClick"
 		[metricsParent]="metricsParent"
-	 (click)="closeModal()">
+		(keyup.enter)="closeModal()"
+	 	(click)="closeModal()">
 		<img [src]=" 'assets/icons/Close.svg' | svgInline | async" alt="" srcset="">
-	</a>
+	</div>
 </div>

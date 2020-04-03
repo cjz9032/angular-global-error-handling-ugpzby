@@ -577,3 +577,69 @@
 		margin-right: 10px;
 	}
 }
+
+:host-context(.is-gaming) {
+	.vtr-modal-welcome {
+		background-color: $gaming_darkest;
+		.card {
+			background-color: $gaming_darkest;
+		}
+
+		.banner-page-1 {
+			background: url("~/assets/images/welcome/gaming-header-1.jpg") no-repeat;
+			background-size: cover;
+			background-position: center;
+		}
+
+		.banner-page-2 {
+			background: url("~/assets/images/welcome/gaming-header-2.jpg") no-repeat;
+			background-size: cover;
+			background-position: center;
+		}
+
+		.content-page-1 {
+			color: $gaming_lightest;
+
+			ul {
+				width: 100%;
+				li {
+					margin-bottom: 0.2rem;
+				}
+			}
+
+		}
+
+		.content-page-2 {
+			color: $gaming_lightest;
+		}
+
+		.content-page-2 .interests input[type="checkbox"] + label {
+			border: none;
+			color: $gaming_lightest;
+			background-color:$gaming_blue_grey_light;
+
+			&:hover {
+				background-color: $gaming-slate-blue;
+			}
+		}
+
+		.content-page-2 .interests input[type="checkbox"]:checked + label {
+			border: none;
+			background:$blueFill;
+		}
+
+		.more-interests {
+			color: $gaming_lightest;
+			&:hover {
+				color: $gaming_lighter !important;
+			}
+		}
+
+		.custom-control-label {
+			&::before {
+				box-shadow: none;
+				border: none;
+			}
+		}
+	}
+}

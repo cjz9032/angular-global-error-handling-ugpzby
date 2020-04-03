@@ -31,10 +31,10 @@
 	}
   },
   "angularCompilerOptions": {
-    "enableIvy": false,
+    "enableIvy": true,
     "allowEmptyCodegenFiles": false,
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true,
-  "strictTemplates": true
+  "strictTemplates": true,
 	}
 }

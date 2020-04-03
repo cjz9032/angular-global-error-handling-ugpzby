@@ -18,6 +18,7 @@ import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import AES from 'crypto-js/aes';
 import enc_utf8 from 'crypto-js/enc-utf8';
+import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 
 declare var Windows;
 
@@ -43,6 +44,34 @@ export class UserService {
 	private lidStarterHelper: LIDStarterHelper;
 	private lidSupported = true;
 	private subscription: Subscription;
+	private webView = null;
+
+	public readonly webDom = `
+	<div style=\'display: block;position: fixed;z-index: 1;padding-top:5%;width: 100%;height: 100%;overflow: auto;\'>
+		<div class=\'queryHeight\'>
+			<style>
+				.queryHeight { position: relative;background-color: #fefefe;margin: auto;padding: auto;border: 1px solid #888;max-width: 460px; height: 80%;}
+				@media only screen and (min-height: 768px) {.queryHeight{height: 60%;}}
+				@media only screen and (min-height: 1080px) {.queryHeight{height: 50%;}}
+				@media only screen and (min-height: 2160px) {.queryHeight{height: 40%;}}
+				.close {  color: black;  float: right;  font-size: 28px;  font-weight: bold;}
+				.close:hover, .close:focus {  color: black;  text-decoration: none;  cursor: pointer;}
+				@keyframes spinner { to {transform: rotate(360deg);} }
+				.holder { position: absolute; width: 60px; height: 60px; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+				.holder .spinner { display: block; width: 100%; height: 100%; border-radius: 50%; border: 3px solid #ccc; border-top-color: #07d; animation: spinner .8s linear infinite; }
+			</style>
+			<div id=\'btnClose\' style=\'padding: 2px 16px;background-color: white;color: black;border-bottom: 1px solid #e5e5e5;\'>
+				<span class=\'close\' id=\'txtClose\' tabindex=\'99\' aria-current=\'true\'>&times;</span>
+				<div style=\'height:45px;\'></div>
+			</div>
+			<div style=\'height: 100%; min-height: 400px;\' id=\'webviewBorder\'>
+				<div class=\'holder\'><span id=\'spinnerCtrl\' class=\'spinner\'></span></div>
+				<div id=\'webviewPlaceHolder\' attr.aria-label=\'lid-login-dialog-webview\'></div>
+			</div>
+		</div>
+	</div>
+`.replace(/[\r\n]/g, '').replace(/[\t]/g, ' ');
+
 
 	constructor(
 		private cookieService: CookieService,
@@ -53,7 +82,8 @@ export class UserService {
 		private translate: TranslateService,
 		public deviceService: DeviceService,
 		private localInfoService: LocalInfoService,
-		private modalService: NgbModal
+		private modalService: NgbModal,
+		private hypSettings: HypothesisService
 	) {
 		this.translate.stream('lenovoId.user').subscribe((firstName) => {
 			if (!this.auth && firstName !== 'lenovoId.user') {
@@ -308,7 +338,7 @@ export class UserService {
 		}
 	}
 
-	removeAuth() {
+	async removeAuth() {
 		this.cookieService.deleteAll('/');
 		this.cookies = this.cookieService.getAll();
 
@@ -320,6 +350,15 @@ export class UserService {
 		if (this.lid !== undefined) {
 			const lidGuid = this.lid.userGuid;
 			this.commonService.sendNotification(LenovoIdStatus.LoggingOut, true);
+			const win: any = window;
+			if (win && win.webviewPopup && !this.webView) {
+				this.webView = win.webviewPopup;
+				await this.webView.create(this.webDom);
+			}
+			if (this.webView) {
+				// This is the link to clear cache for SSO production environment
+				await this.webView.navigate('https://passport.lenovo.com/wauthen5/userLogout?lenovoid.action=uilogout&lenovoid.display=null');
+			}
 			this.lid.logout().then((result) => {
 				let metricsData: any;
 				if (result.success && result.status === 0) {
@@ -404,7 +443,6 @@ export class UserService {
 	}
 
 	isLenovoIdSupported() {
-		// VAN-7119 add version check, if client version below 1908, hide the LID function
 		return this.lidSupported;
 	}
 
@@ -423,17 +461,30 @@ export class UserService {
 
 	private updateLidSupported() {
 		let lidSupported = true;
-		if (typeof Windows !== 'undefined') {
-			const packageVersion = Windows.ApplicationModel.Package.current.id.version;
-			if (packageVersion.minor < 1908) {
-				lidSupported = false;
+		this.hypSettings.getFeatureSetting('LenovoId').then((result) => {
+			if (!result) {
+				this.lidSupported = true;
+			} else {
+				this.lidSupported = result === 'true';
 			}
-		}
-		this.localInfoService.getLocalInfo().then(localInfo => {
-			if (localInfo && localInfo.Segment === SegmentConst.Commercial) {
-				lidSupported = false;
+		}).catch((error) => {
+			this.lidSupported = true;
+			this.devService.writeLog('updateLidSupported(): Exception happen when read Lenovo ID Hypothesis switch - ', error);
+		}).finally(() => {
+			if (this.lidSupported) {
+				if (typeof Windows !== 'undefined') {
+					const packageVersion = Windows.ApplicationModel.Package.current.id.version;
+					if (packageVersion.minor < 1908) {
+						lidSupported = false;
+					}
+				}
+				this.localInfoService.getLocalInfo().then(localInfo => {
+					if (localInfo && localInfo.Segment === SegmentConst.Commercial) {
+						lidSupported = false;
+					}
+					this.lidSupported = lidSupported;
+				});
 			}
-			this.lidSupported = lidSupported;
 		});
 	}
 }

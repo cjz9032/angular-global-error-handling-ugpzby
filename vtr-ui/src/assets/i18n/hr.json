@@ -1,4 +1,5 @@
 {
+	"nonProduction": "You're now visiting the non-production version of Lenovo Vantage!",
     "gaming": {
         "dashboard": {
             "device": {
@@ -795,6 +796,7 @@
             "back": "NATRAG",
             "on": "ON",
             "off": "OFF",
+            "close": "Zatvori",
             "collapse": "Sažmi",
             "expand": "Proširi",
             "loader": "Preuzimanje <br>statusa",
@@ -1332,10 +1334,10 @@
                             "label": "TRENUTNI PLAN"
                         },
                         "profile": {
-                            "title": "PLAN PROFILE:",
-                            "performance": "Max performance:",
-                            "temperature": "Max system temperature:",
-                            "usage": "Max power usage:"
+                            "title": "PROFIL PLANA:",
+                            "performance": "Maks. performanse:",
+                            "temperature": "Maks. temperatura sustava:",
+                            "usage": "Maks. potrošnja energije:"
                         }
                     }
                 },
@@ -1514,8 +1516,8 @@
                     "title": "Prikaz",
                     "displayColorTemperature": {
                         "title": "Temperatura boje prikaza",
-                        "description": "Možete prilagoditi temperaturu boje vašeg zaslona da filtrira plavu svjetlost čime se smanjuje naprezanje očiju. Prilagođava zaslon toplijim bojama tijekom zalaska sunca do izlaska sunca kako bi vam to pomoglo da zaspite.",
-                        "link": {
+						"description": "Možete prilagoditi temperaturu boje vašeg zaslona u pogledu filtriranja plave svjetlosti i smanjenja naprezanja očiju. Prilagođava zaslon toplijim bojama tijekom zalaska sunca do izlaska sunca kako bi vam to pomoglo da zaspite.",
+						"link": {
                             "click": "Kliknite",
                             "here": "ovdje",
                             "rest": "za promjenu temperature boje."
@@ -2978,6 +2980,17 @@
             "politics": "Politika",
             "music": "Glazba",
             "science": "Znanost"
+        },
+		"gaming": {
+            "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
+            "gamingFeature1": "-Computer status monitor",
+            "gamingFeature2": "-Performance mode & overclocking",
+            "gamingFeature3": "-Lighting",
+            "gamingFeature4": "-Network Boost",
+            "gamingFeature5": "-Auto Close",
+            "gamingOnly": "Gaming",
+            "gamingAndWork": "Gaming & Work",
+            "nonGaming": "Non-Gaming"
         }
     },
     "settings": {
@@ -3325,7 +3338,7 @@
         },
         "scanCompletePage": {
             "title": "System scan is complete",
-            "description": "Here is what we found on your Lenovo Vantage 720s.",
+            "description": "Here is what we found on your ",
             "scanRates": "Our scan rates your PC at: ",
             "summary": "Summary",
             "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
@@ -3360,7 +3373,7 @@
             "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
-            "title": "All is well with your Ideapad 720s",
+            "title": "All is well with your ",
             "serialNumber": "Serial number: ",
             "subTitle": "You are subscribed to Lenovo Smart Performance Service",
             "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",

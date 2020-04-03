@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 
@@ -7,7 +7,7 @@ import { LocalInfoService } from 'src/app/services/local-info/local-info.service
 	templateUrl: './modal-find-us.component.html',
 	styleUrls: ['./modal-find-us.component.scss']
 })
-export class ModalFindUsComponent implements OnInit, AfterViewInit {
+export class ModalFindUsComponent implements OnInit {
 
 	region: string;
 
@@ -23,10 +23,6 @@ export class ModalFindUsComponent implements OnInit, AfterViewInit {
 	}
 
 	ngOnInit() {
-	}
-
-	ngAfterViewInit() {
-		setTimeout(() => { document.getElementById('findUs-dialog').parentElement.parentElement.parentElement.parentElement.focus(); }, 0);
 	}
 
 	public onCancelClick() {

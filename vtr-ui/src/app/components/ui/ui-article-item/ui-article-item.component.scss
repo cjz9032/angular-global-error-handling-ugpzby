@@ -5,6 +5,7 @@
 	border-radius: $border_radius;
 	background-color: $light;
 	position: relative;
+	height: 42rem;
 
 	.container-fluid {
 		height: 100%;
@@ -31,45 +32,41 @@
 		}
 	}
 
+	.image {
+		height: calc(100% - 18.2rem);
+	}
+
 	.content {
 		position: relative;
 		z-index: 1;
 		width: 100%;
-		padding: 28 / 430 * 100% 40 / 430 * 100% 0;
-		height: 40%;
+		padding: 3.2rem 2.4rem;
+		height: 18.2rem;
 
 		.title {
-			color: $main_dark;
-			font-size: 2.3rem;
+			color: $shade_blue;
+			font-size: $fontsize_xl;
+			line-height: 1.4;
+			height: calc(#{$fontsize_xl} * 2.8);
 			width: 100%;
 			cursor: pointer;
-			font-weight: $weight_light;
+			font-family: $font_family_semilight;
 
 			&:hover {
 				text-decoration: underline;
 			}
 
-			@media #{$mediaquery_10} {
-				font-size: 2rem;
-			}
+			// @media #{$mediaquery_10} {
+			// 	font-size: 2rem;
+			// }
 
-			@media #{$mediaquery_X6} {
-				font-size: 1.5rem;
-			}
+			// @media #{$mediaquery_X6} {
+			// 	font-size: 1.5rem;
+			// }
 
-			@media #{$mediaquery_X3} {
-				font-size: 1.4rem;
-			}
-		}
-
-		.description {
-			color: $main_dark;
-			font-size: 1.1rem;
-		}
-
-		.caption {
-			color: $main_shade;
-			font-size: 2.2rem;
+			// @media #{$mediaquery_X3} {
+			// 	font-size: 1.4rem;
+			// }
 		}
 
 		.logo-text {
@@ -78,16 +75,16 @@
 			left: 0;
 			width: 100%;
 			padding: 0 40 / 430 * 100%;
-			font-size: 1.1rem;
+			font-size: $fontsize_xs2;
 			font-weight: $weight_medium;
 			text-transform: uppercase;
 			color: #bcc0ce;
 		}
 
 		.read-more {
-			margin-top: 0.8rem;
-			font-size: 1.4rem;
+			font-size: $fontsize_xs2;
 			font-weight: $weight_medium;
+			padding: 1.5rem 0;
 			cursor: pointer;
 			text-transform: uppercase;
 			color: $main;
@@ -118,6 +115,7 @@
 		background-position: 50% 50%;
 		background-repeat: no-repeat;
 		display: block;
+		position: relative;
 
 		.bottomright {
 

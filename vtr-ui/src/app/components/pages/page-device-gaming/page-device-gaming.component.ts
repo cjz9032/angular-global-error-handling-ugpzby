@@ -1,4 +1,4 @@
-import { Component, OnInit, DoCheck, AfterViewInit } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MockService } from '../../../services/mock/mock.service';
 import { QaService } from '../../../services/qa/qa.service';
@@ -12,7 +12,6 @@ import { CMSService } from 'src/app/services/cms/cms.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { LenovoIdKey } from 'src/app/enums/lenovo-id-key.enum';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
-import { FeedbackFormComponent } from '../../feedback-form/feedback-form/feedback-form.component';
 import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
 import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
@@ -30,9 +29,8 @@ import { DialogService } from 'src/app/services/dialog/dialog.service';
 	styleUrls: [ './page-device-gaming.component.scss' ],
 	providers: [ NgbModalConfig, NgbModal ]
 })
-export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit {
+export class PageDeviceGamingComponent implements OnInit, DoCheck {
 	public static allCapablitiyFlag = false;
-	dashboardStart: any = new Date();
 	submit = 'Submit';
 	feedbackButtonText = this.submit;
 	securityAdvisor: SecurityAdvisor;
@@ -114,6 +112,17 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
+		// Remove focus when the mouse is being used
+		document.body.addEventListener('mousedown', () => {
+			document.body.classList.remove('focus-enable');
+		});
+
+		// Re-enable focus styling when Tab is pressed
+		document.body.addEventListener('keydown', (event) => {
+			if (event.keyCode === 9) {
+				document.body.classList.add('focus-enable');
+			}
+		});
 	}
 
 	ngDoCheck(): void {
@@ -128,20 +137,14 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 		}
 	}
 
-	ngAfterViewInit() {
-		const dashboardEnd: any = new Date();
-		const dashboardTime = dashboardEnd - this.dashboardStart;
-		this.loggerService.info(`Performance: Dashboard load time after view init. ${dashboardTime}ms`);
-	}
-
 	fetchCmsContents(lang?: string) {
 		const callCmsStartTime: any = new Date();
 		const queryOptions: any = {
 			Page: 'dashboard'
 		};
 		if (this.isOnline) {
-			if (this.dashboardService.cardContentPositionDOnline) {
-				this.cardContentPositionD = this.dashboardService.cardContentPositionDOnline;
+			if (this.dashboardService.onlineCardContent.positionD) {
+				this.cardContentPositionD = this.dashboardService.onlineCardContent.positionD;
 			}
 		}
 		this.cmsService.fetchCMSContent(queryOptions).subscribe(
@@ -149,7 +152,7 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 				const callCmsEndTime: any = new Date();
 				const callCmsUsedTime = callCmsEndTime - callCmsStartTime;
 				if (response && response.length > 0) {
-					if (!this.dashboardService.cardContentPositionDOnline) {
+					if (!this.dashboardService.onlineCardContent.positionD) {
 						const cardContentPositionD = this.cmsService.getOneCMSContent(
 							response,
 							'full-width-title-image-background',
@@ -157,10 +160,10 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 						)[0];
 						if (cardContentPositionD) {
 							this.cardContentPositionD = cardContentPositionD;
-							this.dashboardService.cardContentPositionDOnline = cardContentPositionD;
+							this.dashboardService.onlineCardContent.positionD = cardContentPositionD;
 						}
 					} else {
-						this.cardContentPositionD = this.dashboardService.cardContentPositionDOnline;
+						this.cardContentPositionD = this.dashboardService.onlineCardContent.positionD;
 					}
 				} else {
 					const msg = `Performance: Dashboard page not have this language contents, ${callCmsUsedTime}ms`;
@@ -175,7 +178,7 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 	public onConnectivityClick($event: any) {}
 
 	private getPreviousContent() {
-		this.cardContentPositionD = this.dashboardService.cardContentPositionD;
+		this.cardContentPositionD = this.dashboardService.offlineCardContent.positionD;
 	}
 
 	private getSystemInfo() {
@@ -423,12 +426,4 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 		}
 	}
 
-	onFeedbackModal() {
-		this.modalService.open(FeedbackFormComponent, {
-			backdrop: true,
-			size: 'lg',
-			centered: true,
-			windowClass: 'feedback-modal'
-		});
-	}
 }

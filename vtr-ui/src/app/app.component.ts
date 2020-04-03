@@ -1,4 +1,5 @@
-import { Component, OnInit, HostListener, OnDestroy } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, OnInit, HostListener, OnDestroy, Inject } from '@angular/core';
 import { Router, NavigationEnd, ActivatedRoute, ParamMap } from '@angular/router';
 import { DisplayService } from './services/display/display.service';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
@@ -27,10 +28,11 @@ import { AppUpdateService } from './services/app-update/app-update.service';
 import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.service';
 import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
 import { MetricService } from './services/metric/metric.service';
-import { TimerServiceEx } from 'src/app/services/timer/timer-service-ex.service';
+import { DurationCounterService } from 'src/app/services/timer/timer-service-ex.service';
 // import { AppUpdateService } from './services/app-update/app-update.service';
 import { VantageFocusHelper } from 'src/app/services/timer/vantage-focus.helper';
 import { SegmentConst } from './services/self-select/self-select.service';
+import { NotificationType } from './components/notification/notification.component';
 
 declare var Windows;
 @Component({
@@ -49,6 +51,7 @@ export class AppComponent implements OnInit, OnDestroy {
 	private isServerSwitchEnabled = true;
 	private shellVersion;
 	private newTutorialVersion = '3.1.2';
+	public notificationType = NotificationType.Banner;
 
 	constructor(
 		private displayService: DisplayService,
@@ -67,7 +70,9 @@ export class AppComponent implements OnInit, OnDestroy {
 		private appsForYouService: AppsForYouService,
 		private metricService: MetricService,
 		// private appUpdateService: AppUpdateService
+		@Inject(DOCUMENT) public document: Document
 	) {
+		this.patchNgbModalOpen();
 		// to check web and js bridge version in browser console
 		const win: any = window;
 		this.shellVersion = this.vantageShellService.getShellVersion();
@@ -137,9 +142,28 @@ export class AppComponent implements OnInit, OnDestroy {
 		this.setRunVersionToRegistry();
 	}
 
+	onDragStart(event: DragEvent): boolean {
+		return false;
+	}
+
+	onDrop(event: DragEvent): boolean {
+		return false;
+	}
+
 	ngOnDestroy() {
 		if (this.subscription) {
 			this.subscription.unsubscribe();
+		}
+	}
+
+	private patchNgbModalOpen() {
+		const original = NgbModal.prototype.open;
+		// tslint:disable-next-line: only-arrow-functions
+		NgbModal.prototype.open = function() : NgbModalRef {
+			if (arguments.length > 1 && 'container' in arguments[1] === false) {
+				Object.assign(arguments[1], { container: 'vtr-root div' });
+			}
+			return original.apply(this, arguments);
 		}
 	}
 
@@ -247,7 +271,10 @@ export class AppComponent implements OnInit, OnDestroy {
 		}
 		this.commonService.setLocalStorageValue(LocalStorageKey.MachineFamilyName, value.family);
 		this.commonService.setLocalStorageValue(LocalStorageKey.SubBrand, value.subBrand.toLowerCase());
-		this.setFirstRun(value);
+
+		if (this.metricService.isFirstLaunch) {
+			this.metricService.sendFirstRunEvent(value);
+		}
 
 		// When startup try to login Lenovo ID silently (in background),
 		//  if user has already logged in before, this call will login automatically and update UI
@@ -260,20 +287,7 @@ export class AppComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	private setFirstRun(value: any) {
-		try {
-			const hadRunApp: boolean = this.commonService.getLocalStorageValue(LocalStorageKey.HadRunApp);
-			const appFirstRun = !hadRunApp;
-			if (this.deviceService.isShellAvailable) {
-				if (appFirstRun) {
-					this.commonService.setLocalStorageValue(LocalStorageKey.HadRunApp, true);
-					this.metricService.sendFirstRunEvent(value);
-				}
-			}
-		} catch (e) {
-			this.vantageShellService.getLogger().error(JSON.stringify(e));
-		}
-	}
+
 	private checkIsDesktopOrAllInOneMachine() {
 		try {
 			if (this.deviceService.isShellAvailable) {

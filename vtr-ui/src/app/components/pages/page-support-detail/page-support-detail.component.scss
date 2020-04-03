@@ -110,19 +110,6 @@
 	color: $main;
 }
 
-.btn-label {
-	height: 4.5rem;
-	margin: 1rem 0;
-	padding: 0 2rem;
-	border-radius: 2.25rem;
-	background: $gradient_main;
-	color: $light;
-	font-size: $fontsize_xs;
-	font-weight: $weight_bold;
-	text-align: center;
-	text-transform: uppercase;
-}
-
 //FAQ
 .description-container ::ng-deep {
 	img {
@@ -147,9 +134,10 @@
 	}
 
 	.faqInFs3Fb {
-		font-size: 3.6rem;
-		font-weight: $weight_light;
+		font-size: 1.4rem;
+		font-weight: $weight_bold;
 		color: $shade_blue;
+		text-transform: uppercase;
 	}
 
 	.faqInFb {
@@ -169,10 +157,11 @@
 		color: $shade_blue;
 	}
 	.faqInFs25FbP10 {
-		font-size: 3.6rem;
-		font-weight: $weight_light;
+		font-size: 1.4rem;
+		font-weight: $weight_bold;
 		padding: 1rem 0;
 		color: $shade_blue;
+		text-transform: uppercase;
 	}
 	.faqInP5 {
 		padding: 0.5rem 0;
