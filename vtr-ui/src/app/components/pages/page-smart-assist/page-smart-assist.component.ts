@@ -22,6 +22,7 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 import { SmartAssistCache } from 'src/app/data-models/smart-assist/smart-assist-cache.model';
 import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 import { HsaIntelligentSecurityResponse } from 'src/app/data-models/smart-assist/hsaIntelligentSecurity/intelligentSecurity.model';
+import { MetricService } from 'src/app/services/metric/metric.service';
 
 @Component({
 	selector: 'vtr-page-smart-assist',
@@ -119,7 +120,8 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		private translate: TranslateService,
 		public modalService: NgbModal,
 		private router: Router,
-		private vantageShellService: VantageShellService
+		private vantageShellService: VantageShellService,
+		private metrics: MetricService
 	) {
 		this.jumpToSettingsTitle = this.translate.instant('device.smartAssist.jumpTo.title');
 		// VAN-5872, server switch feature on language change
@@ -576,6 +578,12 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 						if (response) {
 							this.getHPDAdvancedSetting();
 						}
+						const metricsData = {
+							itemParent: 'Device.SmartAssist',
+							itemName: section + '-advancedSettings',
+							value
+						};
+						this.metrics.sendMetrics(metricsData);
 					});
 			}
 		} catch (error) {
