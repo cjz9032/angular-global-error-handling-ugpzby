@@ -21,6 +21,8 @@ import { EMPTY, fromEvent } from 'rxjs';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { SmartAssistCache } from 'src/app/data-models/smart-assist/smart-assist-cache.model';
 import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
+import { HsaIntelligentSecurityResponse } from 'src/app/data-models/smart-assist/hsaIntelligentSecurity/intelligentSecurity.model';
+import { MetricService } from 'src/app/services/metric/metric.service';
 
 @Component({
 	selector: 'vtr-page-smart-assist',
@@ -61,6 +63,12 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	smartAssistCache: SmartAssistCache;
 	public isSuperResolutionLoading = true;
 	public superResolution = new FeatureStatus(false, true);
+	public hsaIntelligentSecurity = new HsaIntelligentSecurityResponse(false, false);
+	public image = '/assets/images/smart-assist/intelligent-security/HPD_Image.png';
+	public zeroTouchLoginShowAdvancedSection: boolean;
+	public zeroTouchLockShowAdvancedSection: boolean;
+	public zeroTouchPresenceLeaveDistanceCapability = false;
+	public zeroTouchPresenceLeaveDistanceAutoAdjustCapability = false;
 
 	headerMenuItems: PageAnchorLink[] = [
 		{
@@ -112,7 +120,8 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		private translate: TranslateService,
 		public modalService: NgbModal,
 		private router: Router,
-		private vantageShellService: VantageShellService
+		private vantageShellService: VantageShellService,
+		private metrics: MetricService
 	) {
 		this.jumpToSettingsTitle = this.translate.instant('device.smartAssist.jumpTo.title');
 		// VAN-5872, server switch feature on language change
@@ -147,6 +156,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		if (this.smartAssist.isShellAvailable) {
 			this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 			this.smartAssistCapability = this.commonService.getLocalStorageValue(LocalStorageKey.SmartAssistCapability, undefined);
+			this.getHPDAdvancedSetting();
 			this.initVisibility();
 			this.setIsThinkPad(this.machineType === 1);
 			this.setIntelligentSecurity();
@@ -257,6 +267,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			this.initIntelligentScreen();
 			this.getVideoPauseResumeStatus();
 			this.getSuperResolutionStatus();
+			this.getHsaIntelligentSecurityStatus();
 		} else {
 			if (this.smartAssistCapability.isIntelligentSecuritySupported) {
 				this.intelligentSecurity.isIntelligentSecuritySupported = true;
@@ -278,6 +289,10 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			if (this.smartAssistCapability.isSuperResolutionSupported) {
 				this.superResolution = this.smartAssistCapability.isSuperResolutionSupported;
 				this.getSuperResolutionStatus();
+			}
+			if (this.smartAssistCapability.isHsaIntelligentSecuritySupported) {
+				this.hsaIntelligentSecurity = this.smartAssistCapability.isHsaIntelligentSecuritySupported;
+				this.getHsaIntelligentSecurityStatus();
 			}
 			this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
 		}
@@ -541,6 +556,90 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			});
 	}
 
+	getHPDAdvancedSetting() {
+		try {
+			if (this.smartAssist.isShellAvailable) {
+				this.smartAssist.getHPDAdvancedSetting()
+					.then((response) => {
+						this.zeroTouchLoginShowAdvancedSection = response.zeroTouchLoginAdvanced;
+						this.zeroTouchLockShowAdvancedSection = response.zeroTouchLockAdvanced;
+					});
+			}
+		} catch (error) {
+			this.logger.error('getHPDAdvancedSetting error: ', error.message);
+		}
+	}
+
+	setHPDAdvancedSetting(section: string, value: boolean) {
+		try {
+			if (this.smartAssist.isShellAvailable) {
+				this.smartAssist.setHPDAdvancedSetting(section, value)
+					.then((response) => {
+						if (response) {
+							this.getHPDAdvancedSetting();
+						}
+						const metricsData = {
+							itemParent: 'Device.SmartAssist',
+							itemName: section + '-advancedSettings',
+							value
+						};
+						this.metrics.sendMetrics(metricsData);
+					});
+			}
+		} catch (error) {
+			this.logger.error('setHPDAdvancedSetting error: ', error.message);
+		}
+	}
+
+	public getHsaIntelligentSecurityStatus() {
+		try {
+			if (this.smartAssist.isShellAvailable) {
+				this.smartAssist.getHsaIntelligentSecurityStatus()
+					.then((response: HsaIntelligentSecurityResponse) => {
+						this.zeroTouchPresenceLeaveDistanceAutoAdjustCapability = (response.capability && 0x100) != 0;
+						this.zeroTouchPresenceLeaveDistanceCapability = (response.capability && 0x80) != 0;
+						this.hsaIntelligentSecurity = response;
+					}).catch((error) => {
+						this.logger.error('getHsaIntelligentSecurityStatus error: ', error.message);
+					});
+			}
+		} catch (error) {
+			this.logger.error('getHsaIntelligentSecurityStatus' + error.message);
+		}
+	}
+
+	public onZeroTouchLockDistanceSensitivityAdjustToggle(event: any) {
+		this.hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust = event.switchValue;
+		try {
+			if (this.smartAssist.isShellAvailable) {
+				this.smartAssist.setZeroTouchLockDistanceSensitivityAutoAdjust(event.switchValue)
+					.then((response) => {
+						if(response != 0) {
+							this.logger.error('onZeroTouchLockDistanceSensitivityAdjustToggle error.')
+						}
+					});
+			}
+		} catch (error) {
+			this.logger.error('onZeroTouchLockDistanceSensitivityAdjustToggle' + error.message);
+		}
+	}
+
+	public SetZeroTouchLockDistanceSensitivity(event: ChangeContext) {
+		this.hsaIntelligentSecurity.zeroTouchLockDistance = event.value;
+		try {
+			if (this.smartAssist.isShellAvailable) {
+				this.smartAssist.setZeroTouchLockDistanceSensitivity(event.value)
+					.then((response) => {
+						if(response != 0) {
+							this.logger.error('SetZeroTouchLockDistanceSensitivity error.')
+						}
+					});
+			}
+		} catch (error) {
+			this.logger.error('onZeroTouchLockDistanceSensitivity' + error.message);
+		}
+	}
+
 	public onDisplayDimTimeChange($event: ChangeContext) {
 		this.intelligentScreen.readingOrBrowsingTime = $event.value;
 
@@ -625,6 +724,13 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				}
 			});
 		}
+
+		this.smartAssist.resetHSAHPDSetting()
+			.then((response) => {
+				if(response == 0) {
+					this.getHsaIntelligentSecurityStatus();
+				}
+			});
 	}
 
 	private getVideoPauseResumeStatus() {

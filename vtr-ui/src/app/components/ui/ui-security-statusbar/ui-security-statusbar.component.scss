@@ -59,8 +59,14 @@
 	}
 
 	.icon-dot {
-		border-width: 0.8rem;
-		border-color: $black_light;
+		background: linear-gradient($gradient_angle, $main_darker 0%, $main_darkest 100%);
+		background-color: $main_darker;
+		border-color: $main_darker;
+		fa-icon {
+			font-size: 0.5rem;
+			line-height: 1.6rem;
+			vertical-align: 0.1rem;
+		}
 	}
 
 }
