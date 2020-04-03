@@ -8,12 +8,16 @@
         <fa-icon [icon]="faTimesCircle" ></fa-icon>
     </button>
     <div class="modal-content" tabindex="-1" role="article">
-       <p>How do you feel about Vantage?</p>
+      <p>Send Us Your Voice</p>
       <div class="hint-image-border">
-        <fa-icon class="hint-icon" *ngIf="elilipsisHintVisible" [icon]="faEllipsisH" ></fa-icon>
-        <fa-icon class="hint-icon hint-icon-close" *ngIf="closeHintVisible" [icon]="faTimesCircle" ></fa-icon>
-        <fa-icon class="hint-icon hint-icon-heart" *ngIf="redHeartHintVisible" [icon]="faHeart" ></fa-icon>
-        <img src="../../../../assets/images/store-rating/store-rating-hint.png"> 
+        <img class="bg-curve" src="../../../../assets/images/store-rating/curved_bg.png"> 
+        <div class="bg-chatbox">
+            <img  [@scaleTo1]="closeHintVisible||redHeartHintVisible?'origin':'normal'"  src="../../../../assets/images/store-rating/chat_stroke.png"> 
+            <fa-icon class="hint-icon" *ngIf="elilipsisHintVisible" [icon]="faEllipsisH" ></fa-icon>
+            <fa-icon [@hideToShow]="closeHintVisible?'show':'hidden'" class="hint-icon hint-icon-close" *ngIf="closeHintVisible" [icon]="faEnvelope" ></fa-icon>
+            <fa-icon [@hideToShow]="redHeartHintVisible?'show':'hidden'" class="hint-icon hint-icon-heart" [icon]="faHeart" ></fa-icon>
+        </div>
+        <img class="bg-male" src="../../../../assets/images/store-rating/male.png">
       </div>
        <hr/>
     </div>

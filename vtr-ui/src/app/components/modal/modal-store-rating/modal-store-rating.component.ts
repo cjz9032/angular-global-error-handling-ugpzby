@@ -5,17 +5,57 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from 'src/app/services/metric/metric.service';
 import { TaskAction } from 'src/app/services/metric/metrics.model';
 import { faHeart } from '@fortawesome/free-solid-svg-icons/faHeart';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons/faEnvelope';
 import { faEllipsisH } from '@fortawesome/pro-light-svg-icons/faEllipsisH';
+import {
+	trigger,
+	state,
+	style,
+	animate,
+	transition,
+} from '@angular/animations';
+
 @Component({
 	selector: 'vtr-modal-store-rating',
 	templateUrl: './modal-store-rating.component.html',
-	styleUrls: ['./modal-store-rating.component.scss']
+	styleUrls: ['./modal-store-rating.component.scss'],
+	animations: [
+		trigger('hideToShow', [
+			state('show', style({
+				opacity: 1,
+			})),
+			state('hidden', style({
+				opacity: 0,
+			})),
+			transition('hidden => show', [
+				animate('0.2s')
+			]),
+			transition('show => hidden', [
+				animate('0.1s')
+			]),
+		]),
+		trigger('scaleTo1', [
+			state('origin', style({
+				transform: 'scale(1.25)'
+			})),
+			state('normal', style({
+				transform: 'scale(1)'
+			})),
+			transition('origin => normal', [
+				animate('0.2s')
+			]),
+			transition('normal => origin', [
+				animate('0.1s')
+			]),
+		])
+	]
 })
 export class ModalStoreRatingComponent implements OnInit {
 
 	public faTimesCircle = faTimes;
 	public faHeart = faHeart;
 	public faEllipsisH = faEllipsisH;
+	public faEnvelope = faEnvelope;
 	private msStoreUtil: any = null;
 	public redHeartHintVisible = false;
 	public closeHintVisible = false;

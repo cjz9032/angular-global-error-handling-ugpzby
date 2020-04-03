@@ -17,25 +17,48 @@
         padding:0 2rem;
         line-height: 0;
         .hint-image-border{
-            margin-top: 4px;
-            padding: 0 2rem;
-            img{
-                width: 100%;
-              }
-            .hint-icon{
+            margin-top: 26px;
+            height: 220px;
+            position: relative;
+            .bg-male{
+               width: auto;
+               position: absolute;
+               right:76px;
+               top:36px;
+            }
+            .bg-curve{
+                width: auto;
+                margin: 0 auto;
                 position: absolute;
-                left: 31%;
-                top:25%;
-                font-size: 5rem;
-                color: lightgray;
-                width: 5rem;
-                text-align: center;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-50%);
             }
-            .hint-icon-heart{
-                color: red;
-            }
-            .hint-icon-close{
-                color: black;
+            .bg-chatbox{
+                width: auto;
+                position: absolute;
+                right: 170px;
+                top: 4px;
+                transform: scale(0.8);
+
+                .hint-icon{
+                    position: absolute;
+                    left: 50%;
+                    top:50%;
+                    transform: translate(-50%,-50%);
+                    font-size: 5rem;
+                    color: lightgray;
+                    width: 5rem;
+                    text-align: center;
+                }
+                .hint-icon-heart{
+                    color: red;
+                    opacity: 0;
+                }
+                .hint-icon-close{
+                    color: rgb(56, 185, 158);
+                    opacity: 0;
+                }
             }
         }
         
