@@ -783,6 +783,16 @@ export class VantageShellService {
 			return this.phoenix.gaming.gamingThermalmode;
 		}
 	}
+	// Version 3.3: over drive
+	public getGamingOverDrive() {
+		if (this.phoenix) {
+			if (!this.phoenix.gaming) {
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
+			}
+			return this.phoenix.gaming.gamingOverDrive;
+		}
+		return undefined;
+	}
 
 	public getImcHelper(): any {
 		if (this.phoenix && this.phoenix.hwsettings.power.thinkpad.sectionImcHelper) {
