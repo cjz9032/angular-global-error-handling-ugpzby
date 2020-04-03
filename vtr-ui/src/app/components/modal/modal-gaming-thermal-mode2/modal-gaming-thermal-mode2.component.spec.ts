@@ -4,7 +4,7 @@ import { TranslateStore } from '@ngx-translate/core';
 
 import { HttpClientModule } from '@angular/common/http';
 import { TranslationModule } from 'src/app/modules/translation.module';
-import { Component, NO_ERRORS_SCHEMA } from '@angular/core';
+import { Component, NO_ERRORS_SCHEMA, Input } from '@angular/core';
 
 import { SvgInlinePipe } from 'src/app/pipe/svg-inline/svg-inline.pipe';
 import { ModalGamingThermalMode2Component } from './modal-gaming-thermal-mode2.component';
@@ -15,6 +15,8 @@ import { GamingOCService } from 'src/app/services/gaming/gaming-OC/gaming-oc.ser
 import { CommonService } from 'src/app/services/common/common.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { of } from 'rxjs';
+import { MetricService } from 'src/app/services/metric/metric.service';
+import { TimerService } from 'src/app/services/timer/timer.service';
 
 @Component({ selector: 'vtr-modal-gaming-prompt', template: '' })
 export class ModalGamingPromptStubComponent {
@@ -27,7 +29,12 @@ export class ModalGamingPromptStubComponent {
         cancelButton: undefined,
         emitService: of(1)
     }
- }
+}
+
+@Component({ selector: 'vtr-ui-toggle', template: '' })
+export class UiToggleStubComponent {
+    @Input() onOffSwitchId: string;
+}
 
 describe('ModalGamingThermalMode2Component', () => {
     let component: ModalGamingThermalMode2Component;
@@ -158,6 +165,8 @@ describe('ModalGamingThermalMode2Component', () => {
             })
         }
     }
+    let metricSpy = jasmine.createSpyObj('MetricService', ['sendMetrics']);
+    let timerSpy = jasmine.createSpyObj('TimerService', ['start','stop']);
     describe('thermalMode', () => {
         beforeEach(async(() => {
             let shellServiveSpy = jasmine.createSpyObj('VantageService', ['registerEvent', 'unRegisterEvent', 'getLogger']);
@@ -165,6 +174,7 @@ describe('ModalGamingThermalMode2Component', () => {
                 declarations: [
                     ModalGamingThermalMode2Component,
                     ModalGamingPromptStubComponent,
+                    UiToggleStubComponent,
                     SvgInlinePipe
                 ],
                 imports: [
@@ -179,7 +189,9 @@ describe('ModalGamingThermalMode2Component', () => {
                     { provide: CommonService, useValue: commonServiceMock },
                     { provide: GamingAllCapabilitiesService, useValue: GamingAllCapabilitiesServiceMock },
                     { provide: GamingThermalModeService, useValue: gamingThermalModeServiceMock },
-                    { provide: GamingOCService, useValue: gamingOCServiceMock }
+                    { provide: GamingOCService, useValue: gamingOCServiceMock },
+                    { provide: MetricService, useValue: metricSpy},
+                    { provide: TimerService, useValue: timerSpy}
                 ],
                 schemas: [
                     NO_ERRORS_SCHEMA
@@ -320,6 +332,7 @@ describe('ModalGamingThermalMode2Component', () => {
                 declarations: [
                     ModalGamingThermalMode2Component,
                     ModalGamingPromptStubComponent,
+                    UiToggleStubComponent,
                     SvgInlinePipe
                 ],
                 imports: [
@@ -333,7 +346,9 @@ describe('ModalGamingThermalMode2Component', () => {
                     { provide: CommonService, useValue: commonServiceMock },
                     { provide: GamingAllCapabilitiesService, useValue: GamingAllCapabilitiesServiceMock },
                     { provide: GamingThermalModeService, useValue: gamingThermalModeServiceMock },
-                    { provide: GamingOCService, useValue: gamingOCServiceMock }
+                    { provide: GamingOCService, useValue: gamingOCServiceMock },
+                    { provide: MetricService, useValue: metricSpy},
+                    { provide: TimerService, useValue: timerSpy}
                 ],
                 schemas: [
                     NO_ERRORS_SCHEMA
@@ -610,13 +625,16 @@ describe('ModalGamingThermalMode2Component', () => {
     describe('catch error', () => {
         let thermalModeService: any;
         let gamingOCService: any;
+        let metricService: any;
         beforeEach(async(() => {
             let gamingThermalModeServiceSpy = jasmine.createSpyObj('GamingThermalModeService', ['getThermalModeSettingStatus', 'setThermalModeSettingStatus', 'getAutoSwitchStatus', 'setAutoSwitchStatus', 'regThermalModeChangeEvent']);
             let gamingOCServiceSpy = jasmine.createSpyObj('GamingOCService', ['getPerformanceOCSetting', 'setPerformanceOCSetting']);
+            let metricSpyForError = jasmine.createSpyObj('MetricService', ['sendMetrics']);
             TestBed.configureTestingModule({
                 declarations: [
                     ModalGamingThermalMode2Component,
                     ModalGamingPromptStubComponent,
+                    UiToggleStubComponent,
                     SvgInlinePipe
                 ],
                 imports: [
@@ -630,7 +648,9 @@ describe('ModalGamingThermalMode2Component', () => {
                     { provide: CommonService, useValue: commonServiceMock },
                     { provide: GamingAllCapabilitiesService, useValue: GamingAllCapabilitiesServiceMock },
                     { provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy },
-                    { provide: GamingOCService, useValue: gamingOCServiceSpy }
+                    { provide: GamingOCService, useValue: gamingOCServiceSpy },
+                    { provide: MetricService, useValue: metricSpyForError},
+                    { provide: TimerService, useValue: timerSpy}
                 ],
                 schemas: [
                     NO_ERRORS_SCHEMA
@@ -638,6 +658,7 @@ describe('ModalGamingThermalMode2Component', () => {
             });
             thermalModeService = TestBed.inject(GamingThermalModeService);
             gamingOCService = TestBed.inject(GamingOCService);
+            metricService = TestBed.inject(MetricService);
             fixture = TestBed.createComponent(ModalGamingThermalMode2Component);
             component = fixture.componentInstance;
         }));
@@ -673,6 +694,7 @@ describe('ModalGamingThermalMode2Component', () => {
             try {
                 thermalModeService.getThermalModeSettingStatus.and.returnValue(Promise.resolve(2));
                 thermalModeService.getAutoSwitchStatus.and.returnValue(Promise.resolve(false));
+                gamingOCService.getPerformanceOCSetting.and.returnValue(Promise.resolve(false));
                 thermalModeService.setThermalModeSettingStatus.and.throwError('setThermalModeSettingStatus error');
                 fixture.detectChanges();
                 component.setThermalModeSettingStatus(2);
@@ -682,6 +704,7 @@ describe('ModalGamingThermalMode2Component', () => {
             try {
                 thermalModeService.getThermalModeSettingStatus.and.returnValue(Promise.resolve(2));
                 thermalModeService.getAutoSwitchStatus.and.returnValue(Promise.resolve(false));
+                gamingOCService.getPerformanceOCSetting.and.returnValue(Promise.resolve(false));
                 thermalModeService.setThermalModeSettingStatus.and.throwError('setThermalModeSettingStatus error');
                 fixture.detectChanges();
                 component.setThermalModeSettingStatus(3);
@@ -714,6 +737,7 @@ describe('ModalGamingThermalMode2Component', () => {
             try {
                 thermalModeService.getThermalModeSettingStatus.and.returnValue(Promise.resolve(2));
                 thermalModeService.getAutoSwitchStatus.and.returnValue(Promise.resolve(false));
+                gamingOCService.getPerformanceOCSetting.and.returnValue(Promise.resolve(false));
                 thermalModeService.setAutoSwitchStatus.and.throwError('setAutoSwitchStatus error');
                 fixture.detectChanges();
                 component.setAutoSwitchStatus(false);
@@ -850,15 +874,34 @@ describe('ModalGamingThermalMode2Component', () => {
                 expect(gpuOCStatusCache).toBe(1, 'gpuOCStatusCache should keep 1(true)');
             }
         });
+        it('sendFeatureClickMetrics catch error', () => {
+            try {
+                thermalModeService.getThermalModeSettingStatus.and.returnValue(Promise.resolve(2));
+                thermalModeService.getAutoSwitchStatus.and.returnValue(Promise.resolve(false));
+                gamingOCService.getPerformanceOCSetting.and.returnValue(Promise.resolve(false));
+                metricService.sendMetrics.and.throwError('sendMetrics error');
+                fixture.detectChanges();
+                let metricsdataMoke = {
+                    ItemName: undefined,
+                    ItemValue: undefined
+                };
+                component.sendFeatureClickMetrics(metricsdataMoke);
+                expect(metricService.sendMetrics).toHaveBeenCalled();
+            } catch(err) {
+                expect(err).toMatch('sendMetrics error');
+            }
+        });
     })
     describe('about modal', () => {
         let activeModalService: any;
         let modalService: any;
+        let metricService: any;
         beforeEach(async(() => {
             TestBed.configureTestingModule({
                 declarations: [
                     ModalGamingThermalMode2Component,
                     ModalGamingPromptStubComponent,
+                    UiToggleStubComponent,
                     SvgInlinePipe
                 ],
                 imports: [
@@ -872,7 +915,9 @@ describe('ModalGamingThermalMode2Component', () => {
                     { provide: CommonService, useValue: commonServiceMock },
                     { provide: GamingAllCapabilitiesService, useValue: GamingAllCapabilitiesServiceMock },
                     { provide: GamingThermalModeService, useValue: gamingThermalModeServiceMock },
-                    { provide: GamingOCService, useValue: gamingOCServiceMock }
+                    { provide: GamingOCService, useValue: gamingOCServiceMock },
+                    { provide: MetricService, useValue: metricSpy},
+                    { provide: TimerService, useValue: timerSpy}
                 ],
                 schemas: [
                     NO_ERRORS_SCHEMA
@@ -880,6 +925,7 @@ describe('ModalGamingThermalMode2Component', () => {
             });
             activeModalService = TestBed.inject(NgbActiveModal);
             modalService = TestBed.inject(NgbModal);
+            metricService = TestBed.inject(MetricService);
             fixture = TestBed.createComponent(ModalGamingThermalMode2Component);
             component = fixture.componentInstance;
             fixture.detectChanges();
@@ -892,6 +938,9 @@ describe('ModalGamingThermalMode2Component', () => {
             expect(activeModalService.close).toHaveBeenCalledTimes(0);
             component.closeThermalMode2Modal();
             expect(activeModalService.close).toHaveBeenCalledTimes(1);
+            metricService.sendMetrics = undefined;
+            component.closeThermalMode2Modal();
+            expect(activeModalService.close).toHaveBeenCalledTimes(2);
         })
         it('openWaringModal & openAdvanceOCModal', () => {
             let modalRef = new ModalGamingPromptStubComponent();
@@ -902,6 +951,56 @@ describe('ModalGamingThermalMode2Component', () => {
             modalRef.componentInstance.emitService = of(0)
             component.openWaringModal();
             expect(modalService.open).toHaveBeenCalledTimes(3);
+        })
+    })
+    describe('about metric', () => {
+        let metricService: any;
+        beforeEach(async(() => {
+            let metricSpyForFeature = jasmine.createSpyObj('MetricService', ['sendMetrics']);
+            TestBed.configureTestingModule({
+                declarations: [
+                    ModalGamingThermalMode2Component,
+                    ModalGamingPromptStubComponent,
+                    UiToggleStubComponent,
+                    SvgInlinePipe
+                ],
+                imports: [
+                    TranslationModule,
+                    HttpClientModule,
+                ],
+                providers: [
+                    NgbModal,
+                    NgbActiveModal,
+                    TranslateStore,
+                    { provide: CommonService, useValue: commonServiceMock },
+                    { provide: GamingAllCapabilitiesService, useValue: GamingAllCapabilitiesServiceMock },
+                    { provide: GamingThermalModeService, useValue: gamingThermalModeServiceMock },
+                    { provide: GamingOCService, useValue: gamingOCServiceMock },
+                    { provide: MetricService, useValue: metricSpyForFeature},
+                    { provide: TimerService, useValue: timerSpy}
+                ],
+                schemas: [
+                    NO_ERRORS_SCHEMA
+                ]
+            });
+            metricService = TestBed.inject(MetricService);
+            fixture = TestBed.createComponent(ModalGamingThermalMode2Component);
+            component = fixture.componentInstance;
+            fixture.detectChanges();
+        }));
+        it('should create', () => {
+            expect(component).toBeDefined();
+        });
+        it('sendFeatureClickMetrics', () => {
+            fixture.detectChanges();
+            let metricsdataMoke = {
+                ItmeType: undefined,
+                ItemParent: undefined,
+                ItemName: undefined,
+                ItemValue: undefined
+            };
+            component.sendFeatureClickMetrics(metricsdataMoke);
+            expect(metricService.sendMetrics).toHaveBeenCalled();
         })
     })
 });

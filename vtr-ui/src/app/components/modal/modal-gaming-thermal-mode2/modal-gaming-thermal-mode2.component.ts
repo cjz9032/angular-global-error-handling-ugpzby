@@ -122,6 +122,8 @@ export class ModalGamingThermalMode2Component implements OnInit {
     };
     if (this.metrics && this.metrics.sendMetrics) {
       this.metrics.sendMetrics(pageViewMetrics);
+    } else {
+      this.logger.error(`Modal-ThermalMode2-CloseThermalMode2Modal: send Metrics fail, metrics is ${this.metrics}, metrics.sendMetrics is ${this.metrics.sendMetrics}`);
     }
   }
 
@@ -345,7 +347,11 @@ export class ModalGamingThermalMode2Component implements OnInit {
       });
       if (this.metrics && this.metrics.sendMetrics) {
         this.metrics.sendMetrics(metricData);
+      } else {
+        this.logger.error(`Modal-ThermalMode2-sendFeatureClickMetrics: send Metrics undefined, metrics is ${this.metrics}, metrics.sendMetrics is ${this.metrics.sendMetrics}`);
       }
-    } catch (error) {}
+    } catch (error) {
+      this.logger.error('Modal-ThermalMode2-sendFeatureClickMetrics: sendFeatureClickMetrics fail; Error message: ', error.message);
+    }
   }
 }
