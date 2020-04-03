@@ -35,13 +35,12 @@ export class InputAccessoriesService {
 		} catch (error) {
 			throw new Error(error.message);
 		}
+	}
 
-    }
-
-    public AddApplicationOrFiles(selectedUDK: string,appSelectorType: string): Promise<any> {
+	public AddApplicationOrFiles(selectedUDK: string, appSelectorType: string): Promise<any> {
 		try {
 			if (this.keyboardManager) {
-				return this.keyboardManager.AddApplicationOrFiles(selectedUDK,appSelectorType);
+				return this.keyboardManager.AddApplicationOrFiles(selectedUDK, appSelectorType);
 			}
 			return undefined;
 		} catch (error) {
@@ -49,10 +48,10 @@ export class InputAccessoriesService {
 		}
 
 	}
-	public DeleteUDKApplication(udkType: string,itemId: string,displayName: string): Promise<boolean> {
+	public DeleteUDKApplication(udkType: string, itemId: string, displayName: string): Promise<boolean> {
 		try {
 			if (this.keyboardManager) {
-				return this.keyboardManager.DeleteUDKApplication(udkType,itemId,displayName);
+				return this.keyboardManager.DeleteUDKApplication(udkType, itemId, displayName);
 			}
 			return undefined;
 		} catch (error) {
@@ -388,7 +387,7 @@ export class InputAccessoriesService {
 		}
 	}
 
-	//Start of Keyboard backlight thinkpad model
+	// Start of Keyboard backlight thinkpad model
 	public getAutoKBDBacklightCapability(): Promise<boolean> {
 		try {
 			if (this.keyboard) {
@@ -476,7 +475,7 @@ export class InputAccessoriesService {
 			throw new Error(error.message);
 		}
 	}
-	//End of Keyboard backlight thinkpad model
+	// End of Keyboard backlight thinkpad model
 
 	// To Restart Windows
 	public restartMachine() {

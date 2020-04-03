@@ -1,30 +1,23 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output, TemplateRef } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { PowerService } from 'src/app/services/power/power.service';
-import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
-import { CommonService } from 'src/app/services/common/common.service';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { EventTypes } from '@lenovo/tan-client-bridge';
-import { ChargeThresholdInformation } from 'src/app/enums/battery-information.enum';
-import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { BehaviorSubject, combineLatest, EMPTY, from, of, pipe, range, timer, zip } from 'rxjs';
 import { Subscription } from 'rxjs/internal/Subscription';
-import { BehaviorSubject, EMPTY, pipe, zip, range, timer, from, combineLatest, of } from 'rxjs';
-import { FlipToBootSetStatus } from '../../../../../services/power/flipToBoot.interface';
-import {
-	FlipToBootCurrentModeEnum,
-	FlipToBootErrorCodeEnum,
-	FlipToBootSetStatusEnum,
-	FlipToBootSupportedEnum
-} from '../../../../../services/power/flipToBoot.enum';
-import { MetricService } from '../../../../../services/metric/metric.service';
+import { debounce, finalize, map, mergeMap, retryWhen, switchMap, tap } from 'rxjs/operators';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { AlwaysOnUSBCapability } from 'src/app/data-models/device/always-on-usb.model';
-import { BatteryChargeThresholdCapability } from 'src/app/data-models/device/battery-charge-threshold-capability.model';
-import { LoggerService } from 'src/app/services/logger/logger.service';
-import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
-import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
-import { retryWhen, map, mergeMap, tap, finalize, takeWhile, switchMap, debounce } from 'rxjs/operators';
 import { ChargeThreshold } from 'src/app/data-models/device/charge-threshold.model';
+import { ChargeThresholdInformation } from 'src/app/enums/battery-information.enum';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
+import { CommonService } from 'src/app/services/common/common.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { PowerService } from 'src/app/services/power/power.service';
+import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { MetricService } from '../../../../../services/metric/metric.service';
+import { FlipToBootCurrentModeEnum, FlipToBootErrorCodeEnum, FlipToBootSetStatusEnum, FlipToBootSupportedEnum } from '../../../../../services/power/flipToBoot.enum';
+import { FlipToBootSetStatus } from '../../../../../services/power/flipToBoot.interface';
 
 enum PowerMode {
 	Sleep = 'ChargeFromSleep',
@@ -499,7 +492,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.updatePowerMode();
 	}
 
-	onToggleOfAlwaysOnUsb(value: boolean) {
+	onToggleOfAlwaysOnUsb(event: any) {
+		const value = event.switchValue;
 		this.toggleAlwaysOnUsbFlag = value;
 		switch (this.machineType) {
 			case 1:
@@ -525,7 +519,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}, 100);
 	}
 
-	onToggleOfEasyResume(value: boolean) {
+	onToggleOfEasyResume(event: any) {
+		const value = event.switchValue;
 		switch (this.machineType) {
 			case 1:
 				this.setEasyResumeThinkPad(value);
@@ -537,7 +532,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	onToggleOfAirplanePowerMode(value) {
+	onToggleOfAirplanePowerMode(event) {
+		const value = event.switchValue;
 		switch (this.machineType) {
 			case 1:
 				this.setAirplaneModeThinkPad(value);
@@ -681,6 +677,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			});
 		}
 	}
+
 	private getAirplaneModeCapabilityThinkPad() {
 		this.logger.info('Before getAirplaneModeCapabilityThinkPad.then ');
 		if (this.powerService.isShellAvailable) {
@@ -688,6 +685,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				this.logger.info('getAirplaneModeCapabilityThinkPad.then ==>', value);
 				this.showAirplanePowerModeSection = value;
 				this.updatePowerLinkStatus(this.showAirplanePowerModeSection);
+				this.commonService.sendNotification('AirplaneModeStatus',
+				{isCapable: value, isEnabled: false});
 				if (this.showAirplanePowerModeSection) {
 					this.getAirplaneModeThinkPad();
 				}
@@ -706,7 +705,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				this.logger.info('getAirplaneModeThinkPad.then', airPlanePowerMode);
 				this.toggleAirplanePowerModeFlag = airPlanePowerMode;
 				this.commonService.sendNotification('AirplaneModeStatus',
-					this.toggleAirplanePowerModeFlag);
+					{isCapable: true, isEnabled: airPlanePowerMode});
 				this.airplanePowerCache.toggleState.status = this.toggleAirplanePowerModeFlag;
 				this.commonService.setLocalStorageValue(LocalStorageKey.AirplanePowerModeCapability, this.airplanePowerCache);
 			}).catch(error => {
@@ -720,7 +719,12 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		if (this.powerService.isShellAvailable) {
 			this.powerService.setAirplaneModeThinkPad(value).then((response: boolean) => {
 				this.logger.info('setAirplaneModeThinkPad.then', response);
-				this.getAirplaneModeThinkPad();
+				this.toggleAirplanePowerModeFlag = value;
+				this.commonService.sendNotification('AirplaneModeStatus',
+					{ isCapable: true, isEnabled: value });
+				this.airplanePowerCache.toggleState.status = this.toggleAirplanePowerModeFlag;
+				this.commonService.setLocalStorageValue(LocalStorageKey.AirplanePowerModeCapability, this.airplanePowerCache);
+				// this.getAirplaneModeThinkPad();
 			}).catch(error => {
 				this.logger.error('setAirplaneModeThinkPad', error.message);
 				return EMPTY;
@@ -954,10 +958,16 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			this.conservationModeLock = false;
 		}
 		this.expressChargingCache.status = this.expressChargingStatus.status;
+
+		// this.commonService.sendNotification('ExpressChargingStatus', this.expressChargingStatus);
+
 		this.expressChargingCache.isLoading = this.expressChargingLock;
 		this.commonService.setLocalStorageValue(LocalStorageKey.ExpressChargingCapability, this.expressChargingCache);
 
 		this.conservationModeCache.status = this.conservationModeStatus.status;
+
+		// this.commonService.sendNotification('ConservationModeStatus', this.conservationModeStatus);
+
 		this.conservationModeCache.isLoading = this.conservationModeLock;
 		this.commonService.setLocalStorageValue(LocalStorageKey.ConservationModeCapability, this.conservationModeCache);
 	}
@@ -980,7 +990,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 
 	// Start Lenovo Vantage ToolBar
-	public onVantageToolBarStatusToggle(value: boolean) {
+	public onVantageToolBarStatusToggle(event: any) {
+		const value = event.switchValue;
 		this.logger.info('onVantageToolBarStatusToggle', value);
 		try {
 			if (this.powerService.isShellAvailable) {
@@ -1148,7 +1159,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	// 	}
 	// }
 
-	public toggleBCTSwitch(value: boolean) {
+	public toggleBCTSwitch(event: any) {
+		const value = event.switchValue;
 		if (value) {
 			let count = 0;
 			this.thresholdInfo.forEach(battery => {
@@ -1223,12 +1235,35 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		if (notification) {
 			switch (notification.type) {
 				case 'IsPowerDriverMissing':
-					const status = notification.payload;
-					if (status !== this.isPowerDriverMissing) {
-						this.isPowerDriverMissing = status;
-						this.getBatteryAndPowerSettings();
-					}
+					this.isPowerDriverMissing = notification.payload;
+					this.getBatteryAndPowerSettings();
 					break;
+				// case 'AirplaneModeStatus':
+				// 	const airplaneMode = notification.payload;
+				// 	this.showAirplanePowerModeSection = airplaneMode.isCapable;
+				// 	this.updatePowerLinkStatus(this.showAirplanePowerModeSection);
+				// 	this.toggleAirplanePowerModeFlag = airplaneMode.isEnabled;
+				// 	this.airplanePowerCache.toggleState.available = airplaneMode.isCapable;
+				// 	this.airplanePowerCache.toggleState.status = airplaneMode.isEnabled;
+				// 	this.commonService.setLocalStorageValue(LocalStorageKey.AirplanePowerModeCapability, this.airplanePowerCache);
+				// 	break;
+				// case 'ConservationModeStatus':
+				// 	this.conservationModeStatus.available = notification.payload.available;
+				// 	this.conservationModeStatus.status = notification.payload.status;
+				// 	this.updateBatteryLinkStatus(this.conservationModeStatus.available);
+
+				// 	this.conservationModeCache = this.conservationModeStatus;
+				// 	this.conservationModeCache.isLoading = this.conservationModeLock;
+				// 	this.commonService.setLocalStorageValue(LocalStorageKey.ConservationModeCapability, this.conservationModeCache);
+				// 	break;
+				// case 'ExpressChargingStatus':
+				// 	this.expressChargingStatus.available = notification.payload.available;
+				// 	this.expressChargingStatus.status = notification.payload.status;
+				// 	this.updateBatteryLinkStatus(this.expressChargingStatus.available);
+
+				// 	this.expressChargingCache = this.expressChargingStatus
+				// 	this.expressChargingCache.isLoading = this.expressChargingLock;
+				// 	this.commonService.setLocalStorageValue(LocalStorageKey.ExpressChargingCapability, this.expressChargingCache);
 			}
 
 		}
@@ -1253,7 +1288,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			});
 	}
 
-	onToggleOfFlipToBoot(value: boolean) {
+	onToggleOfFlipToBoot(event: any) {
+		const value = event.switchValue;
 		const status: FlipToBootSetStatus = value ? FlipToBootSetStatusEnum.On : FlipToBootSetStatusEnum.Off;
 		this.powerService.setFlipToBootSettings(status)
 			.then(res => {

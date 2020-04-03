@@ -1,4 +1,5 @@
 {
+	"nonProduction": "You're now visiting the non-production version of Lenovo Vantage!",
     "gaming": {
         "dashboard": {
             "device": {
@@ -795,6 +796,7 @@
             "back": "INDIETRO",
             "on": "ON",
             "off": "OFF",
+            "close": "Chiudi",
             "collapse": "Riduci",
             "expand": "Espandi",
             "loader": "Stato di<br> recupero",
@@ -876,7 +878,7 @@
                 "tips2": "Fornisci di seguito eventuali commenti aggiuntivi",
                 "emailAddressLabel": "Fornisci il tuo indirizzo e-mail se vuoi essere contattato dal team Lenovo Vantage.",
                 "emailAddress": "Indirizzo e-mail",
-                "invalidEmailMsg": "Invalid email address"
+                "invalidEmailMsg": "Indirizzo e-mail non valido"
             }
         },
         "quickSettings": {
@@ -1051,7 +1053,7 @@
                     "NotGood": "<b>La batteria non è in buone condizioni.</b>",
                     "NotSupportACAdapter": "<b>L'adattatore CA non è supportato.</b>",
                     "LimitedACAdapterSupport": "<b>L'adattatore CA non è in grado di fornire energia sufficiente.</b>",
-                    "MissingDriver": "<b>Il driver Lenovo Power Manager</b> non è installato o non funziona correttamente. Eseguire Windows Update per installare il driver più recente. È anche possibile installare il driver da <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">qui</a>. Al termine dell'installazione, riavviare il computer.",
+                    "MissingDriver": "<b>Il driver Lenovo Power Manager</b> non è installato o non funziona correttamente. Eseguire Windows Update o installarlo manualmente da <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">qui</a>. Al termine dell'installazione, riavviare il computer.",
                     "StoreLimitation": "<b>La batteria può mantenere solo il {{value}}% della</b> sua capacità di carica completa originale.",
                     "HighTemperature": "<b>Lo scaricamento</b> è stato interrotto poiché la <b>temperatura della batteria è troppo elevata.</b>",
                     "TrickleCharge": "La batteria è <b>completamente scarica</b> e deve essere ricaricata. Questa operazione potrebbe richiedere almeno dieci ore.",
@@ -1330,6 +1332,12 @@
                         "description": "Selezionare un piano di alimentazione per controllare le prestazioni del computer, la temperatura del sistema e l'utilizzo dell'alimentazione.",
                         "currentPowerPlan": {
                             "label": "PIANO CORRENTE"
+                        },
+                        "profile": {
+                            "title": "PIANO DEL PROFILO:",
+                            "performance": "Prestazioni massime:",
+                            "temperature": "Temperatura massima di sistema:",
+                            "usage": "Massimo consumo energetico:"
                         }
                     }
                 },
@@ -1508,8 +1516,8 @@
                     "title": "Schermo",
                     "displayColorTemperature": {
                         "title": "Temperatura colore schermo",
-                        "description": "Puoi regolare la temperatura del colore dello schermo per filtrare la luce blu e ridurre l'affaticamento degli occhi. Ti consente di regolare lo schermo con colori più caldi dal tramonto all'alba, per favorire il riposo notturno.",
-                        "link": {
+						"description": "È possibile regolare la temperatura del colore dello schermo per filtrare la luce blu e ridurre l'affaticamento degli occhi. Consente di regolare gli schermi con colori più caldi dal tramonto all'alba, per favorire il riposo notturno.",
+						"link": {
                             "click": "Fare clic",
                             "here": "qui",
                             "rest": "per modificare la temperatura del colore."
@@ -1997,30 +2005,30 @@
             },
             "voice": {
                 "title": "Voce",
-                "description": "Lenovo Voice consente di convertire la voce in testo con la funzione \"Voce in testo\" e fornisce una traduzione in tempo reale da voce a testo con la funzione \"Traduzione\".",
+                "description": "Lenovo Voice consente di convertire la voce in testo con la funzione \"Voce in testo\" e fornisce una traduzione in tempo reale del testo vocale grazie all'assistente di traduzione.",
                 "installBtnText": "Installa",
                 "launchBtnText": "Avvia",
                 "voiceToText": {
                     "title": "Voce in testo",
-                    "caption": "Questa funzione consente di convertire la voce in testo."
+                    "caption": "Questa funzione fornisce la funzione di immissione vocale, che converte la voce in testo garantendo un input rapido."
                 },
                 "translation": {
                     "title": "Traduzione",
-                    "caption": "Questa funzione fornisce una traduzione in tempo reale della voce. I contenuti tradotti sono mostrati in testo. È possibile selezionare le lingue di origine e di destinazione in base alle proprie esigenze."
+                    "caption": "Questa funzione fornisce assistenza per la traduzione in tempo reale di discorsi; tutto ciò che viene tradotto viene visualizzato in forma di testo. Sono disponibili più lingue per la lingua di origine e di destinazione."
                 },
                 "modalPopUp": {
                     "heading": "Operazioni preliminari:",
-                    "point1": "Verificare che l'icona Lenovo Voice sia visualizzata nella barra delle applicazioni di Windows.",
-                    "point2": "Aprire il file in cui si desidera registrare il testo convertito.",
+                    "point1": "Avviare Lenovo Voice dal menu Start; l'icona Lenovo Voice viene visualizzata nella barra delle applicazioni di Windows.",
+                    "point2": "Aprire l'applicazione in cui si desidera immettere il testo.",
                     "point3": "Fare clic sull'icona Lenovo Voice nella barra delle applicazioni di Windows e selezionare Voce in testo.",
-                    "point4": "Selezionare la lingua desiderata e fare clic sull'icona del microfono per iniziare.",
-                    "point5": "Posizionare il cursore sul punto che si desidera modificare e iniziare a parlare.",
-                    "point6": "Fare clic sull'icona Lenovo Voice nella barra delle applicazioni di Windows e selezionare Traduci.",
+                    "point4": "Selezionare le lingue desiderate e fare clic sull'icona del microfono per iniziare.",
+                    "point5": "Inserire il cursore nell'applicazione e iniziare a parlare.",
+                    "point6": "Fare clic sull'icona Lenovo Voice nella barra delle applicazioni di Windows e selezionare Traduzione.",
                     "point7": "Selezionare la lingua di origine e di destinazione desiderate.",
                     "point8": "In base alle proprie esigenze, impostare l'ingresso vocale dall'altoparlante o dal microfono.",
-                    "point9": "Fare clic sull'icona del microfono per iniziare a parlare",
+                    "point9": "Fare clic sull'icona del microfono per iniziare a parlare.",
                     "closeText": "chiudi",
-                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
+                    "point10": "Verificare che l'icona Lenovo Voice sia visualizzata nella barra delle applicazioni di Windows."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -2187,6 +2195,7 @@
             "description": "Contattaci per richiedere assistenza.",
             "listLenovoCommunity": "Comunità Lenovo",
             "listContactCustomerService": "Contatta il servizio clienti",
+            "listYourVirtualAssistant": "Your virtual assistant",
             "listContactUsOnWechat": "Contattaci su WeChat",
             "weChatDescription": "Fai una domanda su WeChat e ti risponderemo rapidamente",
             "listFindUs": "Seguici sui social media",
@@ -2437,7 +2446,6 @@
                 "title": "Integrità protezione",
                 "deviceName1": "App da fonti affidabili",
                 "deviceName2": "Modalità sviluppatore",
-                "deviceName3": "Notifica Controllo dell'account utente",
                 "deviceName4": "Disponibilità antivirus",
                 "deviceName5": "Crittografia unità disco fisso",
                 "deviceName6": "Disponibilità firewall",
@@ -2972,6 +2980,17 @@
             "politics": "Politica",
             "music": "Musica",
             "science": "Scienza"
+        },
+		"gaming": {
+            "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
+            "gamingFeature1": "-Computer status monitor",
+            "gamingFeature2": "-Performance mode & overclocking",
+            "gamingFeature3": "-Lighting",
+            "gamingFeature4": "-Network Boost",
+            "gamingFeature5": "-Auto Close",
+            "gamingOnly": "Gaming",
+            "gamingAndWork": "Gaming & Work",
+            "nonGaming": "Non-Gaming"
         }
     },
     "settings": {
@@ -3319,7 +3338,7 @@
         },
         "scanCompletePage": {
             "title": "System scan is complete",
-            "description": "Here is what we found on your Lenovo Vantage 720s.",
+            "description": "Here is what we found on your ",
             "scanRates": "Our scan rates your PC at: ",
             "summary": "Summary",
             "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
@@ -3354,7 +3373,7 @@
             "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
-            "title": "All is well with your Ideapad 720s",
+            "title": "All is well with your ",
             "serialNumber": "Serial number: ",
             "subTitle": "You are subscribed to Lenovo Smart Performance Service",
             "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
@@ -3507,7 +3526,8 @@
     "notification": {
         "menu": {
             "security": "Anche se non si dispone di software antivirus installato, viene comunque garantita una protezione di base per il dispositivo.",
-            "connectedHomeSecurity": "È possibile usufruire di una funzione di monitoraggio e creazione di avvisi in tempo reale sulla sicurezza della propria rete a casa. Si verrà a sapere per primi se uno dei propri dispositivi intelligenti è sottoposto a un attacco di sicurezza."
+            "connectedHomeSecurity": "È possibile usufruire di una funzione di monitoraggio e creazione di avvisi in tempo reale sulla sicurezza della propria rete a casa. Si verrà a sapere per primi se uno dei propri dispositivi intelligenti è sottoposto a un attacco di sicurezza.",
+            "hardwareScan": "È ora possibile ottenere lo stato di integrità dei componenti hardware del sistema."
         }
     },
     "appsForYou": {

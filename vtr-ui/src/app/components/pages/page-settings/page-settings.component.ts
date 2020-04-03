@@ -209,8 +209,8 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 					this.isToggleDeviceStatistics = false;
 				}
 			}).catch((error) => {
-                this.isToggleDeviceStatistics = false;
-            });
+				this.isToggleDeviceStatistics = false;
+			});
 		}
 	}
 
@@ -225,8 +225,8 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 						this.isMessageSettings = true;
 					}
 				}).catch((error) => {
-                    this.isMessageSettings = false;
-                });
+					this.isMessageSettings = false;
+				});
 			} catch (error) {
 				this.loggerService.exception('PageSettingsComponent.getPreferenceSettingsValue exception', error);
 			}

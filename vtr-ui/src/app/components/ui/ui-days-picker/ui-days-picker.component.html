@@ -13,6 +13,7 @@
 					(click)="onToggleDropDown()">
 				</vtr-ui-checkbox>
 				<label for="{{daysId}}"
+					#combo
 					role="combobox"
 					aria-label="'smart standby, schedule dropdown days list'"
 					[attr.aria-expanded]="showDropDown"
@@ -37,6 +38,7 @@
 							<div class="col">
 								<div class="main-block pl-5 pt-5 pb-3"
 									role="radiogroup"
+									aria-label="days list, select using arrow keys"
 									tabindex="0">
 									<div *ngFor="let i of smartStandbyService.allDays">
 										<div class="custom-control custom-checkbox mb-3">
@@ -46,7 +48,8 @@
 												[checked]="i.status"
 												attr.aria-label="{{ 'device.deviceSettings.power.smartStandby.days.name.' + i.shortName | translate}}"
 												(toggle)="selectDay($event, i.shortName)"
-												[label]="'device.deviceSettings.power.smartStandby.days.name.' + i.shortName | translate"></vtr-ui-checkbox>
+												[label]="'device.deviceSettings.power.smartStandby.days.name.' + i.shortName | translate">
+											</vtr-ui-checkbox>
 											<!-- <label class="custom-control-label"
 												for="{{i.shortName}}">
 												{{ 'device.deviceSettings.power.smartStandby.days.name.' + i.shortName | translate}}
@@ -58,8 +61,8 @@
 									<p class="select-close"
 										*ngIf="!smartStandbyService.checkedLength"
 										id="smartStandby-warningtip"
-										role="text"
-										aria-label="smartStandby-warningtip">
+										attr.aria-label="{{'device.deviceSettings.power.smartStandby.warningtip' | translate}}"
+										tabindex="0">
 										{{ 'device.deviceSettings.power.smartStandby.warningtip' | translate }}</p>
 									<div class="banner-middle">
 
@@ -67,9 +70,8 @@
 									<div class="select-close">
 										<fa-icon [icon]="['fal', 'check']"
 											(click)="setOffDays(dayslistbox)"
-											(keydown.enter)="setOffDays(dayslistbox)"
+											(keydown.enter)="[setOffDays(dayslistbox),combo.focus()]"
 											role="button"
-											tabindex="0"
 											id="daysPickerDone"
 											attr.aria-label="daysPickerDone"
 											*ngIf="smartStandbyService.checkedLength > 0"
@@ -81,7 +83,7 @@
 											tabindex="0"
 											attr.aria-label="daysPickerClear"
 											(click)="clearSettings(dayslistbox)"
-											(keydonw.enter)="clearSettings(dayslistbox)"
+											(keydown.enter)="[clearSettings(dayslistbox),combo.focus()]"
 											aria-label="'cancel changes'">
 										</fa-icon>
 									</div>

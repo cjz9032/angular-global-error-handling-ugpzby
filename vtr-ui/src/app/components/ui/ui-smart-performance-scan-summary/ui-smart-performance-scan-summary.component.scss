@@ -630,6 +630,9 @@ vtr-ui-smart-performance-scan-summary {
 		color: #4a81fd;
 		cursor: pointer;
 		font-weight: 600;
+		@media #{$breakpoint_sm}{
+			font-size: $fontsize_xs;
+		}
 	}
 	.status-list {
 		padding-left: 0;

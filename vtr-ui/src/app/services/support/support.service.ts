@@ -24,6 +24,7 @@ export class SupportService {
 	warrantyData: { info: any, cache: boolean };
 	warrantyNormalUrl = 'https://pcsupport.lenovo.com/us/en/warrantylookup';
 	warrantyDataCache: { info: any, cache: boolean };
+	supportDatas: any;
 
 	constructor(
 		private shellService: VantageShellService,
@@ -103,6 +104,7 @@ export class SupportService {
 		const findUsModal: NgbModalRef = this.modalService.open(ModalFindUsComponent, {
 			backdrop: true,
 			centered: true,
+			ariaLabelledBy: 'find-us-modal-basic-title',
 			windowClass: 'Find-Us-Modal'
 		});
 	}
@@ -110,6 +112,7 @@ export class SupportService {
 		const aboutModal: NgbModalRef = this.modalService.open(ModalAboutComponent, {
 			backdrop: true,
 			centered: true,
+			ariaLabelledBy: 'about-modal-basic-title',
 			windowClass: 'About-Modal'
 		});
 	}

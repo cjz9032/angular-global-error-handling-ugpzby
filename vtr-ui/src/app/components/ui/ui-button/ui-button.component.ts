@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { WinRT } from '@lenovo/tan-client-bridge';
 
 @Component({
@@ -6,10 +6,11 @@ import { WinRT } from '@lenovo/tan-client-bridge';
 	templateUrl: './ui-button.component.html',
 	styleUrls: ['./ui-button.component.scss']
 })
-export class UiButtonComponent implements OnInit {
+export class UiButtonComponent implements OnInit, AfterViewInit {
 	@Input() label: string;
 	@Input() isFullWidth: boolean;
 	@Input() isHalfWidth: boolean;
+	@Input() vtrMetricEnabled: any;
 	@Input() alreadyJoinGroup = 'unjoined';
 	@Input() upperCaseLabel = true;
 	@Input() capitalizeLabel = false;
@@ -19,7 +20,7 @@ export class UiButtonComponent implements OnInit {
 
 	@Input() metricsItem: string;
 	@Input() metricsParent: string;
-	@Input() metricsValue: string;
+	@Input() metricsValue: any;
 	@Input() metricsEvent = 'FeatureClick';
 	@Input() metricsParam: string;
 	@Input() metricsItemPosition: string;
@@ -38,9 +39,15 @@ export class UiButtonComponent implements OnInit {
 	@Input() inRedBackground = false;
 	@Input() tabIndex = 0; // please use this one if you need special tabindex.
 	@Input() isLoading = false;
+	@Input() autoFocus = false;
 
 	constructor() { }
 
+	ngAfterViewInit(): void {
+		if (this.autoFocus) {
+			document.getElementById(this.linkId).focus();
+		}
+	}
 	onClickButton(event) {
 		window.getSelection().empty();
 		if (this.href) {

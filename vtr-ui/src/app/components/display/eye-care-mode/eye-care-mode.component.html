@@ -10,7 +10,7 @@
 				[maxValue]="eyeCareModeSettings.maximum"
 				[minValueLegend]="'device.deviceSettings.displayCamera.display.eyeCareMode.options.warm' | translate"
 				[maxValueLegend]="'device.deviceSettings.displayCamera.display.eyeCareMode.options.cold' | translate"
-				[(value)]="eyeCareModeSettings.current"
+				[(value)]="$any(eyeCareModeSettings).current"
 				(sliderChange)="onEyeCareTemparatureChange($event)"
 				(valueChange)="onEyeCareTemparatureValueChange($event)"
 				[rangeSliderId]="'color-temp-eyeCareMode'">

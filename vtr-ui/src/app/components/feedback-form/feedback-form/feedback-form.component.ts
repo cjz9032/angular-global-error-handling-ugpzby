@@ -49,7 +49,6 @@ export class FeedbackFormComponent implements OnInit {
 
 	ngOnInit() {
 		this.createFeedbackForm();
-		setTimeout(() => { document.getElementById('feedback-form-dialog').parentElement.parentElement.parentElement.parentElement.focus(); }, 0);
 		this.getCurrentRegion();
 	}
 

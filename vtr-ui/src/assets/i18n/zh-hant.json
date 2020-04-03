@@ -1,4 +1,5 @@
 {
+	"nonProduction": "您现在正在访问Lenovo Vantage的非生产版本！",
     "gaming": {
         "dashboard": {
             "device": {
@@ -795,6 +796,7 @@
             "back": "上一步",
             "on": "ON",
             "off": "OFF",
+            "close": "關閉",
             "collapse": "收合",
             "expand": "展開",
             "loader": "獲取狀態",
@@ -876,7 +878,7 @@
                 "tips2": "請在下方將任何其他意見告訴我們",
                 "emailAddressLabel": "如果您希望 Lenovo Vantage 團隊與您聯絡，請留下您的電子郵件地址。",
                 "emailAddress": "電子郵件地址",
-                "invalidEmailMsg": "Invalid email address"
+                "invalidEmailMsg": "無效的電子郵件地址"
             }
         },
         "quickSettings": {
@@ -1051,7 +1053,7 @@
                     "NotGood": "<b>電池狀況不佳。</b>",
                     "NotSupportACAdapter": "<b>不支援 AC 整流器。</b>",
                     "LimitedACAdapterSupport": "<b>AC 整流器無法提供足夠的電力。</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager 驅動程式</b>未安裝或無法正常運作。請執行 Windows Update 以安裝最新的驅動程式。您也可以從<a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">這裡</a>安裝驅動程式。安裝之後，重新啟動電腦。",
+                    "MissingDriver": "<b>Lenovo Power Manager 驅動程式</b>未安裝或無法正常運作。請執行 Windows Update 或從<a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">這裡</a>手動安裝。安裝之後，重新啟動電腦。",
                     "StoreLimitation": "<b>電池只能儲存其原始充飽容量的 {{value}}%</b>。",
                     "HighTemperature": "因為<b>電池溫度過高</b>，已停止<b>放電。</b>",
                     "TrickleCharge": "電池已<b>完全放電</b>，而且必須重新充電。這可能需要十小時或更長的時間。",
@@ -1330,6 +1332,12 @@
                         "description": "選擇電源計劃以控制電腦效能、系統溫度和電源使用情形。",
                         "currentPowerPlan": {
                             "label": "目前計劃"
+                        },
+                        "profile": {
+                            "title": "計劃設定檔：",
+                            "performance": "最高效能：",
+                            "temperature": "最高系統溫度：",
+                            "usage": "最高電源用量："
                         }
                     }
                 },
@@ -1508,8 +1516,8 @@
                     "title": "顯示",
                     "displayColorTemperature": {
                         "title": "顯示器色溫",
-                        "description": "您可以調整顯示器的色溫，以濾除藍光並減輕眼睛疲勞。在日落到日出期間，將顯示器調整為暖色，以幫助您入睡。",
-                        "link": {
+						"description": "您可以調整顯示器的色溫，以過濾藍光並減輕眼睛疲勞。在日落到日出期間，將顯示器調整為暖色，以幫助您入睡。",
+						"link": {
                             "click": "按一下",
                             "here": "這裡",
                             "rest": "以變更色溫。"
@@ -1997,30 +2005,30 @@
             },
             "voice": {
                 "title": "語音",
-                "description": "Lenovo Voice 可使用語音到文字功能，協助將您的語音轉換為文字，並使用翻譯功能提供從語音到文字的即時翻譯。",
+                "description": "Lenovo Voice 可使用語音轉文字功能將您的聲音轉換為文字，並使用翻譯助理功能進行即時語音翻譯。",
                 "installBtnText": "安裝",
                 "launchBtnText": "啟動",
                 "voiceToText": {
                     "title": "語音到文字",
-                    "caption": "此功能可協助將您的語音轉換為文字。"
+                    "caption": "此功能提供語音輸入功能、可將語音轉換為文字以快速輸入。"
                 },
                 "translation": {
                     "title": "翻譯",
-                    "caption": "此功能提供語音的即時翻譯。翻譯的內容顯示在文字中。您可以根據需求選擇來源語言和目標語言。"
+                    "caption": "此功能可協助即時翻譯語音，所有翻譯的內容都會以文字形式顯示。來源語言及目標語言皆有多語種可供選擇。"
                 },
                 "modalPopUp": {
                     "heading": "開始使用：",
-                    "point1": "確保 Lenovo Voice 圖示有顯示在 Windows 系統匣中。",
-                    "point2": "開啟要用來記錄轉換文字的檔案。",
+                    "point1": "請由開始功能表開啟 Lenovo Voice，Lenovo Voice 圖示將顯示於 Windows 系統匣內。",
+                    "point2": "開啟要輸入文字的應用程式。",
                     "point3": "按一下 Windows 系統匣中的 Lenovo Voice 圖示，然後選取「語音到文字」。",
                     "point4": "選取所需的語言，然後按一下麥克風圖示開始。",
-                    "point5": "將游標放在要編輯的位置並開始說話。",
+                    "point5": "將游標放在應用程式上，然後開始說話。",
                     "point6": "按一下 Windows 系統匣中的 Lenovo Voice 圖示，然後選取「翻譯」。",
-                    "point7": "選擇所需的來源語言和目標語言。",
+                    "point7": "選擇來源語言和目標語言。",
                     "point8": "根據您的需求，設定從喇叭或麥克風輸入語音。",
-                    "point9": "按一下麥克風圖示開始說話",
+                    "point9": "按一下麥克風圖示開始說話。",
                     "closeText": "關閉",
-                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
+                    "point10": "確保 Lenovo Voice 圖示有顯示在 Windows 系統匣中。"
                 },
                 "modalInstallationFailed": {
                     "btnText": "確定",
@@ -2187,6 +2195,7 @@
             "description": "請聯絡我們以便為您提供協助。",
             "listLenovoCommunity": "Lenovo 社群",
             "listContactCustomerService": "聯絡客戶服務",
+            "listYourVirtualAssistant": "Your virtual assistant",
             "listContactUsOnWechat": "透過 WeChat 聯絡我們",
             "weChatDescription": "透過 WeChat 向我們提問，我們一定會盡快回覆",
             "listFindUs": "透過社交媒體追蹤我們",
@@ -2437,7 +2446,6 @@
                 "title": "安全性健康情況",
                 "deviceName1": "來自可信任來源的應用程式",
                 "deviceName2": "開發人員模式",
-                "deviceName3": "UAC 通知",
                 "deviceName4": "防毒可用性",
                 "deviceName5": "硬碟加密",
                 "deviceName6": "防火牆可用性",
@@ -2972,6 +2980,17 @@
             "politics": "政治",
             "music": "音樂",
             "science": "科學"
+        },
+		"gaming": {
+            "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
+            "gamingFeature1": "-Computer status monitor",
+            "gamingFeature2": "-Performance mode & overclocking",
+            "gamingFeature3": "-Lighting",
+            "gamingFeature4": "-Network Boost",
+            "gamingFeature5": "-Auto Close",
+            "gamingOnly": "Gaming",
+            "gamingAndWork": "Gaming & Work",
+            "nonGaming": "Non-Gaming"
         }
     },
     "settings": {
@@ -3319,7 +3338,7 @@
         },
         "scanCompletePage": {
             "title": "System scan is complete",
-            "description": "Here is what we found on your Lenovo Vantage 720s.",
+            "description": "Here is what we found on your ",
             "scanRates": "Our scan rates your PC at: ",
             "summary": "Summary",
             "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
@@ -3354,7 +3373,7 @@
             "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
-            "title": "All is well with your Ideapad 720s",
+            "title": "All is well with your ",
             "serialNumber": "Serial number: ",
             "subTitle": "You are subscribed to Lenovo Smart Performance Service",
             "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
@@ -3507,7 +3526,8 @@
     "notification": {
         "menu": {
             "security": "您知道嗎？即使您沒有安裝防毒軟體，我們仍會為您的裝置提供基本的安全保護。",
-            "connectedHomeSecurity": "在家中取得有關網路安全的即時監視和警示。您將是最先知道您的智慧型裝置是否面臨安全攻擊的人。"
+            "connectedHomeSecurity": "在家中取得有關網路安全的即時監視和警示。您將是最先知道您的智慧型裝置是否面臨安全攻擊的人。",
+            "hardwareScan": "現在，您可以取得系統硬體元件的性能狀態。"
         }
     },
     "appsForYou": {

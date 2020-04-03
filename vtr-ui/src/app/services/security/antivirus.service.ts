@@ -23,6 +23,7 @@ export class AntivirusService {
 	private cacheAvStatus: boolean;
 	private cacheFwStatus: boolean;
 	private cacheCurrentPage: string;
+	private cacheFirewallLink: string;
 
 	constructor(public commonService: CommonService, public shellService: VantageShellService) {
 		this.antivirus = this.shellService.getSecurityAdvisor().antivirus;
@@ -30,15 +31,17 @@ export class AntivirusService {
 		this.cacheAvStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus);
 		this.cacheFwStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus);
 		this.cacheCurrentPage = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityCurrentPage);
+		this.cacheFirewallLink = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityFirewallLink, '/security/anti-virus');
 		this.antivirusCommonData = new AntivirusCommonData();
 	}
 
 	public GetAntivirusStatus () : AntivirusCommonData {
 		if (this.antivirus.mcafee || this.antivirus.windowsDefender || this.antivirus.others) {
 			this.setPage(this.antivirus);
-		} else if (this.cacheAvStatus !== undefined || this.cacheFwStatus !== undefined || this.cacheCurrentPage) {
+		} else if (this.cacheAvStatus !== undefined || this.cacheFwStatus !== undefined || this.cacheCurrentPage || this.cacheFirewallLink) {
 			this.setAntivirusStatus(this.cacheAvStatus, this.cacheFwStatus);
 			this.antivirusCommonData.currentPage = this.cacheCurrentPage;
+			this.antivirusCommonData.firewallLink = this.cacheFirewallLink;
 		}
 
 		return this.antivirusCommonData;
@@ -52,14 +55,17 @@ export class AntivirusService {
 			this.antivirusCommonData.isMcAfeeInstalled = true;
 			av = antiVirus.mcafee.status;
 			fw = antiVirus.mcafee.firewallStatus;
+			this.antivirusCommonData.firewallLink = '/security/anti-virus';
 		} else if (antiVirus.others && antiVirus.others.enabled) {
 			this.antivirusCommonData.currentPage = 'others';
 			this.antivirusCommonData.isMcAfeeInstalled = Boolean(antiVirus.mcafee);
 			av = antiVirus.others.antiVirus.length > 0 ? antiVirus.others.antiVirus[0].status : undefined;
 			if (antiVirus.windowsDefender) {
 				fw = antiVirus.others.firewall.length > 0 ? antiVirus.others.firewall[0].status : antiVirus.windowsDefender.firewallStatus;
+				this.antivirusCommonData.firewallLink = antiVirus.others.firewall.length > 0 ? '/security/anti-virus' : 'ms-settings:windowsdefender';
 			} else {
 				fw = antiVirus.others.firewall.length > 0 ? antiVirus.others.firewall[0].status : undefined;
+				this.antivirusCommonData.firewallLink = '/security/anti-virus';
 			}
 		} else {
 			this.antivirusCommonData.currentPage = 'windows';
@@ -68,10 +74,12 @@ export class AntivirusService {
 				av = antiVirus.windowsDefender.status;
 				fw = antiVirus.windowsDefender.firewallStatus;
 			}
+			this.antivirusCommonData.firewallLink = '/security/anti-virus';
 		}
 
 		this.setAntivirusStatus(av, fw);
 		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityCurrentPage, this.antivirusCommonData.currentPage);
+		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityFirewallLink, this.antivirusCommonData.firewallLink);
 	}
 
 	private setAntivirusStatus(av: boolean | undefined, fw: boolean | undefined) {

@@ -251,6 +251,7 @@ export class AntiVirusViewModel {
 				title: this.virusScan,
 			}];
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityOthersAntiStatusList, this.othersAntistatusList);
+			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityOtherAntiVirus, this.otherAntiVirus);
 		} else {
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityOthersAntiStatusList, null);
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityOtherAntiVirus, null);

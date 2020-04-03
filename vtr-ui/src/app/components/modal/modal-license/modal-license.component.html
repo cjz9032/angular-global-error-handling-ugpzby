@@ -1,9 +1,7 @@
 <div class="modal-body vtr-modal-license"
-	id="license-dialog"
-	tabindex="-1"
-	role="dialog">
+	id="license-dialog">
 	<div class="article-content"
-		[class.show]="loading">
+		[hidden]="!loading">
 		<div class="article-body">
 			<div class="spinner-content">
 				<div class="spinner-border text-primary progress-spinner"
@@ -11,29 +9,31 @@
 			</div>
 		</div>
 	</div>
-	<div *ngIf="type!='txt' && !loading" tabindex="0" class="empty" id="license-dialog-empty"></div>
+	<div id="license-agreement-dialog-basic-title"
+		hidden>{{ 'support.about.licenseAgreement' | translate }}</div>
+	<div id="other-software-licenses-dialog-basic-title"
+		hidden>{{ 'support.about.otherSoftwareLicenses' | translate }}</div>
 	<div class="article-content"
-		[class.show]="type=='txt' && !loading">
+		[hidden]="type !== 'txt' || loading">
 		<div class="article-body"
 			tabindex="0"
 			[innerHTML]="articleBody"></div>
 	</div>
 	<div class="iframe-content"
-		[class.show]="type!='txt' && !loading">
+		[hidden]="type === 'txt' || loading">
 		<iframe id="license-agreement-iframe"
 			class="article-frame"
 			src=""
 			attr.sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
 			width="100%"
-			height="100%"
-			tabindex="0"></iframe>
+			height="100%"></iframe>
 	</div>
 	<div role="button"
 		class="close-btn"
 		vtrMetrics
 		tabindex="0"
 		id="btn-{{licenseModalMetrics.closeButton}}"
-		[attr.aria-label]="licenseModalMetrics.closeButton"
+		[attr.aria-label]="'common.ui.close' | translate"
 		[metricsItem]="licenseModalMetrics.closeButton"
 		[metricsParent]="licenseModalMetrics.pageName"
 		metricsEvent="FeatureClick"

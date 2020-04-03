@@ -1,4 +1,5 @@
 {
+	"nonProduction": "You're now visiting the non-production version of Lenovo Vantage!",
     "gaming": {
         "dashboard": {
             "device": {
@@ -795,6 +796,7 @@
             "back": "TERUG",
             "on": "ON",
             "off": "OFF",
+            "close": "Sluiten",
             "collapse": "Samenvouwen",
             "expand": "Uitvouwen",
             "loader": "Status <br> ophalen",
@@ -876,7 +878,7 @@
                 "tips2": "Laat hieronder eventuele aanvullende opmerkingen achter",
                 "emailAddressLabel": "Geef uw e-mailadres op als u de mogelijkheid wilt bieden dat het Lenovo Vantage-team contact met u opneemt.",
                 "emailAddress": "E-mailadres",
-                "invalidEmailMsg": "Invalid email address"
+                "invalidEmailMsg": "Ongeldig e-mailadres"
             }
         },
         "quickSettings": {
@@ -1051,7 +1053,7 @@
                     "NotGood": "<b>De batterij is niet in goede staat.</b>",
                     "NotSupportACAdapter": "<b>De netvoedingsadapter wordt niet ondersteund.</b>",
                     "LimitedACAdapterSupport": "<b>De netvoedingsadapter kan niet voldoende stroom leveren.</b>",
-                    "MissingDriver": "<b>Het stuurprogramma voor Lenovo Power Manager</b> is niet geïnstalleerd of werkt niet goed. Voer Windows Update uit om het meest recente stuurprogramma te installeren. U kunt het stuurprogramma ook vanaf <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">hier</a> installeren. Start uw computer na het installeren opnieuw op.",
+                    "MissingDriver": "<b>Het stuurprogramma voor Lenovo Power Manager</b> is niet geïnstalleerd of werkt niet goed. Voer Windows Update uit of installeer het handmatig van <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">hier</a>. Start uw computer na het installeren opnieuw op.",
                     "StoreLimitation": "<b>De batterij kan slechts {{value}}% van</b> de oorspronkelijke volledige laadcapaciteit opslaan.",
                     "HighTemperature": "<b>Het ontladen</b> is gestopt omdat de <b>batterij te heet is geworden.</b>",
                     "TrickleCharge": "De batterij is <b>volledig ontladen</b> en moet opnieuw worden opgeladen. Dit kan tien uur of langer duren.",
@@ -1330,6 +1332,12 @@
                         "description": "Kies een energieschema om de prestaties, de systeemtemperatuur en het energieverbruik van de computer te regelen.",
                         "currentPowerPlan": {
                             "label": "HUIDIG SCHEMA"
+                        },
+                        "profile": {
+                            "title": "SCHEMA PROFIEL:",
+                            "performance": "Maximale prestaties:",
+                            "temperature": "Maximale systeemtemperatuur:",
+                            "usage": "Maximaal energieverbruik:"
                         }
                     }
                 },
@@ -1508,8 +1516,8 @@
                     "title": "Weergave",
                     "displayColorTemperature": {
                         "title": "Kleurtemperatuur weergeven",
-                        "description": "U kunt de kleurtemperatuur van uw beeldscherm aanpassen om blauw licht uit te filteren en uw ogen minder te belasten. Hiermee kunt u uw beeldscherm tussen zonsondergang en zonsopgang warmere kleuren laten weergeven om u beter te laten slapen.",
-                        "link": {
+						"description": "U kunt de kleurtemperatuur van uw beeldscherm aanpassen om blauw licht uit te filteren en uw ogen minder te belasten. Hiermee kunt u uw beeldscherm tussen zonsondergang en zonsopgang warmere kleuren laten weergeven om u beter te laten slapen.",
+						"link": {
                             "click": "Klik",
                             "here": "hier",
                             "rest": "om de kleurtemperatuur te wijzigen."
@@ -1997,30 +2005,30 @@
             },
             "voice": {
                 "title": "Spraak",
-                "description": "Lenovo Voice helpt bij het converteren van uw stem naar teksten met de functie Stem naar tekst en biedt realtime vertaling van Stem naar tekst met de vertaalfunctie.",
+                "description": "Lenovo Voice zet uw gesproken woorden om in tekst via de functie Voice to Text en assisteert met behulp van de Translation Assistant bij real-time vertalingen van spraak naar tekst.",
                 "installBtnText": "Installeer",
                 "launchBtnText": "Starten",
                 "voiceToText": {
                     "title": "Stem naar tekst",
-                    "caption": "Met deze functie kunt u uw stem omzetten in tekst."
+                    "caption": "Met deze functie kunt u spraak in tekst omzetten en zo snel invoeren."
                 },
                 "translation": {
                     "title": "Vertaling",
-                    "caption": "Deze functie biedt realtime vertaling naar stem. De vertaalde inhoud wordt in tekst weergegeven. U kunt de bron- en doeltalen kiezen, afgestemd op uw behoeften."
+                    "caption": "Deze functie vertaalt gesproken woorden in real-time en zet de vertaling om in tekst. Er zijn meerdere talen beschikbaar voor de brontekst en de vertaling daarvan."
                 },
                 "modalPopUp": {
                     "heading": "Aan de slag:",
-                    "point1": "Zorg ervoor dat het Lenovo Voice-pictogram in het systeemvak van Windows wordt afgebeeld.",
-                    "point2": "Open het bestand waarin u de geconverteerde tekst wilt opslaan.",
+                    "point1": "Als u Lenovo Voice opstart vanuit het menu Start, wordt het Lenovo Voice-pictogram weergegeven in het systeemvak van Windows.",
+                    "point2": "Open de toepassing waarin u tekst wilt typen.",
                     "point3": "Klik op het Lenovo Voice-pictogram in het systeemvak van Windows en selecteer Stem naar tekst.",
-                    "point4": "Selecteer de gewenste taal en klik op het pictogram van de microfoon om te beginnen.",
-                    "point5": "Plaats de cursor op de positie waar u wilt bewerken en begin te spreken.",
-                    "point6": "Klik op het Lenovo Voice-pictogram in het systeemvak van Windows en selecteer Vertalen.",
-                    "point7": "Selecteer de gewenste bron- en doeltaal.",
-                    "point8": "Stel de steminvoer vanaf een luidspreker of vanaf een microfoon in, afhankelijk van uw behoeften.",
-                    "point9": "Klik op het pictogram microfoon om te beginnen met spreken",
+                    "point4": "Selecteer de gewenste talen en klik op het pictogram van de microfoon om te beginnen.",
+                    "point5": "Plaats de cursor in de toepassing en begin met spreken.",
+                    "point6": "Klik op het Lenovo Voice-pictogram in het systeemvak van Windows en selecteer Translation.",
+                    "point7": "Selecteer de gewenste taal voor brontekst en vertaling.",
+                    "point8": "Stel naar behoefte de spraakinvoer in op Microphone of Speaker.",
+                    "point9": "Klik op het microfoonpictogram en begin met spreken.",
                     "closeText": "sluiten",
-                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
+                    "point10": "Zorg ervoor dat het Lenovo Voice-pictogram in het systeemvak van Windows wordt afgebeeld."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -2187,6 +2195,7 @@
             "description": "Neem voor hulp contact met ons op.",
             "listLenovoCommunity": "Lenovo-community",
             "listContactCustomerService": "Neem contact op met de klantenservice",
+            "listYourVirtualAssistant": "Your virtual assistant",
             "listContactUsOnWechat": "Neem contact op met ons op WeChat",
             "weChatDescription": "Vuur een vraag op ons af op WeChat en we zullen snel antwoorden",
             "listFindUs": "Vind ons op social media",
@@ -2437,7 +2446,6 @@
                 "title": "Beveiligingsstatus",
                 "deviceName1": "Apps van vertrouwde bronnen",
                 "deviceName2": "Ontwikkelaarsmodus",
-                "deviceName3": "UAC-melding",
                 "deviceName4": "Beschikbaarheid van antivirus",
                 "deviceName5": "Versleuteling van vaste schijf",
                 "deviceName6": "Beschikbaarheid van firewall",
@@ -2972,6 +2980,17 @@
             "politics": "Politiek",
             "music": "Muziek",
             "science": "Wetenschap"
+        },
+		"gaming": {
+            "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
+            "gamingFeature1": "-Computer status monitor",
+            "gamingFeature2": "-Performance mode & overclocking",
+            "gamingFeature3": "-Lighting",
+            "gamingFeature4": "-Network Boost",
+            "gamingFeature5": "-Auto Close",
+            "gamingOnly": "Gaming",
+            "gamingAndWork": "Gaming & Work",
+            "nonGaming": "Non-Gaming"
         }
     },
     "settings": {
@@ -3319,7 +3338,7 @@
         },
         "scanCompletePage": {
             "title": "System scan is complete",
-            "description": "Here is what we found on your Lenovo Vantage 720s.",
+            "description": "Here is what we found on your ",
             "scanRates": "Our scan rates your PC at: ",
             "summary": "Summary",
             "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
@@ -3354,7 +3373,7 @@
             "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
-            "title": "All is well with your Ideapad 720s",
+            "title": "All is well with your ",
             "serialNumber": "Serial number: ",
             "subTitle": "You are subscribed to Lenovo Smart Performance Service",
             "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
@@ -3507,7 +3526,8 @@
     "notification": {
         "menu": {
             "security": "Wist u dat? Zelfs als er geen antivirussoftware op uw computer is geïnstalleerd, bieden wij nog steeds basisbescherming voor uw apparaat.",
-            "connectedHomeSecurity": "Ontvang realtime controle en meldingen over de beveiliging van uw thuisnetwerk. U hoort het als eerste als een van uw slimme apparaten met een beveiligingsaanval wordt geconfronteerd."
+            "connectedHomeSecurity": "Ontvang realtime controle en meldingen over de beveiliging van uw thuisnetwerk. U hoort het als eerste als een van uw slimme apparaten met een beveiligingsaanval wordt geconfronteerd.",
+            "hardwareScan": "U kunt nu de conditie van het onderdeel van uw systeemhardware opvragen."
         }
     },
     "appsForYou": {

@@ -1,4 +1,5 @@
 {
+	"nonProduction": "You're now visiting the non-production version of Lenovo Vantage!",
     "gaming": {
         "dashboard": {
             "device": {
@@ -795,6 +796,7 @@
             "back": "TILBAKE",
             "on": "ON",
             "off": "OFF",
+            "close": "Lukk",
             "collapse": "Komprimer",
             "expand": "Utvid",
             "loader": "Henter <br> status",
@@ -876,7 +878,7 @@
                 "tips2": "Skriv inn eventuelle kommentarer nedenfor",
                 "emailAddressLabel": "Legg inn e-postadressen din hvis du ønsker å bli kontaktet av Lenovo Vantage-teamet.",
                 "emailAddress": "E-postadresse",
-                "invalidEmailMsg": "Invalid email address"
+                "invalidEmailMsg": "Ugyldig e-postadresse"
             }
         },
         "quickSettings": {
@@ -1051,7 +1053,7 @@
                     "NotGood": "<b>Batteriet er ikke i god stand.</b>",
                     "NotSupportACAdapter": "<b>Strømadapteret støttes ikke.</b>",
                     "LimitedACAdapterSupport": "<b>STRØM adapteren kan ikke gi nok strøm.</b>",
-                    "MissingDriver": "<b>Driveren for Lenovo Power Manager</b> er ikke installert, eller virker ikke som den skal. Kjør Windows Update for å installere den nyeste driveren. Du kan også installere driveren <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">herfra</a>. Etter installeringen må du starte datamaskinen på nytt.",
+                    "MissingDriver": "<b>Driveren for Lenovo Power Manager</b> er ikke installert, eller virker ikke som den skal. Kjør Windows Update, eller installer den manuelt fra <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">her</a>. Etter installeringen må du starte datamaskinen på nytt.",
                     "StoreLimitation": "<b>Batteriet kan bare lagre {{value}}% av</b> opprinnelig full ladekapasitet.",
                     "HighTemperature": "<b>Utladingen</b> har stoppet fordi <b>batteritemperaturen er for høy.</b>",
                     "TrickleCharge": "Batteriet ble <b>helt utladet</b> og må lades opp på nytt. Dette kan ta ti timer eller mer.",
@@ -1330,6 +1332,12 @@
                         "description": "Velg en strømplan for å styre datamaskinens ytelse, systemets temperatur og strømbruk.",
                         "currentPowerPlan": {
                             "label": "GJELDENDE PLAN"
+                        },
+                        "profile": {
+                            "title": "ABONNEMENTSPROFIL:",
+                            "performance": "Maks. ytelse:",
+                            "temperature": "Maks. systemtemperatur:",
+                            "usage": "Maks. strømbruk:"
                         }
                     }
                 },
@@ -1508,8 +1516,8 @@
                     "title": "Skjerm",
                     "displayColorTemperature": {
                         "title": "Skjermens fargetemperatur",
-                        "description": "Du kan justere skjermens fargetemperatur til å filtrere ut blått lys og redusere belastningen på øynene. Justerer skjermer til varmere farger fra solnedgang til soloppgang slik at du får sove bedre.",
-                        "link": {
+						"description": "Du kan justere skjermens fargetemperatur til å filtrere ut blått lys og redusere belastningen på øynene. Justerer skjermer til varmere farger fra solnedgang til soloppgang slik at du får sove bedre.",
+						"link": {
                             "click": "Klikk på",
                             "here": "her",
                             "rest": "for å endre fargetemperaturen."
@@ -1997,30 +2005,30 @@
             },
             "voice": {
                 "title": "Tale",
-                "description": "Lenovo Voice hjelper deg med å konvertere stemmen din til tekster med funksjonen for tale på tekst, og gir sann tids oversetting fra tale til tekster med Oversettelses funksjonen.",
+                "description": "Lenovo Voice hjelper deg med å konvertere stemmen din til tekst med funksjonen for tale på tekst, og gir hjelp med sanntidsoversetting av tale med Translation Assistant.",
                 "installBtnText": "Installer",
                 "launchBtnText": "Start",
                 "voiceToText": {
                     "title": "Tale til tekst",
-                    "caption": "Denne funksjonen gjør det enklere å konvertere stemmen til tekster."
+                    "caption": "Denne funksjonen gir taleskriving som konverterer tale til tekst for rask registrering av inndata."
                 },
                 "translation": {
                     "title": "Oversettelse",
-                    "caption": "Denne funksjonen gir sann tids oversettelse til stemmen. Det oversatte innholdet blir vist i tekst. Du kan velge kilde språk og mål språk etter behov."
+                    "caption": "Denne funksjonen gir hjelp til sanntidsoversettelse av tale, og alt som er oversatt vises i teksten. Flere språk er tilgjengelig for kilde- og målspråk."
                 },
                 "modalPopUp": {
                     "heading": "Kom i gang:",
-                    "point1": "Kontroller at Lenovo Voice ikonet blir vist i system skuffen i Windows.",
-                    "point2": "Åpne filen der du vil registrere den konverterte teksten.",
+                    "point1": "Start Lenovo Voice fra Start-menyen, og tale Lenovo Voice-ikonet vises i systemfeltet i Windows.",
+                    "point2": "Åpne programmet der du vil skrive inn tekst.",
                     "point3": "Klikk på Lenovo Voice ikonet i system skuffen i Windows og velg tale til tekst.",
-                    "point4": "Velg ønsket språk og klikk på mikrofon ikonet for å starte.",
-                    "point5": "Plasser markøren der du vil redigere og begynne å snakke.",
-                    "point6": "Klikk på Lenovo Voice ikonet i system skuffen i Windows og velg oversette.",
-                    "point7": "Velg ønsket kilde språk og mål språk.",
-                    "point8": "Avhengig av dine behov, må du definere tale signaler fra taler eller mikrofon.",
-                    "point9": "Klikk på mikrofon ikonet for å begynne å snakke",
+                    "point4": "Velg ønsket språk, og klikk på mikrofonikonet for å starte.",
+                    "point5": "Plasser markøren i programmet, og begynn å snakke.",
+                    "point6": "Klikk på Lenovo Voice-ikonet i systemfeltet i Windows, og velg Oversette.",
+                    "point7": "Velg ønsket kildespråk og målspråk.",
+                    "point8": "Avhengig av dine behov, må du definere taleinndata fra taler eller mikrofon.",
+                    "point9": "Klikk på mikrofonikonet for å begynne å snakke.",
                     "closeText": "Lukk",
-                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
+                    "point10": "Kontroller at Lenovo Voice ikonet blir vist i system skuffen i Windows."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -2187,6 +2195,7 @@
             "description": "Kontakt oss slik at vi kan hjelpe deg.",
             "listLenovoCommunity": "Lenovo-samfunnet",
             "listContactCustomerService": "Kontakt kundeservice",
+            "listYourVirtualAssistant": "Your virtual assistant",
             "listContactUsOnWechat": "Kontakt oss på WeChat",
             "weChatDescription": "Still oss et spørsmål på WeChat, så skal vi svare så fort vi kan",
             "listFindUs": "Finn oss på sosiale medier",
@@ -2437,7 +2446,6 @@
                 "title": "Sikkerhetstilstand",
                 "deviceName1": "Apper fra klarerte kilder",
                 "deviceName2": "Utviklermodus",
-                "deviceName3": "UAC-varsling",
                 "deviceName4": "Antivirus-tilgjengelighet",
                 "deviceName5": "Koding av harddisk",
                 "deviceName6": "Tilgjengelighet av brannmur",
@@ -2972,6 +2980,17 @@
             "politics": "Politikk",
             "music": "Musikk",
             "science": "Vitenskap"
+        },
+		"gaming": {
+            "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
+            "gamingFeature1": "-Computer status monitor",
+            "gamingFeature2": "-Performance mode & overclocking",
+            "gamingFeature3": "-Lighting",
+            "gamingFeature4": "-Network Boost",
+            "gamingFeature5": "-Auto Close",
+            "gamingOnly": "Gaming",
+            "gamingAndWork": "Gaming & Work",
+            "nonGaming": "Non-Gaming"
         }
     },
     "settings": {
@@ -3319,7 +3338,7 @@
         },
         "scanCompletePage": {
             "title": "System scan is complete",
-            "description": "Here is what we found on your Lenovo Vantage 720s.",
+            "description": "Here is what we found on your ",
             "scanRates": "Our scan rates your PC at: ",
             "summary": "Summary",
             "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
@@ -3354,7 +3373,7 @@
             "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
-            "title": "All is well with your Ideapad 720s",
+            "title": "All is well with your ",
             "serialNumber": "Serial number: ",
             "subTitle": "You are subscribed to Lenovo Smart Performance Service",
             "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
@@ -3507,7 +3526,8 @@
     "notification": {
         "menu": {
             "security": "Visste du dette? Selv om du ikke har installert antivirusprogramvare, leverer vi fortsatt grunnleggende sikkerhetsbeskyttelse for enheten din.",
-            "connectedHomeSecurity": "Få overvåking og varsler i sanntid om nettverkssikkerheten hjemme. Du er den første som får beskjed om noen av smartenhetene utsettes for et sikkerhetsangrep."
+            "connectedHomeSecurity": "Få overvåking og varsler i sanntid om nettverkssikkerheten hjemme. Du er den første som får beskjed om noen av smartenhetene utsettes for et sikkerhetsangrep.",
+            "hardwareScan": "Nå kan du få tilstandsstatusen til maskinvarekomponentene til systemet ditt."
         }
     },
     "appsForYou": {

@@ -1,4 +1,5 @@
 {
+	"nonProduction": "You're now visiting the non-production version of Lenovo Vantage!",
     "gaming": {
         "dashboard": {
             "device": {
@@ -795,6 +796,7 @@
             "back": "NAZAJ",
             "on": "ON",
             "off": "OFF",
+            "close": "Zapri",
             "collapse": "Strni",
             "expand": "Razširi",
             "loader": "Pridobivanje <br> statusa",
@@ -876,7 +878,7 @@
                 "tips2": "Spodaj napišite morebitne dodatne komentarje",
                 "emailAddressLabel": "Če želite, da ekipa programa Lenovo Vantage po potrebi vzpostavi stik z vami, vnesite svoj e-poštni naslov.",
                 "emailAddress": "E-poštni naslov",
-                "invalidEmailMsg": "Invalid email address"
+                "invalidEmailMsg": "Neveljaven e-poštni naslov"
             }
         },
         "quickSettings": {
@@ -1051,7 +1053,7 @@
                     "NotGood": "<b>Baterija ni v dobrem stanju.</b>",
                     "NotSupportACAdapter": "<b>Napajalnik ni podprt.</b>",
                     "LimitedACAdapterSupport": "<b>Napajalnik ni dovolj zmogljiv.</b>",
-                    "MissingDriver": "<b>Gonilnik za Lenovo Power Manager</b> ni nameščen ali ne deluje pravilno. Zaženite Windows Update, da namestite najnovejši gonilnik. Gonilnik lahko dobite tudi <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">tukaj</a>. Po končani namestitvi znova zaženite računalnik.",
+                    "MissingDriver": "<b>Gonilnik za Lenovo Power Manager</b> ni nameščen ali ne deluje pravilno. Zaženite Windows Update ali gonilnik namestite ročno <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">tukaj</a>. Po končani namestitvi znova zaženite računalnik.",
                     "StoreLimitation": "<b>Baterija lahko shrani samo do {{value}}%</b> svoje prvotne polne zmogljivosti polnjenja.",
                     "HighTemperature": "<b>Praznjenje</b> je ustavljeno, ker je <b>temperatura baterije previsoka.</b>",
                     "TrickleCharge": "Baterija je <b>popolnoma izpraznjena</b> in jo je treba znova napolniti. To lahko traja deset ali več ur.",
@@ -1330,6 +1332,12 @@
                         "description": "Izberite načrt porabe za nadzorovanje učinkovitosti delovanja, temperature sistema in porabo energije računalnika.",
                         "currentPowerPlan": {
                             "label": "TRENUTNI NAČRT"
+                        },
+                        "profile": {
+                            "title": "PROFIL NAČRTA:",
+                            "performance": "Največja zmogljivost:",
+                            "temperature": "Najvišja temperatura sistema:",
+                            "usage": "Najvišja poraba energije:"
                         }
                     }
                 },
@@ -1508,8 +1516,8 @@
                     "title": "Prikaz",
                     "displayColorTemperature": {
                         "title": "Barvna temperatura zaslona",
-                        "description": "Barvno temperaturo zaslona lahko prilagodite, tako da filtrirate modro svetlobo in zmanjšate utrujenost oči. Sistem prilagodi zaslon na toplejše barve med sončnim zahodom in sončnim vzhodom, da lažje zaspite.",
-                        "link": {
+						"description": "Barvno temperaturo zaslona lahko prilagodite, da filtrira modro svetlobo in tako zmanjša obremenjenost oči. Sistem prilagodi zaslon na toplejše barve med sončnim zahodom in sončnim vzhodom, da lažje zaspite.",
+						"link": {
                             "click": "Kliknite",
                             "here": "tukaj",
                             "rest": "da spremenite barvno temperaturo."
@@ -1997,30 +2005,30 @@
             },
             "voice": {
                 "title": "Glas",
-                "description": "Lenovo Voice s funkcijo pretvorbe glasu v besedilo pomaga pretvoriti glas v besedilo, s funkcijo Prevajanje pa zagotavlja prevode iz glasu v besedila v realnem času.",
+                "description": "Lenovo Voice z uporabo tehnologije za pretvorbo glasu v besedilo pretvori vaš glas v besedilo in pomaga pri sprotnem prevajanju govora s pomočnikom za prevajanje.",
                 "installBtnText": "Namestitev",
                 "launchBtnText": "Zaženite",
                 "voiceToText": {
                     "title": "Pretvorba glasu v besedilo",
-                    "caption": "Ta funkcija pomaga pretvoriti glas v besedilo."
+                    "caption": "Ta funkcija omogoča funkcijo glasovnega tipkanja, ki glas pretvori v besedilo in tako omogoča hitrejši vnos."
                 },
                 "translation": {
                     "title": "Prevod",
-                    "caption": "Ta funkcija zagotavlja prevajanje glasu v realnem času. Prevedena vsebina je prikazana kot besedilo. Izvorne in ciljne jezike lahko izberete glede na lastne potrebe."
+                    "caption": "Ta funkcija zagotavlja sprotno pomoč pri prevajanju govora in vse prevedeno bo prikazano v obliki besedila. Za izvorni in ciljni jezik je na voljo več jezikov."
                 },
                 "modalPopUp": {
                     "heading": "Začnimo:",
-                    "point1": "Prepričajte se, da je na sistemskem pladnju Windows prikazana ikona Lenovo Voice.",
-                    "point2": "Odprite datoteko, v katero želite zabeležiti pretvorjeno besedilo.",
+                    "point1": "Lenovo Voice zaženite iz menija Start. V sistemski vrstici za Windows bo prikazana ikona Lenovo Voice.",
+                    "point2": "Odprite aplikacijo, v kateri želite vnesti besedilo.",
                     "point3": "Kliknite ikono Lenovo Voice na sistemskem pladnju Windows in izberite Voice to text (Pretvorba glasu v besedilo).",
-                    "point4": "Izberite želeni jezik in kliknite ikono mikrofona, da začnete.",
-                    "point5": "Kazalec premaknite na mesto, kjer želite urejati, in začnite govoriti.",
-                    "point6": "Kliknite ikono Lenovo Voice na sistemskem pladnju Windows in izberite Translate (Prevajanje).",
-                    "point7": "Izberite želeni izvorni in ciljni jezik.",
+                    "point4": "Izberite želene jezike in kliknite ikono mikrofona, da začnete.",
+                    "point5": "Kazalec postavite v aplikacijo in začnite govoriti.",
+                    "point6": "Kliknite ikono Lenovo Voice v sistemski vrstici za Windows in izberite možnost Translation (Prevajanje).",
+                    "point7": "Izberite izvorni in ciljni jezik.",
                     "point8": "Zvočni vhod nastavite na zvočnik ali mikrofon (odvisno od vaših potreb).",
-                    "point9": "Če želite začeti govoriti, kliknite ikono mikrofona",
+                    "point9": "Če želite začeti govoriti, kliknite ikono mikrofona.",
                     "closeText": "zapri",
-                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
+                    "point10": "Prepričajte se, da je na sistemskem pladnju Windows prikazana ikona Lenovo Voice."
                 },
                 "modalInstallationFailed": {
                     "btnText": "V redu",
@@ -2187,6 +2195,7 @@
             "description": "Za pomoč se obrnite na nas.",
             "listLenovoCommunity": "Skupnost Lenovo",
             "listContactCustomerService": "Obrnite se na storitve za stranke",
+            "listYourVirtualAssistant": "Your virtual assistant",
             "listContactUsOnWechat": "Pišite nam WeChat",
             "weChatDescription": "Vprašanje nam pošljite na WeChat in poskrbeli bomo za hiter odgovor",
             "listFindUs": "Poiščite nas na družabnih medijih",
@@ -2437,7 +2446,6 @@
                 "title": "Varnost zdravje",
                 "deviceName1": "Aplikacije iz zaupanja vrednih virov",
                 "deviceName2": "Način za razvijalce",
-                "deviceName3": "UAC obvestilo",
                 "deviceName4": "Razpoložljivost protivirusnih programov",
                 "deviceName5": "Šifriranje trdega diska",
                 "deviceName6": "Razpoložljivost požarnega zidu",
@@ -2972,6 +2980,17 @@
             "politics": "Politika",
             "music": "Glasba",
             "science": "Znanost"
+        },
+		"gaming": {
+            "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
+            "gamingFeature1": "-Computer status monitor",
+            "gamingFeature2": "-Performance mode & overclocking",
+            "gamingFeature3": "-Lighting",
+            "gamingFeature4": "-Network Boost",
+            "gamingFeature5": "-Auto Close",
+            "gamingOnly": "Gaming",
+            "gamingAndWork": "Gaming & Work",
+            "nonGaming": "Non-Gaming"
         }
     },
     "settings": {
@@ -3319,7 +3338,7 @@
         },
         "scanCompletePage": {
             "title": "System scan is complete",
-            "description": "Here is what we found on your Lenovo Vantage 720s.",
+            "description": "Here is what we found on your ",
             "scanRates": "Our scan rates your PC at: ",
             "summary": "Summary",
             "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
@@ -3354,7 +3373,7 @@
             "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
-            "title": "All is well with your Ideapad 720s",
+            "title": "All is well with your ",
             "serialNumber": "Serial number: ",
             "subTitle": "You are subscribed to Lenovo Smart Performance Service",
             "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
@@ -3507,7 +3526,8 @@
     "notification": {
         "menu": {
             "security": "Ali veste? Čeprav nimate nameščene protivirusne programske opreme, še vedno zagotavljamo osnovno varnostno zaščito za vašo napravo.",
-            "connectedHomeSecurity": "Zagotovite si nadzor v realnem času in prejemajte opozorila o varnosti omrežja doma. Prvi boste vedeli, ali je varnost katere od vaših pametnih naprav napadena."
+            "connectedHomeSecurity": "Zagotovite si nadzor v realnem času in prejemajte opozorila o varnosti omrežja doma. Prvi boste vedeli, ali je varnost katere od vaših pametnih naprav napadena.",
+            "hardwareScan": "Zdaj lahko pridobite stanje komponent strojne opreme vašega sistema."
         }
     },
     "appsForYou": {

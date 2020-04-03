@@ -46,22 +46,19 @@ export class ModalLicenseComponent implements OnInit, OnDestroy {
 			}
 		});
 		this.timerService.start();
-		setTimeout(() => {
-			document.getElementById('license-dialog').parentElement.parentElement.parentElement.parentElement.focus();
-			document.getElementById('license-dialog-empty').focus();
-		}, 0);
+		setTimeout(() => { this.initModalFocus(); }, 0);
 	}
 
 	ngOnDestroy() {
-        const pageViewMetrics = {
+		const pageViewMetrics = {
 			ItemType: 'PageView',
 			PageName: this.licenseModalMetrics.pageName,
 			PageContext: this.licenseModalMetrics.pageContext,
 			PageDuration: this.timerService.stop(),
 			OnlineStatus: ''
 		};
-        this.sendMetricsAsync(pageViewMetrics);
-    }
+		this.sendMetricsAsync(pageViewMetrics);
+	}
 
 	setIframeUrl() {
 		const iframe: any = document.querySelector('#license-agreement-iframe');
@@ -80,17 +77,34 @@ export class ModalLicenseComponent implements OnInit, OnDestroy {
 
 	sendMetricsAsync(data: any) {
 		if (this.metrics && this.metrics.sendAsync) {
-            this.metrics.sendAsync(data);
-        } else {}
+			this.metrics.sendAsync(data);
+		} else { }
 	}
 
 	closeModal() {
 		this.activeModal.close('close');
 	}
 
+	initModalFocus() {
+		(document.querySelector('.license-Modal') as HTMLElement).focus();
+	}
+
 	@HostListener('window: focus')
 	onFocus(): void {
-		const modal = document.querySelector('.license-Modal') as HTMLElement;
-		modal.focus();
+		if (!this.licenseModalMetrics || !this.licenseModalMetrics.closeButton || document.activeElement.id !== `btn-${this.licenseModalMetrics.closeButton}`) {
+			this.initModalFocus();
+		}
+	}
+
+	@HostListener('keydown', ['$event'])
+	onKeyDown(event: KeyboardEvent) {
+		if (!event.shiftKey &&
+			event.key === 'Tab' &&
+			this.type !== 'txt' &&
+			document.activeElement &&
+			document.activeElement.className.includes('close-btn')
+		) {
+			(document.getElementById('license-agreement-iframe') as HTMLIFrameElement).contentWindow.document.body.focus();
+		}
 	}
 }

@@ -36,7 +36,7 @@ export class MetricsDirective {
 	@Input('vtrMetrics') composedItem: any;
 	@Input() metricsItem: string;
 	@Input() metricsEvent: string;
-	@Input() metricsValue: string;
+	@Input() metricsValue: any;
 	@Input() metricsParent: string;
 	@Input() metricsParam: string;
 
@@ -176,7 +176,7 @@ export class MetricsDirective {
 
 	@HostListener('click', ['$event'])
 	async onclick(event) {
-		if (!this.metrics) {
+		if (!this.metrics || this.composedItem === false) {
 			return;
 		}
 

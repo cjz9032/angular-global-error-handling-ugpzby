@@ -1,4 +1,5 @@
 {
+	"nonProduction": "You're now visiting the non-production version of Lenovo Vantage!",
     "gaming": {
         "dashboard": {
             "device": {
@@ -795,6 +796,7 @@
             "back": "VISSZA",
             "on": "ON",
             "off": "OFF",
+            "close": "Bezárás",
             "collapse": "Összecsukás",
             "expand": "Kibontás",
             "loader": "Állapot <br> lekérése",
@@ -876,7 +878,7 @@
                 "tips2": "Ha van további megjegyzése, írja le alább.",
                 "emailAddressLabel": "Ha szeretné, hogy a Lenovo Vantage csapata felvehesse Önnel a kapcsolatot, adja meg az e-mail-címét.",
                 "emailAddress": "E-mail-cím",
-                "invalidEmailMsg": "Invalid email address"
+                "invalidEmailMsg": "Érvénytelen e-mail-cím"
             }
         },
         "quickSettings": {
@@ -1051,7 +1053,7 @@
                     "NotGood": "<b>Az akkumulátor nincs jó állapotban.</b>",
                     "NotSupportACAdapter": "<b>A hálózati adapter nem támogatott.</b>",
                     "LimitedACAdapterSupport": "<b>A hálózati adapter nem képes elegendő energiát szolgáltatni.</b>",
-                    "MissingDriver": "<b>A Lenovo Power Manager illesztőprogramja</b> nincs telepítve, vagy nem működik megfelelően. Futtassa a Windows Update programot a legújabb illesztőprogram telepítéséhez. A <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">helyről letöltött illesztőprogramot itt</a> is telepítheti. A telepítés után indítsa újra a számítógépet.",
+                    "MissingDriver": "<b>A Lenovo Power Manager illesztőprogramja</b> nincs telepítve, vagy nem működik megfelelően. Kérjük, futtassa a Windows Update szolgáltatást, vagy telepítse manuálisan <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">innen</a>. A telepítés után indítsa újra a számítógépet.",
                     "StoreLimitation": "<b>Az akkumulátor csak az eredeti teljes töltési kapacitás {{value}}%-át</b> tudja tárolni.",
                     "HighTemperature": "A <b>lemerítés</b> leállt, mert az <b>akkumulátor túl meleg.</b>",
                     "TrickleCharge": "Az akkumulátor <b>teljesen lemerült</b>, fel kell tölteni. Ez akár 10 órán át vagy tovább is eltarthat.",
@@ -1330,6 +1332,12 @@
                         "description": "Válasszon egy energiasémát, amely vezérli a számítógép teljesítményét, a rendszer hőmérsékletét és az energiafelhasználást.",
                         "currentPowerPlan": {
                             "label": "AKTUÁLIS SÉMA"
+                        },
+                        "profile": {
+                            "title": "SÉMAPROFIL:",
+                            "performance": "Teljesítmény maximalizálása:",
+                            "temperature": "Rendszerhőmérséklet maximalizálása:",
+                            "usage": "Energiahasználat maximalizálása:"
                         }
                     }
                 },
@@ -1508,8 +1516,8 @@
                     "title": "Megjelenítés",
                     "displayColorTemperature": {
                         "title": "A képernyő színhőmérséklete",
-                        "description": "Beállíthatja a képernyő színhőmérsékletét oly módon, hogy a kék fény kiszűrésével csökkentse a szem igénybevételét. Napnyugta és napkelte között állítson be melegebb színeket, hogy segítse az alvást.",
-                        "link": {
+						"description": "Beállíthatja a képernyő színhőmérsékletét oly módon, hogy a kék fény kiszűrésével csökkentse a szem igénybevételét. Napnyugta és napkelte között állítson be melegebb színeket, hogy segítse az alvást.",
+						"link": {
                             "click": "Kattintson",
                             "here": "innen",
                             "rest": "a színhőmérséklet beállításához."
@@ -1997,30 +2005,30 @@
             },
             "voice": {
                 "title": "Hang",
-                "description": "A Lenovo Voice „Hang szöveggé” funkciójával szöveggé alakíthatja át a hangot. A Fordítás funkció valós időben biztosít a hang szöveggé alakításával.",
+                "description": "A Lenovo Voice „Hang szöveggé” funkciójával írott szöveggé alakíthatja a diktált tartalmakat, a Translation Assistant segítségével pedig valós időben lefordíthatja a beszédhangot.",
                 "installBtnText": "Telepítse",
                 "launchBtnText": "Indítás",
                 "voiceToText": {
                     "title": "Hang szöveggé",
-                    "caption": "A funkcióval szöveggé alakítható a hangos bevitel."
+                    "caption": "Ezzel a funkcióval a hangjával gépelhet: a rendszer képes írott szöveggé alakítani a diktált tartalmakat, így gyorsabban beviheti őket a gépbe."
                 },
                 "translation": {
                     "title": "Fordítás",
-                    "caption": "A funkció a hang valós idejű fordítását biztosítja. A lefordított tartalom szövegként jelenik meg. A forrás- és a célnyelvet igény szerint választhatja ki."
+                    "caption": "A funkcióhoz valós idejű fordítási támogatás is tartozik, a lefordított szöveg egyből írásos formában jelenik meg. Több különböző forrás- és célnyelv érhető el."
                 },
                 "modalPopUp": {
                     "heading": "Kezdő lépések:",
-                    "point1": "Győződjön meg arról, hogy a Lenovo Voice ikonja látható a Windows tálcáján.",
-                    "point2": "Nyissa meg azt a fájlt, amelybe rögzíteni szeretné a konvertált szöveget.",
+                    "point1": "Indítsa el a Lenovo Voice funkciót a Start menüből. Ezt követően a Lenovo Voice ikonja meg fog jelenni a Windows tálcáján.",
+                    "point2": "Nyissa meg az alkalmazást, amelybe szeretne szöveget bevinni.",
                     "point3": "Kattintson a Lenovo Voice ikonjára a Windows tálcáján, és válassza a Hang szöveggé parancsot.",
-                    "point4": "Válassza ki a kívánt nyelvet, és a kezdéshez kattintson a mikrofon ikonra.",
-                    "point5": "Vigye a kurzort a szerkesztés helyére, és kezdjen beszélni.",
+                    "point4": "Válassza ki a kívánt nyelveket, és a kezdéshez kattintson a mikrofon ikonra.",
+                    "point5": "Vigye a kurzort az alkalmazásba, majd kezdjen el beszélni.",
                     "point6": "Kattintson a Lenovo Voice ikonjára a Windows tálcáján, és válassza a Fordítás parancsot.",
                     "point7": "Válassza ki a forrásnyelvet és a célnyelvet.",
                     "point8": "Szükség szerint állítsa be a hangbemenetet (Hangszóró vagy Mikrofon).",
-                    "point9": "Kattintson a mikrofon ikonra, és kezdjen beszélni",
+                    "point9": "Kattintson a mikrofon ikonra, és kezdjen beszélni-",
                     "closeText": "bezárás",
-                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
+                    "point10": "Győződjön meg arról, hogy a Lenovo Voice ikonja látható a Windows tálcáján."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -2187,6 +2195,7 @@
             "description": "Lépjen kapcsolatba velünk, hogy segíthessünk.",
             "listLenovoCommunity": "Lenovo Közösség",
             "listContactCustomerService": "Kapcsolatfelvétel az ügyfélszolgálattal",
+            "listYourVirtualAssistant": "Your virtual assistant",
             "listContactUsOnWechat": "Kapcsolatfelvétel WeChaten",
             "weChatDescription": "Küldje át kérdését WeChaten, és gyorsan megválaszoljuk",
             "listFindUs": "Találjon meg minket a közösségi médiában",
@@ -2437,7 +2446,6 @@
                 "title": "Biztonsági állapot",
                 "deviceName1": "Megbízható forrásból származó alkalmazások",
                 "deviceName2": "Fejlesztői üzemmód",
-                "deviceName3": "UAC-értesítés",
                 "deviceName4": "Vírusvédelem elérhetősége",
                 "deviceName5": "Merevlemez-titkosítás",
                 "deviceName6": "Tűzfal elérhetősége",
@@ -2972,6 +2980,17 @@
             "politics": "Politika",
             "music": "Zene",
             "science": "Tudomány"
+        },
+		"gaming": {
+            "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
+            "gamingFeature1": "-Computer status monitor",
+            "gamingFeature2": "-Performance mode & overclocking",
+            "gamingFeature3": "-Lighting",
+            "gamingFeature4": "-Network Boost",
+            "gamingFeature5": "-Auto Close",
+            "gamingOnly": "Gaming",
+            "gamingAndWork": "Gaming & Work",
+            "nonGaming": "Non-Gaming"
         }
     },
     "settings": {
@@ -3319,7 +3338,7 @@
         },
         "scanCompletePage": {
             "title": "System scan is complete",
-            "description": "Here is what we found on your Lenovo Vantage 720s.",
+            "description": "Here is what we found on your ",
             "scanRates": "Our scan rates your PC at: ",
             "summary": "Summary",
             "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
@@ -3354,7 +3373,7 @@
             "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
-            "title": "All is well with your Ideapad 720s",
+            "title": "All is well with your ",
             "serialNumber": "Serial number: ",
             "subTitle": "You are subscribed to Lenovo Smart Performance Service",
             "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
@@ -3507,7 +3526,8 @@
     "notification": {
         "menu": {
             "security": "Tudta ezt? Ha Ön semmilyen antivírus szoftvert nem telepített az eszközére, mi akkor is gondoskodunk egy alapvető biztonsági védelemről.",
-            "connectedHomeSecurity": "Gondoskodjon otthoni hálózatának valós idejű felügyeletéről és az azonnali értesítésekről. Ön fog elsőként értesülni arról, ha valamelyik okos eszközének biztonságát valamilyen fenyegetés veszélyezteti."
+            "connectedHomeSecurity": "Gondoskodjon otthoni hálózatának valós idejű felügyeletéről és az azonnali értesítésekről. Ön fog elsőként értesülni arról, ha valamelyik okos eszközének biztonságát valamilyen fenyegetés veszélyezteti.",
+            "hardwareScan": "Mostantól megtekintheti a rendszer hardvereszközeinek az állapotát."
         }
     },
     "appsForYou": {

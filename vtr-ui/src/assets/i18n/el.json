@@ -1,4 +1,5 @@
 {
+	"nonProduction": "You're now visiting the non-production version of Lenovo Vantage!",
     "gaming": {
         "dashboard": {
             "device": {
@@ -795,6 +796,7 @@
             "back": "ΠΙΣΩ",
             "on": "ON",
             "off": "OFF",
+            "close": "Κλείσιμο",
             "collapse": "Σύμπτυξη",
             "expand": "Επέκταση",
             "loader": "Λήψη της κατάστασης <br>",
@@ -876,7 +878,7 @@
                 "tips2": "Παρακαλούμε αφήστε τυχόν επιπλέον σχόλια παρακάτω",
                 "emailAddressLabel": "Παρακαλούμε αφήστε τη διεύθυνση email σας, εάν θα θέλατε να επικοινωνήσει μαζί σας η ομάδα Lenovo Vantage.",
                 "emailAddress": "Διεύθυνση email",
-                "invalidEmailMsg": "Invalid email address"
+                "invalidEmailMsg": "Μη έγκυρη διεύθυνση email"
             }
         },
         "quickSettings": {
@@ -1051,7 +1053,7 @@
                     "NotGood": "<b>Η μπαταρία δεν είναι σε καλή κατάσταση.</b>",
                     "NotSupportACAdapter": "<b>Δεν υποστηρίζεται ο μετασχηματιστής εναλλασσόμενου ρεύματος.</b>",
                     "LimitedACAdapterSupport": "<b>Ο μετασχηματιστής AC δεν μπορεί να παρέχει επαρκή ισχύ.</b>",
-                    "MissingDriver": "<b>Το πρόγραμμα οδήγησης του Lenovo Power Manager</b> δεν είναι εγκατεστημένο ή δεν λειτουργεί σωστά. Εκτελέστε το Windows Update για να εγκαταστήσετε το πιο πρόσφατο πρόγραμμα οδήγησης. Μπορείτε επίσης να εγκαταστήσετε το πρόγραμμα οδήγησης από <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">εδώ</a>. Μετά την εγκατάσταση, επανεκκινήστε τον υπολογιστή σας.",
+                    "MissingDriver": "<b>Το πρόγραμμα οδήγησης του Lenovo Power Manager</b> δεν είναι εγκατεστημένο ή δεν λειτουργεί σωστά. Εκτελέστε το Windows Update ή εγκαταστήστε το χειροκίνητα από <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">εδώ</a>. Μετά την εγκατάσταση, επανεκκινήστε τον υπολογιστή σας.",
                     "StoreLimitation": "<b>Η μπαταρία μπορεί να αποθηκεύσει μόνο το {{value}}% από</b> την αρχική της χωρητικότητα πλήρους φόρτισης.",
                     "HighTemperature": "Η <b>αποφόρτιση</b> διακόπηκε, επειδή η <b>θερμοκρασία της μπαταρίας είναι πολύ υψηλή.</b>",
                     "TrickleCharge": "Η μπαταρία <b>αποφορτίστηκε εντελώς</b> και πρέπει να ξαναφορτιστεί. Η διαδικασία ενδέχεται να διαρκέσει δέκα ώρες ή και περισσότερο.",
@@ -1330,6 +1332,12 @@
                         "description": "Επιλέξτε ένα σχέδιο παροχής ενέργειας για να ελέγξετε την απόδοση, τη θερμοκρασία του συστήματος και τη χρήση ενέργειας του υπολογιστή.",
                         "currentPowerPlan": {
                             "label": "ΤΡΕΧΟΝ ΣΧΕΔΙΟ"
+                        },
+                        "profile": {
+                            "title": "ΠΡΟΦΙΛ ΣΧΕΔΙΟΥ:",
+                            "performance": "Μέγιστη απόδοση:",
+                            "temperature": "Μέγιστη θερμοκρασία συστήματος:",
+                            "usage": "Μέγιστη χρήση ενέργειας:"
                         }
                     }
                 },
@@ -1508,8 +1516,8 @@
                     "title": "Παρουσίαση",
                     "displayColorTemperature": {
                         "title": "Θερμοκρασία χρωμάτων οθόνης",
-                        "description": "Μπορείτε να ρυθμίσετε τη θερμοκρασία των χρωμάτων της οθόνης για φιλτράρισμα του μπλε φωτός και μείωση της κόπωσης των ματιών. Ρυθμίστε τις οθόνες σε θερμότερα χρώματα για το χρονικό διάστημα από τη δύση έως την ανατολή του ηλίου ώστε να έχετε καλύτερο ύπνο.",
-                        "link": {
+						"description": "Μπορείτε να ρυθμίσετε τη θερμοκρασία των χρωμάτων της οθόνης για φιλτράρισμα του μπλε φωτός και μείωση της κόπωσης των ματιών. Ρυθμίστε τις οθόνες σε θερμότερα χρώματα για το χρονικό διάστημα από τη δύση έως την ανατολή του ηλίου ώστε να έχετε καλύτερο ύπνο.",
+						"link": {
                             "click": "Κάντε κλικ",
                             "here": "εδώ",
                             "rest": "για να αλλάξετε τη θερμοκρασία των χρωμάτων."
@@ -1997,30 +2005,30 @@
             },
             "voice": {
                 "title": "Φωνή",
-                "description": "Το Lenovo Voice μετατρέπει τη φωνή σας σε κείμενο με τη λειτουργία \"Φωνή σε κείμενο\" και παρέχει μετάφραση σε πραγματικό χρόνο από φωνή σε κείμενο με τη λειτουργία \"Μετάφραση\".",
+                "description": "Η εφαρμογή Lenovo Voice μετατρέπει τη φωνή σας σε κείμενο με τη λειτουργία Φωνή σε κείμενο και παρέχει μετάφρασης φωνής σε πραγματικό χρόνο με το Translation Assistant.",
                 "installBtnText": "Εγκατάσταση",
                 "launchBtnText": "Εκκίνηση",
                 "voiceToText": {
                     "title": "Φωνή σε κείμενο",
-                    "caption": "Αυτή η λειτουργία μετατρέπει τη φωνή σας σε κείμενο."
+                    "caption": "Αυτή η λειτουργία παρέχει λειτουργία φωνητικής πληκτρολόγησης που μετατρέπει τη φωνή σε κείμενο για γρήγορη εισαγωγή."
                 },
                 "translation": {
                     "title": "Μετάφραση",
-                    "caption": "Αυτή η λειτουργία παρέχει μετάφραση σε πραγματικό χρόνο στο περιεχόμενο που εκφωνείται. Το μεταφρασμένο περιεχόμενο εμφανίζεται με τη μορφή κειμένου. Μπορείτε να επιλέξετε τη γλώσσα-πηγή και τη γλώσσα-στόχο, ανάλογα με τις ανάγκες σας."
+                    "caption": "Αυτή η λειτουργία παρέχει βοήθεια μετάφρασης ομιλίας σε πραγματικό χρόνο, ενώ όλο το μεταφρασμένο περιεχόμενο εμφανίζεται με τη μορφή κειμένου. Για τη γλώσσα πηγής και στόχου διατίθενται πολλαπλές γλώσσες."
                 },
                 "modalPopUp": {
                     "heading": "Για να ξεκινήσετε:",
-                    "point1": "Βεβαιωθείτε ότι το εικονίδιο του Lenovo Voice εμφανίζεται στη γραμμή εργασιών των Windows.",
-                    "point2": "Ανοίξτε το αρχείο στο οποίο θέλετε να καταγραφεί το κείμενο που θα μετατραπεί.",
+                    "point1": "Ξεκινήστε την εφαρμογή Lenovo Voice από το Μενού έναρξης και το εικονίδιο της εφαρμογής Lenovo Voice εμφανίζεται στον δίσκο του συστήματος των Windows.",
+                    "point2": "Ανοίξτε την εφαρμογή στην οποία θέλετε να πληκτρολογήσετε κείμενο.",
                     "point3": "Κάντε κλικ στο εικονίδιο του Lenovo Voice στη γραμμή εργασιών των Windows και επιλέξτε \"Φωνή σε κείμενο (Voice to text)\".",
-                    "point4": "Επιλέξτε την επιθυμητή γλώσσα και κάντε κλικ στο εικονίδιο μικροφώνου για να ξεκινήσετε.",
-                    "point5": "Τοποθετήστε τον δρομέα στο σημείο που θέλετε να επεξεργαστείτε και αρχίστε να μιλάτε.",
-                    "point6": "Κάντε κλικ στο εικονίδιο του Lenovo Voice στη γραμμή εργασιών των Windows και επιλέξτε \"Μετάφραση (Translate)\".",
-                    "point7": "Επιλέξτε την επιθυμητή γλώσσα-πηγή και γλώσσα-στόχο.",
+                    "point4": "Επιλέξτε τις γλώσσες ανάλογα με τις ανάγκες σας και κάντε κλικ στο εικονίδιο του μικροφώνου για να ξεκινήσετε.",
+                    "point5": "Τοποθετήστε τον δείκτη στην εφαρμογή και αρχίστε να μιλάτε.",
+                    "point6": "Κάντε κλικ στο εικονίδιο της εφαρμογής Lenovo Voice στον δίσκο του συστήματος των Windows και επιλέξτε Μετάφραση (Translation).",
+                    "point7": "Επιλέξτε τη γλώσσα πηγής και τη γλώσσα στόχου.",
                     "point8": "Ανάλογα με τις ανάγκες σας, ορίστε την είσοδο φωνής από το Ηχείο ή από το Μικρόφωνο.",
-                    "point9": "Κάντε κλικ στο εικονίδιο μικροφώνου για να αρχίσετε να μιλάτε",
+                    "point9": "Κάντε κλικ στο εικονίδιο του μικροφώνου για να αρχίσετε να μιλάτε.",
                     "closeText": "κλείσιμο",
-                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
+                    "point10": "Βεβαιωθείτε ότι το εικονίδιο του Lenovo Voice εμφανίζεται στη γραμμή εργασιών των Windows."
                 },
                 "modalInstallationFailed": {
                     "btnText": "OK",
@@ -2187,6 +2195,7 @@
             "description": "Επικοινωνήστε μαζί μας για να σας βοηθήσουμε.",
             "listLenovoCommunity": "Κοινότητα Lenovo",
             "listContactCustomerService": "Επικοινωνήστε με την εξυπηρέτηση πελατών",
+            "listYourVirtualAssistant": "Your virtual assistant",
             "listContactUsOnWechat": "Επικοινωνήστε μαζί μας στο WeChat",
             "weChatDescription": "Ρωτήστε μας μια ερώτηση στο WeChat και να είστε σίγουροι ότι θα ανταποκριθούμε γρήγορα",
             "listFindUs": "Βρείτε μας στα κοινωνικά μέσα ενημέρωσης",
@@ -2437,7 +2446,6 @@
                 "title": "Εύρυθμη λειτουργία ασφαλείας",
                 "deviceName1": "Εφαρμογές από αξιόπιστες πηγές",
                 "deviceName2": "Λειτουργία προγραμματιστή",
-                "deviceName3": "Ειδοποίηση UAC",
                 "deviceName4": "Διαθεσιμότητα προστασίας από ιούς",
                 "deviceName5": "Κρυπτογράφηση σκληρού δίσκου",
                 "deviceName6": "Διαθεσιμότητα τείχους προστασίας",
@@ -2972,6 +2980,17 @@
             "politics": "Πολιτική",
             "music": "Μουσική",
             "science": "Επιστήμη"
+        },
+		"gaming": {
+            "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
+            "gamingFeature1": "-Computer status monitor",
+            "gamingFeature2": "-Performance mode & overclocking",
+            "gamingFeature3": "-Lighting",
+            "gamingFeature4": "-Network Boost",
+            "gamingFeature5": "-Auto Close",
+            "gamingOnly": "Gaming",
+            "gamingAndWork": "Gaming & Work",
+            "nonGaming": "Non-Gaming"
         }
     },
     "settings": {
@@ -3319,7 +3338,7 @@
         },
         "scanCompletePage": {
             "title": "System scan is complete",
-            "description": "Here is what we found on your Lenovo Vantage 720s.",
+            "description": "Here is what we found on your ",
             "scanRates": "Our scan rates your PC at: ",
             "summary": "Summary",
             "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
@@ -3354,7 +3373,7 @@
             "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
-            "title": "All is well with your Ideapad 720s",
+            "title": "All is well with your ",
             "serialNumber": "Serial number: ",
             "subTitle": "You are subscribed to Lenovo Smart Performance Service",
             "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
@@ -3507,7 +3526,8 @@
     "notification": {
         "menu": {
             "security": "Γνωρίζετε; Ακόμη και αν δεν έχετε εγκατεστημένο λογισμικό προστασίας από ιούς, συνεχίζουμε να παρέχουμε βασική προστασία ασφαλείας για τη συσκευή σας.",
-            "connectedHomeSecurity": "Αποκτήστε παρακολούθηση και ειδοποιήσεις σε πραγματικό χρόνο σχετικά με την ασφάλεια του δικτύου σας στο σπίτι. Θα είστε ο πρώτος που θα μάθετε εάν κάποια από τις έξυπνες συσκευές σας αντιμετωπίζει επίθεση ασφαλείας."
+            "connectedHomeSecurity": "Αποκτήστε παρακολούθηση και ειδοποιήσεις σε πραγματικό χρόνο σχετικά με την ασφάλεια του δικτύου σας στο σπίτι. Θα είστε ο πρώτος που θα μάθετε εάν κάποια από τις έξυπνες συσκευές σας αντιμετωπίζει επίθεση ασφαλείας.",
+            "hardwareScan": "Τώρα, μπορείτε να δείτε την κατάσταση εύρυθμης λειτουργίας του εξαρτήματος του συστήματός σας."
         }
     },
     "appsForYou": {

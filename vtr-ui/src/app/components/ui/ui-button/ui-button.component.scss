@@ -8,25 +8,13 @@
 		position: relative;
 
 		.button {
-			@media #{$black-on-white} {
-
-				border: 0.1rem solid $dark;
-
-			}
-			@media #{$white-on-black} {
-
-				border: 0.1rem solid $light;
-
-			}
-			@media #{$mediaquery_X4} {
-				min-width: 10rem;
-			}
+			
 			padding: 0 2.5rem;
 			position: relative;
 			min-height: 5.2rem;
 			border-radius: 3rem;
 			min-width: 12rem;
-			background: $gradient_main;
+			background: transparent $gradient_blue 0% 0% no-repeat padding-box;;
 			border: none;
 			color: $light;
 			font-size: $fontsize_xs;
@@ -65,6 +53,16 @@
 				letter-spacing: 0;
 				cursor: pointer;
 			}
+			@media #{$black-on-white} {
+				border: 0.1rem solid $dark;
+
+			}
+			@media #{$white-on-black} {
+				border: 0.1rem solid $light;
+			}
+			@media #{$mediaquery_X4} {
+				min-width: 10rem;
+			}
 		}
 
 		.text-upper-case {
@@ -87,6 +85,16 @@
 			.text {
 				cursor: default;
 				opacity: 0.5;
+			}
+			@media #{$black-on-white} {
+				border: 0.1rem solid $high-contrast-white-disabled !important;
+		
+				
+			}
+			@media #{$white-on-black} {
+				border: 0.1rem solid $high-contrast-black-disabled !important;
+		
+				
 			}
 		}
 
@@ -130,14 +138,14 @@
 		.btn-gray {
 			background: $gradient_gray;
 			color: $shade_blue;
-			border: 0.1rem solid $grey_dark;
+			box-shadow: 0 0 0 0.1rem $grey_dark;
 			&:hover {
 				background: linear-gradient(90deg, $grey_lighter 0%, $grey_lighter 100%);
 			}
 		}
 		.btn-in-red-bg {
 			color: $stop_dark;
-			border: 0.1rem solid $alt;
+			box-shadow: 0 0 0 0.1rem $alt;
 			&:focus::after {
 				border: thin solid $orange;
 			}

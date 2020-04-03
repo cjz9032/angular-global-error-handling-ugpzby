@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, SimpleChanges, OnChanges } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { DropDownInterval } from 'src/app/data-models/common/drop-down-interval.model';
 import { DPMDropDownInterval } from 'src/app/data-models/common/dpm-drop-down-interval.model';
 
 @Component({
@@ -11,29 +10,32 @@ import { DPMDropDownInterval } from 'src/app/data-models/common/dpm-drop-down-in
 export class UiDpmDropdownComponent implements OnInit {
 
 	@Input() dropDownId;
+	@Input() label = '';
 	@Input() list: DPMDropDownInterval[];
 	@Input() value: any;
 	@Input() disabled = false;
 	@Output() change: EventEmitter<any> = new EventEmitter<any>();
 	public isDropDownOpen = false;
 	public text: string;
+	public refocus: boolean = true;
+	public itemBlur: boolean = true;
 	constructor(private translate: TranslateService) { }
 
 	ngOnInit() {
-        this.setDropDownValue();
-    }
+		this.setDropDownValue();
+	}
 
 	ngOnChanges(changes: SimpleChanges) {
 		// only run when property "data" changed
 		if (changes['value']) {
-            this.setDropDownValue();
-        }
+			this.setDropDownValue();
+		}
 	}
 
 
 	private setDropDownValue() {
 		if (this.list) {
-			const interval = this.list.find((ddi: DropDownInterval) => {
+			const interval = this.list.find((ddi: DPMDropDownInterval) => {
 				return (this.value === ddi.value);
 			});
 			if (interval) {
@@ -46,17 +48,19 @@ export class UiDpmDropdownComponent implements OnInit {
 		}
 	}
 
-	public toggle() {
+	public toggle(toggle = null) {
 		if (!this.disabled) {
 			this.isDropDownOpen = !this.isDropDownOpen;
 		}
+		if (toggle) {
+			toggle.focus();
+		}
 	}
 
-	public select(event: DropDownInterval, toggle) {
+	public select(event: DPMDropDownInterval) {
 		this.value = event.value;
 		this.text = event.text;
 		this.change.emit(event);
-		toggle.focus();
 	}
 
 	public customCamelCase(value: string) {
@@ -72,5 +76,35 @@ export class UiDpmDropdownComponent implements OnInit {
 		} else {
 			return value.charAt(0).toUpperCase() + value.slice(1);
 		}
+	}
+
+	public onItemBlur(isLast) {
+		if (this.itemBlur) {
+			if (isLast) {
+				this.toggle();
+			}
+		} else {
+			this.itemBlur = true;
+		}
+
+	}
+
+	public onDropdownFocus(toggle) {
+		if (this.refocus) {
+			this.refocus = false;
+			toggle.blur();
+			setTimeout(() => {
+				toggle.focus();
+			}, 100);
+		} else {
+			this.refocus = true;
+		}
+	}
+
+	public toggleByItem(last, toggleBtn = null) {
+		if (last) {
+			this.itemBlur = false;
+		}
+		this.toggle(toggleBtn);
 	}
 }

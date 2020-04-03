@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, SimpleChanges, OnChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { CommonService } from 'src/app/services/common/common.service';
 
 @Component({
@@ -137,11 +137,11 @@ export class UiTimePickerComponent implements OnInit, OnChanges {
 	}
 
 	handleKBNavigations(event) {
-        switch (event.keyCode) {
+		switch (event.keyCode) {
 			case this.keyCode.SPACE:
 			case this.keyCode.RETURN:
 				this.onToggleDropDown();
 				break;
 		}
-    }
+	}
 }

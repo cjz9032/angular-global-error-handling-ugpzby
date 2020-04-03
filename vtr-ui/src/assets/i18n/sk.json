@@ -1,4 +1,5 @@
 {
+	"nonProduction": "You're now visiting the non-production version of Lenovo Vantage!",
     "gaming": {
         "dashboard": {
             "device": {
@@ -795,6 +796,7 @@
             "back": "SPÄŤ",
             "on": "ON",
             "off": "OFF",
+            "close": "Zatvoriť",
             "collapse": "Zbaliť",
             "expand": "Rozbaliť",
             "loader": "Stav <br> načítania",
@@ -876,7 +878,7 @@
                 "tips2": "Nižšie uveďte doplňujúce komentáre",
                 "emailAddressLabel": "Ak chcete, aby vás tím Lenovo Vantage kontaktoval, zanechajte svoju e-mailovú adresu.",
                 "emailAddress": "E-mailová adresa",
-                "invalidEmailMsg": "Invalid email address"
+                "invalidEmailMsg": "Neplatná E-mailová adresa"
             }
         },
         "quickSettings": {
@@ -1051,7 +1053,7 @@
                     "NotGood": "<b>Batéria nie je v dobrom stave.</b>",
                     "NotSupportACAdapter": "<b>Napájací adaptér nie je podporovaný.</b>",
                     "LimitedACAdapterSupport": "<b>Sieťový adaptér nedokáže poskytnúť dostatok energie na napájanie.</b>",
-                    "MissingDriver": "<b>Ovládač Lenovo Power Manager</b> nie je nainštalovaný alebo nefunguje správne. Spustite službu Windows Update a nainštalujte najnovší ovládač. Ovládač môžete nainštalovať aj <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">odtiaľto</a>. Po inštalácii reštartujte počítač.",
+                    "MissingDriver": "<b>Ovládač Lenovo Power Manager</b> nie je nainštalovaný alebo nefunguje správne. Spustite službu Windows Update alebo ju nainštalujte manuálne <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">odtiaľto</a>. Po inštalácii reštartujte počítač.",
                     "StoreLimitation": "<b>Batéria má kapacitu len {{value}}%</b> zo svojej pôvodnej kapacity pri úplnom nabití.",
                     "HighTemperature": "<b>Vybíjanie</b> sa zastavilo, pretože <b>teplota batérie je príliš vysoká.</b>",
                     "TrickleCharge": "Batéria je <b>úplne vybitá</b> a musí sa nabiť. Môže to trvať desať hodín alebo dlhšie.",
@@ -1330,6 +1332,12 @@
                         "description": "Vyberte plán napájania na ovládanie výkonu počítača, teplotu systému a spotrebu napájania.",
                         "currentPowerPlan": {
                             "label": "PLÁN PRÚDU"
+                        },
+                        "profile": {
+                            "title": "PROFIL PLÁNU:",
+                            "performance": "Max. výkon:",
+                            "temperature": "Max. teplota systému:",
+                            "usage": "Max. spotreba:"
                         }
                     }
                 },
@@ -1508,8 +1516,8 @@
                     "title": "Obrazovka",
                     "displayColorTemperature": {
                         "title": "Teplota farieb obrazovky",
-                        "description": "Môžete upraviť teplotu farieb obrazovky a vyžarovanie modrého svetla na zníženie únavy zraku. Táto funkcia prispôsobuje farby zobrazovacích jednotiek na teplejšie tóny pri západe a východe slnka, aby ste mohli lepšie spať.",
-                        "link": {
+						"description": "Môžete upraviť teplotu farieb obrazovky a vyžarovanie modrého svetla na zníženie únavy zraku. Táto funkcia prispôsobuje farby zobrazovacích jednotiek na teplejšie tóny pri západe a východe slnka, aby ste mohli lepšie spať.",
+						"link": {
                             "click": "Kliknite",
                             "here": "sem",
                             "rest": "a zmeňte teplotu farieb."
@@ -1997,30 +2005,30 @@
             },
             "voice": {
                 "title": "Hlas",
-                "description": "Aplikácia Lenovo Voice umožňuje prevádzať hlas na text pomocou funkcie Hlas na text a prekladať hlas na text v reálnom čase pomocou funkcie Preklad.",
+                "description": "Aplikácia Lenovo Voice umožňuje prevádzať hlas na text pomocou a poskytuje pomocníka prekladu reči v reálnom čase vďaka funkcii Translation Assistant.",
                 "installBtnText": "Nainštalovať",
                 "launchBtnText": "Spustiť",
                 "voiceToText": {
                     "title": "Hlas na text",
-                    "caption": "Táto funkcia umožňuje prevádzať hlas na text."
+                    "caption": "Táto funkcia poskytuje funkciu písania hlasom, ktorá prevádza hlas na text a umožňuje rýchle zadávanie."
                 },
                 "translation": {
                     "title": "Preklad",
-                    "caption": "Táto funkcia umožňuje prekladať hlas v reálnom čase. Preložený obsah sa zobrazuje vo forme textu. Môžete vybrať zdrojový a cieľový jazyk podľa svojich potrieb."
+                    "caption": "Táto funkcia poskytuje pomoc prekladom reči v reálnom čase. Preložený obsah sa zobrazí v textovej podobe. Pre zdrojový a cieľový jazyk je k dispozícii viac jazykov."
                 },
                 "modalPopUp": {
                     "heading": "Začíname:",
-                    "point1": "Skontrolujte, či je v oblasti oznámení systému Windows zobrazená ikona aplikácie Lenovo Voice.",
-                    "point2": "Otvorte súbor, do ktorého chcete zapisovať prevedený text.",
+                    "point1": "Spustite program Lenovo Voice z ponuky Štart a na paneli úloh systému Windows sa zobrazí ikona Lenovo Voice.",
+                    "point2": "Otvorte aplikáciu, do ktorej chcete zadať text.",
                     "point3": "Kliknite na ikonu aplikácie Lenovo Voice v oblasti oznámení systému Windows a vyberte položku Hlas na text.",
-                    "point4": "Vyberte požadovaný jazyk a začnite kliknutím na ikonu mikrofónu.",
-                    "point5": "Umiestnite kurzor na miesto, kde chcete vykonávať úpravy, a začnite hovoriť.",
+                    "point4": "Vyberte si potrebné jazyky a začnite kliknutím na ikonu mikrofónu.",
+                    "point5": "Umiestnite kurzor do aplikácie a začnite hovoriť.",
                     "point6": "Kliknite na ikonu aplikácie Lenovo Voice v oblasti oznámení systému Windows a vyberte položku Preložiť.",
-                    "point7": "Vyberte požadovaný zdrojový jazyk a cieľový jazyk.",
+                    "point7": "Vyberte zdrojový jazyk a cieľový jazyk.",
                     "point8": "V závislosti od svojich potrieb nastavte hlasový vstup z reproduktora alebo mikrofónu.",
                     "point9": "Kliknite na ikonu mikrofónu a začnite hovoriť.",
                     "closeText": "zatvoriť",
-                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
+                    "point10": "Skontrolujte, či je v oblasti oznámení systému Windows zobrazená ikona aplikácie Lenovo Voice."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -2187,6 +2195,7 @@
             "description": "Kontaktujte nás, aby sme vám pomohli.",
             "listLenovoCommunity": "Komunita Lenovo",
             "listContactCustomerService": "Kontaktujte služby zákazníkom",
+            "listYourVirtualAssistant": "Your virtual assistant",
             "listContactUsOnWechat": "Kontaktujte nás cez WeChat",
             "weChatDescription": "Položte nám otázku cez WeChat a my vám rýchlo odpovieme",
             "listFindUs": "Vyhľadajte nás v sociálnych médiách",
@@ -2437,7 +2446,6 @@
                 "title": "Stav zabezpečenia",
                 "deviceName1": "Aplikácie z dôveryhodných zdrojov",
                 "deviceName2": "Režim vývojára",
-                "deviceName3": "Oznámenie kontroly používateľských kont (UAC)",
                 "deviceName4": "Dostupnosť antivírusového programu",
                 "deviceName5": "Šifrovanie jednotky pevného disku",
                 "deviceName6": "Dostupnosť brány firewall",
@@ -2972,6 +2980,17 @@
             "politics": "Politika",
             "music": "Hudba",
             "science": "Veda"
+        },
+		"gaming": {
+            "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
+            "gamingFeature1": "-Computer status monitor",
+            "gamingFeature2": "-Performance mode & overclocking",
+            "gamingFeature3": "-Lighting",
+            "gamingFeature4": "-Network Boost",
+            "gamingFeature5": "-Auto Close",
+            "gamingOnly": "Gaming",
+            "gamingAndWork": "Gaming & Work",
+            "nonGaming": "Non-Gaming"
         }
     },
     "settings": {
@@ -3319,7 +3338,7 @@
         },
         "scanCompletePage": {
             "title": "System scan is complete",
-            "description": "Here is what we found on your Lenovo Vantage 720s.",
+            "description": "Here is what we found on your ",
             "scanRates": "Our scan rates your PC at: ",
             "summary": "Summary",
             "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
@@ -3354,7 +3373,7 @@
             "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
-            "title": "All is well with your Ideapad 720s",
+            "title": "All is well with your ",
             "serialNumber": "Serial number: ",
             "subTitle": "You are subscribed to Lenovo Smart Performance Service",
             "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
@@ -3507,7 +3526,8 @@
     "notification": {
         "menu": {
             "security": "Vedeli ste to? Aj keď nemáte nainštalovaný antivírusový softvér, poskytujeme základnú bezpečnostnú ochranu vášho zariadenia.",
-            "connectedHomeSecurity": "Získajte monitorovanie v reálnom čase a upozornenia týkajúce zabezpečenia siete v domácnosti. Ak bude ktorékoľvek z vašich inteligentných zariadení čeliť bezpečnostnému útoku, dozviete sa o tom ako prví."
+            "connectedHomeSecurity": "Získajte monitorovanie v reálnom čase a upozornenia týkajúce zabezpečenia siete v domácnosti. Ak bude ktorékoľvek z vašich inteligentných zariadení čeliť bezpečnostnému útoku, dozviete sa o tom ako prví.",
+            "hardwareScan": "Teraz môžete získať stav súčasti hardvéru vášho systému."
         }
     },
     "appsForYou": {

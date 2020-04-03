@@ -40,9 +40,10 @@
 						metricsEvent="FeatureClick"
 						metricsParent="HardwareScan"
 						metricsItem="HardwareScan.RefreshModules"
+						href="javascript:void();"
+						tabindex="1"
 						[ngClass]="{'action-anchor': !disableRefreshAnchor() , 'disabled-anchor': disableRefreshAnchor()}"
-						(click)="refreshModules()">{{'hardwareScan.refreshModule' | translate}}
-						<fa-icon class="refresh-icon"
+						(click)="refreshModules()">{{'hardwareScan.refreshModule' | translate}}<fa-icon class="refresh-icon"
 							placement="auto"
 							[icon]="['fal', 'redo']"
 							container="vtr-root">
@@ -60,7 +61,7 @@
 					</vtr-ui-hardware-list>
 
 					<div class="loading-components" *ngIf="isRefreshingModules() && !isRecoverExecuting()">
-						<fa-icon placement="auto" spin="true" [icon]="['fal', 'circle-notch']" container="vtr-root">
+						<fa-icon placement="auto" [spin]="true" [icon]="['fal', 'circle-notch']" container="vtr-root">
 						</fa-icon>
 					</div>
 

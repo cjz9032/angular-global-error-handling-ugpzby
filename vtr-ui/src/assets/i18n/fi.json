@@ -1,4 +1,5 @@
 {
+	"nonProduction": "You're now visiting the non-production version of Lenovo Vantage!",
     "gaming": {
         "dashboard": {
             "device": {
@@ -795,6 +796,7 @@
             "back": "EDELLINEN",
             "on": "ON",
             "off": "OFF",
+            "close": "Sulje",
             "collapse": "Kutista",
             "expand": "Laajenna",
             "loader": "Noutaminen <br> Tila",
@@ -876,7 +878,7 @@
                 "tips2": "Kirjoita halutessasi muita kommentteja alle",
                 "emailAddressLabel": "Syötä sähköpostiosoitteesi, jos haluat, että Lenovo Vantage -tiimi ottaa sinuun yhteyttä.",
                 "emailAddress": "Sähköpostiosoite",
-                "invalidEmailMsg": "Invalid email address"
+                "invalidEmailMsg": "Virheellinen sähköpostiosoite"
             }
         },
         "quickSettings": {
@@ -1051,7 +1053,7 @@
                     "NotGood": "<b>Akun toimintakunto on huono.</b>",
                     "NotSupportACAdapter": "<b>Verkkolaite ei ole tuettu.</b>",
                     "LimitedACAdapterSupport": "<b>Verkkolaite ei pysty tuottamaan riittävästi virtaa.</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager -ajuria</b> ei ole asennettu, tai se ei toimi oikein. Suorita Windows Update ja asenna uusin ajuri. Voit myös asentaa ajurin <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">täältä</a>. Käynnistä tietokone uudelleen asennuksen jälkeen.",
+                    "MissingDriver": "<b>Lenovo Power Manager -ajuria</b> ei ole asennettu, tai se ei toimi oikein. Suorita Windows Update -ohjelmisto tai asenna se manuaalisesti <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">tästä</a>. Käynnistä tietokone uudelleen asennuksen jälkeen.",
                     "StoreLimitation": "<b>Akku voi tallentaa vain {{value}}%</b> sen alkuperäisestä täydestä varauskapasiteetista.",
                     "HighTemperature": "<b>Latauksen purkaminen</b> on keskeytetty <b>akun korkean lämpötilan vuoksi.</b>",
                     "TrickleCharge": "Akun lataus on <b>purettu kokonaan</b>, ja akku on ladattava uudelleen. Tämä saattaa kestää yli kymmenen tuntia.",
@@ -1330,6 +1332,12 @@
                         "description": "Valitse virrankäyttösuunnitelma tietokoneen suorituskykyvyn, järjestelmän lämpötilan ja virrankäytön hallintaa varten.",
                         "currentPowerPlan": {
                             "label": "NYKYINEN VIRRANKÄYTTÖSUUNNITELMA"
+                        },
+                        "profile": {
+                            "title": "SUUNNITELMAN PROFIILI:",
+                            "performance": "Suorituskyky enintään:",
+                            "temperature": "Järjestelmän lämpötila enintään:",
+                            "usage": "Virrankäyttö enintään:"
                         }
                     }
                 },
@@ -1508,8 +1516,8 @@
                     "title": "Näyttö",
                     "displayColorTemperature": {
                         "title": "Näytön värilämpötila",
-                        "description": "Voit säätää näytön värilämpötilaa suodattamaan sinistä valoa niin, että rasitus silmille vähenee Säätää näytön värit lämpimämmiksi auringonlaskusta auringonnousuun helpottamaan nukkumista.",
-                        "link": {
+						"description": "Voit säätää näyttösi värilämpötilaa suodattamaan sinistä valoa pois, jolloin silmien rasitus vähenee. Säätää näytön värit lämpimämmiksi auringonlaskusta auringonnousuun helpottamaan nukkumista.",
+						"link": {
                             "click": "Napsauta",
                             "here": "tätä",
                             "rest": "muuttaaksesi värilämpötilaa."
@@ -1997,30 +2005,30 @@
             },
             "voice": {
                 "title": "Ääni",
-                "description": "Lenovo Voice muuttaa puheen tekstiksi Puhe tekstiksi -toiminnon avulla ja antaa reaaliaikaisen käännöksen puheesta tekstiksi Käännös-toiminnon avulla.",
+                "description": "Lenovo Voice muuntaa puheesi tekstiksi Puhe tekstiksi -toiminnon avulla ja auttaa puheen kääntämisessä reaaliaikaisesti Käännösavustaja-toiminnon avulla.",
                 "installBtnText": "Asenna",
                 "launchBtnText": "Aloita",
                 "voiceToText": {
                     "title": "Puhe tekstiksi",
-                    "caption": "Tämän ominaisuuden avulla voit muuttaa puheen tekstiksi."
+                    "caption": "Tämä ominaisuus tarjoaa toiminnon, joka muuntaa puheen tekstiksi nopeaa käyttöä varten."
                 },
                 "translation": {
                     "title": "Käännös",
-                    "caption": "Tämän ominaisuuden avulla voit kääntää puhetta reaaliaikaisesti. Käännetty sisältö näytetään tekstinä. Voit valita lähde- ja kohdekielet tarpeen mukaan."
+                    "caption": "Tämä ominaisuus auttaa puheen kääntämisessä reaaliaikaisesti. Kaikki käännökset näytetään tekstinä. Lähde- ja kohdekieliksi on saatavilla useita eri kieliä."
                 },
                 "modalPopUp": {
                     "heading": "Aloittaminen:",
-                    "point1": "Varmista, että Lenovo Voice -kuvake näkyy Windowsin ilmaisinalueella.",
-                    "point2": "Avaa tiedosto, johon haluat tallentaa muutetun tekstin.",
+                    "point1": "Käynnistä Lenovo Voice -ohjelma Käynnistä-valikosta, niin Windowsin ilmaisinalueessa näytetään Lenovo Voice -kuvake.",
+                    "point2": "Avaa sovellus, johon haluat kirjoittaa tekstiä.",
                     "point3": "Napsauta Windowsin ilmaisinalueelta Lenovo Voice -kuvaketta ja valitse Puhe tekstiksi.",
-                    "point4": "Valitse haluamasi kieli ja aloita napsauttamalla mikrofonia.",
-                    "point5": "Siirrä kohdistin kohtaan, jota haluat muokata, ja aloita puhuminen.",
-                    "point6": "Napsauta Windowsin ilmaisinalueelta Lenovo Voice -kuvaketta ja valitse Käännä.",
-                    "point7": "Valitse haluamasi lähde- ja kohdekieli.",
-                    "point8": "Määritä äänisyöttö kaiuttimesta tai mikrofonista tarpeen mukaan.",
-                    "point9": "Napsauta mikrofonikuvaketta ja aloita puhuminen",
+                    "point4": "Valitse tarvitsemasi kielet ja aloita napsauttamalla mikrofonikuvaketta.",
+                    "point5": "Aseta kohdistin sovellukseen ja aloita puhuminen.",
+                    "point6": "Napsauta Windowsin ilmaisinalueelta Lenovo Voice -kuvaketta ja valitse Käännös.",
+                    "point7": "Valitse lähde- ja kohdekielesi.",
+                    "point8": "Määritä äänisyöttö kaiuttimesta tai mikrofonista tarpeidesi mukaan.",
+                    "point9": "Napsauta mikrofonikuvaketta ja aloita puhuminen.",
                     "closeText": "sulje",
-                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
+                    "point10": "Varmista, että Lenovo Voice -kuvake näkyy Windowsin ilmaisinalueella."
                 },
                 "modalInstallationFailed": {
                     "btnText": "ok",
@@ -2187,6 +2195,7 @@
             "description": "Ota meihin yhteyttä, niin saat apua.",
             "listLenovoCommunity": "Lenovo-yhteisö",
             "listContactCustomerService": "Ota asiakaspalveluun yhteyttä",
+            "listYourVirtualAssistant": "Your virtual assistant",
             "listContactUsOnWechat": "Ota meihin yhteyttä WeChat-palvelussa",
             "weChatDescription": "Lähetä meille kysymys WeChat-palvelussa, niin vastaamme taatusti pian",
             "listFindUs": "Löydä meidät sosiaalisesta mediasta",
@@ -2437,7 +2446,6 @@
                 "title": "Suojauksen kunto",
                 "deviceName1": "Sovellukset luotetuista lähteistä",
                 "deviceName2": "Kehittäjätila",
-                "deviceName3": "Käyttäjätilien valvontailmoitus",
                 "deviceName4": "Virustentorjunnan saatavuus",
                 "deviceName5": "Kiintolevyaseman salaus",
                 "deviceName6": "Palomuurin saatavuus",
@@ -2972,6 +2980,17 @@
             "politics": "Politiikka",
             "music": "Musiikki",
             "science": "Tiede"
+        },
+		"gaming": {
+            "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
+            "gamingFeature1": "-Computer status monitor",
+            "gamingFeature2": "-Performance mode & overclocking",
+            "gamingFeature3": "-Lighting",
+            "gamingFeature4": "-Network Boost",
+            "gamingFeature5": "-Auto Close",
+            "gamingOnly": "Gaming",
+            "gamingAndWork": "Gaming & Work",
+            "nonGaming": "Non-Gaming"
         }
     },
     "settings": {
@@ -3319,7 +3338,7 @@
         },
         "scanCompletePage": {
             "title": "System scan is complete",
-            "description": "Here is what we found on your Lenovo Vantage 720s.",
+            "description": "Here is what we found on your ",
             "scanRates": "Our scan rates your PC at: ",
             "summary": "Summary",
             "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
@@ -3354,7 +3373,7 @@
             "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
-            "title": "All is well with your Ideapad 720s",
+            "title": "All is well with your ",
             "serialNumber": "Serial number: ",
             "subTitle": "You are subscribed to Lenovo Smart Performance Service",
             "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
@@ -3507,7 +3526,8 @@
     "notification": {
         "menu": {
             "security": "Tiedätkö? Vaikka tietokoneeseen ei ole asennettu virustentorjuntaohjelmistoa, se sisältää silti perussuojauksen.",
-            "connectedHomeSecurity": "Saat reaaliaikaista seurantaa ja ilmoituksia verkon suojauksesta kotona. Olet ensimmäinen, joka tietää, onko jokin älylaitteistasi joutunut hyökkäyksen kohteeksi."
+            "connectedHomeSecurity": "Saat reaaliaikaista seurantaa ja ilmoituksia verkon suojauksesta kotona. Olet ensimmäinen, joka tietää, onko jokin älylaitteistasi joutunut hyökkäyksen kohteeksi.",
+            "hardwareScan": "Nyt voit tarkastaa järjestelmäsi laitteistokomponentin kunnon."
         }
     },
     "appsForYou": {

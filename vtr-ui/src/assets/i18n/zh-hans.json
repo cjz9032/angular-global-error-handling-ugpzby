@@ -1,4 +1,5 @@
 {
+	"nonProduction": "您现在正在访问Lenovo Vantage的非生产版本！",
     "gaming": {
         "dashboard": {
             "device": {
@@ -795,6 +796,7 @@
             "back": "返回",
             "on": "ON",
             "off": "OFF",
+            "close": "关闭",
             "collapse": "折叠",
             "expand": "展开",
             "loader": "获取状态",
@@ -876,7 +878,7 @@
                 "tips2": "如有任何其他意见，请在下面提出",
                 "emailAddressLabel": "如果您想与 Lenovo Vantage 团队联系，请留下您的电子邮件地址。",
                 "emailAddress": "电子邮件地址",
-                "invalidEmailMsg": "Invalid email address"
+                "invalidEmailMsg": "电子邮件地址无效"
             }
         },
         "quickSettings": {
@@ -1052,7 +1054,7 @@
                     "NotGood": "<b>电池状况不佳。</b>",
                     "NotSupportACAdapter": "<b>不支持交流电源适配器。</b>",
                     "LimitedACAdapterSupport": "<b>交流电源适配器无法提供足够的电量。</b>",
-                    "MissingDriver": "未安装 <b>Lenovo Power Manager 驱动程序</b>，或其无法正常工作。请运行 Windows 更新或者点击<a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">这里</a>安装最新的驱动程序。安装后需要重启计算机。",
+                    "MissingDriver": "未安装 <b>Lenovo Power Manager 驱动程序</b>，或其无法正常工作。请运行 Windows Update 或从<a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">此处</a>进行手动安装。安装后，重新启动计算机。",
                     "StoreLimitation": "<b>电池仅能存储其原始完全充电电量的 {{value}}%</b>。",
                     "HighTemperature": "<b>由于电池温度过高</b>，电池已停止<b>放电</b>。",
                     "TrickleCharge": "电池已<b>完全放电</b>，需要再次充电。此过程可能耗时 10 小时或更长时间。",
@@ -1330,6 +1332,12 @@
                         "description": "选择一项电源计划以控制计算机性能、系统温度及电源使用情况。",
                         "currentPowerPlan": {
                             "label": "当前计划"
+                        },
+                        "profile": {
+                            "title": "计划配置概要：",
+                            "performance": "最高性能：",
+                            "temperature": "最高系统温度：",
+                            "usage": "最高电源使用量："
                         }
                     }
                 },
@@ -1508,8 +1516,8 @@
                     "title": "显示",
                     "displayColorTemperature": {
                         "title": "显示色温",
-                        "description": "您可以调节显示屏色温以过滤掉蓝光，从而减轻视疲劳。在日落到日出期间将显示屏调整为暖色调，以帮助您入睡。",
-                        "link": {
+						"description": "您可以调节显示屏色温以过滤蓝光，从而减轻视疲劳。在日落到日出期间将显示屏调整为暖色调，以帮助您入睡。",
+						"link": {
                             "click": "单击",
                             "here": "此处",
                             "rest": "以更改色温。"
@@ -1997,30 +2005,30 @@
             },
             "voice": {
                 "title": "语音",
-                "description": "联想语音可通过语音转文本功能帮助您将语音转换为文本，并通过翻译功能提供从语音到文本的实时翻译。",
+                "description": "联想语音可通过语音转文本功能将语音转换为文本，并通过翻译助手功能提供实时语音翻译帮助。",
                 "installBtnText": "安装",
                 "launchBtnText": "启动",
                 "voiceToText": {
                     "title": "语音转文本",
-                    "caption": "此功能有助于将语音转换为文本。"
+                    "caption": "此功能提供语音键入功能，可将语音转换为文本以实现快速输入。"
                 },
                 "translation": {
                     "title": "翻译",
-                    "caption": "此功能提供对语音的实时翻译。译文以文本形式显示。您可以根据需要选择源语言和目标语言。"
+                    "caption": "此功能提供语音的实时翻译帮助，所有翻译的内容都将以文本形式显示。源语言和目标语言涵盖多种语言。"
                 },
                 "modalPopUp": {
                     "heading": "如何开始使用：",
-                    "point1": "确保 Windows 系统托盘中显示联想语音图标。",
-                    "point2": "打开要记录转换文本的文件。",
+                    "point1": "从“开始”菜单中启动联想语音，联想语音图标将显示在 Windows 系统托盘中。",
+                    "point2": "打开要在其中键入文本的应用程序。",
                     "point3": "单击 Windows 系统托盘中的联想语音图标，然后选择语音转文本。",
-                    "point4": "选择所需的语言，然后单击麦克风图标开始。",
-                    "point5": "将光标放在要编辑的位置并开始说话。",
-                    "point6": "单击 Windows 系统托盘中的联想语音图标，然后选择翻译。",
-                    "point7": "选择所需的源语言和目标语言。",
+                    "point4": "选择您需要的语言，然后单击麦克风图标开始。",
+                    "point5": "将光标放在应用程序中，然后开始讲话。",
+                    "point6": "单击 Windows 系统托盘中的联想语音图标，然后选择“翻译”。",
+                    "point7": "选择源语言和目标语言。",
                     "point8": "根据您的需要，从扬声器或麦克风处设置语音输入。",
-                    "point9": "单击麦克风图标开始说话",
+                    "point9": "单击麦克风图标开始说话。",
                     "closeText": "关闭",
-                    "point10": "Make sure that the Lenovo Voice icon is displayed in the Windows system tray."
+                    "point10": "确保 Windows 系统托盘中显示联想语音图标。"
                 },
                 "modalInstallationFailed": {
                     "btnText": "确定",
@@ -2187,6 +2195,7 @@
             "description": "请联系我们以便为您提供帮助。",
             "listLenovoCommunity": "Lenovo 社区",
             "listContactCustomerService": "联系客户服务部门",
+            "listYourVirtualAssistant": "您的虚拟助手",
             "listContactUsOnWechat": "通过微信联系我们",
             "weChatDescription": "在微信上向我们提问，我们定会迅速回复",
             "listFindUs": "在社交媒体上找到我们",
@@ -2218,7 +2227,7 @@
         "landing": {
             "fully": "为了获得更好的服务来保护您的设备，请继续使用",
             "notFully": "要了解如何更好地保护您的设备，请开始使用",
-            "security101": "安全建议入门",
+            "security101": "安全建议贴士",
             "firewall": "防火墙",
             "pwdHealth": "密码保险箱",
             "vpnSecurity": "VPN 安全顾问",
@@ -2437,7 +2446,6 @@
                 "title": "安全性状况",
                 "deviceName1": "可信来源的应用程序",
                 "deviceName2": "开发人员模式",
-                "deviceName3": "UAC 通知",
                 "deviceName4": "病毒防护可用性",
                 "deviceName5": "硬盘加密",
                 "deviceName6": "防火墙可用性",
@@ -2545,36 +2553,36 @@
         "loggingOut": "正在注销...",
         "unlockExclusives": "解锁专享功能",
         "user": "用户",
-        "welcomeText1": "加油，热干面！",
+        "welcomeText1": "早睡早起，和您的电脑一样保持健康",
         "welcomeText2": "很高兴再次见到您，{{firstName}}",
         "welcomeText3": "青山一道同云雨，明月何曾是两乡",
         "welcomeText4": "同气连枝，共盼春来",
         "welcomeText5": "长风破浪会有时，直挂云帆济沧海",
-        "welcomeText6": "联想与您共克时艰",
-        "welcomeText7": "让我们开启元气满满的一天，{{firstName}}！",
-        "welcomeText8": "要不要来一杯快乐肥宅水？",
+        "welcomeText6": "管理您的电脑，从未如此清爽",
+        "welcomeText7": "今天也是活力满满的一天！",
+        "welcomeText8": "不如来一杯快乐肥宅水？",
         "welcomeText9": "今日关中事，萧何共尔忧",
-        "welcomeText10": "保持冷静，Vantage 就来了",
-        "welcomeText11": "Vantage 物美价廉",
-        "welcomeText12": "将 Vantage 带回家",
-        "welcomeText13": "吃好、睡好，起来接着玩转Vantage！",
-        "welcomeText14": "Vantage 每一刻都新鲜",
-        "welcomeText15": "Vantage 发挥最大作用",
-        "welcomeTextWithoutUserName1": "加油，热干面！",
+        "welcomeText10": "准备好玩转Vantage了吗？",
+        "welcomeText11": "热爱生活，创造生活",
+        "welcomeText12": "Vantage伴您同行",
+        "welcomeText13": "Vantage让您的电脑焕发新生",
+        "welcomeText14": "Vantage与您一起，每天都有新发现",
+        "welcomeText15": "欢迎来到Vantage",
+        "welcomeTextWithoutUserName1": "早睡早起，和您的电脑一样保持健康",
         "welcomeTextWithoutUserName2": "很高兴再次见到您",
         "welcomeTextWithoutUserName3": "青山一道同云雨，明月何曾是两乡",
         "welcomeTextWithoutUserName4": "同气连枝，共盼春来",
         "welcomeTextWithoutUserName5": "长风破浪会有时，直挂云帆济沧海",
-        "welcomeTextWithoutUserName6": "联想与您共克时艰",
-        "welcomeTextWithoutUserName7": "让我们开启元气满满的一天！",
-        "welcomeTextWithoutUserName8": "要不要来一杯快乐肥宅水？",
+        "welcomeTextWithoutUserName6": "管理您的电脑，从未如此清爽",
+        "welcomeTextWithoutUserName7": "今天也是活力满满的一天！",
+        "welcomeTextWithoutUserName8": "不如来一杯快乐肥宅水？",
         "welcomeTextWithoutUserName9": "今日关中事，萧何共尔忧",
-        "welcomeTextWithoutUserName10": "保持冷静，Vantage 就来了",
-        "welcomeTextWithoutUserName11": "Vantage 物美价廉",
-        "welcomeTextWithoutUserName12": "将 Vantage 带回家",
-        "welcomeTextWithoutUserName13": "吃好、睡好，起来接着玩转Vantage！",
-        "welcomeTextWithoutUserName14": "Vantage 每一刻都新鲜",
-        "welcomeTextWithoutUserName15": "Vantage 发挥最大作用",
+        "welcomeTextWithoutUserName10": "准备好玩转Vantage了吗？",
+        "welcomeTextWithoutUserName11": "热爱生活，创造生活",
+        "welcomeTextWithoutUserName12": "Vantage伴您同行",
+        "welcomeTextWithoutUserName13": "Vantage让您的电脑焕发新生",
+        "welcomeTextWithoutUserName14": "Vantage与您一起，每天都有新发现",
+        "welcomeTextWithoutUserName15": "欢迎来到Vantage",
         "helloUser": "您好，{{firstName}}！",
         "ssoErrorTitle": "错误",
         "ssoErrorCommon": "糟糕，出现了错误。请重试。",
@@ -2709,21 +2717,21 @@
         },
         "question3": {
             "title": "如何了解计算机的 CPU 情况",
-            "description": "<div class='faqInFs4Fb'>    如何了解计算机的 CPU 情况</div><hr><h3 class='faqInFs25FbP10'>症状</h3><p>“32 位”和“64 位”是指计算机处理器（也称为 CPU）处理信息的方式。64 位版本的 Windows 可比 32 位的系统更高效地处理大量随机存取内存（RAM）。</p><h3 class='faqInFs25FbP10'>受影响的品牌</h3><p>上述症状与以下系统相关，但并不限于以下系统：</p><ul>    <li>所有台式机和笔记本电脑</li></ul><h3 class='faqInFs25FbP10'>操作系统</h3><ul>    <li>Windows 7、8、10</li></ul><h3 class='faqInFs25FbP10'>解决方案</h3><p><strong><u>Windows 7 或 Vista</u></strong></p><ol>    <li>单击<strong>开始按钮</strong>（<strong>开始按钮</strong>图片），然后右键单击计算机，最后单击属性打开系统  </li>    <li>在“系统”下，可查看系统类型。</li></ol><p><strong><u>Windows 8 和 Windows 10</u></strong></p><p><strong>方法 1：</strong>在控制面板中查看系统窗口</p><ol>    <li>从屏幕右边缘扫入，然后点击<strong>搜索</strong>。如果使用的是鼠标，请将指针指向屏幕右下角，然后单击<strong>搜索</strong>。</li>    <li>在搜索框中输入<strong>系统</strong>，然后轻触或单击<strong>设置</strong>。</li>    <li>轻触或单击<strong>系统</strong></li>    <li>如果运行的是 Windows 8 64 位版本，系统标题下的系统类型字段中将显示<strong>64 位操作系统</strong>。如果运行的是 <strong>Windows 8</strong> 32 <strong>位版本</strong>，系统标题下的系统类型字段中将显示<strong>32 位操作</strong>系统。<br /> </li></ol><p><strong>方法 2：</strong>查看系统信息窗口</p><ol>    <li>从屏幕右边缘扫入，然后点击<strong>搜索</strong>。如果使用的是鼠标，请将指针指向屏幕右下角，然后单击<strong>搜索。</strong></li>    <li>在搜索框中，输入<strong>系统信息</strong></li>    <li>轻触或单击<strong>系统</strong>，然后轻触或单击<strong>系统信息</strong>，最后单击<strong>系统摘要。</strong></li>    <li>如果运行的是 Windows 8 <strong>64 位</strong>版本<strong>，</strong>项目标题下的<strong>系统类型</strong>字段中将显示基于 x64 的电脑。<br /><br />如果运行的是 Windows 8 <strong>32 位</strong>版本，项目标题下的<strong>系统类型</strong>字段中将显示基于 x86 的电脑。 </li></ol><p> </p>",
-            "heading1": "症状",
+            "description": "<div class='faqInFs4Fb'>    如何了解计算机的 CPU 情况</div><hr><h3 class='faqInFs25FbP10'>介绍</h3><p>“32 位”和“64 位”是指计算机处理器（也称为 CPU）处理信息的方式。64 位版本的 Windows 可比 32 位的系统更高效地处理大量随机存取内存（RAM）。</p><h3 class='faqInFs25FbP10'>受影响的品牌</h3><p>上述介绍与以下系统相关，但并不限于以下系统：</p><ul>    <li>所有台式机和笔记本电脑</li></ul><h3 class='faqInFs25FbP10'>操作系统</h3><ul>    <li>Windows 7、8、10</li></ul><h3 class='faqInFs25FbP10'>查看方法</h3><p><strong><u>Windows 7 或 Vista</u></strong></p><ol>    <li>单击<strong>开始按钮</strong>，然后右键单击计算机，最后单击属性打开系统  </li>    <li>在“系统”下，可查看系统类型。</li></ol><p><strong><u>Windows 8 和 Windows 10</u></strong></p><p><strong>方法 1：</strong>在控制面板中查看系统窗口</p><ol>    <li>从屏幕右边缘扫入，然后点击<strong>搜索</strong>。如果使用的是鼠标，请将指针指向屏幕右下角，然后单击<strong>搜索</strong>。</li>    <li>在搜索框中输入<strong>系统</strong>，然后轻触或单击<strong>设置</strong>。</li>    <li>轻触或单击<strong>系统</strong></li>    <li>如果运行的是 Windows 8 64 位版本，系统标题下的系统类型字段中将显示<strong>64 位操作系统</strong>。如果运行的是 <strong>Windows 8</strong> 32 <strong>位版本</strong>，系统标题下的系统类型字段中将显示<strong>32 位操作</strong>系统。<br /> </li></ol><p><strong>方法 2：</strong>查看系统信息窗口</p><ol>    <li>从屏幕右边缘扫入，然后点击<strong>搜索</strong>。如果使用的是鼠标，请将指针指向屏幕右下角，然后单击<strong>搜索。</strong></li>    <li>在搜索框中，输入<strong>系统信息</strong></li>    <li>轻触或单击<strong>系统</strong>，然后轻触或单击<strong>系统信息</strong>，最后单击<strong>系统摘要。</strong></li>    <li>如果运行的是 Windows 8 <strong>64 位</strong>版本<strong>，</strong>项目标题下的<strong>系统类型</strong>字段中将显示基于 x64 的电脑。<br /><br />如果运行的是 Windows 8 <strong>32 位</strong>版本，项目标题下的<strong>系统类型</strong>字段中将显示基于 x86 的电脑。 </li></ol><p> </p>",
+            "heading1": "介绍",
             "para1": "“32 位”​和“64 位”是指计算机处理器（也称为 CPU）处理信息的方式。64 位版本的 Windows 可比 32 位的系统更高效地处理大量随机存取内存（RAM）。",
             "heading2": "受影响的品牌",
-            "para2": "上述症状与以下系统相关，但并不限于以下系统：",
+            "para2": "上述介绍与以下系统相关，但并不限于以下系统：",
             "para3": "所有台式机和笔记本电脑",
             "heading3": "操作系统",
             "para4": "Windows 7、8、10",
-            "heading4": "解决方案",
+            "heading4": "查看方法",
             "para5": "Windows 7 或 Vista",
             "para6": {
                 "span1": {
                     "line1": "单击",
                     "line2": "“开始”",
-                    "line3": "按钮（“开始”按钮图片），然后右键单击“计算机”，最后单击“属性”打开“系统”"
+                    "line3": "按钮，然后右键单击“计算机”，最后单击“属性”打开“系统”"
                 },
                 "span2": "在“系统”下，可查看系统类型。"
             },
@@ -2972,6 +2980,17 @@
             "politics": "政治",
             "music": "音乐",
             "science": "科学"
+        },
+		"gaming": {
+            "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
+            "gamingFeature1": "-Computer status monitor",
+            "gamingFeature2": "-Performance mode & overclocking",
+            "gamingFeature3": "-Lighting",
+            "gamingFeature4": "-Network Boost",
+            "gamingFeature5": "-Auto Close",
+            "gamingOnly": "Gaming",
+            "gamingAndWork": "Gaming & Work",
+            "nonGaming": "Non-Gaming"
         }
     },
     "settings": {
@@ -3319,7 +3338,7 @@
         },
         "scanCompletePage": {
             "title": "System scan is complete",
-            "description": "Here is what we found on your Lenovo Vantage 720s.",
+            "description": "Here is what we found on your ",
             "scanRates": "Our scan rates your PC at: ",
             "summary": "Summary",
             "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
@@ -3354,7 +3373,7 @@
             "Onceaweek": "Once a week"
         },
         "subscriberScanHomePage": {
-            "title": "All is well with your Ideapad 720s",
+            "title": "All is well with your ",
             "serialNumber": "Serial number: ",
             "subTitle": "You are subscribed to Lenovo Smart Performance Service",
             "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
@@ -3507,7 +3526,8 @@
     "notification": {
         "menu": {
             "security": "您知道吗？即使您没有安装反病毒软件，我们仍会为您的设备提供基本的安全保护。",
-            "connectedHomeSecurity": "在家中获得有关网络安全的实时监控和警报。您将是第一个知道您的智能设备是否面临安全攻击的人。"
+            "connectedHomeSecurity": "在家中获得有关网络安全的实时监控和警报。您将是第一个知道您的智能设备是否面临安全攻击的人。",
+            "hardwareScan": "现在，让我们看看硬件是不是都正常。"
         }
     },
     "appsForYou": {
