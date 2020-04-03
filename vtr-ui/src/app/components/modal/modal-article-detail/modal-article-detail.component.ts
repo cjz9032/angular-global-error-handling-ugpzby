@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, HostListener, SecurityContext, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ElementRef, HostListener, SecurityContext } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
@@ -14,12 +14,13 @@ import { MetricService } from 'src/app/services/metric/metric.service';
 	styleUrls: ['./modal-article-detail.component.scss'],
 	providers: [DurationCounterService]
 })
-export class ModalArticleDetailComponent implements OnInit, AfterViewInit {
+export class ModalArticleDetailComponent implements OnInit {
 	articleId: string;
 	articleTitle = '';
 	articleImage = '';
 	articleBody: SafeHtml = '';
 	articleCategory: string;
+	articleLinkTitle = '';
 	enterTime: number;
 	metricsParent = '';
 	focusDurationCounter = null;
@@ -78,10 +79,6 @@ export class ModalArticleDetailComponent implements OnInit, AfterViewInit {
 
 		this.focusDurationCounter = this.timerService.getFocusDurationCounter();
 		this.blurDurationCounter = this.timerService.getBlurDurationCounter();
-	}
-
-	ngAfterViewInit() {
-		setTimeout(() => { document.getElementById('article-dialog').parentElement.parentElement.parentElement.parentElement.focus(); }, 0);
 	}
 
 	private getPageName(activatedRoute: ActivatedRoute) {
