@@ -21,7 +21,7 @@ export class TranslateDirective {
 		const tagTextList = textList.filter(text => !contentTextList.includes(text));
 
 		this.containerRef.createEmbeddedView(this.template);
-		const element: HTMLElement = this.template.elementRef.nativeElement.nextElementSibling;
+		const element: HTMLElement = this.template.elementRef.nativeElement.previousElementSibling;
 		const childNodes = Array.from(element.getElementsByTagName('a'));
 		if (element.innerText) {
 			element.childNodes.forEach(childNode => {
