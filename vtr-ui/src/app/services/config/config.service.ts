@@ -332,6 +332,15 @@ export class ConfigService {
 				this.logger.exception('configService.showSmartAssist smartAssist.getSuperResolutionStatus check', error);
 			}
 
+			// HSA intelligent security check
+			try {
+				this.logger.info('configService.showSmartAssist: HSA intelligent security check');
+				assistCapability.isHsaIntelligentSecuritySupported = await this.smartAssist.getHsaIntelligentSecurityStatus();
+				this.logger.info('configService.showSmartAssist: HSA intelligent security check completed');
+			} catch (error) {
+				this.logger.exception('configService.showSmartAssist smartAssist.getHsaIntelligentSecurityStatus check', error);
+			}
+
 			// APS capability check
 			try {
 				this.logger.info('configService.showSmartAssist: APS capability check');
@@ -350,7 +359,9 @@ export class ConfigService {
 				assistCapability.isIntelligentMediaSupported.available ||
 				assistCapability.isIntelligentScreenSupported ||
 				assistCapability.isSuperResolutionSupported.available ||
-				assistCapability.isAPSSupported;
+				assistCapability.isAPSSupported ||
+				((assistCapability.isHsaIntelligentSecuritySupported.capability && 0x100) != 0) ||
+				((assistCapability.isHsaIntelligentSecuritySupported.capability && 0x80) != 0);
 
 			if (this.isSmartAssistAvailable) {
 				this.addSmartAssistMenu(this.menu);
