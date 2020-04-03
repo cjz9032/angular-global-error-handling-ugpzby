@@ -21,7 +21,7 @@
 				</div>
 				<div *ngIf="!showProgress" class="row">
 					<div class="col button-row">
-						<button [ngClass]="{'action-button': !disableQuickScan, 'action-button-disable': disableQuickScan}"
+						<button [ngClass]="{'btn-primary action-button': !disableQuickScan, 'action-button-disable': disableQuickScan}"
 							tabindex="1"
 							[title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
 							[disabled]="disableQuickScan"
@@ -34,8 +34,7 @@
 							href="javascript:void();"
 							tabindex="1"
 							[title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
-							[ngClass]="{'action-anchor': !disableQuickScan, 'disabled-anchor': disableQuickScan}" (click)="onAnchor()">
-							{{anchorText}}
+							[ngClass]="{'action-anchor': !disableQuickScan, 'disabled-anchor': disableQuickScan}" (click)="onAnchor()">{{anchorText}}
 						</a>
 					</div>
 				</div>

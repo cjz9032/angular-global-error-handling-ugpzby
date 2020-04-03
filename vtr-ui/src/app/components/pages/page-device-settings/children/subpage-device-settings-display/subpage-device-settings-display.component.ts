@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, EventEmitter, NgZone, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, NgZone, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ChangeContext } from 'ng5-slider';
 import { EMPTY, Subject, Subscription } from 'rxjs';
@@ -27,8 +27,7 @@ import { WhiteListCapability } from '../../../../../data-models/eye-care-mode/wh
 @Component({
 	selector: 'vtr-subpage-device-settings-display',
 	templateUrl: './subpage-device-settings-display.component.html',
-	styleUrls: ['./subpage-device-settings-display.component.scss'],
-	changeDetection: ChangeDetectionStrategy.Default
+	styleUrls: ['./subpage-device-settings-display.component.scss']
 })
 export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy, AfterViewInit {
 	title = 'device.deviceSettings.displayCamera.title';
@@ -571,11 +570,11 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		this.logger.debug('onEyeCareModeStatusToggle', this.eyeCareModeStatus.status);
 		if (event.switchValue) {
 			if (this.eyeCareModeCache.eyeCareDataSource && this.eyeCareModeCache.eyeCareDataSource.current < 3400 && !this.isSet.isSetEyecaremodeValue) {
-				this.onEyeCareTemparatureChange({value: 3400});
+				this.onEyeCareTemparatureChange({ value: 3400 });
 			}
 		} else {
 			if (this.displayColorTempCache.current < 3400 && !this.isSet.isSetDaytimeColorTemperatureValue) {
-				this.onSetChangeDisplayColorTemp({value: 3400});
+				this.onSetChangeDisplayColorTemp({ value: 3400 });
 			}
 		}
 		try {
@@ -688,11 +687,11 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		]).then(([status, displayColorTemperature, daytimeColorTemperature]) => {
 			if (status.status) {
 				if (displayColorTemperature.current < 3400 && !this.isSet.isSetEyecaremodeValue) {
-					this.onEyeCareTemparatureChange({value: 3400});
+					this.onEyeCareTemparatureChange({ value: 3400 });
 				}
 			} else {
 				if (daytimeColorTemperature.current < 3400 && !this.isSet.isSetDaytimeColorTemperatureValue) {
-					this.onSetChangeDisplayColorTemp({value: 3400});
+					this.onSetChangeDisplayColorTemp({ value: 3400 });
 				}
 			}
 		})
@@ -839,11 +838,11 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 							}
 							if (this.eyeCareModeStatus.status) {
 								if (this.eyeCareModeCache.eyeCareDataSource && this.eyeCareModeCache.eyeCareDataSource.current < 3400 && !this.isSet.isSetEyecaremodeValue) {
-									this.onEyeCareTemparatureChange({value: 3400});
+									this.onEyeCareTemparatureChange({ value: 3400 });
 								}
 							} else {
 								if (this.displayColorTempCache.current < 3400 && !this.isSet.isSetDaytimeColorTemperatureValue) {
-									this.onSetChangeDisplayColorTemp({value: 3400});
+									this.onSetChangeDisplayColorTemp({ value: 3400 });
 								}
 							}
 							// this.isEyeCareMode = this.eyeCareModeStatus.status;
@@ -1042,18 +1041,18 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		}
 	}
 
-	public onBrightnessChange($event: ChangeContext) {
+	public onBrightnessChange($event: number) {
 		this.logger.debug('setCameraBrightness in display', $event);
 		if (this.displayService.isShellAvailable) {
 			this.displayService
-				.setCameraBrightness($event.value);
+				.setCameraBrightness($event);
 		}
 	}
-	public onContrastChange($event: ChangeContext) {
+	public onContrastChange($event: number) {
 		this.logger.debug('setCameraContrast', $event);
 		if (this.displayService.isShellAvailable) {
 			this.displayService
-				.setCameraContrast($event.value);
+				.setCameraContrast($event);
 		}
 	}
 	public onCameraAutoExposureToggle($event: any) {
@@ -1066,11 +1065,11 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 				.setCameraAutoExposure($event.switchValue);
 		}
 	}
-	public onCameraExposureValueChange($event: ChangeContext) {
+	public onCameraExposureValueChange($event: number) {
 		this.logger.debug('setCameraExposureValue.then', $event);
 		if (this.displayService.isShellAvailable) {
 			this.displayService
-				.setCameraExposureValue($event.value);
+				.setCameraExposureValue($event);
 		}
 	}
 	public onCameraAutoFocusToggle($event: any) {
@@ -1091,7 +1090,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 	}
 	// End Camera Privacy
 	public getLocationPermissionStatus(value: any) {
-		this.logger.debug('called from loaction service ui', JSON.stringify(value.status));
+		this.logger.debug('called from location service ui', JSON.stringify(value.status));
 		// this.sunsetToSunriseModeStatus.permission = value.status;
 		this.ngZone.run(() => {
 			if (value.status === false) {
