@@ -1,16 +1,44 @@
 <div class="vtr-modal-store-rating">
-    <button class="close-button" (click)="onBtnCloseClicked($event)" tabindex="0">
+    <button class="close-button" 
+        metricsEvent="FeatureClick"
+        metricsParent="StoreRatingBox"
+        metricsItem="Close"
+        vtrMetrics
+        (click)="onBtnCloseClicked($event)" tabindex="0">
         <fa-icon [icon]="faTimesCircle" ></fa-icon>
     </button>
-    <p class="modal-content" tabindex="-1" role="article">
-        We need your feedbakck.
-    </p>
+    <div class="modal-content" tabindex="-1" role="article">
+       <p>How do you feel about Vantage?</p>
+      <div class="hint-image-border">
+        <fa-icon class="hint-icon" *ngIf="elilipsisHintVisible" [icon]="faEllipsisH" ></fa-icon>
+        <fa-icon class="hint-icon hint-icon-close" *ngIf="closeHintVisible" [icon]="faTimesCircle" ></fa-icon>
+        <fa-icon class="hint-icon hint-icon-heart" *ngIf="redHeartHintVisible" [icon]="faHeart" ></fa-icon>
+        <img src="../../../../assets/images/store-rating/store-rating-hint.png"> 
+      </div>
+       <hr/>
+    </div>
     <div class="modal-bottom">
-        <button class="modal-btn btn-light" (click)="onBtnDislikeClicked($event)"> 
-            <fa-icon [icon]="faFrown"></fa-icon>
+          <button class="love-btn"
+            metricsEvent="FeatureClick"
+            metricsParent="StoreRatingBox"
+            metricsItem="Love us"
+            vtrMetrics
+            (mouseenter) ="onBtnMouseEnter('like')"
+            (mouseleave) = "onBtnMouseLeave()"
+            (click)="onBtnLikeClicked($event)">
+            LOVE IT!
         </button>
-        <button  class="modal-btn btn-dark" (click)="onBtnLikeClicked($event)">
-            <fa-icon [icon]="faSmileBeam"></fa-icon>
+
+        <button class="feedback-btn"
+            metricsEvent="FeatureClick"
+			metricsParent="StoreRatingBox"
+            metricsItem="Leave feedback"
+            vtrMetrics
+            (mouseenter) ="onBtnMouseEnter('dislike')"
+            (mouseleave) = "onBtnMouseLeave()"
+            (click)="onBtnDislikeClicked($event)"> 
+            LEAVE FEEDBACK
         </button>
+        
     </div>
 </div>

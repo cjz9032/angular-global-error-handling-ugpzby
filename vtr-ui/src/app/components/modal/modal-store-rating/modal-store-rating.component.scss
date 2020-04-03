@@ -4,26 +4,70 @@
     flex-direction: column;
 
     .close-button{
-        font-size: 3.5rem;
+        font-size:2.2rem;
         align-self: flex-end;   
-        padding:0 10px;
         cursor: pointer;
         margin: 1px;
+        color: gray;
+        padding:0 1rem;
     }
 
     .modal-content{
         font-size: 2rem;
-        padding-bottom: 40px;
-        text-align: center;
+        padding:0 2rem;
+        line-height: 0;
+        .hint-image-border{
+            margin-top: 4px;
+            padding: 0 2rem;
+            img{
+                width: 100%;
+              }
+            .hint-icon{
+                position: absolute;
+                left: 31%;
+                top:25%;
+                font-size: 5rem;
+                color: lightgray;
+                width: 5rem;
+                text-align: center;
+            }
+            .hint-icon-heart{
+                color: red;
+            }
+            .hint-icon-close{
+                color: black;
+            }
+        }
+        
+        hr{
+            margin: 0;
+        }
     }
 
     .modal-bottom{
         display: flex;
-        .modal-btn{
-            font-size: 4.5rem;
-            flex-grow: 1;
+        padding: 2rem 2rem;
+        button{
             display: flex;
             justify-content: center;
+        }
+
+        .love-btn{
+            background: $gradient_blue;
+            border-radius: 2.4rem;
+            font-size: 1.5rem;
+            color: white;
+            font-weight: bold;
+            padding: 1rem 5rem;
+        }
+
+        .feedback-btn{
+            font-size: 1.2rem;
+            align-self: center;
+            text-decoration: underline;
+            color:$blue-lighter;
+            font-weight: bold;
+            margin-left: 2rem;
         }
     }
 
