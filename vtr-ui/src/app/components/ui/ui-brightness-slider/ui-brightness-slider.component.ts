@@ -23,6 +23,7 @@ export class UiBrightnessSliderComponent implements OnInit, AfterContentChecked 
 	@Input() stepsArray: Array<any>; // array with legend value for Eye care
 	@Input() manualRefresh = new EventEmitter<void>();
 	@Input() metricsId = '';
+	@Input() vtrMetricEnabled: any;
 	@Output() onSliderChanged: EventEmitter<ChangeContext> = new EventEmitter();
 	triggerFocus: EventEmitter<PointerType> = new EventEmitter<PointerType>();
 	pointerType: any = PointerType;

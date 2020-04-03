@@ -342,6 +342,18 @@ $fontsize_xs: 1.4rem;
 	}
 }
 
+.bold-title-idea {
+	margin-top: -1rem;
+	::ng-deep .vtr-ui-switch-row.white-theme {
+		.title {
+			line-height: 3.5rem;
+			font-weight: $weight_bold !important;
+			font-size: $fontsize_xs !important;
+			color: $shade_blue !important;
+		}
+	}
+}
+
 .display-dim-title {
 	font-size: $fontsize_xs;
 	color: $shade_blue;
@@ -356,5 +368,63 @@ $fontsize_xs: 1.4rem;
 	color: $purple_navy;
 }
 
+.link-text {
+	font-size: $fontsize_xs2;
+	font-weight: $weight_bold;
+	text-decoration: underline;
+	letter-spacing: 0.05rem;
+	color: $menu_hover;
+	cursor: pointer;
+	padding-top: 0.3rem;
+}
 
+.intelligent-security-image {	
+	margin: -2rem -2.4rem 1rem -0.9rem;
+	position: relative;
+	& > img {
+		width: 100%;
+	}
+	.intelligent-security-image-word {
+		position:absolute; 
+		max-width: 24.2rem; 
+		left: 3rem; 
+		top: 50%;
+		color: #34495e;
+		transform: translateY(-50%);
+		.intelligent-security-image-word-title {
+			font-size: 2.4rem;
+		}
+		.intelligent-security-image-word-description {
+			font-size: 1.4rem; 
+			line-height: 2rem;
+		}
+	}
+}
 
+.zeroTouch-DistanceAdjust {
+	width: 95%;
+
+	.zeroTouchReadMore {
+		font-size: $fontsize_xs;
+		font-weight: $weight_light;
+		color: $grey_dark;
+		.read-more-link {
+			list-style: none;
+			text-decoration: underline;
+		}
+	}
+}
+
+.note-italic {
+	font-size: $fontsize_xs;
+	font-weight: $weight_light;
+	color: $shade_blue;
+}
+
+.zeroTouchHideAdv {
+	margin-top: -3rem;
+}
+
+.zeroTouchLoginDistanceNote {
+	margin-top: -2rem;
+}

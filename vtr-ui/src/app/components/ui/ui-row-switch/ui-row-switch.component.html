@@ -40,8 +40,8 @@
 							<span *ngIf="caption">
 								<div class="caption"
 									#captionRef
+									role="text"
 									id="{{switchId}}-caption"
-									attr.aria-label="{{switchId}}-caption"
 									[innerHTML]="caption.length > 70  && !contentExpand  && readMoreText.length > 0 ? (caption | slice: 0:70) : caption">
 								</div>
 							</span>
