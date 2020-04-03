@@ -68,7 +68,7 @@
 											metricsEvent="FeatureClick"
 											metricsParent="Device.InputAccessories"
 											metricsItem="UserDefinedKeyState.Dropdown"
-											[metricsValue]="item.title"
+											metricsValue="{{item.title | translate}}"
 											(keydown.enter)="onChange(item); userDefineDrop.close()"
 											(keydown)="checkDropDown(userDefineDrop, i, $event)"
 											(click)="onChange(item)">{{item.title | translate}}
