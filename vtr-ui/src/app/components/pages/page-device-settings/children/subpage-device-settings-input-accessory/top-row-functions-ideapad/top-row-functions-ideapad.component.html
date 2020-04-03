@@ -24,24 +24,45 @@
 						tabindex="0"
 						aria-label=" Function key selection list, select using arrow keys">
 						<div class="mr-5">
-							<vtr-ui-rectangle-radio [radioId]="'radio1'"
+							<!-- <vtr-ui-rectangle-radio [radioId]="'radio1'"
 								[checked]="hotkey$ | async"
 								[group]="'top-row-functions-ideapad-radio'"
 								[label]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.sFunKey' | translate"
 								[iconName]="'icomoon icomoon-Special-function'"
 								(change)="update$.next(keyType.HOTKEY)"
 								[value]="keyType.HOTKEY">
-							</vtr-ui-rectangle-radio>
+							</vtr-ui-rectangle-radio> -->
+							<vtr-ui-circle-radio-with-checkbox
+							[theme]="'white'"
+							[radioId]="'radio1'"
+							[group]="'top-row-functions-ideapad-radio'"
+							[checked]="hotkey$ | async"
+							[label]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.sFunKey' | translate"
+							(optionChange)="update$.next(keyType.HOTKEY)"
+							[textId]="'myDevice-settings-inputAccessories-top-row-functions-ideapad'"
+							[value]="'icomoon icomoon-Special-function'">
+						</vtr-ui-circle-radio-with-checkbox>
 						</div>
 						<div>
-							<vtr-ui-rectangle-radio [radioId]="'radio2'"
+							<!-- <vtr-ui-rectangle-radio [radioId]="'radio2'"
 								[group]="'top-row-functions-ideapad-radio'"
 								[checked]="fnkey$ | async"
 								[label]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.fnKey' | translate"
 								[iconName]="'icomoon icomoon-F1-F12-funciton'"
 								(change)="update$.next(keyType.FNKEY)"
 								[value]="keyType.FNKEY">
-							</vtr-ui-rectangle-radio>
+							</vtr-ui-rectangle-radio> -->
+
+							<vtr-ui-circle-radio-with-checkbox
+							[theme]="'white'"
+							[radioId]="'radio2'"
+							[group]="'top-row-functions-ideapad-radio'"
+							[checked]="fnkey$ | async"
+							[label]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.fnKey' | translate"
+							(optionChange)="update$.next(keyType.FNKEY)"
+							[textId]="'myDevice-settings-inputAccessories-top-row-functions-ideapad'"
+							[value]="'icomoon icomoon-F1-F12-funciton'">
+						</vtr-ui-circle-radio-with-checkbox>
 						</div>
 					</div>
 					<p class="text mt-3"

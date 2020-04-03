@@ -37,13 +37,13 @@
 							[effectOptionName]="lightEffectRGBOptionName"
 							[enableBrightCondition1] = "enableBrightCondition" [selectedValue]="frontSelectedValue"
 							[showDescription]="showHideDescription" (change)="optionChangedRGBTop($event, null)"
-							[tabindex]="0">
+							[tabindex]="0" [automationId]="'gaming_lighting_profile_effect_front'">
 						</vtr-ui-lighting-effect>
 
 						<vtr-ui-color-wheel *ngIf="profileRGBFeature===255" [showOverlay]="showHideOverlay"
 							[inHEX]="inHex1" [defaultLang]="defaultLanguage" [btnStatus]="applyBtnStatus1"
 							(colorEffectChanged)="colorEffectChangedFront($event)"
-							(colorChanged)="colorChangedFront($event)">
+							(colorChanged)="colorChangedFront($event)" [automationId]="'gaming_sub_page_RGBlighting_front'" >
 						</vtr-ui-color-wheel>
 					</div>
 				</div>
@@ -67,12 +67,12 @@
 					<vtr-ui-lighting-effect [options]="lightingEffectData.drop[1]" [defaultLang]="defaultLanguage"
 						[enableBrightCondition1] = "enableBrightConditionside" [selectedValue]="sideSelectedValue"
 						[showDescription]="showHideDescription" [effectOptionName]="lightEffectRGBOptionNameSide"
-						(change)="optionChangedRGBSide($event,null)" [tabindex]="0">
+						(change)="optionChangedRGBSide($event,null)" [tabindex]="0" [automationId]="'gaming_lighting_profile_effect_side'">
 					</vtr-ui-lighting-effect>
 
 					<vtr-ui-color-wheel *ngIf="profileRGBFeature===255" [showOverlay]="showHideOverlaySide"
 						[inHEX]="inHex2" [defaultLang]="defaultLanguage" [btnStatus]="applyBtnStatus2"
-						(colorEffectChanged)="colorEffectChangedSide($event)" (colorChanged)="colorChangedSide($event)">
+						(colorEffectChanged)="colorEffectChangedSide($event)" (colorChanged)="colorChangedSide($event)" [automationId]="'gaming_sub_page_RGBlighting_side'">
 					</vtr-ui-color-wheel>
 				</div>
 			</div>
