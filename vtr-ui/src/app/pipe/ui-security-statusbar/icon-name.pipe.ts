@@ -8,7 +8,7 @@ export class IconNamePipe implements PipeTransform {
 			case 'enabled':
 				return ['fas', 'check'];
 			case 'installed':
-				return ['fas'];
+				return ['fas', 'circle'];
 			case 'disabled':
 				return ['fas', 'times'];
 			case 'not-installed':
