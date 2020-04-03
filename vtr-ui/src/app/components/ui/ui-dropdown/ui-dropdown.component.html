@@ -34,8 +34,16 @@
 		class="ui-btn-dropdown"
 		type="button"
 		id="{{ dropDownId }}"
-		attr.aria-label="{{ settingCustomAriaLabel() }}"
-		aria-haspopup="true"
+		attr.aria-label="{{
+			value
+				? this.dropDownId.slice(5, this.dropDownId.length - 9) +
+				  '-' +
+				  list[value].text +
+				  '-selected'
+				: this.dropDownId.slice(5, this.dropDownId.length - 9)
+		}}"
+		role="combobox"
+		aria-haspopup="listbox"
 		[attr.aria-expanded]="isDropDownOpen"
 		[disabled]="disabled"
 		(click)="isDropDownOpen = !isDropDownOpen"
@@ -71,9 +79,7 @@
 			role="option"
 			id="{{ i.text }}"
 			(click)="select(i, toggleBtn)"
-			(keydown.enter)="
-				select(i, toggleBtn); isDropDownOpen = !isDropDownOpen
-			"
+			(keydown.enter)="select(i, toggleBtn)"
 			vtrMetrics
 			metricsEvent="FeatureClick"
 			[metricsItem]="dropDownName"

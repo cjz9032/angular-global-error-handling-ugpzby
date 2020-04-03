@@ -52,15 +52,6 @@ export class UiDropDownComponent implements OnInit, OnChanges {
 		}
 	}
 
-	settingCustomAriaLabel() {
-		if(this.value) {
-			const customAriaLabel = this.list.find((item, i) => i === this.value ? item : '')
-			return customAriaLabel ? this.dropDownId + '-' +customAriaLabel.text + '-selected' : this.dropDownId
-		} else {
-			return this.dropDownId
-		}
-	}
-
 	public select(event: DropDownInterval, toggle) {
 		this.value = event.value;
 		this.name = event.name;
