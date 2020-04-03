@@ -1,12 +1,13 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { BacklightService } from './backlight.service';
-import { asyncScheduler, Observable, Subject, Subscription } from 'rxjs';
+import { Observable, Subject, Subscription } from 'rxjs';
 import {
 	catchError,
 	filter,
 	flatMap,
-	map, observeOn,
-	pluck, repeat,
+	map,
+	pluck,
+	repeat,
 	share,
 	switchMap,
 	takeWhile,
@@ -127,7 +128,8 @@ export class BacklightComponent implements OnInit, OnDestroy {
 			)
 			.subscribe((status) => {
 				for (const mode of this.modes) {
-					if (mode.value === status.value) {
+					mode.checked = mode.value === status.value;
+					if (status.value === BacklightStatusEnum.DISABLED_OFF && mode.value === BacklightStatusEnum.OFF) {
 						mode.checked = true;
 					}
 				}
@@ -139,7 +141,8 @@ export class BacklightComponent implements OnInit, OnDestroy {
 			)
 			.subscribe((status) => {
 				for (const mode of this.modes) {
-					if (mode.value === status.value) {
+					mode.checked = mode.value === status.value;
+					if (status.value === BacklightStatusEnum.DISABLED_OFF && mode.value === BacklightStatusEnum.OFF) {
 						mode.checked = true;
 					}
 				}
@@ -162,6 +165,9 @@ export class BacklightComponent implements OnInit, OnDestroy {
 				this.isSwitchChecked = res.value !== BacklightStatusEnum.OFF;
 				for (const modeItem of this.modes) {
 					modeItem.checked = res.value === modeItem.value;
+					if (res.value === BacklightStatusEnum.DISABLED_OFF && modeItem.value === BacklightStatusEnum.OFF) {
+						modeItem.checked = true;
+					}
 				}
 			})
 	}
