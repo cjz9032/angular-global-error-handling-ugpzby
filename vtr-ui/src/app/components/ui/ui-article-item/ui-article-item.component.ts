@@ -60,9 +60,9 @@ export class UIArticleItemComponent implements OnInit, AfterViewInit {
 	clickContent() {
 		this.metricsDatas.viewOrder++;
 		if (this.articleType === SupportContentStatus.Content) {
-			return this.cardService.linkClicked(this.item.ActionType, this.item.ActionLink);
+			return this.cardService.linkClicked(this.item.ActionType, this.item.ActionLink, false , this.item.Title);
 		} else {
-			this.cardService.openArticleModal(this.item.Id);
+			this.cardService.openArticleModal(this.item.Id, this.item.Title);
 			return false;
 		}
 	}

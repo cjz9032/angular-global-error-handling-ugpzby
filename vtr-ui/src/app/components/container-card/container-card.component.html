@@ -21,7 +21,7 @@
 				<div class="col col-12 content">
 					<a [class.default-cursor]="isOfflineArm"
 						[attr.href]="!item.ActionLink ? null : (item.ActionLink | sanitize : 'resourceUrl')"
-						(click)="linkClicked(item.ActionType, item.ActionLink)"
+						(click)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 						vtrMetrics
 						id="{{containerCardId+'_doc_link'}}"
 						metricsItemCategory="corner"
@@ -77,7 +77,7 @@
 				<div class="col col-12 content">
 					<ng-container *ngIf="isOnline">
 						<a [attr.href]="!item.ActionLink ? null : (item.ActionLink | sanitize : 'resourceUrl')"
-							(click)="linkClicked(item.ActionType, item.ActionLink)"
+							(click)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 							vtrMetrics
 							id="{{containerCardId+'_link'}}"
 							metricsItemCategory="corner"
@@ -151,7 +151,7 @@
 			<div class="row">
 				<div class="col col-12 content">
 					<a [attr.href]="!item.ActionLink ? null : (item.ActionLink | sanitize : 'resourceUrl')"
-						(click)="linkClicked(item.ActionType, item.ActionLink)"
+						(click)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 						metricsItemCategory="highlight"
 						vtrMetrics
 						id="{{containerCardId+'_article'}}"
@@ -189,7 +189,7 @@
 			<a class="article-content"
 				[class.default-cursor]="isOfflineArm"
 				[attr.href]="!item.ActionLink ? null : (item.ActionLink | sanitize : 'resourceUrl')"
-				(click)="linkClicked(item.ActionType, item.ActionLink)"
+				(click)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 				metricsItemCategory="article"
 				vtrMetrics
 				id="{{containerCardId+'_card_article'}}"
@@ -248,7 +248,7 @@
 			<a class="article-content"
 				[class.default-cursor]="isOfflineArm"
 				[attr.href]="!item.ActionLink ? null : (item.ActionLink | sanitize : 'resourceUrl')"
-				(click)="linkClicked(item.ActionType, item.ActionLink)"
+				(click)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 				metricsItemCategory="article"
 				vtrMetrics
 				id="{{containerCardId+'_card_article'}}"
@@ -310,7 +310,7 @@
 					<a tabindex="0"
 						attr.aria-label="{{ item.Title }} . {{ item.Description }}"
 						[attr.href]="!item.ActionLink ? null : (item.ActionLink | sanitize : 'resourceUrl')"
-						(click)="linkClicked(item.ActionType, item.ActionLink)"
+						(click)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 						target="_blank"
 						rel="noopener"
 						class="card-image"

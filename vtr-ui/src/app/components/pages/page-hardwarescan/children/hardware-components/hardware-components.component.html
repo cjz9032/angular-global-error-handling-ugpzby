@@ -43,8 +43,7 @@
 						href="javascript:void();"
 						tabindex="1"
 						[ngClass]="{'action-anchor': !disableRefreshAnchor() , 'disabled-anchor': disableRefreshAnchor()}"
-						(click)="refreshModules()">{{'hardwareScan.refreshModule' | translate}}
-						<fa-icon class="refresh-icon"
+						(click)="refreshModules()">{{'hardwareScan.refreshModule' | translate}}<fa-icon class="refresh-icon"
 							placement="auto"
 							[icon]="['fal', 'redo']"
 							container="vtr-root">

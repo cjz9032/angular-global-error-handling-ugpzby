@@ -9,7 +9,7 @@ import {
 @Component({
 	selector: 'vtr-ui-custom-slider',
 	templateUrl: './ui-custom-slider.component.html',
-	styleUrls: ['./ui-custom-slider.component.scss']
+	styleUrls: ['./ui-custom-slider.component.scss'],
 })
 export class UiCustomSliderComponent implements OnInit {
 	@Input() isDisabled = false;
@@ -22,8 +22,9 @@ export class UiCustomSliderComponent implements OnInit {
 	@Input() midLegend = ''; // label to display at the center of slider
 	@Input() maxLegend = ''; // label to display at the end of slider
 
-	@Output() sliderChange: EventEmitter<number> = new EventEmitter();
-	@Output() valueChanged: EventEmitter<number> = new EventEmitter();
+	@Output() sliderChange: any = new EventEmitter();
+	@Output() valueChanged: any = new EventEmitter();
+	@Output() refresh: any = new EventEmitter();
 
 	constructor() { }
 
@@ -34,7 +35,7 @@ export class UiCustomSliderComponent implements OnInit {
 	 * @param $event currently selected value
 	 */
 	public onValueChange($event: any) {
-		this.valueChanged.emit($event.target.value);
+		this.valueChanged.emit($event.target);
 	}
 
 	/**
@@ -42,6 +43,6 @@ export class UiCustomSliderComponent implements OnInit {
 	 * @param $event currently selected value
 	 */
 	public onInputChange($event: any) {
-		this.sliderChange.emit($event.target.value);
+		this.sliderChange.emit($event.target);
 	}
 }

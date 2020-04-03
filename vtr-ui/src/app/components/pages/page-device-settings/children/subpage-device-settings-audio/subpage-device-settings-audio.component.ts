@@ -411,8 +411,8 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public setVolume(event: number) {
-		const volume = event;
+	public setVolume(event: any) {
+		const volume = event.value;
 		try {
 			this.microphoneProperties.volume = volume;
 			this.updateMicrophoneCache();

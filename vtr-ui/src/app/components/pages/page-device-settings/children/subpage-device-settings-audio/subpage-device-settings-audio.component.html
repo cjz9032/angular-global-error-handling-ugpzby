@@ -36,7 +36,6 @@
 							<li class="common-li-padding">
 								<vtr-ui-row-switch componentName="Automatic Dolby Audio Settings"
 									[title]="'device.deviceSettings.audio.audioSmartsettings.dolby.title' | translate"
-									[name]="'device.deviceSettings.audio.audioSmartsettings.dolby.title' | translate"
 									componentName="Automatic Dolby Audio Settings"
 									[caption]="''"
 									[isSwitchVisible]="autoDolbyFeatureStatus.available"
@@ -73,7 +72,6 @@
 							<li class="common-li-padding">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.audio.audioSmartsettings.voip.title' | translate"
-									[name]="'device.deviceSettings.audio.audioSmartsettings.voip' | translate"
 									componentName="Automatic Audio Optimization for VoIP"
 									[caption]="''"
 									[isSwitchVisible]=true
@@ -116,7 +114,6 @@
 							*ngIf="microphoneProperties.permission">
 							<li class="microphone-on-off">
 								<vtr-ui-row-switch [title]="'device.deviceSettings.audio.microphone.title' | translate"
-									[name]="'device.deviceSettings.audio.microphone.title' | translate"
 									componentName="Microphone"
 									[caption]=""
 									[isSwitchVisible]=true
@@ -134,7 +131,6 @@
 							<li class="common-li-padding">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.audio.microphone.volume.title' | translate"
-									[name]="'device.deviceSettings.audio.microphone.volume.title' | translate"
 									componentName="MicrophoneVolume"
 									[isSwitchVisible]=false
 									[leftIcon]="['fal', 'microphone']"
@@ -168,7 +164,6 @@
 									*ngIf="microphoneProperties.keyboardNoiseSuppression != undefined">
 									<vtr-ui-row-switch
 										[title]="'device.deviceSettings.audio.microphone.suppress.title' | translate"
-										[name]="'device.deviceSettings.audio.microphone.suppress.title' | translate"
 										componentName="Supress Keyboard noise"
 										[caption]=""
 										[isSwitchVisible]=true
@@ -189,7 +184,6 @@
 									*ngIf="microphoneProperties.AEC != undefined">
 									<vtr-ui-row-switch
 										[title]="'device.deviceSettings.audio.microphone.acoustic.title' | translate"
-										[name]="'device.deviceSettings.audio.microphone.acoustic.title' | translate"
 										componentName="Acoustic Echo Cancellation"
 										[caption]=""
 										[isSwitchVisible]=true
@@ -211,7 +205,6 @@
 									<vtr-ui-row-switch
 										[title]="'device.deviceSettings.audio.microphone.optimize.title' | translate"
 										componentName="Optimize my microphone for"
-										[name]="'device.deviceSettings.audio.microphone.optimize.title' | translate"
 										[caption]="'device.deviceSettings.audio.microphone.optimize.tooltip' | translate"
 										[isSwitchVisible]=false
 										[leftIcon]="['fal', 'microphone']"

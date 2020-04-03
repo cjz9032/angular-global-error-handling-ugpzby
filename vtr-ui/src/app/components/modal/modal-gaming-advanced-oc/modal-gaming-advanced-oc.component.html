@@ -21,7 +21,7 @@
                         </p>
                         <div class="overclock-range" tooltipClass="vtr-tool-tip" container="body">
                             <div class="left-slider">
-                                <vtr-ui-brightness-slider [minValue]="item.minValue" [maxValue]="item.maxValue" [step]="item.stepValue" [lightingData]="item.OCValue" (onSliderChanged)="setRangeValue($event,idx,'gpuParameterList',0,false)">
+                                <vtr-ui-brightness-slider [minValue]="item.minValue" [maxValue]="item.maxValue" [step]="item.stepValue" [lightingData]="item.OCValue"  [vtrMetricEnabled]="false" (onSliderChanged)="setRangeValue($event,idx,'gpuParameterList',0,false)">
                                 </vtr-ui-brightness-slider>
                             </div>
                             <div class="right-range">
@@ -41,7 +41,7 @@
                         </p>
                         <div class="overclock-range" tooltipClass="vtr-tool-tip" container="body">
                             <div class="left-slider">
-                                <vtr-ui-brightness-slider [minValue]="item.minValue" [maxValue]="item.maxValue" [step]="item.stepValue" [lightingData]="item.OCValue" (onSliderChanged)="setRangeValue($event,idx,'cpuParameterList',item.tuneId,false)">
+                                <vtr-ui-brightness-slider [minValue]="item.minValue" [maxValue]="item.maxValue" [step]="item.stepValue" [lightingData]="item.OCValue"  [vtrMetricEnabled]="false" (onSliderChanged)="setRangeValue($event,idx,'cpuParameterList',item.tuneId,false)">
                                 </vtr-ui-brightness-slider>
                             </div>
                             <div class="right-range">
