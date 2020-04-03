@@ -1,7 +1,7 @@
 <div class="vtr-hardware-components">
 	<div class="row">
 		<div class="col col-12">
-			<vtr-widget-hardware-scan *ngIf="!isScanDone" [title]="getDeviceTitle()"
+			<!-- <vtr-widget-hardware-scan *ngIf="!isScanDone" [title]="getDeviceTitle()"
 				[subTitle]="getDeviceSubTitle()" [buttonText]="'hardwareScan.quickScan' | translate"
 				[anchorText]="'hardwareScan.customize.name' | translate" [percent]="progress"
 				[finalResultCodeText]="'hardwareScan.finalResultCode' | translate"
@@ -14,7 +14,11 @@
 				itemParentCancel="{{itemParentCancelScan}}"
 				[hideBack]="!isScanDone"
 				itemNameCancel= "{{itemNameCancelScan}}">
-			</vtr-widget-hardware-scan>
+			</vtr-widget-hardware-scan> -->
+
+			<vtr-hardware-scan-header-pages *ngIf="!isScanDone"
+			[percent]="progress">
+			</vtr-hardware-scan-header-pages>
 		</div>
 	</div>
 

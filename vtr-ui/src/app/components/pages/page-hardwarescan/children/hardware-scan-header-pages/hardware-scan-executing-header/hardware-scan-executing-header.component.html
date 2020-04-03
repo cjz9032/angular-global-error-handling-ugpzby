@@ -2,10 +2,10 @@
 <div class="row">
 	<div class="col title">{{title}}</div>
 </div>
-<div class="row hwscan-header" *ngIf="showProgress && !isScanOrRBSFinished()">
+<div class="row hwscan-header" *ngIf="!isScanOrRBSFinished()">
 	<div class="col row1">
 		<span class="row">{{subTitle}}</span>
-		<span class="row">{{warningMessage}}</span>
+		<span class="row">{{'hardwareScan.warningMessage' | translate}}</span>
 	</div>
 	<div class="row">
 		<div class="row progress-div">
@@ -16,24 +16,7 @@
 		</div>
 	</div>
 </div>
-<div *ngIf="!showProgress" class="row">
-	<div class="col button-row">
-		<button [ngClass]="{'action-button': !disableQuickScan, 'action-button-disable': disableQuickScan}"
-			[title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
-			[disabled]="disableQuickScan"
-			(click)="onQuickScan()">{{buttonText}}</button>
-		<a
-			vtrMetrics
-			metricsEvent="FeatureClick"
-			metricsParent="HardwareScan"
-			metricsItem="HardwareScan.CustomizeScan"
-			[title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
-			[ngClass]="{'action-anchor': !disableQuickScan, 'disabled-anchor': disableQuickScan}" (click)="onAnchor()">
-			{{anchorText}}
-		</a>
-	</div>
-</div>
-<div *ngIf="showProgress" class="col row hwscan-header">
+<div class="col row hwscan-header">
 	<div *ngIf="!isScanOrRBSFinished()" class="col col-12 row progress-bar-div-container">
 		<div class="col col-12 progress-bar-div">
 			<ngb-progressbar type="success" [value]="percent" [height]="'0.6rem'"></ngb-progressbar>

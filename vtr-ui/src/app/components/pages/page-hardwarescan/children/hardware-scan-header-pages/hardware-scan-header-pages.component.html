@@ -1,37 +1,18 @@
 <div class="vtr-hardware-scan-header-pages">
 	<div class="container-fluid">
-		<div class="row" [ngSwitch]="showProgress">
+		<div class="row" [ngSwitch]="isExecutingAnyScan()">
 			<div class="col col-12 hardwarescan-background" *ngSwitchCase="true">
 				<vtr-hardware-scan-executing-header
-				*ngIf="!isScanDone" [title]="getDeviceTitle()"
-				[subTitle]="getDeviceSubTitle()" [buttonText]="'hardwareScan.quickScan' | translate"
-				[anchorText]="'hardwareScan.customize.name' | translate" [percent]="progress"
-				[finalResultCodeText]="'hardwareScan.finalResultCode' | translate"
-				[disableQuickScan]="startScanClicked"
-				[disableCancel]="isDisableCancel()"
-				[lenovoSupport]="'hardwareScan.support.subtitle' | translate"
-				[offlineText]="'dashboard.offlineInfo.title' | translate" [isOnline]="isOnline"
-				[showProgress]="isScanExecuting() || isRecoverExecuting()" 
-				 [statusText]="finalStatusToken()"
-				itemParentCancel="{{itemParentCancelScan}}"
-				[hideBack]="!isScanDone"
-				itemNameCancel= "{{itemNameCancelScan}}"></vtr-hardware-scan-executing-header>
+				[title]="getDeviceTitle()"
+				[subTitle]="getDeviceSubTitle()"
+				[percent]="progress"
+				></vtr-hardware-scan-executing-header>
 			</div>
 			<div class="col col-12 hardwarescan-background" *ngSwitchDefault>
 				<vtr-hardware-scan-wait-select-header
-				*ngIf="!isScanDone" [title]="getDeviceTitle()"
-				[subTitle]="getDeviceSubTitle()" [buttonText]="'hardwareScan.quickScan' | translate"
-				[anchorText]="'hardwareScan.customize.name' | translate" [percent]="progress"
-				[finalResultCodeText]="'hardwareScan.finalResultCode' | translate"
-				[disableQuickScan]="startScanClicked"
-				[disableCancel]="isDisableCancel()"
-				[lenovoSupport]="'hardwareScan.support.subtitle' | translate"
-				[offlineText]="'dashboard.offlineInfo.title' | translate" [isOnline]="isOnline"
-				[showProgress]="isScanExecuting() || isRecoverExecuting()" 
-				[statusText]="finalStatusToken()"
-				itemParentCancel="{{itemParentCancelScan}}"
-				[hideBack]="!isScanDone"
-				itemNameCancel= "{{itemNameCancelScan}}"></vtr-hardware-scan-wait-select-header>
+				[culture]="culture"
+				[metrics]="metrics"
+				></vtr-hardware-scan-wait-select-header>
 			</div>
 		</div>
 	</div>

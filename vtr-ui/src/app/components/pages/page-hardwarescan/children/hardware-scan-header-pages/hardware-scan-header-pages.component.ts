@@ -3,6 +3,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { TaskType, TaskStep } from 'src/app/enums/hardware-scan-metrics.enum';
 import { ModalWaitComponent } from '../../../../modal/modal-wait/modal-wait.component';
 import { NgbModal, NgbModalRef, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
+import { VantageShellService } from '../../../../../services/vantage-shell/vantage-shell.service';
 import { HardwareScanService } from '../../../../../services/hardware-scan/hardware-scan.service';
 
 @Component({
@@ -13,48 +14,22 @@ import { HardwareScanService } from '../../../../../services/hardware-scan/hardw
 
 export class HardwareScanHeaderPagesComponent implements OnInit {
 
-	// "Wrapper" value to be accessed from the HTML
-	public taskTypeEnum = TaskType;
-	public isScanDone = false;
-	public progress = 0;
-	completeStatusToken: string;
-	public startScanClicked = false;
-
+	@Input() percent;
 	public deviceInRecover: any; // Current device in Recover Bad Sectors
-	public itemParentCancelScan: string;
-	public itemNameCancelScan: string;
+	public culture: any;
+	public metrics: any
 
-	@Input() title = '';
-	@Input() subTitle = '';
-	@Input() warningMessage = this.translate.instant('hardwareScan.warningMessage');
-	@Input() finalResultCode = '';
-	@Input() finalResultCodeText = '';
-	@Input() buttonText = '';
-	@Input() anchorText = '';
-	@Input() completeText = this.translate.instant('hardwareScan.complete');
-	@Input() statusText: string;
-	@Input() lenovoSupport = '';
-	@Input() percent = 0;
-	@Input() showProgress = false;
-	@Input() disableQuickScan: boolean;
-	@Input() disableCancel: boolean;
-	@Input() tooltipInformation: any;
-	@Input() offlineText: string;
-	@Input() isOnline = true;
+	constructor(
+		private hardwareScanService: HardwareScanService,
+		private shellService: VantageShellService,
+		private translate: TranslateService
+		) {
+			this.metrics = this.shellService.getMetrics();
+		}
 
-	@Input() itemParentCancel: string;
-	@Input() itemNameCancel: string;
-
-	@Output() startQuickScan = new EventEmitter();
-	@Output() updateProgress = new EventEmitter();
-	@Output() checkCancel = new EventEmitter();
-	@Output() checkAnchor = new EventEmitter();
-
-	constructor(private hardwareScanService: HardwareScanService,
-		private modalService: NgbModal, 
-		private translate: TranslateService) { }
-
-	ngOnInit() { }
+	ngOnInit() {
+		this.culture = this.hardwareScanService.getCulture();
+	 }
 
 	public getDeviceTitle() {
 		if (this.hardwareScanService) {
@@ -76,55 +51,12 @@ export class HardwareScanHeaderPagesComponent implements OnInit {
 		}
 	}
 
-	public isDisableCancel() {
-		return this.hardwareScanService.isDisableCancel();
-	}
-
-	public isScanExecuting() {
+	public isExecutingAnyScan(){
 		if (this.hardwareScanService) {
-			return this.hardwareScanService.isScanExecuting();
+			return (
+				this.hardwareScanService.isScanExecuting() ||
+				this.hardwareScanService.isRecoverExecuting()
+			);
 		}
-	}
-
-	public isRecoverExecuting() {
-		if (this.hardwareScanService) {
-			return this.hardwareScanService.isRecoverExecuting();
-		}
-	}
-
-	onQuickScan() {
-		// this.showProgress = true;
-		this.startQuickScan.emit();
-	}
-
-	onAnchor() {
-		this.checkAnchor.emit();
-	}
-
-	onCancel() {
-		this.showProgress = true;
-		this.checkCancel.emit();
-	}
-
-	public isScanOrRBSFinished() {
-		return this.hardwareScanService.isScanOrRBSFinished();
-	}
-
-	public getFinalResultCode() {
-		if (this.hardwareScanService) {
-		return this.hardwareScanService.getFinalResultCode();
-		}
-		return '';
-	}
-
-	public getTooltipInformation() {
-		if (this.hardwareScanService) {
-		return this.hardwareScanService.getFinalResultDescription();
-		}
-		return '';
-	}
-
-	public finalStatusToken() {
-		return this.completeStatusToken;
 	}
 }

@@ -1,20 +1,22 @@
 <div class="row">
-	<div class="col title">{{title}}</div>
+	<div class="col title">{{'hardwareScan.title' | translate}}</div>
 </div>
-<div *ngIf="!showProgress" class="row">
-	<div class="col button-row">
-		<button [ngClass]="{'action-button': !disableQuickScan, 'action-button-disable': disableQuickScan}"
+<div class="row">
+ 	<div class="col button-row">
+		<button [ngClass]="{'action-button': !isButtonDisable(), 'action-button-disable': isButtonDisable()}"
 			[title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
-			[disabled]="disableQuickScan"
-			(click)="onQuickScan()">{{buttonText}}</button>
+			[disabled]="isButtonDisable()"
+			(click)="startScanWaitingModules(taskTypeEnum.QuickScan)"
+			>{{'hardwareScan.quickScan' | translate}}</button>
 		<a
 			vtrMetrics
 			metricsEvent="FeatureClick"
 			metricsParent="HardwareScan"
 			metricsItem="HardwareScan.CustomizeScan"
 			[title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
-			[ngClass]="{'action-anchor': !disableQuickScan, 'disabled-anchor': disableQuickScan}" (click)="onAnchor()">
-			{{anchorText}}
+			[ngClass]="{'action-anchor': !isButtonDisable(), 'disabled-anchor': isButtonDisable()}"
+			(click)="startScanWaitingModules(taskTypeEnum.CustomScan)"
+			>{{'hardwareScan.customize.name' | translate}}
 		</a>
-	</div>
+	</div> 
 </div>

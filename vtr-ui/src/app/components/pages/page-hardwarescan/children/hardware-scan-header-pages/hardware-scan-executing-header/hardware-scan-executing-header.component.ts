@@ -8,49 +8,16 @@ import { HardwareScanService } from '../../../../../../services/hardware-scan/ha
   styleUrls: ['./hardware-scan-executing-header.component.scss']
 })
 export class HardwareScanExecutingHeaderComponent implements OnInit {
-  @Input() title = '';
+
+	@Input() percent;
+	@Input() title = '';
 	@Input() subTitle = '';
-	@Input() warningMessage = this.translate.instant('hardwareScan.warningMessage');
-	@Input() finalResultCode = '';
-	@Input() finalResultCodeText = '';
-	@Input() buttonText = '';
-	@Input() anchorText = '';
-	@Input() completeText = this.translate.instant('hardwareScan.complete');
-	@Input() statusText: string;
-	@Input() lenovoSupport = '';
-	@Input() percent = 0;
-	@Input() showProgress = false;
-	@Input() disableQuickScan: boolean;
-	@Input() disableCancel: boolean;
-	@Input() tooltipInformation: any;
-	@Input() offlineText: string;
-	@Input() isOnline = true;
 
-	@Input() itemParentCancel: string;
-	@Input() itemNameCancel: string;
-
-	@Output() startQuickScan = new EventEmitter();
-	@Output() updateProgress = new EventEmitter();
-	@Output() checkCancel = new EventEmitter();
-	@Output() checkAnchor = new EventEmitter();
-
-	constructor(private hardwareScanService: HardwareScanService, private translate: TranslateService) { }
+	constructor(
+		private hardwareScanService: HardwareScanService,
+		private translate: TranslateService) { }
 
 	ngOnInit() { }
-
-	onQuickScan() {
-		// this.showProgress = true;
-		this.startQuickScan.emit();
-	}
-
-	onAnchor() {
-		this.checkAnchor.emit();
-	}
-
-	onCancel() {
-		this.showProgress = true;
-		this.checkCancel.emit();
-	}
 
 	public isScanOrRBSFinished() {
 		return this.hardwareScanService.isScanOrRBSFinished();
@@ -58,16 +25,15 @@ export class HardwareScanExecutingHeaderComponent implements OnInit {
 
 	public getFinalResultCode() {
 		if (this.hardwareScanService) {
-		return this.hardwareScanService.getFinalResultCode();
+			return this.hardwareScanService.getFinalResultCode();
 		}
 		return '';
 	}
 
 	public getTooltipInformation() {
 		if (this.hardwareScanService) {
-		return this.hardwareScanService.getFinalResultDescription();
+			return this.hardwareScanService.getFinalResultDescription();
 		}
 		return '';
 	}
-
 }
