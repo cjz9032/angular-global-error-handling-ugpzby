@@ -11,6 +11,7 @@ export class UiPopoverComponent implements OnInit {
 	@Output() closeClicked = new EventEmitter<any>();
 	@Input() descriptionLabel = 'Gaming popover opened';
 	isNowOpened = false;
+	@Input() automationId: string;
 	constructor() { }
 
 	ngOnInit() {

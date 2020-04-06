@@ -17,10 +17,10 @@ export class ModalTurnOnComponent implements OnInit, AfterViewInit {
 	@Output() actionNeedAsk = new EventEmitter<any>();
 	public isChecked: any;
 	ngOnInit() {
-		document.getElementById('closedialog').focus();
+		document.getElementById('autoclose_turnon_dialog').focus();
 	}
 	ngAfterViewInit() {
-		document.getElementById('closedialog').focus();
+		document.getElementById('autoclose_turnon_dialog').focus();
 	}
 
 	setAksAgain(event: any) {
@@ -43,7 +43,7 @@ export class ModalTurnOnComponent implements OnInit, AfterViewInit {
 
 	keydownFn(event) {
 		if (event.which === 9) {
-			document.getElementById('closedialog').focus();
+			document.getElementById('autoclose_turnon_dialog').focus();
 		}
 	}
 }

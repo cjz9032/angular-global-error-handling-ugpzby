@@ -28,7 +28,7 @@
 											<vtr-ui-gaming-driver-popup [ngClass]="{'overclock-driver-popup' : item.id === 'legionedge cpuoverlock'}" *ngIf="item.isCollapsible && item.isDriverPopup"
 												 [showMePartially]="item.isDriverPopup"
 												[descriptionLabel]="item.ariaLabel" [popupText]="item.driverPopupText"
-												(driverpopval)="onClosed(item, in)">
+												(driverpopval)="onClosed(item, in)" [automationId]="item.ariaLabel">
 											</vtr-ui-gaming-driver-popup>
 											<a id="{{item.settings}}" [attr.aria-label]="item.ariaLabel + 'gear icon'"
 												vtrMetrics href="javascript:void();" [metricsItem]="item.settings"
@@ -49,13 +49,14 @@
 
 												<vtr-ui-popover *ngIf="item.isPopup" [item]="item"
 													[showMePartially]="item.isPopup" [descriptionLabel]="item.ariaLabel"
-													(closeClicked)="onClosed($event, in)">
+													(closeClicked)="onClosed($event, in)" [automationId]="item.ariaLabel">
 												</vtr-ui-popover>
 												<vtr-ui-gaming-driver-popup [ngClass]="{'networkboost-driver-popup': item.id === 'legionedge networkboost','ram-overclock-driver-popup': item.id === 'legionedge ramoverlock'}" *ngIf="item.isDriverPopup"
 													 [showMePartially]="item.isDriverPopup"
 													[descriptionLabel]="item.ariaLabel"
 													[popupText]="item.driverPopupText"
-													(driverpopval)="onClosed(item, in)">
+													(driverpopval)="onClosed(item, in)"
+													[automationId]="item.ariaLabel">
 												</vtr-ui-gaming-driver-popup>
 												<fa-icon class=" question" triggers="click:blur" placement="auto"
 													[ngbTooltip]="item.tooltipText" [icon]="['far', 'question-circle']"
