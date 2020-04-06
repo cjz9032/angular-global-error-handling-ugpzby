@@ -1,8 +1,9 @@
-import { Component, EventEmitter, Input, OnInit, Output, ViewChildren, QueryList } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, QueryList, ViewChildren } from '@angular/core';
 import { SecureMath } from '@lenovo/tan-client-bridge';
+import { NgbDropdown } from '@ng-bootstrap/ng-bootstrap';
+import { TranslateService } from '@ngx-translate/core';
 import { ChargeThreshold } from 'src/app/data-models/device/charge-threshold.model';
 import { CommonService } from 'src/app/services/common/common.service';
-import { NgbDropdown } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
 	selector: 'vtr-battery-charge-threshold-settings',
@@ -26,7 +27,14 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 	startAtChargeOptions: number[] = this.chargeOptions.slice(0, this.chargeOptions.length - 1);
 	stopAtChargeOptions: number[] = this.chargeOptions.slice(1, this.chargeOptions.length);
 	hyphen = '-'
-	startAtChargeOption = "startAtChargeOption"
+	startAtChargeOption = 'startAtChargeOption';
+	stopAtChargeOption = 'stopAtChargeOption';
+	option = 'option';
+	selected = 'selected';
+	off = 'off'
+	ddStartAtChargeDescription = this.translate.instant('device.deviceSettings.power.batterySettings.batteryThreshold.options.start');
+	ddStopAtChargeDescription = this.translate.instant('device.deviceSettings.power.batterySettings.batteryThreshold.options.stop');
+
 
 	// Random number is used to have unique id of each input field
 	randomNumber: number = Math.floor(new Date().valueOf() * SecureMath.random());
@@ -37,21 +45,42 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 	isCheckedAutoInput = 'is-auto-battery-threshold-settings';
 	public selectedOptionsData: any = {};
 	@ViewChildren(NgbDropdown) dropDowns: QueryList<NgbDropdown>;
+	timeOut = 100;
+	constructor(private commonService: CommonService, private translate: TranslateService) { }
 
-	constructor(private commonService: CommonService) { }
 
-	ngOnInit() { }
+	ngOnInit() {
+		this.translate.stream('device.deviceSettings.power.batterySettings.batteryThreshold.options.start').subscribe((value) => {
+			this.ddStartAtChargeDescription = value;
+		});
 
-	onStartValueChange(startVal: number, button: HTMLElement) {
+		this.translate.stream('device.deviceSettings.power.batterySettings.batteryThreshold.options.start').subscribe((value) => {
+			this.ddStartAtChargeDescription = value;
+		});
+
+
+	}
+
+	onStartValueChange(startVal: number, activeDropdown: NgbDropdown, button: HTMLElement) {
 		const bctInfo = this.commonService.cloneObj(this.bctInfo);
 		if (bctInfo.startValue !== startVal) {
 			bctInfo.startValue = startVal;
 			this.changeBCTInfo.emit(bctInfo);
 		}
-		button.focus();
+		this.delayButtonFocus(activeDropdown, button);
+	}
+	// this added to introduce the delay between option selection , and focus back on button to fix issue with narrator reading collapsed twice.
+	delayButtonFocus(activeDropdown: NgbDropdown, button: HTMLElement) {
+		if (activeDropdown.isOpen()) {
+			activeDropdown.close();
+		}
+		document.body.focus();
+		setTimeout(() => {
+			button.focus();
+		}, this.timeOut);
 	}
 
-	onStopValueChange(stopVal: number, button: HTMLElement) {
+	onStopValueChange(stopVal: number, activeDropdown: NgbDropdown, button: HTMLElement) {
 		const bctInfo: ChargeThreshold = this.commonService.cloneObj(this.bctInfo);
 		if (bctInfo.stopValue !== stopVal) {
 			bctInfo.stopValue = stopVal;
@@ -60,7 +89,8 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 			}
 			this.changeBCTInfo.emit(bctInfo);
 		}
-		button.focus();
+		this.delayButtonFocus(activeDropdown, button);
+
 	}
 
 	public toggleAutoChargeSettings($event: boolean) {
@@ -113,6 +143,17 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 					activeDropdown.close();
 					// this.closeAllDD();
 				}
+			}
+		}
+
+	}
+
+	focusOnSelected($event: Event, activeDropdown: NgbDropdown, type, value) {
+		// dropdown-toggle will be toggled when pressed on enter
+		if (activeDropdown.isOpen()) {
+			const focusElement = document.querySelector(`#${this.textId}-${type}-${value}`) as HTMLElement;
+			if (focusElement) {
+				focusElement.focus();
 			}
 		}
 
