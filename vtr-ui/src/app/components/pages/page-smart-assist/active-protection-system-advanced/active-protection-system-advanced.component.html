@@ -8,8 +8,7 @@
 		<li *ngIf="penCapability"
 			class="input-item">
 			<div>
-				<vtr-ui-row-switch [name]="'activeProtectionSystem_advanced_pen'"
-					[title]="'device.smartAssist.activeProtectionSystem.advanced.pen.title' | translate"
+				<vtr-ui-row-switch [title]="'device.smartAssist.activeProtectionSystem.advanced.pen.title' | translate"
 					[caption]="'device.smartAssist.activeProtectionSystem.advanced.pen.description' | translate"
 					[theme]="'white'"
 					[isSwitchVisible]="true"
@@ -42,7 +41,7 @@
 		<li *ngIf="touchCapability"
 			class="input-item">
 			<div>
-				<vtr-ui-row-switch [name]="'activeProtectionSystem_touchInput'"
+				<vtr-ui-row-switch
 					[title]="'device.smartAssist.activeProtectionSystem.advanced.touch.title' | translate"
 					[theme]="'white'"
 					[isSwitchVisible]="true"
@@ -62,8 +61,7 @@
 		<li *ngIf="pSensorCapability"
 			class="input-item">
 			<div>
-				<vtr-ui-row-switch [name]="'activeProtectionSystem_advanced_hand'"
-					[title]="'device.smartAssist.activeProtectionSystem.advanced.hand.title' | translate"
+				<vtr-ui-row-switch [title]="'device.smartAssist.activeProtectionSystem.advanced.hand.title' | translate"
 					[theme]="'white'"
 					[isSwitchVisible]="true"
 					[showChildContent]="true"
