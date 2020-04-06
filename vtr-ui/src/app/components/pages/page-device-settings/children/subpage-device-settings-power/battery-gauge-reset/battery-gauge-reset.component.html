@@ -144,7 +144,7 @@
 										metricsEvent="FeatureClick"
 										[isRegular]="true"
 										[autoFocus]="autoFocusButton"
-										[disabled]="(batteryService.isGaugeResetRunning &&
+										[isDisabled]="(batteryService.isGaugeResetRunning &&
 											(batteryService.gaugeResetInfo.length > 1 && !battery.isResetRunning)) ||
 											!batteryService.isAcAttached"
 										[tabIndex]="((batteryService.isGaugeResetRunning &&
