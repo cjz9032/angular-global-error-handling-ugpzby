@@ -40,8 +40,10 @@
 						[isDisabled]="disabledAll"
 						[value]="cameraSettings.brightness.value"
 						(sliderChange)="onBrightnessSliderChange($event)"
+						[metricsItem]="'cameraSettings-brightness'"
+						[metricsValue]="cameraSettings.brightness.value"
 						[sliderId]="'cameraSettings-brightness'">
-					</vtr-ui-custom-slider >
+					</vtr-ui-custom-slider>
 				</li>
 				<li class="list-group-item"
 					*ngIf="cameraSettings.contrast && cameraSettings.contrast.supported">
@@ -56,6 +58,8 @@
 						[max]="cameraSettings.contrast.max"
 						[isDisabled]="disabledAll"
 						[value]="cameraSettings.contrast.value"
+						[metricsItem]="'cameraSettings-contrast'"
+						[metricsValue]="cameraSettings.contrast.value"
 						(sliderChange)="onContrastSliderChange($event)"
 						[sliderId]="'cameraSettings-contrast'">
 					</vtr-ui-custom-slider>
@@ -84,6 +88,8 @@
 							[max]="cameraSettings.exposure.max"
 							[isDisabled]="disabledAll"
 							[value]="cameraSettings.exposure.value"
+							[metricsItem]="'cameraSettings-exposure'"
+							[metricsValue]="cameraSettings.exposure.value"
 							(sliderChange)="onExposureSliderChange($event)"
 							[sliderId]="'cameraSettings-autoExposure'">
 						</vtr-ui-custom-slider>
