@@ -17,7 +17,7 @@ export class CardService {
 		public deviceService: DeviceService,
 	) { }
 
-	linkClicked(actionType: string, actionLink: string, isOfflineArm?: boolean) {
+	linkClicked(actionType: string, actionLink: string, isOfflineArm?: boolean, articleTitle: string = '') {
 		if (isOfflineArm) {
 			return false;
 		}
@@ -36,18 +36,19 @@ export class CardService {
 			this.appsForYouService.updateUnreadMessageCount('menu-main-lnk-open-dcc');
 			this.openDccDetailModal();
 		} else {
-			this.openArticleModal(actionLink);
+			this.openArticleModal(actionLink, articleTitle);
 		}
 
 		return false;
 	}
 
-	openArticleModal(articleId: string) {
+	openArticleModal(articleId: string, articleTitle: string = '') {
 		const articleClass = this.deviceService.isGaming ? 'Article-Detail-Modal content-gaming' : 'Article-Detail-Modal';
 		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
 			backdrop: true, /*'static',*/
 			size: 'lg',
 			centered: true,
+			ariaLabelledBy: 'article-dialog-basic-title',
 			windowClass: articleClass,
 			keyboard: false,
 			beforeDismiss: () => {
@@ -59,6 +60,9 @@ export class CardService {
 		});
 
 		articleDetailModal.componentInstance.articleId = articleId;
+		if (articleTitle !== '') {
+			articleDetailModal.componentInstance.articleLinkTitle = articleTitle;
+		}
 	}
 
 	openDccDetailModal() {

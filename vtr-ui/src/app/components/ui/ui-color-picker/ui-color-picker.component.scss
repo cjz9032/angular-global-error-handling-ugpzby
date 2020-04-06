@@ -11,6 +11,9 @@
             box-shadow: 0 0 1px #283756;
             padding-bottom: 35px;
             box-shadow: 0 16px 32px rgba(0,0,0,0.2);
+            @media #{$high-contrast} {
+                -ms-high-contrast-adjust: none;
+            }
             ul{
                 width: 100%;
                 padding: 10px 20px 0 10px;
@@ -26,6 +29,9 @@
                     margin-left: 10px;
                     margin-top: 10px;
                     cursor: pointer;
+                    @media #{$high-contrast} {
+                        -ms-high-contrast-adjust: none;
+                    }
                     span{
                         display: inline-block;
                         width: 100%;
@@ -51,6 +57,9 @@
         }
         .inp-color-picker{
             box-shadow: 0 16px 32px rgba(0,0,0,0.2);
+            @media #{$high-contrast} {
+                -ms-high-contrast-adjust: none;
+            }
         }
         .color-inp{
             width: 0;

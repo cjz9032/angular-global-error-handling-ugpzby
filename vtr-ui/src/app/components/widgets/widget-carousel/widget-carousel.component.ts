@@ -95,11 +95,11 @@ export class WidgetCarouselComponent implements OnInit, OnChanges {
 		}
 	}
 
-	linkClicked($event, actionType: string, actionLink: string) {
+	linkClicked($event, actionType: string, actionLink: string, title: string) {
 		if (!actionLink) {
 			$event.preventDefault();
 		}
-		return this.cardService.linkClicked(actionType, actionLink);
+		return this.cardService.linkClicked(actionType, actionLink, false, title);
 	}
 
 	public swipe(e) {

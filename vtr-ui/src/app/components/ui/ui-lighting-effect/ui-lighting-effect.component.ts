@@ -28,6 +28,7 @@ export class UiLightingEffectComponent implements OnInit, OnChanges {
 	public currentDescription: string;
 	public selectedDescription: string;
 	@Input() effectOptionName: string;
+	@Input() automationId: string;
 	public selectedOption: any = {
 		header: "",
 		id: "",

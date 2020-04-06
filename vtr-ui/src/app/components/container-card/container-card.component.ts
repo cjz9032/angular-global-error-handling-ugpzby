@@ -70,8 +70,8 @@ export class ContainerCardComponent implements OnInit {
 		}
 	}
 
-	linkClicked(actionType: string, actionLink: string) {
-		return this.cardService.linkClicked(actionType, actionLink, this.isOfflineArm);
+	linkClicked(actionType: string, actionLink: string, title: string = '') {
+		return this.cardService.linkClicked(actionType, actionLink, this.isOfflineArm, title);
 	}
 
 	private onNotification(notification: AppNotification) {

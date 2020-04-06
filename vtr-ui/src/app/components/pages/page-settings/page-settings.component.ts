@@ -295,13 +295,19 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		const expectedMetricCollectionState = this.toggleDeviceStatistics ? 'On' : 'Off';
 		if (this.metricsPreference) {
 			this.metricsPreference.setAppMetricCollectionSettings('en', 'com.lenovo.LDI', this.toggleDeviceStatistics).then((result: any) => {
-				if (!result || !result.app || result.app.metricCollectionState !== expectedMetricCollectionState) {
+				if (!result || !result.app || result.app.metricCollectionState === expectedMetricCollectionState) {
+					this.sendSettingMetrics('SettingDeviceStatistics', event.switchValue);
+				} else {
 					this.toggleDeviceStatistics = !event.switchValue;
 					this.settingsService.toggleDeviceStatistics = !event.switchValue;
+					this.loggerService.error('setAppMetricCollectionSettings result not correct, will revert Device Metric toggle change.', result);
 				}
-			}).catch(() => { });
+			}).catch((error) => {
+				this.toggleDeviceStatistics = !event.switchValue;
+				this.settingsService.toggleDeviceStatistics = !event.switchValue;
+				this.loggerService.error('setAppMetricCollectionSettings exception, will revert Device Metric toggle change.', error);
+			});
 		}
-		this.sendSettingMetrics('SettingDeviceStatistics', event.switchValue);
 	}
 
 	onToggleOfUsageStatistics(event: any) {

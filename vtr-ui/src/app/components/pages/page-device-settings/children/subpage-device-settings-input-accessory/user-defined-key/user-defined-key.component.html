@@ -64,6 +64,11 @@
 											id="userdefinedkey-{{i}}"
 											attr.aria-label="userdefinedkey-{{item.title | translate}}"
 											tabindex="0"
+											vtrMetrics
+											metricsEvent="FeatureClick"
+											metricsParent="Device.InputAccessories"
+											metricsItem="UserDefinedKeyState.Dropdown"
+											[metricsValue]="item.title"
 											(keydown.enter)="onChange(item); userDefineDrop.close()"
 											(keydown)="checkDropDown(userDefineDrop, i, $event)"
 											(click)="onChange(item)">{{item.title | translate}}

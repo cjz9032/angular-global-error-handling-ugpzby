@@ -34,13 +34,23 @@
 								[allowCollapse]="true"
 								[theme]="'white'"
 								(toggle)="onCardCollapse($event)">
-								<!-- IdeaPad section -->
+								<!-- image -->
+								<div class="no-border-bottom pb-3 intelligent-security-image">
+									<img [src]="image" id="intelligent-security-image"/>
+									<div class="intelligent-security-image-word">
+										<p class="intelligent-security-image-word-title"
+											id="intelligent-security-image-word-title">{{'device.smartAssist.intelligentSecurity.image.title' | translate}}</p>
+										<p class="intelligent-security-image-word-description"
+											id="intelligent-security-image-word-description">{{'device.smartAssist.intelligentSecurity.image.description' | translate}}</p>
+									</div>
+								</div>
+								<!-- zeroTouchLogin -- ideaPad section -->
 								<ul class="list-group list-group-flush"
 									*ngIf="!isThinkPad">
 									<li class="no-border-bottom common-li-padding">
 										<vtr-ui-row-switch [switchId]="'zeroTouchLogin'"
-											[title]="'device.smartAssist.intelligentSecurity.zeroTouchLogin.title' | translate"
-											[caption]=" 'device.smartAssist.intelligentSecurity.zeroTouchLogin.caption' | translate"
+											[title]="'device.smartAssist.intelligentSecurity.zeroTouchLoginForIdea.title' | translate"
+											[caption]=" 'device.smartAssist.intelligentSecurity.zeroTouchLoginForIdea.caption' | translate"
 											[isSwitchVisible]="true"
 											[leftIcon]="['icomoon', 'icomoon-zero-touch-login']"
 											[showChildContent]="true"
@@ -49,29 +59,90 @@
 											[theme]="'white'"
 											[disabled]="!intelligentSecurity.isHPDEnabled"
 											[rightIcon]="['far', 'question-circle']"
-											[tooltipText]=" 'device.smartAssist.intelligentSecurity.zeroTouchLogin.tooltip' | translate">
+											[tooltipText]=" 'device.smartAssist.intelligentSecurity.zeroTouchLoginForIdea.tooltip' | translate">
 										</vtr-ui-row-switch>
-										<div class="pl-5 bold-title no-border-bottom pb-4 border-bottom"
-											*ngIf="intelligentSecurity.isDistanceSensitivityVisible">
-											<vtr-ui-row-switch [switchId]="'distanceSensitivity'"
-												[title]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title' | translate"
-												[caption]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.caption' | translate"
+										<!-- show advanced section -->
+										<div class="pl-5 border-bottom pb-4" 
+											*ngIf="!zeroTouchLoginShowAdvancedSection">
+											<span class="link-text mt-2 ml-4"
+												role="button"
+												tabindex="0"
+												id="smartAssist-intelligentSecurity-zeroTouchLogin-showAdvSettings"
+												attr-aria-label="smartAssist.intelligentSecurity.zeroTouchLogin.showAdvSettings"
+												(click)="setHPDAdvancedSetting('zeroTouchLogin', true)"
+												(keydown.enter)="setHPDAdvancedSetting('zeroTouchLogin', true)">
+												{{'device.smartAssist.intelligentSecurity.advancedSettings.showAdvSettings' | translate}}
+											</span>
+										</div>
+										<!-- login distance sensitivity adjust -->
+										<div class="pl-5 bold-title-idea no-border-bottom pb-4"
+											*ngIf="intelligentSecurity.isDistanceSensitivityVisible && zeroTouchLoginShowAdvancedSection">
+											<vtr-ui-row-switch [switchId]="'smartAssist-intelligentSecurity-zeroTouchLogin-distanceSensitivityAutoAdjusting'"
+												[title]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.title' | translate"
 												[isSwitchVisible]="true"
-												[showChildContent]="intelligentSecurity.isZeroTouchLoginAdjustEnabled"
+												[showChildContent]="true"
 												[isSwitchChecked]="intelligentSecurity.isZeroTouchLoginAdjustEnabled"
 												(toggleOnOff)="onDistanceSensitivityAdjustToggle($event)"
 												[theme]="'white'"
 												[disabled]="!intelligentSecurity.isZeroTouchLoginEnabled"
-												[toolTipStatus]='true'
-												[rightIcon]="['far', 'question-circle']">
+												[toolTipStatus]='true'>
+												<div class="col text-wrap zeroTouch-DistanceAdjust">
+													<div class="zeroTouchReadMore">
+														<p *ngIf="intelligentSecurity.isZeroTouchLoginAdjustEnabled"
+															id="zeroTouchLogin-DistanceAdjust-statusOn"
+															role="text">
+															{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.captionOn' | translate}}
+														</p>
+														<div *ngIf="!intelligentSecurity.isZeroTouchLoginAdjustEnabled"
+															role="text">
+															<p id="zeroTouchLogin-DistanceAdjust-statusOff"
+																role="text">
+																{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.captionOff' | translate}}
+															</p>
+															<p id="zeroTouchLogin-DistanceAdjust-readMoreMode1"
+																role="text">
+																{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.readMore' | translate}}
+															</p>
+															<div *ngIf="hsaIntelligentSecurity.sensorType == 2">
+																<p id="zeroTouchLogin-DistanceAdjust-readMoreMode2"
+																	role="text">
+																	{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.readMoreForSensor2.line1' | translate}}
+																</p>
+																<p id="zeroTouchLogin-DistanceAdjust-readMoreMode3"
+																	role="text">
+																	{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.readMoreForSensor2.line2' | translate}}
+																</p>
+																<p id="zeroTouchLogin-DistanceAdjust-readMoreMode4"
+																	role="text">
+																	{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.readMoreForSensor2.line3' | translate}}
+																</p>
+															</div>
+															<div *ngIf="hsaIntelligentSecurity.sensorType != 2">
+																<p id="zeroTouchLogin-DistanceAdjust-readMoreMode2"
+																	role="text">
+																	{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.readMoreForSensor1.line1' | translate}}
+																</p>
+																<p id="zeroTouchLogin-DistanceAdjust-readMoreMode3"
+																	role="text">
+																	{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.readMoreForSensor1.line2' | translate}}
+																</p>
+																<p id="zeroTouchLogin-DistanceAdjust-readMoreMode4"
+																	role="text">
+																	{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.readMoreForSensor1.line3' | translate}}
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
 											</vtr-ui-row-switch>
 											<div class="slider-note">
 												<vtr-ui-custom-slider [sliderId]="'distanceSensitivity'"
 													*ngIf="!intelligentSecurity.isZeroTouchLoginAdjustEnabled"
-													[minLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.near' | translate"
-													[min]="1"
-													[maxLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
-													[max]="3"
+													[minLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.options.near' | translate"
+													[min]=1
+													[midLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.options.medium' | translate"
+													[maxLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.options.far' | translate"
+													[max]=3
 													(sliderChange)="setZeroTouchLoginSensitivity($event)"
 													[value]="intelligentSecurity.zeroTouchLoginDistance"
 													[isDisabled]="!intelligentSecurity.isZeroTouchLoginEnabled"
@@ -79,14 +150,15 @@
 													[metricsValue]="intelligentSecurity.zeroTouchLoginDistance">
 												</vtr-ui-custom-slider>
 												<div class="pt-3"
+													[ngClass]="{'zeroTouchLoginDistanceNote': intelligentSecurity.isZeroTouchLoginAdjustEnabled}"
 													[class.blur-1]="!intelligentSecurity.isZeroTouchLoginEnabled"
 													*ngIf="intelligentSecurity.isWindowsHelloRegistered">
 													<div class="feature-note p-4">
 														<div class="row">
 															<!-- <div class="col-auto pl-0">
-													<fa-icon [icon]="['fal', 'exclamation-circle']">
-													</fa-icon>
-												</div> -->
+																<fa-icon [icon]="['fal', 'exclamation-circle']">
+																</fa-icon>
+															</div> -->
 															<div class="col">
 																<p id="smart-assist-intelligent-security-note">
 																	{{'device.smartAssist.intelligentSecurity.note.description1' | translate}}
@@ -104,9 +176,23 @@
 												</div>
 											</div>
 										</div>
+										<!-- hide advanced section -->
+										<div class="pl-5 border-bottom pb-4"
+											[ngClass]="{'zeroTouchHideAdv': intelligentSecurity.isZeroTouchLoginAdjustEnabled && !intelligentSecurity.isWindowsHelloRegistered}"
+											*ngIf="zeroTouchLoginShowAdvancedSection">
+											<span class="link-text mt-2 ml-4"
+												role="button"
+												tabindex="0"
+												id="smartAssist-intelligentSecurity-zeroTouchLogin-hideAdvSettings"
+												attr.aria-label="smartAssist.intelligentSecurity.zeroTouchLogin.hideAdvSettings"
+												(click)="setHPDAdvancedSetting('zeroTouchLogin', false)"
+												(keydown.enter)="setHPDAdvancedSetting('zeroTouchLogin', false)">
+												{{'device.smartAssist.intelligentSecurity.advancedSettings.hideAdvSettings' | translate}}
+											</span>
+										</div>
 									</li>
 								</ul>
-								<!-- ThinkPad section -->
+								<!-- zeroTouchLogin -- thinkPad section -->
 								<ul class="list-group list-group-flush"
 									*ngIf="isThinkPad">
 									<li class="common-li-padding">
@@ -185,9 +271,245 @@
 										</div>
 									</li>
 								</ul>
+								<!-- zeroTouchLock -- ideaPad section -->
 								<ul class="list-group list-group-flush no-border-bottom"
 									[class.disabled-overlay]="!intelligentSecurity.isHPDEnabled"
-									*ngIf="intelligentSecurity.isZeroTouchLockVisible">
+									*ngIf="intelligentSecurity.isZeroTouchLockVisible && !isThinkPad">
+									<li class="auto-screen-block common-li-padding">
+										<vtr-ui-row-switch [switchId]="'zeroTouchLock'"
+											[title]="'device.smartAssist.intelligentSecurity.zeroTouchLock.title' | translate"
+											[caption]=" 'device.smartAssist.intelligentSecurity.zeroTouchLock.caption' | translate"
+											[isSwitchVisible]="true"
+											[leftIcon]="['icomoon', 'icomoon-zero-touch-lock']"
+											[readMoreText]="''"
+											[showChildContent]="true"
+											[isSwitchChecked]="intelligentSecurity.isZeroTouchLockEnabled"
+											(toggleOnOff)="onZeroTouchLockStatusToggle($event)"
+											[theme]="'white'"
+											[disabled]="!intelligentSecurity.isHPDEnabled">											
+										</vtr-ui-row-switch>
+										<!-- show advanced section -->
+										<div class="pl-5 border-bottom pb-4" 
+											*ngIf="!zeroTouchLockShowAdvancedSection">
+											<span class="link-text mt-2 ml-4"
+												role="button"
+												tabindex="0"
+												id="smartAssist-intelligentSecurity-zeroTouchLock-showAdvSettings"
+												attr-aria-label="smartAssist.intelligentSecurity.zeroTouchLock.showAdvSettings"
+												(click)="setHPDAdvancedSetting('zeroTouchLock', true)"
+												(keydown.enter)="setHPDAdvancedSetting('zeroTouchLock', true)">
+												{{'device.smartAssist.intelligentSecurity.advancedSettings.showAdvSettings' | translate}}
+											</span>
+										</div>
+										<!-- facial recognition -->
+										<div class="row fac-control">
+											<div class="col mt-8 ml-4 facial-recognition"
+												role="text"
+												*ngIf="intelligentSecurity.isZeroTouchLockFacialRecoVisible && zeroTouchLockShowAdvancedSection">
+												<h3 id="smart-assist-zero-touch-lock-faical-recognition-title mt-2">
+													{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.title' | translate}}
+												</h3>
+												<p id="smart-assist-zero-touch-lock-faical-recognition-desc"
+													role="text"
+													attr-aria-label="smart-assist-zero-touch-lock-faical-recognition-desc">
+													{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.caption' | translate}}
+												</p>
+												<div class="smart-assist-checkbox">
+													<vtr-ui-checkbox [componentId]="'cb-zero-touch-lock'"
+														[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || !intelligentSecurity.facilRecognitionCameraAccess
+															|| intelligentSecurity.facialRecognitionCameraPrivacyMode"
+														[value]="intelligentSecurity.isZeroTouchLockFacialRecoEnabled"
+														[checked]="intelligentSecurity.isZeroTouchLockFacialRecoEnabled"
+														[label]="'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.checkBox' | translate"
+														(toggle)='onZeroTouchLockFacialRecoChange($event)'>
+													</vtr-ui-checkbox>
+												</div>
+												<div *ngIf="!intelligentSecurity.facilRecognitionCameraAccess || intelligentSecurity.facialRecognitionCameraPrivacyMode"
+													class="permission-note p-4">
+													<div class="row">
+														<div *ngIf="!intelligentSecurity.facilRecognitionCameraAccess"
+															class="col pr-3"
+															role="text">
+															<span class="mb-0 mt-auto"
+																id="ztl-facial-recognition-permission-note"
+																role="text">
+																{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.note.permission' | translate}}
+															</span>
+															<button type="button"
+																class="btn btn-link privacy-button pl-0"
+																(click)="onClick('ms-settings:privacy-webcam')"
+																(keydown.enter)="onClick('ms-settings:privacy-webcam')"
+																id="ztl-facial-recognition-access-url"
+																role="link"
+																tabindex="0"
+																[attr.aria-disabled]="!intelligentSecurity.isZeroTouchLockEnabled"
+																[disabled]="!intelligentSecurity.isZeroTouchLockEnabled">
+																{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.note.windowsLink' | translate}}
+															</button>
+														</div>
+														<div class="col pl-3"
+															role="text"
+															tabindex="0"
+															*ngIf="intelligentSecurity.facilRecognitionCameraAccess && intelligentSecurity.facialRecognitionCameraPrivacyMode">
+															<span class="mb-0 mt-auto"
+																id="ztl-facial-recognition-privacy-note"
+																role="text">
+																{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.note.privacyMode' | translate}}
+															</span>
+															<button type="button"
+																class="btn btn-link privacy-button pl-0"
+																(click)="onJumpClick()"
+																(keydown.enter)="onJumpClick()"
+																id="ztl-facial-recognition-privacy-url"
+																role="link"
+																tabindex="0"
+																[attr.aria-disabled]="!intelligentSecurity.isZeroTouchLockEnabled"
+																[disabled]="!intelligentSecurity.isZeroTouchLockEnabled">
+																{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.note.privacyLink' | translate}}
+															</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- auto screen lock timer -->
+										<div class="bold-title no-border-bottom pl-5 pb-4 auto-screen-lock-help-icon"
+											*ngIf="intelligentSecurity.isZeroTouchLockVisible && zeroTouchLockShowAdvancedSection"
+											[class.col-pad-margin]="isThinkPad">
+											<vtr-ui-row-switch [switchId]="'autoScreenLockTimer'"
+												[title]="'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.title' | translate"
+												[isSwitchVisible]="false"
+												[theme]="'white'"
+												[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)"
+												[rightIcon]="['far', 'question-circle']"
+												[tooltipText]="tooltipText| translate">
+											</vtr-ui-row-switch>
+
+											<div class="slider-note"
+												[class.blur-1]="!intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)">
+												<vtr-ui-rounded-rectangle-radio [radioId]="'autoScreenLockTimer_fast'"
+													[group]="'autoScreenLockTimer'"
+													name="autoScreenLockTimerFast"
+													[label]="'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.fast' | translate"
+													[value]="'1'"
+													[checked]="intelligentSecurity.autoScreenLockTimer === '1'"
+													(change)="onZeroTouchLockTimerChange($event, '1')"
+													[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)">
+												</vtr-ui-rounded-rectangle-radio>
+												<vtr-ui-rounded-rectangle-radio [radioId]="'autoScreenLockTimer_medium'"
+													[group]="'autoScreenLockTimer'"
+													name="autoScreenLockTimerMedium"
+													[label]="'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.medium' | translate"
+													[value]="'2'"
+													[checked]="intelligentSecurity.autoScreenLockTimer === '2'"
+													(change)="onZeroTouchLockTimerChange($event, '2')"
+													[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)">
+												</vtr-ui-rounded-rectangle-radio>
+												<vtr-ui-rounded-rectangle-radio [radioId]="'autoScreenLockTimer_slow'"
+													[group]="'autoScreenLockTimer'"
+													name="autoScreenLockTimerSlow"
+													[label]="'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.slow' | translate"
+													[value]="'3'"
+													[checked]="intelligentSecurity.autoScreenLockTimer === '3'"
+													(change)="onZeroTouchLockTimerChange($event, '3')"
+													[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)">
+												</vtr-ui-rounded-rectangle-radio>
+
+												<div class="pt-3">
+													<div class="feature-note p-4">
+														<div class="row blur">
+															<div class="col">
+																<p id="smart-assist-zeroTouchLock-note"
+																	role="text">
+																	{{'device.smartAssist.intelligentSecurity.note.description2' | translate}}
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- distance sensitivity adjusting -- ideapad section -->
+										<div class="pl-5 bold-title-idea no-border-bottom pb-4"
+											*ngIf="zeroTouchLockShowAdvancedSection">
+											<vtr-ui-row-switch [switchId]="'smartAssist-intelligentSecurity-zeroTouchLock-distanceSensitivityAutoAdjusting'"
+												*ngIf="zeroTouchPresenceLeaveDistanceAutoAdjustCapability"
+												[title]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.title' | translate"
+												[isSwitchVisible]="true"
+												[showChildContent]="true"
+												[isSwitchChecked]="hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust"
+												(toggleOnOff)="onZeroTouchLockDistanceSensitivityAdjustToggle($event)"
+												[theme]="'white'"
+												[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || !hsaIntelligentSecurity.capacity"
+												[toolTipStatus]='true'>
+												<div class="col text-wrap zeroTouch-DistanceAdjust">
+													<div class="zeroTouchReadMore">
+														<p id="zeroTouchLock-DistanceAdjust-statusOn"
+															*ngIf="hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust"
+															role="text">
+															{{'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.captionOn' | translate}}
+														</p>
+														<div *ngIf="!hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust"
+															role="text">
+															<p id="zeroTouchLock-DistanceAdjust-statusOff"
+																role="text">
+																{{'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.captionOff' | translate}}
+															</p>
+															<p id="zeroTouchLock-DistanceAdjust-readMoreMode1"
+																role="text">
+																{{'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.readMore.line1' | translate}}
+															</p>
+															<p id="zeroTouchLock-DistanceAdjust-readMoreMode2"
+																role="text">
+																{{'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.readMore.line2' | translate}}
+															</p>
+															<p id="zeroTouchLock-DistanceAdjust-readMoreMode3"
+																role="text">
+																{{'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.readMore.line3' | translate}}
+															</p>
+														</div>
+													</div>
+												</div>
+											</vtr-ui-row-switch>
+											<div class="slider-note">
+												<vtr-ui-range-slider [rangeSliderId]="'smartAssist-intelligentSecurity-zeroTouchLock-distanceSensitivityAdjusting'"
+													[manualRefresh]="manualRefresh"
+													*ngIf="zeroTouchPresenceLeaveDistanceCapability && !hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust"
+													[minValueLegend]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.options.near' | translate"
+													[minValue]="0"
+													[mediumValueLegend]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.options.medium' | translate"
+													[maxValueLegend]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.options.far' | translate"
+													[maxValue]="2"
+													(sliderChange)="SetZeroTouchLockDistanceSensitivity($event)"
+													[value]="hsaIntelligentSecurity.zeroTouchLockDistance"
+													[enableSlider]="!intelligentSecurity.isZeroTouchLockEnabled || !hsaIntelligentSecurity.capacity"
+													vtrMetrics
+													[metricsItem]="'zeroTouchLockDistanceSensitivity'"
+													metricsEvent="featureClick"
+													metricsValue="{{hsaIntelligentSecurity.zeroTouchLockDistance}}">
+												</vtr-ui-range-slider>
+											</div>
+										</div>
+										<!-- hide advanced section -->
+										<div class="pl-5 border-bottom pb-4"
+											[ngClass]="{'zeroTouchHideAdv': hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust}"
+											*ngIf="zeroTouchLockShowAdvancedSection">
+											<span class="link-text mt-2 ml-4"
+												role="button"
+												tabindex="0"
+												id="smartAssist-intelligentSecurity-zeroTouchLock-hideAdvSettings"
+												attr.aria-label="smartAssist.intelligentSecurity.zeroTouchLock.hideAdvSettings"
+												(click)="setHPDAdvancedSetting('zeroTouchLock', false)"
+												(keydown.enter)="setHPDAdvancedSetting('zeroTouchLock', false)">
+												{{'device.smartAssist.intelligentSecurity.advancedSettings.hideAdvSettings' | translate}}
+											</span>
+										</div>
+									</li>
+								</ul>
+								<!-- zeroTouchLock -- thinkPad section -->
+								<ul class="list-group list-group-flush no-border-bottom"
+									[class.disabled-overlay]="!intelligentSecurity.isHPDEnabled"
+									*ngIf="intelligentSecurity.isZeroTouchLockVisible && isThinkPad">
 									<li class="auto-screen-block common-li-padding">
 										<vtr-ui-row-switch [switchId]="'zeroTouchLock'"
 											[title]="'device.smartAssist.intelligentSecurity.zeroTouchLock.title' | translate"
@@ -200,69 +522,6 @@
 											(toggleOnOff)="onZeroTouchLockStatusToggle($event)"
 											[theme]="'white'"
 											[disabled]="!intelligentSecurity.isHPDEnabled">
-											<div class="row fac-control">
-												<div class="col mt-10 facial-recognition"
-													*ngIf="intelligentSecurity.isZeroTouchLockFacialRecoVisible">
-													<h3 id="smart-assist-zero-touch-lock-faical-recognition-title mt-2">
-														{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.title' | translate}}
-													</h3>
-													<p id="smart-assist-zero-touch-lock-faical-recognition-desc"
-														attr-aria-label="smart-assist-zero-touch-lock-faical-recognition-desc">
-														{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.caption' | translate}}
-													</p>
-													<div class="smart-assist-checkbox">
-														<vtr-ui-checkbox [componentId]="'cb-zero-touch-lock'"
-															[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || !intelligentSecurity.facilRecognitionCameraAccess
-												|| intelligentSecurity.facialRecognitionCameraPrivacyMode"
-															[value]="intelligentSecurity.isZeroTouchLockFacialRecoEnabled"
-															[checked]="intelligentSecurity.isZeroTouchLockFacialRecoEnabled"
-															[label]="'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.checkBox' | translate"
-															(toggle)='onZeroTouchLockFacialRecoChange($event)'>
-														</vtr-ui-checkbox>
-													</div>
-													<div *ngIf="!intelligentSecurity.facilRecognitionCameraAccess || intelligentSecurity.facialRecognitionCameraPrivacyMode"
-														class="permission-note p-4">
-														<div class="row">
-															<div *ngIf="!intelligentSecurity.facilRecognitionCameraAccess"
-																class="col pr-3">
-																<span class="mb-0 mt-auto"
-																	id="ztl-facial-recognition-permission-note">
-																	{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.note.permission' | translate}}
-																</span>
-																<button type="button"
-																	class="btn btn-link privacy-button pl-0"
-																	(click)="onClick('ms-settings:privacy-webcam')"
-																	(keydown.enter)="onClick('ms-settings:privacy-webcam')"
-																	id="ztl-facial-recognition-access-url"
-																	role="button"
-																	tabindex="0"
-																	[attr.aria-disabled]="!intelligentSecurity.isZeroTouchLockEnabled"
-																	[disabled]="!intelligentSecurity.isZeroTouchLockEnabled">
-																	{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.note.windowsLink' | translate}}
-																</button>
-															</div>
-															<div class="col pl-3"
-																*ngIf="intelligentSecurity.facilRecognitionCameraAccess && intelligentSecurity.facialRecognitionCameraPrivacyMode">
-																<span class="mb-0 mt-auto"
-																	id="ztl-facial-recognition-privacy-note">
-																	{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.note.privacyMode' | translate}}
-																</span>
-																<button type="button"
-																	class="btn btn-link privacy-button pl-0"
-																	(click)="onJumpClick()"
-																	(keydown.enter)="onJumpClick()"
-																	id="ztl-facial-recognition-privacy-url"
-																	role="button"
-																	tabindex="0"
-																	[attr.aria-disabled]="!intelligentSecurity.isZeroTouchLockEnabled"
-																	[disabled]="!intelligentSecurity.isZeroTouchLockEnabled">
-																	{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.note.privacyLink' | translate}}
-																</button>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
 										</vtr-ui-row-switch>
 										<div *ngIf="sensitivityVisibility"
 											class="pl-5 bold-title no-border-bottom pb-4">
@@ -366,23 +625,46 @@
 										</div>
 									</li>
 								</ul>
+								<!-- note -->
 								<div class="row">
 									<div class="feature-note p-4 my-4 mx-3">
 										<p id="smart-assist-intelligent-security-note-desc1">
 											{{'device.smartAssist.intelligentSecurity.note.description3' | translate}}
 										</p>
-										<p id="smart-assist-intelligent-security-note-desc2">
-											{{'device.smartAssist.intelligentSecurity.note.description4' | translate}}
-										</p>
-										<p id="smart-assist-intelligent-security-note-desc3">
-											{{'device.smartAssist.intelligentSecurity.note.description5' | translate}}
-										</p>
-										<p *ngIf="isThinkPad && intelligentSecurity.isZeroTouchLoginVisible && intelligentSecurity.isZeroTouchLockVisible && (hpdSensorType == 2)"
+										<div>
+											<p id="smart-assist-intelligent-security-note-desc2"
+												role="text">
+												{{'device.smartAssist.intelligentSecurity.note.description4' | translate}}
+											</p>
+											<div class="ml-4">
+												<div class="note-italic">
+													<span id="smart-assist-intelligent-security-note-desc2a1"
+														role="text">
+														{{'device.smartAssist.intelligentSecurity.note.description5a1' | translate}}
+													</span>
+													<i id="smart-assist-intelligent-security-note-desc2a2"
+														role="text">
+														{{'device.smartAssist.intelligentSecurity.note.description5a2' | translate}}
+													</i>
+													<span id="smart-assist-intelligent-security-note-desc2a3"
+														role="text">
+														{{'device.smartAssist.intelligentSecurity.note.description5a3' | translate}}
+													</span>
+												</div>
+												<p id="smart-assist-intelligent-security-note-desc2b"
+													role="text">
+													{{'device.smartAssist.intelligentSecurity.note.description5b' | translate}}
+												</p>
+											</div>
+										</div>
+										<p role="text"
+											*ngIf="isThinkPad && intelligentSecurity.isZeroTouchLoginVisible && intelligentSecurity.isZeroTouchLockVisible && (hpdSensorType == 2)"
 											id="smart-assist-intelligent-security-note-desc4">
 											{{'device.smartAssist.intelligentSecurity.note.description6' | translate}}
 										</p>
 									</div>
 								</div>
+								<!-- reset -->
 								<div class="row ml-3">
 									<vtr-ui-button [linkId]="'intelligentSecurity_reset_btn'"
 										(onClick)="onResetDefaultSettings($event)"
