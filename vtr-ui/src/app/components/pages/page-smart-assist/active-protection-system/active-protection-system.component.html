@@ -27,21 +27,19 @@
 							metricsItem="activeProtectionSystem"
 							[metricsValue]="!apsStatus">
 							<div class="slider pr-0">
-								<vtr-ui-aps-slider [apsSliderId]="'activeProtectionSystemSensitivity'"
-									[legends]="['device.smartAssist.activeProtectionSystem.APS.lowSensitivity' | translate,'device.smartAssist.activeProtectionSystem.APS.mediumSensitivity' | translate, 'device.smartAssist.activeProtectionSystem.APS.highSensitivity' | translate]"
-									[minValue]="0"
-									[maxValue]="100"
-									[enableSlider]="!apsStatus"
+								<vtr-ui-custom-slider [sliderId]="'activeProtectionSystemSensitivity'"
+									[minLegend]="'device.smartAssist.activeProtectionSystem.APS.lowSensitivity' | translate"
+									[midLegend]="'device.smartAssist.activeProtectionSystem.APS.mediumSensitivity' | translate"
+									[maxLegend]="'device.smartAssist.activeProtectionSystem.APS.highSensitivity' | translate"
+									[minValue]=0
+									[maxValue]=100
+									[isDisabled]="!apsStatus"
 									[value]="apsSensitivity"
-									[theme]="'white'"
-									[step]='50'
-									(change)='setAPSSensitivityLevel($event)'
-									vtrMetrics
-									metricsEvent="ItemClick"
-									metricsParent="Device.SmartAssist"
-									metricsItem="ActiveProtectionSystem.Sensitivity.Slider"
+									[step]=50
+									(sliderChange)='setAPSSensitivityLevel($event)'
+									[metricsItem]="'ActiveProtectionSystem.Sensitivity.Slider'"
 									[metricsValue]="apsSensitivity">
-								</vtr-ui-aps-slider>
+								</vtr-ui-custom-slider>
 							</div>
 						</vtr-ui-row-switch>
 						<div class="row">

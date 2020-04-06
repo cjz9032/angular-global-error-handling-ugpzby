@@ -12,7 +12,7 @@ export class UiMacrokeyPopupComponent implements OnInit {
 	constructor() { }
 
 	ngOnInit() {
-		const popupFocus = document.getElementById('close');
+		const popupFocus = document.getElementsByClassName('macrokey_popup_close_btn')[0] as HTMLElement;
 		popupFocus.focus();
 		this.hiddenScroll();
 	}
@@ -25,8 +25,8 @@ export class UiMacrokeyPopupComponent implements OnInit {
 
 	keydownFn(event) {
 		if (event.which === 9) {
-			const txt1 = document.getElementById('close');
-			txt1.focus();
+			const popupFocus = document.getElementsByClassName('macrokey_popup_close_btn')[0] as HTMLElement;
+			popupFocus.focus();
 		}
 	}
 

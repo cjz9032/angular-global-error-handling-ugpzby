@@ -5,7 +5,8 @@
 			*ngIf="title && !displayNoteOnly">
 			<div class="col px-5 pb-4">
 				<div class="threshold-for-built-in-battery"
-					id="{{textId}}-title">
+					id="{{textId}}-title"
+					attr.aria-label="{{textId}}-title">
 					{{ title }}
 				</div>
 			</div>
@@ -23,32 +24,31 @@
 							[class.disabled]="bctInfo.checkboxValue || isDisabled">
 							<div class="btn-group btn-block dropdown-left"
 								ngbDropdown
-								#startAtDrop="ngbDropdown"
+								#startAtDropDown="ngbDropdown"
 								placement="bottom-right">
 								<button [ngClass]="['btn','btn-outline-shadow',bctInfo.checkboxValue?'disabled':'']"
 									ngbDropdownToggle
 									#startToggle
 									[disabled]="bctInfo.checkboxValue?true:false"
-									type="button"
 									id="{{textId}}-start-dropdown"
-									(focus)="[closeAllOtherDD(startAtDrop)]"
+									(focus)="[closeAllOtherDD(startAtDropDown)]"
 									role="combobox"
-									attr.aria-labelledby="{{textId}}-title {{textId}}-start-at {{textId}}-start-at-sel {{textId}}-start-at-sel-option-desc">
-									<div [hidden]="true"
-										attr.aria-hidden="true">
-										<span id="{{textId}}-start-at-sel-option-desc">
-											option-{{startAtChargeOptions.indexOf(bctInfo.startValue)+1}}-off-{{startAtChargeOptions.length}}-selected
-										</span>
-									</div>
+									attr.aria-haspopup="true"
+									attr.aria-label="{{title}}-{{ddStartAtChargeDescription}}-{{bctInfo.startValue}}%-{{option}}-
+									{{startAtChargeOptions.indexOf(bctInfo.startValue)+1}}-{{off}}-{{startAtChargeOptions.length}}-{{selected}}"
+									(keyup.enter)="[$event.stopPropagation(),
+									focusOnSelected($event,startAtDropDown,startAtChargeOption,bctInfo.startValue)]">
 									<div class="row d-flex justify-content-between">
 										<div class="col-11 pl-1 pr-1">
 											<div class="select-title"
-												id="{{textId}}-start-at">
-												{{'device.deviceSettings.power.batterySettings.batteryThreshold.options.start' | translate}}
+												id="{{textId}}-start-charge"
+												attr.aria-label="{{title}}-start-charge">
+												{{ddStartAtChargeDescription}}
 											</div>
 
 											<div class="select-text text-left"
-												id="{{textId}}-start-at-sel">
+												id="{{textId}}-selected-start-charge"
+												attr.aria-label="{{title}}-selected-start-charge">
 												{{bctInfo.startValue}}%
 											</div>
 										</div>
@@ -60,7 +60,7 @@
 									</div>
 								</button>
 								<div ngbDropdownMenu
-									id="{{textId}}-start-at-charge-menu"
+									attr.aria-labelledby="{{textId}}-start-dropdown"
 									role="listbox"
 									tabindex="-1">
 									<a [ngClass]="['dropdown-item',item >= bctInfo.stopValue?'disabled':'']"
@@ -68,14 +68,14 @@
 										role="option"
 										tabindex="{{item === bctInfo.startValue?0:-1}}"
 										*ngFor="let item of startAtChargeOptions;let currentIndex=index;"
-										(click)="[onStartValueChange(item , startToggle), $event.preventDefault()]"
-										(keydown)="showHideMenuOfItem($event,startAtDrop)"
-										(keydown.enter)="onStartValueChange(item , startToggle)"
+										(click)="[onStartValueChange(item , startAtDropDown,startToggle), $event.preventDefault()]"
+										(keydown.enter)="[onStartValueChange(item ,startAtDropDown, startToggle),$event.preventDefault()]"
+										(keydown)="showHideMenuOfItem($event,startAtDropDown)"
 										id="{{textId}}-{{startAtChargeOption}}-{{item}}"
 										[attr.aria-selected]="bctInfo.startValue===item?true:false"
 										[disabled]="item >= bctInfo.stopValue"
 										attr.aria-disabled="{{item >= bctInfo.stopValue}}"
-										attr.aria-label="{{title}}-{{'device.deviceSettings.power.batterySettings.batteryThreshold.options.start' | translate}}-option-{{item}}">{{item}}%</a>
+										attr.aria-label="{{title}}-{{ddStartAtChargeDescription}}-{{option}}-{{item}}">{{item}}%</a>
 								</div>
 							</div>
 						</div>
@@ -87,30 +87,28 @@
 							[class.disabled]="isDisabled">
 							<div class="btn-group btn-block dropdown-right"
 								ngbDropdown
-								#stopAtDrop="ngbDropdown"
+								#stopAtDropDown="ngbDropdown"
 								placement="bottom-right">
 								<button [ngClass]="['btn','btn-outline-shadow']"
 									ngbDropdownToggle
 									#endToggle
-									type="button"
 									id="{{textId}}-stop-dropdown"
-									(focus)="[closeAllOtherDD(stopAtDrop)]"
+									(focus)="[closeAllOtherDD(stopAtDropDown)]"
 									role="combobox"
-									attr.aria-labelledby="{{textId}}-title {{textId}}-stop-at {{textId}}-stop-at-sel {{textId}}-stop-at-sel-option-desc">
-									<div [hidden]="true"
-										attr.aria-hidden="true">
-										<span id="{{textId}}-stop-at-sel-option-desc">
-											option-{{stopAtChargeOptions.indexOf(bctInfo.stopValue)+1}}-off-{{stopAtChargeOptions.length}}-selected
-										</span>
-									</div>
-									<div class="row d-flex justify-content-between">
+									attr.aria-label="{{title}}-{{ddStopAtChargeDescription}}-{{bctInfo.stopValue}}%-{{option}}-{{stopAtChargeOptions.indexOf(bctInfo.stopValue)+1}}-{{off}}-{{stopAtChargeOptions.length}}-{{selected}}"
+									(keyup.enter)="[$event.stopPropagation(),
+									focusOnSelected($event,stopAtDropDown,stopAtChargeOption,bctInfo.stopValue)]">
+									<div class="row d-flex justify-content-between"
+										aria-hidden="true">
 										<div class="col-11 pl-1 pr-1">
 											<div class="select-title"
-												id="{{textId}}-stop-at">
-												{{'device.deviceSettings.power.batterySettings.batteryThreshold.options.stop' | translate}}
+												id="{{textId}}-stop-charge"
+												attr.aria-label="{{title}}-stop-charge">
+												{{ddStopAtChargeDescription}}
 											</div>
 											<div class="select-text text-left"
-												id="{{textId}}-stop-at-sel">
+												id="{{textId}}-selected-stop-at-charge"
+												attr.aria-label="{{title}}-selected-stop-at-charge">
 												{{bctInfo.stopValue}}%
 											</div>
 										</div>
@@ -123,6 +121,7 @@
 								</button>
 								<div ngbDropdownMenu
 									id="{{textId}}-stop-at-charge-menu"
+									attr.aria-labelledby="{{textId}}-stop-dropdown"
 									role="listbox"
 									tabindex="-1">
 									<a [ngClass]="['dropdown-item',!bctInfo.checkboxValue && (item <= bctInfo.startValue) ?'disabled':'']"
@@ -130,14 +129,14 @@
 										role="option"
 										tabindex="{{item === bctInfo.stopValue?0:-1}}"
 										*ngFor="let item of stopAtChargeOptions;let currentIndex=index;"
-										(click)="[onStopValueChange(item , endToggle), $event.preventDefault()]"
-										(keydown)="showHideMenuOfItem($event,stopAtDrop)"
-										(keydown.enter)="onStopValueChange(item , endToggle)"
-										id="{{textId}}-stopAtChargeOption-{{item}}"
+										(click)="[onStopValueChange(item ,stopAtDropDown, endToggle), $event.preventDefault()]"
+										(keydown.enter)="[onStopValueChange(item,stopAtDropDown,endToggle),$event.preventDefault()]"
+										(keydown)="showHideMenuOfItem($event,stopAtDropDown)"
+										id="{{textId}}-{{stopAtChargeOption}}-{{item}}"
 										[disabled]="!bctInfo.checkboxValue && (item <= bctInfo.startValue)"
 										[attr.aria-selected]="bctInfo.stopValue===item?true:false"
 										attr.aria-disabled="{{!bctInfo.checkboxValue && (item <= bctInfo.startValue)}}"
-										attr.aria-label="{{title}}-{{'device.deviceSettings.power.batterySettings.batteryThreshold.options.stop' | translate}}-Option-{{item}}">{{item}}%</a>
+										attr.aria-label="{{title}}-{{ddStopAtChargeDescription}}-{{option}}-{{item}}">{{item}}%</a>
 								</div>
 							</div>
 						</div>
