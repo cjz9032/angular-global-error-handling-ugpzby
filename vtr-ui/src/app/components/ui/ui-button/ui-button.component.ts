@@ -41,6 +41,7 @@ export class UiButtonComponent implements OnInit, AfterViewInit {
 	@Input() isLoading = false;
 	@Input() autoFocus = false;
 
+	groupNone = 'groupNone'
 	constructor() { }
 
 	ngAfterViewInit(): void {
