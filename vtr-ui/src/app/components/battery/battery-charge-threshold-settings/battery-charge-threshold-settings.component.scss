@@ -59,6 +59,10 @@
 					border-radius: $border_radius_sm;
 					background-color: $light;
 					box-shadow: $drop_shadow;
+					&:focus {
+						outline: 0.1rem solid $menu_hover !important;
+						outline-offset: 0.2rem !important;
+					}
 				}
 				.dropdown-icon {
 					fa-icon {
