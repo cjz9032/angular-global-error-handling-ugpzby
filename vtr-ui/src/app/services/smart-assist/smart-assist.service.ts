@@ -278,6 +278,16 @@ export class SmartAssistService {
 		}
 	}
 
+	public startMonitorHsaIntelligentSecurityStatus(callback: any): Promise<boolean> {
+		if (this.isShellAvailable) {
+			this.hsaIntelligentSecurity.onstatusupdated = (data: any) => {
+				callback(data);
+			};
+			return Promise.resolve(true);
+		}
+		return undefined;
+	}
+
 	public resetHPDSetting(): Promise<boolean> {
 		if (this.isShellAvailable) {
 			return this.intelligentSensing.HPDSettingReset();

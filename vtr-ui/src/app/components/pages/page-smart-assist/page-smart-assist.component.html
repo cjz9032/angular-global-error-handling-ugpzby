@@ -35,7 +35,7 @@
 								[theme]="'white'"
 								(toggle)="onCardCollapse($event)">
 								<!-- image -->
-								<div class="no-border-bottom pb-3 intelligent-security-image">
+								<div class="no-border-bottom pt-4 intelligent-security-image">
 									<img [src]="image" id="intelligent-security-image"/>
 									<div class="intelligent-security-image-word">
 										<p class="intelligent-security-image-word-title"
@@ -303,7 +303,7 @@
 										</div>
 										<!-- facial recognition -->
 										<div class="row fac-control">
-											<div class="col mt-8 ml-4 facial-recognition"
+											<div class="col mt-8 ml-4 facial-recognition pb-3"
 												role="text"
 												*ngIf="intelligentSecurity.isZeroTouchLockFacialRecoVisible && zeroTouchLockShowAdvancedSection">
 												<h3 id="smart-assist-zero-touch-lock-faical-recognition-title mt-2">
@@ -471,24 +471,19 @@
 													</div>
 												</div>
 											</vtr-ui-row-switch>
-											<div class="slider-note">
-												<vtr-ui-range-slider [rangeSliderId]="'smartAssist-intelligentSecurity-zeroTouchLock-distanceSensitivityAdjusting'"
-													[manualRefresh]="manualRefresh"
-													*ngIf="zeroTouchPresenceLeaveDistanceCapability && !hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust"
-													[minValueLegend]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.options.near' | translate"
-													[minValue]="0"
-													[mediumValueLegend]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.options.medium' | translate"
-													[maxValueLegend]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.options.far' | translate"
-													[maxValue]="2"
-													(sliderChange)="SetZeroTouchLockDistanceSensitivity($event)"
-													[value]="hsaIntelligentSecurity.zeroTouchLockDistance"
-													[enableSlider]="!intelligentSecurity.isZeroTouchLockEnabled || !hsaIntelligentSecurity.capacity"
-													vtrMetrics
-													[metricsItem]="'zeroTouchLockDistanceSensitivity'"
-													metricsEvent="featureClick"
-													metricsValue="{{hsaIntelligentSecurity.zeroTouchLockDistance}}">
-												</vtr-ui-range-slider>
-											</div>
+											<vtr-ui-custom-slider [sliderId]="'smartAssist-intelligentSecurity-zeroTouchLock-distanceSensitivityAdjusting'"
+												*ngIf="zeroTouchPresenceLeaveDistanceCapability && !hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust"
+												[minLegend]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.options.near' | translate"
+												[min]=0
+												[midLegend]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.options.medium' | translate"
+												[maxLegend]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.options.far' | translate"
+												[max]=2
+												(sliderChange)="SetZeroTouchLockDistanceSensitivity($event)"
+												[value]="hsaIntelligentSecurity.zeroTouchLockDistance"
+												[isDisabled]="!intelligentSecurity.isZeroTouchLockEnabled || !hsaIntelligentSecurity.capacity"
+												[metricsItem]="'zeroTouchLockDistanceSensitivity'"
+												[metricsValue]="hsaIntelligentSecurity.zeroTouchLockDistance">
+											</vtr-ui-custom-slider>
 										</div>
 										<!-- hide advanced section -->
 										<div class="pl-5 border-bottom pb-4"

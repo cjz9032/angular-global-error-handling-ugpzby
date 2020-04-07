@@ -4005,6 +4005,10 @@
 		}
 	},
 	"appsForYou": {
+		"narrator": {
+			"leftArrow": "left arrow",
+			"rightArrow": "right arrow"
+		},
 		"common": {
 			"errorMessage": {
 				"installationFailed": "Installation failed. Please try again.",

@@ -7,6 +7,14 @@
 	position: relative;
 	height: 42rem;
 
+	@media #{$black-on-white} {
+		border: 0.1rem solid $dark;
+	}
+
+	@media #{$white-on-black} {
+		border: 0.1rem solid $light;
+	}
+
 	.container-fluid {
 		height: 100%;
 
