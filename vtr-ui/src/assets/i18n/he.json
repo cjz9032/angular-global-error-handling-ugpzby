@@ -1887,6 +1887,21 @@
                             "windowsLink": "עברו להגדרות Windows כדי לאפשר גישה",
                             "privacyLink": "עברו אל מצב הפרטיות של המצלמה כדי לכבות אותה"
                         }
+                    },
+                    "distanceSensitivityAdjusting": {
+                        "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
+                        "captionOn": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, you can maually adjust the dectecting sensitivity based on your preference.",
+                        "captionOff": "The accuracy varies by body size, posture, and frequency of movement. When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
+                        "options": {
+                            "near": "Near",
+                            "medium": "Middle",
+                            "far": "Far"
+                        },
+                        "readMore": {
+                            "line1": "• Near: 0.9 meter",
+                            "line2": "• Middle: 1.2 meter",
+                            "line3": "• Far: 1.5 meter"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1914,9 +1929,12 @@
                     "description2": "התכונה משתמשת בחיישנים ובמצלמה כדי לזהות את נוכחותכם. עם זאת, התכונה אינה אוספת נתונים אישיים כלל.",
                     "description3": "1. אם המחשב נמצא במצב אוהל, לוח או מעמד, ייתכן שתכונות אלה לא יפעלו כראוי.",
                     "description4": "2. אם המחשב במצב שינה או כבוי, 'כניסה באפס מגע' לא תעבוד.",
-                    "description5": "3. כווננו את מסך המחשב לזווית מתאימה כך שמצלמת ה-IR תוכל לזהות את הפנים שלכם לצורך כניסה אוטומטית.",
                     "description6": "4. אם מצב טיסה מופעל במחשב, כל התכונות האלה מושבתות.",
-                    "description7": "הדיוק משתנה לפי גודל הגוף, היציבה ותדירות התנועה. אם המחשב שלכם ננעל באופן בלתי צפוי, התאימו את סרגל הרגישות כדי לשפר את הדיוק."
+                    "description7": "הדיוק משתנה לפי גודל הגוף, היציבה ותדירות התנועה. אם המחשב שלכם ננעל באופן בלתי צפוי, התאימו את סרגל הרגישות כדי לשפר את הדיוק.",
+                    "description5a1": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to ",
+                    "description5a2": "User Guide ",
+                    "description5a3": "that comes with it.",
+                    "description5b": "b. Your computer is in hibernation mode or has been turned off."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "מעבר אל הגדרות Windows Hello",
@@ -1925,6 +1943,40 @@
                 "resetToDefault": "איפוס",
                 "sensitivityAdjusting": {
                     "title": "התאמת רגישות"
+                },
+                "image": {
+                    "title": "Intelligent security",
+                    "description": "Buckles up your PC with intelligent sensing technology, protects your privacy, and saves your battery power."
+                },
+                "advancedSettings": {
+                    "showAdvSettings": "ADVANCED SETTINGS",
+                    "hideAdvSettings": "HIDE ADVANCED SETTINGS"
+                },
+                "zeroTouchLoginForIdea": {
+                    "title": "Zero Touch Login",
+                    "caption": "This feature enables you to improve the work efficiency by automatically waking up or logging in your computer. To use the feature, you need to register your face in Windows Hello.",
+                    "tooltip": "When you are in front of your computer or approaching it (within 1.2 or 1.5 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer. <br>Depending on the sensor capability, the maximum detecting distance varies. Refer to the <i>User Guide</i> that comes with your computer for details."
+                },
+                "distanceSensitivityAdjustingForIdea": {
+                    "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
+                    "captionOn": "Enable this feature to automatically adjust the detecting distance of movements to wake up the system. Turn it off to manually adjust the detecting sensitivity based on your preference.",
+                    "captionOff": "When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
+                    "options": {
+                        "near": "Near",
+                        "medium": "Middle",
+                        "far": "Far"
+                    },
+                    "readMore": "There are three options. In each range, when human movements are detected, your screen will be waked up accordingly.",
+                    "readMoreForSensor1": {
+                        "line1": "• Near: 0-0.4 meter",
+                        "line2": "• Middle: 0-0.6 meter",
+                        "line3": "• Far: 0-1.2 meter"
+                    },
+                    "readMoreForSensor2": {
+                        "line1": "• Near: 0.2-0.55 meter",
+                        "line2": "• Middle: 0.2-1.0 meter",
+                        "line3": "• Far: 0.2-1.5 meter"
+                    }
                 }
             },
             "intelligentScreen": {

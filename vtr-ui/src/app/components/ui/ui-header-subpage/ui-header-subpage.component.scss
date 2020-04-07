@@ -41,6 +41,10 @@
 				$color: $highlight;
 				border-bottom: none;
 			}
+			&:focus {
+				outline: 0.1rem solid $menu_hover;
+				outline-offset: 0.2rem;
+			}
 		}
 	}
 	.no-title {

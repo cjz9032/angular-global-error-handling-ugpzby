@@ -52,6 +52,10 @@
 							text-decoration: underline;
 						}
 					}
+					&:focus {
+						outline: 0.1rem solid $menu_hover;
+						outline-offset: 0.2rem;
+					}
 				}
 
 				.card-body {

@@ -1887,6 +1887,21 @@
                             "windowsLink": "액세스 권한을 부여하려면, Windows 설정으로 이동합니다",
                             "privacyLink": "카메라 개인 정보 모드로 이동하여 끄기"
                         }
+                    },
+                    "distanceSensitivityAdjusting": {
+                        "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
+                        "captionOn": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, you can maually adjust the dectecting sensitivity based on your preference.",
+                        "captionOff": "The accuracy varies by body size, posture, and frequency of movement. When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
+                        "options": {
+                            "near": "Near",
+                            "medium": "Middle",
+                            "far": "Far"
+                        },
+                        "readMore": {
+                            "line1": "• Near: 0.9 meter",
+                            "line2": "• Middle: 1.2 meter",
+                            "line3": "• Far: 1.5 meter"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1914,9 +1929,12 @@
                     "description2": "이 기능은 센서 및 카메라를 사용하여 사용자의 존재를 감지합니다. 그러나 이 기능은 어떤 개인 정보도 수집하지 않습니다.",
                     "description3": "1. 컴퓨터가 텐트, 태블릿 또는 대기 모드에 있을 경우 이러한 기능이 적절하게 작동하지 않을 수 있습니다.",
                     "description4": "2. 컴퓨터가 최대 절전 모드에 있거나 꺼져 있으면, 제로 터치 로그인은 작동하지 않습니다.",
-                    "description5": "3. IR 카메라에서 얼굴을 인식하여 자동 로그인을 할 수 있도록 컴퓨터 화면을 적절한 각도로 조정하십시오.",
                     "description6": "4. 컴퓨터에서 비행기 모드를 설정하면 이 기능을 사용할 수 없게 됩니다.",
-                    "description7": "정확도는 바디 크기, 자세 및 이동 빈도에 따라 다릅니다. 컴퓨터가 예기치 않게 잠기는 경우, 감도바를 조정하여 정확도를 개선합니다."
+                    "description7": "정확도는 바디 크기, 자세 및 이동 빈도에 따라 다릅니다. 컴퓨터가 예기치 않게 잠기는 경우, 감도바를 조정하여 정확도를 개선합니다.",
+                    "description5a1": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to ",
+                    "description5a2": "User Guide ",
+                    "description5a3": "that comes with it.",
+                    "description5b": "b. Your computer is in hibernation mode or has been turned off."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Windows Hello 설정으로 이동",
@@ -1925,6 +1943,40 @@
                 "resetToDefault": "재설정",
                 "sensitivityAdjusting": {
                     "title": "감도 조정"
+                },
+                "image": {
+                    "title": "Intelligent security",
+                    "description": "Buckles up your PC with intelligent sensing technology, protects your privacy, and saves your battery power."
+                },
+                "advancedSettings": {
+                    "showAdvSettings": "ADVANCED SETTINGS",
+                    "hideAdvSettings": "HIDE ADVANCED SETTINGS"
+                },
+                "zeroTouchLoginForIdea": {
+                    "title": "Zero Touch Login",
+                    "caption": "This feature enables you to improve the work efficiency by automatically waking up or logging in your computer. To use the feature, you need to register your face in Windows Hello.",
+                    "tooltip": "When you are in front of your computer or approaching it (within 1.2 or 1.5 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer. <br>Depending on the sensor capability, the maximum detecting distance varies. Refer to the <i>User Guide</i> that comes with your computer for details."
+                },
+                "distanceSensitivityAdjustingForIdea": {
+                    "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
+                    "captionOn": "Enable this feature to automatically adjust the detecting distance of movements to wake up the system. Turn it off to manually adjust the detecting sensitivity based on your preference.",
+                    "captionOff": "When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
+                    "options": {
+                        "near": "Near",
+                        "medium": "Middle",
+                        "far": "Far"
+                    },
+                    "readMore": "There are three options. In each range, when human movements are detected, your screen will be waked up accordingly.",
+                    "readMoreForSensor1": {
+                        "line1": "• Near: 0-0.4 meter",
+                        "line2": "• Middle: 0-0.6 meter",
+                        "line3": "• Far: 0-1.2 meter"
+                    },
+                    "readMoreForSensor2": {
+                        "line1": "• Near: 0.2-0.55 meter",
+                        "line2": "• Middle: 0.2-1.0 meter",
+                        "line3": "• Far: 0.2-1.5 meter"
+                    }
                 }
             },
             "intelligentScreen": {
