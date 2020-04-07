@@ -62,7 +62,7 @@
 											[tooltipText]=" 'device.smartAssist.intelligentSecurity.zeroTouchLoginForIdea.tooltip' | translate">
 										</vtr-ui-row-switch>
 										<!-- show advanced section -->
-										<div class="pl-5 border-bottom pb-4" 
+										<div class="pl-4 border-bottom pb-4 ml-4" 
 											*ngIf="!zeroTouchLoginShowAdvancedSection">
 											<span class="link-text mt-2 ml-4"
 												role="button"
@@ -176,7 +176,7 @@
 											</div>
 										</div>
 										<!-- hide advanced section -->
-										<div class="pl-5 border-bottom pb-4"
+										<div class="pl-4 border-bottom pb-4 ml-4"
 											[ngClass]="{'zeroTouchHideAdv': intelligentSecurity.isZeroTouchLoginAdjustEnabled && !intelligentSecurity.isWindowsHelloRegistered}"
 											*ngIf="zeroTouchLoginShowAdvancedSection">
 											<span class="link-text mt-2 ml-4"
@@ -288,7 +288,7 @@
 											[disabled]="!intelligentSecurity.isHPDEnabled">											
 										</vtr-ui-row-switch>
 										<!-- show advanced section -->
-										<div class="pl-5 border-bottom pb-4" 
+										<div class="pl-4 border-bottom pb-4 ml-4" 
 											*ngIf="!zeroTouchLockShowAdvancedSection">
 											<span class="link-text mt-2 ml-4"
 												role="button"
@@ -486,7 +486,7 @@
 											</vtr-ui-custom-slider>
 										</div>
 										<!-- hide advanced section -->
-										<div class="pl-5 border-bottom pb-4"
+										<div class="pl-4 border-bottom pb-4 ml-4"
 											[ngClass]="{'zeroTouchHideAdv': hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust}"
 											*ngIf="zeroTouchLockShowAdvancedSection">
 											<span class="link-text mt-2 ml-4"
