@@ -32,7 +32,7 @@ export class SmartAssistService {
 		this.activeProtectionSystem = shellService.getActiveProtectionSystem(); // getting APS Object from //vantage-shell.service
 		this.lenovoVoice = shellService.getLenovoVoice();
 		this.superResolution = shellService.getSuperResolution();
-		this.hsaIntelligentSecurity = shellService.getHsaIntelligentSecurity();
+		this.hsaIntelligentSecurity = true;//shellService.getHsaIntelligentSecurity();
 		// this.shellVersion = shellService.getShellVersion();
 
 		this.activeProtectionSystem ? this.isAPSavailable = true : this.isAPSavailable = false;
@@ -207,7 +207,7 @@ export class SmartAssistService {
 	}
 
 	public getHsaIntelligentSecurityStatus() {
-		const intelligentSecurityDate = {capacity: false, capability: 0, sensorType: 0, zeroTouchLockDistanceAutoAdjust: true, zeroTouchLockDistance: 0};
+		const intelligentSecurityDate = { capacity: false, capability: 0, sensorType: 0, zeroTouchLockDistanceAutoAdjust: true, zeroTouchLockDistance: 0 };
 		try {
 			if (this.isShellAvailable) {
 				const obj = JSON.parse(this.hsaIntelligentSecurity.getAllSetting());
@@ -220,13 +220,13 @@ export class SmartAssistService {
 				}
 				return Promise.resolve(intelligentSecurityDate);
 			}
-		}catch (error) {
+		} catch (error) {
 			//throw new Error(error.message);
 			return Promise.reject(error.message);
 		}
 	}
 
-	public setZeroTouchLockDistanceSensitivityAutoAdjust(value: boolean):Promise<number> {
+	public setZeroTouchLockDistanceSensitivityAutoAdjust(value: boolean): Promise<number> {
 		try {
 			if (this.isShellAvailable) {
 				const result = this.hsaIntelligentSecurity.setPresenceLeaveDistanceAutoAdjust(value);
@@ -238,7 +238,7 @@ export class SmartAssistService {
 		}
 	}
 
-	public setZeroTouchLockDistanceSensitivity(value: number):Promise<number> {
+	public setZeroTouchLockDistanceSensitivity(value: number): Promise<number> {
 		try {
 			if (this.isShellAvailable) {
 				const result = this.hsaIntelligentSecurity.setPresenceLeaveDistance(value);
@@ -250,7 +250,7 @@ export class SmartAssistService {
 		}
 	}
 
-	public resetHSAHPDSetting():Promise<number> {
+	public resetHSAHPDSetting(): Promise<number> {
 		try {
 			if (this.isShellAvailable) {
 				const result = this.hsaIntelligentSecurity.resetAllSetting();
