@@ -1652,3 +1652,21 @@ vtr-ui-smart-performance-scanning {
 .common-li-padding {
 	padding-top: 2rem;
 }
+
+a, input, label {
+	&:focus {
+		outline: 0.1rem solid $menu_hover;
+		outline-offset: 0.2rem;
+	}
+}
+
+div {
+	>a, input, label {
+		&:focus {
+			outline: 0.1rem solid $menu_hover;
+			outline-offset: 0.2rem;
+		}
+	}
+}
+
+

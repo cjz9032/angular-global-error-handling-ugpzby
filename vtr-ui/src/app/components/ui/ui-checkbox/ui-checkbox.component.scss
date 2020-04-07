@@ -44,4 +44,8 @@
 			left: -1.7rem;
 		}
 	}
+	&:focus {
+		outline: 0.1rem solid $menu_hover;
+		outline-offset: 0.2rem;
+	}
 }

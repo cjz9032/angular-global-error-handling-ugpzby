@@ -8,7 +8,7 @@ import { MetricsTranslateService } from 'src/app/services/mertics-traslate/metri
 @Component({
 	selector: 'vtr-modal-wifi-security-invitation',
 	templateUrl: './modal-wifi-security-invitation.component.html',
-	styleUrls: ['./modal-Wifi-security-invitation.component.scss']
+	styleUrls: ['./modal-wifi-security-invitation.component.scss']
 })
 export class ModalWifiSecurityInvitationComponent implements OnInit {
 

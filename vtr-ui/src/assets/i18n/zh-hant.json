@@ -69,7 +69,8 @@
                     },
                     "lightingColorMessage": {
                         "text": "選取的色彩不具備這個效果。"
-                    }
+                    },
+                    "overDrive": "Over Drive"
                 },
                 "systemTools": {
                     "power": "電源",
@@ -1885,6 +1886,21 @@
                             "windowsLink": "移至 Windows 設定以授與存取權",
                             "privacyLink": "移至攝影機隱私模式以將其關閉"
                         }
+                    },
+                    "distanceSensitivityAdjusting": {
+                        "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
+                        "captionOn": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, you can maually adjust the dectecting sensitivity based on your preference.",
+                        "captionOff": "The accuracy varies by body size, posture, and frequency of movement. When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
+                        "options": {
+                            "near": "Near",
+                            "medium": "Middle",
+                            "far": "Far"
+                        },
+                        "readMore": {
+                            "line1": "• Near: 0.9 meter",
+                            "line2": "• Middle: 1.2 meter",
+                            "line3": "• Far: 1.5 meter"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1912,9 +1928,12 @@
                     "description2": "該功能會使用感應器和攝影機來偵測您的存在。不過，這項功能不會收集任何個人資料。",
                     "description3": "1. 如果您的電腦處於帳篷、平板或直立模式，這些功能可能無法正常運作。",
                     "description4": "2. 如果您的電腦處於休眠模式或已關閉，零接觸登入將無法運作。",
-                    "description5": "3. 請將電腦螢幕調整至適當的角度，讓紅外線攝影機可以辨識出您的臉部，進行自動登入。",
                     "description6": "4. 如果您的電腦上已啟用飛航模式，這些功能都會停用。",
-                    "description7": "精確度會隨身體大小、姿勢和動作頻率有所變化。如果您的電腦意外遭到鎖定，請調整敏感度拉桿以改善精準度。"
+                    "description7": "精確度會隨身體大小、姿勢和動作頻率有所變化。如果您的電腦意外遭到鎖定，請調整敏感度拉桿以改善精準度。",
+                    "description5a1": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to ",
+                    "description5a2": "User Guide ",
+                    "description5a3": "that comes with it.",
+                    "description5b": "b. Your computer is in hibernation mode or has been turned off."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "跳至 Windows Hello 設定",
@@ -1923,6 +1942,40 @@
                 "resetToDefault": "重設",
                 "sensitivityAdjusting": {
                     "title": "敏感度調整"
+                },
+                "image": {
+                    "title": "Intelligent security",
+                    "description": "Buckles up your PC with intelligent sensing technology, protects your privacy, and saves your battery power."
+                },
+                "advancedSettings": {
+                    "showAdvSettings": "ADVANCED SETTINGS",
+                    "hideAdvSettings": "HIDE ADVANCED SETTINGS"
+                },
+                "zeroTouchLoginForIdea": {
+                    "title": "Zero Touch Login",
+                    "caption": "This feature enables you to improve the work efficiency by automatically waking up or logging in your computer. To use the feature, you need to register your face in Windows Hello.",
+                    "tooltip": "When you are in front of your computer or approaching it (within 1.2 or 1.5 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer. <br>Depending on the sensor capability, the maximum detecting distance varies. Refer to the <i>User Guide</i> that comes with your computer for details."
+                },
+                "distanceSensitivityAdjustingForIdea": {
+                    "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
+                    "captionOn": "Enable this feature to automatically adjust the detecting distance of movements to wake up the system. Turn it off to manually adjust the detecting sensitivity based on your preference.",
+                    "captionOff": "When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
+                    "options": {
+                        "near": "Near",
+                        "medium": "Middle",
+                        "far": "Far"
+                    },
+                    "readMore": "There are three options. In each range, when human movements are detected, your screen will be waked up accordingly.",
+                    "readMoreForSensor1": {
+                        "line1": "• Near: 0-0.4 meter",
+                        "line2": "• Middle: 0-0.6 meter",
+                        "line3": "• Far: 0-1.2 meter"
+                    },
+                    "readMoreForSensor2": {
+                        "line1": "• Near: 0.2-0.55 meter",
+                        "line2": "• Middle: 0.2-1.0 meter",
+                        "line3": "• Far: 0.2-1.5 meter"
+                    }
                 }
             },
             "intelligentScreen": {
