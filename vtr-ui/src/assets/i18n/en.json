@@ -2059,14 +2059,14 @@
 				}
 			},
 			"antiTheft": {
-                "heading": "Intelligent sensing",
-                "title": "Smart motion alert",
+                "heading": "Intelligent Sensing",
+                "title": "Smart Motion Alert",
                 "desc": "<p><label>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</label></p> <p style='margin-top:4px;'><label>To dismiss the alarm, enter the correct password or log in by Windows Hello.</label></p>",
                 "note": {
                     "description": "Once you log in the system successfully, this feature will be turned off automatically. You need to enable it again to use it."
                 },
                 "alarm": {
-                    "title":"WHEN THE ALARM LASTED FOR",
+                    "title":" THE ALARM WILL LAST FOR",
                     "option1":"10 seconds",
                     "option2":"20 seconds",
                     "option3":"30 seconds",
@@ -2074,8 +2074,8 @@
                     "option5":"Never stop"
                 },
                 "allowCamera": {
-                    "title":"TAKING PHOTOS",
-                    "describe":"When enabling this feature, the camera takes photo automatically when detecting any movement if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
+                    "title":"TATING PHOTOS",
+                    "describe":"When enabling this feature, the camera takes photos automatically when detecting any movement if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
                     "checkBoxText":"Enable this feature"
                 },
                 "cameraPrivacy": {
@@ -2097,7 +2097,7 @@
                     "option6":"30"
                 },
                 "showPhoto": {
-                    "title":"PHOTO HAS BEEN SAVED TO LOCAL:",
+                    "title":"PHOTOS HAVE BEEN:",
                     "link":"View photos"
 				},
 				"fileAuthorizationTips": {
