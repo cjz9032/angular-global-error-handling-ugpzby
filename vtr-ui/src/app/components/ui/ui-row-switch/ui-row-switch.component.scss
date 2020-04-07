@@ -148,7 +148,7 @@
 
 		.tool-tip-icon {
 			//margin-left: 0.9rem;
-			margin-top: 0.3rem;
+			margin-top: 0.2rem;
 			margin-left: 1rem;
 			//order: 2;
 			// &.auto-screen-lock-help-icon {
@@ -227,6 +227,28 @@
 		color: $grey_dark;
 		span{
 		color: $grey_dark;
+		}
+	}
+	.right-icon {
+		&:focus {
+			outline: 0.1rem solid $menu_hover;
+			outline-offset: 0.2rem;
+		}
+	}
+}
+.vtr-ui-switch-row.blue-theme {
+	.right-icon {
+		&:focus {
+			outline: 0.1rem solid $light;
+			outline-offset: 0.2rem;
+		}
+	}
+	.vtr-row-switch {
+		.checkbox {
+			&:focus {
+			outline: 0.1rem solid $light;
+			outline-offset: 0.2rem;
+		}
 		}
 	}
 }
