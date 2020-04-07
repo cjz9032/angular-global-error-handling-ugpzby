@@ -1,11 +1,14 @@
 import { TestBed } from '@angular/core/testing';
 
 import { VersionService, VersionCodeName } from './version.service';
+import { BrowserDynamicTestingModule, platformBrowserDynamicTesting } from '@angular/platform-browser-dynamic/testing';
 
 describe('VersionService', () => {
   let service: VersionService;
 
   beforeEach(() => {
+	TestBed.resetTestEnvironment();
+	TestBed.initTestEnvironment(BrowserDynamicTestingModule, platformBrowserDynamicTesting());
     TestBed.configureTestingModule({});
     service = TestBed.inject(VersionService);
   });
