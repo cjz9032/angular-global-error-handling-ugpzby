@@ -163,7 +163,7 @@
 								[ngClass]="{'disabled': !smartStandby.isEnabled}"
 								class="hyperlink-to-graph"
 								(click)="showUsageGraph()"
-								(keydown.enter)="showUsageGraph()"
+								(keyup.enter)="showUsageGraph()"
 								role="link"
 								attr.aria-label="{{'device.deviceSettings.power.smartStandby.hyperlinkToGraph' | translate}}">
 								{{'device.deviceSettings.power.smartStandby.hyperlinkToGraph' | translate}}
