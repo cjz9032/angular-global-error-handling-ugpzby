@@ -10,6 +10,8 @@ export class WidgetSupportComponent implements OnInit {
 	@Input() title: string;
 	@Input() description: string;
 	@Input() items: any[];
+	@Input() widgetTittleId: string;
+	@Input() widgetDescriptionId: string;
 
 	constructor() { }
 
