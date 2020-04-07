@@ -658,6 +658,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		h2,
 		h3,
 		h4,
+		header,
 		h5,
 		h6 {
 			font-weight: normal;
@@ -666,7 +667,8 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 			margin-bottom: 1rem;
 		}
 
-		h1 {
+		h1,
+		header {
 			font-size: 3.1rem;
 			margin-top: 0rem;
 			margin-bottom: 3rem;

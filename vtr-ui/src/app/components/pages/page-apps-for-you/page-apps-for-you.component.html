@@ -111,6 +111,7 @@
 							[style.height.px]="appsForYouImageContent.clientWidth / 5">
 							<div *ngFor="let screenshot of appDetails.screenshots, let i = index"
 								tabindex="0"
+								role="img"
 								class="screenshot-img position-{{screenshot.position}}"
 								id="{{screenshot.id}}"
 								vtrMetrics
@@ -125,13 +126,17 @@
 						<div class="arrow-content"
 							*ngIf="showArrows">
 							<div tabindex="0"
+								role="button"
 								class="arrow left-arrow"
+								[attr.aria-label]="'appsForYou.narrator.leftArrow' | translate"
 								(keyup.enter)="clickLeftArrow()"
 								(click)="clickLeftArrow()">
 								<fa-icon [icon]="['fal', 'chevron-left']"></fa-icon>
 							</div>
 							<div tabindex="0"
+								role="button"
 								class="arrow right-arrow"
+								[attr.aria-label]="'appsForYou.narrator.rightArrow' | translate"
 								(keyup.enter)="clickRightArrow()"
 								(click)="clickRightArrow()">
 								<fa-icon [icon]="['fal', 'chevron-right']"></fa-icon>

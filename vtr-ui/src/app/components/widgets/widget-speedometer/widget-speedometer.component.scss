@@ -10,6 +10,10 @@
 		height: 23rem;
 		transform: scale(.25);
 		transform-origin: 0% 0%;
+		@media #{$breakpoint_sm}{
+			transform: scale(1);
+			height: 20rem;
+		}
 		.speed-label {
 			margin-top: 8rem;
 			width: 22rem;

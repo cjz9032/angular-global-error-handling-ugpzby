@@ -1,7 +1,5 @@
 import { Component, OnInit, EventEmitter, Output, OnDestroy } from '@angular/core';
 import { DeviceService } from 'src/app/services/device/device.service';
-import { ChangeContext } from 'ng5-slider';
-
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { IntelligentSecurity } from 'src/app/data-models/smart-assist/intelligent-security.model';
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
@@ -21,7 +19,7 @@ import { EMPTY, fromEvent } from 'rxjs';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { SmartAssistCache } from 'src/app/data-models/smart-assist/smart-assist-cache.model';
 import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
-import { HsaIntelligentSecurityResponse } from 'src/app/data-models/smart-assist/hsaIntelligentSecurity/intelligentSecurity.model';
+import { HsaIntelligentSecurityResponse } from 'src/app/data-models/smart-assist/hsa-intelligent-security.model/hsa-intelligent-security.model';
 import { MetricService } from 'src/app/services/metric/metric.service';
 
 @Component({
@@ -35,7 +33,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	back = 'BACK';
 	backarrow = '< ';
 	parentPath = 'device';
-	@Output() distanceChange: EventEmitter<ChangeContext> = new EventEmitter();
+	@Output() distanceChange: any = new EventEmitter();
 	public manualRefresh: EventEmitter<void> = new EventEmitter<void>();
 	public isThinkPad = true;
 	public tooltipText = 'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.toolTipContent';
@@ -165,6 +163,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			this.initDataFromCache();
 			this.initSmartAssist(true);
 			this.getHPDLeaveSensitivityVisibilityStatus();
+			this.startMonitorHsaIntelligentSecurityStatus();
 		}
 	}
 
@@ -554,6 +553,9 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 
 		this.smartAssist.setZeroTouchLoginAdjustStatus(this.intelligentSecurity.isZeroTouchLoginAdjustEnabled)
 			.then((isSuccess: boolean) => {
+				if (!event.switchValue) {
+					this.initZeroTouchLogin(); //refresh slider-bar when turn off the autoAdjust toggle
+				}			
 				this.logger.info(`onDistanceSensitivityAdjustToggle.setZeroTouchLoginAdjustStatus ${isSuccess}`, this.intelligentSecurity.isZeroTouchLoginAdjustEnabled);
 			});
 	}
@@ -601,8 +603,6 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 						this.zeroTouchPresenceLeaveDistanceAutoAdjustCapability = (response.capability && 0x100) !== 0;
 						this.zeroTouchPresenceLeaveDistanceCapability = (response.capability && 0x80) !== 0;
 						this.hsaIntelligentSecurity = response;
-					}).catch((error) => {
-						this.logger.error('getHsaIntelligentSecurityStatus error: ', error.message);
 					});
 			}
 		} catch (error) {
@@ -616,8 +616,8 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			if (this.smartAssist.isShellAvailable) {
 				this.smartAssist.setZeroTouchLockDistanceSensitivityAutoAdjust(event.switchValue)
 					.then((response) => {
-						if (response !== 0) {
-							this.logger.error('onZeroTouchLockDistanceSensitivityAdjustToggle error.')
+						if (response === 0 && !event.switchValue) {
+							this.getHsaIntelligentSecurityStatus(); //refresh slider-bar when turn off the autoAdjust toggle
 						}
 					});
 			}
@@ -626,14 +626,14 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public SetZeroTouchLockDistanceSensitivity(event: ChangeContext) {
-		this.hsaIntelligentSecurity.zeroTouchLockDistance = event.value;
+	public SetZeroTouchLockDistanceSensitivity($event: any) {
+		this.hsaIntelligentSecurity.zeroTouchLockDistance = $event.value;
 		try {
 			if (this.smartAssist.isShellAvailable) {
-				this.smartAssist.setZeroTouchLockDistanceSensitivity(event.value)
+				this.smartAssist.setZeroTouchLockDistanceSensitivity($event.value)
 					.then((response) => {
 						if (response !== 0) {
-							this.logger.error('SetZeroTouchLockDistanceSensitivity error.')
+							this.logger.error('SetZeroTouchLockDistanceSensitivity error.');
 						}
 					});
 			}
@@ -642,7 +642,38 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public onDisplayDimTimeChange($event: ChangeContext) {
+	public startMonitorHsaIntelligentSecurityStatus() {
+		try {
+			if (this.smartAssist.isShellAvailable) {
+				this.smartAssist.startMonitorHsaIntelligentSecurityStatus(this.hsaIntelligentSecurityChange.bind(this))
+					.then((value) => {
+						this.logger.info('startMonitorHsaIntelligentSecurityStatus.then', value);
+					});
+			}
+		} catch (error) {
+			this.logger.error('startMonitorHsaIntelligentSecurityStatus error: ', error.message);
+		}
+	}
+
+	public hsaIntelligentSecurityChange(data: any) {
+		try {
+			const response = JSON.parse(data);
+			if (response && response.errorCode === 0) {
+				this.hsaIntelligentSecurity.capacity = response.capacity;
+				this.hsaIntelligentSecurity.capability = response.capability;
+				this.hsaIntelligentSecurity.sensorType = response.sensorType;
+				this.hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust = response.presenceLeaveDistanceAutoAdjust;
+				this.hsaIntelligentSecurity.zeroTouchLockDistance = response.presenceLeaveDistance;
+				this.zeroTouchPresenceLeaveDistanceAutoAdjustCapability = (response.capability && 0x100) !== 0;
+				this.zeroTouchPresenceLeaveDistanceCapability = (response.capability && 0x80) !== 0;
+			}			
+			this.logger.info('hsaIntelligentSecurityChange', data);
+		} catch (error) {
+			this.logger.error('hsaIntelligentSecurityChange', error.message);
+		}
+	}
+
+	public onDisplayDimTimeChange($event: any) {
 		const value = $event.value;
 		this.intelligentScreen.readingOrBrowsingTime = value;
 
@@ -710,6 +741,13 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	}
 
 	public onResetDefaultSettings($event) {
+		this.smartAssist.resetHSAHPDSetting()
+			.then((response) => {
+				if (response === 0) {
+					this.logger.info('resetHSAHPDSetting done.')
+				}
+			});
+
 		this.smartAssist.resetHPDSetting()
 			.then((isSuccess: boolean) => {
 				this.logger.info('onResetDefaultSettings.resetHPDSetting', isSuccess);
@@ -727,13 +765,6 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				}
 			});
 		}
-
-		this.smartAssist.resetHSAHPDSetting()
-			.then((response) => {
-				if (response === 0) {
-					this.getHsaIntelligentSecurityStatus();
-				}
-			});
 	}
 
 	private getVideoPauseResumeStatus() {

@@ -8,6 +8,7 @@ export class UICustomRadio {
 	@Input() value: string;
 	@Input() checked = false;
 	@Input() radioGroup: any;
+	@Input() automationid;
 	@Input() metricsParent = 'Device.MyDeviceSettings';
 
 	// These following instance variables added for Keyboard navigation to radio button.
