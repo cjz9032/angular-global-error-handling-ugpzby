@@ -47,7 +47,7 @@
 								*ngFor="let category of articleCategories, let i = index"
 								tabindex="1"
 								id="{{'support-category-'+category.Id}}"
-								attr.aria-label="{{'support-category-'+category.Title}}"
+								[attr.aria-label]="category.Title + 'support.quickAccess.seeArticles' | translate"
 								vtrMetrics
 								metricsItem="Support.CategoryClicked"
 								metricsEvent="featureClick"
