@@ -163,7 +163,9 @@
 				<div class="col col-12 px-0 pt-0 pb-24">
 					<vtr-widget-support [title]="'support.documentation.title' | translate"
 						[description]="''"
-						[items]="supportDatas.documentation">
+						[items]="supportDatas.documentation"
+						[widgetTittleId]="'Documentation'"
+						[widgetDescriptionId]="''">
 					</vtr-widget-support>
 				</div>
 			</div>
@@ -173,7 +175,10 @@
 				<div class="col col-12 px-0 pt-0 pb-24">
 					<vtr-widget-support [title]="'support.needHelp.title' | translate"
 						[description]="'support.needHelp.description' | translate"
-						[items]="supportDatas.needHelp"></vtr-widget-support>
+						[items]="supportDatas.needHelp"
+						[widgetTittleId]="'NeedHelp'"
+						[widgetDescriptionId]="'ContactUsHelp'">
+					</vtr-widget-support>
 				</div>
 			</div>
 
@@ -182,7 +187,10 @@
 				<div class="col col-12 px-0 pt-0 pb-24">
 					<vtr-widget-support [title]="'support.quicklinks.title' | translate"
 						[description]="''"
-						[items]="supportDatas.quicklinks"></vtr-widget-support>
+						[items]="supportDatas.quicklinks"
+						[widgetTittleId]="'Quicklinks'"
+						[widgetDescriptionId]="''">
+					</vtr-widget-support>
 				</div>
 			</div>
 			<div class="row d-none d-lg-block"
