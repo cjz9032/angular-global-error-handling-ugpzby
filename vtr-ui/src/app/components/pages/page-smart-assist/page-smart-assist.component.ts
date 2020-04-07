@@ -553,6 +553,9 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 
 		this.smartAssist.setZeroTouchLoginAdjustStatus(this.intelligentSecurity.isZeroTouchLoginAdjustEnabled)
 			.then((isSuccess: boolean) => {
+				if (!event.switchValue) {
+					this.initZeroTouchLogin(); //refresh slider-bar when turn off the autoAdjust toggle
+				}			
 				this.logger.info(`onDistanceSensitivityAdjustToggle.setZeroTouchLoginAdjustStatus ${isSuccess}`, this.intelligentSecurity.isZeroTouchLoginAdjustEnabled);
 			});
 	}
@@ -613,8 +616,8 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			if (this.smartAssist.isShellAvailable) {
 				this.smartAssist.setZeroTouchLockDistanceSensitivityAutoAdjust(event.switchValue)
 					.then((response) => {
-						if (response !== 0) {
-							this.logger.error('onZeroTouchLockDistanceSensitivityAdjustToggle error.')
+						if (response === 0 && !event.switchValue) {
+							this.getHsaIntelligentSecurityStatus(); //refresh slider-bar when turn off the autoAdjust toggle
 						}
 					});
 			}
@@ -630,7 +633,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				this.smartAssist.setZeroTouchLockDistanceSensitivity($event.value)
 					.then((response) => {
 						if (response !== 0) {
-							this.logger.error('SetZeroTouchLockDistanceSensitivity error.')
+							this.logger.error('SetZeroTouchLockDistanceSensitivity error.');
 						}
 					});
 			}

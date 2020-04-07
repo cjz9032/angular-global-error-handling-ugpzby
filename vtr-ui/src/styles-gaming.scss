@@ -1965,6 +1965,23 @@ body.focus-enable{
 		button.close{
 		opacity:1 !important
 		}	
+		vtr-ui-header-warranty{
+			.dropdown-content{
+				.dropdown-btn {
+					&:focus{
+						outline: 1px dotted !important;
+					}
+				}
+			}
+		}
+		.Article-Detail-Modal{
+		&.content-gaming{
+			*:focus{
+			outline: 1px dotted !important;
+			outline-color:$gaming_darkest !important;
+		}
+		}
+	}
 	}
 }
 
