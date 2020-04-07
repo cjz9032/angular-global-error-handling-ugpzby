@@ -163,6 +163,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			this.initDataFromCache();
 			this.initSmartAssist(true);
 			this.getHPDLeaveSensitivityVisibilityStatus();
+			this.startMonitorHsaIntelligentSecurityStatus();
 		}
 	}
 
@@ -599,8 +600,6 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 						this.zeroTouchPresenceLeaveDistanceAutoAdjustCapability = (response.capability && 0x100) !== 0;
 						this.zeroTouchPresenceLeaveDistanceCapability = (response.capability && 0x80) !== 0;
 						this.hsaIntelligentSecurity = response;
-					}).catch((error) => {
-						this.logger.error('getHsaIntelligentSecurityStatus error: ', error.message);
 					});
 			}
 		} catch (error) {
@@ -637,6 +636,37 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			}
 		} catch (error) {
 			this.logger.error('onZeroTouchLockDistanceSensitivity' + error.message);
+		}
+	}
+
+	public startMonitorHsaIntelligentSecurityStatus() {
+		try {
+			if (this.smartAssist.isShellAvailable) {
+				this.smartAssist.startMonitorHsaIntelligentSecurityStatus(this.hsaIntelligentSecurityChange.bind(this))
+					.then((value) => {
+						this.logger.info('startMonitorHsaIntelligentSecurityStatus.then', value);
+					});
+			}
+		} catch (error) {
+			this.logger.error('startMonitorHsaIntelligentSecurityStatus error: ', error.message);
+		}
+	}
+
+	public hsaIntelligentSecurityChange(data: any) {
+		try {
+			const response = JSON.parse(data);
+			if (response && response.errorCode === 0) {
+				this.hsaIntelligentSecurity.capacity = response.capacity;
+				this.hsaIntelligentSecurity.capability = response.capability;
+				this.hsaIntelligentSecurity.sensorType = response.sensorType;
+				this.hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust = response.presenceLeaveDistanceAutoAdjust;
+				this.hsaIntelligentSecurity.zeroTouchLockDistance = response.presenceLeaveDistance;
+				this.zeroTouchPresenceLeaveDistanceAutoAdjustCapability = (response.capability && 0x100) !== 0;
+				this.zeroTouchPresenceLeaveDistanceCapability = (response.capability && 0x80) !== 0;
+			}			
+			this.logger.info('hsaIntelligentSecurityChange', data);
+		} catch (error) {
+			this.logger.error('hsaIntelligentSecurityChange', error.message);
 		}
 	}
 
@@ -708,6 +738,13 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	}
 
 	public onResetDefaultSettings($event) {
+		this.smartAssist.resetHSAHPDSetting()
+			.then((response) => {
+				if (response === 0) {
+					this.logger.info('resetHSAHPDSetting done.')
+				}
+			});
+
 		this.smartAssist.resetHPDSetting()
 			.then((isSuccess: boolean) => {
 				this.logger.info('onResetDefaultSettings.resetHPDSetting', isSuccess);
@@ -725,13 +762,6 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				}
 			});
 		}
-
-		this.smartAssist.resetHSAHPDSetting()
-			.then((response) => {
-				if (response === 0) {
-					this.getHsaIntelligentSecurityStatus();
-				}
-			});
 	}
 
 	private getVideoPauseResumeStatus() {
