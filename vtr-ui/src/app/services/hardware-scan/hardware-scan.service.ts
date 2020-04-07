@@ -62,7 +62,6 @@ export class HardwareScanService {
 	private hypSettingsPromise: any = undefined;
 	private pluginVersion: string;
 	private isDesktopMachine: boolean = false;
-	private availableHWScan: boolean = false;
 
 	// Used to store information related to metrics
 	private currentTaskType: TaskType;
@@ -101,7 +100,6 @@ export class HardwareScanService {
 
 			// If HardwareScan is available, dispatch the priority requests
 			this.isAvailable().then((available) => {
-				this.setAvailableHWScan(available);
 				if (available) {
 					// Validate the type of this machine to load dynamically the icons.
 					this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
@@ -1287,13 +1285,5 @@ export class HardwareScanService {
 
 	public setCurrentTaskStep(taskStep: TaskStep) {
 		this.currentTaskStep = taskStep;
-	}
-
-	public getAvailableHWScan() {
-		return this.availableHWScan;
-	}
-
-	private setAvailableHWScan(status: boolean) {
-		this.availableHWScan = status;
 	}
 }

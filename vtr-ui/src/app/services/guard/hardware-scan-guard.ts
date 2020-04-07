@@ -18,14 +18,22 @@ export class HardwareScanGuard implements CanActivate, CanActivateChild {
 	canActivate(
 		route: ActivatedRouteSnapshot,
 		state: RouterStateSnapshot
-	): boolean | UrlTree {
-		return this.hardwareScanService.getAvailableHWScan() ? true : this.guardConstants.defaultRoute;
+	): Promise<boolean | UrlTree> {
+		// Check whether HardwareScan is available
+		return this.hardwareScanService.isAvailable().then((available)=>{
+			//If true, return the same route was solicited by routing file
+			if (available){
+				return true;
+			}
+			//If false, redirect to default route (Vantage Dashboard)
+			return this.guardConstants.defaultRoute;
+		})
 	}
 
 	canActivateChild(
 		childRoute: ActivatedRouteSnapshot,
 		state: RouterStateSnapshot
-	): boolean | UrlTree {
+	): Promise<boolean | UrlTree> {
 		return this.canActivate(childRoute, state);
 	}
 }
