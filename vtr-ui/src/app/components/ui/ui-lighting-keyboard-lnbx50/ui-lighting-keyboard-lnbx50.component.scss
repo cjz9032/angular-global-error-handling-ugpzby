@@ -125,6 +125,9 @@
                 height: 0;
                 position: relative;
                 opacity: 0.8;
+                @media #{$high-contrast} {
+                    -ms-high-contrast-adjust: none;
+                }
                 &.opacity100{
                     opacity: 1;
                 }

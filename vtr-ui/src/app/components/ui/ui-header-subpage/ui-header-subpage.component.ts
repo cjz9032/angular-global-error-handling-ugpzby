@@ -42,18 +42,18 @@ export class UiHeaderSubpageComponent implements OnInit, AfterViewInit {
 
 	ngAfterViewInit(): void {
 		try {
-
-			if (this.route.snapshot.queryParamMap.get(this.fromTab) && this.route.snapshot.queryParamMap.get(this.fromTab) === 'true') {
-				const focusElement = this.pageHeadingRef.nativeElement.querySelector('[tabIndex = \'-1\']') as HTMLElement;
-				if (focusElement) {
-					focusElement.focus();
-				}
-			}
-			else {
-				if (document.getElementById(this.pageHeader) !== undefined) {
-					document.getElementById(this.pageHeader).focus();
-				}
-			}
+			//------ Commented out Accessibility changes as suggested by Santosh to fix VAN-16713.--------
+			// if (this.route.snapshot.queryParamMap.get(this.fromTab) && this.route.snapshot.queryParamMap.get(this.fromTab) === 'true') {
+			// 	const focusElement = this.pageHeadingRef.nativeElement.querySelector('[tabIndex = \'-1\']') as HTMLElement;
+			// 	if (focusElement) {
+			// 		focusElement.focus();
+			// 	}
+			// }
+			// else {
+			// 	if (document.getElementById(this.pageHeader) !== undefined) {
+			// 		document.getElementById(this.pageHeader).focus();
+			// 	}
+			// }
 
 		} catch (error) {
 

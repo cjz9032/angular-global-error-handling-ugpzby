@@ -1,62 +1,96 @@
-<div class="vtr-widget-switch-icon"
-	[ngClass]="{'disable-state': (disable || isLoading)}"
+<div
+	class="vtr-widget-switch-icon"
+	[ngClass]="{ 'disable-state': disable || isLoading }"
 	[title]="tooltipText"
-	id="qs-{{switchId}}-switch-icon"
-	attr.aria-label="qs-{{switchId}}-switch-icon">
-	<button class="switch-container"
+	id="qs-{{ switchId }}-switch-icon"
+>
+	<button
+		class="switch-container"
 		vtrMetrics
 		metricsEvent="featureClick"
 		[metricsValue]="!value"
 		[metricsItem]="metricsItem"
-		[ngClass]="{'checked': (value && !isLoading),
-			'unchecked': (isLoading || !value),
-			'disable-container': disable}"
-		[id]="findId(value,disable)"
+		[ngClass]="{
+			checked: value && !isLoading,
+			unchecked: isLoading || !value,
+			'disable-container': disable
+		}"
+		[id]="findId(value, disable)"
 		(click)="onChange($event)"
-		[attr.role]="buttonRole">
-		<div class="title"
-			[ngClass]="{'disable-container' : disable}"
-			id="qs-{{switchId}}-switch-title"
-			attr.aria-label="qs-{{switchId}}-switch-title">{{ title }}</div>
-		<div *ngIf="!isLoading"
-			class="icon-container d-block"
-			[ngClass]="{'disable-container' : disable}">
-			<i [class]="iconDefinition"
-				[ngClass]="{'enabled' : !isBlocked}"
-				*ngIf="!isBlocked"></i>
-			<i [class]="offIconDefinition"
-				[ngClass]="{'disabled' : isBlocked}"
-				*ngIf="isBlocked && !disable"></i>
-			<i [class]="iconDefinition"
-				[ngClass]="{'disable-container' : disable}"
-				*ngIf="isBlocked && disable"></i>
+		[attr.aria-label]="
+			!value && !isLoading && switchId !== 'system-update'
+				? switchId + '-off'
+				: value && !isLoading && switchId !== 'system-update'
+				? switchId + '-on'
+				: switchId
+		"
+		[attr.aria-pressed]="value"
+		[attr.role]="buttonRole"
+	>
+		<div
+			class="title"
+			[ngClass]="{ 'disable-container': disable }"
+			id="qs-{{ switchId }}-switch-title"
+			aria-hidden="true"
+		>
+			{{ title }}
 		</div>
-		<div *ngIf="isLoading"
-			class="icon-container d-block position-relative">
+		<div
+			*ngIf="!isLoading"
+			class="icon-container d-block"
+			[ngClass]="{ 'disable-container': disable }"
+		>
+			<i
+				[class]="iconDefinition"
+				[ngClass]="{ enabled: !isBlocked }"
+				*ngIf="!isBlocked"
+			></i>
+			<i
+				[class]="offIconDefinition"
+				[ngClass]="{ disabled: isBlocked }"
+				*ngIf="isBlocked && !disable"
+			></i>
+			<i
+				[class]="iconDefinition"
+				[ngClass]="{ 'disable-container': disable }"
+				*ngIf="isBlocked && disable"
+			></i>
+		</div>
+		<div *ngIf="isLoading" class="icon-container d-block position-relative">
 			<div class="loader center-block">
-				<div class="spinner-border text-secondary progress-spinner"></div>
+				<div
+					class="spinner-border text-secondary progress-spinner"
+				></div>
 			</div>
 		</div>
-		<div class="row"
-			[ngClass]="{'is-visible' : hideOnOffLabel}">
+		<div class="row" [ngClass]="{ 'is-visible': hideOnOffLabel }">
 			<div class="col">
 				<div class="switch-on-off">
-					<div *ngIf="!value && !isLoading"
+					<div
+						*ngIf="!value && !isLoading"
 						class="switch-label off-label"
-						id="qs-{{switchId}}-switch-off"
-						attr.aria-label="qs-{{switchId}}-switch-off">
-						<span *ngIf="!disable">{{'common.ui.off' | translate}}</span>
+						id="qs-{{ switchId }}-switch-off"
+						aria-hidden="true"
+					>
+						<span *ngIf="!disable">{{
+							"common.ui.off" | translate
+						}}</span>
 						<span *ngIf="disable">&nbsp;</span>
 					</div>
-					<div *ngIf="value && !isLoading"
+					<div
+						*ngIf="value && !isLoading"
 						class="switch-label on-label"
-						id="qs-{{switchId}}-switch-on"
-						attr.aria-label="qs-{{switchId}}-switch-on">
-						{{'common.ui.on' | translate}}</div>
-					<div *ngIf="isLoading"
+						id="qs-{{ switchId }}-switch-on"
+						aria-hidden="true"
+					>
+						{{ "common.ui.on" | translate }}
+					</div>
+					<div
+						*ngIf="isLoading"
 						class="switch-label off-label"
-						id="qs-{{switchId}}-switch-loading"
-						attr.aria-label="qs-{{switchId}}-switch-loading">
+						id="qs-{{ switchId }}-switch-loading"
+						aria-hidden="true"
+					>
 						<!-- avoid title shifting to downward effect by adding space -->
 						&nbsp;
 						<!-- {{'common.ui.loading' | translate}} -->

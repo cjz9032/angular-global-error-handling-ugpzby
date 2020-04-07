@@ -20,6 +20,7 @@ export class UiColorWheelComponent implements OnInit, OnChanges {
 	@Input() btnStatus: String = 'apply';
 	@Input() showOverlay: Boolean;
 	@Input() defaultLang: any;
+	@Input() automationId: string;
 	colorWheel: any;
 
 	constructor() { }

@@ -11,6 +11,12 @@
         border-radius: .4rem;   
         padding: 2.4rem;
         box-shadow: 0 .8rem 1.6rem 0;
+        @media #{$black-on-white} {
+            border: 1px solid $highContrastGray;
+        }
+        @media #{$white-on-black} {
+            border: 1px solid $highContrastGray;
+        }
         @media #{$small-screen}{
             background: url(~/assets/images/gaming/lighting/blueBG-horizontal.png) center top no-repeat $gaming_lighting_profile_bg;
             background-size: 100% auto;
@@ -224,6 +230,9 @@
                             border-radius: .4rem;
                             border: none;
                             outline: none;
+                            @media #{$high-contrast} {
+                                -ms-high-contrast-adjust: none;
+                            }
                         }
                         vtr-ui-color-picker{
                             position: absolute;

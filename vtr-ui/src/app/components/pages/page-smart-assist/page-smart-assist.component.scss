@@ -284,15 +284,7 @@ $fontsize_xs: 1.4rem;
 			margin-left: 3rem;
 			//padding-top: 1.5rem;
 		}
-		::ng-deep .vtr-ui-range-slider {
-			width: 85%;
-			&::ng-deep {
-				.ng5-slider {
-					margin-top: 2rem !important;
-				}
-			}
-		}
-
+		
 		.auto-screen-lock-help-icon {
 			::ng-deep .vtr-ui-switch-row.white-theme {
 				.vtr-row-switch {
