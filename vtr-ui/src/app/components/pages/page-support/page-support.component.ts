@@ -44,6 +44,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 	articlesType = '';
 	articleCategories: any = [];
 	isCategoryArticlesShow = false;
+	selectedCategoryId = '';
 	warrantyData: { info: any, cache: boolean };
 	warrantyYear = 0;
 	isOnline: boolean;
@@ -348,7 +349,9 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 	}
 
 	clickCategory(categoryId: string) {
+		if (this.selectedCategoryId === categoryId) { return false; }
 		this.isCategoryArticlesShow = true;
+		this.selectedCategoryId = categoryId;
 		clearTimeout(this.getArticlesTimeout);
 		this.fetchCMSArticles(categoryId);
 	}
@@ -356,6 +359,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 	onInnerBack() {
 		clearTimeout(this.getArticlesTimeout);
 		this.isCategoryArticlesShow = false;
+		this.selectedCategoryId = '';
 		if (this.backupContentArticles.leftTop.length > 0) {
 			this.articlesType = SupportContentStatus.Content;
 			this.articles = this.copyObjectArray(this.backupContentArticles);
