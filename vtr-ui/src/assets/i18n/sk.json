@@ -60,6 +60,7 @@
                     "autoClose": "Automatické zatvorenie",
                     "networkBoost": "Zrýchlenie siete",
                     "hybridMode": "Hybridný režim",
+                    "overDrive": "Over Drive",
                     "touchpadLock": "Zámok dotykového panela",
                     "lightingDriverPopup": {
                         "headerText": "Vyžaduje sa inštalácia ovládača",
@@ -95,7 +96,8 @@
                     "line9": "<b>Zámok dotykového panela </b><br> Zabráňte chybným vstupom zakázaním dotykového panela, keď sa hráte",
                     "line10": "<b>Automatické zatvorenie </b><br> Skôr než sa začnete hrať, odstráňte procesy, ktoré na hru nepotrebujete, a maximalizujte dostupné systémové prostriedky",
                     "line11": "<b>Tepelný režim </b><br> Nastavenie preferovaného profilu zariadenia na ovládanie otáčok ventilátora a chladenia",
-                    "line12": "<b>Kláves makra</b><br> Prispôsobte klávesové skratky svojmu hernému štýlu"
+                    "line12": "<b>Kláves makra</b><br> Prispôsobte klávesové skratky svojmu hernému štýlu",
+                    "line13": "<b>Over Drive </b><br> This function makes your screen respond faster"
                 },
                 "systemInfo": {
                     "systenTooltip": "Umiestnením kurzora myši položky CPU/GPU/RAM a rôzne jednotky zobrazíte ich popisy vrátane informácií o výrobe a modeloch"

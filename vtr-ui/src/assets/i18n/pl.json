@@ -60,6 +60,7 @@
                     "autoClose": "Autozamykanie",
                     "networkBoost": "Wspomaganie sieci",
                     "hybridMode": "Tryb hybrydowy",
+                    "overDrive": "Over Drive",
                     "touchpadLock": "Blokada panelu dotyk.",
                     "lightingDriverPopup": {
                         "headerText": "Wymagana instalacja sterownika",
@@ -95,7 +96,8 @@
                     "line9": "<b>Blokada panelu dotyk. </b><br> Zapobiegnij błędom sterowania, wyłączając panel dotykowy na czas grania",
                     "line10": "<b>Autozamykanie </b><br> Wyczyść procesy, które nie są potrzebne do grania przed rozpoczęciem gry, aby zmaksymalizować dostępne zasoby systemowe",
                     "line11": "<b>Tryb term </b><br> Ustaw preferowany profil urządzenia dotyczący prędkości wentylatora i sterowania chłodzeniem.",
-                    "line12": "<b>Klawisz makr</b><br> Dostosuj klawiaturę do swojego stylu grania"
+                    "line12": "<b>Klawisz makr</b><br> Dostosuj klawiaturę do swojego stylu grania",
+                    "line13": "<b>Over Drive </b><br> This function makes your screen respond faster"
                 },
                 "systemInfo": {
                     "systenTooltip": "Najedź kursorem myszy na CPU/GPU/RAM i różne dyski, aby wyświetlić ich opis wraz z informacjami o producencie i modelu"

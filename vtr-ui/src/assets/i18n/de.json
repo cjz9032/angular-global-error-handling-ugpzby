@@ -60,6 +60,7 @@
                     "autoClose": "Automatisch schließen",
                     "networkBoost": "Netzwerk-Boost",
                     "hybridMode": "Hybrid-Modus",
+                    "overDrive": "Over Drive",
                     "touchpadLock": "Touchpad-Sperre",
                     "lightingDriverPopup": {
                         "headerText": "Treiberinstallation erforderlich",
@@ -95,7 +96,8 @@
                     "line9": "<b>Touchpad-Sperre </b><br> Fehlerhafte Eingaben beim Spielen durch deaktiviertes Touchpad verhindern",
                     "line10": "<b>Automatisch schließen </b><br> Nicht benötigte Prozesse vor dem Spielen beenden, um verfügbare Systemressourcen zu maximieren",
                     "line11": "<b>Wärmemodus </b><br> Stellen Sie Ihr bevorzugtes Geräteprofil für die Lüfterdrehzahl und die Kühlsteuerung ein",
-                    "line12": "<b>Makrotaste </b><br>Passen Sie Ihre Tastaturaktionen an Ihren Spielstil an"
+                    "line12": "<b>Makrotaste </b><br>Passen Sie Ihre Tastaturaktionen an Ihren Spielstil an",
+                    "line13": "<b>Over Drive </b><br> This function makes your screen respond faster"
                 },
                 "systemInfo": {
                     "systenTooltip": "Bewegen Sie den Mauszeiger über CPU/GPU/RAM und unterschiedlichen Laufwerke, um ihre Beschreibungen einschließlich Hersteller und Modellinformationen anzuzeigen"

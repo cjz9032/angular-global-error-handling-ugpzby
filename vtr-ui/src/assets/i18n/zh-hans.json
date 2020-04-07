@@ -69,6 +69,7 @@
                     "autoClose": "自动关闭",
                     "networkBoost": "网络增强",
                     "hybridMode": "混合模式",
+                    "overDrive": "Over Drive",
                     "touchpadLock": "触摸板锁定"
                 },
                 "systemTools": {
@@ -98,7 +99,8 @@
                     "line9": "<b>触摸板锁定 </b><br> 在游戏时禁用触摸板，防止错误输入",
                     "line10": "<b>自动关闭 </b><br> 在畅玩游戏之前清理与游戏无关的进程，从而最大限度地利用可用的系统资源",
                     "line11": "<b>散热模式 </b><br> 设置风扇速度和冷却控制的首选设备配置文件",
-                    "line12": "<b>宏键 </b><br> 自定义键盘操作以适合您的游戏风格"
+                    "line12": "<b>宏键 </b><br> 自定义键盘操作以适合您的游戏风格",
+                    "line13": "<b>Over Drive </b><br> This function makes your screen respond faster"
                 },
                 "systemInfo": {
                     "systenTooltip": "将鼠标悬停在 CPU/GPU/RAM 和不同的驱动器上以显示其描述（包括制造和型号信息）"

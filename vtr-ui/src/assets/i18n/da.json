@@ -60,6 +60,7 @@
                     "autoClose": "Luk automatisk",
                     "networkBoost": "Netværksforstærkning",
                     "hybridMode": "Hybridtilstand",
+                    "overDrive": "Over Drive",
                     "touchpadLock": "Lås på navigationsplade",
                     "lightingDriverPopup": {
                         "headerText": "Kræver installation af driver",
@@ -95,7 +96,8 @@
                     "line9": "<b>Lås på navigationsplade</b><br> Undgå forkerte input ved at deaktivere navigationspladen, mens du spiller",
                     "line10": "<b>Luk automatisk</b><br> Ryd processer, der ikke er nødvendige for spil, før du går i gang med at spille, for at maksimere tilgængelige systemressourcer",
                     "line11": "<b>Varmetilstand</b><br> Angiv din foretrukne enhedsprofil for blæserhastighed og kølingskontrol",
-                    "line12": "<b>Makro-tast</b><br> Tilpas tastaturhandlingerne, så de passer til din spillestil"
+                    "line12": "<b>Makro-tast</b><br> Tilpas tastaturhandlingerne, så de passer til din spillestil",
+                    "line13": "<b>Over Drive </b><br> This function makes your screen respond faster"
                 },
                 "systemInfo": {
                     "systenTooltip": "Peg på CPU-/GPU/RAM og forskellige drev for at få vist disses beskrivelser, herunder fabrikat- og modeloplysninger"

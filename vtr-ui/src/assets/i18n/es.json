@@ -60,6 +60,7 @@
                     "autoClose": "Cerrado automático",
                     "networkBoost": "Mejora de red",
                     "hybridMode": "Modo híbrido",
+                    "overDrive": "Over Drive",
                     "touchpadLock": "Bloqueo de área táctil",
                     "lightingDriverPopup": {
                         "headerText": "Se requiere instalar el controlador",
@@ -95,7 +96,8 @@
                     "line9": "<b>Bloqueo de área táctil </b><br> Evite realizar entradas erróneas desactivando el área táctil mientras juega",
                     "line10": "<b>Cerrado automático </b><br> Cierre los procesos que no sean necesarios para jugar antes de comenzar a hacerlo, para así maximizar los recursos disponibles del sistema",
                     "line11": "<b>Modo térmico </b><br> Especifique el perfil de dispositivo preferido para la velocidad de ventilador y control de refrigeración",
-                    "line12": "<b>Tecla de macro </b><br>Personalice las acciones del teclado para ajustarse al estilo de juego"
+                    "line12": "<b>Tecla de macro </b><br>Personalice las acciones del teclado para ajustarse al estilo de juego",
+                    "line13": "<b>Over Drive </b><br> This function makes your screen respond faster"
                 },
                 "systemInfo": {
                     "systenTooltip": "Mantenga el mouse sobre CPU/GPU/RAM y diferentes unidades para mostrar sus descripciones, incluyendo el fabricante y la información del modelo"

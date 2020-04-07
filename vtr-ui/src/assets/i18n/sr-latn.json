@@ -69,6 +69,7 @@
                     "autoClose": "Automatsko zatvaranje",
                     "networkBoost": "Pojačanje mreže",
                     "hybridMode": "Hibridni režim",
+                    "overDrive": "Over Drive",
                     "touchpadLock": "Zaključ. dodirne table"
                 },
                 "systemTools": {
@@ -98,7 +99,8 @@
                     "line9": "<b>Zaključ. dodirne table </b><br> Sprečite pogrešne unose onemogućavanjem dodirne table prilikom igranja",
                     "line10": "<b>Automatsko zatvaranje </b><br> Obrišite procese koji nisu potrebni za igranje pre nego što počnete kako biste maksimalno iskoristili dostupne sistemske resurse",
                     "line11": "<b>Toplotni režim </b><br> Postavite željeni profil uređaja za kontrolu brzine ventilatora i hlađenja",
-                    "line12": "<b>Taster makroa </b><br> Prilagodite radnje na tastaturi tako da odgovaraju vašem stilu za igru"
+                    "line12": "<b>Taster makroa </b><br> Prilagodite radnje na tastaturi tako da odgovaraju vašem stilu za igru",
+                    "line13": "<b>Over Drive </b><br> This function makes your screen respond faster"
                 },
                 "systemInfo": {
                     "systenTooltip": "Zadržite pokazivač na procesoru (CPU) / GPU / RAM i različitim diskovima da biste prikazali njihove opise, uključujući podatke o proizvodnji i modelu"
