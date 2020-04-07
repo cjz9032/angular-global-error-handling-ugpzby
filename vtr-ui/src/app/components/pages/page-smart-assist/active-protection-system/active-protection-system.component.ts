@@ -1,7 +1,6 @@
 import {
 	Component,
-	OnInit,
-	Input
+	OnInit
 } from '@angular/core';
 
 import {
@@ -85,8 +84,8 @@ export class ActiveProtectionSystemComponent implements OnInit {
 				// console.log('APS IS SET---------------------------------', res);
 				this.smartAssist
 					.getAPSSensitivityLevel()
-					.then(res => {
-						switch (res) {
+					.then(sensitivityLevel => {
+						switch (sensitivityLevel) {
 							case 0: {
 								this.apsSensitivity = 100;
 								break;
@@ -100,24 +99,20 @@ export class ActiveProtectionSystemComponent implements OnInit {
 								break;
 							}
 						}
-						// console.log('APS Sensitivity Level---------------------------------', res);
 					});
 				this.smartAssist
 					.getAutoDisableSetting()
-					.then(res => {
-						this.repeatShock = res;
-						//console.log('APS Auto Disable Checkbox---------------------------------', res);
+					.then(autoDisableSetting => {
+						this.repeatShock = autoDisableSetting;
 					});
 				this.smartAssist
 					.getSnoozeSetting()
-					.then(res => {
-						this.manualSnooze = res;
-						// console.log('Manual Sooze Status---------------------------------', res);
+					.then(snoozeSetting => {
+						this.manualSnooze = snoozeSetting;
 						this.smartAssist
 							.getSnoozeTime()
-							.then(res => {
-								// console.log('MANUAL SNOOZE TIME --------------------------------- ', res);
-								this.selectedSnoozeTime = this.manualSnoozeTime = +(res);
+							.then(snoozeTime => {
+								this.selectedSnoozeTime = this.manualSnoozeTime = +(snoozeTime);
 							});
 					});
 			})
@@ -146,10 +141,10 @@ export class ActiveProtectionSystemComponent implements OnInit {
 			.then(res => { });
 	}
 
-	setAPSSensitivityLevel(event) {
-		this.apsSensitivity = event.value
+	setAPSSensitivityLevel($event) {
+		this.apsSensitivity = $event.value
 		let value: number;
-		switch (event.value) {
+		switch ($event.value) {
 			case 0: {
 				value = 2;
 				break;

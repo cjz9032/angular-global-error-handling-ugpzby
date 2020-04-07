@@ -5,8 +5,6 @@ import {
 	Output,
 	EventEmitter,
 	AfterContentChecked,
-	SimpleChanges,
-	OnChanges
 } from '@angular/core';
 import { Options, ChangeContext, ValueToPositionFunction } from 'ng5-slider';
 import { LoggerService } from 'src/app/services/logger/logger.service';

@@ -22,6 +22,10 @@ export class UiCustomSliderComponent implements OnInit {
 	@Input() midLegend = ''; // label to display at the center of slider
 	@Input() maxLegend = ''; // label to display at the end of slider
 
+	@Input() metricsItem;
+	@Input() metricsEvent = 'featureClick';
+	@Input() metricsValue;
+
 	@Output() sliderChange: any = new EventEmitter();
 	@Output() valueChanged: any = new EventEmitter();
 	@Output() refresh: any = new EventEmitter();

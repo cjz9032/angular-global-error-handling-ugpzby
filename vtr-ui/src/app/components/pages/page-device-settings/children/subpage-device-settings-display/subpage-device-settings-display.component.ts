@@ -918,12 +918,13 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 
 	public onSetChangeDisplayColorTemp($event: any) {
 		try {
-			this.logger.debug('temparature changed in display ----->', $event);
+			const value = $event.value;
+			this.logger.debug('temperature changed in display ----->', value);
 			if (this.displayService.isShellAvailable) {
-				this.displayService.setDaytimeColorTemperature($event.value);
-				this.displayColorTempCache.current = $event.value;
+				this.displayService.setDaytimeColorTemperature(value);
+				this.displayColorTempCache.current = value;
 				this.isSet.isSetDaytimeColorTemperatureValue = true;
-				this.setValues.SetDaytimeColorTemperatureValue = $event.value;
+				this.setValues.SetDaytimeColorTemperatureValue = value;
 				this.commonService.setLocalStorageValue(LocalStorageKey.DisplayColorTempCapability, this.displayColorTempCache);
 			}
 		} catch (error) {
