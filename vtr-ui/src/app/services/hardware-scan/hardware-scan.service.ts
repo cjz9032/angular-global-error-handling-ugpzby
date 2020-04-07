@@ -62,7 +62,7 @@ export class HardwareScanService {
 	private hypSettingsPromise: any = undefined;
 	private pluginVersion: string;
 	private isDesktopMachine: boolean = false;
-	private availableHWScan = false;
+	private availableHWScan: boolean = false;
 
 	// Used to store information related to metrics
 	private currentTaskType: TaskType;
