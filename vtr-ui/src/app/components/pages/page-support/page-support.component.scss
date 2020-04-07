@@ -31,6 +31,14 @@
 			border: none;
 			padding: 2.4rem 0 1.2rem;
 
+			@media #{$black-on-white} {
+				border: 0.1rem solid $dark;
+			}
+
+			@media #{$white-on-black} {
+				border: 0.1rem solid $light;
+			}
+
 			.quick-access-title {
 				font-size: $fontsize_xl;
 				padding: 0 2.4rem;

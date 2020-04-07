@@ -6,6 +6,14 @@
 	box-shadow: $drop_shadow;
 	padding: 2.4rem;
 
+	@media #{$black-on-white} {
+		border: 0.1rem solid $dark;
+	}
+
+	@media #{$white-on-black} {
+		border: 0.1rem solid $light;
+	}
+
 	.title {
 		color: $main_darker;
 		font-size: 2.5rem;
