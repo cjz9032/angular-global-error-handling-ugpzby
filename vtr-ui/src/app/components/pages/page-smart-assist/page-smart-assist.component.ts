@@ -1,7 +1,5 @@
 import { Component, OnInit, EventEmitter, Output, OnDestroy } from '@angular/core';
 import { DeviceService } from 'src/app/services/device/device.service';
-import { ChangeContext } from 'ng5-slider';
-
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { IntelligentSecurity } from 'src/app/data-models/smart-assist/intelligent-security.model';
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
@@ -21,7 +19,7 @@ import { EMPTY, fromEvent } from 'rxjs';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { SmartAssistCache } from 'src/app/data-models/smart-assist/smart-assist-cache.model';
 import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
-import { HsaIntelligentSecurityResponse } from 'src/app/data-models/smart-assist/hsaIntelligentSecurity/intelligentSecurity.model';
+import { HsaIntelligentSecurityResponse } from 'src/app/data-models/smart-assist/hsa-intelligent-security.model/hsa-intelligent-security.model';
 import { MetricService } from 'src/app/services/metric/metric.service';
 
 @Component({
@@ -35,7 +33,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	back = 'BACK';
 	backarrow = '< ';
 	parentPath = 'device';
-	@Output() distanceChange: EventEmitter<ChangeContext> = new EventEmitter();
+	@Output() distanceChange: any = new EventEmitter();
 	public manualRefresh: EventEmitter<void> = new EventEmitter<void>();
 	public isThinkPad = true;
 	public tooltipText = 'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.toolTipContent';
@@ -625,11 +623,11 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public SetZeroTouchLockDistanceSensitivity(event: ChangeContext) {
-		this.hsaIntelligentSecurity.zeroTouchLockDistance = event.value;
+	public SetZeroTouchLockDistanceSensitivity($event: any) {
+		this.hsaIntelligentSecurity.zeroTouchLockDistance = $event.value;
 		try {
 			if (this.smartAssist.isShellAvailable) {
-				this.smartAssist.setZeroTouchLockDistanceSensitivity(event.value)
+				this.smartAssist.setZeroTouchLockDistanceSensitivity($event.value)
 					.then((response) => {
 						if (response !== 0) {
 							this.logger.error('SetZeroTouchLockDistanceSensitivity error.')
@@ -672,7 +670,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public onDisplayDimTimeChange($event: ChangeContext) {
+	public onDisplayDimTimeChange($event: any) {
 		const value = $event.value;
 		this.intelligentScreen.readingOrBrowsingTime = value;
 
