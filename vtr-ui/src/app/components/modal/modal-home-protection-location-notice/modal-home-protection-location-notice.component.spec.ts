@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ModalHomeProtectionLocationNoticeComponent } from './modal-home-protection-location-notice.component';
 
-describe('ModalWifiSecuriryLocationNoticeComponent', () => {
+describe('ModalHomeProtectionLocationNoticeComponent', () => {
 	// let component: ModalHomeProtectionLocationNoticeComponent;
 	// let fixture: ComponentFixture<ModalHomeProtectionLocationNoticeComponent>;
 
