@@ -60,6 +60,7 @@
                     "autoClose": "自動クローズ",
                     "networkBoost": "ネットワーク・ブースト",
                     "hybridMode": "ハイブリッド・モード",
+                    "overDrive": "Over Drive",
                     "touchpadLock": "タッチパッド・ロック",
                     "lightingDriverPopup": {
                         "headerText": "ドライバーのインストールが必要です",
@@ -69,8 +70,7 @@
                     },
                     "lightingColorMessage": {
                         "text": "選択中の色はこの効果に使用できません。"
-                    },
-                    "overDrive": "Over Drive"
+                    }
                 },
                 "systemTools": {
                     "power": "電源",
@@ -96,7 +96,8 @@
                     "line9": "<b>タッチパッド・ロック </b><br> ゲーム中はタッチパッドを無効にして誤入力を防ぎます",
                     "line10": "<b>自動クローズ </b><br> プレイ開始前にゲームに不要な処理をクリアして利用可能なシステム・リソースを最大化します",
                     "line11": "<b>サーマル・モード </b><br> ファン速度と冷却制御のために優先デバイス・プロファイルを設定する",
-                    "line12": "<b>マクロ・キー </b><br> プレイ・スタイルに合わせてキーボード・アクションをカスタマイズします"
+                    "line12": "<b>マクロ・キー </b><br> プレイ・スタイルに合わせてキーボード・アクションをカスタマイズします",
+                    "line13": "<b>Over Drive </b><br> This function makes your screen respond faster"
                 },
                 "systemInfo": {
                     "systenTooltip": "CPU/GPU/RAM およびさまざまなドライブの上にマウスを移動すると、製造元やモデル情報などの説明が表示されます"

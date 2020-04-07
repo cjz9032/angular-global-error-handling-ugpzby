@@ -60,6 +60,7 @@
                     "autoClose": "Chiusura automatica",
                     "networkBoost": "Ottimizzazione rete",
                     "hybridMode": "Modalità ibrida",
+                    "overDrive": "Over Drive",
                     "touchpadLock": "Blocco touchpad",
                     "lightingDriverPopup": {
                         "headerText": "Installazione driver richiesta",
@@ -69,8 +70,7 @@
                     },
                     "lightingColorMessage": {
                         "text": "Scelta del colore non disponibile per questo effetto."
-                    },
-                    "overDrive": "Over Drive"
+                    }
                 },
                 "systemTools": {
                     "power": "Alimentazione",
@@ -96,7 +96,8 @@
                     "line9": "<b>Blocco touchpad </b><br> Previeni input errati disabilitando il touchpad quando giochi",
                     "line10": "<b>Chius. auto </b><br> Termina i processi non richiesti dai videogame prima di iniziare a giocare per ottimizzare le risorse di sistema disponibili",
                     "line11": "<b>Modalità termica </b><br> Imp. profilo dispositivo preferito per velocità ventola e controllo raffreddamento",
-                    "line12": "<b>Tasto macro </b><br> Personalizza le azioni della tastiera in base al tuo stile di gioco"
+                    "line12": "<b>Tasto macro </b><br> Personalizza le azioni della tastiera in base al tuo stile di gioco",
+                    "line13": "<b>Over Drive </b><br> This function makes your screen respond faster"
                 },
                 "systemInfo": {
                     "systenTooltip": "Passa il mouse su CPU/GPU/RAM e sulle differenti unità per mostrare le descrizioni, come le informazioni sul modello e la fabbricazione"
