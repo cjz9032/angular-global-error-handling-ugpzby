@@ -164,7 +164,7 @@ input.wifi-checked + .switch.switch-xs > small {
 	.switch {
 		background: #e6eaeb !important;
 		@media #{$black-on-white} {
-			background: $high-contrast-white-disabled !important;  
+			background: $high-contrast-white-disabled !important;
 		}
 		@media #{$white-on-black} {
 			background: $high-contrast-black-disabled !important;
@@ -215,4 +215,18 @@ input.wifi-checked + .switch.switch-xs > small {
 .spinner-row.blue-theme {
 	margin-top: -5px;
 	color: $light;
+}
+
+.checkbox.blue-theme {
+	&:focus {
+		outline: 0.1rem solid $light;
+		outline-offset: 0.2rem;
+	}
+}
+
+.checkbox.white-theme {
+	&:focus {
+		outline: 0.1rem solid $menu_hover;
+		outline-offset: 0.2rem;
+	}
 }

@@ -21,6 +21,10 @@
 				border-radius: $border_radius;
 			}
 		}
+		&:focus {
+			outline: 0.1rem solid $menu_hover;
+			outline-offset: 0.2rem;
+		}
 		@media #{$breakpoint_xl2}{
 			width: 9.6rem;
 		}
