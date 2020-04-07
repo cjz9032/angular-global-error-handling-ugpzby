@@ -1,5 +1,5 @@
 import { FeatureStatus } from '../common/feature-status.model';
-import { HsaIntelligentSecurityResponse } from './HsaIntelligentSecurity/intelligentSecurity.model';
+import { HsaIntelligentSecurityResponse } from './hsa-intelligent-security.model/hsa-intelligent-security.model';
 
 export class SmartAssistCapability {
 	public isIntelligentSecuritySupported = false;
