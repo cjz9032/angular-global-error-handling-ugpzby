@@ -300,11 +300,12 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			if (this.smartAssistCapability.isAntiTheftSupported) {
 				this.antiTheft = this.smartAssistCapability.isAntiTheftSupported;
 				this.getAntiTheftStatus();
-			if (this.smartAssistCapability.isHsaIntelligentSecuritySupported) {
-				this.hsaIntelligentSecurity = this.smartAssistCapability.isHsaIntelligentSecuritySupported;
-				this.getHsaIntelligentSecurityStatus();
+				if (this.smartAssistCapability.isHsaIntelligentSecuritySupported) {
+					this.hsaIntelligentSecurity = this.smartAssistCapability.isHsaIntelligentSecuritySupported;
+					this.getHsaIntelligentSecurityStatus();
+				}
+				this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
 			}
-			this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
 		}
 	}
 
@@ -807,13 +808,13 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 					.then((response: FeatureStatus) => {
 						this.isSuperResolutionLoading = false;
 						this.superResolution = response;
-					}).catch(error => { 
+					}).catch(error => {
 						this.logger.error('getSuperResolutionStatus.error', error);
 					});
 			}
 		} catch (error) {
 			this.logger.error('getSuperResolutionStatus' + error.message);
-		 }
+		}
 	}
 
 	private getAntiTheftStatus() {

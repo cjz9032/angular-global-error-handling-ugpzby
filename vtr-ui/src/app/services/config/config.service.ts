@@ -339,59 +339,60 @@ export class ConfigService {
 				this.logger.info('configService.showSmartAssist: Anti Theft check completed');
 			} catch (error) {
 				this.logger.exception('configService.showSmartAssist smartAssist.getAntiTheftStatus check', error);
-			// HSA intelligent security check
-			try {
-				this.logger.info('configService.showSmartAssist: HSA intelligent security check');
-				assistCapability.isHsaIntelligentSecuritySupported = await this.smartAssist.getHsaIntelligentSecurityStatus();
-				this.logger.info('configService.showSmartAssist: HSA intelligent security check completed');
-			} catch (error) {
-				this.logger.exception('configService.showSmartAssist smartAssist.getHsaIntelligentSecurityStatus check', error);
+				// HSA intelligent security check
+				try {
+					this.logger.info('configService.showSmartAssist: HSA intelligent security check');
+					assistCapability.isHsaIntelligentSecuritySupported = await this.smartAssist.getHsaIntelligentSecurityStatus();
+					this.logger.info('configService.showSmartAssist: HSA intelligent security check completed');
+				} catch (error) {
+					this.logger.exception('configService.showSmartAssist smartAssist.getHsaIntelligentSecurityStatus check', error);
+				}
+
+				// APS capability check
+				try {
+					this.logger.info('configService.showSmartAssist: APS capability check');
+					assistCapability.isAPSCapable = await this.smartAssist.getAPSCapability();
+					assistCapability.isAPSSensorSupported = await this.smartAssist.getSensorStatus();
+					assistCapability.isAPSHDDStatus = await this.smartAssist.getHDDStatus();
+					assistCapability.isAPSSupported = assistCapability.isAPSCapable && assistCapability.isAPSSensorSupported && assistCapability.isAPSHDDStatus > 0; this.logger.info('MenuMainComponent.showSmartAssist: APS capability check completed');
+				} catch (error) {
+					this.logger.exception('configService.showSmartAssist APS capability check', error);
+				}
+
+
+				this.isSmartAssistAvailable =
+					assistCapability.isIntelligentSecuritySupported ||
+					assistCapability.isLenovoVoiceSupported ||
+					assistCapability.isIntelligentMediaSupported.available ||
+					assistCapability.isIntelligentScreenSupported ||
+					assistCapability.isSuperResolutionSupported.available ||
+					assistCapability.isAntiTheftSupported.available ||
+					assistCapability.isAPSSupported ||
+					((assistCapability.isHsaIntelligentSecuritySupported.capability && 0x100) != 0) ||
+					((assistCapability.isHsaIntelligentSecuritySupported.capability && 0x80) != 0);
+
+				if (this.isSmartAssistAvailable) {
+					this.addSmartAssistMenu(this.menu);
+					this.addSmartAssistMenu(this.menuBySegment.consumer);
+					this.addSmartAssistMenu(this.menuBySegment.commercial);
+					this.addSmartAssistMenu(this.menuBySegment.smb);
+				} else {
+					this.removeSmartAssistMenu(this.menu);
+					this.removeSmartAssistMenu(this.menuBySegment.consumer);
+					this.removeSmartAssistMenu(this.menuBySegment.commercial);
+					this.removeSmartAssistMenu(this.menuBySegment.smb);
+				}
+
+				this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartAssistSupported, this.isSmartAssistAvailable);
+				this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCapability, assistCapability);
+				this.notifyMenuChange(this.menu);
+				this.logger.error('configService.showSmartAssist capability check',
+					{
+						smartAssistCacheValue,
+						isSmartAssistAvailable: this.isSmartAssistAvailable,
+						assistCapability
+					});
 			}
-
-			// APS capability check
-			try {
-				this.logger.info('configService.showSmartAssist: APS capability check');
-				assistCapability.isAPSCapable = await this.smartAssist.getAPSCapability();
-				assistCapability.isAPSSensorSupported = await this.smartAssist.getSensorStatus();
-				assistCapability.isAPSHDDStatus = await this.smartAssist.getHDDStatus();
-				assistCapability.isAPSSupported = assistCapability.isAPSCapable && assistCapability.isAPSSensorSupported && assistCapability.isAPSHDDStatus > 0; this.logger.info('MenuMainComponent.showSmartAssist: APS capability check completed');
-			} catch (error) {
-				this.logger.exception('configService.showSmartAssist APS capability check', error);
-			}
-
-
-			this.isSmartAssistAvailable =
-				assistCapability.isIntelligentSecuritySupported ||
-				assistCapability.isLenovoVoiceSupported ||
-				assistCapability.isIntelligentMediaSupported.available ||
-				assistCapability.isIntelligentScreenSupported ||
-				assistCapability.isSuperResolutionSupported.available ||
-				assistCapability.isAntiTheftSupported.available ||
-				assistCapability.isAPSSupported ||
-				((assistCapability.isHsaIntelligentSecuritySupported.capability && 0x100) != 0) ||
-				((assistCapability.isHsaIntelligentSecuritySupported.capability && 0x80) != 0);
-
-			if (this.isSmartAssistAvailable) {
-				this.addSmartAssistMenu(this.menu);
-				this.addSmartAssistMenu(this.menuBySegment.consumer);
-				this.addSmartAssistMenu(this.menuBySegment.commercial);
-				this.addSmartAssistMenu(this.menuBySegment.smb);
-			} else {
-				this.removeSmartAssistMenu(this.menu);
-				this.removeSmartAssistMenu(this.menuBySegment.consumer);
-				this.removeSmartAssistMenu(this.menuBySegment.commercial);
-				this.removeSmartAssistMenu(this.menuBySegment.smb);
-			}
-
-			this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartAssistSupported, this.isSmartAssistAvailable);
-			this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCapability, assistCapability);
-			this.notifyMenuChange(this.menu);
-			this.logger.error('configService.showSmartAssist capability check',
-				{
-					smartAssistCacheValue,
-					isSmartAssistAvailable: this.isSmartAssistAvailable,
-					assistCapability
-				});
 		}
 	}
 
