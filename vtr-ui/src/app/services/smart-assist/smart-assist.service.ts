@@ -25,6 +25,11 @@ export class SmartAssistService {
 	private Front: any;
 	private mediaCapture: any;
 	private Capture: any;
+	private hsaIntelligentSecurity;
+	private hpdAdvancedSettings = {
+		zeroTouchLoginAdvanced: false,
+		zeroTouchLockAdvanced: false
+	}
 
 	public isShellAvailable = false;
 	public isAPSavailable = false;
@@ -36,6 +41,7 @@ export class SmartAssistService {
 		this.activeProtectionSystem = shellService.getActiveProtectionSystem(); // getting APS Object from //vantage-shell.service
 		this.lenovoVoice = shellService.getLenovoVoice();
 		this.superResolution = shellService.getSuperResolution();
+		this.hsaIntelligentSecurity = shellService.getHsaIntelligentSecurity();
 		// this.shellVersion = shellService.getShellVersion();
 		this.antiTheft = shellService.getAntiTheft();
 		this.windows = shellService.getWindows();
@@ -207,7 +213,70 @@ export class SmartAssistService {
 		return this.intelligentSensing.SetHPDLeaveWaitSetting(value);
 	}
 
+	public getHPDAdvancedSetting() {
+		return Promise.resolve(this.hpdAdvancedSettings);
+	}
 
+	public setHPDAdvancedSetting(section: string, value: boolean) {
+		section == 'zeroTouchLogin' ? this.hpdAdvancedSettings.zeroTouchLoginAdvanced = value : this.hpdAdvancedSettings.zeroTouchLockAdvanced = value;
+		return Promise.resolve(true);
+	}
+
+	public getHsaIntelligentSecurityStatus() {
+		const intelligentSecurityDate = {capacity: false, capability: 0, sensorType: 0, zeroTouchLockDistanceAutoAdjust: true, zeroTouchLockDistance: 0};
+		try {
+			if (this.isShellAvailable) {
+				const obj = JSON.parse(this.hsaIntelligentSecurity.getAllSetting());
+				if (obj && obj.errorCode === 0) {
+					intelligentSecurityDate.capacity = obj.capacity;
+					intelligentSecurityDate.capability = obj.capability;
+					intelligentSecurityDate.sensorType = obj.sensorType;
+					intelligentSecurityDate.zeroTouchLockDistanceAutoAdjust = obj.presenceLeaveDistanceAutoAdjust;
+					intelligentSecurityDate.zeroTouchLockDistance = obj.presenceLeaveDistance;
+				}
+				return Promise.resolve(intelligentSecurityDate);
+			}
+		}catch (error) {
+			//throw new Error(error.message);
+			return Promise.reject(error.message);
+		}
+	}
+
+	public setZeroTouchLockDistanceSensitivityAutoAdjust(value: boolean):Promise<number> {
+		try {
+			if (this.isShellAvailable) {
+				const result = this.hsaIntelligentSecurity.setPresenceLeaveDistanceAutoAdjust(value);
+				return Promise.resolve(result);
+			}
+		} catch (error) {
+			//throw new Error(error.message);
+			return Promise.reject(error.message);
+		}
+	}
+
+	public setZeroTouchLockDistanceSensitivity(value: number):Promise<number> {
+		try {
+			if (this.isShellAvailable) {
+				const result = this.hsaIntelligentSecurity.setPresenceLeaveDistance(value);
+				return Promise.resolve(result);
+			}
+		} catch (error) {
+			//throw new Error(error.message);
+			return Promise.reject(error.message);
+		}
+	}
+
+	public resetHSAHPDSetting():Promise<number> {
+		try {
+			if (this.isShellAvailable) {
+				const result = this.hsaIntelligentSecurity.resetAllSetting();
+				return Promise.resolve(result);
+			}
+		} catch (error) {
+			//throw new Error(error.message);
+			return Promise.reject(error.message);
+		}
+	}
 
 	public resetHPDSetting(): Promise<boolean> {
 		if (this.isShellAvailable) {
