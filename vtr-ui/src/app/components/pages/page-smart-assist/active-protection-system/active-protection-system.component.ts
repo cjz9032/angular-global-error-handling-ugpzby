@@ -33,7 +33,9 @@ export class ActiveProtectionSystemComponent implements OnInit {
 	public intervals: DropDownInterval[];
 	advanceSettingsHideId = 'activeProtectionSystem_advanced_settings_toggle_hide';
 	advanceSettingsShowId = 'activeProtectionSystem_advanced_settings_toggle_show';
-	advanceSettings = 'activeProtectionSystem.advanced.advanced-settings';
+	advanceSettings = 'activeProtectionSystem_advanced_advanced_settings';
+	advanceSettingsCaption = 'activeProtectionSystem-advanced-settings-desc';
+	timeOut = 100;
 	// public taskBarDimmerValue: number;
 
 	private populateIntervals() {
@@ -74,24 +76,20 @@ export class ActiveProtectionSystemComponent implements OnInit {
 			if (focusElement) {
 				focusElement.focus()
 			}
-		}, 1000);
+		}, this.timeOut);
 	}
 
 	toggleAdvanced($event: Event) {
 
 		this.advancedToggle = !this.advancedToggle;
-
-		console.log(document.getElementById(`${this.advanceSettingsShowId}`));
-		console.log(document.getElementById(`${this.advanceSettings}`));
-
 		//if ($event.type === 'click') {
 		if (this.advancedToggle) {
-			this.focusElement(this.advanceSettingsShowId);
+			this.focusElement(this.e);
 
 		}
 
 		if (!this.advancedToggle) {
-			this.focusElement(this.advanceSettings);
+			this.focusElement(this.advanceSettingsShowId);
 
 		}
 

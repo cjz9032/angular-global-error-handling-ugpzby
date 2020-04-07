@@ -120,23 +120,23 @@
 					class="advanced pt-3 pl-5 ml-4 keep-my-display-block auto-screen-off-block">
 					<h4 [style.display]="!advancedToggle?'block':'none'"
 						id="activeProtectionSystem-more">
-						{{ 'device.smartAssist.activeProtectionSystem.advanced.more' | translate }}A</h4>
+						{{ 'device.smartAssist.activeProtectionSystem.advanced.more' | translate }}</h4>
 					<a [style.display]="!advancedToggle?'block':'none'"
 						id="{{advanceSettingsShowId}}"
 						role="link"
 						tabindex="0"
 						(click)="toggleAdvanced($event)"
 						(keydown.enter)="toggleAdvanced($event)">
-						<p>{{ 'device.smartAssist.activeProtectionSystem.advanced.advanced-settings' | translate }} A
+						<p>{{ 'device.smartAssist.activeProtectionSystem.advanced.advanced-settings' | translate }}
 						</p>
 					</a>
 
 					<section [style.display]="advancedToggle?'block':'none'"
 						id="activeProtectionSystem_advanced_settings">
-						<h4 id="activeProtectionSystem.advanced.advanced-settings"
+						<h4 id="{{advanceSettings}}"
 							tabindex="-1"
-							attr.aria-label="activeProtectionSystem.advanced.advanced-settings">
-							{{ 'device.smartAssist.activeProtectionSystem.advanced.advanced-settings' | translate }}B
+							attr.aria-label="{{advanceSettings}}">
+							{{ 'device.smartAssist.activeProtectionSystem.advanced.advanced-settings' | translate }}
 						</h4>
 						<ng-container *ngIf="advancedToggle">
 							<vtr-active-protection-system-advanced [penCapability]="penCapability"
@@ -145,13 +145,13 @@
 							</vtr-active-protection-system-advanced>
 						</ng-container>
 
-						<a (click)="toggleAdvanced($event)"
-							tabindex="0"
+						<a id="{{advanceSettingsHideId}}"
 							role="link"
-							(keydown.enter)="toggleAdvanced($event)"
-							id="{{advanceSettingsHideId}}">
+							tabindex="0"
+							(click)="toggleAdvanced($event)"
+							(keydown.enter)="toggleAdvanced($event)">
 							<p>
-								{{ 'device.smartAssist.activeProtectionSystem.advanced.hide' | translate }}B
+								{{ 'device.smartAssist.activeProtectionSystem.advanced.hide' | translate }}
 							</p>
 						</a>
 					</section>
