@@ -9,7 +9,7 @@
 	</div>
 	<div [hidden]="showLoader"
 		class="checkbox"
-		[ngClass]="{'switch-disable': isSwitchDisable}"
+		[ngClass]="{'switch-disable': isSwitchDisable, 'white-theme': theme==='white', 'blue-theme': theme==='blue'}"
 		#toggleMain
 		(keydown.enter)="disabled? '':toggleLabel.click();toggleMain.focus();"
 		[attr.aria-checked]="value"
