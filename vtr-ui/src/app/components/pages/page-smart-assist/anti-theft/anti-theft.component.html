@@ -28,7 +28,10 @@
                         <div id="smartMotionAlertAlarmTimeSelect" name="smartMotionAlertAlarmTimeSelect" class="select">
                             <vtr-ui-dropdown class="selectDropdown" [list]="alarmTimeList" [value]="alarmOften"
                                 (change)="setAlarmOften($event.value)"
-                                [dropDownId]="'smartMotionAlert-alarmTime-dropDown'">
+                                [dropDownId]="'smartMotionAlert-alarmTime-dropDown'" 
+                                vtrMetrics
+                                metricsEvent="FeatureClick" metricsParent="Device.SmartAssist"
+                                metricsItem="Smart-motion-alarm.alarm-drop-down" metricsValue="{{alarmOften}}">
                             </vtr-ui-dropdown>
                         </div>
                         <p id="smartMotionAlertSupportPhotoTitle" name="smartMotionAlertSupportPhotoTitle"
@@ -99,7 +102,10 @@
                                 <vtr-ui-dropdown class="selectDropdown" [list]="photoNumberList" [value]="photoNumber"
                                     (change)="setPhotoNumber($event.value)"
                                     [dropDownId]="'smartMotionAlert-photoNumber-dropDown'"
-                                    [dropDownName]="'smartMotionAlert-photoNumber-dropDown'">
+                                    [dropDownName]="'smartMotionAlert-photoNumber-dropDown'" 
+                                    vtrMetrics
+                                    metricsEvent="FeatureClick" metricsParent="Device.SmartAssist"
+                                    metricsItem="Smart-motion-alarm.photo-drop-down" metricsValue="{{photoNumber}}">
                                 </vtr-ui-dropdown>
                             </div>
 
