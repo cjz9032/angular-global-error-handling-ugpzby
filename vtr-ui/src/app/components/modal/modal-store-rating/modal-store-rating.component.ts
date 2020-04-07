@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { faTimes } from '@fortawesome/pro-light-svg-icons/faTimes';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from 'src/app/services/metric/metric.service';
-import { TaskAction } from 'src/app/services/metric/metrics.model';
+import { TaskAction, ItemView } from 'src/app/services/metric/metrics.model';
 import { faHeart } from '@fortawesome/free-solid-svg-icons/faHeart';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons/faEnvelope';
 import { faEllipsisH } from '@fortawesome/pro-light-svg-icons/faEllipsisH';
@@ -57,9 +57,9 @@ export class ModalStoreRatingComponent implements OnInit {
 	public faEllipsisH = faEllipsisH;
 	public faEnvelope = faEnvelope;
 	private msStoreUtil: any = null;
-	public redHeartHintVisible = false;
-	public closeHintVisible = false;
-	public elilipsisHintVisible = true;
+	public likeIconVisible = false;
+	public feedbackIconVisible = false;
+	public normalIconVisible = true;
 
 	constructor(
 		public activeModal: NgbActiveModal,
@@ -73,6 +73,7 @@ export class ModalStoreRatingComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
+		this.sendStorRatingShowsMetrics();
 	}
 
 	public onBtnCloseClicked($event) {
@@ -119,14 +120,14 @@ export class ModalStoreRatingComponent implements OnInit {
 
 	public onBtnMouseEnter(arg) {
 		if (arg === 'like') {
-			this.showRedHeart();
+			this.showLikeIcon();
 		} else {
-			this.showCloseHint();
+			this.showLeaveFeedbackIcon();
 		}
 	}
 
 	public onBtnMouseLeave() {
-		this.showEllipsis();
+		this.showNoramlcon();
 	}
 
 	private sendMSRatingResultMetrics(result: string) {
@@ -144,26 +145,36 @@ export class ModalStoreRatingComponent implements OnInit {
 		this.metrics.sendMetrics(taskinfo);
 	}
 
-
-	private resetHint() {
-		this.closeHintVisible = false;
-		this.redHeartHintVisible = false;
-		this.elilipsisHintVisible = false;
+	private sendStorRatingShowsMetrics(){
+		const info = new ItemView('StoreRating','','Store rating prompt shows up.','');
+		this.metrics.sendMetrics(info);
 	}
 
-	private showRedHeart() {
-		this.resetHint();
-		this.redHeartHintVisible = true;
+
+	private resetIcon() {
+		this.feedbackIconVisible = false;
+		this.likeIconVisible = false;
+		this.normalIconVisible = false;
 	}
 
-	private showCloseHint() {
-		this.resetHint();
-		this.closeHintVisible = true;
+	private showLikeIcon() {
+		this.resetIcon();
+		this.likeIconVisible = true;
 	}
 
-	private showEllipsis() {
-		this.resetHint();
-		this.elilipsisHintVisible = true;
+	private showLeaveFeedbackIcon() {
+		this.resetIcon();
+		this.feedbackIconVisible = true;
 	}
 
+	private showNoramlcon() {
+		this.resetIcon();
+		this.normalIconVisible = true;
+	}
+
+	@HostListener('window: focus')
+	onFocus(): void {
+		const btnClose = document.querySelector('#store-rating-close') as HTMLElement;
+		btnClose.focus();
+	}
 }

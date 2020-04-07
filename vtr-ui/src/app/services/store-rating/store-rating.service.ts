@@ -55,6 +55,10 @@ export class StoreRatingService {
 	}
 
 	private async canPromptRating() {
+		if(!navigator.onLine){
+			return false;
+		}
+
 		if (!this.commonService.getLocalStorageValue(LocalStorageKey.RatingConditionMet)) {
 			this.logger.info(`Rating won't show, no key action triggered.`)
 			return false;

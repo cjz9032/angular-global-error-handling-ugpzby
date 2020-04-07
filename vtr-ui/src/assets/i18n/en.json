@@ -3945,5 +3945,11 @@
 	},
 	"cpt": {
 		"title": "Content Preview Tool"
+	},
+	"storeRating":{
+		"title": "Send us your voice",
+		"likeUs": "Like us",
+		"feedback": "Leave feedback"
 	}
+	
 }

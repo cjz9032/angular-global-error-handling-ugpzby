@@ -75,23 +75,20 @@
             justify-content: center;
         }
 
-        .love-btn{
-            background: $gradient_blue;
-            border-radius: 2.4rem;
-            font-size: 1.5rem;
-            color: white;
-            font-weight: bold;
-            padding: 1rem 5rem;
-        }
-
         .feedback-btn{
-            font-size: 1.2rem;
+            font-size: $fontsize_xs2;
             align-self: center;
-            text-decoration: underline;
-            color:$blue-lighter;
-            font-weight: bold;
+            color: $main;
             margin-left: 2rem;
-        }
+            text-transform: uppercase;
+            line-height: 2rem !important;
+            &:hover {
+                border-bottom: none;
+            }
+            padding-bottom: 0.2rem;
+            border-bottom: 0.2rem solid $main;
+            font-weight: $weight_bold;
+    }
     }
 
 }
