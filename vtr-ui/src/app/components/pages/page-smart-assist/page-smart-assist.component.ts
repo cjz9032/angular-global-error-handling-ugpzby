@@ -657,9 +657,15 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	public hsaIntelligentSecurityChange(data: any) {
 		try {
 			const response = JSON.parse(data);
-			this.zeroTouchPresenceLeaveDistanceAutoAdjustCapability = (response.capability && 0x100) !== 0;
-			this.zeroTouchPresenceLeaveDistanceCapability = (response.capability && 0x80) !== 0;
-			this.hsaIntelligentSecurity = response;
+			if (response && response.errorCode === 0) {
+				this.hsaIntelligentSecurity.capacity = response.capacity;
+				this.hsaIntelligentSecurity.capability = response.capability;
+				this.hsaIntelligentSecurity.sensorType = response.sensorType;
+				this.hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust = response.presenceLeaveDistanceAutoAdjust;
+				this.hsaIntelligentSecurity.zeroTouchLockDistance = response.presenceLeaveDistance;
+				this.zeroTouchPresenceLeaveDistanceAutoAdjustCapability = (response.capability && 0x100) !== 0;
+				this.zeroTouchPresenceLeaveDistanceCapability = (response.capability && 0x80) !== 0;
+			}			
 			this.logger.info('hsaIntelligentSecurityChange', data);
 		} catch (error) {
 			this.logger.error('hsaIntelligentSecurityChange', error.message);
@@ -734,6 +740,13 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	}
 
 	public onResetDefaultSettings($event) {
+		this.smartAssist.resetHSAHPDSetting()
+			.then((response) => {
+				if (response === 0) {
+					this.logger.info('resetHSAHPDSetting done.')
+				}
+			});
+
 		this.smartAssist.resetHPDSetting()
 			.then((isSuccess: boolean) => {
 				this.logger.info('onResetDefaultSettings.resetHPDSetting', isSuccess);
@@ -751,13 +764,6 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				}
 			});
 		}
-
-		this.smartAssist.resetHSAHPDSetting()
-			.then((response) => {
-				if (response === 0) {
-					this.getHsaIntelligentSecurityStatus();
-				}
-			});
 	}
 
 	private getVideoPauseResumeStatus() {
