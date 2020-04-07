@@ -233,6 +233,17 @@
 							cursor: pointer;
 							opacity: .5;
 							color: $shade_darker;
+							
+							@media #{$black-on-white} {
+								color: $dark;
+								background-color: $light;
+							}
+
+							@media #{$white-on-black} {
+								color: $light;
+								background-color: $dark;
+							}
+
 							@media #{$mediaquery_15} {
 								margin-top: -2rem;
 								width: 1.5rem;
