@@ -4,7 +4,6 @@ import { MetricsModule } from 'src/app/services/metric/metrics.module';
 import { NgbTooltipModule, NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared.module';
-import { UiApsSliderComponent } from 'src/app/components/ui/ui-aps-slider/ui-aps-slider.component';
 import { UiCheckboxComponent } from 'src/app/components/ui/ui-checkbox/ui-checkbox.component';
 import { UiCircleRadioComponent } from 'src/app/components/ui/ui-circle-radio/ui-circle-radio.component';
 import { UiCircleRadioWithCheckboxComponent } from 'src/app/components/ui/ui-circle-radio-with-checkbox/ui-circle-radio-with-checkbox.component';
@@ -15,7 +14,6 @@ import { UiGamingDriverPopupComponent } from './../../components/ui/ui-gaming-dr
 import { UiListCheckboxComponent } from 'src/app/components/ui/ui-list-checkbox/ui-list-checkbox.component';
 import { UiNumberButtonComponent } from 'src/app/components/ui/ui-number-button/ui-number-button.component';
 import { UiPopoverComponent } from 'src/app/components/ui/ui-popover/ui-popover.component';
-import { UiRangeSliderComponent } from 'src/app/components/ui/ui-range-slider/ui-range-slider.component';
 import { UiRectangleRadioComponent } from 'src/app/components/ui/ui-rectangle-radio/ui-rectangle-radio.component';
 import { UiRoundedRectangleRadioComponent } from 'src/app/components/ui/ui-rounded-rectangle-radio/ui-rounded-rectangle-radio.component';
 import { UiRowSwitchComponent } from 'src/app/components/ui/ui-row-switch/ui-row-switch.component';
@@ -44,7 +42,6 @@ import { UiDpmEnergyComponent } from 'src/app/components/ui/ui-dpm-energy/ui-dpm
 
 @NgModule({
 	declarations: [
-		UiApsSliderComponent,
 		UiCheckboxComponent,
 		UiCircleRadioComponent,
 		UiCircleRadioWithCheckboxComponent,
@@ -52,7 +49,6 @@ import { UiDpmEnergyComponent } from 'src/app/components/ui/ui-dpm-energy/ui-dpm
 		UiDropDownComponent,
 		UiListCheckboxComponent,
 		UiNumberButtonComponent,
-		UiRangeSliderComponent,
 		UiRectangleRadioComponent,
 		UiRoundedRectangleRadioComponent,
 		UiRowSwitchComponent,
@@ -74,7 +70,6 @@ import { UiDpmEnergyComponent } from 'src/app/components/ui/ui-dpm-energy/ui-dpm
 		UiAddReduceButtonComponent
 	],
 	exports: [
-		UiApsSliderComponent,
 		UiCheckboxComponent,
 		UiCircleRadioComponent,
 		UiCircleRadioWithCheckboxComponent,
@@ -82,7 +77,6 @@ import { UiDpmEnergyComponent } from 'src/app/components/ui/ui-dpm-energy/ui-dpm
 		UiDropDownComponent,
 		UiListCheckboxComponent,
 		UiNumberButtonComponent,
-		UiRangeSliderComponent,
 		UiRectangleRadioComponent,
 		UiRoundedRectangleRadioComponent,
 		UiRowSwitchComponent,
