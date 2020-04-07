@@ -84,7 +84,7 @@ export class ActiveProtectionSystemComponent implements OnInit {
 		this.advancedToggle = !this.advancedToggle;
 		//if ($event.type === 'click') {
 		if (this.advancedToggle) {
-			this.focusElement(this.e);
+			this.focusElement(this.advanceSettings);
 
 		}
 
