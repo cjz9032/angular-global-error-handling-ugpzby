@@ -332,6 +332,15 @@ export class ConfigService {
 				this.logger.exception('configService.showSmartAssist smartAssist.getSuperResolutionStatus check', error);
 			}
 
+			// Anti Theft check
+			try {
+				this.logger.info('configService.showSmartAssist: Anti Theft check');
+				assistCapability.isAntiTheftSupported = await this.smartAssist.getAntiTheftStatus();
+				this.logger.info('configService.showSmartAssist: Anti Theft check completed');
+			} catch (error) {
+				this.logger.exception('configService.showSmartAssist smartAssist.getAntiTheftStatus check', error);
+			}
+
 			// APS capability check
 			try {
 				this.logger.info('configService.showSmartAssist: APS capability check');
@@ -350,6 +359,7 @@ export class ConfigService {
 				assistCapability.isIntelligentMediaSupported.available ||
 				assistCapability.isIntelligentScreenSupported ||
 				assistCapability.isSuperResolutionSupported.available ||
+				assistCapability.isAntiTheftSupported.available ||
 				assistCapability.isAPSSupported;
 
 			if (this.isSmartAssistAvailable) {

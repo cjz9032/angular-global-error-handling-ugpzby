@@ -623,6 +623,14 @@ export class VantageShellService {
 		return undefined;
 	}
 
+	public getAntiTheft(): any {
+		const win: any = window;
+		if (win.VantageShellExtension && win.VantageShellExtension.SmartMotionAlertRpcClient) {
+			return new win.VantageShellExtension.SmartMotionAlertRpcClient();
+		}
+		return undefined;
+	}
+
 	public getPreferenceSettings() {
 		if (this.phoenix) {
 			return this.phoenix.preferenceSettings;
