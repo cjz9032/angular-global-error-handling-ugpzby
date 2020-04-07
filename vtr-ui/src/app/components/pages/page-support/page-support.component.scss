@@ -77,14 +77,6 @@
 						justify-content: center;
 						text-align: center;
 						cursor: pointer;
-						&:hover{
-							@media #{$black-on-white}{
-								background-color: $high-contrast-grey;
-								}
-								@media #{$white-on-black}{
-								background-color: $high-contrast-grey;
-								}
-						}
 
 						.item-icon {
 							height: 5rem;
@@ -142,9 +134,17 @@
 							cursor: pointer;
 						}
 
-						&:hover {
+						&:hover,
+						&.selected {
 							background: linear-gradient(90deg, #3968d4 0%, #4a81fd 100%);
 							box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.22);
+
+							@media #{$black-on-white} {
+								background: $high-contrast-grey;
+							}
+							@media #{$white-on-black} {
+								background: $high-contrast-grey;
+							}
 
 							fa-icon {
 								color: white;
@@ -165,6 +165,11 @@
 							.item-icon {
 								filter: grayscale(100%) invert(100%) contrast(2000%);
 							}
+						}
+
+						&.selected,
+						&.selected * {
+							cursor: default !important;
 						}
 					}
 				}

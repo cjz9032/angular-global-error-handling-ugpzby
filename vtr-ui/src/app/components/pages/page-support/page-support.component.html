@@ -45,7 +45,7 @@
 							<div role="button"
 								class="quick-assess-item"
 								*ngFor="let category of articleCategories, let i = index"
-								tabindex="1"
+								[tabindex]="selectedCategoryId === category.Id ? -1 : 1"
 								id="{{'support-category-'+category.Id}}"
 								attr.aria-label="{{'support-category-'+category.Title}}"
 								vtrMetrics
@@ -55,7 +55,8 @@
 								metricsParent="Page.Support"
 								(keyup.enter)="clickCategory(category.Id)"
 								(click)="clickCategory(category.Id)">
-								<div class="item-con">
+								<div class="item-con"
+									[class.selected]="selectedCategoryId === category.Id">
 									<div class="item-icon">
 										<img *ngIf="category.Image" [src]="category.Image" />
 										<img *ngIf="!category.Image" [src]="localCateIcons[i] | svgInline | async" />
