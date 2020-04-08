@@ -127,7 +127,7 @@ export class BacklightComponent implements OnInit, OnDestroy {
 		this.autoSubscription = this.level$
 			.pipe(
 				takeWhile(item => item.value === BacklightLevelEnum.TWO_LEVELS_AUTO),
-				tap(() => this.modes.push(this.modeAuto)),
+				tap(() => this.modes.unshift(this.modeAuto)),
 				switchMap(() => this.status$),
 			)
 			.subscribe((status) => {
