@@ -48,23 +48,9 @@
 
 }
 
-.close-btn {
-	position: absolute;
+.btn-modal-close {
 	right: 1rem;
 	top: -3rem;
-	width: 4.2rem;
-	height: 4.2rem;
-	cursor: pointer;
-
-	&:hover {
-		opacity: 0.7;
-	}
-
-	img {
-		width: 2.2rem;
-		height: 2.2rem;
-		margin: 1rem;
-	}
 }
 
 :host ::ng-deep {
