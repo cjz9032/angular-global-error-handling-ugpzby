@@ -60,6 +60,7 @@
                     "autoClose": "Lukk automatisk",
                     "networkBoost": "Nettverks-forbedring",
                     "hybridMode": "Hybridmodus",
+                    "overDrive": "Over Drive",
                     "touchpadLock": "Pekeplatelås",
                     "lightingDriverPopup": {
                         "headerText": "Installasjon av driver er påkrevd",
@@ -69,8 +70,7 @@
                     },
                     "lightingColorMessage": {
                         "text": "Valg av farge er ikke tilgjengelig for denne effekten."
-                    },
-                    "overDrive": "Over Drive"
+                    }
                 },
                 "systemTools": {
                     "power": "Strøm",
@@ -96,7 +96,8 @@
                     "line9": "<b>Pekeplatelås </b><br> Forhindre utilsiktede inndata ved å deaktivere pekeplaten mens du spiller",
                     "line10": "<b>Lukk automatisk </b><br> For å maksimere de tilgjengelige systemressursene kan du fjerne prosesser som spillet ikke trenger, før du begynner å spille",
                     "line11": "<b>Termisk modus </b><br> Angi ønsket enhetsprofil for viftehastigheten og kjølingskontroll",
-                    "line12": "<b>Makrotast</b><br> Tilpass tastaturhandlinger slik at de passer til spillestilen din"
+                    "line12": "<b>Makrotast</b><br> Tilpass tastaturhandlinger slik at de passer til spillestilen din",
+                    "line13": "<b>Over Drive </b><br> This function makes your screen respond faster"
                 },
                 "systemInfo": {
                     "systenTooltip": "Hold pekeren over CPU/GPU/RAM og ulike stasjoner for å vise beskrivelser, deriblant informasjon om fabrikant og modell"

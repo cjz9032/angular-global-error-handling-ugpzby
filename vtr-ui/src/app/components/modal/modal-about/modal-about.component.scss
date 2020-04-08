@@ -70,6 +70,12 @@
 		color: #667481;
 		a{
 			text-decoration: underline;
+			padding: 0.2rem;
+			border: 0.1rem solid transparent;
+			&:focus {
+				outline: none;
+				border: 0.1rem solid $menu_hover;
+			}
 		}
 	}
 

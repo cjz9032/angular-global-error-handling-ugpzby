@@ -1,0 +1,64 @@
+@import "../../../../app.theme.scss";
+.list-group.list-group-flush {
+  list-style-type: none;
+}
+
+vtr-ui-row-switch {
+  &::ng-deep {
+    .vtr-ui-switch-row.white-theme {
+      padding-bottom: 0rem !important;
+    }
+  }
+}
+
+.subFunctions {
+  margin-left: 4.5rem !important;
+  margin-right: 0.6rem !important;
+  p {
+    font-size: $fontsize_xs;
+  }
+  label {
+    font-size: $fontsize_xs;
+    color: #667481;
+  }
+  .subTitle {
+    font-weight: 500;
+    margin: 10px 0px;
+  }
+  .cameraCheckBox {
+    margin-left: 5px;
+  }
+  .select {
+    width: 380px;
+    .selectDropdown {
+      ::ng-deep .ui-dropdown {
+          height: 7.1rem !important;
+          .chevron {
+            color: #667481 !important;
+          }
+        ::ng-deep .ui-menu-dropdown {
+          top: 7.1rem !important;
+          padding: 0.5rem 0rem !important;
+            a {
+              padding: 0.8rem 1.5rem !important;
+              &:hover {
+                color: hsl(0, 0%, 100%) !important;
+                background-color: #667481 !important;
+                text-decoration: blink !important;
+              }
+            }
+         
+        }
+      }
+    }
+  }
+  .right-icon {
+    font-size: $fontsize_sm;
+    color: $menu_hover;
+    cursor: pointer;
+    margin-left: 8px;
+    &:hover {
+      color: $highlight;
+    }
+  }
+}

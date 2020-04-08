@@ -5,10 +5,12 @@
 		<div class="img-con pt-4">
 			<img class="qr-img" 
 				src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyMy4wLjIsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAyNTYgMjU2IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNTYgMjU2OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojMjdBREQ3O30NCgkuc3Qxe2ZpbGw6IzIxMzA2NDt9DQoJLnN0MntmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxnPg0KCTxyZWN0IHk9IjAiIGNsYXNzPSJzdDAiIHdpZHRoPSIyNTYiIGhlaWdodD0iMjU2Ii8+DQoJPGc+DQoJCTxwb2x5Z29uIGNsYXNzPSJzdDEiIHBvaW50cz0iNTguMiwyMTEuNiA4OC41LDE5Mi42IDE5NC44LDE5Mi42IDE5NC44LDE5NS41IAkJIi8+DQoJCTxwb2x5Z29uIGNsYXNzPSJzdDEiIHBvaW50cz0iNTguMiwyMTEuNiA4OC41LDE5Mi42IDg4LjUsMzkuNiA4Ni4zLDM5LjYgCQkiLz4NCgkJPHBvbHlnb24gY2xhc3M9InN0MiIgcG9pbnRzPSIxOTQuOCwxNjIuOSAxMjEuMywxNjIuOSAxMjEuMywzOS42IDg4LjUsMzkuNiA4OC41LDE5Mi42IDE5NC44LDE5Mi42IAkJIi8+DQoJPC9nPg0KPC9nPg0KPC9zdmc+DQo="
-				alt="Lenovo Vantage Logo" />
+				alt="Lenovo Vantage Logo"
+				id="about-modal-lenovo-vantage-logo"
+				role="img" />
 		</div>
-		<div class="text-center title mb-2">Lenovo Vantage</div>
-		<div class="text-center description">
+		<div id="about-modal-title" class="text-center title mb-2" role="text">Lenovo Vantage</div>
+		<div id="about-modal-description" class="text-center description" role="text">
 			{{ 'support.about.version' | translate}}: {{ shellVersion }} <br>
 			( Web: {{ buildVersion }}&nbsp;&nbsp;Bridge: {{ bridgeVersion }} )
 		</div>
@@ -16,7 +18,8 @@
 	<div class="line"></div>
 	<div class="about-links mb-4 text-center">
 		<div class="mb-2">
-			<a href="javascript:;"
+			<a id="about-modal-license-link"
+				href="javascript:;"
 				class="mr-1"
 				(click)="agreementClicked()"
 				vtrMetrics
@@ -24,7 +27,8 @@
 				metricsEvent="FeatureClick"
 				metricsParent="Page.Support.About">{{ 'support.about.licenseAgreement' | translate}}</a>
 			|
-			<a href="javascript:;"
+			<a id="about-modal-other-licenses-link"
+				href="javascript:;"
 				class="ml-1"
 				(click)="openSourceClicked()"
 				vtrMetrics
@@ -33,7 +37,8 @@
 				metricsParent="Page.Support.About">{{ 'support.about.otherSoftwareLicenses' | translate}}</a>
 		</div>
 		<div class="mb-2">
-			<a href="https://www.lenovo.com"
+			<a id="about-modal-web-link"
+				href="https://www.lenovo.com"
 				class="mr-1"
 				target="_blank"
 				vtrMetrics
@@ -41,7 +46,8 @@
 				metricsEvent="FeatureClick"
 				metricsParent="Page.Support.About">{{ 'support.about.ourWebsite' | translate}}</a>
 			|
-			<a href="javascript:;"
+			<a id="about-modal-user-guide-link"
+				href="javascript:;"
 				class="ml-1"
 				(click)="launchUserGuide()"
 				vtrMetrics
@@ -49,12 +55,13 @@
 				metricsEvent="FeatureClick"
 				metricsParent="Page.Support.About">{{ 'support.about.aboutYourDevice' | translate}}</a>
 		</div>
-		<div>{{ 'support.about.copyright' | translate}}</div>
+		<div id="about-modal-copyright" role="text">{{ 'support.about.copyright' | translate}}</div>
 	</div>
 
 	<div role="button"
 		class="close-btn"
 		tabindex="0"
+		id="about-close-button"
 		[attr.aria-label]="'common.ui.close' | translate"
 		vtrMetrics
 		metricsItem="AboutModalCloseButton"
