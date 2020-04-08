@@ -64,15 +64,27 @@
                             <div class="oc-description">
                                 <p *ngIf="OCsupportted === 3 && driverStatus === 0">
                                     {{ 'gaming.dashboard.device.thermalMode2Popup.OC.cpu_gpuDriverLack' | translate }} &nbsp;
-                                    <a class="oc-driver-link" routerLink="/device/system-updates" (click)="closeThermalMode2Modal()" vtrMetrics metricsEvent="featureClick" metricsItem="thermalmode_goinstalldriver" metricsParent="Gaming.ThermalMode">{{ 'gaming.dashboard.device.thermalMode2Popup.OC.goInstall' | translate }}</a>
+                                    <a class="oc-driver-link" routerLink="/device/system-updates" 
+                                    tabindex="1" (click)="closeThermalMode2Modal()" 
+                                    vtrMetrics metricsEvent="featureClick" metricsItem="thermalmode_goinstalldriver" metricsParent="Gaming.ThermalMode">
+                                        {{ 'gaming.dashboard.device.thermalMode2Popup.OC.goInstall' | translate }}
+                                    </a>
                                 </p>
                                 <p *ngIf="(OCsupportted === 3 && driverStatus === 1) || (OCsupportted === 2 && driverStatus !== 3)">
                                     {{ 'gaming.dashboard.device.thermalMode2Popup.OC.cpuDriverLack' | translate }} &nbsp;
-                                    <a class="oc-driver-link" routerLink="/device/system-updates" (click)="closeThermalMode2Modal()" vtrMetrics metricsEvent="featureClick" metricsItem="thermalmode_goinstalldriver" metricsParent="Gaming.ThermalMode">{{ 'gaming.dashboard.device.thermalMode2Popup.OC.goInstall' | translate }}</a>
+                                    <a class="oc-driver-link" routerLink="/device/system-updates" 
+                                    tabindex="1" (click)="closeThermalMode2Modal()" 
+                                    vtrMetrics metricsEvent="featureClick" metricsItem="thermalmode_goinstalldriver" metricsParent="Gaming.ThermalMode">
+                                        {{ 'gaming.dashboard.device.thermalMode2Popup.OC.goInstall' | translate }}
+                                    </a>
                                 </p>
                                 <p *ngIf="(OCsupportted === 3 && driverStatus === 2) || (OCsupportted === 1 && driverStatus !== 3)">
                                     {{ 'gaming.dashboard.device.thermalMode2Popup.OC.gpuDriverLack' | translate }} &nbsp;
-                                    <a class="oc-driver-link" routerLink="/device/system-updates" (click)="closeThermalMode2Modal()" vtrMetrics metricsEvent="featureClick" metricsItem="thermalmode_goinstalldriver" metricsParent="Gaming.ThermalMode">{{ 'gaming.dashboard.device.thermalMode2Popup.OC.goInstall' | translate }}</a>
+                                    <a class="oc-driver-link" routerLink="/device/system-updates" 
+                                    tabindex="1" (click)="closeThermalMode2Modal()" 
+                                    vtrMetrics metricsEvent="featureClick" metricsItem="thermalmode_goinstalldriver" metricsParent="Gaming.ThermalMode">
+                                        {{ 'gaming.dashboard.device.thermalMode2Popup.OC.goInstall' | translate }}
+                                    </a>
                                 </p>
                             </div>
                         </ng-container>
