@@ -31,6 +31,11 @@ export class ActiveProtectionSystemComponent implements OnInit {
 	touchCapability: boolean;
 	pSensorCapability: boolean;
 	public intervals: DropDownInterval[];
+	advanceSettingsHideId = 'activeProtectionSystem_advanced_settings_toggle_hide';
+	advanceSettingsShowId = 'activeProtectionSystem_advanced_settings_toggle_show';
+	advanceSettings = 'activeProtectionSystem_advanced_advanced_settings';
+	advanceSettingsCaption = 'activeProtectionSystem-advanced-settings-desc';
+	timeOut = 100;
 	// public taskBarDimmerValue: number;
 
 	private populateIntervals() {
@@ -65,8 +70,31 @@ export class ActiveProtectionSystemComponent implements OnInit {
 		];
 	}
 
-	toggleAdvanced() {
+	focusElement(elementId) {
+		setTimeout(() => {
+			const focusElement = document.getElementById(`${elementId}`) as HTMLElement;
+			if (focusElement) {
+				focusElement.focus()
+			}
+		}, this.timeOut);
+	}
+
+	toggleAdvanced($event: Event) {
+
 		this.advancedToggle = !this.advancedToggle;
+		//if ($event.type === 'click') {
+		if (this.advancedToggle) {
+			this.focusElement(this.advanceSettings);
+
+		}
+
+		if (!this.advancedToggle) {
+			this.focusElement(this.advanceSettingsShowId);
+
+		}
+
+		//}
+
 	}
 	constructor(private smartAssist: SmartAssistService, private translate: TranslateService) { }
 

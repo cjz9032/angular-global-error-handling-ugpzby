@@ -1,0 +1,71 @@
+@import '../../../app.theme.scss';
+
+.close-button {
+	background: none;
+	outline: none;
+	border: none;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+
+	* {
+		cursor: pointer;
+	}
+
+	.x {
+		position: relative;
+		display: block;
+		width: 2.2rem;
+		height: 0.2rem;
+		background: $grey_dark;
+		line-height: 0;
+		font-size: 0;
+		transform: rotate(45deg);
+		transition: background .2s;
+
+		&::before {
+			content: '';
+			display: block;
+			width: 100%;
+			height: 100%;
+			background: $grey_dark;
+			transform: rotate(-90deg);
+			transition: background .2s;
+		}
+	}
+
+	&:hover {
+
+		.x,
+		.x::before {
+			background: $main;
+		}
+	}
+
+	&:focus {
+		outline: 0.1rem solid $menu_hover;
+	}
+
+	@media #{$black-on-white} {
+
+		.x,
+		.x::before,
+		&:hover .x,
+		&:hover .x::before {
+			background: $dark;
+		}
+	}
+
+	@media #{$white-on-black} {
+
+		.x,
+		.x::before,
+		&:hover .x,
+		&:hover .x::before {
+			background: $light;
+		}
+	}
+}
