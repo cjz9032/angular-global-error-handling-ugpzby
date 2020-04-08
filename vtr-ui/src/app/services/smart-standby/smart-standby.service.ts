@@ -22,28 +22,29 @@ export class SmartStandbyService {
 	checkedLength = 0;
 	selectedDays: string[] = [];
 	schedule: string;
+	scheduleLongForm: string;
 
 	constructor(
 		public translate: TranslateService,
 		public commonService: CommonService) { }
 
-	setSelectedDayText(): string {
+	setSelectedDayText(isLongForm: boolean = false): string {
 		let dayText = '';
 		if (this.checkIsWeekends() && this.checkIsWeekDays()) {
 			dayText = this.translate.instant('device.deviceSettings.power.smartStandby.days.everyday');
 		} else if (this.checkIsWeekDays() && !this.checkIsWeekends()) {
 			dayText = this.translate.instant('device.deviceSettings.power.smartStandby.days.weekdays');
-			if (this.getSelectedDays(1).length > 0) {
-				dayText += ', ' + this.getSelectedDays(1);
+			if (this.getSelectedDays(1, isLongForm).length > 0) {
+				dayText += ', ' + this.getSelectedDays(1, isLongForm);
 			}
 		} else if (!this.checkIsWeekDays() && this.checkIsWeekends()) {
-			if (this.getSelectedDays(2).length > 0) {
-				dayText = this.getSelectedDays(2);
+			if (this.getSelectedDays(2, isLongForm).length > 0) {
+				dayText = this.getSelectedDays(2, isLongForm);
 			}
-			dayText += this.getSelectedDays(2).length !== 0 ? ', ' + this.translate.instant('device.deviceSettings.power.smartStandby.days.weekends'):
+			dayText += this.getSelectedDays(2, isLongForm).length !== 0 ? ', ' + this.translate.instant('device.deviceSettings.power.smartStandby.days.weekends'):
 			this.translate.instant('device.deviceSettings.power.smartStandby.days.weekends');
 		} else {
-			dayText = this.getSelectedDays(0);
+			dayText = this.getSelectedDays(0, isLongForm);
 		}
 
 		if (dayText === '') {
@@ -70,22 +71,30 @@ export class SmartStandbyService {
 		return true;
 	}
 
-	getSelectedDays(reqType): string {
+	getSelectedDays(reqType, isLongForm: boolean = false): string {
 		let dayText = '';
 		let longDayText = '';
 		if (reqType === 1) {  // weekends check
 			if (this.allDays[this.daysOfWeek.Sunday].status) {
-
-				dayText = this.translate.instant(
-					'device.deviceSettings.power.smartStandby.days.shortName.'
-					+ this.allDays[this.daysOfWeek.Sunday].shortName);
-
+				if (!isLongForm) {
+					dayText = this.translate.instant(
+						'device.deviceSettings.power.smartStandby.days.shortName.'
+						+ this.allDays[this.daysOfWeek.Sunday].shortName);
+				} else {
+					dayText = this.translate.instant(
+						'device.deviceSettings.power.smartStandby.days.name.'
+						+ this.allDays[this.daysOfWeek.Sunday].shortName);
+				}
 			} else if (this.allDays[this.daysOfWeek.Saturday].status) {
-
-				dayText = this.translate.instant(
-					'device.deviceSettings.power.smartStandby.days.shortName.'
-					+ this.allDays[this.daysOfWeek.Saturday].shortName);
-
+				if (!isLongForm) {
+					dayText = this.translate.instant(
+						'device.deviceSettings.power.smartStandby.days.shortName.'
+						+ this.allDays[this.daysOfWeek.Saturday].shortName);
+				} else {
+					dayText = this.translate.instant(
+						'device.deviceSettings.power.smartStandby.days.name.'
+						+ this.allDays[this.daysOfWeek.Saturday].shortName);
+				}
 			}
 
 		} else if (reqType === 2) {
@@ -96,10 +105,15 @@ export class SmartStandbyService {
 						dayText += ', ';
 					}
 
-					dayText += this.translate.instant(
-						'device.deviceSettings.power.smartStandby.days.shortName.'
-						+ this.allDays[i].shortName);
-
+					if (!isLongForm) {
+						dayText += this.translate.instant(
+							'device.deviceSettings.power.smartStandby.days.shortName.'
+							+ this.allDays[i].shortName);
+					} else {
+						dayText += this.translate.instant(
+							'device.deviceSettings.power.smartStandby.days.name.'
+							+ this.allDays[i].shortName);
+					}
 				}
 			}
 		} else {
@@ -117,9 +131,15 @@ export class SmartStandbyService {
 					if (dayText.length > 0) {
 						dayText += ', ';
 					}
-					dayText += this.translate.instant(
-						'device.deviceSettings.power.smartStandby.days.shortName.'
-						+ day.shortName);
+					if (!isLongForm) {
+						dayText += this.translate.instant(
+							'device.deviceSettings.power.smartStandby.days.shortName.'
+							+ day.shortName);
+					} else {
+						dayText += this.translate.instant(
+							'device.deviceSettings.power.smartStandby.days.name.'
+							+ day.shortName);
+					}
 					cnt = cnt + 1;
 				}
 			});
@@ -135,6 +155,7 @@ export class SmartStandbyService {
 		this.checkedLength = this.selectedDays.length;
 		this.setDaysOfWeekOff();
 		this.schedule = this.setSelectedDayText();
+		this.scheduleLongForm = this.setSelectedDayText(true);
 	}
 
 	setDaysOfWeekOff() {

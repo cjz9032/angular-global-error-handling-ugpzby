@@ -15,7 +15,8 @@
 				<label for="{{daysId}}"
 					#combo
 					role="combobox"
-					aria-label="'smart standby, schedule dropdown days list'"
+
+					attr.aria-label="{{ subHeadingText | translate}}, {{ smartStandbyService.scheduleLongForm}}"
 					[attr.aria-expanded]="showDropDown"
 					tabindex="0"
 					(keydown.enter)="onToggleDropDown()"
@@ -39,8 +40,11 @@
 								<div class="main-block pl-5 pt-5 pb-3"
 									role="radiogroup"
 									aria-label="days list, select using arrow keys"
+									(keydown)="navigateByKeys($event, -1)"
 									tabindex="0">
-									<div *ngFor="let i of smartStandbyService.allDays">
+									<div *ngFor="let i of smartStandbyService.allDays; let idx = index;"
+										id="{{'day' + idx}}"
+										(keydown)="navigateByKeys($event, idx)">
 										<div class="custom-control custom-checkbox mb-3">
 											<vtr-ui-checkbox componentId="{{i.shortName}}"
 												role="checkbox"
@@ -72,11 +76,11 @@
 											(click)="setOffDays(dayslistbox)"
 											(keydown.enter)="[setOffDays(dayslistbox),combo.focus()]"
 											role="button"
+											tabindex="0"
 											id="daysPickerDone"
 											attr.aria-label="daysPickerDone"
 											*ngIf="smartStandbyService.checkedLength > 0"
-											aria-label="'confirm changes'"
-											tabindex="0">
+											attr.aria-label="{{ 'systemUpdates.popup.okayButton' | translate}}">
 										</fa-icon>
 										<fa-icon [icon]="['fal', 'times']"
 											id="daysPickerClear"
@@ -85,7 +89,7 @@
 											attr.aria-label="daysPickerClear"
 											(click)="clearSettings(dayslistbox)"
 											(keydown.enter)="[clearSettings(dayslistbox),combo.focus()]"
-											aria-label="'cancel changes'">
+											attr.aria-label="{{ 'systemUpdates.popup.cancelButton' | translate}}">
 										</fa-icon>
 									</div>
 								</div>
