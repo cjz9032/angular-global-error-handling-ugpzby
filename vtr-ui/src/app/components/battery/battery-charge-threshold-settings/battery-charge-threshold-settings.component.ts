@@ -18,11 +18,8 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 	@Input() textId = '';
 	@Input() isDisabled = false;
 	@Input() bctInfo: ChargeThreshold = new ChargeThreshold();
-
 	@Output() changeBCTInfo = new EventEmitter<ChargeThreshold>();
 	@Output() autoChecked = new EventEmitter<ChargeThreshold>();
-
-
 	chargeOptions: number[] = [40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100];
 	startAtChargeOptions: number[] = this.chargeOptions.slice(0, this.chargeOptions.length - 1);
 	stopAtChargeOptions: number[] = this.chargeOptions.slice(1, this.chargeOptions.length);
@@ -34,7 +31,17 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 	off = 'off'
 	ddStartAtChargeDescription = this.translate.instant('device.deviceSettings.power.batterySettings.batteryThreshold.options.start');
 	ddStopAtChargeDescription = this.translate.instant('device.deviceSettings.power.batterySettings.batteryThreshold.options.stop');
-
+	keyCode = Object.freeze({
+		TAB: 9,
+		RETURN: 13,
+		SPACE: 32,
+		END: 35,
+		HOME: 36,
+		LEFT: 37,
+		UP: 38,
+		RIGHT: 39,
+		DOWN: 40
+	});
 
 	// Random number is used to have unique id of each input field
 	randomNumber: number = Math.floor(new Date().valueOf() * SecureMath.random());
@@ -102,6 +109,7 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 		this.autoChecked.emit(bctInfo);
 	}
 
+
 	closeAllDD() {
 		// Close all dropdowns
 		this.dropDowns.toArray().forEach(elem => {
@@ -146,6 +154,28 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 			}
 		}
 
+	}
+
+
+	ddItemKeyEscHandler($event, activeDropdown: NgbDropdown, toggle: HTMLElement) {
+		$event.preventDefault();
+		if (activeDropdown.isOpen()) {
+			toggle.click()
+		}
+		toggle.focus()
+	}
+	ddToggleKBNavigator($event, activeDropdown: NgbDropdown, type, value) {
+		switch ($event.keyCode) {
+			case this.keyCode.SPACE:
+			case this.keyCode.RETURN:
+			case this.keyCode.UP:
+			case this.keyCode.DOWN:
+			case this.keyCode.LEFT:
+			case this.keyCode.RIGHT:
+				$event.stopPropagation();
+				this.focusOnSelected($event, activeDropdown, type, value);
+				break;
+		}
 	}
 
 	focusOnSelected($event: Event, activeDropdown: NgbDropdown, type, value) {
