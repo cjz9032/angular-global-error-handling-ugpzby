@@ -20,7 +20,7 @@
                                     {{'device.smartAssist.antiTheft.note.description' | translate}}</p>
                             </div>
                         </div>
-                        <p id="smartMotionAlertAlarmTitle" name="smartMotionAlertAlarmTitle" class="subTitle">
+                        <p id="smartMotionAlertAlarmTitle" name="smartMotionAlertAlarmTitle" class="subTitle dropdownTitle">
                             {{'device.smartAssist.antiTheft.alarm.title' | translate}}
                         </p>
                         <div id="smartMotionAlertAlarmTimeSelect" name="smartMotionAlertAlarmTimeSelect" class="select">
@@ -48,11 +48,11 @@
                                     (toggle)='setAllowCamera($event)'>
                                 </vtr-ui-checkbox>
                             </div>
-                           
+
                         </div>
 
                         <div class="row" *ngIf="!cameraPrivacyState && !isShowAuthorized">
-                            <div class="feature-note p-4">
+                            <div class="feature-note p-4 cameraTips">
                                 <p id="smartMotionAlertCameraPrivacyDescribe"
                                     name="smartMotionAlertCameraPrivacyDescribe">
                                     {{'device.smartAssist.antiTheft.cameraPrivacy.describe' | translate}}</p>
@@ -66,7 +66,7 @@
                         </div>
 
                         <div class="row" *ngIf="!authorizedAccessState && isShowAuthorized">
-                            <div class="feature-note p-4">
+                            <div class="feature-note p-4 cameraTips">
                                 <p id="smartMotionAlertAuthorizedAccessDescribe"
                                     name="smartMotionAlertAuthorizedAccessDescribe">
                                     {{'device.smartAssist.antiTheft.authorizedAccess.describe' | translate}}</p>
@@ -78,9 +78,10 @@
                                 </button>
                             </div>
                         </div>
+
                         <div *ngIf="cameraPrivacyState && authorizedAccessState && isSupportPhoto">
                             <label id="smartMotionAlertPhotoTitle" name="smartMotionAlertPhotoTitle"
-                                class="subTitle">{{'device.smartAssist.antiTheft.photo.title' | translate}}</label>
+                                class="subTitle dropdownTitle">{{'device.smartAssist.antiTheft.photo.title' | translate}}</label>
                             <fa-icon id="smartMotionAlertPhotoIcon" name="smartMotionAlertPhotoIcon" class="right-icon"
                                 triggers="manual" placement="auto" autoClose="false" [ngbTooltip]="tooltipRef"
                                 #rightToolTip1="ngbTooltip" autoClose="true" [icon]="['far', 'question-circle']"
