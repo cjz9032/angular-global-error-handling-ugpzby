@@ -22,7 +22,9 @@ vtr-ui-row-switch {
     color: #667481;
   }
   .subTitle {
-    font-weight: 500;
+    font-weight: $weight_bold;
+    color: $shade_blue;
+    font-size: 1.4rem !important;
     margin: 10px 0px;
   }
   .cameraCheckBox {
@@ -32,22 +34,21 @@ vtr-ui-row-switch {
     width: 380px;
     .selectDropdown {
       ::ng-deep .ui-dropdown {
-          height: 7.1rem !important;
-          .chevron {
-            color: #667481 !important;
-          }
+        height: 7.1rem !important;
+        .chevron {
+          color: #667481 !important;
+        }
         ::ng-deep .ui-menu-dropdown {
           top: 7.1rem !important;
           padding: 0.5rem 0rem !important;
-            a {
-              padding: 0.8rem 1.5rem !important;
-              &:hover {
-                color: hsl(0, 0%, 100%) !important;
-                background-color: #667481 !important;
-                text-decoration: blink !important;
-              }
+          a {
+            padding: 0.8rem 1.5rem !important;
+            &:hover {
+              color: hsl(0, 0%, 100%) !important;
+              background-color: #667481 !important;
+              text-decoration: blink !important;
             }
-         
+          }
         }
       }
     }
