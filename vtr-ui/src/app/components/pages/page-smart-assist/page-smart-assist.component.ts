@@ -299,12 +299,12 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			if (this.smartAssistCapability.isAntiTheftSupported) {
 				this.antiTheft = this.smartAssistCapability.isAntiTheftSupported;
 				this.getAntiTheftStatus();
-				if (this.smartAssistCapability.isHsaIntelligentSecuritySupported) {
-					this.hsaIntelligentSecurity = this.smartAssistCapability.isHsaIntelligentSecuritySupported;
-					this.getHsaIntelligentSecurityStatus();
-				}
-				this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
 			}
+			if (this.smartAssistCapability.isHsaIntelligentSecuritySupported) {
+				this.hsaIntelligentSecurity = this.smartAssistCapability.isHsaIntelligentSecuritySupported;
+				this.getHsaIntelligentSecurityStatus();
+			}
+			this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
 		}
 	}
 

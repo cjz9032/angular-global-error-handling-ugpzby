@@ -2050,13 +2050,12 @@
 			"superResolution": {
 				"heading": "Intelligent Media",
 				"title": "Video Resolution Upscaling",
-				"desc": "<p><label>This feature enhances the experience of video playback by improving the video resolution. It works especially when the video is in poor resolution.</label></p> <p style='margin-top:4px;'><label>This function might impact the battery life, battery temperature, and cause noises. Please do not use it in DC mode. Otherwise, it will speed up the power consumption and shorten the battery life.</label></p>",
-				"tooltip": "The feature works only on:<br>Windows Media player",
+				"desc": "<p><label>This feature enhances the experience of video playback by improving the videor resolution. It works especially when the video is in poor resolution.</label></p> <p style='margin-top:4px;'><label>This function might impact the battery life, battery temperature, and cause noises. Please do not use it in DC mode (battery mode). Otherwise, it will speed up the power consumption and shorten the battery life.</label></p>",
+				"tooltip": "This feature only works for below video players:<br>Windows Media Player<br>Chrome<br>Movies & TV<br>PotPlayer<br>GOM player<br>Web-browser based players (e.g Chrome)<br><br>For instructions on how to enable this function on PotPlayer and  GOM player, refer to the User  Guide that comes with your computer.",
 				"note": {
-					"description": "The feature does not work when:",
-					"description1": "The computer is not connected to ac power.",
-					"description2": "The Battery saving mode is enabled.",
-					"description3": "The CPU temperature is too high."
+					"description": "This feature does not work when:",
+					"description1": "The Battery saver mode is enabled.",
+					"description2": " The CPU temperature is too high."
 				}
 			},
 			"antiTheft": {
