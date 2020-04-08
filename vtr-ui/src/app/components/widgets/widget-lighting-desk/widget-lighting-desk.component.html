@@ -6,7 +6,7 @@
             [id]="'profile'"></vtr-ui-lighting-profile-toggle>
         </div>
         <div class="lighting-panel-select" *ngIf="!isProfileOff">
-            <div class="lighting-arrow lighting-arrow-lef" (click)="panelSwitchLef()"  
+            <div class="lighting-arrow lighting-arrow-lef" (click)="panelSwitchLef()"  tabindex="{{isDisabledlef[this.currentProfileId-1]?-1:0}}"
             [ngClass]="{'disabled-lef':isDisabledlef[this.currentProfileId-1] === true}" *ngIf= "lightingProfileCurrentDetail.panelImageType">
                 <fa-icon [icon]="['fal', 'chevron-right']"></fa-icon>
             </div>
@@ -17,7 +17,7 @@
             </span>
             {{lightingProfileCurrentDetail.panelName | translate}}
             </div>
-            <div class="lighting-arrow lighting-arrow-rig" (click)="panelSwitchRig()" 
+            <div class="lighting-arrow lighting-arrow-rig" (click)="panelSwitchRig()" tabindex="{{isDisabledrig[this.currentProfileId-1]?-1:0}}"
             [ngClass]="{'disabled-rig':isDisabledrig[this.currentProfileId-1] === true}" *ngIf= "lightingProfileCurrentDetail.panelImageType">
                 <fa-icon [icon]="['fal', 'chevron-right']"></fa-icon>
             </div>
