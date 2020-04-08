@@ -1,0 +1,11 @@
+<button class="close-button"
+	[tabindex]="tabIndex"
+	[id]="linkId"
+	[attr.aria-label]="'common.ui.close' | translate"
+	[vtrMetrics]="metricsItem === '' ? false : ''"
+	[metricsItem]="metricsItem"
+	[metricsEvent]="metricsEvent"
+	[metricsParent]="metricsParent"
+	(click)="clickCloseButton($event)">
+	<div class="x"></div>
+</button>

@@ -9,7 +9,6 @@
 			<ul class="list-group list-group-flush">
 				<li>
 					<vtr-ui-row-switch [title]="'device.deviceSettings.power.smartStandby.title' | translate"
-						[name]="'device.deviceSettings.power.smartStandby.title' | translate"
 						[caption]="caption"
 						[isSwitchVisible]=true
 						[isLastChild]=true
@@ -164,7 +163,7 @@
 								[ngClass]="{'disabled': !smartStandby.isEnabled}"
 								class="hyperlink-to-graph"
 								(click)="showUsageGraph()"
-								(keydown.enter)="showUsageGraph()"
+								(keyup.enter)="showUsageGraph()"
 								role="link"
 								attr.aria-label="{{'device.deviceSettings.power.smartStandby.hyperlinkToGraph' | translate}}">
 								{{'device.deviceSettings.power.smartStandby.hyperlinkToGraph' | translate}}

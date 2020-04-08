@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { CommonService } from '../common/common.service';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
-import { ModalWifiSecuriryLocationNoticeComponent } from 'src/app/components/modal/modal-wifi-securiry-location-notice/modal-wifi-securiry-location-notice.component';
+import { ModalWifiSecurityLocationNoticeComponent } from 'src/app/components/modal/modal-wifi-security-location-notice/modal-wifi-security-location-notice.component';
 import { ModalHomeProtectionLocationNoticeComponent } from 'src/app/components/modal/modal-home-protection-location-notice/modal-home-protection-location-notice.component';
 import { EventTypes, WifiSecurity } from '@lenovo/tan-client-bridge';
 import { ModalErrorMessageComponent } from 'src/app/components/modal/modal-error-message/modal-error-message.component';
@@ -52,7 +52,7 @@ export class DialogService {
 		}
 		if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage) || this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInGamingDashboard)) {
 			this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag, 'no');
-			const modal = this.modalService.open(ModalWifiSecuriryLocationNoticeComponent,
+			const modal = this.modalService.open(ModalWifiSecurityLocationNoticeComponent,
 			{
 				backdrop: 'static'
 				, windowClass: 'wifi-security-location-modal'

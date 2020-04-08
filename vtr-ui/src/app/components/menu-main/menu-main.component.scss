@@ -250,6 +250,9 @@
 								background-color: $main_darker;
 							}
 						}
+						&:focus {
+							outline: 0;
+						}
 					}
 
 					.dropdown-menu {
@@ -313,6 +316,10 @@
 							font-size: $fontsize_xs;
 							line-height: 3.2rem;
 							font-weight: $weight_medium;
+							&:focus {
+								outline: 0.1rem solid $menu_hover;
+								background-color: transparent;
+							}
 
 							&.link {
 								text-decoration: underline;

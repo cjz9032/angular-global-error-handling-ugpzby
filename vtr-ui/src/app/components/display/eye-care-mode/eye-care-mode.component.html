@@ -1,20 +1,18 @@
 <div class="vtr-eye-care-mode"
 	*ngIf="eyeCareModeSettings">
-	<div class="row">
-		<div class="col pl-4"
-			*ngIf="eyeCareModeSettings.current">
-			<vtr-ui-range-slider [step]="100"
-				[manualRefresh]="manualRefresh"
-				[enableSlider]="enableSlider"
-				[minValue]="eyeCareModeSettings.minimum"
-				[maxValue]="eyeCareModeSettings.maximum"
-				[minValueLegend]="'device.deviceSettings.displayCamera.display.eyeCareMode.options.warm' | translate"
-				[maxValueLegend]="'device.deviceSettings.displayCamera.display.eyeCareMode.options.cold' | translate"
-				[(value)]="$any(eyeCareModeSettings).current"
+	<div class="row" *ngIf="eyeCareModeSettings.current">
+		<div class="col pl-4">
+			<vtr-ui-custom-slider [step]=100
+				[isDisabled]="enableSlider"
+				[min]="eyeCareModeSettings.minimum"
+				[max]="eyeCareModeSettings.maximum"
+				[minLegend]="'device.deviceSettings.displayCamera.display.eyeCareMode.options.warm' | translate"
+				[maxLegend]="'device.deviceSettings.displayCamera.display.eyeCareMode.options.cold' | translate"
+				[value]="eyeCareModeSettings.current"
 				(sliderChange)="onEyeCareTemparatureChange($event)"
-				(valueChange)="onEyeCareTemparatureValueChange($event)"
-				[rangeSliderId]="'color-temp-eyeCareMode'">
-			</vtr-ui-range-slider>
+				(valueChanged)="onEyeCareTemparatureValueChange($event)"
+				[sliderId]="'color-temp-eyeCareMode'">
+			</vtr-ui-custom-slider>
 		</div>
 		<div class="reset-temperature">
 			<div class="button-box">

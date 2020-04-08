@@ -120,9 +120,9 @@
 		</div>
 		<div class="feature-note p-3 mt-2"
 			*ngIf="!batteryService.isInvalidBattery && (batteryIndicator.isChargeThresholdOn || batteryService.isGaugeResetRunning) ">
-			<div class="row" id="myDevice-settings-batteryGauge-note">
-				<p
-					role="text">
+			<div class="row"
+				id="myDevice-settings-batteryGauge-note">
+				<p role="text">
 					<span role="text"
 						*ngIf="!batteryService.isGaugeResetRunning"
 						[innerHTML]="'device.deviceSettings.batteryGauge.thresholdNote' | translate"
@@ -143,6 +143,7 @@
 				(click)="showDetailModal(batteryDetail)"
 				[isDisabled]="disableBatteryDetails"
 				id="myDevice-settings-battery-details-btn"
+				[alreadyJoinGroup]="'groupNone'"
 				[linkId]="'myDevice-settings-battery-details-btn'"
 				[label]="'device.deviceSettings.batteryGauge.button' | translate"
 				attr.aria-label="myDevice-settings-battery-details-btn"

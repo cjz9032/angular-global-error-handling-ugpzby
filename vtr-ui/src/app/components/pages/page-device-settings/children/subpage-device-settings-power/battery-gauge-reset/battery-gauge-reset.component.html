@@ -1,7 +1,6 @@
 <div class="vtr-battery-gauge-reset">
 	<div class="no-max-width">
 		<vtr-ui-row-switch [title]="'device.deviceSettings.power.batterySettings.gaugeReset.title' | translate"
-			[name]="'battery-gauge-reset-title'"
 			[caption]="'device.deviceSettings.power.batterySettings.gaugeReset.description' | translate"
 			[isSwitchVisible]="false"
 			[showChildContent]="true"
@@ -145,7 +144,7 @@
 										metricsEvent="FeatureClick"
 										[isRegular]="true"
 										[autoFocus]="autoFocusButton"
-										[disabled]="(batteryService.isGaugeResetRunning &&
+										[isDisabled]="(batteryService.isGaugeResetRunning &&
 											(batteryService.gaugeResetInfo.length > 1 && !battery.isResetRunning)) ||
 											!batteryService.isAcAttached"
 										[tabIndex]="((batteryService.isGaugeResetRunning &&
