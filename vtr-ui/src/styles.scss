@@ -1671,4 +1671,19 @@ div {
 	}
 }
 
-
+.focus-with-border-radius {
+	&:focus {
+		outline: none !important;
+		&:before {
+			content: '';
+			position: absolute;
+			width: calc(100% + 0.6rem);
+			height: calc(100% + 0.6rem);
+			left: -0.3rem;
+			top: -0.3rem;
+			background: none;
+			border-radius: calc(#{$border_radius} + 0.2rem);
+			border: 0.1rem solid $menu_hover;
+		}
+	}
+}
