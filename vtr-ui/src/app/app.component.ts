@@ -192,6 +192,7 @@ export class AppComponent implements OnInit, OnDestroy {
 			const gamingTutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.GamingTutorial);
 			let tutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
 			if (this.deviceService.isGaming) {
+				this.newTutorialVersion = '3.3.0';
 				if (gamingTutorial) {
 					tutorial = gamingTutorial;
 				} else if (tutorial && tutorial.isDone && tutorial.tutorialVersion === ''){
@@ -200,7 +201,7 @@ export class AppComponent implements OnInit, OnDestroy {
 					this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, tutorial);
 				}
 			}
-			const newTutorialVersion = '3.1.2';
+			const newTutorialVersion = this.newTutorialVersion;
 			if ((tutorial === undefined || tutorial.tutorialVersion !== newTutorialVersion) && navigator.onLine) {
 				this.openWelcomeModal(1, newTutorialVersion);
 			} else if (tutorial && tutorial.page === 1 && navigator.onLine) {
