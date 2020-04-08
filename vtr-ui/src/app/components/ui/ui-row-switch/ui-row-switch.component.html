@@ -34,7 +34,8 @@
 						<div class="col">
 							<div class="title"
 								role="text"
-								id="{{switchId}}-title">
+								id="{{switchId}}-title"
+								attr.aria-label="{{switchId}}">
 								{{ title }}
 							</div>
 							<span *ngIf="caption">
@@ -42,6 +43,7 @@
 									#captionRef
 									role="text"
 									id="{{switchId}}-caption"
+									attr.aria-label="{{caption}}"
 									[innerHTML]="caption.length > 70  && !contentExpand  && readMoreText.length > 0 ? (caption | slice: 0:70) : caption">
 								</div>
 							</span>
