@@ -41,7 +41,7 @@ export class SmartAssistService {
 		this.activeProtectionSystem = shellService.getActiveProtectionSystem(); // getting APS Object from //vantage-shell.service
 		this.lenovoVoice = shellService.getLenovoVoice();
 		this.superResolution = shellService.getSuperResolution();
-		this.hsaIntelligentSecurity = true;//shellService.getHsaIntelligentSecurity();
+		this.hsaIntelligentSecurity = shellService.getHsaIntelligentSecurity();
 		// this.shellVersion = shellService.getShellVersion();
 		this.antiTheft = shellService.getAntiTheft();
 		this.windows = shellService.getWindows();
@@ -473,7 +473,7 @@ export class SmartAssistService {
 		return undefined;
 	}
 
-	//endregion 
+	//endregion
 
 	//#region Intelligent Sensing (Intelligent screen) section
 
