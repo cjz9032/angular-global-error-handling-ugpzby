@@ -7,16 +7,10 @@
 			<div class="spinner-border text-primary progress-spinner" role="status"></div>
 		</div>
 	</div>
-	<div tabindex="0"
-		role="button"
-		class="close-btn"
-		[attr.aria-label]="'common.ui.close' | translate"
-		vtrMetrics
-		metricsItem="AppsForYouScreenshotCloseButton"
-		metricsEvent="FeatureClick"
-		[metricsParent]="metricsParent"
-		(keyup.enter)="closeModal()"
-	 	(click)="closeModal()">
-		<img [src]=" 'assets/icons/Close.svg' | svgInline | async" alt="" srcset="">
+	<div class="btn-modal-close">
+		<vtr-ui-close-button linkId="apps-for-you-screenshot-dialog-close"
+			metricsItem="AppsForYouScreenshotCloseButton"
+			[metricsParent]="metricsParent"
+			(clickClose)="closeModal()"></vtr-ui-close-button>
 	</div>
 </div>
