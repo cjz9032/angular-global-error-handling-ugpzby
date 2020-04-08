@@ -74,8 +74,8 @@
 					"autoClose": "Auto Close",
 					"networkBoost": "Network Boost",
 					"hybridMode": "Hybrid Mode",
-					"touchpadLock": "Touchpad Lock",
-					"overDrive": "Over Drive"
+					"overDrive": "Over Drive",
+					"touchpadLock": "Touchpad Lock"
 				},
 				"systemTools": {
 					"power": "Power",
@@ -104,7 +104,8 @@
 					"line9": "<b>Touchpad Lock </b><br> Prevent mistaken inputs by disabling the touchpad while gaming",
 					"line10": "<b>Auto Close </b><br> Clear processes that are not needed for gaming before you start playing to maximize available system resources",
 					"line11": "<b>Thermal Mode </b><br> Set your preferred device profile for fan speed and cooling control",
-					"line12": "<b>Macro key </b><br> Customize your keyboard actions to suit your playing style"
+					"line12": "<b>Macro key </b><br> Customize your keyboard actions to suit your playing style",
+					"line13": "<b>Over Drive </b><br> This function makes your screen respond faster"
 				},
 				"systemInfo": {
 					"systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
@@ -2049,15 +2050,61 @@
 			"superResolution": {
 				"heading": "Intelligent Media",
 				"title": "Video Resolution Upscaling",
-				"desc": "<p><label>This feature enhances the experience of video playback by improving the video resolution. It works especially when the video is in poor resolution.</label></p> <p style='margin-top:4px;'><label>This function might impact the battery life, battery temperature, and cause noises. Please do not use it in DC mode. Otherwise, it will speed up the power consumption and shorten the battery life.</label></p>",
-				"tooltip": "The feature works only on:<br>Windows Media player",
+				"desc": "<p><label>This feature enhances the experience of video playback by improving the videor resolution. It works especially when the video is in poor resolution.</label></p> <p style='margin-top:4px;'><label>This function might impact the battery life, battery temperature, and cause noises. Please do not use it in DC mode (battery mode). Otherwise, it will speed up the power consumption and shorten the battery life.</label></p>",
+				"tooltip": "This feature only works for below video players:<br>Windows Media Player<br>Chrome<br>Movies & TV<br>PotPlayer<br>GOM player<br>Web-browser based players (e.g Chrome)<br><br>For instructions on how to enable this function on PotPlayer and  GOM player, refer to the User  Guide that comes with your computer.",
 				"note": {
-					"description": "The feature does not work when:",
-					"description1": "The computer is not connected to ac power.",
-					"description2": "The Battery saving mode is enabled.",
-					"description3": "The CPU temperature is too high."
+					"description": "This feature does not work when:",
+					"description1": "The Battery saver mode is enabled.",
+					"description2": " The CPU temperature is too high."
 				}
 			},
+			"antiTheft": {
+                "heading": "Intelligent Sensing",
+                "title": "Smart Motion Alert",
+                "desc": "<p><label>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</label></p> <p style='margin-top:4px;'><label>To dismiss the alarm, enter the correct password or log in by Windows Hello.</label></p>",
+                "note": {
+                    "description": "Once you log in the system successfully, this feature will be turned off automatically. You need to enable it again to use it."
+                },
+                "alarm": {
+                    "title":" THE ALARM WILL LAST FOR",
+                    "option1":"10 seconds",
+                    "option2":"20 seconds",
+                    "option3":"30 seconds",
+                    "option4":"1 minute",
+                    "option5":"Never stop"
+                },
+                "allowCamera": {
+                    "title":"TATING PHOTOS",
+                    "describe":"When enabling this feature, the camera takes photos automatically when detecting any movement if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
+                    "checkBoxText":"Enable this feature"
+                },
+                "cameraPrivacy": {
+                     "describe":"Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
+                     "linkText":"Go to Camera privacy mode to turn it off"
+                },
+                "authorizedAccess": {
+                    "describe":"Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
+                    "linkText":"Go to Windows Settings to give access"
+                },
+                "photo": {
+                    "title":"THE NUMBER OF PHOTOS TAKEN DURING THE MOVEMENT",
+                    "tooltip": "The camera on your computer automatically activates to take pictures when movements are detected. Pictures are taken every 2 seconds and are saved to your local storage.",
+                    "option1":"5",
+                    "option2":"10",
+                    "option3":"15",
+                    "option4":"20",
+                    "option5":"25",
+                    "option6":"30"
+                },
+                "showPhoto": {
+                    "title":"PHOTOS HAVE BEEN:",
+                    "link":"View photos"
+				},
+				"fileAuthorizationTips": {
+					"content":"Lenovo Vantage doesn't have access to the file system.",
+					"link":"Go to Windows Settings to give access"
+				}
+            },
 			"voice": {
 				"title": "Voice",
 				"description": "Lenovo Voice converts your voice into text with the Voice to Text and provides assistance of real-time speech translation with the Translation Assistant.",
@@ -3958,6 +4005,10 @@
 		}
 	},
 	"appsForYou": {
+		"narrator": {
+			"leftArrow": "left arrow",
+			"rightArrow": "right arrow"
+		},
 		"common": {
 			"errorMessage": {
 				"installationFailed": "Installation failed. Please try again.",

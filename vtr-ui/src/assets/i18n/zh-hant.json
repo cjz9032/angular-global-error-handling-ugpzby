@@ -60,6 +60,7 @@
                     "autoClose": "自動關閉",
                     "networkBoost": "網路加速",
                     "hybridMode": "混合模式",
+                    "overDrive": "Over Drive",
                     "touchpadLock": "觸控板鎖定",
                     "lightingDriverPopup": {
                         "headerText": "需要安裝驅動程式",
@@ -69,8 +70,7 @@
                     },
                     "lightingColorMessage": {
                         "text": "選取的色彩不具備這個效果。"
-                    },
-                    "overDrive": "Over Drive"
+                    }
                 },
                 "systemTools": {
                     "power": "電源",
@@ -96,7 +96,8 @@
                     "line9": "<b>觸控板鎖定 </b><br> 在遊戲時停用觸控板，防止錯誤的輸入",
                     "line10": "<b>自動關閉 </b><br> 在您開始暢玩遊戲之前先清除與遊戲無關的處理程序，盡可能地利用所有可用的系統資源",
                     "line11": "<b>熱模式 </b><br> 設定您偏好的裝置設定檔中的風扇速度和冷卻控制",
-                    "line12": "<b>巨集鍵 </b><br> 自訂鍵盤動作以符合您的玩樂風格"
+                    "line12": "<b>巨集鍵 </b><br> 自訂鍵盤動作以符合您的玩樂風格",
+                    "line13": "<b>Over Drive </b><br> This function makes your screen respond faster"
                 },
                 "systemInfo": {
                     "systenTooltip": "將游標移至 CPU/GPU/RAM 和不同的驅動程式之上以查看其個別描述，包括製造與機型資訊"
@@ -2052,8 +2053,7 @@
                 "note": {
                     "description": "此功能在下列情況中無法運作：",
                     "description1": "電腦未連接到 AC 電源。",
-                    "description2": "電池省電模式已啟用。",
-                    "description3": "CPU 溫度過高。"
+                    "description2": "電池省電模式已啟用。"
                 }
             },
             "voice": {
@@ -2087,6 +2087,53 @@
                     "btnText": "確定",
                     "title": "安裝失敗",
                     "desc": "若要使用 Lenovo Voice，請稍後重試。"
+                }
+            },
+            "antiTheft": {
+                "heading": "Intelligent Sensing",
+                "title": "Smart Motion Alert",
+                "desc": "<p><label>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</label></p> <p style='margin-top:4px;'><label>To dismiss the alarm, enter the correct password or log in by Windows Hello.</label></p>",
+                "note": {
+                    "description": "Once you log in the system successfully, this feature will be turned off automatically. You need to enable it again to use it."
+                },
+                "alarm": {
+                    "title": " THE ALARM WILL LAST FOR",
+                    "option1": "10 seconds",
+                    "option2": "20 seconds",
+                    "option3": "30 seconds",
+                    "option4": "1 minute",
+                    "option5": "Never stop"
+                },
+                "allowCamera": {
+                    "title": "TATING PHOTOS",
+                    "describe": "When enabling this feature, the camera takes photos automatically when detecting any movement if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
+                    "checkBoxText": "Enable this feature"
+                },
+                "cameraPrivacy": {
+                    "describe": "Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
+                    "linkText": "Go to Camera privacy mode to turn it off"
+                },
+                "authorizedAccess": {
+                    "describe": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
+                    "linkText": "Go to Windows Settings to give access"
+                },
+                "photo": {
+                    "title": "THE NUMBER OF PHOTOS TAKEN DURING THE MOVEMENT",
+                    "tooltip": "The camera on your computer automatically activates to take pictures when movements are detected. Pictures are taken every 2 seconds and are saved to your local storage.",
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
+                },
+                "showPhoto": {
+                    "title": "PHOTOS HAVE BEEN:",
+                    "link": "View photos"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Lenovo Vantage doesn't have access to the file system.",
+                    "link": "Go to Windows Settings to give access"
                 }
             }
         }
@@ -3990,6 +4037,10 @@
                 "readMore": "較多內容",
                 "readLess": "較少內容"
             }
+        },
+        "narrator": {
+            "leftArrow": "left arrow",
+            "rightArrow": "right arrow"
         }
     },
     "dcc": {

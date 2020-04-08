@@ -60,6 +60,7 @@
                     "autoClose": "סגירה אוטומטית",
                     "networkBoost": "שיפור הרשת",
                     "hybridMode": "מצב היברידי",
+                    "overDrive": "Over Drive",
                     "touchpadLock": "מנעול משטח מגע",
                     "lightingDriverPopup": {
                         "headerText": "חובה להתקין מנהל התקן",
@@ -69,8 +70,7 @@
                     },
                     "lightingColorMessage": {
                         "text": "בחירת צבע לא זמינה לאפקט זה."
-                    },
-                    "overDrive": "Over Drive"
+                    }
                 },
                 "systemTools": {
                     "power": "צריכת חשמל",
@@ -96,7 +96,8 @@
                     "line9": "<b>מנעול משטח מגע </b><br> הימנעו מהזנות מוטעות באמצעות השבתת משטח המגע בזמן שאתם משחקים",
                     "line10": "<b>סגירה אוטומטית</b><br> נקו תהליכים שאינם נדרשים למשחק לפני שאתם מתחילים לשחק כדי לשפר את המשאבים הזמינים של המערכת",
                     "line11": "<b>מצב תרמי </b><br> הגדרת פרופיל ההתקן המועדף למהירות המאוורר ובקרת הצינון",
-                    "line12": "<b>מקש מאקרו </b><br> התאימו אישית את פעולות המקלדת כך שיתאימו לסגנון המשחק שלכם"
+                    "line12": "<b>מקש מאקרו </b><br> התאימו אישית את פעולות המקלדת כך שיתאימו לסגנון המשחק שלכם",
+                    "line13": "<b>Over Drive </b><br> This function makes your screen respond faster"
                 },
                 "systemInfo": {
                     "systenTooltip": "העבר את העכבר מעל CPU/GPU/RAM וכוננים שונים כדי להציג את התיאורים שלהם, כולל נתוני ייצור ומידע על הדגם"
@@ -2052,8 +2053,7 @@
                 "note": {
                     "description": "התכונה אינה פועלת כאשר:",
                     "description1": "המחשב איננו מחובר למקור מתח AC.",
-                    "description2": "מצב חיסכון בסוללה מופעל.",
-                    "description3": "טמפרטורת המעבד גבוהה מדי."
+                    "description2": "מצב חיסכון בסוללה מופעל."
                 }
             },
             "voice": {
@@ -2087,6 +2087,53 @@
                     "btnText": "אישור",
                     "title": "ההתקנה נכשלה",
                     "desc": "נסה שוב מאוחר יותר כדי להשתמש ב-Lenovo Voice."
+                }
+            },
+            "antiTheft": {
+                "heading": "Intelligent Sensing",
+                "title": "Smart Motion Alert",
+                "desc": "<p><label>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</label></p> <p style='margin-top:4px;'><label>To dismiss the alarm, enter the correct password or log in by Windows Hello.</label></p>",
+                "note": {
+                    "description": "Once you log in the system successfully, this feature will be turned off automatically. You need to enable it again to use it."
+                },
+                "alarm": {
+                    "title": " THE ALARM WILL LAST FOR",
+                    "option1": "10 seconds",
+                    "option2": "20 seconds",
+                    "option3": "30 seconds",
+                    "option4": "1 minute",
+                    "option5": "Never stop"
+                },
+                "allowCamera": {
+                    "title": "TATING PHOTOS",
+                    "describe": "When enabling this feature, the camera takes photos automatically when detecting any movement if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
+                    "checkBoxText": "Enable this feature"
+                },
+                "cameraPrivacy": {
+                    "describe": "Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
+                    "linkText": "Go to Camera privacy mode to turn it off"
+                },
+                "authorizedAccess": {
+                    "describe": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
+                    "linkText": "Go to Windows Settings to give access"
+                },
+                "photo": {
+                    "title": "THE NUMBER OF PHOTOS TAKEN DURING THE MOVEMENT",
+                    "tooltip": "The camera on your computer automatically activates to take pictures when movements are detected. Pictures are taken every 2 seconds and are saved to your local storage.",
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
+                },
+                "showPhoto": {
+                    "title": "PHOTOS HAVE BEEN:",
+                    "link": "View photos"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Lenovo Vantage doesn't have access to the file system.",
+                    "link": "Go to Windows Settings to give access"
                 }
             }
         }
@@ -3990,6 +4037,10 @@
                 "readMore": "פרטים נוספים",
                 "readLess": "פחות מידע"
             }
+        },
+        "narrator": {
+            "leftArrow": "left arrow",
+            "rightArrow": "right arrow"
         }
     },
     "dcc": {

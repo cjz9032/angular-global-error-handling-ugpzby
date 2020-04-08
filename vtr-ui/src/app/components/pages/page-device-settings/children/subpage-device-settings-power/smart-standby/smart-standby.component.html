@@ -153,18 +153,21 @@
 								<!-- content end -->
 							</div>
 							<div *ngIf="isAutonomicCapability"
-								tabindex="0"
+								#showGraph
+								(keydown.enter)="showGraph.click()" 
 								vtrMetrics
 								metricsItem="Open Smart Standby Modal"
 								metricsEvent="featureClick"
 								metricsParent="Device.deviceSettings"
-								id="modal_smartStandby_graphLink"
 								metricsValue=true
 								[ngClass]="{'disabled': !smartStandby.isEnabled}"
 								class="hyperlink-to-graph"
+								id="modal_smartStandby_graphLink"
+								role="link"
+								tabindex="0"
 								(click)="showUsageGraph()"
 								(keydown.enter)="showUsageGraph()"
-								role="link"
+								
 								attr.aria-label="{{'device.deviceSettings.power.smartStandby.hyperlinkToGraph' | translate}}">
 								{{'device.deviceSettings.power.smartStandby.hyperlinkToGraph' | translate}}
 							</div>

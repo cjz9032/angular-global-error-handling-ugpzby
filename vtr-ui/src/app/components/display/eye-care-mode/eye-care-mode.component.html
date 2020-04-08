@@ -1,8 +1,7 @@
 <div class="vtr-eye-care-mode"
 	*ngIf="eyeCareModeSettings">
-	<div class="row">
-		<div class="col pl-4"
-			*ngIf="eyeCareModeSettings.current">
+	<div class="row" *ngIf="eyeCareModeSettings.current">
+		<div class="col pl-4">
 			<vtr-ui-custom-slider [step]=100
 				[isDisabled]="enableSlider"
 				[min]="eyeCareModeSettings.minimum"

@@ -60,6 +60,7 @@
                     "autoClose": "Închidere automată",
                     "networkBoost": "Stimulare rețea",
                     "hybridMode": "Mod hibrid",
+                    "overDrive": "Over Drive",
                     "touchpadLock": "Blocare touchpad",
                     "lightingDriverPopup": {
                         "headerText": "Instalarea driverului este obligatorie",
@@ -69,8 +70,7 @@
                     },
                     "lightingColorMessage": {
                         "text": "Selectarea culorii nu este disponibilă pentru acest efect."
-                    },
-                    "overDrive": "Over Drive"
+                    }
                 },
                 "systemTools": {
                     "power": "Alimentare",
@@ -96,7 +96,8 @@
                     "line9": "<b>Blocare touchpad </b><br> Preveniți introducerile eronate, dezactivând panoul tactil în timp ce jucați jocuri",
                     "line10": "<b>Închidere automată </b><br> Eliminați procesele care sunt inutile pentru jocuri, înainte de a începe să jucați, pentru a amplifica la maximum resursele de sistem disponibile",
                     "line11": "<b>Mod termic </b><br> Setați profilul dispozitivului favorit pentru viteza ventilatorului și pentru controlul răcirii",
-                    "line12": "<b>Tastă macro </b><br> Personalizați-vă acțiunile tastaturii pentru a corespunde stilului dvs. de joc"
+                    "line12": "<b>Tastă macro </b><br> Personalizați-vă acțiunile tastaturii pentru a corespunde stilului dvs. de joc",
+                    "line13": "<b>Over Drive </b><br> This function makes your screen respond faster"
                 },
                 "systemInfo": {
                     "systenTooltip": "Plasați cursorul pe CPU/GPU/RAM și pe alte drivere pentru a afișa descrierile acestora, inclusiv informațiile de fabricare și modelul"
@@ -2052,8 +2053,7 @@
                 "note": {
                     "description": "Această caracteristică nu funcţionează când:",
                     "description1": "Computerul nu este conectat la o sursă de alimentare c.a.",
-                    "description2": "Modul de economisire a bateriei este activat.",
-                    "description3": "Temperatura procesorului este prea mare."
+                    "description2": "Modul de economisire a bateriei este activat."
                 }
             },
             "voice": {
@@ -2087,6 +2087,53 @@
                     "btnText": "OK",
                     "title": "Instalare nereuşită",
                     "desc": "Încercați din nou mai târziu pentru folosi Lenovo Voice."
+                }
+            },
+            "antiTheft": {
+                "heading": "Intelligent Sensing",
+                "title": "Smart Motion Alert",
+                "desc": "<p><label>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</label></p> <p style='margin-top:4px;'><label>To dismiss the alarm, enter the correct password or log in by Windows Hello.</label></p>",
+                "note": {
+                    "description": "Once you log in the system successfully, this feature will be turned off automatically. You need to enable it again to use it."
+                },
+                "alarm": {
+                    "title": " THE ALARM WILL LAST FOR",
+                    "option1": "10 seconds",
+                    "option2": "20 seconds",
+                    "option3": "30 seconds",
+                    "option4": "1 minute",
+                    "option5": "Never stop"
+                },
+                "allowCamera": {
+                    "title": "TATING PHOTOS",
+                    "describe": "When enabling this feature, the camera takes photos automatically when detecting any movement if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
+                    "checkBoxText": "Enable this feature"
+                },
+                "cameraPrivacy": {
+                    "describe": "Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
+                    "linkText": "Go to Camera privacy mode to turn it off"
+                },
+                "authorizedAccess": {
+                    "describe": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
+                    "linkText": "Go to Windows Settings to give access"
+                },
+                "photo": {
+                    "title": "THE NUMBER OF PHOTOS TAKEN DURING THE MOVEMENT",
+                    "tooltip": "The camera on your computer automatically activates to take pictures when movements are detected. Pictures are taken every 2 seconds and are saved to your local storage.",
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
+                },
+                "showPhoto": {
+                    "title": "PHOTOS HAVE BEEN:",
+                    "link": "View photos"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Lenovo Vantage doesn't have access to the file system.",
+                    "link": "Go to Windows Settings to give access"
                 }
             }
         }
@@ -3990,6 +4037,10 @@
                 "readMore": "Citiţi mai mult",
                 "readLess": "Citiţi maI puţin"
             }
+        },
+        "narrator": {
+            "leftArrow": "left arrow",
+            "rightArrow": "right arrow"
         }
     },
     "dcc": {

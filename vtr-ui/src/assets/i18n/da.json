@@ -60,6 +60,7 @@
                     "autoClose": "Luk automatisk",
                     "networkBoost": "Netværksforstærkning",
                     "hybridMode": "Hybridtilstand",
+                    "overDrive": "Over Drive",
                     "touchpadLock": "Lås på navigationsplade",
                     "lightingDriverPopup": {
                         "headerText": "Kræver installation af driver",
@@ -69,8 +70,7 @@
                     },
                     "lightingColorMessage": {
                         "text": "Valg af farve er ikke tilgængelig for denne effekt."
-                    },
-                    "overDrive": "Over Drive"
+                    }
                 },
                 "systemTools": {
                     "power": "Strøm",
@@ -96,7 +96,8 @@
                     "line9": "<b>Lås på navigationsplade</b><br> Undgå forkerte input ved at deaktivere navigationspladen, mens du spiller",
                     "line10": "<b>Luk automatisk</b><br> Ryd processer, der ikke er nødvendige for spil, før du går i gang med at spille, for at maksimere tilgængelige systemressourcer",
                     "line11": "<b>Varmetilstand</b><br> Angiv din foretrukne enhedsprofil for blæserhastighed og kølingskontrol",
-                    "line12": "<b>Makro-tast</b><br> Tilpas tastaturhandlingerne, så de passer til din spillestil"
+                    "line12": "<b>Makro-tast</b><br> Tilpas tastaturhandlingerne, så de passer til din spillestil",
+                    "line13": "<b>Over Drive </b><br> This function makes your screen respond faster"
                 },
                 "systemInfo": {
                     "systenTooltip": "Peg på CPU-/GPU/RAM og forskellige drev for at få vist disses beskrivelser, herunder fabrikat- og modeloplysninger"
@@ -2052,8 +2053,7 @@
                 "note": {
                     "description": "Denne funktion virker ikke i disse situationer:",
                     "description1": "Computeren er ikke sluttet til vekselstrøm.",
-                    "description2": "Strømbesparelsestilstanden er aktiveret.",
-                    "description3": "CPU-temperaturen er for høj."
+                    "description2": "Strømbesparelsestilstanden er aktiveret."
                 }
             },
             "voice": {
@@ -2087,6 +2087,53 @@
                     "btnText": "ok",
                     "title": "Installation mislykkedes",
                     "desc": "Prøv igen senere for at bruge Lenovo Voice."
+                }
+            },
+            "antiTheft": {
+                "heading": "Intelligent Sensing",
+                "title": "Smart Motion Alert",
+                "desc": "<p><label>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</label></p> <p style='margin-top:4px;'><label>To dismiss the alarm, enter the correct password or log in by Windows Hello.</label></p>",
+                "note": {
+                    "description": "Once you log in the system successfully, this feature will be turned off automatically. You need to enable it again to use it."
+                },
+                "alarm": {
+                    "title": " THE ALARM WILL LAST FOR",
+                    "option1": "10 seconds",
+                    "option2": "20 seconds",
+                    "option3": "30 seconds",
+                    "option4": "1 minute",
+                    "option5": "Never stop"
+                },
+                "allowCamera": {
+                    "title": "TATING PHOTOS",
+                    "describe": "When enabling this feature, the camera takes photos automatically when detecting any movement if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
+                    "checkBoxText": "Enable this feature"
+                },
+                "cameraPrivacy": {
+                    "describe": "Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
+                    "linkText": "Go to Camera privacy mode to turn it off"
+                },
+                "authorizedAccess": {
+                    "describe": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
+                    "linkText": "Go to Windows Settings to give access"
+                },
+                "photo": {
+                    "title": "THE NUMBER OF PHOTOS TAKEN DURING THE MOVEMENT",
+                    "tooltip": "The camera on your computer automatically activates to take pictures when movements are detected. Pictures are taken every 2 seconds and are saved to your local storage.",
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
+                },
+                "showPhoto": {
+                    "title": "PHOTOS HAVE BEEN:",
+                    "link": "View photos"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Lenovo Vantage doesn't have access to the file system.",
+                    "link": "Go to Windows Settings to give access"
                 }
             }
         }
@@ -3990,6 +4037,10 @@
                 "readMore": "Læs flere",
                 "readLess": "Læs færre"
             }
+        },
+        "narrator": {
+            "leftArrow": "left arrow",
+            "rightArrow": "right arrow"
         }
     },
     "dcc": {
