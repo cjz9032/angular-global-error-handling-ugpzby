@@ -7,7 +7,7 @@ export interface Backlight {
 
 	setBacklight(status: SetBacklightStatus): Promise<CommonResponse<null>>;
 
-	GetBacklightOnSystemChange(settings: BacklightOnChangeSettings, callback: (response: GetBacklightResponse) => void): Promise<GetBacklightResponse>;
+	getBacklightOnSystemChange(settings: BacklightOnChangeSettings, callback: (response: {payload: GetBacklightResponse}) => void): Promise<GetBacklightResponse>;
 }
 
 export interface BacklightBase<T = string, K = string> {

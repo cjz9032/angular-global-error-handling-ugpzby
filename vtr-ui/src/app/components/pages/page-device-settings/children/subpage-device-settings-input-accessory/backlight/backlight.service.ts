@@ -80,7 +80,7 @@ export class BacklightService {
 		// );
 		// return this.composer.request<GetBacklightResponse>(request);
 		return new Observable((observer) => {
-			this.backlightFeature.GetBacklightOnSystemChange(
+			this.backlightFeature.getBacklightOnSystemChange(
 				{
 					settingList: [
 						{
@@ -95,7 +95,7 @@ export class BacklightService {
 					]
 				},
 				response => {
-					observer.next(response);
+					observer.next(response.payload);
 				}
 			).then(
 				response => {
