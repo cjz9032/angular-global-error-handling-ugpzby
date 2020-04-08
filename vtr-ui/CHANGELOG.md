@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.9](https://bitbucket.tc.lenovo.com///compare/v1.5.8...v1.5.9) (2020-04-08)
+
+
+### Bug Fixes
+
+* fix none display error in privacy policy area ([25546d9](https://bitbucket.tc.lenovo.com///commit/25546d9fc73626553ac5b8adf2df35d458f4cb25))
+* fix power by info not show up ([65f9fe1](https://bitbucket.tc.lenovo.com///commit/65f9fe19b9f084135be6968b592a04958b82cb30))
+* Fix powered by info content cannot show up ([989e0c2](https://bitbucket.tc.lenovo.com///commit/989e0c278b110a630e1b550e5fff6eaf6f4dcdad))
+
 ### [1.5.8](https://bitbucket.tc.lenovo.com///compare/v1.5.7...v1.5.8) (2020-04-07)
 
 
