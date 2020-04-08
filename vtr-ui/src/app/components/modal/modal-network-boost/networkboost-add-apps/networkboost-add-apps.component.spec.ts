@@ -3,11 +3,13 @@ import { CMSService } from 'src/app/services/cms/cms.service';
 import { DevService } from './../../../../services/dev/dev.service';
 import { CommsService } from 'src/app/services/comms/comms.service';
 import { NetworkBoostService } from 'src/app/services/gaming/gaming-networkboost/networkboost.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHandler } from '@angular/common/http';
 import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { NetworkboostAddAppsComponent } from './networkboost-add-apps.component';
 import { NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
 import { of } from 'rxjs';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 const gamingNetworkBoostMock = jasmine.createSpyObj('NetworkBoostService', ['isShellAvailable', 'setNetworkBoostStatus', 'getNetUsingProcesses', 'addProcessToNetworkBoost', 'deleteProcessInNetBoost']);
 const cmsServiceMock = jasmine.createSpyObj('CMSService', ['fetchCMSContent', 'getOneCMSContent']);
 const commonServiceMock = jasmine.createSpyObj('CommonService', ['isShellAvailable', 'notification']);
@@ -207,6 +209,9 @@ describe('NetworkboostAddAppsComponent', () => {
 				{ provide: NetworkBoostService, useValue: gamingNetworkBoostMock },
 				{ provide: CommsService },
 				{ provide: DevService },
+				{ provide: LoggerService },
+				{ provide: VantageShellService },
+				{ provide: HttpHandler },
 				{ provide: CMSService, useValue: cmsServiceMock },
 				{ provide: CommonService, useValue: commonServiceMock }
 			]

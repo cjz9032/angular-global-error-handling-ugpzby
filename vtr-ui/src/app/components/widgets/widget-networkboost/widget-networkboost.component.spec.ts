@@ -2,7 +2,10 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WidgetNetworkboostComponent } from './widget-networkboost.component';
 import { NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHandler } from '@angular/common/http';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { NetworkBoostService } from 'src/app/services/gaming/gaming-networkboost/networkboost.service';
 
 describe('WidgetNetworkboostComponent', () => {
 	let component: WidgetNetworkboostComponent;
@@ -17,7 +20,11 @@ describe('WidgetNetworkboostComponent', () => {
 			  ],
 			  schemas: [NO_ERRORS_SCHEMA],
 			  providers: [
-				{ provide: HttpClient }
+				{ provide: HttpClient },
+				{ provide: VantageShellService },
+				{ provide:LoggerService },
+				{ provide: HttpHandler },
+				{ provide: NetworkBoostService },
 			]
 		})
 			.compileComponents();
