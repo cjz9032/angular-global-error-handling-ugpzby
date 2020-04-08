@@ -713,6 +713,10 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 				margin-bottom: 1rem;
 				word-wrap: break-word;
 			}
+			&:focus {
+				outline: 0.1rem solid $menu_hover;
+				outline-offset: 0.2rem;
+			}
 		}
 
 		img {
@@ -726,6 +730,12 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 			max-width: 100%;
 			margin-bottom: 3rem;
 			border: none;
+		}
+		.close-btn {
+			&:focus {
+				outline: 0.1rem solid $menu_hover;
+				outline-offset: 0.2rem;
+			}
 		}
 	}
 }
@@ -1464,6 +1474,12 @@ vtr-ui-smart-performance-scanning {
 					}
 				}
 			}
+			.close-button {
+				&:focus {
+					outline: 0.1rem solid $menu_hover !important;
+					outline-offset: 0.2rem !important;
+				}
+			}
 		}
 	}
 }
@@ -1662,15 +1678,6 @@ a, input, label {
 	}
 }
 
-div {
-	>a, input, label {
-		&:focus {
-			outline: 0.1rem solid $menu_hover;
-			outline-offset: 0.2rem;
-		}
-	}
-}
-
 .focus-with-border-radius {
 	&:focus {
 		outline: none !important;
@@ -1687,3 +1694,4 @@ div {
 		}
 	}
 }
+
