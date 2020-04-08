@@ -13,13 +13,13 @@ vtr-ui-row-switch {
 
 .subFunctions {
   margin-left: 4.5rem !important;
-  margin-right: 0.6rem !important;
   p {
     font-size: $fontsize_xs;
   }
   label {
     font-size: $fontsize_xs;
     color: #667481;
+    font-weight: 300;
   }
   .subTitle {
     font-weight: $weight_bold;
@@ -27,9 +27,16 @@ vtr-ui-row-switch {
     font-size: 1.4rem !important;
     margin: 10px 0px;
   }
-  .cameraCheckBox {
-    margin-left: 5px;
+
+  .checkbox {
+    font-size: $fontsize_xs;
+    color: $shade_blue;
+    font-weight: $weight_light;
+    ::ng-deep .auto-set-checkbox {
+      margin-top: 0px !important;
+    }
   }
+
   .select {
     width: 380px;
     .selectDropdown {

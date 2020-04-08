@@ -16,7 +16,7 @@
                     <div id="smartMotionAlertSubFunctions" class="subFunctions">
                         <div class="row">
                             <div class="feature-note p-4">
-                                <p id="smartMotionAlertDescription" name="smartMotionAlertDescription" >
+                                <p id="smartMotionAlertDescription" name="smartMotionAlertDescription">
                                     {{'device.smartAssist.antiTheft.note.description' | translate}}</p>
                             </div>
                         </div>
@@ -40,12 +40,15 @@
                                 <label id="smartMotionAlertSupportPhotoDescribeLabel"
                                     name="smartMotionAlertSupportPhotoDescribeLabel">{{'device.smartAssist.antiTheft.allowCamera.describe' | translate}}</label>
                             </p>
-                            <input type="checkbox" id="smartMotionAlertSupportPhotoCheckbox"
-                                name="smartMotionAlertSupportPhotoCheckbox" [disabled]="checkboxDisabled"
-                                [(ngModel)]="isSupportPhoto" (ngModelChange)='setAllowCamera($event)'>
-                            <label id="SupportPhotoCheckboxText" name="SupportPhotoCheckboxText"
-                                for="smartMotionAlertSupportPhotoCheckbox" class="cameraCheckBox"
-                                attr.aria-label="{{'device.smartAssist.antiTheft.allowCamera.checkBoxText' | translate}}">{{'device.smartAssist.antiTheft.allowCamera.checkBoxText' | translate}}</label>
+
+                            <div class="checkbox">
+                                <vtr-ui-checkbox [componentId]="'smartMotionAlertSupportPhotoCheckbox'"
+                                    [disabled]="checkboxDisabled" [value]="isSupportPhoto" [checked]="isSupportPhoto"
+                                    [label]="'device.smartAssist.antiTheft.allowCamera.checkBoxText' | translate"
+                                    (toggle)='setAllowCamera($event)'>
+                                </vtr-ui-checkbox>
+                            </div>
+                           
                         </div>
 
                         <div class="row" *ngIf="!cameraPrivacyState && !isShowAuthorized">
