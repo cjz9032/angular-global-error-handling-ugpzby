@@ -60,6 +60,7 @@
                     "autoClose": "Automaattinen sulkeminen",
                     "networkBoost": "Verkon tehostus",
                     "hybridMode": "Hybriditila",
+                    "overDrive": "Over Drive",
                     "touchpadLock": "Kosketuslevyn lukitus",
                     "lightingDriverPopup": {
                         "headerText": "Ajurin asennus vaaditaan",
@@ -69,8 +70,7 @@
                     },
                     "lightingColorMessage": {
                         "text": "Värien valinta ei ole käytettävissä tässä tehosteessa."
-                    },
-                    "overDrive": "Over Drive"
+                    }
                 },
                 "systemTools": {
                     "power": "Virta",
@@ -96,7 +96,8 @@
                     "line9": "<b>Kosketuslevyn lukitus </b><br> Estä väärät syötteet poistamalla kosketuslevy käytöstä pelaamisen ajaksi",
                     "line10": "<b>Automaattinen sulkeminen </b><br> Maksimoi käytettävissä olevat järjestelmäresurssit tyhjentämällä ennen pelaamisen aloittamista prosessit, joita ei tarvita pelaamiseen",
                     "line11": "<b>Lämpö-tila </b><br> Määritä haluamaasi laitteen profiiliin tuulettimen kierrosnopeuden ja jäähdytyksen säätö",
-                    "line12": "<b>Makronäppäin</b><br> Näppäimistötoimintojen mukauttaminen pelityyliisi sopiviksi"
+                    "line12": "<b>Makronäppäin</b><br> Näppäimistötoimintojen mukauttaminen pelityyliisi sopiviksi",
+                    "line13": "<b>Over Drive </b><br> This function makes your screen respond faster"
                 },
                 "systemInfo": {
                     "systenTooltip": "Näytä keskusyksikön/näytönohjaimen/RAM-muistin kuvaukset, mukaan lukien valmistus- ja mallitiedot, viemällä osoitin näiden ja eri asemien päälle"
