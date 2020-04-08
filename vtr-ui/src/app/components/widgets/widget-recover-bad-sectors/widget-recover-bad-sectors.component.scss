@@ -7,16 +7,23 @@
 	padding: 2.4rem;
 	@include high-contrast-border;
 
+	.title-box {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
 	.title {
 		color: $main_dark;
 		font-size: $fontsize_xl;
 		font-weight: $weight_light;
+		text-align: left;
 	}
 
 	.title-question-mark {
 		font-size: $fontsize_lg;
 		font-weight: $weight_light;
 		padding-left: 1rem;
+		text-align: right;
 
 		.recover-question-icon {
 			margin-left: 0.5rem;
