@@ -119,6 +119,10 @@ export class FeedbackFormComponent implements OnInit {
 		this.deviceService.launchUri(uriPath);
 	}
 
+	closeModal() {
+		this.activeModal.close('close');
+	}
+
 	@HostListener('window: focus')
 	onFocus(): void {
 		const modal = document.querySelector('.feedback-modal') as HTMLElement;

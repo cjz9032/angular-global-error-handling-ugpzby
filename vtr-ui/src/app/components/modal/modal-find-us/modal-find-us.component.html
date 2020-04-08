@@ -32,19 +32,11 @@
 			<div class="text-center description" [innerHtml]="'support.needHelp.facebookDescription' | translate"></div>
 		</a>
 	</div>
-	<div role="button"
-		class="close-btn"
-		tabindex="0"
-		id="find-us-close-button"
-		[attr.aria-label]="'common.ui.close' | translate"
-		vtrMetrics
-		metricsItem="FindUsModalCloseButton"
-		metricsEvent="FeatureClick"
-		metricsParent="Page.Support.FindUs"
-		(click)="onCancelClick()"
-		(keydown.enter)="onCancelClick()">
-		<img [src]=" 'assets/icons/Close.svg' | svgInline | async"
-			alt=""
-			srcset="">
+
+	<div class="btn-modal-close">
+		<vtr-ui-close-button linkId="find-us-close-button"
+			metricsItem="FindUsModalCloseButton"
+			metricsParent="Page.Support.FindUs"
+			(clickClose)="closeModal()"></vtr-ui-close-button>
 	</div>
 </div>
