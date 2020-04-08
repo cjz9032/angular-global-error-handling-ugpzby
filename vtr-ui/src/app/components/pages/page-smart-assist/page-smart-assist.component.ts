@@ -553,8 +553,11 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 
 		this.smartAssist.setZeroTouchLoginAdjustStatus(this.intelligentSecurity.isZeroTouchLoginAdjustEnabled)
 			.then((isSuccess: boolean) => {
-				if (!event.switchValue) {
-					this.initZeroTouchLogin(); //refresh slider-bar when turn off the autoAdjust toggle
+				if (!event.switchValue) { // refresh slider-bar when turn off the autoAdjust toggle
+					this.smartAssist.getZeroTouchLoginDistance().then((response) => {
+						this.intelligentSecurity.zeroTouchLoginDistance = response;
+						this.smartAssistCache.intelligentSecurity.zeroTouchLoginDistance = this.intelligentSecurity.zeroTouchLoginDistance;
+					})
 				}			
 				this.logger.info(`onDistanceSensitivityAdjustToggle.setZeroTouchLoginAdjustStatus ${isSuccess}`, this.intelligentSecurity.isZeroTouchLoginAdjustEnabled);
 			});
