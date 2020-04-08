@@ -29,6 +29,7 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { FeedbackModule } from '../feedback/feedback.module';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 import { LicensesService } from 'src/app/services/licenses/licenses.service';
+import { UiCloseButtonModule } from 'src/app/components/ui/ui-close-button/ui-close-button.module';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { LicensesService } from 'src/app/services/licenses/licenses.service';
 		SupportRoutingModule,
 		FontAwesomeModule,
 		CommonUiModule,
+		UiCloseButtonModule,
 		CommonPipeModule,
 		CommonWidgetModule,
 		SharedModule,

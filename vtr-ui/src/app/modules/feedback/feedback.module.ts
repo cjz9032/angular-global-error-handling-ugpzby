@@ -13,6 +13,7 @@ import { NgbModalModule, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-info/widget-offline.module';
 import { MetricsModule } from 'src/app/services/metric/metrics.module';
+import { UiCloseButtonModule } from 'src/app/components/ui/ui-close-button/ui-close-button.module';
 
 @NgModule({
 	declarations: [
@@ -25,6 +26,7 @@ import { MetricsModule } from 'src/app/services/metric/metrics.module';
 		FeedbackRoutingModule,
 		CommonPipeModule,
 		UiButtonModule,
+		UiCloseButtonModule,
 		NgbDropdownModule,
 		WidgetOfflineModule,
 		FontAwesomeModule,

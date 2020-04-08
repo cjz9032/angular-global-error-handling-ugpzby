@@ -1,17 +1,15 @@
 <div class="vtr-ui-article-item mb-24"
 	*ngIf="articleType === SupportContentStatus.Articles"
 	#articleItemDiv
-	id="{{'article-item-' + index}}"
-	attr.aria-label="{{'article-item-' + index}}"
 	[ngClass]="{'item-no-img': !item.Thumbnail, 'item-no-title': !item.Title}">
 	<div class="container-fluid">
 		<div class="row">
 			<a href="javascript:;"
-				class="article-conetnt"
+				class="article-conetnt focus-with-border-radius"
 				tabindex="{{tabIndex}}"
 				vtrMetrics
 				id="{{'article-item-card-' + index}}"
-				attr.aria-label="{{'article-item-card-' + index}}"
+				[attr.aria-label]="item.Title"
 				metricsEvent="ArticleClick"
 				metricsParent="Page.Support"
 				metricsItemID="{{ item.Id }}"
@@ -57,17 +55,15 @@
 <div class="vtr-ui-article-item mb-24"
 	*ngIf="articleType === SupportContentStatus.Content"
 	#articleItemDiv
-	id="{{'article-item-' + index}}"
-	attr.aria-label="{{'article-item-' + index}}"
 	[ngClass]="{'item-no-img': !item.FeatureImage, 'item-no-title': !item.Title}">
 	<div class="container-fluid">
 		<div class="row">
 			<a [attr.href]="item.ActionLink"
 				target="_blank"
-				class="article-conetnt"
+				class="article-conetnt focus-with-border-radius"
 				vtrMetrics
 				id="{{'article-item-card-' + index}}"
-				attr.aria-label="{{'article-item-card-' + index}}"
+				[attr.aria-label]="item.Title"
 				tabindex="{{tabIndex}}"
 				metricsEvent="ArticleClick"
 				metricsParent="Page.Support"

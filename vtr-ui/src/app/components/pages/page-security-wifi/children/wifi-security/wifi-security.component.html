@@ -4,17 +4,21 @@
 			<div class="col">
 				<div class="heading">{{'security.wifisecurity.container.title' | translate}}</div>
 			</div>
-			<div  class="pull right" >
-					<img *ngIf="!deviceService.isGaming"  class="coronet-logo"
+			<div class="pull right">
+				<img *ngIf="!deviceService.isGaming"
+					class="coronet-logo"
 					[src]=" 'assets/images/coronet-logo.svg' | svgInline | async" />
-					<img *ngIf="deviceService.isGaming"  class="coronet-logo"
+				<img *ngIf="deviceService.isGaming"
+					class="coronet-logo"
 					[src]="'assets/images/coronet-logo-gaming.svg' | svgInline | async" />
 			</div>
 		</div>
 		<div class="row mb-20">
 			<div>
-				<div *ngIf="data.isLWSEnabled === false" class="text-regular">{{ 'security.wifisecurity.container.disableDescribe' | translate }}</div>
-				<div *ngIf="data.isLWSEnabled" class="text-regular">{{ 'security.wifisecurity.container.enabledDescribe' | translate }}</div>
+				<div *ngIf="data.isLWSEnabled === false"
+					class="text-regular">{{ 'security.wifisecurity.container.disableDescribe' | translate }}</div>
+				<div *ngIf="data.isLWSEnabled"
+					class="text-regular">{{ 'security.wifisecurity.container.enabledDescribe' | translate }}</div>
 			</div>
 		</div>
 		<div class="row mb-20 no-gutters">
@@ -54,10 +58,10 @@
 										</h3>
 									</div>
 								</div>
-								<div class="col-5 align-items-center text-right sm-device-responsive row flex-wrap-reverse justify-content-end">
+								<div
+									class="col-5 align-items-center text-right sm-device-responsive row flex-wrap-reverse justify-content-end">
 									<vtr-ui-switch-onoff
 										[ngClass]="{'switch-disable': data.isLWSEnabled === undefined || data.wifiSecurity?.changeWifiSecurity}"
-										name="wifisecurity"
 										[value]="data.isLWSEnabled"
 										[onOffSwitchId]="'sa-ws-switch'"
 										[disabled]="data.isLWSEnabled === undefined || data.wifiSecurity?.changeWifiSecurity"
@@ -66,15 +70,16 @@
 							</div>
 						</div>
 					</div>
-					<div *ngIf="data.isLWSEnabled" class="card-history">
-						<vtr-container-collapsible
-							[collapseLinkId]="'sa-ws-lnk'"
+					<div *ngIf="data.isLWSEnabled"
+						class="card-history">
+						<vtr-container-collapsible [collapseLinkId]="'sa-ws-lnk'"
 							[cardTitle]="'security.wifisecurity.container.networkHistory' | translate"
 							componentName="wifiHistoriesCollapsible"
 							[isCollapsed]="!isShowMore"
 							[allowCollapse]="true">
 							<div class="border-top-none show">
-								<div class="card-body p-0 show" [hidden]="data?.histories?.length === 0">
+								<div class="card-body p-0 show"
+									[hidden]="data?.histories?.length === 0">
 									<div class="row no-gutters wifi-card">
 										<div *ngFor="let history of data.histories"
 											class="col-sm-12 col-md-6 col-lg-12 col-xl-6 pr-3 pb-3 wifi">

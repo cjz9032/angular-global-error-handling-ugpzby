@@ -69,8 +69,8 @@
                     "autoClose": "Automaticky zavřít",
                     "networkBoost": "Zvýšení vý-konu sítě",
                     "hybridMode": "Hybridní re-žim",
-                    "touchpadLock": "Zámek doty-kové plošky",
-                    "overDrive": "Over Drive"
+                    "overDrive": "Over Drive",
+                    "touchpadLock": "Zámek doty-kové plošky"
                 },
                 "systemTools": {
                     "power": "Napájení",
@@ -99,7 +99,8 @@
                     "line9": "<b>Zámek dotykové plošky </b><br> Vyhněte se neúmyslným kliknutím vypnutím dotykové plošky",
                     "line10": "<b>Automaticky zavřít </b><br> Před hraním her ukončete procesy, které nepotřebuje, abyste měli k dispozici co nejvíce systémových prostředků",
                     "line11": "<b>Režim tepl </b><br> Nastavte svůj profil zařízení pro otáčky ventilátoru a řízení chlazení",
-                    "line12": "<b>Klávesa maker</b><br>Přizpůsobte si akce na klávesnici podle svého stylu hraní"
+                    "line12": "<b>Klávesa maker</b><br>Přizpůsobte si akce na klávesnici podle svého stylu hraní",
+                    "line13": "<b>Over Drive </b><br> This function makes your screen respond faster"
                 },
                 "systemInfo": {
                     "systenTooltip": "Umístěním kurzoru na CPU/GPU/RAM a různé jednotky zobrazíte jejich popisy, včetně informací o výrobci a modelu"

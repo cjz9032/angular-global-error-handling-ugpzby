@@ -1,80 +1,130 @@
-// import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { NO_ERRORS_SCHEMA } from "@angular/core";
 
-// import { UiSmartPerformanceComponent } from './ui-smart-performance.component';
-// import { NO_ERRORS_SCHEMA } from '@angular/core';
-// import { TranslationModule } from 'src/app/modules/translation.module';
-// import { TranslateStore } from '@ngx-translate/core';
-// import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
+import { UiSmartPerformanceComponent } from "./ui-smart-performance.component";
+import { SmartPerformanceService } from "src/app/services/smart-performance/smart-performance.service";
+import { CommonService } from "src/app/services/common/common.service";
+import { LoggerService } from "src/app/services/logger/logger.service";
 
-// describe('UiSmartPerformanceComponent', () => {
-// 	let component: UiSmartPerformanceComponent;
-// 	let fixture: ComponentFixture<UiSmartPerformanceComponent>;
+import { TranslationModule } from "src/app/modules/translation.module";
+import { TranslateStore } from "@ngx-translate/core";
 
-// 	beforeEach(async(() => {
-// 		TestBed.configureTestingModule({
-// 			declarations: [UiSmartPerformanceComponent],
-// 			schemas: [NO_ERRORS_SCHEMA],
-// 			imports: [TranslationModule],
-// 			providers: [TranslateStore]
-// 		})
-// 			.compileComponents();
-// 	}));
+import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 
-// 	describe(':', () => {
+describe("UiSmartPerformanceComponent", () => {
+	let component: UiSmartPerformanceComponent;
+	let fixture: ComponentFixture<UiSmartPerformanceComponent>;
+	let smartPerformanceService: SmartPerformanceService;
+	let commonService: CommonService;
+	let logger: LoggerService;
+	let modalService: NgbModal;
 
-// 		function setup() {
-// 			const fixture = TestBed.createComponent(UiSmartPerformanceComponent);
-//             const component = fixture.debugElement.componentInstance;
-//             const smartService = fixture.debugElement.injector.get(SmartPerformanceService);
-			
-// 			return { fixture, component, smartService };
-// 		}
+	beforeEach(async(() => {
+		TestBed.configureTestingModule({
+			declarations: [UiSmartPerformanceComponent],
+			schemas: [NO_ERRORS_SCHEMA],
+			imports: [TranslationModule],
+			providers: [
+				TranslateStore,
+				SmartPerformanceService,
+				CommonService,
+				LoggerService,
+				NgbModal
+			]
+		});
+	}));
 
-// 		it('should create the app', (() => {
-// 			const { component } = setup();
-// 			expect(component).toBeTruthy();
-// 		}));
+	it("should create the component", async(() => {
+        fixture = TestBed.createComponent(UiSmartPerformanceComponent);
+        component = fixture.componentInstance;
+        commonService = TestBed.get(CommonService);
+        spyOn(commonService, 'getLocalStorageValue');
+        fixture.detectChanges();
+		expect(component).toBeTruthy();
+    }));
+    
+    it('should call changeScanStatus', async(() => {
+        fixture = TestBed.createComponent(UiSmartPerformanceComponent);
+        component = fixture.componentInstance;
+        const event = {
+            boost: 60,
+            rating: 8,
+            secure: 5,
+            tune: 75,
+        }
+        component.changeScanStatus(event);
+        expect(component.isScanningCompleted).toBe(true)
+    }));
 
-// 		// it('should test changeScanStatus ', () => {
-// 		// 	const { fixture, component } = setup();
-// 		// 	// spyOn(component, 'changeScanStatus');
-//         //     component.changeScanStatus();
-// 		// 	fixture.detectChanges();
-// 		// 	expect(component.changeScanStatus).toHaveBeenCalled();
-//         // });
-        
-//         it('should test changeScanStatus ', () => {
-//             const { fixture, component } = setup();
-//             // spyOn(component, 'changeScanStatus');
-//             let $event = {
-// 				rating: 4,
-// 				tune: 15,
-// 				boost: 50,
-// 				secure: 12,
-// 			}
-// 			component.changeScanStatus($event);
-// 			expect(component.rating).toEqual($event.rating)
-// 			expect(component.tune).toEqual($event.tune)
-// 			expect(component.boost).toEqual($event.boost)
-// 			expect(component.secure).toEqual($event.secure)
-//             // fixture.detectChanges();
-//             // expect(component.changeScanStatus).toHaveBeenCalled();
-// 		});
-		
-// 		it('should call changeScanEvent', () => {
-// 			const { fixture, component } = setup();
-// 			component.changeScanEvent()
-// 			expect(component.isScanning).toEqual(true)
-// 		})
-        
-//         it('#ScanNow should call', () => {
-// 			const { fixture, component, smartService } = setup();
-// 			component.smartPerformanceService.isShellAvailable = true;
-//             spyOn(smartService, 'getReadiness').and.returnValue(Promise.resolve(true));
-//             fixture.detectChanges();
-//             component.ScanNow();
-//             expect(smartService.getReadiness).toHaveBeenCalled();
-//         });
+    it('should call updateSubItemsList - if case', async(() => {
+        const subitem = {items: ['abc', 'hello']}
+        fixture = TestBed.createComponent(UiSmartPerformanceComponent);
+        component = fixture.componentInstance;
+        component.updateSubItemsList(subitem);
+        expect(component.subItems.length).not.toEqual(0)
+    }));
 
-// 	});
-// });
+    it('should call updateSubItemsList - else case', async(() => {
+        const subitem = {}
+        fixture = TestBed.createComponent(UiSmartPerformanceComponent);
+        component = fixture.componentInstance;
+        component.updateSubItemsList(subitem);
+        expect(component.subItems.length).toEqual(0)
+    }));
+
+    it('should call changeScanEvent', async(() => {
+        fixture = TestBed.createComponent(UiSmartPerformanceComponent);
+        component = fixture.componentInstance;
+        component.changeScanEvent();
+        expect(component.isScanning).toBe(true)
+        expect(component.isScanningCompleted).toBe(false)
+    }));
+
+    it('should call ScanNow - Promise resolved', async(() => {
+        fixture = TestBed.createComponent(UiSmartPerformanceComponent);
+        component = fixture.componentInstance;
+        smartPerformanceService = TestBed.get(SmartPerformanceService);
+        smartPerformanceService.isShellAvailable = true;
+        const spy = spyOn(smartPerformanceService, 'getReadiness').and.returnValue(Promise.resolve(true));
+        component.ScanNow();
+        expect(spy).toHaveBeenCalled()
+    }));
+
+    it('should call ScanNow - Promise note resolved', async(() => {
+        fixture = TestBed.createComponent(UiSmartPerformanceComponent);
+        component = fixture.componentInstance;
+        smartPerformanceService = TestBed.get(SmartPerformanceService);
+        smartPerformanceService.isShellAvailable = true;
+        const spy = spyOn(smartPerformanceService, 'getReadiness').and.returnValue(Promise.resolve(false));
+        component.ScanNow();
+        expect(spy).toHaveBeenCalled()
+    }));
+
+    it('should call ScanNow - Promise rejected', async(() => {
+        fixture = TestBed.createComponent(UiSmartPerformanceComponent);
+        component = fixture.componentInstance;
+        smartPerformanceService = TestBed.get(SmartPerformanceService);
+        smartPerformanceService.isShellAvailable = true;
+        const spy = spyOn(smartPerformanceService, 'getReadiness').and.returnValue(Promise.reject());
+        component.ScanNow();
+        expect(spy).toHaveBeenCalled()
+    }));
+
+    it('should call ScanNow - isShellAvailable is false', async(() => {
+        fixture = TestBed.createComponent(UiSmartPerformanceComponent);
+        component = fixture.componentInstance;
+        smartPerformanceService = TestBed.get(SmartPerformanceService);
+        smartPerformanceService.isShellAvailable = false;
+        const spy = spyOn(smartPerformanceService, 'getReadiness');
+        component.ScanNow();
+        expect(spy).not.toHaveBeenCalled()
+    }));
+
+    it('should call cancelScan', async(() => {
+        fixture = TestBed.createComponent(UiSmartPerformanceComponent);
+        component = fixture.componentInstance;
+        component.cancelScan();
+        expect(component.isScanning).toBe(false)
+        expect(component.isScanningCompleted).toBe(false)
+    }));
+});

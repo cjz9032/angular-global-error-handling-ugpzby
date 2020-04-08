@@ -1,5 +1,3 @@
-import { TranslateService } from '@ngx-translate/core';
-
 /**
  * model for status widgets
  */
