@@ -2,7 +2,7 @@
  [attr.aria-label]="'system restart is required window'" vtrOutsideClick (clickOutside)="onOutsideClick()">
 	<div class="modal-body vtr-ui-popover" tabindex="-1">
 			<div class="btn-close">
-				<a type="button" class="close"
+				<a type="button" class="close restart_popup_close_btn"
 				tabindex="1"  (click)="close()" (keyup.enter)="close()" vtrMetrics
 					[metricsItem]="'popover_close'" metricsEvent="featureClick" metricsParent="Gaming.Dashboard"
 					id="{{automationId+'_restart_popup_close_btn'}}" attr.aria-label="gaming popup close"
