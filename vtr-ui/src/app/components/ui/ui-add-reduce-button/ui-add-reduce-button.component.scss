@@ -5,9 +5,15 @@
     background-color: $white5;
     border-radius: .6rem;
     display: flex;
+    @media #{$high-contrast} {
+        background-color: $highContrastGray;
+    }
     button {
         margin-top: -0.2rem;
-        font-size: 3rem;
+        font-size: 0;
+        span {
+            font-size: 3rem;
+        }
     }
     p {
         flex: 1;
@@ -28,6 +34,9 @@
             justify-content: center;
             align-items: center;
             display: -webkit-flex;
+            @media #{$high-contrast} {
+                -ms-high-contrast-adjust: none;
+            }
         }
     }
 }

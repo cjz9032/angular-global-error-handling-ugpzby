@@ -43,11 +43,11 @@
 							{{ 'support.quickAccess.categoriesDesc' | translate }}</div>
 						<div class="quick-assess-categories row no-gutters">
 							<div role="button"
-								class="quick-assess-item"
+								class="quick-assess-item focus-with-border-radius"
 								*ngFor="let category of articleCategories, let i = index"
-								tabindex="1"
+								[tabindex]="selectedCategoryId === category.Id ? -1 : 1"
 								id="{{'support-category-'+category.Id}}"
-								attr.aria-label="{{'support-category-'+category.Title}}"
+								[attr.aria-label]="category.Title + 'support.quickAccess.seeArticles' | translate"
 								vtrMetrics
 								metricsItem="Support.CategoryClicked"
 								metricsEvent="featureClick"
@@ -55,7 +55,8 @@
 								metricsParent="Page.Support"
 								(keyup.enter)="clickCategory(category.Id)"
 								(click)="clickCategory(category.Id)">
-								<div class="item-con">
+								<div class="item-con"
+									[class.selected]="selectedCategoryId === category.Id">
 									<div class="item-icon">
 										<img *ngIf="category.Image" [src]="category.Image" />
 										<img *ngIf="!category.Image" [src]="localCateIcons[i] | svgInline | async" />
@@ -162,7 +163,9 @@
 				<div class="col col-12 px-0 pt-0 pb-24">
 					<vtr-widget-support [title]="'support.documentation.title' | translate"
 						[description]="''"
-						[items]="supportDatas.documentation">
+						[items]="supportDatas.documentation"
+						[widgetTittleId]="'documentation'"
+						[widgetDescriptionId]="''">
 					</vtr-widget-support>
 				</div>
 			</div>
@@ -172,7 +175,10 @@
 				<div class="col col-12 px-0 pt-0 pb-24">
 					<vtr-widget-support [title]="'support.needHelp.title' | translate"
 						[description]="'support.needHelp.description' | translate"
-						[items]="supportDatas.needHelp"></vtr-widget-support>
+						[items]="supportDatas.needHelp"
+						[widgetTittleId]="'need-help'"
+						[widgetDescriptionId]="'contact-us-help'">
+					</vtr-widget-support>
 				</div>
 			</div>
 
@@ -181,7 +187,10 @@
 				<div class="col col-12 px-0 pt-0 pb-24">
 					<vtr-widget-support [title]="'support.quicklinks.title' | translate"
 						[description]="''"
-						[items]="supportDatas.quicklinks"></vtr-widget-support>
+						[items]="supportDatas.quicklinks"
+						[widgetTittleId]="'quicklinks'"
+						[widgetDescriptionId]="''">
+					</vtr-widget-support>
 				</div>
 			</div>
 			<div class="row d-none d-lg-block"

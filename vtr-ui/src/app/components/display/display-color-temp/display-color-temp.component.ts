@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ChangeContext } from 'ng5-slider';
 import { EyeCareMode } from 'src/app/data-models/camera/eyeCareMode.model';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 
@@ -13,9 +12,9 @@ export class DisplayColorTempComponent implements OnInit {
 	@Input() enableSlider: boolean;
 	@Input() disableReset = false;
 	@Input() manualRefresh: any;
-	@Output() displayColorTempChange: EventEmitter<ChangeContext> = new EventEmitter();
-	@Output() resetTemparature: EventEmitter<any> = new EventEmitter();
-	@Output() colorPreviewValue: EventEmitter<ChangeContext> = new EventEmitter();
+	@Output() displayColorTempChange: any = new EventEmitter();
+	@Output() resetTemparature: any = new EventEmitter();
+	@Output() colorPreviewValue: any = new EventEmitter();
 
 
 	constructor(private logger: LoggerService) { }
@@ -24,7 +23,7 @@ export class DisplayColorTempComponent implements OnInit {
 		this.logger.info('DisplayColorTempComponent', this.displayColorTempSettings);
 	}
 
-	public onDisplayColorTemparatureChange($event: ChangeContext) {
+	public onDisplayColorTemparatureChange($event: any) {
 		this.displayColorTempChange.emit($event);
 	}
 

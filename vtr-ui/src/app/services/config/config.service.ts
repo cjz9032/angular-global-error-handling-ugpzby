@@ -332,6 +332,24 @@ export class ConfigService {
 				this.logger.exception('configService.showSmartAssist smartAssist.getSuperResolutionStatus check', error);
 			}
 
+			// Anti Theft check
+			try {
+				this.logger.info('configService.showSmartAssist: Anti Theft check');
+				assistCapability.isAntiTheftSupported = await this.smartAssist.getAntiTheftStatus();
+				this.logger.info('configService.showSmartAssist: Anti Theft check completed');
+			} catch (error) {
+				this.logger.exception('configService.showSmartAssist smartAssist.getAntiTheftStatus check', error);
+			}
+
+			// HSA intelligent security check
+			try {
+				this.logger.info('configService.showSmartAssist: HSA intelligent security check');
+				assistCapability.isHsaIntelligentSecuritySupported = await this.smartAssist.getHsaIntelligentSecurityStatus();
+				this.logger.info('configService.showSmartAssist: HSA intelligent security check completed');
+			} catch (error) {
+				this.logger.exception('configService.showSmartAssist smartAssist.getHsaIntelligentSecurityStatus check', error);
+			}
+
 			// APS capability check
 			try {
 				this.logger.info('configService.showSmartAssist: APS capability check');
@@ -343,14 +361,16 @@ export class ConfigService {
 				this.logger.exception('configService.showSmartAssist APS capability check', error);
 			}
 
-
 			this.isSmartAssistAvailable =
 				assistCapability.isIntelligentSecuritySupported ||
 				assistCapability.isLenovoVoiceSupported ||
 				assistCapability.isIntelligentMediaSupported.available ||
 				assistCapability.isIntelligentScreenSupported ||
 				assistCapability.isSuperResolutionSupported.available ||
-				assistCapability.isAPSSupported;
+				assistCapability.isAntiTheftSupported.available ||
+				assistCapability.isAPSSupported ||
+				((assistCapability.isHsaIntelligentSecuritySupported.capability && 0x100) != 0) ||
+				((assistCapability.isHsaIntelligentSecuritySupported.capability && 0x80) != 0);
 
 			if (this.isSmartAssistAvailable) {
 				this.addSmartAssistMenu(this.menu);

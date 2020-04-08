@@ -36,7 +36,7 @@
 			}
 		}
 	}
-	
+
 	ul.list-group {
 		list-style-type: none;
 		//padding-bottom: 3rem;
@@ -46,6 +46,18 @@
 					border-bottom: none !important;
 				}
 			}
+		}
+	}
+	.tab-focus-blue {
+		&:focus {
+			outline: 0.1rem solid $light;
+			outline-offset: 0.2rem;
+		}
+	}
+	.tab-focus-white {
+		&:focus {
+			outline: 0.1rem solid $menu_hover;
+			outline-offset: 0.2rem;
 		}
 	}
 }

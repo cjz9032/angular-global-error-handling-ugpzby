@@ -51,7 +51,10 @@
     fa-icon {
       color: #4579f0;
       font-size: 2rem;
-      padding: 0 2.5rem;
+	  padding: 0 2.5rem;
+	  &:focus {
+		outline: 0.1rem solid $menu_hover;
+	}
     }
     color: #f12e2e;
     font-size: 2rem;
@@ -61,7 +64,13 @@
     border-radius: 0.5rem;
     border: 0.1rem solid rgba(0, 0, 0, 0.1);
     margin: 0;
-    padding: 0;
+	padding: 0;
+	.main-block {
+		&:focus {
+			outline: 0.1rem solid $menu_hover;
+			outline-offset: 0.2rem;
+		}
+	}
 
     .toggle-icon {
       fa-icon {

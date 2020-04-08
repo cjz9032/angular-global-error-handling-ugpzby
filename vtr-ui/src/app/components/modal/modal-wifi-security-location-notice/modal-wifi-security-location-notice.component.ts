@@ -6,11 +6,11 @@ import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { WifiHomeViewModel } from 'src/app/data-models/security-advisor/wifisecurity.model';
 
 @Component({
-	selector: 'vtr-modal-wifi-securiry-location-notice',
-	templateUrl: './modal-wifi-securiry-location-notice.component.html',
-	styleUrls: ['./modal-wifi-securiry-location-notice.component.scss']
+	selector: 'vtr-modal-wifi-security-location-notice',
+	templateUrl: './modal-wifi-security-location-notice.component.html',
+	styleUrls: ['./modal-wifi-security-location-notice.component.scss']
 })
-export class ModalWifiSecuriryLocationNoticeComponent implements OnInit {
+export class ModalWifiSecurityLocationNoticeComponent implements OnInit {
 
 	@Input() header: string;
 	@Input() description: string;

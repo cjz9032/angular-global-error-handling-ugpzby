@@ -10,6 +10,12 @@
         padding: 2.4rem;
         box-shadow: 0 .8rem 1.6rem 0;
         overflow: hidden;
+        @media #{$black-on-white} {
+            border: 1px solid $highContrastGray;
+        }
+        @media #{$white-on-black} {
+            border: 1px solid $highContrastGray;
+        }
         .lighting-describe{
             color:$gaming_lightest;
             font-size: 1.4rem;
@@ -138,6 +144,9 @@
                 }
                 .lighting-color-inner{
                     position: relative;
+                    @media #{$high-contrast} {
+                        -ms-high-contrast-adjust: none;
+                    }
                     vtr-ui-color-picker{
                         position: absolute;
                         left: 50%;

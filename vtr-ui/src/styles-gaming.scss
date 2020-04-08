@@ -157,6 +157,57 @@
 	width: 100%;
 	height: 100%;
 	background-color: $gaming_bg;
+
+	ul,
+	ol,
+	li,
+	dl {
+		list-style: none;
+		margin: 0;
+	}
+
+	.border-radius-button {
+		font-size: 14px;
+		line-height: 1.5;
+		font-family: "Segoe UI";
+		font-weight: bold;
+		color: $white100;
+		padding: 8px 20px;
+		background-color: $blueFill;
+		border-radius: 20px;
+		transition: all 0.2s ease;
+		// &:hover {
+		// 	background-color: $blueHover;
+		// 	cursor: pointer;
+		// }
+		// &:active {
+		// 	transform: scale(0.96);
+		// }
+	}
+
+	.under-line-button {
+		font-size: 14px;
+		line-height: 1.5;
+		font-family: "Segoe UI";
+		font-weight: bold;
+		color: $blueFill;
+		border-bottom: 2px solid $blueFill;
+		padding: 8px 2px 0px 2px;
+		height: 32px;
+		border-radius: 0px;
+		margin-top: -8px;
+		transition: all 0.2s ease;
+		// &:hover {
+		//   color: $blueHover;
+		//   border-bottom: 2px solid $blueHover;
+		//   padding: 8px 4px 0px 4px;
+		//   cursor: pointer;
+		// }
+		// &:active {
+		//   transform: scale(0.96);
+		// }
+	}
+
 	vtr-container-collapsible {
 		.vtr-container-collapsible.white-theme {
 			background: $gaming_darkest !important;
@@ -1914,6 +1965,23 @@ body.focus-enable{
 		button.close{
 		opacity:1 !important
 		}	
+		vtr-ui-header-warranty{
+			.dropdown-content{
+				.dropdown-btn {
+					&:focus{
+						outline: 1px dotted !important;
+					}
+				}
+			}
+		}
+		.Article-Detail-Modal{
+		&.content-gaming{
+			*:focus{
+			outline: 1px dotted !important;
+			outline-color:$gaming_darkest !important;
+		}
+		}
+	}
 	}
 }
 
@@ -2021,16 +2089,6 @@ vtr-container-card {
 	margin: 0;
 }
 
-ul,
-ol,
-li,
-dl {
-	list-style: none;
-	margin: 0;
-}
-
-
-
 button {
 	outline: none;
 	border: none;
@@ -2063,6 +2121,10 @@ button {
 			border-radius: 0.6rem;
 		}
 		.gaming-modal-fun {
+			border-radius: .6rem;
+			@media #{$high-contrast} {
+					border: 1px solid $highContrastGray;
+			}
 			.modal-loading {
 				font-size: 10rem;
 				color: $main;
@@ -2094,12 +2156,6 @@ button {
 						padding: 0.5rem 0 2rem 0;
 						line-height: 2rem;
 					}
-					@media #{$black-on-white} {
-						background: $gaming_darkest;
-					}
-					@media #{$white-on-black} {
-						background: $gaming_darkest;
-					}
 					.close {
 						width: 3.2rem;
 						height: 3.2rem;
@@ -2114,12 +2170,6 @@ button {
 						padding: 0;
 						letter-spacing: normal;
 						font-family: "SegoeUI";
-						@media #{$black-on-white} {
-							color: $gaming_lightest;
-						}
-						@media #{$white-on-black} {
-							color: $gaming_lightest;
-						}
 					}
 				}
 				.modal-body {
@@ -2128,12 +2178,6 @@ button {
 					overflow-y: auto;
 					overflow-x: hidden;
 					width: 100%;
-					@media #{$black-on-white} {
-						border: 0.1rem solid $gaming_darkest;
-					}
-					@media #{$white-on-black} {
-						border: 0.1rem solid $gaming_darkest;
-					}
 				}
 				.modal-footer {
 					padding: 0;
@@ -2168,47 +2212,6 @@ button {
 	}
 }
 
-.border-radius-button {
-	font-size: 14px;
-	line-height: 1.5;
-	font-family: "Segoe UI";
-	font-weight: bold;
-	color: $white100;
-	padding: 8px 20px;
-	background-color: $blueFill;
-	border-radius: 20px;
-	transition: all 0.2s ease;
-	// &:hover {
-	// 	background-color: $blueHover;
-	// 	cursor: pointer;
-	// }
-	// &:active {
-	// 	transform: scale(0.96);
-	// }
-}
-
-.under-line-button {
-	font-size: 14px;
-	line-height: 1.5;
-	font-family: "Segoe UI";
-	font-weight: bold;
-	color: $blueFill;
-	border-bottom: 2px solid $blueFill;
-	padding: 8px 2px 0px 2px;
-	height: 32px;
-	border-radius: 0px;
-	margin-top: -8px;
-	transition: all 0.2s ease;
-	// &:hover {
-	//   color: $blueHover;
-	//   border-bottom: 2px solid $blueHover;
-	//   padding: 8px 4px 0px 4px;
-	//   cursor: pointer;
-	// }
-	// &:active {
-	//   transform: scale(0.96);
-	// }
-}
 .is-gaming,
 .gaming-help-popup,
 .battery-modal-size {

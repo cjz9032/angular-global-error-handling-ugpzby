@@ -1,30 +1,53 @@
-<div class="modal-body vtr-modal-article-detail" id="article-dialog" role="dialog">
-	<h1 id="article-title" role="heading">{{articleTitle}}</h1>
-	<div class="article-content" tabindex="0" [ngSwitch]="contentStatus">
-		<img [hidden]="!articleImage" src="{{articleImage}}"
-			alt="">
-		<div class="article-body" *ngSwitchCase="AllContentStatus.Content" [innerHTML]="articleBody"> </div>
-		<div class="article-body" *ngSwitchCase="AllContentStatus.Loading">
+<div class="modal-body vtr-modal-article-detail"
+	id="article-dialog"
+	[ngSwitch]="contentStatus"
+	aria-hidden="false">
+	<h1 id="article-dialog-basic-title"
+		hidden>{{articleLinkTitle}}</h1>
+	<header id="article-title"
+		*ngIf="articleTitle">{{articleTitle}}</header>
+	<div class="article-content"
+		*ngSwitchCase="AllContentStatus.Loading"
+		aria-hidden="true">
+		<div class="article-body loading-body">
 			<div class="spinner-content">
-				<div class="spinner-border text-primary progress-spinner" role="status"></div>
+				<div class="spinner-border text-primary progress-spinner"
+					role="status"
+					aria-live="polite"></div>
 			</div>
 		</div>
-		<div class="article-body" *ngSwitchCase="AllContentStatus.Empty">
+	</div>
+	<div class="article-content"
+		*ngSwitchCase="AllContentStatus.Empty"
+		aria-hidden="true">
+		<div class="article-body empty-body">
 			<div class="empty-content w-100 text-center">
 				<img src="assets/images/support/empty.png" />
 			</div>
 		</div>
 	</div>
+	<article class="article-content"
+		id="article-dialog-content"
+		tabindex="0">
+		<img [hidden]="!articleImage"
+			src="{{articleImage}}"
+			alt="article image">
+		<div class="article-body"
+			aria-live="polite"
+			[innerHTML]="articleBody ? articleBody : 'common.ui.loading' | translate"></div>
+	</article>
 	<div tabindex="0"
 		role="button"
 		class="close-btn"
-		aria-label="Article Close Button"
+		[attr.aria-label]="'common.ui.close' | translate"
 		vtrMetrics
 		metricsItem="ArticleCloseButton"
 		metricsEvent="FeatureClick"
 		metricsParent="{{ metricsParent }}"
 		(keyup.enter)="closeModal()"
 		(click)="closeModal()">
-		<img [src]=" 'assets/icons/Close.svg' | svgInline | async" alt="" srcset="">
+		<img [src]=" 'assets/icons/Close.svg' | svgInline | async"
+			alt=""
+			srcset="">
 	</div>
 </div>
