@@ -1,14 +1,12 @@
 <div class="modal-body vtr-modal-update-change-log">
-	<div role="button" class="close-btn"
-				vtrMetrics
-				metricsItem="{{updateModalMetrics.closeButton}}"
-				metricsEvent="FeatureClick"
-				metricsParent="{{updateModalMetrics.pageName}}"
-				(click)="closeModal()">
-		<img [src]=" 'assets/icons/Close.svg' | svgInline | async" alt="" srcset=""/>
-	</div>
 	<h1>{{'systemUpdates.readMore' | translate}}</h1>
 	<div class="log-content">
 		<pre [innerHTML]="articleBody"></pre>
+	</div>
+	<div class="btn-modal-close">
+		<vtr-ui-close-button linkId="update-change-log-close"
+			[metricsItem]="updateModalMetrics.closeButton"
+			[metricsParent]="updateModalMetrics.pageName"
+			(clickClose)="closeModal()"></vtr-ui-close-button>
 	</div>
 </div>

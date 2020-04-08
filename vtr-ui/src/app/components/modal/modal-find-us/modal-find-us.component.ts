@@ -25,7 +25,7 @@ export class ModalFindUsComponent implements OnInit {
 	ngOnInit() {
 	}
 
-	public onCancelClick() {
+	closeModal() {
 		this.activeModal.close(false);
 	}
 

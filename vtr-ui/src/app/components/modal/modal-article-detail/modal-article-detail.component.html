@@ -36,18 +36,11 @@
 			aria-live="polite"
 			[innerHTML]="articleBody ? articleBody : 'common.ui.loading' | translate"></div>
 	</article>
-	<div tabindex="0"
-		role="button"
-		class="close-btn"
-		[attr.aria-label]="'common.ui.close' | translate"
-		vtrMetrics
-		metricsItem="ArticleCloseButton"
-		metricsEvent="FeatureClick"
-		metricsParent="{{ metricsParent }}"
-		(keyup.enter)="closeModal()"
-		(click)="closeModal()">
-		<img [src]=" 'assets/icons/Close.svg' | svgInline | async"
-			alt=""
-			srcset="">
+
+	<div class="btn-modal-close">
+		<vtr-ui-close-button linkId="article-close-button"
+			metricsItem="ArticleCloseButton"
+			[metricsParent]="metricsParent"
+			(clickClose)="closeModal()"></vtr-ui-close-button>
 	</div>
 </div>
