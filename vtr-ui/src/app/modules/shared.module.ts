@@ -25,6 +25,7 @@ import { HeaderMainModule } from '../components/header-main/header-main.module';
 import { ModalCommonConfirmationComponent } from 'src/app/components/modal/modal-common-confirmation/modal-common-confirmation.component';
 import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 import { httpInterceptorProviders } from 'src/app/providers/net/http-interceptors';
+import { UiCloseButtonModule } from '../components/ui/ui-close-button/ui-close-button.module';
 
 @NgModule({
 	declarations: [
@@ -50,6 +51,7 @@ import { httpInterceptorProviders } from 'src/app/providers/net/http-interceptor
 		RouterModule,
 		TranslationModule.forChild(),
 		UiButtonModule,
+		UiCloseButtonModule,
 		MetricsModule,
 		HeaderMainModule,
 		AppSearchModule
@@ -73,6 +75,7 @@ import { httpInterceptorProviders } from 'src/app/providers/net/http-interceptor
 		TranslationModule,
 		PageUserComponent,
 		UiButtonModule,
+		UiCloseButtonModule,
 		MetricsModule,
 		HeaderMainModule,
 		AppSearchModule

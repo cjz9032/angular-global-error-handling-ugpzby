@@ -58,19 +58,10 @@
 		<div id="about-modal-copyright" role="text">{{ 'support.about.copyright' | translate}}</div>
 	</div>
 
-	<div role="button"
-		class="close-btn"
-		tabindex="0"
-		id="about-close-button"
-		[attr.aria-label]="'common.ui.close' | translate"
-		vtrMetrics
-		metricsItem="AboutModalCloseButton"
-		metricsEvent="FeatureClick"
-		metricsParent="Page.Support.About"
-		(click)="closeModal()"
-		(keydown.enter)="closeModal()">
-		<img [src]=" 'assets/icons/Close.svg' | svgInline | async"
-			alt=""
-			srcset="">
+	<div class="btn-modal-close">
+		<vtr-ui-close-button linkId="about-close-button"
+			metricsItem="AboutModalCloseButton"
+			metricsParent="Page.Support.About"
+			(clickClose)="closeModal()"></vtr-ui-close-button>
 	</div>
 </div>

@@ -132,20 +132,10 @@
 		</div>
 	</div>
 
-	<div role="button"
-		class="close-btn"
-		tabindex="0"
-		id="feedback-modal-btn-close"
-		[attr.aria-label]="'common.ui.close' | translate"
-		vtrMetrics
-		metricsItem="btn.close"
-		metricsEvent="featureClick"
-		metricsParent="Dialog.Feedback"
-		data-dismiss="modal"
-		(keydown.enter)="activeModal.dismiss('Cross click')"
-		(click)="activeModal.dismiss('Cross click')">
-		<img [src]=" 'assets/icons/Close.svg' | svgInline | async"
-			alt=""
-			srcset="">
+	<div class="btn-modal-close">
+		<vtr-ui-close-button linkId="feedback-modal-btn-close"
+			metricsItem="btn.close"
+			metricsParent="Dialog.Feedback"
+			(clickClose)="closeModal()"></vtr-ui-close-button>
 	</div>
 </div>

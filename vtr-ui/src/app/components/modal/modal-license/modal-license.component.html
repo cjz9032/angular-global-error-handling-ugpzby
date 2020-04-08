@@ -28,19 +28,11 @@
 			width="100%"
 			height="100%"></iframe>
 	</div>
-	<div role="button"
-		class="close-btn"
-		vtrMetrics
-		tabindex="0"
-		id="btn-{{licenseModalMetrics.closeButton}}"
-		[attr.aria-label]="'common.ui.close' | translate"
+
+	<div class="btn-modal-close">
+		<vtr-ui-close-button linkId="btn-{{licenseModalMetrics.closeButton}}"
 		[metricsItem]="licenseModalMetrics.closeButton"
 		[metricsParent]="licenseModalMetrics.pageName"
-		metricsEvent="FeatureClick"
-		(keyup.enter)="closeModal()"
-		(click)="closeModal()">
-		<img [src]=" 'assets/icons/Close.svg' | svgInline | async"
-			alt=""
-			srcset="">
+			(clickClose)="closeModal()"></vtr-ui-close-button>
 	</div>
 </div>
