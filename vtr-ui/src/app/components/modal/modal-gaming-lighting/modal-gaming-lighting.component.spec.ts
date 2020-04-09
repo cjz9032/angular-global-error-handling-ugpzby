@@ -2,7 +2,11 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ModalGamingLightingComponent } from './modal-gaming-lighting.component';
 import { Pipe, NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClient } from 'selenium-webdriver/http';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { HttpHandler } from '@angular/common/http';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { TranslateStore } from '@ngx-translate/core';
 
 describe('ModalGamingLightingComponent', () => {
 	let component: ModalGamingLightingComponent;
@@ -14,10 +18,7 @@ describe('ModalGamingLightingComponent', () => {
 			mockPipe({ name: 'translate' }),
 			mockPipe({ name: 'sanitize' })],
 			schemas: [NO_ERRORS_SCHEMA],
-			providers: [
-				{ provide: HttpClient },
-				{ provide: NgbActiveModal}
-			]
+			providers: [NgbActiveModal, HttpHandler, VantageShellService, LoggerService, NgbModal, TranslateStore ]
 		})
 			.compileComponents();
 	}));
@@ -29,6 +30,7 @@ describe('ModalGamingLightingComponent', () => {
 	});
 
 	it('should create', () => {
+		fixture.detectChanges();
 		expect(component).toBeTruthy();
 	});
 
@@ -40,6 +42,14 @@ describe('ModalGamingLightingComponent', () => {
 		component.onFocus();
 		expect(modalres).toBeTruthy();
 	}));
+
+
+	it('should check closeModal', (() => {
+		fixture.detectChanges();
+		component.closeModal();
+		expect(component).toBeTruthy();
+	}));
+
 });
 
 export function mockPipe(options: Pipe): Pipe {

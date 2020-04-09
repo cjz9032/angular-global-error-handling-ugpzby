@@ -7,7 +7,7 @@
 			<div class="media pl-3 align-items-center">
 				<div class="media-body pb-0 mb-0 small">
 					<div class="d-flex justify-content-between align-items-center w-100">
-						<div class="custom-control custom-checkbox update-checkbox">
+						<div class="custom-control custom-checkbox">
 							<input type="checkbox"
 								id="{{ 'updateCheckbox_'  + item.packageID }}"
 								[disabled]="item.isDependency"
@@ -53,7 +53,7 @@
 							triggers="manual"
 							placement="left"
 							id="{{'su_item_question_mark_' + item.packageID}}"
-							attr.aria-label="{{item.packageID + 'question mark'}}"
+							role="tooltip"
 							[ngbTooltip]="systemUpdateTooltip"
 							#tooltip="ngbTooltip"
 							[icon]="['far', 'question-circle']"

@@ -2,7 +2,9 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UiLightingSingleColorComponent } from './ui-lighting-single-color.component';
 import { NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHandler } from '@angular/common/http';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 describe('UiLightingSingleColorComponent', () => {
 	let component: UiLightingSingleColorComponent;
@@ -13,8 +15,11 @@ describe('UiLightingSingleColorComponent', () => {
 			declarations: [UiLightingSingleColorComponent,
 				mockPipe({ name: 'translate' }),
 				mockPipe({ name: 'sanitize' })],
-				providers: [{ provide: HttpClient }],
-				schemas: [NO_ERRORS_SCHEMA]
+			providers: [{ provide: HttpClient },
+			{ provide: VantageShellService },
+			{ provide:LoggerService },
+			{ provide: HttpHandler },],
+			schemas: [NO_ERRORS_SCHEMA]
 		}).compileComponents();
 		fixture = TestBed.createComponent(UiLightingSingleColorComponent);
 		component = fixture.componentInstance;

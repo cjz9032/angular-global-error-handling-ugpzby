@@ -966,11 +966,21 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		.read {
 			color: $menu_hover;
 			text-decoration: underline;
+			padding: 0.2rem;
+			&:focus {
+				outline: none;
+				border: 0.1rem solid $menu_hover;
+			}
 		}
 
 		.ignore {
 			color: $menu_hover;
 			text-decoration: underline;
+			padding: 0.2rem;
+			&:focus {
+				outline: none;
+				border: 0.1rem solid $menu_hover;
+			}
 		}
 	}
 

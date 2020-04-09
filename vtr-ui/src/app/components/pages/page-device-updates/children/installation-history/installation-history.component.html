@@ -96,12 +96,13 @@
 
 										</div>
 										<div class="col col-1 text-right">
-											<div class="expand"  id="{{'su_installation_update_expand_'+item.packageID}}" role="button">
+											<div class="expand">
 												<a href="javascript:;" (click)="toggleExpand(item.packageID)"
+												id="{{'su_installation_update_expand_'+item.packageID}}" role="button"
 													tabindex="0">
-													<fa-icon *ngIf="expandedRecordId!==item.packageID" attr.aria-label="{{'expand' + item.packageID + 'detail info'}}"
+													<fa-icon *ngIf="expandedRecordId!==item.packageID"
 														[icon]="['fas', 'plus-circle']"></fa-icon>
-													<fa-icon *ngIf="expandedRecordId===item.packageID" attr.aria-label="{{'collapse' + item.packageID + 'detail info'}}"
+													<fa-icon *ngIf="expandedRecordId===item.packageID"
 														[icon]="['fas', 'minus-circle']"></fa-icon>
 												</a>
 											</div>
