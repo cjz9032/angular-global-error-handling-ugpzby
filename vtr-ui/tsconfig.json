@@ -20,15 +20,7 @@
     "lib": [
       "es2018",
       "dom"
-    ],
-    "paths": {
-      "composer": [
-        "dist/composer"
-      ],
-	  "composer/*": [
-	    "dist/composer/*"
-	  ]
-	}
+    ]
   },
   "angularCompilerOptions": {
     "enableIvy": true,

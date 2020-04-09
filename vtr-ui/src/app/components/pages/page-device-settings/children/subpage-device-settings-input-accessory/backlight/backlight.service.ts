@@ -60,25 +60,6 @@ export class BacklightService {
 	}
 
 	getBacklightOnSystemChange(): Observable<GetBacklightResponse> {
-		// const request = new ComposerRequest(
-		// 	KeyBoardContract.CONTRACT,
-		// 	KeyBoardContract.GET_BACKLIGHT_ON_SYSTEM_CHANGE,
-		// 	{
-		// 		settingList: [
-		// 			{
-		// 				setting: [
-		// 					{
-		// 						key: 'IntermediateResponseDuration',
-		// 						value: '00:01:00',
-		// 						enabled: 0
-		// 					}
-		// 				]
-		// 			}
-		// 		]
-		// 	},
-		// 	{reportProgress: true}
-		// );
-		// return this.composer.request<GetBacklightResponse>(request);
 		return new Observable((observer) => {
 			this.backlightFeature.getBacklightOnSystemChange(
 				{
