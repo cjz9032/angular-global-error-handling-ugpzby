@@ -1,7 +1,19 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { BacklightService } from './backlight.service';
 import { Observable, Subject, Subscription } from 'rxjs';
-import { catchError, flatMap, pluck, share, switchMap, takeWhile, tap, throttleTime } from 'rxjs/operators';
+import {
+	catchError,
+	filter,
+	flatMap,
+	map,
+	pluck,
+	repeat,
+	share,
+	switchMap,
+	takeWhile,
+	tap,
+	throttleTime
+} from 'rxjs/operators';
 import { BacklightLevelEnum, BacklightStatusEnum } from './backlight.enum';
 import { BacklightLevel, BacklightMode, BacklightStatus } from './backlight.interface';
 import { LocalStorageKey } from '../../../../../../enums/local-storage-key.enum';
@@ -21,23 +33,27 @@ export class BacklightComponent implements OnInit, OnDestroy {
 		{
 			title: 'device.deviceSettings.inputAccessories.backlight.level.low',
 			value: BacklightStatusEnum.LEVEL_1,
-			checked: false
+			checked: false,
+			disabled: false
 		},
 		{
 			title: 'device.deviceSettings.inputAccessories.backlight.level.high',
 			value: BacklightStatusEnum.LEVEL_2,
-			checked: false
+			checked: false,
+			disabled: false
 		},
 		{
 			title: 'device.deviceSettings.inputAccessories.backlight.level.off',
 			value: BacklightStatusEnum.OFF,
-			checked: false
+			checked: false,
+			disabled: false
 		},
 	];
 	modeAuto: BacklightMode = {
 		title: 'device.deviceSettings.inputAccessories.backlight.level.auto',
 		value: BacklightStatusEnum.AUTO,
-		checked: false
+		checked: false,
+		disabled: false
 	};
 
 	private backlightFlat$: Observable<BacklightStatus | BacklightLevel>;
@@ -54,6 +70,7 @@ export class BacklightComponent implements OnInit, OnDestroy {
 	private oneLevelSubscription: Subscription;
 	private autoSubscription: Subscription;
 	private twoLevelSubscription: Subscription;
+	private changeSubscription: Subscription;
 
 	constructor(
 		private backlightService: BacklightService,
@@ -110,12 +127,14 @@ export class BacklightComponent implements OnInit, OnDestroy {
 		this.autoSubscription = this.level$
 			.pipe(
 				takeWhile(item => item.value === BacklightLevelEnum.TWO_LEVELS_AUTO),
-				tap(() => this.modes.push(this.modeAuto)),
+				tap(() => this.modes.unshift(this.modeAuto)),
 				switchMap(() => this.status$),
 			)
 			.subscribe((status) => {
 				for (const mode of this.modes) {
-					if (mode.value === status.value) {
+					mode.checked = mode.value === status.value;
+					mode.disabled = status.value === BacklightStatusEnum.DISABLED_OFF;
+					if (status.value === BacklightStatusEnum.DISABLED_OFF && mode.value === BacklightStatusEnum.OFF) {
 						mode.checked = true;
 					}
 				}
@@ -127,7 +146,9 @@ export class BacklightComponent implements OnInit, OnDestroy {
 			)
 			.subscribe((status) => {
 				for (const mode of this.modes) {
-					if (mode.value === status.value) {
+					mode.checked = mode.value === status.value;
+					mode.disabled = status.value === BacklightStatusEnum.DISABLED_OFF;
+					if (status.value === BacklightStatusEnum.DISABLED_OFF && mode.value === BacklightStatusEnum.OFF) {
 						mode.checked = true;
 					}
 				}
@@ -138,6 +159,24 @@ export class BacklightComponent implements OnInit, OnDestroy {
 			}
 			mode.checked = true;
 		});
+
+		this.changeSubscription = this.backlightService.getBacklightOnSystemChange()
+			.pipe(
+				map(res => res.settingList.setting),
+				flatMap(x => x),
+				filter(item => item.key === 'KeyboardBacklightStatus'),
+				repeat()
+			)
+			.subscribe(res => {
+				this.isSwitchChecked = res.value !== BacklightStatusEnum.OFF;
+				for (const modeItem of this.modes) {
+					modeItem.checked = res.value === modeItem.value;
+					modeItem.disabled = res.value === BacklightStatusEnum.DISABLED_OFF;
+					if (res.value === BacklightStatusEnum.DISABLED_OFF && modeItem.value === BacklightStatusEnum.OFF) {
+						modeItem.checked = true;
+					}
+				}
+			})
 	}
 
 	ngOnDestroy(): void {
@@ -154,6 +193,7 @@ export class BacklightComponent implements OnInit, OnDestroy {
 			this.autoSubscription.unsubscribe();
 		}
 		this.backlightService.clearCache();
+		this.changeSubscription.unsubscribe();
 	}
 
 	onToggleOnOff($event) {
@@ -161,13 +201,15 @@ export class BacklightComponent implements OnInit, OnDestroy {
 			this.update$.next({
 				title: 'device.deviceSettings.inputAccessories.backlight.level.low',
 				value: BacklightStatusEnum.LEVEL_1,
-				checked: false
+				checked: false,
+				disabled: false
 			});
 		} else {
 			this.update$.next({
 				title: 'device.deviceSettings.inputAccessories.backlight.level.off',
 				value: BacklightStatusEnum.OFF,
-				checked: false
+				checked: false,
+				disabled: false
 			});
 		}
 	}

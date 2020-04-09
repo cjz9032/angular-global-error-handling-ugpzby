@@ -7,7 +7,7 @@ export interface Backlight {
 
 	setBacklight(status: SetBacklightStatus): Promise<CommonResponse<null>>;
 
-	GetBacklightOnSystemChange(settings: BacklightOnChangeSettings): Promise<GetBacklightResponse>;
+	getBacklightOnSystemChange(settings: BacklightOnChangeSettings, callback: (response: {payload: GetBacklightResponse}) => void): Promise<GetBacklightResponse>;
 }
 
 export interface BacklightBase<T = string, K = string> {
@@ -34,14 +34,17 @@ export interface SetBacklightStatus {
 }
 
 export interface BacklightOnChangeSettings {
-	settingList: {
+	settingList: [
+		{
 		// value: string like '00:01:00'
 		setting: Array<BacklightBase<'IntermediateResponseDuration'>>;
-	};
+		}
+	];
 }
 
 export interface BacklightMode {
 	checked: boolean;
 	value: BacklightStatusEnum;
 	title: string;
+	disabled: boolean;
 }
