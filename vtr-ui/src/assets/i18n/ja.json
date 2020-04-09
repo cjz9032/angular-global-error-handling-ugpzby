@@ -3082,15 +3082,15 @@
             "science": "科学"
         },
         "gaming": {
-            "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
-            "gamingFeature1": "-Computer status monitor",
-            "gamingFeature2": "-Performance mode & overclocking",
-            "gamingFeature3": "-Lighting",
-            "gamingFeature4": "-Network Boost",
-            "gamingFeature5": "-Auto Close",
-            "gamingOnly": "Gaming",
-            "gamingAndWork": "Gaming & Work",
-            "nonGaming": "Non-Gaming"
+            "gamingDescription": "Vantage のゲーム・バージョンを使用すると、ゲーム体験を簡単に改善できます。一般的な設定に加えて、主に次のような機能が提供されます (一部のシステムで利用可能):",
+            "gamingFeature1": "- コンピューター・ステータス・モニター",
+            "gamingFeature2": "- パフォーマンス・モード & クロックアップ",
+            "gamingFeature3": "- 明るさ",
+            "gamingFeature4": "- ネットワーク・ブースト",
+            "gamingFeature5": "- 自動クローズ",
+            "gamingOnly": "ゲーム",
+            "gamingAndWork": "ゲームと仕事",
+            "nonGaming": "ゲーム以外"
         }
     },
     "settings": {

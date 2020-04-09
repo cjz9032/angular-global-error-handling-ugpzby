@@ -3082,15 +3082,15 @@
             "science": "Tiede"
         },
         "gaming": {
-            "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
-            "gamingFeature1": "-Computer status monitor",
-            "gamingFeature2": "-Performance mode & overclocking",
-            "gamingFeature3": "-Lighting",
-            "gamingFeature4": "-Network Boost",
-            "gamingFeature5": "-Auto Close",
-            "gamingOnly": "Gaming",
-            "gamingAndWork": "Gaming & Work",
-            "nonGaming": "Non-Gaming"
+            "gamingDescription": "Vantagen pelaajille suunniteltu versio tekee pelikokemuksesi parantamisesta yksinkertaista. Yleisten asetusten ohella sen tärkeimpiin ominaisuuksiin sisältyy (saatavilla tietyissä järjestelmissä):",
+            "gamingFeature1": "-Tietokoneen tilan valvonta",
+            "gamingFeature2": "-Suorituskykytila ja ylikellotus",
+            "gamingFeature3": "-Valaistus",
+            "gamingFeature4": "-Verkon tehostus",
+            "gamingFeature5": "-Automaattinen sulkeminen",
+            "gamingOnly": "Pelit",
+            "gamingAndWork": "Pelit ja työt",
+            "nonGaming": "Muu kuin pelaaminen"
         }
     },
     "settings": {
