@@ -112,7 +112,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		this.getDolbyFeatureStatus();
 		this.getDolbyModesStatus();
 
-		this.startMonitor();
+		this.startMicrophoneMonitor();
 		this.startMonitorForDolby();
 	}
 
@@ -120,7 +120,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
 		}
-		this.stopMonitor();
+		this.stopMicrophoneMonitor();
 		this.stopMonitorForDolby();
 
 		if (this.microphoneDevice) {
@@ -497,24 +497,24 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	startMonitor() {
+	startMicrophoneMonitor() {
 		try {
 			if (this.audioService.isShellAvailable) {
 				this.audioService.startMicrophoneMonitor(this.startMonitorHandler.bind(this))
 					.then((value: boolean) => {
-						this.logger.info('startMonitor', value);
+						this.logger.info('startMicrophoneMonitor.then', value);
 					}).catch(error => {
-						this.logger.error('startMonitor', error.message);
+						this.logger.error('startMicrophoneMonitor.error', error.message);
 						return EMPTY;
 					});
 			}
 		} catch (error) {
-			this.logger.error('startMonitor' + error.message);
+			this.logger.exception('startMicrophoneMonitor.exception', error);
 			return EMPTY;
 		}
 	}
 
-	stopMonitor() {
+	stopMicrophoneMonitor() {
 		try {
 			if (this.audioService.isShellAvailable) {
 				this.audioService.stopMicrophoneMonitor()

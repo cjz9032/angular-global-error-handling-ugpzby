@@ -11,7 +11,7 @@
 				<div class="row card mb-5" [dir]="'dir' | translate">
 					<div class="col left-container">
 						<div class="row description-container">
-							<div class="col"
+							<div class="col" id="{{'support-detail-qa-description-'+ qa.id}}" role="text"
 								[innerHTML]="qa.description">
 							</div>
 						</div>
@@ -106,7 +106,8 @@
 					[title]="'common.qAndA.title' | translate"
 					[description]="'common.qAndA.subtitle' | translate"
 					[items]="qaService.qas"
-					blockPosition="r1"></vtr-widget-questions>
+					blockPosition="r1"
+					[linkId]="'support-detail-qa'"></vtr-widget-questions>
 			</div>
 		</div>
 	</div>

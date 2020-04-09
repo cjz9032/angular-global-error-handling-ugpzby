@@ -35,7 +35,7 @@
 					[value]="mode.value"
 					[checked]="mode.checked"
 					(optionChange)="update$.next(mode)"
-					[disabled]="mode.value === backlightStatusEnum.DISABLED_OFF"
+					[disabled]="mode.disabled"
 					[textId]="'myDevice-settings-inputAccessories-backlight'">
 				</vtr-ui-circle-radio-with-checkbox>
 			</div>
@@ -62,7 +62,7 @@
 					[value]='mode.value'
 					[checked]="mode.checked"
 					(optionChange)="update$.next(mode)"
-					[disabled]="mode.value === backlightStatusEnum.DISABLED_OFF"
+					[disabled]="mode.disabled"
 					[textId]="'myDevice-settings-inputAccessories-backlight'">
 				</vtr-ui-circle-radio-with-checkbox>
 			</div>
