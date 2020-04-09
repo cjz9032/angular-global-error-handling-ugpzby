@@ -16,6 +16,7 @@ export class UiToggleComponent implements OnInit, OnDestroy, OnChanges {
 	@Input() notChange = false;
 	@Input() toggleId: any;
 	@Input() focus = false;
+	@Input() tabIndexNum = 1;
 	public currentEvent: any;
 	public disabled = true;
 	public timer = 0;
