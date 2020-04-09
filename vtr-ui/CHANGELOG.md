@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.10](https://bitbucket.tc.lenovo.com///compare/v1.5.9...v1.5.10) (2020-04-08)
+
+### [1.5.9](https://bitbucket.tc.lenovo.com///compare/v1.5.8...v1.5.9) (2020-04-08)
+
+
+### Bug Fixes
+
+* fix none display error in privacy policy area ([25546d9](https://bitbucket.tc.lenovo.com///commit/25546d9fc73626553ac5b8adf2df35d458f4cb25))
+* fix power by info not show up ([65f9fe1](https://bitbucket.tc.lenovo.com///commit/65f9fe19b9f084135be6968b592a04958b82cb30))
+* Fix powered by info content cannot show up ([989e0c2](https://bitbucket.tc.lenovo.com///commit/989e0c278b110a630e1b550e5fff6eaf6f4dcdad))
+
+### [1.5.8](https://bitbucket.tc.lenovo.com///compare/v1.5.7...v1.5.8) (2020-04-07)
+
+
+### Bug Fixes
+
+* Fix spelling mistakes in source code ([12b8297](https://bitbucket.tc.lenovo.com///commit/12b8297c9c75cec52416ae3e6235b87e91a021ac))
+
+### [1.5.7](https://bitbucket.tc.lenovo.com///compare/v1.5.6...v1.5.7) (2020-04-06)
+
+### [1.5.6](https://bitbucket.tc.lenovo.com///compare/v1.5.5...v1.5.6) (2020-04-03)
+
 ### [1.5.5](https://bitbucket.tc.lenovo.com///compare/v1.5.4...v1.5.5) (2020-04-02)
 
 ### [1.5.4](https://bitbucket.tc.lenovo.com///compare/v1.5.3...v1.5.4) (2020-04-01)

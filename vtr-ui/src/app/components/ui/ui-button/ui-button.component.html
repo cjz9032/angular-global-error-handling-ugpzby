@@ -1,7 +1,43 @@
 <div class="vtr-ui-button">
 	<div class="button-box"
 		*ngIf="label">
-		<button *ngIf="alreadyJoinGroup !== 'joined'"
+		<button *ngIf="alreadyJoinGroup === groupNone"
+			title="{{tooltip?label:''}}"
+			[disabled]="isDisabled || isLoading"
+			type="button"
+			class="btn button {{getButtonColor(buttonColor)}} d-flex align-items-center justify-content-center"
+			[vtrMetrics]="vtrMetricEnabled"
+			[id]="linkId"
+			[tabindex]="tabIndex ? tabIndex : 0"
+			[attr.aria-label]="label"
+			[metricsItem]="metricsItem"
+			[metricsEvent]="metricsEvent"
+			[metricsParam]="metricsParam"
+			[metricsValue]="metricsValue"
+			[metricsItemPosition]="metricsItemPosition"
+			[metricsPageNumber]="metricsPageNumber"
+			[metricsItemID]="metricsItemID"
+			[metricsItemCategory]="metricsItemCategory"
+			[metricsParent]="metricsParent"
+			[ngClass]="{'fullWidth': isFullWidth === true,
+						'halfWidth': isHalfWidth,
+						'text-upper-case': upperCaseLabel === true,
+						'text-capitalize': capitalizeLabel === true,
+						'regular-width': isRegular,
+						'btn-size-small': btnHeight,
+						'btn-gradient': isGradient,
+						'btn-in-red-bg': inRedBackground,
+						'disable': isDisabled,
+						'loading': isLoading}"
+			(click)="onClickButton($event)">
+			<span [hidden]="!isLoading"
+				class="mr-3 mt-1 mb-1 flex-shrink-0 spinner-border progress-spinner"
+				role="status">
+			</span>
+			<span class="text"
+				[innerHTML]="label"></span>
+		</button>
+		<button *ngIf="alreadyJoinGroup === 'unjoined'"
 			title="{{tooltip?label:''}}"
 			[disabled]="isDisabled || isLoading"
 			type="button"

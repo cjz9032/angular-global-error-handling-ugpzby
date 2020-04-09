@@ -82,7 +82,7 @@
 								<vtr-battery-gauge-reset></vtr-battery-gauge-reset>
 							</li>
 
-							<li class=""
+							<li class="common-li-padding"
 								*ngIf="expressChargingStatus?.available">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.power.batterySettings.expressCharging.title' | translate"
@@ -99,7 +99,7 @@
 									(toggleOnOff)="changeBatteryMode('expressCharging')">
 								</vtr-ui-row-switch>
 							</li>
-							<li class=""
+							<li class="common-li-padding"
 								*ngIf="conservationModeStatus?.available">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.power.batterySettings.conservationMode.title' | translate"
@@ -126,7 +126,7 @@
 			<div class="row pt-5 smart-settings-card"
 				id="power"
 				*ngIf="isPowerSectionAvailable">
-				<div class="col-12 mx-auto container-card">
+				<div class="col-12 mx-auto container-card power-settings-block">
 					<vtr-container-collapsible
 						[cardTitle]="'device.deviceSettings.power.powerSettings.title' | translate"
 						[tabIndex]="0"
@@ -134,7 +134,7 @@
 						[isCollapsed]="false"
 						[collapseLinkId]="'device-settings-powerSettings'">
 						<ul class="list-group list-group-flush">
-							<li class=""
+							<li class="common-li-padding"
 								*ngIf="showAirplanePowerModeSection">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.power.batterySettings.airPlanePower.title' | translate"

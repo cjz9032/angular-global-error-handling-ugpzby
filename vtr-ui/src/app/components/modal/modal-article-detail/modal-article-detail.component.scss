@@ -19,7 +19,8 @@
 		overflow-y: auto;
 	}
 
-	h1 {
+	h1,
+	header {
 		font-size: 3.1rem;
 		font-weight: normal;
 		color: $blue-dark;
@@ -36,25 +37,22 @@
 	.article-body {
 		padding-bottom: 4rem;
 	}
+
+	.loading-body, .empty-body {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		z-index: 1;
+		background: #fff;
+	}
 }
 
-.close-btn {
-	position: absolute;
+.btn-modal-close {
 	right: 1rem;
 	top: -2rem;
-	width: 4.2rem;
-	height: 4.2rem;
-	cursor: pointer;
-
-	&:hover {
-		opacity: 0.7;
-	}
-
-	img {
-		width: 2.2rem;
-		height: 2.2rem;
-		margin: 1rem;
-	}
+	z-index: 2;
 }
 
 .spinner-content,

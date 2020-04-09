@@ -64,6 +64,11 @@
 											id="userdefinedkey-{{i}}"
 											attr.aria-label="userdefinedkey-{{item.title | translate}}"
 											tabindex="0"
+											vtrMetrics
+											metricsEvent="FeatureClick"
+											metricsParent="Device.InputAccessories"
+											metricsItem="UserDefinedKeyState.Dropdown"
+											metricsValue="{{item.title  | translate}}"
 											(keydown.enter)="onChange(item); userDefineDrop.close()"
 											(keydown)="checkDropDown(userDefineDrop, i, $event)"
 											(click)="onChange(item)">{{item.title | translate}}
@@ -83,10 +88,12 @@
 									<div class="row no-gutters">
 										<div class="input-group mt-3">
 											<label id="ip-webseiteurl"
+												role="text"
 												attr.aria-label="ip-webseiteurl">{{'device.deviceSettings.inputAccessories.userDefinedKey.website.url' | translate}}</label>
 											<textarea class="form-control"
 												spellcheck="false"
 												id="ip-webseiteurl-text"
+												role="text"
 												attr.aria-label="ip-webseiteurl-text"
 												[(ngModel)]="url"
 												[placeholder]="'device.deviceSettings.inputAccessories.userDefinedKey.website.placeholder' | translate"
@@ -138,11 +145,13 @@
 									<div class="row no-gutters">
 										<div class="input-group mt-3">
 											<label id="ip-texttobe-entered"
+												role="text"
 												attr.aria-label="ip-texttobe-entered">{{'device.deviceSettings.inputAccessories.userDefinedKey.enterText.title' | translate}}</label>
 											<textarea class="form-control"
 												[(ngModel)]="description"
 												name="description"
 												id="ip-text-entered"
+												role="text"
 												attr.aria-label="ip-text-entered"
 												spellcheck="false"
 												[placeholder]="'device.deviceSettings.inputAccessories.userDefinedKey.enterText.placeholder' | translate"
@@ -167,124 +176,164 @@
 									</div>
 								</form>
 							</div>
-							<!--
-                            <div class="col" *ngIf="selectedValue.value == 4">
-                                <br>
-                                <form #form1="ngForm" novalidate>
-                                    <div class="row">
-                                        <div class="col title">{{'device.deviceSettings.inputAccessories.userDefinedKey.openapplicationsorfiles.applicationsToOpen' | translate}}</div>
-                                        <div class="col-auto px-0">
-                                            <button *ngIf="applicationList.length<6 && applicationList.length"
-                                                id="add-application" attr.aria-label="add-application"
-                                                (click)="udkSubmit(4);" class="title add">{{'device.deviceSettings.inputAccessories.userDefinedKey.openapplicationsorfiles.add' | translate}}</button>
-                                            <span *ngIf="applicationList.length>=6" tabindex="0" data-toggle="tooltip"
-                                                title="{{'device.deviceSettings.inputAccessories.userDefinedKey.openapplicationsorfiles.applicationTitle' | translate}}">
-                                                <button *ngIf=applicationList.length (click)="udkSubmit(4);"
-                                                    id="add-application" attr.aria-label="add-application"
-                                                    [disabled]="applicationList.length>=6"
-                                                    class="title add">{{'device.deviceSettings.inputAccessories.userDefinedKey.openapplicationsorfiles.add' | translate}}</button>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="row no-gutters">
-                                        <div class="col mt-3">
-                                            <div class="open-apps-block" (click)="udkSubmit(4);"
-                                                *ngIf=!applicationList.length>
-                                                <fa-icon [icon]="['fal', 'plus-square']">
-                                                </fa-icon>
-                                            </div>
-                                            <div class="open-apps-block"
-                                                *ngFor="let application of applicationList; index as i">
-                                                <div
-                                                    class="d-flex justify-content-between align-items-center p-4 apps-list">
-                                                    <div class="app-name">
-                                                        {{application.value}}
-                                                    </div>
-                                                    <div class="app-name delete-app" id="delete-app-{{i+1}}"
-                                                        attr-aria-label="delete-app-{{i+1}}"
-                                                        (click)="deleteApplicationOrFile('0',application.key,application.value,i,'APPLICATIONS');">
-                                                        {{'hardwareScan.scheduledScan.delete'| translate}}</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                                <br>
-                                <form #form1="ngForm" novalidate>
-                                    <div class="row">
-                                        <div class="col title">{{'device.deviceSettings.inputAccessories.userDefinedKey.openapplicationsorfiles.filesToOpen' | translate}}</div>
-                                        <div class="col-auto px-0">
-                                            <button *ngIf="fileList.length<6 && fileList.length" (click)="udkSubmit(5);"
-                                                id="add-file" attr.aria-label="add-file" class="title add">{{'device.deviceSettings.inputAccessories.userDefinedKey.openapplicationsorfiles.add' | translate}}</button>
-                                            <span *ngIf="fileList.length>=6" class="d-inline-block disabled-tooltip"
-                                                tabindex="0" data-toggle="tooltip"
-                                                title="{{'device.deviceSettings.inputAccessories.userDefinedKey.openapplicationsorfiles.fileTitle' | translate}}">
-                                                <button *ngIf=fileList.length (click)="udkSubmit(5);" id="add-file"
-                                                    attr.aria-label="add-file" [disabled]="fileList.length>=6"
-                                                    class="title add">{{'device.deviceSettings.inputAccessories.userDefinedKey.openapplicationsorfiles.add' | translate}}</button>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="row no-gutters">
-                                        <div class="col mt-3">
-                                            <div class="open-apps-block" (click)="udkSubmit(5);" *ngIf=!fileList.length>
-                                                <fa-icon [icon]="['fal', 'plus-square']">
-                                                </fa-icon>
-                                            </div>
-                                            <div class="open-apps-block" *ngFor="let file of fileList; index as i">
-                                                <div
-                                                    class="d-flex justify-content-between align-items-center p-4 apps-list">
-                                                    <div class="app-name">
-                                                        {{file.value}}
-                                                    </div>
-                                                    <div class="app-name delete-app" id="delete-file-{{i+1}}"
-                                                        attr-aria-label="delete-file-{{i+1}}"
-                                                        (click)="deleteApplicationOrFile('0',file.key,file.value,i,'FILES');">
-                                                        {{'hardwareScan.scheduledScan.delete'| translate}}</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="col" *ngIf="selectedValue.value == 5">
-                                <div class="note align-items-center" id="ip-accesories-note"
-                                    attr.aria-label="ip-accesories-note">
-                                    {{'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.invokeKeySequenceNote' | translate}}
-                                </div>
-                            </div>
-                            <div class="col" *ngIf="selectedValue.value == 5">
-                                <form #form2="ngForm" novalidate (ngSubmit)="udkSubmit(6)">
-                                    <div class="row no-gutters">
-                                        <div class="input-group mt-3">
-                                            <label id="ip-texttobe-entered-keysequence"
-                                                attr.aria-label="ip-texttobe-entered-keysequence">{{'device.deviceSettings.inputAccessories.userDefinedKey.invokeKeySequence.title' | translate}}</label>
-                                            <div class="txt-ara-box">
-                                                <textarea class="form-control" name="invoke-key-value"
-                                                    spellcheck="false" id="invoke-key-sequence"
-                                                    attr.araia-label="invoke-key-sequence" [(ngModel)]="this.keyCode"
-                                                    [placeholder]="'device.deviceSettings.inputAccessories.userDefinedKey.invokeKeySequence.placeholder' | translate"
-                                                    (keydown)="invokeKeySequence($event)" required></textarea>
-                                                <div class="del-btn" *ngIf="this.keyCode" id="delete-key-sequence"
-                                                    attr.aria-label="delete-key-sequence"
-                                                    (click)="resetInvokeSequence($event);"><a>{{'hardwareScan.scheduledScan.delete'| translate}}</a></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div *ngIf="isUDFSetSuccessVisible"
-                                                class="select-text pt-3 udf-set-success">
-                                                {{'device.deviceSettings.inputAccessories.userDefinedKey.website.successMessage' | translate}}
-                                            </div>
-                                            <button id="ip-userdefined-key-applybtn"
-                                                attr.aria-label="ip-userdefined-key-applybtn" type="submit"
-                                                class="button"
-                                                title="{{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}">
-                                                {{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div> -->
+
+							<div class="col"
+								*ngIf="selectedValue.value == 4">
+								<br>
+								<form #form1="ngForm"
+									novalidate>
+									<div class="row">
+										<div class="col title">
+											{{'device.deviceSettings.inputAccessories.userDefinedKey.openapplicationsorfiles.applicationsToOpen' | translate}}
+										</div>
+										<div class="col-auto px-0">
+											<button *ngIf="applicationList.length<6 && applicationList.length"
+												id="add-application"
+												attr.aria-label="add-application"
+												(click)="udkSubmit(4);"
+												class="title add">{{'device.deviceSettings.inputAccessories.userDefinedKey.openapplicationsorfiles.add' | translate}}</button>
+											<span *ngIf="applicationList.length>=6"
+												tabindex="0"
+												data-toggle="tooltip"
+												title="{{'device.deviceSettings.inputAccessories.userDefinedKey.openapplicationsorfiles.applicationTitle' | translate}}">
+												<button *ngIf=applicationList.length
+													(click)="udkSubmit(4);"
+													id="add-application"
+													attr.aria-label="add-application"
+													[disabled]="applicationList.length>=6"
+													class="title add">{{'device.deviceSettings.inputAccessories.userDefinedKey.openapplicationsorfiles.add' | translate}}</button>
+											</span>
+										</div>
+									</div>
+									<div class="row no-gutters">
+										<div class="col mt-3">
+											<div class="open-apps-block"
+												(click)="udkSubmit(4);"
+												*ngIf=!applicationList.length>
+												<fa-icon [icon]="['fal', 'plus-square']">
+												</fa-icon>
+											</div>
+											<div class="open-apps-block"
+												*ngFor="let application of applicationList; index as i">
+												<div
+													class="d-flex justify-content-between align-items-center p-4 apps-list">
+													<div class="app-name">
+														{{application.value}}
+													</div>
+													<div class="app-name delete-app"
+														id="delete-app-{{i+1}}"
+														attr-aria-label="delete-app-{{i+1}}"
+														(click)="deleteApplicationOrFile('0',application.key,application.value,i,'APPLICATIONS');">
+														{{'hardwareScan.scheduledScan.delete'| translate}}</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</form>
+								<br>
+								<form #form1="ngForm"
+									novalidate>
+									<div class="row">
+										<div class="col title">
+											{{'device.deviceSettings.inputAccessories.userDefinedKey.openapplicationsorfiles.filesToOpen' | translate}}
+										</div>
+										<div class="col-auto px-0">
+											<button *ngIf="fileList.length<6 && fileList.length"
+												(click)="udkSubmit(5);"
+												id="add-file"
+												attr.aria-label="add-file"
+												class="title add">{{'device.deviceSettings.inputAccessories.userDefinedKey.openapplicationsorfiles.add' | translate}}</button>
+											<span *ngIf="fileList.length>=6"
+												class="d-inline-block disabled-tooltip"
+												tabindex="0"
+												data-toggle="tooltip"
+												title="{{'device.deviceSettings.inputAccessories.userDefinedKey.openapplicationsorfiles.fileTitle' | translate}}">
+												<button *ngIf=fileList.length
+													(click)="udkSubmit(5);"
+													id="add-file"
+													attr.aria-label="add-file"
+													[disabled]="fileList.length>=6"
+													class="title add">{{'device.deviceSettings.inputAccessories.userDefinedKey.openapplicationsorfiles.add' | translate}}</button>
+											</span>
+										</div>
+									</div>
+									<div class="row no-gutters">
+										<div class="col mt-3">
+											<div class="open-apps-block"
+												(click)="udkSubmit(5);"
+												*ngIf=!fileList.length>
+												<fa-icon [icon]="['fal', 'plus-square']">
+												</fa-icon>
+											</div>
+											<div class="open-apps-block"
+												*ngFor="let file of fileList; index as i">
+												<div
+													class="d-flex justify-content-between align-items-center p-4 apps-list">
+													<div class="app-name">
+														{{file.value}}
+													</div>
+													<div class="app-name delete-app"
+														id="delete-file-{{i+1}}"
+														attr-aria-label="delete-file-{{i+1}}"
+														(click)="deleteApplicationOrFile('0',file.key,file.value,i,'FILES');">
+														{{'hardwareScan.scheduledScan.delete'| translate}}</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+							<div class="col"
+								*ngIf="selectedValue.value == 5">
+								<div class="note align-items-center"
+									id="ip-accesories-note"
+									attr.aria-label="ip-accesories-note">
+									{{'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.invokeKeySequenceNote' | translate}}
+								</div>
+							</div>
+							<div class="col"
+								*ngIf="selectedValue.value == 5">
+								<form #form2="ngForm"
+									novalidate
+									(ngSubmit)="udkSubmit(6)">
+									<div class="row no-gutters">
+										<div class="input-group mt-3">
+											<label id="ip-texttobe-entered-keysequence"
+												attr.aria-label="ip-texttobe-entered-keysequence">{{'device.deviceSettings.inputAccessories.userDefinedKey.invokeKeySequence.title' | translate}}</label>
+											<div class="txt-ara-box">
+												<textarea class="form-control"
+													name="invoke-key-value"
+													spellcheck="false"
+													id="invoke-key-sequence"
+													attr.araia-label="invoke-key-sequence"
+													[(ngModel)]="this.keyCode"
+													[placeholder]="'device.deviceSettings.inputAccessories.userDefinedKey.invokeKeySequence.placeholder' | translate"
+													(keydown)="invokeKeySequence($event)"
+													required></textarea>
+												<div class="del-btn"
+													*ngIf="this.keyCode"
+													id="delete-key-sequence"
+													attr.aria-label="delete-key-sequence"
+													(click)="resetInvokeSequence($event);">
+													<a>{{'hardwareScan.scheduledScan.delete'| translate}}</a></div>
+											</div>
+										</div>
+										<div class="col-12">
+											<div *ngIf="isUDFSetSuccessVisible"
+												class="select-text pt-3 udf-set-success">
+												{{'device.deviceSettings.inputAccessories.userDefinedKey.website.successMessage' | translate}}
+											</div>
+											<button id="ip-userdefined-key-applybtn"
+												attr.aria-label="ip-userdefined-key-applybtn"
+												type="submit"
+												class="button"
+												title="{{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}">
+												{{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}
+											</button>
+										</div>
+									</div>
+								</form>
+							</div>
 						</form>
 					</div>
 				</div>

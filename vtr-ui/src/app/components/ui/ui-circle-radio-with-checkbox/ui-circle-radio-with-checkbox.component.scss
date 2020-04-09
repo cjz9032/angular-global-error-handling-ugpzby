@@ -147,4 +147,14 @@
 	.check-circle-disabled {
 		color: $circle_checkbox_disabled !important;
 	}
+	&:focus {
+		outline: 0.1rem solid $menu_hover;
+		outline-offset: 0.2rem;
+	}
+}
+.vtr-ui-circle-radio-with-checkbox.blue-theme {
+	&:focus {
+		outline: 0.1rem solid $light;
+		outline-offset: 0.2rem;
+	}
 }

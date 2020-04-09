@@ -23,10 +23,18 @@
 			width: 25%;
 			text-align: center;
 			display: inline-block;
+			&:focus {
+				outline: 0.1rem solid $menu_hover;
+				outline-offset: 0.2rem;
+			}
 			.toggle-icon {
 				fa-icon {
 					font-size: 3rem;
 					color: #4579f0;
+				}
+				&:focus {
+					outline: 0.1rem solid $menu_hover;
+					outline-offset: 0.2rem;
 				}
 			}
 			span {
@@ -59,10 +67,14 @@
 		}
 	}
 	.select-close {
+		margin-right: 0.5rem;
 		fa-icon {
 			color: #4579f0;
 			font-size: 2rem;
 			padding: 0 2.5rem;
+			&:focus {
+				outline: 0.1rem solid $menu_hover;
+			}
 		}
 	}
 	.weekdays-block {
@@ -191,6 +203,10 @@
 			color: #4579f0;
 			font-size: 2rem;
 			cursor: pointer;
+		}
+		&:focus {
+			outline: 0.1rem solid $menu_hover;
+			outline-offset: 0.2rem;
 		}
 	}
 

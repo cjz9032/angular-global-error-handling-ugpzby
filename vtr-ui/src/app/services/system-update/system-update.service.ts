@@ -711,7 +711,7 @@ export class SystemUpdateService {
 				if (!value.isIgnored) {
 					return true;
 				} else if (value.isDependency) {
-					return this.IsUpdateDependedByUnIgnoredPackage(updateList, value.dependedByPackages);
+					return this.isUpdateDependedByUnIgnoredPackage(updateList, value.dependedByPackages);
 				}
 			});
 			return updates;
@@ -719,16 +719,26 @@ export class SystemUpdateService {
 		return undefined;
 	}
 
-	private IsUpdateDependedByUnIgnoredPackage(updateList: Array<AvailableUpdateDetail>, dependedByPackages: string) {
+	private isUpdateDependedByUnIgnoredPackage(updateList: Array<AvailableUpdateDetail>, dependedByPackages: string) {
 		let result = false;
 		const dependedPacks = dependedByPackages.split(',');
-		dependedPacks.forEach((pack) => {
-			updateList.forEach((update) => {
-				if (!update.isIgnored && update.packageID === pack) {
-					result = true;
+		for (const pack of dependedPacks) {
+			if (pack !== '') {
+				for (const update of updateList) {
+					if (!update.isIgnored && update.packageID === pack) {
+						result = true;
+					} else if (update.isIgnored && update.packageID === pack && update.dependedByPackages !== '') {
+						result = this.isUpdateDependedByUnIgnoredPackage(updateList, update.dependedByPackages);
+					}
+					if (result) {
+						break;
+					}
 				}
-			});
-		});
+			}
+			if (result) {
+				break;
+			}
+		}
 		return result;
 	}
 

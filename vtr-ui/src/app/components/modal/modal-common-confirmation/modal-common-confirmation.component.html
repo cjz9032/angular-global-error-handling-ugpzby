@@ -1,19 +1,10 @@
 <div class="common-confirmation-modal">
 	<h1 id="modal_confirm_title">{{ header | translate }} </h1>
-	<div role="button"
-		vtrMetrics
-		metricsItem="btn.close "
-		metricsEvent="featureClick"
-		[metricsParent]="metricsParent"
-		id="modal_confirm_close"
-		role="button"
-		class="close-btn"
-		(click)="onCancelClick($event)"
-		tabindex="0"
-		(keydown.enter)="onCancelClick($event)">
-		<img [src]=" 'assets/icons/Close.svg' | svgInline | async"
-			alt=""
-			srcset="">
+	<div class="btn-modal-close">
+		<vtr-ui-close-button linkId="modal_confirm_close"
+			metricsItem="btn.close"
+			[metricsParent]="metricsParent"
+			(clickClose)="onCancelClick($event)"></vtr-ui-close-button>
 	</div>
 	<p class="description"
 		id="modal_confirm_description"

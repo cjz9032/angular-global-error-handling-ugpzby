@@ -8,20 +8,20 @@
 					<span *ngIf="isNumberpad">{{ 'gaming.macroKey.details.buttons.numberPrefix' | translate }}</span>
 					{{ number.key }}
 				</span>
-				
+
 			</div>
 		</div>
-		<div class="col-12" *ngIf="!recordingStatus" class="w-100"> 
+		<div class="col-12" *ngIf="!recordingStatus" class="w-100">
 			<div class="select-wrapper">
 				<vtr-ui-lighting-effect [selectedValue]="repeatSelectedValue" [options]="repeatOptions[0]"
-					[enableDescription]="false" (change)="onRepeatChanged($event)" [tabindex]="1">
+					[enableDescription]="false" (change)="onRepeatChanged($event)" [tabindex]="1" [automationId]="'gaming_macro_key_ settings_repeat drop'">
 				</vtr-ui-lighting-effect >
 			</div>
 		</div>
 		<div class="col-12" *ngIf="!recordingStatus" class="w-100">
 			<div class="select-wrapper">
 				<vtr-ui-lighting-effect [tooltip_value]= "tooltips_delay | translate" [showDescription]="true" [selectedValue]="delaySelectedValue" [options]="intervalOptions[0]"
-					(change)="onIntervalChanged($event)" [tabindex]="1">
+					(change)="onIntervalChanged($event)" [tabindex]="1" [automationId]="'gaming_macro_key_settings_delay drop'">
 				</vtr-ui-lighting-effect>
 			</div>
 		</div>

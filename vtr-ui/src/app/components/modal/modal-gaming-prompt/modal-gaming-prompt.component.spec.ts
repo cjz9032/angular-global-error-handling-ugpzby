@@ -1,25 +1,51 @@
-// import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ModalGamingPromptComponent } from './modal-gaming-prompt.component';
+import { TranslateStore } from '@ngx-translate/core';
+import { TranslationModule } from 'src/app/modules/translation.module';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
-// import { ModalGamingPromptComponent } from './modal-gaming-prompt.component';
+describe('ModalGamingPromptComponent', () => {
+    let component: ModalGamingPromptComponent;
+    let fixture: ComponentFixture<ModalGamingPromptComponent>;
+    let activeModalService: any;
+    beforeEach(async(() => {
+        TestBed.configureTestingModule({
+        declarations: [ ModalGamingPromptComponent ],
+        imports: [ TranslationModule ],
+        schemas: [NO_ERRORS_SCHEMA],
+        providers: [NgbActiveModal, HttpClient, TranslateStore]
+        })
+        activeModalService = TestBed.inject(NgbActiveModal);
+        fixture = TestBed.createComponent(ModalGamingPromptComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    }));
 
-// describe('ModalGamingPromptComponent', () => {
-//   let component: ModalGamingPromptComponent;
-//   let fixture: ComponentFixture<ModalGamingPromptComponent>;
 
-//   beforeEach(async(() => {
-//     TestBed.configureTestingModule({
-//       declarations: [ ModalGamingPromptComponent ]
-//     })
-//     .compileComponents();
-//   }));
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 
-//   beforeEach(() => {
-//     fixture = TestBed.createComponent(ModalGamingPromptComponent);
-//     component = fixture.componentInstance;
-//     fixture.detectChanges();
-//   });
+    it('should click close button', () => {
+        spyOn(activeModalService, 'close').and.callThrough();
+        expect(activeModalService.close).toHaveBeenCalledTimes(0);
+        component.closeModal();
+        expect(activeModalService.close).toHaveBeenCalledTimes(1);
+    });
+    it('should click confirm button', () => {
+        spyOn(activeModalService, 'close').and.callThrough();
+        expect(activeModalService.close).toHaveBeenCalledTimes(0);
+        component.confirmFn();
+        expect(activeModalService.close).toHaveBeenCalledTimes(1);
+    });
+    
+    it('should click cancle button', () => {
+        spyOn(activeModalService, 'close').and.callThrough();
+        expect(activeModalService.close).toHaveBeenCalledTimes(0);
+        component.cancleFn();
+        expect(activeModalService.close).toHaveBeenCalledTimes(1);
+    });
+});
 
-//   it('should create', () => {
-//     expect(component).toBeTruthy();
-//   });
-// });

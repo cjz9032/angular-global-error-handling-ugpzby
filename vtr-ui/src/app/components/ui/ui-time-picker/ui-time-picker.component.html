@@ -27,32 +27,32 @@
 								<div class="time-headings">
 									<p class=""
 										id="smartStandby-{{linkId}}-hours"
-										role="text">
+										attr.aria-label="smartStandby-{{linkId}}-hours">
 										{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit1' | translate | uppercase }}
 									</p>
-									<span class=""
-										role="text"
-										id="{{linkId}}-hours-value">{{hours[hour]}}</span>
+									<span class="" role="text" 
+									id="{{hours[copyHour]}}-{{linkId}}-'hours'">{{hours[hour]}}</span>
 								</div>
 								<div class="time-headings">
 									<p class=""
 										id="smartStandby-{{linkId}}-minutes"
-										role="text">
+										attr.aria-label="smartStandby-{{linkId}}-minutes">
 										{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit2' | translate | uppercase }}
 									</p>
-									<span class=""
-										role="text"
-										id="{{linkId}}-minutes-value">{{minutes[minute]}}</span>
+									<span class="" 
+									role="text" 
+									id="{{minutes[copyMinute]}}-{{linkId}}-'minutes'">{{minutes[minute]}}</span>
 								</div>
 								<div class="time-headings">
 									<p class=""
 										id="smartStandby-{{linkId}}-amPm"
-										role="text">
+										role="text"
+										attr.aria-label="smartStandby-{{linkId}}-amPm">
 										{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit3' | translate }}
 									</p>
-									<span class=""
-										role="text"
-										id="{{linkId}}-amPm-value">{{amPms[amPm] | translate}}</span>
+									<span class="" 
+									role="text" 
+									id="{{linkId}}-value-{{amPms[copyAmPm]}}">{{amPms[amPm] | translate}}</span>
 								</div>
 
 								<div class="toggle-icon align-right"
@@ -78,14 +78,15 @@
 											tabindex="0"
 											role="button"
 											id="smartStandby-{{linkId}}-hours-prev-btn"
-											aria-label="smart standby hours decrease button">
+											aria-label="smart standby hours arrow up">
 											<fa-icon [icon]="['fal', 'chevron-up']"></fa-icon>
 										</div>
 
 										<span>{{hours[prevHour]}}</span><br>
 										<span class="highlight"
+											role="text"
 											id="{{hours[copyHour]}}'hours'"
-											attr.aria-label="{{hours[copyHour]}}, 'hours'">{{hours[copyHour]}}</span><br>
+											attr.aria-label="{{hours[copyHour]}} 'hours'">{{hours[copyHour]}}</span><br>
 										<span>{{hours[nextHour]}}</span>
 
 										<div class="toggle-icon"
@@ -94,7 +95,7 @@
 											tabindex="0"
 											role="button"
 											id="smartStandby-{{linkId}}-hours-next-btn"
-											aria-label="smart standby hours increase button">
+											aria-label="smart standby hours arrow down">
 											<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
 										</div>
 
@@ -107,14 +108,15 @@
 											id="smartStandby-{{linkId}}-minutes-prev-btn"
 											tabindex="0"
 											role="button"
-											aria-label="smart standby minutes decrease button">
+											aria-label="smart standby minutes arrow up">
 											<fa-icon [icon]="['fal', 'chevron-up']"></fa-icon>
 										</div>
 
 										<span>{{minutes[prevMinute]}}</span><br>
 										<span class="highlight"
+											role="text"
 											id="{{minutes[copyMinute]}}, 'minutes'"
-											attr.aria-label="{{minutes[copyMinute]}}, 'minutes'">{{minutes[copyMinute]}}</span><br>
+											attr.aria-label="{{minutes[copyMinute]}} 'minutes'">{{minutes[copyMinute]}}</span><br>
 										<span>{{minutes[nextMinute]}}</span>
 
 										<div class="toggle-icon"
@@ -123,7 +125,7 @@
 											tabindex="0"
 											role="button"
 											id="smartStandby-{{linkId}}-minutes-next-btn"
-											aria-label="smart standby minutes increase button">
+											aria-label="smart standby minutes arrow down">
 											<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
 										</div>
 
@@ -182,14 +184,14 @@
 									(click)="setTimer()"
 									(keydown.enter)="[setTimer(),combo.focus()]"
 									id="smartStandby-{{linkId}}-done-icon"
-									aria-label="'confirm changes'"></fa-icon>
+									aria-label="'ok'"></fa-icon>
 								<fa-icon [icon]="['fal', 'times']"
 									tabindex="0"
 									role="button"
 									(click)="clearSettings()"
 									(keydown.enter)="[clearSettings(),combo.focus()]"
 									id="smartStandby-{{linkId}}-close-icon"
-									aria-label="'cancel changes'"></fa-icon>
+									aria-label="'cancel'"></fa-icon>
 							</div>
 						</div>
 					</div>

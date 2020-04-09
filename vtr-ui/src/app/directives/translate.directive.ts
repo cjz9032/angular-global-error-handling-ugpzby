@@ -19,9 +19,19 @@ export class TranslateDirective {
 		const textList: Array<string> = translatedString.split(/<\/?tag>/);
 		const contentTextList: Array<string> = translatedString.split(/<tag>.*?<\/tag>/);
 		const tagTextList = textList.filter(text => !contentTextList.includes(text));
-
+		
 		this.containerRef.createEmbeddedView(this.template);
-		const element: HTMLElement = this.template.elementRef.nativeElement.nextElementSibling;
+		let element: HTMLElement;
+		const nativeElement = this.template.elementRef.nativeElement;
+
+		if (nativeElement.nextElementSibling) {
+			element = nativeElement.nextElementSibling; // for non-Ivy
+		} else if (nativeElement.previousElementSibling) {
+			element = nativeElement.previousElementSibling; // for Ivy
+		} else {
+			return; // nothing found, exit...
+		}
+		
 		const childNodes = Array.from(element.getElementsByTagName('a'));
 		if (element.innerText) {
 			element.childNodes.forEach(childNode => {

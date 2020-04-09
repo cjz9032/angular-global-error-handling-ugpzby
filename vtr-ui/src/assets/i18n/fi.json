@@ -1,5 +1,5 @@
 {
-	"nonProduction": "You're now visiting the non-production version of Lenovo Vantage!",
+    "nonProduction": "You're now visiting the non-production version of Lenovo Vantage!",
     "gaming": {
         "dashboard": {
             "device": {
@@ -60,6 +60,7 @@
                     "autoClose": "Automaattinen sulkeminen",
                     "networkBoost": "Verkon tehostus",
                     "hybridMode": "Hybriditila",
+                    "overDrive": "Over Drive",
                     "touchpadLock": "Kosketuslevyn lukitus",
                     "lightingDriverPopup": {
                         "headerText": "Ajurin asennus vaaditaan",
@@ -95,7 +96,8 @@
                     "line9": "<b>Kosketuslevyn lukitus </b><br> Estä väärät syötteet poistamalla kosketuslevy käytöstä pelaamisen ajaksi",
                     "line10": "<b>Automaattinen sulkeminen </b><br> Maksimoi käytettävissä olevat järjestelmäresurssit tyhjentämällä ennen pelaamisen aloittamista prosessit, joita ei tarvita pelaamiseen",
                     "line11": "<b>Lämpö-tila </b><br> Määritä haluamaasi laitteen profiiliin tuulettimen kierrosnopeuden ja jäähdytyksen säätö",
-                    "line12": "<b>Makronäppäin</b><br> Näppäimistötoimintojen mukauttaminen pelityyliisi sopiviksi"
+                    "line12": "<b>Makronäppäin</b><br> Näppäimistötoimintojen mukauttaminen pelityyliisi sopiviksi",
+                    "line13": "<b>Over Drive </b><br> This function makes your screen respond faster"
                 },
                 "systemInfo": {
                     "systenTooltip": "Näytä keskusyksikön/näytönohjaimen/RAM-muistin kuvaukset, mukaan lukien valmistus- ja mallitiedot, viemällä osoitin näiden ja eri asemien päälle"
@@ -1516,8 +1518,8 @@
                     "title": "Näyttö",
                     "displayColorTemperature": {
                         "title": "Näytön värilämpötila",
-						"description": "Voit säätää näyttösi värilämpötilaa suodattamaan sinistä valoa pois, jolloin silmien rasitus vähenee. Säätää näytön värit lämpimämmiksi auringonlaskusta auringonnousuun helpottamaan nukkumista.",
-						"link": {
+                        "description": "Voit säätää näyttösi värilämpötilaa suodattamaan sinistä valoa pois, jolloin silmien rasitus vähenee. Säätää näytön värit lämpimämmiksi auringonlaskusta auringonnousuun helpottamaan nukkumista.",
+                        "link": {
                             "click": "Napsauta",
                             "here": "tätä",
                             "rest": "muuttaaksesi värilämpötilaa."
@@ -1725,10 +1727,10 @@
                             "option1": "Valitse",
                             "option2": "Avaa verkkosivusto",
                             "option3": "Kirjoita teksti",
-                            "option4": "Open applications or files",
-                            "option5": "Invoke key sequence"
+                            "option4": "Avaa sovelluksia tai tiedostoja",
+                            "option5": "Käynnistä näppäinyhdistelmä"
                         },
-                        "invokeKeySequenceNote": "Note: Fn and all the punctuation are not supported for this function."
+                        "invokeKeySequenceNote": "Huomautus: Fn-näppäimiä ja kaikkia välimerkkejä ei tueta tälle toiminnolle."
                     },
                     "tooltip": "Täytettävä sisältö",
                     "apply": {
@@ -1745,15 +1747,15 @@
                         "placeholder": "Kirjoita tähän"
                     },
                     "invokeKeySequence": {
-                        "title": "KEY SEQUENCE",
-                        "placeholder": "5 keys at most"
+                        "title": "NÄPPÄINYHDISTELMÄ",
+                        "placeholder": "Enintään 5 näppäintä"
                     },
                     "openapplicationsorfiles": {
-                        "applicationTitle": "You need to delete one app first",
-                        "fileTitle": "You need to delete one file first",
-                        "applicationsToOpen": "APPLICATIONS TO OPEN",
-                        "filesToOpen": "FILES TO OPEN",
-                        "add": "ADD"
+                        "applicationTitle": "Sinun täytyy ensin poistaa yksi sovellus",
+                        "fileTitle": "Sinun täytyy ensin poistaa yksi tiedosto",
+                        "applicationsToOpen": "AVATTAVAT SOVELLUKSET",
+                        "filesToOpen": "AVATTAVAT TIEDOSTOT",
+                        "add": "LISÄÄ"
                     }
                 },
                 "fnCtrlKey": {
@@ -1885,6 +1887,21 @@
                             "windowsLink": "Siirry Windows-asetuksiin ja anna käyttöoikeus",
                             "privacyLink": "Poista se käytöstä siirtymällä kameran tietosuojatilaan"
                         }
+                    },
+                    "distanceSensitivityAdjusting": {
+                        "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
+                        "captionOn": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, you can maually adjust the dectecting sensitivity based on your preference.",
+                        "captionOff": "The accuracy varies by body size, posture, and frequency of movement. When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
+                        "options": {
+                            "near": "Near",
+                            "medium": "Middle",
+                            "far": "Far"
+                        },
+                        "readMore": {
+                            "line1": "• Near: 0.9 meter",
+                            "line2": "• Middle: 1.2 meter",
+                            "line3": "• Far: 1.5 meter"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1912,9 +1929,12 @@
                     "description2": "Tämä ominaisuus käyttää tunnistimia ja kameraa läsnäolon havaitsemiseksi. Toiminto EI kuitenkaan kerää henkilötietoja.",
                     "description3": "1. Jos tietokone on kolmio-, taitos- tai tauluasennossa, nämä ominaisuudet eivät ehkä toimi oikein.",
                     "description4": "2. Jos tietokone on horrostilassa tai jos tietokoneesta on katkaistu virta, Zero Touch -kirjautuminen ei toimi.",
-                    "description5": "3. Muuta tietokoneen näytön kulmaa niin, että infrapunakamera voi tunnistaa kasvosi automaattista sisäänkirjautumista varten.",
                     "description6": "4. Jos tietokoneen lentotila on käytössä, nämä langattomat ominaisuudet ovat poissa käytöstä.",
-                    "description7": "Tarkkuus vaihtelee kehon koon, asennon ja liikkumisen tiheyden mukaan. Jos tietokone lukitaan odottamatta, paranna tarkkuutta säätämällä herkkyyspalkkia."
+                    "description7": "Tarkkuus vaihtelee kehon koon, asennon ja liikkumisen tiheyden mukaan. Jos tietokone lukitaan odottamatta, paranna tarkkuutta säätämällä herkkyyspalkkia.",
+                    "description5a1": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to ",
+                    "description5a2": "User Guide ",
+                    "description5a3": "that comes with it.",
+                    "description5b": "b. Your computer is in hibernation mode or has been turned off."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Siirry Windows Hello -asetuksiin",
@@ -1923,6 +1943,40 @@
                 "resetToDefault": "Uudelleenasetus",
                 "sensitivityAdjusting": {
                     "title": "TUNNISTUSHERKKYYDEN MUUTTAMINEN"
+                },
+                "image": {
+                    "title": "Intelligent security",
+                    "description": "Buckles up your PC with intelligent sensing technology, protects your privacy, and saves your battery power."
+                },
+                "advancedSettings": {
+                    "showAdvSettings": "ADVANCED SETTINGS",
+                    "hideAdvSettings": "HIDE ADVANCED SETTINGS"
+                },
+                "zeroTouchLoginForIdea": {
+                    "title": "Zero Touch Login",
+                    "caption": "This feature enables you to improve the work efficiency by automatically waking up or logging in your computer. To use the feature, you need to register your face in Windows Hello.",
+                    "tooltip": "When you are in front of your computer or approaching it (within 1.2 or 1.5 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer. <br>Depending on the sensor capability, the maximum detecting distance varies. Refer to the <i>User Guide</i> that comes with your computer for details."
+                },
+                "distanceSensitivityAdjustingForIdea": {
+                    "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
+                    "captionOn": "Enable this feature to automatically adjust the detecting distance of movements to wake up the system. Turn it off to manually adjust the detecting sensitivity based on your preference.",
+                    "captionOff": "When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
+                    "options": {
+                        "near": "Near",
+                        "medium": "Middle",
+                        "far": "Far"
+                    },
+                    "readMore": "There are three options. In each range, when human movements are detected, your screen will be waked up accordingly.",
+                    "readMoreForSensor1": {
+                        "line1": "• Near: 0-0.4 meter",
+                        "line2": "• Middle: 0-0.6 meter",
+                        "line3": "• Far: 0-1.2 meter"
+                    },
+                    "readMoreForSensor2": {
+                        "line1": "• Near: 0.2-0.55 meter",
+                        "line2": "• Middle: 0.2-1.0 meter",
+                        "line3": "• Far: 0.2-1.5 meter"
+                    }
                 }
             },
             "intelligentScreen": {
@@ -1999,8 +2053,7 @@
                 "note": {
                     "description": "Wi-Fi-toiminto ei toimi seuraavissa tilanteissa:",
                     "description1": "Tietokonetta ei ole kytketty verkkovirtaan.",
-                    "description2": "Akun virransäästötila on käytössä.",
-                    "description3": "Keskusyksikön lämpötila on liian korkea."
+                    "description2": "Akun virransäästötila on käytössä."
                 }
             },
             "voice": {
@@ -2034,6 +2087,53 @@
                     "btnText": "ok",
                     "title": "Asennus epäonnistui",
                     "desc": "Yritä Lenovo Voice -toiminnon käyttöä myöhemmin uudelleen."
+                }
+            },
+            "antiTheft": {
+                "heading": "Intelligent Sensing",
+                "title": "Smart Motion Alert",
+                "desc": "<p><label>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</label></p> <p style='margin-top:4px;'><label>To dismiss the alarm, enter the correct password or log in by Windows Hello.</label></p>",
+                "note": {
+                    "description": "Once you log in the system successfully, this feature will be turned off automatically. You need to enable it again to use it."
+                },
+                "alarm": {
+                    "title": " THE ALARM WILL LAST FOR",
+                    "option1": "10 seconds",
+                    "option2": "20 seconds",
+                    "option3": "30 seconds",
+                    "option4": "1 minute",
+                    "option5": "Never stop"
+                },
+                "allowCamera": {
+                    "title": "TATING PHOTOS",
+                    "describe": "When enabling this feature, the camera takes photos automatically when detecting any movement if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
+                    "checkBoxText": "Enable this feature"
+                },
+                "cameraPrivacy": {
+                    "describe": "Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
+                    "linkText": "Go to Camera privacy mode to turn it off"
+                },
+                "authorizedAccess": {
+                    "describe": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
+                    "linkText": "Go to Windows Settings to give access"
+                },
+                "photo": {
+                    "title": "THE NUMBER OF PHOTOS TAKEN DURING THE MOVEMENT",
+                    "tooltip": "The camera on your computer automatically activates to take pictures when movements are detected. Pictures are taken every 2 seconds and are saved to your local storage.",
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
+                },
+                "showPhoto": {
+                    "title": "PHOTOS HAVE BEEN:",
+                    "link": "View photos"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Lenovo Vantage doesn't have access to the file system.",
+                    "link": "Go to Windows Settings to give access"
                 }
             }
         }
@@ -2981,7 +3081,7 @@
             "music": "Musiikki",
             "science": "Tiede"
         },
-		"gaming": {
+        "gaming": {
             "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
             "gamingFeature1": "-Computer status monitor",
             "gamingFeature2": "-Performance mode & overclocking",
@@ -3333,7 +3433,137 @@
             "nowScanningDetail": {
                 "cardTitle": "NOW SCANNING DETAIL",
                 "current": "CURRENT: ",
-                "upNext": "UP NEXT"
+                "upNext": "UP NEXT",
+                "tunePCDesc": "Let’s help improve your PC performance. We do it safely using industry best practices. Benefits for subscribers include reduced PC start time, improved performance, improved stability and faster launch of applications.",
+                "boostDesc": "Let’s help enhance your browsing experience. Let's fix network and access issues. Benefits for subscribers include betterment in internet connectivity, improvement in upload/download speeds and making internet more secure.",
+                "malwareDesc": "Let’s help quickly secure your PC, on-demand. We do it by removing spyware, malware and adware. We also remove near/zero-day infections. Benefits for subscribers include security of data and optimal system performance.",
+                "proactiveDesc": "Let's tune your computer periodically and fix issues, Proactive and automated to keep your PC tuned and covered. Always",
+                "tunePCScanningItems": {
+                    "accumulatedJunk": {
+                        "itema1": "Look for junk in 85 locations",
+                        "itema2": "System log files that aren’t needed",
+                        "itema3": "Unnecessary application residues",
+                        "itema4": "Temporary files that clog diskspace",
+                        "itema5": "Files that you deleted so long ago",
+                        "itema6": "Outdated errors and alerts"
+                    },
+                    "usabilityIssues": {
+                        "itemb1": "Address dozens of usability challenges",
+                        "itemb2": "Check external devices connectivity",
+                        "itemb3": "Keeping Windows updates always current",
+                        "itemb4": "Do apps render and appear at its best",
+                        "itemb5": "Analyzing processing power utilization",
+                        "itemb6": "Help locate files easily"
+                    },
+                    "windowsSettings": {
+                        "itemc1": "Diagnose dozens of Windows OS settings",
+                        "itemc2": "Ensure all is well with your Windows",
+                        "itemc3": "Ensure essential services are running",
+                        "itemc4": "Check health of connectivity settings",
+                        "itemc5": "Check ability to share files in network",
+                        "itemc6": "Check biometric and access settings"
+                    },
+                    "systemErrors": {
+                        "itemd1": "Ensure essential services are running",
+                        "itemd2": "Select services for higher performance",
+                        "itemd3": "Look for software conflict errors",
+                        "itemd4": "Optimize Windows error management",
+                        "itemd5": "Check and fix apps launching errors",
+                        "itemd6": "Configure system error reports"
+                    },
+                    "registryErrors": {
+                        "iteme1": "Deep check Windows registry,",
+                        "iteme2": "Scanning for invalid Windows services",
+                        "iteme3": "Finding corrupted registry entries",
+                        "iteme4": "Look for useless file extensions",
+                        "iteme5": "Search broken entries of installed apps",
+                        "iteme6": "Look for useless leftover entries"
+                    }
+                },
+                "boostScanningItems": {
+                    "networkSettings": {
+                        "itema1": "Diagnose network and Internet settings",
+                        "itema2": "Verify network configuration settings",
+                        "itema3": "Verify available network settings",
+                        "itema4": "Configure to load websites faster",
+                        "itema5": "Look for page rendering errors",
+                        "itema6": "Are connection service(s) running well"
+                    },
+                    "browserSettings": {
+                        "itemb1": "Enable better browsing experience",
+                        "itemb2": "Configure settings faster websites rendering",
+                        "itemb3": "Ensure browser security services are OK",
+                        "itemb4": "Ensure webpages are rendering properly",
+                        "itemb5": "Check settings for faster downloads",
+                        "itemb6": "Check permissions and access control"
+                    },
+                    "browserSecurity": {
+                        "itemc1": "Ensure security services are running",
+                        "itemc2": "Configure browser security features",
+                        "itemc3": "Check network services are running well",
+                        "itemc4": "Configure protocol settings",
+                        "itemc5": "Verify Browser content settings are OK",
+                        "itemc6": "Verify browser plugins & extensions"
+                    },
+                    "wifiPerformance": {
+                        "itemd1": "Optimize Wi-Fi experience settings",
+                        "itemd2": "Ensure your home network is secure",
+                        "itemd3": "Check Wi-Fi services settings",
+                        "itemd4": "Secure network sharing settings",
+                        "itemd5": "Check Wi-Fi security standards",
+                        "itemd6": "Ensure Wi-Fi channels do not overlap"
+                    },
+                    "eJunk": {
+                        "iteme1": "Eliminate clutter from 4 browsers",
+                        "iteme2": "Look for leftover e-junk",
+                        "iteme3": "Look for outdated internet files",
+                        "iteme4": "Clear unwanted web cache",
+                        "iteme5": "Clear cookies",
+                        "iteme6": "Remove browser residues"
+                    }
+                },
+                "malwareScanningItems": {
+                    "malwareScan": {
+                        "itema1": "Scan common loading points",
+                        "itema2": "Check critical locations for threats",
+                        "itema3": "Check for virus, spyware and malware",
+                        "itema4": "Scan for 50+ file types",
+                        "itema5": "Scan for malware remnants",
+                        "itema6": "Leverage from cloud remediation engine"
+                    },
+                    "zerodayInfections": {
+                        "itemb1": "Look for zero-day virus",
+                        "itemb2": "Look for recent, undiagnosed malware",
+                        "itemb3": "Scan with cloud-based remediation",
+                        "itemb4": "Perform behavioral monitoring",
+                        "itemb5": "Scan files with aggregated engine",
+                        "itemb6": "Scan against latest definitions"
+                    },
+                    "securitySettings": {
+                        "itemc1": "Keep Windows updates always current",
+                        "itemc2": "Ensure Windows firewall service is OK",
+                        "itemc3": "Keep browser settings secure",
+                        "itemc4": "Check essential security services",
+                        "itemc5": "Configure user access settings",
+                        "itemc6": "Verify authentication services"
+                    },
+                    "errantPrograms": {
+                        "itemd1": "Look for errant apps",
+                        "itemd2": "Look for potentially unwanted apps",
+                        "itemd3": "Detect inactive and hidden apps",
+                        "itemd4": "Verify apps for malicious behavior",
+                        "itemd5": "Check apps based on reputation factor",
+                        "itemd6": "Check errant programs in registry"
+                    },
+                    "annoyingAdware": {
+                        "iteme1": "Look for browser(s) adware",
+                        "iteme2": "Revise browser(s) pop-up settings",
+                        "iteme3": "Eliminate browser re-direction threats",
+                        "iteme4": "Check for adware leftovers",
+                        "iteme5": "Optimize browser experience settings",
+                        "iteme6": "verify in cloud remediation engine"
+                    }
+                }
             }
         },
         "scanCompletePage": {
@@ -3359,18 +3589,262 @@
             "secure": "{{secure}} ISSUES",
             "tunepc": {
                 "accumulatedjunkscannedareas": {
-                    "OptimizingWindowssettings": "Optimizing Windows settings",
-                    "Preventingnon-essential": "Preventing non-essential service from running",
-                    "Applyingregistry": "Applying registry and shortcut fixes",
-                    "Removingunnecessary": "Removing unnecessary residual fies",
-                    "Scanningandfixing": "Scanning and fixing critical services",
-                    "RemovingOS": "Removing OS and application log files"
+                    "area1": "Scanned for junk in 85 locations",
+                    "area2": "System log files that aren’t needed",
+                    "area3": "Unnecessary application residues",
+                    "area4": "Temporary files that clog diskspace",
+                    "area5": "Files that you deleted so long ago",
+                    "area6": "Outdated errors and alerts"
+                },
+                "registryerrorsscannedareas": {
+                    "area1": "Completed deep check of Windows registry",
+                    "area2": "Scanned for invalid Windows services",
+                    "area3": "Checked for corrupted registry entries",
+                    "area4": "Scanned for useless file extensions",
+                    "area5": "Searched broken entries of installed apps",
+                    "area6": "Checked for useless leftover entries"
+                },
+                "windowssettingsscannedareas": {
+                    "area1": "Diagnosed dozens of Windows OS settings",
+                    "area2": "Checked all is well with your Windows",
+                    "area3": "Confirmed essential services are running",
+                    "area4": "Checked health of connectivity settings",
+                    "area5": "Checked ability to share files in network",
+                    "area6": "Checked biometric and access settings"
+                },
+                "usabilityissuesscannedareas": {
+                    "area1": "Checked for usability challenges",
+                    "area2": "Checked external devices connectivity",
+                    "area3": "Checked Windows updates status",
+                    "area4": "Verified apps rendering setting",
+                    "area5": "Analyzed processing power utilization",
+                    "area6": "Help locate files easily"
+                },
+                "systemerrorsscannedareas": {
+                    "area1": "Checked if essential services are running",
+                    "area2": "Look services for higher performance",
+                    "area3": "Look for software conflict errors",
+                    "area4": "Analyzed Windows error management",
+                    "area5": "Scanned for apps launching errors",
+                    "area6": "Checked system error reports configuration"
                 }
             },
             "Diskspace": "Disk Space Reclaimed :",
             "Performanceimprovements": "Performance Improvements :",
             "Securityimprovements": "Security Improvements:",
-            "Onceaweek": "Once a week"
+            "Onceaweek": "Once a week",
+            "internetperformance": {
+                "ejunkscannedareas": {
+                    "area1": "Identified clutter from 4 browsers",
+                    "area2": "Searched leftover e-junk",
+                    "area3": "Scanned outdated internet files",
+                    "area4": "Searched unwanted web cache",
+                    "area5": "Checked cookies for clearance",
+                    "area6": "Scanned browser residues"
+                },
+                "browsersecurityscannedareas": {
+                    "area1": "Checked security services are running",
+                    "area2": "Checked browser security features",
+                    "area3": "Verified network services",
+                    "area4": "Configure protocol settings",
+                    "area5": "Checked Browser content settings",
+                    "area6": "Scanned browser plugins & extensions"
+                },
+                "networksettingsscannedareas": {
+                    "area1": "Diagnosed network and Internet settings",
+                    "area2": "Diagnosed network configuration settings",
+                    "area3": "Verified connected network settings",
+                    "area4": "Diagnosed settings for faster websites rendering",
+                    "area5": "Scanned for page rendering errors",
+                    "area6": "Scanned all connection service(s)"
+                },
+                "browsersettingsscannedareas": {
+                    "area1": "Enable better browsing experience",
+                    "area2": "Diagnosed settings for faster websites rendering",
+                    "area3": "Verified browser security services",
+                    "area4": "Checked if webpages are rendering properly",
+                    "area5": "Scanned settings for faster downloads",
+                    "area6": "Analyzed permissions and access control"
+                },
+                "wifiperformancescannedareas": {
+                    "area1": "Verified Wi-Fi experience settings",
+                    "area2": "Verified secure home network",
+                    "area3": "Scanned Wi-Fi services settings",
+                    "area4": "Verified Secure network sharing settings",
+                    "area5": "Verified Wi-Fi security standards",
+                    "area6": "Analyzed Wi-Fi channels do not overlap"
+                }
+            },
+            "malwaresecurity": {
+                "malwarescanscannedareas": {
+                    "area1": "Scanned common loading points",
+                    "area2": "Scanned critical locations for threats",
+                    "area3": "Scanned for virus, spyware and malware",
+                    "area4": "Scanned 50+ file types for threats",
+                    "area5": "Checked for malware remnants",
+                    "area6": "Verified in cloud remediation engine"
+                },
+                "errantprogramsscannedareas": {
+                    "area1": "Look for errant apps",
+                    "area2": "Inspected for potentially unwanted apps",
+                    "area3": "Searched for inactive and hidden apps",
+                    "area4": "Scanned for malicious apps",
+                    "area5": "Checked apps based on reputation factor",
+                    "area6": "Checked errant programs in registry"
+                },
+                "zerodayinfectionsscannedareas": {
+                    "area1": "Scanned for zero-day virus",
+                    "area2": "Searched for recent, undiagnosed malware",
+                    "area3": "Verified with cloud-based remediation",
+                    "area4": "Performed behavioral monitoring",
+                    "area5": "Verified files with aggregated engine",
+                    "area6": "Scanned against updated definitions"
+                },
+                "securitysettingsscannedareas": {
+                    "area1": "Verified Windows updates are current",
+                    "area2": "Verified Windows firewall service",
+                    "area3": "Checked for secure browser settings",
+                    "area4": "Diagnosed essential security services",
+                    "area5": "Verified user access settings",
+                    "area6": "Verified authentication services"
+                },
+                "annoyingadwarescannedareas": {
+                    "area1": "Scanned for browser(s) adware",
+                    "area2": "Verify browser(s) pop-up settings",
+                    "area3": "Scanned browser re-direction threats",
+                    "area4": "Checked adware leftovers",
+                    "area5": "Verified browser experience settings",
+                    "area6": "Verified with cloud remediation engine"
+                }
+            },
+            "subscriber": {
+                "tunepc": {
+                    "accumulatedjunkscannedareas": {
+                        "area1": "Cleaned of junk in 85 locations",
+                        "area2": "Cleared System log files that aren’t needed",
+                        "area3": "Deleted application residues",
+                        "area4": "Removed Temporary files to free up diskspace",
+                        "area5": "Eliminated files that you deleted so long ago",
+                        "area6": "Cleared errors and alerts"
+                    },
+                    "registryerrorsscannedareas": {
+                        "area1": "Completed deep check of Windows registry",
+                        "area2": "Fixed any invalid Windows services",
+                        "area3": "Removed any corrupted registry entries",
+                        "area4": "Deleted any obsolete file extensions",
+                        "area5": "Cleaned broken entries of installed apps",
+                        "area6": "Cleared unwanted leftover entries"
+                    },
+                    "windowssettingsscannedareas": {
+                        "area1": "Validated Windows settings",
+                        "area2": "Optimized all Windows services",
+                        "area3": "Modified essential Windows services",
+                        "area4": "Modified essential Windows services",
+                        "area5": "Verified ability to share files in network",
+                        "area6": "Verified biometric and access settings"
+                    },
+                    "usabilityissuesscannedareas": {
+                        "area1": "Fixed any usability challenges",
+                        "area2": "Verified external devices connectivity",
+                        "area3": "Made sure Windows updates are always current",
+                        "area4": "Confirmed apps render and appear at its best",
+                        "area5": "Modified settings for processing power utilization",
+                        "area6": "Modified settings to Help locate files easily"
+                    },
+                    "systemerrorsscannedareas": {
+                        "area1": "Checked if essential services are running",
+                        "area2": "Modified services for higher performance",
+                        "area3": "Fixed any software conflict errors",
+                        "area4": "Optimized Windows error management",
+                        "area5": "Checked and fixed any apps launching errors",
+                        "area6": "Configured system error reports"
+                    }
+                },
+                "internetperformance": {
+                    "ejunkscannedareas": {
+                        "area1": "Removed clutter from 4 browser(s)",
+                        "area2": "Cleaned leftover e-junk",
+                        "area3": "Deleted outdated internet files",
+                        "area4": "Cleared unwanted web cache",
+                        "area5": "Cleared Cookies",
+                        "area6": "Cleaned any browser residues"
+                    },
+                    "browsersecurityscannedareas": {
+                        "area1": "Ensured security services are running",
+                        "area2": "Configured browser security features",
+                        "area3": "Checked and fixed network services",
+                        "area4": "Configured protocol settings",
+                        "area5": "Verified Browser content settings are OK",
+                        "area6": "Scanned browser plugins & extensions"
+                    },
+                    "networksettingsscannedareas": {
+                        "area1": "Fixed network and Internet settings",
+                        "area2": "Checked network configuration settings",
+                        "area3": "Modified connected network settings",
+                        "area4": "Diagnosed settings for faster websites rendering",
+                        "area5": "Fixed any page rendering errors",
+                        "area6": "Scanned all connection service(s)"
+                    },
+                    "browsersettingsscannedareas": {
+                        "area1": "Modified settings for better browsing experience",
+                        "area2": "Verified settings for faster websites rendering",
+                        "area3": "Ensured browser security services are OK",
+                        "area4": "Modified settings to load webpages properly",
+                        "area5": "Fixed settings for faster downloads",
+                        "area6": "Fixed permissions and access control settings"
+                    },
+                    "wifiperformancescannedareas": {
+                        "area1": "Modified Wi-Fi experience settings",
+                        "area2": "Validated secure home network settings",
+                        "area3": "Fixed Wi-Fi services settings",
+                        "area4": "Modified Secure network sharing settings",
+                        "area5": "Verified Wi-Fi security standards",
+                        "area6": "Validated Wi-Fi channels"
+                    }
+                },
+                "malwaresecurity": {
+                    "malwarescanscannedareas": {
+                        "area1": "Checked & Removed threats in common loading points",
+                        "area2": "Checked and removed threats in critical locations",
+                        "area3": "Removed any threats from PC",
+                        "area4": "Validated 50+ file types for threats",
+                        "area5": "Cleaned any malware remnants",
+                        "area6": "Verified in cloud remediation engine"
+                    },
+                    "errantprogramsscannedareas": {
+                        "area1": "Validated all installed apps",
+                        "area2": "Validated potentially unwanted apps",
+                        "area3": "Cleaned any inactive and hidden apps",
+                        "area4": "Removed any malicious and errant apps",
+                        "area5": "Validated apps based on reputation factor",
+                        "area6": "Completed registry check for errant programs"
+                    },
+                    "zerodayinfectionsscannedareas": {
+                        "area1": "Analyzed for zero-day virus",
+                        "area2": "Removed any malware from PC",
+                        "area3": "Validated in cloud remediation engine",
+                        "area4": "Completed behavioral monitoring of apps",
+                        "area5": "Validated against aggregated engine",
+                        "area6": "Validated against latest definitions"
+                    },
+                    "securitysettingsscannedareas": {
+                        "area1": "Optimized Windows update settings",
+                        "area2": "Tuned Windows firewall service",
+                        "area3": "Secured browser(s) settings",
+                        "area4": "Diagnosed essential security services",
+                        "area5": "Optimized user access settings",
+                        "area6": "Modified authentication services"
+                    },
+                    "annoyingadwarescannedareas": {
+                        "area1": "Removed browser(s) adware",
+                        "area2": "Tuned browser(s) pop-up settings",
+                        "area3": "Diagnosed browser re-direction threats",
+                        "area4": "Cleared adware leftovers",
+                        "area5": "Optimized browser experience settings",
+                        "area6": "Validated in cloud remediation engine"
+                    }
+                }
+            }
         },
         "subscriberScanHomePage": {
             "title": "All is well with your ",
@@ -3563,6 +4037,10 @@
                 "readMore": "Lue enemmän",
                 "readLess": "Lue vähemmän"
             }
+        },
+        "narrator": {
+            "leftArrow": "left arrow",
+            "rightArrow": "right arrow"
         }
     },
     "dcc": {

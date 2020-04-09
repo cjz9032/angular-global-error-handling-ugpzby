@@ -8,6 +8,7 @@ export class UICustomRadio {
 	@Input() value: string;
 	@Input() checked = false;
 	@Input() radioGroup: any;
+	@Input() automationid;
 	@Input() metricsParent = 'Device.MyDeviceSettings';
 
 	// These following instance variables added for Keyboard navigation to radio button.
@@ -28,6 +29,7 @@ export class UICustomRadio {
 	selectedRadioButton: any;
 	noRadioButtonSelected: boolean;
 	private radioButton: ElementRef<HTMLElement>;
+	radioLabel = 'radio.';
 
 	constructor(private logger: LoggerService,
 		public metrics: MetricService) { }
@@ -40,7 +42,7 @@ export class UICustomRadio {
 			this.setRadioButtons();
 		}
 	}
-	radioLabel = 'radio.';
+
 	changeRadioOnKeyPress($event, radio: HTMLInputElement) {
 
 		if (!this.checked) { // on only radio change
@@ -66,7 +68,7 @@ export class UICustomRadio {
 			case this.keyCode.SPACE:
 			case this.keyCode.RETURN:
 				this.changeRadioOnKeyPress($event, radio);
-				//this.setChecked(this.radioButton.nativeElement, true);
+				// this.setChecked(this.radioButton.nativeElement, true);
 				$event.stopPropagation();
 				$event.preventDefault();
 				break;
@@ -168,17 +170,18 @@ export class UICustomRadio {
 
 	private setCheckedToNextItem(currentItem) {
 		try {
-			let index;
+			if (currentItem) {
+				let index;
 
-			if (currentItem.nativeElement === this.lastRadioButton) {
-				this.setChecked(this.firstRadioButton, false);
-			} else {
-				index = this.radioButtons.indexOf(currentItem.nativeElement);
-				this.setChecked(this.radioButtons[index + 1], false);
+				if (currentItem.nativeElement === this.lastRadioButton) {
+					this.setChecked(this.firstRadioButton, false);
+				} else {
+					index = this.radioButtons.indexOf(currentItem.nativeElement);
+					this.setChecked(this.radioButtons[index + 1], false);
+				}
 			}
-
 		} catch (error) {
-			this.logger.exception('setRadioButtons error occurred ::', error);
+			this.logger.exception('UICustomRadio.setCheckedToNextItem exception', error);
 		}
 
 	}
@@ -212,7 +215,7 @@ export class UICustomRadio {
 				this.setRadioTabIndex(this.selectedRadioButton.nativeElement);
 			}
 		} catch (error) {
-			this.logger.exception('setRadioButtons error occurred ::', error);
+			this.logger.exception('UICustomRadio.setRadioButtons exception', error);
 		}
 	}
 

@@ -44,6 +44,9 @@
 			&.question {
 				cursor: pointer;
 			}
+			&:focus {
+				outline: 0.1rem solid $menu_hover;
+			}
 		}
 
 		.no-pointer {

@@ -78,19 +78,19 @@ describe('WidgetSystemToolsComponent', () => {
 	it('should have title System Updates', async () => {
 		fixture.detectChanges();
 		const compiled = fixture.debugElement.nativeElement;
-		expect(compiled.querySelector('#systemtools_systemupdates').textContent).toEqual(' gaming.dashboard.device.systemTools.systemUpdate ');
+		expect(compiled.querySelector('#gaming_dashboard_systemtools_systemupdates').textContent).toEqual(' gaming.dashboard.device.systemTools.systemUpdate ');
 	});
 
 	it('should have title Power', async () => {
 		fixture.detectChanges();
 		const compiled = fixture.debugElement.nativeElement;
-		expect(compiled.querySelector('#systemtools_power').textContent).toEqual(' gaming.dashboard.device.systemTools.power');
+		expect(compiled.querySelector('#gaming_dashboard_systemtools_power').textContent).toEqual(' gaming.dashboard.device.systemTools.power');
 	});
 
 	it('should have title Media', async () => {
 		fixture.detectChanges();
 		const compiled = fixture.debugElement.nativeElement;
-		expect(compiled.querySelector('#systemtools_displaycamera').textContent).toEqual(' gaming.dashboard.device.systemTools.media');
+		expect(compiled.querySelector('#gaming_dashboard_systemtools_displaycamera').textContent).toEqual(' gaming.dashboard.device.systemTools.media');
 	});
 
 	it('should create one', async () => {

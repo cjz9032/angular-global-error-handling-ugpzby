@@ -74,6 +74,7 @@
 					"autoClose": "Auto Close",
 					"networkBoost": "Network Boost",
 					"hybridMode": "Hybrid Mode",
+					"overDrive": "Over Drive",
 					"touchpadLock": "Touchpad Lock"
 				},
 				"systemTools": {
@@ -103,7 +104,8 @@
 					"line9": "<b>Touchpad Lock </b><br> Prevent mistaken inputs by disabling the touchpad while gaming",
 					"line10": "<b>Auto Close </b><br> Clear processes that are not needed for gaming before you start playing to maximize available system resources",
 					"line11": "<b>Thermal Mode </b><br> Set your preferred device profile for fan speed and cooling control",
-					"line12": "<b>Macro key </b><br> Customize your keyboard actions to suit your playing style"
+					"line12": "<b>Macro key </b><br> Customize your keyboard actions to suit your playing style",
+					"line13": "<b>Over Drive </b><br> This function makes your screen respond faster"
 				},
 				"systemInfo": {
 					"systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
@@ -1201,7 +1203,7 @@
 				"smartStandby": {
 					"sectionTitle": "Standby settings",
 					"title": "Smart standby",
-					"description": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-resume experience of <a target=\"_blank\"' role=\"text\"  href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern Standby</a> during hours of heavier use.",
+					"description": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-resume experience of <a target=\"_blank\"'    href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern Standby</a> during hours of heavier use.",
 					"tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set, or your computer usage. The computer switches from hibernation to Modern Standby only on scheduled days , and does not switch when it is inactive for consecutive scheduled days.",
 					"oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
 					"subTitle": "Schedule your computer",
@@ -1852,6 +1854,14 @@
 			"intelligentSecurity": {
 				"title": "Intelligent Security",
 				"readMore": "Read more",
+				"image": {
+					"title": "Intelligent security",
+					"description": "Buckles up your PC with intelligent sensing technology, protects your privacy, and saves your battery power."
+				},
+				"advancedSettings": {
+					"showAdvSettings": "ADVANCED SETTINGS",
+					"hideAdvSettings": "HIDE ADVANCED SETTINGS"
+				},
 				"HumanPresenceDetection": {
 					"title": "Human Presence Detection",
 					"tooltip": "Click here to reset the human presence detection settings."
@@ -1864,6 +1874,11 @@
 					"title": "Zero Touch Login",
 					"caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it.",
 					"tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+				},
+				"zeroTouchLoginForIdea": {
+					"title": "Zero Touch Login",
+					"caption": "This feature enables you to improve the work efficiency by automatically waking up or logging in your computer. To use the feature, you need to register your face in Windows Hello.",
+					"tooltip": "When you are in front of your computer or approaching it (within 1.2 or 1.5 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer. <br>Depending on the sensor capability, the maximum detecting distance varies. Refer to the <i>User Guide</i> that comes with your computer for details."
 				},
 				"zeroTouchLock": {
 					"title": "Zero Touch Lock",
@@ -1879,13 +1894,28 @@
 					},
 					"facialRecognition": {
 						"title": "FACIAL RECOGNITION",
-						"caption": "You can enable the facial recognition feature and allow it to access your camera. This tool captures your image in order to accurately recognize your presence or detect when you have left your device unattended. This data is processed locally on your device. Lenovo does not access or use it.",
+						"caption": "This feature helps to improve the recognition performance and avoid unexpected screen lock especially when you lean back in your chair. This feature is processded locally on your device. Lenovo does not access or use it.",
 						"checkBox": "Turn on the camera and enable this feature",
 						"note": {
 							"permission": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
 							"privacyMode": "Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
 							"windowsLink": "Go to Windows Settings to give access",
 							"privacyLink": "Go to Camera privacy mode to turn it off"
+						}
+					},
+					"distanceSensitivityAdjusting": {
+						"title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
+						"captionOn": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, you can maually adjust the dectecting sensitivity based on your preference.",
+						"captionOff": "The accuracy varies by body size, posture, and frequency of movement. When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
+						"options": {
+							"near": "Near",
+							"medium": "Middle",
+							"far": "Far"
+						},
+						"readMore": {
+							"line1": "• Near: 0.9 meter",
+							"line2": "• Middle: 1.2 meter",
+							"line3": "• Far: 1.5 meter"
 						}
 					}
 				},
@@ -1912,13 +1942,37 @@
 						}
 					}
 				},
+				"distanceSensitivityAdjustingForIdea": {
+					"title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
+					"captionOn": "Enable this feature to automatically adjust the detecting distance of movements to wake up the system. Turn it off to manually adjust the detecting sensitivity based on your preference.",
+					"captionOff": "When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
+					"options": {
+						"near": "Near",
+						"medium": "Middle",
+						"far": "Far"
+					},
+					"readMore": "There are three options. In each range, when human movements are detected, your screen will be waked up accordingly.",
+					"readMoreForSensor1": {
+						"line1": "• Near: 0-0.4 meter",
+						"line2": "• Middle: 0-0.6 meter",
+						"line3": "• Far: 0-1.2 meter"
+					},
+					"readMoreForSensor2": {
+						"line1": "• Near: 0.2-0.55 meter",
+						"line2": "• Middle: 0.2-1.0 meter",
+						"line3": "• Far: 0.2-1.5 meter"
+					}
+				},
 				"note": {
 					"description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
 					"description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect any personal data.",
-					"description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
-					"description4": "2. If your computer is in hibernation mode or has been turned off, Zero Touch Login will not work.",
-					"description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login.",
-					"description6": "4. If the Airplane mode is enabled on your computer, these features are disabled.",
+					"description3": "1. To use above functions, please adjust your screen to an approriate angle so that your face can be recognized.",
+					"description4": "2. Above functions are not supported when:",
+					"description5a1": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to ",
+					"description5a2": "User Guide ",
+					"description5a3": "that comes with it.",
+					"description5b": "b. Your computer is in hibernation mode or has been turned off.",
+					"description6": "3. If the Airplane mode is enabled on your computer, these features are disabled.",
 					"description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
 				},
 				"WindowsLink": {
@@ -1996,15 +2050,61 @@
 			"superResolution": {
 				"heading": "Intelligent Media",
 				"title": "Video Resolution Upscaling",
-				"desc": "<p><label>This feature enhances the experience of video playback by improving the video resolution. It works especially when the video is in poor resolution.</label></p> <p style='margin-top:4px;'><label>This function might impact the battery life, battery temperature, and cause noises. Please do not use it in DC mode. Otherwise, it will speed up the power consumption and shorten the battery life.</label></p>",
-				"tooltip": "The feature works only on:<br>Windows Media player",
+				"desc": "<p><label>This feature enhances the experience of video playback by improving the videor resolution. It works especially when the video is in poor resolution.</label></p> <p style='margin-top:4px;'><label>This function might impact the battery life, battery temperature, and cause noises. Please do not use it in DC mode (battery mode). Otherwise, it will speed up the power consumption and shorten the battery life.</label></p>",
+				"tooltip": "This feature only works for below video players:<br>Windows Media Player<br>Chrome<br>Movies & TV<br>PotPlayer<br>GOM player<br>Web-browser based players (e.g Chrome)<br><br>For instructions on how to enable this function on PotPlayer and  GOM player, refer to the User  Guide that comes with your computer.",
 				"note": {
-					"description": "The feature does not work when:",
-					"description1": "The computer is not connected to ac power.",
-					"description2": "The Battery saving mode is enabled.",
-					"description3": "The CPU temperature is too high."
+					"description": "This feature does not work when:",
+					"description1": "The Battery saver mode is enabled.",
+					"description2": " The CPU temperature is too high."
 				}
 			},
+			"antiTheft": {
+                "heading": "Intelligent Sensing",
+                "title": "Smart Motion Alert",
+                "desc": "<p><label>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</label></p> <p style='margin-top:4px;'><label>To dismiss the alarm, enter the correct password or log in by Windows Hello.</label></p>",
+                "note": {
+                    "description": "Once you log in the system successfully, this feature will be turned off automatically. You need to enable it again to use it."
+                },
+                "alarm": {
+                    "title":" THE ALARM WILL LAST FOR",
+                    "option1":"10 seconds",
+                    "option2":"20 seconds",
+                    "option3":"30 seconds",
+                    "option4":"1 minute",
+                    "option5":"Never stop"
+                },
+                "allowCamera": {
+                    "title":"TATING PHOTOS",
+                    "describe":"When enabling this feature, the camera takes photos automatically when detecting any movement if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
+                    "checkBoxText":"Enable this feature"
+                },
+                "cameraPrivacy": {
+                     "describe":"Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
+                     "linkText":"Go to Camera privacy mode to turn it off"
+                },
+                "authorizedAccess": {
+                    "describe":"Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
+                    "linkText":"Go to Windows Settings to give access"
+                },
+                "photo": {
+                    "title":"THE NUMBER OF PHOTOS TAKEN DURING THE MOVEMENT",
+                    "tooltip": "The camera on your computer automatically activates to take pictures when movements are detected. Pictures are taken every 2 seconds and are saved to your local storage.",
+                    "option1":"5",
+                    "option2":"10",
+                    "option3":"15",
+                    "option4":"20",
+                    "option5":"25",
+                    "option6":"30"
+                },
+                "showPhoto": {
+                    "title":"PHOTOS HAVE BEEN:",
+                    "link":"View photos"
+				},
+				"fileAuthorizationTips": {
+					"content":"Lenovo Vantage doesn't have access to the file system.",
+					"link":"Go to Windows Settings to give access"
+				}
+            },
 			"voice": {
 				"title": "Voice",
 				"description": "Lenovo Voice converts your voice into text with the Voice to Text and provides assistance of real-time speech translation with the Translation Assistant.",
@@ -3905,6 +4005,10 @@
 		}
 	},
 	"appsForYou": {
+		"narrator": {
+			"leftArrow": "left arrow",
+			"rightArrow": "right arrow"
+		},
 		"common": {
 			"errorMessage": {
 				"installationFailed": "Installation failed. Please try again.",

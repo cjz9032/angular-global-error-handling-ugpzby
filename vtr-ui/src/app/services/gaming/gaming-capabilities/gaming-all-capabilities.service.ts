@@ -38,14 +38,15 @@ export class GamingAllCapabilitiesService {
 		this.commonService.setLocalStorageValue(LocalStorageKey.hybridModeFeature, capabilities.hybridModeFeature);
 		this.commonService.setLocalStorageValue(LocalStorageKey.touchpadLockFeature, capabilities.touchpadLockFeature);
 		this.commonService.setLocalStorageValue(LocalStorageKey.xtuService, capabilities.xtuService);
-		// 191101 thermal mode version 2
+		// Version 3.2: thermal mode version 2 on 191101 by Guo Jing
 		this.commonService.setLocalStorageValue(LocalStorageKey.desktopType, capabilities.desktopType);
 		this.commonService.setLocalStorageValue(LocalStorageKey.liteGaming, capabilities.liteGaming);
 		this.commonService.setLocalStorageValue(LocalStorageKey.thermalModeVersion, capabilities.thermalModeVersion);
-		// Prevent error of SupporttedThermalMode  191227 by Guo Jing
+		// Version 3.2: prevent error of SupporttedThermalMode on 191227 by Guo Jing
 		if (capabilities.supporttedThermalMode.length > 1) {
 			this.commonService.setLocalStorageValue(LocalStorageKey.supporttedThermalMode, capabilities.supporttedThermalMode);
 		}
+		// Version 3.2: performance oc on 191101 by Guo Jing
 		this.commonService.setLocalStorageValue(LocalStorageKey.gpuOCFeature, capabilities.gpuOCFeature);
 		this.commonService.setLocalStorageValue(LocalStorageKey.advanceCPUOCFeature, capabilities.advanceCPUOCFeature);
 		this.commonService.setLocalStorageValue(LocalStorageKey.advanceGPUOCFeature, capabilities.advanceGPUOCFeature);
@@ -57,8 +58,10 @@ export class GamingAllCapabilitiesService {
 		this.commonService.setLocalStorageValue(LocalStorageKey.ledSetFeature, capabilities.ledSetFeature);
 		this.commonService.setLocalStorageValue(LocalStorageKey.ledDriver, capabilities.ledDriver);
 		this.commonService.setLocalStorageValue(LocalStorageKey.fbNetFilter, capabilities.fbnetFilter);
-		this.commonService.sendGamingCapabilitiesNotification(Gaming.GamingCapabilities, capabilities);
 		this.commonService.setLocalStorageValue(LocalStorageKey.winKeyLockFeature, capabilities.winKeyLockFeature);
+		// Version 3.3: over drive supported on 200317 by Guo Jing
+		this.commonService.setLocalStorageValue(LocalStorageKey.overDriveFeature, capabilities.overDriveFeature)
+		this.commonService.sendGamingCapabilitiesNotification(Gaming.GamingCapabilities, capabilities);
 	}
 
 	getCapabilityFromCache(storageKey: any) {

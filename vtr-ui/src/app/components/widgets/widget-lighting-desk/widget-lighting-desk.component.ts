@@ -4,6 +4,7 @@ import { CommonService } from './../../../services/common/common.service';
 import { GamingLightingService } from './../../../services/gaming/lighting/gaming-lighting.service';
 import { LightingDataList } from 'src/app/data-models/gaming/lighting-new-version/lighting-data-list';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { MetricService } from '../../../../../src/app/services/metric/metric.service';
 
 @Component({
   selector: 'vtr-widget-lighting-desk',
@@ -34,7 +35,8 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
   constructor(
     private commonService: CommonService,
     private gamingLightingService: GamingLightingService,
-    private logger: LoggerService
+    private logger: LoggerService,
+    private metrics: MetricService
   ) { }
 
   ngOnInit() {
@@ -194,6 +196,8 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
           }
         })
       }
+
+      this.sendFeatureClickMetrics(JSON.parse(`{"ItemName":"lighting_color_change","ItemValue":"${event}"}`));
     } catch (error) {}
   }
 
@@ -259,6 +263,8 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
           }
         })
       }
+      
+      this.sendFeatureClickMetrics(JSON.parse(`{"ItemName":"lighting_brightness","ItemValue":"${event[0]}"}`));
     } catch (error) {}
   } 
   
@@ -291,6 +297,8 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
           }
         })
       }
+
+      this.sendFeatureClickMetrics(JSON.parse(`{"ItemName":"lighting_speed","ItemValue":"${event[0]}"}`));
     } catch (error) {}
   } 
 
@@ -552,4 +560,24 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
     this.setCacheDefaultList();
   }
 
+  /**
+   * metrics collection for lighting feature of desktop machine
+   * @param metricsdata 
+   */
+  public sendFeatureClickMetrics(metricsdata:any) {
+    try{
+      const metricData = {
+        ItemType: Object.prototype.hasOwnProperty.call(metricsdata, 'ItmeType') ? metricsdata.ItemType : 'FeatureClick',
+        ItemParent: Object.prototype.hasOwnProperty.call(metricsdata, 'ItemParent') ? metricsdata.ItemParent : 'Gaming.Lighting'
+      };
+      Object.keys(metricsdata).forEach((key) => {
+        if(metricsdata[key]) {
+          metricData[key] = metricsdata[key];
+        }
+      });
+      if (this.metrics && this.metrics.sendMetrics) {
+        this.metrics.sendMetrics(metricData);
+      }
+    } catch (error) {}
+  }
 }
