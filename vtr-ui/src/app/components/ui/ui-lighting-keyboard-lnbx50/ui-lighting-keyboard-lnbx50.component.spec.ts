@@ -71,7 +71,7 @@ describe('UiLightingKeyboardLNBx50Component', () => {
             }
         ]
     };
-    
+
     const commonServiceMock = {
         getLocalStorageValue(key: any) {
             switch (key) {
@@ -89,7 +89,7 @@ describe('UiLightingKeyboardLNBx50Component', () => {
                     return LightingProfileByIdNoteOff3Cache;
                 case '[LocalStorageKey] LightingProfileByIdNoteOn3':
                     return LightingProfileByIdNoteOn3Cache;
-               
+
             }
         },
         setLocalStorageValue(key: any, value: any) {
@@ -121,8 +121,8 @@ describe('UiLightingKeyboardLNBx50Component', () => {
             declarations: [ UiLightingKeyboardLNBx50Component ],
             imports: [ TranslationModule ],
             schemas: [NO_ERRORS_SCHEMA],
-            providers: [ 
-                HttpClient, 
+            providers: [
+                HttpClient,
                 TranslateStore,
                 { provide: CommonService, useValue: commonServiceMock },
                 { provide: GamingLightingService, useValue: lightingService},
@@ -145,13 +145,13 @@ describe('UiLightingKeyboardLNBx50Component', () => {
             KeyboardToggleStatusLNBx50Cache = undefined;
             expect(commonServiceMock.getLocalStorageValue('[LocalStorageKey] KeyboardToggleStatusLNBx50')).toBeUndefined();
         });
-    
+
         it('init KeyboardToggleStatusLNBx50 is obj', () => {
             KeyboardToggleStatusLNBx50Cache = toggleStatus;
             expect(commonServiceMock.getLocalStorageValue('[LocalStorageKey] KeyboardToggleStatusLNBx50')).toBeTruthy();
         });
     })
-    
+
 
     describe('check ngOnChanges : ', () => {
         it('When changes.listInfo is true, check onChanges', () => {
@@ -160,14 +160,14 @@ describe('UiLightingKeyboardLNBx50Component', () => {
             fixture.detectChanges();
             expect(spy).toHaveBeenCalled();
         });
-    
+
         it('When changes.listInfo is false, check onChanges', () => {
             let spy2 = spyOn(component, "setToggleStatusCache");
             component.ngOnChanges({listInfo: false});
             fixture.detectChanges();
             expect(spy2).not.toHaveBeenCalled();
         });
-    
+
         it('When changes.isColorPicker is true, check onChanges', () => {
             component.isColorPicker = true;
             component.selectPanel = 1;
@@ -175,7 +175,7 @@ describe('UiLightingKeyboardLNBx50Component', () => {
             component.ngOnChanges({isColorPicker : true});
             expect(component.selectPanel).not.toBe(0);
             expect(component.selectedArea).not.toBe(0);
-    
+
             component.isColorPicker = false;
             component.selectPanel = 1;
             component.selectedArea = 1;
@@ -183,7 +183,7 @@ describe('UiLightingKeyboardLNBx50Component', () => {
             expect(component.selectPanel).toBe(0);
             expect(component.selectedArea).toBe(0);
         });
-    
+
         it('When changes.isColorPicker is false, check onChanges', () => {
             component.isColorPicker = true;
             component.selectPanel = 1;
@@ -192,7 +192,7 @@ describe('UiLightingKeyboardLNBx50Component', () => {
             fixture.detectChanges();
             expect(component.selectPanel).not.toBe(0);
             expect(component.selectedArea).not.toBe(0);
-    
+
             component.isColorPicker = false;
             component.selectPanel = 1;
             component.selectedArea = 1;
@@ -209,7 +209,7 @@ describe('UiLightingKeyboardLNBx50Component', () => {
             expect(component.selectPanel).toBe(1);
             expect(component.selectedArea).toBe(1);
         });
-    
+
         it('check selectAreaFn & isDivideArea is true', () => {
             component.isDivideArea = true;
             component.selectAreaFn(2,'#434343');
@@ -224,22 +224,22 @@ describe('UiLightingKeyboardLNBx50Component', () => {
             component.selectPanel = 0;
             component.mouseoverFn({},2,'#434343');
             expect(component.selectPanel).toBe(2);
-    
+
             component.selectedArea = 1;
             component.selectPanel = 0;
             component.mouseoverFn({},2,'#434343');
             expect(component.selectPanel).not.toBe(2);
-    
+
             component.selectedArea = 2;
             component.selectPanel = 0;
             component.mouseoverFn({},2,'#434343');
             expect(component.selectPanel).not.toBe(2);
-    
+
             component.selectedArea = 4;
             component.selectPanel = 0;
             component.mouseoverFn({},2,'#434343');
             expect(component.selectPanel).not.toBe(2);
-    
+
             component.selectedArea = 8;
             component.selectPanel = 0;
             component.mouseoverFn({},2,'#434343');
@@ -253,51 +253,51 @@ describe('UiLightingKeyboardLNBx50Component', () => {
             component.selectPanel = 0;
             component.mouseoutFn({},0);
             expect(component.selectPanel).toBe(0);
-    
+
             component.selectedArea = 0;
             component.selectPanel = 1;
             component.mouseoutFn({},2);
             expect(component.selectPanel).toBe(0);
-    
+
             component.selectedArea = 0;
             component.selectPanel = 2;
             component.mouseoutFn({},4);
             expect(component.selectPanel).toBe(0);
-    
+
             component.selectedArea = 0;
             component.selectPanel = 4;
             component.mouseoutFn({},8);
             expect(component.selectPanel).toBe(0);
-    
+
             component.selectedArea = 0;
             component.selectPanel = 8;
             component.mouseoutFn({},1);
             expect(component.selectPanel).toBe(0);
         });
-    
+
         it('check mouseoutFn & selectedArea !== 0  ', () => {
             component.selectedArea = 1;
             component.selectPanel = 0;
             component.mouseoutFn({},2);
             expect(component.selectPanel).toBe(1);
-    
+
             component.selectedArea = 2;
             component.selectPanel = 2;
             component.mouseoutFn({},4);
             expect(component.selectPanel).toBe(2);
-    
+
             component.selectedArea = 4;
             component.selectPanel = 4;
             component.mouseoutFn({},8);
             expect(component.selectPanel).toBe(4);
-    
+
             component.selectedArea = 8;
             component.selectPanel = 8;
             component.mouseoutFn({},1);
             expect(component.selectPanel).toBe(8);
         });
     })
-    
+
     describe('check getProfileInfoCache : ', () => {
         it('check getProfileInfoCache & catch error  ', () => {
             LightingProfileByIdNoteOn1Cache = keyboardInfo;
@@ -355,7 +355,7 @@ describe('UiLightingKeyboardLNBx50Component', () => {
             expect(commonServiceMock.getLocalStorageValue('[LocalStorageKey] LightingProfileByIdNoteOff3')).toBeTruthy();
         })
     })
-    
+
     describe('check onToggleOnOff : ', () => {
         it('check onToggleOnOff & catch error', async() => {
             component.profileId = 1;
@@ -693,8 +693,8 @@ describe('UiLightingKeyboardLNBx50Component', () => {
                 expect(component.toggleStatusLNBx50['profileId'+i].status).toBe(KeyboardToggleStatusLNBx50Cache['profileId'+i].status);
             }
         })
-        
+
     })
 
-    
+
 });

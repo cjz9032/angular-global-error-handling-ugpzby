@@ -13,41 +13,58 @@ vtr-ui-row-switch {
 
 .subFunctions {
   margin-left: 4.5rem !important;
-  margin-right: 0.6rem !important;
   p {
     font-size: $fontsize_xs;
   }
   label {
     font-size: $fontsize_xs;
     color: #667481;
+    font-weight: 300;
   }
   .subTitle {
-    font-weight: 500;
+    font-weight: $weight_bold;
+    color: $shade_blue;
+    font-size: 1.4rem !important;
     margin: 10px 0px;
   }
-  .cameraCheckBox {
-    margin-left: 5px;
+
+  .dropdownTitle {
+    color: rgba(66, 78, 123, 0.4) !important;
   }
+
+  .cameraTips {
+    margin: 10px 0px;
+  }
+
+  .checkbox {
+    font-size: $fontsize_xs;
+    color: $shade_blue;
+    font-weight: $weight_light;
+    ::ng-deep .auto-set-checkbox {
+      margin-top: 0px !important;
+      outline: 0;
+    }
+  }
+
   .select {
     width: 380px;
     .selectDropdown {
       ::ng-deep .ui-dropdown {
-          height: 7.1rem !important;
-          .chevron {
-            color: #667481 !important;
-          }
+        height: 7.1rem !important;
+        .chevron {
+          color: #667481 !important;
+        }
         ::ng-deep .ui-menu-dropdown {
           top: 7.1rem !important;
           padding: 0.5rem 0rem !important;
-            a {
-              padding: 0.8rem 1.5rem !important;
-              &:hover {
-                color: hsl(0, 0%, 100%) !important;
-                background-color: #667481 !important;
-                text-decoration: blink !important;
-              }
+          a {
+            padding: 0.8rem 1.5rem !important;
+            &:hover {
+              color: hsl(0, 0%, 100%) !important;
+              background-color: #667481 !important;
+              text-decoration: blink !important;
             }
-         
+          }
         }
       }
     }
@@ -60,5 +77,10 @@ vtr-ui-row-switch {
     &:hover {
       color: $highlight;
     }
+  }
+
+  ::ng-deep .btn-link {
+    text-decoration:underline !important;
+    font-size: 1.4rem !important;
   }
 }

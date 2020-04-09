@@ -1,6 +1,7 @@
-<div class="vtr-ui-custom-slider">
+<form class="vtr-ui-custom-slider">
 	<div class="range">
 		<input type="range"
+			#rangeSlider
 			role="slider"
 			[disabled]="isDisabled"
 			[name]="sliderId"
@@ -18,6 +19,9 @@
 			(input)="onInputChange($event)"
 			(change)="onValueChange($event)"
 			[step]="step">
+		<!-- <output class="bubble"
+			[for]="sliderId"
+			#sliderBubble></output> -->
 		<div class="d-flex justify-content-between legends"
 			[class.legends-disabled]="isDisabled">
 			<span *ngIf="minLegend?.length>0"
@@ -34,4 +38,4 @@
 			</div>
 		</div>
 	</div>
-</div>
+</form>

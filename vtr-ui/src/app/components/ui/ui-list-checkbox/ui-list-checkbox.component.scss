@@ -57,6 +57,11 @@
 					.custom-control-input:disabled:checked ~ .custom-control-label::before {
 						border-color: #aaa;
 					}
+
+					.custom-control-input:focus ~ .custom-control-label::before{
+						outline: 0.1rem solid $menu_hover!important;
+						outline-offset: 0.2rem!important;
+					}
 				}
 			}
 
@@ -80,6 +85,10 @@
 				cursor: pointer;
 				color: $main;
 				font-size: $fontsize_sm;
+				&:focus {
+					outline: 0.1rem solid $menu_hover;
+					outline-offset: 0.2rem;
+				}
 			}
 		}
 		.icon-check {
@@ -122,9 +131,24 @@
 	}
 
 	// .tooltip-container {
-	// 	li {
-	// 		padding: 1rem;
-	// 		height: 4rem;
+	// 	.read {
+	// 		color: $menu_hover;
+	// 		text-decoration: underline;
+
+	// 		&:focus {
+	// 			outline: 0.1rem solid $menu_hover;
+	// 			outline-offset: 0.2rem;
+	// 		}
+	// 	}
+
+	// 	.ignore {
+	// 		color: $menu_hover;
+	// 		text-decoration: underline;
+
+	// 		&:focus ::before{
+	// 			outline: 0.1rem solid $menu_hover;
+	// 			outline-offset: 0.2rem;
+	// 		}
 	// 	}
 	// }
 }
