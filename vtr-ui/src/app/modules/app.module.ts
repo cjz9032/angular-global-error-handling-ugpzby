@@ -71,6 +71,7 @@ import { UICustomRadioModule } from '../components/ui/ui-custom-radio/ui-custom-
 import { NotificationComponent } from 'src/app/components/notification/notification.component';
 import { UiBannerComponent } from 'src/app/components/ui/ui-banner/ui-banner.component';
 // import { ModalErrorMessageComponent } from '../components/modal/modal-error-message/modal-error-message.component';
+import { ModalStoreRatingComponent } from '../components/modal/modal-store-rating/modal-store-rating.component';
 
 @NgModule({
 	declarations: [
@@ -84,6 +85,7 @@ import { UiBannerComponent } from 'src/app/components/ui/ui-banner/ui-banner.com
 		// PageSettingsComponent,
 		ModalNewFeatureTipComponent,
 		PageSettingsComponent,
+		ModalStoreRatingComponent,
 		// ModalErrorMessageComponent
 		NotificationComponent,
 		UiBannerComponent

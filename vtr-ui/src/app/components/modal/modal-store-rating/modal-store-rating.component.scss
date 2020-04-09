@@ -1,0 +1,94 @@
+@import '../../../app.theme.scss';
+.vtr-modal-store-rating{
+    display: flex;
+    flex-direction: column;
+
+    .close-button{
+        font-size:2.2rem;
+        align-self: flex-end;   
+        cursor: pointer;
+        margin: 1px;
+        color: gray;
+        padding:0 1rem;
+    }
+
+    .modal-content{
+        font-size: 2rem;
+        padding:0 2rem;
+        line-height: 0;
+        .hint-image-border{
+            margin-top: 26px;
+            height: 220px;
+            position: relative;
+            .bg-male{
+               width: auto;
+               position: absolute;
+               right:76px;
+               top:36px;
+            }
+            .bg-curve{
+                width: auto;
+                margin: 0 auto;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-50%);
+            }
+            .bg-chatbox{
+                width: auto;
+                position: absolute;
+                right: 170px;
+                top: 4px;
+                transform: scale(0.8);
+
+                .hint-icon{
+                    position: absolute;
+                    left: 50%;
+                    top:50%;
+                    transform: translate(-50%,-50%);
+                    font-size: 5rem;
+                    color: lightgray;
+                    width: 5rem;
+                    text-align: center;
+                }
+                .hint-icon-heart{
+                    color: red;
+                    opacity: 0;
+                }
+                .hint-icon-close{
+                    color: rgb(56, 185, 158);
+                    opacity: 0;
+                }
+            }
+        }
+        
+        hr{
+            margin: 0;
+        }
+    }
+
+    .modal-bottom{
+        display: flex;
+        padding: 2rem 2rem;
+        button{
+            display: flex;
+            justify-content: center;
+        }
+
+        .feedback-btn{
+            font-size: $fontsize_xs2;
+            align-self: center;
+            color: $main;
+            margin-left: 2rem;
+            text-transform: uppercase;
+            line-height: 2rem !important;
+            &:hover {
+                border-bottom: none;
+            }
+            padding-bottom: 0.2rem;
+            border-bottom: 0.2rem solid $main;
+            font-weight: $weight_bold;
+    }
+    }
+
+}
