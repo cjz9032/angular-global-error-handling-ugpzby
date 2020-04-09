@@ -1,12 +1,9 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { faTimes } from '@fortawesome/pro-light-svg-icons/faTimes';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from 'src/app/services/metric/metric.service';
 import { TaskAction, ItemView } from 'src/app/services/metric/metrics.model';
-import { faHeart } from '@fortawesome/free-solid-svg-icons/faHeart';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons/faEnvelope';
-import { faEllipsisH } from '@fortawesome/pro-light-svg-icons/faEllipsisH';
+
 import {
 	trigger,
 	state,
@@ -52,10 +49,6 @@ import {
 })
 export class ModalStoreRatingComponent implements OnInit {
 
-	public faTimesCircle = faTimes;
-	public faHeart = faHeart;
-	public faEllipsisH = faEllipsisH;
-	public faEnvelope = faEnvelope;
 	private msStoreUtil: any = null;
 	public likeIconVisible = false;
 	public feedbackIconVisible = false;

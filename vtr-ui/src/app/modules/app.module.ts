@@ -72,6 +72,10 @@ import { NotificationComponent } from 'src/app/components/notification/notificat
 import { UiBannerComponent } from 'src/app/components/ui/ui-banner/ui-banner.component';
 // import { ModalErrorMessageComponent } from '../components/modal/modal-error-message/modal-error-message.component';
 import { ModalStoreRatingComponent } from '../components/modal/modal-store-rating/modal-store-rating.component';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons/faEnvelope';
+import { faEllipsisH } from '@fortawesome/pro-light-svg-icons/faEllipsisH';
+import { faTimes } from '@fortawesome/pro-light-svg-icons/faTimes';
+import {faHeart as fasHeart} from '@fortawesome/free-solid-svg-icons/faHeart';
 
 @NgModule({
 	declarations: [
@@ -189,5 +193,9 @@ export class AppModule {
 		library.addIcons(faCloudDownload);
 		library.addIcons(faLaptop);
 		library.addIcons(faHeart);
+		library.addIcons(faEnvelope);
+		library.addIcons(faEllipsisH);
+		library.addIcons(faTimes);
+		library.addIcons(fasHeart);
 	}
 }
