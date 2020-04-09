@@ -52,16 +52,19 @@
 					<div class="row">
 						<div class="feature-note p-4"
 							*ngIf="superResolutionAvailable">
-							<p id="superResolution-note-description">
+							<p id="superResolution-note-description"  tabindex="0"
+							attr.aria-label="{{'device.smartAssist.superResolution.note.description' | translate}}">
 								{{'device.smartAssist.superResolution.note.description' | translate}}</p>
 							<div class="m-4">
 								<ul>
 									<li>
-										<p id="superResolution-note-description1">
+										<p id="superResolution-note-description1" tabindex="0"
+										attr.aria-label="{{'device.smartAssist.superResolution.note.description1' | translate}}">
 											{{'device.smartAssist.superResolution.note.description1' | translate}}</p>
 									</li>
 									<li>
-										<p id="superResolution-note-description2">
+										<p id="superResolution-note-description2" tabindex="0"
+										attr.aria-label="{{'device.smartAssist.superResolution.note.description2' | translate}}">
 											{{'device.smartAssist.superResolution.note.description2' | translate}}</p>
 									</li>
 								</ul>
