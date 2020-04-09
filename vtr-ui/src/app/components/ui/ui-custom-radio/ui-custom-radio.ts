@@ -222,30 +222,24 @@ export class UICustomRadio {
 	private getRadioGroup() {
 
 		// commented to remove the dependency from radiogroup role of parent this component
-		if (!this.radioGroup) {
-			this.radioGroup = this.getParentRadioGroup(this.radioButton.nativeElement, 10);
+		try {
+
+			const radioElement = (this.radioButton.nativeElement ? this.radioButton.nativeElement : this.radioButton);
+			if (!this.radioGroup && radioElement) {
+				this.radioGroup = this.getParentRadioGroup(radioElement, 10);
+				// search by radio class and aria-disabled
+				const query = `[class*=${this.group}][aria-disabled=false]`;
+				// search by only role and aria-disabled
+				// const query = '[role=radio][aria-disabled=false]';
+				return this.radioGroup.querySelectorAll(query);
+				// return Array.from(this.radioGroup.querySelectorAll(query));
+			}
+		} catch (error) {
+			this.logger.exception('UICustomRadio.getRadioGroup exception', error);
 		}
 
-		// search by radio class and aria-disabled
-		const query = `[class*=${this.group}][aria-disabled=false]`;
-		// search by only role and aria-disabled
-		// const query = '[role=radio][aria-disabled=false]';
-		return this.radioGroup.querySelectorAll(query);
-		// return Array.from(this.radioGroup.querySelectorAll(query));
 
 	}
-
-	/* private setRadioFocus(radioButton) {
-		this.radioButtons.forEach(element => {
-			if (element !== radioButton) {
-				element.tabIndex = -1;
-			}
-			if (element === radioButton) {
-				element.tabIndex = 0;
-			}
-		});
-	} */
-
 
 	private getParentRadioGroup(element, topUpLevel: number) {
 		try {
