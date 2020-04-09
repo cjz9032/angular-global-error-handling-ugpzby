@@ -3,6 +3,7 @@ import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.s
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
+import { MetricService } from 'src/app/services/metric/metric.service';
 
 @Component({
 	selector: 'vtr-intelligent-media',
@@ -23,6 +24,7 @@ export class IntelligentMediaComponent implements OnInit {
 	constructor(
 		private smartAssist: SmartAssistService,
 		private logger: LoggerService,
+		private metrics: MetricService
 	) { }
 
 	ngOnInit() {
@@ -46,10 +48,20 @@ export class IntelligentMediaComponent implements OnInit {
 
 	public setSuperResolutionStatus(event) {
 		this.superResolutionToggle.emit(event.value);
+		const metricsData = {
+			itemParent: 'Device.DeviceSettings',
+			itemName: 'Video-Resolution-Upscaling.toggle-button',
+			value: event.switchValue
+		};
+		this.metrics.sendMetrics(metricsData);
 		try {
 			if (this.smartAssist.isShellAvailable) {
 				this.smartAssist.setSuperResolutionStatus(event.switchValue)
-					.then((value: boolean) => {}).catch(error => {});
+					.then((value: boolean) => {
+						this.logger.info('setSuperResolutionStatus',value);
+					}).catch(error => {
+						this.logger.error('setSuperResolutionStatus' + error.message);
+					});
 			}
 		} catch (error) {}
 	}
