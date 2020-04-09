@@ -32,19 +32,19 @@ export class UiRoundedRectangleRadioComponent extends UICustomRadio implements O
 	}
 
 	ngOnChanges(changes) {
-		if (changes && changes.checked && !changes.checked.firstChange) {
-			const elem = document.getElementById('div' + this.radioId);
-			if (elem) {
-				if (!this.checked) {
-					elem.setAttribute('aria-checked', 'false');
-					elem.tabIndex = -1;
-				} else {
-					elem.setAttribute('aria-checked', 'true');
-					elem.tabIndex = 0;
-					elem.focus();
-				}
-			}
-		}
+		// if (changes && changes.checked && !changes.checked.firstChange) {
+		// 	const elem = document.getElementById('div' + this.radioId);
+		// 	if (elem) {
+		// 		if (!this.checked) {
+		// 			elem.setAttribute('aria-checked', 'false');
+		// 			elem.tabIndex = -1;
+		// 		} else {
+		// 			elem.setAttribute('aria-checked', 'true');
+		// 			elem.tabIndex = 0;
+		// 			elem.focus();
+		// 		}
+		// 	}
+		// }
 	}
 	onChange(event) {
 		this.change.emit(event);
