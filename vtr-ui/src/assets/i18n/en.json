@@ -2074,7 +2074,7 @@
                     "option5":"Never stop"
                 },
                 "allowCamera": {
-                    "title":"TATING PHOTOS",
+                    "title":"TAKING PHOTOS",
                     "describe":"When enabling this feature, the camera takes photos automatically when detecting any movement if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
                     "checkBoxText":"Enable this feature"
                 },
