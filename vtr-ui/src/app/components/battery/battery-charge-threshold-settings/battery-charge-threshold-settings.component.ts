@@ -4,6 +4,7 @@ import { NgbDropdown } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
 import { ChargeThreshold } from 'src/app/data-models/device/charge-threshold.model';
 import { CommonService } from 'src/app/services/common/common.service';
+import { KeyCode } from 'src/app/enums/key-code.enum';
 
 @Component({
 	selector: 'vtr-battery-charge-threshold-settings',
@@ -31,17 +32,6 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 	off = 'off'
 	ddStartAtChargeDescription = this.translate.instant('device.deviceSettings.power.batterySettings.batteryThreshold.options.start');
 	ddStopAtChargeDescription = this.translate.instant('device.deviceSettings.power.batterySettings.batteryThreshold.options.stop');
-	keyCode = Object.freeze({
-		TAB: 9,
-		RETURN: 13,
-		SPACE: 32,
-		END: 35,
-		HOME: 36,
-		LEFT: 37,
-		UP: 38,
-		RIGHT: 39,
-		DOWN: 40
-	});
 
 	// Random number is used to have unique id of each input field
 	randomNumber: number = Math.floor(new Date().valueOf() * SecureMath.random());
@@ -166,12 +156,12 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 	}
 	ddToggleKBNavigator($event, activeDropdown: NgbDropdown, type, value) {
 		switch ($event.keyCode) {
-			case this.keyCode.SPACE:
-			case this.keyCode.RETURN:
-			case this.keyCode.UP:
-			case this.keyCode.DOWN:
-			case this.keyCode.LEFT:
-			case this.keyCode.RIGHT:
+			case KeyCode.SPACE:
+			case KeyCode.RETURN:
+			case KeyCode.UP:
+			case KeyCode.DOWN:
+			case KeyCode.LEFT:
+			case KeyCode.RIGHT:
 				$event.stopPropagation();
 				this.focusOnSelected($event, activeDropdown, type, value);
 				break;

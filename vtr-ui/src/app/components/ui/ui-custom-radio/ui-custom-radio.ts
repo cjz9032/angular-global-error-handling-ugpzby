@@ -1,6 +1,7 @@
 import { ElementRef, Input, ViewChild } from '@angular/core';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from 'src/app/services/metric/metric.service';
+import { KeyCode } from 'src/app/enums/key-code.enum';
 
 export class UICustomRadio {
 	@Input() group: string;
@@ -10,19 +11,6 @@ export class UICustomRadio {
 	@Input() radioGroup: any;
 	@Input() automationid;
 	@Input() metricsParent = 'Device.MyDeviceSettings';
-
-	// These following instance variables added for Keyboard navigation to radio button.
-	keyCode = Object.freeze({
-		TAB: 9,
-		RETURN: 13,
-		SPACE: 32,
-		END: 35,
-		HOME: 36,
-		LEFT: 37,
-		UP: 38,
-		RIGHT: 39,
-		DOWN: 40
-	});
 	firstRadioButton: any;
 	lastRadioButton: any;
 	radioButtons: Array<any> = [];
@@ -65,25 +53,25 @@ export class UICustomRadio {
 	navigateByKeys($event, radio) {
 		this.setRadioButtons();
 		switch ($event.keyCode) {
-			case this.keyCode.SPACE:
-			case this.keyCode.RETURN:
+			case KeyCode.SPACE:
+			case KeyCode.RETURN:
 				this.changeRadioOnKeyPress($event, radio);
 				// this.setChecked(this.radioButton.nativeElement, true);
 				$event.stopPropagation();
 				$event.preventDefault();
 				break;
-			case this.keyCode.UP:
+			case KeyCode.UP:
 				this.setCheckedToPreviousItem(this.radioButton);
 				$event.preventDefault();
 				break;
-			case this.keyCode.DOWN:
+			case KeyCode.DOWN:
 				this.setCheckedToNextItem(this.radioButton);
 				$event.preventDefault();
 				break;
-			case this.keyCode.LEFT:
+			case KeyCode.LEFT:
 				this.setCheckedToPreviousItem(this.radioButton);
 				break;
-			case this.keyCode.RIGHT:
+			case KeyCode.RIGHT:
 				this.setCheckedToNextItem(this.radioButton);
 				break;
 			default:

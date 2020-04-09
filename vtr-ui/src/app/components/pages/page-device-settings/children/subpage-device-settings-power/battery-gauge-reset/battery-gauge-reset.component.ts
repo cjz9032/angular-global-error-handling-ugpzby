@@ -7,6 +7,7 @@ import { BatteryDetailService } from 'src/app/services/battery-detail/battery-de
 import { CommonService } from 'src/app/services/common/common.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { PowerService } from 'src/app/services/power/power.service';
+import { KeyCode } from 'src/app/enums/key-code.enum';
 
 @Component({
 	selector: 'vtr-battery-gauge-reset',
@@ -62,7 +63,7 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 	/* @HostListener('window:keydown', ['$event']) */
 	onKeyPressBatteryGaugeReset(index, $event: KeyboardEvent) {
 		try {
-			if ($event.keyCode === this.keyCode.SPACE || $event.keyCode === this.keyCode.RETURN) {
+			if ($event.keyCode === KeyCode.SPACE || $event.keyCode === KeyCode.RETURN) {
 				this.autoFocusButton = true; // flag to focus monitoring ,highlighting when using keyboard/ narrator for accessibility.
 				$event.preventDefault();
 				$event.stopPropagation();

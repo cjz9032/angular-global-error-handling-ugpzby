@@ -3,6 +3,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from 'src/app/services/metric/metric.service';
 import { UICustomRadio } from '../ui-custom-radio/ui-custom-radio';
 import { AppEvent } from './../../../enums/app-event.enum';
+import { KeyCode } from 'src/app/enums/key-code.enum';
 
 @Component({
 	selector: 'vtr-ui-rectangle-radio',
@@ -46,7 +47,7 @@ export class UiRectangleRadioComponent extends UICustomRadio implements OnInit, 
 	}
 
 	getIconName(name: string) {
-		if (name == undefined || name == "" || name == null) {
+		if (name === undefined || name === '' || name === null) {
 			this.hideIcon = true;
 			return;
 		}
@@ -55,16 +56,16 @@ export class UiRectangleRadioComponent extends UICustomRadio implements OnInit, 
 
 	emitKeyEvent(event) {
 		switch (event.keyCode) {
-			case this.keyCode.LEFT:
+			case KeyCode.LEFT:
 				this.customKeyEvent.emit({ switchEVent: AppEvent.LEFT });
 				break;
-			case this.keyCode.RIGHT:
+			case KeyCode.RIGHT:
 				this.customKeyEvent.emit({ switchEVent: AppEvent.RIGHT });
 				break;
-			case this.keyCode.UP:
+			case KeyCode.UP:
 				event.preventDefault();
 				break;
-			case this.keyCode.DOWN:
+			case KeyCode.DOWN:
 				event.preventDefault();
 				break;
 		}

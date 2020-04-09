@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange
 import { TranslateService } from '@ngx-translate/core';
 import { CommonService } from 'src/app/services/common/common.service';
 import { SmartStandbyService } from 'src/app/services/smart-standby/smart-standby.service';
+import { KeyCode } from 'src/app/enums/key-code.enum';
 
 @Component({
 	selector: 'vtr-ui-days-picker',
@@ -13,13 +14,6 @@ export class UiDaysPickerComponent implements OnInit, OnChanges {
 	@Input() daysId: string;
 	@Input() showDropDown: boolean;
 	@Output() setDays = new EventEmitter<string>();
-
-	keyCode = Object.freeze({
-		LEFT: 37,
-		UP: 38,
-		RIGHT: 39,
-		DOWN: 40
-	});
 
 	constructor(
 		public translate: TranslateService,
@@ -75,17 +69,17 @@ export class UiDaysPickerComponent implements OnInit, OnChanges {
 
 	navigateByKeys($event, index) {
 		switch ($event.keyCode) {
-			case this.keyCode.UP:
-			case this.keyCode.LEFT:
-				const previousDay = this.smartStandbyService.allDays[index-1].shortName;
+			case KeyCode.UP:
+			case KeyCode.LEFT:
+				const previousDay = this.smartStandbyService.allDays[index - 1].shortName;
 				const previousDayHtml = document.querySelector('div[aria-labelledby="' + previousDay + '"]') as HTMLElement;
 				previousDayHtml.focus();
 				$event.preventDefault();
 				$event.stopPropagation();
 				break;
-			case this.keyCode.DOWN:
-			case this.keyCode.RIGHT:
-				const nextDay = this.smartStandbyService.allDays[index+1].shortName;
+			case KeyCode.DOWN:
+			case KeyCode.RIGHT:
+				const nextDay = this.smartStandbyService.allDays[index + 1].shortName;
 				const nextDayHtml = document.querySelector('div[aria-labelledby="' + nextDay + '"]') as HTMLElement;
 				nextDayHtml.focus();
 				$event.preventDefault();
