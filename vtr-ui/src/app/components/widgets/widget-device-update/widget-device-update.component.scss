@@ -173,6 +173,9 @@
 			&:hover, &:focus {
 				color: $light;
 				text-decoration: none;
+			}
+
+			&:focus{
 				outline: 0.1rem solid $menu_hover;
 				outline-offset: 0.2rem;
 			}

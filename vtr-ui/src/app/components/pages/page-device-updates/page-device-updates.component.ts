@@ -509,7 +509,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 				backdrop: 'static',
 				size: 'lg',
 				centered: true,
-				ariaLabelledBy: 'modal-confirm-dialog-title',
+				ariaLabelledBy: 'modal_confirm_title',
 				windowClass: 'common-confirmation-modal'
 			});
 		// VAN-16194 touch screen cannot show this modal
@@ -901,7 +901,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					backdrop: 'static',
 					size: 'lg',
 					centered: true,
-					ariaLabelledBy: 'modal-confirm-dialog-title',
+					ariaLabelledBy: 'modal_confirm_title',
 					windowClass: 'common-confirmation-modal'
 				});
 
