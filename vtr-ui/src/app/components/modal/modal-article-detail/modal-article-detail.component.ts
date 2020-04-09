@@ -79,6 +79,7 @@ export class ModalArticleDetailComponent implements OnInit {
 
 		this.focusDurationCounter = this.timerService.getFocusDurationCounter();
 		this.blurDurationCounter = this.timerService.getBlurDurationCounter();
+		setTimeout(() => { (document.querySelector('.Article-Detail-Modal') as HTMLElement).focus(); }, 0);
 	}
 
 	private getPageName(activatedRoute: ActivatedRoute) {
