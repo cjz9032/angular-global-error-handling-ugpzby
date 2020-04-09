@@ -1,4 +1,4 @@
-<div class="modal-main-wrapper"  tabindex="1"  id="nbAddApps" attr.aria-label="{{ariaLabel | translate}}" role="presentation">
+<div class="modal-main-wrapper"  tabindex="1"  id="{{!noAppsRunning? 'nbAddApps':'nbAddApps_norunningapps'}}" attr.aria-label="{{ariaLabel | translate}}" role="presentation">
 	<div class="spinner-content h-100 d-flex align-items-center justify-content-center" *ngIf="loading">
 		<fa-icon [icon]="['fal', 'circle-notch']" class="spinner" [spin]="true"></fa-icon>
 	</div>
@@ -6,7 +6,7 @@
 		<div class="modal-body vtr-modal-add-apps" *ngIf="!loading">
 			<div class="modal-body">
 				<div class="top-header">
-					<button type="button" id="close" class="close" (click)="closeModal(false)" (keyup)="checkFocus($event)"
+					<button type="button"  id="{{!noAppsRunning? 'nbAddApps_close_btn':'nbAddApps_norunningapps_close_btn'}}"  class="close networkboost_close_add_apps" (click)="closeModal(false)" (keyup)="checkFocus($event)"
 					  tabindex="1"  attr.aria-label="{{'gaming.narrator.networkBoost.common.close' | translate}}"
 						(keyup.enter)="closeModal(false)">
 						<svg width="16px" height="16px" viewBox="0 0 12 11" version="1.1"
@@ -56,7 +56,8 @@
 												[disabled]="addedApps>=5 && !item.isChecked"
 												 [ngClass]="{'checked': item.isChecked,'disabled':addedApps>=5 && !item.isChecked}"
 												[ngClass]="{'checked': item.isChecked}" (click)="onValueChange($event,i, item)"
-												[id]="'addApps'+i" vtrMetrics [metricsItem]="item.processDescription"
+												[id]="!item.isChecked ? 'gaming_nb_addapp'+i :'gaming_nb_addapp_tick'+i"
+												 vtrMetrics [metricsItem]="item.processDescription"
 												metricsEvent="featureClick" tabindex="1"
 												(keydown)="runappKeyup($event,i)" role="checkbox"
 												[attr.aria-checked]="item.isChecked"

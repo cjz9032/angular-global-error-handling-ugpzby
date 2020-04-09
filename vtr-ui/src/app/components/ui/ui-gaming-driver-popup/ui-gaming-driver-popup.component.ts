@@ -12,6 +12,7 @@ export class UiGamingDriverPopupComponent implements OnInit {
 	@Input() popupText: any;
 	@Output() driverpopval = new EventEmitter<boolean>();
 	@Input() descriptionLabel = 'Gaming driver popup';
+	@Input() automationId: string;
 	isNowOpened = false;
 
 	constructor(private router: Router) {
@@ -24,13 +25,13 @@ export class UiGamingDriverPopupComponent implements OnInit {
 		if (!this.popupText || this.popupText.length < 2) {
 			this.popupText = 'gaming.dashboard.device.legionEdge.driverPopup.text';
 		}
-		document.getElementById('gamingDriverPopup').focus();
-		
+		this.focusElement('ui-gaming-driver-popup');
+
 	}
 	close() {
 		this.showMePartially = !this.showMePartially;
 		this.driverpopval.emit(false);
-		document.getElementById('main-wrapper').focus();
+		this.focusElement('#main-wrapper');
 
 	}
 
@@ -38,16 +39,23 @@ export class UiGamingDriverPopupComponent implements OnInit {
 		this.router.navigate(['device/system-updates']);
 	}
 	runappKeyup(event) {
-		if (event.which == 9) {
+		if (event.which === 9) {
 			setTimeout(() => {
-				document.getElementById('gaming-driverPopup-close').focus();
+				this.focusElement('.driver_popup_close_btn');
 			}, 2);
 		}
 	}
-	
+
+	focusElement(selector) {
+		const targetElement = document.querySelector(selector) as HTMLElement;
+		if(targetElement){
+			targetElement.focus();
+		}
+	}
+
 	onOutsideClick() {
-        if (this.isNowOpened) {
+		if (this.isNowOpened) {
 			this.close();
 		}
-    }
+	}
 }
