@@ -238,7 +238,6 @@
 					}
 				}
 				.icon {
-					margin-top: -0.5rem;
 					margin-right: -0.5rem;
 					font-size: 2rem;
 					transition: all .2s ease-in-out;
@@ -257,5 +256,16 @@
 	}
 	.gamingTextColor {
 		color: $gaming_lightest !important;
+	}
+}
+::ng-deep body.focus-enable{
+	.is-gaming {
+		.multi-state-toggle{		
+			.inner-toggle{
+					input:checked:focus+label.gamingTextColor{
+							outline: 1px dotted !important;
+					}	
+				}
+		}
 	}
 }

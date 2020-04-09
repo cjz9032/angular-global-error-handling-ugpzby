@@ -1,5 +1,5 @@
 <div class="vtr-widget-system-monitor">
-	<div class="widget-container">
+	<div class="widget-container"  id="gaming_system_status" role="text">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col">
@@ -14,7 +14,7 @@
 						</div>
 						<div class="col-xl-8 col-lg-12 col-md-8 col-sm-12 monitor-col left">
 							<div class="monitor-section">
-								<div class="monitor-inner gpu" id="system_status_driver_gpu" attr.aria-label="system_status_driver_gpu">
+								<div class="monitor-inner gpu" id="system_status_driver_gpu_tooltip" role="text" attr.aria-label="system_status_driver_gpu">
 									<div class="gaming-tooltip">
 										<p>{{gpuOver}}</p>
 									</div>
@@ -36,7 +36,7 @@
 									</div>
 								</div>
 
-								<div class="monitor-cpu" id="system_status_driver_cpu" attr.aria-label="system_status_driver_cpu">
+								<div class="monitor-cpu" id="system_status_driver_cpu_tooltip" role="text" attr.aria-label="system_status_driver_cpu">
 									<div class="gaming-tooltip">
 										<p>{{cpuover}}</p>
 									</div>
@@ -67,7 +67,7 @@
 									</div>
 								</div>
 
-								<div class="monitor-inner ram" id="system_status_driver_ram" attr.aria-label="system_status_driver_ram">
+								<div class="monitor-inner ram" id="system_status_driver_ram_tooltip" role="text" attr.aria-label="system_status_driver_ram">
 									<div class="gaming-tooltip">
 										<p>{{ramOver}}</p>
 									</div>
@@ -143,10 +143,10 @@
 									</div>
 									<div class="expand-icon">
 											<fa-icon [icon]="['fas', 'chevron-down']" tabindex="1"
-											aria-label="expand" [hidden]="showAllHDs || hds.length<=2">
+											aria-label="expand" [hidden]="showAllHDs || hds.length<=2" id="gaming_system_hard disk_icon_expand">
 											</fa-icon>
 											<fa-icon  tabindex="1"
-											aria-label="collapse" [icon]="['fas', 'chevron-up']" [hidden]="!showAllHDs || hds.length<=2">
+											aria-label="collapse" [icon]="['fas', 'chevron-up']" [hidden]="!showAllHDs || hds.length<=2" id="gaming_system_hard disk_icon_collapse">
 											</fa-icon>
 									</div>
 									</div>

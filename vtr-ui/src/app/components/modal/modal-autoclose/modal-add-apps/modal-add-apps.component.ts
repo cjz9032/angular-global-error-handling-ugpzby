@@ -23,10 +23,17 @@ export class ModalAddAppsComponent implements OnInit, AfterViewInit {
 
 	ngOnInit() {
 		this.refreshRunningList();
-		document.getElementById('close').focus();
+		this.focusElement();
 	}
 	ngAfterViewInit() {
-		document.getElementById('close').focus();
+		this.focusElement();
+	}
+
+	focusElement() {
+		const modal = document.getElementsByClassName('autoclose_close_add_apps')[0] as HTMLElement;
+		if (modal) {
+		modal.focus();
+		}
 	}
 
 	async refreshRunningList() {
@@ -44,13 +51,13 @@ export class ModalAddAppsComponent implements OnInit, AfterViewInit {
 				this.ariaLabel = 'gaming.autoClose.modalTurnAutoCloseNarrator.open';
 			}
 			setTimeout(() => {
-				document.getElementById('close').focus();
+				this.focusElement();
 			}, 100);
 		} catch (error) {
 			this.loading = false;
 			this.loadingNoApps = true;
 			setTimeout(() => {
-				document.getElementById('close').focus();
+				this.focusElement();
 			}, 100);
 		}
 	}
@@ -69,8 +76,7 @@ export class ModalAddAppsComponent implements OnInit, AfterViewInit {
 	runappKeyup(event, index) {
 		if (event.which === 9) {
 			if (index === this.runningList.length - 1) {
-				let txt1 = document.getElementById('close');
-				txt1.focus();
+				this.focusElement();
 			}
 		}
 	}

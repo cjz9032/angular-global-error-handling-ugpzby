@@ -172,7 +172,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 		metricsItemClose: 'close dialog',
 		btnConfirm: true,
 		popupWindowTitle: 'gaming._macroKey.popupContent.clearMacrokey.modalTitle',
-		automationId:'clear double confirm window',
+		automationId:'macrokey_clear_records_dialog',
 	};
 
 	constructor(private macrokeyService: MacrokeyService, private loggerService: LoggerService, private translate: TranslateService) { }
