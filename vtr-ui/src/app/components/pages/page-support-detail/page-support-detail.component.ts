@@ -16,6 +16,7 @@ export class PageSupportDetailComponent implements OnInit, OnDestroy {
 	backarrow = '< ';
 
 	qa: QA;
+	qaDescriptionId: string;
 
 	constructor(
 		public qaService: QaService,
@@ -29,6 +30,7 @@ export class PageSupportDetailComponent implements OnInit, OnDestroy {
 		this.activateRoute.params.subscribe((params) => {
 			this.qa = this.qaService.getById(parseInt(params.id, 10));
 			this.commonService.scrollTop();
+			this.qaDescriptionId = params.id;
 		});
 	}
 
