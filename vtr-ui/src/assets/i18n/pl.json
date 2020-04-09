@@ -1852,6 +1852,14 @@
             "intelligentSecurity": {
                 "title": "Inteligentne zabezpieczenia",
                 "readMore": "Dowiedz się więcej",
+                "image": {
+                    "title": "Inteligentne zabezpieczenia",
+                    "description": "Zabezpiecza komputer przy użyciu inteligentnej technologii wykrywania, chroni Twoją prywatność oraz pozwala oszczędzać baterię."
+                },
+                "advancedSettings": {
+                    "showAdvSettings": "USTAWIENIA ZAAWANSOWANE",
+                    "hideAdvSettings": "UKRYJ USTAWIENIA ZAAWANSOWANE"
+                },
                 "HumanPresenceDetection": {
                     "title": "Wykrywanie obecności człowieka",
                     "tooltip": "Kliknij tutaj, aby zresetować ustawienia wykrywania obecności człowieka."
@@ -1864,6 +1872,11 @@
                     "title": "Logowanie bez dotyku",
                     "caption": "Ta funkcja automatycznie odblokowuje lub wybudza komputer, gdy jesteś przed nim lub zbliżasz się do niego.",
                     "tooltip": "Gdy znajdujesz się przed komputerem lub zbliżysz się do niego (w odległości 1,2 metra), ta funkcja umożliwia automatyczne logowanie do systemu po rozpoznaniu twarzy. Jeśli jesteś na zewnątrz, a nie w biurze, musisz być bliżej komputera, a wybudzanie potrwa dłużej."
+                },
+                "zeroTouchLoginForIdea": {
+                    "title": "Logowanie bez dotyku",
+                    "caption": "Ta funkcja umożliwia zwiększenie wydajności pracy poprzez automatyczne wybudzanie komputera lub logowanie Cię na nim. Aby skorzystać z tej funkcji, musisz zarejestrować swoją twarz w funkcji Windows Hello.",
+                    "tooltip": "Ta funkcja umożliwia automatyczne zalogowanie się do systemu przy użyciu funkcji rozpoznania twarzy, gdy znajdziesz się przed komputerem lub zbliżysz się do niego na odległość 1,2 lub 1,5 metra. Jeśli jesteś na zewnątrz, a nie w biurze, musisz być bliżej komputera, a wybudzanie potrwa dłużej. <br>Maksymalna odległość wykrywania może się różnić w zależności od możliwości czujnika. Szczegółowe informacje znajdują się w <i>podręczniku użytkownika</i> dołączonym do komputera."
                 },
                 "zeroTouchLock": {
                     "title": "Blokada bez dotyku",
@@ -1879,7 +1892,7 @@
                     },
                     "facialRecognition": {
                         "title": "ROZPOZNAWANIE TWARZY",
-                        "caption": "Możesz włączyć funkcję rozpoznawania twarzy oraz zezwolić na dostęp do kamery. Narzędzie przechwytuje obraz w celu dokładnego rozpoznania twojej twarzy lub wykrycia, czy nie pozostawiłeś urządzenia bez nadzoru. Dane są przetwarzane lokalnie na twoim urządzeniu. Lenovo nie ma do nich dostępu ani z nich nie korzysta.",
+                        "caption": "Ta funkcja pomaga zwiększyć skuteczność rozpoznawania twarzy i uniknąć nieoczekiwanej blokady ekranu, zwłaszcza wtedy, gdy odchylasz się do tyłu na krześle. Funkcja jest przetwarzana lokalnie na Twoim urządzeniu. Lenovo nie ma do nich dostępu ani z nich nie korzysta.",
                         "checkBox": "Włącz kamerę i uruchom funkcję",
                         "note": {
                             "permission": "Aplikacja Lenovo Vantage nie ma dostępu do kamery. Funkcja rozpoznawania jest wyłączona.",
@@ -1889,18 +1902,18 @@
                         }
                     },
                     "distanceSensitivityAdjusting": {
-                        "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                        "captionOn": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, you can maually adjust the dectecting sensitivity based on your preference.",
-                        "captionOff": "The accuracy varies by body size, posture, and frequency of movement. When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
+                        "title": "AUTOMATYCZNA REGULACJA CZUŁOŚCI ODLEGŁOŚCI",
+                        "captionOn": "Dokładność zależy od wielkości ciała, postawy i częstotliwości ruchu. Jeśli komputer zostanie nieoczekiwanie zablokowany, możesz ręcznie dostosować czułość wykrywania zgodnie ze swoimi preferencjami.",
+                        "captionOff": "Dokładność zależy od wielkości ciała, postawy i częstotliwości ruchu. Gdy ta funkcja jest wyłączona, konieczna jest ręczna regulacja paska czułości w celu dostosowania odległości wykrywania. Jeśli chcesz, aby odległość była regulowana automatycznie, włącz tę funkcję.",
                         "options": {
-                            "near": "Near",
-                            "medium": "Middle",
-                            "far": "Far"
+                            "near": "Blisko",
+                            "medium": "Średni",
+                            "far": "Daleko"
                         },
                         "readMore": {
-                            "line1": "• Near: 0.9 meter",
-                            "line2": "• Middle: 1.2 meter",
-                            "line3": "• Far: 1.5 meter"
+                            "line1": "• Blisko: 0,9 metra",
+                            "line2": "• Średnio: 1,2 metra",
+                            "line3": "• Daleko: 1,5 metra"
                         }
                     }
                 },
@@ -1924,17 +1937,38 @@
                         }
                     }
                 },
+                "distanceSensitivityAdjustingForIdea": {
+                    "title": "AUTOMATYCZNA REGULACJA CZUŁOŚCI ODLEGŁOŚCI",
+                    "captionOn": "Włącz tę funkcję, aby automatycznie dostosować zasięg wykrywania ruchu w celu wznowienia działania systemu. Wyłącz ją, aby ręcznie dostosować czułość wykrywania do własnych preferencji.",
+                    "captionOff": "Gdy ta funkcja jest wyłączona, konieczna jest ręczna regulacja paska czułości w celu dostosowania odległości wykrywania. Jeśli chcesz, aby odległość była regulowana automatycznie, włącz tę funkcję.",
+                    "options": {
+                        "near": "Blisko",
+                        "far": "Daleko",
+                        "medium": "Średni"
+                    },
+                    "readMore": "Dostępne są trzy opcje: W każdym zakresie ekran zostanie odpowiednio wybudzony po wykryciu ruchów człowieka.",
+                    "readMoreForSensor1": {
+                        "line1": "• Blisko: 0–0,4 metra",
+                        "line2": "• Średnio: 0–0,6 metra",
+                        "line3": "• Daleko: 0–1,2 metra"
+                    },
+                    "readMoreForSensor2": {
+                        "line1": "• Blisko: 0,2–0,55 metra",
+                        "line2": "• Średnio: 0,2–1,0 metra",
+                        "line3": "• Daleko: 0,2–1,5 metra"
+                    }
+                },
                 "note": {
                     "description1": "Ta funkcja zależy od funkcji Windows Hello. Upewnij się, że funkcja rozpoznawania twarzy jest włączona w ustawieniach systemu Windows.",
                     "description2": "Funkcja wykorzystuje czujniki i kamerę do wykrywania Twojej obecności. Jednak ta funkcja NIE zbiera żadnych danych osobowych.",
-                    "description3": "1. Funkcja może nie działać prawidłowo, gdy komputer jest w trybie namiotu, tabletu lub podstawki.",
-                    "description4": "2. Jeśli komputer znajduje się w trybie hibernacji lub został wyłączony, funkcja logowanie bez dotyku nie będzie działać.",
-                    "description6": "4. Po włączeniu trybu samolotowego komputera te funkcje są wyłączone.",
-                    "description7": "Dokładność zależy od wielkości ciała, postawy i częstotliwości ruchu. Jeśli komputer zostanie nieoczekiwanie zablokowany, dostosuj pasek czułości, aby poprawić dokładność.",
-                    "description5a1": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to ",
-                    "description5a2": "User Guide ",
-                    "description5a3": "that comes with it.",
-                    "description5b": "b. Your computer is in hibernation mode or has been turned off."
+                    "description3": "1. Aby skorzystać z powyższych funkcji, ustaw ekran komputera pod odpowiednim kątem, aby umożliwić rozpoznawanie Twojej twarzy.",
+                    "description4": "2. Powyższe funkcje nie są obsługiwane, gdy:",
+                    "description5a1": "a. Komputer działa w trybie namiotu, tabletu, podstawki lub jest odłączony. Informacje dotyczące trybów obsługiwanych na Twoim komputerze zawiera ",
+                    "description5a2": "Podręcznik użytkownika ",
+                    "description5a3": "dołączony do komputera.",
+                    "description5b": "b. Komputer znajduje się w trybie hibernacji lub został wyłączony.",
+                    "description6": "3. Po włączeniu trybu samolotowego komputera te funkcje są wyłączone.",
+                    "description7": "Dokładność zależy od wielkości ciała, postawy i częstotliwości ruchu. Jeśli komputer zostanie nieoczekiwanie zablokowany, dostosuj pasek czułości, aby poprawić dokładność."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Przejdź do ustawień funkcji Windows Hello",
@@ -1943,40 +1977,6 @@
                 "resetToDefault": "Resetuj",
                 "sensitivityAdjusting": {
                     "title": "REGULACJA CZUŁOŚCI"
-                },
-                "image": {
-                    "title": "Intelligent security",
-                    "description": "Buckles up your PC with intelligent sensing technology, protects your privacy, and saves your battery power."
-                },
-                "advancedSettings": {
-                    "showAdvSettings": "ADVANCED SETTINGS",
-                    "hideAdvSettings": "HIDE ADVANCED SETTINGS"
-                },
-                "zeroTouchLoginForIdea": {
-                    "title": "Zero Touch Login",
-                    "caption": "This feature enables you to improve the work efficiency by automatically waking up or logging in your computer. To use the feature, you need to register your face in Windows Hello.",
-                    "tooltip": "When you are in front of your computer or approaching it (within 1.2 or 1.5 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer. <br>Depending on the sensor capability, the maximum detecting distance varies. Refer to the <i>User Guide</i> that comes with your computer for details."
-                },
-                "distanceSensitivityAdjustingForIdea": {
-                    "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                    "captionOn": "Enable this feature to automatically adjust the detecting distance of movements to wake up the system. Turn it off to manually adjust the detecting sensitivity based on your preference.",
-                    "captionOff": "When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
-                    "options": {
-                        "near": "Near",
-                        "medium": "Middle",
-                        "far": "Far"
-                    },
-                    "readMore": "There are three options. In each range, when human movements are detected, your screen will be waked up accordingly.",
-                    "readMoreForSensor1": {
-                        "line1": "• Near: 0-0.4 meter",
-                        "line2": "• Middle: 0-0.6 meter",
-                        "line3": "• Far: 0-1.2 meter"
-                    },
-                    "readMoreForSensor2": {
-                        "line1": "• Near: 0.2-0.55 meter",
-                        "line2": "• Middle: 0.2-1.0 meter",
-                        "line3": "• Far: 0.2-1.5 meter"
-                    }
                 }
             },
             "intelligentScreen": {

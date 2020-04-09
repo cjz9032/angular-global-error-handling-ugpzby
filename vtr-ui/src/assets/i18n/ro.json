@@ -1852,6 +1852,14 @@
             "intelligentSecurity": {
                 "title": "Securitate inteligentă",
                 "readMore": "Citiți mai multe",
+                "image": {
+                    "title": "Securitate inteligentă",
+                    "description": "Vă echipează computerul cu tehnologie inteligentă de detectare, vă protejează confidențialitatea și vă economisește energia bateriei."
+                },
+                "advancedSettings": {
+                    "showAdvSettings": "SETĂRI AVANSATE",
+                    "hideAdvSettings": "ASCUNDEȚI SETĂRILE AVANSATE"
+                },
                 "HumanPresenceDetection": {
                     "title": "Detecție prezență umană",
                     "tooltip": "Dați clic aici pentru a reseta setările pentru detecția prezenței umane."
@@ -1864,6 +1872,11 @@
                     "title": "Conectare fără atingere",
                     "caption": "Această funcție deblochează sau activează automat computerul atunci când stați în fața acestuia sau vă apropiați de el.",
                     "tooltip": "Când vă aflaţi în faţa computerului sau vă apropiaţi de acesta (la o distanţă de 1,2 metri), această caracteristică vă permite să vă conectaţi automat la sistem după ce faţa dvs. este recunoscută. Dacă vă aflaţi în aer liber, nu în birou, trebuie să fiţi mai aproape de computer, iar pornirea va dura mai mult."
+                },
+                "zeroTouchLoginForIdea": {
+                    "title": "Conectare fără atingere",
+                    "caption": "Această caracteristică vă permite să îmbunătățiți eficiența activității, automatizând procesele de activare și de conectare ale computerului. Pentru a utiliza această caracteristică, trebuie să vă înregistrați fața în Windows Hello.",
+                    "tooltip": "Atunci când sunteți în fața computerului sau când vă apropiați de acesta (la 1,2 sau 1,5 metri), caracteristica vă permite să vă conectați automat la sistem, după ce vă este recunoscută fața. Dacă vă aflați în aer liber, nu în birou, trebuie să fiți mai aproape de computer, iar pornirea va dura mai mult. <br>Distanța maximă de detecție variază în funcție de capacitatea senzorului. Pentru detalii, consultați <i>Ghidul utilizatorului</i> livrat împreună cu computerul."
                 },
                 "zeroTouchLock": {
                     "title": "Blocare fără atingere",
@@ -1879,7 +1892,7 @@
                     },
                     "facialRecognition": {
                         "title": "RECUNOAȘTEREA FACIALĂ",
-                        "caption": "Puteți activa funcția de recunoaștere facială și îi puteți permite să acceseze camera. Acest instrument captează imaginea dvs. pentru a vă recunoaște cu exactitate prezența sau a detecta când ați lăsat dispozitivul nesupravegheat. Aceste date sunt procesate local pe dispozitivul dvs. Lenovo nu accesează datele și nu le folosește.",
+                        "caption": "Această caracteristică vă ajută să îmbunătățiți performanțele de recunoaștere și să evitați blocarea neașteptată a ecranului, în special atunci când vă relaxați în scaun. Această caracteristică este procesată local pe dispozitivul dumneavoastră. Lenovo nu accesează datele și nu le folosește.",
                         "checkBox": "Porniți camera și activați această caracteristică.",
                         "note": {
                             "permission": "Lenovo Vantage nu are acces la cameră. Funcția casetei de selectare nu este activă.",
@@ -1889,18 +1902,18 @@
                         }
                     },
                     "distanceSensitivityAdjusting": {
-                        "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                        "captionOn": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, you can maually adjust the dectecting sensitivity based on your preference.",
-                        "captionOff": "The accuracy varies by body size, posture, and frequency of movement. When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
+                        "title": "REGLAREA AUTOMATĂ A SENSIBILITĂȚII LA DISTANȚĂ",
+                        "captionOn": "Precizia variază în funcție de dimensiunea corpului, postură și frecvența mișcării. În cazul în care computerul dumneavoastră se blochează neașteptat, puteți regla manual sensibilitatea de detectare, după preferințe.",
+                        "captionOff": "Precizia variază în funcție de dimensiunea corpului, postură și frecvența mișcării. Când această caracteristică este dezactivată, pentru a ajusta distanța de detecție, trebuie să reglați manual bara de sensibilitate. Dacă doriți ca distanța să se regleze automat, porniți caracteristica.",
                         "options": {
-                            "near": "Near",
-                            "medium": "Middle",
-                            "far": "Far"
+                            "near": "Lângă",
+                            "medium": "Mediu",
+                            "far": "Departe"
                         },
                         "readMore": {
-                            "line1": "• Near: 0.9 meter",
-                            "line2": "• Middle: 1.2 meter",
-                            "line3": "• Far: 1.5 meter"
+                            "line1": "• În apropiere: 0,9 metri",
+                            "line2": "• Mediu: 1,2 metri",
+                            "line3": "• La distanță: 1,5 metri"
                         }
                     }
                 },
@@ -1924,17 +1937,38 @@
                         }
                     }
                 },
+                "distanceSensitivityAdjustingForIdea": {
+                    "title": "REGLAREA AUTOMATĂ A SENSIBILITĂȚII LA DISTANȚĂ",
+                    "captionOn": "Activați această caracteristică pentru a regla automat distanța de detecție a mișcării, în vederea activării sistemului. Opriți caracteristica pentru a regla manual sensibilitatea de detecție, după preferințe.",
+                    "captionOff": "Când această caracteristică este dezactivată, pentru a ajusta distanța de detecție, trebuie să reglați manual bara de sensibilitate. Dacă doriți ca distanța să se regleze automat, porniți caracteristica.",
+                    "options": {
+                        "near": "Lângă",
+                        "far": "Departe",
+                        "medium": "Mediu"
+                    },
+                    "readMore": "Sunt disponibile trei opțiuni. Pentru fiecare interval, atunci când este detectată mișcarea umană, ecranul se va activa în mod corespunzător.",
+                    "readMoreForSensor1": {
+                        "line1": "• În apropiere: 0 – 0,4 metri",
+                        "line2": "• Mediu: 0 – 0,6 metri",
+                        "line3": "• La distanță: 0 – 1,2 metri"
+                    },
+                    "readMoreForSensor2": {
+                        "line1": "• În apropiere: 0,2 – 0,55 metri",
+                        "line2": "• Mediu: 0,2 – 1,0 metri",
+                        "line3": "• La distanță: 0,2 – 1,5 metri"
+                    }
+                },
                 "note": {
                     "description1": "Această caracteristică se bazează pe Windows Hello. Asigurați-vă că recunoașterea feței este activată în setările Windows.",
                     "description2": "Această caracteristică folosește senzorii și camera pentru a vă detecta prezența. Cu toate acestea, caracteristica NU colectează date personale.",
-                    "description3": "1. În cazul în care computerul dvs. se află în modul Cort, Tabletă sau Suport, este posibil ca aceste caracteristici să nu funcționeze corect.",
-                    "description4": "2. În cazul în care computerul dvs. se află în modul hibernare sau a fost oprit, Conectarea fără atingere nu va funcţiona.",
-                    "description6": "4. Dacă Modul avion este activat pe computer, aceste funcţii sunt dezactivate.",
-                    "description7": "Precizia variază în funcţie de dimensiunea corpului, postură şi frecvenţa mişcării. În cazul în care computerul se blochează în mod neaşteptat, ajustaţi bara de sensibilitate pentru a îmbunătăţi precizia.",
-                    "description5a1": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to ",
-                    "description5a2": "User Guide ",
-                    "description5a3": "that comes with it.",
-                    "description5b": "b. Your computer is in hibernation mode or has been turned off."
+                    "description3": "1. Pentru a utiliza funcțiile de mai sus, reglați ecranul la un unghi corespunzător, astfel încât fața dumneavoastră să poată fi recunoscută.",
+                    "description4": "2. Funcțiile de mai sus nu sunt acceptate atunci când:",
+                    "description5a1": "a. Computerul este în modul Cort, Tabletă, Standard sau Detașat. Pentru modurile acceptate de computer, consultați ",
+                    "description5a2": "Ghidul utilizatorului ",
+                    "description5a3": "care este livrat împreună cu acesta.",
+                    "description5b": "b. Computerul este în modul hibernare sau a fost oprit.",
+                    "description6": "3. Dacă Modul avion este activat pe computer, aceste funcţii sunt dezactivate.",
+                    "description7": "Precizia variază în funcţie de dimensiunea corpului, postură şi frecvenţa mişcării. În cazul în care computerul se blochează în mod neaşteptat, ajustaţi bara de sensibilitate pentru a îmbunătăţi precizia."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Accesați setările Windows Hello",
@@ -1943,40 +1977,6 @@
                 "resetToDefault": "Resetare",
                 "sensitivityAdjusting": {
                     "title": "AJUSTAREA SENSIBILITĂŢII"
-                },
-                "image": {
-                    "title": "Intelligent security",
-                    "description": "Buckles up your PC with intelligent sensing technology, protects your privacy, and saves your battery power."
-                },
-                "advancedSettings": {
-                    "showAdvSettings": "ADVANCED SETTINGS",
-                    "hideAdvSettings": "HIDE ADVANCED SETTINGS"
-                },
-                "zeroTouchLoginForIdea": {
-                    "title": "Zero Touch Login",
-                    "caption": "This feature enables you to improve the work efficiency by automatically waking up or logging in your computer. To use the feature, you need to register your face in Windows Hello.",
-                    "tooltip": "When you are in front of your computer or approaching it (within 1.2 or 1.5 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer. <br>Depending on the sensor capability, the maximum detecting distance varies. Refer to the <i>User Guide</i> that comes with your computer for details."
-                },
-                "distanceSensitivityAdjustingForIdea": {
-                    "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                    "captionOn": "Enable this feature to automatically adjust the detecting distance of movements to wake up the system. Turn it off to manually adjust the detecting sensitivity based on your preference.",
-                    "captionOff": "When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
-                    "options": {
-                        "near": "Near",
-                        "medium": "Middle",
-                        "far": "Far"
-                    },
-                    "readMore": "There are three options. In each range, when human movements are detected, your screen will be waked up accordingly.",
-                    "readMoreForSensor1": {
-                        "line1": "• Near: 0-0.4 meter",
-                        "line2": "• Middle: 0-0.6 meter",
-                        "line3": "• Far: 0-1.2 meter"
-                    },
-                    "readMoreForSensor2": {
-                        "line1": "• Near: 0.2-0.55 meter",
-                        "line2": "• Middle: 0.2-1.0 meter",
-                        "line3": "• Far: 0.2-1.5 meter"
-                    }
                 }
             },
             "intelligentScreen": {
