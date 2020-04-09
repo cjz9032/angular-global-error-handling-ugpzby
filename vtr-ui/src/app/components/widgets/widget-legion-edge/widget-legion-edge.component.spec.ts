@@ -31,7 +31,7 @@ const loggerServiceMock = jasmine.createSpyObj('LoggerService', ['isShellAvailab
 
 
 
-xdescribe('WidgetLegionEdgeComponent', () => {
+describe('WidgetLegionEdgeComponent', () => {
 	let component: WidgetLegionEdgeComponent;
 	let fixture: ComponentFixture<WidgetLegionEdgeComponent>;
 	gamingSystemUpdateServiceMock.isShellAvailable.and.returnValue(true);

@@ -33,7 +33,7 @@ const cmsMock = {
 	}], Metadata: { Count: 2 }
 };
 
-xdescribe('PageLightingcustomizeComponent', () => {
+describe('PageLightingcustomizeComponent', () => {
 	let component: PageLightingcustomizeComponent;
 	let fixture: ComponentFixture<PageLightingcustomizeComponent>;
 	const routerMock = { params: of({ id: 1 })};

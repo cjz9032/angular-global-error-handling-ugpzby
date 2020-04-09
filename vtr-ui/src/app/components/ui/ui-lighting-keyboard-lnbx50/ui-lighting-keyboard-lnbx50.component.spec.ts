@@ -17,7 +17,7 @@ const lightingService = jasmine.createSpyObj('GamingLightingService', [
 	'checkAreaColorFn'
 ]);
 
-xdescribe('UiLightingKeyboardLNBx50Component', () => {
+describe('UiLightingKeyboardLNBx50Component', () => {
     let component: UiLightingKeyboardLNBx50Component;
     let fixture: ComponentFixture<UiLightingKeyboardLNBx50Component>;
 
