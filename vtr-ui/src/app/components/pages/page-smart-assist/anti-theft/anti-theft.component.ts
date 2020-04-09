@@ -228,6 +228,7 @@ export class AntiTheftComponent implements OnInit {
 	}
 
 	public setAllowCamera(value: boolean) {
+		this.isSupportPhoto = value;
 		const metricsData = {
 			itemParent: 'Device.SmartAssist',
 			itemName: 'Smart-motion-alarm.photo-checkbox',

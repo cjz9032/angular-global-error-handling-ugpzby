@@ -33,9 +33,11 @@
 									id="{{textId}}-start-dropdown"
 									(focus)="[closeAllOtherDD(startAtDropDown)]"
 									role="combobox"
+									tabindex="0"
 									attr.aria-haspopup="true"
 									attr.aria-label="{{title}}-{{ddStartAtChargeDescription}}-{{bctInfo.startValue}}%-{{option}}-
 									{{startAtChargeOptions.indexOf(bctInfo.startValue)+1}}-{{off}}-{{startAtChargeOptions.length}}-{{selected}}"
+									(keyup.esc)="[$event.preventDefault(),startAtDropDown.isOpen()?startToggle.click():'',startToggle.focus()]"
 									(keyup.enter)="[$event.stopPropagation(),
 									focusOnSelected($event,startAtDropDown,startAtChargeOption,bctInfo.startValue)]">
 									<div class="row d-flex justify-content-between">
@@ -69,6 +71,7 @@
 										tabindex="{{item === bctInfo.startValue?0:-1}}"
 										*ngFor="let item of startAtChargeOptions;let currentIndex=index;"
 										(click)="[onStartValueChange(item , startAtDropDown,startToggle), $event.preventDefault()]"
+										(keyup.esc)="[$event.preventDefault(),startAtDropDown.isOpen()?startToggle.click():'',startToggle.focus()]"
 										(keydown.enter)="[onStartValueChange(item ,startAtDropDown, startToggle),$event.preventDefault()]"
 										(keydown)="showHideMenuOfItem($event,startAtDropDown)"
 										id="{{textId}}-{{startAtChargeOption}}-{{item}}"
@@ -92,10 +95,12 @@
 								<button [ngClass]="['btn','btn-outline-shadow']"
 									ngbDropdownToggle
 									#endToggle
+									tabindex="0"
 									id="{{textId}}-stop-dropdown"
 									(focus)="[closeAllOtherDD(stopAtDropDown)]"
 									role="combobox"
 									attr.aria-label="{{title}}-{{ddStopAtChargeDescription}}-{{bctInfo.stopValue}}%-{{option}}-{{stopAtChargeOptions.indexOf(bctInfo.stopValue)+1}}-{{off}}-{{stopAtChargeOptions.length}}-{{selected}}"
+									(keyup.esc)="[$event.preventDefault(),stopAtDropDown.isOpen()?endToggle.click():'',endToggle.focus()]"
 									(keyup.enter)="[$event.stopPropagation(),
 									focusOnSelected($event,stopAtDropDown,stopAtChargeOption,bctInfo.stopValue)]">
 									<div class="row d-flex justify-content-between"
@@ -130,6 +135,7 @@
 										tabindex="{{item === bctInfo.stopValue?0:-1}}"
 										*ngFor="let item of stopAtChargeOptions;let currentIndex=index;"
 										(click)="[onStopValueChange(item ,stopAtDropDown, endToggle), $event.preventDefault()]"
+										(keyup.esc)="[$event.preventDefault(),stopAtDropDown.isOpen()?endToggle.click():'',endToggle.focus()]"
 										(keydown.enter)="[onStopValueChange(item,stopAtDropDown,endToggle),$event.preventDefault()]"
 										(keydown)="showHideMenuOfItem($event,stopAtDropDown)"
 										id="{{textId}}-{{stopAtChargeOption}}-{{item}}"

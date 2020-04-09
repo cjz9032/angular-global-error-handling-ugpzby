@@ -14,6 +14,13 @@ export class UiDaysPickerComponent implements OnInit, OnChanges {
 	@Input() showDropDown: boolean;
 	@Output() setDays = new EventEmitter<string>();
 
+	keyCode = Object.freeze({
+		LEFT: 37,
+		UP: 38,
+		RIGHT: 39,
+		DOWN: 40
+	});
+
 	constructor(
 		public translate: TranslateService,
 		public commonService: CommonService,
@@ -65,4 +72,29 @@ export class UiDaysPickerComponent implements OnInit, OnChanges {
 		}
 		this.smartStandbyService.checkedLength = this.smartStandbyService.selectedDays.length;
 	}
+
+	navigateByKeys($event, index) {
+		switch ($event.keyCode) {
+			case this.keyCode.UP:
+			case this.keyCode.LEFT:
+				const previousDay = this.smartStandbyService.allDays[index-1].shortName;
+				const previousDayHtml = document.querySelector('div[aria-labelledby="' + previousDay + '"]') as HTMLElement;
+				previousDayHtml.focus();
+				$event.preventDefault();
+				$event.stopPropagation();
+				break;
+			case this.keyCode.DOWN:
+			case this.keyCode.RIGHT:
+				const nextDay = this.smartStandbyService.allDays[index+1].shortName;
+				const nextDayHtml = document.querySelector('div[aria-labelledby="' + nextDay + '"]') as HTMLElement;
+				nextDayHtml.focus();
+				$event.preventDefault();
+				$event.stopPropagation();
+				break;
+			default:
+				break;
+		}
+
+	}
+
 }
