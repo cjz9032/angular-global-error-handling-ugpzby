@@ -2,7 +2,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { WidgetLegionEdgeComponent } from './widget-legion-edge.component';
 import { Pipe } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHandler } from '@angular/common/http';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { Router } from '@angular/router';
 import { GamingSystemUpdateService } from 'src/app/services/gaming/gaming-system-update/gaming-system-update.service';
@@ -16,6 +16,7 @@ import { GamingThermalModeService } from 'src/app/services/gaming/gaming-thermal
 import { GamingOCService } from 'src/app/services/gaming/gaming-OC/gaming-oc.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { SvgInlinePipe } from 'src/app/pipe/svg-inline/svg-inline.pipe';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 
 
 const gamingSystemUpdateServiceMock = jasmine.createSpyObj('GamingSystemUpdateService', ['isShellAvailable', 'getCpuOCStatus', 'getRamOCStatus', 'setCpuOCStatus', 'setRamOCStatus']);
@@ -51,6 +52,8 @@ describe('WidgetLegionEdgeComponent', () => {
 			schemas: [NO_ERRORS_SCHEMA],
 			providers: [
 				{ provide: HttpClient },
+				{ provide: VantageShellService },
+				{ provide: HttpHandler },
 				{ provide: Router, useClass: class { navigate = jasmine.createSpy('navigate'); } },
 				{ provide: GamingSystemUpdateService, useValue: gamingSystemUpdateServiceMock },
 				{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceMock },
