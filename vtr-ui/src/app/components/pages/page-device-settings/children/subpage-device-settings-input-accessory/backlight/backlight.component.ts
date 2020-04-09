@@ -135,7 +135,6 @@ export class BacklightComponent implements OnInit, OnDestroy {
 					mode.checked = mode.value === status.value;
 					mode.disabled = status.value === BacklightStatusEnum.DISABLED_OFF;
 					if (status.value === BacklightStatusEnum.DISABLED_OFF && mode.value === BacklightStatusEnum.OFF) {
-						mode.disabled = false;
 						mode.checked = true;
 					}
 				}
@@ -150,7 +149,6 @@ export class BacklightComponent implements OnInit, OnDestroy {
 					mode.checked = mode.value === status.value;
 					mode.disabled = status.value === BacklightStatusEnum.DISABLED_OFF;
 					if (status.value === BacklightStatusEnum.DISABLED_OFF && mode.value === BacklightStatusEnum.OFF) {
-						mode.disabled = false;
 						mode.checked = true;
 					}
 				}
@@ -175,7 +173,6 @@ export class BacklightComponent implements OnInit, OnDestroy {
 					modeItem.checked = res.value === modeItem.value;
 					modeItem.disabled = res.value === BacklightStatusEnum.DISABLED_OFF;
 					if (res.value === BacklightStatusEnum.DISABLED_OFF && modeItem.value === BacklightStatusEnum.OFF) {
-						modeItem.disabled = false;
 						modeItem.checked = true;
 					}
 				}
