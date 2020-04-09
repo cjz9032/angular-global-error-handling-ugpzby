@@ -34,7 +34,7 @@
 								[group]="'radio'"
 								[disabled]="topRowKeyObj.stickyFunStatus"
 								[label]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.sFunKey' | translate"
-								[value]="'icomoon icomoon-Special-function'"								
+								[value]="'icomoon icomoon-Special-function'"
 								[checked]="(topRowKeyObj.primaryFunStatus && topRowKeyObj.fnLockStatus) || (!topRowKeyObj.primaryFunStatus && !topRowKeyObj.fnLockStatus) ? true: false"
 								(optionChange)="onChangeFunType(topRowKeyObj.primaryFunStatus)"
 								[textId]="'myDevice-settings-inputAccessories-top-row-functions-thinkpad'">
@@ -47,7 +47,7 @@
 								[group]="'radio'"
 								[disabled]="topRowKeyObj.stickyFunStatus"
 								[checked]="(topRowKeyObj.primaryFunStatus && topRowKeyObj.fnLockStatus) || (!topRowKeyObj.primaryFunStatus && !topRowKeyObj.fnLockStatus) ? false: true"
-								[label]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.fnKey' | translate"								[value]="'icomoon icomoon-F1-F12-funciton'"								
+								[label]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.fnKey' | translate"								[value]="'icomoon icomoon-F1-F12-funciton'"
 								(optionChange)="onChangeFunType(!topRowKeyObj.primaryFunStatus)"
 								[textId]="'myDevice-settings-inputAccessories-top-row-functions-thinkpad'">
 							</vtr-ui-circle-radio-with-checkbox>
@@ -106,7 +106,7 @@
 							{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.description' | translate}}
 						</div>
 					</div>
-					<div class="pl-2 pr-0 mt-5"
+					<div class="pl-2 pr-0 mt-5 methods-block"
 						role="radiogroup"
 						tabindex="0"
 						aria-label="n Method list, select using arrow keys">

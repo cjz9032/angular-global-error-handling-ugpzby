@@ -27,19 +27,19 @@ export class UiRectangleRadioComponent extends UICustomRadio implements OnInit, 
 		this.setRadioButtons(); // Set up radio buttons first , last etc and if none selected,set tabindex to first element
 	}
 	ngOnChanges(changes: any) {
-		if (changes && changes.checked && !changes.checked.firstChange) {
-			const elementDiv = document.getElementById('div' + this.radioId);
-			if (elementDiv) {
-				if (!this.checked) {
-					elementDiv.setAttribute('aria-checked', 'false');
-					elementDiv.tabIndex = -1;
-				} else {
-					elementDiv.setAttribute('aria-checked', 'true');
-					elementDiv.tabIndex = 0;
-					elementDiv.focus();
-				}
-			}
-		}
+		// if (changes && changes.checked && !changes.checked.firstChange) {
+		// 	const elementDiv = document.getElementById('div' + this.radioId);
+		// 	if (elementDiv) {
+		// 		if (!this.checked) {
+		// 			elementDiv.setAttribute('aria-checked', 'false');
+		// 			elementDiv.tabIndex = -1;
+		// 		} else {
+		// 			elementDiv.setAttribute('aria-checked', 'true');
+		// 			elementDiv.tabIndex = 0;
+		// 			elementDiv.focus();
+		// 		}
+		// 	}
+		// }
 	}
 	onChange(event) {
 		this.change.emit(event);

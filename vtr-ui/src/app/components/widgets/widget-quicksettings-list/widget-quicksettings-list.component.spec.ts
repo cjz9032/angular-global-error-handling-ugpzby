@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { WidgetQuicksettingsListComponent } from './widget-quicksettings-list.component';
 import { Pipe } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHandler } from '@angular/common/http';
 // tslint:disable-next-line: no-duplicate-imports
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { AudioService } from 'src/app/services/audio/audio.service';
@@ -9,14 +9,25 @@ import { GamingThermalModeService } from 'src/app/services/gaming/gaming-thermal
 import { RouterTestingModule } from '@angular/router/testing';
 import { Router } from '@angular/router';
 import { DevService } from 'src/app/services/dev/dev.service';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateStore } from '@ngx-translate/core';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
+import { DialogService } from 'src/app/services/dialog/dialog.service';
+import { UserService } from 'src/app/services/user/user.service';
+import { CookieService } from 'ngx-cookie-service';
 
 
 const audioServiceMock = jasmine.createSpyObj('AudioService', ['isShellAvailable', 'getDolbyFeatureStatus', 'setDolbyOnOff']);
 const gamingThermalModeServiceMock = jasmine.createSpyObj('GamingThermalModeService', ['isShellAvailable', 'getThermalModeStatus', 'setThermalModeStatus', 'regThermalModeEvent']);
+const  gamingDialogServiceMock = jasmine.createSpyObj('DialogService', ['isShellAvailable']);
+const  gamingUserServiceMock = jasmine.createSpyObj('UserService', ['isShellAvailable']);
+const  gamingTranslateServiceMock = jasmine.createSpyObj('TranslateService', ['isShellAvailable']);
 
-xdescribe("WidgetQuicksettingsListComponent", function () {
+const gamingAllCapabilitiesService = jasmine.createSpyObj('GamingAllCapabilitiesService', [
+	'getCapabilityFromCache'
+]);
+describe("WidgetQuicksettingsListComponent", function () {
 	let component: WidgetQuicksettingsListComponent;
 	let fixture: ComponentFixture<WidgetQuicksettingsListComponent>;
 	let router: Router;
@@ -24,7 +35,9 @@ xdescribe("WidgetQuicksettingsListComponent", function () {
 	let isQuickSettingsVisible = true;
 	let originalTimeout;
 	gamingThermalModeServiceMock.isShellAvailable.and.returnValue(true);
-
+	gamingDialogServiceMock.isShellAvailable.and.returnValue(true);
+	gamingUserServiceMock.isShellAvailable.and.returnValue(true);
+	gamingTranslateServiceMock.isShellAvailable.and.returnValue(true);
 	beforeEach(function () {
 		originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
 		jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
@@ -37,10 +50,17 @@ xdescribe("WidgetQuicksettingsListComponent", function () {
 			],
 			providers: [
 				{ provide: HttpClient },
+				{ provide: HttpHandler},
+				{ provide: VantageShellService},
 				{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceMock },
 				{ provide: AudioService, useValue: audioServiceMock },
 				{ provide: DevService },
-				{ provide: TranslateService },
+				{ provide: DialogService, useValue: gamingDialogServiceMock },
+				{ provide: UserService, useValue: gamingUserServiceMock },
+				{ provide: CookieService },
+				{ provide: TranslateService, useValue: gamingTranslateServiceMock },
+				{ provide: TranslateStore },
+				{ provide: GamingAllCapabilitiesService, useValue: gamingAllCapabilitiesService },
 				{ provide: HypothesisService }
 			]
 		}).compileComponents();
