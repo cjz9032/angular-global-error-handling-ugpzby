@@ -78,7 +78,8 @@
                     "macroKey": "Makro tipka",
                     "hardwareScan": "Pregled strojne opreme",
                     "systemUpdate": "Posodob. sistema",
-                    "header": "Sistemska orodja"
+                    "header": "Sistemska orodja",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "lighting": {
                     "title": "Prilagajanje osvetlitve",

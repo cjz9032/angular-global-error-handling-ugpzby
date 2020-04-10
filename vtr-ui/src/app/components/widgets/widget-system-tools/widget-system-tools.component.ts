@@ -14,8 +14,10 @@ import { HardwareScanService } from 'src/app/services/hardware-scan/hardware-sca
 })
 export class WidgetSystemToolsComponent implements OnInit {
 	@Input() title = '';
-	showHWScanMenu: boolean = false;
+	showHWScanMenu: boolean = true;
 	public gamingProperties: any = new GamingAllCapabilities();
+	showAccessoryEntrance = true;
+	toolLength = 3;
 	constructor(
 		private commonService: CommonService, 
 		private gamingCapabilityService: GamingAllCapabilitiesService,
@@ -27,6 +29,7 @@ export class WidgetSystemToolsComponent implements OnInit {
 			if (response.type === Gaming.GamingCapabilities) {
 				this.gamingProperties = response.payload;
 			}
+			this.calcToolLength();
 		});
 		this.gamingProperties.macroKeyFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.macroKeyFeature
@@ -41,5 +44,22 @@ export class WidgetSystemToolsComponent implements OnInit {
 		// 			this.showHWScanMenu = false;
 		// 		});
 		// }
+
+		this.calcToolLength();
+	}
+
+	calcToolLength() {
+		let originalLength = 3;
+		if (this.gamingProperties.macroKeyFeature) {
+			originalLength ++;
+		}
+		if (this.showHWScanMenu) {
+			originalLength ++;
+		}
+		if( this.showAccessoryEntrance) {
+			originalLength ++;
+		}
+
+		this.toolLength = originalLength;
 	}
 }

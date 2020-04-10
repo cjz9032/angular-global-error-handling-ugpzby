@@ -78,7 +78,8 @@
                     "macroKey": "Makro Tuşu",
                     "hardwareScan": "Donanım Taraması",
                     "systemUpdate": "Sistem Güncellemesi",
-                    "header": "Sistem Araçları"
+                    "header": "Sistem Araçları",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "lighting": {
                     "title": "Aydınlatmayı Özelleştirme",

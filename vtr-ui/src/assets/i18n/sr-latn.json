@@ -78,7 +78,8 @@
                     "macroKey": "Taster makroa",
                     "hardwareScan": "Skeniranje hardvera",
                     "systemUpdate": "Ažuriranje sistema",
-                    "header": "Sistemske alatke"
+                    "header": "Sistemske alatke",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "systemStatus": {
                     "info": "INFORMACIJE"

@@ -6,7 +6,7 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col">
-					<ul class="system-tool-icons d-flex justify-content-around">
+					<ul class="system-tool-icons d-flex justify-content-around" [ngClass]="{'list-overflow-6': toolLength === 6}">
 						<li>
 							<a id="gaming_dashboard_systemtools_systemupdates" aria-label="system update" vtrMetrics
 								[metricsItem]="'systemtools_system_update'" metricsEvent="featureClick" metricsParent="Gaming.Dashboard"
@@ -78,6 +78,21 @@
 									<figcaption
 										title="{{'gaming.dashboard.device.systemTools.hardwareScan' | translate}}">
 										{{'gaming.dashboard.device.systemTools.hardwareScan' | translate}}
+									</figcaption>
+								</figure>
+							</a>
+						</li>
+
+						<li *ngIf="showAccessoryEntrance">
+							<a id="gaming_dashboard_systemtools_legion_accessory" aria-label="legion accessory"
+							 tabindex="1"
+							  vtrMetrics [metricsItem]="'systemtools_legion_accessory'" metricsEvent="featureClick" metricsParent="Gaming.Dashboard">
+								<figure>
+									<div class="system-image" title="">
+										<img class="image" [src]="'assets/images/gaming/gaming-accessory-logo.png'  | svgInline | async" />
+									</div>
+									<figcaption title="{{'gaming.dashboard.device.systemTools.legionAccessory' | translate}}">
+										{{'gaming.dashboard.device.systemTools.legionAccessory' | translate}}
 									</figcaption>
 								</figure>
 							</a>

@@ -78,7 +78,8 @@
                     "macroKey": "Makrotangent",
                     "hardwareScan": "Maskinvarugenomsökning",
                     "systemUpdate": "Systemuppdatering",
-                    "header": "Systemverktyg"
+                    "header": "Systemverktyg",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "lighting": {
                     "title": "Anpassa belysning",

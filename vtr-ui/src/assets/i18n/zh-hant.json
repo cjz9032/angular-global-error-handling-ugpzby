@@ -78,7 +78,8 @@
                     "macroKey": "巨集鍵",
                     "hardwareScan": "硬體掃描",
                     "systemUpdate": "系統更新",
-                    "header": "系統工具"
+                    "header": "系統工具",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "lighting": {
                     "title": "自訂照明",

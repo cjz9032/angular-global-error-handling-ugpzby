@@ -83,7 +83,8 @@
 					"macroKey": "Macro Key",
 					"hardwareScan": "Hardware Scan",
 					"systemUpdate": "System Update",
-					"header": "System Tools"
+					"header": "System Tools",
+					"legionAccessory": "Legion Accessory"
 				},
 				"systemStatus": {
 					"info": "INFO"

@@ -78,7 +78,8 @@
                     "macroKey": "マクロ・キー",
                     "hardwareScan": "ハードウェア・スキャン",
                     "systemUpdate": "システム アップデート",
-                    "header": "システム・ツール"
+                    "header": "システム・ツール",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "lighting": {
                     "title": "照明カスタマイズ",
