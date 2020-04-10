@@ -4062,5 +4062,10 @@
     },
     "cpt": {
         "title": "Content Preview Tool"
+    },
+    "storeRating": {
+        "title": "의견을 보내주세요",
+        "likeUs": "좋아요",
+        "feedback": "피드백 남기기"
     }
 }

@@ -4062,5 +4062,10 @@
     },
     "cpt": {
         "title": "Content Preview Tool"
+    },
+    "storeRating": {
+        "title": "Pošaljite nam vaš glas",
+        "likeUs": "Označite da vam se sviđamo",
+        "feedback": "Ostavite povratne informacije"
     }
 }

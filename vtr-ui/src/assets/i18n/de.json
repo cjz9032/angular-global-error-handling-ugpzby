@@ -4062,5 +4062,10 @@
     },
     "cpt": {
         "title": "Content Preview Tool"
+    },
+    "storeRating": {
+        "title": "Senden Sie uns Ihre Stimme",
+        "likeUs": "Folgen",
+        "feedback": "Feedback zu geben"
     }
 }

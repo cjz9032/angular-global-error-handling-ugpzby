@@ -4062,5 +4062,10 @@
     },
     "cpt": {
         "title": "Content Preview Tool"
+    },
+    "storeRating": {
+        "title": "Στείλτε μας τη φωνή σας",
+        "likeUs": "Βάλτε \"Μου αρέσει\"",
+        "feedback": "Αφήστε σχόλια"
     }
 }

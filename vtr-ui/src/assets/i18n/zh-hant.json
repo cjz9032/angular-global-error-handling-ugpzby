@@ -4062,5 +4062,10 @@
     },
     "cpt": {
         "title": "Content Preview Tool"
+    },
+    "storeRating": {
+        "title": "讓我們聽到您的聲音",
+        "likeUs": "為我們按讚",
+        "feedback": "留下意見"
     }
 }

@@ -4062,5 +4062,10 @@
     },
     "cpt": {
         "title": "Content Preview Tool"
+    },
+    "storeRating": {
+        "title": "Ge oss din röst",
+        "likeUs": "Gilla oss",
+        "feedback": "Ge feedback"
     }
 }
