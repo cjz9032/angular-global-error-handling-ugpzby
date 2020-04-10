@@ -11,6 +11,7 @@ import {
 	animate,
 	transition,
 } from '@angular/animations';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 
 @Component({
 	selector: 'vtr-modal-store-rating',
@@ -58,11 +59,9 @@ export class ModalStoreRatingComponent implements OnInit {
 		public activeModal: NgbActiveModal,
 		private logger: LoggerService,
 		private metrics: MetricService,
+		private shellService: VantageShellService
 	) {
-		const win = window as any;
-		if (win.VantageShellExtension) {
-			this.msStoreUtil = win.VantageShellExtension.Utils.MSStore;
-		}
+		this.msStoreUtil = this.shellService.getMsStoreUtil();
 	}
 
 	ngOnInit(): void {
@@ -137,12 +136,12 @@ export class ModalStoreRatingComponent implements OnInit {
 		this.metrics.sendMetrics(taskinfo);
 	}
 
-	private sendStorRatingShowsMetrics(){
-		const info = new ItemView('StoreRating','','Store rating prompt shows up.','');
+	private sendStorRatingShowsMetrics() {
+		const info = new ItemView('StoreRating', '', 'Store rating prompt shows up.', '');
 		this.metrics.sendMetrics(info);
 	}
 
-	private async launchEmailToLenovo(){
+	private async launchEmailToLenovo() {
 		await this.msStoreUtil.emailToLenovo();
 		this.sendDoEmailToLenovoMetrics();
 	}

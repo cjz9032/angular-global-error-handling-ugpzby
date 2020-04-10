@@ -54,8 +54,8 @@ export class StoreRatingService {
 		this.commonService.setLocalStorageValue(LocalStorageKey.RatingPromptCount, currentPromptCount);
 	}
 
-	private async canPromptRating() {
-		if(!navigator.onLine){
+	private async canPromptRating(): Promise<boolean> {
+		if (!navigator.onLine) {
 			return false;
 		}
 
