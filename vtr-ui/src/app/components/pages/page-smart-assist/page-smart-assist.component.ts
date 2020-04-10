@@ -19,6 +19,7 @@ import { EMPTY, fromEvent } from 'rxjs';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { SmartAssistCache } from 'src/app/data-models/smart-assist/smart-assist-cache.model';
 import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
+import { AntiTheftResponse } from 'src/app/data-models/antiTheft/antiTheft.model';
 import { HsaIntelligentSecurityResponse } from 'src/app/data-models/smart-assist/hsa-intelligent-security.model/hsa-intelligent-security.model';
 import { MetricService } from 'src/app/services/metric/metric.service';
 
@@ -34,7 +35,6 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	backarrow = '< ';
 	parentPath = 'device';
 	@Output() distanceChange: any = new EventEmitter();
-	public manualRefresh: EventEmitter<void> = new EventEmitter<void>();
 	public isThinkPad = true;
 	public tooltipText = 'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.toolTipContent';
 	public humanPresenceDetectStatus = new FeatureStatus(false, true);
@@ -61,6 +61,10 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	smartAssistCache: SmartAssistCache;
 	public isSuperResolutionLoading = true;
 	public superResolution = new FeatureStatus(false, true);
+	public isAntiTheftLoading = true;
+	public antiTheft = new AntiTheftResponse(false, false, false, false, false);
+	public isShowAuthorized = false;
+	public checkboxDisabled = false;
 	public hsaIntelligentSecurity = new HsaIntelligentSecurityResponse(false, false);
 	public image = '/assets/images/smart-assist/intelligent-security/HPD_Image.png';
 	public zeroTouchLoginShowAdvancedSection: boolean;
@@ -163,6 +167,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			this.initDataFromCache();
 			this.initSmartAssist(true);
 			this.getHPDLeaveSensitivityVisibilityStatus();
+			this.startMonitorAntiTheftStatus();
 			this.startMonitorHsaIntelligentSecurityStatus();
 		}
 	}
@@ -266,6 +271,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			this.initIntelligentScreen();
 			this.getVideoPauseResumeStatus();
 			this.getSuperResolutionStatus();
+			this.getAntiTheftStatus();
 			this.getHsaIntelligentSecurityStatus();
 		} else {
 			if (this.smartAssistCapability.isIntelligentSecuritySupported) {
@@ -289,6 +295,10 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				this.superResolution = this.smartAssistCapability.isSuperResolutionSupported;
 				this.getSuperResolutionStatus();
 			}
+			if (this.smartAssistCapability.isAntiTheftSupported) {
+				this.antiTheft = this.smartAssistCapability.isAntiTheftSupported;
+				this.getAntiTheftStatus();
+			}
 			if (this.smartAssistCapability.isHsaIntelligentSecuritySupported) {
 				this.hsaIntelligentSecurity = this.smartAssistCapability.isHsaIntelligentSecuritySupported;
 				this.getHsaIntelligentSecurityStatus();
@@ -299,9 +309,13 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 
 	public getHPDLeaveSensitivityVisibilityStatus() {
 		try {
+			this.logger.info('getHPDLeaveSensitivityVisibility API call----->');
 			this.smartAssist.getHPDLeaveSensitivityVisibility().then((value: any) => {
 				this.logger.info('getHPDLeaveSensitivityVisibility value----->', value);
 				this.sensitivityVisibility = value;
+				this.smartAssistCache.sensitivityVisibility = value;
+				this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
+
 				if (this.sensitivityVisibility) {
 					this.getHPDLeaveSensitivityStatus();
 				}
@@ -315,12 +329,13 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 
 	public async getHPDLeaveSensitivityStatus() {
 		try {
+			this.logger.info('getHPDLeaveSensitivity API call----->');
 			await this.smartAssist.getHPDLeaveSensitivity().then((value: any) => {
 				this.sensitivityAdjustVal = value || 2;
 				this.logger.info('getHPDLeaveSensitivity value----->', value);
 			});
 		} catch (error) {
-			this.logger.error('getHPDLeaveSensitivityVisibilityStatus', error.message);
+			this.logger.error('getHPDLeaveSensitivityStatus', error.message);
 			return EMPTY;
 		}
 	}
@@ -449,27 +464,6 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			this.logger.error('error in PageSmartAssistComponent.Promise.initZeroTouchLock()', error.message);
 			return EMPTY;
 		});
-	}
-
-	private sortMenuItems(menuItems: PageAnchorLink[]): PageAnchorLink[] {
-		if (menuItems) {
-			return menuItems.sort((item1, item2) => {
-				let comparison = 0;
-				if (item1 > item2) {
-					comparison = 1;
-				} else if (item1 < item2) {
-					comparison = -1;
-				}
-				return comparison;
-			});
-		}
-		return undefined;
-	}
-
-	public onCardCollapse(isCollapsed: boolean) {
-		if (!isCollapsed) {
-			this.manualRefresh.emit();
-		}
 	}
 
 	public onHumanPresenceDetectStatusToggle($event: any) {
@@ -620,7 +614,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				this.smartAssist.setZeroTouchLockDistanceSensitivityAutoAdjust(event.switchValue)
 					.then((response) => {
 						if (response === 0 && !event.switchValue) {
-							this.getHsaIntelligentSecurityStatus(); //refresh slider-bar when turn off the autoAdjust toggle
+							this.getHsaIntelligentSecurityStatus(); // refresh slider-bar when turn off the autoAdjust toggle
 						}
 					});
 			}
@@ -669,7 +663,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				this.hsaIntelligentSecurity.zeroTouchLockDistance = response.presenceLeaveDistance;
 				this.zeroTouchPresenceLeaveDistanceAutoAdjustCapability = (response.capability && 0x100) !== 0;
 				this.zeroTouchPresenceLeaveDistanceCapability = (response.capability && 0x80) !== 0;
-			}			
+			}
 			this.logger.info('hsaIntelligentSecurityChange', data);
 		} catch (error) {
 			this.logger.error('hsaIntelligentSecurityChange', error.message);
@@ -812,13 +806,15 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	initHPDSensorType() {
 		try {
 			if (this.smartAssist.isShellAvailable) {
+				this.logger.info('initHPDSensorType API call', this.hpdSensorType);
 				this.smartAssist.getHPDSensorType()
 					.then((type: number) => {
 						this.hpdSensorType = type;
 						this.smartAssistCache.hpdSensorType = this.hpdSensorType;
 						this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
-						this.logger.info('getHPDSensorType: ', this.hpdSensorType);
+						this.logger.info('initHPDSensorType then', this.hpdSensorType);
 					}).catch(error => {
+						this.logger.error('initHPDSensorType error', error);
 					});
 			}
 		} catch (error) { }
@@ -831,9 +827,66 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 					.then((response: FeatureStatus) => {
 						this.isSuperResolutionLoading = false;
 						this.superResolution = response;
-					}).catch(error => { });
+					}).catch(error => {
+						this.logger.error('getSuperResolutionStatus.error', error);
+					});
 			}
-		} catch (error) { }
+		} catch (error) {
+			this.logger.error('getSuperResolutionStatus' + error.message);
+		}
+	}
+
+	private getAntiTheftStatus() {
+		try {
+			if (this.smartAssist.isShellAvailable) {
+				this.logger.info(`getAntiTheftStatus API call`);
+				this.smartAssist.getAntiTheftStatus()
+					.then((response: AntiTheftResponse) => {
+						this.isAntiTheftLoading = false;
+						this.antiTheft = response;
+						this.isShowAuthorized = !response.authorizedAccessState;
+						this.checkboxDisabled = !(response.authorizedAccessState && response.cameraPrivacyState);
+						this.logger.info(`getAntiTheftStatus then`, response);
+					}).catch(error => {
+						this.logger.error('getAntiTheftStatus.error', error);
+					});
+			}
+		} catch (error) {
+			this.logger.error('getAntiTheftStatus' + error.message);
+		}
+	}
+
+	public startMonitorAntiTheftStatus() {
+		try {
+			if (this.smartAssist.isShellAvailable) {
+				this.logger.info('startMonitorAntiTheftStatus API call');
+				this.smartAssist.startMonitorAntiTheftStatus(this.antiTheftStatusChange.bind(this))
+					.then((value) => {
+						this.logger.info('startMonitorAntiTheftStatus.then', value);
+					}).catch(error => {
+						this.logger.error('startMonitorAntiTheftStatus', error.message);
+					});
+			}
+		} catch (error) {
+			this.logger.error('startMonitorAntiTheftStatus', error.message);
+		}
+	}
+
+	public antiTheftStatusChange(data: any) {
+		try {
+			const obj = JSON.parse(data);
+			if (obj && obj.errorCode === 0) {
+				this.antiTheft.available = obj.available;
+				this.antiTheft.status = obj.enabled;
+				this.antiTheft.isSupportPhoto = obj.cameraAllowed;
+				this.antiTheft.photoAddress = obj.photoAddress;
+				this.antiTheft.alarmOften = obj.alarmDuration;
+				this.antiTheft.photoNumber = obj.photoNumber;
+			}
+			this.logger.info(`antiTheftStatusChange`, data);
+		} catch (error) {
+			this.logger.error('antiTheftStatusChange', error.message);
+		}
 	}
 
 	onClick(path) {

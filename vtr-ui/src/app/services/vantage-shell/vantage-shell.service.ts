@@ -255,22 +255,22 @@ export class VantageShellService {
 		return undefined;
 	}
 
-	public getConnectedHomeSecurity(): Phoenix.ConnectedHomeSecurity {
+	public async getConnectedHomeSecurity(): Promise<Phoenix.ConnectedHomeSecurity | undefined> {
 		if (this.phoenix) {
 			if (!this.phoenix.connectedHomeSecurity) {
 				this.phoenix.loadFeatures([Phoenix.Features.ConnectedHomeSecurity]);
 			}
-			return this.phoenix.connectedHomeSecurity;
+			return await this.phoenix.connectedHomeSecurity;
 		}
 		return undefined;
 	}
 
-	public getDevicePosture(): Phoenix.DevicePosture {
+	public async getDevicePosture(): Promise<Phoenix.DevicePosture | undefined> {
 		if (this.phoenix) {
 			if (!this.phoenix.devicePosture) {
 				this.phoenix.loadFeatures([Phoenix.Features.DevicePosture]);
 			}
-			return this.phoenix.devicePosture;
+			return await this.phoenix.devicePosture;
 		}
 		return undefined;
 	}
@@ -468,7 +468,7 @@ export class VantageShellService {
 				const deviceFilterResult = await this.phoenix.deviceFilter.deviceFilterEval(filter);
 				// console.log('In VantageShellService.deviceFilter. Filter: ', JSON.stringify(filter), deviceFilterResult);
 				return deviceFilterResult;
-			} catch (error) {}
+			} catch (error) { }
 			return true;
 			// return await this.phoenix.deviceFilter(filter);
 		}
@@ -623,15 +623,23 @@ export class VantageShellService {
 		return undefined;
 	}
 
+	public getAntiTheft(): any {
+		const win: any = window;
+		if (win.VantageShellExtension && win.VantageShellExtension.SmartMotionAlertRpcClient) {
+			return new win.VantageShellExtension.SmartMotionAlertRpcClient();
+		}
+		return undefined;
+	}
+
 	public getHsaIntelligentSecurity(): any {
 		try {
-		    const win: any = window;
-		    if (win.VantageShellExtension && win.VantageShellExtension.HumanPresenceDetectionRpcClient) {
-				  return new win.VantageShellExtension.HumanPresenceDetectionRpcClient();
-		    }
-	    } catch (error) {
-		   throw new Error(error.message);		   
-	    }
+			const win: any = window;
+			if (win.VantageShellExtension && win.VantageShellExtension.HumanPresenceDetectionRpcClient) {
+				return new win.VantageShellExtension.HumanPresenceDetectionRpcClient();
+			}
+		} catch (error) {
+			throw new Error(error.message);
+		}
 	}
 
 	public getPreferenceSettings() {
@@ -940,6 +948,14 @@ export class VantageShellService {
 	public getUpeAgent(): any {
 		if (this.phoenix) {
 			return this.phoenix.upeAgent;
+		}
+		return undefined;
+	}
+
+	public getMsStoreUtil(): any {
+		const win = window as any;
+		if (win.VantageShellExtension) {
+			return win.VantageShellExtension.Utils.MSStore;
 		}
 		return undefined;
 	}

@@ -840,4 +840,10 @@
     color: #4a81fd;
   }
 }
+.icomoon-antiTheft {
+	&:before {
+	  content: $icomoon-antiTheft;     
+	  color: #4a81fd;
+	}
+  }
 

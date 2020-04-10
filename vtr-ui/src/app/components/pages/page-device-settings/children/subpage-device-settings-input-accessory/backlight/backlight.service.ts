@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { from, Observable, Subject } from 'rxjs';
-import { Backlight, BacklightLevel, BacklightMode, BacklightStatus } from './backlight.interface';
+import { Backlight, BacklightLevel, BacklightMode, BacklightStatus, GetBacklightResponse } from './backlight.interface';
 import { VantageShellService } from '../../../../../../services/vantage-shell/vantage-shell.service';
 import { map, shareReplay, takeUntil } from 'rxjs/operators';
 
@@ -57,5 +57,39 @@ export class BacklightService {
 				]
 			}]
 		}));
+	}
+
+	getBacklightOnSystemChange(): Observable<GetBacklightResponse> {
+		return new Observable((observer) => {
+			this.backlightFeature.getBacklightOnSystemChange(
+				{
+					settingList: [
+						{
+							setting: [
+								{
+									key: 'IntermediateResponseDuration',
+									value: '00:00:30',
+									enabled: 0
+								}
+							]
+						}
+					]
+				},
+				response => {
+					observer.next(response.payload);
+				}
+			).then(
+				response => {
+					observer.next(response);
+					observer.complete();
+				},
+				result => {
+					observer.error(result);
+				}
+			)
+
+			return () => {
+			}
+		});
 	}
 }

@@ -15,7 +15,7 @@ const commonServiceMock = {
             return JSON.parse(localStorage.getItem(key));
         }else{
             return undefined;
-        } 
+        }
     },
     setLocalStorageValue: (key, value) => localStorage.setItem(key, JSON.stringify(value))
 };
@@ -57,12 +57,12 @@ describe('WidgetLightingDeskComponent', () => {
     let component: WidgetLightingDeskComponent;
     let fixture: ComponentFixture<WidgetLightingDeskComponent>;
     gamingLightingServiceMock.getLightingProfileId.and.returnValue(Promise.resolve({ didSuccess: true, profileId: 2 }));
-    gamingLightingServiceMock.getLightingCapabilities.and.returnValue(Promise.resolve(lightingCapility));  
-    gamingLightingServiceMock.getLightingProfileById.and.returnValue(Promise.resolve(getLightingProfileById));  
-    gamingLightingServiceMock.setLightingDefaultProfileById.and.returnValue(Promise.resolve(getLightingProfileById));  
-    gamingLightingServiceMock.setLightingProfileEffectColor.and.returnValue(Promise.resolve(getLightingProfileById));  
-    gamingLightingServiceMock.setLightingProfileId.and.returnValue(Promise.resolve(getLightingProfileById)); 
-    beforeEach(fakeAsync(() => { 
+    gamingLightingServiceMock.getLightingCapabilities.and.returnValue(Promise.resolve(lightingCapility));
+    gamingLightingServiceMock.getLightingProfileById.and.returnValue(Promise.resolve(getLightingProfileById));
+    gamingLightingServiceMock.setLightingDefaultProfileById.and.returnValue(Promise.resolve(getLightingProfileById));
+    gamingLightingServiceMock.setLightingProfileEffectColor.and.returnValue(Promise.resolve(getLightingProfileById));
+    gamingLightingServiceMock.setLightingProfileId.and.returnValue(Promise.resolve(getLightingProfileById));
+    beforeEach(fakeAsync(() => {
         TestBed.configureTestingModule({
             declarations: [WidgetLightingDeskComponent, mockPipe({ name: 'translate' })],
             providers: [
@@ -112,7 +112,7 @@ describe('WidgetLightingDeskComponent', () => {
         component.getLightingProfileByIdFromcache(component.lightingProfileById,component.lightingCapabilities);
         expect(component.currentProfileId).toBeLessThanOrEqual(2);
     })
-   
+
     it('should support bright', fakeAsync(() => {
         gamingLightingServiceMock.isShellAvailable = true;
         component.lightingProfileCurrentDetail.lightPanelType = 16;
@@ -158,7 +158,7 @@ describe('WidgetLightingDeskComponent', () => {
         component.supportColorFn(8);
         expect(component.supportColor).toEqual(false);
     }))
-    
+
     it('should show the color picker', fakeAsync(() => {
         gamingLightingServiceMock.isShellAvailable = true;
         component.isShow = true;
@@ -180,21 +180,21 @@ describe('WidgetLightingDeskComponent', () => {
         expect(component.currentProfileId).toBeLessThanOrEqual(2);
     })
 
-    it('should switch right button', fakeAsync(() => {
-        gamingLightingServiceMock.isShellAvailable = true;
-        component.countObj['count'+component.currentProfileId] = 1;
-        component.lightingCapabilities.LightPanelType.length = 4;
-        component.panelSwitchRig();
-        tick(10);
-        expect(component.currentProfileId).toBeLessThanOrEqual(2);
+    // it('should switch right button', fakeAsync(() => {
+    //     gamingLightingServiceMock.isShellAvailable = true;
+    //     component.countObj['count'+component.currentProfileId] = 1;
+    //     component.lightingCapabilities.LightPanelType.length = 4;
+    //     component.panelSwitchRig();
+    //     tick(10);
+    //     expect(component.currentProfileId).toBeLessThanOrEqual(2);
 
-        component.countObj['count'+component.currentProfileId] = 4;
-        component.lightingCapabilities.LightPanelType.length = 5;
-        component.panelSwitchRig();
-        tick(10);
-        expect(component.isDisabledrig[component.currentProfileId-1]).toEqual(true);
-    }))
-    
+    //     component.countObj['count'+component.currentProfileId] = 4;
+    //     component.lightingCapabilities.LightPanelType.length = 5;
+    //     component.panelSwitchRig();
+    //     tick(10);
+    //     expect(component.isDisabledrig[component.currentProfileId-1]).toEqual(true);
+    // }))
+
     it('should set the lighting profile', fakeAsync(() => {
         const event = {'target':{'value':2}};
         gamingLightingServiceMock.isShellAvailable = true;
@@ -266,7 +266,7 @@ describe('WidgetLightingDeskComponent', () => {
         tick(10);
         expect(component.lightingProfileCurrentDetail.lightSpeed).toBeLessThanOrEqual(2);
     }));
-    
+
     it('should set the lighting default id', fakeAsync(() => {
         gamingLightingServiceMock.isShellAvailable = true;
         gamingLightingServiceMock.setLightingDefaultProfileById.and.returnValue(Promise.resolve(getLightingProfileById));
@@ -281,7 +281,7 @@ describe('WidgetLightingDeskComponent', () => {
 
     it('should show lighting page detail', () => {
         gamingLightingServiceMock.isShellAvailable = true;
-        const lightingProfileByIdRes = { 
+        const lightingProfileByIdRes = {
             didSuccess: true,
             profileId: 2,
             brightness: 0,
@@ -324,7 +324,7 @@ describe('WidgetLightingDeskComponent', () => {
         component.imgDefaultOff();
         tick(10);
         expect(component.lightingProfileCurrentDetail.panelImage).toMatch("assets/images/gaming/lighting/lighting-ui-new/T550_wind_cold.png");
-        
+
         component.lightingCapabilities.LightPanelType = [16];
         component.imgDefaultOff();
         tick(10);

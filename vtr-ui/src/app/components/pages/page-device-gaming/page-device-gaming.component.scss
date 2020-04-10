@@ -60,3 +60,20 @@
 // 		}
 // 	}
 // }
+
+::ng-deep body.focus-enable{
+	.is-gaming {
+		.vtr-page-device-gaming{
+			vtr-container-card {
+				&:focus {
+					.content {
+						outline: 1px dotted !important;
+					}
+				}
+				a.card-image,a.action-link-a{
+					outline: none !important;
+				}
+			}
+		}
+	}
+}

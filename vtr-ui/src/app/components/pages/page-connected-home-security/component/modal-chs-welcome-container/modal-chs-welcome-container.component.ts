@@ -39,24 +39,27 @@ export class ModalChsWelcomeContainerComponent implements OnInit {
 	) {	}
 
 	ngOnInit() {
-		this.chs = this.vantageShellService.getConnectedHomeSecurity();
-		this.permission = this.vantageShellService.getPermission();
+		this.vantageShellService.getConnectedHomeSecurity().then((chs) => {
+			this.chs = chs;
 
-		if (this.switchPage === 2) {
-			this.showPageLocation = true;
-		}
-		this.refreshPage();
+			this.permission = this.vantageShellService.getPermission();
 
-		this.chs.on(EventTypes.wsIsLocationServiceOnEvent, (data) => {
-			this.isLocationServiceOn = data;
-			if (data) {
-				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
-				if (this.switchPage === 2) {
-					this.closeModal();
-				}
-			} else {
-				this.showPageLocation = !this.isLocationServiceOn;
+			if (this.switchPage === 2) {
+				this.showPageLocation = true;
 			}
+			this.refreshPage();
+
+			this.chs.on(EventTypes.wsIsLocationServiceOnEvent, (data) => {
+				this.isLocationServiceOn = data;
+				if (data) {
+					this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
+					if (this.switchPage === 2) {
+						this.closeModal();
+					}
+				} else {
+					this.showPageLocation = !this.isLocationServiceOn;
+				}
+			});
 		});
 	}
 

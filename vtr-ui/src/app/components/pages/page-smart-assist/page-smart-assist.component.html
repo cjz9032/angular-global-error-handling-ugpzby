@@ -33,7 +33,6 @@
 								[isCollapsed]="false"
 								[allowCollapse]="true"
 								[theme]="'white'"
-								(toggle)="onCardCollapse($event)">
 								<!-- image -->
 								<div class="no-border-bottom pt-4 intelligent-security-image">
 									<img [src]="image" id="intelligent-security-image"/>
@@ -62,7 +61,7 @@
 											[tooltipText]=" 'device.smartAssist.intelligentSecurity.zeroTouchLoginForIdea.tooltip' | translate">
 										</vtr-ui-row-switch>
 										<!-- show advanced section -->
-										<div class="pl-4 border-bottom pb-4 ml-4" 
+										<div class="pl-4 border-bottom pb-4 ml-4"
 											*ngIf="!zeroTouchLoginShowAdvancedSection">
 											<span class="link-text mt-2 ml-4"
 												role="button"
@@ -287,10 +286,10 @@
 											[isSwitchChecked]="intelligentSecurity.isZeroTouchLockEnabled"
 											(toggleOnOff)="onZeroTouchLockStatusToggle($event)"
 											[theme]="'white'"
-											[disabled]="!intelligentSecurity.isHPDEnabled">											
+											[disabled]="!intelligentSecurity.isHPDEnabled">
 										</vtr-ui-row-switch>
 										<!-- show advanced section -->
-										<div class="pl-4 border-bottom pb-4 ml-4" 
+										<div class="pl-4 border-bottom pb-4 ml-4"
 											*ngIf="!zeroTouchLockShowAdvancedSection">
 											<span class="link-text mt-2 ml-4"
 												role="button"
@@ -678,6 +677,24 @@
 					</div>
 					<!-- End of Intelligent Security -->
 
+					<!-- Start of Intelligent Sensing (Anti theft)-->
+					<div class="smart-assist-anti-theft">
+						<vtr-anti-theft id="sensing"
+						*ngIf="antiTheft.available"
+						[isLoading]="isAntiTheftLoading"
+						[isChecked]="antiTheft.status"
+						[isSupportPhoto] = "antiTheft.isSupportPhoto"
+						[photoAddress] = "antiTheft.photoAddress"
+						[alarmOften] = "antiTheft.alarmOften"
+						[photoNumber] = "antiTheft.photoNumber"
+						[checkboxDisabled] = "checkboxDisabled"
+						[cameraPrivacyState] ="antiTheft.cameraPrivacyState"
+						[authorizedAccessState] = "antiTheft.authorizedAccessState"
+						[isShowAuthorized] = "isShowAuthorized">
+						</vtr-anti-theft>
+					</div>
+					<!-- End of Intelligent Sensing (Anti theft)-->
+
 					<!-- Start of Intelligent Screen -->
 					<div class="row pt-5 smart-assist-card"
 						id="screen"
@@ -689,8 +706,7 @@
 								componentName="intelligent screen"
 								[isCollapsed]="false"
 								[allowCollapse]="true"
-								[theme]="'white'"
-								(toggle)="onCardCollapse($event)">
+								[theme]="'white'">
 
 								<div class="intligent-screen">
 									<div class="col-12 px-0">
@@ -789,8 +805,7 @@
 								componentName=""
 								[isCollapsed]="false"
 								[allowCollapse]="true"
-								[theme]="'white'"
-								(toggle)="onCardCollapse($event)">
+								[theme]="'white'">
 								<vtr-active-protection-system></vtr-active-protection-system>
 							</vtr-container-collapsible>
 						</div>
@@ -808,7 +823,6 @@
 								[isCollapsed]="false"
 								[allowCollapse]="true"
 								[theme]="'white'"
-								(toggle)="onCardCollapse($event)"
 								[metricsParent]="'Device.SmartAssist'">
 								<vtr-voice></vtr-voice>
 							</vtr-container-collapsible>

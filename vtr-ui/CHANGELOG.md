@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.11](https://bitbucket.tc.lenovo.com///compare/v1.5.10...v1.5.11) (2020-04-09)
+
+
+### Bug Fixes
+
+* **VAN-15760:** backlight composer client version ([2b612bf](https://bitbucket.tc.lenovo.com///commit/2b612bf10bbbf9a390e42793bdbd827c0b806581))
+* **VAN-15760:** backlight composer client version ([3b5ce24](https://bitbucket.tc.lenovo.com///commit/3b5ce241293833300cd1eaf99d423bc88b32a370))
+* **VAN-15760:** backlight composer client version ([95eaf7c](https://bitbucket.tc.lenovo.com///commit/95eaf7c86cdce6d352fe99076ac4da9ccce8f159))
+* **VAN-15760:** Backlight on system change & ComposerClient ([5accbd2](https://bitbucket.tc.lenovo.com///commit/5accbd2ede0387a3ef869ed8964b6f5a15c60687))
+* **VAN-15760:** package.json build script modification ([b1abe4e](https://bitbucket.tc.lenovo.com///commit/b1abe4e06101cb2cbbd7c29845941843e89ef4ef))
+* **VAN-15931:** disabledOff off status -> disabled ([a39d7b9](https://bitbucket.tc.lenovo.com///commit/a39d7b958ba1c67ffb614db37dfdc424315dea73))
+* **VAN-15931:** remove composerClient related files ([e1d2c09](https://bitbucket.tc.lenovo.com///commit/e1d2c09fd1a6da639b4fd68f60fc7279393d6fc3))
+
+### [1.5.10](https://bitbucket.tc.lenovo.com///compare/v1.5.9...v1.5.10) (2020-04-08)
+
+### [1.5.9](https://bitbucket.tc.lenovo.com///compare/v1.5.8...v1.5.9) (2020-04-08)
+
+
+### Bug Fixes
+
+* fix none display error in privacy policy area ([25546d9](https://bitbucket.tc.lenovo.com///commit/25546d9fc73626553ac5b8adf2df35d458f4cb25))
+* fix power by info not show up ([65f9fe1](https://bitbucket.tc.lenovo.com///commit/65f9fe19b9f084135be6968b592a04958b82cb30))
+* Fix powered by info content cannot show up ([989e0c2](https://bitbucket.tc.lenovo.com///commit/989e0c278b110a630e1b550e5fff6eaf6f4dcdad))
+
 ### [1.5.8](https://bitbucket.tc.lenovo.com///compare/v1.5.7...v1.5.8) (2020-04-07)
 
 

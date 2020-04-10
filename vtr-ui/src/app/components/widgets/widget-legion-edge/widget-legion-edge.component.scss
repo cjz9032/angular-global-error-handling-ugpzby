@@ -56,11 +56,18 @@
             }
             &:last-child {
                 border-bottom: none;
-            }
+			}
+			.button-container {
+				width: 100%;
+				text-align: left;
+			}
             .item-left {
                 float: left;
                 .title {
-                    font-weight: bold;
+					font-size: 1.6rem;
+					line-height: 2rem;
+					font-weight: bold;
+					color: $gaming_lightest;
                 }
                 .mode-status {
                     font-size: 1.4rem;

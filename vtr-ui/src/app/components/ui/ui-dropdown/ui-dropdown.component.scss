@@ -98,6 +98,10 @@
 			align-self: center;
 			color: $main;
 		}
+		&:focus{
+			outline: 0.1rem solid $menu_hover !important;
+			outline-offset: 0.2rem;
+		}
 	}
 
 	.ui-menu-dropdown {

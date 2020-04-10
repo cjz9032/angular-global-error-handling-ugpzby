@@ -4,9 +4,11 @@ import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testin
 import { UiLightingProfileComponent } from './ui-lighting-profile.component';
 import { GamingLightingService } from './../../../services/gaming/lighting/gaming-lighting.service';
 import { Pipe, NO_ERRORS_SCHEMA } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHandler } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { DeviceService } from 'src/app/services/device/device.service';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 
 const gamingLightingServiceMock = jasmine.createSpyObj('GamingLightingService', ['getLightingProfileById', 'setLightingProfileId', 'setLightingProfileBrightness',
 	'isShellAvailable', 'getLightingCapabilities', 'optionChangedRGBTop', 'optionChangedRGBSide', 'setLightingDefaultProfileById', 'setLightingProfileEffectColor']);
@@ -26,6 +28,10 @@ const lightingResp = {
 	LedType_simple: [0], BrightAdjustLevel: 4,
 	RGBfeature: 255
 };
+
+const gamingAllCapabilitiesService = jasmine.createSpyObj('GamingAllCapabilitiesService', [
+	'getCapabilityFromCache'
+]);
 describe('UiLightingProfileComponent', () => {
 	let component: UiLightingProfileComponent;
 	let fixture: ComponentFixture<UiLightingProfileComponent>;
@@ -41,6 +47,9 @@ describe('UiLightingProfileComponent', () => {
 			schemas: [NO_ERRORS_SCHEMA],
 			providers: [
 				{ provide: HttpClient },
+				{ provide: VantageShellService },
+				{ provide: HttpHandler },
+				{ provide: GamingAllCapabilitiesService, useValue: gamingAllCapabilitiesService },
 				{ provide: Router, useClass: class { navigate = jasmine.createSpy('navigate'); } },
 				{ provide: DeviceService, useValue: deviceServiceMock },
 				{ provide: GamingLightingService, useValue: gamingLightingServiceMock }

@@ -10,7 +10,7 @@
 	[attr.aria-disabled]="disabled"
 	[attr.aria-checked]="checked"
 	[attr.aria-labelledby]="radioId"
-	[tabIndex]="disabled ?-1:checked? -1 :0"
+	[tabIndex]="disabled ?-1:0"
 	(keydown)="navigateByKeys($event,radio)">
 	<input id="{{radioId}}"
 		style="display: none;"
@@ -30,8 +30,7 @@
 		[metricsValue]="checked" />
 	<label for="{{radioId}}"
 		id="{{radioId}}"
-		attr.aria-labelledby="{{radioId}}-title"
-		tabindex="0">
+		attr.aria-labelledby="{{radioId}}-title">
 		<fa-layers [fixedWidth]="true"
 			class="icon-circle">
 			<fa-icon [icon]="['fal', 'circle']"></fa-icon>
