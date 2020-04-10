@@ -85,7 +85,7 @@
 
 						<li *ngIf="showAccessoryEntrance">
 							<a id="gaming_dashboard_systemtools_legion_accessory" aria-label="legion accessory"
-							 tabindex="1"
+							 tabindex="1" (click)="openWaringModal()"
 							  vtrMetrics [metricsItem]="'systemtools_legion_accessory'" metricsEvent="featureClick" metricsParent="Gaming.Dashboard">
 								<figure>
 									<div class="system-image" title="">

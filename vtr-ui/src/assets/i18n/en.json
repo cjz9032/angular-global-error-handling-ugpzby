@@ -199,7 +199,10 @@
 				"warningPromptPopup": {
 					"title": "Warning!",
 					"description": "Improper settings of Overclocking  may lead to irreversible hardware damage.",
-					"proceed": "PROCEED"
+					"proceed": "PROCEED",
+					"legionAccessory": "Install Legion Accessory Central?",
+					"accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+					"install": "INSTALL"
 				}
 			}
 		},
