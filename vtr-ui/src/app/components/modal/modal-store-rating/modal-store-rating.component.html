@@ -1,0 +1,36 @@
+<div class="vtr-modal-store-rating d-flex flex-column">
+    <button class="close-button" metricsEvent="FeatureClick" metricsParent="StoreRatingBox" metricsItem="Close"
+        vtrMetrics (click)="onBtnCloseClicked($event)">
+        <fa-icon [icon]="['fal','times']"></fa-icon>
+    </button>
+    <div class="modal-content" role="article">
+        <h1 role="heading">{{'storeRating.title' | translate}}</h1>
+        <div class="hint-image-border">
+            <img class="bg-curve" src="assets/images/store-rating/curved_bg.png">
+            <div class="bg-chatbox">
+                <img [@scaleTo1]="feedbackIconVisible||likeIconVisible?'origin':'normal'"
+                    src="assets/images/store-rating/chat_stroke.png">
+                <fa-icon class="hint-icon" *ngIf="normalIconVisible" [icon]="['fal','ellipsis-h']"></fa-icon>
+                <fa-icon [@hideToShow]="feedbackIconVisible?'show':'hidden'" class="hint-icon hint-icon-close"
+                    [icon]="['fas','envelope']"></fa-icon>
+                <fa-icon [@hideToShow]="likeIconVisible?'show':'hidden'" class="hint-icon hint-icon-heart"
+                    [icon]="['fas','heart']"></fa-icon>
+            </div>
+            <img class="bg-male" src="assets/images/store-rating/male.png">
+        </div>
+        <hr />
+    </div>
+    <div class="modal-bottom d-flex">
+        <vtr-ui-button (onClick)="onBtnLikeClicked($event)" (mouseenter)="onBtnMouseEnter('like')"
+            (mouseleave)="onBtnMouseLeave()" metricsEvent="FeatureClick" metricsParent="StoreRatingBox"
+            metricsItem="LIKE US" vtrMetrics linkId="store-rating-close" [upperCaseLabel]="true"
+            aria-label="btn-like-us" [btnHeight]=true [label]="'storeRating.likeUs' | translate"></vtr-ui-button>
+
+        <button class="feedback-btn d-flex" metricsEvent="FeatureClick" metricsParent="StoreRatingBox"
+            metricsItem="Leave feedback" vtrMetrics (mouseenter)="onBtnMouseEnter('dislike')"
+            (mouseleave)="onBtnMouseLeave()" (click)="onBtnDislikeClicked($event)">
+            {{'storeRating.feedback'|translate}}
+        </button>
+
+    </div>
+</div>
