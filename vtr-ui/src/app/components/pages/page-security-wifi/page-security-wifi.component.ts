@@ -19,6 +19,7 @@ import { ConfigService } from 'src/app/services/config/config.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { SegmentConst } from 'src/app/services/self-select/self-select.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
+import { SecurityAdvisorNotifications } from 'src/app/enums/security-advisor-notifications.enum';
 
 interface WifiSecurityState {
 	state: string; // enabled,disabled,never-used
@@ -87,7 +88,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		public configService: ConfigService,
 		public deviceService: DeviceService,
 		private localInfoService: LocalInfoService
-	) {	}
+	) { }
 
 	ngOnInit() {
 		this.securityAdvisor = this.shellService.getSecurityAdvisor();
@@ -107,8 +108,8 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		this.fetchCMSArticles();
 
 		this.wifiSecurity.on(EventTypes.wsPluginMissingEvent, this.wsPluginMissingEventHandler)
-		.on(EventTypes.wsStateEvent, this.wsStateEventHandler)
-		.on(EventTypes.wsIsLocationServiceOnEvent, this.wsIsLocationServiceOnEventHandler);
+			.on(EventTypes.wsStateEvent, this.wsStateEventHandler)
+			.on(EventTypes.wsIsLocationServiceOnEvent, this.wsIsLocationServiceOnEventHandler);
 
 		this.isOnline = this.commonService.isOnline;
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
@@ -185,7 +186,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 					}
 				}
 			},
-			error => {}
+			error => { }
 		);
 
 		this.cmsService.fetchCMSArticle(this.securityHealthArticleId, { Lang: 'EN' }).then((response: any) => {
@@ -218,9 +219,12 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 			if (this.wifiHomeViewModel.isLWSEnabled) {
 				this.wifiSecurity.disableWifiSecurity();
 			} else {
-				this.wifiSecurity.enableWifiSecurity().catch(() => {
-					this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
-				});
+				this.wifiSecurity.enableWifiSecurity().then(() => {
+					this.commonService.sendNotification(SecurityAdvisorNotifications.WifiSecurityTurnedOn);
+				})
+					.catch(() => {
+						this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
+					});
 			}
 		}
 	}

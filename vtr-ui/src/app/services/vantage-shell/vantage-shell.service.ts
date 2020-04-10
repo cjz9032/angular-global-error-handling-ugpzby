@@ -468,7 +468,7 @@ export class VantageShellService {
 				const deviceFilterResult = await this.phoenix.deviceFilter.deviceFilterEval(filter);
 				// console.log('In VantageShellService.deviceFilter. Filter: ', JSON.stringify(filter), deviceFilterResult);
 				return deviceFilterResult;
-			} catch (error) {}
+			} catch (error) { }
 			return true;
 			// return await this.phoenix.deviceFilter(filter);
 		}
@@ -633,13 +633,13 @@ export class VantageShellService {
 
 	public getHsaIntelligentSecurity(): any {
 		try {
-		    const win: any = window;
-		    if (win.VantageShellExtension && win.VantageShellExtension.HumanPresenceDetectionRpcClient) {
-				  return new win.VantageShellExtension.HumanPresenceDetectionRpcClient();
-		    }
-	    } catch (error) {
-		   throw new Error(error.message);
-	    }
+			const win: any = window;
+			if (win.VantageShellExtension && win.VantageShellExtension.HumanPresenceDetectionRpcClient) {
+				return new win.VantageShellExtension.HumanPresenceDetectionRpcClient();
+			}
+		} catch (error) {
+			throw new Error(error.message);
+		}
 	}
 
 	public getPreferenceSettings() {
@@ -948,6 +948,14 @@ export class VantageShellService {
 	public getUpeAgent(): any {
 		if (this.phoenix) {
 			return this.phoenix.upeAgent;
+		}
+		return undefined;
+	}
+
+	public getMsStoreUtil(): any {
+		const win = window as any;
+		if (win.VantageShellExtension) {
+			return win.VantageShellExtension.Utils.MSStore;
 		}
 		return undefined;
 	}
