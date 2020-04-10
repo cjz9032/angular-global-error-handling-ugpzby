@@ -13,7 +13,7 @@
         </div> -->
     </div>
     <div *ngIf="isDisablled" class="disabled-description">{{'gaming.lightingNewversion.colorPicker.text8' | translate}}</div>
-    <div class="keyboard-main" [attr.tabindex]="isDivideArea ?  '-1' : '0'">
+    <div class="keyboard-main">
         <div class="keyboard-box">
             <div *ngIf="isDisablled" class="disabledBox">
                 <div class="disabled-border"></div>
@@ -37,15 +37,22 @@
                 </ul>
             </div>
         </div>
-        <div class="aria-area">
-            <button *ngFor="let area of listInfo; let areaIndex = index" [class]="'keyboard-button'+areaIndex" 
-                [attr.tabindex]="isDivideArea ?  '0' : '-1'" role="button"
-                (click)="selectAreaFn(area.lightPanelType,area.lightColor);$event.stopPropagation();">
-                <span *ngIf="isDivideArea && selectedArea === area.lightPanelType">this keyboard area is selected</span>
-                <span *ngIf="isDivideArea && selectedArea !== area.lightPanelType">keyboard area {{areaIndex+1}}/{{listInfo.length}}</span>
+        <div class="aria-area" >
+            <button *ngIf="!isDivideArea" class="wholeAarea" tabindex="0" role="button" (click)="selectAreaFn(1,listInfo[0].lightColor);$event.stopPropagation();">
+                <span *ngIf="selectedArea !== 0">this keyboard area is selected</span>
+                <span *ngIf="selectedArea === 0">keyboard area</span>
             </button>
+            <div *ngIf="isDivideArea" class="divideArea">
+                <button *ngFor="let area of listInfo; let areaIndex = index" tabindex="0" role="button" [class]="'keyboard-button'+areaIndex"
+                    (click)="selectAreaFn(area.lightPanelType,area.lightColor);$event.stopPropagation();">
+                    <span *ngIf="selectedArea === area.lightPanelType">this keyboard area is selected</span>
+                    <span *ngIf="selectedArea !== area.lightPanelType">keyboard area {{areaIndex+1}}/{{listInfo.length}}</span>
+                </button>
+            </div>
+            
         </div>
-        <div class="emptyArea"></div>
+        <div class="emptyArea1"></div>
+        <div class="emptyArea2"></div>
     </div>
     
 </div>
