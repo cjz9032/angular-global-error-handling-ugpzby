@@ -4062,5 +4062,10 @@
     },
     "cpt": {
         "title": "Content Preview Tool"
+    },
+    "storeRating": {
+        "title": "הצביעו עבורינו",
+        "likeUs": "סמנו לנו לייק",
+        "feedback": "השאירו משוב"
     }
 }
