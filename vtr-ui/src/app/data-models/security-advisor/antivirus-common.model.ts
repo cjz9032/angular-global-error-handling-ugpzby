@@ -91,12 +91,12 @@ export class AntivirusCommon {
 		if (type === 'button') {
 			this.purchaseBtnIsLoading = true;
 		}
-		let purchaseRes;
+		// let purchaseRes;
 		if (this.mcafee && this.mcafee.additionalCapabilities
 			&& this.mcafee.additionalCapabilities.includes('LaunchMcAfeeBuy')
 			&& this.pluginSupport) {
 			this.antivirus.openMcAfeePurchaseUrl().then((response) => {
-				purchaseRes = response;
+				// purchaseRes = response;
 				this.purchaseBtnIsLoading = false;
 				if (response && response.result === false) {
 					metricsData.ItemName = this.metricsTranslateService.translate('launchMcAfeeBuy.failed');
@@ -110,14 +110,14 @@ export class AntivirusCommon {
 			}).finally(() => {
 				this.metrics.sendMetrics(metricsData);
 			});
-			setTimeout(() => {
-				if (!purchaseRes) {
-					this.purchaseBtnIsLoading = false;
-					WinRT.launchUri(this.urlGetMcAfee);
-					metricsData.ItemName = this.metricsTranslateService.translate('launchMcAfeeBuy.timeout');
-					this.metrics.sendMetrics(metricsData);
-				}
-			}, 3000)
+			// setTimeout(() => {
+			// 	if (!purchaseRes) {
+			// 		this.purchaseBtnIsLoading = false;
+			// 		WinRT.launchUri(this.urlGetMcAfee);
+			// 		metricsData.ItemName = this.metricsTranslateService.translate('launchMcAfeeBuy.timeout');
+			// 		this.metrics.sendMetrics(metricsData);
+			// 	}
+			// }, 3000)
 		} else {
 			this.purchaseBtnIsLoading = false;
 			WinRT.launchUri(this.urlGetMcAfee);
