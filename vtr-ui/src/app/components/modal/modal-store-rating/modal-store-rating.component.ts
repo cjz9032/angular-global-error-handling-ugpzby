@@ -99,14 +99,13 @@ export class ModalStoreRatingComponent implements OnInit {
 				const ret = await this.msStoreUtil.launchMSFeedback();
 				if (!ret) {
 					this.logger.info(`MS Feedback launch failed,Launch mail to comment Vantage.`);
-					await this.msStoreUtil.emailToLenovo();
+					await this.launchEmailToLenovo();
 					return;
 				}
 				this.sendMsFeedbackLaunchedMetrics();
 			} else {
 				this.logger.info(`MS Feedback is not supported,Launch mail to comment Vantage.`);
-				await this.msStoreUtil.emailToLenovo();
-				this.sendDoEmailToLenovoMetrics();
+				await this.launchEmailToLenovo();
 			}
 		}
 	}
@@ -143,6 +142,10 @@ export class ModalStoreRatingComponent implements OnInit {
 		this.metrics.sendMetrics(info);
 	}
 
+	private async launchEmailToLenovo(){
+		await this.msStoreUtil.emailToLenovo();
+		this.sendDoEmailToLenovoMetrics();
+	}
 
 	private resetIcon() {
 		this.feedbackIconVisible = false;
