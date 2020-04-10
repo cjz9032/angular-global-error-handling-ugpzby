@@ -255,22 +255,22 @@ export class VantageShellService {
 		return undefined;
 	}
 
-	public getConnectedHomeSecurity(): Phoenix.ConnectedHomeSecurity {
+	public async getConnectedHomeSecurity(): Promise<Phoenix.ConnectedHomeSecurity | undefined> {
 		if (this.phoenix) {
 			if (!this.phoenix.connectedHomeSecurity) {
 				this.phoenix.loadFeatures([Phoenix.Features.ConnectedHomeSecurity]);
 			}
-			return this.phoenix.connectedHomeSecurity;
+			return await this.phoenix.connectedHomeSecurity;
 		}
 		return undefined;
 	}
 
-	public getDevicePosture(): Phoenix.DevicePosture {
+	public async getDevicePosture(): Promise<Phoenix.DevicePosture | undefined> {
 		if (this.phoenix) {
 			if (!this.phoenix.devicePosture) {
 				this.phoenix.loadFeatures([Phoenix.Features.DevicePosture]);
 			}
-			return this.phoenix.devicePosture;
+			return await this.phoenix.devicePosture;
 		}
 		return undefined;
 	}
@@ -630,7 +630,7 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
-	
+
 	public getHsaIntelligentSecurity(): any {
 		try {
 		    const win: any = window;
@@ -638,7 +638,7 @@ export class VantageShellService {
 				  return new win.VantageShellExtension.HumanPresenceDetectionRpcClient();
 		    }
 	    } catch (error) {
-		   throw new Error(error.message);		   
+		   throw new Error(error.message);
 	    }
 	}
 
