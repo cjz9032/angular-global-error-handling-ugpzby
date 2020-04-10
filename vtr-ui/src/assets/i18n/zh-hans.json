@@ -1852,6 +1852,14 @@
             "intelligentSecurity": {
                 "title": "智能安全",
                 "readMore": "阅读更多信息",
+                "image": {
+                    "title": "智能安全",
+                    "description": "借助智能感知技术保护电脑安全、保护您的隐私并节省电池电量。"
+                },
+                "advancedSettings": {
+                    "showAdvSettings": "高级设置",
+                    "hideAdvSettings": "隐藏高级设置"
+                },
                 "HumanPresenceDetection": {
                     "title": "人类存在检测",
                     "tooltip": "单击此处以重置人类存在检测设置。"
@@ -1864,6 +1872,11 @@
                     "title": "红外摄像头自动登录",
                     "caption": "当您坐在计算机面前或接近计算机时，此功能会自动解锁或唤醒计算机。",
                     "tooltip": "当您在计算机前面或接近计算机时（在 1.2 米的距离内），此功能可让您能够在计算机识别您的面部后自动登录系统。如果您是在室外而不是在办公室中，则需要离计算机更近，且唤醒所需的时间更长。"
+                },
+                "zeroTouchLoginForIdea": {
+                    "title": "红外摄像头自动登录",
+                    "caption": "此功能可让您通过自动唤醒或登录计算机来提高工作效率。要使用此功能，您需要在 Windows Hello 中注册面部信息。",
+                    "tooltip": "当您在计算机前面或接近计算机时（在 1.2 或 1.5 米内），此功能可让您能够在计算机识别您的面部后自动登录系统。如果您是在室外而不是在办公室中，则需要离计算机更近，且唤醒所需的时间更长。<br>最大检测距离因传感器功能而异。要了解详细信息，请参阅您计算机附带的<i>《用户指南》</i>。"
                 },
                 "zeroTouchLock": {
                     "title": "自动锁定屏幕",
@@ -1879,7 +1892,7 @@
                     },
                     "facialRecognition": {
                         "title": "面部识别",
-                        "caption": "您可以启用面部识别功能并允许其访问您的摄像头。此工具可拍摄您的图像，从而准确地识别您的在场状态，或检测您的设备是否因您离开而暂时无人照管。此数据将在您的设备上进行本地处理。Lenovo 不会访问或使用它。",
+                        "caption": "此功能有助于提高识别性能并避免意外的屏幕锁定，尤其是当您向后靠在椅子上时。此功能将在您的设备上进行本地处理。Lenovo 不会访问或使用它。",
                         "checkBox": "打开摄像头并启用此功能",
                         "note": {
                             "permission": "Lenovo Vantage 无法访问摄像头。复选框的功能将不起作用。",
@@ -1889,18 +1902,18 @@
                         }
                     },
                     "distanceSensitivityAdjusting": {
-                        "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                        "captionOn": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, you can maually adjust the dectecting sensitivity based on your preference.",
-                        "captionOff": "The accuracy varies by body size, posture, and frequency of movement. When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
+                        "title": "自动距离灵敏度调整",
+                        "captionOn": "准确性随身体大小、姿势和移动频率而变化。如果您的计算机被意外锁定，则可以根据自己的喜好来调整检测灵敏度。",
+                        "captionOff": "准确性随身体大小、姿势和移动频率而变化。禁用此功能后，您需要手动调整灵敏度栏以调整检测距离。如果要自动调整检测距离，请开启此功能。",
                         "options": {
-                            "near": "Near",
-                            "medium": "Middle",
-                            "far": "Far"
+                            "near": "较近",
+                            "medium": "中",
+                            "far": "较远"
                         },
                         "readMore": {
-                            "line1": "• Near: 0.9 meter",
-                            "line2": "• Middle: 1.2 meter",
-                            "line3": "• Far: 1.5 meter"
+                            "line1": "• 近距离：0.9 米",
+                            "line2": "• 中等距离：1.2 米",
+                            "line3": "• 远距离：1.5 米"
                         }
                     }
                 },
@@ -1924,17 +1937,38 @@
                         }
                     }
                 },
+                "distanceSensitivityAdjustingForIdea": {
+                    "title": "自动距离灵敏度调整",
+                    "captionOn": "启用此功能可自动调整移动的检测距离以唤醒系统。关闭此功能以根据您的喜好手动调整检测灵敏度。",
+                    "captionOff": "禁用此功能后，您需要手动调整灵敏度栏以调整检测距离。如果要自动调整检测距离，请开启此功能。",
+                    "options": {
+                        "near": "较近",
+                        "far": "较远",
+                        "medium": "中"
+                    },
+                    "readMore": "有以下三个选项。在每段距离范围内，当检测到人体移动时，屏幕都会相应地唤醒。",
+                    "readMoreForSensor1": {
+                        "line1": "• 近距离：0-0.4 米",
+                        "line2": "• 中等距离：0-0.6 米",
+                        "line3": "• 远距离：0-1.2 米"
+                    },
+                    "readMoreForSensor2": {
+                        "line1": "• 近距离：0.2-0.55 米",
+                        "line2": "• 中等距离：0.2-1.0 米",
+                        "line3": "• 远距离：0.2-1.5 米"
+                    }
+                },
                 "note": {
                     "description1": "此功能依赖于 Windows Hello。确保在 Windows 设置中已开启面部识别。",
                     "description2": "该功能使用传感器和摄像头来检测您的存在。然而，该功能不会收集任何个人数据。",
-                    "description3": "1. 如果您的计算机处于帐篷模式、平板电脑模式或站立模式，则这些功能可能无法正常工作。",
-                    "description4": "2. 如果您的计算机处于休眠模式或已关机，自动红外摄像头登录将无法工作。",
-                    "description6": "4. 如果在计算机上启用飞行模式，则将禁用这些功能部件。",
-                    "description7": "准确性随身体大小、姿势和移动频率而变化。如果您的计算机被意外锁定，请调整灵敏度栏以提高准确性。",
-                    "description5a1": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to ",
-                    "description5a2": "User Guide ",
-                    "description5a3": "that comes with it.",
-                    "description5b": "b. Your computer is in hibernation mode or has been turned off."
+                    "description3": "1.要使用上述功能，请将计算机屏幕调整至适当的角度，以便计算机能够识别您的面部。",
+                    "description4": "2.在以下情况下，不支持上述功能：",
+                    "description5a1": "a. 您的计算机处于帐篷模式、平板电脑模式、站立模式或分离模式。有关计算机支持的模式，请参阅计算机附带的",
+                    "description5a2": "《用户指南》",
+                    "description5a3": "。",
+                    "description5b": "b. 您的计算机处于休眠模式或已关机。",
+                    "description6": "3. 如果在计算机上启用飞行模式，则将禁用这些功能部件。",
+                    "description7": "准确性随身体大小、姿势和移动频率而变化。如果您的计算机被意外锁定，请调整灵敏度栏以提高准确性。"
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "转到 Windows Hello 设置",
@@ -1943,40 +1977,6 @@
                 "resetToDefault": "重置",
                 "sensitivityAdjusting": {
                     "title": "灵敏度调整"
-                },
-                "image": {
-                    "title": "Intelligent security",
-                    "description": "Buckles up your PC with intelligent sensing technology, protects your privacy, and saves your battery power."
-                },
-                "advancedSettings": {
-                    "showAdvSettings": "ADVANCED SETTINGS",
-                    "hideAdvSettings": "HIDE ADVANCED SETTINGS"
-                },
-                "zeroTouchLoginForIdea": {
-                    "title": "Zero Touch Login",
-                    "caption": "This feature enables you to improve the work efficiency by automatically waking up or logging in your computer. To use the feature, you need to register your face in Windows Hello.",
-                    "tooltip": "When you are in front of your computer or approaching it (within 1.2 or 1.5 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer. <br>Depending on the sensor capability, the maximum detecting distance varies. Refer to the <i>User Guide</i> that comes with your computer for details."
-                },
-                "distanceSensitivityAdjustingForIdea": {
-                    "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                    "captionOn": "Enable this feature to automatically adjust the detecting distance of movements to wake up the system. Turn it off to manually adjust the detecting sensitivity based on your preference.",
-                    "captionOff": "When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
-                    "options": {
-                        "near": "Near",
-                        "medium": "Middle",
-                        "far": "Far"
-                    },
-                    "readMore": "There are three options. In each range, when human movements are detected, your screen will be waked up accordingly.",
-                    "readMoreForSensor1": {
-                        "line1": "• Near: 0-0.4 meter",
-                        "line2": "• Middle: 0-0.6 meter",
-                        "line3": "• Far: 0-1.2 meter"
-                    },
-                    "readMoreForSensor2": {
-                        "line1": "• Near: 0.2-0.55 meter",
-                        "line2": "• Middle: 0.2-1.0 meter",
-                        "line3": "• Far: 0.2-1.5 meter"
-                    }
                 }
             },
             "intelligentScreen": {

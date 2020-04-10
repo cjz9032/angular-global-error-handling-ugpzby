@@ -1852,6 +1852,14 @@
             "intelligentSecurity": {
                 "title": "Pametna sigurnost",
                 "readMore": "Pročitajte više",
+                "image": {
+                    "title": "Inteligentna sigurnost",
+                    "description": "Spojite vaše računalo s tehnologijom inteligentnog očitavanja, štitite svoju privatnost i štedite energiju baterije."
+                },
+                "advancedSettings": {
+                    "showAdvSettings": "NAPREDNE POSTAVKE",
+                    "hideAdvSettings": "SAKRIJ NAPREDNE POSTAVKE"
+                },
                 "HumanPresenceDetection": {
                     "title": "Otkrivanje ljudske prisutnosti",
                     "tooltip": "Kliknite ovdje kako biste ponovno postavili postavke otkrivanja ljudske prisutnosti."
@@ -1864,6 +1872,11 @@
                     "title": "Automatska prijava",
                     "caption": "Ta značajka automatski otključava računalo ili ga vraća iz stanja mirovanja kada dođete ispred njega ili mu se približite.",
                     "tooltip": "Kad se nalazite ispred računala ili mu prilazite (na udaljenosti od 1,2 metra), ova značajka vam omogućuje automatsku prijavu u sustav nakon prepoznavanja vašeg lica. Ako ste na otvorenom, a ne u uredu, morate biti bliže računalu i buđenje će trajati duže."
+                },
+                "zeroTouchLoginForIdea": {
+                    "title": "Automatska prijava",
+                    "caption": "Ova značajka omogućuje vam poboljšanje radne učinkovitosti automatskim buđenjem ili prijavom na računalo. Da biste koristili značajku, morate registrirati svoje lice u programu Windows Hello.",
+                    "tooltip": "Kad se nalazite ispred računala ili mu prilazite (unutar 1,2 ili 1,5 metra), ova vam značajka omogućuje automatsku prijavu u sustav nakon prepoznavanja vašeg lica. Ako ste na otvorenom, a ne u uredu, morate biti bliže računalu i buđenje će trajati duže. <br>Ovisno o sposobnosti senzora, maksimalna udaljenost otkrivanja može se razlikovati. Za pojedinosti pogledajte <i>korisnički priručnik</i> isporuzčen s vašim računalom."
                 },
                 "zeroTouchLock": {
                     "title": "Zaključavanje Zero Touch",
@@ -1879,7 +1892,7 @@
                     },
                     "facialRecognition": {
                         "title": "PREPOZNAVANJE LICA",
-                        "caption": "Možete omogućiti značajku prepoznavanja lica i omogućiti joj pristup kameri. Ovaj alat snima vašu sliku kako bi točno prepoznao vašu nazočnost ili otkrio kada ste uređaj ostavili bez nadzora. Ti se podaci obrađuju lokalno na vašem uređaju. Lenovo im ne pristupa niti ih upotrebljava.",
+                        "caption": "Ova značajka pomaže poboljšati performanse prepoznavanja i izbjeći neočekivano zaključavanje zaslona, naročito kada se naslonite na stolicu. Ova se značajka obrađuje lokalno na vašem uređaju. Lenovo im ne pristupa niti ih upotrebljava.",
                         "checkBox": "Uključite kameru i omogućite ovu značajku",
                         "note": {
                             "permission": "Lenovo Vantage nema pristup kameri. Funkcija potvrdnog okvira ne radi.",
@@ -1889,18 +1902,18 @@
                         }
                     },
                     "distanceSensitivityAdjusting": {
-                        "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                        "captionOn": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, you can maually adjust the dectecting sensitivity based on your preference.",
-                        "captionOff": "The accuracy varies by body size, posture, and frequency of movement. When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
+                        "title": "PODEŠAVANJE OSJETLJIVOSTI AUTOMATSKOG PREPOZNAVANJA UDALJENOSTI",
+                        "captionOn": "Točnost se razlikuje u pogledu veličine tijela, držanje i učestalosti pokreta. Ako se vaše računalo neočekivano zaključa, možete ručno podesiti osjetljivost prepoznavanja na temelju svojih želja.",
+                        "captionOff": "Točnost se razlikuje u pogledu veličine tijela, držanje i učestalosti pokreta. Kad je ova značajka onemogućena, morate ručno podesiti traku osjetljivosti da biste prilagodili udaljenost prepoznavanja. Ako želite da se udaljenost podešava automatski, uključite značajku.",
                         "options": {
-                            "near": "Near",
-                            "medium": "Middle",
-                            "far": "Far"
+                            "near": "Blizu",
+                            "medium": "Srednje",
+                            "far": "Daleko"
                         },
                         "readMore": {
-                            "line1": "• Near: 0.9 meter",
-                            "line2": "• Middle: 1.2 meter",
-                            "line3": "• Far: 1.5 meter"
+                            "line1": "• Blizu: 0,9 metra",
+                            "line2": "• Srednje: 1,2 metra",
+                            "line3": "• Daleko: 1,5 metra"
                         }
                     }
                 },
@@ -1924,17 +1937,38 @@
                         }
                     }
                 },
+                "distanceSensitivityAdjustingForIdea": {
+                    "title": "PODEŠAVANJE OSJETLJIVOSTI AUTOMATSKOG PREPOZNAVANJA UDALJENOSTI",
+                    "captionOn": "Omogućite ovu značajku da biste podesili osjetljivost automatskog prepoznavanja udaljenosti za buđenje sustava. Isključite značajku da biste ručno podesili osjetljivost prepoznavanja na temelju svojih želja.",
+                    "captionOff": "Kad je ova značajka onemogućena, morate ručno podesiti traku osjetljivosti da biste prilagodili udaljenost prepoznavanja. Ako želite da se udaljenost podešava automatski, uključite značajku.",
+                    "options": {
+                        "near": "Blizu",
+                        "far": "Daleko",
+                        "medium": "Srednje"
+                    },
+                    "readMore": "Postoje tri mogućnosti. Zaslon će se probuditi kada se otkrije ljudske pokrete na bilo kojoj udaljenosti.",
+                    "readMoreForSensor1": {
+                        "line1": "• Blizu: 0-0,4 metra",
+                        "line2": "• Srednje: 0-0,6 metra",
+                        "line3": "• Daleko: 0-1,2 metra"
+                    },
+                    "readMoreForSensor2": {
+                        "line1": "• Blizu: 0.2-0,55 metra",
+                        "line2": "• Srednje: 0.2-1,0 metra",
+                        "line3": "• Daleko: 0.2-1,5 metra"
+                    }
+                },
                 "note": {
                     "description1": "Ta značajka oslanja se na Windows Hello. Pobrinite se da je prepoznavanje lica uključeno u postavkama sustava Windows.",
                     "description2": "Ta značajka koristi se senzorima i kamerom kako bi otkrila vašu prisutnost. Međutim, značajka NE prikuplja nikakve osobne podatke.",
-                    "description3": "1. Ako je računalo u načinu rada šatora, tableta ili stalka, te značajke možda neće pravilno funkcionirati.",
-                    "description4": "2. Ako je računalo u stanju hibernacije ili isključeno, Zero Touch Login neće funkcionirati.",
-                    "description6": "4. Ako je na vašem računalu omogućen način rada u zrakoplovu, te su značajke onemogućene.",
-                    "description7": "Točnost se razlikuje u pogledu veličine tijela, držanje i učestalosti pokreta. Ako se vaše računalo neočekivano zaključa, podesite traku osjetljivosti da biste poboljšali točnost.",
-                    "description5a1": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to ",
-                    "description5a2": "User Guide ",
-                    "description5a3": "that comes with it.",
-                    "description5b": "b. Your computer is in hibernation mode or has been turned off."
+                    "description3": "1. Da biste koristili gornje funkcije, podesite zaslon odgovarajućem kutu kako bi se vaše lice moglo prepoznati.",
+                    "description4": "2. Gore navedene funkcije nisu podržane kada:",
+                    "description5a1": "a. Vaše je računalo u Tent, Tablet, Stand ili Detached načinu rada. Za načine koji su na vašem računalu podržani, pogledajte ",
+                    "description5a2": "Vodič za korisnike ",
+                    "description5a3": "isporučen s njim.",
+                    "description5b": "b. Vaše je računalo u hibernacijskom načinu rada ili je isključeno.",
+                    "description6": "3. Ako je na vašem računalu omogućen način rada u zrakoplovu, te su značajke onemogućene.",
+                    "description7": "Točnost se razlikuje u pogledu veličine tijela, držanje i učestalosti pokreta. Ako se vaše računalo neočekivano zaključa, podesite traku osjetljivosti da biste poboljšali točnost."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Idite na postavke sustava Windows Hello",
@@ -1943,40 +1977,6 @@
                 "resetToDefault": "Ponovno postavljanje",
                 "sensitivityAdjusting": {
                     "title": "PODEŠAVANJE OSJETLJIVOSTI"
-                },
-                "image": {
-                    "title": "Intelligent security",
-                    "description": "Buckles up your PC with intelligent sensing technology, protects your privacy, and saves your battery power."
-                },
-                "advancedSettings": {
-                    "showAdvSettings": "ADVANCED SETTINGS",
-                    "hideAdvSettings": "HIDE ADVANCED SETTINGS"
-                },
-                "zeroTouchLoginForIdea": {
-                    "title": "Zero Touch Login",
-                    "caption": "This feature enables you to improve the work efficiency by automatically waking up or logging in your computer. To use the feature, you need to register your face in Windows Hello.",
-                    "tooltip": "When you are in front of your computer or approaching it (within 1.2 or 1.5 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer. <br>Depending on the sensor capability, the maximum detecting distance varies. Refer to the <i>User Guide</i> that comes with your computer for details."
-                },
-                "distanceSensitivityAdjustingForIdea": {
-                    "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                    "captionOn": "Enable this feature to automatically adjust the detecting distance of movements to wake up the system. Turn it off to manually adjust the detecting sensitivity based on your preference.",
-                    "captionOff": "When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
-                    "options": {
-                        "near": "Near",
-                        "medium": "Middle",
-                        "far": "Far"
-                    },
-                    "readMore": "There are three options. In each range, when human movements are detected, your screen will be waked up accordingly.",
-                    "readMoreForSensor1": {
-                        "line1": "• Near: 0-0.4 meter",
-                        "line2": "• Middle: 0-0.6 meter",
-                        "line3": "• Far: 0-1.2 meter"
-                    },
-                    "readMoreForSensor2": {
-                        "line1": "• Near: 0.2-0.55 meter",
-                        "line2": "• Middle: 0.2-1.0 meter",
-                        "line3": "• Far: 0.2-1.5 meter"
-                    }
                 }
             },
             "intelligentScreen": {

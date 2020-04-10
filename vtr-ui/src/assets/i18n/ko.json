@@ -1852,6 +1852,14 @@
             "intelligentSecurity": {
                 "title": "지능형 보안",
                 "readMore": "자세히 읽기",
+                "image": {
+                    "title": "지능형 보안",
+                    "description": "지능형 감지 기술로 PC를 강화하고, 개인 정보를 보호하며, 배터리 전원을 절약할 수 있습니다."
+                },
+                "advancedSettings": {
+                    "showAdvSettings": "고급 설정",
+                    "hideAdvSettings": "고급 설정 숨기기"
+                },
                 "HumanPresenceDetection": {
                     "title": "사용자 존재 감지",
                     "tooltip": "사용자 존재 감지 설정을 변경하려면 여기를 클릭하십시오."
@@ -1864,6 +1872,11 @@
                     "title": "제로 터치 로그인",
                     "caption": "이 기능은 사용자가 바로 앞에 있거나 다가오는 경우 컴퓨터를 자동으로 잠금해제하거나 절전 모드에서 해제합니다.",
                     "tooltip": "이 기능은 사용자가 컴퓨터 앞에 있거나 컴퓨터에 접근하면(1.2m 거리 이내) 얼굴을 인식하고 자동으로 시스템에 로그인할 수 있게 해줍니다. 사무실이 아닌 실외에서 사용하는 경우, 컴퓨터에 좀 더 가깝게 접근해야 하며, 절전 모드를 해제하는 데 더 오래 걸립니다."
+                },
+                "zeroTouchLoginForIdea": {
+                    "title": "제로 터치 로그인",
+                    "caption": "이 기능을 사용하면 자동으로 컴퓨터 절전 모드를 해제하거나 컴퓨터에 로그인하여 작업 효율성을 높일 수 있습니다. 이 기능을 사용하려면 Windows Hello에 얼굴을 등록해야 합니다.",
+                    "tooltip": "이 기능은 사용자가 컴퓨터 앞에 있거나 컴퓨터에 접근하면(1.2 또는 1.5 미터 이내) 얼굴을 인식하고 자동으로 시스템에 로그인할 수 있게 해줍니다. 사무실이 아닌 실외에서 사용하는 경우, 컴퓨터에 좀 더 가깝게 접근해야 하며, 절전 모드를 해제하는 데 더 오래 걸립니다. <br>센서 능력에 따라 최대 탐지 거리가 달라집니다. 자세한 내용은 컴퓨터와 함께 제공되는 <i>사용자 가이드</i>를 참조하십시오."
                 },
                 "zeroTouchLock": {
                     "title": "제로 터치 잠금",
@@ -1879,7 +1892,7 @@
                     },
                     "facialRecognition": {
                         "title": "얼굴 인식",
-                        "caption": "얼굴 인식 기능을 사용하여 카메라에 액세스하도록 할 수 있습니다. 이 도구는 장치를 두고 자리를 떠날 때 사용자의 현재 상태를 정확하게 인식하거나 감지하기 위해 이미지를 캡처합니다. 이 데이터는 장치에서 로컬로 처리됩니다. Lenovo는 이를 액세스하거나 사용하지 않습니다.",
+                        "caption": "이 기능은 인식 성능을 향상시키고, 특히 의자에 기대어 있을 때 예기치 않은 화면 잠금을 방지하는 데 도움이 됩니다. 이 기능은 장치에서 로컬로 처리됩니다. Lenovo는 이를 액세스하거나 사용하지 않습니다.",
                         "checkBox": "카메라를 켜고 이 기능 사용",
                         "note": {
                             "permission": "Lenovo Vantage가 카메라에 액세스할 수 없습니다. 선택란의 기능이 작동하지 않습니다.",
@@ -1889,18 +1902,18 @@
                         }
                     },
                     "distanceSensitivityAdjusting": {
-                        "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                        "captionOn": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, you can maually adjust the dectecting sensitivity based on your preference.",
-                        "captionOff": "The accuracy varies by body size, posture, and frequency of movement. When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
+                        "title": "자동 거리 감도 조정",
+                        "captionOn": "정확도는 바디 크기, 자세 및 이동 빈도에 따라 다릅니다. 컴퓨터가 예기치 않게 잠긴 경우 사용자의 기본 설정에 따라 감지 감도를 수동으로 조정할 수 있습니다.",
+                        "captionOff": "정확도는 바디 크기, 자세 및 이동 빈도에 따라 다릅니다. 이 기능이 비활성화된 경우 감지 거리를 조정하려면 감도 막대를 수동으로 조정해야 합니다. 거리를 자동으로 조정하려면 기능을 켜십시오.",
                         "options": {
-                            "near": "Near",
-                            "medium": "Middle",
-                            "far": "Far"
+                            "near": "근처",
+                            "medium": "중간",
+                            "far": "보다 멀리"
                         },
                         "readMore": {
-                            "line1": "• Near: 0.9 meter",
-                            "line2": "• Middle: 1.2 meter",
-                            "line3": "• Far: 1.5 meter"
+                            "line1": "• 근거리: 0.9미터",
+                            "line2": "• 중간 거리: 1.2미터",
+                            "line3": "• 먼 거리: 1.5미터"
                         }
                     }
                 },
@@ -1924,17 +1937,38 @@
                         }
                     }
                 },
+                "distanceSensitivityAdjustingForIdea": {
+                    "title": "자동 거리 감도 조정",
+                    "captionOn": "이 기능을 사용하면 시스템 절전 모드를 해제하기 위해 이동 감지 거리를 자동으로 조정할 수 있습니다. 사용자의 기본 설정에 따라 감지 감도를 수동으로 조정하려면 이 옵션을 끄십시오.",
+                    "captionOff": "이 기능이 비활성화된 경우 감지 거리를 조정하려면 감도 막대를 수동으로 조정해야 합니다. 거리를 자동으로 조정하려면 기능을 켜십시오.",
+                    "options": {
+                        "near": "근처",
+                        "far": "보다 멀리",
+                        "medium": "중간"
+                    },
+                    "readMore": "세 가지 옵션이 있습니다. 각 범위에서 사람의 움직임이 감지되면 그에 따라 화면 전력 모드가 해제됩니다.",
+                    "readMoreForSensor1": {
+                        "line1": "• 근거리: 0-0.4미터",
+                        "line2": "• 중간 거리: 0-0.6미터",
+                        "line3": "• 먼 거리: 0-1.2미터"
+                    },
+                    "readMoreForSensor2": {
+                        "line1": "• 근거리: 0.2-0.55미터",
+                        "line2": "• 중간 거리: 0.2-1.0미터",
+                        "line3": "• 먼 거리: 0.2-1.5미터"
+                    }
+                },
                 "note": {
                     "description1": "이 기능은 Windows Hello를 이용합니다. Windows 설정에서 얼굴 인식이 켜졌는지 확인하십시오.",
                     "description2": "이 기능은 센서 및 카메라를 사용하여 사용자의 존재를 감지합니다. 그러나 이 기능은 어떤 개인 정보도 수집하지 않습니다.",
-                    "description3": "1. 컴퓨터가 텐트, 태블릿 또는 대기 모드에 있을 경우 이러한 기능이 적절하게 작동하지 않을 수 있습니다.",
-                    "description4": "2. 컴퓨터가 최대 절전 모드에 있거나 꺼져 있으면, 제로 터치 로그인은 작동하지 않습니다.",
-                    "description6": "4. 컴퓨터에서 비행기 모드를 설정하면 이 기능을 사용할 수 없게 됩니다.",
-                    "description7": "정확도는 바디 크기, 자세 및 이동 빈도에 따라 다릅니다. 컴퓨터가 예기치 않게 잠기는 경우, 감도바를 조정하여 정확도를 개선합니다.",
-                    "description5a1": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to ",
-                    "description5a2": "User Guide ",
-                    "description5a3": "that comes with it.",
-                    "description5b": "b. Your computer is in hibernation mode or has been turned off."
+                    "description3": "1. 위의 기능을 사용하려면 얼굴이 인식될 수 있도록 화면을 적절한 각도로 조정해 주십시오.",
+                    "description4": "2. 위 기능은 다음의 경우에서 지원되지 않습니다.",
+                    "description5a1": "ㄱ: 컴퓨터가 텐트, 태블릿, 스탠드 모드 또는 분리 모드에 있는 경우. 사용자의 컴퓨터에서 지원되는 모드에 대한 자세한 내용은 다음을 참고하십시오 ",
+                    "description5a2": "사용 설명서 ",
+                    "description5a3": "(컴퓨터와 함께 제공됨)",
+                    "description5b": "ㄴ. 컴퓨터가 최대 절전 모드이거나 꺼져 있었던 경우.",
+                    "description6": "3. 컴퓨터에서 비행기 모드를 설정하면 이 기능을 사용할 수 없게 됩니다.",
+                    "description7": "정확도는 바디 크기, 자세 및 이동 빈도에 따라 다릅니다. 컴퓨터가 예기치 않게 잠기는 경우, 감도바를 조정하여 정확도를 개선합니다."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Windows Hello 설정으로 이동",
@@ -1943,40 +1977,6 @@
                 "resetToDefault": "재설정",
                 "sensitivityAdjusting": {
                     "title": "감도 조정"
-                },
-                "image": {
-                    "title": "Intelligent security",
-                    "description": "Buckles up your PC with intelligent sensing technology, protects your privacy, and saves your battery power."
-                },
-                "advancedSettings": {
-                    "showAdvSettings": "ADVANCED SETTINGS",
-                    "hideAdvSettings": "HIDE ADVANCED SETTINGS"
-                },
-                "zeroTouchLoginForIdea": {
-                    "title": "Zero Touch Login",
-                    "caption": "This feature enables you to improve the work efficiency by automatically waking up or logging in your computer. To use the feature, you need to register your face in Windows Hello.",
-                    "tooltip": "When you are in front of your computer or approaching it (within 1.2 or 1.5 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer. <br>Depending on the sensor capability, the maximum detecting distance varies. Refer to the <i>User Guide</i> that comes with your computer for details."
-                },
-                "distanceSensitivityAdjustingForIdea": {
-                    "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                    "captionOn": "Enable this feature to automatically adjust the detecting distance of movements to wake up the system. Turn it off to manually adjust the detecting sensitivity based on your preference.",
-                    "captionOff": "When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
-                    "options": {
-                        "near": "Near",
-                        "medium": "Middle",
-                        "far": "Far"
-                    },
-                    "readMore": "There are three options. In each range, when human movements are detected, your screen will be waked up accordingly.",
-                    "readMoreForSensor1": {
-                        "line1": "• Near: 0-0.4 meter",
-                        "line2": "• Middle: 0-0.6 meter",
-                        "line3": "• Far: 0-1.2 meter"
-                    },
-                    "readMoreForSensor2": {
-                        "line1": "• Near: 0.2-0.55 meter",
-                        "line2": "• Middle: 0.2-1.0 meter",
-                        "line3": "• Far: 0.2-1.5 meter"
-                    }
                 }
             },
             "intelligentScreen": {

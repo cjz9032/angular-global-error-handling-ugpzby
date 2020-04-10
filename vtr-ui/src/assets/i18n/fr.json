@@ -1852,6 +1852,14 @@
             "intelligentSecurity": {
                 "title": "Sécurité intelligente",
                 "readMore": "Afficher plus",
+                "image": {
+                    "title": "Sécurité intelligente",
+                    "description": "Technologie de détection intelligente permettant de protéger votre PC et votre vie privée ainsi que d'économiser votre batterie."
+                },
+                "advancedSettings": {
+                    "showAdvSettings": "PARAMÈTRES AVANCÉS",
+                    "hideAdvSettings": "MASQUER LES PARAMÈTRES AVANCÉS"
+                },
                 "HumanPresenceDetection": {
                     "title": "Détection de présence humaine",
                     "tooltip": "Cliquez ici pour réinitialiser les paramètres de détection de présence humaine."
@@ -1864,6 +1872,11 @@
                     "title": "Connexion sans pression tactile",
                     "caption": "Cette fonction déverrouille ou fait sortir l'ordinateur du mode veille automatiquement lorsque vous êtes assis devant ou que vous vous en approchez.",
                     "tooltip": "Lorsque vous vous trouvez devant votre ordinateur ou que vous l'approchez (dans les limites d'une distance de 1,2 mètres), cette fonction vous permet de vous connecter automatiquement au système une fois qu'il aura reconnu votre visage. Si vous êtes à l'extérieur plutôt qu'au bureau, vous devez vous situer plus près de l'ordinateur et le réveil sera plus long."
+                },
+                "zeroTouchLoginForIdea": {
+                    "title": "Connexion sans pression tactile",
+                    "caption": "Cette fonction vous permet d'améliorer l'efficacité de votre travail en sortant l'ordinateur du mode veille ou en vous connectant à votre ordinateur automatiquement. Pour utiliser cette fonction, vous devez enregistrer votre visage dans Windows Hello.",
+                    "tooltip": "Lorsque vous vous trouvez devant votre ordinateur ou que vous l'approchez (entre 1,2 ou 1,5 mètres), cette fonction vous permet de vous connecter automatiquement au système une fois qu'il aura reconnu votre visage. Si vous êtes à l'extérieur plutôt qu'au bureau, vous devez vous situer plus près de l'ordinateur et le réveil sera plus long. <br>Selon la sensibilité du capteur, la distance maximale de détection varie. Consultez le <i>guide d'utilisation</i> fourni avec votre ordinateur portable pour plus de détails."
                 },
                 "zeroTouchLock": {
                     "title": "Verrouillage sans pression tactile",
@@ -1879,7 +1892,7 @@
                     },
                     "facialRecognition": {
                         "title": "RECONNAISSANCE FACIALE",
-                        "caption": "Vous pouvez activer la fonction de reconnaissance faciale et l'autoriser à accéder à votre caméra. Cet outil capture votre image afin de reconnaître précisément votre présence ou détecter lorsque vous avez laissé votre périphérique sans surveillance. Ces données sont traitées localement sur votre appareil. Lenovo ne peut ni y accéder ni les utiliser.",
+                        "caption": "Cette fonction permet d'améliorer les performances de la reconnaissance et d'éviter un verrouillage inattendu de l'écran, particulièrement lorsque vous vous penchez en arrière sur votre chaise. Cette fonction est gérée localement sur votre appareil. Lenovo ne peut ni y accéder ni les utiliser.",
                         "checkBox": "Allumer la caméra et activer cette fonction",
                         "note": {
                             "permission": "Lenovo Vantage n'a pas accès à la caméra. La fonction de la case cochée ne fonctionnera pas.",
@@ -1889,18 +1902,18 @@
                         }
                     },
                     "distanceSensitivityAdjusting": {
-                        "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                        "captionOn": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, you can maually adjust the dectecting sensitivity based on your preference.",
-                        "captionOff": "The accuracy varies by body size, posture, and frequency of movement. When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
+                        "title": "AJUSTEMENT AUTOMATIQUE DE LA SENSIBILITÉ DE LA DISTANCE",
+                        "captionOn": "La précision varie en fonction de la taille du corps, de la posture et de la fréquence des mouvements. Si votre ordinateur est verrouillé de manière inattendue, vous pouvez régler manuellement la sensibilité de détection en fonction de vos préférences.",
+                        "captionOff": "La précision varie en fonction de la taille du corps, de la posture et de la fréquence des mouvements. Lorsque cette fonction est désactivée, vous devez régler manuellement la barre de sensibilité pour régler la distance de détection. Si vous souhaitez que la distance soit ajustée automatiquement, activez-la.",
                         "options": {
-                            "near": "Near",
-                            "medium": "Middle",
-                            "far": "Far"
+                            "near": "Proche",
+                            "medium": "Moyenne",
+                            "far": "Éloigné"
                         },
                         "readMore": {
-                            "line1": "• Near: 0.9 meter",
-                            "line2": "• Middle: 1.2 meter",
-                            "line3": "• Far: 1.5 meter"
+                            "line1": "• Distance proche : 0,9 mètre",
+                            "line2": "• Distance moyenne : 1,2 mètre",
+                            "line3": "• Distance éloignée : 1,5 mètre"
                         }
                     }
                 },
@@ -1924,17 +1937,38 @@
                         }
                     }
                 },
+                "distanceSensitivityAdjustingForIdea": {
+                    "title": "AJUSTEMENT AUTOMATIQUE DE LA SENSIBILITÉ DE LA DISTANCE",
+                    "captionOn": "Activez cette fonction pour régler automatiquement la distance de détection des mouvements pour sortir le système du mode veille. Désactivez-la pour régler manuellement la sensibilité de détection en fonction de vos préférences.",
+                    "captionOff": "Lorsque cette fonction est désactivée, vous devez régler manuellement la barre de sensibilité pour régler la distance de détection. Si vous souhaitez que la distance soit ajustée automatiquement, activez-la.",
+                    "options": {
+                        "near": "Proche",
+                        "far": "Éloigné",
+                        "medium": "Moyenne"
+                    },
+                    "readMore": "Trois options sont disponibles. Pour chaque portée, votre écran sortira de veille lorsque des mouvements humains sont détectés en conséquence.",
+                    "readMoreForSensor1": {
+                        "line1": "• Distance proche : 0 à 0,4 mètre",
+                        "line2": "• Distance moyenne : 0 à 0,6 mètre",
+                        "line3": "• Distance éloignée : 0 à 1,2 mètre"
+                    },
+                    "readMoreForSensor2": {
+                        "line1": "• Distance proche : 0,2 à 0,55 mètre",
+                        "line2": "• Distance moyenne : 0,2 à 1,0 mètre",
+                        "line3": "• Distance éloignée : 0,2 à 1,5 mètre"
+                    }
+                },
                 "note": {
                     "description1": "Cette fonction dépend de Windows Hello. Assurez-vous que la reconnaissance faciale est activée dans les paramètres Windows.",
                     "description2": "Cette fonction utilise les capteurs et l'appareil photo pour détecter votre présence. Cependant, la fonction ne recueille AUCUNE donnée personnelle.",
-                    "description3": "1. Si votre ordinateur est en mode chevalet, tablette ou sur support, il se peut que ces fonctions ne marchent pas correctement.",
-                    "description4": "2. Si votre ordinateur est en mode hibernation ou a été mis hors tension, la connexion sans pression tactile ne fonctionnera pas.",
-                    "description6": "4. Si le mode avion est activé sur votre ordinateur, ces fonctions sont désactivées.",
-                    "description7": "La précision varie en fonction de la taille du corps, de la posture et de la fréquence des mouvements. Si votre ordinateur est verrouillé de manière inattendue, réglez la barre de sensibilité pour améliorer la précision.",
-                    "description5a1": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to ",
-                    "description5a2": "User Guide ",
-                    "description5a3": "that comes with it.",
-                    "description5b": "b. Your computer is in hibernation mode or has been turned off."
+                    "description3": "1. Pour utiliser les fonctions ci-dessus, veuillez ajuster l'écran à un angle approprié pour que votre visage puisse être reconnu.",
+                    "description4": "2. Les fonctions ci-dessus ne sont pas prises en charge lorsque :",
+                    "description5a1": "a. votre ordinateur est en mode chevalet, tablette sur support ou détaché. Pour connaître les modes pris en charge par votre ordinateur, veuillez consulter le ",
+                    "description5a2": "Guide d'utilisation ",
+                    "description5a3": "fourni.",
+                    "description5b": "b. votre ordinateur est en mode hibernation ou a été éteint.",
+                    "description6": "3. Si le mode avion est activé sur votre ordinateur, ces fonctions sont désactivées.",
+                    "description7": "La précision varie en fonction de la taille du corps, de la posture et de la fréquence des mouvements. Si votre ordinateur est verrouillé de manière inattendue, réglez la barre de sensibilité pour améliorer la précision."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Accédez aux paramètres Windows Hello",
@@ -1943,40 +1977,6 @@
                 "resetToDefault": "Réinitialiser",
                 "sensitivityAdjusting": {
                     "title": "AJUSTEMENT DE LA SENSIBILITÉ"
-                },
-                "image": {
-                    "title": "Intelligent security",
-                    "description": "Buckles up your PC with intelligent sensing technology, protects your privacy, and saves your battery power."
-                },
-                "advancedSettings": {
-                    "showAdvSettings": "ADVANCED SETTINGS",
-                    "hideAdvSettings": "HIDE ADVANCED SETTINGS"
-                },
-                "zeroTouchLoginForIdea": {
-                    "title": "Zero Touch Login",
-                    "caption": "This feature enables you to improve the work efficiency by automatically waking up or logging in your computer. To use the feature, you need to register your face in Windows Hello.",
-                    "tooltip": "When you are in front of your computer or approaching it (within 1.2 or 1.5 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer. <br>Depending on the sensor capability, the maximum detecting distance varies. Refer to the <i>User Guide</i> that comes with your computer for details."
-                },
-                "distanceSensitivityAdjustingForIdea": {
-                    "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                    "captionOn": "Enable this feature to automatically adjust the detecting distance of movements to wake up the system. Turn it off to manually adjust the detecting sensitivity based on your preference.",
-                    "captionOff": "When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
-                    "options": {
-                        "near": "Near",
-                        "medium": "Middle",
-                        "far": "Far"
-                    },
-                    "readMore": "There are three options. In each range, when human movements are detected, your screen will be waked up accordingly.",
-                    "readMoreForSensor1": {
-                        "line1": "• Near: 0-0.4 meter",
-                        "line2": "• Middle: 0-0.6 meter",
-                        "line3": "• Far: 0-1.2 meter"
-                    },
-                    "readMoreForSensor2": {
-                        "line1": "• Near: 0.2-0.55 meter",
-                        "line2": "• Middle: 0.2-1.0 meter",
-                        "line3": "• Far: 0.2-1.5 meter"
-                    }
                 }
             },
             "intelligentScreen": {

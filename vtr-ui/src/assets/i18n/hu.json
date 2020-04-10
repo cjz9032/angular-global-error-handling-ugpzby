@@ -1852,6 +1852,14 @@
             "intelligentSecurity": {
                 "title": "Intelligens biztonság",
                 "readMore": "További információ",
+                "image": {
+                    "title": "Intelligens biztonság",
+                    "description": "Intelligens érzékelési technológiákkal vértezi fel a számítógépet, védi az Ön magánéletét és adatait, valamint takarékosan bánik az akkumulátor töltöttségével."
+                },
+                "advancedSettings": {
+                    "showAdvSettings": "SPECIÁLIS BEÁLLÍTÁSOK",
+                    "hideAdvSettings": "SPECIÁLIS BEÁLLÍTÁSOK ELREJTÉSE"
+                },
                 "HumanPresenceDetection": {
                     "title": "Emberi jelenlét észlelése",
                     "tooltip": "Ide kattintva alaphelyzetbe állíthatja az emberi jelenlét észlelésének beállításait."
@@ -1864,6 +1872,11 @@
                     "title": "Érintés nélküli bejelentkezés",
                     "caption": "Amikor a felhasználó a számítógép előtt ül vagy a közelében van, a funkció automatikusan feloldja vagy felébreszti a számítógépet.",
                     "tooltip": "Ha a számítógéppel szemben áll vagy közeledik hozzá (1,2 méteres távolságon belül), ez a funkció lehetővé teszi, hogy az arcfelismerést követően a rendszer automatikusan beléptesse Önt. Ha a szabadban tartózkodik, nem pedig az irodában, közelebb kell mennie a számítógéphez, és az ébresztés hosszabb ideig tart."
+                },
+                "zeroTouchLoginForIdea": {
+                    "title": "Érintés nélküli bejelentkezés",
+                    "caption": "Ez a funkció képes automatikusan felébreszteni a számítógépet, sőt be is jelentkezteti Önt, így növeli a munka hatékonyságát. A funkció használatához regisztrálnia kell az arcát a Windows Hello alkalmazásban.",
+                    "tooltip": "Ha a számítógéppel szemben áll vagy közeledik hozzá (1,2 vagy 1,5 méter távolságon belül), ez a funkció lehetővé teszi, hogy az arcfelismerést követően a rendszer automatikusan beléptesse Önt. Ha a szabadban tartózkodik, nem pedig az irodában, közelebb kell mennie a számítógéphez, és az ébresztés hosszabb ideig tart. <br>A maximális érzékelési távolságot az érzékelő jellemzői határozzák meg. További információkat a számítógéphez kapott <i>Felhasználói kézikönyvben</i> talál."
                 },
                 "zeroTouchLock": {
                     "title": "Érintés nélküli zárolás",
@@ -1879,7 +1892,7 @@
                     },
                     "facialRecognition": {
                         "title": "ARCFELISMERÉS",
-                        "caption": "Engedélyezheti az arcfelismerési funkciót, és lehetővé teheti, hogy hozzáférjen a kamerához. Ez az eszköz rögzíti a képét annak érdekében, hogy pontosan felismerje jelenlétét, vagy észlelje, ha a készüléket felügyelet nélkül hagyta. Ezeket az adatokat helyben dolgozza fel az eszköz. A Lenovo nem fér hozzájuk, és nem használja fel őket.",
+                        "caption": "Ez a funkció elősegíti a felismerési teljesítmény javítását és a képernyő váratlan lezárásának elkerülését, ami különösen akkor következhet be, ha Ön hátradől a székben. A funkció által használt adatokat helyben dolgozza fel az eszköz. A Lenovo nem fér hozzájuk, és nem használja fel őket.",
                         "checkBox": "Kapcsolja be a kamerát, és engedélyezze a funkciót",
                         "note": {
                             "permission": "A Lenovo Vantage nem fér hozzá a kamerához. A jelölőnégyzet funkciója nem működik.",
@@ -1889,18 +1902,18 @@
                         }
                     },
                     "distanceSensitivityAdjusting": {
-                        "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                        "captionOn": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, you can maually adjust the dectecting sensitivity based on your preference.",
-                        "captionOff": "The accuracy varies by body size, posture, and frequency of movement. When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
+                        "title": "AZ ÉRZÉKELÉSI TÁVOLSÁG AUTOMATIKUS BEÁLLÍTÁSA",
+                        "captionOn": "A pontosság függ a testmérettől, a testtartástól és a mozgás gyakoriságától. Ha a számítógép váratlanul lezárul, Ön a saját preferenciáinak megfelelően manuálisan is beállíthatja az észlelés érzékenységét.",
+                        "captionOff": "A pontosság függ a testmérettől, a testtartástól és a mozgás gyakoriságától. Ha letiltja ezt a funkciót, manuálisan kell beállítania a kívánt érzékelési távolságnak megfelelő pontot az érzékenységet jelző sávon. Ha szeretné, hogy a rendszer automatikusan állítsa be a távolságot, kapcsolja be a funkciót.",
                         "options": {
-                            "near": "Near",
-                            "medium": "Middle",
-                            "far": "Far"
+                            "near": "Közel",
+                            "medium": "Közepes",
+                            "far": "Távol"
                         },
                         "readMore": {
-                            "line1": "• Near: 0.9 meter",
-                            "line2": "• Middle: 1.2 meter",
-                            "line3": "• Far: 1.5 meter"
+                            "line1": "• Közel: 0,9 méter",
+                            "line2": "• Közepes: 1,2 méter",
+                            "line3": "• Távol: 1,5 méter"
                         }
                     }
                 },
@@ -1924,17 +1937,38 @@
                         }
                     }
                 },
+                "distanceSensitivityAdjustingForIdea": {
+                    "title": "AZ ÉRZÉKELÉSI TÁVOLSÁG AUTOMATIKUS BEÁLLÍTÁSA",
+                    "captionOn": "Ha engedélyezi ezt a funkciót, a rendszer automatikusan beállítja a felébresztéshez szükséges mozgásérzékelési távolságot. Kapcsolja ki, ha szeretné manuálisan beállítani az érzékelési távolságot.",
+                    "captionOff": "Ha letiltja ezt a funkciót, manuálisan kell beállítania a kívánt érzékelési távolságnak megfelelő pontot az érzékenységet jelző sávon. Ha szeretné, hogy a rendszer automatikusan állítsa be a távolságot, kapcsolja be a funkciót.",
+                    "options": {
+                        "near": "Közel",
+                        "far": "Távol",
+                        "medium": "Közepes"
+                    },
+                    "readMore": "Három lehetőség közül választhat. A kiválasztott tartomány határozza meg, hogy milyen közelről észlelt emberi mozgások esetén ébredjen fel a képernyő.",
+                    "readMoreForSensor1": {
+                        "line1": "• Közel: 0–0,4 méter",
+                        "line2": "• Közepes: 0–0,6 méter",
+                        "line3": "• Távol: 0–1,2 méter"
+                    },
+                    "readMoreForSensor2": {
+                        "line1": "• Közel: 0,2–0,55 méter",
+                        "line2": "• Közepes: 0,2–1,0 méter",
+                        "line3": "• Távol: 0,2–1,5 méter"
+                    }
+                },
                 "note": {
                     "description1": "A funkcióhoz a Windows Hello szükséges. Ellenőrizze, hogy az arcfelismerés be van-e kapcsolva a Windows beállításai között.",
                     "description2": "A funkció érzékelőkkel és kamerával észleli az Ön jelenlétét. A funkció azonban NEM gyűjt személyes adatokat.",
-                    "description3": "1. Ha a számítógép sátor, táblagép vagy álló üzemmódban van, előfordulhat, hogy ezek a funkciók nem működnek megfelelően.",
-                    "description4": "2. Ha a számítógép hibernált módban van, vagy ki van kapcsolva, az érintés nélküli bejelentkezés nem működik.",
-                    "description6": "4. Ha a számítógépen bekapcsolta a Repülőgép üzemmódot, ezek a funkciók nem használhatók.",
-                    "description7": "A pontosság függ a testmérettől, a testtartástól és a mozgás gyakoriságától. Ha a számítógép váratlanul zárolódik, állítsa be az érzékenységi sávot a pontosság javítása érdekében.",
-                    "description5a1": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to ",
-                    "description5a2": "User Guide ",
-                    "description5a3": "that comes with it.",
-                    "description5b": "b. Your computer is in hibernation mode or has been turned off."
+                    "description3": "1. A fenti funkciók használatához állítsa a megfelelő szögbe a képernyőt, hogy a rendszer fel tudja ismerni az Ön arcát.",
+                    "description4": "2. A fenti funkciók nem támogatottak a következő esetekben:",
+                    "description5a1": "a. A számítógép Sátor, Álló vagy Tablet módban vagy Leválasztott módban van. Az Ön számítógépe által támogatott módokat kapcsolatban lásd: ",
+                    "description5a2": "Felhasználói kézikönyv ",
+                    "description5a3": ".",
+                    "description5b": "b. Ha a számítógép hibernált módban van vagy ki van kapcsolva.",
+                    "description6": "3. Ha a számítógépen bekapcsolta a Repülőgép üzemmódot, ezek a funkciók nem használhatók.",
+                    "description7": "A pontosság függ a testmérettől, a testtartástól és a mozgás gyakoriságától. Ha a számítógép váratlanul zárolódik, állítsa be az érzékenységi sávot a pontosság javítása érdekében."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Ugrás a Windows Hello beállításaihoz",
@@ -1943,40 +1977,6 @@
                 "resetToDefault": "Visszaállítás",
                 "sensitivityAdjusting": {
                     "title": "ÉRZÉKENYSÉG BEÁLLÍTÁS"
-                },
-                "image": {
-                    "title": "Intelligent security",
-                    "description": "Buckles up your PC with intelligent sensing technology, protects your privacy, and saves your battery power."
-                },
-                "advancedSettings": {
-                    "showAdvSettings": "ADVANCED SETTINGS",
-                    "hideAdvSettings": "HIDE ADVANCED SETTINGS"
-                },
-                "zeroTouchLoginForIdea": {
-                    "title": "Zero Touch Login",
-                    "caption": "This feature enables you to improve the work efficiency by automatically waking up or logging in your computer. To use the feature, you need to register your face in Windows Hello.",
-                    "tooltip": "When you are in front of your computer or approaching it (within 1.2 or 1.5 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer. <br>Depending on the sensor capability, the maximum detecting distance varies. Refer to the <i>User Guide</i> that comes with your computer for details."
-                },
-                "distanceSensitivityAdjustingForIdea": {
-                    "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                    "captionOn": "Enable this feature to automatically adjust the detecting distance of movements to wake up the system. Turn it off to manually adjust the detecting sensitivity based on your preference.",
-                    "captionOff": "When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
-                    "options": {
-                        "near": "Near",
-                        "medium": "Middle",
-                        "far": "Far"
-                    },
-                    "readMore": "There are three options. In each range, when human movements are detected, your screen will be waked up accordingly.",
-                    "readMoreForSensor1": {
-                        "line1": "• Near: 0-0.4 meter",
-                        "line2": "• Middle: 0-0.6 meter",
-                        "line3": "• Far: 0-1.2 meter"
-                    },
-                    "readMoreForSensor2": {
-                        "line1": "• Near: 0.2-0.55 meter",
-                        "line2": "• Middle: 0.2-1.0 meter",
-                        "line3": "• Far: 0.2-1.5 meter"
-                    }
                 }
             },
             "intelligentScreen": {
