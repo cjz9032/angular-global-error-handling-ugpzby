@@ -1,31 +1,29 @@
+<h1 id="article-dialog-basic-title"
+	hidden>{{articleLinkTitle}}</h1>
 <div class="modal-body vtr-modal-article-detail"
 	id="article-dialog"
-	[ngSwitch]="contentStatus"
+	[hidden]="articleBody"
 	aria-hidden="false">
-	<h1 id="article-dialog-basic-title"
-		hidden>{{articleLinkTitle}}</h1>
-	<header id="article-title"
-		*ngIf="articleTitle">{{articleTitle}}</header>
 	<div class="article-content"
-		*ngSwitchCase="AllContentStatus.Loading"
 		aria-hidden="true">
 		<div class="article-body loading-body">
-			<div class="spinner-content">
+			<div class="spinner-content"
+				*ngIf="contentStatus === AllContentStatus.Loading">
 				<div class="spinner-border text-primary progress-spinner"
-					role="status"
-					aria-live="polite"></div>
+					role="status"></div>
+			</div>
+			<div class="empty-content w-100 text-center"
+				*ngIf="contentStatus === AllContentStatus.Empty">
+				<img src="assets/images/support/empty.png" alt="" />
 			</div>
 		</div>
 	</div>
-	<div class="article-content"
-		*ngSwitchCase="AllContentStatus.Empty"
-		aria-hidden="true">
-		<div class="article-body empty-body">
-			<div class="empty-content w-100 text-center">
-				<img src="assets/images/support/empty.png" />
-			</div>
-		</div>
-	</div>
+</div>
+<div class="modal-body vtr-modal-article-detail"
+	id="article-dialog"
+	[hidden]="!articleBody"
+	aria-hidden="false">
+	<header id="article-title">{{articleTitle}}</header>
 	<article class="article-content"
 		id="article-dialog-content"
 		tabindex="0">
@@ -33,14 +31,12 @@
 			src="{{articleImage}}"
 			alt="article image">
 		<div class="article-body"
-			aria-live="polite"
 			[innerHTML]="articleBody ? articleBody : 'common.ui.loading' | translate"></div>
 	</article>
-
-	<div class="btn-modal-close">
-		<vtr-ui-close-button linkId="article-close-button"
-			metricsItem="ArticleCloseButton"
-			[metricsParent]="metricsParent"
-			(clickClose)="closeModal()"></vtr-ui-close-button>
-	</div>
+</div>
+<div class="btn-modal-close">
+	<vtr-ui-close-button linkId="article-close-button"
+		metricsItem="ArticleCloseButton"
+		[metricsParent]="metricsParent"
+		(clickClose)="closeModal()"></vtr-ui-close-button>
 </div>

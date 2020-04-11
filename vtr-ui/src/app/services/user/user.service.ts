@@ -50,7 +50,7 @@ export class UserService {
 	<div style=\'display: block;position: fixed;z-index: 1;padding-top:5%;width: 100%;height: 100%;overflow: auto;\'>
 		<div class=\'queryHeight\'>
 			<style>
-				.queryHeight { position: relative;background-color: #fefefe;margin: auto;padding: auto;border: 1px solid #888;max-width: 460px; height: 80%;}
+				.queryHeight { position: relative;background-color: #fefefe;margin: auto;padding: auto; max-width: 460px; overflow: hidden; box-sizing: border-box; height: 80%; padding-top: 45px; border: 1px solid #888;}
 				@media only screen and (min-height: 768px) {.queryHeight{height: 60%;}}
 				@media only screen and (min-height: 1080px) {.queryHeight{height: 50%;}}
 				@media only screen and (min-height: 2160px) {.queryHeight{height: 40%;}}
@@ -60,13 +60,12 @@ export class UserService {
 				.holder { position: absolute; width: 60px; height: 60px; left: 50%; top: 50%; transform: translate(-50%, -50%); }
 				.holder .spinner { display: block; width: 100%; height: 100%; border-radius: 50%; border: 3px solid #ccc; border-top-color: #07d; animation: spinner .8s linear infinite; }
 			</style>
-			<div id=\'btnClose\' style=\'padding: 2px 16px;background-color: white;color: black;border-bottom: 1px solid #e5e5e5;\'>
-				<span class=\'close\' id=\'txtClose\' tabindex=\'99\' aria-current=\'true\'>&times;</span>
-				<div style=\'height:45px;\'></div>
-			</div>
-			<div style=\'height: 100%; min-height: 400px;\' id=\'webviewBorder\'>
+			<div id=\'webviewBorder\' style=\'height: 100%; background-color: white;\'>
 				<div class=\'holder\'><span id=\'spinnerCtrl\' class=\'spinner\'></span></div>
 				<div id=\'webviewPlaceHolder\' attr.aria-label=\'lid-login-dialog-webview\'></div>
+			</div>
+			<div id=\'btnClose\' role=\'button\' aria-label=\'close\' tabindex=\'0\' style=\'position: absolute; right: 1px; top: 1px; height: 45px; padding: 2px 16px; background-color: white;\'>
+				<span class=\'close\' id=\'txtClose\' aria-hidden=\'true\'>&times;</span>
 			</div>
 		</div>
 	</div>

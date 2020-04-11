@@ -3,7 +3,7 @@
 		<li class="add-icon">
 			<div (click)="openModal()"
 				role="button"
-				id="addButton"
+				id="{{runningAppsList && runningAppsList.length >=5 ? 'networkboost_addButton_unclickable' : 'networkboost_addButton_clickable'}}"
 				[ngClass]="{'isdisabled': runningAppsList && runningAppsList.length >=5}"
 				(keyup.enter)="openModal()"
 				[tabindex]="runningAppsList && runningAppsList.length >=5 ? -1 : 1"
@@ -45,7 +45,7 @@
 				{{app.processDescription}}
 			</div>
 			<div class="remove-app"
-				id="{{'remove'+i}}"
+				id="{{'nb_remove'+i}}"
 				(click)="removeApp(app.processPath,i)"
 				role="area"
 				(keyup.enter)="removeApp(app.processPath,i)"

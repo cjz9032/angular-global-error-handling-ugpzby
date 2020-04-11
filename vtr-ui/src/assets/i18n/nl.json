@@ -1852,6 +1852,14 @@
             "intelligentSecurity": {
                 "title": "Intelligente beveiliging",
                 "readMore": "Meer weergeven",
+                "image": {
+                    "title": "Intelligente beveiliging",
+                    "description": "Hiermee sluit u de PC af met intelligente sensortechnologie, beschermt u uw privacy en bespaart u de batterij."
+                },
+                "advancedSettings": {
+                    "showAdvSettings": "GEAVANCEERDE INSTELLINGEN",
+                    "hideAdvSettings": "GEAVANCEERDE INSTELLINGEN VERBERGEN"
+                },
                 "HumanPresenceDetection": {
                     "title": "Aanwezigheidsdetectie personen",
                     "tooltip": "Klik hier om de instellingen voor de aanwezigheidsdetectie van personen opnieuw in te stellen."
@@ -1864,6 +1872,11 @@
                     "title": "Aanmelding bij nul aanraken",
                     "caption": "Met deze functie wordt de computer automatisch ontgrendeld of uit de slaapstand gehaald wanneer u ervoor zit of er dicht bij komt.",
                     "tooltip": "Als u voor uw computer zit of het apparaat nadert (binnen de afstand van 1,2 meter), kunt u zich met deze functie automatisch aanmelden bij het systeem nadat uw gezicht is herkend. Als u buiten bent in plaats van op kantoor, moet u zich dichter bij de computer bevinden en duurt het ontwaken langer."
+                },
+                "zeroTouchLoginForIdea": {
+                    "title": "Aanmelding bij nul aanraken",
+                    "caption": "Met deze functie kunt u de werkefficiëntie verbeteren door de computer automatisch uit de slaapstand te halen of om automatisch aan te melden. Om deze functie te gebruiken, moet u uw gezicht registreren in Windows Hello.",
+                    "tooltip": "Als u voor uw computer zit of het apparaat nadert (binnen 1,2 of 1,5 meter), kunt u zich met deze functie automatisch aanmelden bij het systeem nadat uw gezicht is herkend. Als u buiten bent in plaats van op kantoor, moet u zich dichter bij de computer bevinden en duurt het ontwaken langer. <br>De maximale detectieafstand hangt af van de capaciteit van de sensor. Raadpleeg de <i>gebruikershandleiding</i> van uw computer voor meer informatie."
                 },
                 "zeroTouchLock": {
                     "title": "Vergrendeling bij nul aanraken",
@@ -1879,7 +1892,7 @@
                     },
                     "facialRecognition": {
                         "title": "GEZICHTSHERKENNING",
-                        "caption": "U kunt de gezichtsherkenningsfunctie inschakelen en toegang tot uw camera geven. Met deze tool wordt uw afbeelding vastgelegd om uw aanwezigheid nauwkeurig te herkennen of te detecteren wanneer u het apparaat hebt achtergelaten. Deze gegevens worden lokaal op uw apparaat verwerkt. Lenovo heeft geen toegang tot uw afbeelding en gebruikt deze ook niet.",
+                        "caption": "Deze functie helpt om de herkenningsprestaties te verbeteren en vermijdt onverwachte schermvergrendeling, vooral als u achteroverleunt in uw stoel. Deze functie werkt lokaal op uw apparaat. Lenovo heeft geen toegang tot uw afbeelding en gebruikt deze ook niet.",
                         "checkBox": "Zet de camera aan en schakel deze functie in",
                         "note": {
                             "permission": "Lenovo Vantage heeft geen toegang tot de camera. De functie van het selectievakje werkt niet.",
@@ -1889,18 +1902,18 @@
                         }
                     },
                     "distanceSensitivityAdjusting": {
-                        "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                        "captionOn": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, you can maually adjust the dectecting sensitivity based on your preference.",
-                        "captionOff": "The accuracy varies by body size, posture, and frequency of movement. When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
+                        "title": "AUTOMATISCH AANPASSEN VAN AFSTANDSGEVOELIGHEID",
+                        "captionOn": "De nauwkeurigheid is afhankelijk van lichaamsgrootte, postuur en bewegingsfrequentie. Als de computer onverwacht wordt vergrendeld, kunt u handmatig de detectiegevoeligheid aanpassen.",
+                        "captionOff": "De nauwkeurigheid is afhankelijk van lichaamsgrootte, postuur en bewegingsfrequentie. Als deze functie is uitgeschakeld, moet u de gevoeligheidsbalk handmatig aanpassen om de detectieafstand te wijzigen. Als u wilt dat de afstand automatisch wordt aangepast, schakelt u deze functie in.",
                         "options": {
-                            "near": "Near",
-                            "medium": "Middle",
-                            "far": "Far"
+                            "near": "Dichtbij",
+                            "medium": "Gemiddeld",
+                            "far": "Ver"
                         },
                         "readMore": {
-                            "line1": "• Near: 0.9 meter",
-                            "line2": "• Middle: 1.2 meter",
-                            "line3": "• Far: 1.5 meter"
+                            "line1": "• Dichtbij: 0,9 meter",
+                            "line2": "• Gemiddeld: 1,2 meter",
+                            "line3": "• Ver: 1,5 meter"
                         }
                     }
                 },
@@ -1924,17 +1937,38 @@
                         }
                     }
                 },
+                "distanceSensitivityAdjustingForIdea": {
+                    "title": "AUTOMATISCH AANPASSEN VAN AFSTANDSGEVOELIGHEID",
+                    "captionOn": "Schakel deze functie in om automatisch de detectieafstand van bewegingen aan te passen om het systeem te activeren. Schakel de functie uit om de detectiegevoeligheid handmatig aan te passen.",
+                    "captionOff": "Als deze functie is uitgeschakeld, moet u de gevoeligheidsbalk handmatig aanpassen om de detectieafstand te wijzigen. Als u wilt dat de afstand automatisch wordt aangepast, schakelt u deze functie in.",
+                    "options": {
+                        "near": "Dichtbij",
+                        "far": "Ver",
+                        "medium": "Gemiddeld"
+                    },
+                    "readMore": "Er zijn drie opties. Als er menselijke bewegingen worden gedetecteerd in elk bereik, wordt het scherm geactiveerd.",
+                    "readMoreForSensor1": {
+                        "line1": "• Dichtbij: 0 - 0,4 meter",
+                        "line2": "• Gemiddeld: 0 - 0,6 meter",
+                        "line3": "• Ver: 0 - 1,2 meter"
+                    },
+                    "readMoreForSensor2": {
+                        "line1": "• Dichtbij: 0,2 - 0,55 meter",
+                        "line2": "• Gemiddeld: 0,2 - 1,0 meter",
+                        "line3": "• Ver: 0,2 - 1,5 meter"
+                    }
+                },
                 "note": {
                     "description1": "Deze functie maakt gebruik van Windows Hello. Zorg dat gezichtsherkenning is ingeschakeld in Windows-instellingen.",
                     "description2": "De functie gebruikt sensoren en de camera om uw aanwezigheid te detecteren. Persoonlijke gegevens of afbeeldingen worden echter NIET door deze functie verzameld, opgeslagen of gelekt.",
-                    "description3": "1. Als uw computer in Tent-, Tablet- of Standaardmodus staat, werken deze functies mogelijk niet naar behoren.",
-                    "description4": "2. Als uw computer in de sluimerstand staat of is uitgezet, werkt Aanmelding bij nul aanraken niet.",
-                    "description6": "4. Als de vliegtuigstand is ingeschakeld op uw computer, zijn deze functies uitgeschakeld.",
-                    "description7": "De nauwkeurigheid is afhankelijk van lichaamsgrootte, postuur en bewegingsfrequentie. Als uw computer onverwacht wordt vergrendeld, pas dan de gevoeligheidsbalk aan om de nauwkeurigheid te verbeteren.",
-                    "description5a1": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to ",
-                    "description5a2": "User Guide ",
-                    "description5a3": "that comes with it.",
-                    "description5b": "b. Your computer is in hibernation mode or has been turned off."
+                    "description3": "1. Om deze functies te gebruiken moet uw scherm in de juiste hoek geplaatst worden zodat uw gezicht kan worden herkend.",
+                    "description4": "2. Bovenstaande functies worden niet ondersteund in de volgende gevallen:",
+                    "description5a1": "a. uw computer staat in de werkstand tent, tablet, standaard of is ontkoppeld. Voor de modi die op uw computer worden ondersteund, ga naar de ",
+                    "description5a2": "Gebruikershandleiding ",
+                    "description5a3": "die is meegeleverd.",
+                    "description5b": "b. uw computer staat in de sluimerstand of is uitgeschakeld.",
+                    "description6": "3. Als de vliegtuigstand is ingeschakeld op uw computer, zijn deze functies uitgeschakeld.",
+                    "description7": "De nauwkeurigheid is afhankelijk van lichaamsgrootte, postuur en bewegingsfrequentie. Als uw computer onverwacht wordt vergrendeld, pas dan de gevoeligheidsbalk aan om de nauwkeurigheid te verbeteren."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Ga naar Windows Hello-instellingen",
@@ -1943,40 +1977,6 @@
                 "resetToDefault": "Resetten",
                 "sensitivityAdjusting": {
                     "title": "GEVOELIGHEID AANPASSEN"
-                },
-                "image": {
-                    "title": "Intelligent security",
-                    "description": "Buckles up your PC with intelligent sensing technology, protects your privacy, and saves your battery power."
-                },
-                "advancedSettings": {
-                    "showAdvSettings": "ADVANCED SETTINGS",
-                    "hideAdvSettings": "HIDE ADVANCED SETTINGS"
-                },
-                "zeroTouchLoginForIdea": {
-                    "title": "Zero Touch Login",
-                    "caption": "This feature enables you to improve the work efficiency by automatically waking up or logging in your computer. To use the feature, you need to register your face in Windows Hello.",
-                    "tooltip": "When you are in front of your computer or approaching it (within 1.2 or 1.5 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer. <br>Depending on the sensor capability, the maximum detecting distance varies. Refer to the <i>User Guide</i> that comes with your computer for details."
-                },
-                "distanceSensitivityAdjustingForIdea": {
-                    "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                    "captionOn": "Enable this feature to automatically adjust the detecting distance of movements to wake up the system. Turn it off to manually adjust the detecting sensitivity based on your preference.",
-                    "captionOff": "When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
-                    "options": {
-                        "near": "Near",
-                        "medium": "Middle",
-                        "far": "Far"
-                    },
-                    "readMore": "There are three options. In each range, when human movements are detected, your screen will be waked up accordingly.",
-                    "readMoreForSensor1": {
-                        "line1": "• Near: 0-0.4 meter",
-                        "line2": "• Middle: 0-0.6 meter",
-                        "line3": "• Far: 0-1.2 meter"
-                    },
-                    "readMoreForSensor2": {
-                        "line1": "• Near: 0.2-0.55 meter",
-                        "line2": "• Middle: 0.2-1.0 meter",
-                        "line3": "• Far: 0.2-1.5 meter"
-                    }
                 }
             },
             "intelligentScreen": {
@@ -4062,5 +4062,10 @@
     },
     "cpt": {
         "title": "Content Preview Tool"
+    },
+    "storeRating": {
+        "title": "Laat van u horen",
+        "likeUs": "Vind ons leuk",
+        "feedback": "Feedback achterlaten"
     }
 }

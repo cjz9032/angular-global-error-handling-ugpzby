@@ -1,12 +1,14 @@
 import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { WidgetSystemMonitorComponent } from './widget-system-monitor.component';
 import { Pipe } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHandler } from '@angular/common/http';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { HwInfoService } from 'src/app/services/gaming/gaming-hwinfo/hw-info.service';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { RouterLinkWithHref } from '@angular/router';
 import { By } from '@angular/platform-browser';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 const gamingAllCapabilitiesServiceMock = jasmine.createSpyObj('GamingAllCapabilitiesService', ['isShellAvailable', 'getCapabilities', 'setCapabilityValuesGlobally', 'getCapabilityFromCache']);
 const gamingHwinfoMock = jasmine.createSpyObj('HwInfoService', ['isShellAvailable', 'getDynamicInformation', 'getMachineInfomation']);
@@ -25,6 +27,9 @@ describe('WidgetSystemMonitorComponent', () => {
 			schemas: [NO_ERRORS_SCHEMA],
 			providers: [
 				{ provide: HttpClient },
+				{ provide: VantageShellService },
+				{ provide:LoggerService },
+				{ provide: HttpHandler },
 				{ provide: GamingAllCapabilitiesService, useValue: gamingAllCapabilitiesServiceMock },
 				{ provide: HwInfoService, useValue: gamingHwinfoMock }
 			]

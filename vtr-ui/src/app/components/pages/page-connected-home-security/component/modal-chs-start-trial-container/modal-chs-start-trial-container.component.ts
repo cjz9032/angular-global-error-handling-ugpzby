@@ -27,22 +27,25 @@ export class ModalChsStartTrialContainerComponent implements OnInit, OnDestroy {
 	) {	}
 
 	ngOnInit() {
-		this.chs = this.vantageShellService.getConnectedHomeSecurity();
-		this.consoleUrlCallback = (data) => {
-			if (data.account.consoleUrl && !this.currentConsoleUrl) {
-				this.currentConsoleUrl = data.account.consoleUrl;
-				this.showWhichPage = CHSTrialModalPage.trial;
-				this.countdown();
+		this.vantageShellService.getConnectedHomeSecurity().then((chs) => {
+			this.chs = chs;
+
+			this.consoleUrlCallback = (data) => {
+				if (data.account.consoleUrl && !this.currentConsoleUrl) {
+					this.currentConsoleUrl = data.account.consoleUrl;
+					this.showWhichPage = CHSTrialModalPage.trial;
+					this.countdown();
+				}
+			};
+			if (this.showWhichPage === CHSTrialModalPage.loading) {
+				if (this.chs.account.consoleUrl) {
+					this.showWhichPage = CHSTrialModalPage.trial;
+					this.countdown();
+				} else if (!this.currentConsoleUrl) {
+					this.chs.on(EventTypes.chsEvent, this.consoleUrlCallback);
+				}
 			}
-		};
-		if (this.showWhichPage === CHSTrialModalPage.loading) {
-			if (this.chs.account.consoleUrl) {
-				this.showWhichPage = CHSTrialModalPage.trial;
-				this.countdown();
-			} else if (!this.currentConsoleUrl) {
-				this.chs.on(EventTypes.chsEvent, this.consoleUrlCallback);
-			}
-		}
+		});
 	}
 
 	closeModal() {

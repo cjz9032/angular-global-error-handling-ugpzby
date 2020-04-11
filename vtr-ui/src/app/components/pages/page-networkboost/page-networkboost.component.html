@@ -27,7 +27,7 @@
 											[toggleId]="'networkBoost'" [onOffSwitchId]="'networkboostSwitch'"
 											(toggle)="setNetworkBoostStatus($event)" [value]="toggleStatus" [parentId]="'Gaming.NetworkBoost'">
 										</vtr-ui-toggle>
-										<p class="intro-text">
+										<p class="intro-text" id="gaming_networkboost_description" role="text">
 											{{'gaming.networkBoost.introLine' | translate}}</p>
 										<vtr-widget-networkboost [modalStatus]="(showTurnOnModal || showAppsModal)"
 											[changeNum]="changeListNum" (actionModal)="openTargetModal()"
@@ -50,16 +50,17 @@
 					<vtr-container-card [ngClass]="{'cursor-default': isOnline == false}" order="1"
 						[item]="cardContentPositionC" [type]="'subpage-article'" [ratio]="1"
 						[dynamicmetricsItem]="dynamic_metricsItem" vtrMetrics
-						metricsEvent="ArticleClick"
+						metricsEvent="ArticleClick" containerCardId="gaming_networkBosst_containercard_positionC"
 						metricsItem="gaming_network-boost_containerCard_positionC" ItemCategory="corner-article">
 					</vtr-container-card>
 				</div>
+
 
 				<div class="col col-12 px-0 pt-0 pb-40">
 					<vtr-container-card [ngClass]="{'cursor-default': isOnline == false}" order="2"
 						[item]="cardContentPositionF"
 						[type]="'subpage-corner'" [ratio]="2" [cornerShift]="'large'" vtrMetrics
-						metricsEvent="ArticleClick"
+						metricsEvent="ArticleClick" containerCardId="gaming_networkBosst_containercard_positionF"
 						metricsItem="gaming_network-boost_containerCard_positionF"  ItemCategory="corner-article">
 					</vtr-container-card>
 				</div>

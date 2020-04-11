@@ -1,7 +1,7 @@
 @import "./../../../app.theme.scss";
 
 .vtr-ui-custom-slider {
-	padding: 10px;
+	padding-top: 10px;
 	$slider-height: 30px;
 	$thumb-size: 25px;
 	$thumb-focus-size: 32px;
@@ -59,7 +59,7 @@
 	}
 	.range {
 		.legends {
-			padding: 0 5px;
+			padding: 0;
 			color: $grey_dark;
 			font-size: $body;
 		}

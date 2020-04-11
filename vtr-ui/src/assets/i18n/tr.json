@@ -1852,6 +1852,14 @@
             "intelligentSecurity": {
                 "title": "Akıllı Güvenlik",
                 "readMore": "Okumaya devam edin",
+                "image": {
+                    "title": "Akıllı güvenlik",
+                    "description": "Akıllı algılama teknolojisi ile bilgisayarınızı güçlendirir, gizliliğinizi korur ve pil gücünden tasarruf sağlar."
+                },
+                "advancedSettings": {
+                    "showAdvSettings": "GELİŞMİŞ AYARLAR",
+                    "hideAdvSettings": "GELİŞMİŞ AYARLARI GİZLE"
+                },
                 "HumanPresenceDetection": {
                     "title": "İnsan varlığını algılama",
                     "tooltip": "İnsan varlığını algılama ayarlarını sıfırlamak için burayı tıklatın."
@@ -1864,6 +1872,11 @@
                     "title": "Sıfır Dokunma ile Oturum Açma",
                     "caption": "Bu özellik, bilgisayarın karşısında olduğunuzda veya bilgisayara yaklaştığınızda bilgisayar kilidini otomatik olarak açar ya da bilgisayarı uyandırır.",
                     "tooltip": "Bu özellik, bilgisayarınızın önündeyken veya bilgisayarınıza yaklaşırken (1,2 metre mesafe içerisinde) yüzünüzün tanınmasından sonra sistemde otomatik olarak oturum açmanızı sağlar. Ofis yerine dışarıda olduğunuzda, bilgisayarınıza daha yakın olmanız gerekir ve uyandırma işlevi daha uzun sürer."
+                },
+                "zeroTouchLoginForIdea": {
+                    "title": "Sıfır Dokunma ile Oturum Açma",
+                    "caption": "Bu özellik, bilgisayarınızı otomatik olarak uyandırarak veya bilgisayarınızda oturum açarak çalışma verimliliğini artırmanıza olanak tanır. Özelliği kullanmak için yüzünüzü Windows Hello'ya kaydetmeniz gerekir.",
+                    "tooltip": "Bu özellik, bilgisayarınızın önündeyken veya bilgisayarınıza yaklaşırken (1,2 veya 1,5 metre içerisinde) yüzünüzün tanınmasından sonra sistemde otomatik olarak oturum açmanızı sağlar. Ofis yerine dışarıda olduğunuzda, bilgisayarınıza daha yakın olmanız gerekir ve uyandırma işlevi daha uzun sürer. <br>Algılayıcı kapasitesine bağlı olarak, maksimum algılama mesafesi değişiklik gösterir. Ayrıntılı bilgi için dizüstü bilgisayarınızla birlikte gönderilen <i>Kullanma Kılavuzu'</i>na bakın."
                 },
                 "zeroTouchLock": {
                     "title": "Sıfır Dokunma ile Kilitleme",
@@ -1879,7 +1892,7 @@
                     },
                     "facialRecognition": {
                         "title": "YÜZ TANIMA",
-                        "caption": "Yüz tanıma özelliğini etkinleştirebilir ve kameranıza erişmesine izin verebilirsiniz. Bu araç, varlığınızı doğru bir şekilde algılamak veya cihazınızın başından ayrıldığınızı tespit etmek için görüntünüzü yakalar. Bu veriler cihazınızda yerel olarak işlenir. Lenovo bu verilere erişmez ya da onları kullanmaz.",
+                        "caption": "Bu özellik tanıma performansını artırmaya ve özellikle sandalyenizde arkaya yaslandığınızda ekranın beklenmedik şekilde kilitlenmesini önlemeye yardımcı olur. Bu özellik cihazınızda yerel olarak işlenir. Lenovo bu verilere erişmez ya da onları kullanmaz.",
                         "checkBox": "Kamerayı açın ve bu özelliği etkinleştirin",
                         "note": {
                             "permission": "Lenovo Vantage, Kamera'ya erişemiyor. Onay kutusu işlevsel değildir.",
@@ -1889,18 +1902,18 @@
                         }
                     },
                     "distanceSensitivityAdjusting": {
-                        "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                        "captionOn": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, you can maually adjust the dectecting sensitivity based on your preference.",
-                        "captionOff": "The accuracy varies by body size, posture, and frequency of movement. When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
+                        "title": "OTOMATİK UZAKLIK HASSASİYETİNİ AYARLAMA",
+                        "captionOn": "Doğruluk vücut ölçüsü, duruş ve hareket sıklığına göre değişiklik gösterir. Bilgisayarınız beklenmedik bir şekilde kilitleniyorsa algılama hassasiyetini tercihinize göre manuel olarak ayarlayabilirsiniz.",
+                        "captionOff": "Doğruluk vücut ölçüsü, duruş ve hareket sıklığına göre değişiklik gösterir. Bu özellik devre dışı bırakıldığında, algılama mesafesini ayarlamak için hassasiyet çubuğunu manuel olarak ayarlamanız gerekir. Mesafenin otomatik olarak ayarlanmasını istiyorsanız özelliği açın.",
                         "options": {
-                            "near": "Near",
-                            "medium": "Middle",
-                            "far": "Far"
+                            "near": "Yakın",
+                            "medium": "Orta",
+                            "far": "Uzak"
                         },
                         "readMore": {
-                            "line1": "• Near: 0.9 meter",
-                            "line2": "• Middle: 1.2 meter",
-                            "line3": "• Far: 1.5 meter"
+                            "line1": "• Yakın: 0,9 metre",
+                            "line2": "• Orta: 1,2 metre",
+                            "line3": "• Uzak: 1,5 metre"
                         }
                     }
                 },
@@ -1924,17 +1937,38 @@
                         }
                     }
                 },
+                "distanceSensitivityAdjustingForIdea": {
+                    "title": "OTOMATİK UZAKLIK HASSASİYETİNİ AYARLAMA",
+                    "captionOn": "Sistemi uyandıracak hareketlerin algılama mesafesini otomatik olarak ayarlamak için bu özelliği etkinleştirin. Algılama hassasiyetini tercihinize göre manuel olarak ayarlamak için özelliği kapatın.",
+                    "captionOff": "Bu özellik devre dışı bırakıldığında, algılama mesafesini ayarlamak için hassasiyet çubuğunu manuel olarak ayarlamanız gerekir. Mesafenin otomatik olarak ayarlanmasını istiyorsanız özelliği açın.",
+                    "options": {
+                        "near": "Yakın",
+                        "far": "Uzak",
+                        "medium": "Orta"
+                    },
+                    "readMore": "Üç seçenek vardır. Her bir aralıkta, insan hareketleri algılandığında ekranınız buna göre uyandırılır.",
+                    "readMoreForSensor1": {
+                        "line1": "• Yakın: 0-0,4 metre",
+                        "line2": "• Orta: 0-0,6 metre",
+                        "line3": "• Uzak: 0-1,2 metre"
+                    },
+                    "readMoreForSensor2": {
+                        "line1": "• Yakın: 0,2-0,55 metre",
+                        "line2": "• Orta: 0,2-1,0 metre",
+                        "line3": "• Uzak: 0,2-1,5 metre"
+                    }
+                },
                 "note": {
                     "description1": "Bu özellik için Windows Hello gereklidir. Windows ayarlarında yüz tanımanın açık olduğundan emin olun.",
                     "description2": "Bu özellik, varlığınızı algılamak için sensörler ve kamera kullanır. Ancak, özellik hiçbir kişisel veriyi TOPLAMAZ.",
-                    "description3": "1. Bilgisayarınız Çadır, Tablet veya Stant kipindeyse bu özellikler düzgün çalışmayabilir.",
-                    "description4": "2. Bilgisayarınız uyku kipindeyse veya kapalıysa Sıfır Dokunma ile Oturum Açma özelliği çalışmaz.",
-                    "description6": "4. Bilgisayarınızda Uçak modu etkin durumdaysa bu özellikler devre dışı bırakılır.",
-                    "description7": "Doğruluk vücut ölçüsü, duruş ve hareket sıklığına göre değişiklik gösterir. Bilgisayarınız beklenmedik bir şekilde kilitlenirse doğruluğu artırmak için hassasiyet çubuğunu ayarlayın.",
-                    "description5a1": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to ",
-                    "description5a2": "User Guide ",
-                    "description5a3": "that comes with it.",
-                    "description5b": "b. Your computer is in hibernation mode or has been turned off."
+                    "description3": "1. Yukarıdaki işlevleri kullanmak için lütfen ekranınızı, yüzünüzün tanınabileceği uygun bir açıya ayarlayın.",
+                    "description4": "2. Yukarıdaki işlevler şu durumlarda desteklenmez:",
+                    "description5a1": "a. Bilgisayarınız Çadır, Tablet, Stand kipinde veya Ayrılmış kipteyken. Bilgisayarınızda desteklenen kipler için lütfen bilgisayarınızla birlikte verilen ",
+                    "description5a2": "Tanıtma ve Kullanma Kılavuzu ",
+                    "description5a3": "belgesine bakın.",
+                    "description5b": "b. Bilgisayarınız uyku kipindeyse veya kapalıysa.",
+                    "description6": "3. Bilgisayarınızda Uçak modu etkin durumdaysa bu özellikler devre dışı bırakılır.",
+                    "description7": "Doğruluk vücut ölçüsü, duruş ve hareket sıklığına göre değişiklik gösterir. Bilgisayarınız beklenmedik bir şekilde kilitlenirse doğruluğu artırmak için hassasiyet çubuğunu ayarlayın."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Windows Hello Ayarları'na git",
@@ -1943,40 +1977,6 @@
                 "resetToDefault": "Sıfırla",
                 "sensitivityAdjusting": {
                     "title": "HASSASİYETİ AYARLAMA"
-                },
-                "image": {
-                    "title": "Intelligent security",
-                    "description": "Buckles up your PC with intelligent sensing technology, protects your privacy, and saves your battery power."
-                },
-                "advancedSettings": {
-                    "showAdvSettings": "ADVANCED SETTINGS",
-                    "hideAdvSettings": "HIDE ADVANCED SETTINGS"
-                },
-                "zeroTouchLoginForIdea": {
-                    "title": "Zero Touch Login",
-                    "caption": "This feature enables you to improve the work efficiency by automatically waking up or logging in your computer. To use the feature, you need to register your face in Windows Hello.",
-                    "tooltip": "When you are in front of your computer or approaching it (within 1.2 or 1.5 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer. <br>Depending on the sensor capability, the maximum detecting distance varies. Refer to the <i>User Guide</i> that comes with your computer for details."
-                },
-                "distanceSensitivityAdjustingForIdea": {
-                    "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                    "captionOn": "Enable this feature to automatically adjust the detecting distance of movements to wake up the system. Turn it off to manually adjust the detecting sensitivity based on your preference.",
-                    "captionOff": "When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
-                    "options": {
-                        "near": "Near",
-                        "medium": "Middle",
-                        "far": "Far"
-                    },
-                    "readMore": "There are three options. In each range, when human movements are detected, your screen will be waked up accordingly.",
-                    "readMoreForSensor1": {
-                        "line1": "• Near: 0-0.4 meter",
-                        "line2": "• Middle: 0-0.6 meter",
-                        "line3": "• Far: 0-1.2 meter"
-                    },
-                    "readMoreForSensor2": {
-                        "line1": "• Near: 0.2-0.55 meter",
-                        "line2": "• Middle: 0.2-1.0 meter",
-                        "line3": "• Far: 0.2-1.5 meter"
-                    }
                 }
             },
             "intelligentScreen": {
@@ -4062,5 +4062,10 @@
     },
     "cpt": {
         "title": "Content Preview Tool"
+    },
+    "storeRating": {
+        "title": "Görüşlerinizi Bize Gönderin",
+        "likeUs": "Bizi değerlendirin",
+        "feedback": "Geri bildirimde bulunun"
     }
 }

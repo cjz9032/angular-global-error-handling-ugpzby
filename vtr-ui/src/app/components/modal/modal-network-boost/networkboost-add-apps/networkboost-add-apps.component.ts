@@ -137,7 +137,8 @@ export class NetworkboostAddAppsComponent implements OnInit, OnChanges, AfterVie
 
 	focusClose() {
 		setTimeout(() => {
-			this.focusElement('close');
+		 const modal = document.getElementsByClassName('networkboost_close_add_apps')[0] as HTMLElement;
+		 modal.focus();
 		}, 2);
 	}
 	checkApps(i) {
@@ -154,7 +155,8 @@ export class NetworkboostAddAppsComponent implements OnInit, OnChanges, AfterVie
 	checkFocus(event) {
 		if (this.noAppsRunning && event.which === 9) {
 			this.noRunningInterval = setInterval(() => {
-				this.focusElement('close');
+			 const modal = document.getElementsByClassName('networkboost_close_add_apps')[0] as HTMLElement;
+		   modal.focus();
 			}, 1);
 		}
 	}

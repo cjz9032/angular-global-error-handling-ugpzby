@@ -1852,6 +1852,14 @@
             "intelligentSecurity": {
                 "title": "Интеллектуальная защита",
                 "readMore": "Подробнее",
+                "image": {
+                    "title": "Интеллектуальная защита",
+                    "description": "Обеспечивает ваш компьютер интеллектуальной технологией распознавания, защищает вашу конфиденциальность и экономит заряд аккумулятора."
+                },
+                "advancedSettings": {
+                    "showAdvSettings": "ДОПОЛНИТЕЛЬНЫЕ НАСТРОЙКИ",
+                    "hideAdvSettings": "СКРЫТЬ ДОПОЛНИТЕЛЬНЫЕ НАСТРОЙКИ"
+                },
                 "HumanPresenceDetection": {
                     "title": "Обнаружение присутствия человека",
                     "tooltip": "Щелкните здесь, чтобы сбросить параметры обнаружения присутствия человека."
@@ -1864,6 +1872,11 @@
                     "title": "Бесконтактный вход",
                     "caption": "Эта функция автоматически разблокирует компьютер или выводит его из режима сна, когда вы оказываетесь перед ним.",
                     "tooltip": "Если вы находитесь перед компьютером или приближаетесь к нему (на расстоянии 1,2 метра), эта функция обеспечивает автоматический вход в систему после распознавания вашего лица. Если вы находитесь на улице, а не внутри помещения, вам потребуется подойти ближе к компьютеру, а пробуждение займет больше времени."
+                },
+                "zeroTouchLoginForIdea": {
+                    "title": "Бесконтактный вход",
+                    "caption": "Эта функция автоматически пробуждает компьютер и выполняет вход в систему, тем самым помогая вам работать эффективнее. Для использования этой функции вам необходимо зарегистрировать свое лицо в Windows Hello.",
+                    "tooltip": "Если вы находитесь перед компьютером или приближаетесь к нему (на расстоянии 1,2 или 1,5 м), эта функция обеспечивает автоматический вход в систему после распознавания вашего лица. Если вы находитесь на улице, а не внутри помещения, вам потребуется подойти ближе к компьютеру, а пробуждение займет больше времени. <br>Максимальная дальность обнаружения зависит от возможностей датчика. Подробную информацию см. в <i>Руководстве пользователя</i> из комплекта поставки вашего компьютера."
                 },
                 "zeroTouchLock": {
                     "title": "Бесконтактная блокировка",
@@ -1879,7 +1892,7 @@
                     },
                     "facialRecognition": {
                         "title": "РАСПОЗНАВАНИЕ ЛИЦ",
-                        "caption": "Можно включить функцию распознавания лиц и предоставить ей доступ к своей камере. Инструмент зафиксирует ваше изображение, чтобы точно распознавать ваше присутствие и определять, когда вы оставляете свое устройство без присмотра. Эти данные обрабатываются локально, на вашем устройстве. Lenovo не имеет к ним доступа и не использует их.",
+                        "caption": "Эта функция помогает увеличить точность распознавания и избежать неожиданной блокировки экрана, особенно когда вы откидываетесь в кресле. Эта функция обрабатывается локально, на вашем устройстве. Lenovo не имеет к ним доступа и не использует их.",
                         "checkBox": "Включите камеру и активируйте эту функцию",
                         "note": {
                             "permission": "У Lenovo Vantage нет доступа к камере. Обозначенная флажком функция не будет работать.",
@@ -1889,18 +1902,18 @@
                         }
                     },
                     "distanceSensitivityAdjusting": {
-                        "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                        "captionOn": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, you can maually adjust the dectecting sensitivity based on your preference.",
-                        "captionOff": "The accuracy varies by body size, posture, and frequency of movement. When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
+                        "title": "АВТОМАТИЧЕСКАЯ РЕГУЛИРОВКА ЧУВСТВИТЕЛЬНОСТИ ОБНАРУЖЕНИЯ РАССТОЯНИЯ",
+                        "captionOn": "Точность зависит от размера тела, осанки и частоты движения. Если компьютер неожиданно блокируется, вы можете вручную настроить чувствительность обнаружения в соответствии с вашими предпочтениями.",
+                        "captionOff": "Точность зависит от размера тела, осанки и частоты движения. Если эта функция отключена, необходимо вручную отрегулировать уровень чувствительности, чтобы настроить расстояние обнаружения. Включите эту функцию, если хотите, чтобы расстояние было настроено автоматически.",
                         "options": {
-                            "near": "Near",
-                            "medium": "Middle",
-                            "far": "Far"
+                            "near": "Рядом",
+                            "medium": "Средняя",
+                            "far": "Далеко"
                         },
                         "readMore": {
-                            "line1": "• Near: 0.9 meter",
-                            "line2": "• Middle: 1.2 meter",
-                            "line3": "• Far: 1.5 meter"
+                            "line1": "• Близко: 0,9 м",
+                            "line2": "• Средне: 1,2 м",
+                            "line3": "• Далеко: 1,5 м"
                         }
                     }
                 },
@@ -1924,17 +1937,38 @@
                         }
                     }
                 },
+                "distanceSensitivityAdjustingForIdea": {
+                    "title": "АВТОМАТИЧЕСКАЯ РЕГУЛИРОВКА ЧУВСТВИТЕЛЬНОСТИ ОБНАРУЖЕНИЯ РАССТОЯНИЯ",
+                    "captionOn": "Включите эту функцию, что автоматически настроить дальность обнаружения движений для пробуждения системы. Отключите эту функцию, чтобы вручную настроить чувствительность обнаружения в соответствии с вашими предпочтениями.",
+                    "captionOff": "Если эта функция отключена, необходимо вручную отрегулировать уровень чувствительности, чтобы настроить расстояние обнаружения. Включите эту функцию, если хотите, чтобы расстояние было настроено автоматически.",
+                    "options": {
+                        "near": "Рядом",
+                        "far": "Далеко",
+                        "medium": "Средняя"
+                    },
+                    "readMore": "Доступно три варианта. При обнаружении движений человека в каждом из диапазонов экран компьютера будет включаться.",
+                    "readMoreForSensor1": {
+                        "line1": "• Близко: 0–0,4 м",
+                        "line2": "• Средне: 0–0,6 м",
+                        "line3": "• Далеко: 0–1,2 м"
+                    },
+                    "readMoreForSensor2": {
+                        "line1": "• Близко: 0,2–0,55 м",
+                        "line2": "• Средне: 0,2–1 м",
+                        "line3": "• Далеко: 0,2–1,5 м"
+                    }
+                },
                 "note": {
                     "description1": "Эта функция основана на технологии Windows Hello. Убедитесь, что функция распознавания лица включена в параметрах Windows.",
                     "description2": "Эта функция обнаруживает ваше присутствие с помощью датчиков и камеры. Тем не менее, она НЕ ОСУЩЕСТВЛЯЕТ сбор каких-либо личных данных.",
-                    "description3": "1. Если компьютер находится в режиме тента, планшета или консоли, эти функции могут работать неправильно.",
-                    "description4": "2. Если компьютер находится в режиме гибернации или выключен, функция бесконтактного входа работать не будет.",
-                    "description6": "4. Если в компьютере включен режим \"в самолете\", эти функции отключены.",
-                    "description7": "Точность зависит от размера тела, осанки и частоты движения. Если компьютер неожиданно блокируется, отрегулируйте чувствительность, чтобы повысить точность.",
-                    "description5a1": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to ",
-                    "description5a2": "User Guide ",
-                    "description5a3": "that comes with it.",
-                    "description5b": "b. Your computer is in hibernation mode or has been turned off."
+                    "description3": "1. Для использования указанных выше функций подберите угол наклона экрана таким образом, чтобы ваше лицо распознавалось.",
+                    "description4": "2. Данные функции не поддерживаются, если:",
+                    "description5a1": "a. Компьютер находится в режиме тента, планшета, вертикальном или отсоединенном режиме. Поддерживаемые на вашем компьютере режимы см. в ",
+                    "description5a2": "Руководстве пользователя ",
+                    "description5a3": "из комплекта его поставки.",
+                    "description5b": "b. Компьютер находится в режиме гибернации или выключен.",
+                    "description6": "3. Если в компьютере включен режим \"в самолете\", эти функции отключены.",
+                    "description7": "Точность зависит от размера тела, осанки и частоты движения. Если компьютер неожиданно блокируется, отрегулируйте чувствительность, чтобы повысить точность."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Перейдите в раздел параметров Windows Hello",
@@ -1943,40 +1977,6 @@
                 "resetToDefault": "Сбросить",
                 "sensitivityAdjusting": {
                     "title": "РЕГУЛИРОВКА ЧУВСТВИТЕЛЬНОСТИ"
-                },
-                "image": {
-                    "title": "Intelligent security",
-                    "description": "Buckles up your PC with intelligent sensing technology, protects your privacy, and saves your battery power."
-                },
-                "advancedSettings": {
-                    "showAdvSettings": "ADVANCED SETTINGS",
-                    "hideAdvSettings": "HIDE ADVANCED SETTINGS"
-                },
-                "zeroTouchLoginForIdea": {
-                    "title": "Zero Touch Login",
-                    "caption": "This feature enables you to improve the work efficiency by automatically waking up or logging in your computer. To use the feature, you need to register your face in Windows Hello.",
-                    "tooltip": "When you are in front of your computer or approaching it (within 1.2 or 1.5 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer. <br>Depending on the sensor capability, the maximum detecting distance varies. Refer to the <i>User Guide</i> that comes with your computer for details."
-                },
-                "distanceSensitivityAdjustingForIdea": {
-                    "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                    "captionOn": "Enable this feature to automatically adjust the detecting distance of movements to wake up the system. Turn it off to manually adjust the detecting sensitivity based on your preference.",
-                    "captionOff": "When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
-                    "options": {
-                        "near": "Near",
-                        "medium": "Middle",
-                        "far": "Far"
-                    },
-                    "readMore": "There are three options. In each range, when human movements are detected, your screen will be waked up accordingly.",
-                    "readMoreForSensor1": {
-                        "line1": "• Near: 0-0.4 meter",
-                        "line2": "• Middle: 0-0.6 meter",
-                        "line3": "• Far: 0-1.2 meter"
-                    },
-                    "readMoreForSensor2": {
-                        "line1": "• Near: 0.2-0.55 meter",
-                        "line2": "• Middle: 0.2-1.0 meter",
-                        "line3": "• Far: 0.2-1.5 meter"
-                    }
                 }
             },
             "intelligentScreen": {
@@ -4062,5 +4062,10 @@
     },
     "cpt": {
         "title": "Content Preview Tool"
+    },
+    "storeRating": {
+        "title": "Поделитесь с нами своим мнением",
+        "likeUs": "Поставьте нам отметку \"Нравится\"",
+        "feedback": "Отправить отзыв"
     }
 }

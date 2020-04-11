@@ -1852,6 +1852,14 @@
             "intelligentSecurity": {
                 "title": "Älykäs suojaus",
                 "readMore": "Lue lisää",
+                "image": {
+                    "title": "Älykäs suojaus",
+                    "description": "Tarjoaa tietokoneellesi älykkään tunnistustekniikan, pitää tietosi turvassa ja säästää akkua."
+                },
+                "advancedSettings": {
+                    "showAdvSettings": "LISÄASETUKSET",
+                    "hideAdvSettings": "PIILOTA LISÄASETUKSET"
+                },
                 "HumanPresenceDetection": {
                     "title": "Ihmisten läsnäolon tunnistus",
                     "tooltip": "Napsauta tätä, jos haluat palauttaa ihmisten läsnäolon tunnistusasetukset."
@@ -1864,6 +1872,11 @@
                     "title": "Zero Touch -kirjautuminen",
                     "caption": "Tämä ominaisuus avaa tietokoneen lukituksen tai herättää tietokoneen automaattisesti, kun olet tietokoneen edessä tai lähestyt tietokonetta.",
                     "tooltip": "Kun olet tietokoneen äärellä tai lähestyt sitä (1,2 metrin etäisyydellä), tämän toiminnon avulla voit kirjautua järjestelmään automaattisesti, kun kasvosi on tunnistettu. Jos olet ulkona etkä toimistossa, sinun on oltava lähempänä tietokonettasi ja herääminen kestää kauemmin."
+                },
+                "zeroTouchLoginForIdea": {
+                    "title": "Zero Touch -kirjautuminen",
+                    "caption": "Tämä ominaisuus sallii sinun työskennellä tehokkaammin automatisoimalla tietokoneesi herättämisen tai sisäänkirjautumisen. Sinun on rekisteröitävä kasvosi Windows Hello -palveluun tämän ominaisuuden käyttämiseksi.",
+                    "tooltip": "Kun olet tietokoneesi äärellä tai lähestyt sitä (1,2 tai 1,5 metriä etäisyydellä), tämän ominaisuuden avulla voit kirjautua järjestelmään automaattisesti, kun kasvosi on tunnistettu. Jos olet ulkona etkä toimistossa, sinun on oltava lähempänä tietokonettasi ja herääminen kestää kauemmin. <br>Tunnistamisen enimmäisetäisyys riippuu tunnistimen toimintakyvystä. Katso lisätietoja tietokoneesi mukana toimitetusta <i>käyttöoppaasta</i>."
                 },
                 "zeroTouchLock": {
                     "title": "Zero Touch -lukitus",
@@ -1879,7 +1892,7 @@
                     },
                     "facialRecognition": {
                         "title": "KASVOJENTUNNISTUS",
-                        "caption": "Voit ottaa kasvojentunnistustoiminnon käyttöön ja sallia sen käyttää kameraasi. Tämä työkalu ottaa sinusta valokuvan, jotta se voi tunnistaa oikein, kun olet puhelimen äärellä tai havaita, milloin olet poistunut sen läheltä. Nämä tiedot käsitellään laitteessa paikallisesti. Lenovolla ei ole pääsyä tietoihin eikä se voi käyttää niitä.",
+                        "caption": "Tämä ominaisuus auttaa parantamaan tunnistuksen suorituskykyä ja välttymään odottamattomalta näytön lukitukselta varsinkin, kun nojaudut taaksepäin tuolissasi. Tämä ominaisuus käsitellään paikallisesti laitteellasi. Lenovolla ei ole pääsyä tietoihin eikä se voi käyttää niitä.",
                         "checkBox": "Kytke kameraan virta ja ota tämä toiminto käyttöön",
                         "note": {
                             "permission": "Lenovo Vantage ei voi käyttää kameraa. Valintaruudun toiminto ei toimi.",
@@ -1889,18 +1902,18 @@
                         }
                     },
                     "distanceSensitivityAdjusting": {
-                        "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                        "captionOn": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, you can maually adjust the dectecting sensitivity based on your preference.",
-                        "captionOff": "The accuracy varies by body size, posture, and frequency of movement. When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
+                        "title": "AUTOMAATTISEN ETÄISYYDENTUNNISTUKSEN MUUTTAMINEN",
+                        "captionOn": "Tarkkuus vaihtelee kehon koon, asennon ja liikkumisen tiheyden mukaan. Jos tietokoneesi lukittu odottamatta, voit säätää tunnistuksen herkkyyttä manuaalisesti.",
+                        "captionOff": "Tarkkuus vaihtelee kehon koon, asennon ja liikkumisen tiheyden mukaan. Kun tämä ominaisuus ei ole käytössä, sinun täytyy säätää herkkyyspalkkia manuaalisesti muuttaaksesi tunnistusetäisyyttä. Ota se käyttöön, jos haluat, että etäisyys määritetään automaattisesti.",
                         "options": {
-                            "near": "Near",
-                            "medium": "Middle",
-                            "far": "Far"
+                            "near": "Lähellä",
+                            "medium": "Keskitaso",
+                            "far": "Kaukana"
                         },
                         "readMore": {
-                            "line1": "• Near: 0.9 meter",
-                            "line2": "• Middle: 1.2 meter",
-                            "line3": "• Far: 1.5 meter"
+                            "line1": "• Lähellä: 0,9 metriä",
+                            "line2": "• Keskitaso: 1,2 metriä",
+                            "line3": "• Kaukana: 1,5 metriä"
                         }
                     }
                 },
@@ -1924,17 +1937,38 @@
                         }
                     }
                 },
+                "distanceSensitivityAdjustingForIdea": {
+                    "title": "AUTOMAATTISEN ETÄISYYDENTUNNISTUKSEN MUUTTAMINEN",
+                    "captionOn": "Ota tämä ominaisuus käyttöön säätääksesi automaattisesti etäisyyttä, josta liikkeitä tunnistetaan järjestelmän herättämiseksi. Poista se käytöstä, jos haluat määrittää haluamasi tunnistusherkkyyden manuaalisesti.",
+                    "captionOff": "Kun tämä ominaisuus ei ole käytössä, sinun täytyy säätää herkkyyspalkkia manuaalisesti muuttaaksesi tunnistusetäisyyttä. Ota se käyttöön, jos haluat, että etäisyys määritetään automaattisesti.",
+                    "options": {
+                        "near": "Lähellä",
+                        "far": "Kaukana",
+                        "medium": "Keskitaso"
+                    },
+                    "readMore": "Valittavissa on kolme vaihtoehtoa. Kun ihmisten havaitaan liikkuvan näillä alueilla, näyttösi herätetään.",
+                    "readMoreForSensor1": {
+                        "line1": "• Lähellä: 0–0,4 metriä",
+                        "line2": "• Keskitaso: 0–0,6 metriä",
+                        "line3": "• Kaukana: 0–1,2 metriä"
+                    },
+                    "readMoreForSensor2": {
+                        "line1": "• Lähellä: 0,2–0,55 metriä",
+                        "line2": "• Keskitaso: 0,2–1,0 metriä",
+                        "line3": "• Kaukana: 0,2–1,5 metriä"
+                    }
+                },
                 "note": {
                     "description1": "Tämä ominaisuus hyödyntää Windows Hellota. Varmista, että kasvojentunnistus on otettu käyttöön Windowsin asetuksista.",
                     "description2": "Tämä ominaisuus käyttää tunnistimia ja kameraa läsnäolon havaitsemiseksi. Toiminto EI kuitenkaan kerää henkilötietoja.",
-                    "description3": "1. Jos tietokone on kolmio-, taitos- tai tauluasennossa, nämä ominaisuudet eivät ehkä toimi oikein.",
-                    "description4": "2. Jos tietokone on horrostilassa tai jos tietokoneesta on katkaistu virta, Zero Touch -kirjautuminen ei toimi.",
-                    "description6": "4. Jos tietokoneen lentotila on käytössä, nämä langattomat ominaisuudet ovat poissa käytöstä.",
-                    "description7": "Tarkkuus vaihtelee kehon koon, asennon ja liikkumisen tiheyden mukaan. Jos tietokone lukitaan odottamatta, paranna tarkkuutta säätämällä herkkyyspalkkia.",
-                    "description5a1": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to ",
-                    "description5a2": "User Guide ",
-                    "description5a3": "that comes with it.",
-                    "description5b": "b. Your computer is in hibernation mode or has been turned off."
+                    "description3": "1. Kun haluat käyttää yllä kuvattuja toimintoja, säädä tietokoneesi näytön kulmaa siten, että kasvosi voidaan tunnistaa.",
+                    "description4": "2. Yllä kuvattuja toimintoja ei tueta, kun:",
+                    "description5a1": "a. Tietokoneesi on kolmio-, taulu- tai taitosasennossa tai irrotettuna. Katso tietokoneesi tukemat asennot sen mukana toimitetusta ",
+                    "description5a2": "käyttöoppaasta ",
+                    "description5a3": ".",
+                    "description5b": "b. Tietokoneesi on horrostilassa tai siitä on katkaistu virta.",
+                    "description6": "3. Jos tietokoneen lentotila on käytössä, nämä langattomat ominaisuudet ovat poissa käytöstä.",
+                    "description7": "Tarkkuus vaihtelee kehon koon, asennon ja liikkumisen tiheyden mukaan. Jos tietokone lukitaan odottamatta, paranna tarkkuutta säätämällä herkkyyspalkkia."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Siirry Windows Hello -asetuksiin",
@@ -1943,40 +1977,6 @@
                 "resetToDefault": "Uudelleenasetus",
                 "sensitivityAdjusting": {
                     "title": "TUNNISTUSHERKKYYDEN MUUTTAMINEN"
-                },
-                "image": {
-                    "title": "Intelligent security",
-                    "description": "Buckles up your PC with intelligent sensing technology, protects your privacy, and saves your battery power."
-                },
-                "advancedSettings": {
-                    "showAdvSettings": "ADVANCED SETTINGS",
-                    "hideAdvSettings": "HIDE ADVANCED SETTINGS"
-                },
-                "zeroTouchLoginForIdea": {
-                    "title": "Zero Touch Login",
-                    "caption": "This feature enables you to improve the work efficiency by automatically waking up or logging in your computer. To use the feature, you need to register your face in Windows Hello.",
-                    "tooltip": "When you are in front of your computer or approaching it (within 1.2 or 1.5 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer. <br>Depending on the sensor capability, the maximum detecting distance varies. Refer to the <i>User Guide</i> that comes with your computer for details."
-                },
-                "distanceSensitivityAdjustingForIdea": {
-                    "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                    "captionOn": "Enable this feature to automatically adjust the detecting distance of movements to wake up the system. Turn it off to manually adjust the detecting sensitivity based on your preference.",
-                    "captionOff": "When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
-                    "options": {
-                        "near": "Near",
-                        "medium": "Middle",
-                        "far": "Far"
-                    },
-                    "readMore": "There are three options. In each range, when human movements are detected, your screen will be waked up accordingly.",
-                    "readMoreForSensor1": {
-                        "line1": "• Near: 0-0.4 meter",
-                        "line2": "• Middle: 0-0.6 meter",
-                        "line3": "• Far: 0-1.2 meter"
-                    },
-                    "readMoreForSensor2": {
-                        "line1": "• Near: 0.2-0.55 meter",
-                        "line2": "• Middle: 0.2-1.0 meter",
-                        "line3": "• Far: 0.2-1.5 meter"
-                    }
                 }
             },
             "intelligentScreen": {
@@ -4062,5 +4062,10 @@
     },
     "cpt": {
         "title": "Content Preview Tool"
+    },
+    "storeRating": {
+        "title": "Anna äänesi kuulua",
+        "likeUs": "Tykkää meistä",
+        "feedback": "Antaa palautetta"
     }
 }

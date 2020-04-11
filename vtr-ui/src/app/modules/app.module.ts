@@ -70,7 +70,13 @@ import { UiCustomSliderModule } from '../components/ui/ui-custom-slider/ui-custo
 import { UICustomRadioModule } from '../components/ui/ui-custom-radio/ui-custom-radio.module';
 import { NotificationComponent } from 'src/app/components/notification/notification.component';
 import { UiBannerComponent } from 'src/app/components/ui/ui-banner/ui-banner.component';
+import { UiCloseButtonModule } from '../components/ui/ui-close-button/ui-close-button.module';
 // import { ModalErrorMessageComponent } from '../components/modal/modal-error-message/modal-error-message.component';
+import { ModalStoreRatingComponent } from '../components/modal/modal-store-rating/modal-store-rating.component';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons/faEnvelope';
+import { faEllipsisH } from '@fortawesome/pro-light-svg-icons/faEllipsisH';
+import { faTimes } from '@fortawesome/pro-light-svg-icons/faTimes';
+import {faHeart as fasHeart} from '@fortawesome/free-solid-svg-icons/faHeart';
 
 @NgModule({
 	declarations: [
@@ -84,6 +90,7 @@ import { UiBannerComponent } from 'src/app/components/ui/ui-banner/ui-banner.com
 		// PageSettingsComponent,
 		ModalNewFeatureTipComponent,
 		PageSettingsComponent,
+		ModalStoreRatingComponent,
 		// ModalErrorMessageComponent
 		NotificationComponent,
 		UiBannerComponent
@@ -112,6 +119,7 @@ import { UiBannerComponent } from 'src/app/components/ui/ui-banner/ui-banner.com
 		NgbModalModule,
 		NgbTooltipModule,
 		UiButtonModule,
+		UiCloseButtonModule,
 		RouterModule,
 		CommonPipeModule,
 		CommonUiModule,
@@ -187,5 +195,9 @@ export class AppModule {
 		library.addIcons(faCloudDownload);
 		library.addIcons(faLaptop);
 		library.addIcons(faHeart);
+		library.addIcons(faEnvelope);
+		library.addIcons(faEllipsisH);
+		library.addIcons(faTimes);
+		library.addIcons(fasHeart);
 	}
 }
