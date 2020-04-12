@@ -60,7 +60,10 @@
 												<h1 class="title-big mb-3">{{'smartPerformance.scanCompletePage.summary' |translate }}</h1>
 												<p [innerHTML]="'smartPerformance.scanCompletePage.summaryDetails' |translate:{issueCount: issueCount }"></p>
 												<div class="d-flex justify-content-between my-5">
-													<button class="action-button" (click)=openSubscribeModal()>{{'smartPerformance.scanCompletePage.signupRepairButton' |translate }}</button>
+													<button class="action-button" vtrMetrics
+													metricsItem="smartPerformance.subscribeModal"
+													metricsEvent="ItemClick"
+													metricsParent="pages.support.smartPerformance" (click)=openSubscribeModal()>{{'smartPerformance.scanCompletePage.signupRepairButton' |translate }}</button>
 													<div class="desc col pl-5">
 														<p [innerHTML]="'smartPerformance.scanCompletePage.monthlyPricing' |translate"></p>
 													</div>
@@ -1264,7 +1267,10 @@
 												<h3>{{'smartPerformance.subscriberScanHomePage.subTitle' |translate }}</h3>
 												<p>{{'smartPerformance.subscriberScanHomePage.description' |translate }}</p>
 												<div class="d-flex justify-content-between my-5 w-75">
-													<button class="action-button" (click)="ScanNowSummary()">{{'smartPerformance.subscriberScanHomePage.scanNow' |translate }}</button>
+													<button class="action-button" (click)="ScanNowSummary()" vtrMetrics
+													metricsItem="smartPerformance.showSummary"
+													metricsEvent="FeatureClick"
+													metricsParent="pages.support.smartPerformance">{{'smartPerformance.subscriberScanHomePage.scanNow' |translate }}</button>
 													<div class="desc desc1">
 														<b>{{'smartPerformance.subscriberScanHomePage.mostRecent' |translate }}</b><br> 10/23 at 06:56pm
 													</div>
@@ -1336,7 +1342,11 @@
 															[ngClass]="[tabIndex ===2 ? 'calender-drop' : 'dropdownmenu']">
 															<div *ngIf="tabIndex === 0">
 																<a (click)="anualScanSummary(year)" *ngFor="let year of yearsList"
-																	[ngClass]="{'link-active': year.displayName == annualYear}">
+																	[ngClass]="{'link-active': year.displayName == annualYear}"
+																	vtrMetrics
+																	metricsItem="smartPerformance.annualScanSummary"
+																	metricsEvent="FeatureClick"
+																	metricsParent="pages.support.smartPerformance">
 																	{{year.displayName}}
 																	<br>
 																</a>
@@ -1346,7 +1356,11 @@
 															<div *ngIf="tabIndex === 1">
 																<div *ngFor="let menu of quarterlyMenu;let ind=index">
 																	<a (click)="quarterlyScanSummary(menu)"
-																		[ngClass]="{'link-active':menu.key == quarterlyMonth.key}">{{menu.displayName}}</a>
+																		[ngClass]="{'link-active':menu.key == quarterlyMonth.key}"
+																		vtrMetrics
+																		metricsItem="smartPerformance.quaterlyScanSummary"
+																		metricsEvent="FeatureClick"
+																		metricsParent="pages.support.smartPerformance">{{menu.displayName}}</a>
 																</div>
 															</div>
 	
@@ -1370,7 +1384,10 @@
 																			</div>
 																			<div class="row">
 																				<div class="col-3"></div>
-																				<div class="col-9"><button class="custom-go-btn mt-3" (click)="customDateScanSummary()">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtGo' |translate }}</button>
+																				<div class="col-9"><button class="custom-go-btn mt-3" vtrMetrics
+																					metricsItem="smartPerformance.customDateScanSummmary"
+																					metricsEvent="FeatureClick"
+																					metricsParent="pages.support.smartPerformance" (click)="customDateScanSummary()">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtGo' |translate }}</button>
 																				</div>
 																			</div>
 																		</div>
@@ -1559,7 +1576,13 @@
 										<div class="recommended-action sidebar-widget">
 											<div class="title pb-3">{{'smartPerformance.scanCompletePage.recommendedAction.title' |translate }}</div>
 											<div class="card-info">
-												<p>{{'smartPerformance.scanCompletePage.recommendedAction.description' |translate }} <a href="#" class="link-text">{{'smartPerformance.subscriptionDetails.learnMore' |translate }}</a>
+												<p>{{'smartPerformance.scanCompletePage.recommendedAction.description' |translate }} 
+													<a href="#" class="link-text"
+													vtrMetrics
+													metricsItem="smartPerformance.learnmore"
+													metricsEvent="ArticleClick"
+													metricsParent="pages.support.smartPerformance"
+													>{{'smartPerformance.subscriptionDetails.learnMore' |translate }}</a>
 												</p>
 											</div>
 											<div class="pricing">
@@ -1567,7 +1590,10 @@
 												<small>{{'smartPerformance.scanCompletePage.recommendedAction.monthlyPricing' |translate }}</small>
 											</div>
 											<p>{{'smartPerformance.scanCompletePage.recommendedAction.longerTerm' |translate }}</p>
-											<button class="action-button mt-2" (click)=openSubscribeModal()>{{'smartPerformance.scanCompletePage.recommendedAction.signupButton' |translate }}</button>
+											<button class="action-button mt-2" vtrMetrics
+											metricsItem="smartPerformance.subscribeModal"
+											metricsEvent="FeatureClick"
+											metricsParent="pages.support.smartPerformance" (click)=openSubscribeModal()>{{'smartPerformance.scanCompletePage.recommendedAction.signupButton' |translate }}</button>
 										</div>
 									</div>
 								</div>
@@ -1719,8 +1745,14 @@
 															</ul>
 															<!-- <a href="#" class="link-text">Manage Subscription</a> -->
 															<div >
-																	<button class="save-button" (click)="saveChangedScanSchedule()">{{'smartPerformance.scanSettings.txtSave' |translate }}</button>
-																	<a class="cancel-link active" (click)="cancelChangedScanSchedule()">{{'smartPerformance.scanSettings.txtCancel' |translate }}</a>
+																	<button class="save-button" (click)="saveChangedScanSchedule()" vtrMetrics
+																	metricsItem="smartPerformance.saveScanSchedule"
+																	metricsEvent="FeatureClick"
+																	metricsParent="pages.support.smartPerformance">{{'smartPerformance.scanSettings.txtSave' |translate }}</button>
+																	<a class="cancel-link active" (click)="cancelChangedScanSchedule()" vtrMetrics
+																	metricsItem="smartPerformance.cancelScanSchedule"
+																	metricsEvent="FeatureClick"
+																	metricsParent="pages.support.smartPerformance">{{'smartPerformance.scanSettings.txtCancel' |translate }}</a>
 																</div>
 															
 														</div>

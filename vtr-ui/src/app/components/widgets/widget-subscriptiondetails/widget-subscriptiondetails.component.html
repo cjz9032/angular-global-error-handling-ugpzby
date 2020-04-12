@@ -17,5 +17,9 @@
             <div class="status"><div [ngClass]="{'badge-danger': strStatus==='INACTIVE', 'badge-success': strStatus==='ACTIVE' }" class="badge badge-pill">{{status |translate}}</div></div>
         </li>
     </ul>
-    <a class="link-text" (click)=openSubscribeModal()>{{'smartPerformance.subscriptionDetails.manageSubscription' |translate }}</a>
+    <a class="link-text" (click)=openSubscribeModal() 
+    vtrMetrics
+    metricsItem="smartPerformance.subscribeModal"
+    metricsEvent="FeatureClick"
+    metricsParent="pages.support.smartPerformance">{{'smartPerformance.subscriptionDetails.manageSubscription' |translate }}</a>
 </div>
