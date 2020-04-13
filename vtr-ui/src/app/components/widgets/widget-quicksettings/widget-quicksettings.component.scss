@@ -63,8 +63,7 @@
 			border:none;
 		}
 		&:focus {
-			outline: 0.1rem solid $menu_hover;
-			outline-offset: 0.2rem;
+			@include outline-blue;
 		}
 	}
 }
@@ -76,6 +75,6 @@
 	cursor: pointer;
 	font-weight: 600;
 	&:focus {
-		outline: 0.1rem solid $menu_hover;
+		@include outline-blue;
 	}
 }

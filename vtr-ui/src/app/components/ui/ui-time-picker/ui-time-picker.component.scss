@@ -24,8 +24,7 @@
 			text-align: center;
 			display: inline-block;
 			&:focus {
-				outline: 0.1rem solid $menu_hover;
-				outline-offset: 0.2rem;
+				@include outline-blue;
 			}
 			.toggle-icon {
 				fa-icon {
@@ -33,8 +32,7 @@
 					color: #4579f0;
 				}
 				&:focus {
-					outline: 0.1rem solid $menu_hover;
-					outline-offset: 0.2rem;
+					@include outline-blue;
 				}
 			}
 			span {
@@ -73,7 +71,7 @@
 			font-size: 2rem;
 			padding: 0 2.5rem;
 			&:focus {
-				outline: 0.1rem solid $menu_hover;
+				@include outline-blue;
 			}
 		}
 	}
@@ -205,8 +203,7 @@
 			cursor: pointer;
 		}
 		&:focus {
-			outline: 0.1rem solid $menu_hover;
-			outline-offset: 0.2rem;
+			@include outline-blue;
 		}
 	}
 

@@ -22,8 +22,7 @@
 			}
 		}
 		&:focus {
-			outline: 0.1rem solid $menu_hover;
-			outline-offset: 0.2rem;
+			@include outline-blue;
 		}
 		@media #{$breakpoint_xl2}{
 			width: 9.6rem;
