@@ -6,13 +6,17 @@
 				<div class="col-11 pl-3 row align-items-center justify-content-between flex-nowrap">
 					<h3 class="mb-0">{{item.title}}</h3>
 					<span [hidden]="item.showOwn" class="badge text-ellipsis ml-auto"
-						title="{{item.detail}}"
+						title=""
 						[ngClass]="{'status-enabled':item.status === 'enabled' || item.status === 'installed' ,
 						'status-disabled': item.status === 'disabled' || item.status === 'not-installed',
-						'status-loading': item.status === 'loading' || item.status === 'installing' || item.status === 'failedLoad'}">
+						'status-loading': item.status === 'loading' || item.status === 'installing' || item.status === 'failedLoad'}"
+						[ngbTooltip]="item.detail" tooltipClass="vtr-tooltip" container="body"
+						>
 						{{item.detail}}</span>
 					<span [hidden]="!item.showOwn" class="badge text-ellipsis status-haveOwn ml-auto"
-						title="{{badgeContent | translate}}">
+						title=""
+						[ngbTooltip]="badgeContent | translate" tooltipClass="vtr-tooltip" container="body"
+						>
 						{{badgeContent | translate}}</span>
 					<a [hidden]="item.status !== 'failedLoad'"
 						class="ml-3"

@@ -86,7 +86,9 @@
 							[label]="'appsForYou.appDetails.installButton.seeMore' | translate"></vtr-ui-button>
 					</div>
 					<div class="error-message text-ellipsis"
-						*ngIf="errorMessage" [title]="errorMessage">{{ errorMessage }}</div>
+						*ngIf="errorMessage" [title]=""
+						[ngbTooltip]="errorMessage" tooltipClass="vtr-tooltip" container="body"
+						>{{ errorMessage }}</div>
 				</div>
 			</div>
 

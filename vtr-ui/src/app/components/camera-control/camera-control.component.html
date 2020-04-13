@@ -2,22 +2,16 @@
 	<div class="row">
 		<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 pl-0 pr-0">
 			<div class="camera-preview">
-				<video #cameraPreview
-					*ngIf="!disabledAll && !isCameraInErrorState"
-					class="feed"></video>
-				<img class="feed disable"
-					*ngIf="disabledAll && !isCameraInErrorState"
-					src="assets/images/camera-disable.png"
-					title="{{'device.deviceSettings.displayCamera.camera.notAvailable' | translate}}" />
-				<div class="error"
-					*ngIf="isCameraInErrorState">
-					<div class="error-title"
-						id="camera-error-title"
-						attr.aria-label="camera-error-title">
+				<video #cameraPreview *ngIf="!disabledAll && !isCameraInErrorState" class="feed"></video>
+				<img class="feed disable" *ngIf="disabledAll && !isCameraInErrorState"
+					src="assets/images/camera-disable.png" title=""
+					[ngbTooltip]="'device.deviceSettings.displayCamera.camera.notAvailable' | translate"
+					tooltipClass="vtr-tooltip" container="body" />
+				<div class="error" *ngIf="isCameraInErrorState">
+					<div class="error-title" id="camera-error-title" attr.aria-label="camera-error-title">
 						{{ cameraErrorTitle | translate }}
 					</div>
-					<div class="error-description"
-						id="camera-error-description"
+					<div class="error-description" id="camera-error-description"
 						attr.aria-label="camera-error-description">
 						{{ cameraErrorDescription | translate }}
 					</div>
@@ -26,77 +20,57 @@
 		</div>
 		<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 camera-details">
 			<ul class="list-group list-group-flush">
-				<li class="list-group-item"
-					*ngIf="cameraSettings.brightness && cameraSettings.brightness.supported">
-					<div class="slider-item-text text-uppercase"
-						id="camera-brightness"
+				<li class="list-group-item" *ngIf="cameraSettings.brightness && cameraSettings.brightness.supported">
+					<div class="slider-item-text text-uppercase" id="camera-brightness"
 						attr.aria-label="camera-brightness">
 						<!-- Brightness -->
 						{{'device.deviceSettings.displayCamera.camera.brightness' | translate}}
 					</div>
-					<vtr-ui-custom-slider [step]="cameraSettings.brightness.step"
-						[min]="cameraSettings.brightness.min"
-						[max]="cameraSettings.brightness.max"
-						[isDisabled]="disabledAll"
-						[value]="cameraSettings.brightness.value"
-						(sliderChange)="onBrightnessSliderChange($event)"
-						[metricsItem]="'cameraSettings-brightness'"
-						[metricsValue]="cameraSettings.brightness.value"
+					<vtr-ui-custom-slider [step]="cameraSettings.brightness.step" [min]="cameraSettings.brightness.min"
+						[max]="cameraSettings.brightness.max" [isDisabled]="disabledAll"
+						[value]="cameraSettings.brightness.value" (sliderChange)="onBrightnessSliderChange($event)"
+						[metricsItem]="'cameraSettings-brightness'" [metricsValue]="cameraSettings.brightness.value"
 						[sliderId]="'cameraSettings-brightness'">
 					</vtr-ui-custom-slider>
 				</li>
-				<li class="list-group-item"
-					*ngIf="cameraSettings.contrast && cameraSettings.contrast.supported">
-					<div class="slider-item-text text-uppercase"
-						id="camera-contrast"
-						attr.aria-label="camera-contrast">
+				<li class="list-group-item" *ngIf="cameraSettings.contrast && cameraSettings.contrast.supported">
+					<div class="slider-item-text text-uppercase" id="camera-contrast" attr.aria-label="camera-contrast">
 						<!-- Contrast -->
 						{{'device.deviceSettings.displayCamera.camera.contrast' | translate}}
 					</div>
-					<vtr-ui-custom-slider [step]="cameraSettings.contrast.step"
-						[min]="cameraSettings.contrast.min"
-						[max]="cameraSettings.contrast.max"
-						[isDisabled]="disabledAll"
-						[value]="cameraSettings.contrast.value"
-						[metricsItem]="'cameraSettings-contrast'"
-						[metricsValue]="cameraSettings.contrast.value"
-						(sliderChange)="onContrastSliderChange($event)"
+					<vtr-ui-custom-slider [step]="cameraSettings.contrast.step" [min]="cameraSettings.contrast.min"
+						[max]="cameraSettings.contrast.max" [isDisabled]="disabledAll"
+						[value]="cameraSettings.contrast.value" [metricsItem]="'cameraSettings-contrast'"
+						[metricsValue]="cameraSettings.contrast.value" (sliderChange)="onContrastSliderChange($event)"
 						[sliderId]="'cameraSettings-contrast'">
 					</vtr-ui-custom-slider>
 				</li>
 				<li class="list-group-item"
 					*ngIf="cameraSettings.exposure && cameraSettings.exposure.autoModeSupported">
 					<div class="d-flex justify-content-between">
-						<div class="slider-item-text text-uppercase"
-							id="camera-auto-exposure"
+						<div class="slider-item-text text-uppercase" id="camera-auto-exposure"
 							attr.aria-label="camera-auto-exposure">
 							<!-- Auto Exposure -->
 							{{'device.deviceSettings.displayCamera.camera.autoExposure' | translate}}
 						</div>
 						<div class="float-right">
 							<vtr-ui-switch-onoff [value]="cameraFeatureAccess.exposureAutoValue"
-								[disabled]="disabledAll"
-								(toggle)="onAutoExposureChange($event)"
+								[disabled]="disabledAll" (toggle)="onAutoExposureChange($event)"
 								[ariaLabel]="'device.deviceSettings.displayCamera.camera.autoExposure' | translate"
 								[onOffSwitchId]="'cameraSettings-autoExposure'"></vtr-ui-switch-onoff>
 						</div>
 					</div>
 					<div *ngIf="!cameraFeatureAccess.exposureAutoValue">
 						<vtr-ui-custom-slider [hidden]="!cameraFeatureAccess.showAutoExposureSlider"
-							[step]="cameraSettings.exposure.step"
-							[min]="cameraSettings.exposure.min"
-							[max]="cameraSettings.exposure.max"
-							[isDisabled]="disabledAll"
-							[value]="cameraSettings.exposure.value"
-							[metricsItem]="'cameraSettings-exposure'"
+							[step]="cameraSettings.exposure.step" [min]="cameraSettings.exposure.min"
+							[max]="cameraSettings.exposure.max" [isDisabled]="disabledAll"
+							[value]="cameraSettings.exposure.value" [metricsItem]="'cameraSettings-exposure'"
 							[metricsValue]="cameraSettings.exposure.value"
-							(sliderChange)="onExposureSliderChange($event)"
-							[sliderId]="'cameraSettings-autoExposure'">
+							(sliderChange)="onExposureSliderChange($event)" [sliderId]="'cameraSettings-autoExposure'">
 						</vtr-ui-custom-slider>
 					</div>
 				</li>
-				<li class="list-group-item"
-					*ngIf="cameraSettings.focus && cameraSettings.focus.supported">
+				<li class="list-group-item" *ngIf="cameraSettings.focus && cameraSettings.focus.supported">
 					<div class="d-flex justify-content-between">
 						<div class="slider-item-text text-uppercase ">
 							<!-- Auto Focus -->

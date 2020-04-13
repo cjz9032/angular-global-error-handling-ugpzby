@@ -13,7 +13,9 @@
 			<div class="tab-label"
 				id="myDevice-settings-header-menu-{{tab.icon}}-title"
 			attr.aria-label="myDevice-settings-header-menu-{{tab.icon}}-title"
-			title="{{tab.label}}">
+			title=""
+			[ngbTooltip]="tab.label" tooltipClass="vtr-tooltip" container="body"
+			>
 			<i class="icomoon {{tab.iconClass}}"></i>
 			<span class="text">{{tab.label}}</span>
 		</div>
