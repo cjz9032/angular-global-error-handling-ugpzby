@@ -49,6 +49,15 @@
 		outline: 0.1rem solid $menu_hover;
 	}
 
+	@media #{$high-contrast} {
+
+		.x,
+		.x::before,
+		&:hover .x,
+		&:hover .x::before {
+			background: $light;
+		}
+	}
 	@media #{$black-on-white} {
 
 		.x,
