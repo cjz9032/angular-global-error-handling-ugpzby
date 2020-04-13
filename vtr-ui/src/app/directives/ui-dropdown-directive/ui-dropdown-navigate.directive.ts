@@ -29,10 +29,12 @@ export class UiDropdownNavigate implements OnInit, AfterViewInit {
 
 	constructor(private elRef: ElementRef, private renderer: Renderer2) {}
 
+	// Dropdown listbox receives the focus
 	ngOnInit() {
 		this.elRef.nativeElement.focus();
 	}
 
+	// this lifecycle hook sets focus to selected interval if any or sets focus to first element in list
 	ngAfterViewInit() {
 		this.focusable = [...Array.from(this.elRef.nativeElement.children)];
 		if(this.selectedChild) {
@@ -48,7 +50,7 @@ export class UiDropdownNavigate implements OnInit, AfterViewInit {
 
 	@HostListener("document:keydown", ["$event"])
 	onKeydownEvent() {
-		
+		// keyboard events triggered on the listbox.
 		switch(event['keyCode']) {
 			case 9:
 			case 27:
@@ -82,6 +84,7 @@ export class UiDropdownNavigate implements OnInit, AfterViewInit {
 		
 	}
 
+	// closes the list box when clicked outside.
 	@HostListener("document:click", ["$event"])
 	onClickedOutside() {
 		if (
