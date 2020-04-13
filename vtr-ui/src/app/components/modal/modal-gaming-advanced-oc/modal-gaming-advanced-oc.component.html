@@ -6,7 +6,7 @@
         <div class="modal-header">
             <h2>{{ 'gaming.dashboard.device.advancedOC.title' | translate }}</h2>
             <p>{{ 'gaming.dashboard.device.advancedOC.description' | translate }}</p>
-            <button type="button" tabindex="1" class="close" aria-label="close" (click)="closeModal()">
+            <button type="button" tabindex="0" class="close" aria-label="close" role="button" (click)="closeModal()">
                 ×
             </button>
         </div>
@@ -15,17 +15,17 @@
                 <h3>{{ 'gaming.dashboard.device.advancedOC.gpuOverclock' | translate }}</h3>
                 <ul class="clearfix">
                     <li *ngFor="let item of advancedOCInfo.gpuParameterList; let idx = index">
-                        <p class="overclock-name"
-                            [title]="'gaming.dashboard.device.advancedOC.gpuOCTips.gpuOCTip'+item.tuneId | translate">
+                        <p class="overclock-name" [title]="'gaming.dashboard.device.advancedOC.gpuOCTips.gpuOCTip'+item.tuneId | translate">
                             {{ 'gaming.dashboard.device.advancedOC.gpuOCNames.gpuOCName'+item.tuneId | translate }}
                         </p>
                         <div class="overclock-range" tooltipClass="vtr-tool-tip" container="body">
                             <div class="left-slider">
-                                <vtr-ui-brightness-slider [minValue]="item.minValue" [maxValue]="item.maxValue" [step]="item.stepValue" [lightingData]="item.OCValue"  [vtrMetricEnabled]="false" (onSliderChanged)="setRangeValue($event,idx,'gpuParameterList',0,false)">
+                                <vtr-ui-brightness-slider [minValue]="item.minValue" [maxValue]="item.maxValue" [step]="item.stepValue" [lightingData]="item.OCValue" (onSliderChanged)="setRangeValue($event,idx,'gpuParameterList',0,false)" [ariaLabelValue]="'gaming.dashboard.device.advancedOC.gpuOCNames.gpuOCName'+item.tuneId | translate">
                                 </vtr-ui-brightness-slider>
                             </div>
                             <div class="right-range">
-                                <vtr-ui-add-reduce-button [btnWidth]="'26.3%'" [value]="item.OCValue" [minData]="item.minValue" [maxData]="item.maxValue" [step]="item.stepValue" [unit]="itemUnit['gpuAdvancedOC'+item.tuneId]" (setVal)="setRangeValue($event,idx,'gpuParameterList',0,true)"></vtr-ui-add-reduce-button>
+                                <vtr-ui-add-reduce-button [btnWidth]="'26.3%'" [value]="item.OCValue" [minData]="item.minValue" [maxData]="item.maxValue" [step]="item.stepValue" [unit]="itemUnit['gpuAdvancedOC'+item.tuneId]" (setVal)="setRangeValue($event,idx,'gpuParameterList',0,true)"
+                                    [ariaLabelValue]="'gaming.dashboard.device.advancedOC.gpuOCNames.gpuOCName'+item.tuneId | translate"></vtr-ui-add-reduce-button>
                             </div>
                         </div>
                     </li>
@@ -34,18 +34,18 @@
             <div class="cpu-overclock-box overclock-box" *ngIf="advanceCPUOCFeature">
                 <h3>{{ 'gaming.dashboard.device.legionEdge.title' | translate }}</h3>
                 <ul class="clearfix">
-                    <li *ngFor="let item of advancedOCInfo.cpuParameterList; let idx = index" >
-                        <p class="overclock-name" 
-                            [title]="'gaming.dashboard.device.advancedOC.cpuOCTips.cpuOCTip'+item.tuneId | translate">
+                    <li *ngFor="let item of advancedOCInfo.cpuParameterList; let idx = index">
+                        <p class="overclock-name" [title]="'gaming.dashboard.device.advancedOC.cpuOCTips.cpuOCTip'+item.tuneId | translate">
                             {{ 'gaming.dashboard.device.advancedOC.cpuOCNames.cpuOCName'+item.tuneId | translate }}
                         </p>
                         <div class="overclock-range" tooltipClass="vtr-tool-tip" container="body">
                             <div class="left-slider">
-                                <vtr-ui-brightness-slider [minValue]="item.minValue" [maxValue]="item.maxValue" [step]="item.stepValue" [lightingData]="item.OCValue"  [vtrMetricEnabled]="false" (onSliderChanged)="setRangeValue($event,idx,'cpuParameterList',item.tuneId,false)">
+                                <vtr-ui-brightness-slider [minValue]="item.minValue" [maxValue]="item.maxValue" [step]="item.stepValue" [lightingData]="item.OCValue" (onSliderChanged)="setRangeValue($event,idx,'cpuParameterList',item.tuneId,false)" [ariaLabelValue]="'gaming.dashboard.device.advancedOC.cpuOCNames.cpuOCName'+item.tuneId | translate">
                                 </vtr-ui-brightness-slider>
                             </div>
                             <div class="right-range">
-                                <vtr-ui-add-reduce-button [btnWidth]="'26.3%'" [value]="item.OCValue" [minData]="item.minValue" [maxData]="item.maxValue" [step]="item.stepValue" [unit]="itemUnit['cpuAdvancedOC'+item.tuneId]" (setVal)="setRangeValue($event,idx,'cpuParameterList',item.tuneId,true)"></vtr-ui-add-reduce-button>
+                                <vtr-ui-add-reduce-button [btnWidth]="'26.3%'" [value]="item.OCValue" [minData]="item.minValue" [maxData]="item.maxValue" [step]="item.stepValue" [unit]="itemUnit['cpuAdvancedOC'+item.tuneId]" (setVal)="setRangeValue($event,idx,'cpuParameterList',item.tuneId,true)"
+									[ariaLabelValue]="'gaming.dashboard.device.advancedOC.gpuOCNames.gpuOCName'+item.tuneId | translate"></vtr-ui-add-reduce-button>
                             </div>
                         </div>
                     </li>
@@ -53,7 +53,9 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button class="under-line-button" (click)="openSetToDefaultModal()">{{'gaming.lightingProfile.button.default.title' | translate}}</button>
+            <button class="under-line-button" (click)="openSetToDefaultModal()" tabindex="0" aria-label="set to default" role="button">
+                {{'gaming.lightingProfile.button.default.title' | translate}}
+            </button>
         </div>
     </div>
 
