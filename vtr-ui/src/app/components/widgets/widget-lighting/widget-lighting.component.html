@@ -49,20 +49,20 @@
 								<label for="third_radio"
 									[ngClass]="{'toggle-stable': isPopupVisible && setprofId===3, 'gamingTextColor': setprofId==3}"
 									id="gaming_dashboard_lighting_profile3">{{'gaming.lightingProfile.lightingProfileHeading.text4.title' | translate}}</label>
-								<div [ngClass]="{toggle: !isPopupVisible}" *ngIf="!isPopupVisible" tabindex="1"></div>
+								<div [ngClass]="{toggle: !isPopupVisible}" *ngIf="!isPopupVisible"></div>
 							</div>
 						</div>
 						<hr class="dark-dashline" />
 						<vtr-ui-gaming-driver-popup *ngIf="isdriverpopup==true" [showMePartially]="isdriverpopup"
-							[isLightingText]="true" (driverpopval)="isdriverpopup=false">
+							[isLightingText]="true" (driverpopval)="isdriverpopup=false" [automationId]="'gaming_lighting'">
 						</vtr-ui-gaming-driver-popup>
 						<ul class="list-group">
-							<li class="list-group-item mt-1">
+							<li class="list-group-item">
 								<a  *ngIf="isPopupVisible"  (click)="checkStatus(isPopupVisible)"
 									(keydown.enter)="checkStatus(isPopupVisible)" vtrMetrics
 									[metricsItem]="'lighting_customize'" metricsEvent="featureClick"
 									metricsParam="lightingcustomize" metricsValue="{{setprofId}}"
-									metricsParent="Gaming.Dashboard" id="lighting customize"
+									metricsParent="Gaming.Dashboard" id="lighting customize" class="d-inline-block mt-2"
 									attr.aria-label="lighting customize" tabindex="1" role="link">
 									<!--    <i class="icon icon-gear"></i> -->
 									  <fa-icon class="icon" [icon]="['fal', 'cog']" id="gaming_dashboard_lighting_customize_gear" role="img"></fa-icon>
@@ -71,7 +71,7 @@
 								<a  *ngIf="!isPopupVisible" [routerLink]="['/gaming/lightingcustomize/'+setprofId]"
 									vtrMetrics [metricsItem]="'lighting_customize'" metricsEvent="featureClick"
 									metricsParam="lightingcustomize" metricsValue="{{setprofId}}"
-									metricsParent="Gaming.Dashboard" id="lighting customize"
+									metricsParent="Gaming.Dashboard" id="lighting customize" class="d-inline-block mt-2"
 									attr.aria-label="lighting customize" tabindex="1" role="link">
 									<!--    <i class="icon icon-gear"></i> -->
 									  <fa-icon class="icon" [icon]="['fal', 'cog']" id="gaming_dashboard_lighting_customize_gear" role="img"></fa-icon>
