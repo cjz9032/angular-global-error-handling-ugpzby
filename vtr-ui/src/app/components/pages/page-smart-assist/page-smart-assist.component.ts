@@ -819,7 +819,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		} catch (error) { }
 	}
 
-	private getSuperResolutionStatus() {
+	public getSuperResolutionStatus() {
 		try {
 			if (this.smartAssist.isShellAvailable) {
 				this.smartAssist.getSuperResolutionStatus()
