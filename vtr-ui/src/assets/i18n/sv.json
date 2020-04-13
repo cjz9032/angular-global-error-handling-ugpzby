@@ -1963,10 +1963,8 @@
                     "description2": "Funktionen använder sensorer och kamera för att identifiera din närvaro. Den samlar INTE in, sparar eller läcker personliga uppgifter eller bilder.",
                     "description3": "1. För att kunna använda funktionerna ovan måste du justera skärmen till en lämplig vinkel så att systemet kan känna igen ditt ansikte.",
                     "description4": "2. Funktionerna fungerar inte i följande situationer:",
-                    "description5a1": "a. Datorn används i tält- eller surfplatteläge, stående läge eller frånkopplat läge. Information om datorns användningslägen finns i ",
-                    "description5a2": "Användarhandbok ",
-                    "description5a3": "som medföljde datorn.",
-                    "description5b": "b. Datorn är i viloläge eller avstängd.",
+                    "description5a": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to User Guide that comes with it.",
+					"description5b": "b. Datorn är i viloläge eller avstängd.",
                     "description6": "3. Om flygplansläget är aktiverat på datorn är dessa funktioner inaktiverade.",
                     "description7": "Noggrannheten varierar beroende på kroppsstorlek, hållning och hur ofta du rör dig. Om datorn låses oväntat kan du justera känslighetsfältet och därigenom öka noggrannheten."
                 },

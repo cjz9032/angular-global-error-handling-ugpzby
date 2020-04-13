@@ -1963,10 +1963,8 @@
                     "description2": "この機能はセンサーとカメラを使ってユーザーの存在を検出します。ただし、この機能が個人のデータを収集することはありません。",
                     "description3": "1.上記の機能を使用するには、顔が認識されるように、画面を適切な角度に調節してください。",
                     "description4": "2.以下の場合、上記の機能はサポートされません。",
-                    "description5a1": "a. お使いのコンピューターがテント、タブレット、スタンド・モード、またはデタッチド・モードになっている。お使いのコンピューターでサポートされているモードについては、付属の",
-                    "description5a2": "ユーザー・ガイド",
-                    "description5a3": "を参照してください。",
-                    "description5b": "b. お使いのコンピューターが休止状態またはオフになっている。",
+                    "description5a": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to User Guide that comes with it.",
+					"description5b": "b. お使いのコンピューターが休止状態またはオフになっている。",
                     "description6": "3. お使いのコンピューターで機内モードを有効にすると、これらの機能は無効になります。",
                     "description7": "精度は、体の大きさ、姿勢、動きの頻度によって異なります。コンピューターが予期せずロックされる場合は、感度バーを調整して精度を向上させます。"
                 },

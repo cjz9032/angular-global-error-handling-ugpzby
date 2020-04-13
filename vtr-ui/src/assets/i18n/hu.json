@@ -1963,10 +1963,8 @@
                     "description2": "A funkció érzékelőkkel és kamerával észleli az Ön jelenlétét. A funkció azonban NEM gyűjt személyes adatokat.",
                     "description3": "1. A fenti funkciók használatához állítsa a megfelelő szögbe a képernyőt, hogy a rendszer fel tudja ismerni az Ön arcát.",
                     "description4": "2. A fenti funkciók nem támogatottak a következő esetekben:",
-                    "description5a1": "a. A számítógép Sátor, Álló vagy Tablet módban vagy Leválasztott módban van. Az Ön számítógépe által támogatott módokat kapcsolatban lásd: ",
-                    "description5a2": "Felhasználói kézikönyv ",
-                    "description5a3": ".",
-                    "description5b": "b. Ha a számítógép hibernált módban van vagy ki van kapcsolva.",
+                    "description5a": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to User Guide that comes with it.",
+					"description5b": "b. Ha a számítógép hibernált módban van vagy ki van kapcsolva.",
                     "description6": "3. Ha a számítógépen bekapcsolta a Repülőgép üzemmódot, ezek a funkciók nem használhatók.",
                     "description7": "A pontosság függ a testmérettől, a testtartástól és a mozgás gyakoriságától. Ha a számítógép váratlanul zárolódik, állítsa be az érzékenységi sávot a pontosság javítása érdekében."
                 },

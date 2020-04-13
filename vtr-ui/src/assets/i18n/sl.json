@@ -1963,10 +1963,8 @@
                     "description2": "Funkcija uporablja senzorje in kamero za zaznavanje vaše prisotnosti. Vendar pa funkcija NE zbira, shranjuje ali posreduje kakršnih koli osebnih podatkov ali slik.",
                     "description3": "1. Če želite uporabiti zgornje funkcije, prilagodite zaslon računalnika na primeren kot, tako da bo mogoče prepoznati vaš obraz.",
                     "description4": "2. Zgornje funkcije niso podprte, ko je:",
-                    "description5a1": "a. Računalnik v načinu šotora, tabličnega računalnika, stojala ali je odklopljen. Za načine, ki jih podpira vaš računalnik, glejte ",
-                    "description5a2": "Vodič za uporabnika ",
-                    "description5a3": ", ki ga dobite z računalnikom.",
-                    "description5b": "b. Računalnik v načinu mirovanja ali je izklopljen.",
+                    "description5a": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to User Guide that comes with it.",
+					"description5b": "b. Računalnik v načinu mirovanja ali je izklopljen.",
                     "description6": "3. Če je v računalniku vklopljen letalski način, so te funkcije onemogočene.",
                     "description7": "Natančnost se razlikuje glede na velikost telesa, držo in pogostost gibanja. Če se računalnik nepričakovano zaklene, prilagodite vrstico za občutljivost, da izboljšate natančnost."
                 },

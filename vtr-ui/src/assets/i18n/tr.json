@@ -1963,10 +1963,8 @@
                     "description2": "Bu özellik, varlığınızı algılamak için sensörler ve kamera kullanır. Ancak, özellik hiçbir kişisel veriyi TOPLAMAZ.",
                     "description3": "1. Yukarıdaki işlevleri kullanmak için lütfen ekranınızı, yüzünüzün tanınabileceği uygun bir açıya ayarlayın.",
                     "description4": "2. Yukarıdaki işlevler şu durumlarda desteklenmez:",
-                    "description5a1": "a. Bilgisayarınız Çadır, Tablet, Stand kipinde veya Ayrılmış kipteyken. Bilgisayarınızda desteklenen kipler için lütfen bilgisayarınızla birlikte verilen ",
-                    "description5a2": "Tanıtma ve Kullanma Kılavuzu ",
-                    "description5a3": "belgesine bakın.",
-                    "description5b": "b. Bilgisayarınız uyku kipindeyse veya kapalıysa.",
+                    "description5a": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to User Guide that comes with it.",
+					"description5b": "b. Bilgisayarınız uyku kipindeyse veya kapalıysa.",
                     "description6": "3. Bilgisayarınızda Uçak modu etkin durumdaysa bu özellikler devre dışı bırakılır.",
                     "description7": "Doğruluk vücut ölçüsü, duruş ve hareket sıklığına göre değişiklik gösterir. Bilgisayarınız beklenmedik bir şekilde kilitlenirse doğruluğu artırmak için hassasiyet çubuğunu ayarlayın."
                 },

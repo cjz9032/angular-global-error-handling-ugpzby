@@ -1963,10 +1963,8 @@
                     "description2": "De functie gebruikt sensoren en de camera om uw aanwezigheid te detecteren. Persoonlijke gegevens of afbeeldingen worden echter NIET door deze functie verzameld, opgeslagen of gelekt.",
                     "description3": "1. Om deze functies te gebruiken moet uw scherm in de juiste hoek geplaatst worden zodat uw gezicht kan worden herkend.",
                     "description4": "2. Bovenstaande functies worden niet ondersteund in de volgende gevallen:",
-                    "description5a1": "a. uw computer staat in de werkstand tent, tablet, standaard of is ontkoppeld. Voor de modi die op uw computer worden ondersteund, ga naar de ",
-                    "description5a2": "Gebruikershandleiding ",
-                    "description5a3": "die is meegeleverd.",
-                    "description5b": "b. uw computer staat in de sluimerstand of is uitgeschakeld.",
+                    "description5a": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to User Guide that comes with it.",
+					"description5b": "b. uw computer staat in de sluimerstand of is uitgeschakeld.",
                     "description6": "3. Als de vliegtuigstand is ingeschakeld op uw computer, zijn deze functies uitgeschakeld.",
                     "description7": "De nauwkeurigheid is afhankelijk van lichaamsgrootte, postuur en bewegingsfrequentie. Als uw computer onverwacht wordt vergrendeld, pas dan de gevoeligheidsbalk aan om de nauwkeurigheid te verbeteren."
                 },

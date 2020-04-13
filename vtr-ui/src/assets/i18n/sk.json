@@ -1963,10 +1963,8 @@
                     "description2": "Táto funkcia využíva senzory a kameru na zistenie vašej prítomnosti. Funkcia však nezhromažďuje, neukladá ani neposkytuje žiadne osobné údaje ani snímky.",
                     "description3": "1. Ak chcete využívať vyššie uvedené funkcie, nastavte obrazovku do príslušného uhla, aby bolo možné rozpoznať vašu tvár.",
                     "description4": "2. Vyššie uvedené funkcie nie sú podporované, ak:",
-                    "description5a1": "a. Máte počítač v režime Stan, Tablet, Stojan alebo v odpojenom režime. Informácie o režimoch podporovaných vaším počítačom nájdete v dokumente ",
-                    "description5a2": "Používateľská príručka ",
-                    "description5a3": "pribalenom k počítaču.",
-                    "description5b": "B. Ak je počítač v režime dlhodobého spánku alebo je vypnutý.",
+                    "description5a": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to User Guide that comes with it.",
+					"description5b": "B. Ak je počítač v režime dlhodobého spánku alebo je vypnutý.",
                     "description6": "3. Ak je v počítači povolený režim V lietadle, tieto funkcie sú vypnuté.",
                     "description7": "Presnosť sa líši podľa veľkosti a držania tela a frekvencie pohybu. Ak sa počítač neočakávane uzamkne, upravte posúvač citlivosti, aby ste zvýšili presnosť."
                 },

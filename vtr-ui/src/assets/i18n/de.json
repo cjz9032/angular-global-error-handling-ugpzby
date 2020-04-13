@@ -1963,10 +1963,8 @@
                     "description2": "Die Funktion verwendet Sensoren und die Kamera, um Ihre Anwesenheit zu erkennen. Die Funktion sammelt jedoch KEINE personenbezogenen Daten.",
                     "description3": "1. Um die oben genannten Funktionen nutzen zu können, passen Sie den Winkel des Bildschirms so an, dass Ihr Gesicht erkannt werden kann.",
                     "description4": "2. Die oben genannten Funktionen werden nicht unterstützt, wenn:",
-                    "description5a1": "a) sich Ihr Computer im Zelt‑, Tablet‑, Stand‑ oder getrennten Modus befindet. Informationen zu den von Ihrem Computer unterstützten Modi finden Sie im mitgelieferten ",
-                    "description5a2": "Benutzerhandbuch ",
-                    "description5a3": "des Computers.",
-                    "description5b": "b) sich der Computer im Ruhezustand befindet oder ausgeschaltet ist.",
+                    "description5a": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to User Guide that comes with it.",
+					"description5b": "b) sich der Computer im Ruhezustand befindet oder ausgeschaltet ist.",
                     "description6": "3. Wenn der Flugzeugmodus auf Ihrem Computer aktiviert ist, sind die folgenden Funktionen deaktiviert.",
                     "description7": "Die Genauigkeit variiert je nach Körpergröße, Haltung und Bewegungshäufigkeit. Wenn Ihr Computer unerwartet gesperrt wird, passen Sie die Empfindlichkeit an, um die Genauigkeit zu verbessern."
                 },

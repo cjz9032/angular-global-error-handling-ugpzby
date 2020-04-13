@@ -1963,10 +1963,8 @@
                     "description2": "La característica utiliza sensores y la cámara para detectar su presencia. Sin embargo, la característica NO recopila datos personales.",
                     "description3": "1. Para usar las funciones anteriores, ajuste su pantalla a un ángulo adecuado para que pueda reconocer su rostro.",
                     "description4": "2. Las funciones anteriores no se admiten cuando:",
-                    "description5a1": "a. El sistema está en la modalidad Tienda, Tableta o Pedestal, o la modalidad Desconectado. Para ver los modos admitidos en su equipo, consulte ",
-                    "description5a2": "Guía del usuario ",
-                    "description5a3": "que se incluye.",
-                    "description5b": "b. Su sistema se encuentra en hibernación o se apagó.",
+                    "description5a": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to User Guide that comes with it.",
+					"description5b": "b. Su sistema se encuentra en hibernación o se apagó.",
                     "description6": "3. Si el modo de avión está habilitado en su equipo, estas características inalámbricas se deshabilitarán.",
                     "description7": "La precisión varía según el tamaño del cuerpo, la postura y la frecuencia de movimiento. Si el sistema está bloqueado de forma inesperada, ajuste la barra de detección para mejorar la precisión."
                 },

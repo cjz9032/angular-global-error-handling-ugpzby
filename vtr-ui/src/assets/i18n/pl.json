@@ -1963,10 +1963,8 @@
                     "description2": "Funkcja wykorzystuje czujniki i kamerę do wykrywania Twojej obecności. Jednak ta funkcja NIE zbiera żadnych danych osobowych.",
                     "description3": "1. Aby skorzystać z powyższych funkcji, ustaw ekran komputera pod odpowiednim kątem, aby umożliwić rozpoznawanie Twojej twarzy.",
                     "description4": "2. Powyższe funkcje nie są obsługiwane, gdy:",
-                    "description5a1": "a. Komputer działa w trybie namiotu, tabletu, podstawki lub jest odłączony. Informacje dotyczące trybów obsługiwanych na Twoim komputerze zawiera ",
-                    "description5a2": "Podręcznik użytkownika ",
-                    "description5a3": "dołączony do komputera.",
-                    "description5b": "b. Komputer znajduje się w trybie hibernacji lub został wyłączony.",
+                    "description5a": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to User Guide that comes with it.",
+					"description5b": "b. Komputer znajduje się w trybie hibernacji lub został wyłączony.",
                     "description6": "3. Po włączeniu trybu samolotowego komputera te funkcje są wyłączone.",
                     "description7": "Dokładność zależy od wielkości ciała, postawy i częstotliwości ruchu. Jeśli komputer zostanie nieoczekiwanie zablokowany, dostosuj pasek czułości, aby poprawić dokładność."
                 },

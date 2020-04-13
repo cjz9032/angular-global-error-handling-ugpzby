@@ -1963,10 +1963,8 @@
                     "description2": "Ta značajka koristi se senzorima i kamerom kako bi otkrila vašu prisutnost. Međutim, značajka NE prikuplja nikakve osobne podatke.",
                     "description3": "1. Da biste koristili gornje funkcije, podesite zaslon odgovarajućem kutu kako bi se vaše lice moglo prepoznati.",
                     "description4": "2. Gore navedene funkcije nisu podržane kada:",
-                    "description5a1": "a. Vaše je računalo u Tent, Tablet, Stand ili Detached načinu rada. Za načine koji su na vašem računalu podržani, pogledajte ",
-                    "description5a2": "Vodič za korisnike ",
-                    "description5a3": "isporučen s njim.",
-                    "description5b": "b. Vaše je računalo u hibernacijskom načinu rada ili je isključeno.",
+                    "description5a": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to User Guide that comes with it.",
+					"description5b": "b. Vaše je računalo u hibernacijskom načinu rada ili je isključeno.",
                     "description6": "3. Ako je na vašem računalu omogućen način rada u zrakoplovu, te su značajke onemogućene.",
                     "description7": "Točnost se razlikuje u pogledu veličine tijela, držanje i učestalosti pokreta. Ako se vaše računalo neočekivano zaključa, podesite traku osjetljivosti da biste poboljšali točnost."
                 },

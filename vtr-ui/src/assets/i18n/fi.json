@@ -1963,10 +1963,8 @@
                     "description2": "Tämä ominaisuus käyttää tunnistimia ja kameraa läsnäolon havaitsemiseksi. Toiminto EI kuitenkaan kerää henkilötietoja.",
                     "description3": "1. Kun haluat käyttää yllä kuvattuja toimintoja, säädä tietokoneesi näytön kulmaa siten, että kasvosi voidaan tunnistaa.",
                     "description4": "2. Yllä kuvattuja toimintoja ei tueta, kun:",
-                    "description5a1": "a. Tietokoneesi on kolmio-, taulu- tai taitosasennossa tai irrotettuna. Katso tietokoneesi tukemat asennot sen mukana toimitetusta ",
-                    "description5a2": "käyttöoppaasta ",
-                    "description5a3": ".",
-                    "description5b": "b. Tietokoneesi on horrostilassa tai siitä on katkaistu virta.",
+                    "description5a": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to User Guide that comes with it.",
+					"description5b": "b. Tietokoneesi on horrostilassa tai siitä on katkaistu virta.",
                     "description6": "3. Jos tietokoneen lentotila on käytössä, nämä langattomat ominaisuudet ovat poissa käytöstä.",
                     "description7": "Tarkkuus vaihtelee kehon koon, asennon ja liikkumisen tiheyden mukaan. Jos tietokone lukitaan odottamatta, paranna tarkkuutta säätämällä herkkyyspalkkia."
                 },

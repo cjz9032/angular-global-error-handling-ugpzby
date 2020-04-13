@@ -1963,10 +1963,8 @@
                     "description2": "該功能會使用感應器和攝影機來偵測您的存在。不過，這項功能不會收集任何個人資料。",
                     "description3": "1.若要使用上述功能，請將螢幕調整至適當角度以便能夠辨識您的臉部。",
                     "description4": "2.在以下情況中，不支援上述功能：",
-                    "description5a1": "a. 您的電腦處於帳篷、平板、直立或分離模式。如需電腦支援的模式相關資訊，請參閱隨附的",
-                    "description5a2": "使用手冊",
-                    "description5a3": "。",
-                    "description5b": "b. 您的電腦處於休眠模式或已關閉電源。",
+                    "description5a": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to User Guide that comes with it.",
+					"description5b": "b. 您的電腦處於休眠模式或已關閉電源。",
                     "description6": "3. 如果您的電腦上已啟用飛航模式，這些功能都會停用。",
                     "description7": "精確度會隨身體大小、姿勢和動作頻率有所變化。如果您的電腦意外遭到鎖定，請調整敏感度拉桿以改善精準度。"
                 },

@@ -1963,10 +1963,8 @@
                     "description2": "该功能使用传感器和摄像头来检测您的存在。然而，该功能不会收集任何个人数据。",
                     "description3": "1.要使用上述功能，请将计算机屏幕调整至适当的角度，以便计算机能够识别您的面部。",
                     "description4": "2.在以下情况下，不支持上述功能：",
-                    "description5a1": "a. 您的计算机处于帐篷模式、平板电脑模式、站立模式或分离模式。有关计算机支持的模式，请参阅计算机附带的",
-                    "description5a2": "《用户指南》",
-                    "description5a3": "。",
-                    "description5b": "b. 您的计算机处于休眠模式或已关机。",
+                    "description5a": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to User Guide that comes with it.",
+					"description5b": "b. 您的计算机处于休眠模式或已关机。",
                     "description6": "3. 如果在计算机上启用飞行模式，则将禁用这些功能部件。",
                     "description7": "准确性随身体大小、姿势和移动频率而变化。如果您的计算机被意外锁定，请调整灵敏度栏以提高准确性。"
                 },

@@ -1963,10 +1963,8 @@
                     "description2": "Această caracteristică folosește senzorii și camera pentru a vă detecta prezența. Cu toate acestea, caracteristica NU colectează date personale.",
                     "description3": "1. Pentru a utiliza funcțiile de mai sus, reglați ecranul la un unghi corespunzător, astfel încât fața dumneavoastră să poată fi recunoscută.",
                     "description4": "2. Funcțiile de mai sus nu sunt acceptate atunci când:",
-                    "description5a1": "a. Computerul este în modul Cort, Tabletă, Standard sau Detașat. Pentru modurile acceptate de computer, consultați ",
-                    "description5a2": "Ghidul utilizatorului ",
-                    "description5a3": "care este livrat împreună cu acesta.",
-                    "description5b": "b. Computerul este în modul hibernare sau a fost oprit.",
+                    "description5a": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to User Guide that comes with it.",
+					"description5b": "b. Computerul este în modul hibernare sau a fost oprit.",
                     "description6": "3. Dacă Modul avion este activat pe computer, aceste funcţii sunt dezactivate.",
                     "description7": "Precizia variază în funcţie de dimensiunea corpului, postură şi frecvenţa mişcării. În cazul în care computerul se blochează în mod neaşteptat, ajustaţi bara de sensibilitate pentru a îmbunătăţi precizia."
                 },

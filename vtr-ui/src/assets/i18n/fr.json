@@ -1963,10 +1963,8 @@
                     "description2": "Cette fonction utilise les capteurs et l'appareil photo pour détecter votre présence. Cependant, la fonction ne recueille AUCUNE donnée personnelle.",
                     "description3": "1. Pour utiliser les fonctions ci-dessus, veuillez ajuster l'écran à un angle approprié pour que votre visage puisse être reconnu.",
                     "description4": "2. Les fonctions ci-dessus ne sont pas prises en charge lorsque :",
-                    "description5a1": "a. votre ordinateur est en mode chevalet, tablette sur support ou détaché. Pour connaître les modes pris en charge par votre ordinateur, veuillez consulter le ",
-                    "description5a2": "Guide d'utilisation ",
-                    "description5a3": "fourni.",
-                    "description5b": "b. votre ordinateur est en mode hibernation ou a été éteint.",
+                    "description5a": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to User Guide that comes with it.",
+					"description5b": "b. votre ordinateur est en mode hibernation ou a été éteint.",
                     "description6": "3. Si le mode avion est activé sur votre ordinateur, ces fonctions sont désactivées.",
                     "description7": "La précision varie en fonction de la taille du corps, de la posture et de la fréquence des mouvements. Si votre ordinateur est verrouillé de manière inattendue, réglez la barre de sensibilité pour améliorer la précision."
                 },

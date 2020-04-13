@@ -1963,10 +1963,8 @@
                     "description2": "La funzione utilizza sensori e fotocamera per rilevare la presenza dell'utente. Tuttavia, non raccoglie alcun dato personale.",
                     "description3": "1. Per utilizzare le funzioni sopra riportate, regolare lo schermo con un'angolazione appropriata in modo che il volto venga riconosciuto.",
                     "description4": "2. Le funzioni sopra riportate non sono supportate quando:",
-                    "description5a1": "A. Il computer è in modalità tenda, tablet, supporto o scollegato. Per le modalità supportate dal compurter, consultare la ",
-                    "description5a2": "Guida per l'utente ",
-                    "description5a3": "in dotazione.",
-                    "description5b": "B. Se il computer è in modalità Ibernazione o è stato spento.",
+                    "description5a": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to User Guide that comes with it.",
+					"description5b": "B. Se il computer è in modalità Ibernazione o è stato spento.",
                     "description6": "3. Ha a számítógépen bekapcsolta a Repülőgép üzemmódot, ezek a funkciók nem használhatók.",
                     "description7": "L'accuratezza varia a seconda della corporatura, della postura e della frequenza del movimento. Se il computer si blocca in modo imprevisto, regolare la barra della sensibilità per migliorare la precisione."
                 },
