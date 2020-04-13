@@ -5,8 +5,8 @@
             (setLightingProfileId)="setLightingProfileId($event)"
             [id]="'profile'"></vtr-ui-lighting-profile-toggle>
         </div>
-        <div class="lighting-panel-select" *ngIf="!isProfileOff">
-            <div class="lighting-arrow lighting-arrow-lef" (click)="panelSwitchLef()"  tabindex="{{isDisabledlef[this.currentProfileId-1]?-1:0}}" (keydown.enter)="panelSwitchLef()"
+        <div class="lighting-panel-select" *ngIf="!isProfileOff"> 
+            <div class="lighting-arrow lighting-arrow-lef" (click)="panelSwitchLef()"  tabindex="{{isDisabledlef[this.currentProfileId-1]?-1:0}}" (keydown.enter)="panelSwitchLef()" [attr.aria-label]="'Look at the previous area'" role="button"
             [ngClass]="{'disabled-lef':isDisabledlef[this.currentProfileId-1] === true}" *ngIf= "lightingProfileCurrentDetail.panelImageType">
                 <fa-icon [icon]="['fal', 'chevron-right']"></fa-icon>
             </div>
@@ -17,7 +17,7 @@
             </span>
             {{lightingProfileCurrentDetail.panelName | translate}}
             </div>
-            <div class="lighting-arrow lighting-arrow-rig" (click)="panelSwitchRig()" tabindex="{{isDisabledrig[this.currentProfileId-1]?-1:0}}" (keydown.enter)="panelSwitchRig()"
+            <div class="lighting-arrow lighting-arrow-rig" (click)="panelSwitchRig()" tabindex="{{isDisabledrig[this.currentProfileId-1]?-1:0}}" (keydown.enter)="panelSwitchRig()" [attr.aria-label]="'Look at the next area'" role="button"
             [ngClass]="{'disabled-rig':isDisabledrig[this.currentProfileId-1] === true}" *ngIf= "lightingProfileCurrentDetail.panelImageType">
                 <fa-icon [icon]="['fal', 'chevron-right']"></fa-icon>
             </div>
