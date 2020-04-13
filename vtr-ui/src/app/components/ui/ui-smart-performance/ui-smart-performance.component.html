@@ -379,14 +379,6 @@
 				<div class="row">
 					<div class="vtr-page-shift-up">
 						<div class="container-fluid">
-							<div class="row mb-40" *ngIf="!isScanning && !isScanningCompleted">
-
-								<div class="col col-12">
-									<vtr-widget-subscriptiondetails></vtr-widget-subscriptiondetails>
-
-								</div>
-							</div>
-
 							<div class="row mb-40"  *ngIf="!isScanning && !isScanningCompleted">
 								<div class="col col-12">
 									<div class="scan-settings sidebar-widget">
@@ -397,7 +389,7 @@
 										<ul class="chevron-list">
 											<li class="d-flex justify-content-between">
 												<div class="item d-flex">
-													<!-- <fa-icon [icon]="['fas', 'laptop']"></fa-icon> -->
+													<span class="icomoon icomoon-LE-Visible-to-online-trackers2x"></span>
 													<strong>{{'smartPerformance.scanSettings.enableScan' |translate }}</strong>
 												</div>
 												<div class="status d-flex justify-content-end">
@@ -408,7 +400,7 @@
 											</li>
 											<li class="d-flex justify-content-between">
 												<div class="item d-flex">
-													<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
+													<span class="icomoon icomoon-calendar"></span>
 													<strong>{{'smartPerformance.scanCompletePage.Onceaweek' |translate }}</strong>
 												</div>
 												<div class="status d-flex justify-content-end">
@@ -421,6 +413,15 @@
 									</div>
 								</div>
 							</div>
+							<div class="row mb-40" *ngIf="!isScanning && !isScanningCompleted">
+
+								<div class="col col-12">
+									<vtr-widget-subscriptiondetails></vtr-widget-subscriptiondetails>
+
+								</div>
+							</div>
+
+							
 
 							<!-- <div class="row mb-40"  *ngIf="isScanning">
 								<div class="col col-12">

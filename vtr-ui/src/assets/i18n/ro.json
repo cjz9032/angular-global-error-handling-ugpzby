@@ -78,7 +78,8 @@
                     "macroKey": "Tastă macro",
                     "hardwareScan": "Scanare hardware",
                     "systemUpdate": "Actualizare sistem",
-                    "header": "Instrumente sistem"
+                    "header": "Instrumente sistem",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "lighting": {
                     "title": "Personalizarea iluminării",

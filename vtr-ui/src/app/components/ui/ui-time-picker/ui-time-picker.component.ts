@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { CommonService } from 'src/app/services/common/common.service';
+import { KeyCode } from 'src/app/enums/key-code.enum';
 
 @Component({
 	selector: 'vtr-ui-time-picker',
@@ -138,8 +139,8 @@ export class UiTimePickerComponent implements OnInit, OnChanges {
 
 	handleKBNavigations(event) {
 		switch (event.keyCode) {
-			case this.keyCode.SPACE:
-			case this.keyCode.RETURN:
+			case KeyCode.SPACE:
+			case KeyCode.RETURN:
 				this.onToggleDropDown();
 				break;
 		}
