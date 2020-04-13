@@ -3082,15 +3082,15 @@
             "science": "Nauka"
         },
         "gaming": {
-            "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
-            "gamingFeature1": "-Computer status monitor",
-            "gamingFeature2": "-Performance mode & overclocking",
-            "gamingFeature3": "-Lighting",
-            "gamingFeature4": "-Network Boost",
-            "gamingFeature5": "-Auto Close",
-            "gamingOnly": "Gaming",
-            "gamingAndWork": "Gaming & Work",
-            "nonGaming": "Non-Gaming"
+            "gamingDescription": "Verzija programa Vantage za igranje igara vam olakšava poboljšanje iskustva u igranju igara. Pored uobičajenih postavki, glavne karakteristike obuhvataju (dostupno na određenim sistemima):",
+			"gamingFeature1": "-Nadgledanje statusa računara",
+			"gamingFeature2": "-Režim učinka i overkloking",
+			"gamingFeature3": "-Osvetljenje",
+			"gamingFeature4": "-Pojačanje mreže",
+			"gamingFeature5": "-Automatsko zatvaranje",
+			"gamingOnly": "Igranje",
+			"gamingAndWork": "Igranje igara i posao",
+			"nonGaming": "Neigranje igara"
         }
     },
     "settings": {
