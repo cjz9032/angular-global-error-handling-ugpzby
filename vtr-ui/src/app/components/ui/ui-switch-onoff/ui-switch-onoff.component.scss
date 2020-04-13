@@ -4,6 +4,7 @@
 	display: inline-block;
 	position: relative;
 	cursor: pointer;
+	border: 0.1rem solid transparent;
 	label {
 		cursor: pointer;
 		.switch-label,
@@ -219,14 +220,12 @@ input.wifi-checked + .switch.switch-xs > small {
 
 .checkbox.blue-theme {
 	&:focus {
-		outline: 0.1rem solid $light;
-		outline-offset: 0.2rem;
+		@include outline-border-white;
 	}
 }
 
 .checkbox.white-theme {
 	&:focus {
-		outline: 0.1rem solid $menu_hover;
-		outline-offset: 0.2rem;
+		@include outline-border-blue;
 	}
 }

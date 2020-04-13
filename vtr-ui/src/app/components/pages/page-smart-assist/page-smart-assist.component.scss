@@ -140,26 +140,6 @@ $fontsize_xs: 1.4rem;
 					width: 25.5rem;
 				}
 			}
-			.auto-screen-block,
-			.auto-screen-off-block {
-				::ng-deep .vtr-ui-switch-row {
-					border-bottom: none;
-				}
-			}
-			.keep-my-display-block {
-				::ng-deep .vtr-ui-switch-row {
-					border-top: 0.1rem solid $shade_lighter;
-					border-bottom: none;
-				}
-				.display-padding {
-					padding-left: 2.5rem;
-				}
-				::ng-deep {
-					.ng5-slider {
-						margin: 20px 0 15px;
-					}
-				}
-			}
 			.disabled-overlay {
 				background-color: #f6f8f8;
 				z-index: 2;
@@ -284,7 +264,7 @@ $fontsize_xs: 1.4rem;
 			margin-left: 3rem;
 			//padding-top: 1.5rem;
 		}
-		
+
 		.auto-screen-lock-help-icon {
 			::ng-deep .vtr-ui-switch-row.white-theme {
 				.vtr-row-switch {
@@ -294,6 +274,33 @@ $fontsize_xs: 1.4rem;
 					.tool-tip-icon {
 						margin-left: 0 !important;
 					}
+				}
+			}
+		}
+		.auto-screen-lock-btns-group {
+			&:focus {
+				@include outline-blue;
+			}
+
+		}
+		.auto-screen-block,
+		.auto-screen-off-block {
+			::ng-deep .vtr-ui-switch-row.white-theme {
+				border-bottom: none;
+			}
+		}
+
+		.keep-my-display-block {
+			::ng-deep .vtr-ui-switch-row.white-theme {
+				// border-top: 0.1rem solid $shade_lighter;
+				border-bottom: none;
+			}
+			.display-padding {
+				padding-left: 2.5rem;
+			}
+			::ng-deep {
+				.ng5-slider {
+					margin: 20px 0 15px;
 				}
 			}
 		}
@@ -370,16 +377,16 @@ $fontsize_xs: 1.4rem;
 	padding-top: 0.3rem;
 }
 
-.intelligent-security-image {	
+.intelligent-security-image {
 	margin: -1.5rem -2.4rem 0rem -0.9rem;
 	position: relative;
 	& > img {
 		width: 100%;
 	}
 	.intelligent-security-image-word {
-		position:absolute; 
-		max-width: 24.2rem; 
-		left: 3rem; 
+		position:absolute;
+		max-width: 24.2rem;
+		left: 3rem;
 		top: 50%;
 		color: #34495e;
 		transform: translateY(-50%);
@@ -387,7 +394,7 @@ $fontsize_xs: 1.4rem;
 			font-size: 2.4rem;
 		}
 		.intelligent-security-image-word-description {
-			font-size: 1.4rem; 
+			font-size: 1.4rem;
 			line-height: 2rem;
 		}
 	}
