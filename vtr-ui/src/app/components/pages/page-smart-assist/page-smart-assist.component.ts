@@ -835,7 +835,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	private getAntiTheftStatus() {
+	public getAntiTheftStatus() {
 		try {
 			if (this.smartAssist.isShellAvailable) {
 				this.logger.info(`getAntiTheftStatus API call`);
