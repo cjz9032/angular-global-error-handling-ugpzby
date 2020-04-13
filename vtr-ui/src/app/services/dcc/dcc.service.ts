@@ -56,7 +56,7 @@ export class DccService {
 			null
 		)[0];
 		if (headerImage) {
-			if (headerImage.Title === 'Header Image DCC') {
+			if (headerImage.Title.toLowerCase().indexOf('header image dcc') > -1) {
 				this.cmsHeaderDccBackgroundUpdated = true;
 			}
 			this.headerBackground = headerImage.FeatureImage;
