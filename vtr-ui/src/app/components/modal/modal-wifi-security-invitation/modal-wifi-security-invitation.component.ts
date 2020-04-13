@@ -29,13 +29,13 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 
 	constructor(
 		public activeModal: NgbActiveModal,
-		vantageShellService: VantageShellService,
+		private vantageShellService: VantageShellService,
 		public metrics: MetricService,
 		public metricsTranslateService: MetricsTranslateService) {
-		this.chs = vantageShellService.getConnectedHomeSecurity();
 	}
 
 	ngOnInit() {
+		this.chs = this.vantageShellService.getConnectedHomeSecurity();
 	}
 
 	closeModal() {
