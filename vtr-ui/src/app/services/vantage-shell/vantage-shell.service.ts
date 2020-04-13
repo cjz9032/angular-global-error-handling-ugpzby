@@ -42,7 +42,6 @@ export class VantageShellService {
 				Phoenix.Features.Device,
 				Phoenix.Features.LenovoId,
 				Phoenix.Features.HwSettings,
-				// Phoenix.Features.Gaming,
 				Phoenix.Features.SystemUpdate,
 				Phoenix.Features.Warranty,
 				Phoenix.Features.UserGuide,
@@ -53,12 +52,13 @@ export class VantageShellService {
 				Phoenix.Features.GenericMetricsPreference,
 				Phoenix.Features.PreferenceSettings,
 				Phoenix.Features.HardwareScan,
+				Phoenix.Features.ConnectedHomeSecurity,
 				Phoenix.Features.DevicePosture,
 				Phoenix.Features.AdPolicy,
 				Phoenix.Features.Registry,
 				Phoenix.Features.SelfSelect,
 				Phoenix.Features.UpeAgent,
-				Phoenix.Features.SmartPerformance,
+				Phoenix.Features.SmartPerformance
 			]);
 		} else {
 			this.isShellAvailable = false;
@@ -255,22 +255,22 @@ export class VantageShellService {
 		return undefined;
 	}
 
-	public async getConnectedHomeSecurity(): Promise<Phoenix.ConnectedHomeSecurity | undefined> {
+	public getConnectedHomeSecurity(): Phoenix.ConnectedHomeSecurity | undefined {
 		if (this.phoenix) {
 			if (!this.phoenix.connectedHomeSecurity) {
 				this.phoenix.loadFeatures([Phoenix.Features.ConnectedHomeSecurity]);
 			}
-			return await this.phoenix.connectedHomeSecurity;
+			return this.phoenix.connectedHomeSecurity;
 		}
 		return undefined;
 	}
 
-	public async getDevicePosture(): Promise<Phoenix.DevicePosture | undefined> {
+	public getDevicePosture(): Phoenix.DevicePosture | undefined {
 		if (this.phoenix) {
 			if (!this.phoenix.devicePosture) {
 				this.phoenix.loadFeatures([Phoenix.Features.DevicePosture]);
 			}
-			return await this.phoenix.devicePosture;
+			return this.phoenix.devicePosture;
 		}
 		return undefined;
 	}

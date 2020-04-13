@@ -318,7 +318,7 @@
 							font-weight: $weight_medium;
 							&:focus {
 								outline: 0.1rem solid $menu_hover;
-								background-color: transparent;
+								outline-offset: 0;
 							}
 
 							&.link {

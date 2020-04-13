@@ -139,120 +139,113 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 	) { }
 
 	ngOnInit() {
-		Promise.all([
-			this.vantageShellService.getConnectedHomeSecurity(),
-			this.vantageShellService.getDevicePosture()
-		]).then((results) => {
-			this.homeSecurityDevicePosture = new HomeSecurityDevicePosture(this.windowsVersionService);
-			this.chs = results[0];
-			this.devicePosture = results[1];
-			if (this.vantageShellService.getSecurityAdvisor()) {
-				this.wifiSecurity = this.vantageShellService.getSecurityAdvisor().wifiSecurity;
-			}
-			this.permission = this.vantageShellService.getPermission();
-			this.welcomeModel = new HomeSecurityWelcome();
-			this.fetchCMSArticles();
+		this.homeSecurityDevicePosture = new HomeSecurityDevicePosture(this.windowsVersionService);
+		this.chs = this.vantageShellService.getConnectedHomeSecurity();
+		this.devicePosture = this.vantageShellService.getDevicePosture();
+		if (this.vantageShellService.getSecurityAdvisor()) {
+			this.wifiSecurity = this.vantageShellService.getSecurityAdvisor().wifiSecurity;
+		}
+		this.permission = this.vantageShellService.getPermission();
+		this.welcomeModel = new HomeSecurityWelcome();
+		this.fetchCMSArticles();
 
-			this.commonService.setSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage, true);
-			this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'unknow');
-			this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'unknow');
-			this.isOnline = this.commonService.isOnline;
-			let cacheIsOnline = true;
-			this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
-				this.onNotification(notification);
-				if (this.common) {
-					this.common.isOnline = this.isOnline;
-				}
-				const showPluginMissingDialog = this.commonService.getSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog);
-				if (showPluginMissingDialog === 'notShow' || showPluginMissingDialog === 'finish') {
-					const showWelcomeDialog = this.commonService.getSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog);
-					if (showWelcomeDialog === 'notShow' || showWelcomeDialog === 'finish') {
-						if (!this.isOnline && this.isOnline !== cacheIsOnline) {
-							this.dialogService.homeSecurityOfflineDialog();
-						}
-						cacheIsOnline = this.isOnline;
+		this.commonService.setSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage, true);
+		this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'unknow');
+		this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'unknow');
+		this.isOnline = this.commonService.isOnline;
+		let cacheIsOnline = true;
+		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+			if (this.common) {
+				this.common.isOnline = this.isOnline;
+			}
+			const showPluginMissingDialog = this.commonService.getSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog);
+			if (showPluginMissingDialog === 'notShow' || showPluginMissingDialog === 'finish') {
+				const showWelcomeDialog = this.commonService.getSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog);
+				if (showWelcomeDialog === 'notShow' || showWelcomeDialog === 'finish') {
+					if (!this.isOnline && this.isOnline !== cacheIsOnline) {
+						this.dialogService.homeSecurityOfflineDialog();
 					}
+					cacheIsOnline = this.isOnline;
 				}
-			});
-
-			const cacheAllDevices = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAllDevices);
-			if (cacheAllDevices) {
-				this.allDevicesInfo = cacheAllDevices;
-			}
-			if (this.chs && this.chs.deviceOverview) {
-				this.allDevicesInfo = new HomeSecurityAllDevice(this.translateService, this.chs.deviceOverview);
-				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAllDevices, this.allDevicesInfo);
-			}
-			const cacheAccount = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount);
-			if (cacheAccount) {
-				this.account = cacheAccount;
-				if (this.chs.account) {
-					this.common = new HomeSecurityCommon(this.chs, this.isOnline, this.dialogService);
-					this.account = new HomeSecurityAccount(this.chs, this.common);
-				}
-			}
-			if (this.chs.account && this.chs.account.state) {
-				this.common = new HomeSecurityCommon(this.chs, this.isOnline, this.dialogService);
-				this.account = new HomeSecurityAccount(this.chs, this.common);
-				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount, {
-					state: this.account.state,
-					role: this.account.role,
-					expirationDay: this.account.expirationDay
-				});
-				if (this.account.state !== CHSAccountState.local) {
-					this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
-				}
-			}
-			const cacheDevicePosture = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture);
-			if (this.devicePosture && this.devicePosture.value.length > 0) {
-				this.homeSecurityDevicePosture = new HomeSecurityDevicePosture(this.windowsVersionService, this.devicePosture, cacheDevicePosture, this.translateService);
-				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture, {
-					homeDevicePosture: this.homeSecurityDevicePosture.homeDevicePosture
-				});
-			} else if (cacheDevicePosture) {
-				this.homeSecurityDevicePosture = cacheDevicePosture;
-			}
-			const cacheLocation = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityLocation);
-			if (this.wifiSecurity) {
-				this.wifiSecurity.getWifiSecurityState();
-				this.updateHomeSecurityLocationModel();
-			} else if (cacheLocation) {
-				this.locationPermission = cacheLocation;
-			}
-			this.chs.on(EventTypes.chsEvent, this.chsEventHandler);
-			this.chs.on(EventTypes.wsPluginMissingEvent, this.wsPluginMissingEventHandler);
-			this.chs.on(EventTypes.devicePostureEvent, this.devicePostureEventHandler);
-			this.chs.on(EventTypes.wsIsLocationServiceOnEvent, this.wsIsLocationServiceOnEventHanler);
-			this.chs.on(EventTypes.wsIsDevicePermissionOnEvent, this.wsIsDevicePermissionOnEventHandler);
-			this.chs.on(EventTypes.wsIsAllAppsPermissionOnEvent, this.wsIsAllAppsPermissionOnEventHandler);
-			this.chs.on(EventTypes.wsHasSystemPermissionShowedEvent, this.wsHasSystemPermissionShowedEventHandler);
-
-			if (this.commonService.getSessionStorageValue(SessionStorageKey.WidgetWifiStatus)) {
-				this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
-			}
-
-			if (this.chs) {
-				if (this.devicePosture && this.wifiSecurity) {
-					if (this.wifiSecurity.isLocationServiceOn) {
-						this.devicePosture.getDevicePosture();
-					}
-				}
-				this.chs.refresh()
-					.then(() => {
-						this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
-					});
-				this.getCHSStatus();
 			}
 		});
-	}
 
-	ngAfterViewInit(): void {
-		if (this.chs) {
+		const cacheAllDevices = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAllDevices);
+		if (cacheAllDevices) {
+			this.allDevicesInfo = cacheAllDevices;
+		}
+		if (this.chs && this.chs.deviceOverview) {
+			this.allDevicesInfo = new HomeSecurityAllDevice(this.translateService, this.chs.deviceOverview);
+			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAllDevices, this.allDevicesInfo);
+		}
+		const cacheAccount = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount);
+		if (cacheAccount) {
+			this.account = cacheAccount;
+			if (this.chs.account) {
+				this.common = new HomeSecurityCommon(this.chs, this.isOnline, this.dialogService);
+				this.account = new HomeSecurityAccount(this.chs, this.common);
+			}
+		}
+		if (this.chs.account && this.chs.account.state) {
+			this.common = new HomeSecurityCommon(this.chs, this.isOnline, this.dialogService);
+			this.account = new HomeSecurityAccount(this.chs, this.common);
+			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount, {
+				state: this.account.state,
+				role: this.account.role,
+				expirationDay: this.account.expirationDay
+			});
 			if (this.account.state !== CHSAccountState.local) {
 				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
 			}
-			this.showWelcomeDialog();
 		}
+		const cacheDevicePosture = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture);
+		if (this.devicePosture && this.devicePosture.value.length > 0) {
+			this.homeSecurityDevicePosture = new HomeSecurityDevicePosture(this.windowsVersionService, this.devicePosture, cacheDevicePosture, this.translateService);
+			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture, {
+				homeDevicePosture: this.homeSecurityDevicePosture.homeDevicePosture
+			});
+		} else if (cacheDevicePosture) {
+			this.homeSecurityDevicePosture = cacheDevicePosture;
+		}
+		const cacheLocation = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityLocation);
+		if (this.wifiSecurity) {
+			this.wifiSecurity.getWifiSecurityState();
+			this.updateHomeSecurityLocationModel();
+		} else if (cacheLocation) {
+			this.locationPermission = cacheLocation;
+		}
+		this.chs.on(EventTypes.chsEvent, this.chsEventHandler);
+		this.chs.on(EventTypes.wsPluginMissingEvent, this.wsPluginMissingEventHandler);
+		this.chs.on(EventTypes.devicePostureEvent, this.devicePostureEventHandler);
+		this.chs.on(EventTypes.wsIsLocationServiceOnEvent, this.wsIsLocationServiceOnEventHanler);
+		this.chs.on(EventTypes.wsIsDevicePermissionOnEvent, this.wsIsDevicePermissionOnEventHandler);
+		this.chs.on(EventTypes.wsIsAllAppsPermissionOnEvent, this.wsIsAllAppsPermissionOnEventHandler);
+		this.chs.on(EventTypes.wsHasSystemPermissionShowedEvent, this.wsHasSystemPermissionShowedEventHandler);
+
+		if (this.commonService.getSessionStorageValue(SessionStorageKey.WidgetWifiStatus)) {
+			this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
+		}
+
+		if (this.chs) {
+			if (this.devicePosture && this.wifiSecurity) {
+				if (this.wifiSecurity.isLocationServiceOn) {
+					this.devicePosture.getDevicePosture();
+				}
+			}
+			this.chs.refresh()
+				.then(() => {
+					this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
+				});
+			this.getCHSStatus();
+		}
+	}
+
+	ngAfterViewInit(): void {
+		if (this.account.state !== CHSAccountState.local) {
+			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
+		}
+		this.showWelcomeDialog();
 	}
 
 	@HostListener('window: focus')
@@ -287,16 +280,13 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		if (this.devicePosture) {
 			this.devicePosture.cancelGetDevicePosture();
 		}
-
-		if (this.chs) {
-			this.chs.off(EventTypes.chsEvent, this.chsEventHandler);
-			this.chs.off(EventTypes.wsPluginMissingEvent, this.wsPluginMissingEventHandler);
-			this.chs.off(EventTypes.devicePostureEvent, this.devicePostureEventHandler);
-			this.chs.off(EventTypes.wsIsLocationServiceOnEvent, this.wsIsLocationServiceOnEventHanler);
-			this.chs.off(EventTypes.wsIsAllAppsPermissionOnEvent, this.wsIsAllAppsPermissionOnEventHandler);
-			this.chs.off(EventTypes.wsIsDevicePermissionOnEvent, this.wsIsDevicePermissionOnEventHandler);
-			this.chs.off(EventTypes.wsHasSystemPermissionShowedEvent, this.wsHasSystemPermissionShowedEventHandler);
-		}
+		this.chs.off(EventTypes.chsEvent, this.chsEventHandler);
+		this.chs.off(EventTypes.wsPluginMissingEvent, this.wsPluginMissingEventHandler);
+		this.chs.off(EventTypes.devicePostureEvent, this.devicePostureEventHandler);
+		this.chs.off(EventTypes.wsIsLocationServiceOnEvent, this.wsIsLocationServiceOnEventHanler);
+		this.chs.off(EventTypes.wsIsAllAppsPermissionOnEvent, this.wsIsAllAppsPermissionOnEventHandler);
+		this.chs.off(EventTypes.wsIsDevicePermissionOnEvent, this.wsIsDevicePermissionOnEventHandler);
+		this.chs.off(EventTypes.wsHasSystemPermissionShowedEvent, this.wsHasSystemPermissionShowedEventHandler);
 	}
 
 	showWelcomeDialog() {
@@ -423,11 +413,9 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 
 	private pullCHS(): void {
 		this.intervalId = window.setInterval(() => {
-			if (this.chs) {
-				this.chs.refresh().then(() => {
-					// this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
-				});
-			}
+			this.chs.refresh().then(() => {
+				this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
+			});
 		}, this.interval);
 	}
 
@@ -438,7 +426,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 	}
 
 	private cancelPullingCHS(): void {
-		clearInterval(this.intervalId);
+		window.clearInterval(this.intervalId);
 		delete this.intervalId;
 	}
 

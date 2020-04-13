@@ -33,4 +33,9 @@
 
 		}
 	}
+	.text-dark {
+		&:focus {
+			@include outline-blue;
+		}
+	}
 }

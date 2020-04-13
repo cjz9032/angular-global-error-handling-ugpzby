@@ -59,6 +59,9 @@
 		&:disabled {
 			opacity: 0.5;
 		}
+		&:focus {
+			@include outline-blue;
+		}
 	}
 
 	.submittedButton {
@@ -101,6 +104,10 @@
 				border-radius: $border_radius_sm;
 				background-color: $light;
 				box-shadow: $drop_shadow;
+				&:focus {
+					outline: 0.1rem solid $menu_hover !important;
+					outline-offset: 0.2rem;
+				}
 			}
 
 			.dropdown-icon {
@@ -166,6 +173,9 @@
 		outline: invert;
 		border: medium;
 		border-image: none;
+		&:focus {
+			@include outline-blue;
+		}
 	}
 
 	textarea {
@@ -256,6 +266,9 @@ div {
 	fa-icon {
 		color: $menu_hover;
 		font-size: $fontsize_xl2;
+		&:focus {
+			@include outline-blue;
+		}
 	}
 	.apps-list {
 		border-bottom: 0.1rem solid $gray;

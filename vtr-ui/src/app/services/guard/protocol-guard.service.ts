@@ -68,6 +68,8 @@ export class ProtocolGuardService implements CanActivate {
 	'f45a1a5c-44eb-42c3-b361-025ed702dd7c': 'modern-preload',
   }
 
+  characteristicCode = '/?protocol=';
+
   constructor(
 	private guardConstants: GuardConstants,
 	private router: Router
@@ -75,7 +77,8 @@ export class ProtocolGuardService implements CanActivate {
 
   private decodeBase64String(args: string) {
 	try {
-		return atob(args);
+		const str = (args + '===').slice(0, args.length + (args.length % 4));
+		return atob(str.replace(/-/g, '+').replace(/_/g, '/'));
 	} catch(e) {
 		return '';
 	}
@@ -91,16 +94,13 @@ export class ProtocolGuardService implements CanActivate {
 
   public isRedirectUrlNeeded(args: string) : [boolean, string] {
 	let tempUrl = this.processPath(args);
-	if (tempUrl !== args) return [true, tempUrl];
+	if (tempUrl !== args && tempUrl !== '/') return [true, tempUrl];
 
 	return [false, ''];
   }
 
   private processPath(path: string) : string {
-	const characteristicCode = '/?protocol=';
-	if (!path.startsWith(characteristicCode)) return path;
-
-	let encodedProtocol = path.slice(path.indexOf(characteristicCode) + characteristicCode.length);
+	let encodedProtocol = path.slice(path.indexOf(this.characteristicCode) + this.characteristicCode.length);
 	let originalProtocol = this.decodeBase64String(encodedProtocol);
 	if (!originalProtocol) return '/';
 
@@ -161,17 +161,12 @@ export class ProtocolGuardService implements CanActivate {
   }
 
   public canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) : boolean | UrlTree {
-	const path = window.location.href.slice(window.location.href.indexOf('#') + 1);
-	const checkResult = this.isRedirectUrlNeeded(path);
-	if (checkResult[0]) return this.router.parseUrl(checkResult[1]);
-	return this.guardConstants.defaultRoute;
+	const path = state.url.slice(state.url.indexOf('#') + 1);
+
+	if (path.startsWith(this.characteristicCode)) {
+		const checkResult = this.isRedirectUrlNeeded(path);
+		return checkResult[0] ? this.router.parseUrl(checkResult[1]) : history.length === 1;
+	}
+	return true;
   }
 }
-
-export function protocolUrl(url: UrlSegment[]) : UrlMatchResult {
-	if (window.location.href.includes('/?protocol=') && url.length === 0) {
-		return {consumed: url};
-	}
-	return null;
-}
-
