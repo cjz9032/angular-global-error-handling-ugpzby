@@ -813,6 +813,16 @@ export class VantageShellService {
 		return undefined;
 	}
 
+	public getGamingAccessory() {
+		if (this.phoenix) {
+			if (!this.phoenix.gaming) {
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
+			}
+			return this.phoenix.gaming.gamingAccessory;
+		}
+		return undefined;
+	}
+
 	public getImcHelper(): any {
 		if (this.phoenix && this.phoenix.hwsettings.power.thinkpad.sectionImcHelper) {
 			return this.phoenix.hwsettings.power.thinkpad.sectionImcHelper;

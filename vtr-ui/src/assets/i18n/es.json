@@ -78,7 +78,8 @@
                     "macroKey": "Touche de macro",
                     "hardwareScan": "Exploración de hardware",
                     "systemUpdate": "Actualización de sistema",
-                    "header": "Herram. sistema"
+                    "header": "Herram. sistema",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "lighting": {
                     "title": "Personalizar iluminación",

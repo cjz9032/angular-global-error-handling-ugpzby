@@ -78,7 +78,8 @@
                     "macroKey": "Klawisz makr",
                     "hardwareScan": "Skanowanie sprzętu",
                     "systemUpdate": "Aktual. systemu",
-                    "header": "Narzędzia system"
+                    "header": "Narzędzia system",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "lighting": {
                     "title": "Dostosuj oświetlenie",

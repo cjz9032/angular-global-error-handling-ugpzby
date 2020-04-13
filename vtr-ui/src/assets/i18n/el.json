@@ -78,7 +78,8 @@
                     "macroKey": "Πλήκτρο μακροεντολής",
                     "hardwareScan": "Σάρωση υλικού",
                     "systemUpdate": "Ενημ. συστήματος",
-                    "header": "Εργαλεία συστημ"
+                    "header": "Εργαλεία συστημ",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "lighting": {
                     "title": "Προσαρμογή φωτισμού",

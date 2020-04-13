@@ -29,4 +29,5 @@ export class GamingAllCapabilities {
 	public touchpadLockStatus = false;
 	// Version 3.3 over drive
 	public overDriveFeature = false;
+	public accessoryFeature = false;
 }
