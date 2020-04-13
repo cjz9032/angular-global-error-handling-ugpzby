@@ -286,6 +286,11 @@
 	.noInstalledAppsNote {
 		padding-left: 4.5rem;
 	}
+	.voip-keys-block {
+		&:focus {
+			@include outline-blue;
+		}
+	}
 }
 
 .app-icon {

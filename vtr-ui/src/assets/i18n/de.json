@@ -78,7 +78,8 @@
                     "macroKey": "Makrotaste",
                     "hardwareScan": "Hardware-Scan",
                     "systemUpdate": "Systemaktualis.",
-                    "header": "System-Tools"
+                    "header": "System-Tools",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "lighting": {
                     "title": "Beleuchtung anpassen",

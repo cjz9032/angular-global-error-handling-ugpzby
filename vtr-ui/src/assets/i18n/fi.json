@@ -78,7 +78,8 @@
                     "macroKey": "Makronäppäin",
                     "hardwareScan": "Laitteistotarkistus",
                     "systemUpdate": "Järj.päivitys",
-                    "header": "Järj.työkalut"
+                    "header": "Järj.työkalut",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "lighting": {
                     "title": "Valaistuksen mukautus",

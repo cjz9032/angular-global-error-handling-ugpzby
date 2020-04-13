@@ -78,7 +78,8 @@
                     "macroKey": "宏键",
                     "hardwareScan": "硬件扫描",
                     "systemUpdate": "系统更新",
-                    "header": "系统工具"
+                    "header": "系统工具",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "systemStatus": {
                     "info": "信息"

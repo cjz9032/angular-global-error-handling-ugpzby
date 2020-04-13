@@ -78,7 +78,8 @@
                     "macroKey": "Makróbillentyű",
                     "hardwareScan": "Hardvervizsgálat",
                     "systemUpdate": "Rendszerfrissítés",
-                    "header": "Rendszereszközök"
+                    "header": "Rendszereszközök",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "lighting": {
                     "title": "Világítás testreszabása",

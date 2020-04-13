@@ -38,14 +38,15 @@
 		fa-icon {
 			color: $main;
 			font-size: $fontsize_sm;
-			padding-left: 0.5rem;
-			padding-top: 0.2rem;
+			margin-left: 0.5rem;
+			padding-top: 0.3rem;
+			border: 0.1rem solid transparent;
 
 			&.question {
 				cursor: pointer;
 			}
 			&:focus {
-				outline: 0.1rem solid $menu_hover;
+				@include outline-border-blue;
 			}
 		}
 

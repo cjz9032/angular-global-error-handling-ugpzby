@@ -38,8 +38,8 @@
 									attr.aria-label="{{title}}-{{ddStartAtChargeDescription}}-{{bctInfo.startValue}}%-{{option}}-
 									{{startAtChargeOptions.indexOf(bctInfo.startValue)+1}}-{{off}}-{{startAtChargeOptions.length}}-{{selected}}"
 									(keyup.esc)="[$event.preventDefault(),startAtDropDown.isOpen()?startToggle.click():'',startToggle.focus()]"
-									(keyup.enter)="[$event.stopPropagation(),
-									focusOnSelected($event,startAtDropDown,startAtChargeOption,bctInfo.startValue)]">
+									(keyup)="ddToggleKBNavigator($event,startAtDropDown,startAtChargeOption,bctInfo.startValue)">
+
 									<div class="row d-flex justify-content-between">
 										<div class="col-11 pl-1 pr-1">
 											<div class="select-title"
@@ -71,9 +71,10 @@
 										tabindex="{{item === bctInfo.startValue?0:-1}}"
 										*ngFor="let item of startAtChargeOptions;let currentIndex=index;"
 										(click)="[onStartValueChange(item , startAtDropDown,startToggle), $event.preventDefault()]"
-										(keyup.esc)="[$event.preventDefault(),startAtDropDown.isOpen()?startToggle.click():'',startToggle.focus()]"
+										(keyup.esc)="ddItemKeyEscHandler($event,startAtDropDown,startToggle)"
 										(keydown.enter)="[onStartValueChange(item ,startAtDropDown, startToggle),$event.preventDefault()]"
-										(keydown)="showHideMenuOfItem($event,startAtDropDown)"
+										(keydown.tab)="showHideMenuOfItem($event,startAtDropDown)"
+										(keydown.shift.tab)="showHideMenuOfItem($event,startAtDropDown)"
 										id="{{textId}}-{{startAtChargeOption}}-{{item}}"
 										[attr.aria-selected]="bctInfo.startValue===item?true:false"
 										[disabled]="item >= bctInfo.stopValue"
@@ -100,9 +101,8 @@
 									(focus)="[closeAllOtherDD(stopAtDropDown)]"
 									role="combobox"
 									attr.aria-label="{{title}}-{{ddStopAtChargeDescription}}-{{bctInfo.stopValue}}%-{{option}}-{{stopAtChargeOptions.indexOf(bctInfo.stopValue)+1}}-{{off}}-{{stopAtChargeOptions.length}}-{{selected}}"
-									(keyup.esc)="[$event.preventDefault(),stopAtDropDown.isOpen()?endToggle.click():'',endToggle.focus()]"
-									(keyup.enter)="[$event.stopPropagation(),
-									focusOnSelected($event,stopAtDropDown,stopAtChargeOption,bctInfo.stopValue)]">
+									(keyup.esc)="ddItemKeyEscHandler($event,stopAtDropDown,endToggle)"
+									(keyup)="ddToggleKBNavigator($event,stopAtDropDown,stopAtChargeOption,bctInfo.stopValue)">
 									<div class="row d-flex justify-content-between"
 										aria-hidden="true">
 										<div class="col-11 pl-1 pr-1">
@@ -135,9 +135,10 @@
 										tabindex="{{item === bctInfo.stopValue?0:-1}}"
 										*ngFor="let item of stopAtChargeOptions;let currentIndex=index;"
 										(click)="[onStopValueChange(item ,stopAtDropDown, endToggle), $event.preventDefault()]"
-										(keyup.esc)="[$event.preventDefault(),stopAtDropDown.isOpen()?endToggle.click():'',endToggle.focus()]"
+										(keyup.esc)="ddItemKeyEscHandler($event,stopAtDropDown,endToggle)"
 										(keydown.enter)="[onStopValueChange(item,stopAtDropDown,endToggle),$event.preventDefault()]"
-										(keydown)="showHideMenuOfItem($event,stopAtDropDown)"
+										(keydown.tab)="showHideMenuOfItem($event,stopAtDropDown)"
+										(keydown.shift.tab)="showHideMenuOfItem($event,stopAtDropDown)"
 										id="{{textId}}-{{stopAtChargeOption}}-{{item}}"
 										[disabled]="!bctInfo.checkboxValue && (item <= bctInfo.startValue)"
 										[attr.aria-selected]="bctInfo.stopValue===item?true:false"

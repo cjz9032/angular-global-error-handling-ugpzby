@@ -63,19 +63,19 @@
 			border:none;
 		}
 		&:focus {
-			outline: 0.1rem solid $menu_hover;
-			outline-offset: 0.2rem;
+			@include outline-blue;
 		}
 	}
 }
 .link-text {
 	font-size: $body;
-	text-decoration: underline;
+	padding-bottom: 0.3rem;
+	border-bottom: 0.2rem solid $menu_hover;
 	letter-spacing: 0.05rem;
 	color: $menu_hover;
 	cursor: pointer;
 	font-weight: 600;
 	&:focus {
-		outline: 0.1rem solid $menu_hover;
+		@include outline-blue;
 	}
 }

@@ -78,7 +78,8 @@
                     "macroKey": "Makro-tast",
                     "hardwareScan": "Hardwaresøgning",
                     "systemUpdate": "Systemopdatering",
-                    "header": "Systemværktøjer"
+                    "header": "Systemværktøjer",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "lighting": {
                     "title": "Tilpas belysning",

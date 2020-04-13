@@ -78,7 +78,8 @@
                     "macroKey": "Makrotast",
                     "hardwareScan": "Maskinvaresøk",
                     "systemUpdate": "Systemoppdateringer",
-                    "header": "Systemverktøy"
+                    "header": "Systemverktøy",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "lighting": {
                     "title": "Tilpass belysning",

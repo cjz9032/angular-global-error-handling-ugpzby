@@ -78,7 +78,8 @@
                     "macroKey": "Tasto macro",
                     "hardwareScan": "Scansione hardware",
                     "systemUpdate": "Aggiorna sistema",
-                    "header": "Strumenti sistema"
+                    "header": "Strumenti sistema",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "lighting": {
                     "title": "Personalizzazione illuminazione",

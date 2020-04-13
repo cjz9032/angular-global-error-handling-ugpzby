@@ -78,7 +78,8 @@
                     "macroKey": "Klávesa maker",
                     "hardwareScan": "Kontrola hardwaru",
                     "systemUpdate": "Aktualizace systému",
-                    "header": "Systémové nástroje"
+                    "header": "Systémové nástroje",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "systemStatus": {
                     "info": "INFO"
