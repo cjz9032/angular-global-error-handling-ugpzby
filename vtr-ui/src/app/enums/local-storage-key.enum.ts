@@ -277,5 +277,10 @@ export enum LocalStorageKey {
 	// UPE
 	UPEChannelTags = '[LocalStorageKey] UPEChannelTags',
 	PriorityControlCapability = '[LocalStorageKey] PriorityControlCapability',
-	KBDBacklightThinkPadCapability =  '[LocalStorageKey] KBDBacklightThinkPadCapability'
+	KBDBacklightThinkPadCapability =  '[LocalStorageKey] KBDBacklightThinkPadCapability',
+
+	// Store Rating
+	RatingConditionMet = '[LocalStorageKey] RatingConditionMet',
+	RatingLastPromptTime =  '[LocalStorageKey] RatingLastPromptTime',
+	RatingPromptCount = '[LocalStorageKey] RatingPromptCount'
 }

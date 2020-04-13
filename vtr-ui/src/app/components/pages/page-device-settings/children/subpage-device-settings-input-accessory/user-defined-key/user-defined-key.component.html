@@ -34,7 +34,8 @@
 										ngbDropdownToggle
 										type="button"
 										id="ip-userdefinedkey-dropdown-btn"
-										attr.aria-label="ip-userdefinedkey-dropdown-btn">
+										attr.aria-label="ip-userdefinedkey-dropdown-btn"
+										tabindex="0">
 										<div class="row d-flex justify-content-between">
 											<div class="col-11 col-sm-10 pl-1 pr-0">
 												<div class="select-title"
@@ -98,7 +99,8 @@
 												[(ngModel)]="url"
 												[placeholder]="'device.deviceSettings.inputAccessories.userDefinedKey.website.placeholder' | translate"
 												name="url"
-												required></textarea>
+												required
+												tabindex="0"></textarea>
 										</div>
 										<div class="col-12">
 											<div *ngIf="isUDFSetSuccessVisible"
@@ -210,7 +212,8 @@
 											<div class="open-apps-block"
 												(click)="udkSubmit(4);"
 												*ngIf=!applicationList.length>
-												<fa-icon [icon]="['fal', 'plus-square']">
+												<fa-icon [icon]="['fal', 'plus-square']"
+												tabindex="0">
 												</fa-icon>
 											</div>
 											<div class="open-apps-block"
@@ -261,8 +264,10 @@
 										<div class="col mt-3">
 											<div class="open-apps-block"
 												(click)="udkSubmit(5);"
-												*ngIf=!fileList.length>
-												<fa-icon [icon]="['fal', 'plus-square']">
+												*ngIf=!fileList.length
+												>
+												<fa-icon [icon]="['fal', 'plus-square']"
+												tabindex="0">
 												</fa-icon>
 											</div>
 											<div class="open-apps-block"

@@ -147,7 +147,8 @@
 											</div>
 											<div role="radiogroup"
 												tabindex="0"
-												aria-label="installedApps selection list, select using arrow keys">
+												aria-label="installedApps selection list, select using arrow keys"
+												class="voip-keys-block">
 												<ng-container *ngFor="let installedApp of installedApps; index as i;">
 													<vtr-ui-rectangle-radio *ngIf="installedApp.isAppInstalled"
 														[ngClass]="{'mr-5': i === 0}"

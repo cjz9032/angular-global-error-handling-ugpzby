@@ -12,8 +12,7 @@ export class UiMacrokeyPopupComponent implements OnInit {
 	constructor() { }
 
 	ngOnInit() {
-		const popupFocus = document.getElementsByClassName('macrokey_popup_close_btn')[0] as HTMLElement;
-		popupFocus.focus();
+		this.focusElement();
 		this.hiddenScroll();
 	}
 
@@ -25,18 +24,25 @@ export class UiMacrokeyPopupComponent implements OnInit {
 
 	keydownFn(event) {
 		if (event.which === 9) {
-			const popupFocus = document.getElementsByClassName('macrokey_popup_close_btn')[0] as HTMLElement;
+			this.focusElement();
+		}
+	}
+
+	focusElement() {
+		const popupFocus = document.getElementsByClassName('macrokey_popup_close_btn')[0] as HTMLElement;
+		if (popupFocus) {
 			popupFocus.focus();
 		}
 	}
 
 	hiddenScroll() {
-		if ((document.getElementsByClassName('vtr-app')[0] as HTMLElement).style.overflowY === 'hidden') {
-			(document.getElementsByClassName('vtr-app')[0] as HTMLElement).style.overflowY = 'auto';
-			(document.getElementsByClassName('vtr-app')[0] as HTMLElement).style.overflowX = 'hidden';
+		const selectorVtr = (document.getElementsByClassName('vtr-app')[0] as HTMLElement);
+		if (selectorVtr.style.overflowY === 'hidden') {
+			selectorVtr.style.overflowY = 'auto';
+			selectorVtr.style.overflowX = 'hidden';
 		} else {
-			(document.getElementsByClassName('vtr-app')[0] as HTMLElement).style.overflowY = 'hidden';
-			(document.getElementsByClassName('vtr-app')[0] as HTMLElement).style.overflowX = 'hidden';
+			selectorVtr.style.overflowY = 'hidden';
+			selectorVtr.style.overflowX = 'hidden';
 		}
 	}
 }

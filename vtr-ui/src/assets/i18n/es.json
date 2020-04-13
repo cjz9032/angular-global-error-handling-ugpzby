@@ -1852,6 +1852,14 @@
             "intelligentSecurity": {
                 "title": "Seguridad inteligente",
                 "readMore": "Leer más",
+                "image": {
+                    "title": "Seguridad inteligente",
+                    "description": "Mejora su equipo con tecnología de detección inteligente, protege su privacidad y ahorra energía de la batería."
+                },
+                "advancedSettings": {
+                    "showAdvSettings": "CONFIGURACIÓN AVANZADA",
+                    "hideAdvSettings": "OCULTAR OPCIONES AVANZADAS"
+                },
                 "HumanPresenceDetection": {
                     "title": "Detección de presencia humana",
                     "tooltip": "Haga clic aquí para restablecer los valores de detección de presencia humana."
@@ -1864,6 +1872,11 @@
                     "title": "Inicio de sesión sin interacción",
                     "caption": "Esta característica desbloquea o activa automáticamente el equipo cuando se encuentra frente o se acerca a este.",
                     "tooltip": "Cuando esté delante de la sistema o cerca de él (a una distancia de 1,2 metros), esta característica le permite iniciar sesión automáticamente en el sistema después de que se reconozca su cara. Si está en el exterior en lugar de en la oficina, debe estar más cerca del sistema y la reactivación tardará más."
+                },
+                "zeroTouchLoginForIdea": {
+                    "title": "Inicio de sesión sin interacción",
+                    "caption": "Esta característica le permite mejorar la eficacia del trabajo reactivando o iniciando sesión automáticamente en el sistema. Para utilizar esta característica, debe registrar su rostro en Windows Hello.",
+                    "tooltip": "Cuando esté delante de la sistema o cerca de él (dentro de 1,2 o 1,5 metros), esta característica le permite iniciar sesión automáticamente en el sistema después de que se reconozca su cara. Si está en el exterior en lugar de en la oficina, debe estar más cerca del sistema y la reactivación tardará más. <br>Según la capacidad del sensor, la distancia máxima de detección varía. Consulte la <i>Guía del usuario</i> que se incluye con su equipo para obtener detalles."
                 },
                 "zeroTouchLock": {
                     "title": "Bloqueo sin interacción",
@@ -1879,7 +1892,7 @@
                     },
                     "facialRecognition": {
                         "title": "RECONOCIMIENTO FACIAL",
-                        "caption": "Puede activar la función de reconocimiento facial y permitir que acceda a su cámara. Esta herramienta captura su imagen con el fin de reconocer con precisión su presencia o detectar cuando ha dejado su dispositivo desatendido. Estos datos se procesan localmente en su dispositivo. Lenovo no accede a ellos ni los utiliza.",
+                        "caption": "Esta característica ayuda a mejorar el rendimiento del reconocimiento y a evitar un bloqueo de pantalla inesperado, especialmente cuando se apoya en su silla. Esta característica se procesa localmente en su dispositivo. Lenovo no accede a ellos ni los utiliza.",
                         "checkBox": "Encienda la cámara y active esta función",
                         "note": {
                             "permission": "Lenovo Vantage no tiene acceso a la cámara. La función de la casilla de verificación no funcionará.",
@@ -1889,18 +1902,18 @@
                         }
                     },
                     "distanceSensitivityAdjusting": {
-                        "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                        "captionOn": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, you can maually adjust the dectecting sensitivity based on your preference.",
-                        "captionOff": "The accuracy varies by body size, posture, and frequency of movement. When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
+                        "title": "AJUSTE AUTOMÁTICO DE DETECCIÓN A DISTANCIA",
+                        "captionOn": "La precisión varía según el tamaño del cuerpo, la postura y la frecuencia de movimiento. Si el sistema se bloquea de forma inesperada, puede ajustar manualmente la sensibilidad de detección, basándose en sus preferencias.",
+                        "captionOff": "La precisión varía según el tamaño del cuerpo, la postura y la frecuencia de movimiento. Cuando esta característica está inhabilitada, es necesario ajustar manualmente la barra de confidencialidad para ajustar la distancia de detección. Si desea ajustar la distancia automáticamente, enciéndala.",
                         "options": {
-                            "near": "Near",
-                            "medium": "Middle",
-                            "far": "Far"
+                            "near": "Cerca",
+                            "medium": "Mediana",
+                            "far": "Lejos"
                         },
                         "readMore": {
-                            "line1": "• Near: 0.9 meter",
-                            "line2": "• Middle: 1.2 meter",
-                            "line3": "• Far: 1.5 meter"
+                            "line1": "• Cerca: 0,9 metros",
+                            "line2": "• Medio: 1,2 metros",
+                            "line3": "• Lejos: 1,5 metros"
                         }
                     }
                 },
@@ -1924,17 +1937,38 @@
                         }
                     }
                 },
+                "distanceSensitivityAdjustingForIdea": {
+                    "title": "AJUSTE AUTOMÁTICO DE DETECCIÓN A DISTANCIA",
+                    "captionOn": "Habilite esta característica para ajustar automáticamente la distancia de detección de movimientos para reactivar el sistema. Desactívela para ajustar manualmente la sensibilidad de detección según sus preferencias.",
+                    "captionOff": "Cuando esta característica está inhabilitada, es necesario ajustar manualmente la barra de confidencialidad para ajustar la distancia de detección. Si desea ajustar la distancia automáticamente, enciéndala.",
+                    "options": {
+                        "near": "Cerca",
+                        "far": "Lejos",
+                        "medium": "Mediana"
+                    },
+                    "readMore": "Hay tres opciones. En cada rango, cuando se detecten movimientos humanos, la pantalla se activará en consecuencia.",
+                    "readMoreForSensor1": {
+                        "line1": "• Cerca: 0 a 0,4 metros",
+                        "line2": "• Medio: 0 a 0,6 metros",
+                        "line3": "• Lejos: 0 a 1,2 metros"
+                    },
+                    "readMoreForSensor2": {
+                        "line1": "• Cerca: 0,2 a 0,55 metros",
+                        "line2": "• Medio: 0,2 a 1,0 metros",
+                        "line3": "• Lejos: 0,2 a 1,5 metros"
+                    }
+                },
                 "note": {
                     "description1": "Esta característica se basa en Windows Hello. Asegúrese de que el reconocimiento facial esté activado en los valores de Windows.",
                     "description2": "La característica utiliza sensores y la cámara para detectar su presencia. Sin embargo, la característica NO recopila datos personales.",
-                    "description3": "1. Si el equipo está en modalidad de lienzo, tableta o pedestal, estas características podrían no funcionar correctamente.",
-                    "description4": "2. Si el equipo está en modalidad de hibernación o se apagó, el inicio de sesión sin contacto no funcionará.",
-                    "description6": "4. Si el modo de avión está habilitado en su equipo, estas características inalámbricas se deshabilitarán.",
-                    "description7": "La precisión varía según el tamaño del cuerpo, la postura y la frecuencia de movimiento. Si el sistema está bloqueado de forma inesperada, ajuste la barra de detección para mejorar la precisión.",
-                    "description5a1": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to ",
-                    "description5a2": "User Guide ",
-                    "description5a3": "that comes with it.",
-                    "description5b": "b. Your computer is in hibernation mode or has been turned off."
+                    "description3": "1. Para usar las funciones anteriores, ajuste su pantalla a un ángulo adecuado para que pueda reconocer su rostro.",
+                    "description4": "2. Las funciones anteriores no se admiten cuando:",
+                    "description5a1": "a. El sistema está en la modalidad Tienda, Tableta o Pedestal, o la modalidad Desconectado. Para ver los modos admitidos en su equipo, consulte ",
+                    "description5a2": "Guía del usuario ",
+                    "description5a3": "que se incluye.",
+                    "description5b": "b. Su sistema se encuentra en hibernación o se apagó.",
+                    "description6": "3. Si el modo de avión está habilitado en su equipo, estas características inalámbricas se deshabilitarán.",
+                    "description7": "La precisión varía según el tamaño del cuerpo, la postura y la frecuencia de movimiento. Si el sistema está bloqueado de forma inesperada, ajuste la barra de detección para mejorar la precisión."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Vaya a valores de Windows Hello",
@@ -1943,40 +1977,6 @@
                 "resetToDefault": "Restablecer",
                 "sensitivityAdjusting": {
                     "title": "AJUSTE DE DETECCIÓN"
-                },
-                "image": {
-                    "title": "Intelligent security",
-                    "description": "Buckles up your PC with intelligent sensing technology, protects your privacy, and saves your battery power."
-                },
-                "advancedSettings": {
-                    "showAdvSettings": "ADVANCED SETTINGS",
-                    "hideAdvSettings": "HIDE ADVANCED SETTINGS"
-                },
-                "zeroTouchLoginForIdea": {
-                    "title": "Zero Touch Login",
-                    "caption": "This feature enables you to improve the work efficiency by automatically waking up or logging in your computer. To use the feature, you need to register your face in Windows Hello.",
-                    "tooltip": "When you are in front of your computer or approaching it (within 1.2 or 1.5 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer. <br>Depending on the sensor capability, the maximum detecting distance varies. Refer to the <i>User Guide</i> that comes with your computer for details."
-                },
-                "distanceSensitivityAdjustingForIdea": {
-                    "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                    "captionOn": "Enable this feature to automatically adjust the detecting distance of movements to wake up the system. Turn it off to manually adjust the detecting sensitivity based on your preference.",
-                    "captionOff": "When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
-                    "options": {
-                        "near": "Near",
-                        "medium": "Middle",
-                        "far": "Far"
-                    },
-                    "readMore": "There are three options. In each range, when human movements are detected, your screen will be waked up accordingly.",
-                    "readMoreForSensor1": {
-                        "line1": "• Near: 0-0.4 meter",
-                        "line2": "• Middle: 0-0.6 meter",
-                        "line3": "• Far: 0-1.2 meter"
-                    },
-                    "readMoreForSensor2": {
-                        "line1": "• Near: 0.2-0.55 meter",
-                        "line2": "• Middle: 0.2-1.0 meter",
-                        "line3": "• Far: 0.2-1.5 meter"
-                    }
                 }
             },
             "intelligentScreen": {
@@ -3082,15 +3082,15 @@
             "science": "Ciencia"
         },
         "gaming": {
-            "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
-            "gamingFeature1": "-Computer status monitor",
-            "gamingFeature2": "-Performance mode & overclocking",
-            "gamingFeature3": "-Lighting",
-            "gamingFeature4": "-Network Boost",
-            "gamingFeature5": "-Auto Close",
-            "gamingOnly": "Gaming",
-            "gamingAndWork": "Gaming & Work",
-            "nonGaming": "Non-Gaming"
+            "gamingDescription": "La versión para juegos de Vantage le facilita la mejora de la experiencia de juego. Además de los valores comunes, las características principales incluyen (disponible en sistemas seleccionados):",
+            "gamingFeature1": "-Monitor de estado del sistema",
+            "gamingFeature2": "-Modalidad de rendimiento y aceleración",
+            "gamingFeature3": "-Iluminación",
+            "gamingFeature4": "-Mejora de red",
+            "gamingFeature5": "-Cerrado automático",
+            "gamingOnly": "Juegos",
+            "gamingAndWork": "Trabajo y juegos",
+            "nonGaming": "No para juegos"
         }
     },
     "settings": {
@@ -4062,5 +4062,10 @@
     },
     "cpt": {
         "title": "Content Preview Tool"
+    },
+    "storeRating": {
+        "title": "Envíenos su mensaje",
+        "likeUs": "Denos un Me gusta",
+        "feedback": "Dejar comentarios"
     }
 }

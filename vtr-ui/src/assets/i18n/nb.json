@@ -1852,6 +1852,14 @@
             "intelligentSecurity": {
                 "title": "Intelligent sikkerhet",
                 "readMore": "Les mer",
+                "image": {
+                    "title": "Intelligent sikkerhet",
+                    "description": "Utstyrer PC-en din med Intelligent føler-teknologi, beskytter personvernet ditt og sparer batteristrøm."
+                },
+                "advancedSettings": {
+                    "showAdvSettings": "AVANSERTE INNSTILLINGER",
+                    "hideAdvSettings": "SKJUL AVANSERTE INNSTILLINGER"
+                },
                 "HumanPresenceDetection": {
                     "title": "Oppdagelse av menneskelig tilstedeværelse",
                     "tooltip": "Klikk her for å tilbakestille innstillingene for oppdagelse av menneskelig tilstedeværelse."
@@ -1864,6 +1872,11 @@
                     "title": "Pålogging uten berøring",
                     "caption": "Denne funksjonen låser opp eller aktiverer datamaskinen automatisk når du befinner deg foran den eller nærmer deg den.",
                     "tooltip": "Når du er foran datamaskinen eller nærmer deg den (innen avstanden på 1,2 meter), gjør denne funksjonen deg i stand til automatisk å logge deg på systemet etter at ansiktet ditt har blitt gjenkjent. Hvis du er utendørs i stedet for på kontoret, må du være nærmere datamaskinen, og det vil ta lengre tid å aktivere den."
+                },
+                "zeroTouchLoginForIdea": {
+                    "title": "Pålogging uten berøring",
+                    "caption": "Denne funksjonen gjør det mulig for deg å forbedre arbeidseffektiviteten ved hjelp av automatisk reaktivering eller pålogging på datamaskinen. Hvis du vil bruke denne funksjonen, må du registrere ansiktet ditt i Windows Hello.",
+                    "tooltip": "Når du er foran datamaskinen eller nærmer deg den (innen avstanden på 1,2 eller 1,5 meter), gjør denne funksjonen deg i stand til automatisk å logge deg på systemet etter at ansiktet ditt har blitt gjenkjent. Hvis du er utendørs i stedet for på kontoret, må du være nærmere datamaskinen, og det vil ta lengre tid å aktivere den. <br>Maksimumsavstand for identifisering varierer avhengig av sensorfunksjonen. Se <i>brukerveiledningen</i> som følger med datamaskinen for mer informasjon."
                 },
                 "zeroTouchLock": {
                     "title": "Berøringsfri lås",
@@ -1879,7 +1892,7 @@
                     },
                     "facialRecognition": {
                         "title": "ANSIKTSGJENKJENNING",
-                        "caption": "Du kan aktivere funksjonen for ansiktsgjenkjenning og gi den tilgang til kameraet. Denne funksjonen tar bilde av deg for å vite når du er til stede, og når du har forlatt enheten uten tilsyn. Disse dataene behandles lokalt på enheten. Lenovo har verken tilgang til eller bruker dem.",
+                        "caption": "Denne funksjonen bidrar til å forbedre gjenkjenningsytelsen og å unngå uventet skjermlåsing, spesielt når du lener deg bakover på stolen. Denne funksjonen behandles lokalt på enheten. Lenovo har verken tilgang til eller bruker dem.",
                         "checkBox": "Slå på kameraet og aktiver denne funksjonen",
                         "note": {
                             "permission": "Lenovo Vantage har ikke tilgang til kamera. Avmerkingsboksen vil ikke fungere.",
@@ -1889,18 +1902,18 @@
                         }
                     },
                     "distanceSensitivityAdjusting": {
-                        "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                        "captionOn": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, you can maually adjust the dectecting sensitivity based on your preference.",
-                        "captionOff": "The accuracy varies by body size, posture, and frequency of movement. When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
+                        "title": "AUTOMATISK JUSTERING AV AVSTANDSFØLSOMHET",
+                        "captionOn": "Nøyaktigheten varierer avhengig av kroppsstørrelse, sittestilling og bevegelseshyppighet. Hvis datamaskinen din låses uventet, kan du justere deteksjonsfølsomheten manuelt basert på dine preferanser.",
+                        "captionOff": "Nøyaktigheten varierer avhengig av kroppsstørrelse, sittestilling og bevegelseshyppighet. Når denne funksjonen er deaktivert, må du justere følsomheten manuelt for å justere deteksjonsavstanden. Hvis du vil at avstanden skal justeres automatisk, aktiverer du den.",
                         "options": {
-                            "near": "Near",
-                            "medium": "Middle",
-                            "far": "Far"
+                            "near": "Kort avstand",
+                            "medium": "Middels",
+                            "far": "Lang avstand"
                         },
                         "readMore": {
-                            "line1": "• Near: 0.9 meter",
-                            "line2": "• Middle: 1.2 meter",
-                            "line3": "• Far: 1.5 meter"
+                            "line1": "• Kort avstand: 0,9 meter",
+                            "line2": "• Middels avstand: 1,2 meter",
+                            "line3": "• Lang avstand: 1,5 meter"
                         }
                     }
                 },
@@ -1924,17 +1937,38 @@
                         }
                     }
                 },
+                "distanceSensitivityAdjustingForIdea": {
+                    "title": "AUTOMATISK JUSTERING AV AVSTANDSFØLSOMHET",
+                    "captionOn": "Aktiver denne funksjonen for automatisk justering av deteksjonsavstanden for bevegelser for å reaktivere systemet. Slå den av for manuell justering av deteksjonsfølsomhet basert på dine preferanser.",
+                    "captionOff": "Når denne funksjonen er deaktivert, må du justere følsomheten manuelt for å justere deteksjonsavstanden. Hvis du vil at avstanden skal justeres automatisk, aktiverer du den.",
+                    "options": {
+                        "near": "Kort avstand",
+                        "far": "Lang avstand",
+                        "medium": "Middels"
+                    },
+                    "readMore": "Du kan velge mellom tre alternativer. Når du oppdager menneskelig bevegelser i hvert område, blir skjermen reaktivert i henhold til dette.",
+                    "readMoreForSensor1": {
+                        "line1": "• Kort avstand: 0–0,4 meter",
+                        "line2": "• Middels avstand: 0–0,6 meter",
+                        "line3": "• Lang avstand: 0–1,2 meter"
+                    },
+                    "readMoreForSensor2": {
+                        "line1": "• Kort avstand: 0,2–0,55 meter",
+                        "line2": "• Middels avstand: 0,2–1,0 meter",
+                        "line3": "• Lang avstand: 0,2–1,5 meter"
+                    }
+                },
                 "note": {
                     "description1": "Denne funksjonen er avhengig av Windows Hello. Pass på at ansiktsgjenkjenning er aktivert i Windows-innstillingene.",
                     "description2": "Funksjonen bruker sensorer og kamera til å oppdage din tilstedeværelse. Funksjonen samler imidlertid IKKE inn noen personlige opplysninger.",
-                    "description3": "1. Disse funksjonene fungerer kanskje ikke på riktig måte hvis datamaskinen er i telt-, nettbrett- eller stativmodus.",
-                    "description4": "2. Pålogging uten berøring fungerer ikke hvis datamaskinen er i dvalemodus eller er slått av.",
-                    "description6": "4. Disse funksjonene deaktiveres hvis flymodus aktiveres på datamaskinen.",
-                    "description7": "Nøyaktigheten varierer avhengig av kroppsstørrelse, sittestilling og bevegelseshyppighet. Hvis datamaskinen blir uventet låst, kan du justere følsomheten for å forbedre nøyaktigheten.",
-                    "description5a1": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to ",
-                    "description5a2": "User Guide ",
-                    "description5a3": "that comes with it.",
-                    "description5b": "b. Your computer is in hibernation mode or has been turned off."
+                    "description3": "1. Hvis du vil bruke funksjonene ovenfor, justerer du skjermen til en passende vinkel, slik at ansiktet ditt kan gjenkjennes.",
+                    "description4": "2. Funksjonene ovenfor støttes ikke når:",
+                    "description5a1": "a. Datamaskinen din er i Telt-modus, Nettbrett-modus, Stativ-modus eller frakoblet modus. Hvis du vil finne ut hvilke modi som støttes av datamaskinen din, kan du se ",
+                    "description5a2": "Brukerveiledning ",
+                    "description5a3": "som følger med.",
+                    "description5b": "b. Datamaskinen er i dvalemodus eller er slått av.",
+                    "description6": "3. Disse funksjonene deaktiveres hvis flymodus aktiveres på datamaskinen.",
+                    "description7": "Nøyaktigheten varierer avhengig av kroppsstørrelse, sittestilling og bevegelseshyppighet. Hvis datamaskinen blir uventet låst, kan du justere følsomheten for å forbedre nøyaktigheten."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Gå til Windows Hello-innstillinger",
@@ -1943,40 +1977,6 @@
                 "resetToDefault": "Tilbakestill",
                 "sensitivityAdjusting": {
                     "title": "JUSTERING AV FØLSOMHET"
-                },
-                "image": {
-                    "title": "Intelligent security",
-                    "description": "Buckles up your PC with intelligent sensing technology, protects your privacy, and saves your battery power."
-                },
-                "advancedSettings": {
-                    "showAdvSettings": "ADVANCED SETTINGS",
-                    "hideAdvSettings": "HIDE ADVANCED SETTINGS"
-                },
-                "zeroTouchLoginForIdea": {
-                    "title": "Zero Touch Login",
-                    "caption": "This feature enables you to improve the work efficiency by automatically waking up or logging in your computer. To use the feature, you need to register your face in Windows Hello.",
-                    "tooltip": "When you are in front of your computer or approaching it (within 1.2 or 1.5 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer. <br>Depending on the sensor capability, the maximum detecting distance varies. Refer to the <i>User Guide</i> that comes with your computer for details."
-                },
-                "distanceSensitivityAdjustingForIdea": {
-                    "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                    "captionOn": "Enable this feature to automatically adjust the detecting distance of movements to wake up the system. Turn it off to manually adjust the detecting sensitivity based on your preference.",
-                    "captionOff": "When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
-                    "options": {
-                        "near": "Near",
-                        "medium": "Middle",
-                        "far": "Far"
-                    },
-                    "readMore": "There are three options. In each range, when human movements are detected, your screen will be waked up accordingly.",
-                    "readMoreForSensor1": {
-                        "line1": "• Near: 0-0.4 meter",
-                        "line2": "• Middle: 0-0.6 meter",
-                        "line3": "• Far: 0-1.2 meter"
-                    },
-                    "readMoreForSensor2": {
-                        "line1": "• Near: 0.2-0.55 meter",
-                        "line2": "• Middle: 0.2-1.0 meter",
-                        "line3": "• Far: 0.2-1.5 meter"
-                    }
                 }
             },
             "intelligentScreen": {
@@ -3082,15 +3082,15 @@
             "science": "Vitenskap"
         },
         "gaming": {
-            "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
-            "gamingFeature1": "-Computer status monitor",
-            "gamingFeature2": "-Performance mode & overclocking",
-            "gamingFeature3": "-Lighting",
-            "gamingFeature4": "-Network Boost",
-            "gamingFeature5": "-Auto Close",
-            "gamingOnly": "Gaming",
-            "gamingAndWork": "Gaming & Work",
-            "nonGaming": "Non-Gaming"
+            "gamingDescription": "Spillversjonen av Vantage gjør det enkelt for deg å forbedre spillopplevelsen. I tillegg til vanlige innstillinger inkluderer hovedfunksjonene følgende (tilgjengelig på utvalgte systemer):",
+            "gamingFeature1": "– Overvåking av datamaskinstatus",
+            "gamingFeature2": "– Ytelsesmodus og overklokking",
+            "gamingFeature3": "– Belysning",
+            "gamingFeature4": "– Nettverksforbedring",
+            "gamingFeature5": "– Automatisk lukking",
+            "gamingOnly": "Spilling",
+            "gamingAndWork": "Spilling og arbeid",
+            "nonGaming": "Ikke spilling"
         }
     },
     "settings": {
@@ -4062,5 +4062,10 @@
     },
     "cpt": {
         "title": "Content Preview Tool"
+    },
+    "storeRating": {
+        "title": "Gi oss din mening",
+        "likeUs": "Lik oss",
+        "feedback": "Gi tilbakemelding"
     }
 }

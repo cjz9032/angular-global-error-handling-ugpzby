@@ -26,12 +26,12 @@
 			class="navbar-brand pt-0 logo-y">
 
 			<div *ngIf="isGamingHome">
-				<img [src]="headerLogo | sanitize : 'resourceUrl'"
+				<img tabindex="0" [src]="headerLogo | sanitize : 'resourceUrl'"
 					alt="L" />
 			</div>
 			<a id="menu-main-lnk-gaming-logo"
 				aria-label="menu-main-lnk-gaming-logo"
-				tabindex="1"
+				tabindex="0"
 				*ngIf="!isGamingHome"
 				vtrMetrics
 				routerLinkActive="link-active"
@@ -289,6 +289,8 @@
 							id="navbarDropdownMenu"
 							aria-labelledby="navbarDropdown">
 							<div class="dropdown-item"
+								role="text"
+								id="menu-main-text-hello-user"
 								*ngIf="!deviceService.isArm && commonService.isOnline && userService.isLenovoIdSupported()">
 								{{'lenovoId.helloUser' | translate:{firstName:userService.firstName} }}
 							</div>
