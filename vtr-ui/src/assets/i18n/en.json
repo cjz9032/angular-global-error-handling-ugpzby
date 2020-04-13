@@ -2383,7 +2383,7 @@
 			"manageSubscription": "MANAGE SUBSCRIPTION"
 		},
 		"scanSettings": {
-			"title": "Scan settings",
+			"title": "Schedule scan settings",
 			"description": "Enable or disable the scan and set the scan schedule",
 			"enableScan": "Enable Scan",
 			"changeScanTitle": "Change scan schedule",
