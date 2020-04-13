@@ -1145,6 +1145,8 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 					z-index: 5;
 					@media #{$breakpoint_xl} {
 						font-size: $fontsize_xs2;
+						padding: 1.5rem;
+						height: 16rem;
 					}
 					@media #{$breakpoint_sm} {
 						font-size: 0.9rem;
@@ -1156,6 +1158,12 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 						text-align: center;
 						font-size: 8rem;
 						color: $main_light;
+						@media #{$breakpoint_xl}{
+							font-size: 6.4rem;
+							height: 6.4rem;
+							width: 6.4rem;
+							line-height: 6.4rem;
+						}
 						@media #{$breakpoint_sm} {
 							font-size: 6rem;
 						}
