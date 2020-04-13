@@ -29,7 +29,7 @@
 							<ul class="list-group list-group-flush">
 								<li>
 									<vtr-ui-row-switch [title]="'settings.appFeatures' | translate"
-										[name]="'AppFeaturesToggle'"
+										[name]="'settings.appFeatures' | translate"
 										[switchId]="'settingsAppFeaturesToggle'"
 										id="settings-appFeaturesToggle"
 										aria-label="settings-appFeatures"
@@ -44,7 +44,7 @@
 								<li>
 									<vtr-ui-row-switch [title]="'settings.marketing' | translate"
 										[vtrAppSearchScroller]="['search-preference-marketing']"
-										[name]="'MarketingToggle'"
+										[name]="'settings.marketing' | translate"
 										[switchId]="'settingsMarketingToggle'"
 										id="settings-marketingToggle"
 										aria-label="settings-marketingToggle"
@@ -59,7 +59,7 @@
 								<li>
 									<vtr-ui-row-switch [title]="'settings.actionTriggered' | translate"
 										[vtrAppSearchScroller]="['search-preference-action-trigger']"
-										[name]="'ActionTriggeredToggle'"
+										[name]="'settings.actionTriggered' | translate"
 										[switchId]="'settingsActionTriggeredToggle'"
 										id="settings-actionTriggeredToggle"
 										aria-label="settings-actionTriggeredToggle"
@@ -87,7 +87,7 @@
 							<ul class="list-group list-group-flush">
 								<li>
 									<vtr-ui-row-switch [title]="'settings.betaProgram' | translate"
-										[name]="'settingsBetaProgramToggle'"
+										[name]="'settings.betaProgram' | translate"
 										[switchId]="'settingsBetaProgramToggle'"
 										[vtrAppSearchScroller]="['search-preference-beta']"
 										id="settings-betaProgramToggle"
@@ -113,7 +113,7 @@
 							<ul class="list-group list-group-flush">
 								<li *ngIf="isToggleUsageStatistics">
 									<vtr-ui-row-switch [title]="'settings.usageStatistics' | translate"
-										[name]="'settingsUsageStatisticsToggle'"
+										[name]="'settings.usageStatistics' | translate"
 										[switchId]="'settingsUsageStatisticsToggle'"
 										[vtrAppSearchScroller]="['search-preference-statistics']"
 										id="settings-usageStatisticsToggle"
@@ -129,7 +129,7 @@
 								</li>
 								<li *ngIf="isToggleDeviceStatistics">
 									<vtr-ui-row-switch [title]="'settings.deviceStatistics' | translate"
-										[name]="'settingsDeviceStatisticsToggle'"
+										[name]="'settings.deviceStatistics' | translate"
 										[switchId]="'settingsDeviceStatisticsToggle'"
 										[vtrAppSearchScroller]="['search-preference-device-statistics']"
 										id="settings-deviceStatisticsToggle"

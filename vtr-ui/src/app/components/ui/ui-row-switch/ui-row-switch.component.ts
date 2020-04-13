@@ -56,6 +56,7 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, After
 	@Input() label = '';
 	@Input() fnCtrltoolTip = false;
 	@Input() tooltipContent = [];
+	@Input() name = '';
 	public contentExpand = false;
 
 	@ViewChild('rightToolTip1', { static: false }) rightToolTip1: ElementRef;
