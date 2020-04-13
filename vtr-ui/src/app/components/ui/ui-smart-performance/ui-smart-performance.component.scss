@@ -100,7 +100,7 @@
 			}
 		}
 		.pc-performance-block {
-			padding: 3rem 3rem 0 3rem;
+			padding: 2.5rem 2.5rem 0 2.5rem;
 			h1 {
 				font-size: 3rem;
 				font-weight: $weight_light;
@@ -141,6 +141,7 @@
 				background: $grey_lighter;
 				width: 100%;
 				padding: 3.5rem 2rem 2rem 2rem;
+				border-radius: 0.5rem;
 				@media #{$breakpoint_sm}{
 					margin-bottom: 0rem;
 				}
@@ -254,6 +255,16 @@
 			.smart-features{
 				padding-left: 6rem;
 				padding-right: 6rem;
+				@media #{$breakpoint_xl}{
+					padding-left: 0rem;
+					padding-right: 0rem;
+					.col-4:first-child {
+						padding-left: 0rem;
+					}
+					.col-4:last-child {
+						padding-right: 0rem;
+					}
+				}
 				@media #{$breakpoint_md}{
 					padding-left: 0rem;
 					padding-right: 0rem;
@@ -549,10 +560,11 @@
 			}
 		}
 		.link-text {
-			font-size: 1.6rem;
-			text-decoration: underline;
+			font-size: 1.4rem;
+			padding-bottom: 0.3rem;
+			border-bottom: 0.2rem solid $menu_hover;
 			letter-spacing: 0.05rem;
-			color: #4a81fd;
+			color: $menu_hover;
 			cursor: pointer;
 			font-weight: 600;
 			@media #{$breakpoint_sm}{
@@ -577,7 +589,15 @@
 				font-size: 1.2rem;
 			}
 			.status {
-				font-size: 1.2rem;
+				font-size: 1.4rem;
+				min-width: 8rem;
+            	text-align: center;
+				.badge{
+					height: 1.8rem;
+					font-size: 1.2rem;
+					padding-left: 1.8rem;
+					padding-right: 1.8rem;
+				}
 			}
 		}
 		.chevron-list {
@@ -586,7 +606,7 @@
 			background: $shade_extralight;
 			border: 0.1rem solid $shade_lighter;
 			li {
-				padding: 1.2rem 2.4rem;
+				padding: 1.2rem 1.6rem;
 				border-bottom: 0.1rem solid $screen_dark_05;
 				line-height: 3rem;
 				font-size: 1.4rem;
@@ -610,6 +630,11 @@
 				}
 				&:last-child{
 					border-bottom: none;
+				}
+				.status {
+					strong{
+						font-weight: $weight_bold;
+					}
 				}
 			}
 		}

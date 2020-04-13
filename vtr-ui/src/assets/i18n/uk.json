@@ -78,7 +78,8 @@
                     "macroKey": "Клавіша макросів",
                     "hardwareScan": "Сканування устаткування",
                     "systemUpdate": "Оновлення системи",
-                    "header": "Сист. інструменти"
+                    "header": "Сист. інструменти",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "lighting": {
                     "title": "Настроювання підсвітки",

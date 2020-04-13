@@ -78,7 +78,8 @@
                     "macroKey": "매크로 키",
                     "hardwareScan": "하드웨어 검사",
                     "systemUpdate": "시스템 업데이트",
-                    "header": "시스템 도구"
+                    "header": "시스템 도구",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "lighting": {
                     "title": "조명 사용자 정의",

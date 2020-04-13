@@ -25,7 +25,7 @@
 			li {
 				//width: calc(100% / 5);
 				width: 20%;
-				min-width: 10.4rem;
+				min-width: 8rem;
 				a {
 					text-decoration: none;
 					display: inline-block;
@@ -109,6 +109,20 @@
 							// padding-top: 0.8rem;
 						}
 					}
+					.system-image {
+						cursor: pointer;
+						margin: auto;
+						height: 8rem;
+						width: 8rem;
+						@media #{$breakpoint_xl} {
+							height: 6rem;
+							width: 6rem;
+						}
+						.image {
+							height: 100%;
+							width: 100%;
+						}
+					}
 					figcaption {
 						font-size: $fontsize_sm;
 						@media #{$breakpoint_xl} {
@@ -120,6 +134,15 @@
 						white-space: normal;
 						overflow: hidden;
 						height: 4.4rem;
+					}
+				}
+			}
+			&.list-overflow-6 {
+				flex-wrap: wrap;
+				li {
+					width: 16.6%;
+					@media #{$breakpoint_xl} {
+						min-width: 33.3%;
 					}
 				}
 			}

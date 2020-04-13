@@ -84,7 +84,12 @@ export class BacklightService {
 					observer.complete();
 				},
 				result => {
-					observer.error(result);
+					if (result.errorcode && result.errorcode === 606){
+						observer.complete();
+					}
+					else{
+						observer.error(result);
+					}
 				}
 			)
 

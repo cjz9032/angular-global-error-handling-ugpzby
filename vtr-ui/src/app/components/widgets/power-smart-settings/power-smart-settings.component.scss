@@ -128,8 +128,7 @@
 	}
 	.cooling-mode-list-block {
 		&:focus {
-			outline: 0.1rem solid $light;
-			outline-offset: 0.2rem;
+			@include outline-white;
 		}
 	}
 }
