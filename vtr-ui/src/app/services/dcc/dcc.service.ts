@@ -43,20 +43,22 @@ export class DccService {
 			this.cmsService.fetchCMSContent(queryOptions).subscribe(
 				(response: any) => {
 					if (response && response.length > 0) {
-						this.getCMSHeaderImageDcc(response);
+						this.getCMSHeaderImage(response);
 					}
 				});
 		}
 	}
 
-	private getCMSHeaderImageDcc(response) {
+	private getCMSHeaderImage(response) {
 		const headerImage = this.cmsService.getOneCMSContent(
 			response,
 			'header',
 			null
 		)[0];
-		if (headerImage && headerImage.Title === 'Header Image DCC') {
-			this.cmsHeaderDccBackgroundUpdated = true;
+		if (headerImage) {
+			if (headerImage.Title === 'Header Image DCC') {
+				this.cmsHeaderDccBackgroundUpdated = true;
+			}
 			this.headerBackground = headerImage.FeatureImage;
 		}
 	}
