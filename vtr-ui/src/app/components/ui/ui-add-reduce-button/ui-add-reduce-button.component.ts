@@ -14,6 +14,7 @@ export class UiAddReduceButtonComponent implements OnInit {
   @Input() unit:string;
   @Input() btnWidth:string = '33.3%';
   @Input() isValChange:boolean = true;
+  @Input() ariaLabelValue:string = "";
   @Output() setVal = new EventEmitter<any>();
   constructor() { }
 
