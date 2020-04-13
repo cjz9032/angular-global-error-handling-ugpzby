@@ -2056,6 +2056,53 @@
                     "description2": "Strømbesparelsestilstanden er aktiveret."
                 }
             },
+            "antiTheft": {
+                "heading": "Intelligent registrering",
+                "title": "Smart bevægelsesalarm",
+                "desc": "<p><label>Når denne funktion er aktiveret, begynder enheden at bippe, når skærmen er låst, og der registreres bevægelser, især på et offentligt sted.</label></p> <p style='margin-top:4px;'><label>Hvis du vil afvise alarmen, skal du angive den korrekte adgangskode eller logge på med Windows Hello.</label></p>",
+                "note": {
+                    "description": "Når du er logget på systemet, bliver denne funktionen automatisk slået fra. Du skal aktivere den igen for at bruge den."
+                },
+                "alarm": {
+                    "title":" ALARMEN SKAL VARE I",
+                    "option1":"10 sekunder",
+                    "option2":"20 sekunder",
+                    "option3":"30 sekunder",
+                    "option4":"1 minut",
+                    "option5":"Stop aldrig"
+                },
+                "allowCamera": {
+                    "title":"TAG FOTOS",
+                    "describe":"Når du aktiverer denne funktion, tager kameraet automatisk fotos, når der registreres bevægelser, mens skærmen er låst. Disse data behandles lokalt på din enhed. Lenovo kan ikke få adgang til eller bruge dem.",
+                    "checkBoxText":"Aktiver denne funktion"
+                },
+                "cameraPrivacy": {
+                     "describe":"Privat kameratilstand er aktiveret for Lenovo Vantage. Afkrydsningsfeltet fungerer ikke.",
+                     "linkText":"Gå til privat kameratilstand for at slå det fra"
+                },
+                "authorizedAccess": {
+                    "describe":"Lenovo Vantage har ikke adgang til kamera. Afkrydsningsfeltet fungerer ikke.",
+                    "linkText":"Gå til Windows-indstillinger for at give adgang"
+                },
+                "photo": {
+                    "title":"ANTALLET AF FOTOS, DER ER TAGET UNDER BEVÆGELSEN",
+                    "tooltip": "Kameraet på computeren aktiveres automatisk for at tage billeder, når der registreres bevægelser. Der tages billeder hvert 2. sekund, og de gemmes på dit lokale lager.",
+                    "option1":"5",
+                    "option2":"10",
+                    "option3":"15",
+                    "option4":"20",
+                    "option5":"25",
+                    "option6":"30"
+                },
+                "showPhoto": {
+                    "title":"FOTOS HAR VÆRET:",
+                    "link":"Vis fotos"
+				},
+				"fileAuthorizationTips": {
+					"content":"Lenovo Vantage har ikke adgang til filsystemet.",
+					"link":"Gå til Windows-indstillinger for at give adgang"
+				}
+            },
             "voice": {
                 "title": "stemme",
                 "description": "Lenovo Voice konverterer din tale til tekst med funktionen Tale til tekst og hjælper med realtidsoversættelse af tale med oversættelsesassistenten.",
@@ -2087,53 +2134,6 @@
                     "btnText": "ok",
                     "title": "Installation mislykkedes",
                     "desc": "Prøv igen senere for at bruge Lenovo Voice."
-                }
-            },
-            "antiTheft": {
-                "heading": "Intelligent Sensing",
-                "title": "Smart Motion Alert",
-                "desc": "<p><label>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</label></p> <p style='margin-top:4px;'><label>To dismiss the alarm, enter the correct password or log in by Windows Hello.</label></p>",
-                "note": {
-                    "description": "Once you log in the system successfully, this feature will be turned off automatically. You need to enable it again to use it."
-                },
-                "alarm": {
-                    "title": " THE ALARM WILL LAST FOR",
-                    "option1": "10 seconds",
-                    "option2": "20 seconds",
-                    "option3": "30 seconds",
-                    "option4": "1 minute",
-                    "option5": "Never stop"
-                },
-                "allowCamera": {
-                    "title": "TATING PHOTOS",
-                    "describe": "When enabling this feature, the camera takes photos automatically when detecting any movement if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
-                    "checkBoxText": "Enable this feature"
-                },
-                "cameraPrivacy": {
-                    "describe": "Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
-                    "linkText": "Go to Camera privacy mode to turn it off"
-                },
-                "authorizedAccess": {
-                    "describe": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
-                    "linkText": "Go to Windows Settings to give access"
-                },
-                "photo": {
-                    "title": "THE NUMBER OF PHOTOS TAKEN DURING THE MOVEMENT",
-                    "tooltip": "The camera on your computer automatically activates to take pictures when movements are detected. Pictures are taken every 2 seconds and are saved to your local storage.",
-                    "option1": 5,
-                    "option2": 10,
-                    "option3": 15,
-                    "option4": 20,
-                    "option5": 25,
-                    "option6": 30
-                },
-                "showPhoto": {
-                    "title": "PHOTOS HAVE BEEN:",
-                    "link": "View photos"
-                },
-                "fileAuthorizationTips": {
-                    "content": "Lenovo Vantage doesn't have access to the file system.",
-                    "link": "Go to Windows Settings to give access"
                 }
             }
         }

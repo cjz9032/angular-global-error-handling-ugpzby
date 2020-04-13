@@ -2056,6 +2056,53 @@
                     "description2": "電池省電模式已啟用。"
                 }
             },
+            "antiTheft": {
+                "heading": "智慧型感應",
+                "title": "智慧型移動警示",
+                "desc": "<p><label>啟用此功能時，裝置將在螢幕鎖定及偵測到移動時開始發出嗶聲，特別是在公共場所。</label></p> <p style='margin-top:4px;'><label>若要關閉警示音，請輸入正確密碼或透過 Windows Hello 登入。</label></p>",
+                "note": {
+                    "description": "成功登入系統後，此功能將自動關閉。您必須重新啟用才能使用此功能。"
+                },
+                "alarm": {
+                    "title":" 警示音持續時間",
+                    "option1":"10 秒",
+                    "option2":"20 秒",
+                    "option3":"30 秒",
+                    "option4":"1 分鐘",
+                    "option5":"永不停止"
+                },
+                "allowCamera": {
+                    "title":"拍照",
+                    "describe":"啟用此功能時，若您的螢幕已鎖定，相機將在偵測到任何動作時自動拍照。這份資料將由您的裝置本機進行處理，Lenovo 絕不會逕自存取或加以使用。",
+                    "checkBoxText":"啟用這項功能"
+                },
+                "cameraPrivacy": {
+                     "describe":"Lenovo Vantage 攝影機隱私模式已開啟。勾選框的功能無法運作。",
+                     "linkText":"移至攝影機隱私模式以將其關閉"
+                },
+                "authorizedAccess": {
+                    "describe":"Lenovo Vantage 沒有攝影機的存取權。勾選框的功能無法運作。",
+                    "linkText":"移至 Windows 設定以授與存取權"
+                },
+                "photo": {
+                    "title":"移動期間拍攝的相片數",
+                    "tooltip": "電腦上的相機會在偵測到動作時自動啟動拍照功能。每 2 秒拍一次，並將照片存到您的本機儲存裝置。",
+                    "option1":"5",
+                    "option2":"10",
+                    "option3":"15",
+                    "option4":"20",
+                    "option5":"25",
+                    "option6":"30"
+                },
+                "showPhoto": {
+                    "title":"相片已：",
+                    "link":"檢視相片"
+				},
+				"fileAuthorizationTips": {
+					"content":"Lenovo Vantage 無權存取檔案系統。",
+					"link":"移至 Windows 設定以授與存取權"
+				}
+            },
             "voice": {
                 "title": "語音",
                 "description": "Lenovo Voice 可使用語音轉文字功能將您的聲音轉換為文字，並使用翻譯助理功能進行即時語音翻譯。",
@@ -2087,53 +2134,6 @@
                     "btnText": "確定",
                     "title": "安裝失敗",
                     "desc": "若要使用 Lenovo Voice，請稍後重試。"
-                }
-            },
-            "antiTheft": {
-                "heading": "Intelligent Sensing",
-                "title": "Smart Motion Alert",
-                "desc": "<p><label>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</label></p> <p style='margin-top:4px;'><label>To dismiss the alarm, enter the correct password or log in by Windows Hello.</label></p>",
-                "note": {
-                    "description": "Once you log in the system successfully, this feature will be turned off automatically. You need to enable it again to use it."
-                },
-                "alarm": {
-                    "title": " THE ALARM WILL LAST FOR",
-                    "option1": "10 seconds",
-                    "option2": "20 seconds",
-                    "option3": "30 seconds",
-                    "option4": "1 minute",
-                    "option5": "Never stop"
-                },
-                "allowCamera": {
-                    "title": "TATING PHOTOS",
-                    "describe": "When enabling this feature, the camera takes photos automatically when detecting any movement if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
-                    "checkBoxText": "Enable this feature"
-                },
-                "cameraPrivacy": {
-                    "describe": "Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
-                    "linkText": "Go to Camera privacy mode to turn it off"
-                },
-                "authorizedAccess": {
-                    "describe": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
-                    "linkText": "Go to Windows Settings to give access"
-                },
-                "photo": {
-                    "title": "THE NUMBER OF PHOTOS TAKEN DURING THE MOVEMENT",
-                    "tooltip": "The camera on your computer automatically activates to take pictures when movements are detected. Pictures are taken every 2 seconds and are saved to your local storage.",
-                    "option1": 5,
-                    "option2": 10,
-                    "option3": 15,
-                    "option4": 20,
-                    "option5": 25,
-                    "option6": 30
-                },
-                "showPhoto": {
-                    "title": "PHOTOS HAVE BEEN:",
-                    "link": "View photos"
-                },
-                "fileAuthorizationTips": {
-                    "content": "Lenovo Vantage doesn't have access to the file system.",
-                    "link": "Go to Windows Settings to give access"
                 }
             }
         }

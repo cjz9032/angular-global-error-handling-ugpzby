@@ -2056,6 +2056,53 @@
                     "description2": "Omogućen je način uštede baterije."
                 }
             },
+            "antiTheft": {
+                "heading": "Pametni senzori",
+                "title": "Pametno upozorenje o kretanju",
+                "desc": "<p><label>Kada omogućite ovu značajku, uređaj će početi piskati kad je vaš zaslon zaključan a otkrije se pokrete, naročito na javnom mjestu.</label></p> <p style='margin-top:4px;'><label>Da biste isključili alarm, unesite pravilnu lozinku ili se prijavite u sustav Windows Hello.</label></p>",
+                "note": {
+                    "description": "Nakon uspješne prijave u sustav, ova će se značajka automatski isključiti. Da biste je opet koristili morate je ponovo uključiti."
+                },
+                "alarm": {
+                    "title":" ALARM ĆE TRAJATI",
+                    "option1":"10 sekundi",
+                    "option2":"20 sekundi",
+                    "option3":"30 sekundi",
+                    "option4":"1 minuta",
+                    "option5":"Bez isključivanja"
+                },
+                "allowCamera": {
+                    "title":"FOTOGRAFIRANJE",
+                    "describe":"Kada omogućite ovu značajku, kamera autoimatski fotografira kad je vaš zaslon zaključan a otkrije se pokrete. Ti se podaci obrađuju lokalno na vašem uređaju. Lenovo im ne pristupa niti ih upotrebljava.",
+                    "checkBoxText":"Omogućite ovu značajku"
+                },
+                "cameraPrivacy": {
+                     "describe":"Uključen je način rada kamere za zaštitu privatnosti Lenovo Vantage. Funkcija potvrdnog okvira ne radi.",
+                     "linkText":"Idite na način rada kamere za zaštitu privatnosti kako biste ga isključili"
+                },
+                "authorizedAccess": {
+                    "describe":"Lenovo Vantage nema pristup kameri. Funkcija potvrdnog okvira ne radi.",
+                    "linkText":"Idite na postavke sustava Windows za omogućivanje pristupa"
+                },
+                "photo": {
+                    "title":"BROJ SNIMLJENIH FOTOGRAFIJA TIJEKOM POMICANJA",
+                    "tooltip": "Kamera na vašem računalu automatski se aktivira za fotografiranje kada se otkrije pokrete. Fotografije se snimaju svake 2 sekunde i sprema ih se u vašu lokalnu pohranu.",
+                    "option1":"5",
+                    "option2":"10",
+                    "option3":"15",
+                    "option4":"20",
+                    "option5":"25",
+                    "option6":"30"
+                },
+                "showPhoto": {
+                    "title":"FOTOGRAFIJE SU BILE:",
+                    "link":"Pregledaj fotografije"
+				},
+				"fileAuthorizationTips": {
+					"content":"Lenovo Vantage nema pristup datotečnom sustavu.",
+					"link":"Idite na postavke sustava Windows za omogućivanje pristupa"
+				}
+            },
             "voice": {
                 "title": "Glas",
                 "description": "Lenovo Voice pretvara vaš glas u tekst pomoću glasa u tekst i pruža pomoć u prijevodu govora u stvarnom vremenu uz pomoć prevoditeljskog pomoćnika.",
@@ -2087,53 +2134,6 @@
                     "btnText": "u redu",
                     "title": "Instalacija nije uspjela",
                     "desc": "Pokušajte ponovo kasnije da biste koristili Lenovo Voice."
-                }
-            },
-            "antiTheft": {
-                "heading": "Intelligent Sensing",
-                "title": "Smart Motion Alert",
-                "desc": "<p><label>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</label></p> <p style='margin-top:4px;'><label>To dismiss the alarm, enter the correct password or log in by Windows Hello.</label></p>",
-                "note": {
-                    "description": "Once you log in the system successfully, this feature will be turned off automatically. You need to enable it again to use it."
-                },
-                "alarm": {
-                    "title": " THE ALARM WILL LAST FOR",
-                    "option1": "10 seconds",
-                    "option2": "20 seconds",
-                    "option3": "30 seconds",
-                    "option4": "1 minute",
-                    "option5": "Never stop"
-                },
-                "allowCamera": {
-                    "title": "TATING PHOTOS",
-                    "describe": "When enabling this feature, the camera takes photos automatically when detecting any movement if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
-                    "checkBoxText": "Enable this feature"
-                },
-                "cameraPrivacy": {
-                    "describe": "Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
-                    "linkText": "Go to Camera privacy mode to turn it off"
-                },
-                "authorizedAccess": {
-                    "describe": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
-                    "linkText": "Go to Windows Settings to give access"
-                },
-                "photo": {
-                    "title": "THE NUMBER OF PHOTOS TAKEN DURING THE MOVEMENT",
-                    "tooltip": "The camera on your computer automatically activates to take pictures when movements are detected. Pictures are taken every 2 seconds and are saved to your local storage.",
-                    "option1": 5,
-                    "option2": 10,
-                    "option3": 15,
-                    "option4": 20,
-                    "option5": 25,
-                    "option6": 30
-                },
-                "showPhoto": {
-                    "title": "PHOTOS HAVE BEEN:",
-                    "link": "View photos"
-                },
-                "fileAuthorizationTips": {
-                    "content": "Lenovo Vantage doesn't have access to the file system.",
-                    "link": "Go to Windows Settings to give access"
                 }
             }
         }

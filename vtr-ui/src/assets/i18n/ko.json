@@ -2056,6 +2056,53 @@
                     "description2": "배터리 절약 모드를 사용합니다."
                 }
             },
+            "antiTheft": {
+                "heading": "지능형 센싱",
+                "title": "스마트 모션 알림",
+                "desc": "<p><label>이 기능을 활성화하면 화면이 잠겨 있을 때, 특히 공공장소에서 이동이 감지될 때 장치에서 신호음이 울리기 시작합니다.</label></p> <p style='margin-top:4px;'><label>알람을 해제하려면 올바른 암호를 입력하거나 Windows Hello로 로그인하십시오.</label></p>",
+                "note": {
+                    "description": "시스템에 로그인하면 이 기능이 자동으로 꺼집니다. 다시 기능을 활성화해야 사용할 수 있습니다."
+                },
+                "alarm": {
+                    "title":" 알람은 다음 시간 동안 울립니다",
+                    "option1":"10초",
+                    "option2":"20초",
+                    "option3":"30초",
+                    "option4":"1분",
+                    "option5":"멈추지 않음"
+                },
+                "allowCamera": {
+                    "title":"사진 촬영",
+                    "describe":"이 기능을 활성화하면 화면이 잠긴 경우 카메라가 움직임을 감지할 때 자동으로 사진을 촬영합니다. 이 데이터는 장치에서 로컬로 처리됩니다. Lenovo는 이를 액세스하거나 사용하지 않습니다.",
+                    "checkBoxText":"이 기능 활성화하기"
+                },
+                "cameraPrivacy": {
+                     "describe":"Lenovo Vantage 카메라 개인 정보 모드가 켜져 있습니다. 선택란의 기능이 작동하지 않습니다.",
+                     "linkText":"카메라 개인 정보 모드로 이동하여 끄기"
+                },
+                "authorizedAccess": {
+                    "describe":"Lenovo Vantage가 카메라에 액세스할 수 없습니다. 선택란의 기능이 작동하지 않습니다.",
+                    "linkText":"액세스 권한을 부여하려면, Windows 설정으로 이동합니다"
+                },
+                "photo": {
+                    "title":"움직임이 있는 동안 찍은 사진의 개수",
+                    "tooltip": "움직임이 감지되면 컴퓨터의 카메라가 자동으로 활성화되어 사진을 촬영합니다. 사진은 2초마다 촬영되며 로컬 저장 장치에 저장됩니다.",
+                    "option1":"5",
+                    "option2":"10",
+                    "option3":"15",
+                    "option4":"20",
+                    "option5":"25",
+                    "option6":"30"
+                },
+                "showPhoto": {
+                    "title":"사진은 다음과 같습니다.",
+                    "link":"사진 보기"
+				},
+				"fileAuthorizationTips": {
+					"content":"Lenovo Vantage는 파일 시스템에 액세스할 수 없습니다.",
+					"link":"액세스 권한을 부여하려면, Windows 설정으로 이동합니다"
+				}
+            },
             "voice": {
                 "title": "음성",
                 "description": "Lenovo Voice는 음성에서 텍스트로 변환 기능을 사용하여 음성을 텍스트로 변환하고 번역 도우미 기능을 사용하여 실시간 음성 번역을 지원합니다.",
@@ -2087,53 +2134,6 @@
                     "btnText": "확인",
                     "title": "설치 실패",
                     "desc": "Lenovo Voice를 사용하기 위해 나중에 다시 시도하십시오."
-                }
-            },
-            "antiTheft": {
-                "heading": "Intelligent Sensing",
-                "title": "Smart Motion Alert",
-                "desc": "<p><label>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</label></p> <p style='margin-top:4px;'><label>To dismiss the alarm, enter the correct password or log in by Windows Hello.</label></p>",
-                "note": {
-                    "description": "Once you log in the system successfully, this feature will be turned off automatically. You need to enable it again to use it."
-                },
-                "alarm": {
-                    "title": " THE ALARM WILL LAST FOR",
-                    "option1": "10 seconds",
-                    "option2": "20 seconds",
-                    "option3": "30 seconds",
-                    "option4": "1 minute",
-                    "option5": "Never stop"
-                },
-                "allowCamera": {
-                    "title": "TATING PHOTOS",
-                    "describe": "When enabling this feature, the camera takes photos automatically when detecting any movement if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
-                    "checkBoxText": "Enable this feature"
-                },
-                "cameraPrivacy": {
-                    "describe": "Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
-                    "linkText": "Go to Camera privacy mode to turn it off"
-                },
-                "authorizedAccess": {
-                    "describe": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
-                    "linkText": "Go to Windows Settings to give access"
-                },
-                "photo": {
-                    "title": "THE NUMBER OF PHOTOS TAKEN DURING THE MOVEMENT",
-                    "tooltip": "The camera on your computer automatically activates to take pictures when movements are detected. Pictures are taken every 2 seconds and are saved to your local storage.",
-                    "option1": 5,
-                    "option2": 10,
-                    "option3": 15,
-                    "option4": 20,
-                    "option5": 25,
-                    "option6": 30
-                },
-                "showPhoto": {
-                    "title": "PHOTOS HAVE BEEN:",
-                    "link": "View photos"
-                },
-                "fileAuthorizationTips": {
-                    "content": "Lenovo Vantage doesn't have access to the file system.",
-                    "link": "Go to Windows Settings to give access"
                 }
             }
         }
