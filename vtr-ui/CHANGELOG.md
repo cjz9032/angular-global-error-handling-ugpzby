@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.12](https://bitbucket.tc.lenovo.com///compare/v1.5.11...v1.5.12) (2020-04-13)
+
+
+### Bug Fixes
+
+* **chs:** fix those that have updated async functions ([6442321](https://bitbucket.tc.lenovo.com///commit/6442321ec2c7f151b88c7dd420a3d3f0d6adc7dd))
+* **smart assist:** fix the build error ([b22974f](https://bitbucket.tc.lenovo.com///commit/b22974faec2d36248681d2885b24ef46c9c53a9f))
+
 ### [1.5.11](https://bitbucket.tc.lenovo.com///compare/v1.5.10...v1.5.11) (2020-04-09)
 
 
