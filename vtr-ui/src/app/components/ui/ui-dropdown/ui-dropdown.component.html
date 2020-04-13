@@ -34,14 +34,7 @@
 		class="ui-btn-dropdown"
 		type="button"
 		id="{{ dropDownId }}"
-		attr.aria-label="{{
-			value
-				? this.dropDownId.slice(5, this.dropDownId.length - 9) +
-				  '-' +
-				  list[value].text +
-				  '-selected'
-				: this.dropDownId.slice(5, this.dropDownId.length - 9)
-		}}"
+		attr.aria-label=""
 		role="combobox"
 		aria-haspopup="listbox"
 		[attr.aria-expanded]="isDropDownOpen"
@@ -85,9 +78,7 @@
 			[metricsItem]="dropDownName"
 			[metricsValue]="i"
 			tabindex="0"
-			attr.aria-selected="{{
-				value && list[value].text === i.text ? true : false
-			}}"
+			attr.aria-selected=""
 			>{{
 				textCase === "oled"
 					? customCamelCase(i.text)

@@ -1905,7 +1905,7 @@
 					},
 					"distanceSensitivityAdjusting": {
 						"title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-						"captionOn": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, you can maually adjust the dectecting sensitivity based on your preference.",
+						"captionOn": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, you can manually adjust the dectecting sensitivity based on your preference.",
 						"captionOff": "The accuracy varies by body size, posture, and frequency of movement. When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
 						"options": {
 							"near": "Near",
@@ -4062,5 +4062,10 @@
 	},
 	"cpt": {
 		"title": "Content Preview Tool"
+	},
+	"storeRating":{
+		"title": "Send us your voice",
+		"likeUs": "Like us",
+		"feedback": "Leave feedback"
 	}
 }

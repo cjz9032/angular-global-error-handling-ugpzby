@@ -1852,6 +1852,14 @@
             "intelligentSecurity": {
                 "title": "Pametna varnost",
                 "readMore": "Preberite več",
+                "image": {
+                    "title": "Pametna varnost",
+                    "description": "Opremite svoj računalnik s pametno tehnologijo zaznavanja, ki ščiti vašo zasebnost in varčuje z baterijo."
+                },
+                "advancedSettings": {
+                    "showAdvSettings": "DODATNE NASTAVITVE",
+                    "hideAdvSettings": "SKRIJ DODATNE NASTAVITVE"
+                },
                 "HumanPresenceDetection": {
                     "title": "Zaznavanje človeške prisotnosti",
                     "tooltip": "Kliknite tukaj za ponastavitev nastavitev zaznavanja človeške prisotnosti."
@@ -1864,6 +1872,11 @@
                     "title": "Prijava brez dotika",
                     "caption": "Ta funkcija samodejno odklene ali prebudi računalnik, ko ste pred njim ali se mu približujete.",
                     "tooltip": "Ko ste pred računalnikom ali se mu približujete (na razdalji 1,2 metra), vam ta funkcija omogoča samodejno prijavo v sistem, po tem ko prepozna vaš obraz. Če ste zunaj in ne v pisarni, morate biti bližje računalniku in bujenje bo trajalo dlje."
+                },
+                "zeroTouchLoginForIdea": {
+                    "title": "Prijava brez dotika",
+                    "caption": "Ta funkcija vam omogoča, da izboljšate delovno učinkovitost s samodejnim prebujanjem ali prijavo v računalnik. Če želite uporabljati to funkcijo, morate registrirati svoj obraz v programu Windows Hello.",
+                    "tooltip": "Ko ste pred računalnikom ali se mu približujete (na razdalji 1,2 ali 1,5 metra), vam ta funkcija omogoča samodejno prijavo v sistem, potem ko prepozna vaš obraz. Če ste zunaj in ne v pisarni, morate biti bližje računalniku in bujenje bo trajalo dlje. <br>Največja razdalja zaznavanja je odvisna od zmožnosti senzorja. Več podrobnosti poiščite v <i>Vodiču za uporabnika</i>, ki je priložen računalniku."
                 },
                 "zeroTouchLock": {
                     "title": "Zaklepanje brez dotika",
@@ -1879,7 +1892,7 @@
                     },
                     "facialRecognition": {
                         "title": "PREPOZNAVANJE OBRAZA",
-                        "caption": "Omogočite lahko funkcijo prepoznavanja obraza in ji dodelite dostop do kamere. To orodje posname vašo sliko in z njo natančno prepozna vašo prisotnost ali zazna, ko napravo pustite brez nadzora. Ti podatki so obdelani lokalno v vaši napravi. Lenovo do njih ne dostopa in jih ne uporablja.",
+                        "caption": "Ta funkcija pomaga izboljšati zmogljivost prepoznavanja in preprečiti nepričakovano zaklepanje zaslona, še posebej, ko se nagnete na stolu. Ta funkcija je obdelana lokalno v vaši napravi. Lenovo do njih ne dostopa in jih ne uporablja.",
                         "checkBox": "Vklopite kamero in omogočite to funkcijo",
                         "note": {
                             "permission": "Lenovo Vantage nima dostopa do kamere. Funkcija potrditvenega polja ne bo delovala.",
@@ -1889,18 +1902,18 @@
                         }
                     },
                     "distanceSensitivityAdjusting": {
-                        "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                        "captionOn": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, you can maually adjust the dectecting sensitivity based on your preference.",
-                        "captionOff": "The accuracy varies by body size, posture, and frequency of movement. When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
+                        "title": "SAMODEJNO PRILAGAJANJE OBČUTLJIVOSTI ZAZNAVANJA",
+                        "captionOn": "Natančnost se razlikuje glede na velikost telesa, držo in pogostost gibanja. Če se računalnik nepričakovano zaklene, lahko ročno prilagodite občutljivost zaznavanja glede na vaše želje.",
+                        "captionOff": "Natančnost se razlikuje glede na velikost telesa, držo in pogostost gibanja. Ko je ta funkcija onemogočena, morate ročno prilagoditi vrstico za občutljivost, da prilagodite razdaljo zaznavanja. Funkcijo vklopite, če želite, da se razdalja prilagodi samodejno.",
                         "options": {
-                            "near": "Near",
-                            "medium": "Middle",
-                            "far": "Far"
+                            "near": "Blizu",
+                            "medium": "Srednje",
+                            "far": "Daleč"
                         },
                         "readMore": {
-                            "line1": "• Near: 0.9 meter",
-                            "line2": "• Middle: 1.2 meter",
-                            "line3": "• Far: 1.5 meter"
+                            "line1": "• Blizu: 0,9 metra",
+                            "line2": "• Srednje: 1,2 metra",
+                            "line3": "• Daleč: 1,5 metra"
                         }
                     }
                 },
@@ -1924,17 +1937,38 @@
                         }
                     }
                 },
+                "distanceSensitivityAdjustingForIdea": {
+                    "title": "SAMODEJNO PRILAGAJANJE OBČUTLJIVOSTI ZAZNAVANJA",
+                    "captionOn": "To funkcijo omogočite, če želite samodejno prilagoditi razdaljo zaznavanja gibov za bujenje sistema. Funkcijo izklopite, če želite ročno prilagoditi občutljivost zaznavanja glede na vaše želje.",
+                    "captionOff": "Ko je ta funkcija onemogočena, morate ročno prilagoditi vrstico za občutljivost, da prilagodite razdaljo zaznavanja. Funkcijo vklopite, če želite, da se razdalja prilagodi samodejno.",
+                    "options": {
+                        "near": "Blizu",
+                        "far": "Daleč",
+                        "medium": "Srednje"
+                    },
+                    "readMore": "Na voljo so tri možnosti. Ko sistem zazna človeško gibanje, se zaslon prebudi glede na posamezen obseg.",
+                    "readMoreForSensor1": {
+                        "line1": "• Blizu: 0–0,4 metra",
+                        "line2": "• Srednje: 0–0,6 metra",
+                        "line3": "• Daleč: 0–1,2 metra"
+                    },
+                    "readMoreForSensor2": {
+                        "line1": "• Blizu: 0,2–0,55 metra",
+                        "line2": "• Srednje: 0,2–1,0 metra",
+                        "line3": "• Daleč: 0,2–1,5 metra"
+                    }
+                },
                 "note": {
                     "description1": "Ta funkcija uporablja Windows Hello. Poskrbite, da je funkcija prepoznavanja obraza vklopljena v nastavitvah sistema Windows.",
                     "description2": "Funkcija uporablja senzorje in kamero za zaznavanje vaše prisotnosti. Vendar pa funkcija NE zbira, shranjuje ali posreduje kakršnih koli osebnih podatkov ali slik.",
-                    "description3": "1. Če je računalnik v načinu šotora, tabličnega računalnika ali stanja, te funkcije morda ne bodo pravilno delovale.",
-                    "description4": "2. Če je računalnik v načinu mirovanja ali izklopljen, samodejna prijava brez dotika ne bo delovala.",
-                    "description6": "4. Če je v računalniku vklopljen letalski način, so te funkcije onemogočene.",
-                    "description7": "Natančnost se razlikuje glede na velikost telesa, držo in pogostost gibanja. Če se računalnik nepričakovano zaklene, prilagodite vrstico za občutljivost, da izboljšate natančnost.",
-                    "description5a1": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to ",
-                    "description5a2": "User Guide ",
-                    "description5a3": "that comes with it.",
-                    "description5b": "b. Your computer is in hibernation mode or has been turned off."
+                    "description3": "1. Če želite uporabiti zgornje funkcije, prilagodite zaslon računalnika na primeren kot, tako da bo mogoče prepoznati vaš obraz.",
+                    "description4": "2. Zgornje funkcije niso podprte, ko je:",
+                    "description5a1": "a. Računalnik v načinu šotora, tabličnega računalnika, stojala ali je odklopljen. Za načine, ki jih podpira vaš računalnik, glejte ",
+                    "description5a2": "Vodič za uporabnika ",
+                    "description5a3": ", ki ga dobite z računalnikom.",
+                    "description5b": "b. Računalnik v načinu mirovanja ali je izklopljen.",
+                    "description6": "3. Če je v računalniku vklopljen letalski način, so te funkcije onemogočene.",
+                    "description7": "Natančnost se razlikuje glede na velikost telesa, držo in pogostost gibanja. Če se računalnik nepričakovano zaklene, prilagodite vrstico za občutljivost, da izboljšate natančnost."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Odprite nastavitve Windows Hello",
@@ -1943,40 +1977,6 @@
                 "resetToDefault": "Ponastavitev",
                 "sensitivityAdjusting": {
                     "title": "PRILAGAJANJE OBČUTLJIVOSTI"
-                },
-                "image": {
-                    "title": "Intelligent security",
-                    "description": "Buckles up your PC with intelligent sensing technology, protects your privacy, and saves your battery power."
-                },
-                "advancedSettings": {
-                    "showAdvSettings": "ADVANCED SETTINGS",
-                    "hideAdvSettings": "HIDE ADVANCED SETTINGS"
-                },
-                "zeroTouchLoginForIdea": {
-                    "title": "Zero Touch Login",
-                    "caption": "This feature enables you to improve the work efficiency by automatically waking up or logging in your computer. To use the feature, you need to register your face in Windows Hello.",
-                    "tooltip": "When you are in front of your computer or approaching it (within 1.2 or 1.5 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer. <br>Depending on the sensor capability, the maximum detecting distance varies. Refer to the <i>User Guide</i> that comes with your computer for details."
-                },
-                "distanceSensitivityAdjustingForIdea": {
-                    "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                    "captionOn": "Enable this feature to automatically adjust the detecting distance of movements to wake up the system. Turn it off to manually adjust the detecting sensitivity based on your preference.",
-                    "captionOff": "When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
-                    "options": {
-                        "near": "Near",
-                        "medium": "Middle",
-                        "far": "Far"
-                    },
-                    "readMore": "There are three options. In each range, when human movements are detected, your screen will be waked up accordingly.",
-                    "readMoreForSensor1": {
-                        "line1": "• Near: 0-0.4 meter",
-                        "line2": "• Middle: 0-0.6 meter",
-                        "line3": "• Far: 0-1.2 meter"
-                    },
-                    "readMoreForSensor2": {
-                        "line1": "• Near: 0.2-0.55 meter",
-                        "line2": "• Middle: 0.2-1.0 meter",
-                        "line3": "• Far: 0.2-1.5 meter"
-                    }
                 }
             },
             "intelligentScreen": {
@@ -3082,15 +3082,15 @@
             "science": "Znanost"
         },
         "gaming": {
-            "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
-            "gamingFeature1": "-Computer status monitor",
-            "gamingFeature2": "-Performance mode & overclocking",
-            "gamingFeature3": "-Lighting",
-            "gamingFeature4": "-Network Boost",
-            "gamingFeature5": "-Auto Close",
-            "gamingOnly": "Gaming",
-            "gamingAndWork": "Gaming & Work",
-            "nonGaming": "Non-Gaming"
+            "gamingDescription": "Z igričarsko različico (Gaming) sistema Vantage boste zlahka izboljšali svojo izkušnjo z igranjem iger. Glavne funkcije poleg pogostih nastavitev vključujejo (na voljo v izbranih sistemih):",
+            "gamingFeature1": "- Spremljanje stanja računalnika",
+            "gamingFeature2": "- Zmogljivostni način in možnost navijanja procesorja",
+            "gamingFeature3": "- Osvetlitev",
+            "gamingFeature4": "- Razširitev omrežja",
+            "gamingFeature5": "- Samodejno zapiranje",
+            "gamingOnly": "Igranje",
+            "gamingAndWork": "Igranje in delo",
+            "nonGaming": "Drugo razen igranja"
         }
     },
     "settings": {
@@ -4062,5 +4062,10 @@
     },
     "cpt": {
         "title": "Content Preview Tool"
+    },
+    "storeRating": {
+        "title": "Pošljite nam svoj glas",
+        "likeUs": "Všečkajte nas",
+        "feedback": "Povratne informacije"
     }
 }
