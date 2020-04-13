@@ -44,7 +44,10 @@ export class HomeSecurityAllDevice {
 					default:
 						break;
 				}
-				this.allDevicesItem.push(new HomeSecurityAllDevicesItem({icon, type, count}, translateService));
+
+				if (icon && type && count) {
+					this.allDevicesItem.push(new HomeSecurityAllDevicesItem({icon, type, count}, translateService));
+				}
 			}
 		}
 	}

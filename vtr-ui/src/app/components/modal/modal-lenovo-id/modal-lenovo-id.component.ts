@@ -128,7 +128,6 @@ export class ModalLenovoIdComponent implements OnInit, OnDestroy {
 			url.indexOf('accounts.google.com') !== -1 ||
 			url.indexOf('login.live.com') !== -1 ||
 			url.indexOf('login.yahoo.co.jp') !== -1) {
-			this.setFocus('txtClose');
 			this.isBroswerVisible = false;
 			await this.webView.changeVisibility('spinnerCtrl', true);
 			await this.webView.changeVisibility('webviewPlaceHolder', false);
@@ -368,28 +367,6 @@ export class ModalLenovoIdComponent implements OnInit, OnDestroy {
 	private setFocus(id: string) {
 		if (typeof this.webView.setFocus === 'function') {
 			this.webView.setFocus(id);
-		}
-	}
-
-	@HostListener('document:keydown', ['$event'])
-	onKeyDown(event: KeyboardEvent) {
-		if (event.key.toUpperCase() === 'TAB') {
-			// Tab key pressed
-			if (document.activeElement.tagName.toUpperCase() === 'BODY') {
-				// Focus leave webview, set focus to close button
-				this.setFocus('txtClose');
-				event.preventDefault();
-				event.stopPropagation();
-			} else if (document.activeElement.tagName.toUpperCase() === 'NGB-MODAL-WINDOW') {
-				// This is first tab key press or press during loading
-				if (this.isBroswerVisible) {
-					this.setFocus('webviewPlaceHolder');
-				} else {
-					this.setFocus('txtClose');
-				}
-				event.preventDefault();
-				event.stopPropagation();
-			}
 		}
 	}
 

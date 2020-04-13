@@ -1,4 +1,4 @@
-<div class="row pt-5 smart-assist-card">
+<div class="row pt-5 smart-assist-card" *ngIf="antiTheftAvailable">
     <div class="col-12 px-0" id="smartAssist-intelligentSensing-smartMotionAlert-div">
         <vtr-container-collapsible [tabIndex]="0" [cardTitle]="'device.smartAssist.antiTheft.heading' | translate"
             [isCollapsed]="false" [allowCollapse]="true"
@@ -88,15 +88,16 @@
                         <div *ngIf="cameraPrivacyState && authorizedAccessState && isSupportPhoto">
                             <label id="smartMotionAlertPhotoTitle" name="smartMotionAlertPhotoTitle" tabindex="0"
                                 attr.aria-label="{{'device.smartAssist.antiTheft.photo.title' | translate}}"
-                                class="subTitle dropdownTitle">{{'device.smartAssist.antiTheft.photo.title' | translate}}</label>
-                            <fa-icon id="smartMotionAlertPhotoIcon" name="smartMotionAlertPhotoIcon" class="right-icon"
-                                triggers="manual" placement="auto" autoClose="false" [ngbTooltip]="tooltipRef"
-                                #rightToolTip1="ngbTooltip" autoClose="true" [icon]="['far', 'question-circle']"
-                                container="vtr-root" tooltipClass="vtr-tooltip"
-                                (click)="onRightIconClick(rightToolTip1, $event)"
-                                (keydown.enter)="onRightIconClick(rightToolTip1, $event)" tabindex="0"
-                                attr.aria-label="{{'device.smartAssist.antiTheft.photo.tooltip' | translate}}">
-                            </fa-icon>
+                                class="subTitle dropdownTitle">{{'device.smartAssist.antiTheft.photo.title' | translate}}
+                                <fa-icon id="smartMotionAlertPhotoIcon" name="smartMotionAlertPhotoIcon"
+                                    class="right-icon" triggers="manual" placement="auto" autoClose="false"
+                                    [ngbTooltip]="tooltipRef" #rightToolTip1="ngbTooltip" autoClose="true"
+                                    [icon]="['far', 'question-circle']" container="vtr-root" tooltipClass="vtr-tooltip"
+                                    (click)="onRightIconClick(rightToolTip1, $event)"
+                                    (keydown.enter)="onRightIconClick(rightToolTip1, $event)" tabindex="0"
+                                    attr.aria-label="{{'device.smartAssist.antiTheft.photo.tooltip' | translate}}">
+                                </fa-icon>
+                            </label>
                             <ng-template #tooltipRef>
                                 <div id="smartMotionAlertPhotoTooltip" name="smartMotionAlertPhotoTooltip"
                                     [innerHTML]="'device.smartAssist.antiTheft.photo.tooltip' | translate"></div>
