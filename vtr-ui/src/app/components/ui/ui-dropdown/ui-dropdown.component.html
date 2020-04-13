@@ -34,7 +34,7 @@
 		class="ui-btn-dropdown"
 		type="button"
 		id="{{ dropDownId }}"
-		attr.aria-label=""
+		[attr.aria-label]="narratorLabel"
 		role="combobox"
 		aria-haspopup="listbox"
 		[attr.aria-expanded]="isDropDownOpen"
@@ -63,26 +63,32 @@
 		></span>
 	</button>
 	<div
+		uiDropdownNavigate
+		[isDropdownOpen]="isDropDownOpen"
+		[selectedChild]="selectedDuration"
+		(closeDropdown)="closeDropdown($event)"
 		class="ui-menu-dropdown"
 		*ngIf="isDropDownOpen && !disabled"
 		role="listbox"
+		[tabindex]="isDropDownOpen ? 0 : -1"
 	>
 		<a
-			*ngFor="let i of list"
+			*ngFor="let item of list; let i = index"
 			role="option"
-			id="{{ i.text }}"
-			(click)="select(i, toggleBtn)"
-			(keydown.enter)="select(i, toggleBtn)"
+			id="{{ item.text }}"
+			(click)="select(item)"
 			vtrMetrics
 			metricsEvent="FeatureClick"
 			[metricsItem]="dropDownName"
-			[metricsValue]="i"
-			tabindex="0"
-			attr.aria-selected=""
+			[metricsValue]="item"
+			tabindex="-1"
+			[attr.aria-selected]="
+				selectedDuration && selectedDuration === i ? true : false
+			"
 			>{{
 				textCase === "oled"
-					? customCamelCase(i.text)
-					: (i.text | titlecase)
+					? customCamelCase(item.text)
+					: (item.text | titlecase)
 			}}</a
 		>
 	</div>

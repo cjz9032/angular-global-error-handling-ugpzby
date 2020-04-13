@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild, ElementRef } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { DropDownInterval } from 'src/app/data-models/common/drop-down-interval.model';
 
@@ -8,16 +8,19 @@ import { DropDownInterval } from 'src/app/data-models/common/drop-down-interval.
 	styleUrls: ['./ui-dropdown.component.scss']
 })
 export class UiDropDownComponent implements OnInit, OnChanges {
-	@Input() dropDownId;
-	@Input() dropDownName;
+	@Input() dropDownId: string;
+	@Input() dropDownName: string;
 	@Input() list: DropDownInterval[];
 	@Input() value: number;
-	@Input() disabled = false;
+	@Input() disabled: boolean = false;
 	@Input() textCase: string;
-	@Output() change: EventEmitter<any> = new EventEmitter<any>();
-	public isDropDownOpen = false;
-	public name = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.select');
-	public placeholder = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.time');
+	@Output() change: EventEmitter<DropDownInterval> = new EventEmitter<DropDownInterval>();
+	// @ViewChild('toggleBtn') toggleButton: ElementRef;
+	isDropDownOpen: boolean = false;
+	name: string;
+	placeholder: string;
+	narratorLabel: string;
+	selectedDuration: number;
 
 	constructor(private translate: TranslateService) { }
 
@@ -34,35 +37,54 @@ export class UiDropDownComponent implements OnInit, OnChanges {
 
 
 	private setDropDownValue() {
-		if (this.list) {
-			const interval = this.list.find((ddi: DropDownInterval) => {
-				return (this.value === ddi.value);
-			});
-			if (interval) {
-				this.value = interval.value;
+		if(this.value && this.list) {
+			const interval = this.list.find((ddi:DropDownInterval) => ddi.value === this.value );
+			this.selectedDuration = this.list.indexOf(interval)
+			if(interval) {
 				this.name = interval.name;
 				this.placeholder = interval.placeholder;
+				this.narratorLabel = this.dropDownId.slice(5, this.dropDownId.length - 9) + '-' + interval.text
 			}
+			return;
 		}
+		this.name = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.select');
+		this.placeholder = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.time');
+		this.narratorLabel = this.dropDownId.slice(5, this.dropDownId.length - 9) + '-' + this.name + '-' + this.placeholder
 	}
 
-	public toggle() {
-		if (!this.disabled) {
-			this.isDropDownOpen = !this.isDropDownOpen;
-		}
+	closeDropdown(eventObj: any ) {		
+		const interval = this.list.find((ddi:DropDownInterval, idx) => idx === eventObj.value );
+		this.selectedDuration = eventObj.value
+		if(interval) {
+			this.name = interval.name;
+			this.placeholder = interval.placeholder;
+			this.narratorLabel = this.dropDownId.slice(5, this.dropDownId.length - 9) + '-' + interval.text
+			this.isDropDownOpen = eventObj.hideList
+		} else {
+			this.name = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.select');
+			this.placeholder = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.time');
+			this.narratorLabel = this.dropDownId.slice(5, this.dropDownId.length - 9) + '-' + this.name + '-' + this.placeholder;
+			this.isDropDownOpen = eventObj.hideList
+		}		
 	}
 
-	public select(event: DropDownInterval, toggle) {
-		this.value = event.value;
-		this.name = event.name;
-		this.placeholder = event.placeholder;
+	// public toggle() {
+	// 	if (!this.disabled) {
+	// 		this.isDropDownOpen = !this.isDropDownOpen;
+	// 	}
+	// }
+
+	public select(item: DropDownInterval) {
+		this.value = item.value;
+		this.name = item.name;
+		this.placeholder = item.placeholder;
+		this.selectedDuration = this.list.indexOf(item)
 		this.isDropDownOpen = !this.isDropDownOpen;
-		this.change.emit(event);
-		toggle.focus();
+		this.change.emit(item);
+		// this.toggleButton.nativeElement.focus()
 	}
 
 	public customCamelCase(value: string) {
-
 		if (value === null) {
 			return '';
 		}
