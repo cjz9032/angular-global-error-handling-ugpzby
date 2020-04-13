@@ -30,7 +30,6 @@ export class UiDropdownNavigate implements OnInit, AfterViewInit {
 	constructor(private elRef: ElementRef, private renderer: Renderer2) {}
 
 	ngOnInit() {
-		// this.renderer.setAttribute(this.elRef.nativeElement, 'tabindex', '0')
 		this.elRef.nativeElement.focus();
 	}
 
@@ -59,7 +58,6 @@ export class UiDropdownNavigate implements OnInit, AfterViewInit {
 			case 13:
 				this.closeDropdown.emit({value: this.nextIndex, hideList: true});
 				this.elRef.nativeElement.previousElementSibling.focus();
-				// this.renderer.setAttribute(this.elRef.nativeElement, 'tabindex', '-1')
 				break;
 			case 38:
 					this.nextIndex = this.nextIndex > 0 ? this.nextIndex - 1 : 0;

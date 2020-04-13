@@ -36,35 +36,32 @@ export class UiDropDownComponent implements OnInit, OnChanges {
 	}
 
 
-	private setDropDownValue() {
+	setDropDownValue() {
 		if(this.value && this.list) {
 			const interval = this.list.find((ddi:DropDownInterval) => ddi.value === this.value );
 			this.selectedDuration = this.list.indexOf(interval)
 			if(interval) {
 				this.name = interval.name;
 				this.placeholder = interval.placeholder;
-				this.narratorLabel = this.dropDownId.slice(5, this.dropDownId.length - 9) + '-' + interval.text
+				this.narratorLabel = this.dropDownId.slice(5, this.dropDownId.length - 9) + '-' + interval.text;
+				return
 			}
-			return;
+		} else {
+			this.name = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.select');
+			this.placeholder = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.time');
+			this.narratorLabel = this.dropDownId.slice(5, this.dropDownId.length - 9) + '-' + this.name + '-' + this.placeholder
 		}
-		this.name = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.select');
-		this.placeholder = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.time');
-		this.narratorLabel = this.dropDownId.slice(5, this.dropDownId.length - 9) + '-' + this.name + '-' + this.placeholder
 	}
 
 	closeDropdown(eventObj: any ) {		
 		const interval = this.list.find((ddi:DropDownInterval, idx) => idx === eventObj.value );
 		this.selectedDuration = eventObj.value
+		this.isDropDownOpen = eventObj.hideList
 		if(interval) {
 			this.name = interval.name;
 			this.placeholder = interval.placeholder;
-			this.narratorLabel = this.dropDownId.slice(5, this.dropDownId.length - 9) + '-' + interval.text
-			this.isDropDownOpen = eventObj.hideList
-		} else {
-			this.name = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.select');
-			this.placeholder = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.time');
-			this.narratorLabel = this.dropDownId.slice(5, this.dropDownId.length - 9) + '-' + this.name + '-' + this.placeholder;
-			this.isDropDownOpen = eventObj.hideList
+			this.narratorLabel = this.dropDownId.slice(5, this.dropDownId.length - 9) + '-' + interval.text;
+			return;		
 		}		
 	}
 
