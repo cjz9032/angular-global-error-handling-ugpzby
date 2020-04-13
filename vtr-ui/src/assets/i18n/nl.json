@@ -78,7 +78,8 @@
                     "macroKey": "Macrotoets",
                     "hardwareScan": "Hardwarescan",
                     "systemUpdate": "Systeemupdate",
-                    "header": "Systeemtools"
+                    "header": "Systeemtools",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "lighting": {
                     "title": "Belichting aanpassen",

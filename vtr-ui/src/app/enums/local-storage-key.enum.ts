@@ -182,6 +182,7 @@ export enum LocalStorageKey {
 	// Version 3.3: over drive
 	overDriveFeature = '[LocalStorageKey] OverDriveFeature',
 	overDriveStatus = '[LocalStorageKey] OverDriveStatus',
+	accessoryFeature = '[LocalStorageKey] AccessoryFeature',
 
 	// this enum is for macrokey local storage key
 	MacroKeyType = '[LocalStorageKey] MacroKeyType',
