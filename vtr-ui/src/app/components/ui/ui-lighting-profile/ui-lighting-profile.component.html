@@ -80,59 +80,14 @@
 	</div>
 	<div *ngIf="!isProfileOff && profileRGBFeature===255" class="footer-part d-flex flex-row-reverse">
 		<a *ngIf="defaultLanguage !== 'ar' " id="gaming_lighting_setdefault_profile_{{currentProfileId}}"
-			attr.aria-label="gaming.lightingProfile.lightingnarrator.Customize.title' | translate {{currentProfileId}} gaming.lightingProfile.lightingnarrator.heading.title' | translate"
+			attr.aria-label="{{('gaming.lightingProfile.lightingnarrator.Customize.title' | translate)}} {{currentProfileId}} {{('gaming.lightingProfile.lightingnarrator.heading.title' | translate)}}"
 			vtrMetrics [metricsItem]="'lighting_set_to_default'" metricsEvent="featureClick" href="javascript:void(0);"
-			class="link"
+			class="link" role="none"
 			(click)="setDefaultProfile(currentProfileId)">{{'gaming.lightingProfile.button.default.title' | translate}}</a>
 		<a id="gaming_lighting_setdefault_profile" *ngIf="defaultLanguage === 'ar'" dir="rtl" vtrMetrics
 			[metricsItem]="'lighting_set_to_default'" metricsEvent="featureClick"
-			attr.aria-label="gaming.lightingProfile.lightingnarrator.Customize.title' | translate {{currentProfileId}} gaming.lightingProfile.lightingnarrator.heading.title' | translate"
-			href="javascript:void(0);" class="link"
+			attr.aria-label="{{('gaming.lightingProfile.lightingnarrator.Customize.title' | translate)}} {{currentProfileId}} {{('gaming.lightingProfile.lightingnarrator.heading.title' | translate)}}"
+			href="javascript:void(0);" class="link" role="none"
 			(click)="setDefaultProfile(currentProfileId)">{{'gaming.lightingProfile.button.default.title' | translate}}</a>
-		<a id="gaming_lighting_setdefault_profile" *ngIf="defaultLanguage === 'ar'" dir="rtl" vtrMetrics
-			[metricsItem]="'lighting_set_to_default'" metricsEvent="featureClick"
-			attr.aria-label="gaming.lightingProfile.lightingnarrator.Customize.title' | translate {{currentProfileId}} gaming.lightingProfile.lightingnarrator.heading.title' | translate"
-			href="javascript:void(0);" class="link"
-			(click)="setDefaultProfile(currentProfileId)">{{'gaming.lightingProfile.button.default.title' | translate}}</a>
-		<a id="gaming_lighting_setdefault_profile" *ngIf="defaultLanguage === 'ar'" dir="rtl" vtrMetrics
-			[metricsItem]="'lighting_set_to_default'" metricsEvent="featureClick"
-			attr.aria-label="gaming.lightingProfile.lightingnarrator.Customize.title' | translate {{currentProfileId}} gaming.lightingProfile.lightingnarrator.heading.title' | translate"
-			href="javascript:void(0);" class="link"
-			(click)="setDefaultProfile(currentProfileId)">{{'gaming.lightingProfile.button.default.title' | translate}}</a>
-		<a id="gaming_lighting_setdefault_profile" *ngIf="defaultLanguage === 'ar'" dir="rtl" vtrMetrics
-			[metricsItem]="'lighting_set_to_default'" metricsEvent="featureClick"
-			attr.aria-label="gaming.lightingProfile.lightingnarrator.Customize.title' | translate {{currentProfileId}} gaming.lightingProfile.lightingnarrator.heading.title' | translate"
-			href="javascript:void(0);" class="link"
-			(click)="setDefaultProfile(currentProfileId)">{{'gaming.lightingProfile.button.default.title' | translate}}</a>
-		<a id="gaming_lighting_setdefault_profile" *ngIf="defaultLanguage === 'ar'" dir="rtl" vtrMetrics
-			[metricsItem]="'lighting_set_to_default'" metricsEvent="featureClick"
-			attr.aria-label="gaming.lightingProfile.lightingnarrator.Customize.title' | translate {{currentProfileId}} gaming.lightingProfile.lightingnarrator.heading.title' | translate"
-			href="javascript:void(0);" class="link"
-			(click)="setDefaultProfile(currentProfileId)">{{'gaming.lightingProfile.button.default.title' | translate}}</a>
-		<a id="gaming_lighting_setdefault_profile" *ngIf="defaultLanguage === 'ar'" dir="rtl" vtrMetrics
-			[metricsItem]="'lighting_set_to_default'" metricsEvent="featureClick"
-			attr.aria-label="gaming.lightingProfile.lightingnarrator.Customize.title' | translate {{currentProfileId}} gaming.lightingProfile.lightingnarrator.heading.title' | translate"
-			href="javascript:void(0);" class="link"
-			(click)="setDefaultProfile(currentProfileId)">{{'gaming.lightingProfile.button.default.title' | translate}}</a>
-		<a id="gaming_lighting_setdefault_profile" *ngIf="defaultLanguage === 'ar'" dir="rtl" vtrMetrics
-			[metricsItem]="'lighting_set_to_default'" metricsEvent="featureClick"
-			attr.aria-label="gaming.lightingProfile.lightingnarrator.Customize.title' | translate {{currentProfileId}} gaming.lightingProfile.lightingnarrator.heading.title' | translate"
-			href="javascript:void(0);" class="link"
-			(click)="setDefaultProfile(currentProfileId)">{{'gaming.lightingProfile.button.default.title' | translate}}</a>
-		<a id="gaming_lighting_setdefault_profile" *ngIf="defaultLanguage === 'ar'" dir="rtl" vtrMetrics
-			[metricsItem]="'lighting_set_to_default'" metricsEvent="featureClick"
-			attr.aria-label="set lighting profile  {{currentProfileId}} to default" href="javascript:void(0);"
-			class="link"
-			(click)="setDefaultProfile(currentProfileId)">{{'gaming.lightingProfile.button.default.title' | translate}}</a>
-		<a id="gaming_lighting_setdefault_profile" *ngIf="defaultLanguage === 'ar'" dir="rtl" vtrMetrics
-			[metricsItem]="'lighting_set_to_default'" metricsEvent="featureClick"
-			attr.aria-label="set lighting profile  {{currentProfileId}} to default" href="javascript:void(0);"
-			class="link"
-			(click)="setDefaultProfile(currentProfileId)">{{'gaming.lightingProfile.button.default.title' | translate}}</a>
-		<a id="gaming_lighting_setdefault_profile" *ngIf="defaultLanguage === 'ar'" dir="rtl" vtrMetrics
-			[metricsItem]="'lighting_set_to_default'" metricsEvent="featureClick"
-			attr.aria-label="gaming_lighting_setdefault_profile" href="javascript:void(0);" class="link"
-			(click)="setDefaultProfile(currentProfileId)">{{'gaming.lightingProfile.button.default.title' | translate}}</a>
-
 	</div>
 </div>

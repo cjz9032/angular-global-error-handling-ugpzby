@@ -681,15 +681,15 @@
 		},
 		"narrator": {
 			"networkBoost": {
-				"subPage": {
+				"subPage": { 
 					"addApps": "Add apps",
 					"remove": "Remove"
 				},
 				"turnOnModal": {
 					"confirmation": "Network boost turn on confirmation window opened",
-					"dontAskAgain": "Dont ask again",
-					"turnOnButton": "modal Turn networkBoost turn on",
-					"notOnButton": "modal Turn networkBoost not now"
+					"dontAskAgain": "Don't ask again",
+					"turnOnButton": "Turn on Network boost",
+					"notOnButton": "Not now"
 				},
 				"addApps": {
 					"addAppsTitle": "Networkboost add apps window opened",
