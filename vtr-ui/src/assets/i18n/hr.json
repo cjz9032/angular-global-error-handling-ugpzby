@@ -78,7 +78,8 @@
                     "macroKey": "Makro tipka",
                     "hardwareScan": "Skeniranje hardvera",
                     "systemUpdate": "Ažuriranje sustava",
-                    "header": "Alati sustava"
+                    "header": "Alati sustava",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "lighting": {
                     "title": "Prilagodba rasvjete",
@@ -3082,15 +3083,15 @@
             "science": "Znanost"
         },
         "gaming": {
-            "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
-            "gamingFeature1": "-Computer status monitor",
-            "gamingFeature2": "-Performance mode & overclocking",
-            "gamingFeature3": "-Lighting",
-            "gamingFeature4": "-Network Boost",
-            "gamingFeature5": "-Auto Close",
-            "gamingOnly": "Gaming",
-            "gamingAndWork": "Gaming & Work",
-            "nonGaming": "Non-Gaming"
+            "gamingDescription": "Verzija igre Vantage omogućuje vam da poboljšate svoje iskustvo igranja. Uz uobičajene postavke, glavne značajke uključuju (dostupno na odabranim sustavima):",
+            "gamingFeature1": "-Mmonitor stanja računala",
+            "gamingFeature2": "-Radni učinak i povećanje brzine hardvera",
+            "gamingFeature3": "-Osvjetljenje",
+            "gamingFeature4": "-Ubrzanje mreže",
+            "gamingFeature5": "-Automatsko zatvaranje",
+            "gamingOnly": "Igre",
+            "gamingAndWork": "Igre i rad",
+            "nonGaming": "Rad bez igranja"
         }
     },
     "settings": {
@@ -4062,5 +4063,10 @@
     },
     "cpt": {
         "title": "Content Preview Tool"
+    },
+    "storeRating": {
+        "title": "Pošaljite nam svoj glas",
+        "likeUs": "Kliknite na Sviđa mi se",
+        "feedback": "Ostavi povratnu informaciju"
     }
 }

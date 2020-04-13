@@ -78,7 +78,8 @@
                     "macroKey": "מקש מאקרו",
                     "hardwareScan": "סריקת חומרה",
                     "systemUpdate": "‏‫עדכון המערכת‬",
-                    "header": "כלי מערכת"
+                    "header": "כלי מערכת",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "lighting": {
                     "title": "התאמה אישית של התאורה",
@@ -3082,15 +3083,15 @@
             "science": "מדע"
         },
         "gaming": {
-            "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
-            "gamingFeature1": "-Computer status monitor",
-            "gamingFeature2": "-Performance mode & overclocking",
-            "gamingFeature3": "-Lighting",
-            "gamingFeature4": "-Network Boost",
-            "gamingFeature5": "-Auto Close",
-            "gamingOnly": "Gaming",
-            "gamingAndWork": "Gaming & Work",
-            "nonGaming": "Non-Gaming"
+            "gamingDescription": "הגרסה של Vantage למשחקים מאפשרת לכם לשפר את חווית המשחק שלכם בקלי קלות. לצד ההגדרות הנפוצות, התכונות העיקריות כוללות (זמינות במערכות נבחרות):",
+            "gamingFeature1": "-מעקב אחר מצב המחשב",
+            "gamingFeature2": "-מצב ביצועים ואוברקלוקינג",
+            "gamingFeature3": "-תאורה",
+            "gamingFeature4": "-שיפור הרשת",
+            "gamingFeature5": "-סגירה אוטומטית",
+            "gamingOnly": "משחקים",
+            "gamingAndWork": "משחקים ועבודה",
+            "nonGaming": "ללא משחקים"
         }
     },
     "settings": {
@@ -4062,5 +4063,10 @@
     },
     "cpt": {
         "title": "Content Preview Tool"
+    },
+    "storeRating": {
+        "title": "הצביעו עבורינו",
+        "likeUs": "סמנו לנו לייק",
+        "feedback": "השאירו משוב"
     }
 }

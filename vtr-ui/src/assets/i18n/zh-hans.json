@@ -78,7 +78,8 @@
                     "macroKey": "宏键",
                     "hardwareScan": "硬件扫描",
                     "systemUpdate": "系统更新",
-                    "header": "系统工具"
+                    "header": "系统工具",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "systemStatus": {
                     "info": "信息"
@@ -3082,15 +3083,15 @@
             "science": "科学"
         },
         "gaming": {
-            "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
-            "gamingFeature1": "-Computer status monitor",
-            "gamingFeature2": "-Performance mode & overclocking",
-            "gamingFeature3": "-Lighting",
-            "gamingFeature4": "-Network Boost",
-            "gamingFeature5": "-Auto Close",
-            "gamingOnly": "Gaming",
-            "gamingAndWork": "Gaming & Work",
-            "nonGaming": "Non-Gaming"
+            "gamingDescription": "Vantage 的游戏版本能让您轻松改善游戏体验。除常规设置外，主要功能包括（在某些系统上可用）：",
+			"gamingFeature1": "-计算机状态监控",
+			"gamingFeature2": "-性能模式和超频",
+			"gamingFeature3": "-灯光",
+			"gamingFeature4": "-网络增强",
+			"gamingFeature5": "-自动关闭",
+			"gamingOnly": "游戏",
+			"gamingAndWork": "游戏和工作",
+			"nonGaming": "非游戏"
         }
     },
     "settings": {
@@ -4062,5 +4063,10 @@
     },
     "cpt": {
         "title": "Content Preview Tool"
+    },
+    "storeRating": {
+        "title": "让我们听到您的声音",
+        "likeUs": "为我们点赞",
+        "feedback": "留下反馈"
     }
 }

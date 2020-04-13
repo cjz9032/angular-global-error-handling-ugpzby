@@ -78,7 +78,8 @@
                     "macroKey": "Kláves makra",
                     "hardwareScan": "Kontrola hardvéru",
                     "systemUpdate": "Aktualizácia systému",
-                    "header": "Systémové nástroje"
+                    "header": "Systémové nástroje",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "lighting": {
                     "title": "Prispôsobenie osvetlenia",
@@ -3082,15 +3083,15 @@
             "science": "Veda"
         },
         "gaming": {
-            "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
-            "gamingFeature1": "-Computer status monitor",
-            "gamingFeature2": "-Performance mode & overclocking",
-            "gamingFeature3": "-Lighting",
-            "gamingFeature4": "-Network Boost",
-            "gamingFeature5": "-Auto Close",
-            "gamingOnly": "Gaming",
-            "gamingAndWork": "Gaming & Work",
-            "nonGaming": "Non-Gaming"
+            "gamingDescription": "Herná verzia aplikácie Vantage zjednodušuje hranie. Okrem bežných nastavení obsahuje tieto hlavné funkcie (k dispozícii vo vybraných systémoch):",
+            "gamingFeature1": "- Monitorovanie stavu počítača",
+            "gamingFeature2": "- Režim výkonu a pretaktovanie",
+            "gamingFeature3": "- Osvetlenie",
+            "gamingFeature4": "- Zrýchlenie siete",
+            "gamingFeature5": "- Automatické zatvorenie",
+            "gamingOnly": "Hry",
+            "gamingAndWork": "Hry a práca",
+            "nonGaming": "Nie hry"
         }
     },
     "settings": {
@@ -4062,5 +4063,10 @@
     },
     "cpt": {
         "title": "Content Preview Tool"
+    },
+    "storeRating": {
+        "title": "Pošlite nám svoj hlas",
+        "likeUs": "Označiť, že sa vám páčime",
+        "feedback": "Poskytnúť spätnú väzbu"
     }
 }

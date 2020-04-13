@@ -46,4 +46,9 @@
 	.sectn-padding {
 		padding: 1.5rem 0.7rem 1.5rem;
 	}
+	.methods-block {
+		&:focus {
+			@include outline-blue;
+		}
+	}
 }

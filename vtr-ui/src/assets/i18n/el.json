@@ -78,7 +78,8 @@
                     "macroKey": "Πλήκτρο μακροεντολής",
                     "hardwareScan": "Σάρωση υλικού",
                     "systemUpdate": "Ενημ. συστήματος",
-                    "header": "Εργαλεία συστημ"
+                    "header": "Εργαλεία συστημ",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "lighting": {
                     "title": "Προσαρμογή φωτισμού",
@@ -3082,15 +3083,15 @@
             "science": "Επιστήμη"
         },
         "gaming": {
-            "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
-            "gamingFeature1": "-Computer status monitor",
-            "gamingFeature2": "-Performance mode & overclocking",
-            "gamingFeature3": "-Lighting",
-            "gamingFeature4": "-Network Boost",
-            "gamingFeature5": "-Auto Close",
-            "gamingOnly": "Gaming",
-            "gamingAndWork": "Gaming & Work",
-            "nonGaming": "Non-Gaming"
+            "gamingDescription": "Η έκδοση για παιχνίδια του Vantage σάς βοηθά να βελτιώσετε την εμπειρία του παιχνιδιού. Μαζί με τις κοινές ρυθμίσεις, στις κύριες δυνατότητες περιλαμβάνονται τα εξής (διατίθενται σε επιλεγμένα συστήματα):",
+            "gamingFeature1": "- Οθόνη κατάστασης υπολογιστή",
+            "gamingFeature2": "- Λειτουργία απόδοσης και υπερχρονισμός",
+            "gamingFeature3": "- Φωτισμός",
+            "gamingFeature4": "- Ενίσχυση δικτύου",
+            "gamingFeature5": "- Αυτόματο κλείσιμο",
+            "gamingOnly": "Βιντεοπαιχνίδια",
+            "gamingAndWork": "Παιχνίδια και Εργασία",
+            "nonGaming": "Όχι για παιχνίδια"
         }
     },
     "settings": {
@@ -4062,5 +4063,10 @@
     },
     "cpt": {
         "title": "Content Preview Tool"
+    },
+    "storeRating": {
+        "title": "Στείλτε μας τη φωνή σας",
+        "likeUs": "Βάλτε \"Μου αρέσει\"",
+        "feedback": "Αφήστε σχόλια"
     }
 }

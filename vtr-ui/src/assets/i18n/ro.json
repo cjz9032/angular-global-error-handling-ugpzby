@@ -78,7 +78,8 @@
                     "macroKey": "Tastă macro",
                     "hardwareScan": "Scanare hardware",
                     "systemUpdate": "Actualizare sistem",
-                    "header": "Instrumente sistem"
+                    "header": "Instrumente sistem",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "lighting": {
                     "title": "Personalizarea iluminării",
@@ -3082,15 +3083,15 @@
             "science": "Știință"
         },
         "gaming": {
-            "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
-            "gamingFeature1": "-Computer status monitor",
-            "gamingFeature2": "-Performance mode & overclocking",
-            "gamingFeature3": "-Lighting",
-            "gamingFeature4": "-Network Boost",
-            "gamingFeature5": "-Auto Close",
-            "gamingOnly": "Gaming",
-            "gamingAndWork": "Gaming & Work",
-            "nonGaming": "Non-Gaming"
+            "gamingDescription": "Versiunea Vantage pentru jocuri vă ajută să vă îmbunătăţiţi experienţa în jocuri. Pe lângă setările obişnuite, caracteristicile principale includ (disponibile pe sistemele selectate):",
+            "gamingFeature1": "– Monitorizarea stării computerului",
+            "gamingFeature2": "– Mod de performanţă şi overclocking",
+            "gamingFeature3": "– Iluminare",
+            "gamingFeature4": "– Accelerare reţea",
+            "gamingFeature5": "– Închidere automată",
+            "gamingOnly": "Jocuri",
+            "gamingAndWork": "Jocuri şi muncă",
+            "nonGaming": "Fără jocuri"
         }
     },
     "settings": {
@@ -4062,5 +4063,10 @@
     },
     "cpt": {
         "title": "Content Preview Tool"
+    },
+    "storeRating": {
+        "title": "Trimiteți-ne vocea dumneavoastră",
+        "likeUs": "Trimiteți-ne aprecieri",
+        "feedback": "Introducere feedback"
     }
 }

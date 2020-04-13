@@ -78,7 +78,8 @@
                     "macroKey": "Makro tipka",
                     "hardwareScan": "Pregled strojne opreme",
                     "systemUpdate": "Posodob. sistema",
-                    "header": "Sistemska orodja"
+                    "header": "Sistemska orodja",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "lighting": {
                     "title": "Prilagajanje osvetlitve",
@@ -3082,15 +3083,15 @@
             "science": "Znanost"
         },
         "gaming": {
-            "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
-            "gamingFeature1": "-Computer status monitor",
-            "gamingFeature2": "-Performance mode & overclocking",
-            "gamingFeature3": "-Lighting",
-            "gamingFeature4": "-Network Boost",
-            "gamingFeature5": "-Auto Close",
-            "gamingOnly": "Gaming",
-            "gamingAndWork": "Gaming & Work",
-            "nonGaming": "Non-Gaming"
+            "gamingDescription": "Z igričarsko različico (Gaming) sistema Vantage boste zlahka izboljšali svojo izkušnjo z igranjem iger. Glavne funkcije poleg pogostih nastavitev vključujejo (na voljo v izbranih sistemih):",
+            "gamingFeature1": "- Spremljanje stanja računalnika",
+            "gamingFeature2": "- Zmogljivostni način in možnost navijanja procesorja",
+            "gamingFeature3": "- Osvetlitev",
+            "gamingFeature4": "- Razširitev omrežja",
+            "gamingFeature5": "- Samodejno zapiranje",
+            "gamingOnly": "Igranje",
+            "gamingAndWork": "Igranje in delo",
+            "nonGaming": "Drugo razen igranja"
         }
     },
     "settings": {
@@ -4062,5 +4063,10 @@
     },
     "cpt": {
         "title": "Content Preview Tool"
+    },
+    "storeRating": {
+        "title": "Pošljite nam svoj glas",
+        "likeUs": "Všečkajte nas",
+        "feedback": "Povratne informacije"
     }
 }

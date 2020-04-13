@@ -78,7 +78,8 @@
                     "macroKey": "Touche de macro",
                     "hardwareScan": "Analyse matérielle",
                     "systemUpdate": "Mise à jour Système",
-                    "header": "Outils système"
+                    "header": "Outils système",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "lighting": {
                     "title": "Personnalisation de l'éclairage",
@@ -3082,15 +3083,15 @@
             "science": "Science"
         },
         "gaming": {
-            "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
-            "gamingFeature1": "-Computer status monitor",
-            "gamingFeature2": "-Performance mode & overclocking",
-            "gamingFeature3": "-Lighting",
-            "gamingFeature4": "-Network Boost",
-            "gamingFeature5": "-Auto Close",
-            "gamingOnly": "Gaming",
-            "gamingAndWork": "Gaming & Work",
-            "nonGaming": "Non-Gaming"
+            "gamingDescription": "La version de jeu de Vantage vous permet d'améliorer facilement votre expérience de jeu. En plus des paramètres communs, les principales fonctionnalités sont les suivantes (disponibles sur certains systèmes) :",
+            "gamingFeature1": "- Surveillance de l'état de l'ordinateur",
+            "gamingFeature2": "- Mode de performance et overclocking",
+            "gamingFeature3": "- Luminosité",
+            "gamingFeature4": "- Amélioration réseau",
+            "gamingFeature5": "- Fermeture automatique",
+            "gamingOnly": "Jeux",
+            "gamingAndWork": "Jeu et travail",
+            "nonGaming": "Hors jeu"
         }
     },
     "settings": {
@@ -4062,5 +4063,10 @@
     },
     "cpt": {
         "title": "Content Preview Tool"
+    },
+    "storeRating": {
+        "title": "Nous envoyer vos commentaires",
+        "likeUs": "Suivez-nous",
+        "feedback": "Laisser des commentaires"
     }
 }

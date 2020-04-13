@@ -78,7 +78,8 @@
                     "macroKey": "Tecla macro",
                     "hardwareScan": "Verificação de Hardware",
                     "systemUpdate": "Atual. do Sistema",
-                    "header": "Ferram. sistema"
+                    "header": "Ferram. sistema",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "lighting": {
                     "title": "Iluminação personalizada",
@@ -3082,15 +3083,15 @@
             "science": "Ciência"
         },
         "gaming": {
-            "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
-            "gamingFeature1": "-Computer status monitor",
-            "gamingFeature2": "-Performance mode & overclocking",
-            "gamingFeature3": "-Lighting",
-            "gamingFeature4": "-Network Boost",
-            "gamingFeature5": "-Auto Close",
-            "gamingOnly": "Gaming",
-            "gamingAndWork": "Gaming & Work",
-            "nonGaming": "Non-Gaming"
+            "gamingDescription": "A versão para jogos do Vantage simplifica a melhoria da sua experiência de jogos. Juntamente com as configurações comuns, os principais recursos incluem (disponível em sistemas selecionados):",
+			"gamingFeature1": "– Monitor de status do computador",
+			"gamingFeature2": "– Modo de desempenho e overclocking",
+			"gamingFeature3": "– Iluminação",
+			"gamingFeature4": "– Aumento da rede",
+			"gamingFeature5": "– Fechamento automático",
+			"gamingOnly": "Jogos",
+			"gamingAndWork": "Jogos e Trabalho",
+			"nonGaming": "Não relacionado a jogos"
         }
     },
     "settings": {
@@ -4062,5 +4063,10 @@
     },
     "cpt": {
         "title": "Content Preview Tool"
+    },
+    "storeRating": {
+        "title": "Expresse suas ideias",
+        "likeUs": "Curtir",
+        "feedback": "Deixar comentário"
     }
 }

@@ -80,7 +80,8 @@
                     "macroKey": "مفتاح الماكرو",
                     "hardwareScan": "فحص الأجهزة",
                     "systemUpdate": "‏‫تحديث النظام‬",
-                    "header": "أدوات النظام"
+                    "header": "أدوات النظام",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "systemStatus": {
                     "info": "معلومات"
@@ -3084,15 +3085,15 @@
             "science": "العلم"
         },
         "gaming": {
-            "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
-            "gamingFeature1": "-Computer status monitor",
-            "gamingFeature2": "-Performance mode & overclocking",
-            "gamingFeature3": "-Lighting",
-            "gamingFeature4": "-Network Boost",
-            "gamingFeature5": "-Auto Close",
-            "gamingOnly": "Gaming",
-            "gamingAndWork": "Gaming & Work",
-            "nonGaming": "Non-Gaming"
+            "gamingDescription": "بإمكان إصدار الألعاب من Vantage أن يسهّل عليك تحسين تجربة الألعاب. إلى جانب الإعدادات العامة، تتضمن الميزات الرئيسية (متوفرة في أنظمة محددة):",
+            "gamingFeature1": "-مراقبة حالة الكمبيوتر",
+            "gamingFeature2": "-وضع الأداء وزيادة الأداء",
+            "gamingFeature3": "-الإضاءة",
+            "gamingFeature4": "-تعزيز الشبكة",
+            "gamingFeature5": "-الإغلاق التلقائي",
+            "gamingOnly": "الألعاب",
+            "gamingAndWork": "الألعاب والعمل",
+            "nonGaming": "غير الألعاب"
         }
     },
     "settings": {
@@ -4062,5 +4063,10 @@
     },
     "cpt": {
         "title": "Content Preview Tool"
+    },
+    "storeRating": {
+        "title": "أرسل لنا صوتك",
+        "likeUs": "‏‫سجل إعجابك بنا",
+        "feedback": "تقديم ملاحظات"
     }
 }

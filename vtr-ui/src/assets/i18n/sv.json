@@ -78,7 +78,8 @@
                     "macroKey": "Makrotangent",
                     "hardwareScan": "Maskinvarugenomsökning",
                     "systemUpdate": "Systemuppdatering",
-                    "header": "Systemverktyg"
+                    "header": "Systemverktyg",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "lighting": {
                     "title": "Anpassa belysning",
@@ -3082,15 +3083,15 @@
             "science": "Vetenskap"
         },
         "gaming": {
-            "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
-            "gamingFeature1": "-Computer status monitor",
-            "gamingFeature2": "-Performance mode & overclocking",
-            "gamingFeature3": "-Lighting",
-            "gamingFeature4": "-Network Boost",
-            "gamingFeature5": "-Auto Close",
-            "gamingOnly": "Gaming",
-            "gamingAndWork": "Gaming & Work",
-            "nonGaming": "Non-Gaming"
+            "gamingDescription": "Spelversionen av Vantage gör det lätt att förbättra spelupplevelsen. Utöver de vanliga inställningarna inkluderar huvudfunktionerna (på vissa modeller):",
+            "gamingFeature1": "-Datorstatusövervakare",
+            "gamingFeature2": "-Prestandaläge och överklockning",
+            "gamingFeature3": "-Ljus",
+            "gamingFeature4": "-Nätverksprestanda",
+            "gamingFeature5": "-Stäng automatiskt",
+            "gamingOnly": "Spel",
+            "gamingAndWork": "Spel och arbete",
+            "nonGaming": "Icke-spel"
         }
     },
     "settings": {
@@ -4062,5 +4063,10 @@
     },
     "cpt": {
         "title": "Content Preview Tool"
+    },
+    "storeRating": {
+        "title": "Ge oss din röst",
+        "likeUs": "Gilla oss",
+        "feedback": "Ge feedback"
     }
 }

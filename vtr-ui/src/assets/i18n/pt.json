@@ -78,7 +78,8 @@
                     "macroKey": "Tecla de Macro",
                     "hardwareScan": "Verificação de Hardware",
                     "systemUpdate": "Atualiz. Sistema",
-                    "header": "Ferram. de sistema"
+                    "header": "Ferram. de sistema",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "lighting": {
                     "title": "Personalização da Iluminação",
@@ -3082,15 +3083,15 @@
             "science": "Ciência"
         },
         "gaming": {
-            "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
-            "gamingFeature1": "-Computer status monitor",
-            "gamingFeature2": "-Performance mode & overclocking",
-            "gamingFeature3": "-Lighting",
-            "gamingFeature4": "-Network Boost",
-            "gamingFeature5": "-Auto Close",
-            "gamingOnly": "Gaming",
-            "gamingAndWork": "Gaming & Work",
-            "nonGaming": "Non-Gaming"
+            "gamingDescription": "A versão do Vantage para jogos faz com melhore a sua experiência de jogo de forma simples. Além das definições comuns, as principais funcionalidades incluem (disponíveis em sistemas selecionados):",
+            "gamingFeature1": "-Monitor de estado do computador",
+            "gamingFeature2": "-Modo de desempenho e overclocking",
+            "gamingFeature3": "-Iluminação",
+            "gamingFeature4": "-Reforço da rede",
+            "gamingFeature5": "-Fechar automaticamente",
+            "gamingOnly": "Jogos",
+            "gamingAndWork": "Jogos e Trabalho",
+            "nonGaming": "Não-Jogos"
         }
     },
     "settings": {
@@ -4062,5 +4063,10 @@
     },
     "cpt": {
         "title": "Content Preview Tool"
+    },
+    "storeRating": {
+        "title": "Envie-nos a sua opinião",
+        "likeUs": "Siga-nos",
+        "feedback": "Deixar comentários"
     }
 }
