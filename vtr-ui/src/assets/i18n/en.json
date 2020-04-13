@@ -687,7 +687,7 @@
 				},
 				"turnOnModal": {
 					"confirmation": "Network boost turn on confirmation window opened",
-					"dontAskAgain": "Don't ask again",
+					"dontAskAgain": "Dont ask again",
 					"turnOnButton": "Turn on Network boost",
 					"notOnButton": "Not now"
 				},
