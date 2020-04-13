@@ -8,6 +8,8 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { HardwareScanService } from 'src/app/services/hardware-scan/hardware-scan.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalGamingPromptComponent } from './../../modal/modal-gaming-prompt/modal-gaming-prompt.component';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { GamingAccessoryService } from 'src/app/services/gaming/gaming-accessory/gaming-accessory.service';
 
 @Component({
 	selector: 'vtr-widget-system-tools',
@@ -16,15 +18,20 @@ import { ModalGamingPromptComponent } from './../../modal/modal-gaming-prompt/mo
 })
 export class WidgetSystemToolsComponent implements OnInit {
 	@Input() title = '';
-	showHWScanMenu: boolean = true;
+	showHWScanMenu: boolean = false;
 	public gamingProperties: any = new GamingAllCapabilities();
-	showAccessoryEntrance = true;
+	// version 3.3 for accessory entrance
+	// showAccessoryEntrance = true;
 	toolLength = 3;
 	constructor(
 		private modalService: NgbModal,
 		private commonService: CommonService, 
 		private gamingCapabilityService: GamingAllCapabilitiesService,
 		private hardwareScanService: HardwareScanService,
+		// version 3.3 show entrance & launch accessory 
+		private gamingAccessory: GamingAccessoryService,
+		private logger: LoggerService
+
 	) { }
 
 	ngOnInit() {
@@ -48,6 +55,11 @@ export class WidgetSystemToolsComponent implements OnInit {
 		// 		});
 		// }
 
+		// version 3.3 accessory entrance
+		this.gamingProperties.accessoryFeature = this.gamingCapabilityService.getCapabilityFromCache(
+			LocalStorageKey.accessoryFeature
+		);
+
 		this.calcToolLength();
 	}
 
@@ -59,11 +71,25 @@ export class WidgetSystemToolsComponent implements OnInit {
 		if (this.showHWScanMenu) {
 			originalLength ++;
 		}
-		if( this.showAccessoryEntrance) {
+		if( this.gamingProperties.accessoryFeature) {
 			originalLength ++;
 		}
 
 		this.toolLength = originalLength;
+	}
+
+	launchAccesory() {
+		try {
+			this.gamingAccessory.launchAccessory().then(res => {
+				this.logger.info(`Widget-SystemTools-LaunchAccesory: return value: ${res}`);
+				if (!res) {
+					this.openWaringModal();
+				}
+			})
+		} catch(error) {
+			this.logger.error('Widget-SystemTools-LaunchAccesory: launch fail; Error message: ', error.message);
+			throw new Error(error.message);
+		}
 	}
 
 	openWaringModal() {
@@ -74,7 +100,7 @@ export class WidgetSystemToolsComponent implements OnInit {
 		waringModalRef.componentInstance.cancelButton="gaming.dashboard.device.legionEdge.driverPopup.link";
 		waringModalRef.componentInstance.emitService.subscribe((emmitedValue) => {
 			if(emmitedValue === 1) {
-				window.open('https://www.baidu.com');
+				window.open('https://pcsupport.lenovo.com/downloads/legionaccessorycentral');
 			}
 		})
 	}

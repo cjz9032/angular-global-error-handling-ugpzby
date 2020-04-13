@@ -83,9 +83,9 @@
 							</a>
 						</li>
 
-						<li *ngIf="showAccessoryEntrance">
+						<li *ngIf="gamingProperties.accessoryFeature">
 							<a id="gaming_dashboard_systemtools_legion_accessory" aria-label="legion accessory"
-							 tabindex="1" (click)="openWaringModal()"
+							 tabindex="1" (click)="launchAccesory()"
 							  vtrMetrics [metricsItem]="'systemtools_legion_accessory'" metricsEvent="featureClick" metricsParent="Gaming.Dashboard">
 								<figure>
 									<div class="system-image" title="">
