@@ -78,6 +78,7 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, After
 			Array.from(this.captionRef.nativeElement.querySelectorAll('a'))
 				.forEach((element: any) => {
 					element.setAttribute('id', 'modern-standby-link');
+					element.setAttribute('class', 'modern-standby');
 				});
 		}
 		catch (error) {

@@ -757,7 +757,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 	}
 	public onEyeCareTemparatureChange($event: any) {
 		try {
-			this.logger.debug('temparature changed in display', $event);
+			this.logger.debug('onEyeCareTemperatureChange changed in display', $event.value);
 			if (this.displayService.isShellAvailable) {
 				this.displayService.setDisplayColortemperature($event.value);
 
@@ -771,9 +771,9 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 			return EMPTY;
 		}
 	}
-	public onEyeCareTemparatureValueChange($event: ChangeContext) {
+	public onEyeCareTemparatureValueChange($event: any) {
 		try {
-			this.logger.debug('temparature changed in display', $event);
+			this.logger.debug('temparature changed in display', $event.value);
 			if (this.displayService.isShellAvailable) {
 				this.displayService
 					.setDisplayColortemperature($event.value);
@@ -797,7 +797,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 	}
 	public onResetTemparature($event: any) {
 		try {
-			this.logger.debug('SubpageDeviceSettingsDisplayComponent.onResetTemparature: before api call', $event);
+			this.logger.debug('SubpageDeviceSettingsDisplayComponent.onResetTemparature: before api call');
 			if (this.displayService.isShellAvailable) {
 				this.displayService
 					.resetEyeCareMode().then((resetData: any) => {
@@ -942,7 +942,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 	public resetDaytimeColorTemp($event: any) {
 		try {
 			if (this.displayService.isShellAvailable) {
-				this.logger.debug('temparature reset in display', $event);
+				this.logger.debug('resetDaytimeColorTemp reset in display');
 				this.displayService
 					.resetDaytimeColorTemperature().then((resetData: any) => {
 						this.logger.debug('temparature reset data', resetData);

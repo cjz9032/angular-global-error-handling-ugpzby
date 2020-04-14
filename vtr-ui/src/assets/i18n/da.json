@@ -197,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "Advarsel!",
                     "description": "Forkerte indstillinger for overclocking kan medføre hardwareskader, der ikke kan genoprettes.",
-                    "proceed": "FORTSÆT"
+                    "proceed": "FORTSÆT",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },

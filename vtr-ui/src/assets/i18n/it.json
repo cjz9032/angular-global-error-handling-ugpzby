@@ -197,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "Avvertenza!",
                     "description": "Impostazioni non corrette dell'overclock possono provocare danni hardware irreversibili.",
-                    "proceed": "CONTINUA"
+                    "proceed": "CONTINUA",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },

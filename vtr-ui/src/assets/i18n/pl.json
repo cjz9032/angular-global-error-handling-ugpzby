@@ -197,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "Ostrzeżenie!",
                     "description": "Nieprawidłowe ustawienia Przetaktowywania mogą nieodwracalnie uszkodzić sprzęt.",
-                    "proceed": "WYKONAJ"
+                    "proceed": "WYKONAJ",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },

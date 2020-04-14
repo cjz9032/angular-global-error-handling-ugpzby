@@ -173,7 +173,10 @@
                 "warningPromptPopup": {
                     "title": "警告！",
                     "description": "超頻的設定不正確可能會導致無法還原的硬體損壞。",
-                    "proceed": "繼續"
+                    "proceed": "繼續",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 },
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "熱模式設定",
@@ -3084,14 +3087,14 @@
         },
         "gaming": {
             "gamingDescription": "有了遊戲版的 Vantage，您可以很輕鬆地改善遊戲體驗。除了常見的設定外，主要功能包括（適用於特定系統）：",
-			"gamingFeature1": "- 電腦狀態監視器",
-			"gamingFeature2": "- 效能模式和超頻",
-			"gamingFeature3": "- 燈光",
-			"gamingFeature4": "- 網路加速",
-			"gamingFeature5": "- 自動關閉",
-			"gamingOnly": "遊戲",
-			"gamingAndWork": "遊戲和工作",
-			"nonGaming": "非遊戲"
+            "gamingFeature1": "- 電腦狀態監視器",
+            "gamingFeature2": "- 效能模式和超頻",
+            "gamingFeature3": "- 燈光",
+            "gamingFeature4": "- 網路加速",
+            "gamingFeature5": "- 自動關閉",
+            "gamingOnly": "遊戲",
+            "gamingAndWork": "遊戲和工作",
+            "nonGaming": "非遊戲"
         }
     },
     "settings": {

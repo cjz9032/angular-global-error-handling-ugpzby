@@ -55,5 +55,10 @@
 		&:focus {
 			@include outline-blue;
 		}
-	}
+    }
+    .sub-heading-caption{
+        color: $purple_navy;
+        font-size: $fontsize_md;
+        font-weight: $weight_600;
+    }
 }
