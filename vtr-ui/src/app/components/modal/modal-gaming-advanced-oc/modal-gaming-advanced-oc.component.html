@@ -5,7 +5,7 @@
     <div class="modal-main" *ngIf="!loading">
         <div class="modal-header">
             <h2>{{ 'gaming.dashboard.device.advancedOC.title' | translate }}</h2>
-            <p>{{ 'gaming.dashboard.device.advancedOC.description' | translate }}</p>
+            <p tabindex="-1">{{ 'gaming.dashboard.device.advancedOC.description' | translate }}</p>
             <button type="button" tabindex="0" class="close" aria-label="close" role="button" (click)="closeModal()">
                 ×
             </button>
@@ -45,7 +45,7 @@
                             </div>
                             <div class="right-range">
                                 <vtr-ui-add-reduce-button [btnWidth]="'26.3%'" [value]="item.OCValue" [minData]="item.minValue" [maxData]="item.maxValue" [step]="item.stepValue" [unit]="itemUnit['cpuAdvancedOC'+item.tuneId]" (setVal)="setRangeValue($event,idx,'cpuParameterList',item.tuneId,true)"
-									[ariaLabelValue]="'gaming.dashboard.device.advancedOC.gpuOCNames.gpuOCName'+item.tuneId | translate"></vtr-ui-add-reduce-button>
+                                    [ariaLabelValue]="'gaming.dashboard.device.advancedOC.gpuOCNames.gpuOCName'+item.tuneId | translate"></vtr-ui-add-reduce-button>
                             </div>
                         </div>
                     </li>

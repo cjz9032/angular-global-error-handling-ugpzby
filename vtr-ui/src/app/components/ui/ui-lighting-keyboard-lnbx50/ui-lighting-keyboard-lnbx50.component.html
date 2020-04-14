@@ -1,9 +1,7 @@
 <div class="vtr-ui-lighting-keyboard-lnbx50">
     <div class="keyboard-toggle" *ngIf="!isDisablled">
         <div class="toggle-box">
-            <vtr-ui-toggle (toggleStatus)="onToggleOnOff($event)"
-                [toggleId]="'Divide Area'"  [parentId]="'Gaming.Lighting'" [onOffSwitchId]="'lighting_colorareadivideSwitch'"
-                [value]="isDivideArea" [tabIndexNum]="0">
+            <vtr-ui-toggle (toggleStatus)="onToggleOnOff($event)" [toggleId]="'Divide Area'" [parentId]="'Gaming.Lighting'" [onOffSwitchId]="'lighting_colorareadivideSwitch'" [value]="isDivideArea" [tabIndexNum]="0">
             </vtr-ui-toggle>
             <p *ngIf="isDivideArea" title="{{'gaming.lightingNewversion.colorPicker.text7' | translate}}">{{'gaming.lightingNewversion.colorPicker.text7' | translate}}</p>
             <p *ngIf="!isDivideArea" title="{{'gaming.lightingNewversion.colorPicker.text6' | translate}}">{{'gaming.lightingNewversion.colorPicker.text6' | translate}}</p>
@@ -18,17 +16,12 @@
             <div *ngIf="isDisablled" class="disabledBox">
                 <div class="disabled-border"></div>
             </div>
-            <div class="keyboard-area {{'keyboard-area'+areaIndex}}" 
-                *ngFor="let area of listInfo; let areaIndex = index" [id]="'keyboard-area'+areaIndex" 
-                (click)="selectAreaFn(area.lightPanelType,area.lightColor);$event.stopPropagation();" (mouseover)="mouseoverFn($event,area.lightPanelType,area.lightColor)" (mouseout)="mouseoutFn($event,area.lightPanelType)">
+            <div class="keyboard-area {{'keyboard-area'+areaIndex}}" *ngFor="let area of listInfo; let areaIndex = index" [id]="'keyboard-area'+areaIndex" (click)="selectAreaFn(area.lightPanelType,area.lightColor);$event.stopPropagation();" (mouseover)="mouseoverFn($event,area.lightPanelType,area.lightColor)"
+                (mouseout)="mouseoutFn($event,area.lightPanelType)">
                 <ul class="keyboard-area-line {{'area' + areaIndex + 'Line' + lineIndex}}" *ngFor="let line of keyboardInfo[areaIndex].area; let lineIndex = index">
-                    <li *ngFor="let item of line; let idx = index" 
-                        [ngStyle]="{'width': item.width,'padding-bottom':item.height}" 
-                        class="{{'area' + areaIndex + 'Line' + lineIndex + 'Block' + idx}}"
-                        [ngClass]="{'opacity100': (!isDisablled && isDivideArea && selectPanel === area.lightPanelType && selectedArea === area.lightPanelType) || (!isDivideArea && selectPanel != 0),
+                    <li *ngFor="let item of line; let idx = index" [ngStyle]="{'width': item.width,'padding-bottom':item.height}" class="{{'area' + areaIndex + 'Line' + lineIndex + 'Block' + idx}}" [ngClass]="{'opacity100': (!isDisablled && isDivideArea && selectPanel === area.lightPanelType && selectedArea === area.lightPanelType) || (!isDivideArea && selectPanel != 0),
                             'opacity20': (!isDisablled && isDivideArea && selectPanel != area.lightPanelType && selectPanel != 0),
-                            'opacity80': (!isDisablled && isDivideArea && selectPanel === 0 && selectedArea === 0) }"
-                         >
+                            'opacity80': (!isDisablled && isDivideArea && selectPanel === 0 && selectedArea === 0) }">
                         <span *ngIf="isDivideArea" [ngClass]="{'disabled': !item.empty && isDisablled}" [ngStyle]="{'border': item.empty?'2px solid ' + item.color:'2px solid #' + area.lightColor,
                             'box-shadow':(!item.empty && selectPanel === area.lightPanelType)?'0px 0px 8px #'+area.lightColor :'none'}"></span>
                         <span *ngIf="!isDivideArea" [ngClass]="{'disabled': !item.empty && isDisablled}" [ngStyle]="{'border': item.empty?'2px solid ' + item.color:'2px solid #' + area.lightColor,
@@ -37,23 +30,21 @@
                 </ul>
             </div>
         </div>
-        <div class="aria-area" >
+        <div class="aria-area">
             <button *ngIf="!isDivideArea" class="wholeAarea" tabindex="0" role="button" (click)="selectAreaFn(1,listInfo[0].lightColor);$event.stopPropagation();">
                 <span *ngIf="selectedArea !== 0">this keyboard area is selected</span>
                 <span *ngIf="selectedArea === 0">keyboard area</span>
             </button>
             <div *ngIf="isDivideArea" class="divideArea">
-                <button *ngFor="let area of listInfo; let areaIndex = index" tabindex="0" role="button" [class]="'keyboard-button'+areaIndex"
-                    (click)="selectAreaFn(area.lightPanelType,area.lightColor);$event.stopPropagation();">
+                <button *ngFor="let area of listInfo; let areaIndex = index" tabindex="0" role="button" [class]="'keyboard-button'+areaIndex" (click)="selectAreaFn(area.lightPanelType,area.lightColor);$event.stopPropagation();">
                     <span *ngIf="selectedArea === area.lightPanelType">this keyboard area is selected</span>
-                    <span *ngIf="selectedArea !== area.lightPanelType">keyboard area {{areaIndex+1}}/{{listInfo.length}}</span>
+                    <span *ngIf="selectedArea !== area.lightPanelType">keyboard area {{areaIndex+1}} of {{listInfo.length}}</span>
                 </button>
             </div>
-            
+
         </div>
         <div class="emptyArea1"></div>
         <div class="emptyArea2"></div>
     </div>
-    
+
 </div>
-    
