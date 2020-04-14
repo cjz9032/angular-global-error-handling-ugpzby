@@ -136,6 +136,8 @@
 						container="vtr-root"
 						tooltipClass="vtr-tooltip"
 						(click)="onRightIconClick(rightToolTip1, $event)"
+						(keydown.shift.tab)="closeAllToolTips()"
+						(keydown.tab)="closeAllToolTips()"
 						(keydown.enter)="onRightIconClick(rightToolTip1, $event)">
 					</fa-icon>
 				</div>
@@ -155,6 +157,8 @@
 						container="vtr-root"
 						tooltipClass="vtr-tooltip"
 						(click)="onRightIconClick(rightToolTip2, $event)"
+						(keydown.shift.tab)="closeAllToolTips()"
+						(keydown.tab)="closeAllToolTips()"
 						(keydown.enter)="onRightIconClick(rightToolTip2, $event)"></fa-icon>
 				</div>
 
@@ -174,6 +178,8 @@
 						container="vtr-root"
 						tooltipClass="vtr-tooltip fnctrl-tooltip"
 						(click)="onRightIconClick(rightToolTip3, $event)"
+						(keydown.shift.tab)="closeAllToolTips()"
+						(keydown.tab)="closeAllToolTips()"
 						(keydown.enter)="onRightIconClick(rightToolTip3, $event)"></fa-icon>
 				</div>
 
