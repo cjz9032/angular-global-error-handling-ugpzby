@@ -78,7 +78,8 @@
                     "macroKey": "מקש מאקרו",
                     "hardwareScan": "סריקת חומרה",
                     "systemUpdate": "‏‫עדכון המערכת‬",
-                    "header": "כלי מערכת"
+                    "header": "כלי מערכת",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "lighting": {
                     "title": "התאמה אישית של התאורה",

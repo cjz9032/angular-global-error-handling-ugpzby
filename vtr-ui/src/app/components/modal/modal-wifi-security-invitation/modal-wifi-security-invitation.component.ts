@@ -34,10 +34,8 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 		public metricsTranslateService: MetricsTranslateService) {
 	}
 
-	async ngOnInit() {
-		this.vantageShellService.getConnectedHomeSecurity().then((chs) => {
-			this.chs = chs;
-		})
+	ngOnInit() {
+		this.chs = this.vantageShellService.getConnectedHomeSecurity();
 	}
 
 	closeModal() {

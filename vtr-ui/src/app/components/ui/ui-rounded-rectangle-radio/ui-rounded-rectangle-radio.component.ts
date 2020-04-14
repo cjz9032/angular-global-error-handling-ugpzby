@@ -3,6 +3,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from 'src/app/services/metric/metric.service';
 import { AppEvent } from './../../../enums/app-event.enum';
 import { UICustomRadio } from '../ui-custom-radio/ui-custom-radio';
+import { KeyCode } from 'src/app/enums/key-code.enum';
 
 @Component({
 	selector: 'vtr-ui-rounded-rectangle-radio',
@@ -51,9 +52,9 @@ export class UiRoundedRectangleRadioComponent extends UICustomRadio implements O
 	}
 	onkeyPress($event) {
 		const { keyCode } = $event;
-		if (keyCode === this.keyCode.LEFT) {
+		if (keyCode === KeyCode.LEFT) {
 			this.customKeyEvent.emit({ customeEvent: AppEvent.LEFT });
-		} else if (keyCode === this.keyCode.RIGHT) {
+		} else if (keyCode === KeyCode.RIGHT) {
 			this.customKeyEvent.emit({ customeEvent: AppEvent.RIGHT });
 		}
 	}

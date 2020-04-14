@@ -4,6 +4,7 @@ import { NgbDropdown } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
 import { ChargeThreshold } from 'src/app/data-models/device/charge-threshold.model';
 import { CommonService } from 'src/app/services/common/common.service';
+import { KeyCode } from 'src/app/enums/key-code.enum';
 
 @Component({
 	selector: 'vtr-battery-charge-threshold-settings',
@@ -18,11 +19,8 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 	@Input() textId = '';
 	@Input() isDisabled = false;
 	@Input() bctInfo: ChargeThreshold = new ChargeThreshold();
-
 	@Output() changeBCTInfo = new EventEmitter<ChargeThreshold>();
 	@Output() autoChecked = new EventEmitter<ChargeThreshold>();
-
-
 	chargeOptions: number[] = [40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100];
 	startAtChargeOptions: number[] = this.chargeOptions.slice(0, this.chargeOptions.length - 1);
 	stopAtChargeOptions: number[] = this.chargeOptions.slice(1, this.chargeOptions.length);
@@ -34,7 +32,6 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 	off = 'off'
 	ddStartAtChargeDescription = this.translate.instant('device.deviceSettings.power.batterySettings.batteryThreshold.options.start');
 	ddStopAtChargeDescription = this.translate.instant('device.deviceSettings.power.batterySettings.batteryThreshold.options.stop');
-
 
 	// Random number is used to have unique id of each input field
 	randomNumber: number = Math.floor(new Date().valueOf() * SecureMath.random());
@@ -102,6 +99,7 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 		this.autoChecked.emit(bctInfo);
 	}
 
+
 	closeAllDD() {
 		// Close all dropdowns
 		this.dropDowns.toArray().forEach(elem => {
@@ -146,6 +144,28 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 			}
 		}
 
+	}
+
+
+	ddItemKeyEscHandler($event, activeDropdown: NgbDropdown, toggle: HTMLElement) {
+		$event.preventDefault();
+		if (activeDropdown.isOpen()) {
+			toggle.click()
+		}
+		toggle.focus()
+	}
+	ddToggleKBNavigator($event, activeDropdown: NgbDropdown, type, value) {
+		switch ($event.keyCode) {
+			case KeyCode.SPACE:
+			case KeyCode.RETURN:
+			case KeyCode.UP:
+			case KeyCode.DOWN:
+			case KeyCode.LEFT:
+			case KeyCode.RIGHT:
+				$event.stopPropagation();
+				this.focusOnSelected($event, activeDropdown, type, value);
+				break;
+		}
 	}
 
 	focusOnSelected($event: Event, activeDropdown: NgbDropdown, type, value) {

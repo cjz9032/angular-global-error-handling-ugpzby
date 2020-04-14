@@ -78,7 +78,8 @@
                     "macroKey": "Tecla macro",
                     "hardwareScan": "Verificação de Hardware",
                     "systemUpdate": "Atual. do Sistema",
-                    "header": "Ferram. sistema"
+                    "header": "Ferram. sistema",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "lighting": {
                     "title": "Iluminação personalizada",

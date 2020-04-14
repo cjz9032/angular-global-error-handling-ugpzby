@@ -4,6 +4,7 @@ import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { BatteryGaugeReset } from 'src/app/data-models/device/battery-gauge-reset.model';
 import { BehaviorSubject } from 'rxjs';
 import { ChargeThreshold } from 'src/app/data-models/device/charge-threshold.model';
+import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 @Injectable({
 	providedIn: 'root'
 })
@@ -19,12 +20,12 @@ export class BatteryDetailService {
 	isGaugeResetRunning: boolean;
 	isInvalidBattery: boolean;
 
-	chargeThresholdInfo: BehaviorSubject<ChargeThreshold[]>;
+	chargeThresholdInfo = new BehaviorSubject([new ChargeThreshold()]);
+	airplaneModeSubject = new BehaviorSubject(new FeatureStatus(false, false));
+	expressChargingSubject = new BehaviorSubject(new FeatureStatus(false, false));
 
 	public isShellAvailable = false;
 	constructor(shellService: VantageShellService) {
-		this.chargeThresholdInfo = new BehaviorSubject(
-			[new ChargeThreshold()]);
 		this.battery = shellService.getBatteryInfo();
 		if (this.battery) {
 			this.isShellAvailable = true;
@@ -64,5 +65,21 @@ export class BatteryDetailService {
 
 	public getChargeThresholdInfo() {
 		return this.chargeThresholdInfo.asObservable();
+	}
+
+	public getAirplaneMode() {
+		return this.airplaneModeSubject.asObservable();
+	}
+
+	public setAirplaneMode(value) {
+		this.airplaneModeSubject.next(value);
+	}
+
+	public getExpressCharging() {
+		return this.expressChargingSubject.asObservable();
+	}
+
+	public setExpressCharging(value) {
+		this.expressChargingSubject.next(value);
 	}
 }

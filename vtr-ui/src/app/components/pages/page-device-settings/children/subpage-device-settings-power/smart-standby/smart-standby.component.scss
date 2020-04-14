@@ -43,8 +43,7 @@ ul.list-group {
 		margin-bottom: 1rem;
 		width: auto;
 		&:focus {
-			outline: 0.1rem solid $menu_hover;
-			outline-offset: 0.2rem;
+			@include outline-blue;
 		}
 	}
 	.collapse-header-icon {
@@ -88,8 +87,7 @@ ul.list-group {
 		color: $high-contrast-black-yellow;
 	}
 	&:focus {
-		outline: 0.1rem solid $menu_hover;
-		outline-offset: 0.2rem;
+		@include outline-blue;
 	}
 }
 .disabled {
@@ -138,8 +136,7 @@ ul.list-group {
 	display: inline-block;
 	cursor: pointer;
 	&:focus {
-		outline: 0.1rem solid $menu_hover;
-		outline-offset: 0.2rem;
+		@include outline-blue;
 	}
 
 }
