@@ -11,7 +11,7 @@ import { CommonWidgetModule } from '../common/common-widget.module';
 import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-info/widget-offline.module';
 
 import { CommonPipeModule } from '../common/common-pipe.module';
-import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModalModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { faChevronLeft } from '@fortawesome/pro-light-svg-icons/faChevronLeft';
 import { faChevronRight } from '@fortawesome/pro-light-svg-icons/faChevronRight';
 import { ModalAppsForYouScreenshotComponent } from 'src/app/components/modal/modal-apps-for-you-screenshot/modal-apps-for-you-screenshot.component';
@@ -34,7 +34,8 @@ import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontaweso
 		WidgetOfflineModule,
 		PageLayoutModule,
 		NgbModalModule,
-		FontAwesomeModule
+		FontAwesomeModule,
+		NgbTooltipModule
 	],
 	providers: [
 		SystemUpdateService,

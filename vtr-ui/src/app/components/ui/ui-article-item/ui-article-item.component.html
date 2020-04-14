@@ -37,8 +37,10 @@
 					class="col col-12 content">
 					<div href="javascript:;"
 						class="title text-two-ellipsis"
-						[title]="item.Title | htmlText"
-						[innerHTML]="item.Title"></div>
+						[title]=""
+						[innerHTML]="item.Title"
+						[ngbTooltip]="item.Title | htmlText" tooltipClass="vtr-tooltip" container="body"
+						></div>
 					<div class="logo-text">
 						<span *ngIf="item.LogoText && !item.Thumbnail">{{item.LogoText}}</span>
 					</div>
@@ -90,8 +92,10 @@
 				<div *ngIf="item.Title"
 					class="col col-12 content">
 					<div class="title text-two-ellipsis"
-						[title]="item.Title | htmlText"
-						[innerHTML]="item.Title"></div>
+						[title]=""
+						[innerHTML]="item.Title"
+						[ngbTooltip]="item.Title | htmlText" tooltipClass="vtr-tooltip" container="body"
+						></div>
 					<div class="logo-text">
 						<span *ngIf="item.BrandName && !item.FeatureImage">{{item.BrandName}}</span>
 					</div>
