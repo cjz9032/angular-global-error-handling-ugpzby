@@ -1991,7 +1991,7 @@
 				"autoScreenOff": {
 					"title": "Auto Screen Off",
 					"caption": "Automatically turn off display when face-down or walking.",
-					"note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
+					"note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery\" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
 					"windowsLink": "Go to Power & sleep settings in Windows settings"
 				},
 				"keepMyDisplay": {

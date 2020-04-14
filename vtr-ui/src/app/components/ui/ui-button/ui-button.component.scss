@@ -27,7 +27,7 @@
 			}
 
 			&:focus {
-				outline: 0;
+				outline: none !important;
 				box-shadow: none;
 				@include button-outline-blue;
 			}
