@@ -199,7 +199,10 @@
                 "warningPromptPopup": {
                     "title": "تحذير!",
                     "description": "قد تؤدي الإعدادات غير السليمة لـ زيادة الأداء إلى تلف بالجهاز لا يمكن التراجع عنه.",
-                    "proceed": "المتابعة"
+                    "proceed": "المتابعة",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },

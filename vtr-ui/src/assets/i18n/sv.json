@@ -173,7 +173,10 @@
                 "warningPromptPopup": {
                     "title": "Varning!",
                     "description": "Felaktiga inställningar av överklockning kan leda till bestående skador på maskinvaran.",
-                    "proceed": "FORTSÄTT"
+                    "proceed": "FORTSÄTT",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 },
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Inst. för temperaturläge",

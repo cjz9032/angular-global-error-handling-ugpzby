@@ -24,6 +24,7 @@ export class DisplayColorTempComponent implements OnInit {
 	}
 
 	public onDisplayColorTemparatureChange($event: any) {
+		this.displayColorTempSettings.current = $event.value;
 		this.displayColorTempChange.emit($event);
 	}
 

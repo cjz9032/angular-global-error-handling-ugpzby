@@ -197,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "Upozorenje!",
                     "description": "Neispravne postavke procesa Overclocking mogu dovesti do nepovratnog oštećenja hardvera.",
-                    "proceed": "NASTAVI"
+                    "proceed": "NASTAVI",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },

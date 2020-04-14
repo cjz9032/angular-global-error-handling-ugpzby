@@ -197,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "Atenção!",
                     "description": "Definições de Overclocking incorretas poderão causar danos irreversíveis no hardware.",
-                    "proceed": "CONTINUAR"
+                    "proceed": "CONTINUAR",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },

@@ -197,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "Avertissement !",
                     "description": "Des paramètres inadaptés du Surfréquençage peuvent entraîner des dégâts matériel irréversibles.",
-                    "proceed": "CONTINUER"
+                    "proceed": "CONTINUER",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },
