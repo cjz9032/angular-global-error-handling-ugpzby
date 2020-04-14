@@ -179,3 +179,14 @@
 		}
 	}
 }
+::ng-deep body.focus-enable{
+	.is-gaming {
+		.multi-state-toggle{		
+			.inner-toggle{
+					input:checked:focus+label{
+							outline: 1px dotted !important;
+					}	
+				}
+		}
+	}
+}

@@ -19,7 +19,7 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col col-12 content">
-					<a [class.default-cursor]="isOfflineArm"
+					<a [class.default-cursor]="isOfflineArm" tabindex="0"
 						[attr.href]="!item.ActionLink ? null : (item.ActionLink | sanitize : 'resourceUrl')"
 						(click)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 						vtrMetrics

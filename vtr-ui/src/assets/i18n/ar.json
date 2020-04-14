@@ -80,7 +80,8 @@
                     "macroKey": "مفتاح الماكرو",
                     "hardwareScan": "فحص الأجهزة",
                     "systemUpdate": "‏‫تحديث النظام‬",
-                    "header": "أدوات النظام"
+                    "header": "أدوات النظام",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "systemStatus": {
                     "info": "معلومات"
@@ -1854,6 +1855,14 @@
             "intelligentSecurity": {
                 "title": "الأمان الذكي",
                 "readMore": "اقرأ أكثر",
+                "image": {
+                    "title": "الأمان الذكي",
+                    "description": "يحمي الكمبيوتر الشخصي باستخدام تقنية الاستشعار الذكي، ويحمي خصوصيتك، ويوفر طاقة البطارية."
+                },
+                "advancedSettings": {
+                    "showAdvSettings": "إعدادات متقدمة",
+                    "hideAdvSettings": "إخفاء الإعدادات المتقدمة"
+                },
                 "HumanPresenceDetection": {
                     "title": "الكشف عن الوجود البشري",
                     "tooltip": "انقر هنا لإعادة تعيين إعدادات الكشف عن الوجود البشري."
@@ -1866,6 +1875,11 @@
                     "title": "تسجيل الدخول من دون لمس",
                     "caption": "تلغي هذه الميزة قفل الكمبيوتر أو تنبهه تلقائيًا عندما تجلس أمامه أو تقترب منه.",
                     "tooltip": "عند تواجدك أمام الكمبيوتر أو أثناء اقترابك منه (على مسافة 1.2 متر)، تتيح لك هذه الميزة تسجيل الدخول تلقائيًا إلى النظام بعد التعرف على وجهك. إذا كنت في الخارج بدلاً من أن تكون في المكتب، فيجب أن تكون على مسافة أقرب من الكمبيوتر وستستغرق عملية التنبيه وقتًا أطول."
+                },
+                "zeroTouchLoginForIdea": {
+                    "title": "تسجيل الدخول من دون لمس",
+                    "caption": "تتيح لك هذه الميزة تحسين كفاءة العمل من خلال إعادة تشغيل الكمبيوتر أو تسجيل الدخول إليه تلقائيًا. لاستخدام الميزة، تحتاج إلى تسجيل وجهك في Windows Hello.",
+                    "tooltip": "عند تواجدك أمام الكمبيوتر أو أثناء اقترابك منه (على مسافة 1.2 أو 1.5 متر)، تتيح لك هذه الميزة تسجيل الدخول تلقائيًا إلى النظام بعد التعرف على وجهك. إذا كنت في الخارج بدلاً من أن تكون في المكتب، فيجب أن تكون على مسافة أقرب من الكمبيوتر وستستغرق عملية التنبيه وقتًا أطول. <br>واستنادًا إلى قدرة المستشعر، تختلف أقصى مسافة للكشف. راجع <i>دليل المستخدم</i> المرفق مع الكمبيوتر للحصول على تفاصيل."
                 },
                 "zeroTouchLock": {
                     "title": "قفل من دون لمس",
@@ -1881,7 +1895,7 @@
                     },
                     "facialRecognition": {
                         "title": "التعرف على الوجه",
-                        "caption": "يمكنك تمكين ميزة التعرف على الوجه والسماح لها بالوصول إلى الكاميرا. تلتقط هذه الأداة صورتك من أجل التعرف بدقة على وجودك أو كشف عدم وجودك عندما تترك جهازك دون مراقبة. تتم معالجة هذه البيانات محليًا على جهازك. Lenovo لا يمكنها الوصول إليها أو استخدامها.",
+                        "caption": "تساعد هذه الميزة في تحسين أداء التمييز وتجنب قفل الشاشة غير المتوقع خاصة عند الاستلقاء على كرسيك. تتم معالجة هذه الميزة محليًا على جهازك. Lenovo لا يمكنها الوصول إليها أو استخدامها.",
                         "checkBox": "شغل الكاميرا وقم بتمكين هذه الميزة",
                         "note": {
                             "permission": "لا يتمتع Lenovo Vantage بالوصول إلى الكاميرا. وظيفة مربع الاختيار لن تعمل.",
@@ -1891,18 +1905,18 @@
                         }
                     },
                     "distanceSensitivityAdjusting": {
-                        "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                        "captionOn": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, you can maually adjust the dectecting sensitivity based on your preference.",
-                        "captionOff": "The accuracy varies by body size, posture, and frequency of movement. When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
+                        "title": "ضبط حساسية المسافة تلقائيًا",
+                        "captionOn": "تختلف الدقة بحسب حجم الجسم والوضعية ومدى تكرار الحركة. إذا تم قفل الكمبيوتر بشكل غير متوقع، فيمكنك ضبط حساسية الكشف وفقًا لتفضيلاتك.",
+                        "captionOff": "تختلف الدقة بحسب حجم الجسم والوضعية ومدى تكرار الحركة. عندما يتم تعطيل هذه الميزة، تحتاج إلى ضبط شريط الحساسية يدويًا لضبط مسافة الكشف. إذا كنت تريد تعديل المسافة تلقائيًا، فقم بتشغيلها.",
                         "options": {
-                            "near": "Near",
-                            "medium": "Middle",
-                            "far": "Far"
+                            "near": "قريب",
+                            "medium": "متوسط",
+                            "far": "بعيد"
                         },
                         "readMore": {
-                            "line1": "• Near: 0.9 meter",
-                            "line2": "• Middle: 1.2 meter",
-                            "line3": "• Far: 1.5 meter"
+                            "line1": "• قريبة: 0.9 متر",
+                            "line2": "• متوسطة: 1.2 متر",
+                            "line3": "• بعيدة: 1.5 متر"
                         }
                     }
                 },
@@ -1926,17 +1940,38 @@
                         }
                     }
                 },
+                "distanceSensitivityAdjustingForIdea": {
+                    "title": "ضبط حساسية المسافة تلقائيًا",
+                    "captionOn": "قم بتمكين هذه الميزة لضبط مسافة الكشف عن الحركات تلقائيًا لتنبيه النظام. قم بإيقاف تشغيلها لضبط حساسية الكشف يدويًا بناءً على تفضيلاتك.",
+                    "captionOff": "عندما يتم تعطيل هذه الميزة، تحتاج إلى ضبط شريط الحساسية يدويًا لضبط مسافة الكشف. إذا كنت تريد تعديل المسافة تلقائيًا، فقم بتشغيلها.",
+                    "options": {
+                        "near": "قريب",
+                        "far": "بعيد",
+                        "medium": "متوسط"
+                    },
+                    "readMore": "تتوفر ثلاثة خيارات. في كل نطاق، عندما يتم الكشف عن الحركات البشرية، سيتم تنشيط شاشتك وفقًا لذلك.",
+                    "readMoreForSensor1": {
+                        "line1": "• قريبة: 0-0.4 متر",
+                        "line2": "• متوسطة: 0-0.6 متر",
+                        "line3": "• بعيدة: 0-1.2 متر"
+                    },
+                    "readMoreForSensor2": {
+                        "line1": "• قريبة: 0.2-0.55 متر",
+                        "line2": "• متوسطة: 0.2-1.0 متر",
+                        "line3": "• بعيدة: 0.2-1.5 متر"
+                    }
+                },
                 "note": {
                     "description1": "تعتمد هذه الميزة على Windows Hello. تأكد من تشغيل ميزة التعرف على الوجوه في إعدادات Windows.",
                     "description2": "تستخدم الميزة المستشعرات والكاميرا للكشف عن وجودك. ومع ذلك، فإن الميزة لا تجمع أي بيانات شخصية.",
-                    "description3": "1. إذا كان الكمبيوتر الخاص بك في وضع خيمة أو وضع جهاز لوحي أو وضع حامل، فقد لا تعمل هذه الميزات بشكل صحيح.",
-                    "description4": "2. إذا كان الكمبيوتر في وضع الإسبات أو متوقفًا عن التشغيل، فلن تعمل ميزة تسجيل الدخول من دون لمس‬.",
-                    "description6": "4. إذا تم تمكين وضع الطائرة على الكمبيوتر الخاص بك، فيتم تعطيل هذه الميزات.",
-                    "description7": "تختلف الدقة بحسب حجم الجسم والوضعية ومدى تكرار الحركة. إذا تم تأمين جهاز الكمبيوتر بشكل غير متوقع، فاضبط شريط الحساسية لتحسين الدقة.",
-                    "description5a1": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to ",
-                    "description5a2": "User Guide ",
-                    "description5a3": "that comes with it.",
-                    "description5b": "b. Your computer is in hibernation mode or has been turned off."
+                    "description3": "1. لاستخدام الوظائف المذكورة أعلاه، يُرجى ضبط الشاشة عند الزاوية المناسبة مما يسمح بالتعرف على وجهك.",
+                    "description4": "2. لا يتم دعم الوظائف المذكورة أعلاه في الحالات التالية:",
+                    "description5a1": "أ. جهاز الكمبيوتر الخاص بك في وضع الخيمة أو الكمبيوتر اللوحي أو وضع الحامل أو وضع الفصل. ولمعرفة الأوضاع المدعومة على جهاز الكمبيوتر، يرجى مراجعة ",
+                    "description5a2": "دليل المستخدم ",
+                    "description5a3": "المرفق معه.",
+                    "description5b": "ب. الكمبيوتر في وضع الإسبات أو تم إيقاف تشغيله.",
+                    "description6": "3. إذا تم تمكين وضع الطائرة على الكمبيوتر الخاص بك، فيتم تعطيل هذه الميزات.",
+                    "description7": "تختلف الدقة بحسب حجم الجسم والوضعية ومدى تكرار الحركة. إذا تم تأمين جهاز الكمبيوتر بشكل غير متوقع، فاضبط شريط الحساسية لتحسين الدقة."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "انتقال إلى إعدادات Windows Hello",
@@ -1945,40 +1980,6 @@
                 "resetToDefault": "إعادة تعيين",
                 "sensitivityAdjusting": {
                     "title": "ضبط الحساسية"
-                },
-                "image": {
-                    "title": "Intelligent security",
-                    "description": "Buckles up your PC with intelligent sensing technology, protects your privacy, and saves your battery power."
-                },
-                "advancedSettings": {
-                    "showAdvSettings": "ADVANCED SETTINGS",
-                    "hideAdvSettings": "HIDE ADVANCED SETTINGS"
-                },
-                "zeroTouchLoginForIdea": {
-                    "title": "Zero Touch Login",
-                    "caption": "This feature enables you to improve the work efficiency by automatically waking up or logging in your computer. To use the feature, you need to register your face in Windows Hello.",
-                    "tooltip": "When you are in front of your computer or approaching it (within 1.2 or 1.5 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer. <br>Depending on the sensor capability, the maximum detecting distance varies. Refer to the <i>User Guide</i> that comes with your computer for details."
-                },
-                "distanceSensitivityAdjustingForIdea": {
-                    "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                    "captionOn": "Enable this feature to automatically adjust the detecting distance of movements to wake up the system. Turn it off to manually adjust the detecting sensitivity based on your preference.",
-                    "captionOff": "When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
-                    "options": {
-                        "near": "Near",
-                        "medium": "Middle",
-                        "far": "Far"
-                    },
-                    "readMore": "There are three options. In each range, when human movements are detected, your screen will be waked up accordingly.",
-                    "readMoreForSensor1": {
-                        "line1": "• Near: 0-0.4 meter",
-                        "line2": "• Middle: 0-0.6 meter",
-                        "line3": "• Far: 0-1.2 meter"
-                    },
-                    "readMoreForSensor2": {
-                        "line1": "• Near: 0.2-0.55 meter",
-                        "line2": "• Middle: 0.2-1.0 meter",
-                        "line3": "• Far: 0.2-1.5 meter"
-                    }
                 }
             },
             "intelligentScreen": {
@@ -3084,15 +3085,15 @@
             "science": "العلم"
         },
         "gaming": {
-            "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
-            "gamingFeature1": "-Computer status monitor",
-            "gamingFeature2": "-Performance mode & overclocking",
-            "gamingFeature3": "-Lighting",
-            "gamingFeature4": "-Network Boost",
-            "gamingFeature5": "-Auto Close",
-            "gamingOnly": "Gaming",
-            "gamingAndWork": "Gaming & Work",
-            "nonGaming": "Non-Gaming"
+            "gamingDescription": "بإمكان إصدار الألعاب من Vantage أن يسهّل عليك تحسين تجربة الألعاب. إلى جانب الإعدادات العامة، تتضمن الميزات الرئيسية (متوفرة في أنظمة محددة):",
+            "gamingFeature1": "-مراقبة حالة الكمبيوتر",
+            "gamingFeature2": "-وضع الأداء وزيادة الأداء",
+            "gamingFeature3": "-الإضاءة",
+            "gamingFeature4": "-تعزيز الشبكة",
+            "gamingFeature5": "-الإغلاق التلقائي",
+            "gamingOnly": "الألعاب",
+            "gamingAndWork": "الألعاب والعمل",
+            "nonGaming": "غير الألعاب"
         }
     },
     "settings": {
@@ -4062,5 +4063,10 @@
     },
     "cpt": {
         "title": "Content Preview Tool"
+    },
+    "storeRating": {
+        "title": "أرسل لنا صوتك",
+        "likeUs": "‏‫سجل إعجابك بنا",
+        "feedback": "تقديم ملاحظات"
     }
 }

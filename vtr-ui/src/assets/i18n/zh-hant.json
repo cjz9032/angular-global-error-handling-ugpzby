@@ -78,7 +78,8 @@
                     "macroKey": "巨集鍵",
                     "hardwareScan": "硬體掃描",
                     "systemUpdate": "系統更新",
-                    "header": "系統工具"
+                    "header": "系統工具",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "lighting": {
                     "title": "自訂照明",
@@ -1852,6 +1853,14 @@
             "intelligentSecurity": {
                 "title": "智慧型安全",
                 "readMore": "較多內容",
+                "image": {
+                    "title": "智慧型安全",
+                    "description": "透過智慧型感應技術保障您電腦的安全，保護您的隱私，同時節省電池電力。"
+                },
+                "advancedSettings": {
+                    "showAdvSettings": "進階設定",
+                    "hideAdvSettings": "隱藏進階設定"
+                },
                 "HumanPresenceDetection": {
                     "title": "人員在場偵測",
                     "tooltip": "用滑鼠按一下此處，可重設人員在場偵測設定。"
@@ -1864,6 +1873,11 @@
                     "title": "紅外線攝影機自動登入",
                     "caption": "當您坐在電腦前面或接近電腦時，此功能會自動解除鎖定或喚醒電腦。",
                     "tooltip": "當您坐在電腦前面或接近電腦時（在 1.2 公尺的距離內），這項功能可讓您在辨識出您的臉部之後自動登入系統。如果您是在室外而非辦公室中，則需要更靠近電腦，以及更長的時間才能喚醒。"
+                },
+                "zeroTouchLoginForIdea": {
+                    "title": "紅外線攝影機自動登入",
+                    "caption": "這項功能可藉由自動喚醒或登入電腦，讓您提升工作效率。若要使用這項功能，您需要在 Windows Hello 中註冊臉部。",
+                    "tooltip": "當您坐在電腦前面或接近電腦時（在 1.2 或 1.5 公尺的距離內），這項功能可讓您在辨識出您的臉部之後自動登入系統。如果您是在室外而非辦公室中，則需要更靠近電腦，以及更長的時間才能喚醒。<br>最大偵測距離視感應器的能力而定。請參閱電腦隨附的<i>使用手冊</i>以取得詳細資料。"
                 },
                 "zeroTouchLock": {
                     "title": "自動鎖定螢幕",
@@ -1879,7 +1893,7 @@
                     },
                     "facialRecognition": {
                         "title": "臉部辨識",
-                        "caption": "您可以啟用臉部辨識功能並允許其存取您的攝影機。此工具會拍攝您的影像以便準確辨識您的在場狀態，或是偵測您的裝置是否因您離開而暫時無人看管。這份資料將由您的裝置本機進行處理，Lenovo 絕不會逕自存取或加以使用。",
+                        "caption": "這項功能有助於提高辨識效能並避免意外的螢幕鎖定，尤其是當您向後靠在椅子上時。這項功能將由您的裝置本機進行處理，Lenovo 絕不會逕自存取或加以使用。",
                         "checkBox": "開啟攝影機並啟用此功能",
                         "note": {
                             "permission": "Lenovo Vantage 沒有攝影機的存取權。勾選框的功能無法運作。",
@@ -1889,18 +1903,18 @@
                         }
                     },
                     "distanceSensitivityAdjusting": {
-                        "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                        "captionOn": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, you can maually adjust the dectecting sensitivity based on your preference.",
-                        "captionOff": "The accuracy varies by body size, posture, and frequency of movement. When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
+                        "title": "自動距離敏感度調整",
+                        "captionOn": "精確度會隨身體大小、姿勢和動作頻率有所變化。如果您的電腦遭到意外鎖定，您可以根據自己的偏好手動調整偵測敏感度。",
+                        "captionOff": "精確度會隨身體大小、姿勢和動作頻率有所變化。停用這項功能後，您需要手動調整敏感度拉桿以調整偵測距離。如果您希望距離能自動調整，請將它開啟。",
                         "options": {
-                            "near": "Near",
-                            "medium": "Middle",
-                            "far": "Far"
+                            "near": "近",
+                            "medium": "中",
+                            "far": "遠"
                         },
                         "readMore": {
-                            "line1": "• Near: 0.9 meter",
-                            "line2": "• Middle: 1.2 meter",
-                            "line3": "• Far: 1.5 meter"
+                            "line1": "• 近：0.9 公尺",
+                            "line2": "• 中：1.2 公尺",
+                            "line3": "• 遠：1.5 公尺"
                         }
                     }
                 },
@@ -1924,17 +1938,38 @@
                         }
                     }
                 },
+                "distanceSensitivityAdjustingForIdea": {
+                    "title": "自動距離敏感度調整",
+                    "captionOn": "啟用這項功能可自動調整移動的偵測距離以喚醒系統。將它關閉可根據您的偏好手動調整偵測敏感度。",
+                    "captionOff": "停用這項功能後，您需要手動調整敏感度拉桿以調整偵測距離。如果您希望距離能自動調整，請將它開啟。",
+                    "options": {
+                        "near": "近",
+                        "far": "遠",
+                        "medium": "中"
+                    },
+                    "readMore": "有三個選項。在每個範圍內，偵測到人體移動時，您的螢幕將隨之喚醒。",
+                    "readMoreForSensor1": {
+                        "line1": "• 近：0-0.4 公尺",
+                        "line2": "• 中：0-0.6 公尺",
+                        "line3": "• 遠：0-1.2 公尺"
+                    },
+                    "readMoreForSensor2": {
+                        "line1": "• 近：0.2-0.55 公尺",
+                        "line2": "• 中：0.2-1.0 公尺",
+                        "line3": "• 遠：0.2-1.5 公尺"
+                    }
+                },
                 "note": {
                     "description1": "此功能必須依賴 Windows Hello。確定 Windows 設定中已開啟臉部辨識。",
                     "description2": "該功能會使用感應器和攝影機來偵測您的存在。不過，這項功能不會收集任何個人資料。",
-                    "description3": "1. 如果您的電腦處於帳篷、平板或直立模式，這些功能可能無法正常運作。",
-                    "description4": "2. 如果您的電腦處於休眠模式或已關閉，零接觸登入將無法運作。",
-                    "description6": "4. 如果您的電腦上已啟用飛航模式，這些功能都會停用。",
-                    "description7": "精確度會隨身體大小、姿勢和動作頻率有所變化。如果您的電腦意外遭到鎖定，請調整敏感度拉桿以改善精準度。",
-                    "description5a1": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to ",
-                    "description5a2": "User Guide ",
-                    "description5a3": "that comes with it.",
-                    "description5b": "b. Your computer is in hibernation mode or has been turned off."
+                    "description3": "1.若要使用上述功能，請將螢幕調整至適當角度以便能夠辨識您的臉部。",
+                    "description4": "2.在以下情況中，不支援上述功能：",
+                    "description5a1": "a. 您的電腦處於帳篷、平板、直立或分離模式。如需電腦支援的模式相關資訊，請參閱隨附的",
+                    "description5a2": "使用手冊",
+                    "description5a3": "。",
+                    "description5b": "b. 您的電腦處於休眠模式或已關閉電源。",
+                    "description6": "3. 如果您的電腦上已啟用飛航模式，這些功能都會停用。",
+                    "description7": "精確度會隨身體大小、姿勢和動作頻率有所變化。如果您的電腦意外遭到鎖定，請調整敏感度拉桿以改善精準度。"
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "跳至 Windows Hello 設定",
@@ -1943,40 +1978,6 @@
                 "resetToDefault": "重設",
                 "sensitivityAdjusting": {
                     "title": "敏感度調整"
-                },
-                "image": {
-                    "title": "Intelligent security",
-                    "description": "Buckles up your PC with intelligent sensing technology, protects your privacy, and saves your battery power."
-                },
-                "advancedSettings": {
-                    "showAdvSettings": "ADVANCED SETTINGS",
-                    "hideAdvSettings": "HIDE ADVANCED SETTINGS"
-                },
-                "zeroTouchLoginForIdea": {
-                    "title": "Zero Touch Login",
-                    "caption": "This feature enables you to improve the work efficiency by automatically waking up or logging in your computer. To use the feature, you need to register your face in Windows Hello.",
-                    "tooltip": "When you are in front of your computer or approaching it (within 1.2 or 1.5 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer. <br>Depending on the sensor capability, the maximum detecting distance varies. Refer to the <i>User Guide</i> that comes with your computer for details."
-                },
-                "distanceSensitivityAdjustingForIdea": {
-                    "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                    "captionOn": "Enable this feature to automatically adjust the detecting distance of movements to wake up the system. Turn it off to manually adjust the detecting sensitivity based on your preference.",
-                    "captionOff": "When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
-                    "options": {
-                        "near": "Near",
-                        "medium": "Middle",
-                        "far": "Far"
-                    },
-                    "readMore": "There are three options. In each range, when human movements are detected, your screen will be waked up accordingly.",
-                    "readMoreForSensor1": {
-                        "line1": "• Near: 0-0.4 meter",
-                        "line2": "• Middle: 0-0.6 meter",
-                        "line3": "• Far: 0-1.2 meter"
-                    },
-                    "readMoreForSensor2": {
-                        "line1": "• Near: 0.2-0.55 meter",
-                        "line2": "• Middle: 0.2-1.0 meter",
-                        "line3": "• Far: 0.2-1.5 meter"
-                    }
                 }
             },
             "intelligentScreen": {
@@ -3082,15 +3083,15 @@
             "science": "科學"
         },
         "gaming": {
-            "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
-            "gamingFeature1": "-Computer status monitor",
-            "gamingFeature2": "-Performance mode & overclocking",
-            "gamingFeature3": "-Lighting",
-            "gamingFeature4": "-Network Boost",
-            "gamingFeature5": "-Auto Close",
-            "gamingOnly": "Gaming",
-            "gamingAndWork": "Gaming & Work",
-            "nonGaming": "Non-Gaming"
+            "gamingDescription": "有了遊戲版的 Vantage，您可以很輕鬆地改善遊戲體驗。除了常見的設定外，主要功能包括（適用於特定系統）：",
+			"gamingFeature1": "- 電腦狀態監視器",
+			"gamingFeature2": "- 效能模式和超頻",
+			"gamingFeature3": "- 燈光",
+			"gamingFeature4": "- 網路加速",
+			"gamingFeature5": "- 自動關閉",
+			"gamingOnly": "遊戲",
+			"gamingAndWork": "遊戲和工作",
+			"nonGaming": "非遊戲"
         }
     },
     "settings": {
@@ -4062,5 +4063,10 @@
     },
     "cpt": {
         "title": "Content Preview Tool"
+    },
+    "storeRating": {
+        "title": "讓我們聽到您的聲音",
+        "likeUs": "為我們按讚",
+        "feedback": "留下意見"
     }
 }

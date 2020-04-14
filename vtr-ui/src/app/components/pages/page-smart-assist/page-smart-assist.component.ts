@@ -167,7 +167,6 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			this.initDataFromCache();
 			this.initSmartAssist(true);
 			this.getHPDLeaveSensitivityVisibilityStatus();
-			this.startMonitorAntiTheftStatus();
 			this.startMonitorHsaIntelligentSecurityStatus();
 		}
 	}
@@ -547,9 +546,12 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 
 		this.smartAssist.setZeroTouchLoginAdjustStatus(this.intelligentSecurity.isZeroTouchLoginAdjustEnabled)
 			.then((isSuccess: boolean) => {
-				if (!event.switchValue) {
-					this.initZeroTouchLogin(); // refresh slider-bar when turn off the autoAdjust toggle
-				}
+				if (!event.switchValue) { // refresh slider-bar when turn off the autoAdjust toggle
+					this.smartAssist.getZeroTouchLoginDistance().then((response) => {
+						this.intelligentSecurity.zeroTouchLoginDistance = response;
+						this.smartAssistCache.intelligentSecurity.zeroTouchLoginDistance = this.intelligentSecurity.zeroTouchLoginDistance;
+					})
+				}			
 				this.logger.info(`onDistanceSensitivityAdjustToggle.setZeroTouchLoginAdjustStatus ${isSuccess}`, this.intelligentSecurity.isZeroTouchLoginAdjustEnabled);
 			});
 	}
@@ -833,7 +835,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	private getAntiTheftStatus() {
+	public getAntiTheftStatus() {
 		try {
 			if (this.smartAssist.isShellAvailable) {
 				this.logger.info(`getAntiTheftStatus API call`);
@@ -850,39 +852,6 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			}
 		} catch (error) {
 			this.logger.error('getAntiTheftStatus' + error.message);
-		}
-	}
-
-	public startMonitorAntiTheftStatus() {
-		try {
-			if (this.smartAssist.isShellAvailable) {
-				this.logger.info('startMonitorAntiTheftStatus API call');
-				this.smartAssist.startMonitorAntiTheftStatus(this.antiTheftStatusChange.bind(this))
-					.then((value) => {
-						this.logger.info('startMonitorAntiTheftStatus.then', value);
-					}).catch(error => {
-						this.logger.error('startMonitorAntiTheftStatus', error.message);
-					});
-			}
-		} catch (error) {
-			this.logger.error('startMonitorAntiTheftStatus', error.message);
-		}
-	}
-
-	public antiTheftStatusChange(data: any) {
-		try {
-			const obj = JSON.parse(data);
-			if (obj && obj.errorCode === 0) {
-				this.antiTheft.available = obj.available;
-				this.antiTheft.status = obj.enabled;
-				this.antiTheft.isSupportPhoto = obj.cameraAllowed;
-				this.antiTheft.photoAddress = obj.photoAddress;
-				this.antiTheft.alarmOften = obj.alarmDuration;
-				this.antiTheft.photoNumber = obj.photoNumber;
-			}
-			this.logger.info(`antiTheftStatusChange`, data);
-		} catch (error) {
-			this.logger.error('antiTheftStatusChange', error.message);
 		}
 	}
 

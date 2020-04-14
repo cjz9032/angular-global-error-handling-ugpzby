@@ -83,7 +83,8 @@
 					"macroKey": "Macro Key",
 					"hardwareScan": "Hardware Scan",
 					"systemUpdate": "System Update",
-					"header": "System Tools"
+					"header": "System Tools",
+					"legionAccessory": "Legion Accessory"
 				},
 				"systemStatus": {
 					"info": "INFO"
@@ -198,7 +199,10 @@
 				"warningPromptPopup": {
 					"title": "Warning!",
 					"description": "Improper settings of Overclocking  may lead to irreversible hardware damage.",
-					"proceed": "PROCEED"
+					"proceed": "PROCEED",
+					"legionAccessory": "Install Legion Accessory Central?",
+					"accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+					"install": "INSTALL"
 				}
 			}
 		},
@@ -681,15 +685,15 @@
 		},
 		"narrator": {
 			"networkBoost": {
-				"subPage": {
+				"subPage": { 
 					"addApps": "Add apps",
 					"remove": "Remove"
 				},
 				"turnOnModal": {
 					"confirmation": "Network boost turn on confirmation window opened",
 					"dontAskAgain": "Dont ask again",
-					"turnOnButton": "modal Turn networkBoost turn on",
-					"notOnButton": "modal Turn networkBoost not now"
+					"turnOnButton": "Turn on Network boost",
+					"notOnButton": "Not now"
 				},
 				"addApps": {
 					"addAppsTitle": "Networkboost add apps window opened",
@@ -1905,7 +1909,7 @@
 					},
 					"distanceSensitivityAdjusting": {
 						"title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-						"captionOn": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, you can maually adjust the dectecting sensitivity based on your preference.",
+						"captionOn": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, you can manually adjust the dectecting sensitivity based on your preference.",
 						"captionOff": "The accuracy varies by body size, posture, and frequency of movement. When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
 						"options": {
 							"near": "Near",
@@ -2074,7 +2078,7 @@
                     "option5":"Never stop"
                 },
                 "allowCamera": {
-                    "title":"TATING PHOTOS",
+                    "title":"TAKING PHOTOS",
                     "describe":"When enabling this feature, the camera takes photos automatically when detecting any movement if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
                     "checkBoxText":"Enable this feature"
                 },
@@ -2383,7 +2387,7 @@
 			"manageSubscription": "MANAGE SUBSCRIPTION"
 		},
 		"scanSettings": {
-			"title": "Scan settings",
+			"title": "Schedule scan settings",
 			"description": "Enable or disable the scan and set the scan schedule",
 			"enableScan": "Enable Scan",
 			"changeScanTitle": "Change scan schedule",
@@ -4062,5 +4066,10 @@
 	},
 	"cpt": {
 		"title": "Content Preview Tool"
+	},
+	"storeRating":{
+		"title": "Send us your voice",
+		"likeUs": "Like us",
+		"feedback": "Leave feedback"
 	}
 }

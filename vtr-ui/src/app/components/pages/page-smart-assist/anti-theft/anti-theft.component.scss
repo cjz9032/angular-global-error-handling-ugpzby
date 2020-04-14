@@ -15,11 +15,13 @@ vtr-ui-row-switch {
   margin-left: 4.5rem !important;
   p {
     font-size: $fontsize_xs;
+    outline: 0;
   }
   label {
     font-size: $fontsize_xs;
     color: #667481;
     font-weight: 300;
+    outline: 0;
   }
   .subTitle {
     font-weight: $weight_bold;

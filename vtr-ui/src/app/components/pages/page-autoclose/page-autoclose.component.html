@@ -23,7 +23,7 @@
 										<vtr-ui-toggle *ngIf='toggleStatus !== undefined' [toggleId]="'Auto close'" [onOffSwitchId]="'autocloseSwitch'"
 											(toggle)="toggleAutoClose($event)" [value]="toggleStatus" [parentId]="'Gaming.AutoClose'">
 										</vtr-ui-toggle>
-										<p class="intro-text">
+										<p class="intro-text" id="gaming_autoclose_description" role="text">
 											{{'gaming.autoClose.introLine' | translate}}</p>
 										<vtr-widget-autoclose [appListData]="autoCloseAppList"
 											(actionModal)="openTargetModal()"
@@ -53,7 +53,8 @@
 						vtrMetrics
 						metricsEvent="ArticleClick"
 						metricsItem="gaming_autoclose_containerCard_positionC"
-						ItemCategory="corner-article">
+						ItemCategory="corner-article"
+						containerCardId="gaming_autoclose_containerCard_positionC">
 					</vtr-container-card>
 					</div>
 
@@ -67,7 +68,8 @@
 							vtrMetrics
 							metricsEvent="ArticleClick"
 							metricsItem="gaming_autoclose_containerCard_positionF"
-							ItemCategory="corner-article">
+							ItemCategory="corner-article"
+							containerCardId="gaming_autoclose_containerCard_positionF">
 						</vtr-container-card>
 				</div>
 			</div>

@@ -26,7 +26,7 @@
 			class="navbar-brand pt-0 logo-y">
 
 			<div *ngIf="isGamingHome">
-				<img [src]="headerLogo | sanitize : 'resourceUrl'"
+				<img tabindex="0" [src]="headerLogo | sanitize : 'resourceUrl'"
 					alt="L" />
 			</div>
 			<a id="menu-main-lnk-gaming-logo"
@@ -95,7 +95,6 @@
 							tabindex="1"
 							id="menu-main-nav-lnk-{{item.id}}"
 							attr.new-tip-id="new-tip-{{item.id}}"
-							[attr.aria-label]="item.id"
 							[metricsEvent]="item.metricsEvent"
 							[metricsParent]="item.metricsParent"
 							[metricsItem]="item.metricsItem"
@@ -289,6 +288,8 @@
 							id="navbarDropdownMenu"
 							aria-labelledby="navbarDropdown">
 							<div class="dropdown-item"
+								role="text"
+								id="menu-main-text-hello-user"
 								*ngIf="!deviceService.isArm && commonService.isOnline && userService.isLenovoIdSupported()">
 								{{'lenovoId.helloUser' | translate:{firstName:userService.firstName} }}
 							</div>

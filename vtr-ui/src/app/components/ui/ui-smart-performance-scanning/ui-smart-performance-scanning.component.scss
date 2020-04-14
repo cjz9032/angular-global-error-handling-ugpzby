@@ -95,6 +95,10 @@
 
 
     .pc-info-card{
+		@media #{$breakpoint_xl}{
+			margin-top: 1.2rem !important;
+			margin-bottom: 1.2rem !important;
+		}
 		@media #{$breakpoint_md}{
 			margin-top: 1.2rem !important;
 			margin-bottom: 1.2rem !important;
@@ -112,6 +116,9 @@
                     //padding: 1rem;
                     margin: 1.5rem auto;
 					width: 85%;
+					@media #{$breakpoint_xl}{
+						width: calc(100% - 0.9rem);
+					}
 					@media #{$breakpoint_md}{
 						width: calc(100% - 0.9rem);
 					}
@@ -172,6 +179,9 @@
 							position: absolute;
 							right: -64%;
 							top: 2.2rem;
+							@media #{$breakpoint_xl}{
+								right: -80%;
+							}
 							@media #{$breakpoint_md}{
 								right: -72%;
 							}
@@ -288,6 +298,12 @@
             margin-top: 0.6rem;
             line-height: 1.6rem;
 			color: $main_shade;
+			@media #{$breakpoint_xl}{
+				font-size: 1.1rem;
+				line-height: 1.2rem;
+				margin-bottom: 0;
+				max-width: 6.5rem;
+			}
 			@media #{$breakpoint_md}{
 				font-size: 1.1rem;
 				line-height: 1.2rem;
@@ -321,10 +337,11 @@
 		}
 	}
 	.link-text {
-		font-size: 1.6rem;
-		text-decoration: underline;
+		font-size: 1.4rem;
+		padding-bottom: 0.3rem;
+		border-bottom: 0.2rem solid $menu_hover;
 		letter-spacing: 0.05rem;
-		color: #4a81fd;
+		color: $menu_hover;
 		cursor: pointer;
 		font-weight: 600;
 		@media #{$breakpoint_sm}{
@@ -349,7 +366,15 @@
 			font-size: 1.2rem;
 		}
 		.status {
-			font-size: 1.2rem;
+			font-size: 1.4rem;
+			min-width: 8rem;
+            text-align: center;
+			.badge{
+				height: 1.8rem;
+				font-size: 1.2rem;
+				padding-left: 1.8rem;
+				padding-right: 1.8rem;
+			}
 		}
 	}
 	.chevron-list {
@@ -358,7 +383,7 @@
 		background: $shade_extralight;
 		border: 0.1rem solid $shade_lighter;
 		li {
-			padding: 1.2rem;
+			padding: 1.2rem 1.6rem;
 			border-bottom: 0.1rem solid $screen_dark_05;
 			line-height: 3rem;
 			font-size: 1.4rem;

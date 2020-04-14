@@ -14,6 +14,7 @@ import { MetricService } from 'src/app/services/metric/metric.service';
 	styleUrls: ['./anti-theft.component.scss']
 })
 export class AntiTheftComponent implements OnInit {
+	@Input() antiTheftAvailable = true;
 	@Input() isChecked = false;
 	@Input() isLoading = true;
 	@Input() checkboxDisabled = false;
@@ -54,6 +55,7 @@ export class AntiTheftComponent implements OnInit {
 		this.populatePhotoNumberList();
 		this.startMonitorCameraAuthorized(this.cameraAuthorizedChange.bind(this));
 		this.startMonitorForCameraPrivacy();
+		this.startMonitorAntiTheftStatus();
 	}
 
 	ngOnDestroy() {
@@ -162,7 +164,7 @@ export class AntiTheftComponent implements OnInit {
 	}
 
 	public setAntiTheftStatus(event: any) {
-		this.antiTheftToggle.emit(event.value);
+		this.isChecked = event.switchValue;
 		const metricsData = {
 			itemParent: 'Device.SmartAssist',
 			itemName: 'Smart-motion-alarm.toggle-button',
@@ -339,7 +341,7 @@ export class AntiTheftComponent implements OnInit {
 			if (this.displayService.isShellAvailable) {
 				this.displayService.startCameraPrivacyMonitor(this.cameraPrivacyChange.bind(this))
 					.then((value) => {
-						this.logger.error('startMonitorForCameraPrivacy.then', value);
+						this.logger.info('startMonitorForCameraPrivacy.then', value);
 					}).catch(error => {
 						this.logger.error('startMonitorForCameraPrivacy', error.message);
 					});
@@ -360,13 +362,45 @@ export class AntiTheftComponent implements OnInit {
 			if (this.displayService.isShellAvailable) {
 				this.displayService.stopCameraPrivacyMonitor()
 					.then((value: any) => {
-						this.logger.error('stopMonitorForCameraPrivacy.then', value);
+						this.logger.info('stopMonitorForCameraPrivacy.then', value);
 					}).catch(error => {
 						this.logger.error('stopMonitorForCameraPrivacy', error.message);
 					});
 			}
 		} catch (error) {
 			this.logger.error('stopMonitorForCameraPrivacy', error.message);
+		}
+	}
+
+	public startMonitorAntiTheftStatus() {
+		try {
+			if (this.smartAssist.isShellAvailable) {
+				this.smartAssist.startMonitorAntiTheftStatus(this.antiTheftStatusChange.bind(this))
+					.then((value) => {
+						this.logger.info('startMonitorAntiTheftStatus.then', value);
+					}).catch(error => {
+						this.logger.error('startMonitorAntiTheftStatus', error.message);
+					});
+			}
+		} catch (error) {
+			this.logger.error('startMonitorAntiTheftStatus', error.message);
+		}
+	}
+
+	public antiTheftStatusChange(data: any) {
+		try {
+			const obj = JSON.parse(data);
+			if (obj && obj.errorCode === 0) {
+				this.antiTheftAvailable = obj.available;
+				this.isChecked = obj.enabled;
+				this.isSupportPhoto = obj.cameraAllowed;
+				this.photoAddress = obj.photoAddress;
+				this.alarmOften = obj.alarmDuration;
+				this.photoNumber = obj.photoNumber;
+			}
+			this.logger.info(`antiTheftStatusChange return data:`, data);
+		} catch (error) {
+			this.logger.error('antiTheftStatusChange', error.message);
 		}
 	}
 }

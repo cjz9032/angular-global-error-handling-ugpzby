@@ -78,7 +78,8 @@
                     "macroKey": "Πλήκτρο μακροεντολής",
                     "hardwareScan": "Σάρωση υλικού",
                     "systemUpdate": "Ενημ. συστήματος",
-                    "header": "Εργαλεία συστημ"
+                    "header": "Εργαλεία συστημ",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "lighting": {
                     "title": "Προσαρμογή φωτισμού",
@@ -1852,6 +1853,14 @@
             "intelligentSecurity": {
                 "title": "Έξυπνη ασφάλεια",
                 "readMore": "Διαβάστε περισσότερα",
+                "image": {
+                    "title": "Έξυπνη ασφάλεια",
+                    "description": "Αγκαλιάζει τον υπολογιστή σας με έξυπνη τεχνολογία ανίχνευσης, προστατεύει το απόρρητό σας και εξοικονομεί ενέργεια μπαταρίας."
+                },
+                "advancedSettings": {
+                    "showAdvSettings": "ΡΥΘΜΙΣΕΙΣ ΓΙΑ ΠΡΟΧΩΡΗΜΕΝΟΥΣ",
+                    "hideAdvSettings": "ΑΠΟΚΡΥΨΗ ΡΥΘΜΙΣΕΩΝ ΓΙΑ ΠΡΟΧΩΡΗΜΕΝΟΥΣ"
+                },
                 "HumanPresenceDetection": {
                     "title": "Ανίχνευση ανθρώπινης παρουσίας",
                     "tooltip": "Κάντε κλικ εδώ για να επαναφέρετε τις ρυθμίσεις ανίχνευσης ανθρώπινης παρουσίας."
@@ -1864,6 +1873,11 @@
                     "title": "Είσοδος χωρίς αφή",
                     "caption": "Η δυνατότητα αυτή ξεκλειδώνει τον υπολογιστή ή τον επαναφέρει σε λειτουργία αυτόματα, όταν καθίσετε μπροστά του ή πλησιάσετε σε αυτόν.",
                     "tooltip": "Όταν βρίσκεστε μπροστά στον υπολογιστή σας ή τον πλησιάζετε (σε απόσταση 1,2 μέτρων), αυτή η λειτουργία σάς επιτρέπει να συνδεθείτε αυτόματα στο σύστημα μετά από την αναγνώριση του προσώπου σας. Εάν βρίσκεστε σε εξωτερικό χώρο και όχι στο γραφείο, πρέπει να είστε πιο κοντά στον υπολογιστή και η επαναφορά θα απαιτήσει περισσότερο χρόνο."
+                },
+                "zeroTouchLoginForIdea": {
+                    "title": "Είσοδος χωρίς αφή",
+                    "caption": "Αυτή η λειτουργία σάς δίνει τη δυνατότητα να βελτιώσετε την αποδοτικότητα της εργασίας με την αυτόματη αφύπνιση ή σύνδεση στον υπολογιστή σας. Για να χρησιμοποιήσετε τη λειτουργία, θα πρέπει να καταχωρήσετε το πρόσωπό σας στο Windows Hello.",
+                    "tooltip": "Όταν είστε μπροστά στον υπολογιστή σας ή τον πλησιάζετε (σε απόσταση έως 1,2 ή 1,5 μέτρα), αυτή η δυνατότητα σάς επιτρέπει να συνδεθείτε αυτόματα στο σύστημα μετά την αναγνώριση του προσώπου σας. Εάν βρίσκεστε σε εξωτερικό χώρο και όχι στο γραφείο, πρέπει να είστε πιο κοντά στον υπολογιστή και η επαναφορά θα απαιτήσει περισσότερο χρόνο. <br>Ανάλογα με την ικανότητα του αισθητήρα, η μέγιστη απόσταση ανίχνευσης διαφέρει. Για λεπτομέρειες, ανατρέξτε στον <i>Οδηγό χρήσης</i> που συνοδεύει τον υπολογιστή σας."
                 },
                 "zeroTouchLock": {
                     "title": "Κλείδωμα χωρίς αφή",
@@ -1879,7 +1893,7 @@
                     },
                     "facialRecognition": {
                         "title": "ΑΝΑΓΝΩΡΙΣΗ ΠΡΟΣΩΠΟΥ",
-                        "caption": "Μπορείτε να ενεργοποιήσετε τη λειτουργία αναγνώρισης προσώπου και να της επιτρέψετε να έχει πρόσβαση στην κάμερά σας. Αυτό το εργαλείο καταγράφει την εικόνα σας για να αναγνωρίζει με ακρίβεια την παρουσία σας ή να εντοπίζει πότε έχετε αφήσει τη συσκευή σας χωρίς επιτήρηση. Αυτά τα δεδομένα υπόκεινται σε τοπική επεξεργασία στη συσκευή σας. Η Lenovo ούτε έχει πρόσβαση ούτε τα χρησιμοποιεί.",
+                        "caption": "Αυτή η δυνατότητα συμβάλλει στη βελτίωση της απόδοσης αναγνώρισης και στην αποφυγή κλειδώματος της οθόνης απροειδοποίητα, ιδιαίτερα όταν ξαπλώνετε στην καρέκλα σας. Αυτή η δυνατότητα υπόκειται σε τοπική επεξεργασία στη συσκευή σας. Η Lenovo ούτε έχει πρόσβαση ούτε τα χρησιμοποιεί.",
                         "checkBox": "Ενεργοποιήστε την κάμερα και ενεργοποιήστε αυτήν τη λειτουργία",
                         "note": {
                             "permission": "Το Lenovo Vantage δεν έχει πρόσβαση στην κάμερα. Η λειτουργία του πλαισίου ελέγχου δεν θα λειτουργήσει.",
@@ -1889,18 +1903,18 @@
                         }
                     },
                     "distanceSensitivityAdjusting": {
-                        "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                        "captionOn": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, you can maually adjust the dectecting sensitivity based on your preference.",
-                        "captionOff": "The accuracy varies by body size, posture, and frequency of movement. When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
+                        "title": "ΑΥΤΟΜΑΤΗ ΡΥΘΜΙΣΗ ΕΥΑΙΣΘΗΣΙΑΣ ΑΠΟΣΤΑΣΗΣ",
+                        "captionOn": "Η ακρίβεια ποικίλλει ανάλογα με το μέγεθος και τη στάση του σώματος και τη συχνότητα της κίνησης. Εάν ο υπολογιστής σας κλειδωθεί απροειδοποίητα, μπορείτε να ρυθμίσετε χειροκίνητα την ευαισθησία ανίχνευσης ανάλογα με τις προτιμήσεις σας.",
+                        "captionOff": "Η ακρίβεια ποικίλλει ανάλογα με το μέγεθος και τη στάση του σώματος και τη συχνότητα της κίνησης. Όταν η δυνατότητα αυτή είναι απενεργοποιημένη, θα πρέπει να ρυθμίσετε χειροκίνητα τη γραμμή ευαισθησίας για να ρυθμίσετε την απόσταση ανίχνευσης. Εάν θέλετε να ρυθμίζεται αυτόματα η απόσταση, ενεργοποιήστε την.",
                         "options": {
-                            "near": "Near",
-                            "medium": "Middle",
-                            "far": "Far"
+                            "near": "Κοντά",
+                            "medium": "Μεσαία",
+                            "far": "Μακριά"
                         },
                         "readMore": {
-                            "line1": "• Near: 0.9 meter",
-                            "line2": "• Middle: 1.2 meter",
-                            "line3": "• Far: 1.5 meter"
+                            "line1": "• Κοντά: 0,9 μέτρα",
+                            "line2": "• Μέση: 1,2 μέτρα",
+                            "line3": "• Μακριά: 1,5 μέτρα"
                         }
                     }
                 },
@@ -1924,17 +1938,38 @@
                         }
                     }
                 },
+                "distanceSensitivityAdjustingForIdea": {
+                    "title": "ΑΥΤΟΜΑΤΗ ΡΥΘΜΙΣΗ ΕΥΑΙΣΘΗΣΙΑΣ ΑΠΟΣΤΑΣΗΣ",
+                    "captionOn": "Ενεργοποιήστε αυτή τη δυνατότητα για να ρυθμίσετε αυτόματα την απόσταση ανίχνευσης κινήσεων για αφύπνιση του συστήματος. Απενεργοποιήστε την για να ρυθμίσετε χειροκίνητα την ευαισθησία ανίχνευσης ανάλογα με τις προτιμήσεις σας.",
+                    "captionOff": "Όταν η δυνατότητα αυτή είναι απενεργοποιημένη, θα πρέπει να ρυθμίσετε χειροκίνητα τη γραμμή ευαισθησίας για να ρυθμίσετε την απόσταση ανίχνευσης. Εάν θέλετε να ρυθμίζεται αυτόματα η απόσταση, ενεργοποιήστε την.",
+                    "options": {
+                        "near": "Κοντά",
+                        "far": "Μακριά",
+                        "medium": "Μεσαία"
+                    },
+                    "readMore": "Υπάρχουν τρεις επιλογές. Σε κάθε περιοχή, όταν ανιχνεύονται κινήσεις ανθρώπων, η οθόνη σας θα αφυπνιστεί ανάλογα.",
+                    "readMoreForSensor1": {
+                        "line1": "• Κοντά: 0-0,4 μέτρα",
+                        "line2": "• Μέση: 0-0,6 μέτρα",
+                        "line3": "• Μακριά: 0-1,2 μέτρα"
+                    },
+                    "readMoreForSensor2": {
+                        "line1": "• Κοντά: 0,2-0,55 μέτρα",
+                        "line2": "• Μέση: 0,2-1,0 μέτρα",
+                        "line3": "• Μακριά: 0,2-1,5 μέτρα"
+                    }
+                },
                 "note": {
                     "description1": "Αυτή η δυνατότητα βασίζεται στο Windows Hello. Βεβαιωθείτε ότι η αναγνώριση προσώπου είναι ενεργοποιημένη στις ρυθμίσεις των Windows.",
                     "description2": "Η δυνατότητα χρησιμοποιεί αισθητήρες και κάμερα για να ανιχνεύει την παρουσία σας. Ωστόσο, ΔΕΝ συλλέγει, αποθηκεύει ή διαρρέει προσωπικά δεδομένα ή εικόνες.",
-                    "description3": "1. Εάν ο υπολογιστής σας είναι σε λειτουργία σκηνής, tablet ή ανάκλισης, οι δυνατότητες αυτές ενδέχεται να μη λειτουργούν σωστά.",
-                    "description4": "2. Εάν ο υπολογιστής σας είναι σε κατάσταση αδρανοποίησης ή έχει απενεργοποιηθεί, η σύνδεση χωρίς αφή δεν θα λειτουργεί.",
-                    "description6": "4. Αν η Λειτουργία πτήσης είναι ενεργοποιημένη στον υπολογιστή σας, αυτές οι δυνατότητες είναι απενεργοποιημένες.",
-                    "description7": "Η ακρίβεια ποικίλλει ανάλογα με το μέγεθος και τη στάση του σώματος και τη συχνότητα της κίνησης. Αν ο υπολογιστής σας κλειδώνει απρόσμενα, ρυθμίστε τη γραμμή ευαισθησίας για να βελτιώσετε την ακρίβεια.",
-                    "description5a1": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to ",
-                    "description5a2": "User Guide ",
-                    "description5a3": "that comes with it.",
-                    "description5b": "b. Your computer is in hibernation mode or has been turned off."
+                    "description3": "1. Για να χρησιμοποιήσετε τις παραπάνω λειτουργίες, ρυθμίστε την οθόνη σε κατάλληλη γωνία ώστε να είναι δυνατή η αναγνώριση του προσώπου σας.",
+                    "description4": "2. Οι παραπάνω λειτουργίες δεν υποστηρίζονται όταν:",
+                    "description5a1": "α. Ο υπολογιστής σας είναι σε κάποια από τις καταστάσεις Σκηνή, Tablet, Stand ή Ανεξάρτητη. Για τις καταστάσεις που υποστηρίζονται στον υπολογιστή σας, ανατρέξτε στον ",
+                    "description5a2": "Οδηγό χρήσης ",
+                    "description5a3": "που τον συνοδεύει.",
+                    "description5b": "β. Ο υπολογιστής σας είναι σε κατάσταση αδρανοποίησης ή έχει απενεργοποιηθεί.",
+                    "description6": "3. Αν η Λειτουργία πτήσης είναι ενεργοποιημένη στον υπολογιστή σας, αυτές οι δυνατότητες είναι απενεργοποιημένες.",
+                    "description7": "Η ακρίβεια ποικίλλει ανάλογα με το μέγεθος και τη στάση του σώματος και τη συχνότητα της κίνησης. Αν ο υπολογιστής σας κλειδώνει απρόσμενα, ρυθμίστε τη γραμμή ευαισθησίας για να βελτιώσετε την ακρίβεια."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Μετάβαση στις Ρυθμίσεις του Windows Hello",
@@ -1943,40 +1978,6 @@
                 "resetToDefault": "Επαναφορά",
                 "sensitivityAdjusting": {
                     "title": "ΠΡΟΣΑΡΜΟΓΗ ΤΗΣ ΕΥΑΙΣΘΗΣΙΑΣ"
-                },
-                "image": {
-                    "title": "Intelligent security",
-                    "description": "Buckles up your PC with intelligent sensing technology, protects your privacy, and saves your battery power."
-                },
-                "advancedSettings": {
-                    "showAdvSettings": "ADVANCED SETTINGS",
-                    "hideAdvSettings": "HIDE ADVANCED SETTINGS"
-                },
-                "zeroTouchLoginForIdea": {
-                    "title": "Zero Touch Login",
-                    "caption": "This feature enables you to improve the work efficiency by automatically waking up or logging in your computer. To use the feature, you need to register your face in Windows Hello.",
-                    "tooltip": "When you are in front of your computer or approaching it (within 1.2 or 1.5 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer. <br>Depending on the sensor capability, the maximum detecting distance varies. Refer to the <i>User Guide</i> that comes with your computer for details."
-                },
-                "distanceSensitivityAdjustingForIdea": {
-                    "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                    "captionOn": "Enable this feature to automatically adjust the detecting distance of movements to wake up the system. Turn it off to manually adjust the detecting sensitivity based on your preference.",
-                    "captionOff": "When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
-                    "options": {
-                        "near": "Near",
-                        "medium": "Middle",
-                        "far": "Far"
-                    },
-                    "readMore": "There are three options. In each range, when human movements are detected, your screen will be waked up accordingly.",
-                    "readMoreForSensor1": {
-                        "line1": "• Near: 0-0.4 meter",
-                        "line2": "• Middle: 0-0.6 meter",
-                        "line3": "• Far: 0-1.2 meter"
-                    },
-                    "readMoreForSensor2": {
-                        "line1": "• Near: 0.2-0.55 meter",
-                        "line2": "• Middle: 0.2-1.0 meter",
-                        "line3": "• Far: 0.2-1.5 meter"
-                    }
                 }
             },
             "intelligentScreen": {
@@ -3082,15 +3083,15 @@
             "science": "Επιστήμη"
         },
         "gaming": {
-            "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
-            "gamingFeature1": "-Computer status monitor",
-            "gamingFeature2": "-Performance mode & overclocking",
-            "gamingFeature3": "-Lighting",
-            "gamingFeature4": "-Network Boost",
-            "gamingFeature5": "-Auto Close",
-            "gamingOnly": "Gaming",
-            "gamingAndWork": "Gaming & Work",
-            "nonGaming": "Non-Gaming"
+            "gamingDescription": "Η έκδοση για παιχνίδια του Vantage σάς βοηθά να βελτιώσετε την εμπειρία του παιχνιδιού. Μαζί με τις κοινές ρυθμίσεις, στις κύριες δυνατότητες περιλαμβάνονται τα εξής (διατίθενται σε επιλεγμένα συστήματα):",
+            "gamingFeature1": "- Οθόνη κατάστασης υπολογιστή",
+            "gamingFeature2": "- Λειτουργία απόδοσης και υπερχρονισμός",
+            "gamingFeature3": "- Φωτισμός",
+            "gamingFeature4": "- Ενίσχυση δικτύου",
+            "gamingFeature5": "- Αυτόματο κλείσιμο",
+            "gamingOnly": "Βιντεοπαιχνίδια",
+            "gamingAndWork": "Παιχνίδια και Εργασία",
+            "nonGaming": "Όχι για παιχνίδια"
         }
     },
     "settings": {
@@ -4062,5 +4063,10 @@
     },
     "cpt": {
         "title": "Content Preview Tool"
+    },
+    "storeRating": {
+        "title": "Στείλτε μας τη φωνή σας",
+        "likeUs": "Βάλτε \"Μου αρέσει\"",
+        "feedback": "Αφήστε σχόλια"
     }
 }

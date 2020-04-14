@@ -78,7 +78,8 @@
                     "macroKey": "Taster makroa",
                     "hardwareScan": "Skeniranje hardvera",
                     "systemUpdate": "Ažuriranje sistema",
-                    "header": "Sistemske alatke"
+                    "header": "Sistemske alatke",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "systemStatus": {
                     "info": "INFORMACIJE"
@@ -1852,6 +1853,14 @@
             "intelligentSecurity": {
                 "title": "Inteligentna bezbednost",
                 "readMore": "Pročitajte više",
+                "image": {
+                    "title": "Inteligentna bezbednost",
+                    "description": "Rasterećuje računar pomoću tehnologije inteligentnog raspoznavanja, štiti vašu privatnost i štedi energiju baterije."
+                },
+                "advancedSettings": {
+                    "showAdvSettings": "NAPREDNE POSTAVKE",
+                    "hideAdvSettings": "SAKRI NAPREDNE POSTAVKE"
+                },
                 "HumanPresenceDetection": {
                     "title": "Detekcija ljudskog prisustva",
                     "tooltip": "Kliknite ovde da biste uspostavili početne vrednosti postavki za otkrivanje ljudskog prisustva."
@@ -1864,6 +1873,11 @@
                     "title": "Bezdodirno prijavljivanje",
                     "caption": "Ova funkcija automatski otključava ili budi računar kada ste ispred njega ili mu prilazite.",
                     "tooltip": "Kada se nalazite ispred računara ili mu se približavate (unutar razdaljine od 1,2 metara), ova funkcija vam omogućava da se automatski prijavite u sistem nakon prepoznavanja lica. Ako ste na otvorenom, a ne u kancelariji, morate da budete bliži računaru i buđenje će trajati duže."
+                },
+                "zeroTouchLoginForIdea": {
+                    "title": "Bezdodirno prijavljivanje",
+                    "caption": "Ova funkcija vam omogućava da poboljšate efikasnost rada tako što se automatski budi ili prijavljuje na računar. Da biste koristili ovu funkciju, morate da registrujete lice u programu Windows Hello.",
+                    "tooltip": "Kada se nalazite ispred računara ili mu se približavate (unutar razdaljine od 1,2 ili 1,5 metara), ova funkcija vam omogućava da se automatski prijavite u sistem nakon prepoznavanja lica. Ako ste na otvorenom, a ne u kancelariji, morate da budete bliži računaru i buđenje će trajati duže. <br>U zavisnosti od mogućnosti senzora, maksimalna udaljenost se razlikuje. Detalje potražite u <i>Uputstvu za korisnike</i> koju ste dobili uz računar."
                 },
                 "zeroTouchLock": {
                     "title": "Zero Touch zaključavanje",
@@ -1879,7 +1893,7 @@
                     },
                     "facialRecognition": {
                         "title": "PREPOZNAVANJE LICA",
-                        "caption": "Možete da omogućite funkciju prepoznavanja lica i da joj dozvolite pristup kameri. Ova alatka snima vašu sliku kako bi tačno prepoznala vaše prisustvo ili otkrila kada ste uređaj ostavili bez nadzora. Ovi podaci se obrađuju lokalno na vašem uređaju. Lenovo im ne pristupa niti ih koristi.",
+                        "caption": "Ova funkcija pomaže u poboljšanju performansi prepoznavanja i izbegavanju neočekivanog zaključavanja ekrana, posebno kada se zavalite na stolicu. Ova funkcija se obrađuju lokalno na vašem uređaju. Lenovo im ne pristupa niti ih koristi.",
                         "checkBox": "Uključite kameru i omogućite ovu funkciju",
                         "note": {
                             "permission": "Lenovo Vantage nema pristup kameri. Funkcija polja za potvrdu ne radi.",
@@ -1889,18 +1903,18 @@
                         }
                     },
                     "distanceSensitivityAdjusting": {
-                        "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                        "captionOn": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, you can maually adjust the dectecting sensitivity based on your preference.",
-                        "captionOff": "The accuracy varies by body size, posture, and frequency of movement. When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
+                        "title": "AUTOMATSKO PODEŠAVANJE OSETLJIVOSTI NA RAZDALJINU",
+                        "captionOn": "Preciznost zavisi od veličine tela, držanja tela i učestalosti kretanja. Ako se računar neočekivano zaključa, možete ručno da prilagodite senzibilitet detekcije na osnovu vaših željenih opcija.",
+                        "captionOff": "Preciznost zavisi od veličine tela, držanja tela i učestalosti kretanja. Kada je ova funkcija onemogućena, morate ručno da podesite traku osetljivosti da biste prilagodili rastojanje za detekciju. Ako želite da se rastojanje automatski podešava, uključite je.",
                         "options": {
-                            "near": "Near",
-                            "medium": "Middle",
-                            "far": "Far"
+                            "near": "Blizu",
+                            "medium": "Srednje",
+                            "far": "Daleko"
                         },
                         "readMore": {
-                            "line1": "• Near: 0.9 meter",
-                            "line2": "• Middle: 1.2 meter",
-                            "line3": "• Far: 1.5 meter"
+                            "line1": "• Blizu: 0,9 metara",
+                            "line2": "• Srednje: 1,2 metara",
+                            "line3": "• Daleko: 1,5 metara"
                         }
                     }
                 },
@@ -1924,17 +1938,38 @@
                         }
                     }
                 },
+                "distanceSensitivityAdjustingForIdea": {
+                    "title": "AUTOMATSKO PODEŠAVANJE OSETLJIVOSTI NA RAZDALJINU",
+                    "captionOn": "Omogućite ovu funkciju da biste automatski prilagodili rastojanje kretanja kako bi se sistem probudio. Isključite ga da biste ručno prilagodili osetljivost na osnovu vaših željenih postavki.",
+                    "captionOff": "Kada je ova funkcija onemogućena, morate ručno da podesite traku osetljivosti da biste prilagodili rastojanje za detekciju. Ako želite da se rastojanje automatski podešava, uključite je.",
+                    "options": {
+                        "near": "Blizu",
+                        "far": "Daleko",
+                        "medium": "Srednje"
+                    },
+                    "readMore": "Postoje tri opcije. U svakom opsegu, kada se detektuju ljudski pokreti, ekran će istog trenutka probuditi.",
+                    "readMoreForSensor1": {
+                        "line1": "• Blizu: 0–0,4 metara",
+                        "line2": "• Srednje: 0–0,6 metara",
+                        "line3": "• Daleko: 0–1,2 metara"
+                    },
+                    "readMoreForSensor2": {
+                        "line1": "• Blizu: 0,2–0,55 metara",
+                        "line2": "• Srednje: 0,2–1,0 metara",
+                        "line3": "• Daleko: 0,2–1,5 metara"
+                    }
+                },
                 "note": {
                     "description1": "Ova funkcija se oslanja na sistem Windows Hello. Uverite se da je prepoznavanje lica uključeno u postavkama operativnog sistema Windows.",
                     "description2": "Funkcija koristi senzore i kameru da bi otkrila vaše prisustvo. Međutim, funkcija NE prikuplja, nikakve lične podatke.",
-                    "description3": "1. Ako je računar u režimima šatora, tableta ili postolja, ove funkcije možda neće ispravno funkcionisati.",
-                    "description4": "2. Ako je računar u režimu hibernacije ili ako je isključen, Zero Touch prijavljivanje ne radi.",
-                    "description6": "4. Ako je na računaru omogućen režim rada u avionu, ove funkcije su onemogućene.",
-                    "description7": "Preciznost zavisi od veličine tela, držanja tela i učestalosti kretanja. Ako se računar neočekivano zaključa, podesite traku osetljivosti da biste poboljšali preciznost.",
-                    "description5a1": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to ",
-                    "description5a2": "User Guide ",
-                    "description5a3": "that comes with it.",
-                    "description5b": "b. Your computer is in hibernation mode or has been turned off."
+                    "description3": "1. Da biste koristili gornje funkcije, podesite ekran na odgovarajući ugao kako bi vaše lice moglo da se prepozna.",
+                    "description4": "2. Prethodne funkcije nisu podržane u sledećim slučajevima:",
+                    "description5a1": "a. Računar je u režimu šatora, tableta, postolja ili u odvojenom režimu. Za režime koje podržava računar pogledajte ",
+                    "description5a2": "Uputstvo za korisnike ",
+                    "description5a3": "koji se dobija uz njega.",
+                    "description5b": "b. Računar je u režimu hibernacije ili je isključen.",
+                    "description6": "3. Ako je na računaru omogućen režim rada u avionu, ove funkcije su onemogućene.",
+                    "description7": "Preciznost zavisi od veličine tela, držanja tela i učestalosti kretanja. Ako se računar neočekivano zaključa, podesite traku osetljivosti da biste poboljšali preciznost."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Idite na postavke sistema Windows Hello",
@@ -1943,40 +1978,6 @@
                 "resetToDefault": "Poništi",
                 "sensitivityAdjusting": {
                     "title": "PODEŠAVANJE OSETLJIVOSTI"
-                },
-                "image": {
-                    "title": "Intelligent security",
-                    "description": "Buckles up your PC with intelligent sensing technology, protects your privacy, and saves your battery power."
-                },
-                "advancedSettings": {
-                    "showAdvSettings": "ADVANCED SETTINGS",
-                    "hideAdvSettings": "HIDE ADVANCED SETTINGS"
-                },
-                "zeroTouchLoginForIdea": {
-                    "title": "Zero Touch Login",
-                    "caption": "This feature enables you to improve the work efficiency by automatically waking up or logging in your computer. To use the feature, you need to register your face in Windows Hello.",
-                    "tooltip": "When you are in front of your computer or approaching it (within 1.2 or 1.5 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer. <br>Depending on the sensor capability, the maximum detecting distance varies. Refer to the <i>User Guide</i> that comes with your computer for details."
-                },
-                "distanceSensitivityAdjustingForIdea": {
-                    "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                    "captionOn": "Enable this feature to automatically adjust the detecting distance of movements to wake up the system. Turn it off to manually adjust the detecting sensitivity based on your preference.",
-                    "captionOff": "When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
-                    "options": {
-                        "near": "Near",
-                        "medium": "Middle",
-                        "far": "Far"
-                    },
-                    "readMore": "There are three options. In each range, when human movements are detected, your screen will be waked up accordingly.",
-                    "readMoreForSensor1": {
-                        "line1": "• Near: 0-0.4 meter",
-                        "line2": "• Middle: 0-0.6 meter",
-                        "line3": "• Far: 0-1.2 meter"
-                    },
-                    "readMoreForSensor2": {
-                        "line1": "• Near: 0.2-0.55 meter",
-                        "line2": "• Middle: 0.2-1.0 meter",
-                        "line3": "• Far: 0.2-1.5 meter"
-                    }
                 }
             },
             "intelligentScreen": {
@@ -3082,15 +3083,15 @@
             "science": "Nauka"
         },
         "gaming": {
-            "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
-            "gamingFeature1": "-Computer status monitor",
-            "gamingFeature2": "-Performance mode & overclocking",
-            "gamingFeature3": "-Lighting",
-            "gamingFeature4": "-Network Boost",
-            "gamingFeature5": "-Auto Close",
-            "gamingOnly": "Gaming",
-            "gamingAndWork": "Gaming & Work",
-            "nonGaming": "Non-Gaming"
+            "gamingDescription": "Verzija programa Vantage za igranje igara vam olakšava poboljšanje iskustva u igranju igara. Pored uobičajenih postavki, glavne karakteristike obuhvataju (dostupno na određenim sistemima):",
+			"gamingFeature1": "-Nadgledanje statusa računara",
+			"gamingFeature2": "-Režim učinka i overkloking",
+			"gamingFeature3": "-Osvetljenje",
+			"gamingFeature4": "-Pojačanje mreže",
+			"gamingFeature5": "-Automatsko zatvaranje",
+			"gamingOnly": "Igranje",
+			"gamingAndWork": "Igranje igara i posao",
+			"nonGaming": "Neigranje igara"
         }
     },
     "settings": {
@@ -4062,5 +4063,10 @@
     },
     "cpt": {
         "title": "Content Preview Tool"
+    },
+    "storeRating": {
+        "title": "Pošaljite nam vaš glas",
+        "likeUs": "Označite da vam se sviđamo",
+        "feedback": "Ostavite povratne informacije"
     }
 }

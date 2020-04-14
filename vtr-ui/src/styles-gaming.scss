@@ -1958,11 +1958,11 @@ body.focus-enable{
 				outline: 1px dotted !important;
 				}
 		}
-		*:focus {
+		*:focus{
 		outline: 1px dotted !important;
 		box-shadow: none !important;
 	}
-		button.close{
+		button.close,a.close{
 		opacity:1 !important
 		}	
 		vtr-ui-header-warranty{
