@@ -197,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "경고!",
                     "description": "오버클럭 설정이 적절하지 않으면 하드웨어가 영구적으로 손상될 수 있습니다.",
-                    "proceed": "계속"
+                    "proceed": "계속",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },

@@ -197,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "Увага!",
                     "description": "Неправильні настройки розгону можуть непоправно пошкодити обладнання.",
-                    "proceed": "ПРОДОВЖИТИ"
+                    "proceed": "ПРОДОВЖИТИ",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },

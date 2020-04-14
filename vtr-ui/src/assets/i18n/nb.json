@@ -197,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "Advarsel!",
                     "description": "Ukorrekte innstillinger av Overklokking kan føre til uopprettelige maskinvareskader.",
-                    "proceed": "FORTSETT"
+                    "proceed": "FORTSETT",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },

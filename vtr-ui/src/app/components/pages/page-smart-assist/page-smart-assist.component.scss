@@ -305,6 +305,14 @@ $fontsize_xs: 1.4rem;
 				}
 			}
 		}
+		.hello-link {
+			outline-offset: 0;
+		}
+		.radio-group {
+			&:focus {
+				@include outline-blue;
+			}
+		}
 	}
 }
 
