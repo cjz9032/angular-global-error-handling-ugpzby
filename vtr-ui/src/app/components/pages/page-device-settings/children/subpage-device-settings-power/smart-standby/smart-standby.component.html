@@ -85,13 +85,13 @@
 									class="collapse-header"
 									(click)="onToggle(timeToggle)"
 									(keydown.enter)="onToggle(timeToggle)"
-									[attr.aria-expanded]="!isCollapsed"
-									#timeToggle
-									tabindex="0">
+									#timeToggle>
 									<div>
 										<div *ngIf="isCollapsed"
 											class="collapse-text"
-											role="link"
+											role="button"
+											[attr.aria-expanded]="!isCollapsed"
+											tabindex="0"
 											id="smartstandby-click-to-change">
 											<!-- Expand -->
 											{{'common.ui.clickToChange' | translate | uppercase }}
@@ -99,7 +99,9 @@
 										<div *ngIf="!isCollapsed"
 											class="collapse-text"
 											id="smartstandby-click-to-change-collapse"
-											role="link">
+											role="button"
+											[attr.aria-expanded]="!isCollapsed"
+											tabindex="0">
 											<!-- Collapse -->
 											{{'common.ui.collapse' | translate | uppercase }}
 										</div>
