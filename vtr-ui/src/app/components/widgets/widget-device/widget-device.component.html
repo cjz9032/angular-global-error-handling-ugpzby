@@ -2,7 +2,7 @@
 	<div class="container-fluid my-dev-pad">
 		<div class="d-flex device-status">
 			<div class="col device-info"
-				tabindex="0">
+				>
 				<div class="family"
 					id="myDevice-machine-info"
 					attr.aria-label="myDevice-machine-info">{{myDevice.family}}</div>
@@ -55,7 +55,6 @@
 		<div class="row">
 			<div class="col">
 				<div class="subheader"
-					tabindex="0"
 					role="heading"
 					id="myDevice-status-title"
 					attr.aria-label="myDevice-status-title"
@@ -67,8 +66,7 @@
 				<ul class="status-list">
 					<li *ngFor="let item of deviceStatus; let i=index"
 						[ngClass]="[!item.status?'good':'bad']"
-						[hidden]="item.isHidden"
-						tabindex="0">
+						[hidden]="item.isHidden">
 						<div class="container-fluid">
 							<div class="d-flex align-items-center {{'dirClass' | translate}}">
 								<div class="status-icon">
