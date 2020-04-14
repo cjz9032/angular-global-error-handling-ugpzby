@@ -5,9 +5,16 @@
 				<div class="row">
 					<div class="title">{{title}}</div>
 					<div class="title-question-mark">
-						<fa-icon class="recover-question-icon" triggers="click:blur" placement="auto"
-							[ngbTooltip]="tooltipRef" [icon]="['far', 'question-circle']" container="vtr-root"
-							tooltipClass="vtr-tooltip"></fa-icon>
+						<a href="javascript:void(0)"
+							aria-label="recover-question-mark"
+							class="recover-question-icon"
+							triggers="click:blur"
+							[ngbTooltip]="tooltipRef"
+							container="vtr-root"
+							tooltipClass="vtr-tooltip"
+							placement="auto">
+							<fa-icon [icon]="['far', 'question-circle']"></fa-icon>
+						</a>
 					</div>
 				</div>
 				<div class="description">{{'hardwareScan.recoverBadSectors.waitAvailability' | translate}}</div>
