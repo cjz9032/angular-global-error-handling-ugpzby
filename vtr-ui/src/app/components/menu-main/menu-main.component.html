@@ -160,7 +160,7 @@
 						<div ngbDropdownMenu
 							id="menu-main-nav-lnk-dropdown-toggle-{{item.id}}"
 							class="dropdown-menu"
-							aria-labelledby="menu-main-nav-lnk-dropdown-toggle-{{item.id}}">
+							attr.aria-labelledby="menu-main-nav-lnk-dropdown-toggle-{{item.id}}">
 							<fa-icon [icon]="['fas', 'square']"
 								class="menu-pointer"></fa-icon>
 							<span *ngFor="let subitem of item.subitems; let ii=index">
