@@ -2101,7 +2101,7 @@
                     "option6":"30"
                 },
                 "showPhoto": {
-                    "title":"PHOTOS HAVE BEEN:",
+                    "title":"PHOTOS HAVE BEEN SAVED TO LOCAL:",
                     "link":"View photos"
 				},
 				"fileAuthorizationTips": {
