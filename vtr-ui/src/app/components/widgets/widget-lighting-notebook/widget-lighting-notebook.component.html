@@ -20,12 +20,12 @@
                     <div  class="lighting-bright">
                         <h1 class="content-title">{{'device.deviceSettings.displayCamera.camera.brightness' | translate}} </h1>
                         <vtr-ui-add-reduce-button [minData]="1" [maxData]="lightingCapabilities.BrightAdjustLevel" [step]="1" [value]="lightingCurrentDetail.lightBrightness"
-                        (setVal) = "setLightingBrightness($event)" [isValChange]="isValChange"></vtr-ui-add-reduce-button>
+                        (setVal) = "setLightingBrightness($event)" [isValChange]="isValChange" [ariaLabelValue]="'Brightness'"></vtr-ui-add-reduce-button>
                     </div>
                     <div  class="lighting-speed" *ngIf="isSupportSpeed">
                         <h1 class="content-title">{{'gaming.lightingNewversion.lightingSpeed.title' | translate}} </h1>
                         <vtr-ui-add-reduce-button [minData]="1" [maxData]="lightingCapabilities.SpeedSetLevel" [step]="1" [value]="lightingCurrentDetail.lightSpeed"
-                        (setVal) = "setLightingSpeed($event)" [isValChange]="isValChange"></vtr-ui-add-reduce-button>
+                        (setVal) = "setLightingSpeed($event)" [isValChange]="isValChange" [ariaLabelValue]="'Speed'"></vtr-ui-add-reduce-button>
                     </div>
                 </div>
             </div>
