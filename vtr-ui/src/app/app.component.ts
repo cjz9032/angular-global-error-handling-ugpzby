@@ -220,6 +220,7 @@ export class AppComponent implements OnInit, OnDestroy {
 		const modalRef = this.modalService.open(ModalWelcomeComponent, {
 			backdrop: 'static',
 			centered: true,
+			ariaLabelledBy: 'welcome-tutorial-page-basic-title',
 			windowClass: 'welcome-modal-size'
 		});
 		modalRef.componentInstance.page = page;
@@ -243,7 +244,7 @@ export class AppComponent implements OnInit, OnDestroy {
 			}
 		);
 		setTimeout(() => {
-			document.getElementById('modal-welcome').parentElement.parentElement.parentElement.parentElement.focus();
+			(document.querySelector('.welcome-modal-size') as HTMLElement).focus();
 		}, 0);
 	}
 
