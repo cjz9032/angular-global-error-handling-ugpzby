@@ -30,7 +30,7 @@
 						[src]="appDetails.image"
 						alt="" />
 					<div class="app-name">
-						<div class="app-title">{{ appDetails.title }}</div>
+						<div class="app-title" role="text" id="apps-for-you-text-app-title">{{ appDetails.title }}</div>
 					</div>
 				</div>
 				<div class="col-6 btn-content">
@@ -96,15 +96,15 @@
 				*ngIf="appDetails">
 				<div class="description-con mb-40"
 					*ngIf="appDetails.description">
-					<div class="title mb-2">
+					<div class="title mb-2" role="text" id="apps-for-you-text-description-title">
 						{{'appsForYou.appDetails.fieldName.description' | translate}}
 					</div>
-					<div class="description" [innerHTML]="appDetails.description"></div>
+					<div class="description" [innerHTML]="appDetails.description" role="text" id="apps-for-you-text-description"></div>
 				</div>
 				<!-- <div class="screenshot-con mb-40" *ngIf="appDetails.screenshots.length"> -->
 				<div class="screenshot-con mb-40"
 					*ngIf="appDetails.screenshots.length">
-					<div class="title mb-2">
+					<div class="title mb-2" role="text" id="apps-for-you-text-screenshot-title">
 						{{'appsForYou.appDetails.fieldName.screenshots' | translate}}
 					</div>
 					<div class="screenshot-slider">
@@ -129,6 +129,7 @@
 							*ngIf="showArrows">
 							<div tabindex="0"
 								role="button"
+								id="apps-for-you-btn-left-arrow"
 								class="arrow left-arrow"
 								[attr.aria-label]="'appsForYou.narrator.leftArrow' | translate"
 								(keyup.enter)="clickLeftArrow()"
@@ -137,6 +138,7 @@
 							</div>
 							<div tabindex="0"
 								role="button"
+								id="apps-for-you-btn-right-arrow"
 								class="arrow right-arrow"
 								[attr.aria-label]="'appsForYou.narrator.rightArrow' | translate"
 								(keyup.enter)="clickRightArrow()"
@@ -147,7 +149,9 @@
 					</div>
 				</div>
 				<div class="information-con">
-					<div class="title mb-2">
+					<div class="title mb-2"
+						role="text"
+						id="apps-for-you-text-additional-Info">
 						{{'appsForYou.appDetails.fieldName.additionalInformation' | translate}}
 					</div>
 					<div class="infomations row no-gutters"
@@ -155,29 +159,30 @@
 						<div class="col-12 col-md-8 col-xl-6 row no-gutters">
 							<div class="col-6 info-item"
 								*ngIf="appDetails.by">
-								<div class="sub-title">{{'appsForYou.appDetails.fieldName.by' | translate}}</div>
-								<div [innerHTML]="appDetails.by"></div>
+								<div class="sub-title" role="text" id="apps-for-you-text-by-title">{{'appsForYou.appDetails.fieldName.by' | translate}}</div>
+								<div [innerHTML]="appDetails.by" role="text" id="apps-for-you-text-by"></div>
 							</div>
 							<div class="col-6 info-item"
 								*ngIf="appDetails.updated">
-								<div class="sub-title">{{'appsForYou.appDetails.fieldName.updated' | translate}}</div>
-								<div [innerHTML]="appDetails.updated"></div>
+								<div class="sub-title" role="text" id="apps-for-you-text-updated-title">{{'appsForYou.appDetails.fieldName.updated' | translate}}</div>
+								<div [innerHTML]="appDetails.updated" role="text" id="apps-for-you-text-updated"></div>
 							</div>
 							<div class="col-6 info-item"
 								*ngIf="appDetails.installtype.title">
-								<div class="sub-title">{{'appsForYou.appDetails.fieldName.type' | translate}}</div>
-								<div [innerHTML]="appDetails.installtype.title"></div>
+								<div class="sub-title" role="text" id="apps-for-you-text-type-title">{{'appsForYou.appDetails.fieldName.type' | translate}}</div>
+								<div [innerHTML]="appDetails.installtype.title" role="text" id="apps-for-you-text-type"></div>
 							</div>
 							<div class="col-6 info-item"
 								*ngIf="appDetails.category.title">
-								<div class="sub-title">{{'appsForYou.appDetails.fieldName.category' | translate}}</div>
-								<div [innerHTML]="appDetails.category.title"></div>
+								<div class="sub-title" role="text" id="apps-for-you-text-category-title">{{'appsForYou.appDetails.fieldName.category' | translate}}</div>
+								<div [innerHTML]="appDetails.category.title" role="text" id="apps-for-you-text-category"></div>
 							</div>
 							<div class="col-6 info-item"
 								*ngIf="appDetails.privacyurl">
 								<a [href]="appDetails.privacyurl"
 									target="_blank"
 									class="legal-agreement"
+									id="apps-for-you-link-legal-agreement"
 									vtrMetrics
 									metricsEvent="FeatureClick"
 									[metricsParent]="metricsParent"

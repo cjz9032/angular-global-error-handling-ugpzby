@@ -87,7 +87,7 @@
 									#timeToggle
 									tabindex="0"
 									role="button"
-									aria-label="smart standby, time picker-toggle button">
+									>
 									<div>
 										<div *ngIf="isCollapsed"
 											class="collapse-text"
@@ -137,7 +137,8 @@
 												class="row">
 												<div class="col-md-12 pl-0">
 													<div class="note align-items-center"
-														id="smartStandby-timer-endTimeNote">
+														id="smartStandby-timer-endTimeNote"
+														attr.aria-label="END time must be within 20 hours from START time">
 														{{ 'device.deviceSettings.power.smartStandby.timer.endTimeNote' | translate }}
 													</div>
 												</div>

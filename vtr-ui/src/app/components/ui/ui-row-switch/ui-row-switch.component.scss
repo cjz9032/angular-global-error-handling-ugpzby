@@ -96,7 +96,7 @@
 			font-size: $fontsize_sm;
 			color: $icon_color;
 			cursor: pointer;
-
+			border: 0.1rem solid transparent;
 			&:hover {
 				color: $highlight;
 			}
@@ -148,7 +148,7 @@
 
 		.tool-tip-icon {
 			//margin-left: 0.9rem;
-			margin-top: 0.2rem;
+			margin-top: 0.3rem;
 			margin-left: 1rem;
 			//order: 2;
 			// &.auto-screen-lock-help-icon {
@@ -177,9 +177,13 @@
 			text-align: center;
 			text-transform: uppercase;
 			max-width: 12rem;
-			text-overflow: ellipsis;
-			white-space: nowrap;
-			overflow: hidden;
+			position: relative;
+
+			&:focus {
+				outline: 0;
+				box-shadow: none;
+				@include button-outline-blue;
+			}
 		}
 	}
 }
@@ -231,24 +235,14 @@
 	}
 	.right-icon {
 		&:focus {
-			outline: 0.1rem solid $menu_hover;
-			outline-offset: 0.2rem;
+			@include outline-border-blue;
 		}
 	}
 }
 .vtr-ui-switch-row.blue-theme {
 	.right-icon {
 		&:focus {
-			outline: 0.1rem solid $light;
-			outline-offset: 0.2rem;
-		}
-	}
-	.vtr-row-switch {
-		.checkbox {
-			&:focus {
-			outline: 0.1rem solid $light;
-			outline-offset: 0.2rem;
-		}
+			@include outline-border-white;
 		}
 	}
 }

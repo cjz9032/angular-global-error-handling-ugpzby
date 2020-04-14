@@ -31,7 +31,7 @@
 			</div>
 			<a id="menu-main-lnk-gaming-logo"
 				aria-label="menu-main-lnk-gaming-logo"
-				tabindex="0"
+				tabindex="1"
 				*ngIf="!isGamingHome"
 				vtrMetrics
 				routerLinkActive="link-active"
@@ -95,7 +95,6 @@
 							tabindex="1"
 							id="menu-main-nav-lnk-{{item.id}}"
 							attr.new-tip-id="new-tip-{{item.id}}"
-							[attr.aria-label]="item.id"
 							[metricsEvent]="item.metricsEvent"
 							[metricsParent]="item.metricsParent"
 							[metricsItem]="item.metricsItem"

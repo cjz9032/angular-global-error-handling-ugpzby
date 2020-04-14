@@ -132,6 +132,10 @@ $normalPadding: 2.4rem;
 				height: 1.4rem;
 				margin: 0.3rem 0 0 0.3rem;
 
+				@media #{$high-contrast} {
+					background-color: currentColor;
+				}
+
 				@media #{$black-on-white} {
 					background-color: $high-contrast-white-textselected;
 				}

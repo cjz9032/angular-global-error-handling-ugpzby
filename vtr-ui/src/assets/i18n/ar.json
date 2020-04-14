@@ -80,7 +80,8 @@
                     "macroKey": "مفتاح الماكرو",
                     "hardwareScan": "فحص الأجهزة",
                     "systemUpdate": "‏‫تحديث النظام‬",
-                    "header": "أدوات النظام"
+                    "header": "أدوات النظام",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "systemStatus": {
                     "info": "معلومات"

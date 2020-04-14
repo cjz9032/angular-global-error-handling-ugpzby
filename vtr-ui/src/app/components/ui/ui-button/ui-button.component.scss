@@ -8,13 +8,12 @@
 		position: relative;
 
 		.button {
-			
 			padding: 0 2.5rem;
 			position: relative;
 			min-height: 5.2rem;
 			border-radius: 3rem;
 			min-width: 12rem;
-			background: transparent $gradient_blue 0% 0% no-repeat padding-box;;
+			background: transparent $gradient_blue 0% 0% no-repeat padding-box;
 			border: none;
 			color: $light;
 			font-size: $fontsize_xs;
@@ -30,18 +29,7 @@
 			&:focus {
 				outline: 0;
 				box-shadow: none;
-			}
-
-			&:focus::after {
-				content: '';
-				display: block;
-				position: absolute;
-				left: -0.4rem;
-				top: -0.4rem;
-				border-radius: 500px;
-				width: calc(100% + 0.8rem);
-				height: calc(100% + 0.8rem);
-				border: thin solid $menu_hover;
+				@include button-outline-blue;
 			}
 
 			.text {
@@ -88,13 +76,13 @@
 			}
 			@media #{$black-on-white} {
 				border: 0.1rem solid $high-contrast-white-disabled !important;
-		
-				
+
+
 			}
 			@media #{$white-on-black} {
 				border: 0.1rem solid $high-contrast-black-disabled !important;
-		
-				
+
+
 			}
 		}
 

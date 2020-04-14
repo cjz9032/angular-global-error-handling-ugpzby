@@ -23,7 +23,7 @@
 						{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.description' | translate}}
 					</div>
 					<div class="mb-3">
-						<div class="col-12 pl-0 d-flex"
+						<div class="col-12 pl-0 d-flex methods-block"
 							role="radiogroup"
 							tabindex="0"
 							aria-label=" Function lock selection list, select using arrow keys">
@@ -63,7 +63,8 @@
 								id="inputAccessory.topRowFunctions.showAdvSettings"
 								attr-aria-label="inputAccessory.topRowFunctions.showAdvSettings"
 								(click)="showAdvancedSection = true"
-								(keydown.enter)="showAdvancedSection = true">
+								(keydown.enter)="showAdvancedSection = true"
+								tabindex="0">
 								{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.showAdvSettings' | translate}}
 							</span>
 						</div>
