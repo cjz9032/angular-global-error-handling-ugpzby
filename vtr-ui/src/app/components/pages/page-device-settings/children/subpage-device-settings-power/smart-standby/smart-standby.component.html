@@ -66,11 +66,13 @@
 									{{ 'device.deviceSettings.power.smartStandby.timer.heading' | translate }}
 								</h5>
 								<span id="smartstandby-schedule"
+									role="text"
 									attr.aria-label="smartstandby-schedule">
 									{{smartStandbyService.schedule}}
 								</span>
 								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 								<span id="smartstandby-time"
+									role="text"
 									attr.aria-label="smartstandby-time">
 									{{'common.ui.from' | translate}} {{smartStandbyStartTime }}
 									{{'common.ui.to' | translate}} {{smartStandbyEndTime}}
@@ -85,21 +87,19 @@
 									(keydown.enter)="onToggle(timeToggle)"
 									[attr.aria-expanded]="!isCollapsed"
 									#timeToggle
-									tabindex="0"
-									role="button"
-									>
+									tabindex="0">
 									<div>
 										<div *ngIf="isCollapsed"
 											class="collapse-text"
-											id="smartstandby-click-to-change"
-											attr.aria-label="smartstandby-click-to-change">
+											role="link"
+											id="smartstandby-click-to-change">
 											<!-- Expand -->
 											{{'common.ui.clickToChange' | translate | uppercase }}
 										</div>
 										<div *ngIf="!isCollapsed"
 											class="collapse-text"
 											id="smartstandby-click-to-change-collapse"
-											attr.aria-label="smartstandby-click-to-change-collapse">
+											role="link">
 											<!-- Collapse -->
 											{{'common.ui.collapse' | translate | uppercase }}
 										</div>
@@ -155,7 +155,7 @@
 							</div>
 							<div *ngIf="isAutonomicCapability"
 								#showGraph
-								(keydown.enter)="showGraph.click()" 
+								(keydown.enter)="showGraph.click()"
 								vtrMetrics
 								metricsItem="Open Smart Standby Modal"
 								metricsEvent="featureClick"
@@ -168,7 +168,6 @@
 								tabindex="0"
 								(click)="showUsageGraph()"
 								(keydown.enter)="showUsageGraph()"
-								
 								attr.aria-label="{{'device.deviceSettings.power.smartStandby.hyperlinkToGraph' | translate}}">
 								{{'device.deviceSettings.power.smartStandby.hyperlinkToGraph' | translate}}
 							</div>
