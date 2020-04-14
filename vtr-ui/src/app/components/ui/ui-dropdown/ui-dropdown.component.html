@@ -9,7 +9,7 @@
                     <span *ngIf="textCase === 'oled'" role="link" id="{{i.text}}"
                         attr.aria-label="{{ i.text }}">{{customCamelCase(i.text)}}</span>
                 </li>
-                
+
 			</ul>
 		</div>
 		<div class="time">
@@ -42,7 +42,7 @@
 		(click)="isDropDownOpen = !isDropDownOpen"
 		tabindex="0"
 	>
-		<div aria-hidden="true">
+		<div aria-hidden="true" class="label-name">
 			{{ name }}
 			{{
 				textCase === "oled"

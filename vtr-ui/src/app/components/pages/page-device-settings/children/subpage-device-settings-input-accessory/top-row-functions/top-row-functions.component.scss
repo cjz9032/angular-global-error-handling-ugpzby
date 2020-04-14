@@ -42,7 +42,11 @@
         letter-spacing: 0.05rem;
         color: $menu_hover;
         cursor: pointer;
-        padding-top: 0.3rem;
+		padding-top: 0.3rem;
+		border: 0.1rem solid transparent;
+		&:focus {
+			@include outline-border-blue;
+		}
     }
     .sectn-padding {
         padding: 2rem 0.7rem 1.5rem;
