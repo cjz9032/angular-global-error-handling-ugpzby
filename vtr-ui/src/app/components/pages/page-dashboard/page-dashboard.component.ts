@@ -378,7 +378,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy {
 					this.dashboardService.onlineCardContent[contentCard.cardId] = contentCard.cmsContent;
 				} // else do nothing
 
-				if (this.dashboardService.onlineCardContent[contentCard.cardId]) {
+				if (this.isOnline && this.dashboardService.onlineCardContent[contentCard.cardId]) {
 					contentCard.displayContent = this.dashboardService.onlineCardContent[contentCard.cardId];
 				}
 			});
