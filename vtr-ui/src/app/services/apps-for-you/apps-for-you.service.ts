@@ -101,6 +101,13 @@ export class AppsForYouService {
 	};
 
 	private initialize() {
+		const cacheMachineFamilyName = this.commonService.getLocalStorageValue(
+			LocalStorageKey.MachineFamilyName,
+			undefined
+		);
+		if (cacheMachineFamilyName) {
+			this.familyName = cacheMachineFamilyName;
+		}
 		let machineInfo = this.deviceService.getMachineInfoSync();
 		if (!machineInfo) {
 			this.deviceService.getMachineInfo().then((info) => {
