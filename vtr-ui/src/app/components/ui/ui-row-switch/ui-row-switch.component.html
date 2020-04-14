@@ -81,7 +81,7 @@
 						(click)="onResetClick($event)"
 						(keydown.enter)="onResetClick($event)"
 						[attr.aria-disabled]="disabledAll">
-						{{ resetText }}
+						<span class="text-ellipsis">{{ resetText }}</span>
 					</button>
 
 				</div>

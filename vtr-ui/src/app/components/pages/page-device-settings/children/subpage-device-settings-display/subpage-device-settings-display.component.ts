@@ -801,10 +801,8 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 			if (this.displayService.isShellAvailable) {
 				this.displayService
 					.resetEyeCareMode().then((resetData: any) => {
-						this.logger.debug('SubpageDeviceSettingsDisplayComponent.onResetTemparature: on api reset data', resetData);
+						this.logger.debug('SubpageDeviceSettingsDisplayComponent.onResetTemparature: on api reset data', { resetData, setValues: this.setValues, isSet: this.isSet });
 						this.eyeCareDataSource.current = resetData.colorTemperature;
-						this.logger.debug('isSetEyecaremodeStatus ', this.isSet.isSetEyecaremodeStatus);
-						this.logger.debug('Current setValues', this.setValues);
 						this.setEyeCareModeToggleValue(resetData.eyecaremodeState);
 						this.enableSlider = resetData.eyecaremodeState;
 						this.sunsetToSunriseModeStatus.status = resetData.autoEyecaremodeState;
@@ -949,6 +947,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 					.resetDaytimeColorTemperature().then((resetData: any) => {
 						this.logger.debug('temparature reset data', resetData);
 						this.displayColorTempDataSource.current = resetData || 6500;
+						this.displayColorTempDataSource = Object.assign({}, this.displayColorTempDataSource);
 						this.displayColorTempCache.current = this.displayColorTempDataSource.current;
 						this.commonService.setLocalStorageValue(LocalStorageKey.DisplayColorTempCapability, this.displayColorTempCache);
 					});
