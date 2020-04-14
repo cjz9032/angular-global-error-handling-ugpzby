@@ -197,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "警告！",
                     "description": "超频设置不当可能会导致不可逆转的硬件损坏。",
-                    "proceed": "继续"
+                    "proceed": "继续",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },
@@ -3084,14 +3087,14 @@
         },
         "gaming": {
             "gamingDescription": "Vantage 的游戏版本能让您轻松改善游戏体验。除常规设置外，主要功能包括（在某些系统上可用）：",
-			"gamingFeature1": "-计算机状态监控",
-			"gamingFeature2": "-性能模式和超频",
-			"gamingFeature3": "-灯光",
-			"gamingFeature4": "-网络增强",
-			"gamingFeature5": "-自动关闭",
-			"gamingOnly": "游戏",
-			"gamingAndWork": "游戏和工作",
-			"nonGaming": "非游戏"
+            "gamingFeature1": "-计算机状态监控",
+            "gamingFeature2": "-性能模式和超频",
+            "gamingFeature3": "-灯光",
+            "gamingFeature4": "-网络增强",
+            "gamingFeature5": "-自动关闭",
+            "gamingOnly": "游戏",
+            "gamingAndWork": "游戏和工作",
+            "nonGaming": "非游戏"
         }
     },
     "settings": {

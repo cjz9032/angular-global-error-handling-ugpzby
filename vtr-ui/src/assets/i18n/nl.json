@@ -197,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "Waarschuwing!",
                     "description": "Foutieve instellingen van Overklokken kunnen leiden tot onherstelbare hardwarebeschadigingen.",
-                    "proceed": "DOORGAAN"
+                    "proceed": "DOORGAAN",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },

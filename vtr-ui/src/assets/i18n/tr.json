@@ -197,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "Uyarı!",
                     "description": "Yanlış Hız Aşırtma ayarları geri dönüşü olmayan donanım hasarına yol açabilir.",
-                    "proceed": "DEVAM ET"
+                    "proceed": "DEVAM ET",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },

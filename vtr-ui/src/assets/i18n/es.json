@@ -197,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "¡Advertencia!",
                     "description": "Un ajuste inadecuado de la Aceleración puede producir daños de hardware irreversible.",
-                    "proceed": "PROCEDER"
+                    "proceed": "PROCEDER",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },

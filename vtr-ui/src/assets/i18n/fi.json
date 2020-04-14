@@ -197,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "Varoitus!",
                     "description": "Ylikellotuksen epäasianmukaiset asetukset saattavat aiheuttaa peruuttamatonta laitteistovahinkoa.",
-                    "proceed": "JATKA"
+                    "proceed": "JATKA",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },

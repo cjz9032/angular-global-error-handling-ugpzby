@@ -197,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "Avertisment!",
                     "description": "Setările necorespunzătoare ale caracteristicii Overclocking pot produce deteriorări hardware ireversibile.",
-                    "proceed": "CONTINUAȚI"
+                    "proceed": "CONTINUAȚI",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },
