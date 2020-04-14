@@ -18,31 +18,31 @@
 					<div class="item-left">
 						<div *ngIf="item.icon !== undefined">
 							<div class="test-status" [ngSwitch]="item.icon">
-								<img class="qr-img" *ngSwitchCase="'cpu'" [src]="'assets/icons/hardware-scan/icon_hardware_processor.svg' | svgInline | async" />
-								<img class="qr-img" *ngSwitchCase="'memory'" [src]=" 'assets/icons/hardware-scan/icon_hardware_memory.svg' | svgInline | async" />
-								<img class="qr-img" *ngSwitchCase="'motherboard'" [src]=" 'assets/icons/hardware-scan/icon_hardware_motherboard.svg' | svgInline | async" />
-								<img class="qr-img" *ngSwitchCase="'pci_express'" [src]=" 'assets/icons/hardware-scan/icon_hardware_pci-desktop.svg' | svgInline | async" />
-								<img class="qr-img" *ngSwitchCase="'pci_express_laptop'" [src]=" 'assets/icons/hardware-scan/icon_hardware_pci-laptop.svg' | svgInline | async" />
-								<img class="qr-img" *ngSwitchCase="'wireless'" [src]=" 'assets/icons/hardware-scan/icon_hardware_wireless.svg' | svgInline | async" />
-								<img class="qr-img" *ngSwitchCase="'storage'" [src]=" 'assets/icons/hardware-scan/icon_hardware_hdd.svg' | svgInline | async" />
+								<img alt="" class="qr-img" *ngSwitchCase="'cpu'" [src]="'assets/icons/hardware-scan/icon_hardware_processor.svg' | svgInline | async" />
+								<img alt="" class="qr-img" *ngSwitchCase="'memory'" [src]=" 'assets/icons/hardware-scan/icon_hardware_memory.svg' | svgInline | async" />
+								<img alt="" class="qr-img" *ngSwitchCase="'motherboard'" [src]=" 'assets/icons/hardware-scan/icon_hardware_motherboard.svg' | svgInline | async" />
+								<img alt="" class="qr-img" *ngSwitchCase="'pci_express'" [src]=" 'assets/icons/hardware-scan/icon_hardware_pci-desktop.svg' | svgInline | async" />
+								<img alt="" class="qr-img" *ngSwitchCase="'pci_express_laptop'" [src]=" 'assets/icons/hardware-scan/icon_hardware_pci-laptop.svg' | svgInline | async" />
+								<img alt="" class="qr-img" *ngSwitchCase="'wireless'" [src]=" 'assets/icons/hardware-scan/icon_hardware_wireless.svg' | svgInline | async" />
+								<img alt="" class="qr-img" *ngSwitchCase="'storage'" [src]=" 'assets/icons/hardware-scan/icon_hardware_hdd.svg' | svgInline | async" />
 							</div>
 						</div>
 
 						<div class="test-status" *ngIf="item.status >= 0">
 							<div [ngSwitch]="item.status">
-								<fa-icon [icon]="['fas', 'circle-notch']" [spin]="true" class="loading"
+								<fa-icon aria-label="loading" [icon]="['fas', 'circle-notch']" [spin]="true" class="loading"
 									*ngSwitchCase="0">
 								</fa-icon>
 								<span class="progress-value-text" *ngSwitchCase="1">{{item.percent}}%</span>
-								<fa-icon [icon]="['fas', 'check-circle']" class="success" *ngSwitchCase="2">
+								<fa-icon aria-label="success" [icon]="['fas', 'check-circle']" class="success" *ngSwitchCase="2">
 								</fa-icon>
-								<fa-icon [icon]="['fas', 'times-circle']" class="failure" *ngSwitchCase="3">
+								<fa-icon aria-label="failure" [icon]="['fas', 'times-circle']" class="failure" *ngSwitchCase="3">
 								</fa-icon>
-								<fa-icon [icon]="['fas', 'exclamation-triangle']" class="warning" *ngSwitchCase="4">
+								<fa-icon aria-label="warning" [icon]="['fas', 'exclamation-triangle']" class="warning" *ngSwitchCase="4">
 								</fa-icon>
-								<fa-icon [icon]="['fas', 'ban']" class="not-applicable" *ngSwitchCase="6">
+								<fa-icon aria-label="not applicable" [icon]="['fas', 'ban']" class="not-applicable" *ngSwitchCase="6">
 								</fa-icon>
-								<fa-icon [icon]="['fas', 'exclamation-circle']" class="failure" *ngSwitchDefault>
+								<fa-icon aria-label="cancelled" [icon]="['fas', 'exclamation-circle']" class="failure" *ngSwitchDefault>
 								</fa-icon>
 							</div>
 						</div>
@@ -62,15 +62,15 @@
 							{{item.statusToken}}</div>
 						<div class="module-result-icon">
 							<div [ngSwitch]="item.resultIcon">
-								<fa-icon [icon]="['fas', 'check-circle']" class="success" *ngSwitchCase="2">
+								<fa-icon aria-label="success" [icon]="['fas', 'check-circle']" class="success" *ngSwitchCase="2">
 								</fa-icon>
-								<fa-icon [icon]="['fas', 'times-circle']" class="failure" *ngSwitchCase="3">
+								<fa-icon aria-label="failure" [icon]="['fas', 'times-circle']" class="failure" *ngSwitchCase="3">
 								</fa-icon>
-								<fa-icon [icon]="['fas', 'exclamation-triangle']" class="warning" *ngSwitchCase="4">
+								<fa-icon aria-label="warning" [icon]="['fas', 'exclamation-triangle']" class="warning" *ngSwitchCase="4">
 								</fa-icon>
-								<fa-icon [icon]="['fas', 'exclamation-circle']" class="failure" *ngSwitchCase="5">
+								<fa-icon aria-label="cancelled" [icon]="['fas', 'exclamation-circle']" class="failure" *ngSwitchCase="5">
 								</fa-icon>
-								<fa-icon [icon]="['fas', 'ban']" class="not-applicable" *ngSwitchCase="6">
+								<fa-icon aria-label="not applicable" [icon]="['fas', 'ban']" class="not-applicable" *ngSwitchCase="6">
 								</fa-icon>
 								<fa-icon [icon]="['fas', 'question-circle']" *ngSwitchDefault>
 								</fa-icon>
