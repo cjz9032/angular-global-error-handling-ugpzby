@@ -2,13 +2,12 @@
    <div class="preset-color" *ngIf="isTogglePresetColor" (click)="colorPresetFun();$event.stopPropagation();">
       <ul>
          <li *ngFor="let item of presetColorList;let i = index;"  [ngStyle]="{'background':'#'+item.color}" [ngClass]="{'checked': item.isChecked}" (click)="colorChange(i)"
-         tabindex="0" [attr.aria-label]="item.isChecked?'selected lighting color is: '+item.color:'unSelected lighting color is: '+item.color" (keydown.enter)="colorChange(i)">
+         tabindex="0" [attr.aria-label]="item.isChecked?'lighting color is: ' + item.color+'selected':'lighting color is: ' + item.color+'unSelected'" (keydown.enter)="colorChange(i)">
             <span></span>
          </li>
       </ul>
       <div class="more-color">
-         <button class="under-line-button" (click)="moreColorFun(1);$event.stopPropagation();" 
-         tabindex="0" [attr.aria-label]="'Open the advanced color disk'" (keydown.enter)="moreColorFun(2);$event.stopPropagation();">{{'gaming.lightingNewversion.colorPicker.text2' | translate}}</button>
+         <button class="under-line-button" (click)="moreColorFun(1);$event.stopPropagation();" tabindex="-1" (keydown.enter)="moreColorFun(2);$event.stopPropagation();">{{'gaming.lightingNewversion.colorPicker.text2' | translate}}</button>
       </div>
    </div>
    <div *ngIf="isToggleMoreColor">
@@ -18,7 +17,7 @@
          [cpOKButton]="true" [cpOKButtonText]="'gaming.lightingProfile.colourwheel.text2.title' | translate" [cpOKButtonClass]="'btn btn-apply'" 
          [cpCancelButton]="true" [cpCancelButtonText]="'gaming.dashboard.device.legionEdge.lightingDriverPopup.link' | translate" [cpCancelButtonClass]="'btn btn-cancel'" 
          (colorPickerSelect)="colorPickerSelectFun()" (colorPickerCancel)="colorPickerCancelFun()" (colorPickerChange)="colorPickerChangeFun($event)"
-         (cpSliderDragEnd) = "cpSliderDragEndFun($event)" >
+         (cpSliderDragEnd) = "cpSliderDragEndFun($event)">
       </div>
       <div class="color-name">
          <span>{{'gaming.lightingNewversion.colorPicker.text3' | translate}}</span>
@@ -26,4 +25,4 @@
          <span>{{'gaming.lightingNewversion.colorPicker.text5' | translate}}</span>
       </div>
    </div>
-</div>
+</div> 
