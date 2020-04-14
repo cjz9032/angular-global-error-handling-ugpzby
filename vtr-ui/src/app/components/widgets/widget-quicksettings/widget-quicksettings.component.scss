@@ -78,4 +78,7 @@
 	&:focus {
 		@include outline-blue;
 	}
+	&:hover{
+		text-decoration: none;
+	}
 }
