@@ -167,6 +167,7 @@
 										metricsEvent="FeatureClick"
 										metricsParent="Device.BatteryDetails"
 										metricsItem="FullChargeCapacityTooltip"
+										role="img"
 										id="fullChargeCapacity_tooltip_icon"
 										attr.aria-label="{{ 'device.deviceSettings.batteryGauge.details.fullChargeCap' | translate }} tooltip, which reads: {{ 'device.deviceSettings.batteryGauge.details.fccTooltipText' | translate }}"
 										tabindex="0"
@@ -249,6 +250,7 @@
 <ng-template #fcctooltipRef>
 	<div [innerHTML]="'device.deviceSettings.batteryGauge.details.fccTooltipText' | translate"
 		id="fullChargeCapacity-toolTip"
+		role="tooltip"
 		tabindex="0"
 		attr.aria-label="fccTooltipText">
 	</div>
