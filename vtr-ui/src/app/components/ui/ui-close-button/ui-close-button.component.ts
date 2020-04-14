@@ -24,4 +24,8 @@ export class UiCloseButtonComponent implements OnInit {
 		this.clickClose.emit($event)
 	}
 
+	pressCloseButton($event) {
+		$event.target.click();
+	}
+
 }

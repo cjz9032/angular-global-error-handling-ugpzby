@@ -383,7 +383,7 @@
 					"metricsEvent": "itemClick",
 					"externallink": false,
 					"metricsParent": "navbar",
-					"metricsItem": "",
+					"metricsItem": "link.smartPerfomance",
 					"sMode": true,
 					"routerLinkActiveOptions": {
 						"exact": true
