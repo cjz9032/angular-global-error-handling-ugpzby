@@ -73,5 +73,11 @@ export class UiAddReduceButtonComponent implements OnInit {
       }
       this.setVal.emit([this.value,2]);
   }
+
+  public hideColorPicker(){
+      if(document.getElementById("colorPicker")){
+         document.getElementById("colorPicker").style.display = "none"; 
+      }
+  }
 }
 
