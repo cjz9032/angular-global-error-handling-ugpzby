@@ -3291,7 +3291,8 @@
             "wireless": "Radio"
         },
         "warningMessage": "Tänk på att testen avbryts om datorn hamnar i vänte- eller viloläge",
-        "refreshMessage": "Uppdateringen kan ta lite tid, eftersom alla komponenter behöver läsas in igen"
+        "refreshMessage": "Uppdateringen kan ta lite tid, eftersom alla komponenter behöver läsas in igen",
+        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
     },
     "smartPerformance": {
         "title": "Health & Support",

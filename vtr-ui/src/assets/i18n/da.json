@@ -3291,7 +3291,8 @@
             "wireless": "Trådløs"
         },
         "warningMessage": "Husk, at testene bliver annulleret, hvis systemet slumrer eller går i dvaletilstand",
-        "refreshMessage": "Opdateringen kan tage noget tid, da den skal indlæse alle komponenterne igen"
+        "refreshMessage": "Opdateringen kan tage noget tid, da den skal indlæse alle komponenterne igen",
+        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
     },
     "smartPerformance": {
         "title": "Health & Support",

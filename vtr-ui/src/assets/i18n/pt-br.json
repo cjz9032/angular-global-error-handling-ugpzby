@@ -3291,7 +3291,8 @@
             "wireless": "Wireless"
         },
         "warningMessage": "Lembre-se de que os testes serão cancelados se o sistema entrar em suspensão ou hibernar",
-        "refreshMessage": "A atualização pode levar algum tempo, pois precisa carregar todos os componentes novamente"
+        "refreshMessage": "A atualização pode levar algum tempo, pois precisa carregar todos os componentes novamente",
+        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
     },
     "smartPerformance": {
         "title": "Health & Support",

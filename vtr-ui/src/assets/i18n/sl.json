@@ -3291,7 +3291,8 @@
             "wireless": "Brezžično"
         },
         "warningMessage": "Upoštevajte, da bodo preskusi preklicani, če sistem preide v stanje spanja ali mirovanja",
-        "refreshMessage": "Osvežitev lahko traja nekaj časa, saj se morajo vse komponente znova naložiti"
+        "refreshMessage": "Osvežitev lahko traja nekaj časa, saj se morajo vse komponente znova naložiti",
+        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
     },
     "smartPerformance": {
         "title": "Health & Support",

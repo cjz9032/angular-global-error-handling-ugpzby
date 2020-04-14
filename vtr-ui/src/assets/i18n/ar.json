@@ -3293,7 +3293,8 @@
             "wireless": "اللاسلكية"
         },
         "warningMessage": "يُرجى العلم أن الاختبارات سوف تُلغى إذا دخل النظام في وضع السكون أو الإسبات",
-        "refreshMessage": "قد يستغرق التحديث بعض الوقت لأنه يحتاج إلى تحميل جميع المكونات مرةً أخرى"
+        "refreshMessage": "قد يستغرق التحديث بعض الوقت لأنه يحتاج إلى تحميل جميع المكونات مرةً أخرى",
+        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
     },
     "smartPerformance": {
         "title": "Health & Support",

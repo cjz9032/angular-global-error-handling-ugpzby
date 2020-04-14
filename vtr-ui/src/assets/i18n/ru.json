@@ -3291,7 +3291,8 @@
             "wireless": "Беспроводная связь"
         },
         "warningMessage": "Имейте в виду, что тесты будут отменены при переходе системы в спящий режим или режим гибернации",
-        "refreshMessage": "Обновление может занять некоторое время, так как необходимо снова загрузить все компоненты"
+        "refreshMessage": "Обновление может занять некоторое время, так как необходимо снова загрузить все компоненты",
+        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
     },
     "smartPerformance": {
         "title": "Health & Support",

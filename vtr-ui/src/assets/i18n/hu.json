@@ -3291,7 +3291,8 @@
             "wireless": "Vezeték nélküli"
         },
         "warningMessage": "Ne feledje, hogy a tesztek megszakadnak, ha a rendszer alvó vagy hibernált állapotba kerül",
-        "refreshMessage": "A frissítés eltarthat egy ideig, mivel minden összetevőt újra be kell töltenie"
+        "refreshMessage": "A frissítés eltarthat egy ideig, mivel minden összetevőt újra be kell töltenie",
+        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
     },
     "smartPerformance": {
         "title": "Health & Support",

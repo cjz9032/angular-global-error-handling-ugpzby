@@ -3291,7 +3291,8 @@
             "wireless": "Безпровідні підключення"
         },
         "warningMessage": "Зауважте: тести буде скасовано, якщо система перейде до режиму сну або глибокого сну",
-        "refreshMessage": "Оновлення може зайняти деякий час – потрібно знову завантажити всі компоненти"
+        "refreshMessage": "Оновлення може зайняти деякий час – потрібно знову завантажити всі компоненти",
+        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
     },
     "smartPerformance": {
         "title": "Health & Support",
