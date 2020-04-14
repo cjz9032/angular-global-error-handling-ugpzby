@@ -51,16 +51,15 @@
 		cursor: pointer;
 		-webkit-appearance: initial;
 		max-width: 26rem;
-		white-space: nowrap;
-		text-overflow: ellipsis;
-		overflow: hidden;
 		margin-top: 2rem;
+		position: relative;
 
 		&:disabled {
 			opacity: 0.5;
 		}
 		&:focus {
-			@include outline-blue;
+			outline: 0;
+			@include button-outline-blue;
 		}
 	}
 
