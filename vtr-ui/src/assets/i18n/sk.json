@@ -2047,16 +2047,16 @@
                 "tooltip": "Táto funkcia sa nevzťahuje na webové video prehrávače. Obľúbené lokálne prehrávače videa (prehrávač Windows Media Player, 5KPlayer a pod.) túto funkciu podporujú."
             },
             "superResolution": {
-                "heading": "Inteligentné médiá",
-                "title": "Zvýšenie rozlíšenia videa",
-                "desc": "<p><label>Táto funkcia zlepšuje zážitok z prehrávania videa zvýšením rozlíšenia videa. Prejaví sa najmä pri nízkom rozlíšení videa.</label></p> <p style='margin-top:4px;'><label>Táto funkcia môže ovplyvniť výdrž batérie, teplotu batérie a vytvárať hluk. Nepoužívajte v režime jednosmerného prúdu. V opačnom prípade sa zväčší spotreba energie a skráti životnosť batérie.</label></p>",
-                "tooltip": "Táto funkcia funguje iba na:<br>Windows Media player",
-                "note": {
-                    "description": "Funkcia nefunguje v týchto prípadoch:",
-                    "description1": "Počítač nie je pripojený k napájaciemu adaptéru.",
-                    "description2": "Režim úspory batérie je povolený."
-                }
-            },
+				"heading": "Inteligentné médiá",
+				"title": "Zvýšenie rozlíšenia videa",
+				"desc": "<p><label>Táto funkcia zvyšuje zážitok z prehrávania videa zlepšením jeho rozlíšenia. Prejaví sa najmä pri nízkom rozlíšení videa.</label></p> <p style='margin-top:4px;'><label>Táto funkcia môže ovplyvniť výdrž batérie, teplotu batérie a vytvárať hluk. Nepoužívajte v režime jednosmerného prúdu (režim napájania z batérie). V opačnom prípade sa zväčší spotreba energie a skráti životnosť batérie.</label></p>",
+				"tooltip": "Táto funkcia funguje iba v prípade týchto prehrávačov videa:<br>Windows Media Player<br>Chrome<br>Filmy a TV programy<br>PotPlayer<br>GOM player<br>prehrávače podporované webovými prehliadačmi (napr. Chrome)<br><br>Pokyny na zapnutie tejto funkcie v prehrávačoch PotPlayer a GOM player nájdete v používateľskej príručke dodávanej s vaším počítačom.",
+				"note": {
+					"description": "Funkcia nefunguje v týchto prípadoch:",
+					"description1": "Režim šetriča batérie je povolený.",
+					"description2": "Teplota procesora je príliš vysoká."
+				}
+			},
             "antiTheft": {
                 "heading": "Inteligentné snímanie",
                 "title": "Inteligentné upozornenie na pohyb",

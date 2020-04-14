@@ -2047,16 +2047,16 @@
                 "tooltip": "Denna funktion fungerar inte på onlinevideospelare. Vanliga lokala videospelare (som Windows Media Player och 5KPlayer) har stöd för denna funktion."
             },
             "superResolution": {
-                "heading": "Intelligenta medier",
-                "title": "Öka videoupplösningen",
-                "desc": "<p><label>Med denna funktion kan du förbättra videouppspelningen genom att förbättra upplösningen. Detta är särskilt praktiskt om videon har låg upplösning.</label></p> <p style='margin-top:4px;'><label>Funktionen kan påverka batteriets livslängd och temperatur och orsaka brus. Använd inte funktionen i DC-läge. Detta orsakar ökad energiförbrukning och batteriets livslängd förkortas.</label></p>",
-                "tooltip": "Funktionen fungerar endast på:<br>Windows Media player",
-                "note": {
-                    "description": "Funktionen fungerar inte när:",
-                    "description1": "Datorn inte är ansluten till nätströmmen.",
-                    "description2": "Batterisparläge är aktiverat."
-                }
-            },
+				"heading": "Intelligenta medier",
+				"title": "Öka videoupplösningen",
+				"desc": "<p><label>Denna funktion förbättrar videoupplösningen, vilket ger en bättre upplevelse av videouppspelningen. Den är särskilt användbar om videon har dålig upplösning.</label></p> <p style='margin-top:4px;'><label>Funktionen kan påverka batteriets livslängd och temperatur och orsaka brus. Använd inte funktionen i DC-läge (batteriläge). Detta orsakar ökad energiförbrukning och batteriets livslängd förkortas.</label></p>",
+				"tooltip": "Funktionen fungerar med följande videospelare:<br>Windows Media Player<br>Chrome<br>Film & TV<br>PotPlayer<br>GOM Player<br>webbläsarbaserade spelare (till exempel Chrome)<br><br>Anvisningar om hur du aktiverar funktionen i PotPlayer och GOM Player finns i Användarhandbok som medföljer datorn.",
+				"note": {
+					"description": "Funktionen fungerar inte när",
+					"description1": "Batterisparläge är aktiverat.",
+					"description2": "processortemperaturen är för hög."
+				}
+			},
             "antiTheft": {
                 "heading": "Intelligent avkänning",
                 "title": "Smart rörelsevarning",

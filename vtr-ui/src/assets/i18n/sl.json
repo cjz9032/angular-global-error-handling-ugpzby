@@ -2047,16 +2047,16 @@
                 "tooltip": "Ta funkcija se ne uporablja za spletne videopredvajalnike. To funkcijo podpirajo priljubljeni lokalni videopredvajalniki, kot so Windows Media Player, 5KPlayer in drugi."
             },
             "superResolution": {
-                "heading": "Inteligentni mediji",
-                "title": "Povečanje ločljivosti videoposnetkov",
-                "desc": "<p><label>Ta funkcija omogoča prijetnejšo izkušnjo ogleda videoposnetkov z izboljšanjem ločljivosti videoposnetka. Zlasti uporabna je, če je ločljivost videoposnetka nizka.</label></p> <p style='margin-top:4px;'><label>Ta funkcija lahko vpliva na čas delovanja in temperaturo baterije ter poveča glasnost računalnika. Ne uporabljajte je pri baterijskem napajanju, sicer bo pospešila porabo energije in skrajšala čas delovanja baterije.</label></p>",
-                "tooltip": "Funkcija deluje samo v:<br>Windows Media player",
-                "note": {
-                    "description": "Ta funkcija ne deluje v naslednjih primerih:",
-                    "description1": "Računalnik ni priključen na omrežni vir napajanja.",
-                    "description2": "Omogočen je način za varčevanje z energijo baterije."
-                }
-            },
+				"heading": "Inteligentni mediji",
+				"title": "Povečanje ločljivosti videoposnetkov",
+				"desc": "<p><label>Ta funkcija s povečanjem ločljivosti videoposnetka izboljša izkušnjo predvajanja videoposnetkov. Posebej primerna je za videoposnetke v slabši ločljivosti.</label></p> <p style='margin-top:4px;'><label>Ta funkcija lahko vpliva na čas delovanja in temperaturo baterije ter poveča glasnost računalnika. Ne uporabljajte je pri napajanju iz baterije (način DC). sicer bo pospešila porabo energije in skrajšala čas delovanja baterije.</label></p>",
+				"tooltip": "Ta funkcija deluje samo s temi predvajalniki videoposnetkov:<br>Windows Media Player<br>Chrome<br>Filmi in oddaje<br>PotPlayer<br>GOM Player<br>vgrajenimi predvajalniki v spletnih brskalnikih (npr. Chrome)<br><br>Navodila za omogočanje te funkcije v predvajalnikih PotPlayer in GOM Player najdete v Vodiču za uporabnika, ki je priložen računalniku.",
+				"note": {
+					"description": "Ta funkcija ne deluje v naslednjih primerih:",
+					"description1": "Omogočen je način varčevanja energije baterije.",
+					"description2": "Temperatura CPE je previsoka."
+				}
+			},
             "antiTheft": {
                 "heading": "Pametno zaznavanje",
                 "title": "Pametno opozarjanje na premikanje",

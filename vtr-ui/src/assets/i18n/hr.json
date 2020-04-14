@@ -2047,16 +2047,16 @@
                 "tooltip": "Ta značajka nije primjenjiva na web-reproduktore videosadržaja. Popularni lokalni reproduktori videosadržaja, kao što su Windows Media Player, 5KPlayer itd., podržavaju tu značajku."
             },
             "superResolution": {
-                "heading": "Inteligentni mediji",
-                "title": "Povećanje razlučivosti videozapisa",
-                "desc": "<p><label>Ova značajka unapređuje iskustvo reprodukcije videozapisa poboljšanjem razlučivosti videozapisa. Posebno je korisna u slučaju niske razlučivosti videozapisa.</label></p> <p style='margin-top:4px;'><label>Ova funkcija može utjecati na trajanje baterije, temperaturu baterije i uzrokovati buku. Nemojte ga koristiti u DC načinu. U suprotnom će doći do ubrzanja potrošnje električne energije i skraćivanja vijeka trajanja baterije.</label></p>",
-                "tooltip": "Značajka radi samo na:<br>Windows Media player",
-                "note": {
-                    "description": "Ova značajka ne funkcionira kad:",
-                    "description1": "Računalo nije priključeno na izmjenično napajanje.",
-                    "description2": "Omogućen je način uštede baterije."
-                }
-            },
+				"heading": "Inteligentni mediji",
+				"title": "Povećanje razlučivosti videozapisa",
+				"desc": "<p><label>Ova značajka poboljšava iskustvo reprodukcije videa poboljšanjem razlučivosti videozapisa. Posebno djeluje kada je video loše razlučivosti.</label></p> <p style='margin-top:4px;'><label>Ova funkcija može utjecati na trajanje baterije, temperaturu baterije i uzrokovati buku. Nemojte ga koristiti u DC načinu rada (način rada baterije). U suprotnom će doći do ubrzanja potrošnje električne energije i skraćivanja vijeka trajanja baterije.</label></p>",
+				"tooltip": "Ova značajka radi samo za video reproduktore ispod video zapisa:<br>Windows Media Player<br>Chrome<br>filmovi i televizija<br>PotPlayer<br>GOM player<br>Reproduktori temeljeni na web preglednicima (npr. Chrome)<br><br>Za upute o tome kako omogućiti ovu funkciju na PotPlayeru i GOM player uređaju, pogledajte korisnički priručnik koji ste dobili s računalom.",
+				"note": {
+					"description": "Ova značajka ne funkcionira kad:",
+					"description1": "Omogućen je način rada štednja baterije.",
+					"description2": "je temperatura CPU-a previsoka."
+				}
+			},
             "antiTheft": {
                 "heading": "Pametni senzori",
                 "title": "Pametno upozorenje o kretanju",

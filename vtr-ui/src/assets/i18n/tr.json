@@ -2047,16 +2047,16 @@
                 "tooltip": "Bu özellik, Web üzerindeki video oynatıcılar için geçerli değildir. Windows Media Player ya da 5KPlayer gibi popüler yerel video oynatıcılar bu özelliği destekler."
             },
             "superResolution": {
-                "heading": "Akıllı Medya",
-                "title": "Video Çözünürlüğünü Yükseltme",
-                "desc": "<p><label>Bu özellik, videoyu çözünürlüğünü iyileştirerek video kayıttan yürütme deneyimini geliştirir. Özellikle video çözünürlüğü düşük olduğunda çalışır.</label></p> <p style='margin-top:4px;'><label>Bu işlev pil ömrünü, pil sıcaklığını etkileyebilir ve gürültüye neden olabilir. Lütfen DC kipinde kullanmayın. Aksi takdirde, güç tüketimini hızlandırır ve pil ömrünü kısaltır.</label></p>",
-                "tooltip": "Özellik yalnızca şunlarda çalışır:<br>Windows Media player",
-                "note": {
-                    "description": "Bu özellik şu durumlarda çalışmaz:",
-                    "description1": "Bilgisayar AC gücüne bağlı değil.",
-                    "description2": "Pil tasarrufu kipi etkin."
-                }
-            },
+				"heading": "Akıllı Medya",
+				"title": "Video Çözünürlüğünü Yükseltme",
+				"desc": "<p><label>Bu özellik, video çözünürlüğünü iyileştirerek video oynatma deneyimini geliştirir. Özellikle video düşük çözünürlükte olduğunda çalışır.</label></p> <p style='margin-top:4px;'><label>Bu işlev pil ömrünü, pil sıcaklığını etkileyebilir ve gürültüye neden olabilir. Lütfen DC kipinde (pil kipi) kullanmayın. Aksi takdirde, güç tüketimini hızlandırır ve pil ömrünü kısaltır.</label></p>",
+				"tooltip": "Bu özellik yalnızca aşağıdaki video oynatıcılar için geçerlidir:<br>Windows Media Player<br>Chrome<br>Filmler ve TV<br>PotPlayer<br>GOM Player<br>Web tarayıcı tabanlı oynatıcılar (ör. Chrome)<br><br>PotPlayer ve GOM Player'da bu işlevin etkinleştirilmesiyle ilgili talimatlar için bilgisayarınızla birlikte verilen Kullanma Kılavuzu'na bakın.",
+				"note": {
+					"description": "Bu özellik şu durumlarda çalışmaz:",
+					"description1": "Pil tasarrufu kipi etkin.",
+					"description2": "CPU sıcaklığı çok yüksek."
+				}
+			},
             "antiTheft": {
                 "heading": "Akıllı Algılama",
                 "title": "Akıllı Hareket Uyarısı",

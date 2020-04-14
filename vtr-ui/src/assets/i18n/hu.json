@@ -2047,16 +2047,16 @@
                 "tooltip": "Ez a funkció nem használható internetes videólejátszókhoz. A népszerű helyi videólejátszók (pl. a Windows Media Player vagy a 5KPlayer) támogatják ezt a funkciót."
             },
             "superResolution": {
-                "heading": "Intelligens média",
-                "title": "Videófelbontás megnövelése",
-                "desc": "<p><label>Ez a szolgáltatás fokozza a videó lejátszásának élményét azáltal, hogy javítja a videófelbontást. Különösen akkor működik, ha a videó rossz felbontású.</label></p> <p style='margin-top:4px;'><label>Ez a funkció befolyásolhatja az akkumulátor élettartamát és hőmérsékletét, továbbá zajt kelthet. Kérjük, ne használja DC üzemmódban. Ellenkező esetben felgyorsítja az energiafogyasztást és lerövidíti az akkumulátor élettartamát.</label></p>",
-                "tooltip": "Ez a funkció csak a következőkön működik:<br>Windows Media player",
-                "note": {
-                    "description": "A funkció az alábbi esetekben nem működik:",
-                    "description1": "A számítógép nem csatlakozik a hálózati tápellátáshoz.",
-                    "description2": "Az Akkumulátorkímélő kód engedélyezve van."
-                }
-            },
+				"heading": "Intelligens média",
+				"title": "Videófelbontás megnövelése",
+				"desc": "<p><label>Ez a funkció növeli a videók felbontását, és ezzel élvezetesebbé teszi a videók megtekintését. Különösen akkor hasznos, ha a videó felbontása alacsony.</label></p> <p style='margin-top:4px;'><label>Ez a funkció befolyásolhatja az akkumulátor élettartamát és hőmérsékletét, továbbá zajt kelthet. Ne használja DC üzemmódban (a rendszer akkumulátorról üzemel). Ellenkező esetben felgyorsítja az energiafogyasztást és lerövidíti az akkumulátor élettartamát.</label></p>",
+				"tooltip": "Ez a funkció kizárólag a következő videolejátszókkal működik:<br>Windows Media Player<br>Chrome<br>Filmek+TV<br>PotPlayer<br>GOM player<br>Böngészőalapú lejátszók (például Chrome)<br><br>A számítógéphez kapott Felhasználói kézikönyvből megtudhatja, hogyan lehet bekapcsolni a funkciót a PotPlayer és a GOM player esetében.",
+				"note": {
+					"description": "A funkció az alábbi esetekben nem működik:",
+					"description1": "Az Akkumulátorkímélő mód engedélyezve van.",
+					"description2": "A processzor hőmérséklete túl magas."
+				}
+			},
             "antiTheft": {
                 "heading": "Intelligens észlelés",
                 "title": "Intelligens mozgásérzékeléses riasztás",

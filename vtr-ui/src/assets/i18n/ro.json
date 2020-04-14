@@ -2047,16 +2047,16 @@
                 "tooltip": "Această funcție nu se aplică jucătorilor de jocuri video pe web. Cele mai populare playere video locale, cum ar fi Windows Media Player, 5KPlayer și altele, acceptă această funcție."
             },
             "superResolution": {
-                "heading": "Medii inteligente",
-                "title": "Mărirea rezoluţiei video",
-                "desc": "<p><label>Această caracteristică îmbunătăţeşte experienţa de redare a videoclipurilor, mărind rezoluţia video. Aceasta funcţionează mai ales atunci când videoclipul are o rezoluţie mică.</label></p> <p style='margin-top:4px;'><label>Această caracteristică ar putea afecta durata de viață a bateriei, temperatura bateriei și poate provoca zgomote. Nu o utilizați în modul de alimentare cu c.c. În caz contrar, va accelera consumul de energie și va scurta durata de viață a bateriei.</label></p>",
-                "tooltip": "Această caracteristică funcționează numai pe:<br>Windows Media player",
-                "note": {
-                    "description": "Această caracteristică nu funcţionează când:",
-                    "description1": "Computerul nu este conectat la o sursă de alimentare c.a.",
-                    "description2": "Modul de economisire a bateriei este activat."
-                }
-            },
+				"heading": "Medii inteligente",
+				"title": "Mărirea rezoluției video",
+				"desc": "<p><label>Această caracteristică îmbunătățește experiența de redare video prin îmbunătățirea rezoluției video. Funcționează mai ales atunci când videoclipul este la o rezoluție slabă.</label></p> <p style='margin-top:4px;'><label>Această caracteristică ar putea afecta durata de viață a bateriei, temperatura bateriei și poate provoca zgomote. Nu o utilizați în modul de alimentare c.c. (mod baterie). În caz contrar, va accelera consumul de energie și va scurta durata de viață a bateriei.</label></p>",
+				"tooltip": "Această caracteristică funcționează numai pentru playerele video de mai jos:<br>Windows Media Player<br>Chrome<br>Filme și televiziune<br>PotPlayer<br>GOM player<br>playere pe bază de browser web (de ex. Chrome)<br><br>Pentru instrucțiuni despre modul în care puteți activa această funcție pe PotPlayer și GOM player, consultați Ghidul utilizatorului furnizat împreună cu computerul.",
+				"note": {
+					"description": "Această caracteristică nu funcționează când:",
+					"description1": "Modul de economisire a bateriei este activat.",
+					"description2": "Temperatura procesorului este prea mare."
+				}
+			},
             "antiTheft": {
                 "heading": "Detectare inteligentă",
                 "title": "Alertă Smart Motion",

@@ -2047,16 +2047,16 @@
                 "tooltip": "Cette fonction n'est pas applicable aux lecteurs vidéo Web. Les lecteurs vidéo locaux populaires tels que Windows Media Player, 5KPlayer, etc. prennent en charge cette fonction."
             },
             "superResolution": {
-                "heading": "Support intelligent",
-                "title": "Mise à l'échelle de la résolution vidéo",
-                "desc": "<p><label>Cette fonction optimise l'expérience de la lecture vidéo en améliorant la résolution de la vidéo. Cela fonctionne particulièrement lorsque la vidéo est de faible résolution.</label></p> <p style='margin-top:4px;'><label>Cette fonction peut influencer la durée de vie de la batterie, sa température et produire des sons. Veillez à ne pas l'utiliser en mode courant continu. Sinon, cela accélérera la consommation d'énergie et réduira la durée de vie de la batterie.</label></p>",
-                "tooltip": "La fonction fonctionne uniquement sur :<br>Windows Media player",
-                "note": {
-                    "description": "Cette fonction est inopérante quand :",
-                    "description1": "L'ordinateur n'est pas branché sur une prise secteur.",
-                    "description2": "Le mode d'économie de la batterie est activé."
-                }
-            },
+				"heading": "Support intelligent",
+				"title": "Mise à l'échelle de la résolution vidéo",
+				"desc": "<p><label>Cette fonction améliore l'expérience de la lecture vidéo en améliorant la résolution de la vidéo. Cela est particulièrement efficace lorsque la vidéo est de faible résolution.</label></p> <p style='margin-top:4px;'><label>Cette fonction peut influencer la durée de vie de la batterie, sa température et produire des sons. Veillez à ne pas l'utiliser en mode courant continu (mode batterie). Sinon, cela accélérera la consommation d'énergie et réduira la durée de vie de la batterie.</label></p>",
+				"tooltip": "Cette fonction est réservée aux lecteurs vidéo ci-dessous :<br>Windows Media Player<br>Chrome<br>Films et séries TV<br>PotPlayer<br>GOM player<br>Lecteurs dans les navigateurs Web (par ex. Chrome)<br><br>Pour savoir comment activer cette fonction sur PotPlayer et GOM player, consultez le guide d'utilisation fourni avec votre ordinateur.",
+				"note": {
+					"description": "Cette fonction est inopérante quand :",
+					"description1": "Le mode d'économie de la batterie est activé.",
+					"description2": "La température de l'unité centrale est trop élevée."
+				}
+			},
             "antiTheft": {
                 "heading": "Capteur intelligent",
                 "title": "Alerte de mouvement intelligente",
