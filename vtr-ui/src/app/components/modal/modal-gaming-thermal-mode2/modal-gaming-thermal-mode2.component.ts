@@ -310,10 +310,14 @@ export class ModalGamingThermalMode2Component implements OnInit {
   openWaringModal(){
     this.closeThermalMode2Modal();
     let waringModalRef = this.modalService.open(ModalGamingPromptComponent, { backdrop:'static',windowClass: 'modal-prompt' });
-    waringModalRef.componentInstance.title="gaming.dashboard.device.warningPromptPopup.title";
-    waringModalRef.componentInstance.description = "gaming.dashboard.device.warningPromptPopup.description";
-    waringModalRef.componentInstance.comfirmButton="gaming.dashboard.device.warningPromptPopup.proceed";
-    waringModalRef.componentInstance.cancelButton="gaming.dashboard.device.legionEdge.driverPopup.link";
+    waringModalRef.componentInstance.info = {
+        title : "gaming.dashboard.device.warningPromptPopup.title",
+        description : "gaming.dashboard.device.warningPromptPopup.description",
+        comfirmButton : "gaming.dashboard.device.warningPromptPopup.proceed",
+        cancelButton : "gaming.dashboard.device.legionEdge.driverPopup.link",
+        comfirmButtonAriaLabel : "PROCEED",
+        cancelButtonAriaLabel : "CANCEL",
+    };
     waringModalRef.componentInstance.emitService.subscribe((emmitedValue) => {
       if(emmitedValue === 1) {
         this.openAdvancedOCModal()
