@@ -197,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "Upozorenje!",
                     "description": "Nepravilne postavke Overkloka mogu dovesti do nepovratnog oštećenja hardvera.",
-                    "proceed": "NASTAVI"
+                    "proceed": "NASTAVI",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },
@@ -3084,14 +3087,14 @@
         },
         "gaming": {
             "gamingDescription": "Verzija programa Vantage za igranje igara vam olakšava poboljšanje iskustva u igranju igara. Pored uobičajenih postavki, glavne karakteristike obuhvataju (dostupno na određenim sistemima):",
-			"gamingFeature1": "-Nadgledanje statusa računara",
-			"gamingFeature2": "-Režim učinka i overkloking",
-			"gamingFeature3": "-Osvetljenje",
-			"gamingFeature4": "-Pojačanje mreže",
-			"gamingFeature5": "-Automatsko zatvaranje",
-			"gamingOnly": "Igranje",
-			"gamingAndWork": "Igranje igara i posao",
-			"nonGaming": "Neigranje igara"
+            "gamingFeature1": "-Nadgledanje statusa računara",
+            "gamingFeature2": "-Režim učinka i overkloking",
+            "gamingFeature3": "-Osvetljenje",
+            "gamingFeature4": "-Pojačanje mreže",
+            "gamingFeature5": "-Automatsko zatvaranje",
+            "gamingOnly": "Igranje",
+            "gamingAndWork": "Igranje igara i posao",
+            "nonGaming": "Neigranje igara"
         }
     },
     "settings": {

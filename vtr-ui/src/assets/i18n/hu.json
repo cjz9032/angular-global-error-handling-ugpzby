@@ -197,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "Figyelmeztetés!",
                     "description": "A Túlpörgetés helytelen beállítása visszafordíthatatlan hardverkárosodást okozhat.",
-                    "proceed": "FOLYTATÁS"
+                    "proceed": "FOLYTATÁS",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },

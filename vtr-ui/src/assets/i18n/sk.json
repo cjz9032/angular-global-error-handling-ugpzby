@@ -197,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "Pozor!",
                     "description": "Nesprávne nastavenie pretaktovania môže viesť k nezvratnému poškodeniu hardvéru.",
-                    "proceed": "POKRAČOVAŤ"
+                    "proceed": "POKRAČOVAŤ",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },

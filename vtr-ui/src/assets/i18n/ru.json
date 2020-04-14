@@ -197,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "Внимание!",
                     "description": "Неправильные настройки разгона могут привести к необратимым повреждениям оборудования.",
-                    "proceed": "ПРОДОЛЖИТЬ"
+                    "proceed": "ПРОДОЛЖИТЬ",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },

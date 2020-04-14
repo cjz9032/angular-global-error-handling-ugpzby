@@ -197,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "Προειδοποίηση!",
                     "description": "Τυχόν ακατάλληλες ρυθμίσεις του στοιχείου Υπερχρονισμού μπορεί να οδηγήσουν σε μη αναστρέψιμη βλάβη υλικού.",
-                    "proceed": "ΣΥΝΕΧΕΙΑ"
+                    "proceed": "ΣΥΝΕΧΕΙΑ",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },

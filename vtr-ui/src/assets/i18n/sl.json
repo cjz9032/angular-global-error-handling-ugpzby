@@ -197,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "Opozorilo!",
                     "description": "Nepravilne nastavitve Zvišanja takta lahko povzročijo nepopravljive poškodbe strojne opreme.",
-                    "proceed": "NADALJUJ"
+                    "proceed": "NADALJUJ",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },

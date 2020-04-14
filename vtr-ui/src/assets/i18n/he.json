@@ -173,7 +173,10 @@
                 "warningPromptPopup": {
                     "title": "אזהרה!",
                     "description": "הגדרות לא נכונות של אוברקלוקינג עלולות לגרום נזק בלתי הפיך לחומרה.",
-                    "proceed": "המשך"
+                    "proceed": "המשך",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 },
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "הגדרת מצב תרמי",
