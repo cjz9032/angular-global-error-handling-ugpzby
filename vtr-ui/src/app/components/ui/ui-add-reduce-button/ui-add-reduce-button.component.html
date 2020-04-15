@@ -1,5 +1,5 @@
 <div class="vtr-ui-add-reduce-button">
-    <button (click)="reduceFn()" [ngClass]="{'disabled': value == minData}" [ngStyle]="{'width':btnWidth}" [tabindex]="value == minData ? -1 : 0" role="button">
+    <button (click)="reduceFn()" [ngClass]="{'disabled': value == minData}" [ngStyle]="{'width':btnWidth}" [tabindex]="value == minData ? -1 : 0" role="button" (focus)="hideColorPicker()">
         {{ariaLabelValue}} <span>-</span> reduce {{value}} {{unit}}
     </button>
     <p>
