@@ -1685,7 +1685,9 @@
                         },
                         "subSectionTwo": {
                             "title": "Revertir la función principal predeterminada",
-                            "description": "Cuando está activado, la función primaria predeterminada se cambiará de los valores de fábrica a los opuestos. Reinicie su equipo para que los cambios entren en efecto."
+                            "description": "Cuando está activado, la función primaria predeterminada se cambiará de los valores de fábrica a los opuestos. Reinicie su equipo para que los cambios entren en efecto.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "Cómo usar las combinaciones de teclas Fn",
@@ -2050,16 +2052,16 @@
                 "tooltip": "Esta característica no se aplica a reproductores de video Web. Los reproductores de video locales más populares, como Windows Media Player, 5KPlayer, etc., admiten esta característica."
             },
             "superResolution": {
-				"heading": "Medios inteligentes",
-				"title": "Escalado de resolución de video",
-				"desc": "<p><label>Esta característica mejora la experiencia de la reproducción de video al mejorar la resolución del video. Funciona especialmente cuando el video tiene una mala resolución.</label></p> <p style='margin-top:4px;'><label>Esta función puede afectar a la duración de la batería, a la temperatura de la batería y causar ruidos. No lo utilice en la modalidad de CC (modalidad de batería). De lo contrario, se acelerará el consumo de energía y se acortará la vida de la batería.</label></p>",
-				"tooltip": "Esta característica solo funciona para los siguientes reproductores de video:<br>Windows Media Player<br>Chrome<br>Películas y TV<br>PotPlayer<br>GOM player<br>Reproductores basados en web (por ej. Chrome)<br><br>Para obtener instrucciones sobre cómo habilitar esta función en PotPlayer y GOM player, consulte la Guía del usuario que se incluye con su equipo.",
-				"note": {
-					"description": "Esta característica no funciona cuando;",
-					"description1": "El modo de ahorro de batería está habilitado.",
-					"description2": "La temperatura de la CPU es demasiado alta."
-				}
-			},
+                "heading": "Medios inteligentes",
+                "title": "Escalado de resolución de video",
+                "desc": "<p><label>Esta característica mejora la experiencia de la reproducción de video al mejorar la resolución del video. Funciona especialmente cuando el video tiene una mala resolución.</label></p> <p style='margin-top:4px;'><label>Esta función puede afectar a la duración de la batería, a la temperatura de la batería y causar ruidos. No lo utilice en la modalidad de CC (modalidad de batería). De lo contrario, se acelerará el consumo de energía y se acortará la vida de la batería.</label></p>",
+                "tooltip": "Esta característica solo funciona para los siguientes reproductores de video:<br>Windows Media Player<br>Chrome<br>Películas y TV<br>PotPlayer<br>GOM player<br>Reproductores basados en web (por ej. Chrome)<br><br>Para obtener instrucciones sobre cómo habilitar esta función en PotPlayer y GOM player, consulte la Guía del usuario que se incluye con su equipo.",
+                "note": {
+                    "description": "Esta característica no funciona cuando;",
+                    "description1": "El modo de ahorro de batería está habilitado.",
+                    "description2": "La temperatura de la CPU es demasiado alta."
+                }
+            },
             "antiTheft": {
                 "heading": "Detección inteligente",
                 "title": "Alerta de movimiento inteligente",
@@ -2068,44 +2070,44 @@
                     "description": "Una vez inicie sesión satisfactoriamente en el sistema, esta característica se desactivará automáticamente. Debe habilitarla de nuevo para utilizarla."
                 },
                 "alarm": {
-                    "title":" LA ALARMA DURARÁ",
-                    "option1":"10 segundos",
-                    "option2":"20 segundos",
-                    "option3":"30 segundos",
-                    "option4":"1 minuto",
-                    "option5":"Nunca se detenga"
+                    "title": " LA ALARMA DURARÁ",
+                    "option1": "10 segundos",
+                    "option2": "20 segundos",
+                    "option3": "30 segundos",
+                    "option4": "1 minuto",
+                    "option5": "Nunca se detenga"
                 },
                 "allowCamera": {
-                    "title":"TOMAR FOTOGRAFÍAS",
-                    "describe":"Al habilitar esta característica, la cámara toma las fotos automáticamente al detectar cualquier movimiento si la pantalla está bloqueada. Estos datos se procesan localmente en su dispositivo. Lenovo no accede a ellos ni los utiliza.",
-                    "checkBoxText":"Habilite esta característica"
+                    "title": "TOMAR FOTOGRAFÍAS",
+                    "describe": "Al habilitar esta característica, la cámara toma las fotos automáticamente al detectar cualquier movimiento si la pantalla está bloqueada. Estos datos se procesan localmente en su dispositivo. Lenovo no accede a ellos ni los utiliza.",
+                    "checkBoxText": "Habilite esta característica"
                 },
                 "cameraPrivacy": {
-                     "describe":"El modo de Privacidad de cámara de Lenovo Vantage está activado. La función de la casilla de verificación no funcionará.",
-                     "linkText":"Vaya al modo Privacidad de la cámara para desactivarlo"
+                    "describe": "El modo de Privacidad de cámara de Lenovo Vantage está activado. La función de la casilla de verificación no funcionará.",
+                    "linkText": "Vaya al modo Privacidad de la cámara para desactivarlo"
                 },
                 "authorizedAccess": {
-                    "describe":"Lenovo Vantage no tiene acceso a la cámara. La función de la casilla de verificación no funcionará.",
-                    "linkText":"Vaya a la configuración de Windows para dar acceso"
+                    "describe": "Lenovo Vantage no tiene acceso a la cámara. La función de la casilla de verificación no funcionará.",
+                    "linkText": "Vaya a la configuración de Windows para dar acceso"
                 },
                 "photo": {
-                    "title":"EL NÚMERO DE FOTOS TOMADAS DURANTE EL MOVIMIENTO",
+                    "title": "EL NÚMERO DE FOTOS TOMADAS DURANTE EL MOVIMIENTO",
                     "tooltip": "La cámara del sistema se activa automáticamente para tomar fotografías cuando se detectan movimientos. Se toman fotografías cada 2 segundos y se guardan en el almacenamiento local.",
-                    "option1":"5",
-                    "option2":"10",
-                    "option3":"15",
-                    "option4":"20",
-                    "option5":"25",
-                    "option6":"30"
+                    "option1": "5",
+                    "option2": "10",
+                    "option3": "15",
+                    "option4": "20",
+                    "option5": "25",
+                    "option6": "30"
                 },
                 "showPhoto": {
-                    "title":"LAS FOTOGRAFÍAS:",
-                    "link":"Ver fotografías"
-				},
-				"fileAuthorizationTips": {
-					"content":"Lenovo Vantage no tiene acceso al sistema de archivos.",
-					"link":"Vaya a la configuración de Windows para dar acceso"
-				}
+                    "title": "LAS FOTOGRAFÍAS:",
+                    "link": "Ver fotografías"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Lenovo Vantage no tiene acceso al sistema de archivos.",
+                    "link": "Vaya a la configuración de Windows para dar acceso"
+                }
             },
             "voice": {
                 "title": "Voz",
@@ -2705,7 +2707,7 @@
         },
         "question1": {
             "title": "Cree copias de seguridad y restaure sus archivos",
-            "description": "<div>    <div class='faqInFs4Fb'>        Cree copias de seguridad y restaure sus archivos    </div>    <hr />    <div class='faqInMb7'>        Siempre es bueno tener una copia de seguridad. Guarde copias de los archivos en otra unidad en caso de que algo le suceda a los originales.    </div>    <div class='faqInFs3Fb'>        Configure la copia de seguridad    </div>    <hr />    <div class='mb-5'>        Seleccione el botón <span class='faqInFb'>Inicio</span>, seleccione <span class='faqInFb'>Configuración</span> > <span class='faqInFb'>Actualización y seguridad</span> > <span class='faqInFb'>Copia de seguridad</span> > <span class='faqInFb'>agregar</span> una unidad y luego seleccione una unidad externa o una ubicación de red para sus copias de seguridad.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Todo listo. Cada una hora, realizaremos una copia de seguridad de todos los datos de la carpeta de usuario (C:\\\\Users\\\\username). Para cambiar de cuáles archivos se realizará una copia de seguridad o la frecuencia con la que se realizarán, vaya a <span class='faqInFb'>Más opciones</span>.    </div>    <div class='faqInFs3Fb'>        Restaure sus archivos    </div>    <div class='mb-5'>        Si le falta un archivo o carpeta importante, aquí le mostramos cómo recuperarlo:    </div>    <div>        <div class='mb-3'>1. Escriba <span class='faqInFb'>Restaurar archivos</span> en el recuadro de búsqueda de la barra de tareas y seleccione <span class='faqInFb'> Restaurar los archivos con el historial de archivos</span>.</div>        <div class='mb-3'>2. Busque el archivo que necesita y luego utilice las flechas para ver todas sus versiones</div>        <div class='mb-3'>3. Cuando encuentre la versión que desea, seleccione <span class='faqInFb'>Restaurar</span> para guardarla en su ubicación original. Para guardarla en un lugar diferente, mantenga presionado (o presione con el botón derecho) <span class='faqInFb'>Restaurar</span>, seleccione <span class='faqInFb'>Restaurar en</span> y luego elija una nueva ubicación.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Cree copias de seguridad y restaure sus archivos    </div>    <hr />    <div class='faqInMb7'>        Siempre es bueno tener una copia de seguridad. Guarde copias de los archivos en otra unidad en caso de que algo le suceda a los originales.    </div>    <div class='faqInFs3Fb'>        Configure la copia de seguridad    </div>    <hr />    <div class='mb-5'>        Seleccione el botón <span class='faqInFb'>Inicio</span>, seleccione <span class='faqInFb'>Configuración</span> > <span class='faqInFb'>Actualización y seguridad</span> > <span class='faqInFb'>Copia de seguridad</span> > <span class='faqInFb'>agregar</span> una unidad y luego seleccione una unidad externa o una ubicación de red para sus copias de seguridad.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Todo listo. Cada una hora, realizaremos una copia de seguridad de todos los datos de la carpeta de usuario (C:\\Users\\su nombre de usuario). Para cambiar de cuáles archivos se realizará una copia de seguridad o la frecuencia con la que se realizarán, vaya a <span class='faqInFb'>Más opciones</span>.    </div>    <div class='faqInFs3Fb'>        Restaure sus archivos    </div>    <div class='mb-5'>        Si le falta un archivo o carpeta importante, aquí le mostramos cómo recuperarlo:    </div>    <div>        <div class='mb-3'>1. Escriba <span class='faqInFb'>Restaurar archivos</span> en el recuadro de búsqueda de la barra de tareas y seleccione <span class='faqInFb'> Restaurar los archivos con el historial de archivos</span>.</div>        <div class='mb-3'>2. Busque el archivo que necesita y luego utilice las flechas para ver todas sus versiones</div>        <div class='mb-3'>3. Cuando encuentre la versión que desea, seleccione <span class='faqInFb'>Restaurar</span> para guardarla en su ubicación original. Para guardarla en un lugar diferente, mantenga presionado (o presione con el botón derecho) <span class='faqInFb'>Restaurar</span>, seleccione <span class='faqInFb'>Restaurar en</span> y luego elija una nueva ubicación.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -3118,7 +3120,8 @@
         "settingsNotes": "Vuelva a iniciar esta aplicación para asegurarse de que todos los cambios entren en efecto.",
         "betaSettingTitle": "Programa Beta",
         "betaProgram": "Programa Beta",
-        "betaSettingDescription": "Pruebe las más recientes características en las que estamos trabajando."
+        "betaSettingDescription": "Pruebe las más recientes características en las que estamos trabajando.",
+        "betaSettingNewDescription": "Nos alegramos de invitarle al programa Beta de Smart Performance. Ayuda a mejorar el rendimiento del PC al:<br/><ul class='pl-4'><li>Diagnóstico de forma proactiva de los errores y optimización de los valores.</li><li>Mejore el rendimiento de Internet mediante la Optimización de red y del explorador.</li><li>Realización del análisis y corrección rápidos sin utilizar el programa antivirus existente.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Cancelar",
@@ -4043,8 +4046,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "Flecha izquierda",
+            "rightArrow": "Flecha derecha"
         }
     },
     "dcc": {

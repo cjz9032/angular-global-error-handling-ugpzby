@@ -1685,7 +1685,9 @@
                         },
                         "subSectionTwo": {
                             "title": "ביטול הפונקציה הראשונית המוגדרת כברירת מחדל",
-                            "description": "כאשר היא מופעלת, פונקציית ברירת המחדל הראשית תשתנה מהגדרות היצרן לאפשרות האחרת. יש להפעיל מחדש את המחשב כדי ששינויים אלה ייכנסו לתוקף."
+                            "description": "כאשר היא מופעלת, פונקציית ברירת המחדל הראשית תשתנה מהגדרות היצרן לאפשרות האחרת. יש להפעיל מחדש את המחשב כדי ששינויים אלה ייכנסו לתוקף.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "איך להשתמש בשילוב המקשים עם מקש Fn",
@@ -2050,16 +2052,16 @@
                 "tooltip": "תכונה זו לא ישימה עבור נגני וידאו באינטרנט. נגני וידאו פופולריים, כמו Windows Media Player‏, 5KPlayer וכן הלאה תומכים בתכונה זו."
             },
             "superResolution": {
-				"heading": "מדיה חכמה",
-				"title": "הגדלת רזולוציית הווידאו",
-				"desc": "<p><label>תכונה זו משפרת את חוויית הפעלת הווידאו על ידי שיפור רזולוציית הווידאו. היא פועלת במיוחד כאשר הסרטון ברזולוציה נמוכה.</label></p> <p style='margin-top:4px;'><label>פונקציה זו עלולה להשפיע על חיי הסוללה, על טמפרטורת הסוללה ועלולה לגרום לרעש. אין להשתמש בה במצב DC (מצב סוללה). אחרת, היא תאיץ את צריכת החשמל ותקצר את חיי הסוללה.</label></p>",
-				"tooltip": "תכונה זו פועלת רק עבור נגני הווידאו הבאים:<br>Windows Media Player<br>Chrome<br>סרטים וטלוויזיה<br>PotPlayer<br>GOM player<br>נגנים מבוססי אינטרנט (כמו Chrome)<br><br>להנחיות כיצד להפעיל את התכונה ב-PotPlayer וב- GOM Player, ניתן להיעזר במדריך למשתמש שמגיע עם המחשב.",
-				"note": {
-					"description": "התכונה אינה פועלת כאשר:",
-					"description1": "מצב חיסכון בסוללה מופעל.",
-					"description2": "טמפרטורת המעבד גבוהה מדי."
-				}
-			},
+                "heading": "מדיה חכמה",
+                "title": "הגדלת רזולוציית הווידאו",
+                "desc": "<p><label>תכונה זו משפרת את חוויית הפעלת הווידאו על ידי שיפור רזולוציית הווידאו. היא פועלת במיוחד כאשר הסרטון ברזולוציה נמוכה.</label></p> <p style='margin-top:4px;'><label>פונקציה זו עלולה להשפיע על חיי הסוללה, על טמפרטורת הסוללה ועלולה לגרום לרעש. אין להשתמש בה במצב DC (מצב סוללה). אחרת, היא תאיץ את צריכת החשמל ותקצר את חיי הסוללה.</label></p>",
+                "tooltip": "תכונה זו פועלת רק עבור נגני הווידאו הבאים:<br>Windows Media Player<br>Chrome<br>סרטים וטלוויזיה<br>PotPlayer<br>GOM player<br>נגנים מבוססי אינטרנט (כמו Chrome)<br><br>להנחיות כיצד להפעיל את התכונה ב-PotPlayer וב- GOM Player, ניתן להיעזר במדריך למשתמש שמגיע עם המחשב.",
+                "note": {
+                    "description": "התכונה אינה פועלת כאשר:",
+                    "description1": "מצב חיסכון בסוללה מופעל.",
+                    "description2": "טמפרטורת המעבד גבוהה מדי."
+                }
+            },
             "antiTheft": {
                 "heading": "חישה חכמה",
                 "title": "התראת Smart Motion",
@@ -2068,44 +2070,44 @@
                     "description": "לאחר כניסה למערכת בהצלחה, תכונה זו תושבת אוטומטית. צריך להפעיל אותה שוב כדי להשתמש בה."
                 },
                 "alarm": {
-                    "title":" האזעקה תימשך",
-                    "option1":"10 שניות",
-                    "option2":"20 שניות",
-                    "option3":"30 שניות",
-                    "option4":"דקה אחת",
-                    "option5":"לא תפסיק אף פעם"
+                    "title": " האזעקה תימשך",
+                    "option1": "10 שניות",
+                    "option2": "20 שניות",
+                    "option3": "30 שניות",
+                    "option4": "דקה אחת",
+                    "option5": "לא תפסיק אף פעם"
                 },
                 "allowCamera": {
-                    "title":"צילום תמונות",
-                    "describe":"כאשר תכונה זו מופעלת, המצלמה מצלמת תמונות באופן אוטומטי כאשר היא מגלה תנועה כלשהי אם המסך נעול. נתונים אלה מעובדים באופן מקומי במכשיר שלכם. Lenovo אינה ניגשת אליו ואינה משתמשת בו.",
-                    "checkBoxText":"להפעלת התכונה"
+                    "title": "צילום תמונות",
+                    "describe": "כאשר תכונה זו מופעלת, המצלמה מצלמת תמונות באופן אוטומטי כאשר היא מגלה תנועה כלשהי אם המסך נעול. נתונים אלה מעובדים באופן מקומי במכשיר שלכם. Lenovo אינה ניגשת אליו ואינה משתמשת בו.",
+                    "checkBoxText": "להפעלת התכונה"
                 },
                 "cameraPrivacy": {
-                     "describe":"מצב הפרטיות של המצלמה של Lenovo Vantage פועל. הפונקציה של תיבת הסימון לא תעבוד.",
-                     "linkText":"עברו אל מצב הפרטיות של המצלמה כדי לכבות אותה"
+                    "describe": "מצב הפרטיות של המצלמה של Lenovo Vantage פועל. הפונקציה של תיבת הסימון לא תעבוד.",
+                    "linkText": "עברו אל מצב הפרטיות של המצלמה כדי לכבות אותה"
                 },
                 "authorizedAccess": {
-                    "describe":"ל-Lenovo Vantage אין גישה למצלמה. הפונקציה של תיבת הסימון לא תעבוד.",
-                    "linkText":"עברו להגדרות Windows כדי לאפשר גישה"
+                    "describe": "ל-Lenovo Vantage אין גישה למצלמה. הפונקציה של תיבת הסימון לא תעבוד.",
+                    "linkText": "עברו להגדרות Windows כדי לאפשר גישה"
                 },
                 "photo": {
-                    "title":"מספר התמונות שצולמו במהלך התנועה",
+                    "title": "מספר התמונות שצולמו במהלך התנועה",
                     "tooltip": "המצלמה במחשב מופעלת לצילום באופן אוטומטי כאשר מזוהות תנועות. תמונות מצולמות כל 2 שניות והן נשמרות באחסון המקומי.",
-                    "option1":"5",
-                    "option2":"10",
-                    "option3":"15",
-                    "option4":"20",
-                    "option5":"25",
-                    "option6":"30"
+                    "option1": "5",
+                    "option2": "10",
+                    "option3": "15",
+                    "option4": "20",
+                    "option5": "25",
+                    "option6": "30"
                 },
                 "showPhoto": {
-                    "title":"התמונות:",
-                    "link":"צפו בתמונות"
-				},
-				"fileAuthorizationTips": {
-					"content":"ל-Lenovo Vantage אין גישה למערכת הקבצים.",
-					"link":"עברו להגדרות Windows כדי לאפשר גישה"
-				}
+                    "title": "התמונות:",
+                    "link": "צפו בתמונות"
+                },
+                "fileAuthorizationTips": {
+                    "content": "ל-Lenovo Vantage אין גישה למערכת הקבצים.",
+                    "link": "עברו להגדרות Windows כדי לאפשר גישה"
+                }
             },
             "voice": {
                 "title": "קול",
@@ -2705,7 +2707,7 @@
         },
         "question1": {
             "title": "גיבוי ושחזור הקבצים",
-            "description": "<div>    <div class='faqInFs4Fb'>        גיבוי ושחזור הקבצים    </div>    <hr />    <div class='faqInMb7'>        זה תמיד טוב שיש גיבוי.שמרו עותקים של הקבצים שלכם בכונן אחר למקרה שמשהו קורה למקור.    </div>    <div class='faqInFs3Fb'>        הגדרת הגיבוי    </div>    <hr />    <div class='mb-5'>        בחרו בלחצן <span class='faqInFb'>התחל</span>, בחרו <span class='faqInFb'>הגדרות</span> > <span class='faqInFb'>עדכון ואבטחה</span> > <span class='faqInFb'>גיבוי</span> > <span class='faqInFb'>הוסף כונן</span>, ולאחר מכן בחרו כונן חיצוני או מיקום ברשת עבור הגיבויים שלכם.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg'  />    </div>    <div class='mb-5'>        הכל מוכן.כל שעה נבצע גיבוי של כל מה שנמצא בתיקיית המשתמש שלכם (C:\\\\Users\\\\username).כדי לשנות את הקבצים לגיבוי או את תדירות הגיבויים, עברו אל <span class='faqInFb'>אפשרויות נוספות</span>.    </div>    <div class='faqInFs3Fb'>        שחזור הקבצים    </div>    <div class='mb-5'>        אם חסרים לכם תיקייה או קובץ חשובים, כך תוכלו להחזיר אותם:    </div>    <div>        <div class='mb-3'>1.הקלידו <span class='faqInFb'>שחזור קבצים</span> בתיבת החיפוש בשורת המשימות, ובחרו באפשרות <span class='faqInFb'> שחזר את הקבצים שלך באמצעות היסטוריית קבצים</span>.</div>        <div class='mb-3'>2.חפשו את הקובץ הנדרש, ולאחר מכן השתמשו בחצים כדי לצפות בכל הגרסאות שלו</div>        <div class='mb-3'>3.לאחר איתור הגרסה הרצויה, בחרו <span class='faqInFb'>שחזור</span> כדי לשמור אותה במיקום המקורי שלה.כדי לשמור אותה במקום שונה, לחצו ממושכות (או לחצו באמצעות לחצן העכבר הימני) על <span class='faqInFb'>שחזור</span>, בחרו <span class='faqInFb'>שחזור אל</span>, ולאחר מכן בחרו מיקום חדש.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        גיבוי ושחזור הקבצים    </div>    <hr />    <div class='faqInMb7'>        זה תמיד טוב שיש גיבוי.שמרו עותקים של הקבצים שלכם בכונן אחר למקרה שמשהו קורה למקור.    </div>    <div class='faqInFs3Fb'>        הגדרת הגיבוי    </div>    <hr />    <div class='mb-5'>        בחרו בלחצן <span class='faqInFb'>התחל</span>, בחרו <span class='faqInFb'>הגדרות</span> > <span class='faqInFb'>עדכון ואבטחה</span> > <span class='faqInFb'>גיבוי</span> > <span class='faqInFb'>הוסף כונן</span>, ולאחר מכן בחרו כונן חיצוני או מיקום ברשת עבור הגיבויים שלכם.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg'  />    </div>    <div class='mb-5'>        הכל מוכן.כל שעה נבצע גיבוי של כל מה שנמצא בתיקיית המשתמש שלכם <span>(C:\\Users\\שם המשתמש שלכם)<span>.כדי לשנות את הקבצים לגיבוי או את תדירות הגיבויים, עברו אל <span class='faqInFb'>אפשרויות נוספות</span>.    </div>    <div class='faqInFs3Fb'>        שחזור הקבצים    </div>    <div class='mb-5'>        אם חסרים לכם תיקייה או קובץ חשובים, כך תוכלו להחזיר אותם:    </div>    <div>        <div class='mb-3'>1.הקלידו <span class='faqInFb'>שחזור קבצים</span> בתיבת החיפוש בשורת המשימות, ובחרו באפשרות <span class='faqInFb'> שחזר את הקבצים שלך באמצעות היסטוריית קבצים</span>.</div>        <div class='mb-3'>2.חפשו את הקובץ הנדרש, ולאחר מכן השתמשו בחצים כדי לצפות בכל הגרסאות שלו</div>        <div class='mb-3'>3.לאחר איתור הגרסה הרצויה, בחרו <span class='faqInFb'>שחזור</span> כדי לשמור אותה במיקום המקורי שלה.כדי לשמור אותה במקום שונה, לחצו ממושכות (או לחצו באמצעות לחצן העכבר הימני) על <span class='faqInFb'>שחזור</span>, בחרו <span class='faqInFb'>שחזור אל</span>, ולאחר מכן בחרו מיקום חדש.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -3118,7 +3120,8 @@
         "settingsNotes": "הפעל מחדש את היישום כדי לוודא שכל השינויים נכנסים לתוקף.",
         "betaSettingTitle": "תוכנית בטא",
         "betaProgram": "תוכנית בטא",
-        "betaSettingDescription": "נסו את התכונות האחרונות שאנו עובדים עליהן."
+        "betaSettingDescription": "נסו את התכונות האחרונות שאנו עובדים עליהן.",
+        "betaSettingNewDescription": "אנחנו שמחים להזמין אתכם לתוכנית בטה של ביצועים חכמים. היא עוזרת לשפר את ביצועי המחשב על ידי:<br/><ul class='pl-4'><li>אבחון באגים באופן יזום ואופטימיזציה של הגדרות.</li><li>שיפור ביצועי האינטרנט על ידי אופטימיזציה של הרשת ושל הדפדפן.</li><li>ביצוע סריקה ותיקון מהירים מבלי להשתמש בתוכנית האנטי-וירוס הקיימת.</li></ul>"
     },
     "modernPreload": {
         "cancel": "ביטול",
@@ -4043,8 +4046,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "חץ שמאלה",
+            "rightArrow": "חץ ימינה"
         }
     },
     "dcc": {

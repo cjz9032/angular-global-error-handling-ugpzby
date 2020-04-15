@@ -27,7 +27,8 @@
 								<div class="time-headings">
 									<p class=""
 										id="smartStandby-{{linkId}}-hours"
-										attr.aria-label="smartStandby-{{linkId}}-hours">
+										role="text"
+										attr.aria-label="hours">
 										{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit1' | translate | uppercase }}
 									</p>
 									<span class="" role="text" 
@@ -36,7 +37,8 @@
 								<div class="time-headings">
 									<p class=""
 										id="smartStandby-{{linkId}}-minutes"
-										attr.aria-label="smartStandby-{{linkId}}-minutes">
+										role="text"
+										attr.aria-label="minutes">
 										{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit2' | translate | uppercase }}
 									</p>
 									<span class="" 
@@ -47,7 +49,7 @@
 									<p class=""
 										id="smartStandby-{{linkId}}-amPm"
 										role="text"
-										attr.aria-label="smartStandby-{{linkId}}-amPm">
+										attr.aria-label="amPm">
 										{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit3' | translate }}
 									</p>
 									<span class="" 
@@ -57,7 +59,8 @@
 
 								<div class="toggle-icon align-right"
 									id="smartStandby-{{linkId}}-dropDown-btn"
-									attr.aria-label="smartStandby-{{linkId}}-dropDown-btn">
+									role="button"
+									attr.aria-label="{{linkId}}-dropDown">
 									<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
 								</div>
 							</div>

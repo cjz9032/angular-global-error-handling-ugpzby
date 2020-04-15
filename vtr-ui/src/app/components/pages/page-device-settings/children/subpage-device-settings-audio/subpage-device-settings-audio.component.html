@@ -145,12 +145,13 @@
 										<div class="col-11">
 											<vtr-ui-custom-slider
 												[minLegend]="'device.deviceSettings.audio.microphone.volume.options.silent' | translate"
-												[min]=0
 												[maxLegend]="'device.deviceSettings.audio.microphone.volume.options.loud' | translate"
+												[min]=0
 												[max]=100
-												(valueChanged)="setVolume($event)"
-												[isDisabled]="!microphoneProperties.permission"
+												[step]=1
 												[value]="microphoneProperties.volume"
+												(valueChanged)="onMicrophoneVolumeChange($event)"
+												[isDisabled]="!microphoneProperties.permission"
 												[sliderId]="'audio-microphone-volume'">
 											</vtr-ui-custom-slider>
 										</div>

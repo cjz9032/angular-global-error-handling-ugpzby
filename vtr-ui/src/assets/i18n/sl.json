@@ -1685,7 +1685,9 @@
                         },
                         "subSectionTwo": {
                             "title": "Preklop privzete glavne funkcije",
-                            "description": "Ko je ta možnost vklopljena, se delovanje privzete glavne funkcije preklopi iz tovarniško nastavljene možnosti v nasprotno. Spremembe bodo začele veljati po vnovičnem zagonu računalnika."
+                            "description": "Ko je ta možnost vklopljena, se delovanje privzete glavne funkcije preklopi iz tovarniško nastavljene možnosti v nasprotno. Spremembe bodo začele veljati po vnovičnem zagonu računalnika.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "Uporaba kombinacij tipk s tipko Fn",
@@ -2050,16 +2052,16 @@
                 "tooltip": "Ta funkcija se ne uporablja za spletne videopredvajalnike. To funkcijo podpirajo priljubljeni lokalni videopredvajalniki, kot so Windows Media Player, 5KPlayer in drugi."
             },
             "superResolution": {
-				"heading": "Inteligentni mediji",
-				"title": "Povečanje ločljivosti videoposnetkov",
-				"desc": "<p><label>Ta funkcija s povečanjem ločljivosti videoposnetka izboljša izkušnjo predvajanja videoposnetkov. Posebej primerna je za videoposnetke v slabši ločljivosti.</label></p> <p style='margin-top:4px;'><label>Ta funkcija lahko vpliva na čas delovanja in temperaturo baterije ter poveča glasnost računalnika. Ne uporabljajte je pri napajanju iz baterije (način DC). sicer bo pospešila porabo energije in skrajšala čas delovanja baterije.</label></p>",
-				"tooltip": "Ta funkcija deluje samo s temi predvajalniki videoposnetkov:<br>Windows Media Player<br>Chrome<br>Filmi in oddaje<br>PotPlayer<br>GOM Player<br>vgrajenimi predvajalniki v spletnih brskalnikih (npr. Chrome)<br><br>Navodila za omogočanje te funkcije v predvajalnikih PotPlayer in GOM Player najdete v Vodiču za uporabnika, ki je priložen računalniku.",
-				"note": {
-					"description": "Ta funkcija ne deluje v naslednjih primerih:",
-					"description1": "Omogočen je način varčevanja energije baterije.",
-					"description2": "Temperatura CPE je previsoka."
-				}
-			},
+                "heading": "Inteligentni mediji",
+                "title": "Povečanje ločljivosti videoposnetkov",
+                "desc": "<p><label>Ta funkcija s povečanjem ločljivosti videoposnetka izboljša izkušnjo predvajanja videoposnetkov. Posebej primerna je za videoposnetke v slabši ločljivosti.</label></p> <p style='margin-top:4px;'><label>Ta funkcija lahko vpliva na čas delovanja in temperaturo baterije ter poveča glasnost računalnika. Ne uporabljajte je pri napajanju iz baterije (način DC). sicer bo pospešila porabo energije in skrajšala čas delovanja baterije.</label></p>",
+                "tooltip": "Ta funkcija deluje samo s temi predvajalniki videoposnetkov:<br>Windows Media Player<br>Chrome<br>Filmi in oddaje<br>PotPlayer<br>GOM Player<br>vgrajenimi predvajalniki v spletnih brskalnikih (npr. Chrome)<br><br>Navodila za omogočanje te funkcije v predvajalnikih PotPlayer in GOM Player najdete v Vodiču za uporabnika, ki je priložen računalniku.",
+                "note": {
+                    "description": "Ta funkcija ne deluje v naslednjih primerih:",
+                    "description1": "Omogočen je način varčevanja energije baterije.",
+                    "description2": "Temperatura CPE je previsoka."
+                }
+            },
             "antiTheft": {
                 "heading": "Pametno zaznavanje",
                 "title": "Pametno opozarjanje na premikanje",
@@ -2068,44 +2070,44 @@
                     "description": "Po uspešni prijavi v sistem se ta funkcija samodejno izklopi. Pred vnovično uporabo jo boste morali znova omogočiti."
                 },
                 "alarm": {
-                    "title":" OPOZARJANJE BO TRAJALO",
-                    "option1":"10 s",
-                    "option2":"20 s",
-                    "option3":"30 s",
-                    "option4":"1 minuto",
-                    "option5":"Brez prestanka"
+                    "title": " OPOZARJANJE BO TRAJALO",
+                    "option1": "10 s",
+                    "option2": "20 s",
+                    "option3": "30 s",
+                    "option4": "1 minuto",
+                    "option5": "Brez prestanka"
                 },
                 "allowCamera": {
-                    "title":"SNEMANJE FOTOGRAFIJ",
-                    "describe":"Ko je ta funkcija omogočena, kamera začne samodejno snemati fotografije, kadar pri zaklenjenem zaslonu zazna kakršno koli premikanje. Ti podatki so obdelani lokalno v vaši napravi. Lenovo do njih ne dostopa in jih ne uporablja.",
-                    "checkBoxText":"Omogoči to funkcijo"
+                    "title": "SNEMANJE FOTOGRAFIJ",
+                    "describe": "Ko je ta funkcija omogočena, kamera začne samodejno snemati fotografije, kadar pri zaklenjenem zaslonu zazna kakršno koli premikanje. Ti podatki so obdelani lokalno v vaši napravi. Lenovo do njih ne dostopa in jih ne uporablja.",
+                    "checkBoxText": "Omogoči to funkcijo"
                 },
                 "cameraPrivacy": {
-                     "describe":"Zasebnostni način za kamero v programu Lenovo Vantage je vklopljen. Funkcija potrditvenega polja ne bo delovala.",
-                     "linkText":"Odprite zasebnostni način za kamero, da ga izklopite"
+                    "describe": "Zasebnostni način za kamero v programu Lenovo Vantage je vklopljen. Funkcija potrditvenega polja ne bo delovala.",
+                    "linkText": "Odprite zasebnostni način za kamero, da ga izklopite"
                 },
                 "authorizedAccess": {
-                    "describe":"Lenovo Vantage nima dostopa do kamere. Funkcija potrditvenega polja ne bo delovala.",
-                    "linkText":"Odprite nastavitve sistema Windows in omogočite dostop"
+                    "describe": "Lenovo Vantage nima dostopa do kamere. Funkcija potrditvenega polja ne bo delovala.",
+                    "linkText": "Odprite nastavitve sistema Windows in omogočite dostop"
                 },
                 "photo": {
-                    "title":"ŠTEVILO FOTOGRAFIJ, POSNETIH MED PREMIKANJEM",
+                    "title": "ŠTEVILO FOTOGRAFIJ, POSNETIH MED PREMIKANJEM",
                     "tooltip": "Ob zaznanem premikanju se kamera v računalniku samodejno zažene v načinu za snemanje fotografij. Novo fotografijo posname vsaki dve sekundi in jo shrani v lokalni shranjevalni pogon.",
-                    "option1":"5",
-                    "option2":"10",
-                    "option3":"15",
-                    "option4":"20",
-                    "option5":"25",
-                    "option6":"30"
+                    "option1": "5",
+                    "option2": "10",
+                    "option3": "15",
+                    "option4": "20",
+                    "option5": "25",
+                    "option6": "30"
                 },
                 "showPhoto": {
-                    "title":"FOTOGRAFIJE SO POSNETE:",
-                    "link":"Ogled fotografij"
-				},
-				"fileAuthorizationTips": {
-					"content":"Lenovo Vantage nima dostopa do datotečnega sistema.",
-					"link":"Odprite nastavitve sistema Windows in omogočite dostop"
-				}
+                    "title": "FOTOGRAFIJE SO POSNETE:",
+                    "link": "Ogled fotografij"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Lenovo Vantage nima dostopa do datotečnega sistema.",
+                    "link": "Odprite nastavitve sistema Windows in omogočite dostop"
+                }
             },
             "voice": {
                 "title": "Glas",
@@ -2705,7 +2707,7 @@
         },
         "question1": {
             "title": "Varnostno kopiranje in obnovitev datotek",
-            "description": "<div>    <div class='faqInFs4Fb'>        Varnostno kopiranje in obnovitev datotek    </div>    <hr />    <div class='faqInMb7'>        Vedno je dobro imeti varnostno kopijo datotek. Kopije datotek hranite na drugem pogonu za vsak primer, če se kaj nepredvidenega zgodi z izvirniki.    </div>    <div class='faqInFs3Fb'>        Nastavitev varnostnega kopiranja    </div>    <hr />    <div class='mb-5'>        Izberite gumb <span class='faqInFb'>Start</span>, odprite <span class='faqInFb'>Nastavitve</span> > <span class='faqInFb'>Posodabljanje in varnost</span> > <span class='faqInFb'>Varnostno kopiranje</span> > <span class='faqInFb'>Dodaj pogon</span> in nato izberite zunanji pogon ali omrežno mesto za shranjevanje varnostnih kopij.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Postopek je končan. Varnostna kopija vsebine uporabniške mape (C:\\\\Users\\\\username) bo izdelana vsako uro. Če želite spremeniti, katere datoteke se varnostno kopirajo ali kako pogosto se izdelujejo varnostne kopije, odprite <span class='faqInFb'>Več možnosti</span>.    </div>    <div class='faqInFs3Fb'>        Obnovite datoteke    </div>    <div class='mb-5'>        Če ne najdete pomembne datoteke ali mape, jo lahko obnovite tako:    </div>    <div>        <div class='mb-3'>1. V iskalno polje v opravilni vrstici vnesite <span class='faqInFb'>Obnovitev datotek</span> in nato izberite <span class='faqInFb'>Obnovite datoteke z Zgodovino datoteke</span>.</div>        <div class='mb-3'>2. Poiščite želeno datoteko in nato uporabite puščice, da si ogledate vse njene različice</div>        <div class='mb-3'>3. Ko najdete želeno različico, izberite <span class='faqInFb'>Obnovi</span>, če želite datoteko shraniti na prvotno mesto. Če jo želite shraniti na drugo mesto, pridržite (ali z desno tipko miške kliknite) <span class='faqInFb'>Obnovi</span>, izberite <span class='faqInFb'>Obnovi v</span> in nato izberite novo mesto.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Varnostno kopiranje in obnovitev datotek    </div>    <hr />    <div class='faqInMb7'>        Vedno je dobro imeti varnostno kopijo datotek. Kopije datotek hranite na drugem pogonu za vsak primer, če se kaj nepredvidenega zgodi z izvirniki.    </div>    <div class='faqInFs3Fb'>        Nastavitev varnostnega kopiranja    </div>    <hr />    <div class='mb-5'>        Izberite gumb <span class='faqInFb'>Start</span>, odprite <span class='faqInFb'>Nastavitve</span> > <span class='faqInFb'>Posodabljanje in varnost</span> > <span class='faqInFb'>Varnostno kopiranje</span> > <span class='faqInFb'>Dodaj pogon</span> in nato izberite zunanji pogon ali omrežno mesto za shranjevanje varnostnih kopij.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Postopek je končan. Varnostna kopija vsebine uporabniške mape (C:\\Users\\vaše uporabniško ime) bo izdelana vsako uro. Če želite spremeniti, katere datoteke se varnostno kopirajo ali kako pogosto se izdelujejo varnostne kopije, odprite <span class='faqInFb'>Več možnosti</span>.    </div>    <div class='faqInFs3Fb'>        Obnovite datoteke    </div>    <div class='mb-5'>        Če ne najdete pomembne datoteke ali mape, jo lahko obnovite tako:    </div>    <div>        <div class='mb-3'>1. V iskalno polje v opravilni vrstici vnesite <span class='faqInFb'>Obnovitev datotek</span> in nato izberite <span class='faqInFb'>Obnovite datoteke z Zgodovino datoteke</span>.</div>        <div class='mb-3'>2. Poiščite želeno datoteko in nato uporabite puščice, da si ogledate vse njene različice</div>        <div class='mb-3'>3. Ko najdete želeno različico, izberite <span class='faqInFb'>Obnovi</span>, če želite datoteko shraniti na prvotno mesto. Če jo želite shraniti na drugo mesto, pridržite (ali z desno tipko miške kliknite) <span class='faqInFb'>Obnovi</span>, izberite <span class='faqInFb'>Obnovi v</span> in nato izberite novo mesto.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -3118,7 +3120,8 @@
         "settingsNotes": "Za uveljavitev vseh sprememb ponovno zaženite aplikacijo.",
         "betaSettingTitle": "Program različice beta",
         "betaProgram": "Program različice beta",
-        "betaSettingDescription": "Preizkusite najnovejše funkcije, na katerih delamo."
+        "betaSettingDescription": "Preizkusite najnovejše funkcije, na katerih delamo.",
+        "betaSettingNewDescription": "Z veseljem vas vabimo, da preizkusite funkcijo Smart Performance v različici beta. Ta vam pomaga izboljšati delovanje računalnika, saj omogoča:<br/><ul class='pl-4'><li>proaktivno diagnosticiranje napak in optimiziranje nastavitev;</li><li>izboljšanje delovanja internetne povezave z optimizacijo omrežja in brskalnika;</li><li>izvajanje hitrega pregleda in odpravljanja težav brez uporabe obstoječega protivirusnega programa.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Prekliči",
@@ -4043,8 +4046,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "Smerna tipka levo",
+            "rightArrow": "Smerna tipka desno"
         }
     },
     "dcc": {

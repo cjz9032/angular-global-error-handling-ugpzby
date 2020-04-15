@@ -1,4 +1,4 @@
-import { ProtocolGuardService, protocolUrl } from './protocol-guard.service';
+import { ProtocolGuardService } from './protocol-guard.service';
 import { Injector } from '@angular/core';
 import { UrlSegment, ActivatedRouteSnapshot, RouterStateSnapshot, Router, RouterModule } from '@angular/router';
 import { GuardConstants } from './guard-constants';
@@ -6,6 +6,16 @@ import { TestBed } from '@angular/core/testing';
 import { BrowserDynamicTestingModule, platformBrowserDynamicTesting } from '@angular/platform-browser-dynamic/testing';
 
 describe('service', () => {
+  class MockRouterStateSnapshot {
+    url: string;
+    constructor() {
+    }
+  }
+  class MockRouter {
+    parseUrl(url) {
+      return url;
+    }
+  }
   let service: ProtocolGuardService;
   beforeEach(() => {
 	const spy = jasmine.createSpyObj('GuardConstants', ['test']);
@@ -16,12 +26,16 @@ describe('service', () => {
 		providers: [
 			{
 				provide: Router,
-				useValue: routeSpy
+				useClass: MockRouter
 			},
 			{
 				provide: GuardConstants,
 				useValue: spy
-			},
+      },
+      {
+        provide: RouterStateSnapshot,
+        useClass: MockRouterStateSnapshot
+      },
 			ProtocolGuardService
 		]
 	})
@@ -33,24 +47,24 @@ describe('service', () => {
   });
 
   it('constructURL with valid url string', () => {
-	const urlStr = 'https://vantage.csw.lenovo.com/#/dashboard';
-	const url = new URL(urlStr);
-	expect(service['constructURL'](urlStr)).toEqual(url);
+    const urlStr = 'https://vantage.csw.lenovo.com/#/dashboard';
+    const url = new URL(urlStr);
+    expect(service['constructURL'](urlStr)).toEqual(url);
   });
 
   it('constructURL with invalid url string', () => {
-	const url = 'this-is-a-invalid-url';
-	expect(service['constructURL'](url)).toEqual(undefined);
+    const url = 'this-is-a-invalid-url';
+    expect(service['constructURL'](url)).toEqual(undefined);
   });
 
   it('processPath with non-protocol path', () => {
-	const path = 'this-is-a-invalid-url';
-	expect(service['processPath'](path)).toEqual('this-is-a-invalid-url');
+    const path = 'this-is-a-invalid-url';
+    expect(service['processPath'](path)).toEqual('/');
   });
 
   it('processPath with non-protocol url', () => {
 	const path = '/security/wifi-security';
-	expect(service['processPath'](path)).toEqual('/security/wifi-security');
+	expect(service['processPath'](path)).toEqual('/');
   });
 
   it('processPath with invalid base64', () => {
@@ -195,18 +209,27 @@ describe('service', () => {
 
   it('isRedirectUrlNeeded is not needed', () => {
 	const path = '/device/device-settings/power';
-	const spy = spyOn<any>(service, 'processPath').and.returnValue('/device/device-settings/power');
+	const spy = spyOn<any>(service, 'processPath').and.returnValue('/');
     expect(service['isRedirectUrlNeeded'](path)).toEqual([false, '']);
   });
 
-  it('canActivate return default route', () => {
-	const defaultRoute = service['guardConstants']['defaultRoute'];
-	expect(service['canActivate'](null, null)).toEqual(defaultRoute);
+  it('canActivate return true', () => {
+  const state = TestBed.get(RouterStateSnapshot);
+  state.url = '#/security';
+	expect(service['canActivate'](null, state)).toEqual(true);
+  })
+
+  it('canActivate with valid protocol', () => {
+    const state = TestBed.get(RouterStateSnapshot);
+    const router = TestBed.get(Router);
+    state.url = '#/?protocol=bGVub3ZvLXZhbnRhZ2UzOmRldmljZS1zZXR0aW5ncw==';
+    expect(service['canActivate'](null, state)).toEqual(router.parseUrl('/device/device-settings/power'));
+  })
+
+  it('canActivate invalid protocol', () => {
+    const state = TestBed.get(RouterStateSnapshot);
+    state.url = '#/?protocol=xxxxxxx';
+    expect(service['canActivate'](null, state)).toEqual(window.history.length === 1);
   })
 });
 
-describe('matcher', () =>{
-  it('protocol matcher function not match', () => {
-	expect(protocolUrl([new UrlSegment('/any/path', {})])).toEqual(null);
-  });
-});

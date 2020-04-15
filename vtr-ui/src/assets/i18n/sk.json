@@ -1685,7 +1685,9 @@
                         },
                         "subSectionTwo": {
                             "title": "Zmena predvolenej primárnej funkcie",
-                            "description": "Ak je táto možnosť zapnutá, predvolená primárna funkcia sa zmení z továrenských nastavení na opačné nastavenie. Tieto zmeny sa prejavia až po reštartovaní počítača."
+                            "description": "Ak je táto možnosť zapnutá, predvolená primárna funkcia sa zmení z továrenských nastavení na opačné nastavenie. Tieto zmeny sa prejavia až po reštartovaní počítača.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "Ako používať kombinácie klávesu Fn",
@@ -2050,16 +2052,16 @@
                 "tooltip": "Táto funkcia sa nevzťahuje na webové video prehrávače. Obľúbené lokálne prehrávače videa (prehrávač Windows Media Player, 5KPlayer a pod.) túto funkciu podporujú."
             },
             "superResolution": {
-				"heading": "Inteligentné médiá",
-				"title": "Zvýšenie rozlíšenia videa",
-				"desc": "<p><label>Táto funkcia zvyšuje zážitok z prehrávania videa zlepšením jeho rozlíšenia. Prejaví sa najmä pri nízkom rozlíšení videa.</label></p> <p style='margin-top:4px;'><label>Táto funkcia môže ovplyvniť výdrž batérie, teplotu batérie a vytvárať hluk. Nepoužívajte v režime jednosmerného prúdu (režim napájania z batérie). V opačnom prípade sa zväčší spotreba energie a skráti životnosť batérie.</label></p>",
-				"tooltip": "Táto funkcia funguje iba v prípade týchto prehrávačov videa:<br>Windows Media Player<br>Chrome<br>Filmy a TV programy<br>PotPlayer<br>GOM player<br>prehrávače podporované webovými prehliadačmi (napr. Chrome)<br><br>Pokyny na zapnutie tejto funkcie v prehrávačoch PotPlayer a GOM player nájdete v používateľskej príručke dodávanej s vaším počítačom.",
-				"note": {
-					"description": "Funkcia nefunguje v týchto prípadoch:",
-					"description1": "Režim šetriča batérie je povolený.",
-					"description2": "Teplota procesora je príliš vysoká."
-				}
-			},
+                "heading": "Inteligentné médiá",
+                "title": "Zvýšenie rozlíšenia videa",
+                "desc": "<p><label>Táto funkcia zvyšuje zážitok z prehrávania videa zlepšením jeho rozlíšenia. Prejaví sa najmä pri nízkom rozlíšení videa.</label></p> <p style='margin-top:4px;'><label>Táto funkcia môže ovplyvniť výdrž batérie, teplotu batérie a vytvárať hluk. Nepoužívajte v režime jednosmerného prúdu (režim napájania z batérie). V opačnom prípade sa zväčší spotreba energie a skráti životnosť batérie.</label></p>",
+                "tooltip": "Táto funkcia funguje iba v prípade týchto prehrávačov videa:<br>Windows Media Player<br>Chrome<br>Filmy a TV programy<br>PotPlayer<br>GOM player<br>prehrávače podporované webovými prehliadačmi (napr. Chrome)<br><br>Pokyny na zapnutie tejto funkcie v prehrávačoch PotPlayer a GOM player nájdete v používateľskej príručke dodávanej s vaším počítačom.",
+                "note": {
+                    "description": "Funkcia nefunguje v týchto prípadoch:",
+                    "description1": "Režim šetriča batérie je povolený.",
+                    "description2": "Teplota procesora je príliš vysoká."
+                }
+            },
             "antiTheft": {
                 "heading": "Inteligentné snímanie",
                 "title": "Inteligentné upozornenie na pohyb",
@@ -2068,44 +2070,44 @@
                     "description": "Po úspešnom prihlásení do systému sa táto funkcia automaticky vypne. Ak ju chcete používať, musíte ju znova povoliť."
                 },
                 "alarm": {
-                    "title":" UPOZORNENIE BUDE TRVAŤ",
-                    "option1":"10 sekúnd",
-                    "option2":"20 sekúnd",
-                    "option3":"30 sekúnd",
-                    "option4":"1 minúta",
-                    "option5":"Nikdy neprestávať"
+                    "title": " UPOZORNENIE BUDE TRVAŤ",
+                    "option1": "10 sekúnd",
+                    "option2": "20 sekúnd",
+                    "option3": "30 sekúnd",
+                    "option4": "1 minúta",
+                    "option5": "Nikdy neprestávať"
                 },
                 "allowCamera": {
-                    "title":"SNÍMANIE FOTOGRAFIÍ",
-                    "describe":"Ak povolíte túto funkciu, fotoaparát automaticky sníma fotografie pri zistení pohybu, ak je obrazovka uzamknutá. Tieto údaje sa spracúvajú lokálne vo vašom zariadení. Spoločnosť Lenovo k nim nemá prístup a nepoužíva ich.",
-                    "checkBoxText":"Povolenie tejto funkcie"
+                    "title": "SNÍMANIE FOTOGRAFIÍ",
+                    "describe": "Ak povolíte túto funkciu, fotoaparát automaticky sníma fotografie pri zistení pohybu, ak je obrazovka uzamknutá. Tieto údaje sa spracúvajú lokálne vo vašom zariadení. Spoločnosť Lenovo k nim nemá prístup a nepoužíva ich.",
+                    "checkBoxText": "Povolenie tejto funkcie"
                 },
                 "cameraPrivacy": {
-                     "describe":"Je zapnutý režim súkromia kamery aplikácie Lenovo Vantage. Funkcia začiarkavacieho políčka nebude fungovať.",
-                     "linkText":"Prejdite na režim súkromia kamery a vypnite ho"
+                    "describe": "Je zapnutý režim súkromia kamery aplikácie Lenovo Vantage. Funkcia začiarkavacieho políčka nebude fungovať.",
+                    "linkText": "Prejdite na režim súkromia kamery a vypnite ho"
                 },
                 "authorizedAccess": {
-                    "describe":"Lenovo Vantage nemá prístup k fotoaparátu. Funkcia začiarkavacieho políčka nebude fungovať.",
-                    "linkText":"Prejdite do nastavení systému Windows a povoľte prístup"
+                    "describe": "Lenovo Vantage nemá prístup k fotoaparátu. Funkcia začiarkavacieho políčka nebude fungovať.",
+                    "linkText": "Prejdite do nastavení systému Windows a povoľte prístup"
                 },
                 "photo": {
-                    "title":"POČET FOTOGRAFIÍ NASNÍMANÝCH POČAS POHYBU",
+                    "title": "POČET FOTOGRAFIÍ NASNÍMANÝCH POČAS POHYBU",
                     "tooltip": "Fotoaparát v počítači sa pri zistení pohybu automaticky aktivuje a začne snímať fotografie. Fotografie sa snímajú každé 2 sekundy a ukladajú sa na lokálne úložisko.",
-                    "option1":"5",
-                    "option2":"10",
-                    "option3":"15",
-                    "option4":"20",
-                    "option5":"25",
-                    "option6":"30"
+                    "option1": "5",
+                    "option2": "10",
+                    "option3": "15",
+                    "option4": "20",
+                    "option5": "25",
+                    "option6": "30"
                 },
                 "showPhoto": {
-                    "title":"FOTOGRAFIE SÚ:",
-                    "link":"Zobraziť fotografie"
-				},
-				"fileAuthorizationTips": {
-					"content":"Lenovo Vantage nemá prístup k systému súborov.",
-					"link":"Prejdite do nastavení systému Windows a povoľte prístup"
-				}
+                    "title": "FOTOGRAFIE SÚ:",
+                    "link": "Zobraziť fotografie"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Lenovo Vantage nemá prístup k systému súborov.",
+                    "link": "Prejdite do nastavení systému Windows a povoľte prístup"
+                }
             },
             "voice": {
                 "title": "Hlas",
@@ -2705,7 +2707,7 @@
         },
         "question1": {
             "title": "Zálohovanie a obnova súborov",
-            "description": "<div>    <div class='faqInFs4Fb'>        Zálohovanie a obnova súborov    </div>    <hr />    <div class='faqInMb7'>        Vždy je dobré mať zálohu. Kópie svojich súborov uchovávajte na inej jednotke pre prípad, že sa niečo stane s originálmi.    </div>    <div class='faqInFs3Fb'>        Nastavenie zálohovania    </div>    <hr />    <div class='mb-5'>        Vyberte tlačidlo <span class='faqInFb'>Štart</span>, vyberte položky <span class='faqInFb'>Nastavenia</span> > <span class='faqInFb'>Aktualizácia a zabezpečenie</span> > <span class='faqInFb'>Zálohovať</span> > <span class='faqInFb'>Pridať jednotku</span> a vyberte externú jednotku alebo sieťové umiestnenie pre zálohy.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Všetko je nastavené. Každú hodinu sa zálohuje celý obsah vášho priečinka používateľa (C:\\\\Users\\\\username). Ak chcete zmeniť súbory, ktoré sa zálohujú, alebo frekvenciu zálohovania, prejdite na <span class='faqInFb'>Ďalšie možnosti</span>.    </div>    <div class='faqInFs3Fb'>        Obnovenie súborov    </div>    <div class='mb-5'>        Ak vám chýba dôležitý súbor alebo priečinok, takto ho môžete obnoviť:    </div>    <div>        <div class='mb-3'>1. Do vyhľadávacieho poľa na paneli úloh zadajte text <span class='faqInFb'>Obnoviť súbory</span> a vyberte položku <span class='faqInFb'>Obnoviť súbory pomocou histórie súborov</span>.</div>        <div class='mb-3'>2. Vyhľadajte súbor, ktorý potrebujete, a pomocou šípok si pozrite všetky jeho verzie</div>        <div class='mb-3'>3. Keď nájdete požadovanú verziu, výberom položky <span class='faqInFb'>Obnoviť</span> ju uložte do pôvodného umiestnenia. Ak ju chcete uložiť na iné miesto, stlačte a podržte (alebo kliknite pravým tlačidlom myši) položku <span class='faqInFb'>Obnoviť</span>, vyberte položku <span class='faqInFb'>Obnoviť do umiestnenia</span> a vyberte nové umiestnenie.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Zálohovanie a obnova súborov    </div>    <hr />    <div class='faqInMb7'>        Vždy je dobré mať zálohu. Kópie svojich súborov uchovávajte na inej jednotke pre prípad, že sa niečo stane s originálmi.    </div>    <div class='faqInFs3Fb'>        Nastavenie zálohovania    </div>    <hr />    <div class='mb-5'>        Vyberte tlačidlo <span class='faqInFb'>Štart</span>, vyberte položky <span class='faqInFb'>Nastavenia</span> > <span class='faqInFb'>Aktualizácia a zabezpečenie</span> > <span class='faqInFb'>Zálohovať</span> > <span class='faqInFb'>Pridať jednotku</span> a vyberte externú jednotku alebo sieťové umiestnenie pre zálohy.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Všetko je nastavené. Každú hodinu sa zálohuje celý obsah vášho priečinka používateľa (C:\\Users\\vaše používateľské meno). Ak chcete zmeniť súbory, ktoré sa zálohujú, alebo frekvenciu zálohovania, prejdite na <span class='faqInFb'>Ďalšie možnosti</span>.    </div>    <div class='faqInFs3Fb'>        Obnovenie súborov    </div>    <div class='mb-5'>        Ak vám chýba dôležitý súbor alebo priečinok, takto ho môžete obnoviť:    </div>    <div>        <div class='mb-3'>1. Do vyhľadávacieho poľa na paneli úloh zadajte text <span class='faqInFb'>Obnoviť súbory</span> a vyberte položku <span class='faqInFb'>Obnoviť súbory pomocou histórie súborov</span>.</div>        <div class='mb-3'>2. Vyhľadajte súbor, ktorý potrebujete, a pomocou šípok si pozrite všetky jeho verzie</div>        <div class='mb-3'>3. Keď nájdete požadovanú verziu, výberom položky <span class='faqInFb'>Obnoviť</span> ju uložte do pôvodného umiestnenia. Ak ju chcete uložiť na iné miesto, stlačte a podržte (alebo kliknite pravým tlačidlom myši) položku <span class='faqInFb'>Obnoviť</span>, vyberte položku <span class='faqInFb'>Obnoviť do umiestnenia</span> a vyberte nové umiestnenie.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -3118,7 +3120,8 @@
         "settingsNotes": "Znova spustite túto aplikáciu, aby ste sa uistili, že sa všetky zmeny prejavia.",
         "betaSettingTitle": "Program Beta",
         "betaProgram": "Program Beta",
-        "betaSettingDescription": "Vyskúšajte najnovšie funkcie, na ktorých pracujeme."
+        "betaSettingDescription": "Vyskúšajte najnovšie funkcie, na ktorých pracujeme.",
+        "betaSettingNewDescription": "Sme radi, že vás môžeme pozvať do Beta programu služby Smart Performance. Táto služba pomáha zlepšovať výkon vášho počítača:<br/><ul class='pl-4'><li>Aktívnou diagnostikou chýb a optimalizáciou nastavení.</li><li>Zvýšením výkonu internetu pomocou optimalizácie siete a prehliadača.</li><li>Vykonávaním rýchlej kontroly a nápravy bez použitia existujúceho antivírusového programu.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Zrušiť",
@@ -4043,8 +4046,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "Šípka vľavo",
+            "rightArrow": "Šípka vpravo"
         }
     },
     "dcc": {

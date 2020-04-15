@@ -1685,7 +1685,9 @@
                         },
                         "subSectionTwo": {
                             "title": "기본 주요 기능 복원",
-                            "description": "켜져 있는 경우, 기본 주요 기능이 공장 설정에서 반대 방향으로 변경됩니다. 변경사항을 적용하려면, 컴퓨터를 다시 시작해야 합니다."
+                            "description": "켜져 있는 경우, 기본 주요 기능이 공장 설정에서 반대 방향으로 변경됩니다. 변경사항을 적용하려면, 컴퓨터를 다시 시작해야 합니다.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "Fn 키 조합 사용 방법",
@@ -2050,16 +2052,16 @@
                 "tooltip": "이 기능은 웹 비디오 플레이어에는 적용되지 않습니다. 대중적인 비디오 플레이어(예: Windows Media Player, 5KPlayer 등)가 이 기능을 지원합니다."
             },
             "superResolution": {
-				"heading": "지능형 미디어",
-				"title": "비디오 해상도 업스케일링",
-				"desc": "<p><label>이 기능은 비디오 해상도를 향상시켜 비디오 재생 경험을 향상시킵니다. 특히 비디오 해상도가 좋지 않을 때 해당 기능이 작동합니다.</label></p> <p style='margin-top:4px;'><label>이 기능은 배터리 수명과 배터리 온도에 영향을 줄 수 있으며, 소음을 유발할 수 있습니다. DC 모드(배터리 모드)에서는 사용하지 마십시오. 그렇지 않으면 전력 소모를 가속화하고 배터리 수명을 단축시킵니다.</label></p>",
-				"tooltip": "이 기능은 아래의 비디오 플레이어에서만 작동합니다.<br>Windows Media Player<br>Chrome<br>영화 및 TV<br>PotPlayer<br>GOM player<br>웹 브라우저 기반 플레이어 (예: Chrome)<br><br>PotPlayer 및 GOM Player에서 해당 기능을 사용하는 방법에 대한 지침은 컴퓨터와 함께 제공되는 사용 설명서를 참고하십시오.",
-				"note": {
-					"description": "다음의 경우에는 이 기능이 작동하지 않습니다.",
-					"description1": "배터리 절약 모드가 활성화됩니다.",
-					"description2": "CPU 온도가 너무 높습니다."
-				}
-			},
+                "heading": "지능형 미디어",
+                "title": "비디오 해상도 업스케일링",
+                "desc": "<p><label>이 기능은 비디오 해상도를 향상시켜 비디오 재생 경험을 향상시킵니다. 특히 비디오 해상도가 좋지 않을 때 해당 기능이 작동합니다.</label></p> <p style='margin-top:4px;'><label>이 기능은 배터리 수명과 배터리 온도에 영향을 줄 수 있으며, 소음을 유발할 수 있습니다. DC 모드(배터리 모드)에서는 사용하지 마십시오. 그렇지 않으면 전력 소모를 가속화하고 배터리 수명을 단축시킵니다.</label></p>",
+                "tooltip": "이 기능은 아래의 비디오 플레이어에서만 작동합니다.<br>Windows Media Player<br>Chrome<br>영화 및 TV<br>PotPlayer<br>GOM player<br>웹 브라우저 기반 플레이어 (예: Chrome)<br><br>PotPlayer 및 GOM Player에서 해당 기능을 사용하는 방법에 대한 지침은 컴퓨터와 함께 제공되는 사용 설명서를 참고하십시오.",
+                "note": {
+                    "description": "다음의 경우에는 이 기능이 작동하지 않습니다.",
+                    "description1": "배터리 절약 모드가 활성화됩니다.",
+                    "description2": "CPU 온도가 너무 높습니다."
+                }
+            },
             "antiTheft": {
                 "heading": "지능형 센싱",
                 "title": "스마트 모션 알림",
@@ -2068,44 +2070,44 @@
                     "description": "시스템에 로그인하면 이 기능이 자동으로 꺼집니다. 다시 기능을 활성화해야 사용할 수 있습니다."
                 },
                 "alarm": {
-                    "title":" 알람은 다음 시간 동안 울립니다",
-                    "option1":"10초",
-                    "option2":"20초",
-                    "option3":"30초",
-                    "option4":"1분",
-                    "option5":"멈추지 않음"
+                    "title": " 알람은 다음 시간 동안 울립니다",
+                    "option1": "10초",
+                    "option2": "20초",
+                    "option3": "30초",
+                    "option4": "1분",
+                    "option5": "멈추지 않음"
                 },
                 "allowCamera": {
-                    "title":"사진 촬영",
-                    "describe":"이 기능을 활성화하면 화면이 잠긴 경우 카메라가 움직임을 감지할 때 자동으로 사진을 촬영합니다. 이 데이터는 장치에서 로컬로 처리됩니다. Lenovo는 이를 액세스하거나 사용하지 않습니다.",
-                    "checkBoxText":"이 기능 활성화하기"
+                    "title": "사진 촬영",
+                    "describe": "이 기능을 활성화하면 화면이 잠긴 경우 카메라가 움직임을 감지할 때 자동으로 사진을 촬영합니다. 이 데이터는 장치에서 로컬로 처리됩니다. Lenovo는 이를 액세스하거나 사용하지 않습니다.",
+                    "checkBoxText": "이 기능 활성화하기"
                 },
                 "cameraPrivacy": {
-                     "describe":"Lenovo Vantage 카메라 개인 정보 모드가 켜져 있습니다. 선택란의 기능이 작동하지 않습니다.",
-                     "linkText":"카메라 개인 정보 모드로 이동하여 끄기"
+                    "describe": "Lenovo Vantage 카메라 개인 정보 모드가 켜져 있습니다. 선택란의 기능이 작동하지 않습니다.",
+                    "linkText": "카메라 개인 정보 모드로 이동하여 끄기"
                 },
                 "authorizedAccess": {
-                    "describe":"Lenovo Vantage가 카메라에 액세스할 수 없습니다. 선택란의 기능이 작동하지 않습니다.",
-                    "linkText":"액세스 권한을 부여하려면, Windows 설정으로 이동합니다"
+                    "describe": "Lenovo Vantage가 카메라에 액세스할 수 없습니다. 선택란의 기능이 작동하지 않습니다.",
+                    "linkText": "액세스 권한을 부여하려면, Windows 설정으로 이동합니다"
                 },
                 "photo": {
-                    "title":"움직임이 있는 동안 찍은 사진의 개수",
+                    "title": "움직임이 있는 동안 찍은 사진의 개수",
                     "tooltip": "움직임이 감지되면 컴퓨터의 카메라가 자동으로 활성화되어 사진을 촬영합니다. 사진은 2초마다 촬영되며 로컬 저장 장치에 저장됩니다.",
-                    "option1":"5",
-                    "option2":"10",
-                    "option3":"15",
-                    "option4":"20",
-                    "option5":"25",
-                    "option6":"30"
+                    "option1": "5",
+                    "option2": "10",
+                    "option3": "15",
+                    "option4": "20",
+                    "option5": "25",
+                    "option6": "30"
                 },
                 "showPhoto": {
-                    "title":"사진은 다음과 같습니다.",
-                    "link":"사진 보기"
-				},
-				"fileAuthorizationTips": {
-					"content":"Lenovo Vantage는 파일 시스템에 액세스할 수 없습니다.",
-					"link":"액세스 권한을 부여하려면, Windows 설정으로 이동합니다"
-				}
+                    "title": "사진은 다음과 같습니다.",
+                    "link": "사진 보기"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Lenovo Vantage는 파일 시스템에 액세스할 수 없습니다.",
+                    "link": "액세스 권한을 부여하려면, Windows 설정으로 이동합니다"
+                }
             },
             "voice": {
                 "title": "음성",
@@ -2705,7 +2707,7 @@
         },
         "question1": {
             "title": "파일 백업 및 복원",
-            "description": "<div>    <div class='faqInFs4Fb'>        파일 백업 및 복원    </div>    <hr />    <div class='faqInMb7'>        항상 백업 파일을 만드는 것이 좋습니다. 원본에 무슨 일이 발생하는 경우, 파일을 다른 드라이브에 보관하십시오.    </div>    <div class='faqInFs3Fb'>        백업 설정    </div>    <hr />    <div class='mb-5'>        <span class='faqInFb'>시작</span> 버튼, <span class='faqInFb'>설정</span> > <span class='faqInFb'>업데이트 & 보안</span> > <span class='faqInFb'>백업</span> > <span class='faqInFb'>드라이브 추가</span>를 차례로 선택한 다음, 백업 파일을 저장할 외장 드라이브 또는 네트워크 위치를 선택하십시오.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        설정 완료. 매 시간마다 사용자 폴더(C:\\\\Users\\\\username)에 있는 모든 파일을 백업합니다. 백업할 파일 또는 백업 빈도를 변경하려면, <span class='faqInFb'>추가 옵션</span>으로 이동하십시오.    </div>    <div class='faqInFs3Fb'>        파일 복구    </div>    <div class='mb-5'>        중요한 파일이나 폴더가 없는 경우, 다시 가져오는 방법은 다음과 같습니다.    </div>    <div>        <div class='mb-3'>1. 작업 표시줄의 검색 상자에서 <span class='faqInFb'>파일 복원</span>을 입력하고 <span class='faqInFb'>파일 기록으로 파일 복원</span>을 선택하십시오.</div>        <div class='mb-3'>2. 필요한 파일을 찾은 다음, 화살표를 사용하여 모든 버전 표시</div>        <div class='mb-3'>3. 원하는 버전을 찾았으면, <span class='faqInFb'>복원</span>을 선택하여 원래 위치에 저장하십시오. 다른 장소에 저장하려면, <span class='faqInFb'>복원</span>을 길게 누르고(또는 마우스 오른쪽 버튼을 클릭하고) <span class='faqInFb'>복원 위치</span>를 선택한 다음 새 위치를 선택하십시오.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        파일 백업 및 복원    </div>    <hr />    <div class='faqInMb7'>        항상 백업 파일을 만드는 것이 좋습니다. 원본에 무슨 일이 발생하는 경우, 파일을 다른 드라이브에 보관하십시오.    </div>    <div class='faqInFs3Fb'>        백업 설정    </div>    <hr />    <div class='mb-5'>        <span class='faqInFb'>시작</span> 버튼, <span class='faqInFb'>설정</span> > <span class='faqInFb'>업데이트 & 보안</span> > <span class='faqInFb'>백업</span> > <span class='faqInFb'>드라이브 추가</span>를 차례로 선택한 다음, 백업 파일을 저장할 외장 드라이브 또는 네트워크 위치를 선택하십시오.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        설정 완료. 매 시간마다 사용자 폴더(C:\\Users\\사용자 이름)에 있는 모든 파일을 백업합니다. 백업할 파일 또는 백업 빈도를 변경하려면, <span class='faqInFb'>추가 옵션</span>으로 이동하십시오.    </div>    <div class='faqInFs3Fb'>        파일 복구    </div>    <div class='mb-5'>        중요한 파일이나 폴더가 없는 경우, 다시 가져오는 방법은 다음과 같습니다.    </div>    <div>        <div class='mb-3'>1. 작업 표시줄의 검색 상자에서 <span class='faqInFb'>파일 복원</span>을 입력하고 <span class='faqInFb'>파일 기록으로 파일 복원</span>을 선택하십시오.</div>        <div class='mb-3'>2. 필요한 파일을 찾은 다음, 화살표를 사용하여 모든 버전 표시</div>        <div class='mb-3'>3. 원하는 버전을 찾았으면, <span class='faqInFb'>복원</span>을 선택하여 원래 위치에 저장하십시오. 다른 장소에 저장하려면, <span class='faqInFb'>복원</span>을 길게 누르고(또는 마우스 오른쪽 버튼을 클릭하고) <span class='faqInFb'>복원 위치</span>를 선택한 다음 새 위치를 선택하십시오.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -3118,7 +3120,8 @@
         "settingsNotes": "모든 변경 사항을 적용하려면, 이 응용 프로그램을 다시 실행하십시오.",
         "betaSettingTitle": "베타 프로그램",
         "betaProgram": "베타 프로그램",
-        "betaSettingDescription": "개발 중인 최신 기능을 써보세요."
+        "betaSettingDescription": "개발 중인 최신 기능을 써보세요.",
+        "betaSettingNewDescription": "Smart Performance의 베타 프로그램에 여러분을 초대합니다. 다음과 같은 방법으로 PC 성능을 향상시킬 수 있습니다.<br/><ul class='pl-4'><li>버그를 사전에 진단하고 설정을 최적화합니다.</li><li>네트워크 및 브라우저 최적화를 통해 인터넷 성능을 향상시킵니다.</li><li>기존 안티바이러스 프로그램을 사용하지 않고 빠른 검사 및 치료를 수행합니다.</li></ul>"
     },
     "modernPreload": {
         "cancel": "취소",
@@ -4043,8 +4046,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "왼쪽 화살표",
+            "rightArrow": "오른쪽 화살표"
         }
     },
     "dcc": {
