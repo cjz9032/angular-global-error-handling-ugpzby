@@ -52,9 +52,9 @@ export class UiButtonComponent implements OnInit, AfterViewInit {
 		}
 	}
 
-	definesTooltipText(){
+	initTooltipText(){
 		//If the tooltipText is not defined, use the label text in it
-		if(!this.tooltipText){
+		if( !this.tooltipText ) {
 			this.tooltipText = this.label;
 		}
 	}
@@ -74,6 +74,6 @@ export class UiButtonComponent implements OnInit, AfterViewInit {
 	}
 
 	ngOnInit() {
-		this.definesTooltipText();
+		this.initTooltipText();
 	}
 }
