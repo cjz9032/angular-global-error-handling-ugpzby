@@ -601,11 +601,9 @@ export class SystemUpdateService {
 					update.isACAttached = false;
 					update.installationStatus = UpdateActionResult.InstallFailed;
 					isPackageToInstall = false;
-				} else if (removeDelayedUpdates && update.coreqPackageID !== '') {
-					if (this.isUpdateDependingOnRebootDelayedPackage(updateList, update.coreqPackageID)) {
-						update.installationStatus = UpdateActionResult.InstallFailed;
-						isPackageToInstall = false;
-					}
+				} else if (removeDelayedUpdates && update.coreqPackageID !== '' && this.isUpdateDependingOnRebootDelayedPackage(updateList, update.coreqPackageID)) {
+					update.installationStatus = UpdateActionResult.InstallFailed;
+					isPackageToInstall = false;
 				}
 				if (isPackageToInstall) {
 					packageToInstall.push(pkg);
