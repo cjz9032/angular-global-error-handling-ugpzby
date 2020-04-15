@@ -2095,12 +2095,12 @@
                 "photo": {
                     "title": "عدد الصور التي تم التقاطها أثناء الحركة",
                     "tooltip": "يتم تنشيط الكاميرا الموجودة على الكمبيوتر تلقائيًا لالتقاط الصور عند اكتشاف حركات. يتم التقاط الصور كل ثانيتين ويتم حفظها في وحدة التخزين المحلية.",
-                    "option1": 5,
-                    "option2": 10,
-                    "option3": 15,
-                    "option4": 20,
-                    "option5": 25,
-                    "option6": 30
+                    "option1": "5",
+                    "option2": "10",
+                    "option3": "15",
+                    "option4": "20",
+                    "option5": "25",
+                    "option6": "30"
                 },
                 "showPhoto": {
                     "title": "لقد كانت الصور:",
@@ -2709,7 +2709,7 @@
         },
         "question1": {
             "title": "نسخ احتياطي للملفات واستعادتها",
-            "description": "<div>    <div class='faqInFs4Fb'>        نسخ احتياطي للملفات واستعادتها    </div>    <hr />    <div class='faqInMb7'>        من المستحسن إنشاء نسخه احتياطية لملفاتك في كل الأوقات. احتفظ بنسخ من ملفاتك على محرك أقراص آخر تلافيًا لحدوث شيء ما للملفات الأصلية.    </div>    <div class='faqInFs3Fb'>        إعداد عملية النسخ الاحتياطي    </div>    <hr />    <div class='mb-5'>        حدد زر <span class='faqInFb'>البدء</span>، وحدد <span class='faqInFb'>الإعدادات</span> > <span class='faqInFb'>التحديث والأمان</span> > <span class='faqInFb'>النسخ الاحتياطي</span> > <span class='faqInFb'>إضافة محرك أقراص</span>، ثم اختر محرك أقراص خارجيًا أو موقعًا على الشبكة لنسخك الاحتياطية.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        أصبح كل شيء جاهز. سنقوم، كل ساعة، بإجراء عملية نسخ احتياطي لكل محتويات مجلد المستخدم على جهازك (C:\\\\Users\\\\username). لتغيير الملفات التي يتم نسخها احتياطيًا أو عدد مرات حدوث النسخ الاحتياطي، انتقل إلى <span class='faqInFb'>مزيد من الخيارات</span>.    </div>    <div class='faqInFs3Fb'>        استعادة ملفاتك    </div>    <div class='mb-5'>        إذا كنت تفتقد ملفًا أو مجلدًا مهمًا، فإليك كيفية استعادته:    </div>    <div>        <div class='mb-3'>1. اكتب <span class='faqInFb'>استعادة الملفات</span> في مربع البحث على شريط المهام، ثم حدد <span class='faqInFb'> استعادة ملفاتك بواسطة محفوظات الملفات</span>.</div>        <div class='mb-3'>2. ابحث عن الملف المطلوب، ثم استخدم الأسهم لرؤية جميع إصداراته</div>        <div class='mb-3'>3. عندما تعثر على الإصدار المطلوب، اختر <span class='faqInFb'>استعادة</span> لحفظه في موقعه الأصلي. لحفظه في مكان آخر، اضغط باستمرار (أو انقر بزر الماوس الأيمن) على <span class='faqInFb'>استعادة</span>، وحدد <span class='faqInFb'>استعادة إلى</span>، ثم اختر موقعًا جديدًا.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        نسخ احتياطي للملفات واستعادتها    </div>    <hr />    <div class='faqInMb7'>        من المستحسن إنشاء نسخه احتياطية لملفاتك في كل الأوقات. احتفظ بنسخ من ملفاتك على محرك أقراص آخر تلافيًا لحدوث شيء ما للملفات الأصلية.    </div>    <div class='faqInFs3Fb'>        إعداد عملية النسخ الاحتياطي    </div>    <hr />    <div class='mb-5'>        حدد زر <span class='faqInFb'>البدء</span>، وحدد <span class='faqInFb'>الإعدادات</span> > <span class='faqInFb'>التحديث والأمان</span> > <span class='faqInFb'>النسخ الاحتياطي</span> > <span class='faqInFb'>إضافة محرك أقراص</span>، ثم اختر محرك أقراص خارجيًا أو موقعًا على الشبكة لنسخك الاحتياطية.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        أصبح كل شيء جاهز. سنقوم، كل ساعة، بإجراء عملية نسخ احتياطي لكل محتويات مجلد المستخدم على جهازك <span>(C:\\Users\\اسم المستخدم)<span>. لتغيير الملفات التي يتم نسخها احتياطيًا أو عدد مرات حدوث النسخ الاحتياطي، انتقل إلى <span class='faqInFb'>مزيد من الخيارات</span>.    </div>    <div class='faqInFs3Fb'>        استعادة ملفاتك    </div>    <div class='mb-5'>        إذا كنت تفتقد ملفًا أو مجلدًا مهمًا، فإليك كيفية استعادته:    </div>    <div>        <div class='mb-3'>1. اكتب <span class='faqInFb'>استعادة الملفات</span> في مربع البحث على شريط المهام، ثم حدد <span class='faqInFb'> استعادة ملفاتك بواسطة محفوظات الملفات</span>.</div>        <div class='mb-3'>2. ابحث عن الملف المطلوب، ثم استخدم الأسهم لرؤية جميع إصداراته</div>        <div class='mb-3'>3. عندما تعثر على الإصدار المطلوب، اختر <span class='faqInFb'>استعادة</span> لحفظه في موقعه الأصلي. لحفظه في مكان آخر، اضغط باستمرار (أو انقر بزر الماوس الأيمن) على <span class='faqInFb'>استعادة</span>، وحدد <span class='faqInFb'>استعادة إلى</span>، ثم اختر موقعًا جديدًا.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -3122,7 +3122,8 @@
         "settingsNotes": "يرجى إعادة تشغيل هذا التطبيق للتأكد من أن جميع التغييرات نافذة المفعول.",
         "betaSettingTitle": "البرنامج التجريبي",
         "betaProgram": "البرنامج التجريبي",
-        "betaSettingDescription": "جرّب أحدث الميزات التي نعمل عليها."
+        "betaSettingDescription": "جرّب أحدث الميزات التي نعمل عليها.",
+        "betaSettingNewDescription": "يسعدنا دعوتك إلى البرنامج التجريبي‬ الأداء الذكي. يساعدك هذا البرنامج في تحسين أداء جهاز الكمبيوتر من خلال:<br/><ul class='pl-4'><li>تشخيص الأخطاء بشكل استباقي وتحسين الإعدادات.</li><li>تعزيز أداء الإنترنت من خلال تحسين الشبكة والمستعرض.</li><li>إجراء فحص وعلاج سريعين من دون استخدام برنامج مكافحة الفيروسات الموجود.</li></ul>"
     },
     "modernPreload": {
         "cancel": "إلغاء",
@@ -4045,8 +4046,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "سهم لليسار",
+            "rightArrow": "سهم لليمين"
         }
     },
     "dcc": {

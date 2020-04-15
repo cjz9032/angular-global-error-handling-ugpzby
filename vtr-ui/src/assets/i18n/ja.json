@@ -2093,12 +2093,12 @@
                 "photo": {
                     "title": "動きに対して撮影される写真の枚数",
                     "tooltip": "動きが検出されると、コンピューターのカメラが自動的にアクティブになり、写真が撮影されます。写真は 2 秒ごとに撮影され、ローカル・ストレージに保存されます。",
-                    "option1": 5,
-                    "option2": 10,
-                    "option3": 15,
-                    "option4": 20,
-                    "option5": 25,
-                    "option6": 30
+                    "option1": "5",
+                    "option2": "10",
+                    "option3": "15",
+                    "option4": "20",
+                    "option5": "25",
+                    "option6": "30"
                 },
                 "showPhoto": {
                     "title": "写真:",
@@ -2707,7 +2707,7 @@
         },
         "question1": {
             "title": "ファイルをバックアップし、復元する",
-            "description": "<div>    <div class='faqInFs4Fb'>        ファイルをバックアップし、復元する    </div>    <hr />    <div class='faqInMb7'>        どんな場合でもバックアップを取っておくのは良いことです。オリジナルに問題が発生した場合に備えて、ファイルのコピーを別のドライブに保存してください。    </div>    <div class='faqInFs3Fb'>        バックアップの設定    </div>    <hr />    <div class='mb-5'>        <span class='faqInFb'>「スタート」</span>ボタンを選択し、<span class='faqInFb'>「設定」</span> > <span class='faqInFb'>「更新とセキュリティ」</span> > <span class='faqInFb'>「バックアップ」</span> > <span class='faqInFb'>「ドライブの追加」</span>の順に選択して、次にバックアップ用の外付けドライブまたはネットワークの場所を選択します。    </div>    <div class='mb-5'>        <img src='assets/images/qa/ja/1.1.jpg' />    </div>    <div class='mb-5'>        設定完了。毎時間、ユーザー・フォルダー (C:\\\\Users\\\\username) 内の全ファイルをバックアップします。バックアップするファイル、バックアップの頻度を変更するには、<span class='faqInFb'>「その他のオプション」</span>に進みます。    </div>    <div class='faqInFs3Fb'>        ファイルの復元    </div>    <div class='mb-5'>        重要なファイルやフォルダーが見つからない場合は、以下の手順で元に戻すことができます。    </div>    <div>        <div class='mb-3'>1.タスク バーの検索ボックスに<span class='faqInFb'>「ファイルを復元」</span>と入力して、次に<span class='faqInFb'>「ファイル履歴をファイルを復元」</span>を選択します。</div>        <div class='mb-3'>2.必要なファイルを探し、次に矢印を使って、そのすべてのバージョンを表示します</div>        <div class='mb-3'>3.必要なバージョンが見つかったら、<span class='faqInFb'>「復元」</span>を選択して、元の場所にそれを保存します。別の場所に保存するには、<span class='faqInFb'>「復元」</span>を長押し（または右クリック）し、<span class='faqInFb'>「復元先」</span>を選択して、次に新しい場所を選択します。</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        ファイルをバックアップし、復元する    </div>    <hr />    <div class='faqInMb7'>        どんな場合でもバックアップを取っておくのは良いことです。オリジナルに問題が発生した場合に備えて、ファイルのコピーを別のドライブに保存してください。    </div>    <div class='faqInFs3Fb'>        バックアップの設定    </div>    <hr />    <div class='mb-5'>        <span class='faqInFb'>「スタート」</span>ボタンを選択し、<span class='faqInFb'>「設定」</span> > <span class='faqInFb'>「更新とセキュリティ」</span> > <span class='faqInFb'>「バックアップ」</span> > <span class='faqInFb'>「ドライブの追加」</span>の順に選択して、次にバックアップ用の外付けドライブまたはネットワークの場所を選択します。    </div>    <div class='mb-5'>        <img src='assets/images/qa/ja/1.1.jpg' />    </div>    <div class='mb-5'>        設定完了。毎時間、ユーザー・フォルダー (C:\\Users\\ユーザー名) 内の全ファイルをバックアップします。バックアップするファイル、バックアップの頻度を変更するには、<span class='faqInFb'>「その他のオプション」</span>に進みます。    </div>    <div class='faqInFs3Fb'>        ファイルの復元    </div>    <div class='mb-5'>        重要なファイルやフォルダーが見つからない場合は、以下の手順で元に戻すことができます。    </div>    <div>        <div class='mb-3'>1.タスク バーの検索ボックスに<span class='faqInFb'>「ファイルを復元」</span>と入力して、次に<span class='faqInFb'>「ファイル履歴をファイルを復元」</span>を選択します。</div>        <div class='mb-3'>2.必要なファイルを探し、次に矢印を使って、そのすべてのバージョンを表示します</div>        <div class='mb-3'>3.必要なバージョンが見つかったら、<span class='faqInFb'>「復元」</span>を選択して、元の場所にそれを保存します。別の場所に保存するには、<span class='faqInFb'>「復元」</span>を長押し（または右クリック）し、<span class='faqInFb'>「復元先」</span>を選択して、次に新しい場所を選択します。</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -3120,7 +3120,8 @@
         "settingsNotes": "このアプリケーションを再起動して、すべての変更を適用してください。",
         "betaSettingTitle": "ベータ版プログラム",
         "betaProgram": "ベータ版プログラム",
-        "betaSettingDescription": "現在開発中の最新機能をお試しください."
+        "betaSettingDescription": "現在開発中の最新機能をお試しください.",
+        "betaSettingNewDescription": "皆さまをスマート・パフォーマンスのベータ・プログラムにご招待いたします。スマート・パフォーマンスは、以下の方法により PC のパフォーマンスの改善に役立ちます。<br/><ul class='pl-4'><li>バグを予防的に診断し、設定を最適化します。</li><li>ネットワークとブラウザの最適化により、インターネットのパフォーマンスを向上させます。</li><li>アンチウィルス・プログラムを使用せずに簡易スキャンと修復を実行します。</li></ul>"
     },
     "modernPreload": {
         "cancel": "キャンセル",
@@ -4045,8 +4046,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "左矢印",
+            "rightArrow": "右矢印"
         }
     },
     "dcc": {

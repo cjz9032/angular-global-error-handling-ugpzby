@@ -2093,12 +2093,12 @@
                 "photo": {
                     "title": "移動期間拍攝的相片數",
                     "tooltip": "電腦上的相機會在偵測到動作時自動啟動拍照功能。每 2 秒拍一次，並將照片存到您的本機儲存裝置。",
-                    "option1": 5,
-                    "option2": 10,
-                    "option3": 15,
-                    "option4": 20,
-                    "option5": 25,
-                    "option6": 30
+                    "option1": "5",
+                    "option2": "10",
+                    "option3": "15",
+                    "option4": "20",
+                    "option5": "25",
+                    "option6": "30"
                 },
                 "showPhoto": {
                     "title": "相片已：",
@@ -2707,7 +2707,7 @@
         },
         "question1": {
             "title": "備份及還原檔案",
-            "description": "<div>    <div class='faqInFs4Fb'>        備份及還原檔案    </div>    <hr />    <div class='faqInMb7'>        備份讓您有備無患。將檔案複本保存在另一個硬碟上，以防原件出現問題。    </div>    <div class='faqInFs3Fb'>        設定備份    </div>    <hr />    <div class='mb-5'>        選取<span class='faqInFb'>開始</span> 按鈕，接著依序選取<span class='faqInFb'>設定</span> > <span class='faqInFb'>更新和安全性</span> > <span class='faqInFb'>備份</span> > <span class='faqInFb'>新增硬碟</span>，然後選擇外部硬碟或網路位置來進行備份。    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        設定完成。使用者資料夾 (C:\\\\Users\\\\username) 中的所有資料會每隔 1 小時備份一次。若要變更要進行備份的檔案或是備份的發生頻率，請前往<span class='faqInFb'>其他選項</span>。    </div>    <div class='faqInFs3Fb'>        還原檔案    </div>    <div class='mb-5'>        如果您遺漏了重要檔案或資料夾，請按以下步驟將其還原：    </div>    <div>        <div class='mb-3'>1.在工作列上的搜尋方塊中鍵入<span class='faqInFb'>還原檔案</span>，然後選取<span class='faqInFb'>使用檔案歷程記錄來還原檔案</span>。</div>        <div class='mb-3'>2.尋找需要的檔案，然後使用箭頭來查看其所有版本</div>        <div class='mb-3'>3.在找到需要版本後，選取<span class='faqInFb'>還原</span>，將其儲存到原始位置。若要將檔案儲存到不同的位置，請按住不放 (或用滑鼠右鍵按一下) <span class='faqInFb'>還原</span>，並選取<span class='faqInFb'>還原至</span>，接著選擇新位置。</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        備份及還原檔案    </div>    <hr />    <div class='faqInMb7'>        備份讓您有備無患。將檔案複本保存在另一個硬碟上，以防原件出現問題。    </div>    <div class='faqInFs3Fb'>        設定備份    </div>    <hr />    <div class='mb-5'>        選取<span class='faqInFb'>開始</span> 按鈕，接著依序選取<span class='faqInFb'>設定</span> > <span class='faqInFb'>更新和安全性</span> > <span class='faqInFb'>備份</span> > <span class='faqInFb'>新增硬碟</span>，然後選擇外部硬碟或網路位置來進行備份。    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        設定完成。使用者資料夾 (C:\\Users\\您的使用者名稱) 中的所有資料會每隔 1 小時備份一次。若要變更要進行備份的檔案或是備份的發生頻率，請前往<span class='faqInFb'>其他選項</span>。    </div>    <div class='faqInFs3Fb'>        還原檔案    </div>    <div class='mb-5'>        如果您遺漏了重要檔案或資料夾，請按以下步驟將其還原：    </div>    <div>        <div class='mb-3'>1.在工作列上的搜尋方塊中鍵入<span class='faqInFb'>還原檔案</span>，然後選取<span class='faqInFb'>使用檔案歷程記錄來還原檔案</span>。</div>        <div class='mb-3'>2.尋找需要的檔案，然後使用箭頭來查看其所有版本</div>        <div class='mb-3'>3.在找到需要版本後，選取<span class='faqInFb'>還原</span>，將其儲存到原始位置。若要將檔案儲存到不同的位置，請按住不放 (或用滑鼠右鍵按一下) <span class='faqInFb'>還原</span>，並選取<span class='faqInFb'>還原至</span>，接著選擇新位置。</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -3120,7 +3120,8 @@
         "settingsNotes": "請重新啟動此應用程式，以確保所有變更都生效。",
         "betaSettingTitle": "Beta 程式",
         "betaProgram": "Beta 程式",
-        "betaSettingDescription": "試試我們正在開發的最新功能。"
+        "betaSettingDescription": "試試我們正在開發的最新功能。",
+        "betaSettingNewDescription": "我們很高興能邀請您使用測試版 Smart Performance。本程式有助於提升您的電腦效能，作法為：<br/><ul class='pl-4'><li>主動診斷錯誤並最佳化設定。</li><li>最佳化網路和瀏覽器以提升網際網路效能。</li><li>在不使用現有防毒程式的情況下，執行快速掃描和修復。</li></ul>"
     },
     "modernPreload": {
         "cancel": "取消",
@@ -4045,8 +4046,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "向左鍵",
+            "rightArrow": "向右鍵"
         }
     },
     "dcc": {

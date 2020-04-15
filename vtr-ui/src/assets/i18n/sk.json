@@ -2093,12 +2093,12 @@
                 "photo": {
                     "title": "POČET FOTOGRAFIÍ NASNÍMANÝCH POČAS POHYBU",
                     "tooltip": "Fotoaparát v počítači sa pri zistení pohybu automaticky aktivuje a začne snímať fotografie. Fotografie sa snímajú každé 2 sekundy a ukladajú sa na lokálne úložisko.",
-                    "option1": 5,
-                    "option2": 10,
-                    "option3": 15,
-                    "option4": 20,
-                    "option5": 25,
-                    "option6": 30
+                    "option1": "5",
+                    "option2": "10",
+                    "option3": "15",
+                    "option4": "20",
+                    "option5": "25",
+                    "option6": "30"
                 },
                 "showPhoto": {
                     "title": "FOTOGRAFIE SÚ:",
@@ -2707,7 +2707,7 @@
         },
         "question1": {
             "title": "Zálohovanie a obnova súborov",
-            "description": "<div>    <div class='faqInFs4Fb'>        Zálohovanie a obnova súborov    </div>    <hr />    <div class='faqInMb7'>        Vždy je dobré mať zálohu. Kópie svojich súborov uchovávajte na inej jednotke pre prípad, že sa niečo stane s originálmi.    </div>    <div class='faqInFs3Fb'>        Nastavenie zálohovania    </div>    <hr />    <div class='mb-5'>        Vyberte tlačidlo <span class='faqInFb'>Štart</span>, vyberte položky <span class='faqInFb'>Nastavenia</span> > <span class='faqInFb'>Aktualizácia a zabezpečenie</span> > <span class='faqInFb'>Zálohovať</span> > <span class='faqInFb'>Pridať jednotku</span> a vyberte externú jednotku alebo sieťové umiestnenie pre zálohy.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Všetko je nastavené. Každú hodinu sa zálohuje celý obsah vášho priečinka používateľa (C:\\\\Users\\\\username). Ak chcete zmeniť súbory, ktoré sa zálohujú, alebo frekvenciu zálohovania, prejdite na <span class='faqInFb'>Ďalšie možnosti</span>.    </div>    <div class='faqInFs3Fb'>        Obnovenie súborov    </div>    <div class='mb-5'>        Ak vám chýba dôležitý súbor alebo priečinok, takto ho môžete obnoviť:    </div>    <div>        <div class='mb-3'>1. Do vyhľadávacieho poľa na paneli úloh zadajte text <span class='faqInFb'>Obnoviť súbory</span> a vyberte položku <span class='faqInFb'>Obnoviť súbory pomocou histórie súborov</span>.</div>        <div class='mb-3'>2. Vyhľadajte súbor, ktorý potrebujete, a pomocou šípok si pozrite všetky jeho verzie</div>        <div class='mb-3'>3. Keď nájdete požadovanú verziu, výberom položky <span class='faqInFb'>Obnoviť</span> ju uložte do pôvodného umiestnenia. Ak ju chcete uložiť na iné miesto, stlačte a podržte (alebo kliknite pravým tlačidlom myši) položku <span class='faqInFb'>Obnoviť</span>, vyberte položku <span class='faqInFb'>Obnoviť do umiestnenia</span> a vyberte nové umiestnenie.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Zálohovanie a obnova súborov    </div>    <hr />    <div class='faqInMb7'>        Vždy je dobré mať zálohu. Kópie svojich súborov uchovávajte na inej jednotke pre prípad, že sa niečo stane s originálmi.    </div>    <div class='faqInFs3Fb'>        Nastavenie zálohovania    </div>    <hr />    <div class='mb-5'>        Vyberte tlačidlo <span class='faqInFb'>Štart</span>, vyberte položky <span class='faqInFb'>Nastavenia</span> > <span class='faqInFb'>Aktualizácia a zabezpečenie</span> > <span class='faqInFb'>Zálohovať</span> > <span class='faqInFb'>Pridať jednotku</span> a vyberte externú jednotku alebo sieťové umiestnenie pre zálohy.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Všetko je nastavené. Každú hodinu sa zálohuje celý obsah vášho priečinka používateľa (C:\\Users\\vaše používateľské meno). Ak chcete zmeniť súbory, ktoré sa zálohujú, alebo frekvenciu zálohovania, prejdite na <span class='faqInFb'>Ďalšie možnosti</span>.    </div>    <div class='faqInFs3Fb'>        Obnovenie súborov    </div>    <div class='mb-5'>        Ak vám chýba dôležitý súbor alebo priečinok, takto ho môžete obnoviť:    </div>    <div>        <div class='mb-3'>1. Do vyhľadávacieho poľa na paneli úloh zadajte text <span class='faqInFb'>Obnoviť súbory</span> a vyberte položku <span class='faqInFb'>Obnoviť súbory pomocou histórie súborov</span>.</div>        <div class='mb-3'>2. Vyhľadajte súbor, ktorý potrebujete, a pomocou šípok si pozrite všetky jeho verzie</div>        <div class='mb-3'>3. Keď nájdete požadovanú verziu, výberom položky <span class='faqInFb'>Obnoviť</span> ju uložte do pôvodného umiestnenia. Ak ju chcete uložiť na iné miesto, stlačte a podržte (alebo kliknite pravým tlačidlom myši) položku <span class='faqInFb'>Obnoviť</span>, vyberte položku <span class='faqInFb'>Obnoviť do umiestnenia</span> a vyberte nové umiestnenie.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -3120,7 +3120,8 @@
         "settingsNotes": "Znova spustite túto aplikáciu, aby ste sa uistili, že sa všetky zmeny prejavia.",
         "betaSettingTitle": "Program Beta",
         "betaProgram": "Program Beta",
-        "betaSettingDescription": "Vyskúšajte najnovšie funkcie, na ktorých pracujeme."
+        "betaSettingDescription": "Vyskúšajte najnovšie funkcie, na ktorých pracujeme.",
+        "betaSettingNewDescription": "Sme radi, že vás môžeme pozvať do Beta programu služby Smart Performance. Táto služba pomáha zlepšovať výkon vášho počítača:<br/><ul class='pl-4'><li>Aktívnou diagnostikou chýb a optimalizáciou nastavení.</li><li>Zvýšením výkonu internetu pomocou optimalizácie siete a prehliadača.</li><li>Vykonávaním rýchlej kontroly a nápravy bez použitia existujúceho antivírusového programu.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Zrušiť",
@@ -4045,8 +4046,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "Šípka vľavo",
+            "rightArrow": "Šípka vpravo"
         }
     },
     "dcc": {

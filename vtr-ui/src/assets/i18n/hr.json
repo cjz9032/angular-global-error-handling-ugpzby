@@ -2093,12 +2093,12 @@
                 "photo": {
                     "title": "BROJ SNIMLJENIH FOTOGRAFIJA TIJEKOM POMICANJA",
                     "tooltip": "Kamera na vašem računalu automatski se aktivira za fotografiranje kada se otkrije pokrete. Fotografije se snimaju svake 2 sekunde i sprema ih se u vašu lokalnu pohranu.",
-                    "option1": 5,
-                    "option2": 10,
-                    "option3": 15,
-                    "option4": 20,
-                    "option5": 25,
-                    "option6": 30
+                    "option1": "5",
+                    "option2": "10",
+                    "option3": "15",
+                    "option4": "20",
+                    "option5": "25",
+                    "option6": "30"
                 },
                 "showPhoto": {
                     "title": "FOTOGRAFIJE SU BILE:",
@@ -2707,7 +2707,7 @@
         },
         "question1": {
             "title": "Sigurnosno kopiranje i vraćanje datoteka",
-            "description": "<div>    <div class='faqInFs4Fb'>        Sigurnosno kopiranje i vraćanje datoteka    </div>    <hr />    <div class='faqInMb7'>        Uvijek je dobro imati podršku. Čuvajte kopije datoteka na drugom pogonu u slučaju da se nešto dogodi s izvornicima.    </div>    <div class='faqInFs3Fb'>        Postavljanje sigurnosnog kopiranja    </div>    <hr />    <div class='mb-5'>        Odaberite gumb <span class='faqInFb'>Start</span> (Početak), odaberite <span class='faqInFb'>Settings</span> (Postavke) > <span class='faqInFb'>Update & security</span> (Ažuriranje i sigurnost) > <span class='faqInFb'>Backup</span> (Sigurnosno kopiranje) > <span class='faqInFb'>Add a drive</span> (Dodaj pogon), a zatim odaberite vanjski pogon ili mrežnu lokaciju za sigurnosne kopije.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Sve je spremno. Svakog sata kopirat ćemo sve što je u vašoj korisničkoj mapi (C:\\\\Users\\\\username). Da biste promijenili koje se datoteke sigurnosno kopiraju ili koliko često dolazi do sigurnosnog kopiranja, idite u <span class='faqInFb'>More options</span> (Dodatne mogućnosti).    </div>    <div class='faqInFs3Fb'>        Vratite svoje datoteke    </div>    <div class='mb-5'>        Ako vam nedostaje važna datoteka ili mapa, evo kako je vratiti:    </div>    <div>        <div class='mb-3'>1. Upišite <span class='faqInFb'>Restore files</span> (Vrati datoteke) u okviru za pretraživanje na programskoj traci, a zatim odaberite <span class='faqInFb'> Restore your files with File History</span> (Vrati datoteke s pomoću Prethodne datoteke).</div>        <div class='mb-3'>2. Potražite datoteku koja vam je potrebna, a zatim s pomoću strelica pogledajte sve njezine verzije</div>        <div class='mb-3'>3. Kada pronađete željenu verziju, odaberite <span class='faqInFb'>Restore</span> (Vrati) da biste je spremili na njezinu izvornu lokaciju. Da biste je spremili na drugo mjesto, pritisnite i držite (ili desnim klikom miša) <span class='faqInFb'>Restore</span> (Vrati), odaberite <span class='faqInFb'>Restore to</span> (Vrati u), a zatim odaberite novu lokaciju.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Sigurnosno kopiranje i vraćanje datoteka    </div>    <hr />    <div class='faqInMb7'>        Uvijek je dobro imati podršku. Čuvajte kopije datoteka na drugom pogonu u slučaju da se nešto dogodi s izvornicima.    </div>    <div class='faqInFs3Fb'>        Postavljanje sigurnosnog kopiranja    </div>    <hr />    <div class='mb-5'>        Odaberite gumb <span class='faqInFb'>Start</span> (Početak), odaberite <span class='faqInFb'>Settings</span> (Postavke) > <span class='faqInFb'>Update & security</span> (Ažuriranje i sigurnost) > <span class='faqInFb'>Backup</span> (Sigurnosno kopiranje) > <span class='faqInFb'>Add a drive</span> (Dodaj pogon), a zatim odaberite vanjski pogon ili mrežnu lokaciju za sigurnosne kopije.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Sve je spremno. Svakog sata kopirat ćemo sve što je u vašoj korisničkoj mapi (C:\\Users\\vaše korisničko ime). Da biste promijenili koje se datoteke sigurnosno kopiraju ili koliko često dolazi do sigurnosnog kopiranja, idite u <span class='faqInFb'>More options</span> (Dodatne mogućnosti).    </div>    <div class='faqInFs3Fb'>        Vratite svoje datoteke    </div>    <div class='mb-5'>        Ako vam nedostaje važna datoteka ili mapa, evo kako je vratiti:    </div>    <div>        <div class='mb-3'>1. Upišite <span class='faqInFb'>Restore files</span> (Vrati datoteke) u okviru za pretraživanje na programskoj traci, a zatim odaberite <span class='faqInFb'> Restore your files with File History</span> (Vrati datoteke s pomoću Prethodne datoteke).</div>        <div class='mb-3'>2. Potražite datoteku koja vam je potrebna, a zatim s pomoću strelica pogledajte sve njezine verzije</div>        <div class='mb-3'>3. Kada pronađete željenu verziju, odaberite <span class='faqInFb'>Restore</span> (Vrati) da biste je spremili na njezinu izvornu lokaciju. Da biste je spremili na drugo mjesto, pritisnite i držite (ili desnim klikom miša) <span class='faqInFb'>Restore</span> (Vrati), odaberite <span class='faqInFb'>Restore to</span> (Vrati u), a zatim odaberite novu lokaciju.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -3120,7 +3120,8 @@
         "settingsNotes": "Ponovo pokrenite ovu aplikaciju kako biste bili sigurni da će sve promjene stupiti na snagu.",
         "betaSettingTitle": "Beta program",
         "betaProgram": "Beta program",
-        "betaSettingDescription": "Isprobajte najnovije značajke na kojima radimo."
+        "betaSettingDescription": "Isprobajte najnovije značajke na kojima radimo.",
+        "betaSettingNewDescription": "Drago nam je što vas možemo pozvati na Beta program Smart Performance. Pomaže u poboljšanju performansi računala:<br/><ul class='pl-4'><li>Proaktivno dijagnosticiranje grešaka i optimiziranje postavki.</li><li>Povećajte internetske performanse putem optimizacije mreža i brojeva.</li><li>Brzo skeniranje i sanacija bez korištenja postojećeg antivirusnog programa.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Odustani",
@@ -4045,8 +4046,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "Lijeva strelica",
+            "rightArrow": "Desna strelica"
         }
     },
     "dcc": {

@@ -2093,12 +2093,12 @@
                 "photo": {
                     "title": "NUMĂRUL DE FOTOGRAFII REALIZATE ÎN TIMPUL MIȘCĂRII",
                     "tooltip": "Camera foto de pe computer se activează automat pentru a face fotografii atunci când se detectează mișcări. Fotografiile sunt făcute la fiecare 2 secunde și sunt salvate pe spațiul de stocare local.",
-                    "option1": 5,
-                    "option2": 10,
-                    "option3": 15,
-                    "option4": 20,
-                    "option5": 25,
-                    "option6": 30
+                    "option1": "5",
+                    "option2": "10",
+                    "option3": "15",
+                    "option4": "20",
+                    "option5": "25",
+                    "option6": "30"
                 },
                 "showPhoto": {
                     "title": "FOTOGRAFIILE AU FOST:",
@@ -2707,7 +2707,7 @@
         },
         "question1": {
             "title": "Copii de siguranță și restaurarea fișierelor",
-            "description": "<div>    <div class='faqInFs4Fb'>        Copii de siguranță și restaurarea fișierelor    </div>    <hr />    <div class='faqInMb7'>        Întotdeauna este bine să aveți o copie de siguranță. Păstrați copiile fișierelor pe o altă unitate, în cazul în care se întâmplă ceva cu cele originale.    </div>    <div class='faqInFs3Fb'>        Configurați-vă copiile de siguranță    </div>    <hr />    <div class='mb-5'>        Selectați butonul <span class='faqInFb'>Start</span>, selectați <span class='faqInFb'>Settings</span> > <span class='faqInFb'>Update & security</span> > <span class='faqInFb'>Backup</span> > <span class='faqInFb'>Add a drive</span> și apoi alegeți o unitate externă sau o locație din rețea pentru copiile de siguranță.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Totul este gata. Vom face copii de siguranță, la interval de o oră, pentru toate fișierele din folderul utilizatorului (C:\\\\Users\\\\username). Pentru a alege pentru ce fișiere sau la ce interval de timp se fac copiile de siguranță, accesați <span class='faqInFb'>More options</span>.    </div>    <div class='faqInFs3Fb'>        Restaurați-vă fișierele    </div>    <div class='mb-5'>        Dacă vă lipsește un fișier sau folder important, iată ce puteți face pentru a-l recupera:    </div>    <div>        <div class='mb-3'>1. În caseta de căutare din bara de activități, introduceți <span class='faqInFb'>Restore files</span> și apoi selectați <span class='faqInFb'> Restore your files with File History</span>.</div>        <div class='mb-3'>2. Căutați fișierul, apoi folosiți săgețile pentru a vedea toate versiunile acestuia</div>        <div class='mb-3'>3. Când găsiți versiunea pe care o doriți, selectați <span class='faqInFb'>Restore</span> pentru a o salva în locația originală. Pentru a o salva în altă locație țineți apăsat (sau dați clic dreapta pe) <span class='faqInFb'>Restore</span>, selectați <span class='faqInFb'>Restore to</span> și apoi alegeți o nouă locație.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Copii de siguranță și restaurarea fișierelor    </div>    <hr />    <div class='faqInMb7'>        Întotdeauna este bine să aveți o copie de siguranță. Păstrați copiile fișierelor pe o altă unitate, în cazul în care se întâmplă ceva cu cele originale.    </div>    <div class='faqInFs3Fb'>        Configurați-vă copiile de siguranță    </div>    <hr />    <div class='mb-5'>        Selectați butonul <span class='faqInFb'>Start</span>, selectați <span class='faqInFb'>Settings</span> > <span class='faqInFb'>Update & security</span> > <span class='faqInFb'>Backup</span> > <span class='faqInFb'>Add a drive</span> și apoi alegeți o unitate externă sau o locație din rețea pentru copiile de siguranță.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Totul este gata. Vom face copii de siguranță, la interval de o oră, pentru toate fișierele din folderul utilizatorului (C:\\Users\\numele dvs. de utilizator). Pentru a alege pentru ce fișiere sau la ce interval de timp se fac copiile de siguranță, accesați <span class='faqInFb'>More options</span>.    </div>    <div class='faqInFs3Fb'>        Restaurați-vă fișierele    </div>    <div class='mb-5'>        Dacă vă lipsește un fișier sau folder important, iată ce puteți face pentru a-l recupera:    </div>    <div>        <div class='mb-3'>1. În caseta de căutare din bara de activități, introduceți <span class='faqInFb'>Restore files</span> și apoi selectați <span class='faqInFb'> Restore your files with File History</span>.</div>        <div class='mb-3'>2. Căutați fișierul, apoi folosiți săgețile pentru a vedea toate versiunile acestuia</div>        <div class='mb-3'>3. Când găsiți versiunea pe care o doriți, selectați <span class='faqInFb'>Restore</span> pentru a o salva în locația originală. Pentru a o salva în altă locație țineți apăsat (sau dați clic dreapta pe) <span class='faqInFb'>Restore</span>, selectați <span class='faqInFb'>Restore to</span> și apoi alegeți o nouă locație.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -3120,7 +3120,8 @@
         "settingsNotes": "Pentru a vă asigura că toate modificările au efect, lansați din nou această aplicație.",
         "betaSettingTitle": "Program beta",
         "betaProgram": "Program beta",
-        "betaSettingDescription": "Cele mai recente caracteristici la care lucrăm."
+        "betaSettingDescription": "Cele mai recente caracteristici la care lucrăm.",
+        "betaSettingNewDescription": "Ne bucurăm să vă invităm la programul Beta pentru Smart Performance. Vă ajută să îmbunătățiți performanța computerului prin:<br/><ul class='pl-4'><li>Diagnosticarea proactivă a erorilor și optimizarea setărilor.</li><li>Sporirea performanțelor Internetului prin Optimizarea rețelei și a browserului.</li><li>Efectuarea unei scanări rapide și remediere fără a utiliza programul Antivirus existent.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Anulare",
@@ -4045,8 +4046,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "Săgeată stânga",
+            "rightArrow": "Săgeată dreapta"
         }
     },
     "dcc": {

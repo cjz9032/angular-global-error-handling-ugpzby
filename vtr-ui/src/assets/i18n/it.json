@@ -2093,12 +2093,12 @@
                 "photo": {
                     "title": "IL NUMERO DI FOTO SCATTATE DURANTE IL MOVIMENTO",
                     "tooltip": "La fotocamera del computer si attiva automaticamente per scattare foto quando vengono rilevati movimenti. Le foto vengono scattate ogni 2 secondi e vengono salvate nell'archivio locale.",
-                    "option1": 5,
-                    "option2": 10,
-                    "option3": 15,
-                    "option4": 20,
-                    "option5": 25,
-                    "option6": 30
+                    "option1": "5",
+                    "option2": "10",
+                    "option3": "15",
+                    "option4": "20",
+                    "option5": "25",
+                    "option6": "30"
                 },
                 "showPhoto": {
                     "title": "LE FOTO SONO STATE:",
@@ -2707,7 +2707,7 @@
         },
         "question1": {
             "title": "Backup e ripristino dei file",
-            "description": "<div>    <div class='faqInFs4Fb'>        Backup e ripristino dei file    </div>    <hr />    <div class='faqInMb7'>        È sempre consigliabile disporre di una copia di backup. Si consiglia di salvare le copie dei file su un'altra unità, in caso di problemi ai file originali.    </div>    <div class='faqInFs3Fb'>        Configurazione del backup    </div>    <hr />    <div class='mb-5'>        Selezionare il pulsante <span class='faqInFb'>Start</span>, fare clic su <span class='faqInFb'>Impostazioni</span> > <span class='faqInFb'>Aggiornamento e sicurezza</span> > <span class='faqInFb'>Backup</span> > <span class='faqInFb'>Aggiungi un'unità</span> e scegliere un'unità esterna o il percorso di rete per i backup.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Tutto è pronto. Il backup verrà eseguito ogni ora nella cartella utente (C:\\\\Users\\\\username). Per modificare i file di cui eseguire il backup o la frequenza dei backup, accedere alla sezione <span class='faqInFb'>Altre opzioni</span>.    </div>    <div class='faqInFs3Fb'>        Ripristino dei file    </div>    <div class='mb-5'>        Se manca un file o una cartella importante, ecco come recuperarlo:    </div>    <div>        <div class='mb-3'>1. Digitare <span class='faqInFb'>Ripristina file</span> nella casella di ricerca sulla barra delle applicazioni, quindi selezionare <span class='faqInFb'> Ripristina file con Cronologia file</span>.</div>        <div class='mb-3'>2. Cercare il file che si desidera, quindi utilizzare le frecce per visualizzare tutte le versioni</div>        <div class='mb-3'>3. Una volta trovata la versione desiderata, selezionare <span class='faqInFb'>Ripristina</span> per salvarla nel percorso originale. Per salvarla in un percorso differente, tenere premuto (o fare clic con il pulsante destro del mouse su) <span class='faqInFb'>Ripristina</span>, selezionare <span class='faqInFb'>Ripristina in</span> e scegliere un nuovo percorso.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Backup e ripristino dei file    </div>    <hr />    <div class='faqInMb7'>        È sempre consigliabile disporre di una copia di backup. Si consiglia di salvare le copie dei file su un'altra unità, in caso di problemi ai file originali.    </div>    <div class='faqInFs3Fb'>        Configurazione del backup    </div>    <hr />    <div class='mb-5'>        Selezionare il pulsante <span class='faqInFb'>Start</span>, fare clic su <span class='faqInFb'>Impostazioni</span> > <span class='faqInFb'>Aggiornamento e sicurezza</span> > <span class='faqInFb'>Backup</span> > <span class='faqInFb'>Aggiungi un'unità</span> e scegliere un'unità esterna o il percorso di rete per i backup.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Tutto è pronto. Il backup verrà eseguito ogni ora nella cartella utente (C:\\Users\\nome utente). Per modificare i file di cui eseguire il backup o la frequenza dei backup, accedere alla sezione <span class='faqInFb'>Altre opzioni</span>.    </div>    <div class='faqInFs3Fb'>        Ripristino dei file    </div>    <div class='mb-5'>        Se manca un file o una cartella importante, ecco come recuperarlo:    </div>    <div>        <div class='mb-3'>1. Digitare <span class='faqInFb'>Ripristina file</span> nella casella di ricerca sulla barra delle applicazioni, quindi selezionare <span class='faqInFb'> Ripristina file con Cronologia file</span>.</div>        <div class='mb-3'>2. Cercare il file che si desidera, quindi utilizzare le frecce per visualizzare tutte le versioni</div>        <div class='mb-3'>3. Una volta trovata la versione desiderata, selezionare <span class='faqInFb'>Ripristina</span> per salvarla nel percorso originale. Per salvarla in un percorso differente, tenere premuto (o fare clic con il pulsante destro del mouse su) <span class='faqInFb'>Ripristina</span>, selezionare <span class='faqInFb'>Ripristina in</span> e scegliere un nuovo percorso.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -3120,7 +3120,8 @@
         "settingsNotes": "Riavviare questa applicazione per assicurarsi che tutte le modifiche abbiano effetto.",
         "betaSettingTitle": "Programma beta",
         "betaProgram": "Programma beta",
-        "betaSettingDescription": "Prova le funzioni più recenti su cui stiamo lavorando."
+        "betaSettingDescription": "Prova le funzioni più recenti su cui stiamo lavorando.",
+        "betaSettingNewDescription": "Siamo lieti di invitarti al programma Beta di Smart Performance. Questo programma contribuisce a migliorare le prestazioni del tuo PC mediante:<br/><ul class='pl-4'><li>Diagnostica proattiva dei bug e ottimizzazione delle impostazioni.</li><li>Aumento delle prestazioni Internet attraverso l'ottimizzazione della rete e del browser.</li><li>Esecuzione di scansione e correzioni rapide senza utilizzare il programma antivirus esistente.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Annulla",
@@ -4045,8 +4046,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "Freccia sinistra",
+            "rightArrow": "Freccia destra"
         }
     },
     "dcc": {

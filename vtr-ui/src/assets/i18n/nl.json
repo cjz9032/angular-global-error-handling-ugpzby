@@ -2093,12 +2093,12 @@
                 "photo": {
                     "title": "HET AANTAL FOTO'S DAT TIJDENS DE BEWEGING WORDT GENOMEN",
                     "tooltip": "De camera op de computer wordt automatisch geactiveerd om foto's te maken wanneer er bewegingen worden gedetecteerd. Er worden elke twee seconden foto's genomen en ze worden opgeslagen in uw lokale opslag.",
-                    "option1": 5,
-                    "option2": 10,
-                    "option3": 15,
-                    "option4": 20,
-                    "option5": 25,
-                    "option6": 30
+                    "option1": "5",
+                    "option2": "10",
+                    "option3": "15",
+                    "option4": "20",
+                    "option5": "25",
+                    "option6": "30"
                 },
                 "showPhoto": {
                     "title": "FOTO'S ZIJN:",
@@ -2707,7 +2707,7 @@
         },
         "question1": {
             "title": "Back-ups maken en bestanden terugzetten",
-            "description": "<div>    <div class='faqInFs4Fb'>        Back-ups maken en bestanden terugzetten    </div>    <hr />    <div class='faqInMb7'>        Het is altijd verstandig om een back-up te hebben. Bewaar kopieën van uw bestanden op een ander station voor het geval er iets met de originelen gebeurt.    </div>    <div class='faqInFs3Fb'>        Uw back-up instellen    </div>    <hr />    <div class='mb-5'>        Selecteer de knop <span class='faqInFb'>Start</span>, selecteer <span class='faqInFb'>Instellingen</span> > <span class='faqInFb'>Bijwerken en beveiliging</span> > <span class='faqInFb'>Back-up</span> > <span class='faqInFb'>Een station toevoegen</span> en kies vervolgens een extern station of netwerklocatie voor uw back-ups.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Klaar. Elk uur maken we een back-up van de hele inhoud van uw gebruikersmap (C:\\\\Users\\\\username). Als u wilt wijzigen van welke bestanden een back-up wordt gemaakt of hoe vaak er een back-up wordt gemaakt, gaat u naar <span class='faqInFb'>Meer opties</span>.    </div>    <div class='faqInFs3Fb'>        Bestanden terugzetten    </div>    <div class='mb-5'>        Als een belangrijk bestand of belangrijke map ontbreekt, gaat u als volgt te werk om dit bestand of deze map te herstellen:    </div>    <div>        <div class='mb-3'>1. Typ <span class='faqInFb'>Bestanden terugzetten</span> in het zoekvak op de taakbalk en selecteer vervolgens <span class='faqInFb'>Bestanden vanuit een back-up terugzetten met Bestandsgeschiedenis</span>.</div>        <div class='mb-3'>2. Zoek het bestand dat u nodig hebt en gebruik vervolgens de pijlen om alle versies ervan te zien</div>        <div class='mb-3'>3. Wanneer u de gewenste versie hebt gevonden, selecteert u <span class='faqInFb'>Terugzetten</span> om het bestand op te slaan op de oorspronkelijke locatie. Als u het bestand op een andere locatie wilt opslaan, houdt u de knop <span class='faqInFb'>Terugzetten</span> ingedrukt (of klikt u erop met de rechtermuisknop), selecteert u <span class='faqInFb'>Terugzetten naar</span> en kiest u vervolgens een nieuwe locatie.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Back-ups maken en bestanden terugzetten    </div>    <hr />    <div class='faqInMb7'>        Het is altijd verstandig om een back-up te hebben. Bewaar kopieën van uw bestanden op een ander station voor het geval er iets met de originelen gebeurt.    </div>    <div class='faqInFs3Fb'>        Uw back-up instellen    </div>    <hr />    <div class='mb-5'>        Selecteer de knop <span class='faqInFb'>Start</span>, selecteer <span class='faqInFb'>Instellingen</span> > <span class='faqInFb'>Bijwerken en beveiliging</span> > <span class='faqInFb'>Back-up</span> > <span class='faqInFb'>Een station toevoegen</span> en kies vervolgens een extern station of netwerklocatie voor uw back-ups.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Klaar. Elk uur maken we een back-up van de hele inhoud van uw gebruikersmap (C:\\Users\\Je gebruikersnaam). Als u wilt wijzigen van welke bestanden een back-up wordt gemaakt of hoe vaak er een back-up wordt gemaakt, gaat u naar <span class='faqInFb'>Meer opties</span>.    </div>    <div class='faqInFs3Fb'>        Bestanden terugzetten    </div>    <div class='mb-5'>        Als een belangrijk bestand of belangrijke map ontbreekt, gaat u als volgt te werk om dit bestand of deze map te herstellen:    </div>    <div>        <div class='mb-3'>1. Typ <span class='faqInFb'>Bestanden terugzetten</span> in het zoekvak op de taakbalk en selecteer vervolgens <span class='faqInFb'>Bestanden vanuit een back-up terugzetten met Bestandsgeschiedenis</span>.</div>        <div class='mb-3'>2. Zoek het bestand dat u nodig hebt en gebruik vervolgens de pijlen om alle versies ervan te zien</div>        <div class='mb-3'>3. Wanneer u de gewenste versie hebt gevonden, selecteert u <span class='faqInFb'>Terugzetten</span> om het bestand op te slaan op de oorspronkelijke locatie. Als u het bestand op een andere locatie wilt opslaan, houdt u de knop <span class='faqInFb'>Terugzetten</span> ingedrukt (of klikt u erop met de rechtermuisknop), selecteert u <span class='faqInFb'>Terugzetten naar</span> en kiest u vervolgens een nieuwe locatie.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -3120,7 +3120,8 @@
         "settingsNotes": "Start deze toepassing opnieuw, zodat alle wijzigingen van kracht worden.",
         "betaSettingTitle": "Bètaprogramma",
         "betaProgram": "Bètaprogramma",
-        "betaSettingDescription": "Probeer de nieuwste functies waaraan we werken."
+        "betaSettingDescription": "Probeer de nieuwste functies waaraan we werken.",
+        "betaSettingNewDescription": "We nodigen je graag uit voor het Beta-programma voor slimme prestaties. Hiermee kun je de prestaties van je PC verbeteren door:<br/><ul class='pl-4'><li>Proactief fouten en optimalisatie van instellingen te bepalen.</li><li>Internet prestaties te verhogen door optimalisatie van netwerk en browser.</li><li>Snelle scan en herstel-opties uit te voeren zonder gebruik te maken van het bestaande antivirus programma.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Annuleren",
@@ -4045,8 +4046,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "Pijl naar links",
+            "rightArrow": "Pijl naar rechts"
         }
     },
     "dcc": {
