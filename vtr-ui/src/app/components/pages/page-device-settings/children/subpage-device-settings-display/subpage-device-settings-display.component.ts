@@ -368,7 +368,6 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 	}
 
 	inWhiteList() {
-		return Promise.resolve(true);
 		// noinspection SpellCheckingInspection
 		const whitelist = [
 			'40346638a8da4aa73c765af43a709673',
