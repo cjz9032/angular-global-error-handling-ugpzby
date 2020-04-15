@@ -55,6 +55,8 @@
 		<div [ngClass]="['title','text-center']"
 			[class.disabled-title]="disabled"
 			id="{{textId}}-{{value}}-label"
+			role="text"
+			attr.aria-label="{{value}}"
 			[attr.aria-disabled]="disabled"
 			[attr.aria-checked]="checked">{{processLabel ? (label | capitalizeFirst) : label}}</div>
 	</div>
