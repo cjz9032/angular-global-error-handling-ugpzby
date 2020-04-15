@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.16](https://bitbucket.tc.lenovo.com///compare/v1.5.15...v1.5.16) (2020-04-15)
+
+
+### Bug Fixes
+
+* **mock:** remove async for CHS and DP in the mock service ([d40e928](https://bitbucket.tc.lenovo.com///commit/d40e928c200c31500b92f259cd7bc9d723c1bf99))
+
 ### [1.5.15](https://bitbucket.tc.lenovo.com///compare/v1.5.14...v1.5.15) (2020-04-14)
 
 
