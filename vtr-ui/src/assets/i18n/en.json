@@ -3831,7 +3831,8 @@
 		"settingsNotes": "Please relaunch this application to make sure all changes take effect.",
 		"betaSettingTitle": "Beta program",
 		"betaProgram": "Beta Program",
-		"betaSettingDescription": "Try the latest features we're working on."
+		"betaSettingDescription": "Try the latest features we're working on.",
+		"betaSettingNewDescription": "We are glad to invite you to the Beta program of Smart Performance. It helps to improve your PC performance by:<br/><ul class='pl-4'><li style='list-style-type:disc;'>Proactively diagnosing bugs and optimizing settings.</li><li>Boost Internet performance by Network and Brower Optimization.</li><li>Performing quick scan and remediation without using the existing Antivirus program.</li></ul>"
 	},
 	"modernPreload": {
 		"cancel": "Cancel",

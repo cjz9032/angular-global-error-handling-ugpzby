@@ -2050,16 +2050,16 @@
                 "tooltip": "Deze functie is niet van toepassing op webvideospelers. Populaire lokale videospelers, zoals Windows Media Player, 5KPlayer en dergelijke, ondersteunen deze functie."
             },
             "superResolution": {
-				"heading": "Intelligente media",
-				"title": "Schaalverhoging beeldschermresolutie",
-				"desc": "<p><label>Deze functie verbetert de beleving van het kijken van video's door de resolutie van de video te verbeteren. Dit werkt het beste als de video een lage resolutie heeft.</label></p> <p style='margin-top:4px;'><label>Deze functie kan invloed hebben op de levensduur en temperatuur van de batterij en kan ruis veroorzaken. Niet gebruiken in gelijkstroommodus (batterijstroom). anders neemt het stroomverbruik toe en gaat de batterij minder lang mee.</label></p>",
-				"tooltip": "Deze functie werkt alleen voor onderstaande videospelers:<br>Windows Media Player<br>Chrome<br>Films en tv<br>PotPlayer<br>GOM Player<br>Web-browser-gebaseerde spelers (bv. Chrome)<br><br>Zie de handleiding bij de computer voor informatie over het inschakelen van deze functie voor PotPlayer en GOM Player.",
-				"note": {
-					"description": "Deze functie werkt niet als:",
-					"description1": "De spaarstand voor batterijverbruik is ingeschakeld.",
-					"description2": "De CPU-temperatuur te hoog is."
-				}
-			},
+                "heading": "Intelligente media",
+                "title": "Schaalverhoging beeldschermresolutie",
+                "desc": "<p><label>Deze functie verbetert de beleving van het kijken van video's door de resolutie van de video te verbeteren. Dit werkt het beste als de video een lage resolutie heeft.</label></p> <p style='margin-top:4px;'><label>Deze functie kan invloed hebben op de levensduur en temperatuur van de batterij en kan ruis veroorzaken. Niet gebruiken in gelijkstroommodus (batterijstroom). anders neemt het stroomverbruik toe en gaat de batterij minder lang mee.</label></p>",
+                "tooltip": "Deze functie werkt alleen voor onderstaande videospelers:<br>Windows Media Player<br>Chrome<br>Films en tv<br>PotPlayer<br>GOM Player<br>Web-browser-gebaseerde spelers (bv. Chrome)<br><br>Zie de handleiding bij de computer voor informatie over het inschakelen van deze functie voor PotPlayer en GOM Player.",
+                "note": {
+                    "description": "Deze functie werkt niet als:",
+                    "description1": "De spaarstand voor batterijverbruik is ingeschakeld.",
+                    "description2": "De CPU-temperatuur te hoog is."
+                }
+            },
             "antiTheft": {
                 "heading": "Intelligent Sensing",
                 "title": "Slimme bewegingsmelding",
@@ -2068,44 +2068,44 @@
                     "description": "Als u eenmaal bij het systeem bent aangemeld, wordt deze functie automatisch uitgeschakeld. Om deze functie weer te gebruiken, moet u de functie opnieuw inschakelen."
                 },
                 "alarm": {
-                    "title":" HET ALARM DUURT",
-                    "option1":"10 seconden",
-                    "option2":"20 seconden",
-                    "option3":"30 seconden",
-                    "option4":"1 minuut",
-                    "option5":"Stopt nooit"
+                    "title": " HET ALARM DUURT",
+                    "option1": "10 seconden",
+                    "option2": "20 seconden",
+                    "option3": "30 seconden",
+                    "option4": "1 minuut",
+                    "option5": "Stopt nooit"
                 },
                 "allowCamera": {
-                    "title":"FOTO'S NEMEN",
-                    "describe":"Als u deze functie inschakelt, neemt de camera automatisch foto's als er bewegingen worden gedetecteerd terwijl uw scherm vergrendeld is. Deze gegevens worden lokaal op uw apparaat verwerkt. Lenovo heeft geen toegang tot uw afbeelding en gebruikt deze ook niet.",
-                    "checkBoxText":"Schakel deze functie in"
+                    "title": "FOTO'S NEMEN",
+                    "describe": "Als u deze functie inschakelt, neemt de camera automatisch foto's als er bewegingen worden gedetecteerd terwijl uw scherm vergrendeld is. Deze gegevens worden lokaal op uw apparaat verwerkt. Lenovo heeft geen toegang tot uw afbeelding en gebruikt deze ook niet.",
+                    "checkBoxText": "Schakel deze functie in"
                 },
                 "cameraPrivacy": {
-                     "describe":"De privacymodus van Lenovo Vantage Camera is ingeschakeld. De functie van het selectievakje werkt niet.",
-                     "linkText":"Ga naar de privacymodus van de camera om deze uit te schakelen"
+                    "describe": "De privacymodus van Lenovo Vantage Camera is ingeschakeld. De functie van het selectievakje werkt niet.",
+                    "linkText": "Ga naar de privacymodus van de camera om deze uit te schakelen"
                 },
                 "authorizedAccess": {
-                    "describe":"Lenovo Vantage heeft geen toegang tot de camera. De functie van het selectievakje werkt niet.",
-                    "linkText":"Ga naar de Windows-instellingen om toegang te geven"
+                    "describe": "Lenovo Vantage heeft geen toegang tot de camera. De functie van het selectievakje werkt niet.",
+                    "linkText": "Ga naar de Windows-instellingen om toegang te geven"
                 },
                 "photo": {
-                    "title":"HET AANTAL FOTO'S DAT TIJDENS DE BEWEGING WORDT GENOMEN",
+                    "title": "HET AANTAL FOTO'S DAT TIJDENS DE BEWEGING WORDT GENOMEN",
                     "tooltip": "De camera op de computer wordt automatisch geactiveerd om foto's te maken wanneer er bewegingen worden gedetecteerd. Er worden elke twee seconden foto's genomen en ze worden opgeslagen in uw lokale opslag.",
-                    "option1":"5",
-                    "option2":"10",
-                    "option3":"15",
-                    "option4":"20",
-                    "option5":"25",
-                    "option6":"30"
+                    "option1": "5",
+                    "option2": "10",
+                    "option3": "15",
+                    "option4": "20",
+                    "option5": "25",
+                    "option6": "30"
                 },
                 "showPhoto": {
-                    "title":"FOTO'S ZIJN:",
-                    "link":"Foto's bekijken"
-				},
-				"fileAuthorizationTips": {
-					"content":"Lenovo Vantage heeft geen toegang tot het bestandssysteem.",
-					"link":"Ga naar de Windows-instellingen om toegang te geven"
-				}
+                    "title": "FOTO'S ZIJN:",
+                    "link": "Foto's bekijken"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Lenovo Vantage heeft geen toegang tot het bestandssysteem.",
+                    "link": "Ga naar de Windows-instellingen om toegang te geven"
+                }
             },
             "voice": {
                 "title": "Spraak",
@@ -3118,7 +3118,8 @@
         "settingsNotes": "Start deze toepassing opnieuw, zodat alle wijzigingen van kracht worden.",
         "betaSettingTitle": "Bètaprogramma",
         "betaProgram": "Bètaprogramma",
-        "betaSettingDescription": "Probeer de nieuwste functies waaraan we werken."
+        "betaSettingDescription": "Probeer de nieuwste functies waaraan we werken.",
+        "betaSettingNewDescription": "We nodigen je graag uit voor het Beta-programma voor slimme prestaties. Hiermee kun je de prestaties van je PC verbeteren door:<br/><ul class='pl-4'><li>Proactief fouten en optimalisatie van instellingen te bepalen.</li><li>Internet prestaties te verhogen door optimalisatie van netwerk en browser.</li><li>Snelle scan en herstel-opties uit te voeren zonder gebruik te maken van het bestaande antivirus programma.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Annuleren",
@@ -4043,8 +4044,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "Pijl naar links",
+            "rightArrow": "Pijl naar rechts"
         }
     },
     "dcc": {

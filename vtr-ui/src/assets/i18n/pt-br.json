@@ -2050,16 +2050,16 @@
                 "tooltip": "Esse recurso não é aplicável a players de vídeo da Web. Os players de vídeo populares, como o Windows Media Player, 5KPlayer, dentre outros, oferecem suporte a esse recurso."
             },
             "superResolution": {
-				"heading": "Mídia inteligente",
-				"title": "Upscaling da resolução de vídeo",
-				"desc": "<p><label>Esse recurso aprimora a experiência de reprodução de vídeos, melhorando a resolução do vídeo. Funciona especialmente quando o vídeo tem baixa resolução.</label></p> <p style='margin-top:4px;'><label>Essa função pode afetar a vida útil da bateria, a temperatura da bateria e causar ruídos. Não a use no modo DC (modo de bateria). Caso contrário, ela acelerará o consumo de energia e reduzirá a duração da bateria.</label></p>",
-				"tooltip": "Esse recurso funciona apenas para os players de vídeo abaixo:<br>Windows Media Player<br>Chrome<br> Filmes e TV<br> PotPlayer<br>GOM Player<br>Players baseados em navegador da Web (por exemplo, Chrome)<br><br>Para obter instruções sobre como ativar esta função no PotPlayer e no GOM Player, consulte o Guia do usuário que acompanha o computador.",
-				"note": {
-					"description": "Esse recurso não funciona quando:",
-					"description1": "O modo de economia de bateria está ativado.",
-					"description2": "A temperatura da CPU está muito alta."
-				}
-			},
+                "heading": "Mídia inteligente",
+                "title": "Upscaling da resolução de vídeo",
+                "desc": "<p><label>Esse recurso aprimora a experiência de reprodução de vídeos, melhorando a resolução do vídeo. Funciona especialmente quando o vídeo tem baixa resolução.</label></p> <p style='margin-top:4px;'><label>Essa função pode afetar a vida útil da bateria, a temperatura da bateria e causar ruídos. Não a use no modo DC (modo de bateria). Caso contrário, ela acelerará o consumo de energia e reduzirá a duração da bateria.</label></p>",
+                "tooltip": "Esse recurso funciona apenas para os players de vídeo abaixo:<br>Windows Media Player<br>Chrome<br> Filmes e TV<br> PotPlayer<br>GOM Player<br>Players baseados em navegador da Web (por exemplo, Chrome)<br><br>Para obter instruções sobre como ativar esta função no PotPlayer e no GOM Player, consulte o Guia do usuário que acompanha o computador.",
+                "note": {
+                    "description": "Esse recurso não funciona quando:",
+                    "description1": "O modo de economia de bateria está ativado.",
+                    "description2": "A temperatura da CPU está muito alta."
+                }
+            },
             "antiTheft": {
                 "heading": "Detecção inteligente",
                 "title": "Alerta de movimento inteligente",
@@ -2068,44 +2068,44 @@
                     "description": "Após o login no sistema, esse recurso será desativado automaticamente. Você precisa habilitá-lo novamente para usá-lo."
                 },
                 "alarm": {
-                    "title":" O ALARME PERMANECERÁ ATIVO POR",
-                    "option1":"10 segundos",
-                    "option2":"20 segundos",
-                    "option3":"30 segundos",
-                    "option4":"1 minuto",
-                    "option5":"Nunca parar"
+                    "title": " O ALARME PERMANECERÁ ATIVO POR",
+                    "option1": "10 segundos",
+                    "option2": "20 segundos",
+                    "option3": "30 segundos",
+                    "option4": "1 minuto",
+                    "option5": "Nunca parar"
                 },
                 "allowCamera": {
-                    "title":"TIRAR FOTOS",
-                    "describe":"Ao ativar esse recurso, a câmera tira fotos automaticamente ao detectar qualquer movimento, se a tela estiver bloqueada. Esses dados são processados localmente no dispositivo. A Lenovo não acessa nem usa esses dados.",
-                    "checkBoxText":"Ativar esse recurso"
+                    "title": "TIRAR FOTOS",
+                    "describe": "Ao ativar esse recurso, a câmera tira fotos automaticamente ao detectar qualquer movimento, se a tela estiver bloqueada. Esses dados são processados localmente no dispositivo. A Lenovo não acessa nem usa esses dados.",
+                    "checkBoxText": "Ativar esse recurso"
                 },
                 "cameraPrivacy": {
-                     "describe":"O modo de privacidade da câmera do Lenovo Vantage está ativado. A função da caixa de seleção não funcionará.",
-                     "linkText":"Ir para o modo de privacidade da câmera para desativá-lo"
+                    "describe": "O modo de privacidade da câmera do Lenovo Vantage está ativado. A função da caixa de seleção não funcionará.",
+                    "linkText": "Ir para o modo de privacidade da câmera para desativá-lo"
                 },
                 "authorizedAccess": {
-                    "describe":"O Lenovo Vantage não tem acesso à câmera. A função da caixa de seleção não funcionará.",
-                    "linkText":"Ir para as Configurações do Windows para dar acesso"
+                    "describe": "O Lenovo Vantage não tem acesso à câmera. A função da caixa de seleção não funcionará.",
+                    "linkText": "Ir para as Configurações do Windows para dar acesso"
                 },
                 "photo": {
-                    "title":"O NÚMERO DE FOTOS TIRADAS DURANTE O MOVIMENTO",
+                    "title": "O NÚMERO DE FOTOS TIRADAS DURANTE O MOVIMENTO",
                     "tooltip": "A câmera do seu computador é ativada automaticamente para tirar fotos quando movimentos são detectados. As fotos são tiradas a cada 2 segundos e salvas no armazenamento local.",
-                    "option1":"5",
-                    "option2":"10",
-                    "option3":"15",
-                    "option4":"20",
-                    "option5":"25",
-                    "option6":"30"
+                    "option1": "5",
+                    "option2": "10",
+                    "option3": "15",
+                    "option4": "20",
+                    "option5": "25",
+                    "option6": "30"
                 },
                 "showPhoto": {
-                    "title":"FOTOS FORAM:",
-                    "link":"Exibir fotos"
-				},
-				"fileAuthorizationTips": {
-					"content":"O Lenovo Vantage não tem acesso ao sistema de arquivos.",
-					"link":"Ir para as Configurações do Windows para dar acesso"
-				}
+                    "title": "FOTOS FORAM:",
+                    "link": "Exibir fotos"
+                },
+                "fileAuthorizationTips": {
+                    "content": "O Lenovo Vantage não tem acesso ao sistema de arquivos.",
+                    "link": "Ir para as Configurações do Windows para dar acesso"
+                }
             },
             "voice": {
                 "title": "Voz",
@@ -3118,7 +3118,8 @@
         "settingsNotes": "Reinicie este aplicativo para garantir que todas as alterações entrem em vigor.",
         "betaSettingTitle": "Programa Beta",
         "betaProgram": "Programa Beta",
-        "betaSettingDescription": "Experimente os recursos mais recentes nos quais estamos trabalhando."
+        "betaSettingDescription": "Experimente os recursos mais recentes nos quais estamos trabalhando.",
+        "betaSettingNewDescription": "Temos o prazer de convidar você para o programa Beta de Smart Performance. Ele ajuda a melhorar o desempenho do seu PC das seguintes formas:<br/><ul class='pl-4'><li>Diagnosticando bugs proativamente e otimizando configurações.</li><li>Aumentando o desempenho da Internet com otimização de rede e navegador.</li><li>Executando verificação e correção rápidas sem usar o programa antivírus existente.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Cancelar",
@@ -4043,8 +4044,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "Seta para a esquerda",
+            "rightArrow": "Seta para a direita"
         }
     },
     "dcc": {

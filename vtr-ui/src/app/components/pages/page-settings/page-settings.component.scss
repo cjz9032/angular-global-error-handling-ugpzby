@@ -221,6 +221,9 @@
 	ul.list-group {
 		list-style-type: none;
 		padding-bottom: 1rem;
+		::ng-deep .vtr-ui-switch-row .caption ul li {
+			list-style-type: disc;
+		}
 	}
 
 	.settings-note {

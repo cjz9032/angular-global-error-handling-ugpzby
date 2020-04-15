@@ -2050,16 +2050,16 @@
                 "tooltip": "Diese Funktion funktioniert nicht bei Web-Videoplayern. Bekannte lokale Videoplayer unterstützen diese Funktion, z. B. Windows Media Player, 5KPlayer etc."
             },
             "superResolution": {
-				"heading": "Intelligente Medien",
-				"title": "Upscaling der Videoauflösung",
-				"desc": "<p><label>Diese Funktion optimiert die Videowiedergabe, indem die Bildschirmauflösung verbessert wird. Sie ist besonders nützlich, wenn das Video eine schlechte Auflösung hat.</label></p> <p style='margin-top:4px;'><label>Diese Funktion kann die Akkulebensdauer und -temperatur beeinflussen und Geräusche verursachen. Verwenden Sie sie nicht im Gleichstrommodus (Akkubetrieb). Andernfalls wird schneller Strom verbraucht und die Lebensdauer des Akkus verkürzt.</label></p>",
-				"tooltip": "Diese Funktion funktioniert nur mit den folgenden Videoplayern:<br>Windows Media Player<br>Chrome<br>Filme & TV<br>PotPlayer<br>GOM Player<br>Webbrowser-basierte Player (z. B. Chrome)<br><br>Anweisungen zum Aktivieren dieser Funktion bei PotPlayer und GOM Player finden Sie im Benutzerhandbuch, das im Lieferumfang Ihres Computers enthalten ist.",
-				"note": {
-					"description": "Diese Funktion funktioniert nicht, wenn:",
-					"description1": "Der Akkusparmodus ist aktiviert.",
-					"description2": "Die CPU-Temperatur zu hoch ist."
-				}
-			},
+                "heading": "Intelligente Medien",
+                "title": "Upscaling der Videoauflösung",
+                "desc": "<p><label>Diese Funktion optimiert die Videowiedergabe, indem die Bildschirmauflösung verbessert wird. Sie ist besonders nützlich, wenn das Video eine schlechte Auflösung hat.</label></p> <p style='margin-top:4px;'><label>Diese Funktion kann die Akkulebensdauer und -temperatur beeinflussen und Geräusche verursachen. Verwenden Sie sie nicht im Gleichstrommodus (Akkubetrieb). Andernfalls wird schneller Strom verbraucht und die Lebensdauer des Akkus verkürzt.</label></p>",
+                "tooltip": "Diese Funktion funktioniert nur mit den folgenden Videoplayern:<br>Windows Media Player<br>Chrome<br>Filme & TV<br>PotPlayer<br>GOM Player<br>Webbrowser-basierte Player (z. B. Chrome)<br><br>Anweisungen zum Aktivieren dieser Funktion bei PotPlayer und GOM Player finden Sie im Benutzerhandbuch, das im Lieferumfang Ihres Computers enthalten ist.",
+                "note": {
+                    "description": "Diese Funktion funktioniert nicht, wenn:",
+                    "description1": "Der Akkusparmodus ist aktiviert.",
+                    "description2": "Die CPU-Temperatur zu hoch ist."
+                }
+            },
             "antiTheft": {
                 "heading": "Intelligente Sensorik",
                 "title": "Intelligente Bewegungswarnung",
@@ -2068,44 +2068,44 @@
                     "description": "Wenn Sie sich erfolgreich beim System angemeldet haben, wird die Funktion automatisch ausgeschaltet. Sie müssen sie erneut aktivieren, um sie verwenden zu können."
                 },
                 "alarm": {
-                    "title":" ALARM ENDET NACH",
-                    "option1":"10 Sekunden",
-                    "option2":"20 Sekunden",
-                    "option3":"30 Sekunden",
-                    "option4":"1 Minute",
-                    "option5":"Niemals"
+                    "title": " ALARM ENDET NACH",
+                    "option1": "10 Sekunden",
+                    "option2": "20 Sekunden",
+                    "option3": "30 Sekunden",
+                    "option4": "1 Minute",
+                    "option5": "Niemals"
                 },
                 "allowCamera": {
-                    "title":"FOTOS AUFNEHMEN",
-                    "describe":"Wenn diese Funktion aktiviert ist, nimmt die Kamera automatisch Fotos auf, wenn der Bildschirm gesperrt ist und Bewegungen erkannt werden. Diese Daten werden lokal auf Ihrem Gerät verarbeitet. Lenovo greift nicht auf diese Daten zu und verwendet sie nicht.",
-                    "checkBoxText":"Funktion aktivieren"
+                    "title": "FOTOS AUFNEHMEN",
+                    "describe": "Wenn diese Funktion aktiviert ist, nimmt die Kamera automatisch Fotos auf, wenn der Bildschirm gesperrt ist und Bewegungen erkannt werden. Diese Daten werden lokal auf Ihrem Gerät verarbeitet. Lenovo greift nicht auf diese Daten zu und verwendet sie nicht.",
+                    "checkBoxText": "Funktion aktivieren"
                 },
                 "cameraPrivacy": {
-                     "describe":"Der Kamera-Datenschutzmodus der Lenovo Vantage ist aktiviert. Das Kontrollkästchen reagiert nicht.",
-                     "linkText":"Zum Kamera-Datenschutzmodus wechseln, um ihn auszuschalten"
+                    "describe": "Der Kamera-Datenschutzmodus der Lenovo Vantage ist aktiviert. Das Kontrollkästchen reagiert nicht.",
+                    "linkText": "Zum Kamera-Datenschutzmodus wechseln, um ihn auszuschalten"
                 },
                 "authorizedAccess": {
-                    "describe":"Lenovo Vantage hat keinen Zugriff auf die Kamera. Das Kontrollkästchen reagiert nicht.",
-                    "linkText":"Zu Windows-Einstellungen wechseln, um Zugriff zu gewähren"
+                    "describe": "Lenovo Vantage hat keinen Zugriff auf die Kamera. Das Kontrollkästchen reagiert nicht.",
+                    "linkText": "Zu Windows-Einstellungen wechseln, um Zugriff zu gewähren"
                 },
                 "photo": {
-                    "title":"ANZAHL DER BEI BEWEGUNG AUFGENOMMENEN FOTOS",
+                    "title": "ANZAHL DER BEI BEWEGUNG AUFGENOMMENEN FOTOS",
                     "tooltip": "Die Kamera Ihres Computers wird automatisch aktiviert und macht Fotos, wenn Bewegungen erkannt werden. Alle 2 Sekunden wird ein Foto aufgenommen und lokal gespeichert.",
-                    "option1":"5",
-                    "option2":"10",
-                    "option3":"15",
-                    "option4":"20",
-                    "option5":"25",
-                    "option6":"30"
+                    "option1": "5",
+                    "option2": "10",
+                    "option3": "15",
+                    "option4": "20",
+                    "option5": "25",
+                    "option6": "30"
                 },
                 "showPhoto": {
-                    "title":"FOTOS WURDEN:",
-                    "link":"Fotos anzeigen"
-				},
-				"fileAuthorizationTips": {
-					"content":"Lenovo Vantage hat keinen Zugriff auf das Dateisystem.",
-					"link":"Zu Windows-Einstellungen wechseln, um Zugriff zu gewähren"
-				}
+                    "title": "FOTOS WURDEN:",
+                    "link": "Fotos anzeigen"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Lenovo Vantage hat keinen Zugriff auf das Dateisystem.",
+                    "link": "Zu Windows-Einstellungen wechseln, um Zugriff zu gewähren"
+                }
             },
             "voice": {
                 "title": "Sprache",
@@ -3118,7 +3118,8 @@
         "settingsNotes": "Starten Sie diese Anwendung neu, um sicherzustellen, dass alle Änderungen übernommen wurden.",
         "betaSettingTitle": "Beta-Programm",
         "betaProgram": "Beta-Programm",
-        "betaSettingDescription": "Testen Sie die neuesten Funktionen, an denen wir gerade arbeiten."
+        "betaSettingDescription": "Testen Sie die neuesten Funktionen, an denen wir gerade arbeiten.",
+        "betaSettingNewDescription": "Wir freuen uns, Sie zum Beta-Programm von Smart Performance einladen zu dürfen. Es optimiert Ihre PC-Leistung durch:<br/><ul class='pl-4'><li>proaktives Diagnostizieren von Fehlern und Optimieren der Einstellungen</li><li>Steigern der Internetleistung durch Netzwerk‑ und Browseroptimierung</li><li>Durchführen von schnellen Scans und Korrekturen ohne Verwendung des vorhandenen Antivirenprogramms</li></ul>"
     },
     "modernPreload": {
         "cancel": "Abbrechen",
@@ -4043,8 +4044,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "Pfeil links",
+            "rightArrow": "Pfeil rechts"
         }
     },
     "dcc": {

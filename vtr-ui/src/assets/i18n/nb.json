@@ -2050,16 +2050,16 @@
                 "tooltip": "Denne funksjonen støttes ikke av nettvideospillere. Populære lokale videospillere, for eksempel Windows Media Player og 5KPlayer, støtter denne funksjonen."
             },
             "superResolution": {
-				"heading": "Intelligent medieavspilling",
-				"title": "Oppskalering av videooppløsning",
-				"desc": "<p><label>Denne funksjonen forbedrer opplevelsen av videoavspilling ved å forbedre videooppløsningen. Den fungerer spesielt når videoen har dårlig oppløsning.</label></p> <p style='margin-top:4px;'><label>Denne funksjonen kan påvirke batteritiden, batteritemperaturen og forårsake støy. Ikke bruk i likestrømmodus (batterimodus). Ellers vil det øke strømforbruket og forkorte batteriets levetid.</label></p>",
-				"tooltip": "Denne funksjonen fungerer bare for følgende videospillere:<br>Windows Media Player<br>Chrome<br>Filmer og TV<br>PotPlayer<br>GOM player<br>Nettleserbaserte spillere (for eksempel Chrome)<br><br>Se brukerhåndboken som følger med datamaskinen for instruksjoner om hvordan du aktiverer denne funksjonen for PotPlayer og GOM player.",
-				"note": {
-					"description": "Denne funksjonen fungerer ikke når følgende er tilfelle:",
-					"description1": "Batterisparemodus er aktivert.",
-					"description2": "CPU-temperaturen er for høy."
-				}
-			},
+                "heading": "Intelligent medieavspilling",
+                "title": "Oppskalering av videooppløsning",
+                "desc": "<p><label>Denne funksjonen forbedrer opplevelsen av videoavspilling ved å forbedre videooppløsningen. Den fungerer spesielt når videoen har dårlig oppløsning.</label></p> <p style='margin-top:4px;'><label>Denne funksjonen kan påvirke batteritiden, batteritemperaturen og forårsake støy. Ikke bruk i likestrømmodus (batterimodus). Ellers vil det øke strømforbruket og forkorte batteriets levetid.</label></p>",
+                "tooltip": "Denne funksjonen fungerer bare for følgende videospillere:<br>Windows Media Player<br>Chrome<br>Filmer og TV<br>PotPlayer<br>GOM player<br>Nettleserbaserte spillere (for eksempel Chrome)<br><br>Se brukerhåndboken som følger med datamaskinen for instruksjoner om hvordan du aktiverer denne funksjonen for PotPlayer og GOM player.",
+                "note": {
+                    "description": "Denne funksjonen fungerer ikke når følgende er tilfelle:",
+                    "description1": "Batterisparemodus er aktivert.",
+                    "description2": "CPU-temperaturen er for høy."
+                }
+            },
             "antiTheft": {
                 "heading": "Intelligent føler",
                 "title": "Smart bevegelsesvarsel",
@@ -2068,44 +2068,44 @@
                     "description": "Når du har logget på systemet, vil denne funksjonen bli slått av automatisk. Du må aktivere den på nytt for å bruke den."
                 },
                 "alarm": {
-                    "title":" ALARMEN SKAL VARE I",
-                    "option1":"10 sekunder",
-                    "option2":"20 sekunder",
-                    "option3":"30 sekunder",
-                    "option4":"1 minutt",
-                    "option5":"Ikke stopp"
+                    "title": " ALARMEN SKAL VARE I",
+                    "option1": "10 sekunder",
+                    "option2": "20 sekunder",
+                    "option3": "30 sekunder",
+                    "option4": "1 minutt",
+                    "option5": "Ikke stopp"
                 },
                 "allowCamera": {
-                    "title":"TA BILDER",
-                    "describe":"Når du aktiverer denne funksjonen, tar kameraet automatisk bildene når det blir oppdaget bevegelse hvis skjermen er låst. Disse dataene behandles lokalt på enheten. Lenovo har verken tilgang til eller bruker dem.",
-                    "checkBoxText":"Aktiver denne funksjonen"
+                    "title": "TA BILDER",
+                    "describe": "Når du aktiverer denne funksjonen, tar kameraet automatisk bildene når det blir oppdaget bevegelse hvis skjermen er låst. Disse dataene behandles lokalt på enheten. Lenovo har verken tilgang til eller bruker dem.",
+                    "checkBoxText": "Aktiver denne funksjonen"
                 },
                 "cameraPrivacy": {
-                     "describe":"Lenovo Vantage Personvernmodus for kamera er på. Avmerkingsboksen vil ikke fungere.",
-                     "linkText":"Gå til Personvernmodus for kamera for å slå av"
+                    "describe": "Lenovo Vantage Personvernmodus for kamera er på. Avmerkingsboksen vil ikke fungere.",
+                    "linkText": "Gå til Personvernmodus for kamera for å slå av"
                 },
                 "authorizedAccess": {
-                    "describe":"Lenovo Vantage har ikke tilgang til kamera. Avmerkingsboksen vil ikke fungere.",
-                    "linkText":"Gå til Windows-innstillingene for å gi tilgang"
+                    "describe": "Lenovo Vantage har ikke tilgang til kamera. Avmerkingsboksen vil ikke fungere.",
+                    "linkText": "Gå til Windows-innstillingene for å gi tilgang"
                 },
                 "photo": {
-                    "title":"ANTALL BILDER SOM TAS VED BEVEGELSE",
+                    "title": "ANTALL BILDER SOM TAS VED BEVEGELSE",
                     "tooltip": "Kameraet på datamaskinen aktiveres automatisk for å ta bilder når det oppdages bevegelse. Det tas bilder hvert andre sekund, og de lagres på den lokale lagringsplassen.",
-                    "option1":"5",
-                    "option2":"10",
-                    "option3":"15",
-                    "option4":"20",
-                    "option5":"25",
-                    "option6":"30"
+                    "option1": "5",
+                    "option2": "10",
+                    "option3": "15",
+                    "option4": "20",
+                    "option5": "25",
+                    "option6": "30"
                 },
                 "showPhoto": {
-                    "title":"BILDER:",
-                    "link":"Vis bilder"
-				},
-				"fileAuthorizationTips": {
-					"content":"Lenovo Vantage har ikke tilgang til filsystemet.",
-					"link":"Gå til Windows-innstillingene for å gi tilgang"
-				}
+                    "title": "BILDER:",
+                    "link": "Vis bilder"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Lenovo Vantage har ikke tilgang til filsystemet.",
+                    "link": "Gå til Windows-innstillingene for å gi tilgang"
+                }
             },
             "voice": {
                 "title": "Tale",
@@ -3118,7 +3118,8 @@
         "settingsNotes": "Start programmet på nytt for å sikre at alle endringene trer i kraft.",
         "betaSettingTitle": "Beta-program",
         "betaProgram": "Beta-program",
-        "betaSettingDescription": "Prøv de nyeste funksjonene vi jobber med."
+        "betaSettingDescription": "Prøv de nyeste funksjonene vi jobber med.",
+        "betaSettingNewDescription": "Vi har gleden av å invitere deg til Beta-programmet for smart ytelse. Den hjelper deg med å forbedre ytelsen på PC-en din ved å:<br/><ul class='pl-4'><li>Proaktivt diagnostisere feil og optimalisere innstillinger.</li><li>Øke Internett-ytelsen med optimalisering av nettverks og nettleser.</li><li>Utføre hurtigsøk og utbedring uten å bruke det eksisterende antivirusprogrammet.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Avbryt",
@@ -4043,8 +4044,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "Pil venstre",
+            "rightArrow": "Pil høyre"
         }
     },
     "dcc": {
