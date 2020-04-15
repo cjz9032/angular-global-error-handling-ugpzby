@@ -12,9 +12,12 @@
 					'col-md-11 col-11':(!resetTextAsButton && !isSwitchVisible),
 					'col-md-7': (resetTextAsButton && !isSwitchVisible),
 					'col-md-10':type===undefined }">
-				<div class="container-fluid p-0">
-					<div class="row m-0">
+				<div class="container-fluid p-0"
+					role="table">
+					<div class="row m-0"
+						role="row">
 						<div class="col-auto left-icon-column"
+							role="cell"
 							*ngIf="leftIcon.length > 0">
 							<div class="left-icon-block">
 								<fa-icon *ngIf="!isAdminRequired && leftIcon[0]!=='icomoon' && leftIcon[0]!=='svg'"
@@ -31,16 +34,15 @@
 									class="adminLogo" />
 							</div>
 						</div>
-						<div class="col">
+						<div class="col"
+							role="cell">
 							<div class="title"
-								role="text"
 								id="{{switchId}}-title">
 								{{ title }}
 							</div>
 							<span *ngIf="caption">
 								<div class="caption"
 									#captionRef
-									role="text"
 									id="{{switchId}}-caption"
 									attr.aria-label="{{caption}}"
 									[innerHTML]="caption.length > 70  && !contentExpand  && readMoreText.length > 0 ? (caption | slice: 0:70) : caption">
@@ -81,8 +83,9 @@
 						(click)="onResetClick($event)"
 						(keydown.enter)="onResetClick($event)"
 						[attr.aria-disabled]="disabledAll"
-						[ngbTooltip]="resetText" tooltipClass="vtr-tooltip" container="body"
-						>
+						[ngbTooltip]="resetText"
+						tooltipClass="vtr-tooltip"
+						container="body">
 						<span class="text-ellipsis">{{ resetText }}</span>
 					</button>
 
