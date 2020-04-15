@@ -744,7 +744,7 @@ export class VantageShellService {
 		return undefined;
 	}
 
-	public async getConnectedHomeSecurity(): Phoenix.ConnectedHomeSecurity {
+	public getConnectedHomeSecurity(): Phoenix.ConnectedHomeSecurity {
 		const homeSecurity: Phoenix.ConnectedHomeSecurity = {
 			account: {
 				state: CHSAccountState.trial,
@@ -798,7 +798,7 @@ export class VantageShellService {
 		return homeSecurity;
 	}
 
-	public async getDevicePosture(): Phoenix.DevicePosture {
+	public getDevicePosture(): Phoenix.DevicePosture {
 		const devicePosture: Phoenix.DevicePosture = {
 			value: [
 				{ name: 'PasswordProtection', vulnerable: false },
