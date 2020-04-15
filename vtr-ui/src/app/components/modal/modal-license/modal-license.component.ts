@@ -102,7 +102,7 @@ export class ModalLicenseComponent implements OnInit, OnDestroy {
 			event.key === 'Tab' &&
 			this.type !== 'txt' &&
 			document.activeElement &&
-			document.activeElement.className.includes('close-btn')
+			document.activeElement.className.includes('close-button')
 		) {
 			(document.getElementById('license-agreement-iframe') as HTMLIFrameElement).contentWindow.document.body.focus();
 		}
