@@ -2050,16 +2050,16 @@
                 "tooltip": "此功能不適用於 Web 視訊播放程式。受歡迎的本端視訊播放程式（例如 Windows Media Player、5KPlayer 等）都支援此功能。"
             },
             "superResolution": {
-				"heading": "智慧型媒體",
-				"title": "視訊解析度提升",
-				"desc": "<p><label>此功能可提升視訊解析度，進而強化視訊播放的體驗，特別適合視訊解析度不佳時。</label></p> <p style='margin-top:4px;'><label>此功能可能會影響電池續航力、電池溫度，並造成噪音。請勿在 DC 模式（電池模式）下使用。否則，電力會消耗得更快，且電池壽命會變得更短。</label></p>",
-				"tooltip": "此功能僅適用於以下視訊播放程式：<br>Windows Media Player<br>Chrome<br>電影與電視<br>PotPlayer<br>GOM Player<br>Web 瀏覽器型播放程式（例如 Chrome）<br><br>如需如何在 PotPlayer 和 GOM Player 上啟用此功能的相關指示，請參閱電腦隨附的使用手冊。",
-				"note": {
-					"description": "此功能在下列情況中無法運作：",
-					"description1": "省電功能模式已啟用。",
-					"description2": "CPU 溫度過高。"
-				}
-			},
+                "heading": "智慧型媒體",
+                "title": "視訊解析度提升",
+                "desc": "<p><label>此功能可提升視訊解析度，進而強化視訊播放的體驗，特別適合視訊解析度不佳時。</label></p> <p style='margin-top:4px;'><label>此功能可能會影響電池續航力、電池溫度，並造成噪音。請勿在 DC 模式（電池模式）下使用。否則，電力會消耗得更快，且電池壽命會變得更短。</label></p>",
+                "tooltip": "此功能僅適用於以下視訊播放程式：<br>Windows Media Player<br>Chrome<br>電影與電視<br>PotPlayer<br>GOM Player<br>Web 瀏覽器型播放程式（例如 Chrome）<br><br>如需如何在 PotPlayer 和 GOM Player 上啟用此功能的相關指示，請參閱電腦隨附的使用手冊。",
+                "note": {
+                    "description": "此功能在下列情況中無法運作：",
+                    "description1": "省電功能模式已啟用。",
+                    "description2": "CPU 溫度過高。"
+                }
+            },
             "antiTheft": {
                 "heading": "智慧型感應",
                 "title": "智慧型移動警示",
@@ -2068,44 +2068,44 @@
                     "description": "成功登入系統後，此功能將自動關閉。您必須重新啟用才能使用此功能。"
                 },
                 "alarm": {
-                    "title":" 警示音持續時間",
-                    "option1":"10 秒",
-                    "option2":"20 秒",
-                    "option3":"30 秒",
-                    "option4":"1 分鐘",
-                    "option5":"永不停止"
+                    "title": " 警示音持續時間",
+                    "option1": "10 秒",
+                    "option2": "20 秒",
+                    "option3": "30 秒",
+                    "option4": "1 分鐘",
+                    "option5": "永不停止"
                 },
                 "allowCamera": {
-                    "title":"拍照",
-                    "describe":"啟用此功能時，若您的螢幕已鎖定，相機將在偵測到任何動作時自動拍照。這份資料將由您的裝置本機進行處理，Lenovo 絕不會逕自存取或加以使用。",
-                    "checkBoxText":"啟用這項功能"
+                    "title": "拍照",
+                    "describe": "啟用此功能時，若您的螢幕已鎖定，相機將在偵測到任何動作時自動拍照。這份資料將由您的裝置本機進行處理，Lenovo 絕不會逕自存取或加以使用。",
+                    "checkBoxText": "啟用這項功能"
                 },
                 "cameraPrivacy": {
-                     "describe":"Lenovo Vantage 攝影機隱私模式已開啟。勾選框的功能無法運作。",
-                     "linkText":"移至攝影機隱私模式以將其關閉"
+                    "describe": "Lenovo Vantage 攝影機隱私模式已開啟。勾選框的功能無法運作。",
+                    "linkText": "移至攝影機隱私模式以將其關閉"
                 },
                 "authorizedAccess": {
-                    "describe":"Lenovo Vantage 沒有攝影機的存取權。勾選框的功能無法運作。",
-                    "linkText":"移至 Windows 設定以授與存取權"
+                    "describe": "Lenovo Vantage 沒有攝影機的存取權。勾選框的功能無法運作。",
+                    "linkText": "移至 Windows 設定以授與存取權"
                 },
                 "photo": {
-                    "title":"移動期間拍攝的相片數",
+                    "title": "移動期間拍攝的相片數",
                     "tooltip": "電腦上的相機會在偵測到動作時自動啟動拍照功能。每 2 秒拍一次，並將照片存到您的本機儲存裝置。",
-                    "option1":"5",
-                    "option2":"10",
-                    "option3":"15",
-                    "option4":"20",
-                    "option5":"25",
-                    "option6":"30"
+                    "option1": "5",
+                    "option2": "10",
+                    "option3": "15",
+                    "option4": "20",
+                    "option5": "25",
+                    "option6": "30"
                 },
                 "showPhoto": {
-                    "title":"相片已：",
-                    "link":"檢視相片"
-				},
-				"fileAuthorizationTips": {
-					"content":"Lenovo Vantage 無權存取檔案系統。",
-					"link":"移至 Windows 設定以授與存取權"
-				}
+                    "title": "相片已：",
+                    "link": "檢視相片"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Lenovo Vantage 無權存取檔案系統。",
+                    "link": "移至 Windows 設定以授與存取權"
+                }
             },
             "voice": {
                 "title": "語音",
@@ -2705,7 +2705,7 @@
         },
         "question1": {
             "title": "備份及還原檔案",
-            "description": "<div>    <div class='faqInFs4Fb'>        備份及還原檔案    </div>    <hr />    <div class='faqInMb7'>        備份讓您有備無患。將檔案複本保存在另一個硬碟上，以防原件出現問題。    </div>    <div class='faqInFs3Fb'>        設定備份    </div>    <hr />    <div class='mb-5'>        選取<span class='faqInFb'>開始</span> 按鈕，接著依序選取<span class='faqInFb'>設定</span> > <span class='faqInFb'>更新和安全性</span> > <span class='faqInFb'>備份</span> > <span class='faqInFb'>新增硬碟</span>，然後選擇外部硬碟或網路位置來進行備份。    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        設定完成。使用者資料夾 (C:\\\\Users\\\\username) 中的所有資料會每隔 1 小時備份一次。若要變更要進行備份的檔案或是備份的發生頻率，請前往<span class='faqInFb'>其他選項</span>。    </div>    <div class='faqInFs3Fb'>        還原檔案    </div>    <div class='mb-5'>        如果您遺漏了重要檔案或資料夾，請按以下步驟將其還原：    </div>    <div>        <div class='mb-3'>1.在工作列上的搜尋方塊中鍵入<span class='faqInFb'>還原檔案</span>，然後選取<span class='faqInFb'>使用檔案歷程記錄來還原檔案</span>。</div>        <div class='mb-3'>2.尋找需要的檔案，然後使用箭頭來查看其所有版本</div>        <div class='mb-3'>3.在找到需要版本後，選取<span class='faqInFb'>還原</span>，將其儲存到原始位置。若要將檔案儲存到不同的位置，請按住不放 (或用滑鼠右鍵按一下) <span class='faqInFb'>還原</span>，並選取<span class='faqInFb'>還原至</span>，接著選擇新位置。</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        備份及還原檔案    </div>    <hr />    <div class='faqInMb7'>        備份讓您有備無患。將檔案複本保存在另一個硬碟上，以防原件出現問題。    </div>    <div class='faqInFs3Fb'>        設定備份    </div>    <hr />    <div class='mb-5'>        選取<span class='faqInFb'>開始</span> 按鈕，接著依序選取<span class='faqInFb'>設定</span> > <span class='faqInFb'>更新和安全性</span> > <span class='faqInFb'>備份</span> > <span class='faqInFb'>新增硬碟</span>，然後選擇外部硬碟或網路位置來進行備份。    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        設定完成。使用者資料夾 (C:\\Users\\您的使用者名稱) 中的所有資料會每隔 1 小時備份一次。若要變更要進行備份的檔案或是備份的發生頻率，請前往<span class='faqInFb'>其他選項</span>。    </div>    <div class='faqInFs3Fb'>        還原檔案    </div>    <div class='mb-5'>        如果您遺漏了重要檔案或資料夾，請按以下步驟將其還原：    </div>    <div>        <div class='mb-3'>1.在工作列上的搜尋方塊中鍵入<span class='faqInFb'>還原檔案</span>，然後選取<span class='faqInFb'>使用檔案歷程記錄來還原檔案</span>。</div>        <div class='mb-3'>2.尋找需要的檔案，然後使用箭頭來查看其所有版本</div>        <div class='mb-3'>3.在找到需要版本後，選取<span class='faqInFb'>還原</span>，將其儲存到原始位置。若要將檔案儲存到不同的位置，請按住不放 (或用滑鼠右鍵按一下) <span class='faqInFb'>還原</span>，並選取<span class='faqInFb'>還原至</span>，接著選擇新位置。</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -3118,7 +3118,8 @@
         "settingsNotes": "請重新啟動此應用程式，以確保所有變更都生效。",
         "betaSettingTitle": "Beta 程式",
         "betaProgram": "Beta 程式",
-        "betaSettingDescription": "試試我們正在開發的最新功能。"
+        "betaSettingDescription": "試試我們正在開發的最新功能。",
+        "betaSettingNewDescription": "我們很高興能邀請您使用測試版 Smart Performance。本程式有助於提升您的電腦效能，作法為：<br/><ul class='pl-4'><li>主動診斷錯誤並最佳化設定。</li><li>最佳化網路和瀏覽器以提升網際網路效能。</li><li>在不使用現有防毒程式的情況下，執行快速掃描和修復。</li></ul>"
     },
     "modernPreload": {
         "cancel": "取消",
@@ -4043,8 +4044,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "向左鍵",
+            "rightArrow": "向右鍵"
         }
     },
     "dcc": {

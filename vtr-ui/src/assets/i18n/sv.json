@@ -2050,16 +2050,16 @@
                 "tooltip": "Denna funktion fungerar inte på onlinevideospelare. Vanliga lokala videospelare (som Windows Media Player och 5KPlayer) har stöd för denna funktion."
             },
             "superResolution": {
-				"heading": "Intelligenta medier",
-				"title": "Öka videoupplösningen",
-				"desc": "<p><label>Denna funktion förbättrar videoupplösningen, vilket ger en bättre upplevelse av videouppspelningen. Den är särskilt användbar om videon har dålig upplösning.</label></p> <p style='margin-top:4px;'><label>Funktionen kan påverka batteriets livslängd och temperatur och orsaka brus. Använd inte funktionen i DC-läge (batteriläge). Detta orsakar ökad energiförbrukning och batteriets livslängd förkortas.</label></p>",
-				"tooltip": "Funktionen fungerar med följande videospelare:<br>Windows Media Player<br>Chrome<br>Film & TV<br>PotPlayer<br>GOM Player<br>webbläsarbaserade spelare (till exempel Chrome)<br><br>Anvisningar om hur du aktiverar funktionen i PotPlayer och GOM Player finns i Användarhandbok som medföljer datorn.",
-				"note": {
-					"description": "Funktionen fungerar inte när",
-					"description1": "Batterisparläge är aktiverat.",
-					"description2": "processortemperaturen är för hög."
-				}
-			},
+                "heading": "Intelligenta medier",
+                "title": "Öka videoupplösningen",
+                "desc": "<p><label>Denna funktion förbättrar videoupplösningen, vilket ger en bättre upplevelse av videouppspelningen. Den är särskilt användbar om videon har dålig upplösning.</label></p> <p style='margin-top:4px;'><label>Funktionen kan påverka batteriets livslängd och temperatur och orsaka brus. Använd inte funktionen i DC-läge (batteriläge). Detta orsakar ökad energiförbrukning och batteriets livslängd förkortas.</label></p>",
+                "tooltip": "Funktionen fungerar med följande videospelare:<br>Windows Media Player<br>Chrome<br>Film & TV<br>PotPlayer<br>GOM Player<br>webbläsarbaserade spelare (till exempel Chrome)<br><br>Anvisningar om hur du aktiverar funktionen i PotPlayer och GOM Player finns i Användarhandbok som medföljer datorn.",
+                "note": {
+                    "description": "Funktionen fungerar inte när",
+                    "description1": "Batterisparläge är aktiverat.",
+                    "description2": "processortemperaturen är för hög."
+                }
+            },
             "antiTheft": {
                 "heading": "Intelligent avkänning",
                 "title": "Smart rörelsevarning",
@@ -2068,44 +2068,44 @@
                     "description": "När du har loggat in på systemet stängs funktionen av automatiskt. Du måste aktivera den igen om du vill använda den."
                 },
                 "alarm": {
-                    "title":" LARMET SKA PÅGÅ I",
-                    "option1":"10 sekunder",
-                    "option2":"20 sekunder",
-                    "option3":"30 sekunder",
-                    "option4":"1 minut",
-                    "option5":"Aldrig sluta"
+                    "title": " LARMET SKA PÅGÅ I",
+                    "option1": "10 sekunder",
+                    "option2": "20 sekunder",
+                    "option3": "30 sekunder",
+                    "option4": "1 minut",
+                    "option5": "Aldrig sluta"
                 },
                 "allowCamera": {
-                    "title":"TA FOTON",
-                    "describe":"När du aktiverar den här funktionen tar kameran automatiskt foton när den identifierar rörelser och skärmen är låst. Informationen bearbetas lokalt på datorn. Lenovo har inte till åtkomst till denna information och använder den inte.",
-                    "checkBoxText":"Aktivera funktionen"
+                    "title": "TA FOTON",
+                    "describe": "När du aktiverar den här funktionen tar kameran automatiskt foton när den identifierar rörelser och skärmen är låst. Informationen bearbetas lokalt på datorn. Lenovo har inte till åtkomst till denna information och använder den inte.",
+                    "checkBoxText": "Aktivera funktionen"
                 },
                 "cameraPrivacy": {
-                     "describe":"Sekretessläget för kameran i Lenovo Vantage är aktiverat. Kryssrutan fungerar inte.",
-                     "linkText":"Öppna kamerans sekretessläge för att inaktivera det"
+                    "describe": "Sekretessläget för kameran i Lenovo Vantage är aktiverat. Kryssrutan fungerar inte.",
+                    "linkText": "Öppna kamerans sekretessläge för att inaktivera det"
                 },
                 "authorizedAccess": {
-                    "describe":"Lenovo Vantage har inte åtkomst till kameran. Kryssrutan fungerar inte.",
-                    "linkText":"Öppna Windows-inställningar för att ge åtkomst"
+                    "describe": "Lenovo Vantage har inte åtkomst till kameran. Kryssrutan fungerar inte.",
+                    "linkText": "Öppna Windows-inställningar för att ge åtkomst"
                 },
                 "photo": {
-                    "title":"ANTAL FOTON SOM TAS UNDER RÖRELSEN",
+                    "title": "ANTAL FOTON SOM TAS UNDER RÖRELSEN",
                     "tooltip": "Kameran på datorn aktiveras automatiskt för att ta bilder när rörelser identifieras. Bilder tas varannan sekund och sparas i ditt lokala lagringsutrymme.",
-                    "option1":"5",
-                    "option2":"10",
-                    "option3":"15",
-                    "option4":"20",
-                    "option5":"25",
-                    "option6":"30"
+                    "option1": "5",
+                    "option2": "10",
+                    "option3": "15",
+                    "option4": "20",
+                    "option5": "25",
+                    "option6": "30"
                 },
                 "showPhoto": {
-                    "title":"FOTON HAR TAGITS:",
-                    "link":"Visa foton"
-				},
-				"fileAuthorizationTips": {
-					"content":"Lenovo Vantage har inte åtkomst till filsystemet.",
-					"link":"Öppna Windows-inställningar för att ge åtkomst"
-				}
+                    "title": "FOTON HAR TAGITS:",
+                    "link": "Visa foton"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Lenovo Vantage har inte åtkomst till filsystemet.",
+                    "link": "Öppna Windows-inställningar för att ge åtkomst"
+                }
             },
             "voice": {
                 "title": "Röst",
@@ -2705,7 +2705,7 @@
         },
         "question1": {
             "title": "Säkerhetskopiera och återställa filer",
-            "description": "<div>    <div class='faqInFs4Fb'>        Säkerhetskopiera och återställa filer    </div>    <hr />    <div class='faqInMb7'>        Det är alltid bra att ha en säkerhetskopia. Förvara kopior av dina filer på en annan disk om något skulle hända med originalen.    </div>    <div class='faqInFs3Fb'>        Konfigurera säkerhetskopiering    </div>    <hr />    <div class='mb-5'>        Klicka på <span class='faqInFb'>Start</span>-knappen och sedan <span class='faqInFb'>Inställningar</span> > <span class='faqInFb'>Uppdatering och säkerhet</span> > <span class='faqInFb'>Säkerhetskopiera</span> > <span class='faqInFb'>Lägg till en enhet</span> och välj sedan en extern hårddisk eller nätverksplats för dina säkerhetskopior.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Så var det klart. Varje timme säkerhetskopieras nu allt i din användarmapp (C:\\\\Users\\\\username). Om du vill ändra vilka filer som säkerhetskopieras eller hur ofta säkerhetskopieringen sker klickar du på <span class='faqInFb'>Fler alternativ</span>.    </div>    <div class='faqInFs3Fb'>        Återställa dina filer    </div>    <div class='mb-5'>        Om du saknar en viktig fil eller mapp kan du få tillbaka den på följande sätt:    </div>    <div>        <div class='mb-3'>1. Skriv <span class='faqInFb'>Återställ filer</span> i sökrutan i aktivitetsfältet och klicka sedan på <span class='faqInFb'> Återställ dina filer med Filhistorik</span>.</div>        <div class='mb-3'>2. Leta reda på den fil du behöver och använd sedan piltangenterna för att se alla versioner</div>        <div class='mb-3'>3. När du hittar den version du vill använda klickar du på <span class='faqInFb'>Återställ</span> för att spara den på sin ursprungliga plats. Om du vill spara den på en annan plats klickar och håller (eller högerklickar) du på <span class='faqInFb'>Återställ</span> och sedan <span class='faqInFb'>Återställ till</span>, och väljer sedan den plats du vill spara på.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Säkerhetskopiera och återställa filer    </div>    <hr />    <div class='faqInMb7'>        Det är alltid bra att ha en säkerhetskopia. Förvara kopior av dina filer på en annan disk om något skulle hända med originalen.    </div>    <div class='faqInFs3Fb'>        Konfigurera säkerhetskopiering    </div>    <hr />    <div class='mb-5'>        Klicka på <span class='faqInFb'>Start</span>-knappen och sedan <span class='faqInFb'>Inställningar</span> > <span class='faqInFb'>Uppdatering och säkerhet</span> > <span class='faqInFb'>Säkerhetskopiera</span> > <span class='faqInFb'>Lägg till en enhet</span> och välj sedan en extern hårddisk eller nätverksplats för dina säkerhetskopior.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Så var det klart. Varje timme säkerhetskopieras nu allt i din användarmapp (C:\\Users\\ditt användarnamn). Om du vill ändra vilka filer som säkerhetskopieras eller hur ofta säkerhetskopieringen sker klickar du på <span class='faqInFb'>Fler alternativ</span>.    </div>    <div class='faqInFs3Fb'>        Återställa dina filer    </div>    <div class='mb-5'>        Om du saknar en viktig fil eller mapp kan du få tillbaka den på följande sätt:    </div>    <div>        <div class='mb-3'>1. Skriv <span class='faqInFb'>Återställ filer</span> i sökrutan i aktivitetsfältet och klicka sedan på <span class='faqInFb'> Återställ dina filer med Filhistorik</span>.</div>        <div class='mb-3'>2. Leta reda på den fil du behöver och använd sedan piltangenterna för att se alla versioner</div>        <div class='mb-3'>3. När du hittar den version du vill använda klickar du på <span class='faqInFb'>Återställ</span> för att spara den på sin ursprungliga plats. Om du vill spara den på en annan plats klickar och håller (eller högerklickar) du på <span class='faqInFb'>Återställ</span> och sedan <span class='faqInFb'>Återställ till</span>, och väljer sedan den plats du vill spara på.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -3118,7 +3118,8 @@
         "settingsNotes": "Starta om programmet och kontrollera att alla ändringar börjar gälla.",
         "betaSettingTitle": "Betaprogram",
         "betaProgram": "Betaprogram",
-        "betaSettingDescription": "Prova de senaste funktionerna vi arbetar på."
+        "betaSettingDescription": "Prova de senaste funktionerna vi arbetar på.",
+        "betaSettingNewDescription": "Vi är glada att kunna bjuda in dig till betaprogrammet Smart prestanda. Du kan förbättra datorns prestanda genom att<br/><ul class='pl-4'><li>felsöka fel och optimera inställningar proaktivt</li><li>förbättra internetprestandan genom att optimera nätverk och webbläsare</li><li>utföra snabb sökning och reparation utan att använda det befintliga antivirusprogrammet.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Avbryt",
@@ -4043,8 +4044,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "Vänsterpil",
+            "rightArrow": "Högerpil"
         }
     },
     "dcc": {
