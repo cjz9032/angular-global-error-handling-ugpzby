@@ -1685,7 +1685,9 @@
                         },
                         "subSectionTwo": {
                             "title": "기본 주요 기능 복원",
-                            "description": "켜져 있는 경우, 기본 주요 기능이 공장 설정에서 반대 방향으로 변경됩니다. 변경사항을 적용하려면, 컴퓨터를 다시 시작해야 합니다."
+                            "description": "켜져 있는 경우, 기본 주요 기능이 공장 설정에서 반대 방향으로 변경됩니다. 변경사항을 적용하려면, 컴퓨터를 다시 시작해야 합니다.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "Fn 키 조합 사용 방법",
@@ -2050,16 +2052,16 @@
                 "tooltip": "이 기능은 웹 비디오 플레이어에는 적용되지 않습니다. 대중적인 비디오 플레이어(예: Windows Media Player, 5KPlayer 등)가 이 기능을 지원합니다."
             },
             "superResolution": {
-				"heading": "지능형 미디어",
-				"title": "비디오 해상도 업스케일링",
-				"desc": "<p><label>이 기능은 비디오 해상도를 향상시켜 비디오 재생 경험을 향상시킵니다. 특히 비디오 해상도가 좋지 않을 때 해당 기능이 작동합니다.</label></p> <p style='margin-top:4px;'><label>이 기능은 배터리 수명과 배터리 온도에 영향을 줄 수 있으며, 소음을 유발할 수 있습니다. DC 모드(배터리 모드)에서는 사용하지 마십시오. 그렇지 않으면 전력 소모를 가속화하고 배터리 수명을 단축시킵니다.</label></p>",
-				"tooltip": "이 기능은 아래의 비디오 플레이어에서만 작동합니다.<br>Windows Media Player<br>Chrome<br>영화 및 TV<br>PotPlayer<br>GOM player<br>웹 브라우저 기반 플레이어 (예: Chrome)<br><br>PotPlayer 및 GOM Player에서 해당 기능을 사용하는 방법에 대한 지침은 컴퓨터와 함께 제공되는 사용 설명서를 참고하십시오.",
-				"note": {
-					"description": "다음의 경우에는 이 기능이 작동하지 않습니다.",
-					"description1": "배터리 절약 모드가 활성화됩니다.",
-					"description2": "CPU 온도가 너무 높습니다."
-				}
-			},
+                "heading": "지능형 미디어",
+                "title": "비디오 해상도 업스케일링",
+                "desc": "<p><label>이 기능은 비디오 해상도를 향상시켜 비디오 재생 경험을 향상시킵니다. 특히 비디오 해상도가 좋지 않을 때 해당 기능이 작동합니다.</label></p> <p style='margin-top:4px;'><label>이 기능은 배터리 수명과 배터리 온도에 영향을 줄 수 있으며, 소음을 유발할 수 있습니다. DC 모드(배터리 모드)에서는 사용하지 마십시오. 그렇지 않으면 전력 소모를 가속화하고 배터리 수명을 단축시킵니다.</label></p>",
+                "tooltip": "이 기능은 아래의 비디오 플레이어에서만 작동합니다.<br>Windows Media Player<br>Chrome<br>영화 및 TV<br>PotPlayer<br>GOM player<br>웹 브라우저 기반 플레이어 (예: Chrome)<br><br>PotPlayer 및 GOM Player에서 해당 기능을 사용하는 방법에 대한 지침은 컴퓨터와 함께 제공되는 사용 설명서를 참고하십시오.",
+                "note": {
+                    "description": "다음의 경우에는 이 기능이 작동하지 않습니다.",
+                    "description1": "배터리 절약 모드가 활성화됩니다.",
+                    "description2": "CPU 온도가 너무 높습니다."
+                }
+            },
             "antiTheft": {
                 "heading": "지능형 센싱",
                 "title": "스마트 모션 알림",
@@ -2068,44 +2070,44 @@
                     "description": "시스템에 로그인하면 이 기능이 자동으로 꺼집니다. 다시 기능을 활성화해야 사용할 수 있습니다."
                 },
                 "alarm": {
-                    "title":" 알람은 다음 시간 동안 울립니다",
-                    "option1":"10초",
-                    "option2":"20초",
-                    "option3":"30초",
-                    "option4":"1분",
-                    "option5":"멈추지 않음"
+                    "title": " 알람은 다음 시간 동안 울립니다",
+                    "option1": "10초",
+                    "option2": "20초",
+                    "option3": "30초",
+                    "option4": "1분",
+                    "option5": "멈추지 않음"
                 },
                 "allowCamera": {
-                    "title":"사진 촬영",
-                    "describe":"이 기능을 활성화하면 화면이 잠긴 경우 카메라가 움직임을 감지할 때 자동으로 사진을 촬영합니다. 이 데이터는 장치에서 로컬로 처리됩니다. Lenovo는 이를 액세스하거나 사용하지 않습니다.",
-                    "checkBoxText":"이 기능 활성화하기"
+                    "title": "사진 촬영",
+                    "describe": "이 기능을 활성화하면 화면이 잠긴 경우 카메라가 움직임을 감지할 때 자동으로 사진을 촬영합니다. 이 데이터는 장치에서 로컬로 처리됩니다. Lenovo는 이를 액세스하거나 사용하지 않습니다.",
+                    "checkBoxText": "이 기능 활성화하기"
                 },
                 "cameraPrivacy": {
-                     "describe":"Lenovo Vantage 카메라 개인 정보 모드가 켜져 있습니다. 선택란의 기능이 작동하지 않습니다.",
-                     "linkText":"카메라 개인 정보 모드로 이동하여 끄기"
+                    "describe": "Lenovo Vantage 카메라 개인 정보 모드가 켜져 있습니다. 선택란의 기능이 작동하지 않습니다.",
+                    "linkText": "카메라 개인 정보 모드로 이동하여 끄기"
                 },
                 "authorizedAccess": {
-                    "describe":"Lenovo Vantage가 카메라에 액세스할 수 없습니다. 선택란의 기능이 작동하지 않습니다.",
-                    "linkText":"액세스 권한을 부여하려면, Windows 설정으로 이동합니다"
+                    "describe": "Lenovo Vantage가 카메라에 액세스할 수 없습니다. 선택란의 기능이 작동하지 않습니다.",
+                    "linkText": "액세스 권한을 부여하려면, Windows 설정으로 이동합니다"
                 },
                 "photo": {
-                    "title":"움직임이 있는 동안 찍은 사진의 개수",
+                    "title": "움직임이 있는 동안 찍은 사진의 개수",
                     "tooltip": "움직임이 감지되면 컴퓨터의 카메라가 자동으로 활성화되어 사진을 촬영합니다. 사진은 2초마다 촬영되며 로컬 저장 장치에 저장됩니다.",
-                    "option1":"5",
-                    "option2":"10",
-                    "option3":"15",
-                    "option4":"20",
-                    "option5":"25",
-                    "option6":"30"
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
                 },
                 "showPhoto": {
-                    "title":"사진은 다음과 같습니다.",
-                    "link":"사진 보기"
-				},
-				"fileAuthorizationTips": {
-					"content":"Lenovo Vantage는 파일 시스템에 액세스할 수 없습니다.",
-					"link":"액세스 권한을 부여하려면, Windows 설정으로 이동합니다"
-				}
+                    "title": "사진은 다음과 같습니다.",
+                    "link": "사진 보기"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Lenovo Vantage는 파일 시스템에 액세스할 수 없습니다.",
+                    "link": "액세스 권한을 부여하려면, Windows 설정으로 이동합니다"
+                }
             },
             "voice": {
                 "title": "음성",

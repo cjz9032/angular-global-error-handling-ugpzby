@@ -1683,7 +1683,9 @@
                         },
                         "subSectionTwo": {
                             "title": "Storniranje podrazumevane primarne funkcije",
-                            "description": "Kada je uključena, podrazumevana primarna funkcija će biti promenjena iz fabričkih postavki na suprotno. Ponovo pokrenite računar da bi se promene primenile."
+                            "description": "Kada je uključena, podrazumevana primarna funkcija će biti promenjena iz fabričkih postavki na suprotno. Ponovo pokrenite računar da bi se promene primenile.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "Kako da koristite kombinacije tastera Fn",
@@ -2050,16 +2052,16 @@
                 "tooltip": "Ova funkcija nije primenjiva na Web video plejere. Popularni lokalni video plejeri kao što su Windows Media Player, 5KPlayer itd. podržavaju ovu funkciju."
             },
             "superResolution": {
-				"heading": "Inteligentni mediji",
-				"title": "Poboljšavanje video rezolucije",
-				"desc": "<p><label>Ova funkcija poboljšava iskustvo reprodukcije video zapisa poboljšanjem rezolucije video zapisa. On radi posebno kada je video u slaboj rezoluciji.</label></p> <p style='margin-top:4px;'><label>Ova funkcija može da utiče na vek trajanja baterije, temperaturu baterije i može da izazove buku. Nemojte koristiti u režimu rada na jednosmernu struju (režim baterije). U suprotnom će se baterija brže istrošiti i skratiće se radni vek baterije.</label></p>",
-				"tooltip": "Ova funkcija radi samo u dolenavedenim video plejerima:<br>Windows Media Player<br>Chrome<br>Filmovi i TV<br>PotPlayer<br>GOM player<br>plejeri zasnovani na veb pregledaču (npr. Chrome)<br><br>Uputstva o tome kako da omogućite ovu funkciju u plejeru PotPlayer i GOM player potražite u Uputstvu za korisnike koje ste dobili uz računar.",
-				"note": {
-					"description": "Ova funkcija ne radi kada:",
-					"description1": "Omogućen je režim uštede baterije.",
-					"description2": "Temperatura procesora je previsoka."
-				}
-			},
+                "heading": "Inteligentni mediji",
+                "title": "Poboljšavanje video rezolucije",
+                "desc": "<p><label>Ova funkcija poboljšava iskustvo reprodukcije video zapisa poboljšanjem rezolucije video zapisa. On radi posebno kada je video u slaboj rezoluciji.</label></p> <p style='margin-top:4px;'><label>Ova funkcija može da utiče na vek trajanja baterije, temperaturu baterije i može da izazove buku. Nemojte koristiti u režimu rada na jednosmernu struju (režim baterije). U suprotnom će se baterija brže istrošiti i skratiće se radni vek baterije.</label></p>",
+                "tooltip": "Ova funkcija radi samo u dolenavedenim video plejerima:<br>Windows Media Player<br>Chrome<br>Filmovi i TV<br>PotPlayer<br>GOM player<br>plejeri zasnovani na veb pregledaču (npr. Chrome)<br><br>Uputstva o tome kako da omogućite ovu funkciju u plejeru PotPlayer i GOM player potražite u Uputstvu za korisnike koje ste dobili uz računar.",
+                "note": {
+                    "description": "Ova funkcija ne radi kada:",
+                    "description1": "Omogućen je režim uštede baterije.",
+                    "description2": "Temperatura procesora je previsoka."
+                }
+            },
             "antiTheft": {
                 "heading": "Inteligentno raspoznavanje",
                 "title": "Pametno upozorenje o pokretu",
@@ -2068,44 +2070,44 @@
                     "description": "Kada uspešno prijavite sistem, ova funkcija se automatski isključuje. Potrebno je da je ponovo omogućite da biste je koristili."
                 },
                 "alarm": {
-                    "title":" ALARM ĆE TRAJATI",
-                    "option1":"10 sekundi",
-                    "option2":"20 sekundi",
-                    "option3":"30 sekundi",
-                    "option4":"1 minut",
-                    "option5":"Nikad ne prestaje"
+                    "title": " ALARM ĆE TRAJATI",
+                    "option1": "10 sekundi",
+                    "option2": "20 sekundi",
+                    "option3": "30 sekundi",
+                    "option4": "1 minut",
+                    "option5": "Nikad ne prestaje"
                 },
                 "allowCamera": {
-                    "title":"FOTOGRAFISANJE",
-                    "describe":"Kada omogućite ovu funkciju, kamera automatski snima fotografije kada detektuje pokret ako je ekran zaključan. Ovi podaci se obrađuju lokalno na vašem uređaju. Lenovo im ne pristupa niti ih koristi.",
-                    "checkBoxText":"Omogućite ovu funkciju"
+                    "title": "FOTOGRAFISANJE",
+                    "describe": "Kada omogućite ovu funkciju, kamera automatski snima fotografije kada detektuje pokret ako je ekran zaključan. Ovi podaci se obrađuju lokalno na vašem uređaju. Lenovo im ne pristupa niti ih koristi.",
+                    "checkBoxText": "Omogućite ovu funkciju"
                 },
                 "cameraPrivacy": {
-                     "describe":"Režim privatnosti kamere Lenovo Vantage je uključen. Funkcija polja za potvrdu ne radi.",
-                     "linkText":"Idite na režim privatnosti kamere da biste ga isključili"
+                    "describe": "Režim privatnosti kamere Lenovo Vantage je uključen. Funkcija polja za potvrdu ne radi.",
+                    "linkText": "Idite na režim privatnosti kamere da biste ga isključili"
                 },
                 "authorizedAccess": {
-                    "describe":"Lenovo Vantage nema pristup kameri. Funkcija polja za potvrdu ne radi.",
-                    "linkText":"Idite na postavke operativnog sistema Windows da biste dali pristup"
+                    "describe": "Lenovo Vantage nema pristup kameri. Funkcija polja za potvrdu ne radi.",
+                    "linkText": "Idite na postavke operativnog sistema Windows da biste dali pristup"
                 },
                 "photo": {
-                    "title":"BROJ SNIMLJENIH FOTOGRAFIJA DOK TRAJE POKRET",
+                    "title": "BROJ SNIMLJENIH FOTOGRAFIJA DOK TRAJE POKRET",
                     "tooltip": "Kamera na računaru se automatski aktivira za snimanje slika kada se detektuju pokreti. Slike se snimaju na 2 sekunde i čuvaju se u lokalnom skladištu.",
-                    "option1":"5",
-                    "option2":"10",
-                    "option3":"15",
-                    "option4":"20",
-                    "option5":"25",
-                    "option6":"30"
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
                 },
                 "showPhoto": {
-                    "title":"FOTOGRAFIJE SU:",
-                    "link":"Prikaz fotografija"
-				},
-				"fileAuthorizationTips": {
-					"content":"Lenovo Vantage nema pristup sistemu datoteka.",
-					"link":"Idite na postavke operativnog sistema Windows da biste dali pristup"
-				}
+                    "title": "FOTOGRAFIJE SU:",
+                    "link": "Prikaz fotografija"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Lenovo Vantage nema pristup sistemu datoteka.",
+                    "link": "Idite na postavke operativnog sistema Windows da biste dali pristup"
+                }
             },
             "voice": {
                 "title": "Glas",

@@ -1685,7 +1685,9 @@
                         },
                         "subSectionTwo": {
                             "title": "デフォルトの主要機能を逆にする",
-                            "description": "オンの場合、デフォルトのプライマリ機能は工場出荷時の設定とは逆に変更されます。これらの変更を有効にするには、コンピューターを再起動してください。"
+                            "description": "オンの場合、デフォルトのプライマリ機能は工場出荷時の設定とは逆に変更されます。これらの変更を有効にするには、コンピューターを再起動してください。",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "Fn キーとの組み合わせの使用",
@@ -2050,16 +2052,16 @@
                 "tooltip": "この機能は Web ビデオ・プレイヤーに適用できません。Windows Media Player、5KPlayer など、人気のあるローカル・ビデオ・プレイヤーは、この機能をサポートしています。"
             },
             "superResolution": {
-				"heading": "インテリジェント・メディア",
-				"title": "ビデオ解像度のアップスケーリング",
-				"desc": "<p><label>この機能は、ビデオ解像度を改善することで、ビデオ再生のエクスペリエンスを向上させます。特にビデオの解像度が低い場合に効果があります。</label></p> <p style='margin-top:4px;'><label>この機能は、バッテリー寿命、バッテリー温度に影響を与え、ノイズを引き起こす可能性があります。DC モード (バッテリー・モード) では使用しないでください。そうしないと、電力消費が速くなり、バッテリー寿命が短くなります。</label></p>",
-				"tooltip": "この機能は、以下のビデオ・プレイヤーでのみ機能します。<br>Windows Media Player<br>Chrome<br>映画 & テレビ<br>PotPlayer<br>GOM Player<br>Web ブラウザー・ベースのプレーヤー (Chrome など)<br><br>PotPlayer および GOM Player でこの機能を有効にする方法については、コンピューターに付属のユーザー・ガイドを参照してください。",
-				"note": {
-					"description": "この機能は次の場合は動作しません。",
-					"description1": "バッテリー節約モードが有効になっている場合。",
-					"description2": "CPU の温度が高すぎる場合。"
-				}
-			},
+                "heading": "インテリジェント・メディア",
+                "title": "ビデオ解像度のアップスケーリング",
+                "desc": "<p><label>この機能は、ビデオ解像度を改善することで、ビデオ再生のエクスペリエンスを向上させます。特にビデオの解像度が低い場合に効果があります。</label></p> <p style='margin-top:4px;'><label>この機能は、バッテリー寿命、バッテリー温度に影響を与え、ノイズを引き起こす可能性があります。DC モード (バッテリー・モード) では使用しないでください。そうしないと、電力消費が速くなり、バッテリー寿命が短くなります。</label></p>",
+                "tooltip": "この機能は、以下のビデオ・プレイヤーでのみ機能します。<br>Windows Media Player<br>Chrome<br>映画 & テレビ<br>PotPlayer<br>GOM Player<br>Web ブラウザー・ベースのプレーヤー (Chrome など)<br><br>PotPlayer および GOM Player でこの機能を有効にする方法については、コンピューターに付属のユーザー・ガイドを参照してください。",
+                "note": {
+                    "description": "この機能は次の場合は動作しません。",
+                    "description1": "バッテリー節約モードが有効になっている場合。",
+                    "description2": "CPU の温度が高すぎる場合。"
+                }
+            },
             "antiTheft": {
                 "heading": "インテリジェント・センサー",
                 "title": "スマート・モーション・アラート",
@@ -2068,44 +2070,44 @@
                     "description": "システムに正しくログインすると、この機能は自動的にオフになります。使用するには、再度有効にする必要があります。"
                 },
                 "alarm": {
-                    "title":" アラームの継続時間",
-                    "option1":"10 秒",
-                    "option2":"20 秒",
-                    "option3":"30 秒",
-                    "option4":"1 分",
-                    "option5":"無制限"
+                    "title": " アラームの継続時間",
+                    "option1": "10 秒",
+                    "option2": "20 秒",
+                    "option3": "30 秒",
+                    "option4": "1 分",
+                    "option5": "無制限"
                 },
                 "allowCamera": {
-                    "title":"写真撮影",
-                    "describe":"この機能を有効にした場合、画面がロックされた状態で動きが検出されると、カメラによって自動的に写真が撮影されます。このデータはデバイスでローカルに処理されます。Lenovo はアクセスも使用もしません。",
-                    "checkBoxText":"この機能を有効にする"
+                    "title": "写真撮影",
+                    "describe": "この機能を有効にした場合、画面がロックされた状態で動きが検出されると、カメラによって自動的に写真が撮影されます。このデータはデバイスでローカルに処理されます。Lenovo はアクセスも使用もしません。",
+                    "checkBoxText": "この機能を有効にする"
                 },
                 "cameraPrivacy": {
-                     "describe":"Lenovo Vantage カメラのプライバシーモードがオンになっています。チェックボックスの機能は動作しません。",
-                     "linkText":"カメラのプライバシーモードに移動してオフにします"
+                    "describe": "Lenovo Vantage カメラのプライバシーモードがオンになっています。チェックボックスの機能は動作しません。",
+                    "linkText": "カメラのプライバシーモードに移動してオフにします"
                 },
                 "authorizedAccess": {
-                    "describe":"Lenovo Vantage がカメラにアクセスできません。チェックボックスの機能は動作しません。",
-                    "linkText":"Windows の設定に移動してアクセスできるようにします"
+                    "describe": "Lenovo Vantage がカメラにアクセスできません。チェックボックスの機能は動作しません。",
+                    "linkText": "Windows の設定に移動してアクセスできるようにします"
                 },
                 "photo": {
-                    "title":"動きに対して撮影される写真の枚数",
+                    "title": "動きに対して撮影される写真の枚数",
                     "tooltip": "動きが検出されると、コンピューターのカメラが自動的にアクティブになり、写真が撮影されます。写真は 2 秒ごとに撮影され、ローカル・ストレージに保存されます。",
-                    "option1":"5",
-                    "option2":"10",
-                    "option3":"15",
-                    "option4":"20",
-                    "option5":"25",
-                    "option6":"30"
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
                 },
                 "showPhoto": {
-                    "title":"写真:",
-                    "link":"写真を見る"
-				},
-				"fileAuthorizationTips": {
-					"content":"Lenovo Vantage がファイル・システムにアクセスできません。",
-					"link":"Windows の設定に移動してアクセスできるようにします"
-				}
+                    "title": "写真:",
+                    "link": "写真を見る"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Lenovo Vantage がファイル・システムにアクセスできません。",
+                    "link": "Windows の設定に移動してアクセスできるようにします"
+                }
             },
             "voice": {
                 "title": "音声",

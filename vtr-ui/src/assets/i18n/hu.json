@@ -1685,7 +1685,9 @@
                         },
                         "subSectionTwo": {
                             "title": "Az alapértelmezett elsődleges funkció megfordítása",
-                            "description": "Bekapcsolt állapotban az alapértelmezett elsődleges funkció a gyári beállításokról az ellenkezőre változik. A módosítások életbe lépéséhez indítsa újra a számítógépet."
+                            "description": "Bekapcsolt állapotban az alapértelmezett elsődleges funkció a gyári beállításokról az ellenkezőre változik. A módosítások életbe lépéséhez indítsa újra a számítógépet.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "Az Fn billentyűkombinációk használata",
@@ -2050,16 +2052,16 @@
                 "tooltip": "Ez a funkció nem használható internetes videólejátszókhoz. A népszerű helyi videólejátszók (pl. a Windows Media Player vagy a 5KPlayer) támogatják ezt a funkciót."
             },
             "superResolution": {
-				"heading": "Intelligens média",
-				"title": "Videófelbontás megnövelése",
-				"desc": "<p><label>Ez a funkció növeli a videók felbontását, és ezzel élvezetesebbé teszi a videók megtekintését. Különösen akkor hasznos, ha a videó felbontása alacsony.</label></p> <p style='margin-top:4px;'><label>Ez a funkció befolyásolhatja az akkumulátor élettartamát és hőmérsékletét, továbbá zajt kelthet. Ne használja DC üzemmódban (a rendszer akkumulátorról üzemel). Ellenkező esetben felgyorsítja az energiafogyasztást és lerövidíti az akkumulátor élettartamát.</label></p>",
-				"tooltip": "Ez a funkció kizárólag a következő videolejátszókkal működik:<br>Windows Media Player<br>Chrome<br>Filmek+TV<br>PotPlayer<br>GOM player<br>Böngészőalapú lejátszók (például Chrome)<br><br>A számítógéphez kapott Felhasználói kézikönyvből megtudhatja, hogyan lehet bekapcsolni a funkciót a PotPlayer és a GOM player esetében.",
-				"note": {
-					"description": "A funkció az alábbi esetekben nem működik:",
-					"description1": "Az Akkumulátorkímélő mód engedélyezve van.",
-					"description2": "A processzor hőmérséklete túl magas."
-				}
-			},
+                "heading": "Intelligens média",
+                "title": "Videófelbontás megnövelése",
+                "desc": "<p><label>Ez a funkció növeli a videók felbontását, és ezzel élvezetesebbé teszi a videók megtekintését. Különösen akkor hasznos, ha a videó felbontása alacsony.</label></p> <p style='margin-top:4px;'><label>Ez a funkció befolyásolhatja az akkumulátor élettartamát és hőmérsékletét, továbbá zajt kelthet. Ne használja DC üzemmódban (a rendszer akkumulátorról üzemel). Ellenkező esetben felgyorsítja az energiafogyasztást és lerövidíti az akkumulátor élettartamát.</label></p>",
+                "tooltip": "Ez a funkció kizárólag a következő videolejátszókkal működik:<br>Windows Media Player<br>Chrome<br>Filmek+TV<br>PotPlayer<br>GOM player<br>Böngészőalapú lejátszók (például Chrome)<br><br>A számítógéphez kapott Felhasználói kézikönyvből megtudhatja, hogyan lehet bekapcsolni a funkciót a PotPlayer és a GOM player esetében.",
+                "note": {
+                    "description": "A funkció az alábbi esetekben nem működik:",
+                    "description1": "Az Akkumulátorkímélő mód engedélyezve van.",
+                    "description2": "A processzor hőmérséklete túl magas."
+                }
+            },
             "antiTheft": {
                 "heading": "Intelligens észlelés",
                 "title": "Intelligens mozgásérzékeléses riasztás",
@@ -2068,44 +2070,44 @@
                     "description": "Ha sikerült bejelentkeznie a rendszerbe, a funkció automatikusan kikapcsol. Ha szeretné ismét használni, Önnek újra be kell kapcsolnia."
                 },
                 "alarm": {
-                    "title":" A RIASZTÁS ENNYI IDEIG SZÓL:",
-                    "option1":"10 másodperc",
-                    "option2":"20 másodperc",
-                    "option3":"30 másodperc",
-                    "option4":"1 perc",
-                    "option5":"Kikapcsolásig nem áll le"
+                    "title": " A RIASZTÁS ENNYI IDEIG SZÓL:",
+                    "option1": "10 másodperc",
+                    "option2": "20 másodperc",
+                    "option3": "30 másodperc",
+                    "option4": "1 perc",
+                    "option5": "Kikapcsolásig nem áll le"
                 },
                 "allowCamera": {
-                    "title":"FÉNYKÉP KÉSZÍTÉSE",
-                    "describe":"Ha bekapcsolja ezt a funkciót, a fényképezőgép automatikusan fényképeket készít, amikor a rendszer zárolt képernyő mellett mozgást észlel a közelben. Ezeket az adatokat helyben dolgozza fel az eszköz. A Lenovo nem fér hozzájuk, és nem használja fel őket.",
-                    "checkBoxText":"A funkció engedélyezése"
+                    "title": "FÉNYKÉP KÉSZÍTÉSE",
+                    "describe": "Ha bekapcsolja ezt a funkciót, a fényképezőgép automatikusan fényképeket készít, amikor a rendszer zárolt képernyő mellett mozgást észlel a közelben. Ezeket az adatokat helyben dolgozza fel az eszköz. A Lenovo nem fér hozzájuk, és nem használja fel őket.",
+                    "checkBoxText": "A funkció engedélyezése"
                 },
                 "cameraPrivacy": {
-                     "describe":"A Lenovo Vantage kamera adatvédelmi módja be van kapcsolva. A jelölőnégyzet funkciója nem működik.",
-                     "linkText":"Lépjen a Kamera adatvédelmi módba, hogy kikapcsolja"
+                    "describe": "A Lenovo Vantage kamera adatvédelmi módja be van kapcsolva. A jelölőnégyzet funkciója nem működik.",
+                    "linkText": "Lépjen a Kamera adatvédelmi módba, hogy kikapcsolja"
                 },
                 "authorizedAccess": {
-                    "describe":"A Lenovo Vantage nem fér hozzá a kamerához. A jelölőnégyzet funkciója nem működik.",
-                    "linkText":"A Windows beállításaiban adhatja meg a hozzáférést"
+                    "describe": "A Lenovo Vantage nem fér hozzá a kamerához. A jelölőnégyzet funkciója nem működik.",
+                    "linkText": "A Windows beállításaiban adhatja meg a hozzáférést"
                 },
                 "photo": {
-                    "title":"MOZGÁS ÉRZÉKELÉSE ESETÉN KÉSZÍTETT FÉNYKÉPEK SZÁMA",
+                    "title": "MOZGÁS ÉRZÉKELÉSE ESETÉN KÉSZÍTETT FÉNYKÉPEK SZÁMA",
                     "tooltip": "Amikor a rendszer mozgást észlel, a számítógép fényképezője automatikusan aktiválódik és fényképeket készít. A rendszer 2 másodpercenként készít képet, amelyeket a helyi tárhelyre ment.",
-                    "option1":"5",
-                    "option2":"10",
-                    "option3":"15",
-                    "option4":"20",
-                    "option5":"25",
-                    "option6":"30"
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
                 },
                 "showPhoto": {
-                    "title":"A FÉNYKÉPEK:",
-                    "link":"Fényképek megtekintése"
-				},
-				"fileAuthorizationTips": {
-					"content":"A Lenovo Vantage nem fér hozzá a fájlrendszerhez.",
-					"link":"A Windows beállításaiban adhatja meg a hozzáférést"
-				}
+                    "title": "A FÉNYKÉPEK:",
+                    "link": "Fényképek megtekintése"
+                },
+                "fileAuthorizationTips": {
+                    "content": "A Lenovo Vantage nem fér hozzá a fájlrendszerhez.",
+                    "link": "A Windows beállításaiban adhatja meg a hozzáférést"
+                }
             },
             "voice": {
                 "title": "Hang",

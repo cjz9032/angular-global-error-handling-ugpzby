@@ -1685,7 +1685,9 @@
                         },
                         "subSectionTwo": {
                             "title": "反轉預設的主要功能",
-                            "description": "啟用時，預設的主要功能會從原廠預設值變更為相反的功能。請重新啟動您的電腦以便使變更生效。"
+                            "description": "啟用時，預設的主要功能會從原廠預設值變更為相反的功能。請重新啟動您的電腦以便使變更生效。",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "如何使用 Fn 組合鍵",
@@ -2050,16 +2052,16 @@
                 "tooltip": "此功能不適用於 Web 視訊播放程式。受歡迎的本端視訊播放程式（例如 Windows Media Player、5KPlayer 等）都支援此功能。"
             },
             "superResolution": {
-				"heading": "智慧型媒體",
-				"title": "視訊解析度提升",
-				"desc": "<p><label>此功能可提升視訊解析度，進而強化視訊播放的體驗，特別適合視訊解析度不佳時。</label></p> <p style='margin-top:4px;'><label>此功能可能會影響電池續航力、電池溫度，並造成噪音。請勿在 DC 模式（電池模式）下使用。否則，電力會消耗得更快，且電池壽命會變得更短。</label></p>",
-				"tooltip": "此功能僅適用於以下視訊播放程式：<br>Windows Media Player<br>Chrome<br>電影與電視<br>PotPlayer<br>GOM Player<br>Web 瀏覽器型播放程式（例如 Chrome）<br><br>如需如何在 PotPlayer 和 GOM Player 上啟用此功能的相關指示，請參閱電腦隨附的使用手冊。",
-				"note": {
-					"description": "此功能在下列情況中無法運作：",
-					"description1": "省電功能模式已啟用。",
-					"description2": "CPU 溫度過高。"
-				}
-			},
+                "heading": "智慧型媒體",
+                "title": "視訊解析度提升",
+                "desc": "<p><label>此功能可提升視訊解析度，進而強化視訊播放的體驗，特別適合視訊解析度不佳時。</label></p> <p style='margin-top:4px;'><label>此功能可能會影響電池續航力、電池溫度，並造成噪音。請勿在 DC 模式（電池模式）下使用。否則，電力會消耗得更快，且電池壽命會變得更短。</label></p>",
+                "tooltip": "此功能僅適用於以下視訊播放程式：<br>Windows Media Player<br>Chrome<br>電影與電視<br>PotPlayer<br>GOM Player<br>Web 瀏覽器型播放程式（例如 Chrome）<br><br>如需如何在 PotPlayer 和 GOM Player 上啟用此功能的相關指示，請參閱電腦隨附的使用手冊。",
+                "note": {
+                    "description": "此功能在下列情況中無法運作：",
+                    "description1": "省電功能模式已啟用。",
+                    "description2": "CPU 溫度過高。"
+                }
+            },
             "antiTheft": {
                 "heading": "智慧型感應",
                 "title": "智慧型移動警示",
@@ -2068,44 +2070,44 @@
                     "description": "成功登入系統後，此功能將自動關閉。您必須重新啟用才能使用此功能。"
                 },
                 "alarm": {
-                    "title":" 警示音持續時間",
-                    "option1":"10 秒",
-                    "option2":"20 秒",
-                    "option3":"30 秒",
-                    "option4":"1 分鐘",
-                    "option5":"永不停止"
+                    "title": " 警示音持續時間",
+                    "option1": "10 秒",
+                    "option2": "20 秒",
+                    "option3": "30 秒",
+                    "option4": "1 分鐘",
+                    "option5": "永不停止"
                 },
                 "allowCamera": {
-                    "title":"拍照",
-                    "describe":"啟用此功能時，若您的螢幕已鎖定，相機將在偵測到任何動作時自動拍照。這份資料將由您的裝置本機進行處理，Lenovo 絕不會逕自存取或加以使用。",
-                    "checkBoxText":"啟用這項功能"
+                    "title": "拍照",
+                    "describe": "啟用此功能時，若您的螢幕已鎖定，相機將在偵測到任何動作時自動拍照。這份資料將由您的裝置本機進行處理，Lenovo 絕不會逕自存取或加以使用。",
+                    "checkBoxText": "啟用這項功能"
                 },
                 "cameraPrivacy": {
-                     "describe":"Lenovo Vantage 攝影機隱私模式已開啟。勾選框的功能無法運作。",
-                     "linkText":"移至攝影機隱私模式以將其關閉"
+                    "describe": "Lenovo Vantage 攝影機隱私模式已開啟。勾選框的功能無法運作。",
+                    "linkText": "移至攝影機隱私模式以將其關閉"
                 },
                 "authorizedAccess": {
-                    "describe":"Lenovo Vantage 沒有攝影機的存取權。勾選框的功能無法運作。",
-                    "linkText":"移至 Windows 設定以授與存取權"
+                    "describe": "Lenovo Vantage 沒有攝影機的存取權。勾選框的功能無法運作。",
+                    "linkText": "移至 Windows 設定以授與存取權"
                 },
                 "photo": {
-                    "title":"移動期間拍攝的相片數",
+                    "title": "移動期間拍攝的相片數",
                     "tooltip": "電腦上的相機會在偵測到動作時自動啟動拍照功能。每 2 秒拍一次，並將照片存到您的本機儲存裝置。",
-                    "option1":"5",
-                    "option2":"10",
-                    "option3":"15",
-                    "option4":"20",
-                    "option5":"25",
-                    "option6":"30"
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
                 },
                 "showPhoto": {
-                    "title":"相片已：",
-                    "link":"檢視相片"
-				},
-				"fileAuthorizationTips": {
-					"content":"Lenovo Vantage 無權存取檔案系統。",
-					"link":"移至 Windows 設定以授與存取權"
-				}
+                    "title": "相片已：",
+                    "link": "檢視相片"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Lenovo Vantage 無權存取檔案系統。",
+                    "link": "移至 Windows 設定以授與存取權"
+                }
             },
             "voice": {
                 "title": "語音",

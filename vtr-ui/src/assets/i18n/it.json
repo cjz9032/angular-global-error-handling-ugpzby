@@ -1685,7 +1685,9 @@
                         },
                         "subSectionTwo": {
                             "title": "Inversione della funzione primaria predefinita",
-                            "description": "Se attivata, le impostazioni di fabbrica della funzione primaria predefinita vengono invertite. Riavviare il computer per rendere le modifiche."
+                            "description": "Se attivata, le impostazioni di fabbrica della funzione primaria predefinita vengono invertite. Riavviare il computer per rendere le modifiche.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "Modalità di utilizzo delle combinazioni di tasti Fn",
@@ -2050,16 +2052,16 @@
                 "tooltip": "Questa funzione non è applicabile ai lettori video Web. I principali lettori video locali, come Windows Media Player, 5KPlayer e così via supportano questa funzione."
             },
             "superResolution": {
-				"heading": "Supporti intelligenti",
-				"title": "Upscaling della risoluzione video",
-				"desc": "<p><label>Questa funzione migliora l'esperienza della riproduzione video migliorandone la risoluzione. Funziona soprattutto in caso di scarsa risoluzione video.</label></p> <p style='margin-top:4px;'><label>Questa funzione potrebbe influire sulla durata e la temperatura della batteria, aumentando la rumorosità del dispositivo. Non utilizzarla in modalità CC (modalità batteria). altrimenti accelererà il consumo energetico e ridurrà la durata della batteria.</label></p>",
-				"tooltip": "Questa funzione funziona solo per i seguenti riproduttori video:<br>Windows Media Player<br>Chrome<br>Film e programmi TV<br>PotPlayer<br>GOM Player<br>Riproduttori basati sul browser Web (ad es. Chrome)<br><br>Per le istruzioni su come abilitare questa funzione su PotPlayer e GOM Player, consultare la guida per l'utente fornita con il computer.",
-				"note": {
-					"description": "Questa funzione non può essere utilizzata quando:",
-					"description1": "La modalità risparmio batteria è abilitata.",
-					"description2": "La temperatura della CPU è elevata."
-				}
-			},
+                "heading": "Supporti intelligenti",
+                "title": "Upscaling della risoluzione video",
+                "desc": "<p><label>Questa funzione migliora l'esperienza della riproduzione video migliorandone la risoluzione. Funziona soprattutto in caso di scarsa risoluzione video.</label></p> <p style='margin-top:4px;'><label>Questa funzione potrebbe influire sulla durata e la temperatura della batteria, aumentando la rumorosità del dispositivo. Non utilizzarla in modalità CC (modalità batteria). altrimenti accelererà il consumo energetico e ridurrà la durata della batteria.</label></p>",
+                "tooltip": "Questa funzione funziona solo per i seguenti riproduttori video:<br>Windows Media Player<br>Chrome<br>Film e programmi TV<br>PotPlayer<br>GOM Player<br>Riproduttori basati sul browser Web (ad es. Chrome)<br><br>Per le istruzioni su come abilitare questa funzione su PotPlayer e GOM Player, consultare la guida per l'utente fornita con il computer.",
+                "note": {
+                    "description": "Questa funzione non può essere utilizzata quando:",
+                    "description1": "La modalità risparmio batteria è abilitata.",
+                    "description2": "La temperatura della CPU è elevata."
+                }
+            },
             "antiTheft": {
                 "heading": "Rilevamento intelligente",
                 "title": "Avviso Smart Motion",
@@ -2068,44 +2070,44 @@
                     "description": "Una volta effettuato l'accesso al sistema, questa funzione verrà disattivata automaticamente. Per utilizzare la funzione è necessario abilitarla nuovamente."
                 },
                 "alarm": {
-                    "title":" L'ALLARME DURERÀ PER",
-                    "option1":"10 secondi",
-                    "option2":"20 secondi",
-                    "option3":"30 secondi",
-                    "option4":"1 minuto",
-                    "option5":"Ininterrotto"
+                    "title": " L'ALLARME DURERÀ PER",
+                    "option1": "10 secondi",
+                    "option2": "20 secondi",
+                    "option3": "30 secondi",
+                    "option4": "1 minuto",
+                    "option5": "Ininterrotto"
                 },
                 "allowCamera": {
-                    "title":"SCATTO FOTO",
-                    "describe":"Quando si abilita questa funzione, la fotocamera scatta automaticamente le foto quando rileva qualsiasi movimento se lo schermo è bloccato. Questi dati vengono elaborati in locale sul dispositivo. Lenovo non accede a questi dati o li utilizza.",
-                    "checkBoxText":"Abilita questa funzione"
+                    "title": "SCATTO FOTO",
+                    "describe": "Quando si abilita questa funzione, la fotocamera scatta automaticamente le foto quando rileva qualsiasi movimento se lo schermo è bloccato. Questi dati vengono elaborati in locale sul dispositivo. Lenovo non accede a questi dati o li utilizza.",
+                    "checkBoxText": "Abilita questa funzione"
                 },
                 "cameraPrivacy": {
-                     "describe":"La modalità privacy della fotocamera di Lenovo Vantage è attiva. La casella di controllo non è disponibile.",
-                     "linkText":"Accedere alla modalità privacy della fotocamera per disattivarla"
+                    "describe": "La modalità privacy della fotocamera di Lenovo Vantage è attiva. La casella di controllo non è disponibile.",
+                    "linkText": "Accedere alla modalità privacy della fotocamera per disattivarla"
                 },
                 "authorizedAccess": {
-                    "describe":"Lenovo Vantage non ha accesso alla fotocamera. La casella di controllo non è disponibile.",
-                    "linkText":"Accedere alle impostazioni di Windows per consentire l'accesso"
+                    "describe": "Lenovo Vantage non ha accesso alla fotocamera. La casella di controllo non è disponibile.",
+                    "linkText": "Accedere alle impostazioni di Windows per consentire l'accesso"
                 },
                 "photo": {
-                    "title":"IL NUMERO DI FOTO SCATTATE DURANTE IL MOVIMENTO",
+                    "title": "IL NUMERO DI FOTO SCATTATE DURANTE IL MOVIMENTO",
                     "tooltip": "La fotocamera del computer si attiva automaticamente per scattare foto quando vengono rilevati movimenti. Le foto vengono scattate ogni 2 secondi e vengono salvate nell'archivio locale.",
-                    "option1":"5",
-                    "option2":"10",
-                    "option3":"15",
-                    "option4":"20",
-                    "option5":"25",
-                    "option6":"30"
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
                 },
                 "showPhoto": {
-                    "title":"LE FOTO SONO STATE:",
-                    "link":"Visualizza foto"
-				},
-				"fileAuthorizationTips": {
-					"content":"Lenovo Vantage non ha accesso al file system.",
-					"link":"Accedere alle impostazioni di Windows per consentire l'accesso"
-				}
+                    "title": "LE FOTO SONO STATE:",
+                    "link": "Visualizza foto"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Lenovo Vantage non ha accesso al file system.",
+                    "link": "Accedere alle impostazioni di Windows per consentire l'accesso"
+                }
             },
             "voice": {
                 "title": "Voce",

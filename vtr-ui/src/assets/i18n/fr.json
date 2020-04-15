@@ -1685,7 +1685,9 @@
                         },
                         "subSectionTwo": {
                             "title": "Inversion de la fonction principale par défaut",
-                            "description": "Lorsque cette option est activée, la fonction principale par défaut passe des paramètres d'usine à la valeur opposée. Redémarrez votre ordinateur pour que les modifications prennent effet."
+                            "description": "Lorsque cette option est activée, la fonction principale par défaut passe des paramètres d'usine à la valeur opposée. Redémarrez votre ordinateur pour que les modifications prennent effet.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "Comment utiliser les combinaisons de touches Fn",
@@ -2050,16 +2052,16 @@
                 "tooltip": "Cette fonction n'est pas applicable aux lecteurs vidéo Web. Les lecteurs vidéo locaux populaires tels que Windows Media Player, 5KPlayer, etc. prennent en charge cette fonction."
             },
             "superResolution": {
-				"heading": "Support intelligent",
-				"title": "Mise à l'échelle de la résolution vidéo",
-				"desc": "<p><label>Cette fonction améliore l'expérience de la lecture vidéo en améliorant la résolution de la vidéo. Cela est particulièrement efficace lorsque la vidéo est de faible résolution.</label></p> <p style='margin-top:4px;'><label>Cette fonction peut influencer la durée de vie de la batterie, sa température et produire des sons. Veillez à ne pas l'utiliser en mode courant continu (mode batterie). Sinon, cela accélérera la consommation d'énergie et réduira la durée de vie de la batterie.</label></p>",
-				"tooltip": "Cette fonction est réservée aux lecteurs vidéo ci-dessous :<br>Windows Media Player<br>Chrome<br>Films et séries TV<br>PotPlayer<br>GOM player<br>Lecteurs dans les navigateurs Web (par ex. Chrome)<br><br>Pour savoir comment activer cette fonction sur PotPlayer et GOM player, consultez le guide d'utilisation fourni avec votre ordinateur.",
-				"note": {
-					"description": "Cette fonction est inopérante quand :",
-					"description1": "Le mode d'économie de la batterie est activé.",
-					"description2": "La température de l'unité centrale est trop élevée."
-				}
-			},
+                "heading": "Support intelligent",
+                "title": "Mise à l'échelle de la résolution vidéo",
+                "desc": "<p><label>Cette fonction améliore l'expérience de la lecture vidéo en améliorant la résolution de la vidéo. Cela est particulièrement efficace lorsque la vidéo est de faible résolution.</label></p> <p style='margin-top:4px;'><label>Cette fonction peut influencer la durée de vie de la batterie, sa température et produire des sons. Veillez à ne pas l'utiliser en mode courant continu (mode batterie). Sinon, cela accélérera la consommation d'énergie et réduira la durée de vie de la batterie.</label></p>",
+                "tooltip": "Cette fonction est réservée aux lecteurs vidéo ci-dessous :<br>Windows Media Player<br>Chrome<br>Films et séries TV<br>PotPlayer<br>GOM player<br>Lecteurs dans les navigateurs Web (par ex. Chrome)<br><br>Pour savoir comment activer cette fonction sur PotPlayer et GOM player, consultez le guide d'utilisation fourni avec votre ordinateur.",
+                "note": {
+                    "description": "Cette fonction est inopérante quand :",
+                    "description1": "Le mode d'économie de la batterie est activé.",
+                    "description2": "La température de l'unité centrale est trop élevée."
+                }
+            },
             "antiTheft": {
                 "heading": "Capteur intelligent",
                 "title": "Alerte de mouvement intelligente",
@@ -2068,44 +2070,44 @@
                     "description": "Une fois que vous vous êtes connecté au système, cette fonction sera automatiquement désactivée. Vous devez l'activer à nouveau pour l'utiliser."
                 },
                 "alarm": {
-                    "title":" L'ALARME DURERA",
-                    "option1":"10 secondes",
-                    "option2":"20 secondes",
-                    "option3":"30 secondes",
-                    "option4":"1 minute",
-                    "option5":"Ne jamais arrêter"
+                    "title": " L'ALARME DURERA",
+                    "option1": "10 secondes",
+                    "option2": "20 secondes",
+                    "option3": "30 secondes",
+                    "option4": "1 minute",
+                    "option5": "Ne jamais arrêter"
                 },
                 "allowCamera": {
-                    "title":"PRISE DE PHOTOS",
-                    "describe":"Lorsque vous activez cette fonctionnalité, la caméra prend automatiquement des photos lors de la détection d'un mouvement si l'écran est verrouillé. Ces données sont traitées localement sur votre appareil. Lenovo ne peut ni y accéder ni les utiliser.",
-                    "checkBoxText":"Activer cette fonctionnalité"
+                    "title": "PRISE DE PHOTOS",
+                    "describe": "Lorsque vous activez cette fonctionnalité, la caméra prend automatiquement des photos lors de la détection d'un mouvement si l'écran est verrouillé. Ces données sont traitées localement sur votre appareil. Lenovo ne peut ni y accéder ni les utiliser.",
+                    "checkBoxText": "Activer cette fonctionnalité"
                 },
                 "cameraPrivacy": {
-                     "describe":"Le mode de confidentialité de la caméra Lenovo Vantage est activé. La fonction de la case cochée ne fonctionnera pas.",
-                     "linkText":"Accéder au mode de confidentialité de la caméra pour la désactiver"
+                    "describe": "Le mode de confidentialité de la caméra Lenovo Vantage est activé. La fonction de la case cochée ne fonctionnera pas.",
+                    "linkText": "Accéder au mode de confidentialité de la caméra pour la désactiver"
                 },
                 "authorizedAccess": {
-                    "describe":"Lenovo Vantage n'a pas accès à la caméra. La fonction de la case cochée ne fonctionnera pas.",
-                    "linkText":"Accéder aux paramètres Windows pour donner accès"
+                    "describe": "Lenovo Vantage n'a pas accès à la caméra. La fonction de la case cochée ne fonctionnera pas.",
+                    "linkText": "Accéder aux paramètres Windows pour donner accès"
                 },
                 "photo": {
-                    "title":"NOMBRE DE PHOTOS PRISES PENDANT LE MOUVEMENT",
+                    "title": "NOMBRE DE PHOTOS PRISES PENDANT LE MOUVEMENT",
                     "tooltip": "L'appareil photo de votre ordinateur s'active automatiquement pour prendre des photos lorsque des mouvements sont détectés. Les photos sont prises toutes les 2 secondes et enregistrées dans votre stockage local.",
-                    "option1":"5",
-                    "option2":"10",
-                    "option3":"15",
-                    "option4":"20",
-                    "option5":"25",
-                    "option6":"30"
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
                 },
                 "showPhoto": {
-                    "title":"LES PHOTOS ONT ÉTÉ :",
-                    "link":"Voir les photos"
-				},
-				"fileAuthorizationTips": {
-					"content":"Lenovo Vantage n'a pas accès au micro du système de fichiers.",
-					"link":"Accéder aux paramètres Windows pour donner accès"
-				}
+                    "title": "LES PHOTOS ONT ÉTÉ :",
+                    "link": "Voir les photos"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Lenovo Vantage n'a pas accès au micro du système de fichiers.",
+                    "link": "Accéder aux paramètres Windows pour donner accès"
+                }
             },
             "voice": {
                 "title": "Voix",

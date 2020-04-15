@@ -1685,7 +1685,9 @@
                         },
                         "subSectionTwo": {
                             "title": "Přepnutí výchozí primární funkce",
-                            "description": "Je-li tato funkce zapnutá, výchozí primární funkce se změní z továrního nastavení na opačné. Aby se tyto změny projevily, restartujte počítač."
+                            "description": "Je-li tato funkce zapnutá, výchozí primární funkce se změní z továrního nastavení na opačné. Aby se tyto změny projevily, restartujte počítač.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "Jak používat kombinace s klávesou Fn",
@@ -2050,16 +2052,16 @@
                 "tooltip": "Tato funkce není použitelná pro webové přehrávače videa. Oblíbené přehrávače videí v počítači (například Windows Media Player, 5KPlayer apod.) tuto funkci podporují."
             },
             "superResolution": {
-				"heading": "Inteligentní média",
-				"title": "Zvýšení rozlišení videa",
-				"desc": "<p><label>Tato funkce vylepšuje zlepšením rozlišení videorekordéru zážitek z přehrávání videa. Funguje zejména v případě, kdy má video špatné rozlišení.</label></p> <p style='margin-top:4px;'><label>Tato funkce může ovlivnit životnost baterie, teplotu baterie a způsobit šum. V režimu DC (režim s napájením z baterie) ji nepoužívejte. Jinak se zvýší spotřeba energie a zkrátí výdrž baterie.</label></p>",
-				"tooltip": "Tato funkce funguje pouze pro přehrávače videa uvedené dále:<br>Windows Media Player<br>Chrome<br>Přehrávač filmů a televize<br>PotPlayer<br>Přehrávač GOM Player<br>Přehrávače založené na webovém prohlížeči (např. Chrome)<br><br>Pokyny, jak povolit tuto funkci v přehrávači PotPlayer a GOM Player, naleznete v Uživatelské příručce dodávané s počítačem.",
-				"note": {
-					"description": "Tato funkce nepracuje v následujících případech:",
-					"description1": "Je povolen režim úspory baterie.",
-					"description2": "Teplota procesoru je příliš vysoká."
-				}
-			},
+                "heading": "Inteligentní média",
+                "title": "Zvýšení rozlišení videa",
+                "desc": "<p><label>Tato funkce vylepšuje zlepšením rozlišení videorekordéru zážitek z přehrávání videa. Funguje zejména v případě, kdy má video špatné rozlišení.</label></p> <p style='margin-top:4px;'><label>Tato funkce může ovlivnit životnost baterie, teplotu baterie a způsobit šum. V režimu DC (režim s napájením z baterie) ji nepoužívejte. Jinak se zvýší spotřeba energie a zkrátí výdrž baterie.</label></p>",
+                "tooltip": "Tato funkce funguje pouze pro přehrávače videa uvedené dále:<br>Windows Media Player<br>Chrome<br>Přehrávač filmů a televize<br>PotPlayer<br>Přehrávač GOM Player<br>Přehrávače založené na webovém prohlížeči (např. Chrome)<br><br>Pokyny, jak povolit tuto funkci v přehrávači PotPlayer a GOM Player, naleznete v Uživatelské příručce dodávané s počítačem.",
+                "note": {
+                    "description": "Tato funkce nepracuje v následujících případech:",
+                    "description1": "Je povolen režim úspory baterie.",
+                    "description2": "Teplota procesoru je příliš vysoká."
+                }
+            },
             "antiTheft": {
                 "heading": "Inteligentní detekce",
                 "title": "Inteligentní varování při pohybu",
@@ -2068,44 +2070,44 @@
                     "description": "Po úspěšném přihlášení do systému se tato funkce automaticky vypne. Abyste ji mohli používat, musíte ji znovu povolit."
                 },
                 "alarm": {
-                    "title":" VAROVÁNÍ BUDE TRVAT",
-                    "option1":"10 sekund",
-                    "option2":"20 sekund",
-                    "option3":"30 sekund",
-                    "option4":"1 min",
-                    "option5":"Nikdy nepřestávejte"
+                    "title": " VAROVÁNÍ BUDE TRVAT",
+                    "option1": "10 sekund",
+                    "option2": "20 sekund",
+                    "option3": "30 sekund",
+                    "option4": "1 min",
+                    "option5": "Nikdy nepřestávejte"
                 },
                 "allowCamera": {
-                    "title":"POŘIZOVAT FOTOGRAFIE",
-                    "describe":"Při povolení této funkce pořizuje kamera fotografie automaticky při detekci pohybu, pokud je obrazovka uzamčena. Tato data jsou ve vašem zařízení zpracovávána lokálně. Lenovo k nim nemá přístup ani je nepoužívá.",
-                    "checkBoxText":"Povolit tuto funkci"
+                    "title": "POŘIZOVAT FOTOGRAFIE",
+                    "describe": "Při povolení této funkce pořizuje kamera fotografie automaticky při detekci pohybu, pokud je obrazovka uzamčena. Tato data jsou ve vašem zařízení zpracovávána lokálně. Lenovo k nim nemá přístup ani je nepoužívá.",
+                    "checkBoxText": "Povolit tuto funkci"
                 },
                 "cameraPrivacy": {
-                     "describe":"Režim ochrany osobních údajů fotoaparátu Lenovo Vantage je zapnutý. Funkce zaškrtávacího políčka nebude fungovat.",
-                     "linkText":"Chcete-li jej vypnout, přejděte do režimu ochrany osobních údajů fotoaparátu"
+                    "describe": "Režim ochrany osobních údajů fotoaparátu Lenovo Vantage je zapnutý. Funkce zaškrtávacího políčka nebude fungovat.",
+                    "linkText": "Chcete-li jej vypnout, přejděte do režimu ochrany osobních údajů fotoaparátu"
                 },
                 "authorizedAccess": {
-                    "describe":"Lenovo Vantage nemá přístup ke kameře. Funkce zaškrtávacího políčka nebude fungovat.",
-                    "linkText":"Chcete-li poskytnout přístup, přejděte do nastavení systému Windows"
+                    "describe": "Lenovo Vantage nemá přístup ke kameře. Funkce zaškrtávacího políčka nebude fungovat.",
+                    "linkText": "Chcete-li poskytnout přístup, přejděte do nastavení systému Windows"
                 },
                 "photo": {
-                    "title":"POČET FOTOGRAFIÍ POŘÍZENÝCH PŘI POHYBU",
+                    "title": "POČET FOTOGRAFIÍ POŘÍZENÝCH PŘI POHYBU",
                     "tooltip": "Kamera v počítači se při rozpoznání pohybů automaticky aktivuje a začne pořizovat fotografie. Fotografie se pořizují každé 2 sekundy a ukládají se do místního úložiště.",
-                    "option1":"5",
-                    "option2":"10",
-                    "option3":"15",
-                    "option4":"20",
-                    "option5":"25",
-                    "option6":"30"
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
                 },
                 "showPhoto": {
-                    "title":"FOTOGRAFIE BYLY:",
-                    "link":"Zobrazit fotografie"
-				},
-				"fileAuthorizationTips": {
-					"content":"Lenovo Vantage nemá přístup k souborovému systému.",
-					"link":"Chcete-li poskytnout přístup, přejděte do nastavení systému Windows"
-				}
+                    "title": "FOTOGRAFIE BYLY:",
+                    "link": "Zobrazit fotografie"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Lenovo Vantage nemá přístup k souborovému systému.",
+                    "link": "Chcete-li poskytnout přístup, přejděte do nastavení systému Windows"
+                }
             },
             "voice": {
                 "title": "Hlas",

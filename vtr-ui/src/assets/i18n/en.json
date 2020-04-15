@@ -1689,7 +1689,7 @@
 							"title": "Reversing the default primary function",
 							"description": "When on, the default primary function will be changed from the factory settings to the opposite. Restart your computer to make the changes take effect.",
 							"caption": "THE ACTIVE PRIMARY FUNCTION:",
-							"tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
+							"tooltipText": "To use the default primary function, press the top-row keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first, and then press the top-row keys."
 						},
 						"subSectionThree": {
 							"title": "How to use Fn key combinations",

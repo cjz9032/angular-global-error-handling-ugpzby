@@ -1685,7 +1685,9 @@
                         },
                         "subSectionTwo": {
                             "title": "Ändra vilken primär funktion som är standard",
-                            "description": "När den är på ändras den primära standardfunktionen från fabriksinställningarna till motsatsen. Starta om datorn så att ändringarna börjar gälla."
+                            "description": "När den är på ändras den primära standardfunktionen från fabriksinställningarna till motsatsen. Starta om datorn så att ändringarna börjar gälla.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "Använda Fn-tangentkombinationer",
@@ -2050,16 +2052,16 @@
                 "tooltip": "Denna funktion fungerar inte på onlinevideospelare. Vanliga lokala videospelare (som Windows Media Player och 5KPlayer) har stöd för denna funktion."
             },
             "superResolution": {
-				"heading": "Intelligenta medier",
-				"title": "Öka videoupplösningen",
-				"desc": "<p><label>Denna funktion förbättrar videoupplösningen, vilket ger en bättre upplevelse av videouppspelningen. Den är särskilt användbar om videon har dålig upplösning.</label></p> <p style='margin-top:4px;'><label>Funktionen kan påverka batteriets livslängd och temperatur och orsaka brus. Använd inte funktionen i DC-läge (batteriläge). Detta orsakar ökad energiförbrukning och batteriets livslängd förkortas.</label></p>",
-				"tooltip": "Funktionen fungerar med följande videospelare:<br>Windows Media Player<br>Chrome<br>Film & TV<br>PotPlayer<br>GOM Player<br>webbläsarbaserade spelare (till exempel Chrome)<br><br>Anvisningar om hur du aktiverar funktionen i PotPlayer och GOM Player finns i Användarhandbok som medföljer datorn.",
-				"note": {
-					"description": "Funktionen fungerar inte när",
-					"description1": "Batterisparläge är aktiverat.",
-					"description2": "processortemperaturen är för hög."
-				}
-			},
+                "heading": "Intelligenta medier",
+                "title": "Öka videoupplösningen",
+                "desc": "<p><label>Denna funktion förbättrar videoupplösningen, vilket ger en bättre upplevelse av videouppspelningen. Den är särskilt användbar om videon har dålig upplösning.</label></p> <p style='margin-top:4px;'><label>Funktionen kan påverka batteriets livslängd och temperatur och orsaka brus. Använd inte funktionen i DC-läge (batteriläge). Detta orsakar ökad energiförbrukning och batteriets livslängd förkortas.</label></p>",
+                "tooltip": "Funktionen fungerar med följande videospelare:<br>Windows Media Player<br>Chrome<br>Film & TV<br>PotPlayer<br>GOM Player<br>webbläsarbaserade spelare (till exempel Chrome)<br><br>Anvisningar om hur du aktiverar funktionen i PotPlayer och GOM Player finns i Användarhandbok som medföljer datorn.",
+                "note": {
+                    "description": "Funktionen fungerar inte när",
+                    "description1": "Batterisparläge är aktiverat.",
+                    "description2": "processortemperaturen är för hög."
+                }
+            },
             "antiTheft": {
                 "heading": "Intelligent avkänning",
                 "title": "Smart rörelsevarning",
@@ -2068,44 +2070,44 @@
                     "description": "När du har loggat in på systemet stängs funktionen av automatiskt. Du måste aktivera den igen om du vill använda den."
                 },
                 "alarm": {
-                    "title":" LARMET SKA PÅGÅ I",
-                    "option1":"10 sekunder",
-                    "option2":"20 sekunder",
-                    "option3":"30 sekunder",
-                    "option4":"1 minut",
-                    "option5":"Aldrig sluta"
+                    "title": " LARMET SKA PÅGÅ I",
+                    "option1": "10 sekunder",
+                    "option2": "20 sekunder",
+                    "option3": "30 sekunder",
+                    "option4": "1 minut",
+                    "option5": "Aldrig sluta"
                 },
                 "allowCamera": {
-                    "title":"TA FOTON",
-                    "describe":"När du aktiverar den här funktionen tar kameran automatiskt foton när den identifierar rörelser och skärmen är låst. Informationen bearbetas lokalt på datorn. Lenovo har inte till åtkomst till denna information och använder den inte.",
-                    "checkBoxText":"Aktivera funktionen"
+                    "title": "TA FOTON",
+                    "describe": "När du aktiverar den här funktionen tar kameran automatiskt foton när den identifierar rörelser och skärmen är låst. Informationen bearbetas lokalt på datorn. Lenovo har inte till åtkomst till denna information och använder den inte.",
+                    "checkBoxText": "Aktivera funktionen"
                 },
                 "cameraPrivacy": {
-                     "describe":"Sekretessläget för kameran i Lenovo Vantage är aktiverat. Kryssrutan fungerar inte.",
-                     "linkText":"Öppna kamerans sekretessläge för att inaktivera det"
+                    "describe": "Sekretessläget för kameran i Lenovo Vantage är aktiverat. Kryssrutan fungerar inte.",
+                    "linkText": "Öppna kamerans sekretessläge för att inaktivera det"
                 },
                 "authorizedAccess": {
-                    "describe":"Lenovo Vantage har inte åtkomst till kameran. Kryssrutan fungerar inte.",
-                    "linkText":"Öppna Windows-inställningar för att ge åtkomst"
+                    "describe": "Lenovo Vantage har inte åtkomst till kameran. Kryssrutan fungerar inte.",
+                    "linkText": "Öppna Windows-inställningar för att ge åtkomst"
                 },
                 "photo": {
-                    "title":"ANTAL FOTON SOM TAS UNDER RÖRELSEN",
+                    "title": "ANTAL FOTON SOM TAS UNDER RÖRELSEN",
                     "tooltip": "Kameran på datorn aktiveras automatiskt för att ta bilder när rörelser identifieras. Bilder tas varannan sekund och sparas i ditt lokala lagringsutrymme.",
-                    "option1":"5",
-                    "option2":"10",
-                    "option3":"15",
-                    "option4":"20",
-                    "option5":"25",
-                    "option6":"30"
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
                 },
                 "showPhoto": {
-                    "title":"FOTON HAR TAGITS:",
-                    "link":"Visa foton"
-				},
-				"fileAuthorizationTips": {
-					"content":"Lenovo Vantage har inte åtkomst till filsystemet.",
-					"link":"Öppna Windows-inställningar för att ge åtkomst"
-				}
+                    "title": "FOTON HAR TAGITS:",
+                    "link": "Visa foton"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Lenovo Vantage har inte åtkomst till filsystemet.",
+                    "link": "Öppna Windows-inställningar för att ge åtkomst"
+                }
             },
             "voice": {
                 "title": "Röst",
