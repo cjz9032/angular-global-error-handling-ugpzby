@@ -13,14 +13,23 @@
 
   <div class="row">
     <div class="col" *ngIf="!loading">
-      <button type="submit"
-        id="ScheduleButton"
+      <!-- This is the regular button which is shown during the cancelation countdown and which is responsible for
+      cancel the scan/rbs process if the user clicks on it -->
+      <button type="submit" *ngIf="isInCountdown"
+        id="cancel_modal_yes"
         vtrMetrics
         metricsEvent="FeatureClick"
         metricsParent="{{ItemParent}}"
         metricsItem="{{ConfirmItemName}}"
         class="btn btn-primary user-submit"
-        (click)= "onAgree()"> {{ buttonText }}
+        (click)= "onAgree()">{{ buttonText }} ({{ secondsCountdown }})
+      </button>
+
+      <!-- This button is shown only if the scan/rbs process has finished BEFORE the countdown has reached 0, when the process cannot be canceled anymore.
+      It's responsible for just close the popup. Its 'name' (#cancel_modal_ok) is indispensable once it'll be used to find it as soon as its visible to ensure its focus.  -->
+      <button #cancel_modal_ok type="submit" *ngIf="!isInCountdown"
+        class="btn btn-primary user-submit"
+        (click)= "closeModal()">{{ 'hardwareScan.ok' | translate }}
       </button>
     </div>
     <div class="col loading" *ngIf="loading">

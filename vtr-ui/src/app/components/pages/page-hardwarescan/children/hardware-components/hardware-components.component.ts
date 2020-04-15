@@ -273,7 +273,17 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		modalCancel.componentInstance.CancelItemName = this.getMetricsItemNameClose();
 		modalCancel.componentInstance.ConfirmItemName = this.getMetricsItemNameConfirm();
 
+		// If the scan/rbs process has finished and the cancelation modal is still opened,
+		// alert the user that the process cannot be canceled anymore.
+		let scanFinished = this.hardwareScanService.isWorkDone().subscribe((done) => {
+			modalCancel.componentInstance.stopCountdown();
+			modalCancel.componentInstance.description = this.translate.instant('hardwareScan.processFinishedCannotBeCanceled');
+		});
+
 		modalCancel.componentInstance.cancelRequested.subscribe(() => {
+			// If the cancelation process has started, unsubscribe from the other subject to avoid any odd behavior
+			scanFinished.unsubscribe();
+
 			if (this.hardwareScanService) {
 				let cancelWatcherDelay = 3000;
 				let cancelWatcher;
