@@ -332,6 +332,9 @@
 							&.link-active {
 								color: $main;
 								font-weight: bold;
+								&:focus {
+									outline: 0;
+								}
 							}
 
 							&.link-lma,
