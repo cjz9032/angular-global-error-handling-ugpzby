@@ -105,29 +105,6 @@ describe('Component: PageSmartAssistComponent', () => {
 		expect(smartAssistService.getSuperResolutionStatus).toHaveBeenCalled();
 	});
 
-	it("getAntiTheftStatus", () => {
-		smartAssistService = TestBed.get(SmartAssistService);
-		smartAssistService.isShellAvailable = true;
-		const res: AntiTheftResponse = {
-			available: true, 
-			status: true,
-			isSupportPhoto:true,
-			cameraPrivacyState:true,
-			authorizedAccessState:true,
-			photoAddress:"",
-			alarmOften:  0, 
-			photoNumber:  0,
-		}
-		const spy = spyOn(
-			smartAssistService, 
-			"getAntiTheftStatus"
-		).and.returnValue(Promise.resolve(res));
-
-		component.getAntiTheftStatus();
-		expect(smartAssistService.getAntiTheftStatus).toHaveBeenCalled();
-	});
-
-
 	it("setHPDAdvancedSetting", () => {
 		smartAssistService = TestBed.get(SmartAssistService);
 		smartAssistService.isShellAvailable = true;

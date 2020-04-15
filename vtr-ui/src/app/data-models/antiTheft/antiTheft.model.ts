@@ -6,7 +6,7 @@ export class AntiTheftResponse {
         public cameraPrivacyState:boolean,
         public authorizedAccessState:boolean,
         public photoAddress:string = "",
-        public alarmOften: number = 0, 
-        public photoNumber: number = 0,
+        public alarmOften: number = 10, 
+        public photoNumber: number = 5,
     ) {}
 }
