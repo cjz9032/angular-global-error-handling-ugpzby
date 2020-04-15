@@ -1685,7 +1685,9 @@
                         },
                         "subSectionTwo": {
                             "title": "デフォルトの主要機能を逆にする",
-                            "description": "オンの場合、デフォルトのプライマリ機能は工場出荷時の設定とは逆に変更されます。これらの変更を有効にするには、コンピューターを再起動してください。"
+                            "description": "オンの場合、デフォルトのプライマリ機能は工場出荷時の設定とは逆に変更されます。これらの変更を有効にするには、コンピューターを再起動してください。",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "Fn キーとの組み合わせの使用",

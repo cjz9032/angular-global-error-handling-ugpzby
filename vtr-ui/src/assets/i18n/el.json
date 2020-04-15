@@ -1685,7 +1685,9 @@
                         },
                         "subSectionTwo": {
                             "title": "Αντιστροφή της προεπιλεγμένης κύριας λειτουργίας",
-                            "description": "Όταν είναι ενεργοποιημένη, η προεπιλεγμένη κύρια λειτουργία θα αλλάξει από τις εργοστασιακές ρυθμίσεις στο αντίθετο. Επανεκκινήστε τον υπολογιστή σας για να εφαρμοστούν οι αλλαγές."
+                            "description": "Όταν είναι ενεργοποιημένη, η προεπιλεγμένη κύρια λειτουργία θα αλλάξει από τις εργοστασιακές ρυθμίσεις στο αντίθετο. Επανεκκινήστε τον υπολογιστή σας για να εφαρμοστούν οι αλλαγές.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "Πώς θα χρησιμοποιήσετε τους συνδυασμούς πλήκτρων Fn",

@@ -1685,7 +1685,9 @@
                         },
                         "subSectionTwo": {
                             "title": "Отмена основной функции по умолчанию",
-                            "description": "Если включена, основная функция по умолчанию будет изменена с заводских настроек на противоположные. Перезагрузите компьютер, чтобы эти изменения вступили в силу."
+                            "description": "Если включена, основная функция по умолчанию будет изменена с заводских настроек на противоположные. Перезагрузите компьютер, чтобы эти изменения вступили в силу.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "Использование комбинаций с клавишей Fn",

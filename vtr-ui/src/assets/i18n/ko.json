@@ -1685,7 +1685,9 @@
                         },
                         "subSectionTwo": {
                             "title": "기본 주요 기능 복원",
-                            "description": "켜져 있는 경우, 기본 주요 기능이 공장 설정에서 반대 방향으로 변경됩니다. 변경사항을 적용하려면, 컴퓨터를 다시 시작해야 합니다."
+                            "description": "켜져 있는 경우, 기본 주요 기능이 공장 설정에서 반대 방향으로 변경됩니다. 변경사항을 적용하려면, 컴퓨터를 다시 시작해야 합니다.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "Fn 키 조합 사용 방법",

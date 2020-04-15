@@ -1685,7 +1685,9 @@
                         },
                         "subSectionTwo": {
                             "title": "反轉預設的主要功能",
-                            "description": "啟用時，預設的主要功能會從原廠預設值變更為相反的功能。請重新啟動您的電腦以便使變更生效。"
+                            "description": "啟用時，預設的主要功能會從原廠預設值變更為相反的功能。請重新啟動您的電腦以便使變更生效。",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "如何使用 Fn 組合鍵",

@@ -1685,7 +1685,9 @@
                         },
                         "subSectionTwo": {
                             "title": "Inversion de la fonction principale par défaut",
-                            "description": "Lorsque cette option est activée, la fonction principale par défaut passe des paramètres d'usine à la valeur opposée. Redémarrez votre ordinateur pour que les modifications prennent effet."
+                            "description": "Lorsque cette option est activée, la fonction principale par défaut passe des paramètres d'usine à la valeur opposée. Redémarrez votre ordinateur pour que les modifications prennent effet.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "Comment utiliser les combinaisons de touches Fn",

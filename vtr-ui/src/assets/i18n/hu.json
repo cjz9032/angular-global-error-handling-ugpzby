@@ -1685,7 +1685,9 @@
                         },
                         "subSectionTwo": {
                             "title": "Az alapértelmezett elsődleges funkció megfordítása",
-                            "description": "Bekapcsolt állapotban az alapértelmezett elsődleges funkció a gyári beállításokról az ellenkezőre változik. A módosítások életbe lépéséhez indítsa újra a számítógépet."
+                            "description": "Bekapcsolt állapotban az alapértelmezett elsődleges funkció a gyári beállításokról az ellenkezőre változik. A módosítások életbe lépéséhez indítsa újra a számítógépet.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "Az Fn billentyűkombinációk használata",

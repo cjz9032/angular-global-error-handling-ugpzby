@@ -1685,7 +1685,9 @@
                         },
                         "subSectionTwo": {
                             "title": "Inversione della funzione primaria predefinita",
-                            "description": "Se attivata, le impostazioni di fabbrica della funzione primaria predefinita vengono invertite. Riavviare il computer per rendere le modifiche."
+                            "description": "Se attivata, le impostazioni di fabbrica della funzione primaria predefinita vengono invertite. Riavviare il computer per rendere le modifiche.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "Modalità di utilizzo delle combinazioni di tasti Fn",

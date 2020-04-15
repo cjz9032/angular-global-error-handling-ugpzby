@@ -1685,7 +1685,9 @@
                         },
                         "subSectionTwo": {
                             "title": "Umkehrung der primären Standardfunktion",
-                            "description": "Wenn diese Option eingeschaltet ist, wird die primäre Standardfunktion von den Werkseinstellungen auf die entgegengesetzte Einstellung geändert. Starten Sie den Computer neu, damit die Änderungen wirksam werden."
+                            "description": "Wenn diese Option eingeschaltet ist, wird die primäre Standardfunktion von den Werkseinstellungen auf die entgegengesetzte Einstellung geändert. Starten Sie den Computer neu, damit die Änderungen wirksam werden.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "So verwenden Sie Fn-Tastenkombinationen",

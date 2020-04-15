@@ -1685,7 +1685,9 @@
                         },
                         "subSectionTwo": {
                             "title": "ביטול הפונקציה הראשונית המוגדרת כברירת מחדל",
-                            "description": "כאשר היא מופעלת, פונקציית ברירת המחדל הראשית תשתנה מהגדרות היצרן לאפשרות האחרת. יש להפעיל מחדש את המחשב כדי ששינויים אלה ייכנסו לתוקף."
+                            "description": "כאשר היא מופעלת, פונקציית ברירת המחדל הראשית תשתנה מהגדרות היצרן לאפשרות האחרת. יש להפעיל מחדש את המחשב כדי ששינויים אלה ייכנסו לתוקף.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "איך להשתמש בשילוב המקשים עם מקש Fn",

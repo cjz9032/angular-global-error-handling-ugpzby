@@ -1685,7 +1685,9 @@
                         },
                         "subSectionTwo": {
                             "title": "Скасування стандартного основного режиму",
-                            "description": "Якщо ввімкнути, основний режим буде змінено зі стандартного на протилежний. Перезавантажте комп’ютер, щоб застосувати зміни."
+                            "description": "Якщо ввімкнути, основний режим буде змінено зі стандартного на протилежний. Перезавантажте комп’ютер, щоб застосувати зміни.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "Використання комбінації клавіш з Fn",

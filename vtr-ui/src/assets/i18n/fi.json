@@ -1685,7 +1685,9 @@
                         },
                         "subSectionTwo": {
                             "title": "Ensisijaisen oletustoiminnon muuttaminen",
-                            "description": "Kun käytössä, ensisijainen oletustoiminto muutetaan tehdasasetuksista vastakkaiseksi. Käynnistä tietokone uudelleen, jotta muutokset tulevat voimaan."
+                            "description": "Kun käytössä, ensisijainen oletustoiminto muutetaan tehdasasetuksista vastakkaiseksi. Käynnistä tietokone uudelleen, jotta muutokset tulevat voimaan.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "Fn-näppäinyhdistelmien käyttö",
