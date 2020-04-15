@@ -6,7 +6,7 @@
         <div class="modal-header">
             <h2>{{ 'gaming.dashboard.device.advancedOC.title' | translate }}</h2>
             <p tabindex="-1">{{ 'gaming.dashboard.device.advancedOC.description' | translate }}</p>
-            <button type="button" tabindex="0" class="close" aria-label="close" role="button" (click)="closeModal()">
+            <button type="button" tabindex="1" class="close" aria-label="close" role="button" (click)="closeModal()">
                 ×
             </button>
         </div>
@@ -25,7 +25,7 @@
                             </div>
                             <div class="right-range">
                                 <vtr-ui-add-reduce-button [btnWidth]="'26.3%'" [value]="item.OCValue" [minData]="item.minValue" [maxData]="item.maxValue" [step]="item.stepValue" [unit]="itemUnit['gpuAdvancedOC'+item.tuneId]" (setVal)="setRangeValue($event,idx,'gpuParameterList',0,true)"
-                                    [ariaLabelValue]="itemUnit.gpuOCNames['gpuOCName'+item.tuneId]"></vtr-ui-add-reduce-button>
+                                    [tabIndexNum]="1" [ariaLabelValue]="itemUnit.gpuOCNames['gpuOCName'+item.tuneId]"></vtr-ui-add-reduce-button>
                             </div>
                         </div>
                     </li>
@@ -45,7 +45,7 @@
                             </div>
                             <div class="right-range">
                                 <vtr-ui-add-reduce-button [btnWidth]="'26.3%'" [value]="item.OCValue" [minData]="item.minValue" [maxData]="item.maxValue" [step]="item.stepValue" [unit]="itemUnit['cpuAdvancedOC'+item.tuneId]" (setVal)="setRangeValue($event,idx,'cpuParameterList',item.tuneId,true)"
-                                    [ariaLabelValue]="itemUnit.cpuOCNames['cpuOCName'+item.tuneId]"></vtr-ui-add-reduce-button>
+                                    [tabIndexNum]="1" [ariaLabelValue]="itemUnit.cpuOCNames['cpuOCName'+item.tuneId]"></vtr-ui-add-reduce-button>
                             </div>
                         </div>
                     </li>
@@ -53,7 +53,7 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button class="under-line-button" (click)="openSetToDefaultModal()" tabindex="0" aria-label="set to default" role="button">
+            <button class="under-line-button" (click)="openSetToDefaultModal()" tabindex="1" aria-label="set to default" role="button">
                 {{'gaming.lightingProfile.button.default.title' | translate}}
             </button>
         </div>
