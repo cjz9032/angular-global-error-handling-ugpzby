@@ -21,6 +21,7 @@
 		background: $light !important;
 		border: 0.1rem solid $dark;
 	}
+
 	@media #{$white-on-black} {
 		background: $dark !important;
 		border: 0.1rem solid $light;
@@ -37,7 +38,7 @@
 		height: 22.5rem;
 	}
 
-	.content{
+	.content {
 		padding-top: 6rem;
 		padding-bottom: 2.5rem;
 	}
@@ -64,30 +65,20 @@
 		margin-bottom: 2.5rem;
 	}
 
-	.about-links{
+	.about-links {
 		font-size: 1.6rem;
 		letter-spacing: 0;
 		color: #667481;
-		a{
+
+		a {
 			text-decoration: underline;
-		}
-	}
+			padding: 0.3rem;
 
-	.close-btn {
-		position: absolute;
-		right: 1.8rem;
-		top: 1.8rem;
-		width: 2.2rem;
-		height: 2.2rem;
-		cursor: pointer;
-
-		&:hover {
-			opacity: 0.7;
-		}
-
-		img {
-			width: 100%;
-			height: 100%;
+			&:focus {
+				outline: none;
+				padding: 0.2rem;
+				border: 0.1rem solid $menu_hover;
+			}
 		}
 	}
 }

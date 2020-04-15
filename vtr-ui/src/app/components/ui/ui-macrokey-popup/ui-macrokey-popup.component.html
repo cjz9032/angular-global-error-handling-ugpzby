@@ -15,7 +15,7 @@
 			<hr>
 			<div class="row">
 				<div *ngIf="modalContent.btnConfirm">
-					<button class="btn enable-button" (click)="submitAction(true)" id="macrokey_popup_clear"
+					<button class="btn enable-button" (click)="submitAction(true)" id="{{modalContent.automationId+'_clear_btn'}}"
 					attr.aria-label="{{ 'gaming.macroKey.popupContent.confirmButton.btnClear' | translate }}" vtrMetrics [metricsItem]="'macrokey_popup_clear'" tabindex="1"
 						(keyup.enter)="submitAction(true)"
 						metricsEvent="featureClick">{{'gaming.macroKey.popupContent.confirmButton.btnClear' | translate}}</button>
@@ -26,7 +26,7 @@
 						metricsEvent="featureClick">{{'gaming.macroKey.popupContent.confirmButton.btnCancel' | translate}}</a>
 				</div>
 				<div *ngIf="!modalContent.btnConfirm">
-					<button class="btn enable-button" (click)="submitAction(true)" id="{{modalContent.metricsItemId}}"
+					<button class="btn enable-button" (click)="submitAction(true)" id="{{modalContent.automationId+'ob_btn'}}"
 					attr.aria-label="{{ 'gaming.macroKey.popupContent.btnOk' | translate }}" vtrMetrics [metricsItem]="modalContent.metricsItemId"
 						metricsEvent="featureClick" tabindex="1" (keydown)="keydownFn($event)"
 						(keyup.enter)="submitAction(true)">{{'gaming.macroKey.popupContent.btnOk' | translate}}</button>

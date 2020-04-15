@@ -25,10 +25,11 @@ import { CommonPipeModule } from '../common/common-pipe.module';
 import { ModalLicenseComponent } from 'src/app/components/modal/modal-license/modal-license.component';
 import { ModalAboutComponent } from 'src/app/components/modal/modal-about/modal-about.component';
 import { ModalFindUsComponent } from 'src/app/components/modal/modal-find-us/modal-find-us.component';
-import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModalModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { FeedbackModule } from '../feedback/feedback.module';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 import { LicensesService } from 'src/app/services/licenses/licenses.service';
+import { UiCloseButtonModule } from 'src/app/components/ui/ui-close-button/ui-close-button.module';
 
 
 @NgModule({
@@ -45,13 +46,15 @@ import { LicensesService } from 'src/app/services/licenses/licenses.service';
 		SupportRoutingModule,
 		FontAwesomeModule,
 		CommonUiModule,
+		UiCloseButtonModule,
 		CommonPipeModule,
 		CommonWidgetModule,
 		SharedModule,
 		WidgetOfflineModule,
 		NgbModalModule,
 		FeedbackModule,
-		PageLayoutModule
+		PageLayoutModule,
+		NgbTooltipModule
 	],
 	providers: [
 		SupportService,

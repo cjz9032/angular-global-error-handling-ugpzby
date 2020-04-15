@@ -713,6 +713,9 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 				margin-bottom: 1rem;
 				word-wrap: break-word;
 			}
+			&:focus {
+				@include outline-blue;
+			}
 		}
 
 		img {
@@ -726,6 +729,11 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 			max-width: 100%;
 			margin-bottom: 3rem;
 			border: none;
+		}
+		.close-btn {
+			&:focus {
+				@include outline-blue;
+			}
 		}
 	}
 }
@@ -956,11 +964,23 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		.read {
 			color: $menu_hover;
 			text-decoration: underline;
+			padding: 0.2rem;
+			border: 0.1rem solid transparent;
+			&:focus {
+				outline: none;
+				border: 0.1rem solid $menu_hover;
+			}
 		}
 
 		.ignore {
 			color: $menu_hover;
 			text-decoration: underline;
+			padding: 0.2rem;
+			border: 0.1rem solid transparent;
+			&:focus {
+				outline: none;
+				border: 0.1rem solid $menu_hover;
+			}
 		}
 	}
 
@@ -1125,6 +1145,8 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 					z-index: 5;
 					@media #{$breakpoint_xl} {
 						font-size: $fontsize_xs2;
+						padding: 1.5rem;
+						height: 16rem;
 					}
 					@media #{$breakpoint_sm} {
 						font-size: 0.9rem;
@@ -1136,6 +1158,12 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 						text-align: center;
 						font-size: 8rem;
 						color: $main_light;
+						@media #{$breakpoint_xl}{
+							font-size: 6.4rem;
+							height: 6.4rem;
+							width: 6.4rem;
+							line-height: 6.4rem;
+						}
 						@media #{$breakpoint_sm} {
 							font-size: 6rem;
 						}
@@ -1464,6 +1492,12 @@ vtr-ui-smart-performance-scanning {
 					}
 				}
 			}
+			.close-button {
+				&:focus {
+					outline: 0.1rem solid $menu_hover !important;
+					outline-offset: 0.2rem !important;
+				}
+			}
 		}
 	}
 }
@@ -1655,20 +1689,44 @@ vtr-ui-smart-performance-scanning {
 	padding-top: 2rem;
 }
 
+.btn-modal-close {
+	position: absolute;
+	right: 1rem;
+	top: 1rem;
+	width: 3rem;
+	height: 3rem;
+}
+
 a, input, label {
 	&:focus {
-		outline: 0.1rem solid $menu_hover;
-		outline-offset: 0.2rem;
+		@include outline-blue;
 	}
 }
 
-div {
-	>a, input, label {
-		&:focus {
-			outline: 0.1rem solid $menu_hover;
-			outline-offset: 0.2rem;
+.focus-with-border-radius {
+	&:focus {
+		outline: none !important;
+		&:before {
+			content: '';
+			position: absolute;
+			width: calc(100% + 0.6rem);
+			height: calc(100% + 0.6rem);
+			left: -0.3rem;
+			top: -0.3rem;
+			background: none;
+			border-radius: calc(#{$border_radius} + 0.2rem);
+			border: 0.1rem solid $menu_hover;
 		}
 	}
 }
 
+.vtr-ui-switch-row.white-theme {
+	.caption {
+		.modern-standby {
+			&:focus {
+				outline-offset: 0;
+			}
+		}
+	}
+}
 

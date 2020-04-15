@@ -42,6 +42,46 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	};
 	usageType = null;
 	gamingScenario = null;
+	allUsageTypes = [
+		{
+			id: 'personal-use',
+			value: this.segmentConst.Consumer,
+			textKey: 'welcometutorial.personal',
+			image: 'personal-use.jpg',
+		},
+		{
+			id: 'business-use',
+			value: this.segmentConst.SMB,
+			textKey: 'welcometutorial.business',
+			image: 'business-use.jpg',
+		},
+		{
+			id: 'custom-use',
+			value: this.segmentConst.Commercial,
+			textKey: 'welcometutorial.professional',
+			image: 'custom-use.jpg',
+		},
+	];
+	allGamingScenarios = [
+		{
+			id: 'gaming',
+			value: this.gamingScenarios.Gaming,
+			textKey: 'welcometutorial.gaming.gamingOnly',
+			image: 'gaming-only.jpg',
+		},
+		{
+			id: 'gaming-and-work',
+			value: this.gamingScenarios.GamingAndWork,
+			textKey: 'welcometutorial.gaming.gamingAndWork',
+			image: 'gaming-work.jpg',
+		},
+		{
+			id: 'non-gaming',
+			value: this.gamingScenarios.NonGaming,
+			textKey: 'welcometutorial.gaming.nonGaming',
+			image: 'non-gaming.jpg',
+		},
+	];
 	interests = [];
 	hideMoreInterestBtn = false;
 	welcomeStart: any = new Date();
@@ -49,10 +89,8 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
 	@Input() tutorialVersion: string;
 
-	@ViewChildren('interestChkboxs') interestChkboxs: any;
 	@ViewChildren('welcomepage2') welcomepage2: any;
 	shouldManuallyFocusPage2 = true;
-	shouldManuallyFocusMoreInterest = false;
 
 	constructor(
 		private configService: ConfigService,
@@ -103,13 +141,6 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		const welcomeEnd: any = new Date();
 		const welcomeUseTime = welcomeEnd - this.welcomeStart;
 		this.logger.info(`Performance: TutorialPage after view init. ${welcomeUseTime}ms`);
-		this.interestChkboxs.changes.subscribe(() => {
-			if (this.interestChkboxs.length > 8 && this.shouldManuallyFocusMoreInterest === true) {
-				this.interestChkboxs._results[this.interestChkboxs.length - 2].nativeElement.focus();
-				this.shouldManuallyFocusPage2 = false;
-				this.shouldManuallyFocusMoreInterest = false;
-			}
-		});
 
 		this.welcomepage2.changes.subscribe(() => {
 			if (this.welcomepage2.length > 0 && this.shouldManuallyFocusPage2) {
@@ -139,6 +170,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 				this.commonService.setLocalStorageValue(LocalStorageKey.GamingTutorial, tutorialData);
 			}
 			this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, tutorialData);
+			this.focusOnModal();
 		} else {
 			const buttonClickData = {
 				ItemType: 'FeatureClick',
@@ -263,7 +295,6 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	onKeyPress($event) {
 		if ($event.keyCode === 13) {
 			$event.target.click();
-			this.shouldManuallyFocusMoreInterest = true;
 		}
 	}
 
@@ -317,19 +348,28 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		}
 		this.commonService.setLocalStorageValue(LocalStorageKey.UserDeterminePrivacy, true);
 	}
+
 	moreInterestClicked() {
 		this.hideMoreInterestBtn = true;
+		if (document.querySelectorAll('.interests input[type=checkbox]').length > 7) {
+			setTimeout(() => {
+				(document.querySelectorAll('.interests input[type=checkbox]')[8] as HTMLElement).focus();
+			}, 0);
+		}
 	}
+
 	ngOnDestroy() {
 		// this.commonService.setLocalStorageValue(LocalStorageKey.DashboardOOBBEStatus, true);
 		// this.commonService.sendNotification(DeviceMonitorStatus.OOBEStatus, true); // never use this notification
 	}
 
+	focusOnModal() {
+		(document.querySelector('.welcome-modal-size') as HTMLElement).focus();
+	}
 
 	@HostListener('window: focus')
 	onFocus(): void {
-		const modal = document.querySelector('.welcome-modal-size') as HTMLElement;
-		modal.focus();
+		this.focusOnModal();
 	}
 
 	privacyPolicyClick(event) {
@@ -340,60 +380,4 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		event.preventDefault();
 	}
 
-	@HostListener('keydown', ['$event'])
-	onKeyDown(event: KeyboardEvent) {
-		const activeId = document.activeElement.id || '';
-		if (event.shiftKey && event.key === 'Tab') {
-			this.focusById(this.getNextIdById(activeId, true));
-			event.preventDefault();
-		} else if (event.key === 'Tab') {
-			this.focusById(this.getNextIdById(activeId));
-			event.preventDefault();
-		}
-	}
-
-	getNextIdById(id: string, reverse?: boolean): string {
-		const idArrayPage1 = ['tutorial_next_btn'];
-		let idArrayPage2 = this.deviceService.isGaming ? [
-			'gaming-scenario-choose-gaming',
-			'gaming-scenario-choose-gamingAndWork',
-			'gaming-scenario-choose-nonGaming'
-		] : [
-			'segment-choose-personal-use',
-			'segment-choose-business-use',
-			'segment-choose-custom-use',
-		];
-		this.interests.forEach((interest, index) => {
-			if (index <= 7 || this.hideMoreInterestBtn) {
-				idArrayPage2.push('welcome-interest-' + interest.label);
-			}
-		});
-		if (!this.hideMoreInterestBtn) {
-			idArrayPage2.push('tutorial_hide_moreInterest');
-		}
-		idArrayPage2 = idArrayPage2.concat([
-			'welcome-toolbar-label',
-			'welcome-privacy-label',
-			'welcome-privacy-link',
-			'tutorial_done_btn'
-		]);
-		let idArray = [];
-		if (this.page === 1) {
-			idArray = idArrayPage1;
-		} else {
-			idArray = idArrayPage2;
-		}
-		const idIndex = idArray.indexOf(id);
-		if (!reverse) {
-			if (idIndex === -1 || idIndex === idArray.length - 1) { return idArray[0]; }
-			return idArray[idIndex + 1];
-		} else {
-			if (idIndex === -1 || idIndex === 0) { return idArray[idArray.length - 1]; }
-			return idArray[idIndex - 1];
-		}
-	}
-
-	focusById(id: string) {
-		(document.querySelector('#' + id) as HTMLElement).focus();
-	}
 }

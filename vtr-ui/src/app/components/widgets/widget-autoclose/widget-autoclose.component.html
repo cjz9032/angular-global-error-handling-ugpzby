@@ -29,7 +29,7 @@
 			<div class="remove-app" (click)="removeApp(app.processDescription,i)"
 				(keydown.enter)="removeApp(app.processDescription,i)"
 				(keyup.enter)="removeApp(app.processDescription,i)" (focus)="app.isHovered=true"
-				(focusout)="app.isHovered=false" [tabindex]="modalStatus? '-1':'1'" role="button"
+				(focusout)="app.isHovered=false" [tabindex]="modalStatus? '-1':'1'" role="button" id="{{'autoclose_appremove'+i}}"
 				attr.aria-label="{{('gaming.autoClose.autocClosenarratorremove' | translate)+ (app.processDescription| translate)}}">
 				<svg width="16px" height="16px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
 					xmlns:xlink="http://www.w3.org/1999/xlink">

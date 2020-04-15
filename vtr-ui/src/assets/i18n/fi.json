@@ -78,7 +78,8 @@
                     "macroKey": "Makronäppäin",
                     "hardwareScan": "Laitteistotarkistus",
                     "systemUpdate": "Järj.päivitys",
-                    "header": "Järj.työkalut"
+                    "header": "Järj.työkalut",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "lighting": {
                     "title": "Valaistuksen mukautus",
@@ -196,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "Varoitus!",
                     "description": "Ylikellotuksen epäasianmukaiset asetukset saattavat aiheuttaa peruuttamatonta laitteistovahinkoa.",
-                    "proceed": "JATKA"
+                    "proceed": "JATKA",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },
@@ -1852,6 +1856,14 @@
             "intelligentSecurity": {
                 "title": "Älykäs suojaus",
                 "readMore": "Lue lisää",
+                "image": {
+                    "title": "Älykäs suojaus",
+                    "description": "Tarjoaa tietokoneellesi älykkään tunnistustekniikan, pitää tietosi turvassa ja säästää akkua."
+                },
+                "advancedSettings": {
+                    "showAdvSettings": "LISÄASETUKSET",
+                    "hideAdvSettings": "PIILOTA LISÄASETUKSET"
+                },
                 "HumanPresenceDetection": {
                     "title": "Ihmisten läsnäolon tunnistus",
                     "tooltip": "Napsauta tätä, jos haluat palauttaa ihmisten läsnäolon tunnistusasetukset."
@@ -1864,6 +1876,11 @@
                     "title": "Zero Touch -kirjautuminen",
                     "caption": "Tämä ominaisuus avaa tietokoneen lukituksen tai herättää tietokoneen automaattisesti, kun olet tietokoneen edessä tai lähestyt tietokonetta.",
                     "tooltip": "Kun olet tietokoneen äärellä tai lähestyt sitä (1,2 metrin etäisyydellä), tämän toiminnon avulla voit kirjautua järjestelmään automaattisesti, kun kasvosi on tunnistettu. Jos olet ulkona etkä toimistossa, sinun on oltava lähempänä tietokonettasi ja herääminen kestää kauemmin."
+                },
+                "zeroTouchLoginForIdea": {
+                    "title": "Zero Touch -kirjautuminen",
+                    "caption": "Tämä ominaisuus sallii sinun työskennellä tehokkaammin automatisoimalla tietokoneesi herättämisen tai sisäänkirjautumisen. Sinun on rekisteröitävä kasvosi Windows Hello -palveluun tämän ominaisuuden käyttämiseksi.",
+                    "tooltip": "Kun olet tietokoneesi äärellä tai lähestyt sitä (1,2 tai 1,5 metriä etäisyydellä), tämän ominaisuuden avulla voit kirjautua järjestelmään automaattisesti, kun kasvosi on tunnistettu. Jos olet ulkona etkä toimistossa, sinun on oltava lähempänä tietokonettasi ja herääminen kestää kauemmin. <br>Tunnistamisen enimmäisetäisyys riippuu tunnistimen toimintakyvystä. Katso lisätietoja tietokoneesi mukana toimitetusta <i>käyttöoppaasta</i>."
                 },
                 "zeroTouchLock": {
                     "title": "Zero Touch -lukitus",
@@ -1879,7 +1896,7 @@
                     },
                     "facialRecognition": {
                         "title": "KASVOJENTUNNISTUS",
-                        "caption": "Voit ottaa kasvojentunnistustoiminnon käyttöön ja sallia sen käyttää kameraasi. Tämä työkalu ottaa sinusta valokuvan, jotta se voi tunnistaa oikein, kun olet puhelimen äärellä tai havaita, milloin olet poistunut sen läheltä. Nämä tiedot käsitellään laitteessa paikallisesti. Lenovolla ei ole pääsyä tietoihin eikä se voi käyttää niitä.",
+                        "caption": "Tämä ominaisuus auttaa parantamaan tunnistuksen suorituskykyä ja välttymään odottamattomalta näytön lukitukselta varsinkin, kun nojaudut taaksepäin tuolissasi. Tämä ominaisuus käsitellään paikallisesti laitteellasi. Lenovolla ei ole pääsyä tietoihin eikä se voi käyttää niitä.",
                         "checkBox": "Kytke kameraan virta ja ota tämä toiminto käyttöön",
                         "note": {
                             "permission": "Lenovo Vantage ei voi käyttää kameraa. Valintaruudun toiminto ei toimi.",
@@ -1889,18 +1906,18 @@
                         }
                     },
                     "distanceSensitivityAdjusting": {
-                        "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                        "captionOn": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, you can maually adjust the dectecting sensitivity based on your preference.",
-                        "captionOff": "The accuracy varies by body size, posture, and frequency of movement. When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
+                        "title": "AUTOMAATTISEN ETÄISYYDENTUNNISTUKSEN MUUTTAMINEN",
+                        "captionOn": "Tarkkuus vaihtelee kehon koon, asennon ja liikkumisen tiheyden mukaan. Jos tietokoneesi lukittu odottamatta, voit säätää tunnistuksen herkkyyttä manuaalisesti.",
+                        "captionOff": "Tarkkuus vaihtelee kehon koon, asennon ja liikkumisen tiheyden mukaan. Kun tämä ominaisuus ei ole käytössä, sinun täytyy säätää herkkyyspalkkia manuaalisesti muuttaaksesi tunnistusetäisyyttä. Ota se käyttöön, jos haluat, että etäisyys määritetään automaattisesti.",
                         "options": {
-                            "near": "Near",
-                            "medium": "Middle",
-                            "far": "Far"
+                            "near": "Lähellä",
+                            "medium": "Keskitaso",
+                            "far": "Kaukana"
                         },
                         "readMore": {
-                            "line1": "• Near: 0.9 meter",
-                            "line2": "• Middle: 1.2 meter",
-                            "line3": "• Far: 1.5 meter"
+                            "line1": "• Lähellä: 0,9 metriä",
+                            "line2": "• Keskitaso: 1,2 metriä",
+                            "line3": "• Kaukana: 1,5 metriä"
                         }
                     }
                 },
@@ -1924,17 +1941,38 @@
                         }
                     }
                 },
+                "distanceSensitivityAdjustingForIdea": {
+                    "title": "AUTOMAATTISEN ETÄISYYDENTUNNISTUKSEN MUUTTAMINEN",
+                    "captionOn": "Ota tämä ominaisuus käyttöön säätääksesi automaattisesti etäisyyttä, josta liikkeitä tunnistetaan järjestelmän herättämiseksi. Poista se käytöstä, jos haluat määrittää haluamasi tunnistusherkkyyden manuaalisesti.",
+                    "captionOff": "Kun tämä ominaisuus ei ole käytössä, sinun täytyy säätää herkkyyspalkkia manuaalisesti muuttaaksesi tunnistusetäisyyttä. Ota se käyttöön, jos haluat, että etäisyys määritetään automaattisesti.",
+                    "options": {
+                        "near": "Lähellä",
+                        "far": "Kaukana",
+                        "medium": "Keskitaso"
+                    },
+                    "readMore": "Valittavissa on kolme vaihtoehtoa. Kun ihmisten havaitaan liikkuvan näillä alueilla, näyttösi herätetään.",
+                    "readMoreForSensor1": {
+                        "line1": "• Lähellä: 0–0,4 metriä",
+                        "line2": "• Keskitaso: 0–0,6 metriä",
+                        "line3": "• Kaukana: 0–1,2 metriä"
+                    },
+                    "readMoreForSensor2": {
+                        "line1": "• Lähellä: 0,2–0,55 metriä",
+                        "line2": "• Keskitaso: 0,2–1,0 metriä",
+                        "line3": "• Kaukana: 0,2–1,5 metriä"
+                    }
+                },
                 "note": {
                     "description1": "Tämä ominaisuus hyödyntää Windows Hellota. Varmista, että kasvojentunnistus on otettu käyttöön Windowsin asetuksista.",
                     "description2": "Tämä ominaisuus käyttää tunnistimia ja kameraa läsnäolon havaitsemiseksi. Toiminto EI kuitenkaan kerää henkilötietoja.",
-                    "description3": "1. Jos tietokone on kolmio-, taitos- tai tauluasennossa, nämä ominaisuudet eivät ehkä toimi oikein.",
-                    "description4": "2. Jos tietokone on horrostilassa tai jos tietokoneesta on katkaistu virta, Zero Touch -kirjautuminen ei toimi.",
-                    "description6": "4. Jos tietokoneen lentotila on käytössä, nämä langattomat ominaisuudet ovat poissa käytöstä.",
-                    "description7": "Tarkkuus vaihtelee kehon koon, asennon ja liikkumisen tiheyden mukaan. Jos tietokone lukitaan odottamatta, paranna tarkkuutta säätämällä herkkyyspalkkia.",
-                    "description5a1": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to ",
-                    "description5a2": "User Guide ",
-                    "description5a3": "that comes with it.",
-                    "description5b": "b. Your computer is in hibernation mode or has been turned off."
+                    "description3": "1. Kun haluat käyttää yllä kuvattuja toimintoja, säädä tietokoneesi näytön kulmaa siten, että kasvosi voidaan tunnistaa.",
+                    "description4": "2. Yllä kuvattuja toimintoja ei tueta, kun:",
+                    "description5a1": "a. Tietokoneesi on kolmio-, taulu- tai taitosasennossa tai irrotettuna. Katso tietokoneesi tukemat asennot sen mukana toimitetusta ",
+                    "description5a2": "käyttöoppaasta ",
+                    "description5a3": ".",
+                    "description5b": "b. Tietokoneesi on horrostilassa tai siitä on katkaistu virta.",
+                    "description6": "3. Jos tietokoneen lentotila on käytössä, nämä langattomat ominaisuudet ovat poissa käytöstä.",
+                    "description7": "Tarkkuus vaihtelee kehon koon, asennon ja liikkumisen tiheyden mukaan. Jos tietokone lukitaan odottamatta, paranna tarkkuutta säätämällä herkkyyspalkkia."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Siirry Windows Hello -asetuksiin",
@@ -1943,40 +1981,6 @@
                 "resetToDefault": "Uudelleenasetus",
                 "sensitivityAdjusting": {
                     "title": "TUNNISTUSHERKKYYDEN MUUTTAMINEN"
-                },
-                "image": {
-                    "title": "Intelligent security",
-                    "description": "Buckles up your PC with intelligent sensing technology, protects your privacy, and saves your battery power."
-                },
-                "advancedSettings": {
-                    "showAdvSettings": "ADVANCED SETTINGS",
-                    "hideAdvSettings": "HIDE ADVANCED SETTINGS"
-                },
-                "zeroTouchLoginForIdea": {
-                    "title": "Zero Touch Login",
-                    "caption": "This feature enables you to improve the work efficiency by automatically waking up or logging in your computer. To use the feature, you need to register your face in Windows Hello.",
-                    "tooltip": "When you are in front of your computer or approaching it (within 1.2 or 1.5 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer. <br>Depending on the sensor capability, the maximum detecting distance varies. Refer to the <i>User Guide</i> that comes with your computer for details."
-                },
-                "distanceSensitivityAdjustingForIdea": {
-                    "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                    "captionOn": "Enable this feature to automatically adjust the detecting distance of movements to wake up the system. Turn it off to manually adjust the detecting sensitivity based on your preference.",
-                    "captionOff": "When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
-                    "options": {
-                        "near": "Near",
-                        "medium": "Middle",
-                        "far": "Far"
-                    },
-                    "readMore": "There are three options. In each range, when human movements are detected, your screen will be waked up accordingly.",
-                    "readMoreForSensor1": {
-                        "line1": "• Near: 0-0.4 meter",
-                        "line2": "• Middle: 0-0.6 meter",
-                        "line3": "• Far: 0-1.2 meter"
-                    },
-                    "readMoreForSensor2": {
-                        "line1": "• Near: 0.2-0.55 meter",
-                        "line2": "• Middle: 0.2-1.0 meter",
-                        "line3": "• Far: 0.2-1.5 meter"
-                    }
                 }
             },
             "intelligentScreen": {
@@ -2048,13 +2052,59 @@
             "superResolution": {
                 "heading": "Älykäs tietoväline",
                 "title": "Näytön tarkkuuden skaalaus",
-                "desc": "<p><label>Tämä toiminto parantaa videoiden toistokokemusta parantamalla videoiden tarkkuutta. Se toimii erityisesti silloin, kun näytön resoluutio on heikko.</label></p> <p style='margin-top:4px;'><label>Tämä toiminto saattaa heikentää akun käyttöaikaa, akun lämpötilaa ja aiheuttaa ääniä. Älä käytä sitä tasasähkövirtatilassa. Muutoin se nopeuttaa virrankulutusta ja lyhentää akun käyttöikää.</label></p>",
-                "tooltip": "Ominaisuus toimii vain näissä:<br>Windows Media player",
+                "desc": "<p><label>Tämä ominaisuus parantaa videoiden katselukokemusta parantamalla videoiden resoluutiota. Se toimii erityisen hyvin, kun videon resoluutio on alhainen.</label></p> <p style='margin-top:4px;'><label>Tämä toiminto saattaa heikentää akun käyttöaikaa, akun lämpötilaa ja aiheuttaa ääniä. Älä käytä sitä DC-tilassa (akkuvirralla). Muutoin se nopeuttaa virrankulutusta ja lyhentää akun käyttöikää.</label></p>",
+                "tooltip": "Tämä ominaisuus toimii vain seuraavilla videosoittimilla:<br>Windows Media Player<br>Chrome<br>Elokuvat ja TV<br>PotPlayer<br>GOM Player<br>Selainpohjaiset soittimet (esim. Chrome)<br><br>Lisätietoja tämän ominaisuuden ottamisesta käyttöön PotPlayer- ja GOM Player -soittimille löydät tietokoneesi mukana toimitetusta käyttöoppaasta.",
                 "note": {
                     "description": "Wi-Fi-toiminto ei toimi seuraavissa tilanteissa:",
-                    "description1": "Tietokonetta ei ole kytketty verkkovirtaan.",
-                    "description2": "Akun virransäästötila on käytössä.",
-                    "description3": "Keskusyksikön lämpötila on liian korkea."
+                    "description1": "Virransäästötila on käytössä.",
+                    "description2": "Keskusyksikön lämpötila on liian korkea."
+                }
+            },
+            "antiTheft": {
+                "heading": "Älykäs tunnistustoiminto",
+                "title": "Älykäs liikkeentunnistus",
+                "desc": "<p><label>Kun tämä ominaisuus on käytössä, laite aloittaa äänimerkin toistamisen, jos näyttösi ollessa lukittuna havaitaan liikettä, varsinkin julkisissa tiloissa.</label></p> <p style='margin-top:4px;'><label>Lopeta hälytys syöttämällä oikea salasana tai kirjautumalla sisään Windows Hellon avulla.</label></p>",
+                "note": {
+                    "description": "Kun kirjaudut järjestelmään onnistuneesti, tämä ominaisuus poistetaan automaattisesti käytöstä. Sinun täytyy ottaa se uudelleen käyttöön käyttääksesi sitä."
+                },
+                "alarm": {
+                    "title": " HÄLYTYS KESTÄÄ",
+                    "option1": "10 sekuntia",
+                    "option2": "20 sekuntia",
+                    "option3": "30 sekuntia",
+                    "option4": "1 minuutti",
+                    "option5": "Älä lopeta koskaan"
+                },
+                "allowCamera": {
+                    "title": "VALOKUVIEN OTTAMINEN",
+                    "describe": "Kun tämä ominaisuus on käytössä, kamera ottaa automaattisesti valokuvia, jos havaitaan liikettä näytön ollessa lukittuna. Nämä tiedot käsitellään laitteessa paikallisesti. Lenovolla ei ole pääsyä tietoihin eikä se voi käyttää niitä.",
+                    "checkBoxText": "Ota tämä ominaisuus käyttöön"
+                },
+                "cameraPrivacy": {
+                    "describe": "Lenovo Vantage -ohjelman kameran tietosuojatila on käytössä. Valintaruudun toiminto ei toimi.",
+                    "linkText": "Poista se käytöstä siirtymällä kameran tietosuojatilaan"
+                },
+                "authorizedAccess": {
+                    "describe": "Lenovo Vantage ei voi käyttää kameraa. Valintaruudun toiminto ei toimi.",
+                    "linkText": "Siirry Windows-asetuksiin ja anna käyttöoikeus"
+                },
+                "photo": {
+                    "title": "LIIKKEEN AIKANA OTETTUJEN VALOKUVIEN MÄÄRÄ",
+                    "tooltip": "Tietokoneesi kamera aktivoitu automaattisesti ja ottaa valokuvia, kun liikettä havaitaan. Kuvia otetaan 2 sekunnin välein ja ne tallennetaan paikalliseen tallennustilaan.",
+                    "option1": "5",
+                    "option2": "10",
+                    "option3": "15",
+                    "option4": "20",
+                    "option5": "25",
+                    "option6": "30"
+                },
+                "showPhoto": {
+                    "title": "VALOKUVAT ON:",
+                    "link": "Näytä valokuvat"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Lenovo Vantage ei voi käyttää tiedostojärjestelmää.",
+                    "link": "Siirry Windows-asetuksiin ja anna käyttöoikeus"
                 }
             },
             "voice": {
@@ -2655,7 +2705,7 @@
         },
         "question1": {
             "title": "Tiedostojen varmuuskopiointi ja palauttaminen",
-            "description": "<div>    <div class='faqInFs4Fb'>        Tiedostojen varmuuskopiointi ja palauttaminen    </div>    <hr />    <div class='faqInMb7'>        Varmuuskopiointi on aina hyvä asia. Säilytä tiedostojen kopioita toisella asemalla siltä varalta, että alkuperäisille tapahtuu jotain.    </div>    <div class='faqInFs3Fb'>        Varmuuskopioinnin määritys    </div>    <hr />    <div class='mb-5'>        Valitse <span class='faqInFb'>Käynnistä</span>-painike ja sitten <span class='faqInFb'>Asetukset</span> > <span class='faqInFb'>Päivittäminen ja suojaus</span> > <span class='faqInFb'>Varmuuskopiointi</span> > <span class='faqInFb'>Lisää asema</span>, ja valitse sitten ulkoinen asema tai verkkosijainti.varmuuskopiointia varten.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg'  />    </div>    <div class='mb-5'>        Valmista. Varmuuskopioimme kaikki käyttäjän kansiossa olevat tiedostot (C:\\\\Users\\\\username) tunnin väliajoin. Jos haluat määrittää, mitkä tiedostot varmuuskopioidaan tai kuinka usein varmuuskopiointi tapahtuu, siirry kohtaan <span class='faqInFb'>Lisää vaihtoehtoja</span>.    </div>    <div class='faqInFs3Fb'>        Tiedostojen palauttaminen    </div>    <div class='mb-5'>        Jos sinulta puuttuu tärkeä tiedosto tai kansio, voit palauttaa sen seuraavasti:    </div>    <div>        <div class='mb-3'>1. Kirjoita <span class='faqInFb'>Tiedostojen palautus</span> tehtäväpalkin hakuruutuun ja valitse sitten <span class='faqInFb'> Palauta tiedostot ja tiedostohistoria</span>.</div>        <div class='mb-3'>2. Etsi tarvitsemasi tiedosto ja tarkastele kaikkia sen versioita nuolien avulla</div>        <div class='mb-3'>3. Kun löydät haluamasi version, valitse <span class='faqInFb'>Palauta</span>, jos haluat tallentaa tiedoston sen alkuperäiseen sijaintipaikkaan. Jos haluat tallentaa sen eri paikkaan, paina pitkään (tai napsauta hiiren kakkospainikkeella) <span class='faqInFb'>Palauta</span>-painiketta, valitse <span class='faqInFb'>Palauta sijaintiin</span> -vaihtoehto ja valitse sitten uusi sijainti.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Tiedostojen varmuuskopiointi ja palauttaminen    </div>    <hr />    <div class='faqInMb7'>        Varmuuskopiointi on aina hyvä asia. Säilytä tiedostojen kopioita toisella asemalla siltä varalta, että alkuperäisille tapahtuu jotain.    </div>    <div class='faqInFs3Fb'>        Varmuuskopioinnin määritys    </div>    <hr />    <div class='mb-5'>        Valitse <span class='faqInFb'>Käynnistä</span>-painike ja sitten <span class='faqInFb'>Asetukset</span> > <span class='faqInFb'>Päivittäminen ja suojaus</span> > <span class='faqInFb'>Varmuuskopiointi</span> > <span class='faqInFb'>Lisää asema</span>, ja valitse sitten ulkoinen asema tai verkkosijainti.varmuuskopiointia varten.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg'  />    </div>    <div class='mb-5'>        Valmista. Varmuuskopioimme kaikki käyttäjän kansiossa olevat tiedostot (C:\\Users\\käyttäjänimesi) tunnin väliajoin. Jos haluat määrittää, mitkä tiedostot varmuuskopioidaan tai kuinka usein varmuuskopiointi tapahtuu, siirry kohtaan <span class='faqInFb'>Lisää vaihtoehtoja</span>.    </div>    <div class='faqInFs3Fb'>        Tiedostojen palauttaminen    </div>    <div class='mb-5'>        Jos sinulta puuttuu tärkeä tiedosto tai kansio, voit palauttaa sen seuraavasti:    </div>    <div>        <div class='mb-3'>1. Kirjoita <span class='faqInFb'>Tiedostojen palautus</span> tehtäväpalkin hakuruutuun ja valitse sitten <span class='faqInFb'> Palauta tiedostot ja tiedostohistoria</span>.</div>        <div class='mb-3'>2. Etsi tarvitsemasi tiedosto ja tarkastele kaikkia sen versioita nuolien avulla</div>        <div class='mb-3'>3. Kun löydät haluamasi version, valitse <span class='faqInFb'>Palauta</span>, jos haluat tallentaa tiedoston sen alkuperäiseen sijaintipaikkaan. Jos haluat tallentaa sen eri paikkaan, paina pitkään (tai napsauta hiiren kakkospainikkeella) <span class='faqInFb'>Palauta</span>-painiketta, valitse <span class='faqInFb'>Palauta sijaintiin</span> -vaihtoehto ja valitse sitten uusi sijainti.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -3036,15 +3086,15 @@
             "science": "Tiede"
         },
         "gaming": {
-            "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
-            "gamingFeature1": "-Computer status monitor",
-            "gamingFeature2": "-Performance mode & overclocking",
-            "gamingFeature3": "-Lighting",
-            "gamingFeature4": "-Network Boost",
-            "gamingFeature5": "-Auto Close",
-            "gamingOnly": "Gaming",
-            "gamingAndWork": "Gaming & Work",
-            "nonGaming": "Non-Gaming"
+            "gamingDescription": "Vantagen pelaajille suunniteltu versio tekee pelikokemuksesi parantamisesta yksinkertaista. Yleisten asetusten ohella sen tärkeimpiin ominaisuuksiin sisältyy (saatavilla tietyissä järjestelmissä):",
+            "gamingFeature1": "-Tietokoneen tilan valvonta",
+            "gamingFeature2": "-Suorituskykytila ja ylikellotus",
+            "gamingFeature3": "-Valaistus",
+            "gamingFeature4": "-Verkon tehostus",
+            "gamingFeature5": "-Automaattinen sulkeminen",
+            "gamingOnly": "Pelit",
+            "gamingAndWork": "Pelit ja työt",
+            "nonGaming": "Muu kuin pelaaminen"
         }
     },
     "settings": {
@@ -3068,7 +3118,8 @@
         "settingsNotes": "Ota tämä sovellus uudelleen käyttöön ja varmista, että kaikki muutokset tulevat voimaan.",
         "betaSettingTitle": "Beta-ohjelma",
         "betaProgram": "Beta-ohjelma",
-        "betaSettingDescription": "Kokeile uusimpia ominaisuuksia, joita työstämme."
+        "betaSettingDescription": "Kokeile uusimpia ominaisuuksia, joita työstämme.",
+        "betaSettingNewDescription": "Haluamme kutsua sinut mukaan Smart Performance -ominaisuuden beta-ohjelmaan. Se auttaa parantamaan tietokoneesi suorituskykyä seuraavin tavoin:<br/><ul class='pl-4'><li>Tutkimalla virheitä ja optimoimalla asetuksia ennakoivasti.</li><li>Parantamalla internetin suorituskykyä verkon ja selaimen optimoinnin avulla.</li><li>Suorittamalla pikatarkistuksen ja korjauksen ilman nykyistä virustentorjuntaohjelmaa.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Peruuta",
@@ -3991,6 +4042,10 @@
                 "readMore": "Lue enemmän",
                 "readLess": "Lue vähemmän"
             }
+        },
+        "narrator": {
+            "leftArrow": "Vasen nuoli",
+            "rightArrow": "Oikea nuoli"
         }
     },
     "dcc": {
@@ -4012,5 +4067,10 @@
     },
     "cpt": {
         "title": "Content Preview Tool"
+    },
+    "storeRating": {
+        "title": "Anna äänesi kuulua",
+        "likeUs": "Tykkää meistä",
+        "feedback": "Antaa palautetta"
     }
 }

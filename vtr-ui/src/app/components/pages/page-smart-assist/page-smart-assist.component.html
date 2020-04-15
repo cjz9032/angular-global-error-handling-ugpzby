@@ -32,8 +32,7 @@
 								componentName="intelligent security"
 								[isCollapsed]="false"
 								[allowCollapse]="true"
-								[theme]="'white'"
-								(toggle)="onCardCollapse($event)">
+								[theme]="'white'">
 								<!-- image -->
 								<div class="no-border-bottom pt-4 intelligent-security-image">
 									<img [src]="image" id="intelligent-security-image"/>
@@ -62,7 +61,7 @@
 											[tooltipText]=" 'device.smartAssist.intelligentSecurity.zeroTouchLoginForIdea.tooltip' | translate">
 										</vtr-ui-row-switch>
 										<!-- show advanced section -->
-										<div class="pl-4 border-bottom pb-4 ml-4" 
+										<div class="pl-4 border-bottom pb-4 ml-4"
 											*ngIf="!zeroTouchLoginShowAdvancedSection">
 											<span class="link-text mt-2 ml-4"
 												role="button"
@@ -135,19 +134,21 @@
 													</div>
 												</div>
 											</vtr-ui-row-switch>
-											<vtr-ui-custom-slider [sliderId]="'distanceSensitivity'"
-												*ngIf="!intelligentSecurity.isZeroTouchLoginAdjustEnabled"
-												[minLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.options.near' | translate"
-												[min]=1
-												[midLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.options.medium' | translate"
-												[maxLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.options.far' | translate"
-												[max]=3
-												(sliderChange)="setZeroTouchLoginSensitivity($event)"
-												[value]="intelligentSecurity.zeroTouchLoginDistance"
-												[isDisabled]="!intelligentSecurity.isZeroTouchLoginEnabled"
-												[metricsItem]="'distanceSensitivity'"
-												[metricsValue]="intelligentSecurity.zeroTouchLoginDistance">
-											</vtr-ui-custom-slider>
+											<div class="pl-4">
+												<vtr-ui-custom-slider [sliderId]="'distanceSensitivity'"
+													*ngIf="!intelligentSecurity.isZeroTouchLoginAdjustEnabled"
+													[minLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.options.near' | translate"
+													[min]=1
+													[midLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.options.medium' | translate"
+													[maxLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.options.far' | translate"
+													[max]=3
+													(sliderChange)="setZeroTouchLoginSensitivity($event)"
+													[value]="intelligentSecurity.zeroTouchLoginDistance"
+													[isDisabled]="!intelligentSecurity.isZeroTouchLoginEnabled"
+													[metricsItem]="'distanceSensitivity'"
+													[metricsValue]="intelligentSecurity.zeroTouchLoginDistance">
+												</vtr-ui-custom-slider>
+											</div>
 											<!-- note -->
 											<div class="pt-3 pl-4"
 												[ngClass]="{'zeroTouchLoginDistanceNote': intelligentSecurity.isZeroTouchLoginAdjustEnabled}"
@@ -167,7 +168,8 @@
 																	(click)="launchFaceEnrollment()"
 																	(keydown.enter)="launchFaceEnrollment()"
 																	tabindex="0"
-																	href="javascript:void()">{{'device.smartAssist.intelligentSecurity.WindowsLink.goToWindowsHello' | translate}}
+																	href="javascript:void()"
+																	class="hello-link">{{'device.smartAssist.intelligentSecurity.WindowsLink.goToWindowsHello' | translate}}
 																</a>
 															</p>
 														</div>
@@ -259,7 +261,8 @@
 																		tabindex="0"
 																		(keydown.enter)="launchFaceEnrollment()"
 																		role="link"
-																		href="javascript:void()">{{'device.smartAssist.intelligentSecurity.WindowsLink.goToWindowsHello' | translate}}
+																		href="javascript:void()"
+																		class="hello-link">{{'device.smartAssist.intelligentSecurity.WindowsLink.goToWindowsHello' | translate}}
 																	</a>
 																</p>
 															</div>
@@ -285,10 +288,10 @@
 											[isSwitchChecked]="intelligentSecurity.isZeroTouchLockEnabled"
 											(toggleOnOff)="onZeroTouchLockStatusToggle($event)"
 											[theme]="'white'"
-											[disabled]="!intelligentSecurity.isHPDEnabled">											
+											[disabled]="!intelligentSecurity.isHPDEnabled">
 										</vtr-ui-row-switch>
 										<!-- show advanced section -->
-										<div class="pl-4 border-bottom pb-4 ml-4" 
+										<div class="pl-4 border-bottom pb-4 ml-4"
 											*ngIf="!zeroTouchLockShowAdvancedSection">
 											<span class="link-text mt-2 ml-4"
 												role="button"
@@ -471,19 +474,21 @@
 													</div>
 												</div>
 											</vtr-ui-row-switch>
-											<vtr-ui-custom-slider [sliderId]="'smartAssist-intelligentSecurity-zeroTouchLock-distanceSensitivityAdjusting'"
-												*ngIf="zeroTouchPresenceLeaveDistanceCapability && !hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust"
-												[minLegend]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.options.near' | translate"
-												[min]=0
-												[midLegend]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.options.medium' | translate"
-												[maxLegend]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.options.far' | translate"
-												[max]=2
-												(sliderChange)="SetZeroTouchLockDistanceSensitivity($event)"
-												[value]="hsaIntelligentSecurity.zeroTouchLockDistance"
-												[isDisabled]="!intelligentSecurity.isZeroTouchLockEnabled || !hsaIntelligentSecurity.capacity"
-												[metricsItem]="'zeroTouchLockDistanceSensitivity'"
-												[metricsValue]="hsaIntelligentSecurity.zeroTouchLockDistance">
-											</vtr-ui-custom-slider>
+											<div class="pl-4">
+												<vtr-ui-custom-slider [sliderId]="'smartAssist-intelligentSecurity-zeroTouchLock-distanceSensitivityAdjusting'"
+													*ngIf="zeroTouchPresenceLeaveDistanceCapability && !hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust"
+													[minLegend]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.options.near' | translate"
+													[min]=0
+													[midLegend]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.options.medium' | translate"
+													[maxLegend]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.options.far' | translate"
+													[max]=2
+													(sliderChange)="SetZeroTouchLockDistanceSensitivity($event)"
+													[value]="hsaIntelligentSecurity.zeroTouchLockDistance"
+													[isDisabled]="!intelligentSecurity.isZeroTouchLockEnabled || !hsaIntelligentSecurity.capacity"
+													[metricsItem]="'zeroTouchLockDistanceSensitivity'"
+													[metricsValue]="hsaIntelligentSecurity.zeroTouchLockDistance">
+												</vtr-ui-custom-slider>
+											</div>
 										</div>
 										<!-- hide advanced section -->
 										<div class="pl-4 border-bottom pb-4 ml-4"
@@ -572,7 +577,8 @@
 												[class.blur-1]="!intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)">
 												<div role="radiogroup"
 													tabindex="0"
-													aria-label="automatic screen locker more list, select using arrow keys">
+													aria-label="automatic screen locker more list, select using arrow keys"
+													class="radio-group">
 													<vtr-ui-rounded-rectangle-radio
 														[radioId]="'autoScreenLockTimer_fast'"
 														[group]="'autoScreenLockTimer'"
@@ -703,8 +709,7 @@
 								componentName="intelligent screen"
 								[isCollapsed]="false"
 								[allowCollapse]="true"
-								[theme]="'white'"
-								(toggle)="onCardCollapse($event)">
+								[theme]="'white'">
 
 								<div class="intligent-screen">
 									<div class="col-12 px-0">
@@ -803,8 +808,7 @@
 								componentName=""
 								[isCollapsed]="false"
 								[allowCollapse]="true"
-								[theme]="'white'"
-								(toggle)="onCardCollapse($event)">
+								[theme]="'white'">
 								<vtr-active-protection-system></vtr-active-protection-system>
 							</vtr-container-collapsible>
 						</div>
@@ -822,7 +826,6 @@
 								[isCollapsed]="false"
 								[allowCollapse]="true"
 								[theme]="'white'"
-								(toggle)="onCardCollapse($event)"
 								[metricsParent]="'Device.SmartAssist'">
 								<vtr-voice></vtr-voice>
 							</vtr-container-collapsible>

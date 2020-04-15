@@ -182,6 +182,7 @@ export enum LocalStorageKey {
 	// Version 3.3: over drive
 	overDriveFeature = '[LocalStorageKey] OverDriveFeature',
 	overDriveStatus = '[LocalStorageKey] OverDriveStatus',
+	accessoryFeature = '[LocalStorageKey] AccessoryFeature',
 
 	// this enum is for macrokey local storage key
 	MacroKeyType = '[LocalStorageKey] MacroKeyType',
@@ -277,5 +278,10 @@ export enum LocalStorageKey {
 	// UPE
 	UPEChannelTags = '[LocalStorageKey] UPEChannelTags',
 	PriorityControlCapability = '[LocalStorageKey] PriorityControlCapability',
-	KBDBacklightThinkPadCapability =  '[LocalStorageKey] KBDBacklightThinkPadCapability'
+	KBDBacklightThinkPadCapability =  '[LocalStorageKey] KBDBacklightThinkPadCapability',
+
+	// Store Rating
+	RatingConditionMet = '[LocalStorageKey] RatingConditionMet',
+	RatingLastPromptTime =  '[LocalStorageKey] RatingLastPromptTime',
+	RatingPromptCount = '[LocalStorageKey] RatingPromptCount'
 }

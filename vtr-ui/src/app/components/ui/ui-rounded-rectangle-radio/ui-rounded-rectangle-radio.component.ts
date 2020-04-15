@@ -3,6 +3,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from 'src/app/services/metric/metric.service';
 import { AppEvent } from './../../../enums/app-event.enum';
 import { UICustomRadio } from '../ui-custom-radio/ui-custom-radio';
+import { KeyCode } from 'src/app/enums/key-code.enum';
 
 @Component({
 	selector: 'vtr-ui-rounded-rectangle-radio',
@@ -32,28 +33,28 @@ export class UiRoundedRectangleRadioComponent extends UICustomRadio implements O
 	}
 
 	ngOnChanges(changes) {
-		if (changes && changes.checked && !changes.checked.firstChange) {
-			const elem = document.getElementById('div' + this.radioId);
-			if (elem) {
-				if (!this.checked) {
-					elem.setAttribute('aria-checked', 'false');
-					elem.tabIndex = -1;
-				} else {
-					elem.setAttribute('aria-checked', 'true');
-					elem.tabIndex = 0;
-					elem.focus();
-				}
-			}
-		}
+		// if (changes && changes.checked && !changes.checked.firstChange) {
+		// 	const elem = document.getElementById('div' + this.radioId);
+		// 	if (elem) {
+		// 		if (!this.checked) {
+		// 			elem.setAttribute('aria-checked', 'false');
+		// 			elem.tabIndex = -1;
+		// 		} else {
+		// 			elem.setAttribute('aria-checked', 'true');
+		// 			elem.tabIndex = 0;
+		// 			elem.focus();
+		// 		}
+		// 	}
+		// }
 	}
 	onChange(event) {
 		this.change.emit(event);
 	}
 	onkeyPress($event) {
 		const { keyCode } = $event;
-		if (keyCode === this.keyCode.LEFT) {
+		if (keyCode === KeyCode.LEFT) {
 			this.customKeyEvent.emit({ customeEvent: AppEvent.LEFT });
-		} else if (keyCode === this.keyCode.RIGHT) {
+		} else if (keyCode === KeyCode.RIGHT) {
 			this.customKeyEvent.emit({ customeEvent: AppEvent.RIGHT });
 		}
 	}

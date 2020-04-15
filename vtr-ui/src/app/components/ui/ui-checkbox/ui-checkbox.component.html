@@ -4,7 +4,7 @@
 	[attr.aria-disabled]="disabled"
 	[attr.aria-checked]="checked"
 	[attr.aria-labelledby]="componentId"
-	tabindex="0"
+	[tabIndex]="disabled?-1:0"
 	(keydown.enter)="checkBox.click();">
 	<input [id]="componentId"
 		#checkBox

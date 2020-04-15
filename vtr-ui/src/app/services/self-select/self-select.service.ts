@@ -5,6 +5,7 @@ import { CommonService } from '../common/common.service';
 import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LoggerService } from '../logger/logger.service';
+import { Shell } from '@lenovo/tan-client-bridge';
 
 export class SelfSelectConfig {
 	public customtags?: string;
@@ -16,7 +17,8 @@ export enum SegmentConst {
 	Consumer = 'Consumer',
 	SMB = 'SMB',
 	Commercial = 'Commercial',
-	Gaming = 'Gaming'
+	Gaming = 'Gaming',
+	LE = 'LargeEnterprise'
 }
 
 @Injectable({
@@ -35,7 +37,18 @@ export class SelfSelectService {
 		{ label: 'music', checked: false },
 		{ label: 'science', checked: false },
 	];
-	public usageType = null;
+	private _usageType = null;
+	public get usageType() {
+		return this._usageType;
+	};
+	public set usageType(value) {
+		if (this.savedSegment === SegmentConst.LE) {
+			this._usageType = SegmentConst.LE;
+		} else {
+			this._usageType = value;
+		}
+	}
+
 	public checkedArray: string[] = [];
 	public userProfileEnabled = true;
 
@@ -72,17 +85,25 @@ export class SelfSelectService {
 	) {
 		this.selfSelect = this.vantageShellService.getSelfSelect();
 		this.vantageStub = this.vantageShellService.getVantageStub();
-		const changedConfig = this.commonService.getLocalStorageValue(LocalStorageKey.ChangedSelfSelectConfig);
-		if (changedConfig && changedConfig.segment) {
-			this.logger.info(`SelfSelectService update segment. ${changedConfig.segment}`);
-			this.commonService.setLocalStorageValue(LocalStorageKey.LocalInfoSegment, changedConfig.segment);
-			if (this.selfSelect) {
-				this.selfSelect.updateConfig(changedConfig).catch((error) => {});
+
+		const isLE = this.getLEState();
+		if (!isLE) {
+			const changedConfig = this.commonService.getLocalStorageValue(LocalStorageKey.ChangedSelfSelectConfig);
+			if (changedConfig && changedConfig.segment) {
+				this.logger.info(`SelfSelectService update segment. ${changedConfig.segment}`);
+				this.commonService.setLocalStorageValue(LocalStorageKey.LocalInfoSegment, changedConfig.segment);
+				if (this.selfSelect) {
+					this.selfSelect.updateConfig(changedConfig).catch((error) => {});
+				}
+			} else {
+				this.commonService.setLocalStorageValue(LocalStorageKey.LocalInfoSegment, SegmentConst.Consumer);
 			}
-		} else {
-			this.commonService.setLocalStorageValue(LocalStorageKey.LocalInfoSegment, SegmentConst.Consumer);
 		}
-		this.getConfig();
+		this.getConfig(isLE);
+	}
+
+	private getLEState() : boolean {
+		return Boolean(Shell.isVantageLE || (!this.vantageShellService.isShellAvailable && window.location.href.includes('segment=LE')));
 	}
 
 	public async getSegment() {
@@ -92,8 +113,15 @@ export class SelfSelectService {
 		return this.savedSegment;
 	}
 
-	public async getConfig() {
+	public async getConfig(isLE?: boolean) {
 		try {
+			if (isLE) {
+				this.userProfileEnabled = false;
+				this.usageType = SegmentConst.LE;
+				this.savedSegment = SegmentConst.LE;
+				return { usageType: this.usageType, interests: [] };
+			}
+
 			this.userProfileEnabled = true;
 			this.machineInfo = await this.deviceService.getMachineInfo();
 			const config = this.commonService.getLocalStorageValue(LocalStorageKey.ChangedSelfSelectConfig);
@@ -143,6 +171,8 @@ export class SelfSelectService {
 
 	public saveConfig(reloadRequired?) {
 		try {
+			if (this.savedSegment === SegmentConst.LE) return;
+
 			const config = {
 				customtags: this.checkedArray.join(','),
 				segment: this.usageType

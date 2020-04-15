@@ -19,10 +19,16 @@
 		color: $light;
 		font-size: $fontsize_xs;
 		padding: 1.5rem 3rem;
-		font-weight: 500;
 		margin-top: 1rem;
 		text-transform: uppercase;
 		font-weight: $weight_bold;
+		position: relative;
+
+		&:focus {
+			outline: 0;
+			box-shadow: none;
+			@include button-outline-blue;
+		}
 	}
 
 	.cancel-link {
@@ -57,8 +63,7 @@
 			height: 100%;
 		}
 		&:focus {
-			outline: 0.1rem solid $menu_hover;
-			outline-offset: 0.2rem;
+			@include outline-blue;
 		}
 	}
 }

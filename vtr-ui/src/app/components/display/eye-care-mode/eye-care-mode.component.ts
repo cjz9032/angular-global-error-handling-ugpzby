@@ -17,8 +17,8 @@ export class EyeCareModeComponent implements OnInit, OnChanges {
 	@Input() disableReset = false;
 	@Input() missingGraphicDriver = false;
 
-	@Output() eyeCareTemparatureChange: EventEmitter<ChangeContext> = new EventEmitter();
-	@Output() eyeCareTemparatureValueChange: EventEmitter<ChangeContext> = new EventEmitter();
+	@Output() eyeCareTemparatureChange: EventEmitter<any> = new EventEmitter();
+	@Output() eyeCareTemparatureValueChange: EventEmitter<any> = new EventEmitter();
 	@Output() resetTemparature: EventEmitter<any> = new EventEmitter();
 	@Output() sunsetToSunrise = new EventEmitter<any>();
 
@@ -61,10 +61,11 @@ export class EyeCareModeComponent implements OnInit, OnChanges {
 		this.logger.info('Reset Temperature');
 		this.resetTemparature.emit($event);
 	}
-	public onEyeCareTemparatureChange($event: ChangeContext) {
+	public onEyeCareTemparatureChange($event: any) {
+		this.eyeCareModeSettings.current = $event.value;
 		this.eyeCareTemparatureChange.emit($event);
 	}
-	public onEyeCareTemparatureValueChange($event: ChangeContext) {
+	public onEyeCareTemparatureValueChange($event: any) {
 		this.eyeCareTemparatureValueChange.emit($event);
 	}
 	public onSunsetToSunrise() {

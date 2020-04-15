@@ -78,7 +78,8 @@
                     "macroKey": "Macrotoets",
                     "hardwareScan": "Hardwarescan",
                     "systemUpdate": "Systeemupdate",
-                    "header": "Systeemtools"
+                    "header": "Systeemtools",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "lighting": {
                     "title": "Belichting aanpassen",
@@ -196,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "Waarschuwing!",
                     "description": "Foutieve instellingen van Overklokken kunnen leiden tot onherstelbare hardwarebeschadigingen.",
-                    "proceed": "DOORGAAN"
+                    "proceed": "DOORGAAN",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },
@@ -1852,6 +1856,14 @@
             "intelligentSecurity": {
                 "title": "Intelligente beveiliging",
                 "readMore": "Meer weergeven",
+                "image": {
+                    "title": "Intelligente beveiliging",
+                    "description": "Hiermee sluit u de PC af met intelligente sensortechnologie, beschermt u uw privacy en bespaart u de batterij."
+                },
+                "advancedSettings": {
+                    "showAdvSettings": "GEAVANCEERDE INSTELLINGEN",
+                    "hideAdvSettings": "GEAVANCEERDE INSTELLINGEN VERBERGEN"
+                },
                 "HumanPresenceDetection": {
                     "title": "Aanwezigheidsdetectie personen",
                     "tooltip": "Klik hier om de instellingen voor de aanwezigheidsdetectie van personen opnieuw in te stellen."
@@ -1864,6 +1876,11 @@
                     "title": "Aanmelding bij nul aanraken",
                     "caption": "Met deze functie wordt de computer automatisch ontgrendeld of uit de slaapstand gehaald wanneer u ervoor zit of er dicht bij komt.",
                     "tooltip": "Als u voor uw computer zit of het apparaat nadert (binnen de afstand van 1,2 meter), kunt u zich met deze functie automatisch aanmelden bij het systeem nadat uw gezicht is herkend. Als u buiten bent in plaats van op kantoor, moet u zich dichter bij de computer bevinden en duurt het ontwaken langer."
+                },
+                "zeroTouchLoginForIdea": {
+                    "title": "Aanmelding bij nul aanraken",
+                    "caption": "Met deze functie kunt u de werkefficiëntie verbeteren door de computer automatisch uit de slaapstand te halen of om automatisch aan te melden. Om deze functie te gebruiken, moet u uw gezicht registreren in Windows Hello.",
+                    "tooltip": "Als u voor uw computer zit of het apparaat nadert (binnen 1,2 of 1,5 meter), kunt u zich met deze functie automatisch aanmelden bij het systeem nadat uw gezicht is herkend. Als u buiten bent in plaats van op kantoor, moet u zich dichter bij de computer bevinden en duurt het ontwaken langer. <br>De maximale detectieafstand hangt af van de capaciteit van de sensor. Raadpleeg de <i>gebruikershandleiding</i> van uw computer voor meer informatie."
                 },
                 "zeroTouchLock": {
                     "title": "Vergrendeling bij nul aanraken",
@@ -1879,7 +1896,7 @@
                     },
                     "facialRecognition": {
                         "title": "GEZICHTSHERKENNING",
-                        "caption": "U kunt de gezichtsherkenningsfunctie inschakelen en toegang tot uw camera geven. Met deze tool wordt uw afbeelding vastgelegd om uw aanwezigheid nauwkeurig te herkennen of te detecteren wanneer u het apparaat hebt achtergelaten. Deze gegevens worden lokaal op uw apparaat verwerkt. Lenovo heeft geen toegang tot uw afbeelding en gebruikt deze ook niet.",
+                        "caption": "Deze functie helpt om de herkenningsprestaties te verbeteren en vermijdt onverwachte schermvergrendeling, vooral als u achteroverleunt in uw stoel. Deze functie werkt lokaal op uw apparaat. Lenovo heeft geen toegang tot uw afbeelding en gebruikt deze ook niet.",
                         "checkBox": "Zet de camera aan en schakel deze functie in",
                         "note": {
                             "permission": "Lenovo Vantage heeft geen toegang tot de camera. De functie van het selectievakje werkt niet.",
@@ -1889,18 +1906,18 @@
                         }
                     },
                     "distanceSensitivityAdjusting": {
-                        "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                        "captionOn": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, you can maually adjust the dectecting sensitivity based on your preference.",
-                        "captionOff": "The accuracy varies by body size, posture, and frequency of movement. When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
+                        "title": "AUTOMATISCH AANPASSEN VAN AFSTANDSGEVOELIGHEID",
+                        "captionOn": "De nauwkeurigheid is afhankelijk van lichaamsgrootte, postuur en bewegingsfrequentie. Als de computer onverwacht wordt vergrendeld, kunt u handmatig de detectiegevoeligheid aanpassen.",
+                        "captionOff": "De nauwkeurigheid is afhankelijk van lichaamsgrootte, postuur en bewegingsfrequentie. Als deze functie is uitgeschakeld, moet u de gevoeligheidsbalk handmatig aanpassen om de detectieafstand te wijzigen. Als u wilt dat de afstand automatisch wordt aangepast, schakelt u deze functie in.",
                         "options": {
-                            "near": "Near",
-                            "medium": "Middle",
-                            "far": "Far"
+                            "near": "Dichtbij",
+                            "medium": "Gemiddeld",
+                            "far": "Ver"
                         },
                         "readMore": {
-                            "line1": "• Near: 0.9 meter",
-                            "line2": "• Middle: 1.2 meter",
-                            "line3": "• Far: 1.5 meter"
+                            "line1": "• Dichtbij: 0,9 meter",
+                            "line2": "• Gemiddeld: 1,2 meter",
+                            "line3": "• Ver: 1,5 meter"
                         }
                     }
                 },
@@ -1924,17 +1941,38 @@
                         }
                     }
                 },
+                "distanceSensitivityAdjustingForIdea": {
+                    "title": "AUTOMATISCH AANPASSEN VAN AFSTANDSGEVOELIGHEID",
+                    "captionOn": "Schakel deze functie in om automatisch de detectieafstand van bewegingen aan te passen om het systeem te activeren. Schakel de functie uit om de detectiegevoeligheid handmatig aan te passen.",
+                    "captionOff": "Als deze functie is uitgeschakeld, moet u de gevoeligheidsbalk handmatig aanpassen om de detectieafstand te wijzigen. Als u wilt dat de afstand automatisch wordt aangepast, schakelt u deze functie in.",
+                    "options": {
+                        "near": "Dichtbij",
+                        "far": "Ver",
+                        "medium": "Gemiddeld"
+                    },
+                    "readMore": "Er zijn drie opties. Als er menselijke bewegingen worden gedetecteerd in elk bereik, wordt het scherm geactiveerd.",
+                    "readMoreForSensor1": {
+                        "line1": "• Dichtbij: 0 - 0,4 meter",
+                        "line2": "• Gemiddeld: 0 - 0,6 meter",
+                        "line3": "• Ver: 0 - 1,2 meter"
+                    },
+                    "readMoreForSensor2": {
+                        "line1": "• Dichtbij: 0,2 - 0,55 meter",
+                        "line2": "• Gemiddeld: 0,2 - 1,0 meter",
+                        "line3": "• Ver: 0,2 - 1,5 meter"
+                    }
+                },
                 "note": {
                     "description1": "Deze functie maakt gebruik van Windows Hello. Zorg dat gezichtsherkenning is ingeschakeld in Windows-instellingen.",
                     "description2": "De functie gebruikt sensoren en de camera om uw aanwezigheid te detecteren. Persoonlijke gegevens of afbeeldingen worden echter NIET door deze functie verzameld, opgeslagen of gelekt.",
-                    "description3": "1. Als uw computer in Tent-, Tablet- of Standaardmodus staat, werken deze functies mogelijk niet naar behoren.",
-                    "description4": "2. Als uw computer in de sluimerstand staat of is uitgezet, werkt Aanmelding bij nul aanraken niet.",
-                    "description6": "4. Als de vliegtuigstand is ingeschakeld op uw computer, zijn deze functies uitgeschakeld.",
-                    "description7": "De nauwkeurigheid is afhankelijk van lichaamsgrootte, postuur en bewegingsfrequentie. Als uw computer onverwacht wordt vergrendeld, pas dan de gevoeligheidsbalk aan om de nauwkeurigheid te verbeteren.",
-                    "description5a1": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to ",
-                    "description5a2": "User Guide ",
-                    "description5a3": "that comes with it.",
-                    "description5b": "b. Your computer is in hibernation mode or has been turned off."
+                    "description3": "1. Om deze functies te gebruiken moet uw scherm in de juiste hoek geplaatst worden zodat uw gezicht kan worden herkend.",
+                    "description4": "2. Bovenstaande functies worden niet ondersteund in de volgende gevallen:",
+                    "description5a1": "a. uw computer staat in de werkstand tent, tablet, standaard of is ontkoppeld. Voor de modi die op uw computer worden ondersteund, ga naar de ",
+                    "description5a2": "Gebruikershandleiding ",
+                    "description5a3": "die is meegeleverd.",
+                    "description5b": "b. uw computer staat in de sluimerstand of is uitgeschakeld.",
+                    "description6": "3. Als de vliegtuigstand is ingeschakeld op uw computer, zijn deze functies uitgeschakeld.",
+                    "description7": "De nauwkeurigheid is afhankelijk van lichaamsgrootte, postuur en bewegingsfrequentie. Als uw computer onverwacht wordt vergrendeld, pas dan de gevoeligheidsbalk aan om de nauwkeurigheid te verbeteren."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Ga naar Windows Hello-instellingen",
@@ -1943,40 +1981,6 @@
                 "resetToDefault": "Resetten",
                 "sensitivityAdjusting": {
                     "title": "GEVOELIGHEID AANPASSEN"
-                },
-                "image": {
-                    "title": "Intelligent security",
-                    "description": "Buckles up your PC with intelligent sensing technology, protects your privacy, and saves your battery power."
-                },
-                "advancedSettings": {
-                    "showAdvSettings": "ADVANCED SETTINGS",
-                    "hideAdvSettings": "HIDE ADVANCED SETTINGS"
-                },
-                "zeroTouchLoginForIdea": {
-                    "title": "Zero Touch Login",
-                    "caption": "This feature enables you to improve the work efficiency by automatically waking up or logging in your computer. To use the feature, you need to register your face in Windows Hello.",
-                    "tooltip": "When you are in front of your computer or approaching it (within 1.2 or 1.5 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer. <br>Depending on the sensor capability, the maximum detecting distance varies. Refer to the <i>User Guide</i> that comes with your computer for details."
-                },
-                "distanceSensitivityAdjustingForIdea": {
-                    "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                    "captionOn": "Enable this feature to automatically adjust the detecting distance of movements to wake up the system. Turn it off to manually adjust the detecting sensitivity based on your preference.",
-                    "captionOff": "When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
-                    "options": {
-                        "near": "Near",
-                        "medium": "Middle",
-                        "far": "Far"
-                    },
-                    "readMore": "There are three options. In each range, when human movements are detected, your screen will be waked up accordingly.",
-                    "readMoreForSensor1": {
-                        "line1": "• Near: 0-0.4 meter",
-                        "line2": "• Middle: 0-0.6 meter",
-                        "line3": "• Far: 0-1.2 meter"
-                    },
-                    "readMoreForSensor2": {
-                        "line1": "• Near: 0.2-0.55 meter",
-                        "line2": "• Middle: 0.2-1.0 meter",
-                        "line3": "• Far: 0.2-1.5 meter"
-                    }
                 }
             },
             "intelligentScreen": {
@@ -2048,13 +2052,59 @@
             "superResolution": {
                 "heading": "Intelligente media",
                 "title": "Schaalverhoging beeldschermresolutie",
-                "desc": "<p><label>Deze functie verbetert de beleving van het afspelen van een video door het verbeteren van de beeldschermresolutie. Dit werkt vooral als de video een lage resolutie heeft.</label></p> <p style='margin-top:4px;'><label>Deze functie kan invloed hebben op de levensduur en temperatuur van de batterij en kan ruis veroorzaken. Niet in gebruiken in gelijkstroommodus, anders neemt het stroomverbruik toe en gaat de batterij minder lang mee.</label></p>",
-                "tooltip": "De functie werkt alleen op:<br>Windows Media player",
+                "desc": "<p><label>Deze functie verbetert de beleving van het kijken van video's door de resolutie van de video te verbeteren. Dit werkt het beste als de video een lage resolutie heeft.</label></p> <p style='margin-top:4px;'><label>Deze functie kan invloed hebben op de levensduur en temperatuur van de batterij en kan ruis veroorzaken. Niet gebruiken in gelijkstroommodus (batterijstroom). anders neemt het stroomverbruik toe en gaat de batterij minder lang mee.</label></p>",
+                "tooltip": "Deze functie werkt alleen voor onderstaande videospelers:<br>Windows Media Player<br>Chrome<br>Films en tv<br>PotPlayer<br>GOM Player<br>Web-browser-gebaseerde spelers (bv. Chrome)<br><br>Zie de handleiding bij de computer voor informatie over het inschakelen van deze functie voor PotPlayer en GOM Player.",
                 "note": {
                     "description": "Deze functie werkt niet als:",
-                    "description1": "De computer is niet aangesloten op de netvoeding.",
-                    "description2": "De spaarstand voor batterijverbruik is ingeschakeld.",
-                    "description3": "De CPU-temperatuur te hoog is."
+                    "description1": "De spaarstand voor batterijverbruik is ingeschakeld.",
+                    "description2": "De CPU-temperatuur te hoog is."
+                }
+            },
+            "antiTheft": {
+                "heading": "Intelligent Sensing",
+                "title": "Slimme bewegingsmelding",
+                "desc": "<p><label>Als u deze functie inschakelt, begint het apparaat te piepen wanneer uw scherm vergrendeld is en er bewegingen worden gedetecteerd, vooral in openbare omgevingen.</label></p> <p style='margin-top:4px;'><label>Om het alarm uit te schakelen geeft u het juiste wachtwoord op of meldt u zich aan bij Windows Hello.</label></p>",
+                "note": {
+                    "description": "Als u eenmaal bij het systeem bent aangemeld, wordt deze functie automatisch uitgeschakeld. Om deze functie weer te gebruiken, moet u de functie opnieuw inschakelen."
+                },
+                "alarm": {
+                    "title": " HET ALARM DUURT",
+                    "option1": "10 seconden",
+                    "option2": "20 seconden",
+                    "option3": "30 seconden",
+                    "option4": "1 minuut",
+                    "option5": "Stopt nooit"
+                },
+                "allowCamera": {
+                    "title": "FOTO'S NEMEN",
+                    "describe": "Als u deze functie inschakelt, neemt de camera automatisch foto's als er bewegingen worden gedetecteerd terwijl uw scherm vergrendeld is. Deze gegevens worden lokaal op uw apparaat verwerkt. Lenovo heeft geen toegang tot uw afbeelding en gebruikt deze ook niet.",
+                    "checkBoxText": "Schakel deze functie in"
+                },
+                "cameraPrivacy": {
+                    "describe": "De privacymodus van Lenovo Vantage Camera is ingeschakeld. De functie van het selectievakje werkt niet.",
+                    "linkText": "Ga naar de privacymodus van de camera om deze uit te schakelen"
+                },
+                "authorizedAccess": {
+                    "describe": "Lenovo Vantage heeft geen toegang tot de camera. De functie van het selectievakje werkt niet.",
+                    "linkText": "Ga naar de Windows-instellingen om toegang te geven"
+                },
+                "photo": {
+                    "title": "HET AANTAL FOTO'S DAT TIJDENS DE BEWEGING WORDT GENOMEN",
+                    "tooltip": "De camera op de computer wordt automatisch geactiveerd om foto's te maken wanneer er bewegingen worden gedetecteerd. Er worden elke twee seconden foto's genomen en ze worden opgeslagen in uw lokale opslag.",
+                    "option1": "5",
+                    "option2": "10",
+                    "option3": "15",
+                    "option4": "20",
+                    "option5": "25",
+                    "option6": "30"
+                },
+                "showPhoto": {
+                    "title": "FOTO'S ZIJN:",
+                    "link": "Foto's bekijken"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Lenovo Vantage heeft geen toegang tot het bestandssysteem.",
+                    "link": "Ga naar de Windows-instellingen om toegang te geven"
                 }
             },
             "voice": {
@@ -2655,7 +2705,7 @@
         },
         "question1": {
             "title": "Back-ups maken en bestanden terugzetten",
-            "description": "<div>    <div class='faqInFs4Fb'>        Back-ups maken en bestanden terugzetten    </div>    <hr />    <div class='faqInMb7'>        Het is altijd verstandig om een back-up te hebben. Bewaar kopieën van uw bestanden op een ander station voor het geval er iets met de originelen gebeurt.    </div>    <div class='faqInFs3Fb'>        Uw back-up instellen    </div>    <hr />    <div class='mb-5'>        Selecteer de knop <span class='faqInFb'>Start</span>, selecteer <span class='faqInFb'>Instellingen</span> > <span class='faqInFb'>Bijwerken en beveiliging</span> > <span class='faqInFb'>Back-up</span> > <span class='faqInFb'>Een station toevoegen</span> en kies vervolgens een extern station of netwerklocatie voor uw back-ups.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Klaar. Elk uur maken we een back-up van de hele inhoud van uw gebruikersmap (C:\\\\Users\\\\username). Als u wilt wijzigen van welke bestanden een back-up wordt gemaakt of hoe vaak er een back-up wordt gemaakt, gaat u naar <span class='faqInFb'>Meer opties</span>.    </div>    <div class='faqInFs3Fb'>        Bestanden terugzetten    </div>    <div class='mb-5'>        Als een belangrijk bestand of belangrijke map ontbreekt, gaat u als volgt te werk om dit bestand of deze map te herstellen:    </div>    <div>        <div class='mb-3'>1. Typ <span class='faqInFb'>Bestanden terugzetten</span> in het zoekvak op de taakbalk en selecteer vervolgens <span class='faqInFb'>Bestanden vanuit een back-up terugzetten met Bestandsgeschiedenis</span>.</div>        <div class='mb-3'>2. Zoek het bestand dat u nodig hebt en gebruik vervolgens de pijlen om alle versies ervan te zien</div>        <div class='mb-3'>3. Wanneer u de gewenste versie hebt gevonden, selecteert u <span class='faqInFb'>Terugzetten</span> om het bestand op te slaan op de oorspronkelijke locatie. Als u het bestand op een andere locatie wilt opslaan, houdt u de knop <span class='faqInFb'>Terugzetten</span> ingedrukt (of klikt u erop met de rechtermuisknop), selecteert u <span class='faqInFb'>Terugzetten naar</span> en kiest u vervolgens een nieuwe locatie.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Back-ups maken en bestanden terugzetten    </div>    <hr />    <div class='faqInMb7'>        Het is altijd verstandig om een back-up te hebben. Bewaar kopieën van uw bestanden op een ander station voor het geval er iets met de originelen gebeurt.    </div>    <div class='faqInFs3Fb'>        Uw back-up instellen    </div>    <hr />    <div class='mb-5'>        Selecteer de knop <span class='faqInFb'>Start</span>, selecteer <span class='faqInFb'>Instellingen</span> > <span class='faqInFb'>Bijwerken en beveiliging</span> > <span class='faqInFb'>Back-up</span> > <span class='faqInFb'>Een station toevoegen</span> en kies vervolgens een extern station of netwerklocatie voor uw back-ups.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Klaar. Elk uur maken we een back-up van de hele inhoud van uw gebruikersmap (C:\\Users\\Je gebruikersnaam). Als u wilt wijzigen van welke bestanden een back-up wordt gemaakt of hoe vaak er een back-up wordt gemaakt, gaat u naar <span class='faqInFb'>Meer opties</span>.    </div>    <div class='faqInFs3Fb'>        Bestanden terugzetten    </div>    <div class='mb-5'>        Als een belangrijk bestand of belangrijke map ontbreekt, gaat u als volgt te werk om dit bestand of deze map te herstellen:    </div>    <div>        <div class='mb-3'>1. Typ <span class='faqInFb'>Bestanden terugzetten</span> in het zoekvak op de taakbalk en selecteer vervolgens <span class='faqInFb'>Bestanden vanuit een back-up terugzetten met Bestandsgeschiedenis</span>.</div>        <div class='mb-3'>2. Zoek het bestand dat u nodig hebt en gebruik vervolgens de pijlen om alle versies ervan te zien</div>        <div class='mb-3'>3. Wanneer u de gewenste versie hebt gevonden, selecteert u <span class='faqInFb'>Terugzetten</span> om het bestand op te slaan op de oorspronkelijke locatie. Als u het bestand op een andere locatie wilt opslaan, houdt u de knop <span class='faqInFb'>Terugzetten</span> ingedrukt (of klikt u erop met de rechtermuisknop), selecteert u <span class='faqInFb'>Terugzetten naar</span> en kiest u vervolgens een nieuwe locatie.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -3036,15 +3086,15 @@
             "science": "Wetenschap"
         },
         "gaming": {
-            "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
-            "gamingFeature1": "-Computer status monitor",
-            "gamingFeature2": "-Performance mode & overclocking",
-            "gamingFeature3": "-Lighting",
-            "gamingFeature4": "-Network Boost",
-            "gamingFeature5": "-Auto Close",
-            "gamingOnly": "Gaming",
-            "gamingAndWork": "Gaming & Work",
-            "nonGaming": "Non-Gaming"
+            "gamingDescription": "Met de gamingversie van Vantage kunt u de manier waarop u games beleeft eenvoudig verbeteren. Naast de algemene instellingen zijn de belangrijkste functies (beschikbaar op bepaalde systemen) onder andere:",
+            "gamingFeature1": "-Bewaking van de status van de computer",
+            "gamingFeature2": "-Prestatiemodus en overclocking",
+            "gamingFeature3": "-Verlichting",
+            "gamingFeature4": "-Netwerkboost",
+            "gamingFeature5": "-Automatisch sluiten",
+            "gamingOnly": "Gamen",
+            "gamingAndWork": "Gamen en werk",
+            "nonGaming": "Niet-gamen"
         }
     },
     "settings": {
@@ -3068,7 +3118,8 @@
         "settingsNotes": "Start deze toepassing opnieuw, zodat alle wijzigingen van kracht worden.",
         "betaSettingTitle": "Bètaprogramma",
         "betaProgram": "Bètaprogramma",
-        "betaSettingDescription": "Probeer de nieuwste functies waaraan we werken."
+        "betaSettingDescription": "Probeer de nieuwste functies waaraan we werken.",
+        "betaSettingNewDescription": "We nodigen je graag uit voor het Beta-programma voor slimme prestaties. Hiermee kun je de prestaties van je PC verbeteren door:<br/><ul class='pl-4'><li>Proactief fouten en optimalisatie van instellingen te bepalen.</li><li>Internet prestaties te verhogen door optimalisatie van netwerk en browser.</li><li>Snelle scan en herstel-opties uit te voeren zonder gebruik te maken van het bestaande antivirus programma.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Annuleren",
@@ -3991,6 +4042,10 @@
                 "readMore": "Meer weergeven",
                 "readLess": "Minder weergeven"
             }
+        },
+        "narrator": {
+            "leftArrow": "Pijl naar links",
+            "rightArrow": "Pijl naar rechts"
         }
     },
     "dcc": {
@@ -4012,5 +4067,10 @@
     },
     "cpt": {
         "title": "Content Preview Tool"
+    },
+    "storeRating": {
+        "title": "Laat van u horen",
+        "likeUs": "Vind ons leuk",
+        "feedback": "Feedback achterlaten"
     }
 }

@@ -78,7 +78,8 @@
                     "macroKey": "Makro-tast",
                     "hardwareScan": "Hardwaresøgning",
                     "systemUpdate": "Systemopdatering",
-                    "header": "Systemværktøjer"
+                    "header": "Systemværktøjer",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "lighting": {
                     "title": "Tilpas belysning",
@@ -196,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "Advarsel!",
                     "description": "Forkerte indstillinger for overclocking kan medføre hardwareskader, der ikke kan genoprettes.",
-                    "proceed": "FORTSÆT"
+                    "proceed": "FORTSÆT",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },
@@ -1852,6 +1856,14 @@
             "intelligentSecurity": {
                 "title": "Intelligent sikkerhed",
                 "readMore": "Læs mere",
+                "image": {
+                    "title": "Intelligent sikkerhed",
+                    "description": "Spænd sikkerhedsselen på din pc med intelligent registreringsteknologi, beskyt dine personlige oplysninger, og spar batteristrøm."
+                },
+                "advancedSettings": {
+                    "showAdvSettings": "UDVIDEDE INDSTILLINGER",
+                    "hideAdvSettings": "SKJUL UDVIDEDE INDSTILLINGER"
+                },
                 "HumanPresenceDetection": {
                     "title": "Registrering af menneskelig tilstedeværelse",
                     "tooltip": "Klik her for at nulstille indstillingerne for registrering af menneskelig tilstedeværelse."
@@ -1864,6 +1876,11 @@
                     "title": "Logon uden berøring",
                     "caption": "Denne funktion aktiverer eller låser automatisk computeren op, når du sidder foran den eller nærmer dig den.",
                     "tooltip": "Når du sidder foran computeren eller nærmer dig den (inden for en afstand af 1,2 meter), kan du bruge denne funktion til at logge på systemet automatisk, når dit ansigt genkendes. Hvis du er udendørs i stedet for på kontoret, skal du være tættere på computeren, og opvågningen vil tage længere tid."
+                },
+                "zeroTouchLoginForIdea": {
+                    "title": "Logon uden berøring",
+                    "caption": "Denne funktion giver dig mulighed for at arbejde mere effektivt ved automatisk at vække eller logge på computeren. For at bruge funktionen skal du registrere dit ansigt i Windows Hello.",
+                    "tooltip": "Når du sidder foran computeren eller nærmer dig den (inden for en afstand af 1,2 eller 1,5 meter), kan du bruge denne funktion til at logge på systemet automatisk, når dit ansigt genkendes. Hvis du er udendørs i stedet for på kontoret, skal du være tættere på computeren, og opvågningen vil tage længere tid. <br>Den maksimale registreringsafstand varierer afhængigt af sensorens egenskaber. Se <i>brugervejledningen</i> til din computer for at få flere oplysninger."
                 },
                 "zeroTouchLock": {
                     "title": "Lås uden berøring",
@@ -1879,7 +1896,7 @@
                     },
                     "facialRecognition": {
                         "title": "ANSIGTSGENKENDELSE",
-                        "caption": "Du kan aktivere ansigtsgenkendelsesfunktionen og tillade, at den får adgang til kameraet. Dette værktøj tager et billede af dig for at kunne registrere din tilstedeværelse med præcision eller registrere, når du har forladt din enhed uden opsyn. Disse data behandles lokalt på din enhed. Lenovo kan ikke få adgang til eller bruge dem.",
+                        "caption": "Denne funktion hjælper med at forbedre registreringen og undgå, at låseskærmen utilsigtet aktiveres, især når du læner dig tilbage i stolen. Denne funktion kører lokalt på din enhed. Lenovo kan ikke få adgang til eller bruge dem.",
                         "checkBox": "Tænd for kameraet, og aktivér denne funktion",
                         "note": {
                             "permission": "Lenovo Vantage har ikke adgang til kamera. Afkrydsningsfeltet fungerer ikke.",
@@ -1889,18 +1906,18 @@
                         }
                     },
                     "distanceSensitivityAdjusting": {
-                        "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                        "captionOn": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, you can maually adjust the dectecting sensitivity based on your preference.",
-                        "captionOff": "The accuracy varies by body size, posture, and frequency of movement. When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
+                        "title": "AUTOMATISK JUSTERING AF AFSTANDSFØLSOMHED",
+                        "captionOn": "Nøjagtigheden varierer efter kropsstørrelse, stilling og bevægelseshyppighed. Hvis computeren uventet er låst, kan du justere registreringsfølsomheden manuelt baseret på din præference.",
+                        "captionOff": "Nøjagtigheden varierer efter kropsstørrelse, stilling og bevægelseshyppighed. Når denne funktion er deaktiveret, skal du justere følsomhedsbjælken manuelt for at justere registreringsafstanden. Hvis afstanden skal justeres automatisk, skal du aktivere funktionen.",
                         "options": {
-                            "near": "Near",
-                            "medium": "Middle",
-                            "far": "Far"
+                            "near": "Tæt på",
+                            "medium": "Mellem",
+                            "far": "Langt"
                         },
                         "readMore": {
-                            "line1": "• Near: 0.9 meter",
-                            "line2": "• Middle: 1.2 meter",
-                            "line3": "• Far: 1.5 meter"
+                            "line1": "• Tæt på: 0,9 meter",
+                            "line2": "• Mellem: 1,2 meter",
+                            "line3": "• Langt: 1,5 meter"
                         }
                     }
                 },
@@ -1924,17 +1941,38 @@
                         }
                     }
                 },
+                "distanceSensitivityAdjustingForIdea": {
+                    "title": "AUTOMATISK JUSTERING AF AFSTANDSFØLSOMHED",
+                    "captionOn": "Aktiver denne funktion for automatisk at justere registreringsafstanden for bevægelser, der aktiverer systemet. Deaktiver funktionen for at justere registreringsfølsomheden manuelt baseret på dine præferencer.",
+                    "captionOff": "Når denne funktion er deaktiveret, skal du justere følsomhedsbjælken manuelt for at justere registreringsafstanden. Hvis afstanden skal justeres automatisk, skal du aktivere funktionen.",
+                    "options": {
+                        "near": "Tæt på",
+                        "far": "Langt",
+                        "medium": "Mellem"
+                    },
+                    "readMore": "Der er tre muligheder. Skærmen aktiveres, når der registreres menneskelige bevægelser inden for det af de tre områder, der er valgt.",
+                    "readMoreForSensor1": {
+                        "line1": "• Tæt på: 0-0,4 meter",
+                        "line2": "• Mellem: 0-0,6 meter",
+                        "line3": "• Langt: 0-1,2 meter"
+                    },
+                    "readMoreForSensor2": {
+                        "line1": "• Tæt på: 0,2-0,55 meter",
+                        "line2": "• Mellem: 0,2-1,0 meter",
+                        "line3": "• Langt: 0,2-1,5 meter"
+                    }
+                },
                 "note": {
                     "description1": "Denne funktion er afhængig af Windows Hello. Kontrollér, at ansigtsgenkendelse er slået til i Windows-indstillinger.",
                     "description2": "Funktionen bruger sensorer og kameraet til at registrere din tilstedeværelse. Men funktionen indsamler IKKE personlige data.",
-                    "description3": "1. Hvis din computer er i Telt-, Tablet- eller Støtte-tilstand, fungerer disse funktioner muligvis ikke korrekt.",
-                    "description4": "2. Hvis computeren er i slumretilstand eller er slukket, vil logon uden berøring ikke fungere.",
-                    "description6": "4. Hvis Flytilstand er aktiveret på din computer, er disse funktioner deaktiveret.",
-                    "description7": "Nøjagtigheden varierer efter kropsstørrelse, stilling og bevægelseshyppighed. Hvis computeren bliver låst uventet, skal du justere følsomhedsvælgeren for at forbedre nøjagtigheden.",
-                    "description5a1": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to ",
-                    "description5a2": "User Guide ",
-                    "description5a3": "that comes with it.",
-                    "description5b": "b. Your computer is in hibernation mode or has been turned off."
+                    "description3": "1. For at bruge funktionerne ovenfor skal du justere skærmen til en passende vinkel, så dit ansigt kan blive genkendt.",
+                    "description4": "2. Ovenstående funktioner understøttes ikke, når:",
+                    "description5a1": "a. Din computer er i Telt-, Tablet- eller Støtte-tilstand eller er i frakoblet tilstand. Du kan se de tilstande, der understøttes på din computer, i ",
+                    "description5a2": "brugervejledningen, ",
+                    "description5a3": "der leveres sammen med den.",
+                    "description5b": "b. Din computer er i slumretilstand eller er slukket.",
+                    "description6": "3. Hvis Flytilstand er aktiveret på din computer, er disse funktioner deaktiveret.",
+                    "description7": "Nøjagtigheden varierer efter kropsstørrelse, stilling og bevægelseshyppighed. Hvis computeren bliver låst uventet, skal du justere følsomhedsvælgeren for at forbedre nøjagtigheden."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Gå til indstillinger for Windows Hello",
@@ -1943,40 +1981,6 @@
                 "resetToDefault": "Nulstil",
                 "sensitivityAdjusting": {
                     "title": "JUSTERING AF FØLSOMHED"
-                },
-                "image": {
-                    "title": "Intelligent security",
-                    "description": "Buckles up your PC with intelligent sensing technology, protects your privacy, and saves your battery power."
-                },
-                "advancedSettings": {
-                    "showAdvSettings": "ADVANCED SETTINGS",
-                    "hideAdvSettings": "HIDE ADVANCED SETTINGS"
-                },
-                "zeroTouchLoginForIdea": {
-                    "title": "Zero Touch Login",
-                    "caption": "This feature enables you to improve the work efficiency by automatically waking up or logging in your computer. To use the feature, you need to register your face in Windows Hello.",
-                    "tooltip": "When you are in front of your computer or approaching it (within 1.2 or 1.5 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer. <br>Depending on the sensor capability, the maximum detecting distance varies. Refer to the <i>User Guide</i> that comes with your computer for details."
-                },
-                "distanceSensitivityAdjustingForIdea": {
-                    "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                    "captionOn": "Enable this feature to automatically adjust the detecting distance of movements to wake up the system. Turn it off to manually adjust the detecting sensitivity based on your preference.",
-                    "captionOff": "When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
-                    "options": {
-                        "near": "Near",
-                        "medium": "Middle",
-                        "far": "Far"
-                    },
-                    "readMore": "There are three options. In each range, when human movements are detected, your screen will be waked up accordingly.",
-                    "readMoreForSensor1": {
-                        "line1": "• Near: 0-0.4 meter",
-                        "line2": "• Middle: 0-0.6 meter",
-                        "line3": "• Far: 0-1.2 meter"
-                    },
-                    "readMoreForSensor2": {
-                        "line1": "• Near: 0.2-0.55 meter",
-                        "line2": "• Middle: 0.2-1.0 meter",
-                        "line3": "• Far: 0.2-1.5 meter"
-                    }
                 }
             },
             "intelligentScreen": {
@@ -2048,13 +2052,59 @@
             "superResolution": {
                 "heading": "Intelligente medier",
                 "title": "Opskalering af videoopløsning",
-                "desc": "<p><label>Denne funktion forbedrer videoopløsningen, så du får en bedre oplevelse i forbindelse med videoafspilning. Den er især effektiv, når videoen er i dårlig opløsning.</label></p> <p style='margin-top:4px;'><label>Denne funktion kan påvirke batteriets levetid, batteriets temperatur og medføre støj. Brug den ikke i DC-tilstand. Ellers bliver strømforbruget større, og batterilevetiden afkortes.</label></p>",
-                "tooltip": "Funktionen fungerer kun på:<br>Windows Media player",
+                "desc": "<p><label>Denne funktion giver en bedre oplevelse i forbindelse med videoafspilning ved at forbedre videoopløsningen. Det fungerer især godt, når videoen er i dårlig opløsning.</label></p> <p style='margin-top:4px;'><label>Denne funktion kan påvirke batteriets levetid, batteriets temperatur og medføre støj. Brug den ikke i DC-tilstand (batteritilstand). Ellers bliver strømforbruget større, og batterilevetiden afkortes.</label></p>",
+                "tooltip": "Denne funktion fungerer kun i nedenstående videoafspillere:<br>Windows Media Player<br>Chrome<br>Film og tv<br>PotPlayer<br>GOM player<br>webbrowserbaserede afspillere (f.eks. Chrome)<br><br>Du kan finde oplysninger om, hvordan denne funktion aktiveres i PotPlayer og GOM player, i brugervejledningen, der fulgte med din computer.",
                 "note": {
                     "description": "Denne funktion virker ikke i disse situationer:",
-                    "description1": "Computeren er ikke sluttet til vekselstrøm.",
-                    "description2": "Strømbesparelsestilstanden er aktiveret.",
-                    "description3": "CPU-temperaturen er for høj."
+                    "description1": "Strømsparetilstanden er aktiveret.",
+                    "description2": "CPU-temperaturen er for høj."
+                }
+            },
+            "antiTheft": {
+                "heading": "Intelligent registrering",
+                "title": "Smart bevægelsesalarm",
+                "desc": "<p><label>Når denne funktion er aktiveret, begynder enheden at bippe, når skærmen er låst, og der registreres bevægelser, især på et offentligt sted.</label></p> <p style='margin-top:4px;'><label>Hvis du vil afvise alarmen, skal du angive den korrekte adgangskode eller logge på med Windows Hello.</label></p>",
+                "note": {
+                    "description": "Når du er logget på systemet, bliver denne funktionen automatisk slået fra. Du skal aktivere den igen for at bruge den."
+                },
+                "alarm": {
+                    "title": " ALARMEN SKAL VARE I",
+                    "option1": "10 sekunder",
+                    "option2": "20 sekunder",
+                    "option3": "30 sekunder",
+                    "option4": "1 minut",
+                    "option5": "Stop aldrig"
+                },
+                "allowCamera": {
+                    "title": "TAG FOTOS",
+                    "describe": "Når du aktiverer denne funktion, tager kameraet automatisk fotos, når der registreres bevægelser, mens skærmen er låst. Disse data behandles lokalt på din enhed. Lenovo kan ikke få adgang til eller bruge dem.",
+                    "checkBoxText": "Aktiver denne funktion"
+                },
+                "cameraPrivacy": {
+                    "describe": "Privat kameratilstand er aktiveret for Lenovo Vantage. Afkrydsningsfeltet fungerer ikke.",
+                    "linkText": "Gå til privat kameratilstand for at slå det fra"
+                },
+                "authorizedAccess": {
+                    "describe": "Lenovo Vantage har ikke adgang til kamera. Afkrydsningsfeltet fungerer ikke.",
+                    "linkText": "Gå til Windows-indstillinger for at give adgang"
+                },
+                "photo": {
+                    "title": "ANTALLET AF FOTOS, DER ER TAGET UNDER BEVÆGELSEN",
+                    "tooltip": "Kameraet på computeren aktiveres automatisk for at tage billeder, når der registreres bevægelser. Der tages billeder hvert 2. sekund, og de gemmes på dit lokale lager.",
+                    "option1": "5",
+                    "option2": "10",
+                    "option3": "15",
+                    "option4": "20",
+                    "option5": "25",
+                    "option6": "30"
+                },
+                "showPhoto": {
+                    "title": "FOTOS HAR VÆRET:",
+                    "link": "Vis fotos"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Lenovo Vantage har ikke adgang til filsystemet.",
+                    "link": "Gå til Windows-indstillinger for at give adgang"
                 }
             },
             "voice": {
@@ -2655,7 +2705,7 @@
         },
         "question1": {
             "title": "Sikkerhedskopiér og gendan dine filer",
-            "description": "<div>    <div class='faqInFs4Fb'>        Sikkerhedskopiér og gendan dine filer    </div>    <hr />    <div class='faqInMb7'>        Det er altid godt at have en sikkerhedskopi. Opbevar kopier af dine filer på et andet drev, i tilfælde af at der sker noget med originalerne.    </div>    <div class='faqInFs3Fb'>        Konfigurer din sikkerhedskopiering    </div>    <hr />    <div class='mb-5'>        Vælg knappen <span class='faqInFb'>Start</span>, vælg <span class='faqInFb'>Indstillinger</span> > <span class='faqInFb'>Opdatering og sikkerhed</span> > <span class='faqInFb'>Sikkerhedskopiering</span> > <span class='faqInFb'>Tilføj et drev</span>, og vælg derefter et eksternt drev eller en ekstern netværksplacering til dine sikkerhedskopier.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Du er klar. Hver time sikkerhedskopierer vi alt i din brugermappe (C:\\\\Users\\\\username). Hvis du vil ændre, hvilke filer der bliver sikkerhedskopieret, eller hvor ofte sikkerhedskopiering udføres, skal du gå til <span class='faqInFb'>Flere indstillinger</span>.    </div>    <div class='faqInFs3Fb'>        Gendan dine filer    </div>    <div class='mb-5'>        Hvis du mangler en vigtig fil eller mappe, kan du gå tilbage på følgende måde:    </div>    <div>        <div class='mb-3'>1. Skriv <span class='faqInFb'>Gendan filer</span> i søgefeltet på proceslinjen, og vælg derefter <span class='faqInFb'>Gendan dine filer med filhistorik</span>.</div>        <div class='mb-3'>2. Søg efter den fil, du skal bruge, og brug derefter pilene til at se alle dens versioner</div>        <div class='mb-3'>3. Når du har fundet den ønskede version, skal du vælge <span class='faqInFb'>Gendan</span> for at gemme den på sin oprindelige placering. Hvis du vil gemme den et andet sted, skal du trykke på og holde tasten <span class='faqInFb'>Gendan</span> nede (eller højreklikke), vælge <span class='faqInFb'>Gendan til</span> og derefter vælge en ny placering.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Sikkerhedskopiér og gendan dine filer    </div>    <hr />    <div class='faqInMb7'>        Det er altid godt at have en sikkerhedskopi. Opbevar kopier af dine filer på et andet drev, i tilfælde af at der sker noget med originalerne.    </div>    <div class='faqInFs3Fb'>        Konfigurer din sikkerhedskopiering    </div>    <hr />    <div class='mb-5'>        Vælg knappen <span class='faqInFb'>Start</span>, vælg <span class='faqInFb'>Indstillinger</span> > <span class='faqInFb'>Opdatering og sikkerhed</span> > <span class='faqInFb'>Sikkerhedskopiering</span> > <span class='faqInFb'>Tilføj et drev</span>, og vælg derefter et eksternt drev eller en ekstern netværksplacering til dine sikkerhedskopier.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Du er klar. Hver time sikkerhedskopierer vi alt i din brugermappe (C:\\Users\\dit brugernavn). Hvis du vil ændre, hvilke filer der bliver sikkerhedskopieret, eller hvor ofte sikkerhedskopiering udføres, skal du gå til <span class='faqInFb'>Flere indstillinger</span>.    </div>    <div class='faqInFs3Fb'>        Gendan dine filer    </div>    <div class='mb-5'>        Hvis du mangler en vigtig fil eller mappe, kan du gå tilbage på følgende måde:    </div>    <div>        <div class='mb-3'>1. Skriv <span class='faqInFb'>Gendan filer</span> i søgefeltet på proceslinjen, og vælg derefter <span class='faqInFb'>Gendan dine filer med filhistorik</span>.</div>        <div class='mb-3'>2. Søg efter den fil, du skal bruge, og brug derefter pilene til at se alle dens versioner</div>        <div class='mb-3'>3. Når du har fundet den ønskede version, skal du vælge <span class='faqInFb'>Gendan</span> for at gemme den på sin oprindelige placering. Hvis du vil gemme den et andet sted, skal du trykke på og holde tasten <span class='faqInFb'>Gendan</span> nede (eller højreklikke), vælge <span class='faqInFb'>Gendan til</span> og derefter vælge en ny placering.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -3036,15 +3086,15 @@
             "science": "Videnskab"
         },
         "gaming": {
-            "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
-            "gamingFeature1": "-Computer status monitor",
-            "gamingFeature2": "-Performance mode & overclocking",
-            "gamingFeature3": "-Lighting",
-            "gamingFeature4": "-Network Boost",
-            "gamingFeature5": "-Auto Close",
-            "gamingOnly": "Gaming",
-            "gamingAndWork": "Gaming & Work",
-            "nonGaming": "Non-Gaming"
+            "gamingDescription": "Spilversionen af Vantage gør det nemt for dig at forbedre din spiloplevelse. Ud over de almindelige indstillinger får du adgang til følgende hovedfunktioner (findes på udvalgte systemer):",
+            "gamingFeature1": "-Overvågning af computerstatus",
+            "gamingFeature2": "-Ydeevnetilstand og overclocking",
+            "gamingFeature3": "-Lys",
+            "gamingFeature4": "-Netværksforstærkning",
+            "gamingFeature5": "-Luk automatisk",
+            "gamingOnly": "Spil",
+            "gamingAndWork": "Spil og arbejde",
+            "nonGaming": "Ikke spil"
         }
     },
     "settings": {
@@ -3068,7 +3118,8 @@
         "settingsNotes": "Start programmet igen for at sikre, at alle ændringer træder i kraft.",
         "betaSettingTitle": "Betaprogram",
         "betaProgram": "Betaprogram",
-        "betaSettingDescription": "Prøv de nyeste funktioner, vi arbejder på."
+        "betaSettingDescription": "Prøv de nyeste funktioner, vi arbejder på.",
+        "betaSettingNewDescription": "Vi er glade for at kunne invitere dig til betaprogrammet af Smart Performance. Det forbedrer pc'ens ydeevne ved at:<br/><ul class='pl-4'><li>Diagnosticere fejl proaktivt og optimere indstillinger.</li><li>Booste ydeevnen på internettet med netværks- og browseroptimering.</li><li>Udføre hurtig scanning og afhjælpning uden brug af det eksisterende antivirusprogram.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Annuller",
@@ -3991,6 +4042,10 @@
                 "readMore": "Læs flere",
                 "readLess": "Læs færre"
             }
+        },
+        "narrator": {
+            "leftArrow": "Venstre piletast",
+            "rightArrow": "Højre piletast"
         }
     },
     "dcc": {
@@ -4012,5 +4067,10 @@
     },
     "cpt": {
         "title": "Content Preview Tool"
+    },
+    "storeRating": {
+        "title": "Send os din stemme",
+        "likeUs": "Synes godt om os",
+        "feedback": "Give feedback"
     }
 }

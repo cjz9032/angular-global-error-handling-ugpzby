@@ -78,7 +78,8 @@
                     "macroKey": "Клавіша макросів",
                     "hardwareScan": "Сканування устаткування",
                     "systemUpdate": "Оновлення системи",
-                    "header": "Сист. інструменти"
+                    "header": "Сист. інструменти",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "lighting": {
                     "title": "Настроювання підсвітки",
@@ -196,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "Увага!",
                     "description": "Неправильні настройки розгону можуть непоправно пошкодити обладнання.",
-                    "proceed": "ПРОДОВЖИТИ"
+                    "proceed": "ПРОДОВЖИТИ",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },
@@ -1852,6 +1856,14 @@
             "intelligentSecurity": {
                 "title": "Інтелектуальний захист",
                 "readMore": "Розгорнути",
+                "image": {
+                    "title": "Інтелектуальний захист",
+                    "description": "Посилює ПК інтелектуальними сканерами, захищає вашу конфіденційність і економить заряд акумулятора."
+                },
+                "advancedSettings": {
+                    "showAdvSettings": "ДОДАТКОВІ НАСТРОЙКИ",
+                    "hideAdvSettings": "ПРИХОВАТИ ДОДАТКОВІ НАСТРОЙКИ"
+                },
                 "HumanPresenceDetection": {
                     "title": "Перевірка присутності користувача",
                     "tooltip": "Натисніть тут, щоб скинути настройки перевірки присутності користувача."
@@ -1864,6 +1876,11 @@
                     "title": "Автоматичний вхід",
                     "caption": "Ця функція автоматично розблоковує комп'ютер або виводить його з режиму сну, коли ви сідаєте перед ним або підходите до нього.",
                     "tooltip": "Ця функція дає змогу автоматично входити в систему після розпізнавання обличчя, якщо ви перебуваєте перед комп'ютером або підходите до нього (на відстані до 1,2 метра). На відкритому просторі поза офісом вам потрібно бути ближче до комп'ютера, а пробудження триватиме довше."
+                },
+                "zeroTouchLoginForIdea": {
+                    "title": "Автоматичний вхід",
+                    "caption": "Ця функція підвищує ефективність роботи завдяки автоматичному виходу з режиму сну або входу в обліковий запис. Щоб використовувати цю функцію, зареєструйте своє обличчя у Windows Hello.",
+                    "tooltip": "Ця функція дає змогу автоматично входити в систему після розпізнавання обличчя, якщо ви перебуваєте перед комп'ютером або підходите до нього (на відстані 1,2–1,5 метра). На відкритому просторі поза офісом вам потрібно бути ближче до комп'ютера, а пробудження триватиме довше. <br>Максимальна відстань виявлення залежить від можливостей датчика. Додаткову інформацію див. в <i>Посібнику користувача</i> з комплекту постачання."
                 },
                 "zeroTouchLock": {
                     "title": "Автоматичне блокування",
@@ -1879,7 +1896,7 @@
                     },
                     "facialRecognition": {
                         "title": "РОЗПІЗНАВАННЯ ОБЛИЧЧЯ",
-                        "caption": "Ви можете ввімкнути функцію розпізнавання обличчя й надати їй доступ до камери. Цей інструмент робить ваші знімки, щоб точно розпізнавати вашу присутність або виявляти, коли ви залишили свій пристрій без нагляду. Ці дані обробляються локально на вашому пристрої. Lenovo не має доступу до них і не використовує їх.",
+                        "caption": "Ця функція допомагає покращити ефективність розпізнавання та уникнути несподіваного блокування екрана, особливо коли ви відкидаєтеся на спинку стільця. Ця функція працює локально на вашому пристрої. Lenovo не має доступу до них і не використовує їх.",
                         "checkBox": "Увімкніть камеру й цю функцію",
                         "note": {
                             "permission": "Lenovo Vantage не надано доступ до камери. Функція прапорця не працюватиме.",
@@ -1889,18 +1906,18 @@
                         }
                     },
                     "distanceSensitivityAdjusting": {
-                        "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                        "captionOn": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, you can maually adjust the dectecting sensitivity based on your preference.",
-                        "captionOff": "The accuracy varies by body size, posture, and frequency of movement. When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
+                        "title": "АВТОРЕГУЛЮВАННЯ ЧУТЛИВОСТІ НА РІЗНИХ ВІДСТАНЯХ",
+                        "captionOn": "Точність сприйняття дотиків залежить від розміру пальців, їх положення та частоти рухів. Якщо ваш комп'ютер несподівано блокується, ви можете вручну налаштувати чутливість виявлення залежно від ваших уподобань.",
+                        "captionOff": "Точність сприйняття дотиків залежить від розміру пальців, їх положення та частоти рухів. Якщо цю функцію вимкнуто, вам потрібно вручну відрегулювати смугу чутливості, щоб установити відстань виявлення. Якщо ви хочете, щоб відстань регулювалася автоматично, увімкніть цю функцію.",
                         "options": {
-                            "near": "Near",
-                            "medium": "Middle",
-                            "far": "Far"
+                            "near": "Близька",
+                            "medium": "Середня",
+                            "far": "Далека"
                         },
                         "readMore": {
-                            "line1": "• Near: 0.9 meter",
-                            "line2": "• Middle: 1.2 meter",
-                            "line3": "• Far: 1.5 meter"
+                            "line1": "• Близька: 0,9 метра",
+                            "line2": "• Середня: 1,2 метра",
+                            "line3": "• Далека: 1,5 метра"
                         }
                     }
                 },
@@ -1924,17 +1941,38 @@
                         }
                     }
                 },
+                "distanceSensitivityAdjustingForIdea": {
+                    "title": "АВТОРЕГУЛЮВАННЯ ЧУТЛИВОСТІ НА РІЗНИХ ВІДСТАНЯХ",
+                    "captionOn": "Увімкніть цю функцію, щоб автоматично регулювати відстань виявлення рухів для пробудження системи. Вимкніть цю функцію, щоб регулювати відстань виявлення вручну.",
+                    "captionOff": "Якщо цю функцію вимкнуто, вам потрібно вручну відрегулювати смугу чутливості, щоб установити відстань виявлення. Якщо ви хочете, щоб відстань регулювалася автоматично, увімкніть цю функцію.",
+                    "options": {
+                        "near": "Поблизу",
+                        "far": "Далеко",
+                        "medium": "Середній"
+                    },
+                    "readMore": "Доступні три варіанти. У кожному діапазоні система виходитиме з режиму сну, коли буде виявлено рухи людини.",
+                    "readMoreForSensor1": {
+                        "line1": "• Близька: 0-0,4 метра",
+                        "line2": "• Середня: 0-0,6 метра",
+                        "line3": "• Далека: 0-1,2 метра"
+                    },
+                    "readMoreForSensor2": {
+                        "line1": "• Близька: 0,2-0,55 метра",
+                        "line2": "• Середня: 0,2-1,0 метра",
+                        "line3": "• Далека: 0,2-1,5 метра"
+                    }
+                },
                 "note": {
                     "description1": "Ця функція працює за допомогою Windows Hello. Переконайтеся, що ввімкнули розпізнавання облич у настройках Windows.",
                     "description2": "Ця функція виявляє вашу присутність за допомогою датчиків і камери. Однак ця функція НЕ збирає жодних персональних даних.",
-                    "description3": "1. Якщо комп'ютер знаходиться в режимі \"Намет\", \"Планшет\" або \"Стенд\", ці функції можуть не працювати належним чином.",
-                    "description4": "2. Якщо комп'ютер перебуває в режимі глибокого сну або вимкнений, автоматичний вхід не працюватиме.",
-                    "description6": "4. Якщо ввімкнути на комп'ютері режим \"У літаку\", ці функції буде вимкнено.",
-                    "description7": "Точність сприйняття дотиків залежить від розміру пальців, їх положення та частоти рухів. Якщо комп’ютер випадково блокується, налаштуйте повзунок чутливості сенсора, щоб покращити точність сприйняття дотиків.",
-                    "description5a1": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to ",
-                    "description5a2": "User Guide ",
-                    "description5a3": "that comes with it.",
-                    "description5b": "b. Your computer is in hibernation mode or has been turned off."
+                    "description3": "1. Щоб використовувати вищенаведені функції розташуйте екран комп'ютера під правильним кутом, щоб ваше обличчя розпізнавалося.",
+                    "description4": "2. Вищезазначені функції не підтримуються, коли:",
+                    "description5a1": "а. Ваш комп'ютер перебуває в режимах \"Намет\", \"Планшет\", \"Стенд\" або \"Відокремлений\". Інформацію про режими, які підтримує ваш комп'ютері, див. в ",
+                    "description5a2": "Посібнику користувача ",
+                    "description5a3": "з комплекту постачання.",
+                    "description5b": "b. Якщо комп'ютер вимкнуто або переведено в режим глибокого сну.",
+                    "description6": "3. Якщо ввімкнути на комп'ютері режим \"У літаку\", ці функції буде вимкнено.",
+                    "description7": "Точність сприйняття дотиків залежить від розміру пальців, їх положення та частоти рухів. Якщо комп’ютер випадково блокується, налаштуйте повзунок чутливості сенсора, щоб покращити точність сприйняття дотиків."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Перейти до настройок Windows Hello",
@@ -1943,40 +1981,6 @@
                 "resetToDefault": "Скидання",
                 "sensitivityAdjusting": {
                     "title": "НАЛАШТУВАННЯ СЕНСОРНОЇ ПАНЕЛІ"
-                },
-                "image": {
-                    "title": "Intelligent security",
-                    "description": "Buckles up your PC with intelligent sensing technology, protects your privacy, and saves your battery power."
-                },
-                "advancedSettings": {
-                    "showAdvSettings": "ADVANCED SETTINGS",
-                    "hideAdvSettings": "HIDE ADVANCED SETTINGS"
-                },
-                "zeroTouchLoginForIdea": {
-                    "title": "Zero Touch Login",
-                    "caption": "This feature enables you to improve the work efficiency by automatically waking up or logging in your computer. To use the feature, you need to register your face in Windows Hello.",
-                    "tooltip": "When you are in front of your computer or approaching it (within 1.2 or 1.5 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer. <br>Depending on the sensor capability, the maximum detecting distance varies. Refer to the <i>User Guide</i> that comes with your computer for details."
-                },
-                "distanceSensitivityAdjustingForIdea": {
-                    "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                    "captionOn": "Enable this feature to automatically adjust the detecting distance of movements to wake up the system. Turn it off to manually adjust the detecting sensitivity based on your preference.",
-                    "captionOff": "When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
-                    "options": {
-                        "near": "Near",
-                        "medium": "Middle",
-                        "far": "Far"
-                    },
-                    "readMore": "There are three options. In each range, when human movements are detected, your screen will be waked up accordingly.",
-                    "readMoreForSensor1": {
-                        "line1": "• Near: 0-0.4 meter",
-                        "line2": "• Middle: 0-0.6 meter",
-                        "line3": "• Far: 0-1.2 meter"
-                    },
-                    "readMoreForSensor2": {
-                        "line1": "• Near: 0.2-0.55 meter",
-                        "line2": "• Middle: 0.2-1.0 meter",
-                        "line3": "• Far: 0.2-1.5 meter"
-                    }
                 }
             },
             "intelligentScreen": {
@@ -2048,13 +2052,59 @@
             "superResolution": {
                 "heading": "Інтелектуальне відтворення мультимедіа",
                 "title": "Підвищення роздільної здатності відео",
-                "desc": "<p><label>Ця функція збільшує задоволення від перегляду відео завдяки підвищенню його роздільної. Вона особливо стає в пригоді, якщо відео має низьку роздільну здатність.</label></p> <p style='margin-top:4px;'><label>Ця функція може впливати на термін служби акумулятора, температуру акумулятора та викликати шум. Не використовуйте в режимі прямого струму. Інакше це прискорить споживання енергії та скоротить час автономної роботи.</label></p>",
-                "tooltip": "Ця функція працює лише в:<br>Windows Media player",
+                "desc": "<p><label>Ця функція вдосконалює відтворення відео за рахунок поліпшення роздільної здатності. Вона стає в пригоді, коли відео має низьку роздільну здатність.</label></p> <p style='margin-top:4px;'><label>Ця функція може впливати на термін служби акумулятора, температуру акумулятора та викликати шум. Не використовуйте в режимі прямого струму (під час роботи від акумулятора). Інакше це прискорить споживання енергії та скоротить час автономної роботи.</label></p>",
+                "tooltip": "Ця функція працює лише для таких відеопрогравачів:<br>Windows Media Player<br>Chrome<br>Фільми й телепрограми<br>PotPlayer<br>GOM player<br>Браузерні програвачі (наприклад, Chrome)<br><br>Вказівки щодо ввімкнення цієї функції на PotPlayer або GOM player див. в посібнику користувача з комплекту постачання.",
                 "note": {
                     "description": "Ця функція не працює, коли:",
-                    "description1": "Цей комп'ютер не підключено до джерела живлення змінного струму.",
-                    "description2": "Увімкнено режим економії акумулятора.",
-                    "description3": "Температура процесора зависока."
+                    "description1": "Увімкнено режим економії акумулятора.",
+                    "description2": "Температура процесора зависока."
+                }
+            },
+            "antiTheft": {
+                "heading": "Інтелектуальне зчитування",
+                "title": "Інтелектуальне виявлення рухів",
+                "desc": "<p><label>Якщо ввімкнути цю функцію, пристрій подаватиме сигнал в разі виявлення рухів перед заблокованим екраном, особливо в громадських місцях.</label></p> <p style='margin-top:4px;'><label>Щоб вимкнути сигнал, введіть правильний пароль або увійдіть через Windows Hello.</label></p>",
+                "note": {
+                    "description": "Після успішного входу в систему цю функцію буде автоматично вимкнуто. Для подальшого використання її доведеться ввімкнути."
+                },
+                "alarm": {
+                    "title": " ТРИВАЛІСТЬ СИГНАЛУ:",
+                    "option1": "10 секунд",
+                    "option2": "20 секунд",
+                    "option3": "30 секунд",
+                    "option4": "1 хвилина",
+                    "option5": "Безкінечна"
+                },
+                "allowCamera": {
+                    "title": "ФОТОЗЙОМКА",
+                    "describe": "Якщо ввімкнути цю функцію, камера автоматично робитиме фотографії, якщо помічатиме рух перед заблокованим екраном. Ці дані обробляються локально на вашому пристрої. Lenovo не має доступу до них і не використовує їх.",
+                    "checkBoxText": "Увімкнути цю функцію"
+                },
+                "cameraPrivacy": {
+                    "describe": "У Lenovo Vantage увімкнуто режим конфіденційності камери. Функція прапорця не працюватиме.",
+                    "linkText": "Перейдіть до режиму конфіденційності камери, щоб вимкнути її"
+                },
+                "authorizedAccess": {
+                    "describe": "Lenovo Vantage не надано доступ до камери. Функція прапорця не працюватиме.",
+                    "linkText": "Перейдіть до настройок Windows, щоб надати доступ"
+                },
+                "photo": {
+                    "title": "КІЛЬКІСТЬ ФОТОГРАФІЙ ПІД ЧАС РУХУ",
+                    "tooltip": "Камера на вашому комп'ютері автоматично робить знімки, коли виявляє рух. Фотографії робляться кожні 2 секунди та зберігаються в локальному сховищі.",
+                    "option1": "5",
+                    "option2": "10",
+                    "option3": "15",
+                    "option4": "20",
+                    "option5": "25",
+                    "option6": "30"
+                },
+                "showPhoto": {
+                    "title": "ФОТОГРАФІЇ:",
+                    "link": "Переглянути фотографії"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Lenovo Vantage не надано доступ до файлової системи.",
+                    "link": "Перейдіть до настройок Windows, щоб надати доступ"
                 }
             },
             "voice": {
@@ -2655,7 +2705,7 @@
         },
         "question1": {
             "title": "Резервне копіювання та відновлення файлів",
-            "description": "<div>    <div class='faqInFs4Fb'>        Резервне копіювання та відновлення файлів    </div>    <hr />    <div class='faqInMb7'>        Радимо завжди мати резервну копію. Зберігайте копії файлів на іншому диску, на випадок якщо з оригіналами щось трапиться.    </div>    <div class='faqInFs3Fb'>        Налаштування резервного копіювання    </div>    <hr />    <div class='mb-5'>        Натисніть кнопку <span class='faqInFb'>Пуск</span>, виберіть <span class='faqInFb'>Настройки</span> > <span class='faqInFb'>Оновлення та безпека</span> > <span class='faqInFb'>Резервне копіювання</span> > <span class='faqInFb'>Додати диск</span>, а потім виберіть зовнішній диск або мережеве розташування для резервних копій.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Готово! Щогодини буде створюватися резервна копія всіх даних у вашій папці користувача (C:\\\\Users\\\\username). Щоб змінити файли або частоту резервного копіювання, перейдіть до розділу <span class='faqInFb'>Додаткові параметри</span>.    </div>    <div class='faqInFs3Fb'>        Відновлення файлів    </div>    <div class='mb-5'>        Якщо втрачено важливий файл або папку, їх можна відновити.    </div>    <div>        <div class='mb-3'>1. Введіть <span class='faqInFb'>Відновлення файлів</span> у вікні пошуку на панелі завдань, а потім виберіть <span class='faqInFb'>Відновити файли за допомогою Банку файлів</span>.</div>        <div class='mb-3'>2. Знайдіть потрібний файл, а потім використовуйте стрілки, щоб переглянути всі його версії</div>        <div class='mb-3'>3. Знайшовши потрібну версію, виберіть <span class='faqInFb'>Відновити</span>, щоб зберегти її у початковому розташуванні. Щоб зберегти файл в іншому місці, натисніть і утримуйте (або клацніть правою кнопкою миші) <span class='faqInFb'>Відновити</span>, виберіть <span class='faqInFb'>Відновити в</span>, а потім виберіть нове розташування.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Резервне копіювання та відновлення файлів    </div>    <hr />    <div class='faqInMb7'>        Радимо завжди мати резервну копію. Зберігайте копії файлів на іншому диску, на випадок якщо з оригіналами щось трапиться.    </div>    <div class='faqInFs3Fb'>        Налаштування резервного копіювання    </div>    <hr />    <div class='mb-5'>        Натисніть кнопку <span class='faqInFb'>Пуск</span>, виберіть <span class='faqInFb'>Настройки</span> > <span class='faqInFb'>Оновлення та безпека</span> > <span class='faqInFb'>Резервне копіювання</span> > <span class='faqInFb'>Додати диск</span>, а потім виберіть зовнішній диск або мережеве розташування для резервних копій.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Готово! Щогодини буде створюватися резервна копія всіх даних у вашій папці користувача (C:\\Users\\ваше ім'я користувача). Щоб змінити файли або частоту резервного копіювання, перейдіть до розділу <span class='faqInFb'>Додаткові параметри</span>.    </div>    <div class='faqInFs3Fb'>        Відновлення файлів    </div>    <div class='mb-5'>        Якщо втрачено важливий файл або папку, їх можна відновити.    </div>    <div>        <div class='mb-3'>1. Введіть <span class='faqInFb'>Відновлення файлів</span> у вікні пошуку на панелі завдань, а потім виберіть <span class='faqInFb'>Відновити файли за допомогою Банку файлів</span>.</div>        <div class='mb-3'>2. Знайдіть потрібний файл, а потім використовуйте стрілки, щоб переглянути всі його версії</div>        <div class='mb-3'>3. Знайшовши потрібну версію, виберіть <span class='faqInFb'>Відновити</span>, щоб зберегти її у початковому розташуванні. Щоб зберегти файл в іншому місці, натисніть і утримуйте (або клацніть правою кнопкою миші) <span class='faqInFb'>Відновити</span>, виберіть <span class='faqInFb'>Відновити в</span>, а потім виберіть нове розташування.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -3036,15 +3086,15 @@
             "science": "Наука"
         },
         "gaming": {
-            "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
-            "gamingFeature1": "-Computer status monitor",
-            "gamingFeature2": "-Performance mode & overclocking",
-            "gamingFeature3": "-Lighting",
-            "gamingFeature4": "-Network Boost",
-            "gamingFeature5": "-Auto Close",
-            "gamingOnly": "Gaming",
-            "gamingAndWork": "Gaming & Work",
-            "nonGaming": "Non-Gaming"
+            "gamingDescription": "Ігрова версія Vantage дарує ще більше задоволення від гри. Поряд із загальними настройками доступні такі основні функції (доступні для вибраних систем):",
+            "gamingFeature1": "-Моніторинг стану комп'ютера",
+            "gamingFeature2": "-Режими продуктивності та розгін",
+            "gamingFeature3": "-Підсвітка",
+            "gamingFeature4": "-Прискорення мережі",
+            "gamingFeature5": "-Автоматичне закриття",
+            "gamingOnly": "Ігри",
+            "gamingAndWork": "Гра й робота",
+            "nonGaming": "Неігрові"
         }
     },
     "settings": {
@@ -3068,7 +3118,8 @@
         "settingsNotes": "Перезапустіть цю програму, щоб усі зміни набули чинності.",
         "betaSettingTitle": "Бета-тестування",
         "betaProgram": "Бета-тестування",
-        "betaSettingDescription": "Спробуйте найновіші функції, над якими ми ще працюємо."
+        "betaSettingDescription": "Спробуйте найновіші функції, над якими ми ще працюємо.",
+        "betaSettingNewDescription": "Ми раді запросити вас на бета-тестування Smart Performance. Ця програма прискорює ваш ПК завдяки цим можливостям:<br/><ul class='pl-4'><li>Проактивно діагностує помилки й оптимізує налаштування.</li><li>Прискорює роботу в Інтернеті завдяки оптимізації мережі та браузера.</li><li>Виконує швидке сканування та видалення зловмисного ПЗ без наявної антивірусної програми.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Скасувати",
@@ -3991,6 +4042,10 @@
                 "readMore": "Розгорнути",
                 "readLess": "Згорнути"
             }
+        },
+        "narrator": {
+            "leftArrow": "Стрілка вліво",
+            "rightArrow": "Стрілка вправо"
         }
     },
     "dcc": {
@@ -4012,5 +4067,10 @@
     },
     "cpt": {
         "title": "Content Preview Tool"
+    },
+    "storeRating": {
+        "title": "Поділіться думкою",
+        "likeUs": "Вподобайте нас",
+        "feedback": "Залишіть відгук"
     }
 }

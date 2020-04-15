@@ -20,11 +20,6 @@ export class SmartAssistService {
 	private superResolution;
 	private antiTheft;
 	public windows;
-	private DeviceInformation: any;
-	private DeviceClass: any;
-	private Front: any;
-	private mediaCapture: any;
-	private Capture: any;
 	private hsaIntelligentSecurity;
 	private hpdAdvancedSettings = {
 		zeroTouchLoginAdvanced: false,
@@ -45,12 +40,6 @@ export class SmartAssistService {
 		// this.shellVersion = shellService.getShellVersion();
 		this.antiTheft = shellService.getAntiTheft();
 		this.windows = shellService.getWindows();
-		if (this.windows) {
-			this.DeviceInformation = this.windows.Devices.Enumeration.DeviceInformation;
-			this.DeviceClass = this.windows.Devices.Enumeration.DeviceClass;
-			this.Front = this.windows.Devices.Enumeration.Panel.front;
-			this.Capture = this.windows.Media.Capture;
-		}
 		this.activeProtectionSystem ? this.isAPSavailable = true : this.isAPSavailable = false;
 		if (this.intelligentSensing && this.intelligentMedia && this.lenovoVoice && this.superResolution) {
 			this.isShellAvailable = true;
@@ -223,7 +212,7 @@ export class SmartAssistService {
 	}
 
 	public getHsaIntelligentSecurityStatus() {
-		const intelligentSecurityDate = {capacity: false, capability: 0, sensorType: 0, zeroTouchLockDistanceAutoAdjust: true, zeroTouchLockDistance: 0};
+		const intelligentSecurityDate = { capacity: false, capability: 0, sensorType: 0, zeroTouchLockDistanceAutoAdjust: true, zeroTouchLockDistance: 0 };
 		try {
 			if (this.isShellAvailable) {
 				const obj = JSON.parse(this.hsaIntelligentSecurity.getAllSetting());
@@ -236,13 +225,13 @@ export class SmartAssistService {
 				}
 				return Promise.resolve(intelligentSecurityDate);
 			}
-		}catch (error) {
+		} catch (error) {
 			//throw new Error(error.message);
 			return Promise.reject(error.message);
 		}
 	}
 
-	public setZeroTouchLockDistanceSensitivityAutoAdjust(value: boolean):Promise<number> {
+	public setZeroTouchLockDistanceSensitivityAutoAdjust(value: boolean): Promise<number> {
 		try {
 			if (this.isShellAvailable) {
 				const result = this.hsaIntelligentSecurity.setPresenceLeaveDistanceAutoAdjust(value);
@@ -254,7 +243,7 @@ export class SmartAssistService {
 		}
 	}
 
-	public setZeroTouchLockDistanceSensitivity(value: number):Promise<number> {
+	public setZeroTouchLockDistanceSensitivity(value: number): Promise<number> {
 		try {
 			if (this.isShellAvailable) {
 				const result = this.hsaIntelligentSecurity.setPresenceLeaveDistance(value);
@@ -266,7 +255,7 @@ export class SmartAssistService {
 		}
 	}
 
-	public resetHSAHPDSetting():Promise<number> {
+	public resetHSAHPDSetting(): Promise<number> {
 		try {
 			if (this.isShellAvailable) {
 				const result = this.hsaIntelligentSecurity.resetAllSetting();
@@ -359,11 +348,11 @@ export class SmartAssistService {
 	//region Intelligent Sensting (anti theft) section
 
 	public async getAntiTheftStatus(): Promise<AntiTheftResponse> {
-		const antiTheftDate = { available: false, status: false, isSupportPhoto: false, photoAddress: "", cameraPrivacyState: false, authorizedAccessState: false, alarmOften: 0, photoNumber: 5 };
+		const antiTheftDate = { available: false, status: false, isSupportPhoto: false, photoAddress: "", cameraPrivacyState: false, authorizedAccessState: true, alarmOften: 0, photoNumber: 5 };
 		try {
 			if (this.isShellAvailable) {
-				const data = await Promise.all([this.getCameraAuthorizedAccessState(), this.antiTheft.getMotionAlertSetting(), this.getCameraPrivacyState()]);
-				const obj = JSON.parse(data[1]);
+				const data = await Promise.all([this.antiTheft.getMotionAlertSetting(), this.getCameraPrivacyState()]);
+				const obj = JSON.parse(data[0]);
 				if (obj && obj.errorCode === 0) {
 					antiTheftDate.available = obj.available;
 					antiTheftDate.status = obj.enabled;
@@ -372,43 +361,13 @@ export class SmartAssistService {
 					antiTheftDate.alarmOften = obj.alarmDuration;
 					antiTheftDate.photoNumber = obj.photoNumber;
 				}
-				antiTheftDate.cameraPrivacyState = !data[2];
-				antiTheftDate.authorizedAccessState = data[0];
+				antiTheftDate.cameraPrivacyState = !data[1];
+				//antiTheftDate.authorizedAccessState = data[0];
 				return Promise.resolve(antiTheftDate);
 			}
 		} catch (error) {
 			return Promise.resolve(antiTheftDate);
 		}
-	}
-
-	public getCameraAuthorizedAccessState() {
-		let deviceInfo = null;
-		return this.DeviceInformation.findAllAsync(this.DeviceClass.videoCapture)
-			.then((devices: any) => {
-				devices.forEach((cameraDeviceInfo: any) => {
-					if (cameraDeviceInfo.enclosureLocation != null && cameraDeviceInfo.enclosureLocation.panel === this.Front) {
-						deviceInfo = cameraDeviceInfo;
-					}
-				});
-				if (deviceInfo && devices.length > 0) {
-					deviceInfo = devices.getAt(0);
-					this.mediaCapture = new this.Capture.MediaCapture();
-					const settings = new this.Capture.MediaCaptureInitializationSettings();
-					settings.videoDeviceId = deviceInfo.id;
-					settings.streamingCaptureMode = 2;
-					settings.photoCaptureSource = 0;
-					return this.mediaCapture.initializeAsync(settings).then(() => {
-						return Promise.resolve(true);
-					}, (error: any) => {
-						if (error && error.number === -2147024891) {
-							return Promise.resolve(false);
-						}
-					});
-				}
-				return Promise.resolve(false);
-			}, (error: any) => {
-				return Promise.resolve(false);
-			});
 	}
 
 	public async getCameraPrivacyState(): Promise<boolean> {
@@ -473,7 +432,7 @@ export class SmartAssistService {
 		return undefined;
 	}
 
-	//endregion 
+	//endregion
 
 	//#region Intelligent Sensing (Intelligent screen) section
 

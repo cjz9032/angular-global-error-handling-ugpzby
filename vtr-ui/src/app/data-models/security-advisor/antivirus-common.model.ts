@@ -1,4 +1,4 @@
-import { Antivirus, McAfeeInfo, WinRT } from '@lenovo/tan-client-bridge';
+import { Antivirus, McAfeeInfo, WinRT, EventTypes } from '@lenovo/tan-client-bridge';
 import { AppNotification } from '../common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
@@ -72,6 +72,12 @@ export class AntivirusCommon {
 				this.mcafee = this.antivirus.mcafee;
 			}
 		}
+		this.antivirus.on(EventTypes.avRefreshedEvent, (avInfo) => {
+			this.antivirus = avInfo;
+			if (avInfo.mcafee) {
+				this.mcafee = avInfo.mcafee;
+			}
+		})
 		this.isOnline = isOnline;
 		this.localInfoService.getLocalInfo().then(result => {
 			this.country = result.GEO;
@@ -91,12 +97,10 @@ export class AntivirusCommon {
 		if (type === 'button') {
 			this.purchaseBtnIsLoading = true;
 		}
-		let purchaseRes;
 		if (this.mcafee && this.mcafee.additionalCapabilities
 			&& this.mcafee.additionalCapabilities.includes('LaunchMcAfeeBuy')
 			&& this.pluginSupport) {
 			this.antivirus.openMcAfeePurchaseUrl().then((response) => {
-				purchaseRes = response;
 				this.purchaseBtnIsLoading = false;
 				if (response && response.result === false) {
 					metricsData.ItemName = this.metricsTranslateService.translate('launchMcAfeeBuy.failed');
@@ -110,14 +114,7 @@ export class AntivirusCommon {
 			}).finally(() => {
 				this.metrics.sendMetrics(metricsData);
 			});
-			setTimeout(() => {
-				if (!purchaseRes) {
-					this.purchaseBtnIsLoading = false;
-					WinRT.launchUri(this.urlGetMcAfee);
-					metricsData.ItemName = this.metricsTranslateService.translate('launchMcAfeeBuy.timeout');
-					this.metrics.sendMetrics(metricsData);
-				}
-			}, 3000)
+
 		} else {
 			this.purchaseBtnIsLoading = false;
 			WinRT.launchUri(this.urlGetMcAfee);

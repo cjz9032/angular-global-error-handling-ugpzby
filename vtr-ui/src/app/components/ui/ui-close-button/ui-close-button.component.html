@@ -1,0 +1,13 @@
+<div class="close-button"
+	role="button"
+	[tabindex]="tabIndex"
+	[id]="linkId"
+	[attr.aria-label]="'common.ui.close' | translate"
+	[vtrMetrics]="metricsItem === '' ? false : ''"
+	[metricsItem]="metricsItem"
+	[metricsEvent]="metricsEvent"
+	[metricsParent]="metricsParent"
+	(keyup.enter)="pressCloseButton($event)"
+	(click)="clickCloseButton($event)">
+	<div class="x"></div>
+</div>

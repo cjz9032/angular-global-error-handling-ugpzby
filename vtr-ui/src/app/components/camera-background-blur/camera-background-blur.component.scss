@@ -31,4 +31,10 @@
 			max-width: 85%;
 		}
 	}
+
+	.camera-modes-block {
+		&:focus {
+			@include outline-blue;
+		}
+	}
 }

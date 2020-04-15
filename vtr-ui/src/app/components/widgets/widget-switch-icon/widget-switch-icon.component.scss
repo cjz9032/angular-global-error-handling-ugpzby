@@ -16,14 +16,26 @@
 		width: 12.4rem;
 		border-radius: $border_radius;
 		padding: 0.1rem 0 0;
+		position: relative;
 		&.focus-blue-outline {
 			&:focus::after {
 				border-radius: $border_radius;
 			}
 		}
 		&:focus {
-			outline: 0.1rem solid $menu_hover;
-			outline-offset: 0.2rem;
+			outline: 0;
+			box-shadow: none;
+			&:after {
+				content: '';
+				display: block;
+				position: absolute;
+				left: -0.4rem;
+				top: -0.4rem;
+				border-radius: $border_radius;
+				width: calc(100% + 0.8rem);
+				height: calc(100% + 0.8rem);
+				border: thin solid $menu_hover;
+			}
 		}
 		@media #{$breakpoint_xl2}{
 			width: 9.6rem;

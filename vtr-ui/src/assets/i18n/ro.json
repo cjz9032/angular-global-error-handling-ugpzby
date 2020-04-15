@@ -78,7 +78,8 @@
                     "macroKey": "Tastă macro",
                     "hardwareScan": "Scanare hardware",
                     "systemUpdate": "Actualizare sistem",
-                    "header": "Instrumente sistem"
+                    "header": "Instrumente sistem",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "lighting": {
                     "title": "Personalizarea iluminării",
@@ -196,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "Avertisment!",
                     "description": "Setările necorespunzătoare ale caracteristicii Overclocking pot produce deteriorări hardware ireversibile.",
-                    "proceed": "CONTINUAȚI"
+                    "proceed": "CONTINUAȚI",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },
@@ -1852,6 +1856,14 @@
             "intelligentSecurity": {
                 "title": "Securitate inteligentă",
                 "readMore": "Citiți mai multe",
+                "image": {
+                    "title": "Securitate inteligentă",
+                    "description": "Vă echipează computerul cu tehnologie inteligentă de detectare, vă protejează confidențialitatea și vă economisește energia bateriei."
+                },
+                "advancedSettings": {
+                    "showAdvSettings": "SETĂRI AVANSATE",
+                    "hideAdvSettings": "ASCUNDEȚI SETĂRILE AVANSATE"
+                },
                 "HumanPresenceDetection": {
                     "title": "Detecție prezență umană",
                     "tooltip": "Dați clic aici pentru a reseta setările pentru detecția prezenței umane."
@@ -1864,6 +1876,11 @@
                     "title": "Conectare fără atingere",
                     "caption": "Această funcție deblochează sau activează automat computerul atunci când stați în fața acestuia sau vă apropiați de el.",
                     "tooltip": "Când vă aflaţi în faţa computerului sau vă apropiaţi de acesta (la o distanţă de 1,2 metri), această caracteristică vă permite să vă conectaţi automat la sistem după ce faţa dvs. este recunoscută. Dacă vă aflaţi în aer liber, nu în birou, trebuie să fiţi mai aproape de computer, iar pornirea va dura mai mult."
+                },
+                "zeroTouchLoginForIdea": {
+                    "title": "Conectare fără atingere",
+                    "caption": "Această caracteristică vă permite să îmbunătățiți eficiența activității, automatizând procesele de activare și de conectare ale computerului. Pentru a utiliza această caracteristică, trebuie să vă înregistrați fața în Windows Hello.",
+                    "tooltip": "Atunci când sunteți în fața computerului sau când vă apropiați de acesta (la 1,2 sau 1,5 metri), caracteristica vă permite să vă conectați automat la sistem, după ce vă este recunoscută fața. Dacă vă aflați în aer liber, nu în birou, trebuie să fiți mai aproape de computer, iar pornirea va dura mai mult. <br>Distanța maximă de detecție variază în funcție de capacitatea senzorului. Pentru detalii, consultați <i>Ghidul utilizatorului</i> livrat împreună cu computerul."
                 },
                 "zeroTouchLock": {
                     "title": "Blocare fără atingere",
@@ -1879,7 +1896,7 @@
                     },
                     "facialRecognition": {
                         "title": "RECUNOAȘTEREA FACIALĂ",
-                        "caption": "Puteți activa funcția de recunoaștere facială și îi puteți permite să acceseze camera. Acest instrument captează imaginea dvs. pentru a vă recunoaște cu exactitate prezența sau a detecta când ați lăsat dispozitivul nesupravegheat. Aceste date sunt procesate local pe dispozitivul dvs. Lenovo nu accesează datele și nu le folosește.",
+                        "caption": "Această caracteristică vă ajută să îmbunătățiți performanțele de recunoaștere și să evitați blocarea neașteptată a ecranului, în special atunci când vă relaxați în scaun. Această caracteristică este procesată local pe dispozitivul dumneavoastră. Lenovo nu accesează datele și nu le folosește.",
                         "checkBox": "Porniți camera și activați această caracteristică.",
                         "note": {
                             "permission": "Lenovo Vantage nu are acces la cameră. Funcția casetei de selectare nu este activă.",
@@ -1889,18 +1906,18 @@
                         }
                     },
                     "distanceSensitivityAdjusting": {
-                        "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                        "captionOn": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, you can maually adjust the dectecting sensitivity based on your preference.",
-                        "captionOff": "The accuracy varies by body size, posture, and frequency of movement. When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
+                        "title": "REGLAREA AUTOMATĂ A SENSIBILITĂȚII LA DISTANȚĂ",
+                        "captionOn": "Precizia variază în funcție de dimensiunea corpului, postură și frecvența mișcării. În cazul în care computerul dumneavoastră se blochează neașteptat, puteți regla manual sensibilitatea de detectare, după preferințe.",
+                        "captionOff": "Precizia variază în funcție de dimensiunea corpului, postură și frecvența mișcării. Când această caracteristică este dezactivată, pentru a ajusta distanța de detecție, trebuie să reglați manual bara de sensibilitate. Dacă doriți ca distanța să se regleze automat, porniți caracteristica.",
                         "options": {
-                            "near": "Near",
-                            "medium": "Middle",
-                            "far": "Far"
+                            "near": "Lângă",
+                            "medium": "Mediu",
+                            "far": "Departe"
                         },
                         "readMore": {
-                            "line1": "• Near: 0.9 meter",
-                            "line2": "• Middle: 1.2 meter",
-                            "line3": "• Far: 1.5 meter"
+                            "line1": "• În apropiere: 0,9 metri",
+                            "line2": "• Mediu: 1,2 metri",
+                            "line3": "• La distanță: 1,5 metri"
                         }
                     }
                 },
@@ -1924,17 +1941,38 @@
                         }
                     }
                 },
+                "distanceSensitivityAdjustingForIdea": {
+                    "title": "REGLAREA AUTOMATĂ A SENSIBILITĂȚII LA DISTANȚĂ",
+                    "captionOn": "Activați această caracteristică pentru a regla automat distanța de detecție a mișcării, în vederea activării sistemului. Opriți caracteristica pentru a regla manual sensibilitatea de detecție, după preferințe.",
+                    "captionOff": "Când această caracteristică este dezactivată, pentru a ajusta distanța de detecție, trebuie să reglați manual bara de sensibilitate. Dacă doriți ca distanța să se regleze automat, porniți caracteristica.",
+                    "options": {
+                        "near": "Lângă",
+                        "far": "Departe",
+                        "medium": "Mediu"
+                    },
+                    "readMore": "Sunt disponibile trei opțiuni. Pentru fiecare interval, atunci când este detectată mișcarea umană, ecranul se va activa în mod corespunzător.",
+                    "readMoreForSensor1": {
+                        "line1": "• În apropiere: 0 – 0,4 metri",
+                        "line2": "• Mediu: 0 – 0,6 metri",
+                        "line3": "• La distanță: 0 – 1,2 metri"
+                    },
+                    "readMoreForSensor2": {
+                        "line1": "• În apropiere: 0,2 – 0,55 metri",
+                        "line2": "• Mediu: 0,2 – 1,0 metri",
+                        "line3": "• La distanță: 0,2 – 1,5 metri"
+                    }
+                },
                 "note": {
                     "description1": "Această caracteristică se bazează pe Windows Hello. Asigurați-vă că recunoașterea feței este activată în setările Windows.",
                     "description2": "Această caracteristică folosește senzorii și camera pentru a vă detecta prezența. Cu toate acestea, caracteristica NU colectează date personale.",
-                    "description3": "1. În cazul în care computerul dvs. se află în modul Cort, Tabletă sau Suport, este posibil ca aceste caracteristici să nu funcționeze corect.",
-                    "description4": "2. În cazul în care computerul dvs. se află în modul hibernare sau a fost oprit, Conectarea fără atingere nu va funcţiona.",
-                    "description6": "4. Dacă Modul avion este activat pe computer, aceste funcţii sunt dezactivate.",
-                    "description7": "Precizia variază în funcţie de dimensiunea corpului, postură şi frecvenţa mişcării. În cazul în care computerul se blochează în mod neaşteptat, ajustaţi bara de sensibilitate pentru a îmbunătăţi precizia.",
-                    "description5a1": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to ",
-                    "description5a2": "User Guide ",
-                    "description5a3": "that comes with it.",
-                    "description5b": "b. Your computer is in hibernation mode or has been turned off."
+                    "description3": "1. Pentru a utiliza funcțiile de mai sus, reglați ecranul la un unghi corespunzător, astfel încât fața dumneavoastră să poată fi recunoscută.",
+                    "description4": "2. Funcțiile de mai sus nu sunt acceptate atunci când:",
+                    "description5a1": "a. Computerul este în modul Cort, Tabletă, Standard sau Detașat. Pentru modurile acceptate de computer, consultați ",
+                    "description5a2": "Ghidul utilizatorului ",
+                    "description5a3": "care este livrat împreună cu acesta.",
+                    "description5b": "b. Computerul este în modul hibernare sau a fost oprit.",
+                    "description6": "3. Dacă Modul avion este activat pe computer, aceste funcţii sunt dezactivate.",
+                    "description7": "Precizia variază în funcţie de dimensiunea corpului, postură şi frecvenţa mişcării. În cazul în care computerul se blochează în mod neaşteptat, ajustaţi bara de sensibilitate pentru a îmbunătăţi precizia."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Accesați setările Windows Hello",
@@ -1943,40 +1981,6 @@
                 "resetToDefault": "Resetare",
                 "sensitivityAdjusting": {
                     "title": "AJUSTAREA SENSIBILITĂŢII"
-                },
-                "image": {
-                    "title": "Intelligent security",
-                    "description": "Buckles up your PC with intelligent sensing technology, protects your privacy, and saves your battery power."
-                },
-                "advancedSettings": {
-                    "showAdvSettings": "ADVANCED SETTINGS",
-                    "hideAdvSettings": "HIDE ADVANCED SETTINGS"
-                },
-                "zeroTouchLoginForIdea": {
-                    "title": "Zero Touch Login",
-                    "caption": "This feature enables you to improve the work efficiency by automatically waking up or logging in your computer. To use the feature, you need to register your face in Windows Hello.",
-                    "tooltip": "When you are in front of your computer or approaching it (within 1.2 or 1.5 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer. <br>Depending on the sensor capability, the maximum detecting distance varies. Refer to the <i>User Guide</i> that comes with your computer for details."
-                },
-                "distanceSensitivityAdjustingForIdea": {
-                    "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                    "captionOn": "Enable this feature to automatically adjust the detecting distance of movements to wake up the system. Turn it off to manually adjust the detecting sensitivity based on your preference.",
-                    "captionOff": "When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
-                    "options": {
-                        "near": "Near",
-                        "medium": "Middle",
-                        "far": "Far"
-                    },
-                    "readMore": "There are three options. In each range, when human movements are detected, your screen will be waked up accordingly.",
-                    "readMoreForSensor1": {
-                        "line1": "• Near: 0-0.4 meter",
-                        "line2": "• Middle: 0-0.6 meter",
-                        "line3": "• Far: 0-1.2 meter"
-                    },
-                    "readMoreForSensor2": {
-                        "line1": "• Near: 0.2-0.55 meter",
-                        "line2": "• Middle: 0.2-1.0 meter",
-                        "line3": "• Far: 0.2-1.5 meter"
-                    }
                 }
             },
             "intelligentScreen": {
@@ -2047,14 +2051,60 @@
             },
             "superResolution": {
                 "heading": "Medii inteligente",
-                "title": "Mărirea rezoluţiei video",
-                "desc": "<p><label>Această caracteristică îmbunătăţeşte experienţa de redare a videoclipurilor, mărind rezoluţia video. Aceasta funcţionează mai ales atunci când videoclipul are o rezoluţie mică.</label></p> <p style='margin-top:4px;'><label>Această caracteristică ar putea afecta durata de viață a bateriei, temperatura bateriei și poate provoca zgomote. Nu o utilizați în modul de alimentare cu c.c. În caz contrar, va accelera consumul de energie și va scurta durata de viață a bateriei.</label></p>",
-                "tooltip": "Această caracteristică funcționează numai pe:<br>Windows Media player",
+                "title": "Mărirea rezoluției video",
+                "desc": "<p><label>Această caracteristică îmbunătățește experiența de redare video prin îmbunătățirea rezoluției video. Funcționează mai ales atunci când videoclipul este la o rezoluție slabă.</label></p> <p style='margin-top:4px;'><label>Această caracteristică ar putea afecta durata de viață a bateriei, temperatura bateriei și poate provoca zgomote. Nu o utilizați în modul de alimentare c.c. (mod baterie). În caz contrar, va accelera consumul de energie și va scurta durata de viață a bateriei.</label></p>",
+                "tooltip": "Această caracteristică funcționează numai pentru playerele video de mai jos:<br>Windows Media Player<br>Chrome<br>Filme și televiziune<br>PotPlayer<br>GOM player<br>playere pe bază de browser web (de ex. Chrome)<br><br>Pentru instrucțiuni despre modul în care puteți activa această funcție pe PotPlayer și GOM player, consultați Ghidul utilizatorului furnizat împreună cu computerul.",
                 "note": {
-                    "description": "Această caracteristică nu funcţionează când:",
-                    "description1": "Computerul nu este conectat la o sursă de alimentare c.a.",
-                    "description2": "Modul de economisire a bateriei este activat.",
-                    "description3": "Temperatura procesorului este prea mare."
+                    "description": "Această caracteristică nu funcționează când:",
+                    "description1": "Modul de economisire a bateriei este activat.",
+                    "description2": "Temperatura procesorului este prea mare."
+                }
+            },
+            "antiTheft": {
+                "heading": "Detectare inteligentă",
+                "title": "Alertă Smart Motion",
+                "desc": "<p><label>Când activați această caracteristică, dispozitivul va începe să sune atunci când ecranul este blocat și se detectează mișcări, în special într-un loc public.</label></p> <p style='margin-top:4px;'><label>Pentru a respinge alarma, introduceți parola corectă sau conectați-vă prin Windows Hello.</label></p>",
+                "note": {
+                    "description": "După ce v-ați conectat cu succes la sistem, această caracteristică va fi oprită automat. Trebuie să o activați din nou pentru a o utiliza."
+                },
+                "alarm": {
+                    "title": " ALARMA VA DURA TIMP DE",
+                    "option1": "10 secunde",
+                    "option2": "20 secunde",
+                    "option3": "30 secunde",
+                    "option4": "1 minut",
+                    "option5": "Nu se oprește niciodată"
+                },
+                "allowCamera": {
+                    "title": "REALIZARE FOTOGRAFII",
+                    "describe": "Când activați această caracteristică, camera foto fotografiază automat când detectează orice mișcare, dacă ecranul este blocat. Aceste date sunt procesate local pe dispozitivul dvs. Lenovo nu accesează datele și nu le folosește.",
+                    "checkBoxText": "Activați această caracteristică"
+                },
+                "cameraPrivacy": {
+                    "describe": "Modul de confidențialitate Lenovo Vantage este activ pentru cameră. Funcția casetei de selectare nu este activă.",
+                    "linkText": "Accesați modul de confidențialitate al camerei pentru a-l dezactiva."
+                },
+                "authorizedAccess": {
+                    "describe": "Lenovo Vantage nu are acces la cameră. Funcția casetei de selectare nu este activă.",
+                    "linkText": "Accesați setările Windows pentru a acorda acces."
+                },
+                "photo": {
+                    "title": "NUMĂRUL DE FOTOGRAFII REALIZATE ÎN TIMPUL MIȘCĂRII",
+                    "tooltip": "Camera foto de pe computer se activează automat pentru a face fotografii atunci când se detectează mișcări. Fotografiile sunt făcute la fiecare 2 secunde și sunt salvate pe spațiul de stocare local.",
+                    "option1": "5",
+                    "option2": "10",
+                    "option3": "15",
+                    "option4": "20",
+                    "option5": "25",
+                    "option6": "30"
+                },
+                "showPhoto": {
+                    "title": "FOTOGRAFIILE AU FOST:",
+                    "link": "Vizualizați fotografii"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Lenovo Vantage nu are acces la sistemul de fișiere.",
+                    "link": "Accesați setările Windows pentru a acorda acces."
                 }
             },
             "voice": {
@@ -2655,7 +2705,7 @@
         },
         "question1": {
             "title": "Copii de siguranță și restaurarea fișierelor",
-            "description": "<div>    <div class='faqInFs4Fb'>        Copii de siguranță și restaurarea fișierelor    </div>    <hr />    <div class='faqInMb7'>        Întotdeauna este bine să aveți o copie de siguranță. Păstrați copiile fișierelor pe o altă unitate, în cazul în care se întâmplă ceva cu cele originale.    </div>    <div class='faqInFs3Fb'>        Configurați-vă copiile de siguranță    </div>    <hr />    <div class='mb-5'>        Selectați butonul <span class='faqInFb'>Start</span>, selectați <span class='faqInFb'>Settings</span> > <span class='faqInFb'>Update & security</span> > <span class='faqInFb'>Backup</span> > <span class='faqInFb'>Add a drive</span> și apoi alegeți o unitate externă sau o locație din rețea pentru copiile de siguranță.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Totul este gata. Vom face copii de siguranță, la interval de o oră, pentru toate fișierele din folderul utilizatorului (C:\\\\Users\\\\username). Pentru a alege pentru ce fișiere sau la ce interval de timp se fac copiile de siguranță, accesați <span class='faqInFb'>More options</span>.    </div>    <div class='faqInFs3Fb'>        Restaurați-vă fișierele    </div>    <div class='mb-5'>        Dacă vă lipsește un fișier sau folder important, iată ce puteți face pentru a-l recupera:    </div>    <div>        <div class='mb-3'>1. În caseta de căutare din bara de activități, introduceți <span class='faqInFb'>Restore files</span> și apoi selectați <span class='faqInFb'> Restore your files with File History</span>.</div>        <div class='mb-3'>2. Căutați fișierul, apoi folosiți săgețile pentru a vedea toate versiunile acestuia</div>        <div class='mb-3'>3. Când găsiți versiunea pe care o doriți, selectați <span class='faqInFb'>Restore</span> pentru a o salva în locația originală. Pentru a o salva în altă locație țineți apăsat (sau dați clic dreapta pe) <span class='faqInFb'>Restore</span>, selectați <span class='faqInFb'>Restore to</span> și apoi alegeți o nouă locație.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Copii de siguranță și restaurarea fișierelor    </div>    <hr />    <div class='faqInMb7'>        Întotdeauna este bine să aveți o copie de siguranță. Păstrați copiile fișierelor pe o altă unitate, în cazul în care se întâmplă ceva cu cele originale.    </div>    <div class='faqInFs3Fb'>        Configurați-vă copiile de siguranță    </div>    <hr />    <div class='mb-5'>        Selectați butonul <span class='faqInFb'>Start</span>, selectați <span class='faqInFb'>Settings</span> > <span class='faqInFb'>Update & security</span> > <span class='faqInFb'>Backup</span> > <span class='faqInFb'>Add a drive</span> și apoi alegeți o unitate externă sau o locație din rețea pentru copiile de siguranță.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Totul este gata. Vom face copii de siguranță, la interval de o oră, pentru toate fișierele din folderul utilizatorului (C:\\Users\\numele dvs. de utilizator). Pentru a alege pentru ce fișiere sau la ce interval de timp se fac copiile de siguranță, accesați <span class='faqInFb'>More options</span>.    </div>    <div class='faqInFs3Fb'>        Restaurați-vă fișierele    </div>    <div class='mb-5'>        Dacă vă lipsește un fișier sau folder important, iată ce puteți face pentru a-l recupera:    </div>    <div>        <div class='mb-3'>1. În caseta de căutare din bara de activități, introduceți <span class='faqInFb'>Restore files</span> și apoi selectați <span class='faqInFb'> Restore your files with File History</span>.</div>        <div class='mb-3'>2. Căutați fișierul, apoi folosiți săgețile pentru a vedea toate versiunile acestuia</div>        <div class='mb-3'>3. Când găsiți versiunea pe care o doriți, selectați <span class='faqInFb'>Restore</span> pentru a o salva în locația originală. Pentru a o salva în altă locație țineți apăsat (sau dați clic dreapta pe) <span class='faqInFb'>Restore</span>, selectați <span class='faqInFb'>Restore to</span> și apoi alegeți o nouă locație.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -3036,15 +3086,15 @@
             "science": "Știință"
         },
         "gaming": {
-            "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
-            "gamingFeature1": "-Computer status monitor",
-            "gamingFeature2": "-Performance mode & overclocking",
-            "gamingFeature3": "-Lighting",
-            "gamingFeature4": "-Network Boost",
-            "gamingFeature5": "-Auto Close",
-            "gamingOnly": "Gaming",
-            "gamingAndWork": "Gaming & Work",
-            "nonGaming": "Non-Gaming"
+            "gamingDescription": "Versiunea Vantage pentru jocuri vă ajută să vă îmbunătăţiţi experienţa în jocuri. Pe lângă setările obişnuite, caracteristicile principale includ (disponibile pe sistemele selectate):",
+            "gamingFeature1": "– Monitorizarea stării computerului",
+            "gamingFeature2": "– Mod de performanţă şi overclocking",
+            "gamingFeature3": "– Iluminare",
+            "gamingFeature4": "– Accelerare reţea",
+            "gamingFeature5": "– Închidere automată",
+            "gamingOnly": "Jocuri",
+            "gamingAndWork": "Jocuri şi muncă",
+            "nonGaming": "Fără jocuri"
         }
     },
     "settings": {
@@ -3068,7 +3118,8 @@
         "settingsNotes": "Pentru a vă asigura că toate modificările au efect, lansați din nou această aplicație.",
         "betaSettingTitle": "Program beta",
         "betaProgram": "Program beta",
-        "betaSettingDescription": "Cele mai recente caracteristici la care lucrăm."
+        "betaSettingDescription": "Cele mai recente caracteristici la care lucrăm.",
+        "betaSettingNewDescription": "Ne bucurăm să vă invităm la programul Beta pentru Smart Performance. Vă ajută să îmbunătățiți performanța computerului prin:<br/><ul class='pl-4'><li>Diagnosticarea proactivă a erorilor și optimizarea setărilor.</li><li>Sporirea performanțelor Internetului prin Optimizarea rețelei și a browserului.</li><li>Efectuarea unei scanări rapide și remediere fără a utiliza programul Antivirus existent.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Anulare",
@@ -3991,6 +4042,10 @@
                 "readMore": "Citiţi mai mult",
                 "readLess": "Citiţi maI puţin"
             }
+        },
+        "narrator": {
+            "leftArrow": "Săgeată stânga",
+            "rightArrow": "Săgeată dreapta"
         }
     },
     "dcc": {
@@ -4012,5 +4067,10 @@
     },
     "cpt": {
         "title": "Content Preview Tool"
+    },
+    "storeRating": {
+        "title": "Trimiteți-ne vocea dumneavoastră",
+        "likeUs": "Trimiteți-ne aprecieri",
+        "feedback": "Introducere feedback"
     }
 }

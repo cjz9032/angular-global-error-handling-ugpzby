@@ -78,7 +78,8 @@
                     "macroKey": "Makróbillentyű",
                     "hardwareScan": "Hardvervizsgálat",
                     "systemUpdate": "Rendszerfrissítés",
-                    "header": "Rendszereszközök"
+                    "header": "Rendszereszközök",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "lighting": {
                     "title": "Világítás testreszabása",
@@ -196,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "Figyelmeztetés!",
                     "description": "A Túlpörgetés helytelen beállítása visszafordíthatatlan hardverkárosodást okozhat.",
-                    "proceed": "FOLYTATÁS"
+                    "proceed": "FOLYTATÁS",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },
@@ -1852,6 +1856,14 @@
             "intelligentSecurity": {
                 "title": "Intelligens biztonság",
                 "readMore": "További információ",
+                "image": {
+                    "title": "Intelligens biztonság",
+                    "description": "Intelligens érzékelési technológiákkal vértezi fel a számítógépet, védi az Ön magánéletét és adatait, valamint takarékosan bánik az akkumulátor töltöttségével."
+                },
+                "advancedSettings": {
+                    "showAdvSettings": "SPECIÁLIS BEÁLLÍTÁSOK",
+                    "hideAdvSettings": "SPECIÁLIS BEÁLLÍTÁSOK ELREJTÉSE"
+                },
                 "HumanPresenceDetection": {
                     "title": "Emberi jelenlét észlelése",
                     "tooltip": "Ide kattintva alaphelyzetbe állíthatja az emberi jelenlét észlelésének beállításait."
@@ -1864,6 +1876,11 @@
                     "title": "Érintés nélküli bejelentkezés",
                     "caption": "Amikor a felhasználó a számítógép előtt ül vagy a közelében van, a funkció automatikusan feloldja vagy felébreszti a számítógépet.",
                     "tooltip": "Ha a számítógéppel szemben áll vagy közeledik hozzá (1,2 méteres távolságon belül), ez a funkció lehetővé teszi, hogy az arcfelismerést követően a rendszer automatikusan beléptesse Önt. Ha a szabadban tartózkodik, nem pedig az irodában, közelebb kell mennie a számítógéphez, és az ébresztés hosszabb ideig tart."
+                },
+                "zeroTouchLoginForIdea": {
+                    "title": "Érintés nélküli bejelentkezés",
+                    "caption": "Ez a funkció képes automatikusan felébreszteni a számítógépet, sőt be is jelentkezteti Önt, így növeli a munka hatékonyságát. A funkció használatához regisztrálnia kell az arcát a Windows Hello alkalmazásban.",
+                    "tooltip": "Ha a számítógéppel szemben áll vagy közeledik hozzá (1,2 vagy 1,5 méter távolságon belül), ez a funkció lehetővé teszi, hogy az arcfelismerést követően a rendszer automatikusan beléptesse Önt. Ha a szabadban tartózkodik, nem pedig az irodában, közelebb kell mennie a számítógéphez, és az ébresztés hosszabb ideig tart. <br>A maximális érzékelési távolságot az érzékelő jellemzői határozzák meg. További információkat a számítógéphez kapott <i>Felhasználói kézikönyvben</i> talál."
                 },
                 "zeroTouchLock": {
                     "title": "Érintés nélküli zárolás",
@@ -1879,7 +1896,7 @@
                     },
                     "facialRecognition": {
                         "title": "ARCFELISMERÉS",
-                        "caption": "Engedélyezheti az arcfelismerési funkciót, és lehetővé teheti, hogy hozzáférjen a kamerához. Ez az eszköz rögzíti a képét annak érdekében, hogy pontosan felismerje jelenlétét, vagy észlelje, ha a készüléket felügyelet nélkül hagyta. Ezeket az adatokat helyben dolgozza fel az eszköz. A Lenovo nem fér hozzájuk, és nem használja fel őket.",
+                        "caption": "Ez a funkció elősegíti a felismerési teljesítmény javítását és a képernyő váratlan lezárásának elkerülését, ami különösen akkor következhet be, ha Ön hátradől a székben. A funkció által használt adatokat helyben dolgozza fel az eszköz. A Lenovo nem fér hozzájuk, és nem használja fel őket.",
                         "checkBox": "Kapcsolja be a kamerát, és engedélyezze a funkciót",
                         "note": {
                             "permission": "A Lenovo Vantage nem fér hozzá a kamerához. A jelölőnégyzet funkciója nem működik.",
@@ -1889,18 +1906,18 @@
                         }
                     },
                     "distanceSensitivityAdjusting": {
-                        "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                        "captionOn": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, you can maually adjust the dectecting sensitivity based on your preference.",
-                        "captionOff": "The accuracy varies by body size, posture, and frequency of movement. When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
+                        "title": "AZ ÉRZÉKELÉSI TÁVOLSÁG AUTOMATIKUS BEÁLLÍTÁSA",
+                        "captionOn": "A pontosság függ a testmérettől, a testtartástól és a mozgás gyakoriságától. Ha a számítógép váratlanul lezárul, Ön a saját preferenciáinak megfelelően manuálisan is beállíthatja az észlelés érzékenységét.",
+                        "captionOff": "A pontosság függ a testmérettől, a testtartástól és a mozgás gyakoriságától. Ha letiltja ezt a funkciót, manuálisan kell beállítania a kívánt érzékelési távolságnak megfelelő pontot az érzékenységet jelző sávon. Ha szeretné, hogy a rendszer automatikusan állítsa be a távolságot, kapcsolja be a funkciót.",
                         "options": {
-                            "near": "Near",
-                            "medium": "Middle",
-                            "far": "Far"
+                            "near": "Közel",
+                            "medium": "Közepes",
+                            "far": "Távol"
                         },
                         "readMore": {
-                            "line1": "• Near: 0.9 meter",
-                            "line2": "• Middle: 1.2 meter",
-                            "line3": "• Far: 1.5 meter"
+                            "line1": "• Közel: 0,9 méter",
+                            "line2": "• Közepes: 1,2 méter",
+                            "line3": "• Távol: 1,5 méter"
                         }
                     }
                 },
@@ -1924,17 +1941,38 @@
                         }
                     }
                 },
+                "distanceSensitivityAdjustingForIdea": {
+                    "title": "AZ ÉRZÉKELÉSI TÁVOLSÁG AUTOMATIKUS BEÁLLÍTÁSA",
+                    "captionOn": "Ha engedélyezi ezt a funkciót, a rendszer automatikusan beállítja a felébresztéshez szükséges mozgásérzékelési távolságot. Kapcsolja ki, ha szeretné manuálisan beállítani az érzékelési távolságot.",
+                    "captionOff": "Ha letiltja ezt a funkciót, manuálisan kell beállítania a kívánt érzékelési távolságnak megfelelő pontot az érzékenységet jelző sávon. Ha szeretné, hogy a rendszer automatikusan állítsa be a távolságot, kapcsolja be a funkciót.",
+                    "options": {
+                        "near": "Közel",
+                        "far": "Távol",
+                        "medium": "Közepes"
+                    },
+                    "readMore": "Három lehetőség közül választhat. A kiválasztott tartomány határozza meg, hogy milyen közelről észlelt emberi mozgások esetén ébredjen fel a képernyő.",
+                    "readMoreForSensor1": {
+                        "line1": "• Közel: 0–0,4 méter",
+                        "line2": "• Közepes: 0–0,6 méter",
+                        "line3": "• Távol: 0–1,2 méter"
+                    },
+                    "readMoreForSensor2": {
+                        "line1": "• Közel: 0,2–0,55 méter",
+                        "line2": "• Közepes: 0,2–1,0 méter",
+                        "line3": "• Távol: 0,2–1,5 méter"
+                    }
+                },
                 "note": {
                     "description1": "A funkcióhoz a Windows Hello szükséges. Ellenőrizze, hogy az arcfelismerés be van-e kapcsolva a Windows beállításai között.",
                     "description2": "A funkció érzékelőkkel és kamerával észleli az Ön jelenlétét. A funkció azonban NEM gyűjt személyes adatokat.",
-                    "description3": "1. Ha a számítógép sátor, táblagép vagy álló üzemmódban van, előfordulhat, hogy ezek a funkciók nem működnek megfelelően.",
-                    "description4": "2. Ha a számítógép hibernált módban van, vagy ki van kapcsolva, az érintés nélküli bejelentkezés nem működik.",
-                    "description6": "4. Ha a számítógépen bekapcsolta a Repülőgép üzemmódot, ezek a funkciók nem használhatók.",
-                    "description7": "A pontosság függ a testmérettől, a testtartástól és a mozgás gyakoriságától. Ha a számítógép váratlanul zárolódik, állítsa be az érzékenységi sávot a pontosság javítása érdekében.",
-                    "description5a1": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to ",
-                    "description5a2": "User Guide ",
-                    "description5a3": "that comes with it.",
-                    "description5b": "b. Your computer is in hibernation mode or has been turned off."
+                    "description3": "1. A fenti funkciók használatához állítsa a megfelelő szögbe a képernyőt, hogy a rendszer fel tudja ismerni az Ön arcát.",
+                    "description4": "2. A fenti funkciók nem támogatottak a következő esetekben:",
+                    "description5a1": "a. A számítógép Sátor, Álló vagy Tablet módban vagy Leválasztott módban van. Az Ön számítógépe által támogatott módokat kapcsolatban lásd: ",
+                    "description5a2": "Felhasználói kézikönyv ",
+                    "description5a3": ".",
+                    "description5b": "b. Ha a számítógép hibernált módban van vagy ki van kapcsolva.",
+                    "description6": "3. Ha a számítógépen bekapcsolta a Repülőgép üzemmódot, ezek a funkciók nem használhatók.",
+                    "description7": "A pontosság függ a testmérettől, a testtartástól és a mozgás gyakoriságától. Ha a számítógép váratlanul zárolódik, állítsa be az érzékenységi sávot a pontosság javítása érdekében."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Ugrás a Windows Hello beállításaihoz",
@@ -1943,40 +1981,6 @@
                 "resetToDefault": "Visszaállítás",
                 "sensitivityAdjusting": {
                     "title": "ÉRZÉKENYSÉG BEÁLLÍTÁS"
-                },
-                "image": {
-                    "title": "Intelligent security",
-                    "description": "Buckles up your PC with intelligent sensing technology, protects your privacy, and saves your battery power."
-                },
-                "advancedSettings": {
-                    "showAdvSettings": "ADVANCED SETTINGS",
-                    "hideAdvSettings": "HIDE ADVANCED SETTINGS"
-                },
-                "zeroTouchLoginForIdea": {
-                    "title": "Zero Touch Login",
-                    "caption": "This feature enables you to improve the work efficiency by automatically waking up or logging in your computer. To use the feature, you need to register your face in Windows Hello.",
-                    "tooltip": "When you are in front of your computer or approaching it (within 1.2 or 1.5 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer. <br>Depending on the sensor capability, the maximum detecting distance varies. Refer to the <i>User Guide</i> that comes with your computer for details."
-                },
-                "distanceSensitivityAdjustingForIdea": {
-                    "title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                    "captionOn": "Enable this feature to automatically adjust the detecting distance of movements to wake up the system. Turn it off to manually adjust the detecting sensitivity based on your preference.",
-                    "captionOff": "When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
-                    "options": {
-                        "near": "Near",
-                        "medium": "Middle",
-                        "far": "Far"
-                    },
-                    "readMore": "There are three options. In each range, when human movements are detected, your screen will be waked up accordingly.",
-                    "readMoreForSensor1": {
-                        "line1": "• Near: 0-0.4 meter",
-                        "line2": "• Middle: 0-0.6 meter",
-                        "line3": "• Far: 0-1.2 meter"
-                    },
-                    "readMoreForSensor2": {
-                        "line1": "• Near: 0.2-0.55 meter",
-                        "line2": "• Middle: 0.2-1.0 meter",
-                        "line3": "• Far: 0.2-1.5 meter"
-                    }
                 }
             },
             "intelligentScreen": {
@@ -2048,13 +2052,59 @@
             "superResolution": {
                 "heading": "Intelligens média",
                 "title": "Videófelbontás megnövelése",
-                "desc": "<p><label>Ez a szolgáltatás fokozza a videó lejátszásának élményét azáltal, hogy javítja a videófelbontást. Különösen akkor működik, ha a videó rossz felbontású.</label></p> <p style='margin-top:4px;'><label>Ez a funkció befolyásolhatja az akkumulátor élettartamát és hőmérsékletét, továbbá zajt kelthet. Kérjük, ne használja DC üzemmódban. Ellenkező esetben felgyorsítja az energiafogyasztást és lerövidíti az akkumulátor élettartamát.</label></p>",
-                "tooltip": "Ez a funkció csak a következőkön működik:<br>Windows Media player",
+                "desc": "<p><label>Ez a funkció növeli a videók felbontását, és ezzel élvezetesebbé teszi a videók megtekintését. Különösen akkor hasznos, ha a videó felbontása alacsony.</label></p> <p style='margin-top:4px;'><label>Ez a funkció befolyásolhatja az akkumulátor élettartamát és hőmérsékletét, továbbá zajt kelthet. Ne használja DC üzemmódban (a rendszer akkumulátorról üzemel). Ellenkező esetben felgyorsítja az energiafogyasztást és lerövidíti az akkumulátor élettartamát.</label></p>",
+                "tooltip": "Ez a funkció kizárólag a következő videolejátszókkal működik:<br>Windows Media Player<br>Chrome<br>Filmek+TV<br>PotPlayer<br>GOM player<br>Böngészőalapú lejátszók (például Chrome)<br><br>A számítógéphez kapott Felhasználói kézikönyvből megtudhatja, hogyan lehet bekapcsolni a funkciót a PotPlayer és a GOM player esetében.",
                 "note": {
                     "description": "A funkció az alábbi esetekben nem működik:",
-                    "description1": "A számítógép nem csatlakozik a hálózati tápellátáshoz.",
-                    "description2": "Az Akkumulátorkímélő kód engedélyezve van.",
-                    "description3": "A processzor hőmérséklete túl magas."
+                    "description1": "Az Akkumulátorkímélő mód engedélyezve van.",
+                    "description2": "A processzor hőmérséklete túl magas."
+                }
+            },
+            "antiTheft": {
+                "heading": "Intelligens észlelés",
+                "title": "Intelligens mozgásérzékeléses riasztás",
+                "desc": "<p><label>Ha bekapcsolja ezt a funkciót, az eszköz sípoló riasztást ad ki, amikor a képernyő zárolva van, és mozgást észlel a közelében. Ez különösen nyilvános helyeken lehet hasznos.</label></p> <p style='margin-top:4px;'><label>A riasztás némításához írja be a jelszót, vagy jelentkezzen be a Windows Hello segítségével.</label></p>",
+                "note": {
+                    "description": "Ha sikerült bejelentkeznie a rendszerbe, a funkció automatikusan kikapcsol. Ha szeretné ismét használni, Önnek újra be kell kapcsolnia."
+                },
+                "alarm": {
+                    "title": " A RIASZTÁS ENNYI IDEIG SZÓL:",
+                    "option1": "10 másodperc",
+                    "option2": "20 másodperc",
+                    "option3": "30 másodperc",
+                    "option4": "1 perc",
+                    "option5": "Kikapcsolásig nem áll le"
+                },
+                "allowCamera": {
+                    "title": "FÉNYKÉP KÉSZÍTÉSE",
+                    "describe": "Ha bekapcsolja ezt a funkciót, a fényképezőgép automatikusan fényképeket készít, amikor a rendszer zárolt képernyő mellett mozgást észlel a közelben. Ezeket az adatokat helyben dolgozza fel az eszköz. A Lenovo nem fér hozzájuk, és nem használja fel őket.",
+                    "checkBoxText": "A funkció engedélyezése"
+                },
+                "cameraPrivacy": {
+                    "describe": "A Lenovo Vantage kamera adatvédelmi módja be van kapcsolva. A jelölőnégyzet funkciója nem működik.",
+                    "linkText": "Lépjen a Kamera adatvédelmi módba, hogy kikapcsolja"
+                },
+                "authorizedAccess": {
+                    "describe": "A Lenovo Vantage nem fér hozzá a kamerához. A jelölőnégyzet funkciója nem működik.",
+                    "linkText": "A Windows beállításaiban adhatja meg a hozzáférést"
+                },
+                "photo": {
+                    "title": "MOZGÁS ÉRZÉKELÉSE ESETÉN KÉSZÍTETT FÉNYKÉPEK SZÁMA",
+                    "tooltip": "Amikor a rendszer mozgást észlel, a számítógép fényképezője automatikusan aktiválódik és fényképeket készít. A rendszer 2 másodpercenként készít képet, amelyeket a helyi tárhelyre ment.",
+                    "option1": "5",
+                    "option2": "10",
+                    "option3": "15",
+                    "option4": "20",
+                    "option5": "25",
+                    "option6": "30"
+                },
+                "showPhoto": {
+                    "title": "A FÉNYKÉPEK:",
+                    "link": "Fényképek megtekintése"
+                },
+                "fileAuthorizationTips": {
+                    "content": "A Lenovo Vantage nem fér hozzá a fájlrendszerhez.",
+                    "link": "A Windows beállításaiban adhatja meg a hozzáférést"
                 }
             },
             "voice": {
@@ -2655,7 +2705,7 @@
         },
         "question1": {
             "title": "Fájlok biztonsági mentése és visszaállítása",
-            "description": "<div>    <div class='faqInFs4Fb'>        Fájlok biztonsági mentése és visszaállítása    </div>    <hr />    <div class='faqInMb7'>        Mindig érdemes biztonsági mentést készíteni. Tárolja a fájljai másolatát egy másik meghajtón arra az esetre, ha valami történne az eredetikkel.    </div>    <div class='faqInFs3Fb'>        A biztonsági mentés beállítása    </div>    <hr />    <div class='mb-5'>        Kattintson a <span class='faqInFb'>Start</span> gombra, és válassza a <span class='faqInFb'>Gépház</span> > <span class='faqInFb'>Frissítés és biztonság</span> > <span class='faqInFb'>Biztonsági mentés</span> > <span class='faqInFb'>Meghajtó felvétele</span> lehetőséget, majd válasszon ki egy külső meghajtót vagy hálózati helyet a biztonsági mentések számára.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Kész is van. Minden órában biztonsági másolatot készítünk a felhasználói mappája (C:\\\\Users\\\\username) teljes tartalmáról. Ha módosítani szeretné, hogy melyik fájlokról készüljön biztonsági másolat, vagy meg szeretné változtatni a mentések nyissa meg a <span class='faqInFb'>További lehetőségek</span> menüpontot.    </div>    <div class='faqInFs3Fb'>        A fájlok visszaállítása    </div>    <div class='mb-5'>        Ha hiányzik egy fontos fájl vagy mappa, itt láthatja, hogyan lehet visszaállítani:    </div>    <div>        <div class='mb-3'>1. Írja be a <span class='faqInFb'>Fájlok visszaállítása</span> kifejezést a tálcán található keresőmezőbe, majd válassza a <span class='faqInFb'>Fájlok visszaállítása a Fájlelőzmények szolgáltatással</span> lehetőséget.</div>        <div class='mb-3'>2. Keresse meg a hiányzó fájlt, majd a nyílbillentyűk segítségével tekintse meg a verzióit</div>        <div class='mb-3'>3. Ha megtalálta a kívánt verziót, válassza a <span class='faqInFb'>Visszaállítás</span> lehetőséget a fájl eredeti helyre mentéséhez. Ha másik helyre szeretné menteni, tartsa nyomva a <span class='faqInFb'>Visszaállítás</span> lehetőséget (vagy kattintson rá a jobb gombbal), és válassza a <span class='faqInFb'>Visszaállítás máshova</span> parancsot, majd válassza ki az új helyet.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Fájlok biztonsági mentése és visszaállítása    </div>    <hr />    <div class='faqInMb7'>        Mindig érdemes biztonsági mentést készíteni. Tárolja a fájljai másolatát egy másik meghajtón arra az esetre, ha valami történne az eredetikkel.    </div>    <div class='faqInFs3Fb'>        A biztonsági mentés beállítása    </div>    <hr />    <div class='mb-5'>        Kattintson a <span class='faqInFb'>Start</span> gombra, és válassza a <span class='faqInFb'>Gépház</span> > <span class='faqInFb'>Frissítés és biztonság</span> > <span class='faqInFb'>Biztonsági mentés</span> > <span class='faqInFb'>Meghajtó felvétele</span> lehetőséget, majd válasszon ki egy külső meghajtót vagy hálózati helyet a biztonsági mentések számára.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Kész is van. Minden órában biztonsági másolatot készítünk a felhasználói mappája (C:\\Users\\az Ön felhasználóneve) teljes tartalmáról. Ha módosítani szeretné, hogy melyik fájlokról készüljön biztonsági másolat, vagy meg szeretné változtatni a mentések nyissa meg a <span class='faqInFb'>További lehetőségek</span> menüpontot.    </div>    <div class='faqInFs3Fb'>        A fájlok visszaállítása    </div>    <div class='mb-5'>        Ha hiányzik egy fontos fájl vagy mappa, itt láthatja, hogyan lehet visszaállítani:    </div>    <div>        <div class='mb-3'>1. Írja be a <span class='faqInFb'>Fájlok visszaállítása</span> kifejezést a tálcán található keresőmezőbe, majd válassza a <span class='faqInFb'>Fájlok visszaállítása a Fájlelőzmények szolgáltatással</span> lehetőséget.</div>        <div class='mb-3'>2. Keresse meg a hiányzó fájlt, majd a nyílbillentyűk segítségével tekintse meg a verzióit</div>        <div class='mb-3'>3. Ha megtalálta a kívánt verziót, válassza a <span class='faqInFb'>Visszaállítás</span> lehetőséget a fájl eredeti helyre mentéséhez. Ha másik helyre szeretné menteni, tartsa nyomva a <span class='faqInFb'>Visszaállítás</span> lehetőséget (vagy kattintson rá a jobb gombbal), és válassza a <span class='faqInFb'>Visszaállítás máshova</span> parancsot, majd válassza ki az új helyet.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -3036,15 +3086,15 @@
             "science": "Tudomány"
         },
         "gaming": {
-            "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
-            "gamingFeature1": "-Computer status monitor",
-            "gamingFeature2": "-Performance mode & overclocking",
-            "gamingFeature3": "-Lighting",
-            "gamingFeature4": "-Network Boost",
-            "gamingFeature5": "-Auto Close",
-            "gamingOnly": "Gaming",
-            "gamingAndWork": "Gaming & Work",
-            "nonGaming": "Non-Gaming"
+            "gamingDescription": "A Vantage játékosoknak szánt verziójával egyszerűen hozzáférhet a lehető legjobb játékélményhez. Az általános lehetőségek mellett a következő funkciók is elérhetőek (az azokat támogató rendszereken):",
+            "gamingFeature1": "-Számítógépállapot-figyelő",
+            "gamingFeature2": "-Teljesítményközpontú üzemmód és túlpörgetés",
+            "gamingFeature3": "-Világítás",
+            "gamingFeature4": "-Hálózat erősítése",
+            "gamingFeature5": "-Automatikus bezárás",
+            "gamingOnly": "Játékok",
+            "gamingAndWork": "Játék és munka",
+            "nonGaming": "Nem játékra szánt"
         }
     },
     "settings": {
@@ -3068,7 +3118,8 @@
         "settingsNotes": "Kérjük, indítsa újra ezt az alkalmazást, hogy a módosítások életbe lépjenek.",
         "betaSettingTitle": "Bétaprogram",
         "betaProgram": "Bétaprogram",
-        "betaSettingDescription": "Próbálja ki a legújabb funkciókat, amelyeken dolgozunk."
+        "betaSettingDescription": "Próbálja ki a legújabb funkciókat, amelyeken dolgozunk.",
+        "betaSettingNewDescription": "Örömünkre szolgál, hogy meghívhatjuk Önt a Smart Performance bétaprogramjába. Ez a szolgáltatás a következő módszerekkel növeli számítógépe teljesítményét:<br/><ul class='pl-4'><li>Proaktívan észleli a bugokat és optimalizálja a beállításokat.</li><li>A hálózat és a böngésző optimalizálásával jobb internetezési élményt kínál.</li><li>A meglévő víruskereső program használata nélkül is képes gyors ellenőrzést végezni, és kijavítani az észlelt problémákat.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Mégse",
@@ -3991,6 +4042,10 @@
                 "readMore": "Továbbiak",
                 "readLess": "Kevesebb"
             }
+        },
+        "narrator": {
+            "leftArrow": "Bal nyíl",
+            "rightArrow": "Jobb nyíl"
         }
     },
     "dcc": {
@@ -4012,5 +4067,10 @@
     },
     "cpt": {
         "title": "Content Preview Tool"
+    },
+    "storeRating": {
+        "title": "Ossza meg velünk a véleményét!",
+        "likeUs": "Kedvelés",
+        "feedback": "Visszajelzés küldése"
     }
 }
