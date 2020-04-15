@@ -1311,13 +1311,13 @@
 											<div class="row px-0">
 												<div class="navbar bkg-transparent justify-content-between w-100">
 
-													<div class="title-block col">
+													<div class="title-block">
 														<h3>{{'smartPerformance.subscriberScanHomePage.scanSummary.title' |translate }}</h3>
 														<p>{{'smartPerformance.subscriberScanHomePage.scanSummary.description' |translate }}</p>
 													</div>
 
 
-													<div class="summary-period col pr-0">
+													<div class="summary-period">
 														<ul class="list-group list-group-horizontal">
 															<li class="list-group-item" *ngFor="let item of menuItems;let ind=index"
 																(click)="scanSummaryTime(ind)" [ngClass]="{'selected-list-item': tabIndex === ind}">

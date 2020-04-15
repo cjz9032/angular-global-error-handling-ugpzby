@@ -36,7 +36,9 @@
 				metricsParent="{{metricsParent}}"
 				(click)="openLocation($event)"
 				[innerHTML]="'homeSecurity.tour.allow' | translate"
-				title="{{'homeSecurity.tour.allow' | translate}}">
+				title=""
+				[ngbTooltip]="'homeSecurity.tour.allow' | translate" tooltipClass="vtr-tooltip" container="body"
+				>
 			</button>
 			<button class="modal-button cancel-btn"
 				id="chs-tour-btn-cancelLocation"
@@ -46,7 +48,9 @@
 				metricsParent="{{metricsParent}}"
 				(click)="closeModal()"
 				[innerHTML]="'homeSecurity.tour.notNow' | translate"
-				title="{{'homeSecurity.tour.notNow' | translate}}">
+				title=""
+				[ngbTooltip]="'homeSecurity.tour.notNow' | translate" tooltipClass="vtr-tooltip" container="body"
+				>
 			</button>
 		</div>
 	</div>

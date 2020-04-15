@@ -41,6 +41,25 @@
 					text-decoration: none;
 					background-color: $shade_extralight;
 				}
+
+				@media #{$high-contrast} {
+					&:focus {
+						outline: 0.1rem solid currentColor;
+					}
+				}
+			
+				@media #{$black-on-white} {
+					&:focus {
+						outline: 0.1rem solid $dark;
+					}
+				}
+			
+				@media #{$white-on-black} {
+					&:focus {
+						outline: 0.1rem solid $light;
+					}
+				}
+
 			}
 
 			.item-icon {

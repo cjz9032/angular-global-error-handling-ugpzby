@@ -1685,7 +1685,9 @@
                         },
                         "subSectionTwo": {
                             "title": "Отмена основной функции по умолчанию",
-                            "description": "Если включена, основная функция по умолчанию будет изменена с заводских настроек на противоположные. Перезагрузите компьютер, чтобы эти изменения вступили в силу."
+                            "description": "Если включена, основная функция по умолчанию будет изменена с заводских настроек на противоположные. Перезагрузите компьютер, чтобы эти изменения вступили в силу.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "Использование комбинаций с клавишей Fn",
@@ -2052,12 +2054,59 @@
             "superResolution": {
                 "heading": "Интеллектуальная работа с мультимедиа",
                 "title": "Масштабирование разрешения видео",
-                "desc": "<p><label>Эта функция улучшает качество воспроизведения видео, повышая разрешение видео.Ее действие особо заметно при низком разрешении видео.</label></p> <p style='margin-top:4px;'><label>Эта функция может повлиять на время работы и температуру аккумулятора, а также привести к возникновению шума. Не используйте ее в режиме DC. В противном случае увеличится энергопотребление и сократится время работы аккумулятора.</label></p>",
-                "tooltip": "Эта функция работает только на следующих устройствах:<br>Windows Media player",
+                "desc": "<p><label>Эта функция повышает качество воспроизведения видео, увеличивая его разрешение. Ее действие особенно заметно при низком разрешении видео.</label></p> <p style='margin-top:4px;'><label>Эта функция может повлиять на время работы и температуру аккумулятора, а также привести к возникновению шума. Не используйте ее в режиме DC (режим работы от аккумулятора). В противном случае увеличится энергопотребление и сократится время работы аккумулятора.</label></p>",
+                "tooltip": "Эта функция работает только в следующих видеопроигрывателях:<br>Проигрыватель Windows Media<br>Chrome<br>Кино и ТВ<br>PotPlayer<br>GOM Player<br>Проигрыватели на основе веб-браузеров (например, Chrome)<br><br>Инструкции по включению этой функции в проигрывателях PotPlayer и GOM Player см. в Руководстве пользователя из комплекта поставки вашего компьютера.",
                 "note": {
                     "description": "Эта функция не работает, если:",
-                    "description1": "Компьютер не подключен к сети переменного тока.",
-                    "description2": "Включен режим экономии заряда аккумулятора."
+                    "description1": "Включен режим экономии заряда аккумулятора.",
+                    "description2": "температура процессора слишком высокая."
+                }
+            },
+            "antiTheft": {
+                "heading": "Интеллектуальное распознавание",
+                "title": "Интеллектуальное оповещение о движении",
+                "desc": "<p><label>Если эта функция включена, устройство будет подавать звуковой сигнал при заблокированном экране, если обнаружено движение, особенно в общественных местах.</label></p> <p style='margin-top:4px;'><label>Чтобы отключить сигнал, введите правильный пароль или войдите в систему с помощью Windows Hello.</label></p>",
+                "note": {
+                    "description": "После успешного входа в систему эта функция будет автоматически отключена. Для использования ее нужно снова включить."
+                },
+                "alarm": {
+                    "title": " ДЛИТЕЛЬНОСТЬ ЗВУКОВОГО СИГНАЛА",
+                    "option1": "10 секунд",
+                    "option2": "20 секунд",
+                    "option3": "30 секунд",
+                    "option4": "1 минута",
+                    "option5": "Бесконечно"
+                },
+                "allowCamera": {
+                    "title": "ФОТОФИКСАЦИЯ",
+                    "describe": "Если эта функция включена, камера будет автоматически делать снимки при заблокированном экране, если обнаружено движение. Эти данные обрабатываются локально, на вашем устройстве. Lenovo не имеет к ним доступа и не использует их.",
+                    "checkBoxText": "Включить эту функцию"
+                },
+                "cameraPrivacy": {
+                    "describe": "Для камеры Lenovo Vantage включен режим конфиденциальности. Обозначенная флажком функция не будет работать.",
+                    "linkText": "Перейдите в режим конфиденциальности на камере, чтобы отключить функцию"
+                },
+                "authorizedAccess": {
+                    "describe": "У Lenovo Vantage нет доступа к камере. Обозначенная флажком функция не будет работать.",
+                    "linkText": "Перейдите в раздел параметров Windows, чтобы предоставить доступ"
+                },
+                "photo": {
+                    "title": "КОЛИЧЕСТВО СНИМКОВ ПРИ ОБНАРУЖЕНИИ ДВИЖЕНИЯ",
+                    "tooltip": "Камера в компьютере автоматически активируется и делает снимки при обнаружении движения. Снимки делаются каждые две секунды и сохраняются на локальном устройстве хранения данных.",
+                    "option1": "5",
+                    "option2": "10",
+                    "option3": "15",
+                    "option4": "20",
+                    "option5": "25",
+                    "option6": "30"
+                },
+                "showPhoto": {
+                    "title": "СДЕЛАННЫЕ СНИМКИ:",
+                    "link": "Просмотреть фотографии"
+                },
+                "fileAuthorizationTips": {
+                    "content": "У Lenovo Vantage нет доступа к файловой системе.",
+                    "link": "Перейдите в раздел параметров Windows, чтобы предоставить доступ"
                 }
             },
             "voice": {
@@ -2091,53 +2140,6 @@
                     "btnText": "ОК",
                     "title": "Сбой установки",
                     "desc": "Повторите попытку позже, чтобы воспользоваться Lenovo Voice."
-                }
-            },
-            "antiTheft": {
-                "heading": "Intelligent Sensing",
-                "title": "Smart Motion Alert",
-                "desc": "<p><label>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</label></p> <p style='margin-top:4px;'><label>To dismiss the alarm, enter the correct password or log in by Windows Hello.</label></p>",
-                "note": {
-                    "description": "Once you log in the system successfully, this feature will be turned off automatically. You need to enable it again to use it."
-                },
-                "alarm": {
-                    "title": " THE ALARM WILL LAST FOR",
-                    "option1": "10 seconds",
-                    "option2": "20 seconds",
-                    "option3": "30 seconds",
-                    "option4": "1 minute",
-                    "option5": "Never stop"
-                },
-                "allowCamera": {
-                    "title": "TATING PHOTOS",
-                    "describe": "When enabling this feature, the camera takes photos automatically when detecting any movement if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
-                    "checkBoxText": "Enable this feature"
-                },
-                "cameraPrivacy": {
-                    "describe": "Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
-                    "linkText": "Go to Camera privacy mode to turn it off"
-                },
-                "authorizedAccess": {
-                    "describe": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
-                    "linkText": "Go to Windows Settings to give access"
-                },
-                "photo": {
-                    "title": "THE NUMBER OF PHOTOS TAKEN DURING THE MOVEMENT",
-                    "tooltip": "The camera on your computer automatically activates to take pictures when movements are detected. Pictures are taken every 2 seconds and are saved to your local storage.",
-                    "option1": 5,
-                    "option2": 10,
-                    "option3": 15,
-                    "option4": 20,
-                    "option5": 25,
-                    "option6": 30
-                },
-                "showPhoto": {
-                    "title": "PHOTOS HAVE BEEN:",
-                    "link": "View photos"
-                },
-                "fileAuthorizationTips": {
-                    "content": "Lenovo Vantage doesn't have access to the file system.",
-                    "link": "Go to Windows Settings to give access"
                 }
             }
         }
@@ -2705,7 +2707,7 @@
         },
         "question1": {
             "title": "Резервное копирование и восстановление файлов",
-            "description": "<div>    <div class='faqInFs4Fb'>        Резервное копирование и восстановление файлов    </div>    <hr />    <div class='faqInMb7'>        Всегда хорошо иметь резервную копию. Сохраните копии своих файлов на другом диске на случай, если что-то случится с оригиналами.    </div>    <div class='faqInFs3Fb'>        Настройка резервного копирования    </div>    <hr />    <div class='mb-5'>        Нажмите кнопку <span class='faqInFb'>Пуск</span>, выберите <span class='faqInFb'>Параметры</span> > <span class='faqInFb'>Обновление и безопасность</span> > <span class='faqInFb'>Резервное копирование</span> > <span class='faqInFb'>Добавление диска</span> и выберите внешний диск или расположение в сети для файлов резервной копии.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Все готово. Каждый час будет выполняться резервное копирование всех данных в папке пользователя (C:\\\\Users\\\\username). Чтобы изменить файлы для резервного копирования или частоту их резервного копирования, перейдите в раздел <span class='faqInFb'>Больше параметров</span>.    </div>    <div class='faqInFs3Fb'>        Восстановление файлов    </div>    <div class='mb-5'>        Если вам нужен важный файл или папка, восстановите их следующим образом:    </div>    <div>        <div class='mb-3'>1. Введите <span class='faqInFb'>Восстановить файлы</span> в поле поиска на панели задач и выберите <span class='faqInFb'>Восстановление файлов с помощью истории файлов</span>.</div>        <div class='mb-3'>2. Найдите нужный файл, затем просмотрите все его версии с помощью стрелок</div>        <div class='mb-3'>3. После выбора нужной версии нажмите <span class='faqInFb'>Восстановить</span>, чтобы сохранить ее в исходном расположении. Чтобы сохранить файл в другом месте, нажмите и удерживайте (или щелкните правой кнопкой мыши) <span class='faqInFb'>Восстановить</span>, щелкните <span class='faqInFb'>Восстановить в</span>, а затем выберите новое расположение.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Резервное копирование и восстановление файлов    </div>    <hr />    <div class='faqInMb7'>        Всегда хорошо иметь резервную копию. Сохраните копии своих файлов на другом диске на случай, если что-то случится с оригиналами.    </div>    <div class='faqInFs3Fb'>        Настройка резервного копирования    </div>    <hr />    <div class='mb-5'>        Нажмите кнопку <span class='faqInFb'>Пуск</span>, выберите <span class='faqInFb'>Параметры</span> > <span class='faqInFb'>Обновление и безопасность</span> > <span class='faqInFb'>Резервное копирование</span> > <span class='faqInFb'>Добавление диска</span> и выберите внешний диск или расположение в сети для файлов резервной копии.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Все готово. Каждый час будет выполняться резервное копирование всех данных в папке пользователя (C:\\Users\\ваше имя пользователя). Чтобы изменить файлы для резервного копирования или частоту их резервного копирования, перейдите в раздел <span class='faqInFb'>Больше параметров</span>.    </div>    <div class='faqInFs3Fb'>        Восстановление файлов    </div>    <div class='mb-5'>        Если вам нужен важный файл или папка, восстановите их следующим образом:    </div>    <div>        <div class='mb-3'>1. Введите <span class='faqInFb'>Восстановить файлы</span> в поле поиска на панели задач и выберите <span class='faqInFb'>Восстановление файлов с помощью истории файлов</span>.</div>        <div class='mb-3'>2. Найдите нужный файл, затем просмотрите все его версии с помощью стрелок</div>        <div class='mb-3'>3. После выбора нужной версии нажмите <span class='faqInFb'>Восстановить</span>, чтобы сохранить ее в исходном расположении. Чтобы сохранить файл в другом месте, нажмите и удерживайте (или щелкните правой кнопкой мыши) <span class='faqInFb'>Восстановить</span>, щелкните <span class='faqInFb'>Восстановить в</span>, а затем выберите новое расположение.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -3118,7 +3120,8 @@
         "settingsNotes": "Перезапустите это приложение, чтобы все изменения вступили в силу.",
         "betaSettingTitle": "Программа бета-тестирования",
         "betaProgram": "Программа бета-тестирования",
-        "betaSettingDescription": "Опробуйте новейшие функции, над которыми мы работаем."
+        "betaSettingDescription": "Опробуйте новейшие функции, над которыми мы работаем.",
+        "betaSettingNewDescription": "Мы рады приветствовать вас в программе бета-тестирования функции интеллектуального управления производительностью. Эта функция помогает увеличить производительность компьютера следующими способами:<br/><ul class='pl-4'><li>Упреждающее выявление ошибок и оптимизация параметров.</li><li>Повышение скорости подключения к Интернету благодаря оптимизации работы сети и браузера.</li><li>Выполнение быстрых проверок и внесение исправлений без использования существующей антивирусной программы.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Отмена",
@@ -4043,8 +4046,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "Стрелка влево",
+            "rightArrow": "Стрелка вправо"
         }
     },
     "dcc": {

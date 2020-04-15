@@ -211,13 +211,17 @@ export class UserDefinedKeyComponent implements OnInit {
 						if (applicationOrFile === '4') {
 							const applicationList = { value: applicationValue, key: applicationKey };
 							if (this.applicationList.find((test) => test.key === applicationKey) === undefined) {
-								this.applicationList.push(applicationList);
+								if (applicationValue.length) {
+									this.applicationList.push(applicationList);
+								}
 							}
 						}
 						else {
 							const fileList = { value: applicationValue, key: applicationKey };
 							if (this.fileList.find((test) => test.key === applicationKey) === undefined) {
-								this.fileList.push(fileList);
+								if (applicationValue.length) {
+									this.fileList.push(fileList);
+								}
 							}
 						}
 					}).catch(error => {

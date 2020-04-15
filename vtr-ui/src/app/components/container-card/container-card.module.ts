@@ -9,6 +9,7 @@ import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons/faArrowRight';
 import { TranslationModule } from 'src/app/modules/translation.module';
 import { ContainerCardOfflineComponent } from './container-card-offline/container-card-offline.component';
+import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ContainerCardOfflineComponent } from './container-card-offline/containe
 		MetricsModule,
 		FontAwesomeModule,
 		SanitizeModule,
-		AppSearchModule
+		AppSearchModule,
+		NgbTooltipModule
 	],
 	exports: [
 		ContainerCardComponent

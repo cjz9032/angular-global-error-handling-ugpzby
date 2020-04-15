@@ -43,7 +43,8 @@
 	}
 
 	&:focus {
-		outline: 0.1rem solid $menu_hover;
+		outline: none;
+		border: 0.1rem solid $menu_hover;
 	}
 
 	@media #{$high-contrast} {

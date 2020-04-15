@@ -102,11 +102,12 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		}
 		// battery not detected
 		if (maininfo.status === 0) {
+			this.batteryIndicator.batteryNotDetected = true;
+			this.disableBatteryDetails = true;
 			this.batteryConditions[0] = new BatteryConditionModel(BatteryConditionsEnum.NotDetected, BatteryStatus.Poor);
 			maininfo.percentage = 0;
 			this.batteryIndicator.percent = 0;
-			this.batteryIndicator.batteryNotDetected = true;
-			this.disableBatteryDetails = true;
+			this.setConditionTips();
 		}
 		this.batteryIndicator.convertMin(time);
 		this.batteryIndicator.timeText = timetype;
@@ -140,6 +141,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		this.isThinkPad = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType) === 1;
+		this.getBatteryDetailOnCard();
 
 		// temp
 		this.updateMainBatteryTime();
@@ -156,7 +158,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.isWinRTLoading = false;
 		// temp
 		this.registerBatteryEvents();
-		this.getBatteryDetailOnCard();
 
 		this.getBatterySettings();
 
@@ -331,14 +332,13 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		}
 
 		const powerDriverStatus = this.batteryGauge.isPowerDriverMissing;
+		this.disableBatteryDetails = powerDriverStatus ||
+			this.batteryIndicator.batteryNotDetected || batteryErrorCount === this.batteryInfo.length;
 		if (powerDriverStatus !== this.batteryService.isPowerDriverMissing) {
-			this.batteryService.isPowerDriverMissing = this.batteryGauge.isPowerDriverMissing;
+			this.batteryService.isPowerDriverMissing = powerDriverStatus;
 			this.getBatterySettings();
 			this.commonService.sendNotification('IsPowerDriverMissing', this.batteryService.isPowerDriverMissing);
 		}
-
-		this.disableBatteryDetails = this.batteryService.isPowerDriverMissing ||
-			this.batteryIndicator.batteryNotDetected || batteryErrorCount === this.batteryInfo.length;
 
 		this.batteryIndicator.percent = this.batteryGauge.percentage;
 		this.batteryService.gaugePercent = this.batteryGauge.percentage;
@@ -474,6 +474,16 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		});
 	}
 
+	private getBatterySettings() {
+		if (this.isThinkPad) {
+			this.getBatteryThresholdInformation();
+			this.getAirplaneModeCapabilityThinkPad();
+		} else {
+			// this.getConservationModeStatusIdeaPad();
+			this.getRapidChargeModeStatusIdeaPad();
+		}
+	}
+
 	public getBatteryThresholdInformation() {
 		this.logger.info('Before getBatteryThresholdInformation');
 		if (this.powerService.isShellAvailable) {
@@ -485,16 +495,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				this.logger.error('getBatteryThresholdInformation :: error', error.message);
 				return EMPTY;
 			});
-		}
-	}
-
-	private getBatterySettings() {
-		if (this.isThinkPad) {
-			this.getBatteryThresholdInformation();
-			this.getAirplaneModeCapabilityThinkPad();
-		} else {
-			// this.getConservationModeStatusIdeaPad();
-			this.getRapidChargeModeStatusIdeaPad();
 		}
 	}
 

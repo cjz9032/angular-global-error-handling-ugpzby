@@ -1685,7 +1685,9 @@
                         },
                         "subSectionTwo": {
                             "title": "Umkehrung der primären Standardfunktion",
-                            "description": "Wenn diese Option eingeschaltet ist, wird die primäre Standardfunktion von den Werkseinstellungen auf die entgegengesetzte Einstellung geändert. Starten Sie den Computer neu, damit die Änderungen wirksam werden."
+                            "description": "Wenn diese Option eingeschaltet ist, wird die primäre Standardfunktion von den Werkseinstellungen auf die entgegengesetzte Einstellung geändert. Starten Sie den Computer neu, damit die Änderungen wirksam werden.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "So verwenden Sie Fn-Tastenkombinationen",
@@ -2052,12 +2054,59 @@
             "superResolution": {
                 "heading": "Intelligente Medien",
                 "title": "Upscaling der Videoauflösung",
-                "desc": "<p><label>Mit dieser Funktion wird die Videowiedergabe durch Verbesserung der Videoauflösung verbessert, insbesondere bei Videos mit schlechter Auflösung.</label></p> <p style='margin-top:4px;'><label>Diese Funktion kann die Akkulebensdauer und -temperatur beeinflussen und Geräusche verursachen. Verwenden Sie sie nicht im Gleichstrommodus. Andernfalls wird schneller Strom verbraucht und die Lebensdauer des Akkus verkürzt.</label></p>",
-                "tooltip": "Die Funktion funktioniert nur für:<br>Windows Media player",
+                "desc": "<p><label>Diese Funktion optimiert die Videowiedergabe, indem die Bildschirmauflösung verbessert wird. Sie ist besonders nützlich, wenn das Video eine schlechte Auflösung hat.</label></p> <p style='margin-top:4px;'><label>Diese Funktion kann die Akkulebensdauer und -temperatur beeinflussen und Geräusche verursachen. Verwenden Sie sie nicht im Gleichstrommodus (Akkubetrieb). Andernfalls wird schneller Strom verbraucht und die Lebensdauer des Akkus verkürzt.</label></p>",
+                "tooltip": "Diese Funktion funktioniert nur mit den folgenden Videoplayern:<br>Windows Media Player<br>Chrome<br>Filme & TV<br>PotPlayer<br>GOM Player<br>Webbrowser-basierte Player (z. B. Chrome)<br><br>Anweisungen zum Aktivieren dieser Funktion bei PotPlayer und GOM Player finden Sie im Benutzerhandbuch, das im Lieferumfang Ihres Computers enthalten ist.",
                 "note": {
                     "description": "Diese Funktion funktioniert nicht, wenn:",
-                    "description1": "Der Computer ist nicht an Netzstrom (Wechselstrom) angeschlossen.",
-                    "description2": "Der Akkusparmodus ist aktiviert."
+                    "description1": "Der Akkusparmodus ist aktiviert.",
+                    "description2": "Die CPU-Temperatur zu hoch ist."
+                }
+            },
+            "antiTheft": {
+                "heading": "Intelligente Sensorik",
+                "title": "Intelligente Bewegungswarnung",
+                "desc": "<p><label>Wenn diese Funktion aktiviert ist, beginnt die Einheit zu piepen, wenn der Bildschirm gesperrt ist und Bewegungen erkannt werden, vor allem an einem öffentlichen Ort.</label></p> <p style='margin-top:4px;'><label>Geben Sie zum Beenden des Alarms das richtige Kennwort ein oder melden Sie sich mit Windows Hello an.</label></p>",
+                "note": {
+                    "description": "Wenn Sie sich erfolgreich beim System angemeldet haben, wird die Funktion automatisch ausgeschaltet. Sie müssen sie erneut aktivieren, um sie verwenden zu können."
+                },
+                "alarm": {
+                    "title": " ALARM ENDET NACH",
+                    "option1": "10 Sekunden",
+                    "option2": "20 Sekunden",
+                    "option3": "30 Sekunden",
+                    "option4": "1 Minute",
+                    "option5": "Niemals"
+                },
+                "allowCamera": {
+                    "title": "FOTOS AUFNEHMEN",
+                    "describe": "Wenn diese Funktion aktiviert ist, nimmt die Kamera automatisch Fotos auf, wenn der Bildschirm gesperrt ist und Bewegungen erkannt werden. Diese Daten werden lokal auf Ihrem Gerät verarbeitet. Lenovo greift nicht auf diese Daten zu und verwendet sie nicht.",
+                    "checkBoxText": "Funktion aktivieren"
+                },
+                "cameraPrivacy": {
+                    "describe": "Der Kamera-Datenschutzmodus der Lenovo Vantage ist aktiviert. Das Kontrollkästchen reagiert nicht.",
+                    "linkText": "Zum Kamera-Datenschutzmodus wechseln, um ihn auszuschalten"
+                },
+                "authorizedAccess": {
+                    "describe": "Lenovo Vantage hat keinen Zugriff auf die Kamera. Das Kontrollkästchen reagiert nicht.",
+                    "linkText": "Zu Windows-Einstellungen wechseln, um Zugriff zu gewähren"
+                },
+                "photo": {
+                    "title": "ANZAHL DER BEI BEWEGUNG AUFGENOMMENEN FOTOS",
+                    "tooltip": "Die Kamera Ihres Computers wird automatisch aktiviert und macht Fotos, wenn Bewegungen erkannt werden. Alle 2 Sekunden wird ein Foto aufgenommen und lokal gespeichert.",
+                    "option1": "5",
+                    "option2": "10",
+                    "option3": "15",
+                    "option4": "20",
+                    "option5": "25",
+                    "option6": "30"
+                },
+                "showPhoto": {
+                    "title": "FOTOS WURDEN:",
+                    "link": "Fotos anzeigen"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Lenovo Vantage hat keinen Zugriff auf das Dateisystem.",
+                    "link": "Zu Windows-Einstellungen wechseln, um Zugriff zu gewähren"
                 }
             },
             "voice": {
@@ -2091,53 +2140,6 @@
                     "btnText": "OK",
                     "title": "Installation fehlgeschlagen",
                     "desc": "Versuchen Sie später erneut, Lenovo Voice zu verwenden."
-                }
-            },
-            "antiTheft": {
-                "heading": "Intelligent Sensing",
-                "title": "Smart Motion Alert",
-                "desc": "<p><label>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</label></p> <p style='margin-top:4px;'><label>To dismiss the alarm, enter the correct password or log in by Windows Hello.</label></p>",
-                "note": {
-                    "description": "Once you log in the system successfully, this feature will be turned off automatically. You need to enable it again to use it."
-                },
-                "alarm": {
-                    "title": " THE ALARM WILL LAST FOR",
-                    "option1": "10 seconds",
-                    "option2": "20 seconds",
-                    "option3": "30 seconds",
-                    "option4": "1 minute",
-                    "option5": "Never stop"
-                },
-                "allowCamera": {
-                    "title": "TATING PHOTOS",
-                    "describe": "When enabling this feature, the camera takes photos automatically when detecting any movement if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
-                    "checkBoxText": "Enable this feature"
-                },
-                "cameraPrivacy": {
-                    "describe": "Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
-                    "linkText": "Go to Camera privacy mode to turn it off"
-                },
-                "authorizedAccess": {
-                    "describe": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
-                    "linkText": "Go to Windows Settings to give access"
-                },
-                "photo": {
-                    "title": "THE NUMBER OF PHOTOS TAKEN DURING THE MOVEMENT",
-                    "tooltip": "The camera on your computer automatically activates to take pictures when movements are detected. Pictures are taken every 2 seconds and are saved to your local storage.",
-                    "option1": 5,
-                    "option2": 10,
-                    "option3": 15,
-                    "option4": 20,
-                    "option5": 25,
-                    "option6": 30
-                },
-                "showPhoto": {
-                    "title": "PHOTOS HAVE BEEN:",
-                    "link": "View photos"
-                },
-                "fileAuthorizationTips": {
-                    "content": "Lenovo Vantage doesn't have access to the file system.",
-                    "link": "Go to Windows Settings to give access"
                 }
             }
         }
@@ -2705,7 +2707,7 @@
         },
         "question1": {
             "title": "Ihre Dateien sichern und wiederherstellen",
-            "description": "<div>    <div class='faqInFs4Fb'>        Ihre Dateien sichern und wiederherstellen    </div>    <hr />    <div class='faqInMb7'>        Es ist immer gut, eine Sicherung zu haben. Bewahren Sie Kopien Ihrer Dateien auf einem anderen Laufwerk auf, falls etwas mit den Originalen geschieht.    </div>    <div class='faqInFs3Fb'>        Sicherung konfigurieren    </div>    <hr />    <div class='mb-5'>        Wählen Sie die Schaltfläche <span class='faqInFb'>Start</span> aus, wählen Sie <span class='faqInFb'>Einstellungen</span> > <span class='faqInFb'>Update und Sicherheit</span> > <span class='faqInFb'>Sicherung</span> > <span class='faqInFb'>Laufwerk hinzufügen</span> und wählen Sie dann ein externes Laufwerk oder einen Netzwerkstandort für Ihre Sicherungen aus.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Fertig. Jede Stunde wird eine Sicherung aller Inhalte in Ihrem Benutzerordner erstellt (C:\\\\Users\\\\username). Um zu ändern, welche Dateien gesichert oder wie oft Sicherungen erstellt werden, wechseln Sie zu <span class='faqInFb'>Weitere Optionen</span>.    </div>    <div class='faqInFs3Fb'>        Ihre Dateien wiederherstellen    </div>    <div class='mb-5'>        Sollte eine wichtige Datei oder ein wichtiger Ordner fehlen, gehen Sie wie folgt vor:    </div>    <div>        <div class='mb-3'>1. Geben Sie <span class='faqInFb'>Dateien wiederherstellen</span> in das Suchfeld in der Taskleiste ein und wählen Sie dann <span class='faqInFb'> Ihre Dateien mit Dateiversionsverlauf wiederherstellen</span>.</div>        <div class='mb-3'>2. Suchen Sie die Dateien, die Sie benötigen, und verwenden Sie dann die Pfeile, um all ihre Versionen anzuzeigen.</div>        <div class='mb-3'>3. Wenn Sie die gewünschte Version gefunden haben, wählen Sie <span class='faqInFb'>Wiederherstellen</span> aus, um sie an ihrem ursprünglichen Speicherort zu speichern. Wenn Sie die Version an einem andern Ort speichern möchten, halten Sie <span class='faqInFb'>Wiederherstellen</span> gedrückt (oder Rechtsklick), wählen Sie <span class='faqInFb'>Wiederherstellen in</span> und wählen Sie dann einen neuen Speicherort aus.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Ihre Dateien sichern und wiederherstellen    </div>    <hr />    <div class='faqInMb7'>        Es ist immer gut, eine Sicherung zu haben. Bewahren Sie Kopien Ihrer Dateien auf einem anderen Laufwerk auf, falls etwas mit den Originalen geschieht.    </div>    <div class='faqInFs3Fb'>        Sicherung konfigurieren    </div>    <hr />    <div class='mb-5'>        Wählen Sie die Schaltfläche <span class='faqInFb'>Start</span> aus, wählen Sie <span class='faqInFb'>Einstellungen</span> > <span class='faqInFb'>Update und Sicherheit</span> > <span class='faqInFb'>Sicherung</span> > <span class='faqInFb'>Laufwerk hinzufügen</span> und wählen Sie dann ein externes Laufwerk oder einen Netzwerkstandort für Ihre Sicherungen aus.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Fertig. Jede Stunde wird eine Sicherung aller Inhalte in Ihrem Benutzerordner erstellt (C:\\Users\\Ihr Benutzername). Um zu ändern, welche Dateien gesichert oder wie oft Sicherungen erstellt werden, wechseln Sie zu <span class='faqInFb'>Weitere Optionen</span>.    </div>    <div class='faqInFs3Fb'>        Ihre Dateien wiederherstellen    </div>    <div class='mb-5'>        Sollte eine wichtige Datei oder ein wichtiger Ordner fehlen, gehen Sie wie folgt vor:    </div>    <div>        <div class='mb-3'>1. Geben Sie <span class='faqInFb'>Dateien wiederherstellen</span> in das Suchfeld in der Taskleiste ein und wählen Sie dann <span class='faqInFb'> Ihre Dateien mit Dateiversionsverlauf wiederherstellen</span>.</div>        <div class='mb-3'>2. Suchen Sie die Dateien, die Sie benötigen, und verwenden Sie dann die Pfeile, um all ihre Versionen anzuzeigen.</div>        <div class='mb-3'>3. Wenn Sie die gewünschte Version gefunden haben, wählen Sie <span class='faqInFb'>Wiederherstellen</span> aus, um sie an ihrem ursprünglichen Speicherort zu speichern. Wenn Sie die Version an einem andern Ort speichern möchten, halten Sie <span class='faqInFb'>Wiederherstellen</span> gedrückt (oder Rechtsklick), wählen Sie <span class='faqInFb'>Wiederherstellen in</span> und wählen Sie dann einen neuen Speicherort aus.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -3118,7 +3120,8 @@
         "settingsNotes": "Starten Sie diese Anwendung neu, um sicherzustellen, dass alle Änderungen übernommen wurden.",
         "betaSettingTitle": "Beta-Programm",
         "betaProgram": "Beta-Programm",
-        "betaSettingDescription": "Testen Sie die neuesten Funktionen, an denen wir gerade arbeiten."
+        "betaSettingDescription": "Testen Sie die neuesten Funktionen, an denen wir gerade arbeiten.",
+        "betaSettingNewDescription": "Wir freuen uns, Sie zum Beta-Programm von Smart Performance einladen zu dürfen. Es optimiert Ihre PC-Leistung durch:<br/><ul class='pl-4'><li>proaktives Diagnostizieren von Fehlern und Optimieren der Einstellungen</li><li>Steigern der Internetleistung durch Netzwerk‑ und Browseroptimierung</li><li>Durchführen von schnellen Scans und Korrekturen ohne Verwendung des vorhandenen Antivirenprogramms</li></ul>"
     },
     "modernPreload": {
         "cancel": "Abbrechen",
@@ -4043,8 +4046,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "Pfeil links",
+            "rightArrow": "Pfeil rechts"
         }
     },
     "dcc": {
