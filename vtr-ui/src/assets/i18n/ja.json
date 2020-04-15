@@ -2050,15 +2050,62 @@
                 "tooltip": "この機能は Web ビデオ・プレイヤーに適用できません。Windows Media Player、5KPlayer など、人気のあるローカル・ビデオ・プレイヤーは、この機能をサポートしています。"
             },
             "superResolution": {
-                "heading": "インテリジェント・メディア",
-                "title": "ビデオ解像度のアップスケーリング",
-                "desc": "<p><label>この機能は、ビデオ解像度を改善することで、ビデオ再生のエクスペリエンスを向上させます。特にビデオの解像度が低い場合に効果があります。</label></p> <p style='margin-top:4px;'><label>この機能は、バッテリー寿命、バッテリー温度に影響を与え、ノイズを引き起こす可能性があります。DC モードでは使用しないでください。そうしないと、電力消費が速くなり、バッテリー寿命が短くなります。</label></p>",
-                "tooltip": "この機能は以下でのみ機能します:<br>Windows Media player",
+				"heading": "インテリジェント・メディア",
+				"title": "ビデオ解像度のアップスケーリング",
+				"desc": "<p><label>この機能は、ビデオ解像度を改善することで、ビデオ再生のエクスペリエンスを向上させます。特にビデオの解像度が低い場合に効果があります。</label></p> <p style='margin-top:4px;'><label>この機能は、バッテリー寿命、バッテリー温度に影響を与え、ノイズを引き起こす可能性があります。DC モード (バッテリー・モード) では使用しないでください。そうしないと、電力消費が速くなり、バッテリー寿命が短くなります。</label></p>",
+				"tooltip": "この機能は、以下のビデオ・プレイヤーでのみ機能します。<br>Windows Media Player<br>Chrome<br>映画 & テレビ<br>PotPlayer<br>GOM Player<br>Web ブラウザー・ベースのプレーヤー (Chrome など)<br><br>PotPlayer および GOM Player でこの機能を有効にする方法については、コンピューターに付属のユーザー・ガイドを参照してください。",
+				"note": {
+					"description": "この機能は次の場合は動作しません。",
+					"description1": "バッテリー節約モードが有効になっている場合。",
+					"description2": "CPU の温度が高すぎる場合。"
+				}
+			},
+            "antiTheft": {
+                "heading": "インテリジェント・センサー",
+                "title": "スマート・モーション・アラート",
+                "desc": "<p><label>この機能を有効にした場合は、画面がロックされた状態で、特に公共の場所で動きが検出されると、デバイスのビープ音が鳴ります。</label></p> <p style='margin-top:4px;'><label>アラームを解除するには、正しいパスワードを入力するか、Windows Hello でログインします。</label></p>",
                 "note": {
-                    "description": "この機能は次の場合は動作しません。",
-                    "description1": "コンピューターが AC 電源に接続されていない。",
-                    "description2": "バッテリー節約モードが有効になっている。"
-                }
+                    "description": "システムに正しくログインすると、この機能は自動的にオフになります。使用するには、再度有効にする必要があります。"
+                },
+                "alarm": {
+                    "title":" アラームの継続時間",
+                    "option1":"10 秒",
+                    "option2":"20 秒",
+                    "option3":"30 秒",
+                    "option4":"1 分",
+                    "option5":"無制限"
+                },
+                "allowCamera": {
+                    "title":"写真撮影",
+                    "describe":"この機能を有効にした場合、画面がロックされた状態で動きが検出されると、カメラによって自動的に写真が撮影されます。このデータはデバイスでローカルに処理されます。Lenovo はアクセスも使用もしません。",
+                    "checkBoxText":"この機能を有効にする"
+                },
+                "cameraPrivacy": {
+                     "describe":"Lenovo Vantage カメラのプライバシーモードがオンになっています。チェックボックスの機能は動作しません。",
+                     "linkText":"カメラのプライバシーモードに移動してオフにします"
+                },
+                "authorizedAccess": {
+                    "describe":"Lenovo Vantage がカメラにアクセスできません。チェックボックスの機能は動作しません。",
+                    "linkText":"Windows の設定に移動してアクセスできるようにします"
+                },
+                "photo": {
+                    "title":"動きに対して撮影される写真の枚数",
+                    "tooltip": "動きが検出されると、コンピューターのカメラが自動的にアクティブになり、写真が撮影されます。写真は 2 秒ごとに撮影され、ローカル・ストレージに保存されます。",
+                    "option1":"5",
+                    "option2":"10",
+                    "option3":"15",
+                    "option4":"20",
+                    "option5":"25",
+                    "option6":"30"
+                },
+                "showPhoto": {
+                    "title":"写真:",
+                    "link":"写真を見る"
+				},
+				"fileAuthorizationTips": {
+					"content":"Lenovo Vantage がファイル・システムにアクセスできません。",
+					"link":"Windows の設定に移動してアクセスできるようにします"
+				}
             },
             "voice": {
                 "title": "音声",
@@ -2091,53 +2138,6 @@
                     "btnText": "ok",
                     "title": "インストール失敗",
                     "desc": "Lenovo Voice を使用するために後で再試行してください。"
-                }
-            },
-            "antiTheft": {
-                "heading": "Intelligent Sensing",
-                "title": "Smart Motion Alert",
-                "desc": "<p><label>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</label></p> <p style='margin-top:4px;'><label>To dismiss the alarm, enter the correct password or log in by Windows Hello.</label></p>",
-                "note": {
-                    "description": "Once you log in the system successfully, this feature will be turned off automatically. You need to enable it again to use it."
-                },
-                "alarm": {
-                    "title": " THE ALARM WILL LAST FOR",
-                    "option1": "10 seconds",
-                    "option2": "20 seconds",
-                    "option3": "30 seconds",
-                    "option4": "1 minute",
-                    "option5": "Never stop"
-                },
-                "allowCamera": {
-                    "title": "TATING PHOTOS",
-                    "describe": "When enabling this feature, the camera takes photos automatically when detecting any movement if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
-                    "checkBoxText": "Enable this feature"
-                },
-                "cameraPrivacy": {
-                    "describe": "Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
-                    "linkText": "Go to Camera privacy mode to turn it off"
-                },
-                "authorizedAccess": {
-                    "describe": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
-                    "linkText": "Go to Windows Settings to give access"
-                },
-                "photo": {
-                    "title": "THE NUMBER OF PHOTOS TAKEN DURING THE MOVEMENT",
-                    "tooltip": "The camera on your computer automatically activates to take pictures when movements are detected. Pictures are taken every 2 seconds and are saved to your local storage.",
-                    "option1": 5,
-                    "option2": 10,
-                    "option3": 15,
-                    "option4": 20,
-                    "option5": 25,
-                    "option6": 30
-                },
-                "showPhoto": {
-                    "title": "PHOTOS HAVE BEEN:",
-                    "link": "View photos"
-                },
-                "fileAuthorizationTips": {
-                    "content": "Lenovo Vantage doesn't have access to the file system.",
-                    "link": "Go to Windows Settings to give access"
                 }
             }
         }

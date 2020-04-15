@@ -2050,15 +2050,62 @@
                 "tooltip": "Denne funksjonen støttes ikke av nettvideospillere. Populære lokale videospillere, for eksempel Windows Media Player og 5KPlayer, støtter denne funksjonen."
             },
             "superResolution": {
-                "heading": "Intelligent medieavspilling",
-                "title": "Oppskalering av videooppløsning",
-                "desc": "<p><label>Denne funksjonen gir en bedre videoopplevelse ved å forbedre oppløsningen på videoen. Den fungerer spesielt bra når videoen har dårlig oppløsning.</label></p> <p style='margin-top:4px;'><label>Denne funksjonen kan påvirke batteritiden, batteritemperaturen og forårsake støy. Ikke bruk i likestrømmodus. Ellers vil det øke strømforbruket og forkorte batteriets levetid.</label></p>",
-                "tooltip": "Funksjonen virker bare på:<br>Windows Media player",
+				"heading": "Intelligent medieavspilling",
+				"title": "Oppskalering av videooppløsning",
+				"desc": "<p><label>Denne funksjonen forbedrer opplevelsen av videoavspilling ved å forbedre videooppløsningen. Den fungerer spesielt når videoen har dårlig oppløsning.</label></p> <p style='margin-top:4px;'><label>Denne funksjonen kan påvirke batteritiden, batteritemperaturen og forårsake støy. Ikke bruk i likestrømmodus (batterimodus). Ellers vil det øke strømforbruket og forkorte batteriets levetid.</label></p>",
+				"tooltip": "Denne funksjonen fungerer bare for følgende videospillere:<br>Windows Media Player<br>Chrome<br>Filmer og TV<br>PotPlayer<br>GOM player<br>Nettleserbaserte spillere (for eksempel Chrome)<br><br>Se brukerhåndboken som følger med datamaskinen for instruksjoner om hvordan du aktiverer denne funksjonen for PotPlayer og GOM player.",
+				"note": {
+					"description": "Denne funksjonen fungerer ikke når følgende er tilfelle:",
+					"description1": "Batterisparemodus er aktivert.",
+					"description2": "CPU-temperaturen er for høy."
+				}
+			},
+            "antiTheft": {
+                "heading": "Intelligent føler",
+                "title": "Smart bevegelsesvarsel",
+                "desc": "<p><label>Når du aktiverer denne funksjonen, avgir enheten et lydsignal når skjermen er låst og det oppdages bevegelse, spesielt på offentlige steder.</label></p> <p style='margin-top:4px;'><label>Hvis du vil avbryte alarmen, skriver du inn riktig passord eller logger på med Windows Hello.</label></p>",
                 "note": {
-                    "description": "Denne funksjonen fungerer ikke når følgende er tilfelle:",
-                    "description1": "Strømadapteren er ikke tilkoblet datamaskinen.",
-                    "description2": "Batterisparemodus er aktivert."
-                }
+                    "description": "Når du har logget på systemet, vil denne funksjonen bli slått av automatisk. Du må aktivere den på nytt for å bruke den."
+                },
+                "alarm": {
+                    "title":" ALARMEN SKAL VARE I",
+                    "option1":"10 sekunder",
+                    "option2":"20 sekunder",
+                    "option3":"30 sekunder",
+                    "option4":"1 minutt",
+                    "option5":"Ikke stopp"
+                },
+                "allowCamera": {
+                    "title":"TA BILDER",
+                    "describe":"Når du aktiverer denne funksjonen, tar kameraet automatisk bildene når det blir oppdaget bevegelse hvis skjermen er låst. Disse dataene behandles lokalt på enheten. Lenovo har verken tilgang til eller bruker dem.",
+                    "checkBoxText":"Aktiver denne funksjonen"
+                },
+                "cameraPrivacy": {
+                     "describe":"Lenovo Vantage Personvernmodus for kamera er på. Avmerkingsboksen vil ikke fungere.",
+                     "linkText":"Gå til Personvernmodus for kamera for å slå av"
+                },
+                "authorizedAccess": {
+                    "describe":"Lenovo Vantage har ikke tilgang til kamera. Avmerkingsboksen vil ikke fungere.",
+                    "linkText":"Gå til Windows-innstillingene for å gi tilgang"
+                },
+                "photo": {
+                    "title":"ANTALL BILDER SOM TAS VED BEVEGELSE",
+                    "tooltip": "Kameraet på datamaskinen aktiveres automatisk for å ta bilder når det oppdages bevegelse. Det tas bilder hvert andre sekund, og de lagres på den lokale lagringsplassen.",
+                    "option1":"5",
+                    "option2":"10",
+                    "option3":"15",
+                    "option4":"20",
+                    "option5":"25",
+                    "option6":"30"
+                },
+                "showPhoto": {
+                    "title":"BILDER:",
+                    "link":"Vis bilder"
+				},
+				"fileAuthorizationTips": {
+					"content":"Lenovo Vantage har ikke tilgang til filsystemet.",
+					"link":"Gå til Windows-innstillingene for å gi tilgang"
+				}
             },
             "voice": {
                 "title": "Tale",
@@ -2091,53 +2138,6 @@
                     "btnText": "ok",
                     "title": "Installeringen mislyktes",
                     "desc": "Prøv igjen senere for å kunne bruke Lenovo Voice."
-                }
-            },
-            "antiTheft": {
-                "heading": "Intelligent Sensing",
-                "title": "Smart Motion Alert",
-                "desc": "<p><label>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</label></p> <p style='margin-top:4px;'><label>To dismiss the alarm, enter the correct password or log in by Windows Hello.</label></p>",
-                "note": {
-                    "description": "Once you log in the system successfully, this feature will be turned off automatically. You need to enable it again to use it."
-                },
-                "alarm": {
-                    "title": " THE ALARM WILL LAST FOR",
-                    "option1": "10 seconds",
-                    "option2": "20 seconds",
-                    "option3": "30 seconds",
-                    "option4": "1 minute",
-                    "option5": "Never stop"
-                },
-                "allowCamera": {
-                    "title": "TATING PHOTOS",
-                    "describe": "When enabling this feature, the camera takes photos automatically when detecting any movement if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
-                    "checkBoxText": "Enable this feature"
-                },
-                "cameraPrivacy": {
-                    "describe": "Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
-                    "linkText": "Go to Camera privacy mode to turn it off"
-                },
-                "authorizedAccess": {
-                    "describe": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
-                    "linkText": "Go to Windows Settings to give access"
-                },
-                "photo": {
-                    "title": "THE NUMBER OF PHOTOS TAKEN DURING THE MOVEMENT",
-                    "tooltip": "The camera on your computer automatically activates to take pictures when movements are detected. Pictures are taken every 2 seconds and are saved to your local storage.",
-                    "option1": 5,
-                    "option2": 10,
-                    "option3": 15,
-                    "option4": 20,
-                    "option5": 25,
-                    "option6": 30
-                },
-                "showPhoto": {
-                    "title": "PHOTOS HAVE BEEN:",
-                    "link": "View photos"
-                },
-                "fileAuthorizationTips": {
-                    "content": "Lenovo Vantage doesn't have access to the file system.",
-                    "link": "Go to Windows Settings to give access"
                 }
             }
         }

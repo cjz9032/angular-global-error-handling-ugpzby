@@ -368,7 +368,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy {
 		try {
 			const response = await this.upeService.fetchUPEContent({ positions: upePositions });
 			const endCallUPE: any = new Date();
-			this.logger.info(`Performance: Dashboard page get cms content, ${endCallUPE - startCallUPE}ms`);
+			this.logger.info(`Performance: Dashboard page get upe content, ${endCallUPE - startCallUPE}ms`);
 			this.populateUPEContent(response, upeContentCards);
 		} catch (ex) {
 			upeContentCards.forEach(contentCard => {

@@ -21,6 +21,10 @@
 		padding: 0 4rem;
 		overflow-x: hidden;
 		overflow-y: auto;
+
+		&:focus {
+			outline-offset: -0.2rem;
+		}
 	}
 
 	h1,

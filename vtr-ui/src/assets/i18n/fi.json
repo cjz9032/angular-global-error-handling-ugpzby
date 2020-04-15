@@ -2050,15 +2050,62 @@
                 "tooltip": "Tämä ominaisuus ei ole käytettävissä verkkovideosoittimissa. Suositut paikalliset videosoittimet (kuten Windows Media Player ja 5KPlayer) tukevat tätä ominaisuutta."
             },
             "superResolution": {
-                "heading": "Älykäs tietoväline",
-                "title": "Näytön tarkkuuden skaalaus",
-                "desc": "<p><label>Tämä toiminto parantaa videoiden toistokokemusta parantamalla videoiden tarkkuutta. Se toimii erityisesti silloin, kun näytön resoluutio on heikko.</label></p> <p style='margin-top:4px;'><label>Tämä toiminto saattaa heikentää akun käyttöaikaa, akun lämpötilaa ja aiheuttaa ääniä. Älä käytä sitä tasasähkövirtatilassa. Muutoin se nopeuttaa virrankulutusta ja lyhentää akun käyttöikää.</label></p>",
-                "tooltip": "Ominaisuus toimii vain näissä:<br>Windows Media player",
+				"heading": "Älykäs tietoväline",
+				"title": "Näytön tarkkuuden skaalaus",
+				"desc": "<p><label>Tämä ominaisuus parantaa videoiden katselukokemusta parantamalla videoiden resoluutiota. Se toimii erityisen hyvin, kun videon resoluutio on alhainen.</label></p> <p style='margin-top:4px;'><label>Tämä toiminto saattaa heikentää akun käyttöaikaa, akun lämpötilaa ja aiheuttaa ääniä. Älä käytä sitä DC-tilassa (akkuvirralla). Muutoin se nopeuttaa virrankulutusta ja lyhentää akun käyttöikää.</label></p>",
+				"tooltip": "Tämä ominaisuus toimii vain seuraavilla videosoittimilla:<br>Windows Media Player<br>Chrome<br>Elokuvat ja TV<br>PotPlayer<br>GOM Player<br>Selainpohjaiset soittimet (esim. Chrome)<br><br>Lisätietoja tämän ominaisuuden ottamisesta käyttöön PotPlayer- ja GOM Player -soittimille löydät tietokoneesi mukana toimitetusta käyttöoppaasta.",
+				"note": {
+					"description": "Wi-Fi-toiminto ei toimi seuraavissa tilanteissa:",
+					"description1": "Virransäästötila on käytössä.",
+					"description2": "Keskusyksikön lämpötila on liian korkea."
+				}
+			},
+            "antiTheft": {
+                "heading": "Älykäs tunnistustoiminto",
+                "title": "Älykäs liikkeentunnistus",
+                "desc": "<p><label>Kun tämä ominaisuus on käytössä, laite aloittaa äänimerkin toistamisen, jos näyttösi ollessa lukittuna havaitaan liikettä, varsinkin julkisissa tiloissa.</label></p> <p style='margin-top:4px;'><label>Lopeta hälytys syöttämällä oikea salasana tai kirjautumalla sisään Windows Hellon avulla.</label></p>",
                 "note": {
-                    "description": "Wi-Fi-toiminto ei toimi seuraavissa tilanteissa:",
-                    "description1": "Tietokonetta ei ole kytketty verkkovirtaan.",
-                    "description2": "Akun virransäästötila on käytössä."
-                }
+                    "description": "Kun kirjaudut järjestelmään onnistuneesti, tämä ominaisuus poistetaan automaattisesti käytöstä. Sinun täytyy ottaa se uudelleen käyttöön käyttääksesi sitä."
+                },
+                "alarm": {
+                    "title":" HÄLYTYS KESTÄÄ",
+                    "option1":"10 sekuntia",
+                    "option2":"20 sekuntia",
+                    "option3":"30 sekuntia",
+                    "option4":"1 minuutti",
+                    "option5":"Älä lopeta koskaan"
+                },
+                "allowCamera": {
+                    "title":"VALOKUVIEN OTTAMINEN",
+                    "describe":"Kun tämä ominaisuus on käytössä, kamera ottaa automaattisesti valokuvia, jos havaitaan liikettä näytön ollessa lukittuna. Nämä tiedot käsitellään laitteessa paikallisesti. Lenovolla ei ole pääsyä tietoihin eikä se voi käyttää niitä.",
+                    "checkBoxText":"Ota tämä ominaisuus käyttöön"
+                },
+                "cameraPrivacy": {
+                     "describe":"Lenovo Vantage -ohjelman kameran tietosuojatila on käytössä. Valintaruudun toiminto ei toimi.",
+                     "linkText":"Poista se käytöstä siirtymällä kameran tietosuojatilaan"
+                },
+                "authorizedAccess": {
+                    "describe":"Lenovo Vantage ei voi käyttää kameraa. Valintaruudun toiminto ei toimi.",
+                    "linkText":"Siirry Windows-asetuksiin ja anna käyttöoikeus"
+                },
+                "photo": {
+                    "title":"LIIKKEEN AIKANA OTETTUJEN VALOKUVIEN MÄÄRÄ",
+                    "tooltip": "Tietokoneesi kamera aktivoitu automaattisesti ja ottaa valokuvia, kun liikettä havaitaan. Kuvia otetaan 2 sekunnin välein ja ne tallennetaan paikalliseen tallennustilaan.",
+                    "option1":"5",
+                    "option2":"10",
+                    "option3":"15",
+                    "option4":"20",
+                    "option5":"25",
+                    "option6":"30"
+                },
+                "showPhoto": {
+                    "title":"VALOKUVAT ON:",
+                    "link":"Näytä valokuvat"
+				},
+				"fileAuthorizationTips": {
+					"content":"Lenovo Vantage ei voi käyttää tiedostojärjestelmää.",
+					"link":"Siirry Windows-asetuksiin ja anna käyttöoikeus"
+				}
             },
             "voice": {
                 "title": "Ääni",
@@ -2091,53 +2138,6 @@
                     "btnText": "ok",
                     "title": "Asennus epäonnistui",
                     "desc": "Yritä Lenovo Voice -toiminnon käyttöä myöhemmin uudelleen."
-                }
-            },
-            "antiTheft": {
-                "heading": "Intelligent Sensing",
-                "title": "Smart Motion Alert",
-                "desc": "<p><label>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</label></p> <p style='margin-top:4px;'><label>To dismiss the alarm, enter the correct password or log in by Windows Hello.</label></p>",
-                "note": {
-                    "description": "Once you log in the system successfully, this feature will be turned off automatically. You need to enable it again to use it."
-                },
-                "alarm": {
-                    "title": " THE ALARM WILL LAST FOR",
-                    "option1": "10 seconds",
-                    "option2": "20 seconds",
-                    "option3": "30 seconds",
-                    "option4": "1 minute",
-                    "option5": "Never stop"
-                },
-                "allowCamera": {
-                    "title": "TATING PHOTOS",
-                    "describe": "When enabling this feature, the camera takes photos automatically when detecting any movement if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
-                    "checkBoxText": "Enable this feature"
-                },
-                "cameraPrivacy": {
-                    "describe": "Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
-                    "linkText": "Go to Camera privacy mode to turn it off"
-                },
-                "authorizedAccess": {
-                    "describe": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
-                    "linkText": "Go to Windows Settings to give access"
-                },
-                "photo": {
-                    "title": "THE NUMBER OF PHOTOS TAKEN DURING THE MOVEMENT",
-                    "tooltip": "The camera on your computer automatically activates to take pictures when movements are detected. Pictures are taken every 2 seconds and are saved to your local storage.",
-                    "option1": 5,
-                    "option2": 10,
-                    "option3": 15,
-                    "option4": 20,
-                    "option5": 25,
-                    "option6": 30
-                },
-                "showPhoto": {
-                    "title": "PHOTOS HAVE BEEN:",
-                    "link": "View photos"
-                },
-                "fileAuthorizationTips": {
-                    "content": "Lenovo Vantage doesn't have access to the file system.",
-                    "link": "Go to Windows Settings to give access"
                 }
             }
         }

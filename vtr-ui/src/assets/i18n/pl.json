@@ -2050,15 +2050,62 @@
                 "tooltip": "Ta funkcja nie dotyczy odtwarzaczy wideo w sieci Web. Popularne lokalne odtwarzacze wideo, takie jak program Windows Media Player, 5KPlayer itd., obsługują tę funkcję."
             },
             "superResolution": {
-                "heading": "Inteligentne multimedia",
-                "title": "Skalowanie rozdzielczości wideo",
-                "desc": "<p><label>Ta funkcja poprawia jakość odtwarzania wideo, zwiększając rozdzielczość wideo. Szczególnie się sprawdzi, gdy wideo ma niską rozdzielczość.</label></p> <p style='margin-top:4px;'><label>Ta funkcja może wpływać na żywotność baterii, temperaturę baterii i powodować hałas. Nie należy używać w trybie prądu stałego. Może to przyspieszyć zużycie energii i skrócić żywotność akumulatora.</label></p>",
-                "tooltip": "Funkcja działa tylko w przypadku:<br>Windows Media player",
+				"heading": "Inteligentne multimedia",
+				"title": "Skalowanie rozdzielczości wideo",
+				"desc": "<p><label>Ta funkcja poprawia rozdzielczość odtwarzania filmów, a tym samym zapewnia lepsze wrażenia z ich oglądania. Jej skuteczność jest największa w przypadku materiałów wideo o niskiej rozdzielczości.</label></p> <p style='margin-top:4px;'><label>Ta funkcja może wpływać na żywotność baterii, temperaturę baterii i powodować hałas. Nie należy używać jej w trybie prądu stałego (tryb akumulatora). Może to przyspieszyć zużycie energii i skrócić żywotność akumulatora.</label></p>",
+				"tooltip": "Ta funkcja działa tylko w przypadku następujących odtwarzaczy wideo:<br>Windows Media Player<br>Chrome<br>Filmy i TV<br>PotPlayer<br>GOM Player<br>Odtwarzacze działające w przeglądarce (np. Chrome)<br><br>Instrukcje pozwalające włączyć tę funkcję w odtwarzaczach PotPlayer i GOM Player znajdują się w instrukcji obsługi dołączonej do komputera.",
+				"note": {
+					"description": "Funkcja nie działa, gdy:",
+					"description1": "Tryb oszczędzania baterii jest włączony.",
+					"description2": "Temperatura procesora jest za wysoka."
+				}
+			},
+            "antiTheft": {
+                "heading": "Inteligentna detekcja",
+                "title": "Inteligentny alert wykrycia ruchu",
+                "desc": "<p><label>Jeśli włączysz tę funkcję, urządzenie zacznie emitować sygnał dźwiękowy, gdy po zablokowaniu ekranu zostanie wykryty ruch — zwłaszcza, jeśli urządzenie znajduje się w miejscu publicznym.</label></p> <p style='margin-top:4px;'><label>Aby wyłączyć alarm, wprowadź poprawne hasło lub zaloguj się, korzystając z funkcji Windows Hello.</label></p>",
                 "note": {
-                    "description": "Funkcja nie działa, gdy:",
-                    "description1": "Komputer nie jest podłączony do zasilania prądem przemiennym.",
-                    "description2": "Tryb oszczędzania baterii jest włączony."
-                }
+                    "description": "Po pomyślnym zalogowaniu się do systemu nastąpi automatyczne wyłączenie funkcji. Aby ponownie użyć tej funkcji, należy jeszcze raz ją włączyć."
+                },
+                "alarm": {
+                    "title":" CZAS TRWANIA ALARMU",
+                    "option1":"10 s",
+                    "option2":"20 s",
+                    "option3":"30 s",
+                    "option4":"1 minuta",
+                    "option5":"Cały czas do momentu wyłączenia"
+                },
+                "allowCamera": {
+                    "title":"WYKONYWANIE ZDJĘĆ",
+                    "describe":"Jeśli włączysz tę funkcję, w przypadku wykrycia ruchu po zablokowaniu ekranu kamera automatycznie zacznie robić zdjęcia. Dane są przetwarzane lokalnie na twoim urządzeniu. Lenovo nie ma do nich dostępu ani z nich nie korzysta.",
+                    "checkBoxText":"Włącz tę funkcję"
+                },
+                "cameraPrivacy": {
+                     "describe":"Tryb prywatności kamery w Lenovo Vantage jest włączony. Funkcja rozpoznawania jest wyłączona.",
+                     "linkText":"Przejdź do trybu prywatności kamery, aby go wyłączyć"
+                },
+                "authorizedAccess": {
+                    "describe":"Aplikacja Lenovo Vantage nie ma dostępu do kamery. Funkcja rozpoznawania jest wyłączona.",
+                    "linkText":"Przejdź do ustawień systemu Windows, aby udzielić dostępu"
+                },
+                "photo": {
+                    "title":"LICZBA ZDJĘĆ WYKONANYCH W TRAKCIE RUCHU",
+                    "tooltip": "Kamera w komputerze włącza się automatycznie, aby robić zdjęcia po wykryciu ruchu. Zdjęcia są wykonywane co 2 sekundy i zapisywane w lokalnej pamięci.",
+                    "option1":"5",
+                    "option2":"10",
+                    "option3":"15",
+                    "option4":"20",
+                    "option5":"25",
+                    "option6":"30"
+                },
+                "showPhoto": {
+                    "title":"ZDJĘCIA ZOSTAŁY:",
+                    "link":"Wyświetl zdjęcia"
+				},
+				"fileAuthorizationTips": {
+					"content":"Aplikacja Lenovo Vantage nie ma uprawnień dostępu do systemu plików.",
+					"link":"Przejdź do ustawień systemu Windows, aby udzielić dostępu"
+				}
             },
             "voice": {
                 "title": "Głos",
@@ -2091,53 +2138,6 @@
                     "btnText": "ok",
                     "title": "Instalacja nie powiodła się",
                     "desc": "Aby użyć funkcji Lenovo Voice, spróbuj ponownie później."
-                }
-            },
-            "antiTheft": {
-                "heading": "Intelligent Sensing",
-                "title": "Smart Motion Alert",
-                "desc": "<p><label>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</label></p> <p style='margin-top:4px;'><label>To dismiss the alarm, enter the correct password or log in by Windows Hello.</label></p>",
-                "note": {
-                    "description": "Once you log in the system successfully, this feature will be turned off automatically. You need to enable it again to use it."
-                },
-                "alarm": {
-                    "title": " THE ALARM WILL LAST FOR",
-                    "option1": "10 seconds",
-                    "option2": "20 seconds",
-                    "option3": "30 seconds",
-                    "option4": "1 minute",
-                    "option5": "Never stop"
-                },
-                "allowCamera": {
-                    "title": "TATING PHOTOS",
-                    "describe": "When enabling this feature, the camera takes photos automatically when detecting any movement if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
-                    "checkBoxText": "Enable this feature"
-                },
-                "cameraPrivacy": {
-                    "describe": "Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
-                    "linkText": "Go to Camera privacy mode to turn it off"
-                },
-                "authorizedAccess": {
-                    "describe": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
-                    "linkText": "Go to Windows Settings to give access"
-                },
-                "photo": {
-                    "title": "THE NUMBER OF PHOTOS TAKEN DURING THE MOVEMENT",
-                    "tooltip": "The camera on your computer automatically activates to take pictures when movements are detected. Pictures are taken every 2 seconds and are saved to your local storage.",
-                    "option1": 5,
-                    "option2": 10,
-                    "option3": 15,
-                    "option4": 20,
-                    "option5": 25,
-                    "option6": 30
-                },
-                "showPhoto": {
-                    "title": "PHOTOS HAVE BEEN:",
-                    "link": "View photos"
-                },
-                "fileAuthorizationTips": {
-                    "content": "Lenovo Vantage doesn't have access to the file system.",
-                    "link": "Go to Windows Settings to give access"
                 }
             }
         }

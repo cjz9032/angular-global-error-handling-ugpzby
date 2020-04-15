@@ -2050,15 +2050,62 @@
                 "tooltip": "Αυτή η δυνατότητα δεν ισχύει για προγράμματα αναπαραγωγής βίντεο Web. Αυτή η δυνατότητα υποστηρίζεται από τα πλέον δημοφιλή τοπικά προγράμματα αναπαραγωγής βίντεο, π.χ. Windows Media Player, 5KPlayer κ.λπ."
             },
             "superResolution": {
-                "heading": "Έξυπνα μέσα",
-                "title": "Αναβάθμιση ανάλυσης βίντεο",
-                "desc": "<p><label>Αυτή η δυνατότητα αναβαθμίζει την εμπειρία αναπαραγωγής βίντεο βελτιώνοντας την ανάλυση του βίντεο. Αποδίδει ιδιαίτερα όταν η ανάλυση του βίντεο είναι χαμηλή.</label></p> <p style='margin-top:4px;'><label>Αυτή η λειτουργία ίσως επηρεάσει τη διάρκεια ζωής και τη θερμοκρασία της μπαταρίας και ίσως προκαλέσει θορύβους. Παρακαλούμε μην τη χρησιμοποιείτε σε λειτουργία DC. Διαφορετικά, θα επιταχύνει την κατανάλωση ενέργειας και θα μειώσει τη διάρκεια ζωής της μπαταρίας.</label></p>",
-                "tooltip": "Η δυνατότητα λειτουργεί μόνο σε:<br>Windows Media player",
+				"heading": "Έξυπνα μέσα",
+				"title": "Αναβάθμιση ανάλυσης βίντεο",
+				"desc": "<p><label>Αυτή η δυνατότητα αναβαθμίζει την εμπειρία αναπαραγωγής βίντεο βελτιώνοντας την ανάλυση βίντεο. Λειτουργεί ιδίως όταν η ανάλυση του βίντεο είναι κακή.</label></p> <p style='margin-top:4px;'><label>Αυτή η λειτουργία ίσως επηρεάσει τη διάρκεια ζωής και τη θερμοκρασία της μπαταρίας και ίσως προκαλέσει θορύβους. Μη χρησιμοποιείτε τη δυνατότητα αυτή σε λειτουργία DC (λειτουργία μπαταρίας). Διαφορετικά, θα επιταχύνει την κατανάλωση ενέργειας και θα μειώσει τη διάρκεια ζωής της μπαταρίας.</label></p>",
+				"tooltip": "Αυτή η δυνατότητα λειτουργεί μόνο για τα παρακάτω προγράμματα αναπαραγωγής βίντεο:<br>Windows Media Player<br>Chrome<br>Ταινίες και τηλεόραση<br>PotPlayer<br>GOM player<br>Προγράμματα αναπαραγωγής βίντεο που βασίζονται σε προγράμματα περιήγησης στο Web (π.χ. Chrome)<br><br>Για οδηγίες σχετικά με τον τρόπο ενεργοποίησης αυτής της λειτουργίας στα PotPlayer και GOM player, ανατρέξτε στον Οδηγό χρήσης που συνοδεύει τον υπολογιστή σας.",
+				"note": {
+					"description": "Αυτή η δυνατότητα δεν λειτουργεί όταν:",
+					"description1": "Η λειτουργία εξοικονόμησης μπαταρίας είναι ενεργοποιημένη.",
+					"description2": "Η θερμοκρασία της CPU είναι πολύ υψηλή."
+				}
+			},
+            "antiTheft": {
+                "heading": "Έξυπνη ανίχνευση",
+                "title": "Έξυπνη ειδοποίηση κίνησης",
+                "desc": "<p><label>Όταν αυτή τη δυνατότητα είναι ενεργοποιημένη, η συσκευή θα αρχίσει να ηχεί όταν η οθόνη είναι κλειδωμένη και εντοπιστούν κινήσεις ιδίως σε δημόσιο χώρο.</label></p> <p style='margin-top:4px;'><label>Για να απορρίψετε τον συναγερμό, πληκτρολογήστε τον σωστό κωδικό πρόσβασης ή συνδεθείτε από το Windows Hello.</label></p>",
                 "note": {
-                    "description": "Αυτή η δυνατότητα δεν λειτουργεί όταν:",
-                    "description1": "Ο υπολογιστής δεν είναι συνδεδεμένος σε παροχή εναλλασσόμενου ρεύματος.",
-                    "description2": "Είναι ενεργοποιημένη η λειτουργία εξοικονόμησης μπαταρίας."
-                }
+                    "description": "Μόλις συνδεθείτε στο σύστημα με επιτυχία, αυτή η δυνατότητα θα απενεργοποιηθεί αυτόματα. Θα πρέπει να την ενεργοποιήσετε ξανά για να τη χρησιμοποιήσετε."
+                },
+                "alarm": {
+                    "title":" Ο ΣΥΝΑΓΕΡΜΟΣ ΘΑ ΔΙΑΡΚΕΣΕΙ",
+                    "option1":"10 δευτερόλεπτα",
+                    "option2":"20 δευτερόλεπτα",
+                    "option3":"30 δευτερόλεπτα",
+                    "option4":"1 λεπτό",
+                    "option5":"Δεν διακόπτεται ποτέ"
+                },
+                "allowCamera": {
+                    "title":"ΛΗΨΗ ΦΩΤΟΓΡΑΦΙΩΝ",
+                    "describe":"Όταν αυτή τη δυνατότητα είναι ενεργοποιημένη, η κάμερα λαμβάνει φωτογραφίες αυτόματα όταν ανιχνεύσει οποιαδήποτε κίνηση εάν η οθόνη είναι κλειδωμένη. Αυτά τα δεδομένα υπόκεινται σε τοπική επεξεργασία στη συσκευή σας. Η Lenovo ούτε έχει πρόσβαση ούτε τα χρησιμοποιεί.",
+                    "checkBoxText":"Ενεργοποίηση αυτής της δυνατότητας"
+                },
+                "cameraPrivacy": {
+                     "describe":"Η λειτουργία απορρήτου της κάμερας Lenovo Vantage είναι ενεργοποιημένη. Η λειτουργία του πλαισίου ελέγχου δεν θα λειτουργήσει.",
+                     "linkText":"Μεταβείτε στη λειτουργία απορρήτου της Κάμερας για να την απενεργοποιήσετε"
+                },
+                "authorizedAccess": {
+                    "describe":"Το Lenovo Vantage δεν έχει πρόσβαση στην κάμερα. Η λειτουργία του πλαισίου ελέγχου δεν θα λειτουργήσει.",
+                    "linkText":"Μεταβείτε στις Ρυθμίσεις των Windows για να αποκτήσετε πρόσβαση"
+                },
+                "photo": {
+                    "title":"Ο ΑΡΙΘΜΟΣ ΤΩΝ ΦΩΤΟΓΡΑΦΙΩΝ ΠΟΥ ΛΑΜΒΑΝΟΝΤΑΙ ΣΤΗ ΔΙΑΡΚΕΙΑ ΤΗΣ ΚΙΝΗΣΗΣ",
+                    "tooltip": "Η κάμερα στον υπολογιστή σας ενεργοποιείται αυτόματα για τη λήψη φωτογραφιών, όταν ανιχνεύονται κινήσεις. Οι φωτογραφίες λαμβάνονται κάθε 2 δευτερόλεπτα και αποθηκεύονται στον τοπικό χώρο αποθήκευσης.",
+                    "option1":"5",
+                    "option2":"10",
+                    "option3":"15",
+                    "option4":"20",
+                    "option5":"25",
+                    "option6":"30"
+                },
+                "showPhoto": {
+                    "title":"ΕΧΟΥΝ ΛΗΦΘΕΙ ΦΩΤΟΓΡΑΦΙΕΣ:",
+                    "link":"Προβολή φωτογραφιών"
+				},
+				"fileAuthorizationTips": {
+					"content":"Το Lenovo Vantage δεν έχει πρόσβαση στο σύστημα των αρχείων.",
+					"link":"Μεταβείτε στις Ρυθμίσεις των Windows για να αποκτήσετε πρόσβαση"
+				}
             },
             "voice": {
                 "title": "Φωνή",
@@ -2091,53 +2138,6 @@
                     "btnText": "OK",
                     "title": "Αποτυχία εγκατάστασης",
                     "desc": "Δοκιμάστε ξανά αργότερα για να χρησιμοποιήσετε το Lenovo Voice."
-                }
-            },
-            "antiTheft": {
-                "heading": "Intelligent Sensing",
-                "title": "Smart Motion Alert",
-                "desc": "<p><label>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</label></p> <p style='margin-top:4px;'><label>To dismiss the alarm, enter the correct password or log in by Windows Hello.</label></p>",
-                "note": {
-                    "description": "Once you log in the system successfully, this feature will be turned off automatically. You need to enable it again to use it."
-                },
-                "alarm": {
-                    "title": " THE ALARM WILL LAST FOR",
-                    "option1": "10 seconds",
-                    "option2": "20 seconds",
-                    "option3": "30 seconds",
-                    "option4": "1 minute",
-                    "option5": "Never stop"
-                },
-                "allowCamera": {
-                    "title": "TATING PHOTOS",
-                    "describe": "When enabling this feature, the camera takes photos automatically when detecting any movement if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
-                    "checkBoxText": "Enable this feature"
-                },
-                "cameraPrivacy": {
-                    "describe": "Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
-                    "linkText": "Go to Camera privacy mode to turn it off"
-                },
-                "authorizedAccess": {
-                    "describe": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
-                    "linkText": "Go to Windows Settings to give access"
-                },
-                "photo": {
-                    "title": "THE NUMBER OF PHOTOS TAKEN DURING THE MOVEMENT",
-                    "tooltip": "The camera on your computer automatically activates to take pictures when movements are detected. Pictures are taken every 2 seconds and are saved to your local storage.",
-                    "option1": 5,
-                    "option2": 10,
-                    "option3": 15,
-                    "option4": 20,
-                    "option5": 25,
-                    "option6": 30
-                },
-                "showPhoto": {
-                    "title": "PHOTOS HAVE BEEN:",
-                    "link": "View photos"
-                },
-                "fileAuthorizationTips": {
-                    "content": "Lenovo Vantage doesn't have access to the file system.",
-                    "link": "Go to Windows Settings to give access"
                 }
             }
         }

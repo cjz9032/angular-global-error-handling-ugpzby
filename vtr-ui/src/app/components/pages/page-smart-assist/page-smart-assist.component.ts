@@ -80,27 +80,33 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			metricsItem: 'IntelligentSecurity'
 		},
 		{
+			title: 'device.smartAssist.antiTheft.title',
+			path: 'sensing',
+			sortOrder: 2,
+			metricsItem: 'IntelligentSensing'
+		},
+		{
 			title: 'device.smartAssist.intelligentScreen.title',
 			path: 'screen',
-			sortOrder: 2,
+			sortOrder: 3,
 			metricsItem: 'IntelligentScreen'
 		},
 		{
 			title: 'device.smartAssist.intelligentMedia.heading',
 			path: 'media',
-			sortOrder: 3,
+			sortOrder: 4,
 			metricsItem: 'IntelligentMedia'
 		},
 		{
 			title: 'device.smartAssist.activeProtectionSystem.title',
 			path: 'aps',
-			sortOrder: 4,
+			sortOrder: 5,
 			metricsItem: 'ActiveProtectionSystem'
 		},
 		{
 			title: 'device.smartAssist.voice.title',
 			path: 'voice',
-			sortOrder: 5,
+			sortOrder: 6,
 			metricsItem: 'Voice'
 		},
 
@@ -224,6 +230,10 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'aps');
 				this.checkMenuItemsLength();
 			}
+			if (!this.smartAssistCapability.isAntiTheftSupported.available) {
+				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'sensing');
+				this.checkMenuItemsLength();
+			}	
 		} catch (error) {
 			this.logger.exception('initVisibility', error.message);
 		}
@@ -819,7 +829,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		} catch (error) { }
 	}
 
-	private getSuperResolutionStatus() {
+	public getSuperResolutionStatus() {
 		try {
 			if (this.smartAssist.isShellAvailable) {
 				this.smartAssist.getSuperResolutionStatus()
