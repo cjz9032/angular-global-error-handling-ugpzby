@@ -16,6 +16,8 @@ export class UiButtonComponent implements OnInit, AfterViewInit {
 	@Input() capitalizeLabel = false;
 	@Output() onClick = new EventEmitter<any>();
 
+	// Use the tooltipText variable to receive a personalized text
+	@Input() tooltipText: string;
 	@Input() tooltip = true;
 
 	@Input() metricsItem: string;
@@ -49,6 +51,14 @@ export class UiButtonComponent implements OnInit, AfterViewInit {
 			document.getElementById(this.linkId).focus();
 		}
 	}
+
+	definesTooltipText(){
+		//If the tooltipText is not defined, use the label text in it
+		if(!this.tooltipText){
+			this.tooltipText = this.label;
+		}
+	}
+
 	onClickButton(event) {
 		window.getSelection().empty();
 		if (this.href) {
@@ -64,5 +74,6 @@ export class UiButtonComponent implements OnInit, AfterViewInit {
 	}
 
 	ngOnInit() {
+		this.definesTooltipText();
 	}
 }
