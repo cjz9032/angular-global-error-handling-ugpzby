@@ -80,7 +80,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			metricsItem: 'IntelligentSecurity'
 		},
 		{
-			title: 'device.smartAssist.antiTheft.title',
+			title: 'device.smartAssist.antiTheft.heading',
 			path: 'sensing',
 			sortOrder: 2,
 			metricsItem: 'IntelligentSensing'
@@ -218,7 +218,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'voice');
 				this.checkMenuItemsLength();
 			}
-			if (!this.smartAssistCapability.isIntelligentMediaSupported.available) {
+			if (!this.smartAssistCapability.isIntelligentMediaSupported.available  && !this.smartAssistCapability.isSuperResolutionSupported.available) {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'media');
 				this.checkMenuItemsLength();
 			}
@@ -783,7 +783,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 					this.intelligentMedia = assistCapability.isIntelligentMediaSupported;
 					this.logger.debug('PageSmartAssistComponent.getVideoPauseResumeStatus: cache found', this.intelligentMedia);
 					this.isIntelligentMediaLoading = false;
-					if (!this.intelligentMedia.available) {
+					if (!this.intelligentMedia.available && !this.smartAssistCapability.isSuperResolutionSupported.available) {
 						this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'media');
 						this.checkMenuItemsLength();
 					}
@@ -797,7 +797,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 						this.intelligentMedia = response;
 						this.logger.debug('PageSmartAssistComponent.getVideoPauseResumeStatus: response from API', response);
 
-						if (!response.available) {
+						if (!response.available && !this.smartAssistCapability.isSuperResolutionSupported.available) {
 							this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'media');
 							this.checkMenuItemsLength();
 						}
