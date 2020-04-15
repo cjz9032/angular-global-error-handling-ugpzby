@@ -76,7 +76,7 @@
 			*ngFor="let item of list; let i = index"
 			role="option"
 			id="{{ item.text }}"
-			(click)="select(item)"
+			(click)="closeDropdown({value: i, hideList: false})"
 			vtrMetrics
 			metricsEvent="FeatureClick"
 			[metricsItem]="dropDownName"

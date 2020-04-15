@@ -54,7 +54,7 @@ export class UiDropdownNavigate implements OnInit, AfterViewInit {
 		switch(event['keyCode']) {
 			case 9:
 			case 27:
-				this.closeDropdown.emit({value: this.selectedChild, hideList: false});
+				this.closeDropdown.emit({hideList: false});
 				this.elRef.nativeElement.previousElementSibling.focus();
 				break;
 			case 13:
