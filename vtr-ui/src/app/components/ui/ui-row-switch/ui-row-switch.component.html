@@ -11,26 +11,33 @@
 				[ngClass]="{'flex-grow-1': (isSwitchVisible && !resetTextAsButton),
 					'col-md-11 col-11':(!resetTextAsButton && !isSwitchVisible),
 					'col-md-7': (resetTextAsButton && !isSwitchVisible),
-					'col-md-10':type===undefined }">
+					'col-md-10':type===undefined }"
+				role="table">
 				<div class="container-fluid p-0"
-					role="table">
+					role="rowgroup">
 					<div class="row m-0"
 						role="row">
 						<div class="col-auto left-icon-column"
 							role="cell"
 							*ngIf="leftIcon.length > 0">
-							<div class="left-icon-block">
+							<div class="left-icon-block"
+								role="img"
+								attr.aria-label="{{leftIcon[1]}}">
 								<fa-icon *ngIf="!isAdminRequired && leftIcon[0]!=='icomoon' && leftIcon[0]!=='svg'"
 									class="left-icon"
-									[icon]="leftIcon"></fa-icon>
+									[icon]="leftIcon"
+									attr.aria-hidden="true"></fa-icon>
 								<svg-icon *ngIf="!isAdminRequired && leftIcon[0]==='svg'"
+									attr.aria-hidden="true"
 									[applyCss]="true"
 									[stretch]="true"
 									class="left-icon-svg svg-inline--fa fa-w-20  ng-fa-icon"
 									[src]="'assets/icons/'+leftIcon[1]+'.svg'"></svg-icon>
 								<span *ngIf="!isAdminRequired && leftIcon[0]==='icomoon'"
-									[ngClass]="'icomoon '+leftIcon[1]"></span>
+									[ngClass]="'icomoon '+leftIcon[1]"
+									attr.aria-hidden="true"></span>
 								<img *ngIf="isAdminRequired"
+									attr.aria-hidden="true"
 									class="adminLogo" />
 							</div>
 						</div>
@@ -132,7 +139,7 @@
 						attr.aria-label="{{ title }} tooltip, which reads: {{ tooltipText }}"
 						class="right-icon"
 						tabindex="0"
-						role="img"
+						role="none"
 						triggers="manual"
 						placement="left"
 						[ngbTooltip]="tooltipRef"
@@ -155,6 +162,7 @@
 						class="right-icon"
 						triggers="manual"
 						placement="left"
+						role="none"
 						[ngbTooltip]="smartTooltipRef"
 						#rightToolTip2="ngbTooltip"
 						[autoClose]="true"
@@ -176,6 +184,7 @@
 						class="right-icon"
 						triggers="manual"
 						placement="left"
+						role="none"
 						[ngbTooltip]="fnCtrltoolTipRef"
 						#rightToolTip3="ngbTooltip"
 						[autoClose]="true"
