@@ -247,7 +247,6 @@ $fontsize_xs: 1.4rem;
 			}
 		}
 		.facial-recognition {
-			padding-top: 2rem;
 			h3 {
 				font-weight: $weight_bold;
 				color: $shade_blue;
@@ -384,6 +383,9 @@ $fontsize_xs: 1.4rem;
 	color: $menu_hover;
 	cursor: pointer;
 	padding-top: 0.3rem;
+	&:focus {
+		@include outline-blue;
+	}
 }
 
 .intelligent-security-image {
