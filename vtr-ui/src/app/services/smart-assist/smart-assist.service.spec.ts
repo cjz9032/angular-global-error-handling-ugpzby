@@ -9,6 +9,7 @@ import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-as
 import { IntelligentScreen } from 'src/app/data-models/smart-assist/intelligent-screen.model';
 import { IntelligentSecurity } from 'src/app/data-models/smart-assist/intelligent-security.model';
 import { SmartAssistCache } from 'src/app/data-models/smart-assist/smart-assist-cache.model';
+import { DisplayService } from 'src/app/services/display/display.service';
 
 describe('SmartAssistService', () => {
 
@@ -25,14 +26,15 @@ describe('SmartAssistService', () => {
 		function setup() {
 			const smartAssistService = TestBed.get(SmartAssistService);
         	const shellService = TestBed.get(VantageShellService);
-
-			return { smartAssistService, shellService };
+			const displayService = TestBed.get(DisplayService);
+			return { smartAssistService, shellService,displayService };
 		}
 
 		it('service should create', ()=> {
-			const {smartAssistService, shellService} = setup();	
+			const {smartAssistService, shellService,displayService} = setup();
 			expect(smartAssistService).toBeTruthy();
 			expect(shellService).toBeTruthy();
+			expect(displayService).toBeTruthy();
 		});
 
 		it('getHPDVisibility called', ()=> {
@@ -734,20 +736,20 @@ describe('SmartAssistService', () => {
 
 		//when shellService.getActiveProtectionSystem() is false
 		it('isAPSavailable = false', ()=> {
-			const {shellService} = setup();	
+			const {shellService,displayService} = setup();	
 			const privateSpy = spyOn<any>(shellService,'getActiveProtectionSystem').and.returnValue(false);
 
-			let smartAssistServiceTemp = new SmartAssistService(shellService);
+			let smartAssistServiceTemp = new SmartAssistService(shellService,displayService);
 			expect(smartAssistServiceTemp.isAPSavailable).toBe(false);
 		});
 
 		//Testing exceptions on service
 		it('Testing exception getVideoPauseResumeStatus', (() => {
-			const {shellService} = setup();	
+			const {shellService,displayService} = setup();	
 			const privateSpy = spyOn<any>(shellService,'getIntelligentMedia').and.returnValue(new Error("caught exception"));
 			const privateSpy1 = spyOn<any>(shellService,'getSuperResolution').and.returnValue(new Error("caught exception"));
 
-			let smartAssistServiceTemp = new SmartAssistService(shellService);
+			let smartAssistServiceTemp = new SmartAssistService(shellService,displayService);
 			let excp = function () {
 				smartAssistServiceTemp.getVideoPauseResumeStatus();
 			};
