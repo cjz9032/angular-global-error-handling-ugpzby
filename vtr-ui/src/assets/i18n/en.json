@@ -1679,15 +1679,17 @@
 						"hideAdvSettings": "HIDE ADVANCED SETTINGS",
 						"description": "The top row of the keyboard provides the following two functions. Select the one you want:",
 						"subSection": {
-							"description": "To switch the above two functions, press Fn+Esc.",
+							"description": "You also can switch the two functions by pressing Fn+Esc. The refresh will take several seconds.",
 							"radioButton": {
-								"sFunKey": "SPECIAL FUNCTION",
-								"fnKey": "F1-F12 FUNCTION"
+								"sFunKey": "Special function",
+								"fnKey": "F1-F12 function"
 							}
 						},
 						"subSectionTwo": {
 							"title": "Reversing the default primary function",
-							"description": "When on, the default primary function will be changed from the factory settings to the opposite. Restart your computer to make the changes take effect."
+							"description": "When on, the default primary function will be changed from the factory settings to the opposite. Restart your computer to make the changes take effect.",
+							"caption": "THE ACTIVE PRIMARY FUNCTION:",
+							"tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
 						},
 						"subSectionThree": {
 							"title": "How to use Fn key combinations",
@@ -1991,7 +1993,7 @@
 				"autoScreenOff": {
 					"title": "Auto Screen Off",
 					"caption": "Automatically turn off display when face-down or walking.",
-					"note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
+					"note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery\" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
 					"windowsLink": "Go to Power & sleep settings in Windows settings"
 				},
 				"keepMyDisplay": {
@@ -2059,7 +2061,7 @@
 				"note": {
 					"description": "This feature does not work when:",
 					"description1": "The Battery saver mode is enabled.",
-					"description2": " The CPU temperature is too high."
+					"description2": "The CPU temperature is too high."
 				}
 			},
 			"antiTheft": {
@@ -2101,7 +2103,7 @@
                     "option6":"30"
                 },
                 "showPhoto": {
-                    "title":"PHOTOS HAVE BEEN:",
+                    "title":"PHOTOS HAVE BEEN SAVED TO LOCAL:",
                     "link":"View photos"
 				},
 				"fileAuthorizationTips": {

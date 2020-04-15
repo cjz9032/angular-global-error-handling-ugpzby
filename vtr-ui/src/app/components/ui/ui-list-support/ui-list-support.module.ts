@@ -16,6 +16,7 @@ import { RouterModule } from '@angular/router';
 import { MetricsModule } from 'src/app/services/metric/metrics.module';
 import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 import { UiListSupportComponent } from './ui-list-support.component';
+import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { UiListSupportComponent } from './ui-list-support.component';
 		FontAwesomeModule,
 		RouterModule,
 		MetricsModule,
-		AppSearchModule
+		AppSearchModule,
+		NgbTooltipModule
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA,

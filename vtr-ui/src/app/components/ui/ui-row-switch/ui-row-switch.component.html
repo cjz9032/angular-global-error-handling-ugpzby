@@ -69,7 +69,7 @@
 					*ngIf="resetText.length > 0">
 					<!-- attr.aria-label="three  {{switchId+ '-reset-btn'}}"   -->
 					<button id="{{switchId+ '-reset-btn'}}"
-						title="{{resetText}}"
+						title=""
 						tabindex="0"
 						type="button"
 						[disabled]="disabledAll"
@@ -77,7 +77,9 @@
 						[ngClass]="{'btn-link text':!resetTextAsButton ,'btn-label':resetTextAsButton}"
 						(click)="onResetClick($event)"
 						(keydown.enter)="onResetClick($event)"
-						[attr.aria-disabled]="disabledAll">
+						[attr.aria-disabled]="disabledAll"
+						[ngbTooltip]="resetText" tooltipClass="vtr-tooltip" container="body"
+						>
 						<span class="text-ellipsis">{{ resetText }}</span>
 					</button>
 

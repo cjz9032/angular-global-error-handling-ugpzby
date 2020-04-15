@@ -197,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "Opozorilo!",
                     "description": "Nepravilne nastavitve Zvišanja takta lahko povzročijo nepopravljive poškodbe strojne opreme.",
-                    "proceed": "NADALJUJ"
+                    "proceed": "NADALJUJ",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },
@@ -2047,15 +2050,62 @@
                 "tooltip": "Ta funkcija se ne uporablja za spletne videopredvajalnike. To funkcijo podpirajo priljubljeni lokalni videopredvajalniki, kot so Windows Media Player, 5KPlayer in drugi."
             },
             "superResolution": {
-                "heading": "Inteligentni mediji",
-                "title": "Povečanje ločljivosti videoposnetkov",
-                "desc": "<p><label>Ta funkcija omogoča prijetnejšo izkušnjo ogleda videoposnetkov z izboljšanjem ločljivosti videoposnetka. Zlasti uporabna je, če je ločljivost videoposnetka nizka.</label></p> <p style='margin-top:4px;'><label>Ta funkcija lahko vpliva na čas delovanja in temperaturo baterije ter poveča glasnost računalnika. Ne uporabljajte je pri baterijskem napajanju, sicer bo pospešila porabo energije in skrajšala čas delovanja baterije.</label></p>",
-                "tooltip": "Funkcija deluje samo v:<br>Windows Media player",
+				"heading": "Inteligentni mediji",
+				"title": "Povečanje ločljivosti videoposnetkov",
+				"desc": "<p><label>Ta funkcija s povečanjem ločljivosti videoposnetka izboljša izkušnjo predvajanja videoposnetkov. Posebej primerna je za videoposnetke v slabši ločljivosti.</label></p> <p style='margin-top:4px;'><label>Ta funkcija lahko vpliva na čas delovanja in temperaturo baterije ter poveča glasnost računalnika. Ne uporabljajte je pri napajanju iz baterije (način DC). sicer bo pospešila porabo energije in skrajšala čas delovanja baterije.</label></p>",
+				"tooltip": "Ta funkcija deluje samo s temi predvajalniki videoposnetkov:<br>Windows Media Player<br>Chrome<br>Filmi in oddaje<br>PotPlayer<br>GOM Player<br>vgrajenimi predvajalniki v spletnih brskalnikih (npr. Chrome)<br><br>Navodila za omogočanje te funkcije v predvajalnikih PotPlayer in GOM Player najdete v Vodiču za uporabnika, ki je priložen računalniku.",
+				"note": {
+					"description": "Ta funkcija ne deluje v naslednjih primerih:",
+					"description1": "Omogočen je način varčevanja energije baterije.",
+					"description2": "Temperatura CPE je previsoka."
+				}
+			},
+            "antiTheft": {
+                "heading": "Pametno zaznavanje",
+                "title": "Pametno opozarjanje na premikanje",
+                "desc": "<p><label>Ko je ta funkcija omogočena, naprava začne piskati, kadar pri zaklenjenem zaslonu in predvsem na javnem mestu zazna premikanje.</label></p> <p style='margin-top:4px;'><label>Opozarjanje s piskanjem izklopite z vnosom pravilnega gesla ali prijavo s funkcijo Windows Hello.</label></p>",
                 "note": {
-                    "description": "Ta funkcija ne deluje v naslednjih primerih:",
-                    "description1": "Računalnik ni priključen na omrežni vir napajanja.",
-                    "description2": "Omogočen je način za varčevanje z energijo baterije."
-                }
+                    "description": "Po uspešni prijavi v sistem se ta funkcija samodejno izklopi. Pred vnovično uporabo jo boste morali znova omogočiti."
+                },
+                "alarm": {
+                    "title":" OPOZARJANJE BO TRAJALO",
+                    "option1":"10 s",
+                    "option2":"20 s",
+                    "option3":"30 s",
+                    "option4":"1 minuto",
+                    "option5":"Brez prestanka"
+                },
+                "allowCamera": {
+                    "title":"SNEMANJE FOTOGRAFIJ",
+                    "describe":"Ko je ta funkcija omogočena, kamera začne samodejno snemati fotografije, kadar pri zaklenjenem zaslonu zazna kakršno koli premikanje. Ti podatki so obdelani lokalno v vaši napravi. Lenovo do njih ne dostopa in jih ne uporablja.",
+                    "checkBoxText":"Omogoči to funkcijo"
+                },
+                "cameraPrivacy": {
+                     "describe":"Zasebnostni način za kamero v programu Lenovo Vantage je vklopljen. Funkcija potrditvenega polja ne bo delovala.",
+                     "linkText":"Odprite zasebnostni način za kamero, da ga izklopite"
+                },
+                "authorizedAccess": {
+                    "describe":"Lenovo Vantage nima dostopa do kamere. Funkcija potrditvenega polja ne bo delovala.",
+                    "linkText":"Odprite nastavitve sistema Windows in omogočite dostop"
+                },
+                "photo": {
+                    "title":"ŠTEVILO FOTOGRAFIJ, POSNETIH MED PREMIKANJEM",
+                    "tooltip": "Ob zaznanem premikanju se kamera v računalniku samodejno zažene v načinu za snemanje fotografij. Novo fotografijo posname vsaki dve sekundi in jo shrani v lokalni shranjevalni pogon.",
+                    "option1":"5",
+                    "option2":"10",
+                    "option3":"15",
+                    "option4":"20",
+                    "option5":"25",
+                    "option6":"30"
+                },
+                "showPhoto": {
+                    "title":"FOTOGRAFIJE SO POSNETE:",
+                    "link":"Ogled fotografij"
+				},
+				"fileAuthorizationTips": {
+					"content":"Lenovo Vantage nima dostopa do datotečnega sistema.",
+					"link":"Odprite nastavitve sistema Windows in omogočite dostop"
+				}
             },
             "voice": {
                 "title": "Glas",
@@ -2088,53 +2138,6 @@
                     "btnText": "V redu",
                     "title": "Namestitev ni uspela",
                     "desc": "Poskusite znova pozneje, da boste lahko uporabljali storitev Lenovo Voice."
-                }
-            },
-            "antiTheft": {
-                "heading": "Intelligent Sensing",
-                "title": "Smart Motion Alert",
-                "desc": "<p><label>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</label></p> <p style='margin-top:4px;'><label>To dismiss the alarm, enter the correct password or log in by Windows Hello.</label></p>",
-                "note": {
-                    "description": "Once you log in the system successfully, this feature will be turned off automatically. You need to enable it again to use it."
-                },
-                "alarm": {
-                    "title": " THE ALARM WILL LAST FOR",
-                    "option1": "10 seconds",
-                    "option2": "20 seconds",
-                    "option3": "30 seconds",
-                    "option4": "1 minute",
-                    "option5": "Never stop"
-                },
-                "allowCamera": {
-                    "title": "TATING PHOTOS",
-                    "describe": "When enabling this feature, the camera takes photos automatically when detecting any movement if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
-                    "checkBoxText": "Enable this feature"
-                },
-                "cameraPrivacy": {
-                    "describe": "Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
-                    "linkText": "Go to Camera privacy mode to turn it off"
-                },
-                "authorizedAccess": {
-                    "describe": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
-                    "linkText": "Go to Windows Settings to give access"
-                },
-                "photo": {
-                    "title": "THE NUMBER OF PHOTOS TAKEN DURING THE MOVEMENT",
-                    "tooltip": "The camera on your computer automatically activates to take pictures when movements are detected. Pictures are taken every 2 seconds and are saved to your local storage.",
-                    "option1": 5,
-                    "option2": 10,
-                    "option3": 15,
-                    "option4": 20,
-                    "option5": 25,
-                    "option6": 30
-                },
-                "showPhoto": {
-                    "title": "PHOTOS HAVE BEEN:",
-                    "link": "View photos"
-                },
-                "fileAuthorizationTips": {
-                    "content": "Lenovo Vantage doesn't have access to the file system.",
-                    "link": "Go to Windows Settings to give access"
                 }
             }
         }

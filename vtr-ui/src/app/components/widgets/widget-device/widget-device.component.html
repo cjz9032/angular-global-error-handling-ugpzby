@@ -98,8 +98,10 @@
 										metricsEvent="itemClick"
 										[metricsValue]="'link.'+item.id"
 										id="myDevice-status-learn-more-{{item.id}}"
-										title="{{item.detail}}"
-										*ngIf="item.isSystemLink===undefined || (item.isSystemLink!==undefined && item.isSystemLink===false && item.status !== 4)">
+										title=""
+										*ngIf="item.isSystemLink===undefined || (item.isSystemLink!==undefined && item.isSystemLink===false && item.status !== 4)"
+										[ngbTooltip]="item.detail" tooltipClass="vtr-tooltip" container="body"
+										>
 										<p class="detail"
 											[ngClass]="{'highlight':item.asLink}">
 											<span class="{{'dirClass' | translate}}"
@@ -115,8 +117,10 @@
 										[metricsValue]="'link.'+item.id"
 										href="javascript:void(0);"
 										id="myDevice-status-learn-more-{{item.id}}"
-										title="{{item.detail}}"
-										(click)="deviceService.launchUri(item.path)">
+										title=""
+										(click)="deviceService.launchUri(item.path)"
+										[ngbTooltip]="item.detail" tooltipClass="vtr-tooltip" container="body"
+										>
 										<p class="detail"
 											[ngClass]="{'highlight':item.asLink}">
 											<span class="{{'dirClass' | translate}}"

@@ -30,14 +30,18 @@
 				<div class="carousel-caption">
 					<h3 class="source"
 						attr.aria-label={{model.source}}
-						[title]="model.source | htmlText"
+						[title]=""
 						[innerHTML]="model.source"
-						id="{{carouselId}}-{{cIndex}}-source"></h3>
+						id="{{carouselId}}-{{cIndex}}-source"
+						[ngbTooltip]="model.source | htmlText" tooltipClass="vtr-tooltip" container="body"
+						></h3>
 					<h2 class="title"
 						attr.aria-label={{model.cardTitle}}
-						[title]="model.cardTitle | htmlText"
+						[title]=""
 						[innerHTML]="model.cardTitle"
-						id="{{carouselId}}-{{cIndex}}-title"></h2>
+						id="{{carouselId}}-{{cIndex}}-title"
+						[ngbTooltip]="model.cardTitle | htmlText" tooltipClass="vtr-tooltip" container="body"
+						></h2>
 				</div>
 			</a>
 		</ng-template>

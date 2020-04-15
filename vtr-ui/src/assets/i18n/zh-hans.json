@@ -197,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "警告！",
                     "description": "超频设置不当可能会导致不可逆转的硬件损坏。",
-                    "proceed": "继续"
+                    "proceed": "继续",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },
@@ -2047,15 +2050,62 @@
                 "tooltip": "此功能不适用于 Web 视频播放器。流行的本地视频播放器（例如 Windows Media Player、5KPlayer 等）均支持此功能。"
             },
             "superResolution": {
-                "heading": "智能媒体",
-                "title": "提高视频分辨率",
-                "desc": "<p><label>此功能通过提高视频分辨率来改善视频播放体验。尤其在视频分辨率较低时，此功能十分有效。</label></p> <p style='margin-top:4px;'><label>此功能可能会影响电池寿命、电池温度并产生噪音。请不要在直流电模式下使用。否则，会加快耗电速度并缩短电池寿命。</label></p>",
-                "tooltip": "此功能仅适用于：<br>Windows Media player",
+				"heading": "智能媒体",
+				"title": "提高视频分辨率",
+				"desc": "<p><label>此功能通过提高视频分辨率来改善视频播放的体验。特别是在视频分辨率较差时，其效果尤为明显。</label></p> <p style='margin-top:4px;'><label>此功能可能会影响电池寿命、电池温度并产生噪音。请不要在直流电模式（电池模式）下使用。否则，会加快耗电速度并缩短电池寿命。</label></p>",
+				"tooltip": "此功能仅适用于以下视频播放器：<br>Windows Media Player<br>Chrome<br>电影和电视<br>PotPlayer<br>GOM player<br>基于网络浏览器的播放器（例如 Chrome）<br><br>有关如何在 PotPlayer 和 GOM player 上启用此功能的说明，请参阅计算机随附的《用户指南》。",
+				"note": {
+					"description": "此功能在以下情况下无效：",
+					"description1": "已启用省电模式。",
+					"description2": "CPU 温度过高。"
+				}
+			},
+            "antiTheft": {
+                "heading": "智能感知",
+                "title": "智能运动警报",
+                "desc": "<p><label>启用此功能后，当屏幕锁定并检测到运动时（尤其是在公共场所），设备将发出蜂鸣声。</label></p> <p style='margin-top:4px;'><label>要消除警报，请输入正确的密码或通过 Windows Hello 登录。</label></p>",
                 "note": {
-                    "description": "此功能在以下情况下无效：",
-                    "description1": "计算机未连接到交流电源。",
-                    "description2": "已启用省电模式。"
-                }
+                    "description": "成功登录系统后，此功能将自动关闭。需要再次启用此功能才能使用。"
+                },
+                "alarm": {
+                    "title":" 警报将持续",
+                    "option1":"10 秒",
+                    "option2":"20 秒",
+                    "option3":"30 秒",
+                    "option4":"1 分钟",
+                    "option5":"永不停止"
+                },
+                "allowCamera": {
+                    "title":"拍照",
+                    "describe":"启用此功能后，如果屏幕被锁定，摄像头在检测到任何运动时会自动拍照。此数据将在您的设备上进行本地处理。Lenovo 不会访问或使用它。",
+                    "checkBoxText":"启用此功能"
+                },
+                "cameraPrivacy": {
+                     "describe":"Lenovo Vantage 摄像头隐私模式已开启。复选框的功能将不起作用。",
+                     "linkText":"转到摄像头隐私模式以将其关闭"
+                },
+                "authorizedAccess": {
+                    "describe":"Lenovo Vantage 无法访问摄像头。复选框的功能将不起作用。",
+                    "linkText":"转到 Windows 设置以授予访问权限"
+                },
+                "photo": {
+                    "title":"运动中拍摄的照片数量",
+                    "tooltip": "检测到运动时，计算机上的摄像头会自动激活进行拍照。每 2 秒钟拍摄一次照片，照片将保存到本地存储中。",
+                    "option1":"5",
+                    "option2":"10",
+                    "option3":"15",
+                    "option4":"20",
+                    "option5":"25",
+                    "option6":"30"
+                },
+                "showPhoto": {
+                    "title":"照片已经：",
+                    "link":"查看照片"
+				},
+				"fileAuthorizationTips": {
+					"content":"Lenovo Vantage 无法访问文件系统。",
+					"link":"转到 Windows 设置以授予访问权限"
+				}
             },
             "voice": {
                 "title": "语音",
@@ -2088,53 +2138,6 @@
                     "btnText": "确定",
                     "title": "安装失败",
                     "desc": "若要使用联想语音，请稍后重试。"
-                }
-            },
-            "antiTheft": {
-                "heading": "Intelligent Sensing",
-                "title": "Smart Motion Alert",
-                "desc": "<p><label>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</label></p> <p style='margin-top:4px;'><label>To dismiss the alarm, enter the correct password or log in by Windows Hello.</label></p>",
-                "note": {
-                    "description": "Once you log in the system successfully, this feature will be turned off automatically. You need to enable it again to use it."
-                },
-                "alarm": {
-                    "title": " THE ALARM WILL LAST FOR",
-                    "option1": "10 seconds",
-                    "option2": "20 seconds",
-                    "option3": "30 seconds",
-                    "option4": "1 minute",
-                    "option5": "Never stop"
-                },
-                "allowCamera": {
-                    "title": "TATING PHOTOS",
-                    "describe": "When enabling this feature, the camera takes photos automatically when detecting any movement if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
-                    "checkBoxText": "Enable this feature"
-                },
-                "cameraPrivacy": {
-                    "describe": "Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
-                    "linkText": "Go to Camera privacy mode to turn it off"
-                },
-                "authorizedAccess": {
-                    "describe": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
-                    "linkText": "Go to Windows Settings to give access"
-                },
-                "photo": {
-                    "title": "THE NUMBER OF PHOTOS TAKEN DURING THE MOVEMENT",
-                    "tooltip": "The camera on your computer automatically activates to take pictures when movements are detected. Pictures are taken every 2 seconds and are saved to your local storage.",
-                    "option1": 5,
-                    "option2": 10,
-                    "option3": 15,
-                    "option4": 20,
-                    "option5": 25,
-                    "option6": 30
-                },
-                "showPhoto": {
-                    "title": "PHOTOS HAVE BEEN:",
-                    "link": "View photos"
-                },
-                "fileAuthorizationTips": {
-                    "content": "Lenovo Vantage doesn't have access to the file system.",
-                    "link": "Go to Windows Settings to give access"
                 }
             }
         }
@@ -3084,14 +3087,14 @@
         },
         "gaming": {
             "gamingDescription": "Vantage 的游戏版本能让您轻松改善游戏体验。除常规设置外，主要功能包括（在某些系统上可用）：",
-			"gamingFeature1": "-计算机状态监控",
-			"gamingFeature2": "-性能模式和超频",
-			"gamingFeature3": "-灯光",
-			"gamingFeature4": "-网络增强",
-			"gamingFeature5": "-自动关闭",
-			"gamingOnly": "游戏",
-			"gamingAndWork": "游戏和工作",
-			"nonGaming": "非游戏"
+            "gamingFeature1": "-计算机状态监控",
+            "gamingFeature2": "-性能模式和超频",
+            "gamingFeature3": "-灯光",
+            "gamingFeature4": "-网络增强",
+            "gamingFeature5": "-自动关闭",
+            "gamingOnly": "游戏",
+            "gamingAndWork": "游戏和工作",
+            "nonGaming": "非游戏"
         }
     },
     "settings": {

@@ -18,7 +18,7 @@ export class UICustomRadio {
 	noRadioButtonSelected: boolean;
 	private radioButton: ElementRef<HTMLElement>;
 	radioLabel = 'radio.';
-
+	UNDEFINED = undefined;
 	constructor(private logger: LoggerService,
 		public metrics: MetricService) { }
 
@@ -56,7 +56,7 @@ export class UICustomRadio {
 			case KeyCode.SPACE:
 			case KeyCode.RETURN:
 				this.changeRadioOnKeyPress($event, radio);
-				// this.setChecked(this.radioButton.nativeElement, true);
+				//this.setChecked(this.radioButton.nativeElement, true);
 				$event.stopPropagation();
 				$event.preventDefault();
 				break;
@@ -158,18 +158,17 @@ export class UICustomRadio {
 
 	private setCheckedToNextItem(currentItem) {
 		try {
-			if (currentItem) {
-				let index;
+			let index;
 
-				if (currentItem.nativeElement === this.lastRadioButton) {
-					this.setChecked(this.firstRadioButton, false);
-				} else {
-					index = this.radioButtons.indexOf(currentItem.nativeElement);
-					this.setChecked(this.radioButtons[index + 1], false);
-				}
+			if (currentItem.nativeElement === this.lastRadioButton) {
+				this.setChecked(this.firstRadioButton, false);
+			} else {
+				index = this.radioButtons.indexOf(currentItem.nativeElement);
+				this.setChecked(this.radioButtons[index + 1], false);
 			}
+
 		} catch (error) {
-			this.logger.exception('UICustomRadio.setCheckedToNextItem exception', error);
+			this.logger.exception('setRadioButtons error occurred ::', error);
 		}
 
 	}
@@ -177,44 +176,44 @@ export class UICustomRadio {
 	protected setRadioButtons() {
 		try {
 			const rbs = this.getRadioGroup();
-
 			this.radioButtons = [];
-			rbs.forEach(radioButton => {
-				this.radioButtons.push(radioButton);
-				if (this.firstRadioButton === undefined || !this.firstRadioButton) {
-					this.firstRadioButton = radioButton;
-				}
-				this.lastRadioButton = radioButton;
+			if (rbs !== this.UNDEFINED && rbs && rbs.length > 0) {
+				rbs.forEach(radioButton => {
+					this.radioButtons.push(radioButton);
+					if (this.firstRadioButton === undefined || !this.firstRadioButton) {
+						this.firstRadioButton = radioButton;
+					}
+					this.lastRadioButton = radioButton;
 
-				if (radioButton.getAttribute('aria-checked') === 'true') {
-					this.selectedRadioButton = radioButton;
-					this.noRadioButtonSelected = false;
+					if (radioButton.getAttribute('aria-checked') === 'true') {
+						this.selectedRadioButton = radioButton;
+						this.noRadioButtonSelected = false;
+					}
+				});
+				// focus on first non disabled element if not selected any radio items
+				if (this.noRadioButtonSelected && this.firstRadioButton !== undefined
+					&& (this.firstRadioButton.tabIndex || this.firstRadioButton.tabIndex !== 0)
+				) {
+					this.setRadioTabIndex(this.firstRadioButton.nativeElement);
 				}
-			});
+				else if (!this.noRadioButtonSelected && this.selectedRadioButton !== undefined
+					&& (this.selectedRadioButton.tabIndex || this.selectedRadioButton.tabIndex !== 0)) {
+					this.setRadioTabIndex(this.selectedRadioButton.nativeElement);
+				}
+			}
 
-			// focus on first non disabled element if not selected any radio items
-			if (this.noRadioButtonSelected && this.firstRadioButton !== undefined
-				&& (this.firstRadioButton.tabIndex || this.firstRadioButton.tabIndex !== 0)
-			) {
-				this.setRadioTabIndex(this.firstRadioButton.nativeElement);
-			}
-			else if (!this.noRadioButtonSelected && this.selectedRadioButton !== undefined
-				&& (this.selectedRadioButton.tabIndex || this.selectedRadioButton.tabIndex !== 0)) {
-				this.setRadioTabIndex(this.selectedRadioButton.nativeElement);
-			}
 		} catch (error) {
-			this.logger.exception('UICustomRadio.setRadioButtons exception', error);
+			this.logger.exception('setRadioButtons error occurred ::', error);
 		}
 	}
 
 	private getRadioGroup() {
 
-		// commented to remove the dependency from radiogroup role of parent this component
 		try {
+			// commented to remove the dependency from radiogroup role of parent this component
 
-			const radioElement = (this.radioButton.nativeElement ? this.radioButton.nativeElement : this.radioButton);
-			if (!this.radioGroup && radioElement) {
-				this.radioGroup = this.getParentRadioGroup(radioElement, 10);
+			this.radioGroup = this.getParentRadioGroup(this.getNativeElement(this.radioButton), 10);
+			if (this.radioGroup !== this.UNDEFINED) {
 				// search by radio class and aria-disabled
 				const query = `[class*=${this.group}][aria-disabled=false]`;
 				// search by only role and aria-disabled
@@ -222,12 +221,25 @@ export class UICustomRadio {
 				return this.radioGroup.querySelectorAll(query);
 				// return Array.from(this.radioGroup.querySelectorAll(query));
 			}
+
 		} catch (error) {
 			this.logger.exception('UICustomRadio.getRadioGroup exception', error);
 		}
 
-
 	}
+
+	private getNativeElement(element) {
+		try {
+			if (element !== this.UNDEFINED) {
+				element = element && element['nativeElement'] ? element.nativeElement : element;
+			}
+			return element;
+		}
+		catch (error) {
+			this.logger.exception('UICustomRadio.getElement exception', error);
+		}
+	}
+
 
 	private getParentRadioGroup(element, topUpLevel: number) {
 		try {
@@ -250,5 +262,6 @@ export class UICustomRadio {
 
 		}
 	}
+
 
 }

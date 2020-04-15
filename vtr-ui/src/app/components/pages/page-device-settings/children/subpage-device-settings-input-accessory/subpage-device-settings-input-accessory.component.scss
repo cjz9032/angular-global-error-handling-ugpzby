@@ -243,6 +243,10 @@
 				// 	padding-bottom: .2rem;
 				// 	border-bottom: .2rem solid $main;
 				// }
+
+				&:focus {
+					outline-offset: 0;
+				}
 			}
 		}
 	}

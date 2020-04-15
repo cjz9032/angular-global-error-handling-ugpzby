@@ -43,14 +43,22 @@
 								class="title text-ellipsis"
 								id="{{containerCardId+'-title'}}"
 								role="link"
-								[title]="item.Title | htmlText"
-								[innerHTML]="item.Title"></div>
+								[title]=""
+								[innerHTML]="item.Title"
+								[ngbTooltip]="item.Title | htmlText"
+								tooltipClass="vtr-tooltip"
+								container="body"
+								></div>
 							<div *ngIf="item.Description"
 								class="caption text-two-ellipsis"
 								id="{{containerCardId+'-caption'}}"
 								role="link"
-								[title]="item.Description | htmlText"
-								[innerHtml]="item.Description"></div>
+								[title]=""
+								[innerHtml]="item.Description"
+								[ngbTooltip]="item.Description | htmlText"
+								tooltipClass="vtr-tooltip"
+								container="body"
+								></div>
 							<div *ngIf="item.BrandImage || item.BrandName"
 								class="logo">
 								<span class="logo-img">
@@ -169,11 +177,15 @@
 						<div class="inner-content"
 							title="">
 							<div *ngIf="item.Title && !isOfflineArm"
-								[title]="item.Title | htmlText"
+								[title]=""
 								class="title text-ellipsis"
 								id="{{containerCardId+'-title'}}"
 								role="link"
-								[innerHtml]="item.Title"></div>
+								[innerHtml]="item.Title"
+								[ngbTooltip]="item.Title | htmlText"
+								tooltipClass="vtr-tooltip"
+								container="body"
+								></div>
 						</div>
 					</a>
 				</div>
@@ -216,13 +228,17 @@
 						<div class="col col-12 content">
 							<div *ngIf="item.Title && !isOfflineArm"
 								class="title text-ellipsis"
-								[title]="item.Title | htmlText"
+								[title]=""
 								[innerHtml]="item.Title"
 								id="{{containerCardId+'-title'}}"
 								[style.margin-top.px]="containerCardArticle.clientWidth * 0"
 								[style.height.px]="containerCardArticle.clientWidth * 54 / 430"
 								[style.line-height.px]="containerCardArticle.clientWidth * 27 / 430"
-								role="link"></div>
+								role="link"
+								[ngbTooltip]="item.Title | htmlText"
+								tooltipClass="vtr-tooltip"
+								container="body"
+								></div>
 							<div *ngIf="item.ActionLink && !isOfflineArm"
 								[style.height.px]="containerCardArticle.clientWidth * 27 / 430"
 								[style.line-height.px]="containerCardArticle.clientWidth * 27 / 430"
@@ -275,13 +291,17 @@
 						<div class="col col-12 content">
 							<div *ngIf="item.Title && !isOfflineArm"
 								class="title text-ellipsis"
-								[title]="item.Title | htmlText"
+								[title]=""
 								[innerHtml]="item.Title"
 								id="{{containerCardId+'-title'}}"
 								[style.margin-top.px]="containerCardArticle.clientWidth * 13 / 436"
 								[style.height.px]="containerCardArticle.clientWidth * 54 / 430"
 								[style.line-height.px]="containerCardArticle.clientWidth * 27 / 430"
-								role="link"></div>
+								role="link"
+								[ngbTooltip]="item.Title | htmlText"
+								tooltipClass="vtr-tooltip"
+								container="body"
+								></div>
 							<div *ngIf="item.ActionLink && !isOfflineArm"
 								[style.height.px]="containerCardArticle.clientWidth * 27 / 430"
 								[style.line-height.px]="containerCardArticle.clientWidth * 27 / 430"
@@ -326,16 +346,24 @@
 							title="">
 							<div *ngIf="item.Title"
 								class="title text-ellipsis"
-								[title]="item.Title | htmlText"
+								[title]=""
 								[innerHtml]="item.Title"
 								id="{{containerCardId+'-title'}}"
-								role="link"></div>
+								role="link"
+								[ngbTooltip]="item.Title | htmlText"
+								tooltipClass="vtr-tooltip"
+								container="body"
+								></div>
 							<div *ngIf="item.Description"
 								class="caption text-two-ellipsis">
-								<div [title]="item.Description | htmlText"
+								<div [title]=""
 									[innerHtml]="item.Description"
 									id="{{containerCardId+'-caption'}}"
-									role="link"></div>
+									role="link"
+									[ngbTooltip]="item.Description | htmlText"
+									tooltipClass="vtr-tooltip"
+									container="body"
+									></div>
 							</div>
 							<div *ngIf="item.BrandImage || item.BrandName"
 								class="logo">
@@ -385,10 +413,14 @@
 							title="">
 							<div *ngIf="item.Title"
 								class="title text-two-ellipsis"
-								[title]="item.Title | htmlText"
+								[title]=""
 								[innerHtml]="item.Title"
 								id="{{containerCardId+'-title'}}"
-								role="link"></div>
+								role="link"
+								[ngbTooltip]="item.Title | htmlText"
+								tooltipClass="vtr-tooltip"
+								container="body"
+								></div>
 							<div *ngIf="item.ActionLink"
 								class="read-more">
 							</div>
