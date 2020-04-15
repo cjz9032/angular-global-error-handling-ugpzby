@@ -280,7 +280,7 @@
 							<div class="user-initials">
 								{{deviceService.isArm || userService.starter || !commonService.isOnline || !userService.isLenovoIdSupported() ? 'L' : userService.initials }}
 							</div>
-							<span class="unread-count-tag"
+							<span class="unread-count-tag" role="text" id="menu-main-unread-message-count"
 								*ngIf="!deviceService.isArm && appsForYouService.UnreadMessageCount.totalMessage">{{appsForYouService.UnreadMessageCount.totalMessage}}</span>
 						</a>
 						<div ngbDropdownMenu
@@ -311,7 +311,7 @@
 								(keydown.enter)="[onMenuItemClick(item, $event), menuItemKeyDown('apps-for-you', appsForYouEnum.AppGuidLenovoMigrationAssistant)]"
 								href="javascript:void(0)">
 								{{ 'appsForYou.menuText.lenovoMigrationAssistant' | translate }}
-								<span class="unread-tag"
+								<span class="unread-tag" role="text" id="menu-main-lma-unread-tag" attr.aria-label="LMA Unread Tag"
 									*ngIf="!appsForYouService.UnreadMessageCount.lmaMenuClicked"></span>
 							</a>
 							<a ngbDropdownItem
@@ -331,7 +331,7 @@
 								(keydown.enter)="[onMenuItemClick(item, $event), menuItemKeyDown('/apps-for-you/', appsForYouEnum.AppGuidAdobeCreativeCloud)]"
 								href="javascript:void(0)">
 								{{ 'appsForYou.menuText.adobeRedemption' | translate }}
-								<span class="unread-tag"
+								<span class="unread-tag" role="text" id="menu-main-adobe-unread-tag" attr.aria-label="Adobe Unread Tag"
 									*ngIf="!appsForYouService.UnreadMessageCount.adobeMenuClicked"></span>
 							</a>
 							<a ngbDropdownItem
@@ -349,7 +349,7 @@
 								(keydown.enter)="onMenuItemClick(item, $event)"
 								href="javascript:void(0)">
 								{{ 'dcc.menuText.lenovoDigitalOffer' | translate }}
-								<span class="unread-tag"
+								<span class="unread-tag" role="text" id="menu-main-dcc-unread-tag" attr.aria-label="DCC Unread Tag"
 									*ngIf="!appsForYouService.UnreadMessageCount.dccMenuClicked"></span>
 							</a>
 							<a ngbDropdownItem

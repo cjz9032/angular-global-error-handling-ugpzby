@@ -65,6 +65,7 @@ export class UiDropDownComponent implements OnInit {
 			this.isDropDownOpen = eventObj.hideList
 			if(interval) {
 				this.settingDimmerIntervals(interval)
+				this.change.emit(interval)
 				return;		
 			}
 		} catch (error) {

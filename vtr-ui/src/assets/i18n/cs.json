@@ -2050,16 +2050,16 @@
                 "tooltip": "Tato funkce není použitelná pro webové přehrávače videa. Oblíbené přehrávače videí v počítači (například Windows Media Player, 5KPlayer apod.) tuto funkci podporují."
             },
             "superResolution": {
-				"heading": "Inteligentní média",
-				"title": "Zvýšení rozlišení videa",
-				"desc": "<p><label>Tato funkce vylepšuje zlepšením rozlišení videorekordéru zážitek z přehrávání videa. Funguje zejména v případě, kdy má video špatné rozlišení.</label></p> <p style='margin-top:4px;'><label>Tato funkce může ovlivnit životnost baterie, teplotu baterie a způsobit šum. V režimu DC (režim s napájením z baterie) ji nepoužívejte. Jinak se zvýší spotřeba energie a zkrátí výdrž baterie.</label></p>",
-				"tooltip": "Tato funkce funguje pouze pro přehrávače videa uvedené dále:<br>Windows Media Player<br>Chrome<br>Přehrávač filmů a televize<br>PotPlayer<br>Přehrávač GOM Player<br>Přehrávače založené na webovém prohlížeči (např. Chrome)<br><br>Pokyny, jak povolit tuto funkci v přehrávači PotPlayer a GOM Player, naleznete v Uživatelské příručce dodávané s počítačem.",
-				"note": {
-					"description": "Tato funkce nepracuje v následujících případech:",
-					"description1": "Je povolen režim úspory baterie.",
-					"description2": "Teplota procesoru je příliš vysoká."
-				}
-			},
+                "heading": "Inteligentní média",
+                "title": "Zvýšení rozlišení videa",
+                "desc": "<p><label>Tato funkce vylepšuje zlepšením rozlišení videorekordéru zážitek z přehrávání videa. Funguje zejména v případě, kdy má video špatné rozlišení.</label></p> <p style='margin-top:4px;'><label>Tato funkce může ovlivnit životnost baterie, teplotu baterie a způsobit šum. V režimu DC (režim s napájením z baterie) ji nepoužívejte. Jinak se zvýší spotřeba energie a zkrátí výdrž baterie.</label></p>",
+                "tooltip": "Tato funkce funguje pouze pro přehrávače videa uvedené dále:<br>Windows Media Player<br>Chrome<br>Přehrávač filmů a televize<br>PotPlayer<br>Přehrávač GOM Player<br>Přehrávače založené na webovém prohlížeči (např. Chrome)<br><br>Pokyny, jak povolit tuto funkci v přehrávači PotPlayer a GOM Player, naleznete v Uživatelské příručce dodávané s počítačem.",
+                "note": {
+                    "description": "Tato funkce nepracuje v následujících případech:",
+                    "description1": "Je povolen režim úspory baterie.",
+                    "description2": "Teplota procesoru je příliš vysoká."
+                }
+            },
             "antiTheft": {
                 "heading": "Inteligentní detekce",
                 "title": "Inteligentní varování při pohybu",
@@ -2068,44 +2068,44 @@
                     "description": "Po úspěšném přihlášení do systému se tato funkce automaticky vypne. Abyste ji mohli používat, musíte ji znovu povolit."
                 },
                 "alarm": {
-                    "title":" VAROVÁNÍ BUDE TRVAT",
-                    "option1":"10 sekund",
-                    "option2":"20 sekund",
-                    "option3":"30 sekund",
-                    "option4":"1 min",
-                    "option5":"Nikdy nepřestávejte"
+                    "title": " VAROVÁNÍ BUDE TRVAT",
+                    "option1": "10 sekund",
+                    "option2": "20 sekund",
+                    "option3": "30 sekund",
+                    "option4": "1 min",
+                    "option5": "Nikdy nepřestávejte"
                 },
                 "allowCamera": {
-                    "title":"POŘIZOVAT FOTOGRAFIE",
-                    "describe":"Při povolení této funkce pořizuje kamera fotografie automaticky při detekci pohybu, pokud je obrazovka uzamčena. Tato data jsou ve vašem zařízení zpracovávána lokálně. Lenovo k nim nemá přístup ani je nepoužívá.",
-                    "checkBoxText":"Povolit tuto funkci"
+                    "title": "POŘIZOVAT FOTOGRAFIE",
+                    "describe": "Při povolení této funkce pořizuje kamera fotografie automaticky při detekci pohybu, pokud je obrazovka uzamčena. Tato data jsou ve vašem zařízení zpracovávána lokálně. Lenovo k nim nemá přístup ani je nepoužívá.",
+                    "checkBoxText": "Povolit tuto funkci"
                 },
                 "cameraPrivacy": {
-                     "describe":"Režim ochrany osobních údajů fotoaparátu Lenovo Vantage je zapnutý. Funkce zaškrtávacího políčka nebude fungovat.",
-                     "linkText":"Chcete-li jej vypnout, přejděte do režimu ochrany osobních údajů fotoaparátu"
+                    "describe": "Režim ochrany osobních údajů fotoaparátu Lenovo Vantage je zapnutý. Funkce zaškrtávacího políčka nebude fungovat.",
+                    "linkText": "Chcete-li jej vypnout, přejděte do režimu ochrany osobních údajů fotoaparátu"
                 },
                 "authorizedAccess": {
-                    "describe":"Lenovo Vantage nemá přístup ke kameře. Funkce zaškrtávacího políčka nebude fungovat.",
-                    "linkText":"Chcete-li poskytnout přístup, přejděte do nastavení systému Windows"
+                    "describe": "Lenovo Vantage nemá přístup ke kameře. Funkce zaškrtávacího políčka nebude fungovat.",
+                    "linkText": "Chcete-li poskytnout přístup, přejděte do nastavení systému Windows"
                 },
                 "photo": {
-                    "title":"POČET FOTOGRAFIÍ POŘÍZENÝCH PŘI POHYBU",
+                    "title": "POČET FOTOGRAFIÍ POŘÍZENÝCH PŘI POHYBU",
                     "tooltip": "Kamera v počítači se při rozpoznání pohybů automaticky aktivuje a začne pořizovat fotografie. Fotografie se pořizují každé 2 sekundy a ukládají se do místního úložiště.",
-                    "option1":"5",
-                    "option2":"10",
-                    "option3":"15",
-                    "option4":"20",
-                    "option5":"25",
-                    "option6":"30"
+                    "option1": "5",
+                    "option2": "10",
+                    "option3": "15",
+                    "option4": "20",
+                    "option5": "25",
+                    "option6": "30"
                 },
                 "showPhoto": {
-                    "title":"FOTOGRAFIE BYLY:",
-                    "link":"Zobrazit fotografie"
-				},
-				"fileAuthorizationTips": {
-					"content":"Lenovo Vantage nemá přístup k souborovému systému.",
-					"link":"Chcete-li poskytnout přístup, přejděte do nastavení systému Windows"
-				}
+                    "title": "FOTOGRAFIE BYLY:",
+                    "link": "Zobrazit fotografie"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Lenovo Vantage nemá přístup k souborovému systému.",
+                    "link": "Chcete-li poskytnout přístup, přejděte do nastavení systému Windows"
+                }
             },
             "voice": {
                 "title": "Hlas",
@@ -2705,7 +2705,7 @@
         },
         "question1": {
             "title": "Zálohování a obnovení souborů",
-            "description": "<div>    <div class='faqInFs4Fb'>        Zálohování a obnovení souborů    </div>    <hr />    <div class='faqInMb7'>        Vždy je dobré mít zálohu. Uchovávejte kopie svých souborů na jiném disku pro případ, že se něco stane s původními soubory.    </div>    <div class='faqInFs3Fb'>        Nastavení zálohy    </div>    <hr />    <div class='mb-5'>        Klepněte na tlačítko <span class='faqInFb'>Start</span> a vyberte <span class='faqInFb'>Nastavení</span> > <span class='faqInFb'>Aktualizace a zabezpečení</span> > <span class='faqInFb'>Zálohování</span> > <span class='faqInFb'>Přidat jednotku</span> a poté vyberte externí jednotku nebo síťové umístění, kam se má záloha uložit.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Vše je připraveno. Každou hodinu vytvoříme zálohu veškerého obsahu vaší uživatelské složky (C:\\\\Users\\\\username). Chcete-li změnit, které soubory se mají zálohovat nebo jak často má záloha probíhat, otevřete nabídku <span class='faqInFb'>Další možnosti</span>.    </div>    <div class='faqInFs3Fb'>        Obnovení souborů    </div>    <div class='mb-5'>        Pokud zjistíte, že vám chybí důležitý soubor nebo složka, můžete ji obnovit následujícím způsobem:    </div>    <div>        <div class='mb-3'>1. Do vyhledávacího pole na hlavním panelu zadejte <span class='faqInFb'>obnovit soubory</span> a poté vyberte položku <span class='faqInFb'>Obnovit soubory pomocí služby Historie souborů</span>.</div>        <div class='mb-3'>2. Vyhledejte požadovaný soubor a pomocí šipek procházejte mezi všemi verzemi souboru</div>        <div class='mb-3'>3. Po nalezení požadované verze jej volbou <span class='faqInFb'>Obnovit</span> uložíte do původního umístění. Jestliže jej chcete uložit jinam, stiskněte a držte, nebo klikněte pravým tlačítkem na volbu <span class='faqInFb'>Obnovit</span>, vyberte možnost <span class='faqInFb'>Obnovit do</span> a poté vyberte nové umístění.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Zálohování a obnovení souborů    </div>    <hr />    <div class='faqInMb7'>        Vždy je dobré mít zálohu. Uchovávejte kopie svých souborů na jiném disku pro případ, že se něco stane s původními soubory.    </div>    <div class='faqInFs3Fb'>        Nastavení zálohy    </div>    <hr />    <div class='mb-5'>        Klepněte na tlačítko <span class='faqInFb'>Start</span> a vyberte <span class='faqInFb'>Nastavení</span> > <span class='faqInFb'>Aktualizace a zabezpečení</span> > <span class='faqInFb'>Zálohování</span> > <span class='faqInFb'>Přidat jednotku</span> a poté vyberte externí jednotku nebo síťové umístění, kam se má záloha uložit.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Vše je připraveno. Každou hodinu vytvoříme zálohu veškerého obsahu vaší uživatelské složky (C:\\Users\\vaše uživatelské jméno). Chcete-li změnit, které soubory se mají zálohovat nebo jak často má záloha probíhat, otevřete nabídku <span class='faqInFb'>Další možnosti</span>.    </div>    <div class='faqInFs3Fb'>        Obnovení souborů    </div>    <div class='mb-5'>        Pokud zjistíte, že vám chybí důležitý soubor nebo složka, můžete ji obnovit následujícím způsobem:    </div>    <div>        <div class='mb-3'>1. Do vyhledávacího pole na hlavním panelu zadejte <span class='faqInFb'>obnovit soubory</span> a poté vyberte položku <span class='faqInFb'>Obnovit soubory pomocí služby Historie souborů</span>.</div>        <div class='mb-3'>2. Vyhledejte požadovaný soubor a pomocí šipek procházejte mezi všemi verzemi souboru</div>        <div class='mb-3'>3. Po nalezení požadované verze jej volbou <span class='faqInFb'>Obnovit</span> uložíte do původního umístění. Jestliže jej chcete uložit jinam, stiskněte a držte, nebo klikněte pravým tlačítkem na volbu <span class='faqInFb'>Obnovit</span>, vyberte možnost <span class='faqInFb'>Obnovit do</span> a poté vyberte nové umístění.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -3118,7 +3118,8 @@
         "settingsNotes": "Abyste ověřili, že se projevily všechny změny, spusťte aplikaci znovu.",
         "betaSettingTitle": "Beta program",
         "betaProgram": "Beta program",
-        "betaSettingDescription": "Vyzkoušejte nejnovější funkce, na kterých pracujeme."
+        "betaSettingDescription": "Vyzkoušejte nejnovější funkce, na kterých pracujeme.",
+        "betaSettingNewDescription": "Jsme rádi, že vás můžeme pozvat do Beta programu Smart Performance. Těmito způsoby nám pomáhá zlepšit výkon vašeho PC:<br/><ul class='pl-4'><li>Proaktivní diagnostika chyb a optimalizace nastavení.</li><li>Zvýšení výkonu Internetu díky optimalizaci sítě a prohlížeče.</li><li>Provádění rychlé kontroly a nápravy bez použití stávajícího antivirového programu.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Storno",
@@ -4043,8 +4044,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "Šipka doleva",
+            "rightArrow": "Šipka doprava"
         }
     },
     "dcc": {

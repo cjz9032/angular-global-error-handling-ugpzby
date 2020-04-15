@@ -2050,16 +2050,16 @@
                 "tooltip": "Ova funkcija nije primenjiva na Web video plejere. Popularni lokalni video plejeri kao što su Windows Media Player, 5KPlayer itd. podržavaju ovu funkciju."
             },
             "superResolution": {
-				"heading": "Inteligentni mediji",
-				"title": "Poboljšavanje video rezolucije",
-				"desc": "<p><label>Ova funkcija poboljšava iskustvo reprodukcije video zapisa poboljšanjem rezolucije video zapisa. On radi posebno kada je video u slaboj rezoluciji.</label></p> <p style='margin-top:4px;'><label>Ova funkcija može da utiče na vek trajanja baterije, temperaturu baterije i može da izazove buku. Nemojte koristiti u režimu rada na jednosmernu struju (režim baterije). U suprotnom će se baterija brže istrošiti i skratiće se radni vek baterije.</label></p>",
-				"tooltip": "Ova funkcija radi samo u dolenavedenim video plejerima:<br>Windows Media Player<br>Chrome<br>Filmovi i TV<br>PotPlayer<br>GOM player<br>plejeri zasnovani na veb pregledaču (npr. Chrome)<br><br>Uputstva o tome kako da omogućite ovu funkciju u plejeru PotPlayer i GOM player potražite u Uputstvu za korisnike koje ste dobili uz računar.",
-				"note": {
-					"description": "Ova funkcija ne radi kada:",
-					"description1": "Omogućen je režim uštede baterije.",
-					"description2": "Temperatura procesora je previsoka."
-				}
-			},
+                "heading": "Inteligentni mediji",
+                "title": "Poboljšavanje video rezolucije",
+                "desc": "<p><label>Ova funkcija poboljšava iskustvo reprodukcije video zapisa poboljšanjem rezolucije video zapisa. On radi posebno kada je video u slaboj rezoluciji.</label></p> <p style='margin-top:4px;'><label>Ova funkcija može da utiče na vek trajanja baterije, temperaturu baterije i može da izazove buku. Nemojte koristiti u režimu rada na jednosmernu struju (režim baterije). U suprotnom će se baterija brže istrošiti i skratiće se radni vek baterije.</label></p>",
+                "tooltip": "Ova funkcija radi samo u dolenavedenim video plejerima:<br>Windows Media Player<br>Chrome<br>Filmovi i TV<br>PotPlayer<br>GOM player<br>plejeri zasnovani na veb pregledaču (npr. Chrome)<br><br>Uputstva o tome kako da omogućite ovu funkciju u plejeru PotPlayer i GOM player potražite u Uputstvu za korisnike koje ste dobili uz računar.",
+                "note": {
+                    "description": "Ova funkcija ne radi kada:",
+                    "description1": "Omogućen je režim uštede baterije.",
+                    "description2": "Temperatura procesora je previsoka."
+                }
+            },
             "antiTheft": {
                 "heading": "Inteligentno raspoznavanje",
                 "title": "Pametno upozorenje o pokretu",
@@ -2068,44 +2068,44 @@
                     "description": "Kada uspešno prijavite sistem, ova funkcija se automatski isključuje. Potrebno je da je ponovo omogućite da biste je koristili."
                 },
                 "alarm": {
-                    "title":" ALARM ĆE TRAJATI",
-                    "option1":"10 sekundi",
-                    "option2":"20 sekundi",
-                    "option3":"30 sekundi",
-                    "option4":"1 minut",
-                    "option5":"Nikad ne prestaje"
+                    "title": " ALARM ĆE TRAJATI",
+                    "option1": "10 sekundi",
+                    "option2": "20 sekundi",
+                    "option3": "30 sekundi",
+                    "option4": "1 minut",
+                    "option5": "Nikad ne prestaje"
                 },
                 "allowCamera": {
-                    "title":"FOTOGRAFISANJE",
-                    "describe":"Kada omogućite ovu funkciju, kamera automatski snima fotografije kada detektuje pokret ako je ekran zaključan. Ovi podaci se obrađuju lokalno na vašem uređaju. Lenovo im ne pristupa niti ih koristi.",
-                    "checkBoxText":"Omogućite ovu funkciju"
+                    "title": "FOTOGRAFISANJE",
+                    "describe": "Kada omogućite ovu funkciju, kamera automatski snima fotografije kada detektuje pokret ako je ekran zaključan. Ovi podaci se obrađuju lokalno na vašem uređaju. Lenovo im ne pristupa niti ih koristi.",
+                    "checkBoxText": "Omogućite ovu funkciju"
                 },
                 "cameraPrivacy": {
-                     "describe":"Režim privatnosti kamere Lenovo Vantage je uključen. Funkcija polja za potvrdu ne radi.",
-                     "linkText":"Idite na režim privatnosti kamere da biste ga isključili"
+                    "describe": "Režim privatnosti kamere Lenovo Vantage je uključen. Funkcija polja za potvrdu ne radi.",
+                    "linkText": "Idite na režim privatnosti kamere da biste ga isključili"
                 },
                 "authorizedAccess": {
-                    "describe":"Lenovo Vantage nema pristup kameri. Funkcija polja za potvrdu ne radi.",
-                    "linkText":"Idite na postavke operativnog sistema Windows da biste dali pristup"
+                    "describe": "Lenovo Vantage nema pristup kameri. Funkcija polja za potvrdu ne radi.",
+                    "linkText": "Idite na postavke operativnog sistema Windows da biste dali pristup"
                 },
                 "photo": {
-                    "title":"BROJ SNIMLJENIH FOTOGRAFIJA DOK TRAJE POKRET",
+                    "title": "BROJ SNIMLJENIH FOTOGRAFIJA DOK TRAJE POKRET",
                     "tooltip": "Kamera na računaru se automatski aktivira za snimanje slika kada se detektuju pokreti. Slike se snimaju na 2 sekunde i čuvaju se u lokalnom skladištu.",
-                    "option1":"5",
-                    "option2":"10",
-                    "option3":"15",
-                    "option4":"20",
-                    "option5":"25",
-                    "option6":"30"
+                    "option1": "5",
+                    "option2": "10",
+                    "option3": "15",
+                    "option4": "20",
+                    "option5": "25",
+                    "option6": "30"
                 },
                 "showPhoto": {
-                    "title":"FOTOGRAFIJE SU:",
-                    "link":"Prikaz fotografija"
-				},
-				"fileAuthorizationTips": {
-					"content":"Lenovo Vantage nema pristup sistemu datoteka.",
-					"link":"Idite na postavke operativnog sistema Windows da biste dali pristup"
-				}
+                    "title": "FOTOGRAFIJE SU:",
+                    "link": "Prikaz fotografija"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Lenovo Vantage nema pristup sistemu datoteka.",
+                    "link": "Idite na postavke operativnog sistema Windows da biste dali pristup"
+                }
             },
             "voice": {
                 "title": "Glas",
@@ -2705,7 +2705,7 @@
         },
         "question1": {
             "title": "Pravljenje rezervne kopije i vraćanje datoteka u prethodno stanje",
-            "description": "<div>    <div class='faqInFs4Fb'>        Pravljenje rezervne kopije i vraćanje datoteka u prethodno stanje    </div>    <hr />    <div class='faqInMb7'>        Uvek je dobro da imate rezervnu kopiju. Čuvajte kopije datoteka na drugom disku u slučaju da se nešto desi originalima.    </div>    <div class='faqInFs3Fb'>        Podešavanje rezervne kopije    </div>    <hr />    <div class='mb-5'>        Izaberite dugme <span class='faqInFb'>Start</span>, izaberite <span class='faqInFb'>Settings (Postavke)</span> > <span class='faqInFb'>Update & Security (Ispravka i bezbednost)</span> > <span class='faqInFb'>Backup (Rezervna kopija)</span> > <span class='faqInFb'>Add a drive (Dodaj disk)</span>, a zatim dodajte spoljnu disk jedinicu ili mrežnu lokaciju za rezervne kopije.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Sve je podešeno. Svakog sata ćemo u vašoj korisničkoj fascikli (C:\\\\Users\\\\username) praviti rezervnu kopiju svega što koristite. Da biste promenili za koje datoteke pravimo rezervne kopije ili učestalost njihovog pravljenja, idite na <span class='faqInFb'>More options</span> (Još opcija).    </div>    <div class='faqInFs3Fb'>        Vraćanje datoteka u prethodno stanje    </div>    <div class='mb-5'>        Ako vam nedostaje važna datoteka ili fascikla, evo kako da je vratite:    </div>    <div>        <div class='mb-3'>1. U polje za pretragu na traci zadatak ukucajte <span class='faqInFb'>Restore files</span> (Oporavak datoteka), a zatim izaberite <span class='faqInFb'> Restore your files with File History</span> (Vraćanje datoteka u prethodno stanje pomoću funkcije „Istorija datoteka“).</div>        <div class='mb-3'>2. Potražite datoteku koja vam je potrebna, zatim koristite strelice da biste videli sve njene verzije</div>        <div class='mb-3'>3. Kada pronađete željenu verziju, izaberite <span class='faqInFb'>Restore</span> (Vrati u prethodno stanje) da biste je sačuvali na prvobitnoj lokaciji. Da biste je sačuvali na drugoj lokaciji, pritisnite i držite (ili kliknite desnim tasterom miša) <span class='faqInFb'>Restore</span> (Vrati u prethodno stanje), izaberite <span class='faqInFb'>Restore to</span> (Vrati u prethodno stanje na lokaciji), a zatim odaberite novu lokaciju.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Pravljenje rezervne kopije i vraćanje datoteka u prethodno stanje    </div>    <hr />    <div class='faqInMb7'>        Uvek je dobro da imate rezervnu kopiju. Čuvajte kopije datoteka na drugom disku u slučaju da se nešto desi originalima.    </div>    <div class='faqInFs3Fb'>        Podešavanje rezervne kopije    </div>    <hr />    <div class='mb-5'>        Izaberite dugme <span class='faqInFb'>Start</span>, izaberite <span class='faqInFb'>Settings (Postavke)</span> > <span class='faqInFb'>Update & Security (Ispravka i bezbednost)</span> > <span class='faqInFb'>Backup (Rezervna kopija)</span> > <span class='faqInFb'>Add a drive (Dodaj disk)</span>, a zatim dodajte spoljnu disk jedinicu ili mrežnu lokaciju za rezervne kopije.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Sve je podešeno. Svakog sata ćemo u vašoj korisničkoj fascikli (C:\\Users\\vaše korisničko ime) praviti rezervnu kopiju svega što koristite. Da biste promenili za koje datoteke pravimo rezervne kopije ili učestalost njihovog pravljenja, idite na <span class='faqInFb'>More options</span> (Još opcija).    </div>    <div class='faqInFs3Fb'>        Vraćanje datoteka u prethodno stanje    </div>    <div class='mb-5'>        Ako vam nedostaje važna datoteka ili fascikla, evo kako da je vratite:    </div>    <div>        <div class='mb-3'>1. U polje za pretragu na traci zadatak ukucajte <span class='faqInFb'>Restore files</span> (Oporavak datoteka), a zatim izaberite <span class='faqInFb'> Restore your files with File History</span> (Vraćanje datoteka u prethodno stanje pomoću funkcije „Istorija datoteka“).</div>        <div class='mb-3'>2. Potražite datoteku koja vam je potrebna, zatim koristite strelice da biste videli sve njene verzije</div>        <div class='mb-3'>3. Kada pronađete željenu verziju, izaberite <span class='faqInFb'>Restore</span> (Vrati u prethodno stanje) da biste je sačuvali na prvobitnoj lokaciji. Da biste je sačuvali na drugoj lokaciji, pritisnite i držite (ili kliknite desnim tasterom miša) <span class='faqInFb'>Restore</span> (Vrati u prethodno stanje), izaberite <span class='faqInFb'>Restore to</span> (Vrati u prethodno stanje na lokaciji), a zatim odaberite novu lokaciju.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -3118,7 +3118,8 @@
         "settingsNotes": "Ponovo pokrenite ovu aplikaciju kako biste bili sigurni da su sve promene stupile na snagu.",
         "betaSettingTitle": "Beta program",
         "betaProgram": "Beta Program",
-        "betaSettingDescription": "Isprobajte najnovije funkcije na kojima radimo."
+        "betaSettingDescription": "Isprobajte najnovije funkcije na kojima radimo.",
+        "betaSettingNewDescription": "Drago nam je što možemo da vas pozovemo u Beta program Smart Performance. On poboljšava performanse računara na sledeći način:<br/><ul class='pl-4'><li>Proaktivno dijagnostikuje greške i optimizuje postavke.</li><li>Poboljšava internet performanse putem optimizacije mreže i pregledača.</li><li>Obavljanjem brzog skeniranja i sanacije bez korišćenja postojećeg antivirusnog programa.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Otkaži",
@@ -4043,8 +4044,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "Strelica nalevo",
+            "rightArrow": "Strelica nadesno"
         }
     },
     "dcc": {
