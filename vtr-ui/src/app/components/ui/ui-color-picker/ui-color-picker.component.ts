@@ -70,12 +70,9 @@ export class UiColorPickerComponent implements OnInit , OnChanges {
     this.isToggleColorPicker.emit(this.isColorPicker);
   }
 
-  public moreColorFun(val){
+  public moreColorFun(){
     this.isTogglePresetColor = false;
     this.isToggleMoreColor = true;
-    if(val === 2){
-      document.getElementById('colorPicker').focus();
-    }
   }
 
   public colorPickerChangeFun(event){
