@@ -411,8 +411,8 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public setVolume(event: any) {
-		const volume = event.value;
+	public onMicrophoneVolumeChange($event: number) {
+		const volume = $event;
 		try {
 			this.microphoneProperties.volume = volume;
 			this.updateMicrophoneCache();
@@ -420,14 +420,14 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			if (this.audioService.isShellAvailable) {
 				this.audioService.setMicrophoneVolume(volume)
 					.then((response) => {
-						this.logger.info('setVolume', {response, volume});
+						this.logger.info('onMicrophoneVolumeChange', {response, volume});
 					}).catch(error => {
-						this.logger.error('setVolume', error.message);
+						this.logger.error('onMicrophoneVolumeChange', error.message);
 						return EMPTY;
 					});
 			}
 		} catch (error) {
-			this.logger.error('setVolume' + error.message);
+			this.logger.error('onMicrophoneVolumeChange' + error.message);
 			return EMPTY;
 		}
 	}

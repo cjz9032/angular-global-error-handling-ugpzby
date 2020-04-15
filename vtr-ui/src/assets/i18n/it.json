@@ -197,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "Avvertenza!",
                     "description": "Impostazioni non corrette dell'overclock possono provocare danni hardware irreversibili.",
-                    "proceed": "CONTINUA"
+                    "proceed": "CONTINUA",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },
@@ -1682,7 +1685,9 @@
                         },
                         "subSectionTwo": {
                             "title": "Inversione della funzione primaria predefinita",
-                            "description": "Se attivata, le impostazioni di fabbrica della funzione primaria predefinita vengono invertite. Riavviare il computer per rendere le modifiche."
+                            "description": "Se attivata, le impostazioni di fabbrica della funzione primaria predefinita vengono invertite. Riavviare il computer per rendere le modifiche.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "Modalità di utilizzo delle combinazioni di tasti Fn",
@@ -2047,16 +2052,16 @@
                 "tooltip": "Questa funzione non è applicabile ai lettori video Web. I principali lettori video locali, come Windows Media Player, 5KPlayer e così via supportano questa funzione."
             },
             "superResolution": {
-				"heading": "Supporti intelligenti",
-				"title": "Upscaling della risoluzione video",
-				"desc": "<p><label>Questa funzione migliora l'esperienza della riproduzione video migliorandone la risoluzione. Funziona soprattutto in caso di scarsa risoluzione video.</label></p> <p style='margin-top:4px;'><label>Questa funzione potrebbe influire sulla durata e la temperatura della batteria, aumentando la rumorosità del dispositivo. Non utilizzarla in modalità CC (modalità batteria). altrimenti accelererà il consumo energetico e ridurrà la durata della batteria.</label></p>",
-				"tooltip": "Questa funzione funziona solo per i seguenti riproduttori video:<br>Windows Media Player<br>Chrome<br>Film e programmi TV<br>PotPlayer<br>GOM Player<br>Riproduttori basati sul browser Web (ad es. Chrome)<br><br>Per le istruzioni su come abilitare questa funzione su PotPlayer e GOM Player, consultare la guida per l'utente fornita con il computer.",
-				"note": {
-					"description": "Questa funzione non può essere utilizzata quando:",
-					"description1": "La modalità risparmio batteria è abilitata.",
-					"description2": "La temperatura della CPU è elevata."
-				}
-			},
+                "heading": "Supporti intelligenti",
+                "title": "Upscaling della risoluzione video",
+                "desc": "<p><label>Questa funzione migliora l'esperienza della riproduzione video migliorandone la risoluzione. Funziona soprattutto in caso di scarsa risoluzione video.</label></p> <p style='margin-top:4px;'><label>Questa funzione potrebbe influire sulla durata e la temperatura della batteria, aumentando la rumorosità del dispositivo. Non utilizzarla in modalità CC (modalità batteria). altrimenti accelererà il consumo energetico e ridurrà la durata della batteria.</label></p>",
+                "tooltip": "Questa funzione funziona solo per i seguenti riproduttori video:<br>Windows Media Player<br>Chrome<br>Film e programmi TV<br>PotPlayer<br>GOM Player<br>Riproduttori basati sul browser Web (ad es. Chrome)<br><br>Per le istruzioni su come abilitare questa funzione su PotPlayer e GOM Player, consultare la guida per l'utente fornita con il computer.",
+                "note": {
+                    "description": "Questa funzione non può essere utilizzata quando:",
+                    "description1": "La modalità risparmio batteria è abilitata.",
+                    "description2": "La temperatura della CPU è elevata."
+                }
+            },
             "antiTheft": {
                 "heading": "Rilevamento intelligente",
                 "title": "Avviso Smart Motion",
@@ -2065,44 +2070,44 @@
                     "description": "Una volta effettuato l'accesso al sistema, questa funzione verrà disattivata automaticamente. Per utilizzare la funzione è necessario abilitarla nuovamente."
                 },
                 "alarm": {
-                    "title":" L'ALLARME DURERÀ PER",
-                    "option1":"10 secondi",
-                    "option2":"20 secondi",
-                    "option3":"30 secondi",
-                    "option4":"1 minuto",
-                    "option5":"Ininterrotto"
+                    "title": " L'ALLARME DURERÀ PER",
+                    "option1": "10 secondi",
+                    "option2": "20 secondi",
+                    "option3": "30 secondi",
+                    "option4": "1 minuto",
+                    "option5": "Ininterrotto"
                 },
                 "allowCamera": {
-                    "title":"SCATTO FOTO",
-                    "describe":"Quando si abilita questa funzione, la fotocamera scatta automaticamente le foto quando rileva qualsiasi movimento se lo schermo è bloccato. Questi dati vengono elaborati in locale sul dispositivo. Lenovo non accede a questi dati o li utilizza.",
-                    "checkBoxText":"Abilita questa funzione"
+                    "title": "SCATTO FOTO",
+                    "describe": "Quando si abilita questa funzione, la fotocamera scatta automaticamente le foto quando rileva qualsiasi movimento se lo schermo è bloccato. Questi dati vengono elaborati in locale sul dispositivo. Lenovo non accede a questi dati o li utilizza.",
+                    "checkBoxText": "Abilita questa funzione"
                 },
                 "cameraPrivacy": {
-                     "describe":"La modalità privacy della fotocamera di Lenovo Vantage è attiva. La casella di controllo non è disponibile.",
-                     "linkText":"Accedere alla modalità privacy della fotocamera per disattivarla"
+                    "describe": "La modalità privacy della fotocamera di Lenovo Vantage è attiva. La casella di controllo non è disponibile.",
+                    "linkText": "Accedere alla modalità privacy della fotocamera per disattivarla"
                 },
                 "authorizedAccess": {
-                    "describe":"Lenovo Vantage non ha accesso alla fotocamera. La casella di controllo non è disponibile.",
-                    "linkText":"Accedere alle impostazioni di Windows per consentire l'accesso"
+                    "describe": "Lenovo Vantage non ha accesso alla fotocamera. La casella di controllo non è disponibile.",
+                    "linkText": "Accedere alle impostazioni di Windows per consentire l'accesso"
                 },
                 "photo": {
-                    "title":"IL NUMERO DI FOTO SCATTATE DURANTE IL MOVIMENTO",
+                    "title": "IL NUMERO DI FOTO SCATTATE DURANTE IL MOVIMENTO",
                     "tooltip": "La fotocamera del computer si attiva automaticamente per scattare foto quando vengono rilevati movimenti. Le foto vengono scattate ogni 2 secondi e vengono salvate nell'archivio locale.",
-                    "option1":"5",
-                    "option2":"10",
-                    "option3":"15",
-                    "option4":"20",
-                    "option5":"25",
-                    "option6":"30"
+                    "option1": "5",
+                    "option2": "10",
+                    "option3": "15",
+                    "option4": "20",
+                    "option5": "25",
+                    "option6": "30"
                 },
                 "showPhoto": {
-                    "title":"LE FOTO SONO STATE:",
-                    "link":"Visualizza foto"
-				},
-				"fileAuthorizationTips": {
-					"content":"Lenovo Vantage non ha accesso al file system.",
-					"link":"Accedere alle impostazioni di Windows per consentire l'accesso"
-				}
+                    "title": "LE FOTO SONO STATE:",
+                    "link": "Visualizza foto"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Lenovo Vantage non ha accesso al file system.",
+                    "link": "Accedere alle impostazioni di Windows per consentire l'accesso"
+                }
             },
             "voice": {
                 "title": "Voce",
@@ -2702,7 +2707,7 @@
         },
         "question1": {
             "title": "Backup e ripristino dei file",
-            "description": "<div>    <div class='faqInFs4Fb'>        Backup e ripristino dei file    </div>    <hr />    <div class='faqInMb7'>        È sempre consigliabile disporre di una copia di backup. Si consiglia di salvare le copie dei file su un'altra unità, in caso di problemi ai file originali.    </div>    <div class='faqInFs3Fb'>        Configurazione del backup    </div>    <hr />    <div class='mb-5'>        Selezionare il pulsante <span class='faqInFb'>Start</span>, fare clic su <span class='faqInFb'>Impostazioni</span> > <span class='faqInFb'>Aggiornamento e sicurezza</span> > <span class='faqInFb'>Backup</span> > <span class='faqInFb'>Aggiungi un'unità</span> e scegliere un'unità esterna o il percorso di rete per i backup.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Tutto è pronto. Il backup verrà eseguito ogni ora nella cartella utente (C:\\\\Users\\\\username). Per modificare i file di cui eseguire il backup o la frequenza dei backup, accedere alla sezione <span class='faqInFb'>Altre opzioni</span>.    </div>    <div class='faqInFs3Fb'>        Ripristino dei file    </div>    <div class='mb-5'>        Se manca un file o una cartella importante, ecco come recuperarlo:    </div>    <div>        <div class='mb-3'>1. Digitare <span class='faqInFb'>Ripristina file</span> nella casella di ricerca sulla barra delle applicazioni, quindi selezionare <span class='faqInFb'> Ripristina file con Cronologia file</span>.</div>        <div class='mb-3'>2. Cercare il file che si desidera, quindi utilizzare le frecce per visualizzare tutte le versioni</div>        <div class='mb-3'>3. Una volta trovata la versione desiderata, selezionare <span class='faqInFb'>Ripristina</span> per salvarla nel percorso originale. Per salvarla in un percorso differente, tenere premuto (o fare clic con il pulsante destro del mouse su) <span class='faqInFb'>Ripristina</span>, selezionare <span class='faqInFb'>Ripristina in</span> e scegliere un nuovo percorso.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Backup e ripristino dei file    </div>    <hr />    <div class='faqInMb7'>        È sempre consigliabile disporre di una copia di backup. Si consiglia di salvare le copie dei file su un'altra unità, in caso di problemi ai file originali.    </div>    <div class='faqInFs3Fb'>        Configurazione del backup    </div>    <hr />    <div class='mb-5'>        Selezionare il pulsante <span class='faqInFb'>Start</span>, fare clic su <span class='faqInFb'>Impostazioni</span> > <span class='faqInFb'>Aggiornamento e sicurezza</span> > <span class='faqInFb'>Backup</span> > <span class='faqInFb'>Aggiungi un'unità</span> e scegliere un'unità esterna o il percorso di rete per i backup.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Tutto è pronto. Il backup verrà eseguito ogni ora nella cartella utente (C:\\Users\\nome utente). Per modificare i file di cui eseguire il backup o la frequenza dei backup, accedere alla sezione <span class='faqInFb'>Altre opzioni</span>.    </div>    <div class='faqInFs3Fb'>        Ripristino dei file    </div>    <div class='mb-5'>        Se manca un file o una cartella importante, ecco come recuperarlo:    </div>    <div>        <div class='mb-3'>1. Digitare <span class='faqInFb'>Ripristina file</span> nella casella di ricerca sulla barra delle applicazioni, quindi selezionare <span class='faqInFb'> Ripristina file con Cronologia file</span>.</div>        <div class='mb-3'>2. Cercare il file che si desidera, quindi utilizzare le frecce per visualizzare tutte le versioni</div>        <div class='mb-3'>3. Una volta trovata la versione desiderata, selezionare <span class='faqInFb'>Ripristina</span> per salvarla nel percorso originale. Per salvarla in un percorso differente, tenere premuto (o fare clic con il pulsante destro del mouse su) <span class='faqInFb'>Ripristina</span>, selezionare <span class='faqInFb'>Ripristina in</span> e scegliere un nuovo percorso.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -3115,7 +3120,8 @@
         "settingsNotes": "Riavviare questa applicazione per assicurarsi che tutte le modifiche abbiano effetto.",
         "betaSettingTitle": "Programma beta",
         "betaProgram": "Programma beta",
-        "betaSettingDescription": "Prova le funzioni più recenti su cui stiamo lavorando."
+        "betaSettingDescription": "Prova le funzioni più recenti su cui stiamo lavorando.",
+        "betaSettingNewDescription": "Siamo lieti di invitarti al programma Beta di Smart Performance. Questo programma contribuisce a migliorare le prestazioni del tuo PC mediante:<br/><ul class='pl-4'><li>Diagnostica proattiva dei bug e ottimizzazione delle impostazioni.</li><li>Aumento delle prestazioni Internet attraverso l'ottimizzazione della rete e del browser.</li><li>Esecuzione di scansione e correzioni rapide senza utilizzare il programma antivirus esistente.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Annulla",
@@ -4040,8 +4046,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "Freccia sinistra",
+            "rightArrow": "Freccia destra"
         }
     },
     "dcc": {

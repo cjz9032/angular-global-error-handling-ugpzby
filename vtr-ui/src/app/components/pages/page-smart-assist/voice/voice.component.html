@@ -11,8 +11,9 @@
 					metricsParent="Device.SmartAssist"
 					metricsItem="Voice{{voiceStatus}}Button"
 					type="button"
-					class="btn btn-primary btn-block install-btn"
-					(click)="btnClicked()">
+					class="btn btn-block install-btn"
+					(click)="btnClicked()"
+					tabindex="0">
 					{{ btnText | uppercase }}
 				</button>
 				<vtr-spinner *ngIf="showLoader"

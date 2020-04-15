@@ -60,7 +60,10 @@
 												<h1 class="title-big mb-3">{{'smartPerformance.scanCompletePage.summary' |translate }}</h1>
 												<p [innerHTML]="'smartPerformance.scanCompletePage.summaryDetails' |translate:{issueCount: issueCount }"></p>
 												<div class="d-flex justify-content-between my-5">
-													<button class="action-button" (click)=openSubscribeModal()>{{'smartPerformance.scanCompletePage.signupRepairButton' |translate }}</button>
+													<button class="action-button" vtrMetrics
+													metricsItem="smartPerformance.subscribeModal"
+													metricsEvent="ItemClick"
+													metricsParent="pages.support.smartPerformance" (click)=openSubscribeModal()>{{'smartPerformance.scanCompletePage.signupRepairButton' |translate }}</button>
 													<div class="desc col pl-5">
 														<p [innerHTML]="'smartPerformance.scanCompletePage.monthlyPricing' |translate"></p>
 													</div>
@@ -1264,7 +1267,10 @@
 												<h3>{{'smartPerformance.subscriberScanHomePage.subTitle' |translate }}</h3>
 												<p>{{'smartPerformance.subscriberScanHomePage.description' |translate }}</p>
 												<div class="d-flex justify-content-between my-5 w-75">
-													<button class="action-button" (click)="ScanNowSummary()">{{'smartPerformance.subscriberScanHomePage.scanNow' |translate }}</button>
+													<button class="action-button" (click)="ScanNowSummary()" vtrMetrics
+													metricsItem="smartPerformance.scanNow"
+													metricsEvent="FeatureClick"
+													metricsParent="pages.support.smartPerformance">{{'smartPerformance.subscriberScanHomePage.scanNow' |translate }}</button>
 													<div class="desc desc1">
 														<b>{{'smartPerformance.subscriberScanHomePage.mostRecent' |translate }}</b><br> 10/23 at 06:56pm
 													</div>
@@ -1305,13 +1311,13 @@
 											<div class="row px-0">
 												<div class="navbar bkg-transparent justify-content-between w-100">
 
-													<div class="title-block col">
+													<div class="title-block">
 														<h3>{{'smartPerformance.subscriberScanHomePage.scanSummary.title' |translate }}</h3>
 														<p>{{'smartPerformance.subscriberScanHomePage.scanSummary.description' |translate }}</p>
 													</div>
 
 
-													<div class="summary-period col pr-0">
+													<div class="summary-period">
 														<ul class="list-group list-group-horizontal">
 															<li class="list-group-item" *ngFor="let item of menuItems;let ind=index"
 																(click)="scanSummaryTime(ind)" [ngClass]="{'selected-list-item': tabIndex === ind}">
@@ -1340,7 +1346,12 @@
 														[ngClass]="[tabIndex ===2 ? 'calender-drop' : 'dropdownmenu']">
 														<div *ngIf="tabIndex === 0">
 															<a (click)="anualScanSummary(year)" *ngFor="let year of yearsList"
-																[ngClass]="{'link-active': year.displayName == annualYear}">
+																[ngClass]="{'link-active': year.displayName == annualYear}"
+																vtrMetrics
+																metricsItem="smartPerformance.annualScanSummary"
+																metricsEvent="FeatureClick"
+																metricsParent="pages.support.smartPerformance">
+																>
 																{{year.displayName}}
 																<br>
 															</a>
@@ -1350,7 +1361,12 @@
 														<div *ngIf="tabIndex === 1">
 															<div *ngFor="let menu of quarterlyMenu;let ind=index">
 																<a (click)="quarterlyScanSummary(menu)"
-																	[ngClass]="{'link-active':menu.key == quarterlyMonth.key}">{{menu.displayName}}</a>
+																	[ngClass]="{'link-active':menu.key == quarterlyMonth.key}"
+																	vtrMetrics
+																	metricsItem="smartPerformance.quaterlyScanSummary"
+																	metricsEvent="FeatureClick"
+																	metricsParent="pages.support.smartPerformance"
+																	>{{menu.displayName}}</a>
 															</div>
 														</div>
 
@@ -1374,7 +1390,12 @@
 																		</div>
 																		<div class="row">
 																			<div class="col-3"></div>
-																			<div class="col-9"><button class="custom-go-btn mt-3" (click)="customDateScanSummary()">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtGo' |translate }}</button>
+																			<div class="col-9"><button class="custom-go-btn mt-3" (click)="customDateScanSummary()"
+																				vtrMetrics
+																				metricsItem="smartPerformance.customScanSummary"
+																				metricsEvent="FeatureClick"
+																				metricsParent="pages.support.smartPerformance"
+																				>{{'smartPerformance.subscriberScanHomePage.scanSummary.txtGo' |translate }}</button>
 																			</div>
 																		</div>
 																	</div>
@@ -1713,7 +1734,13 @@
 										<div class="recommended-action sidebar-widget">
 											<div class="title pb-3">{{'smartPerformance.scanCompletePage.recommendedAction.title' |translate }}</div>
 											<div class="card-info">
-												<p>{{'smartPerformance.scanCompletePage.recommendedAction.description' |translate }} <a href="#" class="link-text">{{'smartPerformance.subscriptionDetails.learnMore' |translate }}</a>
+												<p>{{'smartPerformance.scanCompletePage.recommendedAction.description' |translate }} 
+													<a href="#" class="link-text"
+													vtrMetrics
+													metricsItem="smartPerformance.learnmore"
+													metricsEvent="ArticleClick"
+													metricsParent="pages.support.smartPerformance"
+													>{{'smartPerformance.subscriptionDetails.learnMore' |translate }}</a>
 												</p>
 											</div>
 											<div class="pricing">
@@ -1721,7 +1748,10 @@
 												<small>{{'smartPerformance.scanCompletePage.recommendedAction.monthlyPricing' |translate }}</small>
 											</div>
 											<p>{{'smartPerformance.scanCompletePage.recommendedAction.longerTerm' |translate }}</p>
-											<button class="action-button mt-2" (click)=openSubscribeModal()>{{'smartPerformance.scanCompletePage.recommendedAction.signupButton' |translate }}</button>
+											<button class="action-button mt-2" vtrMetrics
+											metricsItem="smartPerformance.subscribeModal"
+											metricsEvent="FeatureClick"
+											metricsParent="pages.support.smartPerformance" (click)=openSubscribeModal()>{{'smartPerformance.scanCompletePage.recommendedAction.signupButton' |translate }}</button>
 										</div>
 									</div>
 								</div>
@@ -1741,7 +1771,6 @@
 	
 	</div>
 </right-content>
-
 </vtr-page-layout>
 
 

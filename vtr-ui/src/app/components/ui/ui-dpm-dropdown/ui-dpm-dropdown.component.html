@@ -3,7 +3,9 @@
 <section class="vtr-ui-dropdown">
 	<div class="input input-placeholder">
 		<div class="time">
-			<span [title]="text">{{ text }} </span>
+			<span [title]=""
+			[ngbTooltip]="text" tooltipClass="vtr-tooltip" container="body"
+			>{{ text }} </span>
 		</div>
 		<p class="chevron">
 			<fa-icon *ngIf="!isDropDownOpen" [icon]="['fal', 'chevron-down']">
@@ -17,7 +19,9 @@
 		(focus)="onDropdownFocus(toggleBtn)" (keydown.enter)="toggle(toggleBtn)" tabindex="0"
 		id="{{dropDownId}}">
 		<div class="time">
-			<span [title]="text">{{ text }} </span>
+			<span [title]=""
+			[ngbTooltip]="text" tooltipClass="vtr-tooltip" container="body"
+			>{{ text }} </span>
 		</div>
 		<p class="chevron">
 			<fa-icon *ngIf="!isDropDownOpen" [icon]="['fal', 'chevron-down']">
@@ -32,7 +36,9 @@
 				(click)="[select(item),toggleByItem(isLast,toggleBtn)]"  (blur)="onItemBlur(isLast)"
 				(keydown.enter)="[select(item),toggleByItem(isLast,toggleBtn)]"
 				role="option" attr.aria-label="{{ item.text }} selected,">
-				<span [title]="item.text">{{ item.text }}</span>
+				<span [title]=""
+				[ngbTooltip]="item.text" tooltipClass="vtr-tooltip" container="body"
+				>{{ item.text }}</span>
 			</li>
 		</ul>
 	</div>

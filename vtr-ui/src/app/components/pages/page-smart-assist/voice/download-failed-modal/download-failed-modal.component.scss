@@ -65,9 +65,12 @@
 		margin-top: 1rem;
 		font-weight: $weight_bold;
 		text-transform: uppercase;
-		float: left;
-		height: 6.5rem;
-		width: 23.5rem;
+		position: relative;
+		&:focus {
+			outline: 0;
+			box-shadow: none;
+			@include button-outline-blue;
+		}
 	}
 
 	.number-list {

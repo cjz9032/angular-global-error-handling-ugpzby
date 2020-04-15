@@ -23,9 +23,11 @@
 					<div class="col button-row">
 						<button [ngClass]="{'btn-primary action-button': !disableQuickScan, 'action-button-disable': disableQuickScan}"
 							tabindex="1"
-							[title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
+							[title]=""
 							[disabled]="disableQuickScan"
-							(click)="onQuickScan()">{{buttonText}}</button>
+							(click)="onQuickScan()"
+							[ngbTooltip]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate" tooltipClass="vtr-tooltip" container="body"
+							>{{buttonText}}</button>
 						<a
 							vtrMetrics
 							metricsEvent="FeatureClick"
@@ -33,8 +35,10 @@
 							metricsItem="HardwareScan.CustomizeScan"
 							href="javascript:void();"
 							tabindex="1"
-							[title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
-							[ngClass]="{'action-anchor': !disableQuickScan, 'disabled-anchor': disableQuickScan}" (click)="onAnchor()">{{anchorText}}
+							[title]=""
+							[ngClass]="{'action-anchor': !disableQuickScan, 'disabled-anchor': disableQuickScan}" (click)="onAnchor()"
+							[ngbTooltip]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate" tooltipClass="vtr-tooltip" container="body"
+							>{{anchorText}}
 						</a>
 					</div>
 				</div>
@@ -52,7 +56,9 @@
 					<div class="col col-12 row">
 						<div class="col col-12 row">
 							<div class="col col-12 cancel-check" *ngIf="!isScanOrRBSFinished()"
-								 title="{{ disableCancel ? ('hardwareScan.waitScanStarts' | translate) : ''}}">
+								 title=""
+								 [ngbTooltip]="disableCancel ? ('hardwareScan.waitScanStarts' | translate) : ''" tooltipClass="vtr-tooltip" container="body"
+								 >
 								<button type="button"
 									id="hw_cancel_scan"
 									attr.aria-label="hw_cancel_scan"

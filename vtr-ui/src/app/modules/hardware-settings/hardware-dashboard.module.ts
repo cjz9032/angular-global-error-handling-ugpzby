@@ -12,7 +12,7 @@ import { UiButtonModule } from 'src/app/components/ui/ui-button/ui-button.module
 import { WidgetQuicksettingsComponent } from 'src/app/components/widgets/widget-quicksettings/widget-quicksettings.component';
 import { WidgetSwitchIconComponent } from 'src/app/components/widgets/widget-switch-icon/widget-switch-icon.component';
 import { WidgetSecurityStatusModule } from 'src/app/components/widgets/widget-security-status/widget-security-status.module';
-import { NgbCarouselModule, NgbDropdownModule, NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCarouselModule, NgbDropdownModule, NgbModalModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-info/widget-offline.module';
 import { WidgetCarouselModule } from 'src/app/components/widgets/widget-carousel/widget-carousel.module';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
@@ -72,7 +72,8 @@ import { WidgetEnergyStarComponent } from 'src/app/components/widgets/widget-ene
 		ReactiveFormsModule,
 		PageLayoutModule,
 		AppSearchModule,
-		WidgetDashboardWarrantyComponent
+		WidgetDashboardWarrantyComponent,
+		NgbTooltipModule
 	],
 	providers: [MockService],
 	entryComponents: [],

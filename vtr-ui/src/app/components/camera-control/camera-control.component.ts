@@ -325,20 +325,20 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public onBrightnessSliderChange($event: any) {
-		const value = parseInt($event.value, 10);
+	public onBrightnessSliderChange($event: number) {
+		const value = $event;
 		this.logger.info('CameraControlComponent.Brightness changed', value);
 		this.cameraSettings.brightness.value = value;
 		this.brightnessChange.emit(value);
 	}
-	public onContrastSliderChange($event: any) {
-		const value = parseInt($event.value, 10);
+	public onContrastSliderChange($event: number) {
+		const value = $event;
 		this.logger.info('CameraControlComponent.Contrast changed', value);
 		this.cameraSettings.contrast.value = value;
 		this.contrastChange.emit(value);
 	}
-	public onExposureSliderChange($event: any) {
-		const value = parseInt($event.value, 10);
+	public onExposureSliderChange($event: number) {
+		const value = $event;
 		this.logger.info('CameraControlComponent.Exposure changed', value);
 		this.cameraSettings.exposure.value = value;
 		this.exposureChange.emit(value);

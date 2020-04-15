@@ -685,15 +685,15 @@
 		},
 		"narrator": {
 			"networkBoost": {
-				"subPage": {
+				"subPage": { 
 					"addApps": "Add apps",
 					"remove": "Remove"
 				},
 				"turnOnModal": {
 					"confirmation": "Network boost turn on confirmation window opened",
 					"dontAskAgain": "Dont ask again",
-					"turnOnButton": "modal Turn networkBoost turn on",
-					"notOnButton": "modal Turn networkBoost not now"
+					"turnOnButton": "Turn on Network boost",
+					"notOnButton": "Not now"
 				},
 				"addApps": {
 					"addAppsTitle": "Networkboost add apps window opened",
@@ -1679,15 +1679,17 @@
 						"hideAdvSettings": "HIDE ADVANCED SETTINGS",
 						"description": "The top row of the keyboard provides the following two functions. Select the one you want:",
 						"subSection": {
-							"description": "To switch the above two functions, press Fn+Esc.",
+							"description": "You also can switch the two functions by pressing Fn+Esc. The refresh will take several seconds.",
 							"radioButton": {
-								"sFunKey": "SPECIAL FUNCTION",
-								"fnKey": "F1-F12 FUNCTION"
+								"sFunKey": "Special function",
+								"fnKey": "F1-F12 function"
 							}
 						},
 						"subSectionTwo": {
 							"title": "Reversing the default primary function",
-							"description": "When on, the default primary function will be changed from the factory settings to the opposite. Restart your computer to make the changes take effect."
+							"description": "When on, the default primary function will be changed from the factory settings to the opposite. Restart your computer to make the changes take effect.",
+							"caption": "THE ACTIVE PRIMARY FUNCTION:",
+							"tooltipText": "To use the default primary function, press the top-row keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first, and then press the top-row keys."
 						},
 						"subSectionThree": {
 							"title": "How to use Fn key combinations",
@@ -1991,7 +1993,7 @@
 				"autoScreenOff": {
 					"title": "Auto Screen Off",
 					"caption": "Automatically turn off display when face-down or walking.",
-					"note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
+					"note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery\" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
 					"windowsLink": "Go to Power & sleep settings in Windows settings"
 				},
 				"keepMyDisplay": {
@@ -2306,11 +2308,11 @@
 			},
 			"tabSet2": {
 				"tab1Heading": "IT'S EASY",
-				"tab1Description": "We don't confuse you with tech mumbo jumbp",
+				"tab1Description": "We don't confuse you with tech mumbo jumbo",
 				"tab2Heading": "IT'S FAST",
 				"tab2Description": "Get a 100 point check done in under 5 minutes",
 				"tab3Heading": "IT'S SAFE",
-				"tab3Description": "No scareware, built with best practises"
+				"tab3Description": "No scareware, built with best practices"
 			}
 		},
 		"boostInternetPerformance": {
@@ -2374,7 +2376,7 @@
 				"tab3Description": "No scareware, built with best practises"
 			}
 		},
-		"startScan": "<b>Ready to start the scan?</b> Let's diagnose and resolve performance and security issues in your computer",
+		"startScan": "<b>Ready to start the scan?</b> Let’s diagnose for performance and security issues in your computer.",
 		"subscriptionDetails": {
 			"title": "Subscription details",
 			"description": "You are subscribed to the Lenovo Smart Performance Service. During this time all the features are fully available to keep your PC protected and running smoothly.",
@@ -3417,7 +3419,7 @@
 		},
 		"question1": {
 			"title": "Backup and restore your files",
-			"description": "<div><div class='faqInFs4Fb'>Backup and restore your files</div><hr /><div class='faqInMb7'>It's always good to have a backup. Keep copies of your files on another drive in case something happens to the originals.</div><div class='faqInFs3Fb'>Set up your backup</div><hr /><div class='mb-5'>Select the <span class='faqInFb'>Start</span> button, select <span class='faqInFb'>Settings</span> > <span class='faqInFb'>Update & security</span> > <span class='faqInFb'>Backup</span> > <span class='faqInFb'>Add a drive</span> , and then choose an external drive or network location for your backups.</div><div class='mb-5'><img src='assets/images/qa/1.1.jpg' /></div><div class='mb-5'>All set. Every hour, we'll backup everything in your user folder (C:\\Users\\username). To change which files get backed up or how often backups happen, go to <span class='faqInFb'>More options</span>.</div><div class='faqInFs3Fb'>Restore your files</div><div class='mb-5'>If you're missing an important file or folder, here's how to get it back:</div><div><div class='mb-3'>1. Type <span class='faqInFb'>Restore files</span> in the search box on the taskbar, and then select <span class='faqInFb'> Restore your files with File History</span>.</div><div class='mb-3'>2. Look for the file you need, then use the arrows to see all its versions</div><div class='mb-3'>3. When you find the version you want, select <span class='faqInFb'>Restore</span> to save it in its original location. To save it in a different place, press and hold (or right-click) <span class='faqInFb'>Restore</span>, select <span class='faqInFb'>Restore to</span>, and then choose a new location. </div></div></div>",
+			"description": "<div><div class='faqInFs4Fb'>Backup and restore your files</div><hr /><div class='faqInMb7'>It's always good to have a backup. Keep copies of your files on another drive in case something happens to the originals.</div><div class='faqInFs3Fb'>Set up your backup</div><hr /><div class='mb-5'>Select the <span class='faqInFb'>Start</span> button, select <span class='faqInFb'>Settings</span> > <span class='faqInFb'>Update & security</span> > <span class='faqInFb'>Backup</span> > <span class='faqInFb'>Add a drive</span> , and then choose an external drive or network location for your backups.</div><div class='mb-5'><img src='assets/images/qa/1.1.jpg' /></div><div class='mb-5'>All set. Every hour, we'll backup everything in your user folder (C:\\Users\\your username). To change which files get backed up or how often backups happen, go to <span class='faqInFb'>More options</span>.</div><div class='faqInFs3Fb'>Restore your files</div><div class='mb-5'>If you're missing an important file or folder, here's how to get it back:</div><div><div class='mb-3'>1. Type <span class='faqInFb'>Restore files</span> in the search box on the taskbar, and then select <span class='faqInFb'> Restore your files with File History</span>.</div><div class='mb-3'>2. Look for the file you need, then use the arrows to see all its versions</div><div class='mb-3'>3. When you find the version you want, select <span class='faqInFb'>Restore</span> to save it in its original location. To save it in a different place, press and hold (or right-click) <span class='faqInFb'>Restore</span>, select <span class='faqInFb'>Restore to</span>, and then choose a new location. </div></div></div>",
 			"para1": {
 				"line1": "It's always good to have a backup.",
 				"line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -3829,7 +3831,8 @@
 		"settingsNotes": "Please relaunch this application to make sure all changes take effect.",
 		"betaSettingTitle": "Beta program",
 		"betaProgram": "Beta Program",
-		"betaSettingDescription": "Try the latest features we're working on."
+		"betaSettingDescription": "Try the latest features we're working on.",
+		"betaSettingNewDescription": "We are glad to invite you to the Beta program of Smart Performance. It helps to improve your PC performance by:<br/><ul class='pl-4'><li style='list-style-type:disc;'>Proactively diagnosing bugs and optimizing settings.</li><li>Boost Internet performance by Network and Brower Optimization.</li><li>Performing quick scan and remediation without using the existing Antivirus program.</li></ul>"
 	},
 	"modernPreload": {
 		"cancel": "Cancel",

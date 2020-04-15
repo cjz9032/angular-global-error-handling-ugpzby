@@ -49,7 +49,7 @@
 								[checked]="(topRowKeyObj.primaryFunStatus && topRowKeyObj.fnLockStatus) || (!topRowKeyObj.primaryFunStatus && !topRowKeyObj.fnLockStatus) ? false: true"
 								[label]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.fnKey' | translate"								[value]="'icomoon icomoon-F1-F12-funciton'"
 								(optionChange)="onChangeFunType(!topRowKeyObj.primaryFunStatus)"
-								[textId]="'myDevice-settings-inputAccessories-top-row-functions-thinkpad'">
+								[textId]="'myDevice-settings-inputAccessories-top-row-functions-thinkpad'" [processLabel]= "false">
 							</vtr-ui-circle-radio-with-checkbox>
 							</div>
 						</div>
@@ -63,7 +63,8 @@
 								id="inputAccessory.topRowFunctions.showAdvSettings"
 								attr-aria-label="inputAccessory.topRowFunctions.showAdvSettings"
 								(click)="showAdvancedSection = true"
-								(keydown.enter)="showAdvancedSection = true">
+								(keydown.enter)="showAdvancedSection = true"
+								tabindex="0">
 								{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.showAdvSettings' | translate}}
 							</span>
 						</div>
@@ -80,13 +81,31 @@
 				[title]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionTwo.title' | translate"
 				componentName="Input Accessories"
 				[leftIcon]="['fal', '']"
+				[rightIcon]="['far', 'question-circle']"
 				[caption]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionTwo.description' | translate"
 				[showChildContent]="true"
 				[isSwitchVisible]="true"
 				[isSwitchChecked]="topRowKeyObj.primaryFunStatus"
 				(rebootToggleOnOff)="rebootToggleOnOff($event)"
 				[theme]="'white'"
-				[switchId]="'inputAccessories-hiddenKeyboardFunctions'">
+				[switchId]="'inputAccessories-hiddenKeyboardFunctions'"
+				[tooltipText]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionTwo.tooltipText' | translate">
+				<p class="pl-5 mt-2 mb-0">
+					<span class="sub-heading-caption" id="inputAccessory.topRowFunctions.subSectionTwo.caption"
+						attr-aria-label="inputAccessory.topRowFunctions.subSectionTwo.caption">{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionTwo.caption' | translate}}</span>
+					<span class="sub-heading-caption"
+						*ngIf="(topRowKeyObj.primaryFunStatus && topRowKeyObj.fnLockStatus) || (!topRowKeyObj.primaryFunStatus && !topRowKeyObj.fnLockStatus)"
+						id="inputAccessory.topRowFunctions.subSection.radioButton.sFunKey2"
+						attr-aria-label="inputAccessory.topRowFunctions.subSection.radioButton.sFunKey2">
+						{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.sFunKey' | translate | uppercase}}
+					</span>
+					<span class="sub-heading-caption"
+						*ngIf="(!topRowKeyObj.primaryFunStatus && topRowKeyObj.fnLockStatus) || (topRowKeyObj.primaryFunStatus && !topRowKeyObj.fnLockStatus)"
+						id="inputAccessory.topRowFunctions.subSection.radioButton.fnKey2"
+						attr-aria-label="inputAccessory.topRowFunctions.subSection.radioButton.fnKey2">
+						{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.fnKey' | translate | uppercase}}
+					</span>
+				</p>
 			</vtr-ui-row-switch>
 		</div>
 		<div *ngIf="topRowKeyObj.stickyFunCap">

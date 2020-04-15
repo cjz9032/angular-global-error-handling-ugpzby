@@ -197,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "Advarsel!",
                     "description": "Ukorrekte innstillinger av Overklokking kan føre til uopprettelige maskinvareskader.",
-                    "proceed": "FORTSETT"
+                    "proceed": "FORTSETT",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },
@@ -1682,7 +1685,9 @@
                         },
                         "subSectionTwo": {
                             "title": "Reversere den standard primærfunksjonen",
-                            "description": "Når på vil den standard primærfunksjonen endres fra fabrikkinnstillingene til det motsatte. Start datamaskinen på nytt for at endringene skal tre i kraft."
+                            "description": "Når på vil den standard primærfunksjonen endres fra fabrikkinnstillingene til det motsatte. Start datamaskinen på nytt for at endringene skal tre i kraft.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "Slik bruker du Fn-tastekombinasjoner",
@@ -2047,16 +2052,16 @@
                 "tooltip": "Denne funksjonen støttes ikke av nettvideospillere. Populære lokale videospillere, for eksempel Windows Media Player og 5KPlayer, støtter denne funksjonen."
             },
             "superResolution": {
-				"heading": "Intelligent medieavspilling",
-				"title": "Oppskalering av videooppløsning",
-				"desc": "<p><label>Denne funksjonen forbedrer opplevelsen av videoavspilling ved å forbedre videooppløsningen. Den fungerer spesielt når videoen har dårlig oppløsning.</label></p> <p style='margin-top:4px;'><label>Denne funksjonen kan påvirke batteritiden, batteritemperaturen og forårsake støy. Ikke bruk i likestrømmodus (batterimodus). Ellers vil det øke strømforbruket og forkorte batteriets levetid.</label></p>",
-				"tooltip": "Denne funksjonen fungerer bare for følgende videospillere:<br>Windows Media Player<br>Chrome<br>Filmer og TV<br>PotPlayer<br>GOM player<br>Nettleserbaserte spillere (for eksempel Chrome)<br><br>Se brukerhåndboken som følger med datamaskinen for instruksjoner om hvordan du aktiverer denne funksjonen for PotPlayer og GOM player.",
-				"note": {
-					"description": "Denne funksjonen fungerer ikke når følgende er tilfelle:",
-					"description1": "Batterisparemodus er aktivert.",
-					"description2": "CPU-temperaturen er for høy."
-				}
-			},
+                "heading": "Intelligent medieavspilling",
+                "title": "Oppskalering av videooppløsning",
+                "desc": "<p><label>Denne funksjonen forbedrer opplevelsen av videoavspilling ved å forbedre videooppløsningen. Den fungerer spesielt når videoen har dårlig oppløsning.</label></p> <p style='margin-top:4px;'><label>Denne funksjonen kan påvirke batteritiden, batteritemperaturen og forårsake støy. Ikke bruk i likestrømmodus (batterimodus). Ellers vil det øke strømforbruket og forkorte batteriets levetid.</label></p>",
+                "tooltip": "Denne funksjonen fungerer bare for følgende videospillere:<br>Windows Media Player<br>Chrome<br>Filmer og TV<br>PotPlayer<br>GOM player<br>Nettleserbaserte spillere (for eksempel Chrome)<br><br>Se brukerhåndboken som følger med datamaskinen for instruksjoner om hvordan du aktiverer denne funksjonen for PotPlayer og GOM player.",
+                "note": {
+                    "description": "Denne funksjonen fungerer ikke når følgende er tilfelle:",
+                    "description1": "Batterisparemodus er aktivert.",
+                    "description2": "CPU-temperaturen er for høy."
+                }
+            },
             "antiTheft": {
                 "heading": "Intelligent føler",
                 "title": "Smart bevegelsesvarsel",
@@ -2065,44 +2070,44 @@
                     "description": "Når du har logget på systemet, vil denne funksjonen bli slått av automatisk. Du må aktivere den på nytt for å bruke den."
                 },
                 "alarm": {
-                    "title":" ALARMEN SKAL VARE I",
-                    "option1":"10 sekunder",
-                    "option2":"20 sekunder",
-                    "option3":"30 sekunder",
-                    "option4":"1 minutt",
-                    "option5":"Ikke stopp"
+                    "title": " ALARMEN SKAL VARE I",
+                    "option1": "10 sekunder",
+                    "option2": "20 sekunder",
+                    "option3": "30 sekunder",
+                    "option4": "1 minutt",
+                    "option5": "Ikke stopp"
                 },
                 "allowCamera": {
-                    "title":"TA BILDER",
-                    "describe":"Når du aktiverer denne funksjonen, tar kameraet automatisk bildene når det blir oppdaget bevegelse hvis skjermen er låst. Disse dataene behandles lokalt på enheten. Lenovo har verken tilgang til eller bruker dem.",
-                    "checkBoxText":"Aktiver denne funksjonen"
+                    "title": "TA BILDER",
+                    "describe": "Når du aktiverer denne funksjonen, tar kameraet automatisk bildene når det blir oppdaget bevegelse hvis skjermen er låst. Disse dataene behandles lokalt på enheten. Lenovo har verken tilgang til eller bruker dem.",
+                    "checkBoxText": "Aktiver denne funksjonen"
                 },
                 "cameraPrivacy": {
-                     "describe":"Lenovo Vantage Personvernmodus for kamera er på. Avmerkingsboksen vil ikke fungere.",
-                     "linkText":"Gå til Personvernmodus for kamera for å slå av"
+                    "describe": "Lenovo Vantage Personvernmodus for kamera er på. Avmerkingsboksen vil ikke fungere.",
+                    "linkText": "Gå til Personvernmodus for kamera for å slå av"
                 },
                 "authorizedAccess": {
-                    "describe":"Lenovo Vantage har ikke tilgang til kamera. Avmerkingsboksen vil ikke fungere.",
-                    "linkText":"Gå til Windows-innstillingene for å gi tilgang"
+                    "describe": "Lenovo Vantage har ikke tilgang til kamera. Avmerkingsboksen vil ikke fungere.",
+                    "linkText": "Gå til Windows-innstillingene for å gi tilgang"
                 },
                 "photo": {
-                    "title":"ANTALL BILDER SOM TAS VED BEVEGELSE",
+                    "title": "ANTALL BILDER SOM TAS VED BEVEGELSE",
                     "tooltip": "Kameraet på datamaskinen aktiveres automatisk for å ta bilder når det oppdages bevegelse. Det tas bilder hvert andre sekund, og de lagres på den lokale lagringsplassen.",
-                    "option1":"5",
-                    "option2":"10",
-                    "option3":"15",
-                    "option4":"20",
-                    "option5":"25",
-                    "option6":"30"
+                    "option1": "5",
+                    "option2": "10",
+                    "option3": "15",
+                    "option4": "20",
+                    "option5": "25",
+                    "option6": "30"
                 },
                 "showPhoto": {
-                    "title":"BILDER:",
-                    "link":"Vis bilder"
-				},
-				"fileAuthorizationTips": {
-					"content":"Lenovo Vantage har ikke tilgang til filsystemet.",
-					"link":"Gå til Windows-innstillingene for å gi tilgang"
-				}
+                    "title": "BILDER:",
+                    "link": "Vis bilder"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Lenovo Vantage har ikke tilgang til filsystemet.",
+                    "link": "Gå til Windows-innstillingene for å gi tilgang"
+                }
             },
             "voice": {
                 "title": "Tale",
@@ -2702,7 +2707,7 @@
         },
         "question1": {
             "title": "Sikkerhetskopier og gjenopprett filene dine",
-            "description": "<div>    <div class='faqInFs4Fb'>        Sikkerhetskopier og gjenopprett filene dine    </div>    <hr />    <div class='faqInMb7'>        Det er alltid godt å ha en sikkerhets kopi. Behold kopier av filene dine på en annen stasjon hvis det er noe som skjer med originalene.    </div>    <div class='faqInFs3Fb'>        Konfigurere din sikkerhetskopi    </div>    <hr />    <div class='mb-5'>        Velg på<span class='faqInFb'> Start</span> -knappen, <span class='faqInFb'>velg</span> innstillinger <span class='faqInFb'>> Oppdater & sikkerhets</span> <span class='faqInFb'>></span> sikkerhets <span class='faqInFb'>kopi > Legg</span> til en stasjon, og velg deretter en ekstern stasjon eller en nettverks plassering for sikkerhets kopier.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Alt er klart. Hver time sikkerhetskopierer vi alt i bruker mappen din (C:\\\\Users\\\\username). Hvis du vil endre hvilke filer som blir sikkerhets kopi ert eller hvor ofte sikkerhets <span class='faqInFb'>kopieringen</span>skal skje, kan du gå til flere alternativer.    </div>    <div class='faqInFs3Fb'>        Restaurer filene dine    </div>    <div class='mb-5'>        Hvis du mangler en viktig fil eller mappe, kan du få den tilbake på denne måten:    </div>    <div>        <div class='mb-3'>1. Skriv <span class='faqInFb'>Gjenopprett filer</span> i søke boksen på oppgave linjen, og velg <span class='faqInFb'>Gjenopprett filene med fillogg.</span></div>        <div class='mb-3'>2. Se etter filen du trenger, og bruk deretter pilene til å se alle versjonene av den</div>        <div class='mb-3'>3. Når du finner den versjonen du ønsker, velger <span class='faqInFb'>du</span> Gjenopprett for å lagre den på den opprinnelige plasseringen. Hvis du vil lagre den på et annet sted, trykker du på og holder nede (<span class='faqInFb'>eller</span> høyre klikker <span class='faqInFb'>) Gjenopprett</span>, velger Gjenopprett til og velger deretter en ny plassering.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Sikkerhetskopier og gjenopprett filene dine    </div>    <hr />    <div class='faqInMb7'>        Det er alltid godt å ha en sikkerhets kopi. Behold kopier av filene dine på en annen stasjon hvis det er noe som skjer med originalene.    </div>    <div class='faqInFs3Fb'>        Konfigurere din sikkerhetskopi    </div>    <hr />    <div class='mb-5'>        Velg på<span class='faqInFb'> Start</span> -knappen, <span class='faqInFb'>velg</span> innstillinger <span class='faqInFb'>> Oppdater & sikkerhets</span> <span class='faqInFb'>></span> sikkerhets <span class='faqInFb'>kopi > Legg</span> til en stasjon, og velg deretter en ekstern stasjon eller en nettverks plassering for sikkerhets kopier.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Alt er klart. Hver time sikkerhetskopierer vi alt i bruker mappen din (C:\\Users\\brukernavn). Hvis du vil endre hvilke filer som blir sikkerhets kopi ert eller hvor ofte sikkerhets <span class='faqInFb'>kopieringen</span>skal skje, kan du gå til flere alternativer.    </div>    <div class='faqInFs3Fb'>        Restaurer filene dine    </div>    <div class='mb-5'>        Hvis du mangler en viktig fil eller mappe, kan du få den tilbake på denne måten:    </div>    <div>        <div class='mb-3'>1. Skriv <span class='faqInFb'>Gjenopprett filer</span> i søke boksen på oppgave linjen, og velg <span class='faqInFb'>Gjenopprett filene med fillogg.</span></div>        <div class='mb-3'>2. Se etter filen du trenger, og bruk deretter pilene til å se alle versjonene av den</div>        <div class='mb-3'>3. Når du finner den versjonen du ønsker, velger <span class='faqInFb'>du</span> Gjenopprett for å lagre den på den opprinnelige plasseringen. Hvis du vil lagre den på et annet sted, trykker du på og holder nede (<span class='faqInFb'>eller</span> høyre klikker <span class='faqInFb'>) Gjenopprett</span>, velger Gjenopprett til og velger deretter en ny plassering.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -3115,7 +3120,8 @@
         "settingsNotes": "Start programmet på nytt for å sikre at alle endringene trer i kraft.",
         "betaSettingTitle": "Beta-program",
         "betaProgram": "Beta-program",
-        "betaSettingDescription": "Prøv de nyeste funksjonene vi jobber med."
+        "betaSettingDescription": "Prøv de nyeste funksjonene vi jobber med.",
+        "betaSettingNewDescription": "Vi har gleden av å invitere deg til Beta-programmet for smart ytelse. Den hjelper deg med å forbedre ytelsen på PC-en din ved å:<br/><ul class='pl-4'><li>Proaktivt diagnostisere feil og optimalisere innstillinger.</li><li>Øke Internett-ytelsen med optimalisering av nettverks og nettleser.</li><li>Utføre hurtigsøk og utbedring uten å bruke det eksisterende antivirusprogrammet.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Avbryt",
@@ -4040,8 +4046,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "Pil venstre",
+            "rightArrow": "Pil høyre"
         }
     },
     "dcc": {

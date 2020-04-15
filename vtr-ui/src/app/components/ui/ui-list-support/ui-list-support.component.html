@@ -8,11 +8,13 @@
 				(click)="itemClick(item, $event)"
 				(keydown.enter)="itemClick(item, $event)"
 				target="_blank"
-				title="{{item.title | translate}}"
+				title=""
 				vtrMetrics
 				metricsItem="{{item?.metricsItem}}"
 				metricsEvent="{{item?.metricsEvent}}"
-				metricsParent="{{item?.metricsParent}}">
+				metricsParent="{{item?.metricsParent}}"
+				[ngbTooltip]="item.title | translate" tooltipClass="vtr-tooltip" container="body"
+				>
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col col-1 text-center item-icon-content">

@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.16](https://bitbucket.tc.lenovo.com///compare/v1.5.15...v1.5.16) (2020-04-15)
+
+
+### Bug Fixes
+
+* **mock:** remove async for CHS and DP in the mock service ([d40e928](https://bitbucket.tc.lenovo.com///commit/d40e928c200c31500b92f259cd7bc9d723c1bf99))
+
+### [1.5.15](https://bitbucket.tc.lenovo.com///compare/v1.5.14...v1.5.15) (2020-04-14)
+
+
+### Bug Fixes
+
+* **fix bug:** fixed mcafee link to wrong webpage ([b0a8473](https://bitbucket.tc.lenovo.com///commit/b0a8473da581c8328bca626b7ded3149c852b41f))
+
 ### [1.5.14](https://bitbucket.tc.lenovo.com///compare/v1.5.13...v1.5.14) (2020-04-13)
 
 
