@@ -10,7 +10,8 @@
 	metricsEvent="featureClick"
 	[metricsParent]="parentId"
 	[metricsItem]="onOffSwitchId"
-	[metricsValue]="!!(value)">
+	[metricsValue]="!!(value)"
+	(focus)="hideColorPicker()">
 	<button tabindex="-1"
 		class="btnRound"
 		[ngClass]="{'selected': value}"

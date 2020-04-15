@@ -83,4 +83,10 @@ export class UiToggleComponent implements OnInit, OnDestroy, OnChanges {
 		event.stopPropagation();
 	}
 
+	public hideColorPicker(){
+		if(document.getElementById("colorPicker")){
+		   document.getElementById("colorPicker").style.display = "none"; 
+		}
+	}
+
 }
