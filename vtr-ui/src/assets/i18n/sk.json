@@ -1685,7 +1685,9 @@
                         },
                         "subSectionTwo": {
                             "title": "Zmena predvolenej primárnej funkcie",
-                            "description": "Ak je táto možnosť zapnutá, predvolená primárna funkcia sa zmení z továrenských nastavení na opačné nastavenie. Tieto zmeny sa prejavia až po reštartovaní počítača."
+                            "description": "Ak je táto možnosť zapnutá, predvolená primárna funkcia sa zmení z továrenských nastavení na opačné nastavenie. Tieto zmeny sa prejavia až po reštartovaní počítača.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "Ako používať kombinácie klávesu Fn",

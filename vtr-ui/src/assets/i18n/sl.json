@@ -1685,7 +1685,9 @@
                         },
                         "subSectionTwo": {
                             "title": "Preklop privzete glavne funkcije",
-                            "description": "Ko je ta možnost vklopljena, se delovanje privzete glavne funkcije preklopi iz tovarniško nastavljene možnosti v nasprotno. Spremembe bodo začele veljati po vnovičnem zagonu računalnika."
+                            "description": "Ko je ta možnost vklopljena, se delovanje privzete glavne funkcije preklopi iz tovarniško nastavljene možnosti v nasprotno. Spremembe bodo začele veljati po vnovičnem zagonu računalnika.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "Uporaba kombinacij tipk s tipko Fn",

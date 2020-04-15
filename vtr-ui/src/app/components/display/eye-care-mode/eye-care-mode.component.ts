@@ -17,9 +17,9 @@ export class EyeCareModeComponent implements OnInit, OnChanges {
 	@Input() disableReset = false;
 	@Input() missingGraphicDriver = false;
 
-	@Output() eyeCareTemparatureChange: EventEmitter<any> = new EventEmitter();
-	@Output() eyeCareTemparatureValueChange: EventEmitter<any> = new EventEmitter();
-	@Output() resetTemparature: EventEmitter<any> = new EventEmitter();
+	@Output() eyeCareTemperatureChange = new EventEmitter<number>();
+	@Output() eyeCareTemperatureValueChange = new EventEmitter<number>();
+	@Output() resetTemperature: EventEmitter<any> = new EventEmitter();
 	@Output() sunsetToSunrise = new EventEmitter<any>();
 
 	public sunriseToSunsetText = '';
@@ -57,20 +57,20 @@ export class EyeCareModeComponent implements OnInit, OnChanges {
 		}
 	}
 
-	public onResetTemparature($event: any) {
+	public onResetTemperature($event: any) {
 		this.logger.info('Reset Temperature');
-		this.resetTemparature.emit($event);
+		this.resetTemperature.emit($event);
 	}
-	public onEyeCareTemparatureChange($event: any) {
-		this.eyeCareModeSettings.current = $event.value;
-		this.eyeCareTemparatureChange.emit($event);
+	public onEyeCareTemperatureChange($event: number) {
+		this.eyeCareModeSettings.current = $event;
+		this.eyeCareTemperatureChange.emit($event);
 	}
-	public onEyeCareTemparatureValueChange($event: any) {
-		this.eyeCareTemparatureValueChange.emit($event);
+	public onEyeCareTemperatureValueChange($event: number) {
+		this.eyeCareTemperatureValueChange.emit($event);
 	}
 	public onSunsetToSunrise() {
 		this.sunsetToSunriseStatus.status = !this.sunsetToSunriseStatus.status;
-		this.logger.info('sunset to sunrise in eyecare-mode commponent', this.sunsetToSunriseStatus);
+		this.logger.info('sunset to sunrise in eye-care-mode component', this.sunsetToSunriseStatus);
 		this.sunsetToSunrise.emit(this.sunsetToSunriseStatus);
 	}
 }

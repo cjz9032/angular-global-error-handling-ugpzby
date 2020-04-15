@@ -1685,7 +1685,9 @@
                         },
                         "subSectionTwo": {
                             "title": "Byt om på den primære standardfunktion",
-                            "description": "Når denne er aktiveret, ændres den primære standardfunktion fra fabriksindstillingerne til det modsatte. Genstart computeren for at få disse ændringer til at træde i kraft."
+                            "description": "Når denne er aktiveret, ændres den primære standardfunktion fra fabriksindstillingerne til det modsatte. Genstart computeren for at få disse ændringer til at træde i kraft.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "Sådan bruges Fn-tastkombinationer",

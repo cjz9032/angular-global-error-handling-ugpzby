@@ -1,34 +1,34 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
-import { HttpClientTestingModule } from "@angular/common/http/testing";
-import { RouterTestingModule } from "@angular/router/testing";
-import { NO_ERRORS_SCHEMA } from "@angular/core";
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
-import { SubpageDeviceSettingsDisplayComponent } from "./subpage-device-settings-display.component";
+import { SubpageDeviceSettingsDisplayComponent } from './subpage-device-settings-display.component';
 
-import { DisplayService } from "src/app/services/display/display.service";
-import { DeviceService } from "src/app/services/device/device.service";
-import { CommonService } from "src/app/services/common/common.service";
-import { BaseCameraDetail } from "src/app/services/camera/camera-detail/base-camera-detail.service";
-import { LoggerService } from "src/app/services/logger/logger.service";
-import { VantageShellService } from "src/app/services/vantage-shell/vantage-shell.service";
-import { DevService } from "../../../../../services/dev/dev.service";
+import { DisplayService } from 'src/app/services/display/display.service';
+import { DeviceService } from 'src/app/services/device/device.service';
+import { CommonService } from 'src/app/services/common/common.service';
+import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { DevService } from '../../../../../services/dev/dev.service';
 import {
 	CameraDetail,
 	EyeCareModeResponse,
 	CameraFeatureAccess
-} from "src/app/data-models/camera/camera-detail.model";
+} from 'src/app/data-models/camera/camera-detail.model';
 
-import { TranslateModule } from "@ngx-translate/core";
-import { of, Observable } from "rxjs";
-import { CameraFeedService } from "src/app/services/camera/camera-feed/camera-feed.service";
-import { WelcomeTutorial } from "src/app/data-models/common/welcome-tutorial.model";
-import { AppNotification } from "src/app/data-models/common/app-notification.model";
-import { LocalStorageKey } from "src/app/enums/local-storage-key.enum";
-import { DeviceMonitorStatus } from "src/app/enums/device-monitor-status.enum";
-import { WhiteListCapability } from "src/app/data-models/eye-care-mode/white-list-capability.interface";
-import { ChangeContext } from "ng5-slider";
-import { EyeCareModeCapability } from "src/app/data-models/device/eye-care-mode-capability.model";
-import { SunsetToSunriseStatus, EyeCareMode } from "src/app/data-models/camera/eyeCareMode.model";
+import { TranslateModule } from '@ngx-translate/core';
+import { of, Observable } from 'rxjs';
+import { CameraFeedService } from 'src/app/services/camera/camera-feed/camera-feed.service';
+import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { DeviceMonitorStatus } from 'src/app/enums/device-monitor-status.enum';
+import { WhiteListCapability } from 'src/app/data-models/eye-care-mode/white-list-capability.interface';
+import { ChangeContext } from 'ng5-slider';
+import { EyeCareModeCapability } from 'src/app/data-models/device/eye-care-mode-capability.model';
+import { SunsetToSunriseStatus, EyeCareMode } from 'src/app/data-models/camera/eyeCareMode.model';
 import { CameraBlur } from 'src/app/data-models/camera/camera-blur-model';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
@@ -52,7 +52,7 @@ const cameraDetail: CameraDetail = {
 	autoExposureStepValue: 4
 };
 
-describe("SubpageDeviceSettingsDisplayComponent", () => {
+describe('SubpageDeviceSettingsDisplayComponent', () => {
 	let fixture: ComponentFixture<SubpageDeviceSettingsDisplayComponent>;
 	let component: SubpageDeviceSettingsDisplayComponent;
 
@@ -89,7 +89,7 @@ describe("SubpageDeviceSettingsDisplayComponent", () => {
 		});
 	}));
 
-	it("should create", async(() => {
+	it('should create', async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsDisplayComponent
 		);
@@ -99,12 +99,12 @@ describe("SubpageDeviceSettingsDisplayComponent", () => {
 		baseCameraDetailService.cameraDetailObservable = of({
 			...cameraDetail
 		});
-		spyOn(commonService, "getLocalStorageValue").and.returnValue("true");
+		spyOn(commonService, 'getLocalStorageValue').and.returnValue('true');
 		fixture.detectChanges();
 		expect(component).toBeTruthy();
 	}));
 
-	it("should call inWhiteList in ngAfterViewInit", done => {
+	it('should call inWhiteList in ngAfterViewInit', done => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsDisplayComponent
 		);
@@ -112,13 +112,13 @@ describe("SubpageDeviceSettingsDisplayComponent", () => {
 		commonService = TestBed.get(CommonService);
 		const welcomeTut: WelcomeTutorial = {
 			page: 2,
-			tutorialVersion: "someVersion",
+			tutorialVersion: 'someVersion',
 			isDone: true
 		};
-		spyOn(commonService, "getLocalStorageValue").and.returnValue(
+		spyOn(commonService, 'getLocalStorageValue').and.returnValue(
 			welcomeTut
 		);
-		const spy = spyOn(component, "inWhiteList").and.returnValue(
+		const spy = spyOn(component, 'inWhiteList').and.returnValue(
 			Promise.resolve(true)
 		);
 		component.ngAfterViewInit();
@@ -126,7 +126,7 @@ describe("SubpageDeviceSettingsDisplayComponent", () => {
 		done();
 	});
 
-	it("should call initCameraPrivacyFromCache", async(() => {
+	it('should call initCameraPrivacyFromCache', async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsDisplayComponent
 		);
@@ -135,25 +135,25 @@ describe("SubpageDeviceSettingsDisplayComponent", () => {
 		const privacy = { available: true };
 		const spy = spyOn(
 			commonService,
-			"getLocalStorageValue"
+			'getLocalStorageValue'
 		).and.returnValue(privacy);
 		component.initCameraPrivacyFromCache();
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it("should call initCameraSection", async(() => {
+	it('should call initCameraSection', async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsDisplayComponent
 		);
 		component = fixture.componentInstance;
-		const spy = spyOn(component, "isAllInOneMachine").and.returnValue(
+		const spy = spyOn(component, 'isAllInOneMachine').and.returnValue(
 			Promise.resolve(true)
 		);
 		component.initCameraSection();
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it("should call onNotification - DeviceMonitorStatus.CameraStatus", async(() => {
+	it('should call onNotification - DeviceMonitorStatus.CameraStatus', async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsDisplayComponent
 		);
@@ -174,11 +174,11 @@ describe("SubpageDeviceSettingsDisplayComponent", () => {
 			type: DeviceMonitorStatus.CameraStatus,
 			payload: true
 		};
-		component["onNotification"](notification);
+		component.onNotification(notification);
 		expect(component.shouldCameraSectionDisabled).toBe(false);
 	}));
 
-	it("should call onNotification - DeviceMonitorStatus.CameraStatus and auto value is false", async(() => {
+	it('should call onNotification - DeviceMonitorStatus.CameraStatus and auto value is false', async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsDisplayComponent
 		);
@@ -199,25 +199,25 @@ describe("SubpageDeviceSettingsDisplayComponent", () => {
 			type: DeviceMonitorStatus.CameraStatus,
 			payload: true
 		};
-		component["onNotification"](notification);
+		component.onNotification(notification);
 		expect(component.shouldCameraSectionDisabled).toBe(false);
 	}))
 
-	it("should call onNotification - LocalStorageKey.WelcomeTutorial", async(() => {
+	it('should call onNotification - LocalStorageKey.WelcomeTutorial', async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsDisplayComponent
 		);
 		component = fixture.componentInstance;
-		const spy = spyOn(component, "initFeatures");
+		const spy = spyOn(component, 'initFeatures');
 		const notification: AppNotification = {
 			type: LocalStorageKey.WelcomeTutorial,
 			payload: { page: 2 }
 		};
-		component["onNotification"](notification);
+		component.onNotification(notification);
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it("should call onNotification - when no notification", async(() => {
+	it('should call onNotification - when no notification', async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsDisplayComponent
 		);
@@ -236,29 +236,29 @@ describe("SubpageDeviceSettingsDisplayComponent", () => {
 		};
 		const notification: AppNotification = {
 			type: DeviceMonitorStatus.CameraStatus,
-			payload: ""
+			payload: ''
 		};
-		component["onNotification"](notification);
+		component.onNotification(notification);
 		expect(component.cameraFeatureAccess.showAutoExposureSlider).toBe(true);
 	}));
 
-	it("should call onPrivacySettingClick", async(() => {
+	it('should call onPrivacySettingClick', async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsDisplayComponent
 		);
 		component = fixture.componentInstance;
 		deviceService = TestBed.get(DeviceService);
-		const spy = spyOn(deviceService, "launchUri");
+		const spy = spyOn(deviceService, 'launchUri');
 		component.onPrivacySettingClick();
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it("should call getDisplayColorTemperature", async(() => {
+	it('should call getDisplayColorTemperature', async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsDisplayComponent
 		);
 		component = fixture.componentInstance;
-		component["isSet"].isSetEyecaremodeValue = true;
+		component.isSet.isSetEyecaremodeValue = true;
 		const response = {
 			available: false,
 			current: 0,
@@ -269,13 +269,13 @@ describe("SubpageDeviceSettingsDisplayComponent", () => {
 		displayService = TestBed.get(DisplayService);
 		const spy = spyOn(
 			displayService,
-			"getDisplayColortemperature"
+			'getDisplayColortemperature'
 		).and.returnValue(Promise.resolve(response));
-		component["getDisplayColorTemperature"]();
+		component.getDisplayColorTemperature();
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it("should call onEyeCareModeStatusToggle", async(() => {
+	it('should call onEyeCareModeStatusToggle', async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsDisplayComponent
 		);
@@ -292,7 +292,7 @@ describe("SubpageDeviceSettingsDisplayComponent", () => {
 		const value = { colorTemperature: 0 };
 		const event = { switchValue: true };
 		component.eyeCareModeCache = new EyeCareModeCapability();
-		spyOn(displayService, "setEyeCareModeState").and.returnValue(
+		spyOn(displayService, 'setEyeCareModeState').and.returnValue(
 			Promise.resolve(value)
 		);
 		component.onEyeCareModeStatusToggle(event);
@@ -301,7 +301,7 @@ describe("SubpageDeviceSettingsDisplayComponent", () => {
 		);
 	}));
 
-	it("should call initEyecaremodeSettings when result is false", async(() => {
+	it('should call initEyecaremodeSettings when result is false', async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsDisplayComponent
 		);
@@ -310,29 +310,29 @@ describe("SubpageDeviceSettingsDisplayComponent", () => {
 		displayService.isShellAvailable = true;
 		const spy = spyOn(
 			displayService,
-			"initEyecaremodeSettings"
+			'initEyecaremodeSettings'
 		).and.returnValue(Promise.resolve(false));
 		component.initEyecaremodeSettings();
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it("should call initEyecaremodeSettings when result is NotAvailable", async(() => {
+	it('should call initEyecaremodeSettings when result is NotAvailable', async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsDisplayComponent
 		);
 		component = fixture.componentInstance;
 		displayService = TestBed.get(DisplayService);
 		displayService.isShellAvailable = true;
-		spyOn(component, "getDaytimeColorTemperature");
-		const listCap: WhiteListCapability = "NotAvaliable";
-		spyOn(displayService, "getWhiteListCapability").and.returnValue(
+		spyOn(component, 'getDaytimeColorTemperature');
+		const listCap: WhiteListCapability = 'NotAvaliable';
+		spyOn(displayService, 'getWhiteListCapability').and.returnValue(
 			Promise.resolve(listCap)
 		);
 		component.initEyecaremodeSettings();
 		expect(component.enableSlider).toBe(false);
 	}));
 
-	it("should call initEyecaremodeSettings when result is Support", async(() => {
+	it('should call initEyecaremodeSettings when result is Support', async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsDisplayComponent
 		);
@@ -340,17 +340,17 @@ describe("SubpageDeviceSettingsDisplayComponent", () => {
 		displayService = TestBed.get(DisplayService);
 		logger = TestBed.get(LoggerService);
 		displayService.isShellAvailable = true;
-		spyOn(component, "getDaytimeColorTemperature");
-		const listCap: WhiteListCapability = "Support";
-		const spy = spyOn(logger, "error");
-		spyOn(displayService, "getWhiteListCapability").and.returnValue(
+		spyOn(component, 'getDaytimeColorTemperature');
+		const listCap: WhiteListCapability = 'Support';
+		const spy = spyOn(logger, 'error');
+		spyOn(displayService, 'getWhiteListCapability').and.returnValue(
 			Promise.resolve(listCap)
 		);
 		component.initEyecaremodeSettings();
 		expect(spy).not.toHaveBeenCalled();
 	}));
 
-	it("should call setEyeCareModeStatus promise resolved", async(() => {
+	it('should call setEyeCareModeStatus promise resolved', async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsDisplayComponent
 		);
@@ -360,13 +360,13 @@ describe("SubpageDeviceSettingsDisplayComponent", () => {
 		displayService.isShellAvailable = true;
 		const spy = spyOn(
 			displayService,
-			"setEyeCareModeState"
+			'setEyeCareModeState'
 		).and.returnValue(Promise.resolve(true));
-		component["setEyeCareModeStatus"](true);
+		component.setEyeCareModeStatus(true);
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it("should call setEyeCareModeStatus promise rejected", async(() => {
+	it('should call setEyeCareModeStatus promise rejected', async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsDisplayComponent
 		);
@@ -376,13 +376,13 @@ describe("SubpageDeviceSettingsDisplayComponent", () => {
 		displayService.isShellAvailable = true;
 		const spy = spyOn(
 			displayService,
-			"setEyeCareModeState"
+			'setEyeCareModeState'
 		).and.returnValue(Promise.reject(true));
-		component["setEyeCareModeStatus"](true);
+		component.setEyeCareModeStatus(true);
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it("should call setEyeCareModeStatus isShellAvailable is false", async(() => {
+	it('should call setEyeCareModeStatus isShellAvailable is false', async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsDisplayComponent
 		);
@@ -392,21 +392,21 @@ describe("SubpageDeviceSettingsDisplayComponent", () => {
 		displayService.isShellAvailable = false;
 		const spy = spyOn(
 			displayService,
-			"setEyeCareModeState"
+			'setEyeCareModeState'
 		).and.returnValue(Promise.resolve(true));
-		component["setEyeCareModeStatus"](true);
+		component.setEyeCareModeStatus(true);
 		expect(spy).not.toHaveBeenCalled();
 	}));
 
-	it("should call setEyeCareModeStatus- outer catch block", async(() => {
+	it('should call setEyeCareModeStatus- outer catch block', async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsDisplayComponent
 		);
 		component = fixture.componentInstance;
-		expect(component["setEyeCareModeStatus"]).toThrow();
+		expect(component.setEyeCareModeStatus).toThrow();
 	}));
 
-	it("should call onEyeCareTemparatureChange", async(() => {
+	it('should call onEyeCareTemparatureChange', async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsDisplayComponent
 		);
@@ -416,12 +416,12 @@ describe("SubpageDeviceSettingsDisplayComponent", () => {
 			value: 4
 		};
 		displayService.isShellAvailable = true;
-		const spy = spyOn(displayService, "setDisplayColortemperature");
-		component.onEyeCareTemparatureChange(event);
+		const spy = spyOn(displayService, 'setDisplayColortemperature');
+		component.onEyeCareTemperatureChange(event);
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it("should call onEyeCareTemparatureValueChange", async(() => {
+	it('should call onEyeCareTemparatureValueChange', async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsDisplayComponent
 		);
@@ -432,12 +432,12 @@ describe("SubpageDeviceSettingsDisplayComponent", () => {
 			highValue: 10,
 			pointerType: 0
 		};
-		const spy = spyOn(displayService, "setDisplayColortemperature");
+		const spy = spyOn(displayService, 'setDisplayColortemperature');
 		component.onEyeCareTemparatureValueChange(event);
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it("should throw error - onEyeCareTemparatureValueChange", async(() => {
+	it('should throw error - onEyeCareTemparatureValueChange', async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsDisplayComponent
 		);
@@ -445,33 +445,33 @@ describe("SubpageDeviceSettingsDisplayComponent", () => {
 		expect(component.onEyeCareTemparatureValueChange).toThrow();
 	}));
 
-	it("should call setEyeCareModeTemparature", async(() => {
+	it('should call setEyeCareModeTemparature', async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsDisplayComponent
 		);
 		component = fixture.componentInstance;
-		const value: number = 4;
+		const value = 4;
 		displayService = TestBed.get(DisplayService);
-		const spy = spyOn(displayService, "setDisplayColortemperature");
-		component["setEyeCareModeTemparature"](value);
+		const spy = spyOn(displayService, 'setDisplayColortemperature');
+		component.setEyeCareModeTemparature(value);
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it("should throw error - setEyeCareModeTemparature", async(() => {
+	it('should throw error - setEyeCareModeTemparature', async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsDisplayComponent
 		);
 		component = fixture.componentInstance;
-		expect(component["setEyeCareModeTemparature"]).toThrow();
+		expect(component.setEyeCareModeTemparature).toThrow();
 	}));
 
-	it("should call onResetTemparature", async(() => {
+	it('should call onResetTemparature', async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsDisplayComponent
 		);
 		component = fixture.componentInstance;
 		displayService = TestBed.get(DisplayService);
-		const event: any = "someevent";
+		const event: any = 'someevent';
 		const resetData: any = {
 			colorTemperature: 0,
 			eyecaremodeState: false,
@@ -479,14 +479,14 @@ describe("SubpageDeviceSettingsDisplayComponent", () => {
 		};
 		component.eyeCareModeCache = new EyeCareModeCapability();
 		displayService.isShellAvailable = true;
-		spyOn(displayService, "resetEyeCareMode").and.returnValue(
+		spyOn(displayService, 'resetEyeCareMode').and.returnValue(
 			Promise.resolve(resetData)
 		);
 		component.onResetTemparature(event);
 		expect(component.enableSlider).toEqual(false);
 	}));
 
-	it("should throw error - onResetTemparature", async(() => {
+	it('should throw error - onResetTemparature', async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsDisplayComponent
 		);
@@ -494,7 +494,7 @@ describe("SubpageDeviceSettingsDisplayComponent", () => {
 		expect(component.onResetTemparature).toThrow();
 	}));
 
-	it("should call onSunsetToSunrise result is true", async(() => {
+	it('should call onSunsetToSunrise result is true', async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsDisplayComponent
 		);
@@ -508,7 +508,7 @@ describe("SubpageDeviceSettingsDisplayComponent", () => {
 			result: true,
 			colorTemperature: 0
 		};
-		spyOn(displayService, "setEyeCareAutoMode").and.returnValue(
+		spyOn(displayService, 'setEyeCareAutoMode').and.returnValue(
 			Promise.resolve(response)
 		);
 		component.onSunsetToSunrise(featureStatus);
@@ -517,7 +517,7 @@ describe("SubpageDeviceSettingsDisplayComponent", () => {
 		);
 	}));
 
-	it("should call onSunsetToSunrise result is false", async(() => {
+	it('should call onSunsetToSunrise result is false', async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsDisplayComponent
 		);
@@ -531,14 +531,14 @@ describe("SubpageDeviceSettingsDisplayComponent", () => {
 			result: false,
 			colorTemperature: 0
 		};
-		spyOn(displayService, "setEyeCareAutoMode").and.returnValue(
+		spyOn(displayService, 'setEyeCareAutoMode').and.returnValue(
 			Promise.resolve(response)
 		);
 		component.onSunsetToSunrise(featureStatus);
-		expect(component["isSet"].isSetScheduleStatus).toBe(false);
+		expect(component.isSet.isSetScheduleStatus).toBe(false);
 	}));
 
-	it("should call onSunsetToSunrise isShellAvailable is false", async(() => {
+	it('should call onSunsetToSunrise isShellAvailable is false', async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsDisplayComponent
 		);
@@ -546,12 +546,12 @@ describe("SubpageDeviceSettingsDisplayComponent", () => {
 		displayService = TestBed.get(DisplayService);
 		displayService.isShellAvailable = false;
 		const featureStatus: any = { status: true };
-		const spy = spyOn(displayService, "setEyeCareAutoMode");
+		const spy = spyOn(displayService, 'setEyeCareAutoMode');
 		component.onSunsetToSunrise(featureStatus);
 		expect(spy).not.toHaveBeenCalled();
 	}));
 
-	it("should call getSunsetToSunrise - - Promise resolved", async(() => {
+	it('should call getSunsetToSunrise - - Promise resolved', async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsDisplayComponent
 		);
@@ -562,45 +562,45 @@ describe("SubpageDeviceSettingsDisplayComponent", () => {
 			available: true,
 			status: true,
 			permission: false,
-			sunriseTime: "0600",
-			sunsetTime: "1800"
+			sunriseTime: '0600',
+			sunsetTime: '1800'
 		};
 		component.eyeCareModeCache = new EyeCareModeCapability();
-		component["isSet"].isSetScheduleStatus = true;
-		const spy = spyOn(displayService, "getEyeCareAutoMode").and.returnValue(
+		component.isSet.isSetScheduleStatus = true;
+		const spy = spyOn(displayService, 'getEyeCareAutoMode').and.returnValue(
 			Promise.resolve(status)
 		);
 		component.getSunsetToSunrise();
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it("should call getSunsetToSunrise - Promise rejected", async(() => {
+	it('should call getSunsetToSunrise - Promise rejected', async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsDisplayComponent
 		);
 		component = fixture.componentInstance;
 		displayService = TestBed.get(DisplayService);
 		displayService.isShellAvailable = true;
-		const spy = spyOn(displayService, "getEyeCareAutoMode").and.returnValue(
+		const spy = spyOn(displayService, 'getEyeCareAutoMode').and.returnValue(
 			Promise.reject(new Error())
 		);
 		component.getSunsetToSunrise();
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it("should call getSunsetToSunrise - isShellAvailable is false", async(() => {
+	it('should call getSunsetToSunrise - isShellAvailable is false', async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsDisplayComponent
 		);
 		component = fixture.componentInstance;
 		displayService = TestBed.get(DisplayService);
 		displayService.isShellAvailable = false;
-		const spy = spyOn(displayService, "getEyeCareAutoMode");
+		const spy = spyOn(displayService, 'getEyeCareAutoMode');
 		component.getSunsetToSunrise();
 		expect(spy).not.toHaveBeenCalled();
 	}));
 
-	it("should call getSunsetToSunrise - throw error", async(() => {
+	it('should call getSunsetToSunrise - throw error', async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsDisplayComponent
 		);
@@ -608,13 +608,13 @@ describe("SubpageDeviceSettingsDisplayComponent", () => {
 		expect(component.getSunsetToSunrise).toThrow();
 	}));
 
-	it("should call getDaytimeColorTemperature", async(() => {
+	it('should call getDaytimeColorTemperature', async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsDisplayComponent
 		);
 		component = fixture.componentInstance;
 		displayService = TestBed.get(DisplayService);
-		component["isSet"].isSetDaytimeColorTemperatureValue = true;
+		component.isSet.isSetDaytimeColorTemperatureValue = true;
 		component.displayColorTempCache = new EyeCareModeResponse();
 		const response: any = {
 			available: false,
@@ -625,13 +625,13 @@ describe("SubpageDeviceSettingsDisplayComponent", () => {
 		};
 		const spy = spyOn(
 			displayService,
-			"getDaytimeColorTemperature"
+			'getDaytimeColorTemperature'
 		).and.returnValue(Promise.resolve(response));
 		component.getDaytimeColorTemperature();
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it("should call onSetChangeDisplayColorTemp", async(() => {
+	it('should call onSetChangeDisplayColorTemp', async(() => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsDisplayComponent);
 		component = fixture.componentInstance;
 		displayService = TestBed.get(DisplayService);
@@ -662,7 +662,7 @@ describe("SubpageDeviceSettingsDisplayComponent", () => {
 			current: 0
 		}
 		component.displayColorTempCache = new EyeCareModeResponse();
-		const event: any = {value: 0}
+		const event: any = { value: 0 }
 		displayService.isShellAvailable = true;
 		const resetData: any = 10
 		const spy = spyOn(displayService, 'resetDaytimeColorTemperature').and.returnValue(Promise.resolve(resetData));
@@ -849,7 +849,7 @@ describe("SubpageDeviceSettingsDisplayComponent", () => {
 	it('should call onCardCollapse', async(() => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsDisplayComponent);
 		component = fixture.componentInstance;
-		const isCollapsed: boolean = false;
+		const isCollapsed = false;
 		const spy = spyOn(component.manualRefresh, 'emit')
 		component.onCardCollapse(isCollapsed);
 		expect(spy).toHaveBeenCalled()
@@ -877,7 +877,7 @@ describe("SubpageDeviceSettingsDisplayComponent", () => {
 			enabled: true,
 			errorCode: 0
 		}
-		const isCameraAvailable: boolean = true;
+		const isCameraAvailable = true;
 		const spy = spyOn(cameraFeedService, 'getCameraBlurSettings').and.returnValue(Promise.resolve(res));
 		component.onCameraAvailable(isCameraAvailable);
 		expect(spy).toHaveBeenCalled()

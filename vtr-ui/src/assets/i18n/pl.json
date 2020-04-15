@@ -1685,7 +1685,9 @@
                         },
                         "subSectionTwo": {
                             "title": "Odwrócenie domyślnej funkcji podstawowej",
-                            "description": "Po włączeniu domyślna funkcja podstawowa zostanie zmieniona z ustawień fabrycznych na odwrotną. Aby zmiany zostały wprowadzone, należy uruchomić ponownie komputer."
+                            "description": "Po włączeniu domyślna funkcja podstawowa zostanie zmieniona z ustawień fabrycznych na odwrotną. Aby zmiany zostały wprowadzone, należy uruchomić ponownie komputer.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "Jak używać kombinacji z klawiszem Fn",

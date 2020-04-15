@@ -56,15 +56,15 @@ describe('DisplayService', () => {
 	});
 
 	it('should emit window resize', () => {
-		let service = {windowWidth: '', windowHeight: ''}
-		let spy = spyOn(displayService['windowResize'], 'emit')
+		const service = {windowWidth: '', windowHeight: ''}
+		const spy = spyOn(displayService.windowResize, 'emit')
 		displayService.calcSize(service);
 		expect(spy).toHaveBeenCalled()
 	});
 
 	it('should dispatch new resize event', fakeAsync(() => {
-		let evt = new Event('resize');
-		let spy = spyOn(window, 'dispatchEvent')
+		const evt = new Event('resize');
+		const spy = spyOn(window, 'dispatchEvent')
 		displayService.resizeWindow()
 		tick(100)
 		expect(spy).toHaveBeenCalledWith(evt)
@@ -72,21 +72,21 @@ describe('DisplayService', () => {
 
 	it('should listen to window resizing', () => {
 		displayService.windowResizeListener();
-		expect(displayService['windowResize']).toBeTruthy()
+		expect(displayService.windowResize).toBeTruthy()
 	});
 
 	it('should get EyeCareMode State', () => {
-		displayService['displayEyeCareMode'] = {getEyeCareModeState() {
+		displayService.displayEyeCareMode = {getEyeCareModeState() {
 			return
 		}}
-		let spy = spyOn(displayService['displayEyeCareMode'], 'getEyeCareModeState')
+		const spy = spyOn(displayService.displayEyeCareMode, 'getEyeCareModeState')
 		displayService.getEyeCareModeState();
 		expect(spy).toHaveBeenCalled()
 	});
 
 	it('should get EyeCareMode State - else', () => {
-		displayService['displayEyeCareMode'] = undefined;
-		let res = displayService.getEyeCareModeState()
+		displayService.displayEyeCareMode = undefined;
+		const res = displayService.getEyeCareModeState()
 		expect(res).toBeUndefined()
 	});
 
@@ -114,9 +114,9 @@ describe('DisplayService', () => {
 	});
 
 	it('should get Camera Privacy mode status else case', () => {
-		displayService['cameraPrivacyStatus'] = undefined
+		displayService.cameraPrivacyStatus = undefined
 		displayService.getCameraPrivacyModeState()
-		let spy = spyOn(shellService, 'getCameraPrivacy');
+		const spy = spyOn(shellService, 'getCameraPrivacy');
 		expect(spy).not.toHaveBeenCalled()
 	});
 
@@ -131,13 +131,13 @@ describe('DisplayService', () => {
 	});
 
 	it('should start Camera privacy monitor - else', () => {
-		let callback = () => {
+		const callback = () => {
 			return
 		};
-		displayService['cameraPrivacyStatus'] = undefined;
-		let res = displayService.startCameraPrivacyMonitor(callback)
+		displayService.cameraPrivacyStatus = undefined;
+		const res = displayService.startCameraPrivacyMonitor(callback)
 		expect(res).toBeUndefined()
-		
+
 	});
 
 	it('should stop Camera privacy monitor', async () => {
@@ -151,9 +151,9 @@ describe('DisplayService', () => {
 	});
 
 	it('should stop Camera privacy monitor -else case', () => {
-		displayService['cameraPrivacyStatus'] = undefined;
+		displayService.cameraPrivacyStatus = undefined;
 		displayService.stopCameraPrivacyMonitor();
-		let spy = spyOn(shellService, 'getCameraPrivacy');
+		const spy = spyOn(shellService, 'getCameraPrivacy');
 		expect(spy).not.toHaveBeenCalled()
 	});
 
@@ -168,11 +168,11 @@ describe('DisplayService', () => {
 	});
 
 	it('should set eyeCareMode State - else', () => {
-		let value = true;
-		displayService['displayEyeCareMode'] = undefined;
-		let res = displayService.setEyeCareModeState(value)
+		const value = true;
+		displayService.displayEyeCareMode = undefined;
+		const res = displayService.setEyeCareModeState(value)
 		expect(res).toBeUndefined()
-		
+
 	});
 
 	it('should set Camera Privacy mode', async () => {
@@ -186,11 +186,11 @@ describe('DisplayService', () => {
 	});
 
 	it('should set Camera Privacy mode - else', () => {
-		let value = true;
-		displayService['cameraPrivacyStatus'] = undefined;
-		let res = displayService.setCameraPrivacyModeState(value)
+		const value = true;
+		displayService.cameraPrivacyStatus = undefined;
+		const res = displayService.setCameraPrivacyModeState(value)
 		expect(res).toBeUndefined()
-		
+
 	});
 
 	it('should get camera settings', async () => {
@@ -203,10 +203,10 @@ describe('DisplayService', () => {
 	});
 
 	it('should get camera settings - else', () => {
-		displayService['cameraSettings'] = undefined;
-		let res = displayService.getCameraSettingsInfo()
+		displayService.cameraSettings = undefined;
+		const res = displayService.getCameraSettingsInfo()
 		expect(res).toBeUndefined()
-		
+
 	});
 
 	it('should set Camera Brightness', async () => {
@@ -270,7 +270,7 @@ describe('DisplayService', () => {
 
 	it('should get Display Color Temp', async () => {
 		let status = false;
-		await displayService.getDisplayColortemperature()
+		await displayService.getDisplayColorTemperature()
 			.then((res) => {
 				status = res.available;
 			});
@@ -280,7 +280,7 @@ describe('DisplayService', () => {
 	it('should set Display Color Temp', async () => {
 		let status = false;
 		const value = 10;
-		await displayService.setDisplayColortemperature(value)
+		await displayService.setDisplayColorTemperature(value)
 			.then((flag) => {
 				status = flag;
 			});
@@ -400,21 +400,21 @@ describe('DisplayService', () => {
 	});
 
 	it('should get status changed location permission', () => {
-		let handler = () => {
+		const handler = () => {
 			return
 		}
-		displayService['isShellAvailable'] = true;
-		let spy = spyOn(displayService['displayEyeCareMode'], 'statusChangedLocationPermission')
+		displayService.isShellAvailable = true;
+		const spy = spyOn(displayService.displayEyeCareMode, 'statusChangedLocationPermission')
 		displayService.statusChangedLocationPermission(handler);
 		expect(spy).toHaveBeenCalled()
 	});
 
 	it('should get status changed location permission', () => {
-		let handler = () => {
+		const handler = () => {
 			return
 		}
-		displayService['isShellAvailable'] = false;
-		let res = displayService.statusChangedLocationPermission(handler);
+		displayService.isShellAvailable = false;
+		const res = displayService.statusChangedLocationPermission(handler);
 		expect(res).toBeUndefined()
 	});
 
@@ -439,8 +439,8 @@ describe('DisplayService', () => {
 	});
 
 	it('should start camera permission monitor - else', () => {
-		displayService['isShellAvailable'] = false
-		let res = displayService.startMonitorForCameraPermission()
+		displayService.isShellAvailable = false
+		const res = displayService.startMonitorForCameraPermission()
 		expect(res).toBeUndefined()
 	});
 
@@ -455,8 +455,8 @@ describe('DisplayService', () => {
 	});
 
 	it('should stop camera permission monitor', () => {
-		displayService['isShellAvailable'] = false
-		let res = displayService.stopMonitorForCameraPermission()
+		displayService.isShellAvailable = false
+		const res = displayService.stopMonitorForCameraPermission()
 		expect(res).toBeUndefined()
 	});
 
@@ -471,24 +471,24 @@ describe('DisplayService', () => {
 	});
 
 	it('should stop eyecare monitor', () => {
-		displayService['isShellAvailable'] = false
-		let res = displayService.stopEyeCareMonitor()
+		displayService.isShellAvailable = false
+		const res = displayService.stopEyeCareMonitor()
 		expect(res).toBeUndefined()
 	});
 
 	it('should open Privacy Location', () => {
-		displayService['isShellAvailable'] = true
-		displayService['displayEyeCareMode'] = {openPrivacyLocation() {
+		displayService.isShellAvailable = true
+		displayService.displayEyeCareMode = {openPrivacyLocation() {
 			return
 		}}
-		let spy = spyOn(displayService['displayEyeCareMode'], 'openPrivacyLocation');
+		const spy = spyOn(displayService.displayEyeCareMode, 'openPrivacyLocation');
 		displayService.openPrivacyLocation();
 		expect(spy).toHaveBeenCalled()
 	});
 
 	it('should open Privacy Location -else', () => {
-		displayService['isShellAvailable'] = false
-		let res = displayService.openPrivacyLocation()
+		displayService.isShellAvailable = false
+		const res = displayService.openPrivacyLocation()
 		expect(res).toBeUndefined()
 	});
 
@@ -502,8 +502,8 @@ describe('DisplayService', () => {
 	});
 
 	it('should init eyecare mode -else', () => {
-		displayService['displayEyeCareMode'] = false
-		let res = displayService.initEyecaremodeSettings()
+		displayService.displayEyeCareMode = false
+		const res = displayService.initEyecaremodeSettings()
 		expect(res).toBeUndefined()
 	});
 
@@ -517,8 +517,8 @@ describe('DisplayService', () => {
 	});
 
 	it('should get OLED Capabiliity -else', () => {
-		displayService['oledSettings'] = false
-		let res = displayService.getOLEDPowerControlCapability()
+		displayService.oledSettings = false
+		const res = displayService.getOLEDPowerControlCapability()
 		expect(res).toBeUndefined()
 	});
 
@@ -532,8 +532,8 @@ describe('DisplayService', () => {
 	});
 
 	it('should get taskdimmer setting -else', () => {
-		displayService['oledSettings'] = false
-		let res = displayService.getTaskbarDimmerSetting()
+		displayService.oledSettings = false
+		const res = displayService.getTaskbarDimmerSetting()
 		expect(res).toBeUndefined()
 	});
 
@@ -547,8 +547,8 @@ describe('DisplayService', () => {
 	});
 
 	it('should get backgronddimmer setting -else', () => {
-		displayService['oledSettings'] = false
-		let res = displayService.getBackgroundDimmerSetting()
+		displayService.oledSettings = false
+		const res = displayService.getBackgroundDimmerSetting()
 		expect(res).toBeUndefined()
 	});
 
@@ -562,8 +562,8 @@ describe('DisplayService', () => {
 	});
 
 	it('should get display dimmer setting -else', () => {
-		displayService['oledSettings'] = false
-		let res = displayService.getDisplayDimmerSetting()
+		displayService.oledSettings = false
+		const res = displayService.getDisplayDimmerSetting()
 		expect(res).toBeUndefined()
 	});
 
@@ -578,9 +578,9 @@ describe('DisplayService', () => {
 	});
 
 	it('should set taskbar dimmer setting -else', () => {
-		displayService['oledSettings'] = false
-		let value = 'abc'
-		let res = displayService.setTaskbarDimmerSetting(value)
+		displayService.oledSettings = false
+		const value = 'abc'
+		const res = displayService.setTaskbarDimmerSetting(value)
 		expect(res).toBeUndefined()
 	});
 
@@ -595,9 +595,9 @@ describe('DisplayService', () => {
 	});
 
 	it('should set background dimmer setting -else', () => {
-		displayService['oledSettings'] = false
-		let value = 'abc'
-		let res = displayService.setBackgroundDimmerSetting(value)
+		displayService.oledSettings = false
+		const value = 'abc'
+		const res = displayService.setBackgroundDimmerSetting(value)
 		expect(res).toBeUndefined()
 	});
 
@@ -612,26 +612,26 @@ describe('DisplayService', () => {
 	});
 
 	it('should set display dimmer setting -else', () => {
-		displayService['oledSettings'] = false
-		let value = 'abc'
-		let res = displayService.setDisplayDimmerSetting(value)
+		displayService.oledSettings = false
+		const value = 'abc'
+		const res = displayService.setDisplayDimmerSetting(value)
 		expect(res).toBeUndefined()
 	});
 
 	it('should reset Eye care mode all settings', () => {
-		displayService['displayEyeCareMode'] = {resetEyecaremodeAllSettings() {
+		displayService.displayEyeCareMode = {resetEyecaremodeAllSettings() {
 			return
 		}}
-		let spy = spyOn(displayService['displayEyeCareMode'], 'resetEyecaremodeAllSettings')
+		const spy = spyOn(displayService.displayEyeCareMode, 'resetEyecaremodeAllSettings')
 		displayService.resetEyecaremodeAllSettings()
 		expect(spy).toHaveBeenCalled()
 	});
 
 	it('should be able to get whiteList', () => {
-		displayService['displayEyeCareMode'] = {getWhiteListCapability() {
+		displayService.displayEyeCareMode = {getWhiteListCapability() {
 			return
 		}}
-		let spy = spyOn(displayService['displayEyeCareMode'], 'getWhiteListCapability')
+		const spy = spyOn(displayService.displayEyeCareMode, 'getWhiteListCapability')
 		displayService.getWhiteListCapability()
 		expect(spy).toHaveBeenCalled()
 	});

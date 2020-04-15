@@ -1685,7 +1685,9 @@
                         },
                         "subSectionTwo": {
                             "title": "Inverter a função principal predefinida",
-                            "description": "Quando ativada, a função principal predefinida será alterada das definições de fábrica para o oposto. Reinicie o computador para que as alterações entrem em vigor."
+                            "description": "Quando ativada, a função principal predefinida será alterada das definições de fábrica para o oposto. Reinicie o computador para que as alterações entrem em vigor.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "Como utilizar as combinações de teclas Fn",

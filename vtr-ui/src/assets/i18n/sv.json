@@ -1685,7 +1685,9 @@
                         },
                         "subSectionTwo": {
                             "title": "Ändra vilken primär funktion som är standard",
-                            "description": "När den är på ändras den primära standardfunktionen från fabriksinställningarna till motsatsen. Starta om datorn så att ändringarna börjar gälla."
+                            "description": "När den är på ändras den primära standardfunktionen från fabriksinställningarna till motsatsen. Starta om datorn så att ändringarna börjar gälla.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "Använda Fn-tangentkombinationer",

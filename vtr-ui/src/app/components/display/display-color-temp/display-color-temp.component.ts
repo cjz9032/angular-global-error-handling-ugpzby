@@ -13,7 +13,7 @@ export class DisplayColorTempComponent implements OnInit {
 	@Input() disableReset = false;
 	@Input() manualRefresh: any;
 	@Output() displayColorTempChange: any = new EventEmitter();
-	@Output() resetTemparature: any = new EventEmitter();
+	@Output() resetTemperature: any = new EventEmitter();
 	@Output() colorPreviewValue: any = new EventEmitter();
 
 
@@ -23,17 +23,18 @@ export class DisplayColorTempComponent implements OnInit {
 		this.logger.info('DisplayColorTempComponent', this.displayColorTempSettings);
 	}
 
-	public onDisplayColorTemparatureChange($event: any) {
-		this.displayColorTempSettings.current = $event.value;
+	public onDisplayColorTemperatureChange($event: number) {
+		this.logger.info('DisplayColorTempComponent.onDisplayColorTemperatureChange', $event);
+		this.displayColorTempSettings.current = $event;
 		this.displayColorTempChange.emit($event);
 	}
 
-	public onResetTemparature($event: any) {
-		this.logger.info('Reset Temperature');
-		this.resetTemparature.emit($event);
+	public onResetTemperature($event: any) {
+		this.logger.info('DisplayColorTempComponent.onResetTemperature');
+		this.resetTemperature.emit($event);
 	}
 
-	public dragChangeValue($event: any) {
+	public dragChangeValue($event: number) {
 		this.colorPreviewValue.emit($event);
 	}
 }

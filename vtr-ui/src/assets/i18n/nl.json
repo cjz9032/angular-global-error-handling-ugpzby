@@ -1685,7 +1685,9 @@
                         },
                         "subSectionTwo": {
                             "title": "De primaire standaardfunctie omdraaien",
-                            "description": "Als deze is ingeschakeld, wordt de primaire functie gewijzigd van fabrieksinstellingen naar het tegenovergestelde. U moet het systeem opnieuw opstarten om deze wijziging te activeren."
+                            "description": "Als deze is ingeschakeld, wordt de primaire functie gewijzigd van fabrieksinstellingen naar het tegenovergestelde. U moet het systeem opnieuw opstarten om deze wijziging te activeren.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "De Fn-toetsencombinaties gebruiken",

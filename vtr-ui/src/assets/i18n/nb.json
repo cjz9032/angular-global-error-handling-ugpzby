@@ -1685,7 +1685,9 @@
                         },
                         "subSectionTwo": {
                             "title": "Reversere den standard primærfunksjonen",
-                            "description": "Når på vil den standard primærfunksjonen endres fra fabrikkinnstillingene til det motsatte. Start datamaskinen på nytt for at endringene skal tre i kraft."
+                            "description": "Når på vil den standard primærfunksjonen endres fra fabrikkinnstillingene til det motsatte. Start datamaskinen på nytt for at endringene skal tre i kraft.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "Slik bruker du Fn-tastekombinasjoner",

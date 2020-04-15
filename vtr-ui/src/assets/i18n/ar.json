@@ -1685,7 +1685,9 @@
                         },
                         "subSectionTwo": {
                             "title": "عكس الوظيفة الأساسية الافتراضية",
-                            "description": "عند التشغيل، سيتم تغيير الوظيفة الأساسية الافتراضية من إعدادات المصنع إلى العكس. أعد تشغيل الكمبيوتر لجعل التغييرات نافذة المفعول."
+                            "description": "عند التشغيل، سيتم تغيير الوظيفة الأساسية الافتراضية من إعدادات المصنع إلى العكس. أعد تشغيل الكمبيوتر لجعل التغييرات نافذة المفعول.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "كيفية استخدام مجموعات مفاتيح Fn",

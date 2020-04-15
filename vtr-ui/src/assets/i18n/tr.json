@@ -1685,7 +1685,9 @@
                         },
                         "subSectionTwo": {
                             "title": "Varsayılan birincil işlevi tersine çevirme",
-                            "description": "Bu ayar açık olduğunda, varsayılan birincil işlev fabrika ayarlarından diğer işleve değiştirilir. Değişikliklerin geçerli hale gelmesi için bilgisayarınızı yeniden başlatın."
+                            "description": "Bu ayar açık olduğunda, varsayılan birincil işlev fabrika ayarlarından diğer işleve değiştirilir. Değişikliklerin geçerli hale gelmesi için bilgisayarınızı yeniden başlatın.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "Fn tuş bileşimleri nasıl kullanılır?",

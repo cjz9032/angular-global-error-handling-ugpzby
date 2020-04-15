@@ -1685,7 +1685,9 @@
                         },
                         "subSectionTwo": {
                             "title": "反转键盘首行默认功能",
-                            "description": "启用时，键盘首行功能将更改为与出厂设置相反的功能。重新启动计算机使更改生效。"
+                            "description": "启用时，键盘首行功能将更改为与出厂设置相反的功能。重新启动计算机使更改生效。",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "如何使用 Fn 组合键",

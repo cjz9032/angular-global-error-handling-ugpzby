@@ -349,8 +349,8 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public setHPDLeaveSensitivitySetting($event) {
-		const value = $event.value;
+	public setHPDLeaveSensitivitySetting($event: number) {
+		const value = $event;
 		this.sensitivityAdjustVal = value;
 		try {
 			this.smartAssist.SetHPDLeaveSensitivitySetting(value).then((response: any) => {
@@ -498,8 +498,8 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			});
 	}
 
-	public setZeroTouchLoginSensitivity($event: any) {
-		const value = $event.value;
+	public setZeroTouchLoginSensitivity($event: number) {
+		const value = $event;
 		this.logger.info('setZeroTouchLoginSensitivity', value);
 		this.intelligentSecurity.zeroTouchLoginDistance = value;
 
@@ -561,7 +561,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 						this.intelligentSecurity.zeroTouchLoginDistance = response;
 						this.smartAssistCache.intelligentSecurity.zeroTouchLoginDistance = this.intelligentSecurity.zeroTouchLoginDistance;
 					})
-				}			
+				}
 				this.logger.info(`onDistanceSensitivityAdjustToggle.setZeroTouchLoginAdjustStatus ${isSuccess}`, this.intelligentSecurity.isZeroTouchLoginAdjustEnabled);
 			});
 	}
@@ -632,11 +632,12 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public SetZeroTouchLockDistanceSensitivity($event: any) {
-		this.hsaIntelligentSecurity.zeroTouchLockDistance = $event.value;
+	public SetZeroTouchLockDistanceSensitivity($event: number) {
+		const value = $event;
+		this.hsaIntelligentSecurity.zeroTouchLockDistance = value;
 		try {
 			if (this.smartAssist.isShellAvailable) {
-				this.smartAssist.setZeroTouchLockDistanceSensitivity($event.value)
+				this.smartAssist.setZeroTouchLockDistanceSensitivity(value)
 					.then((response) => {
 						if (response !== 0) {
 							this.logger.error('SetZeroTouchLockDistanceSensitivity error.');
@@ -644,7 +645,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 					});
 			}
 		} catch (error) {
-			this.logger.error('onZeroTouchLockDistanceSensitivity' + error.message);
+			this.logger.exception('SetZeroTouchLockDistanceSensitivity', error);
 		}
 	}
 
@@ -679,8 +680,8 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public onDisplayDimTimeChange($event: any) {
-		const value = $event.value;
+	public onDisplayDimTimeChange($event: number) {
+		const value = $event;
 		this.intelligentScreen.readingOrBrowsingTime = value;
 
 		this.smartAssistCache.intelligentScreen = this.intelligentScreen;

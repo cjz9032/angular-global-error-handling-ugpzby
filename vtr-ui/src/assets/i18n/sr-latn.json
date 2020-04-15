@@ -1683,7 +1683,9 @@
                         },
                         "subSectionTwo": {
                             "title": "Storniranje podrazumevane primarne funkcije",
-                            "description": "Kada je uključena, podrazumevana primarna funkcija će biti promenjena iz fabričkih postavki na suprotno. Ponovo pokrenite računar da bi se promene primenile."
+                            "description": "Kada je uključena, podrazumevana primarna funkcija će biti promenjena iz fabričkih postavki na suprotno. Ponovo pokrenite računar da bi se promene primenile.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "Kako da koristite kombinacije tastera Fn",
