@@ -3,6 +3,9 @@ import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { CommonService } from '../common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { SegmentConst } from '../self-select/self-select.service';
+import { Subscription } from 'rxjs';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { MenuItem } from 'src/app/enums/menuItem.enum';
 
 export enum BetaStatus {
 	On,
@@ -14,6 +17,8 @@ export enum BetaStatus {
 })
 export class BetaService {
 	private betaUser;
+	private subscription: Subscription;
+	public betaFeatureAvailable = false;
 	constructor(
 		private vantageShellService: VantageShellService,
 		private commonService: CommonService
@@ -22,6 +27,22 @@ export class BetaService {
 			this.betaUser = this.vantageShellService.getBetaUser();
 		}
 		this.commonService.removeLocalStorageValue(LocalStorageKey.BetaUser);
+		this.subscription = this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+		});
+	}
+
+	private onNotification(notification: any) {
+		if (notification) {
+			switch (notification.type) {
+				case MenuItem.MenuItemChange:
+					const menu = notification.payload;
+					this.betaFeatureAvailable = this.isAnyBetaFeatureAvailable(menu);
+					break;
+				default:
+					break;
+			}
+		}
 	}
 
 	public getBetaStatus(): BetaStatus {
@@ -45,5 +66,28 @@ export class BetaService {
 		if (this.betaUser) {
 			this.betaUser.setBetaUser(preStoredValue);
 		}
+	}
+
+	isAnyBetaFeatureAvailable(menu) {
+		let result = false;
+		if (menu && menu.length && menu.length > 0)
+		{
+			menu.forEach(element => {
+				if (element.beta && !element.hide) {
+					result = true;
+					return;
+				}
+				if (element.subitems && element.subitems.length > 0) {
+					element.subitems.forEach(item => {
+						if (item.beta && !item.hide) {
+							result = true;
+							return;
+						}
+					});
+				}
+			});
+		}
+
+		return result;
 	}
 }

@@ -75,7 +75,7 @@
 					</div>
 
 					<div class="card-pt beta-setting"
-						*ngIf="segmentTag !== segmentConst.Commercial">
+						*ngIf="segmentTag !== segmentConst.Commercial && betaService.betaFeatureAvailable">
 						<vtr-container-collapsible [tabIndex]="0"
 							name="SettingsBeta"
 							collapseLinkId="settings-beta"

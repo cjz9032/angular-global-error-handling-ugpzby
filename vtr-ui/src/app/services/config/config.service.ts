@@ -132,7 +132,8 @@ export class ConfigService {
 
 			if (machineInfo.isGaming) {
 				resultMenu = cloneDeep(this.menuItemsGaming);
-				this.initializeBetaMenu(resultMenu, isBetaUser);
+				await this.initializeAppSearchItem(resultMenu);
+				await this.initializeBetaMenu(resultMenu, isBetaUser);
 				this.initializeWiFiItem(resultMenu);
 				this.menu = this.filterMenu(resultMenu, SegmentConst.Gaming);
 				this.notifyMenuChange(this.menu);
@@ -146,6 +147,7 @@ export class ConfigService {
 			}
 
 			this.menuBySegment.commercial = cloneDeep(resultMenu);
+			await this.initializeAppSearchItem(resultMenu);
 			await this.initializeBetaMenu(resultMenu, isBetaUser);
 			this.menuBySegment.consumer = cloneDeep(resultMenu);
 			this.menuBySegment.smb = cloneDeep(resultMenu);
@@ -159,6 +161,20 @@ export class ConfigService {
 			this.notifyMenuChange(this.menu);
 			return resolve(this.menu);
 		});
+	}
+
+	private initializeAppSearchItem(menu: any) {
+		if (!menu.find((item) => item.id === 'app-search')) {
+			return this.canShowSearch().then((result) => {
+				const appSearchItem = menu.find((item) => item.id === 'app-search');
+				if (result && !appSearchItem) {
+					menu.splice(menu.length - 1, 0, this.appSearch);
+				}
+				else if (!result && appSearchItem){
+					menu = menu.filter( item => item.id === 'app-search');
+				}
+			});
+		}
 	}
 
 	private async initShowCHSMenu(country: string, menu: Array<any>, machineInfo: any): Promise<Array<any>> {
@@ -534,21 +550,19 @@ export class ConfigService {
 
 	updateBetaMenu(menu: Array<any>, isBeta: boolean): Promise<Array<any>> {
 		return new Promise((resolve) => {
-			if (isBeta) {
-				if (!menu.find((item) => item.id === 'app-search')) {
-					return this.canShowSearch().then((result) => {
-						if (result) {
-							menu.splice(menu.length - 1, 0, this.appSearch);
+			menu.forEach( element => {
+				if (element.beta) {
+					element.hideForBeta = !isBeta;
+				}
+				if (element.subitems && element.subitems.length && element.subitems.length > 0) {
+					element.subitems.forEach(item => {
+						if (item.beta) {
+							item.hideForBeta = !isBeta;
 						}
-						return resolve(menu);
 					});
 				}
-
-				return resolve(menu);
-			} else {
-				menu = menu.filter(item => item.id !== 'app-search');
-				return resolve(menu);
-			}
+			});
+			resolve(menu);
 		});
 	}
 
