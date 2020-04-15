@@ -232,15 +232,17 @@
 			padding-top: 0.5rem;
 
 			a {
+				padding-bottom: .2rem;
+				border-bottom: .2rem solid $main;
 				&:hover {
 					text-decoration: none;
 					color: $main;
 				}
 
-				span {
-					padding-bottom: .2rem;
-					border-bottom: .2rem solid $main;
-				}
+				// span {
+				// 	padding-bottom: .2rem;
+				// 	border-bottom: .2rem solid $main;
+				// }
 			}
 		}
 	}
