@@ -7,7 +7,7 @@
          </li>
       </ul>
       <div class="more-color">
-         <button class="under-line-button" (click)="moreColorFun(1);$event.stopPropagation();" tabindex="-1" (keydown.enter)="moreColorFun(2);$event.stopPropagation();">{{'gaming.lightingNewversion.colorPicker.text2' | translate}}</button>
+         <button class="under-line-button" (click)="moreColorFun();$event.stopPropagation();" tabindex="-1" >{{'gaming.lightingNewversion.colorPicker.text2' | translate}}</button>
       </div>
    </div>
    <div *ngIf="isToggleMoreColor">
