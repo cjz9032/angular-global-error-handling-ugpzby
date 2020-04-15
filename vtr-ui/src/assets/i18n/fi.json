@@ -2050,16 +2050,16 @@
                 "tooltip": "Tämä ominaisuus ei ole käytettävissä verkkovideosoittimissa. Suositut paikalliset videosoittimet (kuten Windows Media Player ja 5KPlayer) tukevat tätä ominaisuutta."
             },
             "superResolution": {
-				"heading": "Älykäs tietoväline",
-				"title": "Näytön tarkkuuden skaalaus",
-				"desc": "<p><label>Tämä ominaisuus parantaa videoiden katselukokemusta parantamalla videoiden resoluutiota. Se toimii erityisen hyvin, kun videon resoluutio on alhainen.</label></p> <p style='margin-top:4px;'><label>Tämä toiminto saattaa heikentää akun käyttöaikaa, akun lämpötilaa ja aiheuttaa ääniä. Älä käytä sitä DC-tilassa (akkuvirralla). Muutoin se nopeuttaa virrankulutusta ja lyhentää akun käyttöikää.</label></p>",
-				"tooltip": "Tämä ominaisuus toimii vain seuraavilla videosoittimilla:<br>Windows Media Player<br>Chrome<br>Elokuvat ja TV<br>PotPlayer<br>GOM Player<br>Selainpohjaiset soittimet (esim. Chrome)<br><br>Lisätietoja tämän ominaisuuden ottamisesta käyttöön PotPlayer- ja GOM Player -soittimille löydät tietokoneesi mukana toimitetusta käyttöoppaasta.",
-				"note": {
-					"description": "Wi-Fi-toiminto ei toimi seuraavissa tilanteissa:",
-					"description1": "Virransäästötila on käytössä.",
-					"description2": "Keskusyksikön lämpötila on liian korkea."
-				}
-			},
+                "heading": "Älykäs tietoväline",
+                "title": "Näytön tarkkuuden skaalaus",
+                "desc": "<p><label>Tämä ominaisuus parantaa videoiden katselukokemusta parantamalla videoiden resoluutiota. Se toimii erityisen hyvin, kun videon resoluutio on alhainen.</label></p> <p style='margin-top:4px;'><label>Tämä toiminto saattaa heikentää akun käyttöaikaa, akun lämpötilaa ja aiheuttaa ääniä. Älä käytä sitä DC-tilassa (akkuvirralla). Muutoin se nopeuttaa virrankulutusta ja lyhentää akun käyttöikää.</label></p>",
+                "tooltip": "Tämä ominaisuus toimii vain seuraavilla videosoittimilla:<br>Windows Media Player<br>Chrome<br>Elokuvat ja TV<br>PotPlayer<br>GOM Player<br>Selainpohjaiset soittimet (esim. Chrome)<br><br>Lisätietoja tämän ominaisuuden ottamisesta käyttöön PotPlayer- ja GOM Player -soittimille löydät tietokoneesi mukana toimitetusta käyttöoppaasta.",
+                "note": {
+                    "description": "Wi-Fi-toiminto ei toimi seuraavissa tilanteissa:",
+                    "description1": "Virransäästötila on käytössä.",
+                    "description2": "Keskusyksikön lämpötila on liian korkea."
+                }
+            },
             "antiTheft": {
                 "heading": "Älykäs tunnistustoiminto",
                 "title": "Älykäs liikkeentunnistus",
@@ -2068,44 +2068,44 @@
                     "description": "Kun kirjaudut järjestelmään onnistuneesti, tämä ominaisuus poistetaan automaattisesti käytöstä. Sinun täytyy ottaa se uudelleen käyttöön käyttääksesi sitä."
                 },
                 "alarm": {
-                    "title":" HÄLYTYS KESTÄÄ",
-                    "option1":"10 sekuntia",
-                    "option2":"20 sekuntia",
-                    "option3":"30 sekuntia",
-                    "option4":"1 minuutti",
-                    "option5":"Älä lopeta koskaan"
+                    "title": " HÄLYTYS KESTÄÄ",
+                    "option1": "10 sekuntia",
+                    "option2": "20 sekuntia",
+                    "option3": "30 sekuntia",
+                    "option4": "1 minuutti",
+                    "option5": "Älä lopeta koskaan"
                 },
                 "allowCamera": {
-                    "title":"VALOKUVIEN OTTAMINEN",
-                    "describe":"Kun tämä ominaisuus on käytössä, kamera ottaa automaattisesti valokuvia, jos havaitaan liikettä näytön ollessa lukittuna. Nämä tiedot käsitellään laitteessa paikallisesti. Lenovolla ei ole pääsyä tietoihin eikä se voi käyttää niitä.",
-                    "checkBoxText":"Ota tämä ominaisuus käyttöön"
+                    "title": "VALOKUVIEN OTTAMINEN",
+                    "describe": "Kun tämä ominaisuus on käytössä, kamera ottaa automaattisesti valokuvia, jos havaitaan liikettä näytön ollessa lukittuna. Nämä tiedot käsitellään laitteessa paikallisesti. Lenovolla ei ole pääsyä tietoihin eikä se voi käyttää niitä.",
+                    "checkBoxText": "Ota tämä ominaisuus käyttöön"
                 },
                 "cameraPrivacy": {
-                     "describe":"Lenovo Vantage -ohjelman kameran tietosuojatila on käytössä. Valintaruudun toiminto ei toimi.",
-                     "linkText":"Poista se käytöstä siirtymällä kameran tietosuojatilaan"
+                    "describe": "Lenovo Vantage -ohjelman kameran tietosuojatila on käytössä. Valintaruudun toiminto ei toimi.",
+                    "linkText": "Poista se käytöstä siirtymällä kameran tietosuojatilaan"
                 },
                 "authorizedAccess": {
-                    "describe":"Lenovo Vantage ei voi käyttää kameraa. Valintaruudun toiminto ei toimi.",
-                    "linkText":"Siirry Windows-asetuksiin ja anna käyttöoikeus"
+                    "describe": "Lenovo Vantage ei voi käyttää kameraa. Valintaruudun toiminto ei toimi.",
+                    "linkText": "Siirry Windows-asetuksiin ja anna käyttöoikeus"
                 },
                 "photo": {
-                    "title":"LIIKKEEN AIKANA OTETTUJEN VALOKUVIEN MÄÄRÄ",
+                    "title": "LIIKKEEN AIKANA OTETTUJEN VALOKUVIEN MÄÄRÄ",
                     "tooltip": "Tietokoneesi kamera aktivoitu automaattisesti ja ottaa valokuvia, kun liikettä havaitaan. Kuvia otetaan 2 sekunnin välein ja ne tallennetaan paikalliseen tallennustilaan.",
-                    "option1":"5",
-                    "option2":"10",
-                    "option3":"15",
-                    "option4":"20",
-                    "option5":"25",
-                    "option6":"30"
+                    "option1": "5",
+                    "option2": "10",
+                    "option3": "15",
+                    "option4": "20",
+                    "option5": "25",
+                    "option6": "30"
                 },
                 "showPhoto": {
-                    "title":"VALOKUVAT ON:",
-                    "link":"Näytä valokuvat"
-				},
-				"fileAuthorizationTips": {
-					"content":"Lenovo Vantage ei voi käyttää tiedostojärjestelmää.",
-					"link":"Siirry Windows-asetuksiin ja anna käyttöoikeus"
-				}
+                    "title": "VALOKUVAT ON:",
+                    "link": "Näytä valokuvat"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Lenovo Vantage ei voi käyttää tiedostojärjestelmää.",
+                    "link": "Siirry Windows-asetuksiin ja anna käyttöoikeus"
+                }
             },
             "voice": {
                 "title": "Ääni",
@@ -3118,7 +3118,8 @@
         "settingsNotes": "Ota tämä sovellus uudelleen käyttöön ja varmista, että kaikki muutokset tulevat voimaan.",
         "betaSettingTitle": "Beta-ohjelma",
         "betaProgram": "Beta-ohjelma",
-        "betaSettingDescription": "Kokeile uusimpia ominaisuuksia, joita työstämme."
+        "betaSettingDescription": "Kokeile uusimpia ominaisuuksia, joita työstämme.",
+        "betaSettingNewDescription": "Haluamme kutsua sinut mukaan Smart Performance -ominaisuuden beta-ohjelmaan. Se auttaa parantamaan tietokoneesi suorituskykyä seuraavin tavoin:<br/><ul class='pl-4'><li>Tutkimalla virheitä ja optimoimalla asetuksia ennakoivasti.</li><li>Parantamalla internetin suorituskykyä verkon ja selaimen optimoinnin avulla.</li><li>Suorittamalla pikatarkistuksen ja korjauksen ilman nykyistä virustentorjuntaohjelmaa.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Peruuta",
@@ -4043,8 +4044,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "Vasen nuoli",
+            "rightArrow": "Oikea nuoli"
         }
     },
     "dcc": {

@@ -2050,16 +2050,16 @@
                 "tooltip": "Ta funkcja nie dotyczy odtwarzaczy wideo w sieci Web. Popularne lokalne odtwarzacze wideo, takie jak program Windows Media Player, 5KPlayer itd., obsługują tę funkcję."
             },
             "superResolution": {
-				"heading": "Inteligentne multimedia",
-				"title": "Skalowanie rozdzielczości wideo",
-				"desc": "<p><label>Ta funkcja poprawia rozdzielczość odtwarzania filmów, a tym samym zapewnia lepsze wrażenia z ich oglądania. Jej skuteczność jest największa w przypadku materiałów wideo o niskiej rozdzielczości.</label></p> <p style='margin-top:4px;'><label>Ta funkcja może wpływać na żywotność baterii, temperaturę baterii i powodować hałas. Nie należy używać jej w trybie prądu stałego (tryb akumulatora). Może to przyspieszyć zużycie energii i skrócić żywotność akumulatora.</label></p>",
-				"tooltip": "Ta funkcja działa tylko w przypadku następujących odtwarzaczy wideo:<br>Windows Media Player<br>Chrome<br>Filmy i TV<br>PotPlayer<br>GOM Player<br>Odtwarzacze działające w przeglądarce (np. Chrome)<br><br>Instrukcje pozwalające włączyć tę funkcję w odtwarzaczach PotPlayer i GOM Player znajdują się w instrukcji obsługi dołączonej do komputera.",
-				"note": {
-					"description": "Funkcja nie działa, gdy:",
-					"description1": "Tryb oszczędzania baterii jest włączony.",
-					"description2": "Temperatura procesora jest za wysoka."
-				}
-			},
+                "heading": "Inteligentne multimedia",
+                "title": "Skalowanie rozdzielczości wideo",
+                "desc": "<p><label>Ta funkcja poprawia rozdzielczość odtwarzania filmów, a tym samym zapewnia lepsze wrażenia z ich oglądania. Jej skuteczność jest największa w przypadku materiałów wideo o niskiej rozdzielczości.</label></p> <p style='margin-top:4px;'><label>Ta funkcja może wpływać na żywotność baterii, temperaturę baterii i powodować hałas. Nie należy używać jej w trybie prądu stałego (tryb akumulatora). Może to przyspieszyć zużycie energii i skrócić żywotność akumulatora.</label></p>",
+                "tooltip": "Ta funkcja działa tylko w przypadku następujących odtwarzaczy wideo:<br>Windows Media Player<br>Chrome<br>Filmy i TV<br>PotPlayer<br>GOM Player<br>Odtwarzacze działające w przeglądarce (np. Chrome)<br><br>Instrukcje pozwalające włączyć tę funkcję w odtwarzaczach PotPlayer i GOM Player znajdują się w instrukcji obsługi dołączonej do komputera.",
+                "note": {
+                    "description": "Funkcja nie działa, gdy:",
+                    "description1": "Tryb oszczędzania baterii jest włączony.",
+                    "description2": "Temperatura procesora jest za wysoka."
+                }
+            },
             "antiTheft": {
                 "heading": "Inteligentna detekcja",
                 "title": "Inteligentny alert wykrycia ruchu",
@@ -2068,44 +2068,44 @@
                     "description": "Po pomyślnym zalogowaniu się do systemu nastąpi automatyczne wyłączenie funkcji. Aby ponownie użyć tej funkcji, należy jeszcze raz ją włączyć."
                 },
                 "alarm": {
-                    "title":" CZAS TRWANIA ALARMU",
-                    "option1":"10 s",
-                    "option2":"20 s",
-                    "option3":"30 s",
-                    "option4":"1 minuta",
-                    "option5":"Cały czas do momentu wyłączenia"
+                    "title": " CZAS TRWANIA ALARMU",
+                    "option1": "10 s",
+                    "option2": "20 s",
+                    "option3": "30 s",
+                    "option4": "1 minuta",
+                    "option5": "Cały czas do momentu wyłączenia"
                 },
                 "allowCamera": {
-                    "title":"WYKONYWANIE ZDJĘĆ",
-                    "describe":"Jeśli włączysz tę funkcję, w przypadku wykrycia ruchu po zablokowaniu ekranu kamera automatycznie zacznie robić zdjęcia. Dane są przetwarzane lokalnie na twoim urządzeniu. Lenovo nie ma do nich dostępu ani z nich nie korzysta.",
-                    "checkBoxText":"Włącz tę funkcję"
+                    "title": "WYKONYWANIE ZDJĘĆ",
+                    "describe": "Jeśli włączysz tę funkcję, w przypadku wykrycia ruchu po zablokowaniu ekranu kamera automatycznie zacznie robić zdjęcia. Dane są przetwarzane lokalnie na twoim urządzeniu. Lenovo nie ma do nich dostępu ani z nich nie korzysta.",
+                    "checkBoxText": "Włącz tę funkcję"
                 },
                 "cameraPrivacy": {
-                     "describe":"Tryb prywatności kamery w Lenovo Vantage jest włączony. Funkcja rozpoznawania jest wyłączona.",
-                     "linkText":"Przejdź do trybu prywatności kamery, aby go wyłączyć"
+                    "describe": "Tryb prywatności kamery w Lenovo Vantage jest włączony. Funkcja rozpoznawania jest wyłączona.",
+                    "linkText": "Przejdź do trybu prywatności kamery, aby go wyłączyć"
                 },
                 "authorizedAccess": {
-                    "describe":"Aplikacja Lenovo Vantage nie ma dostępu do kamery. Funkcja rozpoznawania jest wyłączona.",
-                    "linkText":"Przejdź do ustawień systemu Windows, aby udzielić dostępu"
+                    "describe": "Aplikacja Lenovo Vantage nie ma dostępu do kamery. Funkcja rozpoznawania jest wyłączona.",
+                    "linkText": "Przejdź do ustawień systemu Windows, aby udzielić dostępu"
                 },
                 "photo": {
-                    "title":"LICZBA ZDJĘĆ WYKONANYCH W TRAKCIE RUCHU",
+                    "title": "LICZBA ZDJĘĆ WYKONANYCH W TRAKCIE RUCHU",
                     "tooltip": "Kamera w komputerze włącza się automatycznie, aby robić zdjęcia po wykryciu ruchu. Zdjęcia są wykonywane co 2 sekundy i zapisywane w lokalnej pamięci.",
-                    "option1":"5",
-                    "option2":"10",
-                    "option3":"15",
-                    "option4":"20",
-                    "option5":"25",
-                    "option6":"30"
+                    "option1": "5",
+                    "option2": "10",
+                    "option3": "15",
+                    "option4": "20",
+                    "option5": "25",
+                    "option6": "30"
                 },
                 "showPhoto": {
-                    "title":"ZDJĘCIA ZOSTAŁY:",
-                    "link":"Wyświetl zdjęcia"
-				},
-				"fileAuthorizationTips": {
-					"content":"Aplikacja Lenovo Vantage nie ma uprawnień dostępu do systemu plików.",
-					"link":"Przejdź do ustawień systemu Windows, aby udzielić dostępu"
-				}
+                    "title": "ZDJĘCIA ZOSTAŁY:",
+                    "link": "Wyświetl zdjęcia"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Aplikacja Lenovo Vantage nie ma uprawnień dostępu do systemu plików.",
+                    "link": "Przejdź do ustawień systemu Windows, aby udzielić dostępu"
+                }
             },
             "voice": {
                 "title": "Głos",
@@ -3118,7 +3118,8 @@
         "settingsNotes": "Uruchom ponownie tę aplikację, aby upewnić się, że wszystkie zmiany zostaną zastosowane.",
         "betaSettingTitle": "Program Beta",
         "betaProgram": "Program Beta",
-        "betaSettingDescription": "Wypróbuj najnowsze funkcje, nad którymi pracujemy."
+        "betaSettingDescription": "Wypróbuj najnowsze funkcje, nad którymi pracujemy.",
+        "betaSettingNewDescription": "Mamy przyjemność zaprosić Cię do programu Beta poświęconego funkcji Smart Performance. Funkcja ta pozwala poprawić wydajność komputera dzięki następującym możliwościom:<br/><ul class='pl-4'><li>Proaktywne diagnozowanie błędów i optymalizowanie ustawień.</li><li>Zwiększanie wydajności połączenia internetowego dzięki optymalizacji sieci i przeglądarki.</li><li>Szybkie skanowania i naprawa bez użycia istniejącego programu antywirusowego.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Anuluj",
@@ -4043,8 +4044,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "Strzałka w lewo",
+            "rightArrow": "Strzałka w prawo"
         }
     },
     "dcc": {

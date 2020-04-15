@@ -2050,16 +2050,16 @@
                 "tooltip": "Ta značajka nije primjenjiva na web-reproduktore videosadržaja. Popularni lokalni reproduktori videosadržaja, kao što su Windows Media Player, 5KPlayer itd., podržavaju tu značajku."
             },
             "superResolution": {
-				"heading": "Inteligentni mediji",
-				"title": "Povećanje razlučivosti videozapisa",
-				"desc": "<p><label>Ova značajka poboljšava iskustvo reprodukcije videa poboljšanjem razlučivosti videozapisa. Posebno djeluje kada je video loše razlučivosti.</label></p> <p style='margin-top:4px;'><label>Ova funkcija može utjecati na trajanje baterije, temperaturu baterije i uzrokovati buku. Nemojte ga koristiti u DC načinu rada (način rada baterije). U suprotnom će doći do ubrzanja potrošnje električne energije i skraćivanja vijeka trajanja baterije.</label></p>",
-				"tooltip": "Ova značajka radi samo za video reproduktore ispod video zapisa:<br>Windows Media Player<br>Chrome<br>filmovi i televizija<br>PotPlayer<br>GOM player<br>Reproduktori temeljeni na web preglednicima (npr. Chrome)<br><br>Za upute o tome kako omogućiti ovu funkciju na PotPlayeru i GOM player uređaju, pogledajte korisnički priručnik koji ste dobili s računalom.",
-				"note": {
-					"description": "Ova značajka ne funkcionira kad:",
-					"description1": "Omogućen je način rada štednja baterije.",
-					"description2": "je temperatura CPU-a previsoka."
-				}
-			},
+                "heading": "Inteligentni mediji",
+                "title": "Povećanje razlučivosti videozapisa",
+                "desc": "<p><label>Ova značajka poboljšava iskustvo reprodukcije videa poboljšanjem razlučivosti videozapisa. Posebno djeluje kada je video loše razlučivosti.</label></p> <p style='margin-top:4px;'><label>Ova funkcija može utjecati na trajanje baterije, temperaturu baterije i uzrokovati buku. Nemojte ga koristiti u DC načinu rada (način rada baterije). U suprotnom će doći do ubrzanja potrošnje električne energije i skraćivanja vijeka trajanja baterije.</label></p>",
+                "tooltip": "Ova značajka radi samo za video reproduktore ispod video zapisa:<br>Windows Media Player<br>Chrome<br>filmovi i televizija<br>PotPlayer<br>GOM player<br>Reproduktori temeljeni na web preglednicima (npr. Chrome)<br><br>Za upute o tome kako omogućiti ovu funkciju na PotPlayeru i GOM player uređaju, pogledajte korisnički priručnik koji ste dobili s računalom.",
+                "note": {
+                    "description": "Ova značajka ne funkcionira kad:",
+                    "description1": "Omogućen je način rada štednja baterije.",
+                    "description2": "je temperatura CPU-a previsoka."
+                }
+            },
             "antiTheft": {
                 "heading": "Pametni senzori",
                 "title": "Pametno upozorenje o kretanju",
@@ -2068,44 +2068,44 @@
                     "description": "Nakon uspješne prijave u sustav, ova će se značajka automatski isključiti. Da biste je opet koristili morate je ponovo uključiti."
                 },
                 "alarm": {
-                    "title":" ALARM ĆE TRAJATI",
-                    "option1":"10 sekundi",
-                    "option2":"20 sekundi",
-                    "option3":"30 sekundi",
-                    "option4":"1 minuta",
-                    "option5":"Bez isključivanja"
+                    "title": " ALARM ĆE TRAJATI",
+                    "option1": "10 sekundi",
+                    "option2": "20 sekundi",
+                    "option3": "30 sekundi",
+                    "option4": "1 minuta",
+                    "option5": "Bez isključivanja"
                 },
                 "allowCamera": {
-                    "title":"FOTOGRAFIRANJE",
-                    "describe":"Kada omogućite ovu značajku, kamera autoimatski fotografira kad je vaš zaslon zaključan a otkrije se pokrete. Ti se podaci obrađuju lokalno na vašem uređaju. Lenovo im ne pristupa niti ih upotrebljava.",
-                    "checkBoxText":"Omogućite ovu značajku"
+                    "title": "FOTOGRAFIRANJE",
+                    "describe": "Kada omogućite ovu značajku, kamera autoimatski fotografira kad je vaš zaslon zaključan a otkrije se pokrete. Ti se podaci obrađuju lokalno na vašem uređaju. Lenovo im ne pristupa niti ih upotrebljava.",
+                    "checkBoxText": "Omogućite ovu značajku"
                 },
                 "cameraPrivacy": {
-                     "describe":"Uključen je način rada kamere za zaštitu privatnosti Lenovo Vantage. Funkcija potvrdnog okvira ne radi.",
-                     "linkText":"Idite na način rada kamere za zaštitu privatnosti kako biste ga isključili"
+                    "describe": "Uključen je način rada kamere za zaštitu privatnosti Lenovo Vantage. Funkcija potvrdnog okvira ne radi.",
+                    "linkText": "Idite na način rada kamere za zaštitu privatnosti kako biste ga isključili"
                 },
                 "authorizedAccess": {
-                    "describe":"Lenovo Vantage nema pristup kameri. Funkcija potvrdnog okvira ne radi.",
-                    "linkText":"Idite na postavke sustava Windows za omogućivanje pristupa"
+                    "describe": "Lenovo Vantage nema pristup kameri. Funkcija potvrdnog okvira ne radi.",
+                    "linkText": "Idite na postavke sustava Windows za omogućivanje pristupa"
                 },
                 "photo": {
-                    "title":"BROJ SNIMLJENIH FOTOGRAFIJA TIJEKOM POMICANJA",
+                    "title": "BROJ SNIMLJENIH FOTOGRAFIJA TIJEKOM POMICANJA",
                     "tooltip": "Kamera na vašem računalu automatski se aktivira za fotografiranje kada se otkrije pokrete. Fotografije se snimaju svake 2 sekunde i sprema ih se u vašu lokalnu pohranu.",
-                    "option1":"5",
-                    "option2":"10",
-                    "option3":"15",
-                    "option4":"20",
-                    "option5":"25",
-                    "option6":"30"
+                    "option1": "5",
+                    "option2": "10",
+                    "option3": "15",
+                    "option4": "20",
+                    "option5": "25",
+                    "option6": "30"
                 },
                 "showPhoto": {
-                    "title":"FOTOGRAFIJE SU BILE:",
-                    "link":"Pregledaj fotografije"
-				},
-				"fileAuthorizationTips": {
-					"content":"Lenovo Vantage nema pristup datotečnom sustavu.",
-					"link":"Idite na postavke sustava Windows za omogućivanje pristupa"
-				}
+                    "title": "FOTOGRAFIJE SU BILE:",
+                    "link": "Pregledaj fotografije"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Lenovo Vantage nema pristup datotečnom sustavu.",
+                    "link": "Idite na postavke sustava Windows za omogućivanje pristupa"
+                }
             },
             "voice": {
                 "title": "Glas",
@@ -3118,7 +3118,8 @@
         "settingsNotes": "Ponovo pokrenite ovu aplikaciju kako biste bili sigurni da će sve promjene stupiti na snagu.",
         "betaSettingTitle": "Beta program",
         "betaProgram": "Beta program",
-        "betaSettingDescription": "Isprobajte najnovije značajke na kojima radimo."
+        "betaSettingDescription": "Isprobajte najnovije značajke na kojima radimo.",
+        "betaSettingNewDescription": "Drago nam je što vas možemo pozvati na Beta program Smart Performance. Pomaže u poboljšanju performansi računala:<br/><ul class='pl-4'><li>Proaktivno dijagnosticiranje grešaka i optimiziranje postavki.</li><li>Povećajte internetske performanse putem optimizacije mreža i brojeva.</li><li>Brzo skeniranje i sanacija bez korištenja postojećeg antivirusnog programa.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Odustani",
@@ -4043,8 +4044,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "Lijeva strelica",
+            "rightArrow": "Desna strelica"
         }
     },
     "dcc": {

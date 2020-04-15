@@ -2050,16 +2050,16 @@
                 "tooltip": "Această funcție nu se aplică jucătorilor de jocuri video pe web. Cele mai populare playere video locale, cum ar fi Windows Media Player, 5KPlayer și altele, acceptă această funcție."
             },
             "superResolution": {
-				"heading": "Medii inteligente",
-				"title": "Mărirea rezoluției video",
-				"desc": "<p><label>Această caracteristică îmbunătățește experiența de redare video prin îmbunătățirea rezoluției video. Funcționează mai ales atunci când videoclipul este la o rezoluție slabă.</label></p> <p style='margin-top:4px;'><label>Această caracteristică ar putea afecta durata de viață a bateriei, temperatura bateriei și poate provoca zgomote. Nu o utilizați în modul de alimentare c.c. (mod baterie). În caz contrar, va accelera consumul de energie și va scurta durata de viață a bateriei.</label></p>",
-				"tooltip": "Această caracteristică funcționează numai pentru playerele video de mai jos:<br>Windows Media Player<br>Chrome<br>Filme și televiziune<br>PotPlayer<br>GOM player<br>playere pe bază de browser web (de ex. Chrome)<br><br>Pentru instrucțiuni despre modul în care puteți activa această funcție pe PotPlayer și GOM player, consultați Ghidul utilizatorului furnizat împreună cu computerul.",
-				"note": {
-					"description": "Această caracteristică nu funcționează când:",
-					"description1": "Modul de economisire a bateriei este activat.",
-					"description2": "Temperatura procesorului este prea mare."
-				}
-			},
+                "heading": "Medii inteligente",
+                "title": "Mărirea rezoluției video",
+                "desc": "<p><label>Această caracteristică îmbunătățește experiența de redare video prin îmbunătățirea rezoluției video. Funcționează mai ales atunci când videoclipul este la o rezoluție slabă.</label></p> <p style='margin-top:4px;'><label>Această caracteristică ar putea afecta durata de viață a bateriei, temperatura bateriei și poate provoca zgomote. Nu o utilizați în modul de alimentare c.c. (mod baterie). În caz contrar, va accelera consumul de energie și va scurta durata de viață a bateriei.</label></p>",
+                "tooltip": "Această caracteristică funcționează numai pentru playerele video de mai jos:<br>Windows Media Player<br>Chrome<br>Filme și televiziune<br>PotPlayer<br>GOM player<br>playere pe bază de browser web (de ex. Chrome)<br><br>Pentru instrucțiuni despre modul în care puteți activa această funcție pe PotPlayer și GOM player, consultați Ghidul utilizatorului furnizat împreună cu computerul.",
+                "note": {
+                    "description": "Această caracteristică nu funcționează când:",
+                    "description1": "Modul de economisire a bateriei este activat.",
+                    "description2": "Temperatura procesorului este prea mare."
+                }
+            },
             "antiTheft": {
                 "heading": "Detectare inteligentă",
                 "title": "Alertă Smart Motion",
@@ -2068,44 +2068,44 @@
                     "description": "După ce v-ați conectat cu succes la sistem, această caracteristică va fi oprită automat. Trebuie să o activați din nou pentru a o utiliza."
                 },
                 "alarm": {
-                    "title":" ALARMA VA DURA TIMP DE",
-                    "option1":"10 secunde",
-                    "option2":"20 secunde",
-                    "option3":"30 secunde",
-                    "option4":"1 minut",
-                    "option5":"Nu se oprește niciodată"
+                    "title": " ALARMA VA DURA TIMP DE",
+                    "option1": "10 secunde",
+                    "option2": "20 secunde",
+                    "option3": "30 secunde",
+                    "option4": "1 minut",
+                    "option5": "Nu se oprește niciodată"
                 },
                 "allowCamera": {
-                    "title":"REALIZARE FOTOGRAFII",
-                    "describe":"Când activați această caracteristică, camera foto fotografiază automat când detectează orice mișcare, dacă ecranul este blocat. Aceste date sunt procesate local pe dispozitivul dvs. Lenovo nu accesează datele și nu le folosește.",
-                    "checkBoxText":"Activați această caracteristică"
+                    "title": "REALIZARE FOTOGRAFII",
+                    "describe": "Când activați această caracteristică, camera foto fotografiază automat când detectează orice mișcare, dacă ecranul este blocat. Aceste date sunt procesate local pe dispozitivul dvs. Lenovo nu accesează datele și nu le folosește.",
+                    "checkBoxText": "Activați această caracteristică"
                 },
                 "cameraPrivacy": {
-                     "describe":"Modul de confidențialitate Lenovo Vantage este activ pentru cameră. Funcția casetei de selectare nu este activă.",
-                     "linkText":"Accesați modul de confidențialitate al camerei pentru a-l dezactiva."
+                    "describe": "Modul de confidențialitate Lenovo Vantage este activ pentru cameră. Funcția casetei de selectare nu este activă.",
+                    "linkText": "Accesați modul de confidențialitate al camerei pentru a-l dezactiva."
                 },
                 "authorizedAccess": {
-                    "describe":"Lenovo Vantage nu are acces la cameră. Funcția casetei de selectare nu este activă.",
-                    "linkText":"Accesați setările Windows pentru a acorda acces."
+                    "describe": "Lenovo Vantage nu are acces la cameră. Funcția casetei de selectare nu este activă.",
+                    "linkText": "Accesați setările Windows pentru a acorda acces."
                 },
                 "photo": {
-                    "title":"NUMĂRUL DE FOTOGRAFII REALIZATE ÎN TIMPUL MIȘCĂRII",
+                    "title": "NUMĂRUL DE FOTOGRAFII REALIZATE ÎN TIMPUL MIȘCĂRII",
                     "tooltip": "Camera foto de pe computer se activează automat pentru a face fotografii atunci când se detectează mișcări. Fotografiile sunt făcute la fiecare 2 secunde și sunt salvate pe spațiul de stocare local.",
-                    "option1":"5",
-                    "option2":"10",
-                    "option3":"15",
-                    "option4":"20",
-                    "option5":"25",
-                    "option6":"30"
+                    "option1": "5",
+                    "option2": "10",
+                    "option3": "15",
+                    "option4": "20",
+                    "option5": "25",
+                    "option6": "30"
                 },
                 "showPhoto": {
-                    "title":"FOTOGRAFIILE AU FOST:",
-                    "link":"Vizualizați fotografii"
-				},
-				"fileAuthorizationTips": {
-					"content":"Lenovo Vantage nu are acces la sistemul de fișiere.",
-					"link":"Accesați setările Windows pentru a acorda acces."
-				}
+                    "title": "FOTOGRAFIILE AU FOST:",
+                    "link": "Vizualizați fotografii"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Lenovo Vantage nu are acces la sistemul de fișiere.",
+                    "link": "Accesați setările Windows pentru a acorda acces."
+                }
             },
             "voice": {
                 "title": "Voce",
@@ -3118,7 +3118,8 @@
         "settingsNotes": "Pentru a vă asigura că toate modificările au efect, lansați din nou această aplicație.",
         "betaSettingTitle": "Program beta",
         "betaProgram": "Program beta",
-        "betaSettingDescription": "Cele mai recente caracteristici la care lucrăm."
+        "betaSettingDescription": "Cele mai recente caracteristici la care lucrăm.",
+        "betaSettingNewDescription": "Ne bucurăm să vă invităm la programul Beta pentru Smart Performance. Vă ajută să îmbunătățiți performanța computerului prin:<br/><ul class='pl-4'><li>Diagnosticarea proactivă a erorilor și optimizarea setărilor.</li><li>Sporirea performanțelor Internetului prin Optimizarea rețelei și a browserului.</li><li>Efectuarea unei scanări rapide și remediere fără a utiliza programul Antivirus existent.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Anulare",
@@ -4043,8 +4044,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "Săgeată stânga",
+            "rightArrow": "Săgeată dreapta"
         }
     },
     "dcc": {
