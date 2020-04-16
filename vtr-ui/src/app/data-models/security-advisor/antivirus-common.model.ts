@@ -114,7 +114,6 @@ export class AntivirusCommon {
 			}).finally(() => {
 				this.metrics.sendMetrics(metricsData);
 			});
-
 		} else {
 			this.purchaseBtnIsLoading = false;
 			WinRT.launchUri(this.urlGetMcAfee);
