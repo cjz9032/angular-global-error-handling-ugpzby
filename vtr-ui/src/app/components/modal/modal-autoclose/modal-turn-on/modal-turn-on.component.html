@@ -16,7 +16,7 @@
 				<div class="check-asked">
 					<label for="askedBox">
 						<button class="ask-again" role="checkbox" [ngClass]="{'checked':isChecked}"
-							[attr.aria-checked]="isChecked" (click)="setAksAgain($event)" tabindex="1" id="autoclose_turnon_dialog_checkbox_Dont_ask_again"
+							[attr.aria-checked]="isChecked" (click)="setAksAgain($event)" tabindex="1" id="{{isChecked ? 'autoclose_turnon_dialog_checkbox_Don\'t_ask_again_checked' : 'autoclose_turnon_dialog_checkbox_Don\'t_ask_again_unchecked'}}"
 							attr.aria-label="'gaming.autoClose.modalTurnAutoCloseNarrator.dontask' | translate"></button>
 						<div class="status-text">{{ 'gaming.autoClose.modalTurnAutoClose.checkedTitle' | translate }}
 						</div>

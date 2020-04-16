@@ -21,7 +21,7 @@ export class NetworkboostTurnOnComponent implements OnInit, AfterViewInit {
   @Output() actionNeedAsk = new EventEmitter<boolean>();
 
   ngOnInit() {
-    document.getElementById('nbTurnOnModal').focus();
+    document.getElementById('gaming_networkboost_addapps').focus();
   }
   ngAfterViewInit() {
   }
@@ -54,7 +54,7 @@ export class NetworkboostTurnOnComponent implements OnInit, AfterViewInit {
   keydownFn(event) {
     if (event.which === 9) {
       setTimeout(() => {
-        document.getElementById('nbTurnOnModal_close_button').focus();
+        document.getElementById('gaming_networkboost_addapps_close').focus();
       }, 2);
     }
   }

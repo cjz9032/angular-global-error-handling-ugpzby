@@ -13,6 +13,7 @@ export class UiLightingProfileToggleComponent implements OnInit {
 	public p3Checked: boolean;
 	public isToggle: boolean = true;
 	@Input() id: string = '';
+	@Input() automationId: string ='';
 	constructor() {
 
 
