@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.17](https://bitbucket.tc.lenovo.com///compare/v1.5.16...v1.5.17) (2020-04-16)
+
+
+### Features
+
+* **LaunchMcAfeeBuy API:** remove 3s timeout for launchMcAfeeBuy API ([2ac5ab9](https://bitbucket.tc.lenovo.com///commit/2ac5ab961d3c914dcb1f675aba0be7e8dbbabcf9))
+
+### [1.4.21](https://bitbucket.tc.lenovo.com///compare/v1.4.20...v1.4.21) (2020-04-02)
+
+### [1.4.20](https://bitbucket.tc.lenovo.com///compare/v1.5.4...v1.4.20) (2020-04-01)
+
+### [1.4.19](https://bitbucket.tc.lenovo.com///compare/v1.4.18...v1.4.19) (2020-03-31)
+
 ### [1.5.16](https://bitbucket.tc.lenovo.com///compare/v1.5.15...v1.5.16) (2020-04-15)
 
 
