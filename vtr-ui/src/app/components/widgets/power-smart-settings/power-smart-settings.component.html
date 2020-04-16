@@ -80,6 +80,7 @@
 										</vtr-ui-circle-radio-with-checkbox>
 									</div>
 									<div class="well ml-2"
+										role="heading"
 										id="powerSmartSettings-maximum-system-protection-note"
 										attr.aria-label="powerSmartSettings-maximum-system-protection-note"
 										*ngIf="showIC===14">
@@ -133,17 +134,20 @@
 							<div style="display:none"
 								id="readMoreDiv"
 								#readMoreDiv>
-								<p id="readMoreMode1">
+								<p id="readMoreMode1"
+									role="heading">
 									<span class="cooling-modes"
 										id="{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode1' | translate}}">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode1' | translate}}:</span>
 									{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line1' | translate}}
 								</p>
-								<p id="readMoreMode2">
+								<p id="readMoreMode2"
+									role="heading">
 									<span class="cooling-modes"
 										id="{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode2' | translate}}">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode2' | translate}}:</span>
 									{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line2' | translate}}
 								</p>
-								<p id="readMoreMode3">
+								<p id="readMoreMode3"
+									role="heading">
 									<span class="cooling-modes"
 										id="{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode3' | translate}}">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode3' | translate}}:</span>
 									{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line3' | translate}}
@@ -189,10 +193,12 @@
 								{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.title' | translate}}
 							</h3>
 							<p id="powersmartsettings-dytc6-dec1"
+								role="heading"
 								attr.aria-label="powersmartsettings-dytc6-dec1">
 								{{'device.deviceSettings.power.powerSmartSettings.dytc6.desc1' | translate}}
 							</p>
 							<p id="powersmartsettings-dytc6-dec2"
+								role="heading"
 								attr.aria-label="powersmartsettings-dytc6-dec2">
 								{{'device.deviceSettings.power.powerSmartSettings.dytc6.desc2' | translate}}
 							</p>
@@ -207,30 +213,35 @@
 							</div>
 							<p *ngIf="dytc6IsAutoModeSupported && (dytc6Mode === 'autoMode')"
 								id="powersmartsettings-dytc6-dec3_1"
+								role="heading"
 								attr.aria-label="powersmartsettings-dytc6-dec3_1">
 								{{'device.deviceSettings.power.powerSmartSettings.dytc6.desc3_1' | translate}}
 							</p>
 							<p *ngIf="dytc6IsAutoModeSupported && (dytc6Mode === 'manualMode')"
 								id="powersmartsettings-dytc6-dec3"
+								role="heading"
 								attr.aria-label="powersmartsettings-dytc6-dec3">
 								{{'device.deviceSettings.power.powerSmartSettings.dytc6.desc3' | translate}}
 							</p>
 							<div *ngIf="isCollapsed"
 								id="readMoreDytc6">
 								<p id="readMoreDytc6Mode1"
+									role="heading"
 									attr.aria-label="readMoreDytc6Mode1">
 									<span class="cooling-modes">
 										{{"device.deviceSettings.power.powerSmartSettings.dytc6." + dytc6Mode + ".title1" | translate}}:
 									</span>
 									{{"device.deviceSettings.power.powerSmartSettings.dytc6." + dytc6Mode + ".desc1" | translate}}
 								</p>
-								<p id="readMoreDytc6Mode2">
+								<p id="readMoreDytc6Mode2"
+									role="heading">
 									<span class="cooling-modes">
 										{{"device.deviceSettings.power.powerSmartSettings.dytc6." + dytc6Mode + ".title2" | translate}}:
 									</span>
 									{{"device.deviceSettings.power.powerSmartSettings.dytc6." + dytc6Mode + ".desc2" | translate}}
 								</p>
-								<p id="readMoreDytc6Mode3">
+								<p id="readMoreDytc6Mode3"
+									role="heading">
 									<span class="cooling-modes">
 										{{"device.deviceSettings.power.powerSmartSettings.dytc6." + dytc6Mode + ".title3" | translate}}:
 									</span>

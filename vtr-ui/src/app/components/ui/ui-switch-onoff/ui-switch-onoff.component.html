@@ -21,8 +21,7 @@
 		<label class="pb-1 pl-1"
 			#toggleLabel
 			(keydown.enter)="sendChangeEvent(toggle)"
-			(keyup.enter)="onChange(toggle)"
-			aria-hidden="true">
+			(keyup.enter)="onChange(toggle)">
 			<input type="checkbox"
 				vtrMetrics
 				metricsEvent="featureClick"
@@ -42,7 +41,7 @@
 				[attr.aria-checked]="value"
 				[attr.aria-disabled]="disabled"
 				[attr.aria-readonly]="readonly"
-				[attr.aria-hidden]="true"
+				[attr.aria-hidden]="false"
 				(change)="onChange($event)"
 				(keydown.enter)="onChange($event)"
 				(click)="sendChangeEvent(toggle)" />
@@ -53,7 +52,7 @@
 				<small></small>
 			</span>
 			<div *ngIf="!value"
-				[attr.aria-hidden]="true"
+				[attr.aria-hidden]="false"
 				[attr.aria-checked]="value"
 				id="{{onOffSwitchId+'_off_sizeStopProp'}}"
 				[attr.aria-label]="'OFF'"
@@ -61,7 +60,7 @@
 				(keydown.enter)="stopPropagation($event);"
 				class="switch-label off-label">{{'common.ui.off' | translate}}</div>
 			<div *ngIf="value"
-				[attr.aria-hidden]="true"
+				[attr.aria-hidden]="false"
 				[attr.aria-checked]="value"
 				id="{{onOffSwitchId+'_on_sizeStopProp'}}"
 				[attr.aria-label]="'ON'"
