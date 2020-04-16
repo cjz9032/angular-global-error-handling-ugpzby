@@ -8,6 +8,7 @@ import cloneDeep from 'lodash/cloneDeep';
 import { menuItemsGaming, menuItems, appSearch, betaItem } from 'src/assets/menu/menu.json';
 import { privacyPolicyLinks } from 'src/assets/privacy-policy-links/policylinks.json';
 import { HypothesisService } from '../hypothesis/hypothesis.service';
+import { BetaService, BetaStatus } from '../beta/beta.service';
 import { LoggerService } from '../logger/logger.service';
 import { MenuItem } from 'src/app/enums/menuItem.enum';
 import { LocalInfoService } from '../local-info/local-info.service';
@@ -56,6 +57,7 @@ export class ConfigService {
 	private isSmartAssistAvailable = false;
 
 	constructor(
+		private betaService: BetaService,
 		private deviceService: DeviceService,
 		private hypSettings: HypothesisService,
 		private logger: LoggerService,
@@ -100,6 +102,11 @@ export class ConfigService {
 						this.notifyMenuChange(menu);
 					});
 					break;
+				case MenuItem.MenuBetaItemChange:
+					this.showBetaMenu(notification.payload).then((menu) => {
+						this.notifyMenuChange(menu);
+					});
+					break;
 				default:
 					break;
 			}
@@ -116,6 +123,7 @@ export class ConfigService {
 
 	initGetMenuItemsAsync(): Promise<any> {
 		return new Promise(async (resolve) => {
+			const isBetaUser = this.betaService.getBetaStatus() === BetaStatus.On;
 			const machineInfo = await this.deviceService.getMachineInfo();
 			const localInfo = await this.localInfoService.getLocalInfo();
 			this.activeSegment = localInfo.Segment ? localInfo.Segment : SegmentConst.Commercial;
@@ -124,7 +132,7 @@ export class ConfigService {
 
 			if (machineInfo.isGaming) {
 				resultMenu = cloneDeep(this.menuItemsGaming);
-				await this.initializeAppSearchItem(resultMenu);
+				await this.initializeBetaMenu(resultMenu, isBetaUser);
 				this.initializeWiFiItem(resultMenu);
 				this.menu = this.filterMenu(resultMenu, SegmentConst.Gaming);
 				this.notifyMenuChange(this.menu);
@@ -138,7 +146,7 @@ export class ConfigService {
 			}
 
 			this.menuBySegment.commercial = cloneDeep(resultMenu);
-			await this.initializeAppSearchItem(resultMenu);
+			await this.initializeBetaMenu(resultMenu, isBetaUser);
 			this.menuBySegment.consumer = cloneDeep(resultMenu);
 			this.menuBySegment.smb = cloneDeep(resultMenu);
 
@@ -153,17 +161,13 @@ export class ConfigService {
 		});
 	}
 
-	private initializeAppSearchItem(menu: any) {
-		if (!menu.find((item) => item.id === 'app-search')) {
-			return this.canShowSearch().then((result) => {
-				const appSearchItem = menu.find((item) => item.id === 'app-search');
-				if (result && !appSearchItem) {
-					menu.splice(menu.length - 1, 0, this.appSearch);
-				}
-				else if (!result && appSearchItem){
-					menu = menu.filter( item => item.id === 'app-search');
-				}
-			});
+	private initializeAppSearchItem(menu: any, isShowSearch: boolean) {
+		const appSearchItem = menu.find((item) => item.id === 'app-search');
+		if (isShowSearch && !appSearchItem) {
+			menu.splice(menu.length - 1, 0, this.appSearch);
+		}
+		else if (!isShowSearch && appSearchItem){
+			menu = menu.filter( item => item.id === 'app-search');
 		}
 	}
 
@@ -516,6 +520,40 @@ export class ConfigService {
 
 	updateWifiStateCache(wifiIsSupport: boolean) {
 		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity, wifiIsSupport);
+	}
+
+	showBetaMenu(isBeta: boolean): Promise<any> {
+		return new Promise((resolve) => {
+			this.updateBetaMenu(this.menu, isBeta).then((menu) => {
+				this.menu = menu;
+				this.menu = this.segmentFilter(this.menu, this.activeSegment);
+				return resolve(this.menu);
+			});
+			this.updateBetaMenu(this.menuBySegment.consumer, isBeta).then((menu) => {
+				this.menuBySegment.consumer = menu;
+			});
+			this.updateBetaMenu(this.menuBySegment.smb, isBeta).then((menu) => {
+				this.menuBySegment.smb = menu;
+			});
+		});
+	}
+
+	initializeBetaMenu(menu: Array<any>, isBeta: boolean): Promise<Array<any>> {
+		return this.updateBetaMenu(menu, isBeta);
+	}
+
+	updateBetaMenu(menu: Array<any>, isBeta: boolean): Promise<Array<any>> {
+		return this.canShowSearch().then((result) => {
+			this.initializeAppSearchItem(menu, result);
+			if (result) {
+				this.betaService.betaFeatureAvailable = true;
+			}
+			if (!isBeta && result) {
+				menu = menu.filter(item => item.id !== 'app-search');
+				return menu;
+			}
+			return menu;
+		});
 	}
 
 	showSystemUpdates(): Promise<any> {
