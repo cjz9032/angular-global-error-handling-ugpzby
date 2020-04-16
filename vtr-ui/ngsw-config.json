@@ -10,9 +10,6 @@
 					"/*.css",
 					"/assets/cms-cache/**",
 					"/assets/images/keyboard-images/KeyboardMap_Images/**"
-				],
-				"urls": [
-					"/**/*.js"
 				]
 			}
 		},
@@ -26,10 +23,10 @@
 					"!/assets/i18n/**"
 				],
 				"urls": [
-					"/**/*.jpg",
-					"/**/*.png",
-					"/**/*.svg",
-					"/**/*.webp"
+					"https://vantage*.csw.lenovo.com/**/*.jpg",
+					"https://vantage*.csw.lenovo.com/**/*.png",
+					"https://vantage*.csw.lenovo.com/**/*.svg",
+					"https://vantage*.csw.lenovo.com/**/*.webp"
 				]
 			}
 		}
@@ -38,7 +35,8 @@
 		{
 			"name": "cms",
 			"urls": [
-				"/**/*api*/**"
+				"https://vantage*.csw.lenovo.com/api/**",
+				"https://vantage*.csw.lenovo.com/*.js"
 			],
 			"cacheConfig": {
 				"maxSize": 50,
