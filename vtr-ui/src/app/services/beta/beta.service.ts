@@ -3,9 +3,6 @@ import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { CommonService } from '../common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { SegmentConst } from '../self-select/self-select.service';
-import { Subscription } from 'rxjs';
-import { AppNotification } from 'src/app/data-models/common/app-notification.model';
-import { MenuItem } from 'src/app/enums/menuItem.enum';
 
 export enum BetaStatus {
 	On,
@@ -17,7 +14,6 @@ export enum BetaStatus {
 })
 export class BetaService {
 	private betaUser;
-	private subscription: Subscription;
 	public betaFeatureAvailable = false;
 	constructor(
 		private vantageShellService: VantageShellService,
@@ -27,22 +23,6 @@ export class BetaService {
 			this.betaUser = this.vantageShellService.getBetaUser();
 		}
 		this.commonService.removeLocalStorageValue(LocalStorageKey.BetaUser);
-		this.subscription = this.commonService.notification.subscribe((notification: AppNotification) => {
-			this.onNotification(notification);
-		});
-	}
-
-	private onNotification(notification: any) {
-		if (notification) {
-			switch (notification.type) {
-				case MenuItem.MenuItemChange:
-					const menu = notification.payload;
-					this.betaFeatureAvailable = this.isAnyBetaFeatureAvailable(menu);
-					break;
-				default:
-					break;
-			}
-		}
 	}
 
 	public getBetaStatus(): BetaStatus {
@@ -68,26 +48,28 @@ export class BetaService {
 		}
 	}
 
-	isAnyBetaFeatureAvailable(menu) {
+	checkBetaFeatureAvailable(menu) {
+		this.betaFeatureAvailable = this.anyBetaFeatureAvailable(menu);
+	}
+
+	anyBetaFeatureAvailable(menu: any): boolean {
 		let result = false;
 		if (menu && menu.length && menu.length > 0)
 		{
-			menu.forEach(element => {
+			for (let i = 0; i < menu.length; i++) {
+				const element = menu[i];
 				if (element.beta && !element.hide) {
 					result = true;
-					return;
+					break;
 				}
-				if (element.subitems && element.subitems.length > 0) {
-					element.subitems.forEach(item => {
-						if (item.beta && !item.hide) {
-							result = true;
-							return;
-						}
-					});
+				if (element.subitems && element.subitems.length > 0
+					&& this.anyBetaFeatureAvailable(element.subitems)) {
+					result = true;
+					break;
 				}
-			});
-		}
 
+			}
+		}
 		return result;
 	}
 }

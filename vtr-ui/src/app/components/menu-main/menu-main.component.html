@@ -88,7 +88,6 @@
 				*ngIf="loadMenuItem?.firstRunDate?.length || !deviceService.isShellAvailable">
 				<ng-container *ngFor="let item of items; let i=index">
 					<li *ngIf="item.subitems.length===0&&isCommomItem(item)&&showItem(item)"
-						[hidden]="item.hideForBeta"
 						class="nav-item">
 						<a class="nav-link {{item.id}}"
 							[ngClass]="{'beta-item':item.beta}"
@@ -123,7 +122,6 @@
 						*ngIf="item.subitems.length>0
 						&&isCommomItem(item)
 						&&showItem(item)"
-						[hidden]="item.hideForBeta"
 						class="nav-item dropdown"
 						(mouseover)="[closeAllOtherDD(menuDropDown),menuDropDown.open()]"
 						(mouseleave)="menuDropDown.close()"
@@ -169,7 +167,6 @@
 									*ngIf="subitem.externallink && showItem(subitem)"
 									vtrMetrics
 									tabindex="1"
-									[hidden]="subitem.hideForBeta"
 									id="menu-main-nav-lnk-dropdown-menu-external-{{item.id}}-{{ii}}"
 									attr.aria-label="{{subitem.label | translate }}"
 									routerLinkActive="link-active"
@@ -188,7 +185,6 @@
 									*ngIf="!subitem.externallink && showItem(subitem)"
 									vtrMetrics
 									tabindex="1"
-									[hidden]="subitem.hideForBeta"
 									id="menu-main-nav-lnk-dropdown-menu-{{item.id}}-{{ii}}"
 									attr.aria-label="{{subitem.label| translate}}"
 									routerLinkActive="link-active"
@@ -208,7 +204,6 @@
 						</div>
 					</li>
 					<li *ngIf="item.id==='app-search'&&showItem(item)"
-						[hidden]="item.hideForBeta"
 						class="nav-item search-nav-item">
 						<div class="search-nav-item-mask"
 							*ngIf="showSearchBox"
