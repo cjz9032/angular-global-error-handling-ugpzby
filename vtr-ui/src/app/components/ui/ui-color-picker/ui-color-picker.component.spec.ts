@@ -62,7 +62,9 @@ describe('UiColorPickerComponent', () => {
   })
 
   it('should open advanced color disk', () => {
-    component.moreColorFun();
+    component.moreColorFun(1);
+    expect(component.isToggleMoreColor).toEqual(true);
+    component.moreColorFun(2);
     expect(component.isToggleMoreColor).toEqual(true);
   })
 
