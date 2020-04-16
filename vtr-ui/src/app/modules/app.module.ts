@@ -5,7 +5,7 @@ import { CommonPipeModule } from './common/common-pipe.module';
 import { CommonService } from '../services/common/common.service';
 import { CommonUiModule } from './common/common-ui.module';
 import { CookieService } from 'ngx-cookie-service';
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule, ErrorHandler } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule, ErrorHandler, APP_INITIALIZER } from '@angular/core';
 import { DevService } from '../services/dev/dev.service';
 import { DisplayService } from '../services/display/display.service';
 import { environment } from 'src/environments/environment';
@@ -66,6 +66,8 @@ import { GamingDashboardModule } from './gaming-dashboard.module';
 import { HardwareScanRoutingModule } from './hardware-scan/hardware-scan-routing.module';
 import { HardwareScanModule } from './hardware-scan/hardware-scan.module';
 import { CommsService } from '../services/comms/comms.service';
+import { InitializerService } from '../services/initializer/initializer.service';
+
 // import { ModalErrorMessageComponent } from '../components/modal/modal-error-message/modal-error-message.component';
 
 @NgModule({
@@ -131,6 +133,12 @@ import { CommsService } from '../services/comms/comms.service';
 		{
 			provide: ErrorHandler,
 			useClass: ChunkLoadErrorHandler
+		},
+		{
+			provide: APP_INITIALIZER,
+			useFactory: (initializerService: InitializerService) => initializerService.initializeAntivirus.bind(initializerService),
+			deps: [InitializerService],
+			multi: true
 		}
 	],
 	entryComponents: [
