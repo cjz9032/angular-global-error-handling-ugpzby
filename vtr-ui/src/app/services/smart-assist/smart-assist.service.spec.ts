@@ -25,12 +25,11 @@ describe('SmartAssistService', () => {
 		function setup() {
 			const smartAssistService = TestBed.get(SmartAssistService);
         	const shellService = TestBed.get(VantageShellService);
-
 			return { smartAssistService, shellService };
 		}
 
 		it('service should create', ()=> {
-			const {smartAssistService, shellService} = setup();	
+			const {smartAssistService, shellService} = setup();
 			expect(smartAssistService).toBeTruthy();
 			expect(shellService).toBeTruthy();
 		});
