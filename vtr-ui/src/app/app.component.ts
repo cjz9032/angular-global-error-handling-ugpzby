@@ -1,6 +1,6 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, OnInit, HostListener, OnDestroy, Inject } from '@angular/core';
-import { Router, NavigationEnd, ActivatedRoute, ParamMap } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { DisplayService } from './services/display/display.service';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-welcome.component';
@@ -24,12 +24,9 @@ import { AppNotification } from './data-models/common/app-notification.model';
 import { TranslationNotification } from './data-models/translation/translation';
 import { LoggerService } from './services/logger/logger.service';
 import { Subscription } from 'rxjs/internal/Subscription';
-import { AppUpdateService } from './services/app-update/app-update.service';
 import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.service';
 import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
 import { MetricService } from './services/metric/metric.service';
-import { DurationCounterService } from 'src/app/services/timer/timer-service-ex.service';
-// import { AppUpdateService } from './services/app-update/app-update.service';
 import { VantageFocusHelper } from 'src/app/services/timer/vantage-focus.helper';
 import { SegmentConst } from './services/self-select/self-select.service';
 import { NotificationType } from './components/notification/notification.component';
@@ -71,11 +68,9 @@ export class AppComponent implements OnInit, OnDestroy {
 		private activatedRoute: ActivatedRoute,
 		private languageService: LanguageService,
 		private logger: LoggerService,
-		private appUpdateService: AppUpdateService,
 		private appsForYouService: AppsForYouService,
 		private metricService: MetricService,
 		private storeRating: StoreRatingService,
-		// private appUpdateService: AppUpdateService
 		@Inject(DOCUMENT) public document: Document
 	) {
 		this.patchNgbModalOpen();
@@ -111,8 +106,6 @@ export class AppComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
-		// check for update and download it but it will be available in next launch
-		// this.appUpdateService.checkForUpdatesNoPrompt();
 		if (this.deviceService.isAndroid) {
 			return;
 		}
@@ -220,6 +213,7 @@ export class AppComponent implements OnInit, OnDestroy {
 		const modalRef = this.modalService.open(ModalWelcomeComponent, {
 			backdrop: 'static',
 			centered: true,
+			ariaLabelledBy: 'welcome-tutorial-page-basic-title',
 			windowClass: 'welcome-modal-size'
 		});
 		modalRef.componentInstance.page = page;
@@ -243,7 +237,7 @@ export class AppComponent implements OnInit, OnDestroy {
 			}
 		);
 		setTimeout(() => {
-			document.getElementById('modal-welcome').parentElement.parentElement.parentElement.parentElement.focus();
+			(document.querySelector('.welcome-modal-size') as HTMLElement).focus();
 		}, 0);
 	}
 

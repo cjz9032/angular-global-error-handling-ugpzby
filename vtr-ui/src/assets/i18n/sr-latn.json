@@ -78,7 +78,8 @@
                     "macroKey": "Taster makroa",
                     "hardwareScan": "Skeniranje hardvera",
                     "systemUpdate": "Ažuriranje sistema",
-                    "header": "Sistemske alatke"
+                    "header": "Sistemske alatke",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "systemStatus": {
                     "info": "INFORMACIJE"
@@ -196,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "Upozorenje!",
                     "description": "Nepravilne postavke Overkloka mogu dovesti do nepovratnog oštećenja hardvera.",
-                    "proceed": "NASTAVI"
+                    "proceed": "NASTAVI",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },
@@ -1679,7 +1683,9 @@
                         },
                         "subSectionTwo": {
                             "title": "Storniranje podrazumevane primarne funkcije",
-                            "description": "Kada je uključena, podrazumevana primarna funkcija će biti promenjena iz fabričkih postavki na suprotno. Ponovo pokrenite računar da bi se promene primenile."
+                            "description": "Kada je uključena, podrazumevana primarna funkcija će biti promenjena iz fabričkih postavki na suprotno. Ponovo pokrenite računar da bi se promene primenile.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "Kako da koristite kombinacije tastera Fn",
@@ -2046,12 +2052,59 @@
             "superResolution": {
                 "heading": "Inteligentni mediji",
                 "title": "Poboljšavanje video rezolucije",
-                "desc": "<p><label>Ova funkcija poboljšava doživljaj video reprodukcije tako što poboljšava video rezoluciju. To je posebno korisno kada je video u slaboj rezoluciji.</label></p> <p style='margin-top:4px;'><label>Ova funkcija može da utiče na vek trajanja baterije, temperaturu baterije i može da izazove buku. Nemojte koristiti u režimu rada na jednosmernu struju. U suprotnom će se baterija brže istrošiti i skratiće se radni vek baterije.</label></p>",
-                "tooltip": "Ova funkcija radi samo na:<br>Windows Media player",
+                "desc": "<p><label>Ova funkcija poboljšava iskustvo reprodukcije video zapisa poboljšanjem rezolucije video zapisa. On radi posebno kada je video u slaboj rezoluciji.</label></p> <p style='margin-top:4px;'><label>Ova funkcija može da utiče na vek trajanja baterije, temperaturu baterije i može da izazove buku. Nemojte koristiti u režimu rada na jednosmernu struju (režim baterije). U suprotnom će se baterija brže istrošiti i skratiće se radni vek baterije.</label></p>",
+                "tooltip": "Ova funkcija radi samo u dolenavedenim video plejerima:<br>Windows Media Player<br>Chrome<br>Filmovi i TV<br>PotPlayer<br>GOM player<br>plejeri zasnovani na veb pregledaču (npr. Chrome)<br><br>Uputstva o tome kako da omogućite ovu funkciju u plejeru PotPlayer i GOM player potražite u Uputstvu za korisnike koje ste dobili uz računar.",
                 "note": {
                     "description": "Ova funkcija ne radi kada:",
-                    "description1": "Računar nije povezan na naizmeničnu struju.",
-                    "description2": "Omogućen je režim uštede baterije."
+                    "description1": "Omogućen je režim uštede baterije.",
+                    "description2": "Temperatura procesora je previsoka."
+                }
+            },
+            "antiTheft": {
+                "heading": "Inteligentno raspoznavanje",
+                "title": "Pametno upozorenje o pokretu",
+                "desc": "<p><label>Kada omogućite ovu funkciju, uređaj će početi da emituje zvučne signale kada je ekran zaključan, a detektuju se pokreti, posebno na javnom mestu.</label></p> <p style='margin-top:4px;'><label>Da biste odbacili alarm, unesite ispravnu lozinku ili se prijavite pomoću programa Windows Hello.</label></p>",
+                "note": {
+                    "description": "Kada uspešno prijavite sistem, ova funkcija se automatski isključuje. Potrebno je da je ponovo omogućite da biste je koristili."
+                },
+                "alarm": {
+                    "title": " ALARM ĆE TRAJATI",
+                    "option1": "10 sekundi",
+                    "option2": "20 sekundi",
+                    "option3": "30 sekundi",
+                    "option4": "1 minut",
+                    "option5": "Nikad ne prestaje"
+                },
+                "allowCamera": {
+                    "title": "FOTOGRAFISANJE",
+                    "describe": "Kada omogućite ovu funkciju, kamera automatski snima fotografije kada detektuje pokret ako je ekran zaključan. Ovi podaci se obrađuju lokalno na vašem uređaju. Lenovo im ne pristupa niti ih koristi.",
+                    "checkBoxText": "Omogućite ovu funkciju"
+                },
+                "cameraPrivacy": {
+                    "describe": "Režim privatnosti kamere Lenovo Vantage je uključen. Funkcija polja za potvrdu ne radi.",
+                    "linkText": "Idite na režim privatnosti kamere da biste ga isključili"
+                },
+                "authorizedAccess": {
+                    "describe": "Lenovo Vantage nema pristup kameri. Funkcija polja za potvrdu ne radi.",
+                    "linkText": "Idite na postavke operativnog sistema Windows da biste dali pristup"
+                },
+                "photo": {
+                    "title": "BROJ SNIMLJENIH FOTOGRAFIJA DOK TRAJE POKRET",
+                    "tooltip": "Kamera na računaru se automatski aktivira za snimanje slika kada se detektuju pokreti. Slike se snimaju na 2 sekunde i čuvaju se u lokalnom skladištu.",
+                    "option1": "5",
+                    "option2": "10",
+                    "option3": "15",
+                    "option4": "20",
+                    "option5": "25",
+                    "option6": "30"
+                },
+                "showPhoto": {
+                    "title": "FOTOGRAFIJE SU:",
+                    "link": "Prikaz fotografija"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Lenovo Vantage nema pristup sistemu datoteka.",
+                    "link": "Idite na postavke operativnog sistema Windows da biste dali pristup"
                 }
             },
             "voice": {
@@ -2085,53 +2138,6 @@
                     "btnText": "u redu",
                     "title": "Instaliranje nije uspelo",
                     "desc": "Pokušajte ponovo kasnije da biste koristili Lenovo Voice."
-                }
-            },
-            "antiTheft": {
-                "heading": "Intelligent Sensing",
-                "title": "Smart Motion Alert",
-                "desc": "<p><label>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</label></p> <p style='margin-top:4px;'><label>To dismiss the alarm, enter the correct password or log in by Windows Hello.</label></p>",
-                "note": {
-                    "description": "Once you log in the system successfully, this feature will be turned off automatically. You need to enable it again to use it."
-                },
-                "alarm": {
-                    "title": " THE ALARM WILL LAST FOR",
-                    "option1": "10 seconds",
-                    "option2": "20 seconds",
-                    "option3": "30 seconds",
-                    "option4": "1 minute",
-                    "option5": "Never stop"
-                },
-                "allowCamera": {
-                    "title": "TATING PHOTOS",
-                    "describe": "When enabling this feature, the camera takes photos automatically when detecting any movement if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
-                    "checkBoxText": "Enable this feature"
-                },
-                "cameraPrivacy": {
-                    "describe": "Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
-                    "linkText": "Go to Camera privacy mode to turn it off"
-                },
-                "authorizedAccess": {
-                    "describe": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
-                    "linkText": "Go to Windows Settings to give access"
-                },
-                "photo": {
-                    "title": "THE NUMBER OF PHOTOS TAKEN DURING THE MOVEMENT",
-                    "tooltip": "The camera on your computer automatically activates to take pictures when movements are detected. Pictures are taken every 2 seconds and are saved to your local storage.",
-                    "option1": 5,
-                    "option2": 10,
-                    "option3": 15,
-                    "option4": 20,
-                    "option5": 25,
-                    "option6": 30
-                },
-                "showPhoto": {
-                    "title": "PHOTOS HAVE BEEN:",
-                    "link": "View photos"
-                },
-                "fileAuthorizationTips": {
-                    "content": "Lenovo Vantage doesn't have access to the file system.",
-                    "link": "Go to Windows Settings to give access"
                 }
             }
         }
@@ -2699,7 +2705,7 @@
         },
         "question1": {
             "title": "Pravljenje rezervne kopije i vraćanje datoteka u prethodno stanje",
-            "description": "<div>    <div class='faqInFs4Fb'>        Pravljenje rezervne kopije i vraćanje datoteka u prethodno stanje    </div>    <hr />    <div class='faqInMb7'>        Uvek je dobro da imate rezervnu kopiju. Čuvajte kopije datoteka na drugom disku u slučaju da se nešto desi originalima.    </div>    <div class='faqInFs3Fb'>        Podešavanje rezervne kopije    </div>    <hr />    <div class='mb-5'>        Izaberite dugme <span class='faqInFb'>Start</span>, izaberite <span class='faqInFb'>Settings (Postavke)</span> > <span class='faqInFb'>Update & Security (Ispravka i bezbednost)</span> > <span class='faqInFb'>Backup (Rezervna kopija)</span> > <span class='faqInFb'>Add a drive (Dodaj disk)</span>, a zatim dodajte spoljnu disk jedinicu ili mrežnu lokaciju za rezervne kopije.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Sve je podešeno. Svakog sata ćemo u vašoj korisničkoj fascikli (C:\\\\Users\\\\username) praviti rezervnu kopiju svega što koristite. Da biste promenili za koje datoteke pravimo rezervne kopije ili učestalost njihovog pravljenja, idite na <span class='faqInFb'>More options</span> (Još opcija).    </div>    <div class='faqInFs3Fb'>        Vraćanje datoteka u prethodno stanje    </div>    <div class='mb-5'>        Ako vam nedostaje važna datoteka ili fascikla, evo kako da je vratite:    </div>    <div>        <div class='mb-3'>1. U polje za pretragu na traci zadatak ukucajte <span class='faqInFb'>Restore files</span> (Oporavak datoteka), a zatim izaberite <span class='faqInFb'> Restore your files with File History</span> (Vraćanje datoteka u prethodno stanje pomoću funkcije „Istorija datoteka“).</div>        <div class='mb-3'>2. Potražite datoteku koja vam je potrebna, zatim koristite strelice da biste videli sve njene verzije</div>        <div class='mb-3'>3. Kada pronađete željenu verziju, izaberite <span class='faqInFb'>Restore</span> (Vrati u prethodno stanje) da biste je sačuvali na prvobitnoj lokaciji. Da biste je sačuvali na drugoj lokaciji, pritisnite i držite (ili kliknite desnim tasterom miša) <span class='faqInFb'>Restore</span> (Vrati u prethodno stanje), izaberite <span class='faqInFb'>Restore to</span> (Vrati u prethodno stanje na lokaciji), a zatim odaberite novu lokaciju.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Pravljenje rezervne kopije i vraćanje datoteka u prethodno stanje    </div>    <hr />    <div class='faqInMb7'>        Uvek je dobro da imate rezervnu kopiju. Čuvajte kopije datoteka na drugom disku u slučaju da se nešto desi originalima.    </div>    <div class='faqInFs3Fb'>        Podešavanje rezervne kopije    </div>    <hr />    <div class='mb-5'>        Izaberite dugme <span class='faqInFb'>Start</span>, izaberite <span class='faqInFb'>Settings (Postavke)</span> > <span class='faqInFb'>Update & Security (Ispravka i bezbednost)</span> > <span class='faqInFb'>Backup (Rezervna kopija)</span> > <span class='faqInFb'>Add a drive (Dodaj disk)</span>, a zatim dodajte spoljnu disk jedinicu ili mrežnu lokaciju za rezervne kopije.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Sve je podešeno. Svakog sata ćemo u vašoj korisničkoj fascikli (C:\\Users\\vaše korisničko ime) praviti rezervnu kopiju svega što koristite. Da biste promenili za koje datoteke pravimo rezervne kopije ili učestalost njihovog pravljenja, idite na <span class='faqInFb'>More options</span> (Još opcija).    </div>    <div class='faqInFs3Fb'>        Vraćanje datoteka u prethodno stanje    </div>    <div class='mb-5'>        Ako vam nedostaje važna datoteka ili fascikla, evo kako da je vratite:    </div>    <div>        <div class='mb-3'>1. U polje za pretragu na traci zadatak ukucajte <span class='faqInFb'>Restore files</span> (Oporavak datoteka), a zatim izaberite <span class='faqInFb'> Restore your files with File History</span> (Vraćanje datoteka u prethodno stanje pomoću funkcije „Istorija datoteka“).</div>        <div class='mb-3'>2. Potražite datoteku koja vam je potrebna, zatim koristite strelice da biste videli sve njene verzije</div>        <div class='mb-3'>3. Kada pronađete željenu verziju, izaberite <span class='faqInFb'>Restore</span> (Vrati u prethodno stanje) da biste je sačuvali na prvobitnoj lokaciji. Da biste je sačuvali na drugoj lokaciji, pritisnite i držite (ili kliknite desnim tasterom miša) <span class='faqInFb'>Restore</span> (Vrati u prethodno stanje), izaberite <span class='faqInFb'>Restore to</span> (Vrati u prethodno stanje na lokaciji), a zatim odaberite novu lokaciju.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -3080,15 +3086,15 @@
             "science": "Nauka"
         },
         "gaming": {
-            "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
-            "gamingFeature1": "-Computer status monitor",
-            "gamingFeature2": "-Performance mode & overclocking",
-            "gamingFeature3": "-Lighting",
-            "gamingFeature4": "-Network Boost",
-            "gamingFeature5": "-Auto Close",
-            "gamingOnly": "Gaming",
-            "gamingAndWork": "Gaming & Work",
-            "nonGaming": "Non-Gaming"
+            "gamingDescription": "Verzija programa Vantage za igranje igara vam olakšava poboljšanje iskustva u igranju igara. Pored uobičajenih postavki, glavne karakteristike obuhvataju (dostupno na određenim sistemima):",
+            "gamingFeature1": "-Nadgledanje statusa računara",
+            "gamingFeature2": "-Režim učinka i overkloking",
+            "gamingFeature3": "-Osvetljenje",
+            "gamingFeature4": "-Pojačanje mreže",
+            "gamingFeature5": "-Automatsko zatvaranje",
+            "gamingOnly": "Igranje",
+            "gamingAndWork": "Igranje igara i posao",
+            "nonGaming": "Neigranje igara"
         }
     },
     "settings": {
@@ -3112,7 +3118,8 @@
         "settingsNotes": "Ponovo pokrenite ovu aplikaciju kako biste bili sigurni da su sve promene stupile na snagu.",
         "betaSettingTitle": "Beta program",
         "betaProgram": "Beta Program",
-        "betaSettingDescription": "Isprobajte najnovije funkcije na kojima radimo."
+        "betaSettingDescription": "Isprobajte najnovije funkcije na kojima radimo.",
+        "betaSettingNewDescription": "Drago nam je što možemo da vas pozovemo u Beta program Smart Performance. On poboljšava performanse računara na sledeći način:<br/><ul class='pl-4'><li>Proaktivno dijagnostikuje greške i optimizuje postavke.</li><li>Poboljšava internet performanse putem optimizacije mreže i pregledača.</li><li>Obavljanjem brzog skeniranja i sanacije bez korišćenja postojećeg antivirusnog programa.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Otkaži",
@@ -4037,8 +4044,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "Strelica nalevo",
+            "rightArrow": "Strelica nadesno"
         }
     },
     "dcc": {

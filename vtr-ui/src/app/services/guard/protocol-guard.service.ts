@@ -68,6 +68,8 @@ export class ProtocolGuardService implements CanActivate {
 	'f45a1a5c-44eb-42c3-b361-025ed702dd7c': 'modern-preload',
   }
 
+  characteristicCode = '/?protocol=';
+
   constructor(
 	private guardConstants: GuardConstants,
 	private router: Router
@@ -75,7 +77,9 @@ export class ProtocolGuardService implements CanActivate {
 
   private decodeBase64String(args: string) {
 	try {
-		return atob(args);
+		const supplyCount = args.length % 4 === 0 ? 0 : 4 - args.length % 4;
+		const str = (args + '===').slice(0, args.length + supplyCount);
+		return atob(str.replace(/-/g, '+').replace(/_/g, '/'));
 	} catch(e) {
 		return '';
 	}
@@ -91,25 +95,25 @@ export class ProtocolGuardService implements CanActivate {
 
   public isRedirectUrlNeeded(args: string) : [boolean, string] {
 	let tempUrl = this.processPath(args);
-	if (tempUrl !== args) return [true, tempUrl];
+	if (tempUrl !== args && tempUrl !== '/') return [true, tempUrl];
 
 	return [false, ''];
   }
 
   private processPath(path: string) : string {
-	const characteristicCode = '/?protocol=';
-	if (!path.startsWith(characteristicCode)) return path;
-
-	let encodedProtocol = path.slice(path.indexOf(characteristicCode) + characteristicCode.length);
+	let encodedProtocol = path.slice(path.indexOf(this.characteristicCode) + this.characteristicCode.length);
 	let originalProtocol = this.decodeBase64String(encodedProtocol);
 	if (!originalProtocol) return '/';
 
-	let newPath = this.convertToUrlAssumeProtocolIs3x(originalProtocol);
-	if (!newPath) {
-		newPath = this.convertToUrlAssumeProtocolIs2x(originalProtocol);
+	try {
+		let newPath = this.convertToUrlAssumeProtocolIs3x(originalProtocol);
+		if (!newPath) {
+			newPath = this.convertToUrlAssumeProtocolIs2x(originalProtocol);
+		}
+		return `/${newPath}`;
+	} catch (e) {
+		return '/';
 	}
-
-	return `/${newPath}`;
   }
 
   private convertToUrlAssumeProtocolIs3x(rawData: string) : string {
@@ -119,9 +123,9 @@ export class ProtocolGuardService implements CanActivate {
 	const semantic = url.pathname;
 	const query = url.search;
 
-	if (schema !== this.vantage3xSchema || !semantic) return '';
+	if (schema.toLowerCase() !== this.vantage3xSchema || !semantic) return '';
 
-	let path: string | undefined = this.semanticToPath[semantic];
+	let path: string | undefined = this.semanticToPath[semantic.toLowerCase()];
 	if (!path) {
 		path = semantic;
 	}
@@ -137,11 +141,11 @@ export class ProtocolGuardService implements CanActivate {
 	const query = url.search;
 	const queryParams = url.searchParams;
 
-	if (!this.backwardCompatibilitySchemas.includes(schema) || pathName !== 'PARAM') return '';
+	if (!schema || !this.backwardCompatibilitySchemas.includes(schema.toLowerCase()) || !pathName || pathName.toLowerCase() !== 'param') return '';
 
 	const featureId: string | null = queryParams.get('featureId');
 	if (featureId) {
-		const featureSemantic: string | undefined = this.featureIdToSemantic[featureId];
+		const featureSemantic: string | undefined = this.featureIdToSemantic[featureId.toLowerCase()];
 		if (featureSemantic) {
 			const path: string | undefined = this.semanticToPath[featureSemantic];
 			if (path) return `${path}${query}`;
@@ -150,7 +154,7 @@ export class ProtocolGuardService implements CanActivate {
 
 	const section: string | null = queryParams.get('section');
 	if (section) {
-		const sectionSemantic: string | undefined = this.sectionToSemantic[section];
+		const sectionSemantic: string | undefined = this.sectionToSemantic[section.toLowerCase()];
 		if (sectionSemantic) {
 			const path = this.semanticToPath[sectionSemantic];
 			if (path) return `${path}${query}`;
@@ -161,17 +165,12 @@ export class ProtocolGuardService implements CanActivate {
   }
 
   public canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) : boolean | UrlTree {
-	const path = window.location.href.slice(window.location.href.indexOf('#') + 1);
-	const checkResult = this.isRedirectUrlNeeded(path);
-	if (checkResult[0]) return this.router.parseUrl(checkResult[1]);
-	return this.guardConstants.defaultRoute;
+	const path = state.url.slice(state.url.indexOf('#') + 1);
+
+	if (path.startsWith(this.characteristicCode)) {
+		const checkResult = this.isRedirectUrlNeeded(path);
+		return checkResult[0] ? this.router.parseUrl(checkResult[1]) : history.length === 1;
+	}
+	return true;
   }
 }
-
-export function protocolUrl(url: UrlSegment[]) : UrlMatchResult {
-	if (window.location.href.includes('/?protocol=') && url.length === 0) {
-		return {consumed: url};
-	}
-	return null;
-}
-

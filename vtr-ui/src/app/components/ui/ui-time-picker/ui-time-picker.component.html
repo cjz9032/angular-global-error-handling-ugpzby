@@ -27,37 +27,40 @@
 								<div class="time-headings">
 									<p class=""
 										id="smartStandby-{{linkId}}-hours"
-										attr.aria-label="smartStandby-{{linkId}}-hours">
+										role="text"
+										attr.aria-label="hours">
 										{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit1' | translate | uppercase }}
 									</p>
 									<span class="" role="text" 
-									id="{{hours[copyHour]}}-{{linkId}}-'hours'">{{hours[hour]}}</span>
+									id="{{linkId}}-hours-value">{{hours[hour]}}</span>
 								</div>
 								<div class="time-headings">
 									<p class=""
 										id="smartStandby-{{linkId}}-minutes"
-										attr.aria-label="smartStandby-{{linkId}}-minutes">
+										role="text"
+										attr.aria-label="minutes">
 										{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit2' | translate | uppercase }}
 									</p>
 									<span class="" 
 									role="text" 
-									id="{{minutes[copyMinute]}}-{{linkId}}-'minutes'">{{minutes[minute]}}</span>
+									id="{{linkId}}-minutes-value">{{minutes[minute]}}</span>
 								</div>
 								<div class="time-headings">
 									<p class=""
 										id="smartStandby-{{linkId}}-amPm"
 										role="text"
-										attr.aria-label="smartStandby-{{linkId}}-amPm">
+										attr.aria-label="amPm">
 										{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit3' | translate }}
 									</p>
 									<span class="" 
 									role="text" 
-									id="{{linkId}}-value-{{amPms[copyAmPm]}}">{{amPms[amPm] | translate}}</span>
+									id="{{linkId}}-amPm-value">{{amPms[amPm] | translate}}</span>
 								</div>
 
 								<div class="toggle-icon align-right"
 									id="smartStandby-{{linkId}}-dropDown-btn"
-									attr.aria-label="smartStandby-{{linkId}}-dropDown-btn">
+									role="button"
+									attr.aria-label="{{linkId}}-dropDown">
 									<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
 								</div>
 							</div>

@@ -50,14 +50,12 @@
 	}
 	.tab-focus-blue {
 		&:focus {
-			outline: 0.1rem solid $light;
-			outline-offset: 0.2rem;
+			@include outline-white;
 		}
 	}
 	.tab-focus-white {
 		&:focus {
-			outline: 0.1rem solid $menu_hover;
-			outline-offset: 0.2rem;
+			@include outline-blue;
 		}
 	}
 }

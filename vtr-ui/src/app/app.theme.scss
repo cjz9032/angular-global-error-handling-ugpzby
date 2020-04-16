@@ -426,3 +426,33 @@ $high-contrast-white-disabled: #600000;
 $high-contrast-black-textselected: #1aebff;
 $high-contrast-black-disabled: #3be23b;
 $high-contrast-black-yellow: #FFFF00;
+
+@mixin outline-blue {
+	outline: 0.1rem solid $menu_hover;
+	outline-offset: 0.2rem;
+}
+@mixin outline-white {
+	outline: 0.1rem solid $light;
+	outline-offset: 0.2rem;
+}
+@mixin outline-border-white {
+	outline: 0;
+	border: 0.1rem solid $light;
+}
+@mixin outline-border-blue {
+	outline: 0;
+	border: 0.1rem solid $menu_hover;
+}
+@mixin button-outline-blue {
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		left: -0.4rem;
+		top: -0.4rem;
+		border-radius: 500px;
+		width: calc(100% + 0.8rem);
+		height: calc(100% + 0.8rem);
+		border: thin solid $menu_hover;
+	}
+}

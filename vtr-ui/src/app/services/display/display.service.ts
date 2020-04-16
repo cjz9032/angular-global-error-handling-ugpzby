@@ -142,8 +142,8 @@ export class DisplayService {
 	public getCameraSettingsInfo(): Promise<any> {
 		try {
 			if (this.cameraSettings) {
-                return this.cameraSettings.getCameraSettings();
-            }
+				return this.cameraSettings.getCameraSettings();
+			}
 			return undefined;
 		} catch (error) {
 			throw new Error(error.message);
@@ -186,16 +186,16 @@ export class DisplayService {
 		}
 		return undefined;
 	}
-	public getDisplayColortemperature(): Promise<any> {
-        if (this.displayEyeCareMode) {
-            return this.displayEyeCareMode.getDisplayColortemperature();
-        }
-        return undefined;
-    }
-	public setDisplayColortemperature(value: number): Promise<boolean> {
+	public getDisplayColorTemperature(): Promise<any> {
 		if (this.displayEyeCareMode) {
-            return this.displayEyeCareMode.setDisplayColortemperature(value);
-        }
+			return this.displayEyeCareMode.getDisplayColortemperature();
+		}
+		return undefined;
+	}
+	public setDisplayColorTemperature(value: number): Promise<boolean> {
+		if (this.displayEyeCareMode) {
+			return this.displayEyeCareMode.setDisplayColortemperature(value);
+		}
 		return undefined;
 	}
 	public resetEyeCareMode(): Promise<any> {
@@ -212,8 +212,8 @@ export class DisplayService {
 	}
 	public getEyeCareAutoMode(): Promise<any> {
 		if (this.displayEyeCareMode) {
-            return this.displayEyeCareMode.getEyeCareAutoModeState();
-        }
+			return this.displayEyeCareMode.getEyeCareAutoModeState();
+		}
 		return undefined;
 	}
 
@@ -290,8 +290,8 @@ export class DisplayService {
 	public statusChangedLocationPermission(handler: any) {
 		try {
 			if (this.isShellAvailable) {
-                this.displayEyeCareMode.statusChangedLocationPermission((handler));
-            }
+				this.displayEyeCareMode.statusChangedLocationPermission((handler));
+			}
 			return undefined;
 		} catch (error) {
 			throw new Error(error.message);

@@ -39,9 +39,11 @@ vtr-ui-row-switch {
   }
 
   .checkbox {
-    font-size: $fontsize_xs;
-    color: $shade_blue;
-    font-weight: $weight_light;
+    ::ng-deep .custom-control-label {
+      font-size: $fontsize_xs;
+      color: #667481;
+      font-weight: $weight_light;
+    }
     ::ng-deep .auto-set-checkbox {
       margin-top: 0px !important;
       outline: 0;

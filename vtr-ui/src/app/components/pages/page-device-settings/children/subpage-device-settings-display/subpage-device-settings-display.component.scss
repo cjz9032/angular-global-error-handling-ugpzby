@@ -12,6 +12,11 @@
 	#goto_nightlight_link {
 		text-decoration: underline;
 	}
+	.nightlight-link {
+		&:focus {
+			outline-offset: 0;
+		}
+	}
 	// #eye-care-mode-temp-note {
 	// 	margin-right: 15px !important;
 	// 	width: 100%;
@@ -46,7 +51,7 @@
 			color: $main;
 		}
 	}
-		
+
 	.smart-settings-card {
 		margin-left: -1.5rem;
 		margin-right: -1.5rem;
@@ -205,6 +210,9 @@
 			@media #{$white-on-black} {
 				color: $high-contrast-black-yellow;
 				border: none;
+			}
+			&:focus {
+				@include outline-blue;
 			}
 		}
 	}

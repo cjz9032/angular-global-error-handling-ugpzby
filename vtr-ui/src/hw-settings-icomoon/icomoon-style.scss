@@ -1,8 +1,14 @@
 @import "icomoon-variables";
 
+
 .icomoon-Active-protection {
   &:before {
     content: $icomoon-Active-protection; 
+  }
+}
+.icomoon-antiTheft {
+  &:before {
+    content: $icomoon-antiTheft; 
   }
 }
 .icomoon-arrows-h {
@@ -24,6 +30,12 @@
 .icomoon-auto-screen-off {
   &:before {
     content: $icomoon-auto-screen-off; 
+  }
+}
+.icomoon-calendar {
+  &:before {
+    content: $icomoon-calendar;     
+    color: #4a81fd;
   }
 }
 .icomoon-Camera {
@@ -840,10 +852,3 @@
     color: #4a81fd;
   }
 }
-.icomoon-antiTheft {
-	&:before {
-	  content: $icomoon-antiTheft;     
-	  color: #4a81fd;
-	}
-  }
-

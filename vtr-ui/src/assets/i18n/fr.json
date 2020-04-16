@@ -78,7 +78,8 @@
                     "macroKey": "Touche de macro",
                     "hardwareScan": "Analyse matérielle",
                     "systemUpdate": "Mise à jour Système",
-                    "header": "Outils système"
+                    "header": "Outils système",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "lighting": {
                     "title": "Personnalisation de l'éclairage",
@@ -196,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "Avertissement !",
                     "description": "Des paramètres inadaptés du Surfréquençage peuvent entraîner des dégâts matériel irréversibles.",
-                    "proceed": "CONTINUER"
+                    "proceed": "CONTINUER",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },
@@ -1681,7 +1685,9 @@
                         },
                         "subSectionTwo": {
                             "title": "Inversion de la fonction principale par défaut",
-                            "description": "Lorsque cette option est activée, la fonction principale par défaut passe des paramètres d'usine à la valeur opposée. Redémarrez votre ordinateur pour que les modifications prennent effet."
+                            "description": "Lorsque cette option est activée, la fonction principale par défaut passe des paramètres d'usine à la valeur opposée. Redémarrez votre ordinateur pour que les modifications prennent effet.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "Comment utiliser les combinaisons de touches Fn",
@@ -2046,12 +2052,59 @@
             "superResolution": {
                 "heading": "Support intelligent",
                 "title": "Mise à l'échelle de la résolution vidéo",
-                "desc": "<p><label>Cette fonction optimise l'expérience de la lecture vidéo en améliorant la résolution de la vidéo. Cela fonctionne particulièrement lorsque la vidéo est de faible résolution.</label></p> <p style='margin-top:4px;'><label>Cette fonction peut influencer la durée de vie de la batterie, sa température et produire des sons. Veillez à ne pas l'utiliser en mode courant continu. Sinon, cela accélérera la consommation d'énergie et réduira la durée de vie de la batterie.</label></p>",
-                "tooltip": "La fonction fonctionne uniquement sur :<br>Windows Media player",
+                "desc": "<p><label>Cette fonction améliore l'expérience de la lecture vidéo en améliorant la résolution de la vidéo. Cela est particulièrement efficace lorsque la vidéo est de faible résolution.</label></p> <p style='margin-top:4px;'><label>Cette fonction peut influencer la durée de vie de la batterie, sa température et produire des sons. Veillez à ne pas l'utiliser en mode courant continu (mode batterie). Sinon, cela accélérera la consommation d'énergie et réduira la durée de vie de la batterie.</label></p>",
+                "tooltip": "Cette fonction est réservée aux lecteurs vidéo ci-dessous :<br>Windows Media Player<br>Chrome<br>Films et séries TV<br>PotPlayer<br>GOM player<br>Lecteurs dans les navigateurs Web (par ex. Chrome)<br><br>Pour savoir comment activer cette fonction sur PotPlayer et GOM player, consultez le guide d'utilisation fourni avec votre ordinateur.",
                 "note": {
                     "description": "Cette fonction est inopérante quand :",
-                    "description1": "L'ordinateur n'est pas branché sur une prise secteur.",
-                    "description2": "Le mode d'économie de la batterie est activé."
+                    "description1": "Le mode d'économie de la batterie est activé.",
+                    "description2": "La température de l'unité centrale est trop élevée."
+                }
+            },
+            "antiTheft": {
+                "heading": "Capteur intelligent",
+                "title": "Alerte de mouvement intelligente",
+                "desc": "<p><label>Lorsque vous activez cette fonction, l'appareil émet un signal sonore lorsque l'écran est verrouillé et que des mouvements sont détectés, notamment dans un endroit public.</label></p> <p style='margin-top:4px;'><label>Pour ignorer l'alarme, entrez le mot de passe correct ou ouvrez une session à l'aide de Windows Hello.</label></p>",
+                "note": {
+                    "description": "Une fois que vous vous êtes connecté au système, cette fonction sera automatiquement désactivée. Vous devez l'activer à nouveau pour l'utiliser."
+                },
+                "alarm": {
+                    "title": " L'ALARME DURERA",
+                    "option1": "10 secondes",
+                    "option2": "20 secondes",
+                    "option3": "30 secondes",
+                    "option4": "1 minute",
+                    "option5": "Ne jamais arrêter"
+                },
+                "allowCamera": {
+                    "title": "PRISE DE PHOTOS",
+                    "describe": "Lorsque vous activez cette fonctionnalité, la caméra prend automatiquement des photos lors de la détection d'un mouvement si l'écran est verrouillé. Ces données sont traitées localement sur votre appareil. Lenovo ne peut ni y accéder ni les utiliser.",
+                    "checkBoxText": "Activer cette fonctionnalité"
+                },
+                "cameraPrivacy": {
+                    "describe": "Le mode de confidentialité de la caméra Lenovo Vantage est activé. La fonction de la case cochée ne fonctionnera pas.",
+                    "linkText": "Accéder au mode de confidentialité de la caméra pour la désactiver"
+                },
+                "authorizedAccess": {
+                    "describe": "Lenovo Vantage n'a pas accès à la caméra. La fonction de la case cochée ne fonctionnera pas.",
+                    "linkText": "Accéder aux paramètres Windows pour donner accès"
+                },
+                "photo": {
+                    "title": "NOMBRE DE PHOTOS PRISES PENDANT LE MOUVEMENT",
+                    "tooltip": "L'appareil photo de votre ordinateur s'active automatiquement pour prendre des photos lorsque des mouvements sont détectés. Les photos sont prises toutes les 2 secondes et enregistrées dans votre stockage local.",
+                    "option1": "5",
+                    "option2": "10",
+                    "option3": "15",
+                    "option4": "20",
+                    "option5": "25",
+                    "option6": "30"
+                },
+                "showPhoto": {
+                    "title": "LES PHOTOS ONT ÉTÉ :",
+                    "link": "Voir les photos"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Lenovo Vantage n'a pas accès au micro du système de fichiers.",
+                    "link": "Accéder aux paramètres Windows pour donner accès"
                 }
             },
             "voice": {
@@ -2085,53 +2138,6 @@
                     "btnText": "ok",
                     "title": "L'installation a échoué.",
                     "desc": "Veuillez réessayer ultérieurement pour utiliser Lenovo Voice."
-                }
-            },
-            "antiTheft": {
-                "heading": "Intelligent Sensing",
-                "title": "Smart Motion Alert",
-                "desc": "<p><label>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</label></p> <p style='margin-top:4px;'><label>To dismiss the alarm, enter the correct password or log in by Windows Hello.</label></p>",
-                "note": {
-                    "description": "Once you log in the system successfully, this feature will be turned off automatically. You need to enable it again to use it."
-                },
-                "alarm": {
-                    "title": " THE ALARM WILL LAST FOR",
-                    "option1": "10 seconds",
-                    "option2": "20 seconds",
-                    "option3": "30 seconds",
-                    "option4": "1 minute",
-                    "option5": "Never stop"
-                },
-                "allowCamera": {
-                    "title": "TATING PHOTOS",
-                    "describe": "When enabling this feature, the camera takes photos automatically when detecting any movement if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
-                    "checkBoxText": "Enable this feature"
-                },
-                "cameraPrivacy": {
-                    "describe": "Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
-                    "linkText": "Go to Camera privacy mode to turn it off"
-                },
-                "authorizedAccess": {
-                    "describe": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
-                    "linkText": "Go to Windows Settings to give access"
-                },
-                "photo": {
-                    "title": "THE NUMBER OF PHOTOS TAKEN DURING THE MOVEMENT",
-                    "tooltip": "The camera on your computer automatically activates to take pictures when movements are detected. Pictures are taken every 2 seconds and are saved to your local storage.",
-                    "option1": 5,
-                    "option2": 10,
-                    "option3": 15,
-                    "option4": 20,
-                    "option5": 25,
-                    "option6": 30
-                },
-                "showPhoto": {
-                    "title": "PHOTOS HAVE BEEN:",
-                    "link": "View photos"
-                },
-                "fileAuthorizationTips": {
-                    "content": "Lenovo Vantage doesn't have access to the file system.",
-                    "link": "Go to Windows Settings to give access"
                 }
             }
         }
@@ -2699,7 +2705,7 @@
         },
         "question1": {
             "title": "Sauvegarde et restauration de vos fichiers",
-            "description": "<div>    <div class='faqInFs4Fb'>        Sauvegarde et restauration de vos fichiers    </div>    <hr />    <div class='faqInMb7'>        Il est toujours préférable de disposer d'une sauvegarde. Conservez des copies de vos fichiers sur un autre disque dur s'il arrive quelque chose à l'original.    </div>    <div class='faqInFs3Fb'>        Configuration de votre sauvegarde    </div>    <hr />    <div class='mb-5'>        Sélectionnez le bouton <span class='faqInFb'>démarrer</span>, sélectionnez <span class='faqInFb'>paramètres</span> > <span class='faqInFb'>mettre à jour</span> et <span class='faqInFb'>sécurité</span> > <span class='faqInFb'>sauvegarde > ajouter</span> une unité, puis choisissez un lecteur externe ou un emplacement réseau pour vos sauvegardes.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg'  />    </div>    <div class='mb-5'>        Tout est prêt ! Toutes les heures, nous sauvegarderons tout dans votre dossier utilisateur (C:\\\\Users\\\\username). Pour modifier les fichiers à sauvegarder ou la fréquence des sauvegardes, accédez à <span class='faqInFb'>plus d'options</span>.    </div>    <div class='faqInFs3Fb'>        Restaurez vos fichiers    </div>    <div class='mb-5'>        S'il vous manque un fichier ou un dossier important, procédez comme suit pour le restaurer :    </div>    <div>        <div class='mb-3'>1. Saisissez <span class='faqInFb'>restaurer les fichiers</span> dans la zone de recherche de la barre des tâches <span class='faqInFb'>, puis sélectionnez restaurer les fichiers</span>à l'aide de l'historique des fichiers.</div>        <div class='mb-3'>2. Recherchez le fichier dont vous avez besoin, puis utilisez les flèches pour afficher toutes ses versions</div>        <div class='mb-3'>3. Une fois que vous avez trouvé la version souhaitée, sélectionnez <span class='faqInFb'>Restaurer</span> pour l'enregistrer à son emplacement d'origine. Pour l'enregistrer à un autre emplacement, maintenez la touche CTRL enfoncée (ou <span class='faqInFb'>cliquez</span>dessus avec <span class='faqInFb'>le bouton</span>droit de la souris), sélectionnez restaurer vers, puis choisissez un nouvel emplacement.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Sauvegarde et restauration de vos fichiers    </div>    <hr />    <div class='faqInMb7'>        Il est toujours préférable de disposer d'une sauvegarde. Conservez des copies de vos fichiers sur un autre disque dur s'il arrive quelque chose à l'original.    </div>    <div class='faqInFs3Fb'>        Configuration de votre sauvegarde    </div>    <hr />    <div class='mb-5'>        Sélectionnez le bouton <span class='faqInFb'>démarrer</span>, sélectionnez <span class='faqInFb'>paramètres</span> > <span class='faqInFb'>mettre à jour</span> et <span class='faqInFb'>sécurité</span> > <span class='faqInFb'>sauvegarde > ajouter</span> une unité, puis choisissez un lecteur externe ou un emplacement réseau pour vos sauvegardes.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg'  />    </div>    <div class='mb-5'>        Tout est prêt ! Toutes les heures, nous sauvegarderons tout dans votre dossier utilisateur (C:\\Users\\votre nom d'utilisateur). Pour modifier les fichiers à sauvegarder ou la fréquence des sauvegardes, accédez à <span class='faqInFb'>plus d'options</span>.    </div>    <div class='faqInFs3Fb'>        Restaurez vos fichiers    </div>    <div class='mb-5'>        S'il vous manque un fichier ou un dossier important, procédez comme suit pour le restaurer :    </div>    <div>        <div class='mb-3'>1. Saisissez <span class='faqInFb'>restaurer les fichiers</span> dans la zone de recherche de la barre des tâches <span class='faqInFb'>, puis sélectionnez restaurer les fichiers</span>à l'aide de l'historique des fichiers.</div>        <div class='mb-3'>2. Recherchez le fichier dont vous avez besoin, puis utilisez les flèches pour afficher toutes ses versions</div>        <div class='mb-3'>3. Une fois que vous avez trouvé la version souhaitée, sélectionnez <span class='faqInFb'>Restaurer</span> pour l'enregistrer à son emplacement d'origine. Pour l'enregistrer à un autre emplacement, maintenez la touche CTRL enfoncée (ou <span class='faqInFb'>cliquez</span>dessus avec <span class='faqInFb'>le bouton</span>droit de la souris), sélectionnez restaurer vers, puis choisissez un nouvel emplacement.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -3080,15 +3086,15 @@
             "science": "Science"
         },
         "gaming": {
-            "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
-            "gamingFeature1": "-Computer status monitor",
-            "gamingFeature2": "-Performance mode & overclocking",
-            "gamingFeature3": "-Lighting",
-            "gamingFeature4": "-Network Boost",
-            "gamingFeature5": "-Auto Close",
-            "gamingOnly": "Gaming",
-            "gamingAndWork": "Gaming & Work",
-            "nonGaming": "Non-Gaming"
+            "gamingDescription": "La version de jeu de Vantage vous permet d'améliorer facilement votre expérience de jeu. En plus des paramètres communs, les principales fonctionnalités sont les suivantes (disponibles sur certains systèmes) :",
+            "gamingFeature1": "- Surveillance de l'état de l'ordinateur",
+            "gamingFeature2": "- Mode de performance et overclocking",
+            "gamingFeature3": "- Luminosité",
+            "gamingFeature4": "- Amélioration réseau",
+            "gamingFeature5": "- Fermeture automatique",
+            "gamingOnly": "Jeux",
+            "gamingAndWork": "Jeu et travail",
+            "nonGaming": "Hors jeu"
         }
     },
     "settings": {
@@ -3112,7 +3118,8 @@
         "settingsNotes": "Relancez cette application pour vous assurer que toutes les modifications prennent effet.",
         "betaSettingTitle": "Programme bêta",
         "betaProgram": "Programme bêta",
-        "betaSettingDescription": "Essayez les dernières fonctions sur lesquelles nous travaillons."
+        "betaSettingDescription": "Essayez les dernières fonctions sur lesquelles nous travaillons.",
+        "betaSettingNewDescription": "Nous sommes heureux de vous inviter au programme bêta Performances intelligentes. Celui-ci permet d'améliorer les performances de votre ordinateur en procédant aux opérations suivantes :<br/><ul class='pl-4'><li>Diagnostic proactif des bogues et optimisation des paramètres.</li><li>Amélioration des performances Internet par optimisation du réseau et du navigateur.</li><li>Analyse rapide et correction sans utiliser le programme antivirus existant.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Annuler",
@@ -4037,8 +4044,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "Flèche gauche",
+            "rightArrow": "Flèche droite"
         }
     },
     "dcc": {

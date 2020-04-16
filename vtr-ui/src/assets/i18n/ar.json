@@ -80,7 +80,8 @@
                     "macroKey": "مفتاح الماكرو",
                     "hardwareScan": "فحص الأجهزة",
                     "systemUpdate": "‏‫تحديث النظام‬",
-                    "header": "أدوات النظام"
+                    "header": "أدوات النظام",
+                    "legionAccessory": "Legion Accessory"
                 },
                 "systemStatus": {
                     "info": "معلومات"
@@ -198,7 +199,10 @@
                 "warningPromptPopup": {
                     "title": "تحذير!",
                     "description": "قد تؤدي الإعدادات غير السليمة لـ زيادة الأداء إلى تلف بالجهاز لا يمكن التراجع عنه.",
-                    "proceed": "المتابعة"
+                    "proceed": "المتابعة",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },
@@ -1681,7 +1685,9 @@
                         },
                         "subSectionTwo": {
                             "title": "عكس الوظيفة الأساسية الافتراضية",
-                            "description": "عند التشغيل، سيتم تغيير الوظيفة الأساسية الافتراضية من إعدادات المصنع إلى العكس. أعد تشغيل الكمبيوتر لجعل التغييرات نافذة المفعول."
+                            "description": "عند التشغيل، سيتم تغيير الوظيفة الأساسية الافتراضية من إعدادات المصنع إلى العكس. أعد تشغيل الكمبيوتر لجعل التغييرات نافذة المفعول.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "كيفية استخدام مجموعات مفاتيح Fn",
@@ -2048,12 +2054,59 @@
             "superResolution": {
                 "heading": "الوسائط الذكية",
                 "title": "رفع مستوى دقة الفيديو",
-                "desc": "<p><label>تعمل هذه الميزة على تحسين تجربة تشغيل الفيديو عن طريق تحسين دقة الفيديو. إنها تعمل على وجه التحديد عندما تكون دقة الفيديو سيئة.</label></p> <p style='margin-top:4px;'><label>قد تؤثر هذه الوظيفة على عمر البطارية ودرجة حرارة البطارية، وقد تتسبب في حدوث ضوضاء. يرجى عدم الاستخدام في وضع التيار المباشر‬. وإلا سوف تسرع استهلاك الطاقة وتقصير عمر البطارية.</label></p>",
-                "tooltip": "تعمل الميزة فقط على:<br>Windows Media player",
+                "desc": "<p><label>تعمل هذه الميزة على تحسين تجربة تشغيل الفيديو من خلال تحسين دقة الفيديو. وهي تعمل بشكل خاص عندما يكون الفيديو بدقة منخفضة.</label></p> <p style='margin-top:4px;'><label>قد تؤثر هذه الوظيفة على عمر البطارية ودرجة حرارة البطارية، وقد تتسبب في حدوث ضوضاء. يرجى عدم الاستخدام في وضع التيار المباشر (وضع البطارية)‬. وإلا سوف تسرع استهلاك الطاقة وتقصير عمر البطارية.</label></p>",
+                "tooltip": "تعمل هذه الميزة فقط لمشغلات الفيديو التالية:<br>Windows Media Player<br>Chrome<br>الأفلام والتلفزيون<br>PotPlayer<br>GOM player<br>والمشغلات على مستعرض الويب (مثل Chrome)<br><br>للحصول على إرشادات حول كيفية تمكين هذه الوظيفة على PotPlayer وGOM player، راجع دليل المستخدم المرفق مع جهاز الكمبيوتر.",
                 "note": {
                     "description": "لا تعمل هذه الميزة في الحالات التالية:",
-                    "description1": "الكمبيوتر غير متصل بطاقة التيار المتردد.",
-                    "description2": "تم تمكين وضع توفير البطارية."
+                    "description1": "وضع موفر البطارية ممكّن.",
+                    "description2": "درجة حرارة وحدة المعالجة المركزية (CPU) مرتفعة جدًا."
+                }
+            },
+            "antiTheft": {
+                "heading": "الاستشعار الذكي",
+                "title": "تنبيه الحركة الذكية",
+                "desc": "<p><label>عند تمكين هذه الميزة، سيبدأ الجهاز بإصدار صوت طنين عندما تكون الشاشة مقفلة ويتم اكتشاف الحركات خاصة في مكان عام.</label></p> <p style='margin-top:4px;'><label>لاستبعاد التنبيه، أدخل كلمة المرور الصحيحة أو قم بتسجيل الدخول بواسطة Windows Hello.</label></p>",
+                "note": {
+                    "description": "بمجرد تسجيل الدخول إلى النظام بنجاح، سيتم إيقاف تشغيل هذه الميزة تلقائيًا. يجب تمكينه مرة أخرى لاستخدامه."
+                },
+                "alarm": {
+                    "title": " يستمر المنبه لمدة",
+                    "option1": "10 ثوان",
+                    "option2": "20 ثوان",
+                    "option3": "30 ثانية",
+                    "option4": "دقيقة واحدة",
+                    "option5": "دون توقف"
+                },
+                "allowCamera": {
+                    "title": "التقاط الصور",
+                    "describe": "عند تمكين هذه الميزة، تلتقط الكاميرا الصور تلقائيًا عند اكتشاف أي حركة إذا كانت الشاشة مقفلة. تتم معالجة هذه البيانات محليًا على جهازك. Lenovo لا يمكنها الوصول إليها أو استخدامها.",
+                    "checkBoxText": "قم بتمكين هذه الميزة"
+                },
+                "cameraPrivacy": {
+                    "describe": "وضع خصوصية كاميرا Lenovo Vantage قيد التشغيل. وظيفة مربع الاختيار لن تعمل.",
+                    "linkText": "انتقل إلى وضع خصوصية الكاميرا لإيقافها"
+                },
+                "authorizedAccess": {
+                    "describe": "لا يتمتع Lenovo Vantage بالوصول إلى الكاميرا. وظيفة مربع الاختيار لن تعمل.",
+                    "linkText": "انتقل إلى إعدادات Windows لمنح الوصول"
+                },
+                "photo": {
+                    "title": "عدد الصور التي تم التقاطها أثناء الحركة",
+                    "tooltip": "يتم تنشيط الكاميرا الموجودة على الكمبيوتر تلقائيًا لالتقاط الصور عند اكتشاف حركات. يتم التقاط الصور كل ثانيتين ويتم حفظها في وحدة التخزين المحلية.",
+                    "option1": "5",
+                    "option2": "10",
+                    "option3": "15",
+                    "option4": "20",
+                    "option5": "25",
+                    "option6": "30"
+                },
+                "showPhoto": {
+                    "title": "لقد كانت الصور:",
+                    "link": "عرض الصور"
+                },
+                "fileAuthorizationTips": {
+                    "content": "لا يمكن لـ Lenovo Vantage الوصول إلى نظام الملفات.",
+                    "link": "انتقل إلى إعدادات Windows لمنح الوصول"
                 }
             },
             "voice": {
@@ -2087,53 +2140,6 @@
                     "btnText": "موافق",
                     "title": "فشل التثبيت",
                     "desc": "يرجى المحاولة مرة أخرى لاحقًا لاستخدام Lenovo Voice."
-                }
-            },
-            "antiTheft": {
-                "heading": "Intelligent Sensing",
-                "title": "Smart Motion Alert",
-                "desc": "<p><label>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</label></p> <p style='margin-top:4px;'><label>To dismiss the alarm, enter the correct password or log in by Windows Hello.</label></p>",
-                "note": {
-                    "description": "Once you log in the system successfully, this feature will be turned off automatically. You need to enable it again to use it."
-                },
-                "alarm": {
-                    "title": " THE ALARM WILL LAST FOR",
-                    "option1": "10 seconds",
-                    "option2": "20 seconds",
-                    "option3": "30 seconds",
-                    "option4": "1 minute",
-                    "option5": "Never stop"
-                },
-                "allowCamera": {
-                    "title": "TATING PHOTOS",
-                    "describe": "When enabling this feature, the camera takes photos automatically when detecting any movement if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
-                    "checkBoxText": "Enable this feature"
-                },
-                "cameraPrivacy": {
-                    "describe": "Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
-                    "linkText": "Go to Camera privacy mode to turn it off"
-                },
-                "authorizedAccess": {
-                    "describe": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
-                    "linkText": "Go to Windows Settings to give access"
-                },
-                "photo": {
-                    "title": "THE NUMBER OF PHOTOS TAKEN DURING THE MOVEMENT",
-                    "tooltip": "The camera on your computer automatically activates to take pictures when movements are detected. Pictures are taken every 2 seconds and are saved to your local storage.",
-                    "option1": 5,
-                    "option2": 10,
-                    "option3": 15,
-                    "option4": 20,
-                    "option5": 25,
-                    "option6": 30
-                },
-                "showPhoto": {
-                    "title": "PHOTOS HAVE BEEN:",
-                    "link": "View photos"
-                },
-                "fileAuthorizationTips": {
-                    "content": "Lenovo Vantage doesn't have access to the file system.",
-                    "link": "Go to Windows Settings to give access"
                 }
             }
         }
@@ -2701,7 +2707,7 @@
         },
         "question1": {
             "title": "نسخ احتياطي للملفات واستعادتها",
-            "description": "<div>    <div class='faqInFs4Fb'>        نسخ احتياطي للملفات واستعادتها    </div>    <hr />    <div class='faqInMb7'>        من المستحسن إنشاء نسخه احتياطية لملفاتك في كل الأوقات. احتفظ بنسخ من ملفاتك على محرك أقراص آخر تلافيًا لحدوث شيء ما للملفات الأصلية.    </div>    <div class='faqInFs3Fb'>        إعداد عملية النسخ الاحتياطي    </div>    <hr />    <div class='mb-5'>        حدد زر <span class='faqInFb'>البدء</span>، وحدد <span class='faqInFb'>الإعدادات</span> > <span class='faqInFb'>التحديث والأمان</span> > <span class='faqInFb'>النسخ الاحتياطي</span> > <span class='faqInFb'>إضافة محرك أقراص</span>، ثم اختر محرك أقراص خارجيًا أو موقعًا على الشبكة لنسخك الاحتياطية.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        أصبح كل شيء جاهز. سنقوم، كل ساعة، بإجراء عملية نسخ احتياطي لكل محتويات مجلد المستخدم على جهازك (C:\\\\Users\\\\username). لتغيير الملفات التي يتم نسخها احتياطيًا أو عدد مرات حدوث النسخ الاحتياطي، انتقل إلى <span class='faqInFb'>مزيد من الخيارات</span>.    </div>    <div class='faqInFs3Fb'>        استعادة ملفاتك    </div>    <div class='mb-5'>        إذا كنت تفتقد ملفًا أو مجلدًا مهمًا، فإليك كيفية استعادته:    </div>    <div>        <div class='mb-3'>1. اكتب <span class='faqInFb'>استعادة الملفات</span> في مربع البحث على شريط المهام، ثم حدد <span class='faqInFb'> استعادة ملفاتك بواسطة محفوظات الملفات</span>.</div>        <div class='mb-3'>2. ابحث عن الملف المطلوب، ثم استخدم الأسهم لرؤية جميع إصداراته</div>        <div class='mb-3'>3. عندما تعثر على الإصدار المطلوب، اختر <span class='faqInFb'>استعادة</span> لحفظه في موقعه الأصلي. لحفظه في مكان آخر، اضغط باستمرار (أو انقر بزر الماوس الأيمن) على <span class='faqInFb'>استعادة</span>، وحدد <span class='faqInFb'>استعادة إلى</span>، ثم اختر موقعًا جديدًا.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        نسخ احتياطي للملفات واستعادتها    </div>    <hr />    <div class='faqInMb7'>        من المستحسن إنشاء نسخه احتياطية لملفاتك في كل الأوقات. احتفظ بنسخ من ملفاتك على محرك أقراص آخر تلافيًا لحدوث شيء ما للملفات الأصلية.    </div>    <div class='faqInFs3Fb'>        إعداد عملية النسخ الاحتياطي    </div>    <hr />    <div class='mb-5'>        حدد زر <span class='faqInFb'>البدء</span>، وحدد <span class='faqInFb'>الإعدادات</span> > <span class='faqInFb'>التحديث والأمان</span> > <span class='faqInFb'>النسخ الاحتياطي</span> > <span class='faqInFb'>إضافة محرك أقراص</span>، ثم اختر محرك أقراص خارجيًا أو موقعًا على الشبكة لنسخك الاحتياطية.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        أصبح كل شيء جاهز. سنقوم، كل ساعة، بإجراء عملية نسخ احتياطي لكل محتويات مجلد المستخدم على جهازك <span>(C:\\Users\\اسم المستخدم)<span>. لتغيير الملفات التي يتم نسخها احتياطيًا أو عدد مرات حدوث النسخ الاحتياطي، انتقل إلى <span class='faqInFb'>مزيد من الخيارات</span>.    </div>    <div class='faqInFs3Fb'>        استعادة ملفاتك    </div>    <div class='mb-5'>        إذا كنت تفتقد ملفًا أو مجلدًا مهمًا، فإليك كيفية استعادته:    </div>    <div>        <div class='mb-3'>1. اكتب <span class='faqInFb'>استعادة الملفات</span> في مربع البحث على شريط المهام، ثم حدد <span class='faqInFb'> استعادة ملفاتك بواسطة محفوظات الملفات</span>.</div>        <div class='mb-3'>2. ابحث عن الملف المطلوب، ثم استخدم الأسهم لرؤية جميع إصداراته</div>        <div class='mb-3'>3. عندما تعثر على الإصدار المطلوب، اختر <span class='faqInFb'>استعادة</span> لحفظه في موقعه الأصلي. لحفظه في مكان آخر، اضغط باستمرار (أو انقر بزر الماوس الأيمن) على <span class='faqInFb'>استعادة</span>، وحدد <span class='faqInFb'>استعادة إلى</span>، ثم اختر موقعًا جديدًا.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -3082,15 +3088,15 @@
             "science": "العلم"
         },
         "gaming": {
-            "gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
-            "gamingFeature1": "-Computer status monitor",
-            "gamingFeature2": "-Performance mode & overclocking",
-            "gamingFeature3": "-Lighting",
-            "gamingFeature4": "-Network Boost",
-            "gamingFeature5": "-Auto Close",
-            "gamingOnly": "Gaming",
-            "gamingAndWork": "Gaming & Work",
-            "nonGaming": "Non-Gaming"
+            "gamingDescription": "بإمكان إصدار الألعاب من Vantage أن يسهّل عليك تحسين تجربة الألعاب. إلى جانب الإعدادات العامة، تتضمن الميزات الرئيسية (متوفرة في أنظمة محددة):",
+            "gamingFeature1": "-مراقبة حالة الكمبيوتر",
+            "gamingFeature2": "-وضع الأداء وزيادة الأداء",
+            "gamingFeature3": "-الإضاءة",
+            "gamingFeature4": "-تعزيز الشبكة",
+            "gamingFeature5": "-الإغلاق التلقائي",
+            "gamingOnly": "الألعاب",
+            "gamingAndWork": "الألعاب والعمل",
+            "nonGaming": "غير الألعاب"
         }
     },
     "settings": {
@@ -3114,7 +3120,8 @@
         "settingsNotes": "يرجى إعادة تشغيل هذا التطبيق للتأكد من أن جميع التغييرات نافذة المفعول.",
         "betaSettingTitle": "البرنامج التجريبي",
         "betaProgram": "البرنامج التجريبي",
-        "betaSettingDescription": "جرّب أحدث الميزات التي نعمل عليها."
+        "betaSettingDescription": "جرّب أحدث الميزات التي نعمل عليها.",
+        "betaSettingNewDescription": "يسعدنا دعوتك إلى البرنامج التجريبي‬ الأداء الذكي. يساعدك هذا البرنامج في تحسين أداء جهاز الكمبيوتر من خلال:<br/><ul class='pl-4'><li>تشخيص الأخطاء بشكل استباقي وتحسين الإعدادات.</li><li>تعزيز أداء الإنترنت من خلال تحسين الشبكة والمستعرض.</li><li>إجراء فحص وعلاج سريعين من دون استخدام برنامج مكافحة الفيروسات الموجود.</li></ul>"
     },
     "modernPreload": {
         "cancel": "إلغاء",
@@ -4037,8 +4044,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "سهم لليسار",
+            "rightArrow": "سهم لليمين"
         }
     },
     "dcc": {

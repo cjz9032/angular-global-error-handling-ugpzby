@@ -16,7 +16,7 @@ export class UiCheckboxComponent implements OnInit {
 	@Input() componentId: string;
 	@Input() label: string;
 	@Input() checked = false;
-	@Input() disabled: boolean;
+	@Input() disabled = false;
 	@Input() value: any;
 	@Input() hasChild = false; // for ng-content
 	@Input() metricsEvent = 'ItemClick';

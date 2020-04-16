@@ -2,6 +2,40 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.16](https://bitbucket.tc.lenovo.com///compare/v1.5.15...v1.5.16) (2020-04-15)
+
+
+### Bug Fixes
+
+* **mock:** remove async for CHS and DP in the mock service ([d40e928](https://bitbucket.tc.lenovo.com///commit/d40e928c200c31500b92f259cd7bc9d723c1bf99))
+
+### [1.5.15](https://bitbucket.tc.lenovo.com///compare/v1.5.14...v1.5.15) (2020-04-14)
+
+
+### Bug Fixes
+
+* **fix bug:** fixed mcafee link to wrong webpage ([b0a8473](https://bitbucket.tc.lenovo.com///commit/b0a8473da581c8328bca626b7ded3149c852b41f))
+
+### [1.5.14](https://bitbucket.tc.lenovo.com///compare/v1.5.13...v1.5.14) (2020-04-13)
+
+
+### Bug Fixes
+
+* **chs:** rollback prev change, init at very beginning ([f966e12](https://bitbucket.tc.lenovo.com///commit/f966e12fd4c1b39a2808e5d406c1759b512ccd35))
+* **routing:** remove unnecessary route, fix base64 handling ([356278d](https://bitbucket.tc.lenovo.com///commit/356278d379f1893194ad1fdf280ba884e7c6a59c))
+* **VAN-15931:** comment two_levels html, remove automation-id ([081b7e8](https://bitbucket.tc.lenovo.com///commit/081b7e8c788d08fe737802c7ead9cbe67489df1e))
+* **wifi security:** init should happen in event handlers only ([d0c6ee3](https://bitbucket.tc.lenovo.com///commit/d0c6ee3e2e269ebe2ed1818c953e8c419b3efdd2))
+
+### [1.5.13](https://bitbucket.tc.lenovo.com///compare/v1.5.12...v1.5.13) (2020-04-13)
+
+### [1.5.12](https://bitbucket.tc.lenovo.com///compare/v1.5.11...v1.5.12) (2020-04-13)
+
+
+### Bug Fixes
+
+* **chs:** fix those that have updated async functions ([6442321](https://bitbucket.tc.lenovo.com///commit/6442321ec2c7f151b88c7dd420a3d3f0d6adc7dd))
+* **smart assist:** fix the build error ([b22974f](https://bitbucket.tc.lenovo.com///commit/b22974faec2d36248681d2885b24ef46c9c53a9f))
+
 ### [1.5.11](https://bitbucket.tc.lenovo.com///compare/v1.5.10...v1.5.11) (2020-04-09)
 
 

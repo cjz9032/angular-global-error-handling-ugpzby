@@ -20,9 +20,11 @@ import { CommsService } from 'src/app/services/comms/comms.service';
 import { IntelligentSecurity } from 'src/app/data-models/smart-assist/intelligent-security.model';
 import { SmartAssistCache } from 'src/app/data-models/smart-assist/smart-assist-cache.model';
 import { HsaIntelligentSecurityResponse } from 'src/app/data-models/smart-assist/hsa-intelligent-security.model/hsa-intelligent-security.model';
+import { AntiTheftResponse } from 'src/app/data-models/antiTheft/antiTheft.model';
+import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 
 
-fdescribe('Component: PageSmartAssistComponent', () => {
+describe('Component: PageSmartAssistComponent', () => {
 	let component: PageSmartAssistComponent;
 	let fixture: ComponentFixture<PageSmartAssistComponent>;
 	let deviceService: DeviceService;
@@ -85,6 +87,46 @@ fdescribe('Component: PageSmartAssistComponent', () => {
 		component.getHPDAdvancedSetting();
 		expect(smartAssistService.getHPDAdvancedSetting).toHaveBeenCalled();
 	});
+
+	it("getSuperResolutionStatus", () => {
+		smartAssistService = TestBed.get(SmartAssistService);
+		smartAssistService.isShellAvailable = true;
+		const res: FeatureStatus = {
+			available: true, 
+			status: true,
+			 permission:true,
+		     isLoading:true
+		}
+		const spy = spyOn(
+			smartAssistService, 
+			"getSuperResolutionStatus"
+		).and.returnValue(Promise.resolve(res));
+		component.getSuperResolutionStatus();
+		expect(smartAssistService.getSuperResolutionStatus).toHaveBeenCalled();
+	});
+
+	it("getAntiTheftStatus", () => {
+		smartAssistService = TestBed.get(SmartAssistService);
+		smartAssistService.isShellAvailable = true;
+		const res: AntiTheftResponse = {
+			available: true, 
+			status: true,
+			isSupportPhoto:true,
+			cameraPrivacyState:true,
+			authorizedAccessState:true,
+			photoAddress:"",
+			alarmOften:  0, 
+			photoNumber:  0,
+		}
+		const spy = spyOn(
+			smartAssistService, 
+			"getAntiTheftStatus"
+		).and.returnValue(Promise.resolve(res));
+
+		component.getAntiTheftStatus();
+		expect(smartAssistService.getAntiTheftStatus).toHaveBeenCalled();
+	});
+
 
 	it("setHPDAdvancedSetting", () => {
 		smartAssistService = TestBed.get(SmartAssistService);
