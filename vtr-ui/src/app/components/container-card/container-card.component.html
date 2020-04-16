@@ -46,7 +46,7 @@
 								[title]=""
 								[innerHTML]="item.Title"
 								[ngbTooltip]="item.Title | htmlText"
-								tooltipClass="vtr-tooltip"
+								tooltipClass="vtr-system-tooltip"
 								container="body"
 								></div>
 							<div *ngIf="item.Description"
@@ -56,7 +56,7 @@
 								[title]=""
 								[innerHtml]="item.Description"
 								[ngbTooltip]="item.Description | htmlText"
-								tooltipClass="vtr-tooltip"
+								tooltipClass="vtr-system-tooltip"
 								container="body"
 								></div>
 							<div *ngIf="item.BrandImage || item.BrandName"
@@ -183,7 +183,7 @@
 								role="link"
 								[innerHtml]="item.Title"
 								[ngbTooltip]="item.Title | htmlText"
-								tooltipClass="vtr-tooltip"
+								tooltipClass="vtr-system-tooltip"
 								container="body"
 								></div>
 						</div>
@@ -236,7 +236,7 @@
 								[style.line-height.px]="containerCardArticle.clientWidth * 27 / 430"
 								role="link"
 								[ngbTooltip]="item.Title | htmlText"
-								tooltipClass="vtr-tooltip"
+								tooltipClass="vtr-system-tooltip"
 								container="body"
 								></div>
 							<div *ngIf="item.ActionLink && !isOfflineArm"
@@ -299,7 +299,7 @@
 								[style.line-height.px]="containerCardArticle.clientWidth * 27 / 430"
 								role="link"
 								[ngbTooltip]="item.Title | htmlText"
-								tooltipClass="vtr-tooltip"
+								tooltipClass="vtr-system-tooltip"
 								container="body"
 								></div>
 							<div *ngIf="item.ActionLink && !isOfflineArm"
@@ -351,7 +351,7 @@
 								id="{{containerCardId+'-title'}}"
 								role="link"
 								[ngbTooltip]="item.Title | htmlText"
-								tooltipClass="vtr-tooltip"
+								tooltipClass="vtr-system-tooltip"
 								container="body"
 								></div>
 							<div *ngIf="item.Description"
@@ -361,7 +361,7 @@
 									id="{{containerCardId+'-caption'}}"
 									role="link"
 									[ngbTooltip]="item.Description | htmlText"
-									tooltipClass="vtr-tooltip"
+									tooltipClass="vtr-system-tooltip"
 									container="body"
 									></div>
 							</div>
@@ -418,7 +418,7 @@
 								id="{{containerCardId+'-title'}}"
 								role="link"
 								[ngbTooltip]="item.Title | htmlText"
-								tooltipClass="vtr-tooltip"
+								tooltipClass="vtr-system-tooltip"
 								container="body"
 								></div>
 							<div *ngIf="item.ActionLink"
