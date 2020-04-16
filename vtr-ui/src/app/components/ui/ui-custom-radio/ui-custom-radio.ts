@@ -1,9 +1,9 @@
-import { ElementRef, Input, ViewChild } from '@angular/core';
+import { ElementRef, Input, ViewChild, AfterViewInit, OnInit, OnChanges } from '@angular/core';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from 'src/app/services/metric/metric.service';
 import { KeyCode } from 'src/app/enums/key-code.enum';
 
-export class UICustomRadio {
+export class UICustomRadio implements OnInit, AfterViewInit, OnChanges {
 	@Input() group: string;
 	@Input() label: string;
 	@Input() value: string;
@@ -29,6 +29,30 @@ export class UICustomRadio {
 			this.radioButton = element;
 			this.setRadioButtons();
 		}
+	}
+
+	ngOnInit() {
+		this.setRadioButtons(); // Set up radio buttons first , last etc and if none selected,set tabindex to first element
+	}
+
+	ngAfterViewInit(): void {
+		this.setRadioButtons(); // Set up radio buttons first , last etc and if none selected,set tabindex to first element
+	}
+
+	ngOnChanges(changes: any) {
+		// if (changes && changes.checked && !changes.checked.firstChange) {
+		// 	const elementDiv = document.getElementById('div' + this.radioId);
+		// 	if (elementDiv) {
+		// 		if (!this.checked) {
+		// 			elementDiv.setAttribute('aria-checked', 'false');
+		// 			elementDiv.tabIndex = -1;
+		// 		} else {
+		// 			elementDiv.setAttribute('aria-checked', 'true');
+		// 			elementDiv.tabIndex = 0;
+		// 			elementDiv.focus();
+		// 		}
+		// 	}
+		// }
 	}
 
 	changeRadioOnKeyPress($event, radio: HTMLInputElement) {
