@@ -76,11 +76,7 @@ export class CommsService {
 
 	async callUpeApi(url, queryParams: any = {}) {
 		// const url = this.env.upeApiRoot + api;
-		if (!Windows) {
-			return this.callUpeApiByWeb(url, queryParams);
-		} else {
-			return this.callUpeApiByShell(url, queryParams);
-		}
+		return this.callUpeApiByWeb(url, queryParams);
 	}
 
 	private async callUpeApiByWeb(url, queryParams: any = {}) {
@@ -96,14 +92,14 @@ export class CommsService {
 			}).toPromise();
 	}
 
+	// if the content contain Unicode, the CRI could return wrong encoding content in some certain machines.
 	private async callUpeApiByShell(strUrl, queryParams: any = {}) {
 		const client = new Windows.Web.Http.HttpClient();
 		const url = new Windows.Foundation.Uri(strUrl);
-		const request = new Windows.Web.Http.HttpRequestMessage(Windows.Web.Http.HttpMethod.post, url);
-		request.content = new Windows.Web.Http.HttpStringContent(JSON.stringify(queryParams),
+		const payload = new Windows.Web.Http.HttpStringContent(JSON.stringify(queryParams),
 			Windows.Storage.Streams.UnicodeEncoding.utf8,
-			'application/json;charset=UTF-8');
-		const response = await client.sendRequestAsync(request);
+			'application/json');
+		const response = await client.postAsync(url, payload);
 		let content;
 		if (response.statusCode === 200) {
 			content = await response.content.readAsStringAsync();

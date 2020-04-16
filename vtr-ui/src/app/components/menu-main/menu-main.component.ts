@@ -34,6 +34,8 @@ import { VantageShellService } from '../../services/vantage-shell/vantage-shell.
 import { BacklightLevelEnum } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.enum';
 import { BacklightService } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.service';
 import { TopRowFunctionsIdeapadService } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.service';
+import { BetaService, BetaStatus } from 'src/app/services/beta/beta.service';
+import cloneDeep from 'lodash/cloneDeep';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -59,6 +61,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 	private searchTipsTimeout: any;
 	private unsupportFeatureEvt: Observable<string>;
 	private subscription: Subscription;
+	private relaySubscription: Subscription;
 	public isLoggingOut = false;
 	public selfSelectStatusVal: boolean;
 	showMenu = false;
@@ -115,7 +118,8 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		private viewContainerRef: ViewContainerRef,
 		public cardService: CardService,
 		private feedbackService: FeedbackService,
-		private backlightService: BacklightService
+		private backlightService: BacklightService,
+		private betaService: BetaService
 	) {
 		newFeatureTipService.viewContainer = this.viewContainerRef;
 	}
@@ -125,6 +129,10 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		this.checkLiteGaming();
 
 		this.subscription = this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+		});
+
+		this.relaySubscription = this.commonService.replayNotification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
 
@@ -148,9 +156,22 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 
 	updateMenu(menu) {
 		if (menu && menu.length > 0) {
+			const showBetaFeature = this.betaService.showBetaFeature();
+			this.updateBetaFeature(menu, showBetaFeature);
 			this.items = menu;
 			this.preloadImages = this.collectPreloadAssets(menu);
 		}
+	}
+
+	updateBetaFeature(menu: any, showBetaFeature: boolean) {
+		menu.forEach( element => {
+			if (element.beta) {
+				element.hide = !showBetaFeature;
+			}
+			if (element.subitems && element.subitems.length && element.subitems.length > 0) {
+				this.updateBetaFeature(element.subitems, showBetaFeature);
+			}
+		});
 	}
 
 	private collectPreloadAssets(menu: Array<any>): string[] {
@@ -506,7 +527,12 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 					this.modernPreloadService.getIsEntitled();
 					break;
 				case MenuItem.MenuItemChange:
-					this.updateMenu(notification.payload);
+					const menuToShow = cloneDeep(notification.payload);
+					this.betaService.checkBetaFeatureAvailable(notification.payload);
+					this.updateMenu(menuToShow);
+					break;
+				case MenuItem.MenuBetaItemChange:
+					this.updateMenu(this.items);
 					break;
 				case LenovoIdStatus.LoggingOut:
 					this.isLoggingOut = notification.payload;

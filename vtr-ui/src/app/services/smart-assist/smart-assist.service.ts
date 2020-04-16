@@ -5,7 +5,6 @@ import {
 	FeatureStatus
 } from 'src/app/data-models/common/feature-status.model';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
-import { DisplayService } from 'src/app/services/display/display.service';
 import { AntiTheftResponse } from 'src/app/data-models/antiTheft/antiTheft.model';
 
 @Injectable({
@@ -30,7 +29,7 @@ export class SmartAssistService {
 	public isAPSavailable = false;
 	private shellVersion: string;
 
-	constructor(shellService: VantageShellService, private displayService: DisplayService) {
+	constructor(shellService: VantageShellService) {
 		this.intelligentSensing = shellService.getIntelligentSensing();
 		this.intelligentMedia = shellService.getIntelligentMedia();
 		this.activeProtectionSystem = shellService.getActiveProtectionSystem(); // getting APS Object from //vantage-shell.service
@@ -348,11 +347,11 @@ export class SmartAssistService {
 	//region Intelligent Sensting (anti theft) section
 
 	public async getAntiTheftStatus(): Promise<AntiTheftResponse> {
-		const antiTheftDate = { available: false, status: false, isSupportPhoto: false, photoAddress: "", cameraPrivacyState: false, authorizedAccessState: true, alarmOften: 0, photoNumber: 5 };
+		const antiTheftDate = { available: false, status: false, isSupportPhoto: false, photoAddress: "", cameraPrivacyState: true, authorizedAccessState: true, alarmOften: 0, photoNumber: 5 };
 		try {
 			if (this.isShellAvailable) {
-				const data = await Promise.all([this.antiTheft.getMotionAlertSetting(), this.getCameraPrivacyState()]);
-				const obj = JSON.parse(data[0]);
+				const data = this.antiTheft.getMotionAlertSetting();
+				const obj = JSON.parse(data);
 				if (obj && obj.errorCode === 0) {
 					antiTheftDate.available = obj.available;
 					antiTheftDate.status = obj.enabled;
@@ -361,21 +360,11 @@ export class SmartAssistService {
 					antiTheftDate.alarmOften = obj.alarmDuration;
 					antiTheftDate.photoNumber = obj.photoNumber;
 				}
-				antiTheftDate.cameraPrivacyState = !data[1];
-				//antiTheftDate.authorizedAccessState = data[0];
 				return Promise.resolve(antiTheftDate);
 			}
 		} catch (error) {
 			return Promise.resolve(antiTheftDate);
 		}
-	}
-
-	public async getCameraPrivacyState(): Promise<boolean> {
-		if (this.displayService.isShellAvailable && this.isShellAvailable) {
-			const featureStatus = await this.displayService.getCameraPrivacyModeState();
-			return featureStatus.status;
-		}
-		return undefined;
 	}
 
 	public setAntiTheftStatus(value: boolean): Promise<boolean> {

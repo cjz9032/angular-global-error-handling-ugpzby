@@ -65,6 +65,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	private microphoneDevice: any;
 	private microphnePermissionHandler: any;
 	private cameraStatusChangeBySet = false;
+	private cameraAccessChangedHandler: any;
 
 	@Output() toggle = new EventEmitter<{ sender: string; value: boolean }>();
 
@@ -85,10 +86,6 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		if (this.Windows) {
 			this.windowsObj = this.Windows.Devices.Enumeration.DeviceAccessInformation
 				.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.videoCapture);
-
-			this.windowsObj.addEventListener('accesschanged', () => {
-				this.getCameraPrivacyStatus();
-			});
 
 			this.microphoneDevice = this.Windows.Devices.Enumeration.DeviceAccessInformation
 				.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.audioCapture);
@@ -133,6 +130,16 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			};
 			this.microphoneDevice.addEventListener('accesschanged', this.microphnePermissionHandler, false);
 		}
+		if (this.windowsObj) {
+			this.cameraAccessChangedHandler = (args:any) => {
+				if (args) {
+					if (this.cameraStatus.available) {
+						this.getCameraPermission();
+					}
+				}
+			}
+			this.windowsObj.addEventListener('accesschanged', this.cameraAccessChangedHandler);
+		} 
 	}
 
 	initDataFromCache() {
@@ -171,6 +178,10 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		if (this.microphoneDevice) {
 			this.microphoneDevice.removeEventListener('accesschanged', this.microphnePermissionHandler, false);
 		}
+
+		if (this.windowsObj) {
+			this.windowsObj.removeEventListener('accesschanged', this.cameraAccessChangedHandler);
+		} 
 	}
 
 	//#region private functions

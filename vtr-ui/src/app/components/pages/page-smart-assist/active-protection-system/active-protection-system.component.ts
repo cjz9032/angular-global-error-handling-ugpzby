@@ -82,7 +82,7 @@ export class ActiveProtectionSystemComponent implements OnInit {
 	toggleAdvanced($event: Event) {
 
 		this.advancedToggle = !this.advancedToggle;
-		//if ($event.type === 'click') {
+		// if ($event.type === 'click') {
 		if (this.advancedToggle) {
 			this.focusElement(this.advanceSettings);
 
@@ -93,7 +93,7 @@ export class ActiveProtectionSystemComponent implements OnInit {
 
 		}
 
-		//}
+		// }
 
 	}
 	constructor(private smartAssist: SmartAssistService, private translate: TranslateService) { }
@@ -169,10 +169,10 @@ export class ActiveProtectionSystemComponent implements OnInit {
 			.then(res => { });
 	}
 
-	setAPSSensitivityLevel($event) {
-		this.apsSensitivity = $event.value
+	setAPSSensitivityLevel($event: number) {
+		this.apsSensitivity = $event
 		let value: number;
-		switch ($event.value) {
+		switch ($event) {
 			case 0: {
 				value = 2;
 				break;

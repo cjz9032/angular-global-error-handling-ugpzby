@@ -16,6 +16,7 @@ export class UiToggleComponent implements OnInit, OnDestroy, OnChanges {
 	@Input() notChange = false;
 	@Input() toggleId: any;
 	@Input() focus = false;
+	@Input() tabIndexNum = 1;
 	public currentEvent: any;
 	public disabled = true;
 	public timer = 0;
@@ -80,6 +81,12 @@ export class UiToggleComponent implements OnInit, OnDestroy, OnChanges {
 
 	stopPropagation(event) {
 		event.stopPropagation();
+	}
+
+	public hideColorPicker(){
+		if(document.getElementById("colorPicker")){
+		   document.getElementById("colorPicker").style.display = "none"; 
+		}
 	}
 
 }
