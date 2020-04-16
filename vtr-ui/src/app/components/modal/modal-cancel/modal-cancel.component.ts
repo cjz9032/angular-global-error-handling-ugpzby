@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Input, ElementRef, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input, ViewChildren, ElementRef, AfterViewInit, QueryList } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
@@ -26,7 +26,7 @@ export class ModalCancelComponent implements OnInit, AfterViewInit {
 
 	@Output() cancelRequested: EventEmitter<any> = new EventEmitter();
 
-	@ViewChildren("cancel_modal_ok") cancel_modal_ok: QueryList<ElementRef>;
+	@ViewChildren("cancel_modal_ok") cancelModalOkListener: QueryList<ElementRef>;
 
 	constructor(private translate: TranslateService, public activeModal: NgbActiveModal) { }
 
@@ -40,11 +40,14 @@ export class ModalCancelComponent implements OnInit, AfterViewInit {
 		}, this.MS_INTERVAL);
 	}
 
-	ngAfterViewInit() {
-		// Ensure that the <OK> button will be focused as soon as it's appear on the screen
-		this.cancel_modal_ok.changes.subscribe(() => {
-			if (this.cancel_modal_ok.length > 0) {
-				this.cancel_modal_ok.first.nativeElement.focus();
+	ngAfterViewInit () {
+		// Keep looking for the button
+		this.cancelModalOkListener.changes.subscribe(() => {
+			// When it appears, focus it using its id.
+			// It's not possible to use the 'this.cancelModalOkListener.first' here,
+			// once it's an Angular component and not a regular HTML element.
+			if (this.cancelModalOkListener.length > 0) {
+				document.getElementById('cancel_modal_ok').focus();
 			}
 		});
 	}
