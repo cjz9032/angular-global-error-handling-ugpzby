@@ -1,6 +1,6 @@
 <button class="toggle-button"
 	[ngClass]="{'selected': value}"
-	tabindex="1"
+	[tabindex]="tabIndexNum"
 	id="{{value ? onOffSwitchId+'_toggle_on' : onOffSwitchId+'_toggle_off'}}"
 	(click)="sendChangeEvent($event)"
 	[value]="value"
@@ -10,7 +10,8 @@
 	metricsEvent="featureClick"
 	[metricsParent]="parentId"
 	[metricsItem]="onOffSwitchId"
-	[metricsValue]="!(value)">
+	[metricsValue]="!(value)"
+	(focus)="hideColorPicker()">
 	<button tabindex="-1"
 		class="btnRound"
 		[ngClass]="{'selected': value}"
