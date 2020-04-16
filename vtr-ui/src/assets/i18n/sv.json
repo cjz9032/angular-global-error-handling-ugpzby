@@ -221,8 +221,7 @@
                     "sub1": "Support",
                     "sub2": "Facebook",
                     "sub3": "Instagram"
-                },
-                "smartPerformance": "Smart Performance"
+                }
             },
             "narrator": {
                 "pageTitle": {
@@ -4034,9 +4033,6 @@
             "subtitle2": "Allt-i-ett: smidigt och enkelt",
             "body2": "Allt-i-ett-datorer med 9:e generationens Intel® Core™-processorer ger dig alla fördelar med en stationär dator förpackade i en slimmad bildskärm – för en renare arbetsyta, maskinvarubaserad säkerhet och högupplöst bild."
         }
-    },
-    "cpt": {
-        "title": "Content Preview Tool"
     },
     "storeRating": {
         "title": "Ge oss din röst",

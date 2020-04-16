@@ -221,8 +221,7 @@
                     "sub1": "Suporte",
                     "sub2": "Facebook",
                     "sub3": "Instagram"
-                },
-                "smartPerformance": "Smart Performance"
+                }
             },
             "narrator": {
                 "pageTitle": {
@@ -4034,9 +4033,6 @@
             "subtitle2": "Multifunções: otimizado",
             "body2": "Os PCs All-in-One com processadores Intel® Core™ de 9.ª geração oferecem toda a potência de um desktop com um ecrã elegante para desfrutar de uma segurança baseada em hardware simplificada e um ecrã de alta resolução."
         }
-    },
-    "cpt": {
-        "title": "Content Preview Tool"
     },
     "storeRating": {
         "title": "Envie-nos a sua opinião",

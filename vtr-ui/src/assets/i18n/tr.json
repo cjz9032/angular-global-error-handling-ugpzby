@@ -221,8 +221,7 @@
                     "sub1": "Destek",
                     "sub2": "Facebook",
                     "sub3": "Instagram"
-                },
-                "smartPerformance": "Smart Performance"
+                }
             },
             "narrator": {
                 "pageTitle": {
@@ -4034,9 +4033,6 @@
             "subtitle2": "Hepsi Bir Arada: Hızlandırılmış",
             "body2": "9. Nesil Intel® Core™ işlemcili Hepsi Bir Arada Bilgisayarlar, bir masaüstü bilgisayarın tüm gücünü daha az karmaşa, donanım tabanlı güvenlik ve yüksek çözünürlüklü bir ekran için şık bir ekranda bir araya getirerek sunar."
         }
-    },
-    "cpt": {
-        "title": "Content Preview Tool"
     },
     "storeRating": {
         "title": "Görüşlerinizi Bize Gönderin",
