@@ -1446,23 +1446,35 @@
                 "subtitle": "오디오 설정",
                 "description": "이 섹션에서는 Dolby 설정, 마이크 등의 오디오 설정을 수동으로자동으로 최적화하거나 구성할 수 있습니다.",
                 "audioSmartsettings": {
-                    "title": "오디오 스마트 설정",
-                    "subtitle": "응용 프로그램 기반 설정",
-                    "description": "사용하고 있는 다양한 앱에 따라 오디오 설정을 자동으로 조정합니다.",
+                    "title": "Audio smart settings",
                     "dolby": {
-                        "title": "자동 Dolby 오디오 설정",
-                        "tooltip": "자동 Dolby 오디오 설정 기능에서는 Dolby 오디오 설정울 사용하고있는 다른 앱에 적절한 모드로 구성하여 더욱 개선된 오이오를 사용할 수 있게 합니다.",
+                        "title": "Dolby audio",
+                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
-                            "dynamic": "동적",
-                            "movie": "영화",
-                            "music": "음악",
-                            "games": "게임",
-                            "voip": "음성"
+                            "dynamic": "DYNAMIC",
+							"movie": "MOVIE",
+							"music": "MUSIC",
+							"games": "GAME",
+							"voip": "VOICE"
+                        },
+                        "automaticAudioCheckboxText": "Automatic audio optimization for",
+                        "automaticAudioMode": {
+                            "voIPMode": {
+                                "radioText": "VoIP",
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                            },
+                            "entertainmentMode": {
+                                "radioText": "Entertainment",
+                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
+                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                            }
                         }
                     },
-                    "voip": {
-                        "title": "VoIP에 대한 자동 오디오 최적화",
-                        "tooltip": "VoIP 통화를 하는 동안 자동으로 Dolby 음성 모드로 전환하여 깨끗하고 일관된 음성 품질을 제공하십시오."
+                    "eCourse": {
+                        "title": "Interactive E-course mode",
+                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
                     }
                 },
                 "microphone": {

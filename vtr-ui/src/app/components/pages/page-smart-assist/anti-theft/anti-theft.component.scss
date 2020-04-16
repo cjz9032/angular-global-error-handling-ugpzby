@@ -44,6 +44,7 @@ vtr-ui-row-switch {
       margin-top: 0px !important;
       outline: 0;
       .custom-control-label {
+        line-height: 1.5;
         font-size: $fontsize_xs;
         font-weight: $weight_light;
         &::before {
@@ -114,6 +115,13 @@ vtr-ui-row-switch {
       }
     }
   }
+
+  .showPhoto {
+    .btn-link{
+      margin-top: -6px;
+    }
+  }
+
   .right-icon {
     font-size: $fontsize_sm;
     color: $menu_hover;
