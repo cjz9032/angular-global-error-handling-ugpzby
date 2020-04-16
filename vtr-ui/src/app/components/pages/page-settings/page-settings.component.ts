@@ -71,6 +71,28 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			leftImageSource: ['fal', 'flask'],
 		}
 	];
+
+	allUsageTypes = [
+		{
+			id: 'personal-use',
+			value: this.segmentConst.Consumer,
+			textKey: 'welcometutorial.personal',
+			image: 'personal-use.jpg',
+		},
+		{
+			id: 'business-use',
+			value: this.segmentConst.SMB,
+			textKey: 'welcometutorial.business',
+			image: 'business-use.jpg',
+		},
+		{
+			id: 'custom-use',
+			value: this.segmentConst.Commercial,
+			textKey: 'welcometutorial.professional',
+			image: 'custom-use.jpg',
+		},
+	];
+
 	metrics: any;
 	metricsPreference: any;
 	notificationSubscription: any;
