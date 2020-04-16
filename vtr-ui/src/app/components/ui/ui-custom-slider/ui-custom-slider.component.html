@@ -17,6 +17,8 @@
 			[metricsEvent]="metricsEvent"
 			[metricsValue]="metricsValue"
 			(input)="onInputChange($event)"
+			(blur)="onInputFocus(false)"
+			(focus)="onInputFocus(true)"
 			[step]="step">
 		<!-- <output class="bubble"
 			[for]="sliderId"
