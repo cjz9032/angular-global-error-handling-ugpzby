@@ -61,7 +61,6 @@ import { UiCloseButtonModule } from 'src/app/components/ui/ui-close-button/ui-cl
 		LicensesService,
 	],
 	exports: [
-		// cpt
 		UIArticleItemComponent,
 		ContainerArticleComponent,
 	],

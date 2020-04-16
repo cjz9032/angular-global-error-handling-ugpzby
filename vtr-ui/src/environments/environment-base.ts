@@ -8,5 +8,4 @@ export interface IEnvironment {
 	allowMockService: boolean;
 	isLoggingEnabled: boolean;
 	isServerSwitchEnabled: boolean;
-	isCPTEnabled: boolean;
 }

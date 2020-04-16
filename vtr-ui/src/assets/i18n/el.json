@@ -217,8 +217,7 @@
                     "sub1": "Υποστήριξη",
                     "sub2": "Facebook",
                     "sub3": "Instagram"
-                },
-                "smartPerformance": "Smart Performance"
+                }
             },
             "narrator": {
                 "pageTitle": {
@@ -3981,9 +3980,6 @@
             "subtitle2": "Υπολογιστές all-in-one: Βελτιωμένοι",
             "body2": "Οι υπολογιστές all-in-one με επεξεργαστές Intel® Core™ 9ης γενιάς σας παρέχουν όλη την ισχύ ενός επιτραπέζιου υπολογιστή, συσκευασμένη σε μια κομψή οθόνη — για λιγότερη ακαταστασία, ασφάλεια βάσει υλικού και οθόνη υψηλής ανάλυσης."
         }
-    },
-    "cpt": {
-        "title": "Content Preview Tool"
     },
     "storeRating": {
         "title": "Στείλτε μας τη φωνή σας",

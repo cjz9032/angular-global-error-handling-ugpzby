@@ -75,11 +75,6 @@ const routes: Routes = [
 		loadChildren: () => import('./smart-performance/smart-performance.module').then(m => m.SmartPerformanceModule)
 	},
 	{
-		path: 'cpt',
-		/*component: PageCptComponent*/
-		loadChildren: () => import('./cpt/cpt.module').then(m => m.CptModule)
-	},
-	{
 		path: '**',
 		canActivate: [ProtocolGuardService],
 		component: HomeComponent

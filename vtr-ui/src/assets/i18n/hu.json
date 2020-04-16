@@ -217,8 +217,7 @@
                     "sub1": "Támogatás",
                     "sub2": "Facebook",
                     "sub3": "Instagram"
-                },
-                "smartPerformance": "Smart Performance"
+                }
             },
             "narrator": {
                 "pageTitle": {
@@ -3981,9 +3980,6 @@
             "subtitle2": "All-in-One: Egyszerű",
             "body2": "Az all-in-one számítógépek a 9. generációs Intel® Core™ processzorral az asztali számítógépek minden előnyét biztosítják egy karcsú kijelzőbe csomagolva – kevesebb rendetlenséggel, hardver alapú biztonsággal és nagy felbontású kijelzővel."
         }
-    },
-    "cpt": {
-        "title": "Content Preview Tool"
     },
     "storeRating": {
         "title": "Ossza meg velünk a véleményét!",
