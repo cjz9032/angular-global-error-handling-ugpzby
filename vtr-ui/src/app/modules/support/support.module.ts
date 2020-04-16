@@ -58,7 +58,6 @@ import { LicensesService } from 'src/app/services/licenses/licenses.service';
 		LicensesService,
 	],
 	exports: [
-		// cpt
 		UIArticleItemComponent,
 		ContainerArticleComponent,
 	],
