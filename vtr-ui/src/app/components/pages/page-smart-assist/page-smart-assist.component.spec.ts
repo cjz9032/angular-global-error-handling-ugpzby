@@ -191,28 +191,7 @@ describe('Component: PageSmartAssistComponent', () => {
 			"setZeroTouchLockDistanceSensitivity"
 		).and.returnValue(Promise.resolve(1));
 
-		const para = {
-			switchValue: false,
-		}
-
-		component.SetZeroTouchLockDistanceSensitivity(para);
-		expect(smartAssistService.setZeroTouchLockDistanceSensitivity).toHaveBeenCalled();
-	});
-
-	it("SetZeroTouchLockDistanceSensitivity", () => {
-		smartAssistService = TestBed.get(SmartAssistService);
-		smartAssistService.isShellAvailable = true;
-
-		const spy = spyOn(
-			smartAssistService, 
-			"setZeroTouchLockDistanceSensitivity"
-		).and.returnValue(Promise.resolve(1));
-
-		const para = {
-			switchValue: false,
-		}
-
-		component.SetZeroTouchLockDistanceSensitivity(para);
+		component.SetZeroTouchLockDistanceSensitivity(1);
 		expect(smartAssistService.setZeroTouchLockDistanceSensitivity).toHaveBeenCalled();
 	});
 
