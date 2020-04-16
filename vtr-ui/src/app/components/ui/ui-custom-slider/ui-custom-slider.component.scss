@@ -198,10 +198,9 @@
 			font-size: 12px;
 			display: inline-block;
 			position: relative;
-			// transform: translate(0%, 0);
 			border-radius: 6px;
-
 			left: 3px;
+			top: -3px;
 			@supports (-ms-ime-align: auto) {
 				// left: 3px; // for extra margin added in ::-ms-thumb
 				margin: 0 3px;

@@ -23,11 +23,10 @@
 					"!/assets/i18n/**"
 				],
 				"urls": [
-					"https://qa.csw.lenovo.com/**",
-					"https://vantage-qa.csw.lenovo.com/**",
-					"https://vantage-stage.csw.lenovo.com/**",
-					"https://vantage.csw.lenovo.com/**",
-					"https://cms.csw.lenovo.com/**"
+					"https://vantage*.csw.lenovo.com/**/*.jpg",
+					"https://vantage*.csw.lenovo.com/**/*.png",
+					"https://vantage*.csw.lenovo.com/**/*.svg",
+					"https://vantage*.csw.lenovo.com/**/*.webp"
 				]
 			}
 		}
@@ -36,11 +35,8 @@
 		{
 			"name": "cms",
 			"urls": [
-				"https://vantage-qa.csw.lenovo.com/**",
-				"https://vantage-qa-2.csw.lenovo.com/**",
-				"https://vantage-stage.csw.lenovo.com/**",
-				"https://vantage.csw.lenovo.com/**",
-				"https://cms.csw.lenovo.com/**"
+				"https://vantage*.csw.lenovo.com/api/**",
+				"https://vantage*.csw.lenovo.com/*.js"
 			],
 			"cacheConfig": {
 				"maxSize": 50,

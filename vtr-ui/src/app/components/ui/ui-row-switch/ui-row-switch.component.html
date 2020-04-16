@@ -11,27 +11,38 @@
 				[ngClass]="{'flex-grow-1': (isSwitchVisible && !resetTextAsButton),
 					'col-md-11 col-11':(!resetTextAsButton && !isSwitchVisible),
 					'col-md-7': (resetTextAsButton && !isSwitchVisible),
-					'col-md-10':type===undefined }">
-				<div class="container-fluid p-0">
-					<div class="row m-0">
+					'col-md-10':type===undefined }"
+				role="table">
+				<div class="container-fluid p-0"
+					role="rowgroup">
+					<div class="row m-0"
+						role="row">
 						<div class="col-auto left-icon-column"
+							role="cell"
 							*ngIf="leftIcon.length > 0">
-							<div class="left-icon-block">
+							<div class="left-icon-block"
+								role="img"
+								attr.aria-label="{{leftIcon[1]}}">
 								<fa-icon *ngIf="!isAdminRequired && leftIcon[0]!=='icomoon' && leftIcon[0]!=='svg'"
 									class="left-icon"
-									[icon]="leftIcon"></fa-icon>
+									[icon]="leftIcon"
+									attr.aria-hidden="true"></fa-icon>
 								<svg-icon *ngIf="!isAdminRequired && leftIcon[0]==='svg'"
+									attr.aria-hidden="true"
 									[applyCss]="true"
 									[stretch]="true"
 									class="left-icon-svg svg-inline--fa fa-w-20  ng-fa-icon"
 									[src]="'assets/icons/'+leftIcon[1]+'.svg'"></svg-icon>
 								<span *ngIf="!isAdminRequired && leftIcon[0]==='icomoon'"
-									[ngClass]="'icomoon '+leftIcon[1]"></span>
+									[ngClass]="'icomoon '+leftIcon[1]"
+									attr.aria-hidden="true"></span>
 								<img *ngIf="isAdminRequired"
+									attr.aria-hidden="true"
 									class="adminLogo" />
 							</div>
 						</div>
-						<div class="col">
+						<div class="col"
+							role="cell">
 							<div class="title"
 								id="{{switchId}}-title">
 								{{ title }}
@@ -78,8 +89,9 @@
 						(click)="onResetClick($event)"
 						(keydown.enter)="onResetClick($event)"
 						[attr.aria-disabled]="disabledAll"
-						[ngbTooltip]="resetText" tooltipClass="vtr-system-tooltip" container="body"
-						>
+						[ngbTooltip]="resetText"
+						tooltipClass="vtr-system-tooltip"
+						container="body">
 						<span class="text-ellipsis">{{ resetText }}</span>
 					</button>
 
@@ -126,7 +138,7 @@
 						[attr.aria-label]="title +' tooltip, which reads: '+ tooltipText"
 						class="right-icon"
 						tabindex="0"
-						role="img"
+						role="none"
 						triggers="manual"
 						placement="left"
 						[ngbTooltip]="tooltipRef"
@@ -135,6 +147,8 @@
 						container="vtr-root"
 						tooltipClass="vtr-tooltip"
 						(click)="onRightIconClick(rightToolTip1, $event)"
+						(keydown.shift.tab)="closeAllToolTips()"
+						(keydown.tab)="closeAllToolTips()"
 						(keydown.enter)="onRightIconClick(rightToolTip1, $event)">
 					</fa-icon>
 				</div>
@@ -147,6 +161,7 @@
 						class="right-icon"
 						triggers="manual"
 						placement="left"
+						role="none"
 						[ngbTooltip]="smartTooltipRef"
 						#rightToolTip2="ngbTooltip"
 						[autoClose]="true"
@@ -154,6 +169,8 @@
 						container="vtr-root"
 						tooltipClass="vtr-tooltip"
 						(click)="onRightIconClick(rightToolTip2, $event)"
+						(keydown.shift.tab)="closeAllToolTips()"
+						(keydown.tab)="closeAllToolTips()"
 						(keydown.enter)="onRightIconClick(rightToolTip2, $event)"></fa-icon>
 				</div>
 
@@ -166,6 +183,7 @@
 						class="right-icon"
 						triggers="manual"
 						placement="left"
+						role="none"
 						[ngbTooltip]="fnCtrltoolTipRef"
 						#rightToolTip3="ngbTooltip"
 						[autoClose]="true"
@@ -173,6 +191,8 @@
 						container="vtr-root"
 						tooltipClass="vtr-tooltip fnctrl-tooltip"
 						(click)="onRightIconClick(rightToolTip3, $event)"
+						(keydown.shift.tab)="closeAllToolTips()"
+						(keydown.tab)="closeAllToolTips()"
 						(keydown.enter)="onRightIconClick(rightToolTip3, $event)"></fa-icon>
 				</div>
 
