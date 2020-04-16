@@ -28,10 +28,16 @@
 
 </section> -->
 
-<div class="ui-dropdown">
+<div class="ui-dropdown" [ngClass]="{ 'knock-out-wrap': disabled }">
 	<button
 		#toggleBtn
 		class="ui-btn-dropdown"
+		[ngClass]="{
+			'knock-out-btn': disabled,
+			'apply-btn-hover': !disabled && applyHoverClass,
+			'apply-btn-focus': !disabled && applyFocusClass,
+			'apply-btn-list-open': isDropDownOpen
+		}"
 		type="button"
 		id="{{ dropDownId }}"
 		[attr.aria-label]="narratorLabel"
@@ -39,10 +45,20 @@
 		aria-haspopup="listbox"
 		[attr.aria-expanded]="isDropDownOpen"
 		[disabled]="disabled"
-		(click)="isDropDownOpen = !isDropDownOpen"
+		(click)="
+			isDropDownOpen = !isDropDownOpen; applyFocusClass = !applyFocusClass
+		"
+		(mouseover)="applyHoverClass = !applyFocusClass ? true : false"
+		(mouseleave)="applyHoverClass = false"
+		(focus)="applyFocusClass = true"
+		(blur)="applyFocusClass = false"
 		tabindex="0"
 	>
-		<div aria-hidden="true" class="label-name">
+		<div
+			aria-hidden="true"
+			class="label-name"
+			[ngClass]="{ 'knock-out-label': disabled }"
+		>
 			{{ name }}
 			{{
 				textCase === "oled"
@@ -53,11 +69,12 @@
 		<span
 			><fa-icon
 				class="chevron"
-				[icon]="
-					isDropDownOpen
-						? ['fal', 'chevron-up']
-						: ['fal', 'chevron-down']
-				"
+				[ngClass]="{
+					'knock-out-chevron': disabled,
+					'apply-chevron-up': isDropDownOpen
+				}"
+				(click)="toggleList($event)"
+				[icon]="isDropDownOpen ? iconUp : iconDown"
 			>
 			</fa-icon
 		></span>
@@ -76,14 +93,13 @@
 			*ngFor="let item of list; let i = index"
 			role="option"
 			id="{{ item.text }}"
-			(click)="closeDropdown({value: i, hideList: false})"
+			(click)="closeDropdown({ value: i, hideList: false })"
 			vtrMetrics
 			metricsEvent="FeatureClick"
 			[metricsItem]="dropDownName"
 			[metricsValue]="item"
 			tabindex="-1"
-			[attr.aria-selected]="selectedDuration === i ? true : false
-			"
+			[attr.aria-selected]="selectedDuration === i ? true : false"
 			>{{
 				textCase === "oled"
 					? customCamelCase(item.text)
