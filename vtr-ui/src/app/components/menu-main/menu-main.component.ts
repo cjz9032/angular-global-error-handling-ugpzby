@@ -59,6 +59,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 	private searchTipsTimeout: any;
 	private unsupportFeatureEvt: Observable<string>;
 	private subscription: Subscription;
+	private relaySubscription: Subscription;
 	public isLoggingOut = false;
 	public selfSelectStatusVal: boolean;
 	showMenu = false;

@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { DropDownInterval } from 'src/app/data-models/common/drop-down-interval.model';
+import { faChevronDown } from '@fortawesome/pro-light-svg-icons/faChevronDown';
+import { faChevronUp } from '@fortawesome/pro-light-svg-icons/faChevronUp';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
@@ -9,6 +11,8 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 	styleUrls: ['./ui-dropdown.component.scss']
 })
 export class UiDropDownComponent implements OnInit {
+	iconUp = faChevronUp;
+	iconDown = faChevronDown
 	@Input() dropDownId: string;
 	@Input() dropDownName: string;
 	@Input() list: DropDownInterval[];
@@ -21,6 +25,8 @@ export class UiDropDownComponent implements OnInit {
 	placeholder: string;
 	narratorLabel: string;
 	selectedDuration: number;
+	applyHoverClass: boolean;
+	applyFocusClass: boolean;
 
 	constructor(private translate: TranslateService, private logger: LoggerService) { }
 
@@ -58,6 +64,14 @@ export class UiDropDownComponent implements OnInit {
 		}
 	}
 
+	toggleList(event) {
+		event.stopPropagation();
+		if(!this.disabled) {
+		this.isDropDownOpen = !this.isDropDownOpen;
+		this.applyFocusClass = false;
+		}
+	}
+
 	// Below method is triggered from directive to close the dropdown list and set the change in interval if any.
 	closeDropdown(eventObj: any ) {	
 		try {
@@ -79,15 +93,15 @@ export class UiDropDownComponent implements OnInit {
 	// 	}
 	// }
 
-	public select(item: DropDownInterval) {
-		this.value = item.value;
-		this.name = item.name;
-		this.placeholder = item.placeholder;
-		this.selectedDuration = this.list.indexOf(item)
-		this.isDropDownOpen = !this.isDropDownOpen;
-		this.change.emit(item);
-		// this.toggleButton.nativeElement.focus()
-	}
+	// public select(item: DropDownInterval) {
+	// 	this.value = item.value;
+	// 	this.name = item.name;
+	// 	this.placeholder = item.placeholder;
+	// 	this.selectedDuration = this.list.indexOf(item)
+	// 	this.isDropDownOpen = !this.isDropDownOpen;
+	// 	this.change.emit(item);
+	// 	// this.toggleButton.nativeElement.focus()
+	// }
 
 	public customCamelCase(value: string) {
 		if (value === null) {

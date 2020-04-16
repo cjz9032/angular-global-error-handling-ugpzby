@@ -26,7 +26,8 @@
 		[attr.aria-checked]="checked" />
 	<label for="{{radioId}}">
 
-		<span class="label">{{label}}</span>
+		<span *ngIf="!isTopRowFunction" class="label">{{label}}</span>
+		<span *ngIf="isTopRowFunction" class="label" [innerHTML]="label"></span>
 		<span class="{{iconName}} mt-3"></span>
 
 		<span *ngIf="!hideIcon"

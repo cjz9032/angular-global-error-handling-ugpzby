@@ -16,6 +16,8 @@ export class UiRectangleRadioComponent extends UICustomRadio implements OnInit, 
 	@Input() disabled: boolean;
 	@Input() iconName: string;
 	@Output() customKeyEvent = new EventEmitter();
+	@Input() isTopRowFunction = false;
+
 	@Output() change: EventEmitter<any> = new EventEmitter();
 	hideIcon: boolean = false;
 
