@@ -105,7 +105,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		public deviceService: DeviceService,
 		public selfSelectService: SelfSelectService,
 		private timerService: TimerService,
-		private betaService: BetaService,
+		public betaService: BetaService,
 		private localInfoService: LocalInfoService,
 		private loggerService: LoggerService
 	) {

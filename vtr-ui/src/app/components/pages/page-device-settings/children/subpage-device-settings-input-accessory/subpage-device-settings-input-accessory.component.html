@@ -280,8 +280,8 @@
 							<div class="row controls">
 								<div class="col-auto"
 									*ngIf="isTouchPadVisible">
-									<a id="inputAccessories.controlOptions.touchpad" 
-										aria-label="inputAccessories.controlOptions.touchpad" 
+									<a id="inputAccessories.controlOptions.touchpad"
+										role="link" 
 										(click)='launchProtocol("ms-settings:devices-touchpad")'
 										(keydown.enter)='launchProtocol("ms-settings:devices-touchpad")'
 										tabindex="0">{{'device.deviceSettings.inputAccessories.controlOptions.control1' | translate}}
@@ -290,18 +290,19 @@
 								<div class="col-auto"
 									*ngIf="isMouseVisible">
 									<a *ngIf="machineType === 1"
+										role="link"
 										id="inputAccessories.controlOptions.trackpoint"
 										(click)='launchProtocol("ms-settings:mousetouchpad")'
 										(keydown.enter)='launchProtocol("ms-settings:mousetouchpad")'
-										[tabindex]="isMouseVisible && machineType === 1 ? 0 : -1" aria-label="inputAccessories.controlOptions.trackpoint">
+										[tabindex]="isMouseVisible && machineType === 1 ? 0 : -1">
 										{{'device.deviceSettings.inputAccessories.controlOptions.control3' | translate}}
 									</a>
 									<a 	*ngIf="machineType !== 1"
+										role="link"
 										[tabindex]="isMouseVisible && machineType !== 1 ? 0 : -1" 
 										id="inputAccessories.controlOptions.mousecontrol"
 										(click)='launchProtocol("ms-settings:mousetouchpad")'
-										(keydown.enter)='launchProtocol("ms-settings:mousetouchpad")'
-										aria-label="inputAccessories.controlOptions.mousecontrol">
+										(keydown.enter)='launchProtocol("ms-settings:mousetouchpad")'>
 											{{'device.deviceSettings.inputAccessories.controlOptions.control2' | translate}}
 									</a>
 									<!-- <ng-template #otherMachine> -->
