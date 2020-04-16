@@ -1139,7 +1139,17 @@
                                 "list1": "Fai clic sull'icona della batteria di Windows nella barra degli strumenti",
                                 "list2": "Viene visualizzata la modalità Risparmio energia di Windows, utilizzare il dispositivo di scorrimento per scegliere tra tempo o prestazioni ottimali."
                             }
-                        }
+                        },
+                        "autoTransition": {
+							"description": "Abilita \"Prestazioni estreme\" in questa modalità. Se abilitata, la temperatura superficiale del computer e il rumore della ventola potrebbero aumentare automaticamente.",
+							"more": "ALTRO",
+							"less": "MENO",
+							"moreContent": {
+								"desc1": "a. In ufficio, durante gli aggiornamenti di Windows, la visione di filmati o il caricamento dell'illuminazione di sistema, il sistema può essere silenzioso. In scenari di gioco normali, ha prestazioni migliori.",
+								"desc2": "b. Durante la riproduzione di giochi pesanti, la modalità \"Prestazioni estreme\" si attiva automaticamente. Potrebbe causare più rumorosità o temperatura superiore sulla superficie del computer.",
+								"desc3": "c. Quando la capacità della batteria è inferiore al 30%, il sistema passa automaticamente alla modalità \"Risparmio batteria\"."
+							}			
+						}
                     },
                     "nonintelligentCooling": {
                         "options": {

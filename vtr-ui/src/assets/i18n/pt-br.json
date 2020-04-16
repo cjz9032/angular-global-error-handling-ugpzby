@@ -1139,7 +1139,17 @@
                                 "list1": "Clique no ícone da bateria do Windows na barra de ferramentas",
                                 "list2": "O modo de Energia do Windows será exibido, deslize o controle deslizante para escolher entre o tempo ideal ou o desempenho ideal."
                             }
-                        }
+                        },
+                        "autoTransition": {
+							"description": "Ative \"Desempenho extremo\" neste modo. Quando ativado, a temperatura na superfície do computador e o ruído do ventilador podem aumentar automaticamente.",
+							"more": "MAIS",
+							"less": "MENOS",
+							"moreContent": {
+								"desc1": "a. Nos cenários de escritório, atualização do Windows, filmes on-line ou de carregamento leve do sistema, o sistema pode ficar silencioso. Enquanto em cenários normais de jogos, ele tem melhor desempenho.",
+								"desc2": "b. Ao jogar jogos pesados, o modo \"Desempenho extremo\" é ativado automaticamente. Isso pode causar ruído maior ou temperatura mais alta na superfície do computador.",
+								"desc3": "c. Quando a capacidade da bateria é inferior a 30%, o sistema muda automaticamente para o modo \"Economia de bateria\"."
+							}			
+						}
                     },
                     "nonintelligentCooling": {
                         "options": {

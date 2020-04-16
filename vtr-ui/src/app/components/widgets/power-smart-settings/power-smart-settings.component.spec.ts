@@ -21,7 +21,7 @@ import { HttpLoaderFactory } from 'src/app/modules/translation.module';
 import { HttpClient } from '@angular/common/http';
 import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
 
-describe("Component: PowerSmartSetting", () => {
+fdescribe("Component: PowerSmartSetting", () => {
 	let component: PowerSmartSettingsComponent;
 	let fixture: ComponentFixture<PowerSmartSettingsComponent>;
 	let commonService: CommonService;
@@ -86,7 +86,8 @@ describe("Component: PowerSmartSetting", () => {
 			showIntelligentCoolingModes: true,
 			autoModeToggle: { available: true, status: true, permission: true, isLoading: true},
 			apsState: false,
-			selectedModeText: ''
+			selectedModeText: '',
+			isAutoTransitionEnabled: false
 		}
 		component.initDataFromCache()
 		expect(component.showIC ).toEqual(component.cache.showIC)
@@ -213,6 +214,16 @@ describe("Component: PowerSmartSetting", () => {
 		expect(component.intelligentCoolingModes).toEqual(IntelligentCoolingHardware.ITS14)
 	})
 
+	it('should call initPowerSmartSettingsUIForIdeaPad itsVersion is 5', () => {
+		let response = {
+			available: true,
+			itsVersion: 5,
+		}
+		component.initPowerSmartSettingsUIForIdeaPad(response)
+		expect(component.intelligentCoolingModes).toEqual(IntelligentCoolingHardware.ITS15)
+	})
+
+
 	it('should call initPowerSmartSettingsUIForIdeaPad itsVersion is empty', () => {
 		let response = {
 			available: true,
@@ -260,8 +271,17 @@ describe("Component: PowerSmartSetting", () => {
 		expect(component.updateSelectedModeText).toBeTruthy()
 	})
 
-	it('should call updateSelectedModeText -case 3', () => {
+	it('should call updateSelectedModeText -case 3 showIC=14', () => {
 		component.cache = new IntelligentCoolingCapability()
+		component.showIC = 14;
+		let mode: IntelligentCoolingModes = IntelligentCoolingModes.BatterySaving;
+		component.updateSelectedModeText(mode)
+		expect(component.updateSelectedModeText).toBeTruthy()
+	})
+
+	it('should call updateSelectedModeText -case 3 showIC=15', () => {
+		component.cache = new IntelligentCoolingCapability()
+		component.showIC = 15;
 		let mode: IntelligentCoolingModes = IntelligentCoolingModes.BatterySaving;
 		component.updateSelectedModeText(mode)
 		expect(component.updateSelectedModeText).toBeTruthy()
@@ -504,4 +524,19 @@ describe("Component: PowerSmartSetting", () => {
 		component.readMore(readMoreDiv)
 		expect(readMoreDiv.focus).toBeTruthy()
 	});
+
+	it('should call autoTransitionReadMoreClick', () => {
+		component.autoTransitionReadMoreClick();
+		expect(component.autoTransitionIsReadMore).toBeTruthy;
+	});
+	
+	it('should call initPowerSmartSettingsForIdeaPad', async(() => {
+		powerService.isShellAvailable = true
+		component.isAutoTransitionVisible = true
+
+		component.cache = new IntelligentCoolingCapability()
+		let spy = spyOn(powerService, 'setAutoTransitionForICIdeapad').and.returnValue(Promise.resolve(true))
+		component.onAutoTransitionToggle(true)
+		expect(spy).toHaveBeenCalled()
+	}));
 });

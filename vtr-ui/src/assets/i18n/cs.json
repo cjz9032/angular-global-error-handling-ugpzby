@@ -1139,7 +1139,17 @@
                                 "list1": "V panelu nástrojů klikněte na ikonu baterie systému Windows",
                                 "list2": "Ve Windows se zobrazí režim spotřeby energie Windows posunutím jezdce vyberte optimální čas nebo optimální výkon."
                             }
-                        }
+                        },
+                        "autoTransition": {
+							"description": "V tomto režimu povolte \"Extrémní výkon\". Jakmile je tato možnost povolena, může se automaticky zvýšit teplota povrchu počítače a hluk ventilátoru.",
+							"more": "DALŠÍ",
+							"less": "MÉNĚ",
+							"moreContent": {
+								"desc1": "a. V kancelářských aplikacích, aktualizacích Windows, online filmech nebo scénářích s lehkým zatížením systému může být systém tichý. V běžných herních scénářích má lepší výkon.",
+								"desc2": "b. Při hraní náročných her je automaticky povolen režim \"Extrémní výkon\". Ten může způsobit větší hlučnost nebo vyšší teplotu na povrchu počítače.",
+								"desc3": "c. Pokud je kapacita baterie nižší než 30 %, systém se automaticky přepne do režimu \"Úspora baterie\"."
+							}			
+						}
                     },
                     "nonintelligentCooling": {
                         "options": {

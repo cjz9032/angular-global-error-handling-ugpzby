@@ -1139,7 +1139,17 @@
                                 "list1": "Araç çubuğundaki Windows pil simgesine tıklayın",
                                 "list2": "Windows Güç Kipi göründüğünde en iyi süre veya en iyi performans arasında seçim yapmak için kaydırıcıyı kullanın."
                             }
-                        }
+                        },
+                        "autoTransition": {
+							"description": "Bu kipte “Yüksek Performans” özelliğini etkinleştirin. Etkinleştirildiğinde, bilgisayar yüzeyinin sıcaklığı ve fan gürültüsü otomatik olarak artabilir.",
+							"more": "DAHA FAZLA",
+							"less": "DAHA AZ",
+							"moreContent": {
+								"desc1": "a. Ofis, Windows güncellemesi, çevrimiçi film veya sistem ışığı yükleme senaryolarında sistem sessiz olabilir. Normal oyun senaryolarında daha iyi bir performans sergiler.",
+								"desc2": "b. Ağır oyunlar oynarken “Yüksek performans” kipi otomatik olarak etkinleştirilir. Bu daha fazla gürültüye veya bilgisayarınızın yüzeyinde daha yüksek sıcaklığa neden olabilir.",
+								"desc3": "c. Pil kapasitesi %30'dan düşük olduğunda, sistem otomatik olarak “Pil tasarrufu” kipine geçer."
+							}			
+						}
                     },
                     "nonintelligentCooling": {
                         "options": {

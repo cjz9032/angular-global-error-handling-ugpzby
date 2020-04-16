@@ -1139,7 +1139,17 @@
                                 "list1": "Kliknij ikonę akumulatora systemu Windows na pasku narzędzi",
                                 "list2": "Pojawi się wskaźnik trybu zasilania systemu Windows, przesuń suwak, aby wybrać optymalny czas lub optymalną wydajność."
                             }
-                        }
+                        },
+                        "autoTransition": {
+							"description": "Włącz funkcję „Ekstremalna wydajność” w tym trybie. Po jej włączeniu temperatura na powierzchni komputera oraz poziom hałasu wentylatora mogą automatycznie wzrosnąć.",
+							"more": "WIĘCEJ",
+							"less": "LESS",
+							"moreContent": {
+								"desc1": "a. W scenariuszach biurowym, aktualizacji systemu Windows, filmu online lub ładowania systemu w trybie małego obciążenia system może działać cicho. W normalnych scenariuszach obejmujących grę ma z kolei lepszą wydajność.",
+								"desc2": "b. Na czas grania w gry o dużych wymaganiach sprzętowych następuje automatyczne włączenie trybu „Ekstremalna wydajność”. Włączenie tego trybu może spowodować zwiększenie poziomu hałasu lub temperatury na powierzchni komputera.",
+								"desc3": "c. Gdy pojemność baterii spadnie poniżej 30%, system automatycznie przełączy się w tryb „Oszczędzanie akumulatora”."
+							}			
+						}
                     },
                     "nonintelligentCooling": {
                         "options": {

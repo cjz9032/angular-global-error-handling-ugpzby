@@ -1139,7 +1139,17 @@
                                 "list1": "Haga clic en el icono batería de Windows en la barra de herramientas",
                                 "list2": "Aparecerá el modo de energía de Windows, deslice el control deslizante para elegir entre duración óptima o rendimiento óptimo."
                             }
-                        }
+                        },
+                        "autoTransition": {
+							"description": "Habilitar “Rendimiento extremo” en esta modalidad. Cuando está habilitado, la temperatura de la superficie del sistema y el ruido del ventilador pueden aumentar automáticamente.",
+							"more": "MÁS",
+							"less": "MENOS",
+							"moreContent": {
+								"desc1": "a. En los escenarios de oficina, de actualización de Windows, de películas en línea o de carga ligera del sistema, el sistema puede estar en silencio. En situaciones normales de juegos, el rendimiento es mejor.",
+								"desc2": "b. Al jugar juegos pesados, la modalidad “Rendimiento extremo” se habilita automáticamente. Puede producir un ruido mayor o una temperatura superior en la superficie del sistema.",
+								"desc3": "c. Cuando la capacidad de la batería es inferior al 30 %, el sistema cambia automáticamente al modalidad “Ahorro de batería”."
+							}			
+						}
                     },
                     "nonintelligentCooling": {
                         "options": {

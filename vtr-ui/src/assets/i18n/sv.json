@@ -1139,7 +1139,17 @@
                                 "list1": "Klicka på batteriikonen i systemfältet i Windows",
                                 "list2": "Läget Energialternativ i Windows visas. Dra reglaget för att välja mellan optimal tid och optimal prestanda."
                             }
-                        }
+                        },
+                        "autoTransition": {
+							"description": "Aktivera Extrem prestanda i detta läge. När funktionen är aktiverad kan temperaturen på datorns utsida och fläktljudet öka.",
+							"more": "MER",
+							"less": "MINDRE",
+							"moreContent": {
+								"desc1": "a. Du kan ställa in att enheten ska vara tyst på kontoret, vid Windows-uppdateringar, när du tittar på film online eller vid systeminläsningar. I normala spelsituationer kan du använda bättre prestanda.",
+								"desc2": "b. När du spelar dataintensiva spel aktiveras läget Extrem prestanda automatiskt. Det kan medföra högre ljud eller temperatur på datorns utsida.",
+								"desc3": "c. När batterikapaciteten är lägre än 30 % växlar systemet automatiskt till läget Spara batteri."
+							}			
+						}
                     },
                     "nonintelligentCooling": {
                         "options": {

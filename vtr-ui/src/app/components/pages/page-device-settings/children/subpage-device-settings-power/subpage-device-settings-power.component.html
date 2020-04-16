@@ -12,6 +12,7 @@
 		<div class="col">
 			<!-- ****************** Power Smart Settings Section ******************************** -->
 			<vtr-power-smart-settings (isPowerSmartSettingHidden)="onSetSmartSettingsCapability(false)"
+			(isPowerSmartSettingAdd)="onSetSmartSettingsCapability(true)"
 				*ngIf="!isDesktopMachine">
 			</vtr-power-smart-settings>
 			<!-- ****************** Power Smart Settings Section ******************************** -->

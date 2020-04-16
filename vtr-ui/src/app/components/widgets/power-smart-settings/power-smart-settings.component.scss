@@ -131,4 +131,45 @@
 			@include outline-white;
 		}
 	}
+	.transition {
+		::ng-deep .auto-set-checkbox {
+			label {
+				color: $light;
+				background: #225faa;
+				// border-radius: 10px;
+				opacity: 1;
+				font-size: $fontsize_xs;
+				font-family: $font_family_semilight !important;
+				
+				// margin-top: 3rem;
+				margin-right:0rem;
+				max-width: 100%;
+				min-height: 2.5rem;
+				font-weight:400;
+				margin-bottom: 1rem;
+				line-height:1.5;
+				top: 0rem !important;;
+			}
+			input {
+				top: 0rem !important;
+
+			}
+		}
+	}
+	.transitionReadMore {
+		color: $light;
+				background: #225faa;
+				// border-radius: 10px;
+				opacity: 0.8;
+				font-size: $fontsize_xs;
+				font-family: $font_family_semilight !important;
+				
+				// margin-top: 3rem;
+				margin-right:0rem;
+				max-width: 100%;
+				min-height: 2.5rem;
+				font-weight:400;
+				margin-bottom: 0rem !important;
+				// margin-top: 0.5rem;
+	}
 }

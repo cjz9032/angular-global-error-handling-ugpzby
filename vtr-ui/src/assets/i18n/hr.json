@@ -1139,7 +1139,17 @@
                                 "list1": "Kliknite na ikonu baterije na alatnoj traci sustava Windows",
                                 "list2": "Pojavit će se način napajanja sustava Windows - pomaknite klizač i odaberite optimalno trajanje baterije ili optimalne performanse."
                             }
-                        }
+                        },
+                        "autoTransition": {
+							"description": "Omogući \"Izuzetne performanse\" u ovom načinu. Kad je omogućeno, temperatura na površini vašeg računala i buka ventilatora mogu se automatski povećati.",
+							"more": "DODATNO",
+							"less": "MANJE",
+							"moreContent": {
+								"desc1": "a. U uredskoj primjeni, scenarijima ažuriranja sustava Windows, mrežnim filmovima ili pri niskom opterećenju sustav može biti tih. Dok je u normalnim scenarijima igranja, ostvaruje bolje performanse.",
+								"desc2": "b. Prilikom igranja zahtjevnih igara automatski je omogućen način \"Izuzetne performanse\". To bi moglo uzrokovati veću buku ili višu temperaturu na površini računala.",
+								"desc3": "c. Kad je napunjenost baterije manja od 30 %, sustav automatski prelazi u način \"Ušteda baterije\"."
+							}			
+						}
                     },
                     "nonintelligentCooling": {
                         "options": {
