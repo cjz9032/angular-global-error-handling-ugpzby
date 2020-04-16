@@ -120,6 +120,9 @@
 		@media #{$white-on-black} {
 			color: $yellow;
 		}
+		&:focus {
+			@include outline-white;
+		}
 	}
 	.optimize {
 		color: $light;
