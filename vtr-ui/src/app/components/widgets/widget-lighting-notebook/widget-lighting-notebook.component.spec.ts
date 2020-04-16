@@ -271,6 +271,9 @@ describe('WidgetLightingNotebookComponent', () => {
         localStorage.setItem("[LocalStorageKey] KeyboardToggleStatusLNBx50", JSON.stringify(toggleStatus2));
         component.getCacheList();
         expect(component.currentProfileId).toEqual(2);
+        component.lightingProfileById = lightingProfileById;
+        component.getCacheList();
+        expect(component.currentProfileId).toEqual(2);
     })
 
     it('should set cache init list', () => {

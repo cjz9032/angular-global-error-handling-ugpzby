@@ -14,6 +14,7 @@ export enum BetaStatus {
 })
 export class BetaService {
 	private betaUser;
+	public betaFeatureAvailable = false;
 	constructor(
 		private vantageShellService: VantageShellService,
 		private commonService: CommonService
@@ -45,5 +46,30 @@ export class BetaService {
 		if (this.betaUser) {
 			this.betaUser.setBetaUser(preStoredValue);
 		}
+	}
+
+	checkBetaFeatureAvailable(menu) {
+		this.betaFeatureAvailable = this.anyBetaFeatureAvailable(menu);
+	}
+
+	anyBetaFeatureAvailable(menu: any): boolean {
+		let result = false;
+		if (menu && menu.length && menu.length > 0)
+		{
+			for (let i = 0; i < menu.length; i++) {
+				const element = menu[i];
+				if (element.beta && !element.hide) {
+					result = true;
+					break;
+				}
+				if (element.subitems && element.subitems.length > 0
+					&& this.anyBetaFeatureAvailable(element.subitems)) {
+					result = true;
+					break;
+				}
+
+			}
+		}
+		return result;
 	}
 }

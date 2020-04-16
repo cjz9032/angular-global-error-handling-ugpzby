@@ -55,18 +55,61 @@
     padding-bottom: 2px;
     overflow: hidden;
     position: relative;
-    .emptyArea{
+    .emptyArea1{
+        width: 63%;
+        height: 0;
+        padding-bottom: 5.7%;
+        position: absolute;
+        left: 0;
+        bottom: 2px;
+        z-index: 4;
+    }
+    .emptyArea2{
         width: 20%;
         height: 0;
         padding-bottom: 5.7%;
         position: absolute;
         right: 0;
         bottom: 2px;
+        z-index: 4;
+    }
+    .aria-area{
+        width: 100%;
+        height: 100%;
+        padding-bottom: 2px;
+        z-index: 2;
+        position: absolute;
+        top: 0;
+        left: 0;
+        .wholeAarea,.divideArea{
+            width: 100%;
+            height: 100%;
+            font-size: 0;
+            opacity: 0;
+        }
+        button{
+            width:25% ;
+            height: 100%;
+            display: block;
+            float: left;
+        }
+        .keyboard-button1{
+            width: 30%;
+        }
+        .keyboard-button3{
+            width: 20%;
+        }
+        .keyboard-button0,
+        .keyboard-button1,
+        .keyboard-button3{
+            height: 85%;
+        }
     }
 }
 .keyboard-box{
     width: 400%;
     position: relative;
+    z-index: 3;
     .disabledBox{
         width: 25%;
         height: 0;

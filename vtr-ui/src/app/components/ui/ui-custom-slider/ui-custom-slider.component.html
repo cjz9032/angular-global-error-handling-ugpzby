@@ -20,6 +20,8 @@
 			[metricsEvent]="metricsEvent"
 			[metricsValue]="metricsValue"
 			(input)="onInputChange($event)"
+			(blur)="onInputFocus(false)"
+			(focus)="onInputFocus(true)"
 			[step]="step">
 		<div class="d-flex justify-content-between legends"
 			[class.legends-disabled]="isDisabled">
