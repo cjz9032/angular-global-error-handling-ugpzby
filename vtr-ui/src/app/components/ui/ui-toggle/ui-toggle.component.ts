@@ -11,6 +11,7 @@ import { faSellcast } from '@fortawesome/free-brands-svg-icons';
 export class UiToggleComponent implements OnInit, OnDestroy, OnChanges {
 	@Output() toggle: EventEmitter<any> = new EventEmitter();
 	@Output() toggleStatus: EventEmitter<any> = new EventEmitter();
+	@Output() hideColordisk: EventEmitter<any> = new EventEmitter();
 	@Input() value = true;
 	@Input() onOffSwitchId: string;
 	@Input() notChange = false;
@@ -86,6 +87,7 @@ export class UiToggleComponent implements OnInit, OnDestroy, OnChanges {
 	public hideColorPicker(){
 		if(document.getElementById("colorPicker")){
 		   document.getElementById("colorPicker").style.display = "none"; 
+		   this.hideColordisk.emit();
 		}
 	}
 

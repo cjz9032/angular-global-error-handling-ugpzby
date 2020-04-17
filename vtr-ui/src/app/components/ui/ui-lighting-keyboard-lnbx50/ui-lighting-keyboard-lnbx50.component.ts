@@ -330,4 +330,12 @@ export class UiLightingKeyboardLNBx50Component implements OnInit, OnChanges{
         throw new Error("setToggleStatusCache " + error.message);
     }
   }
+
+  public hideColordisk(){
+    this.isDisablled = false;
+    this.isDivideArea = true;
+    this.selectPanel = 0;
+    this.selectedArea = 0;
+  }
+
 }
