@@ -14,7 +14,6 @@
 		(keydown.enter)="disabled? '':toggleLabel.click();toggleMain.focus();"
 		[attr.aria-checked]="value"
 		[attr.aria-disabled]="disabled"
-		[attr.aria-readonly]="readonly"
 		[attr.aria-label]="ariaLabel"
 		role="switch"
 		[tabIndex]="disabled?-1:tabIndex">
