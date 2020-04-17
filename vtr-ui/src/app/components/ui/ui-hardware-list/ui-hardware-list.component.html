@@ -53,9 +53,17 @@
 						<div class="span-not-applicable" *ngIf="item.status === 6">{{testNotApplicable}}</div>
 					</div>
 					<div class="item-right" *ngIf="item.information">
-						<fa-icon class="result-code-icon" triggers="click:blur" placement="auto"
-							[ngbTooltip]="tooltipRefItem" [icon]="['far', 'question-circle']" container="vtr-root"
-							tooltipClass="vtr-tooltip" (click)="getInformation(item.information)"></fa-icon>
+						<a href="javascript:void(0)"
+							(click)="getInformation(item.information)"
+							aria-label="test-description-question-mark"
+							class="result-code-icon"
+							triggers="click:blur"
+							[ngbTooltip]="tooltipRefItem"
+							container="vtr-root"
+							tooltipClass="vtr-tooltip"
+							placement="auto">
+							<fa-icon [icon]="['far', 'question-circle']"></fa-icon>
+						</a>
 					</div>
 					<div class="item-right" *ngIf="item.result">
 						<div class="module-result-text"
