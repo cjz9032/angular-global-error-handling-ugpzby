@@ -64,6 +64,8 @@ export class ConfigService {
 	public countryCodes = ['us', 'ca', 'gb', 'ie', 'de', 'fr', 'es', 'it', 'au'];
 	subscription: Subscription;
 	private isSmartAssistAvailable = false;
+	private isBetaUser: boolean;
+	private country: string;
 
 	constructor(
 		private betaService: BetaService,
@@ -105,7 +107,7 @@ export class ConfigService {
 					this.notifyMenuChange(this.menu);
 					break;
 				case MenuItemEvent.MenuWifiItemChange:
-					this.showWifiMenu(notification.payload)
+					this.updateWifiMenu(this.menu,notification.payload)
 					this.notifyMenuChange(this.menu);
 					break;
 				case MenuItemEvent.MenuBetaItemChange:
@@ -129,27 +131,29 @@ export class ConfigService {
 
 	initGetMenuItemsAsync(): Promise<any> {
 		return new Promise(async (resolve) => {
-			const isBetaUser = this.betaService.getBetaStatus() === BetaStatus.On;
+			this.isBetaUser = this.betaService.getBetaStatus() === BetaStatus.On;
 			const machineInfo = await this.deviceService.getMachineInfo();
 			const localInfo = await this.localInfoService.getLocalInfo();
 			this.activeSegment = localInfo.Segment ? localInfo.Segment : SegmentConst.Commercial;
-			const country = machineInfo && machineInfo.country ? machineInfo.country : 'US';
+			this.country = machineInfo && machineInfo.country ? machineInfo.country : 'US';
 			let resultMenu;
 
 			if (machineInfo.isGaming) {
 				resultMenu = cloneDeep(this.menuItemsGaming);
 				this.initializeWiFiItem(resultMenu);
-				this.menu = await this.updateHide(resultMenu, SegmentConst.Gaming, isBetaUser);
+				this.menu = await this.updateHide(resultMenu, SegmentConst.Gaming, this.isBetaUser);
 
 				this.notifyMenuChange(this.menu);
 				return resolve(this.menu);
 			}
 
 			resultMenu = cloneDeep(this.menuItems);
-			this.initializeSecurityItem(country.toLowerCase(), resultMenu);
+			this.initializeSecurityItem(this.country, resultMenu);
 			if (this.hypSettings) {
-				resultMenu = await this.initShowCHSMenu(country, resultMenu, machineInfo);
+				resultMenu = await this.initShowCHSMenu(this.country, resultMenu, machineInfo);
 			}
+
+			this.menu = await this.updateHide(resultMenu, this.activeSegment, this.isBetaUser);
 
 			this.betaService.betaFeatureAvailable = (function findBetaAvailability(menus: any[]) {
 				let result = false;
@@ -165,8 +169,6 @@ export class ConfigService {
 				});
 				return result;
 			})(this.menu);
-
-			this.menu = await this.updateHide(resultMenu, this.activeSegment, isBetaUser);
 
 			this.initializeSmartAssist();
 			this.notifyMenuChange(this.menu);
@@ -206,14 +208,14 @@ export class ConfigService {
 	}
 
 	initializeSecurityItem(region, items) {
-		const securityItem = items.find((item) => item.id === 'security');
 		this.initializeWiFiItem(items);
-		if (securityItem) {
-			if (region === 'cn') {
-				items = this.supportFilter(items, 'internet-protection', false);
-			} else {
-				items = this.supportFilter(items, 'internet-protection', true);
-			}
+		this.supportFilter(items, 'security', true);
+		this.supportFilter(items, 'anti-virus', true);
+		this.supportFilter(items, 'password-protection', true);
+		if (region.toLowerCase() === 'cn') {
+			this.supportFilter(items, 'internet-protection', false);
+		} else {
+			this.supportFilter(items, 'internet-protection', true);
 		}
 	}
 
@@ -224,6 +226,18 @@ export class ConfigService {
 			items = this.supportFilter(items, 'wifi-security', this.wifiSecurity.isSupported);
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity, this.wifiSecurity.isSupported);
 		}
+	}
+
+	updateWifiMenu(menu: MenuItem[], wifiIsSupport) {
+		this.supportFilter(menu, 'wifi-security', wifiIsSupport
+		&& !this.deviceService.isSMode
+		&& !this.deviceService.isArm &&
+		this.activeSegment !== SegmentConst.Gaming);
+		this.updateWifiStateCache(wifiIsSupport);
+	}
+
+	updateWifiStateCache(wifiIsSupport: boolean) {
+		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity, wifiIsSupport);
 	}
 
 	segmentFilter(menu: Array<any>, segment: string) {
@@ -457,51 +471,17 @@ export class ConfigService {
 			const chsMenuItem = this.menu.find(item => item.id === 'home-security');
 			if (chsMenuItem) {
 				this.showCHS = chsMenuItem.availability && this.activeSegment !== SegmentConst.Commercial;
+				chsMenuItem.hide = !this.showCHS;
 			}
-			const seg = segment.toLowerCase();
-			this.segmentFilter(this.menu, segment);
+			this.initializeSecurityItem(this.country,this.menu);
+			this.updateHide(this.menu, segment, this.isBetaUser);
 			return this.menu;
 		}
-	}
-
-	showWifiMenu(wifiIsSupport: boolean): void {
-		this.updateWifiMenu(this.menu, wifiIsSupport);
-		this.updateWifiStateCache(wifiIsSupport);
-	}
-
-	updateWifiMenu(menu, wifiIsSupport) {
-		const securityItem = menu.find((item) => item.id === 'security');
-		if (menu.find((item) => item.id === 'wifi-security')
-			|| (securityItem && securityItem.subitems.find((item) => item.id === 'wifi-security'))) {
-			this.supportFilter(menu, 'wifi-security', wifiIsSupport);
-			return;
-		}
-
-		if (this.deviceService.isSMode || this.deviceService.isArm) { return; }
-
-		if (wifiIsSupport) {
-			if (securityItem && securityItem.subitems && this.activeSegment !== SegmentConst.Gaming) {
-				const wifiItem = this.menuItems.find((item) => item.id === 'security').subitems.find((item) => item.id === 'wifi-security');
-				if (wifiItem) wifiItem.hide = false;
-				return;
-			}
-
-			const supportIndex = menu.findIndex((item) => item.id === 'support');
-			const wifiItems = this.activeSegment !== SegmentConst.Gaming ? this.menuItems.find((item) => item.id === 'wifi-security') : this.menuItemsGaming.find((item) => item.id === 'wifi-security');
-			wifiItems.hide = false;
-		}
-	}
-
-	updateWifiStateCache(wifiIsSupport: boolean) {
-		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity, wifiIsSupport);
 	}
 
 	filterByBeta(menu: Array<any>, isBeta: boolean): Promise<Array<any>> {
 		return this.canShowSearch().then((result) => {
 			this.initializeAppSearchItem(menu, result);
-			if (result) {
-				this.betaService.betaFeatureAvailable = true;
-			}
 			const item = menu.find(i => i.id === 'app-search');
 			if (item) item.hide = !isBeta || !result;
 
@@ -556,7 +536,7 @@ export class ConfigService {
 	private async updateHide(menu: Array<any>, segment: string, beta: boolean): Promise<MenuItem[]> {
 		this.smodeFilter(menu, this.deviceService.isSMode);
 		this.armFilter(menu, this.deviceService.isArm);
-		if (segment !== SegmentConst.Gaming)this.segmentFilter(menu, segment);
+		if (segment !== SegmentConst.Gaming) this.segmentFilter(menu, segment);
 		await this.filterByBeta(menu, beta);
 		return menu;
 	}
