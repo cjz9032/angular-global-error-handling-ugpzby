@@ -1448,25 +1448,37 @@
 				"subtitle": "Audio Settings",
 				"description": "This section enables you to automatically optimize or fully configure your audio settings manually, such as Dolby settings, microphone, etc.",
 				"audioSmartsettings": {
-					"title": "Audio Smart settings",
-					"subtitle": "APPLICATION-BASED SETTINGS",
-					"description": "Automatically adjust audio settings according to different apps you are using.",
-					"dolby": {
-						"title": "Automatic Dolby Audio settings",
-						"tooltip": "Automatic Dolby Audio settings configures Dolby audio settings to the appropriate mode for different apps you are using to enhance your audio experience.",
-						"options": {
-							"dynamic": "DYNAMIC",
+                    "title": "Audio smart settings",
+                    "dolby": {
+                        "title": "Dolby audio",
+                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
+                        "options": {
+                            "dynamic": "DYNAMIC",
 							"movie": "MOVIE",
 							"music": "MUSIC",
 							"games": "GAME",
 							"voip": "VOICE"
-						}
-					},
-					"voip": {
-						"title": "Automatic Audio Optimization for VoIP",
-						"tooltip": "Automatically switch to Dolby Voice mode during VoIP calls to deliver clear, consistent voice quality."
-					}
-				},
+                        },
+                        "automaticAudioCheckboxText": "Automatic audio optimization for",
+                        "automaticAudioMode": {
+                            "voIPMode": {
+                                "radioText": "VoIP",
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                            },
+                            "entertainmentMode": {
+                                "radioText": "Entertainment",
+                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
+                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                            }
+                        }
+                    },
+                    "eCourse": {
+                        "title": "Interactive E-course mode",
+                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
+                    }
+                },
 				"microphone": {
 					"title": "Microphone",
 					"note": {
@@ -2055,7 +2067,7 @@
 			},
 			"superResolution": {
 				"heading": "Intelligent Media",
-				"title": "Video Resolution Upscaling",
+				"title": "Video resolution upscaling",
 				"desc": "<p><label>This feature enhances the experience of video playback by improving the videor resolution. It works especially when the video is in poor resolution.</label></p> <p style='margin-top:4px;'><label>This function might impact the battery life, battery temperature, and cause noises. Please do not use it in DC mode (battery mode). Otherwise, it will speed up the power consumption and shorten the battery life.</label></p>",
 				"tooltip": "This feature only works for below video players:<br>Windows Media Player<br>Chrome<br>Movies & TV<br>PotPlayer<br>GOM player<br>Web-browser based players (e.g Chrome)<br><br>For instructions on how to enable this function on PotPlayer and  GOM player, refer to the User  Guide that comes with your computer.",
 				"note": {
@@ -2065,8 +2077,8 @@
 				}
 			},
 			"antiTheft": {
-                "heading": "Intelligent Sensing",
-                "title": "Smart Motion Alert",
+                "heading": "Intelligent sensing",
+                "title": "Smart motion alarm",
                 "desc": "<p><label>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</label></p> <p style='margin-top:4px;'><label>To dismiss the alarm, enter the correct password or log in by Windows Hello.</label></p>",
                 "note": {
                     "description": "Once you log in the system successfully, this feature will be turned off automatically. You need to enable it again to use it."
@@ -4002,7 +4014,8 @@
 			"wireless": "Wireless"
 		},
 		"warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates",
-		"refreshMessage": "Refresh may take some time as it needs to load all the components again"
+		"refreshMessage": "Refresh may take some time as it needs to load all the components again",
+		"processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
 	},
 	"notification": {
 		"menu": {

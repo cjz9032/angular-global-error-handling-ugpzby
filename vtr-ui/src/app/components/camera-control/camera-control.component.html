@@ -6,7 +6,7 @@
 				<img class="feed disable" *ngIf="disabledAll && !isCameraInErrorState"
 					src="assets/images/camera-disable.png" title=""
 					[ngbTooltip]="'device.deviceSettings.displayCamera.camera.notAvailable' | translate"
-					tooltipClass="vtr-tooltip" container="body" />
+					tooltipClass="vtr-system-tooltip" container="body" />
 				<div class="error" *ngIf="isCameraInErrorState">
 					<div class="error-title" id="camera-error-title" attr.aria-label="camera-error-title">
 						{{ cameraErrorTitle | translate }}

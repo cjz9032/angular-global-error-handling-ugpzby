@@ -1446,23 +1446,35 @@
                 "subtitle": "Nastavitve zvoka",
                 "description": "Ta razdelek vam omogoča, da samodejno optimizirate ali v celotiročno konfigurirate nastavitve zvoka, kot so nastavitve za Dolby, mikrofon itd.",
                 "audioSmartsettings": {
-                    "title": "Pametne nastavitve zvoka",
-                    "subtitle": "NASTAVITVE, PRILAGOJENE PROGRAMOM",
-                    "description": "Samodejno prilagajanje nastavitev zvoka glede na različne aplikacije, ki jih uporabljate.",
+                    "title": "Audio smart settings",
                     "dolby": {
-                        "title": "Samodejne nastavitve zvoka za Dolby",
-                        "tooltip": "Samodejne nastavitve zvoka za Dolby konfigurirajo nastavitve zvoka za Dolby tako, da soustrezne za različne programe, ki jih uporabljate, za izboljšanje vaše izkušnje z zvokom.",
+                        "title": "Dolby audio",
+                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
-                            "dynamic": "DINAMIČNO",
-                            "movie": "FILM",
-                            "music": "GLASBA",
-                            "games": "IGRA",
-                            "voip": "GLAS"
+                            "dynamic": "DYNAMIC",
+							"movie": "MOVIE",
+							"music": "MUSIC",
+							"games": "GAME",
+							"voip": "VOICE"
+                        },
+                        "automaticAudioCheckboxText": "Automatic audio optimization for",
+                        "automaticAudioMode": {
+                            "voIPMode": {
+                                "radioText": "VoIP",
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                            },
+                            "entertainmentMode": {
+                                "radioText": "Entertainment",
+                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
+                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                            }
                         }
                     },
-                    "voip": {
-                        "title": "Samodejno optimiziranje zvoka za VoIP",
-                        "tooltip": "Samodejni preklop v način Dolby Voice med VoIP klici za zagotavljanje javne, doseledne kakovosti zvoka."
+                    "eCourse": {
+                        "title": "Interactive E-course mode",
+                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
                     }
                 },
                 "microphone": {
@@ -2101,7 +2113,7 @@
                     "option6": "30"
                 },
                 "showPhoto": {
-                    "title": "FOTOGRAFIJE SO POSNETE:",
+                    "title": "FOTOGRAFIJE SO BILE SHRANJENE LOKALNO V:",
                     "link": "Ogled fotografij"
                 },
                 "fileAuthorizationTips": {
@@ -3291,7 +3303,8 @@
             "wireless": "Brezžično"
         },
         "warningMessage": "Upoštevajte, da bodo preskusi preklicani, če sistem preide v stanje spanja ali mirovanja",
-        "refreshMessage": "Osvežitev lahko traja nekaj časa, saj se morajo vse komponente znova naložiti"
+        "refreshMessage": "Osvežitev lahko traja nekaj časa, saj se morajo vse komponente znova naložiti",
+        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
     },
     "smartPerformance": {
         "title": "Health & Support",

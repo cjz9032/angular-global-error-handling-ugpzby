@@ -1446,23 +1446,35 @@
                 "subtitle": "Setări audio",
                 "description": "Această secțiune vă oferă posibilitatea de a optimiza în mod automat sau de a configuracomplet setările audio manual, cum ar fi setările Dolby, microfonul etc.",
                 "audioSmartsettings": {
-                    "title": "Setări audio inteligente",
-                    "subtitle": "SETĂRI ÎN FUNCŢIE DE APLICAŢII",
-                    "description": "Ajustați în mod automat setările audio conform diverselor aplicații pe care le folosiți.",
+                    "title": "Audio smart settings",
                     "dolby": {
-                        "title": "Setări audio automate Dolby",
-                        "tooltip": "Setările audio automate Dolby configurează setările audio Dolby la modul potrivit pentru diferite aplicații pe care le utilizați pentru a îmbunătăți experiența audio.",
+                        "title": "Dolby audio",
+                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
-                            "dynamic": "DINAMIC",
-                            "movie": "FILM",
-                            "music": "MUZICĂ",
-                            "games": "JOC",
-                            "voip": "VOCE"
+                            "dynamic": "DYNAMIC",
+							"movie": "MOVIE",
+							"music": "MUSIC",
+							"games": "GAME",
+							"voip": "VOICE"
+                        },
+                        "automaticAudioCheckboxText": "Automatic audio optimization for",
+                        "automaticAudioMode": {
+                            "voIPMode": {
+                                "radioText": "VoIP",
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                            },
+                            "entertainmentMode": {
+                                "radioText": "Entertainment",
+                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
+                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                            }
                         }
                     },
-                    "voip": {
-                        "title": "Optimizare audio automată pentru VoIP",
-                        "tooltip": "Comutați în mod automat la modul voce Dolby în timpul apelurilor VoIP pentru a o calitate a vocii clară și consecventă."
+                    "eCourse": {
+                        "title": "Interactive E-course mode",
+                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
                     }
                 },
                 "microphone": {
@@ -2101,7 +2113,7 @@
                     "option6": "30"
                 },
                 "showPhoto": {
-                    "title": "FOTOGRAFIILE AU FOST:",
+                    "title": "FOTOGRAFIILE AU FOST SALVATE ÎN FOLDERUL LOCAL:",
                     "link": "Vizualizați fotografii"
                 },
                 "fileAuthorizationTips": {
@@ -3291,7 +3303,8 @@
             "wireless": "Fără fir"
         },
         "warningMessage": "Rețineți că testele vor fi anulate dacă sistemul intră în repaus sau hibernează",
-        "refreshMessage": "Actualizarea poate dura un timp, deoarece este necesar să se încarce din nou toate componentele"
+        "refreshMessage": "Actualizarea poate dura un timp, deoarece este necesar să se încarce din nou toate componentele",
+        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
     },
     "smartPerformance": {
         "title": "Health & Support",
