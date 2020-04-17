@@ -1446,23 +1446,35 @@
                 "subtitle": "Valores de audio",
                 "description": "Esta sección le permite optimizar automáticamente o configurar todos los valores de audio de forma manual, como por ejemplo los valores Dolby, de micrófono, etc.",
                 "audioSmartsettings": {
-                    "title": "Valores de audio inteligente",
-                    "subtitle": "CONFIGURACIÓN BASADA EN LA APLICACIÓN",
-                    "description": "Ajuste automáticamente la configuración de audio según la aplicación que esté usando.",
+                    "title": "Audio smart settings",
                     "dolby": {
-                        "title": "Valores de audio Dolby automáticos",
-                        "tooltip": "Valores de audio Dolby automáticos configura los valores de audio Dolby enel modo adecuado para las diferentes aplicaciones que está utilizando para mejorar su experiencia de audio.",
+                        "title": "Dolby audio",
+                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
-                            "dynamic": "DINÁMICO",
-                            "movie": "PELÍCULA",
-                            "music": "MÚSICA",
-                            "games": "JUEGO",
-                            "voip": "VOZ"
+                            "dynamic": "DYNAMIC",
+							"movie": "MOVIE",
+							"music": "MUSIC",
+							"games": "GAME",
+							"voip": "VOICE"
+                        },
+                        "automaticAudioCheckboxText": "Automatic audio optimization for",
+                        "automaticAudioMode": {
+                            "voIPMode": {
+                                "radioText": "VoIP",
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                            },
+                            "entertainmentMode": {
+                                "radioText": "Entertainment",
+                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
+                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                            }
                         }
                     },
-                    "voip": {
-                        "title": "Optimización automática de audio para VoIP",
-                        "tooltip": "Conmutar automáticamente a la modalidad de voz de Dolby durante las llamadas de VoIP para proporcionar una calidad de voz clara y coherente."
+                    "eCourse": {
+                        "title": "Interactive E-course mode",
+                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
                     }
                 },
                 "microphone": {
