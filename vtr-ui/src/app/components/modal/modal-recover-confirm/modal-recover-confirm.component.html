@@ -3,17 +3,15 @@
   <div class="description" [innerHtml]="modalDescription"></div>
 
   <div class="row">
-    <div class="col">
-      <vtr-ui-button-hwscan
-        vtrMetrics
-        metricsEvent="FeatureClick"
-        metricsParent="{{ItemParent}}"
-        metricsItem="{{ConfirmItemName}}"
-        [label]="buttonText"
-        [tooltipText]="buttonText"
-        (onClick)="onClosing()">
-      </vtr-ui-button-hwscan>
-    </div>
+	<vtr-ui-button
+		vtrMetrics
+		metricsEvent="FeatureClick"
+		metricsParent="{{ItemParent}}"
+		metricsItem="{{ConfirmItemName}}"
+		[label]="buttonText"
+		[tooltipText]="buttonText"
+		(onClick)="onClosing()">
+	</vtr-ui-button>
   </div>
 
   <a role="button"
