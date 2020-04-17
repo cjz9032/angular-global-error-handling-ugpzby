@@ -3303,7 +3303,8 @@
             "wireless": "Bezdrôtové"
         },
         "warningMessage": "Majte na pamäti, že testy budú zrušené, ak je systém v režime spánku alebo hibernácie",
-        "refreshMessage": "Obnovenie môže chvíľu trvať, pretože je potrebné znova načítať všetky súčasti"
+        "refreshMessage": "Obnovenie môže chvíľu trvať, pretože je potrebné znova načítať všetky súčasti",
+        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
     },
     "smartPerformance": {
         "title": "Health & Support",
