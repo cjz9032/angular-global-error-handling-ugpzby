@@ -24,7 +24,7 @@
 						(keyup.enter)="setRadioStatus(qa.name, true)"
 						[value]="true">
 					<label class="form-check-label-out"></label>
-					<label class="form-check-label"
+					<label class="form-check-label" [id]="qa.idYes + '-label'" role="text"
 						[for]="qa.idYes">{{'dashboard.feedback.form.yes' | translate}}</label>
 				</div>
 				<div class="form-check form-check-inline"
@@ -38,7 +38,7 @@
 						(keyup.enter)="setRadioStatus(qa.name, false)"
 						[value]="false">
 					<label class="form-check-label-out"></label>
-					<label class="form-check-label"
+					<label class="form-check-label"  [id]="qa.idNo + '-label'" role="text"
 						[for]="qa.idNo">{{'dashboard.feedback.form.no' | translate}}</label>
 				</div>
 				<div class="likely-content"
@@ -54,7 +54,7 @@
 							(keyup.enter)="setLikelyStatus(qa.name, likely)"
 							[value]="likely">
 						<label class="form-check-label-out"></label>
-						<label class="form-check-label"
+						<label class="form-check-label" [id]="'feedback-form-likely-' + likely" role="text"
 							[for]="'feedback-likely-' + likely">{{ likely }}</label>
 					</div>
 					<div class="w-100 mb-1"></div>
@@ -71,6 +71,8 @@
 					</div>
 					<textarea #feedbackComment placeholder="{{'dashboard.feedback.form.comments' | translate}}"
 						class="form-control user-comment mb-1"
+						id="feedback-form-comments-input"
+						attr.aria-label="{{'dashboard.feedback.form.comments' | translate}}"
 						cols="30"
 						rows="10"
 						maxlength="1000"
@@ -85,9 +87,9 @@
 				<div class="question" id="feedback-form-userEmail" attr.aria-label="feedback-form-userEmail">
 					{{'dashboard.feedback.form.emailAddressLabel' | translate}}
 				</div>
-				<input [tabindex]="feedbackSuccess ? -1 : 0" class="user-email w-100" [ngClass]="[(feedbackForm.value.userEmail && feedbackForm.get('userEmail').invalid && isSubmitted) ? 'invalid-email': '']" type="text" formControlName="userEmail"
+				<input id="feedback-form-email-address-input" attr.aria-label="{{'dashboard.feedback.form.emailAddress' | translate}}" [tabindex]="feedbackSuccess ? -1 : 0" class="user-email w-100" [ngClass]="[(feedbackForm.value.userEmail && feedbackForm.get('userEmail').invalid && isSubmitted) ? 'invalid-email': '']" type="text" formControlName="userEmail"
 					placeholder="{{'dashboard.feedback.form.emailAddress' | translate}}">
-					<p class="email-error-msg" *ngIf="feedbackForm.value.userEmail && feedbackForm.get('userEmail').invalid && isSubmitted">{{'dashboard.feedback.form.invalidEmailMsg' | translate}}</p>
+					<p id="feedback-form-email-error-msg" role="text" class="email-error-msg" *ngIf="feedbackForm.value.userEmail && feedbackForm.get('userEmail').invalid && isSubmitted">{{'dashboard.feedback.form.invalidEmailMsg' | translate}}</p>
 			</div>
 		</form>
 		<div class="line"></div>

@@ -69,13 +69,16 @@
 }
 .link-text {
 	font-size: $body;
-	padding-bottom: 0.3rem;
-	border-bottom: 0.2rem solid $menu_hover;
 	letter-spacing: 0.05rem;
 	color: $menu_hover;
 	cursor: pointer;
 	font-weight: 600;
+	border: 0.1rem solid transparent;
+	text-decoration: underline;
 	&:focus {
-		@include outline-blue;
+		@include outline-border-blue;
+	}
+	&:hover{
+		text-decoration: none;
 	}
 }

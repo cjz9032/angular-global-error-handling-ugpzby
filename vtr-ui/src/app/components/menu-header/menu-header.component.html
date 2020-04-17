@@ -9,16 +9,19 @@
 			(keydown.enter)="changeRoute(tab.path,tab.params)"
 			role="link"
 			id="myDevice-settings-header-menu-{{tab.icon}}"
-			attr.aria-label="myDevice-settings-header-menu-{{tab.label}">
+			attr.aria-labelledby="myDevice-settings-header-menu-{{tab.icon}}-title">
 			<div class="tab-label"
-				id="myDevice-settings-header-menu-{{tab.icon}}-title"
-			attr.aria-label="myDevice-settings-header-menu-{{tab.icon}}-title"
-			title="{{tab.label}}">
-			<i class="icomoon {{tab.iconClass}}"></i>
-			<span class="text">{{tab.label}}</span>
+				title=""
+				[ngbTooltip]="tab.label" tooltipClass="vtr-tooltip" container="body"
+				>
+				<i class="icomoon {{tab.iconClass}}"></i>
+				<span class="text"
+					id="myDevice-settings-header-menu-{{tab.icon}}-title"
+					attr.aria-label="myDevice-settings-header-menu-{{tab.label}}"
+					aria-hidden="true">{{tab.label}}</span>
+			</div>
+			<fa-icon [icon]="['fas', 'square']"
+				class="menu-pointer"></fa-icon>
 		</div>
-		<fa-icon [icon]="['fas', 'square']"
-			class="menu-pointer"></fa-icon>
-</div>
-</ng-container>
+	</ng-container>
 </div>

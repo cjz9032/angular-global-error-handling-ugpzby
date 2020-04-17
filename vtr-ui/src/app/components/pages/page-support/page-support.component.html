@@ -64,7 +64,9 @@
 									<div class="item-title">{{ category.Title }}</div>
 
 									<div class="item-button"
-										title="{{ 'support.quickAccess.seeArticles' | translate }}">
+										title=""
+										[ngbTooltip]="'support.quickAccess.seeArticles' | translate" tooltipClass="vtr-tooltip" container="body"
+										>
 										{{ 'support.quickAccess.seeArticles' | translate }}</div>
 								</div>
 							</div>

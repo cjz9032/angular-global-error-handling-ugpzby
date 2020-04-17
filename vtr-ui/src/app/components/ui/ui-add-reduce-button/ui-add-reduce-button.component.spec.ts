@@ -193,4 +193,16 @@ describe('UiAddReduceButtonComponent', () => {
         });
 
     })
+
+    describe('should call hideColorPicker : ', () => {
+        it('should call hideColorPicker & focus button', () => {
+            component.hideColorPicker();
+            expect(component.hideColorPicker()).toBeUndefined();
+            const dummyElement = document.createElement('div');
+            dummyElement.id = 'colorPicker';
+            document.getElementById = jasmine.createSpy('HTML Element').and.returnValue(dummyElement);
+            component.hideColorPicker();
+            expect(component.hideColorPicker()).toBeUndefined();
+        });
+    })
 });

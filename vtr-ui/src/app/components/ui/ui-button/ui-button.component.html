@@ -2,7 +2,7 @@
 	<div class="button-box"
 		*ngIf="label">
 		<button *ngIf="alreadyJoinGroup === groupNone"
-			title="{{tooltip?label:''}}"
+			title=""
 			[disabled]="isDisabled || isLoading"
 			type="button"
 			class="btn button {{getButtonColor(buttonColor)}} d-flex align-items-center justify-content-center"
@@ -29,7 +29,9 @@
 						'btn-in-red-bg': inRedBackground,
 						'disable': isDisabled,
 						'loading': isLoading}"
-			(click)="onClickButton($event)">
+			(click)="onClickButton($event)"
+			[ngbTooltip]="tooltip?tooltipText:''" tooltipClass="vtr-tooltip" container="body"
+			>
 			<span [hidden]="!isLoading"
 				class="mr-3 mt-1 mb-1 flex-shrink-0 spinner-border progress-spinner"
 				role="status">
@@ -38,7 +40,7 @@
 				[innerHTML]="label"></span>
 		</button>
 		<button *ngIf="alreadyJoinGroup === 'unjoined'"
-			title="{{tooltip?label:''}}"
+			title=""
 			[disabled]="isDisabled || isLoading"
 			type="button"
 			class="btn button {{getButtonColor(buttonColor)}} d-flex align-items-center justify-content-center"
@@ -67,7 +69,9 @@
 						'btn-in-red-bg': inRedBackground,
 						'disable': isDisabled,
 						'loading': isLoading}"
-			(click)="onClickButton($event)">
+			(click)="onClickButton($event)"
+			[ngbTooltip]="tooltip?tooltipText:''" tooltipClass="vtr-tooltip" container="body"
+			>
 			<span [hidden]="!isLoading"
 				class="mr-3 mt-1 mb-1 flex-shrink-0 spinner-border progress-spinner"
 				role="status">
@@ -76,7 +80,7 @@
 				[innerHTML]="label"></span>
 		</button>
 		<button *ngIf="alreadyJoinGroup === 'joined'"
-			title="{{tooltip?label:''}}"
+			title=""
 			type="button"
 			class="button disable"
 			[disabled]="false"
@@ -96,6 +100,8 @@
 			[metricsItemCategory]="metricsItemCategory"
 			[metricsParent]="metricsParent"
 			[ngClass]="{'fullWidth': isFullWidth === true ,'text-upper-case': upperCaseLabel}"
-			(click)="onClickButton($event)">{{label}} </button>
+			(click)="onClickButton($event)"
+			[ngbTooltip]="tooltip?tooltipText:''" tooltipClass="vtr-tooltip" container="body"
+			>{{label}} </button>
 	</div>
 </div>

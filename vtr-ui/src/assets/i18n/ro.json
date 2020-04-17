@@ -197,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "Avertisment!",
                     "description": "Setările necorespunzătoare ale caracteristicii Overclocking pot produce deteriorări hardware ireversibile.",
-                    "proceed": "CONTINUAȚI"
+                    "proceed": "CONTINUAȚI",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },
@@ -1443,23 +1446,35 @@
                 "subtitle": "Setări audio",
                 "description": "Această secțiune vă oferă posibilitatea de a optimiza în mod automat sau de a configuracomplet setările audio manual, cum ar fi setările Dolby, microfonul etc.",
                 "audioSmartsettings": {
-                    "title": "Setări audio inteligente",
-                    "subtitle": "SETĂRI ÎN FUNCŢIE DE APLICAŢII",
-                    "description": "Ajustați în mod automat setările audio conform diverselor aplicații pe care le folosiți.",
+                    "title": "Audio smart settings",
                     "dolby": {
-                        "title": "Setări audio automate Dolby",
-                        "tooltip": "Setările audio automate Dolby configurează setările audio Dolby la modul potrivit pentru diferite aplicații pe care le utilizați pentru a îmbunătăți experiența audio.",
+                        "title": "Dolby audio",
+                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
-                            "dynamic": "DINAMIC",
-                            "movie": "FILM",
-                            "music": "MUZICĂ",
-                            "games": "JOC",
-                            "voip": "VOCE"
+                            "dynamic": "DYNAMIC",
+							"movie": "MOVIE",
+							"music": "MUSIC",
+							"games": "GAME",
+							"voip": "VOICE"
+                        },
+                        "automaticAudioCheckboxText": "Automatic audio optimization for",
+                        "automaticAudioMode": {
+                            "voIPMode": {
+                                "radioText": "VoIP",
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                            },
+                            "entertainmentMode": {
+                                "radioText": "Entertainment",
+                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
+                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                            }
                         }
                     },
-                    "voip": {
-                        "title": "Optimizare audio automată pentru VoIP",
-                        "tooltip": "Comutați în mod automat la modul voce Dolby în timpul apelurilor VoIP pentru a o calitate a vocii clară și consecventă."
+                    "eCourse": {
+                        "title": "Interactive E-course mode",
+                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
                     }
                 },
                 "microphone": {
@@ -1682,7 +1697,9 @@
                         },
                         "subSectionTwo": {
                             "title": "Inversarea funcției primare implicite",
-                            "description": "Când este activată, funcția primară implicită va fi modificată de la setările din fabrică la funcționalitatea opusă. Pentru ca modificările să aibă efect, trebuie să reporniți computerul."
+                            "description": "Când este activată, funcția primară implicită va fi modificată de la setările din fabrică la funcționalitatea opusă. Pentru ca modificările să aibă efect, trebuie să reporniți computerul.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "Utilizarea combinaţiilor tastei Fn",
@@ -2048,13 +2065,60 @@
             },
             "superResolution": {
                 "heading": "Medii inteligente",
-                "title": "Mărirea rezoluţiei video",
-                "desc": "<p><label>Această caracteristică îmbunătăţeşte experienţa de redare a videoclipurilor, mărind rezoluţia video. Aceasta funcţionează mai ales atunci când videoclipul are o rezoluţie mică.</label></p> <p style='margin-top:4px;'><label>Această caracteristică ar putea afecta durata de viață a bateriei, temperatura bateriei și poate provoca zgomote. Nu o utilizați în modul de alimentare cu c.c. În caz contrar, va accelera consumul de energie și va scurta durata de viață a bateriei.</label></p>",
-                "tooltip": "Această caracteristică funcționează numai pe:<br>Windows Media player",
+                "title": "Mărirea rezoluției video",
+                "desc": "<p><label>Această caracteristică îmbunătățește experiența de redare video prin îmbunătățirea rezoluției video. Funcționează mai ales atunci când videoclipul este la o rezoluție slabă.</label></p> <p style='margin-top:4px;'><label>Această caracteristică ar putea afecta durata de viață a bateriei, temperatura bateriei și poate provoca zgomote. Nu o utilizați în modul de alimentare c.c. (mod baterie). În caz contrar, va accelera consumul de energie și va scurta durata de viață a bateriei.</label></p>",
+                "tooltip": "Această caracteristică funcționează numai pentru playerele video de mai jos:<br>Windows Media Player<br>Chrome<br>Filme și televiziune<br>PotPlayer<br>GOM player<br>playere pe bază de browser web (de ex. Chrome)<br><br>Pentru instrucțiuni despre modul în care puteți activa această funcție pe PotPlayer și GOM player, consultați Ghidul utilizatorului furnizat împreună cu computerul.",
                 "note": {
-                    "description": "Această caracteristică nu funcţionează când:",
-                    "description1": "Computerul nu este conectat la o sursă de alimentare c.a.",
-                    "description2": "Modul de economisire a bateriei este activat."
+                    "description": "Această caracteristică nu funcționează când:",
+                    "description1": "Modul de economisire a bateriei este activat.",
+                    "description2": "Temperatura procesorului este prea mare."
+                }
+            },
+            "antiTheft": {
+                "heading": "Detectare inteligentă",
+                "title": "Alertă Smart Motion",
+                "desc": "<p><label>Când activați această caracteristică, dispozitivul va începe să sune atunci când ecranul este blocat și se detectează mișcări, în special într-un loc public.</label></p> <p style='margin-top:4px;'><label>Pentru a respinge alarma, introduceți parola corectă sau conectați-vă prin Windows Hello.</label></p>",
+                "note": {
+                    "description": "După ce v-ați conectat cu succes la sistem, această caracteristică va fi oprită automat. Trebuie să o activați din nou pentru a o utiliza."
+                },
+                "alarm": {
+                    "title": " ALARMA VA DURA TIMP DE",
+                    "option1": "10 secunde",
+                    "option2": "20 secunde",
+                    "option3": "30 secunde",
+                    "option4": "1 minut",
+                    "option5": "Nu se oprește niciodată"
+                },
+                "allowCamera": {
+                    "title": "REALIZARE FOTOGRAFII",
+                    "describe": "Când activați această caracteristică, camera foto fotografiază automat când detectează orice mișcare, dacă ecranul este blocat. Aceste date sunt procesate local pe dispozitivul dvs. Lenovo nu accesează datele și nu le folosește.",
+                    "checkBoxText": "Activați această caracteristică"
+                },
+                "cameraPrivacy": {
+                    "describe": "Modul de confidențialitate Lenovo Vantage este activ pentru cameră. Funcția casetei de selectare nu este activă.",
+                    "linkText": "Accesați modul de confidențialitate al camerei pentru a-l dezactiva."
+                },
+                "authorizedAccess": {
+                    "describe": "Lenovo Vantage nu are acces la cameră. Funcția casetei de selectare nu este activă.",
+                    "linkText": "Accesați setările Windows pentru a acorda acces."
+                },
+                "photo": {
+                    "title": "NUMĂRUL DE FOTOGRAFII REALIZATE ÎN TIMPUL MIȘCĂRII",
+                    "tooltip": "Camera foto de pe computer se activează automat pentru a face fotografii atunci când se detectează mișcări. Fotografiile sunt făcute la fiecare 2 secunde și sunt salvate pe spațiul de stocare local.",
+                    "option1": "5",
+                    "option2": "10",
+                    "option3": "15",
+                    "option4": "20",
+                    "option5": "25",
+                    "option6": "30"
+                },
+                "showPhoto": {
+                    "title": "FOTOGRAFIILE AU FOST SALVATE ÎN FOLDERUL LOCAL:",
+                    "link": "Vizualizați fotografii"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Lenovo Vantage nu are acces la sistemul de fișiere.",
+                    "link": "Accesați setările Windows pentru a acorda acces."
                 }
             },
             "voice": {
@@ -2088,53 +2152,6 @@
                     "btnText": "OK",
                     "title": "Instalare nereuşită",
                     "desc": "Încercați din nou mai târziu pentru folosi Lenovo Voice."
-                }
-            },
-            "antiTheft": {
-                "heading": "Intelligent Sensing",
-                "title": "Smart Motion Alert",
-                "desc": "<p><label>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</label></p> <p style='margin-top:4px;'><label>To dismiss the alarm, enter the correct password or log in by Windows Hello.</label></p>",
-                "note": {
-                    "description": "Once you log in the system successfully, this feature will be turned off automatically. You need to enable it again to use it."
-                },
-                "alarm": {
-                    "title": " THE ALARM WILL LAST FOR",
-                    "option1": "10 seconds",
-                    "option2": "20 seconds",
-                    "option3": "30 seconds",
-                    "option4": "1 minute",
-                    "option5": "Never stop"
-                },
-                "allowCamera": {
-                    "title": "TATING PHOTOS",
-                    "describe": "When enabling this feature, the camera takes photos automatically when detecting any movement if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
-                    "checkBoxText": "Enable this feature"
-                },
-                "cameraPrivacy": {
-                    "describe": "Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
-                    "linkText": "Go to Camera privacy mode to turn it off"
-                },
-                "authorizedAccess": {
-                    "describe": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
-                    "linkText": "Go to Windows Settings to give access"
-                },
-                "photo": {
-                    "title": "THE NUMBER OF PHOTOS TAKEN DURING THE MOVEMENT",
-                    "tooltip": "The camera on your computer automatically activates to take pictures when movements are detected. Pictures are taken every 2 seconds and are saved to your local storage.",
-                    "option1": 5,
-                    "option2": 10,
-                    "option3": 15,
-                    "option4": 20,
-                    "option5": 25,
-                    "option6": 30
-                },
-                "showPhoto": {
-                    "title": "PHOTOS HAVE BEEN:",
-                    "link": "View photos"
-                },
-                "fileAuthorizationTips": {
-                    "content": "Lenovo Vantage doesn't have access to the file system.",
-                    "link": "Go to Windows Settings to give access"
                 }
             }
         }
@@ -2702,7 +2719,7 @@
         },
         "question1": {
             "title": "Copii de siguranță și restaurarea fișierelor",
-            "description": "<div>    <div class='faqInFs4Fb'>        Copii de siguranță și restaurarea fișierelor    </div>    <hr />    <div class='faqInMb7'>        Întotdeauna este bine să aveți o copie de siguranță. Păstrați copiile fișierelor pe o altă unitate, în cazul în care se întâmplă ceva cu cele originale.    </div>    <div class='faqInFs3Fb'>        Configurați-vă copiile de siguranță    </div>    <hr />    <div class='mb-5'>        Selectați butonul <span class='faqInFb'>Start</span>, selectați <span class='faqInFb'>Settings</span> > <span class='faqInFb'>Update & security</span> > <span class='faqInFb'>Backup</span> > <span class='faqInFb'>Add a drive</span> și apoi alegeți o unitate externă sau o locație din rețea pentru copiile de siguranță.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Totul este gata. Vom face copii de siguranță, la interval de o oră, pentru toate fișierele din folderul utilizatorului (C:\\\\Users\\\\username). Pentru a alege pentru ce fișiere sau la ce interval de timp se fac copiile de siguranță, accesați <span class='faqInFb'>More options</span>.    </div>    <div class='faqInFs3Fb'>        Restaurați-vă fișierele    </div>    <div class='mb-5'>        Dacă vă lipsește un fișier sau folder important, iată ce puteți face pentru a-l recupera:    </div>    <div>        <div class='mb-3'>1. În caseta de căutare din bara de activități, introduceți <span class='faqInFb'>Restore files</span> și apoi selectați <span class='faqInFb'> Restore your files with File History</span>.</div>        <div class='mb-3'>2. Căutați fișierul, apoi folosiți săgețile pentru a vedea toate versiunile acestuia</div>        <div class='mb-3'>3. Când găsiți versiunea pe care o doriți, selectați <span class='faqInFb'>Restore</span> pentru a o salva în locația originală. Pentru a o salva în altă locație țineți apăsat (sau dați clic dreapta pe) <span class='faqInFb'>Restore</span>, selectați <span class='faqInFb'>Restore to</span> și apoi alegeți o nouă locație.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Copii de siguranță și restaurarea fișierelor    </div>    <hr />    <div class='faqInMb7'>        Întotdeauna este bine să aveți o copie de siguranță. Păstrați copiile fișierelor pe o altă unitate, în cazul în care se întâmplă ceva cu cele originale.    </div>    <div class='faqInFs3Fb'>        Configurați-vă copiile de siguranță    </div>    <hr />    <div class='mb-5'>        Selectați butonul <span class='faqInFb'>Start</span>, selectați <span class='faqInFb'>Settings</span> > <span class='faqInFb'>Update & security</span> > <span class='faqInFb'>Backup</span> > <span class='faqInFb'>Add a drive</span> și apoi alegeți o unitate externă sau o locație din rețea pentru copiile de siguranță.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Totul este gata. Vom face copii de siguranță, la interval de o oră, pentru toate fișierele din folderul utilizatorului (C:\\Users\\numele dvs. de utilizator). Pentru a alege pentru ce fișiere sau la ce interval de timp se fac copiile de siguranță, accesați <span class='faqInFb'>More options</span>.    </div>    <div class='faqInFs3Fb'>        Restaurați-vă fișierele    </div>    <div class='mb-5'>        Dacă vă lipsește un fișier sau folder important, iată ce puteți face pentru a-l recupera:    </div>    <div>        <div class='mb-3'>1. În caseta de căutare din bara de activități, introduceți <span class='faqInFb'>Restore files</span> și apoi selectați <span class='faqInFb'> Restore your files with File History</span>.</div>        <div class='mb-3'>2. Căutați fișierul, apoi folosiți săgețile pentru a vedea toate versiunile acestuia</div>        <div class='mb-3'>3. Când găsiți versiunea pe care o doriți, selectați <span class='faqInFb'>Restore</span> pentru a o salva în locația originală. Pentru a o salva în altă locație țineți apăsat (sau dați clic dreapta pe) <span class='faqInFb'>Restore</span>, selectați <span class='faqInFb'>Restore to</span> și apoi alegeți o nouă locație.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -3115,7 +3132,8 @@
         "settingsNotes": "Pentru a vă asigura că toate modificările au efect, lansați din nou această aplicație.",
         "betaSettingTitle": "Program beta",
         "betaProgram": "Program beta",
-        "betaSettingDescription": "Cele mai recente caracteristici la care lucrăm."
+        "betaSettingDescription": "Cele mai recente caracteristici la care lucrăm.",
+        "betaSettingNewDescription": "Ne bucurăm să vă invităm la programul Beta pentru Smart Performance. Vă ajută să îmbunătățiți performanța computerului prin:<br/><ul class='pl-4'><li>Diagnosticarea proactivă a erorilor și optimizarea setărilor.</li><li>Sporirea performanțelor Internetului prin Optimizarea rețelei și a browserului.</li><li>Efectuarea unei scanări rapide și remediere fără a utiliza programul Antivirus existent.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Anulare",
@@ -3285,7 +3303,8 @@
             "wireless": "Fără fir"
         },
         "warningMessage": "Rețineți că testele vor fi anulate dacă sistemul intră în repaus sau hibernează",
-        "refreshMessage": "Actualizarea poate dura un timp, deoarece este necesar să se încarce din nou toate componentele"
+        "refreshMessage": "Actualizarea poate dura un timp, deoarece este necesar să se încarce din nou toate componentele",
+        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -4040,8 +4059,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "Săgeată stânga",
+            "rightArrow": "Săgeată dreapta"
         }
     },
     "dcc": {

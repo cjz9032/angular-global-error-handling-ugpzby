@@ -1,5 +1,8 @@
 <form class="vtr-ui-custom-slider">
 	<div class="range">
+		<!-- <output class="bubble"
+			[for]="sliderId"
+			#sliderBubble></output> -->
 		<input type="range"
 			#rangeSlider
 			role="slider"
@@ -17,11 +20,9 @@
 			[metricsEvent]="metricsEvent"
 			[metricsValue]="metricsValue"
 			(input)="onInputChange($event)"
-			(change)="onValueChange($event)"
+			(blur)="onInputFocus(false)"
+			(focus)="onInputFocus(true)"
 			[step]="step">
-		<!-- <output class="bubble"
-			[for]="sliderId"
-			#sliderBubble></output> -->
 		<div class="d-flex justify-content-between legends"
 			[class.legends-disabled]="isDisabled">
 			<span *ngIf="minLegend?.length>0"

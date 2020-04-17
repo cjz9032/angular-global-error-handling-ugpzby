@@ -21,6 +21,7 @@ import { IntelligentSecurity } from 'src/app/data-models/smart-assist/intelligen
 import { SmartAssistCache } from 'src/app/data-models/smart-assist/smart-assist-cache.model';
 import { HsaIntelligentSecurityResponse } from 'src/app/data-models/smart-assist/hsa-intelligent-security.model/hsa-intelligent-security.model';
 import { AntiTheftResponse } from 'src/app/data-models/antiTheft/antiTheft.model';
+import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 
 
 describe('Component: PageSmartAssistComponent', () => {
@@ -87,28 +88,22 @@ describe('Component: PageSmartAssistComponent', () => {
 		expect(smartAssistService.getHPDAdvancedSetting).toHaveBeenCalled();
 	});
 
-	it("getAntiTheftStatus", () => {
+	it("getSuperResolutionStatus", () => {
 		smartAssistService = TestBed.get(SmartAssistService);
 		smartAssistService.isShellAvailable = true;
-		const res: AntiTheftResponse = {
+		const res: FeatureStatus = {
 			available: true, 
 			status: true,
-			isSupportPhoto:true,
-			cameraPrivacyState:true,
-			authorizedAccessState:true,
-			photoAddress:"",
-			alarmOften:  0, 
-			photoNumber:  0,
+			 permission:true,
+		     isLoading:true
 		}
 		const spy = spyOn(
 			smartAssistService, 
-			"getAntiTheftStatus"
+			"getSuperResolutionStatus"
 		).and.returnValue(Promise.resolve(res));
-
-		component.getAntiTheftStatus();
-		expect(smartAssistService.getAntiTheftStatus).toHaveBeenCalled();
+		component.getSuperResolutionStatus();
+		expect(smartAssistService.getSuperResolutionStatus).toHaveBeenCalled();
 	});
-
 
 	it("setHPDAdvancedSetting", () => {
 		smartAssistService = TestBed.get(SmartAssistService);

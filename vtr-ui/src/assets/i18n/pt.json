@@ -197,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "Atenção!",
                     "description": "Definições de Overclocking incorretas poderão causar danos irreversíveis no hardware.",
-                    "proceed": "CONTINUAR"
+                    "proceed": "CONTINUAR",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },
@@ -1443,23 +1446,35 @@
                 "subtitle": "Definições de Áudio",
                 "description": "Esta seção permite-lhe otimizar automaticamente ou configurartotalmente as suas definições de áudio manualmente, como definições de Dolby, microfone, etc.",
                 "audioSmartsettings": {
-                    "title": "Definições de Áudio Smart",
-                    "subtitle": "DEFINIÇÕES COM BASE NA APLICAÇÃO",
-                    "description": "Ajustar automaticamente as definições de áudio e visualização de acordo com as diferentes aplicações utilizadas.",
+                    "title": "Audio smart settings",
                     "dolby": {
-                        "title": "Definições automáticas de Áudio Dolby",
-                        "tooltip": "As definições automáticas de Áudio Dolby configuram as definições de áudio Dolby parao modo apropriado para as diferentes aplicações que utilizar para melhorar a sua experiência de áudio.",
+                        "title": "Dolby audio",
+                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
-                            "dynamic": "DINÂMICO",
-                            "movie": "FILME",
-                            "music": "MÚSICA",
-                            "games": "JOGO",
-                            "voip": "VOZ"
+                            "dynamic": "DYNAMIC",
+							"movie": "MOVIE",
+							"music": "MUSIC",
+							"games": "GAME",
+							"voip": "VOICE"
+                        },
+                        "automaticAudioCheckboxText": "Automatic audio optimization for",
+                        "automaticAudioMode": {
+                            "voIPMode": {
+                                "radioText": "VoIP",
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                            },
+                            "entertainmentMode": {
+                                "radioText": "Entertainment",
+                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
+                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                            }
                         }
                     },
-                    "voip": {
-                        "title": "Otimização Automática do Áudio para VoIP",
-                        "tooltip": "Mude automaticamente para o modo Dolby Voice durante as chamadas VoIP para obter uma qualidade de voz clara e consistente."
+                    "eCourse": {
+                        "title": "Interactive E-course mode",
+                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
                     }
                 },
                 "microphone": {
@@ -1682,7 +1697,9 @@
                         },
                         "subSectionTwo": {
                             "title": "Inverter a função principal predefinida",
-                            "description": "Quando ativada, a função principal predefinida será alterada das definições de fábrica para o oposto. Reinicie o computador para que as alterações entrem em vigor."
+                            "description": "Quando ativada, a função principal predefinida será alterada das definições de fábrica para o oposto. Reinicie o computador para que as alterações entrem em vigor.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "Como utilizar as combinações de teclas Fn",
@@ -2049,12 +2066,59 @@
             "superResolution": {
                 "heading": "Multimédia Inteligente",
                 "title": "Melhorar a resolução de vídeo",
-                "desc": "<p><label>Esta funcionalidade melhora a experiência de reprodução de vídeo melhorando a resolução de vídeo. Funciona especialmente quando o vídeo tem uma fraca resolução.</label></p> <p style='margin-top:4px;'><label>Esta função poderá ter impacto na duração da bateria, na temperatura da bateria e causar ruídos. Não a utilize no modo CC. Caso contrário, vai acelerar o consumo de energia e reduzir a duração da bateria.</label></p>",
-                "tooltip": "A funcionalidade funciona apenas em:<br>Windows Media player",
+                "desc": "<p><label>Esta funcionalidade otimiza a experiência da reprodução de vídeo ao melhorar a resolução de video. Funciona especialmente bem quando o vídeo tem uma péssima resolução.</label></p> <p style='margin-top:4px;'><label>Esta função poderá ter impacto na duração da bateria, na temperatura da bateria e causar ruídos. Não utilize esta funcionalidade no modo CC (modo de bateria). Caso contrário, vai acelerar o consumo de energia e reduzir a duração da bateria.</label></p>",
+                "tooltip": "Esta funcionalidade só é compatível com os seguintes leitores de vídeo:<br>Windows Media Player<br>Chrome<br>Filmes e Programas de TV<br>PotPlayer<br>GOM Player<br>Leitores baseados em browser (por exemplo, Chrome)<br><br>Para obter instruções para ativar esta função no PotPlayer e no GOM Player, consulte o Manual do Utilizador fornecido com o computador.",
                 "note": {
                     "description": "Esta funcionalidade não funciona quando:",
-                    "description1": "O computador não está ligado à alimentação CA.",
-                    "description2": "O modo Poupança de bateria está ativado."
+                    "description1": "O modo de poupança de bateria está ativado.",
+                    "description2": "A temperatura da CPU é demasiado elevada."
+                }
+            },
+            "antiTheft": {
+                "heading": "Deteção Inteligente",
+                "title": "Alerta de movimento inteligente",
+                "desc": "<p><label>Ao ativar esta funcionalidade, o dispositivo começará a emitir um sinal sonoro quando o seu ecrã estiver bloqueado e forem detetados movimentos, especialmente num local público.</label></p> <p style='margin-top:4px;'><label>Para dispensar o alarme, introduza a palavra-passe correta ou inicie sessão com o Windows Hello.</label></p>",
+                "note": {
+                    "description": "Depois de iniciar sessão com êxito no sistema, esta funcionalidade será desativada automaticamente. Terá de voltar a ativá-la para utilizá-la."
+                },
+                "alarm": {
+                    "title": " O ALARME É EMITIDO",
+                    "option1": "10 segundos",
+                    "option2": "20 segundos",
+                    "option3": "30 segundos",
+                    "option4": "1 minuto",
+                    "option5": "Nunca parar"
+                },
+                "allowCamera": {
+                    "title": "TIRAR FOTOGRAFIAS",
+                    "describe": "Quando ativar esta funcionalidade, a câmara tira fotografias automaticamente quando o ecrã estiver bloqueado e for detetado movimento. Estes dados são processados localmente no seu dispositivo. A Lenovo não tem acesso nem utiliza estes dados.",
+                    "checkBoxText": "Ativar esta funcionalidade"
+                },
+                "cameraPrivacy": {
+                    "describe": "O modo de privacidade da câmara do Lenovo Vantage está ativado. A função da caixa de verificação não funcionará.",
+                    "linkText": "Vá para o modo de privacidade da câmara para a desativar"
+                },
+                "authorizedAccess": {
+                    "describe": "O Lenovo Vantage não tem acesso à Câmara. A função da caixa de verificação não funcionará.",
+                    "linkText": "Vá às Definições do Windows para dar acesso"
+                },
+                "photo": {
+                    "title": "O NÚMERO DE FOTOS TIRADAS DURANTE O MOVIMENTO",
+                    "tooltip": "A câmara do computador é ativada automaticamente para tirar fotografias quando forem detetados movimentos. As imagens são tiradas a cada 2 segundos e guardadas no armazenamento local.",
+                    "option1": "5",
+                    "option2": "10",
+                    "option3": "15",
+                    "option4": "20",
+                    "option5": "25",
+                    "option6": "30"
+                },
+                "showPhoto": {
+                    "title": "AS FOTOGRAFIAS GUARDADAS LOCALMENTE:",
+                    "link": "Ver fotografias"
+                },
+                "fileAuthorizationTips": {
+                    "content": "O Lenovo Vantage não tem acesso ao sistema de ficheiros.",
+                    "link": "Vá às Definições do Windows para dar acesso"
                 }
             },
             "voice": {
@@ -2088,53 +2152,6 @@
                     "btnText": "ok",
                     "title": "Falha na Instalação",
                     "desc": "Por favor, tente novamente mais tarde para usar o Lenovo Voice."
-                }
-            },
-            "antiTheft": {
-                "heading": "Intelligent Sensing",
-                "title": "Smart Motion Alert",
-                "desc": "<p><label>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</label></p> <p style='margin-top:4px;'><label>To dismiss the alarm, enter the correct password or log in by Windows Hello.</label></p>",
-                "note": {
-                    "description": "Once you log in the system successfully, this feature will be turned off automatically. You need to enable it again to use it."
-                },
-                "alarm": {
-                    "title": " THE ALARM WILL LAST FOR",
-                    "option1": "10 seconds",
-                    "option2": "20 seconds",
-                    "option3": "30 seconds",
-                    "option4": "1 minute",
-                    "option5": "Never stop"
-                },
-                "allowCamera": {
-                    "title": "TATING PHOTOS",
-                    "describe": "When enabling this feature, the camera takes photos automatically when detecting any movement if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
-                    "checkBoxText": "Enable this feature"
-                },
-                "cameraPrivacy": {
-                    "describe": "Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
-                    "linkText": "Go to Camera privacy mode to turn it off"
-                },
-                "authorizedAccess": {
-                    "describe": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
-                    "linkText": "Go to Windows Settings to give access"
-                },
-                "photo": {
-                    "title": "THE NUMBER OF PHOTOS TAKEN DURING THE MOVEMENT",
-                    "tooltip": "The camera on your computer automatically activates to take pictures when movements are detected. Pictures are taken every 2 seconds and are saved to your local storage.",
-                    "option1": 5,
-                    "option2": 10,
-                    "option3": 15,
-                    "option4": 20,
-                    "option5": 25,
-                    "option6": 30
-                },
-                "showPhoto": {
-                    "title": "PHOTOS HAVE BEEN:",
-                    "link": "View photos"
-                },
-                "fileAuthorizationTips": {
-                    "content": "Lenovo Vantage doesn't have access to the file system.",
-                    "link": "Go to Windows Settings to give access"
                 }
             }
         }
@@ -2702,7 +2719,7 @@
         },
         "question1": {
             "title": "Faça uma cópia de segurança e restaure os seus ficheiros",
-            "description": "<div>    <div class='faqInFs4Fb'>        Faça uma cópia de segurança e restaure os seus ficheiros    </div>    <hr />    <div class='faqInMb7'>        É sempre uma boa ideia ter uma cópia de segurança. Mantenha cópias dos seus ficheiros em outra unidade caso aconteça algo aos originais.    </div>    <div class='faqInFs3Fb'>        Configurar a cópia de segurança    </div>    <hr />    <div class='mb-5'>        Selecione o botão <span class='faqInFb'>Iniciar</span>, selecione <span class='faqInFb'>Definições</span> > <span class='faqInFb'>Atualização e segurança</span> > <span class='faqInFb'>Cópia de segurança</span> > <span class='faqInFb'>Adicionar uma unidade</span> , e, em seguida, escolha uma unidade externa ou local de rede para as suas cópias de segurança.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Configuração concluída! A cada, será feita uma cópia de segurança de tudo na sua pasta de utilizador (C:\\\\Users\\\\username). Para alterar os ficheiros ou a frequência da cópia de segurança, vá a <span class='faqInFb'>Mais Opções</span>.    </div>    <div class='faqInFs3Fb'>        Restaurar os Ficheiros    </div>    <div class='mb-5'>        Caso lhe falte um ficheiro ou pasta importante, pode recuperá-lo através do seguinte procedimento:    </div>    <div>        <div class='mb-3'>1. Introduza <span class='faqInFb'>Restaurar ficheiros</span> na caixa de pesquisa da barra de tarefas e, em seguida, selecione <span class='faqInFb'> Restaurar os ficheiros com o Histórico de Ficheiros</span>.</div>        <div class='mb-3'>2. Procure o ficheiro de que precisa e, em seguida, utilize as setas para ver todas as versões do mesmo</div>        <div class='mb-3'>3. Quando encontrar a versão pretendida, selecione <span class='faqInFb'>Restaurar</span> para o guardar na sua localização original. Para a guardar num local diferente, prima sem soltar (ou clique com o botão direito do rato) <span class='faqInFb'>Restaurar</span>, selecione <span class='faqInFb'>Restaurar para</span>, e escolha outra localização.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Faça uma cópia de segurança e restaure os seus ficheiros    </div>    <hr />    <div class='faqInMb7'>        É sempre uma boa ideia ter uma cópia de segurança. Mantenha cópias dos seus ficheiros em outra unidade caso aconteça algo aos originais.    </div>    <div class='faqInFs3Fb'>        Configurar a cópia de segurança    </div>    <hr />    <div class='mb-5'>        Selecione o botão <span class='faqInFb'>Iniciar</span>, selecione <span class='faqInFb'>Definições</span> > <span class='faqInFb'>Atualização e segurança</span> > <span class='faqInFb'>Cópia de segurança</span> > <span class='faqInFb'>Adicionar uma unidade</span> , e, em seguida, escolha uma unidade externa ou local de rede para as suas cópias de segurança.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Configuração concluída! A cada, será feita uma cópia de segurança de tudo na sua pasta de utilizador (C:\\Users\\o seu nome de utilizador). Para alterar os ficheiros ou a frequência da cópia de segurança, vá a <span class='faqInFb'>Mais Opções</span>.    </div>    <div class='faqInFs3Fb'>        Restaurar os Ficheiros    </div>    <div class='mb-5'>        Caso lhe falte um ficheiro ou pasta importante, pode recuperá-lo através do seguinte procedimento:    </div>    <div>        <div class='mb-3'>1. Introduza <span class='faqInFb'>Restaurar ficheiros</span> na caixa de pesquisa da barra de tarefas e, em seguida, selecione <span class='faqInFb'> Restaurar os ficheiros com o Histórico de Ficheiros</span>.</div>        <div class='mb-3'>2. Procure o ficheiro de que precisa e, em seguida, utilize as setas para ver todas as versões do mesmo</div>        <div class='mb-3'>3. Quando encontrar a versão pretendida, selecione <span class='faqInFb'>Restaurar</span> para o guardar na sua localização original. Para a guardar num local diferente, prima sem soltar (ou clique com o botão direito do rato) <span class='faqInFb'>Restaurar</span>, selecione <span class='faqInFb'>Restaurar para</span>, e escolha outra localização.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -3115,7 +3132,8 @@
         "settingsNotes": "Reinicie esta aplicação para assegurar que todas as alterações entram em vigor.",
         "betaSettingTitle": "Programa Beta",
         "betaProgram": "Programa Beta",
-        "betaSettingDescription": "Experimente as funcionalidades mais recentes em que estamos a trabalhar."
+        "betaSettingDescription": "Experimente as funcionalidades mais recentes em que estamos a trabalhar.",
+        "betaSettingNewDescription": "Temos o prazer de convidá-lo para o programa Beta Smart Performance. Permite melhorar o desempenho do seu PC da seguinte forma:<br/><ul class='pl-4'><li>Diagnosticar proativamente os erros e otimizar as definições.</li><li>Melhorar o desempenho da Internet através da Otimização da Rede e do Navegador.</li><li>Analisar e remediar rapidamente sem utilizar o programa Antivírus existente.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Cancelar",
@@ -3285,7 +3303,8 @@
             "wireless": "Sem fios"
         },
         "warningMessage": "Tenha em atenção que os testes serão cancelados se o sistema entrar em modo de suspensão ou hibernação",
-        "refreshMessage": "A atualização pode demorar algum tempo por precisar de voltar a carregar todos os componentes"
+        "refreshMessage": "A atualização pode demorar algum tempo por precisar de voltar a carregar todos os componentes",
+        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -4040,8 +4059,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "Seta para a esquerda",
+            "rightArrow": "Seta para a direita"
         }
     },
     "dcc": {

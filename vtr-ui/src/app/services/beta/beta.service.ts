@@ -14,6 +14,7 @@ export enum BetaStatus {
 })
 export class BetaService {
 	private betaUser;
+	public betaFeatureAvailable = false;
 	constructor(
 		private vantageShellService: VantageShellService,
 		private commonService: CommonService

@@ -168,7 +168,8 @@
 																	(click)="launchFaceEnrollment()"
 																	(keydown.enter)="launchFaceEnrollment()"
 																	tabindex="0"
-																	href="javascript:void()">{{'device.smartAssist.intelligentSecurity.WindowsLink.goToWindowsHello' | translate}}
+																	href="javascript:void()"
+																	class="hello-link">{{'device.smartAssist.intelligentSecurity.WindowsLink.goToWindowsHello' | translate}}
 																</a>
 															</p>
 														</div>
@@ -260,7 +261,8 @@
 																		tabindex="0"
 																		(keydown.enter)="launchFaceEnrollment()"
 																		role="link"
-																		href="javascript:void()">{{'device.smartAssist.intelligentSecurity.WindowsLink.goToWindowsHello' | translate}}
+																		href="javascript:void()"
+																		class="hello-link">{{'device.smartAssist.intelligentSecurity.WindowsLink.goToWindowsHello' | translate}}
 																	</a>
 																</p>
 															</div>
@@ -575,7 +577,8 @@
 												[class.blur-1]="!intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)">
 												<div role="radiogroup"
 													tabindex="0"
-													aria-label="automatic screen locker more list, select using arrow keys">
+													aria-label="automatic screen locker more list, select using arrow keys"
+													class="radio-group">
 													<vtr-ui-rounded-rectangle-radio
 														[radioId]="'autoScreenLockTimer_fast'"
 														[group]="'autoScreenLockTimer'"
@@ -679,19 +682,7 @@
 
 					<!-- Start of Intelligent Sensing (Anti theft)-->
 					<div class="smart-assist-anti-theft">
-						<vtr-anti-theft id="sensing"
-						*ngIf="antiTheft.available"
-						[isLoading]="isAntiTheftLoading"
-						[isChecked]="antiTheft.status"
-						[isSupportPhoto] = "antiTheft.isSupportPhoto"
-						[photoAddress] = "antiTheft.photoAddress"
-						[alarmOften] = "antiTheft.alarmOften"
-						[photoNumber] = "antiTheft.photoNumber"
-						[checkboxDisabled] = "checkboxDisabled"
-						[cameraPrivacyState] ="antiTheft.cameraPrivacyState"
-						[authorizedAccessState] = "antiTheft.authorizedAccessState"
-						[isShowAuthorized] = "isShowAuthorized">
-						</vtr-anti-theft>
+						<vtr-anti-theft id="sensing"></vtr-anti-theft>
 					</div>
 					<!-- End of Intelligent Sensing (Anti theft)-->
 

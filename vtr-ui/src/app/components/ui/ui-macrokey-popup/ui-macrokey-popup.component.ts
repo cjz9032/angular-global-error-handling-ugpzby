@@ -24,7 +24,9 @@ export class UiMacrokeyPopupComponent implements OnInit {
 
 	keydownFn(event) {
 		if (event.which === 9) {
-			this.focusElement();
+			setTimeout(() => {
+				this.focusElement();
+			},2)
 		}
 	}
 

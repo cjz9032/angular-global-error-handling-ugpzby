@@ -304,6 +304,14 @@ $fontsize_xs: 1.4rem;
 				}
 			}
 		}
+		.hello-link {
+			outline-offset: 0;
+		}
+		.radio-group {
+			&:focus {
+				@include outline-blue;
+			}
+		}
 	}
 }
 
@@ -375,6 +383,10 @@ $fontsize_xs: 1.4rem;
 	color: $menu_hover;
 	cursor: pointer;
 	padding-top: 0.3rem;
+	border: 0.1rem solid transparent;
+	&:focus {
+		@include outline-border-blue;
+	}
 }
 
 .intelligent-security-image {

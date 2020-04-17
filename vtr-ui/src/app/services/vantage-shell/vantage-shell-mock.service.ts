@@ -744,7 +744,7 @@ export class VantageShellService {
 		return undefined;
 	}
 
-	public async getConnectedHomeSecurity(): Phoenix.ConnectedHomeSecurity {
+	public getConnectedHomeSecurity(): Phoenix.ConnectedHomeSecurity {
 		const homeSecurity: Phoenix.ConnectedHomeSecurity = {
 			account: {
 				state: CHSAccountState.trial,
@@ -798,7 +798,7 @@ export class VantageShellService {
 		return homeSecurity;
 	}
 
-	public async getDevicePosture(): Phoenix.DevicePosture {
+	public getDevicePosture(): Phoenix.DevicePosture {
 		const devicePosture: Phoenix.DevicePosture = {
 			value: [
 				{ name: 'PasswordProtection', vulnerable: false },
@@ -2254,6 +2254,33 @@ export class VantageShellService {
 	}
 
 	getGamingAccessory() {
+		return undefined;
+	}
+
+	public getAntiTheft(): any {
+		const win: any = window;
+		if (win.VantageShellExtension && win.VantageShellExtension.SmartMotionAlertRpcClient) {
+			return new win.VantageShellExtension.SmartMotionAlertRpcClient();
+		}
+		return undefined;
+	}
+
+	public getHsaIntelligentSecurity(): any {
+		try {
+			const win: any = window;
+			if (win.VantageShellExtension && win.VantageShellExtension.HumanPresenceDetectionRpcClient) {
+				return new win.VantageShellExtension.HumanPresenceDetectionRpcClient();
+			}
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public getMsStoreUtil(): any {
+		const win = window as any;
+		if (win.VantageShellExtension) {
+			return win.VantageShellExtension.Utils.MSStore;
+		}
 		return undefined;
 	}
 }

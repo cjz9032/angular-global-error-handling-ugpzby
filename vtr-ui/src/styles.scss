@@ -1720,3 +1720,13 @@ a, input, label {
 	}
 }
 
+.vtr-ui-switch-row.white-theme {
+	.caption {
+		.modern-standby {
+			&:focus {
+				outline-offset: 0;
+			}
+		}
+	}
+}
+

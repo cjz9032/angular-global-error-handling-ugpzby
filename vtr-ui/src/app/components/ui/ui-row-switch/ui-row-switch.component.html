@@ -11,38 +11,46 @@
 				[ngClass]="{'flex-grow-1': (isSwitchVisible && !resetTextAsButton),
 					'col-md-11 col-11':(!resetTextAsButton && !isSwitchVisible),
 					'col-md-7': (resetTextAsButton && !isSwitchVisible),
-					'col-md-10':type===undefined }">
-				<div class="container-fluid p-0">
-					<div class="row m-0">
+					'col-md-10':type===undefined }"
+				role="table">
+				<div class="container-fluid p-0"
+					role="rowgroup">
+					<div class="row m-0"
+						role="row">
 						<div class="col-auto left-icon-column"
+							role="cell"
 							*ngIf="leftIcon.length > 0">
-							<div class="left-icon-block">
+							<div class="left-icon-block"
+								role="img"
+								attr.aria-label="{{leftIcon[1]}}">
 								<fa-icon *ngIf="!isAdminRequired && leftIcon[0]!=='icomoon' && leftIcon[0]!=='svg'"
 									class="left-icon"
-									[icon]="leftIcon"></fa-icon>
+									[icon]="leftIcon"
+									attr.aria-hidden="true"></fa-icon>
 								<svg-icon *ngIf="!isAdminRequired && leftIcon[0]==='svg'"
+									attr.aria-hidden="true"
 									[applyCss]="true"
 									[stretch]="true"
 									class="left-icon-svg svg-inline--fa fa-w-20  ng-fa-icon"
 									[src]="'assets/icons/'+leftIcon[1]+'.svg'"></svg-icon>
 								<span *ngIf="!isAdminRequired && leftIcon[0]==='icomoon'"
-									[ngClass]="'icomoon '+leftIcon[1]"></span>
+									[ngClass]="'icomoon '+leftIcon[1]"
+									attr.aria-hidden="true"></span>
 								<img *ngIf="isAdminRequired"
+									attr.aria-hidden="true"
 									class="adminLogo" />
 							</div>
 						</div>
-						<div class="col">
+						<div class="col"
+							role="cell">
 							<div class="title"
-								role="text"
 								id="{{switchId}}-title">
 								{{ title }}
 							</div>
 							<span *ngIf="caption">
 								<div class="caption"
 									#captionRef
-									role="text"
 									id="{{switchId}}-caption"
-									attr.aria-label="{{caption}}"
 									[innerHTML]="caption.length > 70  && !contentExpand  && readMoreText.length > 0 ? (caption | slice: 0:70) : caption">
 								</div>
 							</span>
@@ -53,7 +61,7 @@
 								tabindex="0"
 								class="read-more"
 								(click)="onReadMoreClick($event)"
-								attr.aria-label="read more about, {{ title }}"
+								[attr.aria-label]="'read more about,'+ title"
 								(keydown.enter)="onReadMoreClick($event)">
 								{{ readMoreText }}
 							</span>
@@ -72,7 +80,7 @@
 					*ngIf="resetText.length > 0">
 					<!-- attr.aria-label="three  {{switchId+ '-reset-btn'}}"   -->
 					<button id="{{switchId+ '-reset-btn'}}"
-						title="{{resetText}}"
+						title=""
 						tabindex="0"
 						type="button"
 						[disabled]="disabledAll"
@@ -80,8 +88,11 @@
 						[ngClass]="{'btn-link text':!resetTextAsButton ,'btn-label':resetTextAsButton}"
 						(click)="onResetClick($event)"
 						(keydown.enter)="onResetClick($event)"
-						[attr.aria-disabled]="disabledAll">
-						{{ resetText }}
+						[attr.aria-disabled]="disabledAll"
+						[ngbTooltip]="resetText"
+						tooltipClass="vtr-tooltip"
+						container="body">
+						<span class="text-ellipsis">{{ resetText }}</span>
 					</button>
 
 				</div>
@@ -103,7 +114,7 @@
 					<a *ngIf="linkPath.startsWith('ms-settings:'); else elseBlock"
 						tabindex="0"
 						id="{{switchId+ '_click_link'}}"
-						attr.aria-label="{{ title + '_click_link'}}"
+						[attr.aria-label]="title + '_click_link'"
 						href="javascript:void(0)"
 						(click)="onLinkClick(linkPath)"
 						(keydown.enter)="onLinkClick(linkPath)"
@@ -124,10 +135,10 @@
 					*ngIf="rightIcon.length > 0 && !voice && !toolTipStatus && !fnCtrltoolTip"
 					[ngClass]="{'auto-screen-lock-help-icon': !isSwitchVisible}">
 					<fa-icon id="{{switchId}}-tooltip_right_icon"
-						attr.aria-label="{{ title }} tooltip, which reads: {{ tooltipText }}"
+						[attr.aria-label]="title +' tooltip, which reads: '+ tooltipText"
 						class="right-icon"
 						tabindex="0"
-						role="img"
+						role="none"
 						triggers="manual"
 						placement="left"
 						[ngbTooltip]="tooltipRef"
@@ -136,6 +147,8 @@
 						container="vtr-root"
 						tooltipClass="vtr-tooltip"
 						(click)="onRightIconClick(rightToolTip1, $event)"
+						(keydown.shift.tab)="closeAllToolTips()"
+						(keydown.tab)="closeAllToolTips()"
 						(keydown.enter)="onRightIconClick(rightToolTip1, $event)">
 					</fa-icon>
 				</div>
@@ -144,10 +157,11 @@
 					*ngIf="rightIcon.length > 0 && toolTipStatus">
 					<fa-icon id="{{switchId+ '_smartTooltip_right_icon'}}"
 						tabindex="0"
-						attr.aria-label="{{ title }} tooltip, which reads: {{ tooltipText }}"
+						[attr.aria-label]="title +' tooltip, which reads: '+ tooltipText"
 						class="right-icon"
 						triggers="manual"
 						placement="left"
+						role="none"
 						[ngbTooltip]="smartTooltipRef"
 						#rightToolTip2="ngbTooltip"
 						[autoClose]="true"
@@ -155,6 +169,8 @@
 						container="vtr-root"
 						tooltipClass="vtr-tooltip"
 						(click)="onRightIconClick(rightToolTip2, $event)"
+						(keydown.shift.tab)="closeAllToolTips()"
+						(keydown.tab)="closeAllToolTips()"
 						(keydown.enter)="onRightIconClick(rightToolTip2, $event)"></fa-icon>
 				</div>
 
@@ -163,10 +179,11 @@
 					*ngIf="rightIcon.length > 0 && fnCtrltoolTip">
 					<fa-icon id="{{switchId+ '_fnCtrl_right_icon'}}"
 						tabindex="0"
-						attr.aria-label="{{ title }} tooltip, which reads: {{ tooltipText }}"
+						[attr.aria-label]="title +' tooltip, which reads: '+ tooltipText"
 						class="right-icon"
 						triggers="manual"
 						placement="left"
+						role="none"
 						[ngbTooltip]="fnCtrltoolTipRef"
 						#rightToolTip3="ngbTooltip"
 						[autoClose]="true"
@@ -174,6 +191,8 @@
 						container="vtr-root"
 						tooltipClass="vtr-tooltip fnctrl-tooltip"
 						(click)="onRightIconClick(rightToolTip3, $event)"
+						(keydown.shift.tab)="closeAllToolTips()"
+						(keydown.tab)="closeAllToolTips()"
 						(keydown.enter)="onRightIconClick(rightToolTip3, $event)"></fa-icon>
 				</div>
 
@@ -184,7 +203,7 @@
 						metricsParent="Device.SmartAssist"
 						metricsItem="{{metricsParent}}HelpIcon"
 						id="{{switchId+ '_voice_right_icon'}}"
-						attr.aria-label="{{ title }} tooltip, which reads: {{ tooltipText }}"
+						[attr.aria-label]="title +' tooltip, which reads: '+ tooltipText"
 						class="right-icon"
 						tabindex="0"
 						[icon]="rightIcon"
@@ -244,7 +263,7 @@
 	<div [innerHTML]='tooltipText'
 		id="{{switchId}}-toolTip"
 		role="tooltip"
-		attr.aria-label="tooltipText">
+		[attr.aria-label]="tooltipText">
 	</div>
 </ng-template>
 

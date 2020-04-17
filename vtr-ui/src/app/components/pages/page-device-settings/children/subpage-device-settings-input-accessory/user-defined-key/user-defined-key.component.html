@@ -118,10 +118,12 @@
 											</div>
 											<button type="submit"
 												class="button"
-												title="{{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}"
+												title=""
 												id="ip-userdefined-key-applybtn"
-												attr.aria-label="ip-userdefined-key-applybtn">
-												{{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}
+												attr.aria-label="ip-userdefined-key-applybtn"
+												[ngbTooltip]="'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate" tooltipClass="vtr-tooltip" container="body"
+												>
+												<span class="text-ellipsis">{{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}</span>
 											</button>
 										</div>
 									</div>
@@ -171,8 +173,10 @@
 												attr.aria-label="ip-userdefined-key-applybtn"
 												type="submit"
 												class="button"
-												title="{{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}">
-												{{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}
+												title=""
+												[ngbTooltip]="'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate" tooltipClass="vtr-tooltip" container="body"
+												>
+												<span class="text-ellipsis">{{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}</span>
 											</button>
 										</div>
 									</div>
@@ -197,7 +201,9 @@
 											<span *ngIf="applicationList.length>=6"
 												tabindex="0"
 												data-toggle="tooltip"
-												title="{{'device.deviceSettings.inputAccessories.userDefinedKey.openapplicationsorfiles.applicationTitle' | translate}}">
+												title=""
+												[ngbTooltip]="'device.deviceSettings.inputAccessories.userDefinedKey.openapplicationsorfiles.applicationTitle' | translate" tooltipClass="vtr-tooltip" container="body"
+												>
 												<button *ngIf=applicationList.length
 													(click)="udkSubmit(4);"
 													id="add-application"
@@ -250,7 +256,9 @@
 												class="d-inline-block disabled-tooltip"
 												tabindex="0"
 												data-toggle="tooltip"
-												title="{{'device.deviceSettings.inputAccessories.userDefinedKey.openapplicationsorfiles.fileTitle' | translate}}">
+												title=""
+												[ngbTooltip]="'device.deviceSettings.inputAccessories.userDefinedKey.openapplicationsorfiles.fileTitle' | translate" tooltipClass="vtr-tooltip" container="body"
+												>
 												<button *ngIf=fileList.length
 													(click)="udkSubmit(5);"
 													id="add-file"
@@ -332,8 +340,10 @@
 												attr.aria-label="ip-userdefined-key-applybtn"
 												type="submit"
 												class="button"
-												title="{{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}">
-												{{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}
+												title=""
+												[ngbTooltip]="'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate" tooltipClass="vtr-tooltip" container="body"
+												>
+												<span class="text-ellipsis">{{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}</span>
 											</button>
 										</div>
 									</div>

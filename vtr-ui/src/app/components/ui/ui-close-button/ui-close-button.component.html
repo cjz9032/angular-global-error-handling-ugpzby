@@ -1,4 +1,5 @@
-<button class="close-button"
+<div class="close-button"
+	role="button"
 	[tabindex]="tabIndex"
 	[id]="linkId"
 	[attr.aria-label]="'common.ui.close' | translate"
@@ -6,6 +7,7 @@
 	[metricsItem]="metricsItem"
 	[metricsEvent]="metricsEvent"
 	[metricsParent]="metricsParent"
+	(keyup.enter)="pressCloseButton($event)"
 	(click)="clickCloseButton($event)">
 	<div class="x"></div>
-</button>
+</div>

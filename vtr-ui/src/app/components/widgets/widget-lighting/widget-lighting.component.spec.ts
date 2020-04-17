@@ -88,6 +88,7 @@ describe('WidgetLightingComponent', () => {
 	it('should not show popup', () => {
 		component.isPopupVisible = false;
 		spy.setLightingProfileId.and.returnValue(Promise.resolve({ didSuccess: true }));
+		component.didSuccess = true;
 		component.SetProfile({ target: {value : 1}});
 		expect(component.setprofId).toEqual(1);
 		component.setprofId = 1;

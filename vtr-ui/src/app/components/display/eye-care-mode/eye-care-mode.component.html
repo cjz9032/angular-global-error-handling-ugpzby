@@ -1,6 +1,7 @@
 <div class="vtr-eye-care-mode"
 	*ngIf="eyeCareModeSettings">
-	<div class="row" *ngIf="eyeCareModeSettings.current">
+	<div class="row"
+		*ngIf="eyeCareModeSettings.current">
 		<div class="col pl-4">
 			<vtr-ui-custom-slider [step]=100
 				[isDisabled]="enableSlider"
@@ -9,17 +10,17 @@
 				[minLegend]="'device.deviceSettings.displayCamera.display.eyeCareMode.options.warm' | translate"
 				[maxLegend]="'device.deviceSettings.displayCamera.display.eyeCareMode.options.cold' | translate"
 				[value]="eyeCareModeSettings.current"
-				(sliderChange)="onEyeCareTemparatureChange($event)"
-				(valueChanged)="onEyeCareTemparatureValueChange($event)"
+				(sliderChange)="onEyeCareTemperatureChange($event)"
+				(valueChanged)="onEyeCareTemperatureValueChange($event)"
 				[sliderId]="'color-temp-eyeCareMode'">
 			</vtr-ui-custom-slider>
 		</div>
 		<div class="reset-temperature">
 			<div class="button-box">
-				<vtr-ui-button (onClick)="onResetTemparature($event)"
+				<vtr-ui-button (onClick)="onResetTemperature($event)"
 					metricsEvent="itemClick"
 					metricsParent="eye-care-mode"
-					metricsItem="btn.eye-care-mode.ResetTemparature"
+					metricsItem="btn.eye-care-mode.ResetTemperature"
 					[isDisabled]="disableReset"
 					[isFullWidth]="false"
 					[label]="'device.deviceSettings.displayCamera.display.eyeCareMode.reset' | translate"
@@ -30,7 +31,7 @@
 	</div>
 	<div class="custom-control custom-checkbox eye-care-checkbox"
 		*ngIf="sunsetToSunriseStatus.available && enableSunsetToSunrise">
-		<vtr-ui-checkbox [componentId]="'cb-eye-care-schedule'"
+		<vtr-ui-checkbox componentId="cb-eye-care-schedule"
 			[disabled]="enableSunsetToSunrise || missingGraphicDriver"
 			[checked]="sunsetToSunriseStatus.status"
 			[value]="sunsetToSunriseStatus.status"
