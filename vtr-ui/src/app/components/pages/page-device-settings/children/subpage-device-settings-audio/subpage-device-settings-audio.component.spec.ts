@@ -456,7 +456,7 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		component = fixture.componentInstance;
 		audioService = TestBed.get(AudioService);
 		audioService.isShellAvailable = true;
-		const event = { value: 2 };
+		const event = 2;
 		component.microphoneProperties = { ...microphoneProperties };
 		spyOn(component, 'updateMicrophoneCache');
 		const spy = spyOn(audioService, 'setMicrophoneVolume').and.returnValue(
@@ -471,7 +471,7 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		component = fixture.componentInstance;
 		audioService = TestBed.get(AudioService);
 		audioService.isShellAvailable = true;
-		const event = { value: 2 };
+		const event = 2;
 		component.microphoneProperties = { ...microphoneProperties };
 		const error = { message: 'Error' };
 		spyOn(component, 'updateMicrophoneCache');
@@ -486,7 +486,7 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
 		component = fixture.componentInstance;
 		logService = TestBed.get(LoggerService);
-		const event = { value: '' };
+		const event = 0;
 		const spy = spyOn(logService, 'error');
 		component.onMicrophoneVolumeChange(event);
 		expect(spy).toHaveBeenCalled();
@@ -618,7 +618,7 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		expect(spy).toHaveBeenCalled();
 	});
 
-	it('should call startMonitor - promise rejected', () => {
+	it('should call startMicrophoneMonitor - promise rejected', () => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
 		component = fixture.componentInstance;
 		audioService = TestBed.get(AudioService);
@@ -628,18 +628,18 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 			audioService,
 			'startMicrophoneMonitor'
 		).and.returnValue(Promise.reject(error));
-		component.startMonitor();
+		component.startMicrophoneMonitor();
 		expect(spy).toHaveBeenCalled();
 	});
 
-	it('should call startMonitor - try-catch catch block', () => {
+	it('should call startMicrophoneMonitor - try-catch catch block', () => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
 		component = fixture.componentInstance;
-		component.startMonitor();
-		expect(component.startMonitor).toThrowError();
+		component.startMicrophoneMonitor();
+		expect(component.startMicrophoneMonitor).toThrowError();
 	});
 
-	it('should call stopMonitor - promise rejected', () => {
+	it('should call stopMicrophoneMonitor - promise rejected', () => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
 		component = fixture.componentInstance;
 		audioService = TestBed.get(AudioService);
@@ -649,15 +649,15 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 			audioService,
 			'stopMicrophoneMonitor'
 		).and.returnValue(Promise.reject(error));
-		component.stopMonitor();
+		component.stopMicrophoneMonitor();
 		expect(spy).toHaveBeenCalled();
 	});
 
-	it('should call stopMonitor - try-catch catch block', () => {
+	it('should call stopMicrophoneMonitor - try-catch catch block', () => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
 		component = fixture.componentInstance;
-		component.stopMonitor();
-		expect(component.stopMonitor).toThrowError();
+		component.stopMicrophoneMonitor();
+		expect(component.stopMicrophoneMonitor).toThrowError();
 	});
 
 	it('should call startMonitorHandler', () => {
@@ -670,13 +670,13 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		expect(spy).toHaveBeenCalled();
 	});
 
-	it('should call onCardCollapse', () => {
-		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
-		component = fixture.componentInstance;
-		const spy = spyOn(component.manualRefresh, 'emit');
-		component.onCardCollapse(false);
-		expect(spy).toHaveBeenCalled();
-	});
+	// it('should call onCardCollapse', () => {
+	// 	fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
+	// 	component = fixture.componentInstance;
+	// 	const spy = spyOn(component.manualRefresh, 'emit');
+	// 	component.onCardCollapse(false);
+	// 	expect(spy).toHaveBeenCalled();
+	// });
 
 	it('should call initMicrophoneFromCache', () => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
@@ -722,7 +722,7 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		component.initMicrophoneFromCache();
 		expect(spy).toHaveBeenCalled();
 	});
-	
+
 	it('should call initMicrophoneFromCache - inner else cases - 2', () => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
 		component = fixture.componentInstance;
@@ -745,7 +745,7 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		component.initMicrophoneFromCache();
 		expect(spy).toHaveBeenCalled();
 	});
-	
+
 	it('should call initMicrophoneFromCache - inner else cases - 2', () => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
 		component = fixture.componentInstance;
@@ -760,7 +760,7 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		component.initMicrophoneFromCache();
 		expect(spy).toHaveBeenCalled();
 	});
-	
+
 	it('should call updateMicrophoneHandler', () => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
 		component = fixture.componentInstance;

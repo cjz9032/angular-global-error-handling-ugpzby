@@ -267,7 +267,7 @@ describe('SubpageDeviceSettingsDisplayComponent', () => {
 			status: false
 		};
 		displayService = TestBed.get(DisplayService);
-		const spy = spyOn(
+		const spy = spyOn<any>(
 			displayService,
 			'getDisplayColortemperature'
 		).and.returnValue(Promise.resolve(response));
@@ -406,7 +406,7 @@ describe('SubpageDeviceSettingsDisplayComponent', () => {
 		expect(component.setEyeCareModeStatus).toThrow();
 	}));
 
-	it('should call onEyeCareTemparatureChange', async(() => {
+	it('should call onEyeCareTemperatureChange', async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsDisplayComponent
 		);
@@ -416,7 +416,7 @@ describe('SubpageDeviceSettingsDisplayComponent', () => {
 			value: 4
 		};
 		displayService.isShellAvailable = true;
-		const spy = spyOn(displayService, 'setDisplayColortemperature');
+		const spy = spyOn<any>(displayService, 'setDisplayColortemperature');
 		component.onEyeCareTemperatureChange(event);
 		expect(spy).toHaveBeenCalled();
 	}));
@@ -426,46 +426,46 @@ describe('SubpageDeviceSettingsDisplayComponent', () => {
 			SubpageDeviceSettingsDisplayComponent
 		);
 		component = fixture.componentInstance;
-		displayService = TestBed.get(DisplayService);
+		displayService = TestBed.inject(DisplayService);
 		const event: ChangeContext = {
 			value: 3,
 			highValue: 10,
 			pointerType: 0
 		};
-		const spy = spyOn(displayService, 'setDisplayColortemperature');
-		component.onEyeCareTemparatureValueChange(event);
+		const spy = spyOn<any>(displayService, 'setDisplayColortemperature');
+		component.onEyeCareTemperatureChange(event.value);
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should throw error - onEyeCareTemparatureValueChange', async(() => {
+	it('should throw error - onEyeCareTemperatureChange', async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsDisplayComponent
 		);
 		component = fixture.componentInstance;
-		expect(component.onEyeCareTemparatureValueChange).toThrow();
+		expect(component.onEyeCareTemperatureChange).toThrow();
 	}));
 
-	it('should call setEyeCareModeTemparature', async(() => {
-		fixture = TestBed.createComponent(
-			SubpageDeviceSettingsDisplayComponent
-		);
-		component = fixture.componentInstance;
-		const value = 4;
-		displayService = TestBed.get(DisplayService);
-		const spy = spyOn(displayService, 'setDisplayColortemperature');
-		component.setEyeCareModeTemparature(value);
-		expect(spy).toHaveBeenCalled();
-	}));
+	// it('should call setEyeCareModeTemparature', async(() => {
+	// 	fixture = TestBed.createComponent(
+	// 		SubpageDeviceSettingsDisplayComponent
+	// 	);
+	// 	component = fixture.componentInstance;
+	// 	const value = 4;
+	// 	displayService = TestBed.get(DisplayService);
+	// 	const spy = spyOn(displayService, 'setDisplayColortemperature');
+	// 	component.setEyeCareModeTemparature(value);
+	// 	expect(spy).toHaveBeenCalled();
+	// }));
 
-	it('should throw error - setEyeCareModeTemparature', async(() => {
-		fixture = TestBed.createComponent(
-			SubpageDeviceSettingsDisplayComponent
-		);
-		component = fixture.componentInstance;
-		expect(component.setEyeCareModeTemparature).toThrow();
-	}));
+	// it('should throw error - setEyeCareModeTemparature', async(() => {
+	// 	fixture = TestBed.createComponent(
+	// 		SubpageDeviceSettingsDisplayComponent
+	// 	);
+	// 	component = fixture.componentInstance;
+	// 	expect(component.setEyeCareModeTemparature).toThrow();
+	// }));
 
-	it('should call onResetTemparature', async(() => {
+	it('should call onResetTemperature', async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsDisplayComponent
 		);
@@ -482,16 +482,16 @@ describe('SubpageDeviceSettingsDisplayComponent', () => {
 		spyOn(displayService, 'resetEyeCareMode').and.returnValue(
 			Promise.resolve(resetData)
 		);
-		component.onResetTemparature(event);
+		component.onResetTemperature(event);
 		expect(component.enableSlider).toEqual(false);
 	}));
 
-	it('should throw error - onResetTemparature', async(() => {
+	it('should throw error - onResetTemperature', async(() => {
 		fixture = TestBed.createComponent(
 			SubpageDeviceSettingsDisplayComponent
 		);
 		component = fixture.componentInstance;
-		expect(component.onResetTemparature).toThrow();
+		expect(component.onResetTemperature).toThrow();
 	}));
 
 	it('should call onSunsetToSunrise result is true', async(() => {
@@ -649,7 +649,7 @@ describe('SubpageDeviceSettingsDisplayComponent', () => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsDisplayComponent);
 		component = fixture.componentInstance;
 		component.eyeCareModeStatus.status = true;
-		const spy = spyOn(component, 'onEyeCareTemparatureChange')
+		const spy = spyOn(component, 'onEyeCareTemperatureChange')
 		component.setToEyeCareMode();
 		expect(spy).toHaveBeenCalled()
 	}));
@@ -735,7 +735,7 @@ describe('SubpageDeviceSettingsDisplayComponent', () => {
 			pointerType: 0
 		};
 		const spy = spyOn(displayService, 'setCameraBrightness');
-		component.onBrightnessChange(event);
+		component.onBrightnessChange(event.value);
 		expect(spy).toHaveBeenCalled()
 	}));
 
@@ -750,7 +750,7 @@ describe('SubpageDeviceSettingsDisplayComponent', () => {
 			pointerType: 0
 		};
 		const spy = spyOn(displayService, 'setCameraContrast');
-		component.onContrastChange(event);
+		component.onContrastChange(event.value);
 		expect(spy).toHaveBeenCalled()
 	}));
 
@@ -791,7 +791,7 @@ describe('SubpageDeviceSettingsDisplayComponent', () => {
 			pointerType: 0
 		};
 		const spy = spyOn(displayService, 'setCameraExposureValue');
-		component.onCameraExposureValueChange(event);
+		component.onCameraExposureValueChange(event.value);
 		expect(spy).toHaveBeenCalled()
 	}));
 
@@ -818,7 +818,7 @@ describe('SubpageDeviceSettingsDisplayComponent', () => {
 		expect(spy).toHaveBeenCalled()
 	}));
 
-	it('should call getResetColorTemparatureCallBack - capability is NotAvailable', async(() => {
+	it('should call getResetColorTemperatureCallBack - capability is NotAvailable', async(() => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsDisplayComponent);
 		component = fixture.componentInstance;
 		const resetData: any = {
@@ -828,11 +828,11 @@ describe('SubpageDeviceSettingsDisplayComponent', () => {
 		}
 		component.eyeCareDataSource = new EyeCareMode();
 		component.eyeCareModeCache = new EyeCareModeCapability();
-		component.getResetColorTemparatureCallBack(resetData)
+		component.getResetColorTemperatureCallBack(resetData)
 		expect(component.enableSlider).toBe(false);
 	}));
 
-	it('should call getResetColorTemparatureCallBack - capability is not NotAvailable', async(() => {
+	it('should call getResetColorTemperatureCallBack - capability is not NotAvailable', async(() => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsDisplayComponent);
 		component = fixture.componentInstance;
 		const resetData: any = {
@@ -842,7 +842,7 @@ describe('SubpageDeviceSettingsDisplayComponent', () => {
 		}
 		component.eyeCareDataSource = new EyeCareMode();
 		component.eyeCareModeCache = new EyeCareModeCapability();
-		component.getResetColorTemparatureCallBack(resetData)
+		component.getResetColorTemperatureCallBack(resetData)
 		expect(component.disableDisplayColor).toBe(false);
 	}));
 

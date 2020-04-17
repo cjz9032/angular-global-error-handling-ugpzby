@@ -149,6 +149,9 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				this.setManualModeSetting(IntelligentCoolingModes.Performance);
 			}
 		}
+		if (!this.legacyManualModeCapability) {
+			this.showIntelligentCoolingModes = false;
+		}
 		this.cache.showIC = this.showIC;
 		this.cache.autoModeToggle.available = this.showIntelligentCoolingToggle;
 		this.cache.autoModeToggle.status = this.enableIntelligentCoolingToggle;
@@ -360,6 +363,9 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				this.cQLCapability = await this.getLegacyCQLCapability();
 				this.tIOCapability = 0 !== (await this.getLegacyTIOCapability());
 				this.legacyManualModeCapability = await this.getLegacyManualModeCapability();
+				if (!this.legacyManualModeCapability) {
+					this.showIntelligentCoolingModes = false;
+				}
 				if (this.cQLCapability || this.tIOCapability || this.legacyManualModeCapability) {
 					// Legacy Capable or DYTC 3.0
 					this.captionText = this.translate.instant('device.deviceSettings.power.powerSmartSettings.description3');
@@ -448,15 +454,6 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 		} catch (error) {
 			this.logger.error('PowerSmartSettingsComponent:getEMDriverStatus', error.message);
 		}
-	}
-
-	public isShowIntelligentCoolingModes(): boolean {
-		if (!this.legacyManualModeCapability) {
-			// this.logger.info('PowerSmartSettingsComponent.isShowIntelligentCoolingModes', this.legacyManualModeCapability);
-			return false;
-		}
-		// this.logger.info('PowerSmartSettingsComponent.isShowIntelligentCoolingModes', this.showIntelligentCoolingModes);
-		return this.showIntelligentCoolingModes;
 	}
 
 	private getDYTCRevision(): Promise<number> {
