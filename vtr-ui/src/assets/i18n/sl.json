@@ -1446,23 +1446,35 @@
                 "subtitle": "Nastavitve zvoka",
                 "description": "Ta razdelek vam omogoča, da samodejno optimizirate ali v celotiročno konfigurirate nastavitve zvoka, kot so nastavitve za Dolby, mikrofon itd.",
                 "audioSmartsettings": {
-                    "title": "Pametne nastavitve zvoka",
-                    "subtitle": "NASTAVITVE, PRILAGOJENE PROGRAMOM",
-                    "description": "Samodejno prilagajanje nastavitev zvoka glede na različne aplikacije, ki jih uporabljate.",
+                    "title": "Audio smart settings",
                     "dolby": {
-                        "title": "Samodejne nastavitve zvoka za Dolby",
-                        "tooltip": "Samodejne nastavitve zvoka za Dolby konfigurirajo nastavitve zvoka za Dolby tako, da soustrezne za različne programe, ki jih uporabljate, za izboljšanje vaše izkušnje z zvokom.",
+                        "title": "Dolby audio",
+                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
-                            "dynamic": "DINAMIČNO",
-                            "movie": "FILM",
-                            "music": "GLASBA",
-                            "games": "IGRA",
-                            "voip": "GLAS"
+                            "dynamic": "DYNAMIC",
+							"movie": "MOVIE",
+							"music": "MUSIC",
+							"games": "GAME",
+							"voip": "VOICE"
+                        },
+                        "automaticAudioCheckboxText": "Automatic audio optimization for",
+                        "automaticAudioMode": {
+                            "voIPMode": {
+                                "radioText": "VoIP",
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                            },
+                            "entertainmentMode": {
+                                "radioText": "Entertainment",
+                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
+                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                            }
                         }
                     },
-                    "voip": {
-                        "title": "Samodejno optimiziranje zvoka za VoIP",
-                        "tooltip": "Samodejni preklop v način Dolby Voice med VoIP klici za zagotavljanje javne, doseledne kakovosti zvoka."
+                    "eCourse": {
+                        "title": "Interactive E-course mode",
+                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
                     }
                 },
                 "microphone": {
@@ -1882,7 +1894,7 @@
                 "zeroTouchLoginForIdea": {
                     "title": "Prijava brez dotika",
                     "caption": "Ta funkcija vam omogoča, da izboljšate delovno učinkovitost s samodejnim prebujanjem ali prijavo v računalnik. Če želite uporabljati to funkcijo, morate registrirati svoj obraz v programu Windows Hello.",
-                    "tooltip": "Ko ste pred računalnikom ali se mu približujete (na razdalji 1,2 ali 1,5 metra), vam ta funkcija omogoča samodejno prijavo v sistem, potem ko prepozna vaš obraz. Če ste zunaj in ne v pisarni, morate biti bližje računalniku in bujenje bo trajalo dlje. <br>Največja razdalja zaznavanja je odvisna od zmožnosti senzorja. Več podrobnosti poiščite v <i>Vodiču za uporabnika</i>, ki je priložen računalniku."
+                    "tooltip": "Ko ste pred računalnikom ali se mu približujete (na razdalji 1,2 ali 1,5 metra), vam ta funkcija omogoča samodejno prijavo v sistem, potem ko prepozna vaš obraz. Če ste zunaj in ne v pisarni, morate biti bližje računalniku in bujenje bo trajalo dlje. <br>Največja razdalja zaznavanja je odvisna od zmožnosti senzorja. Več podrobnosti poiščite v Vodiču za uporabnika, ki je priložen računalniku."
                 },
                 "zeroTouchLock": {
                     "title": "Zaklepanje brez dotika",
@@ -1969,10 +1981,8 @@
                     "description2": "Funkcija uporablja senzorje in kamero za zaznavanje vaše prisotnosti. Vendar pa funkcija NE zbira, shranjuje ali posreduje kakršnih koli osebnih podatkov ali slik.",
                     "description3": "1. Če želite uporabiti zgornje funkcije, prilagodite zaslon računalnika na primeren kot, tako da bo mogoče prepoznati vaš obraz.",
                     "description4": "2. Zgornje funkcije niso podprte, ko je:",
-                    "description5a1": "a. Računalnik v načinu šotora, tabličnega računalnika, stojala ali je odklopljen. Za načine, ki jih podpira vaš računalnik, glejte ",
-                    "description5a2": "Vodič za uporabnika ",
-                    "description5a3": ", ki ga dobite z računalnikom.",
-                    "description5b": "b. Računalnik v načinu mirovanja ali je izklopljen.",
+                    "description5a": "a. Računalnik v načinu šotora, tabličnega računalnika, stojala ali je odklopljen. Načini, ki jih računalnik podpira, so navedeni v Vodiču za uporabnika, ki je priložen računalniku.",
+					"description5b": "b. Računalnik v načinu mirovanja ali je izklopljen.",
                     "description6": "3. Če je v računalniku vklopljen letalski način, so te funkcije onemogočene.",
                     "description7": "Natančnost se razlikuje glede na velikost telesa, držo in pogostost gibanja. Če se računalnik nepričakovano zaklene, prilagodite vrstico za občutljivost, da izboljšate natančnost."
                 },
@@ -2101,7 +2111,7 @@
                     "option6": "30"
                 },
                 "showPhoto": {
-                    "title": "FOTOGRAFIJE SO POSNETE:",
+                    "title": "FOTOGRAFIJE SO BILE SHRANJENE LOKALNO V:",
                     "link": "Ogled fotografij"
                 },
                 "fileAuthorizationTips": {
@@ -3291,7 +3301,8 @@
             "wireless": "Brezžično"
         },
         "warningMessage": "Upoštevajte, da bodo preskusi preklicani, če sistem preide v stanje spanja ali mirovanja",
-        "refreshMessage": "Osvežitev lahko traja nekaj časa, saj se morajo vse komponente znova naložiti"
+        "refreshMessage": "Osvežitev lahko traja nekaj časa, saj se morajo vse komponente znova naložiti",
+        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
     },
     "smartPerformance": {
         "title": "Health & Support",

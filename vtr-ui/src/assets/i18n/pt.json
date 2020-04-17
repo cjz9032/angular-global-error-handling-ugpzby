@@ -1446,23 +1446,35 @@
                 "subtitle": "Definições de Áudio",
                 "description": "Esta seção permite-lhe otimizar automaticamente ou configurartotalmente as suas definições de áudio manualmente, como definições de Dolby, microfone, etc.",
                 "audioSmartsettings": {
-                    "title": "Definições de Áudio Smart",
-                    "subtitle": "DEFINIÇÕES COM BASE NA APLICAÇÃO",
-                    "description": "Ajustar automaticamente as definições de áudio e visualização de acordo com as diferentes aplicações utilizadas.",
+                    "title": "Audio smart settings",
                     "dolby": {
-                        "title": "Definições automáticas de Áudio Dolby",
-                        "tooltip": "As definições automáticas de Áudio Dolby configuram as definições de áudio Dolby parao modo apropriado para as diferentes aplicações que utilizar para melhorar a sua experiência de áudio.",
+                        "title": "Dolby audio",
+                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
-                            "dynamic": "DINÂMICO",
-                            "movie": "FILME",
-                            "music": "MÚSICA",
-                            "games": "JOGO",
-                            "voip": "VOZ"
+                            "dynamic": "DYNAMIC",
+							"movie": "MOVIE",
+							"music": "MUSIC",
+							"games": "GAME",
+							"voip": "VOICE"
+                        },
+                        "automaticAudioCheckboxText": "Automatic audio optimization for",
+                        "automaticAudioMode": {
+                            "voIPMode": {
+                                "radioText": "VoIP",
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                            },
+                            "entertainmentMode": {
+                                "radioText": "Entertainment",
+                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
+                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                            }
                         }
                     },
-                    "voip": {
-                        "title": "Otimização Automática do Áudio para VoIP",
-                        "tooltip": "Mude automaticamente para o modo Dolby Voice durante as chamadas VoIP para obter uma qualidade de voz clara e consistente."
+                    "eCourse": {
+                        "title": "Interactive E-course mode",
+                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
                     }
                 },
                 "microphone": {
@@ -1882,7 +1894,7 @@
                 "zeroTouchLoginForIdea": {
                     "title": "Login sem toques",
                     "caption": "Esta funcionalidade permite-lhe melhorar a eficiência do trabalho ao reativar ou iniciar sessão automaticamente no seu computador. Para utilizar esta funcionalidade, precisa de registar o seu rosto no Windows Hello.",
-                    "tooltip": "Quando está em frente ao computador ou a aproximar-se do mesmo (a 1,2 ou 1,5 metros), esta funcionalidade permite iniciar sessão automaticamente no sistema após o seu rosto ser reconhecido. Se estiver no exterior e não no escritório, é necessário estar mais próximo do computador e a reativação demorará mais. <br>Dependendo da capacidade do sensor, a distância máxima de deteção varia. Consulte o <i>Manual do Utilizador</i> fornecido com o computador para obter mais informação."
+                    "tooltip": "Quando está em frente ao computador ou a aproximar-se do mesmo (a 1,2 ou 1,5 metros), esta funcionalidade permite iniciar sessão automaticamente no sistema após o seu rosto ser reconhecido. Se estiver no exterior e não no escritório, é necessário estar mais próximo do computador e a reativação demorará mais. <br>Dependendo da capacidade do sensor, a distância máxima de deteção varia. Consulte o Manual do Utilizador fornecido com o computador para obter mais informação."
                 },
                 "zeroTouchLock": {
                     "title": "Bloqueio Zero Touch",
@@ -1969,10 +1981,8 @@
                     "description2": "O recurso usa sensores e câmara para detetar a sua presença. No entanto, a funcionalidade NÃO recolhe qualquer dado pessoal.",
                     "description3": "1. Para utilizar as funcionalidades acima, por favor ajuste o seu ecrã para um ângulo adequado, para que a sua cara possa ser reconhecida.",
                     "description4": "2. As funcionalidades acima não são suportadas quando:",
-                    "description5a1": "a. O seu computador está em modo Tenda, Tablet, Suspensão ou Desligado. Para os modos suportados no seu computador, por favor consulte ",
-                    "description5a2": "Manual de Utilizador ",
-                    "description5a3": "fornecido com ele.",
-                    "description5b": "b. O seu computador está no modo de hibernação ou foi desligado.",
+                    "description5a": "a. O seu computador está em modo Tenda, Tablet, Suspensão ou Desligado. Para conhecer os modos suportados no seu computador, consulte o Manual do Utilizador que o acompanha.",
+					"description5b": "b. O seu computador está no modo de hibernação ou foi desligado.",
                     "description6": "3. Se o Modo de avião estiver ativo no computador, estas funcionalidades estão desativadas.",
                     "description7": "A precisão varia de acordo com o tamanho do corpo, postura e frequência de movimento. Se o seu computador estiver bloqueado inesperadamente, ajuste a barra de sensibilidade para melhorar a precisão."
                 },
@@ -2101,7 +2111,7 @@
                     "option6": "30"
                 },
                 "showPhoto": {
-                    "title": "AS FOTOGRAFIAS FORAM:",
+                    "title": "AS FOTOGRAFIAS GUARDADAS LOCALMENTE:",
                     "link": "Ver fotografias"
                 },
                 "fileAuthorizationTips": {
@@ -3291,7 +3301,8 @@
             "wireless": "Sem fios"
         },
         "warningMessage": "Tenha em atenção que os testes serão cancelados se o sistema entrar em modo de suspensão ou hibernação",
-        "refreshMessage": "A atualização pode demorar algum tempo por precisar de voltar a carregar todos os componentes"
+        "refreshMessage": "A atualização pode demorar algum tempo por precisar de voltar a carregar todos os componentes",
+        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
     },
     "smartPerformance": {
         "title": "Health & Support",

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnDestroy, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Input } from '@angular/core';
 import { EMPTY, Subscription } from 'rxjs';
 import { DolbyModeResponse } from 'src/app/data-models/audio/dolby-mode-response';
 import { MicrophoneOptimizeModes } from 'src/app/data-models/audio/microphone-optimize-modes';
@@ -15,6 +15,7 @@ import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { PageAnchorLink } from 'src/app/data-models/common/page-achor-link.model';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-audio',
@@ -41,6 +42,27 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	private microphoneDevice: any;
 	private microphnePermissionHandler: any;
 	private Windows: any;
+	public eCourseStatus = new FeatureStatus(false, true);
+
+	@Input() dolbyModeDisabled = false;
+	@Input() automaticAudioDisabled = false;
+	@Input() enumMode = '1';
+	@Input() isEnableAutomaticAudio = true;
+
+	headerMenuItems: PageAnchorLink[] = [
+		{
+			title: 'device.deviceSettings.audio.audioSmartsettings.title',
+			path: 'audio',
+			sortOrder: 1,
+			metricsItem: 'DolbyAudio'
+		},
+		{
+			title: 'device.deviceSettings.audio.microphone.title',
+			path: 'microphone',
+			sortOrder: 2,
+			metricsItem: 'microphone'
+		}
+	];
 
 	// when initialize page, cacheFlag need change to false if user make changes before getting response back,
 	// in this case, need to drop response status.
@@ -55,7 +77,6 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		private logger: LoggerService,
 		private commonService: CommonService,
 		private vantageShellService: VantageShellService) {
-
 		this.Windows = vantageShellService.getWindows();
 		if (this.Windows) {
 			this.microphoneDevice = this.Windows.Devices.Enumeration.DeviceAccessInformation
@@ -64,6 +85,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
+
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
 		});
@@ -237,6 +259,13 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 
 	onAutomaticDolbyAudioToggleOnOff(event) {
 		try {
+			if (!event.switchValue) {
+				this.eCourseStatus.status = event.switchValue;
+			}
+			else {
+				this.dolbyModeDisabled = !event.switchValue;
+				this.automaticAudioDisabled = !event.switchValue;
+			}
 			this.autoDolbyFeatureStatus.status = event.switchValue;
 
 			this.dolbyAudioToggleCache.status = this.autoDolbyFeatureStatus.status;
@@ -307,6 +336,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			this.logger.error('getDolbyFeatureStatus' + error.message);
 			return EMPTY;
 		}
+		
 	}
 
 	getDolbyModesStatus() {
@@ -317,6 +347,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 						this.dolbyModeResponse = response;
 						this.dolbyAudioToggleCache.dolbyModeResponse = this.dolbyModeResponse;
 						this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyAudioToggleCache);
+						this.initVisibility();
 						this.logger.info('getDolbyModesStatus:', response);
 					}).catch(error => {
 						this.logger.error('getDolbyModesStatus', error.message);
@@ -361,6 +392,26 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			this.logger.error('stopMonitorForDolby' + error.message);
 			return EMPTY;
 		}
+	}
+
+	automaticAudioCheckbox(value: boolean) {
+		this.isEnableAutomaticAudio = value;
+	}
+
+	automaticAudioModeChange(value) {
+		this.enumMode = value;
+
+	}
+
+	onToggleOfeCourseAutoOptimization(event) {
+		this.eCourseStatus.status = event.switchValue;
+		if (event.switchValue) {
+			this.dolbyModeDisabled = event.switchValue;
+			this.automaticAudioDisabled = event.switchValue;
+			this.autoDolbyFeatureStatus.status = event.switchValue;
+		}
+		this.dolbyModeDisabled = event.switchValue;
+		this.automaticAudioDisabled = event.switchValue;
 	}
 
 	startMonitorHandlerForDolby(response: DolbyModeResponse) {
@@ -664,5 +715,22 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		};
 		this.logger.info('ready to update microhone cache');
 		this.commonService.setLocalStorageValue(LocalStorageKey.MicrohoneCapability, info);
+	}
+
+	initVisibility() {
+		try {
+			if (!this.dolbyAudioToggleCache.available) {
+				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'audio');
+				this.checkMenuItemsLength();
+			}
+		} catch (error) {
+			this.logger.exception('initVisibility', error.message);
+		}
+	}
+
+	public checkMenuItemsLength() {
+		if (this.headerMenuItems.length === 1) {
+			this.headerMenuItems = [];
+		}
 	}
 }

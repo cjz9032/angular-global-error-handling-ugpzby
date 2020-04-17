@@ -1446,23 +1446,35 @@
                 "subtitle": "音訊設定",
                 "description": "您可以透過這個區段來自動最佳化或完全手動配置音訊設定，例如 Dolby 設定、麥克風等。",
                 "audioSmartsettings": {
-                    "title": "智慧型音訊設定",
-                    "subtitle": "以應用程式為基礎的設定",
-                    "description": "根據您在使用的不同應用程式，自動調整音訊設定。",
+                    "title": "Audio smart settings",
                     "dolby": {
-                        "title": "自動 Dolby 音訊設定",
-                        "tooltip": "自動 Dolby 音訊設定可因應您正在使用的不同應用程式，將 Dolby 音訊設定為適用模式，增強您的音訊體驗。",
+                        "title": "Dolby audio",
+                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
-                            "dynamic": "動態",
-                            "movie": "電影",
-                            "music": "音樂",
-                            "games": "遊戲",
-                            "voip": "語音"
+                            "dynamic": "DYNAMIC",
+							"movie": "MOVIE",
+							"music": "MUSIC",
+							"games": "GAME",
+							"voip": "VOICE"
+                        },
+                        "automaticAudioCheckboxText": "Automatic audio optimization for",
+                        "automaticAudioMode": {
+                            "voIPMode": {
+                                "radioText": "VoIP",
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                            },
+                            "entertainmentMode": {
+                                "radioText": "Entertainment",
+                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
+                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                            }
                         }
                     },
-                    "voip": {
-                        "title": "針對 VoIP 的自動音訊最佳化",
-                        "tooltip": "可在 VoIP 通話時，自動切換成 Dolby 語音模式，提供清晰、穩定的音質。"
+                    "eCourse": {
+                        "title": "Interactive E-course mode",
+                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
                     }
                 },
                 "microphone": {
@@ -1882,7 +1894,7 @@
                 "zeroTouchLoginForIdea": {
                     "title": "紅外線攝影機自動登入",
                     "caption": "這項功能可藉由自動喚醒或登入電腦，讓您提升工作效率。若要使用這項功能，您需要在 Windows Hello 中註冊臉部。",
-                    "tooltip": "當您坐在電腦前面或接近電腦時（在 1.2 或 1.5 公尺的距離內），這項功能可讓您在辨識出您的臉部之後自動登入系統。如果您是在室外而非辦公室中，則需要更靠近電腦，以及更長的時間才能喚醒。<br>最大偵測距離視感應器的能力而定。請參閱電腦隨附的<i>使用手冊</i>以取得詳細資料。"
+                    "tooltip": "當您坐在電腦前面或接近電腦時（在 1.2 或 1.5 公尺的距離內），這項功能可讓您在辨識出您的臉部之後自動登入系統。如果您是在室外而非辦公室中，則需要更靠近電腦，以及更長的時間才能喚醒。<br>最大偵測距離視感應器的能力而定。請參閱電腦隨附的使用手冊以取得詳細資料。"
                 },
                 "zeroTouchLock": {
                     "title": "自動鎖定螢幕",
@@ -1969,10 +1981,8 @@
                     "description2": "該功能會使用感應器和攝影機來偵測您的存在。不過，這項功能不會收集任何個人資料。",
                     "description3": "1.若要使用上述功能，請將螢幕調整至適當角度以便能夠辨識您的臉部。",
                     "description4": "2.在以下情況中，不支援上述功能：",
-                    "description5a1": "a. 您的電腦處於帳篷、平板、直立或分離模式。如需電腦支援的模式相關資訊，請參閱隨附的",
-                    "description5a2": "使用手冊",
-                    "description5a3": "。",
-                    "description5b": "b. 您的電腦處於休眠模式或已關閉電源。",
+                    "description5a": "a. 您的電腦處於帳篷、平板、直立或分離模式。若要知道您的電腦支援哪些模式，請參閱隨附的使用手冊。",
+					"description5b": "b. 您的電腦處於休眠模式或已關閉電源。",
                     "description6": "3. 如果您的電腦上已啟用飛航模式，這些功能都會停用。",
                     "description7": "精確度會隨身體大小、姿勢和動作頻率有所變化。如果您的電腦意外遭到鎖定，請調整敏感度拉桿以改善精準度。"
                 },
@@ -2101,7 +2111,7 @@
                     "option6": "30"
                 },
                 "showPhoto": {
-                    "title": "相片已：",
+                    "title": "相片已經儲存到本機：",
                     "link": "檢視相片"
                 },
                 "fileAuthorizationTips": {
@@ -3291,7 +3301,8 @@
             "wireless": "無線"
         },
         "warningMessage": "請記住，如果系統進入睡眠或休眠狀態，將會取消測試",
-        "refreshMessage": "重新整理可能需要一些時間，因為此時需要再度載入所有元件"
+        "refreshMessage": "重新整理可能需要一些時間，因為此時需要再度載入所有元件",
+        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
     },
     "smartPerformance": {
         "title": "Health & Support",

@@ -46,7 +46,7 @@
 									<div class="d-flex align-items-center flex-wrap flex-shrink-1 overflow-hidden">
 										<h3 class="mb-0 wifisecurity-container-name pr-3"
 											title=""
-											[ngbTooltip]="'security.wifisecurity.container.name' | translate" tooltipClass="vtr-tooltip" container="body"
+											[ngbTooltip]="'security.wifisecurity.container.name' | translate" tooltipClass="vtr-system-tooltip" container="body"
 											>
 											{{'security.wifisecurity.container.name' | translate}}
 										</h3>
@@ -54,12 +54,12 @@
 												class="badge badge-pill badge-success line-height-2 p-0 pl-3 pr-3"
 												title=""
 												*ngIf="data.isLWSEnabled"
-												[ngbTooltip]="'security.wifisecurity.container.enable' | translate" tooltipClass="vtr-tooltip" container="body"
+												[ngbTooltip]="'security.wifisecurity.container.enable' | translate" tooltipClass="vtr-system-tooltip" container="body"
 												>{{'security.wifisecurity.container.enable' | translate}}</span>
 											<span class="badge badge-pill badge-danger line-height-2 p-0 pl-3 pr-3"
 												title=""
 												*ngIf="data.isLWSEnabled===false"
-												[ngbTooltip]="'security.wifisecurity.container.disable' | translate" tooltipClass="vtr-tooltip" container="body"
+												[ngbTooltip]="'security.wifisecurity.container.disable' | translate" tooltipClass="vtr-system-tooltip" container="body"
 												>{{'security.wifisecurity.container.disable' | translate}}</span>
 										</h3>
 									</div>
@@ -106,7 +106,7 @@
 												<div class="connection-name media-body border-0 pl-3">
 													<h5 class="mt-0"
 														title=""
-														[ngbTooltip]="history.ssid" tooltipClass="vtr-tooltip" container="body"
+														[ngbTooltip]="history.ssid" tooltipClass="vtr-system-tooltip" container="body"
 														>{{history.ssid}}</h5>
 													<small class="connection-status text-muted">
 														{{'security.wifisecurity.container.connect' | translate}}

@@ -1446,23 +1446,35 @@
                 "subtitle": "오디오 설정",
                 "description": "이 섹션에서는 Dolby 설정, 마이크 등의 오디오 설정을 수동으로자동으로 최적화하거나 구성할 수 있습니다.",
                 "audioSmartsettings": {
-                    "title": "오디오 스마트 설정",
-                    "subtitle": "응용 프로그램 기반 설정",
-                    "description": "사용하고 있는 다양한 앱에 따라 오디오 설정을 자동으로 조정합니다.",
+                    "title": "Audio smart settings",
                     "dolby": {
-                        "title": "자동 Dolby 오디오 설정",
-                        "tooltip": "자동 Dolby 오디오 설정 기능에서는 Dolby 오디오 설정울 사용하고있는 다른 앱에 적절한 모드로 구성하여 더욱 개선된 오이오를 사용할 수 있게 합니다.",
+                        "title": "Dolby audio",
+                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
-                            "dynamic": "동적",
-                            "movie": "영화",
-                            "music": "음악",
-                            "games": "게임",
-                            "voip": "음성"
+                            "dynamic": "DYNAMIC",
+							"movie": "MOVIE",
+							"music": "MUSIC",
+							"games": "GAME",
+							"voip": "VOICE"
+                        },
+                        "automaticAudioCheckboxText": "Automatic audio optimization for",
+                        "automaticAudioMode": {
+                            "voIPMode": {
+                                "radioText": "VoIP",
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                            },
+                            "entertainmentMode": {
+                                "radioText": "Entertainment",
+                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
+                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                            }
                         }
                     },
-                    "voip": {
-                        "title": "VoIP에 대한 자동 오디오 최적화",
-                        "tooltip": "VoIP 통화를 하는 동안 자동으로 Dolby 음성 모드로 전환하여 깨끗하고 일관된 음성 품질을 제공하십시오."
+                    "eCourse": {
+                        "title": "Interactive E-course mode",
+                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
                     }
                 },
                 "microphone": {
@@ -1882,7 +1894,7 @@
                 "zeroTouchLoginForIdea": {
                     "title": "제로 터치 로그인",
                     "caption": "이 기능을 사용하면 자동으로 컴퓨터 절전 모드를 해제하거나 컴퓨터에 로그인하여 작업 효율성을 높일 수 있습니다. 이 기능을 사용하려면 Windows Hello에 얼굴을 등록해야 합니다.",
-                    "tooltip": "이 기능은 사용자가 컴퓨터 앞에 있거나 컴퓨터에 접근하면(1.2 또는 1.5 미터 이내) 얼굴을 인식하고 자동으로 시스템에 로그인할 수 있게 해줍니다. 사무실이 아닌 실외에서 사용하는 경우, 컴퓨터에 좀 더 가깝게 접근해야 하며, 절전 모드를 해제하는 데 더 오래 걸립니다. <br>센서 능력에 따라 최대 탐지 거리가 달라집니다. 자세한 내용은 컴퓨터와 함께 제공되는 <i>사용자 가이드</i>를 참조하십시오."
+                    "tooltip": "이 기능은 사용자가 컴퓨터 앞에 있거나 컴퓨터에 접근하면(1.2 또는 1.5 미터 이내) 얼굴을 인식하고 자동으로 시스템에 로그인할 수 있게 해줍니다. 사무실이 아닌 실외에서 사용하는 경우, 컴퓨터에 좀 더 가깝게 접근해야 하며, 절전 모드를 해제하는 데 더 오래 걸립니다. <br>센서 능력에 따라 최대 탐지 거리가 달라집니다. 자세한 내용은 컴퓨터와 함께 제공되는 사용 설명서를 참조하십시오."
                 },
                 "zeroTouchLock": {
                     "title": "제로 터치 잠금",
@@ -1969,10 +1981,8 @@
                     "description2": "이 기능은 센서 및 카메라를 사용하여 사용자의 존재를 감지합니다. 그러나 이 기능은 어떤 개인 정보도 수집하지 않습니다.",
                     "description3": "1. 위의 기능을 사용하려면 얼굴이 인식될 수 있도록 화면을 적절한 각도로 조정해 주십시오.",
                     "description4": "2. 위 기능은 다음의 경우에서 지원되지 않습니다.",
-                    "description5a1": "ㄱ: 컴퓨터가 텐트, 태블릿, 스탠드 모드 또는 분리 모드에 있는 경우. 사용자의 컴퓨터에서 지원되는 모드에 대한 자세한 내용은 다음을 참고하십시오 ",
-                    "description5a2": "사용 설명서 ",
-                    "description5a3": "(컴퓨터와 함께 제공됨)",
-                    "description5b": "ㄴ. 컴퓨터가 최대 절전 모드이거나 꺼져 있었던 경우.",
+                    "description5a": "a. 컴퓨터가 텐트, 태블릿, 스탠드 또는 분리 모드를 지원합니다. 컴퓨터에서 지원되는 모드에 대해서는 함께 제공되는 사용 설명서를 참조하십시오.",
+					"description5b": "b. 컴퓨터가 최대 절전 모드이거나 꺼져 있었던 경우.",
                     "description6": "3. 컴퓨터에서 비행기 모드를 설정하면 이 기능을 사용할 수 없게 됩니다.",
                     "description7": "정확도는 바디 크기, 자세 및 이동 빈도에 따라 다릅니다. 컴퓨터가 예기치 않게 잠기는 경우, 감도바를 조정하여 정확도를 개선합니다."
                 },
@@ -2101,7 +2111,7 @@
                     "option6": "30"
                 },
                 "showPhoto": {
-                    "title": "사진은 다음과 같습니다.",
+                    "title": "사진이 로컬에 저장되었습니다:",
                     "link": "사진 보기"
                 },
                 "fileAuthorizationTips": {
@@ -3291,7 +3301,8 @@
             "wireless": "무선"
         },
         "warningMessage": "시스템이 절전 또는 최대 절전 모드 상태인 경우 테스트가 취소됩니다",
-        "refreshMessage": "모든 구성 요소를 다시 로드해야 하므로 새로 고침이 오래 걸릴 수 있습니다"
+        "refreshMessage": "모든 구성 요소를 다시 로드해야 하므로 새로 고침이 오래 걸릴 수 있습니다",
+        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
     },
     "smartPerformance": {
         "title": "Health & Support",

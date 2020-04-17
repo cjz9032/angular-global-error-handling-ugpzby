@@ -1448,23 +1448,35 @@
                 "subtitle": "إعدادات الصوت",
                 "description": "يمكّنك هذا القسم من تحسين إعدادات الصوت بشكل يدويأو تكوينها بشكل كامل، مثل إعدادات Dolby أو الميكروفون وغير ذلك.",
                 "audioSmartsettings": {
-                    "title": "إعدادات الصوت الذكية",
-                    "subtitle": "إعدادات تستند إلى التطبيق",
-                    "description": "ضبط إعدادات الصوت بشكل تلقائي وفقًا للتطبيقات المختلفة التي تستخدمها.",
+                    "title": "Audio smart settings",
                     "dolby": {
-                        "title": "إعدادات صوت Dolby التلقائية",
-                        "tooltip": "تقوم إعدادات صوت Dolby التلقائية بتكوين إعدادات صوت Dolbyوفقًا للوضع الملائم لمختلف التطبيقات التي تستخدمها لتحسين تجربة الصوت.",
+                        "title": "Dolby audio",
+                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
-                            "dynamic": "ديناميكي",
-                            "movie": "الفيلم",
-                            "music": "الموسيقى",
-                            "games": "اللعبة",
-                            "voip": "الصوت"
+                            "dynamic": "DYNAMIC",
+							"movie": "MOVIE",
+							"music": "MUSIC",
+							"games": "GAME",
+							"voip": "VOICE"
+                        },
+                        "automaticAudioCheckboxText": "Automatic audio optimization for",
+                        "automaticAudioMode": {
+                            "voIPMode": {
+                                "radioText": "VoIP",
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                            },
+                            "entertainmentMode": {
+                                "radioText": "Entertainment",
+                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
+                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                            }
                         }
                     },
-                    "voip": {
-                        "title": "تحسين الصوت التلقائي لـ VoIP",
-                        "tooltip": "التبديل تلقائيًا إلى وضع صوت Dolby أثناء مكالمات VoIP لتقديم صوت واضح وجودة صوت متناسقة."
+                    "eCourse": {
+                        "title": "Interactive E-course mode",
+                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
                     }
                 },
                 "microphone": {
@@ -1884,7 +1896,7 @@
                 "zeroTouchLoginForIdea": {
                     "title": "تسجيل الدخول من دون لمس",
                     "caption": "تتيح لك هذه الميزة تحسين كفاءة العمل من خلال إعادة تشغيل الكمبيوتر أو تسجيل الدخول إليه تلقائيًا. لاستخدام الميزة، تحتاج إلى تسجيل وجهك في Windows Hello.",
-                    "tooltip": "عند تواجدك أمام الكمبيوتر أو أثناء اقترابك منه (على مسافة 1.2 أو 1.5 متر)، تتيح لك هذه الميزة تسجيل الدخول تلقائيًا إلى النظام بعد التعرف على وجهك. إذا كنت في الخارج بدلاً من أن تكون في المكتب، فيجب أن تكون على مسافة أقرب من الكمبيوتر وستستغرق عملية التنبيه وقتًا أطول. <br>واستنادًا إلى قدرة المستشعر، تختلف أقصى مسافة للكشف. راجع <i>دليل المستخدم</i> المرفق مع الكمبيوتر للحصول على تفاصيل."
+                    "tooltip": "عند تواجدك أمام الكمبيوتر أو أثناء اقترابك منه (على مسافة 1.2 أو 1.5 متر)، تتيح لك هذه الميزة تسجيل الدخول تلقائيًا إلى النظام بعد التعرف على وجهك. إذا كنت في الخارج بدلاً من أن تكون في المكتب، فيجب أن تكون على مسافة أقرب من الكمبيوتر وستستغرق عملية التنبيه وقتًا أطول. <br>واستنادًا إلى قدرة المستشعر، تختلف أقصى مسافة للكشف. راجع دليل المستخدم المرفق مع الكمبيوتر للحصول على تفاصيل."
                 },
                 "zeroTouchLock": {
                     "title": "قفل من دون لمس",
@@ -1971,10 +1983,8 @@
                     "description2": "تستخدم الميزة المستشعرات والكاميرا للكشف عن وجودك. ومع ذلك، فإن الميزة لا تجمع أي بيانات شخصية.",
                     "description3": "1. لاستخدام الوظائف المذكورة أعلاه، يُرجى ضبط الشاشة عند الزاوية المناسبة مما يسمح بالتعرف على وجهك.",
                     "description4": "2. لا يتم دعم الوظائف المذكورة أعلاه في الحالات التالية:",
-                    "description5a1": "أ. جهاز الكمبيوتر الخاص بك في وضع الخيمة أو الكمبيوتر اللوحي أو وضع الحامل أو وضع الفصل. ولمعرفة الأوضاع المدعومة على جهاز الكمبيوتر، يرجى مراجعة ",
-                    "description5a2": "دليل المستخدم ",
-                    "description5a3": "المرفق معه.",
-                    "description5b": "ب. الكمبيوتر في وضع الإسبات أو تم إيقاف تشغيله.",
+                    "description5a": "أ. جهاز الكمبيوتر الخاص بك في وضع الخيمة أو الكمبيوتر اللوحي أو وضع الحامل أو وضع الفصل. بالنسبة للأوضاع المدعومة على جهاز الكمبيوتر لديك، يرجى الرجوع إلى دليل المستخدم المرفق مع الكمبيوتر.",
+					"description5b": "ب. الكمبيوتر في وضع الإسبات أو تم إيقاف تشغيله.",
                     "description6": "3. إذا تم تمكين وضع الطائرة على الكمبيوتر الخاص بك، فيتم تعطيل هذه الميزات.",
                     "description7": "تختلف الدقة بحسب حجم الجسم والوضعية ومدى تكرار الحركة. إذا تم تأمين جهاز الكمبيوتر بشكل غير متوقع، فاضبط شريط الحساسية لتحسين الدقة."
                 },
@@ -2103,7 +2113,7 @@
                     "option6": "30"
                 },
                 "showPhoto": {
-                    "title": "لقد كانت الصور:",
+                    "title": "تم حفظ الصور في المحلي:",
                     "link": "عرض الصور"
                 },
                 "fileAuthorizationTips": {
@@ -3293,7 +3303,8 @@
             "wireless": "اللاسلكية"
         },
         "warningMessage": "يُرجى العلم أن الاختبارات سوف تُلغى إذا دخل النظام في وضع السكون أو الإسبات",
-        "refreshMessage": "قد يستغرق التحديث بعض الوقت لأنه يحتاج إلى تحميل جميع المكونات مرةً أخرى"
+        "refreshMessage": "قد يستغرق التحديث بعض الوقت لأنه يحتاج إلى تحميل جميع المكونات مرةً أخرى",
+        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
     },
     "smartPerformance": {
         "title": "Health & Support",

@@ -1447,22 +1447,34 @@
                 "description": "在此部分中可自动优化或手动对音频设置进行全面配置，例如 Dolby 设置、麦克风等。",
                 "audioSmartsettings": {
                     "title": "音频智能设置",
-                    "subtitle": "基于应用程序的设置",
-                    "description": "根据您使用的不同应用程序自动调节音频设置。",
                     "dolby": {
-                        "title": "自动 Dolby 音频设置",
-                        "tooltip": "自动 Dolby 音频设置可将 Dolby 音频设置配置为适用于您正在使用的不同应用程序的适当模式，从而提升音频体验。",
+                        "title": "Dolby 音频",
+                        "description": "从以下位置选择所需的模式。您还可以选择选项\"自动优化音频：\"。启用此功能后，Dolby 音频会根据您处于的不同模式自动为您选择最佳音频效果。",
                         "options": {
                             "dynamic": "动态",
-                            "movie": "影片",
-                            "music": "音乐",
-                            "games": "游戏",
-                            "voip": "语音"
+							"movie": "电影",
+							"music": "音乐",
+							"games": "游戏",
+							"voip": "语音"
+                        },
+                        "automaticAudioCheckboxText": "自动音频优化",
+                        "automaticAudioMode": {
+                            "voIPMode": {
+                                "radioText": "VoIP",
+                                "tooltip": "当您拨打 VoIP 通话时（使用 Skype、Teams、微信等），此功能将生效。 启用后，Dolby 音频会自动更改为语音模式，从而获得更好的语音质量。"
+                            },
+                            "entertainmentMode": {
+                                "radioText": "娱乐",
+                                "tooltip": "选择此选项后，Dolby 音频会根据您使用的应用自动调整模式：",
+                                "description1":"如果您正在使用 iTunes 等应用，它将更改为\"音乐\"模式。",
+                                "description2":"如果您正在使用 Youtube 等应用，它将更改为\"电影\"模式。",
+                                "description3":"如果您使用的是游戏应用，它将相应地更改为游戏模式。"
+                            }
                         }
                     },
-                    "voip": {
-                        "title": "自动 VoIP 音频优化",
-                        "tooltip": "在 VoIP 通话中自动切换到 Dolby 语音模式以实现清晰、连续的语音质量。"
+                    "eCourse": {
+                        "title": "网课模式",
+                        "tooltip": "当教师和学生之间存在语音交互时，此功能可用于在线课程。启用后，选择此选项后，Dolby 音频将自动更改为 \"语音\"模式。同时，将打开波束成形、声回波消除和键盘噪声抑制等功能，以提高语音输入。"
                     }
                 },
                 "microphone": {
@@ -1882,7 +1894,7 @@
                 "zeroTouchLoginForIdea": {
                     "title": "红外摄像头自动登录",
                     "caption": "此功能可让您通过自动唤醒或登录计算机来提高工作效率。要使用此功能，您需要在 Windows Hello 中注册面部信息。",
-                    "tooltip": "当您在计算机前面或接近计算机时（在 1.2 或 1.5 米内），此功能可让您能够在计算机识别您的面部后自动登录系统。如果您是在室外而不是在办公室中，则需要离计算机更近，且唤醒所需的时间更长。<br>最大检测距离因传感器功能而异。要了解详细信息，请参阅您计算机附带的<i>《用户指南》</i>。"
+                    "tooltip": "当您在计算机前面或接近计算机时（在 1.2 或 1.5 米内），此功能可让您能够在计算机识别您的面部后自动登录系统。如果您是在室外而不是在办公室中，则需要离计算机更近，且唤醒所需的时间更长。<br>最大检测距离因传感器功能而异。要了解详细信息，请参阅您计算机附带的《用户指南》。"
                 },
                 "zeroTouchLock": {
                     "title": "自动锁定屏幕",
@@ -1969,10 +1981,8 @@
                     "description2": "该功能使用传感器和摄像头来检测您的存在。然而，该功能不会收集任何个人数据。",
                     "description3": "1.要使用上述功能，请将计算机屏幕调整至适当的角度，以便计算机能够识别您的面部。",
                     "description4": "2.在以下情况下，不支持上述功能：",
-                    "description5a1": "a. 您的计算机处于帐篷模式、平板电脑模式、站立模式或分离模式。有关计算机支持的模式，请参阅计算机附带的",
-                    "description5a2": "《用户指南》",
-                    "description5a3": "。",
-                    "description5b": "b. 您的计算机处于休眠模式或已关机。",
+                    "description5a": "a. 您的计算机处于帐篷模式、平板电脑模式、站立模式或分离模式。有关计算机支持的模式，请参阅计算机随附的《用户指南》。",
+					"description5b": "b. 您的计算机处于休眠模式或已关机。",
                     "description6": "3. 如果在计算机上启用飞行模式，则将禁用这些功能部件。",
                     "description7": "准确性随身体大小、姿势和移动频率而变化。如果您的计算机被意外锁定，请调整灵敏度栏以提高准确性。"
                 },
@@ -2101,7 +2111,7 @@
                     "option6": "30"
                 },
                 "showPhoto": {
-                    "title": "照片已经：",
+                    "title": "照片已保存到本地：",
                     "link": "查看照片"
                 },
                 "fileAuthorizationTips": {
@@ -3291,7 +3301,8 @@
             "wireless": "无线"
         },
         "warningMessage": "请记住，如果系统进入睡眠或休眠状态，则测试将被取消",
-        "refreshMessage": "刷新可能需要一些时间，因为它需要再次加载所有组件"
+        "refreshMessage": "刷新可能需要一些时间，因为它需要再次加载所有组件",
+        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
     },
     "smartPerformance": {
         "title": "Health & Support",

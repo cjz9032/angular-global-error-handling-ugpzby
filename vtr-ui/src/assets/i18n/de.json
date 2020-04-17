@@ -1446,23 +1446,35 @@
                 "subtitle": "Audioeinstellungen",
                 "description": "In diesem Abschnitt können Sie Ihre Audioeinstellungen automatisch manuell optimieren oder vollständig konfigurieren, wie z. B. Dolby-Einstellungen, Mikrofon usw.",
                 "audioSmartsettings": {
-                    "title": "Audio Smart-Einstellungen",
-                    "subtitle": "ANWENDUNGSBASIERTE EINSTELLUNGEN",
-                    "description": "Audioeinstellungen abhängig von den verwendeten Apps automatisch anpassen.",
+                    "title": "Audio smart settings",
                     "dolby": {
-                        "title": "Automatische Dolby-Audioeinstellungen",
-                        "tooltip": "Mit Hilfe der automatischen Dolby-Audioeinstellungen können Sie die Dolby-Audioeinstellungen für verschiedene Apps, die Sie zur Verbesserung ihrer Audioqualität verwenden, im entsprechenden Modus konfigurieren.",
+                        "title": "Dolby audio",
+                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
-                            "dynamic": "DYNAMISCH",
-                            "movie": "FILM",
-                            "music": "MUSIK",
-                            "games": "SPIEL",
-                            "voip": "SPRACHE"
+                            "dynamic": "DYNAMIC",
+							"movie": "MOVIE",
+							"music": "MUSIC",
+							"games": "GAME",
+							"voip": "VOICE"
+                        },
+                        "automaticAudioCheckboxText": "Automatic audio optimization for",
+                        "automaticAudioMode": {
+                            "voIPMode": {
+                                "radioText": "VoIP",
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                            },
+                            "entertainmentMode": {
+                                "radioText": "Entertainment",
+                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
+                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                            }
                         }
                     },
-                    "voip": {
-                        "title": "Automatische Optimierung der Audioeinstellungen für VoIP",
-                        "tooltip": "Bei VoIP-Anrufen automatisch in den Dolby Voice-Modus wechseln, um eine klare, konsistente Sprachqualität zu bieten."
+                    "eCourse": {
+                        "title": "Interactive E-course mode",
+                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
                     }
                 },
                 "microphone": {
@@ -1882,7 +1894,7 @@
                 "zeroTouchLoginForIdea": {
                     "title": "Zero-Touch-Anmeldung",
                     "caption": "Mit dieser Funktion können Sie noch effizienter arbeiten, indem der Computer automatisch aktiviert wird und/oder sich mit Ihrem Konto anmeldet. Zur Verwendung der Funktion müssen Sie Ihr Gesicht in Windows Hello registrieren.",
-                    "tooltip": "Wenn Sie sich vor Ihrem Computer befinden oder sich ihm nähern (auf eine Entfernung von 1,2 bis 1,5 m), können Sie sich mit dieser Funktion automatisch am System anmelden, nachdem Ihr Gesicht erkannt worden ist. Wenn Sie sich im Freien und nicht im Büro befinden, müssen Sie sich näher am Computer befinden, und die Ausführung der Wake-up-Funktion wird länger dauern. <br>Je nach Sensorfähigkeit variiert der maximale Erkennungsabstand. Weitere Informationen finden Sie im <i>Benutzerhandbuch</i>, das mit Ihrem Computer geliefert wird."
+                    "tooltip": "Wenn Sie sich vor Ihrem Computer befinden oder sich ihm nähern (auf eine Entfernung von 1,2 bis 1,5 m), können Sie sich mit dieser Funktion automatisch am System anmelden, nachdem Ihr Gesicht erkannt worden ist. Wenn Sie sich im Freien und nicht im Büro befinden, müssen Sie sich näher am Computer befinden, und die Ausführung der Wake-up-Funktion wird länger dauern. <br>Je nach Sensorfähigkeit variiert der maximale Erkennungsabstand. Weitere Informationen finden Sie im Benutzerhandbuch, das mit Ihrem Computer geliefert wird."
                 },
                 "zeroTouchLock": {
                     "title": "Zero-Touch-Sperre",
@@ -1969,10 +1981,8 @@
                     "description2": "Die Funktion verwendet Sensoren und die Kamera, um Ihre Anwesenheit zu erkennen. Die Funktion sammelt jedoch KEINE personenbezogenen Daten.",
                     "description3": "1. Um die oben genannten Funktionen nutzen zu können, passen Sie den Winkel des Bildschirms so an, dass Ihr Gesicht erkannt werden kann.",
                     "description4": "2. Die oben genannten Funktionen werden nicht unterstützt, wenn:",
-                    "description5a1": "a) sich Ihr Computer im Zelt‑, Tablet‑, Stand‑ oder getrennten Modus befindet. Informationen zu den von Ihrem Computer unterstützten Modi finden Sie im mitgelieferten ",
-                    "description5a2": "Benutzerhandbuch ",
-                    "description5a3": "des Computers.",
-                    "description5b": "b) sich der Computer im Ruhezustand befindet oder ausgeschaltet ist.",
+                    "description5a": "a) sich Ihr Computer im Zelt‑, Tablet‑, Stand‑ oder getrennten Modus befindet. Die auf Ihrem Computer unterstützten Modi finden Sie im Benutzerhandbuch, das im Lieferumfang des Computers enthalten ist.",
+					"description5b": "b) sich der Computer im Ruhezustand befindet oder ausgeschaltet ist.",
                     "description6": "3. Wenn der Flugzeugmodus auf Ihrem Computer aktiviert ist, sind die folgenden Funktionen deaktiviert.",
                     "description7": "Die Genauigkeit variiert je nach Körpergröße, Haltung und Bewegungshäufigkeit. Wenn Ihr Computer unerwartet gesperrt wird, passen Sie die Empfindlichkeit an, um die Genauigkeit zu verbessern."
                 },
@@ -2101,7 +2111,7 @@
                     "option6": "30"
                 },
                 "showPhoto": {
-                    "title": "FOTOS WURDEN:",
+                    "title": "DIE FOTOS WURDEN LOKAL GESPEICHERT:",
                     "link": "Fotos anzeigen"
                 },
                 "fileAuthorizationTips": {
@@ -3291,7 +3301,8 @@
             "wireless": "Drahtlos"
         },
         "warningMessage": "Beachten Sie, dass die Tests abgebrochen werden, wenn das System im Ruhemodus oder im Ruhezustand ist",
-        "refreshMessage": "Die Aktualisierung kann einige Zeit in Anspruch nehmen, da alle Komponenten erneut geladen werden müssen"
+        "refreshMessage": "Die Aktualisierung kann einige Zeit in Anspruch nehmen, da alle Komponenten erneut geladen werden müssen",
+        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
     },
     "smartPerformance": {
         "title": "Health & Support",

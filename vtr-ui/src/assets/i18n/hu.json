@@ -1446,23 +1446,35 @@
                 "subtitle": "Hangbeállítások",
                 "description": "Ezen a részen automatikusan optimalizálhatók vagy manuálisanteljesen mértékben konfigurálhatók a hangbeállítások (például a Dolby-beállítások vagy a mikrofon használata).",
                 "audioSmartsettings": {
-                    "title": "Intelligens hangbeállítások",
-                    "subtitle": "ALKALMAZÁSTÓL FÜGGŐ BEÁLLÍTÁSOK",
-                    "description": "Automatikusan, a használt alkalmazástól függően korrigálja a hangbeállításokat.",
+                    "title": "Audio smart settings",
                     "dolby": {
-                        "title": "Automatikus Dolby-hangbeállítások",
-                        "tooltip": "Az automatikus Dolby-hangbeállításokkal a különféle használt alkalmazásokhoz igazodva konfigurálhatók a Dolby-hangbeállítások,így javítható a felhasználói élmény.",
+                        "title": "Dolby audio",
+                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
-                            "dynamic": "DINAMIKUS",
-                            "movie": "FILM",
-                            "music": "ZENE",
-                            "games": "JÁTÉK",
-                            "voip": "HANG"
+                            "dynamic": "DYNAMIC",
+							"movie": "MOVIE",
+							"music": "MUSIC",
+							"games": "GAME",
+							"voip": "VOICE"
+                        },
+                        "automaticAudioCheckboxText": "Automatic audio optimization for",
+                        "automaticAudioMode": {
+                            "voIPMode": {
+                                "radioText": "VoIP",
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                            },
+                            "entertainmentMode": {
+                                "radioText": "Entertainment",
+                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
+                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                            }
                         }
                     },
-                    "voip": {
-                        "title": "Automatikus hangoptimalizálás VoIP-hez",
-                        "tooltip": "A VoIP-hívások során automatikusan átvált Dolby-hangmódra, és tiszta, egységes hangminőséget biztosít."
+                    "eCourse": {
+                        "title": "Interactive E-course mode",
+                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
                     }
                 },
                 "microphone": {
@@ -1882,7 +1894,7 @@
                 "zeroTouchLoginForIdea": {
                     "title": "Érintés nélküli bejelentkezés",
                     "caption": "Ez a funkció képes automatikusan felébreszteni a számítógépet, sőt be is jelentkezteti Önt, így növeli a munka hatékonyságát. A funkció használatához regisztrálnia kell az arcát a Windows Hello alkalmazásban.",
-                    "tooltip": "Ha a számítógéppel szemben áll vagy közeledik hozzá (1,2 vagy 1,5 méter távolságon belül), ez a funkció lehetővé teszi, hogy az arcfelismerést követően a rendszer automatikusan beléptesse Önt. Ha a szabadban tartózkodik, nem pedig az irodában, közelebb kell mennie a számítógéphez, és az ébresztés hosszabb ideig tart. <br>A maximális érzékelési távolságot az érzékelő jellemzői határozzák meg. További információkat a számítógéphez kapott <i>Felhasználói kézikönyvben</i> talál."
+                    "tooltip": "Ha a számítógéppel szemben áll vagy közeledik hozzá (1,2 vagy 1,5 méter távolságon belül), ez a funkció lehetővé teszi, hogy az arcfelismerést követően a rendszer automatikusan beléptesse Önt. Ha a szabadban tartózkodik, nem pedig az irodában, közelebb kell mennie a számítógéphez, és az ébresztés hosszabb ideig tart. <br>A maximális érzékelési távolságot az érzékelő jellemzői határozzák meg. További információkat a számítógéphez kapott Felhasználói kézikönyvben talál."
                 },
                 "zeroTouchLock": {
                     "title": "Érintés nélküli zárolás",
@@ -1969,10 +1981,8 @@
                     "description2": "A funkció érzékelőkkel és kamerával észleli az Ön jelenlétét. A funkció azonban NEM gyűjt személyes adatokat.",
                     "description3": "1. A fenti funkciók használatához állítsa a megfelelő szögbe a képernyőt, hogy a rendszer fel tudja ismerni az Ön arcát.",
                     "description4": "2. A fenti funkciók nem támogatottak a következő esetekben:",
-                    "description5a1": "a. A számítógép Sátor, Álló vagy Tablet módban vagy Leválasztott módban van. Az Ön számítógépe által támogatott módokat kapcsolatban lásd: ",
-                    "description5a2": "Felhasználói kézikönyv ",
-                    "description5a3": ".",
-                    "description5b": "b. Ha a számítógép hibernált módban van vagy ki van kapcsolva.",
+                    "description5a": "a. A számítógép Sátor, Álló vagy Tablet módban vagy Leválasztott módban van. Az Ön számítógépe által támogatott üzemmódokkal kapcsolatban olvassa el a termékhez kapott Felhasználói kézikönyvet.",
+					"description5b": "b. Ha a számítógép hibernált módban van vagy ki van kapcsolva.",
                     "description6": "3. Ha a számítógépen bekapcsolta a Repülőgép üzemmódot, ezek a funkciók nem használhatók.",
                     "description7": "A pontosság függ a testmérettől, a testtartástól és a mozgás gyakoriságától. Ha a számítógép váratlanul zárolódik, állítsa be az érzékenységi sávot a pontosság javítása érdekében."
                 },
@@ -2101,7 +2111,7 @@
                     "option6": "30"
                 },
                 "showPhoto": {
-                    "title": "A FÉNYKÉPEK:",
+                    "title": "FÉNYKÉPEK MENTVE A KÖVETKEZŐ HELYRE:",
                     "link": "Fényképek megtekintése"
                 },
                 "fileAuthorizationTips": {
@@ -3291,7 +3301,8 @@
             "wireless": "Vezeték nélküli"
         },
         "warningMessage": "Ne feledje, hogy a tesztek megszakadnak, ha a rendszer alvó vagy hibernált állapotba kerül",
-        "refreshMessage": "A frissítés eltarthat egy ideig, mivel minden összetevőt újra be kell töltenie"
+        "refreshMessage": "A frissítés eltarthat egy ideig, mivel minden összetevőt újra be kell töltenie",
+        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
     },
     "smartPerformance": {
         "title": "Health & Support",

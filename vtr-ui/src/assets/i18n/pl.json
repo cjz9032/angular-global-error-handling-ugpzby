@@ -1446,23 +1446,35 @@
                 "subtitle": "Ustawienia dźwięku",
                 "description": "Ta sekcja umożliwia automatyczną optymalizację lub pełną, ręczną konfigurację ustawień dźwięku, takich jak ustawienia trybu Dolby, mikrofonu itp.",
                 "audioSmartsettings": {
-                    "title": "Inteligentne ustawienia dźwięku",
-                    "subtitle": "USTAWIENIA APLIKACJI",
-                    "description": "Automatycznie dostosuj ustawienia dźwięku do używanych aplikacji.",
+                    "title": "Audio smart settings",
                     "dolby": {
-                        "title": "Automatyczne ustawienia dźwięku Dolby",
-                        "tooltip": "Automatyczne ustawienia dźwięku Dolby konfigurują ustawienia dźwięku Dolby naodpowiedni tryb dla różnych aplikacji, których używasz, aby poprawić jakość dźwięku.",
+                        "title": "Dolby audio",
+                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
-                            "dynamic": "DYNAMICZNE",
-                            "movie": "FILM",
-                            "music": "MUZYKA",
-                            "games": "GRA",
-                            "voip": "GŁOS"
+                            "dynamic": "DYNAMIC",
+							"movie": "MOVIE",
+							"music": "MUSIC",
+							"games": "GAME",
+							"voip": "VOICE"
+                        },
+                        "automaticAudioCheckboxText": "Automatic audio optimization for",
+                        "automaticAudioMode": {
+                            "voIPMode": {
+                                "radioText": "VoIP",
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                            },
+                            "entertainmentMode": {
+                                "radioText": "Entertainment",
+                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
+                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                            }
                         }
                     },
-                    "voip": {
-                        "title": "Automatyczna optymalizacja dźwięku dla VoIP",
-                        "tooltip": "Automatycznie przełączaj się na tryb Dolby Voice podczas połączeń VoIP, aby zapewnić wyraźną i spójną jakość głosu."
+                    "eCourse": {
+                        "title": "Interactive E-course mode",
+                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
                     }
                 },
                 "microphone": {
@@ -1882,7 +1894,7 @@
                 "zeroTouchLoginForIdea": {
                     "title": "Logowanie bez dotyku",
                     "caption": "Ta funkcja umożliwia zwiększenie wydajności pracy poprzez automatyczne wybudzanie komputera lub logowanie Cię na nim. Aby skorzystać z tej funkcji, musisz zarejestrować swoją twarz w funkcji Windows Hello.",
-                    "tooltip": "Ta funkcja umożliwia automatyczne zalogowanie się do systemu przy użyciu funkcji rozpoznania twarzy, gdy znajdziesz się przed komputerem lub zbliżysz się do niego na odległość 1,2 lub 1,5 metra. Jeśli jesteś na zewnątrz, a nie w biurze, musisz być bliżej komputera, a wybudzanie potrwa dłużej. <br>Maksymalna odległość wykrywania może się różnić w zależności od możliwości czujnika. Szczegółowe informacje znajdują się w <i>podręczniku użytkownika</i> dołączonym do komputera."
+                    "tooltip": "Ta funkcja umożliwia automatyczne zalogowanie się do systemu przy użyciu funkcji rozpoznania twarzy, gdy znajdziesz się przed komputerem lub zbliżysz się do niego na odległość 1,2 lub 1,5 metra. Jeśli jesteś na zewnątrz, a nie w biurze, musisz być bliżej komputera, a wybudzanie potrwa dłużej. <br>Maksymalna odległość wykrywania może się różnić w zależności od możliwości czujnika. Szczegółowe informacje znajdują się w podręczniku użytkownika dołączonym do komputera."
                 },
                 "zeroTouchLock": {
                     "title": "Blokada bez dotyku",
@@ -1969,10 +1981,8 @@
                     "description2": "Funkcja wykorzystuje czujniki i kamerę do wykrywania Twojej obecności. Jednak ta funkcja NIE zbiera żadnych danych osobowych.",
                     "description3": "1. Aby skorzystać z powyższych funkcji, ustaw ekran komputera pod odpowiednim kątem, aby umożliwić rozpoznawanie Twojej twarzy.",
                     "description4": "2. Powyższe funkcje nie są obsługiwane, gdy:",
-                    "description5a1": "a. Komputer działa w trybie namiotu, tabletu, podstawki lub jest odłączony. Informacje dotyczące trybów obsługiwanych na Twoim komputerze zawiera ",
-                    "description5a2": "Podręcznik użytkownika ",
-                    "description5a3": "dołączony do komputera.",
-                    "description5b": "b. Komputer znajduje się w trybie hibernacji lub został wyłączony.",
+                    "description5a": "a. Komputer działa w trybie namiotu, tabletu, podstawki lub jest odłączony. Informacje dotyczące trybów obsługiwanych na Twoim komputerze zawiera podręcznik użytkownika dołączony do komputera.",
+					"description5b": "b. Komputer znajduje się w trybie hibernacji lub został wyłączony.",
                     "description6": "3. Po włączeniu trybu samolotowego komputera te funkcje są wyłączone.",
                     "description7": "Dokładność zależy od wielkości ciała, postawy i częstotliwości ruchu. Jeśli komputer zostanie nieoczekiwanie zablokowany, dostosuj pasek czułości, aby poprawić dokładność."
                 },
@@ -2101,7 +2111,7 @@
                     "option6": "30"
                 },
                 "showPhoto": {
-                    "title": "ZDJĘCIA ZOSTAŁY:",
+                    "title": "ZDJĘCIA ZOSTAŁY ZAPISANE LOKALNIE:",
                     "link": "Wyświetl zdjęcia"
                 },
                 "fileAuthorizationTips": {
@@ -3291,7 +3301,8 @@
             "wireless": "Bezprzewodowe"
         },
         "warningMessage": "Należy pamiętać, że testy zostaną anulowane, jeśli system będzie w trybie uśpienia lub hibernacji",
-        "refreshMessage": "Odświeżanie może zająć trochę czasu, ponieważ wymaga ponownego załadowania wszystkich komponentów"
+        "refreshMessage": "Odświeżanie może zająć trochę czasu, ponieważ wymaga ponownego załadowania wszystkich komponentów",
+        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
     },
     "smartPerformance": {
         "title": "Health & Support",

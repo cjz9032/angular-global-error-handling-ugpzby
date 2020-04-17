@@ -1446,23 +1446,35 @@
                 "subtitle": "Ses Ayarları",
                 "description": "Bu bölüm, ses ayarlarınızı otomatik olarak en iyi duruma getirmenizi veya Dolby ayarları, mikrofon gibi ayarları tamamıyla manuel olarak ayarlamanızı sağlar.",
                 "audioSmartsettings": {
-                    "title": "Ses Akıllı ayarları",
-                    "subtitle": "UYGULAMA TABANLI AYARLAR",
-                    "description": "Kullandığınız farklı uygulamalara göre ses ayarlarını otomatik olarak yapın.",
+                    "title": "Audio smart settings",
                     "dolby": {
-                        "title": "Otomatik Dolby Ses ayarları",
-                        "tooltip": "Otomatik Dolby Ses ayarları, ses deneyiminizi geliştirmekamacıyla Dolby ses ayarlarını kullandığınız farklı uygulamalar için uygun kipe yapılandırır.",
+                        "title": "Dolby audio",
+                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
-                            "dynamic": "DİNAMİK",
-                            "movie": "FİLM",
-                            "music": "MÜZİK",
-                            "games": "OYUN",
-                            "voip": "SES"
+                            "dynamic": "DYNAMIC",
+							"movie": "MOVIE",
+							"music": "MUSIC",
+							"games": "GAME",
+							"voip": "VOICE"
+                        },
+                        "automaticAudioCheckboxText": "Automatic audio optimization for",
+                        "automaticAudioMode": {
+                            "voIPMode": {
+                                "radioText": "VoIP",
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                            },
+                            "entertainmentMode": {
+                                "radioText": "Entertainment",
+                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
+                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                            }
                         }
                     },
-                    "voip": {
-                        "title": "Ses Özelliklerinin VoIP için Otomatik Olarak En İyi Duruma Getirilmesi",
-                        "tooltip": "Net, tutarlı ses kalitesi için VoIP aramaları sırasında otomatik olarak Dolby Ses kipine geçin."
+                    "eCourse": {
+                        "title": "Interactive E-course mode",
+                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
                     }
                 },
                 "microphone": {
@@ -1882,7 +1894,7 @@
                 "zeroTouchLoginForIdea": {
                     "title": "Sıfır Dokunma ile Oturum Açma",
                     "caption": "Bu özellik, bilgisayarınızı otomatik olarak uyandırarak veya bilgisayarınızda oturum açarak çalışma verimliliğini artırmanıza olanak tanır. Özelliği kullanmak için yüzünüzü Windows Hello'ya kaydetmeniz gerekir.",
-                    "tooltip": "Bu özellik, bilgisayarınızın önündeyken veya bilgisayarınıza yaklaşırken (1,2 veya 1,5 metre içerisinde) yüzünüzün tanınmasından sonra sistemde otomatik olarak oturum açmanızı sağlar. Ofis yerine dışarıda olduğunuzda, bilgisayarınıza daha yakın olmanız gerekir ve uyandırma işlevi daha uzun sürer. <br>Algılayıcı kapasitesine bağlı olarak, maksimum algılama mesafesi değişiklik gösterir. Ayrıntılı bilgi için dizüstü bilgisayarınızla birlikte gönderilen <i>Kullanma Kılavuzu'</i>na bakın."
+                    "tooltip": "Bu özellik, bilgisayarınızın önündeyken veya bilgisayarınıza yaklaşırken (1,2 veya 1,5 metre içerisinde) yüzünüzün tanınmasından sonra sistemde otomatik olarak oturum açmanızı sağlar. Ofis yerine dışarıda olduğunuzda, bilgisayarınıza daha yakın olmanız gerekir ve uyandırma işlevi daha uzun sürer. <br>Algılayıcı kapasitesine bağlı olarak, maksimum algılama mesafesi değişiklik gösterir. Ayrıntılı bilgi için dizüstü bilgisayarınızla birlikte gönderilen Kullanma Kılavuzu'na bakın."
                 },
                 "zeroTouchLock": {
                     "title": "Sıfır Dokunma ile Kilitleme",
@@ -1969,10 +1981,8 @@
                     "description2": "Bu özellik, varlığınızı algılamak için sensörler ve kamera kullanır. Ancak, özellik hiçbir kişisel veriyi TOPLAMAZ.",
                     "description3": "1. Yukarıdaki işlevleri kullanmak için lütfen ekranınızı, yüzünüzün tanınabileceği uygun bir açıya ayarlayın.",
                     "description4": "2. Yukarıdaki işlevler şu durumlarda desteklenmez:",
-                    "description5a1": "a. Bilgisayarınız Çadır, Tablet, Stand kipinde veya Ayrılmış kipteyken. Bilgisayarınızda desteklenen kipler için lütfen bilgisayarınızla birlikte verilen ",
-                    "description5a2": "Tanıtma ve Kullanma Kılavuzu ",
-                    "description5a3": "belgesine bakın.",
-                    "description5b": "b. Bilgisayarınız uyku kipindeyse veya kapalıysa.",
+                    "description5a": "a. Bilgisayarınız Çadır, Tablet, Stand kipinde veya Ayrılmış kipteyken. Bilgisayarınızda desteklenen kipler için lütfen ürünle verilen Kullanma Kılavuzu'na bakın.",
+					"description5b": "b. Bilgisayarınız uyku kipindeyse veya kapalıysa.",
                     "description6": "3. Bilgisayarınızda Uçak modu etkin durumdaysa bu özellikler devre dışı bırakılır.",
                     "description7": "Doğruluk vücut ölçüsü, duruş ve hareket sıklığına göre değişiklik gösterir. Bilgisayarınız beklenmedik bir şekilde kilitlenirse doğruluğu artırmak için hassasiyet çubuğunu ayarlayın."
                 },
@@ -2101,7 +2111,7 @@
                     "option6": "30"
                 },
                 "showPhoto": {
-                    "title": "FOTOĞRAFLAR:",
+                    "title": "FOTOĞRAFLAR YEREL OLARAK KAYDEDİLDİ:",
                     "link": "Fotoğrafları görüntüle"
                 },
                 "fileAuthorizationTips": {
@@ -3291,7 +3301,8 @@
             "wireless": "Kablosuz"
         },
         "warningMessage": "Sistem uyku veya hazırda bekleme kipine geçerse testlerin iptal edileceğini unutmayın",
-        "refreshMessage": "Tüm bileşenlerin tekrar yüklenmesi gerektiğinden yenileme işlemi biraz zaman alabilir"
+        "refreshMessage": "Tüm bileşenlerin tekrar yüklenmesi gerektiğinden yenileme işlemi biraz zaman alabilir",
+        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
     },
     "smartPerformance": {
         "title": "Health & Support",

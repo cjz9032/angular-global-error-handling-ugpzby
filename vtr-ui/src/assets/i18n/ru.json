@@ -1446,23 +1446,35 @@
                 "subtitle": "Параметры звука",
                 "description": "В этом разделе можно автоматически оптимизировать или вручную настроить все параметры звука, например параметры Dolby, микрофон и т. д.",
                 "audioSmartsettings": {
-                    "title": "Интеллектуальные параметры звука",
-                    "subtitle": "НАСТРОЙКА ПАРАМЕТРОВ С УЧЕТОМ ПРИЛОЖЕНИЙ",
-                    "description": "Автоматическая настройка параметров звука в зависимости от используемых приложений.",
+                    "title": "Audio smart settings",
                     "dolby": {
-                        "title": "Автоматические параметры Dolby Audio",
-                        "tooltip": "Функция автоматической настройки параметров Dolby Audio устанавливает параметры звука Dolbyв соответствии с оптимальным режимом для различных используемых приложений, чтобы обеспечить наилучшее качество звучания.",
+                        "title": "Dolby audio",
+                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
-                            "dynamic": "ДИНАМИЧЕСКИЙ РЕЖИМ",
-                            "movie": "ФИЛЬМ",
-                            "music": "МУЗЫКА",
-                            "games": "ИГРА",
-                            "voip": "ГОЛОС"
+                            "dynamic": "DYNAMIC",
+							"movie": "MOVIE",
+							"music": "MUSIC",
+							"games": "GAME",
+							"voip": "VOICE"
+                        },
+                        "automaticAudioCheckboxText": "Automatic audio optimization for",
+                        "automaticAudioMode": {
+                            "voIPMode": {
+                                "radioText": "VoIP",
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                            },
+                            "entertainmentMode": {
+                                "radioText": "Entertainment",
+                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
+                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                            }
                         }
                     },
-                    "voip": {
-                        "title": "Автоматическая оптимизация аудио для VoIP",
-                        "tooltip": "Автоматическое переключение в голосовой режим Dolby во время звонков через VoIP для чистой и четкой передачи голоса."
+                    "eCourse": {
+                        "title": "Interactive E-course mode",
+                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
                     }
                 },
                 "microphone": {
@@ -1882,7 +1894,7 @@
                 "zeroTouchLoginForIdea": {
                     "title": "Бесконтактный вход",
                     "caption": "Эта функция автоматически пробуждает компьютер и выполняет вход в систему, тем самым помогая вам работать эффективнее. Для использования этой функции вам необходимо зарегистрировать свое лицо в Windows Hello.",
-                    "tooltip": "Если вы находитесь перед компьютером или приближаетесь к нему (на расстоянии 1,2 или 1,5 м), эта функция обеспечивает автоматический вход в систему после распознавания вашего лица. Если вы находитесь на улице, а не внутри помещения, вам потребуется подойти ближе к компьютеру, а пробуждение займет больше времени. <br>Максимальная дальность обнаружения зависит от возможностей датчика. Подробную информацию см. в <i>Руководстве пользователя</i> из комплекта поставки вашего компьютера."
+                    "tooltip": "Если вы находитесь перед компьютером или приближаетесь к нему (на расстоянии 1,2 или 1,5 м), эта функция обеспечивает автоматический вход в систему после распознавания вашего лица. Если вы находитесь на улице, а не внутри помещения, вам потребуется подойти ближе к компьютеру, а пробуждение займет больше времени. <br>Максимальная дальность обнаружения зависит от возможностей датчика. Подробную информацию см. в Руководстве пользователя из комплекта поставки вашего компьютера."
                 },
                 "zeroTouchLock": {
                     "title": "Бесконтактная блокировка",
@@ -1969,10 +1981,8 @@
                     "description2": "Эта функция обнаруживает ваше присутствие с помощью датчиков и камеры. Тем не менее, она НЕ ОСУЩЕСТВЛЯЕТ сбор каких-либо личных данных.",
                     "description3": "1. Для использования указанных выше функций подберите угол наклона экрана таким образом, чтобы ваше лицо распознавалось.",
                     "description4": "2. Данные функции не поддерживаются, если:",
-                    "description5a1": "a. Компьютер находится в режиме тента, планшета, вертикальном или отсоединенном режиме. Поддерживаемые на вашем компьютере режимы см. в ",
-                    "description5a2": "Руководстве пользователя ",
-                    "description5a3": "из комплекта его поставки.",
-                    "description5b": "b. Компьютер находится в режиме гибернации или выключен.",
+                    "description5a": "a. Компьютер находится в режиме тента, планшета, вертикальном или отсоединенном режиме. Информацию о режимах, поддерживаемых на вашем компьютере, см. в Руководстве пользователя из комплекта его поставки.",
+					"description5b": "b. Компьютер находится в режиме гибернации или выключен.",
                     "description6": "3. Если в компьютере включен режим \"в самолете\", эти функции отключены.",
                     "description7": "Точность зависит от размера тела, осанки и частоты движения. Если компьютер неожиданно блокируется, отрегулируйте чувствительность, чтобы повысить точность."
                 },
@@ -2101,7 +2111,7 @@
                     "option6": "30"
                 },
                 "showPhoto": {
-                    "title": "СДЕЛАННЫЕ СНИМКИ:",
+                    "title": "ФОТОГРАФИИ СОХРАНЕНЫ В ЛОКАЛЬНОЕ ХРАНИЛИЩЕ:",
                     "link": "Просмотреть фотографии"
                 },
                 "fileAuthorizationTips": {
@@ -3291,7 +3301,8 @@
             "wireless": "Беспроводная связь"
         },
         "warningMessage": "Имейте в виду, что тесты будут отменены при переходе системы в спящий режим или режим гибернации",
-        "refreshMessage": "Обновление может занять некоторое время, так как необходимо снова загрузить все компоненты"
+        "refreshMessage": "Обновление может занять некоторое время, так как необходимо снова загрузить все компоненты",
+        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
     },
     "smartPerformance": {
         "title": "Health & Support",

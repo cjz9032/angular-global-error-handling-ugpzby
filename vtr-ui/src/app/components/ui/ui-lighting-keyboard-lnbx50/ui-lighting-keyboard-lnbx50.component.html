@@ -1,7 +1,7 @@
 <div class="vtr-ui-lighting-keyboard-lnbx50">
     <div class="keyboard-toggle" *ngIf="!isDisablled">
         <div class="toggle-box">
-            <vtr-ui-toggle (toggleStatus)="onToggleOnOff($event)" [toggleId]="'Divide Area'" [parentId]="'Gaming.Lighting'" [onOffSwitchId]="'lighting_colorareadivideSwitch'" [value]="isDivideArea" [tabIndexNum]="0">
+            <vtr-ui-toggle (toggleStatus)="onToggleOnOff($event)" [toggleId]="'Divide Area'" [parentId]="'Gaming.Lighting'" [onOffSwitchId]="'lighting_colorareadivideSwitch'" [value]="isDivideArea" [tabIndexNum]="0" (hideColordisk)="hideColordisk()">
             </vtr-ui-toggle>
             <p *ngIf="isDivideArea" title="{{'gaming.lightingNewversion.colorPicker.text7' | translate}}">{{'gaming.lightingNewversion.colorPicker.text7' | translate}}</p>
             <p *ngIf="!isDivideArea" title="{{'gaming.lightingNewversion.colorPicker.text6' | translate}}">{{'gaming.lightingNewversion.colorPicker.text6' | translate}}</p>

@@ -1446,23 +1446,35 @@
                 "subtitle": "Ljudinställningar",
                 "description": "I detta avsnitt kan du automatiskt optimera ellermanuellt konfigurera ljudinställningarna, som Dolby, mikrofon och annat.",
                 "audioSmartsettings": {
-                    "title": "Smarta ljudinställningar",
-                    "subtitle": "APPLIKATIONSBASERADE INSTÄLLNINGAR",
-                    "description": "Ljudinställningarna justeras automatiskt beroende på vilka appar du använder.",
+                    "title": "Audio smart settings",
                     "dolby": {
-                        "title": "Automatiska Dolby-ljudinställningar",
-                        "tooltip": "Automatiska Dolby-ljudinställningar konfigurerar Dolby-ljudinställningarna förlämpligt läge för de olika appar du använder för att förbättra ljudupplevelsen.",
+                        "title": "Dolby audio",
+                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
-                            "dynamic": "DYNAMISKT",
-                            "movie": "FILM",
-                            "music": "MUSIK",
-                            "games": "SPEL",
-                            "voip": "RÖST"
+                            "dynamic": "DYNAMIC",
+							"movie": "MOVIE",
+							"music": "MUSIC",
+							"games": "GAME",
+							"voip": "VOICE"
+                        },
+                        "automaticAudioCheckboxText": "Automatic audio optimization for",
+                        "automaticAudioMode": {
+                            "voIPMode": {
+                                "radioText": "VoIP",
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                            },
+                            "entertainmentMode": {
+                                "radioText": "Entertainment",
+                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
+                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                            }
                         }
                     },
-                    "voip": {
-                        "title": "Automatisk ljudoptimering för VoIP",
-                        "tooltip": "Växla automatiskt till Dolby Voice-läge vid VoIP-samtal för tydlig och jämn röstkvalitet."
+                    "eCourse": {
+                        "title": "Interactive E-course mode",
+                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
                     }
                 },
                 "microphone": {
@@ -1882,7 +1894,7 @@
                 "zeroTouchLoginForIdea": {
                     "title": "Beröringsfri inloggning",
                     "caption": "Med denna funktion kan du bli mer effektiv på jobbet genom att aktivera eller logga in på datorn automatiskt. Innan du kan använda funktionen måste du registrera ditt ansikte i Windows Hello.",
-                    "tooltip": "När du står framför datorn eller närmar dig den (inom ett avstånd på 1,2 eller 1,5 meter) medför denna funktion att du kan logga in på systemet automatiskt när ditt ansikte har identifierats. Om du befinner dig i utomhus måste du stå närmare datorn och aktiveringen tar längre tid. <br>Maxavståndet varierar beroende på sensorns kapacitet. Mer information finns i datorns <i>Användarhandbok</i>."
+                    "tooltip": "När du står framför datorn eller närmar dig den (inom ett avstånd på 1,2 eller 1,5 meter) medför denna funktion att du kan logga in på systemet automatiskt när ditt ansikte har identifierats. Om du befinner dig i utomhus i stället för på kontoret måste du vara närmare datorn och väckningen tar längre tid. <br>Maxavståndet varierar beroende på sensorns kapacitet. Mer information finns i datorns användarhandbok."
                 },
                 "zeroTouchLock": {
                     "title": "Beröringsfritt lås",
@@ -1969,10 +1981,8 @@
                     "description2": "Funktionen använder sensorer och kamera för att identifiera din närvaro. Den samlar INTE in, sparar eller läcker personliga uppgifter eller bilder.",
                     "description3": "1. För att kunna använda funktionerna ovan måste du justera skärmen till en lämplig vinkel så att systemet kan känna igen ditt ansikte.",
                     "description4": "2. Funktionerna fungerar inte i följande situationer:",
-                    "description5a1": "a. Datorn används i tält- eller surfplatteläge, stående läge eller frånkopplat läge. Information om datorns användningslägen finns i ",
-                    "description5a2": "Användarhandbok ",
-                    "description5a3": "som medföljde datorn.",
-                    "description5b": "b. Datorn är i viloläge eller avstängd.",
+                    "description5a": "a. Datorn används i tält- eller surfplatteläge, stående läge eller frånkopplat läge. Mer information om vilka lägen som stöds på din dator finns i användarhandboken som medföljde datorn.",
+					"description5b": "b. Datorn är i viloläge eller avstängd.",
                     "description6": "3. Om flygplansläget är aktiverat på datorn är dessa funktioner inaktiverade.",
                     "description7": "Noggrannheten varierar beroende på kroppsstorlek, hållning och hur ofta du rör dig. Om datorn låses oväntat kan du justera känslighetsfältet och därigenom öka noggrannheten."
                 },
@@ -2101,7 +2111,7 @@
                     "option6": "30"
                 },
                 "showPhoto": {
-                    "title": "FOTON HAR TAGITS:",
+                    "title": "FOTON HAR SPARATS LOKALT:",
                     "link": "Visa foton"
                 },
                 "fileAuthorizationTips": {
@@ -3291,7 +3301,8 @@
             "wireless": "Radio"
         },
         "warningMessage": "Tänk på att testen avbryts om datorn hamnar i vänte- eller viloläge",
-        "refreshMessage": "Uppdateringen kan ta lite tid, eftersom alla komponenter behöver läsas in igen"
+        "refreshMessage": "Uppdateringen kan ta lite tid, eftersom alla komponenter behöver läsas in igen",
+        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
     },
     "smartPerformance": {
         "title": "Health & Support",

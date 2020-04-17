@@ -26,7 +26,8 @@
 			class="navbar-brand pt-0 logo-y">
 
 			<div *ngIf="isGamingHome">
-				<img tabindex="0" [src]="headerLogo | sanitize : 'resourceUrl'"
+				<img tabindex="0"
+					[src]="headerLogo | sanitize : 'resourceUrl'"
 					alt="L" />
 			</div>
 			<a id="menu-main-lnk-gaming-logo"
@@ -58,8 +59,10 @@
 					<span *ngIf="!machineFamilyName">&nbsp;</span>
 					<span role="text"
 						*ngIf="machineFamilyName">{{machineFamilyName}}</span>
-					<vtr-ui-header-warranty *ngIf="machineFamilyName"
-						[pageParent]="'NavBar'"></vtr-ui-header-warranty>
+					<span class="warranty-icon">
+						<vtr-ui-header-warranty *ngIf="machineFamilyName"
+							[pageParent]="'NavBar'"></vtr-ui-header-warranty>
+					</span>
 				</div>
 			</span>
 
@@ -282,7 +285,9 @@
 							<div class="user-initials">
 								{{deviceService.isArm || userService.starter || !commonService.isOnline || !userService.isLenovoIdSupported() ? 'L' : userService.initials }}
 							</div>
-							<span class="unread-count-tag" role="text" id="menu-main-unread-message-count"
+							<span class="unread-count-tag"
+								role="text"
+								id="menu-main-unread-message-count"
 								*ngIf="!deviceService.isArm && appsForYouService.UnreadMessageCount.totalMessage">{{appsForYouService.UnreadMessageCount.totalMessage}}</span>
 						</a>
 						<span class="outline"></span>
@@ -314,7 +319,10 @@
 								(keydown.enter)="[onMenuItemClick(item, $event), menuItemKeyDown('apps-for-you', appsForYouEnum.AppGuidLenovoMigrationAssistant)]"
 								href="javascript:void(0)">
 								{{ 'appsForYou.menuText.lenovoMigrationAssistant' | translate }}
-								<span class="unread-tag" role="text" id="menu-main-lma-unread-tag" attr.aria-label="LMA Unread Tag"
+								<span class="unread-tag"
+									role="text"
+									id="menu-main-lma-unread-tag"
+									attr.aria-label="LMA Unread Tag"
 									*ngIf="!appsForYouService.UnreadMessageCount.lmaMenuClicked"></span>
 							</a>
 							<a ngbDropdownItem
@@ -334,7 +342,10 @@
 								(keydown.enter)="[onMenuItemClick(item, $event), menuItemKeyDown('/apps-for-you/', appsForYouEnum.AppGuidAdobeCreativeCloud)]"
 								href="javascript:void(0)">
 								{{ 'appsForYou.menuText.adobeRedemption' | translate }}
-								<span class="unread-tag" role="text" id="menu-main-adobe-unread-tag" attr.aria-label="Adobe Unread Tag"
+								<span class="unread-tag"
+									role="text"
+									id="menu-main-adobe-unread-tag"
+									attr.aria-label="Adobe Unread Tag"
 									*ngIf="!appsForYouService.UnreadMessageCount.adobeMenuClicked"></span>
 							</a>
 							<a ngbDropdownItem
@@ -352,7 +363,10 @@
 								(keydown.enter)="onMenuItemClick(item, $event)"
 								href="javascript:void(0)">
 								{{ 'dcc.menuText.lenovoDigitalOffer' | translate }}
-								<span class="unread-tag" role="text" id="menu-main-dcc-unread-tag" attr.aria-label="DCC Unread Tag"
+								<span class="unread-tag"
+									role="text"
+									id="menu-main-dcc-unread-tag"
+									attr.aria-label="DCC Unread Tag"
 									*ngIf="!appsForYouService.UnreadMessageCount.dccMenuClicked"></span>
 							</a>
 							<a ngbDropdownItem
