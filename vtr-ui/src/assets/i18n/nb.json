@@ -1894,7 +1894,7 @@
                 "zeroTouchLoginForIdea": {
                     "title": "Pålogging uten berøring",
                     "caption": "Denne funksjonen gjør det mulig for deg å forbedre arbeidseffektiviteten ved hjelp av automatisk reaktivering eller pålogging på datamaskinen. Hvis du vil bruke denne funksjonen, må du registrere ansiktet ditt i Windows Hello.",
-                    "tooltip": "Når du er foran datamaskinen eller nærmer deg den (innen avstanden på 1,2 eller 1,5 meter), gjør denne funksjonen deg i stand til automatisk å logge deg på systemet etter at ansiktet ditt har blitt gjenkjent. Hvis du er utendørs i stedet for på kontoret, må du være nærmere datamaskinen, og det vil ta lengre tid å aktivere den. <br>Maksimumsavstand for identifisering varierer avhengig av sensorfunksjonen. Se <i>brukerveiledningen</i> som følger med datamaskinen for mer informasjon."
+                    "tooltip": "Når du er foran datamaskinen eller nærmer deg den (innen avstanden på 1,2 eller 1,5 meter), gjør denne funksjonen deg i stand til automatisk å logge deg på systemet etter at ansiktet ditt har blitt gjenkjent. Hvis du er utendørs i stedet for på kontoret, må du være nærmere datamaskinen, og det vil ta lengre tid å aktivere den. <br>Maksimumsavstand for identifisering varierer avhengig av sensorfunksjonen. Se brukerveiledningen som følger med datamaskinen for mer informasjon."
                 },
                 "zeroTouchLock": {
                     "title": "Berøringsfri lås",
@@ -1981,10 +1981,8 @@
                     "description2": "Funksjonen bruker sensorer og kamera til å oppdage din tilstedeværelse. Funksjonen samler imidlertid IKKE inn noen personlige opplysninger.",
                     "description3": "1. Hvis du vil bruke funksjonene ovenfor, justerer du skjermen til en passende vinkel, slik at ansiktet ditt kan gjenkjennes.",
                     "description4": "2. Funksjonene ovenfor støttes ikke når:",
-                    "description5a1": "a. Datamaskinen din er i Telt-modus, Nettbrett-modus, Stativ-modus eller frakoblet modus. Hvis du vil finne ut hvilke modi som støttes av datamaskinen din, kan du se ",
-                    "description5a2": "Brukerveiledning ",
-                    "description5a3": "som følger med.",
-                    "description5b": "b. Datamaskinen er i dvalemodus eller er slått av.",
+                    "description5a": "a. Datamaskinen din er i Telt-modus, Nettbrett-modus, Stativ-modus eller frakoblet modus. Se brukerveiledningen som følger med datamaskinen for å se modusene som støttes på den.",
+					"description5b": "b. Datamaskinen er i dvalemodus eller er slått av.",
                     "description6": "3. Disse funksjonene deaktiveres hvis flymodus aktiveres på datamaskinen.",
                     "description7": "Nøyaktigheten varierer avhengig av kroppsstørrelse, sittestilling og bevegelseshyppighet. Hvis datamaskinen blir uventet låst, kan du justere følsomheten for å forbedre nøyaktigheten."
                 },
