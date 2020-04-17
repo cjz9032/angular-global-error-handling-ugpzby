@@ -744,88 +744,88 @@ export class VantageShellService {
 		return undefined;
 	}
 
-	public async getConnectedHomeSecurity(): Phoenix.ConnectedHomeSecurity {
-		const homeSecurity: Phoenix.ConnectedHomeSecurity = {
-			account: {
-				state: CHSAccountState.trial,
-				role: undefined,
-				lenovoId: 'lenovo@lenovo.com',
-				serverTimeUTC: new Date(),
-				expiration: new Date('sep 15, 2019'),
-				consoleUrl: 'https://chs.lenovo.com',
-				getCHSConsoleUrl() {
-					return Promise.resolve('https://chs.lenovo.com/');
-				}
-			},
-			deviceOverview: {
-				allDevicesCount: 0,
-				allDevicesProtected: true,
-				familyMembersCount: 2,
-				placesCount: 2,
-				personalDevicesCount: 1,
-				wifiNetworkCount: 3,
-				homeDevicesCount: 0
-			},
-			on(type, handler) {
-				return this;
-			},
-			off(type, handler) {
-				return this;
-			},
-			refresh() {
-				return Promise.resolve([true]);
-			},
-			joinAccount(code: string) {
-				return Promise.resolve('success');
-			},
-			quitAccount() {
-				return Promise.resolve('success');
-			},
-			purchase() {
-				WinRT.launchUri(
-					'https://vantagestore.lenovo.com/en/shop/product/connectedhomesecurityoneyearlicense-windows'
-				);
-				this.account.state =
-					this.state === CHSAccountState.trial ? CHSAccountState.trialExpired : CHSAccountState.standard;
-			},
-			visitWebConsole(feature: string) {
-				WinRT.launchUri(`https://chs.lenovo.com/`);
-				this.account.state =
-					this.state === CHSAccountState.trial ? CHSAccountState.trialExpired : CHSAccountState.standard;
-			}
-		};
+	// public async getConnectedHomeSecurity(): Phoenix.ConnectedHomeSecurity {
+	// 	const homeSecurity: Phoenix.ConnectedHomeSecurity = {
+	// 		account: {
+	// 			state: CHSAccountState.trial,
+	// 			role: undefined,
+	// 			lenovoId: 'lenovo@lenovo.com',
+	// 			serverTimeUTC: new Date(),
+	// 			expiration: new Date('sep 15, 2019'),
+	// 			consoleUrl: 'https://chs.lenovo.com',
+	// 			getCHSConsoleUrl() {
+	// 				return Promise.resolve('https://chs.lenovo.com/');
+	// 			}
+	// 		},
+	// 		deviceOverview: {
+	// 			allDevicesCount: 0,
+	// 			allDevicesProtected: true,
+	// 			familyMembersCount: 2,
+	// 			placesCount: 2,
+	// 			personalDevicesCount: 1,
+	// 			wifiNetworkCount: 3,
+	// 			homeDevicesCount: 0
+	// 		},
+	// 		on(type, handler) {
+	// 			return this;
+	// 		},
+	// 		off(type, handler) {
+	// 			return this;
+	// 		},
+	// 		refresh() {
+	// 			return Promise.resolve([true]);
+	// 		},
+	// 		joinAccount(code: string) {
+	// 			return Promise.resolve('success');
+	// 		},
+	// 		quitAccount() {
+	// 			return Promise.resolve('success');
+	// 		},
+	// 		purchase() {
+	// 			WinRT.launchUri(
+	// 				'https://vantagestore.lenovo.com/en/shop/product/connectedhomesecurityoneyearlicense-windows'
+	// 			);
+	// 			this.account.state =
+	// 				this.state === CHSAccountState.trial ? CHSAccountState.trialExpired : CHSAccountState.standard;
+	// 		},
+	// 		visitWebConsole(feature: string) {
+	// 			WinRT.launchUri(`https://chs.lenovo.com/`);
+	// 			this.account.state =
+	// 				this.state === CHSAccountState.trial ? CHSAccountState.trialExpired : CHSAccountState.standard;
+	// 		}
+	// 	};
+	//
+	// 	return homeSecurity;
+	// }
 
-		return homeSecurity;
-	}
-
-	public async getDevicePosture(): Phoenix.DevicePosture {
-		const devicePosture: Phoenix.DevicePosture = {
-			value: [
-				{ name: 'PasswordProtection', vulnerable: false },
-				{ name: 'HardDriveEncryption', vulnerable: true },
-				{ name: 'AntiVirusAvailability', vulnerable: false },
-				{ name: 'FirewallAvailability', vulnerable: false },
-				{ name: 'AppsFromUnknownSources', vulnerable: true },
-				{ name: 'DeveloperMode', vulnerable: true },
-				{ name: 'NotActivatedWindows', vulnerable: false },
-				{ name: 'UacNotification', vulnerable: false }
-			],
-			getDevicePosture() {
-				return Promise.resolve();
-			},
-			cancelGetDevicePosture() { },
-			on(type, handler) {
-				return this;
-			},
-			off(type, handler) {
-				return this;
-			},
-			refresh() {
-				return Promise.resolve([true]);
-			}
-		};
-		return devicePosture;
-	}
+	// public async getDevicePosture(): Phoenix.DevicePosture {
+	// 	const devicePosture: Phoenix.DevicePosture = {
+	// 		value: [
+	// 			{ name: 'PasswordProtection', vulnerable: false },
+	// 			{ name: 'HardDriveEncryption', vulnerable: true },
+	// 			{ name: 'AntiVirusAvailability', vulnerable: false },
+	// 			{ name: 'FirewallAvailability', vulnerable: false },
+	// 			{ name: 'AppsFromUnknownSources', vulnerable: true },
+	// 			{ name: 'DeveloperMode', vulnerable: true },
+	// 			{ name: 'NotActivatedWindows', vulnerable: false },
+	// 			{ name: 'UacNotification', vulnerable: false }
+	// 		],
+	// 		getDevicePosture() {
+	// 			return Promise.resolve();
+	// 		},
+	// 		cancelGetDevicePosture() { },
+	// 		on(type, handler) {
+	// 			return this;
+	// 		},
+	// 		off(type, handler) {
+	// 			return this;
+	// 		},
+	// 		refresh() {
+	// 			return Promise.resolve([true]);
+	// 		}
+	// 	};
+	// 	return devicePosture;
+	// }
 
 	/**
 	 * returns hardware settings object from VantageShellService of JS Bridge
@@ -2176,7 +2176,7 @@ export class VantageShellService {
 			setBacklight: (status) => Promise.resolve({
 				errorcode: CommonErrorCode.SUCCEED
 			}),
-			GetBacklightOnSystemChange: (settings) => Promise.resolve({
+			getBacklightOnSystemChange: (settings) => Promise.resolve({
 				settingList: {
 					setting: [
 						{
