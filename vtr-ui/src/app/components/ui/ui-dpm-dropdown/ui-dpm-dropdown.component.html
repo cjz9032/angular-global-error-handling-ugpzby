@@ -4,7 +4,7 @@
 	<div class="input input-placeholder">
 		<div class="time">
 			<span [title]=""
-			[ngbTooltip]="text" tooltipClass="vtr-tooltip" container="body"
+			[ngbTooltip]="text" tooltipClass="vtr-system-tooltip" container="body"
 			>{{ text }} </span>
 		</div>
 		<p class="chevron">
@@ -20,7 +20,7 @@
 		id="{{dropDownId}}">
 		<div class="time">
 			<span [title]=""
-			[ngbTooltip]="text" tooltipClass="vtr-tooltip" container="body"
+			[ngbTooltip]="text" tooltipClass="vtr-system-tooltip" container="body"
 			>{{ text }} </span>
 		</div>
 		<p class="chevron">
@@ -37,7 +37,7 @@
 				(keydown.enter)="[select(item),toggleByItem(isLast,toggleBtn)]"
 				role="option" attr.aria-label="{{ item.text }} selected,">
 				<span [title]=""
-				[ngbTooltip]="item.text" tooltipClass="vtr-tooltip" container="body"
+				[ngbTooltip]="item.text" tooltipClass="vtr-system-tooltip" container="body"
 				>{{ item.text }}</span>
 			</li>
 		</ul>

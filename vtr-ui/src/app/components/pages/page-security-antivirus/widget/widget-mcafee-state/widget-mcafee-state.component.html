@@ -17,7 +17,7 @@
         <div class="col-7 text px-0"
 			title=""
       [innerHTML]="list.title | translate | characterLimit:28"
-      [ngbTooltip]="list.title | translate" tooltipClass="vtr-tooltip" container="body"
+      [ngbTooltip]="list.title | translate" tooltipClass="vtr-system-tooltip" container="body"
       >
         </div>
         <div class="col-3 text-right px-0 ml-auto">
@@ -27,7 +27,7 @@
 					<span class="text-uppercase"
 						title=""
             [innerHTML]="list.status | statusText | translate"
-            [ngbTooltip]="list.status | statusText | translate | uppercase" tooltipClass="vtr-tooltip" container="body"
+            [ngbTooltip]="list.status | statusText | translate | uppercase" tooltipClass="vtr-system-tooltip" container="body"
             >
 					</span>
 			</h3>
@@ -49,14 +49,14 @@
 		<div class="col-7 text px-0 line-through"
 			title=""
       [innerHTML]="list.title | translate | characterLimit:26"
-      [ngbTooltip]="list.title | translate" tooltipClass="vtr-tooltip" container="body"
+      [ngbTooltip]="list.title | translate" tooltipClass="vtr-system-tooltip" container="body"
       >
 		</div>
         <div class="col-3 text-right px-0 ml-auto">
           <h3 class="mb-1 text-ellipsis"><span class="text-uppercase text-color"
               title=""
               [innerHTML]="'security.antivirus.common.notAvailable' | translate"
-              [ngbTooltip]="'security.antivirus.common.notAvailable' | translate" tooltipClass="vtr-tooltip" container="body"
+              [ngbTooltip]="'security.antivirus.common.notAvailable' | translate" tooltipClass="vtr-system-tooltip" container="body"
               >
           </span></h3>
         </div>
