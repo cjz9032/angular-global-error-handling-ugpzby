@@ -1446,23 +1446,35 @@
                 "subtitle": "Nastavení zvuku",
                 "description": "Tato část umožňuje automaticky optimalizovat nebo plněkonfigurovat nastavení zvuku, například nastavení Dolby, mikrofon atd.",
                 "audioSmartsettings": {
-                    "title": "Inteligentní nastavení zvuku",
-                    "subtitle": "NASTAVENÍ PŘIZPŮSOBENÉ APLIKACI",
-                    "description": "Automaticky přizpůsobuje nastavení zvuku a zobrazení podle vámi používaných aplikací.",
+                    "title": "Audio smart settings",
                     "dolby": {
-                        "title": "Automatické nastavení zvuku Dolby",
-                        "tooltip": "Automatické nastavení zvuku Dolby konfiguruje nastavení zvuku Dolby na vhodnýrežim pro různé aplikace, které používáte, abyste měli co nejlepší zážitek z hudby.",
+                        "title": "Dolby audio",
+                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
-                            "dynamic": "DYNAMICKÉ",
-                            "movie": "FILM",
-                            "music": "HUDBA",
-                            "games": "HRA",
-                            "voip": "HLAS"
+                            "dynamic": "DYNAMIC",
+							"movie": "MOVIE",
+							"music": "MUSIC",
+							"games": "GAME",
+							"voip": "VOICE"
+                        },
+                        "automaticAudioCheckboxText": "Automatic audio optimization for",
+                        "automaticAudioMode": {
+                            "voIPMode": {
+                                "radioText": "VoIP",
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                            },
+                            "entertainmentMode": {
+                                "radioText": "Entertainment",
+                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
+                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                            }
                         }
                     },
-                    "voip": {
-                        "title": "Automatická optimalizace zvuku pro VoIP",
-                        "tooltip": "Během hovorů VoIP automaticky přepne do režimu Dolby Voice, aby byl hlaszřetelný a jeho kvalita konzistentní."
+                    "eCourse": {
+                        "title": "Interactive E-course mode",
+                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
                     }
                 },
                 "microphone": {
@@ -2101,7 +2113,7 @@
                     "option6": "30"
                 },
                 "showPhoto": {
-                    "title": "FOTOGRAFIE BYLY:",
+                    "title": "FOTOGRAFIE BYLY ULOŽENY DO MÍSTNÍHO:",
                     "link": "Zobrazit fotografie"
                 },
                 "fileAuthorizationTips": {
@@ -3291,7 +3303,8 @@
             "wireless": "Bezdrátové"
         },
         "warningMessage": "Mějte na paměti, že testy budou zrušeny, pokud je systém v režimu spánku nebo hibernace",
-        "refreshMessage": "Obnovení může nějakou dobu trvat, protože je třeba znovu načíst všechny součásti"
+        "refreshMessage": "Obnovení může nějakou dobu trvat, protože je třeba znovu načíst všechny součásti",
+        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
     },
     "smartPerformance": {
         "title": "Health & Support",

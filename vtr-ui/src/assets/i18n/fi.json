@@ -1446,23 +1446,35 @@
                 "subtitle": "Ääniasetukset",
                 "description": "Tämän osan avulla voit automaattisesti optimoida taimäärittää ääniasetukset manuaalisesti (esimerkiksi Dolby-asetukset, mikrofoni jne.).",
                 "audioSmartsettings": {
-                    "title": "Älykkäät ääniasetukset",
-                    "subtitle": "SOVELLUSPOHJAISET ASETUKSET",
-                    "description": "Säädä ääniasetuksia automaattisesti erilaisten sovellusten mukaan.",
+                    "title": "Audio smart settings",
                     "dolby": {
-                        "title": "Automaattiset Dolby-ääniasetukset",
-                        "tooltip": "Automaattiset Dolby-ääniasetukset määrittävät Dolby-ääniasetuksillesoveltuvan tilan erilaisten sovellusten mukaan äänikokemuksesi parantamiseksi.",
+                        "title": "Dolby audio",
+                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
-                            "dynamic": "DYNAAMINEN",
-                            "movie": "ELOKUVA",
-                            "music": "MUSIIKKI",
-                            "games": "PELI",
-                            "voip": "ÄÄNI"
+                            "dynamic": "DYNAMIC",
+							"movie": "MOVIE",
+							"music": "MUSIC",
+							"games": "GAME",
+							"voip": "VOICE"
+                        },
+                        "automaticAudioCheckboxText": "Automatic audio optimization for",
+                        "automaticAudioMode": {
+                            "voIPMode": {
+                                "radioText": "VoIP",
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                            },
+                            "entertainmentMode": {
+                                "radioText": "Entertainment",
+                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
+                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                            }
                         }
                     },
-                    "voip": {
-                        "title": "Automaattinen ääniasetusten optimointi VoIP:lle",
-                        "tooltip": "Vaihda automaattisesti Dolby Voice -tilaan VoIP-puhelujen aikana, jotta äänen laatu on selkeä ja yhdenmukainen."
+                    "eCourse": {
+                        "title": "Interactive E-course mode",
+                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
                     }
                 },
                 "microphone": {
@@ -2101,7 +2113,7 @@
                     "option6": "30"
                 },
                 "showPhoto": {
-                    "title": "VALOKUVAT ON:",
+                    "title": "VALOKUVAT ON TALLENNETTU PAIKALLISEEN ASEMAAN:",
                     "link": "Näytä valokuvat"
                 },
                 "fileAuthorizationTips": {
@@ -3291,7 +3303,8 @@
             "wireless": "Langattomat yhteydet"
         },
         "warningMessage": "Muista, että testit peruutetaan, jos järjestelmä on lepo- tai horrostilassa",
-        "refreshMessage": "Päivitys saattaa kestää jonkin aikaa, koska kaikkien osien lataus on tehtävä uudelleen"
+        "refreshMessage": "Päivitys saattaa kestää jonkin aikaa, koska kaikkien osien lataus on tehtävä uudelleen",
+        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
     },
     "smartPerformance": {
         "title": "Health & Support",
