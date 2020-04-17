@@ -34,38 +34,38 @@
                     </h2>
                     <p class="description">
                         {{ 'gaming.dashboard.device.thermalMode2Popup.performanceDesc' | translate }}
-                        <span *ngIf="OCsupportted !== 0"> {{ 'gaming.dashboard.device.thermalMode2Popup.OCDesc' | translate }}</span>
+                        <span *ngIf="OCsupportted !== deviceEnum.none"> {{ 'gaming.dashboard.device.thermalMode2Popup.OCDesc' | translate }}</span>
                         <span *ngIf="!gamingCapabilities.desktopType"> {{ 'gaming.dashboard.device.thermalMode2Popup.ac_dcDesc' | translate }}</span>
                     </p>
-                    <div class="item-oc" *ngIf="OCsupportted !== 0">
-                        <ng-container *ngIf="OCsupportted === driverStatus || driverStatus === 3">
+                    <div class="item-oc" *ngIf="OCsupportted !== deviceEnum.none">
+                        <ng-container *ngIf="OCsupportted === driverStatus || driverStatus === deviceEnum.cpu_gpu">
                             <div class="item-oc-left">
                                 <button class="oc-checkbox" [ngClass]="{'checked':OCSettings}" role="checkbox" (click)="setPerformanceOCSetting($event)"
-                                tabindex="1" [attr.aria-label]="OCsupportted === 3 ? 'Enable CPU and GPU Overclocking in Performance Mode' : 
-                                OCsupportted === 2 ? 'Enable CPU Overclocking in Performance Mode' : 'Enable GPU Overclocking in Performance Mode'" 
+                                tabindex="1" [attr.aria-label]="OCsupportted === deviceEnum.cpu_gpu ? 'Enable CPU and GPU Overclocking in Performance Mode' : 
+                                OCsupportted === deviceEnum.cpu ? 'Enable CPU Overclocking in Performance Mode' : 'Enable GPU Overclocking in Performance Mode'" 
                                 [attr.aria-checked]="OCSettings"></button>
                             </div>
                             <div class="oc-description">
-                                <p *ngIf="OCsupportted === 3">
+                                <p *ngIf="OCsupportted === deviceEnum.cpu_gpu">
                                     {{ 'gaming.dashboard.device.thermalMode2Popup.OC.cpu_gpuOC' | translate }} &nbsp;
                                     <a class="oc-advance-button" *ngIf="gamingCapabilities.advanceCPUOCFeature || gamingCapabilities.advanceGPUOCFeature" 
                                     tabindex="1" role="button" (click)="openWaringModal()" (keyup.enter)="openWaringModal()">{{ 'gaming.dashboard.device.thermalMode2Popup.OC.advance' | translate }}</a>
                                 </p>
-                                <p *ngIf="OCsupportted === 2">
+                                <p *ngIf="OCsupportted === deviceEnum.cpu">
                                     {{ 'gaming.dashboard.device.thermalMode2Popup.OC.cpuOC' | translate }} &nbsp;
                                     <a  class="oc-advance-button" *ngIf="gamingCapabilities.advanceCPUOCFeature || gamingCapabilities.advanceGPUOCFeature" 
                                     tabindex="1" role="button" (click)="openWaringModal()" (keyup.enter)="openWaringModal()">{{ 'gaming.dashboard.device.thermalMode2Popup.OC.advance' | translate }}</a>
                                 </p>
-                                <p *ngIf="OCsupportted === 1">
+                                <p *ngIf="OCsupportted === deviceEnum.gpu">
                                     {{ 'gaming.dashboard.device.thermalMode2Popup.OC.gpuOC' | translate }} &nbsp;
                                     <a  class="oc-advance-button" *ngIf="gamingCapabilities.advanceCPUOCFeature || gamingCapabilities.advanceGPUOCFeature" 
                                     tabindex="1" role="button" (click)="openWaringModal()" (keyup.enter)="openWaringModal()">{{ 'gaming.dashboard.device.thermalMode2Popup.OC.advance' | translate }}</a>
                                 </p>
                             </div>
                         </ng-container>
-                        <ng-container *ngIf="OCsupportted !== driverStatus && driverStatus !== 3">
+                        <ng-container *ngIf="OCsupportted !== driverStatus && driverStatus !== deviceEnum.cpu_gpu">
                             <div class="oc-description">
-                                <p *ngIf="OCsupportted === 3 && driverStatus === 0">
+                                <p *ngIf="OCsupportted === deviceEnum.cpu_gpu && driverStatus === deviceEnum.none">
                                     {{ 'gaming.dashboard.device.thermalMode2Popup.OC.cpu_gpuDriverLack' | translate }} &nbsp;
                                     <a class="oc-driver-link" routerLink="/device/system-updates" (click)="closeThermalMode2Modal()" 
                                     tabindex="1" aria-label="Install CPU and GPU driver to use the Overclocking function" 
@@ -73,7 +73,7 @@
                                         {{ 'gaming.dashboard.device.thermalMode2Popup.OC.goInstall' | translate }}
                                     </a>
                                 </p>
-                                <p *ngIf="(OCsupportted === 3 && driverStatus === 1) || (OCsupportted === 2 && driverStatus !== 3)">
+                                <p *ngIf="(OCsupportted === deviceEnum.cpu_gpu && driverStatus === deviceEnum.gpu) || (OCsupportted === deviceEnum.cpu && driverStatus !== deviceEnum.cpu_gpu)">
                                     {{ 'gaming.dashboard.device.thermalMode2Popup.OC.cpuDriverLack' | translate }} &nbsp;
                                     <a class="oc-driver-link" routerLink="/device/system-updates" (click)="closeThermalMode2Modal()"
                                     tabindex="1" aria-label="Install CPU driver to use the Overclocking function"  
@@ -81,7 +81,7 @@
                                         {{ 'gaming.dashboard.device.thermalMode2Popup.OC.goInstall' | translate }}
                                     </a>
                                 </p>
-                                <p *ngIf="(OCsupportted === 3 && driverStatus === 2) || (OCsupportted === 1 && driverStatus !== 3)">
+                                <p *ngIf="(OCsupportted === deviceEnum.cpu_gpu && driverStatus === deviceEnum.cpu) || (OCsupportted === deviceEnum.gpu && driverStatus !== deviceEnum.cpu_gpu)">
                                     {{ 'gaming.dashboard.device.thermalMode2Popup.OC.gpuDriverLack' | translate }} &nbsp;
                                     <a class="oc-driver-link" routerLink="/device/system-updates" (click)="closeThermalMode2Modal()" 
                                     tabindex="1" aria-label="Install GPU driver to use the Overclocking function"
