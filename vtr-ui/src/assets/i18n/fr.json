@@ -2113,7 +2113,7 @@
                     "option6": "30"
                 },
                 "showPhoto": {
-                    "title": "LES PHOTOS ONT ÉTÉ :",
+                    "title": "PHOTOS ENREGISTRÉES DANS L'EMPLACEMENT LOCAL :",
                     "link": "Voir les photos"
                 },
                 "fileAuthorizationTips": {

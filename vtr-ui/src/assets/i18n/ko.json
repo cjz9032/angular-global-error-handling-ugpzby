@@ -2113,7 +2113,7 @@
                     "option6": "30"
                 },
                 "showPhoto": {
-                    "title": "사진은 다음과 같습니다.",
+                    "title": "사진이 로컬에 저장되었습니다:",
                     "link": "사진 보기"
                 },
                 "fileAuthorizationTips": {

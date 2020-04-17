@@ -2113,7 +2113,7 @@
                     "option6": "30"
                 },
                 "showPhoto": {
-                    "title": "照片已经：",
+                    "title": "照片已保存到本地：",
                     "link": "查看照片"
                 },
                 "fileAuthorizationTips": {

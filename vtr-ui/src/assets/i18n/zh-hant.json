@@ -2113,7 +2113,7 @@
                     "option6": "30"
                 },
                 "showPhoto": {
-                    "title": "相片已：",
+                    "title": "相片已經儲存到本機：",
                     "link": "檢視相片"
                 },
                 "fileAuthorizationTips": {

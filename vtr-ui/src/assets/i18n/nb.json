@@ -2113,7 +2113,7 @@
                     "option6": "30"
                 },
                 "showPhoto": {
-                    "title": "BILDER:",
+                    "title": "BILDENE ER LAGRET LOKALT:",
                     "link": "Vis bilder"
                 },
                 "fileAuthorizationTips": {

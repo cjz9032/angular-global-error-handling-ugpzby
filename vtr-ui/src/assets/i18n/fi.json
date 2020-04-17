@@ -2113,7 +2113,7 @@
                     "option6": "30"
                 },
                 "showPhoto": {
-                    "title": "VALOKUVAT ON:",
+                    "title": "VALOKUVAT ON TALLENNETTU PAIKALLISEEN ASEMAAN:",
                     "link": "Näytä valokuvat"
                 },
                 "fileAuthorizationTips": {

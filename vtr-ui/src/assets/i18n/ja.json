@@ -2113,7 +2113,7 @@
                     "option6": "30"
                 },
                 "showPhoto": {
-                    "title": "写真:",
+                    "title": "写真がローカルに保存されました:",
                     "link": "写真を見る"
                 },
                 "fileAuthorizationTips": {
