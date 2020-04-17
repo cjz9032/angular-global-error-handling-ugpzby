@@ -1446,35 +1446,35 @@
                 "subtitle": "音频设置",
                 "description": "在此部分中可自动优化或手动对音频设置进行全面配置，例如 Dolby 设置、麦克风等。",
                 "audioSmartsettings": {
-                    "title": "Audio smart settings",
+                    "title": "音频智能设置",
                     "dolby": {
-                        "title": "Dolby audio",
-                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
+                        "title": "Dolby音频",
+                        "description": "从以下位置选择所需的模式。您还可以选择选项\"自动优化音频：\"。启用此功能后，杜比音频会根据您处于的不同模式自动为您选择最佳音频效果。",
                         "options": {
-                            "dynamic": "DYNAMIC",
-							"movie": "MOVIE",
-							"music": "MUSIC",
-							"games": "GAME",
-							"voip": "VOICE"
+                            "dynamic": "动态",
+							"movie": "电影",
+							"music": "音乐",
+							"games": "游戏",
+							"voip": "声音"
                         },
-                        "automaticAudioCheckboxText": "Automatic audio optimization for",
+                        "automaticAudioCheckboxText": "自动音频优化",
                         "automaticAudioMode": {
                             "voIPMode": {
                                 "radioText": "VoIP",
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                                "tooltip": "当您拨打 VoIP 通话时（使用 Skype、微软团队、微信等），此功能将生效。 启用后，杜比音频会自动更改为语音模式，从而获得更好的语音质量。"
                             },
                             "entertainmentMode": {
-                                "radioText": "Entertainment",
-                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "radioText": "娱乐",
+                                "tooltip": "选择此选项后，杜比音频会根据您使用的应用自动调整模式：",
+                                "description1":"如果您正在使用 iTunes 等应用，它将更改为\"音乐\"模式。",
+                                "description2":"如果您正在使用 Youtube 等应用，它将更改为\"影片\"模式。",
+                                "description3":"如果您使用的是游戏应用，它将相应地更改为游戏模式。"
                             }
                         }
                     },
                     "eCourse": {
-                        "title": "Interactive E-course mode",
-                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
+                        "title": "网课模式",
+                        "tooltip": "当教师和学生之间存在语音交互时，此功能可用于在线课程。启用后，杜比音频将自动更改为 \"语音\"模式。同时，将打开波束成形、声回波消除和键盘噪声抑制等功能，以提高语音输入。"
                     }
                 },
                 "microphone": {
