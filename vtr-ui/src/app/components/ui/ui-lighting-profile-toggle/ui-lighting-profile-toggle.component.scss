@@ -47,7 +47,7 @@
 		height: 100%;
 		position: relative;
 		&.optionnull {
-			#off {
+			.lighting_off_profile {
 				color: $gaming_lightest !important;
 			}
 		}
@@ -91,7 +91,7 @@
 			@media #{$breakpoint_xl} {
 				white-space: nowrap;
 				overflow: hidden;
-				&#off {
+				&.lighting_off_profile {
 					letter-spacing: 0;
 					text-indent: 0;
 				}

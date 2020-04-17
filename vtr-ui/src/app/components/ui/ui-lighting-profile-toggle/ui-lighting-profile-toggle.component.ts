@@ -23,8 +23,8 @@ export class UiLightingProfileToggleComponent implements OnInit {
 
 	}
 	SetProfile(event) {
-		let val1: number = event.target.value;
-		this.currentProfile = val1;
+		const val = event.target.value;
+		this.currentProfile = Number(val);
 		this.setLightingProfileId.emit(event);
 	}
 }
