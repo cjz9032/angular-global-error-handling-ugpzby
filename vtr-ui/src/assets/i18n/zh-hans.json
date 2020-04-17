@@ -1455,7 +1455,7 @@
 							"movie": "电影",
 							"music": "音乐",
 							"games": "游戏",
-							"voip": "声音"
+							"voip": "语音"
                         },
                         "automaticAudioCheckboxText": "自动音频优化",
                         "automaticAudioMode": {
