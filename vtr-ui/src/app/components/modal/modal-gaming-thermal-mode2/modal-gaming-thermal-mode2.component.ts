@@ -24,8 +24,14 @@ export class ModalGamingThermalMode2Component implements OnInit {
   public loading = false;
   public gamingCapabilities: GamingAllCapabilities = new GamingAllCapabilities();
   public thermalModeSettingStatus = 2;
-  public OCsupportted = 0;
-  public driverStatus = 0;
+  public deviceEnum = {
+    cpu_gpu: 3,
+    cpu: 2,
+    gpu: 1,
+    none: 0
+  };
+  public OCsupportted = this.deviceEnum.none;
+  public driverStatus = this.deviceEnum.none;
   public OCSettings = false;
   public autoSwitchStatus = false;
   public isThermalModeSetted = false;
@@ -62,11 +68,11 @@ export class ModalGamingThermalMode2Component implements OnInit {
 
   ngOnInit() {
     this.renderOCSupported();
-    if (this.OCsupportted === 3) {
+    if (this.OCsupportted === this.deviceEnum.cpu_gpu) {
       this.OCSettings = this.commonService.getLocalStorageValue(LocalStorageKey.CpuOCStatus) === 1 && this.commonService.getLocalStorageValue(LocalStorageKey.GpuOCStatus) === 1;
-    } else if (this.OCsupportted === 2) {
+    } else if (this.OCsupportted === this.deviceEnum.cpu) {
       this.OCSettings = this.commonService.getLocalStorageValue(LocalStorageKey.CpuOCStatus) === 1;
-    } else if (this.OCsupportted === 1) {
+    } else if (this.OCsupportted === this.deviceEnum.gpu) {
       this.OCSettings = this.commonService.getLocalStorageValue(LocalStorageKey.GpuOCStatus) === 1;
     }
     this.getThermalModeSettingStatus();
@@ -84,29 +90,29 @@ export class ModalGamingThermalMode2Component implements OnInit {
     // oc supported status
     if (this.gamingCapabilities.cpuOCFeature) {
       if (this.gamingCapabilities.gpuOCFeature) {
-        this.OCsupportted = 3;
+        this.OCsupportted = this.deviceEnum.cpu_gpu;
       } else {
-        this.OCsupportted = 2;
+        this.OCsupportted = this.deviceEnum.cpu;
       }
     } else {
       if (this.gamingCapabilities.gpuOCFeature) {
-        this.OCsupportted = 1;
+        this.OCsupportted = this.deviceEnum.gpu;
       } else {
-        this.OCsupportted = 0;
+        this.OCsupportted = this.deviceEnum.none;
       }
     }
     // driver status
     if (this.gamingCapabilities.xtuService) {
       if (this.gamingCapabilities.nvDriver) {
-        this.driverStatus = 3;
+        this.driverStatus = this.deviceEnum.cpu_gpu;
       } else {
-        this.driverStatus = 2;
+        this.driverStatus = this.deviceEnum.cpu;
       }
     } else {
       if (this.gamingCapabilities.nvDriver) {
-        this.driverStatus = 1;
+        this.driverStatus = this.deviceEnum.gpu;
       } else {
-        this.driverStatus = 0;
+        this.driverStatus = this.deviceEnum.none;
       }
     }
   }
