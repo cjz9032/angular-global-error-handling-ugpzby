@@ -116,6 +116,7 @@
 							<span *ngIf="item.beta"
 								class="beta">Beta</span>
 						</a>
+						<span class="outline"></span>
 					</li>
 					<li ngbDropdown
 						#menuDropDown="ngbDropdown"
@@ -156,6 +157,7 @@
 							<span *ngIf="item.beta"
 								class="beta">Beta</span>
 						</a>
+						<span class="outline"></span>
 						<div ngbDropdownMenu
 							id="menu-main-nav-lnk-dropdown-toggle-{{item.id}}"
 							class="dropdown-menu"
@@ -283,6 +285,7 @@
 							<span class="unread-count-tag" role="text" id="menu-main-unread-message-count"
 								*ngIf="!deviceService.isArm && appsForYouService.UnreadMessageCount.totalMessage">{{appsForYouService.UnreadMessageCount.totalMessage}}</span>
 						</a>
+						<span class="outline"></span>
 						<div ngbDropdownMenu
 							class="dropdown-menu {{item.id}} dropdown-menu-id"
 							id="navbarDropdownMenu"
