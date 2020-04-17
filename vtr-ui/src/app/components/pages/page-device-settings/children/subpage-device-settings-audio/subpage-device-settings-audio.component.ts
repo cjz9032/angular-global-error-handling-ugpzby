@@ -664,8 +664,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			this.microphoneProperties.muteDisabled = msg.muteDisabled;
 		}
 		if (msg.hasOwnProperty('volume')) {
-			this.logger.info('*****ready to change volume ' + msg.volume);
-			this.microphoneProperties.volume = msg.volume;
+			this.logger.info('*****ready to change volume ' + msg.volume); this.microphoneProperties.volume = msg.volume;
 		}
 		if (msg.hasOwnProperty('permission')) {
 			this.microphoneProperties.permission = msg.permission;
