@@ -1894,7 +1894,7 @@
                 "zeroTouchLoginForIdea": {
                     "title": "Inicio de sesión sin interacción",
                     "caption": "Esta característica le permite mejorar la eficacia del trabajo reactivando o iniciando sesión automáticamente en el sistema. Para utilizar esta característica, debe registrar su rostro en Windows Hello.",
-                    "tooltip": "Cuando esté delante de la sistema o cerca de él (dentro de 1,2 o 1,5 metros), esta característica le permite iniciar sesión automáticamente en el sistema después de que se reconozca su cara. Si está en el exterior en lugar de en la oficina, debe estar más cerca del sistema y la reactivación tardará más. <br>Según la capacidad del sensor, la distancia máxima de detección varía. Consulte la <i>Guía del usuario</i> que se incluye con su equipo para obtener detalles."
+                    "tooltip": "Cuando esté delante de la sistema o cerca de él (dentro de 1,2 o 1,5 metros), esta característica le permite iniciar sesión automáticamente en el sistema después de que se reconozca su cara. Si está en el exterior en lugar de en la oficina, debe estar más cerca del sistema y la reactivación tardará más. <br>Según la capacidad del sensor, la distancia máxima de detección varía. Consulte la Guía del usuario que se incluye con su equipo para obtener detalles."
                 },
                 "zeroTouchLock": {
                     "title": "Bloqueo sin interacción",
@@ -1981,10 +1981,8 @@
                     "description2": "La característica utiliza sensores y la cámara para detectar su presencia. Sin embargo, la característica NO recopila datos personales.",
                     "description3": "1. Para usar las funciones anteriores, ajuste su pantalla a un ángulo adecuado para que pueda reconocer su rostro.",
                     "description4": "2. Las funciones anteriores no se admiten cuando:",
-                    "description5a1": "a. El sistema está en la modalidad Tienda, Tableta o Pedestal, o la modalidad Desconectado. Para ver los modos admitidos en su equipo, consulte ",
-                    "description5a2": "Guía del usuario ",
-                    "description5a3": "que se incluye.",
-                    "description5b": "b. Su sistema se encuentra en hibernación o se apagó.",
+                    "description5a": "a. El sistema está en la modalidad Tienda, Tableta o Pedestal, o la modalidad Desconectado. Para las modalidades admitidas en su equipo, consulte la Guía del usuario que se incluye con este.",
+					"description5b": "b. Su sistema se encuentra en hibernación o se apagó.",
                     "description6": "3. Si el modo de avión está habilitado en su equipo, estas características inalámbricas se deshabilitarán.",
                     "description7": "La precisión varía según el tamaño del cuerpo, la postura y la frecuencia de movimiento. Si el sistema está bloqueado de forma inesperada, ajuste la barra de detección para mejorar la precisión."
                 },

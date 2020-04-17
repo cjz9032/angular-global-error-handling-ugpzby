@@ -1894,7 +1894,7 @@
                 "zeroTouchLoginForIdea": {
                     "title": "Bezdotykové prihlásenie",
                     "caption": "Táto funkcia vám umožní efektívnejšie pracovať prostredníctvom automatického prebúdzania alebo prihlasovania sa do vášho počítača. Aby ste ju mohli využiť, musíte si zaregistrovať tvár do služby Windows Hello.",
-                    "tooltip": "Keď sa budete nachádzať pred počítačom, prípadne sa k nemu budete blížiť (vzdialenosť 1,2 alebo 1,5 metra), táto funkcia vám po rozpoznaní tváre umožní automatické prihlásenie do systému. Ak ste skôr v exteriéri než v kancelárii, musíte byť bližšie k počítaču a prebudenie bude trvať dlhšie. <br>V závislosti od možností snímača sa maximálna vzdialenosť rozpoznania líši. Podrobnosti nájdete v <i>používateľskej príručke</i>, ktorá je pribalená k počítaču."
+                    "tooltip": "Keď sa budete nachádzať pred počítačom, prípadne sa k nemu budete blížiť (vzdialenosť 1,2 alebo 1,5 metra), táto funkcia vám po rozpoznaní tváre umožní automatické prihlásenie do systému. Ak ste skôr v exteriéri než v kancelárii, musíte byť bližšie k počítaču a prebudenie bude trvať dlhšie. <br>V závislosti od možností snímača sa maximálna vzdialenosť rozpoznania líši. Podrobnosti nájdete v používateľskej príručke, ktorá je pribalená k počítaču."
                 },
                 "zeroTouchLock": {
                     "title": "Bezdotykové uzamknutie",
@@ -1981,10 +1981,8 @@
                     "description2": "Táto funkcia využíva senzory a kameru na zistenie vašej prítomnosti. Funkcia však nezhromažďuje, neukladá ani neposkytuje žiadne osobné údaje ani snímky.",
                     "description3": "1. Ak chcete využívať vyššie uvedené funkcie, nastavte obrazovku do príslušného uhla, aby bolo možné rozpoznať vašu tvár.",
                     "description4": "2. Vyššie uvedené funkcie nie sú podporované, ak:",
-                    "description5a1": "a. Máte počítač v režime Stan, Tablet, Stojan alebo v odpojenom režime. Informácie o režimoch podporovaných vaším počítačom nájdete v dokumente ",
-                    "description5a2": "Používateľská príručka ",
-                    "description5a3": "pribalenom k počítaču.",
-                    "description5b": "B. Ak je počítač v režime dlhodobého spánku alebo je vypnutý.",
+                    "description5a": "a. Máte počítač v režime Stan, Tablet, Stojan alebo v odpojenom režime. Informácie o režimoch podporovaných vaším počítačom nájdete v používateľskej príručke, ktorá sa s ním dodáva.",
+					"description5b": "B. Ak je počítač v režime dlhodobého spánku alebo je vypnutý.",
                     "description6": "3. Ak je v počítači povolený režim V lietadle, tieto funkcie sú vypnuté.",
                     "description7": "Presnosť sa líši podľa veľkosti a držania tela a frekvencie pohybu. Ak sa počítač neočakávane uzamkne, upravte posúvač citlivosti, aby ste zvýšili presnosť."
                 },
