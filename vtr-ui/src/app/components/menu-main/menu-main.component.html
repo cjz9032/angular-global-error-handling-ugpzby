@@ -26,12 +26,13 @@
 			class="navbar-brand pt-0 logo-y">
 
 			<div *ngIf="isGamingHome">
-				<img tabindex="0" [src]="headerLogo | sanitize : 'resourceUrl'"
+				<img tabindex="0"
+					[src]="headerLogo | sanitize : 'resourceUrl'"
 					alt="L" />
 			</div>
 			<a id="menu-main-lnk-gaming-logo"
 				aria-label="menu-main-lnk-gaming-logo"
-				tabindex="0"
+				tabindex="1"
 				*ngIf="!isGamingHome"
 				vtrMetrics
 				routerLinkActive="link-active"
@@ -58,8 +59,10 @@
 					<span *ngIf="!machineFamilyName">&nbsp;</span>
 					<span role="text"
 						*ngIf="machineFamilyName">{{machineFamilyName}}</span>
-					<vtr-ui-header-warranty *ngIf="machineFamilyName"
-						[pageParent]="'NavBar'"></vtr-ui-header-warranty>
+					<span class="warranty-icon">
+						<vtr-ui-header-warranty *ngIf="machineFamilyName"
+							[pageParent]="'NavBar'"></vtr-ui-header-warranty>
+					</span>
 				</div>
 			</span>
 
@@ -95,7 +98,6 @@
 							tabindex="1"
 							id="menu-main-nav-lnk-{{item.id}}"
 							attr.new-tip-id="new-tip-{{item.id}}"
-							[attr.aria-label]="item.id"
 							[metricsEvent]="item.metricsEvent"
 							[metricsParent]="item.metricsParent"
 							[metricsItem]="item.metricsItem"
@@ -160,7 +162,7 @@
 						<div ngbDropdownMenu
 							id="menu-main-nav-lnk-dropdown-toggle-{{item.id}}"
 							class="dropdown-menu"
-							aria-labelledby="menu-main-nav-lnk-dropdown-toggle-{{item.id}}">
+							attr.aria-labelledby="menu-main-nav-lnk-dropdown-toggle-{{item.id}}">
 							<fa-icon [icon]="['fas', 'square']"
 								class="menu-pointer"></fa-icon>
 							<span *ngFor="let subitem of item.subitems; let ii=index">
@@ -282,6 +284,8 @@
 								{{deviceService.isArm || userService.starter || !commonService.isOnline || !userService.isLenovoIdSupported() ? 'L' : userService.initials }}
 							</div>
 							<span class="unread-count-tag"
+								role="text"
+								id="menu-main-unread-message-count"
 								*ngIf="!deviceService.isArm && appsForYouService.UnreadMessageCount.totalMessage">{{appsForYouService.UnreadMessageCount.totalMessage}}</span>
 						</a>
 						<div ngbDropdownMenu
@@ -313,6 +317,9 @@
 								href="javascript:void(0)">
 								{{ 'appsForYou.menuText.lenovoMigrationAssistant' | translate }}
 								<span class="unread-tag"
+									role="text"
+									id="menu-main-lma-unread-tag"
+									attr.aria-label="LMA Unread Tag"
 									*ngIf="!appsForYouService.UnreadMessageCount.lmaMenuClicked"></span>
 							</a>
 							<a ngbDropdownItem
@@ -333,6 +340,9 @@
 								href="javascript:void(0)">
 								{{ 'appsForYou.menuText.adobeRedemption' | translate }}
 								<span class="unread-tag"
+									role="text"
+									id="menu-main-adobe-unread-tag"
+									attr.aria-label="Adobe Unread Tag"
 									*ngIf="!appsForYouService.UnreadMessageCount.adobeMenuClicked"></span>
 							</a>
 							<a ngbDropdownItem
@@ -351,6 +361,9 @@
 								href="javascript:void(0)">
 								{{ 'dcc.menuText.lenovoDigitalOffer' | translate }}
 								<span class="unread-tag"
+									role="text"
+									id="menu-main-dcc-unread-tag"
+									attr.aria-label="DCC Unread Tag"
 									*ngIf="!appsForYouService.UnreadMessageCount.dccMenuClicked"></span>
 							</a>
 							<a ngbDropdownItem

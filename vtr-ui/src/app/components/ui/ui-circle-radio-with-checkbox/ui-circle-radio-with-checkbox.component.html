@@ -33,6 +33,7 @@
 			class="checkbox-custom-label"
 			[style.cursor]="disabled?'default': 'pointer'"
 			id="{{ radioId }}"
+			role="text"
 			attr.aria-label="{{radioId}}">
 			<div *ngIf="!hideIcon"
 				[style.cursor]="disabled?'default': 'pointer'"
@@ -55,6 +56,8 @@
 		<div [ngClass]="['title','text-center']"
 			[class.disabled-title]="disabled"
 			id="{{textId}}-{{value}}-label"
+			role="text"
+			attr.aria-label="{{value}}"
 			[attr.aria-disabled]="disabled"
 			[attr.aria-checked]="checked">{{processLabel ? (label | capitalizeFirst) : label}}</div>
 	</div>

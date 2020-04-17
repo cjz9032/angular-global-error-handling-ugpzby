@@ -22,9 +22,13 @@
 						id="myDevice-settings-batteryInChargeIcon"
 						attr.aria-label="myDevice-settings-batteryInChargeIcon"></span>
 					<span class="no-battery-detected"
-						title="{{'device.deviceSettings.batteryGauge.batteryNotDetected'| translate}}"
+						title=""
 						id="myDevice-settings-batteryGauge-notDetected-title"
-						attr.aria-label="myDevice-settings-batteryGauge-notDetected-title">
+						attr.aria-label="myDevice-settings-batteryGauge-notDetected-title"
+						[ngbTooltip]="'device.deviceSettings.batteryGauge.batteryNotDetected'| translate"
+						tooltipClass="vtr-system-tooltip"
+						container="body"
+						>
 						{{'device.deviceSettings.batteryGauge.batteryNotDetected'| translate}}
 					</span>
 				</div>

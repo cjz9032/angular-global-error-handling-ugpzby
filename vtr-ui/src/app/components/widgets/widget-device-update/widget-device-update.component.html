@@ -131,14 +131,16 @@
 						<div class="col col-12 cancel-check p-5">
 							<button type="button"
 								id="su_cancel_update_download"
-								[title]="'systemUpdates.banner.cancelUpdates' | translate"
+								[title]=""
 								vtrMetrics
 								metricsEvent="ItemClick"
 								metricsParent="Pages.SystemUpdate"
 								metricsItem="btn.cancel downloading"
 								class="btn btn-link cancel-check"
 								[disabled]="downloadingPercent === 100 || downloadingPercent === 0"
-								(click)="onCancelUpdateDownload()">{{'systemUpdates.banner.cancelUpdates' | translate}}</button>
+								(click)="onCancelUpdateDownload()"
+								[ngbTooltip]="'systemUpdates.banner.cancelUpdates' | translate" tooltipClass="vtr-system-tooltip" container="body"
+								>{{'systemUpdates.banner.cancelUpdates' | translate}}</button>
 						</div>
 					</div>
 				</div>

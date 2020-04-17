@@ -101,6 +101,13 @@ export class AppsForYouService {
 	};
 
 	private initialize() {
+		const cacheMachineFamilyName = this.commonService.getLocalStorageValue(
+			LocalStorageKey.MachineFamilyName,
+			undefined
+		);
+		if (cacheMachineFamilyName) {
+			this.familyName = cacheMachineFamilyName;
+		}
 		let machineInfo = this.deviceService.getMachineInfoSync();
 		if (!machineInfo) {
 			this.deviceService.getMachineInfo().then((info) => {
@@ -109,12 +116,14 @@ export class AppsForYouService {
 					this.serialNumber = machineInfo.serialnumber;
 					this.familyName = machineInfo.family;
 					this.isInitialized = true;
+					this.initUnreadMessage();
 				}
 			});
 		} else {
 			this.serialNumber = machineInfo.serialnumber;
 			this.familyName = machineInfo.family;
 			this.isInitialized = true;
+			this.initUnreadMessage();
 		}
 		this.localInfoService.getLocalInfo().then(result => {
 			this.localInfo = result;
@@ -345,6 +354,7 @@ export class AppsForYouService {
 	}
 
 	initUnreadMessage() {
+		this.resetUnreadMessageCounter();
 		const cacheUnreadMessageCount = this.commonService.getLocalStorageValue(
 			LocalStorageKey.UnreadMessageCount,
 			undefined
@@ -415,7 +425,6 @@ export class AppsForYouService {
 				case SelfSelectEvent.SegmentChange:
 					this.localInfoService.getLocalInfo().then(result => {
 						this.localInfo = result;
-						this.resetUnreadMessageCounter();
 						this.initUnreadMessage();
 					}).catch(e => {
 						this.localInfo = undefined;

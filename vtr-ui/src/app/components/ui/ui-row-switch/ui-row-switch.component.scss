@@ -177,9 +177,13 @@
 			text-align: center;
 			text-transform: uppercase;
 			max-width: 12rem;
-			text-overflow: ellipsis;
-			white-space: nowrap;
-			overflow: hidden;
+			position: relative;
+
+			&:focus {
+				outline: 0;
+				box-shadow: none;
+				@include button-outline-blue;
+			}
 		}
 	}
 }

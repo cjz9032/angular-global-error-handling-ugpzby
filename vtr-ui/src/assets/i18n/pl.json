@@ -197,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "Ostrzeżenie!",
                     "description": "Nieprawidłowe ustawienia Przetaktowywania mogą nieodwracalnie uszkodzić sprzęt.",
-                    "proceed": "WYKONAJ"
+                    "proceed": "WYKONAJ",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },
@@ -1443,23 +1446,35 @@
                 "subtitle": "Ustawienia dźwięku",
                 "description": "Ta sekcja umożliwia automatyczną optymalizację lub pełną, ręczną konfigurację ustawień dźwięku, takich jak ustawienia trybu Dolby, mikrofonu itp.",
                 "audioSmartsettings": {
-                    "title": "Inteligentne ustawienia dźwięku",
-                    "subtitle": "USTAWIENIA APLIKACJI",
-                    "description": "Automatycznie dostosuj ustawienia dźwięku do używanych aplikacji.",
+                    "title": "Audio smart settings",
                     "dolby": {
-                        "title": "Automatyczne ustawienia dźwięku Dolby",
-                        "tooltip": "Automatyczne ustawienia dźwięku Dolby konfigurują ustawienia dźwięku Dolby naodpowiedni tryb dla różnych aplikacji, których używasz, aby poprawić jakość dźwięku.",
+                        "title": "Dolby audio",
+                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
-                            "dynamic": "DYNAMICZNE",
-                            "movie": "FILM",
-                            "music": "MUZYKA",
-                            "games": "GRA",
-                            "voip": "GŁOS"
+                            "dynamic": "DYNAMIC",
+							"movie": "MOVIE",
+							"music": "MUSIC",
+							"games": "GAME",
+							"voip": "VOICE"
+                        },
+                        "automaticAudioCheckboxText": "Automatic audio optimization for",
+                        "automaticAudioMode": {
+                            "voIPMode": {
+                                "radioText": "VoIP",
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                            },
+                            "entertainmentMode": {
+                                "radioText": "Entertainment",
+                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
+                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                            }
                         }
                     },
-                    "voip": {
-                        "title": "Automatyczna optymalizacja dźwięku dla VoIP",
-                        "tooltip": "Automatycznie przełączaj się na tryb Dolby Voice podczas połączeń VoIP, aby zapewnić wyraźną i spójną jakość głosu."
+                    "eCourse": {
+                        "title": "Interactive E-course mode",
+                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
                     }
                 },
                 "microphone": {
@@ -1682,7 +1697,9 @@
                         },
                         "subSectionTwo": {
                             "title": "Odwrócenie domyślnej funkcji podstawowej",
-                            "description": "Po włączeniu domyślna funkcja podstawowa zostanie zmieniona z ustawień fabrycznych na odwrotną. Aby zmiany zostały wprowadzone, należy uruchomić ponownie komputer."
+                            "description": "Po włączeniu domyślna funkcja podstawowa zostanie zmieniona z ustawień fabrycznych na odwrotną. Aby zmiany zostały wprowadzone, należy uruchomić ponownie komputer.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "Jak używać kombinacji z klawiszem Fn",
@@ -1877,7 +1894,7 @@
                 "zeroTouchLoginForIdea": {
                     "title": "Logowanie bez dotyku",
                     "caption": "Ta funkcja umożliwia zwiększenie wydajności pracy poprzez automatyczne wybudzanie komputera lub logowanie Cię na nim. Aby skorzystać z tej funkcji, musisz zarejestrować swoją twarz w funkcji Windows Hello.",
-                    "tooltip": "Ta funkcja umożliwia automatyczne zalogowanie się do systemu przy użyciu funkcji rozpoznania twarzy, gdy znajdziesz się przed komputerem lub zbliżysz się do niego na odległość 1,2 lub 1,5 metra. Jeśli jesteś na zewnątrz, a nie w biurze, musisz być bliżej komputera, a wybudzanie potrwa dłużej. <br>Maksymalna odległość wykrywania może się różnić w zależności od możliwości czujnika. Szczegółowe informacje znajdują się w <i>podręczniku użytkownika</i> dołączonym do komputera."
+                    "tooltip": "Ta funkcja umożliwia automatyczne zalogowanie się do systemu przy użyciu funkcji rozpoznania twarzy, gdy znajdziesz się przed komputerem lub zbliżysz się do niego na odległość 1,2 lub 1,5 metra. Jeśli jesteś na zewnątrz, a nie w biurze, musisz być bliżej komputera, a wybudzanie potrwa dłużej. <br>Maksymalna odległość wykrywania może się różnić w zależności od możliwości czujnika. Szczegółowe informacje znajdują się w podręczniku użytkownika dołączonym do komputera."
                 },
                 "zeroTouchLock": {
                     "title": "Blokada bez dotyku",
@@ -1964,10 +1981,8 @@
                     "description2": "Funkcja wykorzystuje czujniki i kamerę do wykrywania Twojej obecności. Jednak ta funkcja NIE zbiera żadnych danych osobowych.",
                     "description3": "1. Aby skorzystać z powyższych funkcji, ustaw ekran komputera pod odpowiednim kątem, aby umożliwić rozpoznawanie Twojej twarzy.",
                     "description4": "2. Powyższe funkcje nie są obsługiwane, gdy:",
-                    "description5a1": "a. Komputer działa w trybie namiotu, tabletu, podstawki lub jest odłączony. Informacje dotyczące trybów obsługiwanych na Twoim komputerze zawiera ",
-                    "description5a2": "Podręcznik użytkownika ",
-                    "description5a3": "dołączony do komputera.",
-                    "description5b": "b. Komputer znajduje się w trybie hibernacji lub został wyłączony.",
+                    "description5a": "a. Komputer działa w trybie namiotu, tabletu, podstawki lub jest odłączony. Informacje dotyczące trybów obsługiwanych na Twoim komputerze zawiera podręcznik użytkownika dołączony do komputera.",
+					"description5b": "b. Komputer znajduje się w trybie hibernacji lub został wyłączony.",
                     "description6": "3. Po włączeniu trybu samolotowego komputera te funkcje są wyłączone.",
                     "description7": "Dokładność zależy od wielkości ciała, postawy i częstotliwości ruchu. Jeśli komputer zostanie nieoczekiwanie zablokowany, dostosuj pasek czułości, aby poprawić dokładność."
                 },
@@ -2049,12 +2064,59 @@
             "superResolution": {
                 "heading": "Inteligentne multimedia",
                 "title": "Skalowanie rozdzielczości wideo",
-                "desc": "<p><label>Ta funkcja poprawia jakość odtwarzania wideo, zwiększając rozdzielczość wideo. Szczególnie się sprawdzi, gdy wideo ma niską rozdzielczość.</label></p> <p style='margin-top:4px;'><label>Ta funkcja może wpływać na żywotność baterii, temperaturę baterii i powodować hałas. Nie należy używać w trybie prądu stałego. Może to przyspieszyć zużycie energii i skrócić żywotność akumulatora.</label></p>",
-                "tooltip": "Funkcja działa tylko w przypadku:<br>Windows Media player",
+                "desc": "<p><label>Ta funkcja poprawia rozdzielczość odtwarzania filmów, a tym samym zapewnia lepsze wrażenia z ich oglądania. Jej skuteczność jest największa w przypadku materiałów wideo o niskiej rozdzielczości.</label></p> <p style='margin-top:4px;'><label>Ta funkcja może wpływać na żywotność baterii, temperaturę baterii i powodować hałas. Nie należy używać jej w trybie prądu stałego (tryb akumulatora). Może to przyspieszyć zużycie energii i skrócić żywotność akumulatora.</label></p>",
+                "tooltip": "Ta funkcja działa tylko w przypadku następujących odtwarzaczy wideo:<br>Windows Media Player<br>Chrome<br>Filmy i TV<br>PotPlayer<br>GOM Player<br>Odtwarzacze działające w przeglądarce (np. Chrome)<br><br>Instrukcje pozwalające włączyć tę funkcję w odtwarzaczach PotPlayer i GOM Player znajdują się w instrukcji obsługi dołączonej do komputera.",
                 "note": {
                     "description": "Funkcja nie działa, gdy:",
-                    "description1": "Komputer nie jest podłączony do zasilania prądem przemiennym.",
-                    "description2": "Tryb oszczędzania baterii jest włączony."
+                    "description1": "Tryb oszczędzania baterii jest włączony.",
+                    "description2": "Temperatura procesora jest za wysoka."
+                }
+            },
+            "antiTheft": {
+                "heading": "Inteligentna detekcja",
+                "title": "Inteligentny alert wykrycia ruchu",
+                "desc": "<p><label>Jeśli włączysz tę funkcję, urządzenie zacznie emitować sygnał dźwiękowy, gdy po zablokowaniu ekranu zostanie wykryty ruch — zwłaszcza, jeśli urządzenie znajduje się w miejscu publicznym.</label></p> <p style='margin-top:4px;'><label>Aby wyłączyć alarm, wprowadź poprawne hasło lub zaloguj się, korzystając z funkcji Windows Hello.</label></p>",
+                "note": {
+                    "description": "Po pomyślnym zalogowaniu się do systemu nastąpi automatyczne wyłączenie funkcji. Aby ponownie użyć tej funkcji, należy jeszcze raz ją włączyć."
+                },
+                "alarm": {
+                    "title": " CZAS TRWANIA ALARMU",
+                    "option1": "10 s",
+                    "option2": "20 s",
+                    "option3": "30 s",
+                    "option4": "1 minuta",
+                    "option5": "Cały czas do momentu wyłączenia"
+                },
+                "allowCamera": {
+                    "title": "WYKONYWANIE ZDJĘĆ",
+                    "describe": "Jeśli włączysz tę funkcję, w przypadku wykrycia ruchu po zablokowaniu ekranu kamera automatycznie zacznie robić zdjęcia. Dane są przetwarzane lokalnie na twoim urządzeniu. Lenovo nie ma do nich dostępu ani z nich nie korzysta.",
+                    "checkBoxText": "Włącz tę funkcję"
+                },
+                "cameraPrivacy": {
+                    "describe": "Tryb prywatności kamery w Lenovo Vantage jest włączony. Funkcja rozpoznawania jest wyłączona.",
+                    "linkText": "Przejdź do trybu prywatności kamery, aby go wyłączyć"
+                },
+                "authorizedAccess": {
+                    "describe": "Aplikacja Lenovo Vantage nie ma dostępu do kamery. Funkcja rozpoznawania jest wyłączona.",
+                    "linkText": "Przejdź do ustawień systemu Windows, aby udzielić dostępu"
+                },
+                "photo": {
+                    "title": "LICZBA ZDJĘĆ WYKONANYCH W TRAKCIE RUCHU",
+                    "tooltip": "Kamera w komputerze włącza się automatycznie, aby robić zdjęcia po wykryciu ruchu. Zdjęcia są wykonywane co 2 sekundy i zapisywane w lokalnej pamięci.",
+                    "option1": "5",
+                    "option2": "10",
+                    "option3": "15",
+                    "option4": "20",
+                    "option5": "25",
+                    "option6": "30"
+                },
+                "showPhoto": {
+                    "title": "ZDJĘCIA ZOSTAŁY ZAPISANE LOKALNIE:",
+                    "link": "Wyświetl zdjęcia"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Aplikacja Lenovo Vantage nie ma uprawnień dostępu do systemu plików.",
+                    "link": "Przejdź do ustawień systemu Windows, aby udzielić dostępu"
                 }
             },
             "voice": {
@@ -2088,53 +2150,6 @@
                     "btnText": "ok",
                     "title": "Instalacja nie powiodła się",
                     "desc": "Aby użyć funkcji Lenovo Voice, spróbuj ponownie później."
-                }
-            },
-            "antiTheft": {
-                "heading": "Intelligent Sensing",
-                "title": "Smart Motion Alert",
-                "desc": "<p><label>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</label></p> <p style='margin-top:4px;'><label>To dismiss the alarm, enter the correct password or log in by Windows Hello.</label></p>",
-                "note": {
-                    "description": "Once you log in the system successfully, this feature will be turned off automatically. You need to enable it again to use it."
-                },
-                "alarm": {
-                    "title": " THE ALARM WILL LAST FOR",
-                    "option1": "10 seconds",
-                    "option2": "20 seconds",
-                    "option3": "30 seconds",
-                    "option4": "1 minute",
-                    "option5": "Never stop"
-                },
-                "allowCamera": {
-                    "title": "TATING PHOTOS",
-                    "describe": "When enabling this feature, the camera takes photos automatically when detecting any movement if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
-                    "checkBoxText": "Enable this feature"
-                },
-                "cameraPrivacy": {
-                    "describe": "Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
-                    "linkText": "Go to Camera privacy mode to turn it off"
-                },
-                "authorizedAccess": {
-                    "describe": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
-                    "linkText": "Go to Windows Settings to give access"
-                },
-                "photo": {
-                    "title": "THE NUMBER OF PHOTOS TAKEN DURING THE MOVEMENT",
-                    "tooltip": "The camera on your computer automatically activates to take pictures when movements are detected. Pictures are taken every 2 seconds and are saved to your local storage.",
-                    "option1": 5,
-                    "option2": 10,
-                    "option3": 15,
-                    "option4": 20,
-                    "option5": 25,
-                    "option6": 30
-                },
-                "showPhoto": {
-                    "title": "PHOTOS HAVE BEEN:",
-                    "link": "View photos"
-                },
-                "fileAuthorizationTips": {
-                    "content": "Lenovo Vantage doesn't have access to the file system.",
-                    "link": "Go to Windows Settings to give access"
                 }
             }
         }
@@ -2702,7 +2717,7 @@
         },
         "question1": {
             "title": "Tworzenie kopii zapasowych plików i ich przywracanie",
-            "description": "<div>    <div class='faqInFs4Fb'>        Tworzenie kopii zapasowych plików i ich przywracanie    </div>    <hr />    <div class='faqInMb7'>        Zawsze dobrze jest mieć plan awaryjny. Umieść kopie plików na innym dysku na wypadek, gdyby coś się stało z oryginałami.    </div>    <div class='faqInFs3Fb'>        Konfigurowanie funkcji tworzenia kopii zapasowej    </div>    <hr />    <div class='mb-5'>        Naciśnij przycisk <span class='faqInFb'>Start</span>, wybierz kolejno opcje <span class='faqInFb'>Ustawienia</span> > <span class='faqInFb'>Aktualizacja i zabezpieczenia</span> > <span class='faqInFb'>Kopia zapasowa</span> > <span class='faqInFb'>Dodaj dysk</span>, a następnie dodaj zewnętrzny dysk twardy lub lokalizację sieciową, gdzie chcesz umieścić kopie zapasowe.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Wszystko gotowe. Co godzinę będziemy wykonywać kopię zapasową całej zawartości Twojego folderu użytkownika (C:\\\\Users\\\\username). Aby zmienić zakres plików objętych kopią zapasową albo częstotliwość wykonywania kopii, kliknij łącze <span class='faqInFb'>Więcej opcji</span>.    </div>    <div class='faqInFs3Fb'>        Przywracanie plików    </div>    <div class='mb-5'>        Jeśli brakuje ważnego pliku lub folderu, oto sposób jego odzyskania:    </div>    <div>        <div class='mb-3'>1. Na pasku zadań w polu wyszukiwania wpisz wyrażenie <span class='faqInFb'>Przywróć pliki</span>, a następnie kliknij pozycję <span class='faqInFb'>Przywróć pliki za pomocą historii plików</span>.</div>        <div class='mb-3'>2. Poszukaj potrzebnego pliku, a następnie za pomocą strzałek przejrzyj jego wszystkie wersje</div>        <div class='mb-3'>3. Po znalezieniu żądanej wersji naciśnij przycisk <span class='faqInFb'>Przywróć</span>, a plik zostanie zapisany w swojej oryginalnej lokalizacji. Jeżeli chcesz zapisać go w innym miejscu, naciśnij i przytrzymaj (lub kliknij prawym przyciskiem myszy) przycisk <span class='faqInFb'>Przywróć</span>, wybierz polecenie <span class='faqInFb'>Przywróć do</span>, a następnie wybierz nową lokalizację.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Tworzenie kopii zapasowych plików i ich przywracanie    </div>    <hr />    <div class='faqInMb7'>        Zawsze dobrze jest mieć plan awaryjny. Umieść kopie plików na innym dysku na wypadek, gdyby coś się stało z oryginałami.    </div>    <div class='faqInFs3Fb'>        Konfigurowanie funkcji tworzenia kopii zapasowej    </div>    <hr />    <div class='mb-5'>        Naciśnij przycisk <span class='faqInFb'>Start</span>, wybierz kolejno opcje <span class='faqInFb'>Ustawienia</span> > <span class='faqInFb'>Aktualizacja i zabezpieczenia</span> > <span class='faqInFb'>Kopia zapasowa</span> > <span class='faqInFb'>Dodaj dysk</span>, a następnie dodaj zewnętrzny dysk twardy lub lokalizację sieciową, gdzie chcesz umieścić kopie zapasowe.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Wszystko gotowe. Co godzinę będziemy wykonywać kopię zapasową całej zawartości Twojego folderu użytkownika (C:\\Users\\Twoja nazwa użytkownika). Aby zmienić zakres plików objętych kopią zapasową albo częstotliwość wykonywania kopii, kliknij łącze <span class='faqInFb'>Więcej opcji</span>.    </div>    <div class='faqInFs3Fb'>        Przywracanie plików    </div>    <div class='mb-5'>        Jeśli brakuje ważnego pliku lub folderu, oto sposób jego odzyskania:    </div>    <div>        <div class='mb-3'>1. Na pasku zadań w polu wyszukiwania wpisz wyrażenie <span class='faqInFb'>Przywróć pliki</span>, a następnie kliknij pozycję <span class='faqInFb'>Przywróć pliki za pomocą historii plików</span>.</div>        <div class='mb-3'>2. Poszukaj potrzebnego pliku, a następnie za pomocą strzałek przejrzyj jego wszystkie wersje</div>        <div class='mb-3'>3. Po znalezieniu żądanej wersji naciśnij przycisk <span class='faqInFb'>Przywróć</span>, a plik zostanie zapisany w swojej oryginalnej lokalizacji. Jeżeli chcesz zapisać go w innym miejscu, naciśnij i przytrzymaj (lub kliknij prawym przyciskiem myszy) przycisk <span class='faqInFb'>Przywróć</span>, wybierz polecenie <span class='faqInFb'>Przywróć do</span>, a następnie wybierz nową lokalizację.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -3115,7 +3130,8 @@
         "settingsNotes": "Uruchom ponownie tę aplikację, aby upewnić się, że wszystkie zmiany zostaną zastosowane.",
         "betaSettingTitle": "Program Beta",
         "betaProgram": "Program Beta",
-        "betaSettingDescription": "Wypróbuj najnowsze funkcje, nad którymi pracujemy."
+        "betaSettingDescription": "Wypróbuj najnowsze funkcje, nad którymi pracujemy.",
+        "betaSettingNewDescription": "Mamy przyjemność zaprosić Cię do programu Beta poświęconego funkcji Smart Performance. Funkcja ta pozwala poprawić wydajność komputera dzięki następującym możliwościom:<br/><ul class='pl-4'><li>Proaktywne diagnozowanie błędów i optymalizowanie ustawień.</li><li>Zwiększanie wydajności połączenia internetowego dzięki optymalizacji sieci i przeglądarki.</li><li>Szybkie skanowania i naprawa bez użycia istniejącego programu antywirusowego.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Anuluj",
@@ -3285,7 +3301,8 @@
             "wireless": "Bezprzewodowe"
         },
         "warningMessage": "Należy pamiętać, że testy zostaną anulowane, jeśli system będzie w trybie uśpienia lub hibernacji",
-        "refreshMessage": "Odświeżanie może zająć trochę czasu, ponieważ wymaga ponownego załadowania wszystkich komponentów"
+        "refreshMessage": "Odświeżanie może zająć trochę czasu, ponieważ wymaga ponownego załadowania wszystkich komponentów",
+        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -4040,8 +4057,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "Strzałka w lewo",
+            "rightArrow": "Strzałka w prawo"
         }
     },
     "dcc": {

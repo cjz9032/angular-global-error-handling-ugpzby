@@ -46,11 +46,9 @@
 										id="{{'day' + idx}}"
 										(keydown)="navigateByKeys($event, idx)">
 										<div class="custom-control custom-checkbox mb-3">
-											<vtr-ui-checkbox componentId="{{i.shortName}}"
-												role="checkbox"
+											<vtr-ui-checkbox componentId="{{ 'device.deviceSettings.power.smartStandby.days.name.' + i.shortName | translate}}"
 												[value]="i.status"
 												[checked]="i.status"
-												attr.aria-label="{{ 'device.deviceSettings.power.smartStandby.days.name.' + i.shortName | translate}}"
 												(toggle)="selectDay($event, i.shortName)"
 												[label]="'device.deviceSettings.power.smartStandby.days.name.' + i.shortName | translate">
 											</vtr-ui-checkbox>
