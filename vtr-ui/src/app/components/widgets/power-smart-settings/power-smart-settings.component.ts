@@ -768,8 +768,12 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 		if (this.powerService.isShellAvailable && this.isAutoTransitionVisible) {
 			this.powerService.setAutoTransitionForICIdeapad($event)
 			.then((isSuccess: boolean) => {
-				this.cache.isAutoTransitionEnabled = this.isAutoTransitionEnabled;
-				this.commonService.setLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, this.cache);
+				if (isSuccess) {
+					this.cache.isAutoTransitionEnabled = this.isAutoTransitionEnabled;
+					this.commonService.setLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, this.cache);
+				} else {
+					this.isAutoTransitionEnabled = !this.isAutoTransitionEnabled;
+				}
 				this.logger.info(`onAutoTransitionToggle.setAutoTransitionForICIdeapad after API ${isSuccess} ; $event: ${$event}`);
 			})
 		}
