@@ -12,7 +12,7 @@ import { LocalInfoService } from 'src/app/services/local-info/local-info.service
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
-import { MenuItem } from 'src/app/enums/menuItem.enum';
+import { MenuItemEvent } from 'src/app/enums/menuItemEvent.enum';
 
 @Component({
 	selector: 'vtr-page-settings',
@@ -357,7 +357,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		this.toggleBetaProgram = event.switchValue;
 		this.sendSettingMetrics('SettingBetaProgram', event.switchValue);
 		this.betaService.setBetaStatus(this.toggleBetaProgram ? BetaStatus.On : BetaStatus.Off);
-		this.commonService.sendReplayNotification(MenuItem.MenuBetaItemChange, this.toggleBetaProgram);
+		this.commonService.sendReplayNotification(MenuItemEvent.MenuBetaItemChange, this.toggleBetaProgram);
 	}
 
 	sendMetrics(data: any) {

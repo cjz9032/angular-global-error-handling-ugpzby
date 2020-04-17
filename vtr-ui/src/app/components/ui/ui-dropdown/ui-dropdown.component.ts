@@ -51,7 +51,7 @@ export class UiDropDownComponent implements OnInit {
 
 
 	setDropDownValue() {
-		if(this.value && this.list) {
+		if(this.value != undefined && this.list) {
 			const interval = this.list.find((ddi:DropDownInterval) => ddi.value === this.value );
 			if(interval) {
 				this.settingDimmerIntervals(interval)

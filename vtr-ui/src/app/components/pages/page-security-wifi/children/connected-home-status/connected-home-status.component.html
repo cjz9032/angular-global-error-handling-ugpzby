@@ -24,7 +24,7 @@
 									<div class="d-flex align-items-center flex-wrap flex-shrink-1 overflow-hidden">
 										<h3 class="mb-0 homesecurity-container-name pr-3"
 											title=""
-											[ngbTooltip]="'homeSecurity.title' | translate" tooltipClass="vtr-tooltip" container="body"
+											[ngbTooltip]="'homeSecurity.title' | translate" tooltipClass="vtr-system-tooltip" container="body"
 											>
 											{{'homeSecurity.title' | translate}}
 										</h3>
@@ -33,13 +33,13 @@
 												title=""
 												*ngIf="homeSecurity?.account?.state === 'trial' || homeSecurity?.account?.state === 'standard'"
 												[innerHTML]="'security.homeprotection.homeStatus.protected' | translate"
-												[ngbTooltip]="'security.homeprotection.homeStatus.protected' | translate" tooltipClass="vtr-tooltip" container="body"
+												[ngbTooltip]="'security.homeprotection.homeStatus.protected' | translate" tooltipClass="vtr-system-tooltip" container="body"
 												></span>
 											<span class="badge badge-pill badge-danger line-height-2 p-0 pl-3 pr-3 w-100"
 												title=""
 												*ngIf="homeSecurity?.account?.state !== 'trial' && homeSecurity?.account?.state !== 'standard'"
 												[innerHTML]="'security.homeprotection.homeStatus.notProtected' | translate"
-												[ngbTooltip]="'security.homeprotection.homeStatus.notProtected' | translate" tooltipClass="vtr-tooltip" container="body"
+												[ngbTooltip]="'security.homeprotection.homeStatus.notProtected' | translate" tooltipClass="vtr-system-tooltip" container="body"
 												></span>
 										</h3>
 									</div>
