@@ -20,6 +20,7 @@
 			<div class="row">
 				<div class="col col-12 content">
 					<a [class.default-cursor]="isOfflineArm" tabindex="0"
+						attr.aria-label="{{ item.Title | htmlText }}. {{ item.Description | htmlText }}"
 						[attr.href]="!item.ActionLink ? null : (item.ActionLink | sanitize : 'resourceUrl')"
 						(click)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 						vtrMetrics
@@ -85,6 +86,7 @@
 				<div class="col col-12 content">
 					<ng-container *ngIf="isOnline">
 						<a [attr.href]="!item.ActionLink ? null : (item.ActionLink | sanitize : 'resourceUrl')"
+							attr.aria-label="{{ item.Title | htmlText }}. {{ item.Description | htmlText }}"
 							(click)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 							vtrMetrics
 							id="{{containerCardId+'_link'}}"
@@ -159,6 +161,7 @@
 			<div class="row">
 				<div class="col col-12 content">
 					<a [attr.href]="!item.ActionLink ? null : (item.ActionLink | sanitize : 'resourceUrl')"
+						attr.aria-label="{{ item.Title | htmlText }}"
 						(click)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 						metricsItemCategory="highlight"
 						vtrMetrics
@@ -200,6 +203,7 @@
 		<div class="container-fluid">
 			<a class="article-content"
 				[class.default-cursor]="isOfflineArm"
+				attr.aria-label="{{ item.Title | htmlText }}"
 				[attr.href]="!item.ActionLink ? null : (item.ActionLink | sanitize : 'resourceUrl')"
 				(click)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 				metricsItemCategory="article"
@@ -263,6 +267,7 @@
 		<div class="container-fluid">
 			<a class="article-content"
 				[class.default-cursor]="isOfflineArm"
+				attr.aria-label="{{ item.Title | htmlText }}"
 				[attr.href]="!item.ActionLink ? null : (item.ActionLink | sanitize : 'resourceUrl')"
 				(click)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 				metricsItemCategory="article"
@@ -328,7 +333,7 @@
 			<div class="row">
 				<div class="col col-12 content">
 					<a tabindex="0"
-						attr.aria-label="{{ item.Title }} . {{ item.Description }}"
+						attr.aria-label="{{ item.Title | htmlText }}. {{ item.Description | htmlText }}"
 						[attr.href]="!item.ActionLink ? null : (item.ActionLink | sanitize : 'resourceUrl')"
 						(click)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 						target="_blank"
@@ -389,6 +394,7 @@
 		<div class="container-fluid">
 			<div class="row">
 				<a class="col col-12 image"
+					attr.aria-label="{{ item.Title | htmlText }}"
 					[attr.href]="!item.ActionLink ? null : (item.ActionLink | sanitize : 'resourceUrl')"
 					target="_blank"
 					rel="noopener"
