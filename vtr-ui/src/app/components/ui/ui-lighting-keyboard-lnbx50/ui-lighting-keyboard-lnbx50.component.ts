@@ -331,9 +331,7 @@ export class UiLightingKeyboardLNBx50Component implements OnInit, OnChanges{
     }
   }
 
-  public hideColordisk(){
-    this.isDisablled = false;
-    this.isDivideArea = true;
+  public hideColordisk(){  
     this.selectPanel = 0;
     this.selectedArea = 0;
   }
