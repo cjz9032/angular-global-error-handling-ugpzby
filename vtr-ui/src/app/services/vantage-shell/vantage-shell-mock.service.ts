@@ -1219,14 +1219,14 @@ export class VantageShellService {
 				getSmartStandbyEnabled: this.getPromise(true),
 				getSmartStandbyActiveStartEnd: this.getPromise(true),
 				getSmartStandbyDaysOfWeekOff: this.getPromise(true),
-				setSmartStandbyEnabled: this.getPromise(true),
-				setSmartStandbyActiveStartEnd: this.getPromise(true),
-				setSmartStandbyDaysOfWeekOff: this.getPromise(true),
+				setSmartStandbyEnabled: this.getPromise(0),
+				setSmartStandbyActiveStartEnd: this.getPromise(0),
+				setSmartStandbyDaysOfWeekOff: this.getPromise(0),
 				getIsAutonomicCapability: this.getPromise(true),
 				getSmartStandbyIsAutonomic: this.getPromise(true),
 				getSmartStandbyPresenceData: this.getPromise(true),
 				getSmartStandbyActiveHours: this.getPromise(true),
-				setSmartStandbyIsAutonomic: this.getPromise(true)
+				setSmartStandbyIsAutonomic: this.getPromise(0)
 			}
 		};
 		return devicePowerThinkPad;

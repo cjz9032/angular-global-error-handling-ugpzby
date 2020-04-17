@@ -20,6 +20,7 @@
 			<div class="row">
 				<div class="col col-12 content">
 					<a [class.default-cursor]="isOfflineArm" tabindex="0"
+						attr.aria-label="{{ item.Title | htmlText }}. {{ item.Description | htmlText }}"
 						[attr.href]="!item.ActionLink ? null : (item.ActionLink | sanitize : 'resourceUrl')"
 						(click)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 						vtrMetrics
@@ -46,7 +47,7 @@
 								[title]=""
 								[innerHTML]="item.Title"
 								[ngbTooltip]="item.Title | htmlText"
-								tooltipClass="vtr-tooltip"
+								tooltipClass="vtr-system-tooltip"
 								container="body"
 								></div>
 							<div *ngIf="item.Description"
@@ -56,7 +57,7 @@
 								[title]=""
 								[innerHtml]="item.Description"
 								[ngbTooltip]="item.Description | htmlText"
-								tooltipClass="vtr-tooltip"
+								tooltipClass="vtr-system-tooltip"
 								container="body"
 								></div>
 							<div *ngIf="item.BrandImage || item.BrandName"
@@ -85,6 +86,7 @@
 				<div class="col col-12 content">
 					<ng-container *ngIf="isOnline">
 						<a [attr.href]="!item.ActionLink ? null : (item.ActionLink | sanitize : 'resourceUrl')"
+							attr.aria-label="{{ item.Title | htmlText }}. {{ item.Description | htmlText }}"
 							(click)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 							vtrMetrics
 							id="{{containerCardId+'_link'}}"
@@ -159,6 +161,7 @@
 			<div class="row">
 				<div class="col col-12 content">
 					<a [attr.href]="!item.ActionLink ? null : (item.ActionLink | sanitize : 'resourceUrl')"
+						attr.aria-label="{{ item.Title | htmlText }}"
 						(click)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 						metricsItemCategory="highlight"
 						vtrMetrics
@@ -183,7 +186,7 @@
 								role="link"
 								[innerHtml]="item.Title"
 								[ngbTooltip]="item.Title | htmlText"
-								tooltipClass="vtr-tooltip"
+								tooltipClass="vtr-system-tooltip"
 								container="body"
 								></div>
 						</div>
@@ -200,6 +203,7 @@
 		<div class="container-fluid">
 			<a class="article-content"
 				[class.default-cursor]="isOfflineArm"
+				attr.aria-label="{{ item.Title | htmlText }}"
 				[attr.href]="!item.ActionLink ? null : (item.ActionLink | sanitize : 'resourceUrl')"
 				(click)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 				metricsItemCategory="article"
@@ -236,7 +240,7 @@
 								[style.line-height.px]="containerCardArticle.clientWidth * 27 / 430"
 								role="link"
 								[ngbTooltip]="item.Title | htmlText"
-								tooltipClass="vtr-tooltip"
+								tooltipClass="vtr-system-tooltip"
 								container="body"
 								></div>
 							<div *ngIf="item.ActionLink && !isOfflineArm"
@@ -263,6 +267,7 @@
 		<div class="container-fluid">
 			<a class="article-content"
 				[class.default-cursor]="isOfflineArm"
+				attr.aria-label="{{ item.Title | htmlText }}"
 				[attr.href]="!item.ActionLink ? null : (item.ActionLink | sanitize : 'resourceUrl')"
 				(click)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 				metricsItemCategory="article"
@@ -299,7 +304,7 @@
 								[style.line-height.px]="containerCardArticle.clientWidth * 27 / 430"
 								role="link"
 								[ngbTooltip]="item.Title | htmlText"
-								tooltipClass="vtr-tooltip"
+								tooltipClass="vtr-system-tooltip"
 								container="body"
 								></div>
 							<div *ngIf="item.ActionLink && !isOfflineArm"
@@ -328,7 +333,7 @@
 			<div class="row">
 				<div class="col col-12 content">
 					<a tabindex="0"
-						attr.aria-label="{{ item.Title }} . {{ item.Description }}"
+						attr.aria-label="{{ item.Title | htmlText }}. {{ item.Description | htmlText }}"
 						[attr.href]="!item.ActionLink ? null : (item.ActionLink | sanitize : 'resourceUrl')"
 						(click)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 						target="_blank"
@@ -351,7 +356,7 @@
 								id="{{containerCardId+'-title'}}"
 								role="link"
 								[ngbTooltip]="item.Title | htmlText"
-								tooltipClass="vtr-tooltip"
+								tooltipClass="vtr-system-tooltip"
 								container="body"
 								></div>
 							<div *ngIf="item.Description"
@@ -361,7 +366,7 @@
 									id="{{containerCardId+'-caption'}}"
 									role="link"
 									[ngbTooltip]="item.Description | htmlText"
-									tooltipClass="vtr-tooltip"
+									tooltipClass="vtr-system-tooltip"
 									container="body"
 									></div>
 							</div>
@@ -389,6 +394,7 @@
 		<div class="container-fluid">
 			<div class="row">
 				<a class="col col-12 image"
+					attr.aria-label="{{ item.Title | htmlText }}"
 					[attr.href]="!item.ActionLink ? null : (item.ActionLink | sanitize : 'resourceUrl')"
 					target="_blank"
 					rel="noopener"
@@ -418,7 +424,7 @@
 								id="{{containerCardId+'-title'}}"
 								role="link"
 								[ngbTooltip]="item.Title | htmlText"
-								tooltipClass="vtr-tooltip"
+								tooltipClass="vtr-system-tooltip"
 								container="body"
 								></div>
 							<div *ngIf="item.ActionLink"

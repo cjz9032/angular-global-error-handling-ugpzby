@@ -39,14 +39,56 @@ vtr-ui-row-switch {
   }
 
   .checkbox {
-    ::ng-deep .custom-control-label {
-      font-size: $fontsize_xs;
-      color: #667481;
-      font-weight: $weight_light;
-    }
+    margin-left: 1.5px;
     ::ng-deep .auto-set-checkbox {
       margin-top: 0px !important;
       outline: 0;
+      .custom-control-label {
+        line-height: 1.5;
+        font-size: $fontsize_xs;
+        font-weight: $weight_light;
+        &::before {
+          top: 0.2rem;
+          width: 1.5rem;
+          height: 1.5rem;
+          box-shadow: inset 0 0 0 0 $light;
+          border: 0 solid $shade_darker;
+        }
+        &::after {
+          top: 0.2rem;
+          width: 1.5rem;
+          height: 1.5rem;
+          box-shadow: inset 0 0 0 0.1rem $light;
+          border: 0.1rem solid $shade_darker;
+        }
+      }
+      .custom-control-input:checked + .custom-control-label {
+        &::before {
+          display:none;
+        }
+        &::after {
+          top: 0.2rem;
+          width: 1.5rem;
+          height: 1.5rem;
+          box-shadow: inset 0 0 0 0.1rem $light;
+          border: 0.1rem solid $shade_darker;
+          background-color: $menu_hover;
+        }
+      }
+      .custom-control-input:disabled:checked + .custom-control-label {
+        &::after {
+          top: 0.2rem;
+          width: 1.5rem;
+          height: 1.5rem;
+          box-shadow: inset 0 0 0 0.1rem $light;
+          border: 0.1rem solid $shade_darker;
+          background-color: #bbb;
+          color: #667481;
+        }
+        &::before {
+          display:none;
+        }
+      }
     }
   }
 
@@ -73,6 +115,13 @@ vtr-ui-row-switch {
       }
     }
   }
+
+  .showPhoto {
+    .btn-link{
+      margin-top: -6px;
+    }
+  }
+
   .right-icon {
     font-size: $fontsize_sm;
     color: $menu_hover;

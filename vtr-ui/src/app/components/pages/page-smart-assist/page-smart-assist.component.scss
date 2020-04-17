@@ -383,8 +383,9 @@ $fontsize_xs: 1.4rem;
 	color: $menu_hover;
 	cursor: pointer;
 	padding-top: 0.3rem;
+	border: 0.1rem solid transparent;
 	&:focus {
-		@include outline-blue;
+		@include outline-border-blue;
 	}
 }
 

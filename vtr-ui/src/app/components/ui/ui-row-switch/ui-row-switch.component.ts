@@ -1,5 +1,5 @@
-import { AfterViewInit, Component, ElementRef, EventEmitter, Input, NgZone, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AfterViewInit, Component, ElementRef, EventEmitter, Input, NgZone, OnDestroy, OnInit, Output, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { NgbModal, NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
 import { Subject } from 'rxjs';
 import { Subscription } from 'rxjs/internal/Subscription';
@@ -62,6 +62,7 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, After
 	@ViewChild('rightToolTip2', { static: false }) rightToolTip2: ElementRef;
 	@ViewChild('rightToolTip3', { static: false }) rightToolTip3: ElementRef;
 	@ViewChild('captionRef', { static: false }) captionRef: ElementRef;
+	@ViewChildren(NgbTooltip) toolTips: QueryList<NgbTooltip>;
 	scrollEvent = new Subject();
 	subscriptionList = [];
 
@@ -200,6 +201,20 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, After
 			}
 		}
 	}
+
+	closeAllToolTips() {
+		if (this.toolTips && this.toolTips.length > 0) {
+			this.toolTips.forEach(element => {
+				this.closeToolTip(element);
+			});
+		}
+	}
+	closeToolTip(tooltip) {
+		if (tooltip && tooltip.isOpen()) {
+			tooltip.close();
+		}
+	}
+
 	public onResetClick($event: Event) {
 		this.resetClick.emit($event);
 	}

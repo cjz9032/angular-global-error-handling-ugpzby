@@ -27,6 +27,8 @@ export class UiCustomSliderComponent implements OnInit, AfterViewInit, OnDestroy
 	@Input() minLegend = ''; // label to display at the start of slider
 	@Input() midLegend = ''; // label to display at the center of slider
 	@Input() maxLegend = ''; // label to display at the end of slider
+	@Input() hasBubble = false;
+	@Input() bubbleText: string;
 
 	@Input() metricsItem;
 	@Input() metricsEvent = 'featureClick';
@@ -73,6 +75,10 @@ export class UiCustomSliderComponent implements OnInit, AfterViewInit, OnDestroy
 		// if (this.sliderBubble) {
 		// 	this.setBubbleValue($event.target, this.sliderBubble.nativeElement);
 		// }
+	}
+
+	public onInputFocus(isFocused: boolean) {
+		// console.log(isFocused);
 	}
 
 	private setBubbleValue(rangeSlider, sliderBubble) {

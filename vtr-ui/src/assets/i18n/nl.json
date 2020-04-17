@@ -1446,23 +1446,35 @@
                 "subtitle": "Audio-instellingen",
                 "description": "In dit gedeelte kunt u uw audio-instellingen automatisch optimaliseren ofvolledig configureren, zoals Dolby-instellingen, microfoons, enzovoort.",
                 "audioSmartsettings": {
-                    "title": "Slimme audio-instellingen",
-                    "subtitle": "OP TOEPASSINGEN GEBASEERDE INSTELLINGEN",
-                    "description": "Audio- en beeldscherminstellingen automatisch aanpassen voor de verschillende apps die u gebruikt.",
+                    "title": "Audio smart settings",
                     "dolby": {
-                        "title": "Automatische Dolby-audio-instellingen",
-                        "tooltip": "Met automatische Dolby audio-instellingen worden Dolby audio-instellingen geconfigureerd voor de juiste modus voor verschillende apps die u gebruikt om uw audio te verbeteren.",
+                        "title": "Dolby audio",
+                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
-                            "dynamic": "DYNAMISCH",
-                            "movie": "FILM",
-                            "music": "MUZIEK",
-                            "games": "SPEL",
-                            "voip": "SPRAAK"
+                            "dynamic": "DYNAMIC",
+							"movie": "MOVIE",
+							"music": "MUSIC",
+							"games": "GAME",
+							"voip": "VOICE"
+                        },
+                        "automaticAudioCheckboxText": "Automatic audio optimization for",
+                        "automaticAudioMode": {
+                            "voIPMode": {
+                                "radioText": "VoIP",
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                            },
+                            "entertainmentMode": {
+                                "radioText": "Entertainment",
+                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
+                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                            }
                         }
                     },
-                    "voip": {
-                        "title": "Automatische audio-optimalisatie voor VoIP",
-                        "tooltip": "Automatisch overschakelen naar de Dolby-spraakmodus tijdens VoIP-aanroepenom duidelijke, consistente spraakkwaliteit te bieden."
+                    "eCourse": {
+                        "title": "Interactive E-course mode",
+                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
                     }
                 },
                 "microphone": {
@@ -2099,7 +2111,7 @@
                     "option6": "30"
                 },
                 "showPhoto": {
-                    "title": "FOTO'S ZIJN:",
+                    "title": "FOTO'S ZIJN LOKAAL OPGESLAGEN:",
                     "link": "Foto's bekijken"
                 },
                 "fileAuthorizationTips": {
@@ -3289,7 +3301,8 @@
             "wireless": "Draadloos"
         },
         "warningMessage": "Houd er rekening mee dat de testen worden geannuleerd als het systeem in de slaap- of sluimerstand staat",
-        "refreshMessage": "Het vernieuwen kan even duren omdat alle onderdelen opnieuw moeten worden geladen"
+        "refreshMessage": "Het vernieuwen kan even duren omdat alle onderdelen opnieuw moeten worden geladen",
+        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
     },
     "smartPerformance": {
         "title": "Health & Support",

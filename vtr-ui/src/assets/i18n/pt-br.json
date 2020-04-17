@@ -1446,23 +1446,35 @@
                 "subtitle": "Configurações de áudio",
                 "description": "Nesta seção, você pode otimizar automaticamente ou configurar total e manualmente o áudio, como configurações de Dolby, microfone etc.",
                 "audioSmartsettings": {
-                    "title": "Configurações inteligentes de áudio",
-                    "subtitle": "CONFIGURAÇÕES BASEADAS NO APLICATIVO",
-                    "description": "Ajuste automaticamente configurações de áudio de acordo com os diferentes aplicativos que você estiver usando.",
+                    "title": "Audio smart settings",
                     "dolby": {
-                        "title": "Configurações de áudio Dolby automáticas",
-                        "tooltip": "As configurações de áudio Dolby automáticas ajustam as configurações de áudio Dolby para omodo adequado para os diferentes aplicativos que você estiver usando para aprimorar sua experiência de áudio.",
+                        "title": "Dolby audio",
+                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
-                            "dynamic": "DINÂMICO",
-                            "movie": "FILME",
-                            "music": "MÚSICA",
-                            "games": "JOGO",
-                            "voip": "VOZ"
+                            "dynamic": "DYNAMIC",
+							"movie": "MOVIE",
+							"music": "MUSIC",
+							"games": "GAME",
+							"voip": "VOICE"
+                        },
+                        "automaticAudioCheckboxText": "Automatic audio optimization for",
+                        "automaticAudioMode": {
+                            "voIPMode": {
+                                "radioText": "VoIP",
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                            },
+                            "entertainmentMode": {
+                                "radioText": "Entertainment",
+                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
+                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                            }
                         }
                     },
-                    "voip": {
-                        "title": "Otimização Automática de Áudio para VoIP",
-                        "tooltip": "Alterne automaticamente o modo de Voz Dolby durante chamadas VoIP para fornecer qualidade de vozclara e consistente."
+                    "eCourse": {
+                        "title": "Interactive E-course mode",
+                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
                     }
                 },
                 "microphone": {
@@ -2099,7 +2111,7 @@
                     "option6": "30"
                 },
                 "showPhoto": {
-                    "title": "FOTOS FORAM:",
+                    "title": "AS FOTOS FORAM SALVAS NO LOCAL:",
                     "link": "Exibir fotos"
                 },
                 "fileAuthorizationTips": {
@@ -3289,7 +3301,8 @@
             "wireless": "Wireless"
         },
         "warningMessage": "Lembre-se de que os testes serão cancelados se o sistema entrar em suspensão ou hibernar",
-        "refreshMessage": "A atualização pode levar algum tempo, pois precisa carregar todos os componentes novamente"
+        "refreshMessage": "A atualização pode levar algum tempo, pois precisa carregar todos os componentes novamente",
+        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
     },
     "smartPerformance": {
         "title": "Health & Support",
