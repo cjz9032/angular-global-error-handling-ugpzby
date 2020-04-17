@@ -93,12 +93,12 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			this.microphoneDevice = this.Windows.Devices.Enumeration.DeviceAccessInformation
 				.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.audioCapture);
 			
-			this.Windows.Media.Devices.MediaDevice.addEventListener('defaultaudiocapturedevicechanged',(args: any) =>{
+			// this.Windows.Media.Devices.MediaDevice.addEventListener('defaultaudiocapturedevicechanged',(args: any) =>{
 				// const id = args.id;
 				// const role = args.role;	//0 默认设备  1 默认通信设备
-				this.logger.info(args);
-				this.updateMicrophoneStatus();
-			});
+				// this.logger.info(args);
+				// this.updateMicrophoneStatus();
+			// });
 		}
 	}
 
@@ -376,7 +376,8 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 											if (this.audioData && this.audioData.toString() === data) {
 												return;
 											}
-											this.logger.info('data data, got it ' + data);
+											// this.logger.info('data data, got it ' + data);
+											// console.info(new Date().getTime() + ' data data, got it ' + data);
 											this.audioData = data;
 											const dic = data.split(',');
 
