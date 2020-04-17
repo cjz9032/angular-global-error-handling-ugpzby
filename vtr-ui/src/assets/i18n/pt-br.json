@@ -1129,8 +1129,9 @@
                         },
                         "selectedModeText": {
                             "quiteCool": "Este modo permite a melhor experiência com a velocidade do ventilador e o desempenho do sistema equilibrados. Por exemplo, quando estiver jogando, otimiza o desempenho. Quando estiver no escritório, reduz o ruído.",
-                            "batterySaving": "Este modo permite o máximo de duração da bateria ajustando automaticamente o brilho, alterando as configurações de energia, desativando recursos no processamento avançado de imagens etc.",
-                            "performance": "Este modo permite o máximo de desempenho do sistema. Neste modo, a velocidade rápida do ventilador pode causar grande ruído."
+                            "batterySaving14": "Este modo permite o máximo de duração da bateria ajustando automaticamente o brilho, alterando as configurações de energia, desativando recursos no processamento avançado de imagens etc.",
+                            "performance": "Este modo permite o máximo de desempenho do sistema. Neste modo, a velocidade rápida do ventilador pode causar grande ruído.",
+                            "batterySaving15": "Este modo permite a máxima duração da bateria, ajustando automaticamente o brilho, carregando as configurações de energia, desativando o áudio Dolby etc. Com todas as opções acima, ele pode estender até 20% da duração da bateria."
                         },
                         "intelligentCoolingModesModal": {
                             "title": "Alterar modos de resfriamento inteligentes",

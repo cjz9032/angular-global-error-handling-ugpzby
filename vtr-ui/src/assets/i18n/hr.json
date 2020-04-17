@@ -1129,8 +1129,9 @@
                         },
                         "selectedModeText": {
                             "quiteCool": "Ovaj način rada omogućuje najbolje iskustvo uz ravnotežu brzine ventilatora i performansi sustava. Na primjer, performanse se optimiziraju tijekom igranja. Dok ste u uredu, smanjuje buku.",
-                            "batterySaving": "Ovaj način rada omogućuje maksimalno trajanje baterije automatskim podešavanjem svjetline, promjenom postavki napajanja, onemogućavanjem značajki napredne obrade slike itd.",
-                            "performance": "Ovaj način rada omogućuje maksimalne performanse sustava. Velika brzina ventilatora u ovom načinu rada može uzrokovati veliku buku."
+                            "batterySaving14": "Ovaj način rada omogućuje maksimalno trajanje baterije automatskim podešavanjem svjetline, promjenom postavki napajanja, onemogućavanjem značajki napredne obrade slike itd.",
+                            "performance": "Ovaj način rada omogućuje maksimalne performanse sustava. Velika brzina ventilatora u ovom načinu rada može uzrokovati veliku buku.",
+                            "batterySaving15": "Ovaj način rada omogućuje maksimalno trajanje baterije automatskim podešavanjem svjetline, punjenjem postavki napajanja, onemogućavanjem Dolby audio-a i sl. Sa svime navedenim može produžiti do 20% trajanja baterije."
                         },
                         "intelligentCoolingModesModal": {
                             "title": "Promijenite inteligentne načine hlađenja",

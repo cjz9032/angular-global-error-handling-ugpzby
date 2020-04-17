@@ -1129,8 +1129,9 @@
                         },
                         "selectedModeText": {
                             "quiteCool": "Denne modusen muliggjør den beste opplevelsen der viftehastighet og systemytelse er balansert. Under spilling optimaliserer den, for eksempel, ytelsen. På kontoret reduserer den støyen.",
-                            "batterySaving": "Denne modusen aktiverer maksimal batterilevetid ved å justere lysstyrken automatisk, endre strøminnstillingene, deaktivere funksjoner i avansert bildebehandling osv.",
-                            "performance": "Denne modusen gjør det mulig å oppnå maksimal systemytelse. I denne modusen kan viftehastigheten føre til mye støy."
+                            "batterySaving14": "Denne modusen aktiverer maksimal batterilevetid ved å justere lysstyrken automatisk, endre strøminnstillingene, deaktivere funksjoner i avansert bildebehandling osv.",
+                            "performance": "Denne modusen gjør det mulig å oppnå maksimal systemytelse. I denne modusen kan viftehastigheten føre til mye støy.",
+                            "batterySaving15": "Denne modusen aktiverer maksimal batteritid ved å justere lysstyrken automatisk, endre strøminnstillingene, deaktivere Dolby-lyd og så videre. Med Alt dette kan forlenge batteritiden med opptil 20 %."
                         },
                         "intelligentCoolingModesModal": {
                             "title": "Endre intelligente kjølemodi",

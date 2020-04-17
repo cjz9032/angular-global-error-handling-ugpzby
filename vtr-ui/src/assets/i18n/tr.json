@@ -1129,8 +1129,9 @@
                         },
                         "selectedModeText": {
                             "quiteCool": "Bu kip, fan hızını ve sistem performansını dengeleyerek en iyi deneyimi sağlar. Örneğin oyun oynarken performansı iyileştirir. Ofiste çalışırken gürültüyü azaltır.",
-                            "batterySaving": "Bu kip, parlaklığı otomatik olarak ayarlama, güç ayarlarını değiştirme, gelişmiş görüntü işleme özelliklerini devre dışı bırakma gibi seçeneklerle maksimum pil ömrü sağlar.",
-                            "performance": "Bu kip, maksimum sistem performansı sağlar. Bu kipte, fanın hızlı çalışması gürültüye neden olabilir."
+                            "batterySaving14": "Bu kip, parlaklığı otomatik olarak ayarlama, güç ayarlarını değiştirme, gelişmiş görüntü işleme özelliklerini devre dışı bırakma gibi seçeneklerle maksimum pil ömrü sağlar.",
+                            "performance": "Bu kip, maksimum sistem performansı sağlar. Bu kipte, fanın hızlı çalışması gürültüye neden olabilir.",
+                            "batterySaving15": "Bu kip otomatik olarak parlaklığı ayarlayarak, güç ayarlarını şarj ederek, Dolby ses özelliğini devre dışı bırakarak ve benzeri değişiklikleri yaparak maksimum pil ömrü sağlar. Bu ayarların tamamı kullanılarak pil ömrü %20'ye kadar uzayabilir."
                         },
                         "intelligentCoolingModesModal": {
                             "title": "Akıllı soğutma kiplerinin değiştirilmesi",

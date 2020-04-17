@@ -1129,8 +1129,9 @@
                         },
                         "selectedModeText": {
                             "quiteCool": "Ce mode permet d'optimiser l'utilisation de la vitesse du ventilateur et d'équilibrer les performances du système. Par exemple, lorsque vous jouez, il optimise les performances. Lorsque vous êtes au bureau, il réduit le bruit.",
-                            "batterySaving": "Ce mode permet d'optimiser la durée de vie de la batterie en réglant automatiquement la luminosité, en modifiant les paramètres d'alimentation, en désactivant les fonctions du traitement d'image avancé, etc.",
-                            "performance": "Ce mode permet d'optimiser les performances du système. Dans ce mode, la vitesse élevée du ventilateur peut générer un bruit important."
+                            "batterySaving14": "Ce mode permet d'optimiser la durée de vie de la batterie en réglant automatiquement la luminosité, en modifiant les paramètres d'alimentation, en désactivant les fonctions du traitement d'image avancé, etc.",
+                            "performance": "Ce mode permet d'optimiser les performances du système. Dans ce mode, la vitesse élevée du ventilateur peut générer un bruit important.",
+                            "batterySaving15": "Ce mode permet d'optimiser la durée de vie de la batterie en réglant automatiquement la luminosité, en modifiant les paramètres d'alimentation, en désactivant les paramètres Dolby audio, etc. Tous ces éléments permettent de prolonger jusqu'à 20 % la durée de vie de la batterie."
                         },
                         "intelligentCoolingModesModal": {
                             "title": "Modification des modes de refroidissement intelligents",

@@ -1129,8 +1129,9 @@
                         },
                         "selectedModeText": {
                             "quiteCool": "Detta läge ger den bästa upplevelsen med balanserad fläkthastighet och systemprestanda. Prestandan optimeras i exempelvis spel. Ljudet dämpas när du arbetar.",
-                            "batterySaving": "Detta läge maximerar batteritiden genom att automatiskt justera ljusstyrkan, ändra energiinställningarna, inaktivera funktioner för avancerad bildbehandling och annat.",
-                            "performance": "Detta läge ger maximal systemprestanda. Med det här läget kan den snabba fläkthastigheten medföra högt ljud."
+                            "batterySaving14": "Detta läge maximerar batteritiden genom att automatiskt justera ljusstyrkan, ändra energiinställningarna, inaktivera funktioner för avancerad bildbehandling och annat.",
+                            "performance": "Detta läge ger maximal systemprestanda. Med det här läget kan den snabba fläkthastigheten medföra högt ljud.",
+                            "batterySaving15": "Detta läge maximerar batteritiden genom att automatiskt justera ljusstyrkan, ändra energiinställningarna, inaktivera Dolby-ljud med mera. Med allt av ovanstående kan batteritiden öka med upp till 20 procent."
                         },
                         "intelligentCoolingModesModal": {
                             "title": "Ändra lägen för intelligent nedkylning",

@@ -1129,8 +1129,9 @@
                         },
                         "selectedModeText": {
                             "quiteCool": "Ovaj režim omogućava najbolje iskustvo sa balansiranom brzinom ventilatora i performansama sistema. Na primer, kada ste u igrama, on optimizuje performanse. Kad ste u kancelariji, smanjuje buku.",
-                            "batterySaving": "Ovaj režim omogućava maksimalni radni vek baterije tako što automatski podešava svetlinu, menja postavke napajanja, onemogućava funkcije za naprednu obradu slika itd.",
-                            "performance": "Ovaj režim omogućava maksimalne performanse sistema. U ovom režimu, velika brzina ventilatora može izazvati veliku buku."
+                            "batterySaving14": "Ovaj režim omogućava maksimalni radni vek baterije tako što automatski podešava svetlinu, menja postavke napajanja, onemogućava funkcije za naprednu obradu slika itd.",
+                            "performance": "Ovaj režim omogućava maksimalne performanse sistema. U ovom režimu, velika brzina ventilatora može izazvati veliku buku.",
+                            "batterySaving15": "Ovaj režim omogućava maksimalan vek trajanja baterije tako što automatski podešava svetlinu, puni postavke napajanja, onemogućava Dolby audio i sl. Sa svim gorenavedenim, može da produži do 20% trajanja baterije."
                         },
                         "intelligentCoolingModesModal": {
                             "title": "Promena režima pametnog hlađenja",

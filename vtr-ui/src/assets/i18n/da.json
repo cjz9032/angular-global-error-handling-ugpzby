@@ -1129,8 +1129,9 @@
                         },
                         "selectedModeText": {
                             "quiteCool": "I denne tilstand kan du få den bedste oplevelse med balance mellem blæserhastighed og systemets ydeevne. Når du spiller, optimerer den f.eks. ydeevnen. Når du er på kontoret, reduceres støjen.",
-                            "batterySaving": "I denne tilstand får du automatisk den maksimale batterilevetid, idet lysstyrken justeres, strømindstillingerne ændres, funktioner til avanceret billedbehandling deaktiveres osv.",
-                            "performance": "I denne tilstand kan du få den maksimale systemydeevne. I denne tilstand kan den hurtige blæserhastighed medføre støj."
+                            "batterySaving14": "I denne tilstand får du automatisk den maksimale batterilevetid, idet lysstyrken justeres, strømindstillingerne ændres, funktioner til avanceret billedbehandling deaktiveres osv.",
+                            "performance": "I denne tilstand kan du få den maksimale systemydeevne. I denne tilstand kan den hurtige blæserhastighed medføre støj.",
+                            "batterySaving15": "Denne tilstand aktiverer den maksimale batterilevetid ved automatisk at justere lysstyrken, ændre strømindstillingerne, deaktivere Dolby-lyd osv. Med alle ovenstående kan den forlænge batteriets levetid med op til 20 %."
                         },
                         "intelligentCoolingModesModal": {
                             "title": "Skift intelligente tilstande for køling",

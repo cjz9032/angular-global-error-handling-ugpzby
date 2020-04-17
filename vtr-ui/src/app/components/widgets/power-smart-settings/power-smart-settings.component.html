@@ -6,8 +6,8 @@
 				<vtr-container-collapsible
 					[cardTitle]="'device.deviceSettings.power.powerSmartSettings.title' | translate"
 					[isCollapsed]="false"
-					[allowCollapse]="false"
-					[theme]="'blue'">
+					[allowCollapse]="true"
+					[theme]="'white'">
 					<ul class="list-group list-group-flush">
 						<li class="">
 							<vtr-ui-row-switch [leftIcon]="['icomoon','icomoon-ic']"
@@ -16,7 +16,7 @@
 								[isSwitchVisible]="showIntelligentCoolingToggle"
 								[isSwitchChecked]="enableIntelligentCoolingToggle"
 								[showChildContent]="true"
-								[theme]="'blue'"
+								[theme]="'white'"
 								[switchId]="'ds-power-powerSmartSettings'"
 								[isLastChild]='true'
 								(toggleOnOff)="onIntelligentCoolingToggle($event)">
@@ -39,7 +39,7 @@
 										aria-label="intelligent Cooling mode list, select using arrow keys"
 										tabindex="0">
 										<vtr-ui-circle-radio-with-checkbox *ngIf="showIC&lt;14"
-											[theme]="'blue'"
+											[theme]="'white'"
 											[radioId]="'radioICPerformance'"
 											[group]="'radio'"
 											[label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.performance' + showIC | translate"
@@ -49,7 +49,7 @@
 											[textId]="'myDevice-settings-power-intelligent-cooling'">
 										</vtr-ui-circle-radio-with-checkbox>
 										<vtr-ui-circle-radio-with-checkbox [radioId]="'radioICQuiteCool'"
-											[theme]="'blue'"
+											[theme]="'white'"
 											[group]="'radio'"
 											[label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.quiteCool' +  (showIC>=15 ? 14 : showIC) | translate"
 											[value]="showIC>=14 ? 'LE-IntelligentCooling2x' : 'LE-CoolingDown2x' "
@@ -58,7 +58,7 @@
 											[textId]="'myDevice-settings-power-intelligent-cooling'">
 										</vtr-ui-circle-radio-with-checkbox>
 										<vtr-ui-circle-radio-with-checkbox *ngIf="showIC===14 || showIC>=15"
-											[theme]="'blue'"
+											[theme]="'white'"
 											[radioId]="'radioICPerformance'"
 											[group]="'radio'"
 											[label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.performance' + (showIC>=15 ? 14 : showIC) | translate"
@@ -68,7 +68,7 @@
 											[textId]="'myDevice-settings-power-intelligent-cooling'">
 										</vtr-ui-circle-radio-with-checkbox>
 										<vtr-ui-circle-radio-with-checkbox *ngIf="showIC===14 || showIC>=15"
-											[theme]="'blue'"
+											[theme]="'white'"
 											[radioId]="'quiteBatterySaving'"
 											[group]="'radio'"
 											[label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.batterySaving' | translate"
@@ -82,7 +82,10 @@
 										id="powerSmartSettings-maximum-system-protection-note"
 										attr.aria-label="powerSmartSettings-maximum-system-protection-note"
 										*ngIf="showIC===14  || showIC>=15">
-										{{ selectedModeText }}
+										<div class="selectModeDesc"
+										id="IntelligentCooling-selectedModeText">
+											{{ selectedModeText }}
+										</div>
 										<div class="transition" *ngIf="showIC>=15 && radioQuietCool">
 											<vtr-ui-checkbox
 												[componentId]="'IntelligentCooling-5.0-AutoTransition'"
@@ -94,29 +97,29 @@
 
 											<div *ngIf="autoTransitionIsReadMore"
 												id="ITSAutoTransitionReadMore"
-												attr.aria-label="ITSAutoTransitionReadMore"
+												attr.aria-label="ITSAutoTransitionReadMore" 
 												class=""
 												>
-												<p class="transitionReadMore">
+												<p class="transitionMoreInfo">
 													{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.autoTransition.moreContent.desc1' | translate}}
 												</p>
-												<p class="transitionReadMore">
+												<p class="transitionMoreInfo">
 													{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.autoTransition.moreContent.desc2' | translate}}
 												</p>
-												<p class="transitionReadMore">
+												<p class="transitionMoreInfo">
 													{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.autoTransition.moreContent.desc3' | translate}}
 												</p>
 											</div>
-											<div class="more-info mt-3 row"
+											<div class="transitionReadMore mt-3 row"
 												(click)="autoTransitionReadMoreClick()">
-												<div class="more-info-button mr-2"
+												<div class="read-more-button mr-2"
 													*ngIf="!autoTransitionIsReadMore"
 													role="link"
 													id="powerSmartSettings-intelligentCooling-autoTransition-more"
 													attr.aria-label="powerSmartSettings-intelligentCooling-autoTransition-more">
 													{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.autoTransition.more' | translate}}
 												</div>
-												<div class="more-info-button mr-2"
+												<div class="read-more-button mr-2"
 													*ngIf="autoTransitionIsReadMore"
 													role="link"
 													id="powerSmartSettings-intelligentCooling-autoTransition-less"

@@ -1129,8 +1129,9 @@
                         },
                         "selectedModeText": {
                             "quiteCool": "Dieser Modus sorgt mit ausbalancierter Lüftergeschwindigkeit und Systemleistung für die optimale Benutzererfahrung. Beim Spielen wird beispielsweise die Leistung optimiert. Im Büro werden dagegen Lüftergeräusche reduziert.",
-                            "batterySaving": "Dieser Modus sorgt für eine maximale Akkulebensdauer, indem Helligkeit und Energieeinstellungen automatisch angepasst werden, Funktionen der erweiterten Bildverarbeitung deaktiviert werden etc.",
-                            "performance": "Dieser Modus sorgt für eine maximale Systemleistung. In diesem Modus kann die hohe Lüftergeschwindigkeit eine starke Geräuschentwicklung verursachen."
+                            "batterySaving14": "Dieser Modus sorgt für eine maximale Akkulebensdauer, indem Helligkeit und Energieeinstellungen automatisch angepasst werden, Funktionen der erweiterten Bildverarbeitung deaktiviert werden etc.",
+                            "performance": "Dieser Modus sorgt für eine maximale Systemleistung. In diesem Modus kann die hohe Lüftergeschwindigkeit eine starke Geräuschentwicklung verursachen.",
+                            "batterySaving15": "Dieser Modus ermöglicht eine maximale Akkulebensdauer, indem die Helligkeit automatisch angepasst wird, die Energieeinstellungen aktiviert werden, Dolby Audio deaktiviert wird usw. Mit allen oben genannten Funktionen kann die Lebensdauer des Akkus bis zu 20 % verlängert werden."
                         },
                         "intelligentCoolingModesModal": {
                             "title": "Intelligente Kühlmodi ändern",

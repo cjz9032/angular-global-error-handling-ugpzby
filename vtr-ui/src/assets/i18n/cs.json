@@ -1129,8 +1129,9 @@
                         },
                         "selectedModeText": {
                             "quiteCool": "Tento režim umožňuje nejlepší zážitek s vyváženými rychlostmi ventilátoru a výkonem systému. Například při hraní her optimalizuje výkon. V kanceláři snižuje hluk.",
-                            "batterySaving": "Tento režim umožňuje maximální životnost baterie automatickým nastavením jasu, změnou nastavení napájení, vypnutím funkcí pokročilého zpracování obrazu atd.",
-                            "performance": "Tento režim umožňuje maximální výkon systému. V tomto režimu může vysoká rychlost ventilátoru způsobit velký hluk."
+                            "batterySaving14": "Tento režim umožňuje maximální životnost baterie automatickým nastavením jasu, změnou nastavení napájení, vypnutím funkcí pokročilého zpracování obrazu atd.",
+                            "performance": "Tento režim umožňuje maximální výkon systému. V tomto režimu může vysoká rychlost ventilátoru způsobit velký hluk.",
+                            "batterySaving15": "Tento režim umožňuje maximální výdrž baterie automatickou úpravou jasu, nabíjením podle nastavení napájení, deaktivací zvuku Dolby atd. Díky výše uvedenému může prodloužit výdrž baterie až o 20 %."
                         },
                         "intelligentCoolingModesModal": {
                             "title": "Změňte inteligentní režimy chlazení",

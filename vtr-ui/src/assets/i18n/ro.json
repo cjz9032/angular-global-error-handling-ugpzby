@@ -1129,8 +1129,9 @@
                         },
                         "selectedModeText": {
                             "quiteCool": "Acest mod permite cea mai bună experiență cu un echilibru între viteza ventilatorului și performanța sistemului. De exemplu, în jocuri, optimizează performanța. În aplicații office, reduce zgomotul.",
-                            "batterySaving": "Acest mod permite maximizarea duratei de viață a bateriei prin ajustarea automată a luminozității, modificarea setărilor de alimentare, dezactivarea caracteristicilor la procesarea avansată de imagine etc.",
-                            "performance": "Acest mod permite performanța maximă a sistemului. În acest mod, viteza rapidă a ventilatorului poate genera un zgomot mare."
+                            "batterySaving14": "Acest mod permite maximizarea duratei de viață a bateriei prin ajustarea automată a luminozității, modificarea setărilor de alimentare, dezactivarea caracteristicilor la procesarea avansată de imagine etc.",
+                            "performance": "Acest mod permite performanța maximă a sistemului. În acest mod, viteza rapidă a ventilatorului poate genera un zgomot mare.",
+                            "batterySaving15": "Acest mod oferă o durată maximă de viață a bateriei, prin reglarea automată a luminozității, modificarea setărilor de alimentare, dezactivarea funcției audio Dolby etc. Cu toate aceste ajustări, modul poate extinde durata de viață a bateriei cu până la 20%."
                         },
                         "intelligentCoolingModesModal": {
                             "title": "Modificați modurile inteligente de răcire",

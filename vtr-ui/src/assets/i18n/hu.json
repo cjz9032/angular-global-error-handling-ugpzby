@@ -1129,8 +1129,9 @@
                         },
                         "selectedModeText": {
                             "quiteCool": "Ez a mód kiegyensúlyozott ventilátorsebességet és rendszerteljesítményt biztosít, így ezzel érhető el a legjobb felhasználói élmény. Ha például játszik, a funkció optimalizálja a teljesítményt. Az irodában viszont csökkenti a gép zaját.",
-                            "batterySaving": "Ez az üzemmód maximális élettartamot biztosít az akkumulátor számára pl. a fényerő automatikus beállításával, az energiagazdálkodási beállítások megfelelő módosításával vagy a speciális képfeldolgozási funkciók letiltásával.",
-                            "performance": "Ezzel a móddal maximális rendszerteljesítmény biztosítható. Ebben a módban a gyors ventilátor hangos lehet."
+                            "batterySaving14": "Ez az üzemmód maximális élettartamot biztosít az akkumulátor számára pl. a fényerő automatikus beállításával, az energiagazdálkodási beállítások megfelelő módosításával vagy a speciális képfeldolgozási funkciók letiltásával.",
+                            "performance": "Ezzel a móddal maximális rendszerteljesítmény biztosítható. Ebben a módban a gyors ventilátor hangos lehet.",
+                            "batterySaving15": "Ez az üzemmód maximális akkumulátoros üzemidőt tesz lehetővé, például a fényerő automatikus beállításával, az energiagazdálkodási beállítások megfelelő módosításával a Dolby hangzás letiltásával és hasonlókkal, amelyeknek köszönhetően akár 20%-kal magasabb akkumulátoros üzemidő érhető el."
                         },
                         "intelligentCoolingModesModal": {
                             "title": "Az intelligens hűtési módok módosítása",

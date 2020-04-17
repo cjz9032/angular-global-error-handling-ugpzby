@@ -1129,8 +1129,9 @@
                         },
                         "selectedModeText": {
                             "quiteCool": "Tämä tila mahdollistaa parhaan käyttökokemuksen ja tasapainottaa tuulettimen nopeuden ja järjestelmän suorituskyvyn. Esimerkiksi pelatessa se optimoi suorituskyvyn. Toimistotyöskentelyssä se vähentää melua.",
-                            "batterySaving": "Tämä tila mahdollistaa akun enimmäiskeston säätämällä automaattisesti kirkkautta, muuttamalla virrankäyttöasetuksia, poistamalla toimintoja käytöstä edistyneessä kuvankäsittelyssä jne.",
-                            "performance": "Tämä tila mahdollistaa järjestelmän maksimaalisen suorituskyvyn. Tässä toimintatilassa nopea tuulettimen nopeus saattaa aiheuttaa paljon melua."
+                            "batterySaving14": "Tämä tila mahdollistaa akun enimmäiskeston säätämällä automaattisesti kirkkautta, muuttamalla virrankäyttöasetuksia, poistamalla toimintoja käytöstä edistyneessä kuvankäsittelyssä jne.",
+                            "performance": "Tämä tila mahdollistaa järjestelmän maksimaalisen suorituskyvyn. Tässä toimintatilassa nopea tuulettimen nopeus saattaa aiheuttaa paljon melua.",
+                            "batterySaving15": "Tämä tila pidentää akun enimmäiskestoa säätämällä automaattisesti kirkkautta, muuttamalla virta-asetuksia, poistamalla Dolby Audion käytöstä ja niin edelleen. Näillä keinoilla se voi pidentää akun enimmäiskestoa jopa 20 %."
                         },
                         "intelligentCoolingModesModal": {
                             "title": "Älykkäiden jäähdytystilojen vaihto",

@@ -1129,8 +1129,9 @@
                         },
                         "selectedModeText": {
                             "quiteCool": "Questa modalità assicura la migliore esperienza con velocità della ventola e prestazioni del sistema bilanciate. Ad esempio, quando si gioca ottimizza le prestazioni. Mentre riduce il rumore in ufficio.",
-                            "batterySaving": "Questa modalità garantisce la durata massima della batteria regolando automaticamente la luminosità, cambiando le impostazioni di alimentazione, disabilitando le funzioni avanzate di elaborazione delle immagini e così via.",
-                            "performance": "Questa modalità abilita le prestazioni massime del sistema. In questa modalità, la velocità massima della ventola potrebbe causare un rumore elevato."
+                            "batterySaving14": "Questa modalità garantisce la durata massima della batteria regolando automaticamente la luminosità, cambiando le impostazioni di alimentazione, disabilitando le funzioni avanzate di elaborazione delle immagini e così via.",
+                            "performance": "Questa modalità abilita le prestazioni massime del sistema. In questa modalità, la velocità massima della ventola potrebbe causare un rumore elevato.",
+                            "batterySaving15": "Questa modalità abilita la durata massima della batteria regolando automaticamente la luminosità, caricando le impostazioni di alimentazione, disabilitando l'audio Dolby e così via. In questo modo è possibile estendere fino al 20% la durata della batteria."
                         },
                         "intelligentCoolingModesModal": {
                             "title": "Modifica le modalità di raffreddamento intelligente",

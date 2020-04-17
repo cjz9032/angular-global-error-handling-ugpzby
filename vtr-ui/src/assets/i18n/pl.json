@@ -1129,8 +1129,9 @@
                         },
                         "selectedModeText": {
                             "quiteCool": "Ten tryb zapewnia efektywne działanie komputera przy zrównoważonej prędkości wentylatora i wydajności systemu. Na przykład optymalizuje wydajność podczas grania. Zmniejsza hałas, gdy jesteś w biurze.",
-                            "batterySaving": "Ten tryb zapewnia maksymalną żywotność akumulatora poprzez automatyczną regulację jasności, zmianę ustawień zasilania, wyłączanie funkcji zaawansowanego przetwarzania obrazu itp.",
-                            "performance": "Ten tryb zapewnia maksymalną wydajność systemu. W tym trybie duża prędkość wentylatora może powodować znaczny hałas."
+                            "batterySaving14": "Ten tryb zapewnia maksymalną żywotność akumulatora poprzez automatyczną regulację jasności, zmianę ustawień zasilania, wyłączanie funkcji zaawansowanego przetwarzania obrazu itp.",
+                            "performance": "Ten tryb zapewnia maksymalną wydajność systemu. W tym trybie duża prędkość wentylatora może powodować znaczny hałas.",
+                            "batterySaving15": "Ten tryb umożliwia automatyczne dostosowanie jasności, zmianę ustawień zasilania, wyłączenie dźwięku Dolby oraz zmianę innych ustawień pod kątem zapewnienia maksymalnego czasu działania akumulatora. Dzięki wszystkim powyższym zmianom można wydłużyć czas działania akumulatora nawet o 20%."
                         },
                         "intelligentCoolingModesModal": {
                             "title": "Zmiana inteligentnych trybów chłodzenia",
