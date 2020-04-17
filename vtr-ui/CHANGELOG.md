@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.22](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.4.21...v1.4.22) (2020-04-17)
+
+
+### Features
+
+* **env:** QA now connects to CMS staging ([2013b0e](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/2013b0e0034471910ceab7dc108d33e5075166aa))
+* **LaunchMcAfeeBuy API:** remove 3s timeout for launchMcAfeeBuy API ([2ac5ab9](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/2ac5ab961d3c914dcb1f675aba0be7e8dbbabcf9))
+
+
+### Bug Fixes
+
+* **cpt:** remove CPT ([c5ce19b](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/c5ce19be84e39968dcd5f95fd47852af3adc019f))
+* **smart performance:** remove smart performance ([d0df1b0](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/d0df1b06bf55debde56d93b547e6a898280187ea))
+
 ### [1.4.21](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.4.20...v1.4.21) (2020-04-02)
 
 ### [1.4.20](https://bitbucket.tc.lenovo.com///compare/v1.4.19...v1.4.20) (2020-04-01)
