@@ -1882,7 +1882,7 @@
                 "zeroTouchLoginForIdea": {
                     "title": "Conectare fără atingere",
                     "caption": "Această caracteristică vă permite să îmbunătățiți eficiența activității, automatizând procesele de activare și de conectare ale computerului. Pentru a utiliza această caracteristică, trebuie să vă înregistrați fața în Windows Hello.",
-                    "tooltip": "Atunci când sunteți în fața computerului sau când vă apropiați de acesta (la 1,2 sau 1,5 metri), caracteristica vă permite să vă conectați automat la sistem, după ce vă este recunoscută fața. Dacă vă aflați în aer liber, nu în birou, trebuie să fiți mai aproape de computer, iar pornirea va dura mai mult. <br>Distanța maximă de detecție variază în funcție de capacitatea senzorului. Pentru detalii, consultați <i>Ghidul utilizatorului</i> livrat împreună cu computerul."
+                    "tooltip": "Atunci când sunteți în fața computerului sau când vă apropiați de acesta (la 1,2 sau 1,5 metri), caracteristica vă permite să vă conectați automat la sistem, după ce vă este recunoscută fața. Dacă vă aflați în aer liber, nu în birou, trebuie să fiți mai aproape de computer, iar pornirea va dura mai mult. <br>Distanța maximă de detecție variază în funcție de capacitatea senzorului. Pentru detalii, consultați Ghidul utilizatorului livrat împreună cu computerul."
                 },
                 "zeroTouchLock": {
                     "title": "Blocare fără atingere",
@@ -1969,7 +1969,7 @@
                     "description2": "Această caracteristică folosește senzorii și camera pentru a vă detecta prezența. Cu toate acestea, caracteristica NU colectează date personale.",
                     "description3": "1. Pentru a utiliza funcțiile de mai sus, reglați ecranul la un unghi corespunzător, astfel încât fața dumneavoastră să poată fi recunoscută.",
                     "description4": "2. Funcțiile de mai sus nu sunt acceptate atunci când:",
-                    "description5a": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to User Guide that comes with it.",
+                    "description5a": "a. Computerul este în modul Cort, Tabletă, Standard sau Detașat. Pentru modurile acceptate de computer, consultați Ghidul utilizatorului care este livrat împreună cu acesta.",
 					"description5b": "b. Computerul este în modul hibernare sau a fost oprit.",
                     "description6": "3. Dacă Modul avion este activat pe computer, aceste funcţii sunt dezactivate.",
                     "description7": "Precizia variază în funcţie de dimensiunea corpului, postură şi frecvenţa mişcării. În cazul în care computerul se blochează în mod neaşteptat, ajustaţi bara de sensibilitate pentru a îmbunătăţi precizia."

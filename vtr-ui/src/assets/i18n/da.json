@@ -1882,7 +1882,7 @@
                 "zeroTouchLoginForIdea": {
                     "title": "Logon uden berøring",
                     "caption": "Denne funktion giver dig mulighed for at arbejde mere effektivt ved automatisk at vække eller logge på computeren. For at bruge funktionen skal du registrere dit ansigt i Windows Hello.",
-                    "tooltip": "Når du sidder foran computeren eller nærmer dig den (inden for en afstand af 1,2 eller 1,5 meter), kan du bruge denne funktion til at logge på systemet automatisk, når dit ansigt genkendes. Hvis du er udendørs i stedet for på kontoret, skal du være tættere på computeren, og opvågningen vil tage længere tid. <br>Den maksimale registreringsafstand varierer afhængigt af sensorens egenskaber. Se <i>brugervejledningen</i> til din computer for at få flere oplysninger."
+                    "tooltip": "Når du sidder foran computeren eller nærmer dig den (inden for en afstand af 1,2 eller 1,5 meter), kan du bruge denne funktion til at logge på systemet automatisk, når dit ansigt genkendes. Hvis du er udendørs i stedet for på kontoret, skal du være tættere på computeren, og opvågningen vil tage længere tid. <br>Den maksimale registreringsafstand varierer afhængigt af sensorens egenskaber. Se brugervejledningen til din computer for at få flere oplysninger."
                 },
                 "zeroTouchLock": {
                     "title": "Lås uden berøring",
@@ -1969,7 +1969,7 @@
                     "description2": "Funktionen bruger sensorer og kameraet til at registrere din tilstedeværelse. Men funktionen indsamler IKKE personlige data.",
                     "description3": "1. For at bruge funktionerne ovenfor skal du justere skærmen til en passende vinkel, så dit ansigt kan blive genkendt.",
                     "description4": "2. Ovenstående funktioner understøttes ikke, når:",
-                    "description5a": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to User Guide that comes with it.",
+                    "description5a": "a. Din computer er i Telt-, Tablet- eller Støtte-tilstand eller er i frakoblet tilstand. Du kan finde de tilstande, som understøttes på din computer, i den brugervejledning, der leveres sammen med den.",
 					"description5b": "b. Din computer er i slumretilstand eller er slukket.",
                     "description6": "3. Hvis Flytilstand er aktiveret på din computer, er disse funktioner deaktiveret.",
                     "description7": "Nøjagtigheden varierer efter kropsstørrelse, stilling og bevægelseshyppighed. Hvis computeren bliver låst uventet, skal du justere følsomhedsvælgeren for at forbedre nøjagtigheden."

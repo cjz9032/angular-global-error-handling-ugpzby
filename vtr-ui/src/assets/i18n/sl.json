@@ -1882,7 +1882,7 @@
                 "zeroTouchLoginForIdea": {
                     "title": "Prijava brez dotika",
                     "caption": "Ta funkcija vam omogoča, da izboljšate delovno učinkovitost s samodejnim prebujanjem ali prijavo v računalnik. Če želite uporabljati to funkcijo, morate registrirati svoj obraz v programu Windows Hello.",
-                    "tooltip": "Ko ste pred računalnikom ali se mu približujete (na razdalji 1,2 ali 1,5 metra), vam ta funkcija omogoča samodejno prijavo v sistem, potem ko prepozna vaš obraz. Če ste zunaj in ne v pisarni, morate biti bližje računalniku in bujenje bo trajalo dlje. <br>Največja razdalja zaznavanja je odvisna od zmožnosti senzorja. Več podrobnosti poiščite v <i>Vodiču za uporabnika</i>, ki je priložen računalniku."
+                    "tooltip": "Ko ste pred računalnikom ali se mu približujete (na razdalji 1,2 ali 1,5 metra), vam ta funkcija omogoča samodejno prijavo v sistem, potem ko prepozna vaš obraz. Če ste zunaj in ne v pisarni, morate biti bližje računalniku in bujenje bo trajalo dlje. <br>Največja razdalja zaznavanja je odvisna od zmožnosti senzorja. Več podrobnosti poiščite v Vodiču za uporabnika, ki je priložen računalniku."
                 },
                 "zeroTouchLock": {
                     "title": "Zaklepanje brez dotika",
@@ -1969,7 +1969,7 @@
                     "description2": "Funkcija uporablja senzorje in kamero za zaznavanje vaše prisotnosti. Vendar pa funkcija NE zbira, shranjuje ali posreduje kakršnih koli osebnih podatkov ali slik.",
                     "description3": "1. Če želite uporabiti zgornje funkcije, prilagodite zaslon računalnika na primeren kot, tako da bo mogoče prepoznati vaš obraz.",
                     "description4": "2. Zgornje funkcije niso podprte, ko je:",
-                    "description5a": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to User Guide that comes with it.",
+                    "description5a": "a. Računalnik v načinu šotora, tabličnega računalnika, stojala ali je odklopljen. Načini, ki jih računalnik podpira, so navedeni v Vodiču za uporabnika, ki je priložen računalniku.",
 					"description5b": "b. Računalnik v načinu mirovanja ali je izklopljen.",
                     "description6": "3. Če je v računalniku vklopljen letalski način, so te funkcije onemogočene.",
                     "description7": "Natančnost se razlikuje glede na velikost telesa, držo in pogostost gibanja. Če se računalnik nepričakovano zaklene, prilagodite vrstico za občutljivost, da izboljšate natančnost."

@@ -1882,7 +1882,7 @@
                 "zeroTouchLoginForIdea": {
                     "title": "Sıfır Dokunma ile Oturum Açma",
                     "caption": "Bu özellik, bilgisayarınızı otomatik olarak uyandırarak veya bilgisayarınızda oturum açarak çalışma verimliliğini artırmanıza olanak tanır. Özelliği kullanmak için yüzünüzü Windows Hello'ya kaydetmeniz gerekir.",
-                    "tooltip": "Bu özellik, bilgisayarınızın önündeyken veya bilgisayarınıza yaklaşırken (1,2 veya 1,5 metre içerisinde) yüzünüzün tanınmasından sonra sistemde otomatik olarak oturum açmanızı sağlar. Ofis yerine dışarıda olduğunuzda, bilgisayarınıza daha yakın olmanız gerekir ve uyandırma işlevi daha uzun sürer. <br>Algılayıcı kapasitesine bağlı olarak, maksimum algılama mesafesi değişiklik gösterir. Ayrıntılı bilgi için dizüstü bilgisayarınızla birlikte gönderilen <i>Kullanma Kılavuzu'</i>na bakın."
+                    "tooltip": "Bu özellik, bilgisayarınızın önündeyken veya bilgisayarınıza yaklaşırken (1,2 veya 1,5 metre içerisinde) yüzünüzün tanınmasından sonra sistemde otomatik olarak oturum açmanızı sağlar. Ofis yerine dışarıda olduğunuzda, bilgisayarınıza daha yakın olmanız gerekir ve uyandırma işlevi daha uzun sürer. <br>Algılayıcı kapasitesine bağlı olarak, maksimum algılama mesafesi değişiklik gösterir. Ayrıntılı bilgi için dizüstü bilgisayarınızla birlikte gönderilen Kullanma Kılavuzu'na bakın."
                 },
                 "zeroTouchLock": {
                     "title": "Sıfır Dokunma ile Kilitleme",
@@ -1969,7 +1969,7 @@
                     "description2": "Bu özellik, varlığınızı algılamak için sensörler ve kamera kullanır. Ancak, özellik hiçbir kişisel veriyi TOPLAMAZ.",
                     "description3": "1. Yukarıdaki işlevleri kullanmak için lütfen ekranınızı, yüzünüzün tanınabileceği uygun bir açıya ayarlayın.",
                     "description4": "2. Yukarıdaki işlevler şu durumlarda desteklenmez:",
-                    "description5a": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to User Guide that comes with it.",
+                    "description5a": "a. Bilgisayarınız Çadır, Tablet, Stand kipinde veya Ayrılmış kipteyken. Bilgisayarınızda desteklenen kipler için lütfen ürünle verilen Kullanma Kılavuzu'na bakın.",
 					"description5b": "b. Bilgisayarınız uyku kipindeyse veya kapalıysa.",
                     "description6": "3. Bilgisayarınızda Uçak modu etkin durumdaysa bu özellikler devre dışı bırakılır.",
                     "description7": "Doğruluk vücut ölçüsü, duruş ve hareket sıklığına göre değişiklik gösterir. Bilgisayarınız beklenmedik bir şekilde kilitlenirse doğruluğu artırmak için hassasiyet çubuğunu ayarlayın."

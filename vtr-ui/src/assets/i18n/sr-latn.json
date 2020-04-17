@@ -1882,7 +1882,7 @@
                 "zeroTouchLoginForIdea": {
                     "title": "Bezdodirno prijavljivanje",
                     "caption": "Ova funkcija vam omogućava da poboljšate efikasnost rada tako što se automatski budi ili prijavljuje na računar. Da biste koristili ovu funkciju, morate da registrujete lice u programu Windows Hello.",
-                    "tooltip": "Kada se nalazite ispred računara ili mu se približavate (unutar razdaljine od 1,2 ili 1,5 metara), ova funkcija vam omogućava da se automatski prijavite u sistem nakon prepoznavanja lica. Ako ste na otvorenom, a ne u kancelariji, morate da budete bliži računaru i buđenje će trajati duže. <br>U zavisnosti od mogućnosti senzora, maksimalna udaljenost se razlikuje. Detalje potražite u <i>Uputstvu za korisnike</i> koju ste dobili uz računar."
+                    "tooltip": "Kada se nalazite ispred računara ili mu se približavate (unutar razdaljine od 1,2 ili 1,5 metara), ova funkcija vam omogućava da se automatski prijavite u sistem nakon prepoznavanja lica. Ako ste na otvorenom, a ne u kancelariji, morate da budete bliži računaru i buđenje će trajati duže. <br>U zavisnosti od mogućnosti senzora, maksimalna udaljenost se razlikuje. Detalje potražite u Uputstvu za korisnike koju ste dobili uz računar."
                 },
                 "zeroTouchLock": {
                     "title": "Zero Touch zaključavanje",
@@ -1969,7 +1969,7 @@
                     "description2": "Funkcija koristi senzore i kameru da bi otkrila vaše prisustvo. Međutim, funkcija NE prikuplja, nikakve lične podatke.",
                     "description3": "1. Da biste koristili gornje funkcije, podesite ekran na odgovarajući ugao kako bi vaše lice moglo da se prepozna.",
                     "description4": "2. Prethodne funkcije nisu podržane u sledećim slučajevima:",
-                    "description5a": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to User Guide that comes with it.",
+                    "description5a": "a. Računar je u režimu šatora, tableta, postolja ili u odvojenom režimu. Režime koje podržava vaš računar potražite u Uputstvu za korisnike koje se dobija uz njega.",
 					"description5b": "b. Računar je u režimu hibernacije ili je isključen.",
                     "description6": "3. Ako je na računaru omogućen režim rada u avionu, ove funkcije su onemogućene.",
                     "description7": "Preciznost zavisi od veličine tela, držanja tela i učestalosti kretanja. Ako se računar neočekivano zaključa, podesite traku osetljivosti da biste poboljšali preciznost."

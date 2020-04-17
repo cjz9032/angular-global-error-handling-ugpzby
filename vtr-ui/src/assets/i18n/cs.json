@@ -1882,7 +1882,7 @@
                 "zeroTouchLoginForIdea": {
                     "title": "Bezkontaktní přihlášení",
                     "caption": "Tato funkce umožňuje zvýšit efektivitu práce automatickým probuzením nebo přihlášením do počítače. Chcete-li tuto funkci použít, musíte svůj obličej zaregistrovat ve Windows Hello.",
-                    "tooltip": "Pokud jste před počítačem nebo se k němu přibližujete (ve vzdálenosti 1,2 až 1,5 metru), umožňuje tato funkce automatické přihlášení do systému po rozpoznání tváře. Pokud jste spíše venku než v kanceláři, musíte být k počítači blíž a probuzení bude trvat déle. <br>Maximální vzdálenost rozpoznávání se liší v závislosti na možnostech snímače. Podrobnější informace naleznete v <i>uživatelské příručce</i> dodané s počítačem."
+                    "tooltip": "Pokud jste před počítačem nebo se k němu přibližujete (ve vzdálenosti 1,2 až 1,5 metru), umožňuje tato funkce automatické přihlášení do systému po rozpoznání tváře. Pokud jste spíše venku než v kanceláři, musíte být k počítači blíž a probuzení bude trvat déle. <br>Maximální vzdálenost rozpoznávání se liší v závislosti na možnostech snímače. Podrobnější informace naleznete v uživatelské příručce dodané s počítačem."
                 },
                 "zeroTouchLock": {
                     "title": "Bezkontaktní uzamčení",
@@ -1969,7 +1969,7 @@
                     "description2": "Tato funkce využívá ke zjištění vaší přítomnosti snímače a fotoaparát. Tato funkce však neshromažďuje žádné osobní údaje.",
                     "description3": "1. Chcete-li výše uvedené funkce používat, nastavte obrazovku do náležitého úhlu tak, aby mohl být váš obličej rozpoznán.",
                     "description4": "2. Výše uvedené funkce nejsou podporovány, pokud:",
-                    "description5a": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to User Guide that comes with it.",
+                    "description5a": "a. Počítač je v režimu stan, tablet, stojan nebo v odpojeném režimu. Informace o režimech podporovaných vaším počítačem naleznete v uživatelské příručce, která se s ním dodává.",
 					"description5b": "b. Počítač je v režimu hibernace nebo vypnutý.",
                     "description6": "3. Je-li na vašem počítači zapnut režim V letadle, jsou tyto funkce vypnuté.",
                     "description7": "Přesnost se liší podle velikosti trupu, polohy a četnosti pohybu. Pokud se váš počítač neočekávaně uzamkne, seřiďte sloupec citlivosti tak, aby se zvýšila přesnost."
