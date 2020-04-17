@@ -5,12 +5,12 @@ import {
 	DeviceService
 } from 'src/app/services/device/device.service';
 import cloneDeep from 'lodash/cloneDeep';
-import { menuItemsGaming, menuItems, appSearch, betaItem } from 'src/assets/menu/menu.json';
+import { menuItemsGaming, menuItems, betaItem } from 'src/assets/menu/menu.json';
 import { privacyPolicyLinks } from 'src/assets/privacy-policy-links/policylinks.json';
 import { HypothesisService } from '../hypothesis/hypothesis.service';
 import { BetaService, BetaStatus } from '../beta/beta.service';
 import { LoggerService } from '../logger/logger.service';
-import { MenuItem } from 'src/app/enums/menuItem.enum';
+import { MenuItemEvent } from 'src/app/enums/menuItemEvent.enum';
 import { LocalInfoService } from '../local-info/local-info.service';
 import { SegmentConst } from '../self-select/self-select.service';
 import { SecurityAdvisor, EventTypes, WindowsHello, WifiSecurity } from '@lenovo/tan-client-bridge';
@@ -27,6 +27,22 @@ import { SmartAssistService } from '../smart-assist/smart-assist.service';
 import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 import { NewFeatureTipService } from '../new-feature-tip/new-feature-tip.service';
 
+interface MenuItem {
+	id: string,
+	label: string,
+	path: string,
+	icon: string | string[],
+	beta?: boolean,
+	segment?: string,
+	metricsEvent: string,
+	metricsParent: string,
+	metricsItem: string,
+	forArm: boolean,
+	subitems?: any[],
+	hide?: boolean,
+	availability?: boolean
+}
+
 @Injectable({
 	providedIn: 'root'
 })
@@ -35,20 +51,13 @@ export class ConfigService {
 
 	appBrand = 'Lenovo';
 	appName = 'Vantage';
-	menuItemsGaming = menuItemsGaming;
-	menuItems = menuItems;
-	menu = [];
-	menuBySegment = {
-		commercial: [],
-		consumer: [],
-		smb: []
-	};
+	menuItemsGaming: MenuItem[] = menuItemsGaming;
+	menuItems: MenuItem[] = menuItems;
+	menu: MenuItem[] = [];
 	activeSegment: string;
-	appSearch = appSearch;
 	betaItem = betaItem;
 	privacyPolicyLinks = privacyPolicyLinks;
 	showCHS = false;
-	showCHSWithoutSegment = false;
 	wifiSecurity: WifiSecurity;
 	securityAdvisor: SecurityAdvisor;
 	windowsHello: WindowsHello;
@@ -73,7 +82,7 @@ export class ConfigService {
 			this.wifiSecurity = this.securityAdvisor.wifiSecurity;
 			this.wifiSecurity.getWifiSecurityStateOnce();
 			this.wifiSecurity.on(EventTypes.wsIsSupportWifiEvent, (status) => {
-				this.commonService.sendReplayNotification(MenuItem.MenuWifiItemChange, status);
+				this.commonService.sendReplayNotification(MenuItemEvent.MenuWifiItemChange, status);
 			});
 		}
 		this.initGetMenuItemsAsync().then(() => {
@@ -88,22 +97,19 @@ export class ConfigService {
 		if (notification) {
 			switch (notification.type) {
 				case AdPolicyEvent.AdPolicyUpdatedEvent:
-					this.showSystemUpdates().then((menu) => {
-						this.notifyMenuChange(menu);
-					});
+					this.showSystemUpdates();
+					this.notifyMenuChange(this.menu);
 					break;
 				case SelfSelectEvent.SegmentChange:
-					this.updateSegmentMenu(notification.payload).then((menu) => {
-						this.notifyMenuChange(menu);
-					});
+					this.updateSegmentMenu(notification.payload);
+					this.notifyMenuChange(this.menu);
 					break;
-				case MenuItem.MenuWifiItemChange:
-					this.showWifiMenu(notification.payload).then((menu) => {
-						this.notifyMenuChange(menu);
-					});
+				case MenuItemEvent.MenuWifiItemChange:
+					this.showWifiMenu(notification.payload)
+					this.notifyMenuChange(this.menu);
 					break;
-				case MenuItem.MenuBetaItemChange:
-					this.showBetaMenu(notification.payload).then((menu) => {
+				case MenuItemEvent.MenuBetaItemChange:
+					this.filterByBeta(this.menu, notification.payload).then((menu) => {
 						this.notifyMenuChange(menu);
 					});
 					break;
@@ -132,9 +138,9 @@ export class ConfigService {
 
 			if (machineInfo.isGaming) {
 				resultMenu = cloneDeep(this.menuItemsGaming);
-				await this.initializeBetaMenu(resultMenu, isBetaUser);
 				this.initializeWiFiItem(resultMenu);
-				this.menu = this.filterMenu(resultMenu, SegmentConst.Gaming);
+				this.menu = await this.updateHide(resultMenu, SegmentConst.Gaming, isBetaUser);
+
 				this.notifyMenuChange(this.menu);
 				return resolve(this.menu);
 			}
@@ -145,33 +151,38 @@ export class ConfigService {
 				resultMenu = await this.initShowCHSMenu(country, resultMenu, machineInfo);
 			}
 
-			this.menuBySegment.commercial = cloneDeep(resultMenu);
-			await this.initializeBetaMenu(resultMenu, isBetaUser);
-			this.menuBySegment.consumer = cloneDeep(resultMenu);
-			this.menuBySegment.smb = cloneDeep(resultMenu);
+			this.betaService.betaFeatureAvailable = (function findBetaAvailability(menus: any[]) {
+				let result = false;
+				menus.forEach(m => {
+					if (m.beta) {
+						if (!('availability' in m) || m.availability === true) {
+							result = true;
+						}
+					}
+					if (m.subitems) {
+						findBetaAvailability(m.subitems);
+					}
+				});
+				return result;
+			})(this.menu);
 
-			this.menuBySegment.commercial = this.filterMenu(this.menuBySegment.commercial, SegmentConst.Commercial);
-			this.menuBySegment.consumer = this.filterMenu(this.menuBySegment.consumer, SegmentConst.Consumer);
-			this.menuBySegment.smb = this.filterMenu(this.menuBySegment.smb, SegmentConst.SMB);
+			this.menu = await this.updateHide(resultMenu, this.activeSegment, isBetaUser);
 
-			this.menu = this.menuBySegment[this.activeSegment.toLowerCase()];
 			this.initializeSmartAssist();
 			this.notifyMenuChange(this.menu);
 			return resolve(this.menu);
 		});
 	}
 
-	private initializeAppSearchItem(menu: any, isShowSearch: boolean) {
+	private initializeAppSearchItem(menu: any, supportSearch: boolean) {
 		const appSearchItem = menu.find((item) => item.id === 'app-search');
-		if (isShowSearch && !appSearchItem) {
-			menu.splice(menu.length - 1, 0, this.appSearch);
-		}
-		else if (!isShowSearch && appSearchItem){
-			menu = menu.filter( item => item.id === 'app-search');
+		if (appSearchItem) {
+			appSearchItem.availability = supportSearch;
+			appSearchItem.hide = !supportSearch;
 		}
 	}
 
-	private async initShowCHSMenu(country: string, menu: Array<any>, machineInfo: any): Promise<Array<any>> {
+	private async initShowCHSMenu(country: string, menu: MenuItem[], machineInfo: any): Promise<MenuItem[]> {
 		const locale: string = machineInfo && machineInfo.locale ? machineInfo.locale : 'en';
 		const chsHypsis = await this.hypSettings.getFeatureSetting('ConnectedHomeSecurity').then((result) => {
 			return ((result || '').toString() === 'true');
@@ -179,14 +190,16 @@ export class ConfigService {
 			this.logger.error('ConfigService.initShowCHSMenu: promise rejected ', error);
 		});
 
-		this.showCHSWithoutSegment = country.toLowerCase() === 'us'
-			&& locale.startsWith('en')
-			&& chsHypsis
-			&& !machineInfo.isGaming;
-		this.showCHS = this.showCHSWithoutSegment && (this.activeSegment !== SegmentConst.Commercial);
+		const showCHSWithoutSegment = country.toLowerCase() === 'us'
+										&& locale.startsWith('en')
+										&& chsHypsis
+										&& !machineInfo.isGaming;
+		this.showCHS = showCHSWithoutSegment && (this.activeSegment !== SegmentConst.Commercial);
 
-		if (!this.showCHSWithoutSegment) {
-			menu = menu.filter(item => item.id !== 'home-security');
+		const chsMenuItem = menu.find(item => item.id === 'home-security');
+		if (chsMenuItem) {
+			chsMenuItem.availability = showCHSWithoutSegment;
+			chsMenuItem.hide = !this.showCHS;
 		}
 
 		return menu;
@@ -278,19 +291,13 @@ export class ConfigService {
 			this.showSmartAssist();
 		} else {
 			this.removeSmartAssistMenu(this.menu);
-			this.removeSmartAssistMenu(this.menuBySegment.consumer);
-			this.removeSmartAssistMenu(this.menuBySegment.commercial);
-			this.removeSmartAssistMenu(this.menuBySegment.smb);
 		}
 	}
 
 	private async showSmartAssist(): Promise<any> {
 		this.logger.info('MenuMainComponent.showSmartAssist: inside');
 		const myDeviceItem = this.menu.find((item) => item.id === 'device');
-		const consumerMyDeviceItem = this.menuBySegment.consumer.find((item) => item.id === 'device');
-		const commercialMyDeviceItem = this.menuBySegment.commercial.find((item) => item.id === 'device');
-		const smbMyDeviceItem = this.menuBySegment.smb.find((item) => item.id === 'device');
-		if (myDeviceItem !== undefined || consumerMyDeviceItem !== undefined || commercialMyDeviceItem !== undefined || smbMyDeviceItem !== undefined) {
+		if (myDeviceItem !== undefined) {
 			// if cache has value true for IsSmartAssistSupported, add menu item
 			const smartAssistCacheValue = this.commonService.getLocalStorageValue(
 				LocalStorageKey.IsSmartAssistSupported,
@@ -299,9 +306,6 @@ export class ConfigService {
 			this.logger.info('MenuMainComponent.showSmartAssist smartAssistCacheValue', smartAssistCacheValue);
 			if (!smartAssistCacheValue) {
 				this.removeSmartAssistMenu(this.menu);
-				this.removeSmartAssistMenu(this.menuBySegment.consumer);
-				this.removeSmartAssistMenu(this.menuBySegment.commercial);
-				this.removeSmartAssistMenu(this.menuBySegment.smb);
 			}
 
 			// raj: promise.all breaks if any one function is breaks. adding feature wise capability check
@@ -384,14 +388,8 @@ export class ConfigService {
 
 			if (this.isSmartAssistAvailable) {
 				this.addSmartAssistMenu(this.menu);
-				this.addSmartAssistMenu(this.menuBySegment.consumer);
-				this.addSmartAssistMenu(this.menuBySegment.commercial);
-				this.addSmartAssistMenu(this.menuBySegment.smb);
 			} else {
 				this.removeSmartAssistMenu(this.menu);
-				this.removeSmartAssistMenu(this.menuBySegment.consumer);
-				this.removeSmartAssistMenu(this.menuBySegment.commercial);
-				this.removeSmartAssistMenu(this.menuBySegment.smb);
 			}
 
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartAssistSupported, this.isSmartAssistAvailable);
@@ -410,24 +408,8 @@ export class ConfigService {
 		const myDeviceItem = items.find((item) => item.id === 'device');
 		if (myDeviceItem) {
 			const smartAssistItem = myDeviceItem.subitems.find(item => item.id === 'smart-assist');
-			if (!smartAssistItem) {
-				myDeviceItem.subitems.splice(3, 0,
-					{
-						id: 'smart-assist',
-						label: 'common.menu.device.sub4',
-						path: 'smart-assist',
-						metricsEvent: 'itemClick',
-						metricsParent: 'navbar',
-						metricsItem: 'link.smartassist',
-						externallink: false,
-						routerLinkActiveOptions: {
-							exact: true
-						},
-						icon: null,
-						sMode: true,
-						subitems: []
-					}
-				);
+			if (smartAssistItem) {
+				smartAssistItem.hide = false;
 			}
 		}
 	}
@@ -437,10 +419,7 @@ export class ConfigService {
 		if (myDeviceItem) {
 			const smartAssistItem = myDeviceItem.subitems.find(item => item.id === 'smart-assist');
 			if (smartAssistItem) {
-				this.logger.info('ConfigService.removeSmartAssistMenu: removing smart-assist menu');
-				myDeviceItem.subitems = myDeviceItem.subitems.filter(
-					(item) => item.id !== 'smart-assist'
-				);
+				smartAssistItem.hide = true;
 			}
 		}
 	}
@@ -454,7 +433,7 @@ export class ConfigService {
 	}
 
 	notifyMenuChange(payload?) {
-		this.commonService.sendNotification(MenuItem.MenuItemChange, payload);
+		this.commonService.sendNotification(MenuItemEvent.MenuItemChange, payload);
 	}
 
 	public canShowSearch(): Promise<boolean> {
@@ -470,29 +449,24 @@ export class ConfigService {
 		});
 	}
 
-	updateSegmentMenu(segment): Promise<any> {
-		return new Promise((resolve) => {
-			if (segment === this.activeSegment || segment === SegmentConst.Gaming) {
-				return resolve(this.menu);
-			} else {
-				this.activeSegment = segment;
-				this.showCHS = this.showCHSWithoutSegment && this.activeSegment !== SegmentConst.Commercial;
-				const seg = segment.toLowerCase();
-				this.menu = cloneDeep(this.menuBySegment[seg]);
-				return resolve(this.menu);
+	updateSegmentMenu(segment): MenuItem[] {
+		if (segment === this.activeSegment || segment === SegmentConst.Gaming) {
+			return this.menu;
+		} else {
+			this.activeSegment = segment;
+			const chsMenuItem = this.menu.find(item => item.id === 'home-security');
+			if (chsMenuItem) {
+				this.showCHS = chsMenuItem.availability && this.activeSegment !== SegmentConst.Commercial;
 			}
-		});
+			const seg = segment.toLowerCase();
+			this.segmentFilter(this.menu, segment);
+			return this.menu;
+		}
 	}
 
-	showWifiMenu(wifiIsSupport: boolean): Promise<any> {
-		return new Promise((resolve) => {
-			this.updateWifiMenu(this.menu, wifiIsSupport);
-			this.updateWifiMenu(this.menuBySegment.commercial, wifiIsSupport);
-			this.updateWifiMenu(this.menuBySegment.consumer, wifiIsSupport);
-			this.updateWifiMenu(this.menuBySegment.smb, wifiIsSupport);
-			this.updateWifiStateCache(wifiIsSupport);
-			return resolve(this.menu);
-		});
+	showWifiMenu(wifiIsSupport: boolean): void {
+		this.updateWifiMenu(this.menu, wifiIsSupport);
+		this.updateWifiStateCache(wifiIsSupport);
 	}
 
 	updateWifiMenu(menu, wifiIsSupport) {
@@ -508,13 +482,13 @@ export class ConfigService {
 		if (wifiIsSupport) {
 			if (securityItem && securityItem.subitems && this.activeSegment !== SegmentConst.Gaming) {
 				const wifiItem = this.menuItems.find((item) => item.id === 'security').subitems.find((item) => item.id === 'wifi-security');
-				securityItem.subitems.splice(3, 0, wifiItem);
+				if (wifiItem) wifiItem.hide = false;
 				return;
 			}
 
 			const supportIndex = menu.findIndex((item) => item.id === 'support');
 			const wifiItems = this.activeSegment !== SegmentConst.Gaming ? this.menuItems.find((item) => item.id === 'wifi-security') : this.menuItemsGaming.find((item) => item.id === 'wifi-security');
-			menu.splice(supportIndex, 0, wifiItems);
+			wifiItems.hide = false;
 		}
 	}
 
@@ -522,82 +496,35 @@ export class ConfigService {
 		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity, wifiIsSupport);
 	}
 
-	showBetaMenu(isBeta: boolean): Promise<any> {
-		return new Promise((resolve) => {
-			this.updateBetaMenu(this.menu, isBeta).then((menu) => {
-				this.menu = menu;
-				this.menu = this.segmentFilter(this.menu, this.activeSegment);
-				return resolve(this.menu);
-			});
-			this.updateBetaMenu(this.menuBySegment.consumer, isBeta).then((menu) => {
-				this.menuBySegment.consumer = menu;
-			});
-			this.updateBetaMenu(this.menuBySegment.smb, isBeta).then((menu) => {
-				this.menuBySegment.smb = menu;
-			});
-		});
-	}
-
-	initializeBetaMenu(menu: Array<any>, isBeta: boolean): Promise<Array<any>> {
-		return this.updateBetaMenu(menu, isBeta);
-	}
-
-	updateBetaMenu(menu: Array<any>, isBeta: boolean): Promise<Array<any>> {
+	filterByBeta(menu: Array<any>, isBeta: boolean): Promise<Array<any>> {
 		return this.canShowSearch().then((result) => {
 			this.initializeAppSearchItem(menu, result);
 			if (result) {
 				this.betaService.betaFeatureAvailable = true;
 			}
-			if (!isBeta && result) {
-				menu = menu.filter(item => item.id !== 'app-search');
-				return menu;
-			}
+			const item = menu.find(i => i.id === 'app-search');
+			if (item) item.hide = !isBeta || !result;
+
 			return menu;
 		});
 	}
 
-	showSystemUpdates(): Promise<any> {
-		return new Promise((resolve) => {
-			if (!Array.isArray(this.menu)) { return; }
+	showSystemUpdates(): void {
+		if (!Array.isArray(this.menu)) { return; }
 
-			const device = this.menu.find((item) => item.id === 'device');
-			const deviceCommercial = this.menuBySegment.commercial.find((item) => item.id === 'device');
-			const deviceConsumer = this.menuBySegment.consumer.find((item) => item.id === 'device');
-			const deviceSMB = this.menuBySegment.smb.find((item) => item.id === 'device');
-			this.updateSystemUpdatesMenu(device);
-			this.updateSystemUpdatesMenu(deviceCommercial);
-			this.updateSystemUpdatesMenu(deviceConsumer);
-			this.updateSystemUpdatesMenu(deviceSMB);
-			return resolve(this.menu);
-		});
+		this.updateSystemUpdatesMenu();
 	}
 
-	updateSystemUpdatesMenu(device) {
-		if (device !== undefined) {
+	updateSystemUpdatesMenu() {
+		const device = this.menu.find((item) => item.id === 'device');
+		if (device) {
 			const su = device.subitems.find((item) => item.id === 'system-updates');
-			if (this.adPolicyService.IsSystemUpdateEnabled && !this.deviceService.isSMode && !this.deviceService.isGaming) {
-				if (!su) {
-					device.subitems.splice(2, 0, {
-						id: 'system-updates',
-						label: 'common.menu.device.sub3',
-						path: 'system-updates',
-						icon: '',
-						metricsEvent: 'itemClick',
-						metricsParent: 'navbar',
-						metricsItem: 'link.systemupdates',
-						routerLinkActiveOptions: {
-							exact: true
-						},
-						adPolicyId: AdPolicyId.SystemUpdate,
-						subitems: []
-					});
-				}
-			} else {
-				if (su) {
-					device.subitems = device.subitems.filter(
-						(item) => item.id !== 'system-updates'
-					);
-				}
+			if (su) {
+				su.hide = !(
+					this.adPolicyService.IsSystemUpdateEnabled
+					&& !this.deviceService.isSMode
+					&& !this.deviceService.isGaming
+				);
 			}
 		}
 	}
@@ -626,11 +553,12 @@ export class ConfigService {
 		});
 	}
 
-	private filterMenu(menu: Array<any>, segment: string): Array<any> {
+	private async updateHide(menu: Array<any>, segment: string, beta: boolean): Promise<MenuItem[]> {
 		this.smodeFilter(menu, this.deviceService.isSMode);
 		this.armFilter(menu, this.deviceService.isArm);
-		this.segmentFilter(menu, segment);
-		return menu.filter(item => !item.hide);
+		if (segment !== SegmentConst.Gaming)this.segmentFilter(menu, segment);
+		await this.filterByBeta(menu, beta);
+		return menu;
 	}
 
 	private initializeSmartAssist() {
