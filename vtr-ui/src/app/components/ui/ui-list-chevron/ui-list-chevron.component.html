@@ -9,7 +9,7 @@
 				[metricsItemID]="item.id" [metricsItemCategory]="item.category" [metricsItemPosition]="blockPosition"
 				[ngClass]="clickable?'':'disabled'" [tabindex]="clickable ? 0 : -1" role="link" [title]=""
 				[ngbTooltip]="(item.metricsItemName ? item.metricsItemName : item.title) + (item.detail? ' - '+item.detail:'' ) +(item.subText? ' - '+item.subText:'' )"
-				tooltipClass="vtr-tooltip" container="body" #ta="ngbTooltip">
+				tooltipClass="vtr-system-tooltip" container="body" #ta="ngbTooltip">
 				<div class="container-fluid">
 					<div class="row align-items-center">
 						<div class="col col-1 text-center" *ngIf="iconPlacement==='left'">
@@ -43,20 +43,20 @@
 							<div class="row no-gutters" [ngClass]="{'flex-column': item.notificationDetail}">
 								<div title="" class="title text-break d-flex align-items-center"
 									[ngClass]="{'light-title':item.lightTitle, 'col-12':!item.detail, 'col-6': item.detail}"
-									[ngbTooltip]="item.title" tooltipClass="vtr-tooltip" container="body"
+									[ngbTooltip]="item.title" tooltipClass="vtr-system-tooltip" container="body"
 									(mouseenter)="(ta.isOpen() ? ta.close() : true )">
 									{{item.title}}
 								</div>
 								<div title=""
 									class="col-6 detail word-break-all d-flex align-items-center justify-content-end"
 									*ngIf="item.detail" [ngClass]="getItemDetailClasses(item)"
-									[ngbTooltip]="item.detail" tooltipClass="vtr-tooltip" container="body"
+									[ngbTooltip]="item.detail" tooltipClass="vtr-system-tooltip" container="body"
 									(mouseenter)="(ta.isOpen() ? ta.close() : true )">
 									{{item.detail}}
 								</div>
 								<div *ngIf="item.subText" class="sub-text">
 									<span title="" class="{{'dirClass' | translate}}" dir="{{'dir' | translate}}"
-										[ngbTooltip]="item.subText" tooltipClass="vtr-tooltip" container="body"
+										[ngbTooltip]="item.subText" tooltipClass="vtr-system-tooltip" container="body"
 										(mouseenter)="(ta.isOpen() ? ta.close() : true )">{{item.subText | characterLimit:20}}</span>
 									<span class="pl-3" class="{{'dirClass' | translate}}"
 										dir="{{'dir' | translate}}">{{item.date}}</span>
@@ -104,7 +104,7 @@
 				(click)="launchSystemUri(item.path)" [ngClass]="clickable?'':'disabled'" [tabindex]="clickable ? 0 : -1"
 				role="link" [title]=""
 				[ngbTooltip]="(item.metricsItemName ? item.metricsItemName : item.title) + (item.detail? ' - '+item.detail:'' ) +(item.subText? ' - '+item.subText:'' )"
-				tooltipClass="vtr-tooltip" container="body" #ta="ngbTooltip">
+				tooltipClass="vtr-system-tooltip" container="body" #ta="ngbTooltip">
 				<div class="container-fluid">
 					<div class="row align-items-center">
 						<div class="col col-1 text-center" *ngIf="iconPlacement==='left'">
@@ -137,14 +137,15 @@
 							<div class="row no-gutters">
 								<div title="" class="col-5 title text-break d-flex align-items-center"
 									[ngClass]="{'light-title':item.lightTitle, 'col-12':!item.detail, 'col-5': item.detail}"
-									[ngbTooltip]="item.title" tooltipClass="vtr-tooltip" container="body"
-									(mouseenter)="(ta.isOpen() ? ta.close() : true )">
+									[ngbTooltip]="item.title" tooltipClass="vtr-system-tooltip" container="body"
+									(mouseenter)="(ta.isOpen() ? ta.close() : true )"
+									>
 									{{item.title}}
 								</div>
 								<div title=""
 									class="col-7 detail word-break-all d-flex align-items-center justify-content-end"
 									*ngIf="item.detail" [ngClass]="getItemDetailClasses(item)"
-									[ngbTooltip]="item.detail" tooltipClass="vtr-tooltip" container="body"
+									[ngbTooltip]="item.detail" tooltipClass="vtr-system-tooltip" container="body"
 									(mouseenter)="(ta.isOpen() ? ta.close() : true )">
 									{{item.detail}}
 								</div>
@@ -187,7 +188,7 @@
 				(click)="item.launch()" [ngClass]="clickable?'':'disabled'" [tabindex]="clickable ? 0 : -1" role="link"
 				[title]=""
 				[ngbTooltip]="(item.metricsItemName ? item.metricsItemName : item.title) + (item.detail? ' - '+item.detail:'' ) +(item.subText? ' - '+item.subText:'' )"
-				tooltipClass="vtr-tooltip" container="body" #ta="ngbTooltip">
+				tooltipClass="vtr-system-tooltip" container="body" #ta="ngbTooltip">
 				<div class="container-fluid">
 					<div class="row align-items-center">
 						<div class="col col-1 text-center" *ngIf="iconPlacement==='left'">
@@ -220,14 +221,14 @@
 							<div class="row no-gutters">
 								<div title="" class="col-6 title text-break d-flex align-items-center"
 									[ngClass]="{'light-title':item.lightTitle, 'col-12':!item.detail, 'col-6': item.detail}"
-									[ngbTooltip]="item.title" tooltipClass="vtr-tooltip" container="body"
+									[ngbTooltip]="item.title" tooltipClass="vtr-system-tooltip" container="body"
 									(mouseenter)="(ta.isOpen() ? ta.close() : true )">
 									{{item.title}}
 								</div>
 								<div title=""
 									class="col-6 detail word-break-all d-flex align-items-center justify-content-end"
 									*ngIf="item.detail" [ngClass]="getItemDetailClasses(item)"
-									[ngbTooltip]="item.detail" tooltipClass="vtr-tooltip" container="body"
+									[ngbTooltip]="item.detail" tooltipClass="vtr-system-tooltip" container="body"
 									(mouseenter)="(ta.isOpen() ? ta.close() : true )">
 									{{item.detail}}
 								</div>

@@ -26,7 +26,7 @@
 							[title]=""
 							[disabled]="disableQuickScan"
 							(click)="onQuickScan()"
-							[ngbTooltip]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate" tooltipClass="vtr-tooltip" container="body"
+							[ngbTooltip]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate" tooltipClass="vtr-system-tooltip" container="body"
 							>{{buttonText}}</button>
 						<a
 							vtrMetrics
@@ -37,7 +37,7 @@
 							tabindex="1"
 							[title]=""
 							[ngClass]="{'action-anchor': !disableQuickScan, 'disabled-anchor': disableQuickScan}" (click)="onAnchor()"
-							[ngbTooltip]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate" tooltipClass="vtr-tooltip" container="body"
+							[ngbTooltip]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate" tooltipClass="vtr-system-tooltip" container="body"
 							>{{anchorText}}
 						</a>
 					</div>
@@ -57,7 +57,7 @@
 						<div class="col col-12 row">
 							<div class="col col-12 cancel-check" *ngIf="!isScanOrRBSFinished()"
 								 title=""
-								 [ngbTooltip]="disableCancel ? ('hardwareScan.waitScanStarts' | translate) : ''" tooltipClass="vtr-tooltip" container="body"
+								 [ngbTooltip]="disableCancel ? ('hardwareScan.waitScanStarts' | translate) : ''" tooltipClass="vtr-system-tooltip" container="body"
 								 >
 								<button type="button"
 									id="hw_cancel_scan"

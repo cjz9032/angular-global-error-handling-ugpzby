@@ -30,7 +30,7 @@
 						'disable': isDisabled,
 						'loading': isLoading}"
 			(click)="onClickButton($event)"
-			[ngbTooltip]="tooltip?tooltipText:''" tooltipClass="vtr-tooltip" container="body"
+			[ngbTooltip]="tooltip?tooltipText:''" tooltipClass="vtr-system-tooltip" container="body"
 			>
 			<span [hidden]="!isLoading"
 				class="mr-3 mt-1 mb-1 flex-shrink-0 spinner-border progress-spinner"
@@ -70,7 +70,7 @@
 						'disable': isDisabled,
 						'loading': isLoading}"
 			(click)="onClickButton($event)"
-			[ngbTooltip]="tooltip?tooltipText:''" tooltipClass="vtr-tooltip" container="body"
+			[ngbTooltip]="tooltip?tooltipText:''" tooltipClass="vtr-system-tooltip" container="body"
 			>
 			<span [hidden]="!isLoading"
 				class="mr-3 mt-1 mb-1 flex-shrink-0 spinner-border progress-spinner"
@@ -101,7 +101,7 @@
 			[metricsParent]="metricsParent"
 			[ngClass]="{'fullWidth': isFullWidth === true ,'text-upper-case': upperCaseLabel}"
 			(click)="onClickButton($event)"
-			[ngbTooltip]="tooltip?tooltipText:''" tooltipClass="vtr-tooltip" container="body"
+			[ngbTooltip]="tooltip?tooltipText:''" tooltipClass="vtr-system-tooltip" container="body"
 			>{{label}} </button>
 	</div>
 </div>
