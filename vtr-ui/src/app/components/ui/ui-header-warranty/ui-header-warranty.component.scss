@@ -3,14 +3,14 @@
 .dropdown-content {
 	top: -0.2rem;
 
-	input:not([type=radio]):not([type=checkbox]) {
+	input:not([type="radio"]):not([type="checkbox"]) {
 		cursor: pointer;
 	}
 
 	.dropdown-btn {
 		display: flex;
-		width: 4.4rem;
-		padding-right: 1rem;
+		// width: 4.4rem;
+		// padding-right: 1rem;
 		justify-content: center;
 		cursor: pointer;
 
@@ -19,7 +19,7 @@
 			width: 1.8rem;
 			height: 1.8rem;
 			border-radius: 2rem;
-			font-size: 1.0rem;
+			font-size: 1rem;
 			padding-bottom: 0.1rem;
 			display: flex;
 			justify-content: center;
@@ -36,7 +36,7 @@
 		}
 
 		&:hover {
-			opacity: .7;
+			opacity: 0.7;
 		}
 
 		&::before,
@@ -63,11 +63,11 @@
 		border-radius: 0.9rem;
 		box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
 		width: 28rem;
-		@media #{$breakpoint_xl}{
+		@media #{$breakpoint_xl} {
 			width: 29rem;
 		}
 		&.in-warranty {
-			background: linear-gradient(to left bottom, #4980FC, #2E62D9);
+			background: linear-gradient(to left bottom, #4980fc, #2e62d9);
 
 			.menu-pointer {
 				background: #3c72eb;
@@ -75,7 +75,7 @@
 		}
 
 		&.expired {
-			background: linear-gradient(to left top, #F17F14, #ED4E04);
+			background: linear-gradient(to left top, #f17f14, #ed4e04);
 
 			.menu-pointer {
 				background: #ed5105;
@@ -89,7 +89,7 @@
 			}
 		}
 
-		.position-top{
+		.position-top {
 			position: absolute;
 			width: 100%;
 			height: 1.8rem;
@@ -137,7 +137,7 @@
 
 			.sub-description {
 				font-size: 1.4rem;
-				opacity: .8;
+				opacity: 0.8;
 			}
 		}
 	}
