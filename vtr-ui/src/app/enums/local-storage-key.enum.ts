@@ -244,6 +244,7 @@ export enum LocalStorageKey {
 
 	SmartAssistCache = '[LocalStorageKey] SmartAssistCache',
 	DolbyAudioToggleCache = '[LocalStorageKey] DolbyAudioToggleCache',
+	DolbyAudioProfileCache = '[LocalStorageKey] DolbyAudioProfileCache',
 
 	// Ad policy local storage key
 	AdPolicyCache = '[LocalStorageKey] AdPolicyCache',

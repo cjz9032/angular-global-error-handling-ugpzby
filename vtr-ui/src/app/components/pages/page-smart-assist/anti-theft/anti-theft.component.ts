@@ -50,6 +50,7 @@ export class AntiTheftComponent implements OnInit {
 		private translate: TranslateService,
 		private metrics: MetricService,
 		private commonService: CommonService) {
+		this.smartAssistCapability = this.commonService.getLocalStorageValue(LocalStorageKey.SmartAssistCapability, undefined);
 		if (this.smartAssist.windows) {
 			this.DeviceInformation = this.smartAssist.windows.Devices.Enumeration.DeviceInformation;
 			this.DeviceClass = this.smartAssist.windows.Devices.Enumeration.DeviceClass;
@@ -59,7 +60,6 @@ export class AntiTheftComponent implements OnInit {
 				.createFromDeviceClass(this.smartAssist.windows.Devices.Enumeration.DeviceClass.videoCapture);
 			this.storageFolder = this.smartAssist.windows.Storage.StorageFolder;
 		}
-		this.smartAssistCapability = this.commonService.getLocalStorageValue(LocalStorageKey.SmartAssistCapability, undefined);
 	}
 
 	ngOnInit() {
