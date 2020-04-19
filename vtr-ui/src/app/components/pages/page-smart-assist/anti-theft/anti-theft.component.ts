@@ -26,7 +26,7 @@ export class AntiTheftComponent implements OnInit {
 	@Output() antiTheftToggle: EventEmitter<any> = new EventEmitter();
 	@Output() tooltipClick = new EventEmitter<boolean>();
 	public antiTheft = new AntiTheftResponse(false, false, false, false, false);
-       
+    public antiTheftCache: AntiTheftResponse = undefined;
 		
 	private DeviceInformation: any;
 	private DeviceClass: any;
@@ -51,6 +51,7 @@ export class AntiTheftComponent implements OnInit {
 		private metrics: MetricService,
 		private commonService: CommonService) {
 		this.smartAssistCapability = this.commonService.getLocalStorageValue(LocalStorageKey.SmartAssistCapability, undefined);
+		this.antiTheftCache = this.commonService.getLocalStorageValue(LocalStorageKey.AntiTheftCache, undefined);
 		if (this.smartAssist.windows) {
 			this.DeviceInformation = this.smartAssist.windows.Devices.Enumeration.DeviceInformation;
 			this.DeviceClass = this.smartAssist.windows.Devices.Enumeration.DeviceClass;
@@ -63,10 +64,10 @@ export class AntiTheftComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		if(this.smartAssistCapability !== undefined)
-		{
-			this.antiTheft = this.smartAssistCapability.isAntiTheftSupported;
+		if (this.antiTheftCache === undefined && this.smartAssistCapability !== undefined) {
+			this.antiTheftCache = this.smartAssistCapability.isAntiTheftSupported;
 		}
+		this.antiTheft = this.antiTheftCache;
 		this.getAntiTheftStatus();
 		this.getCameraPrivacyState();
 		this.getCameraAuthorizedAccessState();
@@ -188,8 +189,14 @@ export class AntiTheftComponent implements OnInit {
 				this.logger.info(`getAntiTheftStatus API call`);
 				this.smartAssist.getAntiTheftStatus()
 					.then((response: AntiTheftResponse) => {
+						this.antiTheft.available = response.available;
+						this.antiTheft.status = response.status;
+						this.antiTheft.isSupportPhoto = response.isSupportPhoto;
+						this.antiTheft.photoAddress = response.photoAddress;
+						this.antiTheft.alarmOften = response.alarmOften;
+						this.antiTheft.photoNumber = response.photoNumber;
+						this.commonService.setLocalStorageValue(LocalStorageKey.AntiTheftCache, this.antiTheft);
 						this.isLoading = false;
-						this.antiTheft = response;
 						this.logger.info(`getAntiTheftStatus then`, response);
 					}).catch(error => {
 						this.logger.error('getAntiTheftStatus.error', error);
@@ -212,6 +219,7 @@ export class AntiTheftComponent implements OnInit {
 			if (this.smartAssist.isShellAvailable) {
 				this.smartAssist.setAntiTheftStatus(event.switchValue)
 					.then((value: boolean) => {
+						this.commonService.setLocalStorageValue(LocalStorageKey.AntiTheftCache, this.antiTheft);
 						this.logger.info('setAntiTheftStatus.then', value);
 					}).catch(error => {
 						this.logger.error('setAntiTheftStatus', error.message);
@@ -235,6 +243,7 @@ export class AntiTheftComponent implements OnInit {
 			if (this.smartAssist.isShellAvailable) {
 				this.smartAssist.setAlarmOften(value)
 					.then((value: boolean) => {
+						this.commonService.setLocalStorageValue(LocalStorageKey.AntiTheftCache, this.antiTheft);
 						this.logger.info('setAlarmOften.then', value);
 					}).catch(error => {
 						this.logger.error('setAlarmOften', error.message);
@@ -258,6 +267,7 @@ export class AntiTheftComponent implements OnInit {
 			if (this.smartAssist.isShellAvailable) {
 				this.smartAssist.setPhotoNumber(value)
 					.then((value: boolean) => {
+						this.commonService.setLocalStorageValue(LocalStorageKey.AntiTheftCache, this.antiTheft);
 						this.logger.info('setPhotoNumber.then', value);
 					}).catch(error => {
 						this.logger.error('setPhotoNumber', error.message);
@@ -279,6 +289,7 @@ export class AntiTheftComponent implements OnInit {
 		try {
 			this.smartAssist.setAllowCamera(value)
 				.then((value: boolean) => {
+					this.commonService.setLocalStorageValue(LocalStorageKey.AntiTheftCache, this.antiTheft);
 					this.logger.info('setAllowCamera.then', value);
 				}).catch(error => {
 					this.logger.error('setAllowCamera', error.message);
@@ -361,6 +372,7 @@ export class AntiTheftComponent implements OnInit {
 		this.antiTheft.authorizedAccessState = data.status;
 		this.isShowAuthorized = !this.antiTheft.authorizedAccessState;
 		this.checkboxDisabled = !(this.antiTheft.cameraPrivacyState && this.antiTheft.authorizedAccessState);
+		this.commonService.setLocalStorageValue(LocalStorageKey.AntiTheftCache, this.antiTheft);
 	}
 
 	public stopMonitorCameraAuthorized() {
@@ -394,6 +406,7 @@ export class AntiTheftComponent implements OnInit {
 		this.antiTheft.cameraPrivacyState = !data.status;
 		this.isShowAuthorized = !this.antiTheft.authorizedAccessState;
 		this.checkboxDisabled = !(this.antiTheft.cameraPrivacyState && this.antiTheft.authorizedAccessState);
+		this.commonService.setLocalStorageValue(LocalStorageKey.AntiTheftCache, this.antiTheft);
 	}
 
 	public stopMonitorForCameraPrivacy() {
@@ -436,6 +449,7 @@ export class AntiTheftComponent implements OnInit {
 				this.antiTheft.photoAddress = obj.photoAddress;
 				this.antiTheft.alarmOften = obj.alarmDuration;
 				this.antiTheft.photoNumber = obj.photoNumber;
+				this.commonService.setLocalStorageValue(LocalStorageKey.AntiTheftCache, this.antiTheft);
 			}
 			this.logger.info(`antiTheftStatusChange return data:`, data);
 		} catch (error) {
@@ -445,11 +459,16 @@ export class AntiTheftComponent implements OnInit {
 
 	public getCameraPrivacyState() {
 		try {
+			if (this.antiTheft !== undefined) {
+				this.isShowAuthorized = !this.antiTheft.authorizedAccessState;
+				this.checkboxDisabled = !(this.antiTheft.cameraPrivacyState && this.antiTheft.authorizedAccessState);
+			}
 			this.displayService.getCameraPrivacyModeState()
 				.then((camera) => {
 					this.antiTheft.cameraPrivacyState = !camera.status;
 					this.isShowAuthorized = !this.antiTheft.authorizedAccessState;
 					this.checkboxDisabled = !(this.antiTheft.cameraPrivacyState && this.antiTheft.authorizedAccessState);
+					this.commonService.setLocalStorageValue(LocalStorageKey.AntiTheftCache, this.antiTheft);
 				}).catch(error => {
 					this.logger.error('setCameraAuthorizedAccessState', error.message);
 				});
@@ -461,11 +480,16 @@ export class AntiTheftComponent implements OnInit {
 
 	public getCameraAuthorizedAccessState() {
 		try {
+			if (this.antiTheft !== undefined) {
+				this.isShowAuthorized = !this.antiTheft.authorizedAccessState;
+				this.checkboxDisabled = !(this.antiTheft.cameraPrivacyState && this.antiTheft.authorizedAccessState);
+			}
 			this.getWinCameraAuthorizedAccessState()
 				.then((value: boolean) => {
 					this.antiTheft.authorizedAccessState = value;
 					this.isShowAuthorized = !this.antiTheft.authorizedAccessState;
 					this.checkboxDisabled = !(this.antiTheft.cameraPrivacyState && this.antiTheft.authorizedAccessState);
+					this.commonService.setLocalStorageValue(LocalStorageKey.AntiTheftCache, this.antiTheft);
 				}).catch(error => {
 					this.logger.error('setCameraAuthorizedAccessState', error.message);
 				});
