@@ -1894,7 +1894,7 @@
                 "zeroTouchLoginForIdea": {
                     "title": "Automatska prijava",
                     "caption": "Ova značajka omogućuje vam poboljšanje radne učinkovitosti automatskim buđenjem ili prijavom na računalo. Da biste koristili značajku, morate registrirati svoje lice u programu Windows Hello.",
-                    "tooltip": "Kad se nalazite ispred računala ili mu prilazite (unutar 1,2 ili 1,5 metra), ova vam značajka omogućuje automatsku prijavu u sustav nakon prepoznavanja vašeg lica. Ako ste na otvorenom, a ne u uredu, morate biti bliže računalu i buđenje će trajati duže. <br>Ovisno o sposobnosti senzora, maksimalna udaljenost otkrivanja može se razlikovati. Za pojedinosti pogledajte <i>korisnički priručnik</i> isporuzčen s vašim računalom."
+                    "tooltip": "Kad se nalazite ispred računala ili mu prilazite (unutar 1,2 ili 1,5 metra), ova vam značajka omogućuje automatsku prijavu u sustav nakon prepoznavanja vašeg lica. Ako ste na otvorenom, a ne u uredu, morate biti bliže računalu i buđenje će trajati duže. <br>Ovisno o sposobnosti senzora, maksimalna udaljenost otkrivanja može se razlikovati. Za pojedinosti pogledajte vodič za korisnike isporučen s vašim računalom."
                 },
                 "zeroTouchLock": {
                     "title": "Zaključavanje Zero Touch",
@@ -1981,10 +1981,8 @@
                     "description2": "Ta značajka koristi se senzorima i kamerom kako bi otkrila vašu prisutnost. Međutim, značajka NE prikuplja nikakve osobne podatke.",
                     "description3": "1. Da biste koristili gornje funkcije, podesite zaslon odgovarajućem kutu kako bi se vaše lice moglo prepoznati.",
                     "description4": "2. Gore navedene funkcije nisu podržane kada:",
-                    "description5a1": "a. Vaše je računalo u Tent, Tablet, Stand ili Detached načinu rada. Za načine koji su na vašem računalu podržani, pogledajte ",
-                    "description5a2": "Vodič za korisnike ",
-                    "description5a3": "isporučen s njim.",
-                    "description5b": "b. Vaše je računalo u hibernacijskom načinu rada ili je isključeno.",
+                    "description5a": "a. Vaše je računalo u Tent, Tablet, Stand ili Detached načinu rada. Načine rada podržane na vašem računalu potražite u priloženom vodiču za korisnike.",
+					"description5b": "b. Vaše je računalo u hibernacijskom načinu rada ili je isključeno.",
                     "description6": "3. Ako je na vašem računalu omogućen način rada u zrakoplovu, te su značajke onemogućene.",
                     "description7": "Točnost se razlikuje u pogledu veličine tijela, držanje i učestalosti pokreta. Ako se vaše računalo neočekivano zaključa, podesite traku osjetljivosti da biste poboljšali točnost."
                 },
@@ -3303,7 +3301,8 @@
             "wireless": "Bežična veza"
         },
         "warningMessage": "Napominjemo da će se testovi otkazati ako je sustav u stanju mirovanja ili hibernacije",
-        "refreshMessage": "Osvježavanje može potrajati neko vrijeme jer je potrebno ponovno učitati sve komponente"
+        "refreshMessage": "Osvježavanje može potrajati neko vrijeme jer je potrebno ponovno učitati sve komponente",
+        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
     },
     "smartPerformance": {
         "title": "Health & Support",

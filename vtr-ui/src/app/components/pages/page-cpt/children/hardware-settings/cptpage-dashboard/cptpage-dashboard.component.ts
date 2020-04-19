@@ -14,137 +14,181 @@ import { isNull, isUndefined } from 'util';
 import { DomSanitizer } from '@angular/platform-browser';
 import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
 
+interface IConfigItem {
+	cardId: string;
+	displayContent: any;
+	template: string;
+	positionParam: string;
+	tileSource: string;
+	cmsContent: any;
+	upeContent: any;
+}
+
 @Component({
-  selector: 'vtr-cptpage-dashboard',
-  templateUrl: './cptpage-dashboard.component.html',
-  styleUrls: ['./cptpage-dashboard.component.scss'],
-  //add components within array
-  //entryComponents: [WidgetCarouselComponent]
+	selector: 'vtr-cptpage-dashboard',
+	templateUrl: './cptpage-dashboard.component.html',
+	styleUrls: ['./cptpage-dashboard.component.scss'],
+	//add components within array
+	//entryComponents: [WidgetCarouselComponent]
 })
 export class CptpageDashboardComponent implements OnInit, OnDestroy {
-  title = 'Dashboard';
-  offlineConnection = 'offline-connection';
+	title = 'Dashboard';
+	offlineConnection = 'offline-connection';
 	public isOnline = true;
-
-  heroBannerItems = []; // tile A
-	cardContentPositionB: FeatureContent = new FeatureContent();
-	cardContentPositionC: FeatureContent = new FeatureContent();
-	cardContentPositionD: FeatureContent = new FeatureContent();
-	cardContentPositionE: FeatureContent = new FeatureContent();
-	cardContentPositionF: FeatureContent = new FeatureContent();
 
 	heroBannerDemoItems = [];
 	canShowDccDemo$: Promise<boolean>;
 
-	heroBannerItemsCms: any[]; // tile A
-	cardContentPositionBCms: FeatureContent = new FeatureContent();
-	cardContentPositionCCms: FeatureContent = new FeatureContent();
-	cardContentPositionDCms: FeatureContent = new FeatureContent();
-	cardContentPositionECms: FeatureContent = new FeatureContent();
-	cardContentPositionFCms: FeatureContent = new FeatureContent();
-
-	upeRequestResult = {
-		tileA: true,
-		tileB: true,
-		tileC: true,
-		tileD: true,
-		tileE: true,
-		tileF: true
+	contentCards = {
+		positionA: {
+			displayContent: [],
+			template: 'home-page-hero-banner',
+			cardId: 'positionA',
+			positionParam: 'position-A',
+			tileSource: 'CMS',
+			cmsContent: undefined,
+			upeContent: undefined
+		},
+		positionB: {
+			displayContent: new FeatureContent(),
+			template: 'half-width-title-description-link-image',
+			cardId: 'positionB',
+			positionParam: 'position-B',
+			tileSource: 'CMS',
+			cmsContent: undefined,
+			upeContent: undefined
+		},
+		positionC: {
+			displayContent: new FeatureContent(),
+			template: 'half-width-title-description-link-image',
+			cardId: 'positionC',
+			positionParam: 'position-C',
+			tileSource: 'CMS',
+			cmsContent: undefined,
+			upeContent: undefined
+		},
+		positionD: {
+			displayContent: new FeatureContent(),
+			template: 'full-width-title-image-background',
+			cardId: 'positionD',
+			positionParam: 'position-D',
+			tileSource: 'CMS',
+			cmsContent: undefined,
+			upeContent: undefined
+		},
+		positionE: {
+			displayContent: new FeatureContent(),
+			template: 'half-width-top-image-title-link',
+			cardId: 'positionE',
+			positionParam: 'position-E',
+			tileSource: 'CMS',
+			cmsContent: undefined,
+			upeContent: undefined
+		},
+		positionF: {
+			displayContent: new FeatureContent(),
+			template: 'half-width-top-image-title-link',
+			cardId: 'positionF',
+			positionParam: 'position-F',
+			tileSource: 'CMS',
+			cmsContent: undefined,
+			upeContent: undefined
+		}
 	};
 
-	cmsRequestResult = {
-		tileA: false,
-		tileB: false,
-		tileC: false,
-		tileD: false,
-		tileE: false,
-		tileF: false
-	};
+	constructor(
+		private commonService: CommonService,
+		private cmsService: CMSService,
+		private translate: TranslateService,
+		private sanitizer: DomSanitizer
+	) { }
 
-	tileSource = {
-		tileA: 'CMS',
-		tileB: 'CMS',
-		tileC: 'CMS',
-		tileD: 'CMS',
-		tileE: 'CMS',
-		tileF: 'CMS'
-	};
+	ngOnInit() {
+	}
 
-  constructor(
-    private commonService: CommonService,
-    private cmsService: CMSService,
-    private translate: TranslateService,
-    private sanitizer: DomSanitizer
-  ) { }
+	/**
+	 * For cpt, 
+	 * To send response to parent component, 
+	 * Observable added before  
+	 * this.cmsService.fetchCMSContent
+	 */
+	getCmsJsonResponse() {
+		const queryOptions = {
+			Page: 'dashboard'
+		};
 
-  ngOnInit() {
-  }
+		return new Observable((observer) => {
+			this.cmsService.fetchCMSContent(queryOptions).subscribe(
+				(response: any) => {
 
-  /**
-   * For cpt, 
-   * To send response to parent component, 
-   * Observable added before  
-   * this.cmsService.fetchCMSContent
-   */
-  getCmsJsonResponse() {
-    const queryOptions = {
-      Page: 'dashboard'
-    };
+					observer.next(response);//cpt
+			 		observer.complete();
 
-    return new Observable((observer) => {
-      this.cmsService.fetchCMSContent(queryOptions).subscribe(
-        (response: any) => {
+					if (response && response.length > 0) {
+						this.populateCMSContent(response);
+					}
+				},
+				(error) => {
+					observer.error(error);
+				}
+			);
+		});
+	}
 
-			observer.next(response);//cpt
-			observer.complete();
+	private populateCMSContent(response: any) {
+		const dataSource = 'cms';
+		const contentCards: IConfigItem[] = Object.values(this.contentCards);
 
-          	this.getCMSHeroBannerItems(response);
-			this.getCMSCardContentB(response);
-			this.getCMSCardContentC(response);
-			this.getCMSCardContentD(response);
-			this.getCMSCardContentE(response);
-			this.getCMSCardContentF(response);
-        },
-        error => {
-			observer.error(error);
-        }
-      );
+		contentCards.forEach(contentCard => {
+			let contents: any = this.cmsService.getOneCMSContent(response, contentCard.template, contentCard.positionParam);
+			if (contents && contents.length > 0) {
+				contents = this.formalizeContent(contents, contentCard.positionParam, dataSource);
+				contentCard.cmsContent = contents;
+				if ((contentCard.tileSource === 'CMS' || contentCard.upeContent === null) && contentCard.cmsContent) {	// contentCard.upeContent === null means no upe content
+					//this.dashboardService.onlineCardContent[contentCard.cardId] = contentCard.cmsContent;
+					if (contentCard.cardId === 'positionA'
+						&& !this.cmsHeroBannerChanged(contentCard.displayContent,  contentCard.cmsContent)) {
+						return;	// don't need to update, developer said this could present the refresh of positionA
+					}
+					contentCard.displayContent = contentCard.cmsContent;
+					this.contentCards[contentCard.cardId].displayContent =  contentCard.displayContent;
+				} // else do nothing
+			} // else do nothing
+		});
+	}
 
-    });
-  }
+	private formalizeContent(contents, position, dataSource) {
+		contents.forEach(content => {
+			if (content.BrandName) {
+				content.BrandName = content.BrandName.split('|')[0]; // formalize BrandName
+			}
+			content.DataSource = dataSource;
+		});
 
-  getCMSHeroBannerItems(response) {
-		const heroBannerItems = this.cmsService
-			.getOneCMSContent(response, 'home-page-hero-banner', 'position-A')
-			.map((record, index) => {
+		if (position === 'position-A') {
+			return contents.map((record) => {
 				return {
 					albumId: 1,
 					id: record.Id,
-					source: this.sanitizer.sanitize(SecurityContext.HTML, record.Title),
-					title: this.sanitizer.sanitize(SecurityContext.HTML, record.Description),
+					source: record.Title,
+					title: record.Description,
 					url: record.FeatureImage,
 					ActionLink: record.ActionLink,
 					ActionType: record.ActionType,
-					DataSource: 'cms'
+					OverlayTheme: record.OverlayTheme ? record.OverlayTheme : '',
+					DataSource: record.DataSource
 				};
-      });
-      
+			});
 
-		if (heroBannerItems && heroBannerItems.length && this.cmsHeroBannerChanged(heroBannerItems, this.heroBannerItemsCms)) {
-			this.heroBannerItemsCms = heroBannerItems;
-			this.cmsRequestResult.tileA = true;
-			if (!this.upeRequestResult.tileA || this.tileSource.tileA === 'CMS') {
-				this.heroBannerItems = this.heroBannerItemsCms;
-				//this.dashboardService.heroBannerItemsOnline = this.heroBannerItemsCms;
-			}
-    }
+		} else {
+			return contents[0];
+		}
 	}
 
-  
 	cmsHeroBannerChanged(bannerItems1, bannerItems2) {
-		let result =  false;
+		let result = false;
 		if ((bannerItems1 && !bannerItems2)
-		|| (!bannerItems1 && bannerItems2)) {
+			|| (!bannerItems1 && bannerItems2)) {
 			result = true;
 		} else if (bannerItems1 && bannerItems2) {
 			if (bannerItems1.length !== bannerItems2.length) {
@@ -164,100 +208,9 @@ export class CptpageDashboardComponent implements OnInit, OnDestroy {
 			}
 		}
 		return result;
-  }
-    
-	getCMSCardContentB(response) {
-		const cardContentPositionB = this.cmsService.getOneCMSContent(
-			response,
-			'half-width-title-description-link-image',
-			'position-B'
-		)[0];
-		if (cardContentPositionB) {
-			this.cardContentPositionBCms = cardContentPositionB;
-			if (this.cardContentPositionBCms.BrandName) {
-				this.cardContentPositionBCms.BrandName = this.cardContentPositionBCms.BrandName.split('|')[0];
-			}
-			this.cardContentPositionBCms.DataSource = 'cms';
-			this.cmsRequestResult.tileB = true;
-			if (!this.upeRequestResult.tileB || this.tileSource.tileB === 'CMS') {
-				this.cardContentPositionB = this.cardContentPositionBCms;
-				//this.dashboardService.cardContentPositionBOnline = this.cardContentPositionBCms;
-			}
-		}
-  }
-    
-	getCMSCardContentC(response) {
-		const cardContentPositionC = this.cmsService.getOneCMSContent(
-			response,
-			'half-width-title-description-link-image',
-			'position-C'
-		)[0];
-		if (cardContentPositionC) {
-			this.cardContentPositionCCms = cardContentPositionC;
-			if (this.cardContentPositionC.BrandName) {
-				this.cardContentPositionC.BrandName = this.cardContentPositionC.BrandName.split('|')[0];
-			}
-			this.cardContentPositionCCms.DataSource = 'cms';
-			this.cmsRequestResult.tileC = true;
-			if (!this.upeRequestResult.tileC || this.tileSource.tileC === 'CMS') {
-				this.cardContentPositionC = this.cardContentPositionCCms;
-				//this.dashboardService.cardContentPositionCOnline = this.cardContentPositionCCms;
-			}
-		}
 	}
 
-	getCMSCardContentD(response) {
-		const cardContentPositionD = this.cmsService.getOneCMSContent(
-			response,
-			'full-width-title-image-background',
-			'position-D'
-		)[0];
-		if (cardContentPositionD) {
-			this.cardContentPositionDCms = cardContentPositionD;
-			this.cardContentPositionDCms.DataSource = 'cms';
-			this.cmsRequestResult.tileD = true;
-			if (!this.upeRequestResult.tileD || this.tileSource.tileD === 'CMS') {
-				this.cardContentPositionD = this.cardContentPositionDCms;
-				//this.dashboardService.cardContentPositionDOnline = this.cardContentPositionDCms;
-			}
-		}
-  }
-  
-	getCMSCardContentE(response) {
-		const cardContentPositionE = this.cmsService.getOneCMSContent(
-			response,
-			'half-width-top-image-title-link',
-			'position-E'
-		)[0];
-		if (cardContentPositionE) {
-			this.cardContentPositionECms = cardContentPositionE;
-			this.cardContentPositionECms.DataSource = 'cms';
-			this.cmsRequestResult.tileE = true;
-			if (!this.upeRequestResult.tileE || this.tileSource.tileE === 'CMS') {
-				this.cardContentPositionE = this.cardContentPositionECms;
-				//this.dashboardService.cardContentPositionEOnline = this.cardContentPositionECms;
-			}
-		}
+	ngOnDestroy() {
 	}
-
-	getCMSCardContentF(response) {
-		const cardContentPositionF = this.cmsService.getOneCMSContent(
-			response,
-			'half-width-top-image-title-link',
-			'position-F'
-		)[0];
-		if (cardContentPositionF) {
-			this.cardContentPositionFCms = cardContentPositionF;
-			this.cardContentPositionFCms.DataSource = 'cms';
-			this.cmsRequestResult.tileF = true;
-			if (!this.upeRequestResult.tileF || this.tileSource.tileF === 'CMS') {
-				this.cardContentPositionF = this.cardContentPositionFCms;
-				//this.dashboardService.cardContentPositionFOnline = this.cardContentPositionFCms;
-			}
-		}
-	}
-
-  ngOnDestroy() {
-  }
 
 }

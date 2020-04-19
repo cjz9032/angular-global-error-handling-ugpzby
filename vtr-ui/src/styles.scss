@@ -323,6 +323,34 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	}
 }
 
+/* replace system tooltip with custom */
+ngb-tooltip-window.vtr-system-tooltip.tooltip {	
+
+	.tooltip-inner {
+		padding: 0.8rem;
+		color: $main_dark;
+		border-radius: 0rem;
+		background-color: $light;
+		border: 0.1rem solid $grey_dark;
+		font-size: 1.2rem;
+		text-align: left;
+		max-width: 24.2rem;
+		
+		
+		@media #{$breakpoint_xl} {
+			max-width: 24.2rem !important;
+		}
+	}
+
+	&.show {
+		opacity: 1 !important;
+	}
+
+	.arrow::before {		
+		border-style: none;
+	}
+}
+
 .fcc-note-tooltip {
 		.tooltip-inner {
 			width: 20rem !important;
@@ -1642,7 +1670,7 @@ vtr-ui-smart-performance-scanning {
 .vtr-backlight, .vtr-backlight-thinkpad {
 	.vtr-ui-switch-row.white-theme {
 		.col-12 {
-			margin-left: 3rem;
+			margin-left: 2rem;
 		}
 	}
 	.vtr-ui-circle-radio-with-checkbox.white-theme {

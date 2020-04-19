@@ -94,10 +94,12 @@ export class WidgetSystemToolsComponent implements OnInit {
 
 	openWaringModal() {
 		let waringModalRef = this.modalService.open(ModalGamingPromptComponent, { backdrop:'static',windowClass: 'modal-prompt' });
-		waringModalRef.componentInstance.title="gaming.dashboard.device.warningPromptPopup.legionAccessory";
-		waringModalRef.componentInstance.description = "gaming.dashboard.device.warningPromptPopup.accessoryDesc";
-		waringModalRef.componentInstance.comfirmButton="gaming.dashboard.device.warningPromptPopup.install";
-		waringModalRef.componentInstance.cancelButton="gaming.dashboard.device.legionEdge.driverPopup.link";
+		waringModalRef.componentInstance.info= {
+			title: "gaming.dashboard.device.warningPromptPopup.legionAccessory",
+			description: "gaming.dashboard.device.warningPromptPopup.accessoryDesc",
+			comfirmButton: "gaming.dashboard.device.warningPromptPopup.install",
+			cancelButton: "gaming.dashboard.device.legionEdge.driverPopup.link"
+		}
 		waringModalRef.componentInstance.emitService.subscribe((emmitedValue) => {
 			if(emmitedValue === 1) {
 				window.open('https://pcsupport.lenovo.com/downloads/legionaccessorycentral');

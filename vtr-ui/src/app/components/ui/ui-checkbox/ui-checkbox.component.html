@@ -32,7 +32,9 @@
 	</label>
 	<ng-template #elseBlock>
 		<label [for]="componentId"
-		aria-hidden="true"
+			aria-hidden="true"
+			id="{{componentId}}"
+			role="checkbox"
 			class="custom-control-label">
 			{{ label }}
 		</label>

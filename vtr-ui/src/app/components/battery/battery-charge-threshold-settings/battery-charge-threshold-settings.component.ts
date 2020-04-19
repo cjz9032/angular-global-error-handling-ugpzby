@@ -154,6 +154,7 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 		}
 		toggle.focus()
 	}
+
 	ddToggleKBNavigator($event, activeDropdown: NgbDropdown, type, value) {
 		switch ($event.keyCode) {
 			case KeyCode.SPACE:

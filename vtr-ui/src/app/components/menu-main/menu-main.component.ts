@@ -11,7 +11,7 @@ import { AdPolicyId } from 'src/app/enums/ad-policy-id.enum';
 import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
 import { LenovoIdStatus } from 'src/app/enums/lenovo-id-key.enum';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { MenuItem } from 'src/app/enums/menuItem.enum';
+import { MenuItemEvent } from 'src/app/enums/menuItemEvent.enum';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
 import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.service';
@@ -506,7 +506,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 				case NetworkStatus.Online:
 					this.modernPreloadService.getIsEntitled();
 					break;
-				case MenuItem.MenuItemChange:
+				case MenuItemEvent.MenuItemChange:
 					this.updateMenu(notification.payload);
 					break;
 				case LenovoIdStatus.LoggingOut:
