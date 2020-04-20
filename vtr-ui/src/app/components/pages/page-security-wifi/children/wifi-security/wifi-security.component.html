@@ -117,25 +117,26 @@
 										</div>
 									</div>
 								</div>
-								<div class="card-foot"
+								<div class="card-foot" 
+									tabindex="0" 
+									(click)="clickShowMore()" 
+									(keyup.enter)="clickShowMore()"
 									*ngIf="data.hasMore">
 									<a id="sa-ws-lnk-wh-showmore"
-										tabindex="0"
+										tabindex="-1"
 										vtrMetrics
 										metricsItem="showMoreWiFiHistory"
 										metricsEvent="featureClick"
 										class="show-more"
 										href="#"
-										(click)="clickShowMore()"
 										*ngIf="isShowMoreLink">{{'security.wifisecurity.container.showmore' | translate}}</a>
 									<a id="sa-ws-lnk-wh-showless"
-										tabindex="0"
+										tabindex="-1"
 										vtrMetrics
 										metricsItem="showLessWiFiHistory"
 										metricsEvent="featureClick"
 										class="show-more"
 										href="#"
-										(click)="clickShowMore()"
 										*ngIf="!isShowMoreLink">{{'security.wifisecurity.container.showless'| translate}}</a>
 								</div>
 							</div>
