@@ -1,5 +1,5 @@
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, HostListener } from '@angular/core';
 import { ModalSmartPerformanceSubscribeComponent } from '../../modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
 import { NgbModal, NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
 import { CommonService } from 'src/app/services/common/common.service';
@@ -17,7 +17,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		private commonService: CommonService,
 		private calendar: NgbCalendar,
 		private logger: LoggerService,
-		public smartPerformanceService: SmartPerformanceService
+		public smartPerformanceService: SmartPerformanceService,
 	) {}
 	public machineFamilyName: string;
 	public today = new Date();
@@ -315,6 +315,19 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 			this.scheduleTab = value;
 		}
 	}
+
+	@HostListener('window:click', ['$event'])
+	onClick(event:Event): void {
+		if(this.scheduleTab === '') {
+			return;
+		}
+		if(event.target) {
+			if(event.target['classList'][1]!=="fa-chevron-down" ) {
+				this.scheduleTab = '';
+			}
+		}
+	}
+
 	changeScanFrequency(value) {
 		this.frequencyValue = value;
 		this.scheduleTab = '';
