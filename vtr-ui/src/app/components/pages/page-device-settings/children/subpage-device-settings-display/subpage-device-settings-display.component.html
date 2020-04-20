@@ -37,7 +37,7 @@
 									[theme]="'white'"
 									[switchId]="'day-time-color-temp'">
 									<div class="displayColorTemperatureLink">
-										<span
+										<span role="heading"
 											id="displayColorTemperature-link-click">{{'device.deviceSettings.displayCamera.display.displayColorTemperature.link.click' | translate}}</span>&nbsp;
 										<a id="goto-nightlight-link"
 											href="javascript:void()"
@@ -46,7 +46,7 @@
 											(click)="launchProtocol('ms-settings:nightlight')"
 											(keydown.enter)="launchProtocol('ms-settings:nightlight')"
 											class="nightlight-link">{{'device.deviceSettings.displayCamera.display.displayColorTemperature.link.here' | translate}}</a>&nbsp;
-										<span
+										<span role="heading"
 											id="displayColorTemperature-link">{{'device.deviceSettings.displayCamera.display.displayColorTemperature.link.rest' | translate}}</span>
 									</div>
 								</vtr-ui-row-switch>
@@ -82,6 +82,7 @@
 												<!--<div class="feature-note pl-5 pr-5 pt-4 pb-4 m-4" -->
 												<div class="feature-note p-4 ml-4"
 													id="day-time-color-temp-note"
+													role="heading"
 													attr.aria-label="eyecare mode note. {{'device.deviceSettings.displayCamera.display.dispColorTemp.note.description' | translate }}">
 													<p>
 														{{'device.deviceSettings.displayCamera.display.dispColorTemp.note.description' | translate}}

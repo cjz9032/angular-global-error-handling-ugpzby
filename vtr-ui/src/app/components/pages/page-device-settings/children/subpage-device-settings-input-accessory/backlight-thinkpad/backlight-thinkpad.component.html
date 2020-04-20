@@ -12,7 +12,8 @@
 	<div class="row"
 		role="radiogroup"
 		tabindex="0"
-		aria-label="backlight mode list, select using arrow keys">
+		aria-label="backlight mode list, select using arrow keys"
+		class="backlight-modes-list">
 		<vtr-ui-circle-radio-with-checkbox *ngFor="let mode of modes"
 			[theme]="'white'"
 			[radioId]="'backlightMode' + mode.value | removeSpace"

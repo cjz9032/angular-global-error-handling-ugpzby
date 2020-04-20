@@ -16,7 +16,6 @@ export class ModalWifiSecurityLocationNoticeComponent implements OnInit {
 	@Input() description: string;
 	@Input() url: string;
 	@Input() wifiSecurity: WifiSecurity;
-	// @Input() okHandler: Function;
 	@Input() closeButtonId: string;
 	@Input() agreeButtonId: string;
 	@Input() cancelButtonId: string;
@@ -32,19 +31,13 @@ export class ModalWifiSecurityLocationNoticeComponent implements OnInit {
 	ngOnInit() {
 	}
 
-
-	// closeModal() {
-	// 	this.activeModal.close('close');
-	// }
-
-	public onOkClick($event: any) {
+	public onOkClick() {
 		this.activeModal.close(true);
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag, 'yes');
 		WinRT.launchUri(this.url);
-		// this.okHandler();
 	}
 
-	public onCancelClick($event: any) {
+	public onCancelClick() {
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag, 'no');
 		this.activeModal.close('cancelClick');
 		document.getElementById('main-wrapper').focus();

@@ -228,7 +228,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			if (!this.smartAssistCapability.isAntiTheftSupported.available) {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'sensing');
 				this.checkMenuItemsLength();
-			}	
+			}
 		} catch (error) {
 			this.logger.exception('initVisibility', error.message);
 		}
@@ -551,7 +551,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 						this.intelligentSecurity.zeroTouchLoginDistance = response;
 						this.smartAssistCache.intelligentSecurity.zeroTouchLoginDistance = this.intelligentSecurity.zeroTouchLoginDistance;
 					})
-				}			
+				}
 				this.logger.info(`onDistanceSensitivityAdjustToggle.setZeroTouchLoginAdjustStatus ${isSuccess}`, this.intelligentSecurity.isZeroTouchLoginAdjustEnabled);
 			});
 	}
@@ -624,7 +624,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 
 	public SetZeroTouchLockDistanceSensitivity($event: number) {
 		const value = $event;
-		this.hsaIntelligentSecurity.zeroTouchLockDistance = value;		
+		this.hsaIntelligentSecurity.zeroTouchLockDistance = value;
 		try {
 			if (this.smartAssist.isShellAvailable) {
 				this.smartAssist.setZeroTouchLockDistanceSensitivity(value)

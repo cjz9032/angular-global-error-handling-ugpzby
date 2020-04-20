@@ -142,7 +142,9 @@
 			}
 
 			.navbar-nav {
+				z-index: 1;
 				.nav-item {
+					position: relative;
 					.nav-link {
 						// @media #{$mediaquery_7} {
 						// 	display: none;
@@ -449,6 +451,9 @@
 							line-height: 4rem;
 							border-bottom: none;
 							border-left: transparent solid 0.5rem;
+							position: relative;
+							z-index: 1;
+
 
 							&.active {
 								border-bottom: none;
@@ -458,9 +463,19 @@
 									color: $main;
 								}
 							}
+							&:focus{
+								outline: 0;
+								~ .outline {
+									height: 3rem;
+									border: 0.1rem solid $light;
+									top: 0.5rem;
+									z-index: 0;
+								}
+							}
 						}
 
 						.dropdown-toggle {
+							z-index: 1;
 							&::before {
 								display: none;
 							}
@@ -516,6 +531,7 @@
 			padding: 0.25rem 1rem;
 			position: relative;
 			text-align: center;
+			margin-right: 0.3rem;
 
 			@media #{$breakpoint_xl} {
 				display: block;
@@ -535,6 +551,9 @@
 				left: 5.4rem;
 				top: 1.2rem;
 			}
+			&:focus {
+				@include outline-white;
+			}
 		}
 
 		.fa-icon {
@@ -548,6 +567,10 @@
 			position: relative;
 			top: 0.3rem;
 		}
+	}
+
+	.warranty-icon {
+		padding-left: 1rem;
 	}
 }
 
@@ -574,8 +597,8 @@
 }
 
 .disabled {
-    pointer-events: none;
-    color: #ccc !important;
+	pointer-events: none;
+	color: #ccc !important;
 }
 
 @media #{$breakpoint_xl} {
@@ -596,3 +619,29 @@
 	}
 }
 */
+
+
+.nav-link:focus ~ .outline {
+	position: absolute;
+	width: 100%;
+	height: 3.5rem;
+	border: 0.1rem solid #fff;
+	top: 2.5rem;
+	z-index: -1;
+}
+
+.nav-link {
+	&.user:focus ~ .outline {
+		position: absolute;
+		width: 2.5rem;
+		height: 2.5rem;
+		border: 0.1rem solid #fff;
+		top: 3.3rem;
+		right: 2.3rem;
+		z-index: 1;
+	}
+}
+
+.nav-link.active ~ .outline  {
+	display: none;
+}

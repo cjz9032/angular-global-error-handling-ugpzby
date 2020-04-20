@@ -100,7 +100,7 @@
 										id="myDevice-status-learn-more-{{item.id}}"
 										title=""
 										*ngIf="item.isSystemLink===undefined || (item.isSystemLink!==undefined && item.isSystemLink===false && item.status !== 4)"
-										[ngbTooltip]="item.detail" tooltipClass="vtr-tooltip" container="body"
+										[ngbTooltip]="item.detail" tooltipClass="vtr-system-tooltip" container="body"
 										>
 										<p class="detail"
 											[ngClass]="{'highlight':item.asLink}">
@@ -119,7 +119,7 @@
 										id="myDevice-status-learn-more-{{item.id}}"
 										title=""
 										(click)="deviceService.launchUri(item.path)"
-										[ngbTooltip]="item.detail" tooltipClass="vtr-tooltip" container="body"
+										[ngbTooltip]="item.detail" tooltipClass="vtr-system-tooltip" container="body"
 										>
 										<p class="detail"
 											[ngClass]="{'highlight':item.asLink}">

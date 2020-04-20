@@ -1894,7 +1894,7 @@
                 "zeroTouchLoginForIdea": {
                     "title": "Logowanie bez dotyku",
                     "caption": "Ta funkcja umożliwia zwiększenie wydajności pracy poprzez automatyczne wybudzanie komputera lub logowanie Cię na nim. Aby skorzystać z tej funkcji, musisz zarejestrować swoją twarz w funkcji Windows Hello.",
-                    "tooltip": "Ta funkcja umożliwia automatyczne zalogowanie się do systemu przy użyciu funkcji rozpoznania twarzy, gdy znajdziesz się przed komputerem lub zbliżysz się do niego na odległość 1,2 lub 1,5 metra. Jeśli jesteś na zewnątrz, a nie w biurze, musisz być bliżej komputera, a wybudzanie potrwa dłużej. <br>Maksymalna odległość wykrywania może się różnić w zależności od możliwości czujnika. Szczegółowe informacje znajdują się w <i>podręczniku użytkownika</i> dołączonym do komputera."
+                    "tooltip": "Ta funkcja umożliwia automatyczne zalogowanie się do systemu przy użyciu funkcji rozpoznania twarzy, gdy znajdziesz się przed komputerem lub zbliżysz się do niego na odległość 1,2 lub 1,5 metra. Jeśli jesteś na zewnątrz, a nie w biurze, musisz być bliżej komputera, a wybudzanie potrwa dłużej. <br>Maksymalna odległość wykrywania może się różnić w zależności od możliwości czujnika. Szczegółowe informacje znajdują się w podręczniku użytkownika dołączonym do komputera."
                 },
                 "zeroTouchLock": {
                     "title": "Blokada bez dotyku",
@@ -1981,10 +1981,8 @@
                     "description2": "Funkcja wykorzystuje czujniki i kamerę do wykrywania Twojej obecności. Jednak ta funkcja NIE zbiera żadnych danych osobowych.",
                     "description3": "1. Aby skorzystać z powyższych funkcji, ustaw ekran komputera pod odpowiednim kątem, aby umożliwić rozpoznawanie Twojej twarzy.",
                     "description4": "2. Powyższe funkcje nie są obsługiwane, gdy:",
-                    "description5a1": "a. Komputer działa w trybie namiotu, tabletu, podstawki lub jest odłączony. Informacje dotyczące trybów obsługiwanych na Twoim komputerze zawiera ",
-                    "description5a2": "Podręcznik użytkownika ",
-                    "description5a3": "dołączony do komputera.",
-                    "description5b": "b. Komputer znajduje się w trybie hibernacji lub został wyłączony.",
+                    "description5a": "a. Komputer działa w trybie namiotu, tabletu, podstawki lub jest odłączony. Informacje dotyczące trybów obsługiwanych na Twoim komputerze zawiera podręcznik użytkownika dołączony do komputera.",
+					"description5b": "b. Komputer znajduje się w trybie hibernacji lub został wyłączony.",
                     "description6": "3. Po włączeniu trybu samolotowego komputera te funkcje są wyłączone.",
                     "description7": "Dokładność zależy od wielkości ciała, postawy i częstotliwości ruchu. Jeśli komputer zostanie nieoczekiwanie zablokowany, dostosuj pasek czułości, aby poprawić dokładność."
                 },
