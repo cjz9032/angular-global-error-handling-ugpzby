@@ -35,11 +35,13 @@
 								[theme]="'white'">
 								<!-- image -->
 								<div class="no-border-bottom pt-4 intelligent-security-image">
-									<img [src]="image" id="intelligent-security-image"/>
+									<img [src]="image" role="img" id="intelligent-security-image"/>
 									<div class="intelligent-security-image-word">
 										<p class="intelligent-security-image-word-title"
+											role="text"
 											id="intelligent-security-image-word-title">{{'device.smartAssist.intelligentSecurity.image.title' | translate}}</p>
 										<p class="intelligent-security-image-word-description"
+											role="text"
 											id="intelligent-security-image-word-description">{{'device.smartAssist.intelligentSecurity.image.description' | translate}}</p>
 									</div>
 								</div>
@@ -161,7 +163,7 @@
 															</fa-icon>
 														</div> -->
 														<div class="col">
-															<p id="smart-assist-intelligent-security-note">
+															<p id="smart-assist-intelligent-security-note" role="text">
 																{{'device.smartAssist.intelligentSecurity.note.description1' | translate}}
 																<a id="goto_hello_link"
 																	role="link"
@@ -629,7 +631,8 @@
 								<!-- note -->
 								<div class="row">
 									<div class="feature-note p-4 my-4 ml-4">
-										<p id="smart-assist-intelligent-security-note-desc1">
+										<p id="smart-assist-intelligent-security-note-desc1"
+											role="text">
 											{{'device.smartAssist.intelligentSecurity.note.description3' | translate}}
 										</p>
 										<div>
