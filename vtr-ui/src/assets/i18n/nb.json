@@ -1452,10 +1452,10 @@
                         "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
                             "dynamic": "DYNAMIC",
-							"movie": "MOVIE",
-							"music": "MUSIC",
-							"games": "GAME",
-							"voip": "VOICE"
+                            "movie": "MOVIE",
+                            "music": "MUSIC",
+                            "games": "GAME",
+                            "voip": "VOICE"
                         },
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
@@ -1982,7 +1982,7 @@
                     "description3": "1. Hvis du vil bruke funksjonene ovenfor, justerer du skjermen til en passende vinkel, slik at ansiktet ditt kan gjenkjennes.",
                     "description4": "2. Funksjonene ovenfor støttes ikke når:",
                     "description5a": "a. Datamaskinen din er i Telt-modus, Nettbrett-modus, Stativ-modus eller frakoblet modus. Se brukerveiledningen som følger med datamaskinen for å se modusene som støttes på den.",
-					"description5b": "b. Datamaskinen er i dvalemodus eller er slått av.",
+                    "description5b": "b. Datamaskinen er i dvalemodus eller er slått av.",
                     "description6": "3. Disse funksjonene deaktiveres hvis flymodus aktiveres på datamaskinen.",
                     "description7": "Nøyaktigheten varierer avhengig av kroppsstørrelse, sittestilling og bevegelseshyppighet. Hvis datamaskinen blir uventet låst, kan du justere følsomheten for å forbedre nøyaktigheten."
                 },
@@ -3131,7 +3131,7 @@
         "betaSettingTitle": "Beta-program",
         "betaProgram": "Beta-program",
         "betaSettingDescription": "Prøv de nyeste funksjonene vi jobber med.",
-        "betaSettingNewDescription": "Vi har gleden av å invitere deg til Beta-programmet for smart ytelse. Den hjelper deg med å forbedre ytelsen på PC-en din ved å:<br/><ul class='pl-4'><li>Proaktivt diagnostisere feil og optimalisere innstillinger.</li><li>Øke Internett-ytelsen med optimalisering av nettverks og nettleser.</li><li>Utføre hurtigsøk og utbedring uten å bruke det eksisterende antivirusprogrammet.</li></ul>"
+        "betaSettingNewDescription": "Vi har gleden av å invitere deg til Beta-programmet for Smart Performance. Den hjelper deg med å forbedre ytelsen på PC-en din ved å:<br/><ul class='pl-4'><li>Proaktivt diagnostisere feil og optimalisere innstillinger.</li><li>Øke Internett-ytelsen med optimalisering av nettverks og nettleser.</li><li>Utføre hurtigsøk og utbedring uten å bruke det eksisterende antivirusprogrammet.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Avbryt",

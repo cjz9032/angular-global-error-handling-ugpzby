@@ -29,7 +29,9 @@
 			&:focus {
 				outline: none !important;
 				box-shadow: none;
-				@include button-outline-blue;
+				&::after {
+					@include button-outline-blue;
+				}
 			}
 
 			.text {

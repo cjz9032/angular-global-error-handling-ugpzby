@@ -97,11 +97,11 @@ export class NetworkboostAddAppsComponent implements OnInit, OnChanges, AfterVie
 		} catch (error) {
 			this.loading = false;
 			this.noAppsRunning = true;
-			this.focusElement('nbAddApps');
+			this.focusElement('gaming_networkboost_running_applist');
 			this.loggerService.error('networkboost-add-apps.component => ERROR in refreshNetworkBoostList()', error);
 		} finally {
 			setTimeout(() => {
-				this.focusElement('nbAddApps');
+				this.focusElement('gaming_networkboost_running_applist');
 			}, 2);
 		}
 	}

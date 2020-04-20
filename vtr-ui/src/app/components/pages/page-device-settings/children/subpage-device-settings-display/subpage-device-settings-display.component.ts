@@ -696,7 +696,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 			this.displayService.getEyeCareModeState(),
 			this.displayService.getDisplayColorTemperature(),
 			this.displayService.getDaytimeColorTemperature()
-		]).then(([status, displayColorTemperature, daytimeColorTemperature]) => {
+		]).then(([status, displayColorTemperature, daytimeColorTemperature]: any[]) => {
 			if (status.status) {
 				if (displayColorTemperature.current < 3400 && !this.isSet.isSetEyecaremodeValue) {
 					this.onEyeCareTemperatureChange(3400);
