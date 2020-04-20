@@ -79,16 +79,16 @@ describe('ModalBatteryChargeThresholdComponent', () => {
 		// 	expect(modal).toBeTruthy();
 		// }));
 
-		it('button clicked called closeModal', async(() => {
+		it('button clicked called closeModal', async(async () => {
 			const { fixture, component } = setup();
 			spyOn(component, 'closeModal');
 
 			fixture.detectChanges();//ngOnInit
 			let button = fixture.debugElement.nativeElement.querySelector('#ds-threshold-popup-close-button');
 			button.click();
-			fixture.whenStable().then(() => {
-				expect(component.closeModal).toHaveBeenCalled();
-			});
+			await fixture.whenStable();
+			expect(component.closeModal).toHaveBeenCalled();
+
 		}));
 
 

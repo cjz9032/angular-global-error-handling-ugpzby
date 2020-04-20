@@ -45,6 +45,7 @@
 							<span *ngIf="caption">
 								<div class="caption"
 									#captionRef
+									role="heading"
 									id="{{switchId}}-caption"
 									[innerHTML]="caption.length > 70  && !contentExpand  && readMoreText.length > 0 ? (caption | slice: 0:70) : caption">
 								</div>
@@ -135,7 +136,7 @@
 						[attr.aria-label]="title +' tooltip, which reads: '+ tooltipText"
 						class="right-icon"
 						tabindex="0"
-						role="none"
+						role="img"
 						triggers="manual"
 						placement="left"
 						[ngbTooltip]="tooltipRef"
@@ -158,7 +159,7 @@
 						class="right-icon"
 						triggers="manual"
 						placement="left"
-						role="none"
+						role="img"
 						[ngbTooltip]="smartTooltipRef"
 						#rightToolTip2="ngbTooltip"
 						[autoClose]="true"
@@ -180,7 +181,7 @@
 						class="right-icon"
 						triggers="manual"
 						placement="left"
-						role="none"
+						role="img"
 						[ngbTooltip]="fnCtrltoolTipRef"
 						#rightToolTip3="ngbTooltip"
 						[autoClose]="true"

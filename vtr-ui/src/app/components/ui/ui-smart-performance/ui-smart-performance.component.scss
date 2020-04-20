@@ -204,13 +204,13 @@
 						margin-top: 1.8rem;
 						margin-bottom: 0rem;
 						font-size: 1.3rem;
-						width: calc(71% - 2rem);
+						width: calc(60.5% - 2rem);
 						text-align: center;
 						position: relative;
 						font-weight: $weight_bold;
 						@media #{$breakpoint_sm}{
 							font-size: 1rem;
-							width: calc(71% - 2rem);
+							width: calc(60.5% - 2rem);
 						}
 						span{
 							position: relative;
@@ -240,6 +240,14 @@
 							left: 0;
 							bottom: 0.5rem;
 							z-index: 0;
+						}
+						&.running-well{
+							width: 39%;
+							margin-left: 0.5%;
+							color: $green_darker;
+							&::before {
+								border-color: $green_darker;
+							}
 						}
 					}
 				}

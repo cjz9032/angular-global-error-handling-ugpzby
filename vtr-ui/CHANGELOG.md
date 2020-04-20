@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.19](https://bitbucket.tc.lenovo.com///compare/v1.5.18...v1.5.19) (2020-04-20)
+
+
+### Bug Fixes
+
+* **VAN-16563:** ut ([39efece](https://bitbucket.tc.lenovo.com///commit/39efece8450ab0d9654e3a5511b5e4ad693d8d03))
+* **Wifi security :** Append "h2" tag ([bb60ca3](https://bitbucket.tc.lenovo.com///commit/bb60ca3d50cca594faeaf5e3c4bce42ade5c3cbb))
+* **Wifi security :** Delete the "attr.aria-label" attribute ([0ef4da6](https://bitbucket.tc.lenovo.com///commit/0ef4da6c12711040418178ed6f76c418a23fdc21))
+* do not use legacy property ([31250ce](https://bitbucket.tc.lenovo.com///commit/31250cee568902bd97e0d8c4c71c536da6cedca1))
+* **Wifi security:** tabindex error on 'show more/show less' ([e0e00e0](https://bitbucket.tc.lenovo.com///commit/e0e00e0352ff269ae77921e3cae9f416150f87c7))
+* do not use legacy property ([5785f77](https://bitbucket.tc.lenovo.com///commit/5785f7758c437115b33727c36a5f8fcc0d79179a))
+* **Wifi security:** fix tabindex order in wifi security ([f135a41](https://bitbucket.tc.lenovo.com///commit/f135a41c18387ef4ee613c7c0552447260bcbf30))
+* **Wifi security:** tabindex error on 'show more/show less' ([9766941](https://bitbucket.tc.lenovo.com///commit/9766941ed9e95d21bcafc8ff20413e4938440bca))
+
+### [1.5.18](https://bitbucket.tc.lenovo.com///compare/v1.5.17...v1.5.18) (2020-04-17)
+
+
+### Bug Fixes
+
+* **menu:** remove segment menus and update the hide ([fae59a6](https://bitbucket.tc.lenovo.com///commit/fae59a6e8917aa461634e4d9c7b2979c3137a4c1))
+* **Wifi security:** close enable location dialog, the tab index wrong ([26f83f4](https://bitbucket.tc.lenovo.com///commit/26f83f404c50caa710097351721ff8f61216edd6))
+* **Wifi security:** tabindex error in threat locator button ([90ffcdb](https://bitbucket.tc.lenovo.com///commit/90ffcdb1936ef8d90cdab1ddbe86a35318eb7c09))
+* **Wifi Security :** Set the value of "tabindex" attribute to "-1" ([fb57c42](https://bitbucket.tc.lenovo.com///commit/fb57c4260f6bafa3ec43be1e64c78b332c38276f))
+
 ### [1.5.17](https://bitbucket.tc.lenovo.com///compare/v1.5.16...v1.5.17) (2020-04-16)
 
 

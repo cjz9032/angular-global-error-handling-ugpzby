@@ -444,7 +444,6 @@ $high-contrast-black-yellow: #FFFF00;
 	border: 0.1rem solid $menu_hover;
 }
 @mixin button-outline-blue {
-	&:after {
 		content: '';
 		display: block;
 		position: absolute;
@@ -454,5 +453,5 @@ $high-contrast-black-yellow: #FFFF00;
 		width: calc(100% + 0.8rem);
 		height: calc(100% + 0.8rem);
 		border: thin solid $menu_hover;
-	}
 }
+

@@ -29,7 +29,6 @@
 				a {
 					text-decoration: none;
 					display: inline-block;
-					padding: 1rem;
 					border-radius: 1.2rem;
 					width: 100%;
 					background: transparent;
@@ -52,7 +51,7 @@
 					text-align: center;
 					color: $light;
 					margin: auto;
-					padding: 0;
+					padding: 1rem;
 					.system-icon {
 						cursor: pointer;
 						display: flex;

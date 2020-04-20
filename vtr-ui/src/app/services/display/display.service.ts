@@ -7,11 +7,11 @@ import { DeviceMonitorStatus } from 'src/app/enums/device-monitor-status.enum';
 import { WhiteListCapability } from '../../data-models/eye-care-mode/white-list-capability.interface';
 @Injectable()
 export class DisplayService {
-	private displayEyeCareMode: any;
-	private cameraPrivacyStatus: any;
-	private cameraSettings: any;
+	displayEyeCareMode: any;
+	cameraPrivacyStatus: any;
+	cameraSettings: any;
 	private privacyGuardSettings: any;
-	private oledSettings: any;
+	oledSettings: any;
 	private priorityControl: any;
 	public isShellAvailable = false;
 	@Output() windowResize: EventEmitter<any> = new EventEmitter();

@@ -5,3 +5,11 @@ export class DolbyModeResponse {
         public currentMode: string
     ) {}
 }
+export class DolbyAudioProfileResponse {
+	constructor(
+        public eCourseStatus: string, 
+        public voIPRadioStatus: string, 
+        public entertainmentRadioStatus: string,
+        public aOCheckboxStatus:boolean
+    ) {}
+}

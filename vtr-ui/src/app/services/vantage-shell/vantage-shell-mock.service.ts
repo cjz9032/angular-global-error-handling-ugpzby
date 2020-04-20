@@ -2176,7 +2176,7 @@ export class VantageShellService {
 			setBacklight: (status) => Promise.resolve({
 				errorcode: CommonErrorCode.SUCCEED
 			}),
-			GetBacklightOnSystemChange: (settings) => Promise.resolve({
+			getBacklightOnSystemChange: (settings) => Promise.resolve({
 				settingList: {
 					setting: [
 						{

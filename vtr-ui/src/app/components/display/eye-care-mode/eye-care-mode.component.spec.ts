@@ -49,7 +49,7 @@ describe('EyeCareModeComponent', () => {
 
 	it('should test onEyeCareTemparatureChange method', () => {
 		spyOn(component.eyeCareTemperatureChange, 'emit').and.callThrough();
-		component.onEyeCareTemperatureChange(changeContext);
+		component.onEyeCareTemperatureChange(changeContext.value);
 		expect(component.eyeCareTemperatureChange.emit).toHaveBeenCalled();
 	});
 	it('should test onEyeCareTemparatureValueChange method', () => {
@@ -57,7 +57,7 @@ describe('EyeCareModeComponent', () => {
 			component.eyeCareTemperatureValueChange,
 			'emit'
 		).and.callThrough();
-		component.onEyeCareTemperatureValueChange(changeContext);
+		component.onEyeCareTemperatureValueChange(changeContext.value);
 		expect(component.eyeCareTemperatureValueChange.emit).toHaveBeenCalled();
 	});
 	it('should test onSunsetToSunrise method', () => {
