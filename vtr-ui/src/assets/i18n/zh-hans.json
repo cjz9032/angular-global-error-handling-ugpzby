@@ -212,7 +212,7 @@
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 },
-                "smartPerformance": "系统优化"
+                "smartPerformance": "Smart Performance"
             },
             "narrator": {
                 "pageTitle": {
@@ -3131,7 +3131,7 @@
         "betaSettingTitle": "Beta 程序",
         "betaProgram": "Beta 程序",
         "betaSettingDescription": "试用我们正在开发的最新功能。",
-        "betaSettingNewDescription": "我们很高兴邀请您加入“系统优化”的测试版计划。它可以通过以下方式帮助提高电脑的性能：<br/><ul class='pl-4'><li>主动诊断错误并优化设置。</li><li>通过网络和浏览器优化提高因特网性能。</li><li>在不使用现有反病毒程序的情况下执行快速扫描和修复。</li></ul>"
+        "betaSettingNewDescription": "我们很高兴邀请您加入 Smart Performance 的测试版计划。它可以通过以下方式帮助提高电脑的性能：<br/><ul class='pl-4'><li>主动诊断错误并优化设置。</li><li>通过网络和浏览器优化提高因特网性能。</li><li>在不使用现有反病毒程序的情况下执行快速扫描和修复。</li></ul>"
     },
     "modernPreload": {
         "cancel": "取消",

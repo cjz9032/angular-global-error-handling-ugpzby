@@ -172,7 +172,8 @@
 							top: 40%;
 							letter-spacing: 0;
 							@media #{$breakpoint_sm}{
-								top: 33%;
+								top: 32.3%;
+								right: 1.5rem;
 							}
 						}
 						vtr-widget-speedometer {
@@ -187,7 +188,7 @@
 							}
 							@media #{$breakpoint_sm}{
 								right: 0;
-								transform: scale(0.2);
+								transform: scale(0.18);
 								transform-origin: 0% 0%;
 								left: 70%;
 								margin-top: -1.2rem;
@@ -263,6 +264,7 @@
 			margin-top: -2rem;
 			margin-bottom: 1rem;
 			padding: 0.5rem;
+			width: auto;
 		}
         &::after {
             content: '';

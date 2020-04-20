@@ -97,6 +97,10 @@ vtr-ui-row-switch {
     .selectDropdown {
       ::ng-deep .ui-dropdown {
         height: 7.1rem !important;
+        .ui-btn-dropdown {
+          outline: 0;
+          border: 0px !important;
+        }
         .chevron {
           color: #667481 !important;
         }
@@ -104,8 +108,14 @@ vtr-ui-row-switch {
           top: 7.1rem !important;
           padding: 0.5rem 0rem !important;
           a {
+            outline: 0;
             padding: 0.8rem 1.5rem !important;
             &:hover {
+              color: hsl(0, 0%, 100%) !important;
+              background-color: #667481 !important;
+              text-decoration: blink !important;
+            }
+            &:focus {
               color: hsl(0, 0%, 100%) !important;
               background-color: #667481 !important;
               text-decoration: blink !important;

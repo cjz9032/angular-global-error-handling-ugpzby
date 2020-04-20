@@ -61,15 +61,15 @@
 									<div class="audioDolbySub pl-5"
 										*ngIf="autoDolbyFeatureStatus.status">
 										<div class="checkbox">
-											<vtr-ui-checkbox [componentId]="'smartMotionAlertSupportPhotoCheckbox'"
-												[value]="isEnableAutomaticAudio"
-												[checked]="isEnableAutomaticAudio"
+											<vtr-ui-checkbox [componentId]="'enableAutomaticAudioCheckbox'"
+												[value]="dolbyAudioProfileResponse.aOCheckboxStatus"
+												[checked]="dolbyAudioProfileResponse.aOCheckboxStatus"
 												[disabled]='automaticAudioDisabled'
 												[label]="'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioCheckboxText' | translate"
 												(toggle)='automaticAudioCheckbox($event)'>
 											</vtr-ui-checkbox>
 										</div>
-										<div *ngIf="isEnableAutomaticAudio">
+										<div *ngIf="dolbyAudioProfileResponse.aOCheckboxStatus">
 											<!-- radio buttons -->
 											<div class="slider-note">
 												<vtr-ui-rounded-rectangle-radio [radioId]="'dolbyVoipMode'"
@@ -81,7 +81,8 @@
 													[checked]="enumMode === '1'"
 													(change)="automaticAudioModeChange($event)">
 												</vtr-ui-rounded-rectangle-radio>
-												<vtr-ui-rounded-rectangle-radio [radioId]="'dolbyEntertainmentMode'"
+												<vtr-ui-rounded-rectangle-radio
+													[radioId]="'dolbyEntertainmentModeRadio'"
 													[disabled]='automaticAudioDisabled'
 													[group]="'dolbyMode'"
 													name="dolbyEntertainmentMode"
@@ -94,14 +95,16 @@
 											<!-- note -->
 											<div class="feature-note p-4"
 												*ngIf="enumMode === '1'">
-												<p id="smart-assist-zeroTouchLock-note"
-													role="text">
+												<p id="voipDescription"
+													role="text"
+													tabindex="0"
+													attr.aria-label="{{'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.voIPMode.tooltip' | translate}}">
 													{{'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.voIPMode.tooltip' | translate}}
 												</p>
 											</div>
 											<div class="feature-note p-4"
 												*ngIf="enumMode === '2'">
-												<p id="superResolution-note-description"
+												<p id="entertainmentTooltip"
 													tabindex="0"
 													attr.aria-label="{{'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.entertainmentMode.tooltip' | translate}}">
 													{{'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.entertainmentMode.tooltip' | translate}}
@@ -109,23 +112,23 @@
 												<div class="m-4">
 													<ul>
 														<li>
-															<p id="superResolution-note-description1"
+															<p id="entertainmentDescription1"
 																tabindex="0"
-																attr.aria-label="{{'device.smartAssist.superResolution.note.description1' | translate}}">
+																attr.aria-label="{{'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.entertainmentMode.description1' | translate}}">
 																{{'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.entertainmentMode.description1' | translate}}
 															</p>
 														</li>
 														<li>
-															<p id="superResolution-note-description2"
+															<p id="entertainmentDescription2"
 																tabindex="0"
-																attr.aria-label="{{'device.smartAssist.superResolution.note.description2' | translate}}">
+																attr.aria-label="{{'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.entertainmentMode.description2' | translate}}">
 																{{'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.entertainmentMode.description2' | translate}}
 															</p>
 														</li>
 														<li>
-															<p id="superResolution-note-description2"
+															<p id="entertainmentDescription3"
 																tabindex="0"
-																attr.aria-label="{{'device.smartAssist.superResolution.note.description2' | translate}}">
+																attr.aria-label="{{'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.entertainmentMode.description3' | translate}}">
 																{{'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.entertainmentMode.description3' | translate}}
 															</p>
 														</li>
@@ -136,13 +139,14 @@
 									</div>
 								</vtr-ui-row-switch>
 							</li>
-							<li class="common-li-padding">
+							<li class="common-li-padding"
+								*ngIf='eCourseStatus.available'>
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.audio.audioSmartsettings.eCourse.title' | translate"
 									componentName="audio-eCourse"
 									[caption]="'device.deviceSettings.audio.audioSmartsettings.eCourse.tooltip' | translate"
 									[isSwitchVisible]='true'
-									[leftIcon]="['icomoon', 'icomoon-LE-Microphone-volume2x']"
+									[leftIcon]="['icomoon', 'icomoon-eCourse']"
 									[rightIcon]=""
 									[readMoreText]="''"
 									[showChildContent]="false"
@@ -150,7 +154,7 @@
 									[tooltipText]=""
 									(toggleOnOff)="onToggleOfeCourseAutoOptimization($event)"
 									[isSwitchChecked]="eCourseStatus.status"
-									[showLoaderState]="microphoneLoader"
+									[showLoaderState]="eCourseLoader"
 									[switchId]="'audio-eCourse'">
 								</vtr-ui-row-switch>
 							</li>

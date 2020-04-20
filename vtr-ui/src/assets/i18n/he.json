@@ -1452,10 +1452,10 @@
                         "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
                             "dynamic": "DYNAMIC",
-							"movie": "MOVIE",
-							"music": "MUSIC",
-							"games": "GAME",
-							"voip": "VOICE"
+                            "movie": "MOVIE",
+                            "music": "MUSIC",
+                            "games": "GAME",
+                            "voip": "VOICE"
                         },
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
@@ -1982,7 +1982,7 @@
                     "description3": "1. כדי להשתמש בפונקציות המתוארות לעיל, כווננו את מסך המחשב לזווית מתאימה שתאפשר לזהות את הפנים שלכם.",
                     "description4": "2. הפונקציות לעיל אינן נתמכות כאשר:",
                     "description5a": "א. המחשב נמצא במצב אוהל, טאבלט, מעמד או מנותק. למצבים הנתמכים במחשב, עיינו במדריך למשתמש המצורף.",
-					"description5b": "ב. המחשב במצב שינה או כבוי.",
+                    "description5b": "ב. המחשב במצב שינה או כבוי.",
                     "description6": "3. אם מצב טיסה מופעל במחשב, כל התכונות האלה מושבתות.",
                     "description7": "הדיוק משתנה לפי גודל הגוף, היציבה ותדירות התנועה. אם המחשב שלכם ננעל באופן בלתי צפוי, התאימו את סרגל הרגישות כדי לשפר את הדיוק."
                 },
@@ -3131,7 +3131,7 @@
         "betaSettingTitle": "תוכנית בטא",
         "betaProgram": "תוכנית בטא",
         "betaSettingDescription": "נסו את התכונות האחרונות שאנו עובדים עליהן.",
-        "betaSettingNewDescription": "אנחנו שמחים להזמין אתכם לתוכנית בטה של ביצועים חכמים. היא עוזרת לשפר את ביצועי המחשב על ידי:<br/><ul class='pl-4'><li>אבחון באגים באופן יזום ואופטימיזציה של הגדרות.</li><li>שיפור ביצועי האינטרנט על ידי אופטימיזציה של הרשת ושל הדפדפן.</li><li>ביצוע סריקה ותיקון מהירים מבלי להשתמש בתוכנית האנטי-וירוס הקיימת.</li></ul>"
+        "betaSettingNewDescription": "אנחנו שמחים להזמין אתכם לתוכנית בטה של Smart Performance. היא עוזרת לשפר את ביצועי המחשב על ידי:<br/><ul class='pl-4'><li>אבחון באגים באופן יזום ואופטימיזציה של הגדרות.</li><li>שיפור ביצועי האינטרנט על ידי אופטימיזציה של הרשת ושל הדפדפן.</li><li>ביצוע סריקה ותיקון מהירים מבלי להשתמש בתוכנית האנטי-וירוס הקיימת.</li></ul>"
     },
     "modernPreload": {
         "cancel": "ביטול",
