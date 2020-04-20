@@ -30,7 +30,9 @@ ul{
 	&:focus {
 		outline: 0;
 		box-shadow: none;
-		@include button-outline-blue;
+		&::after {
+			@include button-outline-blue;
+		}
 	}
 }
 
