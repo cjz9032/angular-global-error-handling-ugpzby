@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { Microphone } from 'src/app/data-models/audio/microphone.model';
-import { DolbyModeResponse , DolbyAudioProfileResponse} from 'src/app/data-models/audio/dolby-mode-response';
+import { DolbyModeResponse } from 'src/app/data-models/audio/dolby-mode-response';
 import { MicrophoneOptimizeModes } from 'src/app/data-models/audio/microphone-optimize-modes';
 
 @Injectable({
@@ -22,10 +22,10 @@ export class AudioService {
 		}
 	}
 
-	getDolbyAudioProfileState(): Promise<DolbyAudioProfileResponse> {
+	setDolbyAudioProfileState(key,value) {
 		try {
 			if (this.isShellAvailable) {
-				return this.dolby.getDolbyAudioProfileState();
+				return this.dolby.getDolbyAudioProfileState(key,value);
 			}
 			return undefined;
 		} catch (error) {
@@ -33,10 +33,10 @@ export class AudioService {
 		}
 	}
 
-	setDolbyAudioProfileState(key,value) {
+	setDolbyAudioState(value) {
 		try {
 			if (this.isShellAvailable) {
-				return this.dolby.getDolbyAudioProfileState(key,value);
+				return this.dolby.setProfileState(value);
 			}
 			return undefined;
 		} catch (error) {

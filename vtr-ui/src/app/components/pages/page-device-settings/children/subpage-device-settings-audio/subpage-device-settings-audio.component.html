@@ -2,6 +2,7 @@
 	<div class="row">
 		<div class="col">
 			<vtr-ui-header-subpage [items]="headerMenuItems"
+			    [title]="title | translate"
 				[menuTitle]="'device.deviceSettings.audio.title' | translate"
 				[caption]="'device.deviceSettings.audio.description' | translate"
 				[textId]="'ds-audio'">
@@ -28,19 +29,19 @@
 									[title]="'device.deviceSettings.audio.audioSmartsettings.dolby.title' | translate"
 									componentName="Automatic Dolby Audio Settings"
 									[caption]="'device.deviceSettings.audio.audioSmartsettings.dolby.description' | translate"
-									[isSwitchVisible]="autoDolbyFeatureStatus.available"
+									[isSwitchVisible]="dolbyModeResponse.available"
 									[leftIcon]="['icomoon', 'icomoon-LE-Dolby2x']"
 									[rightIcon]=""
 									[readMoreText]="''"
 									[showChildContent]="true"
 									[theme]="'white'"
 									[tooltipText]=""
-									(toggleOnOff)="onAutomaticDolbyAudioToggleOnOff($event)"
-									[isSwitchChecked]="autoDolbyFeatureStatus.status"
+									(toggleOnOff)="onDolbyAudioToggleOnOff($event)"
+									[isSwitchChecked]="dolbyModeResponse.isAudioProfileEnabled"
 									[showLoaderState]="autoDolbyFeatureLoader"
 									[switchId]="'audio-automatic-dolby'">
 									<div class="row no-gutters tab-focus-blue pl-5"
-										*ngIf="autoDolbyFeatureStatus.status"
+										*ngIf="dolbyModeResponse.isAudioProfileEnabled"
 										role="radiogroup"
 										tabindex="0"
 										aria-label="dolby audio more list, select using arrow keys">
@@ -59,8 +60,24 @@
 										</vtr-ui-circle-radio-with-checkbox>
 									</div>
 									<div class="audioDolbySub pl-5"
-										*ngIf="autoDolbyFeatureStatus.status">
-										<div class="checkbox">
+										*ngIf="dolbyModeResponse.isAudioProfileEnabled">
+										<div class="checkbox" *ngIf="voipStatus.available">
+											<vtr-ui-checkbox [componentId]="'voipCheckbox'"
+												[value]="voipStatus.status" [checked]="voipStatus.status"
+												[disabled]='automaticAudioDisabled'
+												[label]="'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.voIPMode.radioText' | translate"
+												(toggle)='onVoipCheckboxChange($event)'>
+											</vtr-ui-checkbox>
+										</div>
+										<div class="checkbox" *ngIf ="entertainmentStatus.available">
+											<vtr-ui-checkbox [componentId]="'entertainmentCheckbox'"
+												[value]="entertainmentStatus.status" [checked]="entertainmentStatus.status"
+												[disabled]='automaticAudioDisabled'
+												[label]="'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.entertainmentMode.radioText' | translate"
+												(toggle)='onEntertainmentCheckboxChange($event)'>
+											</vtr-ui-checkbox>
+										</div>
+										<!--<div class="checkbox">
 											<vtr-ui-checkbox [componentId]="'enableAutomaticAudioCheckbox'"
 												[value]="dolbyAudioProfileResponse.aOCheckboxStatus" [checked]="dolbyAudioProfileResponse.aOCheckboxStatus"
 												[disabled]='automaticAudioDisabled'
@@ -69,7 +86,6 @@
 											</vtr-ui-checkbox>
 										</div>
 										<div *ngIf="dolbyAudioProfileResponse.aOCheckboxStatus">
-											<!-- radio buttons -->
 											<div class="slider-note">
 												<vtr-ui-rounded-rectangle-radio [radioId]="'dolbyVoipModeRadio'"
 													[disabled]='automaticAudioDisabled' [group]="'dolbyVoipMode'" name="dolbyVoipMode"
@@ -87,7 +103,6 @@
 													(change)="automaticAudioModeChange($event)">
 												</vtr-ui-rounded-rectangle-radio>
 											</div>
-											<!-- note -->
 											<div class="feature-note p-4" *ngIf="enumMode === '1'">
 												<p id="voipDescription" role="text" tabindex="0" 
 												attr.aria-label="{{'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.voIPMode.tooltip' | translate}}">
@@ -118,7 +133,7 @@
 															</ul>
 														</div>
 											</div>
-										</div>
+										</div>-->
 									</div>
 								</vtr-ui-row-switch>
 							</li>
