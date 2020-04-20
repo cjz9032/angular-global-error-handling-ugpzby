@@ -25,7 +25,7 @@ export class AudioService {
 	setDolbyAudioProfileState(key,value) {
 		try {
 			if (this.isShellAvailable) {
-				return this.dolby.getDolbyAudioProfileState(key,value);
+				return this.dolby.setDolbyAudioProfileState(key,value);
 			}
 			return undefined;
 		} catch (error) {
