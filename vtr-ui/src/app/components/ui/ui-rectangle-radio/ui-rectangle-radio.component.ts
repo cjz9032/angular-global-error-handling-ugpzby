@@ -1,16 +1,16 @@
-import { AfterViewInit, Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, AfterViewInit } from '@angular/core';
+import { KeyCode } from 'src/app/enums/key-code.enum';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from 'src/app/services/metric/metric.service';
 import { UICustomRadio } from '../ui-custom-radio/ui-custom-radio';
 import { AppEvent } from './../../../enums/app-event.enum';
-import { KeyCode } from 'src/app/enums/key-code.enum';
 
 @Component({
 	selector: 'vtr-ui-rectangle-radio',
 	templateUrl: './ui-rectangle-radio.component.html',
 	styleUrls: ['./ui-rectangle-radio.component.scss']
 })
-export class UiRectangleRadioComponent extends UICustomRadio implements OnInit, OnChanges, AfterViewInit {
+export class UiRectangleRadioComponent extends UICustomRadio implements OnInit, AfterViewInit, OnChanges {
 	@Input() radioId: string;
 	@Input() tooltip: string;
 	@Input() disabled: boolean;
@@ -24,25 +24,15 @@ export class UiRectangleRadioComponent extends UICustomRadio implements OnInit, 
 	constructor(logger: LoggerService, metrics: MetricService) { super(logger, metrics); }
 
 	ngOnInit() {
+		super.ngOnInit();// Set up radio buttons first , last etc and if none selected,set tabindex to first element
 	}
 
 	ngAfterViewInit(): void {
-		this.setRadioButtons(); // Set up radio buttons first , last etc and if none selected,set tabindex to first element
+		super.ngAfterViewInit(); // Set up radio buttons first , last etc and if none selected,set tabindex to first element
 	}
 	ngOnChanges(changes: any) {
-		// if (changes && changes.checked && !changes.checked.firstChange) {
-		// 	const elementDiv = document.getElementById('div' + this.radioId);
-		// 	if (elementDiv) {
-		// 		if (!this.checked) {
-		// 			elementDiv.setAttribute('aria-checked', 'false');
-		// 			elementDiv.tabIndex = -1;
-		// 		} else {
-		// 			elementDiv.setAttribute('aria-checked', 'true');
-		// 			elementDiv.tabIndex = 0;
-		// 			elementDiv.focus();
-		// 		}
-		// 	}
-		// }
+
+		super.ngOnChanges(changes);
 	}
 	onChange(event) {
 		this.change.emit(event);

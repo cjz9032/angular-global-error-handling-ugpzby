@@ -1454,10 +1454,10 @@
                         "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
                             "dynamic": "DYNAMIC",
-							"movie": "MOVIE",
-							"music": "MUSIC",
-							"games": "GAME",
-							"voip": "VOICE"
+                            "movie": "MOVIE",
+                            "music": "MUSIC",
+                            "games": "GAME",
+                            "voip": "VOICE"
                         },
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
@@ -1984,7 +1984,7 @@
                     "description3": "1. لاستخدام الوظائف المذكورة أعلاه، يُرجى ضبط الشاشة عند الزاوية المناسبة مما يسمح بالتعرف على وجهك.",
                     "description4": "2. لا يتم دعم الوظائف المذكورة أعلاه في الحالات التالية:",
                     "description5a": "أ. جهاز الكمبيوتر الخاص بك في وضع الخيمة أو الكمبيوتر اللوحي أو وضع الحامل أو وضع الفصل. بالنسبة للأوضاع المدعومة على جهاز الكمبيوتر لديك، يرجى الرجوع إلى دليل المستخدم المرفق مع الكمبيوتر.",
-					"description5b": "ب. الكمبيوتر في وضع الإسبات أو تم إيقاف تشغيله.",
+                    "description5b": "ب. الكمبيوتر في وضع الإسبات أو تم إيقاف تشغيله.",
                     "description6": "3. إذا تم تمكين وضع الطائرة على الكمبيوتر الخاص بك، فيتم تعطيل هذه الميزات.",
                     "description7": "تختلف الدقة بحسب حجم الجسم والوضعية ومدى تكرار الحركة. إذا تم تأمين جهاز الكمبيوتر بشكل غير متوقع، فاضبط شريط الحساسية لتحسين الدقة."
                 },
@@ -3133,7 +3133,7 @@
         "betaSettingTitle": "البرنامج التجريبي",
         "betaProgram": "البرنامج التجريبي",
         "betaSettingDescription": "جرّب أحدث الميزات التي نعمل عليها.",
-        "betaSettingNewDescription": "يسعدنا دعوتك إلى البرنامج التجريبي‬ الأداء الذكي. يساعدك هذا البرنامج في تحسين أداء جهاز الكمبيوتر من خلال:<br/><ul class='pl-4'><li>تشخيص الأخطاء بشكل استباقي وتحسين الإعدادات.</li><li>تعزيز أداء الإنترنت من خلال تحسين الشبكة والمستعرض.</li><li>إجراء فحص وعلاج سريعين من دون استخدام برنامج مكافحة الفيروسات الموجود.</li></ul>"
+        "betaSettingNewDescription": "يسعدنا دعوتك إلى البرنامج التجريبي‬ Smart Performance. يساعدك هذا البرنامج في تحسين أداء جهاز الكمبيوتر من خلال:<br/><ul class='pl-4'><li>تشخيص الأخطاء بشكل استباقي وتحسين الإعدادات.</li><li>تعزيز أداء الإنترنت من خلال تحسين الشبكة والمستعرض.</li><li>إجراء فحص وعلاج سريعين من دون استخدام برنامج مكافحة الفيروسات الموجود.</li></ul>"
     },
     "modernPreload": {
         "cancel": "إلغاء",

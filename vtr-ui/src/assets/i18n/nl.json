@@ -1452,10 +1452,10 @@
                         "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
                             "dynamic": "DYNAMIC",
-							"movie": "MOVIE",
-							"music": "MUSIC",
-							"games": "GAME",
-							"voip": "VOICE"
+                            "movie": "MOVIE",
+                            "music": "MUSIC",
+                            "games": "GAME",
+                            "voip": "VOICE"
                         },
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
@@ -1982,7 +1982,7 @@
                     "description3": "1. Om deze functies te gebruiken moet uw scherm in de juiste hoek geplaatst worden zodat uw gezicht kan worden herkend.",
                     "description4": "2. Bovenstaande functies worden niet ondersteund in de volgende gevallen:",
                     "description5a": "a. uw computer staat in de werkstand tent, tablet, standaard of is ontkoppeld. Raadpleeg de gebruikershandleiding die bij uw computer wordt geleverd voor meer informatie over de modi die door uw computer worden ondersteund.",
-					"description5b": "b. uw computer staat in de sluimerstand of is uitgeschakeld.",
+                    "description5b": "b. uw computer staat in de sluimerstand of is uitgeschakeld.",
                     "description6": "3. Als de vliegtuigstand is ingeschakeld op uw computer, zijn deze functies uitgeschakeld.",
                     "description7": "De nauwkeurigheid is afhankelijk van lichaamsgrootte, postuur en bewegingsfrequentie. Als uw computer onverwacht wordt vergrendeld, pas dan de gevoeligheidsbalk aan om de nauwkeurigheid te verbeteren."
                 },
@@ -3131,7 +3131,7 @@
         "betaSettingTitle": "Bètaprogramma",
         "betaProgram": "Bètaprogramma",
         "betaSettingDescription": "Probeer de nieuwste functies waaraan we werken.",
-        "betaSettingNewDescription": "We nodigen je graag uit voor het Beta-programma voor slimme prestaties. Hiermee kun je de prestaties van je PC verbeteren door:<br/><ul class='pl-4'><li>Proactief fouten en optimalisatie van instellingen te bepalen.</li><li>Internet prestaties te verhogen door optimalisatie van netwerk en browser.</li><li>Snelle scan en herstel-opties uit te voeren zonder gebruik te maken van het bestaande antivirus programma.</li></ul>"
+        "betaSettingNewDescription": "We nodigen je graag uit voor het Beta-programma voor Smart Performance. Hiermee kun je de prestaties van je PC verbeteren door:<br/><ul class='pl-4'><li>Proactief fouten en optimalisatie van instellingen te bepalen.</li><li>Internet prestaties te verhogen door optimalisatie van netwerk en browser.</li><li>Snelle scan en herstel-opties uit te voeren zonder gebruik te maken van het bestaande antivirus programma.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Annuleren",
