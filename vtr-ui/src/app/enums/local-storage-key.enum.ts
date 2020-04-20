@@ -202,6 +202,8 @@ export enum LocalStorageKey {
 	UserDeterminePrivacy = '[LocalStorageKey] UserDeterminePrivacy',
 
 	SmartAssistCapability = '[LocalStorageKey] SmartAssistCapability',
+
+	AntiTheftCache = '[LocalStorageKey] AntiTheftCache',
 	// server switch strorage key
 	ServerSwitchKey = '[LocalStorageKey] ServerSwitch',
 	memOCFeatureStatus = '[LocalStorageKey] MemOCFeatureStatus',
@@ -244,6 +246,7 @@ export enum LocalStorageKey {
 
 	SmartAssistCache = '[LocalStorageKey] SmartAssistCache',
 	DolbyAudioToggleCache = '[LocalStorageKey] DolbyAudioToggleCache',
+	DolbyAudioProfileCache = '[LocalStorageKey] DolbyAudioProfileCache',
 
 	// Ad policy local storage key
 	AdPolicyCache = '[LocalStorageKey] AdPolicyCache',
