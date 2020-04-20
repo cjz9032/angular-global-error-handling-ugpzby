@@ -1452,10 +1452,10 @@
                         "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
                             "dynamic": "DYNAMIC",
-							"movie": "MOVIE",
-							"music": "MUSIC",
-							"games": "GAME",
-							"voip": "VOICE"
+                            "movie": "MOVIE",
+                            "music": "MUSIC",
+                            "games": "GAME",
+                            "voip": "VOICE"
                         },
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
@@ -1982,7 +1982,7 @@
                     "description3": "1. Yukarıdaki işlevleri kullanmak için lütfen ekranınızı, yüzünüzün tanınabileceği uygun bir açıya ayarlayın.",
                     "description4": "2. Yukarıdaki işlevler şu durumlarda desteklenmez:",
                     "description5a": "a. Bilgisayarınız Çadır, Tablet, Stand kipinde veya Ayrılmış kipteyken. Bilgisayarınızda desteklenen kipler için lütfen ürünle verilen Kullanma Kılavuzu'na bakın.",
-					"description5b": "b. Bilgisayarınız uyku kipindeyse veya kapalıysa.",
+                    "description5b": "b. Bilgisayarınız uyku kipindeyse veya kapalıysa.",
                     "description6": "3. Bilgisayarınızda Uçak modu etkin durumdaysa bu özellikler devre dışı bırakılır.",
                     "description7": "Doğruluk vücut ölçüsü, duruş ve hareket sıklığına göre değişiklik gösterir. Bilgisayarınız beklenmedik bir şekilde kilitlenirse doğruluğu artırmak için hassasiyet çubuğunu ayarlayın."
                 },
@@ -3131,7 +3131,7 @@
         "betaSettingTitle": "Beta Programı",
         "betaProgram": "Beta Programı",
         "betaSettingDescription": "Üzerinde çalışmakta olduğumuz en yeni özellikleri deneyin.",
-        "betaSettingNewDescription": "Sizi Akıllı Performans'ın Beta programına davet etmekten mutluluk duyuyoruz. Akıllı Performans, aşağıdaki yollarla PC performansınızı artırmanıza yardımcı olur:<br/><ul class='pl-4'><li>Proaktif bir şekilde hataları tanılama ve ayarları optimize etme.</li><li>Ağ ve Tarayıcı Optimizasyonu ile İnternet performansını artırma.</li><li>Mevcut Virüsten Koruma programını kullanmadan hızlı tarama ve düzeltme gerçekleştirme.</li></ul>"
+        "betaSettingNewDescription": "Sizi Smart Performance Beta programına davet etmekten mutluluk duyuyoruz. Smart Performance, aşağıdaki yollarla PC performansınızı artırmanıza yardımcı olur:<br/><ul class='pl-4'><li>Proaktif bir şekilde hataları tanılama ve ayarları optimize etme.</li><li>Ağ ve Tarayıcı Optimizasyonu ile İnternet performansını artırma.</li><li>Mevcut Virüsten Koruma programını kullanmadan hızlı tarama ve düzeltme gerçekleştirme.</li></ul>"
     },
     "modernPreload": {
         "cancel": "İptal",
