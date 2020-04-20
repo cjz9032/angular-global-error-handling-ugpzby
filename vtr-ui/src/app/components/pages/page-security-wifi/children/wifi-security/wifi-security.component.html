@@ -123,6 +123,7 @@
 									(keyup.enter)="clickShowMore()"
 									*ngIf="data.hasMore">
 									<a id="sa-ws-lnk-wh-showmore"
+										tabindex="-1"
 										vtrMetrics
 										metricsItem="showMoreWiFiHistory"
 										metricsEvent="featureClick"
@@ -130,6 +131,7 @@
 										href="#"
 										*ngIf="isShowMoreLink">{{'security.wifisecurity.container.showmore' | translate}}</a>
 									<a id="sa-ws-lnk-wh-showless"
+										tabindex="-1"
 										vtrMetrics
 										metricsItem="showLessWiFiHistory"
 										metricsEvent="featureClick"

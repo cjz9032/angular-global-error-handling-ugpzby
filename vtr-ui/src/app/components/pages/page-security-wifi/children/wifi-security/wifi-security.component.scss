@@ -189,6 +189,7 @@
 					border: 0.1rem solid $shade_lighter;
 					border-radius: $border_radius;
 					background: $light;
+					margin-bottom: 2.2rem;
 
 					.wifi-card {
 						div.wifi {
@@ -310,8 +311,7 @@
 				}
 
 				.card-foot {
-					display: inline-block;
-					margin-top: 2.2rem;
+					display: inline;
 
 					.show-more {
 						font-size: 1.6rem;
