@@ -1894,7 +1894,7 @@
                 "zeroTouchLoginForIdea": {
                     "title": "Login sem toques",
                     "caption": "Esse recurso permite que você melhore a eficiência do trabalho, ativando ou fazendo login automaticamente no seu computador. Para usar o recurso, você precisa registrar seu rosto no Windows Hello.",
-                    "tooltip": "Quando você está na frente do computador ou se aproximando dele (a 1,2 ou 1,5 metro), esse recurso permite que você faça login automaticamente no sistema após o reconhecimento do seu rosto. Se você estiver ao ar livre e não no escritório, será necessário se aproximar mais do computador e a ativação levará mais tempo. <br>Dependendo da capacidade do sensor, a distância máxima de detecção varia. Consulte o <i>Guia do Usuário</i> que acompanha seu computador para obter detalhes."
+                    "tooltip": "Quando você está na frente do computador ou se aproximando dele (a 1,2 ou 1,5 metro), esse recurso permite que você faça login automaticamente no sistema após o reconhecimento do seu rosto. Se você estiver ao ar livre e não no escritório, será necessário se aproximar mais do computador e a ativação levará mais tempo. <br>Dependendo da capacidade do sensor, a distância máxima de detecção varia. Consulte o Guia do Usuário que acompanha seu computador para obter detalhes."
                 },
                 "zeroTouchLock": {
                     "title": "Bloqueio sem toques",
@@ -1981,10 +1981,8 @@
                     "description2": "O recurso usa sensores e câmera para detectar sua presença. No entanto, o recurso NÃO coleta qualquer dado pessoal.",
                     "description3": "1. Para usar as funções acima, ajuste a tela em um ângulo adequado para que seu rosto seja reconhecido.",
                     "description4": "2. As funções acima não são suportadas quando:",
-                    "description5a1": "a. Seu computador está no modo Tenda, Tablet, Base ou Desconectado. Para saber os modos suportados no seu computador, consulte o ",
-                    "description5a2": "Guia do Usuário ",
-                    "description5a3": "que acompanha o produto.",
-                    "description5b": "b. Seu computador está no modo de hibernação ou foi desligado.",
+                    "description5a": "a. Seu computador está no modo Tenda, Tablet, Base ou Desconectado. Para os modos suportados no seu computador, consulte o Guia do Usuário que acompanha o produto.",
+					"description5b": "b. Seu computador está no modo de hibernação ou foi desligado.",
                     "description6": "3. Se o Modo avião estiver ativado no seu computador, esses recursos são desativados.",
                     "description7": "A precisão varia de acordo com o tamanho do corpo, a postura e a frequência de movimento. Se seu computador bloquear inesperadamente, ajuste a barra de sensibilidade para melhorar a precisão."
                 },

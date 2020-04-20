@@ -68,7 +68,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 	private DeviceInformation: any;
 	private DeviceClass: any;
 	public isOnline: any = true;
-	private isSet = {
+	isSet = {
 		isSetDaytimeColorTemperatureValue: false,
 		isSetEyecaremodeValue: false,
 		isSetEyecaremodeStatus: false,
@@ -427,7 +427,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		}
 	}
 
-	private onNotification(notification: AppNotification) {
+	onNotification(notification: AppNotification) {
 		if (notification) {
 			const { type, payload } = notification;
 			switch (type) {
@@ -552,7 +552,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 
 	}
 	// Start EyeCare Mode
-	private getDisplayColorTemperature() {
+	getDisplayColorTemperature() {
 		this.displayService.getDisplayColorTemperature().then((response) => {
 			this.logger.debug('getDisplayColorTemperature.then', response);
 			this.eyeCareDataSource = response;
@@ -709,7 +709,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		})
 	}
 
-	private setEyeCareModeStatus(value: boolean) {
+	setEyeCareModeStatus(value: boolean) {
 		try {
 			if (this.displayService.isShellAvailable) {
 				this.displayService.setEyeCareModeState(value)

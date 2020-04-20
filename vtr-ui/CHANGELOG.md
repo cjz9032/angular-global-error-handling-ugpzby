@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.18](https://bitbucket.tc.lenovo.com///compare/v1.5.17...v1.5.18) (2020-04-17)
+
+
+### Bug Fixes
+
+* **menu:** remove segment menus and update the hide ([fae59a6](https://bitbucket.tc.lenovo.com///commit/fae59a6e8917aa461634e4d9c7b2979c3137a4c1))
+* **Wifi security:** close enable location dialog, the tab index wrong ([26f83f4](https://bitbucket.tc.lenovo.com///commit/26f83f404c50caa710097351721ff8f61216edd6))
+* **Wifi security:** tabindex error in threat locator button ([90ffcdb](https://bitbucket.tc.lenovo.com///commit/90ffcdb1936ef8d90cdab1ddbe86a35318eb7c09))
+* **Wifi Security :** Set the value of "tabindex" attribute to "-1" ([fb57c42](https://bitbucket.tc.lenovo.com///commit/fb57c4260f6bafa3ec43be1e64c78b332c38276f))
+
 ### [1.5.17](https://bitbucket.tc.lenovo.com///compare/v1.5.16...v1.5.17) (2020-04-16)
 
 

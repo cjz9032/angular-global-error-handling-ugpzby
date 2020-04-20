@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnDestroy, OnInit, Input } from '@angular/core';
 import { EMPTY, Subscription } from 'rxjs';
-import { DolbyModeResponse } from 'src/app/data-models/audio/dolby-mode-response';
+import { DolbyModeResponse, DolbyAudioProfileResponse } from 'src/app/data-models/audio/dolby-mode-response';
 import { MicrophoneOptimizeModes } from 'src/app/data-models/audio/microphone-optimize-modes';
 import { Microphone } from 'src/app/data-models/audio/microphone.model';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
@@ -16,6 +16,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { PageAnchorLink } from 'src/app/data-models/common/page-achor-link.model';
+import { MetricService } from 'src/app/services/metric/metric.service';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-audio',
@@ -43,11 +44,13 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	private microphnePermissionHandler: any;
 	private Windows: any;
 	public eCourseStatus = new FeatureStatus(false, true);
+	public eCourseLoader = true;
 
+	public dolbyAudioProfileResponse = new DolbyAudioProfileResponse('NotSupport', 'True', 'False', true);
+	public dolbyAudioProfileCache: DolbyAudioProfileResponse = undefined;
 	@Input() dolbyModeDisabled = false;
 	@Input() automaticAudioDisabled = false;
 	@Input() enumMode = '1';
-	@Input() isEnableAutomaticAudio = true;
 
 	headerMenuItems: PageAnchorLink[] = [
 		{
@@ -76,8 +79,10 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		private dashboardService: DashboardService,
 		private logger: LoggerService,
 		private commonService: CommonService,
+		private metrics: MetricService,
 		private vantageShellService: VantageShellService) {
 		this.Windows = vantageShellService.getWindows();
+		this.dolbyAudioProfileCache = this.commonService.getLocalStorageValue(LocalStorageKey.DolbyAudioProfileCache, undefined);
 		if (this.Windows) {
 			this.microphoneDevice = this.Windows.Devices.Enumeration.DeviceAccessInformation
 				.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.audioCapture);
@@ -102,6 +107,13 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		} else {
 			this.initFeatures();
 		}
+
+		if(this.dolbyAudioProfileCache !== undefined)
+		{
+			this.dolbyAudioProfileResponse = this.dolbyAudioProfileCache;
+			this.bindDolbyAudioProfileState();
+		}
+		this.getDolbyAudioProfileState();
 
 		if (this.microphoneDevice) {
 			this.microphnePermissionHandler = (args: any) => {
@@ -277,6 +289,12 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			if (this.audioService.isShellAvailable) {
 				this.audioService.setDolbyOnOff(event.switchValue)
 					.then((value) => {
+						const metricsData = {
+							itemParent: 'Device.MyDeviceSettings',
+							itemName: 'Dolby-audio.dolby-toggle-button',
+							value: event.switchValue
+						};
+						this.metrics.sendMetrics(metricsData);
 						this.logger.info('onAutomaticDolbyAudioToggleOnOff', value);
 					}).catch(error => {
 						this.logger.error('onAutomaticDolbyAudioToggleOnOff', error.message);
@@ -336,7 +354,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			this.logger.error('getDolbyFeatureStatus' + error.message);
 			return EMPTY;
 		}
-		
+
 	}
 
 	getDolbyModesStatus() {
@@ -394,24 +412,150 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		}
 	}
 
+	getDolbyAudioProfileState() {
+		try {
+			if (this.audioService.isShellAvailable) {
+				this.audioService.getDolbyAudioProfileState()
+					.then((response: DolbyAudioProfileResponse) => {
+						this.dolbyAudioProfileResponse = response;
+						this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioProfileCache, this.dolbyAudioProfileResponse);
+						this.bindDolbyAudioProfileState();
+						this.eCourseLoader = false;
+						this.logger.info('getDolbyAudioProfileState:', response);
+					}).catch(error => {
+						this.logger.error('getDolbyAudioProfileState', error.message);
+					});
+			}
+		} catch (error) {
+			this.logger.error('getDolbyAudioProfileState' + error.message);
+		}
+	}
+
+	bindDolbyAudioProfileState() {
+		if (this.dolbyAudioProfileResponse.eCourseStatus === 'NotSupport') {
+			this.eCourseStatus.available = false;
+			this.automaticAudioDisabled = false;
+		}
+		else {
+			this.eCourseStatus.available = true;
+			this.eCourseStatus.status = (this.dolbyAudioProfileResponse.eCourseStatus === 'True');
+			this.automaticAudioDisabled = this.eCourseStatus.status;
+		}
+		if (this.dolbyAudioProfileResponse.voIPRadioStatus !== 'NotSupport' && this.dolbyAudioProfileResponse.entertainmentRadioStatus !== 'NotSupport') {
+			this.enumMode = (this.dolbyAudioProfileResponse.voIPRadioStatus === 'True') ? '1' : '2';
+		}
+		else {
+			this.logger.error('bindDolbyAudioProfileState (VoIP or Entertainment NotSupport) or (VoIP and Entertainment NotSupport)');
+		}
+	}
+
 	automaticAudioCheckbox(value: boolean) {
-		this.isEnableAutomaticAudio = value;
+		this.dolbyAudioProfileResponse.aOCheckboxStatus = value;
+		try {
+			if (this.audioService.isShellAvailable) {
+				this.audioService.setDolbyAudioProfileState('AOCheckboxStatus', value)
+					.then((response: boolean) => {
+						this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioProfileCache, this.dolbyAudioProfileResponse);
+						const metricsData = {
+							itemParent: 'Device.MyDeviceSettings',
+							itemName: 'Dolby-audio.automaticAudio-Checkbox',
+							value: value
+						};
+						this.metrics.sendMetrics(metricsData);
+						this.logger.info('automaticAudioCheckbox:', response);
+					}).catch(error => {
+						this.logger.error('automaticAudioCheckbox', error.message);
+					});
+			}
+		} catch (error) {
+			this.logger.error('automaticAudioCheckbox' + error.message);
+		}
 	}
 
 	automaticAudioModeChange(value) {
 		this.enumMode = value;
-
+		try {
+			if (this.audioService.isShellAvailable) {
+				if (value === '1') {
+					this.audioService.setDolbyAudioProfileState('VoIPRadioStatus', true)
+						.then((response: boolean) => {
+							this.dolbyAudioProfileResponse.voIPRadioStatus = 'True';
+							this.dolbyAudioProfileResponse.entertainmentRadioStatus = 'False';
+							this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioProfileCache, this.dolbyAudioProfileResponse);
+							const voipMetricsData = {
+								itemParent: 'Device.MyDeviceSettings',
+								itemName: 'Dolby-audio.VoIP-RadioButton',
+								value: true
+							};
+							this.metrics.sendMetrics(voipMetricsData);
+							const entertainmentMetricsData = {
+								itemParent: 'Device.MyDeviceSettings',
+								itemName: 'Dolby-audio.VoIP-RadioButton',
+								value: false
+							};
+							this.metrics.sendMetrics(entertainmentMetricsData);
+							this.logger.info('automaticAudioModeChange VoIP:', response);
+						}).catch(error => {
+							this.logger.error('automaticAudioModeChange VoIP', error.message);
+						});
+				}
+				else {
+					this.audioService.setDolbyAudioProfileState('EntertainmentRadioStatus', true)
+						.then((response: boolean) => {
+							this.dolbyAudioProfileResponse.voIPRadioStatus = 'False';
+							this.dolbyAudioProfileResponse.entertainmentRadioStatus = 'True';
+							this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioProfileCache, this.dolbyAudioProfileResponse);
+							const voipMetricsData = {
+								itemParent: 'Device.MyDeviceSettings',
+								itemName: 'Dolby-audio.VoIP-RadioButton',
+								value: false
+							};
+							this.metrics.sendMetrics(voipMetricsData);
+							const entertainmentMetricsData = {
+								itemParent: 'Device.MyDeviceSettings',
+								itemName: 'Dolby-audio.VoIP-RadioButton',
+								value: true
+							};
+							this.metrics.sendMetrics(entertainmentMetricsData);
+							this.logger.info('automaticAudioModeChange Entertainment:', response);
+						}).catch(error => {
+							this.logger.error('automaticAudioModeChange Entertainment', error.message);
+						});
+				}
+			}
+		} catch (error) {
+			this.logger.error('automaticAudioModeChange' + error.message);
+		}
 	}
 
 	onToggleOfeCourseAutoOptimization(event) {
 		this.eCourseStatus.status = event.switchValue;
 		if (event.switchValue) {
 			this.dolbyModeDisabled = event.switchValue;
-			this.automaticAudioDisabled = event.switchValue;
 			this.autoDolbyFeatureStatus.status = event.switchValue;
 		}
 		this.dolbyModeDisabled = event.switchValue;
 		this.automaticAudioDisabled = event.switchValue;
+		try {
+			if (this.audioService.isShellAvailable) {
+				this.audioService.setDolbyAudioProfileState('ECourseStatus', event.switchValue)
+					.then((response: boolean) => {
+						this.dolbyAudioProfileResponse.eCourseStatus = (event.switchValue)? 'True':'False';
+						this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioProfileCache, this.dolbyAudioProfileResponse);
+						const metricsData = {
+							itemParent: 'Device.MyDeviceSettings',
+							itemName: 'Dolby-audio.eCourse-toggle-button',
+							value: event.switchValue
+						};
+						this.metrics.sendMetrics(metricsData);
+						this.logger.info('onToggleOfeCourseAutoOptimization:', response);
+					}).catch(error => {
+						this.logger.error('onToggleOfeCourseAutoOptimization', error.message);
+					});
+			}
+		} catch (error) {
+			this.logger.error('onToggleOfeCourseAutoOptimization' + error.message);
+		}
 	}
 
 	startMonitorHandlerForDolby(response: DolbyModeResponse) {
@@ -429,6 +573,12 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			if (this.audioService.isShellAvailable) {
 				this.audioService.setDolbyMode(this.dolbyModeResponse.currentMode)
 					.then((value) => {
+						const metricsData = {
+							itemParent: 'Device.MyDeviceSettings',
+							itemName: 'Dolby-audio.dolbyMode-RadioButton',
+							value: this.dolbyModeResponse.currentMode
+						};
+						this.metrics.sendMetrics(metricsData);
 						this.logger.info('onDolbySeetingRadioChange:', value);
 					}).catch(error => {
 						this.logger.error('onDolbySeetingRadioChange', error.message);
@@ -471,7 +621,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			if (this.audioService.isShellAvailable) {
 				this.audioService.setMicrophoneVolume(volume)
 					.then((response) => {
-						this.logger.info('onMicrophoneVolumeChange', {response, volume});
+						this.logger.info('onMicrophoneVolumeChange', { response, volume });
 					}).catch(error => {
 						this.logger.error('onMicrophoneVolumeChange', error.message);
 						return EMPTY;

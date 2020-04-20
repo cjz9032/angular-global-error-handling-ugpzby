@@ -21,16 +21,15 @@ export class UiCircleRadioWithCheckboxComponent extends UICustomRadio implements
 	@Input() processLabel = true;
 	@Output() optionChange: EventEmitter<any> = new EventEmitter();
 
-	ngAfterViewInit(): void {
-		this.setRadioButtons(); // Set up radio buttons first , last etc and if none selected,set tabindex to first element
-	}
 
-	constructor(logger: LoggerService, metrics: MetricService) {
+	ngAfterViewInit(): void {
+		super.ngAfterViewInit(); // Set up radio buttons first , last etc and if none selected,set tabindex to first element
+	} constructor(logger: LoggerService, metrics: MetricService) {
 		super(logger, metrics)
 	}
 
 	ngOnInit() {
-		this.setRadioButtons(); // Set up radio buttons first , last etc and if none selected,set tabindex to first element
+		super.ngOnInit() // Set up radio buttons first , last etc and if none selected,set tabindex to first element
 	}
 
 	onChange(event) {

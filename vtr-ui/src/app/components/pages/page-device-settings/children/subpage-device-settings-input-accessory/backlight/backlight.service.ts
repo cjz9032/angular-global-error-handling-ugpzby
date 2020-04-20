@@ -10,9 +10,9 @@ const CACHE_SIZE = 1;
 	providedIn: 'root'
 })
 export class BacklightService {
-	private backlightFeature: Backlight;
-	private cache$: Observable<Array<BacklightStatus | BacklightLevel>>;
-	private reload$ = new Subject();
+	backlightFeature: Backlight;
+	cache$: Observable<Array<BacklightStatus | BacklightLevel>>;
+	reload$ = new Subject();
 
 	constructor(
 		private shellService: VantageShellService
