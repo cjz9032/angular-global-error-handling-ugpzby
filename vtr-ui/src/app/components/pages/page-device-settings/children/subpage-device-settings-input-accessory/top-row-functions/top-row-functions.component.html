@@ -69,10 +69,10 @@
 				</div>
 			</div>
 		</div>
-		<vtr-ui-row-switch></vtr-ui-row-switch>
+		<!-- <vtr-ui-row-switch></vtr-ui-row-switch> -->
 	</div>
-	<div *ngIf="showAdvancedSection">
-		<div *ngIf="topRowKeyObj.primaryFunCap"
+	<!-- <div *ngIf="showAdvancedSection"> -->
+		<div *ngIf="showAdvancedSection && topRowKeyObj.primaryFunCap"
 			class="common-li-padding">
 			<vtr-ui-row-switch
 				[title]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionTwo.title' | translate"
@@ -102,7 +102,7 @@
 				</p>
 			</vtr-ui-row-switch>
 		</div>
-		<div *ngIf="topRowKeyObj.stickyFunCap">
+		<div *ngIf="showAdvancedSection && topRowKeyObj.stickyFunCap">
 			<div class="col-12 pl-3 sectn-padding">
 				<div class="col-12 title-blck px-0 d-flex">
 					<div class="title pl-5 ml-2"
@@ -155,7 +155,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="pl-5">
+		<div class="pl-5" *ngIf="showAdvancedSection">
 			<a class="link-text mt-2 ml-4"
 				role="link"
 				id="inputAccessory.topRowFunctions.hideAdvSettings"
@@ -165,6 +165,6 @@
 				{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.hideAdvSettings' | translate}}
 			</a>
 		</div>
-		<vtr-ui-row-switch></vtr-ui-row-switch>
-	</div>
+		<!-- <vtr-ui-row-switch></vtr-ui-row-switch> -->
+	<!-- </div> -->
 </div>
