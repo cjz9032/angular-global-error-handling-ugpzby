@@ -16,10 +16,12 @@
 					<div class="col col-5 status">
 						<div class="test-status">
 							<div [ngSwitch]="item.statusValue">
+								<!--Aria-hidden defined as true to ignore faicon selection and defined a span with description to the icon-->
 								<fa-icon aria-hidden="true" aria-labelledby="loading-icon" class="loading" [icon]="['fas', 'circle-notch']" [spin]="true" *ngSwitchCase="0"></fa-icon>
 								<span id="loading-icon" class="sr-only" *ngSwitchCase="0">loading</span>
 
 								<span class="progress-value-text" *ngSwitchCase="1">{{item.percent}}%</span>
+
 								<fa-icon aria-hidden="true" aria-labelledby="success-icon" class="success" [icon]="['fas', 'check-circle']" *ngSwitchCase="2"></fa-icon>
 								<span id="success-icon" class="sr-only" *ngSwitchCase="2">success</span>
 

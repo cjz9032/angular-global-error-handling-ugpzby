@@ -18,7 +18,7 @@
 					<div class="item-left">
 						<div *ngIf="item.icon !== undefined">
 							<div class="test-status" [ngSwitch]="item.icon">
-								<!--Alt defined as empty to avoid "duplicate" reading by narrator -->
+								<!--Alt defined as empty to avoid "duplicate" reading by narrator-->
 								<img alt="" class="qr-img" *ngSwitchCase="'cpu'" [src]="'assets/icons/hardware-scan/icon_hardware_processor.svg' | svgInline | async" />
 								<img alt="" class="qr-img" *ngSwitchCase="'memory'" [src]=" 'assets/icons/hardware-scan/icon_hardware_memory.svg' | svgInline | async" />
 								<img alt="" class="qr-img" *ngSwitchCase="'motherboard'" [src]=" 'assets/icons/hardware-scan/icon_hardware_motherboard.svg' | svgInline | async" />
@@ -31,6 +31,7 @@
 
 						<div class="test-status" *ngIf="item.status >= 0">
 							<div [ngSwitch]="item.status">
+								<!--Aria-hidden defined as true to ignore faicon selection and defined a span with description to the icon-->
 								<fa-icon aria-hidden="true" aria-labelledby="loading-icon" class="loading" [icon]="['fas', 'circle-notch']" [spin]="true" *ngSwitchCase="0"></fa-icon>
 								<span id="loading-icon" class="sr-only" *ngSwitchCase="0">loading</span>
 
@@ -68,6 +69,7 @@
 							{{item.statusToken}}</div>
 						<div class="module-result-icon">
 							<div [ngSwitch]="item.resultIcon">
+								<!--Aria-hidden defined as true to ignore faicon selection and defined a span with description to the icon-->
 								<fa-icon aria-hidden="true" aria-labelledby="success-icon" class="success" [icon]="['fas', 'check-circle']" *ngSwitchCase="2"></fa-icon>
 								<span id="success-icon" class="sr-only" *ngSwitchCase="2">success</span>
 
