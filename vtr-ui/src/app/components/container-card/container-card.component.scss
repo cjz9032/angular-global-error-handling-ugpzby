@@ -9,6 +9,10 @@
 	left: 0;
 	position: absolute;
 	z-index: 0;
+
+	@media #{$high-contrast} {
+		background: none;
+	}
 }
 
 .container-card {

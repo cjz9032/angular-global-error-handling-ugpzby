@@ -10,6 +10,10 @@
 	position: absolute;
 	border-radius: $border_radius;
 	z-index: 0;
+
+	@media #{$high-contrast} {
+		background: none;
+	}
 }
 
 .vtr-widget-carousel {
@@ -142,6 +146,14 @@
 				border-left: 0.3rem solid $light;
 				transform: rotate(-45deg);
 			}
+
+			@media #{$high-contrast} {
+				.carousel-indicators li {
+					padding: 0.3rem 0;
+					border: 0.1rem solid currentColor;
+				}
+			}
+
 			// .carousel-control-prev,
 			// .carousel-control-next {
 			// 	width: 3.2rem;

@@ -25,6 +25,7 @@ import { faMapMarkerAlt } from '@fortawesome/pro-light-svg-icons/faMapMarkerAlt'
 import { HomeSecurityAfterSignupComponent } from '../../components/pages/page-connected-home-security/component/home-security-after-signup/home-security-after-signup.component';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -48,7 +49,8 @@ import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontaweso
 		WidgetSecurityStatusModule,
 		UiListChevronModule,
 		PageLayoutModule,
-		FontAwesomeModule
+		FontAwesomeModule,
+		NgbTooltipModule
 	],
 	providers: [
 		DialogService

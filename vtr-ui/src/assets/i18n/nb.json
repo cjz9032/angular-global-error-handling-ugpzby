@@ -197,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "Advarsel!",
                     "description": "Ukorrekte innstillinger av Overklokking kan føre til uopprettelige maskinvareskader.",
-                    "proceed": "FORTSETT"
+                    "proceed": "FORTSETT",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },
@@ -1443,23 +1446,35 @@
                 "subtitle": "Lydinnstillinger",
                 "description": "I denne delen kan du optimalisere eller fullt ut automatiskkonfigurere lydinnstillingene manuelt, for eksempel Dolby-innstillinger, mikrofon, osv.",
                 "audioSmartsettings": {
-                    "title": "Smarte lydinnstillinger",
-                    "subtitle": "APPBASERTE INNSTILLINGER",
-                    "description": "Juster lydinnstillingene automatisk etter de ulike appene du bruker.",
+                    "title": "Audio smart settings",
                     "dolby": {
-                        "title": "Automatiske Dolby-lydinnstillinger",
-                        "tooltip": "Automatiske Dolby-lydinnstillinger konfigurerer Dolby-lydinnstillinger tilden aktuelle modusen for ulike apper du bruker for å forbedre lydopplevelsen.",
+                        "title": "Dolby audio",
+                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
-                            "dynamic": "DYNAMISK",
-                            "movie": "FILM",
-                            "music": "MUSIKK",
-                            "games": "SPILL",
-                            "voip": "TALE"
+                            "dynamic": "DYNAMIC",
+                            "movie": "MOVIE",
+                            "music": "MUSIC",
+                            "games": "GAME",
+                            "voip": "VOICE"
+                        },
+                        "automaticAudioCheckboxText": "Automatic audio optimization for",
+                        "automaticAudioMode": {
+                            "voIPMode": {
+                                "radioText": "VoIP",
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                            },
+                            "entertainmentMode": {
+                                "radioText": "Entertainment",
+                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
+                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                            }
                         }
                     },
-                    "voip": {
-                        "title": "Automatisk lydoptimalisering for VoIP",
-                        "tooltip": "Bytt automatisk til Dolby Voice-modus under VoIP-samtaler for å oppnå klar, kontinuerlig talekvalitet."
+                    "eCourse": {
+                        "title": "Interactive E-course mode",
+                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
                     }
                 },
                 "microphone": {
@@ -1682,7 +1697,9 @@
                         },
                         "subSectionTwo": {
                             "title": "Reversere den standard primærfunksjonen",
-                            "description": "Når på vil den standard primærfunksjonen endres fra fabrikkinnstillingene til det motsatte. Start datamaskinen på nytt for at endringene skal tre i kraft."
+                            "description": "Når på vil den standard primærfunksjonen endres fra fabrikkinnstillingene til det motsatte. Start datamaskinen på nytt for at endringene skal tre i kraft.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "Slik bruker du Fn-tastekombinasjoner",
@@ -1877,7 +1894,7 @@
                 "zeroTouchLoginForIdea": {
                     "title": "Pålogging uten berøring",
                     "caption": "Denne funksjonen gjør det mulig for deg å forbedre arbeidseffektiviteten ved hjelp av automatisk reaktivering eller pålogging på datamaskinen. Hvis du vil bruke denne funksjonen, må du registrere ansiktet ditt i Windows Hello.",
-                    "tooltip": "Når du er foran datamaskinen eller nærmer deg den (innen avstanden på 1,2 eller 1,5 meter), gjør denne funksjonen deg i stand til automatisk å logge deg på systemet etter at ansiktet ditt har blitt gjenkjent. Hvis du er utendørs i stedet for på kontoret, må du være nærmere datamaskinen, og det vil ta lengre tid å aktivere den. <br>Maksimumsavstand for identifisering varierer avhengig av sensorfunksjonen. Se <i>brukerveiledningen</i> som følger med datamaskinen for mer informasjon."
+                    "tooltip": "Når du er foran datamaskinen eller nærmer deg den (innen avstanden på 1,2 eller 1,5 meter), gjør denne funksjonen deg i stand til automatisk å logge deg på systemet etter at ansiktet ditt har blitt gjenkjent. Hvis du er utendørs i stedet for på kontoret, må du være nærmere datamaskinen, og det vil ta lengre tid å aktivere den. <br>Maksimumsavstand for identifisering varierer avhengig av sensorfunksjonen. Se brukerveiledningen som følger med datamaskinen for mer informasjon."
                 },
                 "zeroTouchLock": {
                     "title": "Berøringsfri lås",
@@ -1964,9 +1981,7 @@
                     "description2": "Funksjonen bruker sensorer og kamera til å oppdage din tilstedeværelse. Funksjonen samler imidlertid IKKE inn noen personlige opplysninger.",
                     "description3": "1. Hvis du vil bruke funksjonene ovenfor, justerer du skjermen til en passende vinkel, slik at ansiktet ditt kan gjenkjennes.",
                     "description4": "2. Funksjonene ovenfor støttes ikke når:",
-                    "description5a1": "a. Datamaskinen din er i Telt-modus, Nettbrett-modus, Stativ-modus eller frakoblet modus. Hvis du vil finne ut hvilke modi som støttes av datamaskinen din, kan du se ",
-                    "description5a2": "Brukerveiledning ",
-                    "description5a3": "som følger med.",
+                    "description5a": "a. Datamaskinen din er i Telt-modus, Nettbrett-modus, Stativ-modus eller frakoblet modus. Se brukerveiledningen som følger med datamaskinen for å se modusene som støttes på den.",
                     "description5b": "b. Datamaskinen er i dvalemodus eller er slått av.",
                     "description6": "3. Disse funksjonene deaktiveres hvis flymodus aktiveres på datamaskinen.",
                     "description7": "Nøyaktigheten varierer avhengig av kroppsstørrelse, sittestilling og bevegelseshyppighet. Hvis datamaskinen blir uventet låst, kan du justere følsomheten for å forbedre nøyaktigheten."
@@ -2049,12 +2064,59 @@
             "superResolution": {
                 "heading": "Intelligent medieavspilling",
                 "title": "Oppskalering av videooppløsning",
-                "desc": "<p><label>Denne funksjonen gir en bedre videoopplevelse ved å forbedre oppløsningen på videoen. Den fungerer spesielt bra når videoen har dårlig oppløsning.</label></p> <p style='margin-top:4px;'><label>Denne funksjonen kan påvirke batteritiden, batteritemperaturen og forårsake støy. Ikke bruk i likestrømmodus. Ellers vil det øke strømforbruket og forkorte batteriets levetid.</label></p>",
-                "tooltip": "Funksjonen virker bare på:<br>Windows Media player",
+                "desc": "<p><label>Denne funksjonen forbedrer opplevelsen av videoavspilling ved å forbedre videooppløsningen. Den fungerer spesielt når videoen har dårlig oppløsning.</label></p> <p style='margin-top:4px;'><label>Denne funksjonen kan påvirke batteritiden, batteritemperaturen og forårsake støy. Ikke bruk i likestrømmodus (batterimodus). Ellers vil det øke strømforbruket og forkorte batteriets levetid.</label></p>",
+                "tooltip": "Denne funksjonen fungerer bare for følgende videospillere:<br>Windows Media Player<br>Chrome<br>Filmer og TV<br>PotPlayer<br>GOM player<br>Nettleserbaserte spillere (for eksempel Chrome)<br><br>Se brukerhåndboken som følger med datamaskinen for instruksjoner om hvordan du aktiverer denne funksjonen for PotPlayer og GOM player.",
                 "note": {
                     "description": "Denne funksjonen fungerer ikke når følgende er tilfelle:",
-                    "description1": "Strømadapteren er ikke tilkoblet datamaskinen.",
-                    "description2": "Batterisparemodus er aktivert."
+                    "description1": "Batterisparemodus er aktivert.",
+                    "description2": "CPU-temperaturen er for høy."
+                }
+            },
+            "antiTheft": {
+                "heading": "Intelligent føler",
+                "title": "Smart bevegelsesvarsel",
+                "desc": "<p><label>Når du aktiverer denne funksjonen, avgir enheten et lydsignal når skjermen er låst og det oppdages bevegelse, spesielt på offentlige steder.</label></p> <p style='margin-top:4px;'><label>Hvis du vil avbryte alarmen, skriver du inn riktig passord eller logger på med Windows Hello.</label></p>",
+                "note": {
+                    "description": "Når du har logget på systemet, vil denne funksjonen bli slått av automatisk. Du må aktivere den på nytt for å bruke den."
+                },
+                "alarm": {
+                    "title": " ALARMEN SKAL VARE I",
+                    "option1": "10 sekunder",
+                    "option2": "20 sekunder",
+                    "option3": "30 sekunder",
+                    "option4": "1 minutt",
+                    "option5": "Ikke stopp"
+                },
+                "allowCamera": {
+                    "title": "TA BILDER",
+                    "describe": "Når du aktiverer denne funksjonen, tar kameraet automatisk bildene når det blir oppdaget bevegelse hvis skjermen er låst. Disse dataene behandles lokalt på enheten. Lenovo har verken tilgang til eller bruker dem.",
+                    "checkBoxText": "Aktiver denne funksjonen"
+                },
+                "cameraPrivacy": {
+                    "describe": "Lenovo Vantage Personvernmodus for kamera er på. Avmerkingsboksen vil ikke fungere.",
+                    "linkText": "Gå til Personvernmodus for kamera for å slå av"
+                },
+                "authorizedAccess": {
+                    "describe": "Lenovo Vantage har ikke tilgang til kamera. Avmerkingsboksen vil ikke fungere.",
+                    "linkText": "Gå til Windows-innstillingene for å gi tilgang"
+                },
+                "photo": {
+                    "title": "ANTALL BILDER SOM TAS VED BEVEGELSE",
+                    "tooltip": "Kameraet på datamaskinen aktiveres automatisk for å ta bilder når det oppdages bevegelse. Det tas bilder hvert andre sekund, og de lagres på den lokale lagringsplassen.",
+                    "option1": "5",
+                    "option2": "10",
+                    "option3": "15",
+                    "option4": "20",
+                    "option5": "25",
+                    "option6": "30"
+                },
+                "showPhoto": {
+                    "title": "BILDENE ER LAGRET LOKALT:",
+                    "link": "Vis bilder"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Lenovo Vantage har ikke tilgang til filsystemet.",
+                    "link": "Gå til Windows-innstillingene for å gi tilgang"
                 }
             },
             "voice": {
@@ -2088,53 +2150,6 @@
                     "btnText": "ok",
                     "title": "Installeringen mislyktes",
                     "desc": "Prøv igjen senere for å kunne bruke Lenovo Voice."
-                }
-            },
-            "antiTheft": {
-                "heading": "Intelligent Sensing",
-                "title": "Smart Motion Alert",
-                "desc": "<p><label>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</label></p> <p style='margin-top:4px;'><label>To dismiss the alarm, enter the correct password or log in by Windows Hello.</label></p>",
-                "note": {
-                    "description": "Once you log in the system successfully, this feature will be turned off automatically. You need to enable it again to use it."
-                },
-                "alarm": {
-                    "title": " THE ALARM WILL LAST FOR",
-                    "option1": "10 seconds",
-                    "option2": "20 seconds",
-                    "option3": "30 seconds",
-                    "option4": "1 minute",
-                    "option5": "Never stop"
-                },
-                "allowCamera": {
-                    "title": "TATING PHOTOS",
-                    "describe": "When enabling this feature, the camera takes photos automatically when detecting any movement if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
-                    "checkBoxText": "Enable this feature"
-                },
-                "cameraPrivacy": {
-                    "describe": "Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
-                    "linkText": "Go to Camera privacy mode to turn it off"
-                },
-                "authorizedAccess": {
-                    "describe": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
-                    "linkText": "Go to Windows Settings to give access"
-                },
-                "photo": {
-                    "title": "THE NUMBER OF PHOTOS TAKEN DURING THE MOVEMENT",
-                    "tooltip": "The camera on your computer automatically activates to take pictures when movements are detected. Pictures are taken every 2 seconds and are saved to your local storage.",
-                    "option1": 5,
-                    "option2": 10,
-                    "option3": 15,
-                    "option4": 20,
-                    "option5": 25,
-                    "option6": 30
-                },
-                "showPhoto": {
-                    "title": "PHOTOS HAVE BEEN:",
-                    "link": "View photos"
-                },
-                "fileAuthorizationTips": {
-                    "content": "Lenovo Vantage doesn't have access to the file system.",
-                    "link": "Go to Windows Settings to give access"
                 }
             }
         }
@@ -2702,7 +2717,7 @@
         },
         "question1": {
             "title": "Sikkerhetskopier og gjenopprett filene dine",
-            "description": "<div>    <div class='faqInFs4Fb'>        Sikkerhetskopier og gjenopprett filene dine    </div>    <hr />    <div class='faqInMb7'>        Det er alltid godt å ha en sikkerhets kopi. Behold kopier av filene dine på en annen stasjon hvis det er noe som skjer med originalene.    </div>    <div class='faqInFs3Fb'>        Konfigurere din sikkerhetskopi    </div>    <hr />    <div class='mb-5'>        Velg på<span class='faqInFb'> Start</span> -knappen, <span class='faqInFb'>velg</span> innstillinger <span class='faqInFb'>> Oppdater & sikkerhets</span> <span class='faqInFb'>></span> sikkerhets <span class='faqInFb'>kopi > Legg</span> til en stasjon, og velg deretter en ekstern stasjon eller en nettverks plassering for sikkerhets kopier.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Alt er klart. Hver time sikkerhetskopierer vi alt i bruker mappen din (C:\\\\Users\\\\username). Hvis du vil endre hvilke filer som blir sikkerhets kopi ert eller hvor ofte sikkerhets <span class='faqInFb'>kopieringen</span>skal skje, kan du gå til flere alternativer.    </div>    <div class='faqInFs3Fb'>        Restaurer filene dine    </div>    <div class='mb-5'>        Hvis du mangler en viktig fil eller mappe, kan du få den tilbake på denne måten:    </div>    <div>        <div class='mb-3'>1. Skriv <span class='faqInFb'>Gjenopprett filer</span> i søke boksen på oppgave linjen, og velg <span class='faqInFb'>Gjenopprett filene med fillogg.</span></div>        <div class='mb-3'>2. Se etter filen du trenger, og bruk deretter pilene til å se alle versjonene av den</div>        <div class='mb-3'>3. Når du finner den versjonen du ønsker, velger <span class='faqInFb'>du</span> Gjenopprett for å lagre den på den opprinnelige plasseringen. Hvis du vil lagre den på et annet sted, trykker du på og holder nede (<span class='faqInFb'>eller</span> høyre klikker <span class='faqInFb'>) Gjenopprett</span>, velger Gjenopprett til og velger deretter en ny plassering.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Sikkerhetskopier og gjenopprett filene dine    </div>    <hr />    <div class='faqInMb7'>        Det er alltid godt å ha en sikkerhets kopi. Behold kopier av filene dine på en annen stasjon hvis det er noe som skjer med originalene.    </div>    <div class='faqInFs3Fb'>        Konfigurere din sikkerhetskopi    </div>    <hr />    <div class='mb-5'>        Velg på<span class='faqInFb'> Start</span> -knappen, <span class='faqInFb'>velg</span> innstillinger <span class='faqInFb'>> Oppdater & sikkerhets</span> <span class='faqInFb'>></span> sikkerhets <span class='faqInFb'>kopi > Legg</span> til en stasjon, og velg deretter en ekstern stasjon eller en nettverks plassering for sikkerhets kopier.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Alt er klart. Hver time sikkerhetskopierer vi alt i bruker mappen din (C:\\Users\\brukernavn). Hvis du vil endre hvilke filer som blir sikkerhets kopi ert eller hvor ofte sikkerhets <span class='faqInFb'>kopieringen</span>skal skje, kan du gå til flere alternativer.    </div>    <div class='faqInFs3Fb'>        Restaurer filene dine    </div>    <div class='mb-5'>        Hvis du mangler en viktig fil eller mappe, kan du få den tilbake på denne måten:    </div>    <div>        <div class='mb-3'>1. Skriv <span class='faqInFb'>Gjenopprett filer</span> i søke boksen på oppgave linjen, og velg <span class='faqInFb'>Gjenopprett filene med fillogg.</span></div>        <div class='mb-3'>2. Se etter filen du trenger, og bruk deretter pilene til å se alle versjonene av den</div>        <div class='mb-3'>3. Når du finner den versjonen du ønsker, velger <span class='faqInFb'>du</span> Gjenopprett for å lagre den på den opprinnelige plasseringen. Hvis du vil lagre den på et annet sted, trykker du på og holder nede (<span class='faqInFb'>eller</span> høyre klikker <span class='faqInFb'>) Gjenopprett</span>, velger Gjenopprett til og velger deretter en ny plassering.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -3115,7 +3130,8 @@
         "settingsNotes": "Start programmet på nytt for å sikre at alle endringene trer i kraft.",
         "betaSettingTitle": "Beta-program",
         "betaProgram": "Beta-program",
-        "betaSettingDescription": "Prøv de nyeste funksjonene vi jobber med."
+        "betaSettingDescription": "Prøv de nyeste funksjonene vi jobber med.",
+        "betaSettingNewDescription": "Vi har gleden av å invitere deg til Beta-programmet for Smart Performance. Den hjelper deg med å forbedre ytelsen på PC-en din ved å:<br/><ul class='pl-4'><li>Proaktivt diagnostisere feil og optimalisere innstillinger.</li><li>Øke Internett-ytelsen med optimalisering av nettverks og nettleser.</li><li>Utføre hurtigsøk og utbedring uten å bruke det eksisterende antivirusprogrammet.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Avbryt",
@@ -3285,7 +3301,8 @@
             "wireless": "Trådløs"
         },
         "warningMessage": "Husk at testene vil bli kansellert hvis systemet er i hvile- eller dvalemodus",
-        "refreshMessage": "Oppdatering kan ta litt tid siden alle komponentene må lastes inn på nytt"
+        "refreshMessage": "Oppdatering kan ta litt tid siden alle komponentene må lastes inn på nytt",
+        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -4040,8 +4057,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "Pil venstre",
+            "rightArrow": "Pil høyre"
         }
     },
     "dcc": {

@@ -2,6 +2,43 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.18](https://bitbucket.tc.lenovo.com///compare/v1.5.17...v1.5.18) (2020-04-17)
+
+
+### Bug Fixes
+
+* **menu:** remove segment menus and update the hide ([fae59a6](https://bitbucket.tc.lenovo.com///commit/fae59a6e8917aa461634e4d9c7b2979c3137a4c1))
+* **Wifi security:** close enable location dialog, the tab index wrong ([26f83f4](https://bitbucket.tc.lenovo.com///commit/26f83f404c50caa710097351721ff8f61216edd6))
+* **Wifi security:** tabindex error in threat locator button ([90ffcdb](https://bitbucket.tc.lenovo.com///commit/90ffcdb1936ef8d90cdab1ddbe86a35318eb7c09))
+* **Wifi Security :** Set the value of "tabindex" attribute to "-1" ([fb57c42](https://bitbucket.tc.lenovo.com///commit/fb57c4260f6bafa3ec43be1e64c78b332c38276f))
+
+### [1.5.17](https://bitbucket.tc.lenovo.com///compare/v1.5.16...v1.5.17) (2020-04-16)
+
+
+### Features
+
+* **LaunchMcAfeeBuy API:** remove 3s timeout for launchMcAfeeBuy API ([2ac5ab9](https://bitbucket.tc.lenovo.com///commit/2ac5ab961d3c914dcb1f675aba0be7e8dbbabcf9))
+
+### [1.4.21](https://bitbucket.tc.lenovo.com///compare/v1.4.20...v1.4.21) (2020-04-02)
+
+### [1.4.20](https://bitbucket.tc.lenovo.com///compare/v1.5.4...v1.4.20) (2020-04-01)
+
+### [1.4.19](https://bitbucket.tc.lenovo.com///compare/v1.4.18...v1.4.19) (2020-03-31)
+
+### [1.5.16](https://bitbucket.tc.lenovo.com///compare/v1.5.15...v1.5.16) (2020-04-15)
+
+
+### Bug Fixes
+
+* **mock:** remove async for CHS and DP in the mock service ([d40e928](https://bitbucket.tc.lenovo.com///commit/d40e928c200c31500b92f259cd7bc9d723c1bf99))
+
+### [1.5.15](https://bitbucket.tc.lenovo.com///compare/v1.5.14...v1.5.15) (2020-04-14)
+
+
+### Bug Fixes
+
+* **fix bug:** fixed mcafee link to wrong webpage ([b0a8473](https://bitbucket.tc.lenovo.com///commit/b0a8473da581c8328bca626b7ded3149c852b41f))
+
 ### [1.5.14](https://bitbucket.tc.lenovo.com///compare/v1.5.13...v1.5.14) (2020-04-13)
 
 
@@ -15,6 +52,11 @@ All notable changes to this project will be documented in this file. See [standa
 ### [1.5.13](https://bitbucket.tc.lenovo.com///compare/v1.5.12...v1.5.13) (2020-04-13)
 
 ### [1.5.12](https://bitbucket.tc.lenovo.com///compare/v1.5.11...v1.5.12) (2020-04-13)
+### [1.4.21](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.4.20...v1.4.21) (2020-04-02)
+
+### [1.4.20](https://bitbucket.tc.lenovo.com///compare/v1.4.19...v1.4.20) (2020-04-01)
+
+### [1.4.19](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.4.18...v1.4.19) (2020-03-31)
 
 
 ### Bug Fixes
@@ -93,6 +135,10 @@ All notable changes to this project will be documented in this file. See [standa
 ### [1.5.1](https://bitbucket.tc.lenovo.com///compare/v1.4.7...v1.5.1) (2020-03-23)
 
 ## [1.5.0](https://bitbucket.tc.lenovo.com///compare/v1.4.1...v1.5.0) (2020-03-12)
+* **app component:** container selector updated ([5e8c92c](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/5e8c92cfc89385224fd0206d53a07648dbc99860))
+* **app component:** patch ngbmodal to have vtr-root as the container ([6800909](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/6800909106de138e7eaaa5158790a3fcebb96bf3))
+* **dom:** move the unsafe js to angular ([c515420](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/c515420deda356882560d10631922218298c09e6))
+
 ### [1.4.18](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.4.17...v1.4.18) (2020-03-30)
 
 

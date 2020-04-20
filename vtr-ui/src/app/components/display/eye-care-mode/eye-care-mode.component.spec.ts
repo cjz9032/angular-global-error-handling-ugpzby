@@ -42,23 +42,23 @@ describe('EyeCareModeComponent', () => {
 		expect(component).toBeTruthy();
 	});
 	it('should test onResetTemparature method', () => {
-		spyOn(component.resetTemparature, 'emit').and.callThrough();
-		component.onResetTemparature(new Event('click'));
-		expect(component.resetTemparature.emit).toHaveBeenCalled();
+		spyOn(component.resetTemperature, 'emit').and.callThrough();
+		component.onResetTemperature(new Event('click'));
+		expect(component.resetTemperature.emit).toHaveBeenCalled();
 	});
 
 	it('should test onEyeCareTemparatureChange method', () => {
-		spyOn(component.eyeCareTemparatureChange, 'emit').and.callThrough();
-		component.onEyeCareTemparatureChange(changeContext);
-		expect(component.eyeCareTemparatureChange.emit).toHaveBeenCalled();
+		spyOn(component.eyeCareTemperatureChange, 'emit').and.callThrough();
+		component.onEyeCareTemperatureChange(changeContext.value);
+		expect(component.eyeCareTemperatureChange.emit).toHaveBeenCalled();
 	});
 	it('should test onEyeCareTemparatureValueChange method', () => {
 		spyOn(
-			component.eyeCareTemparatureValueChange,
+			component.eyeCareTemperatureValueChange,
 			'emit'
 		).and.callThrough();
-		component.onEyeCareTemparatureValueChange(changeContext);
-		expect(component.eyeCareTemparatureValueChange.emit).toHaveBeenCalled();
+		component.onEyeCareTemperatureValueChange(changeContext.value);
+		expect(component.eyeCareTemperatureValueChange.emit).toHaveBeenCalled();
 	});
 	it('should test onSunsetToSunrise method', () => {
 		spyOn(component.sunsetToSunrise, 'emit').and.callThrough();

@@ -24,7 +24,7 @@ vtr-ui-smart-performance-scan-summary {
 			.title-block {
 				width: 40%;
 				@media #{$breakpoint_xl}{
-					width: 30%;;
+					width: 100%;;
 				}
 				h3 {
 					font-size: 2.4rem;
@@ -40,7 +40,7 @@ vtr-ui-smart-performance-scan-summary {
 				width: 60%;
 				padding-top: 0.2rem;
 				@media #{$breakpoint_xl}{
-					width: 70%;;
+					width: 100%;
 				}
 				.list-group {
 					background: #303D49;
@@ -171,7 +171,7 @@ vtr-ui-smart-performance-scan-summary {
 					font-size: 5rem;
 					font-weight: $weight_bold;
 					@media #{$breakpoint_xl}{
-						font-size: 4.4rem;
+						font-size: 3.2rem;
 					}
 					span {
 						font-size: 1.6rem;
@@ -460,6 +460,9 @@ vtr-ui-smart-performance-scan-summary {
 			color: $light;
 			font-size: 3.4rem;
 			font-weight: $weight_light;
+			@media #{$breakpoint_xl}{
+				font-size: 2.4rem;
+			}
 		}
 		h3 {
 			font-size: $fontsize_sm;
@@ -617,7 +620,8 @@ vtr-ui-smart-performance-scan-summary {
 		}
 		.w-75{
 			@media #{$breakpoint_xl}{
-				width: 95% !important;
+				width: 100% !important;
+				justify-content: flex-start !important;
 			}
 		}
 		.action-button {
@@ -633,6 +637,11 @@ vtr-ui-smart-performance-scan-summary {
 			border: 0rem;
 			cursor: pointer;
 			min-width: 20rem;
+			@media #{$breakpoint_xl}{
+				min-width: auto;
+				padding: 0 2.4rem;
+				font-size: 1.2rem;
+			}
 		}
 		.desc {
 			font-size: 1.6rem;
@@ -641,10 +650,14 @@ vtr-ui-smart-performance-scan-summary {
 			margin: 0.5rem 1rem;
 			&.desc1 {
 				border-right: 0.1rem solid $shade_lighter;
+				width: 30%;
 			}
 			b {
 				font-size: $fontsize_xs2;
 				font-weight: $weight_bold;
+				@media #{$breakpoint_xl}{
+					font-size: 1.1rem;
+				}
 			}
 		}
 	}

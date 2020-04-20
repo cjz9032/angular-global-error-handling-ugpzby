@@ -1,8 +1,9 @@
 <div
 	class="vtr-widget-switch-icon"
 	[ngClass]="{ 'disable-state': disable || isLoading }"
-	[title]="tooltipText"
+	[title]=""
 	id="qs-{{ switchId }}-switch-icon"
+	[ngbTooltip]="tooltipText" tooltipClass="vtr-system-tooltip" container="body"
 >
 	<button
 		class="switch-container"

@@ -197,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "Uyarı!",
                     "description": "Yanlış Hız Aşırtma ayarları geri dönüşü olmayan donanım hasarına yol açabilir.",
-                    "proceed": "DEVAM ET"
+                    "proceed": "DEVAM ET",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },
@@ -1443,23 +1446,35 @@
                 "subtitle": "Ses Ayarları",
                 "description": "Bu bölüm, ses ayarlarınızı otomatik olarak en iyi duruma getirmenizi veya Dolby ayarları, mikrofon gibi ayarları tamamıyla manuel olarak ayarlamanızı sağlar.",
                 "audioSmartsettings": {
-                    "title": "Ses Akıllı ayarları",
-                    "subtitle": "UYGULAMA TABANLI AYARLAR",
-                    "description": "Kullandığınız farklı uygulamalara göre ses ayarlarını otomatik olarak yapın.",
+                    "title": "Audio smart settings",
                     "dolby": {
-                        "title": "Otomatik Dolby Ses ayarları",
-                        "tooltip": "Otomatik Dolby Ses ayarları, ses deneyiminizi geliştirmekamacıyla Dolby ses ayarlarını kullandığınız farklı uygulamalar için uygun kipe yapılandırır.",
+                        "title": "Dolby audio",
+                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
-                            "dynamic": "DİNAMİK",
-                            "movie": "FİLM",
-                            "music": "MÜZİK",
-                            "games": "OYUN",
-                            "voip": "SES"
+                            "dynamic": "DYNAMIC",
+                            "movie": "MOVIE",
+                            "music": "MUSIC",
+                            "games": "GAME",
+                            "voip": "VOICE"
+                        },
+                        "automaticAudioCheckboxText": "Automatic audio optimization for",
+                        "automaticAudioMode": {
+                            "voIPMode": {
+                                "radioText": "VoIP",
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                            },
+                            "entertainmentMode": {
+                                "radioText": "Entertainment",
+                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
+                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                            }
                         }
                     },
-                    "voip": {
-                        "title": "Ses Özelliklerinin VoIP için Otomatik Olarak En İyi Duruma Getirilmesi",
-                        "tooltip": "Net, tutarlı ses kalitesi için VoIP aramaları sırasında otomatik olarak Dolby Ses kipine geçin."
+                    "eCourse": {
+                        "title": "Interactive E-course mode",
+                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
                     }
                 },
                 "microphone": {
@@ -1682,7 +1697,9 @@
                         },
                         "subSectionTwo": {
                             "title": "Varsayılan birincil işlevi tersine çevirme",
-                            "description": "Bu ayar açık olduğunda, varsayılan birincil işlev fabrika ayarlarından diğer işleve değiştirilir. Değişikliklerin geçerli hale gelmesi için bilgisayarınızı yeniden başlatın."
+                            "description": "Bu ayar açık olduğunda, varsayılan birincil işlev fabrika ayarlarından diğer işleve değiştirilir. Değişikliklerin geçerli hale gelmesi için bilgisayarınızı yeniden başlatın.",
+                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
+                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
                         },
                         "subSectionThree": {
                             "title": "Fn tuş bileşimleri nasıl kullanılır?",
@@ -1877,7 +1894,7 @@
                 "zeroTouchLoginForIdea": {
                     "title": "Sıfır Dokunma ile Oturum Açma",
                     "caption": "Bu özellik, bilgisayarınızı otomatik olarak uyandırarak veya bilgisayarınızda oturum açarak çalışma verimliliğini artırmanıza olanak tanır. Özelliği kullanmak için yüzünüzü Windows Hello'ya kaydetmeniz gerekir.",
-                    "tooltip": "Bu özellik, bilgisayarınızın önündeyken veya bilgisayarınıza yaklaşırken (1,2 veya 1,5 metre içerisinde) yüzünüzün tanınmasından sonra sistemde otomatik olarak oturum açmanızı sağlar. Ofis yerine dışarıda olduğunuzda, bilgisayarınıza daha yakın olmanız gerekir ve uyandırma işlevi daha uzun sürer. <br>Algılayıcı kapasitesine bağlı olarak, maksimum algılama mesafesi değişiklik gösterir. Ayrıntılı bilgi için dizüstü bilgisayarınızla birlikte gönderilen <i>Kullanma Kılavuzu'</i>na bakın."
+                    "tooltip": "Bu özellik, bilgisayarınızın önündeyken veya bilgisayarınıza yaklaşırken (1,2 veya 1,5 metre içerisinde) yüzünüzün tanınmasından sonra sistemde otomatik olarak oturum açmanızı sağlar. Ofis yerine dışarıda olduğunuzda, bilgisayarınıza daha yakın olmanız gerekir ve uyandırma işlevi daha uzun sürer. <br>Algılayıcı kapasitesine bağlı olarak, maksimum algılama mesafesi değişiklik gösterir. Ayrıntılı bilgi için dizüstü bilgisayarınızla birlikte gönderilen Kullanma Kılavuzu'na bakın."
                 },
                 "zeroTouchLock": {
                     "title": "Sıfır Dokunma ile Kilitleme",
@@ -1964,9 +1981,7 @@
                     "description2": "Bu özellik, varlığınızı algılamak için sensörler ve kamera kullanır. Ancak, özellik hiçbir kişisel veriyi TOPLAMAZ.",
                     "description3": "1. Yukarıdaki işlevleri kullanmak için lütfen ekranınızı, yüzünüzün tanınabileceği uygun bir açıya ayarlayın.",
                     "description4": "2. Yukarıdaki işlevler şu durumlarda desteklenmez:",
-                    "description5a1": "a. Bilgisayarınız Çadır, Tablet, Stand kipinde veya Ayrılmış kipteyken. Bilgisayarınızda desteklenen kipler için lütfen bilgisayarınızla birlikte verilen ",
-                    "description5a2": "Tanıtma ve Kullanma Kılavuzu ",
-                    "description5a3": "belgesine bakın.",
+                    "description5a": "a. Bilgisayarınız Çadır, Tablet, Stand kipinde veya Ayrılmış kipteyken. Bilgisayarınızda desteklenen kipler için lütfen ürünle verilen Kullanma Kılavuzu'na bakın.",
                     "description5b": "b. Bilgisayarınız uyku kipindeyse veya kapalıysa.",
                     "description6": "3. Bilgisayarınızda Uçak modu etkin durumdaysa bu özellikler devre dışı bırakılır.",
                     "description7": "Doğruluk vücut ölçüsü, duruş ve hareket sıklığına göre değişiklik gösterir. Bilgisayarınız beklenmedik bir şekilde kilitlenirse doğruluğu artırmak için hassasiyet çubuğunu ayarlayın."
@@ -2049,12 +2064,59 @@
             "superResolution": {
                 "heading": "Akıllı Medya",
                 "title": "Video Çözünürlüğünü Yükseltme",
-                "desc": "<p><label>Bu özellik, videoyu çözünürlüğünü iyileştirerek video kayıttan yürütme deneyimini geliştirir. Özellikle video çözünürlüğü düşük olduğunda çalışır.</label></p> <p style='margin-top:4px;'><label>Bu işlev pil ömrünü, pil sıcaklığını etkileyebilir ve gürültüye neden olabilir. Lütfen DC kipinde kullanmayın. Aksi takdirde, güç tüketimini hızlandırır ve pil ömrünü kısaltır.</label></p>",
-                "tooltip": "Özellik yalnızca şunlarda çalışır:<br>Windows Media player",
+                "desc": "<p><label>Bu özellik, video çözünürlüğünü iyileştirerek video oynatma deneyimini geliştirir. Özellikle video düşük çözünürlükte olduğunda çalışır.</label></p> <p style='margin-top:4px;'><label>Bu işlev pil ömrünü, pil sıcaklığını etkileyebilir ve gürültüye neden olabilir. Lütfen DC kipinde (pil kipi) kullanmayın. Aksi takdirde, güç tüketimini hızlandırır ve pil ömrünü kısaltır.</label></p>",
+                "tooltip": "Bu özellik yalnızca aşağıdaki video oynatıcılar için geçerlidir:<br>Windows Media Player<br>Chrome<br>Filmler ve TV<br>PotPlayer<br>GOM Player<br>Web tarayıcı tabanlı oynatıcılar (ör. Chrome)<br><br>PotPlayer ve GOM Player'da bu işlevin etkinleştirilmesiyle ilgili talimatlar için bilgisayarınızla birlikte verilen Kullanma Kılavuzu'na bakın.",
                 "note": {
                     "description": "Bu özellik şu durumlarda çalışmaz:",
-                    "description1": "Bilgisayar AC gücüne bağlı değil.",
-                    "description2": "Pil tasarrufu kipi etkin."
+                    "description1": "Pil tasarrufu kipi etkin.",
+                    "description2": "CPU sıcaklığı çok yüksek."
+                }
+            },
+            "antiTheft": {
+                "heading": "Akıllı Algılama",
+                "title": "Akıllı Hareket Uyarısı",
+                "desc": "<p><label>Bu özelliği etkin durumdayken, ekranınız kilitlendiğinde ve özellikle halka açık bir yerde hareket algılandığında cihaz bip sesi çıkarmaya başlar.</label></p> <p style='margin-top:4px;'><label>Alarmı kapatmak için doğru parolayı girin veya Windows Hello ile giriş yapın.</label></p>",
+                "note": {
+                    "description": "Sisteme başarıyla giriş yaptıktan sonra, bu özellik otomatik olarak kapanır. Özelliği kullanmak için yeniden etkinleştirmeniz gerekir."
+                },
+                "alarm": {
+                    "title": " ALARM SÜRESİ",
+                    "option1": "10 saniye",
+                    "option2": "20 saniye",
+                    "option3": "30 saniye",
+                    "option4": "1 dakika",
+                    "option5": "Hiç durmasın"
+                },
+                "allowCamera": {
+                    "title": "FOTOĞRAF ÇEKME",
+                    "describe": "Bu özelliği etkin durumdayken, ekranınız kilitliyse herhangi bir hareket algılandığında kamera otomatik olarak fotoğraf çeker. Bu veriler cihazınızda yerel olarak işlenir. Lenovo bu verilere erişmez ya da onları kullanmaz.",
+                    "checkBoxText": "Bu özelliği etkinleştir"
+                },
+                "cameraPrivacy": {
+                    "describe": "Lenovo Vantage Kamera gizliliği kipi açık. Onay kutusu işlevsel değildir.",
+                    "linkText": "Kapatmak için Kamera gizliliği kipi bölümüne gidin"
+                },
+                "authorizedAccess": {
+                    "describe": "Lenovo Vantage, Kamera'ya erişemiyor. Onay kutusu işlevsel değildir.",
+                    "linkText": "Erişim izni vermek için Windows Ayarları bölümüne gidin"
+                },
+                "photo": {
+                    "title": "HAREKET SIRASINDA ÇEKİLEN FOTOĞRAF SAYISI",
+                    "tooltip": "Hareket algılandığında, bilgisayarınızdaki kamera otomatik olarak etkinleşerek fotoğraf çekmeye başlar. 2 saniyede bir fotoğraf çekilir ve bunlar yerel depolama alanınıza kaydedilir.",
+                    "option1": "5",
+                    "option2": "10",
+                    "option3": "15",
+                    "option4": "20",
+                    "option5": "25",
+                    "option6": "30"
+                },
+                "showPhoto": {
+                    "title": "FOTOĞRAFLAR YEREL OLARAK KAYDEDİLDİ:",
+                    "link": "Fotoğrafları görüntüle"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Lenovo Vantage, dosya sistemine erişemiyor.",
+                    "link": "Erişim izni vermek için Windows Ayarları bölümüne gidin"
                 }
             },
             "voice": {
@@ -2088,53 +2150,6 @@
                     "btnText": "tamam",
                     "title": "Yükleme Başarısız Oldu",
                     "desc": "Lenovo Voice özelliğini kullanmak için lütfen daha sonra tekrar deneyin."
-                }
-            },
-            "antiTheft": {
-                "heading": "Intelligent Sensing",
-                "title": "Smart Motion Alert",
-                "desc": "<p><label>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</label></p> <p style='margin-top:4px;'><label>To dismiss the alarm, enter the correct password or log in by Windows Hello.</label></p>",
-                "note": {
-                    "description": "Once you log in the system successfully, this feature will be turned off automatically. You need to enable it again to use it."
-                },
-                "alarm": {
-                    "title": " THE ALARM WILL LAST FOR",
-                    "option1": "10 seconds",
-                    "option2": "20 seconds",
-                    "option3": "30 seconds",
-                    "option4": "1 minute",
-                    "option5": "Never stop"
-                },
-                "allowCamera": {
-                    "title": "TATING PHOTOS",
-                    "describe": "When enabling this feature, the camera takes photos automatically when detecting any movement if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
-                    "checkBoxText": "Enable this feature"
-                },
-                "cameraPrivacy": {
-                    "describe": "Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
-                    "linkText": "Go to Camera privacy mode to turn it off"
-                },
-                "authorizedAccess": {
-                    "describe": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
-                    "linkText": "Go to Windows Settings to give access"
-                },
-                "photo": {
-                    "title": "THE NUMBER OF PHOTOS TAKEN DURING THE MOVEMENT",
-                    "tooltip": "The camera on your computer automatically activates to take pictures when movements are detected. Pictures are taken every 2 seconds and are saved to your local storage.",
-                    "option1": 5,
-                    "option2": 10,
-                    "option3": 15,
-                    "option4": 20,
-                    "option5": 25,
-                    "option6": 30
-                },
-                "showPhoto": {
-                    "title": "PHOTOS HAVE BEEN:",
-                    "link": "View photos"
-                },
-                "fileAuthorizationTips": {
-                    "content": "Lenovo Vantage doesn't have access to the file system.",
-                    "link": "Go to Windows Settings to give access"
                 }
             }
         }
@@ -2702,7 +2717,7 @@
         },
         "question1": {
             "title": "Dosyalarınızın yedeklenmesi ve geri yüklenmesi",
-            "description": "<div>    <div class='faqInFs4Fb'>        Dosyalarınızın yedeklenmesi ve geri yüklenmesi    </div>    <hr />    <div class='faqInMb7'>        Yedeğinizin olması her zaman iyidir. Orijinal dosyalarınıza başına bir iş gelmesi durumuna karşı dosyalarınızın kopyalarını başka bir sürücüde saklayın.    </div>    <div class='faqInFs3Fb'>        Yedeğinizin ayarlanması    </div>    <hr />    <div class='mb-5'>        <span class='faqInFb'>Start</span> (Başlat) düğmesini seçin, <span class='faqInFb'>Settings</span> (Ayarlar) > <span class='faqInFb'>Update & security</span> (Güncelleştirme ve güvenlik) > <span class='faqInFb'>Backup</span> (Yedekleme) > <span class='faqInFb'>Add a drive</span> (Sürücü ekle) seçeneğini belirleyin ve yedekleriniz için bir harici sürücü veya ağ konumu seçin.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        İşte bu kadar! Kullanıcı klasörünüzün (C:\\\\Users\\\\username) tüm içeriğini saatte bir yedekleriz. Hangi dosyaların yedekleneceğini ve yedeklemenin hangi sıklıkla olacağını değiştirmek için <span class='faqInFb'>More options</span> (Daha fazla seçenek) bölümüne gidin.    </div>    <div class='faqInFs3Fb'>        Dosyalarınızın geri yüklenmesi    </div>    <div class='mb-5'>        Önemli bir dosya veya klasörü bulamıyorsanız aşağıdaki yolla geri alabilirsiniz:    </div>    <div>        <div class='mb-3'>1. Görev çubuğundaki arama kutusuna <span class='faqInFb'>Restore files</span> (Dosyaları geri yükleme) yazın ve ardından <span class='faqInFb'> Restore your files with File History</span> (Dosya Geçmişi ile dosyaların yedeklerini geri yükle) seçeneğini belirleyin.</div>        <div class='mb-3'>2. İhtiyacınız olan dosyayı arayın ve ok tuşlarını kullanarak sürümlerini görün</div>        <div class='mb-3'>3. İstediğiniz sürümü bulduğunuzda <span class='faqInFb'>Restore</span> (Geri Yükle) seçeneğini belirleyerek orijinal konumuna kaydedin. Farklı bir yere kaydetmek için <span class='faqInFb'>Restore</span> (Geri Yükle) seçeneğini basılı tutun (veya sağ tıklayın), <span class='faqInFb'>Restore to</span> (Geri yükleme konumu) seçeneğini belirleyin ve ardından yeni bir konum seçin.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Dosyalarınızın yedeklenmesi ve geri yüklenmesi    </div>    <hr />    <div class='faqInMb7'>        Yedeğinizin olması her zaman iyidir. Orijinal dosyalarınıza başına bir iş gelmesi durumuna karşı dosyalarınızın kopyalarını başka bir sürücüde saklayın.    </div>    <div class='faqInFs3Fb'>        Yedeğinizin ayarlanması    </div>    <hr />    <div class='mb-5'>        <span class='faqInFb'>Start</span> (Başlat) düğmesini seçin, <span class='faqInFb'>Settings</span> (Ayarlar) > <span class='faqInFb'>Update & security</span> (Güncelleştirme ve güvenlik) > <span class='faqInFb'>Backup</span> (Yedekleme) > <span class='faqInFb'>Add a drive</span> (Sürücü ekle) seçeneğini belirleyin ve yedekleriniz için bir harici sürücü veya ağ konumu seçin.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        İşte bu kadar! Kullanıcı klasörünüzün (C:\\Users\\kullanıcı adınız) tüm içeriğini saatte bir yedekleriz. Hangi dosyaların yedekleneceğini ve yedeklemenin hangi sıklıkla olacağını değiştirmek için <span class='faqInFb'>More options</span> (Daha fazla seçenek) bölümüne gidin.    </div>    <div class='faqInFs3Fb'>        Dosyalarınızın geri yüklenmesi    </div>    <div class='mb-5'>        Önemli bir dosya veya klasörü bulamıyorsanız aşağıdaki yolla geri alabilirsiniz:    </div>    <div>        <div class='mb-3'>1. Görev çubuğundaki arama kutusuna <span class='faqInFb'>Restore files</span> (Dosyaları geri yükleme) yazın ve ardından <span class='faqInFb'> Restore your files with File History</span> (Dosya Geçmişi ile dosyaların yedeklerini geri yükle) seçeneğini belirleyin.</div>        <div class='mb-3'>2. İhtiyacınız olan dosyayı arayın ve ok tuşlarını kullanarak sürümlerini görün</div>        <div class='mb-3'>3. İstediğiniz sürümü bulduğunuzda <span class='faqInFb'>Restore</span> (Geri Yükle) seçeneğini belirleyerek orijinal konumuna kaydedin. Farklı bir yere kaydetmek için <span class='faqInFb'>Restore</span> (Geri Yükle) seçeneğini basılı tutun (veya sağ tıklayın), <span class='faqInFb'>Restore to</span> (Geri yükleme konumu) seçeneğini belirleyin ve ardından yeni bir konum seçin.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -3115,7 +3130,8 @@
         "settingsNotes": "Tüm değişikliklerin geçerli hale gelmesi için bu uygulamayı yeniden başlatın.",
         "betaSettingTitle": "Beta Programı",
         "betaProgram": "Beta Programı",
-        "betaSettingDescription": "Üzerinde çalışmakta olduğumuz en yeni özellikleri deneyin."
+        "betaSettingDescription": "Üzerinde çalışmakta olduğumuz en yeni özellikleri deneyin.",
+        "betaSettingNewDescription": "Sizi Smart Performance Beta programına davet etmekten mutluluk duyuyoruz. Smart Performance, aşağıdaki yollarla PC performansınızı artırmanıza yardımcı olur:<br/><ul class='pl-4'><li>Proaktif bir şekilde hataları tanılama ve ayarları optimize etme.</li><li>Ağ ve Tarayıcı Optimizasyonu ile İnternet performansını artırma.</li><li>Mevcut Virüsten Koruma programını kullanmadan hızlı tarama ve düzeltme gerçekleştirme.</li></ul>"
     },
     "modernPreload": {
         "cancel": "İptal",
@@ -3285,7 +3301,8 @@
             "wireless": "Kablosuz"
         },
         "warningMessage": "Sistem uyku veya hazırda bekleme kipine geçerse testlerin iptal edileceğini unutmayın",
-        "refreshMessage": "Tüm bileşenlerin tekrar yüklenmesi gerektiğinden yenileme işlemi biraz zaman alabilir"
+        "refreshMessage": "Tüm bileşenlerin tekrar yüklenmesi gerektiğinden yenileme işlemi biraz zaman alabilir",
+        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -4040,8 +4057,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "Sol ok",
+            "rightArrow": "Sağ ok"
         }
     },
     "dcc": {
