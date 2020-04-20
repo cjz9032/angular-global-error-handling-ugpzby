@@ -19,22 +19,22 @@
 		<div class="col legionEdge-list-items">
 			<div class="item" *ngIf = "gamingCapabilities.thermalModeVersion === 2 && gamingCapabilities.smartFanFeature" >
 				<button id="legion_edge_Thermalmode" class="button-container"
-				tabindex="1"  (click)="openThermalMode2Modal()" aria-label="legion edge Thermal mode"
+				tabindex="1"  (click)="openThermalMode2Modal()"
 				vtrMetrics metricsEvent="featureClick" metricsItem="legion_edge_thermalmode_link" metricsParent="Gaming.Dashboard">
 					<div class="item-left">
 						<div class="title">{{'gaming.dashboard.device.quickSettings.title' | translate}}</div>
 						<div class="mode-status">
-							<span *ngIf = "thermalModeRealStatus === 3">{{'gaming.dashboard.device.legionEdge.thermalMode2.performance' | translate}}</span>
-							<span *ngIf = "thermalModeRealStatus === 3 && OCSettings === 1"> | {{'gaming.dashboard.device.legionEdge.thermalMode2.OC_On' | translate}}</span>
-							<span *ngIf = "thermalModeRealStatus === 2">{{'gaming.dashboard.device.legionEdge.thermalMode2.balance' | translate}}</span>
-							<span *ngIf = "thermalModeRealStatus === 1">{{'gaming.dashboard.device.legionEdge.thermalMode2.quiet' | translate}}</span>
+							<span *ngIf = "thermalModeRealStatus === thermalMode2Enum.performance">{{'gaming.dashboard.device.legionEdge.thermalMode2.performance' | translate}}</span>
+							<span *ngIf = "thermalModeRealStatus === thermalMode2Enum.performance && OCSettings"> | {{'gaming.dashboard.device.legionEdge.thermalMode2.OC_On' | translate}}</span>
+							<span *ngIf = "thermalModeRealStatus === thermalMode2Enum.balance">{{'gaming.dashboard.device.legionEdge.thermalMode2.balance' | translate}}</span>
+							<span *ngIf = "thermalModeRealStatus === thermalMode2Enum.quiet">{{'gaming.dashboard.device.legionEdge.thermalMode2.quiet' | translate}}</span>
 						</div>
 					</div>
 					<div class="item-right">
 						<div  class="icon">
-							<img class="pngStatus performance" *ngIf = "thermalModeRealStatus === 3">
-							<img class="pngStatus balance" *ngIf = "thermalModeRealStatus === 2">
-							<img class="pngStatus quiet" *ngIf = "thermalModeRealStatus === 1">
+							<img class="pngStatus performance" *ngIf = "thermalModeRealStatus === thermalMode2Enum.performance">
+							<img class="pngStatus balance" *ngIf = "thermalModeRealStatus === thermalMode2Enum.balance">
+							<img class="pngStatus quiet" *ngIf = "thermalModeRealStatus === thermalMode2Enum.quiet">
 						</div>
 					</div>
 				</button>
