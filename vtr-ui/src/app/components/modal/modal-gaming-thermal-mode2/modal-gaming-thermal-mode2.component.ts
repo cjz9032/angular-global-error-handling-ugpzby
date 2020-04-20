@@ -3,6 +3,7 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { GamingAllCapabilities } from 'src/app/data-models/gaming/gaming-all-capabilities';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { GamingThermal2 } from 'src/app/enums/gaming-thermal2.enum';
 import { CommonService } from 'src/app/services/common/common.service';
 import { GamingThermalModeService } from 'src/app/services/gaming/gaming-thermal-mode/gaming-thermal-mode.service';
 import { ModalGamingAdvancedOCComponent } from './../../modal/modal-gaming-advanced-oc/modal-gaming-advanced-oc.component';
@@ -23,15 +24,10 @@ export class ModalGamingThermalMode2Component implements OnInit {
 
   public loading = false;
   public gamingCapabilities: GamingAllCapabilities = new GamingAllCapabilities();
-  public thermalModeSettingStatus = 2;
-  public deviceEnum = {
-    cpu_gpu: 3,
-    cpu: 2,
-    gpu: 1,
-    none: 0
-  };
-  public OCsupportted = this.deviceEnum.none;
-  public driverStatus = this.deviceEnum.none;
+  public thermalMode2Enum = GamingThermal2;
+  public thermalModeSettingStatus = this.thermalMode2Enum.balance;
+  public OCsupportted = this.thermalMode2Enum.none;
+  public driverStatus = this.thermalMode2Enum.none;
   public OCSettings = false;
   public autoSwitchStatus = false;
   public isThermalModeSetted = false;
@@ -68,11 +64,11 @@ export class ModalGamingThermalMode2Component implements OnInit {
 
   ngOnInit() {
     this.renderOCSupported();
-    if (this.OCsupportted === this.deviceEnum.cpu_gpu) {
+    if (this.OCsupportted === this.thermalMode2Enum.cpu_gpu) {
       this.OCSettings = this.commonService.getLocalStorageValue(LocalStorageKey.CpuOCStatus) === 1 && this.commonService.getLocalStorageValue(LocalStorageKey.GpuOCStatus) === 1;
-    } else if (this.OCsupportted === this.deviceEnum.cpu) {
+    } else if (this.OCsupportted === this.thermalMode2Enum.cpu) {
       this.OCSettings = this.commonService.getLocalStorageValue(LocalStorageKey.CpuOCStatus) === 1;
-    } else if (this.OCsupportted === this.deviceEnum.gpu) {
+    } else if (this.OCsupportted === this.thermalMode2Enum.gpu) {
       this.OCSettings = this.commonService.getLocalStorageValue(LocalStorageKey.GpuOCStatus) === 1;
     }
     this.getThermalModeSettingStatus();
@@ -90,29 +86,29 @@ export class ModalGamingThermalMode2Component implements OnInit {
     // oc supported status
     if (this.gamingCapabilities.cpuOCFeature) {
       if (this.gamingCapabilities.gpuOCFeature) {
-        this.OCsupportted = this.deviceEnum.cpu_gpu;
+        this.OCsupportted = this.thermalMode2Enum.cpu_gpu;
       } else {
-        this.OCsupportted = this.deviceEnum.cpu;
+        this.OCsupportted = this.thermalMode2Enum.cpu;
       }
     } else {
       if (this.gamingCapabilities.gpuOCFeature) {
-        this.OCsupportted = this.deviceEnum.gpu;
+        this.OCsupportted = this.thermalMode2Enum.gpu;
       } else {
-        this.OCsupportted = this.deviceEnum.none;
+        this.OCsupportted = this.thermalMode2Enum.none;
       }
     }
     // driver status
     if (this.gamingCapabilities.xtuService) {
       if (this.gamingCapabilities.nvDriver) {
-        this.driverStatus = this.deviceEnum.cpu_gpu;
+        this.driverStatus = this.thermalMode2Enum.cpu_gpu;
       } else {
-        this.driverStatus = this.deviceEnum.cpu;
+        this.driverStatus = this.thermalMode2Enum.cpu;
       }
     } else {
       if (this.gamingCapabilities.nvDriver) {
-        this.driverStatus = this.deviceEnum.gpu;
+        this.driverStatus = this.thermalMode2Enum.gpu;
       } else {
-        this.driverStatus = this.deviceEnum.none;
+        this.driverStatus = this.thermalMode2Enum.none;
       }
     }
   }
