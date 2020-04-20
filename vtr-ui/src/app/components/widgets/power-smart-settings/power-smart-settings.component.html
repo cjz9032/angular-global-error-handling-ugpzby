@@ -118,21 +118,23 @@
 							</h3>
 							<p id="powerSmartSettings.description"
 								attr.aria-label="powerSmartSettings.description">
-								{{'device.deviceSettings.power.powerSmartSettings.description5' | translate}}
+								{{'device.deviceSettings.power.powerSmartSettings.description5' | translate}} 
 								<a class="read-more-link"
 									#readMoreLink
 									*ngIf="!onReadMoreClick"
 									href="javascript:void(0)"
-									(click)="readMoreLink.blur();readMore(readMoreDiv)"
-									(keydown.enter)="readMoreLink.blur();readMore(readMoreDiv);"
+									(click)="[readMoreLink.blur(),readMore(readMoreDiv,$event)]"
+									(keydown.enter)="[readMoreLink.blur(),$event.stopPropagation(),readMore(readMoreDiv,$event)]"
 									tabindex="0"
 									role="link"
 									id="powerSmartSettings-intelligentCooling-read-more"
 									attr.aria-label="powerSmartSettings-intelligentCooling-read-more">
 									{{'device.deviceSettings.power.powerSmartSettings.readMore' | translate}}</a>
 							</p>
-							<div style="display:none"
-								id="readMoreDiv"
+							<div style="display:none;outline: none;"
+								tabindex="-1"
+								id="readMoreDiv"	
+								role="heading"
 								#readMoreDiv>
 								<p id="readMoreMode1"
 									role="heading">

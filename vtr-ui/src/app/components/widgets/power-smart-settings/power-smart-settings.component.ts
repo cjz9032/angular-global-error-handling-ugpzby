@@ -717,14 +717,21 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 	}
 
 
-	readMore(readMoreDiv: HTMLElement) {
+	readMore(readMoreDiv: HTMLElement,$event:Event) {
 		this.onReadMoreClick = true;
-		readMoreDiv.style.display = 'block';
-		// readMoreDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-		// const focusElement = readMoreDiv.querySelector('[tabindex = \'0\']') as HTMLElement;
-		// Fix for Edge browser
-		// window.scrollBy(0, 0);
-		readMoreDiv.focus();
+	
+		if(readMoreDiv){
+			readMoreDiv.style.display = 'block';
+			//readMoreDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+			// const focusElement = readMoreDiv.querySelector('[tabindex = \'0\']') as HTMLElement;
+			// Fix for Edge browser
+			// window.scrollBy(0, 0);
+			//if($event.type!=='click'){
+				readMoreDiv.focus();
+			//}
+			
+		}
+		
 	}
 
 	ngOnDestroy() {
