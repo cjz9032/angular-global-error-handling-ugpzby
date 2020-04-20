@@ -33,7 +33,7 @@ export class ModalGamingThermalMode2Component implements OnInit {
   public isThermalModeSetted = false;
   public isPerformancOCSetted = false;
   // @Output() thermalModeMsg = new EventEmitter<number>();
-  @Output() OCSettingsMsg = new EventEmitter<number>();
+  @Output() OCSettingsMsg = new EventEmitter<boolean>();
 
   constructor(
     private modalService: NgbModal,
@@ -179,12 +179,11 @@ export class ModalGamingThermalMode2Component implements OnInit {
       this.gamingOCService.getPerformanceOCSetting().then(res => {
         this.logger.info(`Modal-ThermamMode2-GetPerformanceOCSetting: get value from ${this.OCSettings} to ${res}`);
         if (!this.isPerformancOCSetted && res !== this.OCSettings) {
-          let OCStatus = res ? 1 : 3;
           if (this.gamingCapabilities.cpuOCFeature) {
-            this.commonService.setLocalStorageValue(LocalStorageKey.CpuOCStatus, OCStatus);
+            this.commonService.setLocalStorageValue(LocalStorageKey.CpuOCStatus, res ? 1 : 3);
           }
           if (this.gamingCapabilities.gpuOCFeature) {
-            this.commonService.setLocalStorageValue(LocalStorageKey.GpuOCStatus, OCStatus);
+            this.commonService.setLocalStorageValue(LocalStorageKey.GpuOCStatus, res ? 1 : 3);
           }
           this.OCSettings = res;
         }
@@ -198,41 +197,38 @@ export class ModalGamingThermalMode2Component implements OnInit {
   setPerformanceOCSetting(event: any) {
     this.isPerformancOCSetted = true;
     this.OCSettings = !this.OCSettings;
-    let OCStatus = this.OCSettings ? 1 : 3;
     if (this.gamingCapabilities.cpuOCFeature) {
-      this.commonService.setLocalStorageValue(LocalStorageKey.CpuOCStatus, OCStatus);
+      this.commonService.setLocalStorageValue(LocalStorageKey.CpuOCStatus, this.OCSettings ? 1 : 3);
     } 
     if (this.gamingCapabilities.gpuOCFeature) {
-      this.commonService.setLocalStorageValue(LocalStorageKey.GpuOCStatus, OCStatus);
+      this.commonService.setLocalStorageValue(LocalStorageKey.GpuOCStatus, this.OCSettings ? 1 : 3);
     }
-    this.OCSettingsMsg.emit(OCStatus);
+    this.OCSettingsMsg.emit(this.OCSettings);
     try {
       this.gamingOCService.setPerformanceOCSetting(this.OCSettings).then(res => {
         if(res) {
           this.logger.info(`Modal-ThermalMode2-SetPerformanceOCSetting: return value: ${res}, OCSettings from ${!this.OCSettings} to ${this.OCSettings}`);
         } else {
           this.OCSettings = !this.OCSettings;
-          OCStatus = this.OCSettings ? 1 : 3;
           if (this.gamingCapabilities.cpuOCFeature) {
-            this.commonService.setLocalStorageValue(LocalStorageKey.CpuOCStatus, OCStatus);
+            this.commonService.setLocalStorageValue(LocalStorageKey.CpuOCStatus, this.OCSettings ? 1 : 3);
           } 
           if (this.gamingCapabilities.gpuOCFeature) {
-            this.commonService.setLocalStorageValue(LocalStorageKey.GpuOCStatus, OCStatus);
+            this.commonService.setLocalStorageValue(LocalStorageKey.GpuOCStatus, this.OCSettings ? 1 : 3);
           }
-          this.OCSettingsMsg.emit(OCStatus);
+          this.OCSettingsMsg.emit(this.OCSettings);
           this.logger.error(`Modal-ThermalMode2-SetPerformanceOCSetting: return value: ${res}, OCSettings unchanged`);
         }
       });
     } catch (error) {
       this.OCSettings = !this.OCSettings;
-      OCStatus = this.OCSettings ? 1 : 3;
       if (this.gamingCapabilities.cpuOCFeature) {
-        this.commonService.setLocalStorageValue(LocalStorageKey.CpuOCStatus, OCStatus);
+        this.commonService.setLocalStorageValue(LocalStorageKey.CpuOCStatus, this.OCSettings ? 1 : 3);
       }
       if (this.gamingCapabilities.gpuOCFeature) {
-        this.commonService.setLocalStorageValue(LocalStorageKey.GpuOCStatus, OCStatus);
+        this.commonService.setLocalStorageValue(LocalStorageKey.GpuOCStatus, this.OCSettings ? 1 : 3);
       }
-      this.OCSettingsMsg.emit(OCStatus);
+      this.OCSettingsMsg.emit(this.OCSettings);
       this.logger.error(`Modal-ThermalMode2-SetPerformanceOCSetting: set fail; Error message: `, error.message);
       throw new Error(error.message);
     }
