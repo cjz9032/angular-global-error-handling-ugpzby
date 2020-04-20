@@ -47,7 +47,7 @@
 		height: 100%;
 		position: relative;
 		&.optionnull {
-			#off {
+			.lighting_off_profile {
 				color: $gaming_lightest !important;
 			}
 		}
@@ -91,7 +91,7 @@
 			@media #{$breakpoint_xl} {
 				white-space: nowrap;
 				overflow: hidden;
-				&#off {
+				&.lighting_off_profile {
 					letter-spacing: 0;
 					text-indent: 0;
 				}
@@ -115,7 +115,7 @@
 		left: 0;
 	}
 	#profile_off_radio:checked {
-		& ~ #gaming_profile_lighting_profile_off {
+		& ~ #gaming_profile_RGBlighting_profile_off {
 			color: $gaming_lightest;
 		}
 		& ~ .toggle {
@@ -123,7 +123,7 @@
 		}
 	}
 	#profile_first_radio:checked {
-		& ~ #gaming_profile_lighting_profile1 {
+		& ~ #gaming_profile_RGBlighting_profile1 {
 			color: $gaming_lightest;
 		}
 		& ~ .toggle {
@@ -131,7 +131,7 @@
 		}
 	}
 	#profile_second_radio:checked {
-		& ~ #gaming_profile_lighting_profile2 {
+		& ~ #gaming_profile_RGBlighting_profile2 {
 			color: $gaming_lightest;
 		}
 		& ~ .toggle {
@@ -139,7 +139,7 @@
 		}
 	}
 	#profile_third_radio:checked {
-		& ~ #gaming_profile_lighting_profile3 {
+		& ~ #gaming_profile_RGBlighting_profile3 {
 			color: $gaming_lightest;
 		}
 		& ~ .toggle {
@@ -181,11 +181,11 @@
 }
 ::ng-deep body.focus-enable{
 	.is-gaming {
-		.multi-state-toggle{		
+		.multi-state-toggle{
 			.inner-toggle{
 					input:checked:focus+label{
 							outline: 1px dotted !important;
-					}	
+					}
 				}
 		}
 	}

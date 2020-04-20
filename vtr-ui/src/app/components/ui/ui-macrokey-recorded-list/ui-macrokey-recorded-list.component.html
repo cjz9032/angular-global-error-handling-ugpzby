@@ -36,8 +36,8 @@
 					<ng-container *ngFor="let record of recordsList; let i = index;">
 						<div class="record-item" (mouseover)="hoveredPair = record.pairName"
 							(mouseleave)="hoveredPair = ''" [ngClass]="{paired: record.pairName === hoveredPair}"
-							id="macro_key_delete_key{{record.pairName}}" vtrMetrics
-							[metricsItem]="'Macrokey_delete_key'" metricsEvent="featureClick">
+							id="macrokey_delete_key{{i}}" vtrMetrics
+							[metricsItem]="'Macrokey_delete_key'" metricsEvent="featureClick" row="button">
 							<div class="pressing" *ngIf="record.status === 1">
 								<div class="key">
 									<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1">

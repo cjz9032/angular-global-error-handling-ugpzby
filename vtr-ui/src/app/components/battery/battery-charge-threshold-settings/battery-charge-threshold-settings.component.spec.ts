@@ -21,7 +21,10 @@ describe('BatteryChargeThresholdSettingsComponent', () => {
 	let component: BatteryChargeThresholdSettingsComponent;
 	let fixture: ComponentFixture<BatteryChargeThresholdSettingsComponent>;
 	let commonService: CommonService;
-	let dropdown: NgbDropdown;
+	let dropdown: any = {
+		isOpen: () => { return false },
+		close: () => { return null }
+	};
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
