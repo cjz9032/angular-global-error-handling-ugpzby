@@ -53,6 +53,14 @@
 				text-align: center;
 				border: 0rem;
 				cursor: pointer;
+				position: relative;
+				&:focus {
+					outline: 0;
+					box-shadow: none;
+					&::after {
+						@include button-outline-blue;
+					}
+				}
 			}
 			.action-button-disable {
 				border-radius: 2.5rem;

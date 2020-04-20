@@ -101,6 +101,9 @@
 			color: $grey_dark;
 			padding-right: 1.4rem;
 		}
+		&:focus {
+			@include outline-blue;
+		}
 	}
 
 	.ui-menu-dropdown {
