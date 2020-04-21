@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnDestroy, OnInit, Input } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output, Input } from '@angular/core';
 import { EMPTY, Subscription } from 'rxjs';
 import { DolbyModeResponse } from 'src/app/data-models/audio/dolby-mode-response';
 import { MicrophoneOptimizeModes } from 'src/app/data-models/audio/microphone-optimize-modes';
@@ -48,6 +48,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	public entertainmentStatus = new FeatureStatus(false, true);
 	public eCourseLoader = true;
 	public dolbyAudioCache: DolbyModeResponse = undefined;
+	@Output() tooltipClick = new EventEmitter<boolean>();
 
 	@Input() dolbyModeDisabled = false;
 	@Input() automaticAudioDisabled = false;
@@ -161,6 +162,8 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			if (this.dolbyAudioCache !== undefined) {
 				this.dolbyModeResponse = this.dolbyAudioCache;
 				this.bindDolbyAudioProfileState();
+				this.autoDolbyFeatureLoader = false;
+				this.eCourseLoader = false;
 			}
 		} catch (error) {
 			this.logger.exception('initExpressChargingFromCache', error);
@@ -250,6 +253,21 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	// 	}
 	// }
 
+	public onRightIconClick(tooltip: any, $event: any) {
+		this.toggleToolTip(tooltip, true);
+		this.tooltipClick.emit($event);
+	}
+
+	public toggleToolTip(tooltip: any, canOpen = false) {
+		if (tooltip) {
+			if (tooltip.isOpen()) {
+				tooltip.close();
+			} else if (canOpen) {
+				tooltip.open();
+			}
+		}
+	}
+
 	getDolbyModesStatus() {
 		try {
 			if (this.audioService.isShellAvailable) {
@@ -259,6 +277,8 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 						this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyModeResponse);
 						this.initVisibility();
 						this.bindDolbyAudioProfileState();
+						this.autoDolbyFeatureLoader = false;
+						this.eCourseLoader = false;
 						this.logger.info('getDolbyModesStatus:', response);
 					}).catch(error => {
 						this.logger.error('getDolbyModesStatus', error.message);
@@ -638,6 +658,14 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 
 	initMockData() {
 		this.microphoneProperties = new Microphone(true, false, 0, '', false, false, false, false, true);
+
+		const dolbySupportedMode = ['device.deviceSettings.audio.audioSmartsettings.dolby.options.dynamic',
+			'device.deviceSettings.audio.audioSmartsettings.dolby.options.movie',
+			'device.deviceSettings.audio.audioSmartsettings.dolby.options.music',
+			'device.deviceSettings.audio.audioSmartsettings.dolby.options.games',
+			'device.deviceSettings.audio.audioSmartsettings.dolby.options.voip'];
+
+		this.dolbyModeResponse = new DolbyModeResponse(true, dolbySupportedMode, '',true,'NotSupport','True','True',true);
 
 		// const optimizeMode = ['Only My Voice', 'Normal', 'Multiple Voice', 'Voice Recogntion'];
 		const optimizeMode = ['device.deviceSettings.audio.microphone.optimize.options.OnlyMyVoice',

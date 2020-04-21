@@ -1462,11 +1462,11 @@
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "radioText": "VoIP",
+                                "checkboxText": "Automatically optimize audio for VOIP",
                                 "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
                             },
                             "entertainmentMode": {
-                                "radioText": "Entertainment",
+                                "checkboxText": "Automatically optimize audio for entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
                                 "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
                                 "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
