@@ -126,7 +126,7 @@ export class ProtocolGuardService implements CanActivate {
 	if (schema.toLowerCase() !== this.vantage3xSchema || !semantic) return '';
 
 	let path: string | undefined = this.semanticToPath[semantic.toLowerCase()];
-	if (!path) {
+	if (path === undefined) {
 		path = semantic;
 	}
 
@@ -166,11 +166,10 @@ export class ProtocolGuardService implements CanActivate {
 
   public canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) : boolean | UrlTree {
 	const path = state.url.slice(state.url.indexOf('#') + 1);
-
 	if (path.startsWith(this.characteristicCode)) {
 		const checkResult = this.isRedirectUrlNeeded(path);
 		return checkResult[0] ? this.router.parseUrl(checkResult[1]) : history.length === 1;
 	}
-	return true;
+	return history.length === 1;
   }
 }
