@@ -1452,10 +1452,10 @@
                         "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
                             "dynamic": "DYNAMIC",
-							"movie": "MOVIE",
-							"music": "MUSIC",
-							"games": "GAME",
-							"voip": "VOICE"
+                            "movie": "MOVIE",
+                            "music": "MUSIC",
+                            "games": "GAME",
+                            "voip": "VOICE"
                         },
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
@@ -1466,9 +1466,9 @@
                             "entertainmentMode": {
                                 "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
                             }
                         }
                     },
@@ -1689,17 +1689,17 @@
                         "hideAdvSettings": "NASCONDI IMPOSTAZIONI AVANZATE",
                         "description": "La riga superiore della tastiera fornisce le due funzioni seguenti. Selezionare la funzione desiderata:",
                         "subSection": {
-                            "description": "Per attivare le due funzioni riportate sopra, premere Fn+Esc.",
+                            "description": "È inoltre possibile alternare le due funzioni premendo Fn+Esc. L'aggiornamento richiederà diversi secondi.",
                             "radioButton": {
-                                "sFunKey": "FUNZIONE SPECIALE",
-                                "fnKey": "FUNZIONE F1-F12"
+                                "sFunKey": "Funzione speciale",
+                                "fnKey": "Funzione F1-F12"
                             }
                         },
                         "subSectionTwo": {
                             "title": "Inversione della funzione primaria predefinita",
                             "description": "Se attivata, le impostazioni di fabbrica della funzione primaria predefinita vengono invertite. Riavviare il computer per rendere le modifiche.",
-                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
-                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
+                            "caption": "LA FUNZIONE PRIMARIA ATTIVA:",
+                            "tooltipText": "Per utilizzare la funzione primaria predefinita, premere i tasti riga superiore. Per le funzioni non primarie, premere i tasti Fn+riga superiore. In alternativa è possibile premere Fn+Esc e quindi i tasti riga superiore."
                         },
                         "subSectionThree": {
                             "title": "Modalità di utilizzo delle combinazioni di tasti Fn",
@@ -1982,7 +1982,7 @@
                     "description3": "1. Per utilizzare le funzioni sopra riportate, regolare lo schermo con un'angolazione appropriata in modo che il volto venga riconosciuto.",
                     "description4": "2. Le funzioni sopra riportate non sono supportate quando:",
                     "description5a": "A. Il computer è in modalità tenda, tablet, supporto o scollegato. Per le modalità supportate sul computer, consultare la relativa guida per l'utente.",
-					"description5b": "B. Se il computer è in modalità Ibernazione o è stato spento.",
+                    "description5b": "B. Se il computer è in modalità Ibernazione o è stato spento.",
                     "description6": "3. Ha a számítógépen bekapcsolta a Repülőgép üzemmódot, ezek a funkciók nem használhatók.",
                     "description7": "L'accuratezza varia a seconda della corporatura, della postura e della frequenza del movimento. Se il computer si blocca in modo imprevisto, regolare la barra della sensibilità per migliorare la precisione."
                 },
@@ -2103,12 +2103,12 @@
                 "photo": {
                     "title": "IL NUMERO DI FOTO SCATTATE DURANTE IL MOVIMENTO",
                     "tooltip": "La fotocamera del computer si attiva automaticamente per scattare foto quando vengono rilevati movimenti. Le foto vengono scattate ogni 2 secondi e vengono salvate nell'archivio locale.",
-                    "option1": "5",
-                    "option2": "10",
-                    "option3": "15",
-                    "option4": "20",
-                    "option5": "25",
-                    "option6": "30"
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
                 },
                 "showPhoto": {
                     "title": "LE FOTO SONO STATE SALVATE IN LOCALE:",
@@ -3895,7 +3895,8 @@
                 "results": "Results:",
                 "status": "Status"
             }
-        }
+        },
+        "runningWell": "PC is running well"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

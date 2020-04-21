@@ -1452,10 +1452,10 @@
                         "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
                             "dynamic": "DYNAMIC",
-							"movie": "MOVIE",
-							"music": "MUSIC",
-							"games": "GAME",
-							"voip": "VOICE"
+                            "movie": "MOVIE",
+                            "music": "MUSIC",
+                            "games": "GAME",
+                            "voip": "VOICE"
                         },
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
@@ -1466,9 +1466,9 @@
                             "entertainmentMode": {
                                 "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
                             }
                         }
                     },
@@ -1689,7 +1689,7 @@
                         "hideAdvSettings": "隱藏進階設定",
                         "description": "鍵盤的最上面一排提供下列兩個功能。選取您要的功能：",
                         "subSection": {
-                            "description": "如果要切換上述兩個功能，請按下 Fn+Esc。",
+                            "description": "您也可以按下 Fn+Esc 來切換這兩個功能。重新整理將費時數秒鐘。",
                             "radioButton": {
                                 "sFunKey": "特殊功能",
                                 "fnKey": "F1-F12 功能"
@@ -1698,8 +1698,8 @@
                         "subSectionTwo": {
                             "title": "反轉預設的主要功能",
                             "description": "啟用時，預設的主要功能會從原廠預設值變更為相反的功能。請重新啟動您的電腦以便使變更生效。",
-                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
-                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
+                            "caption": "作用中的主要功能：",
+                            "tooltipText": "若要使用預設的主要功能，請按下最上面一排按鍵。如需使用非主要功能，請按下 Fn+最上面一排按鍵。或者，您可以先按下 Fn+Esc，然後按下最上面一排按鍵。"
                         },
                         "subSectionThree": {
                             "title": "如何使用 Fn 組合鍵",
@@ -1982,7 +1982,7 @@
                     "description3": "1.若要使用上述功能，請將螢幕調整至適當角度以便能夠辨識您的臉部。",
                     "description4": "2.在以下情況中，不支援上述功能：",
                     "description5a": "a. 您的電腦處於帳篷、平板、直立或分離模式。若要知道您的電腦支援哪些模式，請參閱隨附的使用手冊。",
-					"description5b": "b. 您的電腦處於休眠模式或已關閉電源。",
+                    "description5b": "b. 您的電腦處於休眠模式或已關閉電源。",
                     "description6": "3. 如果您的電腦上已啟用飛航模式，這些功能都會停用。",
                     "description7": "精確度會隨身體大小、姿勢和動作頻率有所變化。如果您的電腦意外遭到鎖定，請調整敏感度拉桿以改善精準度。"
                 },
@@ -2103,12 +2103,12 @@
                 "photo": {
                     "title": "移動期間拍攝的相片數",
                     "tooltip": "電腦上的相機會在偵測到動作時自動啟動拍照功能。每 2 秒拍一次，並將照片存到您的本機儲存裝置。",
-                    "option1": "5",
-                    "option2": "10",
-                    "option3": "15",
-                    "option4": "20",
-                    "option5": "25",
-                    "option6": "30"
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
                 },
                 "showPhoto": {
                     "title": "相片已經儲存到本機：",
@@ -3895,7 +3895,8 @@
                 "results": "Results:",
                 "status": "Status"
             }
-        }
+        },
+        "runningWell": "PC is running well"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

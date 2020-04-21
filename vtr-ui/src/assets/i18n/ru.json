@@ -1466,9 +1466,9 @@
                             "entertainmentMode": {
                                 "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
                             }
                         }
                     },
@@ -1689,17 +1689,17 @@
                         "hideAdvSettings": "СКРЫТЬ ДОПОЛНИТЕЛЬНЫЕ ПАРАМЕТРЫ",
                         "description": "Верхний ряд клавиатуры поддерживает следующие две функции. Выберите нужную функцию:",
                         "subSection": {
-                            "description": "Чтобы поменять местами две функции, нажмите клавиши Fn+Esc.",
+                            "description": "Переключаться между двумя функциями также можно нажатием Fn+Esc. Для обновления потребуется несколько секунд.",
                             "radioButton": {
-                                "sFunKey": "СПЕЦИАЛЬНАЯ ФУНКЦИЯ",
-                                "fnKey": "ФУНКЦИИ F1–F12"
+                                "sFunKey": "Специальная функция",
+                                "fnKey": "Функции F1–F12"
                             }
                         },
                         "subSectionTwo": {
                             "title": "Отмена основной функции по умолчанию",
                             "description": "Если включена, основная функция по умолчанию будет изменена с заводских настроек на противоположные. Перезагрузите компьютер, чтобы эти изменения вступили в силу.",
-                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
-                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
+                            "caption": "АКТИВНАЯ ОСНОВНАЯ ФУНКЦИЯ:",
+                            "tooltipText": "Для использования основных функций по умолчанию нажимайте клавиши верхнего ряда. Для использования неосновных функций нажимайте Fn+клавиши верхнего ряда. Также можно сначала нажать Fn+Esc, а затем — клавиши верхнего ряда."
                         },
                         "subSectionThree": {
                             "title": "Использование комбинаций с клавишей Fn",
@@ -2103,12 +2103,12 @@
                 "photo": {
                     "title": "КОЛИЧЕСТВО СНИМКОВ ПРИ ОБНАРУЖЕНИИ ДВИЖЕНИЯ",
                     "tooltip": "Камера в компьютере автоматически активируется и делает снимки при обнаружении движения. Снимки делаются каждые две секунды и сохраняются на локальном устройстве хранения данных.",
-                    "option1": "5",
-                    "option2": "10",
-                    "option3": "15",
-                    "option4": "20",
-                    "option5": "25",
-                    "option6": "30"
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
                 },
                 "showPhoto": {
                     "title": "ФОТОГРАФИИ СОХРАНЕНЫ В ЛОКАЛЬНОЕ ХРАНИЛИЩЕ:",
@@ -3895,7 +3895,8 @@
                 "results": "Results:",
                 "status": "Status"
             }
-        }
+        },
+        "runningWell": "PC is running well"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

@@ -1452,10 +1452,10 @@
                         "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
                             "dynamic": "DYNAMIC",
-							"movie": "MOVIE",
-							"music": "MUSIC",
-							"games": "GAME",
-							"voip": "VOICE"
+                            "movie": "MOVIE",
+                            "music": "MUSIC",
+                            "games": "GAME",
+                            "voip": "VOICE"
                         },
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
@@ -1466,9 +1466,9 @@
                             "entertainmentMode": {
                                 "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
                             }
                         }
                     },
@@ -1689,17 +1689,17 @@
                         "hideAdvSettings": "SAKRIJ NAPREDNE POSTAVKE",
                         "description": "Gornji red tipkovnice sadrži sljedeće dvije funkcije. Odaberite onu koju želite:",
                         "subSection": {
-                            "description": "Kako biste zamijenili dvije prethodno navedene funkcije, pritisnite Fn+Esc.",
+                            "description": "Između te dvije funkcije možete se prebacivati i pritiskom kombinacije tipki Fn+Esc. Osvježavanje će potrajati nekoliko sekundi.",
                             "radioButton": {
-                                "sFunKey": "POSEBNA FUNKCIJA",
-                                "fnKey": "FUNKCIJE F1 DO F12"
+                                "sFunKey": "Posebna funkcija",
+                                "fnKey": "Funkcije od F1 do F12"
                             }
                         },
                         "subSectionTwo": {
                             "title": "Vraćanje zadane primarne funkcije",
                             "description": "Kada je uključeno, zadana primarna funkcija promijenit će se iz tvorničkih postavki u suprotno. Kako bi se promjene primijenile, potrebno je ponovno pokrenuti računalo.",
-                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
-                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
+                            "caption": "AKTIVNA PRIMARNA FUNKCIJA:",
+                            "tooltipText": "Za upotrebu zadane primarne funkcije pritisnite tipke u gornjem redu. Za funkcije koje nisu primarne pritisnite kombinaciju tipki Fn+tipke u gornjem redu. Umjesto toga možete najprije pritisnuti kombinaciju tipki Fn+Esc, a zatim tipke u gornjem redu."
                         },
                         "subSectionThree": {
                             "title": "Upotreba kombinacija s tipkom Fn",
@@ -1982,7 +1982,7 @@
                     "description3": "1. Da biste koristili gornje funkcije, podesite zaslon odgovarajućem kutu kako bi se vaše lice moglo prepoznati.",
                     "description4": "2. Gore navedene funkcije nisu podržane kada:",
                     "description5a": "a. Vaše je računalo u Tent, Tablet, Stand ili Detached načinu rada. Načine rada podržane na vašem računalu potražite u priloženom vodiču za korisnike.",
-					"description5b": "b. Vaše je računalo u hibernacijskom načinu rada ili je isključeno.",
+                    "description5b": "b. Vaše je računalo u hibernacijskom načinu rada ili je isključeno.",
                     "description6": "3. Ako je na vašem računalu omogućen način rada u zrakoplovu, te su značajke onemogućene.",
                     "description7": "Točnost se razlikuje u pogledu veličine tijela, držanje i učestalosti pokreta. Ako se vaše računalo neočekivano zaključa, podesite traku osjetljivosti da biste poboljšali točnost."
                 },
@@ -2103,12 +2103,12 @@
                 "photo": {
                     "title": "BROJ SNIMLJENIH FOTOGRAFIJA TIJEKOM POMICANJA",
                     "tooltip": "Kamera na vašem računalu automatski se aktivira za fotografiranje kada se otkrije pokrete. Fotografije se snimaju svake 2 sekunde i sprema ih se u vašu lokalnu pohranu.",
-                    "option1": "5",
-                    "option2": "10",
-                    "option3": "15",
-                    "option4": "20",
-                    "option5": "25",
-                    "option6": "30"
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
                 },
                 "showPhoto": {
                     "title": "FOTOGRAFIJE ĆE BITI SPREMLJENE LOKALNO:",
@@ -3895,7 +3895,8 @@
                 "results": "Results:",
                 "status": "Status"
             }
-        }
+        },
+        "runningWell": "PC is running well"
     },
     "homeSecurity": {
         "title": "Connected Home Security",
