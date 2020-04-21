@@ -180,39 +180,17 @@
 							position: absolute;
 							right: -64%;
 							top: 2.2rem;
-							@media #{$breakpoint_xl2}{
-								right: 1rem;
-								transform: scale(0.25);
-								transform-origin: top right;
-								left: auto;
-								margin-top: 0rem;
-							}
 							@media #{$breakpoint_xl}{
-								right: 1rem;
-								transform: scale(0.25);
-								transform-origin: top right;
-								left: auto;
-								margin-top: 0rem;
-							}
-							@media #{$breakpoint_lg}{
-								right: 1rem;
-								transform: scale(0.25);
-								transform-origin: top right;
-								left: auto;
-								margin-top: 0rem;
+								right: -80%;
 							}
 							@media #{$breakpoint_md}{
-								right: 1rem;
-								transform: scale(0.25);
-								transform-origin: top right;
-								left: auto;
-								margin-top: -0.5rem;
+								right: -72%;
 							}
 							@media #{$breakpoint_sm}{
-								right: 1rem;
+								right: 0;
 								transform: scale(0.18);
-								transform-origin: top right;
-								left: auto;
+								transform-origin: 0% 0%;
+								left: 70%;
 								margin-top: -1.2rem;
 							}
 							&::ng-deep {
@@ -432,22 +410,26 @@
 	}
 	.labels {
 		.badge {
-			font-size: 1.2rem;
+			font-size: 1rem;
 			margin-bottom: 0.6rem;
 		}
 		.badge-primary{
 			position: relative;
-			height: 2rem;
+			height: 1.8rem;
+			font-size: 1rem;
+			font-weight: $weight_medium;
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
 			&::after {
 				content: "";
 				position: absolute;
-				top:1px;
-				right:-7px;
+				top:0;
+				right:-9px;
 				width: 0px;
 				height: 0px;
-				border-top: 7px solid transparent;
-				border-bottom: 7px solid transparent;
-				border-left: 7px solid $main;
+				border-top: 9px solid transparent;
+				border-bottom: 9px solid transparent;
+				border-left: 9px solid $main;
 			}
 		}
 		.badge-light {
