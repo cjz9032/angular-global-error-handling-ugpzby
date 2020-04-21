@@ -84,6 +84,12 @@ const routes: Routes = [
 		canActivate: [ProtocolGuardService],
 		component: HomeComponent,
 		pathMatch: 'full'
+	},
+	{
+		path: '**',
+		canActivate: [ProtocolGuardService],
+		component: HomeComponent,
+		pathMatch: 'full'
 	}
 ];
 
