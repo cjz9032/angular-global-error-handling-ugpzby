@@ -1630,12 +1630,6 @@
 																[icon]="['fas', 'chevron-down']"></fa-icon>
 																<fa-icon *ngIf="scheduleTab === 1" (click)="openScanScheduleDropDown(1)"
 																[icon]="['fas', 'chevron-up']"></fa-icon>
-															
-															<!-- <div *ngIf="scheduleTab === 1" class="dropdown">
-																<li>Every Day</li>
-																<li>Every Day</li>
-																<li>Every Day</li>
-															</div> -->
 														</div>
 														<div *ngIf="scheduleTab === 1" class="freq-dropdown">
 															<div *ngFor="let freq of scanFrequency;let ind=index" class="frequency-text"
@@ -1643,36 +1637,38 @@
 														</div>
 													</li>
 						
-													<li *ngIf="frequencyValue === 3" class="d-flex justify-content-between">
+													<li *ngIf="frequencyValue === 2" class="d-flex justify-content-between">
 															<div class="item d-flex">
 																<b>{{'smartPerformance.scanSettings.txtDate' |translate }}</b>
 															</div>
 															<div class="status d-flex justify-content-end">
-																<p class="mr-3">{{scanScheduleDate.day}}/{{scanScheduleDate.month}}/{{scanScheduleDate.year}}</p>
-																<fa-icon *ngIf="scheduleTab != 4" [icon]="['fas', 'chevron-down']"
-																	(click)="openScanScheduleDropDown(4)"></fa-icon>
-																	<fa-icon *ngIf="scheduleTab === 4" (click)="openScanScheduleDropDown(4)"
+																<p class="mr-3">{{selectedNumber}}</p>
+																<fa-icon *ngIf="scheduleTab != 3" [icon]="['fas', 'chevron-down']"
+																	(click)="openScanScheduleDropDown(3)"></fa-icon>
+																	<fa-icon *ngIf="scheduleTab === 3" (click)="openScanScheduleDropDown(3)"
 																	[icon]="['fas', 'chevron-up']"></fa-icon>
 							
 															</div>
-															<div *ngIf="scheduleTab === 4" class="day-dropdown date-picker">
-																		<ngb-datepicker [(ngModel)]="scanScheduleDate" (select)="changeScanScheduleDate()"></ngb-datepicker>
+															<div *ngIf="scheduleTab === 3" class="day-dropdown">																	
+																<div *ngFor="let date of dates;let ind=index"
+																	(click)="changeScanDay(ind)" class="days-text" [ngClass]="{'selected-day':dateValue === ind}">{{date}}</div>
+																	<!-- <ngb-datepicker [(ngModel)]="scanScheduleDate" (select)="changeScanScheduleDate()"></ngb-datepicker> -->
 															</div>
 														</li>
 
-													<li *ngIf="frequencyValue === 1 || frequencyValue === 2" class="d-flex justify-content-between">
+													<li *ngIf="frequencyValue === 0 || frequencyValue === 1" class="d-flex justify-content-between">
 														<div class="item d-flex">
 															<b>{{'smartPerformance.scanSettings.txtDay' |translate }}</b>
 														</div>
 														<div class="status d-flex justify-content-end">
 															<p class="mr-3">{{selectedDay}}</p>
-															<fa-icon *ngIf="scheduleTab != 2" [icon]="['fas', 'chevron-down']"
-																(click)="openScanScheduleDropDown(2)"></fa-icon>
-																<fa-icon *ngIf="scheduleTab === 2" (click)="openScanScheduleDropDown(2)"
+															<fa-icon *ngIf="scheduleTab != 3" [icon]="['fas', 'chevron-down']"
+																(click)="openScanScheduleDropDown(3)"></fa-icon>
+																<fa-icon *ngIf="scheduleTab === 3" (click)="openScanScheduleDropDown(3)"
 																[icon]="['fas', 'chevron-up']"></fa-icon>
 						
 														</div>
-														<div *ngIf="scheduleTab === 2" class="day-dropdown">
+														<div *ngIf="scheduleTab === 3" class="day-dropdown">
 															<div *ngFor="let day of days;let ind=index"
 																(click)="changeScanDay(ind)" class="days-text" [ngClass]="{'selected-day':dayValue === ind}">{{day}}</div>
 														</div>
@@ -1684,11 +1680,11 @@
 														<div  class="icon" class="status d-flex justify-content-end">
 															<!-- <p class="mr-3">12:00AM</p> -->
 															<p class="mr-3">{{scanTime.hour}}:{{scanTime.min}} {{scanTime.amPm}}</p>
-															<fa-icon *ngIf="scheduleTab != 3" [icon]="['fas', 'chevron-down']" (click)="openScanScheduleDropDown(3)"></fa-icon>
-															<fa-icon *ngIf="scheduleTab === 3" (click)="openScanScheduleDropDown(3)"
+															<fa-icon *ngIf="scheduleTab != 2" [icon]="['fas', 'chevron-down']" (click)="openScanScheduleDropDown(2)"></fa-icon>
+															<fa-icon *ngIf="scheduleTab === 2" (click)="openScanScheduleDropDown(2)"
 															[icon]="['fas', 'chevron-up']"></fa-icon>
 														</div>
-														<div *ngIf="scheduleTab === 3" class="time-dropdown">
+														<div *ngIf="scheduleTab === 2" class="time-dropdown">
 															<div class="row">
 																<div class="col hour-block">
 																		<div class="hour-text" *ngFor="let hour of hours;let ind=index" [ngClass]="{'selected-text':copyScanTime.hourId === ind}"
