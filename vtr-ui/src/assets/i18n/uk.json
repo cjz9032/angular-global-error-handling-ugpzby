@@ -1452,10 +1452,10 @@
                         "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
                             "dynamic": "DYNAMIC",
-							"movie": "MOVIE",
-							"music": "MUSIC",
-							"games": "GAME",
-							"voip": "VOICE"
+                            "movie": "MOVIE",
+                            "music": "MUSIC",
+                            "games": "GAME",
+                            "voip": "VOICE"
                         },
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
@@ -1466,9 +1466,9 @@
                             "entertainmentMode": {
                                 "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
                             }
                         }
                     },
@@ -1689,17 +1689,17 @@
                         "hideAdvSettings": "ПРИХОВАТИ ДОДАТКОВІ НАСТРОЙКИ",
                         "description": "Верхній рядок клавіатури працює в двох режимах. Виберіть потрібний:",
                         "subSection": {
-                            "description": "Щоб переключити два режими, натискайте Fn+Esc.",
+                            "description": "Ви також можете переключатися між режимами за допомогою клавіш Fn+Esc. Оновлення може зайняти кілька секунд.",
                             "radioButton": {
-                                "sFunKey": "СПЕЦІАЛЬНИЙ РЕЖИМ",
-                                "fnKey": "РЕЖИМ F1-F12"
+                                "sFunKey": "Спеціальна функціональна клавіша",
+                                "fnKey": "Функціональні клавіші F1–F12"
                             }
                         },
                         "subSectionTwo": {
                             "title": "Скасування стандартного основного режиму",
                             "description": "Якщо ввімкнути, основний режим буде змінено зі стандартного на протилежний. Перезавантажте комп’ютер, щоб застосувати зміни.",
-                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
-                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
+                            "caption": "АКТИВНИЙ ОСНОВНИЙ РЕЖИМ:",
+                            "tooltipText": "Для використання стандартного основного режиму натисніть клавішу з верхнього ряду. Для використання додаткових режимів натисніть клавішу Fn і клавішу з верхнього ряду. Також можна спершу натиснути Fn+Esc, а потім клавішу з верхнього ряду."
                         },
                         "subSectionThree": {
                             "title": "Використання комбінації клавіш з Fn",
@@ -1982,7 +1982,7 @@
                     "description3": "1. Щоб використовувати вищенаведені функції розташуйте екран комп'ютера під правильним кутом, щоб ваше обличчя розпізнавалося.",
                     "description4": "2. Вищезазначені функції не підтримуються, коли:",
                     "description5a": "а. Ваш комп'ютер перебуває в режимах \"Намет\", \"Планшет\", \"Стенд\" або \"Відокремлений\". Інформацію про режими, які підтримує ваш комп'ютер, можна знайти в Посібнику користувача з комплекту постачання.",
-					"description5b": "b. Якщо комп'ютер вимкнуто або переведено в режим глибокого сну.",
+                    "description5b": "b. Якщо комп'ютер вимкнуто або переведено в режим глибокого сну.",
                     "description6": "3. Якщо ввімкнути на комп'ютері режим \"У літаку\", ці функції буде вимкнено.",
                     "description7": "Точність сприйняття дотиків залежить від розміру пальців, їх положення та частоти рухів. Якщо комп’ютер випадково блокується, налаштуйте повзунок чутливості сенсора, щоб покращити точність сприйняття дотиків."
                 },
@@ -2103,12 +2103,12 @@
                 "photo": {
                     "title": "КІЛЬКІСТЬ ФОТОГРАФІЙ ПІД ЧАС РУХУ",
                     "tooltip": "Камера на вашому комп'ютері автоматично робить знімки, коли виявляє рух. Фотографії робляться кожні 2 секунди та зберігаються в локальному сховищі.",
-                    "option1": "5",
-                    "option2": "10",
-                    "option3": "15",
-                    "option4": "20",
-                    "option5": "25",
-                    "option6": "30"
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
                 },
                 "showPhoto": {
                     "title": "ФОТОГРАФІЇ ЗБЕРЕЖЕНО ЛОКАЛЬНО:",
@@ -3895,7 +3895,8 @@
                 "results": "Results:",
                 "status": "Status"
             }
-        }
+        },
+        "runningWell": "PC is running well"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

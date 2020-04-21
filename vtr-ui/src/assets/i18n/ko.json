@@ -1452,10 +1452,10 @@
                         "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
                             "dynamic": "DYNAMIC",
-							"movie": "MOVIE",
-							"music": "MUSIC",
-							"games": "GAME",
-							"voip": "VOICE"
+                            "movie": "MOVIE",
+                            "music": "MUSIC",
+                            "games": "GAME",
+                            "voip": "VOICE"
                         },
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
@@ -1466,9 +1466,9 @@
                             "entertainmentMode": {
                                 "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
                             }
                         }
                     },
@@ -1689,7 +1689,7 @@
                         "hideAdvSettings": "고급 설정 숨기기",
                         "description": "키보드의 맨 윗줄에는 다음과 같은 두 가지 기능이 있습니다. 사용할 어댑터를 선택하십시오.",
                         "subSection": {
-                            "description": "위의 두 가지 기능을 전환하려면, Fn+Esc를 누르십시오.",
+                            "description": "Fn+Esc를 눌러 두 기능을 전환할 수도 있습니다. 새로 고침하는 데는 시간이 조금 걸립니다.",
                             "radioButton": {
                                 "sFunKey": "특수 기능",
                                 "fnKey": "F1-F12 기능"
@@ -1698,8 +1698,8 @@
                         "subSectionTwo": {
                             "title": "기본 주요 기능 복원",
                             "description": "켜져 있는 경우, 기본 주요 기능이 공장 설정에서 반대 방향으로 변경됩니다. 변경사항을 적용하려면, 컴퓨터를 다시 시작해야 합니다.",
-                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
-                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
+                            "caption": "활성 주요 기능은 다음과 같습니다.",
+                            "tooltipText": "기본적인 주요 기능을 사용하려면 맨 위 행의 키를 누릅니다. 주요 기능이 아닌 함수의 경우, Fn+맨 위 행 키를 누르십시오. 또는 Fn+Esc를 먼저 누른 다음 맨 위 행 키를 누를 수 있습니다."
                         },
                         "subSectionThree": {
                             "title": "Fn 키 조합 사용 방법",
@@ -1982,7 +1982,7 @@
                     "description3": "1. 위의 기능을 사용하려면 얼굴이 인식될 수 있도록 화면을 적절한 각도로 조정해 주십시오.",
                     "description4": "2. 위 기능은 다음의 경우에서 지원되지 않습니다.",
                     "description5a": "a. 컴퓨터가 텐트, 태블릿, 스탠드 또는 분리 모드를 지원합니다. 컴퓨터에서 지원되는 모드에 대해서는 함께 제공되는 사용 설명서를 참조하십시오.",
-					"description5b": "b. 컴퓨터가 최대 절전 모드이거나 꺼져 있었던 경우.",
+                    "description5b": "b. 컴퓨터가 최대 절전 모드이거나 꺼져 있었던 경우.",
                     "description6": "3. 컴퓨터에서 비행기 모드를 설정하면 이 기능을 사용할 수 없게 됩니다.",
                     "description7": "정확도는 바디 크기, 자세 및 이동 빈도에 따라 다릅니다. 컴퓨터가 예기치 않게 잠기는 경우, 감도바를 조정하여 정확도를 개선합니다."
                 },
@@ -2103,12 +2103,12 @@
                 "photo": {
                     "title": "움직임이 있는 동안 찍은 사진의 개수",
                     "tooltip": "움직임이 감지되면 컴퓨터의 카메라가 자동으로 활성화되어 사진을 촬영합니다. 사진은 2초마다 촬영되며 로컬 저장 장치에 저장됩니다.",
-                    "option1": "5",
-                    "option2": "10",
-                    "option3": "15",
-                    "option4": "20",
-                    "option5": "25",
-                    "option6": "30"
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
                 },
                 "showPhoto": {
                     "title": "사진이 로컬에 저장되었습니다:",
@@ -3895,7 +3895,8 @@
                 "results": "Results:",
                 "status": "Status"
             }
-        }
+        },
+        "runningWell": "PC is running well"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

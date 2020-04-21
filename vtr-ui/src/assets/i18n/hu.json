@@ -1452,10 +1452,10 @@
                         "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
                             "dynamic": "DYNAMIC",
-							"movie": "MOVIE",
-							"music": "MUSIC",
-							"games": "GAME",
-							"voip": "VOICE"
+                            "movie": "MOVIE",
+                            "music": "MUSIC",
+                            "games": "GAME",
+                            "voip": "VOICE"
                         },
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
@@ -1466,9 +1466,9 @@
                             "entertainmentMode": {
                                 "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
                             }
                         }
                     },
@@ -1689,17 +1689,17 @@
                         "hideAdvSettings": "SPECIÁLIS BEÁLLÍTÁSOK ELREJTÉSE",
                         "description": "A billentyűzet felső sorában a következő két funkció található. Válassza ki a kívántat:",
                         "subSection": {
-                            "description": "A fenti két funkció között az Fn+Esc billentyűkombinációval lehet váltani.",
+                            "description": "A két funkció között az Fn+Esc billentyűkombinációval válthat. A frissítési folyamat néhány másodpercig tart.",
                             "radioButton": {
-                                "sFunKey": "SPECIÁLIS FUNKCIÓ",
-                                "fnKey": "F1–F12 FUNKCIÓ"
+                                "sFunKey": "Speciális funkciók",
+                                "fnKey": "F1–F12 funkcióbillentyűk"
                             }
                         },
                         "subSectionTwo": {
                             "title": "Az alapértelmezett elsődleges funkció megfordítása",
                             "description": "Bekapcsolt állapotban az alapértelmezett elsődleges funkció a gyári beállításokról az ellenkezőre változik. A módosítások életbe lépéséhez indítsa újra a számítógépet.",
-                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
-                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
+                            "caption": "AZ AKTÍV ELSŐDLEGES FUNKCIÓ:",
+                            "tooltipText": "Az alapértelmezett elsődleges funkció használatához nyomja meg a kívánt billentyűt a felső sorból. A nem elsődleges funkciók használatához nyomja le az Fn billentyűt, majd a kívánt billentyűt a felső sorból. Vagy nyomja meg az Fn+Esc billentyűkombinációt, majd ezt követően nyomja meg a kívánt billentyűt a felső sorból."
                         },
                         "subSectionThree": {
                             "title": "Az Fn billentyűkombinációk használata",
@@ -1982,7 +1982,7 @@
                     "description3": "1. A fenti funkciók használatához állítsa a megfelelő szögbe a képernyőt, hogy a rendszer fel tudja ismerni az Ön arcát.",
                     "description4": "2. A fenti funkciók nem támogatottak a következő esetekben:",
                     "description5a": "a. A számítógép Sátor, Álló vagy Tablet módban vagy Leválasztott módban van. Az Ön számítógépe által támogatott üzemmódokkal kapcsolatban olvassa el a termékhez kapott Felhasználói kézikönyvet.",
-					"description5b": "b. Ha a számítógép hibernált módban van vagy ki van kapcsolva.",
+                    "description5b": "b. Ha a számítógép hibernált módban van vagy ki van kapcsolva.",
                     "description6": "3. Ha a számítógépen bekapcsolta a Repülőgép üzemmódot, ezek a funkciók nem használhatók.",
                     "description7": "A pontosság függ a testmérettől, a testtartástól és a mozgás gyakoriságától. Ha a számítógép váratlanul zárolódik, állítsa be az érzékenységi sávot a pontosság javítása érdekében."
                 },
@@ -2103,12 +2103,12 @@
                 "photo": {
                     "title": "MOZGÁS ÉRZÉKELÉSE ESETÉN KÉSZÍTETT FÉNYKÉPEK SZÁMA",
                     "tooltip": "Amikor a rendszer mozgást észlel, a számítógép fényképezője automatikusan aktiválódik és fényképeket készít. A rendszer 2 másodpercenként készít képet, amelyeket a helyi tárhelyre ment.",
-                    "option1": "5",
-                    "option2": "10",
-                    "option3": "15",
-                    "option4": "20",
-                    "option5": "25",
-                    "option6": "30"
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
                 },
                 "showPhoto": {
                     "title": "FÉNYKÉPEK MENTVE A KÖVETKEZŐ HELYRE:",
@@ -3895,7 +3895,8 @@
                 "results": "Results:",
                 "status": "Status"
             }
-        }
+        },
+        "runningWell": "PC is running well"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

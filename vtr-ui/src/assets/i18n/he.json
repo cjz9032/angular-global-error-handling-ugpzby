@@ -1466,9 +1466,9 @@
                             "entertainmentMode": {
                                 "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
                             }
                         }
                     },
@@ -1689,7 +1689,7 @@
                         "hideAdvSettings": "הסתרת הגדרות מתקדמות",
                         "description": "השורה העליונה של המקלדת כוללת את שתי הפונקציות הבאות. בחרו את הפונקציה הרצויה:",
                         "subSection": {
-                            "description": "כדי להחליף בין שתי הפונקציות, הקישו על Fn+Esc.",
+                            "description": "ניתן גם לעבור בין שתי הפונקציות על ידי הקשה על Fn+Esc. הרענון יימשך מספר שניות.",
                             "radioButton": {
                                 "sFunKey": "פונקציה מיוחדת",
                                 "fnKey": "פונקציית F1-F12"
@@ -1698,8 +1698,8 @@
                         "subSectionTwo": {
                             "title": "ביטול הפונקציה הראשונית המוגדרת כברירת מחדל",
                             "description": "כאשר היא מופעלת, פונקציית ברירת המחדל הראשית תשתנה מהגדרות היצרן לאפשרות האחרת. יש להפעיל מחדש את המחשב כדי ששינויים אלה ייכנסו לתוקף.",
-                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
-                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
+                            "caption": "הפונקציה הראשית הפעילה:",
+                            "tooltipText": "כדי להשתמש בפונקציה הראשית המוגדרת כברירת מחדל, הקישו על מקשי השורה העליונה. עבור פונקציות שאינן ראשיות, הקישו על Fn+מקשים בשורה העליונה. לחלופין, הקישו על Fn+Esc, ולאחר מכן הקישו על המקשים בשורה העליונה."
                         },
                         "subSectionThree": {
                             "title": "איך להשתמש בשילוב המקשים עם מקש Fn",
@@ -2103,12 +2103,12 @@
                 "photo": {
                     "title": "מספר התמונות שצולמו במהלך התנועה",
                     "tooltip": "המצלמה במחשב מופעלת לצילום באופן אוטומטי כאשר מזוהות תנועות. תמונות מצולמות כל 2 שניות והן נשמרות באחסון המקומי.",
-                    "option1": "5",
-                    "option2": "10",
-                    "option3": "15",
-                    "option4": "20",
-                    "option5": "25",
-                    "option6": "30"
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
                 },
                 "showPhoto": {
                     "title": "התמונות נשמרו באופן מקומי:",
@@ -3895,7 +3895,8 @@
                 "results": "Results:",
                 "status": "Status"
             }
-        }
+        },
+        "runningWell": "PC is running well"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

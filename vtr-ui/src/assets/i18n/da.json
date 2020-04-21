@@ -1452,10 +1452,10 @@
                         "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
                             "dynamic": "DYNAMIC",
-							"movie": "MOVIE",
-							"music": "MUSIC",
-							"games": "GAME",
-							"voip": "VOICE"
+                            "movie": "MOVIE",
+                            "music": "MUSIC",
+                            "games": "GAME",
+                            "voip": "VOICE"
                         },
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
@@ -1466,9 +1466,9 @@
                             "entertainmentMode": {
                                 "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
                             }
                         }
                     },
@@ -1689,17 +1689,17 @@
                         "hideAdvSettings": "SKJUL UDVIDEDE INDSTILLINGER",
                         "description": "Den øverste række på tastaturet har følgende to funktioner. Vælg den, du vil bruge:",
                         "subSection": {
-                            "description": "Tryk på Fn+Esc, hvis du vil skifte mellem de to ovennævnte funktioner.",
+                            "description": "Du kan også skifte mellem de to funktioner ved at trykke på Fn+Esc. Opdateringen tager et par sekunder.",
                             "radioButton": {
-                                "sFunKey": "SÆRLIG FUNKTION",
-                                "fnKey": "F1-F12-FUNKTION"
+                                "sFunKey": "Særlig funktion",
+                                "fnKey": "F1-F12-funktion"
                             }
                         },
                         "subSectionTwo": {
                             "title": "Byt om på den primære standardfunktion",
                             "description": "Når denne er aktiveret, ændres den primære standardfunktion fra fabriksindstillingerne til det modsatte. Genstart computeren for at få disse ændringer til at træde i kraft.",
-                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
-                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
+                            "caption": "DEN AKTIVE PRIMÆRE FUNKTION:",
+                            "tooltipText": "Hvis du vil bruge den primære standardfunktion, skal du trykke på tasterne i den øverste række. Tryk på Fn+tasterne i den øverste række for at bruge funktioner, der ikke er primære. Du kan også trykke på Fn+Esc først og derefter trykke på tasterne i øverste række."
                         },
                         "subSectionThree": {
                             "title": "Sådan bruges Fn-tastkombinationer",
@@ -1982,7 +1982,7 @@
                     "description3": "1. For at bruge funktionerne ovenfor skal du justere skærmen til en passende vinkel, så dit ansigt kan blive genkendt.",
                     "description4": "2. Ovenstående funktioner understøttes ikke, når:",
                     "description5a": "a. Din computer er i Telt-, Tablet- eller Støtte-tilstand eller er i frakoblet tilstand. Du kan finde de tilstande, som understøttes på din computer, i den brugervejledning, der leveres sammen med den.",
-					"description5b": "b. Din computer er i slumretilstand eller er slukket.",
+                    "description5b": "b. Din computer er i slumretilstand eller er slukket.",
                     "description6": "3. Hvis Flytilstand er aktiveret på din computer, er disse funktioner deaktiveret.",
                     "description7": "Nøjagtigheden varierer efter kropsstørrelse, stilling og bevægelseshyppighed. Hvis computeren bliver låst uventet, skal du justere følsomhedsvælgeren for at forbedre nøjagtigheden."
                 },
@@ -2103,12 +2103,12 @@
                 "photo": {
                     "title": "ANTALLET AF FOTOS, DER ER TAGET UNDER BEVÆGELSEN",
                     "tooltip": "Kameraet på computeren aktiveres automatisk for at tage billeder, når der registreres bevægelser. Der tages billeder hvert 2. sekund, og de gemmes på dit lokale lager.",
-                    "option1": "5",
-                    "option2": "10",
-                    "option3": "15",
-                    "option4": "20",
-                    "option5": "25",
-                    "option6": "30"
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
                 },
                 "showPhoto": {
                     "title": "FOTOS ER GEMT LOKALT:",
@@ -3895,7 +3895,8 @@
                 "results": "Results:",
                 "status": "Status"
             }
-        }
+        },
+        "runningWell": "PC is running well"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

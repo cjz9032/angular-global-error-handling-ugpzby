@@ -1452,10 +1452,10 @@
                         "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
                             "dynamic": "DYNAMIC",
-							"movie": "MOVIE",
-							"music": "MUSIC",
-							"games": "GAME",
-							"voip": "VOICE"
+                            "movie": "MOVIE",
+                            "music": "MUSIC",
+                            "games": "GAME",
+                            "voip": "VOICE"
                         },
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
@@ -1466,9 +1466,9 @@
                             "entertainmentMode": {
                                 "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
                             }
                         }
                     },
@@ -1689,17 +1689,17 @@
                         "hideAdvSettings": "OCULTAR CONFIGURAÇÕES AVANÇADAS",
                         "description": "A fileira superior do teclado fornece as duas funções a seguir. Selecione qual deseja:",
                         "subSection": {
-                            "description": "Para alternar as duas funções acima, pressione Fn+Esc.",
+                            "description": "Você também pode alternar as duas funções pressionando Fn+Esc. O processo de atualização levará alguns segundos.",
                             "radioButton": {
-                                "sFunKey": "FUNÇÃO ESPECIAL",
-                                "fnKey": "FUNÇÃO F1-F12"
+                                "sFunKey": "Função especial",
+                                "fnKey": "Função F1-F12"
                             }
                         },
                         "subSectionTwo": {
                             "title": "Revertendo a função principal padrão",
                             "description": "Quando ativada, a função principal padrão será alterada das configurações de fábrica para o oposto. Reinicie o computador para as alterações entrarem em vigor.",
-                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
-                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
+                            "caption": "A FUNÇÃO PRINCIPAL ATIVA:",
+                            "tooltipText": "Para usar a função principal padrão, pressione as teclas da fileira superior. Para funções que não sejam principais, pressione Fn+teclas da fileira superior. Ou você pode pressionar Fn+Esc primeiro e depois pressionar as teclas da fileira superior."
                         },
                         "subSectionThree": {
                             "title": "Como usar as combinações de tecla Fn",
@@ -1982,7 +1982,7 @@
                     "description3": "1. Para usar as funções acima, ajuste a tela em um ângulo adequado para que seu rosto seja reconhecido.",
                     "description4": "2. As funções acima não são suportadas quando:",
                     "description5a": "a. Seu computador está no modo Tenda, Tablet, Base ou Desconectado. Para os modos suportados no seu computador, consulte o Guia do Usuário que acompanha o produto.",
-					"description5b": "b. Seu computador está no modo de hibernação ou foi desligado.",
+                    "description5b": "b. Seu computador está no modo de hibernação ou foi desligado.",
                     "description6": "3. Se o Modo avião estiver ativado no seu computador, esses recursos são desativados.",
                     "description7": "A precisão varia de acordo com o tamanho do corpo, a postura e a frequência de movimento. Se seu computador bloquear inesperadamente, ajuste a barra de sensibilidade para melhorar a precisão."
                 },
@@ -2103,12 +2103,12 @@
                 "photo": {
                     "title": "O NÚMERO DE FOTOS TIRADAS DURANTE O MOVIMENTO",
                     "tooltip": "A câmera do seu computador é ativada automaticamente para tirar fotos quando movimentos são detectados. As fotos são tiradas a cada 2 segundos e salvas no armazenamento local.",
-                    "option1": "5",
-                    "option2": "10",
-                    "option3": "15",
-                    "option4": "20",
-                    "option5": "25",
-                    "option6": "30"
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
                 },
                 "showPhoto": {
                     "title": "AS FOTOS FORAM SALVAS NO LOCAL:",
@@ -3895,7 +3895,8 @@
                 "results": "Results:",
                 "status": "Status"
             }
-        }
+        },
+        "runningWell": "PC is running well"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

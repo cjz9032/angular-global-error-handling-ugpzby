@@ -1452,10 +1452,10 @@
                         "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
                             "dynamic": "DYNAMIC",
-							"movie": "MOVIE",
-							"music": "MUSIC",
-							"games": "GAME",
-							"voip": "VOICE"
+                            "movie": "MOVIE",
+                            "music": "MUSIC",
+                            "games": "GAME",
+                            "voip": "VOICE"
                         },
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
@@ -1466,9 +1466,9 @@
                             "entertainmentMode": {
                                 "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
                             }
                         }
                     },
@@ -1689,17 +1689,17 @@
                         "hideAdvSettings": "ASCUNDEȚI SETĂRILE AVANSATE",
                         "description": "Rândul de sus al tastaturii oferă următoarele două funcții. Selectați-o pe cea dorită:",
                         "subSection": {
-                            "description": "Pentru a comuta între cele două funcții menționate mai sus, apăsați pe Fn+Esc.",
+                            "description": "De asemenea, puteți comuta între cele două funcții, apăsând Fn+Esc. Actualizarea va dura câteva secunde.",
                             "radioButton": {
-                                "sFunKey": "FUNCȚIE SPECIALĂ",
-                                "fnKey": "FUNCȚIE F1-F12"
+                                "sFunKey": "Funcție specială",
+                                "fnKey": "Funcție F1-F12"
                             }
                         },
                         "subSectionTwo": {
                             "title": "Inversarea funcției primare implicite",
                             "description": "Când este activată, funcția primară implicită va fi modificată de la setările din fabrică la funcționalitatea opusă. Pentru ca modificările să aibă efect, trebuie să reporniți computerul.",
-                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
-                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
+                            "caption": "FUNCȚIA PRINCIPALĂ ACTIVĂ:",
+                            "tooltipText": "Pentru a utiliza funcția principală implicită, apăsați tastele de pe rândul de sus. Pentru funcțiile care nu sunt principale, apăsați Fn+tastele de pe rândul de sus. Sau puteți apăsa mai întâi Fn+Esc, apoi tastele de pe rândul de sus."
                         },
                         "subSectionThree": {
                             "title": "Utilizarea combinaţiilor tastei Fn",
@@ -1982,7 +1982,7 @@
                     "description3": "1. Pentru a utiliza funcțiile de mai sus, reglați ecranul la un unghi corespunzător, astfel încât fața dumneavoastră să poată fi recunoscută.",
                     "description4": "2. Funcțiile de mai sus nu sunt acceptate atunci când:",
                     "description5a": "a. Computerul este în modul Cort, Tabletă, Standard sau Detașat. Pentru modurile acceptate de computer, consultați Ghidul utilizatorului care este livrat împreună cu acesta.",
-					"description5b": "b. Computerul este în modul hibernare sau a fost oprit.",
+                    "description5b": "b. Computerul este în modul hibernare sau a fost oprit.",
                     "description6": "3. Dacă Modul avion este activat pe computer, aceste funcţii sunt dezactivate.",
                     "description7": "Precizia variază în funcţie de dimensiunea corpului, postură şi frecvenţa mişcării. În cazul în care computerul se blochează în mod neaşteptat, ajustaţi bara de sensibilitate pentru a îmbunătăţi precizia."
                 },
@@ -2103,12 +2103,12 @@
                 "photo": {
                     "title": "NUMĂRUL DE FOTOGRAFII REALIZATE ÎN TIMPUL MIȘCĂRII",
                     "tooltip": "Camera foto de pe computer se activează automat pentru a face fotografii atunci când se detectează mișcări. Fotografiile sunt făcute la fiecare 2 secunde și sunt salvate pe spațiul de stocare local.",
-                    "option1": "5",
-                    "option2": "10",
-                    "option3": "15",
-                    "option4": "20",
-                    "option5": "25",
-                    "option6": "30"
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
                 },
                 "showPhoto": {
                     "title": "FOTOGRAFIILE AU FOST SALVATE ÎN FOLDERUL LOCAL:",
@@ -3895,7 +3895,8 @@
                 "results": "Results:",
                 "status": "Status"
             }
-        }
+        },
+        "runningWell": "PC is running well"
     },
     "homeSecurity": {
         "title": "Connected Home Security",
