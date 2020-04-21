@@ -130,6 +130,7 @@
 		}
 		@media #{$breakpoint_sm} {
 			padding: 0rem 3.4rem 1.5rem;
+			overflow-x: hidden;
 			height: 42rem;
 		}
 
@@ -160,7 +161,7 @@
 				background-color: rgba(0, 0, 0, 0.3);
 			}
 
-			
+
 			@media #{$high-contrast} {
 				&::after {
 					background-color: rgba(0, 0, 0, 0.3);
@@ -227,7 +228,7 @@
 		.interests {
 			margin-left: 0.1rem;
 			margin-right: 0.1rem;
-		
+
 			input[type="checkbox"] + label {
 				padding: 0.3rem 2rem;
 				border: 0.1rem solid $shade_btn_light;
@@ -237,17 +238,17 @@
 				font-weight: $weight_light;
 				text-align: center;
 				vertical-align: middle;
-		
+
 				&:hover {
 					border: 0.1rem solid $shade_dark;
 				}
 			}
-		
+
 			input[type="checkbox"]:checked + label {
 				border: 0.1rem solid #21c48a;
 				background: #f5f7f8;
 			}
-		
+
 			.hideLabel {
 				display: none;
 				visibility: hidden;
@@ -749,13 +750,13 @@
 			.content-page-2 .interests input[type="checkbox"] + label {
 				border: 0.1rem solid rgba($color: $light, $alpha: 0.4);
 			}
-	
+
 			.content-page-2 .interests input[type="checkbox"]:checked + label {
 				border: 0.1rem solid currentColor;
 				color: currentColor;
 				background: currentColor;
 			}
-	
+
 			.custom-control-label {
 				&::before {
 					border: 0.1rem solid currentColor;
@@ -767,13 +768,13 @@
 			.content-page-2 .interests input[type="checkbox"] + label {
 				border: 0.1rem solid rgba($color: $dark, $alpha: 0.5);
 			}
-	
+
 			.content-page-2 .interests input[type="checkbox"]:checked + label {
 				border: 0.1rem solid $dark;
 				color: $dark;
 				background: $dark;
 			}
-	
+
 			.custom-control-label {
 				&::before {
 					border: 0.1rem solid $dark;
@@ -785,13 +786,13 @@
 			.content-page-2 .interests input[type="checkbox"] + label {
 				border: 0.1rem solid rgba($color: $light, $alpha: 0.5);
 			}
-	
+
 			.content-page-2 .interests input[type="checkbox"]:checked + label {
 				border: 0.1rem solid $light;
 				color: $light;
 				background: $light;
 			}
-	
+
 			.custom-control-label {
 				&::before {
 					border: 0.1rem solid $light;
