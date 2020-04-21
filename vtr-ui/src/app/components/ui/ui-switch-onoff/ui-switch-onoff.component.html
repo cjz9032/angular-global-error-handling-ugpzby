@@ -16,7 +16,7 @@
 		[attr.aria-disabled]="disabled"
 		[attr.aria-label]="ariaLabel"
 		role="switch"
-		[tabIndex]="disabled?-1:tabIndex">
+		[tabindex]="disabled?-1:tabIndex">
 		<label id="{{onOffSwitchId+'_checkbox'}}"
 			[attr.aria-label]="value?'ON':'OFF'"
 			class="pb-1 pl-1"
@@ -41,7 +41,6 @@
 				[attr.aria-checked]="value"
 				[attr.aria-disabled]="disabled"
 				[attr.aria-readonly]="readonly"
-				[attr.aria-hidden]="false"
 				(change)="onChange($event)"
 				(keydown.enter)="onChange($event)"
 				(click)="sendChangeEvent(toggle)" />
