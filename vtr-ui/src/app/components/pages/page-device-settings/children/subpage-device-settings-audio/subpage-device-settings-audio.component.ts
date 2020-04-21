@@ -326,21 +326,21 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	}
 
 	bindDolbyAudioProfileState() {
-		if (this.dolbyModeResponse.voIPStatus === 'NotSupport') {
+		if (this.dolbyModeResponse.voIPStatus === undefined || this.dolbyModeResponse.voIPStatus === 'NotSupport') {
 			this.voipStatus.available = false;
 		}
 		else {
 			this.voipStatus.available = true;
 			this.voipStatus.status = (this.dolbyModeResponse.voIPStatus === 'True');
 		}
-		if (this.dolbyModeResponse.entertainmentStatus === 'NotSupport') {
+		if (this.dolbyModeResponse.entertainmentStatus === undefined || this.dolbyModeResponse.entertainmentStatus === 'NotSupport') {
 			this.entertainmentStatus.available = false;
 		}
 		else {
 			this.entertainmentStatus.available = true;
 			this.entertainmentStatus.status = (this.dolbyModeResponse.entertainmentStatus === 'True');
 		}
-		if (this.dolbyModeResponse.eCourseStatus === 'NotSupport') {
+		if (this.dolbyModeResponse.eCourseStatus === undefined || this.dolbyModeResponse.eCourseStatus === 'NotSupport') {
 			this.eCourseStatus.available = false;
 			this.automaticAudioDisabled = false;
 		}
@@ -464,7 +464,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	startMonitorHandlerForDolby(response) {
 		this.logger.info('startMonitorHandlerForDolby', response);
 		this.dolbyModeResponse.available = (Object.keys(response).indexOf('available') !== -1) ? response.available : this.dolbyModeResponse.available;
-		this.dolbyModeResponse.supporedModes = (Object.keys(response).indexOf('supporedModes') !== -1) ? response.supporedModes : this.dolbyModeResponse.supporedModes;
+		//this.dolbyModeResponse.supporedModes = (Object.keys(response).indexOf('supporedModes') !== -1) ? response.supporedModes : this.dolbyModeResponse.supporedModes;
 		this.dolbyModeResponse.currentMode = (Object.keys(response).indexOf('currentMode') !== -1) ? response.currentMode : this.dolbyModeResponse.currentMode;
 
 		this.dolbyModeResponse.isAudioProfileEnabled = (Object.keys(response).indexOf('isAudioProfileEnabled') !== -1) ? response.isAudioProfileEnabled : this.dolbyModeResponse.isAudioProfileEnabled;
