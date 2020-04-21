@@ -615,12 +615,15 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		}
 	}
 
-	setEyeCareModeToggleValue(flag: boolean) {
+	setEyeCareModeToggleValue(flag: boolean, isMissingGraphicDriver=false) {
 		if (this.isSet.isSetEyecaremodeStatus) {
 			this.eyeCareModeStatus.status = this.setValues.SetEyecaremodeStatus;
 			this.isSet.isSetEyecaremodeStatus = false;
 		} else {
 			this.eyeCareModeStatus.status = flag;
+		}
+		if(!isMissingGraphicDriver) {
+			this.enableSlider = this.eyeCareModeStatus.status;
 		}
 	}
 
@@ -736,10 +739,10 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 					this.logger.debug('Current setValues', this.setValues);
 					this.logger.debug('getEyeCareModeState.then', featureStatus);
 					this.eyeCareModeStatus.available = featureStatus.available;
-					this.setEyeCareModeToggleValue(featureStatus.status);
-					if (!isMissingGraphicDriver) {
-						this.enableSlider = featureStatus.status;
-					}
+					this.setEyeCareModeToggleValue(featureStatus.status, isMissingGraphicDriver);
+					// if (!isMissingGraphicDriver) {
+					// 	this.enableSlider = featureStatus.status;
+					// }
 					// this.isEyeCareMode = this.eyeCareModeStatus.status;
 					if (this.eyeCareModeStatus.available === true) {
 						this.logger.debug('eyeCareModeStatus.available', featureStatus.available);
@@ -782,7 +785,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 						this.logger.debug('SubpageDeviceSettingsDisplayComponent.onResetTemperature: on api reset data', { resetData, setValues: this.setValues, isSet: this.isSet });
 						this.eyeCareDataSource.current = resetData.colorTemperature;
 						this.setEyeCareModeToggleValue(resetData.eyecaremodeState);
-						this.enableSlider = resetData.eyecaremodeState;
+						// this.enableSlider = resetData.eyecaremodeState;
 						this.sunsetToSunriseModeStatus.status = resetData.autoEyecaremodeState;
 						this.eyeCareModeCache.toggleStatus = this.eyeCareModeStatus.status;
 						this.eyeCareModeCache.enableSlider = this.enableSlider;
@@ -822,7 +825,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 								}
 							}
 							// this.isEyeCareMode = this.eyeCareModeStatus.status;
-							this.enableSlider = response.eyecaremodeState;
+							// this.enableSlider = response.eyecaremodeState;
 							this.commonService.setSessionStorageValue(SessionStorageKey.DashboardEyeCareMode, this.eyeCareModeStatus);
 							this.eyeCareModeCache.toggleStatus = this.eyeCareModeStatus.status;
 							this.eyeCareModeCache.enableSlider = this.enableSlider;
@@ -1095,7 +1098,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		this.logger.debug('isSetEyecaremodeStatus ', this.isSet.isSetEyecaremodeStatus);
 		this.logger.debug('Current setValues', this.setValues);
 		this.setEyeCareModeToggleValue(resetData.eyecaremodeState);
-		this.enableSlider = resetData.eyecaremodeState;
+		// this.enableSlider = resetData.eyecaremodeState;
 		this.sunsetToSunriseModeStatus.status = resetData.autoEyecaremodeState;
 
 		// Disable all features when missing graphic driver
