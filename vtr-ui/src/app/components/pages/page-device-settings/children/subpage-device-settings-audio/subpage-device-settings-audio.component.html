@@ -235,6 +235,7 @@
 												[value]="microphoneProperties.volume"
 												(valueChanged)="onMicrophoneVolumeChange($event)"
 												[isDisabled]="!microphoneProperties.permission"
+												[ariaLabel]="'microphone volume slider'"
 												[sliderId]="'audio-microphone-volume'">
 											</vtr-ui-custom-slider>
 										</div>
