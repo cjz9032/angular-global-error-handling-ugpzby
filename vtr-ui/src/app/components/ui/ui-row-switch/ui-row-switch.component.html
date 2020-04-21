@@ -11,14 +11,10 @@
 				[ngClass]="{'flex-grow-1': (isSwitchVisible && !resetTextAsButton),
 					'col-md-11 col-11':(!resetTextAsButton && !isSwitchVisible),
 					'col-md-7': (resetTextAsButton && !isSwitchVisible),
-					'col-md-10':type===undefined }"
-				role="table">
-				<div class="container-fluid p-0"
-					role="rowgroup">
-					<div class="row m-0"
-						role="row">
+					'col-md-10':type===undefined }">
+				<div class="container-fluid p-0">
+					<div class="row m-0">
 						<div class="col-auto left-icon-column"
-							role="cell"
 							*ngIf="leftIcon.length > 0">
 							<div class="left-icon-block"
 								role="img"
@@ -26,7 +22,7 @@
 								<fa-icon *ngIf="!isAdminRequired && leftIcon[0]!=='icomoon' && leftIcon[0]!=='svg'"
 									class="left-icon"
 									[icon]="leftIcon"
-									attr.aria-hidden="true"></fa-icon>
+									aria-hidden="true"></fa-icon>
 								<svg-icon *ngIf="!isAdminRequired && leftIcon[0]==='svg'"
 									attr.aria-hidden="true"
 									[applyCss]="true"
@@ -35,17 +31,15 @@
 									[src]="'assets/icons/'+leftIcon[1]+'.svg'"></svg-icon>
 								<span *ngIf="!isAdminRequired && leftIcon[0]==='icomoon'"
 									[ngClass]="'icomoon '+leftIcon[1]"
-									attr.aria-hidden="true"></span>
+									aria-hidden="true"></span>
 								<img *ngIf="isAdminRequired"
-									attr.aria-hidden="true"
+									aria-hidden="true"
 									class="adminLogo" />
 							</div>
 						</div>
-						<div class="col"
-							role="cell">
+						<div class="col">
 							<div class="title"
-								role="heading"
-								id="{{switchId}}-title">
+								id="{{switchId}}-title" role="heading">
 								{{ title }}
 							</div>
 							<span *ngIf="caption">
@@ -61,6 +55,7 @@
 							<span id="{{'read_more_'+ switchId}}"
 								*ngIf="readMoreText && !contentExpand"
 								tabindex="0"
+								role="link"
 								class="read-more"
 								(click)="onReadMoreClick($event)"
 								[attr.aria-label]="'read more about,'+ title"
@@ -116,6 +111,7 @@
 					<a *ngIf="linkPath.startsWith('ms-settings:'); else elseBlock"
 						tabindex="0"
 						id="{{switchId+ '_click_link'}}"
+						role="link"
 						[attr.aria-label]="title + '_click_link'"
 						href="javascript:void(0)"
 						(click)="onLinkClick(linkPath)"
