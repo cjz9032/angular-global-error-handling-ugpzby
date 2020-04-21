@@ -1,9 +1,9 @@
 <div class="auto-set-checkbox custom-checkbox-gaming custom-control custom-checkbox"
 	role="checkbox"
-	[attr.aria-label]="componentlabel"
+	[attr.aria-label]="arialabel"
 	[attr.aria-disabled]="disabled"
 	[attr.aria-checked]="checked"
-	[attr.aria-labelledby]="componentId"
+	[attr.aria-labelledby]="arialabel"
 	[tabIndex]="disabled?-1:0"
 	(keydown.enter)="checkBox.click();">
 	<input [id]="componentId"

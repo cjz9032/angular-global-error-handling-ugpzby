@@ -149,7 +149,7 @@
 									<div class="row">
 										<div class="col px-5">
 											<vtr-ui-checkbox [componentId]="'cb-airplane-mode'"
-											[componentlabel]="'Always on usb'"
+											[arialabel]="'Airplane power mode'"
 												[value]="airplaneAutoDetection"
 												[checked]="airplaneAutoDetection"
 												[label]="'device.deviceSettings.power.batterySettings.airPlanePower.checkBoxDesc' | translate"
@@ -211,7 +211,7 @@
 										<div class="col px-5">
 											<vtr-ui-checkbox *ngIf="usbChargingInBatteryModeStatus"
 												[componentId]="'cb-always-on-usb'"
-												[componentlabel]="'Always on usb'"
+												[arialabel]="'Always on usb'"
 												[disabled]="!toggleAlwaysOnUsbFlag"
 												[value]="usbChargingCheckboxFlag"
 												[checked]="usbChargingCheckboxFlag"
