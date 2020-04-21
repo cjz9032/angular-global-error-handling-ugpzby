@@ -6,9 +6,8 @@
 				<vtr-container-collapsible
 					[cardTitle]="'device.deviceSettings.power.powerSmartSettings.title' | translate"
 					[isCollapsed]="false"
-					[allowCollapse]="false"
 					[collapseLinkId]="'Power Smart settings'"
-					[theme]="'blue'">
+					[theme]="'white'">
 					<ul class="list-group list-group-flush">
 						<li class="">
 							<vtr-ui-row-switch [leftIcon]="['icomoon','icomoon-ic']"
@@ -17,7 +16,7 @@
 								[isSwitchVisible]="showIntelligentCoolingToggle"
 								[isSwitchChecked]="enableIntelligentCoolingToggle"
 								[showChildContent]="true"
-								[theme]="'blue'"
+								[theme]="'white'"
 								[switchId]="'ds-power-powerSmartSettings'"
 								[isLastChild]='true'
 								(toggleOnOff)="onIntelligentCoolingToggle($event)">
@@ -40,7 +39,7 @@
 										aria-label="intelligent Cooling mode list, select using arrow keys"
 										tabindex="0">
 										<vtr-ui-circle-radio-with-checkbox *ngIf="showIC!==14"
-											[theme]="'blue'"
+											[theme]="'white'"
 											[radioId]="'radioICPerformance'"
 											[group]="'radio'"
 											[label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.performance' + showIC | translate"
@@ -50,7 +49,7 @@
 											[textId]="'myDevice-settings-power-intelligent-cooling'">
 										</vtr-ui-circle-radio-with-checkbox>
 										<vtr-ui-circle-radio-with-checkbox [radioId]="'radioICQuiteCool'"
-											[theme]="'blue'"
+											[theme]="'white'"
 											[group]="'radio'"
 											[label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.quiteCool' + showIC | translate"
 											[value]="showIC==14 ? 'LE-IntelligentCooling2x' : 'LE-CoolingDown2x' "
@@ -59,7 +58,7 @@
 											[textId]="'myDevice-settings-power-intelligent-cooling'">
 										</vtr-ui-circle-radio-with-checkbox>
 										<vtr-ui-circle-radio-with-checkbox *ngIf="showIC===14"
-											[theme]="'blue'"
+											[theme]="'white'"
 											[radioId]="'radioICPerformance'"
 											[group]="'radio'"
 											[label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.performance' + showIC | translate"
@@ -69,7 +68,7 @@
 											[textId]="'myDevice-settings-power-intelligent-cooling'">
 										</vtr-ui-circle-radio-with-checkbox>
 										<vtr-ui-circle-radio-with-checkbox *ngIf="showIC===14"
-											[theme]="'blue'"
+											[theme]="'white'"
 											[radioId]="'quiteBatterySaving'"
 											[group]="'radio'"
 											[label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.batterySaving' | translate"
@@ -103,9 +102,8 @@
 				<vtr-container-collapsible
 					[cardTitle]="'device.deviceSettings.power.powerSmartSettings.title' | translate"
 					[isCollapsed]="false"
-					[allowCollapse]="false"
 					[collapseLinkId]="'Power Smart settings'"
-					[theme]="'blue'">
+					[theme]="'white'">
 					<div class="row">
 						<div class="col-auto left-icon">
 							<span [ngClass]="'icomoon icomoon-ic'"></span>
@@ -179,9 +177,8 @@
 				<vtr-container-collapsible
 					[cardTitle]="'device.deviceSettings.power.powerSmartSettings.title' | translate"
 					[isCollapsed]="false"
-					[allowCollapse]="false"
 					[collapseLinkId]="'Power Smart settings'"
-					[theme]="'blue'">
+					[theme]="'white'">
 					<div class="row">
 						<div class="col-auto left-icon">
 							<span [ngClass]="'icomoon icomoon-ic'"></span>
