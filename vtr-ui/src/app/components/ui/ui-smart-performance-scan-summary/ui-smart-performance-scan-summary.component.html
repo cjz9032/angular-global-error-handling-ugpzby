@@ -1718,8 +1718,18 @@
 												</ul>
 												<!-- <a href="#" class="link-text">Manage Subscription</a> -->
 												<div >
-														<button class="save-button" (click)="saveChangedScanSchedule()">{{'smartPerformance.scanSettings.txtSave' |translate }}</button>
-														<a class="cancel-link active" (click)="cancelChangedScanSchedule()">{{'smartPerformance.scanSettings.txtCancel' |translate }}</a>
+														<button class="save-button" (click)="saveChangedScanSchedule()"
+														vtrMetrics
+														metricsItem="smartPerformance.saveChangedScanSchedule"
+														metricsParent="pages.support.smartPerformance"
+														metricsEvent="FeatureClick"
+														>{{'smartPerformance.scanSettings.txtSave' |translate }}</button>
+														<a class="cancel-link active" (click)="cancelChangedScanSchedule()"
+														vtrMetrics
+														metricsItem="smartPerformance.cancelChangedScanSchedule"
+														metricsParent="pages.support.smartPerformance"
+														metricsEvent="FeatureClick"
+														>{{'smartPerformance.scanSettings.txtCancel' |translate }}</a>
 													</div>
 												
 											</div>
