@@ -24,6 +24,7 @@ import {
 	SessionStorageKey
 } from 'src/app/enums/session-storage-key-enum';
 import { ConfigService } from 'src/app/services/config/config.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
 	selector: 'wifi-security',
@@ -41,13 +42,18 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	locatorButtonDisable = false;
 	@Output() toggleChange = new EventEmitter<void>()
 
+	showMoreText = 'security.wifisecurity.container.showmore';
+	showLessText = 'security.wifisecurity.container.showless';
+
 	constructor(
 		public modalService: NgbModal,
 		private commonService: CommonService,
 		public	deviceService: DeviceService,
-		private configService: ConfigService
+		private configService: ConfigService,
+		private translate: TranslateService,
 	) {
 		super();
+		this.translateString();
 	}
 
 	ngOnInit() {
@@ -76,5 +82,14 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 			this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, length + 2);
 		}
 		return false;
+	}
+
+	private translateString() {
+		this.translate.stream(this.showMoreText).subscribe((res) => {
+			this.showMoreText = res;
+		});
+		this.translate.stream(this.showLessText).subscribe((res) => {
+			this.showLessText = res;
+		});
 	}
 }
