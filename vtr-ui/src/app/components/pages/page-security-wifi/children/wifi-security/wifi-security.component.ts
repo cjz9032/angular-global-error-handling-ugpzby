@@ -53,12 +53,6 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 		private translate: TranslateService,
 	) {
 		super();
-		this.translate.stream('security.wifisecurity.container.showmore').subscribe((value) => {
-			this.showMoreText = value;
-		});
-		this.translate.stream('security.wifisecurity.container.showless').subscribe((value) => {
-			this.showLessText = value;
-		});
 	}
 
 	ngOnInit() {
