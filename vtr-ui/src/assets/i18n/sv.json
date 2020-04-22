@@ -1452,10 +1452,10 @@
                         "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
                             "dynamic": "DYNAMIC",
-							"movie": "MOVIE",
-							"music": "MUSIC",
-							"games": "GAME",
-							"voip": "VOICE"
+                            "movie": "MOVIE",
+                            "music": "MUSIC",
+                            "games": "GAME",
+                            "voip": "VOICE"
                         },
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
@@ -1466,9 +1466,9 @@
                             "entertainmentMode": {
                                 "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
                             }
                         }
                     },
@@ -1689,17 +1689,17 @@
                         "hideAdvSettings": "DÖLJ AVANCERADE INSTÄLLNINGAR",
                         "description": "Tangentbordets översta rad har följande två funktioner. Välj den du vill ha:",
                         "subSection": {
-                            "description": "Om du vill växla mellan de två funktionerna ovan trycker du på Fn+Esc.",
+                            "description": "Du kan växla mellan de båda funktionerna genom att trycka på Fn+Esc. Uppdateringen tar flera sekunder.",
                             "radioButton": {
-                                "sFunKey": "SPECIALFUNKTION",
-                                "fnKey": "F1–F12-FUNKTION"
+                                "sFunKey": "Specialfunktion",
+                                "fnKey": "F1–F12-funktion"
                             }
                         },
                         "subSectionTwo": {
                             "title": "Ändra vilken primär funktion som är standard",
                             "description": "När den är på ändras den primära standardfunktionen från fabriksinställningarna till motsatsen. Starta om datorn så att ändringarna börjar gälla.",
-                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
-                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
+                            "caption": "AKTIV PRIMÄR FUNKTION:",
+                            "tooltipText": "Tryck på tangenterna på översta raden för att använda den primära standardfunktionen. Tryck på Fn+tangenterna på översta raden för att använda icke-primära funktioner. Eller tryck på Fn+Esc och sedan på tangenterna på översta raden."
                         },
                         "subSectionThree": {
                             "title": "Använda Fn-tangentkombinationer",
@@ -1982,7 +1982,7 @@
                     "description3": "1. För att kunna använda funktionerna ovan måste du justera skärmen till en lämplig vinkel så att systemet kan känna igen ditt ansikte.",
                     "description4": "2. Funktionerna fungerar inte i följande situationer:",
                     "description5a": "a. Datorn används i tält- eller surfplatteläge, stående läge eller frånkopplat läge. Mer information om vilka lägen som stöds på din dator finns i användarhandboken som medföljde datorn.",
-					"description5b": "b. Datorn är i viloläge eller avstängd.",
+                    "description5b": "b. Datorn är i viloläge eller avstängd.",
                     "description6": "3. Om flygplansläget är aktiverat på datorn är dessa funktioner inaktiverade.",
                     "description7": "Noggrannheten varierar beroende på kroppsstorlek, hållning och hur ofta du rör dig. Om datorn låses oväntat kan du justera känslighetsfältet och därigenom öka noggrannheten."
                 },
@@ -2103,12 +2103,12 @@
                 "photo": {
                     "title": "ANTAL FOTON SOM TAS UNDER RÖRELSEN",
                     "tooltip": "Kameran på datorn aktiveras automatiskt för att ta bilder när rörelser identifieras. Bilder tas varannan sekund och sparas i ditt lokala lagringsutrymme.",
-                    "option1": "5",
-                    "option2": "10",
-                    "option3": "15",
-                    "option4": "20",
-                    "option5": "25",
-                    "option6": "30"
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
                 },
                 "showPhoto": {
                     "title": "FOTON HAR SPARATS LOKALT:",
@@ -3131,7 +3131,7 @@
         "betaSettingTitle": "Betaprogram",
         "betaProgram": "Betaprogram",
         "betaSettingDescription": "Prova de senaste funktionerna vi arbetar på.",
-        "betaSettingNewDescription": "Vi är glada att kunna bjuda in dig till betaprogrammet Smart prestanda. Du kan förbättra datorns prestanda genom att<br/><ul class='pl-4'><li>felsöka fel och optimera inställningar proaktivt</li><li>förbättra internetprestandan genom att optimera nätverk och webbläsare</li><li>utföra snabb sökning och reparation utan att använda det befintliga antivirusprogrammet.</li></ul>"
+        "betaSettingNewDescription": "Vi är glada att kunna bjuda in dig till betaprogrammet Smart Performance. Du kan förbättra datorns prestanda genom att<br/><ul class='pl-4'><li>felsöka fel och optimera inställningar proaktivt</li><li>förbättra internetprestandan genom att optimera nätverk och webbläsare</li><li>utföra snabb sökning och reparation utan att använda det befintliga antivirusprogrammet.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Avbryt",
@@ -3895,7 +3895,8 @@
                 "results": "Results:",
                 "status": "Status"
             }
-        }
+        },
+        "runningWell": "PC is running well"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

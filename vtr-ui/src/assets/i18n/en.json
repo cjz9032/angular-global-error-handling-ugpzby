@@ -1462,11 +1462,11 @@
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "radioText": "VoIP",
+                                "checkboxText": "Automatically optimize audio for VOIP",
                                 "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
                             },
                             "entertainmentMode": {
-                                "radioText": "Entertainment",
+                                "checkboxText": "Automatically optimize audio for entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
                                 "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
                                 "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
@@ -1923,7 +1923,7 @@
 					},
 					"distanceSensitivityAdjusting": {
 						"title": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-						"captionOn": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, you can manually adjust the dectecting sensitivity based on your preference.",
+						"captionOn": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, you can manually adjust the detecting sensitivity based on your preference.",
 						"captionOff": "The accuracy varies by body size, posture, and frequency of movement. When this feature is disabled, you need to manually adjust the sensitivity bar to adjust the detecting distance. If you want the distance to be adjusted automatically, turn it on.",
 						"options": {
 							"near": "Near",
@@ -2303,6 +2303,7 @@
 		"nine": "9",
 		"ten": "10",
 		"tuneUP": "Your PC needs a tune-up",
+		"runningWell": "PC is running well",
 		"section2Heading": "Top-notch PC Performance. Always",
 		"section2Description": "Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
 		"tunePCPerformance": {

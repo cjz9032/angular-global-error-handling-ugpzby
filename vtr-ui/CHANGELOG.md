@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.20](https://bitbucket.tc.lenovo.com///compare/v1.5.19...v1.5.20) (2020-04-21)
+
+
+### Bug Fixes
+
+* **protocol overall:** 1. add fallback route 2.fix 3.0 convert issue ([6af6edb](https://bitbucket.tc.lenovo.com///commit/6af6edb8ab3ec270509bd3c3faf4200d1fd53fde))
+* **protocol overall:** fix fallback route issue ([97b7fff](https://bitbucket.tc.lenovo.com///commit/97b7fffbd138ad1d9554613ffc9a77616033213e))
+
+### [1.5.19](https://bitbucket.tc.lenovo.com///compare/v1.5.18...v1.5.19) (2020-04-20)
+
+
+### Bug Fixes
+
+* **VAN-16563:** ut ([39efece](https://bitbucket.tc.lenovo.com///commit/39efece8450ab0d9654e3a5511b5e4ad693d8d03))
+* **Wifi security :** Append "h2" tag ([bb60ca3](https://bitbucket.tc.lenovo.com///commit/bb60ca3d50cca594faeaf5e3c4bce42ade5c3cbb))
+* **Wifi security :** Delete the "attr.aria-label" attribute ([0ef4da6](https://bitbucket.tc.lenovo.com///commit/0ef4da6c12711040418178ed6f76c418a23fdc21))
+* do not use legacy property ([31250ce](https://bitbucket.tc.lenovo.com///commit/31250cee568902bd97e0d8c4c71c536da6cedca1))
+* **Wifi security:** tabindex error on 'show more/show less' ([e0e00e0](https://bitbucket.tc.lenovo.com///commit/e0e00e0352ff269ae77921e3cae9f416150f87c7))
+* do not use legacy property ([5785f77](https://bitbucket.tc.lenovo.com///commit/5785f7758c437115b33727c36a5f8fcc0d79179a))
+* **Wifi security:** fix tabindex order in wifi security ([f135a41](https://bitbucket.tc.lenovo.com///commit/f135a41c18387ef4ee613c7c0552447260bcbf30))
+* **Wifi security:** tabindex error on 'show more/show less' ([9766941](https://bitbucket.tc.lenovo.com///commit/9766941ed9e95d21bcafc8ff20413e4938440bca))
+
 ### [1.5.18](https://bitbucket.tc.lenovo.com///compare/v1.5.17...v1.5.18) (2020-04-17)
 
 

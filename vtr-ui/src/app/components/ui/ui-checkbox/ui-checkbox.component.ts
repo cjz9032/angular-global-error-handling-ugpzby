@@ -14,6 +14,7 @@ import {
 export class UiCheckboxComponent implements OnInit {
 
 	@Input() componentId: string;
+	@Input() arialabel:string;
 	@Input() label: string;
 	@Input() checked = false;
 	@Input() disabled = false;

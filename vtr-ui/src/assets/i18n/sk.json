@@ -1452,10 +1452,10 @@
                         "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
                             "dynamic": "DYNAMIC",
-							"movie": "MOVIE",
-							"music": "MUSIC",
-							"games": "GAME",
-							"voip": "VOICE"
+                            "movie": "MOVIE",
+                            "music": "MUSIC",
+                            "games": "GAME",
+                            "voip": "VOICE"
                         },
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
@@ -1466,9 +1466,9 @@
                             "entertainmentMode": {
                                 "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
                             }
                         }
                     },
@@ -1689,17 +1689,17 @@
                         "hideAdvSettings": "SKRYŤ ROZŠÍRENÉ NASTAVENIA",
                         "description": "Horný riadok klávesnice prináša tieto dve funkcie. Vyberte si tú, ktorú požadujete:",
                         "subSection": {
-                            "description": "Ak chcete prepnúť medzi dvoma spôsobmi fungovania uvedenými vyššie, stlačte klávesy Fn+Esc.",
+                            "description": "Medzi týmito dvoma funkciami môžete prepínať aj stlačením klávesov Fn+Esc. Obnovenie potrvá niekoľko sekúnd.",
                             "radioButton": {
-                                "sFunKey": "ŠPECIÁLNA FUNKCIA",
-                                "fnKey": "FUNKCIE KLÁVESOV F1 – F12"
+                                "sFunKey": "Špeciálne funkcie",
+                                "fnKey": "Funkcie klávesov F1 – F12"
                             }
                         },
                         "subSectionTwo": {
                             "title": "Zmena predvolenej primárnej funkcie",
                             "description": "Ak je táto možnosť zapnutá, predvolená primárna funkcia sa zmení z továrenských nastavení na opačné nastavenie. Tieto zmeny sa prejavia až po reštartovaní počítača.",
-                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
-                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
+                            "caption": "AKTÍVNA PRIMÁRNA FUNKCIA:",
+                            "tooltipText": "Ak chcete použiť predvolenú primárnu funkciu, stlačte klávesy v hornom riadku. V prípade iných než primárnych funkcií stlačte kláves Fn+klávesy v hornom riadku. Alebo môžete najskôr stlačiť klávesy Fn+Esc a potom klávesy v hornom riadku."
                         },
                         "subSectionThree": {
                             "title": "Ako používať kombinácie klávesu Fn",
@@ -1982,7 +1982,7 @@
                     "description3": "1. Ak chcete využívať vyššie uvedené funkcie, nastavte obrazovku do príslušného uhla, aby bolo možné rozpoznať vašu tvár.",
                     "description4": "2. Vyššie uvedené funkcie nie sú podporované, ak:",
                     "description5a": "a. Máte počítač v režime Stan, Tablet, Stojan alebo v odpojenom režime. Informácie o režimoch podporovaných vaším počítačom nájdete v používateľskej príručke, ktorá sa s ním dodáva.",
-					"description5b": "B. Ak je počítač v režime dlhodobého spánku alebo je vypnutý.",
+                    "description5b": "B. Ak je počítač v režime dlhodobého spánku alebo je vypnutý.",
                     "description6": "3. Ak je v počítači povolený režim V lietadle, tieto funkcie sú vypnuté.",
                     "description7": "Presnosť sa líši podľa veľkosti a držania tela a frekvencie pohybu. Ak sa počítač neočakávane uzamkne, upravte posúvač citlivosti, aby ste zvýšili presnosť."
                 },
@@ -2103,12 +2103,12 @@
                 "photo": {
                     "title": "POČET FOTOGRAFIÍ NASNÍMANÝCH POČAS POHYBU",
                     "tooltip": "Fotoaparát v počítači sa pri zistení pohybu automaticky aktivuje a začne snímať fotografie. Fotografie sa snímajú každé 2 sekundy a ukladajú sa na lokálne úložisko.",
-                    "option1": "5",
-                    "option2": "10",
-                    "option3": "15",
-                    "option4": "20",
-                    "option5": "25",
-                    "option6": "30"
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
                 },
                 "showPhoto": {
                     "title": "FOTOGRAFIE SA ULOŽILI NA MIESTNE ÚLOŽISKO:",
@@ -3895,7 +3895,8 @@
                 "results": "Results:",
                 "status": "Status"
             }
-        }
+        },
+        "runningWell": "PC is running well"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

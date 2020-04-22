@@ -59,7 +59,9 @@
 		}
 		&:focus {
 			outline: 0;
-			@include button-outline-blue;
+			&::after {
+				@include button-outline-blue;
+			}
 		}
 	}
 

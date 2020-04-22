@@ -1452,10 +1452,10 @@
                         "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
                             "dynamic": "DYNAMIC",
-							"movie": "MOVIE",
-							"music": "MUSIC",
-							"games": "GAME",
-							"voip": "VOICE"
+                            "movie": "MOVIE",
+                            "music": "MUSIC",
+                            "games": "GAME",
+                            "voip": "VOICE"
                         },
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
@@ -1466,9 +1466,9 @@
                             "entertainmentMode": {
                                 "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
                             }
                         }
                     },
@@ -1689,17 +1689,17 @@
                         "hideAdvSettings": "SKJUL AVANSERTE INNSTILLINGER",
                         "description": "På tastaturets øverste rad finner du de følgende to funksjonene. Velg ønsket funksjon:",
                         "subSection": {
-                            "description": "Trykk på Fn+Esc for å veksle mellom de to funksjonene over.",
+                            "description": "Du kan også bytte mellom de to funksjonene ved å trykke på Fn+Esc. Oppdateringen tar noen sekunder.",
                             "radioButton": {
-                                "sFunKey": "SPESIALFUNKSJON",
-                                "fnKey": "FUNKSJON FOR F1–F12"
+                                "sFunKey": "Spesialfunksjon",
+                                "fnKey": "F1–F12-funksjon"
                             }
                         },
                         "subSectionTwo": {
                             "title": "Reversere den standard primærfunksjonen",
                             "description": "Når på vil den standard primærfunksjonen endres fra fabrikkinnstillingene til det motsatte. Start datamaskinen på nytt for at endringene skal tre i kraft.",
-                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
-                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
+                            "caption": "DEN AKTIVE HOVEDFUNKSJONEN:",
+                            "tooltipText": "Hvis du vil bruke standard primærfunksjon, trykker du på tastene på den øverste raden. Du bruker sekundærfunksjoner ved å trykke på Fn og tastene på den øverste raden. Du kan også trykke på Fn+Esc først og deretter trykke på tastene på den øverste raden."
                         },
                         "subSectionThree": {
                             "title": "Slik bruker du Fn-tastekombinasjoner",
@@ -1982,7 +1982,7 @@
                     "description3": "1. Hvis du vil bruke funksjonene ovenfor, justerer du skjermen til en passende vinkel, slik at ansiktet ditt kan gjenkjennes.",
                     "description4": "2. Funksjonene ovenfor støttes ikke når:",
                     "description5a": "a. Datamaskinen din er i Telt-modus, Nettbrett-modus, Stativ-modus eller frakoblet modus. Se brukerveiledningen som følger med datamaskinen for å se modusene som støttes på den.",
-					"description5b": "b. Datamaskinen er i dvalemodus eller er slått av.",
+                    "description5b": "b. Datamaskinen er i dvalemodus eller er slått av.",
                     "description6": "3. Disse funksjonene deaktiveres hvis flymodus aktiveres på datamaskinen.",
                     "description7": "Nøyaktigheten varierer avhengig av kroppsstørrelse, sittestilling og bevegelseshyppighet. Hvis datamaskinen blir uventet låst, kan du justere følsomheten for å forbedre nøyaktigheten."
                 },
@@ -2103,12 +2103,12 @@
                 "photo": {
                     "title": "ANTALL BILDER SOM TAS VED BEVEGELSE",
                     "tooltip": "Kameraet på datamaskinen aktiveres automatisk for å ta bilder når det oppdages bevegelse. Det tas bilder hvert andre sekund, og de lagres på den lokale lagringsplassen.",
-                    "option1": "5",
-                    "option2": "10",
-                    "option3": "15",
-                    "option4": "20",
-                    "option5": "25",
-                    "option6": "30"
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
                 },
                 "showPhoto": {
                     "title": "BILDENE ER LAGRET LOKALT:",
@@ -3131,7 +3131,7 @@
         "betaSettingTitle": "Beta-program",
         "betaProgram": "Beta-program",
         "betaSettingDescription": "Prøv de nyeste funksjonene vi jobber med.",
-        "betaSettingNewDescription": "Vi har gleden av å invitere deg til Beta-programmet for smart ytelse. Den hjelper deg med å forbedre ytelsen på PC-en din ved å:<br/><ul class='pl-4'><li>Proaktivt diagnostisere feil og optimalisere innstillinger.</li><li>Øke Internett-ytelsen med optimalisering av nettverks og nettleser.</li><li>Utføre hurtigsøk og utbedring uten å bruke det eksisterende antivirusprogrammet.</li></ul>"
+        "betaSettingNewDescription": "Vi har gleden av å invitere deg til Beta-programmet for Smart Performance. Den hjelper deg med å forbedre ytelsen på PC-en din ved å:<br/><ul class='pl-4'><li>Proaktivt diagnostisere feil og optimalisere innstillinger.</li><li>Øke Internett-ytelsen med optimalisering av nettverks og nettleser.</li><li>Utføre hurtigsøk og utbedring uten å bruke det eksisterende antivirusprogrammet.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Avbryt",
@@ -3895,7 +3895,8 @@
                 "results": "Results:",
                 "status": "Status"
             }
-        }
+        },
+        "runningWell": "PC is running well"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

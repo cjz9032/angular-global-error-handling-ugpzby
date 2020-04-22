@@ -1452,10 +1452,10 @@
                         "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
                             "dynamic": "DYNAMIC",
-							"movie": "MOVIE",
-							"music": "MUSIC",
-							"games": "GAME",
-							"voip": "VOICE"
+                            "movie": "MOVIE",
+                            "music": "MUSIC",
+                            "games": "GAME",
+                            "voip": "VOICE"
                         },
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
@@ -1466,9 +1466,9 @@
                             "entertainmentMode": {
                                 "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
                             }
                         }
                     },
@@ -1689,7 +1689,7 @@
                         "hideAdvSettings": "詳細設定を非表示にする",
                         "description": "キーボードの一番上の行には、次の 2 つの機能があります。使用するものを選択してください:",
                         "subSection": {
-                            "description": "上記の 2 つの機能を切り替えるには、Fn+Esc を押します。",
+                            "description": "Fn+Esc キーを押して、この 2 つの機能を切り替えることもできます。更新処理には数秒間かかります。",
                             "radioButton": {
                                 "sFunKey": "特殊機能",
                                 "fnKey": "F1 ～ F12 機能"
@@ -1698,8 +1698,8 @@
                         "subSectionTwo": {
                             "title": "デフォルトの主要機能を逆にする",
                             "description": "オンの場合、デフォルトのプライマリ機能は工場出荷時の設定とは逆に変更されます。これらの変更を有効にするには、コンピューターを再起動してください。",
-                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
-                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
+                            "caption": "アクティブなプライマリー機能:",
+                            "tooltipText": "デフォルトのプライマリ機能を使用するには、最上段のキーを押します。プライマリー以外の機能の場合は、Fn と最上段のキーを同時に押します。または、最初に Fn+Esc キーを押してから、最上段のキーを押すこともできます。"
                         },
                         "subSectionThree": {
                             "title": "Fn キーとの組み合わせの使用",
@@ -1982,7 +1982,7 @@
                     "description3": "1.上記の機能を使用するには、顔が認識されるように、画面を適切な角度に調節してください。",
                     "description4": "2.以下の場合、上記の機能はサポートされません。",
                     "description5a": "a. お使いのコンピューターがテント、タブレット、スタンド・モード、またはデタッチド・モードになっている。お使いのコンピュータでサポートされているモードについては、付属のユーザー・ガイドを参照してください。",
-					"description5b": "b. お使いのコンピューターが休止状態またはオフになっている。",
+                    "description5b": "b. お使いのコンピューターが休止状態またはオフになっている。",
                     "description6": "3. お使いのコンピューターで機内モードを有効にすると、これらの機能は無効になります。",
                     "description7": "精度は、体の大きさ、姿勢、動きの頻度によって異なります。コンピューターが予期せずロックされる場合は、感度バーを調整して精度を向上させます。"
                 },
@@ -2103,12 +2103,12 @@
                 "photo": {
                     "title": "動きに対して撮影される写真の枚数",
                     "tooltip": "動きが検出されると、コンピューターのカメラが自動的にアクティブになり、写真が撮影されます。写真は 2 秒ごとに撮影され、ローカル・ストレージに保存されます。",
-                    "option1": "5",
-                    "option2": "10",
-                    "option3": "15",
-                    "option4": "20",
-                    "option5": "25",
-                    "option6": "30"
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
                 },
                 "showPhoto": {
                     "title": "写真がローカルに保存されました:",
@@ -3131,7 +3131,7 @@
         "betaSettingTitle": "ベータ版プログラム",
         "betaProgram": "ベータ版プログラム",
         "betaSettingDescription": "現在開発中の最新機能をお試しください.",
-        "betaSettingNewDescription": "皆さまをスマート・パフォーマンスのベータ・プログラムにご招待いたします。スマート・パフォーマンスは、以下の方法により PC のパフォーマンスの改善に役立ちます。<br/><ul class='pl-4'><li>バグを予防的に診断し、設定を最適化します。</li><li>ネットワークとブラウザの最適化により、インターネットのパフォーマンスを向上させます。</li><li>アンチウィルス・プログラムを使用せずに簡易スキャンと修復を実行します。</li></ul>"
+        "betaSettingNewDescription": "皆さまを Smart Performance のベータ・プログラムにご招待いたします。Smart Performance は、以下の方法により PC のパフォーマンスの改善に役立ちます。<br/><ul class='pl-4'><li>バグを予防的に診断し、設定を最適化します。</li><li>ネットワークとブラウザの最適化により、インターネットのパフォーマンスを向上させます。</li><li>アンチウィルス・プログラムを使用せずに簡易スキャンと修復を実行します。</li></ul>"
     },
     "modernPreload": {
         "cancel": "キャンセル",
@@ -3895,7 +3895,8 @@
                 "results": "Results:",
                 "status": "Status"
             }
-        }
+        },
+        "runningWell": "PC is running well"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

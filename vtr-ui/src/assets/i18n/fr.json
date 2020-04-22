@@ -1452,10 +1452,10 @@
                         "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
                             "dynamic": "DYNAMIC",
-							"movie": "MOVIE",
-							"music": "MUSIC",
-							"games": "GAME",
-							"voip": "VOICE"
+                            "movie": "MOVIE",
+                            "music": "MUSIC",
+                            "games": "GAME",
+                            "voip": "VOICE"
                         },
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
@@ -1466,9 +1466,9 @@
                             "entertainmentMode": {
                                 "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
                             }
                         }
                     },
@@ -1689,17 +1689,17 @@
                         "hideAdvSettings": "MASQUER LES PARAMÈTRES AVANCÉS",
                         "description": "La rangée supérieure du clavier comporte les deux fonctions suivantes. Sélectionnez celle que vous souhaitez :",
                         "subSection": {
-                            "description": "Pour basculer entre les deux fonctions susmentionnées, appuyez sur Fn+Esc.",
+                            "description": "Vous pouvez également basculer d'une fonction à l'autre en appuyant sur les touches Fn+Echap. Le processus d'actualisation prend quelques secondes.",
                             "radioButton": {
-                                "sFunKey": "FONCTION SPÉCIALE",
-                                "fnKey": "FONCTION F1-F12"
+                                "sFunKey": "Fonction spéciale",
+                                "fnKey": "Fonction F1-F12"
                             }
                         },
                         "subSectionTwo": {
                             "title": "Inversion de la fonction principale par défaut",
                             "description": "Lorsque cette option est activée, la fonction principale par défaut passe des paramètres d'usine à la valeur opposée. Redémarrez votre ordinateur pour que les modifications prennent effet.",
-                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
-                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
+                            "caption": "FONCTION PRINCIPALE ACTIVE :",
+                            "tooltipText": "Pour utiliser la fonction principale par défaut, appuyez sur les touches de la rangée supérieure. Pour les fonctions secondaires, appuyez sur Fn+touches de la rangée supérieure. Vous pouvez également appuyer d'abord sur les touches Fn+Echap, puis sur les touches de la première rangée."
                         },
                         "subSectionThree": {
                             "title": "Comment utiliser les combinaisons de touches Fn",
@@ -1982,7 +1982,7 @@
                     "description3": "1. Pour utiliser les fonctions ci-dessus, veuillez ajuster l'écran à un angle approprié pour que votre visage puisse être reconnu.",
                     "description4": "2. Les fonctions ci-dessus ne sont pas prises en charge lorsque :",
                     "description5a": "a. votre ordinateur est en mode chevalet, tablette sur support ou détaché. Pour connaître les modes pris en charge par votre ordinateur, reportez-vous à son guide d'utilisation.",
-					"description5b": "b. votre ordinateur est en mode hibernation ou a été éteint.",
+                    "description5b": "b. votre ordinateur est en mode hibernation ou a été éteint.",
                     "description6": "3. Si le mode avion est activé sur votre ordinateur, ces fonctions sont désactivées.",
                     "description7": "La précision varie en fonction de la taille du corps, de la posture et de la fréquence des mouvements. Si votre ordinateur est verrouillé de manière inattendue, réglez la barre de sensibilité pour améliorer la précision."
                 },
@@ -2103,12 +2103,12 @@
                 "photo": {
                     "title": "NOMBRE DE PHOTOS PRISES PENDANT LE MOUVEMENT",
                     "tooltip": "L'appareil photo de votre ordinateur s'active automatiquement pour prendre des photos lorsque des mouvements sont détectés. Les photos sont prises toutes les 2 secondes et enregistrées dans votre stockage local.",
-                    "option1": "5",
-                    "option2": "10",
-                    "option3": "15",
-                    "option4": "20",
-                    "option5": "25",
-                    "option6": "30"
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
                 },
                 "showPhoto": {
                     "title": "PHOTOS ENREGISTRÉES DANS L'EMPLACEMENT LOCAL :",
@@ -3131,7 +3131,7 @@
         "betaSettingTitle": "Programme bêta",
         "betaProgram": "Programme bêta",
         "betaSettingDescription": "Essayez les dernières fonctions sur lesquelles nous travaillons.",
-        "betaSettingNewDescription": "Nous sommes heureux de vous inviter au programme bêta Performances intelligentes. Celui-ci permet d'améliorer les performances de votre ordinateur en procédant aux opérations suivantes :<br/><ul class='pl-4'><li>Diagnostic proactif des bogues et optimisation des paramètres.</li><li>Amélioration des performances Internet par optimisation du réseau et du navigateur.</li><li>Analyse rapide et correction sans utiliser le programme antivirus existant.</li></ul>"
+        "betaSettingNewDescription": "Nous sommes heureux de vous inviter au programme bêta Smart Performance. Celui-ci permet d'améliorer les performances de votre ordinateur en procédant aux opérations suivantes :<br/><ul class='pl-4'><li>Diagnostic proactif des bogues et optimisation des paramètres.</li><li>Amélioration des performances Internet par optimisation du réseau et du navigateur.</li><li>Analyse rapide et correction sans utiliser le programme antivirus existant.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Annuler",
@@ -3895,7 +3895,8 @@
                 "results": "Results:",
                 "status": "Status"
             }
-        }
+        },
+        "runningWell": "PC is running well"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

@@ -1452,10 +1452,10 @@
                         "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
                             "dynamic": "DYNAMIC",
-							"movie": "MOVIE",
-							"music": "MUSIC",
-							"games": "GAME",
-							"voip": "VOICE"
+                            "movie": "MOVIE",
+                            "music": "MUSIC",
+                            "games": "GAME",
+                            "voip": "VOICE"
                         },
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
@@ -1466,9 +1466,9 @@
                             "entertainmentMode": {
                                 "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
                             }
                         }
                     },
@@ -1689,17 +1689,17 @@
                         "hideAdvSettings": "GEAVANCEERDE INSTELLINGEN VERBERGEN",
                         "description": "De bovenste rij van het toetsenbord heeft de volgende twee functies. Selecteer de functie die u wilt:",
                         "subSection": {
-                            "description": "Druk op Fn+Esc om de bovenstaande twee functies te wisselen.",
+                            "description": "U kunt schakelen tussen de twee functies door op Fn+Esc te drukken. Het bijwerken van het scherm duurt enkele seconden.",
                             "radioButton": {
-                                "sFunKey": "SPECIALE FUNCTIE",
-                                "fnKey": "F1-F12-FUNCTIE"
+                                "sFunKey": "Speciale functie",
+                                "fnKey": "F1-F12-functie"
                             }
                         },
                         "subSectionTwo": {
                             "title": "De primaire standaardfunctie omdraaien",
                             "description": "Als deze is ingeschakeld, wordt de primaire functie gewijzigd van fabrieksinstellingen naar het tegenovergestelde. U moet het systeem opnieuw opstarten om deze wijziging te activeren.",
-                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
-                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
+                            "caption": "DE ACTIEVE PRIMAIRE FUNCTIE:",
+                            "tooltipText": "Als u de standaard primaire functies wilt gebruiken, drukt u op de toetsen op de bovenste rij. Voor de niet-primaire functies drukt u op Fn+de toetsen op de bovenste rij. U kunt ook eerst op Fn+Esc drukken en vervolgens op de toetsen op de bovenste rij."
                         },
                         "subSectionThree": {
                             "title": "De Fn-toetsencombinaties gebruiken",
@@ -1982,7 +1982,7 @@
                     "description3": "1. Om deze functies te gebruiken moet uw scherm in de juiste hoek geplaatst worden zodat uw gezicht kan worden herkend.",
                     "description4": "2. Bovenstaande functies worden niet ondersteund in de volgende gevallen:",
                     "description5a": "a. uw computer staat in de werkstand tent, tablet, standaard of is ontkoppeld. Raadpleeg de gebruikershandleiding die bij uw computer wordt geleverd voor meer informatie over de modi die door uw computer worden ondersteund.",
-					"description5b": "b. uw computer staat in de sluimerstand of is uitgeschakeld.",
+                    "description5b": "b. uw computer staat in de sluimerstand of is uitgeschakeld.",
                     "description6": "3. Als de vliegtuigstand is ingeschakeld op uw computer, zijn deze functies uitgeschakeld.",
                     "description7": "De nauwkeurigheid is afhankelijk van lichaamsgrootte, postuur en bewegingsfrequentie. Als uw computer onverwacht wordt vergrendeld, pas dan de gevoeligheidsbalk aan om de nauwkeurigheid te verbeteren."
                 },
@@ -2103,12 +2103,12 @@
                 "photo": {
                     "title": "HET AANTAL FOTO'S DAT TIJDENS DE BEWEGING WORDT GENOMEN",
                     "tooltip": "De camera op de computer wordt automatisch geactiveerd om foto's te maken wanneer er bewegingen worden gedetecteerd. Er worden elke twee seconden foto's genomen en ze worden opgeslagen in uw lokale opslag.",
-                    "option1": "5",
-                    "option2": "10",
-                    "option3": "15",
-                    "option4": "20",
-                    "option5": "25",
-                    "option6": "30"
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
                 },
                 "showPhoto": {
                     "title": "FOTO'S ZIJN LOKAAL OPGESLAGEN:",
@@ -3131,7 +3131,7 @@
         "betaSettingTitle": "Bètaprogramma",
         "betaProgram": "Bètaprogramma",
         "betaSettingDescription": "Probeer de nieuwste functies waaraan we werken.",
-        "betaSettingNewDescription": "We nodigen je graag uit voor het Beta-programma voor slimme prestaties. Hiermee kun je de prestaties van je PC verbeteren door:<br/><ul class='pl-4'><li>Proactief fouten en optimalisatie van instellingen te bepalen.</li><li>Internet prestaties te verhogen door optimalisatie van netwerk en browser.</li><li>Snelle scan en herstel-opties uit te voeren zonder gebruik te maken van het bestaande antivirus programma.</li></ul>"
+        "betaSettingNewDescription": "We nodigen je graag uit voor het Beta-programma voor Smart Performance. Hiermee kun je de prestaties van je PC verbeteren door:<br/><ul class='pl-4'><li>Proactief fouten en optimalisatie van instellingen te bepalen.</li><li>Internet prestaties te verhogen door optimalisatie van netwerk en browser.</li><li>Snelle scan en herstel-opties uit te voeren zonder gebruik te maken van het bestaande antivirus programma.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Annuleren",
@@ -3895,7 +3895,8 @@
                 "results": "Results:",
                 "status": "Status"
             }
-        }
+        },
+        "runningWell": "PC is running well"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

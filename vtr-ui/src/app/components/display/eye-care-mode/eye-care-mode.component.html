@@ -2,7 +2,7 @@
 	*ngIf="eyeCareModeSettings">
 	<div class="row"
 		*ngIf="eyeCareModeSettings.current">
-		<div class="col pl-4">
+		<div class="col-10 pl-4">
 			<vtr-ui-custom-slider [step]=100
 				[isDisabled]="enableSlider"
 				[min]="eyeCareModeSettings.minimum"
@@ -12,20 +12,20 @@
 				[value]="eyeCareModeSettings.current"
 				(sliderChange)="onEyeCareTemperatureChange($event)"
 				(valueChanged)="onEyeCareTemperatureValueChange($event)"
+				[ariaLabel]="'eye care mode color temperature slider'"
 				[sliderId]="'color-temp-eyeCareMode'">
 			</vtr-ui-custom-slider>
 		</div>
-		<div class="reset-temperature">
-			<div class="button-box">
-				<vtr-ui-button (onClick)="onResetTemperature($event)"
-					metricsEvent="itemClick"
-					metricsParent="eye-care-mode"
-					metricsItem="btn.eye-care-mode.ResetTemperature"
-					[isDisabled]="disableReset"
-					[isFullWidth]="false"
-					[label]="'device.deviceSettings.displayCamera.display.eyeCareMode.reset' | translate"
-					[linkId]="'color-temp-eyeCareMode-reset-btn'">
-				</vtr-ui-button>
+		<div class="col-2 pl-0">
+			<div class="reset-temperature">
+				<div class="button-box">
+					<vtr-ui-button (onClick)="onResetTemperature($event)" metricsEvent="itemClick"
+						metricsParent="eye-care-mode" metricsItem="btn.eye-care-mode.ResetTemperature"
+						[isDisabled]="disableReset" [isFullWidth]="false"
+						[label]="'device.deviceSettings.displayCamera.display.eyeCareMode.reset' | translate"
+						[linkId]="'color-temp-eyeCareMode-reset-btn'">
+					</vtr-ui-button>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -44,7 +44,7 @@
 	</div>
 	<div class="custom-control custom-checkbox eye-care-checkbox"
 		*ngIf="sunsetToSunriseStatus.available && !enableSunsetToSunrise">
-		<vtr-ui-checkbox componentId="'cb-eye-care-schedule'"
+		<vtr-ui-checkbox componentId="cb-eye-care-schedule"
 			tabindex="-1"
 			[disabled]="missingGraphicDriver"
 			[checked]="sunsetToSunriseStatus.status"
