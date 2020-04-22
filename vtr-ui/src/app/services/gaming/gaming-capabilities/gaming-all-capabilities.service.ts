@@ -61,7 +61,6 @@ export class GamingAllCapabilitiesService {
 		this.commonService.setLocalStorageValue(LocalStorageKey.winKeyLockFeature, capabilities.winKeyLockFeature);
 		// Version 3.3: over drive supported on 200317 by Guo Jing
 		this.commonService.setLocalStorageValue(LocalStorageKey.overDriveFeature, capabilities.overDriveFeature)
-		this.commonService.setLocalStorageValue(LocalStorageKey.accessoryFeature, capabilities.accessoryFeature)
 		this.commonService.sendGamingCapabilitiesNotification(Gaming.GamingCapabilities, capabilities);
 	}
 

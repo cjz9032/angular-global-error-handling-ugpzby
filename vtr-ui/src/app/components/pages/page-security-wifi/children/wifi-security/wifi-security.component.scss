@@ -310,13 +310,10 @@
 
 				}
 
-				.card-foot {
-					display: inline;
-
-					.show-more {
-						font-size: 1.6rem;
-						text-decoration: underline;
-					}
+				.showmore-button {
+					color: $blue-lighter;
+					font-size: 1.6rem;
+					text-decoration: underline;
 				}
 			}
 

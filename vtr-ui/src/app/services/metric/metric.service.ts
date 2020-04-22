@@ -20,6 +20,7 @@ export class MetricService {
 	private blurDurationCounter;
 	private suspendDurationCounter;
 	private dashboardFirstLoaded = 0;
+	private welcomeNeeded: any;
 	private hasSendAppLoadedEvent = false;
 	public readonly isFirstLaunch: boolean;
 	constructor(
@@ -139,6 +140,18 @@ export class MetricService {
 		this.metricsClient.sendAsync(new AppLoaded((dashboardFirstLoaded - vanStub.navigateTime)));
 	}
 
+	private sendInstallationMetric(metricEnable) {
+		if (Windows
+			&& Windows.VantageShellExtension.Metrics
+			&& Windows.VantageShellExtension.Metrics.Helper
+			&& Windows.VantageShellExtension.Metrics.Helper.SvcInstallationMetricsHelper) {
+			const SvcInstallationMetricsHelper = Windows.VantageShellExtension.Metrics.Helper.SvcInstallationMetricsHelper;
+			if (SvcInstallationMetricsHelper.needReportError) {
+				SvcInstallationMetricsHelper.sendFinishMetric(metricEnable);
+			}
+		}
+	}
+
 	public sendAppLaunchMetric() {
 		this.focusDurationCounter = this.timerService.getFocusDurationCounter();
 		this.blurDurationCounter = this.timerService.getBlurDurationCounter();
@@ -215,10 +228,21 @@ export class MetricService {
 	}
 
 	public async metricReady() {
-		if (this.metricsClient.initializationResolved){
-			 return;
-		 }
-		 await this.metricsClient.initPromise;
+		if (this.metricsClient.initializationResolved) {
+			return;
+		}
+		await this.metricsClient.initPromise;
+	}
+
+	private async sendMetricsAfterPageLoad() {
+		if (this.welcomeNeeded === false && this.dashboardFirstLoaded) {
+			await this.metricReady();
+			if (this.metricsClient.metricsEnabled) {	// in normal case for first run, if the welcome page was not done, the metrics will be disable.
+				this.handleAppLoadedEvent();	// send these metric event in dashboard at the scenarios when welcome page was done.
+			}
+
+			this.sendInstallationMetric(this.metricsClient.metricsEnabled)
+		}
 	}
 
 	public async onPageLoaded() {
@@ -227,12 +251,7 @@ export class MetricService {
 		}
 
 		this.dashboardFirstLoaded = Date.now(); // save the time while app finish loading.
-		await this.metricReady();
-		if (this.metricsClient.metricsEnabled) {	// in normal case for first run, if the welcome page was not done, the metrics will be disable.
-			this.handleAppLoadedEvent();	// send these metric event in dashboard at the scenarios when welcome page was done.
-		}
-
-		// else the welcome page need to check if it should send the metrics after the metrics option was determined
+		this.sendMetricsAfterPageLoad();
 	}
 
 	public async handleWelcomeDone() {
@@ -240,5 +259,12 @@ export class MetricService {
 		if (this.metricsClient.metricsEnabled) {
 			this.handleAppLoadedEvent();
 		}
+
+		this.sendInstallationMetric(this.metricsClient.metricsEnabled)
+	}
+
+	public async HandleCheckWelcomeNeeded(welcomeNeeded: boolean) {
+		this.welcomeNeeded = welcomeNeeded;
+		this.sendMetricsAfterPageLoad();
 	}
 }

@@ -2,8 +2,10 @@
 .vtr-backlight-thinkpad {
 	margin-top: -1.5rem;
 	.backlight-modes-list {
-		@include outline-blue;
-		outline-offset: 0;
+		&:focus {
+			@include outline-blue;
+			outline-offset: 0;
+		}
 	}
 }
 

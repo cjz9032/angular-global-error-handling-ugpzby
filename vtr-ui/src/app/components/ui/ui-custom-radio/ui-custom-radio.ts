@@ -91,6 +91,7 @@ export class UICustomRadio implements OnInit, AfterViewInit, OnChanges {
 				// this.setChecked(this.radioButton.nativeElement, true);
 				$event.stopPropagation();
 				$event.preventDefault();
+				this.radioButton.nativeElement.focus();
 				break;
 			case KeyCode.UP:
 				this.setCheckedToPreviousItem(this.radioButton);

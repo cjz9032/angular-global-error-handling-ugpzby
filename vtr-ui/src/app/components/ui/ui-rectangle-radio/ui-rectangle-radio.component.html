@@ -6,11 +6,11 @@
 	[tabIndex]="disabled ?-1:checked? 0 :-1"
 	[attr.aria-disabled]="disabled"
 	[attr.aria-checked]="checked"
-	attr.aria-label="radioId"
+	attr.aria-label="label"
 	(keydown)="navigateByKeys($event,radio)">
 	<input id="{{radioId}}"
 		style="display: none;"
-		[attr.aria-label]="radioId"
+		[attr.aria-label]="label"
 		name="{{group}}"
 		type="radio"
 		[value]="value"
