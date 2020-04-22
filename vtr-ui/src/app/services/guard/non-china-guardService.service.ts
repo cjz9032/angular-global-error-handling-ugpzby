@@ -6,7 +6,7 @@ import { GuardConstants } from './guard-constants';
 @Injectable({
 	providedIn: 'root',
 })
-export class VpnGuardService implements CanActivate {
+export class NonChinaGuardService implements CanActivate {
 	constructor(
 		private localInfoService: LocalInfoService,
 		private guardConstants: GuardConstants

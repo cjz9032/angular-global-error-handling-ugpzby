@@ -74,7 +74,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 	cardContentPositionA: any = {};
 	isOnline: boolean;
 	notificationSubscription: Subscription;
-	showVpn: boolean;
+	nonChina: boolean;
 	baseItems = [];
 	intermediateItems = [];
 	advanceItems = [];
@@ -120,16 +120,16 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		}
 		this.refreshAll();
 		this.deviceService.getMachineInfo().then(result => {
-			this.showVpn = true;
+			this.nonChina = true;
 			if ((result && result.country ? result.country : 'US').toLowerCase() === 'cn') {
-				this.showVpn = false;
+				this.nonChina = false;
 			}
 			if (this.wifiSecurity) {
 				this.wifiSecurity.getWifiSecurityState();
 			}
 			this.refreshAll();
 		}).catch(e => {
-			this.showVpn = true;
+			this.nonChina = true;
 		}).finally(() => {
 			this.hypSettings.getFeatureSetting('SecurityAdvisor').then((result) => {
 				this.pluginSupport = result === 'true';
@@ -163,13 +163,14 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 	createViewModels() {
 		this.antivirusLandingViewModel = new AntiVirusLandingViewModel(this.translate, this.antivirus, this.commonService, this.antivirusService);
 		this.windowsActiveLandingViewModel = new WindowsActiveLandingViewModel(this.translate, this.windowsActive, this.commonService);
-		this.passwordManagerLandingViewModel = new PasswordManagerLandingViewModel(this.translate, this.passwordManager, this.commonService);
 		this.uacLandingViewModel = new UacLandingViewModel(this.translate, this.uac, this.commonService);
 		// this.bitLockerLandingViewModel = new BitLockerLandingViewModel(this.translate, this.bitLocker, this.commonService);
-		if (this.showVpn) {
+		if (this.nonChina) {
+			this.passwordManagerLandingViewModel = new PasswordManagerLandingViewModel(this.translate, this.passwordManager, this.commonService);
 			this.vpnLandingViewModel = new VpnLandingViewModel(this.translate, this.vpn, this.commonService);
 		} else {
 			this.vpnLandingViewModel = undefined;
+			this.passwordManagerLandingViewModel = undefined;
 		}
 		const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
 		const cacheShowWifiSecurity = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity);
@@ -211,7 +212,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			this.antivirusLandingViewModel.fwStatus,
 			this.windowsActiveLandingViewModel ? this.windowsActiveLandingViewModel.waStatus : undefined);
 		this.intermediateItems.push(
-			this.passwordManagerLandingViewModel.pmStatus,
+			this.passwordManagerLandingViewModel ? this.passwordManagerLandingViewModel.pmStatus : undefined,
 			this.fingerPrintLandingViewModel ? this.fingerPrintLandingViewModel.whStatus : undefined,
 			this.uacLandingViewModel ? this.uacLandingViewModel.uacStatus : undefined);
 		this.advanceItems.push(
@@ -247,12 +248,12 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			wfOwnStatus = haveOwnList.wifiSecurity === true;
 			vpnOwnStatus = haveOwnList.vpn === true;
 		} else {
-			pmOwnStatus = this.passwordManagerLandingViewModel.pmStatus.showOwn === true;
+			pmOwnStatus = this.passwordManagerLandingViewModel ? this.passwordManagerLandingViewModel.pmStatus.showOwn === true : undefined;
 			wfOwnStatus = this.wifiSecurityLandingViewModel ? this.wifiSecurityLandingViewModel.wfStatus.showOwn === true : undefined;
 			vpnOwnStatus = this.vpnLandingViewModel ? (this.vpnLandingViewModel.vpnStatus.showOwn === true) : undefined;
 		}
 		statusList.intermediate = new Array(
-			pmOwnStatus ? 'true' : this.passwordManagerLandingViewModel.pmStatus.status,
+			pmOwnStatus ? 'true' : this.passwordManagerLandingViewModel ? this.passwordManagerLandingViewModel.pmStatus.status : undefined,
 			this.fingerPrintLandingViewModel ? this.fingerPrintLandingViewModel.whStatus.status : undefined,
 			this.uacLandingViewModel ? this.uacLandingViewModel.uacStatus.status : undefined
 		).filter(i => i !== undefined);
