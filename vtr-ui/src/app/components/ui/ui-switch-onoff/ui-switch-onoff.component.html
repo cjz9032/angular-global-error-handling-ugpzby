@@ -11,7 +11,6 @@
 		class="checkbox"
 		[ngClass]="{'switch-disable': isSwitchDisable, 'white-theme': theme==='white', 'blue-theme': theme==='blue'}"
 		#toggleMain
-		id="{{onOffSwitchId+'_toggleMain'}}"
 		(keydown.enter)="disabled? '':toggleLabel.click();toggleMain.focus();"
 		[attr.aria-checked]="value"
 		[attr.aria-disabled]="disabled"
@@ -31,6 +30,7 @@
 				[metricsValue]="!value"
 				#toggle
 				tabindex="-1"
+				aria-hidden="true"
 				[name]="onOffSwitchId"
 				class="switch"
 				[ngClass]="{'wifi-checked': value===true}"
@@ -38,7 +38,6 @@
 				[checked]="value"
 				[disabled]="disabled"
 				[readonly]="readonly"
-				aria-hidden="true"
 				[attr.aria-checked]="value"
 				[attr.aria-disabled]="disabled"
 				[attr.aria-readonly]="readonly"
@@ -52,7 +51,7 @@
 				<small></small>
 			</span>
 			<div *ngIf="!value"
-				[attr.aria-hidden]="true"
+				[attr.aria-hidden]="false"
 				[attr.aria-checked]="value"
 				id="{{onOffSwitchId+'_off_sizeStopProp'}}"
 				[attr.aria-label]="'OFF'"
@@ -60,7 +59,7 @@
 				(keydown.enter)="stopPropagation($event);"
 				class="switch-label off-label">{{'common.ui.off' | translate}}</div>
 			<div *ngIf="value"
-				[attr.aria-hidden]="true"
+				[attr.aria-hidden]="false"
 				[attr.aria-checked]="value"
 				id="{{onOffSwitchId+'_on_sizeStopProp'}}"
 				[attr.aria-label]="'ON'"
