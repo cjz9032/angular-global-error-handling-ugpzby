@@ -489,6 +489,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		this.eCourseStatus.status = event.switchValue;
 		if (event.switchValue) {
 			this.dolbyModeResponse.isAudioProfileEnabled = event.switchValue;
+			this.dolbyModeResponse.currentMode = 'Voip';
 		}
 		this.dolbyModeDisabled = event.switchValue;
 		this.automaticAudioDisabled = event.switchValue;

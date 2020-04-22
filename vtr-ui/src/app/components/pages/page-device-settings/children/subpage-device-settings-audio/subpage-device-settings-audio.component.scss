@@ -105,7 +105,7 @@
 			}
 
 			.entertainmentCheckout {
-				float:none;
+				float: none;
 			}
 
 			.feature-note {
@@ -123,10 +123,14 @@
 				font-size: $fontsize_xs;
 				color: $shade_blue;
 			}
-			ul li {
-				list-style-type: disc;
-				margin: 0;
-				padding: 0;
+
+			.entertainmentDescription {
+				margin: 0rem 0rem 0rem 1.5rem !important;
+				ul li {
+					list-style-type: disc;
+					margin: 0;
+					padding: 0;
+				}
 			}
 		}
 
