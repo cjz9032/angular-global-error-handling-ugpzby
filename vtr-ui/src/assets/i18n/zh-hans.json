@@ -1460,11 +1460,11 @@
                         "automaticAudioCheckboxText": "自动音频优化",
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "radioText": "VoIP",
+                                "checkboxText": "自动优化 VOIP 音频",
                                 "tooltip": "当您拨打 VoIP 通话时（使用 Skype、Teams、微信等），此功能将生效。 启用后，Dolby 音频会自动更改为语音模式，从而获得更好的语音质量。"
                             },
                             "entertainmentMode": {
-                                "radioText": "娱乐",
+                                "checkboxText": "自动优化用于娱乐的音频",
                                 "tooltip": "选择此选项后，Dolby 音频会根据您使用的应用自动调整模式：",
                                 "description1": "如果您正在使用 iTunes 等应用，它将更改为\"音乐\"模式。",
                                 "description2": "如果您正在使用 Youtube 等应用，它将更改为\"电影\"模式。",
