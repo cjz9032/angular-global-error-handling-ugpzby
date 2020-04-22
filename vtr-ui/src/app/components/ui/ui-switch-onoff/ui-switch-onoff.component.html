@@ -11,6 +11,7 @@
 		class="checkbox"
 		[ngClass]="{'switch-disable': isSwitchDisable, 'white-theme': theme==='white', 'blue-theme': theme==='blue'}"
 		#toggleMain
+		id="{{onOffSwitchId+'_toggleMain'}}"
 		(keydown.enter)="disabled? '':toggleLabel.click();toggleMain.focus();"
 		[attr.aria-checked]="value"
 		[attr.aria-disabled]="disabled"
