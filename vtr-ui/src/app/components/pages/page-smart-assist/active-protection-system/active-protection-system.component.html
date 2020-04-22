@@ -46,6 +46,7 @@
 						<div class="row">
 							<div class="col px-5 aps-checkbox">
 								<vtr-ui-checkbox [componentId]="'aps-toggle-checkbox'"
+									[ariaLabel]="'device.smartAssist.activeProtectionSystem.activeProtection.checkbox' | translate"
 									[checked]="repeatShock"
 									(toggle)="setAutoDisableSetting($event)"
 									[disabled]="!apsStatus"

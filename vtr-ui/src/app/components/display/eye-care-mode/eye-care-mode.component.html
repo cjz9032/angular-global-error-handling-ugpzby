@@ -19,9 +19,12 @@
 		<div class="col-2 pl-0">
 			<div class="reset-temperature">
 				<div class="button-box">
-					<vtr-ui-button (onClick)="onResetTemperature($event)" metricsEvent="itemClick"
-						metricsParent="eye-care-mode" metricsItem="btn.eye-care-mode.ResetTemperature"
-						[isDisabled]="disableReset" [isFullWidth]="false"
+					<vtr-ui-button (onClick)="onResetTemperature($event)"
+						metricsEvent="itemClick"
+						metricsParent="eye-care-mode"
+						metricsItem="btn.eye-care-mode.ResetTemperature"
+						[isDisabled]="disableReset"
+						[isFullWidth]="false"
 						[label]="'device.deviceSettings.displayCamera.display.eyeCareMode.reset' | translate"
 						[linkId]="'color-temp-eyeCareMode-reset-btn'">
 					</vtr-ui-button>
@@ -35,6 +38,7 @@
 			[disabled]="enableSunsetToSunrise || missingGraphicDriver"
 			[checked]="sunsetToSunriseStatus.status"
 			[value]="sunsetToSunriseStatus.status"
+			[ariaLabel]="'eye-care-schedule'"
 			(toggle)="onSunsetToSunrise()"
 			[hasChild]="true">
 			<!-- Schedule eye care mode from sunset to sunrise  -->
@@ -49,6 +53,7 @@
 			[disabled]="missingGraphicDriver"
 			[checked]="sunsetToSunriseStatus.status"
 			[value]="sunsetToSunriseStatus.status"
+			[ariaLabel]="'eye-care-schedule'"
 			(toggle)="onSunsetToSunrise()"
 			[hasChild]="true">
 			<!-- Schedule eye care mode from sunset to sunrise  -->

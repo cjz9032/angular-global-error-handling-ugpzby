@@ -10,12 +10,12 @@
 					tabindex="-1"
 					class="dropcheck d-none"
 					[checked]="showDropDown"
+					[ariaLabel]="daysId"
 					(click)="onToggleDropDown()">
 				</vtr-ui-checkbox>
 				<label for="{{daysId}}"
 					#combo
 					role="combobox"
-
 					attr.aria-label="{{ subHeadingText | translate}}, {{ smartStandbyService.scheduleLongForm}}"
 					[attr.aria-expanded]="showDropDown"
 					tabindex="0"
@@ -46,11 +46,14 @@
 										id="{{'day' + idx}}"
 										(keydown)="navigateByKeys($event, idx)">
 										<div class="custom-control custom-checkbox mb-3">
-											<vtr-ui-checkbox componentId="{{ 'device.deviceSettings.power.smartStandby.days.name.' + i.shortName | translate}}"
+											<vtr-ui-checkbox
+												componentId="{{ 'device.deviceSettings.power.smartStandby.days.name.' + i.shortName | translate}}"
 												[value]="i.status"
 												[checked]="i.status"
 												(toggle)="selectDay($event, i.shortName)"
-												[label]="'device.deviceSettings.power.smartStandby.days.name.' + i.shortName | translate">
+												[label]="'device.deviceSettings.power.smartStandby.days.name.' + i.shortName | translate"
+												[ariaLabel]="'device.deviceSettings.power.smartStandby.days.name.' +
+												i.shortName | translate">
 											</vtr-ui-checkbox>
 											<!-- <label class="custom-control-label"
 												for="{{i.shortName}}">

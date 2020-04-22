@@ -1,9 +1,8 @@
 <div class="auto-set-checkbox custom-checkbox-gaming custom-control custom-checkbox"
 	role="checkbox"
-	[attr.aria-label]="arialabel"
+	[attr.aria-label]="ariaLabel"
 	[attr.aria-disabled]="disabled"
 	[attr.aria-checked]="checked"
-	[attr.aria-labelledby]="arialabel"
 	[tabIndex]="disabled?-1:0"
 	(keydown.enter)="checkBox.click();"
 	(keydown.space)="[$event.preventDefault(),$event.stopPropagation(),checkBox.click()]">
@@ -34,7 +33,7 @@
 	<ng-template #elseBlock>
 		<label [for]="componentId"
 			aria-hidden="true"
-			id="{{componentId}}"
+			id="{{componentId}}Label"
 			role="checkbox"
 			class="custom-control-label">
 			{{ label }}
