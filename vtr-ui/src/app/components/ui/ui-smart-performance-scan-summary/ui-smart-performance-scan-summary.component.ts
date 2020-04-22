@@ -377,6 +377,12 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		this.selectedDay = this.days[value];
 		this.selectedNumber = this.dates[value];
 	}
+	changeScanDate(value) {
+		this.dateValue = value;
+		this.scheduleTab = '';
+		this.selectedDay = this.days[value];
+		this.selectedNumber = this.dates[value];
+	}
 	saveChangedScanSchedule() {
 		this.scheduleTab = '';
 		this.isChangeSchedule = false;

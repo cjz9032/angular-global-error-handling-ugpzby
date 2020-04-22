@@ -904,6 +904,41 @@ vtr-ui-smart-performance-scan-summary {
 				position: absolute;
 			}
 		}
+		.date-dropdown {
+			background: $light;
+			list-style-type: none;
+			position: absolute;
+			z-index: 9999;
+			padding: 2rem;
+			margin-top: 4rem;
+			right: 9%;
+			width:20rem;
+			box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
+			border-radius: 0.5rem;
+			.selected-date{
+				color: #11b85b;
+				font-weight: $weight_bold;
+			}
+			.date-text{
+				cursor: pointer;
+				width:24.75%;
+				text-align: center;
+				float:left;
+				border-right:1px solid #c8cbcb;
+			}
+			&:before {
+				content: '';
+				width: 0; 
+				height: 0; 
+				border-left: 10px solid transparent;
+				border-right: 10px solid transparent;
+				border-bottom: 10px solid $light;
+				top: -4%;
+				right: 10%;
+				position: absolute;
+			}
+		}
+
 		.day-dropdown {
 			background: $light;
 			list-style-type: none;
