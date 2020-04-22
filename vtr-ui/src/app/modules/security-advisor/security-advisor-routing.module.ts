@@ -13,6 +13,7 @@ import { NonArmGuard } from 'src/app/services/guard/non-arm-guard';
 import { NonGamingGuard } from 'src/app/services/guard/non-gaming-guard';
 import { NonCommercialGuard } from 'src/app/services/guard/non-commercial-guard';
 import { WifiGuardService } from 'src/app/services/guard/wifi-guardService.service';
+import { DashlaneGuardService } from 'src/app/services/guard/dashlane-guardService.service';
 
 
 const routes: Routes = [
@@ -37,7 +38,7 @@ const routes: Routes = [
 		path: 'password-protection',
 		component: PageSecurityPasswordComponent,
 		canDeactivate: [GuardService],
-		canActivate: [GuardService, NonCommercialGuard, NonSmodeGuard, NonArmGuard, NonGamingGuard],
+		canActivate: [GuardService, DashlaneGuardService, NonCommercialGuard, NonSmodeGuard, NonArmGuard, NonGamingGuard],
 		data: {
 			pageName: 'Security.PasswordProtection'
 		}
