@@ -50,12 +50,14 @@ export class UiBrightnessSliderComponent implements OnInit, AfterContentChecked 
 		};
 		document.body.addEventListener('mousedown', () => {
 			const elem = document.getElementsByClassName('brightness_slider')[0] as HTMLElement;
+			elem.setAttribute('role', '');
 			elem.setAttribute('role', 'slider');
 		});
-
+ 
 		document.body.addEventListener('keydown', (event) => {
 			if (event.keyCode === 9) {
 				const elem = document.getElementsByClassName('brightness_slider')[0] as HTMLElement;
+				elem.setAttribute('role', '');
 				elem.setAttribute('role', 'radiogroup');
 			}
 		});
