@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { SettingsService } from 'src/app/services/settings.service';
 import { CommonService } from 'src/app/services/common/common.service';
@@ -96,6 +96,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	metrics: any;
 	metricsPreference: any;
 	notificationSubscription: any;
+	activeElement: HTMLElement;
 
 	constructor(
 		private shellService: VantageShellService,
@@ -419,5 +420,15 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			SettingParent: 'Page.Settings'
 		};
 		this.metrics.sendAsync(interestData);
+	}
+
+	@HostListener('window: focus')
+	onFocus(): void {
+		this.activeElement?.focus();
+	}
+
+	@HostListener('window: blur')
+	onBlur(): void {
+		this.activeElement = document.activeElement as HTMLElement;
 	}
 }
