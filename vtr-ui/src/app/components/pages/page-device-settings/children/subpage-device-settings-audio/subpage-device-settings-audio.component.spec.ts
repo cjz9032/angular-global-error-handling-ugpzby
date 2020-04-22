@@ -32,7 +32,12 @@ const autoDolbyFeatureStatus = {
 const dolbyModeResponse = {
 	available: true,
 	supporedModes: ['Dynamic', 'Movie', 'Music', 'Games', 'Voip'],
-	currentMode: 'Dynamic'
+	currentMode: 'Dynamic',
+	isAudioProfileEnabled: false,
+    eCourseStatus: 'True',
+    voIPStatus: 'True',
+    entertainmentStatus: 'True',
+    driverAvailability: true
 };
 const microphoneProperties = {
 	available: true,
@@ -202,52 +207,6 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		expect(spy).toHaveBeenCalled();
 	});
 
-	it('should call onAutomaticDolbyAudioToggleOnOff - promise resolved', () => {
-		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
-		component = fixture.componentInstance;
-		audioService = TestBed.get(AudioService);
-		audioService.isShellAvailable = true;
-		component.autoDolbyFeatureStatus = {
-			...autoDolbyFeatureStatus,
-			available: false
-		};
-		component.dolbyAudioToggleCache = new DolbyAudioToggleCapability();
-		const event = { switchValue: true };
-		const spy = spyOn(audioService, 'setDolbyOnOff').and.returnValue(
-			Promise.resolve(true)
-		);
-		component.onAutomaticDolbyAudioToggleOnOff(event);
-		expect(spy).toHaveBeenCalled();
-	});
-
-	it('should call onAutomaticDolbyAudioToggleOnOff - promise rejected', () => {
-		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
-		component = fixture.componentInstance;
-		audioService = TestBed.get(AudioService);
-		audioService.isShellAvailable = true;
-		component.autoDolbyFeatureStatus = {
-			...autoDolbyFeatureStatus,
-			available: false
-		};
-		component.dolbyAudioToggleCache = new DolbyAudioToggleCapability();
-		const event = { switchValue: true };
-		const error = { message: 'Error' };
-		const spy = spyOn(audioService, 'setDolbyOnOff').and.returnValue(
-			Promise.reject(error)
-		);
-		component.onAutomaticDolbyAudioToggleOnOff(event);
-		expect(spy).toHaveBeenCalled();
-	});
-
-	it('should call onAutomaticDolbyAudioToggleOnOff - try/catch catch block ', () => {
-		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
-		component = fixture.componentInstance;
-		logService = TestBed.get(LoggerService);
-		const spy = spyOn(logService, 'error');
-		component.onAutomaticDolbyAudioToggleOnOff(undefined);
-		expect(spy).toHaveBeenCalled();
-	});
-
 	it('should call getDolbyFeatureStatus - Promise resolved', () => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
 		component = fixture.componentInstance;
@@ -405,49 +364,6 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		logService = TestBed.get(LoggerService);
 		const spy = spyOn(logService, 'error');
 		component.onDolbySettingRadioChange(event);
-		expect(spy).toHaveBeenCalled();
-	});
-
-	it('should call onToggleOfMicrophoneAutoOptimization - promise resolved', () => {
-		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
-		component = fixture.componentInstance;
-		audioService = TestBed.get(AudioService);
-		audioService.isShellAvailable = true;
-		const event = { switchValue: true };
-		component.microphoneProperties = { ...microphoneProperties };
-		spyOn(component, 'updateMicrophoneCache');
-		const spy = spyOn(
-			audioService,
-			'setMicrophoneAutoOptimization'
-		).and.returnValue(Promise.resolve(true));
-		component.onToggleOfMicrophoneAutoOptimization(event);
-		expect(spy).toHaveBeenCalled();
-	});
-
-	it('should call onToggleOfMicrophoneAutoOptimization - promise rejected', () => {
-		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
-		component = fixture.componentInstance;
-		audioService = TestBed.get(AudioService);
-		audioService.isShellAvailable = true;
-		const event = { switchValue: true };
-		const error = { message: 'Error' };
-		component.microphoneProperties = { ...microphoneProperties };
-		spyOn(component, 'updateMicrophoneCache');
-		const spy = spyOn(
-			audioService,
-			'setMicrophoneAutoOptimization'
-		).and.returnValue(Promise.reject(error));
-		component.onToggleOfMicrophoneAutoOptimization(event);
-		expect(spy).toHaveBeenCalled();
-	});
-
-	it('should call onToggleOfMicrophoneAutoOptimization - try-catch catch block', () => {
-		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
-		component = fixture.componentInstance;
-		logService = TestBed.get(LoggerService);
-		const event = { switchValue: '' };
-		const spy = spyOn(logService, 'error');
-		component.onToggleOfMicrophoneAutoOptimization(event);
 		expect(spy).toHaveBeenCalled();
 	});
 

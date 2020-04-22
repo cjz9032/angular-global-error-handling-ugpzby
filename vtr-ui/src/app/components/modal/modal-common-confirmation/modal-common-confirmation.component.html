@@ -1,11 +1,6 @@
 <div class="common-confirmation-modal">
 	<h1 id="modal_confirm_title">{{ header | translate }} </h1>
-	<div class="btn-modal-close">
-		<vtr-ui-close-button linkId="modal_confirm_close"
-			metricsItem="btn.close"
-			[metricsParent]="metricsParent"
-			(clickClose)="onCancelClick($event)"></vtr-ui-close-button>
-	</div>
+
 	<p class="description"
 		id="modal_confirm_description"
 		role="article">
@@ -22,16 +17,15 @@
 
 	<div class="d-flex">
 		<div class="ml-0 mr-4 pl-0">
-			<button type="button"
-				vtrMetrics
-				metricsItem="Ok Button"
-				metricsEvent="featureClick"
-				[metricsParent]="metricsParent"
-				class="btn btn-default modal-button"
-				id="modal_confirm_ok"
-				(click)="onOkClick($event)">
-				{{OkText | translate}}
-			</button>
+			<vtr-ui-button
+				[linkId]="'modal_confirm_ok'"
+				(onClick)="onOkClick($event)"
+				[upperCaseLabel]=false
+				[btnHeight]=true
+				[label]="OkText | translate"
+				metricsParent="metricsParent"
+				metricsItem="Ok Button">
+			</vtr-ui-button>
 		</div>
 		<div class="ml-0 mr-4 pl-0"
 			*ngIf="CancelText.length > 0">
@@ -48,5 +42,11 @@
 				{{CancelText | translate}}
 			</div>
 		</div>
+	</div>
+	<div class="btn-modal-close">
+		<vtr-ui-close-button linkId="modal_confirm_close"
+			metricsItem="btn.close"
+			[metricsParent]="metricsParent"
+			(clickClose)="onCancelClick($event)"></vtr-ui-close-button>
 	</div>
 </div>
