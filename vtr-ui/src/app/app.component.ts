@@ -201,11 +201,15 @@ export class AppComponent implements OnInit, OnDestroy {
 				}
 			}
 			const newTutorialVersion = this.newTutorialVersion;
+			let welcomeNeeded = false;
 			if ((tutorial === undefined || tutorial.tutorialVersion !== newTutorialVersion) && navigator.onLine) {
+				welcomeNeeded = true;
 				this.openWelcomeModal(1, newTutorialVersion);
 			} else if (tutorial && tutorial.page === 1 && navigator.onLine) {
+				welcomeNeeded = true;
 				this.openWelcomeModal(2, newTutorialVersion);
 			}
+			this.metricService.HandleCheckWelcomeNeeded(welcomeNeeded);
 		}
 	}
 
