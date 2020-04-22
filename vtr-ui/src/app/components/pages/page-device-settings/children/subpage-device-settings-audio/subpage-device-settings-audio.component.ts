@@ -516,7 +516,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	}
 
 	startMonitorHandlerForDolby(response) {
-		this.logger.error('startMonitorHandlerForDolby', response);
+		this.logger.info('startMonitorHandlerForDolby', response);
 		this.dolbyModeResponse.available = (Object.keys(response).indexOf('available') !== -1 && response.available !==  undefined) ? response.available : this.dolbyModeResponse.available;
 		//this.dolbyModeResponse.supporedModes = (Object.keys(response).indexOf('supporedModes') !== -1  && response.supporedModes !==  undefined) ? response.supporedModes : this.dolbyModeResponse.supporedModes;
 		this.dolbyModeResponse.currentMode = (Object.keys(response).indexOf('currentMode') !== -1 && response.currentMode !==  undefined) ? response.currentMode : this.dolbyModeResponse.currentMode;
