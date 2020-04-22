@@ -49,6 +49,8 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	public eCourseLoader = true;
 	public dolbyAudioCache: DolbyModeResponse = undefined;
 	public isNewplugin = true;
+	public dolbyToggleButtonStatus = undefined;
+	public eCourseToggleButtonStatus = undefined;
 	@Output() tooltipClick = new EventEmitter<boolean>();
 
 	@Input() dolbyModeDisabled = false;
@@ -282,6 +284,12 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 							this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyAudioToggleCache);
 							this.getDolbyFeatureStatus();
 						}
+						else {
+							if (response.eCourseStatus !== 'NotSupport') {
+								this.dolbyToggleButtonStatus = response.isAudioProfileEnabled;
+								this.eCourseToggleButtonStatus = (response.eCourseStatus === 'True') ? true : false;
+							}
+						}
 						this.initVisibility();
 						this.bindDolbyAudioProfileState();
 						this.autoDolbyFeatureLoader = false;
@@ -368,19 +376,23 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		if (this.dolbyModeResponse.eCourseStatus === undefined || this.dolbyModeResponse.eCourseStatus === 'NotSupport') {
 			this.eCourseStatus.available = false;
 			this.automaticAudioDisabled = false;
+			this.dolbyModeDisabled = false;
 		}
 		else {
 			this.eCourseStatus.available = true;
-			if (!this.dolbyModeResponse.isAudioProfileEnabled) {
-				if (this.dolbyModeResponse.eCourseStatus !== 'False') {
-					this.eCourseStatus.status = false;
-					this.dolbyModeResponse.eCourseStatus === 'False';
-					this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyModeResponse);
-				}
+			this.eCourseStatus.status = (this.dolbyModeResponse.eCourseStatus === 'True') ? true : false;
+			this.automaticAudioDisabled = this.eCourseStatus.status;
+			this.dolbyModeDisabled = this.eCourseStatus.status;
+			if (this.eCourseStatus.status && (this.eCourseToggleButtonStatus !== this.eCourseStatus.status)) {
+				this.dolbyModeResponse.isAudioProfileEnabled = true;
+				this.eCourseToggleButtonStatus = this.eCourseStatus.status;
+				this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyModeResponse);
 			}
-			else {
-				this.eCourseStatus.status = (this.dolbyModeResponse.eCourseStatus === 'True');
-				this.automaticAudioDisabled = this.eCourseStatus.status;
+			if (!this.dolbyModeResponse.isAudioProfileEnabled && (this.dolbyToggleButtonStatus !== this.dolbyModeResponse.isAudioProfileEnabled)) {
+				this.eCourseStatus.status = false;
+				this.dolbyModeResponse.eCourseStatus === 'False'
+				this.dolbyToggleButtonStatus = this.dolbyModeResponse.isAudioProfileEnabled;
+				this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyModeResponse);
 			}
 		}
 	}
@@ -394,7 +406,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			this.automaticAudioDisabled = !event.switchValue;
 		}
 		this.dolbyModeResponse.isAudioProfileEnabled = event.switchValue;
-
+		this.dolbyToggleButtonStatus = event.switchValue;
 		if (this.audioService.isShellAvailable) {
 			this.audioService.setDolbyAudioState(event.switchValue)
 				.then((response: boolean) => {
@@ -493,6 +505,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		}
 		this.dolbyModeDisabled = event.switchValue;
 		this.automaticAudioDisabled = event.switchValue;
+		this.eCourseToggleButtonStatus = event.switchValue;
 		try {
 			if (this.audioService.isShellAvailable) {
 				this.audioService.setDolbyAudioProfileState('ECourseStatus', event.switchValue)
@@ -517,15 +530,15 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 
 	startMonitorHandlerForDolby(response) {
 		this.logger.info('startMonitorHandlerForDolby', response);
-		this.dolbyModeResponse.available = (Object.keys(response).indexOf('available') !== -1 && response.available !==  undefined) ? response.available : this.dolbyModeResponse.available;
+		this.dolbyModeResponse.available = (Object.keys(response).indexOf('available') !== -1 && response.available !== undefined) ? response.available : this.dolbyModeResponse.available;
 		//this.dolbyModeResponse.supporedModes = (Object.keys(response).indexOf('supporedModes') !== -1  && response.supporedModes !==  undefined) ? response.supporedModes : this.dolbyModeResponse.supporedModes;
-		this.dolbyModeResponse.currentMode = (Object.keys(response).indexOf('currentMode') !== -1 && response.currentMode !==  undefined) ? response.currentMode : this.dolbyModeResponse.currentMode;
+		this.dolbyModeResponse.currentMode = (Object.keys(response).indexOf('currentMode') !== -1 && response.currentMode !== undefined) ? response.currentMode : this.dolbyModeResponse.currentMode;
 
-		this.dolbyModeResponse.isAudioProfileEnabled = (Object.keys(response).indexOf('isAudioProfileEnabled') !== -1 && response.isAudioProfileEnabled !==  undefined) ? response.isAudioProfileEnabled : this.dolbyModeResponse.isAudioProfileEnabled;
-		this.dolbyModeResponse.eCourseStatus = (Object.keys(response).indexOf('eCourseStatus') !== -1  && response.eCourseStatus !==  undefined) ? response.eCourseStatus : this.dolbyModeResponse.eCourseStatus;
+		this.dolbyModeResponse.isAudioProfileEnabled = (Object.keys(response).indexOf('isAudioProfileEnabled') !== -1 && response.isAudioProfileEnabled !== undefined) ? response.isAudioProfileEnabled : this.dolbyModeResponse.isAudioProfileEnabled;
+		this.dolbyModeResponse.eCourseStatus = (Object.keys(response).indexOf('eCourseStatus') !== -1 && response.eCourseStatus !== undefined) ? response.eCourseStatus : this.dolbyModeResponse.eCourseStatus;
 		//this.dolbyModeResponse.voIPStatus = (Object.keys(response).indexOf('voIPStatus') !== -1 && response.voIPStatus !==  undefined) ? response.voIPStatus : this.dolbyModeResponse.voIPStatus;
 		//this.dolbyModeResponse.entertainmentStatus = (Object.keys(response).indexOf('entertainmentStatus') !== -1 && response.entertainmentStatus !==  undefined) ? response.entertainmentStatus : this.dolbyModeResponse.entertainmentStatus;
-		this.dolbyModeResponse.driverAvailability = (Object.keys(response).indexOf('driverAvailability') !== -1 && response.driverAvailability !==  undefined) ? response.driverAvailability : this.dolbyModeResponse.driverAvailability;
+		this.dolbyModeResponse.driverAvailability = (Object.keys(response).indexOf('driverAvailability') !== -1 && response.driverAvailability !== undefined) ? response.driverAvailability : this.dolbyModeResponse.driverAvailability;
 		this.initVisibility();
 		this.bindDolbyAudioProfileState();
 		this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyModeResponse);
