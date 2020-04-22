@@ -7,12 +7,13 @@ import { PageSecurityPasswordComponent } from 'src/app/components/pages/page-sec
 import { PageSecurityInternetComponent } from 'src/app/components/pages/page-security-internet/page-security-internet.component';
 import { GuardService } from 'src/app/services/guard/guardService.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { NonChinaGuardService } from 'src/app/services/guard/non-china-guardService.service';
+import { VpnGuardService } from 'src/app/services/guard/vpn-guardService.service';
 import { NonSmodeGuard } from 'src/app/services/guard/non-smode-guard';
 import { NonArmGuard } from 'src/app/services/guard/non-arm-guard';
 import { NonGamingGuard } from 'src/app/services/guard/non-gaming-guard';
 import { NonCommercialGuard } from 'src/app/services/guard/non-commercial-guard';
 import { WifiGuardService } from 'src/app/services/guard/wifi-guardService.service';
+import { DashlaneGuardService } from 'src/app/services/guard/dashlane-guardService.service';
 
 
 const routes: Routes = [
@@ -37,7 +38,7 @@ const routes: Routes = [
 		path: 'password-protection',
 		component: PageSecurityPasswordComponent,
 		canDeactivate: [GuardService],
-		canActivate: [GuardService, NonChinaGuardService, NonCommercialGuard, NonSmodeGuard, NonArmGuard, NonGamingGuard],
+		canActivate: [GuardService, DashlaneGuardService, NonCommercialGuard, NonSmodeGuard, NonArmGuard, NonGamingGuard],
 		data: {
 			pageName: 'Security.PasswordProtection'
 		}
@@ -53,7 +54,7 @@ const routes: Routes = [
 		path: 'internet-protection',
 		component: PageSecurityInternetComponent,
 		canDeactivate: [GuardService],
-		canActivate: [GuardService, NonChinaGuardService, NonCommercialGuard, NonSmodeGuard, NonArmGuard, NonGamingGuard],
+		canActivate: [GuardService, VpnGuardService, NonCommercialGuard, NonSmodeGuard, NonArmGuard, NonGamingGuard],
 		data: {
 			pageName: 'Security.InternetProtection'
 		}

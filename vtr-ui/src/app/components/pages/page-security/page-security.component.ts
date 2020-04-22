@@ -74,7 +74,8 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 	cardContentPositionA: any = {};
 	isOnline: boolean;
 	notificationSubscription: Subscription;
-	nonChina: boolean;
+	showVpn: boolean;
+	showDashlane: boolean;
 	baseItems = [];
 	intermediateItems = [];
 	advanceItems = [];
@@ -120,16 +121,19 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		}
 		this.refreshAll();
 		this.deviceService.getMachineInfo().then(result => {
-			this.nonChina = true;
+			this.showVpn = true;
+			this.showDashlane = true;
 			if ((result && result.country ? result.country : 'US').toLowerCase() === 'cn') {
-				this.nonChina = false;
+				this.showVpn = false;
+				this.showDashlane = false;
 			}
 			if (this.wifiSecurity) {
 				this.wifiSecurity.getWifiSecurityState();
 			}
 			this.refreshAll();
 		}).catch(e => {
-			this.nonChina = true;
+			this.showVpn = true;
+			this.showDashlane = true;
 		}).finally(() => {
 			this.hypSettings.getFeatureSetting('SecurityAdvisor').then((result) => {
 				this.pluginSupport = result === 'true';
@@ -165,11 +169,14 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		this.windowsActiveLandingViewModel = new WindowsActiveLandingViewModel(this.translate, this.windowsActive, this.commonService);
 		this.uacLandingViewModel = new UacLandingViewModel(this.translate, this.uac, this.commonService);
 		// this.bitLockerLandingViewModel = new BitLockerLandingViewModel(this.translate, this.bitLocker, this.commonService);
-		if (this.nonChina) {
-			this.passwordManagerLandingViewModel = new PasswordManagerLandingViewModel(this.translate, this.passwordManager, this.commonService);
+		if (this.showVpn) {
 			this.vpnLandingViewModel = new VpnLandingViewModel(this.translate, this.vpn, this.commonService);
 		} else {
 			this.vpnLandingViewModel = undefined;
+		}
+		if (this.showDashlane) {
+			this.passwordManagerLandingViewModel = new PasswordManagerLandingViewModel(this.translate, this.passwordManager, this.commonService);
+		} else {
 			this.passwordManagerLandingViewModel = undefined;
 		}
 		const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
