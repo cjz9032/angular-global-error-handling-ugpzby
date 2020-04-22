@@ -64,6 +64,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	private timeStartSearch;
 	private protocalAction: string;
 	private shouldCheckingUpdateByProtocal = false;
+	private backButton = 'system-update-back-btn';
 
 	public isInstallationSuccess = false;
 	public isInstallationCompleted = false;
@@ -412,7 +413,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		if (this.systemUpdateService.isShellAvailable) {
 			this.isUserCancelledUpdateCheck = true;
 			this.systemUpdateService.cancelUpdateCheck();
-			document.getElementById('system-update-back-btn').focus();
+			this.focusOnElement(this.backButton);
 		}
 	}
 
@@ -432,7 +433,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		} else {
 			this.systemUpdateService.unIgnoreUpdate(packageName);
 		}
-		document.getElementById('system-update-back-btn').focus();
+		this.focusOnElement(this.backButton);
 	}
 
 	private installUpdates(removeDelayedUpdates: boolean, updateList: Array<AvailableUpdateDetail>, isInstallAll: boolean) {
@@ -504,6 +505,11 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	public onDismissClick($event) {
 	}
 
+	private focusOnElement(element) {
+		document.getElementById(element).focus();
+	}
+
+
 	public showInstallConfirmation(source: string) {
 		const isInstallAll = source !== 'selected';
 		const modalRef = this.modalService
@@ -541,7 +547,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			modalRef.dismiss();
 			// its normal update type installation which doesn't require rebooting/power-off
 			document.querySelector('.vtr-app.container-fluid').scrollTop = 120;
-			document.getElementById('system-update-back-btn').focus();
+			this.focusOnElement(this.backButton);
 			this.installUpdateBySource(isInstallAll, removeDelayedUpdates, updatesToInstall);
 			return;
 		}
@@ -558,7 +564,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					} else {
 						removeDelayedUpdates = true;
 					}
-					document.getElementById('system-update-back-btn').focus();
+					this.focusOnElement(this.backButton);
 					this.installUpdateBySource(isInstallAll, removeDelayedUpdates, updatesToInstall);
 				}
 			});
@@ -929,7 +935,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 
 	public onCancelUpdateDownload() {
 		this.systemUpdateService.cancelUpdateDownload();
-		document.getElementById('system-update-back-btn').focus();
+		this.focusOnElement(this.backButton);
 	}
 
 	private translateStrings() {
