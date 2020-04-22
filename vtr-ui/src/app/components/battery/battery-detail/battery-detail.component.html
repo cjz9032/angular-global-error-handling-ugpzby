@@ -26,7 +26,8 @@
 				<div class="row mb-3">
 					<div class="col">
 						<!-- Section Title like Primary Battery -->
-						<h2 class="battery-header">
+						<h2 class="battery-header"
+							id="primary-battery">
 							{{ model.heading | translate }}
 						</h2>
 					</div>
@@ -37,7 +38,9 @@
 						<div class="row px-0">
 							<div class="col-6 battery-label-text">
 								{{'device.deviceSettings.batteryGauge.details.status' | translate }}</div>
-							<div class="battery-value-text">
+							<div class="battery-value-text"
+								role="heading"
+								id="charge-status-string">
 								{{ model.chargeStatusString | translate }}</div>
 						</div>
 					</div>
@@ -62,7 +65,8 @@
 						*ngIf="isValid(model.remainingPercent)">
 						<div class="row px-0">
 							<div class="col-6 battery-label-text">
-								{{'device.deviceSettings.batteryGauge.details.remainingPercent' | translate }}</div>
+								{{'device.deviceSettings.batteryGauge.details.remainingPercent' | translate }}
+							</div>
 							<div class="battery-value-text">
 								{{ model.remainingPercent }}%</div>
 						</div>
@@ -167,6 +171,7 @@
 										metricsEvent="FeatureClick"
 										metricsParent="Device.BatteryDetails"
 										metricsItem="FullChargeCapacityTooltip"
+										role="img"
 										id="fullChargeCapacity_tooltip_icon"
 										attr.aria-label="{{ 'device.deviceSettings.batteryGauge.details.fullChargeCap' | translate }} tooltip, which reads: {{ 'device.deviceSettings.batteryGauge.details.fccTooltipText' | translate }}"
 										tabindex="0"
@@ -249,6 +254,7 @@
 <ng-template #fcctooltipRef>
 	<div [innerHTML]="'device.deviceSettings.batteryGauge.details.fccTooltipText' | translate"
 		id="fullChargeCapacity-toolTip"
+		role="tooltip"
 		tabindex="0"
 		attr.aria-label="fccTooltipText">
 	</div>

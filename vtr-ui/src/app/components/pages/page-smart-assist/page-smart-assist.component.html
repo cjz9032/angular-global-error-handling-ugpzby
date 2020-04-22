@@ -35,11 +35,13 @@
 								[theme]="'white'">
 								<!-- image -->
 								<div class="no-border-bottom pt-4 intelligent-security-image">
-									<img [src]="image" id="intelligent-security-image"/>
+									<img [src]="image" role="img" id="intelligent-security-image"/>
 									<div class="intelligent-security-image-word">
 										<p class="intelligent-security-image-word-title"
+											role="text"
 											id="intelligent-security-image-word-title">{{'device.smartAssist.intelligentSecurity.image.title' | translate}}</p>
 										<p class="intelligent-security-image-word-description"
+											role="text"
 											id="intelligent-security-image-word-description">{{'device.smartAssist.intelligentSecurity.image.description' | translate}}</p>
 									</div>
 								</div>
@@ -146,6 +148,7 @@
 													[value]="intelligentSecurity.zeroTouchLoginDistance"
 													[isDisabled]="!intelligentSecurity.isZeroTouchLoginEnabled"
 													[metricsItem]="'distanceSensitivity'"
+													[ariaLabel]="'zero touch login distance sensitivity adjustment slider'"
 													[metricsValue]="intelligentSecurity.zeroTouchLoginDistance">
 												</vtr-ui-custom-slider>
 											</div>
@@ -161,14 +164,15 @@
 															</fa-icon>
 														</div> -->
 														<div class="col">
-															<p id="smart-assist-intelligent-security-note">
+															<p id="smart-assist-intelligent-security-note" role="text">
 																{{'device.smartAssist.intelligentSecurity.note.description1' | translate}}
 																<a id="goto_hello_link"
 																	role="link"
 																	(click)="launchFaceEnrollment()"
 																	(keydown.enter)="launchFaceEnrollment()"
 																	tabindex="0"
-																	href="javascript:void()">{{'device.smartAssist.intelligentSecurity.WindowsLink.goToWindowsHello' | translate}}
+																	href="javascript:void()"
+																	class="hello-link">{{'device.smartAssist.intelligentSecurity.WindowsLink.goToWindowsHello' | translate}}
 																</a>
 															</p>
 														</div>
@@ -241,6 +245,7 @@
 													[value]="intelligentSecurity.zeroTouchLoginDistance"
 													[isDisabled]="!intelligentSecurity.isHPDEnabled || !intelligentSecurity.isZeroTouchLoginEnabled"
 													[metricsItem]="'thinkpadDistanceSensitivity'"
+													[ariaLabel]="'zero touch login distance sensitivity adjustment slider'"
 													[metricsValue]="intelligentSecurity.zeroTouchLoginDistance">
 												</vtr-ui-custom-slider>
 												<div class="pt-3"
@@ -260,7 +265,8 @@
 																		tabindex="0"
 																		(keydown.enter)="launchFaceEnrollment()"
 																		role="link"
-																		href="javascript:void()">{{'device.smartAssist.intelligentSecurity.WindowsLink.goToWindowsHello' | translate}}
+																		href="javascript:void()"
+																		class="hello-link">{{'device.smartAssist.intelligentSecurity.WindowsLink.goToWindowsHello' | translate}}
 																	</a>
 																</p>
 															</div>
@@ -484,6 +490,7 @@
 													[value]="hsaIntelligentSecurity.zeroTouchLockDistance"
 													[isDisabled]="!intelligentSecurity.isZeroTouchLockEnabled || !hsaIntelligentSecurity.capacity"
 													[metricsItem]="'zeroTouchLockDistanceSensitivity'"
+													[ariaLabel]="'zero touch lock distance sensitivity adjustment slider'"
 													[metricsValue]="hsaIntelligentSecurity.zeroTouchLockDistance">
 												</vtr-ui-custom-slider>
 											</div>
@@ -541,6 +548,7 @@
 													[min]="1"
 													[max]="3"
 													[value]="sensitivityAdjustVal"
+													[ariaLabel]="'zero touch lock sensitivity adjustment slider'"
 													[isDisabled]="!intelligentSecurity.isZeroTouchLockEnabled || !intelligentSecurity.isHPDEnabled"
 													[metricsItem]="'thinkpadSensitivity'"
 													[metricsValue]="sensitivityAdjustVal">
@@ -575,7 +583,8 @@
 												[class.blur-1]="!intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)">
 												<div role="radiogroup"
 													tabindex="0"
-													aria-label="automatic screen locker more list, select using arrow keys">
+													aria-label="automatic screen locker more list, select using arrow keys"
+													class="radio-group">
 													<vtr-ui-rounded-rectangle-radio
 														[radioId]="'autoScreenLockTimer_fast'"
 														[group]="'autoScreenLockTimer'"
@@ -626,7 +635,8 @@
 								<!-- note -->
 								<div class="row">
 									<div class="feature-note p-4 my-4 ml-4">
-										<p id="smart-assist-intelligent-security-note-desc1">
+										<p id="smart-assist-intelligent-security-note-desc1"
+											role="text">
 											{{'device.smartAssist.intelligentSecurity.note.description3' | translate}}
 										</p>
 										<div>
@@ -635,20 +645,10 @@
 												{{'device.smartAssist.intelligentSecurity.note.description4' | translate}}
 											</p>
 											<div class="ml-4">
-												<div class="note-italic">
-													<span id="smart-assist-intelligent-security-note-desc2a1"
-														role="text">
-														{{'device.smartAssist.intelligentSecurity.note.description5a1' | translate}}
-													</span>
-													<i id="smart-assist-intelligent-security-note-desc2a2"
-														role="text">
-														{{'device.smartAssist.intelligentSecurity.note.description5a2' | translate}}
-													</i>
-													<span id="smart-assist-intelligent-security-note-desc2a3"
-														role="text">
-														{{'device.smartAssist.intelligentSecurity.note.description5a3' | translate}}
-													</span>
-												</div>
+												<p id="smart-assist-intelligent-security-note-desc2a"
+													role="text">
+													{{'device.smartAssist.intelligentSecurity.note.description5a' | translate}}
+												</p>
 												<p id="smart-assist-intelligent-security-note-desc2b"
 													role="text">
 													{{'device.smartAssist.intelligentSecurity.note.description5b' | translate}}
@@ -679,19 +679,7 @@
 
 					<!-- Start of Intelligent Sensing (Anti theft)-->
 					<div class="smart-assist-anti-theft">
-						<vtr-anti-theft id="sensing"
-						*ngIf="antiTheft.available"
-						[isLoading]="isAntiTheftLoading"
-						[isChecked]="antiTheft.status"
-						[isSupportPhoto] = "antiTheft.isSupportPhoto"
-						[photoAddress] = "antiTheft.photoAddress"
-						[alarmOften] = "antiTheft.alarmOften"
-						[photoNumber] = "antiTheft.photoNumber"
-						[checkboxDisabled] = "checkboxDisabled"
-						[cameraPrivacyState] ="antiTheft.cameraPrivacyState"
-						[authorizedAccessState] = "antiTheft.authorizedAccessState"
-						[isShowAuthorized] = "isShowAuthorized">
-						</vtr-anti-theft>
+						<vtr-anti-theft id="sensing"></vtr-anti-theft>
 					</div>
 					<!-- End of Intelligent Sensing (Anti theft)-->
 
@@ -763,6 +751,7 @@
 													[min]="0"
 													[max]="60"
 													[value]="intelligentScreen.readingOrBrowsingTime"
+													[ariaLabel]="'display dimmer time adjustment slider'"
 													[isDisabled]="!intelligentScreen.isReadingOrBrowsingEnabled"
 													[metricsItem]="'keepMyDisplay'"
 													[metricsValue]="intelligentScreen.readingOrBrowsingTime"

@@ -22,6 +22,28 @@ export class AudioService {
 		}
 	}
 
+	setDolbyAudioProfileState(key,value) {
+		try {
+			if (this.isShellAvailable) {
+				return this.dolby.setDolbyAudioProfileState(key,value);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	setDolbyAudioState(value) {
+		try {
+			if (this.isShellAvailable) {
+				return this.dolby.setProfileState(value);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
 	setMicrophoneVolume(volumn: number): Promise<boolean> {
 		try {
 			if (this.isShellAvailable) {

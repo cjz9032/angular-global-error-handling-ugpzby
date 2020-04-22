@@ -2,7 +2,7 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col">
-				<span class="title">{{'homeSecurity.title' | translate}}</span>
+				<h2 class="title">{{'homeSecurity.title' | translate}}</h2>
 				<div class="home-security mt-20">
 					<div class="card">
 						<div class="card-header flex align-items-center">
@@ -23,18 +23,24 @@
 									</div>
 									<div class="d-flex align-items-center flex-wrap flex-shrink-1 overflow-hidden">
 										<h3 class="mb-0 homesecurity-container-name pr-3"
-											title="{{'homeSecurity.title' | translate}}">
+											title=""
+											[ngbTooltip]="'homeSecurity.title' | translate" tooltipClass="vtr-system-tooltip" container="body"
+											>
 											{{'homeSecurity.title' | translate}}
 										</h3>
 										<h3 class="homesecurity-container-enable mb-0 overflow-hidden"><span
 												class="badge badge-pill badge-success line-height-2 p-0 pl-3 pr-3 w-100"
-												title="{{'security.homeprotection.homeStatus.protected' | translate}}"
+												title=""
 												*ngIf="homeSecurity?.account?.state === 'trial' || homeSecurity?.account?.state === 'standard'"
-												[innerHTML]="'security.homeprotection.homeStatus.protected' | translate"></span>
+												[innerHTML]="'security.homeprotection.homeStatus.protected' | translate"
+												[ngbTooltip]="'security.homeprotection.homeStatus.protected' | translate" tooltipClass="vtr-system-tooltip" container="body"
+												></span>
 											<span class="badge badge-pill badge-danger line-height-2 p-0 pl-3 pr-3 w-100"
-												title="{{'security.homeprotection.homeStatus.notProtected' | translate}}"
+												title=""
 												*ngIf="homeSecurity?.account?.state !== 'trial' && homeSecurity?.account?.state !== 'standard'"
-												[innerHTML]="'security.homeprotection.homeStatus.notProtected' | translate"></span>
+												[innerHTML]="'security.homeprotection.homeStatus.notProtected' | translate"
+												[ngbTooltip]="'security.homeprotection.homeStatus.notProtected' | translate" tooltipClass="vtr-system-tooltip" container="body"
+												></span>
 										</h3>
 									</div>
 								</div>
@@ -44,6 +50,7 @@
 										metricsItem="visit"
 										[linkId]="'sa-ws-btn-goToChs'"
 										[btnHeight]=true
+										tabindex="-1"
 										[label]="'security.homeprotection.homesecurity.visit' | translate">
 									</vtr-ui-button>
 								</div>

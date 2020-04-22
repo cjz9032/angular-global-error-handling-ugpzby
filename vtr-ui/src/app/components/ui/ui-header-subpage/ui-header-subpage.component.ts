@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-ui-header-subpage',
@@ -18,25 +19,29 @@ export class UiHeaderSubpageComponent implements OnInit, AfterViewInit {
 	fromTab = 'fromTab';
 	pageHeader = 'pageHeader';
 	@ViewChild('pageHeadingRef', { static: false }) pageHeadingRef: ElementRef;
-	constructor(private route: ActivatedRoute) { }
+	constructor(private route: ActivatedRoute, private logger: LoggerService) { }
 
 	ngOnInit() {
 	}
 
 	menuItemClick(event, item) {
-		const element = document.querySelector('#' + item.path) as HTMLElement;
-		if (element) {
-			element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-			// Fix for Edge browser
-			window.scrollBy(0, -60);
-			// fix for VAN-12795 , focus element only when event is key press for narrator to read element text.
-			if (event.type !== 'click') {
+		try {
+			const element = document.querySelector('#' + item.path) as HTMLElement;
+			if (element) {
+				element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+				// Fix for Edge browser
+				window.scrollBy(0, -60);
+
+				// fix for VAN-12795 , focus element only when event is key press for narrator to read element text.
+				// if (event.type !== 'click') {
 				const focusElement = element.querySelector('[tabIndex = \'-1\']') as HTMLElement;
 				if (focusElement) {
 					focusElement.focus();
 				}
-
 			}
+
+		} catch (error) {
+			this.logger.error('UiHeaderSubpageComponent.menuItemClick ' + error);
 		}
 	}
 

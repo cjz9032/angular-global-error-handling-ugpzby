@@ -13,6 +13,7 @@ export class CommsService {
 	env = environment;
 	appId = '';
 	token = '';
+	userAgent = `VantageWeb/${environment.appVersion}`;
 	private serverSwitchLocalData: any;
 	private cmsHost: string;
 	constructor(
@@ -74,18 +75,10 @@ export class CommsService {
 		});
 	}
 
-	async callUpeApi(url, queryParams: any = {}) {
-		// const url = this.env.upeApiRoot + api;
-		if (!Windows) {
-			return this.callUpeApiByWeb(url, queryParams);
-		} else {
-			return this.callUpeApiByShell(url, queryParams);
-		}
-	}
-
-	private async callUpeApiByWeb(url, queryParams: any = {}) {
+	public async callUpeApi(url, queryParams: any = {}) {
 		const reqHeader = new HttpHeaders({
-			'Content-Type': 'application/json;charset=UTF-8'
+			'Content-Type': 'application/json;charset=UTF-8',
+			'User-Agent': this.userAgent
 		});
 
 		this.devService.writeLog('CALL UPE API: ', url);
@@ -94,23 +87,6 @@ export class CommsService {
 				observe: 'response',
 				headers: reqHeader
 			}).toPromise();
-	}
-
-	private async callUpeApiByShell(strUrl, queryParams: any = {}) {
-		const client = new Windows.Web.Http.HttpClient();
-		const url = new Windows.Foundation.Uri(strUrl);
-		const request = new Windows.Web.Http.HttpRequestMessage(Windows.Web.Http.HttpMethod.post, url);
-		request.content = new Windows.Web.Http.HttpStringContent(JSON.stringify(queryParams),
-			Windows.Storage.Streams.UnicodeEncoding.utf8,
-			'application/json;charset=UTF-8');
-		const response = await client.sendRequestAsync(request);
-		let content;
-		if (response.statusCode === 200) {
-			content = await response.content.readAsStringAsync();
-			content = content && JSON.parse(content);
-		};
-
-		return { status: response.statusCode, body: content };
 	}
 
 	async makeTagRequest(strUrl, headers: any = {}) {
@@ -122,13 +98,12 @@ export class CommsService {
 		const client = new Windows.Web.Http.HttpClient();
 		const url = new Windows.Foundation.Uri(strUrl);
 		const request = new Windows.Web.Http.HttpRequestMessage(Windows.Web.Http.HttpMethod.get, url);
-
 		if (headers) {
 			Object.keys(headers).forEach(key => {
 				request.headers.append(key, headers[key]);
 			});
 		}
-
+		request.headers.append('User-Agent', this.userAgent);
 		const response = await client.sendRequestAsync(request);
 		if (response.statusCode !== 200) {
 			throw { status: response.statusCode }

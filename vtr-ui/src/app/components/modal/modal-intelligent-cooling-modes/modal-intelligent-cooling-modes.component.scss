@@ -16,6 +16,9 @@
 		&:hover {
 			opacity: 0.7;
 		}
+		&:focus {
+			@include outline-blue;
+		}
 	}
 }
 
@@ -44,7 +47,7 @@
 	}
 
 	.close-button {
-		background: $gradient_main;
+		background: transparent $gradient_blue 0% 0% no-repeat padding-box;
 		border-radius: 3rem;
 		color: $light;
 		font-size: 2rem;
@@ -53,6 +56,15 @@
 		margin-top: 1rem;
 		font-weight: $weight_bold;
 		text-transform: uppercase;
+		position: relative;
+
+		&:focus{
+			outline: 0;
+			box-shadow: none;
+			&::after {
+				@include button-outline-blue;
+			}
+		}
 	}
 
 

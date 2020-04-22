@@ -173,7 +173,10 @@
                 "warningPromptPopup": {
                     "title": "אזהרה!",
                     "description": "הגדרות לא נכונות של אוברקלוקינג עלולות לגרום נזק בלתי הפיך לחומרה.",
-                    "proceed": "המשך"
+                    "proceed": "המשך",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 },
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "הגדרת מצב תרמי",
@@ -1443,23 +1446,35 @@
                 "subtitle": "הגדרות שמע",
                 "description": "סעיף זה מאפשר לכם לבצע אופטימיזציה אוטומטית או להגדירבמלואן את הגדרות השמע באופן ידני, כגון הגדרות Dolby, מיקרופון ועוד.",
                 "audioSmartsettings": {
-                    "title": "הגדרות שמע חכמות",
-                    "subtitle": "הגדרות המבוססות על יישומים",
-                    "description": "התאימו את הגדרות השמע באופן אוטומטי, על פי היישומים השונים בהם אתם משתמשים.",
+                    "title": "Audio smart settings",
                     "dolby": {
-                        "title": "הגדרות אוטומטיות של שמע Dolby",
-                        "tooltip": "הגדרות אוטומטיות של שמע Dolby קובעות את הגדרות שמע Dolbyלמצב המתאים ליישומים השונים שאתם משתמשים בהם לשיפור חוויית השמע.",
+                        "title": "Dolby audio",
+                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
-                            "dynamic": "דינמי",
-                            "movie": "סרט",
-                            "music": "מוסיקה",
-                            "games": "משחק",
-                            "voip": "קול"
+                            "dynamic": "DYNAMIC",
+                            "movie": "MOVIE",
+                            "music": "MUSIC",
+                            "games": "GAME",
+                            "voip": "VOICE"
+                        },
+                        "automaticAudioCheckboxText": "Automatic audio optimization for",
+                        "automaticAudioMode": {
+                            "voIPMode": {
+                                "radioText": "VoIP",
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                            },
+                            "entertainmentMode": {
+                                "radioText": "Entertainment",
+                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
+                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
+                            }
                         }
                     },
-                    "voip": {
-                        "title": "מיטוב שמע אוטומטי עבור VoIP",
-                        "tooltip": "מעבר אוטומטי למצב Dolby Voice במהלך שיחות VoIP להשגת איכות ברורה ועקבית של הקול."
+                    "eCourse": {
+                        "title": "Interactive E-course mode",
+                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
                     }
                 },
                 "microphone": {
@@ -1674,7 +1689,7 @@
                         "hideAdvSettings": "הסתרת הגדרות מתקדמות",
                         "description": "השורה העליונה של המקלדת כוללת את שתי הפונקציות הבאות. בחרו את הפונקציה הרצויה:",
                         "subSection": {
-                            "description": "כדי להחליף בין שתי הפונקציות, הקישו על Fn+Esc.",
+                            "description": "ניתן גם לעבור בין שתי הפונקציות על ידי הקשה על Fn+Esc. הרענון יימשך מספר שניות.",
                             "radioButton": {
                                 "sFunKey": "פונקציה מיוחדת",
                                 "fnKey": "פונקציית F1-F12"
@@ -1682,7 +1697,9 @@
                         },
                         "subSectionTwo": {
                             "title": "ביטול הפונקציה הראשונית המוגדרת כברירת מחדל",
-                            "description": "כאשר היא מופעלת, פונקציית ברירת המחדל הראשית תשתנה מהגדרות היצרן לאפשרות האחרת. יש להפעיל מחדש את המחשב כדי ששינויים אלה ייכנסו לתוקף."
+                            "description": "כאשר היא מופעלת, פונקציית ברירת המחדל הראשית תשתנה מהגדרות היצרן לאפשרות האחרת. יש להפעיל מחדש את המחשב כדי ששינויים אלה ייכנסו לתוקף.",
+                            "caption": "הפונקציה הראשית הפעילה:",
+                            "tooltipText": "כדי להשתמש בפונקציה הראשית המוגדרת כברירת מחדל, הקישו על מקשי השורה העליונה. עבור פונקציות שאינן ראשיות, הקישו על Fn+מקשים בשורה העליונה. לחלופין, הקישו על Fn+Esc, ולאחר מכן הקישו על המקשים בשורה העליונה."
                         },
                         "subSectionThree": {
                             "title": "איך להשתמש בשילוב המקשים עם מקש Fn",
@@ -1877,7 +1894,7 @@
                 "zeroTouchLoginForIdea": {
                     "title": "כניסה באפס מגע",
                     "caption": "תכונה זו מאפשרת לשפר את יעילות העבודה באמצעות החזרתו של המחשב לפעילות או כניסה אוטומטית למחשב. כדי להשתמש בתכונה זו, הפנים שלכם צריכים להיות רשומים ב-Windows Hello.",
-                    "tooltip": "כשאתם מול המחשב או מתקרבים אליו (במרחק של 1.2 או 1.5 מטר), תכונה זו מאפשרת להתחבר אוטומטית למערכת לאחר זיהוי הפנים שלכם. אם נמצאים בחוץ ולא במשרד, עליכם להיות קרובים יותר למחשב והיקיצה תימשך זמן רב יותר. <br>מרחק הגילוי המרבי משתנה בהתאם ליכולת החיישן. לפרטים נוספים, עיינו ב<i>מדריך למשתמש</i> המצורף למחשב."
+                    "tooltip": "כשאתם מול המחשב או מתקרבים אליו (במרחק של 1.2 או 1.5 מטר), תכונה זו מאפשרת להתחבר אוטומטית למערכת לאחר זיהוי הפנים שלכם. אם נמצאים בחוץ ולא במשרד, עליכם להיות קרובים יותר למחשב והיקיצה תימשך זמן רב יותר. <br>מרחק הגילוי המרבי משתנה בהתאם ליכולת החיישן. לפרטים נוספים, עיינו במדריך למשתמש המצורף למחשב."
                 },
                 "zeroTouchLock": {
                     "title": "נעילה ללא מגע",
@@ -1964,9 +1981,7 @@
                     "description2": "התכונה משתמשת בחיישנים ובמצלמה כדי לזהות את נוכחותכם. עם זאת, התכונה אינה אוספת נתונים אישיים כלל.",
                     "description3": "1. כדי להשתמש בפונקציות המתוארות לעיל, כווננו את מסך המחשב לזווית מתאימה שתאפשר לזהות את הפנים שלכם.",
                     "description4": "2. הפונקציות לעיל אינן נתמכות כאשר:",
-                    "description5a1": "א. המחשב נמצא במצב אוהל, טאבלט, מעמד או מנותק. למצבים הנתמכים במחשב, עיינו ב ",
-                    "description5a2": "מדריך למשתמש ",
-                    "description5a3": "המצורף אליו.",
+                    "description5a": "א. המחשב נמצא במצב אוהל, טאבלט, מעמד או מנותק. למצבים הנתמכים במחשב, עיינו במדריך למשתמש המצורף.",
                     "description5b": "ב. המחשב במצב שינה או כבוי.",
                     "description6": "3. אם מצב טיסה מופעל במחשב, כל התכונות האלה מושבתות.",
                     "description7": "הדיוק משתנה לפי גודל הגוף, היציבה ותדירות התנועה. אם המחשב שלכם ננעל באופן בלתי צפוי, התאימו את סרגל הרגישות כדי לשפר את הדיוק."
@@ -2049,12 +2064,59 @@
             "superResolution": {
                 "heading": "מדיה חכמה",
                 "title": "הגדלת רזולוציית הווידאו",
-                "desc": "<p><label>תכונה זו משפרת את חוויית הפעלת הווידאו על-ידי שיפור רזולוציית הווידאו. התכונה פעולת טוב במיוחד כאשר רזולוציית הווידאו גרועה.</label></p> <p style='margin-top:4px;'><label>פונקציה זו עלולה להשפיע על חיי הסוללה, על טמפרטורת הסוללה ועלולה לגרום לרעש. אין להשתמש בה במצב DC. אחרת, היא תאיץ את צריכת החשמל ותקצר את חיי הסוללה.</label></p>",
-                "tooltip": "התכונה פועלת רק באמצעות:<br>Windows Media player",
+                "desc": "<p><label>תכונה זו משפרת את חוויית הפעלת הווידאו על ידי שיפור רזולוציית הווידאו. היא פועלת במיוחד כאשר הסרטון ברזולוציה נמוכה.</label></p> <p style='margin-top:4px;'><label>פונקציה זו עלולה להשפיע על חיי הסוללה, על טמפרטורת הסוללה ועלולה לגרום לרעש. אין להשתמש בה במצב DC (מצב סוללה). אחרת, היא תאיץ את צריכת החשמל ותקצר את חיי הסוללה.</label></p>",
+                "tooltip": "תכונה זו פועלת רק עבור נגני הווידאו הבאים:<br>Windows Media Player<br>Chrome<br>סרטים וטלוויזיה<br>PotPlayer<br>GOM player<br>נגנים מבוססי אינטרנט (כמו Chrome)<br><br>להנחיות כיצד להפעיל את התכונה ב-PotPlayer וב- GOM Player, ניתן להיעזר במדריך למשתמש שמגיע עם המחשב.",
                 "note": {
                     "description": "התכונה אינה פועלת כאשר:",
-                    "description1": "המחשב איננו מחובר למקור מתח AC.",
-                    "description2": "מצב חיסכון בסוללה מופעל."
+                    "description1": "מצב חיסכון בסוללה מופעל.",
+                    "description2": "טמפרטורת המעבד גבוהה מדי."
+                }
+            },
+            "antiTheft": {
+                "heading": "חישה חכמה",
+                "title": "התראת Smart Motion",
+                "desc": "<p><label>בעת הפעלת תכונה זו, המכשיר יתחיל לצפצף כאשר המסך נעול ויזוהו תנועות, במיוחד במקום ציבורי.</label></p> <p style='margin-top:4px;'><label>כדי לבטל את ההתראה, הזינו את הסיסמה הנכונה או התחברו באמצעות Windows Hello.</label></p>",
+                "note": {
+                    "description": "לאחר כניסה למערכת בהצלחה, תכונה זו תושבת אוטומטית. צריך להפעיל אותה שוב כדי להשתמש בה."
+                },
+                "alarm": {
+                    "title": " האזעקה תימשך",
+                    "option1": "10 שניות",
+                    "option2": "20 שניות",
+                    "option3": "30 שניות",
+                    "option4": "דקה אחת",
+                    "option5": "לא תפסיק אף פעם"
+                },
+                "allowCamera": {
+                    "title": "צילום תמונות",
+                    "describe": "כאשר תכונה זו מופעלת, המצלמה מצלמת תמונות באופן אוטומטי כאשר היא מגלה תנועה כלשהי אם המסך נעול. נתונים אלה מעובדים באופן מקומי במכשיר שלכם. Lenovo אינה ניגשת אליו ואינה משתמשת בו.",
+                    "checkBoxText": "להפעלת התכונה"
+                },
+                "cameraPrivacy": {
+                    "describe": "מצב הפרטיות של המצלמה של Lenovo Vantage פועל. הפונקציה של תיבת הסימון לא תעבוד.",
+                    "linkText": "עברו אל מצב הפרטיות של המצלמה כדי לכבות אותה"
+                },
+                "authorizedAccess": {
+                    "describe": "ל-Lenovo Vantage אין גישה למצלמה. הפונקציה של תיבת הסימון לא תעבוד.",
+                    "linkText": "עברו להגדרות Windows כדי לאפשר גישה"
+                },
+                "photo": {
+                    "title": "מספר התמונות שצולמו במהלך התנועה",
+                    "tooltip": "המצלמה במחשב מופעלת לצילום באופן אוטומטי כאשר מזוהות תנועות. תמונות מצולמות כל 2 שניות והן נשמרות באחסון המקומי.",
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
+                },
+                "showPhoto": {
+                    "title": "התמונות נשמרו באופן מקומי:",
+                    "link": "צפו בתמונות"
+                },
+                "fileAuthorizationTips": {
+                    "content": "ל-Lenovo Vantage אין גישה למערכת הקבצים.",
+                    "link": "עברו להגדרות Windows כדי לאפשר גישה"
                 }
             },
             "voice": {
@@ -2088,53 +2150,6 @@
                     "btnText": "אישור",
                     "title": "ההתקנה נכשלה",
                     "desc": "נסה שוב מאוחר יותר כדי להשתמש ב-Lenovo Voice."
-                }
-            },
-            "antiTheft": {
-                "heading": "Intelligent Sensing",
-                "title": "Smart Motion Alert",
-                "desc": "<p><label>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</label></p> <p style='margin-top:4px;'><label>To dismiss the alarm, enter the correct password or log in by Windows Hello.</label></p>",
-                "note": {
-                    "description": "Once you log in the system successfully, this feature will be turned off automatically. You need to enable it again to use it."
-                },
-                "alarm": {
-                    "title": " THE ALARM WILL LAST FOR",
-                    "option1": "10 seconds",
-                    "option2": "20 seconds",
-                    "option3": "30 seconds",
-                    "option4": "1 minute",
-                    "option5": "Never stop"
-                },
-                "allowCamera": {
-                    "title": "TATING PHOTOS",
-                    "describe": "When enabling this feature, the camera takes photos automatically when detecting any movement if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
-                    "checkBoxText": "Enable this feature"
-                },
-                "cameraPrivacy": {
-                    "describe": "Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
-                    "linkText": "Go to Camera privacy mode to turn it off"
-                },
-                "authorizedAccess": {
-                    "describe": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
-                    "linkText": "Go to Windows Settings to give access"
-                },
-                "photo": {
-                    "title": "THE NUMBER OF PHOTOS TAKEN DURING THE MOVEMENT",
-                    "tooltip": "The camera on your computer automatically activates to take pictures when movements are detected. Pictures are taken every 2 seconds and are saved to your local storage.",
-                    "option1": 5,
-                    "option2": 10,
-                    "option3": 15,
-                    "option4": 20,
-                    "option5": 25,
-                    "option6": 30
-                },
-                "showPhoto": {
-                    "title": "PHOTOS HAVE BEEN:",
-                    "link": "View photos"
-                },
-                "fileAuthorizationTips": {
-                    "content": "Lenovo Vantage doesn't have access to the file system.",
-                    "link": "Go to Windows Settings to give access"
                 }
             }
         }
@@ -2702,7 +2717,7 @@
         },
         "question1": {
             "title": "גיבוי ושחזור הקבצים",
-            "description": "<div>    <div class='faqInFs4Fb'>        גיבוי ושחזור הקבצים    </div>    <hr />    <div class='faqInMb7'>        זה תמיד טוב שיש גיבוי.שמרו עותקים של הקבצים שלכם בכונן אחר למקרה שמשהו קורה למקור.    </div>    <div class='faqInFs3Fb'>        הגדרת הגיבוי    </div>    <hr />    <div class='mb-5'>        בחרו בלחצן <span class='faqInFb'>התחל</span>, בחרו <span class='faqInFb'>הגדרות</span> > <span class='faqInFb'>עדכון ואבטחה</span> > <span class='faqInFb'>גיבוי</span> > <span class='faqInFb'>הוסף כונן</span>, ולאחר מכן בחרו כונן חיצוני או מיקום ברשת עבור הגיבויים שלכם.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg'  />    </div>    <div class='mb-5'>        הכל מוכן.כל שעה נבצע גיבוי של כל מה שנמצא בתיקיית המשתמש שלכם (C:\\\\Users\\\\username).כדי לשנות את הקבצים לגיבוי או את תדירות הגיבויים, עברו אל <span class='faqInFb'>אפשרויות נוספות</span>.    </div>    <div class='faqInFs3Fb'>        שחזור הקבצים    </div>    <div class='mb-5'>        אם חסרים לכם תיקייה או קובץ חשובים, כך תוכלו להחזיר אותם:    </div>    <div>        <div class='mb-3'>1.הקלידו <span class='faqInFb'>שחזור קבצים</span> בתיבת החיפוש בשורת המשימות, ובחרו באפשרות <span class='faqInFb'> שחזר את הקבצים שלך באמצעות היסטוריית קבצים</span>.</div>        <div class='mb-3'>2.חפשו את הקובץ הנדרש, ולאחר מכן השתמשו בחצים כדי לצפות בכל הגרסאות שלו</div>        <div class='mb-3'>3.לאחר איתור הגרסה הרצויה, בחרו <span class='faqInFb'>שחזור</span> כדי לשמור אותה במיקום המקורי שלה.כדי לשמור אותה במקום שונה, לחצו ממושכות (או לחצו באמצעות לחצן העכבר הימני) על <span class='faqInFb'>שחזור</span>, בחרו <span class='faqInFb'>שחזור אל</span>, ולאחר מכן בחרו מיקום חדש.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        גיבוי ושחזור הקבצים    </div>    <hr />    <div class='faqInMb7'>        זה תמיד טוב שיש גיבוי.שמרו עותקים של הקבצים שלכם בכונן אחר למקרה שמשהו קורה למקור.    </div>    <div class='faqInFs3Fb'>        הגדרת הגיבוי    </div>    <hr />    <div class='mb-5'>        בחרו בלחצן <span class='faqInFb'>התחל</span>, בחרו <span class='faqInFb'>הגדרות</span> > <span class='faqInFb'>עדכון ואבטחה</span> > <span class='faqInFb'>גיבוי</span> > <span class='faqInFb'>הוסף כונן</span>, ולאחר מכן בחרו כונן חיצוני או מיקום ברשת עבור הגיבויים שלכם.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg'  />    </div>    <div class='mb-5'>        הכל מוכן.כל שעה נבצע גיבוי של כל מה שנמצא בתיקיית המשתמש שלכם <span>(C:\\Users\\שם המשתמש שלכם)<span>.כדי לשנות את הקבצים לגיבוי או את תדירות הגיבויים, עברו אל <span class='faqInFb'>אפשרויות נוספות</span>.    </div>    <div class='faqInFs3Fb'>        שחזור הקבצים    </div>    <div class='mb-5'>        אם חסרים לכם תיקייה או קובץ חשובים, כך תוכלו להחזיר אותם:    </div>    <div>        <div class='mb-3'>1.הקלידו <span class='faqInFb'>שחזור קבצים</span> בתיבת החיפוש בשורת המשימות, ובחרו באפשרות <span class='faqInFb'> שחזר את הקבצים שלך באמצעות היסטוריית קבצים</span>.</div>        <div class='mb-3'>2.חפשו את הקובץ הנדרש, ולאחר מכן השתמשו בחצים כדי לצפות בכל הגרסאות שלו</div>        <div class='mb-3'>3.לאחר איתור הגרסה הרצויה, בחרו <span class='faqInFb'>שחזור</span> כדי לשמור אותה במיקום המקורי שלה.כדי לשמור אותה במקום שונה, לחצו ממושכות (או לחצו באמצעות לחצן העכבר הימני) על <span class='faqInFb'>שחזור</span>, בחרו <span class='faqInFb'>שחזור אל</span>, ולאחר מכן בחרו מיקום חדש.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -3115,7 +3130,8 @@
         "settingsNotes": "הפעל מחדש את היישום כדי לוודא שכל השינויים נכנסים לתוקף.",
         "betaSettingTitle": "תוכנית בטא",
         "betaProgram": "תוכנית בטא",
-        "betaSettingDescription": "נסו את התכונות האחרונות שאנו עובדים עליהן."
+        "betaSettingDescription": "נסו את התכונות האחרונות שאנו עובדים עליהן.",
+        "betaSettingNewDescription": "אנחנו שמחים להזמין אתכם לתוכנית בטה של Smart Performance. היא עוזרת לשפר את ביצועי המחשב על ידי:<br/><ul class='pl-4'><li>אבחון באגים באופן יזום ואופטימיזציה של הגדרות.</li><li>שיפור ביצועי האינטרנט על ידי אופטימיזציה של הרשת ושל הדפדפן.</li><li>ביצוע סריקה ותיקון מהירים מבלי להשתמש בתוכנית האנטי-וירוס הקיימת.</li></ul>"
     },
     "modernPreload": {
         "cancel": "ביטול",
@@ -3285,7 +3301,8 @@
             "wireless": "אלחוטי"
         },
         "warningMessage": "קחו בחשבון שהבדיקות יבוטלו אם המערכת במצב שינה או המתנה",
-        "refreshMessage": "הרענון עשוי לארוך זמן מה מכיוון שהמחשב צריך לטעון את כל הרכיבים מחדש"
+        "refreshMessage": "הרענון עשוי לארוך זמן מה מכיוון שהמחשב צריך לטעון את כל הרכיבים מחדש",
+        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3878,7 +3895,8 @@
                 "results": "Results:",
                 "status": "Status"
             }
-        }
+        },
+        "runningWell": "PC is running well"
     },
     "homeSecurity": {
         "title": "Connected Home Security",
@@ -4040,8 +4058,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "חץ שמאלה",
+            "rightArrow": "חץ ימינה"
         }
     },
     "dcc": {

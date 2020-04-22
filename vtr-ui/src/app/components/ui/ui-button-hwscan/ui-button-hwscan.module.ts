@@ -3,6 +3,7 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/cor
 import { UiButtonHWScanComponent } from './ui-button-hwscan.component';
 import { MetricsModule } from 'src/app/services/metric/metrics.module';
 import { RouterModule } from '@angular/router';
+import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
 	declarations: [
 		UiButtonHWScanComponent
@@ -14,6 +15,7 @@ import { RouterModule } from '@angular/router';
 		CommonModule,
 		MetricsModule,
 		RouterModule,
+		NgbTooltipModule
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA,

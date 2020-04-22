@@ -2,12 +2,13 @@
 	<div class="container-fluid security-card">
 		<div class="row">
 			<div class="col">
-				<div class="heading">{{'security.wifisecurity.container.title' | translate}}</div>
+				<h2 class="heading">{{'security.wifisecurity.container.title' | translate}}</h2>
 			</div>
 			<div class="pull right">
 				<img *ngIf="!deviceService.isGaming"
 					class="coronet-logo"
-					[src]=" 'assets/images/coronet-logo.svg' | svgInline | async" />
+					[src]=" 'assets/images/coronet-logo.svg' | svgInline | async" 
+					alt="coronet logo"/>
 				<img *ngIf="deviceService.isGaming"
 					class="coronet-logo"
 					[src]="'assets/images/coronet-logo-gaming.svg' | svgInline | async" />
@@ -45,16 +46,22 @@
 									</div>
 									<div class="d-flex align-items-center flex-wrap flex-shrink-1 overflow-hidden">
 										<h3 class="mb-0 wifisecurity-container-name pr-3"
-											title="{{'security.wifisecurity.container.name' | translate}}">
+											title=""
+											[ngbTooltip]="'security.wifisecurity.container.name' | translate" tooltipClass="vtr-system-tooltip" container="body"
+											>
 											{{'security.wifisecurity.container.name' | translate}}
 										</h3>
 										<h3 class="wifisecurity-container-enable mb-0"><span
 												class="badge badge-pill badge-success line-height-2 p-0 pl-3 pr-3"
-												title="{{'security.wifisecurity.container.enable' | translate}}"
-												*ngIf="data.isLWSEnabled">{{'security.wifisecurity.container.enable' | translate}}</span>
+												title=""
+												*ngIf="data.isLWSEnabled"
+												[ngbTooltip]="'security.wifisecurity.container.enable' | translate" tooltipClass="vtr-system-tooltip" container="body"
+												>{{'security.wifisecurity.container.enable' | translate}}</span>
 											<span class="badge badge-pill badge-danger line-height-2 p-0 pl-3 pr-3"
-												title="{{'security.wifisecurity.container.disable' | translate}}"
-												*ngIf="data.isLWSEnabled===false">{{'security.wifisecurity.container.disable' | translate}}</span>
+												title=""
+												*ngIf="data.isLWSEnabled===false"
+												[ngbTooltip]="'security.wifisecurity.container.disable' | translate" tooltipClass="vtr-system-tooltip" container="body"
+												>{{'security.wifisecurity.container.disable' | translate}}</span>
 										</h3>
 									</div>
 								</div>
@@ -72,7 +79,7 @@
 					</div>
 					<div *ngIf="data.isLWSEnabled"
 						class="card-history">
-						<vtr-container-collapsible [collapseLinkId]="'sa-ws-lnk'"
+						<vtr-container-collapsible [tabIndex]="0" [collapseLinkId]="'sa-ws-lnk'"
 							[cardTitle]="'security.wifisecurity.container.networkHistory' | translate"
 							componentName="wifiHistoriesCollapsible"
 							[isCollapsed]="!isShowMore"
@@ -99,7 +106,9 @@
 												</div>
 												<div class="connection-name media-body border-0 pl-3">
 													<h5 class="mt-0"
-														title="{{history.ssid}}">{{history.ssid}}</h5>
+														title=""
+														[ngbTooltip]="history.ssid" tooltipClass="vtr-system-tooltip" container="body"
+														>{{history.ssid}}</h5>
 													<small class="connection-status text-muted">
 														{{'security.wifisecurity.container.connect' | translate}}
 														{{history.info}}
@@ -109,25 +118,17 @@
 										</div>
 									</div>
 								</div>
-								<div class="card-foot"
-									*ngIf="data.hasMore">
-									<a id="sa-ws-lnk-wh-showmore"
+								<button id="{{isShowMoreLink ? 'sa-ws-btn-wh-showmore' : 'sa-ws-btn-wh-showless'}}"
+										tabindex="0"
+										(click)="clickShowMore()"
 										vtrMetrics
 										metricsItem="showMoreWiFiHistory"
 										metricsEvent="featureClick"
-										class="show-more"
+										class="showmore-button"
 										href="#"
-										(click)="clickShowMore()"
-										*ngIf="isShowMoreLink">{{'security.wifisecurity.container.showmore' | translate}}</a>
-									<a id="sa-ws-lnk-wh-showless"
-										vtrMetrics
-										metricsItem="showLessWiFiHistory"
-										metricsEvent="featureClick"
-										class="show-more"
-										href="#"
-										(click)="clickShowMore()"
-										*ngIf="!isShowMoreLink">{{'security.wifisecurity.container.showless'| translate}}</a>
-								</div>
+										*ngIf="data.hasMore">
+										{{ isShowMoreLink ? showMoreText : showLessText }}
+								</button>
 							</div>
 						</vtr-container-collapsible>
 					</div>

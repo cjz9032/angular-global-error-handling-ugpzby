@@ -14,6 +14,8 @@ export enum BetaStatus {
 })
 export class BetaService {
 	private betaUser;
+	private _betaFeatureAvailable = false;
+
 	constructor(
 		private vantageShellService: VantageShellService,
 		private commonService: CommonService
@@ -22,6 +24,14 @@ export class BetaService {
 			this.betaUser = this.vantageShellService.getBetaUser();
 		}
 		this.commonService.removeLocalStorageValue(LocalStorageKey.BetaUser);
+	}
+
+	public get betaFeatureAvailable() {
+		return this._betaFeatureAvailable;
+	}
+
+	public set betaFeatureAvailable(value: boolean) {
+		this._betaFeatureAvailable = value;
 	}
 
 	public getBetaStatus(): BetaStatus {

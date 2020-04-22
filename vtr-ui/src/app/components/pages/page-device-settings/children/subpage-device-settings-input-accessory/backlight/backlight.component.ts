@@ -193,7 +193,9 @@ export class BacklightComponent implements OnInit, OnDestroy {
 			this.autoSubscription.unsubscribe();
 		}
 		this.backlightService.clearCache();
-		this.changeSubscription.unsubscribe();
+		if (this.changeSubscription) {
+			this.changeSubscription.unsubscribe();
+		}
 	}
 
 	onToggleOnOff($event) {

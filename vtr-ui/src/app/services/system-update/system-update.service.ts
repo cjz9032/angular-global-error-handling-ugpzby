@@ -593,19 +593,41 @@ export class SystemUpdateService {
 		this.ignoredRebootDelayUpdates = [];
 		if (updateList && updateList.length > 0) {
 			updateList.forEach((update) => {
+				let isPackageToInstall = true;
 				const pkg = new InstallUpdate();
 				pkg.packageID = update.packageID;
 				pkg.severity = update.packageSeverity;
 				if (removeDelayedUpdates && update.packageRebootType === 'RebootDelayed') {
 					update.isACAttached = false;
 					update.installationStatus = UpdateActionResult.InstallFailed;
-					this.ignoredRebootDelayUpdates.push(update);
-				} else {
+					isPackageToInstall = false;
+				} else if (removeDelayedUpdates && update.coreqPackageID !== '' && this.isUpdateDependingOnRebootDelayedPackage(updateList, update.coreqPackageID)) {
+					update.installationStatus = UpdateActionResult.InstallFailed;
+					isPackageToInstall = false;
+				}
+				if (isPackageToInstall) {
 					packageToInstall.push(pkg);
+				} else {
+					this.ignoredRebootDelayUpdates.push(update);
 				}
 			});
 		}
 		return packageToInstall;
+	}
+
+	private isUpdateDependingOnRebootDelayedPackage(updateList: Array<AvailableUpdateDetail>, coreqPackage: string) {
+		let result = false;
+		for (const update of updateList) {
+			if (update.packageRebootType === 'RebootDelayed' && update.packageID === coreqPackage) {
+				result = true;
+			} else if (update.packageRebootType !== 'RebootDelayed' && update.packageID === coreqPackage && update.coreqPackageID !== '') {
+				result = this.isUpdateDependingOnRebootDelayedPackage(updateList, update.coreqPackageID);
+			}
+			if (result) {
+				break;
+			}
+		}
+		return result;
 	}
 
 	private mapAvailableUpdateResponse(updateList: Array<any>): AvailableUpdateDetail[] {

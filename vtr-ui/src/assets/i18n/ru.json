@@ -197,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "Внимание!",
                     "description": "Неправильные настройки разгона могут привести к необратимым повреждениям оборудования.",
-                    "proceed": "ПРОДОЛЖИТЬ"
+                    "proceed": "ПРОДОЛЖИТЬ",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },
@@ -1443,23 +1446,35 @@
                 "subtitle": "Параметры звука",
                 "description": "В этом разделе можно автоматически оптимизировать или вручную настроить все параметры звука, например параметры Dolby, микрофон и т. д.",
                 "audioSmartsettings": {
-                    "title": "Интеллектуальные параметры звука",
-                    "subtitle": "НАСТРОЙКА ПАРАМЕТРОВ С УЧЕТОМ ПРИЛОЖЕНИЙ",
-                    "description": "Автоматическая настройка параметров звука в зависимости от используемых приложений.",
+                    "title": "Audio smart settings",
                     "dolby": {
-                        "title": "Автоматические параметры Dolby Audio",
-                        "tooltip": "Функция автоматической настройки параметров Dolby Audio устанавливает параметры звука Dolbyв соответствии с оптимальным режимом для различных используемых приложений, чтобы обеспечить наилучшее качество звучания.",
+                        "title": "Dolby audio",
+                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
-                            "dynamic": "ДИНАМИЧЕСКИЙ РЕЖИМ",
-                            "movie": "ФИЛЬМ",
-                            "music": "МУЗЫКА",
-                            "games": "ИГРА",
-                            "voip": "ГОЛОС"
+                            "dynamic": "DYNAMIC",
+                            "movie": "MOVIE",
+                            "music": "MUSIC",
+                            "games": "GAME",
+                            "voip": "VOICE"
+                        },
+                        "automaticAudioCheckboxText": "Automatic audio optimization for",
+                        "automaticAudioMode": {
+                            "voIPMode": {
+                                "radioText": "VoIP",
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                            },
+                            "entertainmentMode": {
+                                "radioText": "Entertainment",
+                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
+                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
+                            }
                         }
                     },
-                    "voip": {
-                        "title": "Автоматическая оптимизация аудио для VoIP",
-                        "tooltip": "Автоматическое переключение в голосовой режим Dolby во время звонков через VoIP для чистой и четкой передачи голоса."
+                    "eCourse": {
+                        "title": "Interactive E-course mode",
+                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
                     }
                 },
                 "microphone": {
@@ -1674,15 +1689,17 @@
                         "hideAdvSettings": "СКРЫТЬ ДОПОЛНИТЕЛЬНЫЕ ПАРАМЕТРЫ",
                         "description": "Верхний ряд клавиатуры поддерживает следующие две функции. Выберите нужную функцию:",
                         "subSection": {
-                            "description": "Чтобы поменять местами две функции, нажмите клавиши Fn+Esc.",
+                            "description": "Переключаться между двумя функциями также можно нажатием Fn+Esc. Для обновления потребуется несколько секунд.",
                             "radioButton": {
-                                "sFunKey": "СПЕЦИАЛЬНАЯ ФУНКЦИЯ",
-                                "fnKey": "ФУНКЦИИ F1–F12"
+                                "sFunKey": "Специальная функция",
+                                "fnKey": "Функции F1–F12"
                             }
                         },
                         "subSectionTwo": {
                             "title": "Отмена основной функции по умолчанию",
-                            "description": "Если включена, основная функция по умолчанию будет изменена с заводских настроек на противоположные. Перезагрузите компьютер, чтобы эти изменения вступили в силу."
+                            "description": "Если включена, основная функция по умолчанию будет изменена с заводских настроек на противоположные. Перезагрузите компьютер, чтобы эти изменения вступили в силу.",
+                            "caption": "АКТИВНАЯ ОСНОВНАЯ ФУНКЦИЯ:",
+                            "tooltipText": "Для использования основных функций по умолчанию нажимайте клавиши верхнего ряда. Для использования неосновных функций нажимайте Fn+клавиши верхнего ряда. Также можно сначала нажать Fn+Esc, а затем — клавиши верхнего ряда."
                         },
                         "subSectionThree": {
                             "title": "Использование комбинаций с клавишей Fn",
@@ -1877,7 +1894,7 @@
                 "zeroTouchLoginForIdea": {
                     "title": "Бесконтактный вход",
                     "caption": "Эта функция автоматически пробуждает компьютер и выполняет вход в систему, тем самым помогая вам работать эффективнее. Для использования этой функции вам необходимо зарегистрировать свое лицо в Windows Hello.",
-                    "tooltip": "Если вы находитесь перед компьютером или приближаетесь к нему (на расстоянии 1,2 или 1,5 м), эта функция обеспечивает автоматический вход в систему после распознавания вашего лица. Если вы находитесь на улице, а не внутри помещения, вам потребуется подойти ближе к компьютеру, а пробуждение займет больше времени. <br>Максимальная дальность обнаружения зависит от возможностей датчика. Подробную информацию см. в <i>Руководстве пользователя</i> из комплекта поставки вашего компьютера."
+                    "tooltip": "Если вы находитесь перед компьютером или приближаетесь к нему (на расстоянии 1,2 или 1,5 м), эта функция обеспечивает автоматический вход в систему после распознавания вашего лица. Если вы находитесь на улице, а не внутри помещения, вам потребуется подойти ближе к компьютеру, а пробуждение займет больше времени. <br>Максимальная дальность обнаружения зависит от возможностей датчика. Подробную информацию см. в Руководстве пользователя из комплекта поставки вашего компьютера."
                 },
                 "zeroTouchLock": {
                     "title": "Бесконтактная блокировка",
@@ -1964,9 +1981,7 @@
                     "description2": "Эта функция обнаруживает ваше присутствие с помощью датчиков и камеры. Тем не менее, она НЕ ОСУЩЕСТВЛЯЕТ сбор каких-либо личных данных.",
                     "description3": "1. Для использования указанных выше функций подберите угол наклона экрана таким образом, чтобы ваше лицо распознавалось.",
                     "description4": "2. Данные функции не поддерживаются, если:",
-                    "description5a1": "a. Компьютер находится в режиме тента, планшета, вертикальном или отсоединенном режиме. Поддерживаемые на вашем компьютере режимы см. в ",
-                    "description5a2": "Руководстве пользователя ",
-                    "description5a3": "из комплекта его поставки.",
+                    "description5a": "a. Компьютер находится в режиме тента, планшета, вертикальном или отсоединенном режиме. Информацию о режимах, поддерживаемых на вашем компьютере, см. в Руководстве пользователя из комплекта его поставки.",
                     "description5b": "b. Компьютер находится в режиме гибернации или выключен.",
                     "description6": "3. Если в компьютере включен режим \"в самолете\", эти функции отключены.",
                     "description7": "Точность зависит от размера тела, осанки и частоты движения. Если компьютер неожиданно блокируется, отрегулируйте чувствительность, чтобы повысить точность."
@@ -2049,12 +2064,59 @@
             "superResolution": {
                 "heading": "Интеллектуальная работа с мультимедиа",
                 "title": "Масштабирование разрешения видео",
-                "desc": "<p><label>Эта функция улучшает качество воспроизведения видео, повышая разрешение видео.Ее действие особо заметно при низком разрешении видео.</label></p> <p style='margin-top:4px;'><label>Эта функция может повлиять на время работы и температуру аккумулятора, а также привести к возникновению шума. Не используйте ее в режиме DC. В противном случае увеличится энергопотребление и сократится время работы аккумулятора.</label></p>",
-                "tooltip": "Эта функция работает только на следующих устройствах:<br>Windows Media player",
+                "desc": "<p><label>Эта функция повышает качество воспроизведения видео, увеличивая его разрешение. Ее действие особенно заметно при низком разрешении видео.</label></p> <p style='margin-top:4px;'><label>Эта функция может повлиять на время работы и температуру аккумулятора, а также привести к возникновению шума. Не используйте ее в режиме DC (режим работы от аккумулятора). В противном случае увеличится энергопотребление и сократится время работы аккумулятора.</label></p>",
+                "tooltip": "Эта функция работает только в следующих видеопроигрывателях:<br>Проигрыватель Windows Media<br>Chrome<br>Кино и ТВ<br>PotPlayer<br>GOM Player<br>Проигрыватели на основе веб-браузеров (например, Chrome)<br><br>Инструкции по включению этой функции в проигрывателях PotPlayer и GOM Player см. в Руководстве пользователя из комплекта поставки вашего компьютера.",
                 "note": {
                     "description": "Эта функция не работает, если:",
-                    "description1": "Компьютер не подключен к сети переменного тока.",
-                    "description2": "Включен режим экономии заряда аккумулятора."
+                    "description1": "Включен режим экономии заряда аккумулятора.",
+                    "description2": "температура процессора слишком высокая."
+                }
+            },
+            "antiTheft": {
+                "heading": "Интеллектуальное распознавание",
+                "title": "Интеллектуальное оповещение о движении",
+                "desc": "<p><label>Если эта функция включена, устройство будет подавать звуковой сигнал при заблокированном экране, если обнаружено движение, особенно в общественных местах.</label></p> <p style='margin-top:4px;'><label>Чтобы отключить сигнал, введите правильный пароль или войдите в систему с помощью Windows Hello.</label></p>",
+                "note": {
+                    "description": "После успешного входа в систему эта функция будет автоматически отключена. Для использования ее нужно снова включить."
+                },
+                "alarm": {
+                    "title": " ДЛИТЕЛЬНОСТЬ ЗВУКОВОГО СИГНАЛА",
+                    "option1": "10 секунд",
+                    "option2": "20 секунд",
+                    "option3": "30 секунд",
+                    "option4": "1 минута",
+                    "option5": "Бесконечно"
+                },
+                "allowCamera": {
+                    "title": "ФОТОФИКСАЦИЯ",
+                    "describe": "Если эта функция включена, камера будет автоматически делать снимки при заблокированном экране, если обнаружено движение. Эти данные обрабатываются локально, на вашем устройстве. Lenovo не имеет к ним доступа и не использует их.",
+                    "checkBoxText": "Включить эту функцию"
+                },
+                "cameraPrivacy": {
+                    "describe": "Для камеры Lenovo Vantage включен режим конфиденциальности. Обозначенная флажком функция не будет работать.",
+                    "linkText": "Перейдите в режим конфиденциальности на камере, чтобы отключить функцию"
+                },
+                "authorizedAccess": {
+                    "describe": "У Lenovo Vantage нет доступа к камере. Обозначенная флажком функция не будет работать.",
+                    "linkText": "Перейдите в раздел параметров Windows, чтобы предоставить доступ"
+                },
+                "photo": {
+                    "title": "КОЛИЧЕСТВО СНИМКОВ ПРИ ОБНАРУЖЕНИИ ДВИЖЕНИЯ",
+                    "tooltip": "Камера в компьютере автоматически активируется и делает снимки при обнаружении движения. Снимки делаются каждые две секунды и сохраняются на локальном устройстве хранения данных.",
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
+                },
+                "showPhoto": {
+                    "title": "ФОТОГРАФИИ СОХРАНЕНЫ В ЛОКАЛЬНОЕ ХРАНИЛИЩЕ:",
+                    "link": "Просмотреть фотографии"
+                },
+                "fileAuthorizationTips": {
+                    "content": "У Lenovo Vantage нет доступа к файловой системе.",
+                    "link": "Перейдите в раздел параметров Windows, чтобы предоставить доступ"
                 }
             },
             "voice": {
@@ -2088,53 +2150,6 @@
                     "btnText": "ОК",
                     "title": "Сбой установки",
                     "desc": "Повторите попытку позже, чтобы воспользоваться Lenovo Voice."
-                }
-            },
-            "antiTheft": {
-                "heading": "Intelligent Sensing",
-                "title": "Smart Motion Alert",
-                "desc": "<p><label>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</label></p> <p style='margin-top:4px;'><label>To dismiss the alarm, enter the correct password or log in by Windows Hello.</label></p>",
-                "note": {
-                    "description": "Once you log in the system successfully, this feature will be turned off automatically. You need to enable it again to use it."
-                },
-                "alarm": {
-                    "title": " THE ALARM WILL LAST FOR",
-                    "option1": "10 seconds",
-                    "option2": "20 seconds",
-                    "option3": "30 seconds",
-                    "option4": "1 minute",
-                    "option5": "Never stop"
-                },
-                "allowCamera": {
-                    "title": "TATING PHOTOS",
-                    "describe": "When enabling this feature, the camera takes photos automatically when detecting any movement if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
-                    "checkBoxText": "Enable this feature"
-                },
-                "cameraPrivacy": {
-                    "describe": "Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
-                    "linkText": "Go to Camera privacy mode to turn it off"
-                },
-                "authorizedAccess": {
-                    "describe": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
-                    "linkText": "Go to Windows Settings to give access"
-                },
-                "photo": {
-                    "title": "THE NUMBER OF PHOTOS TAKEN DURING THE MOVEMENT",
-                    "tooltip": "The camera on your computer automatically activates to take pictures when movements are detected. Pictures are taken every 2 seconds and are saved to your local storage.",
-                    "option1": 5,
-                    "option2": 10,
-                    "option3": 15,
-                    "option4": 20,
-                    "option5": 25,
-                    "option6": 30
-                },
-                "showPhoto": {
-                    "title": "PHOTOS HAVE BEEN:",
-                    "link": "View photos"
-                },
-                "fileAuthorizationTips": {
-                    "content": "Lenovo Vantage doesn't have access to the file system.",
-                    "link": "Go to Windows Settings to give access"
                 }
             }
         }
@@ -2702,7 +2717,7 @@
         },
         "question1": {
             "title": "Резервное копирование и восстановление файлов",
-            "description": "<div>    <div class='faqInFs4Fb'>        Резервное копирование и восстановление файлов    </div>    <hr />    <div class='faqInMb7'>        Всегда хорошо иметь резервную копию. Сохраните копии своих файлов на другом диске на случай, если что-то случится с оригиналами.    </div>    <div class='faqInFs3Fb'>        Настройка резервного копирования    </div>    <hr />    <div class='mb-5'>        Нажмите кнопку <span class='faqInFb'>Пуск</span>, выберите <span class='faqInFb'>Параметры</span> > <span class='faqInFb'>Обновление и безопасность</span> > <span class='faqInFb'>Резервное копирование</span> > <span class='faqInFb'>Добавление диска</span> и выберите внешний диск или расположение в сети для файлов резервной копии.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Все готово. Каждый час будет выполняться резервное копирование всех данных в папке пользователя (C:\\\\Users\\\\username). Чтобы изменить файлы для резервного копирования или частоту их резервного копирования, перейдите в раздел <span class='faqInFb'>Больше параметров</span>.    </div>    <div class='faqInFs3Fb'>        Восстановление файлов    </div>    <div class='mb-5'>        Если вам нужен важный файл или папка, восстановите их следующим образом:    </div>    <div>        <div class='mb-3'>1. Введите <span class='faqInFb'>Восстановить файлы</span> в поле поиска на панели задач и выберите <span class='faqInFb'>Восстановление файлов с помощью истории файлов</span>.</div>        <div class='mb-3'>2. Найдите нужный файл, затем просмотрите все его версии с помощью стрелок</div>        <div class='mb-3'>3. После выбора нужной версии нажмите <span class='faqInFb'>Восстановить</span>, чтобы сохранить ее в исходном расположении. Чтобы сохранить файл в другом месте, нажмите и удерживайте (или щелкните правой кнопкой мыши) <span class='faqInFb'>Восстановить</span>, щелкните <span class='faqInFb'>Восстановить в</span>, а затем выберите новое расположение.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Резервное копирование и восстановление файлов    </div>    <hr />    <div class='faqInMb7'>        Всегда хорошо иметь резервную копию. Сохраните копии своих файлов на другом диске на случай, если что-то случится с оригиналами.    </div>    <div class='faqInFs3Fb'>        Настройка резервного копирования    </div>    <hr />    <div class='mb-5'>        Нажмите кнопку <span class='faqInFb'>Пуск</span>, выберите <span class='faqInFb'>Параметры</span> > <span class='faqInFb'>Обновление и безопасность</span> > <span class='faqInFb'>Резервное копирование</span> > <span class='faqInFb'>Добавление диска</span> и выберите внешний диск или расположение в сети для файлов резервной копии.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Все готово. Каждый час будет выполняться резервное копирование всех данных в папке пользователя (C:\\Users\\ваше имя пользователя). Чтобы изменить файлы для резервного копирования или частоту их резервного копирования, перейдите в раздел <span class='faqInFb'>Больше параметров</span>.    </div>    <div class='faqInFs3Fb'>        Восстановление файлов    </div>    <div class='mb-5'>        Если вам нужен важный файл или папка, восстановите их следующим образом:    </div>    <div>        <div class='mb-3'>1. Введите <span class='faqInFb'>Восстановить файлы</span> в поле поиска на панели задач и выберите <span class='faqInFb'>Восстановление файлов с помощью истории файлов</span>.</div>        <div class='mb-3'>2. Найдите нужный файл, затем просмотрите все его версии с помощью стрелок</div>        <div class='mb-3'>3. После выбора нужной версии нажмите <span class='faqInFb'>Восстановить</span>, чтобы сохранить ее в исходном расположении. Чтобы сохранить файл в другом месте, нажмите и удерживайте (или щелкните правой кнопкой мыши) <span class='faqInFb'>Восстановить</span>, щелкните <span class='faqInFb'>Восстановить в</span>, а затем выберите новое расположение.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -3115,7 +3130,8 @@
         "settingsNotes": "Перезапустите это приложение, чтобы все изменения вступили в силу.",
         "betaSettingTitle": "Программа бета-тестирования",
         "betaProgram": "Программа бета-тестирования",
-        "betaSettingDescription": "Опробуйте новейшие функции, над которыми мы работаем."
+        "betaSettingDescription": "Опробуйте новейшие функции, над которыми мы работаем.",
+        "betaSettingNewDescription": "Мы рады приветствовать вас в программе бета-тестирования функции Smart Performance. Эта функция помогает увеличить производительность компьютера следующими способами:<br/><ul class='pl-4'><li>Упреждающее выявление ошибок и оптимизация параметров.</li><li>Повышение скорости подключения к Интернету благодаря оптимизации работы сети и браузера.</li><li>Выполнение быстрых проверок и внесение исправлений без использования существующей антивирусной программы.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Отмена",
@@ -3285,7 +3301,8 @@
             "wireless": "Беспроводная связь"
         },
         "warningMessage": "Имейте в виду, что тесты будут отменены при переходе системы в спящий режим или режим гибернации",
-        "refreshMessage": "Обновление может занять некоторое время, так как необходимо снова загрузить все компоненты"
+        "refreshMessage": "Обновление может занять некоторое время, так как необходимо снова загрузить все компоненты",
+        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3878,7 +3895,8 @@
                 "results": "Results:",
                 "status": "Status"
             }
-        }
+        },
+        "runningWell": "PC is running well"
     },
     "homeSecurity": {
         "title": "Connected Home Security",
@@ -4040,8 +4058,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "Стрелка влево",
+            "rightArrow": "Стрелка вправо"
         }
     },
     "dcc": {

@@ -36,6 +36,7 @@
 									[isDisabled]="!apsStatus"
 									[value]="apsSensitivity"
 									[step]=50
+									[ariaLabel]="'active protection shocks sensitivity adjustment slider'"
 									(sliderChange)='setAPSSensitivityLevel($event)'
 									[metricsItem]="'ActiveProtectionSystem.Sensitivity.Slider'"
 									[metricsValue]="apsSensitivity">
@@ -149,7 +150,8 @@
 							role="link"
 							tabindex="0"
 							(click)="toggleAdvanced($event)"
-							(keydown.enter)="toggleAdvanced($event)">
+							(keydown.enter)="toggleAdvanced($event)"
+							class="hide-settings">
 							<p>
 								{{ 'device.smartAssist.activeProtectionSystem.advanced.hide' | translate }}
 							</p>

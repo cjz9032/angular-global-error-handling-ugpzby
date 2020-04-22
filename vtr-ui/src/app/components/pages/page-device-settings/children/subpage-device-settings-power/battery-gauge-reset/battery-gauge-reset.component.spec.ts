@@ -65,10 +65,12 @@ describe('BatteryGaugeResetComponent', () => {
 	it('should call onBatteryGaugeReset', () => {
 		component.batteryService.gaugeResetInfo = gaugeResetInfo;
 		spyOn(modalService, 'open').and.returnValue({ result: Promise.resolve('positive'), componentInstance: {title: '', negativeResponseText: '', positiveResponseText: '', description1: '', description2: ''} });
+
+		const event = new MouseEvent('click');
 		// spyOn(component, 'stopBatteryGaugeReset');
 		spyOn(component, 'setGaugeResetSection');
 		fixture.detectChanges();
-		component.onBatteryGaugeReset(0);
+		component.onBatteryGaugeReset(0, event);
 		expect(modalService.open).toHaveBeenCalled();
 		// expect()
 	});

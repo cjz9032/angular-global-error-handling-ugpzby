@@ -10,8 +10,10 @@
 					<div class="font-weight-600 blue"
 						[innerHTML]="item.count"></div>
 					<div class="text-ellipsis"><span class="text-uppercase font-weight-bold"
-							title="{{item.type}}"
-							[innerHTML]="item.type"></span></div>
+							title=""
+							[innerHTML]="item.type"
+							[ngbTooltip]="item.type" tooltipClass="vtr-system-tooltip" container="body"
+							></span></div>
 				</div>
 			</div>
 		</div>

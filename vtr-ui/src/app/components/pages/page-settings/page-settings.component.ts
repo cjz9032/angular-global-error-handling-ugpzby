@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { SettingsService } from 'src/app/services/settings.service';
 import { CommonService } from 'src/app/services/common/common.service';
@@ -12,7 +12,7 @@ import { LocalInfoService } from 'src/app/services/local-info/local-info.service
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
-import { MenuItem } from 'src/app/enums/menuItem.enum';
+import { MenuItemEvent } from 'src/app/enums/menuItemEvent.enum';
 
 @Component({
 	selector: 'vtr-page-settings',
@@ -71,9 +71,32 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			leftImageSource: ['fal', 'flask'],
 		}
 	];
+
+	allUsageTypes = [
+		{
+			id: 'personal-use',
+			value: this.segmentConst.Consumer,
+			textKey: 'welcometutorial.personal',
+			image: 'personal-use.jpg',
+		},
+		{
+			id: 'business-use',
+			value: this.segmentConst.SMB,
+			textKey: 'welcometutorial.business',
+			image: 'business-use.jpg',
+		},
+		{
+			id: 'custom-use',
+			value: this.segmentConst.Commercial,
+			textKey: 'welcometutorial.professional',
+			image: 'custom-use.jpg',
+		},
+	];
+
 	metrics: any;
 	metricsPreference: any;
 	notificationSubscription: any;
+	activeElement: HTMLElement;
 
 	constructor(
 		private shellService: VantageShellService,
@@ -83,7 +106,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		public deviceService: DeviceService,
 		public selfSelectService: SelfSelectService,
 		private timerService: TimerService,
-		private betaService: BetaService,
+		public betaService: BetaService,
 		private localInfoService: LocalInfoService,
 		private loggerService: LoggerService
 	) {
@@ -335,7 +358,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		this.toggleBetaProgram = event.switchValue;
 		this.sendSettingMetrics('SettingBetaProgram', event.switchValue);
 		this.betaService.setBetaStatus(this.toggleBetaProgram ? BetaStatus.On : BetaStatus.Off);
-		this.commonService.sendReplayNotification(MenuItem.MenuBetaItemChange, this.toggleBetaProgram);
+		this.commonService.sendReplayNotification(MenuItemEvent.MenuBetaItemChange, this.toggleBetaProgram);
 	}
 
 	sendMetrics(data: any) {
@@ -397,5 +420,15 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			SettingParent: 'Page.Settings'
 		};
 		this.metrics.sendAsync(interestData);
+	}
+
+	@HostListener('window: focus')
+	onFocus(): void {
+		this.activeElement?.focus();
+	}
+
+	@HostListener('window: blur')
+	onBlur(): void {
+		this.activeElement = document.activeElement as HTMLElement;
 	}
 }

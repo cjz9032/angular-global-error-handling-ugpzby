@@ -1,6 +1,7 @@
 @import "icomoon-variables";
 
 
+
 .icomoon-Active-protection {
   &:before {
     content: $icomoon-Active-protection; 
@@ -132,6 +133,11 @@
 .icomoon-dynamic {
   &:before {
     content: $icomoon-dynamic; 
+  }
+}
+.icomoon-eCourse {
+  &:before {
+    content: $icomoon-eCourse; 
   }
 }
 .icomoon-F1-F12-funciton {

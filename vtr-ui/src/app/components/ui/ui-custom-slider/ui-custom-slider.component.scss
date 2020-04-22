@@ -67,6 +67,34 @@
 			opacity: 0.4;
 		}
 
+		//And now the ticks
+		.ticks {
+			display: flex;
+			justify-content: space-between;
+			padding: 0 15px 0 13px;
+			span {
+				height: 1.8rem;
+			}
+			.tick {
+				color: $grey_dark;
+				font-size: $body;
+				position: relative;
+				display: flex;
+				justify-content: center;
+
+				&::after {
+					width: 0.2rem;
+					height: 2rem;
+					content: "";
+					background-color: $grey_light;
+					position: relative;
+					top: 60%;
+					// left: -50%;
+					z-index: -1;
+				}
+			}
+		}
+
 		input[type="range"] {
 			-webkit-appearance: none;
 			appearance: none;
@@ -124,9 +152,8 @@
 
 			&::-webkit-slider-thumb {
 				@include thumb-style();
-				// margin: 0 3px;
+				margin: 0 2px;
 				margin-top: -10px;
-				// margin-left: -2px;
 			}
 
 			&::-webkit-slider-runnable-track {
@@ -173,53 +200,5 @@
 
 			/* end mozilla browser */
 		}
-
-		// .value {
-		// 	position: relative;
-		// 	width: 100%;
-		// 	margin: 0 3px;
-		// 	top: -1px;
-		// 	left: 3px;
-
-		// 	@supports (-ms-ime-align: auto) {
-		// 		left: 4px;
-		// 	}
-
-		.bubble {
-			width: auto;
-			min-width: $thumb-size;
-			text-align: center;
-			height: 24px;
-			line-height: 24px;
-			text-align: center;
-			padding: 0 5px;
-			background: $blue-light;
-			color: #fff;
-			font-size: 12px;
-			display: inline-block;
-			position: relative;
-			// transform: translate(0%, 0);
-			border-radius: 6px;
-
-			left: 3px;
-			@supports (-ms-ime-align: auto) {
-				// left: 3px; // for extra margin added in ::-ms-thumb
-				margin: 0 3px;
-			}
-		}
-		// .bubble:before {
-		// 	content: "";
-		// 	position: absolute;
-		// 	width: 0;
-		// 	height: 0;
-		// 	border-top: 5px solid $menu_hover;
-		// 	border-left: 5px solid transparent;
-		// 	border-right: 5px solid transparent;
-		// 	top: 100%;
-		// 	left: 50%;
-		// 	margin-left: -5px;
-		// 	margin-top: -1px;
-		// }
 	}
 }
-// }

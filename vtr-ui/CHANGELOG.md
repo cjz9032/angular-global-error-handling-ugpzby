@@ -2,6 +2,86 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.21](https://bitbucket.tc.lenovo.com///compare/v1.5.20...v1.5.21) (2020-04-22)
+
+
+### Features
+
+* **dashlane:** hide dashlane in china GEO ([4de1949](https://bitbucket.tc.lenovo.com///commit/4de1949895d7f7fe4eb759f91a5658d572806603))
+* **dashlane:** hide dashlane in china GEO ([94c98d0](https://bitbucket.tc.lenovo.com///commit/94c98d0d4612ad4e0fd044494e73762e39588dc6))
+* **env:** QA now points to CMS staging ([30a8e46](https://bitbucket.tc.lenovo.com///commit/30a8e46265e86ed216a0362c1a338eee66ae62e6))
+* **env:** Vantage DEV now accesses CMS QA ([33d2ac4](https://bitbucket.tc.lenovo.com///commit/33d2ac41ce92c44c19f58d74c575568488d5f83c))
+
+
+### Bug Fixes
+
+* use ViewChild to replace document.getElementById ([b4acb45](https://bitbucket.tc.lenovo.com///commit/b4acb450513394fa7d6174196dced3d560029e51))
+* **CHS :** Make the image read "image coronet logo" ([fcd618d](https://bitbucket.tc.lenovo.com///commit/fcd618d327148397ba0f9b53888f23433ddca93e))
+* **CHS-Accessibility:** add focus to "allow" button ([39b705a](https://bitbucket.tc.lenovo.com///commit/39b705a006c1613c5d8754115eb2277143b86fd8))
+* no need to call additional translate function ([bb57f78](https://bitbucket.tc.lenovo.com///commit/bb57f7841b5d9566ff8fcc7d85b08a469712accd))
+* **Wifi security :** Append "alt" attribute ([538d59a](https://bitbucket.tc.lenovo.com///commit/538d59a431cf9d8bd975f7cc3f62f1e4ec9259d9))
+* fix translation code ([3e8aa13](https://bitbucket.tc.lenovo.com///commit/3e8aa13e7a5e158ab914d804b256d11ac1cf85f2))
+* **Wifi security-Accessibility:** In scan mode, scan to “show less” makes wrong ([50acd80](https://bitbucket.tc.lenovo.com///commit/50acd809460081af858ac599849debcd1bf63eb0))
+
+### [1.5.20](https://bitbucket.tc.lenovo.com///compare/v1.5.19...v1.5.20) (2020-04-21)
+
+
+### Bug Fixes
+
+* **protocol overall:** 1. add fallback route 2.fix 3.0 convert issue ([6af6edb](https://bitbucket.tc.lenovo.com///commit/6af6edb8ab3ec270509bd3c3faf4200d1fd53fde))
+* **protocol overall:** fix fallback route issue ([97b7fff](https://bitbucket.tc.lenovo.com///commit/97b7fffbd138ad1d9554613ffc9a77616033213e))
+
+### [1.5.19](https://bitbucket.tc.lenovo.com///compare/v1.5.18...v1.5.19) (2020-04-20)
+
+
+### Bug Fixes
+
+* **VAN-16563:** ut ([39efece](https://bitbucket.tc.lenovo.com///commit/39efece8450ab0d9654e3a5511b5e4ad693d8d03))
+* **Wifi security :** Append "h2" tag ([bb60ca3](https://bitbucket.tc.lenovo.com///commit/bb60ca3d50cca594faeaf5e3c4bce42ade5c3cbb))
+* **Wifi security :** Delete the "attr.aria-label" attribute ([0ef4da6](https://bitbucket.tc.lenovo.com///commit/0ef4da6c12711040418178ed6f76c418a23fdc21))
+* do not use legacy property ([31250ce](https://bitbucket.tc.lenovo.com///commit/31250cee568902bd97e0d8c4c71c536da6cedca1))
+* **Wifi security:** tabindex error on 'show more/show less' ([e0e00e0](https://bitbucket.tc.lenovo.com///commit/e0e00e0352ff269ae77921e3cae9f416150f87c7))
+* do not use legacy property ([5785f77](https://bitbucket.tc.lenovo.com///commit/5785f7758c437115b33727c36a5f8fcc0d79179a))
+* **Wifi security:** fix tabindex order in wifi security ([f135a41](https://bitbucket.tc.lenovo.com///commit/f135a41c18387ef4ee613c7c0552447260bcbf30))
+* **Wifi security:** tabindex error on 'show more/show less' ([9766941](https://bitbucket.tc.lenovo.com///commit/9766941ed9e95d21bcafc8ff20413e4938440bca))
+
+### [1.5.18](https://bitbucket.tc.lenovo.com///compare/v1.5.17...v1.5.18) (2020-04-17)
+
+
+### Bug Fixes
+
+* **menu:** remove segment menus and update the hide ([fae59a6](https://bitbucket.tc.lenovo.com///commit/fae59a6e8917aa461634e4d9c7b2979c3137a4c1))
+* **Wifi security:** close enable location dialog, the tab index wrong ([26f83f4](https://bitbucket.tc.lenovo.com///commit/26f83f404c50caa710097351721ff8f61216edd6))
+* **Wifi security:** tabindex error in threat locator button ([90ffcdb](https://bitbucket.tc.lenovo.com///commit/90ffcdb1936ef8d90cdab1ddbe86a35318eb7c09))
+* **Wifi Security :** Set the value of "tabindex" attribute to "-1" ([fb57c42](https://bitbucket.tc.lenovo.com///commit/fb57c4260f6bafa3ec43be1e64c78b332c38276f))
+
+### [1.5.17](https://bitbucket.tc.lenovo.com///compare/v1.5.16...v1.5.17) (2020-04-16)
+
+
+### Features
+
+* **LaunchMcAfeeBuy API:** remove 3s timeout for launchMcAfeeBuy API ([2ac5ab9](https://bitbucket.tc.lenovo.com///commit/2ac5ab961d3c914dcb1f675aba0be7e8dbbabcf9))
+
+### [1.4.21](https://bitbucket.tc.lenovo.com///compare/v1.4.20...v1.4.21) (2020-04-02)
+
+### [1.4.20](https://bitbucket.tc.lenovo.com///compare/v1.5.4...v1.4.20) (2020-04-01)
+
+### [1.4.19](https://bitbucket.tc.lenovo.com///compare/v1.4.18...v1.4.19) (2020-03-31)
+
+### [1.5.16](https://bitbucket.tc.lenovo.com///compare/v1.5.15...v1.5.16) (2020-04-15)
+
+
+### Bug Fixes
+
+* **mock:** remove async for CHS and DP in the mock service ([d40e928](https://bitbucket.tc.lenovo.com///commit/d40e928c200c31500b92f259cd7bc9d723c1bf99))
+
+### [1.5.15](https://bitbucket.tc.lenovo.com///compare/v1.5.14...v1.5.15) (2020-04-14)
+
+
+### Bug Fixes
+
+* **fix bug:** fixed mcafee link to wrong webpage ([b0a8473](https://bitbucket.tc.lenovo.com///commit/b0a8473da581c8328bca626b7ded3149c852b41f))
+
 ### [1.5.14](https://bitbucket.tc.lenovo.com///compare/v1.5.13...v1.5.14) (2020-04-13)
 
 
@@ -15,6 +95,11 @@ All notable changes to this project will be documented in this file. See [standa
 ### [1.5.13](https://bitbucket.tc.lenovo.com///compare/v1.5.12...v1.5.13) (2020-04-13)
 
 ### [1.5.12](https://bitbucket.tc.lenovo.com///compare/v1.5.11...v1.5.12) (2020-04-13)
+### [1.4.21](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.4.20...v1.4.21) (2020-04-02)
+
+### [1.4.20](https://bitbucket.tc.lenovo.com///compare/v1.4.19...v1.4.20) (2020-04-01)
+
+### [1.4.19](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.4.18...v1.4.19) (2020-03-31)
 
 
 ### Bug Fixes
@@ -93,6 +178,10 @@ All notable changes to this project will be documented in this file. See [standa
 ### [1.5.1](https://bitbucket.tc.lenovo.com///compare/v1.4.7...v1.5.1) (2020-03-23)
 
 ## [1.5.0](https://bitbucket.tc.lenovo.com///compare/v1.4.1...v1.5.0) (2020-03-12)
+* **app component:** container selector updated ([5e8c92c](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/5e8c92cfc89385224fd0206d53a07648dbc99860))
+* **app component:** patch ngbmodal to have vtr-root as the container ([6800909](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/6800909106de138e7eaaa5158790a3fcebb96bf3))
+* **dom:** move the unsafe js to angular ([c515420](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/c515420deda356882560d10631922218298c09e6))
+
 ### [1.4.18](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.4.17...v1.4.18) (2020-03-30)
 
 

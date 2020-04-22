@@ -2,16 +2,16 @@
 	<div class="widget-title" title="">
 		{{'gaming.dashboard.device.systemTools.header' | translate}}
 	</div>
-	<div class="widget-container" id="gaming_system_tools" role="article">
+	<div class="widget-container" id="gaming_system_tools" role="text">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col">
 					<ul class="system-tool-icons d-flex justify-content-around" [ngClass]="{'list-overflow-6': toolLength === 6}">
 						<li>
-							<a id="gaming_dashboard_systemtools_systemupdates" aria-label="system update" vtrMetrics
+							<a  aria-label="system update" vtrMetrics
 								[metricsItem]="'systemtools_system_update'" metricsEvent="featureClick" metricsParent="Gaming.Dashboard"
 								routerLink="/device/system-updates" tabindex="1" role="link">
-								<figure>
+								<figure id="gaming_dashboard_systemtools_systemupdates" role="img">
 									<div class="system-icon" title="">
 										<fa-icon class="icon" [icon]="['fal', 'arrow-alt-to-top']"></fa-icon>
 									</div>
@@ -23,10 +23,10 @@
 							</a>
 						</li>
 						<li *ngIf="gamingProperties.macroKeyFeature">
-							<a id="gaming_dashboard_systemtools_macrokey" aria-label="macro key" vtrMetrics
+							<a  aria-label="macro key" vtrMetrics
 								[metricsItem]="'systemtools_macro_key'" metricsEvent="featureClick" metricsParent="Gaming.Dashboard"
 								routerLink="/gaming/macrokey" tabindex="1" role="link">
-								<figure>
+								<figure id="gaming_dashboard_systemtools_macrokey" role="img">
 									<div class="system-icon" title="">
 										<fa-icon class="icon" [icon]="['fal', 'keyboard']"></fa-icon>
 									</div>
@@ -37,10 +37,10 @@
 							</a>
 						</li>
 						<li>
-							<a id="gaming_dashboard_systemtools_power" aria-label="power" vtrMetrics
+							<a  aria-label="power" vtrMetrics
 								[metricsItem]="'systemtools_power'" metricsEvent="featureClick" metricsParent="Gaming.Dashboard"
 								routerLink="/device/device-settings/power" tabindex="1" role="link">
-								<figure>
+								<figure id="gaming_dashboard_systemtools_power" role="img">
 
 									<div class="system-icon" title="">
 										<fa-icon class="icon" [icon]="['fal', 'battery-bolt']"></fa-icon>
@@ -52,10 +52,10 @@
 							</a>
 						</li>
 						<li>
-							<a id="gaming_dashboard_systemtools_displaycamera" aria-label="media" vtrMetrics
+							<a  aria-label="media" vtrMetrics
 								[metricsItem]="'systemtools_media'" metricsEvent="featureClick" metricsParent="Gaming.Dashboard" tabindex="1"
 								routerLink="/device/device-settings/display-camera" role="link">
-								<figure>
+								<figure id="gaming_dashboard_systemtools_displaycamera" role="img">
 
 									<div class="system-icon" title="">
 										<fa-icon class="icon" [icon]="['fal', 'desktop-alt']"></fa-icon>
@@ -68,10 +68,10 @@
 						</li>
 
 						<li *ngIf="showHWScanMenu">
-							<a id="gaming_dashboard_systemtools_hardware_scan" aria-label="hardware scan" vtrMetrics
+							<a aria-label="hardware scan" vtrMetrics
 								[metricsItem]="'systemtools_hardware_scan'" metricsEvent="featureClick" metricsParent="Gaming.Dashboard"
 								routerLink="/beta/hardware-scan" tabindex="1" role="link" aria-label="hardware scan">
-								<figure>
+								<figure id="gaming_dashboard_systemtools_hardware_scan" role="img">
 									<div class="system-icon" title="">
 										<fa-icon class="icon" [icon]="['fal', 'wrench']"></fa-icon>
 									</div>
@@ -83,11 +83,11 @@
 							</a>
 						</li>
 
-						<li *ngIf="gamingProperties.accessoryFeature">
-							<a id="gaming_dashboard_systemtools_legion_accessory" aria-label="legion accessory"
-							 tabindex="1" (click)="launchAccesory()"
-							  vtrMetrics [metricsItem]="'systemtools_legion_accessory'" metricsEvent="featureClick" metricsParent="Gaming.Dashboard">
-								<figure>
+						<li *ngIf="showLegionAccessory">
+							<a  aria-label="legion accessory"
+							 tabindex="1" (click)="launchAccessory()"
+							  vtrMetrics [metricsItem]="'systemtools_legion_accessory'" metricsEvent="featureClick" metricsParent="Gaming.Dashboard" role="link">
+								<figure id="gaming_dashboard_systemtools_legion_accessory" role="img">
 									<div class="system-image" title="">
 										<img class="image" [src]="'assets/images/gaming/gaming-accessory-logo.png'  | svgInline | async" />
 									</div>

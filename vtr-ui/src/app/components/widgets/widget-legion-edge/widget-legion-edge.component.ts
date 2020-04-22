@@ -25,6 +25,7 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 import { EventTypes } from '@lenovo/tan-client-bridge';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { GamingOverDriveService } from 'src/app/services/gaming/gaming-over-drive/gaming-over-drive.service';
+import { GamingThermal2 } from 'src/app/enums/gaming-thermal2.enum';
 
 @Component({
 	selector: 'vtr-widget-legion-edge',
@@ -244,8 +245,9 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	public cacheHybridModeFeature = false;
 	public cacheAutoCloseFeature = false;
 	// Version 3.2: thermal mode 2.0 & performance OC
-	public thermalModeRealStatus = 2;
-	public OCSettings = 3;
+	public thermalMode2Enum = GamingThermal2;
+	public thermalModeRealStatus = this.thermalMode2Enum.balance;
+	public OCSettings = false;
 	// use enum instead of hard code on 200319 by Guo Jing
 	public legionItemIndex = {
 		cpuOverclock: 0,
@@ -337,19 +339,15 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				}
 				if (this.gamingCapabilities.cpuOCFeature && this.gamingCapabilities.gpuOCFeature) {
 					if (this.gamingCapabilities.xtuService && this.gamingCapabilities.nvDriver) {
-						if (this.commonService.getLocalStorageValue(LocalStorageKey.CpuOCStatus) === 1 && this.commonService.getLocalStorageValue(LocalStorageKey.GpuOCStatus) === 1) {
-							this.OCSettings = 1;
-						} else {
-							this.OCSettings = 3;
-						}
+						this.OCSettings = (this.commonService.getLocalStorageValue(LocalStorageKey.CpuOCStatus) === 1) && (this.commonService.getLocalStorageValue(LocalStorageKey.GpuOCStatus) === 1);
 					}
 				} else if (this.gamingCapabilities.cpuOCFeature && !this.gamingCapabilities.gpuOCFeature) {
 					if (this.gamingCapabilities.xtuService) {
-						this.OCSettings = this.commonService.getLocalStorageValue(LocalStorageKey.CpuOCStatus);
+						this.OCSettings = this.commonService.getLocalStorageValue(LocalStorageKey.CpuOCStatus) === 1;
 					}
 				} else if (!this.gamingCapabilities.cpuOCFeature && this.gamingCapabilities.gpuOCFeature) {
 					if (this.gamingCapabilities.nvDriver) {
-						this.OCSettings = this.commonService.getLocalStorageValue(LocalStorageKey.GpuOCStatus);
+						this.OCSettings = this.commonService.getLocalStorageValue(LocalStorageKey.GpuOCStatus) === 1;
 					}
 				}
 			}
@@ -592,32 +590,32 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				this.logger.info(`Widget-LegionEdge-RenderThermalMode2OCSettings: get value from ${ this.OCSettings } to ${ res }`);
 				if (this.gamingCapabilities.cpuOCFeature && this.gamingCapabilities.gpuOCFeature) {
 					if (this.gamingCapabilities.xtuService && this.gamingCapabilities.nvDriver) {
-						this.OCSettings = res ? 1 : 3;
-						this.commonService.setLocalStorageValue(LocalStorageKey.CpuOCStatus, this.OCSettings);
-						this.commonService.setLocalStorageValue(LocalStorageKey.GpuOCStatus, this.OCSettings);
+						this.OCSettings = res;
+						this.commonService.setLocalStorageValue(LocalStorageKey.CpuOCStatus, this.OCSettings? 1 : 3);
+						this.commonService.setLocalStorageValue(LocalStorageKey.GpuOCStatus, this.OCSettings? 1 : 3);
 					} else {
-						this.OCSettings = 3;
+						this.OCSettings = false;
 					}
 				} else if (this.gamingCapabilities.cpuOCFeature && !this.gamingCapabilities.gpuOCFeature) {
 					if (this.gamingCapabilities.xtuService) {
-						this.OCSettings = res ? 1 : 3;
-						this.commonService.setLocalStorageValue(LocalStorageKey.CpuOCStatus, this.OCSettings);
+						this.OCSettings = res;
+						this.commonService.setLocalStorageValue(LocalStorageKey.CpuOCStatus, this.OCSettings? 1 : 3);
 					} else {
-						this.OCSettings = 3;
+						this.OCSettings = false;
 					}
 				} else if (!this.gamingCapabilities.cpuOCFeature && this.gamingCapabilities.gpuOCFeature) {
 					if (this.gamingCapabilities.nvDriver) {
-						this.OCSettings = res ? 1 : 3;
-						this.commonService.setLocalStorageValue(LocalStorageKey.GpuOCStatus, this.OCSettings);
+						this.OCSettings = res;
+						this.commonService.setLocalStorageValue(LocalStorageKey.GpuOCStatus, this.OCSettings? 1 : 3);
 					} else {
-						this.OCSettings = 3;
+						this.OCSettings = false;
 					}
 				} else {
-					this.OCSettings = 3;
+					this.OCSettings = false;
 				}
 			});
 		} catch (error) {
-			this.OCSettings = 3;
+			this.OCSettings = false;
 			this.logger.error('Widget-LegionEdge-RenderThermalMode2OCSettings: get fail; Error message: ', error.message);
 			throw new Error(error.message);
 		}

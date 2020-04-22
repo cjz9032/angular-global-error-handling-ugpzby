@@ -197,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "警告！",
                     "description": "超频设置不当可能会导致不可逆转的硬件损坏。",
-                    "proceed": "继续"
+                    "proceed": "继续",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },
@@ -1444,22 +1447,34 @@
                 "description": "在此部分中可自动优化或手动对音频设置进行全面配置，例如 Dolby 设置、麦克风等。",
                 "audioSmartsettings": {
                     "title": "音频智能设置",
-                    "subtitle": "基于应用程序的设置",
-                    "description": "根据您使用的不同应用程序自动调节音频设置。",
                     "dolby": {
-                        "title": "自动 Dolby 音频设置",
-                        "tooltip": "自动 Dolby 音频设置可将 Dolby 音频设置配置为适用于您正在使用的不同应用程序的适当模式，从而提升音频体验。",
+                        "title": "Dolby 音频",
+                        "description": "从以下位置选择所需的模式。您还可以选择选项\"自动优化音频：\"。启用此功能后，Dolby 音频会根据您处于的不同模式自动为您选择最佳音频效果。",
                         "options": {
                             "dynamic": "动态",
-                            "movie": "影片",
+                            "movie": "电影",
                             "music": "音乐",
                             "games": "游戏",
                             "voip": "语音"
+                        },
+                        "automaticAudioCheckboxText": "自动音频优化",
+                        "automaticAudioMode": {
+                            "voIPMode": {
+                                "checkboxText": "自动优化 VOIP 音频",
+                                "tooltip": "当您拨打 VoIP 通话时（使用 Skype、Teams、微信等），此功能将生效。 启用后，Dolby 音频会自动更改为语音模式，从而获得更好的语音质量。"
+                            },
+                            "entertainmentMode": {
+                                "checkboxText": "自动优化用于娱乐的音频",
+                                "tooltip": "选择此选项后，Dolby 音频会根据您使用的应用自动调整模式：",
+                                "description1": "如果您正在使用 iTunes 等应用，它将更改为\"音乐\"模式。",
+                                "description2": "如果您正在使用 Youtube 等应用，它将更改为\"电影\"模式。",
+                                "description3": "如果您使用的是游戏应用，它将相应地更改为游戏模式。"
+                            }
                         }
                     },
-                    "voip": {
-                        "title": "自动 VoIP 音频优化",
-                        "tooltip": "在 VoIP 通话中自动切换到 Dolby 语音模式以实现清晰、连续的语音质量。"
+                    "eCourse": {
+                        "title": "网课模式",
+                        "tooltip": "当教师和学生之间存在语音交互时，此功能可用于在线课程。启用后，选择此选项后，Dolby 音频将自动更改为 \"语音\"模式。同时，将打开波束成形、声回波消除和键盘噪声抑制等功能，以提高语音输入。"
                     }
                 },
                 "microphone": {
@@ -1674,15 +1689,17 @@
                         "hideAdvSettings": "隐藏高级设置",
                         "description": "键盘的首行提供以下两项功能。选择您需要的功能：",
                         "subSection": {
-                            "description": "要切换上述两个功能，请按 Fn+Esc。",
+                            "description": "您也可以通过按 Fn+Esc 切换两个功能。刷新需要几秒钟时间。",
                             "radioButton": {
                                 "sFunKey": "特殊功能",
-                                "fnKey": "F1-F12 键的功能"
+                                "fnKey": "F1 - F12 键的功能"
                             }
                         },
                         "subSectionTwo": {
                             "title": "反转键盘首行默认功能",
-                            "description": "启用时，键盘首行功能将更改为与出厂设置相反的功能。重新启动计算机使更改生效。"
+                            "description": "启用时，键盘首行功能将更改为与出厂设置相反的功能。重新启动计算机使更改生效。",
+                            "caption": "起作用的主要功能：",
+                            "tooltipText": "要使用默认的主要功能，请按首行键。对于非主要功能，请按 Fn+首行键。或者，您可以先按 Fn+Esc，然后再按首行键。"
                         },
                         "subSectionThree": {
                             "title": "如何使用 Fn 组合键",
@@ -1877,7 +1894,7 @@
                 "zeroTouchLoginForIdea": {
                     "title": "红外摄像头自动登录",
                     "caption": "此功能可让您通过自动唤醒或登录计算机来提高工作效率。要使用此功能，您需要在 Windows Hello 中注册面部信息。",
-                    "tooltip": "当您在计算机前面或接近计算机时（在 1.2 或 1.5 米内），此功能可让您能够在计算机识别您的面部后自动登录系统。如果您是在室外而不是在办公室中，则需要离计算机更近，且唤醒所需的时间更长。<br>最大检测距离因传感器功能而异。要了解详细信息，请参阅您计算机附带的<i>《用户指南》</i>。"
+                    "tooltip": "当您在计算机前面或接近计算机时（在 1.2 或 1.5 米内），此功能可让您能够在计算机识别您的面部后自动登录系统。如果您是在室外而不是在办公室中，则需要离计算机更近，且唤醒所需的时间更长。<br>最大检测距离因传感器功能而异。要了解详细信息，请参阅您计算机附带的《用户指南》。"
                 },
                 "zeroTouchLock": {
                     "title": "自动锁定屏幕",
@@ -1964,9 +1981,7 @@
                     "description2": "该功能使用传感器和摄像头来检测您的存在。然而，该功能不会收集任何个人数据。",
                     "description3": "1.要使用上述功能，请将计算机屏幕调整至适当的角度，以便计算机能够识别您的面部。",
                     "description4": "2.在以下情况下，不支持上述功能：",
-                    "description5a1": "a. 您的计算机处于帐篷模式、平板电脑模式、站立模式或分离模式。有关计算机支持的模式，请参阅计算机附带的",
-                    "description5a2": "《用户指南》",
-                    "description5a3": "。",
+                    "description5a": "a. 您的计算机处于帐篷模式、平板电脑模式、站立模式或分离模式。有关计算机支持的模式，请参阅计算机随附的《用户指南》。",
                     "description5b": "b. 您的计算机处于休眠模式或已关机。",
                     "description6": "3. 如果在计算机上启用飞行模式，则将禁用这些功能部件。",
                     "description7": "准确性随身体大小、姿势和移动频率而变化。如果您的计算机被意外锁定，请调整灵敏度栏以提高准确性。"
@@ -2049,12 +2064,59 @@
             "superResolution": {
                 "heading": "智能媒体",
                 "title": "提高视频分辨率",
-                "desc": "<p><label>此功能通过提高视频分辨率来改善视频播放体验。尤其在视频分辨率较低时，此功能十分有效。</label></p> <p style='margin-top:4px;'><label>此功能可能会影响电池寿命、电池温度并产生噪音。请不要在直流电模式下使用。否则，会加快耗电速度并缩短电池寿命。</label></p>",
-                "tooltip": "此功能仅适用于：<br>Windows Media player",
+                "desc": "<p><label>此功能通过提高视频分辨率来改善视频播放的体验。特别是在视频分辨率较差时，其效果尤为明显。</label></p> <p style='margin-top:4px;'><label>此功能可能会影响电池寿命、电池温度并产生噪音。请不要在直流电模式（电池模式）下使用。否则，会加快耗电速度并缩短电池寿命。</label></p>",
+                "tooltip": "此功能仅适用于以下视频播放器：<br>Windows Media Player<br>Chrome<br>电影和电视<br>PotPlayer<br>GOM player<br>基于网络浏览器的播放器（例如 Chrome）<br><br>有关如何在 PotPlayer 和 GOM player 上启用此功能的说明，请参阅计算机随附的《用户指南》。",
                 "note": {
                     "description": "此功能在以下情况下无效：",
-                    "description1": "计算机未连接到交流电源。",
-                    "description2": "已启用省电模式。"
+                    "description1": "已启用省电模式。",
+                    "description2": "CPU 温度过高。"
+                }
+            },
+            "antiTheft": {
+                "heading": "智能感知",
+                "title": "智能运动警报",
+                "desc": "<p><label>启用此功能后，当屏幕锁定并检测到运动时（尤其是在公共场所），设备将发出蜂鸣声。</label></p> <p style='margin-top:4px;'><label>要消除警报，请输入正确的密码或通过 Windows Hello 登录。</label></p>",
+                "note": {
+                    "description": "成功登录系统后，此功能将自动关闭。需要再次启用此功能才能使用。"
+                },
+                "alarm": {
+                    "title": " 警报将持续",
+                    "option1": "10 秒",
+                    "option2": "20 秒",
+                    "option3": "30 秒",
+                    "option4": "1 分钟",
+                    "option5": "永不停止"
+                },
+                "allowCamera": {
+                    "title": "拍照",
+                    "describe": "启用此功能后，如果屏幕被锁定，摄像头在检测到任何运动时会自动拍照。此数据将在您的设备上进行本地处理。Lenovo 不会访问或使用它。",
+                    "checkBoxText": "启用此功能"
+                },
+                "cameraPrivacy": {
+                    "describe": "Lenovo Vantage 摄像头隐私模式已开启。复选框的功能将不起作用。",
+                    "linkText": "转到摄像头隐私模式以将其关闭"
+                },
+                "authorizedAccess": {
+                    "describe": "Lenovo Vantage 无法访问摄像头。复选框的功能将不起作用。",
+                    "linkText": "转到 Windows 设置以授予访问权限"
+                },
+                "photo": {
+                    "title": "运动中拍摄的照片数量",
+                    "tooltip": "检测到运动时，计算机上的摄像头会自动激活进行拍照。每 2 秒钟拍摄一次照片，照片将保存到本地存储中。",
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
+                },
+                "showPhoto": {
+                    "title": "照片已保存到本地：",
+                    "link": "查看照片"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Lenovo Vantage 无法访问文件系统。",
+                    "link": "转到 Windows 设置以授予访问权限"
                 }
             },
             "voice": {
@@ -2088,53 +2150,6 @@
                     "btnText": "确定",
                     "title": "安装失败",
                     "desc": "若要使用联想语音，请稍后重试。"
-                }
-            },
-            "antiTheft": {
-                "heading": "Intelligent Sensing",
-                "title": "Smart Motion Alert",
-                "desc": "<p><label>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</label></p> <p style='margin-top:4px;'><label>To dismiss the alarm, enter the correct password or log in by Windows Hello.</label></p>",
-                "note": {
-                    "description": "Once you log in the system successfully, this feature will be turned off automatically. You need to enable it again to use it."
-                },
-                "alarm": {
-                    "title": " THE ALARM WILL LAST FOR",
-                    "option1": "10 seconds",
-                    "option2": "20 seconds",
-                    "option3": "30 seconds",
-                    "option4": "1 minute",
-                    "option5": "Never stop"
-                },
-                "allowCamera": {
-                    "title": "TATING PHOTOS",
-                    "describe": "When enabling this feature, the camera takes photos automatically when detecting any movement if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
-                    "checkBoxText": "Enable this feature"
-                },
-                "cameraPrivacy": {
-                    "describe": "Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
-                    "linkText": "Go to Camera privacy mode to turn it off"
-                },
-                "authorizedAccess": {
-                    "describe": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
-                    "linkText": "Go to Windows Settings to give access"
-                },
-                "photo": {
-                    "title": "THE NUMBER OF PHOTOS TAKEN DURING THE MOVEMENT",
-                    "tooltip": "The camera on your computer automatically activates to take pictures when movements are detected. Pictures are taken every 2 seconds and are saved to your local storage.",
-                    "option1": 5,
-                    "option2": 10,
-                    "option3": 15,
-                    "option4": 20,
-                    "option5": 25,
-                    "option6": 30
-                },
-                "showPhoto": {
-                    "title": "PHOTOS HAVE BEEN:",
-                    "link": "View photos"
-                },
-                "fileAuthorizationTips": {
-                    "content": "Lenovo Vantage doesn't have access to the file system.",
-                    "link": "Go to Windows Settings to give access"
                 }
             }
         }
@@ -2703,7 +2718,7 @@
         },
         "question1": {
             "title": "备份和恢复文件",
-            "description": "<div>    <div class='faqInFs4Fb'>        备份和恢复文件    </div>    <hr />    <div class='faqInMb7'>        进行备份总是有益无害。将文件备份到其他驱动器上以防止源文件发生意外情况。    </div>    <div class='faqInFs3Fb'>        设置您的备份    </div>    <hr />    <div class='mb-5'>        选择<span class='faqInFb'>开始</span>按钮，然后选择<span class='faqInFb'>设置</span> > <span class='faqInFb'>更新和安全</span> > <span class='faqInFb'>备份</span> > <span class='faqInFb'>添加驱动器</span>，最后选择外部驱动器或网络位置进行备份。    </div>    <div class='mb-5'>        <img src='assets/images/qa/zh-hans/1.1.jpg' />    </div>    <div class='mb-5'>        准备就绪。我们每个小时都会对您的用户文件夹（C:\\\\Users\\\\username）中的所有文件进行备份。要更改备份的文件对象或备份频率，请转至<span class='faqInFb'>更多选项</span>。    </div>    <div class='faqInFs3Fb'>        恢复文件    </div>    <div class='mb-5'>        如果丢失了重要文件或文件夹，可通过以下方法进行恢复：    </div>    <div>        <div class='mb-3'>1.在任务栏的搜索框中输入<span class='faqInFb'>还原文件</span>，然后选择<span class='faqInFb'>通过文件历史记录还原您的文件</span>。</div>        <div class='mb-3'>2.查找所需的文件，然后使用箭头查看所有版本</div>        <div class='mb-3'>3.找到所需版本后，选择<span class='faqInFb'>还原</span>将其保存到原始位置。要将其保存到其他位置，请按住（或右键单击）<span class='faqInFb'>还原</span>，选择<span class='faqInFb'>还原为</span>，然后选择一个新的位置。</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        备份和恢复文件    </div>    <hr />    <div class='faqInMb7'>        进行备份总是有益无害。将文件备份到其他驱动器上以防止源文件发生意外情况。    </div>    <div class='faqInFs3Fb'>        设置您的备份    </div>    <hr />    <div class='mb-5'>        选择<span class='faqInFb'>开始</span>按钮，然后选择<span class='faqInFb'>设置</span> > <span class='faqInFb'>更新和安全</span> > <span class='faqInFb'>备份</span> > <span class='faqInFb'>添加驱动器</span>，最后选择外部驱动器或网络位置进行备份。    </div>    <div class='mb-5'>        <img src='assets/images/qa/zh-hans/1.1.jpg' />    </div>    <div class='mb-5'>        准备就绪。我们每个小时都会对您的用户文件夹（C:\\Users\\您的用户名）中的所有文件进行备份。要更改备份的文件对象或备份频率，请转至<span class='faqInFb'>更多选项</span>。    </div>    <div class='faqInFs3Fb'>        恢复文件    </div>    <div class='mb-5'>        如果丢失了重要文件或文件夹，可通过以下方法进行恢复：    </div>    <div>        <div class='mb-3'>1.在任务栏的搜索框中输入<span class='faqInFb'>还原文件</span>，然后选择<span class='faqInFb'>通过文件历史记录还原您的文件</span>。</div>        <div class='mb-3'>2.查找所需的文件，然后使用箭头查看所有版本</div>        <div class='mb-3'>3.找到所需版本后，选择<span class='faqInFb'>还原</span>将其保存到原始位置。要将其保存到其他位置，请按住（或右键单击）<span class='faqInFb'>还原</span>，选择<span class='faqInFb'>还原为</span>，然后选择一个新的位置。</div>    </div></div>",
             "para1": {
                 "line1": "进行备份总是有益无害。",
                 "line2": "​将文件备份到其他驱动器上以防止源文件发生意外情况。​"
@@ -3084,14 +3099,14 @@
         },
         "gaming": {
             "gamingDescription": "Vantage 的游戏版本能让您轻松改善游戏体验。除常规设置外，主要功能包括（在某些系统上可用）：",
-			"gamingFeature1": "-计算机状态监控",
-			"gamingFeature2": "-性能模式和超频",
-			"gamingFeature3": "-灯光",
-			"gamingFeature4": "-网络增强",
-			"gamingFeature5": "-自动关闭",
-			"gamingOnly": "游戏",
-			"gamingAndWork": "游戏和工作",
-			"nonGaming": "非游戏"
+            "gamingFeature1": "-计算机状态监控",
+            "gamingFeature2": "-性能模式和超频",
+            "gamingFeature3": "-灯光",
+            "gamingFeature4": "-网络增强",
+            "gamingFeature5": "-自动关闭",
+            "gamingOnly": "游戏",
+            "gamingAndWork": "游戏和工作",
+            "nonGaming": "非游戏"
         }
     },
     "settings": {
@@ -3115,7 +3130,8 @@
         "settingsNotes": "请重新启动此应用程序，以确保所有更改都生效。",
         "betaSettingTitle": "Beta 程序",
         "betaProgram": "Beta 程序",
-        "betaSettingDescription": "试用我们正在开发的最新功能。"
+        "betaSettingDescription": "试用我们正在开发的最新功能。",
+        "betaSettingNewDescription": "我们很高兴邀请您加入 Smart Performance 的测试版计划。它可以通过以下方式帮助提高电脑的性能：<br/><ul class='pl-4'><li>主动诊断错误并优化设置。</li><li>通过网络和浏览器优化提高因特网性能。</li><li>在不使用现有反病毒程序的情况下执行快速扫描和修复。</li></ul>"
     },
     "modernPreload": {
         "cancel": "取消",
@@ -3285,7 +3301,8 @@
             "wireless": "无线"
         },
         "warningMessage": "请记住，如果系统进入睡眠或休眠状态，则测试将被取消",
-        "refreshMessage": "刷新可能需要一些时间，因为它需要再次加载所有组件"
+        "refreshMessage": "刷新可能需要一些时间，因为它需要再次加载所有组件",
+        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3878,7 +3895,8 @@
                 "results": "Results:",
                 "status": "Status"
             }
-        }
+        },
+        "runningWell": "PC is running well"
     },
     "homeSecurity": {
         "title": "Connected Home Security",
@@ -4040,8 +4058,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "左箭头",
+            "rightArrow": "右箭头"
         }
     },
     "dcc": {

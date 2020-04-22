@@ -215,6 +215,8 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		this.actionSubscription = this.activatedRoute.queryParamMap.subscribe((params: ParamMap) => {
 			if (params.has('action') && this.activatedRoute.snapshot.queryParams.action === 'licenseagreement') {
 				this.licensesService.openLicensesAgreement();
+			} else if (params.has('action') && this.activatedRoute.snapshot.queryParams.action === 'feedback') {
+				this.feedbackService.openFeedbackModal();
 			}
 		});
 	}

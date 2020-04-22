@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA, Pipe, Component } from '@angular/core';
 import { PageSmartAssistComponent } from './page-smart-assist.component';
-import { RouterTestingModule } from "@angular/router/testing";
-import { DeviceService } from "src/app/services/device/device.service";
+import { RouterTestingModule } from '@angular/router/testing';
+import { DeviceService } from 'src/app/services/device/device.service';
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { CommonService } from 'src/app/services/common/common.service';
@@ -21,6 +21,7 @@ import { IntelligentSecurity } from 'src/app/data-models/smart-assist/intelligen
 import { SmartAssistCache } from 'src/app/data-models/smart-assist/smart-assist-cache.model';
 import { HsaIntelligentSecurityResponse } from 'src/app/data-models/smart-assist/hsa-intelligent-security.model/hsa-intelligent-security.model';
 import { AntiTheftResponse } from 'src/app/data-models/antiTheft/antiTheft.model';
+import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 
 
 describe('Component: PageSmartAssistComponent', () => {
@@ -50,7 +51,7 @@ describe('Component: PageSmartAssistComponent', () => {
 		                IntelligentSecurity
 		            ]
 		        }).compileComponents();
-		    })); 
+		    }));
 
 		beforeEach(() => {
 			fixture = TestBed.createComponent(
@@ -69,7 +70,7 @@ describe('Component: PageSmartAssistComponent', () => {
 		expect(component).toBeDefined()
 	});
 
-	it("getHPDAdvancedSetting", () => {
+	it('getHPDAdvancedSetting', () => {
 		smartAssistService = TestBed.get(SmartAssistService);
 		smartAssistService.isShellAvailable = true;
 
@@ -79,51 +80,45 @@ describe('Component: PageSmartAssistComponent', () => {
 		}
 
 		const spy = spyOn(
-			smartAssistService, 
-			"getHPDAdvancedSetting"
+			smartAssistService,
+			'getHPDAdvancedSetting'
 		).and.returnValue(Promise.resolve(res));
 
 		component.getHPDAdvancedSetting();
 		expect(smartAssistService.getHPDAdvancedSetting).toHaveBeenCalled();
 	});
 
-	it("getAntiTheftStatus", () => {
+	it('getSuperResolutionStatus', () => {
 		smartAssistService = TestBed.get(SmartAssistService);
 		smartAssistService.isShellAvailable = true;
-		const res: AntiTheftResponse = {
-			available: true, 
+		const res: FeatureStatus = {
+			available: true,
 			status: true,
-			isSupportPhoto:true,
-			cameraPrivacyState:true,
-			authorizedAccessState:true,
-			photoAddress:"",
-			alarmOften:  0, 
-			photoNumber:  0,
+			permission:true,
+			isLoading:true
 		}
 		const spy = spyOn(
-			smartAssistService, 
-			"getAntiTheftStatus"
+			smartAssistService,
+			'getSuperResolutionStatus'
 		).and.returnValue(Promise.resolve(res));
-
-		component.getAntiTheftStatus();
-		expect(smartAssistService.getAntiTheftStatus).toHaveBeenCalled();
+		component.getSuperResolutionStatus();
+		expect(smartAssistService.getSuperResolutionStatus).toHaveBeenCalled();
 	});
 
-
-	it("setHPDAdvancedSetting", () => {
+	it('setHPDAdvancedSetting', () => {
 		smartAssistService = TestBed.get(SmartAssistService);
 		smartAssistService.isShellAvailable = true;
 
 		const spy = spyOn(
-			smartAssistService, 
-			"setHPDAdvancedSetting"
+			smartAssistService,
+			'setHPDAdvancedSetting'
 		).and.returnValue(Promise.resolve(true));
 
 		component.setHPDAdvancedSetting('zeroTouchLogin', true);
 		expect(smartAssistService.setHPDAdvancedSetting).toHaveBeenCalled();
 	});
 
-	it("getHsaIntelligentSecurityStatus", () => {
+	it('getHsaIntelligentSecurityStatus', () => {
 		smartAssistService = TestBed.get(SmartAssistService);
 		smartAssistService.isShellAvailable = true;
 
@@ -136,15 +131,15 @@ describe('Component: PageSmartAssistComponent', () => {
 		}
 
 		const spy = spyOn(
-			smartAssistService, 
-			"getHsaIntelligentSecurityStatus"
+			smartAssistService,
+			'getHsaIntelligentSecurityStatus'
 		).and.returnValue(Promise.resolve(res));
 
 		component.getHsaIntelligentSecurityStatus();
 		expect(smartAssistService.getHsaIntelligentSecurityStatus).toHaveBeenCalled();
 	});
 
-	it("onZeroTouchLockDistanceSensitivityAdjustToggle", () => {
+	it('onZeroTouchLockDistanceSensitivityAdjustToggle', () => {
 		smartAssistService = TestBed.get(SmartAssistService);
 		smartAssistService.isShellAvailable = true;
 
@@ -152,8 +147,8 @@ describe('Component: PageSmartAssistComponent', () => {
 		component.hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust = true;
 
 		const spy = spyOn(
-			smartAssistService, 
-			"setZeroTouchLockDistanceSensitivityAutoAdjust"
+			smartAssistService,
+			'setZeroTouchLockDistanceSensitivityAutoAdjust'
 		).and.returnValue(Promise.resolve(0));
 
 		const para = {
@@ -164,54 +159,33 @@ describe('Component: PageSmartAssistComponent', () => {
 		expect(smartAssistService.setZeroTouchLockDistanceSensitivityAutoAdjust).toHaveBeenCalled();
 	});
 
-	it("SetZeroTouchLockDistanceSensitivity", () => {
+	it('SetZeroTouchLockDistanceSensitivity', () => {
 		smartAssistService = TestBed.get(SmartAssistService);
 		smartAssistService.isShellAvailable = true;
 
 		const spy = spyOn(
-			smartAssistService, 
-			"setZeroTouchLockDistanceSensitivity"
+			smartAssistService,
+			'setZeroTouchLockDistanceSensitivity'
 		).and.returnValue(Promise.resolve(1));
 
-		const para = {
-			switchValue: false,
-		}
-
-		component.SetZeroTouchLockDistanceSensitivity(para);
+		component.SetZeroTouchLockDistanceSensitivity(1);
 		expect(smartAssistService.setZeroTouchLockDistanceSensitivity).toHaveBeenCalled();
 	});
 
-	it("SetZeroTouchLockDistanceSensitivity", () => {
+	it('startMonitorHsaIntelligentSecurityStatus', () => {
 		smartAssistService = TestBed.get(SmartAssistService);
 		smartAssistService.isShellAvailable = true;
 
 		const spy = spyOn(
-			smartAssistService, 
-			"setZeroTouchLockDistanceSensitivity"
-		).and.returnValue(Promise.resolve(1));
-
-		const para = {
-			switchValue: false,
-		}
-
-		component.SetZeroTouchLockDistanceSensitivity(para);
-		expect(smartAssistService.setZeroTouchLockDistanceSensitivity).toHaveBeenCalled();
-	});
-
-	it("startMonitorHsaIntelligentSecurityStatus", () => {
-		smartAssistService = TestBed.get(SmartAssistService);
-		smartAssistService.isShellAvailable = true;
-
-		const spy = spyOn(
-			smartAssistService, 
-			"startMonitorHsaIntelligentSecurityStatus"
+			smartAssistService,
+			'startMonitorHsaIntelligentSecurityStatus'
 		).and.returnValue(Promise.resolve(true));
 
 		component.startMonitorHsaIntelligentSecurityStatus();
 		expect(smartAssistService.startMonitorHsaIntelligentSecurityStatus).toHaveBeenCalled();
 	});
 
-	it("hsaIntelligentSecurityChange", () => {
+	it('hsaIntelligentSecurityChange', () => {
 		const jsonData = {
 			capacity: true,
 			capability: 2047,
@@ -221,33 +195,33 @@ describe('Component: PageSmartAssistComponent', () => {
 		}
 
 		const spy = spyOn<any>(
-			component, 
-			"hsaIntelligentSecurityChange"
+			component,
+			'hsaIntelligentSecurityChange'
 		);
 
 		component.hsaIntelligentSecurityChange(jsonData);
 		expect(spy).toHaveBeenCalled();
 	});
 
-	it("onResetDefaultSettings", () => {
+	it('onResetDefaultSettings', () => {
 		smartAssistService = TestBed.get(SmartAssistService);
 		smartAssistService.isShellAvailable = true;
 
 		const spy = spyOn(
-			smartAssistService, 
-			"resetHSAHPDSetting"
+			smartAssistService,
+			'resetHSAHPDSetting'
 		).and.returnValue(Promise.resolve(0));
 
 		const spy2 = spyOn(
-			smartAssistService, 
-			"resetHPDSetting"
+			smartAssistService,
+			'resetHPDSetting'
 		).and.returnValue(Promise.resolve(true));
-		
+
 		component.intelligentSecurity = new IntelligentSecurity();
 		component.intelligentSecurity.isZeroTouchLockFacialRecoVisible = true;
 		const spy3 = spyOn(
-			smartAssistService, 
-			"resetFacialRecognitionStatus"
+			smartAssistService,
+			'resetFacialRecognitionStatus'
 		).and.returnValue(Promise.resolve(true));
 
 		component.onResetDefaultSettings(0);
@@ -255,37 +229,37 @@ describe('Component: PageSmartAssistComponent', () => {
 		expect(smartAssistService.resetHPDSetting).toHaveBeenCalled();
 		expect(smartAssistService.resetFacialRecognitionStatus).toHaveBeenCalled();
 	});
-	
+
 	it('should call onZeroTouchLockFacialRecoChange', () => {
 		component.intelligentSecurity = new IntelligentSecurity();
 		// component.smartAssistCache = new SmartAssistCache();
-		let spy = spyOn(smartAssistService, 'setZeroTouchLockFacialRecoStatus').and.returnValue(Promise.resolve(true));
+		const spy = spyOn(smartAssistService, 'setZeroTouchLockFacialRecoStatus').and.returnValue(Promise.resolve(true));
 		component.onZeroTouchLockFacialRecoChange(true);
 		expect(spy).toHaveBeenCalled();
 	});
 
 	it('should call getFacialRecognitionStatus', () => {
 		component.intelligentSecurity = new IntelligentSecurity();
-		
-		let spy = spyOn(smartAssistService, 'getZeroTouchLockFacialRecoStatus').and.returnValue(Promise.resolve(true));
+
+		const spy = spyOn(smartAssistService, 'getZeroTouchLockFacialRecoStatus').and.returnValue(Promise.resolve(true));
 		component.getFacialRecognitionStatus();
 		expect(spy).toHaveBeenCalled();
 	});
 
-	it('should call onVisibilityChanged', () => {		
-		let spy = spyOn<any>(component, 'getFacialRecognitionStatus');
+	it('should call onVisibilityChanged', () => {
+		const spy = spyOn<any>(component, 'getFacialRecognitionStatus');
 		component.onVisibilityChanged();
 		expect(spy).toHaveBeenCalled();
 	});
 
 	it('should call onMouseEnterEvent', () => {
-		let spy = spyOn<any>(component, 'getFacialRecognitionStatus');
+		const spy = spyOn<any>(component, 'getFacialRecognitionStatus');
 		component.onMouseEnterEvent();
 		expect(spy).toHaveBeenCalled();
 	});
 
 	it('should call permissionChanged', () => {
-		let spy = spyOn<any>(component, 'getFacialRecognitionStatus');
+		const spy = spyOn<any>(component, 'getFacialRecognitionStatus');
 		component.permissionChanged();
 		expect(spy).toHaveBeenCalled();
 	});

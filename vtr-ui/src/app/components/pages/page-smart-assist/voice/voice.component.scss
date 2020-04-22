@@ -16,11 +16,24 @@ ul{
 	height: 3.8rem;
 	border-radius: 25rem;
 	color: $light;
-	background: linear-gradient(270deg, #4980FC 0%, #2E62D9 100%);
+	background: transparent $gradient_blue 0% 0% no-repeat padding-box;
 	font-size: $fontsize_xs;
 	font-weight: $weight_bold;
 	border: none;
 	margin-top: 0.5rem;
+	position: relative;
+
+	&:hover {
+		background: $blue_gradient;
+	}
+
+	&:focus {
+		outline: 0;
+		box-shadow: none;
+		&::after {
+			@include button-outline-blue;
+		}
+	}
 }
 
 // ::ng-deep .vtr-ui-switch-row .white-theme {

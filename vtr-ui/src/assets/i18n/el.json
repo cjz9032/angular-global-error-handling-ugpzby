@@ -197,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "Προειδοποίηση!",
                     "description": "Τυχόν ακατάλληλες ρυθμίσεις του στοιχείου Υπερχρονισμού μπορεί να οδηγήσουν σε μη αναστρέψιμη βλάβη υλικού.",
-                    "proceed": "ΣΥΝΕΧΕΙΑ"
+                    "proceed": "ΣΥΝΕΧΕΙΑ",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },
@@ -1443,23 +1446,35 @@
                 "subtitle": "Ρυθμίσεις ήχου",
                 "description": "Αυτή η ενότητα σας επιτρέπει να βελτιστοποιείτε αυτόματα ή ναρυθμίζετε απολύτως χειροκίνητα τις ρυθμίσεις ήχου, όπως ρυθμίσεις Dolby, μικρόφωνο κ.λπ.",
                 "audioSmartsettings": {
-                    "title": "Έξυπνες ρυθμίσεις ήχου",
-                    "subtitle": "ΡΥΘΜΙΣΕΙΣ ΒΑΣΕΙ ΕΦΑΡΜΟΓΗΣ",
-                    "description": "Προσαρμόστε αυτόματα τις ρυθμίσεις ήχου ανάλογα με τις διάφορες εφαρμογές που χρησιμοποιείτε.",
+                    "title": "Audio smart settings",
                     "dolby": {
-                        "title": "Αυτόματες ρυθμίσεις ήχου Dolby",
-                        "tooltip": "Οι Αυτόματες ρυθμίσεις ήχου Dolby διαμορφώνουν τις ρυθμίσεις ήχου Dolbyμε τον κατάλληλο τρόπο για διαφορετικές εφαρμογές που χρησιμοποιείτε, ώστε να βελτιώσετε την εμπειρία ήχου σας.",
+                        "title": "Dolby audio",
+                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
-                            "dynamic": "ΔΥΝΑΜΙΚΟ",
-                            "movie": "ΤΑΙΝΙΑ",
-                            "music": "ΜΟΥΣΙΚΗ",
-                            "games": "ΠΑΙΧΝΙΔΙ",
-                            "voip": "ΦΩΝΗ"
+                            "dynamic": "DYNAMIC",
+                            "movie": "MOVIE",
+                            "music": "MUSIC",
+                            "games": "GAME",
+                            "voip": "VOICE"
+                        },
+                        "automaticAudioCheckboxText": "Automatic audio optimization for",
+                        "automaticAudioMode": {
+                            "voIPMode": {
+                                "radioText": "VoIP",
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                            },
+                            "entertainmentMode": {
+                                "radioText": "Entertainment",
+                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
+                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
+                            }
                         }
                     },
-                    "voip": {
-                        "title": "Αυτόματη βελτιστοποίηση ήχου για VoIP",
-                        "tooltip": "Αυτόματη μετάβαση στην κατάσταση λειτουργίας Dolby Voice κατά τη διάρκεια κλήσεων VoIP για καθαρή, σταθερή ποιότητα φωνής."
+                    "eCourse": {
+                        "title": "Interactive E-course mode",
+                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
                     }
                 },
                 "microphone": {
@@ -1674,15 +1689,17 @@
                         "hideAdvSettings": "ΑΠΟΚΡΥΨΗ ΡΥΘΜΙΣΕΩΝ ΓΙΑ ΠΡΟΧΩΡΗΜΕΝΟΥΣ",
                         "description": "Η επάνω σειρά του πληκτρολογίου παρέχει τις ακόλουθες δύο λειτουργίες. Επιλέξτε αυτήν που θέλετε:",
                         "subSection": {
-                            "description": "Για να αλλάξετε τις δύο παραπάνω λειτουργίες, πατήστε Fn+Esc.",
+                            "description": "Μπορείτε επίσης να αλλάξετε τις δύο λειτουργίες πιέζοντας Fn+Esc. Η ανανέωση θα διαρκέσει αρκετά δευτερόλεπτα.",
                             "radioButton": {
-                                "sFunKey": "ΕΙΔΙΚΗ ΛΕΙΤΟΥΡΓΙΑ",
-                                "fnKey": "ΛΕΙΤΟΥΡΓΙΑ F1-F12"
+                                "sFunKey": "Ειδική λειτουργία",
+                                "fnKey": "Λειτουργία F1-F12"
                             }
                         },
                         "subSectionTwo": {
                             "title": "Αντιστροφή της προεπιλεγμένης κύριας λειτουργίας",
-                            "description": "Όταν είναι ενεργοποιημένη, η προεπιλεγμένη κύρια λειτουργία θα αλλάξει από τις εργοστασιακές ρυθμίσεις στο αντίθετο. Επανεκκινήστε τον υπολογιστή σας για να εφαρμοστούν οι αλλαγές."
+                            "description": "Όταν είναι ενεργοποιημένη, η προεπιλεγμένη κύρια λειτουργία θα αλλάξει από τις εργοστασιακές ρυθμίσεις στο αντίθετο. Επανεκκινήστε τον υπολογιστή σας για να εφαρμοστούν οι αλλαγές.",
+                            "caption": "Η ΕΝΕΡΓΗ ΚΥΡΙΑ ΛΕΙΤΟΥΡΓΙΑ:",
+                            "tooltipText": "Για να χρησιμοποιήσετε την προεπιλεγμένη κύρια λειτουργία, πιέστε τα πλήκτρα της επάνω σειράς. Για μη κύριες λειτουργίες, πιέστε Fn+τα πλήκτρα της επάνω σειράς. Ή, μπορείτε να πιέσετε Fn+Esc πρώτα και, στη συνέχεια, να πιέσετε τα πλήκτρα της επάνω σειράς."
                         },
                         "subSectionThree": {
                             "title": "Πώς θα χρησιμοποιήσετε τους συνδυασμούς πλήκτρων Fn",
@@ -1877,7 +1894,7 @@
                 "zeroTouchLoginForIdea": {
                     "title": "Είσοδος χωρίς αφή",
                     "caption": "Αυτή η λειτουργία σάς δίνει τη δυνατότητα να βελτιώσετε την αποδοτικότητα της εργασίας με την αυτόματη αφύπνιση ή σύνδεση στον υπολογιστή σας. Για να χρησιμοποιήσετε τη λειτουργία, θα πρέπει να καταχωρήσετε το πρόσωπό σας στο Windows Hello.",
-                    "tooltip": "Όταν είστε μπροστά στον υπολογιστή σας ή τον πλησιάζετε (σε απόσταση έως 1,2 ή 1,5 μέτρα), αυτή η δυνατότητα σάς επιτρέπει να συνδεθείτε αυτόματα στο σύστημα μετά την αναγνώριση του προσώπου σας. Εάν βρίσκεστε σε εξωτερικό χώρο και όχι στο γραφείο, πρέπει να είστε πιο κοντά στον υπολογιστή και η επαναφορά θα απαιτήσει περισσότερο χρόνο. <br>Ανάλογα με την ικανότητα του αισθητήρα, η μέγιστη απόσταση ανίχνευσης διαφέρει. Για λεπτομέρειες, ανατρέξτε στον <i>Οδηγό χρήσης</i> που συνοδεύει τον υπολογιστή σας."
+                    "tooltip": "Όταν είστε μπροστά στον υπολογιστή σας ή τον πλησιάζετε (σε απόσταση έως 1,2 ή 1,5 μέτρα), αυτή η δυνατότητα σάς επιτρέπει να συνδεθείτε αυτόματα στο σύστημα μετά την αναγνώριση του προσώπου σας. Εάν βρίσκεστε σε εξωτερικό χώρο και όχι στο γραφείο, πρέπει να είστε πιο κοντά στον υπολογιστή και η επαναφορά θα απαιτήσει περισσότερο χρόνο. <br>Ανάλογα με την ικανότητα του αισθητήρα, η μέγιστη απόσταση ανίχνευσης διαφέρει. Για λεπτομέρειες, ανατρέξτε στον Οδηγό χρήσης που συνοδεύει τον υπολογιστή σας."
                 },
                 "zeroTouchLock": {
                     "title": "Κλείδωμα χωρίς αφή",
@@ -1964,9 +1981,7 @@
                     "description2": "Η δυνατότητα χρησιμοποιεί αισθητήρες και κάμερα για να ανιχνεύει την παρουσία σας. Ωστόσο, ΔΕΝ συλλέγει, αποθηκεύει ή διαρρέει προσωπικά δεδομένα ή εικόνες.",
                     "description3": "1. Για να χρησιμοποιήσετε τις παραπάνω λειτουργίες, ρυθμίστε την οθόνη σε κατάλληλη γωνία ώστε να είναι δυνατή η αναγνώριση του προσώπου σας.",
                     "description4": "2. Οι παραπάνω λειτουργίες δεν υποστηρίζονται όταν:",
-                    "description5a1": "α. Ο υπολογιστής σας είναι σε κάποια από τις καταστάσεις Σκηνή, Tablet, Stand ή Ανεξάρτητη. Για τις καταστάσεις που υποστηρίζονται στον υπολογιστή σας, ανατρέξτε στον ",
-                    "description5a2": "Οδηγό χρήσης ",
-                    "description5a3": "που τον συνοδεύει.",
+                    "description5a": "α. Ο υπολογιστής σας είναι σε κάποια από τις καταστάσεις Σκηνή, Tablet, Stand ή Ανεξάρτητη. Για τις λειτουργίες που υποστηρίζονται στον υπολογιστή σας, ανατρέξτε στον Οδηγό χρήσης που τον συνοδεύει.",
                     "description5b": "β. Ο υπολογιστής σας είναι σε κατάσταση αδρανοποίησης ή έχει απενεργοποιηθεί.",
                     "description6": "3. Αν η Λειτουργία πτήσης είναι ενεργοποιημένη στον υπολογιστή σας, αυτές οι δυνατότητες είναι απενεργοποιημένες.",
                     "description7": "Η ακρίβεια ποικίλλει ανάλογα με το μέγεθος και τη στάση του σώματος και τη συχνότητα της κίνησης. Αν ο υπολογιστής σας κλειδώνει απρόσμενα, ρυθμίστε τη γραμμή ευαισθησίας για να βελτιώσετε την ακρίβεια."
@@ -2049,12 +2064,59 @@
             "superResolution": {
                 "heading": "Έξυπνα μέσα",
                 "title": "Αναβάθμιση ανάλυσης βίντεο",
-                "desc": "<p><label>Αυτή η δυνατότητα αναβαθμίζει την εμπειρία αναπαραγωγής βίντεο βελτιώνοντας την ανάλυση του βίντεο. Αποδίδει ιδιαίτερα όταν η ανάλυση του βίντεο είναι χαμηλή.</label></p> <p style='margin-top:4px;'><label>Αυτή η λειτουργία ίσως επηρεάσει τη διάρκεια ζωής και τη θερμοκρασία της μπαταρίας και ίσως προκαλέσει θορύβους. Παρακαλούμε μην τη χρησιμοποιείτε σε λειτουργία DC. Διαφορετικά, θα επιταχύνει την κατανάλωση ενέργειας και θα μειώσει τη διάρκεια ζωής της μπαταρίας.</label></p>",
-                "tooltip": "Η δυνατότητα λειτουργεί μόνο σε:<br>Windows Media player",
+                "desc": "<p><label>Αυτή η δυνατότητα αναβαθμίζει την εμπειρία αναπαραγωγής βίντεο βελτιώνοντας την ανάλυση βίντεο. Λειτουργεί ιδίως όταν η ανάλυση του βίντεο είναι κακή.</label></p> <p style='margin-top:4px;'><label>Αυτή η λειτουργία ίσως επηρεάσει τη διάρκεια ζωής και τη θερμοκρασία της μπαταρίας και ίσως προκαλέσει θορύβους. Μη χρησιμοποιείτε τη δυνατότητα αυτή σε λειτουργία DC (λειτουργία μπαταρίας). Διαφορετικά, θα επιταχύνει την κατανάλωση ενέργειας και θα μειώσει τη διάρκεια ζωής της μπαταρίας.</label></p>",
+                "tooltip": "Αυτή η δυνατότητα λειτουργεί μόνο για τα παρακάτω προγράμματα αναπαραγωγής βίντεο:<br>Windows Media Player<br>Chrome<br>Ταινίες και τηλεόραση<br>PotPlayer<br>GOM player<br>Προγράμματα αναπαραγωγής βίντεο που βασίζονται σε προγράμματα περιήγησης στο Web (π.χ. Chrome)<br><br>Για οδηγίες σχετικά με τον τρόπο ενεργοποίησης αυτής της λειτουργίας στα PotPlayer και GOM player, ανατρέξτε στον Οδηγό χρήσης που συνοδεύει τον υπολογιστή σας.",
                 "note": {
                     "description": "Αυτή η δυνατότητα δεν λειτουργεί όταν:",
-                    "description1": "Ο υπολογιστής δεν είναι συνδεδεμένος σε παροχή εναλλασσόμενου ρεύματος.",
-                    "description2": "Είναι ενεργοποιημένη η λειτουργία εξοικονόμησης μπαταρίας."
+                    "description1": "Η λειτουργία εξοικονόμησης μπαταρίας είναι ενεργοποιημένη.",
+                    "description2": "Η θερμοκρασία της CPU είναι πολύ υψηλή."
+                }
+            },
+            "antiTheft": {
+                "heading": "Έξυπνη ανίχνευση",
+                "title": "Έξυπνη ειδοποίηση κίνησης",
+                "desc": "<p><label>Όταν αυτή τη δυνατότητα είναι ενεργοποιημένη, η συσκευή θα αρχίσει να ηχεί όταν η οθόνη είναι κλειδωμένη και εντοπιστούν κινήσεις ιδίως σε δημόσιο χώρο.</label></p> <p style='margin-top:4px;'><label>Για να απορρίψετε τον συναγερμό, πληκτρολογήστε τον σωστό κωδικό πρόσβασης ή συνδεθείτε από το Windows Hello.</label></p>",
+                "note": {
+                    "description": "Μόλις συνδεθείτε στο σύστημα με επιτυχία, αυτή η δυνατότητα θα απενεργοποιηθεί αυτόματα. Θα πρέπει να την ενεργοποιήσετε ξανά για να τη χρησιμοποιήσετε."
+                },
+                "alarm": {
+                    "title": " Ο ΣΥΝΑΓΕΡΜΟΣ ΘΑ ΔΙΑΡΚΕΣΕΙ",
+                    "option1": "10 δευτερόλεπτα",
+                    "option2": "20 δευτερόλεπτα",
+                    "option3": "30 δευτερόλεπτα",
+                    "option4": "1 λεπτό",
+                    "option5": "Δεν διακόπτεται ποτέ"
+                },
+                "allowCamera": {
+                    "title": "ΛΗΨΗ ΦΩΤΟΓΡΑΦΙΩΝ",
+                    "describe": "Όταν αυτή τη δυνατότητα είναι ενεργοποιημένη, η κάμερα λαμβάνει φωτογραφίες αυτόματα όταν ανιχνεύσει οποιαδήποτε κίνηση εάν η οθόνη είναι κλειδωμένη. Αυτά τα δεδομένα υπόκεινται σε τοπική επεξεργασία στη συσκευή σας. Η Lenovo ούτε έχει πρόσβαση ούτε τα χρησιμοποιεί.",
+                    "checkBoxText": "Ενεργοποίηση αυτής της δυνατότητας"
+                },
+                "cameraPrivacy": {
+                    "describe": "Η λειτουργία απορρήτου της κάμερας Lenovo Vantage είναι ενεργοποιημένη. Η λειτουργία του πλαισίου ελέγχου δεν θα λειτουργήσει.",
+                    "linkText": "Μεταβείτε στη λειτουργία απορρήτου της Κάμερας για να την απενεργοποιήσετε"
+                },
+                "authorizedAccess": {
+                    "describe": "Το Lenovo Vantage δεν έχει πρόσβαση στην κάμερα. Η λειτουργία του πλαισίου ελέγχου δεν θα λειτουργήσει.",
+                    "linkText": "Μεταβείτε στις Ρυθμίσεις των Windows για να αποκτήσετε πρόσβαση"
+                },
+                "photo": {
+                    "title": "Ο ΑΡΙΘΜΟΣ ΤΩΝ ΦΩΤΟΓΡΑΦΙΩΝ ΠΟΥ ΛΑΜΒΑΝΟΝΤΑΙ ΣΤΗ ΔΙΑΡΚΕΙΑ ΤΗΣ ΚΙΝΗΣΗΣ",
+                    "tooltip": "Η κάμερα στον υπολογιστή σας ενεργοποιείται αυτόματα για τη λήψη φωτογραφιών, όταν ανιχνεύονται κινήσεις. Οι φωτογραφίες λαμβάνονται κάθε 2 δευτερόλεπτα και αποθηκεύονται στον τοπικό χώρο αποθήκευσης.",
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
+                },
+                "showPhoto": {
+                    "title": "ΟΙ ΦΩΤΟΓΡΑΦΙΕΣ ΕΧΟΥΝ ΑΠΟΘΗΚΕΥΤΕΙ ΤΟΠΙΚΑ:",
+                    "link": "Προβολή φωτογραφιών"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Το Lenovo Vantage δεν έχει πρόσβαση στο σύστημα των αρχείων.",
+                    "link": "Μεταβείτε στις Ρυθμίσεις των Windows για να αποκτήσετε πρόσβαση"
                 }
             },
             "voice": {
@@ -2088,53 +2150,6 @@
                     "btnText": "OK",
                     "title": "Αποτυχία εγκατάστασης",
                     "desc": "Δοκιμάστε ξανά αργότερα για να χρησιμοποιήσετε το Lenovo Voice."
-                }
-            },
-            "antiTheft": {
-                "heading": "Intelligent Sensing",
-                "title": "Smart Motion Alert",
-                "desc": "<p><label>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</label></p> <p style='margin-top:4px;'><label>To dismiss the alarm, enter the correct password or log in by Windows Hello.</label></p>",
-                "note": {
-                    "description": "Once you log in the system successfully, this feature will be turned off automatically. You need to enable it again to use it."
-                },
-                "alarm": {
-                    "title": " THE ALARM WILL LAST FOR",
-                    "option1": "10 seconds",
-                    "option2": "20 seconds",
-                    "option3": "30 seconds",
-                    "option4": "1 minute",
-                    "option5": "Never stop"
-                },
-                "allowCamera": {
-                    "title": "TATING PHOTOS",
-                    "describe": "When enabling this feature, the camera takes photos automatically when detecting any movement if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
-                    "checkBoxText": "Enable this feature"
-                },
-                "cameraPrivacy": {
-                    "describe": "Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
-                    "linkText": "Go to Camera privacy mode to turn it off"
-                },
-                "authorizedAccess": {
-                    "describe": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
-                    "linkText": "Go to Windows Settings to give access"
-                },
-                "photo": {
-                    "title": "THE NUMBER OF PHOTOS TAKEN DURING THE MOVEMENT",
-                    "tooltip": "The camera on your computer automatically activates to take pictures when movements are detected. Pictures are taken every 2 seconds and are saved to your local storage.",
-                    "option1": 5,
-                    "option2": 10,
-                    "option3": 15,
-                    "option4": 20,
-                    "option5": 25,
-                    "option6": 30
-                },
-                "showPhoto": {
-                    "title": "PHOTOS HAVE BEEN:",
-                    "link": "View photos"
-                },
-                "fileAuthorizationTips": {
-                    "content": "Lenovo Vantage doesn't have access to the file system.",
-                    "link": "Go to Windows Settings to give access"
                 }
             }
         }
@@ -2702,7 +2717,7 @@
         },
         "question1": {
             "title": "Δημιουργία αντιγράφων ασφαλείας και επαναφορά των αρχείων σας",
-            "description": "<div>    <div class='faqInFs4Fb'>        Δημιουργία αντιγράφων ασφαλείας και επαναφορά των αρχείων σας    </div>    <hr />    <div class='faqInMb7'>        Η δημιουργία αντιγράφων ασφαλείας είναι πάντα χρήσιμη. Να διατηρείτε αντίγραφα των αρχείων σας σε άλλη μονάδα σε περίπτωση που συμβεί κάτι στα πρωτότυπα αρχεία.    </div>    <div class='faqInFs3Fb'>        Ρύθμιση του αντιγράφου ασφαλείας    </div>    <hr />    <div class='mb-5'>        Επιλέξτε το κουμπί <span class='faqInFb'>Έναρξη (Start)</span>, επιλέξτε <span class='faqInFb'>Ρυθμίσεις (Settings)</span> > <span class='faqInFb'>Ενημέρωση και ασφάλεια (Update & security)</span> > <span class='faqInFb'>Αντίγραφο ασφαλείας (Backup)</span> > <span class='faqInFb'>Προσθήκη μονάδας (Add a drive)</span> και, στη συνέχεια, επιλέξτε μια εξωτερική μονάδα ή τοποθεσία δικτύου για τα αντίγραφα ασφαλείας.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Όλα εντάξει. Κάθε ώρα, θα δημιουργούμε ένα αντίγραφο ασφαλείας όλων των περιεχομένων του φακέλου χρήστη (C:\\\\Users\\\\username). Για να αλλάξετε το ποια αρχεία θα περιλαμβάνονται στα αντίγραφα ασφαλείας και πόσο συχνά θα δημιουργούνται αντίγραφα ασφαλείας, μεταβείτε στο στοιχείο <span class='faqInFb'>Περισσότερες επιλογές</span>.    </div>    <div class='faqInFs3Fb'>        Επαναφορά των αρχείων σας    </div>    <div class='mb-5'>        Αν σας λείπει ένα σημαντικό αρχείο ή φάκελος, δείτε τι μπορείτε να κάνετε για να το ανακτήσετε:    </div>    <div>        <div class='mb-3'>1. Πληκτρολογήστε <span class='faqInFb'>Επαναφορά αρχείων</span> στο πλαίσιο αναζήτησης στη γραμμή εργασιών και, στη συνέχεια, επιλέξτε <span class='faqInFb'>Επαναφορά των αρχείων σας με το Ιστορικό αρχείων (Restore your files with File History)</span>.</div>        <div class='mb-3'>2. Αναζητήστε το αρχείο που χρειάζεστε και, στη συνέχεια, χρησιμοποιήστε τα βέλη για να δείτε όλες τις εκδόσεις</div>        <div class='mb-3'>3. Μόλις βρείτε την έκδοση που θέλετε, επιλέξτε <span class='faqInFb'>Επαναφορά (Restore)</span> για να την αποθηκεύσετε στην αρχική της τοποθεσία. Για να την αποθηκεύσετε σε διαφορετική τοποθεσία, πατήστε παρατεταμένα (ή κάντε δεξί κλικ) στην επιλογή <span class='faqInFb'>Επαναφορά (Restore)</span>, επιλέξτε <span class='faqInFb'>Επαναφορά σε (Restore to)</span> και, στη συνέχεια, επιλέξτε μια νέα τοποθεσία.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Δημιουργία αντιγράφων ασφαλείας και επαναφορά των αρχείων σας    </div>    <hr />    <div class='faqInMb7'>        Η δημιουργία αντιγράφων ασφαλείας είναι πάντα χρήσιμη. Να διατηρείτε αντίγραφα των αρχείων σας σε άλλη μονάδα σε περίπτωση που συμβεί κάτι στα πρωτότυπα αρχεία.    </div>    <div class='faqInFs3Fb'>        Ρύθμιση του αντιγράφου ασφαλείας    </div>    <hr />    <div class='mb-5'>        Επιλέξτε το κουμπί <span class='faqInFb'>Έναρξη (Start)</span>, επιλέξτε <span class='faqInFb'>Ρυθμίσεις (Settings)</span> > <span class='faqInFb'>Ενημέρωση και ασφάλεια (Update & security)</span> > <span class='faqInFb'>Αντίγραφο ασφαλείας (Backup)</span> > <span class='faqInFb'>Προσθήκη μονάδας (Add a drive)</span> και, στη συνέχεια, επιλέξτε μια εξωτερική μονάδα ή τοποθεσία δικτύου για τα αντίγραφα ασφαλείας.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Όλα εντάξει. Κάθε ώρα, θα δημιουργούμε ένα αντίγραφο ασφαλείας όλων των περιεχομένων του φακέλου χρήστη (C:\\Users\\το όνομα χρήστη σας). Για να αλλάξετε το ποια αρχεία θα περιλαμβάνονται στα αντίγραφα ασφαλείας και πόσο συχνά θα δημιουργούνται αντίγραφα ασφαλείας, μεταβείτε στο στοιχείο <span class='faqInFb'>Περισσότερες επιλογές</span>.    </div>    <div class='faqInFs3Fb'>        Επαναφορά των αρχείων σας    </div>    <div class='mb-5'>        Αν σας λείπει ένα σημαντικό αρχείο ή φάκελος, δείτε τι μπορείτε να κάνετε για να το ανακτήσετε:    </div>    <div>        <div class='mb-3'>1. Πληκτρολογήστε <span class='faqInFb'>Επαναφορά αρχείων</span> στο πλαίσιο αναζήτησης στη γραμμή εργασιών και, στη συνέχεια, επιλέξτε <span class='faqInFb'>Επαναφορά των αρχείων σας με το Ιστορικό αρχείων (Restore your files with File History)</span>.</div>        <div class='mb-3'>2. Αναζητήστε το αρχείο που χρειάζεστε και, στη συνέχεια, χρησιμοποιήστε τα βέλη για να δείτε όλες τις εκδόσεις</div>        <div class='mb-3'>3. Μόλις βρείτε την έκδοση που θέλετε, επιλέξτε <span class='faqInFb'>Επαναφορά (Restore)</span> για να την αποθηκεύσετε στην αρχική της τοποθεσία. Για να την αποθηκεύσετε σε διαφορετική τοποθεσία, πατήστε παρατεταμένα (ή κάντε δεξί κλικ) στην επιλογή <span class='faqInFb'>Επαναφορά (Restore)</span>, επιλέξτε <span class='faqInFb'>Επαναφορά σε (Restore to)</span> και, στη συνέχεια, επιλέξτε μια νέα τοποθεσία.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -3115,7 +3130,8 @@
         "settingsNotes": "Κάντε επανεκκίνηση αυτής της εφαρμογής για να διασφαλίσετε την εφαρμογή όλων των αλλαγών.",
         "betaSettingTitle": "Πρόγραμμα Beta",
         "betaProgram": "Πρόγραμμα Beta",
-        "betaSettingDescription": "Δοκιμάστε τις τελευταίες δυνατότητες στις οποίες εργαζόμαστε."
+        "betaSettingDescription": "Δοκιμάστε τις τελευταίες δυνατότητες στις οποίες εργαζόμαστε.",
+        "betaSettingNewDescription": "Είμαστε στην ευχάριστη θέση να σας προσκαλέσουμε στο πρόγραμμα Beta της Smart Performance. Συμβάλλει στη βελτίωση της απόδοσης του υπολογιστή σας ως εξής:<br/><ul class='pl-4'><li>Εκτελώντας προληπτικό διαγνωστικό έλεγχο και βελτιστοποιώντας τις ρυθμίσεις.</li><li>Ενισχύοντας την απόδοση στο Internet μέσω βελτιστοποίησης του δικτύου και του προγράμματος περιήγησης.</li><li>Εκτελώντας γρήγορη σάρωση και αποκατάσταση χωρίς να χρησιμοποιεί το υπάρχον πρόγραμμα προστασίας από ιούς.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Άκυρο",
@@ -3285,7 +3301,8 @@
             "wireless": "Ασύρματο"
         },
         "warningMessage": "Λάβετε υπόψη ότι οι δοκιμές θα ακυρωθούν εάν το σύστημα είναι σε κατάσταση αναστολής λειτουργίας ή αδρανοποίησης",
-        "refreshMessage": "Η ανανέωση ενδέχεται να διαρκέσει αρκετή ώρα, επειδή απαιτείται επαναφόρτωση όλων των στοιχείων"
+        "refreshMessage": "Η ανανέωση ενδέχεται να διαρκέσει αρκετή ώρα, επειδή απαιτείται επαναφόρτωση όλων των στοιχείων",
+        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3878,7 +3895,8 @@
                 "results": "Results:",
                 "status": "Status"
             }
-        }
+        },
+        "runningWell": "PC is running well"
     },
     "homeSecurity": {
         "title": "Connected Home Security",
@@ -4040,8 +4058,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "Πλήκτρο αριστερού βέλους",
+            "rightArrow": "Πλήκτρο δεξιού βέλους"
         }
     },
     "dcc": {

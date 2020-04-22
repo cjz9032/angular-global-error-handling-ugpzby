@@ -151,12 +151,16 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 
   public openSaveChangeModal () {
     let waringModalRef = this.modalService.open(ModalGamingPromptComponent, { backdrop:'static', windowClass: 'modal-prompt',backdropClass:'backdrop-prompt' });
-    waringModalRef.componentInstance.title="gaming.dashboard.device.savePromptPopup.title";
-    waringModalRef.componentInstance.description = "gaming.dashboard.device.savePromptPopup.description1";
-    waringModalRef.componentInstance.description2 = "gaming.dashboard.device.savePromptPopup.description2";
-    waringModalRef.componentInstance.description3 = "gaming.dashboard.device.savePromptPopup.description3";
-    waringModalRef.componentInstance.comfirmButton="gaming.dashboard.device.savePromptPopup.save";
-    waringModalRef.componentInstance.cancelButton="gaming.dashboard.device.savePromptPopup.notSave";
+    waringModalRef.componentInstance.info = {
+        title : "gaming.dashboard.device.savePromptPopup.title",
+        description : "gaming.dashboard.device.savePromptPopup.description1",
+        description2 : "gaming.dashboard.device.savePromptPopup.description2",
+        description3 : "gaming.dashboard.device.savePromptPopup.description3",
+        comfirmButton : "gaming.dashboard.device.savePromptPopup.save",
+        cancelButton : "gaming.dashboard.device.savePromptPopup.notSave",
+        comfirmButtonAriaLabel : "SAVE",
+        cancelButtonAriaLabel : "DON'T SAVE",
+    };
     waringModalRef.componentInstance.emitService.subscribe((emmitedValue) => {
       this.logger.info('openSaveChangeModal emmitedValue',emmitedValue);
       if(emmitedValue === 1) {
@@ -196,10 +200,14 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 
   public openSetToDefaultModal () {
     let waringModalRef = this.modalService.open(ModalGamingPromptComponent, { backdrop:'static', windowClass: 'modal-prompt',backdropClass:'backdrop-prompt' });
-    waringModalRef.componentInstance.title="gaming.dashboard.device.defaultPromptPopup.title";
-    waringModalRef.componentInstance.description = "gaming.dashboard.device.defaultPromptPopup.description";
-    waringModalRef.componentInstance.comfirmButton="gaming.dashboard.device.legionEdge.popup.button";
-    waringModalRef.componentInstance.cancelButton="gaming.dashboard.device.legionEdge.driverPopup.link";
+    waringModalRef.componentInstance.info = {
+        title : "gaming.dashboard.device.defaultPromptPopup.title",
+        description : "gaming.dashboard.device.defaultPromptPopup.description",
+        comfirmButton : "gaming.dashboard.device.legionEdge.popup.button",
+        cancelButton : "gaming.dashboard.device.legionEdge.driverPopup.link",
+        comfirmButtonAriaLabel : "OK",
+        cancelButtonAriaLabel : "CANCEL",
+    };
     waringModalRef.componentInstance.emitService.subscribe((emmitedValue) => {
       this.logger.info('openSetToDefaultModal emmitedValue',emmitedValue);
       if(emmitedValue === 1) {

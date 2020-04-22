@@ -1,7 +1,7 @@
-<div [ngSwitch]="supportType$ | async" class="vtr-backlight">
+<div [ngSwitch]="supportType$ | async"
+	class="vtr-backlight">
 	<div *ngSwitchCase="backlightLevelEnum.ONE_LEVEL">
-		<vtr-ui-row-switch
-			[title]="'device.deviceSettings.inputAccessories.backlight.title' | translate"
+		<vtr-ui-row-switch [title]="'device.deviceSettings.inputAccessories.backlight.title' | translate"
 			componentName="Input Accessories"
 			[caption]="'device.deviceSettings.inputAccessories.backlight.description.base' | translate"
 			[leftIcon]="['fal', 'keyboard']"
@@ -13,35 +13,34 @@
 			[switchId]="'inputAccessories-backlight'">
 		</vtr-ui-row-switch>
 	</div>
-<!--	<div *ngSwitchCase="backlightLevelEnum.TWO_LEVELS">-->
-<!--		<vtr-ui-row-switch-->
-<!--			[title]="'device.deviceSettings.inputAccessories.backlight.title' | translate"-->
-<!--			componentName="Input Accessories"-->
-<!--			[caption]="'device.deviceSettings.inputAccessories.backlight.description.base' | translate"-->
-<!--			[leftIcon]="['fal', 'keyboard']"-->
-<!--			[showChildContent]="true"-->
-<!--			[theme]="'white'"-->
-<!--			[isLastChild]="isLastChild"-->
-<!--			[switchId]="'inputAccessories-backlight'">-->
-<!--			<div class="row no-gutters">-->
-<!--				<vtr-ui-circle-radio-with-checkbox-->
-<!--					*ngFor="let mode of modes"-->
-<!--					[theme]="'white'"-->
-<!--					[radioId]="'backlightMode' + mode.value | removeSpace"-->
-<!--					[group]="'backlight'"-->
-<!--					[label]="mode.title | translate"-->
-<!--					[value]="mode.value"-->
-<!--					[checked]="mode.checked"-->
-<!--					(optionChange)="update$.next(mode)"-->
-<!--					[disabled]="mode.disabled"-->
-<!--					[textId]="'myDevice-settings-inputAccessories-backlight'">-->
-<!--				</vtr-ui-circle-radio-with-checkbox>-->
-<!--			</div>-->
-<!--		</vtr-ui-row-switch>-->
-<!--	</div>-->
+	<!--	<div *ngSwitchCase="backlightLevelEnum.TWO_LEVELS">-->
+	<!--		<vtr-ui-row-switch-->
+	<!--			[title]="'device.deviceSettings.inputAccessories.backlight.title' | translate"-->
+	<!--			componentName="Input Accessories"-->
+	<!--			[caption]="'device.deviceSettings.inputAccessories.backlight.description.base' | translate"-->
+	<!--			[leftIcon]="['fal', 'keyboard']"-->
+	<!--			[showChildContent]="true"-->
+	<!--			[theme]="'white'"-->
+	<!--			[isLastChild]="isLastChild"-->
+	<!--			[switchId]="'inputAccessories-backlight'">-->
+	<!--			<div class="row no-gutters">-->
+	<!--				<vtr-ui-circle-radio-with-checkbox-->
+	<!--					*ngFor="let mode of modes"-->
+	<!--					[theme]="'white'"-->
+	<!--					[radioId]="'backlightMode' + mode.value | removeSpace"-->
+	<!--					[group]="'backlight'"-->
+	<!--					[label]="mode.title | translate"-->
+	<!--					[value]="mode.value"-->
+	<!--					[checked]="mode.checked"-->
+	<!--					(optionChange)="update$.next(mode)"-->
+	<!--					[disabled]="mode.disabled"-->
+	<!--					[textId]="'myDevice-settings-inputAccessories-backlight'">-->
+	<!--				</vtr-ui-circle-radio-with-checkbox>-->
+	<!--			</div>-->
+	<!--		</vtr-ui-row-switch>-->
+	<!--	</div>-->
 	<div *ngSwitchCase="backlightLevelEnum.TWO_LEVELS_AUTO">
-		<vtr-ui-row-switch
-			[title]="'device.deviceSettings.inputAccessories.backlight.title' | translate"
+		<vtr-ui-row-switch [title]="'device.deviceSettings.inputAccessories.backlight.title' | translate"
 			componentName="Input Accessories"
 			[caption]="'device.deviceSettings.inputAccessories.backlight.description.auto' | translate"
 			[leftIcon]="['fal', 'keyboard']"
@@ -49,9 +48,11 @@
 			[theme]="'white'"
 			[isLastChild]="isLastChild"
 			[switchId]="'inputAccessories-backlight'">
-			<div class="row no-gutters">
-				<vtr-ui-circle-radio-with-checkbox
-					*ngFor="let mode of modes"
+			<div class="row no-gutters"
+				role="radiogroup"
+				tabindex="0"
+				aria-label="back light mode list, select using arrow keys">
+				<vtr-ui-circle-radio-with-checkbox *ngFor="let mode of modes"
 					[theme]="'white'"
 					[radioId]="'backlightMode' + mode.value | removeSpace"
 					[group]="'backlight'"

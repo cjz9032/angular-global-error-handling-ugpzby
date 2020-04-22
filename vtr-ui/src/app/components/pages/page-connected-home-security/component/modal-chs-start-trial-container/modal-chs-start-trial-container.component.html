@@ -36,8 +36,10 @@
 				metricsItem="CHSTrialCountdownCancelButton"
 				metricsParent="{{metricsParent}}"
 				(click)="closeModal()"
-				[title]="'security.wifisecurity.locationmodal.cancel' | translate"
-				[innerHTML]="'security.wifisecurity.locationmodal.cancel' | translate">
+				[title]=""
+				[innerHTML]="'security.wifisecurity.locationmodal.cancel' | translate"
+				[ngbTooltip]="'security.wifisecurity.locationmodal.cancel' | translate" tooltipClass="vtr-system-tooltip" container="body"
+				>
 			</button>
 		</div>
 	</div>

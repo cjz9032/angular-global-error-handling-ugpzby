@@ -202,6 +202,8 @@ export enum LocalStorageKey {
 	UserDeterminePrivacy = '[LocalStorageKey] UserDeterminePrivacy',
 
 	SmartAssistCapability = '[LocalStorageKey] SmartAssistCapability',
+
+	AntiTheftCache = '[LocalStorageKey] AntiTheftCache',
 	// server switch strorage key
 	ServerSwitchKey = '[LocalStorageKey] ServerSwitch',
 	memOCFeatureStatus = '[LocalStorageKey] MemOCFeatureStatus',

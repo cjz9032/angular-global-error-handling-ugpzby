@@ -51,16 +51,17 @@
 		cursor: pointer;
 		-webkit-appearance: initial;
 		max-width: 26rem;
-		white-space: nowrap;
-		text-overflow: ellipsis;
-		overflow: hidden;
 		margin-top: 2rem;
+		position: relative;
 
 		&:disabled {
 			opacity: 0.5;
 		}
 		&:focus {
-			@include outline-blue;
+			outline: 0;
+			&::after {
+				@include button-outline-blue;
+			}
 		}
 	}
 
@@ -199,12 +200,13 @@
 	}
 
 	.note {
-		border: 1px solid #ecf0f1;
+		border: 1px solid $note_border;
 		border-radius: 0.5rem;
-		background-color: #f5f7f8;
+		background-color: $grey_lighter;
 		padding: 1rem;
 		font-size: 1.6rem;
 		margin-top: 1rem;
+		color: $shade_blue;
 	}
 
 	.user-defined-key-block {
