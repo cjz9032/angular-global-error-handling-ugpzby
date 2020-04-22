@@ -7,8 +7,7 @@
 	[tabIndex]="disabled?-1:0"
 	(keydown.enter)="checkBox.click();"
 	(keydown.space)="[$event.preventDefault(),$event.stopPropagation(),checkBox.click()]">
-	<input [id]="
-	componentId"
+	<input [id]="componentId"
 		#checkBox
 		class="custom-control-input"
 		type="checkbox"
