@@ -5,7 +5,7 @@
 	[tabIndex]="disabled ?-1:checked? 0 :-1"
 	[attr.aria-disabled]="disabled"
 	[attr.aria-checked]="checked"
-	[attr.aria-label]="radioId"
+	attr.aria-labelledby="{{textId}}-{{value}}-label"
 	(keydown)="navigateByKeys($event,radio)"
 	[ngClass]="{'white-theme': theme === 'white','blue-theme': theme === 'blue'}">
 	<div class="checkbox">
@@ -14,7 +14,7 @@
 			attr.aria-labelledby="{{textId}}-{{value}}-label"
 			[attr.aria-disabled]="disabled"
 			[attr.aria-checked]="checked"
-			[attr.aria-label]="radioId"
+			[attr.aria-label]="label"
 			id="{{radioId}}"
 			name="{{group}}"
 			type="radio"
@@ -32,7 +32,7 @@
 		<label for="{{radioId}}"
 			class="checkbox-custom-label"
 			[style.cursor]="disabled?'default': 'pointer'"
-			id="{{ radioId }}"
+			id="{{radioId}}-label"
 			role="text"
 			attr.aria-label="{{radioId}}">
 			<div *ngIf="!hideIcon"
@@ -57,7 +57,7 @@
 			[class.disabled-title]="disabled"
 			id="{{textId}}-{{value}}-label"
 			role="text"
-			attr.aria-label="{{value}}"
+			attr.aria-label="{{label}}"
 			[attr.aria-disabled]="disabled"
 			[attr.aria-checked]="checked">{{processLabel ? (label | capitalizeFirst) : label}}</div>
 	</div>
