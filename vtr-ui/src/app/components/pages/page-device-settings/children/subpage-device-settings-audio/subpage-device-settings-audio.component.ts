@@ -516,16 +516,16 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	}
 
 	startMonitorHandlerForDolby(response) {
-		this.logger.info('startMonitorHandlerForDolby', response);
-		this.dolbyModeResponse.available = (Object.keys(response).indexOf('available') !== -1) ? response.available : this.dolbyModeResponse.available;
-		//this.dolbyModeResponse.supporedModes = (Object.keys(response).indexOf('supporedModes') !== -1) ? response.supporedModes : this.dolbyModeResponse.supporedModes;
-		this.dolbyModeResponse.currentMode = (Object.keys(response).indexOf('currentMode') !== -1) ? response.currentMode : this.dolbyModeResponse.currentMode;
+		this.logger.error('startMonitorHandlerForDolby', response);
+		this.dolbyModeResponse.available = (Object.keys(response).indexOf('available') !== -1 && response.available !==  undefined) ? response.available : this.dolbyModeResponse.available;
+		//this.dolbyModeResponse.supporedModes = (Object.keys(response).indexOf('supporedModes') !== -1  && response.supporedModes !==  undefined) ? response.supporedModes : this.dolbyModeResponse.supporedModes;
+		this.dolbyModeResponse.currentMode = (Object.keys(response).indexOf('currentMode') !== -1 && response.currentMode !==  undefined) ? response.currentMode : this.dolbyModeResponse.currentMode;
 
-		this.dolbyModeResponse.isAudioProfileEnabled = (Object.keys(response).indexOf('isAudioProfileEnabled') !== -1) ? response.isAudioProfileEnabled : this.dolbyModeResponse.isAudioProfileEnabled;
-		this.dolbyModeResponse.eCourseStatus = (Object.keys(response).indexOf('eCourseStatus') !== -1) ? response.eCourseStatus : this.dolbyModeResponse.eCourseStatus;
-		//this.dolbyModeResponse.voIPStatus = (Object.keys(response).indexOf('voIPStatus') !== -1) ? response.voIPStatus : this.dolbyModeResponse.voIPStatus;
-		//this.dolbyModeResponse.entertainmentStatus = (Object.keys(response).indexOf('entertainmentStatus') !== -1) ? response.entertainmentStatus : this.dolbyModeResponse.entertainmentStatus;
-		this.dolbyModeResponse.driverAvailability = (Object.keys(response).indexOf('driverAvailability') !== -1) ? response.driverAvailability : this.dolbyModeResponse.driverAvailability;
+		this.dolbyModeResponse.isAudioProfileEnabled = (Object.keys(response).indexOf('isAudioProfileEnabled') !== -1 && response.isAudioProfileEnabled !==  undefined) ? response.isAudioProfileEnabled : this.dolbyModeResponse.isAudioProfileEnabled;
+		this.dolbyModeResponse.eCourseStatus = (Object.keys(response).indexOf('eCourseStatus') !== -1  && response.eCourseStatus !==  undefined) ? response.eCourseStatus : this.dolbyModeResponse.eCourseStatus;
+		//this.dolbyModeResponse.voIPStatus = (Object.keys(response).indexOf('voIPStatus') !== -1 && response.voIPStatus !==  undefined) ? response.voIPStatus : this.dolbyModeResponse.voIPStatus;
+		//this.dolbyModeResponse.entertainmentStatus = (Object.keys(response).indexOf('entertainmentStatus') !== -1 && response.entertainmentStatus !==  undefined) ? response.entertainmentStatus : this.dolbyModeResponse.entertainmentStatus;
+		this.dolbyModeResponse.driverAvailability = (Object.keys(response).indexOf('driverAvailability') !== -1 && response.driverAvailability !==  undefined) ? response.driverAvailability : this.dolbyModeResponse.driverAvailability;
 		this.initVisibility();
 		this.bindDolbyAudioProfileState();
 		this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyModeResponse);
