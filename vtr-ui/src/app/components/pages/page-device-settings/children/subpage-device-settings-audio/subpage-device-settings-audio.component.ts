@@ -854,7 +854,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			this.cacheFlag.currentMode = true;
 			this.cacheFlag.keyboardNoiseSuppression = true;
 		}
-
+		this.updateMicrophoneHeader();
 		this.logger.info('updateMicrophoneHandler ' + JSON.stringify(msg));
 	}
 
@@ -865,6 +865,13 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		};
 		this.logger.info('ready to update microhone cache');
 		this.commonService.setLocalStorageValue(LocalStorageKey.MicrohoneCapability, info);
+		this.updateMicrophoneHeader();
+	}
+
+	updateMicrophoneHeader() {
+		if (!this.microphoneProperties.available) {
+			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'microphone');
+		}
 	}
 
 	initVisibility() {
