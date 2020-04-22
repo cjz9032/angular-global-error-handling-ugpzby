@@ -42,8 +42,8 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	locatorButtonDisable = false;
 	@Output() toggleChange = new EventEmitter<void>()
 
-	showMoreText = 'security.wifisecurity.container.showmore';
-	showLessText = 'security.wifisecurity.container.showless';
+	showMoreText = this.translate.instant('security.wifisecurity.container.showmore');
+	showLessText = this.translate.instant('security.wifisecurity.container.showless');
 
 	constructor(
 		public modalService: NgbModal,
@@ -53,7 +53,12 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 		private translate: TranslateService,
 	) {
 		super();
-		this.translateString();
+		this.translate.stream('security.wifisecurity.container.showmore').subscribe((value) => {
+			this.showMoreText = value;
+		});
+		this.translate.stream('security.wifisecurity.container.showless').subscribe((value) => {
+			this.showLessText = value;
+		});
 	}
 
 	ngOnInit() {
@@ -82,14 +87,5 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 			this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, length + 2);
 		}
 		return false;
-	}
-
-	private translateString() {
-		this.translate.stream(this.showMoreText).subscribe((res) => {
-			this.showMoreText = res;
-		});
-		this.translate.stream(this.showLessText).subscribe((res) => {
-			this.showLessText = res;
-		});
 	}
 }
