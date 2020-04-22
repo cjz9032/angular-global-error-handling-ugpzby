@@ -41,14 +41,14 @@ describe('PageLightingcustomizeComponent', () => {
 	const deviceServiceMock = { getMachineInfo: () => Promise.resolve({ serialnumber: 1234 }), getMachineInfoSync: () => { } };
 	const translateServiceMock = { onLangChange: of('en') };
 	// tslint:disable-next-line: align
-	const commonServiceMock = {
-		sendReplayNotification: (action, payload?) => { },
-		sendNotification: (...params) => { },
-		getLocalStorageValue: (key, defaultVal = {}) => JSON.parse(localStorage.getItem(key)),
-		setLocalStorageValue: (key, val) => localStorage.setItem(key, JSON.stringify(val)),
-		notification: of({}),
-		getCapabalitiesNotification: () => of({ type: Gaming.GamingCapabilities })
-	};
+	// const commonServiceMock = {
+	// 	sendReplayNotification: (action, payload?) => { },
+	// 	sendNotification: (...params) => { },
+	// 	getLocalStorageValue: (key, defaultVal = {}) => JSON.parse(localStorage.getItem(key)),
+	// 	setLocalStorageValue: (key, val) => localStorage.setItem(key, JSON.stringify(val)),
+	// 	notification: of({}),
+	// 	getCapabalitiesNotification: () => of({ type: Gaming.GamingCapabilities })
+	// };
 	const cmsServiceMock = {
 		fetchCMSContent: (params) => of(cmsMock),
 		getOneCMSContent: (res, template, position) => res = cmsMock.Results
@@ -64,7 +64,7 @@ describe('PageLightingcustomizeComponent', () => {
 			providers: [
 				NgbModal,NgbActiveModal,
 				{ provide: Title, useValue: titleServiceMock },
-				{ provide: CommonService, useValue: commonServiceMock },
+			//	{ provide: CommonService, useValue: commonServiceMock },
 				{ provide: CMSService, useValue: cmsServiceMock },
 				{ provide: ActivatedRoute, useValue: routerMock },
 				{ provide: VantageShellService, useValue: shellServiceMock },
@@ -85,6 +85,7 @@ describe('PageLightingcustomizeComponent', () => {
 	});
 
 	it('should create', () => {
+		fixture.detectChanges();
 		expect(component).toBeTruthy();
 	});
 
