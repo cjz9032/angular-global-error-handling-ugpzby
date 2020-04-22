@@ -1452,10 +1452,10 @@
                         "description": "从以下位置选择所需的模式。您还可以选择选项\"自动优化音频：\"。启用此功能后，Dolby 音频会根据您处于的不同模式自动为您选择最佳音频效果。",
                         "options": {
                             "dynamic": "动态",
-							"movie": "电影",
-							"music": "音乐",
-							"games": "游戏",
-							"voip": "语音"
+                            "movie": "电影",
+                            "music": "音乐",
+                            "games": "游戏",
+                            "voip": "语音"
                         },
                         "automaticAudioCheckboxText": "自动音频优化",
                         "automaticAudioMode": {
@@ -1466,9 +1466,9 @@
                             "entertainmentMode": {
                                 "checkboxText": "自动优化用于娱乐的音频",
                                 "tooltip": "选择此选项后，Dolby 音频会根据您使用的应用自动调整模式：",
-                                "description1":"如果您正在使用 iTunes 等应用，它将更改为\"音乐\"模式。",
-                                "description2":"如果您正在使用 Youtube 等应用，它将更改为\"电影\"模式。",
-                                "description3":"如果您使用的是游戏应用，它将相应地更改为游戏模式。"
+                                "description1": "如果您正在使用 iTunes 等应用，它将更改为\"音乐\"模式。",
+                                "description2": "如果您正在使用 Youtube 等应用，它将更改为\"电影\"模式。",
+                                "description3": "如果您使用的是游戏应用，它将相应地更改为游戏模式。"
                             }
                         }
                     },
@@ -1689,17 +1689,17 @@
                         "hideAdvSettings": "隐藏高级设置",
                         "description": "键盘的首行提供以下两项功能。选择您需要的功能：",
                         "subSection": {
-                            "description": "要切换上述两个功能，请按 Fn+Esc。",
+                            "description": "您也可以通过按 Fn+Esc 切换两个功能。刷新需要几秒钟时间。",
                             "radioButton": {
                                 "sFunKey": "特殊功能",
-                                "fnKey": "F1-F12 键的功能"
+                                "fnKey": "F1 - F12 键的功能"
                             }
                         },
                         "subSectionTwo": {
                             "title": "反转键盘首行默认功能",
                             "description": "启用时，键盘首行功能将更改为与出厂设置相反的功能。重新启动计算机使更改生效。",
-                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
-                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
+                            "caption": "起作用的主要功能：",
+                            "tooltipText": "要使用默认的主要功能，请按首行键。对于非主要功能，请按 Fn+首行键。或者，您可以先按 Fn+Esc，然后再按首行键。"
                         },
                         "subSectionThree": {
                             "title": "如何使用 Fn 组合键",
@@ -1982,7 +1982,7 @@
                     "description3": "1.要使用上述功能，请将计算机屏幕调整至适当的角度，以便计算机能够识别您的面部。",
                     "description4": "2.在以下情况下，不支持上述功能：",
                     "description5a": "a. 您的计算机处于帐篷模式、平板电脑模式、站立模式或分离模式。有关计算机支持的模式，请参阅计算机随附的《用户指南》。",
-					"description5b": "b. 您的计算机处于休眠模式或已关机。",
+                    "description5b": "b. 您的计算机处于休眠模式或已关机。",
                     "description6": "3. 如果在计算机上启用飞行模式，则将禁用这些功能部件。",
                     "description7": "准确性随身体大小、姿势和移动频率而变化。如果您的计算机被意外锁定，请调整灵敏度栏以提高准确性。"
                 },
@@ -2103,12 +2103,12 @@
                 "photo": {
                     "title": "运动中拍摄的照片数量",
                     "tooltip": "检测到运动时，计算机上的摄像头会自动激活进行拍照。每 2 秒钟拍摄一次照片，照片将保存到本地存储中。",
-                    "option1": "5",
-                    "option2": "10",
-                    "option3": "15",
-                    "option4": "20",
-                    "option5": "25",
-                    "option6": "30"
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
                 },
                 "showPhoto": {
                     "title": "照片已保存到本地：",
@@ -3895,7 +3895,8 @@
                 "results": "Results:",
                 "status": "Status"
             }
-        }
+        },
+        "runningWell": "PC is running well"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

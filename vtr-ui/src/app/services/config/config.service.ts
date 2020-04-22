@@ -232,7 +232,7 @@ export class ConfigService {
 		this.supportFilter(menu, 'wifi-security', wifiIsSupport
 		&& !this.deviceService.isSMode
 		&& !this.deviceService.isArm &&
-		this.activeSegment !== SegmentConst.Gaming);
+		this.activeSegment !== SegmentConst.Commercial);
 		this.updateWifiStateCache(wifiIsSupport);
 	}
 

@@ -31,6 +31,7 @@ export class UiCustomSliderComponent implements OnInit, OnDestroy {
 	@Input() maxLegend = ''; // label to display at the end of slider
 	@Input() hasTicks = false;
 	@Input() ticks = [1, 55, 65, 100];
+	@Input() ariaLabel = 'slider';
 
 	@Output() sliderChange = new EventEmitter<number>();
 	@Output() valueChanged = new EventEmitter<number>();
