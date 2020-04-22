@@ -1,6 +1,8 @@
 import {
 	Component,
-	OnInit
+	OnInit,
+	ViewChild,
+	ElementRef
 } from '@angular/core';
 import {
 	NgbActiveModal
@@ -31,7 +33,10 @@ export class ModalChsWelcomeContainerComponent implements OnInit {
 	}, {
 		icon: 'places',
 		desc: 'homeSecurity.tour.welcomeDesc2'
-	}];
+		}];
+
+	@ViewChild('allowButton') allowButton: ElementRef;
+
 	constructor(
 		public activeModal: NgbActiveModal,
 		private vantageShellService: VantageShellService,
@@ -83,7 +88,7 @@ export class ModalChsWelcomeContainerComponent implements OnInit {
 			this.switchPage = 2;
 			this.showPageLocation = true;
 			setTimeout(() => {
-				document.getElementById('chs-tour-btn-openLocation').focus();
+				this.allowButton.nativeElement.focus();
 			}, 0);
 		}
 	}
