@@ -57,10 +57,10 @@ export class GamingAccessoryService {
             this.logger.info(`Service-GamingAccessory-launchAccessory: isLACSupportUriProtocol return value: ${res}`);
             if (res) {
               // protocol
-              // const result = await WinRT.launchUri('lenovo-migration-assistant:vantage');
+              const result = await WinRT.launchUri('legion-accessory-central:');
               // plugin?
-              const lacPath = '%ProgramData%\\Microsoft\\Windows\\Start Menu\\Programs\\Lenovo\\Legion Accessory Central.lnk';
-              const result = await this.systemUpdateBridge.launchApp(lacPath);
+              // const lacPath = '%ProgramData%\\Microsoft\\Windows\\Start Menu\\Programs\\Lenovo\\Legion Accessory Central.lnk';
+              // const result = await this.systemUpdateBridge.launchApp(lacPath);
               if(result) {
                 resolve(true);
               }
