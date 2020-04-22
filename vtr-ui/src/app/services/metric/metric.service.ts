@@ -20,7 +20,7 @@ export class MetricService {
 	private blurDurationCounter;
 	private suspendDurationCounter;
 	private dashboardFirstLoaded = 0;
-	private welcomeNeeded = undefined;
+	private welcomeNeeded: any;
 	private hasSendAppLoadedEvent = false;
 	public readonly isFirstLaunch: boolean;
 	constructor(
@@ -141,13 +141,14 @@ export class MetricService {
 	}
 
 	private sendInstallationMetric(metricEnable) {
-		if (Windows) {
-			try {
-				const SvcInstallationMetricsHelper = Windows.VantageShellExtension.Metrics.Helper.SvcInstallationMetricsHelper;
-				if (SvcInstallationMetricsHelper.needReportError) {
-					SvcInstallationMetricsHelper.sendFinishMetric(metricEnable);
-				}
-			} catch (ex) { }
+		if (Windows
+			&& Windows.VantageShellExtension.Metrics
+			&& Windows.VantageShellExtension.Metrics.Helper
+			&& Windows.VantageShellExtension.Metrics.Helper.SvcInstallationMetricsHelper) {
+			const SvcInstallationMetricsHelper = Windows.VantageShellExtension.Metrics.Helper.SvcInstallationMetricsHelper;
+			if (SvcInstallationMetricsHelper.needReportError) {
+				SvcInstallationMetricsHelper.sendFinishMetric(metricEnable);
+			}
 		}
 	}
 
