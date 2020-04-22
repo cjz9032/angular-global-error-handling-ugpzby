@@ -412,6 +412,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		if (this.systemUpdateService.isShellAvailable) {
 			this.isUserCancelledUpdateCheck = true;
 			this.systemUpdateService.cancelUpdateCheck();
+			document.getElementById('system-update-back-btn').focus();
 		}
 	}
 
@@ -431,6 +432,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		} else {
 			this.systemUpdateService.unIgnoreUpdate(packageName);
 		}
+		document.getElementById('system-update-back-btn').focus();
 	}
 
 	private installUpdates(removeDelayedUpdates: boolean, updateList: Array<AvailableUpdateDetail>, isInstallAll: boolean) {
@@ -927,6 +929,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 
 	public onCancelUpdateDownload() {
 		this.systemUpdateService.cancelUpdateDownload();
+		document.getElementById('system-update-back-btn').focus();
 	}
 
 	private translateStrings() {
