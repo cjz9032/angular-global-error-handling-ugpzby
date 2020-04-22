@@ -5,8 +5,10 @@
 	[attr.aria-checked]="checked"
 	[attr.aria-labelledby]="arialabel"
 	[tabIndex]="disabled?-1:0"
-	(keydown.enter)="checkBox.click();">
-	<input [id]="componentId"
+	(keydown.enter)="checkBox.click();"
+	(keydown.space)="[$event.preventDefault(),$event.stopPropagation(),checkBox.click()]">
+	<input [id]="
+	componentId"
 		#checkBox
 		class="custom-control-input"
 		type="checkbox"
