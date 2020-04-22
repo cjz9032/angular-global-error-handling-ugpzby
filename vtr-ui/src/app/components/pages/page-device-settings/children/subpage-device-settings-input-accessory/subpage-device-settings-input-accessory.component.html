@@ -104,14 +104,15 @@
 								<vtr-top-row-functions-ideapad></vtr-top-row-functions-ideapad>
 							</li>
 
-							<li class="common-li-padding" *ngIf="machineType === 1 && isKbdBacklightAvailable">
+							<li class="common-li-padding"
+								*ngIf="machineType === 1 && isKbdBacklightAvailable">
 
-								<vtr-backlight-thinkpad (showHide)="showHideKeyboardBacklight($event)">
-									                                </vtr-backlight-thinkpad>
+								<vtr-backlight-thinkpad (showHide)="showHideKeyboardBacklight($event)">
+								</vtr-backlight-thinkpad>
 							</li>
 							<li class="common-li-padding"
-								*ngIf="machineType === 0 && backlightCapability$ | async">
-								<vtr-backlight [isLastChild]="!showVoipHotkeysSection && !hasUDKCapability">
+								*ngIf="machineType === 0 && backlightCapability$ | async">
+								<vtr-backlight [isLastChild]="!showVoipHotkeysSection && !hasUDKCapability">
 								</vtr-backlight>
 
 							</li>
@@ -313,7 +314,7 @@
 										(keydown.enter)='launchProtocol("ms-settings:mousetouchpad")'>
 										{{'device.deviceSettings.inputAccessories.controlOptions.control2' | translate}}
 									</a>
-									<!-- <ng-template #otherMachine> -->
+									<!-- <ng-template #otherMachine> -->
 									<!-- </ng-template> -->
 								</div>
 							</div>
