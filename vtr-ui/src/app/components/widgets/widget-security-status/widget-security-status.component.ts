@@ -48,9 +48,11 @@ export class WidgetSecurityStatusComponent implements OnInit {
 		this.deviceService.getMachineInfo().then(result => {
 			this.region = (result.country ? result.country : 'US').toLowerCase();
 			this.showVpn();
+			this.showDashlane();
 		}).catch(() => {
 			this.region = 'us';
 			this.showVpn();
+			this.showDashlane();
 		});
 
 		this.hypSettings.getFeatureSetting('SecurityAdvisor').then((result) => {
@@ -119,6 +121,19 @@ export class WidgetSecurityStatusComponent implements OnInit {
 		}
 	}
 
+	showDashlane() {
+		const dashlaneItem = this.items.find(item => item.id.startsWith('sa-widget-lnk-pm'));
+		if (this.region !== 'cn') {
+			if (!dashlaneItem) {
+				this.items.splice(2, 0, new PassWordManagerWidgetItem(this.securityAdvisor.passwordManager, this.commonService, this.translateService));
+			}
+		} else {
+			if (dashlaneItem) {
+				this.items = this.items.filter(item => !item.id.startsWith('sa-widget-lnk-pm'));
+			}
+		}
+	}
+
 	showUac() {
 		const uacItem = this.items.find(item => item.id.startsWith('sa-widget-lnk-uac'));
 		if (!this.pluginSupport && uacItem) {
@@ -159,6 +174,7 @@ export class WidgetSecurityStatusComponent implements OnInit {
 			}
 			this.securityAdvisor.refresh();
 			this.showVpn();
+			this.showDashlane();
 		}, 100)
 	}
 
