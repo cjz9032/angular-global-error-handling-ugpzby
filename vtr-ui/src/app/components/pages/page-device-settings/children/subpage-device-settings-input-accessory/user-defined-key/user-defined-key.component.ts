@@ -52,28 +52,28 @@ export class UserDefinedKeyComponent implements OnInit {
 				actionType: ''
 			},
 			{
-				title: 'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option2',
-				value: 2,
-				path: '2',
-				actionType: INPUT_TEXT.str
-			},
-			{
-				title: 'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option3',
-				value: 3,
-				path: '3',
-				actionType: OPEN_WEB.str
-			},
-			{
 				title: 'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option4',
 				value: 4,
 				path: '4',
 				actionType: OPEN_APPLICATIONS_OR_FILES.str
 			},
 			{
+				title: 'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option2',
+				value: 2,
+				path: '2',
+				actionType: INPUT_TEXT.str
+			},
+			{
 				title: 'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option5',
 				value: 5,
 				path: '5',
 				actionType: INVOKE_KEY_SEQUENCE.str
+			},
+			{
+				title: 'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option3',
+				value: 3,
+				path: '3',
+				actionType: OPEN_WEB.str
 			}
 		];
 		this.selectedValue = this.userDefinedKeyOptions[0];
@@ -121,21 +121,16 @@ export class UserDefinedKeyComponent implements OnInit {
 		switch (this.udkActionInfo.index) {
 			case 1:
 				this.selectedValue = this.userDefinedKeyOptions[this.udkActionInfo.index];
-				this.url = this.udkActionInfo.actionValue;
-				this.userDefinedKeyOptions = this.commonService.removeObjFrom(this.userDefinedKeyOptions, '1');
-				break;
-			case 2:
-				this.selectedValue = this.userDefinedKeyOptions[this.udkActionInfo.index];
-				this.description = this.udkActionInfo.actionValue;
-				this.userDefinedKeyOptions = this.commonService.removeObjFrom(this.userDefinedKeyOptions, '1');
-				break;
-			case 3:
-				this.selectedValue = this.userDefinedKeyOptions[this.udkActionInfo.index];
 				this.applicationList = this.udkActionInfo.applicationList;
 				this.fileList = this.udkActionInfo.fileList;
 				this.userDefinedKeyOptions = this.commonService.removeObjFrom(this.userDefinedKeyOptions, '1');
 				break;
-			case 4:
+			case 2:
+				this.selectedValue = this.userDefinedKeyOptions[this.udkActionInfo.index];
+				this.url = this.udkActionInfo.actionValue;
+				this.userDefinedKeyOptions = this.commonService.removeObjFrom(this.userDefinedKeyOptions, '1');
+				break;	
+			case 3:
 				this.selectedValue = this.userDefinedKeyOptions[this.udkActionInfo.index];
 				this.keyCode = this.udkActionInfo.actionValue;
 				this.keyCodeValue = this.keyCode;
@@ -149,6 +144,11 @@ export class UserDefinedKeyComponent implements OnInit {
 				this.keyCode = mappedString;
 				this.userDefinedKeyOptions = this.commonService.removeObjFrom(this.userDefinedKeyOptions, '1');
 				break;
+			case 4:
+				this.selectedValue = this.userDefinedKeyOptions[this.udkActionInfo.index];
+				this.description = this.udkActionInfo.actionValue;
+				this.userDefinedKeyOptions = this.commonService.removeObjFrom(this.userDefinedKeyOptions, '1');
+				break;	
 		}
 	}
 	checkDropDown(userDefineDrop: any, i, event) {
