@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.21](https://bitbucket.tc.lenovo.com///compare/v1.5.20...v1.5.21) (2020-04-22)
+
+
+### Features
+
+* **dashlane:** hide dashlane in china GEO ([4de1949](https://bitbucket.tc.lenovo.com///commit/4de1949895d7f7fe4eb759f91a5658d572806603))
+* **dashlane:** hide dashlane in china GEO ([94c98d0](https://bitbucket.tc.lenovo.com///commit/94c98d0d4612ad4e0fd044494e73762e39588dc6))
+* **env:** QA now points to CMS staging ([30a8e46](https://bitbucket.tc.lenovo.com///commit/30a8e46265e86ed216a0362c1a338eee66ae62e6))
+* **env:** Vantage DEV now accesses CMS QA ([33d2ac4](https://bitbucket.tc.lenovo.com///commit/33d2ac41ce92c44c19f58d74c575568488d5f83c))
+
+
+### Bug Fixes
+
+* use ViewChild to replace document.getElementById ([b4acb45](https://bitbucket.tc.lenovo.com///commit/b4acb450513394fa7d6174196dced3d560029e51))
+* **CHS :** Make the image read "image coronet logo" ([fcd618d](https://bitbucket.tc.lenovo.com///commit/fcd618d327148397ba0f9b53888f23433ddca93e))
+* **CHS-Accessibility:** add focus to "allow" button ([39b705a](https://bitbucket.tc.lenovo.com///commit/39b705a006c1613c5d8754115eb2277143b86fd8))
+* no need to call additional translate function ([bb57f78](https://bitbucket.tc.lenovo.com///commit/bb57f7841b5d9566ff8fcc7d85b08a469712accd))
+* **Wifi security :** Append "alt" attribute ([538d59a](https://bitbucket.tc.lenovo.com///commit/538d59a431cf9d8bd975f7cc3f62f1e4ec9259d9))
+* fix translation code ([3e8aa13](https://bitbucket.tc.lenovo.com///commit/3e8aa13e7a5e158ab914d804b256d11ac1cf85f2))
+* **Wifi security-Accessibility:** In scan mode, scan to “show less” makes wrong ([50acd80](https://bitbucket.tc.lenovo.com///commit/50acd809460081af858ac599849debcd1bf63eb0))
+
 ### [1.5.20](https://bitbucket.tc.lenovo.com///compare/v1.5.19...v1.5.20) (2020-04-21)
 
 

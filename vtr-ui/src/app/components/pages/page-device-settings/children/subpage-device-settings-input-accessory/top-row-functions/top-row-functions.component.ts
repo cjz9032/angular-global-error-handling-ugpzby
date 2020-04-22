@@ -1,5 +1,5 @@
 import { AppEvent } from './../../../../../../enums/app-event.enum';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
@@ -13,6 +13,8 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 	styleUrls: ['./top-row-functions.component.scss']
 })
 export class TopRowFunctionsComponent implements OnInit, OnDestroy {
+
+	@ViewChild('adv') showAdvEl: ElementRef
 
 	public topRowKeyObj: TopRowFunctionsCapability;
 	public showAdvancedSection = false;
@@ -129,6 +131,12 @@ export class TopRowFunctionsComponent implements OnInit, OnDestroy {
 				this.keyboardService.restartMachine();
 			}
 		});
+	}
+
+	switchFocusToShowAdv() {
+		setTimeout(() => {
+			this.showAdvEl.nativeElement.focus()
+		}, 0)
 	}
 
 }

@@ -36,15 +36,15 @@ export class UDKActionInfo {
 							break;
 						case INPUT_TEXT.str:
 							this.actionValue = data.value;
-							this.index = 2;
+							this.index = 4;
 							break;
 						case INVOKE_KEY_SEQUENCE.str:
 							this.actionValue = data.value;
-							this.index = 4;
+							this.index = 3;
 							break;
 						case OPEN_WEB.str:
 							this.actionValue = data.value;
-							this.index = 1;
+							this.index = 2;
 							break;
 					}
 				}
@@ -69,7 +69,7 @@ export class UDKActionInfo {
 					else {
 						this.fileList.push({ value: data.value, key: data.key });
 					}
-					this.index = 3;
+					this.index = 1;
 				}
 			} else {
 			}
