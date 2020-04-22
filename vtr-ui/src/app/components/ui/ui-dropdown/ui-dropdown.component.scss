@@ -71,6 +71,11 @@
 // 	}
 // }
 
+@mixin list-items {
+	background-color: $grey_dark;
+	color: $light !important;
+}
+
 .ui-dropdown {
 	width: 100%;
 	height: 8rem;
@@ -117,18 +122,22 @@
 		flex-direction: column;
 		z-index: 999;
 		border-radius: 0.25rem;
-		padding: 0.5rem;
+		// padding: 0.5rem;
 		border: 0.1rem solid $dim_gray;
 
 		& a {
-			padding: 0.8rem 0.4rem;
+			padding: 0.8rem 0.5rem;
 			font-size: $fontsize_xs;
 			color: $shade_blue;
 			font-weight: $weight_light;
 
 			&:hover {
-				color: #474d52;
-				text-decoration: underline;
+				@include list-items;
+			}
+
+			&:focus {
+				@include list-items;
+				outline: none !important;
 			}
 		}
 	}
@@ -168,4 +177,8 @@
 
 .apply-chevron-up {
 	color: $menu_hover !important;
+}
+
+.selected-list-item {
+	@include list-items;
 }
