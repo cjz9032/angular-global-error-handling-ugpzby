@@ -1452,10 +1452,10 @@
                         "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
                             "dynamic": "DYNAMIC",
-							"movie": "MOVIE",
-							"music": "MUSIC",
-							"games": "GAME",
-							"voip": "VOICE"
+                            "movie": "MOVIE",
+                            "music": "MUSIC",
+                            "games": "GAME",
+                            "voip": "VOICE"
                         },
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
@@ -1466,9 +1466,9 @@
                             "entertainmentMode": {
                                 "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
                             }
                         }
                     },
@@ -1689,17 +1689,17 @@
                         "hideAdvSettings": "ΑΠΟΚΡΥΨΗ ΡΥΘΜΙΣΕΩΝ ΓΙΑ ΠΡΟΧΩΡΗΜΕΝΟΥΣ",
                         "description": "Η επάνω σειρά του πληκτρολογίου παρέχει τις ακόλουθες δύο λειτουργίες. Επιλέξτε αυτήν που θέλετε:",
                         "subSection": {
-                            "description": "Για να αλλάξετε τις δύο παραπάνω λειτουργίες, πατήστε Fn+Esc.",
+                            "description": "Μπορείτε επίσης να αλλάξετε τις δύο λειτουργίες πιέζοντας Fn+Esc. Η ανανέωση θα διαρκέσει αρκετά δευτερόλεπτα.",
                             "radioButton": {
-                                "sFunKey": "ΕΙΔΙΚΗ ΛΕΙΤΟΥΡΓΙΑ",
-                                "fnKey": "ΛΕΙΤΟΥΡΓΙΑ F1-F12"
+                                "sFunKey": "Ειδική λειτουργία",
+                                "fnKey": "Λειτουργία F1-F12"
                             }
                         },
                         "subSectionTwo": {
                             "title": "Αντιστροφή της προεπιλεγμένης κύριας λειτουργίας",
                             "description": "Όταν είναι ενεργοποιημένη, η προεπιλεγμένη κύρια λειτουργία θα αλλάξει από τις εργοστασιακές ρυθμίσεις στο αντίθετο. Επανεκκινήστε τον υπολογιστή σας για να εφαρμοστούν οι αλλαγές.",
-                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
-                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
+                            "caption": "Η ΕΝΕΡΓΗ ΚΥΡΙΑ ΛΕΙΤΟΥΡΓΙΑ:",
+                            "tooltipText": "Για να χρησιμοποιήσετε την προεπιλεγμένη κύρια λειτουργία, πιέστε τα πλήκτρα της επάνω σειράς. Για μη κύριες λειτουργίες, πιέστε Fn+τα πλήκτρα της επάνω σειράς. Ή, μπορείτε να πιέσετε Fn+Esc πρώτα και, στη συνέχεια, να πιέσετε τα πλήκτρα της επάνω σειράς."
                         },
                         "subSectionThree": {
                             "title": "Πώς θα χρησιμοποιήσετε τους συνδυασμούς πλήκτρων Fn",
@@ -1982,7 +1982,7 @@
                     "description3": "1. Για να χρησιμοποιήσετε τις παραπάνω λειτουργίες, ρυθμίστε την οθόνη σε κατάλληλη γωνία ώστε να είναι δυνατή η αναγνώριση του προσώπου σας.",
                     "description4": "2. Οι παραπάνω λειτουργίες δεν υποστηρίζονται όταν:",
                     "description5a": "α. Ο υπολογιστής σας είναι σε κάποια από τις καταστάσεις Σκηνή, Tablet, Stand ή Ανεξάρτητη. Για τις λειτουργίες που υποστηρίζονται στον υπολογιστή σας, ανατρέξτε στον Οδηγό χρήσης που τον συνοδεύει.",
-					"description5b": "β. Ο υπολογιστής σας είναι σε κατάσταση αδρανοποίησης ή έχει απενεργοποιηθεί.",
+                    "description5b": "β. Ο υπολογιστής σας είναι σε κατάσταση αδρανοποίησης ή έχει απενεργοποιηθεί.",
                     "description6": "3. Αν η Λειτουργία πτήσης είναι ενεργοποιημένη στον υπολογιστή σας, αυτές οι δυνατότητες είναι απενεργοποιημένες.",
                     "description7": "Η ακρίβεια ποικίλλει ανάλογα με το μέγεθος και τη στάση του σώματος και τη συχνότητα της κίνησης. Αν ο υπολογιστής σας κλειδώνει απρόσμενα, ρυθμίστε τη γραμμή ευαισθησίας για να βελτιώσετε την ακρίβεια."
                 },
@@ -2103,12 +2103,12 @@
                 "photo": {
                     "title": "Ο ΑΡΙΘΜΟΣ ΤΩΝ ΦΩΤΟΓΡΑΦΙΩΝ ΠΟΥ ΛΑΜΒΑΝΟΝΤΑΙ ΣΤΗ ΔΙΑΡΚΕΙΑ ΤΗΣ ΚΙΝΗΣΗΣ",
                     "tooltip": "Η κάμερα στον υπολογιστή σας ενεργοποιείται αυτόματα για τη λήψη φωτογραφιών, όταν ανιχνεύονται κινήσεις. Οι φωτογραφίες λαμβάνονται κάθε 2 δευτερόλεπτα και αποθηκεύονται στον τοπικό χώρο αποθήκευσης.",
-                    "option1": "5",
-                    "option2": "10",
-                    "option3": "15",
-                    "option4": "20",
-                    "option5": "25",
-                    "option6": "30"
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
                 },
                 "showPhoto": {
                     "title": "ΟΙ ΦΩΤΟΓΡΑΦΙΕΣ ΕΧΟΥΝ ΑΠΟΘΗΚΕΥΤΕΙ ΤΟΠΙΚΑ:",
@@ -3895,7 +3895,8 @@
                 "results": "Results:",
                 "status": "Status"
             }
-        }
+        },
+        "runningWell": "PC is running well"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

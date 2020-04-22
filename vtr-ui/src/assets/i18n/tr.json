@@ -1466,9 +1466,9 @@
                             "entertainmentMode": {
                                 "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
                             }
                         }
                     },
@@ -1689,17 +1689,17 @@
                         "hideAdvSettings": "GELİŞMİŞ AYARLARI GİZLE",
                         "description": "Klavyenin üst sırası aşağıdaki iki işlevi sağlar. İstediğiniz işlevi seçin:",
                         "subSection": {
-                            "description": "Yukarıdaki iki işlev arasında geçiş yapmak için Fn+Esc tuşlarına basın.",
+                            "description": "Ayrıca, Fn+Esc tuşlarına basarak iki işlevin yerini birbiriyle değiştirebilirsiniz. Yenileme işlemi birkaç saniye sürebilir.",
                             "radioButton": {
-                                "sFunKey": "ÖZEL İŞLEV",
-                                "fnKey": "F1-F12 İŞLEVİ"
+                                "sFunKey": "Özel işlev",
+                                "fnKey": "F1-F12 işlevleri"
                             }
                         },
                         "subSectionTwo": {
                             "title": "Varsayılan birincil işlevi tersine çevirme",
                             "description": "Bu ayar açık olduğunda, varsayılan birincil işlev fabrika ayarlarından diğer işleve değiştirilir. Değişikliklerin geçerli hale gelmesi için bilgisayarınızı yeniden başlatın.",
-                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
-                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
+                            "caption": "ETKİN BİRİNCİL İŞLEV:",
+                            "tooltipText": "Varsayılan birincil işlevi kullanmak için üst sıra tuşlarına basın. Birincil olmayan işlevler için Fn+üst sıra tuşlarına basın. Önce Fn+Esc tuşlarına, ardından üst sıra tuşlarına da basabilirsiniz."
                         },
                         "subSectionThree": {
                             "title": "Fn tuş bileşimleri nasıl kullanılır?",
@@ -2103,12 +2103,12 @@
                 "photo": {
                     "title": "HAREKET SIRASINDA ÇEKİLEN FOTOĞRAF SAYISI",
                     "tooltip": "Hareket algılandığında, bilgisayarınızdaki kamera otomatik olarak etkinleşerek fotoğraf çekmeye başlar. 2 saniyede bir fotoğraf çekilir ve bunlar yerel depolama alanınıza kaydedilir.",
-                    "option1": "5",
-                    "option2": "10",
-                    "option3": "15",
-                    "option4": "20",
-                    "option5": "25",
-                    "option6": "30"
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
                 },
                 "showPhoto": {
                     "title": "FOTOĞRAFLAR YEREL OLARAK KAYDEDİLDİ:",
@@ -3895,7 +3895,8 @@
                 "results": "Results:",
                 "status": "Status"
             }
-        }
+        },
+        "runningWell": "PC is running well"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

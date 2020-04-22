@@ -1452,10 +1452,10 @@
                         "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
                             "dynamic": "DYNAMIC",
-							"movie": "MOVIE",
-							"music": "MUSIC",
-							"games": "GAME",
-							"voip": "VOICE"
+                            "movie": "MOVIE",
+                            "music": "MUSIC",
+                            "games": "GAME",
+                            "voip": "VOICE"
                         },
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
@@ -1466,9 +1466,9 @@
                             "entertainmentMode": {
                                 "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
                             }
                         }
                     },
@@ -1689,17 +1689,17 @@
                         "hideAdvSettings": "PIILOTA LISÄASETUKSET",
                         "description": "Näppäimistön ylärivillä on kaksi seuraavaa toimintoa. Valitse haluamasi toiminto:",
                         "subSection": {
-                            "description": "Voit vaihtaa edellä mainittujen toimintojen välillä painamalla näppäinyhdistelmää Fn+Esc.",
+                            "description": "Voit myös vaihtaa näiden kahden toiminnon välillä painamalla Fn+Esc. Päivitys kestää useita sekunteja.",
                             "radioButton": {
-                                "sFunKey": "ERIKOISTOIMINTO",
-                                "fnKey": "NÄPPÄINTEN F1–F12 TOIMINNOT"
+                                "sFunKey": "Erikoistoiminto",
+                                "fnKey": "Näppäinten F1–F12 toiminto"
                             }
                         },
                         "subSectionTwo": {
                             "title": "Ensisijaisen oletustoiminnon muuttaminen",
                             "description": "Kun käytössä, ensisijainen oletustoiminto muutetaan tehdasasetuksista vastakkaiseksi. Käynnistä tietokone uudelleen, jotta muutokset tulevat voimaan.",
-                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
-                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
+                            "caption": "AKTIIVINEN ENSISIJAINEN TOIMINTO:",
+                            "tooltipText": "Paina ylärivin näppäimiä käyttääksesi ensisijaista oletustoimintoa. Paina Fn+ylärivin näppäintä käyttääksesi toissijaisia toimintoja. Voit myös painaa ensin Fn+Esc ja sitten ylärivin näppäintä."
                         },
                         "subSectionThree": {
                             "title": "Fn-näppäinyhdistelmien käyttö",
@@ -1982,7 +1982,7 @@
                     "description3": "1. Kun haluat käyttää yllä kuvattuja toimintoja, säädä tietokoneesi näytön kulmaa siten, että kasvosi voidaan tunnistaa.",
                     "description4": "2. Yllä kuvattuja toimintoja ei tueta, kun:",
                     "description5a": "a. Tietokoneesi on kolmio-, taulu- tai taitosasennossa tai irrotettuna. Saat lisätietoja tietokoneesi tukemista asennoista mukana toimitetusta käyttöoppaasta.",
-					"description5b": "b. Tietokoneesi on horrostilassa tai siitä on katkaistu virta.",
+                    "description5b": "b. Tietokoneesi on horrostilassa tai siitä on katkaistu virta.",
                     "description6": "3. Jos tietokoneen lentotila on käytössä, nämä langattomat ominaisuudet ovat poissa käytöstä.",
                     "description7": "Tarkkuus vaihtelee kehon koon, asennon ja liikkumisen tiheyden mukaan. Jos tietokone lukitaan odottamatta, paranna tarkkuutta säätämällä herkkyyspalkkia."
                 },
@@ -2103,12 +2103,12 @@
                 "photo": {
                     "title": "LIIKKEEN AIKANA OTETTUJEN VALOKUVIEN MÄÄRÄ",
                     "tooltip": "Tietokoneesi kamera aktivoitu automaattisesti ja ottaa valokuvia, kun liikettä havaitaan. Kuvia otetaan 2 sekunnin välein ja ne tallennetaan paikalliseen tallennustilaan.",
-                    "option1": "5",
-                    "option2": "10",
-                    "option3": "15",
-                    "option4": "20",
-                    "option5": "25",
-                    "option6": "30"
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
                 },
                 "showPhoto": {
                     "title": "VALOKUVAT ON TALLENNETTU PAIKALLISEEN ASEMAAN:",
@@ -3895,7 +3895,8 @@
                 "results": "Results:",
                 "status": "Status"
             }
-        }
+        },
+        "runningWell": "PC is running well"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

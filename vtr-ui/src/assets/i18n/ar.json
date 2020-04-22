@@ -1468,9 +1468,9 @@
                             "entertainmentMode": {
                                 "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
                             }
                         }
                     },
@@ -1689,7 +1689,7 @@
                         "title": "وظيفة الصف العلوي في لوحة المفاتيح",
                         "description": "يوفر الصف العلوي من لوحة المفاتيح الوظيفتين التاليتين. حدد الوظيفة التي تريدها:",
                         "subSection": {
-                            "description": "للتبديل بين الوظيفتين أعلاه، اضغط على Fn+Esc.",
+                            "description": "يمكنك أيضًا تبديل الوظيفتين بالضغط على Fn+Esc. ستستغرق عملية التحديث عدة ثوانٍ.",
                             "radioButton": {
                                 "sFunKey": "وظيفة خاصة",
                                 "fnKey": "وظيفة F1-F12"
@@ -1698,8 +1698,8 @@
                         "subSectionTwo": {
                             "title": "عكس الوظيفة الأساسية الافتراضية",
                             "description": "عند التشغيل، سيتم تغيير الوظيفة الأساسية الافتراضية من إعدادات المصنع إلى العكس. أعد تشغيل الكمبيوتر لجعل التغييرات نافذة المفعول.",
-                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
-                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
+                            "caption": "الوظيفة الأولية النشطة:",
+                            "tooltipText": "لاستخدام الوظيفة الأساسية الافتراضية، اضغط على مفاتيح الصف العلوي. للوظائف غير الأساسية، اضغط على Fn+مفاتيح الصف العلوي. أو يمكنك الضغط على Fn+Esc أولاً، ثم الضغط على مفاتيح الصف العلوي."
                         },
                         "subSectionThree": {
                             "title": "كيفية استخدام مجموعات مفاتيح Fn",
@@ -2105,12 +2105,12 @@
                 "photo": {
                     "title": "عدد الصور التي تم التقاطها أثناء الحركة",
                     "tooltip": "يتم تنشيط الكاميرا الموجودة على الكمبيوتر تلقائيًا لالتقاط الصور عند اكتشاف حركات. يتم التقاط الصور كل ثانيتين ويتم حفظها في وحدة التخزين المحلية.",
-                    "option1": "5",
-                    "option2": "10",
-                    "option3": "15",
-                    "option4": "20",
-                    "option5": "25",
-                    "option6": "30"
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
                 },
                 "showPhoto": {
                     "title": "تم حفظ الصور في المحلي:",
@@ -3897,7 +3897,8 @@
                 "results": "Results:",
                 "status": "Status"
             }
-        }
+        },
+        "runningWell": "PC is running well"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

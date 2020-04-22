@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.20](https://bitbucket.tc.lenovo.com///compare/v1.5.19...v1.5.20) (2020-04-21)
+
+
+### Bug Fixes
+
+* **protocol overall:** 1. add fallback route 2.fix 3.0 convert issue ([6af6edb](https://bitbucket.tc.lenovo.com///commit/6af6edb8ab3ec270509bd3c3faf4200d1fd53fde))
+* **protocol overall:** fix fallback route issue ([97b7fff](https://bitbucket.tc.lenovo.com///commit/97b7fffbd138ad1d9554613ffc9a77616033213e))
+
 ### [1.5.19](https://bitbucket.tc.lenovo.com///compare/v1.5.18...v1.5.19) (2020-04-20)
 
 

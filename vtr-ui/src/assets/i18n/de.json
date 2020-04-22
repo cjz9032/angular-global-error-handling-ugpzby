@@ -1452,10 +1452,10 @@
                         "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
                             "dynamic": "DYNAMIC",
-							"movie": "MOVIE",
-							"music": "MUSIC",
-							"games": "GAME",
-							"voip": "VOICE"
+                            "movie": "MOVIE",
+                            "music": "MUSIC",
+                            "games": "GAME",
+                            "voip": "VOICE"
                         },
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
@@ -1466,9 +1466,9 @@
                             "entertainmentMode": {
                                 "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
                             }
                         }
                     },
@@ -1689,17 +1689,17 @@
                         "hideAdvSettings": "ERWEITERTE EINSTELLUNGEN AUSBLENDEN",
                         "description": "Die obere Tastaturreihe stellt die folgenden zwei Funktionen zur Verfügung: Wählen Sie die gewünschte aus:",
                         "subSection": {
-                            "description": "Um zwischen den zwei Funktionen zu wechseln, drücken Sie Fn+Esc.",
+                            "description": "Sie können auch mit der Tastenkombination Fn+Esc zwischen den zwei Funktionen wechseln. Die Aktualisierung dauert wenige Sekunden.",
                             "radioButton": {
-                                "sFunKey": "SONDERFUNKTION",
-                                "fnKey": "F1-F12 FUNKTION"
+                                "sFunKey": "Sonderfunktion",
+                                "fnKey": "F1–F12-Funktion"
                             }
                         },
                         "subSectionTwo": {
                             "title": "Umkehrung der primären Standardfunktion",
                             "description": "Wenn diese Option eingeschaltet ist, wird die primäre Standardfunktion von den Werkseinstellungen auf die entgegengesetzte Einstellung geändert. Starten Sie den Computer neu, damit die Änderungen wirksam werden.",
-                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
-                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
+                            "caption": "DIE AKTIVE PRIMÄRE FUNKTION:",
+                            "tooltipText": "Drücken Sie die Tasten in der obersten Reihe, um die primäre Standardfunktion zu verwenden. Bei nicht-primären Funktionen muss zusätzlich zur entsprechenden Taste in der obersten Reihe auch die Fn+Taste gedrückt werden. Sie können auch erst die Tastenkombination Fn+Esc und dann die Tasten der obersten Reihe drücken."
                         },
                         "subSectionThree": {
                             "title": "So verwenden Sie Fn-Tastenkombinationen",
@@ -1982,7 +1982,7 @@
                     "description3": "1. Um die oben genannten Funktionen nutzen zu können, passen Sie den Winkel des Bildschirms so an, dass Ihr Gesicht erkannt werden kann.",
                     "description4": "2. Die oben genannten Funktionen werden nicht unterstützt, wenn:",
                     "description5a": "a) sich Ihr Computer im Zelt‑, Tablet‑, Stand‑ oder getrennten Modus befindet. Die auf Ihrem Computer unterstützten Modi finden Sie im Benutzerhandbuch, das im Lieferumfang des Computers enthalten ist.",
-					"description5b": "b) sich der Computer im Ruhezustand befindet oder ausgeschaltet ist.",
+                    "description5b": "b) sich der Computer im Ruhezustand befindet oder ausgeschaltet ist.",
                     "description6": "3. Wenn der Flugzeugmodus auf Ihrem Computer aktiviert ist, sind die folgenden Funktionen deaktiviert.",
                     "description7": "Die Genauigkeit variiert je nach Körpergröße, Haltung und Bewegungshäufigkeit. Wenn Ihr Computer unerwartet gesperrt wird, passen Sie die Empfindlichkeit an, um die Genauigkeit zu verbessern."
                 },
@@ -2103,12 +2103,12 @@
                 "photo": {
                     "title": "ANZAHL DER BEI BEWEGUNG AUFGENOMMENEN FOTOS",
                     "tooltip": "Die Kamera Ihres Computers wird automatisch aktiviert und macht Fotos, wenn Bewegungen erkannt werden. Alle 2 Sekunden wird ein Foto aufgenommen und lokal gespeichert.",
-                    "option1": "5",
-                    "option2": "10",
-                    "option3": "15",
-                    "option4": "20",
-                    "option5": "25",
-                    "option6": "30"
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
                 },
                 "showPhoto": {
                     "title": "DIE FOTOS WURDEN LOKAL GESPEICHERT:",
@@ -3895,7 +3895,8 @@
                 "results": "Results:",
                 "status": "Status"
             }
-        }
+        },
+        "runningWell": "PC is running well"
     },
     "homeSecurity": {
         "title": "Connected Home Security",
