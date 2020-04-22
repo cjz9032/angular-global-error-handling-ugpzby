@@ -82,6 +82,9 @@ export class ModalChsWelcomeContainerComponent implements OnInit {
 		} else {
 			this.switchPage = 2;
 			this.showPageLocation = true;
+			setTimeout(() => {
+				document.getElementById('chs-tour-btn-openLocation').focus();
+			}, 0);
 		}
 	}
 
