@@ -13,7 +13,7 @@ export class GamingAccessoryService {
   private regUtil: any;
   // plugin?
   private systemUpdateBridge: any;
-  public isShellAvailable = false;
+  public isShellAvailable: boolean = false;
 
   constructor(
     private shellService: VantageShellService,

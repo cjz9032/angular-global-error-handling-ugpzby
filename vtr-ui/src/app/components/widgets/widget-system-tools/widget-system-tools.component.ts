@@ -18,11 +18,11 @@ import { GamingAccessoryService } from 'src/app/services/gaming/gaming-accessory
 })
 export class WidgetSystemToolsComponent implements OnInit {
 	@Input() title = '';
-	showHWScanMenu: boolean = false;
+	public showHWScanMenu: boolean = false;
 	public gamingProperties: any = new GamingAllCapabilities();
 	// version 3.3 for accessory entrance
-	showLegionAccessory = false;
-	toolLength = 3;
+	public showLegionAccessory: boolean = false;
+	public toolLength: number = 3;
 	constructor(
 		private modalService: NgbModal,
 		private commonService: CommonService, 
