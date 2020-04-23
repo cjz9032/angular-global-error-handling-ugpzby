@@ -1452,10 +1452,10 @@
                         "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
                             "dynamic": "DYNAMIC",
-							"movie": "MOVIE",
-							"music": "MUSIC",
-							"games": "GAME",
-							"voip": "VOICE"
+                            "movie": "MOVIE",
+                            "music": "MUSIC",
+                            "games": "GAME",
+                            "voip": "VOICE"
                         },
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
@@ -1466,9 +1466,9 @@
                             "entertainmentMode": {
                                 "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
                             }
                         }
                     },
@@ -1687,17 +1687,17 @@
                         "title": "Funkcija gornjeg reda tastature",
                         "description": "Gornji red tastature pruža sledeće dve funkcije. Izaberite onu koju želite:",
                         "subSection": {
-                            "description": "Za prelazak sa jedne na drugu gorenavedenu funkciju, pritisnite tastere Fn+Esc.",
+                            "description": "Ove dve funkcije možete da zamenite i pritiskom na tastere Fn+Esc. Osvežavanje će potrajati nekoliko sekundi.",
                             "radioButton": {
-                                "sFunKey": "SPECIJALNA FUNKCIJA",
-                                "fnKey": "FUNKCIJA TASTERA F1–F12"
+                                "sFunKey": "Specijalnu funkciju",
+                                "fnKey": "Funkciju tastera F1-F12"
                             }
                         },
                         "subSectionTwo": {
                             "title": "Storniranje podrazumevane primarne funkcije",
                             "description": "Kada je uključena, podrazumevana primarna funkcija će biti promenjena iz fabričkih postavki na suprotno. Ponovo pokrenite računar da bi se promene primenile.",
-                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
-                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
+                            "caption": "AKTIVNA PRIMARNA FUNKCIJA:",
+                            "tooltipText": "Da biste koristili podrazumevanu primarnu funkciju, pritisnite tastere u gornjem redu. Za funkcije koje nisu primarne, pritisnite Fn+tastere u gornjem redu. Odnosno, možete prvo da pritisnete Fn+Esc, a zatim da pritisnete tastere u gornjem redu."
                         },
                         "subSectionThree": {
                             "title": "Kako da koristite kombinacije tastera Fn",
@@ -1982,7 +1982,7 @@
                     "description3": "1. Da biste koristili gornje funkcije, podesite ekran na odgovarajući ugao kako bi vaše lice moglo da se prepozna.",
                     "description4": "2. Prethodne funkcije nisu podržane u sledećim slučajevima:",
                     "description5a": "a. Računar je u režimu šatora, tableta, postolja ili u odvojenom režimu. Režime koje podržava vaš računar potražite u Uputstvu za korisnike koje se dobija uz njega.",
-					"description5b": "b. Računar je u režimu hibernacije ili je isključen.",
+                    "description5b": "b. Računar je u režimu hibernacije ili je isključen.",
                     "description6": "3. Ako je na računaru omogućen režim rada u avionu, ove funkcije su onemogućene.",
                     "description7": "Preciznost zavisi od veličine tela, držanja tela i učestalosti kretanja. Ako se računar neočekivano zaključa, podesite traku osetljivosti da biste poboljšali preciznost."
                 },
@@ -2103,12 +2103,12 @@
                 "photo": {
                     "title": "BROJ SNIMLJENIH FOTOGRAFIJA DOK TRAJE POKRET",
                     "tooltip": "Kamera na računaru se automatski aktivira za snimanje slika kada se detektuju pokreti. Slike se snimaju na 2 sekunde i čuvaju se u lokalnom skladištu.",
-                    "option1": "5",
-                    "option2": "10",
-                    "option3": "15",
-                    "option4": "20",
-                    "option5": "25",
-                    "option6": "30"
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
                 },
                 "showPhoto": {
                     "title": "FOTOGRAFIJE SU SAČUVANE NA LOKALNOM:",
@@ -3895,7 +3895,8 @@
                 "results": "Results:",
                 "status": "Status"
             }
-        }
+        },
+        "runningWell": "PC is running well"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

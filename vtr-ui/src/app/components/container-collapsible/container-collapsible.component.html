@@ -10,7 +10,6 @@
 							<div class="col-auto text-left mr-auto mb-0 header"
 								style="outline: none;"
 								id="{{collapseLinkId+'-collapse-card-title'}}"
-								attr.aria-label="{{ cardTitle + ',card' }}"
 								role="heading"
 								tabindex="-1"
 								[innerHTML]="cardTitle"></div>
@@ -20,7 +19,7 @@
 									[tabindex]="tabIndex ? tabIndex : 0"
 									vtrMetrics
 									id="{{collapseLinkId+'-collapse-link'}}"
-									attr.aria-label="{{collapseLinkId+'-collapse-link'}}"
+									
 									metricsEvent="itemClick"
 									[metricsValue]="!isCollapsed"
 									[metricsItem]="'btn.collapse'"
@@ -29,19 +28,16 @@
 									(keyup.enter)="onToggle()"
 									role="button"
 									[attr.aria-expanded]="!isCollapsed"
-									[attr.aria-labelledby]="collapseLinkId+'-collapse-card-title'">
+									>
 									<div *ngIf="isCollapsed"
 										class="collapse-text"
-										id="{{collapseLinkId+'-expand-title'}}"
-										attr.aria-label="{{collapseLinkId+'-expand-title'}}"
-										[attr.aria-label]>
+										id="{{collapseLinkId+'-expand-title'}}">
 										<!-- Expand -->
 										{{'common.ui.expand' | translate}}
 									</div>
 									<div *ngIf="!isCollapsed"
 										class="collapse-text"
-										id="{{collapseLinkId+'-collapse-title'}}"
-										attr.aria-label="{{collapseLinkId+'-collapse-title'}}">
+										id="{{collapseLinkId+'-collapse-title'}}">
 										<!-- Collapse -->
 										{{'common.ui.collapse' | translate}}
 									</div>

@@ -3,7 +3,7 @@
 .smart-settings-card {
 	.left-icon {
 		margin-top: 1.25rem;
-		color: white;
+		color: $menu_hover;
 		padding-right: 1rem;
 	}
 	.subtitle {
@@ -12,7 +12,6 @@
 		h3 {
 			margin-top: 1.5rem;
 			text-transform: capitalize;
-			color: $light;
 			font-size: $section_header;
 			font-weight: $weight_light;
 			letter-spacing: 0.05rem;
@@ -20,17 +19,17 @@
 		}
 		p {
 			//opacity: 0.8;
-			color: $light;
+			color: $grey_dark;
 			font-size: $body;
 			font-weight: $weight_light;
 			a {
 				list-style: none;
 				text-decoration: underline;
-				color: $light;
+				color: $grey_dark;
 
 				&:hover {
 					list-style: none;
-					color: $light;
+					color: $grey_dark;
 					text-decoration: underline;
 				}
 			}
@@ -54,11 +53,12 @@
 
 	.well {
 		padding: 15px;
-		background: #225faa;
+		background: $grey_lighter;
 		border-radius: 10px;
 		opacity: 0.9;
 		font-size: $fontsize_xs;
-		color: $light;
+		font-weight: $weight_light;
+		color: $shade_blue;;
 		margin-top: 3rem;
 		margin-right:0rem;
 		max-width: 100%;
@@ -84,7 +84,7 @@
 			background: none;
 			border: none;
 			list-style: none;
-			color: $light;
+			color: $menu_hover;
 			text-decoration: underline;
 			cursor: pointer;
 			font-size: $body;
@@ -97,7 +97,7 @@
 			}
 			&:hover {
 				list-style: none;
-				color: $light;
+				color: $menu_hover;
 				text-decoration: underline;
 			}
 			&:focus {
@@ -106,12 +106,12 @@
 		}
 		fa-icon {
 			font-size: 1.5rem;
-			color: white;
+			color: $menu_hover;
 			vertical-align: middle;
 		}
 	}
 	.read-more-link {
-		color: $light;
+		color: $grey_dark;
 		text-decoration: underline;
 		cursor: pointer;
 		@media #{$black-on-white} {
@@ -125,7 +125,6 @@
 		}
 	}
 	.optimize {
-		color: $light;
 		font-size: $fontsize_xs;
 		font-weight: 700;
 		margin-bottom: 10px;

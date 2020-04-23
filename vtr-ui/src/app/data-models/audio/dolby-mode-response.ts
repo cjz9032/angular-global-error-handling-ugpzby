@@ -1,15 +1,13 @@
 export class DolbyModeResponse {
-	constructor(
-        public available: boolean, 
-        public supporedModes: string[], 
-        public currentMode: string
-    ) {}
-}
-export class DolbyAudioProfileResponse {
-	constructor(
-        public eCourseStatus: string, 
-        public voIPRadioStatus: string, 
-        public entertainmentRadioStatus: string,
-        public aOCheckboxStatus:boolean
-    ) {}
+    constructor(
+        public available: boolean,
+        public supporedModes: string[],
+        public currentMode: string,
+
+        public isAudioProfileEnabled: boolean,
+        public eCourseStatus: string,
+        public voIPStatus: string,
+        public entertainmentStatus: string,
+        public driverAvailability: boolean
+    ) { }
 }

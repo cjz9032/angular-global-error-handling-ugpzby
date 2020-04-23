@@ -48,12 +48,12 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 		private translate: TranslateService,
 		private logger: LoggerService,
 		public commonService: CommonService,
-		public modalService: NgbModal) { }
+		public modalService: NgbModal) {
+			this.initDataFromCache();
+		}
 
 	ngOnInit() {
-		this.initDataFromCache();
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
-
 		if (thinkpad === this.machineType || this.isYogo730()) {
 			this.add = 0; // thinkpad
 			this.checkDriverForThinkPad();
@@ -79,10 +79,10 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				this.dytc6IsAutoModeSupported = this.cache.autoModeToggle.available;
 				return;
 			}
+			this.showIntelligentCoolingModes = this.cache.showIntelligentCoolingModes;
 			this.captionText = this.cache.captionText !== '' ? this.translate.instant(this.cache.captionText) : '';
 			this.showIntelligentCoolingToggle = this.cache.autoModeToggle.available;
 			this.enableIntelligentCoolingToggle = this.cache.autoModeToggle.status;
-			this.showIntelligentCoolingModes = this.cache.showIntelligentCoolingModes;
 			this.apsStatus = this.cache.apsState;
 			this.selectedModeText = this.cache.selectedModeText !== '' ? this.translate.instant(this.cache.selectedModeText) : '';
 			if (this.cache.mode) {
@@ -717,14 +717,21 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 	}
 
 
-	readMore(readMoreDiv: HTMLElement) {
+	readMore(readMoreDiv: HTMLElement,$event:Event) {
 		this.onReadMoreClick = true;
-		readMoreDiv.style.display = 'block';
-		// readMoreDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-		// const focusElement = readMoreDiv.querySelector('[tabindex = \'0\']') as HTMLElement;
-		// Fix for Edge browser
-		// window.scrollBy(0, 0);
-		readMoreDiv.focus();
+	
+		if(readMoreDiv){
+			readMoreDiv.style.display = 'block';
+			//readMoreDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+			// const focusElement = readMoreDiv.querySelector('[tabindex = \'0\']') as HTMLElement;
+			// Fix for Edge browser
+			// window.scrollBy(0, 0);
+			//if($event.type!=='click'){
+				readMoreDiv.focus();
+			//}
+			
+		}
+		
 	}
 
 	ngOnDestroy() {

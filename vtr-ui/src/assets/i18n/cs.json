@@ -1452,10 +1452,10 @@
                         "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
                             "dynamic": "DYNAMIC",
-							"movie": "MOVIE",
-							"music": "MUSIC",
-							"games": "GAME",
-							"voip": "VOICE"
+                            "movie": "MOVIE",
+                            "music": "MUSIC",
+                            "games": "GAME",
+                            "voip": "VOICE"
                         },
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
@@ -1466,9 +1466,9 @@
                             "entertainmentMode": {
                                 "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
                             }
                         }
                     },
@@ -1689,17 +1689,17 @@
                         "hideAdvSettings": "SKRÝT ROZŠÍŘENÁ NASTAVENÍ",
                         "description": "Horní řada klávesnice poskytuje následující dvě funkce. Vyberte požadovanou:",
                         "subSection": {
-                            "description": "Chcete-li přepnout dvě výše uvedené funkce, stiskněte kombinaci kláves Fn+Esc.",
+                            "description": "Obě funkce lze také přepnout stisknutím kláves Fn+Esc. Obnovení programu bude trvat několik sekund.",
                             "radioButton": {
-                                "sFunKey": "SPECIÁLNÍ FUNKCE",
-                                "fnKey": "FUNKCE F1–F12"
+                                "sFunKey": "Speciální funkce",
+                                "fnKey": "Funkce F1–F12"
                             }
                         },
                         "subSectionTwo": {
                             "title": "Přepnutí výchozí primární funkce",
                             "description": "Je-li tato funkce zapnutá, výchozí primární funkce se změní z továrního nastavení na opačné. Aby se tyto změny projevily, restartujte počítač.",
-                            "caption": "THE ACTIVE PRIMARY FUNCTION:",
-                            "tooltipText": "To use the default primary function, press the top-row function keys. For non-primary functions, press Fn+top-row keys. Or you can press Fn+Esc first and then press the top-row keys."
+                            "caption": "AKTIVNÍ PRIMÁRNÍ FUNKCE:",
+                            "tooltipText": "Chcete-li použít výchozí primární funkci, stiskněte klávesy v horním řádku. Pro jiné než primární funkce stiskněte klávesy Fn+klávesy v horním řádku. Nebo můžete nejprve stisknout klávesy Fn+Esc a poté klávesy v horním řádku."
                         },
                         "subSectionThree": {
                             "title": "Jak používat kombinace s klávesou Fn",
@@ -1982,7 +1982,7 @@
                     "description3": "1. Chcete-li výše uvedené funkce používat, nastavte obrazovku do náležitého úhlu tak, aby mohl být váš obličej rozpoznán.",
                     "description4": "2. Výše uvedené funkce nejsou podporovány, pokud:",
                     "description5a": "a. Počítač je v režimu stan, tablet, stojan nebo v odpojeném režimu. Informace o režimech podporovaných vaším počítačem naleznete v uživatelské příručce, která se s ním dodává.",
-					"description5b": "b. Počítač je v režimu hibernace nebo vypnutý.",
+                    "description5b": "b. Počítač je v režimu hibernace nebo vypnutý.",
                     "description6": "3. Je-li na vašem počítači zapnut režim V letadle, jsou tyto funkce vypnuté.",
                     "description7": "Přesnost se liší podle velikosti trupu, polohy a četnosti pohybu. Pokud se váš počítač neočekávaně uzamkne, seřiďte sloupec citlivosti tak, aby se zvýšila přesnost."
                 },
@@ -2103,12 +2103,12 @@
                 "photo": {
                     "title": "POČET FOTOGRAFIÍ POŘÍZENÝCH PŘI POHYBU",
                     "tooltip": "Kamera v počítači se při rozpoznání pohybů automaticky aktivuje a začne pořizovat fotografie. Fotografie se pořizují každé 2 sekundy a ukládají se do místního úložiště.",
-                    "option1": "5",
-                    "option2": "10",
-                    "option3": "15",
-                    "option4": "20",
-                    "option5": "25",
-                    "option6": "30"
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
                 },
                 "showPhoto": {
                     "title": "FOTOGRAFIE BYLY ULOŽENY DO MÍSTNÍHO:",
@@ -3895,7 +3895,8 @@
                 "results": "Results:",
                 "status": "Status"
             }
-        }
+        },
+        "runningWell": "PC is running well"
     },
     "homeSecurity": {
         "title": "Connected Home Security",

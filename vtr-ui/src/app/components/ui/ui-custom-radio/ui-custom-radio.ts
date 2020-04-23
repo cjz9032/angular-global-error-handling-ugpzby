@@ -4,6 +4,9 @@ import { MetricService } from 'src/app/services/metric/metric.service';
 import { KeyCode } from 'src/app/enums/key-code.enum';
 
 export class UICustomRadio implements OnInit, AfterViewInit, OnChanges {
+	static readonly ROLE_RADIO_GROUP = 'radiogroup';
+	static readonly ROLE = 'role';
+	static readonly DEPTH = 5;
 	static readonly UN_DEFINED = undefined;
 	static readonly TAB_INDEX = 'tabIndex';
 	static readonly ARIA_CHECKED = 'aria-checked';
@@ -88,6 +91,7 @@ export class UICustomRadio implements OnInit, AfterViewInit, OnChanges {
 				// this.setChecked(this.radioButton.nativeElement, true);
 				$event.stopPropagation();
 				$event.preventDefault();
+				this.radioButton.nativeElement.focus();
 				break;
 			case KeyCode.UP:
 				this.setCheckedToPreviousItem(this.radioButton);
@@ -241,7 +245,7 @@ export class UICustomRadio implements OnInit, AfterViewInit, OnChanges {
 		try {
 			// commented to remove the dependency from radiogroup role of parent this component
 
-			this.radioGroup = this.getParentRadioGroup(this.getNativeElement(this.radioButton), 10);
+			this.radioGroup = this.getParentRadioGroup(this.getNativeElement(this.radioButton), UICustomRadio.DEPTH);
 			if (this.radioGroup !== UICustomRadio.UN_DEFINED) {
 				// search by radio class and aria-disabled
 				const query = `[class*=${this.group}][aria-disabled=false]`;
@@ -272,14 +276,13 @@ export class UICustomRadio implements OnInit, AfterViewInit, OnChanges {
 
 	private getParentRadioGroup(element, topUpLevel: number) {
 		try {
-			const roleRadioGroup = 'radiogroup';
-			const role = 'role';
 
-			if (element && element.getAttribute(role) === roleRadioGroup) {
+
+			if (element && element.getAttribute(UICustomRadio.ROLE) === UICustomRadio.ROLE_RADIO_GROUP) {
 				return element;
 			}
 			else if (element && element.parentElement
-				&& element.getAttribute(role) !== roleRadioGroup && topUpLevel > 0) {
+				&& element.getAttribute(UICustomRadio.ROLE) !== UICustomRadio.ROLE_RADIO_GROUP && topUpLevel > 0) {
 				return this.getParentRadioGroup(element.parentElement, --topUpLevel);
 			}
 			else {

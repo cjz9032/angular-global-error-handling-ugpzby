@@ -211,11 +211,12 @@ export class ConfigService {
 		this.initializeWiFiItem(items);
 		this.supportFilter(items, 'security', true);
 		this.supportFilter(items, 'anti-virus', true);
-		this.supportFilter(items, 'password-protection', true);
 		if (region.toLowerCase() === 'cn') {
+			this.supportFilter(items, 'password-protection', false);
 			this.supportFilter(items, 'internet-protection', false);
 		} else {
 			this.supportFilter(items, 'internet-protection', true);
+			this.supportFilter(items, 'password-protection', true);
 		}
 	}
 
@@ -232,7 +233,7 @@ export class ConfigService {
 		this.supportFilter(menu, 'wifi-security', wifiIsSupport
 		&& !this.deviceService.isSMode
 		&& !this.deviceService.isArm &&
-		this.activeSegment !== SegmentConst.Gaming);
+		this.activeSegment !== SegmentConst.Commercial);
 		this.updateWifiStateCache(wifiIsSupport);
 	}
 

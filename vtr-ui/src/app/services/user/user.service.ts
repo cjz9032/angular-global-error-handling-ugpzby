@@ -39,6 +39,8 @@ export class UserService {
 	accountState = null;
 	starterStatus = null;
 
+	logoutInProcess = false;
+
 	private lid: any;
 	private metrics: any;
 	private lidStarterHelper: LIDStarterHelper;
@@ -338,6 +340,10 @@ export class UserService {
 	}
 
 	async removeAuth() {
+		if (this.logoutInProcess) {
+			return;
+		}
+		this.logoutInProcess = true;
 		this.cookieService.deleteAll('/');
 		this.cookies = this.cookieService.getAll();
 
@@ -395,9 +401,11 @@ export class UserService {
 				});
 				this.commonService.sendNotification(LenovoIdStatus.LoggingOut, false);
 				this.commonService.sendNotification(LenovoIdStatus.SignedOut, this.auth);
+				this.logoutInProcess = false;
 			});
 		} else {
 			this.devService.writeLog('removeAuth(): undefined lid object!');
+			this.logoutInProcess = false;
 		}
 	}
 

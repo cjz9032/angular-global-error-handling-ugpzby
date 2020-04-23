@@ -2,6 +2,49 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.21](https://bitbucket.tc.lenovo.com///compare/v1.5.20...v1.5.21) (2020-04-22)
+
+
+### Features
+
+* **dashlane:** hide dashlane in china GEO ([4de1949](https://bitbucket.tc.lenovo.com///commit/4de1949895d7f7fe4eb759f91a5658d572806603))
+* **dashlane:** hide dashlane in china GEO ([94c98d0](https://bitbucket.tc.lenovo.com///commit/94c98d0d4612ad4e0fd044494e73762e39588dc6))
+* **env:** QA now points to CMS staging ([30a8e46](https://bitbucket.tc.lenovo.com///commit/30a8e46265e86ed216a0362c1a338eee66ae62e6))
+* **env:** Vantage DEV now accesses CMS QA ([33d2ac4](https://bitbucket.tc.lenovo.com///commit/33d2ac41ce92c44c19f58d74c575568488d5f83c))
+
+
+### Bug Fixes
+
+* use ViewChild to replace document.getElementById ([b4acb45](https://bitbucket.tc.lenovo.com///commit/b4acb450513394fa7d6174196dced3d560029e51))
+* **CHS :** Make the image read "image coronet logo" ([fcd618d](https://bitbucket.tc.lenovo.com///commit/fcd618d327148397ba0f9b53888f23433ddca93e))
+* **CHS-Accessibility:** add focus to "allow" button ([39b705a](https://bitbucket.tc.lenovo.com///commit/39b705a006c1613c5d8754115eb2277143b86fd8))
+* no need to call additional translate function ([bb57f78](https://bitbucket.tc.lenovo.com///commit/bb57f7841b5d9566ff8fcc7d85b08a469712accd))
+* **Wifi security :** Append "alt" attribute ([538d59a](https://bitbucket.tc.lenovo.com///commit/538d59a431cf9d8bd975f7cc3f62f1e4ec9259d9))
+* fix translation code ([3e8aa13](https://bitbucket.tc.lenovo.com///commit/3e8aa13e7a5e158ab914d804b256d11ac1cf85f2))
+* **Wifi security-Accessibility:** In scan mode, scan to “show less” makes wrong ([50acd80](https://bitbucket.tc.lenovo.com///commit/50acd809460081af858ac599849debcd1bf63eb0))
+
+### [1.5.20](https://bitbucket.tc.lenovo.com///compare/v1.5.19...v1.5.20) (2020-04-21)
+
+
+### Bug Fixes
+
+* **protocol overall:** 1. add fallback route 2.fix 3.0 convert issue ([6af6edb](https://bitbucket.tc.lenovo.com///commit/6af6edb8ab3ec270509bd3c3faf4200d1fd53fde))
+* **protocol overall:** fix fallback route issue ([97b7fff](https://bitbucket.tc.lenovo.com///commit/97b7fffbd138ad1d9554613ffc9a77616033213e))
+
+### [1.5.19](https://bitbucket.tc.lenovo.com///compare/v1.5.18...v1.5.19) (2020-04-20)
+
+
+### Bug Fixes
+
+* **VAN-16563:** ut ([39efece](https://bitbucket.tc.lenovo.com///commit/39efece8450ab0d9654e3a5511b5e4ad693d8d03))
+* **Wifi security :** Append "h2" tag ([bb60ca3](https://bitbucket.tc.lenovo.com///commit/bb60ca3d50cca594faeaf5e3c4bce42ade5c3cbb))
+* **Wifi security :** Delete the "attr.aria-label" attribute ([0ef4da6](https://bitbucket.tc.lenovo.com///commit/0ef4da6c12711040418178ed6f76c418a23fdc21))
+* do not use legacy property ([31250ce](https://bitbucket.tc.lenovo.com///commit/31250cee568902bd97e0d8c4c71c536da6cedca1))
+* **Wifi security:** tabindex error on 'show more/show less' ([e0e00e0](https://bitbucket.tc.lenovo.com///commit/e0e00e0352ff269ae77921e3cae9f416150f87c7))
+* do not use legacy property ([5785f77](https://bitbucket.tc.lenovo.com///commit/5785f7758c437115b33727c36a5f8fcc0d79179a))
+* **Wifi security:** fix tabindex order in wifi security ([f135a41](https://bitbucket.tc.lenovo.com///commit/f135a41c18387ef4ee613c7c0552447260bcbf30))
+* **Wifi security:** tabindex error on 'show more/show less' ([9766941](https://bitbucket.tc.lenovo.com///commit/9766941ed9e95d21bcafc8ff20413e4938440bca))
+
 ### [1.5.18](https://bitbucket.tc.lenovo.com///compare/v1.5.17...v1.5.18) (2020-04-17)
 
 

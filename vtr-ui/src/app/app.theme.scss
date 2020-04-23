@@ -444,7 +444,6 @@ $high-contrast-black-yellow: #FFFF00;
 	border: 0.1rem solid $menu_hover;
 }
 @mixin button-outline-blue {
-	&:after {
 		content: '';
 		display: block;
 		position: absolute;
@@ -454,5 +453,20 @@ $high-contrast-black-yellow: #FFFF00;
 		width: calc(100% + 0.8rem);
 		height: calc(100% + 0.8rem);
 		border: thin solid $menu_hover;
-	}
 }
+
+@mixin circular-button-outline {
+	content: '';
+			border: 0.1rem solid $menu_hover;
+			position: absolute;
+			width: 6rem;
+			height: 6rem;
+			top: -0.1rem;
+			left: -0.1rem;
+			bottom: 0;
+			right: 0;
+			border-radius: 50%;
+			transform: scale(1.1);
+			z-index: -1;
+}
+

@@ -1,7 +1,7 @@
 <div class="vtr-ui-brightness-slider">
-	<ng5-slider [options]="options" (userChangeEnd)="dragEnd($event)" [manualRefresh]="manualRefresh"
+	<ng5-slider class="brightness_slider" [options]="options" (userChangeEnd)="dragEnd($event)" [manualRefresh]="manualRefresh"
 		[(value)]="lightingData" [vtrMetrics]="vtrMetricEnabled" [metricsItem]="metricsId" metricsEvent="featureClick"
-		[id]="lightingBrightness" metricsParam="{{ metricsId }}" metricsValue="{{lightingData}}" role="radiogroup">
+		[id]="'lightingBrightness'+lightingData" metricsParam="{{ metricsId }}" metricsValue="{{lightingData}}">
 	</ng5-slider>
 
 	<button type="button" id="sliderDetailsEle" tabindex="-1"></button>
