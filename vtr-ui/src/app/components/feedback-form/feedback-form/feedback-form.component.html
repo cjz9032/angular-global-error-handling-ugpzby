@@ -51,7 +51,7 @@
 							[name]="qa.name"
 							[id]="'feedback-likely-' + likely"
 							tabindex="-1"
-							(keyup.enter)="setLikelyStatus(qa.name, likely)"
+							(keydown.enter)="setLikelyStatus(qa.name, likely)"
 							[value]="likely">
 						<label class="form-check-label-out"></label>
 						<label class="form-check-label" [id]="'feedback-form-likely-' + likely" role="text"
