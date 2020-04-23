@@ -14,11 +14,13 @@
 						<div class="col px-5">
 							<div class="battery-text">
 								<span *ngIf="batteryService.gaugeResetInfo?.length==1"
-									id="deviceSettings-batteryGauge-subtitle">
+									id="deviceSettings-batteryGauge-subtitle"
+									role="heading">
 									{{'device.deviceSettings.batteryGauge.subtitle'| translate}}
 								</span>
 								<span *ngIf="batteryService.gaugeResetInfo?.length>1"
-									id="Battery-{{i+1}}-details">
+									id="Battery-{{i+1}}-details"
+									role="heading">
 									{{ headings[i] | translate }}
 								</span>
 							</div>
@@ -28,10 +30,12 @@
 								<div>
 									<div class="row">
 										<div class="col-4 label-text"
+											role="heading"
 											id="battery-barcode-title-{{i+1}}">
 											{{ 'device.deviceSettings.power.batterySettings.gaugeReset.barCode' | translate}}
 										</div>
 										<div class="col-8 label-value"
+											role="heading"
 											id="battery-barcode-value-{{i+1}}">{{battery.barCode}}</div>
 									</div>
 								</div>
@@ -41,51 +45,60 @@
 									<div class="row"
 										*ngIf="battery.stage && battery.stageNum">
 										<div class="col-4 label-text"
+											role="heading"
 											id="batterySettings-gaugeReset-progress-title">
 											{{ 'device.deviceSettings.power.batterySettings.gaugeReset.progress' | translate}}
 										</div>
 										<div class="col-8 label-value"
 											*ngIf="battery.stage==1"
+											role="heading"
 											id="batterySettings-gaugeReset-progressText1">
 											{{'device.deviceSettings.power.batterySettings.gaugeReset.progressText1' | translate : { stage: battery.stage, stageNum: battery.stageNum } }}
 										</div>
 										<div class="col-8 label-value"
 											*ngIf="battery.stage==2"
-											id="batterySettings-gaugeReset-progressText2">
+											id="batterySettings-gaugeReset-progressText2"
+											role="heading">
 											{{'device.deviceSettings.power.batterySettings.gaugeReset.progressText2' | translate : { stage: battery.stage, stageNum: battery.stageNum } }}
 										</div>
 										<div class="col-8 label-value"
 											*ngIf="battery.stage==3"
-											id="batterySettings-gaugeReset-progressText3">
+											id="batterySettings-gaugeReset-progressText3"
+											role="heading">
 											{{'device.deviceSettings.power.batterySettings.gaugeReset.progressText3' | translate : { stage: battery.stage, stageNum: battery.stageNum } }}
 										</div>
 									</div>
 									<div class="row"
 										*ngIf="!(batteryService.remainingPercentages[battery.batteryNum - 1]===0)">
 										<div class="col-4 label-text"
-											id="batterySettings-gaugeReset-remaining-title">
+											id="batterySettings-gaugeReset-remaining-title"
+											role="heading">
 											{{ 'device.deviceSettings.power.batterySettings.gaugeReset.remaining' | translate}}
 										</div>
 										<div class="col-8 label-value"
-											id="batterySettings-gaugeReset-remainingPercentage-value">
+											id="batterySettings-gaugeReset-remainingPercentage-value"
+											role="heading">
 											{{batteryService.remainingPercentages[battery.batteryNum - 1]}}<span>%</span>
 										</div>
 									</div>
 									<div class="row"
 										*ngIf="battery.startTime">
 										<div class="col-4 label-text"
+											role="heading"
 											id="batterySettings-gaugeReset-startTime-title">
 											{{ 'device.deviceSettings.power.batterySettings.gaugeReset.startTime' | translate}}
 										</div>
 
 										<div class="col-8 label-value"
 											*ngIf="is12HrsFormat"
+											role="heading"
 											id="battery-startTime-value-12hrs-format">
 											{{battery.startTime | date : 'M/d/yyyy h:mm:ss '}}
 											{{startTimeAbbreviated[i] | translate}}
 										</div>
 										<div class="col-8 label-value"
 											*ngIf="!is12HrsFormat"
+											role="heading"
 											id="battery-startTime-value-not12hrs-format">
 											{{battery.startTime | date : 'M/d/yyyy H:mm:ss '}}
 										</div>
@@ -102,12 +115,14 @@
 									<div class="row"
 										*ngIf="battery.lastResetTime && battery.resetErrorLog">
 										<div class="col-4 label-text"
+											role="heading"
 											id="batterySettings-gaugeReset-lastReset-title-{{i+1}}">
 											{{ 'device.deviceSettings.power.batterySettings.gaugeReset.lastReset' | translate}}
 										</div>
 										<div class="col-8 label-value"
 											*ngIf="is12HrsFormat"
-											id="batterySettings-battery-lastResetTime-value-12hrs-{{i+1}}">
+											id="batterySettings-battery-lastResetTime-value-12hrs-{{i+1}}"
+											role="heading">
 											{{battery.lastResetTime | date : 'M/d/yyyy h:mm:ss '}}
 											{{ lastResetTimeAbbreviated[i] | translate}}
 											<br *ngIf="battery.lastResetTime">
@@ -115,7 +130,8 @@
 										</div>
 										<div class="col-8 label-value"
 											*ngIf="!is12HrsFormat"
-											id="batterySettings-battery-lastResetTime-value-not12hrs-{{i+1}}">
+											id="batterySettings-battery-lastResetTime-value-not12hrs-{{i+1}}"
+											role="heading">
 											{{battery.lastResetTime | date : 'M/d/yyyy H:mm:ss '}}
 											<br>
 											{{'device.deviceSettings.power.batterySettings.gaugeReset.resetLog.' + battery.resetErrorLog | translate}}
@@ -124,10 +140,12 @@
 									<div class="row"
 										*ngIf="battery.FCCBefore && battery.FCCAfter">
 										<div class="col-4 label-text"
-											id="BattergaugeReset-fullChargeCapacity-title-{{i+1}}">
+											id="BattergaugeReset-fullChargeCapacity-title-{{i+1}}"
+											role="heading">
 											{{ 'device.deviceSettings.power.batterySettings.gaugeReset.fullChargeCapacity' | translate}}
 										</div>
 										<div class="col-8 label-value"
+											role="heading"
 											id="BattergaugeReset-fullChargeCapacity-value-{{i+1}}"
 											[innerHTML]="'device.deviceSettings.power.batterySettings.gaugeReset.FCCText' | translate: { before: battery.FCCBefore, after: battery.FCCAfter } ">
 										</div>
@@ -161,11 +179,13 @@
 					<div class="row px-5 pt-3">
 						<span *ngIf="!batteryService.isAcAttached"
 							class="note warning-note"
+							role="heading"
 							id="gaugeReset-warning-note">
 							{{'device.deviceSettings.power.batterySettings.gaugeReset.note' | translate}}
 						</span>
 						<span *ngIf="batteryService.isAcAttached && batteryService.gaugeResetInfo?.length>1"
 							class="note"
+							role="heading"
 							id="gaugeReset-warning-dual_note">
 							{{'device.deviceSettings.power.batterySettings.gaugeReset.dual_note' | translate}}
 						</span>

@@ -1099,7 +1099,7 @@
                     "description3": "تسمح ميزة \"التبريد الذكي\" بموازنة الأداء الحراري بشكل تلقائي لضبط احتياجاتك.تقوم ميزة التبريد الذكي بضبط إعدادات الأداء لتوفير سطح أكثر برودةً لتأمين راحتك، عند حمل الكمبيوتر المحمول. عندما يكون الجهاز موضوعًا على سطح المكتب، تقوم هذه الميزة بتحسين الأداء.",
                     "description13": "تضبط هذه الميزة، عند تشغيلها، الإعدادات الحرارية بطريقة ديناميكية وفق احتياجاتك. وهي تضبط الإعدادات للحفاظ على برودة الجهاز وهدوئه، أثناء الإمساك به أو عندما يكون خاملاً.\nأثناء وجود الجهاز على سطح مستوٍ، تقوم هذه الميزة بتحسين الأداء. عندما تكون متوقفة عن التشغيل، يمكنك تعيين أولوية الأداء الحراري بطريقة يدوية.",
                     "description14": "تتيح هذه الميزة لك ضبط سرعة المروحة أو تعظيم أداء النظام أو تمديد عمر البطارية الخاصة بك إذا لزم الأمر. ويحتوي على ثلاثة أوضاع أدناه. يمكنك أيضًا تبديل الأوضاع باستخدام مفاتيح التشغيل السريع (Fn+Q) أو من شريط أدوات Lenovo Vantage.",
-                    "readMore": "اقرأ أكثر.",
+                    "readMore": "اقرأ أكثر",
                     "gotoWindows": {
                         "title": "انتقال إلى إعدادات Windows",
                         "modalBodyText1": "انقر فوق أيقونة بطارية Windows في علبة النظام للوصول إلى شريط تمرير أداء Windows"
@@ -1141,7 +1141,7 @@
                             "title": "تغيير أوضاع التبريد الذكي",
                             "close": "إغلاق",
                             "coolingModesList": {
-                                "list1": "انقر على رمز بطارية Windows في شريط الأدوات",
+                                "list1": "انقر على رمز بطارية Windows في شريط الأدوات.",
                                 "list2": "سيظهر وضع الطاقة في Windows، حرك شريط التمرير للاختيار بين الوقت الأمثل أو الأداء الأمثل."
                             }
                         }
@@ -1153,7 +1153,7 @@
                             "battery&Quite": "البطارية والهدوء"
                         }
                     },
-                    "description5": "تضبط ميزة التبريد الذكي سرعة المروحة والحد الأقصى للأداء وتدير عمل البطارية. تتضمن هذه الميزة 3 أوضاع (الوضع الهادئ والوضع المتوازن ووضع الأداء) ويمكن الوصول إليها الآن بواسطة شريط تمرير أداء Windows",
+                    "description5": "تضبط ميزة التبريد الذكي سرعة المروحة والحد الأقصى للأداء وتدير عمل البطارية. تتضمن هذه الميزة 3 أوضاع (الوضع الهادئ والوضع المتوازن ووضع الأداء) ويمكن الوصول إليها الآن بواسطة شريط تمرير أداء Windows.",
                     "nocqldesc": "يتيح لك التبريد الذكي ضبط أداء النظام ودرجة الحرارة الحرارية. في وضع \"الأداء\"، يعمل على تحسين أداء النظام. في حين يساعد على تبريد النظام وهدوءه في وضع \"بارد وهادئ\".",
                     "dytc6": {
                         "desc1": "تضبط ميزة التبريد الذكي سرعة المروحة والحد الأقصى للأداء وتدير عمل البطارية.",
@@ -1462,15 +1462,15 @@
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "radioText": "VoIP",
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
+                                "checkboxText": "Automatically optimize audio for VOIP"
                             },
                             "entertainmentMode": {
-                                "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
                                 "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
                                 "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
+                                "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
                     },
@@ -1535,13 +1535,13 @@
                 "display": {
                     "title": "جهاز العرض",
                     "displayColorTemperature": {
-						"title": "وضع العناية بالعين",
-						"description": "لتجنب إجهاد العين، يمكنك ضبط درجة حرارة ألوان الشاشة لترشيح الضوء الأزرق عند استخدام الكمبيوتر لفترة طويلة. بالإضافة إلى ذلك، تعتبر الألوان القوية جيدة للنوم، خاصةً في الليل.",
-						"link": {
-							"click": "انقر",
-							"here": "هنا",
-							"rest": "لتغيير درجة حرارة اللون."
-						}
+                        "title": "وضع العناية بالعين",
+                        "description": "لتجنب إجهاد العين، يمكنك ضبط درجة حرارة ألوان الشاشة لترشيح الضوء الأزرق عند استخدام الكمبيوتر لفترة طويلة. بالإضافة إلى ذلك، تعتبر الألوان القوية جيدة للنوم، خاصةً في الليل.",
+                        "link": {
+                            "click": "انقر",
+                            "here": "هنا",
+                            "rest": "لتغيير درجة حرارة اللون."
+                        }
                     },
                     "eyeCareMode": {
                         "title": "وضع العناية بالعين",

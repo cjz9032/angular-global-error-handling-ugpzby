@@ -349,7 +349,7 @@ export class SmartAssistService {
 	public async getAntiTheftStatus(): Promise<AntiTheftResponse> {
 		const antiTheftDate = { available: false, status: false, isSupportPhoto: false, photoAddress: "", cameraPrivacyState: true, authorizedAccessState: true, alarmOften: 0, photoNumber: 5 };
 		try {
-			if (this.isShellAvailable) {
+			if (this.isShellAvailable && this.antiTheft !== undefined) {
 				const data = this.antiTheft.getMotionAlertSetting();
 				const obj = JSON.parse(data);
 				if (obj && obj.errorCode === 0) {
@@ -368,7 +368,7 @@ export class SmartAssistService {
 	}
 
 	public setAntiTheftStatus(value: boolean): Promise<boolean> {
-		if (this.isShellAvailable) {
+		if (this.isShellAvailable  && this.antiTheft !== undefined) {
 			const ret = this.antiTheft.setMotionAlertEnabled(value);
 			if (ret === 0) {
 				return Promise.resolve(true);
@@ -379,7 +379,7 @@ export class SmartAssistService {
 	}
 
 	public setAlarmOften(value: number): Promise<boolean> {
-		if (this.isShellAvailable) {
+		if (this.isShellAvailable  && this.antiTheft !== undefined) {
 			const ret = this.antiTheft.setMotionAlertAlarmDuration(value);
 			if (ret === 0) {
 				return Promise.resolve(true);
@@ -390,7 +390,7 @@ export class SmartAssistService {
 	}
 
 	public setPhotoNumber(value: number): Promise<boolean> {
-		if (this.isShellAvailable) {
+		if (this.isShellAvailable  && this.antiTheft !== undefined) {
 			const ret = this.antiTheft.setMotionAlertPhotoNumber(value);
 			if (ret === 0) {
 				return Promise.resolve(true);
@@ -401,7 +401,7 @@ export class SmartAssistService {
 	}
 
 	public setAllowCamera(value: boolean): Promise<boolean> {
-		if (this.isShellAvailable) {
+		if (this.isShellAvailable  && this.antiTheft !== undefined) {
 			const ret = this.antiTheft.setMotionAlertCameraAllowed(value);
 			if (ret === 0) {
 				return Promise.resolve(true);
@@ -412,7 +412,7 @@ export class SmartAssistService {
 	}
 
 	public startMonitorAntiTheftStatus(callback: any): Promise<boolean> {
-		if (this.isShellAvailable) {
+		if (this.isShellAvailable  && this.antiTheft !== undefined) {
 			this.antiTheft.onstatusupdated = (data: any) => {
 				callback(data);
 			};

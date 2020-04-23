@@ -54,6 +54,7 @@
 	  padding: 0 2.5rem;
 	  &:focus {
 		@include outline-blue;
+		outline-offset: 0;
 	}
     }
     color: #f12e2e;

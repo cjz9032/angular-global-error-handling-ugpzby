@@ -1097,7 +1097,7 @@
                     "description3": "Raffreddamento intelligente bilancia automaticamente le prestazioni termiche per adattarle alle proprie esigenze.La funzione Raffreddamento intelligente regola le impostazioni delle prestazioni per fornire una superficie più fredda per il massimo comfort, quando il notebook viene tenuto in mano. Quando il dispositivo si trova su una scrivania, questa funzione ottimizza le prestazioni.",
                     "description13": "Quando attiva, questa funzione regola dinamicamente le impostazioni termiche in base alle esigenze. Regola le impostazioni per mantenere il dispositivo più fresco o silenzioso, se è in mano all'utente o in caso di inattività. Se il dispositivo si trova su una superficie stabile, questa funzione ne ottimizza le prestazioni. Se disattivata, è possibile impostare manualmente la priorità termica.",
                     "description14": "Questa funzione consente di regolare la velocità della ventola, massimizzare le prestazioni del sistema o estendere la durata della batteria, se necessario. Dispone delle tre modalità indicate di seguito. È inoltre possibile cambiare le modalità utilizzando i tasti di scelta rapida (Fn+Q) o la barra degli strumenti di Lenovo Vantage.",
-                    "readMore": "Ulteriori informazioni.",
+                    "readMore": "Ulteriori informazioni",
                     "gotoWindows": {
                         "title": "Vai a Impostazioni di Windows",
                         "modalBodyText1": "Fare clic sull'icona della batteria di Windows sull'area di notifica per accedere al dispositivo di scorrimento delle prestazioni di Windows"
@@ -1139,7 +1139,7 @@
                             "title": "Modifica le modalità di raffreddamento intelligente",
                             "close": "chiudi",
                             "coolingModesList": {
-                                "list1": "Fai clic sull'icona della batteria di Windows nella barra degli strumenti",
+                                "list1": "Fai clic sull'icona della batteria di Windows nella barra degli strumenti.",
                                 "list2": "Viene visualizzata la modalità Risparmio energia di Windows, utilizzare il dispositivo di scorrimento per scegliere tra tempo o prestazioni ottimali."
                             }
                         }
@@ -1151,7 +1151,7 @@
                             "battery&Quite": "BATTERIA E SILENZIO"
                         }
                     },
-                    "description5": "Raffreddamento intelligente regola la velocità della ventola e le prestazioni massime, oltre a consentire di gestire la durata della batteria. Questa funzione dispone di 3 modalità (silenziosa, bilanciata e prestazioni) ed è ora accessibile dal dispositivo di scorrimento delle prestazioni di Windows",
+                    "description5": "Raffreddamento intelligente regola la velocità della ventola e le prestazioni massime, oltre a consentire di gestire la durata della batteria. Questa funzione dispone di 3 modalità (silenziosa, bilanciata e prestazioni) ed è ora accessibile dal dispositivo di scorrimento delle prestazioni di Windows.",
                     "nocqldesc": "Il raffreddamento intelligente consente di regolare la temperatura e le prestazioni del sistema. In modalità \"Prestazioni\" ottimizza le prestazioni del sistema. In modalità \"Raffreddamento e silenzio\" aiuta a mantenere il sistema più fresco o più silenzioso.",
                     "dytc6": {
                         "desc1": "Raffreddamento intelligente regola la velocità della ventola e le prestazioni massime, oltre a consentire di gestire la durata della batteria.",
@@ -1460,15 +1460,15 @@
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "radioText": "VoIP",
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
+                                "checkboxText": "Automatically optimize audio for VOIP"
                             },
                             "entertainmentMode": {
-                                "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
                                 "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
                                 "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
+                                "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
                     },
@@ -1532,15 +1532,15 @@
                 },
                 "display": {
                     "title": "Schermo",
-					"displayColorTemperature": {
-						"title": "Modalità comfort visivo",
-						"description": "Per evitare l'affaticamento della vista, è possibile regolare la temperatura del colore dello schermo per filtrare la luce blu quando si usa il computer per periodi di tempo prolungati. Inoltre, i colori caldi favoriscono il riposo notturno.",
-						"link": {
-							"click": "Fare clic",
-							"here": "qui",
-							"rest": "per modificare la temperatura del colore."
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "Modalità comfort visivo",
+                        "description": "Per evitare l'affaticamento della vista, è possibile regolare la temperatura del colore dello schermo per filtrare la luce blu quando si usa il computer per periodi di tempo prolungati. Inoltre, i colori caldi favoriscono il riposo notturno.",
+                        "link": {
+                            "click": "Fare clic",
+                            "here": "qui",
+                            "rest": "per modificare la temperatura del colore."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "Modalità Comfort Visivo",
                         "checkbox": "Pianifica la modalità Comfort visivo dal tramonto all'alba",
