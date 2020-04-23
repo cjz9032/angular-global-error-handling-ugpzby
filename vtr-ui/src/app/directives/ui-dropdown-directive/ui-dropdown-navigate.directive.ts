@@ -9,6 +9,7 @@ import {
 	EventEmitter,
 	AfterViewInit,
 } from "@angular/core";
+import { KeyCode } from 'src/app/enums/key-code.enum';
 
 interface selectValueFromList {
 	value?: number;
@@ -52,22 +53,45 @@ export class UiDropdownNavigate implements OnInit, AfterViewInit {
 	onKeydownEvent() {
 		// keyboard events triggered on the listbox.
 		switch(event['keyCode']) {
-			case 9:
-			case 27:
+			case KeyCode.TAB:
+			case KeyCode.ESC:
 				this.closeDropdown.emit({hideList: false});
 				this.elRef.nativeElement.previousElementSibling.focus();
 				break;
-			case 13:
+			case KeyCode.RETURN:
 				this.closeDropdown.emit({value: this.nextIndex, hideList: true});
 				this.elRef.nativeElement.previousElementSibling.focus();
 				break;
-			case 38:
-					this.nextIndex = this.nextIndex > 0 ? this.nextIndex - 1 : 0;
-					this.renderer.setAttribute(this.elRef.nativeElement.children[this.nextIndex], 'tabindex', '0');
-					this.elRef.nativeElement.children[this.nextIndex].focus()
-					this.renderer.setAttribute(this.elRef.nativeElement.children[this.nextIndex + 1], 'tabindex', '-1');
+			case KeyCode.UP:
+					event.preventDefault();
+					if(this.nextIndex === 0) {
+						this.renderer.setAttribute(this.elRef.nativeElement.children[this.nextIndex], 'tabindex', '-1');
+						this.nextIndex = this.focusable.length - 1;
+						this.renderer.setAttribute(this.elRef.nativeElement.children[this.nextIndex], 'tabindex', '0');
+						this.elRef.nativeElement.children[this.nextIndex].focus()
+					} else {
+						this.nextIndex = this.nextIndex > 0 ? this.nextIndex - 1 : 0;
+						this.renderer.setAttribute(this.elRef.nativeElement.children[this.nextIndex], 'tabindex', '0');
+						this.elRef.nativeElement.children[this.nextIndex].focus()
+						this.renderer.setAttribute(this.elRef.nativeElement.children[this.nextIndex + 1], 'tabindex', '-1');
+					}
 				break;
-			case 40:
+			case KeyCode.HOME:
+					event.preventDefault();
+					this.renderer.setAttribute(this.elRef.nativeElement.children[this.nextIndex], 'tabindex', '-1');
+					this.nextIndex = 0;
+					this.renderer.setAttribute(this.elRef.nativeElement.children[this.nextIndex], 'tabindex', '0');
+					this.elRef.nativeElement.children[this.nextIndex].focus();
+					break;
+			case KeyCode.END:
+					event.preventDefault();
+					this.renderer.setAttribute(this.elRef.nativeElement.children[this.nextIndex], 'tabindex', '-1');
+					this.nextIndex = this.focusable.length - 1;
+					this.renderer.setAttribute(this.elRef.nativeElement.children[this.nextIndex], 'tabindex', '0');
+					this.elRef.nativeElement.children[this.nextIndex].focus();
+					break;
+			case KeyCode.DOWN:
+					event.preventDefault();
 					if(this.nextIndex === this.focusable.length - 1) {
 						this.renderer.setAttribute(this.elRef.nativeElement.children[this.nextIndex], 'tabindex', '-1');
 						this.nextIndex = 0;
