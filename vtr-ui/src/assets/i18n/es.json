@@ -1532,15 +1532,15 @@
                 },
                 "display": {
                     "title": "Pantalla",
-                    "displayColorTemperature": {
-                        "title": "Temperatura del color de visualización",
-                        "description": "Puede ajustar la temperatura del color de la pantalla para filtrar la luz azul y reducir el esfuerzo para los ojos. Ajusta la pantalla a colores más cálidos desde el atardecer al amanecer para ayudarle a dormir.",
-                        "link": {
-                            "click": "Haga clic",
-                            "here": "aquí",
-                            "rest": "para cambiar la temperatura de color."
-                        }
-                    },
+					"displayColorTemperature": {
+						"title": "Modalidad cuidado visión",
+						"description": "Para evitar la fatiga ocular, puede ajustar la temperatura del color de la pantalla para filtrar la luz azul cuando utilice el sistema durante mucho tiempo. Además, los colores cálidos son buenos para su sueño, especialmente en la noche.",
+						"link": {
+							"click": "Hacer clic en",
+							"here": "aquí",
+							"rest": "para cambiar la temperatura de color."
+						}
+					},
                     "eyeCareMode": {
                         "title": "Modalidad de cuidado de la visión",
                         "checkbox": "Programar el modo de cuidado ocular de anochecer a amanecer",
