@@ -24,6 +24,7 @@ export class ModalCommonConfirmationComponent implements OnInit {
 	constructor(public activeModal: NgbActiveModal) { }
 
 	ngOnInit() {
+		setTimeout(() => { (document.querySelector('.common-confirmation-modal') as HTMLElement).focus(); }, 0);
 	}
 
 	// closeModal() {

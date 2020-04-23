@@ -7,7 +7,8 @@
 			<div class="pull right">
 				<img *ngIf="!deviceService.isGaming"
 					class="coronet-logo"
-					[src]=" 'assets/images/coronet-logo.svg' | svgInline | async" />
+					[src]=" 'assets/images/coronet-logo.svg' | svgInline | async" 
+					alt="coronet logo"/>
 				<img *ngIf="deviceService.isGaming"
 					class="coronet-logo"
 					[src]="'assets/images/coronet-logo-gaming.svg' | svgInline | async" />
@@ -117,28 +118,17 @@
 										</div>
 									</div>
 								</div>
-								<div class="card-foot" 
-									tabindex="0" 
-									(click)="clickShowMore()" 
-									(keyup.enter)="clickShowMore()"
-									*ngIf="data.hasMore">
-									<a id="sa-ws-lnk-wh-showmore"
-										tabindex="-1"
+								<button id="{{isShowMoreLink ? 'sa-ws-btn-wh-showmore' : 'sa-ws-btn-wh-showless'}}"
+										tabindex="0"
+										(click)="clickShowMore()"
 										vtrMetrics
 										metricsItem="showMoreWiFiHistory"
 										metricsEvent="featureClick"
-										class="show-more"
+										class="showmore-button"
 										href="#"
-										*ngIf="isShowMoreLink">{{'security.wifisecurity.container.showmore' | translate}}</a>
-									<a id="sa-ws-lnk-wh-showless"
-										tabindex="-1"
-										vtrMetrics
-										metricsItem="showLessWiFiHistory"
-										metricsEvent="featureClick"
-										class="show-more"
-										href="#"
-										*ngIf="!isShowMoreLink">{{'security.wifisecurity.container.showless'| translate}}</a>
-								</div>
+										*ngIf="data.hasMore">
+										{{ isShowMoreLink ? showMoreText : showLessText }}
+								</button>
 							</div>
 						</vtr-container-collapsible>
 					</div>

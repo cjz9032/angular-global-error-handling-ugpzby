@@ -13,6 +13,11 @@ vtr-ui-row-switch {
 
 .subFunctions {
   margin-left: 4.5rem !important;
+  .row {
+    .antiTheftDescription {
+      font-weight: 400;
+    }
+  }
   p {
     font-size: $fontsize_xs;
     outline: 0;
@@ -44,7 +49,7 @@ vtr-ui-row-switch {
       margin-top: 0px !important;
       outline: 0;
       .custom-control-label {
-        line-height: 1.5;
+        line-height: 1.4;
         font-size: $fontsize_xs;
         font-weight: $weight_light;
         &::before {
@@ -64,7 +69,7 @@ vtr-ui-row-switch {
       }
       .custom-control-input:checked + .custom-control-label {
         &::before {
-          display:none;
+          display: none;
         }
         &::after {
           top: 0.2rem;
@@ -86,14 +91,14 @@ vtr-ui-row-switch {
           color: #667481;
         }
         &::before {
-          display:none;
+          display: none;
         }
       }
     }
   }
 
   .select {
-    width: 380px;
+    width: 360px;
     .selectDropdown {
       ::ng-deep .ui-dropdown {
         height: 7.1rem !important;
@@ -127,8 +132,8 @@ vtr-ui-row-switch {
   }
 
   .showPhoto {
-    .btn-link{
-      margin-top: -6px;
+    .btn-link {
+      margin-top: -4px;
     }
   }
 
@@ -143,7 +148,7 @@ vtr-ui-row-switch {
   }
 
   ::ng-deep .btn-link {
-    text-decoration:underline !important;
+    text-decoration: underline !important;
     font-size: 1.4rem !important;
   }
 }
