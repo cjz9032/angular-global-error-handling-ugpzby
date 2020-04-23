@@ -192,21 +192,31 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 
 			this.isFromDate = true;
 			// console.log(this.fromDate);
-			this.displayFromDate =
+			const fromDateFormat =
 				this.fromDate.month +
 				'/' +
 				this.fromDate.day +
 				'/' +
 				this.fromDate.year;
-			this.displayToDate =
+			const toDateFormat =
 				this.toDate.month +
 				'/' +
 				this.toDate.day +
 				'/' +
 				this.toDate.year;
+			this.displayFromDate = moment
+				.utc(fromDateFormat)
+				.subtract(1, 'months')
+				.startOf('day')
+				.format('YYYY/MM/DD');
+			this.displayToDate = moment
+				.utc(toDateFormat)
+				.subtract(1, 'months')
+				.startOf('day')
+				.format('YYYY/MM/DD');
 			this.selectedfromDate = this.fromDate;
 			this.selectedTodate = this.toDate;
-			this.customDate = this.displayFromDate + '-' + this.displayToDate;
+			this.customDate = this.customDate = this.displayFromDate + ' - ' + this.displayToDate;
 			// console.log('---------IN THE TABINDEX 2' + this.customDate);
 			this.getHistory(
 				moment
@@ -252,19 +262,29 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	onDateSelected() {
 		this.logger.info('onDateSelected.SelectedDate', this.selectedDate);
 		if (this.isFromDate) {
-			this.displayFromDate =
+			const fromDateFormat =
 				this.selectedfromDate.month +
 				'/' +
 				this.selectedfromDate.day +
 				'/' +
 				this.selectedfromDate.year;
+			this.displayFromDate = moment
+				.utc(fromDateFormat)
+				.subtract(1, 'months')
+				.startOf('day')
+				.format('YYYY/MM/DD');
 		} else {
-			this.displayToDate =
+			const fromDateFormat =
 				this.selectedTodate.month +
 				'/' +
 				this.selectedTodate.day +
 				'/' +
 				this.selectedTodate.year;
+			this.displayToDate = moment
+				.utc(fromDateFormat)
+				.subtract(1, 'months')
+				.startOf('day')
+				.format('YYYY/MM/DD');
 			this.logger.info('onDateSelected.else to date', this.displayToDate);
 		}
 	}
@@ -298,7 +318,6 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		});
 	}
 	ScanNowSummary() {
-	
 		this.backToScan.emit();
 	}
 
