@@ -624,11 +624,14 @@ export class VantageShellService {
 	}
 
 	public getAntiTheft(): any {
-		const win: any = window;
-		if (win.VantageShellExtension && win.VantageShellExtension.SmartMotionAlertRpcClient) {
-			return new win.VantageShellExtension.SmartMotionAlertRpcClient();
+		try {
+			const win: any = window;
+			if (win.VantageShellExtension && win.VantageShellExtension.SmartMotionAlertRpcClient) {
+				return new win.VantageShellExtension.SmartMotionAlertRpcClient();
+			}
+		} catch (error) {
+			throw new Error(error.message);
 		}
-		return undefined;
 	}
 
 	public getHsaIntelligentSecurity(): any {
