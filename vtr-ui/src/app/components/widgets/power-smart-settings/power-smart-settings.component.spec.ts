@@ -21,7 +21,7 @@ import { HttpLoaderFactory } from 'src/app/modules/translation.module';
 import { HttpClient } from '@angular/common/http';
 import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
 
-fdescribe("Component: PowerSmartSetting", () => {
+describe("Component: PowerSmartSetting", () => {
 	let component: PowerSmartSettingsComponent;
 	let fixture: ComponentFixture<PowerSmartSettingsComponent>;
 	let commonService: CommonService;

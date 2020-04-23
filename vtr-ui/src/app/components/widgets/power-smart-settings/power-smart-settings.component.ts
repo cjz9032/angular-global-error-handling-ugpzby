@@ -583,6 +583,11 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				this.updateSelectedModeText(mode);
 				this.setPerformanceAndCool(mode);
 				await this.powerService.setITSModeForICIdeapad(mode.ideapadType4);
+				if (mode === IntelligentCoolingModes.Cool) {
+					this.powerService.getITSModeForICIdeapad().then((response) => {
+						this.initPowerSmartSettingsUIForIdeaPad(response);
+					})
+				}
 			} else if (this.intelligentCoolingModes === IntelligentCoolingHardware.Legacy) {
 				this.setPerformanceAndCool(mode);
 				await this.setLegacyManualModeState(mode.status);
