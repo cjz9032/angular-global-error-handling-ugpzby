@@ -24,7 +24,6 @@ import { WifiHomeViewModel, SecurityHealthViewModel } from 'src/app/data-models/
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { GuardService } from 'src/app/services/guard/guardService.service';
-import { SecurityAdvisorNotifications } from 'src/app/enums/security-advisor-notifications.enum';
 
 @Component({
 	selector: 'vtr-widget-quicksettings-list',
@@ -194,7 +193,6 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 						this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag, 'no');
 						this.wifiSecurity.enableWifiSecurity().then((res) => {
 							this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.commonService);
-							this.commonService.sendNotification(SecurityAdvisorNotifications.WifiSecurityTurnedOn);
 						});
 					}
 					if (this.wifiHomeViewModel.isLWSEnabled) {
@@ -510,7 +508,6 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 				this.wifiHomeViewModel.wifiSecurity.enableWifiSecurity().then(
 					(res) => {
 						if (res === true) {
-							this.commonService.sendNotification(SecurityAdvisorNotifications.WifiSecurityTurnedOn);
 							this.wifiHomeViewModel.isLWSEnabled = true;
 							this.quickSettings[2].isChecked = true;
 							this.quickSettings[2].readonly = false;
