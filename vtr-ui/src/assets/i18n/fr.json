@@ -1532,15 +1532,15 @@
                 },
                 "display": {
                     "title": "Affichage",
-                    "displayColorTemperature": {
-                        "title": "Température de couleur de l'écran",
-                        "description": "Vous pouvez régler la température des couleurs de votre écran pour filtrer la lumière bleue et réduire la fatigue oculaire. Permet d'ajuster les couleurs de l'écran pour qu'elles soient plus chaudes du coucher du soleil jusqu'à l'aube pour vous aider à dormir.",
-                        "link": {
-                            "click": "Cliquez",
-                            "here": "ici",
-                            "rest": "pour changer la température de couleur."
-                        }
-                    },
+					"displayColorTemperature": {
+						"title": "Mode Protection des yeux",
+						"description": "Pour éviter toute fatigue oculaire, vous pouvez régler la température de couleur de votre écran afin de filtrer la lumière bleue lorsque vous utilisez votre ordinateur pendant une longue période. En outre, les couleurs chaudes favorisent un sommeil de qualité, en particulier pendant la nuit.",
+						"link": {
+							"click": "Cliquez",
+							"here": "ici",
+							"rest": "pour changer la température des couleurs."
+						}
+					},
                     "eyeCareMode": {
                         "title": "Mode Protection visuelle",
                         "checkbox": "Programmer le mode Protection visuelle entre le coucher et le lever du soleil",

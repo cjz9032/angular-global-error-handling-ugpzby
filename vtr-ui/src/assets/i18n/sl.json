@@ -1532,15 +1532,15 @@
                 },
                 "display": {
                     "title": "Prikaz",
-                    "displayColorTemperature": {
-                        "title": "Barvna temperatura zaslona",
-                        "description": "Barvno temperaturo zaslona lahko prilagodite, da filtrira modro svetlobo in tako zmanjša obremenjenost oči. Sistem prilagodi zaslon na toplejše barve med sončnim zahodom in sončnim vzhodom, da lažje zaspite.",
-                        "link": {
-                            "click": "Kliknite",
-                            "here": "tukaj",
-                            "rest": "da spremenite barvno temperaturo."
-                        }
-                    },
+					"displayColorTemperature": {
+						"title": "Očem prijazen način",
+						"description": "Za preprečitev obremenjenosti oči pri dolgotrajnejši uporabi računalnika lahko prilagodite barvno temperaturo zaslona, da se s filtriranjem odstrani modra svetloba. Poleg tega tople barve pripomorejo k boljšemu nočnemu spancu.",
+						"link": {
+							"click": "Kliknite",
+							"here": "tukaj",
+							"rest": "da spremenite barvno temperaturo."
+						}
+					},
                     "eyeCareMode": {
                         "title": "Očem prijazen način",
                         "checkbox": "Načrtujte očem prijazen način od sončnega zahoda do sončnega vzhoda",

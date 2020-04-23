@@ -35,7 +35,9 @@ export class ProtocolGuardService implements CanActivate {
 	'gaming-lighting0': 'gaming/lightingcustomize/0',
 	'gaming-lighting1': 'gaming/lightingcustomize/1',
 	'gaming-lighting2': 'gaming/lightingcustomize/2',
-	'gaming-lighting3': 'gaming/lightingcustomize/3'
+	'gaming-lighting3': 'gaming/lightingcustomize/3',
+	'hardware-scan': 'hardware-scan',
+	'smart-performance': 'support/smart-performance'
   }
 
   backwardCompatibilitySchemas = [
@@ -127,7 +129,7 @@ export class ProtocolGuardService implements CanActivate {
 
 	let path: string | undefined = this.semanticToPath[semantic.toLowerCase()];
 	if (path === undefined) {
-		path = semantic;
+		return '';
 	}
 
 	return `${path}${query}`;

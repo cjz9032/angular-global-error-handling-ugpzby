@@ -1535,8 +1535,8 @@
 				"display": {
 					"title": "Display",
 					"displayColorTemperature": {
-						"title": "Display color temperature",
-						"description": "You can adjust the color temperature of your display to filter blue light and reduce eye strain. Adjusts displays to warmer colors during sunset to sunrise to help you sleep.",
+						"title": "Eye Care Mode",
+						"description": "To avoid eye strain, you can adjust the color temperature of your display to filter out the blue light when you use your computer for a long time. In addition, warm colors are good for your sleeping especially in the night.",
 						"link": {
 							"click": "Click",
 							"here": "here",
