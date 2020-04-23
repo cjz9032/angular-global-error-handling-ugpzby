@@ -55,6 +55,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	};
 	wsStateEventHandler = (value) => {
 		if (value) {
+			this.commonService.sendNotification(SecurityAdvisorNotifications.WifiSecurityTurnedOn);
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, value);
 			this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.commonService);
 		}
@@ -216,12 +217,9 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 			if (this.wifiHomeViewModel.isLWSEnabled) {
 				this.wifiSecurity.disableWifiSecurity();
 			} else {
-				this.wifiSecurity.enableWifiSecurity().then(() => {
-					this.commonService.sendNotification(SecurityAdvisorNotifications.WifiSecurityTurnedOn);
-				})
-					.catch(() => {
-						this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
-					});
+				this.wifiSecurity.enableWifiSecurity().catch(() => {
+					this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
+				});
 			}
 		}
 	}
