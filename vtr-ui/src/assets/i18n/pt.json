@@ -1097,7 +1097,7 @@
                     "description3": "O Arrefecimento Inteligente equilibra automaticamente o desempenho térmico em função das suas necessidades.A função Arrefecimento Inteligente ajusta as definições de desempenho para fornecer uma superfície refrigerada para conforto, quando o computador portátil está a ser segurado. Quando o dispositivo está sobre uma superfície de secretária, esta função otimiza o desempenho.",
                     "description13": "Quando ativada, esta funcionalidade ajusta dinamicamente as definições térmicas às suas necessidades. Ajusta as definições para manter o dispositivo fresco e silencioso, enquanto está a ser segurado ou inativo. Quando o dispositivo está numa superfície estável, otimiza o respetivo desempenho. Quando está desativada, o utilizador pode definir manualmente a prioridade térmica.",
                     "description14": "Esta funcionalidade permite ajustar a velocidade da ventoinha, maximizar o desempenho do sistema ou alargar a duração da bateria, caso seja necessário. Tem os três modos abaixo indicados. Também pode alternar entre modos usando as teclas de atalho (Fn+Q) ou a partir da Barra de ferramentas do Lenovo Vantage.",
-                    "readMore": "Ler mais.",
+                    "readMore": "Ler mais",
                     "gotoWindows": {
                         "title": "Vá para a janela de definições",
                         "modalBodyText1": "Clique no ícone da bateria do Windows na bandeja do sistema para aceder ao controlo de deslize de desempenho do Windows"
@@ -1139,7 +1139,7 @@
                             "title": "Alterar os modos de arrefecimento inteligente",
                             "close": "fechar",
                             "coolingModesList": {
-                                "list1": "Clique no ícone da bateria do Windows na barra de ferramentas",
+                                "list1": "Clique no ícone da bateria do Windows na barra de ferramentas.",
                                 "list2": "Aparecerá Modo de Energia do Windows, deslize o controle deslizante para escolher entre tempo ideal ou desempenho ideal."
                             }
                         }
@@ -1151,7 +1151,7 @@
                             "battery&Quite": "BATERIA E SILÊNCIO"
                         }
                     },
-                    "description5": "O Arrefecimento Inteligente ajusta a velocidade da ventoinha, o desempenho máximo e administra a vida útil da bateria. Este recurso tem 3 modos (Modo silencioso, Modo Equilibrado e Modo de desempenho) e agora é acessível pelo controle deslizante de desempenho do Windows",
+                    "description5": "O Arrefecimento Inteligente ajusta a velocidade da ventoinha, o desempenho máximo e administra a vida útil da bateria. Este recurso tem 3 modos (Modo silencioso, Modo Equilibrado e Modo de desempenho) e agora é acessível pelo controle deslizante de desempenho do Windows.",
                     "nocqldesc": "O Arrefecimento Inteligente permite ajustar o desempenho e a temperatura do sistema. No modo “Desempenho”, otimiza o desempenho do sistema. No modo “Fresco e silencioso” ajuda a manter o sistema mais fresco e silencioso.",
                     "dytc6": {
                         "desc1": "O Arrefecimento Inteligente ajusta a velocidade da ventoinha, o desempenho máximo e administra a vida útil da bateria.",
@@ -1460,15 +1460,15 @@
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "radioText": "VoIP",
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
+                                "checkboxText": "Automatically optimize audio for VOIP"
                             },
                             "entertainmentMode": {
-                                "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
                                 "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
                                 "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
+                                "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
                     },
@@ -1532,15 +1532,15 @@
                 },
                 "display": {
                     "title": "Ecrã",
-					"displayColorTemperature": {
-						"title": "Modo Cuidados com a Visão",
-						"description": "Para evitar o cansaço dos olhos, pode ajustar a temperatura da cor do ecrã para filtrar a luz azul quando utiliza o computador durante muito tempo. Além disso, as cores quentes são benéficas para o sono, sobretudo à noite.",
-						"link": {
-							"click": "Clique",
-							"here": "aqui",
-							"rest": "para alterar a temperatura de cor."
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "Modo Cuidados com a Visão",
+                        "description": "Para evitar o cansaço dos olhos, pode ajustar a temperatura da cor do ecrã para filtrar a luz azul quando utiliza o computador durante muito tempo. Além disso, as cores quentes são benéficas para o sono, sobretudo à noite.",
+                        "link": {
+                            "click": "Clique",
+                            "here": "aqui",
+                            "rest": "para alterar a temperatura de cor."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "Modo de Cuidados com a Visão",
                         "checkbox": "Programe o Modo de Cuidados com a Visão do pôr ao nascer do sol",

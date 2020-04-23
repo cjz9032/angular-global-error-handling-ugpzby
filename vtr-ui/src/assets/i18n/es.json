@@ -1097,7 +1097,7 @@
                     "description3": "El Enfriado inteligente equilibra automáticamente el rendimiento térmico a sus necesidades.La característica de Enfriado inteligente ajusta la configuración de rendimiento para proporcionar una superficie más fría, para su comodidad, cuando el sistema portátil está siendo sostenido. Cuando el dispositivo se encuentra sobre la superficie de un sistema de sobremesa, el Enfriado inteligente optimiza el rendimiento.",
                     "description13": "Cuando está activada, esta característica ajusta en forma dinámica los valores térmicos a sus necesidades. Ajusta los valores para mantener el dispositivo fresco y silencioso mientras está en espera o en reposo. Mientras el dispositivo se encuentra en una superficie estable, optimiza el rendimiento. Cuando está desactivada, puede configurar la prioridad térmica manualmente.",
                     "description14": "Esta característica le permite ajustar la velocidad del ventilador, maximizar el rendimiento del sistema o ampliar la duración de la batería si fuera necesario. Tiene tres modos a continuación. También puede conmutar las modalidades utilizando teclas de conmutador (Fn+Q) o desde la barra de herramientas de Lenovo Vantage.",
-                    "readMore": "Leer más.",
+                    "readMore": "Leer más",
                     "gotoWindows": {
                         "title": "Vaya a valores de Windows",
                         "modalBodyText1": "Haga clic en el icono de la batería de Windows en la bandeja del sistema para acceder al control deslizante de rendimiento de Windows"
@@ -1139,7 +1139,7 @@
                             "title": "Cambiar modos de enfriamiento inteligente",
                             "close": "cerrar",
                             "coolingModesList": {
-                                "list1": "Haga clic en el icono batería de Windows en la barra de herramientas",
+                                "list1": "Haga clic en el icono batería de Windows en la barra de herramientas.",
                                 "list2": "Aparecerá el modo de energía de Windows, deslice el control deslizante para elegir entre duración óptima o rendimiento óptimo."
                             }
                         }
@@ -1151,7 +1151,7 @@
                             "battery&Quite": "BATERÍA Y SILENCIOSA"
                         }
                     },
-                    "description5": "El Enfriado inteligente ajusta la velocidad del ventilador, el máximo rendimiento y administra la duración de su batería. Esta característica tiene 3 modos (modalidad silenciosa, modalidad equilibrada y modalidad de rendimiento) y ahora es accesible mediante el control deslizante de rendimiento de Windows",
+                    "description5": "El Enfriado inteligente ajusta la velocidad del ventilador, el máximo rendimiento y administra la duración de su batería. Esta característica tiene 3 modos (modalidad silenciosa, modalidad equilibrada y modalidad de rendimiento) y ahora es accesible mediante el control deslizante de rendimiento de Windows.",
                     "nocqldesc": "El Enfriamiento inteligente le permite ajustar el rendimiento del sistema y la temperatura térmica. En modalidad de “Rendimiento”, optimiza el rendimiento del sistema. Mientras que ayuda a mantener el sistema más frío o silencioso en la modalidad de “Fresco y silencioso”.",
                     "dytc6": {
                         "desc1": "El Enfriado inteligente ajusta la velocidad del ventilador, el máximo rendimiento y administra la duración de su batería.",
@@ -1460,15 +1460,15 @@
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "radioText": "VoIP",
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
+                                "checkboxText": "Automatically optimize audio for VOIP"
                             },
                             "entertainmentMode": {
-                                "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
                                 "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
                                 "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
+                                "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
                     },
@@ -1532,15 +1532,15 @@
                 },
                 "display": {
                     "title": "Pantalla",
-					"displayColorTemperature": {
-						"title": "Modalidad cuidado visión",
-						"description": "Para evitar la fatiga ocular, puede ajustar la temperatura del color de la pantalla para filtrar la luz azul cuando utilice el sistema durante mucho tiempo. Además, los colores cálidos son buenos para su sueño, especialmente en la noche.",
-						"link": {
-							"click": "Hacer clic en",
-							"here": "aquí",
-							"rest": "para cambiar la temperatura de color."
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "Modalidad cuidado visión",
+                        "description": "Para evitar la fatiga ocular, puede ajustar la temperatura del color de la pantalla para filtrar la luz azul cuando utilice el sistema durante mucho tiempo. Además, los colores cálidos son buenos para su sueño, especialmente en la noche.",
+                        "link": {
+                            "click": "Hacer clic en",
+                            "here": "aquí",
+                            "rest": "para cambiar la temperatura de color."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "Modalidad de cuidado de la visión",
                         "checkbox": "Programar el modo de cuidado ocular de anochecer a amanecer",

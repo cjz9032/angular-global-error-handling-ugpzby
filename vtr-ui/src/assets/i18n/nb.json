@@ -1097,7 +1097,7 @@
                     "description3": "Intelligent kjøling balanserer automatisk den termiske ytelsen etter dine behov.Funksjonen Intelligent kjøling justerer ytelsesinnstillingene for å gjøre overflaten kjølig og behagelig når den bærbare datamaskinen holdes. Hvis enheten er på en skrivebordsoverflate, optimaliserer denne funksjonen ytelsen.",
                     "description13": "Når denne funksjonen er aktivert, endres de termiske innstillingene etter behov. Den justerer innstillingene for å holde enheten kjølig og stillegående når den holdes eller er inaktiv. Når enheten er på en stabil overflate optimaliserer den ytelsen. Når funksjonen er av, kan du angi termisk prioritet manuelt.",
                     "description14": "Med denne funksjonen kan du justere viftehastigheten, maksimere systemets ytelse eller forlenge batterilevetiden hvis det er nødvendig. Den har tre modi nedenfor. Du kan også bytte modus med hurtigtastene (Fn+Q) eller fra Lenovo Vantage-verktøylinjen.",
-                    "readMore": "Les mer.",
+                    "readMore": "Les mer",
                     "gotoWindows": {
                         "title": "Gå til Windows-innstillinger",
                         "modalBodyText1": "Klikk på Windows-batteriikonet i systemstatusfeltet for å få tilgang til glidebryteren for Windows-ytelse"
@@ -1139,7 +1139,7 @@
                             "title": "Endre intelligente kjølemodi",
                             "close": "Lukk",
                             "coolingModesList": {
-                                "list1": "Klikk på Windows batteri-ikonet på verktøylinjen",
+                                "list1": "Klikk på Windows batteri-ikonet på verktøylinjen.",
                                 "list2": "Strømmodus for Windows vises. Skyv glidebryteren for å velge mellom optimal tid eller optimal ytelse."
                             }
                         }
@@ -1151,7 +1151,7 @@
                             "battery&Quite": "BATTERI OG STILLEGÅENDE"
                         }
                     },
-                    "description5": "Intelligent kjøling justerer viftehastighet, maksimal ytelse og håndterer batterilevetiden. Denne funksjonen har tre modi (stille modus, balansert modus og ytelsesmodus) og er nå tilgjengelig på glidebryteren for Windows-ytelse",
+                    "description5": "Intelligent kjøling justerer viftehastighet, maksimal ytelse og håndterer batterilevetiden. Denne funksjonen har tre modi (stille modus, balansert modus og ytelsesmodus) og er nå tilgjengelig på glidebryteren for Windows-ytelse.",
                     "nocqldesc": "Med Intelligent kjøling kan du justere systemets ytelse og termiske temperatur. I modusen «Ytelse» optimaliserer den systemets ytelse. Samtidig bidrar den til å holde systemet kjøligere eller mer stillegående i modusen «Stille og rolig».",
                     "dytc6": {
                         "desc1": "Intelligent kjøling justerer viftehastighet, maksimal ytelse og håndterer batterilevetiden.",
@@ -1460,15 +1460,15 @@
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "radioText": "VoIP",
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
+                                "checkboxText": "Automatically optimize audio for VOIP"
                             },
                             "entertainmentMode": {
-                                "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
                                 "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
                                 "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
+                                "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
                     },
@@ -1532,15 +1532,15 @@
                 },
                 "display": {
                     "title": "Skjerm",
-					"displayColorTemperature": {
-						"title": "Øyebeskyttelsesmodus",
-						"description": "Hvis du vil unngå belastning på øynene, kan du justere fargetemperaturen på skjermen for å filtrere bort blått lys når du bruker datamaskinen lenge. I tillegg er varme farger bra for søvnen din, spesielt om kvelden.",
-						"link": {
-							"click": "Klikk på",
-							"here": "her",
-							"rest": "for å endre fargetemperaturen."
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "Øyebeskyttelsesmodus",
+                        "description": "Hvis du vil unngå belastning på øynene, kan du justere fargetemperaturen på skjermen for å filtrere bort blått lys når du bruker datamaskinen lenge. I tillegg er varme farger bra for søvnen din, spesielt om kvelden.",
+                        "link": {
+                            "click": "Klikk på",
+                            "here": "her",
+                            "rest": "for å endre fargetemperaturen."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "Øyebeskyttelse",
                         "checkbox": "Planlegg øyebeskyttelsesmodus fra solnedgang til soloppgang",
