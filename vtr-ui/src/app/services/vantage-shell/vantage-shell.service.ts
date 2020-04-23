@@ -630,7 +630,7 @@ export class VantageShellService {
 				return new win.VantageShellExtension.SmartMotionAlertRpcClient();
 			}
 		} catch (error) {
-			throw new Error(error.message);
+			return undefined;
 		}
 	}
 
@@ -641,7 +641,7 @@ export class VantageShellService {
 				return new win.VantageShellExtension.HumanPresenceDetectionRpcClient();
 			}
 		} catch (error) {
-			throw new Error(error.message);
+			return undefined;
 		}
 	}
 
