@@ -55,7 +55,9 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	};
 	wsStateEventHandler = (value) => {
 		if (value) {
-			this.commonService.sendNotification(SecurityAdvisorNotifications.WifiSecurityTurnedOn);
+			if (value === 'enabled') {
+				this.commonService.sendNotification(SecurityAdvisorNotifications.WifiSecurityTurnedOn);
+			}
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, value);
 			this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.commonService);
 		}
