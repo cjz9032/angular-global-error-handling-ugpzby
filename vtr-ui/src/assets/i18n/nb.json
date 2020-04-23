@@ -1532,15 +1532,15 @@
                 },
                 "display": {
                     "title": "Skjerm",
-                    "displayColorTemperature": {
-                        "title": "Skjermens fargetemperatur",
-                        "description": "Du kan justere skjermens fargetemperatur til å filtrere ut blått lys og redusere belastningen på øynene. Justerer skjermer til varmere farger fra solnedgang til soloppgang slik at du får sove bedre.",
-                        "link": {
-                            "click": "Klikk på",
-                            "here": "her",
-                            "rest": "for å endre fargetemperaturen."
-                        }
-                    },
+					"displayColorTemperature": {
+						"title": "Øyebeskyttelsesmodus",
+						"description": "Hvis du vil unngå belastning på øynene, kan du justere fargetemperaturen på skjermen for å filtrere bort blått lys når du bruker datamaskinen lenge. I tillegg er varme farger bra for søvnen din, spesielt om kvelden.",
+						"link": {
+							"click": "Klikk på",
+							"here": "her",
+							"rest": "for å endre fargetemperaturen."
+						}
+					},
                     "eyeCareMode": {
                         "title": "Øyebeskyttelse",
                         "checkbox": "Planlegg øyebeskyttelsesmodus fra solnedgang til soloppgang",

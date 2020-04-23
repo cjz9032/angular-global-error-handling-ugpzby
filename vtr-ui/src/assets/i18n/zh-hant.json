@@ -1532,15 +1532,15 @@
                 },
                 "display": {
                     "title": "顯示",
-                    "displayColorTemperature": {
-                        "title": "顯示器色溫",
-                        "description": "您可以調整顯示器的色溫，以過濾藍光並減輕眼睛疲勞。在日落到日出期間，將顯示器調整為暖色，以幫助您入睡。",
-                        "link": {
-                            "click": "按一下",
-                            "here": "這裡",
-                            "rest": "以變更色溫。"
-                        }
-                    },
+					"displayColorTemperature": {
+						"title": "護眼模式",
+						"description": "為避免眼睛疲勞，當您長時間使用電腦時，可以調整顯示器的色溫，以過濾藍光。此外，暖色特別適合夜間睡眠。",
+						"link": {
+							"click": "按一下",
+							"here": "這裡",
+							"rest": "以變更色溫。"
+						}
+					},
                     "eyeCareMode": {
                         "title": "護眼模式",
                         "checkbox": "安排從日落到日出的護眼模式",
