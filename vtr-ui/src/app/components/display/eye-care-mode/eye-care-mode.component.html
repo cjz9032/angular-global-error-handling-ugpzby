@@ -1,8 +1,8 @@
 <div class="vtr-eye-care-mode"
 	*ngIf="eyeCareModeSettings">
-	<div class="row"
+	<div class="row d-flex justify-content-between"
 		*ngIf="eyeCareModeSettings.current">
-		<div class="col-10 pl-4">
+		<div class="slider-block">
 			<vtr-ui-custom-slider [step]=100
 				[isDisabled]="enableSlider"
 				[min]="eyeCareModeSettings.minimum"
@@ -16,7 +16,7 @@
 				[sliderId]="'color-temp-eyeCareMode'">
 			</vtr-ui-custom-slider>
 		</div>
-		<div class="col-2 pl-0">
+		<div class="button-block">
 			<div class="reset-temperature">
 				<div class="button-box">
 					<vtr-ui-button (onClick)="onResetTemperature($event)" metricsEvent="itemClick"
