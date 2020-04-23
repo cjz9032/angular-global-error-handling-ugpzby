@@ -1,18 +1,5 @@
 <div class="vtr-modal-chs-start-trial-container position-relative">
-	<div class="modal-header justify-content-end">
-		<div role="button" id="chs-trialModal-btn-close"
-			href="javascript:;"
-			class="close-btn"
-			vtrMetrics
-			metricsItem="closeCHSTrialModal"
-			metricsEvent="featureClick"
-			metricsParent="{{metricsParent}}"
-			(click)="closeModal()">
-			<img [src]=" 'assets/icons/Close.svg' | svgInline | async"
-				alt=""
-				srcset="">
-		</div>
-	</div>
+	<div class="modal-header justify-content-end"></div>
 	<!-- start of page 1-->
 	<div class="page page-one" *ngIf="showWhichPage === 'trial'">
 		<p class="description" [innerHTML]="'homeSecurity.modal.countdownTitle' | translate"></p>
@@ -76,4 +63,10 @@
 		<p class="pt-5 loading-text" *ngIf="loadingText" [innerHTML]="loadingText | translate"></p>
 	</div>
 	<!-- end of page3-->
+	<div class="btn-modal-close">
+		<vtr-ui-close-button linkId="chs-trialModal-btn-close"
+			metricsItem="closeCHSTrialModal"
+			metricsParent="{{metricsParent}}"
+			(clickClose)="closeModal()"></vtr-ui-close-button>
+	</div>
 </div>
