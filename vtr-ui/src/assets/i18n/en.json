@@ -3741,6 +3741,7 @@
 		"doNotSwitchApp": "• Do not switch to other app.",
 		"doNotSleepOrSignOutOrTurnOffComputer": "• Do not sleep or sign out or turn off your computer.",
 		"testNotApplicable": "Not applicable on custom scan",
+		"cancelScanTimeRemind": "Please wait, it may take some time to cancel depending on your system.",
 		"customize": {
 			"name": "Customize",
 			"test": "Customize Test",
