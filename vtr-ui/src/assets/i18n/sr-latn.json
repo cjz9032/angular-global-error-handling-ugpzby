@@ -1097,7 +1097,7 @@
                     "description3": "Pametno hlađenje automatski usklađuje toplotne performanse da se prilagode vašim potrebama.Funkcija pametnog hlađenja prilagođava postavke performansi da bi pružila hladniju površinu radi prijatnog korišćenja kada držite prenosivi računar. Kada je uređaj na radnoj površini, ova funkcija optimizuje performanse.",
                     "description13": "Kada je ova funkcija uključena, ona dinamički podešava toplotne postavke vašim potrebama. Podešava postavke kako bi uređaj bio hladan i tih dok ga držite ili dok je u stanju mirovanja. Optimizuje performanse dok je uređaj na stabilnoj površini. Kad je isključena, možete ručno da podesite toplotni prioritet.",
                     "description14": "Ova funkcija vam omogućava da prilagodite brzinu ventilatora, maksimalno povećate performanse sistema ili produžite radni vek baterije, ukoliko je to potrebno. Ona ima tri režima navedena ispod. Režime možete i da menjate pomoću interventnih tastera (Fn+Q) ili sa Lenovo Vantage trake sa alatkama.",
-                    "readMore": "Pročitajte više.",
+                    "readMore": "Pročitajte više",
                     "gotoWindows": {
                         "title": "Idite na Windows postavke",
                         "modalBodyText1": "Kliknite na ikonu baterije Windows na sistemskoj paleti za pristup klizaču za performanse napajanja sistema Windows"
@@ -1139,7 +1139,7 @@
                             "title": "Promena režima pametnog hlađenja",
                             "close": "zatvori",
                             "coolingModesList": {
-                                "list1": "Kliknite na ikonu baterije sistema Windows na traci sa alatkama",
+                                "list1": "Kliknite na ikonu baterije sistema Windows na traci sa alatkama.",
                                 "list2": "Pojaviće se režim za uštedu energije sistema Windows, povucite klizač da izaberete između optimalnog vremena ili optimalnih performansi."
                             }
                         }
@@ -1151,7 +1151,7 @@
                             "battery&Quite": "BATERIJA I TIŠINA"
                         }
                     },
-                    "description5": "Pametno hlađenje prilagođava brzinu ventilatora i maksimalne performanse i upravlja radnim vekom baterije. Ova funkcija ima 3 režima (tihi režim, balansirani režim i režim performansi) i sada je pristupačna pomoću klizača za performanse napajanja sistema Windows",
+                    "description5": "Pametno hlađenje prilagođava brzinu ventilatora i maksimalne performanse i upravlja radnim vekom baterije. Ova funkcija ima 3 režima (tihi režim, balansirani režim i režim performansi) i sada je pristupačna pomoću klizača za performanse napajanja sistema Windows.",
                     "nocqldesc": "Inteligentno hlađenje vam omogućava da podesite performanse sistema i temperaturu. U režimu „Performanse“ ono optimizuje performanse sistema. Istovremeno pomaže da sistem bude hladniji ili tiši u režimu „Hladan i tih“",
                     "dytc6": {
                         "desc1": "Pametno hlađenje prilagođava brzinu ventilatora i maksimalne performanse i upravlja radnim vekom baterije.",
@@ -1460,15 +1460,15 @@
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "radioText": "VoIP",
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
+                                "checkboxText": "Automatically optimize audio for VOIP"
                             },
                             "entertainmentMode": {
-                                "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
                                 "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
                                 "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
+                                "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
                     },
@@ -1532,15 +1532,15 @@
                 },
                 "display": {
                     "title": "Ekran",
-					"displayColorTemperature": {
-						"title": "Režim za zaštitu vida",
-						"description": "Da biste izbegli naprezanje očiju, možete da podesite temperaturu boje ekrana kako bi se filtriralo plavo svetlo kada duže vreme koristite računar. Pored toga, tople boje su dobre za spavanje, naročito noću.",
-						"link": {
-							"click": "Kliknite",
-							"here": "ovde",
-							"rest": "da biste promenili temperaturu boje."
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "Režim za zaštitu vida",
+                        "description": "Da biste izbegli naprezanje očiju, možete da podesite temperaturu boje ekrana kako bi se filtriralo plavo svetlo kada duže vreme koristite računar. Pored toga, tople boje su dobre za spavanje, naročito noću.",
+                        "link": {
+                            "click": "Kliknite",
+                            "here": "ovde",
+                            "rest": "da biste promenili temperaturu boje."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "Režim za zaštitu vida",
                         "checkbox": "Zakažite režim za zaštitu vida od zalaska do izlaska sunca",

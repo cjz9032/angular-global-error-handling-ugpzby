@@ -1097,7 +1097,7 @@
                     "description3": "Inteligentní chlazení automaticky přizpůsobuje množství tepla produkované počítačem vašim potřebám.Funkce Inteligentní chlazení přizpůsobuje nastavení výkonu počítače tak, aby byl jeho povrch chladnější, pokud ho držíte v rukou.Leží-li zařízení na stole, přizpůsobí funkce jeho nastavení tak, aby mělo co největší výkon.",
                     "description13": "Když je tato funkce zapnutá, tepelná nastavení se dynamicky přizpůsobují vaši potřebám. Zařízení tak při držení v rukou nebo při nečinnosti zůstává chladné a tiché. Je-li zařízení na stabilním povrchu, optimalizuje svůj výkon. Když je funkce vypnutá, tepelnou prioritu můžete nastavit ručně.",
                     "description14": "Tato funkce umožňuje nastavit rychlost ventilátoru, maximalizovat výkon systému nebo v případě potřeby prodloužit životnost baterie. Má tři dále uvedené režimy. Můžete také přepínat režimy pomocí klávesových zkratek (Fn+Q) nebo z panelu nástrojů Lenovo Vantage Toolbar.",
-                    "readMore": "Další informace.",
+                    "readMore": "Další informace",
                     "gotoWindows": {
                         "title": "Přejít k nastavení systému Windows",
                         "modalBodyText1": "Chcete-li získat přístup k posuvníku výkonu systému Windows, klikněte na ikonu baterie na hlavním panelu systému Windows"
@@ -1139,7 +1139,7 @@
                             "title": "Změňte inteligentní režimy chlazení",
                             "close": "Zavřít",
                             "coolingModesList": {
-                                "list1": "V panelu nástrojů klikněte na ikonu baterie systému Windows",
+                                "list1": "V panelu nástrojů klikněte na ikonu baterie systému Windows.",
                                 "list2": "Ve Windows se zobrazí režim spotřeby energie Windows posunutím jezdce vyberte optimální čas nebo optimální výkon."
                             }
                         }
@@ -1151,7 +1151,7 @@
                             "battery&Quite": "BATERIE A TICHO"
                         }
                     },
-                    "description5": "Funkce Inteligentní chlazení upravuje rychlost ventilátoru, maximální výkon a spravuje životnost baterie. Tato funkce má 3 režimy (tichý režim, vyvážený režim a režim výkonu) a je nyní přístupná posuvníkem výkonu systému Windows",
+                    "description5": "Funkce Inteligentní chlazení upravuje rychlost ventilátoru, maximální výkon a spravuje životnost baterie. Tato funkce má 3 režimy (tichý režim, vyvážený režim a režim výkonu) a je nyní přístupná posuvníkem výkonu systému Windows.",
                     "nocqldesc": "Inteligentní chlazení umožňuje upravovat výkon a teplotu systému. V režimu „Výkon“ optimalizuje výkon systému, v režimu „Chladný a tichý“ pomáhá udržovat systém chladnější a tišší.",
                     "dytc6": {
                         "desc1": "Funkce Inteligentní chlazení upravuje rychlost ventilátoru, maximální výkon a spravuje životnost baterie.",
@@ -1460,15 +1460,15 @@
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "radioText": "VoIP",
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
+                                "checkboxText": "Automatically optimize audio for VOIP"
                             },
                             "entertainmentMode": {
-                                "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
                                 "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
                                 "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
+                                "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
                     },
@@ -1532,15 +1532,15 @@
                 },
                 "display": {
                     "title": "Displej",
-					"displayColorTemperature": {
-						"title": "Režim péče o oči",
-						"description": "Chcete-li předejít namáhání očí, můžete upravit teplotu barev displeje tak, aby se při dlouhodobém používání počítače odfiltrovalo modré světlo. Teplé barvy jsou navíc vhodné pro váš spánek zejména v noci.",
-						"link": {
-							"click": "Kliknutím",
-							"here": "sem",
-							"rest": "změňte teplotu barev."
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "Režim péče o oči",
+                        "description": "Chcete-li předejít namáhání očí, můžete upravit teplotu barev displeje tak, aby se při dlouhodobém používání počítače odfiltrovalo modré světlo. Teplé barvy jsou navíc vhodné pro váš spánek zejména v noci.",
+                        "link": {
+                            "click": "Kliknutím",
+                            "here": "sem",
+                            "rest": "změňte teplotu barev."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "Režim Péče o oči",
                         "checkbox": "Naplánovat režim péče o zrak od západu do východu slunce",
