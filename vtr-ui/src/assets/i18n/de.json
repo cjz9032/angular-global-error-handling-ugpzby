@@ -1097,7 +1097,7 @@
                     "description3": "Die intelligente Kühlung passt die Wärmeabgabe automatisch Ihren Anforderungen an.Wenn Ihr Notebook gehalten wird, nimmt die intelligente Kühlfunktion Anpassungen an den Leistungseinstellungen vor, um einen höheren Komfort zu bieten, indem die Oberfläche abgekühlt wird. Wenn die Einheit auf einem Schreibtisch platziert ist, wird durch diese Funktion die Leistung optimiert.",
                     "description13": "Wenn diese Funktion aktiviert ist, werden die Temperatureinstellungen dynamisch Ihren Bedürfnissen angepasst. Sie passt sie die Einstellungen so an, dass die Einheit bei mobiler Nutzung oder im Leerlauf kühl und leise bleibt. Wenn sich die Einheit auf einer stabilen Oberfläche befindet, wird die Leistung optimiert. Wenn die Funktion deaktiviert ist, können Sie die Temperaturpriorität manuell festlegen.",
                     "description14": "Mit dieser Funktion können Sie Ihre Lüfterdrehzahl anpassen, die Systemleistung maximieren oder bei Bedarf die Akkulaufzeit verlängern. Sie können zwischen den drei Modi unten wechseln. Sie können auch per Tastenkombination (Fn+Q) oder über die Lenovo Vantage-Symbolleiste zwischen den Modi wechseln.",
-                    "readMore": "Weiterlesen.",
+                    "readMore": "Weiterlesen",
                     "gotoWindows": {
                         "title": "Windows-Einstellungen aufrufen",
                         "modalBodyText1": "Klicken Sie auf das Windows-Akkusymbol in der Taskleiste, um auf den Windows-Leistungsregler zuzugreifen"
@@ -1139,7 +1139,7 @@
                             "title": "Intelligente Kühlmodi ändern",
                             "close": "schließen",
                             "coolingModesList": {
-                                "list1": "Klicken Sie auf das Windows-Akkusymbol in der Symbolleiste",
+                                "list1": "Klicken Sie auf das Windows-Akkusymbol in der Symbolleiste.",
                                 "list2": "Der Windows-Energiemodus wird angezeigt. Mit dem Schieberegler können Sie zwischen optimaler Akkulaufzeit und optimaler Leistung wählen."
                             }
                         }
@@ -1151,7 +1151,7 @@
                             "battery&Quite": "AKKU UND LEISE"
                         }
                     },
-                    "description5": "Die intelligente Kühlung passt Lüftergeschwindigkeit und maximale Leistung an und überwacht die Akkulebensdauer. Diese Funktion hat drei Modi (Ruhiger Modus, Ausbalancierter Modus und Leistungsmodus) und kann nun über den Windows-Schieberegler für Leistung geändert werden",
+                    "description5": "Die intelligente Kühlung passt Lüftergeschwindigkeit und maximale Leistung an und überwacht die Akkulebensdauer. Diese Funktion hat drei Modi (Ruhiger Modus, Ausbalancierter Modus und Leistungsmodus) und kann nun über den Windows-Schieberegler für Leistung geändert werden.",
                     "nocqldesc": "Mithilfe der intelligenten Kühlung können Sie die Systemleistung und ‑temperatur anpassen. Im Modus \"Leistung\" wird die Systemleistung optimiert. Im Modus \"Kühl und leise\" werden Systemtemperatur und Lüftergeräusche optimiert.",
                     "dytc6": {
                         "desc1": "Die intelligente Kühlung passt Lüftergeschwindigkeit und maximale Leistung an und überwacht die Akkulebensdauer.",
@@ -1460,15 +1460,15 @@
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "radioText": "VoIP",
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
+                                "checkboxText": "Automatically optimize audio for VOIP"
                             },
                             "entertainmentMode": {
-                                "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
                                 "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
                                 "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
+                                "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
                     },
@@ -1532,15 +1532,15 @@
                 },
                 "display": {
                     "title": "Anzeigen",
-					"displayColorTemperature": {
-						"title": "Modus \"Augen schonen\"",
-						"description": "Um Augenbelastung zu vermeiden, können Sie die Farbtemperatur des Bildschirms anpassen, um das Blaulicht herauszufiltern, wenn Sie Ihren Computer längere Zeit verwenden. Darüber hinaus sind warme Farben gut für Ihren Schlaf, vor allem in der Nacht.",
-						"link": {
-							"click": "Klicken Sie",
-							"here": "hier",
-							"rest": "um die Farbtemperatur zu ändern."
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "Modus \"Augen schonen\"",
+                        "description": "Um Augenbelastung zu vermeiden, können Sie die Farbtemperatur des Bildschirms anpassen, um das Blaulicht herauszufiltern, wenn Sie Ihren Computer längere Zeit verwenden. Darüber hinaus sind warme Farben gut für Ihren Schlaf, vor allem in der Nacht.",
+                        "link": {
+                            "click": "Klicken Sie",
+                            "here": "hier",
+                            "rest": "um die Farbtemperatur zu ändern."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "Modus \"Augen schonen\"",
                         "checkbox": "Modus \"Augen schonen\" von Sonnenuntergang bis Sonnenaufgang planen",

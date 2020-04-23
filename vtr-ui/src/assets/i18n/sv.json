@@ -1097,7 +1097,7 @@
                     "description3": "Intelligent nedkylning balanserar automatiskt den terminska prestandans temperatur efter dina behov.Med Intelligent nedkylning anpassas prestandainställningarna och datorns utsida blir svalare för större komfort när du håller den. När enheten är placerad på en plan yta optimeras prestandan.",
                     "description13": "När funktionen är aktiverad justeras temperaturinställningarna dynamiskt utifrån dina behov. Inställningarna justeras så att enheten är sval och tyst när den hålls eller är inaktiv. Prestandan optimeras när enheten är placerad på ett stabilt underlag. När funktionen är inaktiverad kan du ställa in temperaturprioriteten manuellt.",
                     "description14": "Med denna funktion kan du justera fläkthastigheten, maximera systemprestandan eller förlänga batteritiden vid behov. Funktionen har följande tre lägen. Du kan också växla mellan lägena med snabbtangenterna (Fn+Q) eller via Lenovo Vantage-verktygsfältet.",
-                    "readMore": "Läs mer.",
+                    "readMore": "Läs mer",
                     "gotoWindows": {
                         "title": "Öppna Windows-inställningar",
                         "modalBodyText1": "Klicka på Windows-batteriikonen i systemfältet för att komma åt energireglaget i Windows"
@@ -1139,7 +1139,7 @@
                             "title": "Ändra lägen för intelligent nedkylning",
                             "close": "stäng",
                             "coolingModesList": {
-                                "list1": "Klicka på batteriikonen i systemfältet i Windows",
+                                "list1": "Klicka på batteriikonen i systemfältet i Windows.",
                                 "list2": "Läget Energialternativ i Windows visas. Dra reglaget för att välja mellan optimal tid och optimal prestanda."
                             }
                         }
@@ -1151,7 +1151,7 @@
                             "battery&Quite": "BATTERI OCH TYST"
                         }
                     },
-                    "description5": "Intelligent nedkylning anpassar fläkthastighet och maximal prestanda och hanterar batteritiden. Funktionen har tre lägen (tyst läge, balanserat läge och prestandaläge) och kan ställas in via energireglaget i Windows",
+                    "description5": "Intelligent nedkylning anpassar fläkthastighet och maximal prestanda och hanterar batteritiden. Funktionen har tre lägen (tyst läge, balanserat läge och prestandaläge) och kan ställas in via energireglaget i Windows.",
                     "nocqldesc": "Med Intelligent nedkylning kan du justera systemets prestanda och temperatur. I läget ”Prestanda” optimeras systemets prestanda. Datorn blir svalare eller tystare i läget ”Sval och tyst”.",
                     "dytc6": {
                         "desc1": "Intelligent nedkylning anpassar fläkthastighet och maximal prestanda och hanterar batteritiden.",
@@ -1460,15 +1460,15 @@
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "radioText": "VoIP",
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
+                                "checkboxText": "Automatically optimize audio for VOIP"
                             },
                             "entertainmentMode": {
-                                "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
                                 "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
                                 "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
+                                "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
                     },
@@ -1532,15 +1532,15 @@
                 },
                 "display": {
                     "title": "Skärm",
-					"displayColorTemperature": {
-						"title": "Ögonskyddsläge",
-						"description": "För att undvika påfrestningar på ögonen om du använder datorn under lång tid, kan du ändra bildskärmens färgtemperatur och filtrera bort blått ljus. Om du använder varma färger blir det dessutom lättare att sova.",
-						"link": {
-							"click": "Klicka",
-							"here": "här",
-							"rest": "för att ändra färgtemperaturen."
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "Ögonskyddsläge",
+                        "description": "För att undvika påfrestningar på ögonen om du använder datorn under lång tid, kan du ändra bildskärmens färgtemperatur och filtrera bort blått ljus. Om du använder varma färger blir det dessutom lättare att sova.",
+                        "link": {
+                            "click": "Klicka",
+                            "here": "här",
+                            "rest": "för att ändra färgtemperaturen."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "Ögonskyddsläge",
                         "checkbox": "Schemalägg ögonskyddsläge från morgon till kväll",
