@@ -5,6 +5,7 @@ import { CommonService } from '../common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { SegmentConst } from '../self-select/self-select.service';
 import { LoggerService } from '../logger/logger.service';
+import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,11 @@ import { LoggerService } from '../logger/logger.service';
 export class InitializerService {
 
 	constructor(private vantageShellService: VantageShellService, private deviceService: DeviceService, private commonService: CommonService) { }
+
+	initialize() {
+		this.commonService.setSessionStorageValue(SessionStorageKey.FirstPageLoaded, false);
+		this.initializeAntivirus();
+	}
 
 	initializeAntivirus() {
 		if (this.vantageShellService.isShellAvailable) {
