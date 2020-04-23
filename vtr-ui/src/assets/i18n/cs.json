@@ -1532,15 +1532,15 @@
                 },
                 "display": {
                     "title": "Displej",
-                    "displayColorTemperature": {
-                        "title": "Teplota barev displeje",
-                        "description": "Můžete upravit teplotu barev displeje tak, aby odfiltroval modré světlo a snížil tak únavu očí. Přizpůsobuje displeje teplejším barvám při západu a východu slunce, aby vám pomohl spát.",
-                        "link": {
-                            "click": "Kliknutím",
-                            "here": "sem",
-                            "rest": "změňte teplotu barev."
-                        }
-                    },
+					"displayColorTemperature": {
+						"title": "Režim péče o oči",
+						"description": "Chcete-li předejít namáhání očí, můžete upravit teplotu barev displeje tak, aby se při dlouhodobém používání počítače odfiltrovalo modré světlo. Teplé barvy jsou navíc vhodné pro váš spánek zejména v noci.",
+						"link": {
+							"click": "Kliknutím",
+							"here": "sem",
+							"rest": "změňte teplotu barev."
+						}
+					},
                     "eyeCareMode": {
                         "title": "Režim Péče o oči",
                         "checkbox": "Naplánovat režim péče o zrak od západu do východu slunce",

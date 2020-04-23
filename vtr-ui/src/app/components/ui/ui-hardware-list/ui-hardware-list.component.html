@@ -18,7 +18,7 @@
 					<div class="item-left">
 						<div *ngIf="item.icon !== undefined">
 							<div class="test-status" [ngSwitch]="item.icon">
-								<!--Alt defined as empty to avoid "duplicate" reading by narrator -->
+								<!--Alt defined as empty to avoid "duplicate" reading by narrator-->
 								<img alt="" class="qr-img" *ngSwitchCase="'cpu'" [src]="'assets/icons/hardware-scan/icon_hardware_processor.svg' | svgInline | async" />
 								<img alt="" class="qr-img" *ngSwitchCase="'memory'" [src]=" 'assets/icons/hardware-scan/icon_hardware_memory.svg' | svgInline | async" />
 								<img alt="" class="qr-img" *ngSwitchCase="'motherboard'" [src]=" 'assets/icons/hardware-scan/icon_hardware_motherboard.svg' | svgInline | async" />
@@ -31,20 +31,38 @@
 
 						<div class="test-status" *ngIf="item.status >= 0">
 							<div [ngSwitch]="item.status">
-								<fa-icon aria-label="loading" [icon]="['fas', 'circle-notch']" [spin]="true" class="loading"
-									*ngSwitchCase="0">
-								</fa-icon>
+								<!--Aria-hidden defined as true to ignore faicon selection and defined a span with description to the icon-->
+								<div *ngSwitchCase="0">
+									<fa-icon aria-hidden="true" aria-labelledby="status-loading-icon" class="loading" [icon]="['fas', 'circle-notch']" [spin]="true"></fa-icon>
+									<span id="status-loading-icon" class="sr-only">loading</span>
+								</div>
+
 								<span class="progress-value-text" *ngSwitchCase="1">{{item.percent}}%</span>
-								<fa-icon aria-label="success" [icon]="['fas', 'check-circle']" class="success" *ngSwitchCase="2">
-								</fa-icon>
-								<fa-icon aria-label="failure" [icon]="['fas', 'times-circle']" class="failure" *ngSwitchCase="3">
-								</fa-icon>
-								<fa-icon aria-label="warning" [icon]="['fas', 'exclamation-triangle']" class="warning" *ngSwitchCase="4">
-								</fa-icon>
-								<fa-icon aria-label="not-applicable" [icon]="['fas', 'ban']" class="not-applicable" *ngSwitchCase="6">
-								</fa-icon>
-								<fa-icon aria-label="canceled" [icon]="['fas', 'exclamation-circle']" class="failure" *ngSwitchDefault>
-								</fa-icon>
+
+								<div *ngSwitchCase="2">
+									<fa-icon aria-hidden="true" aria-labelledby="status-success-icon" class="success" [icon]="['fas', 'check-circle']"></fa-icon>
+									<span id="status-success-icon" class="sr-only">success</span>
+								</div>
+
+								<div *ngSwitchCase="3">
+									<fa-icon aria-hidden="true" aria-labelledby="status-failure-icon" class="failure" [icon]="['fas', 'times-circle']"></fa-icon>
+									<span id="status-failure-icon" class="sr-only">failure</span>
+								</div>
+
+								<div *ngSwitchCase="4">
+									<fa-icon aria-hidden="true" aria-labelledby="status-warning-icon" class="warning" [icon]="['fas', 'exclamation-triangle']"></fa-icon>
+									<span id="status-warning-icon" class="sr-only">warning</span>
+								</div>
+
+								<div *ngSwitchCase="6">
+									<fa-icon aria-hidden="true" aria-labelledby="status-not-applicable-icon" class="not-applicable" [icon]="['fas', 'ban']"></fa-icon>
+									<span id="status-not-applicable-icon" class="sr-only">not applicable</span>
+								</div>
+
+								<div *ngSwitchDefault>
+									<fa-icon aria-hidden="true" aria-labelledby="status-canceled-icon" class="failure" [icon]="['fas', 'exclamation-circle']"></fa-icon>
+									<span id="status-canceled-icon" class="sr-only">canceled</span>
+								</div>
 							</div>
 						</div>
 
@@ -71,20 +89,37 @@
 							{{item.statusToken}}</div>
 						<div class="module-result-icon">
 							<div [ngSwitch]="item.resultIcon">
-								<fa-icon aria-label="success" [icon]="['fas', 'check-circle']" class="success" *ngSwitchCase="2">
-								</fa-icon>
-								<fa-icon aria-label="failure" [icon]="['fas', 'times-circle']" class="failure" *ngSwitchCase="3">
-								</fa-icon>
-								<fa-icon aria-label="warning" [icon]="['fas', 'exclamation-triangle']" class="warning" *ngSwitchCase="4">
-								</fa-icon>
-								<fa-icon aria-label="canceled" [icon]="['fas', 'exclamation-circle']" class="failure" *ngSwitchCase="5">
-								</fa-icon>
-								<fa-icon aria-label="not-applicable" [icon]="['fas', 'ban']" class="not-applicable" *ngSwitchCase="6">
-								</fa-icon>
-								<fa-icon [icon]="['fas', 'question-circle']" *ngSwitchDefault>
-								</fa-icon>
-							</div>
+								<!--Aria-hidden defined as true to ignore faicon selection and defined a span with description to the icon-->
+								<div *ngSwitchCase="2">
+									<fa-icon aria-hidden="true" aria-labelledby="result-success-icon" class="success" [icon]="['fas', 'check-circle']"></fa-icon>
+									<span id="result-success-icon" class="sr-only">success</span>
+								</div>
 
+								<div *ngSwitchCase="3">
+									<fa-icon aria-hidden="true" aria-labelledby="result-failure-icon" class="failure" [icon]="['fas', 'times-circle']"></fa-icon>
+									<span id="result-failure-icon" class="sr-only">failure</span>
+								</div>
+
+								<div *ngSwitchCase="4">
+									<fa-icon aria-hidden="true" aria-labelledby="result-warning-icon" class="warning" [icon]="['fas', 'exclamation-triangle']"></fa-icon>
+									<span id="result-warning-icon" class="sr-only">warning</span>
+								</div>
+
+								<div *ngSwitchCase="5">
+									<fa-icon aria-hidden="true" aria-labelledby="result-not-applicable-icon" class="not-applicable" [icon]="['fas', 'ban']"></fa-icon>
+									<span id="result-not-applicable-icon" class="sr-only">not applicable</span>
+								</div>
+
+								<div *ngSwitchCase="6">
+									<fa-icon aria-hidden="true" aria-labelledby="result-canceled-icon" class="failure" [icon]="['fas', 'exclamation-circle']"></fa-icon>
+									<span id="result-canceled-icon" class="sr-only">canceled</span>
+								</div>
+
+								<div *ngSwitchDefault>
+									<fa-icon aria-hidden="true" aria-labelledby="result-quetion-mark-icon" [icon]="['fas', 'question-circle']"></fa-icon>
+									<span id="result-quetion-mark-icon" class="sr-only">question mark</span>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>

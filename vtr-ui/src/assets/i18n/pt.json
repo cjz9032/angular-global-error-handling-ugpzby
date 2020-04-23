@@ -1532,15 +1532,15 @@
                 },
                 "display": {
                     "title": "Ecrã",
-                    "displayColorTemperature": {
-                        "title": "Temperatura de cor do ecrã",
-                        "description": "É possível ajustar a temperatura da cor do ecrã para filtrar a luz azul e reduzir o cansaço dos olhos. Ajusta os ecrãs para cores mais quentes durante o pôr do sol até ao nascer do sol para o ajudar a dormir.",
-                        "link": {
-                            "click": "Clique",
-                            "here": "aqui",
-                            "rest": "para alterar a temperatura de cor."
-                        }
-                    },
+					"displayColorTemperature": {
+						"title": "Modo Cuidados com a Visão",
+						"description": "Para evitar o cansaço dos olhos, pode ajustar a temperatura da cor do ecrã para filtrar a luz azul quando utiliza o computador durante muito tempo. Além disso, as cores quentes são benéficas para o sono, sobretudo à noite.",
+						"link": {
+							"click": "Clique",
+							"here": "aqui",
+							"rest": "para alterar a temperatura de cor."
+						}
+					},
                     "eyeCareMode": {
                         "title": "Modo de Cuidados com a Visão",
                         "checkbox": "Programe o Modo de Cuidados com a Visão do pôr ao nascer do sol",
@@ -1929,7 +1929,7 @@
                             "far": "Longe"
                         },
                         "readMore": {
-                            "line1": "• Perto: 0,99 metros",
+                            "line1": "• Perto: 0,9 metros",
                             "line2": "• Intermédio: 1,2 metros",
                             "line3": "• Longe: 1,5 metros"
                         }

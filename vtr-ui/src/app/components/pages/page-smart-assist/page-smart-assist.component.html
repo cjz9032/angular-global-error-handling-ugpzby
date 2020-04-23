@@ -319,7 +319,9 @@
 											<div class="col mt-8 ml-4 facial-recognition pb-3"
 												role="text"
 												*ngIf="intelligentSecurity.isZeroTouchLockFacialRecoVisible && zeroTouchLockShowAdvancedSection">
-												<h3 id="smart-assist-zero-touch-lock-faical-recognition-title mt-2">
+												<h3 id="smart-assist-zero-touch-lock-faical-recognition-title"
+													role="text"
+													attr-aria-label="smart-assist-zero-touch-lock-faical-recognition-title">
 													{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.title' | translate}}
 												</h3>
 												<p id="smart-assist-zero-touch-lock-faical-recognition-desc"
@@ -328,8 +330,8 @@
 													{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.caption' | translate}}
 												</p>
 												<div class="smart-assist-checkbox">
-													<vtr-ui-checkbox [componentId]="'cb-zero-touch-lock'"
-														[componentId]="'cb-zero-touch-lock'"
+													<vtr-ui-checkbox
+														[componentId]="'smartAssist-intelligentSecurity-zeroTouchLock-facial-recognition'"
 														[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || !intelligentSecurity.facilRecognitionCameraAccess
 															|| intelligentSecurity.facialRecognitionCameraPrivacyMode"
 														[value]="intelligentSecurity.isZeroTouchLockFacialRecoEnabled"

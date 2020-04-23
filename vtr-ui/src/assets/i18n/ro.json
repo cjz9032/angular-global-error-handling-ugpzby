@@ -1532,15 +1532,15 @@
                 },
                 "display": {
                     "title": "Afișaj",
-                    "displayColorTemperature": {
-                        "title": "Temperatură culoare afișaj",
-                        "description": "Puteți regla temperatura culorii afișajului pentru a filtra lumina albastră și pentru a reduce oboseala ochilor. Ajustează ecranul astfel încât să afișeze culori mai calde între apusul și răsăritul soarelui, pentru a nu vă afecta somnul.",
-                        "link": {
-                            "click": "Clic",
-                            "here": "aici",
-                            "rest": "pentru a modifica temperatura culorii."
-                        }
-                    },
+					"displayColorTemperature": {
+						"title": "Modul de îngrijire ochi",
+						"description": "Pentru a evita oboseala ochilor, puteți regla temperatura culorii afișajului pentru a filtra lumina albastră, atunci când utilizați computerul un timp îndelungat. În plus, culorile calde sunt recomandate pentru somnul dumneavoastră, în special noaptea.",
+						"link": {
+							"click": "Clic",
+							"here": "aici",
+							"rest": "pentru a modifica temperatura culorii."
+						}
+					},
                     "eyeCareMode": {
                         "title": "Modul de îngrijire a ochilor",
                         "checkbox": "Programați modul de protejare a ochilor de la apus până la răsărit",

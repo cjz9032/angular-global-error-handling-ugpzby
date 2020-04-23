@@ -1532,15 +1532,15 @@
                 },
                 "display": {
                     "title": "Prikaz",
-                    "displayColorTemperature": {
-                        "title": "Temperatura boje prikaza",
-                        "description": "Možete prilagoditi temperaturu boje vašeg zaslona u pogledu filtriranja plave svjetlosti i smanjenja naprezanja očiju. Prilagođava zaslon toplijim bojama tijekom zalaska sunca do izlaska sunca kako bi vam to pomoglo da zaspite.",
-                        "link": {
-                            "click": "Kliknite",
-                            "here": "ovdje",
-                            "rest": "za promjenu temperature boje."
-                        }
-                    },
+					"displayColorTemperature": {
+						"title": "Način rada ugodan za oči",
+						"description": "Da biste izbjegli naprezanje očiju, možete prilagoditi temperaturu boje prikaza kako bi se filtrirala plava svjetlost kada se dugo koristite računalom. Usto, tople boje dobre su za spavanje, pogotovo noću.",
+						"link": {
+							"click": "Kliknite",
+							"here": "ovdje",
+							"rest": "za promjenu temperature boje."
+						}
+					},
                     "eyeCareMode": {
                         "title": "Način rada ugodan za oči",
                         "checkbox": "Zakažite način rada ugodan za oči od zalaska do izlaska sunca",

@@ -1532,15 +1532,15 @@
                 },
                 "display": {
                     "title": "显示",
-                    "displayColorTemperature": {
-                        "title": "显示色温",
-                        "description": "您可以调节显示屏色温以过滤蓝光，从而减轻视疲劳。在日落到日出期间将显示屏调整为暖色调，以帮助您入睡。",
-                        "link": {
-                            "click": "单击",
-                            "here": "此处",
-                            "rest": "以更改色温。"
-                        }
-                    },
+					"displayColorTemperature": {
+						"title": "护眼模式",
+						"description": "为避免视疲劳，当长时间使用计算机时，可以调整显示屏的色温以过滤掉蓝光。此外，暖色对睡眠有好处，尤其是在夜间。",
+						"link": {
+							"click": "单击",
+							"here": "此处",
+							"rest": "以更改色温。"
+						}
+					},
                     "eyeCareMode": {
                         "title": "护眼模式",
                         "checkbox": "设定从日落到日出的护眼模式",
