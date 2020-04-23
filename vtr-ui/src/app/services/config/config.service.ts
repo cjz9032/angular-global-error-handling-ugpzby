@@ -232,8 +232,8 @@ export class ConfigService {
 	updateWifiMenu(menu: MenuItem[], wifiIsSupport) {
 		this.supportFilter(menu, 'wifi-security', wifiIsSupport
 		&& !this.deviceService.isSMode
-		&& !this.deviceService.isArm &&
-		this.activeSegment !== SegmentConst.Commercial);
+		&& !this.deviceService.isArm);
+		if (this.activeSegment !== SegmentConst.Gaming) this.segmentFilter(menu, this.activeSegment);
 		this.updateWifiStateCache(wifiIsSupport);
 	}
 
