@@ -5,7 +5,7 @@ import { CommonPipeModule } from './common/common-pipe.module';
 import { CommonService } from '../services/common/common.service';
 import { CommonUiModule } from './common/common-ui.module';
 import { CookieService } from 'ngx-cookie-service';
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule, ErrorHandler } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule, ErrorHandler, APP_INITIALIZER } from '@angular/core';
 import { DevService } from '../services/dev/dev.service';
 import { DisplayService } from '../services/display/display.service';
 import { environment } from 'src/environments/environment';
@@ -71,6 +71,8 @@ import { UICustomRadioModule } from '../components/ui/ui-custom-radio/ui-custom-
 import { NotificationComponent } from 'src/app/components/notification/notification.component';
 import { UiBannerComponent } from 'src/app/components/ui/ui-banner/ui-banner.component';
 import { UiCloseButtonModule } from '../components/ui/ui-close-button/ui-close-button.module';
+import { InitializerService } from '../services/initializer/initializer.service';
+
 // import { ModalErrorMessageComponent } from '../components/modal/modal-error-message/modal-error-message.component';
 import { ModalStoreRatingComponent } from '../components/modal/modal-store-rating/modal-store-rating.component';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons/faEnvelope';
@@ -154,6 +156,12 @@ import {faHeart as fasHeart} from '@fortawesome/free-solid-svg-icons/faHeart';
 		{
 			provide: ErrorHandler,
 			useClass: ChunkLoadErrorHandler
+		},
+		{
+			provide: APP_INITIALIZER,
+			useFactory: (initializerService: InitializerService) => initializerService.initialize.bind(initializerService),
+			deps: [InitializerService],
+			multi: true
 		}
 	],
 	entryComponents: [
