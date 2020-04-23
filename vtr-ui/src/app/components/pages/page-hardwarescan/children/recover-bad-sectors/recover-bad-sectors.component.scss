@@ -89,12 +89,21 @@
 				text-align: center;
 				border: 0rem;
 				cursor: pointer;
+				position: relative;
 
 				&:disabled {
 					background: $light_grey;
 					text-align: center;
 					border: 0rem;
 					cursor: default;
+				}
+
+				&:focus {
+					outline: 0;
+					box-shadow: none;
+					&::after {
+						@include button-outline-blue;
+					}
 				}
 			}
 		}

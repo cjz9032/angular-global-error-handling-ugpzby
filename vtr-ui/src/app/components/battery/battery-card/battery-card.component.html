@@ -26,7 +26,7 @@
 			<button type="button"
 				class="close-button bg-white"
 				id="myDevice-settings-battery-details-card-close-icon"
-				aria-label="Close Modal"
+				aria-label="Close"
 				role="button"
 				tabindex="0"
 				(click)="modal.dismiss('Cross click')"
@@ -98,14 +98,15 @@
 					attr.aria-label="icon-FullACAdapterSupport"></span>
 			</div>
 			<div class='col battery-conditions-tips'>
-				<span *ngIf="batteryConditions[i].condition==batteryConditionsEnum.StoreLimitation"
+				<span role="heading"
+					*ngIf="batteryConditions[i].condition==batteryConditionsEnum.StoreLimitation"
 					[innerHTML]="batteryConditionNote | translate:param"
 					[id]="'battery-condition-tip-'+ batteryConditionsEnum[batteryConditions[i].condition]"></span>
-				<span
+				<span role="heading"
 					*ngIf="batteryConditions[i].condition==batteryConditionsEnum.FullACAdapterSupport && acAdapterInfoParams && acAdapterInfoParams.acWattage!=0"
 					[innerHTML]="batteryConditionNote | translate:acAdapterInfoParams"
 					[id]="'battery-condition-tip-'+ batteryConditionsEnum[batteryConditions[i].condition]"></span>
-				<span
+				<span role="heading"
 					*ngIf="batteryConditions[i].condition!=batteryConditionsEnum.StoreLimitation && batteryConditions[i].condition!=batteryConditionsEnum.Error && batteryConditions[i].condition!=batteryConditionsEnum.FullACAdapterSupport"
 					[innerHTML]="batteryConditionNote | translate"
 					[id]="'battery-condition-tip-'+ batteryConditionsEnum[batteryConditions[i].condition]"></span>

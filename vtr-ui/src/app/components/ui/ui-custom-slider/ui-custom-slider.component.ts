@@ -6,84 +6,81 @@ import {
 	EventEmitter,
 	ElementRef,
 	ViewChild,
-	AfterViewInit,
+	OnDestroy,
 } from '@angular/core';
+import { Subject } from 'rxjs/internal/Subject';
+import { debounceTime } from 'rxjs/internal/operators/debounceTime';
 
 @Component({
 	selector: 'vtr-ui-custom-slider',
 	templateUrl: './ui-custom-slider.component.html',
 	styleUrls: ['./ui-custom-slider.component.scss'],
 })
-export class UiCustomSliderComponent implements OnInit, AfterViewInit {
+export class UiCustomSliderComponent implements OnInit, OnDestroy {
+	@Input() metricsItem;
+	@Input() metricsEvent = 'featureClick';
+	@Input() metricsValue;
 	@Input() isDisabled = false;
 	@Input() sliderId = 'rangeSlider';
-	@Input() value = 1; // initial slider value
-	@Input() min = 0; // slider start/minimum value
-	@Input() max = 10; // slider end/maximum value
+	@Input() value = 55; // initial slider value
+	@Input() min = 1; // slider start/minimum value
+	@Input() max = 100; // slider end/maximum value
 	@Input() step = 1; // ticks or steps to change on each slide
 	@Input() minLegend = ''; // label to display at the start of slider
 	@Input() midLegend = ''; // label to display at the center of slider
 	@Input() maxLegend = ''; // label to display at the end of slider
+	@Input() hasTicks = false;
+	@Input() ticks = [1, 55, 65, 100];
+	@Input() ariaLabel = 'slider';
 
-	@Input() metricsItem;
-	@Input() metricsEvent = 'featureClick';
-	@Input() metricsValue;
-
-	@Output() sliderChange: any = new EventEmitter();
-	@Output() valueChanged: any = new EventEmitter();
-	@Output() refresh: any = new EventEmitter();
+	@Output() sliderChange = new EventEmitter<number>();
+	@Output() valueChanged = new EventEmitter<number>();
 
 	@ViewChild('sliderBubble', { static: false }) sliderBubble: ElementRef;
 	@ViewChild('rangeSlider', { static: false }) rangeSlider: ElementRef;
 
+	private valueChangedSubject: Subject<number>;
+	public ticksArray = [];
 	constructor() { }
 
-	ngOnInit() { }
+	ngOnInit() {
+		this.valueChangedSubject = new Subject();
+		this.valueChangedSubject.pipe(debounceTime(500)).subscribe((value: number) => {
+			this.valueChanged.emit(value);
+		});
 
-	ngAfterViewInit() {
-		if (this.sliderBubble) {
-			this.setBubbleValue(this.rangeSlider.nativeElement, this.sliderBubble.nativeElement);
+		if (this.hasTicks) {
+			this.calculateTicks();
 		}
 	}
 
-	/**
-	 * This event is fired after mouse is released after dragging the slider or by keyboard.
-	 * @param $event currently selected value
-	 */
-	public onValueChange($event: any) {
-		this.valueChanged.emit($event.target);
+	ngOnDestroy() {
+		if (this.valueChangedSubject) {
+			this.valueChangedSubject.unsubscribe();
+		}
 	}
+
+	private calculateTicks() {
+		const noOfTicks = (this.max - this.min) / this.step;
+		let tickValue = this.min;
+		for (let index = 0; index <= noOfTicks; index++) {
+			if (index > 0) {
+				tickValue += this.step;
+			}
+			const isVisible = this.ticks.indexOf(tickValue) >= 0;
+			this.ticksArray[index] = { value: tickValue, isVisible };
+		}
+	}
+
 
 	/**
 	 *  This event is fired when user changes slider value by dragging or by keyboard
 	 * @param $event currently selected value
 	 */
 	public onInputChange($event: any) {
-		this.value = $event.target.value;
-		this.sliderChange.emit($event.target);
-		if (this.sliderBubble) {
-			this.setBubbleValue($event.target, this.sliderBubble.nativeElement);
-		}
-	}
-
-	private setBubbleValue(rangeSlider, sliderBubble) {
-		return;
-		let newPlace = 0;
-		const value = this.value;
-		const noOfChar = value.toString(10).length;
-		const bubbleOffset = (5 /* each digit width */ * noOfChar) + 18; // 3px both side margin
-		const width = (rangeSlider.offsetWidth - bubbleOffset);
-		const min = rangeSlider.min ? rangeSlider.min : 0;
-		const max = rangeSlider.max ? rangeSlider.max : 100;
-		const newPoint = Number(((value - min)) / (max - min));
-		if (newPoint <= 0) {
-			newPlace = 1;
-		}
-		else {
-			newPlace = Math.floor(width * newPoint);
-		}
-		sliderBubble.style.left = newPlace + 'px';
-		sliderBubble.innerHTML = this.value;
-		// console.log({ newPlace, value, newPoint, bubbleOffset, width });
+		const value = $event.target.valueAsNumber;
+		this.value = value;
+		this.sliderChange.emit(value);
+		this.valueChangedSubject.next(value);
 	}
 }

@@ -11,7 +11,7 @@
 		<div class="col">
 			<div class="row py-5 smart-settings-card"
 				id="Input & Accessories"
-				attr.aria-label="Input & Accessories">
+				aria-label="Input & Accessories">
 				<div class="col-12 px-0">
 					<!-- Input & Accessories -->
 					<vtr-container-collapsible [collapseLinkId]="'inputAccessories'"
@@ -54,21 +54,25 @@
 												<img class="keyboard-bg img-preview"
 													id="keyboardMap-background-image"
 													role="img"
-													attr.aria-label="keyboardMap-background-image"
+													aria-label="keyboardMap-background"
 													automationId="keyboardMap.background-image"
 													[src]="image" />
 												<img *ngIf="additionalCapabilitiesObj.privacy"
 													class="keyboard-layer img-preview"
-													[src]="privacyIcon" />
+													[src]="privacyIcon"
+													aria-hidden="true" />
 												<img *ngIf="additionalCapabilitiesObj.backLight"
 													class="keyboard-layer img-preview"
-													[src]="kbdBlIcon" />
+													[src]="kbdBlIcon"
+													aria-hidden="true" />
 												<img *ngIf="additionalCapabilitiesObj.performance"
 													class="keyboard-layer img-preview"
-													[src]="merlynIcon" />
+													[src]="merlynIcon"
+													aria-hidden="true" />
 												<img *ngIf="additionalCapabilitiesObj.magnifier"
 													class="keyboard-layer img-preview"
-													[src]="zoomIcon" />
+													[src]="zoomIcon"
+													aria-hidden="true" />
 											</div>
 										</div>
 									</div>
@@ -83,6 +87,7 @@
 											</div>
 											<div class="col-8 px-0">
 												<p class="hidden-keyboard-text mb-0"
+													role="heading"
 													id="keys-{{key.id}}-description">
 													{{key.text + '.description' | translate}}
 												</p>
@@ -127,12 +132,12 @@
 									automationId="[VoipHotkeys.title, VoipHotkeys.description.main, VoipHotkeys.tooltip]">
 									<div class="row adjust-indent pt-2 caption">
 										<div class="col-12 adjust-margin"
-											automationId="VoipHotkeys.description.f10"
+											role="heading"
 											id="VoipHotkeys-description-f10">
 											{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.description.f10' | translate}}
 										</div>
 										<div class="col-12 adjust-margin"
-											automationId="VoipHotkeys.description.f11"
+											role="heading"
 											id="VoipHotkeys-description-f11">
 											{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.description.f11' | translate}}
 										</div>
@@ -141,7 +146,7 @@
 										*ngIf="installedApps.length > 0; else noAppInstalled">
 										<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
 											<div class="pt-3 pb-4 prompting"
-												automationid="VoipHotkeys.hasInstalledAppsDescription"
+												role="heading"
 												id="VoipHotkeys-hasInstalledAppsDescription">
 												{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.hasInstalledAppsDescription' | translate}}
 											</div>
@@ -167,10 +172,9 @@
 											<div class="row pt-5">
 												<div class="feature-note col-12 p-4"
 													id="hasInstalledApps-note"
-													attr.aria-label="hasInstalledApps-note">
+													role="heading">
 													<p class="mb-0"
-														id="VoipHotkeys-hasInstalledAppsNote"
-														automationid="VoipHotkeys.hasInstalledAppsNote">
+														id="VoipHotkeys-hasInstalledAppsNote">
 														{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.hasInstalledAppsNote' | translate}}
 													</p>
 												</div>
@@ -182,7 +186,7 @@
 											<div class="col-12 adjust-margin">
 												<div class="pt-3 pb-4 prompting"
 													id="VoipHotkeys-noInstalledAppsDescription"
-													automationid="VoipHotkeys.noInstalledAppsDescription">
+													role="heading">
 													{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.noInstalledAppsDescription' | translate}}
 												</div>
 											</div>
@@ -193,24 +197,27 @@
 													id="app-icon-skype"
 													class="app-icon icon-s4b mr-4"></span>
 												<span id="skype-for-business"
+													role="heading"
 													class="app-text">Skype for Business 2016</span>
 											</div>
 										</div>
 										<div class="row adjust-indent mt-5 pb-4 mb-5">
 											<div class="col-12 adjust-margin">
 												<span id="app-icon-microsoft"
+													role="img"
 													class="app-icon icon-teams mr-4"></span>
 												<span id="microsoft-teams-1.0"
+													role="heading"
 													class="app-text">Microsoft Teams 1.0</span>
 											</div>
 										</div>
 										<div class="row adjust-indent noInstalledAppsNote">
 											<div class="feature-note col-12 p-4"
 												id="noInstalledApps-note"
-												attr.aria-label="noInstalledApps-note">
+												aria-label="noInstalledApps-note">
 												<p class="mb-0"
 													id="VoipHotkeys-noInstalledAppsNote"
-													automationid="VoipHotkeys.noInstalledAppsNote">
+													role="heading">
 													{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.noInstalledAppsNote' | translate}}
 												</p>
 											</div>
@@ -272,32 +279,42 @@
 							*ngIf="isTouchPadVisible || isMouseVisible">
 							<div class="row">
 								<div class="col-auto"
+									role="heading"
 									id="inputAccessories.controlOptions.more"
-									attr-aria-label="inputAccessories.controlOptions.more">
+									role="heading">
 									<p>{{'device.deviceSettings.inputAccessories.controlOptions.more' | translate}}</p>
 								</div>
 							</div>
 							<div class="row controls">
 								<div class="col-auto"
 									*ngIf="isTouchPadVisible">
-									<a (click)='launchProtocol("ms-settings:devices-touchpad")'
+									<a id="inputAccessories.controlOptions.touchpad"
+										role="link"
+										(click)='launchProtocol("ms-settings:devices-touchpad")'
 										(keydown.enter)='launchProtocol("ms-settings:devices-touchpad")'
-										tabindex="0"><span id="inputAccessories.controlOptions.touchpad"
-											attr.aria-label="inputAccessories.controlOptions.touchpad">{{'device.deviceSettings.inputAccessories.controlOptions.control1' | translate}}</span></a>
+										tabindex="0">{{'device.deviceSettings.inputAccessories.controlOptions.control1' | translate}}
+									</a>
 								</div>
 								<div class="col-auto"
 									*ngIf="isMouseVisible">
-									<a *ngIf="machineType === 1;else otherMachine"
+									<a *ngIf="machineType === 1"
+										role="link"
+										id="inputAccessories.controlOptions.trackpoint"
 										(click)='launchProtocol("ms-settings:mousetouchpad")'
 										(keydown.enter)='launchProtocol("ms-settings:mousetouchpad")'
-										tabindex="0"><span id="inputAccessories.controlOptions.trackpoint"
-											attr.aria-label="inputAccessories.controlOptions.trackpoint">{{'device.deviceSettings.inputAccessories.controlOptions.control3' | translate}}</span></a>
-									<ng-template #otherMachine><a tabindex="0"
-											(click)='launchProtocol("ms-settings:mousetouchpad")'
-											(keydown.enter)='launchProtocol("ms-settings:mousetouchpad")'><span
-												id="inputAccessories.controlOptions.mousecontrol"
-												attr.aria-label="inputAccessories.controlOptions.mousecontrol">{{'device.deviceSettings.inputAccessories.controlOptions.control2' | translate}}</span></a>
-									</ng-template>
+										[tabindex]="isMouseVisible && machineType === 1 ? 0 : -1">
+										{{'device.deviceSettings.inputAccessories.controlOptions.control3' | translate}}
+									</a>
+									<a *ngIf="machineType !== 1"
+										role="link"
+										[tabindex]="isMouseVisible && machineType !== 1 ? 0 : -1"
+										id="inputAccessories.controlOptions.mousecontrol"
+										(click)='launchProtocol("ms-settings:mousetouchpad")'
+										(keydown.enter)='launchProtocol("ms-settings:mousetouchpad")'>
+										{{'device.deviceSettings.inputAccessories.controlOptions.control2' | translate}}
+									</a>
+									<!-- <ng-template #otherMachine> -->
+									<!-- </ng-template> -->
 								</div>
 							</div>
 						</div>

@@ -197,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "Figyelmeztetés!",
                     "description": "A Túlpörgetés helytelen beállítása visszafordíthatatlan hardverkárosodást okozhat.",
-                    "proceed": "FOLYTATÁS"
+                    "proceed": "FOLYTATÁS",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },
@@ -1454,23 +1457,35 @@
                 "subtitle": "Hangbeállítások",
                 "description": "Ezen a részen automatikusan optimalizálhatók vagy manuálisanteljesen mértékben konfigurálhatók a hangbeállítások (például a Dolby-beállítások vagy a mikrofon használata).",
                 "audioSmartsettings": {
-                    "title": "Intelligens hangbeállítások",
-                    "subtitle": "ALKALMAZÁSTÓL FÜGGŐ BEÁLLÍTÁSOK",
-                    "description": "Automatikusan, a használt alkalmazástól függően korrigálja a hangbeállításokat.",
+                    "title": "Audio smart settings",
                     "dolby": {
-                        "title": "Automatikus Dolby-hangbeállítások",
-                        "tooltip": "Az automatikus Dolby-hangbeállításokkal a különféle használt alkalmazásokhoz igazodva konfigurálhatók a Dolby-hangbeállítások,így javítható a felhasználói élmény.",
+                        "title": "Dolby audio",
+                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
-                            "dynamic": "DINAMIKUS",
-                            "movie": "FILM",
-                            "music": "ZENE",
-                            "games": "JÁTÉK",
-                            "voip": "HANG"
+                            "dynamic": "DYNAMIC",
+                            "movie": "MOVIE",
+                            "music": "MUSIC",
+                            "games": "GAME",
+                            "voip": "VOICE"
+                        },
+                        "automaticAudioCheckboxText": "Automatic audio optimization for",
+                        "automaticAudioMode": {
+                            "voIPMode": {
+                                "radioText": "VoIP",
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                            },
+                            "entertainmentMode": {
+                                "radioText": "Entertainment",
+                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
+                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
+                            }
                         }
                     },
-                    "voip": {
-                        "title": "Automatikus hangoptimalizálás VoIP-hez",
-                        "tooltip": "A VoIP-hívások során automatikusan átvált Dolby-hangmódra, és tiszta, egységes hangminőséget biztosít."
+                    "eCourse": {
+                        "title": "Interactive E-course mode",
+                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
                     }
                 },
                 "microphone": {
@@ -1528,15 +1543,15 @@
                 },
                 "display": {
                     "title": "Megjelenítés",
-                    "displayColorTemperature": {
-                        "title": "A képernyő színhőmérséklete",
-                        "description": "Beállíthatja a képernyő színhőmérsékletét oly módon, hogy a kék fény kiszűrésével csökkentse a szem igénybevételét. Napnyugta és napkelte között állítson be melegebb színeket, hogy segítse az alvást.",
-                        "link": {
-                            "click": "Kattintson",
-                            "here": "innen",
-                            "rest": "a színhőmérséklet beállításához."
-                        }
-                    },
+					"displayColorTemperature": {
+						"title": "Szemvédő mód",
+						"description": "A szem fáradásának elkerülése érdekében ha hosszú ideig tervezi használni a számítógépet, módosítsa úgy a képernyő színhőmérsékletét, hogy kiszűrje a kék színű fényt. Ezenkívül a meleg színek sokat segítenek az elalvásban, különösen éjszaka.",
+						"link": {
+							"click": "Kattintson",
+							"here": "innen",
+							"rest": "a színhőmérséklet beállításához."
+						}
+					},
                     "eyeCareMode": {
                         "title": "Szemvédő mód",
                         "checkbox": "Ütemezze a naplemente és napkelte közötti időszakra a szemvédő módot",
@@ -1685,15 +1700,17 @@
                         "hideAdvSettings": "SPECIÁLIS BEÁLLÍTÁSOK ELREJTÉSE",
                         "description": "A billentyűzet felső sorában a következő két funkció található. Válassza ki a kívántat:",
                         "subSection": {
-                            "description": "A fenti két funkció között az Fn+Esc billentyűkombinációval lehet váltani.",
+                            "description": "A két funkció között az Fn+Esc billentyűkombinációval válthat. A frissítési folyamat néhány másodpercig tart.",
                             "radioButton": {
-                                "sFunKey": "SPECIÁLIS FUNKCIÓ",
-                                "fnKey": "F1–F12 FUNKCIÓ"
+                                "sFunKey": "Speciális funkciók",
+                                "fnKey": "F1–F12 funkcióbillentyűk"
                             }
                         },
                         "subSectionTwo": {
                             "title": "Az alapértelmezett elsődleges funkció megfordítása",
-                            "description": "Bekapcsolt állapotban az alapértelmezett elsődleges funkció a gyári beállításokról az ellenkezőre változik. A módosítások életbe lépéséhez indítsa újra a számítógépet."
+                            "description": "Bekapcsolt állapotban az alapértelmezett elsődleges funkció a gyári beállításokról az ellenkezőre változik. A módosítások életbe lépéséhez indítsa újra a számítógépet.",
+                            "caption": "AZ AKTÍV ELSŐDLEGES FUNKCIÓ:",
+                            "tooltipText": "Az alapértelmezett elsődleges funkció használatához nyomja meg a kívánt billentyűt a felső sorból. A nem elsődleges funkciók használatához nyomja le az Fn billentyűt, majd a kívánt billentyűt a felső sorból. Vagy nyomja meg az Fn+Esc billentyűkombinációt, majd ezt követően nyomja meg a kívánt billentyűt a felső sorból."
                         },
                         "subSectionThree": {
                             "title": "Az Fn billentyűkombinációk használata",
@@ -1888,7 +1905,7 @@
                 "zeroTouchLoginForIdea": {
                     "title": "Érintés nélküli bejelentkezés",
                     "caption": "Ez a funkció képes automatikusan felébreszteni a számítógépet, sőt be is jelentkezteti Önt, így növeli a munka hatékonyságát. A funkció használatához regisztrálnia kell az arcát a Windows Hello alkalmazásban.",
-                    "tooltip": "Ha a számítógéppel szemben áll vagy közeledik hozzá (1,2 vagy 1,5 méter távolságon belül), ez a funkció lehetővé teszi, hogy az arcfelismerést követően a rendszer automatikusan beléptesse Önt. Ha a szabadban tartózkodik, nem pedig az irodában, közelebb kell mennie a számítógéphez, és az ébresztés hosszabb ideig tart. <br>A maximális érzékelési távolságot az érzékelő jellemzői határozzák meg. További információkat a számítógéphez kapott <i>Felhasználói kézikönyvben</i> talál."
+                    "tooltip": "Ha a számítógéppel szemben áll vagy közeledik hozzá (1,2 vagy 1,5 méter távolságon belül), ez a funkció lehetővé teszi, hogy az arcfelismerést követően a rendszer automatikusan beléptesse Önt. Ha a szabadban tartózkodik, nem pedig az irodában, közelebb kell mennie a számítógéphez, és az ébresztés hosszabb ideig tart. <br>A maximális érzékelési távolságot az érzékelő jellemzői határozzák meg. További információkat a számítógéphez kapott Felhasználói kézikönyvben talál."
                 },
                 "zeroTouchLock": {
                     "title": "Érintés nélküli zárolás",
@@ -1975,9 +1992,7 @@
                     "description2": "A funkció érzékelőkkel és kamerával észleli az Ön jelenlétét. A funkció azonban NEM gyűjt személyes adatokat.",
                     "description3": "1. A fenti funkciók használatához állítsa a megfelelő szögbe a képernyőt, hogy a rendszer fel tudja ismerni az Ön arcát.",
                     "description4": "2. A fenti funkciók nem támogatottak a következő esetekben:",
-                    "description5a1": "a. A számítógép Sátor, Álló vagy Tablet módban vagy Leválasztott módban van. Az Ön számítógépe által támogatott módokat kapcsolatban lásd: ",
-                    "description5a2": "Felhasználói kézikönyv ",
-                    "description5a3": ".",
+                    "description5a": "a. A számítógép Sátor, Álló vagy Tablet módban vagy Leválasztott módban van. Az Ön számítógépe által támogatott üzemmódokkal kapcsolatban olvassa el a termékhez kapott Felhasználói kézikönyvet.",
                     "description5b": "b. Ha a számítógép hibernált módban van vagy ki van kapcsolva.",
                     "description6": "3. Ha a számítógépen bekapcsolta a Repülőgép üzemmódot, ezek a funkciók nem használhatók.",
                     "description7": "A pontosság függ a testmérettől, a testtartástól és a mozgás gyakoriságától. Ha a számítógép váratlanul zárolódik, állítsa be az érzékenységi sávot a pontosság javítása érdekében."
@@ -2060,12 +2075,59 @@
             "superResolution": {
                 "heading": "Intelligens média",
                 "title": "Videófelbontás megnövelése",
-                "desc": "<p><label>Ez a szolgáltatás fokozza a videó lejátszásának élményét azáltal, hogy javítja a videófelbontást. Különösen akkor működik, ha a videó rossz felbontású.</label></p> <p style='margin-top:4px;'><label>Ez a funkció befolyásolhatja az akkumulátor élettartamát és hőmérsékletét, továbbá zajt kelthet. Kérjük, ne használja DC üzemmódban. Ellenkező esetben felgyorsítja az energiafogyasztást és lerövidíti az akkumulátor élettartamát.</label></p>",
-                "tooltip": "Ez a funkció csak a következőkön működik:<br>Windows Media player",
+                "desc": "<p><label>Ez a funkció növeli a videók felbontását, és ezzel élvezetesebbé teszi a videók megtekintését. Különösen akkor hasznos, ha a videó felbontása alacsony.</label></p> <p style='margin-top:4px;'><label>Ez a funkció befolyásolhatja az akkumulátor élettartamát és hőmérsékletét, továbbá zajt kelthet. Ne használja DC üzemmódban (a rendszer akkumulátorról üzemel). Ellenkező esetben felgyorsítja az energiafogyasztást és lerövidíti az akkumulátor élettartamát.</label></p>",
+                "tooltip": "Ez a funkció kizárólag a következő videolejátszókkal működik:<br>Windows Media Player<br>Chrome<br>Filmek+TV<br>PotPlayer<br>GOM player<br>Böngészőalapú lejátszók (például Chrome)<br><br>A számítógéphez kapott Felhasználói kézikönyvből megtudhatja, hogyan lehet bekapcsolni a funkciót a PotPlayer és a GOM player esetében.",
                 "note": {
                     "description": "A funkció az alábbi esetekben nem működik:",
-                    "description1": "A számítógép nem csatlakozik a hálózati tápellátáshoz.",
-                    "description2": "Az Akkumulátorkímélő kód engedélyezve van."
+                    "description1": "Az Akkumulátorkímélő mód engedélyezve van.",
+                    "description2": "A processzor hőmérséklete túl magas."
+                }
+            },
+            "antiTheft": {
+                "heading": "Intelligens észlelés",
+                "title": "Intelligens mozgásérzékeléses riasztás",
+                "desc": "<p><label>Ha bekapcsolja ezt a funkciót, az eszköz sípoló riasztást ad ki, amikor a képernyő zárolva van, és mozgást észlel a közelében. Ez különösen nyilvános helyeken lehet hasznos.</label></p> <p style='margin-top:4px;'><label>A riasztás némításához írja be a jelszót, vagy jelentkezzen be a Windows Hello segítségével.</label></p>",
+                "note": {
+                    "description": "Ha sikerült bejelentkeznie a rendszerbe, a funkció automatikusan kikapcsol. Ha szeretné ismét használni, Önnek újra be kell kapcsolnia."
+                },
+                "alarm": {
+                    "title": " A RIASZTÁS ENNYI IDEIG SZÓL:",
+                    "option1": "10 másodperc",
+                    "option2": "20 másodperc",
+                    "option3": "30 másodperc",
+                    "option4": "1 perc",
+                    "option5": "Kikapcsolásig nem áll le"
+                },
+                "allowCamera": {
+                    "title": "FÉNYKÉP KÉSZÍTÉSE",
+                    "describe": "Ha bekapcsolja ezt a funkciót, a fényképezőgép automatikusan fényképeket készít, amikor a rendszer zárolt képernyő mellett mozgást észlel a közelben. Ezeket az adatokat helyben dolgozza fel az eszköz. A Lenovo nem fér hozzájuk, és nem használja fel őket.",
+                    "checkBoxText": "A funkció engedélyezése"
+                },
+                "cameraPrivacy": {
+                    "describe": "A Lenovo Vantage kamera adatvédelmi módja be van kapcsolva. A jelölőnégyzet funkciója nem működik.",
+                    "linkText": "Lépjen a Kamera adatvédelmi módba, hogy kikapcsolja"
+                },
+                "authorizedAccess": {
+                    "describe": "A Lenovo Vantage nem fér hozzá a kamerához. A jelölőnégyzet funkciója nem működik.",
+                    "linkText": "A Windows beállításaiban adhatja meg a hozzáférést"
+                },
+                "photo": {
+                    "title": "MOZGÁS ÉRZÉKELÉSE ESETÉN KÉSZÍTETT FÉNYKÉPEK SZÁMA",
+                    "tooltip": "Amikor a rendszer mozgást észlel, a számítógép fényképezője automatikusan aktiválódik és fényképeket készít. A rendszer 2 másodpercenként készít képet, amelyeket a helyi tárhelyre ment.",
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
+                },
+                "showPhoto": {
+                    "title": "FÉNYKÉPEK MENTVE A KÖVETKEZŐ HELYRE:",
+                    "link": "Fényképek megtekintése"
+                },
+                "fileAuthorizationTips": {
+                    "content": "A Lenovo Vantage nem fér hozzá a fájlrendszerhez.",
+                    "link": "A Windows beállításaiban adhatja meg a hozzáférést"
                 }
             },
             "voice": {
@@ -2099,53 +2161,6 @@
                     "btnText": "ok",
                     "title": "A telepítés sikertelen",
                     "desc": "A Lenovo Voice használatához próbálkozzon később."
-                }
-            },
-            "antiTheft": {
-                "heading": "Intelligent Sensing",
-                "title": "Smart Motion Alert",
-                "desc": "<p><label>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</label></p> <p style='margin-top:4px;'><label>To dismiss the alarm, enter the correct password or log in by Windows Hello.</label></p>",
-                "note": {
-                    "description": "Once you log in the system successfully, this feature will be turned off automatically. You need to enable it again to use it."
-                },
-                "alarm": {
-                    "title": " THE ALARM WILL LAST FOR",
-                    "option1": "10 seconds",
-                    "option2": "20 seconds",
-                    "option3": "30 seconds",
-                    "option4": "1 minute",
-                    "option5": "Never stop"
-                },
-                "allowCamera": {
-                    "title": "TATING PHOTOS",
-                    "describe": "When enabling this feature, the camera takes photos automatically when detecting any movement if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
-                    "checkBoxText": "Enable this feature"
-                },
-                "cameraPrivacy": {
-                    "describe": "Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
-                    "linkText": "Go to Camera privacy mode to turn it off"
-                },
-                "authorizedAccess": {
-                    "describe": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
-                    "linkText": "Go to Windows Settings to give access"
-                },
-                "photo": {
-                    "title": "THE NUMBER OF PHOTOS TAKEN DURING THE MOVEMENT",
-                    "tooltip": "The camera on your computer automatically activates to take pictures when movements are detected. Pictures are taken every 2 seconds and are saved to your local storage.",
-                    "option1": 5,
-                    "option2": 10,
-                    "option3": 15,
-                    "option4": 20,
-                    "option5": 25,
-                    "option6": 30
-                },
-                "showPhoto": {
-                    "title": "PHOTOS HAVE BEEN:",
-                    "link": "View photos"
-                },
-                "fileAuthorizationTips": {
-                    "content": "Lenovo Vantage doesn't have access to the file system.",
-                    "link": "Go to Windows Settings to give access"
                 }
             }
         }
@@ -2713,7 +2728,7 @@
         },
         "question1": {
             "title": "Fájlok biztonsági mentése és visszaállítása",
-            "description": "<div>    <div class='faqInFs4Fb'>        Fájlok biztonsági mentése és visszaállítása    </div>    <hr />    <div class='faqInMb7'>        Mindig érdemes biztonsági mentést készíteni. Tárolja a fájljai másolatát egy másik meghajtón arra az esetre, ha valami történne az eredetikkel.    </div>    <div class='faqInFs3Fb'>        A biztonsági mentés beállítása    </div>    <hr />    <div class='mb-5'>        Kattintson a <span class='faqInFb'>Start</span> gombra, és válassza a <span class='faqInFb'>Gépház</span> > <span class='faqInFb'>Frissítés és biztonság</span> > <span class='faqInFb'>Biztonsági mentés</span> > <span class='faqInFb'>Meghajtó felvétele</span> lehetőséget, majd válasszon ki egy külső meghajtót vagy hálózati helyet a biztonsági mentések számára.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Kész is van. Minden órában biztonsági másolatot készítünk a felhasználói mappája (C:\\\\Users\\\\username) teljes tartalmáról. Ha módosítani szeretné, hogy melyik fájlokról készüljön biztonsági másolat, vagy meg szeretné változtatni a mentések nyissa meg a <span class='faqInFb'>További lehetőségek</span> menüpontot.    </div>    <div class='faqInFs3Fb'>        A fájlok visszaállítása    </div>    <div class='mb-5'>        Ha hiányzik egy fontos fájl vagy mappa, itt láthatja, hogyan lehet visszaállítani:    </div>    <div>        <div class='mb-3'>1. Írja be a <span class='faqInFb'>Fájlok visszaállítása</span> kifejezést a tálcán található keresőmezőbe, majd válassza a <span class='faqInFb'>Fájlok visszaállítása a Fájlelőzmények szolgáltatással</span> lehetőséget.</div>        <div class='mb-3'>2. Keresse meg a hiányzó fájlt, majd a nyílbillentyűk segítségével tekintse meg a verzióit</div>        <div class='mb-3'>3. Ha megtalálta a kívánt verziót, válassza a <span class='faqInFb'>Visszaállítás</span> lehetőséget a fájl eredeti helyre mentéséhez. Ha másik helyre szeretné menteni, tartsa nyomva a <span class='faqInFb'>Visszaállítás</span> lehetőséget (vagy kattintson rá a jobb gombbal), és válassza a <span class='faqInFb'>Visszaállítás máshova</span> parancsot, majd válassza ki az új helyet.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Fájlok biztonsági mentése és visszaállítása    </div>    <hr />    <div class='faqInMb7'>        Mindig érdemes biztonsági mentést készíteni. Tárolja a fájljai másolatát egy másik meghajtón arra az esetre, ha valami történne az eredetikkel.    </div>    <div class='faqInFs3Fb'>        A biztonsági mentés beállítása    </div>    <hr />    <div class='mb-5'>        Kattintson a <span class='faqInFb'>Start</span> gombra, és válassza a <span class='faqInFb'>Gépház</span> > <span class='faqInFb'>Frissítés és biztonság</span> > <span class='faqInFb'>Biztonsági mentés</span> > <span class='faqInFb'>Meghajtó felvétele</span> lehetőséget, majd válasszon ki egy külső meghajtót vagy hálózati helyet a biztonsági mentések számára.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Kész is van. Minden órában biztonsági másolatot készítünk a felhasználói mappája (C:\\Users\\az Ön felhasználóneve) teljes tartalmáról. Ha módosítani szeretné, hogy melyik fájlokról készüljön biztonsági másolat, vagy meg szeretné változtatni a mentések nyissa meg a <span class='faqInFb'>További lehetőségek</span> menüpontot.    </div>    <div class='faqInFs3Fb'>        A fájlok visszaállítása    </div>    <div class='mb-5'>        Ha hiányzik egy fontos fájl vagy mappa, itt láthatja, hogyan lehet visszaállítani:    </div>    <div>        <div class='mb-3'>1. Írja be a <span class='faqInFb'>Fájlok visszaállítása</span> kifejezést a tálcán található keresőmezőbe, majd válassza a <span class='faqInFb'>Fájlok visszaállítása a Fájlelőzmények szolgáltatással</span> lehetőséget.</div>        <div class='mb-3'>2. Keresse meg a hiányzó fájlt, majd a nyílbillentyűk segítségével tekintse meg a verzióit</div>        <div class='mb-3'>3. Ha megtalálta a kívánt verziót, válassza a <span class='faqInFb'>Visszaállítás</span> lehetőséget a fájl eredeti helyre mentéséhez. Ha másik helyre szeretné menteni, tartsa nyomva a <span class='faqInFb'>Visszaállítás</span> lehetőséget (vagy kattintson rá a jobb gombbal), és válassza a <span class='faqInFb'>Visszaállítás máshova</span> parancsot, majd válassza ki az új helyet.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -3126,7 +3141,8 @@
         "settingsNotes": "Kérjük, indítsa újra ezt az alkalmazást, hogy a módosítások életbe lépjenek.",
         "betaSettingTitle": "Bétaprogram",
         "betaProgram": "Bétaprogram",
-        "betaSettingDescription": "Próbálja ki a legújabb funkciókat, amelyeken dolgozunk."
+        "betaSettingDescription": "Próbálja ki a legújabb funkciókat, amelyeken dolgozunk.",
+        "betaSettingNewDescription": "Örömünkre szolgál, hogy meghívhatjuk Önt a Smart Performance bétaprogramjába. Ez a szolgáltatás a következő módszerekkel növeli számítógépe teljesítményét:<br/><ul class='pl-4'><li>Proaktívan észleli a bugokat és optimalizálja a beállításokat.</li><li>A hálózat és a böngésző optimalizálásával jobb internetezési élményt kínál.</li><li>A meglévő víruskereső program használata nélkül is képes gyors ellenőrzést végezni, és kijavítani az észlelt problémákat.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Mégse",
@@ -3296,7 +3312,8 @@
             "wireless": "Vezeték nélküli"
         },
         "warningMessage": "Ne feledje, hogy a tesztek megszakadnak, ha a rendszer alvó vagy hibernált állapotba kerül",
-        "refreshMessage": "A frissítés eltarthat egy ideig, mivel minden összetevőt újra be kell töltenie"
+        "refreshMessage": "A frissítés eltarthat egy ideig, mivel minden összetevőt újra be kell töltenie",
+        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3889,7 +3906,8 @@
                 "results": "Results:",
                 "status": "Status"
             }
-        }
+        },
+        "runningWell": "PC is running well"
     },
     "homeSecurity": {
         "title": "Connected Home Security",
@@ -4051,8 +4069,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "Bal nyíl",
+            "rightArrow": "Jobb nyíl"
         }
     },
     "dcc": {

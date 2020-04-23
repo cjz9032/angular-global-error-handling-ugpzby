@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed, inject, fakeAsync, tick } from '@angular/core/testing';
 import { WidgetSystemToolsComponent } from './widget-system-tools.component';
 import { Pipe } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHandler } from '@angular/common/http';
 // tslint:disable-next-line: no-duplicate-imports
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -11,6 +11,8 @@ import { AvailableUpdateDetail } from 'src/app/data-models/system-update/availab
 import { InstallUpdate } from 'src/app/data-models/system-update/install-update.model';
 import { HardwareScanService } from 'src/app/services/hardware-scan/hardware-scan.service';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { GamingAccessoryService } from 'src/app/services/gaming/gaming-accessory/gaming-accessory.service';
 
 const hardwareScanServiceMock = jasmine.createSpyObj('HardwareScanService', ['isShellAvailable']);
 const gamingAllCapabilitiesServiceMock = jasmine.createSpyObj('GamingAllCapabilitiesService', [
@@ -29,6 +31,9 @@ describe('WidgetSystemToolsComponent', () => {
 			schemas: [NO_ERRORS_SCHEMA],
 			providers: [
 				{ provide: HttpClient },
+				{ provide: HttpHandler },
+				{ provide: VantageShellService },
+				{ provide: GamingAccessoryService },
 				{ provide: HardwareScanService, useValue: hardwareScanServiceMock },
 				{ provide: GamingAllCapabilitiesService, useValue: gamingAllCapabilitiesServiceMock }
 

@@ -204,13 +204,13 @@
 						margin-top: 1.8rem;
 						margin-bottom: 0rem;
 						font-size: 1.3rem;
-						width: calc(71% - 2rem);
+						width: calc(60.5% - 2rem);
 						text-align: center;
 						position: relative;
 						font-weight: $weight_bold;
 						@media #{$breakpoint_sm}{
 							font-size: 1rem;
-							width: calc(71% - 2rem);
+							width: calc(60.5% - 2rem);
 						}
 						span{
 							position: relative;
@@ -219,16 +219,12 @@
 						&::after{
 							content: "";
 							position: absolute;
-							width: 50%;
+							width: 60%;
 							height: 1rem;
 							background: $grey_lighter;
-							left: 25%;
+							left: 20%;
 							bottom: 0rem;
 							z-index: 1;
-							@media #{$breakpoint_sm}{
-								width: 50%;
-								left: 25%;
-							}
 						}
 						&::before {
 							content: "";
@@ -240,6 +236,14 @@
 							left: 0;
 							bottom: 0.5rem;
 							z-index: 0;
+						}
+						&.running-well{
+							width: 39%;
+							margin-left: 0.5%;
+							color: $green_darker;
+							&::before {
+								border-color: $green_darker;
+							}
 						}
 					}
 				}
@@ -338,6 +342,9 @@
 					.icon-box {
 						width: 20%;
 						position: relative;
+						@media #{$breakpoint_sm}{
+							width: auto;
+						}
 						&::after {
 							content: '';
 							position: absolute;
@@ -346,6 +353,9 @@
 							background: $light;
 							right: 0;
 							top: 0;
+							@media #{$breakpoint_sm}{
+								right: 0.3rem;
+							}
 						}
 						&:last-child {
 							&::after {
@@ -375,6 +385,7 @@
 							@media #{$breakpoint_sm} {
 								font-size: 1rem;
 								line-height: 1rem;
+								max-width: 100%;
 							}
 						}
 					}

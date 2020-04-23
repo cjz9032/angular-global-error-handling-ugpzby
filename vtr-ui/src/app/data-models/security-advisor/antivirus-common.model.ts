@@ -1,4 +1,4 @@
-import { Antivirus, McAfeeInfo, WinRT } from '@lenovo/tan-client-bridge';
+import { Antivirus, McAfeeInfo, WinRT, EventTypes } from '@lenovo/tan-client-bridge';
 import { AppNotification } from '../common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
@@ -72,6 +72,12 @@ export class AntivirusCommon {
 				this.mcafee = this.antivirus.mcafee;
 			}
 		}
+		this.antivirus.on(EventTypes.avRefreshedEvent, (avInfo) => {
+			this.antivirus = avInfo;
+			if (avInfo.mcafee) {
+				this.mcafee = avInfo.mcafee;
+			}
+		})
 		this.isOnline = isOnline;
 		this.localInfoService.getLocalInfo().then(result => {
 			this.country = result.GEO;
@@ -108,7 +114,6 @@ export class AntivirusCommon {
 			}).finally(() => {
 				this.metrics.sendMetrics(metricsData);
 			});
-
 		} else {
 			this.purchaseBtnIsLoading = false;
 			WinRT.launchUri(this.urlGetMcAfee);

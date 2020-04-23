@@ -1,5 +1,11 @@
 <form class="vtr-ui-custom-slider">
 	<div class="range">
+		<div class="ticks" *ngIf="hasTicks">
+			<span *ngFor="let item of ticksArray" [title]="item.value">
+				<span class="tick"
+					*ngIf="item.isVisible"></span>
+			</span>
+		</div>
 		<input type="range"
 			#rangeSlider
 			role="slider"
@@ -9,6 +15,8 @@
 			[attr.aria-valuemin]="min"
 			[attr.aria-valuemax]="max"
 			[attr.aria-valuenow]="value"
+			[attr.aria-label]="ariaLabel"
+			[step]="step"
 			[min]="min"
 			[max]="max"
 			[value]="value"
@@ -16,12 +24,7 @@
 			[metricsItem]="metricsItem"
 			[metricsEvent]="metricsEvent"
 			[metricsValue]="metricsValue"
-			(input)="onInputChange($event)"
-			(change)="onValueChange($event)"
-			[step]="step">
-		<!-- <output class="bubble"
-			[for]="sliderId"
-			#sliderBubble></output> -->
+			(input)="onInputChange($event)">
 		<div class="d-flex justify-content-between legends"
 			[class.legends-disabled]="isDisabled">
 			<span *ngIf="minLegend?.length>0"

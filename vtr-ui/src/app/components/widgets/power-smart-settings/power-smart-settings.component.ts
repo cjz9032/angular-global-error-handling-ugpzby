@@ -55,12 +55,12 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 		private logger: LoggerService,
 		public commonService: CommonService,
 		public modalService: NgbModal,
-		private metricService: MetricService) { }
+		private metricService: MetricService) {
+			this.initDataFromCache();
+		}
 
 	ngOnInit() {
-		this.initDataFromCache();
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
-
 		if (thinkpad === this.machineType || this.isYogo730()) {
 			this.add = 0; // thinkpad
 			this.checkDriverForThinkPad();
@@ -86,10 +86,10 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				this.dytc6IsAutoModeSupported = this.cache.autoModeToggle.available;
 				return;
 			}
+			this.showIntelligentCoolingModes = this.cache.showIntelligentCoolingModes;
 			this.captionText = this.cache.captionText !== '' ? this.translate.instant(this.cache.captionText) : '';
 			this.showIntelligentCoolingToggle = this.cache.autoModeToggle.available;
 			this.enableIntelligentCoolingToggle = this.cache.autoModeToggle.status;
-			this.showIntelligentCoolingModes = this.cache.showIntelligentCoolingModes;
 			this.apsStatus = this.cache.apsState;
 			this.selectedModeText = this.cache.selectedModeText !== '' ? this.translate.instant(this.cache.selectedModeText) : '';
 			if (this.cache.mode) {
@@ -157,6 +157,9 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 			if (isSetManualMode) {
 				this.setManualModeSetting(IntelligentCoolingModes.Performance);
 			}
+		}
+		if (!this.legacyManualModeCapability) {
+			this.showIntelligentCoolingModes = false;
 		}
 		this.cache.showIC = this.showIC;
 		this.cache.autoModeToggle.available = this.showIntelligentCoolingToggle;
@@ -388,6 +391,9 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				this.cQLCapability = await this.getLegacyCQLCapability();
 				this.tIOCapability = 0 !== (await this.getLegacyTIOCapability());
 				this.legacyManualModeCapability = await this.getLegacyManualModeCapability();
+				if (!this.legacyManualModeCapability) {
+					this.showIntelligentCoolingModes = false;
+				}
 				if (this.cQLCapability || this.tIOCapability || this.legacyManualModeCapability) {
 					// Legacy Capable or DYTC 3.0
 					this.captionText = this.translate.instant('device.deviceSettings.power.powerSmartSettings.description3');
@@ -476,15 +482,6 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 		} catch (error) {
 			this.logger.error('PowerSmartSettingsComponent:getEMDriverStatus', error.message);
 		}
-	}
-
-	public isShowIntelligentCoolingModes(): boolean {
-		if (!this.legacyManualModeCapability) {
-			// this.logger.info('PowerSmartSettingsComponent.isShowIntelligentCoolingModes', this.legacyManualModeCapability);
-			return false;
-		}
-		// this.logger.info('PowerSmartSettingsComponent.isShowIntelligentCoolingModes', this.showIntelligentCoolingModes);
-		return this.showIntelligentCoolingModes;
 	}
 
 	private getDYTCRevision(): Promise<number> {
@@ -753,14 +750,21 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 	}
 
 
-	readMore(readMoreDiv: HTMLElement) {
+	readMore(readMoreDiv: HTMLElement,$event:Event) {
 		this.onReadMoreClick = true;
-		readMoreDiv.style.display = 'block';
-		// readMoreDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-		// const focusElement = readMoreDiv.querySelector('[tabindex = \'0\']') as HTMLElement;
-		// Fix for Edge browser
-		// window.scrollBy(0, 0);
-		readMoreDiv.focus();
+	
+		if(readMoreDiv){
+			readMoreDiv.style.display = 'block';
+			//readMoreDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+			// const focusElement = readMoreDiv.querySelector('[tabindex = \'0\']') as HTMLElement;
+			// Fix for Edge browser
+			// window.scrollBy(0, 0);
+			//if($event.type!=='click'){
+				readMoreDiv.focus();
+			//}
+			
+		}
+		
 	}
 
 	ngOnDestroy() {

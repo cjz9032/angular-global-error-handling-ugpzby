@@ -68,7 +68,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 	private DeviceInformation: any;
 	private DeviceClass: any;
 	public isOnline: any = true;
-	private isSet = {
+	isSet = {
 		isSetDaytimeColorTemperatureValue: false,
 		isSetEyecaremodeValue: false,
 		isSetEyecaremodeStatus: false,
@@ -427,7 +427,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		}
 	}
 
-	private onNotification(notification: AppNotification) {
+	onNotification(notification: AppNotification) {
 		if (notification) {
 			const { type, payload } = notification;
 			switch (type) {
@@ -552,15 +552,15 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 
 	}
 	// Start EyeCare Mode
-	private getDisplayColorTemperature() {
-		this.displayService.getDisplayColortemperature().then((response) => {
-			this.logger.debug('getDisplayColortemperature.then', response);
+	getDisplayColorTemperature() {
+		this.displayService.getDisplayColorTemperature().then((response) => {
+			this.logger.debug('getDisplayColorTemperature.then', response);
 			this.eyeCareDataSource = response;
 			if (this.isSet.isSetEyecaremodeValue) {
 				this.eyeCareDataSource.current = this.setValues.SetEyecaremodeValue;
 				this.isSet.isSetEyecaremodeValue = false;
 			}
-			this.logger.debug('getDisplayColortemperature.then', this.eyeCareDataSource);
+			this.logger.debug('getDisplayColorTemperature.then', this.eyeCareDataSource);
 			this.commonService.setLocalStorageValue(LocalStorageKey.DisplayEyeCareModeCapability, this.eyeCareModeCache);
 		});
 	}
@@ -575,7 +575,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 
 		if (event.switchValue) {
 			if (this.eyeCareModeCache.eyeCareDataSource && this.eyeCareModeCache.eyeCareDataSource.current < 3400 && !this.isSet.isSetEyecaremodeValue) {
-				this.onEyeCareTemparatureChange({ value: 3400 });
+				this.onEyeCareTemperatureChange(3400);
 			}
 		} else {
 			if (this.displayColorTempCache.current < 3400 && !this.isSet.isSetDaytimeColorTemperatureValue) {
@@ -615,12 +615,15 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		}
 	}
 
-	setEyeCareModeToggleValue(flag: boolean) {
+	setEyeCareModeToggleValue(flag: boolean, isMissingGraphicDriver=false) {
 		if (this.isSet.isSetEyecaremodeStatus) {
 			this.eyeCareModeStatus.status = this.setValues.SetEyecaremodeStatus;
 			this.isSet.isSetEyecaremodeStatus = false;
 		} else {
 			this.eyeCareModeStatus.status = flag;
+		}
+		if(!isMissingGraphicDriver) {
+			this.enableSlider = this.eyeCareModeStatus.status;
 		}
 	}
 
@@ -694,12 +697,12 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 	resetMinimumTo3400() {
 		Promise.all([
 			this.displayService.getEyeCareModeState(),
-			this.displayService.getDisplayColortemperature(),
+			this.displayService.getDisplayColorTemperature(),
 			this.displayService.getDaytimeColorTemperature()
-		]).then(([status, displayColorTemperature, daytimeColorTemperature]) => {
+		]).then(([status, displayColorTemperature, daytimeColorTemperature]: any[]) => {
 			if (status.status) {
 				if (displayColorTemperature.current < 3400 && !this.isSet.isSetEyecaremodeValue) {
-					this.onEyeCareTemparatureChange({ value: 3400 });
+					this.onEyeCareTemperatureChange(3400);
 				}
 			} else {
 				if (daytimeColorTemperature.current < 3400 && !this.isSet.isSetDaytimeColorTemperatureValue) {
@@ -709,7 +712,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		})
 	}
 
-	private setEyeCareModeStatus(value: boolean) {
+	setEyeCareModeStatus(value: boolean) {
 		try {
 			if (this.displayService.isShellAvailable) {
 				this.displayService.setEyeCareModeState(value)
@@ -736,10 +739,10 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 					this.logger.debug('Current setValues', this.setValues);
 					this.logger.debug('getEyeCareModeState.then', featureStatus);
 					this.eyeCareModeStatus.available = featureStatus.available;
-					this.setEyeCareModeToggleValue(featureStatus.status);
-					if (!isMissingGraphicDriver) {
-						this.enableSlider = featureStatus.status;
-					}
+					this.setEyeCareModeToggleValue(featureStatus.status, isMissingGraphicDriver);
+					// if (!isMissingGraphicDriver) {
+					// 	this.enableSlider = featureStatus.status;
+					// }
 					// this.isEyeCareMode = this.eyeCareModeStatus.status;
 					if (this.eyeCareModeStatus.available === true) {
 						this.logger.debug('eyeCareModeStatus.available', featureStatus.available);
@@ -755,58 +758,34 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 				});
 		}
 	}
-	public onEyeCareTemparatureChange($event: any) {
+	public onEyeCareTemperatureChange($event: number) {
 		try {
-			this.logger.debug('temparature changed in display', $event);
+			const value = $event;
+			this.logger.debug('onEyeCareTemperatureChange changed in display', value);
 			if (this.displayService.isShellAvailable) {
-				this.displayService.setDisplayColortemperature($event.value);
+				this.displayService.setDisplayColorTemperature(value);
 
-				this.eyeCareModeCache.eyeCareDataSource.current = $event.value;
+				this.eyeCareModeCache.eyeCareDataSource.current = value;
 				this.isSet.isSetEyecaremodeValue = true;
-				this.setValues.SetEyecaremodeValue = $event.value;
+				this.setValues.SetEyecaremodeValue = value;
 				this.commonService.setLocalStorageValue(LocalStorageKey.DisplayEyeCareModeCapability, this.eyeCareModeCache);
 			}
 		} catch (error) {
-			this.logger.error('onEyeCareTemparatureChange', error.message);
+			this.logger.error('onEyeCareTemperatureChange', error.message);
 			return EMPTY;
 		}
 	}
-	public onEyeCareTemparatureValueChange($event: ChangeContext) {
+
+	public onResetTemperature($event: any) {
 		try {
-			this.logger.debug('temparature changed in display', $event);
-			if (this.displayService.isShellAvailable) {
-				this.displayService
-					.setDisplayColortemperature($event.value);
-			}
-		} catch (error) {
-			this.logger.error('onEyeCareTemparatureValueChange', error.message);
-			return EMPTY;
-		}
-	}
-	private setEyeCareModeTemparature(value: number) {
-		try {
-			this.logger.debug('temparature changed in display', value);
-			if (this.displayService.isShellAvailable) {
-				this.displayService
-					.setDisplayColortemperature(value);
-			}
-		} catch (error) {
-			this.logger.error('setEyeCareModeTemparature', error.message);
-			return EMPTY;
-		}
-	}
-	public onResetTemparature($event: any) {
-		try {
-			this.logger.debug('SubpageDeviceSettingsDisplayComponent.onResetTemparature: before api call', $event);
+			this.logger.debug('SubpageDeviceSettingsDisplayComponent.onResetTemperature: before api call');
 			if (this.displayService.isShellAvailable) {
 				this.displayService
 					.resetEyeCareMode().then((resetData: any) => {
-						this.logger.debug('SubpageDeviceSettingsDisplayComponent.onResetTemparature: on api reset data', resetData);
+						this.logger.debug('SubpageDeviceSettingsDisplayComponent.onResetTemperature: on api reset data', { resetData, setValues: this.setValues, isSet: this.isSet });
 						this.eyeCareDataSource.current = resetData.colorTemperature;
-						this.logger.debug('isSetEyecaremodeStatus ', this.isSet.isSetEyecaremodeStatus);
-						this.logger.debug('Current setValues', this.setValues);
 						this.setEyeCareModeToggleValue(resetData.eyecaremodeState);
-						this.enableSlider = resetData.eyecaremodeState;
+						// this.enableSlider = resetData.eyecaremodeState;
 						this.sunsetToSunriseModeStatus.status = resetData.autoEyecaremodeState;
 						this.eyeCareModeCache.toggleStatus = this.eyeCareModeStatus.status;
 						this.eyeCareModeCache.enableSlider = this.enableSlider;
@@ -816,7 +795,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 					});
 			}
 		} catch (error) {
-			this.logger.error('onResetTemparature', error.message);
+			this.logger.error('onResetTemperature', error.message);
 			return EMPTY;
 		}
 	}
@@ -838,7 +817,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 							this.setEyeCareModeToggleValue(response.eyecaremodeState);
 							if (this.eyeCareModeStatus.status) {
 								if (this.eyeCareModeCache.eyeCareDataSource && this.eyeCareModeCache.eyeCareDataSource.current < 3400 && !this.isSet.isSetEyecaremodeValue) {
-									this.onEyeCareTemparatureChange({ value: 3400 });
+									this.onEyeCareTemperatureChange(3400);
 								}
 							} else {
 								if (this.displayColorTempCache.current < 3400 && !this.isSet.isSetDaytimeColorTemperatureValue) {
@@ -846,7 +825,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 								}
 							}
 							// this.isEyeCareMode = this.eyeCareModeStatus.status;
-							this.enableSlider = response.eyecaremodeState;
+							// this.enableSlider = response.eyecaremodeState;
 							this.commonService.setSessionStorageValue(SessionStorageKey.DashboardEyeCareMode, this.eyeCareModeStatus);
 							this.eyeCareModeCache.toggleStatus = this.eyeCareModeStatus.status;
 							this.eyeCareModeCache.enableSlider = this.enableSlider;
@@ -918,8 +897,8 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 
 	public onSetChangeDisplayColorTemp($event: any) {
 		try {
-			const value = $event.value;
-			this.logger.debug('temperature changed in display ----->', value);
+			const value = $event;
+			this.logger.debug('onSetChangeDisplayColorTemp', value);
 			if (this.displayService.isShellAvailable) {
 				this.displayService.setDaytimeColorTemperature(value);
 				this.displayColorTempCache.current = value;
@@ -936,7 +915,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		if (this.eyeCareModeStatus.status) {
 			// this.displayColorTempDataSource.current = this.eyeCareDataSource.current;
 			// this.onSetChangeDisplayColorTemp({value: this.eyeCareDataSource.current})
-			this.onEyeCareTemparatureChange({ value: this.eyeCareDataSource.current });
+			this.onEyeCareTemperatureChange(this.eyeCareDataSource.current);
 
 		}
 	}
@@ -944,11 +923,12 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 	public resetDaytimeColorTemp($event: any) {
 		try {
 			if (this.displayService.isShellAvailable) {
-				this.logger.debug('temparature reset in display', $event);
+				this.logger.debug('resetDaytimeColorTemp reset in display');
 				this.displayService
 					.resetDaytimeColorTemperature().then((resetData: any) => {
-						this.logger.debug('temparature reset data', resetData);
+						this.logger.debug('temperature reset data', resetData);
 						this.displayColorTempDataSource.current = resetData || 6500;
+						this.displayColorTempDataSource = Object.assign({}, this.displayColorTempDataSource);
 						this.displayColorTempCache.current = this.displayColorTempDataSource.current;
 						this.commonService.setLocalStorageValue(LocalStorageKey.DisplayColorTempCapability, this.displayColorTempCache);
 					});
@@ -1112,13 +1092,13 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		}
 	}
 
-	public getResetColorTemparatureCallBack(resetData: any) {
+	public getResetColorTemperatureCallBack(resetData: any) {
 		this.logger.debug('called from eyecare monitor', JSON.stringify(resetData));
 		this.eyeCareDataSource.current = resetData.colorTemperature;
 		this.logger.debug('isSetEyecaremodeStatus ', this.isSet.isSetEyecaremodeStatus);
 		this.logger.debug('Current setValues', this.setValues);
 		this.setEyeCareModeToggleValue(resetData.eyecaremodeState);
-		this.enableSlider = resetData.eyecaremodeState;
+		// this.enableSlider = resetData.eyecaremodeState;
 		this.sunsetToSunriseModeStatus.status = resetData.autoEyecaremodeState;
 
 		// Disable all features when missing graphic driver
@@ -1149,7 +1129,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		this.logger.debug('start eyecare monitor');
 		if (this.displayService.isShellAvailable) {
 			this.displayService
-				.startEyeCareMonitor(this.getResetColorTemparatureCallBack.bind(this))
+				.startEyeCareMonitor(this.getResetColorTemperatureCallBack.bind(this))
 				.then((value: any) => {
 					this.logger.debug('startmonitor', value);
 				}).catch(error => {

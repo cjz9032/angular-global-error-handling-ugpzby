@@ -18,18 +18,18 @@ import { GamingAccessoryService } from 'src/app/services/gaming/gaming-accessory
 })
 export class WidgetSystemToolsComponent implements OnInit {
 	@Input() title = '';
-	showHWScanMenu: boolean = false;
+	public showHWScanMenu: boolean = false;
 	public gamingProperties: any = new GamingAllCapabilities();
 	// version 3.3 for accessory entrance
-	// showAccessoryEntrance = true;
-	toolLength = 3;
+	public showLegionAccessory: boolean = false;
+	public toolLength: number = 3;
 	constructor(
 		private modalService: NgbModal,
 		private commonService: CommonService, 
 		private gamingCapabilityService: GamingAllCapabilitiesService,
 		private hardwareScanService: HardwareScanService,
 		// version 3.3 show entrance & launch accessory 
-		private gamingAccessory: GamingAccessoryService,
+		private gamingAccessoryService: GamingAccessoryService,
 		private logger: LoggerService
 
 	) { }
@@ -44,6 +44,9 @@ export class WidgetSystemToolsComponent implements OnInit {
 		this.gamingProperties.macroKeyFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.macroKeyFeature
 		);
+		// version 3.3 legion accessory cache
+		this.showLegionAccessory = this.commonService.getLocalStorageValue(LocalStorageKey.accessoryFeature);
+		this.calcToolLength();
 
 		// if (this.hardwareScanService && this.hardwareScanService.isAvailable) {
 		// 	this.hardwareScanService.isAvailable()
@@ -55,12 +58,14 @@ export class WidgetSystemToolsComponent implements OnInit {
 		// 		});
 		// }
 
-		// version 3.3 accessory entrance
-		this.gamingProperties.accessoryFeature = this.gamingCapabilityService.getCapabilityFromCache(
-			LocalStorageKey.accessoryFeature
-		);
-
-		this.calcToolLength();
+		// version 3.3 legion accessory get reg status
+		this.gamingAccessoryService.isLACSupportUriProtocol().then(res => {
+			if(res !== this.showLegionAccessory && res !== undefined) {
+				this.showLegionAccessory = res;
+				this.commonService.setLocalStorageValue(LocalStorageKey.accessoryFeature, res);
+				this.calcToolLength();
+			} 
+		});
 	}
 
 	calcToolLength() {
@@ -71,33 +76,35 @@ export class WidgetSystemToolsComponent implements OnInit {
 		if (this.showHWScanMenu) {
 			originalLength ++;
 		}
-		if( this.gamingProperties.accessoryFeature) {
+		if( this.showLegionAccessory) {
 			originalLength ++;
 		}
 
 		this.toolLength = originalLength;
 	}
 
-	launchAccesory() {
+	launchAccessory() {
 		try {
-			this.gamingAccessory.launchAccessory().then(res => {
-				this.logger.info(`Widget-SystemTools-LaunchAccesory: return value: ${res}`);
+			this.gamingAccessoryService.launchAccessory().then(res => {
+				this.logger.info(`Widget-SystemTools-LaunchAccessory: return value: ${res}`);
 				if (!res) {
 					this.openWaringModal();
 				}
 			})
 		} catch(error) {
-			this.logger.error('Widget-SystemTools-LaunchAccesory: launch fail; Error message: ', error.message);
+			this.logger.error('Widget-SystemTools-LaunchAccessory: launch fail; Error message: ', error.message);
 			throw new Error(error.message);
 		}
 	}
 
 	openWaringModal() {
 		let waringModalRef = this.modalService.open(ModalGamingPromptComponent, { backdrop:'static',windowClass: 'modal-prompt' });
-		waringModalRef.componentInstance.title="gaming.dashboard.device.warningPromptPopup.legionAccessory";
-		waringModalRef.componentInstance.description = "gaming.dashboard.device.warningPromptPopup.accessoryDesc";
-		waringModalRef.componentInstance.comfirmButton="gaming.dashboard.device.warningPromptPopup.install";
-		waringModalRef.componentInstance.cancelButton="gaming.dashboard.device.legionEdge.driverPopup.link";
+		waringModalRef.componentInstance.info= {
+			title: "gaming.dashboard.device.warningPromptPopup.legionAccessory",
+			description: "gaming.dashboard.device.warningPromptPopup.accessoryDesc",
+			comfirmButton: "gaming.dashboard.device.warningPromptPopup.install",
+			cancelButton: "gaming.dashboard.device.legionEdge.driverPopup.link"
+		}
 		waringModalRef.componentInstance.emitService.subscribe((emmitedValue) => {
 			if(emmitedValue === 1) {
 				window.open('https://pcsupport.lenovo.com/downloads/legionaccessorycentral');

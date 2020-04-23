@@ -8,7 +8,10 @@
 				<img class="feed disable"
 					*ngIf="disabledAll && !isCameraInErrorState"
 					src="assets/images/camera-disable.png"
-					title="{{'device.deviceSettings.displayCamera.camera.notAvailable' | translate}}" />
+					title=""
+					[ngbTooltip]="'device.deviceSettings.displayCamera.camera.notAvailable' | translate"
+					tooltipClass="vtr-system-tooltip"
+					container="body" />
 				<div class="error"
 					*ngIf="isCameraInErrorState">
 					<div class="error-title"
@@ -42,6 +45,7 @@
 						(sliderChange)="onBrightnessSliderChange($event)"
 						[metricsItem]="'cameraSettings-brightness'"
 						[metricsValue]="cameraSettings.brightness.value"
+						[ariaLabel]="'camera brightness slider'"
 						[sliderId]="'cameraSettings-brightness'">
 					</vtr-ui-custom-slider>
 				</li>
@@ -61,6 +65,7 @@
 						[metricsItem]="'cameraSettings-contrast'"
 						[metricsValue]="cameraSettings.contrast.value"
 						(sliderChange)="onContrastSliderChange($event)"
+						[ariaLabel]="'camera contrast slider'"
 						[sliderId]="'cameraSettings-contrast'">
 					</vtr-ui-custom-slider>
 				</li>
@@ -91,6 +96,7 @@
 							[metricsItem]="'cameraSettings-exposure'"
 							[metricsValue]="cameraSettings.exposure.value"
 							(sliderChange)="onExposureSliderChange($event)"
+							[ariaLabel]="'camera exposure slider'"
 							[sliderId]="'cameraSettings-autoExposure'">
 						</vtr-ui-custom-slider>
 					</div>

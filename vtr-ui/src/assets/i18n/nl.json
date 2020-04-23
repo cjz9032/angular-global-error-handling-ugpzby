@@ -197,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "Waarschuwing!",
                     "description": "Foutieve instellingen van Overklokken kunnen leiden tot onherstelbare hardwarebeschadigingen.",
-                    "proceed": "DOORGAAN"
+                    "proceed": "DOORGAAN",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },
@@ -1454,23 +1457,35 @@
                 "subtitle": "Audio-instellingen",
                 "description": "In dit gedeelte kunt u uw audio-instellingen automatisch optimaliseren ofvolledig configureren, zoals Dolby-instellingen, microfoons, enzovoort.",
                 "audioSmartsettings": {
-                    "title": "Slimme audio-instellingen",
-                    "subtitle": "OP TOEPASSINGEN GEBASEERDE INSTELLINGEN",
-                    "description": "Audio- en beeldscherminstellingen automatisch aanpassen voor de verschillende apps die u gebruikt.",
+                    "title": "Audio smart settings",
                     "dolby": {
-                        "title": "Automatische Dolby-audio-instellingen",
-                        "tooltip": "Met automatische Dolby audio-instellingen worden Dolby audio-instellingen geconfigureerd voor de juiste modus voor verschillende apps die u gebruikt om uw audio te verbeteren.",
+                        "title": "Dolby audio",
+                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
-                            "dynamic": "DYNAMISCH",
-                            "movie": "FILM",
-                            "music": "MUZIEK",
-                            "games": "SPEL",
-                            "voip": "SPRAAK"
+                            "dynamic": "DYNAMIC",
+                            "movie": "MOVIE",
+                            "music": "MUSIC",
+                            "games": "GAME",
+                            "voip": "VOICE"
+                        },
+                        "automaticAudioCheckboxText": "Automatic audio optimization for",
+                        "automaticAudioMode": {
+                            "voIPMode": {
+                                "radioText": "VoIP",
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                            },
+                            "entertainmentMode": {
+                                "radioText": "Entertainment",
+                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
+                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
+                            }
                         }
                     },
-                    "voip": {
-                        "title": "Automatische audio-optimalisatie voor VoIP",
-                        "tooltip": "Automatisch overschakelen naar de Dolby-spraakmodus tijdens VoIP-aanroepenom duidelijke, consistente spraakkwaliteit te bieden."
+                    "eCourse": {
+                        "title": "Interactive E-course mode",
+                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
                     }
                 },
                 "microphone": {
@@ -1528,15 +1543,15 @@
                 },
                 "display": {
                     "title": "Weergave",
-                    "displayColorTemperature": {
-                        "title": "Kleurtemperatuur weergeven",
-                        "description": "U kunt de kleurtemperatuur van uw beeldscherm aanpassen om blauw licht uit te filteren en uw ogen minder te belasten. Hiermee kunt u uw beeldscherm tussen zonsondergang en zonsopgang warmere kleuren laten weergeven om u beter te laten slapen.",
-                        "link": {
-                            "click": "Klik",
-                            "here": "hier",
-                            "rest": "om de kleurtemperatuur te wijzigen."
-                        }
-                    },
+					"displayColorTemperature": {
+						"title": "Oogzorg-modus",
+						"description": "Om de vermoeide ogen te voorkomen, kunt u de kleurtemperatuur van het beeldscherm aanpassen om het blauwe lampje uit te filteren als u de computer voor langere tijd gebruikt. Bovendien zijn warme kleuren goed voor uw slaap, vooral 's avonds.",
+						"link": {
+							"click": "Klik",
+							"here": "hier",
+							"rest": "om de kleurtemperatuur te wijzigen."
+						}
+					},
                     "eyeCareMode": {
                         "title": "Oogzorg-modus",
                         "checkbox": "Oogzorg-modus voor zonsondergang tot zonsopgang plannen",
@@ -1685,15 +1700,17 @@
                         "hideAdvSettings": "GEAVANCEERDE INSTELLINGEN VERBERGEN",
                         "description": "De bovenste rij van het toetsenbord heeft de volgende twee functies. Selecteer de functie die u wilt:",
                         "subSection": {
-                            "description": "Druk op Fn+Esc om de bovenstaande twee functies te wisselen.",
+                            "description": "U kunt schakelen tussen de twee functies door op Fn+Esc te drukken. Het bijwerken van het scherm duurt enkele seconden.",
                             "radioButton": {
-                                "sFunKey": "SPECIALE FUNCTIE",
-                                "fnKey": "F1-F12-FUNCTIE"
+                                "sFunKey": "Speciale functie",
+                                "fnKey": "F1-F12-functie"
                             }
                         },
                         "subSectionTwo": {
                             "title": "De primaire standaardfunctie omdraaien",
-                            "description": "Als deze is ingeschakeld, wordt de primaire functie gewijzigd van fabrieksinstellingen naar het tegenovergestelde. U moet het systeem opnieuw opstarten om deze wijziging te activeren."
+                            "description": "Als deze is ingeschakeld, wordt de primaire functie gewijzigd van fabrieksinstellingen naar het tegenovergestelde. U moet het systeem opnieuw opstarten om deze wijziging te activeren.",
+                            "caption": "DE ACTIEVE PRIMAIRE FUNCTIE:",
+                            "tooltipText": "Als u de standaard primaire functies wilt gebruiken, drukt u op de toetsen op de bovenste rij. Voor de niet-primaire functies drukt u op Fn+de toetsen op de bovenste rij. U kunt ook eerst op Fn+Esc drukken en vervolgens op de toetsen op de bovenste rij."
                         },
                         "subSectionThree": {
                             "title": "De Fn-toetsencombinaties gebruiken",
@@ -1888,7 +1905,7 @@
                 "zeroTouchLoginForIdea": {
                     "title": "Aanmelding bij nul aanraken",
                     "caption": "Met deze functie kunt u de werkefficiëntie verbeteren door de computer automatisch uit de slaapstand te halen of om automatisch aan te melden. Om deze functie te gebruiken, moet u uw gezicht registreren in Windows Hello.",
-                    "tooltip": "Als u voor uw computer zit of het apparaat nadert (binnen 1,2 of 1,5 meter), kunt u zich met deze functie automatisch aanmelden bij het systeem nadat uw gezicht is herkend. Als u buiten bent in plaats van op kantoor, moet u zich dichter bij de computer bevinden en duurt het ontwaken langer. <br>De maximale detectieafstand hangt af van de capaciteit van de sensor. Raadpleeg de <i>gebruikershandleiding</i> van uw computer voor meer informatie."
+                    "tooltip": "Als u voor uw computer zit of het apparaat nadert (binnen 1,2 of 1,5 meter), kunt u zich met deze functie automatisch aanmelden bij het systeem nadat uw gezicht is herkend. Als u buiten bent in plaats van op kantoor, moet u zich dichter bij de computer bevinden en duurt het ontwaken langer. <br>De maximale detectieafstand hangt af van de capaciteit van de sensor. Raadpleeg de gebruikershandleiding van uw computer voor meer informatie."
                 },
                 "zeroTouchLock": {
                     "title": "Vergrendeling bij nul aanraken",
@@ -1975,9 +1992,7 @@
                     "description2": "De functie gebruikt sensoren en de camera om uw aanwezigheid te detecteren. Persoonlijke gegevens of afbeeldingen worden echter NIET door deze functie verzameld, opgeslagen of gelekt.",
                     "description3": "1. Om deze functies te gebruiken moet uw scherm in de juiste hoek geplaatst worden zodat uw gezicht kan worden herkend.",
                     "description4": "2. Bovenstaande functies worden niet ondersteund in de volgende gevallen:",
-                    "description5a1": "a. uw computer staat in de werkstand tent, tablet, standaard of is ontkoppeld. Voor de modi die op uw computer worden ondersteund, ga naar de ",
-                    "description5a2": "Gebruikershandleiding ",
-                    "description5a3": "die is meegeleverd.",
+                    "description5a": "a. uw computer staat in de werkstand tent, tablet, standaard of is ontkoppeld. Raadpleeg de gebruikershandleiding die bij uw computer wordt geleverd voor meer informatie over de modi die door uw computer worden ondersteund.",
                     "description5b": "b. uw computer staat in de sluimerstand of is uitgeschakeld.",
                     "description6": "3. Als de vliegtuigstand is ingeschakeld op uw computer, zijn deze functies uitgeschakeld.",
                     "description7": "De nauwkeurigheid is afhankelijk van lichaamsgrootte, postuur en bewegingsfrequentie. Als uw computer onverwacht wordt vergrendeld, pas dan de gevoeligheidsbalk aan om de nauwkeurigheid te verbeteren."
@@ -2060,12 +2075,59 @@
             "superResolution": {
                 "heading": "Intelligente media",
                 "title": "Schaalverhoging beeldschermresolutie",
-                "desc": "<p><label>Deze functie verbetert de beleving van het afspelen van een video door het verbeteren van de beeldschermresolutie. Dit werkt vooral als de video een lage resolutie heeft.</label></p> <p style='margin-top:4px;'><label>Deze functie kan invloed hebben op de levensduur en temperatuur van de batterij en kan ruis veroorzaken. Niet in gebruiken in gelijkstroommodus, anders neemt het stroomverbruik toe en gaat de batterij minder lang mee.</label></p>",
-                "tooltip": "De functie werkt alleen op:<br>Windows Media player",
+                "desc": "<p><label>Deze functie verbetert de beleving van het kijken van video's door de resolutie van de video te verbeteren. Dit werkt het beste als de video een lage resolutie heeft.</label></p> <p style='margin-top:4px;'><label>Deze functie kan invloed hebben op de levensduur en temperatuur van de batterij en kan ruis veroorzaken. Niet gebruiken in gelijkstroommodus (batterijstroom). anders neemt het stroomverbruik toe en gaat de batterij minder lang mee.</label></p>",
+                "tooltip": "Deze functie werkt alleen voor onderstaande videospelers:<br>Windows Media Player<br>Chrome<br>Films en tv<br>PotPlayer<br>GOM Player<br>Web-browser-gebaseerde spelers (bv. Chrome)<br><br>Zie de handleiding bij de computer voor informatie over het inschakelen van deze functie voor PotPlayer en GOM Player.",
                 "note": {
                     "description": "Deze functie werkt niet als:",
-                    "description1": "De computer is niet aangesloten op de netvoeding.",
-                    "description2": "De spaarstand voor batterijverbruik is ingeschakeld."
+                    "description1": "De spaarstand voor batterijverbruik is ingeschakeld.",
+                    "description2": "De CPU-temperatuur te hoog is."
+                }
+            },
+            "antiTheft": {
+                "heading": "Intelligent Sensing",
+                "title": "Slimme bewegingsmelding",
+                "desc": "<p><label>Als u deze functie inschakelt, begint het apparaat te piepen wanneer uw scherm vergrendeld is en er bewegingen worden gedetecteerd, vooral in openbare omgevingen.</label></p> <p style='margin-top:4px;'><label>Om het alarm uit te schakelen geeft u het juiste wachtwoord op of meldt u zich aan bij Windows Hello.</label></p>",
+                "note": {
+                    "description": "Als u eenmaal bij het systeem bent aangemeld, wordt deze functie automatisch uitgeschakeld. Om deze functie weer te gebruiken, moet u de functie opnieuw inschakelen."
+                },
+                "alarm": {
+                    "title": " HET ALARM DUURT",
+                    "option1": "10 seconden",
+                    "option2": "20 seconden",
+                    "option3": "30 seconden",
+                    "option4": "1 minuut",
+                    "option5": "Stopt nooit"
+                },
+                "allowCamera": {
+                    "title": "FOTO'S NEMEN",
+                    "describe": "Als u deze functie inschakelt, neemt de camera automatisch foto's als er bewegingen worden gedetecteerd terwijl uw scherm vergrendeld is. Deze gegevens worden lokaal op uw apparaat verwerkt. Lenovo heeft geen toegang tot uw afbeelding en gebruikt deze ook niet.",
+                    "checkBoxText": "Schakel deze functie in"
+                },
+                "cameraPrivacy": {
+                    "describe": "De privacymodus van Lenovo Vantage Camera is ingeschakeld. De functie van het selectievakje werkt niet.",
+                    "linkText": "Ga naar de privacymodus van de camera om deze uit te schakelen"
+                },
+                "authorizedAccess": {
+                    "describe": "Lenovo Vantage heeft geen toegang tot de camera. De functie van het selectievakje werkt niet.",
+                    "linkText": "Ga naar de Windows-instellingen om toegang te geven"
+                },
+                "photo": {
+                    "title": "HET AANTAL FOTO'S DAT TIJDENS DE BEWEGING WORDT GENOMEN",
+                    "tooltip": "De camera op de computer wordt automatisch geactiveerd om foto's te maken wanneer er bewegingen worden gedetecteerd. Er worden elke twee seconden foto's genomen en ze worden opgeslagen in uw lokale opslag.",
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
+                },
+                "showPhoto": {
+                    "title": "FOTO'S ZIJN LOKAAL OPGESLAGEN:",
+                    "link": "Foto's bekijken"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Lenovo Vantage heeft geen toegang tot het bestandssysteem.",
+                    "link": "Ga naar de Windows-instellingen om toegang te geven"
                 }
             },
             "voice": {
@@ -2099,53 +2161,6 @@
                     "btnText": "ok",
                     "title": "Installatie mislukt",
                     "desc": "Probeer het later nog eens om Lenovo Voice te gebruiken."
-                }
-            },
-            "antiTheft": {
-                "heading": "Intelligent Sensing",
-                "title": "Smart Motion Alert",
-                "desc": "<p><label>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</label></p> <p style='margin-top:4px;'><label>To dismiss the alarm, enter the correct password or log in by Windows Hello.</label></p>",
-                "note": {
-                    "description": "Once you log in the system successfully, this feature will be turned off automatically. You need to enable it again to use it."
-                },
-                "alarm": {
-                    "title": " THE ALARM WILL LAST FOR",
-                    "option1": "10 seconds",
-                    "option2": "20 seconds",
-                    "option3": "30 seconds",
-                    "option4": "1 minute",
-                    "option5": "Never stop"
-                },
-                "allowCamera": {
-                    "title": "TATING PHOTOS",
-                    "describe": "When enabling this feature, the camera takes photos automatically when detecting any movement if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
-                    "checkBoxText": "Enable this feature"
-                },
-                "cameraPrivacy": {
-                    "describe": "Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
-                    "linkText": "Go to Camera privacy mode to turn it off"
-                },
-                "authorizedAccess": {
-                    "describe": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
-                    "linkText": "Go to Windows Settings to give access"
-                },
-                "photo": {
-                    "title": "THE NUMBER OF PHOTOS TAKEN DURING THE MOVEMENT",
-                    "tooltip": "The camera on your computer automatically activates to take pictures when movements are detected. Pictures are taken every 2 seconds and are saved to your local storage.",
-                    "option1": 5,
-                    "option2": 10,
-                    "option3": 15,
-                    "option4": 20,
-                    "option5": 25,
-                    "option6": 30
-                },
-                "showPhoto": {
-                    "title": "PHOTOS HAVE BEEN:",
-                    "link": "View photos"
-                },
-                "fileAuthorizationTips": {
-                    "content": "Lenovo Vantage doesn't have access to the file system.",
-                    "link": "Go to Windows Settings to give access"
                 }
             }
         }
@@ -2713,7 +2728,7 @@
         },
         "question1": {
             "title": "Back-ups maken en bestanden terugzetten",
-            "description": "<div>    <div class='faqInFs4Fb'>        Back-ups maken en bestanden terugzetten    </div>    <hr />    <div class='faqInMb7'>        Het is altijd verstandig om een back-up te hebben. Bewaar kopieën van uw bestanden op een ander station voor het geval er iets met de originelen gebeurt.    </div>    <div class='faqInFs3Fb'>        Uw back-up instellen    </div>    <hr />    <div class='mb-5'>        Selecteer de knop <span class='faqInFb'>Start</span>, selecteer <span class='faqInFb'>Instellingen</span> > <span class='faqInFb'>Bijwerken en beveiliging</span> > <span class='faqInFb'>Back-up</span> > <span class='faqInFb'>Een station toevoegen</span> en kies vervolgens een extern station of netwerklocatie voor uw back-ups.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Klaar. Elk uur maken we een back-up van de hele inhoud van uw gebruikersmap (C:\\\\Users\\\\username). Als u wilt wijzigen van welke bestanden een back-up wordt gemaakt of hoe vaak er een back-up wordt gemaakt, gaat u naar <span class='faqInFb'>Meer opties</span>.    </div>    <div class='faqInFs3Fb'>        Bestanden terugzetten    </div>    <div class='mb-5'>        Als een belangrijk bestand of belangrijke map ontbreekt, gaat u als volgt te werk om dit bestand of deze map te herstellen:    </div>    <div>        <div class='mb-3'>1. Typ <span class='faqInFb'>Bestanden terugzetten</span> in het zoekvak op de taakbalk en selecteer vervolgens <span class='faqInFb'>Bestanden vanuit een back-up terugzetten met Bestandsgeschiedenis</span>.</div>        <div class='mb-3'>2. Zoek het bestand dat u nodig hebt en gebruik vervolgens de pijlen om alle versies ervan te zien</div>        <div class='mb-3'>3. Wanneer u de gewenste versie hebt gevonden, selecteert u <span class='faqInFb'>Terugzetten</span> om het bestand op te slaan op de oorspronkelijke locatie. Als u het bestand op een andere locatie wilt opslaan, houdt u de knop <span class='faqInFb'>Terugzetten</span> ingedrukt (of klikt u erop met de rechtermuisknop), selecteert u <span class='faqInFb'>Terugzetten naar</span> en kiest u vervolgens een nieuwe locatie.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Back-ups maken en bestanden terugzetten    </div>    <hr />    <div class='faqInMb7'>        Het is altijd verstandig om een back-up te hebben. Bewaar kopieën van uw bestanden op een ander station voor het geval er iets met de originelen gebeurt.    </div>    <div class='faqInFs3Fb'>        Uw back-up instellen    </div>    <hr />    <div class='mb-5'>        Selecteer de knop <span class='faqInFb'>Start</span>, selecteer <span class='faqInFb'>Instellingen</span> > <span class='faqInFb'>Bijwerken en beveiliging</span> > <span class='faqInFb'>Back-up</span> > <span class='faqInFb'>Een station toevoegen</span> en kies vervolgens een extern station of netwerklocatie voor uw back-ups.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Klaar. Elk uur maken we een back-up van de hele inhoud van uw gebruikersmap (C:\\Users\\Je gebruikersnaam). Als u wilt wijzigen van welke bestanden een back-up wordt gemaakt of hoe vaak er een back-up wordt gemaakt, gaat u naar <span class='faqInFb'>Meer opties</span>.    </div>    <div class='faqInFs3Fb'>        Bestanden terugzetten    </div>    <div class='mb-5'>        Als een belangrijk bestand of belangrijke map ontbreekt, gaat u als volgt te werk om dit bestand of deze map te herstellen:    </div>    <div>        <div class='mb-3'>1. Typ <span class='faqInFb'>Bestanden terugzetten</span> in het zoekvak op de taakbalk en selecteer vervolgens <span class='faqInFb'>Bestanden vanuit een back-up terugzetten met Bestandsgeschiedenis</span>.</div>        <div class='mb-3'>2. Zoek het bestand dat u nodig hebt en gebruik vervolgens de pijlen om alle versies ervan te zien</div>        <div class='mb-3'>3. Wanneer u de gewenste versie hebt gevonden, selecteert u <span class='faqInFb'>Terugzetten</span> om het bestand op te slaan op de oorspronkelijke locatie. Als u het bestand op een andere locatie wilt opslaan, houdt u de knop <span class='faqInFb'>Terugzetten</span> ingedrukt (of klikt u erop met de rechtermuisknop), selecteert u <span class='faqInFb'>Terugzetten naar</span> en kiest u vervolgens een nieuwe locatie.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -3126,7 +3141,8 @@
         "settingsNotes": "Start deze toepassing opnieuw, zodat alle wijzigingen van kracht worden.",
         "betaSettingTitle": "Bètaprogramma",
         "betaProgram": "Bètaprogramma",
-        "betaSettingDescription": "Probeer de nieuwste functies waaraan we werken."
+        "betaSettingDescription": "Probeer de nieuwste functies waaraan we werken.",
+        "betaSettingNewDescription": "We nodigen je graag uit voor het Beta-programma voor Smart Performance. Hiermee kun je de prestaties van je PC verbeteren door:<br/><ul class='pl-4'><li>Proactief fouten en optimalisatie van instellingen te bepalen.</li><li>Internet prestaties te verhogen door optimalisatie van netwerk en browser.</li><li>Snelle scan en herstel-opties uit te voeren zonder gebruik te maken van het bestaande antivirus programma.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Annuleren",
@@ -3296,7 +3312,8 @@
             "wireless": "Draadloos"
         },
         "warningMessage": "Houd er rekening mee dat de testen worden geannuleerd als het systeem in de slaap- of sluimerstand staat",
-        "refreshMessage": "Het vernieuwen kan even duren omdat alle onderdelen opnieuw moeten worden geladen"
+        "refreshMessage": "Het vernieuwen kan even duren omdat alle onderdelen opnieuw moeten worden geladen",
+        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3889,7 +3906,8 @@
                 "results": "Results:",
                 "status": "Status"
             }
-        }
+        },
+        "runningWell": "PC is running well"
     },
     "homeSecurity": {
         "title": "Connected Home Security",
@@ -4051,8 +4069,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "Pijl naar links",
+            "rightArrow": "Pijl naar rechts"
         }
     },
     "dcc": {

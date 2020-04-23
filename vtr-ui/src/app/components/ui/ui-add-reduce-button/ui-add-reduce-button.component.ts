@@ -14,6 +14,8 @@ export class UiAddReduceButtonComponent implements OnInit {
   @Input() unit:string;
   @Input() btnWidth:string = '33.3%';
   @Input() isValChange:boolean = true;
+  @Input() ariaLabelValue:string = "";
+  @Input() tabIndexNum:number = 0;
   @Output() setVal = new EventEmitter<any>();
   constructor() { }
 
@@ -71,6 +73,12 @@ export class UiAddReduceButtonComponent implements OnInit {
           this.value = this.maxData;
       }
       this.setVal.emit([this.value,2]);
+  }
+
+  public hideColorPicker(){
+      if(document.getElementById("colorPicker")){
+         document.getElementById("colorPicker").style.display = "none"; 
+      }
   }
 }
 

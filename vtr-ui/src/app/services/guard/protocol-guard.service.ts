@@ -35,7 +35,9 @@ export class ProtocolGuardService implements CanActivate {
 	'gaming-lighting0': 'gaming/lightingcustomize/0',
 	'gaming-lighting1': 'gaming/lightingcustomize/1',
 	'gaming-lighting2': 'gaming/lightingcustomize/2',
-	'gaming-lighting3': 'gaming/lightingcustomize/3'
+	'gaming-lighting3': 'gaming/lightingcustomize/3',
+	'hardware-scan': 'hardware-scan',
+	'smart-performance': 'support/smart-performance'
   }
 
   backwardCompatibilitySchemas = [
@@ -77,7 +79,8 @@ export class ProtocolGuardService implements CanActivate {
 
   private decodeBase64String(args: string) {
 	try {
-		const str = (args + '===').slice(0, args.length + (args.length % 4));
+		const supplyCount = args.length % 4 === 0 ? 0 : 4 - args.length % 4;
+		const str = (args + '===').slice(0, args.length + supplyCount);
 		return atob(str.replace(/-/g, '+').replace(/_/g, '/'));
 	} catch(e) {
 		return '';
@@ -104,12 +107,15 @@ export class ProtocolGuardService implements CanActivate {
 	let originalProtocol = this.decodeBase64String(encodedProtocol);
 	if (!originalProtocol) return '/';
 
-	let newPath = this.convertToUrlAssumeProtocolIs3x(originalProtocol);
-	if (!newPath) {
-		newPath = this.convertToUrlAssumeProtocolIs2x(originalProtocol);
+	try {
+		let newPath = this.convertToUrlAssumeProtocolIs3x(originalProtocol);
+		if (!newPath) {
+			newPath = this.convertToUrlAssumeProtocolIs2x(originalProtocol);
+		}
+		return `/${newPath}`;
+	} catch (e) {
+		return '/';
 	}
-
-	return `/${newPath}`;
   }
 
   private convertToUrlAssumeProtocolIs3x(rawData: string) : string {
@@ -119,11 +125,11 @@ export class ProtocolGuardService implements CanActivate {
 	const semantic = url.pathname;
 	const query = url.search;
 
-	if (schema !== this.vantage3xSchema || !semantic) return '';
+	if (schema.toLowerCase() !== this.vantage3xSchema || !semantic) return '';
 
-	let path: string | undefined = this.semanticToPath[semantic];
-	if (!path) {
-		path = semantic;
+	let path: string | undefined = this.semanticToPath[semantic.toLowerCase()];
+	if (path === undefined) {
+		return '';
 	}
 
 	return `${path}${query}`;
@@ -137,11 +143,11 @@ export class ProtocolGuardService implements CanActivate {
 	const query = url.search;
 	const queryParams = url.searchParams;
 
-	if (!this.backwardCompatibilitySchemas.includes(schema) || pathName !== 'PARAM') return '';
+	if (!schema || !this.backwardCompatibilitySchemas.includes(schema.toLowerCase()) || !pathName || pathName.toLowerCase() !== 'param') return '';
 
 	const featureId: string | null = queryParams.get('featureId');
 	if (featureId) {
-		const featureSemantic: string | undefined = this.featureIdToSemantic[featureId];
+		const featureSemantic: string | undefined = this.featureIdToSemantic[featureId.toLowerCase()];
 		if (featureSemantic) {
 			const path: string | undefined = this.semanticToPath[featureSemantic];
 			if (path) return `${path}${query}`;
@@ -150,7 +156,7 @@ export class ProtocolGuardService implements CanActivate {
 
 	const section: string | null = queryParams.get('section');
 	if (section) {
-		const sectionSemantic: string | undefined = this.sectionToSemantic[section];
+		const sectionSemantic: string | undefined = this.sectionToSemantic[section.toLowerCase()];
 		if (sectionSemantic) {
 			const path = this.semanticToPath[sectionSemantic];
 			if (path) return `${path}${query}`;
@@ -162,11 +168,10 @@ export class ProtocolGuardService implements CanActivate {
 
   public canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) : boolean | UrlTree {
 	const path = state.url.slice(state.url.indexOf('#') + 1);
-
 	if (path.startsWith(this.characteristicCode)) {
 		const checkResult = this.isRedirectUrlNeeded(path);
 		return checkResult[0] ? this.router.parseUrl(checkResult[1]) : history.length === 1;
 	}
-	return true;
+	return history.length === 1;
   }
 }

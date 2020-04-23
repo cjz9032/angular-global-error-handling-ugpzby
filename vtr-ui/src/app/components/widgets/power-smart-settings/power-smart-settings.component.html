@@ -29,14 +29,14 @@
 										*ngIf="showIC===3 && !apsStatus">
 										{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.apsHint' | translate }}
 									</div>
-									<div *ngIf="showIC===3 && isShowIntelligentCoolingModes()"
+									<div *ngIf="showIC===3 && showIntelligentCoolingModes"
 										class="optimize"
 										id="power.powerSmartSettings.intelligentCooling.optimize"
 										attr.aria-label="power.powerSmartSettings.intelligentCooling.optimize">
 										{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.optimize' | translate | uppercase }}
 									</div>
 									<div class="row no-gutters ml-2 cooling-mode-list-block"
-										*ngIf="isShowIntelligentCoolingModes()"
+										*ngIf="showIntelligentCoolingModes"
 										role="radiogroup"
 										aria-label="intelligent Cooling mode list, select using arrow keys"
 										tabindex="0">
@@ -81,6 +81,7 @@
 										</vtr-ui-circle-radio-with-checkbox>
 									</div>
 									<div class="well ml-2"
+										role="heading"
 										id="powerSmartSettings-maximum-system-protection-note"
 										attr.aria-label="powerSmartSettings-maximum-system-protection-note"
 										*ngIf="showIC===14  || showIC>=15">
@@ -156,8 +157,8 @@
 				<vtr-container-collapsible
 					[cardTitle]="'device.deviceSettings.power.powerSmartSettings.title' | translate"
 					[isCollapsed]="false"
-					[allowCollapse]="false"
-					[theme]="'blue'">
+					[collapseLinkId]="'device-settings-powerSmartSettings'"
+					[theme]="'white'">
 					<div class="row">
 						<div class="col-auto left-icon">
 							<span [ngClass]="'icomoon icomoon-ic'"></span>
@@ -170,33 +171,38 @@
 							</h3>
 							<p id="powerSmartSettings.description"
 								attr.aria-label="powerSmartSettings.description">
-								{{'device.deviceSettings.power.powerSmartSettings.description5' | translate}}
+								{{'device.deviceSettings.power.powerSmartSettings.description5' | translate}} 
 								<a class="read-more-link"
 									#readMoreLink
 									*ngIf="!onReadMoreClick"
 									href="javascript:void(0)"
-									(click)="readMoreLink.blur();readMore(readMoreDiv)"
-									(keydown.enter)="readMoreLink.blur();readMore(readMoreDiv);"
+									(click)="[readMoreLink.blur(),readMore(readMoreDiv,$event)]"
+									(keydown.enter)="[readMoreLink.blur(),$event.stopPropagation(),readMore(readMoreDiv,$event)]"
 									tabindex="0"
 									role="link"
 									id="powerSmartSettings-intelligentCooling-read-more"
 									attr.aria-label="powerSmartSettings-intelligentCooling-read-more">
 									{{'device.deviceSettings.power.powerSmartSettings.readMore' | translate}}</a>
 							</p>
-							<div style="display:none"
-								id="readMoreDiv"
+							<div style="display:none;outline: none;"
+								tabindex="-1"
+								id="readMoreDiv"	
+								role="heading"
 								#readMoreDiv>
-								<p id="readMoreMode1">
+								<p id="readMoreMode1"
+									role="heading">
 									<span class="cooling-modes"
 										id="{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode1' | translate}}">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode1' | translate}}:</span>
 									{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line1' | translate}}
 								</p>
-								<p id="readMoreMode2">
+								<p id="readMoreMode2"
+									role="heading">
 									<span class="cooling-modes"
 										id="{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode2' | translate}}">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode2' | translate}}:</span>
 									{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line2' | translate}}
 								</p>
-								<p id="readMoreMode3">
+								<p id="readMoreMode3"
+									role="heading">
 									<span class="cooling-modes"
 										id="{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode3' | translate}}">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode3' | translate}}:</span>
 									{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line3' | translate}}
@@ -228,8 +234,8 @@
 				<vtr-container-collapsible
 					[cardTitle]="'device.deviceSettings.power.powerSmartSettings.title' | translate"
 					[isCollapsed]="false"
-					[allowCollapse]="false"
-					[theme]="'blue'">
+					[collapseLinkId]="'device-settings-powerSmartSettings'"
+					[theme]="'white'">
 					<div class="row">
 						<div class="col-auto left-icon">
 							<span [ngClass]="'icomoon icomoon-ic'"></span>
@@ -241,10 +247,12 @@
 								{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.title' | translate}}
 							</h3>
 							<p id="powersmartsettings-dytc6-dec1"
+								role="heading"
 								attr.aria-label="powersmartsettings-dytc6-dec1">
 								{{'device.deviceSettings.power.powerSmartSettings.dytc6.desc1' | translate}}
 							</p>
 							<p id="powersmartsettings-dytc6-dec2"
+								role="heading"
 								attr.aria-label="powersmartsettings-dytc6-dec2">
 								{{'device.deviceSettings.power.powerSmartSettings.dytc6.desc2' | translate}}
 							</p>
@@ -259,30 +267,35 @@
 							</div>
 							<p *ngIf="dytc6IsAutoModeSupported && (dytc6Mode === 'autoMode')"
 								id="powersmartsettings-dytc6-dec3_1"
+								role="heading"
 								attr.aria-label="powersmartsettings-dytc6-dec3_1">
 								{{'device.deviceSettings.power.powerSmartSettings.dytc6.desc3_1' | translate}}
 							</p>
 							<p *ngIf="dytc6IsAutoModeSupported && (dytc6Mode === 'manualMode')"
 								id="powersmartsettings-dytc6-dec3"
+								role="heading"
 								attr.aria-label="powersmartsettings-dytc6-dec3">
 								{{'device.deviceSettings.power.powerSmartSettings.dytc6.desc3' | translate}}
 							</p>
 							<div *ngIf="isCollapsed"
 								id="readMoreDytc6">
 								<p id="readMoreDytc6Mode1"
+									role="heading"
 									attr.aria-label="readMoreDytc6Mode1">
 									<span class="cooling-modes">
 										{{"device.deviceSettings.power.powerSmartSettings.dytc6." + dytc6Mode + ".title1" | translate}}:
 									</span>
 									{{"device.deviceSettings.power.powerSmartSettings.dytc6." + dytc6Mode + ".desc1" | translate}}
 								</p>
-								<p id="readMoreDytc6Mode2">
+								<p id="readMoreDytc6Mode2"
+									role="heading">
 									<span class="cooling-modes">
 										{{"device.deviceSettings.power.powerSmartSettings.dytc6." + dytc6Mode + ".title2" | translate}}:
 									</span>
 									{{"device.deviceSettings.power.powerSmartSettings.dytc6." + dytc6Mode + ".desc2" | translate}}
 								</p>
-								<p id="readMoreDytc6Mode3">
+								<p id="readMoreDytc6Mode3"
+									role="heading">
 									<span class="cooling-modes">
 										{{"device.deviceSettings.power.powerSmartSettings.dytc6." + dytc6Mode + ".title3" | translate}}:
 									</span>

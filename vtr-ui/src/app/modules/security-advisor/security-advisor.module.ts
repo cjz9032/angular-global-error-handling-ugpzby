@@ -61,6 +61,7 @@ import { WidgetLandingSecurityComponent } from '../../components/pages/page-secu
 import { WidgetLandingNavComponent } from '../../components/pages/page-security/widget/widget-landing-nav/widget-landing-nav.component';
 import { WidgetSvgCircleComponent } from 'src/app/components/pages/page-security/widget/widget-svg-circle/widget-svg-circle.component';
 import { ThreatLocatorComponent } from '../../components/pages/page-security-wifi/children/threat-locator/threat-locator.component';
+import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -110,7 +111,8 @@ import { ThreatLocatorComponent } from '../../components/pages/page-security-wif
 		UiListChevronModule,
 		CommonModalModule,
 		LocationNoticeModule,
-		PageLayoutModule
+		PageLayoutModule,
+		NgbTooltipModule
 	],
 	providers: [
 		DialogService

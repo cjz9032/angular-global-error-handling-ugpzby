@@ -73,13 +73,10 @@
 
 .ui-dropdown {
 	width: 100%;
-	height: 8.1rem;
-	padding: 1.4rem;
+	height: 8rem;
 	opacity: 1;
-	background: #ffffff;
-	box-shadow: 0px 0px 1.5rem 0px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 0 1.5rem 0 $screen_dark_15;
 	border-radius: 0.5rem;
-	border: 0.1rem solid rgba(0, 0, 0, 0.1);
 	position: relative;
 
 	.ui-btn-dropdown {
@@ -88,17 +85,23 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		font-size: $fontsize_xs;
-		color: $shade_blue;
-		font-weight: $weight_light;
-		// outline: none !important;
+		background: $light 0% 0% no-repeat padding-box;
+		border: 0.1rem solid $screen_dark_10;
+		border-radius: 0.5rem;
 
+		.label-name {
+			padding-left: 1.4rem;
+			font-size: $fontsize_xs;
+			color: $shade_blue;
+			font-weight: $weight_light;
+		}
 		.chevron {
 			font-size: $fontsize_lg;
 			align-self: center;
-			color: $main;
+			color: $grey_dark;
+			padding-right: 1.4rem;
 		}
-		&:focus{
+		&:focus {
 			@include outline-blue;
 		}
 	}
@@ -107,16 +110,15 @@
 		position: absolute;
 		width: 100%;
 		left: 0;
-		top: 8.1rem;
-		background: #ffffff 0% 0% no-repeat padding-box;
+		top: 8rem;
+		background: $light 0% 0% no-repeat padding-box;
 		opacity: 1;
 		display: flex;
 		flex-direction: column;
 		z-index: 999;
-		box-shadow: 0px 0px 2rem 4px rgba(0, 0, 0, 0.15);
 		border-radius: 0.25rem;
 		padding: 0.5rem;
-		border: 0.1rem solid rgba(0, 0, 0, 0.1);
+		border: 0.1rem solid $dim_gray;
 
 		& a {
 			padding: 0.8rem 0.4rem;
@@ -125,9 +127,45 @@
 			font-weight: $weight_light;
 
 			&:hover {
-				color: rgba(71, 77, 82, 1);
+				color: #474d52;
 				text-decoration: underline;
 			}
 		}
 	}
+}
+
+.knock-out-wrap {
+	box-shadow: none;
+}
+
+.knock-out-btn {
+	background: $grey_lighter 0% 0% no-repeat padding-box;
+	border: 0.1rem solid $grey_light;
+}
+
+.knock-out-label {
+	color: $grey_dark;
+	opacity: .5;
+}
+
+.knock-out-chevron {
+	cursor: default;
+	opacity: .5;
+}
+
+.apply-btn-hover {
+	border: 0.1rem solid $grey_dark !important;
+}
+
+.apply-btn-focus {
+	border: 0.1rem solid $shade_blue !important;
+	@include outline-blue;
+}
+
+.apply-btn-list-open {
+	border: 0.1rem solid $menu_hover !important;
+}
+
+.apply-chevron-up {
+	color: $menu_hover !important;
 }

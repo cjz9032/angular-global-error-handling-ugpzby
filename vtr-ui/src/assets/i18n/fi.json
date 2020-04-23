@@ -197,7 +197,10 @@
                 "warningPromptPopup": {
                     "title": "Varoitus!",
                     "description": "Ylikellotuksen epäasianmukaiset asetukset saattavat aiheuttaa peruuttamatonta laitteistovahinkoa.",
-                    "proceed": "JATKA"
+                    "proceed": "JATKA",
+                    "legionAccessory": "Install Legion Accessory Central?",
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
+                    "install": "INSTALL"
                 }
             }
         },
@@ -1454,23 +1457,35 @@
                 "subtitle": "Ääniasetukset",
                 "description": "Tämän osan avulla voit automaattisesti optimoida taimäärittää ääniasetukset manuaalisesti (esimerkiksi Dolby-asetukset, mikrofoni jne.).",
                 "audioSmartsettings": {
-                    "title": "Älykkäät ääniasetukset",
-                    "subtitle": "SOVELLUSPOHJAISET ASETUKSET",
-                    "description": "Säädä ääniasetuksia automaattisesti erilaisten sovellusten mukaan.",
+                    "title": "Audio smart settings",
                     "dolby": {
-                        "title": "Automaattiset Dolby-ääniasetukset",
-                        "tooltip": "Automaattiset Dolby-ääniasetukset määrittävät Dolby-ääniasetuksillesoveltuvan tilan erilaisten sovellusten mukaan äänikokemuksesi parantamiseksi.",
+                        "title": "Dolby audio",
+                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
                         "options": {
-                            "dynamic": "DYNAAMINEN",
-                            "movie": "ELOKUVA",
-                            "music": "MUSIIKKI",
-                            "games": "PELI",
-                            "voip": "ÄÄNI"
+                            "dynamic": "DYNAMIC",
+                            "movie": "MOVIE",
+                            "music": "MUSIC",
+                            "games": "GAME",
+                            "voip": "VOICE"
+                        },
+                        "automaticAudioCheckboxText": "Automatic audio optimization for",
+                        "automaticAudioMode": {
+                            "voIPMode": {
+                                "radioText": "VoIP",
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                            },
+                            "entertainmentMode": {
+                                "radioText": "Entertainment",
+                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
+                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
+                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
+                            }
                         }
                     },
-                    "voip": {
-                        "title": "Automaattinen ääniasetusten optimointi VoIP:lle",
-                        "tooltip": "Vaihda automaattisesti Dolby Voice -tilaan VoIP-puhelujen aikana, jotta äänen laatu on selkeä ja yhdenmukainen."
+                    "eCourse": {
+                        "title": "Interactive E-course mode",
+                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
                     }
                 },
                 "microphone": {
@@ -1528,15 +1543,15 @@
                 },
                 "display": {
                     "title": "Näyttö",
-                    "displayColorTemperature": {
-                        "title": "Näytön värilämpötila",
-                        "description": "Voit säätää näyttösi värilämpötilaa suodattamaan sinistä valoa pois, jolloin silmien rasitus vähenee. Säätää näytön värit lämpimämmiksi auringonlaskusta auringonnousuun helpottamaan nukkumista.",
-                        "link": {
-                            "click": "Napsauta",
-                            "here": "tätä",
-                            "rest": "muuttaaksesi värilämpötilaa."
-                        }
-                    },
+					"displayColorTemperature": {
+						"title": "Silmien hoitotila",
+						"description": "Voit välttää silmien rasitusta säätämällä näyttösi värilämpötilaa suodattamaan pois sinistä valoa, kun käytät tietokonettasi pitkään. Lisäksi lämpimät värit ovat hyväksi unen saannille, varsinkin öisin.",
+						"link": {
+							"click": "Napsauta",
+							"here": "tätä",
+							"rest": "muuttaaksesi värilämpötilaa."
+						}
+					},
                     "eyeCareMode": {
                         "title": "Silmien hoitotila",
                         "checkbox": "Ajoita silmien hoitotila auringonlaskusta auringonnousuun",
@@ -1685,15 +1700,17 @@
                         "hideAdvSettings": "PIILOTA LISÄASETUKSET",
                         "description": "Näppäimistön ylärivillä on kaksi seuraavaa toimintoa. Valitse haluamasi toiminto:",
                         "subSection": {
-                            "description": "Voit vaihtaa edellä mainittujen toimintojen välillä painamalla näppäinyhdistelmää Fn+Esc.",
+                            "description": "Voit myös vaihtaa näiden kahden toiminnon välillä painamalla Fn+Esc. Päivitys kestää useita sekunteja.",
                             "radioButton": {
-                                "sFunKey": "ERIKOISTOIMINTO",
-                                "fnKey": "NÄPPÄINTEN F1–F12 TOIMINNOT"
+                                "sFunKey": "Erikoistoiminto",
+                                "fnKey": "Näppäinten F1–F12 toiminto"
                             }
                         },
                         "subSectionTwo": {
                             "title": "Ensisijaisen oletustoiminnon muuttaminen",
-                            "description": "Kun käytössä, ensisijainen oletustoiminto muutetaan tehdasasetuksista vastakkaiseksi. Käynnistä tietokone uudelleen, jotta muutokset tulevat voimaan."
+                            "description": "Kun käytössä, ensisijainen oletustoiminto muutetaan tehdasasetuksista vastakkaiseksi. Käynnistä tietokone uudelleen, jotta muutokset tulevat voimaan.",
+                            "caption": "AKTIIVINEN ENSISIJAINEN TOIMINTO:",
+                            "tooltipText": "Paina ylärivin näppäimiä käyttääksesi ensisijaista oletustoimintoa. Paina Fn+ylärivin näppäintä käyttääksesi toissijaisia toimintoja. Voit myös painaa ensin Fn+Esc ja sitten ylärivin näppäintä."
                         },
                         "subSectionThree": {
                             "title": "Fn-näppäinyhdistelmien käyttö",
@@ -1888,7 +1905,7 @@
                 "zeroTouchLoginForIdea": {
                     "title": "Zero Touch -kirjautuminen",
                     "caption": "Tämä ominaisuus sallii sinun työskennellä tehokkaammin automatisoimalla tietokoneesi herättämisen tai sisäänkirjautumisen. Sinun on rekisteröitävä kasvosi Windows Hello -palveluun tämän ominaisuuden käyttämiseksi.",
-                    "tooltip": "Kun olet tietokoneesi äärellä tai lähestyt sitä (1,2 tai 1,5 metriä etäisyydellä), tämän ominaisuuden avulla voit kirjautua järjestelmään automaattisesti, kun kasvosi on tunnistettu. Jos olet ulkona etkä toimistossa, sinun on oltava lähempänä tietokonettasi ja herääminen kestää kauemmin. <br>Tunnistamisen enimmäisetäisyys riippuu tunnistimen toimintakyvystä. Katso lisätietoja tietokoneesi mukana toimitetusta <i>käyttöoppaasta</i>."
+                    "tooltip": "Kun olet tietokoneesi äärellä tai lähestyt sitä (1,2 tai 1,5 metriä etäisyydellä), tämän ominaisuuden avulla voit kirjautua järjestelmään automaattisesti, kun kasvosi on tunnistettu. Jos olet ulkona etkä toimistossa, sinun on oltava lähempänä tietokonettasi ja herääminen kestää kauemmin. <br>Tunnistamisen enimmäisetäisyys riippuu tunnistimen toimintakyvystä. Katso lisätietoja tietokoneesi mukana toimitetusta käyttöoppaasta."
                 },
                 "zeroTouchLock": {
                     "title": "Zero Touch -lukitus",
@@ -1975,9 +1992,7 @@
                     "description2": "Tämä ominaisuus käyttää tunnistimia ja kameraa läsnäolon havaitsemiseksi. Toiminto EI kuitenkaan kerää henkilötietoja.",
                     "description3": "1. Kun haluat käyttää yllä kuvattuja toimintoja, säädä tietokoneesi näytön kulmaa siten, että kasvosi voidaan tunnistaa.",
                     "description4": "2. Yllä kuvattuja toimintoja ei tueta, kun:",
-                    "description5a1": "a. Tietokoneesi on kolmio-, taulu- tai taitosasennossa tai irrotettuna. Katso tietokoneesi tukemat asennot sen mukana toimitetusta ",
-                    "description5a2": "käyttöoppaasta ",
-                    "description5a3": ".",
+                    "description5a": "a. Tietokoneesi on kolmio-, taulu- tai taitosasennossa tai irrotettuna. Saat lisätietoja tietokoneesi tukemista asennoista mukana toimitetusta käyttöoppaasta.",
                     "description5b": "b. Tietokoneesi on horrostilassa tai siitä on katkaistu virta.",
                     "description6": "3. Jos tietokoneen lentotila on käytössä, nämä langattomat ominaisuudet ovat poissa käytöstä.",
                     "description7": "Tarkkuus vaihtelee kehon koon, asennon ja liikkumisen tiheyden mukaan. Jos tietokone lukitaan odottamatta, paranna tarkkuutta säätämällä herkkyyspalkkia."
@@ -2060,12 +2075,59 @@
             "superResolution": {
                 "heading": "Älykäs tietoväline",
                 "title": "Näytön tarkkuuden skaalaus",
-                "desc": "<p><label>Tämä toiminto parantaa videoiden toistokokemusta parantamalla videoiden tarkkuutta. Se toimii erityisesti silloin, kun näytön resoluutio on heikko.</label></p> <p style='margin-top:4px;'><label>Tämä toiminto saattaa heikentää akun käyttöaikaa, akun lämpötilaa ja aiheuttaa ääniä. Älä käytä sitä tasasähkövirtatilassa. Muutoin se nopeuttaa virrankulutusta ja lyhentää akun käyttöikää.</label></p>",
-                "tooltip": "Ominaisuus toimii vain näissä:<br>Windows Media player",
+                "desc": "<p><label>Tämä ominaisuus parantaa videoiden katselukokemusta parantamalla videoiden resoluutiota. Se toimii erityisen hyvin, kun videon resoluutio on alhainen.</label></p> <p style='margin-top:4px;'><label>Tämä toiminto saattaa heikentää akun käyttöaikaa, akun lämpötilaa ja aiheuttaa ääniä. Älä käytä sitä DC-tilassa (akkuvirralla). Muutoin se nopeuttaa virrankulutusta ja lyhentää akun käyttöikää.</label></p>",
+                "tooltip": "Tämä ominaisuus toimii vain seuraavilla videosoittimilla:<br>Windows Media Player<br>Chrome<br>Elokuvat ja TV<br>PotPlayer<br>GOM Player<br>Selainpohjaiset soittimet (esim. Chrome)<br><br>Lisätietoja tämän ominaisuuden ottamisesta käyttöön PotPlayer- ja GOM Player -soittimille löydät tietokoneesi mukana toimitetusta käyttöoppaasta.",
                 "note": {
                     "description": "Wi-Fi-toiminto ei toimi seuraavissa tilanteissa:",
-                    "description1": "Tietokonetta ei ole kytketty verkkovirtaan.",
-                    "description2": "Akun virransäästötila on käytössä."
+                    "description1": "Virransäästötila on käytössä.",
+                    "description2": "Keskusyksikön lämpötila on liian korkea."
+                }
+            },
+            "antiTheft": {
+                "heading": "Älykäs tunnistustoiminto",
+                "title": "Älykäs liikkeentunnistus",
+                "desc": "<p><label>Kun tämä ominaisuus on käytössä, laite aloittaa äänimerkin toistamisen, jos näyttösi ollessa lukittuna havaitaan liikettä, varsinkin julkisissa tiloissa.</label></p> <p style='margin-top:4px;'><label>Lopeta hälytys syöttämällä oikea salasana tai kirjautumalla sisään Windows Hellon avulla.</label></p>",
+                "note": {
+                    "description": "Kun kirjaudut järjestelmään onnistuneesti, tämä ominaisuus poistetaan automaattisesti käytöstä. Sinun täytyy ottaa se uudelleen käyttöön käyttääksesi sitä."
+                },
+                "alarm": {
+                    "title": " HÄLYTYS KESTÄÄ",
+                    "option1": "10 sekuntia",
+                    "option2": "20 sekuntia",
+                    "option3": "30 sekuntia",
+                    "option4": "1 minuutti",
+                    "option5": "Älä lopeta koskaan"
+                },
+                "allowCamera": {
+                    "title": "VALOKUVIEN OTTAMINEN",
+                    "describe": "Kun tämä ominaisuus on käytössä, kamera ottaa automaattisesti valokuvia, jos havaitaan liikettä näytön ollessa lukittuna. Nämä tiedot käsitellään laitteessa paikallisesti. Lenovolla ei ole pääsyä tietoihin eikä se voi käyttää niitä.",
+                    "checkBoxText": "Ota tämä ominaisuus käyttöön"
+                },
+                "cameraPrivacy": {
+                    "describe": "Lenovo Vantage -ohjelman kameran tietosuojatila on käytössä. Valintaruudun toiminto ei toimi.",
+                    "linkText": "Poista se käytöstä siirtymällä kameran tietosuojatilaan"
+                },
+                "authorizedAccess": {
+                    "describe": "Lenovo Vantage ei voi käyttää kameraa. Valintaruudun toiminto ei toimi.",
+                    "linkText": "Siirry Windows-asetuksiin ja anna käyttöoikeus"
+                },
+                "photo": {
+                    "title": "LIIKKEEN AIKANA OTETTUJEN VALOKUVIEN MÄÄRÄ",
+                    "tooltip": "Tietokoneesi kamera aktivoitu automaattisesti ja ottaa valokuvia, kun liikettä havaitaan. Kuvia otetaan 2 sekunnin välein ja ne tallennetaan paikalliseen tallennustilaan.",
+                    "option1": 5,
+                    "option2": 10,
+                    "option3": 15,
+                    "option4": 20,
+                    "option5": 25,
+                    "option6": 30
+                },
+                "showPhoto": {
+                    "title": "VALOKUVAT ON TALLENNETTU PAIKALLISEEN ASEMAAN:",
+                    "link": "Näytä valokuvat"
+                },
+                "fileAuthorizationTips": {
+                    "content": "Lenovo Vantage ei voi käyttää tiedostojärjestelmää.",
+                    "link": "Siirry Windows-asetuksiin ja anna käyttöoikeus"
                 }
             },
             "voice": {
@@ -2099,53 +2161,6 @@
                     "btnText": "ok",
                     "title": "Asennus epäonnistui",
                     "desc": "Yritä Lenovo Voice -toiminnon käyttöä myöhemmin uudelleen."
-                }
-            },
-            "antiTheft": {
-                "heading": "Intelligent Sensing",
-                "title": "Smart Motion Alert",
-                "desc": "<p><label>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</label></p> <p style='margin-top:4px;'><label>To dismiss the alarm, enter the correct password or log in by Windows Hello.</label></p>",
-                "note": {
-                    "description": "Once you log in the system successfully, this feature will be turned off automatically. You need to enable it again to use it."
-                },
-                "alarm": {
-                    "title": " THE ALARM WILL LAST FOR",
-                    "option1": "10 seconds",
-                    "option2": "20 seconds",
-                    "option3": "30 seconds",
-                    "option4": "1 minute",
-                    "option5": "Never stop"
-                },
-                "allowCamera": {
-                    "title": "TATING PHOTOS",
-                    "describe": "When enabling this feature, the camera takes photos automatically when detecting any movement if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
-                    "checkBoxText": "Enable this feature"
-                },
-                "cameraPrivacy": {
-                    "describe": "Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
-                    "linkText": "Go to Camera privacy mode to turn it off"
-                },
-                "authorizedAccess": {
-                    "describe": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
-                    "linkText": "Go to Windows Settings to give access"
-                },
-                "photo": {
-                    "title": "THE NUMBER OF PHOTOS TAKEN DURING THE MOVEMENT",
-                    "tooltip": "The camera on your computer automatically activates to take pictures when movements are detected. Pictures are taken every 2 seconds and are saved to your local storage.",
-                    "option1": 5,
-                    "option2": 10,
-                    "option3": 15,
-                    "option4": 20,
-                    "option5": 25,
-                    "option6": 30
-                },
-                "showPhoto": {
-                    "title": "PHOTOS HAVE BEEN:",
-                    "link": "View photos"
-                },
-                "fileAuthorizationTips": {
-                    "content": "Lenovo Vantage doesn't have access to the file system.",
-                    "link": "Go to Windows Settings to give access"
                 }
             }
         }
@@ -2713,7 +2728,7 @@
         },
         "question1": {
             "title": "Tiedostojen varmuuskopiointi ja palauttaminen",
-            "description": "<div>    <div class='faqInFs4Fb'>        Tiedostojen varmuuskopiointi ja palauttaminen    </div>    <hr />    <div class='faqInMb7'>        Varmuuskopiointi on aina hyvä asia. Säilytä tiedostojen kopioita toisella asemalla siltä varalta, että alkuperäisille tapahtuu jotain.    </div>    <div class='faqInFs3Fb'>        Varmuuskopioinnin määritys    </div>    <hr />    <div class='mb-5'>        Valitse <span class='faqInFb'>Käynnistä</span>-painike ja sitten <span class='faqInFb'>Asetukset</span> > <span class='faqInFb'>Päivittäminen ja suojaus</span> > <span class='faqInFb'>Varmuuskopiointi</span> > <span class='faqInFb'>Lisää asema</span>, ja valitse sitten ulkoinen asema tai verkkosijainti.varmuuskopiointia varten.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg'  />    </div>    <div class='mb-5'>        Valmista. Varmuuskopioimme kaikki käyttäjän kansiossa olevat tiedostot (C:\\\\Users\\\\username) tunnin väliajoin. Jos haluat määrittää, mitkä tiedostot varmuuskopioidaan tai kuinka usein varmuuskopiointi tapahtuu, siirry kohtaan <span class='faqInFb'>Lisää vaihtoehtoja</span>.    </div>    <div class='faqInFs3Fb'>        Tiedostojen palauttaminen    </div>    <div class='mb-5'>        Jos sinulta puuttuu tärkeä tiedosto tai kansio, voit palauttaa sen seuraavasti:    </div>    <div>        <div class='mb-3'>1. Kirjoita <span class='faqInFb'>Tiedostojen palautus</span> tehtäväpalkin hakuruutuun ja valitse sitten <span class='faqInFb'> Palauta tiedostot ja tiedostohistoria</span>.</div>        <div class='mb-3'>2. Etsi tarvitsemasi tiedosto ja tarkastele kaikkia sen versioita nuolien avulla</div>        <div class='mb-3'>3. Kun löydät haluamasi version, valitse <span class='faqInFb'>Palauta</span>, jos haluat tallentaa tiedoston sen alkuperäiseen sijaintipaikkaan. Jos haluat tallentaa sen eri paikkaan, paina pitkään (tai napsauta hiiren kakkospainikkeella) <span class='faqInFb'>Palauta</span>-painiketta, valitse <span class='faqInFb'>Palauta sijaintiin</span> -vaihtoehto ja valitse sitten uusi sijainti.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Tiedostojen varmuuskopiointi ja palauttaminen    </div>    <hr />    <div class='faqInMb7'>        Varmuuskopiointi on aina hyvä asia. Säilytä tiedostojen kopioita toisella asemalla siltä varalta, että alkuperäisille tapahtuu jotain.    </div>    <div class='faqInFs3Fb'>        Varmuuskopioinnin määritys    </div>    <hr />    <div class='mb-5'>        Valitse <span class='faqInFb'>Käynnistä</span>-painike ja sitten <span class='faqInFb'>Asetukset</span> > <span class='faqInFb'>Päivittäminen ja suojaus</span> > <span class='faqInFb'>Varmuuskopiointi</span> > <span class='faqInFb'>Lisää asema</span>, ja valitse sitten ulkoinen asema tai verkkosijainti.varmuuskopiointia varten.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg'  />    </div>    <div class='mb-5'>        Valmista. Varmuuskopioimme kaikki käyttäjän kansiossa olevat tiedostot (C:\\Users\\käyttäjänimesi) tunnin väliajoin. Jos haluat määrittää, mitkä tiedostot varmuuskopioidaan tai kuinka usein varmuuskopiointi tapahtuu, siirry kohtaan <span class='faqInFb'>Lisää vaihtoehtoja</span>.    </div>    <div class='faqInFs3Fb'>        Tiedostojen palauttaminen    </div>    <div class='mb-5'>        Jos sinulta puuttuu tärkeä tiedosto tai kansio, voit palauttaa sen seuraavasti:    </div>    <div>        <div class='mb-3'>1. Kirjoita <span class='faqInFb'>Tiedostojen palautus</span> tehtäväpalkin hakuruutuun ja valitse sitten <span class='faqInFb'> Palauta tiedostot ja tiedostohistoria</span>.</div>        <div class='mb-3'>2. Etsi tarvitsemasi tiedosto ja tarkastele kaikkia sen versioita nuolien avulla</div>        <div class='mb-3'>3. Kun löydät haluamasi version, valitse <span class='faqInFb'>Palauta</span>, jos haluat tallentaa tiedoston sen alkuperäiseen sijaintipaikkaan. Jos haluat tallentaa sen eri paikkaan, paina pitkään (tai napsauta hiiren kakkospainikkeella) <span class='faqInFb'>Palauta</span>-painiketta, valitse <span class='faqInFb'>Palauta sijaintiin</span> -vaihtoehto ja valitse sitten uusi sijainti.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -3126,7 +3141,8 @@
         "settingsNotes": "Ota tämä sovellus uudelleen käyttöön ja varmista, että kaikki muutokset tulevat voimaan.",
         "betaSettingTitle": "Beta-ohjelma",
         "betaProgram": "Beta-ohjelma",
-        "betaSettingDescription": "Kokeile uusimpia ominaisuuksia, joita työstämme."
+        "betaSettingDescription": "Kokeile uusimpia ominaisuuksia, joita työstämme.",
+        "betaSettingNewDescription": "Haluamme kutsua sinut mukaan Smart Performance -ominaisuuden beta-ohjelmaan. Se auttaa parantamaan tietokoneesi suorituskykyä seuraavin tavoin:<br/><ul class='pl-4'><li>Tutkimalla virheitä ja optimoimalla asetuksia ennakoivasti.</li><li>Parantamalla internetin suorituskykyä verkon ja selaimen optimoinnin avulla.</li><li>Suorittamalla pikatarkistuksen ja korjauksen ilman nykyistä virustentorjuntaohjelmaa.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Peruuta",
@@ -3296,7 +3312,8 @@
             "wireless": "Langattomat yhteydet"
         },
         "warningMessage": "Muista, että testit peruutetaan, jos järjestelmä on lepo- tai horrostilassa",
-        "refreshMessage": "Päivitys saattaa kestää jonkin aikaa, koska kaikkien osien lataus on tehtävä uudelleen"
+        "refreshMessage": "Päivitys saattaa kestää jonkin aikaa, koska kaikkien osien lataus on tehtävä uudelleen",
+        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3889,7 +3906,8 @@
                 "results": "Results:",
                 "status": "Status"
             }
-        }
+        },
+        "runningWell": "PC is running well"
     },
     "homeSecurity": {
         "title": "Connected Home Security",
@@ -4051,8 +4069,8 @@
             }
         },
         "narrator": {
-            "leftArrow": "left arrow",
-            "rightArrow": "right arrow"
+            "leftArrow": "Vasen nuoli",
+            "rightArrow": "Oikea nuoli"
         }
     },
     "dcc": {

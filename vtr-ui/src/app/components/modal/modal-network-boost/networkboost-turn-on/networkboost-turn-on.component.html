@@ -3,7 +3,7 @@
     <div class="vtr-modal-turn-on">
       <div class="modal-body">
         <div class="btn-close">
-            <button type="button" class="close" id="nbTurnOnModal_close_button" (click)="notNowAction(false)" tabindex="1"
+            <button type="button" class="close" id="nbTurnOnModal_closeButton" (click)="notNowAction(false)" tabindex="1"
             attr.aria-label="{{'gaming.narrator.networkBoost.common.close' | translate}}" (keyup.enter)="notNowAction(false)" role="button">
               <fa-icon [icon]="['fal', 'times']"></fa-icon>
 		</button>
@@ -16,7 +16,7 @@
           <div for="asked">
             <!-- <input type="checkbox" id="askedBox" (change)="setAksAgain($event)">
             <div class="status-check"></div> -->
-            <button class="ask-again" role="checkbox"  id="nbTurnOnModal_donot_askagain_checkbox " [ngClass]="{'checked':isChecked}" (click)="setAksAgain()" tabindex="1"
+            <button class="ask-again" role="checkbox"  id="networkboost_turnon_dialog_checkbox_Dont_ask_again" [ngClass]="{'checked':isChecked}" (click)="setAksAgain()" tabindex="1"
               attr.aria-label= "{{'gaming.narrator.networkBoost.turnOnModal.dontAskAgain' | translate}}" [attr.aria-checked]="isChecked">
             </button>
             <div class="status-text">{{'gaming.networkBoost.modalTurn.checkedTitle' | translate }}</div>

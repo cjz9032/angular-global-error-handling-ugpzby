@@ -4,13 +4,13 @@
 			<div class="row module-information">
 				<div class="module-icon" *ngIf="item.icon !== undefined">
 					<div class="test-status" [ngSwitch]="item.icon">
-						<img class="img-icon" *ngSwitchCase="'cpu'" [src]="'assets/icons/hardware-scan/icon_hardware_processor.svg' | svgInline | async" />
-						<img class="img-icon" *ngSwitchCase="'memory'" [src]=" 'assets/icons/hardware-scan/icon_hardware_memory.svg' | svgInline | async" />
-						<img class="img-icon" *ngSwitchCase="'motherboard'" [src]=" 'assets/icons/hardware-scan/icon_hardware_motherboard.svg' | svgInline | async" />
-						<img class="img-icon" *ngSwitchCase="'pci_express'" [src]=" 'assets/icons/hardware-scan/icon_hardware_pci-desktop.svg' | svgInline | async" />
-						<img class="img-icon" *ngSwitchCase="'pci_express_laptop'" [src]=" 'assets/icons/hardware-scan/icon_hardware_pci-laptop.svg' | svgInline | async" />
-						<img class="img-icon" *ngSwitchCase="'wireless'" [src]=" 'assets/icons/hardware-scan/icon_hardware_wireless.svg' | svgInline | async" />
-						<img class="img-icon" *ngSwitchCase="'storage'" [src]=" 'assets/icons/hardware-scan/icon_hardware_hdd.svg' | svgInline | async" />
+						<img alt="processor" class="img-icon" *ngSwitchCase="'cpu'" [src]="'assets/icons/hardware-scan/icon_hardware_processor.svg' | svgInline | async" />
+						<img alt="memory" class="img-icon" *ngSwitchCase="'memory'" [src]=" 'assets/icons/hardware-scan/icon_hardware_memory.svg' | svgInline | async" />
+						<img alt="motherboard" class="img-icon" *ngSwitchCase="'motherboard'" [src]=" 'assets/icons/hardware-scan/icon_hardware_motherboard.svg' | svgInline | async" />
+						<img alt="pci_express" class="img-icon" *ngSwitchCase="'pci_express'" [src]=" 'assets/icons/hardware-scan/icon_hardware_pci-desktop.svg' | svgInline | async" />
+						<img alt="pci_express" class="img-icon" *ngSwitchCase="'pci_express_laptop'" [src]=" 'assets/icons/hardware-scan/icon_hardware_pci-laptop.svg' | svgInline | async" />
+						<img alt="wireless" class="img-icon" *ngSwitchCase="'wireless'" [src]=" 'assets/icons/hardware-scan/icon_hardware_wireless.svg' | svgInline | async" />
+						<img alt="storage" class="img-icon" *ngSwitchCase="'storage'" [src]=" 'assets/icons/hardware-scan/icon_hardware_hdd.svg' | svgInline | async" />
 					</div>
 				</div>
 				<div class="title">
@@ -18,9 +18,14 @@
 						{{item.module}}
 						<div class="row col-12 description">
 							<div class="subtitle">{{item.name}}
-								<span *ngIf="item.details" class="details" (click)="item.collapsed = !item.collapsed">
-									<fa-icon [icon]="['fas', 'caret-right']" *ngIf="!item.collapsed"></fa-icon>
-									<fa-icon [icon]="['fas', 'caret-down']" *ngIf="item.collapsed"></fa-icon>{{ detailsText }}
+								<span *ngIf="item.details" (click)="item.collapsed = !item.collapsed">
+									<a href="javascript:void(0);"
+										aria-label="module-details"
+										class="details"
+										triggers="click:blur">
+										<fa-icon [icon]="['fas', 'caret-right']" *ngIf="!item.collapsed"></fa-icon>
+										<fa-icon [icon]="['fas', 'caret-down']" *ngIf="item.collapsed"></fa-icon>{{ detailsText }}
+									</a>
 								</span>
 							</div>
 						</div>
@@ -43,10 +48,18 @@
 				<div class="result-code-value-text pr-2"><span>{{resultCodeText}}:</span></div>
 				<div class="left-code-result">
 					<span class="result-code-complete-text"> {{item.resultCode}}</span>
-					<fa-icon *ngIf="item.information" class="result-code-icon" triggers="click:blur"
-						placement="auto" [ngbTooltip]="tooltipRefModule" [icon]="['far', 'question-circle']"
-						container="vtr-root" tooltipClass="vtr-tooltip" (click)="getInformation(item.information)">
-					</fa-icon>
+					<a *ngIf="item.information"
+						href="javascript:void(0)"
+						(click)="getInformation(item.information)"
+						aria-label="module-result-code-question-mark"
+						class="result-code-icon"
+						triggers="click"
+						[ngbTooltip]="tooltipRefModule"
+						container="vtr-root"
+						tooltipClass="vtr-tooltip"
+						placement="auto">
+						<fa-icon [icon]="['far', 'question-circle']"></fa-icon>
+					</a>
 				</div>
 			</div>
 		</div>

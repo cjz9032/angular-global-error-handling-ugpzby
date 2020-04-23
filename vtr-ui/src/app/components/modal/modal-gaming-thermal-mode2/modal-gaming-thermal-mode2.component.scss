@@ -62,7 +62,7 @@ button:focus{
 				.item-radio-button {
 					width: 3rem;
 					height: 3rem;
-					visibility: hidden;
+					opacity: 0;
 				}
 				.item-radio-button + label {
 					position: absolute;

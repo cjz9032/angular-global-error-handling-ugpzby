@@ -29,6 +29,7 @@ import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
 import { SelfSelectService, SegmentConst } from 'src/app/services/self-select/self-select.service';
 import { Subscription } from 'rxjs/internal/Subscription';
+import { FeedbackService } from 'src/app/services/feedback/feedback.service';
 interface IConfigItem {
 	cardId: string;
 	displayContent: any;
@@ -155,7 +156,8 @@ export class PageDashboardComponent implements OnInit, OnDestroy {
 		private adPolicyService: AdPolicyService,
 		private sanitizer: DomSanitizer,
 		public dccService: DccService,
-		private selfselectService: SelfSelectService
+		private selfselectService: SelfSelectService,
+		private feedbackService: FeedbackService,
 	) {
 	}
 
@@ -368,7 +370,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy {
 		try {
 			const response = await this.upeService.fetchUPEContent({ positions: upePositions });
 			const endCallUPE: any = new Date();
-			this.logger.info(`Performance: Dashboard page get cms content, ${endCallUPE - startCallUPE}ms`);
+			this.logger.info(`Performance: Dashboard page get upe content, ${endCallUPE - startCallUPE}ms`);
 			this.populateUPEContent(response, upeContentCards);
 		} catch (ex) {
 			upeContentCards.forEach(contentCard => {
@@ -378,7 +380,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy {
 					this.dashboardService.onlineCardContent[contentCard.cardId] = contentCard.cmsContent;
 				} // else do nothing
 
-				if (this.dashboardService.onlineCardContent[contentCard.cardId]) {
+				if (this.isOnline && this.dashboardService.onlineCardContent[contentCard.cardId]) {
 					contentCard.displayContent = this.dashboardService.onlineCardContent[contentCard.cardId];
 				}
 			});
@@ -766,5 +768,9 @@ export class PageDashboardComponent implements OnInit, OnDestroy {
 		this.dashboardService.getSelfSelectStatus().then((value) => {
 			this.showQuickSettings = value;
 		});
+	}
+
+	openFeedbackModal() {
+		this.feedbackService.openFeedbackModal();
 	}
 }

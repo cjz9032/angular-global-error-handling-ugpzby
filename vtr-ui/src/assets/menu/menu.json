@@ -115,6 +115,25 @@
 			]
 		},
 		{
+			"id": "app-search",
+			"label": " ",
+			"beta": true,
+			"path": null,
+			"metricsEvent": "itemClick",
+			"metricsParent": "navbar",
+			"metricsItem": "link.app-search",
+			"segment": "-[Commercial]",
+			"routerLinkActiveOptions": {
+				"exact": true
+			},
+			"icon": [
+				"fal",
+				"search"
+			],
+			"forArm": false,
+			"subitems": []
+		},
+		{
 			"id": "user",
 			"label": "User",
 			"path": "user",
@@ -383,7 +402,7 @@
 					"metricsEvent": "itemClick",
 					"externallink": false,
 					"metricsParent": "navbar",
-					"metricsItem": "",
+					"metricsItem": "link.smartPerfomance",
 					"sMode": true,
 					"routerLinkActiveOptions": {
 						"exact": true
@@ -432,6 +451,25 @@
 			"subitems": []
 		},
 		{
+			"id": "app-search",
+			"label": " ",
+			"beta": true,
+			"path": null,
+			"metricsEvent": "itemClick",
+			"metricsParent": "navbar",
+			"metricsItem": "link.app-search",
+			"segment": "-[Commercial]",
+			"routerLinkActiveOptions": {
+				"exact": true
+			},
+			"icon": [
+				"fal",
+				"search"
+			],
+			"forArm": false,
+			"subitems": []
+		},
+		{
 			"id": "user",
 			"label": "User",
 			"path": "user",
@@ -447,24 +485,5 @@
 			"subitems": []
 		}
 	],
-	"appSearch": {
-		"id": "app-search",
-		"label": " ",
-		"beta": true,
-		"path": null,
-		"metricsEvent": "itemClick",
-		"metricsParent": "navbar",
-		"metricsItem": "link.app-search",
-		"segment": "-[Commercial]",
-		"routerLinkActiveOptions": {
-			"exact": true
-		},
-		"icon": [
-			"fal",
-			"search"
-		],
-		"forArm": false,
-		"subitems": []
-	},
 	"betaItem": []
 }

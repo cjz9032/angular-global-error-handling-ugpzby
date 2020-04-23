@@ -172,7 +172,7 @@ describe("Component: PowerSmartSetting", () => {
 		let spy = spyOn(powerService, 'getITSModeForICIdeapad').and.returnValue(Promise.resolve(response))
 		component.initPowerSmartSettingsForIdeaPad()
 		expect(spy).toHaveBeenCalled()
-	}));	
+	}));
 
 	it('should call initPowerSmartSettingsForIdeaPad - available is present', async(() => {
 		let response = {
@@ -338,7 +338,7 @@ describe("Component: PowerSmartSetting", () => {
 		// spyOn(powerService, 'getAMTCapability').and.returnValue(Promise.resolve(true))
 		component.initPowerSmartSettingsForThinkPad()
 		done()
-		expect(component.cache.showIC).toEqual(component.showIC)		
+		expect(component.cache.showIC).toEqual(component.showIC)
 	}));
 
 	it('should call dytc6GetStatus', () => {
@@ -391,18 +391,6 @@ describe("Component: PowerSmartSetting", () => {
 		powerService.isShellAvailable = true
 		component['getEMDriverStatus']()
 		expect(component['getEMDriverStatus']).toBeTruthy()
-	});
-
-	it('should call isShowIntelligentCoolingModes', () => {
-		component.legacyManualModeCapability = false
-		component.isShowIntelligentCoolingModes()
-		expect(component.isShowIntelligentCoolingModes).toBeTruthy()
-	});
-
-	it('should call isShowIntelligentCoolingModes -else', () => {
-		component.legacyManualModeCapability = true
-		component.isShowIntelligentCoolingModes()
-		expect(component.isShowIntelligentCoolingModes).toBeTruthy()
 	});
 
 	it('should call getDYTCRevision - catch block', () => {
