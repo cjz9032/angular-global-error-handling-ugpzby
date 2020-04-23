@@ -10,7 +10,7 @@
 					tabindex="-1"
 					class="dropcheck d-none"
 					[checked]="showDropDown"
-					[ariaLabel]="daysId"
+					[label]="daysId"
 					(click)="onToggleDropDown()">
 				</vtr-ui-checkbox>
 				<label for="{{daysId}}"
@@ -51,9 +51,7 @@
 												[value]="i.status"
 												[checked]="i.status"
 												(toggle)="selectDay($event, i.shortName)"
-												[label]="'device.deviceSettings.power.smartStandby.days.name.' + i.shortName | translate"
-												[ariaLabel]="'device.deviceSettings.power.smartStandby.days.name.' +
-												i.shortName | translate">
+												[label]="'device.deviceSettings.power.smartStandby.days.name.' + i.shortName | translate">
 											</vtr-ui-checkbox>
 											<!-- <label class="custom-control-label"
 												for="{{i.shortName}}">

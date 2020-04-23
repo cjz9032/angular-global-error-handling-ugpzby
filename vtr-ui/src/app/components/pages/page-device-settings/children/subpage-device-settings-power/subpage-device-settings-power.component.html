@@ -152,7 +152,6 @@
 												[value]="airplaneAutoDetection"
 												[checked]="airplaneAutoDetection"
 												[label]="'device.deviceSettings.power.batterySettings.airPlanePower.checkBoxDesc' | translate"
-												[ariaLabel]="'device.deviceSettings.power.batterySettings.airPlanePower.checkBoxDesc' | translate"
 												(toggle)='onAirplaneAutoModeStatusChange($event)'>
 											</vtr-ui-checkbox>
 											<label *ngIf="airplaneAutoDetection"
@@ -215,7 +214,6 @@
 												[value]="usbChargingCheckboxFlag"
 												[checked]="usbChargingCheckboxFlag"
 												[label]="'device.deviceSettings.power.powerSettings.alwaysUSB.checkbox' | translate"
-												[ariaLabel]="'device.deviceSettings.power.powerSettings.alwaysUSB.checkbox' | translate"
 												(toggle)='onUsbChargingStatusChange($event)'>
 											</vtr-ui-checkbox>
 										</div>
