@@ -16,18 +16,33 @@
 					<div class="col col-5 status">
 						<div class="test-status">
 							<div [ngSwitch]="item.statusValue">
-								<fa-icon aria-label="loading" [icon]="['fas', 'circle-notch']" [spin]="true" class="loading"
-									*ngSwitchCase="0">
-								</fa-icon>
+								<!--Aria-hidden defined as true to ignore faicon selection and defined a span with description to the icon-->
+								<div *ngSwitchCase="0">
+									<fa-icon aria-hidden="true" aria-labelledby="loading-icon" class="loading" [icon]="['fas', 'circle-notch']" [spin]="true"></fa-icon>
+									<span id="loading-icon" class="sr-only">loading</span>
+								</div>
+
 								<span class="progress-value-text" *ngSwitchCase="1">{{item.percent}}%</span>
-								<fa-icon aria-label="success" [icon]="['fas', 'check-circle']" class="success" *ngSwitchCase="2">
-								</fa-icon>
-								<fa-icon aria-label="failure" [icon]="['fas', 'times-circle']" class="failure" *ngSwitchCase="3">
-								</fa-icon>
-								<fa-icon aria-label="warning" [icon]="['fas', 'exclamation-triangle']" class="warning" *ngSwitchCase="4">
-								</fa-icon>
-								<fa-icon aria-label="canceled" [icon]="['fas', 'exclamation-circle']" class="failure" *ngSwitchDefault>
-								</fa-icon>
+
+								<div *ngSwitchCase="2">
+									<fa-icon aria-hidden="true" aria-labelledby="success-icon" class="success" [icon]="['fas', 'check-circle']"></fa-icon>
+									<span id="success-icon" class="sr-only">success</span>
+								</div>
+
+								<div *ngSwitchCase="3">
+									<fa-icon aria-hidden="true" aria-labelledby="failure-icon" class="failure" [icon]="['fas', 'times-circle']"></fa-icon>
+									<span id="failure-icon" class="sr-only">failure</span>
+								</div>
+
+								<div *ngSwitchCase="4">
+									<fa-icon aria-hidden="true" aria-labelledby="warning-icon" class="warning" [icon]="['fas', 'exclamation-triangle']"></fa-icon>
+									<span id="warning-icon" class="sr-only">warning</span>
+								</div>
+
+								<div *ngSwitchDefault>
+									<fa-icon aria-hidden="true" aria-labelledby="canceled-icon" class="failure" [icon]="['fas', 'exclamation-circle']"></fa-icon>
+									<span id="canceled-icon" class="sr-only">canceled</span>
+								</div>
 							</div>
 						</div>
 						<div class="text-status">
