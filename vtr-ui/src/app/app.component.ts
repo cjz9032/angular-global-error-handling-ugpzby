@@ -34,6 +34,7 @@ import { StoreRatingService } from './services/store-rating/store-rating.service
 import { UpdateProgress } from './enums/update-progress.enum';
 import { HardwareScanProgress } from './enums/hw-scan-progress.enum';
 import { SecurityAdvisorNotifications } from './enums/security-advisor-notifications.enum';
+import { SessionStorageKey } from './enums/session-storage-key-enum';
 
 
 declare var Windows;
@@ -533,7 +534,10 @@ export class AppComponent implements OnInit, OnDestroy {
 	// 		// You should add a fallback so that your program still executes correctly.
 	// 	}
 	// }
-	onActivate() {
+	onActivate(component) {
+		if (component.constructor.name !== 'HomeComponent' && !this.commonService.getSessionStorageValue(SessionStorageKey.FirstPageLoaded, false)) {
+			this.commonService.setSessionStorageValue(SessionStorageKey.FirstPageLoaded, true);
+		}
 		this.commonService.scrollTop();
 	}
 }

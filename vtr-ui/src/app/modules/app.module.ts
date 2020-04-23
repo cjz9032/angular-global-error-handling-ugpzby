@@ -159,7 +159,7 @@ import {faHeart as fasHeart} from '@fortawesome/free-solid-svg-icons/faHeart';
 		},
 		{
 			provide: APP_INITIALIZER,
-			useFactory: (initializerService: InitializerService) => initializerService.initializeAntivirus.bind(initializerService),
+			useFactory: (initializerService: InitializerService) => initializerService.initialize.bind(initializerService),
 			deps: [InitializerService],
 			multi: true
 		}
