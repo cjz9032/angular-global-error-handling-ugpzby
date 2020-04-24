@@ -725,7 +725,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	}
 
 	initMicrophoneFromCache() {
-		const microphoneCache = this.commonService.getLocalStorageValue(LocalStorageKey.MicrohoneCapability);
+		const microphoneCache = this.commonService.getLocalStorageValue(LocalStorageKey.MicrophoneCapability);
 
 		if (microphoneCache) {
 			// because autoOptimization is Lenovo feature, so can use cache safely
@@ -829,8 +829,8 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			data: this.microphoneProperties,
 			modes: this.microOptimizeModeResponse.modes
 		};
-		this.logger.info('ready to update microhone cache');
-		this.commonService.setLocalStorageValue(LocalStorageKey.MicrohoneCapability, info);
+		this.logger.info('ready to update microphone cache');
+		this.commonService.setLocalStorageValue(LocalStorageKey.MicrophoneCapability, info);
 		this.updateMicrophoneHeader();
 	}
 
