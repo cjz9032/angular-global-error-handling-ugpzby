@@ -1132,8 +1132,9 @@
                         },
                         "selectedModeText": {
                             "quiteCool": "Ta način omogoča najboljšo izkušnjo z uravnoteženo hitrostjo ventilatorja in delovanjem sistema. Med uporabo iger na primer optimizira delovanje. Ko ste v pisarni zmanjša hrup.",
-                            "batterySaving": "Ta način omogoča najdaljšo življenjsko dobo baterije tako, da samodejno prilagodi svetlost, spremeni nastavitve napajanja, onemogoči funkcije napredne obdelave slik itd.",
-                            "performance": "Ta način omogoča največjo zmogljivost sistema. V tem načinu lahko hitra hitrost ventilatorja povzroči veliko hrupa."
+                            "batterySaving14": "Ta način omogoča najdaljšo življenjsko dobo baterije tako, da samodejno prilagodi svetlost, spremeni nastavitve napajanja, onemogoči funkcije napredne obdelave slik itd.",
+                            "performance": "Ta način omogoča največjo zmogljivost sistema. V tem načinu lahko hitra hitrost ventilatorja povzroči veliko hrupa.",
+                            "batterySaving15": "Ta način omogoča maksimalno dolgo delovanje baterije po zaslugi samodejnega prilagajanja svetlosti, polnjenja baterije v skladu z nastavitvami napajanja, onemogočanja zvoka Dolby itd. Vse te funkcije lahko čas delovanja baterije podaljšajo do 20 %."
                         },
                         "intelligentCoolingModesModal": {
                             "title": "Spremenite inteligentne načine hlajenja",
@@ -1142,7 +1143,17 @@
                                 "list1": "Kliknite ikono baterije v sistemu Windows v orodni vrstici.",
                                 "list2": "Pojavil se bo način porabe energije za Windows; z drsnikom izberite med optimalnim časom in optimalno zmogljivostjo."
                             }
-                        }
+                        },
+                        "autoTransition": {
+							"description": "Omogočite možnost »Skrajna zmogljivost« v tem načinu. Ko je omogočena, se temperatura na površini računalnika in hrup ventilatorja lahko samodejno povečata.",
+							"more": "VEČ",
+							"less": "MANJ",
+							"moreContent": {
+								"desc1": "a. Med uporabo pisarniških programov, posodabljanjem sistema Windows, ogledom filmov v spletu ali pri manjših obremenitvah lahko sistem deluje tiho, medtem ko ima večjo zmogljivost pri običajnem igranju iger.",
+								"desc2": "b. Pri igranju zahtevnejših iger se samodejno omogoči način »Skrajna zmogljivost«. Hrup in temperatura na površini računalnika se bosta v tem načinu morda povečala.",
+								"desc3": "c. Ko zmogljivost baterije pade pod 30 %, sistem samodejno preklopi v način »Varčevanje z energijo baterije«."
+							}			
+						}
                     },
                     "nonintelligentCooling": {
                         "options": {

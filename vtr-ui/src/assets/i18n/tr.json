@@ -1132,8 +1132,9 @@
                         },
                         "selectedModeText": {
                             "quiteCool": "Bu kip, fan hızını ve sistem performansını dengeleyerek en iyi deneyimi sağlar. Örneğin oyun oynarken performansı iyileştirir. Ofiste çalışırken gürültüyü azaltır.",
-                            "batterySaving": "Bu kip, parlaklığı otomatik olarak ayarlama, güç ayarlarını değiştirme, gelişmiş görüntü işleme özelliklerini devre dışı bırakma gibi seçeneklerle maksimum pil ömrü sağlar.",
-                            "performance": "Bu kip, maksimum sistem performansı sağlar. Bu kipte, fanın hızlı çalışması gürültüye neden olabilir."
+                            "batterySaving14": "Bu kip, parlaklığı otomatik olarak ayarlama, güç ayarlarını değiştirme, gelişmiş görüntü işleme özelliklerini devre dışı bırakma gibi seçeneklerle maksimum pil ömrü sağlar.",
+                            "performance": "Bu kip, maksimum sistem performansı sağlar. Bu kipte, fanın hızlı çalışması gürültüye neden olabilir.",
+                            "batterySaving15": "Bu kip otomatik olarak parlaklığı ayarlayarak, güç ayarlarını şarj ederek, Dolby ses özelliğini devre dışı bırakarak ve benzeri değişiklikleri yaparak maksimum pil ömrü sağlar. Bu ayarların tamamı kullanılarak pil ömrü %20'ye kadar uzayabilir."
                         },
                         "intelligentCoolingModesModal": {
                             "title": "Akıllı soğutma kiplerinin değiştirilmesi",
@@ -1142,7 +1143,17 @@
                                 "list1": "Araç çubuğundaki Windows pil simgesine tıklayın.",
                                 "list2": "Windows Güç Kipi göründüğünde en iyi süre veya en iyi performans arasında seçim yapmak için kaydırıcıyı kullanın."
                             }
-                        }
+                        },
+                        "autoTransition": {
+							"description": "Bu kipte “Yüksek Performans” özelliğini etkinleştirin. Etkinleştirildiğinde, bilgisayar yüzeyinin sıcaklığı ve fan gürültüsü otomatik olarak artabilir.",
+							"more": "DAHA FAZLA",
+							"less": "DAHA AZ",
+							"moreContent": {
+								"desc1": "a. Ofis, Windows güncellemesi, çevrimiçi film veya sistem ışığı yükleme senaryolarında sistem sessiz olabilir. Normal oyun senaryolarında daha iyi bir performans sergiler.",
+								"desc2": "b. Ağır oyunlar oynarken “Yüksek performans” kipi otomatik olarak etkinleştirilir. Bu daha fazla gürültüye veya bilgisayarınızın yüzeyinde daha yüksek sıcaklığa neden olabilir.",
+								"desc3": "c. Pil kapasitesi %30'dan düşük olduğunda, sistem otomatik olarak “Pil tasarrufu” kipine geçer."
+							}			
+						}
                     },
                     "nonintelligentCooling": {
                         "options": {
