@@ -14,7 +14,7 @@ import {
 export class UiCheckboxComponent implements OnInit {
 
 	@Input() componentId: string;
-	@Input() arialabel:string;
+	@Input() arialabel: string;
 	@Input() label: string;
 	@Input() checked = false;
 	@Input() disabled = false;
@@ -31,11 +31,8 @@ export class UiCheckboxComponent implements OnInit {
 	ngOnInit() { }
 
 	onChange(event) {
-		if (event.target.checked) {
-			this.toggle.emit(true);
-		} else {
-			this.toggle.emit(false);
-		}
+		const value = event.target.checked;
+		this.checked = value;
+		this.toggle.emit(value);
 	}
-
 }
