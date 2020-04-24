@@ -55,6 +55,9 @@ ul.list-group {
 	.collapse-text {
 		cursor: pointer;
 		text-decoration: underline;
+		&:focus {
+			@include outline-blue;
+		}
 	}
 
 	.smart-standby-timer {

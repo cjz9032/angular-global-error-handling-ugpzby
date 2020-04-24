@@ -23,19 +23,17 @@
 		<div class="row">
 			<div class="col">
 				<div class="button-row">
-					<vtr-ui-button-hwscan
+					<vtr-ui-button
 						metricsEvent="FeatureClick"
 						metricsParent="HardwareScan"
 						metricsItem="HardwareScan.RecoverBadSectors"
 						[isFullWidth]="true"
-						[tooltip]="false"
-						[icon] ="['fal', 'arrow-right']"
 						[label]="textButton"
 						[isDisabled]="disable"
 						[routerPath] = "recoverPath"
 						[active]="'true'"
 						[tooltipText]="tooltipText">
-					</vtr-ui-button-hwscan>
+					</vtr-ui-button>
 				</div>
 			</div>
 		</div>

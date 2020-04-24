@@ -60,11 +60,7 @@
 			[ngClass]="{ 'knock-out-label': disabled }"
 		>
 			{{ name }}
-			{{
-				textCase === "oled"
-					? (placeholder | lowercase)
-					: (placeholder | titlecase)
-			}}
+			{{ placeholder }}
 		</div>
 		<span
 			><fa-icon
@@ -92,6 +88,7 @@
 		<a
 			*ngFor="let item of list; let i = index"
 			role="option"
+			[ngClass]="{'selected-list-item': selectedDuration === i}"
 			id="{{ item.text }}"
 			(click)="closeDropdown({ value: i, hideList: false })"
 			vtrMetrics
@@ -100,11 +97,7 @@
 			[metricsValue]="item"
 			tabindex="-1"
 			[attr.aria-selected]="selectedDuration === i ? true : false"
-			>{{
-				textCase === "oled"
-					? customCamelCase(item.text)
-					: (item.text | titlecase)
-			}}</a
+			>{{ item.text }}</a
 		>
 	</div>
 </div>

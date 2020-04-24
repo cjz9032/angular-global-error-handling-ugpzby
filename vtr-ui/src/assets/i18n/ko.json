@@ -1097,7 +1097,7 @@
                     "description3": "지능형 냉각 기능이 필요에 따라 자동으로 열효율을 조절합니다.노트북의 경우, 액세서리에서 분리하면 지능형 냉각 기능이 성능 설정을 조정하여 사용 편의를 위해 표면을 더 식혀줍니다. 장치가 데스크탑에 연결되어 있는 경우에는 이 기능이 성능을 최적화합니다.",
                     "description13": "기능이 켜지면, 사용자의 요구에 맞게 열 설정을 동적으로 조정합니다. 들고 있는 동안이나 유휴 상태인 경우에 장치를 시원하고 조용하게 유지하도록 설정을 조정합니다. 장치가 안정된 표면에 있는 동안, 성능이 최적화됩니다. 기능이 꺼지면, 열 우선순위를 수동으로 설정할 수 있습니다.",
                     "description14": "이 기능을 사용하여 팬 속도를 조절하거나, 시스템 성능을 최대화하거나, 필요한 경우 배터리 수명을 연장할 수 있습니다. 아래 세 가지 모드를 사용할 수 있습니다. 핫키(Fn + Q)를 사용하거나 Lenovo Vantage 도구 모음에서 모드를 전환할 수도 있습니다.",
-                    "readMore": "자세히 읽으십시오.",
+                    "readMore": "자세히 읽으십시오",
                     "gotoWindows": {
                         "title": "Windows 설정으로 이동",
                         "modalBodyText1": "시스템 트레이에서 Windows 배터리 아이콘을 클릭하여 Windows 성능 전원 슬라이더에 액세스"
@@ -1162,7 +1162,7 @@
                             "battery&Quite": "배터리 및 저소음"
                         }
                     },
-                    "description5": "지능형 냉각 기능은 팬 속도 및 최대 성능을 조정하고 배터리 수명을 관리합니다. 이 기능에는 3 가지 모드(자동 모드, 균형 모드 및 성능 모드)가 있으며, 이제 Windows 성능 전원 슬라이더를 사용하여 액세스할 수 있음",
+                    "description5": "지능형 냉각 기능은 팬 속도 및 최대 성능을 조정하고 배터리 수명을 관리합니다. 이 기능에는 3 가지 모드(자동 모드, 균형 모드 및 성능 모드)가 있으며, 이제 Windows 성능 전원 슬라이더를 사용하여 액세스할 수 있음.",
                     "nocqldesc": "지능형 냉각 기능을 사용해 시스템 성능과 열 온도를 조정할 수 있습니다. \"성능\" 모드에서는 시스템 성능을 최적화합니다. 반면에 \"냉각 및 저소음\" 모드에서 시스템을 냉각하고 소음을 줄이는 데 도움이 됩니다.",
                     "dytc6": {
                         "desc1": "지능형 냉각 기능은 팬 속도 및 최대 성능을 조정하고 배터리 수명을 관리합니다.",
@@ -1471,15 +1471,15 @@
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "radioText": "VoIP",
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
+                                "checkboxText": "Automatically optimize audio for VOIP"
                             },
                             "entertainmentMode": {
-                                "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
                                 "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
                                 "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
+                                "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
                     },
@@ -1543,15 +1543,15 @@
                 },
                 "display": {
                     "title": "디스플레이",
-					"displayColorTemperature": {
-						"title": "아이 케어 모드",
-						"description": "눈의 피로를 방지하기 위해 컴퓨터를 장시간 사용할 때 디스플레이의 색 온도를 조정하여 블루라이트를 걸러낼 수 있습니다. 또한 따뜻한 색은 특히 밤에 잠을 자는 데 도움이 됩니다.",
-						"link": {
-							"click": "색 온도를 바꾸려면",
-							"here": "여기",
-							"rest": "를 클릭하십시오."
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "아이 케어 모드",
+                        "description": "눈의 피로를 방지하기 위해 컴퓨터를 장시간 사용할 때 디스플레이의 색 온도를 조정하여 블루라이트를 걸러낼 수 있습니다. 또한 따뜻한 색은 특히 밤에 잠을 자는 데 도움이 됩니다.",
+                        "link": {
+                            "click": "색 온도를 바꾸려면",
+                            "here": "여기",
+                            "rest": "를 클릭하십시오."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "아이 케어 모드",
                         "checkbox": "아이 케어 모드를 일몰에서 일출로 예약",

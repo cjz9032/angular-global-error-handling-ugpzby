@@ -1097,7 +1097,7 @@
                     "description3": "La fonction de Refroidissement intelligent règle automatiquement les performances thermiques selon vos besoins.La fonction de refroidissement intelligent règle les paramètres de performance pour réduire la chaleur de surface pour votre confort lorsque vous portez l'ordinateur. Lorsque le périphérique est posé sur un bureau, cette fonction optimise les performances.",
                     "description13": "Lorsque cette fonction est activée, elle ajuste de façon dynamique les paramètres thermiques en fonction de vos besoins. Elle ajuste les paramètres pour que le périphérique se refroidisse et reste silencieux lorsqu'il est porté ou en veille. Lorsque le périphérique est sur une surface stable, elle optimise les performances. Lorsque cette fonction est désactivée, vous pouvez définir manuellement la priorité du mode thermique.",
                     "description14": "Cette fonction vous permet d'ajuster la vitesse du ventilateur, d'optimiser les performances du système ou de prolonger la durée de vie de la batterie, si nécessaire. Trois modes sont disponible ci-dessous. Vous pouvez également changer les modes à l'aide des touches de raccourci (FN + Q) ou de la Lenovo Vantage Toolbar.",
-                    "readMore": "En savoir plus.",
+                    "readMore": "En savoir plus",
                     "gotoWindows": {
                         "title": "Accédez aux paramètres Windows",
                         "modalBodyText1": "Cliquez sur l'icône de la batterie Windows dans la barre d'état système pour accéder au curseur de l'alimentation de performances Windows"
@@ -1140,7 +1140,7 @@
                             "title": "Modification des modes de refroidissement intelligents",
                             "close": "fermer",
                             "coolingModesList": {
-                                "list1": "Cliquez sur l'icône de la batterie Windows dans la barre d'outils",
+                                "list1": "Cliquez sur l'icône de la batterie Windows dans la barre d'outils.",
                                 "list2": "La mode d'alimentation de Windows s'affiche, faites glisser le curseur pour choisir une durée optimale ou des performances optimales."
                             }
                         },
@@ -1162,7 +1162,7 @@
                             "battery&Quite": "BATTERIE ET SILENCE"
                         }
                     },
-                    "description5": "Le refroidissement intelligent règle la vitesse du ventilateur, les performances maximales et gère la durée de vie de votre batterie. Cette fonction dispose de 3 modes (mode silencieux, mode équilibré et mode de performances) et est maintenant accessible par le curseur d'alimentation performances Windows",
+                    "description5": "Le refroidissement intelligent règle la vitesse du ventilateur, les performances maximales et gère la durée de vie de votre batterie. Cette fonction dispose de 3 modes (mode silencieux, mode équilibré et mode de performances) et est maintenant accessible par le curseur d'alimentation performances Windows.",
                     "nocqldesc": "Le refroidissement intelligent vous permet d'ajuster les performances du système et la température. En mode \"Performance\", il permet d'optimiser les performances du système. En mode \"Frais et silencieux\", il permet de garder le système plus frais ou plus silencieux.",
                     "dytc6": {
                         "desc1": "Le refroidissement intelligent règle la vitesse du ventilateur, les performances maximales et gère la durée de vie de votre batterie.",
@@ -1471,15 +1471,15 @@
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "radioText": "VoIP",
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
+                                "checkboxText": "Automatically optimize audio for VOIP"
                             },
                             "entertainmentMode": {
-                                "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
                                 "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
                                 "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
+                                "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
                     },
@@ -1543,15 +1543,15 @@
                 },
                 "display": {
                     "title": "Affichage",
-					"displayColorTemperature": {
-						"title": "Mode Protection des yeux",
-						"description": "Pour éviter toute fatigue oculaire, vous pouvez régler la température de couleur de votre écran afin de filtrer la lumière bleue lorsque vous utilisez votre ordinateur pendant une longue période. En outre, les couleurs chaudes favorisent un sommeil de qualité, en particulier pendant la nuit.",
-						"link": {
-							"click": "Cliquez",
-							"here": "ici",
-							"rest": "pour changer la température des couleurs."
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "Mode Protection des yeux",
+                        "description": "Pour éviter toute fatigue oculaire, vous pouvez régler la température de couleur de votre écran afin de filtrer la lumière bleue lorsque vous utilisez votre ordinateur pendant une longue période. En outre, les couleurs chaudes favorisent un sommeil de qualité, en particulier pendant la nuit.",
+                        "link": {
+                            "click": "Cliquez",
+                            "here": "ici",
+                            "rest": "pour changer la température des couleurs."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "Mode Protection visuelle",
                         "checkbox": "Programmer le mode Protection visuelle entre le coucher et le lever du soleil",

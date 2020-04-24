@@ -1097,7 +1097,7 @@
                     "description3": "Inteligentné chladenie automaticky prispôsobuje tepelný výkon vašim potrebám.Keď prenosný počítač držíte, funkcia inteligentného chladenia upraví nastavenia výkonu tak, aby bol povrch tabletu chladnejší, čím sa zvýši pohodlie. Keď je zariadenie na povrchu stola, táto funkcia optimalizuje výkon.",
                     "description13": "Keď je táto funkcia zapnutá, dynamicky prispôsobuje tepelné nastavenia vašim potrebám. Upravuje nastavenia tak, aby bolo zariadenie chladné a tiché, keď ho držíte alebo keď je nečinné. Funkcia optimalizuje výkon, keď je zariadenie položené na stabilnom povrchu. Keď je vypnutá, tepelnú prioritu možno nastaviť manuálne.",
                     "description14": "Táto funkcia umožňuje nastaviť rýchlosť ventilátora, maximalizovať výkon systému alebo v prípade potreby predĺžiť životnosť batérie. Má tri režimy uvedené ďalej. Medzi režimami môžete prepínať aj pomocou klávesovej skratky (Fn + Q) alebo pomocou panela nástrojov aplikácie Lenovo Vantage.",
-                    "readMore": "Prečítajte si ďalšie informácie.",
+                    "readMore": "Prečítajte si ďalšie informácie",
                     "gotoWindows": {
                         "title": "Prejsť na nastavenia systému Windows",
                         "modalBodyText1": "Jazdec nastavenia výkonu systému Windows zobrazíte kliknutím na ikonu batérie systému Windows v oblasti oznámení systému"
@@ -1140,7 +1140,7 @@
                             "title": "Zmena inteligentných režimov chladenia",
                             "close": "zatvoriť",
                             "coolingModesList": {
-                                "list1": "Kliknite na ikonu batérie v systéme Windows na paneli s nástrojmi",
+                                "list1": "Kliknite na ikonu batérie v systéme Windows na paneli s nástrojmi.",
                                 "list2": "Zobrazí sa režim výkonu systému Windows, posunutím jazdca vyberte optimálny čas alebo optimálny výkon."
                             }
                         },
@@ -1162,7 +1162,7 @@
                             "battery&Quite": "BATÉRIA A TICHÝ"
                         }
                     },
-                    "description5": "Inteligentné chladenie upravuje otáčky ventilátora, maximálny výkon a riadi výdrž batérie. Táto funkcia má 3 režimy (tichý režim, vyvážený režim a režim vysokého výkonu) a teraz je dostupná prostredníctvom jazdca na nastavenie výkonu systému Windows",
+                    "description5": "Inteligentné chladenie upravuje otáčky ventilátora, maximálny výkon a riadi výdrž batérie. Táto funkcia má 3 režimy (tichý režim, vyvážený režim a režim vysokého výkonu) a teraz je dostupná prostredníctvom jazdca na nastavenie výkonu systému Windows.",
                     "nocqldesc": "Inteligentné chladenie vám umožňuje nastaviť výkon systému a teplotu. V režime „Vysoký výkon“ sa optimalizuje výkon systému. Zatiaľ čo režim „Chladný a tichý“ pomáha zaistiť, aby bol systém chladnejší a tichší.",
                     "dytc6": {
                         "desc1": "Inteligentné chladenie upravuje otáčky ventilátora, maximálny výkon a riadi výdrž batérie.",
@@ -1471,15 +1471,15 @@
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "radioText": "VoIP",
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
+                                "checkboxText": "Automatically optimize audio for VOIP"
                             },
                             "entertainmentMode": {
-                                "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
                                 "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
                                 "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
+                                "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
                     },
@@ -1543,15 +1543,15 @@
                 },
                 "display": {
                     "title": "Obrazovka",
-					"displayColorTemperature": {
-						"title": "Režim na ochranu zraku",
-						"description": "Ak chcete zabrániť namáhaniu očí, môžete nastaviť teplotu farieb obrazovky tak, aby sa pri dlhom používaní počítača odfiltrovalo modré svetlo. Teplé farby sú navyše najmä v noci vhodné na spanie.",
-						"link": {
-							"click": "Kliknite",
-							"here": "sem",
-							"rest": "a zmeňte teplotu farieb."
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "Režim na ochranu zraku",
+                        "description": "Ak chcete zabrániť namáhaniu očí, môžete nastaviť teplotu farieb obrazovky tak, aby sa pri dlhom používaní počítača odfiltrovalo modré svetlo. Teplé farby sú navyše najmä v noci vhodné na spanie.",
+                        "link": {
+                            "click": "Kliknite",
+                            "here": "sem",
+                            "rest": "a zmeňte teplotu farieb."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "Režim na ochranu zraku",
                         "checkbox": "Naplánovať režim na ochranu zraku medzi západom a východom slnka",

@@ -1,12 +1,4 @@
 <div class="wifi-security-invitation-modal">
-	<div role="button" class="close-btn" (click)="onCancelClick($event)"
-			id="chs-btn-inviatation-close"
-			vtrMetrics
-			metricsItem="CHSInvitationCloseButton"
-			metricsEvent="featureClick"
-			metricsParent="{{metricsParent}}">
-			<img [src]=" 'assets/icons/Close.svg' | svgInline | async" alt="" srcset="">
-	</div>
 	<div class="content-container" *ngIf="!startJoin">
 		<h1 *ngIf="!joinSuccess" [innerHTML]="header | translate"></h1>
 		<p *ngIf="!joinSuccess" class="description header-description pb-3"
@@ -60,5 +52,12 @@
 	<div class="loading-container flex-column" *ngIf="startJoin">
 		<div class="spinner-border text-primary progress-spinner" role="status"></div>
 		<div class="connecting mt-5" [innerHTML]="'security.homeprotection.invitationcode.connecting' | translate"></div>
+	</div>
+
+	<div class="btn-modal-close">
+		<vtr-ui-close-button linkId="chs-btn-inviatation-close"
+			metricsItem="CHSInvitationCloseButton"
+			metricsParent="{{metricsParent}}"
+			(clickClose)="onCancelClick($event)"></vtr-ui-close-button>
 	</div>
 </div>

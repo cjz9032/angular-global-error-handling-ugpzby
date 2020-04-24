@@ -21,15 +21,16 @@
 				</div>
 				<div *ngIf="!showProgress" class="row">
 					<div class="col button-row">
-						<button [ngClass]="{'btn-primary action-button': !disableQuickScan, 'action-button-disable': disableQuickScan}"
-							tabindex="1"
-							[title]=""
-							[disabled]="disableQuickScan"
-							(click)="onQuickScan()"
-							[ngbTooltip]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate" tooltipClass="vtr-system-tooltip" container="body"
-							>{{buttonText}}</button>
-						<a
-							vtrMetrics
+					<vtr-ui-button
+						tabindex="1"
+						[disabled]="disableQuickScan"
+						(click)="onQuickScan()"
+						[tooltipText]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
+						[label]="buttonText">
+					</vtr-ui-button>
+
+					<div class="row aling-items-center">
+						<a vtrMetrics
 							metricsEvent="FeatureClick"
 							metricsParent="HardwareScan"
 							metricsItem="HardwareScan.CustomizeScan"
@@ -40,6 +41,7 @@
 							[ngbTooltip]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate" tooltipClass="vtr-system-tooltip" container="body"
 							>{{anchorText}}
 						</a>
+					</div>
 					</div>
 				</div>
 				<div *ngIf="showProgress" class="col row hwscan-header">

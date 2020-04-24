@@ -1097,7 +1097,7 @@
                     "description3": "Met Intelligent koelen worden de thermische prestaties automatisch afgestemd op uw behoeften.De functie Intelligent koelen past de prestatie-instellingen zodanig aan dat de notebookcomputer een koeler oppervlak krijgt wanneer u deze vasthoudt. Dit verhoogt uw comfort. Als het apparaat op een bureau staat, optimaliseert deze functie de prestaties.",
                     "description13": "Wanneer deze functie is ingeschakeld, past hij de thermische instellingen dynamisch aan uw behoeften aan. De instellingen worden aangepast zodat het apparaat koel en stil blijft, als u het in de hand houdt of als het inactief is. Wanneer het apparaat op een stabiel oppervlak staat, worden de prestaties geoptimaliseerd. U kunt de thermische prioriteit ook handmatig instellen als de functie is uitgeschakeld.",
                     "description14": "Met deze functie kunt u de snelheid van de ventilator aanpassen, de systeemprestaties maximaliseren en zo nodig de levensduur van de accu verlengen. Deze heeft de drie onderstaande modi. U kunt ook tussen werkstanden schakelen met sneltoetsen (FN+Q) of vanaf de Lenovo Vantage-werkbalk.",
-                    "readMore": "Meer weergeven.",
+                    "readMore": "Meer weergeven",
                     "gotoWindows": {
                         "title": "Ga naar Windows-instellingen",
                         "modalBodyText1": "Klik op het Windows-batterijpictogram in het systeemvak voor toegang tot de prestatieschuif in Windows"
@@ -1140,7 +1140,7 @@
                             "title": "Intelligente koelingswerkstanden wijzigen",
                             "close": "sluiten",
                             "coolingModesList": {
-                                "list1": "Klik op het batterijpictogram van Windows op de werkbalk",
+                                "list1": "Klik op het batterijpictogram van Windows op de werkbalk.",
                                 "list2": "De modus Energiebeheer van Windows wordt weergegeven. Schuif de schuifregelaar om te kiezen tussen optimale tijd of optimale prestaties."
                             }
                         },
@@ -1162,7 +1162,7 @@
                             "battery&Quite": "BATTERIJ EN STILLE MODUS"
                         }
                     },
-                    "description5": "Met Intelligente koeling worden de ventilatorsnelheid en maximale prestaties aangepast en de levensduur van de batterij beheerd. Deze functie heeft drie modi (Stille modus, Gebalanceerde modus en Prestatiemodus) en is nu toegankelijk via de prestatieschuif in Windows",
+                    "description5": "Met Intelligente koeling worden de ventilatorsnelheid en maximale prestaties aangepast en de levensduur van de batterij beheerd. Deze functie heeft drie modi (Stille modus, Gebalanceerde modus en Prestatiemodus) en is nu toegankelijk via de prestatieschuif in Windows.",
                     "nocqldesc": "Intelligent koelen maakt het mogelijk om de systeemprestatie en de thermische temperatuur aan te passen. In de \"Prestatie\"-modus wordt de systeemprestatie geoptimaliseerd. Tegelijkertijd blijft het systeem koeler en stiller in de modus \"Koel & stil\".",
                     "dytc6": {
                         "desc1": "Met Intelligente koeling worden de ventilatorsnelheid en maximale prestaties aangepast en de levensduur van de batterij beheerd.",
@@ -1471,15 +1471,15 @@
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "radioText": "VoIP",
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
+                                "checkboxText": "Automatically optimize audio for VOIP"
                             },
                             "entertainmentMode": {
-                                "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
                                 "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
                                 "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
+                                "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
                     },
@@ -1543,15 +1543,15 @@
                 },
                 "display": {
                     "title": "Weergave",
-					"displayColorTemperature": {
-						"title": "Oogzorg-modus",
-						"description": "Om de vermoeide ogen te voorkomen, kunt u de kleurtemperatuur van het beeldscherm aanpassen om het blauwe lampje uit te filteren als u de computer voor langere tijd gebruikt. Bovendien zijn warme kleuren goed voor uw slaap, vooral 's avonds.",
-						"link": {
-							"click": "Klik",
-							"here": "hier",
-							"rest": "om de kleurtemperatuur te wijzigen."
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "Oogzorg-modus",
+                        "description": "Om de vermoeide ogen te voorkomen, kunt u de kleurtemperatuur van het beeldscherm aanpassen om het blauwe lampje uit te filteren als u de computer voor langere tijd gebruikt. Bovendien zijn warme kleuren goed voor uw slaap, vooral 's avonds.",
+                        "link": {
+                            "click": "Klik",
+                            "here": "hier",
+                            "rest": "om de kleurtemperatuur te wijzigen."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "Oogzorg-modus",
                         "checkbox": "Oogzorg-modus voor zonsondergang tot zonsopgang plannen",

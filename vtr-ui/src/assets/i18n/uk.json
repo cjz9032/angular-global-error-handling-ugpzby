@@ -1097,7 +1097,7 @@
                     "description3": "Функція інтелектуального охолодження автоматично оптимізує теплові характеристики з урахуванням потреб користувача.Функція інтелектуального охолодження коригує настройки швидкодії, щоб забезпечити охолодження поверхні ноутбука для зручної роботи з ним у руках. Якщо пристрій розташований на поверхні стола, ця функція оптимізує його характеристики.",
                     "description13": "Якщо ввімкнена, ця функція динамічно регулює настройки тепловиділення відповідно до ваших потреб. Вона відрегулює настройки, щоб посилити охолодження пристрою або перевести його до тихого режиму під час автономної роботи чи бездіяльності. Коли пристрій перебуває на стійкій поверхні, вона оптимізує швидкодію. Якщо цю функцію вимкнуто, пріоритет охолодження можна задати вручну.",
                     "description14": "Ця функція дає змогу за потреби регулювати швидкість вентилятора, збільшувати продуктивність системи або час роботи від акумулятора. Доступні три наведених нижче режими. Ви також можете переключати режими за допомогою гарячих клавіш (Fn+Q) або з панелі інструментів Lenovo Vantage.",
-                    "readMore": "Розгорніть.",
+                    "readMore": "Розгорніть",
                     "gotoWindows": {
                         "title": "Перейти до настройок Windows",
                         "modalBodyText1": "Клацніть піктограму акумулятора Windows на панелі завдань, щоб отримати доступ до повзунка швидкодії Windows"
@@ -1140,7 +1140,7 @@
                             "title": "Зміна інтелектуальних режимів охолодження",
                             "close": "закрити",
                             "coolingModesList": {
-                                "list1": "Натисніть піктограму акумулятора Windows на панелі інструментів",
+                                "list1": "Натисніть піктограму акумулятора Windows на панелі інструментів.",
                                 "list2": "Відкриється режим живлення Windows: перетягніть повзунок, щоб вибрати між оптимальною тривалістю автономної роботи та швидкодією."
                             }
                         },
@@ -1162,7 +1162,7 @@
                             "battery&Quite": "АКУМУЛЯТОР І ТИША"
                         }
                     },
-                    "description5": "Функція інтелектуального охолодження регулює швидкість вентилятора, максимальну швидкодію та тривалість автономної роботи. Ця функція має 3 режими (тихий, збалансований і швидкісний) і тепер доступна з повзунка швидкодії Windows",
+                    "description5": "Функція інтелектуального охолодження регулює швидкість вентилятора, максимальну швидкодію та тривалість автономної роботи. Ця функція має 3 режими (тихий, збалансований і швидкісний) і тепер доступна з повзунка швидкодії Windows.",
                     "nocqldesc": "Функція інтелектуального охолодження дає змогу регулювати швидкодію та температуру системи. У режимі \"Продуктивність\" підвищується швидкодія системи. А в режимі \"Холод і тиша\" знижується температура й рівень шуму системи.",
                     "dytc6": {
                         "desc1": "Функція інтелектуального охолодження регулює швидкість вентилятора, максимальну швидкодію та тривалість автономної роботи.",
@@ -1471,15 +1471,15 @@
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "radioText": "VoIP",
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
+                                "checkboxText": "Automatically optimize audio for VOIP"
                             },
                             "entertainmentMode": {
-                                "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
                                 "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
                                 "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
+                                "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
                     },
@@ -1543,15 +1543,15 @@
                 },
                 "display": {
                     "title": "Дисплей",
-					"displayColorTemperature": {
-						"title": "Режим захисту зору",
-						"description": "Щоб уникнути перенапруження очей, можна налаштувати кольорову температуру дисплея й відфільтрувати синє світло під час тривалого користування комп'ютером. Крім того, теплі кольори допомагають заснути, особливо вночі.",
-						"link": {
-							"click": "Натисніть",
-							"here": "тут",
-							"rest": "щоб змінити колірну температуру."
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "Режим захисту зору",
+                        "description": "Щоб уникнути перенапруження очей, можна налаштувати кольорову температуру дисплея й відфільтрувати синє світло під час тривалого користування комп'ютером. Крім того, теплі кольори допомагають заснути, особливо вночі.",
+                        "link": {
+                            "click": "Натисніть",
+                            "here": "тут",
+                            "rest": "щоб змінити колірну температуру."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "Режим захисту зору",
                         "checkbox": "Заплануйте режим захисту зору від заходу до сходу сонця",

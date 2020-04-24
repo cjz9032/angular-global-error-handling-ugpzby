@@ -121,6 +121,7 @@
 		}
 		&:focus {
 			@include outline-white;
+			outline-offset: 0;
 		}
 	}
 	.optimize {

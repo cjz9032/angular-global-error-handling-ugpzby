@@ -14,16 +14,15 @@
 		</div>
 	</div>
 	<div class="button-row">
-		<vtr-ui-button-hwscan
+		<vtr-ui-button
 			metricsEvent="ItemClick"
 			metricsParent="HardwareScan"
 			metricsItem="HardwareScan.DetailsLog"
 			[isFullWidth]="true"
 			[label]="buttonText"
-			[tooltipText]="buttonText"
 			[routerPath] = "viewResultsPath"
 			[active]="'true'"
 			(onClick)="onPreviousResults()">
-		</vtr-ui-button-hwscan>
+		</vtr-ui-button>
 	</div>
 </div>

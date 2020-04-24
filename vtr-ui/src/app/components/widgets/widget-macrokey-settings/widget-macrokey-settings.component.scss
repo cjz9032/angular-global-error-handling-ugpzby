@@ -62,24 +62,24 @@
 }
 
 ::ng-deep {
-	ngb-tooltip-window.tooltip {
-		top: 1.5rem !important;
-		.arrow {
-			height: 0.5rem;
-			&::before {
-				top: 0px;
-				border-width: 1.2rem 1.2rem 0;
-				border-top-color: $gaming_lightest;
+	vtr-page-macrokey {
+		ngb-tooltip-window.tooltip {
+			.arrow {
+				height: 0.5rem;
+				&::before {
+					top: 0px;
+					border-width: 1.2rem 1.2rem 0;
+					border-top-color: $gaming_lightest;
+				}
 			}
-		}
-		.tooltip-inner {
-			padding: 1.4rem;
-			min-width: 40rem;
-			text-align: center;
-			background-color: $light;
-			border-radius: 0.4rem;
-			font-size: 1.4rem;
-			color: $gaming_dark;
+			.tooltip-inner {
+				text-align: center;
+				background-color: $light;
+				border-radius: 0.4rem;
+				font-size: 1.4rem;
+				color: $gaming_dark;
+			}
+		
 		}
 	}
 	.macrokey-status-wrapper {
