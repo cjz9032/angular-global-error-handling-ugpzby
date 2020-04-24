@@ -1,5 +1,5 @@
 <div class="vtr-widget-carousel"
-	#carouselContainer  (swipeleft)= "swipe($event.type)" (swiperight)= "swipe($event.type)" 
+	#carouselContainer  (swipeleft)= "swipe($event.type)" (swiperight)= "swipe($event.type)"
 	[style.height.px]="carouselContainer.clientWidth * 340 / 944">
 	<ngb-carousel tabindex="-1"
 		*ngIf="carouselModel"
@@ -28,7 +28,7 @@
 					[style.backgroundImage]="'url(' + model.image + ')'"
 					[style.height.px]="carouselContainer.clientWidth * 340 / 944"></div>
 				<div class="carousel-caption">
-					<h3 class="source"
+					<h3 class="source text-three-ellipsis"
 						[innerHTML]="model.source"
 						id="{{carouselId}}-{{cIndex}}-source"
 						[ngbTooltip]="model.source | htmlText" tooltipClass="vtr-system-tooltip" container="body"
