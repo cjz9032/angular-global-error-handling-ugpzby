@@ -1132,8 +1132,9 @@
                         },
                         "selectedModeText": {
                             "quiteCool": "Ovaj režim omogućava najbolje iskustvo sa balansiranom brzinom ventilatora i performansama sistema. Na primer, kada ste u igrama, on optimizuje performanse. Kad ste u kancelariji, smanjuje buku.",
-                            "batterySaving": "Ovaj režim omogućava maksimalni radni vek baterije tako što automatski podešava svetlinu, menja postavke napajanja, onemogućava funkcije za naprednu obradu slika itd.",
-                            "performance": "Ovaj režim omogućava maksimalne performanse sistema. U ovom režimu, velika brzina ventilatora može izazvati veliku buku."
+                            "batterySaving14": "Ovaj režim omogućava maksimalni radni vek baterije tako što automatski podešava svetlinu, menja postavke napajanja, onemogućava funkcije za naprednu obradu slika itd.",
+                            "performance": "Ovaj režim omogućava maksimalne performanse sistema. U ovom režimu, velika brzina ventilatora može izazvati veliku buku.",
+                            "batterySaving15": "Ovaj režim omogućava maksimalan vek trajanja baterije tako što automatski podešava svetlinu, puni postavke napajanja, onemogućava Dolby audio i sl. Sa svim gorenavedenim, može da produži do 20% trajanja baterije."
                         },
                         "intelligentCoolingModesModal": {
                             "title": "Promena režima pametnog hlađenja",
@@ -1142,7 +1143,17 @@
                                 "list1": "Kliknite na ikonu baterije sistema Windows na traci sa alatkama.",
                                 "list2": "Pojaviće se režim za uštedu energije sistema Windows, povucite klizač da izaberete između optimalnog vremena ili optimalnih performansi."
                             }
-                        }
+                        },
+                        "autoTransition": {
+							"description": "Omogućite „Ekstremne performanse“ u ovom režimu. Kada je omogućeno, temperatura na površini računara i buka ventilatora se mogu automatski povećati.",
+							"more": "VIŠE",
+							"less": "MANJE",
+							"moreContent": {
+								"desc1": "a. U korišćenju u kancelariji, u scenarijima ažuriranja sistema Windows, filmovima na mreži ili pri niskom opterećenju, sistem može da bude tih. Dok je u normalnim scenarijima za igranje igara, ima bolje performanse.",
+								"desc2": "b. Prilikom igranja zahtevnih igara automatski je omogućen režim „Ekstremne performanse“. To može da izazove veću buku ili veću temperaturu na površini računara.",
+								"desc3": "c. Kada je kapacitet baterije ispod 30%, sistem se automatski prebacuje na režim „Ušteda baterije“."
+							}			
+						}
                     },
                     "nonintelligentCooling": {
                         "options": {

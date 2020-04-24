@@ -41,7 +41,7 @@
 							title=""
 							*ngIf="!isOfflineArm">
 							<div *ngIf="item.Title"
-								class="title text-ellipsis"
+								class="title text-four-ellipsis"
 								id="{{containerCardId+'-title'}}"
 								role="link"
 								[title]=""
@@ -181,7 +181,7 @@
 							title="">
 							<div *ngIf="item.Title && !isOfflineArm"
 								[title]=""
-								class="title text-ellipsis"
+								class="title text-three-ellipsis"
 								id="{{containerCardId+'-title'}}"
 								role="link"
 								[innerHtml]="item.Title"
@@ -349,7 +349,7 @@
 						<div class="inner-content"
 							title="">
 							<div *ngIf="item.Title"
-								class="title text-ellipsis"
+								class="title text-two-ellipsis"
 								[title]=""
 								[innerHtml]="item.Title"
 								id="{{containerCardId+'-title'}}"
