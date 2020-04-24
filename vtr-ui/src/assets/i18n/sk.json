@@ -1132,8 +1132,9 @@
                         },
                         "selectedModeText": {
                             "quiteCool": "Tento režim umožňuje zažiť ten najlepší zážitok vďaka vyváženiu otáčok ventilátora a výkonu systému. Napríklad pri hraní hier optimalizuje výkon. Zatiaľ čo v kancelárii znižuje hluk.",
-                            "batterySaving": "Tento režim umožňuje dosiahnuť maximálnu výdrž batérie automatickým nastavením jasu, zmenou nastavení napájania, vypnutím rozšírených funkcií spracovania obrazu atď.",
-                            "performance": "Tento režim umožňuje dosiahnuť maximálny výkon systému. V tomto režime môžu vysoké otáčky ventilátora spôsobovať veľký hluk."
+                            "batterySaving14": "Tento režim umožňuje dosiahnuť maximálnu výdrž batérie automatickým nastavením jasu, zmenou nastavení napájania, vypnutím rozšírených funkcií spracovania obrazu atď.",
+                            "performance": "Tento režim umožňuje dosiahnuť maximálny výkon systému. V tomto režime môžu vysoké otáčky ventilátora spôsobovať veľký hluk.",
+                            "batterySaving15": "Tento režim maximalizuje výdrž batérie automatickým nastavením jasu, zmenou nastavení napájania, vypnutím zvuku Dolby atď. Celkovo tým môže predĺžiť výdrž batérie až o 20 %."
                         },
                         "intelligentCoolingModesModal": {
                             "title": "Zmena inteligentných režimov chladenia",
@@ -1142,7 +1143,17 @@
                                 "list1": "Kliknite na ikonu batérie v systéme Windows na paneli s nástrojmi.",
                                 "list2": "Zobrazí sa režim výkonu systému Windows, posunutím jazdca vyberte optimálny čas alebo optimálny výkon."
                             }
-                        }
+                        },
+                        "autoTransition": {
+							"description": "Povoliť v tomto režime najvyšší výkon. Keď je povolený, teplota povrchu počítača a hluk ventilátora sa môžu automaticky zvýšiť.",
+							"more": "VIAC",
+							"less": "MENEJ",
+							"moreContent": {
+								"desc1": "a. Pri kancelárskej práci, aktualizácii systému Windows, prehrávaní online filmu alebo nízkom zaťažení systému môže byť systém tichý. Pri bežnom hraní má zasa vyšší výkon.",
+								"desc2": "b. Pri hraní hier, ktoré výrazne zaťažujú systém, sa automaticky zapne režim najvyššieho výkonu. Môže spôsobiť zvýšenie hluku alebo teploty povrchu počítača.",
+								"desc3": "c. Ak je kapacita batérie nižšia ako 30 %, systém sa automaticky prepne do režimu úspory batérie."
+							}			
+						}
                     },
                     "nonintelligentCooling": {
                         "options": {
