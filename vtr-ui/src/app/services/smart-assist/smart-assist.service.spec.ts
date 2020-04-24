@@ -229,6 +229,155 @@ describe('SmartAssistService', () => {
 
 		});
 
+		it('getHPDAdvancedSetting called', () => {
+			const { smartAssistService } = setup();
+			const privateSpy = spyOn<any>(
+				smartAssistService, 
+				'getHPDAdvancedSetting'
+			).and.callThrough();
+
+			smartAssistService.getHPDAdvancedSetting();
+			expect(privateSpy).toHaveBeenCalled();
+		});
+
+		it('setHPDAdvancedSetting called', () => {
+			const { smartAssistService } = setup();
+			const privateSpy = spyOn<any>(
+				smartAssistService, 
+				'setHPDAdvancedSetting'
+			).and.callThrough();
+			smartAssistService.setHPDAdvancedSetting('zeroTouchLogin', true);
+			expect(privateSpy).toHaveBeenCalled();
+
+			smartAssistService.setHPDAdvancedSetting('zeroTouchLock', true);
+			expect(privateSpy).toHaveBeenCalled();
+		});
+
+		it('getHsaIntelligentSecurityStatus called', ()=> {
+			const {smartAssistService, shellService} = setup();
+			const privateSpy = spyOn<any>(
+				smartAssistService,
+				'getHsaIntelligentSecurityStatus'
+			).and.callThrough();
+
+			smartAssistService.isShellAvailable = true;
+			const jsonData = '{"capacity": true, "capability": true, "sensorType": 1, "presenceLeaveDistanceAutoAdjust": true, "presenceLeaveDistance": 1, "errorCode": 0 }';
+			smartAssistService.hsaIntelligentSecurity = { getAllSetting() { return jsonData; } }
+			
+			smartAssistService.getHsaIntelligentSecurityStatus();
+			expect(privateSpy).toHaveBeenCalled();
+		});
+
+		it('getHsaIntelligentSecurityStatus called error', ()=> {
+			const {smartAssistService, shellService} = setup();
+			const privateSpy = spyOn<any>(
+				smartAssistService,
+				'getHsaIntelligentSecurityStatus'
+			).and.callThrough();
+
+			smartAssistService.isShellAvailable = true;
+			smartAssistService.getHsaIntelligentSecurityStatus();
+			expect(privateSpy).toHaveBeenCalled();
+		});
+
+		it('setZeroTouchLockDistanceSensitivityAutoAdjust called', () => {
+			const { smartAssistService } = setup();
+			const privateSpy = spyOn<any>(
+				smartAssistService, 
+				'setZeroTouchLockDistanceSensitivityAutoAdjust'
+			).and.callThrough();
+
+			smartAssistService.isShellAvailable = true;
+			smartAssistService.hsaIntelligentSecurity = { 
+				setPresenceLeaveDistanceAutoAdjust() { return 0; } 
+			}
+
+			smartAssistService.setZeroTouchLockDistanceSensitivityAutoAdjust(true);
+			expect(privateSpy).toHaveBeenCalled();
+		});
+
+		it('setZeroTouchLockDistanceSensitivityAutoAdjust called error', () => {
+			const { smartAssistService } = setup();
+			const privateSpy = spyOn<any>(
+				smartAssistService, 
+				'setZeroTouchLockDistanceSensitivityAutoAdjust'
+			).and.callThrough();
+
+			smartAssistService.isShellAvailable = true;
+			smartAssistService.setZeroTouchLockDistanceSensitivityAutoAdjust(true);
+			expect(privateSpy).toHaveBeenCalled();
+		});
+
+		it('setZeroTouchLockDistanceSensitivity called', () => {
+			const { smartAssistService } = setup();
+			const privateSpy = spyOn<any>(
+				smartAssistService, 
+				'setZeroTouchLockDistanceSensitivity'
+			).and.callThrough();
+
+			smartAssistService.isShellAvailable = true;
+			smartAssistService.hsaIntelligentSecurity = { 
+				setPresenceLeaveDistance() { return 0; } 
+			}
+
+			smartAssistService.setZeroTouchLockDistanceSensitivity(true);
+			expect(privateSpy).toHaveBeenCalled();
+		});
+
+		it('setZeroTouchLockDistanceSensitivity called error', () => {
+			const { smartAssistService } = setup();
+			const privateSpy = spyOn<any>(
+				smartAssistService, 
+				'setZeroTouchLockDistanceSensitivity'
+			).and.callThrough();
+
+			smartAssistService.isShellAvailable = true;
+			smartAssistService.setZeroTouchLockDistanceSensitivity(true);
+			expect(privateSpy).toHaveBeenCalled();
+		});
+
+		it('resetHSAHPDSetting called', () => {
+			const { smartAssistService } = setup();
+			const privateSpy = spyOn<any>(
+				smartAssistService, 
+				'resetHSAHPDSetting'
+			).and.callThrough();
+
+			smartAssistService.isShellAvailable = true;
+			smartAssistService.hsaIntelligentSecurity = { 
+				resetAllSetting() { return 0; } 
+			}
+
+			smartAssistService.resetHSAHPDSetting();
+			expect(privateSpy).toHaveBeenCalled();
+		});
+
+		it('resetHSAHPDSetting called error', () => {
+			const { smartAssistService } = setup();
+			const privateSpy = spyOn<any>(
+				smartAssistService, 
+				'resetHSAHPDSetting'
+			).and.callThrough();
+
+			smartAssistService.isShellAvailable = true;
+			smartAssistService.resetHSAHPDSetting();
+			expect(privateSpy).toHaveBeenCalled();
+		});
+
+		it('startMonitorHsaIntelligentSecurityStatus called', ()=> {
+			const {smartAssistService} = setup();
+			const privateSpy = spyOn<any>(
+				smartAssistService,
+				'startMonitorHsaIntelligentSecurityStatus'
+			).and.callThrough();
+
+			smartAssistService.isShellAvailable = true;
+			smartAssistService.hsaIntelligentSecurity = { onstatusupdated() { } }
+
+			smartAssistService.startMonitorHsaIntelligentSecurityStatus(1);
+			expect(privateSpy).toHaveBeenCalled();
+		});
+
 		it('getWindowsHelloStatus called', ()=> {
 			const {smartAssistService, shellService} = setup();
 			const privateSpy = spyOn<any>(smartAssistService.intelligentSensing,'GetFacialFeatureRegistered').and.callThrough();

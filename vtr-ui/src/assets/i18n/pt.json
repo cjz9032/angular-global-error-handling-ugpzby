@@ -1132,8 +1132,9 @@
                         },
                         "selectedModeText": {
                             "quiteCool": "Este modo permite a melhor experiência com a velocidade da ventoinha e o desempenho do sistema equilibrado. Por exemplo, quando em jogos, otimiza o desempenho. No escritório, reduz o ruído.",
-                            "batterySaving": "Este modo permite uma vida útil máxima da bateria, ajustando automaticamente a luminosidade, alterando as definições de energia, desativando funcionalidades no processamento avançado de imagens, etc.",
-                            "performance": "Este modo permite o máximo desempenho do sistema. Neste modo, a velocidade rápida da ventoinha pode causar um grande ruído."
+                            "batterySaving14": "Este modo permite uma vida útil máxima da bateria, ajustando automaticamente a luminosidade, alterando as definições de energia, desativando funcionalidades no processamento avançado de imagens, etc.",
+                            "performance": "Este modo permite o máximo desempenho do sistema. Neste modo, a velocidade rápida da ventoinha pode causar um grande ruído.",
+                            "batterySaving15": "Este modo permite a máxima duração da bateria ao ajustar automaticamente a luminosidade, alterar as definições de energia, desativar o Áudio Dolby, etc. Tendo em conta o anterior, poderá aumentar a duração da bateria até 20%."
                         },
                         "intelligentCoolingModesModal": {
                             "title": "Alterar os modos de arrefecimento inteligente",
@@ -1142,7 +1143,17 @@
                                 "list1": "Clique no ícone da bateria do Windows na barra de ferramentas.",
                                 "list2": "Aparecerá Modo de Energia do Windows, deslize o controle deslizante para escolher entre tempo ideal ou desempenho ideal."
                             }
-                        }
+                        },
+                        "autoTransition": {
+							"description": "Ative o \"Desempenho Extremo\" neste modo. Quando ativado, a temperatura na superfície do computador e o ruído da ventoinha poderão aumentar automaticamente.",
+							"more": "MAIS",
+							"less": "MENOS",
+							"moreContent": {
+								"desc1": "a. O sistema pode estar silencioso quando utiliza o Office, o Windows Update, vê filmes online ou em cenários de carregamento leve do sistema. Nos cenários de jogos normais, o desempenho é melhor.",
+								"desc2": "b. Durante os jogos mais exigentes, o modo \"Desempenho Extremo\" é ativado automaticamente. Pode fazer aumentar o ruído ou a temperatura na superfície do computador.",
+								"desc3": "c. Quando a capacidade da bateria é inferior a 30%, o sistema muda automaticamente para o modo \"Poupança de Bateria\"."
+							}			
+						}
                     },
                     "nonintelligentCooling": {
                         "options": {

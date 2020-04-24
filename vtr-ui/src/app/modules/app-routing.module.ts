@@ -80,12 +80,6 @@ const routes: Routes = [
 		loadChildren: () => import('./cpt/cpt.module').then(m => m.CptModule)
 	},
 	{
-		path: '',
-		canActivate: [ProtocolGuardService],
-		component: HomeComponent,
-		pathMatch: 'full'
-	},
-	{
 		path: '**',
 		canActivate: [ProtocolGuardService],
 		component: HomeComponent

@@ -203,7 +203,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			if (cache) {
 				const showIC = cache.showIC;
 				if (showIC === 0) {
-					this.onSetSmartSettingsCapability(true);
+					this.onSetSmartSettingsCapability(false);
 				}
 			}
 		} catch (error) {
@@ -416,7 +416,17 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	// TODO: Update this after changing logic for intelligent cooling part
 	updateSmartSettingsLinkStatus(addLink: boolean) {
 		this.checkIsPowerPageAvailable(addLink, 'smartSettings');
-		this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'smartSettings');
+		if (addLink) {
+			const smartSettingaByObj = {
+				title: 'device.deviceSettings.power.powerSmartSettings.title',
+				path: 'smartSettings',
+				metricsItem: 'PowerSmartSettings',
+				order: 1
+			};
+			this.commonService.addToObjectsList(this.headerMenuItems, smartSettingaByObj);
+		} else {
+			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'smartSettings');
+		}
 	}
 
 	updateSmartStandbyLinkStatus(addLink: boolean) {

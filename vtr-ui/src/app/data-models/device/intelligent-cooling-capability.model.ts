@@ -9,4 +9,5 @@ export class IntelligentCoolingCapability {
 	public autoModeToggle: FeatureStatus = new FeatureStatus(true, false); // promise is returning object
 	public apsState = false;
 	public selectedModeText = "";
+	public isAutoTransitionEnabled = false;
 }
