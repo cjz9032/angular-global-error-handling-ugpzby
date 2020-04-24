@@ -11,7 +11,7 @@
     color: $main;
 }
 
-.description {
+.description, .cancel-message {
     font-size: $fontsize_xs;
 	font-weight: $weight_bold;
 	color: $shade_blue;

@@ -277,6 +277,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		// alert the user that the process cannot be canceled anymore.
 		let scanFinished = this.hardwareScanService.isWorkDone().subscribe((done) => {
 			modalCancel.componentInstance.stopCountdown();
+			modalCancel.componentInstance.cancelReminder = "";
 			modalCancel.componentInstance.description = this.translate.instant('hardwareScan.processFinishedCannotBeCanceled');
 		});
 

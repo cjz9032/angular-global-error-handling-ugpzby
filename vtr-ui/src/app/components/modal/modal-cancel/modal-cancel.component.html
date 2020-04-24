@@ -5,9 +5,10 @@
 
   <div class="title">{{title}}</div>
 
-  <br />
-
-  <div class="description">{{cancelReminder}}</div>
+  <div class="cancel-message" *ngIf="cancelReminder.length > 0">
+    <br />
+    {{cancelReminder}}
+  </div>
 
   <br />
 
