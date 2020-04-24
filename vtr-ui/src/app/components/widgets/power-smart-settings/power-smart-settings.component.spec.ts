@@ -9,6 +9,7 @@ import { PowerService } from 'src/app/services/power/power.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { IntelligentCoolingCapability } from 'src/app/data-models/device/intelligent-cooling-capability.model';
 import { ModalIntelligentCoolingModesComponent } from '../../modal/modal-intelligent-cooling-modes/modal-intelligent-cooling-modes.component';
+import { MetricService } from 'src/app//services/metric/metric.service';
 
 import {
 	ICModes,
@@ -20,6 +21,8 @@ import {
 import { HttpLoaderFactory } from 'src/app/modules/translation.module';
 import { HttpClient } from '@angular/common/http';
 import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
+import { promise } from 'protractor';
+import { DevService } from 'src/app/services/dev/dev.service';
 
 describe("Component: PowerSmartSetting", () => {
 	let component: PowerSmartSettingsComponent;
@@ -29,6 +32,7 @@ describe("Component: PowerSmartSetting", () => {
 	let powerService: PowerService;
 	let modalService: NgbModal
 	let modalRef: NgbModalRef
+	let metricService: MetricService
 	// let originalTimeout;
 	const thinkpad = 1;
 	const ideapad = 0;
@@ -47,7 +51,7 @@ describe("Component: PowerSmartSetting", () => {
 					deps: [HttpClient]
 				  }
 			}), HttpClientTestingModule],
-			providers: [LoggerService, PowerService, CommonService, TranslateService,NgbModal ]
+			providers: [LoggerService, PowerService, CommonService, TranslateService,NgbModal, MetricService, DevService]
 		})
 		// .overrideModule(BrowserDynamicTestingModule, { set: { entryComponents: [ModalIntelligentCoolingModesComponent] } })
 		.compileComponents()
@@ -59,6 +63,7 @@ describe("Component: PowerSmartSetting", () => {
 		commonService = TestBed.get(CommonService);
 		translate = TestBed.get(TranslateService)
 		powerService = TestBed.get(PowerService)
+		metricService = TestBed.get(MetricService)
 	});
 
 	// it("should create", function (done) {
@@ -191,6 +196,26 @@ describe("Component: PowerSmartSetting", () => {
 		// }
 		component.cache = new IntelligentCoolingCapability()
 		let spy = spyOn(powerService, 'getITSModeForICIdeapad').and.returnValue(Promise.reject(Error))
+		component.initPowerSmartSettingsForIdeaPad()
+		expect(spy).toHaveBeenCalled()
+	}));
+	
+	it('should call initPowerSmartSettingsForIdeaPad - itsVersion = 4', async(() => {
+		let response = {
+			available: true,
+			itsVersion: 4,
+		}
+		let spy = spyOn(powerService, 'getITSModeForICIdeapad').and.returnValue(Promise.resolve(response))
+		component.initPowerSmartSettingsForIdeaPad()
+		expect(spy).toHaveBeenCalled()
+	}));
+
+	it('should call initPowerSmartSettingsForIdeaPad - itsVersion >= 5', async(() => {
+		let response = {
+			available: true,
+			itsVersion: 5,
+		}
+		let spy = spyOn(powerService, 'getITSModeForICIdeapad').and.returnValue(Promise.resolve(response))
 		component.initPowerSmartSettingsForIdeaPad()
 		expect(spy).toHaveBeenCalled()
 	}));
@@ -514,11 +539,20 @@ describe("Component: PowerSmartSetting", () => {
 	});
 
 	it('should call autoTransitionReadMoreClick', () => {
-		component.autoTransitionReadMoreClick();
+		const metricsData = {
+			ItemParent: 'Device.MyDeviceSettings',
+			ItemName: 'IntelligentCooling-5.0-AutoTransition-ReadMore',
+			ItemType: 'FeatureClick',
+			ItemValue: 'ExpandedToReadMore'
+		};
+		
+		let spy = spyOn(metricService, 'sendMetrics').and.returnValue()
+		component.autoTransitionReadMoreClick()
 		expect(component.autoTransitionIsReadMore).toBeTruthy;
+		expect(spy).toHaveBeenCalled()
 	});
 	
-	it('should call initPowerSmartSettingsForIdeaPad', async(() => {
+	it('should call onAutoTransitionToggle', async(() => {
 		powerService.isShellAvailable = true
 		component.isAutoTransitionVisible = true
 
@@ -527,4 +561,24 @@ describe("Component: PowerSmartSetting", () => {
 		component.onAutoTransitionToggle(true)
 		expect(spy).toHaveBeenCalled()
 	}));
+
+	it('should call onAutoTransitionToggle set failed', async(() => {
+		powerService.isShellAvailable = true
+		component.isAutoTransitionVisible = true
+
+		component.cache = new IntelligentCoolingCapability()
+		let spy = spyOn(powerService, 'setAutoTransitionForICIdeapad').and.returnValue(Promise.resolve(false))
+		component.onAutoTransitionToggle(true)
+		expect(spy).toHaveBeenCalled()
+	}));
+	it('should call initPowerSmartSettingsUIForIdeaPad itsVersion is 5', () => {
+		let response = {
+			available: true,
+			itsVersion: 5,
+			isAutoTransitionEnabled: true
+		}
+		component.isSmartPowerSettingRemoved = true;
+		component.initPowerSmartSettingsUIForIdeaPad(response)
+		expect(component.intelligentCoolingModes).toEqual(IntelligentCoolingHardware.ITS15)
+	})
 });
