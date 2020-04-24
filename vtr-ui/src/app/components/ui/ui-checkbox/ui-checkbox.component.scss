@@ -23,16 +23,6 @@
 	}
 
 	.custom-control-input {
-		&:checked ~ .custom-control-label::before {
-			color: $menu_hover;
-			border: 0.1rem solid $menu_hover;
-			background-color: transparent !important;
-		}
-
-		&:not(:checked) ~ .custom-control-label::after {
-			background-color: transparent !important;
-		}
-
 		// maintain order of hover, focus active
 		&:hover ~ .custom-control-label::before {
 			box-shadow: none;
@@ -45,9 +35,26 @@
 			outline: 0.1rem solid $menu_hover !important;
 			outline-offset: 0.2rem;
 		}
+
 		&:active ~ .custom-control-label::before {
 			box-shadow: none;
-			border: 0.1rem solid $shade_blue;
+			border: 0.1rem solid $shade_blue !important;
+		}
+		&:active ~ .custom-control-label::after {
+			box-shadow: none;
+			border: 0.1rem solid $shade_blue !important;
+			background-color: $shade_blue !important;
+			background-image: none;
+		}
+
+		&:checked ~ .custom-control-label::before {
+			color: $menu_hover;
+			border: 0.1rem solid $menu_hover;
+			background-color: transparent;
+		}
+
+		&:not(:checked) ~ .custom-control-label::after {
+			background-color: transparent;
 		}
 	}
 
