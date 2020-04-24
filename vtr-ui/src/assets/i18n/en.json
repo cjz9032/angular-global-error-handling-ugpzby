@@ -5,6 +5,9 @@
 	"gaming": {
 		"dashboard": {
 			"device": {
+				"popup":{
+				"closeBtn":"close"
+				},
 				"quickSettings": {
 					"title": "Thermal Mode",
 					"status": {
