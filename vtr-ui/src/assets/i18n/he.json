@@ -1097,7 +1097,7 @@
                     "description3": "הקירור החכם מאזן באופן אוטומטי את ביצועי החום ומתאים אותם לצרכים שלכם.תכונת הקירור החכם מכווננת את הגדרות הביצועים כדי לספק לכם משטח קריר ונעים יותר למגע, כשאתם מחזיקים את המחשב הנייד. כשההתקן מונח על משטח עבודה, תכונה זו ממטבת את הביצועים.",
                     "description13": "כאשר היא פועלת, תכונה זו מכווננת את ההגדרות התרמיות באופן דינמי בהתאם לצורך. היא מתאימה את ההגדרות כך שהמכשיר יהיה קריר ושקט, במצב המתנה או במצב של חוסר פעילות. היא משפרת את הביצועים בזמן שהמכשיר נמצא על משטח יציב. כשהיא כבויה, ניתן להגדיר את העדיפות מבחינה תרמית באופן ידני.",
                     "description14": "תכונה זו מאפשרת לשנות את מהירות המאוורר, למקסם את ביצועי המערכת או להאריך את חיי הסוללה במידת הצורך. יש לו שלושה מצבים להלן. בנוסף, ניתן להחליף בין המצבים באמצעות מקשים חמים (Fn+Q) או דרך סרגל הכלים של Lenovo Vantage.",
-                    "readMore": "פרטים נוספים.",
+                    "readMore": "פרטים נוספים",
                     "gotoWindows": {
                         "title": "מעבר אל הגדרות Windows",
                         "modalBodyText1": "לחצו על סמל הסוללה של Windows במגש המערכת כדי לגשת למחוון צריכת החשמל של ביצועי Windows"
@@ -1139,7 +1139,7 @@
                             "title": "שינוי מצבי קירור חכמים",
                             "close": "סגירה",
                             "coolingModesList": {
-                                "list1": "לחץ על סמל הסוללה של Windows בסרגל הכלים",
+                                "list1": "לחץ על סמל הסוללה של Windows בסרגל הכלים.",   
                                 "list2": "מצב Windows Power יופיע, החלק את המחוון כדי לבחור בין זמן אופטימלי לבין ביצועים אופטימליים."
                             }
                         }
@@ -1151,7 +1151,7 @@
                             "battery&Quite": "סוללה ושקט"
                         }
                     },
-                    "description5": "הקירור החכם מתאים את מהירות המאוורר ואת הביצועים המיטביים ומנהל את חיי הסוללה. תכונה זו כוללת שלושה מצבים (מצב שקט, מצב מאוזן ומצב ביצועים) והיא נגישה כעת דרך מחוון צריכת החשמל של ביצועי Windows",
+                    "description5": "הקירור החכם מתאים את מהירות המאוורר ואת הביצועים המיטביים ומנהל את חיי הסוללה. תכונה זו כוללת שלושה מצבים (מצב שקט, מצב מאוזן ומצב ביצועים) והיא נגישה כעת דרך מחוון צריכת החשמל של ביצועי Windows.",
                     "nocqldesc": "הקירור החכם מאפשר לכוונן את ביצועי המערכת ואת הטמפרטורה התרמית. במצב \"ביצועים\", הוא מייעל את ביצועי המערכת. בעוד הוא מסייע בשמירה על קירור או שקט של המערכת במצב \"קריר ושקט\".",
                     "dytc6": {
                         "desc1": "הקירור החכם מתאים את מהירות המאוורר ואת הביצועים המיטביים ומנהל את חיי הסוללה.",
@@ -1460,15 +1460,15 @@
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "radioText": "VoIP",
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
+                                "checkboxText": "Automatically optimize audio for VOIP"
                             },
                             "entertainmentMode": {
-                                "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
                                 "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
                                 "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
+                                "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
                     },
@@ -1533,8 +1533,8 @@
                 "display": {
                     "title": "תצוגה",
                     "displayColorTemperature": {
-                        "title": "טמפרטורת צבע התצוגה",
-                        "description": "ניתן להתאים את טמפרטורת הצבע של התצוגה כדי לסנן את האור הכחול ולהפחית את אימוץ העיניים. כוונון התצוגות לצבעים חמים יותר במהלך השקיעה ועד הזריחה כדי לעזור לכם לישון.",
+                        "title": "מצב שמירה על העיניים",
+                        "description": "כדי למנוע אימוץ של העיניים, ניתן להתאים את טמפרטורת הצבע של הצג כדי לסנן את האור הכחול כשמשתמשים במחשב במשך זמן רב. בנוסף, צבעים חמים טובים לשינה במיוחד בלילה.",
                         "link": {
                             "click": "לחצו",
                             "here": "כאן",

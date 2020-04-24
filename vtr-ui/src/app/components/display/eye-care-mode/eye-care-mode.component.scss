@@ -1,6 +1,19 @@
 @import "../../../app.theme.scss";
 
 .vtr-eye-care-mode {
+	.slider-block {
+		width: 78%;
+		padding-left: 1.5rem;
+		@media #{$breakpoint_xl} {
+			width: 75%;
+		}
+		@media #{$breakpoint_sm} {
+			width: 70%;
+		}
+	}
+	.button-block {
+		margin-right: 0.9rem;
+	}
 	.mode-slider {
 		width: 100%;
 	}

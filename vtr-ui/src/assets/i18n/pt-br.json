@@ -1097,7 +1097,7 @@
                     "description3": "O Resfriamento Inteligente equilibra automaticamente o desempenho térmico de acordo com suas necessidades.O recurso de Resfriamento Inteligente ajusta as configurações de desempenho para proporcionar uma superfície mais fria para seu maior conforto quando o notebook é segurado com as mãos. Quando o dispositivo está sobre a superfície de uma mesa de trabalho, o recurso otimiza o desempenho.",
                     "description13": "Quando ligado, este recurso ajusta dinamicamente as configurações térmicas aos seus requisitos. Ele ajusta as configurações para manter o dispositivo refrigerado e silencioso, quando estiver seguro nas mãos ou inativo. Quando o dispositivo estiver em uma superfície estável, ele otimiza o desempenho. Quando desligado, você pode ajustar manualmente a prioridade térmica.",
                     "description14": "Esse recurso permite ajustar a velocidade do ventilador, maximizar o desempenho do sistema ou estender a duração da bateria, se necessário. Ele tem os três modos abaixo. Você também pode alternar os modos usando teclas de atalho (Fn+Q) ou na barra de ferramentas do Lenovo Vantage.",
-                    "readMore": "Leia mais.",
+                    "readMore": "Leia mais",
                     "gotoWindows": {
                         "title": "Ir para as configurações do Windows",
                         "modalBodyText1": "Clique no ícone da bateria do Windows na bandeja do sistema para acessar o controle deslizante de energia de desempenho do Windows"
@@ -1139,7 +1139,7 @@
                             "title": "Alterar modos de resfriamento inteligentes",
                             "close": "fechar",
                             "coolingModesList": {
-                                "list1": "Clique no ícone da bateria do Windows na barra de ferramentas",
+                                "list1": "Clique no ícone da bateria do Windows na barra de ferramentas.",
                                 "list2": "O modo de Energia do Windows será exibido, deslize o controle deslizante para escolher entre o tempo ideal ou o desempenho ideal."
                             }
                         }
@@ -1151,7 +1151,7 @@
                             "battery&Quite": "BATERIA E SILÊNCIO"
                         }
                     },
-                    "description5": "O Resfriamento inteligente ajusta a velocidade do ventilador, o desempenho máximo e gerencia a duração da bateria. Este recurso possui 3 modos (modo Silencioso, Equilibrado e de Desempenho) e agora pode ser acessado pelo controle deslizante de energia de desempenho do Windows",
+                    "description5": "O Resfriamento inteligente ajusta a velocidade do ventilador, o desempenho máximo e gerencia a duração da bateria. Este recurso possui 3 modos (modo Silencioso, Equilibrado e de Desempenho) e agora pode ser acessado pelo controle deslizante de energia de desempenho do Windows.",
                     "nocqldesc": "O Resfriamento Inteligente permite ajustar o desempenho do sistema e a temperatura térmica. No modo \"Desempenho\", ele otimiza o desempenho do sistema. Enquanto ajuda a manter o sistema mais frio ou mais silencioso no modo \"Refrigerado e silencioso\".",
                     "dytc6": {
                         "desc1": "O Resfriamento inteligente ajusta a velocidade do ventilador, o desempenho máximo e gerencia a duração da bateria.",
@@ -1460,15 +1460,15 @@
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "radioText": "VoIP",
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
+                                "checkboxText": "Automatically optimize audio for VOIP"
                             },
                             "entertainmentMode": {
-                                "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
                                 "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
                                 "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
+                                "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
                     },
@@ -1533,8 +1533,8 @@
                 "display": {
                     "title": "Monitor",
                     "displayColorTemperature": {
-                        "title": "Temperatura das cores do monitor",
-                        "description": "Você pode ajustar a temperatura das cores do monitor para filtrar a luz azul e reduzir a tensão ocular. Ajusta os monitores para cores mais quentes durante o pôr do sol até o nascer do sol para ajudá-lo a dormir.",
+                        "title": "Modo Proteção Ocular",
+                        "description": "Para evitar cansaço visual, você pode ajustar a temperatura da cor da tela para filtrar a luz azul quando usar o computador por um longo período de tempo. Além disso, cores quentes são boas para dormir, especialmente à noite.",
                         "link": {
                             "click": "Clique",
                             "here": "aqui",

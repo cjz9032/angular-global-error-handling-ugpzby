@@ -1097,7 +1097,7 @@
                     "description3": "智慧型冷卻會自動平衡散熱效能以符合您的需求。當筆記型電腦處於手持狀態時，智慧型冷卻功能會調整效能設定，使裝置表面的溫度較低，進而維持使用上的舒適度。當裝置放置在桌面上時，此功能會調整效能達到最佳化。",
                     "description13": "開啟後，此功能會動態調整散熱設定以符合您的需求。它會調整可使裝置維持冷卻和安靜，並同時達到手持狀態或閒置的設定。 當裝置停放在穩定表面時，它會將效能調整到最佳情況。關閉後，您可以手動設定散熱優先順序。",
                     "description14": "此功能可讓您視需要調整風扇速度、最大化系統效能或延長電池壽命。它有以下三種模式。您也可以使用快速鍵 (Fn+Q) 或 Lenovo Vantage 工具列切換模式。",
-                    "readMore": "較多內容。",
+                    "readMore": "較多內容",
                     "gotoWindows": {
                         "title": "跳至 Windows 設定",
                         "modalBodyText1": "用滑鼠按一下系統匣中的 Windows 電池圖示，即可操作 Windows 效能電源滑桿"
@@ -1139,7 +1139,7 @@
                             "title": "變更智慧型冷卻模式",
                             "close": "關閉",
                             "coolingModesList": {
-                                "list1": "按一下工具列中的 Windows 電池圖示",
+                                "list1": "按一下工具列中的 Windows 電池圖示。",
                                 "list2": "Windows 電源模式隨即顯示，滑動滑桿即可在最佳時間或最佳效能之間選擇。"
                             }
                         }
@@ -1151,7 +1151,7 @@
                             "battery&Quite": "電池與安靜"
                         }
                     },
-                    "description5": "智慧型冷卻會調整風扇速度、使效能達到最佳化，以及管理電池壽命。此功能有 3 種模式（安靜模式、平衡模式和效能模式），而且現在可以透過 Windows 效能電源滑桿進行操作",
+                    "description5": "智慧型冷卻會調整風扇速度、使效能達到最佳化，以及管理電池壽命。此功能有 3 種模式（安靜模式、平衡模式和效能模式），而且現在可以透過 Windows 效能電源滑桿進行操作。",
                     "nocqldesc": "您可以使用智慧型冷卻功能，調整系統效能與散熱溫度。在「效能」模式下調整，使系統效能達到最佳化。而且可在「冷卻及靜音」模式下調整，維持更低溫或更安靜的系統。",
                     "dytc6": {
                         "desc1": "智慧型冷卻會調整風扇速度、使效能達到最佳化，以及管理電池壽命。",
@@ -1460,15 +1460,15 @@
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "radioText": "VoIP",
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
+                                "checkboxText": "Automatically optimize audio for VOIP"
                             },
                             "entertainmentMode": {
-                                "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
                                 "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
                                 "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
+                                "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
                     },
@@ -1533,8 +1533,8 @@
                 "display": {
                     "title": "顯示",
                     "displayColorTemperature": {
-                        "title": "顯示器色溫",
-                        "description": "您可以調整顯示器的色溫，以過濾藍光並減輕眼睛疲勞。在日落到日出期間，將顯示器調整為暖色，以幫助您入睡。",
+                        "title": "護眼模式",
+                        "description": "為避免眼睛疲勞，當您長時間使用電腦時，可以調整顯示器的色溫，以過濾藍光。此外，暖色特別適合夜間睡眠。",
                         "link": {
                             "click": "按一下",
                             "here": "這裡",

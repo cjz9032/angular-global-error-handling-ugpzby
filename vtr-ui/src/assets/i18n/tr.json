@@ -1097,7 +1097,7 @@
                     "description3": "Akıllı Soğutma termal performansı ihtiyaçlarınıza göre ayarlamak üzere otomatik olarak dengeler.Akıllı Soğutma özelliği performans ayarlarını yaparak dizüstü bilgisayarınız elinizde olduğunda daha az ısınan bir yüzey sunar. Cihazınız bir masanın üstündeyken bu özellik performansı en iyi düzeye getirir.",
                     "description13": "Bu özellik açık olduğunda termal ayarları ihtiyaçlarınıza göre dinamik olarak belirler. Elde tutulurken veya boşta çalışırken cihazın soğuk veya sessiz olmasını sağlayacak şekilde ayarları düzenler. Cihaz sabit bir yüzeydeyken performansı en iyi duruma getirir. Bu seçenek kapalı olduğunda, termal önceliği manuel olarak ayarlayabilirsiniz.",
                     "description14": "Bu özellik, fan hızınızı ayarlamanıza, sistem performansını en üst düzeye çıkarmanıza veya gerekirse pil ömrünüzü uzatmanıza olanak sağlar. Aşağıdaki üç kipi vardır. Ayrıca kısayol tuşlarını (Fn+Q) kullanarak veya Lenovo Vantage Araç Çubuğu'ndan kipler arasında geçiş yapabilirsiniz.",
-                    "readMore": "Okumaya devam edin.",
+                    "readMore": "Okumaya devam edin",
                     "gotoWindows": {
                         "title": "Windows ayarlarına git",
                         "modalBodyText1": "Windows performans güç kaydırıcısına erişmek için Sistem tepsisinde Windows pil simgesine tıklayın"
@@ -1139,7 +1139,7 @@
                             "title": "Akıllı soğutma kiplerinin değiştirilmesi",
                             "close": "kapat",
                             "coolingModesList": {
-                                "list1": "Araç çubuğundaki Windows pil simgesine tıklayın",
+                                "list1": "Araç çubuğundaki Windows pil simgesine tıklayın.",
                                 "list2": "Windows Güç Kipi göründüğünde en iyi süre veya en iyi performans arasında seçim yapmak için kaydırıcıyı kullanın."
                             }
                         }
@@ -1151,7 +1151,7 @@
                             "battery&Quite": "PİL VE SESSİZ"
                         }
                     },
-                    "description5": "Akıllı Soğutma fan hızını ve maksimum performansı ayarlar, ayrıca pilinizin ömrünü yönetir. Bu özelliğin 3 kipi (Sessiz kip, Dengeli kip ve Performans kipi) vardır ve bu özelliğe artık Windows performans güç kaydırıcısından erişilebilmektedir",
+                    "description5": "Akıllı Soğutma fan hızını ve maksimum performansı ayarlar, ayrıca pilinizin ömrünü yönetir. Bu özelliğin 3 kipi (Sessiz kip, Dengeli kip ve Performans kipi) vardır ve bu özelliğe artık Windows performans güç kaydırıcısından erişilebilmektedir.",
                     "nocqldesc": "Akıllı Soğutma, sistem performansını ve termal sıcaklığı ayarlamanıza olanak tanır. “Performans” kipinde, sistem performansını iyileştirir. “Hızlı ve sessiz” kipinde, sistemin daha hızlı veya daha sessiz çalışmasına yardımcı olur.",
                     "dytc6": {
                         "desc1": "Akıllı Soğutma fan hızını ve maksimum performansı ayarlar, ayrıca pilinizin ömrünü yönetir.",
@@ -1460,15 +1460,15 @@
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "radioText": "VoIP",
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
+                                "checkboxText": "Automatically optimize audio for VOIP"
                             },
                             "entertainmentMode": {
-                                "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
                                 "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
                                 "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
+                                "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
                     },
@@ -1533,8 +1533,8 @@
                 "display": {
                     "title": "Ekran",
                     "displayColorTemperature": {
-                        "title": "Ekran rengi sıcaklığı",
-                        "description": "Mavi ışığı filtrelemek ve göz yorgunluğunu azaltmak için ekranınızın renk sıcaklığını ayarlayabilirsiniz. Uyumanıza yardımcı olmak için ekranları günbatımı ile güneşin doğuşuna kadar daha sıcak renklere ayarlar.",
+                        "title": "Göz Koruması Kipi",
+                        "description": "Göz yorgunluğunu önlemek için bilgisayarınızı uzun süre kullandığınızda ekranınızın renk sıcaklığını mavi ışığı filtreleyecek şekilde ayarlayabilirsiniz. Ayrıca, sıcak renkler özellikle geceleri uyumanız için iyidir.",
                         "link": {
                             "click": "Renk sıcaklığını değiştirmek için",
                             "here": "buraya",

@@ -219,12 +219,16 @@
 						&::after{
 							content: "";
 							position: absolute;
-							width: 60%;
+							width: 50%;
 							height: 1rem;
 							background: $grey_lighter;
-							left: 20%;
+							left: 25%;
 							bottom: 0rem;
 							z-index: 1;
+							@media #{$breakpoint_sm}{
+								width: 50%;
+								left: 25%;
+							}
 						}
 						&::before {
 							content: "";
@@ -342,9 +346,6 @@
 					.icon-box {
 						width: 20%;
 						position: relative;
-						@media #{$breakpoint_sm}{
-							width: auto;
-						}
 						&::after {
 							content: '';
 							position: absolute;
@@ -353,9 +354,6 @@
 							background: $light;
 							right: 0;
 							top: 0;
-							@media #{$breakpoint_sm}{
-								right: 0.3rem;
-							}
 						}
 						&:last-child {
 							&::after {
@@ -385,7 +383,6 @@
 							@media #{$breakpoint_sm} {
 								font-size: 1rem;
 								line-height: 1rem;
-								max-width: 100%;
 							}
 						}
 					}

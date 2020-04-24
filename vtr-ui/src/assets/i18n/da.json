@@ -1097,7 +1097,7 @@
                     "description3": "Intelligent køling afbalancerer automatisk den termiske ydeevne, så den tilpasses til dine behov.Funktionen Intelligent køling justerer indstillingerne for ydeevne, så du får en køligere og mere behagelig overflade, når den bærbare computer holdes.Når enheden er på en skrivebordsoverflade, optimerer denne funktion ydeevnen.",
                     "description13": "Når denne funktion er slået til, justerer den dynamisk termoindstillingerne efter dine behov. Den justerer indstillingerne, så enheden er kølig og stille, mens den holdes eller er inaktiv. Når enheden står på en stabil flade, optimerer den ydeevnen. Når den er slået fra, kan du angive den termiske prioritet manuelt.",
                     "description14": "Med denne funktion kan du justere blæserhastigheden, maksimere systemets ydeevne eller forlænge batteriets levetid, hvis det er nødvendigt. Den har de tre tilstande nedenfor. Du kan også skifte tilstand ved hjælp af hurtigtaster (FN+Q) eller fra Lenovo Vantage-værktøjslinjen.",
-                    "readMore": "Læs mere.",
+                    "readMore": "Læs mere",
                     "gotoWindows": {
                         "title": "Gå til Windows-indstillinger",
                         "modalBodyText1": "Klik på Windows-batteriikonet på proceslinjen for at få adgang til skyderen til ydeevnebaseret strømstyring i Windows"
@@ -1139,7 +1139,7 @@
                             "title": "Skift intelligente tilstande for køling",
                             "close": "luk",
                             "coolingModesList": {
-                                "list1": "Klik på Windows-batteriikonet på værktøjslinjen",
+                                "list1": "Klik på Windows-batteriikonet på værktøjslinjen.",
                                 "list2": "Windows Strømstyringsplan vises. Skub skyderen for at vælge mellem optimal tid eller optimal ydeevne."
                             }
                         }
@@ -1151,7 +1151,7 @@
                             "battery&Quite": "BATTERI OG STILLE"
                         }
                     },
-                    "description5": "Intelligent køling justerer blæserens hastighed, den maksimale ydeevne og administrerer batterilevetiden. Denne funktion har tre tilstande (stille tilstand, balanceret tilstand og ydeevnetilstand), og den er nu tilgængelig via skyderen til ydeevnebaseret strømstyring i Windows",
+                    "description5": "Intelligent køling justerer blæserens hastighed, den maksimale ydeevne og administrerer batterilevetiden. Denne funktion har tre tilstande (stille tilstand, balanceret tilstand og ydeevnetilstand), og den er nu tilgængelig via skyderen til ydeevnebaseret strømstyring i Windows.",
                     "nocqldesc": "Intelligent køling gør det muligt for dig at justere systemets ydeevne og termiske temperaturer. I tilstanden \"Ydeevne\" optimeres systemets ydeevne. I tilstanden \"Kølig og stille\" holdes systemet køligere eller mere stille.",
                     "dytc6": {
                         "desc1": "Intelligent køling justerer blæserens hastighed, den maksimale ydeevne og administrerer batterilevetiden.",
@@ -1460,15 +1460,15 @@
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "radioText": "VoIP",
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
+                                "checkboxText": "Automatically optimize audio for VOIP"
                             },
                             "entertainmentMode": {
-                                "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
                                 "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
                                 "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
+                                "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
                     },
@@ -1533,8 +1533,8 @@
                 "display": {
                     "title": "Skærm",
                     "displayColorTemperature": {
-                        "title": "Skærmens farvetemperatur",
-                        "description": "Du kan justere skærmens farvetemperatur, så blåt lys filtreres fra, og dine øjne belastes mindre. Justerer skærme til varmere farver fra solnedgang til solopgang, så du lettere kan sove.",
+                        "title": "Øjenbeskyttelsestilstand",
+                        "description": "For at undgå belastning af øjnene kan du justere farvetemperaturen på skærmen, så det blå lys filtreres fra, når du bruger computeren i lang tid. Desuden er varme farver gode for din søvn, især om natten.",
                         "link": {
                             "click": "Klik",
                             "here": "her",

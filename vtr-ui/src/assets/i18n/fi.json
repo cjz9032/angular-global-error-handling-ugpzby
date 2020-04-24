@@ -1097,7 +1097,7 @@
                     "description3": "Älykäs jäähdytys tasapainottaa automaattisesti lämpösuorituskyvyn käyttäjän tarpeisiin sopivaksi.Älykäs jäähdytys viilentää kannettavan tietokoneen pintaa muuttamalla suorituskyvyn asetuksia, jotta käyttäjän on miellyttävä pidellä laitetta. Kun laite on asetettu työpöydälle, toiminto optimoi suorituskyvyn.",
                     "description13": "Kun ominaisuus on käytössä, se muuttaa lämpöasetuksia dynaamisesti käyttäjän tarpeisiin sopiviksi. Ominaisuus muuttaa asetuksia siten, että laite pysyy viileänä ja on hiljainen, kun käyttäjä pitelee laitetta tai laite on joutoajalla. Kun laite on vakaalla alustalla, ominaisuus optimoi laitteen suorituskyvyn. Kun ominaisuus ei ole käytössä, käyttäjä voi määrittää lämpöprioriteetin itse.",
                     "description14": "Tämän ominaisuuden avulla voit tarvittaessa muuttaa tuulettimen nopeutta, maksimoida järjestelmän suorituskyvyn ja pidentää akun käyttöikää. Siinä on kolme alla olevaa tilaa. Voit myös vaihtaa tilaa käyttämällä pikanäppäimiä (Fn+Q) tai Lenovo Vantage -työkalurivin avulla.",
-                    "readMore": "Lue lisää.",
+                    "readMore": "Lue lisää",
                     "gotoWindows": {
                         "title": "Siirry Windowsin asetuksiin",
                         "modalBodyText1": "Liukusäätimen saa käyttöön napsauttamalla Windowsin järjestelmäalueella näkyvää akun kuvaketta"
@@ -1139,7 +1139,7 @@
                             "title": "Älykkäiden jäähdytystilojen vaihto",
                             "close": "sulje",
                             "coolingModesList": {
-                                "list1": "Napsauta Windowsin työkalurivillä näkyvää akun kuvaketta",
+                                "list1": "Napsauta Windowsin työkalurivillä näkyvää akun kuvaketta.",
                                 "list2": "Windowsin virtatila tulee näkyviin, ja voit valita optimaalisen ajankohdan tai optimaalisen suorituskyvyn liukusäätimen avulla."
                             }
                         }
@@ -1151,7 +1151,7 @@
                             "battery&Quite": "AKKU JA HILJAINEN"
                         }
                     },
-                    "description5": "Älykäs jäähdytys säätää tuulettimen kierrosnopeutta, maksimaalista suorituskykyä ja hallitsee akun kestoaikaa. Tämä ominaisuus sisältää kolme tilaa (hiljainen tila, tasapainotettu tila ja suorituskykytila), ja se on nyt käytettävissä Windowsissa näkyvällä suorituskyvyn ohjauksen liukusäätimellä",
+                    "description5": "Älykäs jäähdytys säätää tuulettimen kierrosnopeutta, maksimaalista suorituskykyä ja hallitsee akun kestoaikaa. Tämä ominaisuus sisältää kolme tilaa (hiljainen tila, tasapainotettu tila ja suorituskykytila), ja se on nyt käytettävissä Windowsissa näkyvällä suorituskyvyn ohjauksen liukusäätimellä.",
                     "nocqldesc": "Älykäs jäähdytys -toiminnon avulla voit säätää järjestelmän suorituskykyä ja lämpötilaa. \"Suorituskykytilassa\" se optimoi järjestelmän suorituskykyä. Toisaalta se auttaa pitämään järjestelmän viileämpänä tai hiljaisempana \"Viileä ja hiljainen\" -tilassa.",
                     "dytc6": {
                         "desc1": "Älykäs jäähdytys säätää tuulettimen kierrosnopeutta, maksimaalista suorituskykyä ja hallitsee akun kestoaikaa.",
@@ -1460,15 +1460,15 @@
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "radioText": "VoIP",
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
+                                "checkboxText": "Automatically optimize audio for VOIP"
                             },
                             "entertainmentMode": {
-                                "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
                                 "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
                                 "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
+                                "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
                     },
@@ -1533,8 +1533,8 @@
                 "display": {
                     "title": "Näyttö",
                     "displayColorTemperature": {
-                        "title": "Näytön värilämpötila",
-                        "description": "Voit säätää näyttösi värilämpötilaa suodattamaan sinistä valoa pois, jolloin silmien rasitus vähenee. Säätää näytön värit lämpimämmiksi auringonlaskusta auringonnousuun helpottamaan nukkumista.",
+                        "title": "Silmien hoitotila",
+                        "description": "Voit välttää silmien rasitusta säätämällä näyttösi värilämpötilaa suodattamaan pois sinistä valoa, kun käytät tietokonettasi pitkään. Lisäksi lämpimät värit ovat hyväksi unen saannille, varsinkin öisin.",
                         "link": {
                             "click": "Napsauta",
                             "here": "tätä",

@@ -67,6 +67,14 @@ export class AntivirusCommon {
 			this.mcafee = cacheMcafee;
 		}
 		if (antivirus) {
+			antivirus.on(EventTypes.avRefreshedEvent, (antivirus) => {
+				if (antivirus) {
+					this.antivirus = antivirus;
+					if (this.antivirus.mcafee) {
+						this.mcafee = this.antivirus.mcafee;
+					}
+				}	
+			});
 			this.antivirus = antivirus;
 			if (this.antivirus.mcafee) {
 				this.mcafee = this.antivirus.mcafee;
