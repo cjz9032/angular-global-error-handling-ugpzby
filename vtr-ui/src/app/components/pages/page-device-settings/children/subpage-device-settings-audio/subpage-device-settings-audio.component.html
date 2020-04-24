@@ -1,20 +1,27 @@
 <div class="subpage-device-settings-audio vtr-subpage">
 	<div class="row">
 		<div class="col">
-			<vtr-ui-header-subpage [items]="headerMenuItems" [title]="title | translate"
+			<vtr-ui-header-subpage [items]="headerMenuItems"
+				[title]="title | translate"
 				[menuTitle]="'device.deviceSettings.audio.title' | translate"
-				[caption]="'device.deviceSettings.audio.description' | translate" [textId]="'ds-audio'">
+				[caption]="'device.deviceSettings.audio.description' | translate"
+				[textId]="'ds-audio'">
 			</vtr-ui-header-subpage>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col">
-			<div class="row pt-5 smart-settings-card" *ngIf="dolbyModeResponse.available" id="audio">
+			<div class="row pt-5 smart-settings-card"
+				*ngIf="dolbyModeResponse.available"
+				id="audio">
 				<div class="col-12 mx-auto">
-					<vtr-container-collapsible componentName="Audio SmartSettings" [tabIndex]="0"
+					<vtr-container-collapsible componentName="Audio SmartSettings"
+						[tabIndex]="0"
 						[vtrAppSearchScroller]="['search-audio-smart']"
 						[cardTitle]="'device.deviceSettings.audio.audioSmartsettings.title' | translate"
-						[isCollapsed]="false" [allowCollapse]="false" [theme]="'white'"
+						[isCollapsed]="false"
+						[allowCollapse]="false"
+						[theme]="'white'"
 						[collapseLinkId]="'audio-smart-settings'">
 						<ul class="list-group list-group-flush">
 							<li>
@@ -23,39 +30,60 @@
 									componentName="Automatic Dolby Audio Settings"
 									[caption]="'device.deviceSettings.audio.audioSmartsettings.dolby.description' | translate"
 									[isSwitchVisible]="dolbyModeResponse.available"
-									[leftIcon]="['icomoon', 'icomoon-LE-Dolby2x']" [rightIcon]="" [readMoreText]="''"
-									[showChildContent]="true" [theme]="'white'" [tooltipText]=""
+									[leftIcon]="['icomoon', 'icomoon-LE-Dolby2x']"
+									[rightIcon]=""
+									[readMoreText]="''"
+									[showChildContent]="true"
+									[theme]="'white'"
+									[tooltipText]=""
 									(toggleOnOff)="onDolbyAudioToggleOnOff($event)"
 									[isSwitchChecked]="dolbyModeResponse.isAudioProfileEnabled"
-									[showLoaderState]="autoDolbyFeatureLoader" [switchId]="'audio-automatic-dolby'">
+									[showLoaderState]="autoDolbyFeatureLoader"
+									[switchId]="'audio-automatic-dolby'">
 									<div class="row no-gutters tab-focus-white pl-5"
-										*ngIf="dolbyModeResponse.isAudioProfileEnabled" role="radiogroup" tabindex="0"
+										*ngIf="dolbyModeResponse.isAudioProfileEnabled"
+										role="radiogroup"
+										tabindex="0"
 										aria-label="dolby audio more list, select using arrow keys">
 										<vtr-ui-circle-radio-with-checkbox
-											*ngFor="let dolbyMode of dolbyModeResponse.supporedModes" [theme]="'white'"
+											*ngFor="let dolbyMode of dolbyModeResponse.supporedModes"
+											[theme]="'white'"
 											[radioId]="'radioDolbyMode' + dolbyMode | removeSpace"
 											[group]="radioGroupAutoDolbySettings"
-											[label]="dolbyMode | dolbyModesTranslation" [value]='dolbyMode'
+											[label]="dolbyMode | dolbyModesTranslation"
+											[value]='dolbyMode'
 											[disabled]='dolbyModeDisabled'
 											[checked]="dolbyMode == dolbyModeResponse.currentMode"
-											(optionChange)="onDolbySettingRadioChange($event)" [processIcon]="true"
+											(optionChange)="onDolbySettingRadioChange($event)"
+											[processIcon]="true"
 											[textId]="'myDevice-settings-audio-automatic-dolby'">
 										</vtr-ui-circle-radio-with-checkbox>
 									</div>
-									<div class="audioDolbySub pl-5" *ngIf="dolbyModeResponse.isAudioProfileEnabled">
-										<div class="checkbox voipCheckbox" *ngIf="voipStatus.available">
-											<vtr-ui-checkbox [componentId]="'voipCheckbox'" [value]="voipStatus.status"
-												[checked]="voipStatus.status" [disabled]='automaticAudioDisabled'
+									<div class="audioDolbySub pl-5"
+										*ngIf="dolbyModeResponse.isAudioProfileEnabled">
+										<div class="checkbox voipCheckbox"
+											*ngIf="voipStatus.available">
+											<vtr-ui-checkbox [componentId]="'voipCheckbox'"
+												[value]="voipStatus.status"
+												[checked]="voipStatus.status"
+												[disabled]='automaticAudioDisabled'
 												[label]="'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.voIPMode.checkboxText' | translate"
 												(toggle)='onVoipCheckboxChange($event)'>
 											</vtr-ui-checkbox>
-											<fa-icon id="voipRightIcon" class="right-icon" triggers="manual"
-												placement="auto" autoClose="false" [ngbTooltip]="tooltipRef"
-												#rightToolTip1="ngbTooltip" autoClose="true"
-												[icon]="['far', 'question-circle']" container="vtr-root"
+											<fa-icon id="voipRightIcon"
+												class="right-icon"
+												triggers="manual"
+												placement="auto"
+												autoClose="false"
+												[ngbTooltip]="tooltipRef"
+												#rightToolTip1="ngbTooltip"
+												autoClose="true"
+												[icon]="['far', 'question-circle']"
+												container="vtr-root"
 												tooltipClass="vtr-tooltip"
 												(click)="onRightIconClick(rightToolTip1, $event)"
-												(keydown.enter)="onRightIconClick(rightToolTip1, $event)" tabindex="0"
+												(keydown.enter)="onRightIconClick(rightToolTip1, $event)"
+												tabindex="0"
 												attr.aria-label="{{'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.voIPMode.tooltip' | translate}}">
 											</fa-icon>
 											<ng-template #tooltipRef>
@@ -74,13 +102,20 @@
 												[label]="'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.entertainmentMode.checkboxText' | translate"
 												(toggle)='onEntertainmentCheckboxChange($event)'>
 											</vtr-ui-checkbox>
-											<fa-icon id="entertainmentRightIcon" class="right-icon" triggers="manual"
-												placement="auto" autoClose="false" [ngbTooltip]="tooltipRef"
-												#rightToolTip1="ngbTooltip" autoClose="true"
-												[icon]="['far', 'question-circle']" container="vtr-root"
+											<fa-icon id="entertainmentRightIcon"
+												class="right-icon"
+												triggers="manual"
+												placement="auto"
+												autoClose="false"
+												[ngbTooltip]="tooltipRef"
+												#rightToolTip1="ngbTooltip"
+												autoClose="true"
+												[icon]="['far', 'question-circle']"
+												container="vtr-root"
 												tooltipClass="vtr-tooltip"
 												(click)="onRightIconClick(rightToolTip1, $event)"
-												(keydown.enter)="onRightIconClick(rightToolTip1, $event)" tabindex="0"
+												(keydown.enter)="onRightIconClick(rightToolTip1, $event)"
+												tabindex="0"
 												attr.aria-label="{{'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.entertainmentMode.tooltip' | translate}}{{'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.entertainmentMode.description1' | translate}}{{'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.entertainmentMode.description2' | translate}}{{'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.entertainmentMode.description3' | translate}}">
 											</fa-icon>
 											<ng-template #tooltipRef>
@@ -177,7 +212,7 @@
 								</vtr-ui-row-switch>
 							</li>
 							<li class="common-li-padding"
-							*ngIf='eCourseStatus.available'>
+								*ngIf='eCourseStatus.available'>
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.audio.audioSmartsettings.eCourse.title' | translate"
 									componentName="audio-eCourse"
@@ -186,12 +221,12 @@
 									[leftIcon]="['icomoon', 'icomoon-eCourse']"
 									[rightIcon]=""
 									[readMoreText]="''"
-									 [showChildContent]="false"
-									 [theme]="'white'"
-									  [tooltipText]=""
+									[showChildContent]="false"
+									[theme]="'white'"
+									[tooltipText]=""
 									(toggleOnOff)="onToggleOfeCourseAutoOptimization($event)"
 									[isSwitchChecked]="eCourseStatus.status"
-									 [showLoaderState]="eCourseLoader"
+									[showLoaderState]="eCourseLoader"
 									[switchId]="'audio-eCourse'">
 								</vtr-ui-row-switch>
 							</li>
@@ -203,23 +238,23 @@
 			id="microphone">
 				<div class="col-12 mx-auto container-card" *ngIf="microphoneProperties.available">
 					<vtr-container-collapsible componentName="Microphone"
-					[tabIndex]="0"
+						[tabIndex]="0"
 						[vtrAppSearchScroller]="['search-microphone']"
 						[cardTitle]="'device.deviceSettings.audio.microphone.title' | translate"
 						[isCollapsed]="false"
 						[allowCollapse]="true"
 						[theme]="'white'"
-						 [collapseLinkId]="'audio-microphone'">
+						[collapseLinkId]="'audio-microphone'">
 						<vtr-widget-permission-note
 							[noteTitle]="'device.deviceSettings.audio.microphone.note.title' | translate"
 							[description]="'device.deviceSettings.audio.microphone.note.description' | translate"
 							[path]="'ms-settings:privacy-microphone'"
-							 [linkId]="'audio-microphone-permission'"
+							[linkId]="'audio-microphone-permission'"
 							*ngIf="!microphoneProperties.permission">
 
 						</vtr-widget-permission-note>
 						<ul class="list-group list-group-flush"
-						 *ngIf="microphoneProperties.permission">
+							*ngIf="microphoneProperties.permission">
 							<li class="microphone-on-off">
 								<vtr-ui-row-switch [title]="'device.deviceSettings.audio.microphone.title' | translate"
 									componentName="Microphone"
@@ -229,11 +264,11 @@
 									[readMoreText]="''"
 									[showChildContent]="true"
 									[theme]="'white'"
-									 [disabled]="!microphoneProperties.permission"
+									[disabled]="!microphoneProperties.permission"
 									(toggleOnOff)="onToggleOfMicrophone($event)"
 									[isSwitchChecked]="microphoneProperties.muteDisabled"
 									[showLoaderState]="microphoneLoader"
-									 [switchId]="'audio-microphone'">
+									[switchId]="'audio-microphone'">
 								</vtr-ui-row-switch>
 							</li>
 							<li class="common-li-padding">
@@ -245,7 +280,7 @@
 									[rightIcon]=""
 									[readMoreText]="''"
 									[showChildContent]="true"
-									 [disabled]="!microphoneProperties.permission"
+									[disabled]="!microphoneProperties.permission"
 									[theme]="'white'"
 									[switchId]="'audio-microphone-volume'">
 									<div class="row">
@@ -255,10 +290,9 @@
 												[minLegend]="'device.deviceSettings.audio.microphone.volume.options.silent' | translate"
 												[maxLegend]="'device.deviceSettings.audio.microphone.volume.options.loud' | translate"
 												[min]=0
-												 [max]=100
-												  [step]=1
-
-												  [value]="microphoneProperties.volume"
+												[max]=100
+												[step]=1
+												[value]="microphoneProperties.volume"
 												(valueChanged)="onMicrophoneVolumeChange($event)"
 												[isDisabled]="!microphoneProperties.permission"
 												[ariaLabel]="'microphone volume slider'"
@@ -276,11 +310,11 @@
 									<vtr-ui-row-switch
 										[title]="'device.deviceSettings.audio.microphone.suppress.title' | translate"
 										componentName="Supress Keyboard noise"
-										 [caption]=""
-										 [isSwitchVisible]=true
+										[caption]=""
+										[isSwitchVisible]=true
 										[leftIcon]="['fal', 'keyboard']"
-										 [rightIcon]="helpIcon"
-										 [readMoreText]="''"
+										[rightIcon]="helpIcon"
+										[readMoreText]="''"
 										[showChildContent]="true"
 										[theme]="'white'"
 										[tooltipText]="'device.deviceSettings.audio.microphone.suppress.tooltip' | translate"
@@ -288,20 +322,20 @@
 										[disabled]="microphoneProperties.disableEffect || microOptimizeModeResponse.current === 'VoiceRecognition'"
 										[isSwitchChecked]="microphoneProperties.keyboardNoiseSuppression"
 										[showLoaderState]="microphoneLoader"
-										 [switchId]="'audio-microphone-suppress'">
+										[switchId]="'audio-microphone-suppress'">
 									</vtr-ui-row-switch>
 								</li>
 								<li class="common-li-padding"
-								 *ngIf="microphoneProperties.AEC != undefined">
+									*ngIf="microphoneProperties.AEC != undefined">
 									<vtr-ui-row-switch
 										[title]="'device.deviceSettings.audio.microphone.acoustic.title' | translate"
 										componentName="Acoustic Echo Cancellation"
 										[caption]=""
-										 [isSwitchVisible]=true
+										[isSwitchVisible]=true
 										[leftIcon]="['icomoon', 'icomoon-LE-Acoustic-echo-cancellation2x']"
 										[rightIcon]="helpIcon"
-										 [readMoreText]="''"
-										 [showChildContent]="true"
+										[readMoreText]="''"
+										[showChildContent]="true"
 										[theme]="'white'"
 										[tooltipText]="'device.deviceSettings.audio.microphone.acoustic.tooltip' | translate"
 										(toggleOnOff)="setMicrophoneAEC($event)"
@@ -321,12 +355,12 @@
 										[leftIcon]="['fal', 'microphone']"
 										[readMoreText]="''"
 										[showChildContent]="true"
-										 [disabled]="microphoneProperties.disableEffect"
+										[disabled]="microphoneProperties.disableEffect"
 										[theme]="'white'"
 										[isLastChild]="true"
-										 [switchId]="'audio-microphone-optimize'">
+										[switchId]="'audio-microphone-optimize'">
 										<div class="row no-gutters tab-focus-white pl-4 ml-4"
-										 role="radiogroup"
+											role="radiogroup"
 											tabindex="0"
 											aria-label="microphone optimizemore list, select using arrow keys">
 											<vtr-ui-circle-radio-with-checkbox
