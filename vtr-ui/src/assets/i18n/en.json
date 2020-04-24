@@ -1130,8 +1130,9 @@
 						},
 						"selectedModeText": {
 							"quiteCool": "This mode enables the best experience with fan speed and system performance balanced. For example, when in gaming, it optimizes the performance. While in the office, it reduces the noise.",
-							"batterySaving": "This mode enables the maximum battery life by automatically adjusting the brightness, changing the power settings, disabling features on advanced image processing, etc.",
-							"performance": "This mode enables the maximum system performance. In this mode, the fast fan speed might cause big noise."
+							"batterySaving14": "This mode enables the maximum battery life by automatically adjusting the brightness, changing the power settings, disabling features on advanced image processing, etc.",
+							"performance": "This mode enables the maximum system performance. In this mode, the fast fan speed might cause big noise.",
+							"batterySaving15": "This mode enables the maximum battery life by automatically adjusting the brightness, charging the power settings, disabling Dolby audio, and etc. With all the above, it can extend up to 20% of the battery life."
 						},
 						"readMore": {
 							"mode1": "Quiet mode",
@@ -1149,6 +1150,16 @@
 								"list1": "Click on the windows battery-icon in the toolbar.",
 								"list2": "The windows battery gauge will appear, slide the slider to choose between optimal time or optimal performance."
 							}
+						},
+						"autoTransition": {
+							"description": "Enable \"Extreme Performance\" in this mode. When enabled, the temperature on your computer surface and the fan noise might automatically increase.",
+							"more": "MORE",
+							"less": "LESS",
+							"moreContent": {
+								"desc1": "a. In office, Windows update, online movie, or system light loading scenarios, the system can be quiet. While in normal gaming scenarios, it has better performance.",
+								"desc2": "b. When playing heavy gaming, the \"Extreme performance\" mode is automatically enabled. It might cause bigger noise or higher temperature on your computer surface.",
+								"desc3": "c. When the battery capacity is lower than 30%, the system automatically switches to the \"Battery saving\" mode."
+							}			
 						}
 					},
 					"dytc6": {

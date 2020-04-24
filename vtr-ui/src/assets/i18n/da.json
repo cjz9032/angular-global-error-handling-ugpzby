@@ -1132,8 +1132,9 @@
                         },
                         "selectedModeText": {
                             "quiteCool": "I denne tilstand kan du få den bedste oplevelse med balance mellem blæserhastighed og systemets ydeevne. Når du spiller, optimerer den f.eks. ydeevnen. Når du er på kontoret, reduceres støjen.",
-                            "batterySaving": "I denne tilstand får du automatisk den maksimale batterilevetid, idet lysstyrken justeres, strømindstillingerne ændres, funktioner til avanceret billedbehandling deaktiveres osv.",
-                            "performance": "I denne tilstand kan du få den maksimale systemydeevne. I denne tilstand kan den hurtige blæserhastighed medføre støj."
+                            "batterySaving14": "I denne tilstand får du automatisk den maksimale batterilevetid, idet lysstyrken justeres, strømindstillingerne ændres, funktioner til avanceret billedbehandling deaktiveres osv.",
+                            "performance": "I denne tilstand kan du få den maksimale systemydeevne. I denne tilstand kan den hurtige blæserhastighed medføre støj.",
+                            "batterySaving15": "Denne tilstand aktiverer den maksimale batterilevetid ved automatisk at justere lysstyrken, ændre strømindstillingerne, deaktivere Dolby-lyd osv. Med alle ovenstående kan den forlænge batteriets levetid med op til 20 %."
                         },
                         "intelligentCoolingModesModal": {
                             "title": "Skift intelligente tilstande for køling",
@@ -1142,7 +1143,17 @@
                                 "list1": "Klik på Windows-batteriikonet på værktøjslinjen.",
                                 "list2": "Windows Strømstyringsplan vises. Skub skyderen for at vælge mellem optimal tid eller optimal ydeevne."
                             }
-                        }
+                        },
+                        "autoTransition": {
+							"description": "Aktiver \"Ekstrem ydeevne\" i denne tilstand. Når den er aktiveret, kan temperaturen på computerens overflade og støjen i blæseren øges automatisk.",
+							"more": "FLERE",
+							"less": "FÆRRE",
+							"moreContent": {
+								"desc1": "a. I forbindelse med brug af Office, Windows Update og onlinefilm eller ved lav systembelastning kan systemet være stille. Men i normale gaming-situationer har det bedre ydeevne.",
+								"desc2": "b. Når du spiller ressourcekrævende spil, aktiveres tilstanden \"Ekstrem ydeevne\" automatisk. Den kan give mere støj eller højere temperaturer på computerens overflade.",
+								"desc3": "c. Når batteriets kapacitet er lavere end 30 %, skifter systemet automatisk til tilstanden \"Strømbesparelse\"."
+							}			
+						}
                     },
                     "nonintelligentCooling": {
                         "options": {
