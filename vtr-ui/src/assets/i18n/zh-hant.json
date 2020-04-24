@@ -3110,7 +3110,8 @@
         },
         "warningMessage": "請記住，如果系統進入睡眠或休眠狀態，將會取消測試",
         "refreshMessage": "重新整理可能需要一些時間，因為此時需要再度載入所有元件",
-        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
+        "processFinishedCannotBeCanceled": "由於執行中的程序已完成，因此不再需要取消。",
+        "cancelMayTakeSomeTime": "請稍候，視您的系統而定，取消可能需要一些時間。"
     },
     "smartPerformance": {
         "title": "Health & Support",

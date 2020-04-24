@@ -3110,7 +3110,8 @@
         },
         "warningMessage": "Houd er rekening mee dat de testen worden geannuleerd als het systeem in de slaap- of sluimerstand staat",
         "refreshMessage": "Het vernieuwen kan even duren omdat alle onderdelen opnieuw moeten worden geladen",
-        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
+        "processFinishedCannotBeCanceled": "Het actieve proces is voltooid en hoeft niet meer te worden geannuleerd.",
+        "cancelMayTakeSomeTime": "Een ogenblik geduld, het annuleren kan even duren, afhankelijk van uw systeem."
     },
     "smartPerformance": {
         "title": "Health & Support",

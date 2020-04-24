@@ -3110,7 +3110,8 @@
         },
         "warningMessage": "Husk, at testene bliver annulleret, hvis systemet slumrer eller går i dvaletilstand",
         "refreshMessage": "Opdateringen kan tage noget tid, da den skal indlæse alle komponenterne igen",
-        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
+        "processFinishedCannotBeCanceled": "Den kørende proces behøver ikke længere at blive annulleret, da den er afsluttet.",
+        "cancelMayTakeSomeTime": "Vent venligst. Det kan tage noget tid at annullere afhængigt af dit system."
     },
     "smartPerformance": {
         "title": "Health & Support",

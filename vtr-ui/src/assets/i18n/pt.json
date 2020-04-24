@@ -3110,7 +3110,8 @@
         },
         "warningMessage": "Tenha em atenção que os testes serão cancelados se o sistema entrar em modo de suspensão ou hibernação",
         "refreshMessage": "A atualização pode demorar algum tempo por precisar de voltar a carregar todos os componentes",
-        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
+        "processFinishedCannotBeCanceled": "O processo em execução já não precisa de ser cancelado, uma vez que foi concluído.",
+        "cancelMayTakeSomeTime": "Aguarde, poderá demorar algum tempo a cancelar consoante o sistema."
     },
     "smartPerformance": {
         "title": "Health & Support",
