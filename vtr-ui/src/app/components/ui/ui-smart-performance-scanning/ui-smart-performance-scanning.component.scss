@@ -180,17 +180,39 @@
 							position: absolute;
 							right: -64%;
 							top: 2.2rem;
+							@media #{$breakpoint_xl2}{
+								right: 1rem;
+								transform: scale(0.25);
+								transform-origin: top right;
+								left: auto;
+								margin-top: 0rem;
+							}
 							@media #{$breakpoint_xl}{
-								right: -80%;
+								right: 1rem;
+								transform: scale(0.25);
+								transform-origin: top right;
+								left: auto;
+								margin-top: 0rem;
+							}
+							@media #{$breakpoint_lg}{
+								right: 1rem;
+								transform: scale(0.25);
+								transform-origin: top right;
+								left: auto;
+								margin-top: 0rem;
 							}
 							@media #{$breakpoint_md}{
-								right: -72%;
+								right: 1rem;
+								transform: scale(0.25);
+								transform-origin: top right;
+								left: auto;
+								margin-top: -0.5rem;
 							}
 							@media #{$breakpoint_sm}{
-								right: 0;
+								right: 1rem;
 								transform: scale(0.18);
-								transform-origin: 0% 0%;
-								left: 70%;
+								transform-origin: top right;
+								left: auto;
 								margin-top: -1.2rem;
 							}
 							&::ng-deep {
@@ -287,11 +309,13 @@
             font-size: 2.6rem;
             margin-right: 0.8rem;
 			color: $main_shade;
+			@media #{$breakpoint_xl} {
+				font-size: $fontsize_xl;
+				margin-right: 0.5rem;
+			}
 			@media #{$breakpoint_sm}{
-				height: 2.1rem;
-				width: 2.1rem;
-				font-size: 2.1rem;
-				margin-right: 0.3rem;
+				font-size: $fontsize_md;
+				margin-right: 0.2rem;
 			}
         }
         p {
@@ -410,26 +434,22 @@
 	}
 	.labels {
 		.badge {
-			font-size: 1rem;
+			font-size: 1.2rem;
 			margin-bottom: 0.6rem;
 		}
 		.badge-primary{
 			position: relative;
-			height: 1.8rem;
-			font-size: 1rem;
-			font-weight: $weight_medium;
-			border-top-right-radius: 0;
-			border-bottom-right-radius: 0;
+			height: 2rem;
 			&::after {
 				content: "";
 				position: absolute;
-				top:0;
-				right:-9px;
+				top:1px;
+				right:-7px;
 				width: 0px;
 				height: 0px;
-				border-top: 9px solid transparent;
-				border-bottom: 9px solid transparent;
-				border-left: 9px solid $main;
+				border-top: 7px solid transparent;
+				border-bottom: 7px solid transparent;
+				border-left: 7px solid $main;
 			}
 		}
 		.badge-light {
