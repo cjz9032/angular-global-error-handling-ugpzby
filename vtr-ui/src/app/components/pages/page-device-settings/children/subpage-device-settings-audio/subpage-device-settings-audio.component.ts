@@ -386,11 +386,13 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			if (this.eCourseStatus.status && (this.eCourseToggleButtonStatus !== this.eCourseStatus.status) && this.eCourseToggleButtonStatus !== undefined) {
 				this.dolbyModeResponse.isAudioProfileEnabled = true;
 				this.eCourseToggleButtonStatus = this.eCourseStatus.status;
+				this.dolbyToggleButtonStatus = true;
 				this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyModeResponse);
 			}
 			if (!this.dolbyModeResponse.isAudioProfileEnabled && (this.dolbyToggleButtonStatus !== this.dolbyModeResponse.isAudioProfileEnabled) && this.dolbyToggleButtonStatus !== undefined) {
 				this.eCourseStatus.status = false;
 				this.dolbyModeResponse.eCourseStatus === 'False'
+				this.eCourseToggleButtonStatus = false;
 				this.dolbyToggleButtonStatus = this.dolbyModeResponse.isAudioProfileEnabled;
 				this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyModeResponse);
 			}
