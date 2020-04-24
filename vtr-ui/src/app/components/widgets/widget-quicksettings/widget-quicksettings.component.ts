@@ -89,13 +89,6 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 
 			this.microphoneDevice = this.Windows.Devices.Enumeration.DeviceAccessInformation
 				.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.audioCapture);
-			
-			// this.Windows.Media.Devices.MediaDevice.addEventListener('defaultaudiocapturedevicechanged',(args: any) =>{
-				// const id = args.id;
-				// const role = args.role;	//0 默认设备  1 默认通信设备
-				// this.logger.info(args);
-				// this.updateMicrophoneStatus();
-			// });
 		}
 	}
 
