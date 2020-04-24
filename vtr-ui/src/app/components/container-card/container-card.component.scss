@@ -247,12 +247,12 @@
 					padding: 2.4rem;
 					height: 100%;
 					@media #{$black-on-white} {
-						
+
 						border-bottom: 1px solid $dark !important;
 						border-radius: 1rem;
 					}
 					@media #{$white-on-black} {
-						
+
 						border-bottom: 1px solid $light !important;
 						border-radius: 1rem;
 					}
@@ -358,7 +358,7 @@
 						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
 						cursor: pointer;
 						font-size: $fontsize_xl2;
-						height: calc(#{$fontsize_xl2} * 1.4)
+						// height: calc(#{$fontsize_xl2} * 1.4)
 					}
 				}
 			}
