@@ -93,8 +93,10 @@ export class AntiVirusLandingViewModel {
 	private setLandingPageUI(antivirusCommonData: AntivirusCommonData) {
 		this.currentPage = antivirusCommonData.currentPage;
 		if (antivirusCommonData.firewallLink.includes('ms-settings')) {
+			this.fwStatus.buttonLink = '';
 			this.fwStatus.buttonHref = antivirusCommonData.firewallLink;
 		} else {
+			this.fwStatus.buttonHref = '';
 			this.fwStatus.buttonLink = antivirusCommonData.firewallLink;
 		}
 		this.setAntivirusStatus(antivirusCommonData.antivirus, antivirusCommonData.firewall);

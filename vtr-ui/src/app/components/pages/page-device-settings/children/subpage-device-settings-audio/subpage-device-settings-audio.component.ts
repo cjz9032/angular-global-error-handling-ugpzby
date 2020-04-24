@@ -400,6 +400,8 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	onDolbyAudioToggleOnOff(event) {
 		if (!event.switchValue) {
 			this.eCourseStatus.status = event.switchValue;
+			this.dolbyModeResponse.eCourseStatus = 'False';
+			this.eCourseToggleButtonStatus = false;
 		}
 		else {
 			this.dolbyModeDisabled = !event.switchValue;
@@ -407,10 +409,10 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		}
 		this.dolbyModeResponse.isAudioProfileEnabled = event.switchValue;
 		this.dolbyToggleButtonStatus = event.switchValue;
+		this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyModeResponse);
 		if (this.audioService.isShellAvailable) {
 			this.audioService.setDolbyAudioState(event.switchValue)
 				.then((response: boolean) => {
-					this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyModeResponse);
 					const metricsData = {
 						itemParent: 'Device.MyDeviceSettings',
 						itemName: 'Dolby-audio.dolby-toggle-button',
@@ -502,16 +504,17 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		if (event.switchValue) {
 			this.dolbyModeResponse.isAudioProfileEnabled = event.switchValue;
 			this.dolbyModeResponse.currentMode = 'Voip';
+			this.dolbyToggleButtonStatus = event.switchValue;
 		}
 		this.dolbyModeDisabled = event.switchValue;
 		this.automaticAudioDisabled = event.switchValue;
 		this.eCourseToggleButtonStatus = event.switchValue;
+		this.dolbyModeResponse.eCourseStatus = (event.switchValue) ? 'True' : 'False';
+		this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyModeResponse);
 		try {
 			if (this.audioService.isShellAvailable) {
 				this.audioService.setDolbyAudioProfileState('ECourseStatus', event.switchValue)
 					.then((response: boolean) => {
-						this.dolbyModeResponse.eCourseStatus = (event.switchValue) ? 'True' : 'False';
-						this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyModeResponse);
 						const metricsData = {
 							itemParent: 'Device.MyDeviceSettings',
 							itemName: 'Dolby-audio.eCourse-toggle-button',
