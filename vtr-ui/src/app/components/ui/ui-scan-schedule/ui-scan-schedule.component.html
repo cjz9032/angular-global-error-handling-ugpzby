@@ -18,7 +18,8 @@
             <li class="d-flex justify-content-between calendar-list" [ngClass]="{'disable-list':!scanToggleValue}" (click)="changeScanSchedule()">
                 <div class="item d-flex">
                     <span class="icomoon icomoon-calendar"></span>
-                    <strong>{{'smartPerformance.scanCompletePage.Onceaweek' |translate }}</strong>
+                    <!-- <strong>{{'smartPerformance.scanCompletePage.Onceaweek' |translate }}</strong> -->
+                    <strong>{{selectedFrequency}}</strong>
                 </div>
                 <div class="status d-flex justify-content-end" >
                     <p class="mr-3 text-uppercase"><strong>{{selectedDay | slice:0:3}}</strong> | {{scanTime.hour}}:{{scanTime.min}} {{scanTime.amPm}}</p>
