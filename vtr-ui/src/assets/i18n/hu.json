@@ -1097,7 +1097,7 @@
                     "description3": "Az Intelligens hűtés automatikusan, az Ön igényeinek megfelelően igazítja a hőteljesítményt.Az Intelligens hűtés a kényelmes használat érdekében módosítja a teljesítménnyel kapcsolatos beállításokat, amikor a notebook az Ön kezében van. Ha az eszköz asztalon van, a szolgáltatás a teljesítményt optimalizálja.",
                     "description13": "Ha be van kapcsolva, ez a funkció dinamikusan az Ön igényeihez igazítja a hőbeállításokat. Úgy módosítja a beállításokat, hogy a készülék hűvösebb vagy csendesebb legyen, miközben tétlen vagy Ön kézben tartja. Amikor a készülék stabil felületen van, a teljesítményt optimalizálja a rendszer. Ha kikapcsolja a funkciót, manuálisan állíthatja be a kívánt hőmérsékletet.",
                     "description14": "Ezzel a funkcióval beállíthatja a ventilátor sebességét, maximalizálhatja a rendszer teljesítményét, vagy szükség esetén meghosszabbíthatja az akkumulátor élettartamát. A három lenti móddal rendelkezik. A módok között billentyűkombinációval (Fn+Q) vagy a Lenovo Vantage eszköztár használatával is válthat.",
-                    "readMore": "További információ.",
+                    "readMore": "További információ",
                     "gotoWindows": {
                         "title": "Ugrás a Windows beállításaihoz",
                         "modalBodyText1": "A Windows energiaellátási csúszkájának eléréséhez kattintson a Windows tálcáján található Windows-akkumulátor ikonra"
@@ -1139,7 +1139,7 @@
                             "title": "Az intelligens hűtési módok módosítása",
                             "close": "bezárás",
                             "coolingModesList": {
-                                "list1": "Kattintson az eszköztáron a Windows akkumulátorikonjára",
+                                "list1": "Kattintson az eszköztáron a Windows akkumulátorikonjára.",
                                 "list2": "Megjelenik a Windows Energiaséma módja; a csúszka mozgatásával válthat az optimális idő és az optimális teljesítmény között."
                             }
                         }
@@ -1151,7 +1151,7 @@
                             "battery&Quite": "AKKUMULÁTOR ÉS CSENDES MŰKÖDÉS"
                         }
                     },
-                    "description5": "Az Intelligens hűtés korrigálja a ventilátor sebességét, maximalizálja a teljesítményt és optimalizálja az akkumulátor élettartamát. A funkció három üzemmóddal rendelkezik (Csendes, Kiegyensúlyozott és Teljesítményközpontú mód). A módok között a Windows teljesítmény beállítására szolgáló csúszkájával lehet váltani",
+                    "description5": "Az Intelligens hűtés korrigálja a ventilátor sebességét, maximalizálja a teljesítményt és optimalizálja az akkumulátor élettartamát. A funkció három üzemmóddal rendelkezik (Csendes, Kiegyensúlyozott és Teljesítményközpontú mód). A módok között a Windows teljesítmény beállítására szolgáló csúszkájával lehet váltani.",
                     "nocqldesc": "Az intelligens hűtés lehetővé teszi a rendszer teljesítményének és hőmérsékletnek a beállítását. „Teljesítmény” módban optimalizálja a rendszer teljesítményét. „Hűvös és csendes” módban pedig elősegíti, hogy a rendszer hűvösebb vagy csendesebb legyen.",
                     "dytc6": {
                         "desc1": "Az Intelligens hűtés korrigálja a ventilátor sebességét, maximalizálja a teljesítményt és optimalizálja az akkumulátor élettartamát.",
@@ -1460,15 +1460,15 @@
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "radioText": "VoIP",
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
+                                "checkboxText": "Automatically optimize audio for VOIP"
                             },
                             "entertainmentMode": {
-                                "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
                                 "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
                                 "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
+                                "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
                     },
@@ -1532,15 +1532,15 @@
                 },
                 "display": {
                     "title": "Megjelenítés",
-					"displayColorTemperature": {
-						"title": "Szemvédő mód",
-						"description": "A szem fáradásának elkerülése érdekében ha hosszú ideig tervezi használni a számítógépet, módosítsa úgy a képernyő színhőmérsékletét, hogy kiszűrje a kék színű fényt. Ezenkívül a meleg színek sokat segítenek az elalvásban, különösen éjszaka.",
-						"link": {
-							"click": "Kattintson",
-							"here": "innen",
-							"rest": "a színhőmérséklet beállításához."
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "Szemvédő mód",
+                        "description": "A szem fáradásának elkerülése érdekében ha hosszú ideig tervezi használni a számítógépet, módosítsa úgy a képernyő színhőmérsékletét, hogy kiszűrje a kék színű fényt. Ezenkívül a meleg színek sokat segítenek az elalvásban, különösen éjszaka.",
+                        "link": {
+                            "click": "Kattintson",
+                            "here": "innen",
+                            "rest": "a színhőmérséklet beállításához."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "Szemvédő mód",
                         "checkbox": "Ütemezze a naplemente és napkelte közötti időszakra a szemvédő módot",

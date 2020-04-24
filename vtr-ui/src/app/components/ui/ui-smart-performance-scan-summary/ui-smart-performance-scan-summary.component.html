@@ -1262,7 +1262,7 @@
 															</div>
 														</div>
 													</div>
-											</div>
+											</div>											
 											<div class="summary-block" *ngIf="isSubscribed">
 												<h3>{{'smartPerformance.subscriberScanHomePage.subTitle' |translate }}</h3>
 												<p>{{'smartPerformance.subscriberScanHomePage.description' |translate }}</p>
@@ -1330,7 +1330,7 @@
 															<div class="dropdown">
 																<li id="dropdownMenu1" class="list-group-item cl list-selected-item">
 																	<fa-icon class="calender-icon" [icon]="['fal', 'calendar-alt']"></fa-icon>
-																	<span *ngIf="!dropDownToggle">{{currentDate | date:'MMM d, y'}}</span>
+																	<span *ngIf="!dropDownToggle">{{currentDate}}</span>
 																	<span *ngIf="tabIndex === 0">{{annualYear}}</span>
 																	<span *ngIf="tabIndex === 1">{{quarterlyMonth?.displayName}}</span>
 																	<span *ngIf="tabIndex === 2">{{customDate}}</span>
