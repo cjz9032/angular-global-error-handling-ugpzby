@@ -26,7 +26,6 @@ import { RecoverBadSectorsComponent } from '../../components/pages/page-hardware
 import { HardwareViewResultsComponent } from '../../components/pages/page-hardwarescan/children/hardware-view-results/hardware-view-results.component';
 import { SharedModule } from 'src/app/modules/shared.module';
 import { HeaderMainModule } from 'src/app/components/header-main/header-main.module';
-import { UiButtonModule } from '../../components/ui/ui-button-hwscan/ui-button-hwscan.module';
 import { ContainerCardModule } from 'src/app/components/container-card/container-card.module';
 import { MetricsModule } from 'src/app/services/metric/metrics.module';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
@@ -73,7 +72,6 @@ import { faBan } from '@fortawesome/free-solid-svg-icons/faBan';
 		NgbDropdownModule,
 		NgbModalModule,
 		HeaderMainModule,
-		UiButtonModule,
 		SharedModule,
 		NgbCollapseModule,
 		NgbTooltipModule,
