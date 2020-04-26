@@ -129,7 +129,9 @@ export class ModalLenovoIdComponent implements OnInit, OnDestroy {
 			url.indexOf('login.live.com') !== -1 ||
 			url.indexOf('login.yahoo.co.jp') !== -1) {
 			this.isBroswerVisible = false;
-			await this.webView.changeVisibility('spinnerCtrl', true);
+			if (!this.changeDisplay('spinnerCtrl', 'block')) {
+				this.webView.changeVisibility('spinnerCtrl', true);
+			}
 			await this.webView.changeVisibility('webviewPlaceHolder', false);
 		}
 	}
@@ -141,11 +143,14 @@ export class ModalLenovoIdComponent implements OnInit, OnDestroy {
 		}
 		const eventData = JSON.parse(e);
 		if (eventData.isSuccess) {
+			self.devService.writeLog('Load page completed');
 			self.isBroswerVisible = true;
 			setTimeout(() => {
 				self.setFocus('webviewPlaceHolder');
 			}, 0);
-			await self.webView.changeVisibility('spinnerCtrl', false);
+			if (!this.changeDisplay('spinnerCtrl', 'none')) {
+				this.webView.changeVisibility('spinnerCtrl', false);
+			}
 			await self.webView.changeVisibility('webviewPlaceHolder', true);
 			const htmlContent = eventData.content;
 			try {
@@ -367,6 +372,15 @@ export class ModalLenovoIdComponent implements OnInit, OnDestroy {
 	private setFocus(id: string) {
 		if (typeof this.webView.setFocus === 'function') {
 			this.webView.setFocus(id);
+		}
+	}
+
+	private changeDisplay(id: string, display: string): boolean {
+		if (typeof this.webView.changeDisplay === 'function') {
+			this.webView.changeDisplay(id, display);
+			return true;
+		} else {
+			return false;
 		}
 	}
 
