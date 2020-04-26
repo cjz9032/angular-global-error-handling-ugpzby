@@ -440,7 +440,7 @@
 										</div>
 										<!-- distance sensitivity adjusting -- ideapad section -->
 										<div class="pl-5 bold-title-idea no-border-bottom pb-4"
-											*ngIf="zeroTouchLockShowAdvancedSection">
+											*ngIf="zeroTouchLockShowAdvancedSection && zeroTouchPresenceLeaveDistanceAutoAdjustCapability">
 											<vtr-ui-row-switch [switchId]="'smartAssist-intelligentSecurity-zeroTouchLock-distanceSensitivityAutoAdjusting'"
 												*ngIf="zeroTouchPresenceLeaveDistanceAutoAdjustCapability"
 												[title]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.title' | translate"
