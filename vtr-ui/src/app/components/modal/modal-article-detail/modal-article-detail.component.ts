@@ -59,6 +59,7 @@ export class ModalArticleDetailComponent implements OnInit {
 					this.articleImage = response.Results.Image;
 					const articleBodySanitize = this.sanitizer.sanitize(SecurityContext.HTML, response.Results.Body);
 					const replaceBody = articleBodySanitize
+						.replace(/(\"unsafe:)/gi, '"')
 						.replace(/(<video )/gi, '<iframe ')
 						.replace(/(<\/video>)/gi, '</iframe>')
 						.replace(/(autoplay=\")/gi, 'allow="');
@@ -146,7 +147,7 @@ export class ModalArticleDetailComponent implements OnInit {
 	openProtocol(url: string): boolean {
 		if (url.startsWith('lenovo-vantage3:')) {
 			WinRT.launchUri(url);
-			this.closeModal();
+			setTimeout(() => { this.closeModal(); }, 100);
 			return false;
 		}
 		return true;
