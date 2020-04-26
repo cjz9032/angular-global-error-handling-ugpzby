@@ -271,7 +271,7 @@ export enum LocalStorageKey {
 	NewFeatureTipsVersion = '[LocalStorageKey] NewFeatureTipsVersion',
 
 	// Device Settings storage key
-	MicrohoneCapability = '[LocalStorageKey] MicrohoneCapability',
+	MicrophoneCapability = '[LocalStorageKey] MicrophoneCapability',
 
 	// TEMP battery condition
 	BatteryCondition = '[LocalStorageKey] batteryCondition',

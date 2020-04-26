@@ -38,6 +38,7 @@ import { WidgetScansettingsComponent } from '../../components/widgets/widget-sca
 import { PageLayoutComponent } from 'src/app/components/page-layout/page-layout.component';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 import { SanitizeModule } from '../sanitize.module';
+import { UiScanScheduleComponent } from '../../components/ui/ui-scan-schedule/ui-scan-schedule.component';
 
 @NgModule({
 	declarations: [
@@ -50,7 +51,8 @@ import { SanitizeModule } from '../sanitize.module';
 		WidgetSpeedometerComponent,
 		UiSmartPerformanceScanSummaryComponent,
 		WidgetSubscriptiondetailsComponent,
-		WidgetScansettingsComponent
+		WidgetScansettingsComponent,
+		UiScanScheduleComponent
 	],
 	imports: [
 		CommonModule,

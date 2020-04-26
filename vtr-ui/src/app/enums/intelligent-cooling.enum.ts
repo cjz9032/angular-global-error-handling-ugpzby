@@ -4,7 +4,8 @@ export enum IntelligentCoolingHardware {
 	ITS = 'ITS',
 	Legacy = 'legacy',
 	ITS14 = "ITS14",// ideapad 4.0
-	ITS13 = "ITS13"// ideapad 3.0
+	ITS13 = "ITS13",// ideapad 3.0
+	ITS15 = "ITS15" // ideapad 5.0
 }
 export enum ICModes {
 	Cool = "Cool",
