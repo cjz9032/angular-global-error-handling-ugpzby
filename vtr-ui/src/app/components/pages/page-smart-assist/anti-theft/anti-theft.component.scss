@@ -11,13 +11,19 @@ vtr-ui-row-switch {
   }
 }
 
-.subFunctions {
-  margin-left: 4.5rem !important;
-  .row {
-    .antiTheftDescription {
-      font-weight: 400;
+::ng-deep .tooltip-inner {
+  .antiTheft-tooltip {
+    margin: 0rem 0rem 0rem 1.5rem !important;
+    ul li {
+      list-style-type: disc;
+      margin: 0;
+      padding: 0;
     }
   }
+}
+
+.subFunctions {
+  margin-left: 4.5rem !important;
   p {
     font-size: $fontsize_xs;
     outline: 0;
