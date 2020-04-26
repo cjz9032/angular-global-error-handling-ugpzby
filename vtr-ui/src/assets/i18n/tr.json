@@ -2075,7 +2075,7 @@
             "superResolution": {
                 "heading": "Akıllı Medya",
                 "title": "Video Çözünürlüğünü Yükseltme",
-                "desc": "<p><label>Bu özellik, video çözünürlüğünü iyileştirerek video oynatma deneyimini geliştirir. Özellikle video düşük çözünürlükte olduğunda çalışır.</label></p> <p style='margin-top:4px;'><label>Bu işlev pil ömrünü, pil sıcaklığını etkileyebilir ve gürültüye neden olabilir. Lütfen DC kipinde (pil kipi) kullanmayın. Aksi takdirde, güç tüketimini hızlandırır ve pil ömrünü kısaltır.</label></p>",
+                "desc": "<p><label>Bu özellik, video çözünürlüğünü iyileştirerek video oynatma deneyimini geliştirir. Özellikle video düşük çözünürlükte olduğunda çalışır.</label></p> <p><label>Bu işlev pil ömrünü, pil sıcaklığını etkileyebilir ve gürültüye neden olabilir. Lütfen DC kipinde (pil kipi) kullanmayın. Aksi takdirde, güç tüketimini hızlandırır ve pil ömrünü kısaltır.</label></p>",
                 "tooltip": "Bu özellik yalnızca aşağıdaki video oynatıcılar için geçerlidir:<br>Windows Media Player<br>Chrome<br>Filmler ve TV<br>PotPlayer<br>GOM Player<br>Web tarayıcı tabanlı oynatıcılar (ör. Chrome)<br><br>PotPlayer ve GOM Player'da bu işlevin etkinleştirilmesiyle ilgili talimatlar için bilgisayarınızla birlikte verilen Kullanma Kılavuzu'na bakın.",
                 "note": {
                     "description": "Bu özellik şu durumlarda çalışmaz:",
@@ -2086,7 +2086,7 @@
             "antiTheft": {
                 "heading": "Akıllı Algılama",
                 "title": "Akıllı Hareket Uyarısı",
-                "desc": "<p><label>Bu özelliği etkin durumdayken, ekranınız kilitlendiğinde ve özellikle halka açık bir yerde hareket algılandığında cihaz bip sesi çıkarmaya başlar.</label></p> <p style='margin-top:4px;'><label>Alarmı kapatmak için doğru parolayı girin veya Windows Hello ile giriş yapın.</label></p>",
+                "desc": "<p><label>Bu özelliği etkin durumdayken, ekranınız kilitlendiğinde ve özellikle halka açık bir yerde hareket algılandığında cihaz bip sesi çıkarmaya başlar.</label></p> <p><label>Alarmı kapatmak için doğru parolayı girin veya Windows Hello ile giriş yapın.</label></p>",
                 "note": {
                     "description": "Sisteme başarıyla giriş yaptıktan sonra, bu özellik otomatik olarak kapanır. Özelliği kullanmak için yeniden etkinleştirmeniz gerekir."
                 },

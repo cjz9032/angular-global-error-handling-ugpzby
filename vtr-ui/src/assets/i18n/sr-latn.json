@@ -2075,7 +2075,7 @@
             "superResolution": {
                 "heading": "Inteligentni mediji",
                 "title": "Poboljšavanje video rezolucije",
-                "desc": "<p><label>Ova funkcija poboljšava iskustvo reprodukcije video zapisa poboljšanjem rezolucije video zapisa. On radi posebno kada je video u slaboj rezoluciji.</label></p> <p style='margin-top:4px;'><label>Ova funkcija može da utiče na vek trajanja baterije, temperaturu baterije i može da izazove buku. Nemojte koristiti u režimu rada na jednosmernu struju (režim baterije). U suprotnom će se baterija brže istrošiti i skratiće se radni vek baterije.</label></p>",
+                "desc": "<p><label>Ova funkcija poboljšava iskustvo reprodukcije video zapisa poboljšanjem rezolucije video zapisa. On radi posebno kada je video u slaboj rezoluciji.</label></p> <p><label>Ova funkcija može da utiče na vek trajanja baterije, temperaturu baterije i može da izazove buku. Nemojte koristiti u režimu rada na jednosmernu struju (režim baterije). U suprotnom će se baterija brže istrošiti i skratiće se radni vek baterije.</label></p>",
                 "tooltip": "Ova funkcija radi samo u dolenavedenim video plejerima:<br>Windows Media Player<br>Chrome<br>Filmovi i TV<br>PotPlayer<br>GOM player<br>plejeri zasnovani na veb pregledaču (npr. Chrome)<br><br>Uputstva o tome kako da omogućite ovu funkciju u plejeru PotPlayer i GOM player potražite u Uputstvu za korisnike koje ste dobili uz računar.",
                 "note": {
                     "description": "Ova funkcija ne radi kada:",
@@ -2086,7 +2086,7 @@
             "antiTheft": {
                 "heading": "Inteligentno raspoznavanje",
                 "title": "Pametno upozorenje o pokretu",
-                "desc": "<p><label>Kada omogućite ovu funkciju, uređaj će početi da emituje zvučne signale kada je ekran zaključan, a detektuju se pokreti, posebno na javnom mestu.</label></p> <p style='margin-top:4px;'><label>Da biste odbacili alarm, unesite ispravnu lozinku ili se prijavite pomoću programa Windows Hello.</label></p>",
+                "desc": "<p><label>Kada omogućite ovu funkciju, uređaj će početi da emituje zvučne signale kada je ekran zaključan, a detektuju se pokreti, posebno na javnom mestu.</label></p> <p><label>Da biste odbacili alarm, unesite ispravnu lozinku ili se prijavite pomoću programa Windows Hello.</label></p>",
                 "note": {
                     "description": "Kada uspešno prijavite sistem, ova funkcija se automatski isključuje. Potrebno je da je ponovo omogućite da biste je koristili."
                 },
