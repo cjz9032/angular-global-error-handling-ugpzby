@@ -18,6 +18,8 @@ import { InputAccessoriesService } from 'src/app/services/input-accessories/inpu
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { QaService } from '../../../services/qa/qa.service';
 
+declare const Windows: any;
+
 @Component({
 	selector: 'vtr-page-device-settings',
 	templateUrl: './page-device-settings.component.html',
@@ -207,22 +209,40 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 	}
 
 	getAudioPageSettings() {
+		// this.audioService.getMicrophoneSettingsAsync
 		try {
 			if (this.audioService.isShellAvailable) {
+				const capture = new Windows.Media.Capture.MediaCapture();
+				const init = new Windows.Media.Capture.MediaCaptureInitializationSettings();
+				init.audioDeviceId = '';
+				const microphonePromise = new Promise<boolean>(resolve => {
+					capture.initializeAsync(init).then(
+						() => {
+							const controller = capture.audioDeviceController;
+							return resolve(!controller.muted);
+						},
+						error => {
+							if (error.number === -1072845856) {
+								// microphone device was disabled
+								resolve(false);
+							}
+						}
+					);
+				})
 				Promise.all([
 					this.audioService.getDolbyMode(),
-					// this.audioService.getMicrophoneSettings(),
+					microphonePromise
 				]).then((responses: any[]) => {
 					const dolbyModeResponse: DolbyModeResponse = responses[0];
-					// const microphone: Microphone = responses[1];
+					const microphone = responses[1];
 					this.logger.info('getAudioPageSettings.Promise.all', responses);
 					this.commonService.setLocalStorageValue(LocalStorageKey.IsDolbyModeAvailable, dolbyModeResponse.available);
-					// if (!microphone.available && !dolbyModeResponse.available) {
-					// 	this.menuItems = this.commonService.removeObjById(this.menuItems, 'audio');
-					// 	this.commonService.setLocalStorageValue(LocalStorageKey.IsAudioPageAvailable, false);
-					// } else {
-					// 	this.commonService.setLocalStorageValue(LocalStorageKey.IsAudioPageAvailable, true);
-					// }
+					if (!microphone && !dolbyModeResponse.available) {
+						this.menuItems = this.commonService.removeObjById(this.menuItems, 'audio');
+						this.commonService.setLocalStorageValue(LocalStorageKey.IsAudioPageAvailable, false);
+					} else {
+						this.commonService.setLocalStorageValue(LocalStorageKey.IsAudioPageAvailable, true);
+					}
 				}).catch(error => {
 					this.logger.error('error in getAudioPageSettings.Promise.all', error.message);
 					return EMPTY;
