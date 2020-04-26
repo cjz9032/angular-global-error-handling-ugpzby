@@ -72,7 +72,7 @@ vtr-ui-smart-performance-scan-summary {
 						&:first-child {
 							border-top-left-radius: 0.5rem !important;
 							border-top-right-radius: 0.5rem !important;
-							margin-left: 1rem;
+							margin-left: 2rem;
 						}
 						&:last-child {
 							border-radius: 0 !important;
@@ -333,15 +333,10 @@ vtr-ui-smart-performance-scan-summary {
                                         border: none;
                                         border-left: 1px solid $grey_light;
                                         border-bottom: 1px solid $grey_light;
-										color: $dark;
-										@media #{$breakpoint_xl}{
-											padding: 0.5rem 0.2rem;
-										}                                       
-										&.active {
+                                        color: $dark;                                        &.active {
                                             background-color: transparent;
                                             border-bottom-color: transparent;
-										}                                    
-									}
+                                        }                                    }
                                     &:first-child{
                                         .nav-link{
                                             border-left: none;
@@ -351,27 +346,15 @@ vtr-ui-smart-performance-scan-summary {
                             }
                             .icon-box {
 								 p{
-                                    font-size: 1.1rem;
+                                    font-size: 1.4rem;
                                     max-width: 8.1rem;
                                     margin-top: 0.6rem;
-									line-height: 1.2rem;
-									@media #{$breakpoint_sm}{
-										font-size: 1rem;
-										line-height: 1.2rem;
-									}
+									line-height: 1.6rem;
                                 }
                                 .icon {
                                     font-size: 2.6rem;
                                     margin-right: 0.8rem;
-									color: $main;
-									@media #{$breakpoint_xl} {
-										font-size: $fontsize_xl;
-										margin-right: 0.5rem;
-									}
-									@media #{$breakpoint_sm}{
-										font-size: $fontsize_md;
-										margin-right: 0.2rem;
-									}
+                                    color: $main;
                                 }
                             }
                             .scanned-list {
