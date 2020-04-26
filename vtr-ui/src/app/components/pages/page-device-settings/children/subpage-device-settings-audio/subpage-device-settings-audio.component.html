@@ -234,9 +234,8 @@
 					</vtr-container-collapsible>
 				</div>
 			</div>
-			<div class="row py-5 smart-settings-card"
-				id="microphone">
-				<div class="col-12 mx-auto container-card ">
+			<div class="row py-5 smart-settings-card" id="microphone">
+				<div class="col-12 mx-auto container-card" *ngIf="microphoneProperties.available">
 					<vtr-container-collapsible componentName="Microphone"
 						[tabIndex]="0"
 						[vtrAppSearchScroller]="['search-microphone']"
