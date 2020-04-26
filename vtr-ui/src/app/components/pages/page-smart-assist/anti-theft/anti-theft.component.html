@@ -38,15 +38,17 @@
                                 <label id="smartMotionAlertSupportPhotoDescribeLabel">{{'device.smartAssist.antiTheft.allowCamera.describe' | translate}}</label>
                             </p>
 
-                            <div class="checkbox">
-                                <vtr-ui-checkbox [componentId]="'smartMotionAlertSupportPhotoCheckbox'"
-                                    [disabled]="checkboxDisabled" [value]="antiTheft.isSupportPhoto" [checked]="antiTheft.isSupportPhoto"
-                                    [label]="'device.smartAssist.antiTheft.allowCamera.checkBoxText' | translate"
-                                    (toggle)='setAllowCamera($event)'>
-                                </vtr-ui-checkbox>
-                            </div>
+							<div class="checkbox">
+								<vtr-ui-checkbox [componentId]="'smartMotionAlertSupportPhotoCheckbox'"
+									[disabled]="checkboxDisabled"
+									[value]="antiTheft.isSupportPhoto"
+									[checked]="antiTheft.isSupportPhoto"
+									[label]="'device.smartAssist.antiTheft.allowCamera.checkBoxText' | translate"
+									(toggle)='setAllowCamera($event)'>
+								</vtr-ui-checkbox>
+							</div>
 
-                        </div>
+						</div>
 
                         <div class="row" *ngIf="!antiTheft.cameraPrivacyState && !isShowAuthorized">
                             <div class="feature-note p-4 cameraTips">
@@ -101,7 +103,7 @@
                                 </vtr-ui-dropdown>
                             </div>
 
-                        </div>
+						</div>
 
                         <div class="showPhoto" id="smartMotionAlertShowPhotoLink">
                             <p id="smartMotionAlertShowPhotoTitle" 
@@ -128,10 +130,10 @@
                             </div>
                         </div>
 
-                    </div>
+					</div>
 
-                </li>
-            </ul>
-        </vtr-container-collapsible>
-    </div>
+				</li>
+			</ul>
+		</vtr-container-collapsible>
+	</div>
 </div>

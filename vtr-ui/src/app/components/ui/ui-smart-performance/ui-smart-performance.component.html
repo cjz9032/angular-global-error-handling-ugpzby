@@ -382,36 +382,9 @@
 						<div class="container-fluid">
 							<div class="row mb-40"  *ngIf="!isScanning && !isScanningCompleted">
 								<div class="col col-12">
-									<div class="scan-settings sidebar-widget">
-										<div class="title pb-3">{{'smartPerformance.scanSettings.title' |translate }}</div>
-										<div class="card-info">
-											<p>{{'smartPerformance.scanSettings.description' |translate }}</p>
-										</div>
-										<ul class="chevron-list">
-											<li class="d-flex justify-content-between">
-												<div class="item d-flex">
-													<span class="icomoon icomoon-LE-Visible-to-online-trackers2x"></span>
-													<strong>{{'smartPerformance.scanSettings.enableScan' |translate }}</strong>
-												</div>
-												<div class="status d-flex justify-content-end">
-													<vtr-ui-switch-onoff [value]="true"
-													[disabled]="false"></vtr-ui-switch-onoff>
-													<!-- <fa-icon [icon]="['fas', 'laptop']"></fa-icon> -->
-												</div>
-											</li>
-											<li class="d-flex justify-content-between">
-												<div class="item d-flex">
-													<span class="icomoon icomoon-calendar"></span>
-													<strong>{{'smartPerformance.scanCompletePage.Onceaweek' |translate }}</strong>
-												</div>
-												<div class="status d-flex justify-content-end">
-													<p class="mr-3"><strong>SAT</strong> | 12:00AM</p>
-													<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
-												</div>
-											</li>
-										</ul>
-										<!-- <a href="#" class="link-text">Manage Subscription</a> -->
-									</div>
+							<!----------Scan Schedule--------------->
+							<vtr-ui-scan-schedule></vtr-ui-scan-schedule>
+							<!----------Scan Schedule--------------->							
 								</div>
 							</div>
 							<div class="row mb-40" *ngIf="!isScanning && !isScanningCompleted">

@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlSegment, UrlMatchResult, UrlTree, Router } from '@angular/router';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlSegment, UrlMatchResult, UrlTree, Router, ActivatedRoute, NavigationEnd, NavigationError, NavigationCancel } from '@angular/router';
 import { GuardConstants } from './guard-constants';
-
+import { CommonService } from '../common/common.service';
+import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 
 @Injectable({
   providedIn: 'root'
@@ -35,7 +36,9 @@ export class ProtocolGuardService implements CanActivate {
 	'gaming-lighting0': 'gaming/lightingcustomize/0',
 	'gaming-lighting1': 'gaming/lightingcustomize/1',
 	'gaming-lighting2': 'gaming/lightingcustomize/2',
-	'gaming-lighting3': 'gaming/lightingcustomize/3'
+	'gaming-lighting3': 'gaming/lightingcustomize/3',
+	'hardware-scan': 'hardware-scan',
+	'smart-performance': 'support/smart-performance'
   }
 
   backwardCompatibilitySchemas = [
@@ -71,9 +74,10 @@ export class ProtocolGuardService implements CanActivate {
   characteristicCode = '/?protocol=';
 
   constructor(
-	private guardConstants: GuardConstants,
-	private router: Router
-  ) { }
+	private router: Router,
+	private commonService: CommonService
+  ) {
+  }
 
   private decodeBase64String(args: string) {
 	try {
@@ -127,7 +131,7 @@ export class ProtocolGuardService implements CanActivate {
 
 	let path: string | undefined = this.semanticToPath[semantic.toLowerCase()];
 	if (path === undefined) {
-		path = semantic;
+		return '';
 	}
 
 	return `${path}${query}`;
@@ -164,12 +168,17 @@ export class ProtocolGuardService implements CanActivate {
 	return '';
   }
 
+  private isFirstPage() : boolean {
+	return !this.commonService.getSessionStorageValue(SessionStorageKey.FirstPageLoaded, false);
+  }
+
   public canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) : boolean | UrlTree {
 	const path = state.url.slice(state.url.indexOf('#') + 1);
 	if (path.startsWith(this.characteristicCode)) {
 		const checkResult = this.isRedirectUrlNeeded(path);
-		return checkResult[0] ? this.router.parseUrl(checkResult[1]) : history.length === 1;
+		return checkResult[0] ? this.router.parseUrl(checkResult[1]) : this.isFirstPage();
 	}
-	return history.length === 1;
+
+	return this.isFirstPage();
   }
 }

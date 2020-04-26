@@ -71,9 +71,9 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	isChangeSchedule = false;
 	selectedFrequency: any;
 	selectedDay: any;
+	selectedNumber: any;
 	yearsList: any[] = [this.getYearObj(0), this.getYearObj(-1)];
 	scanFrequency: any = [
-		'Every day',
 		'Once a week',
 		'Every other week',
 		'Once a month'
@@ -86,6 +86,36 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		'Thursday',
 		'Friday',
 		'Saturday'
+	];
+	dates: any = [
+		'1',
+		'2',
+		'3',
+		'4',
+		'5',
+		'6',
+		'7',
+		'8',
+		'9',
+		'10',
+		'11',
+		'12',
+		'13',
+		'14',
+		'15',
+		'16',
+		'17',
+		'18',
+		'19',
+		'20',
+		'21',
+		'22',
+		'23',
+		'24',
+		'25',
+		'26',
+		'27',
+		'28'
 	];
 	hours: any = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 	mins: any = [
@@ -107,6 +137,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	scanToggleValue = true;
 	frequencyValue = 1;
 	dayValue = 0;
+	dateValue = 0;
 	scanTime: any = {
 		hour: this.hours[11],
 		hourId: 11,
@@ -147,6 +178,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		);
 		this.selectedFrequency = this.scanFrequency[1];
 		this.selectedDay = this.days[0];
+		this.selectedNumber = this.dates[0];
 		this.isDaySelectionEnable = false;
 		this.scanScheduleDate = this.selectedDate;
 		this.leftAnimator = '0%';
@@ -192,21 +224,31 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 
 			this.isFromDate = true;
 			// console.log(this.fromDate);
-			this.displayFromDate =
+			const fromDateFormat =
 				this.fromDate.month +
 				'/' +
 				this.fromDate.day +
 				'/' +
 				this.fromDate.year;
-			this.displayToDate =
+			const toDateFormat =
 				this.toDate.month +
 				'/' +
 				this.toDate.day +
 				'/' +
 				this.toDate.year;
+			this.displayFromDate = moment
+				.utc(fromDateFormat)
+				.subtract(1, 'months')
+				.startOf('day')
+				.format('YYYY/MM/DD');
+			this.displayToDate = moment
+				.utc(toDateFormat)
+				.subtract(1, 'months')
+				.startOf('day')
+				.format('YYYY/MM/DD');
 			this.selectedfromDate = this.fromDate;
 			this.selectedTodate = this.toDate;
-			this.customDate = this.displayFromDate + '-' + this.displayToDate;
+			this.customDate = this.customDate = this.displayFromDate + ' - ' + this.displayToDate;
 			// console.log('---------IN THE TABINDEX 2' + this.customDate);
 			this.getHistory(
 				moment
@@ -252,19 +294,29 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	onDateSelected() {
 		this.logger.info('onDateSelected.SelectedDate', this.selectedDate);
 		if (this.isFromDate) {
-			this.displayFromDate =
+			const fromDateFormat =
 				this.selectedfromDate.month +
 				'/' +
 				this.selectedfromDate.day +
 				'/' +
 				this.selectedfromDate.year;
+			this.displayFromDate = moment
+				.utc(fromDateFormat)
+				.subtract(1, 'months')
+				.startOf('day')
+				.format('YYYY/MM/DD');
 		} else {
-			this.displayToDate =
+			const fromDateFormat =
 				this.selectedTodate.month +
 				'/' +
 				this.selectedTodate.day +
 				'/' +
 				this.selectedTodate.year;
+			this.displayToDate = moment
+				.utc(fromDateFormat)
+				.subtract(1, 'months')
+				.startOf('day')
+				.format('YYYY/MM/DD');
 			this.logger.info('onDateSelected.else to date', this.displayToDate);
 		}
 	}
@@ -298,7 +350,6 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		});
 	}
 	ScanNowSummary() {
-	
 		this.backToScan.emit();
 	}
 
@@ -331,17 +382,25 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	changeScanFrequency(value) {
 		this.frequencyValue = value;
 		this.scheduleTab = '';
-		if (value === 0) {
-			this.isDaySelectionEnable = false;
-		} else {
-			this.isDaySelectionEnable = true;
-		}
+		this.isDaySelectionEnable = true;
+		// if (value === 0) {
+		// 	this.isDaySelectionEnable = false;
+		// } else {
+		// 	this.isDaySelectionEnable = true;
+		// }
 		this.selectedFrequency = this.scanFrequency[value];
 	}
 	changeScanDay(value) {
 		this.dayValue = value;
 		this.scheduleTab = '';
 		this.selectedDay = this.days[value];
+		this.selectedNumber = this.dates[value];
+	}
+	changeScanDate(value) {
+		this.dateValue = value;
+		this.scheduleTab = '';
+		this.selectedDay = this.days[value];
+		this.selectedNumber = this.dates[value];
 	}
 	saveChangedScanSchedule() {
 		this.scheduleTab = '';

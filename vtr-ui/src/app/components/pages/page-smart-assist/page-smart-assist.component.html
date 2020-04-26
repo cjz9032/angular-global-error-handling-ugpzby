@@ -35,14 +35,19 @@
 								[theme]="'white'">
 								<!-- image -->
 								<div class="no-border-bottom pt-4 intelligent-security-image">
-									<img [src]="image" role="img" id="intelligent-security-image"/>
+									<img [src]="image"
+										role="img"
+										id="intelligent-security-image" />
 									<div class="intelligent-security-image-word">
 										<p class="intelligent-security-image-word-title"
 											role="text"
-											id="intelligent-security-image-word-title">{{'device.smartAssist.intelligentSecurity.image.title' | translate}}</p>
+											id="intelligent-security-image-word-title">
+											{{'device.smartAssist.intelligentSecurity.image.title' | translate}}</p>
 										<p class="intelligent-security-image-word-description"
 											role="text"
-											id="intelligent-security-image-word-description">{{'device.smartAssist.intelligentSecurity.image.description' | translate}}</p>
+											id="intelligent-security-image-word-description">
+											{{'device.smartAssist.intelligentSecurity.image.description' | translate}}
+										</p>
 									</div>
 								</div>
 								<!-- zeroTouchLogin -- ideaPad section -->
@@ -78,7 +83,8 @@
 										<!-- login distance sensitivity adjust -->
 										<div class="pl-5 bold-title-idea no-border-bottom pb-4"
 											*ngIf="intelligentSecurity.isDistanceSensitivityVisible && zeroTouchLoginShowAdvancedSection">
-											<vtr-ui-row-switch [switchId]="'smartAssist-intelligentSecurity-zeroTouchLogin-distanceSensitivityAutoAdjusting'"
+											<vtr-ui-row-switch
+												[switchId]="'smartAssist-intelligentSecurity-zeroTouchLogin-distanceSensitivityAutoAdjusting'"
 												[title]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.title' | translate"
 												[isSwitchVisible]="true"
 												[showChildContent]="true"
@@ -164,7 +170,8 @@
 															</fa-icon>
 														</div> -->
 														<div class="col">
-															<p id="smart-assist-intelligent-security-note" role="text">
+															<p id="smart-assist-intelligent-security-note"
+																role="text">
 																{{'device.smartAssist.intelligentSecurity.note.description1' | translate}}
 																<a id="goto_hello_link"
 																	role="link"
@@ -312,7 +319,9 @@
 											<div class="col mt-8 ml-4 facial-recognition pb-3"
 												role="text"
 												*ngIf="intelligentSecurity.isZeroTouchLockFacialRecoVisible && zeroTouchLockShowAdvancedSection">
-												<h3 id="smart-assist-zero-touch-lock-faical-recognition-title mt-2">
+												<h3 id="smart-assist-zero-touch-lock-faical-recognition-title"
+													role="text"
+													attr-aria-label="smart-assist-zero-touch-lock-faical-recognition-title">
 													{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.title' | translate}}
 												</h3>
 												<p id="smart-assist-zero-touch-lock-faical-recognition-desc"
@@ -321,7 +330,8 @@
 													{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.caption' | translate}}
 												</p>
 												<div class="smart-assist-checkbox">
-													<vtr-ui-checkbox [componentId]="'cb-zero-touch-lock'"
+													<vtr-ui-checkbox
+														[componentId]="'smartAssist-intelligentSecurity-zeroTouchLock-facial-recognition'"
 														[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || !intelligentSecurity.facilRecognitionCameraAccess
 															|| intelligentSecurity.facialRecognitionCameraPrivacyMode"
 														[value]="intelligentSecurity.isZeroTouchLockFacialRecoEnabled"
@@ -438,7 +448,7 @@
 										</div>
 										<!-- distance sensitivity adjusting -- ideapad section -->
 										<div class="pl-5 bold-title-idea no-border-bottom pb-4"
-											*ngIf="zeroTouchLockShowAdvancedSection">
+											*ngIf="zeroTouchLockShowAdvancedSection && zeroTouchPresenceLeaveDistanceAutoAdjustCapability">
 											<vtr-ui-row-switch [switchId]="'smartAssist-intelligentSecurity-zeroTouchLock-distanceSensitivityAutoAdjusting'"
 												*ngIf="zeroTouchPresenceLeaveDistanceAutoAdjustCapability"
 												[title]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.title' | translate"
@@ -479,7 +489,8 @@
 												</div>
 											</vtr-ui-row-switch>
 											<div class="pl-4">
-												<vtr-ui-custom-slider [sliderId]="'smartAssist-intelligentSecurity-zeroTouchLock-distanceSensitivityAdjusting'"
+												<vtr-ui-custom-slider
+													[sliderId]="'smartAssist-intelligentSecurity-zeroTouchLock-distanceSensitivityAdjusting'"
 													*ngIf="zeroTouchPresenceLeaveDistanceCapability && !hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust"
 													[minLegend]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.options.near' | translate"
 													[min]=0

@@ -119,7 +119,7 @@
 			}
 			&::-ms-thumb {
 				@include thumb-style();
-				margin: 0 2px !important;
+				margin: 0 4px 0 2px !important;
 			}
 
 			&::-ms-fill-lower {

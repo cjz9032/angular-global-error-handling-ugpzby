@@ -41,7 +41,7 @@
 							title=""
 							*ngIf="!isOfflineArm">
 							<div *ngIf="item.Title"
-								class="title text-ellipsis"
+								class="title text-four-ellipsis"
 								id="{{containerCardId+'-title'}}"
 								role="link"
 								[title]=""
@@ -181,7 +181,7 @@
 							title="">
 							<div *ngIf="item.Title && !isOfflineArm"
 								[title]=""
-								class="title text-ellipsis"
+								class="title text-three-ellipsis"
 								id="{{containerCardId+'-title'}}"
 								role="link"
 								[innerHtml]="item.Title"
@@ -333,7 +333,6 @@
 			<div class="row">
 				<div class="col col-12 content">
 					<a tabindex="0"
-						attr.aria-label="{{ item.Title | htmlText }}. {{ item.Description | htmlText }}"
 						[attr.href]="!item.ActionLink ? null : (item.ActionLink | sanitize : 'resourceUrl')"
 						(click)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 						target="_blank"
@@ -350,11 +349,10 @@
 						<div class="inner-content"
 							title="">
 							<div *ngIf="item.Title"
-								class="title text-ellipsis"
+								class="title text-two-ellipsis"
 								[title]=""
 								[innerHtml]="item.Title"
 								id="{{containerCardId+'-title'}}"
-								role="link"
 								[ngbTooltip]="item.Title | htmlText"
 								tooltipClass="vtr-system-tooltip"
 								container="body"
@@ -364,7 +362,6 @@
 								<div [title]=""
 									[innerHtml]="item.Description"
 									id="{{containerCardId+'-caption'}}"
-									role="link"
 									[ngbTooltip]="item.Description | htmlText"
 									tooltipClass="vtr-system-tooltip"
 									container="body"

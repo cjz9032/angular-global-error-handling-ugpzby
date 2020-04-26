@@ -1097,7 +1097,7 @@
                     "description3": "Funcţia Răcire inteligentă adaptează automat performanţa termică nevoilor dumneavoastră.Caracteristica Răcire inteligentă ajustează setările performanței pentru a oferi o suprafață mai rece pentru confort când notebookul este asupra dvs. Când dispozitivul este pe un birou, această caracteristică optimizează performanța sistemului.",
                     "description13": "Când este activată, această caracteristică adaptează într-un mod dinamic setările termice nevoilor dvs. Ajustează setările pentru a menţine dispozitivul rece şi silențios, când acesta este ţinut în mână sau inactiv. Optimizează performanţa atunci când dispozitivul se află pe o suprafaţă stabilă. Când caracteristica este oprită, puteţi seta manual priorităţile termice.",
                     "description14": "Această caracteristică vă permite să ajustați viteza ventilatorului, să maximizați performanța sistemului sau sa extindeți durata de viață a bateriei dacă este necesar. Are cele trei moduri de mai jos. Puteți comuta modurile folosind tastele rapide (Fn+Q) sau din bara de instrumente Lenovo Vantage.",
-                    "readMore": "Citiți mai multe.",
+                    "readMore": "Citiți mai multe",
                     "gotoWindows": {
                         "title": "Accesați setările Windows",
                         "modalBodyText1": "Dați clic pe pictograma bateriei Windows din bara de sistem pentru a accesa glisorul pentru performanța de alimentare Windows"
@@ -1132,17 +1132,28 @@
                         },
                         "selectedModeText": {
                             "quiteCool": "Acest mod permite cea mai bună experiență cu un echilibru între viteza ventilatorului și performanța sistemului. De exemplu, în jocuri, optimizează performanța. În aplicații office, reduce zgomotul.",
-                            "batterySaving": "Acest mod permite maximizarea duratei de viață a bateriei prin ajustarea automată a luminozității, modificarea setărilor de alimentare, dezactivarea caracteristicilor la procesarea avansată de imagine etc.",
-                            "performance": "Acest mod permite performanța maximă a sistemului. În acest mod, viteza rapidă a ventilatorului poate genera un zgomot mare."
+                            "batterySaving14": "Acest mod permite maximizarea duratei de viață a bateriei prin ajustarea automată a luminozității, modificarea setărilor de alimentare, dezactivarea caracteristicilor la procesarea avansată de imagine etc.",
+                            "performance": "Acest mod permite performanța maximă a sistemului. În acest mod, viteza rapidă a ventilatorului poate genera un zgomot mare.",
+                            "batterySaving15": "Acest mod oferă o durată maximă de viață a bateriei, prin reglarea automată a luminozității, modificarea setărilor de alimentare, dezactivarea funcției audio Dolby etc. Cu toate aceste ajustări, modul poate extinde durata de viață a bateriei cu până la 20%."
                         },
                         "intelligentCoolingModesModal": {
                             "title": "Modificați modurile inteligente de răcire",
                             "close": "închidere",
                             "coolingModesList": {
-                                "list1": "Dați clic pe pictograma baterie din bara de instrumente Windows",
+                                "list1": "Dați clic pe pictograma baterie din bara de instrumente Windows.",
                                 "list2": "Va apărea modul de alimentare Windows. Mutaţi glisorul pentru a alege între durata optimă sau performanţa optimă."
                             }
-                        }
+                        },
+                        "autoTransition": {
+							"description": "În acest mod activaţi „Performanţă extremă”. Atunci când este activat, temperatura suprafeţei computerului şi zgomotul ventilatorului pot creşte în mod automat.",
+							"more": "MAI MULTE",
+							"less": "MAI PUŢIN",
+							"moreContent": {
+								"desc1": "a. În scenariile de încărcare a aplicaţiilor Office, a Windows Update, a filmelor online sau a luminilor de sistem, sistemul poate fi silenţios. În timp ce în scenariile normale pentru jocuri, computerul are o performanţă mai bună.",
+								"desc2": "b. În cazul scenariilor intensive pentru jocuri, modul „Performanţă extremă” este activat în mod automat. Acest mod poate genera un zgomot mai mare şi poate duce la creşterea temperaturii computerului.",
+								"desc3": "c. Atunci când energia bateriei este mai mică de 30%, sistemul trece automat în modul „Economisire baterie”."
+							}			
+						}
                     },
                     "nonintelligentCooling": {
                         "options": {
@@ -1151,7 +1162,7 @@
                             "battery&Quite": "MODUL BATERIE ȘI SILENȚIOS"
                         }
                     },
-                    "description5": "Răcirea inteligentă ajustează viteza ventilatorului, performanța maximă și gestionează durata de viață a bateriei. Această caracteristică are 3 moduri (modul silențios, modul echilibrat și modul performanță) și este acum accesibilă prin intermediul glisorului pentru performanța de alimentare Windows",
+                    "description5": "Răcirea inteligentă ajustează viteza ventilatorului, performanța maximă și gestionează durata de viață a bateriei. Această caracteristică are 3 moduri (modul silențios, modul echilibrat și modul performanță) și este acum accesibilă prin intermediul glisorului pentru performanța de alimentare Windows.",
                     "nocqldesc": "Răcirea inteligentă vă permite să ajustaţi performanţa sistemului şi temperatura. În modul „Performanţă”, optimizează performanţa sistemului. Iar în modul „Rece şi silenţios” menţine sistemul mai rece sau mai silenţios.",
                     "dytc6": {
                         "desc1": "Răcirea inteligentă ajustează viteza ventilatorului, performanţa maximă şi gestionează durata de viaţă a bateriei.",
@@ -1460,15 +1471,15 @@
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "radioText": "VoIP",
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
+                                "checkboxText": "Automatically optimize audio for VOIP"
                             },
                             "entertainmentMode": {
-                                "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
                                 "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
                                 "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
+                                "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
                     },
@@ -1533,8 +1544,8 @@
                 "display": {
                     "title": "Afișaj",
                     "displayColorTemperature": {
-                        "title": "Temperatură culoare afișaj",
-                        "description": "Puteți regla temperatura culorii afișajului pentru a filtra lumina albastră și pentru a reduce oboseala ochilor. Ajustează ecranul astfel încât să afișeze culori mai calde între apusul și răsăritul soarelui, pentru a nu vă afecta somnul.",
+                        "title": "Modul de îngrijire ochi",
+                        "description": "Pentru a evita oboseala ochilor, puteți regla temperatura culorii afișajului pentru a filtra lumina albastră, atunci când utilizați computerul un timp îndelungat. În plus, culorile calde sunt recomandate pentru somnul dumneavoastră, în special noaptea.",
                         "link": {
                             "click": "Clic",
                             "here": "aici",

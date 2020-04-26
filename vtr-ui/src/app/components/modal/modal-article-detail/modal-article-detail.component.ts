@@ -7,6 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 import { DurationCounterService } from 'src/app/services/timer/timer-service-ex.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from 'src/app/services/metric/metric.service';
+import { WinRT } from '@lenovo/tan-client-bridge';
 
 @Component({
 	selector: 'vtr-modal-article-detail',
@@ -58,6 +59,7 @@ export class ModalArticleDetailComponent implements OnInit {
 					this.articleImage = response.Results.Image;
 					const articleBodySanitize = this.sanitizer.sanitize(SecurityContext.HTML, response.Results.Body);
 					const replaceBody = articleBodySanitize
+						.replace(/(\"unsafe:)/gi, '"')
 						.replace(/(<video )/gi, '<iframe ')
 						.replace(/(<\/video>)/gi, '</iframe>')
 						.replace(/(autoplay=\")/gi, 'allow="');
@@ -140,6 +142,31 @@ export class ModalArticleDetailComponent implements OnInit {
 	onFocus(): void {
 		const modal = document.querySelector('.Article-Detail-Modal') as HTMLElement;
 		modal.focus();
+	}
+
+	openProtocol(url: string): boolean {
+		if (url.startsWith('lenovo-vantage3:')) {
+			WinRT.launchUri(url);
+			setTimeout(() => { this.closeModal(); }, 100);
+			return false;
+		}
+		return true;
+	}
+
+	@HostListener('click', ['$event.target'])
+	onClick(targetElement: any): boolean {
+		let count = 0
+		while (targetElement && count < 4) {
+			if (targetElement.href) {
+				return this.openProtocol(targetElement.href);
+			}
+			if (targetElement.parentElement) {
+				targetElement = targetElement.parentElement;
+				count++;
+			} else {
+				return true;
+			}
+		}
 	}
 
 }

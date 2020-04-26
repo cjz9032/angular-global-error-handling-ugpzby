@@ -1097,7 +1097,7 @@
                     "description3": "Funkcja Inteligentne chłodzenie automatycznie równoważy sprawność cieplną, dostosowując ją do Twoich potrzeb.Gdy notebook jest trzymany na kolanach, funkcja Inteligentne chłodzenie dostosowuje wydajność, aby dla komfortu użytkownika zapewnić chłodniejszą powierzchnię. Gdy urządzenie jest umieszczone na biurku, ta funkcja optymalizuje wydajność systemu.",
                     "description13": "Po włączeniu ta funkcja dynamicznie dostosowuje ustawienia temperatury do Twoich potrzeb. Dostosowuje ustawienia, aby urządzenie było chłodne i pracowało cicho, gdy jest trzymane na kolanach lub bezczynne. Gdy urządzenie znajduje się na stabilnej powierzchni, jego wydajność jest optymalizowana. Gdy jest wyłączona, można ręcznie ustawić priorytet chłodzenia.",
                     "description14": "Ta funkcja pozwala dostosować szybkość wentylatora, zmaksymalizować wydajność systemu lub w razie potrzeby wydłużyć żywotność akumulatora. Dostępne są trzy tryby wymienionej poniżej. Możesz także przełączać tryby za pomocą skrótów klawiszowych (Fn + Q) lub z paska narzędzi Lenovo Vantage.",
-                    "readMore": "Dowiedz się więcej.",
+                    "readMore": "Dowiedz się więcej",
                     "gotoWindows": {
                         "title": "Przejdź do ustawień systemu Windows",
                         "modalBodyText1": "Kliknij ikonę akumulatora systemu Windows na pasku zadań, aby uzyskać dostęp do suwaka wydajności systemu Windows"
@@ -1132,17 +1132,28 @@
                         },
                         "selectedModeText": {
                             "quiteCool": "Ten tryb zapewnia efektywne działanie komputera przy zrównoważonej prędkości wentylatora i wydajności systemu. Na przykład optymalizuje wydajność podczas grania. Zmniejsza hałas, gdy jesteś w biurze.",
-                            "batterySaving": "Ten tryb zapewnia maksymalną żywotność akumulatora poprzez automatyczną regulację jasności, zmianę ustawień zasilania, wyłączanie funkcji zaawansowanego przetwarzania obrazu itp.",
-                            "performance": "Ten tryb zapewnia maksymalną wydajność systemu. W tym trybie duża prędkość wentylatora może powodować znaczny hałas."
+                            "batterySaving14": "Ten tryb zapewnia maksymalną żywotność akumulatora poprzez automatyczną regulację jasności, zmianę ustawień zasilania, wyłączanie funkcji zaawansowanego przetwarzania obrazu itp.",
+                            "performance": "Ten tryb zapewnia maksymalną wydajność systemu. W tym trybie duża prędkość wentylatora może powodować znaczny hałas.",
+                            "batterySaving15": "Ten tryb umożliwia automatyczne dostosowanie jasności, zmianę ustawień zasilania, wyłączenie dźwięku Dolby oraz zmianę innych ustawień pod kątem zapewnienia maksymalnego czasu działania akumulatora. Dzięki wszystkim powyższym zmianom można wydłużyć czas działania akumulatora nawet o 20%."
                         },
                         "intelligentCoolingModesModal": {
                             "title": "Zmiana inteligentnych trybów chłodzenia",
                             "close": "zamknij",
                             "coolingModesList": {
-                                "list1": "Kliknij ikonę akumulatora systemu Windows na pasku narzędzi",
+                                "list1": "Kliknij ikonę akumulatora systemu Windows na pasku narzędzi.",
                                 "list2": "Pojawi się wskaźnik trybu zasilania systemu Windows, przesuń suwak, aby wybrać optymalny czas lub optymalną wydajność."
                             }
-                        }
+                        },
+                        "autoTransition": {
+							"description": "Włącz funkcję „Ekstremalna wydajność” w tym trybie. Po jej włączeniu temperatura na powierzchni komputera oraz poziom hałasu wentylatora mogą automatycznie wzrosnąć.",
+							"more": "WIĘCEJ",
+							"less": "LESS",
+							"moreContent": {
+								"desc1": "a. W scenariuszach biurowym, aktualizacji systemu Windows, filmu online lub ładowania systemu w trybie małego obciążenia system może działać cicho. W normalnych scenariuszach obejmujących grę ma z kolei lepszą wydajność.",
+								"desc2": "b. Na czas grania w gry o dużych wymaganiach sprzętowych następuje automatyczne włączenie trybu „Ekstremalna wydajność”. Włączenie tego trybu może spowodować zwiększenie poziomu hałasu lub temperatury na powierzchni komputera.",
+								"desc3": "c. Gdy pojemność baterii spadnie poniżej 30%, system automatycznie przełączy się w tryb „Oszczędzanie akumulatora”."
+							}			
+						}
                     },
                     "nonintelligentCooling": {
                         "options": {
@@ -1151,7 +1162,7 @@
                             "battery&Quite": "AKUMULATOR I CICHA PRACA"
                         }
                     },
-                    "description5": "Funkcja Inteligentne chłodzenie dostosowuje szybkość wentylatora, maksymalną wydajność oraz zarządza czasem eksploatacji. Ta funkcja ma trzy tryby (tryb cichy, tryb zrównoważony i tryb wydajności) i jest teraz dostępna za pomocą suwaka wydajności systemu Windows",
+                    "description5": "Funkcja Inteligentne chłodzenie dostosowuje szybkość wentylatora, maksymalną wydajność oraz zarządza czasem eksploatacji. Ta funkcja ma trzy tryby (tryb cichy, tryb zrównoważony i tryb wydajności) i jest teraz dostępna za pomocą suwaka wydajności systemu Windows.",
                     "nocqldesc": "Inteligentne chłodzenie umożliwia dostosowanie wydajności systemu i parametrów termicznych. W trybie „Wydajność” optymalizuje pracę systemu. Jeśli chcesz, aby komputer nie nagrzewał się lub pracował ciszej, przejdź do trybu „Chłodny i cichy”.",
                     "dytc6": {
                         "desc1": "Funkcja Inteligentne chłodzenie dostosowuje szybkość wentylatora, maksymalną wydajność oraz zarządza czasem eksploatacji.",
@@ -1460,15 +1471,15 @@
                         "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "radioText": "VoIP",
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
+                                "checkboxText": "Automatically optimize audio for VOIP"
                             },
                             "entertainmentMode": {
-                                "radioText": "Entertainment",
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
                                 "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
                                 "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
+                                "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
                     },
@@ -1533,8 +1544,8 @@
                 "display": {
                     "title": "Wyświetlanie",
                     "displayColorTemperature": {
-                        "title": "Temperatura barwowa ekranu",
-                        "description": "Możesz dostosowywać temperaturę barwową ekranu, odfiltrowując niebieskie światło męczące oczy. Z kolei w okresie od zachodu do wschodu słońca ustawiaj cieplejsze kolory, które nie zaburzają snu.",
+                        "title": "Tryb ochrony oczu",
+                        "description": "Aby uniknąć zmęczenia oczu podczas długiego korzystania z komputera, możesz dostosować temperaturę barwową wyświetlacza w celu odfiltrowania niebieskiego światła. Ponadto ciepłe kolory ułatwiają zasypianie, szczególnie w godzinach nocnych.",
                         "link": {
                             "click": "Kliknij",
                             "here": "tutaj",

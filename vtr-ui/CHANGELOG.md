@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.23](https://bitbucket.tc.lenovo.com///compare/v1.5.22...v1.5.23) (2020-04-24)
+
+### [1.5.22](https://bitbucket.tc.lenovo.com///compare/v1.5.21...v1.5.22) (2020-04-23)
+
+
+### Features
+
+* **all:** merge v3.2.6 code ([e75ccdc](https://bitbucket.tc.lenovo.com///commit/e75ccdc40f06e42ff950805365bfa479d62a6d75))
+
 ### [1.5.21](https://bitbucket.tc.lenovo.com///compare/v1.5.20...v1.5.21) (2020-04-22)
 
 
