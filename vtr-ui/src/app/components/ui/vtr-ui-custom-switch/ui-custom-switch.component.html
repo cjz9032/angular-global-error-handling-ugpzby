@@ -1,0 +1,16 @@
+<form class="vtr-ui-custom-switch">
+	<div class="form-group">
+		<div class="custom-control custom-switch">
+			<input type="checkbox"
+				role="switch"
+				class="custom-control-input"
+				[id]="switchId"
+				[disabled]="isDisabled"
+				[checked]="value">
+			<label class="custom-control-label"
+				[for]="switchId">
+				{{label}}
+			</label>
+		</div>
+	</div>
+</form>
