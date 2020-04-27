@@ -1,19 +1,12 @@
 @import '../../../app.theme.scss';
 .vtr-modal-store-rating{
-    
-    .close-button{
-        font-size:2.2rem;
-        align-self: flex-end;   
-        cursor: pointer;
-        margin: 1px;
-        color: gray;
-        padding:0 1rem;
-    }
-
     .modal-content{
         font-size: 2rem;
-        padding:0 2rem;
         line-height: 0;
+        .modal-title{
+            line-height: 1rem;
+            margin: 2.4rem 0 0 2.4rem;
+        }
         .hint-image-border{
             margin-top: 26px;
             height: 220px;
@@ -71,7 +64,7 @@
 
         .feedback-btn{
             justify-content: center;
-            font-size: $fontsize_xs2;
+            font-size: 1.4rem;
             align-self: center;
             color: $main;
             margin-left: 2rem;
