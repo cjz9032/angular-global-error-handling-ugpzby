@@ -119,7 +119,7 @@ describe('service', () => {
 
   it('convertToUrlAssumeProtocolIs3x new not exist protocol', () => {
 	const protocol = 'lenovo-vantage3:not-exist-protocol';
-    expect(service['convertToUrlAssumeProtocolIs3x'](protocol)).toEqual('not-exist-protocol');
+    expect(service['convertToUrlAssumeProtocolIs3x'](protocol)).toEqual('');
   });
 
   it('convertToUrlAssumeProtocolIs3x empty args', () => {
@@ -149,7 +149,8 @@ describe('service', () => {
 
   it('convertToUrlAssumeProtocolIs2x valid 2x protocol with existed feature-id', () => {
 	const protocol = 'lenovo-companion:PARAM?featureId=5fbdca5f-02ca-4159-8f1c-725703e31473';
-    expect(service['convertToUrlAssumeProtocolIs2x'](protocol)).toEqual('device/device-settings/power?featureId=5fbdca5f-02ca-4159-8f1c-725703e31473');
+	const result = service['convertToUrlAssumeProtocolIs2x'](protocol);
+    expect(result.startsWith('device/device-settings/power?featureId=5fbdca5f-02ca-4159-8f1c-725703e31473')).toEqual(true);
   });
 
   it('convertToUrlAssumeProtocolIs2x valid 2x protocol with not existed feature-id', () => {
@@ -178,7 +179,8 @@ describe('service', () => {
 
   it('convertToUrlAssumeProtocolIs2x valid 2.x protocol', () => {
 	const protocol = 'lenovo-companion:PARAM?section=input';
-    expect(service['convertToUrlAssumeProtocolIs2x'](protocol)).toEqual('device/device-settings/input-accessories?section=input');
+	const result = service['convertToUrlAssumeProtocolIs2x'](protocol);
+    expect(result.startsWith('device/device-settings/input-accessories?section=input')).toEqual(true);
   });
 
   it('convertToUrlAssumeProtocolIs2x valid 2.x protocol, exist section, but no semantic', () => {
@@ -230,6 +232,22 @@ describe('service', () => {
     const state = TestBed.get(RouterStateSnapshot);
     state.url = '#/?protocol=xxxxxxx';
     expect(service['canActivate'](null, state)).toEqual(window.history.length === 1);
+  })
+
+  it('addTimestampQueryParam undefined params', () => {
+    const query = undefined;
+    expect(service['addTimestampQueryParam'](query)).toEqual(undefined);
+  })
+
+  it('addTimestampQueryParam not query string params', () => {
+    const query = 'not-query-string';
+    expect(service['addTimestampQueryParam'](query)).toEqual('not-query-string');
+  })
+
+  it('addTimestampQueryParam not query string params', () => {
+    const query = '?query-string';
+	const result = service['addTimestampQueryParam'](query);
+	expect(result.startsWith('?query-string&timestamp=')).toEqual(true);
   })
 });
 

@@ -12,6 +12,7 @@ export class FeedbackService {
 	) { }
 
 	openFeedbackModal() {
+		if (this.modalService.hasOpenModals()) return;
 		this.modalService.open(FeedbackFormComponent, {
 			backdrop: true,
 			size: 'lg',
