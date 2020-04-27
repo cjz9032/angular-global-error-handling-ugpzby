@@ -8,6 +8,7 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { Container, BindingScopeEnum } from 'inversify';
 import { Backlight } from '../../components/pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.interface';
 import { MetricHelper } from 'src/app/services/metric/metrics.helper';
+import { WifisecurityProxy } from '../security/wifisecurityproxy.service';
 
 declare var window;
 
@@ -239,6 +240,8 @@ export class VantageShellService {
 		if (this.phoenix) {
 			if (!this.phoenix.securityAdvisor) {
 				this.phoenix.loadFeatures([Phoenix.Features.SecurityAdvisor]);
+				const wifiSecurity = this.phoenix.securityAdvisor.wifiSecurity;
+				this.phoenix.securityAdvisor.wifiSecurity = new WifisecurityProxy(wifiSecurity, this.commonService);
 			}
 			return this.phoenix.securityAdvisor;
 		}
