@@ -196,7 +196,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				return;
 			}
 			if (response && response.available) {
-				if (response.itsVersion === 3 || response.itsVersion === 4 || response.itsVersion >= 5) {
+				// (response.itsVersion === 3 || response.itsVersion === 4 || response.itsVersion >= 5)
+				if (response.itsVersion >= 3) {
 					this.initPowerSmartSettingsUIForIdeaPad(response);
 					this.startMonitorForICIdeapad();
 				}
@@ -233,7 +234,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 						this.showIntelligentCoolingModes = true;
 						this.setPerformanceAndCool(currentMode);
 					}
-				} else if (response.itsVersion === 4 || response.itsVersion >= 5) {
+				} else if (response.itsVersion >= 4) {
 					if (response.itsVersion === 4) {
 						this.intelligentCoolingModes = IntelligentCoolingHardware.ITS14;
 					} else if (response.itsVersion >= 5) {
@@ -773,16 +774,15 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 	}
 
 	onAutoTransitionToggle($event) {
-		this.isAutoTransitionEnabled = $event
+		this.isAutoTransitionEnabled = $event;
 		if (this.powerService.isShellAvailable && this.isAutoTransitionVisible) {
 			this.powerService.setAutoTransitionForICIdeapad($event)
 			.then((isSuccess: boolean) => {
-				if (isSuccess) {
-					this.cache.isAutoTransitionEnabled = this.isAutoTransitionEnabled;
-					this.commonService.setLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, this.cache);
-				} else {
-					this.isAutoTransitionEnabled = !this.isAutoTransitionEnabled;
-				}
+				if (!isSuccess) {
+					this.logger.info(`onAutoTransitionToggle.setAutoTransitionForICIdeapad failed`);	
+				} 
+				this.cache.isAutoTransitionEnabled = this.isAutoTransitionEnabled;
+				this.commonService.setLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, this.cache);
 				this.logger.info(`onAutoTransitionToggle.setAutoTransitionForICIdeapad after API ${isSuccess} ; $event: ${$event}`);
 			})
 		}
