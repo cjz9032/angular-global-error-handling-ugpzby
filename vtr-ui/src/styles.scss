@@ -931,9 +931,15 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 }
 
 .cancel-modal {
-	.modal-dialog {
-		max-width: 27%;
-	}
+	// .modal-dialog {
+	// 	max-width: 27%;
+	// 	@media #{$breakpoint_md}{
+	// 		max-width: 65%;
+	// 	}
+	// 	@media #{$breakpoint_sm}{
+	// 		max-width: 95%;
+	// 	}
+	// }
 	.modal-content {
 		border-radius: 1rem;
 		background: $light;
@@ -1178,6 +1184,8 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 					}
 					@media #{$breakpoint_sm} {
 						font-size: 0.9rem;
+						line-height: 1.2rem;
+						height: 12rem;
 					}
 					.icon {
 						height: 12rem;
@@ -1193,7 +1201,7 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 							line-height: 6.4rem;
 						}
 						@media #{$breakpoint_sm} {
-							font-size: 5rem;
+							font-size: 4rem;
 						}
 					}
 					&::before {
