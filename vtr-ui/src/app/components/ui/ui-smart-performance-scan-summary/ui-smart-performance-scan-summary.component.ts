@@ -9,6 +9,7 @@ import moment from 'moment';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { EventTypes } from '@lenovo/tan-client-bridge';
 import { EMPTY } from 'rxjs';
+import { SupportService } from 'src/app/services/support/support.service';
 @Component({
 	selector: 'vtr-ui-smart-performance-scan-summary',
 	templateUrl: './ui-smart-performance-scan-summary.component.html',
@@ -20,6 +21,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		private commonService: CommonService,
 		private calendar: NgbCalendar,
 		private logger: LoggerService,
+		private supportService: SupportService,
 		public smartPerformanceService: SmartPerformanceService,
 		public shellServices: VantageShellService,
 	) { }
@@ -167,6 +169,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	IsSmartPerformanceFirstRun: any;
 	IsScheduleScanEnabled: any;
 	public scanData: any = {};
+	systemSerialNumber:any;
 	// tuneindividualIssueCount: any = 0;
 	// boostindividualIssueCount: any = 0;
 	// secureindividualIssueCount: any = 0;
@@ -201,6 +204,10 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		else {
 			this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScan');
 		}
+
+		this.supportService.getMachineInfo().then(async (machineInfo) => {
+			this.systemSerialNumber = machineInfo.serialnumber;
+		});
 	}
 
 	getNextScanScheduleTime(scandate) {
