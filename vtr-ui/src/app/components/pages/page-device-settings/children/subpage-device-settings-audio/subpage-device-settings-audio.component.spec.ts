@@ -55,7 +55,7 @@ const microOptimizeModeResponse = {
 	current: 'VoiceRecognition'
 };
 
-fdescribe('SubpageDeviceSettingsAudioComponent', () => {
+describe('SubpageDeviceSettingsAudioComponent', () => {
 	let fixture: ComponentFixture<SubpageDeviceSettingsAudioComponent>;
 	let component: SubpageDeviceSettingsAudioComponent;
 
