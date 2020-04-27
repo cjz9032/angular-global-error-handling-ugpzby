@@ -55,7 +55,7 @@ const microOptimizeModeResponse = {
 	current: 'VoiceRecognition'
 };
 
-describe('SubpageDeviceSettingsAudioComponent', () => {
+fdescribe('SubpageDeviceSettingsAudioComponent', () => {
 	let fixture: ComponentFixture<SubpageDeviceSettingsAudioComponent>;
 	let component: SubpageDeviceSettingsAudioComponent;
 
@@ -90,7 +90,7 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		});
 	}));
 
-	it('should create', async(() => {
+	it('should create', () => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
 		component = fixture.componentInstance;
 		commonService = TestBed.get(CommonService);
@@ -109,16 +109,17 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		component.dolbyAudioToggleCache = new DolbyAudioToggleCapability();
 		fixture.detectChanges();
 		expect(component).toBeTruthy();
-	}));
+	});
 
 	it('should call initFeatures', () => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
 		component = fixture.componentInstance;
-		const spy = spyOn(component, 'getDolbyFeatureStatus');
-		spyOn(component, 'getDolbyModesStatus');
+		const spy = spyOn(component, 'getDolbyModesStatus');
 		component['initFeatures']();
 		expect(spy).toHaveBeenCalled();
 	});
+
+	
 
 	it('should call initDolbyAudioFromCache - else block', () => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
@@ -322,6 +323,7 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		commonService = TestBed.get(CommonService);
 		const spy = spyOn(commonService, 'setLocalStorageValue');
 		component.dolbyAudioToggleCache = new DolbyAudioToggleCapability();
+		component.dolbyModeResponse = dolbyModeResponse;
 		component.startMonitorHandlerForDolby(dolbyModeResponse);
 		expect(spy).toHaveBeenCalled();
 	});
