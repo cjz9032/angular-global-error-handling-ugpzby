@@ -193,7 +193,7 @@ export class MetricsDirective {
 		}
 
 		let data = null;
-		if (this.composedItem) {
+		if (this.composedItem && typeof this.composedItem !== 'boolean') {
 			data = await this.parseComposedEvent();
 		} else {
 			data = this.composeMetricsEvent();

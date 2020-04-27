@@ -566,7 +566,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 					});
 			}
 		} catch (error) {
-			this.logger.error('getHPDAdvancedSetting error: ', error.message);
+			this.logger.info('getHPDAdvancedSetting error: ', error.message);
 		}
 	}
 
@@ -587,7 +587,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 					});
 			}
 		} catch (error) {
-			this.logger.error('setHPDAdvancedSetting error: ', error.message);
+			this.logger.info('setHPDAdvancedSetting error: ', error.message);
 		}
 	}
 
@@ -602,7 +602,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 					});
 			}
 		} catch (error) {
-			this.logger.error('getHsaIntelligentSecurityStatus' + error.message);
+			this.logger.info('getHsaIntelligentSecurityStatus' + error.message);
 		}
 	}
 
@@ -618,7 +618,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 					});
 			}
 		} catch (error) {
-			this.logger.error('onZeroTouchLockDistanceSensitivityAdjustToggle' + error.message);
+			this.logger.info('onZeroTouchLockDistanceSensitivityAdjustToggle' + error.message);
 		}
 	}
 
@@ -630,12 +630,12 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				this.smartAssist.setZeroTouchLockDistanceSensitivity(value)
 					.then((response) => {
 						if (response !== 0) {
-							this.logger.error('SetZeroTouchLockDistanceSensitivity error.');
+							this.logger.info('SetZeroTouchLockDistanceSensitivity error.');
 						}
 					});
 			}
 		} catch (error) {
-			this.logger.exception('SetZeroTouchLockDistanceSensitivity', error);
+			this.logger.info('SetZeroTouchLockDistanceSensitivity', error);
 		}
 	}
 
@@ -648,7 +648,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 					});
 			}
 		} catch (error) {
-			this.logger.error('startMonitorHsaIntelligentSecurityStatus error: ', error.message);
+			this.logger.info('startMonitorHsaIntelligentSecurityStatus error: ', error.message);
 		}
 	}
 
@@ -666,7 +666,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			}
 			this.logger.info('hsaIntelligentSecurityChange', data);
 		} catch (error) {
-			this.logger.error('hsaIntelligentSecurityChange', error.message);
+			this.logger.info('hsaIntelligentSecurityChange', error.message);
 		}
 	}
 
