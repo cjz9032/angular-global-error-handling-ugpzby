@@ -2075,7 +2075,7 @@
             "superResolution": {
                 "heading": "Intelligenta medier",
                 "title": "Öka videoupplösningen",
-                "desc": "<p><label>Denna funktion förbättrar videoupplösningen, vilket ger en bättre upplevelse av videouppspelningen. Den är särskilt användbar om videon har dålig upplösning.</label></p> <p style='margin-top:4px;'><label>Funktionen kan påverka batteriets livslängd och temperatur och orsaka brus. Använd inte funktionen i DC-läge (batteriläge). Detta orsakar ökad energiförbrukning och batteriets livslängd förkortas.</label></p>",
+                "desc": "<p><label>Denna funktion förbättrar videoupplösningen, vilket ger en bättre upplevelse av videouppspelningen. Den är särskilt användbar om videon har dålig upplösning.</label></p> <p><label>Funktionen kan påverka batteriets livslängd och temperatur och orsaka brus. Använd inte funktionen i DC-läge (batteriläge). Detta orsakar ökad energiförbrukning och batteriets livslängd förkortas.</label></p>",
                 "tooltip": "Funktionen fungerar med följande videospelare:<br>Windows Media Player<br>Chrome<br>Film & TV<br>PotPlayer<br>GOM Player<br>webbläsarbaserade spelare (till exempel Chrome)<br><br>Anvisningar om hur du aktiverar funktionen i PotPlayer och GOM Player finns i Användarhandbok som medföljer datorn.",
                 "note": {
                     "description": "Funktionen fungerar inte när",
@@ -2086,7 +2086,7 @@
             "antiTheft": {
                 "heading": "Intelligent avkänning",
                 "title": "Smart rörelsevarning",
-                "desc": "<p><label>Om du aktiverar den här funktionen börjar enheten signalera när bildskärmen är låst och rörelser identifieras, speciellt på en offentlig plats.</label></p> <p style='margin-top:4px;'><label>Du stänger av larmet genom att ange rätt lösenord eller logga in med Windows Hello.</label></p>",
+                "desc": "<p><label>Om du aktiverar den här funktionen börjar enheten signalera när bildskärmen är låst och rörelser identifieras, speciellt på en offentlig plats.</label></p> <p><label>Du stänger av larmet genom att ange rätt lösenord eller logga in med Windows Hello.</label></p>",
                 "note": {
                     "description": "När du har loggat in på systemet stängs funktionen av automatiskt. Du måste aktivera den igen om du vill använda den."
                 },

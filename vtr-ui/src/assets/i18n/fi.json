@@ -2075,7 +2075,7 @@
             "superResolution": {
                 "heading": "Älykäs tietoväline",
                 "title": "Näytön tarkkuuden skaalaus",
-                "desc": "<p><label>Tämä ominaisuus parantaa videoiden katselukokemusta parantamalla videoiden resoluutiota. Se toimii erityisen hyvin, kun videon resoluutio on alhainen.</label></p> <p style='margin-top:4px;'><label>Tämä toiminto saattaa heikentää akun käyttöaikaa, akun lämpötilaa ja aiheuttaa ääniä. Älä käytä sitä DC-tilassa (akkuvirralla). Muutoin se nopeuttaa virrankulutusta ja lyhentää akun käyttöikää.</label></p>",
+                "desc": "<p><label>Tämä ominaisuus parantaa videoiden katselukokemusta parantamalla videoiden resoluutiota. Se toimii erityisen hyvin, kun videon resoluutio on alhainen.</label></p> <p><label>Tämä toiminto saattaa heikentää akun käyttöaikaa, akun lämpötilaa ja aiheuttaa ääniä. Älä käytä sitä DC-tilassa (akkuvirralla). Muutoin se nopeuttaa virrankulutusta ja lyhentää akun käyttöikää.</label></p>",
                 "tooltip": "Tämä ominaisuus toimii vain seuraavilla videosoittimilla:<br>Windows Media Player<br>Chrome<br>Elokuvat ja TV<br>PotPlayer<br>GOM Player<br>Selainpohjaiset soittimet (esim. Chrome)<br><br>Lisätietoja tämän ominaisuuden ottamisesta käyttöön PotPlayer- ja GOM Player -soittimille löydät tietokoneesi mukana toimitetusta käyttöoppaasta.",
                 "note": {
                     "description": "Wi-Fi-toiminto ei toimi seuraavissa tilanteissa:",
@@ -2086,7 +2086,7 @@
             "antiTheft": {
                 "heading": "Älykäs tunnistustoiminto",
                 "title": "Älykäs liikkeentunnistus",
-                "desc": "<p><label>Kun tämä ominaisuus on käytössä, laite aloittaa äänimerkin toistamisen, jos näyttösi ollessa lukittuna havaitaan liikettä, varsinkin julkisissa tiloissa.</label></p> <p style='margin-top:4px;'><label>Lopeta hälytys syöttämällä oikea salasana tai kirjautumalla sisään Windows Hellon avulla.</label></p>",
+                "desc": "<p><label>Kun tämä ominaisuus on käytössä, laite aloittaa äänimerkin toistamisen, jos näyttösi ollessa lukittuna havaitaan liikettä, varsinkin julkisissa tiloissa.</label></p> <p><label>Lopeta hälytys syöttämällä oikea salasana tai kirjautumalla sisään Windows Hellon avulla.</label></p>",
                 "note": {
                     "description": "Kun kirjaudut järjestelmään onnistuneesti, tämä ominaisuus poistetaan automaattisesti käytöstä. Sinun täytyy ottaa se uudelleen käyttöön käyttääksesi sitä."
                 },

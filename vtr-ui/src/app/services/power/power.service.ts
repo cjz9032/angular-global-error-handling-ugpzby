@@ -487,16 +487,12 @@ export class PowerService {
 			throw new Error(error.message);
 		}
 	}
-	
+
 	public setAutoTransitionForICIdeapad(mode: boolean) {
-		try {
-			if (this.intelligentCoolingForIdeaPad) {
-				return this.intelligentCoolingForIdeaPad.setITSAutoTransitionSettings(mode);
-			}
-			return undefined;
-		} catch (error) {
-			throw new Error(error.message);
+		if (this.intelligentCoolingForIdeaPad) {
+			return this.intelligentCoolingForIdeaPad.setITSAutoTransitionSettings(mode);
 		}
+		return undefined;
 	}
 	// -------------End IdeaPad
 	// ------------- Start DYTC 6.0 -------------------

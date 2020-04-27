@@ -2075,7 +2075,7 @@
             "superResolution": {
                 "heading": "Inteligentni mediji",
                 "title": "Povećanje razlučivosti videozapisa",
-                "desc": "<p><label>Ova značajka poboljšava iskustvo reprodukcije videa poboljšanjem razlučivosti videozapisa. Posebno djeluje kada je video loše razlučivosti.</label></p> <p style='margin-top:4px;'><label>Ova funkcija može utjecati na trajanje baterije, temperaturu baterije i uzrokovati buku. Nemojte ga koristiti u DC načinu rada (način rada baterije). U suprotnom će doći do ubrzanja potrošnje električne energije i skraćivanja vijeka trajanja baterije.</label></p>",
+                "desc": "<p><label>Ova značajka poboljšava iskustvo reprodukcije videa poboljšanjem razlučivosti videozapisa. Posebno djeluje kada je video loše razlučivosti.</label></p> <p><label>Ova funkcija može utjecati na trajanje baterije, temperaturu baterije i uzrokovati buku. Nemojte ga koristiti u DC načinu rada (način rada baterije). U suprotnom će doći do ubrzanja potrošnje električne energije i skraćivanja vijeka trajanja baterije.</label></p>",
                 "tooltip": "Ova značajka radi samo za video reproduktore ispod video zapisa:<br>Windows Media Player<br>Chrome<br>filmovi i televizija<br>PotPlayer<br>GOM player<br>Reproduktori temeljeni na web preglednicima (npr. Chrome)<br><br>Za upute o tome kako omogućiti ovu funkciju na PotPlayeru i GOM player uređaju, pogledajte korisnički priručnik koji ste dobili s računalom.",
                 "note": {
                     "description": "Ova značajka ne funkcionira kad:",
@@ -2086,7 +2086,7 @@
             "antiTheft": {
                 "heading": "Pametni senzori",
                 "title": "Pametno upozorenje o kretanju",
-                "desc": "<p><label>Kada omogućite ovu značajku, uređaj će početi piskati kad je vaš zaslon zaključan a otkrije se pokrete, naročito na javnom mjestu.</label></p> <p style='margin-top:4px;'><label>Da biste isključili alarm, unesite pravilnu lozinku ili se prijavite u sustav Windows Hello.</label></p>",
+                "desc": "<p><label>Kada omogućite ovu značajku, uređaj će početi piskati kad je vaš zaslon zaključan a otkrije se pokrete, naročito na javnom mjestu.</label></p> <p><label>Da biste isključili alarm, unesite pravilnu lozinku ili se prijavite u sustav Windows Hello.</label></p>",
                 "note": {
                     "description": "Nakon uspješne prijave u sustav, ova će se značajka automatski isključiti. Da biste je opet koristili morate je ponovo uključiti."
                 },
