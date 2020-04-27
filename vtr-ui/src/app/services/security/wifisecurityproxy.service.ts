@@ -3,7 +3,7 @@
 import { SecurityAdvisorNotifications } from 'src/app/enums/security-advisor-notifications.enum';
 import { CommonService } from '../common/common.service';
 import * as phoenix from '@lenovo/tan-client-bridge';
-
+import { Emitable } from '@lenovo/tan-client-bridge/type/base';
 
 export class WifisecurityProxy implements phoenix.WifiSecurity {
 
@@ -90,10 +90,10 @@ export class WifisecurityProxy implements phoenix.WifiSecurity {
 	cancelGetWifiHistory(): void {
 		return this.wifisecurity.cancelGetWifiHistory();
 	}
-	on(type: string, handler: (value: any, type?: any) => void): import("@lenovo/tan-client-bridge/type/base").Emitable {
+	on(type: string, handler: (value: any, type?: any) => void): Emitable {
 		return this.wifisecurity.on(type, handler);
 	}
-	off(type: string, handler: (value: any, type?: any) => void): import("@lenovo/tan-client-bridge/type/base").Emitable {
+	off(type: string, handler: (value: any, type?: any) => void): Emitable {
 		return this.wifisecurity.off(type, handler);
 	}
 	refresh(): Promise<any> {
