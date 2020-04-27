@@ -1,14 +1,29 @@
 <form class="vtr-ui-custom-switch">
 	<div class="form-group">
-		<div class="custom-control custom-switch">
+		<!-- <div *ngIf="isLoading"
+			class="row spinner-row"
+			[ngClass]="{'white-theme': theme==='white',
+					'blue-theme': theme==='blue'}">
+			<vtr-spinner></vtr-spinner>
+		</div> -->
+		<div class="custom-control custom-switch"  [hidden]="isLoading">
 			<input type="checkbox"
-				role="switch"
 				class="custom-control-input"
-				[id]="switchId"
+				tabIndex="0"
+				[id]="componentId"
 				[disabled]="isDisabled"
-				[checked]="value">
+				[checked]="value"
+				[attr.aria-label]="ariaLabel"
+				[attr.aria-disabled]="isDisabled"
+				[attr.aria-checked]="value"
+				vtrMetrics
+				[metricsEvent]="metricsEvent"
+				[metricsParent]="metricsParent"
+				[metricsItem]="componentId"
+				[metricsValue]="value"
+				(change)="onChange($event)">
 			<label class="custom-control-label"
-				[for]="switchId">
+				[for]="componentId">
 				{{label}}
 			</label>
 		</div>

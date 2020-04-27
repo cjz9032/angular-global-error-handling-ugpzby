@@ -11,7 +11,9 @@
 	$custom-switch-height: 2rem !default;
 	$custom-switch-indicator-border-radius: $custom-control-indicator-size / 2 !default;
 	$custom-switch-indicator-size: $custom-control-indicator-size - ($custom-control-indicator-border-width * 4) !default;
-
+	$input-focus-indicator: 0 0 0 0.1rem rgba(255, 255, 255, 1), 0 0 0 0.2rem rgba(0, 123, 255, 1);
+	$input-checked-background: transparent linear-gradient(113deg, $green_darker 0%, $green-light 100%) 0% 0% no-repeat
+					padding-box;
 	.custom-switch {
 		padding-left: $custom-switch-width + $custom-control-gutter;
 
@@ -45,7 +47,7 @@
 
 		.custom-control-input:focus ~ .custom-control-label {
 			&::before {
-				box-shadow: 0 0 0 0.1rem rgba(255, 255, 255, 1), 0 0 0 0.2rem rgba(0, 123, 255, 1);
+				box-shadow: $input-focus-indicator;
 			}
 		}
 
@@ -58,8 +60,7 @@
 		.custom-control-input:checked ~ .custom-control-label {
 			&::before {
 				border: 0;
-				background: transparent linear-gradient(113deg, $green_darker 0%, $green-light 100%) 0% 0% no-repeat
-					padding-box;
+				background: $input-checked-background;
 			}
 			&::after {
 				background-color: $light;
