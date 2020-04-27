@@ -201,6 +201,9 @@
                     "legionAccessory": "Install Legion Accessory Central?",
                     "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
                     "install": "INSTALL"
+                },
+                "popup": {
+                    "closeBtn": "close"
                 }
             }
         },
@@ -1132,8 +1135,9 @@
                         },
                         "selectedModeText": {
                             "quiteCool": "Bu kip, fan hızını ve sistem performansını dengeleyerek en iyi deneyimi sağlar. Örneğin oyun oynarken performansı iyileştirir. Ofiste çalışırken gürültüyü azaltır.",
-                            "batterySaving": "Bu kip, parlaklığı otomatik olarak ayarlama, güç ayarlarını değiştirme, gelişmiş görüntü işleme özelliklerini devre dışı bırakma gibi seçeneklerle maksimum pil ömrü sağlar.",
-                            "performance": "Bu kip, maksimum sistem performansı sağlar. Bu kipte, fanın hızlı çalışması gürültüye neden olabilir."
+                            "batterySaving14": "Bu kip, parlaklığı otomatik olarak ayarlama, güç ayarlarını değiştirme, gelişmiş görüntü işleme özelliklerini devre dışı bırakma gibi seçeneklerle maksimum pil ömrü sağlar.",
+                            "performance": "Bu kip, maksimum sistem performansı sağlar. Bu kipte, fanın hızlı çalışması gürültüye neden olabilir.",
+                            "batterySaving15": "Bu kip otomatik olarak parlaklığı ayarlayarak, güç ayarlarını şarj ederek, Dolby ses özelliğini devre dışı bırakarak ve benzeri değişiklikleri yaparak maksimum pil ömrü sağlar. Bu ayarların tamamı kullanılarak pil ömrü %20'ye kadar uzayabilir."
                         },
                         "intelligentCoolingModesModal": {
                             "title": "Akıllı soğutma kiplerinin değiştirilmesi",
@@ -1141,6 +1145,16 @@
                             "coolingModesList": {
                                 "list1": "Araç çubuğundaki Windows pil simgesine tıklayın.",
                                 "list2": "Windows Güç Kipi göründüğünde en iyi süre veya en iyi performans arasında seçim yapmak için kaydırıcıyı kullanın."
+                            }
+                        },
+                        "autoTransition": {
+                            "description": "Bu kipte “Yüksek Performans” özelliğini etkinleştirin. Etkinleştirildiğinde, bilgisayar yüzeyinin sıcaklığı ve fan gürültüsü otomatik olarak artabilir.",
+                            "more": "DAHA FAZLA",
+                            "less": "DAHA AZ",
+                            "moreContent": {
+                                "desc1": "a. Ofis, Windows güncellemesi, çevrimiçi film veya sistem ışığı yükleme senaryolarında sistem sessiz olabilir. Normal oyun senaryolarında daha iyi bir performans sergiler.",
+                                "desc2": "b. Ağır oyunlar oynarken “Yüksek performans” kipi otomatik olarak etkinleştirilir. Bu daha fazla gürültüye veya bilgisayarınızın yüzeyinde daha yüksek sıcaklığa neden olabilir.",
+                                "desc3": "c. Pil kapasitesi %30'dan düşük olduğunda, sistem otomatik olarak “Pil tasarrufu” kipine geçer."
                             }
                         }
                     },
@@ -2064,7 +2078,7 @@
             "superResolution": {
                 "heading": "Akıllı Medya",
                 "title": "Video Çözünürlüğünü Yükseltme",
-                "desc": "<p><label>Bu özellik, video çözünürlüğünü iyileştirerek video oynatma deneyimini geliştirir. Özellikle video düşük çözünürlükte olduğunda çalışır.</label></p> <p style='margin-top:4px;'><label>Bu işlev pil ömrünü, pil sıcaklığını etkileyebilir ve gürültüye neden olabilir. Lütfen DC kipinde (pil kipi) kullanmayın. Aksi takdirde, güç tüketimini hızlandırır ve pil ömrünü kısaltır.</label></p>",
+                "desc": "<p><label>Bu özellik, video çözünürlüğünü iyileştirerek video oynatma deneyimini geliştirir. Özellikle video düşük çözünürlükte olduğunda çalışır.</label></p> <p><label>Bu işlev pil ömrünü, pil sıcaklığını etkileyebilir ve gürültüye neden olabilir. Lütfen DC kipinde (pil kipi) kullanmayın. Aksi takdirde, güç tüketimini hızlandırır ve pil ömrünü kısaltır.</label></p>",
                 "tooltip": "Bu özellik yalnızca aşağıdaki video oynatıcılar için geçerlidir:<br>Windows Media Player<br>Chrome<br>Filmler ve TV<br>PotPlayer<br>GOM Player<br>Web tarayıcı tabanlı oynatıcılar (ör. Chrome)<br><br>PotPlayer ve GOM Player'da bu işlevin etkinleştirilmesiyle ilgili talimatlar için bilgisayarınızla birlikte verilen Kullanma Kılavuzu'na bakın.",
                 "note": {
                     "description": "Bu özellik şu durumlarda çalışmaz:",
@@ -2075,7 +2089,7 @@
             "antiTheft": {
                 "heading": "Akıllı Algılama",
                 "title": "Akıllı Hareket Uyarısı",
-                "desc": "<p><label>Bu özelliği etkin durumdayken, ekranınız kilitlendiğinde ve özellikle halka açık bir yerde hareket algılandığında cihaz bip sesi çıkarmaya başlar.</label></p> <p style='margin-top:4px;'><label>Alarmı kapatmak için doğru parolayı girin veya Windows Hello ile giriş yapın.</label></p>",
+                "desc": "<p><label>Bu özelliği etkin durumdayken, ekranınız kilitlendiğinde ve özellikle halka açık bir yerde hareket algılandığında cihaz bip sesi çıkarmaya başlar.</label></p> <p><label>Alarmı kapatmak için doğru parolayı girin veya Windows Hello ile giriş yapın.</label></p>",
                 "note": {
                     "description": "Sisteme başarıyla giriş yaptıktan sonra, bu özellik otomatik olarak kapanır. Özelliği kullanmak için yeniden etkinleştirmeniz gerekir."
                 },
@@ -2117,7 +2131,8 @@
                 "fileAuthorizationTips": {
                     "content": "Lenovo Vantage, dosya sistemine erişemiyor.",
                     "link": "Erişim izni vermek için Windows Ayarları bölümüne gidin"
-                }
+                },
+                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
             },
             "voice": {
                 "title": "Ses",

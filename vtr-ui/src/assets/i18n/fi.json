@@ -201,6 +201,9 @@
                     "legionAccessory": "Install Legion Accessory Central?",
                     "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
                     "install": "INSTALL"
+                },
+                "popup": {
+                    "closeBtn": "close"
                 }
             }
         },
@@ -1132,8 +1135,9 @@
                         },
                         "selectedModeText": {
                             "quiteCool": "Tämä tila mahdollistaa parhaan käyttökokemuksen ja tasapainottaa tuulettimen nopeuden ja järjestelmän suorituskyvyn. Esimerkiksi pelatessa se optimoi suorituskyvyn. Toimistotyöskentelyssä se vähentää melua.",
-                            "batterySaving": "Tämä tila mahdollistaa akun enimmäiskeston säätämällä automaattisesti kirkkautta, muuttamalla virrankäyttöasetuksia, poistamalla toimintoja käytöstä edistyneessä kuvankäsittelyssä jne.",
-                            "performance": "Tämä tila mahdollistaa järjestelmän maksimaalisen suorituskyvyn. Tässä toimintatilassa nopea tuulettimen nopeus saattaa aiheuttaa paljon melua."
+                            "batterySaving14": "Tämä tila mahdollistaa akun enimmäiskeston säätämällä automaattisesti kirkkautta, muuttamalla virrankäyttöasetuksia, poistamalla toimintoja käytöstä edistyneessä kuvankäsittelyssä jne.",
+                            "performance": "Tämä tila mahdollistaa järjestelmän maksimaalisen suorituskyvyn. Tässä toimintatilassa nopea tuulettimen nopeus saattaa aiheuttaa paljon melua.",
+                            "batterySaving15": "Tämä tila pidentää akun enimmäiskestoa säätämällä automaattisesti kirkkautta, muuttamalla virta-asetuksia, poistamalla Dolby Audion käytöstä ja niin edelleen. Näillä keinoilla se voi pidentää akun enimmäiskestoa jopa 20 %."
                         },
                         "intelligentCoolingModesModal": {
                             "title": "Älykkäiden jäähdytystilojen vaihto",
@@ -1141,6 +1145,16 @@
                             "coolingModesList": {
                                 "list1": "Napsauta Windowsin työkalurivillä näkyvää akun kuvaketta.",
                                 "list2": "Windowsin virtatila tulee näkyviin, ja voit valita optimaalisen ajankohdan tai optimaalisen suorituskyvyn liukusäätimen avulla."
+                            }
+                        },
+                        "autoTransition": {
+                            "description": "Ota käyttöön \"Erinomainen suorituskyky\" tässä tilassa. Kun tämä ominaisuus on käytössä, tietokoneesi pinnan lämpötila ja tuulettimen äänentaso saattavat nousta automaattisesti.",
+                            "more": "ENEMMÄN",
+                            "less": "VÄHEMMÄN",
+                            "moreContent": {
+                                "desc1": "a. Järjestelmä saattaa olla hiljainen toimistossa, Windows-päivityksen aikana, elokuvaa katsottaessa verkosta tai silloin, kun järjestelmän kuormitus on alhainen. Tavallisissa peliolosuhteissa sen suorituskyky on parempi.",
+                                "desc2": "b. Kun pelaat raskasta peliä, \"Erinomainen suorituskyky\" -tila on automaattisesti käytössä. Se saattaa aiheuttaa enemmän ääntä tai nostaa tietokoneesi pinnan lämpötilaa.",
+                                "desc3": "c. Kun akun kapasiteetti on alle 30 %, järjestelmä siirtyy automaattisesti \"Akun säästö\" tilaan."
                             }
                         }
                     },
@@ -2064,7 +2078,7 @@
             "superResolution": {
                 "heading": "Älykäs tietoväline",
                 "title": "Näytön tarkkuuden skaalaus",
-                "desc": "<p><label>Tämä ominaisuus parantaa videoiden katselukokemusta parantamalla videoiden resoluutiota. Se toimii erityisen hyvin, kun videon resoluutio on alhainen.</label></p> <p style='margin-top:4px;'><label>Tämä toiminto saattaa heikentää akun käyttöaikaa, akun lämpötilaa ja aiheuttaa ääniä. Älä käytä sitä DC-tilassa (akkuvirralla). Muutoin se nopeuttaa virrankulutusta ja lyhentää akun käyttöikää.</label></p>",
+                "desc": "<p><label>Tämä ominaisuus parantaa videoiden katselukokemusta parantamalla videoiden resoluutiota. Se toimii erityisen hyvin, kun videon resoluutio on alhainen.</label></p> <p><label>Tämä toiminto saattaa heikentää akun käyttöaikaa, akun lämpötilaa ja aiheuttaa ääniä. Älä käytä sitä DC-tilassa (akkuvirralla). Muutoin se nopeuttaa virrankulutusta ja lyhentää akun käyttöikää.</label></p>",
                 "tooltip": "Tämä ominaisuus toimii vain seuraavilla videosoittimilla:<br>Windows Media Player<br>Chrome<br>Elokuvat ja TV<br>PotPlayer<br>GOM Player<br>Selainpohjaiset soittimet (esim. Chrome)<br><br>Lisätietoja tämän ominaisuuden ottamisesta käyttöön PotPlayer- ja GOM Player -soittimille löydät tietokoneesi mukana toimitetusta käyttöoppaasta.",
                 "note": {
                     "description": "Wi-Fi-toiminto ei toimi seuraavissa tilanteissa:",
@@ -2075,7 +2089,7 @@
             "antiTheft": {
                 "heading": "Älykäs tunnistustoiminto",
                 "title": "Älykäs liikkeentunnistus",
-                "desc": "<p><label>Kun tämä ominaisuus on käytössä, laite aloittaa äänimerkin toistamisen, jos näyttösi ollessa lukittuna havaitaan liikettä, varsinkin julkisissa tiloissa.</label></p> <p style='margin-top:4px;'><label>Lopeta hälytys syöttämällä oikea salasana tai kirjautumalla sisään Windows Hellon avulla.</label></p>",
+                "desc": "<p><label>Kun tämä ominaisuus on käytössä, laite aloittaa äänimerkin toistamisen, jos näyttösi ollessa lukittuna havaitaan liikettä, varsinkin julkisissa tiloissa.</label></p> <p><label>Lopeta hälytys syöttämällä oikea salasana tai kirjautumalla sisään Windows Hellon avulla.</label></p>",
                 "note": {
                     "description": "Kun kirjaudut järjestelmään onnistuneesti, tämä ominaisuus poistetaan automaattisesti käytöstä. Sinun täytyy ottaa se uudelleen käyttöön käyttääksesi sitä."
                 },
@@ -2117,7 +2131,8 @@
                 "fileAuthorizationTips": {
                     "content": "Lenovo Vantage ei voi käyttää tiedostojärjestelmää.",
                     "link": "Siirry Windows-asetuksiin ja anna käyttöoikeus"
-                }
+                },
+                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
             },
             "voice": {
                 "title": "Ääni",

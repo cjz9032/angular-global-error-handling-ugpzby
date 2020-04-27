@@ -1,18 +1,20 @@
-import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
 import { Component, OnInit, Input, Output, EventEmitter, HostListener } from '@angular/core';
-import { ModalSmartPerformanceSubscribeComponent } from '../../modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
 import { NgbModal, NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
 import { CommonService } from 'src/app/services/common/common.service';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import moment from 'moment';
+import { ModalSmartPerformanceSubscribeComponent } from '../../modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
+
 @Component({
-	selector: 'vtr-ui-smart-performance-scan-summary',
-	templateUrl: './ui-smart-performance-scan-summary.component.html',
-	styleUrls: ['./ui-smart-performance-scan-summary.component.scss']
+  selector: 'vtr-ui-scan-schedule',
+  templateUrl: './ui-scan-schedule.component.html',
+  styleUrls: ['./ui-scan-schedule.component.scss']
 })
-export class UiSmartPerformanceScanSummaryComponent implements OnInit {
-	constructor(
+export class UiScanScheduleComponent implements OnInit {
+
+  constructor(
 		private modalService: NgbModal,
 		private commonService: CommonService,
 		private calendar: NgbCalendar,
@@ -22,7 +24,6 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	public machineFamilyName: string;
 	public today = new Date();
 	public items: any = [];
-	isSubscribed: any;
 	title = 'smartPerformance.title';
 	public menuItems: any = [
 		{ itemName: 'Annual', itemKey: 'ANNUAL' },
@@ -40,8 +41,8 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	public toggleValue: number;
 	public currentYear: any;
 	public lastYear: any;
-	historyRes: any = {};
-	historyScanResults = [];
+	// historyRes: any = {};
+	// historyScanResults = [];
 	public quarterlyMenu: any = [
 		{ displayName: 'Jan-Mar', ...this.getQuartesDates(0, 2), key: 1 },
 		{ displayName: 'Apr-Jun', ...this.getQuartesDates(3, 5), key: 2 },
@@ -155,39 +156,20 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		amPmId: 0
 	};
 	scanScheduleDate: any;
-	issueCount: any = 0;
-	// tuneindividualIssueCount: any = 0;
-	// boostindividualIssueCount: any = 0;
-	// secureindividualIssueCount: any = 0;
 	ngOnInit() {
-		const cacheMachineFamilyName = this.commonService.getLocalStorageValue(
-			LocalStorageKey.MachineFamilyName,
-			undefined
-		);
-		if (cacheMachineFamilyName) {
-			this.machineFamilyName = cacheMachineFamilyName;
-		}
-		this.issueCount = this.tune + this.boost + this.secure;
-		// this.leftAnimatorCalc = ((this.rating*10) - 1);
 		this.currentDate = new Date();
 		this.selectedDate = this.calendar.getToday();
 		this.toDate = this.selectedDate;
 		this.fromDate = this.selectedDate;
-		this.isSubscribed = this.commonService.getLocalStorageValue(
-			LocalStorageKey.IsSubscribed
-		);
 		this.selectedFrequency = this.scanFrequency[1];
 		this.selectedDay = this.days[0];
 		this.selectedNumber = this.dates[0];
 		this.isDaySelectionEnable = false;
 		this.scanScheduleDate = this.selectedDate;
-		this.leftAnimator = '0%';
 		this.scanSummaryTime(0);
 	}
 	// tslint:disable-next-line: use-lifecycle-interface
-	ngAfterViewInit() {
-		this.leftAnimator = (this.rating * 10 - 1).toString() + '%';
-	}
+
 	expandRow(value) {
 		if (this.toggleValue === value) {
 			this.toggleValue = null;
@@ -224,31 +206,21 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 
 			this.isFromDate = true;
 			// console.log(this.fromDate);
-			const fromDateFormat =
+			this.displayFromDate =
 				this.fromDate.month +
 				'/' +
 				this.fromDate.day +
 				'/' +
 				this.fromDate.year;
-			const toDateFormat =
+			this.displayToDate =
 				this.toDate.month +
 				'/' +
 				this.toDate.day +
 				'/' +
 				this.toDate.year;
-			this.displayFromDate = moment
-				.utc(fromDateFormat)
-				.subtract(1, 'months')
-				.startOf('day')
-				.format('YYYY/MM/DD');
-			this.displayToDate = moment
-				.utc(toDateFormat)
-				.subtract(1, 'months')
-				.startOf('day')
-				.format('YYYY/MM/DD');
 			this.selectedfromDate = this.fromDate;
 			this.selectedTodate = this.toDate;
-			this.customDate =  this.displayFromDate + ' - ' + this.displayToDate;
+			this.customDate = this.displayFromDate + '-' + this.displayToDate;
 			// console.log('---------IN THE TABINDEX 2' + this.customDate);
 			this.getHistory(
 				moment
@@ -294,29 +266,19 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	onDateSelected() {
 		this.logger.info('onDateSelected.SelectedDate', this.selectedDate);
 		if (this.isFromDate) {
-			const fromDateFormat =
+			this.displayFromDate =
 				this.selectedfromDate.month +
 				'/' +
 				this.selectedfromDate.day +
 				'/' +
 				this.selectedfromDate.year;
-			this.displayFromDate = moment
-				.utc(fromDateFormat)
-				.subtract(1, 'months')
-				.startOf('day')
-				.format('YYYY/MM/DD');
 		} else {
-			const fromDateFormat =
+			this.displayToDate =
 				this.selectedTodate.month +
 				'/' +
 				this.selectedTodate.day +
 				'/' +
 				this.selectedTodate.year;
-			this.displayToDate = moment
-				.utc(fromDateFormat)
-				.subtract(1, 'months')
-				.startOf('day')
-				.format('YYYY/MM/DD');
 			this.logger.info('onDateSelected.else to date', this.displayToDate);
 		}
 	}
@@ -341,18 +303,6 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 				.format('YYYY-MM-DD HH:mm:ss')
 		);
 	}
-	openSubscribeModal() {
-		this.modalService.open(ModalSmartPerformanceSubscribeComponent, {
-			backdrop: 'static',
-			size: 'lg',
-			centered: true,
-			windowClass: 'subscribe-modal'
-		});
-	}
-	ScanNowSummary() {
-		this.backToScan.emit();
-	}
-
 	// scan settings
 	changeScanSchedule() {
 		if (this.scanToggleValue) {
@@ -383,11 +333,6 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		this.frequencyValue = value;
 		this.scheduleTab = '';
 		this.isDaySelectionEnable = true;
-		// if (value === 0) {
-		// 	this.isDaySelectionEnable = false;
-		// } else {
-		// 	this.isDaySelectionEnable = true;
-		// }
 		this.selectedFrequency = this.scanFrequency[value];
 	}
 	changeScanDay(value) {
@@ -468,7 +413,6 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 			endDate: year.endOf('year').format('YYYY-MM-DD HH:mm:ss')
 		};
 	}
-
 	async getHistory(startDate, endDate) {
 		// console.log(startDate, endDate);
 		const payload = {
@@ -476,31 +420,6 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 			startDate,
 			endDate
 		};
-		// console.log(JSON.stringify(payload));
-		try {
-			const res: any = await this.smartPerformanceService.getHistory(
-				payload
-			);
-			// console.log(
-			// 	'Successfully got response from Bridge',
-			// 	JSON.stringify(res)
-			// );
-			if (res.lastscanresults) {
-                this.historyRes = {
-					Tune: res.Tune,
-					Boost: res.Boost,
-					Secure: res.Secure
-				};
-                // console.log(JSON.stringify(this.historyRes));
-                this.historyScanResults = res.lastscanresults || [];
-            } else {
-				this.historyScanResults = [];
-				this.historyRes = {};
-			}
-		} catch (err) {
-			// console.log(err);
-			this.historyScanResults = [];
-			this.historyRes = {};
-		}
 	}
+
 }

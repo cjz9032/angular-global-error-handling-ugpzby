@@ -201,6 +201,9 @@
                     "legionAccessory": "Install Legion Accessory Central?",
                     "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
                     "install": "INSTALL"
+                },
+                "popup": {
+                    "closeBtn": "close"
                 }
             }
         },
@@ -1132,8 +1135,9 @@
                         },
                         "selectedModeText": {
                             "quiteCool": "Dieser Modus sorgt mit ausbalancierter Lüftergeschwindigkeit und Systemleistung für die optimale Benutzererfahrung. Beim Spielen wird beispielsweise die Leistung optimiert. Im Büro werden dagegen Lüftergeräusche reduziert.",
-                            "batterySaving": "Dieser Modus sorgt für eine maximale Akkulebensdauer, indem Helligkeit und Energieeinstellungen automatisch angepasst werden, Funktionen der erweiterten Bildverarbeitung deaktiviert werden etc.",
-                            "performance": "Dieser Modus sorgt für eine maximale Systemleistung. In diesem Modus kann die hohe Lüftergeschwindigkeit eine starke Geräuschentwicklung verursachen."
+                            "batterySaving14": "Dieser Modus sorgt für eine maximale Akkulebensdauer, indem Helligkeit und Energieeinstellungen automatisch angepasst werden, Funktionen der erweiterten Bildverarbeitung deaktiviert werden etc.",
+                            "performance": "Dieser Modus sorgt für eine maximale Systemleistung. In diesem Modus kann die hohe Lüftergeschwindigkeit eine starke Geräuschentwicklung verursachen.",
+                            "batterySaving15": "Dieser Modus ermöglicht eine maximale Akkulebensdauer, indem die Helligkeit automatisch angepasst wird, die Energieeinstellungen aktiviert werden, Dolby Audio deaktiviert wird usw. Mit allen oben genannten Funktionen kann die Lebensdauer des Akkus bis zu 20 % verlängert werden."
                         },
                         "intelligentCoolingModesModal": {
                             "title": "Intelligente Kühlmodi ändern",
@@ -1141,6 +1145,16 @@
                             "coolingModesList": {
                                 "list1": "Klicken Sie auf das Windows-Akkusymbol in der Symbolleiste.",
                                 "list2": "Der Windows-Energiemodus wird angezeigt. Mit dem Schieberegler können Sie zwischen optimaler Akkulaufzeit und optimaler Leistung wählen."
+                            }
+                        },
+                        "autoTransition": {
+                            "description": "Hier aktivieren Sie den Modus \"Höchstleistung\". Wenn diese Funktion aktiviert ist, steigen die Oberflächentemperatur und die Lüftergeschwindigkeit möglicherweise automatisch an.",
+                            "more": "MEHR",
+                            "less": "WENIGER",
+                            "moreContent": {
+                                "desc1": "a. Bei Office-Anwendungen, Windows Update, Streamen von Filmen oder leistungsarmen Systemaktionen kann das System ruhig sein. In normalen Gaming-Szenarien wird die Leistung verbessert.",
+                                "desc2": "b. Bei Spielen mit hohen Systemanforderungen wird der Modus \"Höchstleistung\" automatisch aktiviert. Dadurch kann es zu einer erhöhten Lüftergeschwindigkeit oder Temperatur der Computeroberfläche kommen.",
+                                "desc3": "c. Wenn die Akkukapazität auf unter 30 % fällt, wechselt das System automatisch in den \"Akkusparmodus\"."
                             }
                         }
                     },
@@ -2064,7 +2078,7 @@
             "superResolution": {
                 "heading": "Intelligente Medien",
                 "title": "Upscaling der Videoauflösung",
-                "desc": "<p><label>Diese Funktion optimiert die Videowiedergabe, indem die Bildschirmauflösung verbessert wird. Sie ist besonders nützlich, wenn das Video eine schlechte Auflösung hat.</label></p> <p style='margin-top:4px;'><label>Diese Funktion kann die Akkulebensdauer und -temperatur beeinflussen und Geräusche verursachen. Verwenden Sie sie nicht im Gleichstrommodus (Akkubetrieb). Andernfalls wird schneller Strom verbraucht und die Lebensdauer des Akkus verkürzt.</label></p>",
+                "desc": "<p><label>Diese Funktion optimiert die Videowiedergabe, indem die Bildschirmauflösung verbessert wird. Sie ist besonders nützlich, wenn das Video eine schlechte Auflösung hat.</label></p> <p><label>Diese Funktion kann die Akkulebensdauer und -temperatur beeinflussen und Geräusche verursachen. Verwenden Sie sie nicht im Gleichstrommodus (Akkubetrieb). Andernfalls wird schneller Strom verbraucht und die Lebensdauer des Akkus verkürzt.</label></p>",
                 "tooltip": "Diese Funktion funktioniert nur mit den folgenden Videoplayern:<br>Windows Media Player<br>Chrome<br>Filme & TV<br>PotPlayer<br>GOM Player<br>Webbrowser-basierte Player (z. B. Chrome)<br><br>Anweisungen zum Aktivieren dieser Funktion bei PotPlayer und GOM Player finden Sie im Benutzerhandbuch, das im Lieferumfang Ihres Computers enthalten ist.",
                 "note": {
                     "description": "Diese Funktion funktioniert nicht, wenn:",
@@ -2075,7 +2089,7 @@
             "antiTheft": {
                 "heading": "Intelligente Sensorik",
                 "title": "Intelligente Bewegungswarnung",
-                "desc": "<p><label>Wenn diese Funktion aktiviert ist, beginnt die Einheit zu piepen, wenn der Bildschirm gesperrt ist und Bewegungen erkannt werden, vor allem an einem öffentlichen Ort.</label></p> <p style='margin-top:4px;'><label>Geben Sie zum Beenden des Alarms das richtige Kennwort ein oder melden Sie sich mit Windows Hello an.</label></p>",
+                "desc": "<p><label>Wenn diese Funktion aktiviert ist, beginnt die Einheit zu piepen, wenn der Bildschirm gesperrt ist und Bewegungen erkannt werden, vor allem an einem öffentlichen Ort.</label></p> <p><label>Geben Sie zum Beenden des Alarms das richtige Kennwort ein oder melden Sie sich mit Windows Hello an.</label></p>",
                 "note": {
                     "description": "Wenn Sie sich erfolgreich beim System angemeldet haben, wird die Funktion automatisch ausgeschaltet. Sie müssen sie erneut aktivieren, um sie verwenden zu können."
                 },
@@ -2117,7 +2131,8 @@
                 "fileAuthorizationTips": {
                     "content": "Lenovo Vantage hat keinen Zugriff auf das Dateisystem.",
                     "link": "Zu Windows-Einstellungen wechseln, um Zugriff zu gewähren"
-                }
+                },
+                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
             },
             "voice": {
                 "title": "Sprache",

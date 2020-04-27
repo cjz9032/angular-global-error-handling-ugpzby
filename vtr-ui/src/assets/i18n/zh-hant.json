@@ -201,6 +201,9 @@
                         "goInstall": "執行安裝"
                     },
                     "autoSwitch": "啟動遊戲時自動切換到效能模式，結束遊戲之後再切換回來。"
+                },
+                "popup": {
+                    "closeBtn": "close"
                 }
             }
         },
@@ -1132,8 +1135,9 @@
                         },
                         "selectedModeText": {
                             "quiteCool": "此模式可實現風扇速度和系統效能平衡的最佳體驗。例如，在遊戲中，它可以最佳化效能。在辦公室裡，它可以減少噪音。",
-                            "batterySaving": "此模式透過自動調整亮度、變更電源設定、停用進階影像處理功能等來實現最長電池壽命。",
-                            "performance": "此模式可實現最高系統效能。在此模式中，風扇高速轉動可能會產生很大的噪音。"
+                            "batterySaving14": "此模式透過自動調整亮度、變更電源設定、停用進階影像處理功能等來實現最長電池壽命。",
+                            "performance": "此模式可實現最高系統效能。在此模式中，風扇高速轉動可能會產生很大的噪音。",
+                            "batterySaving15": "這個模式會自動調整亮度、為電源設定充電、停用 Dolby 音效等，從而盡量延長電池壽命。上述省電模式均啟用的話，電池壽命最多可延長 20%。"
                         },
                         "intelligentCoolingModesModal": {
                             "title": "變更智慧型冷卻模式",
@@ -1141,6 +1145,16 @@
                             "coolingModesList": {
                                 "list1": "按一下工具列中的 Windows 電池圖示。",
                                 "list2": "Windows 電源模式隨即顯示，滑動滑桿即可在最佳時間或最佳效能之間選擇。"
+                            }
+                        },
+                        "autoTransition": {
+                            "description": "在此模式下啟用「極致效能」。啟用後，電腦表面溫度和風扇噪音可能會自動增加。",
+                            "more": "其他資訊",
+                            "less": "較少",
+                            "moreContent": {
+                                "desc1": "a. 在辦公室、執行 Windows Update、觀看線上影片或系統負載較輕的情況下，系統可以安靜無聲。在進行一般遊戲的情況下，系統有較佳的效能。",
+                                "desc2": "b. 在進行重度遊戲時，會自動啟用「極致效能」模式。這可能會造成較大的噪音和較高的電腦表面溫度。",
+                                "desc3": "c. 當電池電量低於 30% 時，系統會自動切換到「省電」模式。"
                             }
                         }
                     },
@@ -2064,7 +2078,7 @@
             "superResolution": {
                 "heading": "智慧型媒體",
                 "title": "視訊解析度提升",
-                "desc": "<p><label>此功能可提升視訊解析度，進而強化視訊播放的體驗，特別適合視訊解析度不佳時。</label></p> <p style='margin-top:4px;'><label>此功能可能會影響電池續航力、電池溫度，並造成噪音。請勿在 DC 模式（電池模式）下使用。否則，電力會消耗得更快，且電池壽命會變得更短。</label></p>",
+                "desc": "<p><label>此功能可提升視訊解析度，進而強化視訊播放的體驗，特別適合視訊解析度不佳時。</label></p> <p><label>此功能可能會影響電池續航力、電池溫度，並造成噪音。請勿在 DC 模式（電池模式）下使用。否則，電力會消耗得更快，且電池壽命會變得更短。</label></p>",
                 "tooltip": "此功能僅適用於以下視訊播放程式：<br>Windows Media Player<br>Chrome<br>電影與電視<br>PotPlayer<br>GOM Player<br>Web 瀏覽器型播放程式（例如 Chrome）<br><br>如需如何在 PotPlayer 和 GOM Player 上啟用此功能的相關指示，請參閱電腦隨附的使用手冊。",
                 "note": {
                     "description": "此功能在下列情況中無法運作：",
@@ -2075,7 +2089,7 @@
             "antiTheft": {
                 "heading": "智慧型感應",
                 "title": "智慧型移動警示",
-                "desc": "<p><label>啟用此功能時，裝置將在螢幕鎖定及偵測到移動時開始發出嗶聲，特別是在公共場所。</label></p> <p style='margin-top:4px;'><label>若要關閉警示音，請輸入正確密碼或透過 Windows Hello 登入。</label></p>",
+                "desc": "<p><label>啟用此功能時，裝置將在螢幕鎖定及偵測到移動時開始發出嗶聲，特別是在公共場所。</label></p> <p><label>若要關閉警示音，請輸入正確密碼或透過 Windows Hello 登入。</label></p>",
                 "note": {
                     "description": "成功登入系統後，此功能將自動關閉。您必須重新啟用才能使用此功能。"
                 },
@@ -2117,7 +2131,8 @@
                 "fileAuthorizationTips": {
                     "content": "Lenovo Vantage 無權存取檔案系統。",
                     "link": "移至 Windows 設定以授與存取權"
-                }
+                },
+                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
             },
             "voice": {
                 "title": "語音",

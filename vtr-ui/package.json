@@ -1,6 +1,6 @@
 {
   "name": "vtr-ui",
-  "version": "1.5.22",
+  "version": "1.5.23",
   "scripts": {
     "build:dev": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build -c=dev",
     "build:dev1": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng test --watch=false --browsers=ChromeHeadless --code-coverage",
@@ -99,6 +99,7 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.0",
+    "karma-junit-reporter": "^2.0.1",
     "ng-packagr": "^9.0.0",
     "protractor": "~5.4.0",
     "recursive-readdir": "^2.2.2",

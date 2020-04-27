@@ -201,6 +201,9 @@
                     "legionAccessory": "Install Legion Accessory Central?",
                     "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
                     "install": "INSTALL"
+                },
+                "popup": {
+                    "closeBtn": "close"
                 }
             }
         },
@@ -1132,8 +1135,9 @@
                         },
                         "selectedModeText": {
                             "quiteCool": "I denne tilstand kan du få den bedste oplevelse med balance mellem blæserhastighed og systemets ydeevne. Når du spiller, optimerer den f.eks. ydeevnen. Når du er på kontoret, reduceres støjen.",
-                            "batterySaving": "I denne tilstand får du automatisk den maksimale batterilevetid, idet lysstyrken justeres, strømindstillingerne ændres, funktioner til avanceret billedbehandling deaktiveres osv.",
-                            "performance": "I denne tilstand kan du få den maksimale systemydeevne. I denne tilstand kan den hurtige blæserhastighed medføre støj."
+                            "batterySaving14": "I denne tilstand får du automatisk den maksimale batterilevetid, idet lysstyrken justeres, strømindstillingerne ændres, funktioner til avanceret billedbehandling deaktiveres osv.",
+                            "performance": "I denne tilstand kan du få den maksimale systemydeevne. I denne tilstand kan den hurtige blæserhastighed medføre støj.",
+                            "batterySaving15": "Denne tilstand aktiverer den maksimale batterilevetid ved automatisk at justere lysstyrken, ændre strømindstillingerne, deaktivere Dolby-lyd osv. Med alle ovenstående kan den forlænge batteriets levetid med op til 20 %."
                         },
                         "intelligentCoolingModesModal": {
                             "title": "Skift intelligente tilstande for køling",
@@ -1141,6 +1145,16 @@
                             "coolingModesList": {
                                 "list1": "Klik på Windows-batteriikonet på værktøjslinjen.",
                                 "list2": "Windows Strømstyringsplan vises. Skub skyderen for at vælge mellem optimal tid eller optimal ydeevne."
+                            }
+                        },
+                        "autoTransition": {
+                            "description": "Aktiver \"Ekstrem ydeevne\" i denne tilstand. Når den er aktiveret, kan temperaturen på computerens overflade og støjen i blæseren øges automatisk.",
+                            "more": "FLERE",
+                            "less": "FÆRRE",
+                            "moreContent": {
+                                "desc1": "a. I forbindelse med brug af Office, Windows Update og onlinefilm eller ved lav systembelastning kan systemet være stille. Men i normale gaming-situationer har det bedre ydeevne.",
+                                "desc2": "b. Når du spiller ressourcekrævende spil, aktiveres tilstanden \"Ekstrem ydeevne\" automatisk. Den kan give mere støj eller højere temperaturer på computerens overflade.",
+                                "desc3": "c. Når batteriets kapacitet er lavere end 30 %, skifter systemet automatisk til tilstanden \"Strømbesparelse\"."
                             }
                         }
                     },
@@ -2064,7 +2078,7 @@
             "superResolution": {
                 "heading": "Intelligente medier",
                 "title": "Opskalering af videoopløsning",
-                "desc": "<p><label>Denne funktion giver en bedre oplevelse i forbindelse med videoafspilning ved at forbedre videoopløsningen. Det fungerer især godt, når videoen er i dårlig opløsning.</label></p> <p style='margin-top:4px;'><label>Denne funktion kan påvirke batteriets levetid, batteriets temperatur og medføre støj. Brug den ikke i DC-tilstand (batteritilstand). Ellers bliver strømforbruget større, og batterilevetiden afkortes.</label></p>",
+                "desc": "<p><label>Denne funktion giver en bedre oplevelse i forbindelse med videoafspilning ved at forbedre videoopløsningen. Det fungerer især godt, når videoen er i dårlig opløsning.</label></p> <p><label>Denne funktion kan påvirke batteriets levetid, batteriets temperatur og medføre støj. Brug den ikke i DC-tilstand (batteritilstand). Ellers bliver strømforbruget større, og batterilevetiden afkortes.</label></p>",
                 "tooltip": "Denne funktion fungerer kun i nedenstående videoafspillere:<br>Windows Media Player<br>Chrome<br>Film og tv<br>PotPlayer<br>GOM player<br>webbrowserbaserede afspillere (f.eks. Chrome)<br><br>Du kan finde oplysninger om, hvordan denne funktion aktiveres i PotPlayer og GOM player, i brugervejledningen, der fulgte med din computer.",
                 "note": {
                     "description": "Denne funktion virker ikke i disse situationer:",
@@ -2075,7 +2089,7 @@
             "antiTheft": {
                 "heading": "Intelligent registrering",
                 "title": "Smart bevægelsesalarm",
-                "desc": "<p><label>Når denne funktion er aktiveret, begynder enheden at bippe, når skærmen er låst, og der registreres bevægelser, især på et offentligt sted.</label></p> <p style='margin-top:4px;'><label>Hvis du vil afvise alarmen, skal du angive den korrekte adgangskode eller logge på med Windows Hello.</label></p>",
+                "desc": "<p><label>Når denne funktion er aktiveret, begynder enheden at bippe, når skærmen er låst, og der registreres bevægelser, især på et offentligt sted.</label></p> <p><label>Hvis du vil afvise alarmen, skal du angive den korrekte adgangskode eller logge på med Windows Hello.</label></p>",
                 "note": {
                     "description": "Når du er logget på systemet, bliver denne funktionen automatisk slået fra. Du skal aktivere den igen for at bruge den."
                 },
@@ -2117,7 +2131,8 @@
                 "fileAuthorizationTips": {
                     "content": "Lenovo Vantage har ikke adgang til filsystemet.",
                     "link": "Gå til Windows-indstillinger for at give adgang"
-                }
+                },
+                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
             },
             "voice": {
                 "title": "stemme",

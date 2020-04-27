@@ -201,6 +201,9 @@
                     "legionAccessory": "Install Legion Accessory Central?",
                     "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
                     "install": "INSTALL"
+                },
+                "popup": {
+                    "closeBtn": "close"
                 }
             }
         },
@@ -1132,8 +1135,9 @@
                         },
                         "selectedModeText": {
                             "quiteCool": "Questa modalità assicura la migliore esperienza con velocità della ventola e prestazioni del sistema bilanciate. Ad esempio, quando si gioca ottimizza le prestazioni. Mentre riduce il rumore in ufficio.",
-                            "batterySaving": "Questa modalità garantisce la durata massima della batteria regolando automaticamente la luminosità, cambiando le impostazioni di alimentazione, disabilitando le funzioni avanzate di elaborazione delle immagini e così via.",
-                            "performance": "Questa modalità abilita le prestazioni massime del sistema. In questa modalità, la velocità massima della ventola potrebbe causare un rumore elevato."
+                            "batterySaving14": "Questa modalità garantisce la durata massima della batteria regolando automaticamente la luminosità, cambiando le impostazioni di alimentazione, disabilitando le funzioni avanzate di elaborazione delle immagini e così via.",
+                            "performance": "Questa modalità abilita le prestazioni massime del sistema. In questa modalità, la velocità massima della ventola potrebbe causare un rumore elevato.",
+                            "batterySaving15": "Questa modalità abilita la durata massima della batteria regolando automaticamente la luminosità, caricando le impostazioni di alimentazione, disabilitando l'audio Dolby e così via. In questo modo è possibile estendere fino al 20% la durata della batteria."
                         },
                         "intelligentCoolingModesModal": {
                             "title": "Modifica le modalità di raffreddamento intelligente",
@@ -1141,6 +1145,16 @@
                             "coolingModesList": {
                                 "list1": "Fai clic sull'icona della batteria di Windows nella barra degli strumenti.",
                                 "list2": "Viene visualizzata la modalità Risparmio energia di Windows, utilizzare il dispositivo di scorrimento per scegliere tra tempo o prestazioni ottimali."
+                            }
+                        },
+                        "autoTransition": {
+                            "description": "Abilita \"Prestazioni estreme\" in questa modalità. Se abilitata, la temperatura superficiale del computer e il rumore della ventola potrebbero aumentare automaticamente.",
+                            "more": "ALTRO",
+                            "less": "MENO",
+                            "moreContent": {
+                                "desc1": "a. In ufficio, durante gli aggiornamenti di Windows, la visione di filmati o il caricamento dell'illuminazione di sistema, il sistema può essere silenzioso. In scenari di gioco normali, ha prestazioni migliori.",
+                                "desc2": "b. Durante la riproduzione di giochi pesanti, la modalità \"Prestazioni estreme\" si attiva automaticamente. Potrebbe causare più rumorosità o temperatura superiore sulla superficie del computer.",
+                                "desc3": "c. Quando la capacità della batteria è inferiore al 30%, il sistema passa automaticamente alla modalità \"Risparmio batteria\"."
                             }
                         }
                     },
@@ -2064,7 +2078,7 @@
             "superResolution": {
                 "heading": "Supporti intelligenti",
                 "title": "Upscaling della risoluzione video",
-                "desc": "<p><label>Questa funzione migliora l'esperienza della riproduzione video migliorandone la risoluzione. Funziona soprattutto in caso di scarsa risoluzione video.</label></p> <p style='margin-top:4px;'><label>Questa funzione potrebbe influire sulla durata e la temperatura della batteria, aumentando la rumorosità del dispositivo. Non utilizzarla in modalità CC (modalità batteria). altrimenti accelererà il consumo energetico e ridurrà la durata della batteria.</label></p>",
+                "desc": "<p><label>Questa funzione migliora l'esperienza della riproduzione video migliorandone la risoluzione. Funziona soprattutto in caso di scarsa risoluzione video.</label></p> <p><label>Questa funzione potrebbe influire sulla durata e la temperatura della batteria, aumentando la rumorosità del dispositivo. Non utilizzarla in modalità CC (modalità batteria). altrimenti accelererà il consumo energetico e ridurrà la durata della batteria.</label></p>",
                 "tooltip": "Questa funzione funziona solo per i seguenti riproduttori video:<br>Windows Media Player<br>Chrome<br>Film e programmi TV<br>PotPlayer<br>GOM Player<br>Riproduttori basati sul browser Web (ad es. Chrome)<br><br>Per le istruzioni su come abilitare questa funzione su PotPlayer e GOM Player, consultare la guida per l'utente fornita con il computer.",
                 "note": {
                     "description": "Questa funzione non può essere utilizzata quando:",
@@ -2075,7 +2089,7 @@
             "antiTheft": {
                 "heading": "Rilevamento intelligente",
                 "title": "Avviso Smart Motion",
-                "desc": "<p><label>Quando si abilita questa funzione, il dispositivo inizierà a emettere un segnale acustico quando lo schermo è bloccato e vengono rilevati movimenti, soprattutto in un luogo pubblico.</label></p> <p style='margin-top:4px;'><label>Per disattivare l'allarme, immettere la password corretta o accedere tramite Windows Hello.</label></p>",
+                "desc": "<p><label>Quando si abilita questa funzione, il dispositivo inizierà a emettere un segnale acustico quando lo schermo è bloccato e vengono rilevati movimenti, soprattutto in un luogo pubblico.</label></p> <p><label>Per disattivare l'allarme, immettere la password corretta o accedere tramite Windows Hello.</label></p>",
                 "note": {
                     "description": "Una volta effettuato l'accesso al sistema, questa funzione verrà disattivata automaticamente. Per utilizzare la funzione è necessario abilitarla nuovamente."
                 },
@@ -2117,7 +2131,8 @@
                 "fileAuthorizationTips": {
                     "content": "Lenovo Vantage non ha accesso al file system.",
                     "link": "Accedere alle impostazioni di Windows per consentire l'accesso"
-                }
+                },
+                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
             },
             "voice": {
                 "title": "Voce",

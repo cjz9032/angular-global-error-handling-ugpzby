@@ -324,7 +324,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 }
 
 /* replace system tooltip with custom */
-ngb-tooltip-window.vtr-system-tooltip.tooltip {	
+ngb-tooltip-window.vtr-system-tooltip.tooltip {
 
 	.tooltip-inner {
 		padding: 0.8rem;
@@ -335,8 +335,8 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 		font-size: 1.2rem;
 		text-align: left;
 		max-width: 24.2rem;
-		
-		
+
+
 		@media #{$breakpoint_xl} {
 			max-width: 24.2rem !important;
 		}
@@ -346,7 +346,7 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 		opacity: 1 !important;
 	}
 
-	.arrow::before {		
+	.arrow::before {
 		border-style: none;
 	}
 }
@@ -931,9 +931,15 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 }
 
 .cancel-modal {
-	.modal-dialog {
-		max-width: 27%;
-	}
+	// .modal-dialog {
+	// 	max-width: 27%;
+	// 	@media #{$breakpoint_md}{
+	// 		max-width: 65%;
+	// 	}
+	// 	@media #{$breakpoint_sm}{
+	// 		max-width: 95%;
+	// 	}
+	// }
 	.modal-content {
 		border-radius: 1rem;
 		background: $light;
@@ -1178,6 +1184,8 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 					}
 					@media #{$breakpoint_sm} {
 						font-size: 0.9rem;
+						line-height: 1.2rem;
+						height: 12rem;
 					}
 					.icon {
 						height: 12rem;
@@ -1193,7 +1201,7 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 							line-height: 6.4rem;
 						}
 						@media #{$breakpoint_sm} {
-							font-size: 5rem;
+							font-size: 4rem;
 						}
 					}
 					&::before {
@@ -1633,34 +1641,31 @@ vtr-ui-smart-performance-scanning {
 	}
 	.container-card {
 		&.card-corner {
-			@media #{$breakpoint_xl} {
-				height: 20rem !important;
-			}
-			@media #{$breakpoint_lg} {
-				height: 17.6rem !important;
-			}
-			@media #{$breakpoint_sm} {
-				height: 15.7rem !important;
-			}
+			height: 100% !important;
+
 			.content {
 				.card-image {
 					height: 100% !important;
+					min-height: 28.5rem;
+						@media #{$breakpoint_xl} {
+							min-height: 20rem;
+						}
+						@media #{$breakpoint_lg} {
+							min-height: 28.5rem;
+						}
+						@media #{$breakpoint_sm} {
+							min-height: 20rem;
+						}
 				}
 			}
 		}
 		&.card-highlight {
-			@media #{$breakpoint_xl} {
-				height: 20rem !important;
-			}
-			@media #{$breakpoint_lg} {
-				height: 17.6rem !important;
-			}
-			@media #{$breakpoint_sm} {
-				height: 15.7rem !important;
-			}
+			height: 100% !important;
+
 			.content {
 				.card-image {
 					height: 100% !important;
+					min-height: 20rem;
 				}
 			}
 		}

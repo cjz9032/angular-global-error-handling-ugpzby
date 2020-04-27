@@ -201,6 +201,9 @@
                     "legionAccessory": "Install Legion Accessory Central?",
                     "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
                     "install": "INSTALL"
+                },
+                "popup": {
+                    "closeBtn": "close"
                 }
             }
         },
@@ -1132,8 +1135,9 @@
                         },
                         "selectedModeText": {
                             "quiteCool": "Ten tryb zapewnia efektywne działanie komputera przy zrównoważonej prędkości wentylatora i wydajności systemu. Na przykład optymalizuje wydajność podczas grania. Zmniejsza hałas, gdy jesteś w biurze.",
-                            "batterySaving": "Ten tryb zapewnia maksymalną żywotność akumulatora poprzez automatyczną regulację jasności, zmianę ustawień zasilania, wyłączanie funkcji zaawansowanego przetwarzania obrazu itp.",
-                            "performance": "Ten tryb zapewnia maksymalną wydajność systemu. W tym trybie duża prędkość wentylatora może powodować znaczny hałas."
+                            "batterySaving14": "Ten tryb zapewnia maksymalną żywotność akumulatora poprzez automatyczną regulację jasności, zmianę ustawień zasilania, wyłączanie funkcji zaawansowanego przetwarzania obrazu itp.",
+                            "performance": "Ten tryb zapewnia maksymalną wydajność systemu. W tym trybie duża prędkość wentylatora może powodować znaczny hałas.",
+                            "batterySaving15": "Ten tryb umożliwia automatyczne dostosowanie jasności, zmianę ustawień zasilania, wyłączenie dźwięku Dolby oraz zmianę innych ustawień pod kątem zapewnienia maksymalnego czasu działania akumulatora. Dzięki wszystkim powyższym zmianom można wydłużyć czas działania akumulatora nawet o 20%."
                         },
                         "intelligentCoolingModesModal": {
                             "title": "Zmiana inteligentnych trybów chłodzenia",
@@ -1141,6 +1145,16 @@
                             "coolingModesList": {
                                 "list1": "Kliknij ikonę akumulatora systemu Windows na pasku narzędzi.",
                                 "list2": "Pojawi się wskaźnik trybu zasilania systemu Windows, przesuń suwak, aby wybrać optymalny czas lub optymalną wydajność."
+                            }
+                        },
+                        "autoTransition": {
+                            "description": "Włącz funkcję „Ekstremalna wydajność” w tym trybie. Po jej włączeniu temperatura na powierzchni komputera oraz poziom hałasu wentylatora mogą automatycznie wzrosnąć.",
+                            "more": "WIĘCEJ",
+                            "less": "LESS",
+                            "moreContent": {
+                                "desc1": "a. W scenariuszach biurowym, aktualizacji systemu Windows, filmu online lub ładowania systemu w trybie małego obciążenia system może działać cicho. W normalnych scenariuszach obejmujących grę ma z kolei lepszą wydajność.",
+                                "desc2": "b. Na czas grania w gry o dużych wymaganiach sprzętowych następuje automatyczne włączenie trybu „Ekstremalna wydajność”. Włączenie tego trybu może spowodować zwiększenie poziomu hałasu lub temperatury na powierzchni komputera.",
+                                "desc3": "c. Gdy pojemność baterii spadnie poniżej 30%, system automatycznie przełączy się w tryb „Oszczędzanie akumulatora”."
                             }
                         }
                     },
@@ -2064,7 +2078,7 @@
             "superResolution": {
                 "heading": "Inteligentne multimedia",
                 "title": "Skalowanie rozdzielczości wideo",
-                "desc": "<p><label>Ta funkcja poprawia rozdzielczość odtwarzania filmów, a tym samym zapewnia lepsze wrażenia z ich oglądania. Jej skuteczność jest największa w przypadku materiałów wideo o niskiej rozdzielczości.</label></p> <p style='margin-top:4px;'><label>Ta funkcja może wpływać na żywotność baterii, temperaturę baterii i powodować hałas. Nie należy używać jej w trybie prądu stałego (tryb akumulatora). Może to przyspieszyć zużycie energii i skrócić żywotność akumulatora.</label></p>",
+                "desc": "<p><label>Ta funkcja poprawia rozdzielczość odtwarzania filmów, a tym samym zapewnia lepsze wrażenia z ich oglądania. Jej skuteczność jest największa w przypadku materiałów wideo o niskiej rozdzielczości.</label></p> <p><label>Ta funkcja może wpływać na żywotność baterii, temperaturę baterii i powodować hałas. Nie należy używać jej w trybie prądu stałego (tryb akumulatora). Może to przyspieszyć zużycie energii i skrócić żywotność akumulatora.</label></p>",
                 "tooltip": "Ta funkcja działa tylko w przypadku następujących odtwarzaczy wideo:<br>Windows Media Player<br>Chrome<br>Filmy i TV<br>PotPlayer<br>GOM Player<br>Odtwarzacze działające w przeglądarce (np. Chrome)<br><br>Instrukcje pozwalające włączyć tę funkcję w odtwarzaczach PotPlayer i GOM Player znajdują się w instrukcji obsługi dołączonej do komputera.",
                 "note": {
                     "description": "Funkcja nie działa, gdy:",
@@ -2075,7 +2089,7 @@
             "antiTheft": {
                 "heading": "Inteligentna detekcja",
                 "title": "Inteligentny alert wykrycia ruchu",
-                "desc": "<p><label>Jeśli włączysz tę funkcję, urządzenie zacznie emitować sygnał dźwiękowy, gdy po zablokowaniu ekranu zostanie wykryty ruch — zwłaszcza, jeśli urządzenie znajduje się w miejscu publicznym.</label></p> <p style='margin-top:4px;'><label>Aby wyłączyć alarm, wprowadź poprawne hasło lub zaloguj się, korzystając z funkcji Windows Hello.</label></p>",
+                "desc": "<p><label>Jeśli włączysz tę funkcję, urządzenie zacznie emitować sygnał dźwiękowy, gdy po zablokowaniu ekranu zostanie wykryty ruch — zwłaszcza, jeśli urządzenie znajduje się w miejscu publicznym.</label></p> <p><label>Aby wyłączyć alarm, wprowadź poprawne hasło lub zaloguj się, korzystając z funkcji Windows Hello.</label></p>",
                 "note": {
                     "description": "Po pomyślnym zalogowaniu się do systemu nastąpi automatyczne wyłączenie funkcji. Aby ponownie użyć tej funkcji, należy jeszcze raz ją włączyć."
                 },
@@ -2117,7 +2131,8 @@
                 "fileAuthorizationTips": {
                     "content": "Aplikacja Lenovo Vantage nie ma uprawnień dostępu do systemu plików.",
                     "link": "Przejdź do ustawień systemu Windows, aby udzielić dostępu"
-                }
+                },
+                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
             },
             "voice": {
                 "title": "Głos",

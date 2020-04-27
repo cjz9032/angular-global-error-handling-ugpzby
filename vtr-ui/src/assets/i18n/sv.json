@@ -201,6 +201,9 @@
                         "goInstall": "INSTALLERA"
                     },
                     "autoSwitch": "Växla automatiskt till prestandaläge när du startar spel och växla tillbaka när du är klar."
+                },
+                "popup": {
+                    "closeBtn": "close"
                 }
             }
         },
@@ -1132,8 +1135,9 @@
                         },
                         "selectedModeText": {
                             "quiteCool": "Detta läge ger den bästa upplevelsen med balanserad fläkthastighet och systemprestanda. Prestandan optimeras i exempelvis spel. Ljudet dämpas när du arbetar.",
-                            "batterySaving": "Detta läge maximerar batteritiden genom att automatiskt justera ljusstyrkan, ändra energiinställningarna, inaktivera funktioner för avancerad bildbehandling och annat.",
-                            "performance": "Detta läge ger maximal systemprestanda. Med det här läget kan den snabba fläkthastigheten medföra högt ljud."
+                            "batterySaving14": "Detta läge maximerar batteritiden genom att automatiskt justera ljusstyrkan, ändra energiinställningarna, inaktivera funktioner för avancerad bildbehandling och annat.",
+                            "performance": "Detta läge ger maximal systemprestanda. Med det här läget kan den snabba fläkthastigheten medföra högt ljud.",
+                            "batterySaving15": "Detta läge maximerar batteritiden genom att automatiskt justera ljusstyrkan, ändra energiinställningarna, inaktivera Dolby-ljud med mera. Med allt av ovanstående kan batteritiden öka med upp till 20 procent."
                         },
                         "intelligentCoolingModesModal": {
                             "title": "Ändra lägen för intelligent nedkylning",
@@ -1141,6 +1145,16 @@
                             "coolingModesList": {
                                 "list1": "Klicka på batteriikonen i systemfältet i Windows.",
                                 "list2": "Läget Energialternativ i Windows visas. Dra reglaget för att välja mellan optimal tid och optimal prestanda."
+                            }
+                        },
+                        "autoTransition": {
+                            "description": "Aktivera Extrem prestanda i detta läge. När funktionen är aktiverad kan temperaturen på datorns utsida och fläktljudet öka.",
+                            "more": "MER",
+                            "less": "MINDRE",
+                            "moreContent": {
+                                "desc1": "a. Du kan ställa in att enheten ska vara tyst på kontoret, vid Windows-uppdateringar, när du tittar på film online eller vid systeminläsningar. I normala spelsituationer kan du använda bättre prestanda.",
+                                "desc2": "b. När du spelar dataintensiva spel aktiveras läget Extrem prestanda automatiskt. Det kan medföra högre ljud eller temperatur på datorns utsida.",
+                                "desc3": "c. När batterikapaciteten är lägre än 30 % växlar systemet automatiskt till läget Spara batteri."
                             }
                         }
                     },
@@ -2064,7 +2078,7 @@
             "superResolution": {
                 "heading": "Intelligenta medier",
                 "title": "Öka videoupplösningen",
-                "desc": "<p><label>Denna funktion förbättrar videoupplösningen, vilket ger en bättre upplevelse av videouppspelningen. Den är särskilt användbar om videon har dålig upplösning.</label></p> <p style='margin-top:4px;'><label>Funktionen kan påverka batteriets livslängd och temperatur och orsaka brus. Använd inte funktionen i DC-läge (batteriläge). Detta orsakar ökad energiförbrukning och batteriets livslängd förkortas.</label></p>",
+                "desc": "<p><label>Denna funktion förbättrar videoupplösningen, vilket ger en bättre upplevelse av videouppspelningen. Den är särskilt användbar om videon har dålig upplösning.</label></p> <p><label>Funktionen kan påverka batteriets livslängd och temperatur och orsaka brus. Använd inte funktionen i DC-läge (batteriläge). Detta orsakar ökad energiförbrukning och batteriets livslängd förkortas.</label></p>",
                 "tooltip": "Funktionen fungerar med följande videospelare:<br>Windows Media Player<br>Chrome<br>Film & TV<br>PotPlayer<br>GOM Player<br>webbläsarbaserade spelare (till exempel Chrome)<br><br>Anvisningar om hur du aktiverar funktionen i PotPlayer och GOM Player finns i Användarhandbok som medföljer datorn.",
                 "note": {
                     "description": "Funktionen fungerar inte när",
@@ -2075,7 +2089,7 @@
             "antiTheft": {
                 "heading": "Intelligent avkänning",
                 "title": "Smart rörelsevarning",
-                "desc": "<p><label>Om du aktiverar den här funktionen börjar enheten signalera när bildskärmen är låst och rörelser identifieras, speciellt på en offentlig plats.</label></p> <p style='margin-top:4px;'><label>Du stänger av larmet genom att ange rätt lösenord eller logga in med Windows Hello.</label></p>",
+                "desc": "<p><label>Om du aktiverar den här funktionen börjar enheten signalera när bildskärmen är låst och rörelser identifieras, speciellt på en offentlig plats.</label></p> <p><label>Du stänger av larmet genom att ange rätt lösenord eller logga in med Windows Hello.</label></p>",
                 "note": {
                     "description": "När du har loggat in på systemet stängs funktionen av automatiskt. Du måste aktivera den igen om du vill använda den."
                 },
@@ -2117,7 +2131,8 @@
                 "fileAuthorizationTips": {
                     "content": "Lenovo Vantage har inte åtkomst till filsystemet.",
                     "link": "Öppna Windows-inställningar för att ge åtkomst"
-                }
+                },
+                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
             },
             "voice": {
                 "title": "Röst",

@@ -424,7 +424,9 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 
 	@HostListener('window: focus')
 	onFocus(): void {
-		this.activeElement?.focus();
+		if(this.activeElement) {
+			this.activeElement.focus();
+		}
 	}
 
 	@HostListener('window: blur')

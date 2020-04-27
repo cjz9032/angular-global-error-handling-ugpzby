@@ -1,13 +1,15 @@
 <div>
-	<div *ngIf="showIC===4 || showIC===3 || showIC===14 || showIC===13">
+	<div *ngIf="showIC===4 || showIC===3 || showIC>=13">
 		<div class="row pt-5 smart-settings-card"
 			id="smartSettings">
 			<div class="col mx-auto ">
 				<vtr-container-collapsible
 					[cardTitle]="'device.deviceSettings.power.powerSmartSettings.title' | translate"
 					[isCollapsed]="false"
-					[collapseLinkId]="'device-settings-powerSmartSettings'"
-					[theme]="'white'">
+					[allowCollapse]="true"
+					[theme]="'white'"
+					[tabIndex]="0"
+					[collapseLinkId]="'device-settings-powerSmartSettings'">
 					<ul class="list-group list-group-flush">
 						<li class="">
 							<vtr-ui-row-switch [leftIcon]="['icomoon','icomoon-ic']"
@@ -38,7 +40,7 @@
 										role="radiogroup"
 										aria-label="intelligent Cooling mode list, select using arrow keys"
 										tabindex="0">
-										<vtr-ui-circle-radio-with-checkbox *ngIf="showIC!==14"
+										<vtr-ui-circle-radio-with-checkbox *ngIf="showIC&lt;14"
 											[theme]="'white'"
 											[radioId]="'radioICPerformance'"
 											[group]="'radio'"
@@ -51,23 +53,23 @@
 										<vtr-ui-circle-radio-with-checkbox [radioId]="'radioICQuiteCool'"
 											[theme]="'white'"
 											[group]="'radio'"
-											[label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.quiteCool' + showIC | translate"
-											[value]="showIC==14 ? 'LE-IntelligentCooling2x' : 'LE-CoolingDown2x' "
+											[label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.quiteCool' +  (showIC>=15 ? 14 : showIC) | translate"
+											[value]="showIC>=14 ? 'LE-IntelligentCooling2x' : 'LE-CoolingDown2x' "
 											[checked]="radioQuietCool"
 											(optionChange)="changeQuietCool($event)"
 											[textId]="'myDevice-settings-power-intelligent-cooling'">
 										</vtr-ui-circle-radio-with-checkbox>
-										<vtr-ui-circle-radio-with-checkbox *ngIf="showIC===14"
+										<vtr-ui-circle-radio-with-checkbox *ngIf="showIC>=14"
 											[theme]="'white'"
 											[radioId]="'radioICPerformance'"
 											[group]="'radio'"
-											[label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.performance' + showIC | translate"
+											[label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.performance' + (showIC>=15 ? 14 : showIC) | translate"
 											[value]="'performance'"
 											[checked]="radioPerformance"
 											(optionChange)="changePerformance($event)"
 											[textId]="'myDevice-settings-power-intelligent-cooling'">
 										</vtr-ui-circle-radio-with-checkbox>
-										<vtr-ui-circle-radio-with-checkbox *ngIf="showIC===14"
+										<vtr-ui-circle-radio-with-checkbox *ngIf="showIC>=14"
 											[theme]="'white'"
 											[radioId]="'quiteBatterySaving'"
 											[group]="'radio'"
@@ -82,8 +84,61 @@
 										role="heading"
 										id="powerSmartSettings-maximum-system-protection-note"
 										attr.aria-label="powerSmartSettings-maximum-system-protection-note"
-										*ngIf="showIC===14">
-										{{ selectedModeText }}
+										*ngIf="showIC>=14">
+										<div class="selectModeDesc" role="text"
+										id="IntelligentCooling-selectedModeText">
+											{{ selectedModeText }}
+										</div>
+										<div class="transition" *ngIf="showIC>=15 && radioQuietCool">
+											<vtr-ui-checkbox
+												[componentId]="'IntelligentCooling-5.0-AutoTransition'"
+												[value]="isAutoTransitionEnabled"
+												[checked]="isAutoTransitionEnabled"
+												[label] = "'device.deviceSettings.power.powerSmartSettings.intelligentCooling.autoTransition.description' | translate"
+												(toggle)="onAutoTransitionToggle($event)"
+												id="IntelligentCooling-5.0-AutoTransition-checkBox">
+											</vtr-ui-checkbox>
+
+											<div *ngIf="autoTransitionIsReadMore"
+												attr.aria-label="ITSAutoTransitionReadMore" 
+												class=""
+												>
+												<p class="transitionMoreInfo" role="text" id="ITSAutoTransitionReadMore-PartA">
+													{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.autoTransition.moreContent.desc1' | translate}}
+												</p>
+												<p class="transitionMoreInfo" role="text" id="ITSAutoTransitionReadMore-PartB">
+													{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.autoTransition.moreContent.desc2' | translate}}
+												</p>
+												<p class="transitionMoreInfo" role="text" id="ITSAutoTransitionReadMore-PartC">
+													{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.autoTransition.moreContent.desc3' | translate}}
+												</p>
+											</div>
+											<div class="transitionReadMore mt-3 row"
+												(click)="autoTransitionReadMoreClick()">
+												<div class="read-more-button mr-2"
+													*ngIf="!autoTransitionIsReadMore"
+													role="button"
+													id="powerSmartSettings-intelligentCooling-autoTransition-more"
+													attr.aria-label="powerSmartSettings-intelligentCooling-autoTransition-more"
+													tabindex="0"
+													(keydown.enter)="autoTransitionReadMoreClick()">
+													{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.autoTransition.more' | translate}}
+												</div>
+												<div class="read-more-button mr-2"
+													*ngIf="autoTransitionIsReadMore"
+													role="button"
+													id="powerSmartSettings-intelligentCooling-autoTransition-less"
+													attr.aria-label="powerSmartSettings-intelligentCooling-autoTransition-less"
+													tabindex="0"
+													(keydown.enter)="autoTransitionReadMoreClick()">
+													{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.autoTransition.less' | translate}}
+												</div>
+												<fa-icon *ngIf="!autoTransitionIsReadMore"
+													[icon]="['fal', 'chevron-down']"></fa-icon>
+												<fa-icon *ngIf="autoTransitionIsReadMore"
+													[icon]="['fal', 'chevron-up']"></fa-icon>                                                                                                                             
+											</div>
+										</div>
 									</div>
 								</div>
 

@@ -201,6 +201,9 @@
                     "legionAccessory": "Install Legion Accessory Central?",
                     "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
                     "install": "INSTALL"
+                },
+                "popup": {
+                    "closeBtn": "close"
                 }
             }
         },
@@ -1132,8 +1135,9 @@
                         },
                         "selectedModeText": {
                             "quiteCool": "Tento režim umožňuje zažiť ten najlepší zážitok vďaka vyváženiu otáčok ventilátora a výkonu systému. Napríklad pri hraní hier optimalizuje výkon. Zatiaľ čo v kancelárii znižuje hluk.",
-                            "batterySaving": "Tento režim umožňuje dosiahnuť maximálnu výdrž batérie automatickým nastavením jasu, zmenou nastavení napájania, vypnutím rozšírených funkcií spracovania obrazu atď.",
-                            "performance": "Tento režim umožňuje dosiahnuť maximálny výkon systému. V tomto režime môžu vysoké otáčky ventilátora spôsobovať veľký hluk."
+                            "batterySaving14": "Tento režim umožňuje dosiahnuť maximálnu výdrž batérie automatickým nastavením jasu, zmenou nastavení napájania, vypnutím rozšírených funkcií spracovania obrazu atď.",
+                            "performance": "Tento režim umožňuje dosiahnuť maximálny výkon systému. V tomto režime môžu vysoké otáčky ventilátora spôsobovať veľký hluk.",
+                            "batterySaving15": "Tento režim maximalizuje výdrž batérie automatickým nastavením jasu, zmenou nastavení napájania, vypnutím zvuku Dolby atď. Celkovo tým môže predĺžiť výdrž batérie až o 20 %."
                         },
                         "intelligentCoolingModesModal": {
                             "title": "Zmena inteligentných režimov chladenia",
@@ -1141,6 +1145,16 @@
                             "coolingModesList": {
                                 "list1": "Kliknite na ikonu batérie v systéme Windows na paneli s nástrojmi.",
                                 "list2": "Zobrazí sa režim výkonu systému Windows, posunutím jazdca vyberte optimálny čas alebo optimálny výkon."
+                            }
+                        },
+                        "autoTransition": {
+                            "description": "Povoliť v tomto režime najvyšší výkon. Keď je povolený, teplota povrchu počítača a hluk ventilátora sa môžu automaticky zvýšiť.",
+                            "more": "VIAC",
+                            "less": "MENEJ",
+                            "moreContent": {
+                                "desc1": "a. Pri kancelárskej práci, aktualizácii systému Windows, prehrávaní online filmu alebo nízkom zaťažení systému môže byť systém tichý. Pri bežnom hraní má zasa vyšší výkon.",
+                                "desc2": "b. Pri hraní hier, ktoré výrazne zaťažujú systém, sa automaticky zapne režim najvyššieho výkonu. Môže spôsobiť zvýšenie hluku alebo teploty povrchu počítača.",
+                                "desc3": "c. Ak je kapacita batérie nižšia ako 30 %, systém sa automaticky prepne do režimu úspory batérie."
                             }
                         }
                     },
@@ -2064,7 +2078,7 @@
             "superResolution": {
                 "heading": "Inteligentné médiá",
                 "title": "Zvýšenie rozlíšenia videa",
-                "desc": "<p><label>Táto funkcia zvyšuje zážitok z prehrávania videa zlepšením jeho rozlíšenia. Prejaví sa najmä pri nízkom rozlíšení videa.</label></p> <p style='margin-top:4px;'><label>Táto funkcia môže ovplyvniť výdrž batérie, teplotu batérie a vytvárať hluk. Nepoužívajte v režime jednosmerného prúdu (režim napájania z batérie). V opačnom prípade sa zväčší spotreba energie a skráti životnosť batérie.</label></p>",
+                "desc": "<p><label>Táto funkcia zvyšuje zážitok z prehrávania videa zlepšením jeho rozlíšenia. Prejaví sa najmä pri nízkom rozlíšení videa.</label></p> <p><label>Táto funkcia môže ovplyvniť výdrž batérie, teplotu batérie a vytvárať hluk. Nepoužívajte v režime jednosmerného prúdu (režim napájania z batérie). V opačnom prípade sa zväčší spotreba energie a skráti životnosť batérie.</label></p>",
                 "tooltip": "Táto funkcia funguje iba v prípade týchto prehrávačov videa:<br>Windows Media Player<br>Chrome<br>Filmy a TV programy<br>PotPlayer<br>GOM player<br>prehrávače podporované webovými prehliadačmi (napr. Chrome)<br><br>Pokyny na zapnutie tejto funkcie v prehrávačoch PotPlayer a GOM player nájdete v používateľskej príručke dodávanej s vaším počítačom.",
                 "note": {
                     "description": "Funkcia nefunguje v týchto prípadoch:",
@@ -2075,7 +2089,7 @@
             "antiTheft": {
                 "heading": "Inteligentné snímanie",
                 "title": "Inteligentné upozornenie na pohyb",
-                "desc": "<p><label>Keď povolíte túto funkciu, zariadenie začne vydávať zvukový signál, keď je obrazovka uzamknutá a zistí sa pohyb, najmä vo verejnom priestore.</label></p> <p style='margin-top:4px;'><label>Ak chcete upozornenie zrušiť, zadajte správne heslo alebo sa prihláste pomocou služby Windows Hello.</label></p>",
+                "desc": "<p><label>Keď povolíte túto funkciu, zariadenie začne vydávať zvukový signál, keď je obrazovka uzamknutá a zistí sa pohyb, najmä vo verejnom priestore.</label></p> <p><label>Ak chcete upozornenie zrušiť, zadajte správne heslo alebo sa prihláste pomocou služby Windows Hello.</label></p>",
                 "note": {
                     "description": "Po úspešnom prihlásení do systému sa táto funkcia automaticky vypne. Ak ju chcete používať, musíte ju znova povoliť."
                 },
@@ -2117,7 +2131,8 @@
                 "fileAuthorizationTips": {
                     "content": "Lenovo Vantage nemá prístup k systému súborov.",
                     "link": "Prejdite do nastavení systému Windows a povoľte prístup"
-                }
+                },
+                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
             },
             "voice": {
                 "title": "Hlas",

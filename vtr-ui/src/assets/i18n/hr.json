@@ -201,6 +201,9 @@
                     "legionAccessory": "Install Legion Accessory Central?",
                     "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
                     "install": "INSTALL"
+                },
+                "popup": {
+                    "closeBtn": "close"
                 }
             }
         },
@@ -1132,8 +1135,9 @@
                         },
                         "selectedModeText": {
                             "quiteCool": "Ovaj način rada omogućuje najbolje iskustvo uz ravnotežu brzine ventilatora i performansi sustava. Na primjer, performanse se optimiziraju tijekom igranja. Dok ste u uredu, smanjuje buku.",
-                            "batterySaving": "Ovaj način rada omogućuje maksimalno trajanje baterije automatskim podešavanjem svjetline, promjenom postavki napajanja, onemogućavanjem značajki napredne obrade slike itd.",
-                            "performance": "Ovaj način rada omogućuje maksimalne performanse sustava. Velika brzina ventilatora u ovom načinu rada može uzrokovati veliku buku."
+                            "batterySaving14": "Ovaj način rada omogućuje maksimalno trajanje baterije automatskim podešavanjem svjetline, promjenom postavki napajanja, onemogućavanjem značajki napredne obrade slike itd.",
+                            "performance": "Ovaj način rada omogućuje maksimalne performanse sustava. Velika brzina ventilatora u ovom načinu rada može uzrokovati veliku buku.",
+                            "batterySaving15": "Ovaj način rada omogućuje maksimalno trajanje baterije automatskim podešavanjem svjetline, punjenjem postavki napajanja, onemogućavanjem Dolby audio-a i sl. Sa svime navedenim može produžiti do 20% trajanja baterije."
                         },
                         "intelligentCoolingModesModal": {
                             "title": "Promijenite inteligentne načine hlađenja",
@@ -1141,6 +1145,16 @@
                             "coolingModesList": {
                                 "list1": "Kliknite na ikonu baterije na alatnoj traci sustava Windows.",
                                 "list2": "Pojavit će se način napajanja sustava Windows - pomaknite klizač i odaberite optimalno trajanje baterije ili optimalne performanse."
+                            }
+                        },
+                        "autoTransition": {
+                            "description": "Omogući \"Izuzetne performanse\" u ovom načinu. Kad je omogućeno, temperatura na površini vašeg računala i buka ventilatora mogu se automatski povećati.",
+                            "more": "DODATNO",
+                            "less": "MANJE",
+                            "moreContent": {
+                                "desc1": "a. U uredskoj primjeni, scenarijima ažuriranja sustava Windows, mrežnim filmovima ili pri niskom opterećenju sustav može biti tih. Dok je u normalnim scenarijima igranja, ostvaruje bolje performanse.",
+                                "desc2": "b. Prilikom igranja zahtjevnih igara automatski je omogućen način \"Izuzetne performanse\". To bi moglo uzrokovati veću buku ili višu temperaturu na površini računala.",
+                                "desc3": "c. Kad je napunjenost baterije manja od 30 %, sustav automatski prelazi u način \"Ušteda baterije\"."
                             }
                         }
                     },
@@ -2064,7 +2078,7 @@
             "superResolution": {
                 "heading": "Inteligentni mediji",
                 "title": "Povećanje razlučivosti videozapisa",
-                "desc": "<p><label>Ova značajka poboljšava iskustvo reprodukcije videa poboljšanjem razlučivosti videozapisa. Posebno djeluje kada je video loše razlučivosti.</label></p> <p style='margin-top:4px;'><label>Ova funkcija može utjecati na trajanje baterije, temperaturu baterije i uzrokovati buku. Nemojte ga koristiti u DC načinu rada (način rada baterije). U suprotnom će doći do ubrzanja potrošnje električne energije i skraćivanja vijeka trajanja baterije.</label></p>",
+                "desc": "<p><label>Ova značajka poboljšava iskustvo reprodukcije videa poboljšanjem razlučivosti videozapisa. Posebno djeluje kada je video loše razlučivosti.</label></p> <p><label>Ova funkcija može utjecati na trajanje baterije, temperaturu baterije i uzrokovati buku. Nemojte ga koristiti u DC načinu rada (način rada baterije). U suprotnom će doći do ubrzanja potrošnje električne energije i skraćivanja vijeka trajanja baterije.</label></p>",
                 "tooltip": "Ova značajka radi samo za video reproduktore ispod video zapisa:<br>Windows Media Player<br>Chrome<br>filmovi i televizija<br>PotPlayer<br>GOM player<br>Reproduktori temeljeni na web preglednicima (npr. Chrome)<br><br>Za upute o tome kako omogućiti ovu funkciju na PotPlayeru i GOM player uređaju, pogledajte korisnički priručnik koji ste dobili s računalom.",
                 "note": {
                     "description": "Ova značajka ne funkcionira kad:",
@@ -2075,7 +2089,7 @@
             "antiTheft": {
                 "heading": "Pametni senzori",
                 "title": "Pametno upozorenje o kretanju",
-                "desc": "<p><label>Kada omogućite ovu značajku, uređaj će početi piskati kad je vaš zaslon zaključan a otkrije se pokrete, naročito na javnom mjestu.</label></p> <p style='margin-top:4px;'><label>Da biste isključili alarm, unesite pravilnu lozinku ili se prijavite u sustav Windows Hello.</label></p>",
+                "desc": "<p><label>Kada omogućite ovu značajku, uređaj će početi piskati kad je vaš zaslon zaključan a otkrije se pokrete, naročito na javnom mjestu.</label></p> <p><label>Da biste isključili alarm, unesite pravilnu lozinku ili se prijavite u sustav Windows Hello.</label></p>",
                 "note": {
                     "description": "Nakon uspješne prijave u sustav, ova će se značajka automatski isključiti. Da biste je opet koristili morate je ponovo uključiti."
                 },
@@ -2117,7 +2131,8 @@
                 "fileAuthorizationTips": {
                     "content": "Lenovo Vantage nema pristup datotečnom sustavu.",
                     "link": "Idite na postavke sustava Windows za omogućivanje pristupa"
-                }
+                },
+                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
             },
             "voice": {
                 "title": "Glas",
