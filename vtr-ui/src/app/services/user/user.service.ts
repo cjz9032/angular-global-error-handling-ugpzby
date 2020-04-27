@@ -56,8 +56,8 @@ export class UserService {
 				@media only screen and (min-height: 768px) {.queryHeight{height: 60%;}}
 				@media only screen and (min-height: 1080px) {.queryHeight{height: 50%;}}
 				@media only screen and (min-height: 2160px) {.queryHeight{height: 40%;}}
-				.close {  color: black;  float: right;  font-size: 28px;  font-weight: bold;}
-				.close:hover, .close:focus {  color: black;  text-decoration: none;  cursor: pointer;}
+				.close { color: rgb(102, 116, 129); float: right; margin-top: -8px; font-size: 38px; font-weight: normal; }
+				.close:hover, .close:focus { color: rgb(74, 128, 253); text-decoration: none; cursor: pointer; }
 				@keyframes spinner { to {transform: rotate(360deg);} }
 				.holder { position: absolute; width: 60px; height: 60px; left: 50%; top: 50%; transform: translate(-50%, -50%); }
 				.holder .spinner { display: block; width: 100%; height: 100%; border-radius: 50%; border: 3px solid #ccc; border-top-color: #07d; animation: spinner .8s linear infinite; }
