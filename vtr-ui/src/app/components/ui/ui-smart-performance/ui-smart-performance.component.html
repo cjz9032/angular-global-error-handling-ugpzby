@@ -39,11 +39,9 @@
 										<h1>{{'smartPerformance.section1Heading' |translate }}</h1>
 										<h5>{{'smartPerformance.section1Description' |translate }}</h5>
 										<div class="performance-slider-block">
-
 											<div class="slider">
 												<div class="condition">
 													<div class="critical">{{'smartPerformance.critical' |translate }}</div>
-
 													<div class="well">{{'smartPerformance.allisWell' |translate }}</div>
 												</div>
 												<div class="verticle-lines">
@@ -71,7 +69,6 @@
 									<div class="col col-12 pc-performance-block">
 										<h2>{{'smartPerformance.section2Heading' |translate }}</h2>
 										<h5>{{'smartPerformance.section2Description' |translate }}</h5>
-
 									</div>
 								</div>
 								<div class="row">
@@ -269,15 +266,12 @@
 																<p>{{'smartPerformance.proactiveAutomated.tabSet2.tab3Description' |translate }}</p>
 															</div>
 														</div>
-
 													</ng-template>
 												</ngb-tab>
 											</ngb-tabset>
 										</div>
-
 									</div>
 								</div>
-
 								<div class="row">
 									<div class="col col-12 free-scan">
 										<div class="row">
@@ -296,10 +290,6 @@
 									</div>
 								</div>
 							</div>
-							 <!-- <vtr-ui-smart-performance-scanning
-							*ngIf="isScanning" (sendScanStatus)="changeScanStatus()">
-						</vtr-ui-smart-performance-scanning> -->
-
 						<div class="system-scan-complete" *ngIf="isScanningCompleted">
 								<div class="row">
 									<div class="col col-12 offline-info-background">
@@ -388,66 +378,10 @@
 								</div>
 							</div>
 							<div class="row mb-40" *ngIf="!isScanning && !isScanningCompleted">
-
 								<div class="col col-12">
 									<vtr-widget-subscriptiondetails></vtr-widget-subscriptiondetails>
-
 								</div>
 							</div>
-
-							
-
-							<!-- <div class="row mb-40"  *ngIf="isScanning">
-								<div class="col col-12">
-									<div class="accumulated-junk sidebar-widget">
-										<div class="mini-text">
-											NOW SCANNING DETAIL
-										</div>
-										<div class="title pb-3">
-											<fa-icon [icon]="['fas', 'laptop']" class="mr-2"></fa-icon>
-											{{currentSubItemCategory.name}}
-										</div>
-										<div class="card-info">
-											 <p>This is a brief description of what Accumulated Junk means to a user and why they should know more about it. What is it, why is it important, how is it affecting my computer performance, how will I benifit from the junk being cleaned up?</p>
-											<p>{{currentSubItemCategory.desc}}</p>
-										</div>
-										<div class="d-flex">
-											<div class="labels d-flex flex-column">
-												<span class="badge badge-primary">CURRENT:</span>
-												<span class="badge badge-light">UP NEXT:</span>
-											</div>
-											<div class="ms-slider">
-												<ul class="junk-list ms-slider__words">
-													<li class="ms-slider__word" *ngFor="let item of subItems">{{item.key}}</li>
-													 <li class="ms-slider__word">Applying registry and shortcut fixes</li>
-													<li class="ms-slider__word">Scanning and fixing critical services</li>
-													<li class="ms-slider__word">Modifying windows settings</li>
-													<li class="ms-slider__word">Improving start-up performance</li>
-												</ul>
-											</div>
-										</div>
-										  <a href="#" class="link-text">Manage Subscription</a>
-								</div>
-							</div> -->
-
-							<!-- <div class="row mb-40"  *ngIf="isScanningCompleted">
-								<div class="col col-12">
-									<div class="recommended-action sidebar-widget">
-										<div class="title pb-3">
-											Recommended Action
-										</div>
-										<div class="card-info">
-											<p>We will automatically fix these issues. Once today and every thereafter <a href="#" class="link-text">Learn more</a></p>
-										</div>
-										<div class="pricing">
-											<h2 class="big-text">$19.99 / Yr</h2>
-											<small>less than $2 per month</small>
-										</div>
-										<p>Longer term? Even more savings!</p>
-										<button class="action-button mt-2" (click)=openSubscribeModal()>Sign up</button>
-									</div>
-								</div>
-							</div> -->
 						</div>
 					</div>
 				</div>
@@ -455,40 +389,11 @@
 		</div>
 	</div></div>
 </right-content>
-
 </vtr-page-layout>
-<!-- <div class="vtr-ui-smart-performance vtr-page">
-	<div class="row vtr-page-header">
-		<div class="col vtr-col">
-			<vtr-header-main [back]="back"
-				[title]="title">
-			</vtr-header-main>
-		</div>
-	</div>
-
-	<div class="row vtr-page-content"  *ngIf="!isScanning && !isScanningCompleted && !isSubscribed">
-		<div class="col vtr-col">
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-sm-12 col-lg-8 col-xl-8 vtr-page-left-column">
-
-
-					</div>
-
-					<div class="col-sm-12 col-lg-4 col-xl-4 vtr-page-right-column">
-
-
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<vtr-ui-smart-performance-scanning
-*ngIf="isScanning" (sendScanStatus)="changeScanStatus()">
+<vtr-ui-smart-performance-scanning *ngIf="isScanning" (sendScanStatus)="changeScanStatus($event)"
+    	 (stopScanning)="cancelScan()" [scheduleScanData] ="scheduleScanObj" 
+	[isScheduleScan] ="isScheduleScan">
 </vtr-ui-smart-performance-scanning>
-<vtr-ui-smart-performance-scan-summary *ngIf="(isScanningCompleted || isSubscribed) && !isScanning " (backToScan)="changeScanEvent()"></vtr-ui-smart-performance-scan-summary>
-</div> -->
-<vtr-ui-smart-performance-scanning
-				*ngIf="isScanning" (sendScanStatus)="changeScanStatus($event)" (stopScanning)="cancelScan()">
-				</vtr-ui-smart-performance-scanning>
-				<vtr-ui-smart-performance-scan-summary *ngIf="(isScanningCompleted || isSubscribed) && !isScanning " (backToScan)="changeScanEvent()" [rating]="rating" [tune]="tune" [boost]="boost" [secure]="secure"></vtr-ui-smart-performance-scan-summary>
+<vtr-ui-smart-performance-scan-summary *ngIf="(isScanningCompleted || isSubscribed) && !isScanning "
+	(backToScan)="changeScanEvent()"  [rating]="rating" [tune]="tune"
+	[boost]="boost" [secure]="secure"></vtr-ui-smart-performance-scan-summary>

@@ -6,6 +6,9 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import moment from 'moment';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { EventTypes } from '@lenovo/tan-client-bridge';
+import { EMPTY } from 'rxjs';
 @Component({
 	selector: 'vtr-ui-smart-performance-scan-summary',
 	templateUrl: './ui-smart-performance-scan-summary.component.html',
@@ -18,7 +21,8 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		private calendar: NgbCalendar,
 		private logger: LoggerService,
 		public smartPerformanceService: SmartPerformanceService,
-	) {}
+		public shellServices: VantageShellService,
+	) { }
 	public machineFamilyName: string;
 	public today = new Date();
 	public items: any = [];
@@ -66,6 +70,8 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	customDate: any;
 	@Output() backToScan = new EventEmitter();
 
+	//@Output() sendScanData = new EventEmitter();
+	@Output() sendScanData: EventEmitter<any> = new EventEmitter();
 	// scan settings
 	scheduleTab;
 	isChangeSchedule = false;
@@ -156,6 +162,11 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	};
 	scanScheduleDate: any;
 	issueCount: any = 0;
+	nextScheduleScan: any;
+	mostRecentScan: any;
+	IsSmartPerformanceFirstRun: any;
+	IsScheduleScanEnabled: any;
+	public scanData: any = {};
 	// tuneindividualIssueCount: any = 0;
 	// boostindividualIssueCount: any = 0;
 	// secureindividualIssueCount: any = 0;
@@ -174,7 +185,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		this.toDate = this.selectedDate;
 		this.fromDate = this.selectedDate;
 		this.isSubscribed = this.commonService.getLocalStorageValue(
-			LocalStorageKey.IsSubscribed
+			LocalStorageKey.IsSmartPerformanceSubscribed
 		);
 		this.selectedFrequency = this.scanFrequency[1];
 		this.selectedDay = this.days[0];
@@ -183,6 +194,66 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		this.scanScheduleDate = this.selectedDate;
 		this.leftAnimator = '0%';
 		this.scanSummaryTime(0);
+		
+		if (this.isSubscribed) {
+			this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix');
+		}
+		else {
+			this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScan');
+		}
+	}
+
+	getNextScanScheduleTime(scandate) {
+		try {
+			var dateObj = new Date(scandate);
+			var momentObj = moment(dateObj);
+			var momentString = momentObj.format('YYYY-MM-DD');
+			const now =
+				new Intl.DateTimeFormat('default',
+					{
+						hour12: true,
+						hour: 'numeric',
+						minute: 'numeric'
+					}).format(dateObj);
+			this.nextScheduleScan = (new Date(momentString).getMonth() + 1) + "/" + new Date(momentString).getDate() + " at " + now;
+		} catch (err) {
+			//console.log("error in getNextScanScheduleTime _____________________________________", err);
+			this.logger.error('ui-smart-performance-scan-summary.getNextScanScheduleTime.then', err);
+		}
+	}
+	getMostecentScanDateTime(scandate) {
+		try {
+			//console.log('getMostecentScanDateTime Response--------------------------------------------------------------->' + JSON.stringify(scandate));
+			var dateObj = new Date(scandate);
+			var momentObj = moment(dateObj);
+			var momentString = momentObj.format('YYYY-MM-DD');
+			const now =
+				new Intl.DateTimeFormat('default',
+					{
+						hour12: true,
+						hour: 'numeric',
+						minute: 'numeric'
+					}).format(dateObj);
+			this.mostRecentScan = (new Date(momentString).getMonth() + 1) + "/" + new Date(momentString).getDate() + " at " + now;
+		} catch (err) {
+			this.logger.error('ui-smart-performance-scan-summary.getMostecentScanDateTime.then', err);
+		}
+	}
+	async getNextScanRunTime(scantype) {
+		const payload = {
+			scantype
+		};
+		this.logger.info('ui-smart-performance.getNextScanRunTime', JSON.stringify(payload));
+		try {
+			const res: any = await this.smartPerformanceService.getNextScanRunTime(payload);
+			if (res!=undefined) {
+				this.getNextScanScheduleTime(res.nextruntime);
+			}
+			this.logger.info('ui-smart-performance.getNextScanRunTime.then', JSON.stringify(res));
+
+		} catch (err) {
+			this.logger.error('ui-smart-performance.getNextScanRunTime.then', err);
+		}
 	}
 	// tslint:disable-next-line: use-lifecycle-interface
 	ngAfterViewInit() {
@@ -481,10 +552,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 			const res: any = await this.smartPerformanceService.getHistory(
 				payload
 			);
-			// console.log(
-			// 	'Successfully got response from Bridge',
-			// 	JSON.stringify(res)
-			// );
+			 
 			if (res.lastscanresults) {
                 this.historyRes = {
 					Tune: res.Tune,
@@ -492,7 +560,8 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 					Secure: res.Secure
 				};
                 // console.log(JSON.stringify(this.historyRes));
-                this.historyScanResults = res.lastscanresults || [];
+				this.historyScanResults = res.lastscanresults || [];
+				this.getMostecentScanDateTime(this.historyScanResults[0].scanruntime);
             } else {
 				this.historyScanResults = [];
 				this.historyRes = {};

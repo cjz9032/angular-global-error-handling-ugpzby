@@ -33,7 +33,6 @@ export class ModalSmartPerformanceCancelComponent implements OnInit {
 			if (cancelScanFromService) {
 			// this.router.navigate(['support/smart-performance']);
 			// this.stopScanning.emit();
-
 			this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => this.router.navigate(['support/smart-performance']));
 			} else {
 			// this.isScanning = false;

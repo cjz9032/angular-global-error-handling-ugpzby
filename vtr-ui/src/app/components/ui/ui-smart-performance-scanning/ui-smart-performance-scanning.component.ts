@@ -4,7 +4,8 @@ import {
 	Input,
 	Output,
 	EventEmitter,
-	ViewChild
+	ViewChild,
+	OnChanges
 } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalSmartPerformanceCancelComponent } from '../../modal/modal-smart-performance-cancel/modal-smart-performance-cancel.component';
@@ -27,7 +28,7 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 	templateUrl: './ui-smart-performance-scanning.component.html',
 	styleUrls: ['./ui-smart-performance-scanning.component.scss']
 })
-export class UiSmartPerformanceScanningComponent implements OnInit {
+export class UiSmartPerformanceScanningComponent implements OnInit, OnChanges {
 	// @ViewChild('speedometer') speedometer: WidgetSpeedometerComponent;
 	@ViewChild('speedometer', { static: false })
 	speedometer: WidgetSpeedometerComponent;
@@ -56,6 +57,8 @@ export class UiSmartPerformanceScanningComponent implements OnInit {
 	currentScanningItems: any = [];
 	public scanData: any = {};
 	public timer: any;
+	@Input() scheduleScanData: any = {};
+	@Input() isScheduleScan: any = false;
 	constructor(
 		private modalService: NgbModal,
 		public shellServices: VantageShellService,
@@ -66,37 +69,31 @@ export class UiSmartPerformanceScanningComponent implements OnInit {
 	) {}
 
 	ngOnInit() {
-		this.spCategoryenum = SPCategory;
-		this.spSubCategoryenum = SPSubCategory;
-		this.activegroup = this.spCategoryenum.TUNEUPPERFORMANCE;
-		// this.smartperformanceScanningStatusEventRef = this.getSmartPerformanceStartScanStatusEvent.bind(this);
-		// this.shellServices.registerEvent(EventTypes.smartPerformanceScanStatus, this.smartperformanceScanningStatusEventRef);
-		
-		this.shellServices.registerEvent(
-			EventTypes.smartPerformanceScanStatus,
-			event => {
-				//console.log("event registered.................................");
-				this.updateScanResponse(event);
-			}
-		);
-
-		this.getSmartPerformanceStartScanInformation();
-		this.initSpeed();
-		this.sampleDesc = this.translate.instant(
-			'smartPerformance.scanningPage.nowScanningDetail.tunePCDesc'
-		);
-		this.GetCurrentScanninRollingTexts(
-			this.translate.instant(
-				'smartPerformance.scanningPage.nowScanningDetail.tunePCScanningItems.accumulatedJunk'
-			)
-		);
-		this.updateTuneUpPerformanceSubItems(
-			this.translate.instant('smartPerformance.tunePCPerformance.title'),
-			this.sampleDesc
-		);
+			this.spCategoryenum = SPCategory;
+			this.spSubCategoryenum = SPSubCategory;
+			this.activegroup = this.spCategoryenum.TUNEUPPERFORMANCE;
+			this.initSpeed();
+			this.sampleDesc = this.translate.instant(
+				'smartPerformance.scanningPage.nowScanningDetail.tunePCDesc'
+			);
+			this.GetCurrentScanninRollingTexts(
+				this.translate.instant(
+					'smartPerformance.scanningPage.nowScanningDetail.tunePCScanningItems.accumulatedJunk'
+				)
+			);
+			this.updateTuneUpPerformanceSubItems(
+				this.translate.instant('smartPerformance.tunePCPerformance.title'),
+				this.sampleDesc
+			);
 	}
-	initSpeed() {
 
+	ngOnChanges(changes) {
+		if (this.scheduleScanData) {
+			this.updateScanResponse(this.scheduleScanData);
+		}
+	}
+
+	initSpeed() {
 		const self = this;
 		self.loop = setInterval(function() {
 			self.speedometer.speedCurrent = Math.floor(Math.random() * (self.speedometer.speedMax / 2)) + 1;
@@ -203,7 +200,7 @@ export class UiSmartPerformanceScanningComponent implements OnInit {
 			) {
 				this.GetCurrentScanninRollingTexts(
 					this.translate.instant(
-						'smartPerformance.scanningPage.nowScanningDetail.boostcanningItems.networkSettings'
+						'smartPerformance.scanningPage.nowScanningDetail.boostcanningItems.eJunk'
 					)
 				);
 			} else if (
@@ -212,7 +209,7 @@ export class UiSmartPerformanceScanningComponent implements OnInit {
 			) {
 				this.GetCurrentScanninRollingTexts(
 					this.translate.instant(
-						'smartPerformance.scanningPage.nowScanningDetail.boostcanningItems.browserSettings'
+						'smartPerformance.scanningPage.nowScanningDetail.boostcanningItems.networkSettings'
 					)
 				);
 			} else if (
@@ -221,7 +218,7 @@ export class UiSmartPerformanceScanningComponent implements OnInit {
 			) {
 				this.GetCurrentScanninRollingTexts(
 					this.translate.instant(
-						'smartPerformance.scanningPage.nowScanningDetail.boostcanningItems.browserSecurity'
+						'smartPerformance.scanningPage.nowScanningDetail.boostcanningItems.browserSettings'
 					)
 				);
 			} else if (
@@ -230,7 +227,7 @@ export class UiSmartPerformanceScanningComponent implements OnInit {
 			) {
 				this.GetCurrentScanninRollingTexts(
 					this.translate.instant(
-						'smartPerformance.scanningPage.nowScanningDetail.boostcanningItems.wifiPerformance'
+						'smartPerformance.scanningPage.nowScanningDetail.boostcanningItems.browserSecurity'
 					)
 				);
 			} else if (
@@ -239,7 +236,7 @@ export class UiSmartPerformanceScanningComponent implements OnInit {
 			) {
 				this.GetCurrentScanninRollingTexts(
 					this.translate.instant(
-						'smartPerformance.scanningPage.nowScanningDetail.boostcanningItems.eJunk'
+						'smartPerformance.scanningPage.nowScanningDetail.boostcanningItems.wifiPerformance'
 					)
 				);
 			}
@@ -285,7 +282,7 @@ export class UiSmartPerformanceScanningComponent implements OnInit {
 			) {
 				this.GetCurrentScanninRollingTexts(
 					this.translate.instant(
-						'smartPerformance.scanningPage.nowScanningDetail.malwareScanningItems.securitySettings'
+						'smartPerformance.scanningPage.nowScanningDetail.malwareScanningItems.errantPrograms'
 					)
 				);
 			} else if (
@@ -294,7 +291,7 @@ export class UiSmartPerformanceScanningComponent implements OnInit {
 			) {
 				this.GetCurrentScanninRollingTexts(
 					this.translate.instant(
-						'smartPerformance.scanningPage.nowScanningDetail.malwareScanningItems.errantPrograms'
+						'smartPerformance.scanningPage.nowScanningDetail.malwareScanningItems.annoyingAdware'
 					)
 				);
 			} else if (
@@ -303,7 +300,7 @@ export class UiSmartPerformanceScanningComponent implements OnInit {
 			) {
 				this.GetCurrentScanninRollingTexts(
 					this.translate.instant(
-						'smartPerformance.scanningPage.nowScanningDetail.malwareScanningItems.annoyingAdware'
+						'smartPerformance.scanningPage.nowScanningDetail.malwareScanningItems.securitySettings'
 					)
 				);
 			}
@@ -321,7 +318,7 @@ export class UiSmartPerformanceScanningComponent implements OnInit {
 		if (this.smartPerformanceService.isShellAvailable) {
 			try {
 				this.isSubscribed = this.commonService.getLocalStorageValue(
-					LocalStorageKey.IsSubscribed
+					LocalStorageKey.IsSmartPerformanceSubscribed
 				);
 
 				if (this.isSubscribed == true) {
