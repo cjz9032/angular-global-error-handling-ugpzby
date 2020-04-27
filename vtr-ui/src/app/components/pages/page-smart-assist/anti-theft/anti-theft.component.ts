@@ -324,6 +324,7 @@ export class AntiTheftComponent implements OnInit {
 			if (this.smartAssist.isShellAvailable) {
 				const folder = await this.storageFolder.getFolderFromPathAsync(photoAddress);
 				await this.smartAssist.windows.System.Launcher.launchFolderAsync(folder);
+				this.isShowfileAuthorizationTips = false;
 			}
 		} catch (error) {
 			this.logger.error('showPhotoFolder error message:' + error.message + "error number:" + error.number);

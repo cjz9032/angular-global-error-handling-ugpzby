@@ -118,7 +118,9 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 	listCpt = {
 		iconPath: 'assets/images/support/svg_icon_cpt.svg',
 		title: 'cpt.title',
-		clickItem: 'cpt'
+		clickItem: 'cpt',
+		metricsItem: 'Quicklinks.ContentPreviewToolButton',
+		metricsEvent: 'FeatureClick',
 	};
 	offlineImages = [
 		'assets/images/support/support-offline-1.jpg',

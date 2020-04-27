@@ -1,71 +1,42 @@
-<div class="row pt-5 smart-assist-card"
-	*ngIf="antiTheft.available">
-	<div class="col-12 px-0"
-		id="smartAssist-intelligentSensing-smartMotionAlert-div">
-		<vtr-container-collapsible [tabIndex]="0"
-			[cardTitle]="'device.smartAssist.antiTheft.heading' | translate"
-			[isCollapsed]="false"
-			[allowCollapse]="true"
-			[collapseLinkId]="'smartAssist-intelligentSensing-smartMotionAlert'">
-			<ul class="list-group list-group-flush">
-				<li>
-					<vtr-ui-row-switch [switchId]="'smartAssist-intelligentSensing-smartMotionAlert-switch'"
-						[title]="'device.smartAssist.antiTheft.title' | translate"
-						componentName="smartMotionAlertSwitch"
-						[isLastChild]="true"
-						[isSwitchVisible]="true"
-						[leftIcon]="['icomoon', 'icomoon-antiTheft']"
-						[rightIcon]="[]"
-						[showChildContent]="false"
-						[isSwitchChecked]="antiTheft.status"
-						[tooltipText]=""
-						(toggleOnOff)="setAntiTheftStatus($event)"
-						[caption]="'device.smartAssist.antiTheft.desc' | translate"
-						[showLoaderState]="isLoading">
-					</vtr-ui-row-switch>
+<div class="row pt-5 smart-assist-card" *ngIf="antiTheft.available">
+    <div class="col-12 px-0" id="smartAssist-intelligentSensing-smartMotionAlert-div">
+        <vtr-container-collapsible [tabIndex]="0" [cardTitle]="'device.smartAssist.antiTheft.heading' | translate"
+            [isCollapsed]="false" [allowCollapse]="true"
+            [collapseLinkId]="'smartAssist-intelligentSensing-smartMotionAlert'">
+            <ul class="list-group list-group-flush">
+                <li>
+                    <vtr-ui-row-switch [switchId]="'smartAssist-intelligentSensing-smartMotionAlert-switch'"
+                        [title]="'device.smartAssist.antiTheft.title' | translate"
+                        componentName="smartMotionAlertSwitch" [isLastChild]="true" [isSwitchVisible]="true"
+                        [leftIcon]="['icomoon', 'icomoon-antiTheft']" [rightIcon]="['far', 'question-circle']" [showChildContent]="false"
+                        [isSwitchChecked]="antiTheft.status" [tooltipText]="'device.smartAssist.antiTheft.tooltip' | translate" (toggleOnOff)="setAntiTheftStatus($event)"
+                        [caption]="'device.smartAssist.antiTheft.desc' | translate" [showLoaderState]="isLoading">
+                    </vtr-ui-row-switch>
 
-					<div id="smartMotionAlertSubFunctions"
-						class="subFunctions">
-						<div class="row">
-							<div class="feature-note p-4">
-								<p id="smartMotionAlertDescription"
-									tabindex="0"
-									class="antiTheftDescription"
-									attr.aria-label="{{'device.smartAssist.antiTheft.note.description' | translate}}">
-									{{'device.smartAssist.antiTheft.note.description' | translate}}</p>
-							</div>
-						</div>
-						<p id="smartMotionAlertAlarmTitle"
-							class="subTitle dropdownTitle"
-							tabindex="0"
-							attr.aria-label="{{'device.smartAssist.antiTheft.alarm.title' | translate}}">
-							{{'device.smartAssist.antiTheft.alarm.title' | translate}}
-						</p>
-						<div id="smartMotionAlertAlarmTimeSelect"
-							class="select">
-							<vtr-ui-dropdown class="selectDropdown"
-								[list]="alarmTimeList"
-								[value]="antiTheft.alarmOften"
-								(change)="setAlarmOften($event.value)"
-								[dropDownId]="'smartMotionAlert-alarmTime-dropDown'"
-								vtrMetrics
-								metricsEvent="FeatureClick"
-								metricsParent="Device.SmartAssist"
-								metricsItem="Smart-motion-alarm.alarm-drop-down"
-								metricsValue="{{antiTheft.alarmOften}}">
-							</vtr-ui-dropdown>
-						</div>
-						<p id="smartMotionAlertSupportPhotoTitle"
-							class="subTitle"
-							tabindex="0"
-							attr.aria-label="{{'device.smartAssist.antiTheft.allowCamera.title' | translate}}">
-							{{'device.smartAssist.antiTheft.allowCamera.title' | translate}}</p>
-						<div>
-							<p id="smartMotionAlertSupportPhotoDescribe">
-								<label id="smartMotionAlertSupportPhotoDescribeLabel"
-									tabindex="0"
-									attr.aria-label="{{'device.smartAssist.antiTheft.allowCamera.describe' | translate}}">{{'device.smartAssist.antiTheft.allowCamera.describe' | translate}}</label>
-							</p>
+                    <div id="smartMotionAlertSubFunctions" class="subFunctions">
+                        <div class="row">
+                            <div class="feature-note p-4">
+                                <p id="smartMotionAlertDescription" class="antiTheftDescription">
+                                    {{'device.smartAssist.antiTheft.note.description' | translate}}</p>
+                            </div>
+                        </div>
+                        <p id="smartMotionAlertAlarmTitle" class="subTitle dropdownTitle">
+                            {{'device.smartAssist.antiTheft.alarm.title' | translate}}
+                        </p>
+                        <div id="smartMotionAlertAlarmTimeSelect" class="select">
+                            <vtr-ui-dropdown class="selectDropdown" [list]="alarmTimeList" [value]="antiTheft.alarmOften"
+                                (change)="setAlarmOften($event.value)"
+                                [dropDownId]="'smartMotionAlert-alarmTime-dropDown'" vtrMetrics
+                                metricsEvent="FeatureClick" metricsParent="Device.SmartAssist"
+                                metricsItem="Smart-motion-alarm.alarm-drop-down" metricsValue="{{antiTheft.alarmOften}}">
+                            </vtr-ui-dropdown>
+                        </div>
+                        <p id="smartMotionAlertSupportPhotoTitle" class="subTitle">
+                            {{'device.smartAssist.antiTheft.allowCamera.title' | translate}}</p>
+                        <div>
+                            <p id="smartMotionAlertSupportPhotoDescribe">
+                                <label id="smartMotionAlertSupportPhotoDescribeLabel">{{'device.smartAssist.antiTheft.allowCamera.describe' | translate}}</label>
+                            </p>
 
 							<div class="checkbox">
 								<vtr-ui-checkbox [componentId]="'smartMotionAlertSupportPhotoCheckbox'"
@@ -79,126 +50,85 @@
 
 						</div>
 
-						<div class="row"
-							*ngIf="!antiTheft.cameraPrivacyState && !isShowAuthorized">
-							<div class="feature-note p-4 cameraTips">
-								<p id="smartMotionAlertCameraPrivacyDescribe"
-									tabindex="0"
-									attr.aria-label="{{'device.smartAssist.antiTheft.cameraPrivacy.describe' | translate}}">
-									{{'device.smartAssist.antiTheft.cameraPrivacy.describe' | translate}}</p>
-								<button id="showCameraPrivacyPageButton"
-									type="button"
-									class="btn btn-link privacy-button pl-0"
-									tabindex="0"
-									role="button"
-									attr.aria-label="{{'device.smartAssist.antiTheft.cameraPrivacy.linkText' | translate}}"
-									(click)="showCameraPrivacyPage()">
-									{{'device.smartAssist.antiTheft.cameraPrivacy.linkText' | translate}}
-								</button>
-							</div>
-						</div>
+                        <div class="row" *ngIf="!antiTheft.cameraPrivacyState && !isShowAuthorized">
+                            <div class="feature-note p-4 cameraTips">
+                                <p id="smartMotionAlertCameraPrivacyDescribe">
+                                    {{'device.smartAssist.antiTheft.cameraPrivacy.describe' | translate}}</p>
+                                <button id="showCameraPrivacyPageButton" type="button"
+                                    class="btn btn-link privacy-button pl-0" tabindex="0" role="button"
+                                    attr.aria-label="{{'device.smartAssist.antiTheft.cameraPrivacy.linkText' | translate}}"
+                                    (click)="showCameraPrivacyPage()">
+                                    {{'device.smartAssist.antiTheft.cameraPrivacy.linkText' | translate}}
+                                </button>
+                            </div>
+                        </div>
 
-						<div class="row"
-							*ngIf="!antiTheft.authorizedAccessState && isShowAuthorized">
-							<div class="feature-note p-4 cameraTips">
-								<p id="smartMotionAlertAuthorizedAccessDescribe"
-									tabindex="0"
-									attr.aria-label="{{'device.smartAssist.antiTheft.authorizedAccess.describe' | translate}}">
-									{{'device.smartAssist.antiTheft.authorizedAccess.describe' | translate}}</p>
-								<button id="showCameraAuthorizedAccessButton"
-									tabindex="0"
-									role="button"
-									type="button"
-									class="btn btn-link pl-0"
-									attr.aria-label="{{'device.smartAssist.antiTheft.authorizedAccess.linkText' | translate}}"
-									(click)="showCameraAuthorizedAccess()">
-									{{'device.smartAssist.antiTheft.authorizedAccess.linkText' | translate}}
-								</button>
-							</div>
-						</div>
+                        <div class="row" *ngIf="!antiTheft.authorizedAccessState && isShowAuthorized">
+                            <div class="feature-note p-4 cameraTips">
+                                <p id="smartMotionAlertAuthorizedAccessDescribe">
+                                    {{'device.smartAssist.antiTheft.authorizedAccess.describe' | translate}}</p>
+                                <button id="showCameraAuthorizedAccessButton" tabindex="0" role="button" type="button"
+                                    class="btn btn-link pl-0"
+                                    attr.aria-label="{{'device.smartAssist.antiTheft.authorizedAccess.linkText' | translate}}"
+                                    (click)="showCameraAuthorizedAccess()">
+                                    {{'device.smartAssist.antiTheft.authorizedAccess.linkText' | translate}}
+                                </button>
+                            </div>
+                        </div>
 
-						<div
-							*ngIf="antiTheft.cameraPrivacyState && antiTheft.authorizedAccessState && antiTheft.isSupportPhoto">
-							<label id="smartMotionAlertPhotoTitle"
-								tabindex="0"
-								attr.aria-label="{{'device.smartAssist.antiTheft.photo.title' | translate}}"
-								class="subTitle dropdownTitle">{{'device.smartAssist.antiTheft.photo.title' | translate}}
-								<fa-icon id="smartMotionAlertPhotoIcon"
-									class="right-icon"
-									triggers="manual"
-									placement="auto"
-									autoClose="false"
-									[ngbTooltip]="tooltipRef"
-									#rightToolTip1="ngbTooltip"
-									autoClose="true"
-									[icon]="['far', 'question-circle']"
-									container="vtr-root"
-									tooltipClass="vtr-tooltip"
-									(click)="onRightIconClick(rightToolTip1, $event)"
-									(keydown.enter)="onRightIconClick(rightToolTip1, $event)"
-									tabindex="0"
-									attr.aria-label="{{'device.smartAssist.antiTheft.photo.tooltip' | translate}}">
-								</fa-icon>
-							</label>
-							<ng-template #tooltipRef>
-								<div id="smartMotionAlertPhotoTooltip"
-									[innerHTML]="'device.smartAssist.antiTheft.photo.tooltip' | translate"></div>
-							</ng-template>
-							<div class="select"
-								id="smartMotionAlertPhotoNumberSelect">
-								<vtr-ui-dropdown class="selectDropdown"
-									[list]="photoNumberList"
-									[value]="antiTheft.photoNumber"
-									(change)="setPhotoNumber($event.value)"
-									[dropDownId]="'smartMotionAlert-photoNumber-dropDown'"
-									[dropDownName]="'smartMotionAlert-photoNumber-dropDown'"
-									vtrMetrics
-									metricsEvent="FeatureClick"
-									metricsParent="Device.SmartAssist"
-									metricsItem="Smart-motion-alarm.photo-drop-down"
-									metricsValue="{{antiTheft.photoNumber}}">
-								</vtr-ui-dropdown>
-							</div>
+                        <div *ngIf="antiTheft.cameraPrivacyState && antiTheft.authorizedAccessState && antiTheft.isSupportPhoto">
+                            <label id="smartMotionAlertPhotoTitle" 
+                                class="subTitle dropdownTitle">{{'device.smartAssist.antiTheft.photo.title' | translate}}
+                                <fa-icon id="smartMotionAlertPhotoIcon" class="right-icon" triggers="manual"
+                                    placement="auto" autoClose="false" [ngbTooltip]="tooltipRef"
+                                    #rightToolTip1="ngbTooltip" autoClose="true" [icon]="['far', 'question-circle']"
+                                    container="vtr-root" tooltipClass="vtr-tooltip"
+                                    (click)="onRightIconClick(rightToolTip1, $event)"
+                                    (keydown.enter)="onRightIconClick(rightToolTip1, $event)" tabindex="0"
+                                    attr.aria-label="{{'device.smartAssist.antiTheft.photo.tooltip' | translate}}">
+                                </fa-icon>
+                            </label>
+                            <ng-template #tooltipRef>
+                                <div id="smartMotionAlertPhotoTooltip" tabindex="0"
+                                    attr.aria-label="{{'device.smartAssist.antiTheft.photo.tooltip' | translate}}"
+                                    [innerHTML]="'device.smartAssist.antiTheft.photo.tooltip' | translate"></div>
+                            </ng-template>
+                            <div class="select" id="smartMotionAlertPhotoNumberSelect">
+                                <vtr-ui-dropdown class="selectDropdown" [list]="photoNumberList" [value]="antiTheft.photoNumber"
+                                    (change)="setPhotoNumber($event.value)"
+                                    [dropDownId]="'smartMotionAlert-photoNumber-dropDown'"
+                                    [dropDownName]="'smartMotionAlert-photoNumber-dropDown'" vtrMetrics
+                                    metricsEvent="FeatureClick" metricsParent="Device.SmartAssist"
+                                    metricsItem="Smart-motion-alarm.photo-drop-down" metricsValue="{{antiTheft.photoNumber}}">
+                                </vtr-ui-dropdown>
+                            </div>
 
 						</div>
 
-						<div class="showPhoto"
-							id="smartMotionAlertShowPhotoLink">
-							<p id="smartMotionAlertShowPhotoTitle"
-								tabindex="0"
-								attr.aria-label="{{'device.smartAssist.antiTheft.showPhoto.title' | translate}}"
-								class="subTitle">{{'device.smartAssist.antiTheft.showPhoto.title' | translate}}
-								<button id="smartMotionAlertShowPhotoLinkButton"
-									tabindex="0"
-									role="button"
-									type="button"
-									class="btn btn-link pl-0"
-									[(ngModel)]="antiTheft.photoAddress"
-									attr.aria-label="{{'device.smartAssist.antiTheft.showPhoto.link' | translate}}"
-									(click)="showPhotoFolder(antiTheft.photoAddress)">
-									{{'device.smartAssist.antiTheft.showPhoto.link' | translate}}
-								</button>
-							</p>
-						</div>
+                        <div class="showPhoto" id="smartMotionAlertShowPhotoLink">
+                            <p id="smartMotionAlertShowPhotoTitle" 
+                                class="subTitle">{{'device.smartAssist.antiTheft.showPhoto.title' | translate}}
+                                <button id="smartMotionAlertShowPhotoLinkButton" tabindex="0" role="button"
+                                    type="button" class="btn btn-link pl-0" [(ngModel)]="antiTheft.photoAddress"
+                                    attr.aria-label="{{'device.smartAssist.antiTheft.showPhoto.link' | translate}}"
+                                    (click)="showPhotoFolder(antiTheft.photoAddress)">
+                                    {{'device.smartAssist.antiTheft.showPhoto.link' | translate}}
+                                </button>
+                            </p>
+                        </div>
 
-						<div class="row"
-							*ngIf="isShowfileAuthorizationTips">
-							<div class="feature-note p-4">
-								<p id="smartMotionAlertShowPhotoTips"
-									tabindex="0"
-									attr.aria-label="{{'device.smartAssist.antiTheft.fileAuthorizationTips.content' | translate}}">
-									{{'device.smartAssist.antiTheft.fileAuthorizationTips.content' | translate}}</p>
-								<button id="smartMotionAlertShowPhotoTipsLink"
-									tabindex="0"
-									role="button"
-									type="button"
-									class="btn btn-link pl-0"
-									attr.aria-label="{{'device.smartAssist.antiTheft.fileAuthorizationTips.link' | translate}}"
-									(click)="showAccessingFileSystem()">
-									{{'device.smartAssist.antiTheft.fileAuthorizationTips.link' | translate}}
-								</button>
-							</div>
-						</div>
+                        <div class="row" *ngIf="isShowfileAuthorizationTips">
+                            <div class="feature-note p-4">
+                                <p id="smartMotionAlertShowPhotoTips">
+                                    {{'device.smartAssist.antiTheft.fileAuthorizationTips.content' | translate}}</p>
+                                <button id="smartMotionAlertShowPhotoTipsLink" tabindex="0" role="button" type="button"
+                                    class="btn btn-link pl-0"
+                                    attr.aria-label="{{'device.smartAssist.antiTheft.fileAuthorizationTips.link' | translate}}"
+                                    (click)="showAccessingFileSystem()">
+                                    {{'device.smartAssist.antiTheft.fileAuthorizationTips.link' | translate}}
+                                </button>
+                            </div>
+                        </div>
 
 					</div>
 

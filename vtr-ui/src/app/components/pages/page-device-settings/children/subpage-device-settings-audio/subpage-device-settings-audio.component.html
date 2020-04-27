@@ -88,6 +88,8 @@
 											</fa-icon>
 											<ng-template #tooltipRef>
 												<div id="voipTooltip"
+												    tabindex="0"
+												    attr.aria-label="{{'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.voIPMode.tooltip' | translate}}"
 													[innerHTML]="'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.voIPMode.tooltip' | translate">
 												</div>
 											</ng-template>
@@ -234,9 +236,8 @@
 					</vtr-container-collapsible>
 				</div>
 			</div>
-			<div class="row py-5 smart-settings-card"
-				id="microphone">
-				<div class="col-12 mx-auto container-card ">
+			<div class="row py-5 smart-settings-card" id="microphone">
+				<div class="col-12 mx-auto container-card" *ngIf="microphoneProperties.available">
 					<vtr-container-collapsible componentName="Microphone"
 						[tabIndex]="0"
 						[vtrAppSearchScroller]="['search-microphone']"

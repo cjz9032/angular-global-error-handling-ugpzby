@@ -2075,7 +2075,7 @@
             "superResolution": {
                 "heading": "Intelligens média",
                 "title": "Videófelbontás megnövelése",
-                "desc": "<p><label>Ez a funkció növeli a videók felbontását, és ezzel élvezetesebbé teszi a videók megtekintését. Különösen akkor hasznos, ha a videó felbontása alacsony.</label></p> <p style='margin-top:4px;'><label>Ez a funkció befolyásolhatja az akkumulátor élettartamát és hőmérsékletét, továbbá zajt kelthet. Ne használja DC üzemmódban (a rendszer akkumulátorról üzemel). Ellenkező esetben felgyorsítja az energiafogyasztást és lerövidíti az akkumulátor élettartamát.</label></p>",
+                "desc": "<p><label>Ez a funkció növeli a videók felbontását, és ezzel élvezetesebbé teszi a videók megtekintését. Különösen akkor hasznos, ha a videó felbontása alacsony.</label></p> <p><label>Ez a funkció befolyásolhatja az akkumulátor élettartamát és hőmérsékletét, továbbá zajt kelthet. Ne használja DC üzemmódban (a rendszer akkumulátorról üzemel). Ellenkező esetben felgyorsítja az energiafogyasztást és lerövidíti az akkumulátor élettartamát.</label></p>",
                 "tooltip": "Ez a funkció kizárólag a következő videolejátszókkal működik:<br>Windows Media Player<br>Chrome<br>Filmek+TV<br>PotPlayer<br>GOM player<br>Böngészőalapú lejátszók (például Chrome)<br><br>A számítógéphez kapott Felhasználói kézikönyvből megtudhatja, hogyan lehet bekapcsolni a funkciót a PotPlayer és a GOM player esetében.",
                 "note": {
                     "description": "A funkció az alábbi esetekben nem működik:",
@@ -2086,7 +2086,7 @@
             "antiTheft": {
                 "heading": "Intelligens észlelés",
                 "title": "Intelligens mozgásérzékeléses riasztás",
-                "desc": "<p><label>Ha bekapcsolja ezt a funkciót, az eszköz sípoló riasztást ad ki, amikor a képernyő zárolva van, és mozgást észlel a közelében. Ez különösen nyilvános helyeken lehet hasznos.</label></p> <p style='margin-top:4px;'><label>A riasztás némításához írja be a jelszót, vagy jelentkezzen be a Windows Hello segítségével.</label></p>",
+                "desc": "<p><label>Ha bekapcsolja ezt a funkciót, az eszköz sípoló riasztást ad ki, amikor a képernyő zárolva van, és mozgást észlel a közelében. Ez különösen nyilvános helyeken lehet hasznos.</label></p> <p><label>A riasztás némításához írja be a jelszót, vagy jelentkezzen be a Windows Hello segítségével.</label></p>",
                 "note": {
                     "description": "Ha sikerült bejelentkeznie a rendszerbe, a funkció automatikusan kikapcsol. Ha szeretné ismét használni, Önnek újra be kell kapcsolnia."
                 },

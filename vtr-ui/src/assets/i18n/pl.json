@@ -2075,7 +2075,7 @@
             "superResolution": {
                 "heading": "Inteligentne multimedia",
                 "title": "Skalowanie rozdzielczości wideo",
-                "desc": "<p><label>Ta funkcja poprawia rozdzielczość odtwarzania filmów, a tym samym zapewnia lepsze wrażenia z ich oglądania. Jej skuteczność jest największa w przypadku materiałów wideo o niskiej rozdzielczości.</label></p> <p style='margin-top:4px;'><label>Ta funkcja może wpływać na żywotność baterii, temperaturę baterii i powodować hałas. Nie należy używać jej w trybie prądu stałego (tryb akumulatora). Może to przyspieszyć zużycie energii i skrócić żywotność akumulatora.</label></p>",
+                "desc": "<p><label>Ta funkcja poprawia rozdzielczość odtwarzania filmów, a tym samym zapewnia lepsze wrażenia z ich oglądania. Jej skuteczność jest największa w przypadku materiałów wideo o niskiej rozdzielczości.</label></p> <p><label>Ta funkcja może wpływać na żywotność baterii, temperaturę baterii i powodować hałas. Nie należy używać jej w trybie prądu stałego (tryb akumulatora). Może to przyspieszyć zużycie energii i skrócić żywotność akumulatora.</label></p>",
                 "tooltip": "Ta funkcja działa tylko w przypadku następujących odtwarzaczy wideo:<br>Windows Media Player<br>Chrome<br>Filmy i TV<br>PotPlayer<br>GOM Player<br>Odtwarzacze działające w przeglądarce (np. Chrome)<br><br>Instrukcje pozwalające włączyć tę funkcję w odtwarzaczach PotPlayer i GOM Player znajdują się w instrukcji obsługi dołączonej do komputera.",
                 "note": {
                     "description": "Funkcja nie działa, gdy:",
@@ -2086,7 +2086,7 @@
             "antiTheft": {
                 "heading": "Inteligentna detekcja",
                 "title": "Inteligentny alert wykrycia ruchu",
-                "desc": "<p><label>Jeśli włączysz tę funkcję, urządzenie zacznie emitować sygnał dźwiękowy, gdy po zablokowaniu ekranu zostanie wykryty ruch — zwłaszcza, jeśli urządzenie znajduje się w miejscu publicznym.</label></p> <p style='margin-top:4px;'><label>Aby wyłączyć alarm, wprowadź poprawne hasło lub zaloguj się, korzystając z funkcji Windows Hello.</label></p>",
+                "desc": "<p><label>Jeśli włączysz tę funkcję, urządzenie zacznie emitować sygnał dźwiękowy, gdy po zablokowaniu ekranu zostanie wykryty ruch — zwłaszcza, jeśli urządzenie znajduje się w miejscu publicznym.</label></p> <p><label>Aby wyłączyć alarm, wprowadź poprawne hasło lub zaloguj się, korzystając z funkcji Windows Hello.</label></p>",
                 "note": {
                     "description": "Po pomyślnym zalogowaniu się do systemu nastąpi automatyczne wyłączenie funkcji. Aby ponownie użyć tej funkcji, należy jeszcze raz ją włączyć."
                 },
