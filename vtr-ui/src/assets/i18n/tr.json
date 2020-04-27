@@ -201,6 +201,9 @@
                     "legionAccessory": "Install Legion Accessory Central?",
                     "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
                     "install": "INSTALL"
+                },
+                "popup": {
+                    "closeBtn": "close"
                 }
             }
         },
@@ -1145,15 +1148,15 @@
                             }
                         },
                         "autoTransition": {
-							"description": "Bu kipte “Yüksek Performans” özelliğini etkinleştirin. Etkinleştirildiğinde, bilgisayar yüzeyinin sıcaklığı ve fan gürültüsü otomatik olarak artabilir.",
-							"more": "DAHA FAZLA",
-							"less": "DAHA AZ",
-							"moreContent": {
-								"desc1": "a. Ofis, Windows güncellemesi, çevrimiçi film veya sistem ışığı yükleme senaryolarında sistem sessiz olabilir. Normal oyun senaryolarında daha iyi bir performans sergiler.",
-								"desc2": "b. Ağır oyunlar oynarken “Yüksek performans” kipi otomatik olarak etkinleştirilir. Bu daha fazla gürültüye veya bilgisayarınızın yüzeyinde daha yüksek sıcaklığa neden olabilir.",
-								"desc3": "c. Pil kapasitesi %30'dan düşük olduğunda, sistem otomatik olarak “Pil tasarrufu” kipine geçer."
-							}			
-						}
+                            "description": "Bu kipte “Yüksek Performans” özelliğini etkinleştirin. Etkinleştirildiğinde, bilgisayar yüzeyinin sıcaklığı ve fan gürültüsü otomatik olarak artabilir.",
+                            "more": "DAHA FAZLA",
+                            "less": "DAHA AZ",
+                            "moreContent": {
+                                "desc1": "a. Ofis, Windows güncellemesi, çevrimiçi film veya sistem ışığı yükleme senaryolarında sistem sessiz olabilir. Normal oyun senaryolarında daha iyi bir performans sergiler.",
+                                "desc2": "b. Ağır oyunlar oynarken “Yüksek performans” kipi otomatik olarak etkinleştirilir. Bu daha fazla gürültüye veya bilgisayarınızın yüzeyinde daha yüksek sıcaklığa neden olabilir.",
+                                "desc3": "c. Pil kapasitesi %30'dan düşük olduğunda, sistem otomatik olarak “Pil tasarrufu” kipine geçer."
+                            }
+                        }
                     },
                     "nonintelligentCooling": {
                         "options": {
@@ -2128,7 +2131,8 @@
                 "fileAuthorizationTips": {
                     "content": "Lenovo Vantage, dosya sistemine erişemiyor.",
                     "link": "Erişim izni vermek için Windows Ayarları bölümüne gidin"
-                }
+                },
+                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
             },
             "voice": {
                 "title": "Ses",
