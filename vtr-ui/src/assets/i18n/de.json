@@ -2075,7 +2075,7 @@
             "superResolution": {
                 "heading": "Intelligente Medien",
                 "title": "Upscaling der Videoauflösung",
-                "desc": "<p><label>Diese Funktion optimiert die Videowiedergabe, indem die Bildschirmauflösung verbessert wird. Sie ist besonders nützlich, wenn das Video eine schlechte Auflösung hat.</label></p> <p style='margin-top:4px;'><label>Diese Funktion kann die Akkulebensdauer und -temperatur beeinflussen und Geräusche verursachen. Verwenden Sie sie nicht im Gleichstrommodus (Akkubetrieb). Andernfalls wird schneller Strom verbraucht und die Lebensdauer des Akkus verkürzt.</label></p>",
+                "desc": "<p><label>Diese Funktion optimiert die Videowiedergabe, indem die Bildschirmauflösung verbessert wird. Sie ist besonders nützlich, wenn das Video eine schlechte Auflösung hat.</label></p> <p><label>Diese Funktion kann die Akkulebensdauer und -temperatur beeinflussen und Geräusche verursachen. Verwenden Sie sie nicht im Gleichstrommodus (Akkubetrieb). Andernfalls wird schneller Strom verbraucht und die Lebensdauer des Akkus verkürzt.</label></p>",
                 "tooltip": "Diese Funktion funktioniert nur mit den folgenden Videoplayern:<br>Windows Media Player<br>Chrome<br>Filme & TV<br>PotPlayer<br>GOM Player<br>Webbrowser-basierte Player (z. B. Chrome)<br><br>Anweisungen zum Aktivieren dieser Funktion bei PotPlayer und GOM Player finden Sie im Benutzerhandbuch, das im Lieferumfang Ihres Computers enthalten ist.",
                 "note": {
                     "description": "Diese Funktion funktioniert nicht, wenn:",
@@ -2086,7 +2086,7 @@
             "antiTheft": {
                 "heading": "Intelligente Sensorik",
                 "title": "Intelligente Bewegungswarnung",
-                "desc": "<p><label>Wenn diese Funktion aktiviert ist, beginnt die Einheit zu piepen, wenn der Bildschirm gesperrt ist und Bewegungen erkannt werden, vor allem an einem öffentlichen Ort.</label></p> <p style='margin-top:4px;'><label>Geben Sie zum Beenden des Alarms das richtige Kennwort ein oder melden Sie sich mit Windows Hello an.</label></p>",
+                "desc": "<p><label>Wenn diese Funktion aktiviert ist, beginnt die Einheit zu piepen, wenn der Bildschirm gesperrt ist und Bewegungen erkannt werden, vor allem an einem öffentlichen Ort.</label></p> <p><label>Geben Sie zum Beenden des Alarms das richtige Kennwort ein oder melden Sie sich mit Windows Hello an.</label></p>",
                 "note": {
                     "description": "Wenn Sie sich erfolgreich beim System angemeldet haben, wird die Funktion automatisch ausgeschaltet. Sie müssen sie erneut aktivieren, um sie verwenden zu können."
                 },

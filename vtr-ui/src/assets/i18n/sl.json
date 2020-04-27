@@ -2075,7 +2075,7 @@
             "superResolution": {
                 "heading": "Inteligentni mediji",
                 "title": "Povečanje ločljivosti videoposnetkov",
-                "desc": "<p><label>Ta funkcija s povečanjem ločljivosti videoposnetka izboljša izkušnjo predvajanja videoposnetkov. Posebej primerna je za videoposnetke v slabši ločljivosti.</label></p> <p style='margin-top:4px;'><label>Ta funkcija lahko vpliva na čas delovanja in temperaturo baterije ter poveča glasnost računalnika. Ne uporabljajte je pri napajanju iz baterije (način DC). sicer bo pospešila porabo energije in skrajšala čas delovanja baterije.</label></p>",
+                "desc": "<p><label>Ta funkcija s povečanjem ločljivosti videoposnetka izboljša izkušnjo predvajanja videoposnetkov. Posebej primerna je za videoposnetke v slabši ločljivosti.</label></p> <p><label>Ta funkcija lahko vpliva na čas delovanja in temperaturo baterije ter poveča glasnost računalnika. Ne uporabljajte je pri napajanju iz baterije (način DC). sicer bo pospešila porabo energije in skrajšala čas delovanja baterije.</label></p>",
                 "tooltip": "Ta funkcija deluje samo s temi predvajalniki videoposnetkov:<br>Windows Media Player<br>Chrome<br>Filmi in oddaje<br>PotPlayer<br>GOM Player<br>vgrajenimi predvajalniki v spletnih brskalnikih (npr. Chrome)<br><br>Navodila za omogočanje te funkcije v predvajalnikih PotPlayer in GOM Player najdete v Vodiču za uporabnika, ki je priložen računalniku.",
                 "note": {
                     "description": "Ta funkcija ne deluje v naslednjih primerih:",
@@ -2086,7 +2086,7 @@
             "antiTheft": {
                 "heading": "Pametno zaznavanje",
                 "title": "Pametno opozarjanje na premikanje",
-                "desc": "<p><label>Ko je ta funkcija omogočena, naprava začne piskati, kadar pri zaklenjenem zaslonu in predvsem na javnem mestu zazna premikanje.</label></p> <p style='margin-top:4px;'><label>Opozarjanje s piskanjem izklopite z vnosom pravilnega gesla ali prijavo s funkcijo Windows Hello.</label></p>",
+                "desc": "<p><label>Ko je ta funkcija omogočena, naprava začne piskati, kadar pri zaklenjenem zaslonu in predvsem na javnem mestu zazna premikanje.</label></p> <p><label>Opozarjanje s piskanjem izklopite z vnosom pravilnega gesla ali prijavo s funkcijo Windows Hello.</label></p>",
                 "note": {
                     "description": "Po uspešni prijavi v sistem se ta funkcija samodejno izklopi. Pred vnovično uporabo jo boste morali znova omogočiti."
                 },

@@ -2075,7 +2075,7 @@
             "superResolution": {
                 "heading": "Intelligent medieavspilling",
                 "title": "Oppskalering av videooppløsning",
-                "desc": "<p><label>Denne funksjonen forbedrer opplevelsen av videoavspilling ved å forbedre videooppløsningen. Den fungerer spesielt når videoen har dårlig oppløsning.</label></p> <p style='margin-top:4px;'><label>Denne funksjonen kan påvirke batteritiden, batteritemperaturen og forårsake støy. Ikke bruk i likestrømmodus (batterimodus). Ellers vil det øke strømforbruket og forkorte batteriets levetid.</label></p>",
+                "desc": "<p><label>Denne funksjonen forbedrer opplevelsen av videoavspilling ved å forbedre videooppløsningen. Den fungerer spesielt når videoen har dårlig oppløsning.</label></p> <p><label>Denne funksjonen kan påvirke batteritiden, batteritemperaturen og forårsake støy. Ikke bruk i likestrømmodus (batterimodus). Ellers vil det øke strømforbruket og forkorte batteriets levetid.</label></p>",
                 "tooltip": "Denne funksjonen fungerer bare for følgende videospillere:<br>Windows Media Player<br>Chrome<br>Filmer og TV<br>PotPlayer<br>GOM player<br>Nettleserbaserte spillere (for eksempel Chrome)<br><br>Se brukerhåndboken som følger med datamaskinen for instruksjoner om hvordan du aktiverer denne funksjonen for PotPlayer og GOM player.",
                 "note": {
                     "description": "Denne funksjonen fungerer ikke når følgende er tilfelle:",
@@ -2086,7 +2086,7 @@
             "antiTheft": {
                 "heading": "Intelligent føler",
                 "title": "Smart bevegelsesvarsel",
-                "desc": "<p><label>Når du aktiverer denne funksjonen, avgir enheten et lydsignal når skjermen er låst og det oppdages bevegelse, spesielt på offentlige steder.</label></p> <p style='margin-top:4px;'><label>Hvis du vil avbryte alarmen, skriver du inn riktig passord eller logger på med Windows Hello.</label></p>",
+                "desc": "<p><label>Når du aktiverer denne funksjonen, avgir enheten et lydsignal når skjermen er låst og det oppdages bevegelse, spesielt på offentlige steder.</label></p> <p><label>Hvis du vil avbryte alarmen, skriver du inn riktig passord eller logger på med Windows Hello.</label></p>",
                 "note": {
                     "description": "Når du har logget på systemet, vil denne funksjonen bli slått av automatisk. Du må aktivere den på nytt for å bruke den."
                 },

@@ -2075,7 +2075,7 @@
             "superResolution": {
                 "heading": "Inteligentné médiá",
                 "title": "Zvýšenie rozlíšenia videa",
-                "desc": "<p><label>Táto funkcia zvyšuje zážitok z prehrávania videa zlepšením jeho rozlíšenia. Prejaví sa najmä pri nízkom rozlíšení videa.</label></p> <p style='margin-top:4px;'><label>Táto funkcia môže ovplyvniť výdrž batérie, teplotu batérie a vytvárať hluk. Nepoužívajte v režime jednosmerného prúdu (režim napájania z batérie). V opačnom prípade sa zväčší spotreba energie a skráti životnosť batérie.</label></p>",
+                "desc": "<p><label>Táto funkcia zvyšuje zážitok z prehrávania videa zlepšením jeho rozlíšenia. Prejaví sa najmä pri nízkom rozlíšení videa.</label></p> <p><label>Táto funkcia môže ovplyvniť výdrž batérie, teplotu batérie a vytvárať hluk. Nepoužívajte v režime jednosmerného prúdu (režim napájania z batérie). V opačnom prípade sa zväčší spotreba energie a skráti životnosť batérie.</label></p>",
                 "tooltip": "Táto funkcia funguje iba v prípade týchto prehrávačov videa:<br>Windows Media Player<br>Chrome<br>Filmy a TV programy<br>PotPlayer<br>GOM player<br>prehrávače podporované webovými prehliadačmi (napr. Chrome)<br><br>Pokyny na zapnutie tejto funkcie v prehrávačoch PotPlayer a GOM player nájdete v používateľskej príručke dodávanej s vaším počítačom.",
                 "note": {
                     "description": "Funkcia nefunguje v týchto prípadoch:",
@@ -2086,7 +2086,7 @@
             "antiTheft": {
                 "heading": "Inteligentné snímanie",
                 "title": "Inteligentné upozornenie na pohyb",
-                "desc": "<p><label>Keď povolíte túto funkciu, zariadenie začne vydávať zvukový signál, keď je obrazovka uzamknutá a zistí sa pohyb, najmä vo verejnom priestore.</label></p> <p style='margin-top:4px;'><label>Ak chcete upozornenie zrušiť, zadajte správne heslo alebo sa prihláste pomocou služby Windows Hello.</label></p>",
+                "desc": "<p><label>Keď povolíte túto funkciu, zariadenie začne vydávať zvukový signál, keď je obrazovka uzamknutá a zistí sa pohyb, najmä vo verejnom priestore.</label></p> <p><label>Ak chcete upozornenie zrušiť, zadajte správne heslo alebo sa prihláste pomocou služby Windows Hello.</label></p>",
                 "note": {
                     "description": "Po úspešnom prihlásení do systému sa táto funkcia automaticky vypne. Ak ju chcete používať, musíte ju znova povoliť."
                 },
