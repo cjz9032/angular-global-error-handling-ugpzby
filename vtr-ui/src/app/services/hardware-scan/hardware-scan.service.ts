@@ -423,7 +423,7 @@ export class HardwareScanService {
 		return blackList.find(element => machineFamily.includes(element)) === undefined;
 	}
 
-	private isPluginCompatible(requiredVersion: string) {
+	public isPluginCompatible(requiredVersion: string) {
 		return this.compareVersion(requiredVersion, this.pluginVersion) <= 0;
 	}
 
@@ -1285,5 +1285,9 @@ export class HardwareScanService {
 
 	public setCurrentTaskStep(taskStep: TaskStep) {
 		this.currentTaskStep = taskStep;
+	}
+
+	public getPluginVersion(): string {
+		return this.pluginVersion;
 	}
 }

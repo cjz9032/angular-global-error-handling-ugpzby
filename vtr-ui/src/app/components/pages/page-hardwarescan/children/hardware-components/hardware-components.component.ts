@@ -19,6 +19,7 @@ import { VantageShellService } from '../../../../../services/vantage-shell/vanta
 import { TimerService } from 'src/app/services/timer/timer.service';
 import { ModalWaitComponent } from '../../../../modal/modal-wait/modal-wait.component';
 import { TaskType, TaskStep } from 'src/app/enums/hardware-scan-metrics.enum';
+import { LenovoSupportService } from 'src/app/src/app/services/hardware-scan/lenovo-support.service';
 
 const RootParent = 'HardwareScan';
 const ConfirmButton = 'Confirm';
@@ -41,7 +42,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	public isScanDone = false;
 	public modules: any;
 	public progress = 0;
-	public myDevice: MyDevice;
 	public tooltipInformation: any;
 
 	public itemParentCancelScan: string;
@@ -87,7 +87,8 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		private translate: TranslateService,
 		private logger: LoggerService,
 		private shellService: VantageShellService,
-		private timerService: TimerService
+		private timerService: TimerService,
+		private lenovoSupportService: LenovoSupportService
 	) {
 		this.viewResultsPath = '/hardware-scan/view-results';
 		this.isOnline = this.commonService.isOnline;
@@ -471,23 +472,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		}
 
         if (brokenModules !== '') {
-            const dd = String(this.startDate.getDate()).padStart(2, '0');
-            const mm = String(this.startDate.getMonth() + 1).padStart(2, '0');
-            const yyyy = String(this.startDate.getFullYear());
-
-            const stringDate = yyyy + mm + dd;
-
-            await this.getDeviceInfo();
-            let serial = '';
-
-            if (this.myDevice) {
-				serial = this.myDevice.sn;
-			}
-            const ticketUrl = 'SerialNumber=' + serial + '&DiagCode=' + this.hardwareScanService.getFinalResultCode() + '&Channel=vantage&TestDate=' + stringDate;
-
-            const base64Url = btoa(ticketUrl);
-            const fullUrl = 'https://pcsupport.lenovo.com/eticketwithservice?data=' + base64Url;
-
+            const supportUrl = await this.lenovoSupportService.getSupportUrl(this.startDate);
             const modalRef = this.modalService.open(ModalEticketComponent, {
 				backdrop: 'static',
 				size: 'lg',
@@ -495,21 +480,9 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				windowClass: 'hardware-scan-modal-size'
 			});
             modalRef.componentInstance.moduleNames = brokenModules;
-            modalRef.componentInstance.setUrl(fullUrl);
+            modalRef.componentInstance.setUrl(supportUrl);
         }
     }
-
-	private getDeviceInfo() {
-		if (this.deviceService.isShellAvailable) {
-			return this.deviceService.getDeviceInfo()
-				.then((value: any) => {
-                this.myDevice = value;
-            }).catch(error => {
-					this.logger.error('getDeviceInfo', error.message);
-					return EMPTY;
-				});
-		}
-	}
 
 	private doRecoverBadSectors() {
         this.hardwareScanService.setCurrentTaskType(TaskType.RecoverBadSectors);
@@ -902,6 +875,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					break;
 				case NetworkStatus.Online:
 					this.isOnline = notification.payload.isOnline;
+					this.lenovoSupportService.startCheckingIfETicketIsAvailable();
 					break;
 				case NetworkStatus.Offline:
 					this.isOnline = notification.payload.isOnline;
