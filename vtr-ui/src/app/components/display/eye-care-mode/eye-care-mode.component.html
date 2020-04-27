@@ -33,7 +33,7 @@
 		</div>
 	</div>
 	<div class="custom-control custom-checkbox eye-care-checkbox"
-		*ngIf="sunsetToSunriseStatus.available && enableSunsetToSunrise">
+		*ngIf="sunsetToSunriseStatus && sunsetToSunriseStatus.available && enableSunsetToSunrise">
 		<vtr-ui-checkbox componentId="cb-eye-care-schedule"
 			[disabled]="enableSunsetToSunrise || missingGraphicDriver"
 			[checked]="sunsetToSunriseStatus.status"
@@ -46,7 +46,7 @@
 		</vtr-ui-checkbox>
 	</div>
 	<div class="custom-control custom-checkbox eye-care-checkbox"
-		*ngIf="sunsetToSunriseStatus.available && !enableSunsetToSunrise">
+		*ngIf="sunsetToSunriseStatus && sunsetToSunriseStatus.available && !enableSunsetToSunrise">
 		<vtr-ui-checkbox componentId="cb-eye-care-schedule"
 			tabindex="-1"
 			[disabled]="missingGraphicDriver"
