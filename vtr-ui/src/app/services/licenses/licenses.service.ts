@@ -16,6 +16,7 @@ export class LicensesService {
 	) { }
 
 	openLicensesAgreement() {
+		if (this.modalService.hasOpenModals()) return;
 		if (this.translate.currentLang) { this.lang = this.translate.currentLang; }
 		const useLang = this.checkLangName(this.lang);
 		const agreementUrl = `assets/licenses/Agreement/${useLang}.html`;
@@ -37,6 +38,7 @@ export class LicensesService {
 	}
 
 	openOpenSource() {
+		if (this.modalService.hasOpenModals()) return;
 		const openSourceUrl = `assets/licenses/OpenSource/OpenSourceLicenses.txt`;
 		const licenseModalMetrics = {
 			pageName: 'Page.Support.Article',
