@@ -2080,8 +2080,8 @@
 			"superResolution": {
 				"heading": "Intelligent Media",
 				"title": "Video resolution upscaling",
-				"desc": "<p><label>This feature enhances the experience of video playback by improving the videor resolution. It works especially when the video is in poor resolution.</label></p> <p style='margin-top:4px;'><label>This function might impact the battery life, battery temperature, and cause noises. Please do not use it in DC mode (battery mode). Otherwise, it will speed up the power consumption and shorten the battery life.</label></p>",
-				"tooltip": "This feature only works for below video players:<br>Windows Media Player<br>Chrome<br>Movies & TV<br>PotPlayer<br>GOM player<br>Web-browser based players (e.g Chrome)<br><br>For instructions on how to enable this function on PotPlayer and  GOM player, refer to the User  Guide that comes with your computer.",
+				"desc": "<p><label>This feature enhances the experience of video playback by improving the videor resolution. It works especially when the video is in poor resolution.</label></p> <p><label>This function might impact the battery life, battery temperature, and cause noises. Please do not use it in DC mode (battery mode). Otherwise, it will speed up the power consumption and shorten the battery life.</label></p>",
+				"tooltip": "<p>This feature only works for below video players:<br>Windows Media Player<br>Chrome-based player<br>Movies & TV<br>PotPlayer<br>GOM player</p><p class='srTooltip'>For instructions on how to enable this function on PotPlayer and  GOM player, refer to the User  Guide that comes with your computer.</p>",
 				"note": {
 					"description": "This feature does not work when:",
 					"description1": "The Battery saver mode is enabled.",
@@ -2090,8 +2090,9 @@
 			},
 			"antiTheft": {
                 "heading": "Intelligent sensing",
-                "title": "Smart motion alarm",
-                "desc": "<p><label>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</label></p> <p style='margin-top:4px;'><label>To dismiss the alarm, enter the correct password or log in by Windows Hello.</label></p>",
+				"title": "Smart motion alarm",
+				"tooltip":"<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>",
+                "desc": "<p><label>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</label></p> <p><label>To dismiss the alarm, enter the correct password or log in by Windows Hello.</label></p>",
                 "note": {
                     "description": "Once you log in the system successfully, this feature will be turned off automatically. You need to enable it again to use it."
                 },

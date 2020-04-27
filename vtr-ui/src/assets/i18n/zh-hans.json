@@ -2075,8 +2075,8 @@
             "superResolution": {
                 "heading": "智能媒体",
                 "title": "提高视频分辨率",
-                "desc": "<p><label>此功能通过提高视频分辨率来改善视频播放的体验。特别是在视频分辨率较差时，其效果尤为明显。</label></p> <p style='margin-top:4px;'><label>此功能可能会影响电池寿命、电池温度并产生噪音。请不要在直流电模式（电池模式）下使用。否则，会加快耗电速度并缩短电池寿命。</label></p>",
-                "tooltip": "此功能仅适用于以下视频播放器：<br>Windows Media Player<br>Chrome<br>电影和电视<br>PotPlayer<br>GOM player<br>基于网络浏览器的播放器（例如 Chrome）<br><br>有关如何在 PotPlayer 和 GOM player 上启用此功能的说明，请参阅计算机随附的《用户指南》。",
+                "desc": "<p><label>此功能通过提高视频分辨率来改善视频播放的体验。特别是在视频分辨率较差时，其效果尤为明显。</label></p> <p><label>此功能可能会影响电池寿命、电池温度并产生噪音。请不要在直流电模式（电池模式）下使用。否则，会加快耗电速度并缩短电池寿命。</label></p>",
+                "tooltip": "<p>此功能仅适用于以下视频播放器：<br>Windows Media Player<br>Chrome-based player<br>电影和电视<br>PotPlayer<br>GOM player</p><p class='srTooltip'>有关如何在 PotPlayer 和 GOM player 上启用此功能的说明，请参阅计算机随附的《用户指南》。</p>",
                 "note": {
                     "description": "此功能在以下情况下无效：",
                     "description1": "已启用省电模式。",
@@ -2086,7 +2086,8 @@
             "antiTheft": {
                 "heading": "智能感知",
                 "title": "智能运动警报",
-                "desc": "<p><label>启用此功能后，当屏幕锁定并检测到运动时（尤其是在公共场所），设备将发出蜂鸣声。</label></p> <p style='margin-top:4px;'><label>要消除警报，请输入正确的密码或通过 Windows Hello 登录。</label></p>",
+                "tooltip":"<div>当计算机处于休眠模式或关闭电源时，此功能不起作用。检查以下操作中的设置：<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>闭合盖的操作</li><li>关键/低电池作用</li><li>电源按钮操作</li><li>睡眠按钮操作</li><li>空闲超时设置以休眠</li></ul></div>否则，它将不会触发报警，既不拍照。</div>",
+                "desc": "<p><label>启用此功能后，当屏幕锁定并检测到运动时（尤其是在公共场所），设备将发出蜂鸣声。</label></p> <p><label>要消除警报，请输入正确的密码或通过 Windows Hello 登录。</label></p>",
                 "note": {
                     "description": "成功登录系统后，此功能将自动关闭。需要再次启用此功能才能使用。"
                 },

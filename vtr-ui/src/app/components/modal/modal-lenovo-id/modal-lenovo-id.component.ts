@@ -129,24 +129,28 @@ export class ModalLenovoIdComponent implements OnInit, OnDestroy {
 			url.indexOf('login.live.com') !== -1 ||
 			url.indexOf('login.yahoo.co.jp') !== -1) {
 			this.isBroswerVisible = false;
-			await this.webView.changeVisibility('spinnerCtrl', true);
+			if (!this.changeDisplay('spinnerCtrl', 'block')) {
+				this.webView.changeVisibility('spinnerCtrl', true);
+			}
 			await this.webView.changeVisibility('webviewPlaceHolder', false);
 		}
 	}
 
 	async onNavigationCompleted(e) {
-		const self = this;
 		if (!e) {
 			return;
 		}
 		const eventData = JSON.parse(e);
 		if (eventData.isSuccess) {
-			self.isBroswerVisible = true;
+			this.devService.writeLog('Load page completed');
+			this.isBroswerVisible = true;
 			setTimeout(() => {
-				self.setFocus('webviewPlaceHolder');
+				this.setFocus('webviewPlaceHolder');
 			}, 0);
-			await self.webView.changeVisibility('spinnerCtrl', false);
-			await self.webView.changeVisibility('webviewPlaceHolder', true);
+			if (!this.changeDisplay('spinnerCtrl', 'none')) {
+				this.webView.changeVisibility('spinnerCtrl', false);
+			}
+			this.webView.changeVisibility('webviewPlaceHolder', true);
 			const htmlContent = eventData.content;
 			try {
 				// Parse html content to get user info
@@ -166,27 +170,27 @@ export class ModalLenovoIdComponent implements OnInit, OnDestroy {
 						this.commonService.setLocalStorageValue(LocalStorageKey.LidUserFirstName, encryptedFirstName);
 					}
 					// Default to enable SSO after login success
-					self.userService.enableSSO(useruad, username, userid, userguid).then(result => {
+					this.userService.enableSSO(useruad, username, userid, userguid).then(result => {
 						if (result.success && result.status === 0) {
-							self.userService.hasFirstName = Boolean(firstname);
-							self.userService.setName(firstname, lastname);
-							self.userService.setAuth(true);
+							this.userService.hasFirstName = Boolean(firstname);
+							this.userService.setName(firstname, lastname);
+							this.userService.setAuth(true);
 							// Close logon dialog
-							self.activeModal.close('Login success');
-							self.devService.writeLog('onNavigationCompleted: Login success!');
+							this.activeModal.close('Login success');
+							this.devService.writeLog('onNavigationCompleted: Login success!');
 							// The metrics need to be sent after enabling sso, some data like user guid would be available after that.
-							self.userService.sendSigninMetrics('success', self.starterStatus, self.everSignIn, self.appFeature);
+							this.userService.sendSigninMetrics('success', this.starterStatus, this.everSignIn, this.appFeature);
 						}
 					});
 				}
 			} catch (error) {
-				self.devService.writeLog('onNavigationCompleted: ' + error);
+				this.devService.writeLog('onNavigationCompleted: ' + error);
 			}
 		} else {
 			// Handle error
-			self.devService.writeLog('onNavigationCompleted: navigation completed unsuccessfully!');
-			self.userService.sendSigninMetrics('failure', self.starterStatus, self.everSignIn, self.appFeature);
-			self.activeModal.dismiss(ssoErroType.SSO_ErrorType_UnknownCrashed);
+			this.devService.writeLog('onNavigationCompleted: navigation completed unsuccessfully!');
+			this.userService.sendSigninMetrics('failure', this.starterStatus, this.everSignIn, this.appFeature);
+			this.activeModal.dismiss(ssoErroType.SSO_ErrorType_UnknownCrashed);
 		}
 	}
 
@@ -367,6 +371,15 @@ export class ModalLenovoIdComponent implements OnInit, OnDestroy {
 	private setFocus(id: string) {
 		if (typeof this.webView.setFocus === 'function') {
 			this.webView.setFocus(id);
+		}
+	}
+
+	private changeDisplay(id: string, display: string): boolean {
+		if (typeof this.webView.changeDisplay === 'function') {
+			this.webView.changeDisplay(id, display);
+			return true;
+		} else {
+			return false;
 		}
 	}
 

@@ -11,6 +11,7 @@
 		class="checkbox"
 		[ngClass]="{'switch-disable': isSwitchDisable, 'white-theme': theme==='white', 'blue-theme': theme==='blue'}"
 		#toggleMain
+		id="{{onOffSwitchId+'_toggleMain'}}"
 		(keydown.enter)="disabled? '':toggleLabel.click();toggleMain.focus();"
 		[attr.aria-checked]="value"
 		[attr.aria-disabled]="disabled"
@@ -18,7 +19,6 @@
 		role="switch"
 		[tabindex]="disabled?-1:tabIndex">
 		<label id="{{onOffSwitchId+'_checkbox'}}"
-			[attr.aria-label]="value?'ON':'OFF'"
 			class="pb-1 pl-1"
 			#toggleLabel
 			(keydown.enter)="sendChangeEvent(toggle)"
@@ -30,7 +30,7 @@
 				[metricsValue]="!value"
 				#toggle
 				tabindex="-1"
-				aria-hidden="true"
+				id="{{onOffSwitchId+'_checkbox'}}"
 				[name]="onOffSwitchId"
 				class="switch"
 				[ngClass]="{'wifi-checked': value===true}"
@@ -38,6 +38,7 @@
 				[checked]="value"
 				[disabled]="disabled"
 				[readonly]="readonly"
+				aria-label=" "
 				[attr.aria-checked]="value"
 				[attr.aria-disabled]="disabled"
 				[attr.aria-readonly]="readonly"

@@ -164,7 +164,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			this.dolbyModeResponse.available = this.commonService.getLocalStorageValue(LocalStorageKey.IsDolbyModeAvailable, true);
 			if (this.dolbyAudioCache !== undefined) {
 				this.dolbyModeResponse = this.dolbyAudioCache;
-				this.bindDolbyAudioProfileState();
+				this.refreshDolbyAudioProfileState();
 				this.autoDolbyFeatureLoader = false;
 				this.eCourseLoader = false;
 			}
@@ -281,7 +281,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 						if (this.dolbyModeResponse.eCourseStatus === undefined) {
 							this.isNewplugin = false;
 							this.dolbyModeResponse.voIPStatus = (this.microphoneProperties.autoOptimization) ? 'True' : 'False';
-							this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyAudioToggleCache);
+							this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyModeResponse);
 							this.getDolbyFeatureStatus();
 						}
 						else {
@@ -291,7 +291,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 							}
 						}
 						this.initVisibility();
-						this.bindDolbyAudioProfileState();
+						this.refreshDolbyAudioProfileState();
 						this.autoDolbyFeatureLoader = false;
 						this.eCourseLoader = false;
 						this.logger.info('getDolbyModesStatus:', response);
@@ -312,8 +312,8 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 				this.audioService.getDolbyFeatureStatus()
 					.then((dolbyFeature: FeatureStatus) => {
 						this.dolbyModeResponse.entertainmentStatus = (!dolbyFeature.available) ? 'NotSupport' : (dolbyFeature.status) ? 'True' : 'False';
-						this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyAudioToggleCache);
-						this.bindDolbyAudioProfileState();
+						this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyModeResponse);
+						this.refreshDolbyAudioProfileState();
 						this.logger.info('getDolbyFeatureStatus old plugin', dolbyFeature);
 					}).catch(error => {
 						this.logger.error('getDolbyFeatureStatus old plugin' + error.message);
@@ -358,7 +358,8 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	bindDolbyAudioProfileState() {
+	refreshDolbyAudioProfileState() {
+		this.logger.info('refreshDolbyAudioProfileState',this.dolbyModeResponse);
 		if (this.dolbyModeResponse.voIPStatus === undefined || this.dolbyModeResponse.voIPStatus === 'NotSupport') {
 			this.voipStatus.available = false;
 		}
@@ -386,15 +387,18 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			if (this.eCourseStatus.status && (this.eCourseToggleButtonStatus !== this.eCourseStatus.status) && this.eCourseToggleButtonStatus !== undefined) {
 				this.dolbyModeResponse.isAudioProfileEnabled = true;
 				this.eCourseToggleButtonStatus = this.eCourseStatus.status;
+				this.dolbyToggleButtonStatus = true;
 				this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyModeResponse);
 			}
 			if (!this.dolbyModeResponse.isAudioProfileEnabled && (this.dolbyToggleButtonStatus !== this.dolbyModeResponse.isAudioProfileEnabled) && this.dolbyToggleButtonStatus !== undefined) {
 				this.eCourseStatus.status = false;
-				this.dolbyModeResponse.eCourseStatus === 'False'
+				this.dolbyModeResponse.eCourseStatus = 'False'
+				this.eCourseToggleButtonStatus = false;
 				this.dolbyToggleButtonStatus = this.dolbyModeResponse.isAudioProfileEnabled;
 				this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyModeResponse);
 			}
 		}
+		
 	}
 
 	onDolbyAudioToggleOnOff(event) {
@@ -542,9 +546,9 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		//this.dolbyModeResponse.voIPStatus = (Object.keys(response).indexOf('voIPStatus') !== -1 && response.voIPStatus !==  undefined) ? response.voIPStatus : this.dolbyModeResponse.voIPStatus;
 		//this.dolbyModeResponse.entertainmentStatus = (Object.keys(response).indexOf('entertainmentStatus') !== -1 && response.entertainmentStatus !==  undefined) ? response.entertainmentStatus : this.dolbyModeResponse.entertainmentStatus;
 		this.dolbyModeResponse.driverAvailability = (Object.keys(response).indexOf('driverAvailability') !== -1 && response.driverAvailability !== undefined) ? response.driverAvailability : this.dolbyModeResponse.driverAvailability;
-		this.initVisibility();
-		this.bindDolbyAudioProfileState();
+		this.refreshDolbyAudioProfileState();
 		this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyModeResponse);
+		this.initVisibility();
 	}
 
 	onDolbySettingRadioChange(event) {
@@ -725,7 +729,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	}
 
 	initMicrophoneFromCache() {
-		const microphoneCache = this.commonService.getLocalStorageValue(LocalStorageKey.MicrohoneCapability);
+		const microphoneCache = this.commonService.getLocalStorageValue(LocalStorageKey.MicrophoneCapability);
 
 		if (microphoneCache) {
 			// because autoOptimization is Lenovo feature, so can use cache safely
@@ -734,7 +738,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 					this.microphoneProperties.autoOptimization = microphoneCache.data.autoOptimization;
 					if (!this.isNewplugin) {
 						this.dolbyModeResponse.voIPStatus = (this.microphoneProperties.autoOptimization) ? 'True' : 'False';
-						this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyAudioToggleCache);
+						this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyModeResponse);
 					}
 				}
 				if (microphoneCache.data.keyboardNoiseSuppression) {
@@ -806,7 +810,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			this.microphoneProperties.autoOptimization = msg.autoOptimization;
 			if (!this.isNewplugin) {
 				this.dolbyModeResponse.voIPStatus = (this.microphoneProperties.autoOptimization) ? 'True' : 'False';
-				this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyAudioToggleCache);
+				this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyModeResponse);
 			}
 			// because this item need plugin response, so it is the last response
 			// this.microphoneLoader = false;
@@ -820,7 +824,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			this.cacheFlag.currentMode = true;
 			this.cacheFlag.keyboardNoiseSuppression = true;
 		}
-
+		this.updateMicrophoneHeader();
 		this.logger.info('updateMicrophoneHandler ' + JSON.stringify(msg));
 	}
 
@@ -829,8 +833,15 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			data: this.microphoneProperties,
 			modes: this.microOptimizeModeResponse.modes
 		};
-		this.logger.info('ready to update microhone cache');
-		this.commonService.setLocalStorageValue(LocalStorageKey.MicrohoneCapability, info);
+		this.logger.info('ready to update microphone cache');
+		this.commonService.setLocalStorageValue(LocalStorageKey.MicrophoneCapability, info);
+		this.updateMicrophoneHeader();
+	}
+
+	updateMicrophoneHeader() {
+		if (!this.microphoneProperties.available) {
+			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'microphone');
+		}
 	}
 
 	initVisibility() {

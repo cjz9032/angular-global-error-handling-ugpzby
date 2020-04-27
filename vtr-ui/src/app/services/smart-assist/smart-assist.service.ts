@@ -6,6 +6,7 @@ import {
 } from 'src/app/data-models/common/feature-status.model';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { AntiTheftResponse } from 'src/app/data-models/antiTheft/antiTheft.model';
+import { HsaIntelligentSecurityResponse } from 'src/app/data-models/smart-assist/hsa-intelligent-security.model/hsa-intelligent-security.model';
 
 @Injectable({
 	providedIn: 'root'
@@ -211,7 +212,7 @@ export class SmartAssistService {
 	}
 
 	public getHsaIntelligentSecurityStatus() {
-		const intelligentSecurityDate = { capacity: false, capability: 0, sensorType: 0, zeroTouchLockDistanceAutoAdjust: true, zeroTouchLockDistance: 0 };
+		const intelligentSecurityDate = new HsaIntelligentSecurityResponse(false, false);
 		try {
 			if (this.isShellAvailable) {
 				const obj = JSON.parse(this.hsaIntelligentSecurity.getAllSetting());

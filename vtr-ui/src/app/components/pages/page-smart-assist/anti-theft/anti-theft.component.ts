@@ -26,8 +26,8 @@ export class AntiTheftComponent implements OnInit {
 	@Output() antiTheftToggle: EventEmitter<any> = new EventEmitter();
 	@Output() tooltipClick = new EventEmitter<boolean>();
 	public antiTheft = new AntiTheftResponse(false, false, false, false, false);
-    public antiTheftCache: AntiTheftResponse = undefined;
-		
+	public antiTheftCache: AntiTheftResponse = undefined;
+
 	private DeviceInformation: any;
 	private DeviceClass: any;
 	private Front: any;
@@ -371,6 +371,9 @@ export class AntiTheftComponent implements OnInit {
 	public cameraAuthorizedChange(data: any) {
 		this.antiTheft.authorizedAccessState = data.status;
 		this.isShowAuthorized = !this.antiTheft.authorizedAccessState;
+		if (this.antiTheft.authorizedAccessState) {
+			this.getCameraPrivacyState();
+		}
 		this.checkboxDisabled = !(this.antiTheft.cameraPrivacyState && this.antiTheft.authorizedAccessState);
 		this.commonService.setLocalStorageValue(LocalStorageKey.AntiTheftCache, this.antiTheft);
 	}
@@ -472,7 +475,6 @@ export class AntiTheftComponent implements OnInit {
 				}).catch(error => {
 					this.logger.error('setCameraAuthorizedAccessState', error.message);
 				});
-
 		} catch (error) {
 			this.logger.error('setCameraAuthorizedAccessState' + error.message);
 		}

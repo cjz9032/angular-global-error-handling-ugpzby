@@ -2075,7 +2075,7 @@
             "superResolution": {
                 "heading": "Support intelligent",
                 "title": "Mise à l'échelle de la résolution vidéo",
-                "desc": "<p><label>Cette fonction améliore l'expérience de la lecture vidéo en améliorant la résolution de la vidéo. Cela est particulièrement efficace lorsque la vidéo est de faible résolution.</label></p> <p style='margin-top:4px;'><label>Cette fonction peut influencer la durée de vie de la batterie, sa température et produire des sons. Veillez à ne pas l'utiliser en mode courant continu (mode batterie). Sinon, cela accélérera la consommation d'énergie et réduira la durée de vie de la batterie.</label></p>",
+                "desc": "<p><label>Cette fonction améliore l'expérience de la lecture vidéo en améliorant la résolution de la vidéo. Cela est particulièrement efficace lorsque la vidéo est de faible résolution.</label></p> <p><label>Cette fonction peut influencer la durée de vie de la batterie, sa température et produire des sons. Veillez à ne pas l'utiliser en mode courant continu (mode batterie). Sinon, cela accélérera la consommation d'énergie et réduira la durée de vie de la batterie.</label></p>",
                 "tooltip": "Cette fonction est réservée aux lecteurs vidéo ci-dessous :<br>Windows Media Player<br>Chrome<br>Films et séries TV<br>PotPlayer<br>GOM player<br>Lecteurs dans les navigateurs Web (par ex. Chrome)<br><br>Pour savoir comment activer cette fonction sur PotPlayer et GOM player, consultez le guide d'utilisation fourni avec votre ordinateur.",
                 "note": {
                     "description": "Cette fonction est inopérante quand :",
@@ -2086,7 +2086,7 @@
             "antiTheft": {
                 "heading": "Capteur intelligent",
                 "title": "Alerte de mouvement intelligente",
-                "desc": "<p><label>Lorsque vous activez cette fonction, l'appareil émet un signal sonore lorsque l'écran est verrouillé et que des mouvements sont détectés, notamment dans un endroit public.</label></p> <p style='margin-top:4px;'><label>Pour ignorer l'alarme, entrez le mot de passe correct ou ouvrez une session à l'aide de Windows Hello.</label></p>",
+                "desc": "<p><label>Lorsque vous activez cette fonction, l'appareil émet un signal sonore lorsque l'écran est verrouillé et que des mouvements sont détectés, notamment dans un endroit public.</label></p> <p><label>Pour ignorer l'alarme, entrez le mot de passe correct ou ouvrez une session à l'aide de Windows Hello.</label></p>",
                 "note": {
                     "description": "Une fois que vous vous êtes connecté au système, cette fonction sera automatiquement désactivée. Vous devez l'activer à nouveau pour l'utiliser."
                 },
