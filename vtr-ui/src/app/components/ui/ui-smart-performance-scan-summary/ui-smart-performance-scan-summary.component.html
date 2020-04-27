@@ -1471,7 +1471,7 @@
 																				<div class="col-1 text-center">
 																					<fa-icon class="chevron-down" [icon]="['fal', 'chevron-down']" (click)="expandRow(ind)"></fa-icon>
 																				</div>
-																				<div class="col-8">	<b>{{item.scanruntime | date: 'dd/MM/yyyy'}}</b>  <span> - {{item.scanruntime | date: 'h:mm a'}}</span>
+																				<div class="col-7">	<b>{{item.scanruntime | date: 'dd/MM/yyyy'}}</b>  <span> - {{item.scanruntime | date: 'h:mm a'}}</span>
 																				</div>
 																				<div class="col-2">{{item.fixcount}}</div>
 																				<div class="col-1 px-2" *ngIf="item.status">
@@ -1494,53 +1494,62 @@
 																					{{item.itemExpandValue.tune}}
 																				</div> -->
 
-																				<div class="offset-1 col-11">
+																				<div class="col-12 pl-0 pr-0">
 																					<div class="row py-2">
-																						<div class="scan-items col-9 pl-0">
+																						<div class="col-1 text-center">
+																							&nbsp;
+																						</div>
+																						<div class="scan-items col-7">
 																							<div class="row">
 																									<div class="icon icon-performance"></div>{{'smartPerformance.scanCompletePage.Diskspace' |translate }}
 																							</div>
 																						</div>
-																						<div class="scan-item-value col-2 pl-3">
+																						<div class="scan-item-value col-2">
 																								{{item.Tune || 0}}
 																						</div>
-																						<div class="scan-status col-1" *ngIf="item.status">
+																						<div class="scan-status col-1 px-2" *ngIf="item.status">
 																								<fa-icon [icon]="['fas', 'circle']"></fa-icon>
 																						</div>
-																						<div class="scan-status col-1" *ngIf="!item.status">
+																						<div class="scan-status col-1 px-2" *ngIf="!item.status">
 																								<fa-icon class="red-icon" [icon]="['fas', 'circle']"></fa-icon>
 																						</div>
 																					</div>
 
 																					<div class="row py-2">
-																							<div class="scan-items col-9 pl-0">
+																							<div class="col-1 text-center">
+																									&nbsp;
+																								</div>
+																							<div class="scan-items col-7">
 																									<div class="row">
 																											<div class="icon icon-internet-performance"></div> {{'smartPerformance.scanCompletePage.Performanceimprovements' |translate }}
 																									</div>
 																							</div>
-																							<div class="scan-item-value col-2 pl-3">
+																							<div class="scan-item-value col-2">																							
 																									{{item.Boost || 0}}
 																							</div>
-																							<div class="scan-status col-1" *ngIf="item.status">
+																							<div class="scan-status col-1 px-2" *ngIf="item.status">
 																								<fa-icon [icon]="['fas', 'circle']"></fa-icon>
 																							</div>
-																							<div class="scan-status col-1" *ngIf="!item.status">
+																							<div class="scan-status col-1 px-2" *ngIf="!item.status">
 																									<fa-icon class="red-icon" [icon]="['fas', 'circle']"></fa-icon>
 																							</div>
 																						</div>
 																						<div class="row py-2">
-																								<div class="scan-items col-9 pl-0">
+																								<div class="col-1 text-center">
+																										&nbsp;
+																								</div>
+																								<div class="scan-items col-7">
 																										<div class="row">
 																												<div class="icon icon-malware-security"></div> {{'smartPerformance.scanCompletePage.Securityimprovements' |translate }}
 																										</div>
 																								</div>
-																								<div class="scan-item-value col-2 pl-3">
+																								<div class="scan-item-value col-2">
 																										{{item.secure || 0}}
 																								</div>
-																								<div class="scan-status col-1" *ngIf="item.status">
+																								<div class="scan-status col-1 px-2" *ngIf="item.status">
 																									<fa-icon [icon]="['fas', 'circle']"></fa-icon>
 																								</div>
-																								<div class="scan-status col-1" *ngIf="!item.status">
+																								<div class="scan-status col-1 px-2" *ngIf="!item.status">
 																										<fa-icon class="red-icon" [icon]="['fas', 'circle']"></fa-icon>
 																								</div>
 																							</div>
