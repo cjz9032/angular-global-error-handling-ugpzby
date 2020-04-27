@@ -201,6 +201,9 @@
                         "goInstall": "עברו להתקנה"
                     },
                     "autoSwitch": "מעבר אוטומטי למצב ביצועים בעת הפעלת משחקים ולהפך כאשר יוצאים מהמשחק."
+                },
+                "popup": {
+                    "closeBtn": "close"
                 }
             }
         },
@@ -1140,20 +1143,20 @@
                             "title": "שינוי מצבי קירור חכמים",
                             "close": "סגירה",
                             "coolingModesList": {
-                                "list1": "לחץ על סמל הסוללה של Windows בסרגל הכלים.",   
+                                "list1": "לחץ על סמל הסוללה של Windows בסרגל הכלים.",
                                 "list2": "מצב Windows Power יופיע, החלק את המחוון כדי לבחור בין זמן אופטימלי לבין ביצועים אופטימליים."
                             }
                         },
                         "autoTransition": {
-							"description": "הפעל \"ביצועים מעולים\" במצב זה. לאחר הפעלה, טמפרטורת משטח המחשב ועוצמת רעש של המאוורר עשויות לעלות אוטומטית.",
-							"more": "עוד",
-							"less": "פחות",
-							"moreContent": {
-								"desc1": "a. בתרחישי משרד, עדכון Windows, סרט מקוון או עומס קל על המערכת, המערכת יכולה להיות שקטה. בתרחישי משחק רגילים, ביצועי המערכת טובים יותר.",
-								"desc2": "b. כאשר אתם משחקים במשחקים כבדים, המצב \"ביצועים מעולים\" מופעל אוטומטית. הוא עלול לגרום לרעש גדול יותר או לטמפרטורה גבוהה יותר של משטח המחשב.",
-								"desc3": "c. כאשר קיבולת הסוללה נמוכה מ-30%, המערכת עוברת אוטומטית למצב \"חיסכון בסוללה\"."
-							}			
-						}
+                            "description": "הפעל \"ביצועים מעולים\" במצב זה. לאחר הפעלה, טמפרטורת משטח המחשב ועוצמת רעש של המאוורר עשויות לעלות אוטומטית.",
+                            "more": "עוד",
+                            "less": "פחות",
+                            "moreContent": {
+                                "desc1": "a. בתרחישי משרד, עדכון Windows, סרט מקוון או עומס קל על המערכת, המערכת יכולה להיות שקטה. בתרחישי משחק רגילים, ביצועי המערכת טובים יותר.",
+                                "desc2": "b. כאשר אתם משחקים במשחקים כבדים, המצב \"ביצועים מעולים\" מופעל אוטומטית. הוא עלול לגרום לרעש גדול יותר או לטמפרטורה גבוהה יותר של משטח המחשב.",
+                                "desc3": "c. כאשר קיבולת הסוללה נמוכה מ-30%, המערכת עוברת אוטומטית למצב \"חיסכון בסוללה\"."
+                            }
+                        }
                     },
                     "nonintelligentCooling": {
                         "options": {
@@ -2128,7 +2131,8 @@
                 "fileAuthorizationTips": {
                     "content": "ל-Lenovo Vantage אין גישה למערכת הקבצים.",
                     "link": "עברו להגדרות Windows כדי לאפשר גישה"
-                }
+                },
+                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
             },
             "voice": {
                 "title": "קול",

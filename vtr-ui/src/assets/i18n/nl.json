@@ -201,6 +201,9 @@
                     "legionAccessory": "Install Legion Accessory Central?",
                     "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
                     "install": "INSTALL"
+                },
+                "popup": {
+                    "closeBtn": "close"
                 }
             }
         },
@@ -1145,15 +1148,15 @@
                             }
                         },
                         "autoTransition": {
-							"description": "Schakel in deze werkstand \"Extreme prestaties\" in. Als u deze functie inschakelt, kan de temperatuur van de buitenkant van uw computer hoger worden en het geluid van de ventilator harder.",
-							"more": "MEER",
-							"less": "MINDER",
-							"moreContent": {
-								"desc1": "a. Op kantoor, Windows Update, online film of scenario's voor systeemverlichting, kan het systeem stil zijn. Bij normaal gamen levert de computer betere prestaties.",
-								"desc2": "b. Als u zware games speelt, wordt de werkstand \"Extreme prestaties\" automatisch ingeschakeld. Dit kan leiden tot meer geluid of een hogere temperatuur van de buitenkant van uw computer.",
-								"desc3": "c. Als de capaciteit van de batterij lager is dan 30%, schakelt het systeem automatisch over naar de werkstand \"Batterijbesparing\"."
-							}			
-						}
+                            "description": "Schakel in deze werkstand \"Extreme prestaties\" in. Als u deze functie inschakelt, kan de temperatuur van de buitenkant van uw computer hoger worden en het geluid van de ventilator harder.",
+                            "more": "MEER",
+                            "less": "MINDER",
+                            "moreContent": {
+                                "desc1": "a. Op kantoor, Windows Update, online film of scenario's voor systeemverlichting, kan het systeem stil zijn. Bij normaal gamen levert de computer betere prestaties.",
+                                "desc2": "b. Als u zware games speelt, wordt de werkstand \"Extreme prestaties\" automatisch ingeschakeld. Dit kan leiden tot meer geluid of een hogere temperatuur van de buitenkant van uw computer.",
+                                "desc3": "c. Als de capaciteit van de batterij lager is dan 30%, schakelt het systeem automatisch over naar de werkstand \"Batterijbesparing\"."
+                            }
+                        }
                     },
                     "nonintelligentCooling": {
                         "options": {
@@ -2128,7 +2131,8 @@
                 "fileAuthorizationTips": {
                     "content": "Lenovo Vantage heeft geen toegang tot het bestandssysteem.",
                     "link": "Ga naar de Windows-instellingen om toegang te geven"
-                }
+                },
+                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
             },
             "voice": {
                 "title": "Spraak",

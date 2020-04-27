@@ -201,6 +201,9 @@
                     "legionAccessory": "Install Legion Accessory Central?",
                     "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
                     "install": "INSTALL"
+                },
+                "popup": {
+                    "closeBtn": "close"
                 }
             }
         },
@@ -1145,15 +1148,15 @@
                             }
                         },
                         "autoTransition": {
-							"description": "Ative o \"Desempenho Extremo\" neste modo. Quando ativado, a temperatura na superfície do computador e o ruído da ventoinha poderão aumentar automaticamente.",
-							"more": "MAIS",
-							"less": "MENOS",
-							"moreContent": {
-								"desc1": "a. O sistema pode estar silencioso quando utiliza o Office, o Windows Update, vê filmes online ou em cenários de carregamento leve do sistema. Nos cenários de jogos normais, o desempenho é melhor.",
-								"desc2": "b. Durante os jogos mais exigentes, o modo \"Desempenho Extremo\" é ativado automaticamente. Pode fazer aumentar o ruído ou a temperatura na superfície do computador.",
-								"desc3": "c. Quando a capacidade da bateria é inferior a 30%, o sistema muda automaticamente para o modo \"Poupança de Bateria\"."
-							}			
-						}
+                            "description": "Ative o \"Desempenho Extremo\" neste modo. Quando ativado, a temperatura na superfície do computador e o ruído da ventoinha poderão aumentar automaticamente.",
+                            "more": "MAIS",
+                            "less": "MENOS",
+                            "moreContent": {
+                                "desc1": "a. O sistema pode estar silencioso quando utiliza o Office, o Windows Update, vê filmes online ou em cenários de carregamento leve do sistema. Nos cenários de jogos normais, o desempenho é melhor.",
+                                "desc2": "b. Durante os jogos mais exigentes, o modo \"Desempenho Extremo\" é ativado automaticamente. Pode fazer aumentar o ruído ou a temperatura na superfície do computador.",
+                                "desc3": "c. Quando a capacidade da bateria é inferior a 30%, o sistema muda automaticamente para o modo \"Poupança de Bateria\"."
+                            }
+                        }
                     },
                     "nonintelligentCooling": {
                         "options": {
@@ -2128,7 +2131,8 @@
                 "fileAuthorizationTips": {
                     "content": "O Lenovo Vantage não tem acesso ao sistema de ficheiros.",
                     "link": "Vá às Definições do Windows para dar acesso"
-                }
+                },
+                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
             },
             "voice": {
                 "title": "Voz",

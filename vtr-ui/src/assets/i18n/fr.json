@@ -201,6 +201,9 @@
                     "legionAccessory": "Install Legion Accessory Central?",
                     "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
                     "install": "INSTALL"
+                },
+                "popup": {
+                    "closeBtn": "close"
                 }
             }
         },
@@ -1145,15 +1148,15 @@
                             }
                         },
                         "autoTransition": {
-							"description": "Activez Performances extrêmes dans ce mode. Lorsque cette option est activée, la température de la surface de votre ordinateur et le bruit du ventilateur peuvent augmenter automatiquement.",
-							"more": "PLUS",
-							"less": "MOINS",
-							"moreContent": {
-								"desc1": "a. Le système peut être silencieux lorsque vous utilisez Office, Windows Update, regardez des films en ligne ou dans des scénarios de charge légère du système. Dans les scénarios de jeu normaux, il offre de meilleures performances.",
-								"desc2": "b. Lorsque vous jouez à des jeux qui sollicitent fortement le système, le mode Performances extrêmes est automatiquement activé. En conséquence, votre système peut être plus bruyant ou la température de la surface de votre ordinateur peut augmenter.",
-								"desc3": "c. Lorsque la capacité de la batterie est inférieure à 30 %, le système passe automatiquement au mode Économie d'énergie."
-							}			
-						}
+                            "description": "Activez Performances extrêmes dans ce mode. Lorsque cette option est activée, la température de la surface de votre ordinateur et le bruit du ventilateur peuvent augmenter automatiquement.",
+                            "more": "PLUS",
+                            "less": "MOINS",
+                            "moreContent": {
+                                "desc1": "a. Le système peut être silencieux lorsque vous utilisez Office, Windows Update, regardez des films en ligne ou dans des scénarios de charge légère du système. Dans les scénarios de jeu normaux, il offre de meilleures performances.",
+                                "desc2": "b. Lorsque vous jouez à des jeux qui sollicitent fortement le système, le mode Performances extrêmes est automatiquement activé. En conséquence, votre système peut être plus bruyant ou la température de la surface de votre ordinateur peut augmenter.",
+                                "desc3": "c. Lorsque la capacité de la batterie est inférieure à 30 %, le système passe automatiquement au mode Économie d'énergie."
+                            }
+                        }
                     },
                     "nonintelligentCooling": {
                         "options": {
@@ -2128,7 +2131,8 @@
                 "fileAuthorizationTips": {
                     "content": "Lenovo Vantage n'a pas accès au micro du système de fichiers.",
                     "link": "Accéder aux paramètres Windows pour donner accès"
-                }
+                },
+                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
             },
             "voice": {
                 "title": "Voix",
