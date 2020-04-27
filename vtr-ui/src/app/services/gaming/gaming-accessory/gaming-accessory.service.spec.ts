@@ -58,7 +58,9 @@ describe('GamingAccessoryService', () => {
     });
 
     it('launchAccessory should return undefinde', () => {
-      expect(gamingAccessoryService.launchAccessory()).toBeUndefined();
+      expect(gamingAccessoryService.launchAccessory(true)).toBeUndefined();
+      expect(gamingAccessoryService.launchAccessory(false)).toBeUndefined();
+      expect(gamingAccessoryService.launchAccessory(undefined)).toBeUndefined();
     });
 
   });
@@ -109,22 +111,6 @@ describe('GamingAccessoryService', () => {
       })
     }));
 
-    it('register existed: launch successed, should return false', async(() => {
-      stubRes.keyList = [1];
-      spyOn(WinRT, 'launchUri').and.returnValue(true)
-      gamingAccessoryService.launchAccessory().then(res => {
-        expect(res).toBe(true, 'launchAccessory should return true');
-      })
-    }));
-
-    it('register existed: launch fail, should return false', async(() => {
-      stubRes.keyList = [1];
-      spyOn(WinRT, 'launchUri').and.returnValue(false)
-      gamingAccessoryService.launchAccessory().then(res => {
-        expect(res).toBe(false, 'launchAccessory should return false');
-      })
-    }));
-
     it('register unexisted: isLACSupportUriProtocolshould should return false', async(() => {
       stubRes.keyList = [];
       gamingAccessoryService.isLACSupportUriProtocol().then(res => {
@@ -132,12 +118,23 @@ describe('GamingAccessoryService', () => {
       })
     }));
 
-    it('register unexisted: stop launch and return false', async(() => {
-      stubRes.keyList = [];
-      gamingAccessoryService.launchAccessory().then(res => {
+    it('register existed: launch successed, should return true', async(() => {
+      spyOn(WinRT, 'launchUri').and.returnValue(true)
+      gamingAccessoryService.launchAccessory(true).then(res => {
+        expect(res).toBe(true, 'launchAccessory should return true');
+      })
+    }));
+
+    it('register existed: launch fail, should return false', async(() => {
+      spyOn(WinRT, 'launchUri').and.returnValue(false)
+      gamingAccessoryService.launchAccessory(true).then(res => {
         expect(res).toBe(false, 'launchAccessory should return false');
       })
     }));
+
+    it('register unexisted: stop launch and return undefined', () => {
+      expect(gamingAccessoryService.launchAccessory(false)).toBeUndefined();
+    });
   });
   describe('catch error', () => {
     beforeEach(() => {
@@ -180,12 +177,12 @@ describe('GamingAccessoryService', () => {
       });
     }));
 
-    // a problem about async call a async
+    // TODO: a problem about calling an async function with await 
     xit('launchAccessory should return err', async(() => {
       spyOn(WinRT, 'launchUri').and.throwError('WinRT.launchUri error');
-      spyOn(gamingAccessoryService, 'isLACSupportUriProtocol').and.returnValue(new Promise(resolve => { resolve(true) }));
-      gamingAccessoryService.launchAccessory();
+      gamingAccessoryService.launchAccessory(true).then().catch(err => {
+        expect(err).toMatch('WinRT.launchUri error');
+      });
     }));
-
   });
 });

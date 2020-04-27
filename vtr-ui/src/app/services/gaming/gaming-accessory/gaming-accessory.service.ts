@@ -50,31 +50,28 @@ export class GamingAccessoryService {
     }
   }
 
-  launchAccessory(): Promise<any> {
-    if (this.isShellAvailable) {
-      return new Promise(resolve => {
-        this.isLACSupportUriProtocol().then(async (res) => {
-          this.logger.info(`Service-GamingAccessory-launchAccessory: isLACSupportUriProtocol return value: ${res}`);
-          if (res) {
-            try {
-              // protocol
-              const result = await WinRT.launchUri('legion-accessory-central:');
-              // plugin?
-              // const lacPath = '%ProgramData%\\Microsoft\\Windows\\Start Menu\\Programs\\Lenovo\\Legion Accessory Central.lnk';
-              // const result = await this.systemUpdateBridge.launchApp(lacPath);
-              if (result) {
-                resolve(true);
-              }
-            } catch (error) {
-              this.logger.error('Service-GamingAccessory-LaunchAccessory: launch fail; Error message: ', error.message);
-              throw new Error(error.message);
-            }
+  launchAccessory(isSupported: any): Promise<any> {
+    if (this.isShellAvailable && isSupported) {
+      return new Promise(async (resolve) => {
+        try {
+          // launch win32 app through protocol
+          const result = await WinRT.launchUri('legion-accessory-central:');
+          this.logger.info(`Service-GamingAccessory-launchAccessory: WinRT.launchUri return: ${result}`);
+          // launch win32 app through plugin?
+          // const lacPath = '%ProgramData%\\Microsoft\\Windows\\Start Menu\\Programs\\Lenovo\\Legion Accessory Central.lnk';
+          // const result = await this.systemUpdateBridge.launchApp(lacPath);
+          // this.logger.info(`Service-GamingAccessory-launchAccessory: systemUpdateBridge.launchApp return: ${result}`);
+          if (result) {
+            resolve(true);
           }
-          resolve(false);
-        })
+        } catch (error) {
+          this.logger.error('Service-GamingAccessory-LaunchAccessory: launch fail; Error message: ', error.message);
+          throw new Error(error.message);
+        }
+        resolve(false);
       });
     } else {
-      this.logger.error(`Service-GamingAccessory-launchAccessory: return undefined, shell Available: ${this.isShellAvailable}`);
+      this.logger.error(`Service-GamingAccessory-launchAccessory: return undefined, this.isShellAvailable value: ${this.isShellAvailable}, isSupported value: ${this.isShellAvailable}`);
       return undefined;
     }
   }
