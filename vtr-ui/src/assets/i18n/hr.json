@@ -201,6 +201,9 @@
                     "legionAccessory": "Install Legion Accessory Central?",
                     "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
                     "install": "INSTALL"
+                },
+                "popup": {
+                    "closeBtn": "close"
                 }
             }
         },
@@ -1145,15 +1148,15 @@
                             }
                         },
                         "autoTransition": {
-							"description": "Omogući \"Izuzetne performanse\" u ovom načinu. Kad je omogućeno, temperatura na površini vašeg računala i buka ventilatora mogu se automatski povećati.",
-							"more": "DODATNO",
-							"less": "MANJE",
-							"moreContent": {
-								"desc1": "a. U uredskoj primjeni, scenarijima ažuriranja sustava Windows, mrežnim filmovima ili pri niskom opterećenju sustav može biti tih. Dok je u normalnim scenarijima igranja, ostvaruje bolje performanse.",
-								"desc2": "b. Prilikom igranja zahtjevnih igara automatski je omogućen način \"Izuzetne performanse\". To bi moglo uzrokovati veću buku ili višu temperaturu na površini računala.",
-								"desc3": "c. Kad je napunjenost baterije manja od 30 %, sustav automatski prelazi u način \"Ušteda baterije\"."
-							}			
-						}
+                            "description": "Omogući \"Izuzetne performanse\" u ovom načinu. Kad je omogućeno, temperatura na površini vašeg računala i buka ventilatora mogu se automatski povećati.",
+                            "more": "DODATNO",
+                            "less": "MANJE",
+                            "moreContent": {
+                                "desc1": "a. U uredskoj primjeni, scenarijima ažuriranja sustava Windows, mrežnim filmovima ili pri niskom opterećenju sustav može biti tih. Dok je u normalnim scenarijima igranja, ostvaruje bolje performanse.",
+                                "desc2": "b. Prilikom igranja zahtjevnih igara automatski je omogućen način \"Izuzetne performanse\". To bi moglo uzrokovati veću buku ili višu temperaturu na površini računala.",
+                                "desc3": "c. Kad je napunjenost baterije manja od 30 %, sustav automatski prelazi u način \"Ušteda baterije\"."
+                            }
+                        }
                     },
                     "nonintelligentCooling": {
                         "options": {
@@ -2128,7 +2131,8 @@
                 "fileAuthorizationTips": {
                     "content": "Lenovo Vantage nema pristup datotečnom sustavu.",
                     "link": "Idite na postavke sustava Windows za omogućivanje pristupa"
-                }
+                },
+                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
             },
             "voice": {
                 "title": "Glas",

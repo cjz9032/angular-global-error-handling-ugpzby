@@ -201,6 +201,9 @@
                     "legionAccessory": "Install Legion Accessory Central?",
                     "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
                     "install": "INSTALL"
+                },
+                "popup": {
+                    "closeBtn": "close"
                 }
             }
         },
@@ -1145,15 +1148,15 @@
                             }
                         },
                         "autoTransition": {
-							"description": "Aktiver \"Ekstrem ydeevne\" i denne tilstand. Når den er aktiveret, kan temperaturen på computerens overflade og støjen i blæseren øges automatisk.",
-							"more": "FLERE",
-							"less": "FÆRRE",
-							"moreContent": {
-								"desc1": "a. I forbindelse med brug af Office, Windows Update og onlinefilm eller ved lav systembelastning kan systemet være stille. Men i normale gaming-situationer har det bedre ydeevne.",
-								"desc2": "b. Når du spiller ressourcekrævende spil, aktiveres tilstanden \"Ekstrem ydeevne\" automatisk. Den kan give mere støj eller højere temperaturer på computerens overflade.",
-								"desc3": "c. Når batteriets kapacitet er lavere end 30 %, skifter systemet automatisk til tilstanden \"Strømbesparelse\"."
-							}			
-						}
+                            "description": "Aktiver \"Ekstrem ydeevne\" i denne tilstand. Når den er aktiveret, kan temperaturen på computerens overflade og støjen i blæseren øges automatisk.",
+                            "more": "FLERE",
+                            "less": "FÆRRE",
+                            "moreContent": {
+                                "desc1": "a. I forbindelse med brug af Office, Windows Update og onlinefilm eller ved lav systembelastning kan systemet være stille. Men i normale gaming-situationer har det bedre ydeevne.",
+                                "desc2": "b. Når du spiller ressourcekrævende spil, aktiveres tilstanden \"Ekstrem ydeevne\" automatisk. Den kan give mere støj eller højere temperaturer på computerens overflade.",
+                                "desc3": "c. Når batteriets kapacitet er lavere end 30 %, skifter systemet automatisk til tilstanden \"Strømbesparelse\"."
+                            }
+                        }
                     },
                     "nonintelligentCooling": {
                         "options": {
@@ -2128,7 +2131,8 @@
                 "fileAuthorizationTips": {
                     "content": "Lenovo Vantage har ikke adgang til filsystemet.",
                     "link": "Gå til Windows-indstillinger for at give adgang"
-                }
+                },
+                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
             },
             "voice": {
                 "title": "stemme",

@@ -120,12 +120,17 @@ export class ProtocolGuardService implements CanActivate {
 	}
   }
 
+  private addTimestampQueryParam(originQuery : string) : string {
+	if (!originQuery || !originQuery.startsWith('?')) return originQuery;
+	return `${originQuery}&timestamp=${Date.now()}`;
+  }
+
   private convertToUrlAssumeProtocolIs3x(rawData: string) : string {
 	let url = this.constructURL(rawData);
 	if (!url) return '';
 	const schema = url.protocol;
 	const semantic = url.pathname;
-	const query = url.search;
+	const query = this.addTimestampQueryParam(url.search);
 
 	if (schema.toLowerCase() !== this.vantage3xSchema || !semantic) return '';
 
@@ -142,7 +147,7 @@ export class ProtocolGuardService implements CanActivate {
 	if (!url) return '';
 	const schema = url.protocol;
 	const pathName = url.pathname;
-	const query = url.search;
+	const query = this.addTimestampQueryParam(url.search);
 	const queryParams = url.searchParams;
 
 	if (!schema || !this.backwardCompatibilitySchemas.includes(schema.toLowerCase()) || !pathName || pathName.toLowerCase() !== 'param') return '';

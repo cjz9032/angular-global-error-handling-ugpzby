@@ -350,6 +350,18 @@
     content: $icomoon-ic; 
   }
 }
+.icomoon-icon_state_Circle {
+  &:before {
+    content: $icomoon-icon_state_Circle;     
+    color: #4a81fd;
+  }
+}
+.icomoon-icon_state_Two_combined {
+  &:before {
+    content: $icomoon-icon_state_Two_combined;     
+    color: #4a81fd;
+  }
+}
 .icomoon-input_accessories {
   &:before {
     content: $icomoon-input_accessories;     
@@ -858,3 +870,4 @@
     color: #4a81fd;
   }
 }
+

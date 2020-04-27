@@ -248,7 +248,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 				.format('YYYY/MM/DD');
 			this.selectedfromDate = this.fromDate;
 			this.selectedTodate = this.toDate;
-			this.customDate = this.customDate = this.displayFromDate + ' - ' + this.displayToDate;
+			this.customDate =  this.displayFromDate + ' - ' + this.displayToDate;
 			// console.log('---------IN THE TABINDEX 2' + this.customDate);
 			this.getHistory(
 				moment

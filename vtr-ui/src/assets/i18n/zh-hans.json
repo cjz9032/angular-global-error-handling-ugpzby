@@ -201,6 +201,9 @@
                     "legionAccessory": "Install Legion Accessory Central?",
                     "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
                     "install": "INSTALL"
+                },
+                "popup": {
+                    "closeBtn": "close"
                 }
             }
         },
@@ -1146,15 +1149,15 @@
                             }
                         },
                         "autoTransition": {
-							"description": "在此模式下启用“极致性能”。启用后，计算机表面的温度和风扇噪音可能会自动增加。",
-							"more": "更多",
-							"less": "更少",
-							"moreContent": {
-								"desc1": "a. 在办公室、执行 Windows 更新、观看在线电影或系统负载较轻的情况下，系统可以安静无声。在正常游戏情景中，它具有更佳性能。",
-								"desc2": "b. 在进行重度游戏时，会自动启用“极致性能”模式。它可能会引起更大的噪音或在计算机表面造成更高的温度。",
-								"desc3": "c. 当电池电量低于 30% 时，系统会自动切换到“省电”模式。"
-							}			
-						}
+                            "description": "在此模式下启用“极致性能”。启用后，计算机表面的温度和风扇噪音可能会自动增加。",
+                            "more": "更多",
+                            "less": "更少",
+                            "moreContent": {
+                                "desc1": "a. 在办公室、执行 Windows 更新、观看在线电影或系统负载较轻的情况下，系统可以安静无声。在正常游戏情景中，它具有更佳性能。",
+                                "desc2": "b. 在进行重度游戏时，会自动启用“极致性能”模式。它可能会引起更大的噪音或在计算机表面造成更高的温度。",
+                                "desc3": "c. 当电池电量低于 30% 时，系统会自动切换到“省电”模式。"
+                            }
+                        }
                     },
                     "nonintelligentCooling": {
                         "options": {
@@ -2086,7 +2089,7 @@
             "antiTheft": {
                 "heading": "智能感知",
                 "title": "智能运动警报",
-                "tooltip":"<div>当计算机处于休眠模式或关闭电源时，此功能不起作用。检查以下操作中的设置：<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>闭合盖的操作</li><li>关键/低电池作用</li><li>电源按钮操作</li><li>睡眠按钮操作</li><li>空闲超时设置以休眠</li></ul></div>否则，它将不会触发报警，既不拍照。</div>",
+                "tooltip": "<div>当计算机处于休眠模式或关闭电源时，此功能不起作用。检查以下操作中的设置：<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>闭合盖的操作</li><li>关键/低电池作用</li><li>电源按钮操作</li><li>睡眠按钮操作</li><li>空闲超时设置以休眠</li></ul></div>否则，它将不会触发报警，既不拍照。</div>",
                 "desc": "<p><label>启用此功能后，当屏幕锁定并检测到运动时（尤其是在公共场所），设备将发出蜂鸣声。</label></p> <p><label>要消除警报，请输入正确的密码或通过 Windows Hello 登录。</label></p>",
                 "note": {
                     "description": "成功登录系统后，此功能将自动关闭。需要再次启用此功能才能使用。"
