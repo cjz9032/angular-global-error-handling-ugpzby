@@ -1,11 +1,11 @@
-<ui-gaming-driver-popup id="{{automationId+'_driver_popup'}}" tabindex="1" vtrOutsideClick (clickOutside)="onOutsideClick()"
+<ui-gaming-driver-popup  tabindex="1" vtrOutsideClick (clickOutside)="onOutsideClick()"
  [attr.aria-label]="'Driver Install Required window'">
-	<div class="modal-body vtr-ui-gaming-driver-popup">
+	<div class="modal-body vtr-ui-gaming-driver-popup" id="'{{automationId}}_driver_popup'" role="text">
 			<div class="btn-close">
 			<a type="button" class="close driver_popup_close_btn" (click)="close()"
-			tabindex="1" (keyup.enter)="close()" 
+			tabindex="1" (keyup.enter)="close()"
 			role="button" vtrMetrics [metricsItem]="'driverpopup_close'"
-			metricsEvent="featureClick" metricsParent="Gaming.Dashboard" id="{{automationId+'_driver_popup_close_btn'}}" 
+			metricsEvent="featureClick" metricsParent="Gaming.Dashboard" id="{{automationId+'_driver_popup_close_btn'}}"
 			attr.aria-label="{{'gaming.dashboard.device.popup.closeBtn' | translate}}"  aria-labelledby="driver_popup_close">
 					<fa-icon [icon]="['fal', 'times']"></fa-icon>
 			</a>
