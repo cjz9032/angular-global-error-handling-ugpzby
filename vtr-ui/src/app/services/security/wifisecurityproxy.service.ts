@@ -15,45 +15,35 @@ export class WifisecurityProxy implements phoenix.WifiSecurity {
 		this.commonService = commonService;
 		this.on(phoenix.EventTypes.wsIsLocationServiceOnEvent, this.wsIsLocationServiceOnEventHandler.bind(this));
 	}
-	_mitt: mitt.Emitter;
 	get mitt(): mitt.Emitter { return this.wifisecurity.mitt };
 	set mitt(value: mitt.Emitter) { this.wifisecurity.mitt = value };
 
-	_state: string;
 	get state(): string { return this.wifisecurity.state };
 	set state(value: string) { this.wifisecurity.state = value };
 
-	_wifiHistory: phoenix.WifiDetail[];
 	get wifiHistory(): phoenix.WifiDetail[] { return this.wifisecurity.wifiHistory };
 	set wifiHistory(value: phoenix.WifiDetail[]) { this.wifisecurity.wifiHistory = value };
 
-	_isLocationServiceOn: boolean;
 	get isLocationServiceOn(): boolean { return this.wifisecurity.isLocationServiceOn };
 	set isLocationServiceOn(value: boolean) { this.wifisecurity.isLocationServiceOn = value };
 
-	_isLWSPluginInstalled: boolean;
-	get isLWSPluginInstalled(): boolean { return this.isLWSPluginInstalled };
-	set isLWSPluginInstalled(value: boolean) { this.isLWSPluginInstalled = value; }
+	get isLWSPluginInstalled(): boolean { return this.wifisecurity.isLWSPluginInstalled };
+	set isLWSPluginInstalled(value: boolean) { this.wifisecurity.isLWSPluginInstalled = value; }
 
-	_hasSystemPermissionShowed: boolean;
 	get hasSystemPermissionShowed(): boolean { return this.wifisecurity.hasSystemPermissionShowed };
-	set hasSystemPermissionShowed(value: boolean) { this.hasSystemPermissionShowed = value };
+	set hasSystemPermissionShowed(value: boolean) { this.wifisecurity.hasSystemPermissionShowed = value };
 
-	_isDevicePermissionOn: boolean;
 	get isDevicePermissionOn(): boolean { return this.wifisecurity.isDevicePermissionOn };
-	set isDevicePermissionOn(value: boolean) { this.isDevicePermissionOn = value; }
+	set isDevicePermissionOn(value: boolean) { this.wifisecurity.isDevicePermissionOn = value; }
 
-	_isAllAppsPermissionOn: boolean;
 	get isAllAppsPermissionOn(): boolean { return this.wifisecurity.isAllAppsPermissionOn };
-	set isAllAppsPermissionOn(value: boolean) { this.isAllAppsPermissionOn = value };
+	set isAllAppsPermissionOn(value: boolean) { this.wifisecurity.isAllAppsPermissionOn = value };
 
-	_isSupported: boolean;
 	get isSupported(): boolean { return this.wifisecurity.isSupported };
-	set isSupported(value: boolean) { this.isSupported = value };
+	set isSupported(value: boolean) { this.wifisecurity.isSupported = value };
 
-	_changeWifiSecurity: boolean;
 	get changeWifiSecurity(): boolean { return this.wifisecurity.changeWifiSecurity };
-	set changeWifiSecurity(value: boolean) { this.changeWifiSecurity = value };
+	set changeWifiSecurity(value: boolean) { this.wifisecurity.changeWifiSecurity = value };
 
 	launchLocationPrivacy(): Promise<boolean> {
 		return this.wifisecurity.launchLocationPrivacy();
