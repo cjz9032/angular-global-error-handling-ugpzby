@@ -2724,6 +2724,7 @@
         "ssoErrorAccountPluginNotExist": "プラグインが見つかりません。インターネットに接続されている場合、バックグラウンドでプラグインを自動復元します。これには多少の時間がかかるため、後で再試行してください。"
     },
     "faq": {
+        "pageTitle": "サポート詳細",
         "footer": {
             "title": "探しているものが見つかりませんか？",
             "description": "追加のサポートが必要ですか?以下からお気軽にお問い合わせください:",
@@ -2732,354 +2733,146 @@
         },
         "question1": {
             "title": "ファイルをバックアップし、復元する",
-            "description": "<div>    <div class='faqInFs4Fb'>        ファイルをバックアップし、復元する    </div>    <hr />    <div class='faqInMb7'>        どんな場合でもバックアップを取っておくのは良いことです。オリジナルに問題が発生した場合に備えて、ファイルのコピーを別のドライブに保存してください。    </div>    <div class='faqInFs3Fb'>        バックアップの設定    </div>    <hr />    <div class='mb-5'>        <span class='faqInFb'>「スタート」</span>ボタンを選択し、<span class='faqInFb'>「設定」</span> > <span class='faqInFb'>「更新とセキュリティ」</span> > <span class='faqInFb'>「バックアップ」</span> > <span class='faqInFb'>「ドライブの追加」</span>の順に選択して、次にバックアップ用の外付けドライブまたはネットワークの場所を選択します。    </div>    <div class='mb-5'>        <img src='assets/images/qa/ja/1.1.jpg' />    </div>    <div class='mb-5'>        設定完了。毎時間、ユーザー・フォルダー (C:\\Users\\ユーザー名) 内の全ファイルをバックアップします。バックアップするファイル、バックアップの頻度を変更するには、<span class='faqInFb'>「その他のオプション」</span>に進みます。    </div>    <div class='faqInFs3Fb'>        ファイルの復元    </div>    <div class='mb-5'>        重要なファイルやフォルダーが見つからない場合は、以下の手順で元に戻すことができます。    </div>    <div>        <div class='mb-3'>1.タスク バーの検索ボックスに<span class='faqInFb'>「ファイルを復元」</span>と入力して、次に<span class='faqInFb'>「ファイル履歴をファイルを復元」</span>を選択します。</div>        <div class='mb-3'>2.必要なファイルを探し、次に矢印を使って、そのすべてのバージョンを表示します</div>        <div class='mb-3'>3.必要なバージョンが見つかったら、<span class='faqInFb'>「復元」</span>を選択して、元の場所にそれを保存します。別の場所に保存するには、<span class='faqInFb'>「復元」</span>を長押し（または右クリック）し、<span class='faqInFb'>「復元先」</span>を選択して、次に新しい場所を選択します。</div>    </div></div>",
-            "para1": {
-                "line1": "It's always good to have a backup.",
-                "line2": "Keep copies of your files on another drive in case something happens to the originals."
-            },
-            "heading1": "Set up your backup",
-            "para2": {
-                "span1": "Select the",
-                "span2": "Start",
-                "span3": "button, select",
-                "span4": "Settings",
-                "span5": "Update & security",
-                "span6": "Backup",
-                "span7": "Add a drive",
-                "span8": ", and then choose an external drive or network location for your backups."
-            },
-            "para3": {
-                "span1": "All set.",
-                "span2": "Every hour, we'll back up everything in your user folder (C:\\Users\\username).",
-                "span3": "To change which files get backed up or how often backups happen, go to",
-                "span4": "More options."
-            },
-            "heading2": "Restore your files",
-            "para4": "If you're missing an important file or folder, here's how to get it back:",
-            "para5": {
-                "span1": "1. Type",
-                "span2": "Restore files",
-                "span3": "in the search box on the taskbar, and then select",
-                "span4": "Restore your files with File History.",
-                "span5": "2. Look for the file you need, then use the arrows to see all its versions",
-                "span6": "3. When you find the version you want, select",
-                "span7": "Restore",
-                "span8": "to save it in its original location. To save it in a different place, press and hold (or right-click)",
-                "span9": "Restore",
-                "span10": ", select",
-                "span11": "Restore to",
-                "span12": "and then choose a new location."
-            }
+            "para1": "どんな場合でもバックアップを取っておくのは良いことです。オリジナルに問題が発生した場合に備えて、ファイルのコピーを別のドライブに保存してください。",
+			"heading1": "バックアップの設定",
+			"para2": "「スタート」ボタンを選択し、「設定」 > 「更新とセキュリティ」 > 「バックアップ」 > 「ドライブの追加」の順に選択して、次にバックアップ用の外付けドライブまたはネットワークの場所を選択します。",
+			"para3": "設定完了。毎時間、ユーザー・フォルダー (C:\\Users\\ユーザー名) 内の全ファイルをバックアップします。バックアップするファイル、バックアップの頻度を変更するには、「その他のオプション」に進みます。",
+			"heading2": "ファイルの復元",
+			"para4": "重要なファイルやフォルダーが見つからない場合は、以下の手順で元に戻すことができます:",
+			"para5": {
+				"div1": "1.タスク バーの検索ボックスに「ファイルを復元」と入力して、次に「ファイル履歴をファイルを復元」を選択します。",
+				"div2": "2.必要なファイルを探し、次に矢印を使って、そのすべてのバージョンを表示します。",
+				"div3": "3.必要なバージョンが見つかったら、「復元」を選択して、元の場所にそれを保存します。別の場所に保存するには、「復元」を長押し（または右クリック）し、「復元先」を選択して、次に新しい場所を選択します。"
+			}
         },
         "question2": {
-            "title": "PC を初期状態に戻す方法",
-            "description": "<div><div class='faqInFs4Fb'>Windows 10 を初期状態に戻す方法</div><hr><div class='faqInP5'>Windows 10 PC で問題が発生した場合、またはそうした Windows 10 PC を販売している場合は、PC を初期状態に戻す必要があります。初期状態に戻すことにより、ファイルを保存するか削除するかを選択して、すべてのアプリと設定を削除し、新しい Windows をインストールできます。これにより、パフォーマンスの低下などの多くの問題も修正できます。</div><div class='faqInFs25FbP10'>1.Settings アプリを開きます</div><div class='faqInP5'>画面の左下にあるスタート画像のボタンを押して、設定のギア画像を選択します。</div><div class='faqInP5'><img src='assets/images/qa/ja/2.1.jpg' /></div><div class='faqInFs25FbP10'>2.カテゴリのリストから「更新とセキュリティ」を選択します</div><div class='faqInP5'><img src='assets/images/qa/ja/2.2.jpg' /></div><div class='faqInFs25FbP10'>3.左ペインから「回復」に移動する</div><div class='faqInP5'><img src='assets/images/qa/ja/2.3.jpg' /></div><div class='faqInFs25FbP10'>4.初期化処理を開始します</div><div class='faqInP5'>上部の「この PC を初期状態に戻す」見出しの下で、「開始する」ボタンをクリックまたはタップします。</div><div class='faqInP5'><img src='assets/images/qa/ja/2.4.jpg' /></div><div class='faqInFs25FbP10'>5.ファイルを保持するかどうかを選択します</div><div class='faqInP5'>初期化した後、Microsoft アカウントにサインインできます。このアカウントで購入した Windows ストアのアプリは、すべて再インストールされます。</div><div class='faqInP5'><ul><li>「個人用ファイルを保持する」と、アプリと設定は削除されますが、個人用ファイルはすべて保持されます。</li><li>「すべて削除する」と、アプリ、設定、個人用ファイルは削除されます。ファイルのバックアップ・コピーがない場合は、「キャンセル」を押してファイルをバックアップし、この処理を再度開始することができます。</li></ul></div><div class='faqInP5'><img src='assets/images/qa/ja/2.5.jpg' /></div><div class='faqInFs25FbP10'>6.さまざまな追加設定を選択できます</div><div class='faqInP5'>これは、前の手順で「すべて削除する」を選択した場合にのみ表示されます。</div><div class='faqInP5'><img src='assets/images/qa/ja/2.6.1.jpg' /></div><div class='faqInP5'><img src='assets/images/qa/ja/2.6.2.jpg' /></div><div class='faqInFs25FbP10'>7. 概要を読み、続行する準備ができたら「初期状態に戻す」を押します。</div><div class='faqInP5'>Windows はデバイスを初期状態に戻す準備をします。ブルー・スクリーンが表示されるまで待ちます。</div><div class='faqInFs25FbP10'>8.「オプションの選択」が表示されたら、「続行」を選択します。</div><div class='faqInP5'>Windows が再起動し、初期化が開始されます。初期化が起こると、PC が数回再起動する場合があります。</div><hr><div class='faqInFs25FbP10'>コミュニティーの Q&A</div><div class='faqInP5'><b>すべてを削除することを選択した場合、コンピューター内の/コンピューターに接続されているすべてのドライブが消去されますか、または Windows 10 を実行しているドライブのみが消去されますか?</b></div><div class='faqInP5'><i>コミュニティの回答</i></div><div class='faqInP10'>Windows 10 OS のドライブ (通常は C ドライブ) のみが消去されます。コンピューター内の/コンピューターに接続されている他のドライブは影響を受けません。</div><div class='faqInP5'><b>画面が壊れている場合、どうすればよいですか?</b></div><div class='faqInP5'><i>コミュニティの回答</i></div><div class='faqInP10'>残念ながら初期化できません。新しい画面を取得する必要があります。</div><div class='faqInP5'><b>Web サイトにログインした場合、その履歴も削除されますか?</b></div><div class='faqInP5'><i>コミュニティの回答</i></div><div class='faqInP10'>はい、使用しているブラウザによって異なります。ブラウザの履歴を削除するには、ブラウザの設定に移動して履歴を削除します。匿名モードを使用して、履歴を保存しないようにすることもできます。</div><div class='faqInP5'><b>すべてを削除することを選択した場合、パスワードもリセットされますか?</b></div><div class='faqInP5'><i>コミュニティの回答</i></div><div class='faqInP10'>はい、Windows 10 コンピューターを初期状態に戻すと、すべてのユーザー・データが削除されます。これには、ドキュメント、保存されたパスワード、写真、設定、ブラウザ情報、およびアプリケーション・データが含まれます。</div><hr><div class='faqInP5'>リファレンス</div><div class='faqInP5'>Windows 10 を初期状態に戻す方法 – WikiHow。</div></div>",
-            "heading1": "Symptom",
-            "para1": {
-                "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
-                "span2": "Windows can “refresh” your PC so it’s more like a fresh install without deleting your personal files."
-            },
-            "para2": "Refresh your PC, Here is what will happen: your files and personalized settings won’t change",
-            "para3": {
-                "span1": "Your PC settings will be changed back to its defaults",
-                "span2": "Apps from windows store will be kept",
-                "span3": "Apps you installed from disc or website will be removed",
-                "span4": "A list of removed files will be saved on your desktop"
-            },
-            "heading2": "Affected Brands",
-            "para4": "All Desktop and Laptops",
-            "heading3": "Operation System",
-            "para5": "Windows 8, 8.1 & 10",
-            "heading4": "Solution",
-            "para6": "Windows 8/8.1",
-            "para7": {
-                "span1": {
-                    "line1": "Tap or click",
-                    "line2": "Settings "
-                },
-                "span2": {
-                    "line1": "Tap or click",
-                    "line2": "Update and recovery"
-                },
-                "span3": {
-                    "line1": "Tap or click",
-                    "line2": "Recovery"
-                },
-                "span4": {
-                    "line1": "Under Refresh your PC without affecting your files, tap or click",
-                    "line2": "Get started."
-                },
-                "span5": {
-                    "line1": "Click",
-                    "line2": "\"Next\"."
-                },
-                "span6": {
-                    "line1": "Click",
-                    "line2": "\"Refresh\"",
-                    "line3": "to start the refresh process."
-                },
-                "span7": "Once the refresh process is done, you can find a Removed Apps list on the desktop",
-                "span8": "You can find the removed apps while refreshing your system"
-            },
-            "para8": "Windows 10",
-            "para9": {
-                "span1": {
-                    "line1": "Search for",
-                    "line2": "refresh",
-                    "line3": "in the search tool available in the Start menu"
-                },
-                "span2": {
-                    "line1": "Click on",
-                    "line2": "\"Refresh your PC without affecting your files\"",
-                    "line3": " in the search results as shown below."
-                },
-                "span3": {
-                    "line1": "Click on the",
-                    "line2": "Get started",
-                    "line3": "button just below the heading",
-                    "line4": "\"Refresh your PC without affecting your files\"",
-                    "line5": "to start refreshing your Windows 10 PC."
-                }
-            },
-            "header5": "Additional Information",
-            "para10": "In most cases, once you start to refresh your PC, it’ll finish on its own. However, if Windows needs missing files, you’ll be asked to insert recovery media, which is typically a DVD disc or thumb drive. If that happens, what you’ll need depends on your PC.",
-            "para11": "If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact Microsoft Support."
+			"title": "Windows 10 を初期状態に戻す方法",
+			"para1": "Windows 10 PC で問題が発生した場合、またはそうした Windows 10 PC を販売している場合は、PC を初期状態に戻す必要があります。初期状態に戻すことにより、ファイルを保存するか削除するかを選択して、すべてのアプリと設定を削除し、新しい Windows をインストールできます。これにより、パフォーマンスの低下などの多くの問題も修正できます。",
+            "heading1": "1.Settings アプリを開きます",
+            "para2": "画面の左下にあるスタート画像のボタンを押して、設定のギア画像を選択します。",
+            "heading2": "2.カテゴリのリストから「更新とセキュリティ」を選択します",
+            "heading3": "3.左ペインから「回復」に移動する",
+            "heading4": "4.初期化処理を開始します",
+            "para3": "上部の「この PC を初期状態に戻す」見出しの下で、「開始する」ボタンをクリックまたはタップします。",
+            "heading5": "5.ファイルを保持するかどうかを選択します",
+            "para4": "初期化した後、Microsoft アカウントにサインインできます。このアカウントで購入した Windows ストアのアプリは、すべて再インストールされます。",
+            "para5": {
+				"li1": "「個人用ファイルを保持する」と、アプリと設定は削除されますが、個人用ファイルはすべて保持されます。",
+				"li2": "「すべて削除する」と、アプリ、設定、個人用ファイルは削除されます。ファイルのバックアップ・コピーがない場合は、「キャンセル」を押してファイルをバックアップし、この処理を再度開始することができます。"
+			},
+			"heading6": "6.さまざまな追加設定を選択できます",
+            "para6": "これは、前の手順で「すべて削除する」を選択した場合にのみ表示されます。",
+            "heading7": "7. 概要を読み、続行する準備ができたら「初期状態に戻す」を押します。",
+            "para7": "Windows はデバイスを初期状態に戻す準備をします。ブルー・スクリーンが表示されるまで待ちます。",
+            "heading8": "8.「オプションの選択」が表示されたら、「続行」を選択します。",
+            "para8": "Windows が再起動し、初期化が開始されます。初期化が起こると、PC が数回再起動する場合があります。",
+            "heading9": "コミュニティーの Q&A",
+            "communityAnswer": "コミュニティの回答",
+			"q1": "すべてを削除することを選択した場合、コンピューター内の/コンピューターに接続されているすべてのドライブが消去されますか、または Windows 10 を実行しているドライブのみが消去されますか?",
+            "a1": "Windows 10 OS のドライブ (通常は C ドライブ) のみが消去されます。コンピューター内の/コンピューターに接続されている他のドライブは影響を受けません。",
+            "q2": "画面が壊れている場合、どうすればよいですか?",
+            "a2": "残念ながら初期化できません。新しい画面を取得する必要があります。",
+            "q3": "Web サイトにログインした場合、その履歴も削除されますか?",
+            "a3": "はい、使用しているブラウザによって異なります。ブラウザの履歴を削除するには、ブラウザの設定に移動して履歴を削除します。匿名モードを使用して、履歴を保存しないようにすることもできます。",
+            "q4": "すべてを削除することを選択した場合、パスワードもリセットされますか?",
+            "a4": "はい、Windows 10 コンピューターを初期状態に戻すと、すべてのユーザー・データが削除されます。これには、ドキュメント、保存されたパスワード、写真、設定、ブラウザ情報、およびアプリケーション・データが含まれます。",
+            "para9": "リファレンス",
+            "para10": "Windows 10 を初期状態に戻す方法 – WikiHow。"
         },
         "question3": {
-            "title": "ご使用のマシンの CPU を知る方法",
-            "description": "<div class='faqInFs4Fb'>    ご使用のマシンの CPU を知る方法</div><hr><h3 class='faqInFs25FbP10'>症状</h3><p>32 ビットと 64 ビットという用語は、コンピューターのプロセッサー (CPUとも呼ばれる) が情報を処理する方法を表します。64 ビット版の Windows は、32 ビットのシステムよりも効率的に大量のランダム・アクセス・メモリー (RAM) を処理します。</p><h3 class='faqInFs25FbP10'>影響を受けるブランド</h3><p>上記の症状は、以下のシステムに関連しますが、これらに限定されません。</p><ul>    <li>すべてのデスクトップとラップトップ</li></ul><h3 class='faqInFs25FbP10'>オペレーティング・システム</h3><ul>    <li>Windows 7、8、10</li></ul><h3 class='faqInFs25FbP10'>解決法</h3><p><strong><u>Windows 7 または Vista の場合</u></strong></p><ol>    <li><strong>「スタート」ボタン</strong>の<strong>「スタート」ボタン</strong>の画像をクリックして、システムを開き、「コンピューター」を右クリックし、「プロパティ」をクリックします  </li>    <li>「システム」から、システムのタイプを表示できます。</li></ol><p><strong><u>Windows 8 および Windows 10 の場合</u></strong></p><p><strong>方法 1:</strong> コントロール パネルの「システム」ウィンドウを表示します</p><ol>    <li>画面の右端から内側にスワイプして、次に<strong>「検索」</strong>をタップします。または、マウスを使用している場合は、画面の右下隅をポイントしてから、<strong>「検索」</strong>をクリックします。</li>    <li>検索ボックスに<strong>「システム」</strong>と入力してから、<strong>「設定」</strong>をタップまたはクリックします。</li>    <li><strong>「システム」</strong>をタップまたはクリックします</li>    <li>64 ビット版の Windows 8 を実行している場合は、「システム」の見出しの「システムのタイプ」フィールドに<strong>「64 ビット オペレーティング システム」</strong>と表示されます。32 <strong>ビット版の Windows</strong> <strong>8</strong> を実行している場合は、「システム」の見出しの「システムのタイプ」フィールドに<strong>「32 ビット オペレーティング システム」</strong>と表示されます。<br /> </li></ol><p><strong>方法 2</strong>: システム情報ウィンドウの表示</p><ol>    <li>画面の右端から内側にスワイプして、次に<strong>「検索」</strong>をタップします。または、マウスを使用している場合は、画面の右下隅をポイントしてから、<strong>「検索」</strong>をクリックします。</li>    <li>検索ボックスに<strong>「システム情報」</strong>と入力します</li>    <li><strong>「システム」</strong>をタップまたはクリックし、<strong>「システム情報」</strong>をタップまたはクリックして、次に<strong>「システムの要約」</strong>をタップまたはクリックします。</li>    <li><strong>64 ビット</strong>版の Windows 8 を実行している場合<strong>、</strong>「項目」の見出し下の <strong>「システムの種類」</strong>に「x64 ベース PC」が表示されます。<br /><br /><strong>32 ビット</strong>版の Windows 8 を実行している場合、「項目」の見出しの下の<strong>「システムの種類」</strong>に「x86 ベース PC」が表示されます。 </li></ol><p> </p>",
-            "heading1": "Symptom",
-            "para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
-            "heading2": "Affected Brands",
-            "para2": "The above symptom is associated with, but not limited to, the following systems:",
-            "para3": "All Desktop and Laptops",
-            "heading3": "Operating System",
-            "para4": "Windows 7, 8, 10",
-            "heading4": "Solution",
-            "para5": "Windows 7 or Vista",
-            "para6": {
-                "span1": {
-                    "line1": "Open System by clicking the",
-                    "line2": "Start button",
-                    "line3": "Picture of the Start button, right-clicking Computer, and then clicking Properties"
-                },
-                "span2": "Under System, you can view the system type."
-            },
-            "para7": "Windows 8 and Windows 10",
-            "para8": {
-                "span1": {
-                    "line1": "Method 1:",
-                    "line2": "View the System window in Control Panel"
-                },
-                "span2": {
-                    "line1": "Swipe in from the right edge of the screen, and then tap",
-                    "line2": "Search.",
-                    "line3": "Or, if you are using a mouse, point to the lower-right corner of the screen, and then click",
-                    "line4": "Search."
-                },
-                "span3": {
-                    "line1": "Type",
-                    "line2": "system",
-                    "line3": "in the search box, and then tap or click",
-                    "line4": "Settings."
-                },
-                "span4": {
-                    "line1": "Tap or click",
-                    "line2": "System"
-                },
-                "span5": {
-                    "line1": "If you are running a 64-bit version of Windows 8,",
-                    "line2": "64-bit Operating System",
-                    "line3": "is displayed in the System type field under the System heading.",
-                    "line4": "If you are running a 32",
-                    "line5": "-bit version of Windows 8, 32-bit Operating",
-                    "line6": "System is displayed in the System type field under the System heading."
-                },
-                "span6": {
-                    "line1": "Method 2:",
-                    "line2": "View the System Information window"
-                },
-                "span7": {
-                    "line1": "Swipe in from the right edge of the screen, and then tap",
-                    "line2": "Search.",
-                    "line3": "Or, if you are using a mouse, point to the lower-right corner of the screen, and then click",
-                    "line4": "Search."
-                },
-                "span8": {
-                    "line1": "In the search box, type",
-                    "line2": "system information"
-                },
-                "span9": {
-                    "line1": "Tap or click",
-                    "line2": "System",
-                    "line3": ", tap or click",
-                    "line4": "System Information,",
-                    "line5": "and then click",
-                    "line6": "System Summary."
-                },
-                "span10": {
-                    "line1": "If you are running a",
-                    "line2": 64,
-                    "line3": "bit version of Windows 8, 32-bit Operating,",
-                    "line4": "x64-based PC is displayed in the",
-                    "line5": "System type",
-                    "line6": "field under the Item heading."
-                }
-            },
-            "para9": {
-                "line1": "If you are running a",
-                "line2": "32-bit",
-                "line3": "version of Windows 8,x86-based PC is displayed in the",
-                "line4": "System type",
-                "line5": "field under the Item heading."
-            }
+			"title": "ご使用のマシンの CPU を知る方法",
+			"heading1": "症状",
+            "para1": "32 ビットと 64 ビットという用語は、コンピューターのプロセッサー (CPUとも呼ばれる) が情報を処理する方法を表します。64 ビット版の Windows は、32 ビットのシステムよりも効率的に大量のランダム・アクセス・メモリー (RAM) を処理します。",
+            "heading2": "影響を受けるブランド",
+            "para2": "上記の症状は、以下のシステムに関連しますが、これらに限定されません。",
+            "para3": "すべてのデスクトップとラップトップ",
+            "heading3": "オペレーティング・システム",
+            "para4": "Windows 7、8、10",
+            "heading4": "解決法",
+            "para5": "Windows 7 または Vista の場合",
+			"para6": "<strong>「スタート」ボタン</strong>の<strong>「スタート」ボタン</strong>の画像をクリックして、システムを開き、「コンピューター」を右クリックし、「プロパティ」をクリックします。",
+            "para7": "「システム」から、システムのタイプを表示できます。",
+            "para8": "Windows 8 および Windows 10 の場合",
+			"para9": "<strong>方法 1:</strong> コントロール パネルの「システム」ウィンドウを表示します",
+            "para10": "画面の右端から内側にスワイプして、次に<strong>「検索」</strong>をタップします。または、マウスを使用している場合は、画面の右下隅をポイントしてから、<strong>「検索」</strong>をクリックします。",
+            "para11": "検索ボックスに<strong>「システム」</strong>と入力してから、<strong>「設定」</strong>をタップまたはクリックします。",
+            "para12": "<strong>「システム」</strong>をタップまたはクリックします。",
+            "para13": "64 ビット版の Windows 8 を実行している場合は、「システム」の見出しの「システムのタイプ」フィールドに<strong>「64 ビット オペレーティング システム」</strong>と表示されます。32 <strong>ビット版の Windows</strong> <strong>8</strong> を実行している場合は、「システム」の見出しの「システムのタイプ」フィールドに<strong>「32 ビット オペレーティング システム」</strong>と表示されます。<br /> ",
+            "para14": "<strong>方法 2</strong>: システム情報ウィンドウの表示",
+            "para15": "画面の右端から内側にスワイプして、次に<strong>「検索」</strong>をタップします。または、マウスを使用している場合は、画面の右下隅をポイントしてから、<strong>「検索」</strong>をクリックします。",
+            "para16": "検索ボックスに<strong>「システム情報」</strong>と入力します。",
+            "para17": "<strong>「システム」</strong>をタップまたはクリックし、<strong>「システム情報」</strong>をタップまたはクリックして、次に<strong>「システムの要約」</strong>をタップまたはクリックします。",
+            "para18": "<strong>64 ビット</strong>版の Windows 8 を実行している場合<strong>、</strong>「項目」の見出し下の <strong>「システムの種類」</strong>に「x64 ベース PC」が表示されます。<strong>32 ビット</strong>版の Windows 8 を実行している場合、「項目」の見出しの下の<strong>「システムの種類」</strong>に「x86 ベース PC」が表示されます。 "
         },
         "question4": {
-            "title": "マシンのバッテリーの使用を確認する",
-            "description": "<div class='faqInFs4Fb'>    マシンのバッテリーの使用を確認する</div><hr><h3 class='faqInFs25FbP10'>症状</h3><p>Windows 10 には、ラップトップのバッテリー残量を表示する、新しい<strong>「バッテリーの使用」</strong>画面が含まれます。この画面では、どのアプリ (デスクトップと Windows 10 の両方の「ユニバーサル」アプリ) が電力を消費しすぎているのかを正確に知ることができます。</p><h3 class='faqInFs25FbP10'>影響を受けるブランド</h3><ul>    <li>Lenovo のラップトップ、デスクトップ</li></ul><h3 class='faqInFs25FbP10'>影響を受けるシステム</h3><ul>    <li>すべて</li></ul><h3 class='faqInFs25FbP10'>オペレーティング・システム</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>解決法</h3><p>この機能は Windows 10で新しく追加されました。従来の<strong>「コントロール パネル」</strong>の表示には格納されていないため、この機能を最初に見つける必要があります。この機能は新しい<strong>「設定」</strong>アプリにあります</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. バッテリー使用画面を見つける</h3></p><p>1.「スタート」メニューから<strong>「設定」</strong>のオプションをクリックまたはタップします</p><p>2.<strong>「設定」</strong>で、<strong>「システム」</strong><strong>「バッテリー節約機能」の順に選択します。 <br /></strong><strong></strong></p><p><img src='assets/images/qa/ja/4.1.jpg' /></p><p>3.この見出しの下の<strong>「バッテリーの使用」</strong>リンクをクリックまたはタップして、詳細を表示します。</p><p> </p><h3 class='faqInFs25FbP10'>B. 電力使用率を分析する</h3><p>4. バッテリー使用画面を変更して、過去 24 時間、48 時間、または先週からのバッテリー使用量を表示することができます</p><p>5. <strong>「システム」</strong>、<strong>「ディスプレイ」、</strong><strong>「Wi-Fi」</strong>の割合がわかります。これは、システムの処理、ディスプレイで消費された電力を表示します。</p><p>6. <strong>「使用中」</strong>および<strong>「バックグラウンド」</strong>オプションは、バックグラウンドで実行中のアプリと比較して、アプリ使用中の消費電力を示します。</p><p>7. バックグラウンドで電力を消費するアプリがある場合、<strong>「バックグラウンド アプリの設定を変更する」</strong>リンクをクリックまたはタップして、アプリがバックグラウンドで起動しないように設定します。これは、ユニバーサル Windows 10 アプリにのみ有効です。</p><p>8. 下にスクロールすると、アプリの一覧が表示されます。これは、この機能の最も便利なセクションです。一定期間にバッテリーを消費したアプリの一覧を表示します。また、各アプリが使用した電力の割合を示します</p><p><img src='assets/images/qa/ja/4.2.jpg' /></p><p> </p>",
-            "heading1": "Symptom",
-            "para1": {
-                "span1": "Windows 10 includes a new",
-                "span2": "“Battery Use”",
-                "span3": "screen that shows you what’s draining your laptop’s juice. That means it’ll tell you exactly what apps–both desktop and Windows 10 “universal” apps–are using too much power."
-            },
-            "heading2": "Affected Brands",
-            "para2": "Lenovo laptops, desktops",
-            "heading3": "Affected Systems",
-            "para3": "All",
-            "heading4": "Operating System",
+			"title": "マシンのバッテリーの使用を確認する",
+			"heading1": "症状",
+            "para1": "Windows 10 には、ラップトップのバッテリー残量を表示する、新しい<strong>「バッテリーの使用」</strong>画面が含まれます。この画面では、どのアプリ (デスクトップと Windows 10 の両方の「ユニバーサル」アプリ) が電力を消費しすぎているのかを正確に知ることができます。",
+            "heading2": "影響を受けるブランド",
+            "para2": "Lenovo のラップトップ、デスクトップ",
+            "heading3": "影響を受けるシステム",
+            "para3": "すべて",
+            "heading4": "オペレーティング・システム",
             "para4": "Windows 10",
-            "heading5": "Solution",
-            "para5": {
-                "line1": "This feature is new in Windows 10, we need to find this feature first as it is not stored in your traditional",
-                "line2": "control panel",
-                "line3": "view, this feature is located in the new",
-                "line4": "“Settings”",
-                "line5": "app"
-            },
-            "para6": {
-                "span1": "A. Find the Battery Use Screen",
-                "span2": {
-                    "line1": "1. Click or Tap the",
-                    "line2": "“Settings”",
-                    "line3": "option from the start menu"
-                },
-                "span3": {
-                    "line1": "2. In",
-                    "line2": "Settings",
-                    "line3": "select",
-                    "line4": "“System”",
-                    "line5": "and then select",
-                    "line6": "“Battery saver.”"
-                },
-                "span4": {
-                    "line1": "3. Click or tap the",
-                    "line2": "“Battery use”",
-                    "line3": "link under this heading to see more details."
-                },
-                "span5": "B. Analyze Your Power Usage",
-                "span6": "4. You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last from last week",
-                "span7": {
-                    "line1": 5,
-                    "line2": "“System”,",
-                    "line3": "“Display”,",
-                    "line4": "and",
-                    "line5": "“Wi-Fi”",
-                    "line6": "percentages. This shows how much battery power has been used by system processes, the display,"
-                },
-                "span8": {
-                    "line1": "6. The",
-                    "line2": "“In use”",
-                    "line3": "and",
-                    "line4": "“Background”",
-                    "line5": "options show how much power is used by applications while you’re using them, compared to applications running in the background."
-                },
-                "span9": {
-                    "line1": "7. If apps are using power in the background, you can click or tap the",
-                    "line2": "“Change background app settings”",
-                    "line3": "link and configure apps to not run in the background. This only works for universal Windows 10 apps."
-                },
-                "span10": "8. Scroll down further and you will see a list of applications, this is considered as the most useful section of this feature. It will display a list of the apps have used battery power in that period, and show you what percentage of your battery power each app has used."
-            }
+            "heading5": "解決法",
+            "para5": "この機能は Windows 10で新しく追加されました。従来の<strong>「コントロール パネル」</strong>の表示には格納されていないため、この機能を最初に見つける必要があります。この機能は新しい<strong>「設定」</strong>アプリにあります。",
+            "heading6": "A. バッテリー使用画面を見つける",
+            "para6": "1.「スタート」メニューから<strong>「設定」</strong>のオプションをクリックまたはタップします。",
+            "para7": "2.<strong>「設定」</strong>で、<strong>「システム」</strong><strong>「バッテリー節約機能」の順に選択します</strong>。",
+            "para8": "3.この見出しの下の<strong>「バッテリーの使用」</strong>リンクをクリックまたはタップして、詳細を表示します。",
+            "heading7": "B. 電力使用率を分析する",
+            "para9": "4. バッテリー使用画面を変更して、過去 24 時間、48 時間、または先週からのバッテリー使用量を表示することができます。",
+            "para10": "5. <strong>「システム」</strong>、<strong>「ディスプレイ」、</strong><strong>「Wi-Fi」</strong>の割合がわかります。これは、システムの処理、ディスプレイで消費された電力を表示します。",
+            "para11": "6. <strong>「使用中」</strong>および<strong>「バックグラウンド」</strong>オプションは、バックグラウンドで実行中のアプリと比較して、アプリ使用中の消費電力を示します。",
+            "para12": "7. バックグラウンドで電力を消費するアプリがある場合、<strong>「バックグラウンド アプリの設定を変更する」</strong>リンクをクリックまたはタップして、アプリがバックグラウンドで起動しないように設定します。これは、ユニバーサル Windows 10 アプリにのみ有効です。",
+            "para13": "8. 下にスクロールすると、アプリの一覧が表示されます。これは、この機能の最も便利なセクションです。一定期間にバッテリーを消費したアプリの一覧を表示します。また、各アプリが使用した電力の割合を示します。"
         },
         "question5": {
-            "title": "PC をタブレットのように使用する",
-            "description": "<div class='faqInFs4Fb'>    PC をタブレットのように使用する</div><hr><p>タブレット モードを使用すると、タッチスクリーン・デバイスを使用しているときに Windows がより直感的で使いやすくなります。</p><h3 class='faqInFs25FbP10'>タブレット モードの使用</h3><p>タブレット モードをオンにするには、タスク バーの<strong>「アクション センター」</strong>を選択してから、 <strong>「タブレット モード」</strong>を選択します。</p><p> </p><p><img src='assets/images/qa/ja/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>お願い</h3><p>デバイスでタブレット モードが自動的にオンになるかどうかを調べるには、製造元の Web サイトでデバイスを検索してください。この機能のサポート状況は、ハードウェア、インストールされているドライバー、および製造元によるデバイスの設定方法によって異なります。 </p><p> </p><p>タブレット モードでは、アプリは全画面表示になり、作業スペースが広がります。アプリを閉じるには、画面の一番下までドラッグします。</p><p> </p><h3 class='faqInFs25FbP10'>ヒント</h3><p>タスク バーは、PC がタブレット モードのときに使用できますが、画面に追加のスペースが必要な場合は非表示にすることができます。<strong>「スタート」</strong>ボタンを選択し、<strong>「設定」</strong> > <strong>「システム」</strong> > <strong>「タブレット モード」</strong>の順に選択したら、<strong>「タブレット モードでタスク バーを自動的に非表示にする」</strong>をオンにします。非表示のタスクバーを確認するには、画面の下から上にスワイプするか、そこにマウス・カーソルを合わせます。</p><h3 class='faqInFs25FbP10'>2 つのアプリを同時に使う</h3><p>タブレット モードで 2 つのアプリを並べて使用するには、開いているアプリを下に、また横にドラッグします。アプリのスナップ先の位置と、その横にスナップできる、開いているアプリが表示されます。</p><p>このビューでは、次のこともできます。</p><ul>    <li>スナップされている 2 つのアプリの間で共有エッジを使い、同時に両方のアプリのサイズを変更します。</li>    <li>タスク バーの<strong>「タスク ビュー」</strong>を選び、アプリを選択してから端までドラッグして、分割された画面にスナップさせます。</li>    <li>タスク バーの「戻る」ボタンを使用して、現在のアプリに戻ったり、その前に使っていたアプリを開いたりすることができます。</li></ul><p> </p>",
-            "heading1": "Use tablet mode",
-            "para2": {
-                "span1": "To turn on tablet mode, select",
-                "span2": "action center",
-                "span3": "on the taskbar, then select",
-                "span4": "Tablet mode."
-            },
-            "heading2": "Note",
-            "para3": "To find out if your device can automatically turn on tablet mode, search for your device on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, and how the device was set up by the manufacturer.",
-            "para4": "In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the screen.",
-            "heading3": "Tip",
-            "para5": {
-                "span1": "The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen.",
-                "span2": "Select the",
-                "span3": "Start",
-                "span4": "button, select",
-                "span5": " Settings",
-                "span6": "System",
-                "span7": "Tablet mode",
-                "span8": ", then turn on",
-                "span9": "Automatically hide the taskbar in tablet mode.",
-                "span10": "To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there."
-            },
-            "heading4": "Use two apps simultaneously",
-            "para6": "To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and you'll see any open apps next to it.",
-            "para7": "In this view, you can also:",
-            "para8": {
-                "span1": "Use the shared edge between two snapped apps to resize both apps at the same time.",
-                "span2": {
-                    "line1": "Open a new app from task view—select",
-                    "line2": "Task view",
-                    "line3": "on the taskbar, select an app, then drag it to one side to snap it into your divided screen."
-                },
-                "span3": "Use the back button on the taskbar to go back in an app, or to open an app that you were using before."
-            }
+			"title": "PC をタブレットのように使用する",
+			"para1": "タブレット モードを使用すると、タッチスクリーン・デバイスを使用しているときに Windows がより直感的で使いやすくなります。",
+            "heading1": "タブレット モードの使用",
+            "para2": "タブレット モードをオンにするには、タスク バーの<strong>「アクション センター」</strong>を選択してから、 <strong>「タブレット モード」</strong>を選択します。",
+            "heading2": "お願い",
+            "para3": "デバイスでタブレット モードが自動的にオンになるかどうかを調べるには、製造元の Web サイトでデバイスを検索してください。この機能のサポート状況は、ハードウェア、インストールされているドライバー、および製造元によるデバイスの設定方法によって異なります。 ",
+            "para4": "タブレット モードでは、アプリは全画面表示になり、作業スペースが広がります。アプリを閉じるには、画面の一番下までドラッグします。",
+            "heading3": "ヒント",
+            "para5": "タスク バーは、PC がタブレット モードのときに使用できますが、画面に追加のスペースが必要な場合は非表示にすることができます。<strong>「スタート」</strong>ボタンを選択し、<strong>「設定」</strong> > <strong>「システム」</strong> > <strong>「タブレット モード」</strong>の順に選択したら、<strong>「タブレット モードでタスク バーを自動的に非表示にする」</strong>をオンにします。非表示のタスクバーを確認するには、画面の下から上にスワイプするか、そこにマウス・カーソルを合わせます。",
+            "heading4": "2 つのアプリを同時に使う",
+            "para6": "タブレット モードで 2 つのアプリを並べて使用するには、開いているアプリを下に、また横にドラッグします。アプリのスナップ先の位置と、その横にスナップできる、開いているアプリが表示されます。",
+            "para7": "このビューでは、次のこともできます。",
+            "para8": "スナップされている 2 つのアプリの間で共有エッジを使い、同時に両方のアプリのサイズを変更します。",
+            "para9": "タスク バーの<strong>「タスク ビュー」</strong>を選び、アプリを選択してから端までドラッグして、分割された画面にスナップさせます。",
+            "para10": "タスク バーの「戻る」ボタンを使用して、現在のアプリに戻ったり、その前に使っていたアプリを開いたりすることができます。"
         },
         "question6": {
-            "title": "パーソナル・アシスタントの Cortana についてもっと知る",
-            "description": "<div class='faqInFs4Fb'>    パーソナル・アシスタントの Cortana についてもっと知る</div><hr><h3 class='faqInFs25FbP10'>Cortana とは?</h3><hr /><p>Cortana は、デジタル・エージェントです。Cortana は、ユーザーの作業を支援します。</p><p>Cortana を使用すればするほど、ユーザーの体験はよりパーソナライズされたものになります。</p><p>開始するには、検索ボックスに質問を入力するか、マイクを選択して Cortana に話しかけてください。(すべてのタイプの PC で入力できますが、通話するにはマイクが必要です。)</p><p>何を言うべきかわからない場合は、ロック画面に、またタスク バーの検索ボックスを選択すると、Cortana ホームに候補が表示されます。</p><p><img src='assets/images/qa/ja/6.1.jpg' /></p><ol>    <li>ホーム 2. ノートブック 3. 設定 4. フィードバック</li></ol><p>以下は、Cortana がユーザーのためにできることの例です。</p><ul>    <li>時間、場所、または人に基づいてリマインダーを提供する。</li>    <li>荷物、チーム、興味、およびフライトを追跡する。</li>    <li>メールとテキストを送信する。</li>    <li>カレンダーを管理して、最新の状態に保つ。</li>    <li>リストを作成および管理する。</li>    <li>チャットをしたり、ゲームをしたりする。</li>    <li>ファクト、ファイル、場所、および情報を見つける。</li>    <li>システム上の任意のアプリを開く。</li></ul><h3 class='faqInFs25FbP10'>これを試してください: リマインダーのセット</h3><hr /><p>Cortana ができることの 1 つは、リマインダーをセットすることです。Cortana は、時間、場所、または人に基づき、ユーザーに行うべきことを教えることができます。</p><p>たとえば、「次回 Tanya から電話があったら、彼女におめでとうを言うのを思い出させてください」と入力するか、または言います。</p><p>Tanya から電話を受けると、リマインダーが表示されます。</p><p>追加のボーナス &mdash; Windows Phone または iPhone または Android 用の Cortana を使用している場合は、Cortana を設定して、PC とスマートフォンの間で通知を同期することができます。</p><p><img src='assets/images/qa/ja/6.2.jpg' /></p><h3 class='faqInFs25FbP10'>コルタナさん</h3><hr /><p>「コルタナさん」と言うとき常にユーザーの声を聞くように Cortana を設定します。タスク バーの検索ボックスを選択して、Cortana ホームを開きます。次に<strong>「設定」</strong>を選択して、<strong>「「コルタナさん」と言ったら Cortana が応答するようにする」</strong>をオンにします。</p><p><img src='assets/images/qa/ja/6.3.jpg' /></p><p class='faqInFs25FbP10'>お願い</p><p>Cortana は、特定の国/地域でしか利用できません。また、Cortana の機能の一部はどこでも利用できるわけではありません。</p><p> </p>",
-            "heading1": "What is Cortana?",
-            "para1": "Cortana is your digital agent. She'll help you get things done.",
-            "para2": "The more you use Cortana, the more personalized your experience will be.",
-            "para3": "To get started, type a question in the search box, or select the microphone  and talk to Cortana. (Typing works for all types of PCs, but you need a mic to talk.)",
-            "para4": "If you’re not sure what to say, you’ll see suggestions on your lock screen, and in Cortana home when you select the search box on the taskbar.",
-            "para5": " Home 2. Notebook 3. Settings 4. Feedback",
-            "para6": "Here are some things Cortana can do for you:",
-            "bulletset1": {
-                "span1": "Give you reminders based on time, places, or people.",
-                "span2": "Track packages, teams, interests, and flights.",
-                "span3": "Send emails and texts.",
-                "span4": "Manage your calendar and keep you up to date.",
-                "span5": "Create and manage lists.",
-                "span6": "Chit chat and play games.",
-                "span7": "Find facts, files, places, and info.",
-                "span8": "Open any app on your system."
+			"title": "パーソナル・アシスタントの Cortana についてもっと知る",
+			"heading1": "Cortana とは?",
+            "para1": "Cortana は、デジタル・エージェントです。Cortana は、ユーザーの作業を支援します。",
+            "para2": "Cortana を使用すればするほど、ユーザーの体験はよりパーソナライズされたものになります。",
+            "para3": "開始するには、検索ボックスに質問を入力するか、マイクを選択して Cortana に話しかけてください。(すべてのタイプの PC で入力できますが、通話するにはマイクが必要です。)",
+            "para4": "何を言うべきかわからない場合は、ロック画面に、またタスク バーの検索ボックスを選択すると、Cortana ホームに候補が表示されます。",
+            "para5": "1. ホーム 2. ノートブック 3. 設定 4. フィードバック",
+            "para6": "以下は、Cortana がユーザーのためにできることの例です。",
+            "unorderedList1": {
+				"listItem1": "時間、場所、または人に基づいてリマインダーを提供する。",
+                "listItem2": "荷物、チーム、興味、およびフライトを追跡する。",
+                "listItem3": "メールとテキストを送信する。",
+                "listItem4": "カレンダーを管理して、最新の状態に保つ。",
+                "listItem5": "リストを作成および管理する。",
+                "listItem6": "チャットをしたり、ゲームをしたりする。",
+                "listItem7": "ファクト、ファイル、場所、および情報を見つける。",
+                "listItem8": "システム上の任意のアプリを開く。"
             },
-            "heading2": "Try this: Set a reminder",
-            "para7": "One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or even people.",
-            "para8": "For example, type or say, “Remind me to congratulate Tanya the next time she calls.”",
-            "para9": "The reminder will appear when you get a call from Tanya.",
-            "para10": "Extra bonus—if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync notifications between your PC and phone.",
-            "heading3": "Hey Cortana?",
-            "para11": {
-                "span1": "Set Cortana to hear you anytime you say “Hey Cortana.” Select the search box on the taskbar to open Cortana home.",
-                "span2": {
-                    "line1": "Then select",
-                    "line2": "Settings",
-                    "line3": "and turn on",
-                    "line4": "Let Cortana respond to “Hey Cortana.”"
-                }
-            },
-            "para12": "Note",
-            "para13": "Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere."
-        },
-        "pageTitle": "サポート詳細"
+			"heading2": "これを試してください: リマインダーのセット",
+            "para7": "Cortana ができることの 1 つは、リマインダーをセットすることです。Cortana は、時間、場所、または人に基づき、ユーザーに行うべきことを教えることができます。",
+            "para8": "たとえば、「次回 Tanya から電話があったら、彼女におめでとうを言うのを思い出させてください」と入力するか、または言います。",
+            "para9": "Tanya から電話を受けると、リマインダーが表示されます。",
+            "para10": "追加のボーナス — Windows Phone または iPhone または Android 用の Cortana を使用している場合は、Cortana を設定して、PC とスマートフォンの間で通知を同期することができます。",
+            "heading3": "コルタナさん",
+            "para11": "「コルタナさん」と言うとき常にユーザーの声を聞くように Cortana を設定します。タスク バーの検索ボックスを選択して、Cortana ホームを開きます。次に<strong>「設定」</strong>を選択して、<strong>「「コルタナさん」と言ったら Cortana が応答するようにする」</strong>をオンにします。",
+            "heading4": "お願い",
+            "para12": "Cortana は、特定の国/地域でしか利用できません。また、Cortana の機能の一部はどこでも利用できるわけではありません。"
+        }
     },
     "welcometutorial": {
         "description": "Vantage を使用すると、ドライバーの更新、診断の実行、サポートの要求、ご使用のデバイスの詳細確認が簡単になります。すばやく操作性をカスタマイズしたり、必要に合わせた有用な情報を見つけたりできます",

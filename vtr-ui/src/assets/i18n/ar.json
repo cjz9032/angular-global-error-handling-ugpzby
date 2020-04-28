@@ -2726,6 +2726,7 @@
         "ssoErrorAccountPluginNotExist": "المكون الإضافي مفقود. سنقوم باستعادة المكون الإضافي في الخلفية تلقائيًا إذا كنت متصلاً بالإنترنت. قد يستغرق هذا بعض الوقت، الرجاء المحاولة مره أخرى لاحقًا."
     },
     "faq": {
+        "pageTitle": "دعم التفاصيل",
         "footer": {
             "title": "لا تجد ما تبحث عنه؟",
             "description": "هل تحتاج إلى دعم إضافي؟ لا تتردد في الاتصال بنا عبر:",
@@ -2734,354 +2735,146 @@
         },
         "question1": {
             "title": "نسخ احتياطي للملفات واستعادتها",
-            "description": "<div>    <div class='faqInFs4Fb'>        نسخ احتياطي للملفات واستعادتها    </div>    <hr />    <div class='faqInMb7'>        من المستحسن إنشاء نسخه احتياطية لملفاتك في كل الأوقات. احتفظ بنسخ من ملفاتك على محرك أقراص آخر تلافيًا لحدوث شيء ما للملفات الأصلية.    </div>    <div class='faqInFs3Fb'>        إعداد عملية النسخ الاحتياطي    </div>    <hr />    <div class='mb-5'>        حدد زر <span class='faqInFb'>البدء</span>، وحدد <span class='faqInFb'>الإعدادات</span> > <span class='faqInFb'>التحديث والأمان</span> > <span class='faqInFb'>النسخ الاحتياطي</span> > <span class='faqInFb'>إضافة محرك أقراص</span>، ثم اختر محرك أقراص خارجيًا أو موقعًا على الشبكة لنسخك الاحتياطية.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        أصبح كل شيء جاهز. سنقوم، كل ساعة، بإجراء عملية نسخ احتياطي لكل محتويات مجلد المستخدم على جهازك <span>(C:\\Users\\اسم المستخدم)<span>. لتغيير الملفات التي يتم نسخها احتياطيًا أو عدد مرات حدوث النسخ الاحتياطي، انتقل إلى <span class='faqInFb'>مزيد من الخيارات</span>.    </div>    <div class='faqInFs3Fb'>        استعادة ملفاتك    </div>    <div class='mb-5'>        إذا كنت تفتقد ملفًا أو مجلدًا مهمًا، فإليك كيفية استعادته:    </div>    <div>        <div class='mb-3'>1. اكتب <span class='faqInFb'>استعادة الملفات</span> في مربع البحث على شريط المهام، ثم حدد <span class='faqInFb'> استعادة ملفاتك بواسطة محفوظات الملفات</span>.</div>        <div class='mb-3'>2. ابحث عن الملف المطلوب، ثم استخدم الأسهم لرؤية جميع إصداراته</div>        <div class='mb-3'>3. عندما تعثر على الإصدار المطلوب، اختر <span class='faqInFb'>استعادة</span> لحفظه في موقعه الأصلي. لحفظه في مكان آخر، اضغط باستمرار (أو انقر بزر الماوس الأيمن) على <span class='faqInFb'>استعادة</span>، وحدد <span class='faqInFb'>استعادة إلى</span>، ثم اختر موقعًا جديدًا.</div>    </div></div>",
-            "para1": {
-                "line1": "It's always good to have a backup.",
-                "line2": "Keep copies of your files on another drive in case something happens to the originals."
-            },
-            "heading1": "Set up your backup",
-            "para2": {
-                "span1": "Select the",
-                "span2": "Start",
-                "span3": "button, select",
-                "span4": "Settings",
-                "span5": "Update & security",
-                "span6": "Backup",
-                "span7": "Add a drive",
-                "span8": ", and then choose an external drive or network location for your backups."
-            },
-            "para3": {
-                "span1": "All set.",
-                "span2": "Every hour, we'll back up everything in your user folder (C:\\Users\\username).",
-                "span3": "To change which files get backed up or how often backups happen, go to",
-                "span4": "More options."
-            },
-            "heading2": "Restore your files",
-            "para4": "If you're missing an important file or folder, here's how to get it back:",
-            "para5": {
-                "span1": "1. Type",
-                "span2": "Restore files",
-                "span3": "in the search box on the taskbar, and then select",
-                "span4": "Restore your files with File History.",
-                "span5": "2. Look for the file you need, then use the arrows to see all its versions",
-                "span6": "3. When you find the version you want, select",
-                "span7": "Restore",
-                "span8": "to save it in its original location. To save it in a different place, press and hold (or right-click)",
-                "span9": "Restore",
-                "span10": ", select",
-                "span11": "Restore to",
-                "span12": "and then choose a new location."
-            }
+            "para1": "من المستحسن إنشاء نسخه احتياطية لملفاتك في كل الأوقات. احتفظ بنسخ من ملفاتك على محرك أقراص آخر تلافيًا لحدوث شيء ما للملفات الأصلية.",
+			"heading1": "إعداد عملية النسخ الاحتياطي",
+			"para2": "حدد زر البدء، وحدد الإعدادات > التحديث والأمان > النسخ الاحتياطي > إضافة محرك أقراص، ثم اختر محرك أقراص خارجيًا أو موقعًا على الشبكة لنسخك الاحتياطية.",
+			"para3": "أصبح كل شيء جاهز. سنقوم، كل ساعة، بإجراء عملية نسخ احتياطي لكل محتويات مجلد المستخدم على جهازك (C:\\Users\\اسم المستخدم). لتغيير الملفات التي يتم نسخها احتياطيًا أو عدد مرات حدوث النسخ الاحتياطي، انتقل إلى مزيد من الخيارات.",
+			"heading2": "استعادة ملفاتك",
+			"para4": "إذا كنت تفتقد ملفًا أو مجلدًا مهمًا، فإليك كيفية استعادته:",
+			"para5": {
+				"div1": "1. اكتب استعادة الملفات في مربع البحث على شريط المهام، ثم حدد  استعادة ملفاتك بواسطة محفوظات الملفات.",
+				"div2": "2. ابحث عن الملف المطلوب، ثم استخدم الأسهم لرؤية جميع إصداراته.",
+				"div3": "3. عندما تعثر على الإصدار المطلوب، اختر استعادة لحفظه في موقعه الأصلي. لحفظه في مكان آخر، اضغط باستمرار (أو انقر بزر الماوس الأيمن) على استعادة، وحدد استعادة إلى، ثم اختر موقعًا جديدًا."
+			}
         },
         "question2": {
-            "title": "كيفية إعادة ضبط الكمبيوتر",
-            "description": "<div><div class='faqInFs4Fb'>كيفية إعادة ضبط Windows 10</div><hr><div class='faqInP5'>إذا كان جهاز الكمبيوتر الذي يعمل بنظام Windows 10 يواجه بعض المشاكل أو إذا كنت تريد بيعه، فيجب إعادة ضبطه. تسمح لك عملية إعادة الضبط باختيار الاحتفاظ بملفاتك أو إزالتها وإزالة جميع التطبيقات والإعدادات وتثبيت نسخة جديدة من Windows. وبإمكانها أيضًا أن تساعد على إصلاح مشاكل كثيرة مثل الأداء البطيء.</div><div class='faqInFs25FbP10'>1. فتح تطبيق الإعدادات</div><div class='faqInP5'>اضغط على زر صورة البدء الموجود في الجهة السفلية اليمنى من الشاشة واختر صورة ترس الإعدادات.</div><div class='faqInP5'><img src='assets/images/qa/2.1.jpg' /></div><div class='faqInFs25FbP10'>2. حدد \"التحديث والأمان\" من قائمة الفئات</div><div class='faqInP5'><img src='assets/images/qa/2.2.jpg' /></div><div class='faqInFs25FbP10'>3. انتقل إلى \"الاسترداد\" من الجزء الأيمن</div><div class='faqInP5'><img src='assets/images/qa/2.3.jpg' /></div><div class='faqInFs25FbP10'>4. بدء عملية إعادة الضبط</div><div class='faqInP5'>ضمن العنوان \"إعادة ضبط الكمبيوتر\" في الجزء العلوي، انقر أو اضغط على زر \"بدء الاستخدام\".</div><div class='faqInP5'><img src='assets/images/qa/2.4.jpg' /></div><div class='faqInFs25FbP10'>5. اختر إن كنت تريد الاحتفاظ بملفاتك أم لا</div><div class='faqInP5'>بعد إعادة الضبط، يمكنك تسجيل الدخول إلى حسابك في Microsoft. سيُعاد تثبيت تطبيقات متجر Windows التي تم شراؤها تحت هذا الحساب.</div><div class='faqInP5'><ul><li>يؤدي اختيار \"الاحتفاظ بملفاتي\" إلى إزالة تطبيقاتك وإعداداتك، ولكن مع الاحتفاظ بجميع ملفاتك الشخصية.</li><li>يؤدي اختيار \"إزالة كل الملفات\" إلى مسح تطبيقاتك وإعداداتك وملفاتك الشخصية. إذا لم يكن لديك نسخة احتياطية من ملفاتك، فقد ترغب في الضغط على \"إلغاء\" وإنشاء نسخة احتياطية لهذه الملفات وبدء هذه العملية مرة أخرى.</li></ul></div><div class='faqInP5'><img src='assets/images/qa/2.5.jpg' /></div><div class='faqInFs25FbP10'>6. يمكنك اختيار إعدادات إضافية مختلفة</div><div class='faqInP5'>لن يظهر هذا إلا إذا حددت \"إزالة كل الملفات\" في الخطوة السابقة.</div><div class='faqInP5'><img src='assets/images/qa/2.6.1.jpg' /></div><div class='faqInP5'><img src='assets/images/qa/2.6.2.jpg' /></div><div class='faqInFs25FbP10'>7. اقرأ النظرة العامة واضغط على إعادة الضبط عندما تكون مستعدًا للمتابعة.</div><div class='faqInP5'>سوف يستعد Windows لإعادة ضبط جهازك. ما عليك سوى الانتظار حتى يتم نقلك إلى شاشة زرقاء.</div><div class='faqInFs25FbP10'>8. عند ظهور \"تحديد خيار\" ، حدد \"متابعة\".</div><div class='faqInP5'>سيُعاد تشغيل Windows وتبدأ عملية إعادة الضبط. قد يتم تمهيد الكمبيوتر عدة مرات أثناء عملية إعادة الضبط.</div><hr><div class='faqInFs25FbP10'>سؤال وجواب المجتمع</div><div class='faqInP5'><b>إذا اخترت إزالة كل شيء، فهل يؤدي ذلك إلى مسح كل محركات الأقراص الموجودة في/المتصلة بجهاز الكمبيوتر أو فقط محرك الأقراص الذي أقوم بتشغيل Windows 10 عليه؟</b></div><div class='faqInP5'><i>جواب المجتمع</i></div><div class='faqInP10'>سيؤدي ذلك إلى مسح محرك أقراص نظام التشغيل Windows 10 فقط (عادةً محرك الأقراص C:). لن تتأثر محركات الأقراص الأخرى الموجودة في/المتصلة بالكمبيوتر.</div><div class='faqInP5'><b>كيف يمكنني القيام بذلك إذا كانت شاشتي مكسورة؟</b></div><div class='faqInP5'><i>جواب المجتمع</i></div><div class='faqInP10'>لسوء الحظ، لا يمكنك القيام بذلك. سوف تحتاج إلى شاشة جديدة.</div><div class='faqInP5'><b>إذا سجلت دخولي إلى أي موقع ويب، فهل ستُزال هذه المحفوظات أيضًا؟</b></div><div class='faqInP5'><i>جواب المجتمع</i></div><div class='faqInP10'>نعم، وهذا يتوقف على المستعرض الذي تستخدمه. لإزالة محفوظات الاستعراض، ما عليك سوى الانتقال إلى إعداداتك في المستعرض وحذف المحفوظات. يمكنك أيضًا استخدام أوضاع الاستعراض المتخفي لتجنب حفظ المحفوظات.</div><div class='faqInP5'><b>إذا اخترت إزالة كل شيء، فهل سيؤدي ذلك إلى إعادة تعيين كلمة مرور أيضًا؟</b></div><div class='faqInP5'><i>جواب المجتمع</i></div><div class='faqInP10'>نعم، ستؤدي عملية إعادة ضبط جهاز الكمبيوتر الذي يعمل بنظام Windows 10 إلى إزالة جميع بيانات المستخدم. وهذا يشمل المستندات وكلمات المرور المخزنة والصور والإعدادات المفضلة ومعلومات المستعرض وبيانات التطبيقات.</div><hr><div class='faqInP5'>المرجع</div><div class='faqInP5'>كيفية إعادة ضبط Windows 10 – WikiHow.</div></div>",
-            "heading1": "Symptom",
-            "para1": {
-                "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
-                "span2": "Windows can “refresh” your PC so it’s more like a fresh install without deleting your personal files."
-            },
-            "para2": "Refresh your PC, Here is what will happen: your files and personalized settings won’t change",
-            "para3": {
-                "span1": "Your PC settings will be changed back to its defaults",
-                "span2": "Apps from windows store will be kept",
-                "span3": "Apps you installed from disc or website will be removed",
-                "span4": "A list of removed files will be saved on your desktop"
-            },
-            "heading2": "Affected Brands",
-            "para4": "All Desktop and Laptops",
-            "heading3": "Operation System",
-            "para5": "Windows 8, 8.1 & 10",
-            "heading4": "Solution",
-            "para6": "Windows 8/8.1",
-            "para7": {
-                "span1": {
-                    "line1": "Tap or click",
-                    "line2": "Settings "
-                },
-                "span2": {
-                    "line1": "Tap or click",
-                    "line2": "Update and recovery"
-                },
-                "span3": {
-                    "line1": "Tap or click",
-                    "line2": "Recovery"
-                },
-                "span4": {
-                    "line1": "Under Refresh your PC without affecting your files, tap or click",
-                    "line2": "Get started."
-                },
-                "span5": {
-                    "line1": "Click",
-                    "line2": "\"Next\"."
-                },
-                "span6": {
-                    "line1": "Click",
-                    "line2": "\"Refresh\"",
-                    "line3": "to start the refresh process."
-                },
-                "span7": "Once the refresh process is done, you can find a Removed Apps list on the desktop",
-                "span8": "You can find the removed apps while refreshing your system"
-            },
-            "para8": "Windows 10",
-            "para9": {
-                "span1": {
-                    "line1": "Search for",
-                    "line2": "refresh",
-                    "line3": "in the search tool available in the Start menu"
-                },
-                "span2": {
-                    "line1": "Click on",
-                    "line2": "\"Refresh your PC without affecting your files\"",
-                    "line3": " in the search results as shown below."
-                },
-                "span3": {
-                    "line1": "Click on the",
-                    "line2": "Get started",
-                    "line3": "button just below the heading",
-                    "line4": "\"Refresh your PC without affecting your files\"",
-                    "line5": "to start refreshing your Windows 10 PC."
-                }
-            },
-            "header5": "Additional Information",
-            "para10": "In most cases, once you start to refresh your PC, it’ll finish on its own. However, if Windows needs missing files, you’ll be asked to insert recovery media, which is typically a DVD disc or thumb drive. If that happens, what you’ll need depends on your PC.",
-            "para11": "If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact Microsoft Support."
+            "title": "كيفية إعادة ضبط Windows 10",
+			"para1": "إذا كان جهاز الكمبيوتر الذي يعمل بنظام Windows 10 يواجه بعض المشاكل أو إذا كنت تريد بيعه، فيجب إعادة ضبطه. تسمح لك عملية إعادة الضبط باختيار الاحتفاظ بملفاتك أو إزالتها وإزالة جميع التطبيقات والإعدادات وتثبيت نسخة جديدة من Windows. وبإمكانها أيضًا أن تساعد على إصلاح مشاكل كثيرة مثل الأداء البطيء.",
+			"heading1": "1. فتح تطبيق الإعدادات",
+			"para2": "اضغط على زر صورة البدء الموجود في الجهة السفلية اليمنى من الشاشة واختر صورة ترس الإعدادات.",
+			"heading2": "2. حدد \"التحديث والأمان\" من قائمة الفئات",
+			"heading3": "3. انتقل إلى \"الاسترداد\" من الجزء الأيمن",
+			"heading4": "4. بدء عملية إعادة الضبط",
+			"para3": "ضمن العنوان \"إعادة ضبط الكمبيوتر\" في الجزء العلوي، انقر أو اضغط على زر \"بدء الاستخدام\".",
+			"heading5": "5. اختر إن كنت تريد الاحتفاظ بملفاتك أم لا",
+			"para4": "بعد إعادة الضبط، يمكنك تسجيل الدخول إلى حسابك في Microsoft. سيُعاد تثبيت تطبيقات متجر Windows التي تم شراؤها تحت هذا الحساب.",
+			"para5": {
+				"li1": "يؤدي اختيار \"الاحتفاظ بملفاتي\" إلى إزالة تطبيقاتك وإعداداتك، ولكن مع الاحتفاظ بجميع ملفاتك الشخصية.",
+				"li2": "يؤدي اختيار \"إزالة كل الملفات\" إلى مسح تطبيقاتك وإعداداتك وملفاتك الشخصية. إذا لم يكن لديك نسخة احتياطية من ملفاتك، فقد ترغب في الضغط على \"إلغاء\" وإنشاء نسخة احتياطية لهذه الملفات وبدء هذه العملية مرة أخرى."
+			},
+			"heading6": "6. يمكنك اختيار إعدادات إضافية مختلفة",
+			"para6": "لن يظهر هذا إلا إذا حددت \"إزالة كل الملفات\" في الخطوة السابقة.",
+			"heading7": "7. اقرأ النظرة العامة واضغط على إعادة الضبط عندما تكون مستعدًا للمتابعة.",
+			"para7": "سوف يستعد Windows لإعادة ضبط جهازك. ما عليك سوى الانتظار حتى يتم نقلك إلى شاشة زرقاء.",
+			"heading8": "8. عند ظهور \"تحديد خيار\" ، حدد \"متابعة\".",
+			"para8": "سيُعاد تشغيل Windows وتبدأ عملية إعادة الضبط. قد يتم تمهيد الكمبيوتر عدة مرات أثناء عملية إعادة الضبط.",
+			"heading9": "سؤال وجواب المجتمع",
+			"communityAnswer": "جواب المجتمع",
+			"q1": "إذا اخترت إزالة كل شيء، فهل يؤدي ذلك إلى مسح كل محركات الأقراص الموجودة في/المتصلة بجهاز الكمبيوتر أو فقط محرك الأقراص الذي أقوم بتشغيل Windows 10 عليه؟",
+			"a1": "سيؤدي ذلك إلى مسح محرك أقراص نظام التشغيل Windows 10 فقط (عادةً محرك الأقراص C:). لن تتأثر محركات الأقراص الأخرى الموجودة في/المتصلة بالكمبيوتر.",
+			"q2": "كيف يمكنني القيام بذلك إذا كانت شاشتي مكسورة؟",
+			"a2": "لسوء الحظ، لا يمكنك القيام بذلك. سوف تحتاج إلى شاشة جديدة.",
+			"q3": "إذا سجلت دخولي إلى أي موقع ويب، فهل ستُزال هذه المحفوظات أيضًا؟",
+			"a3": "نعم، وهذا يتوقف على المستعرض الذي تستخدمه. لإزالة محفوظات الاستعراض، ما عليك سوى الانتقال إلى إعداداتك في المستعرض وحذف المحفوظات. يمكنك أيضًا استخدام أوضاع الاستعراض المتخفي لتجنب حفظ المحفوظات.",
+			"q4": "إذا اخترت إزالة كل شيء، فهل سيؤدي ذلك إلى إعادة تعيين كلمة مرور أيضًا؟",
+			"a4": "نعم، ستؤدي عملية إعادة ضبط جهاز الكمبيوتر الذي يعمل بنظام Windows 10 إلى إزالة جميع بيانات المستخدم. وهذا يشمل المستندات وكلمات المرور المخزنة والصور والإعدادات المفضلة ومعلومات المستعرض وبيانات التطبيقات.",
+			"para9": "المرجع",
+			"para10": "كيفية إعادة ضبط Windows 10 – WikiHow."
         },
         "question3": {
-            "title": "كيفية التعرف على وحدة المعالجة المركزية لجهازك",
-            "description": "<div class='faqInFs4Fb'>    كيفية التعرف على وحدة المعالجة المركزية لجهازك</div><hr><h3 class='faqInFs25FbP10'>العرض</h3><p>يشير المصطلحان 32 بت و64 بت إلى الطريقة التي يستخدمها معالج الكمبيوتر (يسمى أيضًا وحدة المعالجة المركزية) لمعالجة المعلومات. يعالج الإصدار 64 بت من Windows كميات كبيرة من ذاكرة الوصول العشوائي (RAM) بشكل أكثر فعالية من نظام 32 بت.</p><h3 class='faqInFs25FbP10'>العلامات التجارية المتأثرة</h3><p>ترتبط الأعراض المذكورة أعلاه بالأنظمة التالية، على سبيل المثال لا الحصر:</p><ul>    <li>جميع أجهزة سطح المكتب وأجهزة الكمبيوتر المحمولة</li></ul><h3 class='faqInFs25FbP10'>نظام التشغيل</h3><ul>    <li>Windows 7 و8 و10</li></ul><h3 class='faqInFs25FbP10'>الحل</h3><p><strong><u>Windows 7 أو Vista</u></strong></p><ol>    <li>افتح النظام بالنقر فوق <strong>زر البدء </strong>صورة <strong>زر البدء،</strong> ثم النقر بزر الماوس الأيمن فوق \"الكمبيوتر\"، ثم النقر فوق \"خصائص\".  </li>    <li>تحت \"النظام\"، يمكنك عرض نوع النظام.</li></ol><p><strong><u>Windows 8 وWindows 10</u></strong></p><p><strong>الطريقة 1:</strong> عرض نافذة النظام في لوحة التحكم</p><ol>    <li>امسح للداخل من الحافة اليمنى للشاشة، ثم اضغط على <strong>بحث</strong>. أو إذا كنت تستخدم الماوس، فيمكنك الإشارة إلى الركن السفلي الأيمن من الشاشة، ثم النقر فوق <strong>بحث.</strong></li>    <li>اكتب <strong>النظام</strong> في مربع البحث، ثم اضغط أو انقر فوق <strong>الإعدادات.</strong></li>    <li>اضغط أو انقر فوق <strong>النظام</strong></li>    <li>إذا كنت تقوم بتشغيل إصدار 64 بت من نظام التشغيل Windows 8، فسيظهر <strong>نظام تشغيل 64 بت</strong> في حقل نوع النظام تحت العنوان \"النظام\" إذا كنت تقوم بتشغيل إصدار 32<strong> بت من نظام التشغيل Windows</strong> <strong>8، فسيظهر</strong> <strong>نظام تشغيل 32 بت </strong>في حقل نوع النظام تحت العنوان \"النظام\".<br />  </li></ol><p><strong>الطريقة 2</strong>: عرض نافذة معلومات النظام</p><ol>    <li>امسح للداخل من الحافة اليمنى للشاشة، ثم اضغط على <strong>بحث</strong>. أو إذا كنت تستخدم الماوس، فيمكنك الإشارة إلى الركن السفلي الأيمن من الشاشة، ثم النقر فوق <strong>بحث.</strong></li>    <li>في مربع البحث، اكتب <strong>معلومات النظام</strong></li>    <li>اضغط أو انقر فوق<strong> النظام</strong>، واضغط أو انقر فوق <strong>معلومات النظام،</strong> ثم انقر فوق <strong>ملخص النظام.</strong></li>    <li>إذا كنت تقوم بتشغيل إصدار <strong>64 بت </strong>من Windows 8<strong>، يظهر الخيار </strong> \"كمبيوتر مستند إلى x64\" في الحقل <strong>نوع النظام</strong> تحت العنوان \"العنصر\". <br /> <br /> إذا كنت تقوم بتشغيل إصدار<strong> 32 بت</strong> من Windows 8، يظهر الخيار \"كمبيوتر مستند إلى x86\" في الحقل <strong>نوع النظام</strong> تحت العنوان \"العنصر\".  </li></ol><p> </p>",
-            "heading1": "Symptom",
-            "para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
-            "heading2": "Affected Brands",
-            "para2": "The above symptom is associated with, but not limited to, the following systems:",
-            "para3": "All Desktop and Laptops",
-            "heading3": "Operating System",
-            "para4": "Windows 7, 8, 10",
-            "heading4": "Solution",
-            "para5": "Windows 7 or Vista",
-            "para6": {
-                "span1": {
-                    "line1": "Open System by clicking the",
-                    "line2": "Start button",
-                    "line3": "Picture of the Start button, right-clicking Computer, and then clicking Properties"
-                },
-                "span2": "Under System, you can view the system type."
-            },
-            "para7": "Windows 8 and Windows 10",
-            "para8": {
-                "span1": {
-                    "line1": "Method 1:",
-                    "line2": "View the System window in Control Panel"
-                },
-                "span2": {
-                    "line1": "Swipe in from the right edge of the screen, and then tap",
-                    "line2": "Search.",
-                    "line3": "Or, if you are using a mouse, point to the lower-right corner of the screen, and then click",
-                    "line4": "Search."
-                },
-                "span3": {
-                    "line1": "Type",
-                    "line2": "system",
-                    "line3": "in the search box, and then tap or click",
-                    "line4": "Settings."
-                },
-                "span4": {
-                    "line1": "Tap or click",
-                    "line2": "System"
-                },
-                "span5": {
-                    "line1": "If you are running a 64-bit version of Windows 8,",
-                    "line2": "64-bit Operating System",
-                    "line3": "is displayed in the System type field under the System heading.",
-                    "line4": "If you are running a 32",
-                    "line5": "-bit version of Windows 8, 32-bit Operating",
-                    "line6": "System is displayed in the System type field under the System heading."
-                },
-                "span6": {
-                    "line1": "Method 2:",
-                    "line2": "View the System Information window"
-                },
-                "span7": {
-                    "line1": "Swipe in from the right edge of the screen, and then tap",
-                    "line2": "Search.",
-                    "line3": "Or, if you are using a mouse, point to the lower-right corner of the screen, and then click",
-                    "line4": "Search."
-                },
-                "span8": {
-                    "line1": "In the search box, type",
-                    "line2": "system information"
-                },
-                "span9": {
-                    "line1": "Tap or click",
-                    "line2": "System",
-                    "line3": ", tap or click",
-                    "line4": "System Information,",
-                    "line5": "and then click",
-                    "line6": "System Summary."
-                },
-                "span10": {
-                    "line1": "If you are running a",
-                    "line2": 64,
-                    "line3": "bit version of Windows 8, 32-bit Operating,",
-                    "line4": "x64-based PC is displayed in the",
-                    "line5": "System type",
-                    "line6": "field under the Item heading."
-                }
-            },
-            "para9": {
-                "line1": "If you are running a",
-                "line2": "32-bit",
-                "line3": "version of Windows 8,x86-based PC is displayed in the",
-                "line4": "System type",
-                "line5": "field under the Item heading."
-            }
+			"title": "كيفية التعرف على وحدة المعالجة المركزية لجهازك",
+			"heading1": "العرض",
+            "para1": "يشير المصطلحان 32 بت و64 بت إلى الطريقة التي يستخدمها معالج الكمبيوتر (يسمى أيضًا وحدة المعالجة المركزية) لمعالجة المعلومات. يعالج الإصدار 64 بت من Windows كميات كبيرة من ذاكرة الوصول العشوائي (RAM) بشكل أكثر فعالية من نظام 32 بت.",
+            "heading2": "العلامات التجارية المتأثرة",
+            "para2": "ترتبط الأعراض المذكورة أعلاه بالأنظمة التالية، على سبيل المثال لا الحصر:",
+            "para3": "جميع أجهزة سطح المكتب وأجهزة الكمبيوتر المحمولة",
+            "heading3": "نظام التشغيل",
+            "para4": "Windows 7 و8 و10",
+            "heading4": "الحل",
+            "para5": "Windows 7 أو Vista",
+			"para6": "افتح النظام بالنقر فوق <strong>زر البدء </strong>صورة <strong>زر البدء،</strong> ثم النقر بزر الماوس الأيمن فوق \"الكمبيوتر\"، ثم النقر فوق \"خصائص\".",
+            "para7": "تحت \"النظام\"، يمكنك عرض نوع النظام.",
+            "para8": "Windows 8 وWindows 10",
+			"para9": "<strong>الطريقة 1:</strong> عرض نافذة النظام في لوحة التحكم",
+            "para10": "امسح للداخل من الحافة اليمنى للشاشة، ثم اضغط على <strong>بحث</strong>. أو إذا كنت تستخدم الماوس، فيمكنك الإشارة إلى الركن السفلي الأيمن من الشاشة، ثم النقر فوق <strong>بحث.</strong>",
+            "para11": "اكتب <strong>النظام</strong> في مربع البحث، ثم اضغط أو انقر فوق <strong>الإعدادات.</strong>",
+            "para12": "اضغط أو انقر فوق <strong>النظام</strong>.",
+            "para13": "إذا كنت تقوم بتشغيل إصدار 64 بت من نظام التشغيل Windows 8، فسيظهر <strong>نظام تشغيل 64 بت</strong> في حقل نوع النظام تحت العنوان \"النظام\" إذا كنت تقوم بتشغيل إصدار 32<strong> بت من نظام التشغيل Windows</strong> <strong>8، فسيظهر</strong> <strong>نظام تشغيل 32 بت </strong>في حقل نوع النظام تحت العنوان \"النظام\".<br />  ",
+            "para14": "<strong>الطريقة 2</strong>: عرض نافذة معلومات النظام",
+            "para15": "امسح للداخل من الحافة اليمنى للشاشة، ثم اضغط على <strong>بحث</strong>. أو إذا كنت تستخدم الماوس، فيمكنك الإشارة إلى الركن السفلي الأيمن من الشاشة، ثم النقر فوق <strong>بحث.</strong>",
+            "para16": "في مربع البحث، اكتب <strong>معلومات النظام</strong>.",
+            "para17": "اضغط أو انقر فوق<strong> النظام</strong>، واضغط أو انقر فوق <strong>معلومات النظام،</strong> ثم انقر فوق <strong>ملخص النظام.</strong>",
+            "para18": "إذا كنت تقوم بتشغيل إصدار <strong>64 بت </strong>من Windows 8<strong>، يظهر الخيار </strong> \"كمبيوتر مستند إلى x64\" في الحقل <strong>نوع النظام</strong> تحت العنوان \"العنصر\". إذا كنت تقوم بتشغيل إصدار<strong> 32 بت</strong> من Windows 8، يظهر الخيار \"كمبيوتر مستند إلى x86\" في الحقل <strong>نوع النظام</strong> تحت العنوان \"العنصر\".  "
         },
         "question4": {
-            "title": "التحقق من استخدام بطارية الجهاز",
-            "description": "<div class='faqInFs4Fb'>    التحقق من استخدام بطارية الجهاز</div><hr><h3 class='faqInFs25FbP10'>العرض</h3><p>يتضمن Windows 10 شاشة جديدة \"<strong>استخدام البطارية\"</strong> تبين لك الأسباب التي تستنزف طاقة الكمبيوتر المحمول. يعني هذا الأمر أن هذه الشاشة ستعلمك بشكل دقيق عن التطبيقات، التطبيقات \"العالمية\" لنظام Windows 10 وتطبيقات سطح المكتب، التي تستهلك قدرًا كبيرًا من الطاقة.</p><h3 class='faqInFs25FbP10'>العلامات التجارية المتأثرة</h3><ul>    <li>أجهزة الكمبيوتر المحمولة وأجهزة كمبيوتر سطح المكتب من Lenovo</li></ul><h3 class='faqInFs25FbP10'>الأنظمة المتأثرة</h3><ul>    <li>كل</li></ul><h3 class='faqInFs25FbP10'>نظام التشغيل</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>الحل</h3><p>تعتبر هذه الميزة جديدة في نظام التشغيل Windows 10، ونحن نحتاج إلى العثور على هذه الميزة أولاً لأنها غير مخزنة في طريقة عرض <strong>لوحة التحكم </strong>التقليدية. تقع هذه الميزة في تطبيق <strong>“الإعدادات”</strong> الجديد</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>أ. ابحث عن شاشة استخدام البطارية</h3></p><p>1. انقر أو اضغط على الخيار <strong>\"الإعدادات</strong>\" من قائمة البدء.</p><p>2. في <strong>الإعدادات </strong>، حدد <strong>“النظام”</strong>ثم حدد <strong>“موفر البطارية.”<br /></strong> <strong></strong></p><p><img src='assets/images/qa/4.1.jpg' /></p><p>3. انقر أو اضغط على الارتباط <strong>\"استخدام البطارية\"</strong> تحت هذا العنوان لرؤية المزيد من التفاصيل. </p><p> </p><h3 class='faqInFs25FbP10'>ب. تحليل استخدام الطاقة لديك</h3><p>4. يمكنك تغيير شاشة استخدام البطارية بحيث تعرض معلومات حول استخدام البطارية من آخر 24 ساعة وصولاً إلى آخر 48 ساعة أو أخيرًا من الأسبوع الماضي</p><p>5. النسب المئوية لكل من <strong>“النظام،”</strong> “<strong>جهاز العرض،</strong>” و\"<strong>Wi-Fi”</strong>. توضح هذه النسب مقدار طاقة البطارية المستخدمة بواسطة عمليات النظام، وجهاز العرض.</p><p>6. يُظهر الخيار <strong>“قيد الاستخدام”</strong> بالإضافة إلى الخيار <strong>“الخفية”</strong> مقدار الطاقة الذي تستخدمه التطبيقات أثناء استخدامك لها، مقارنةً بالتطبيقات التي تعمل في الخلفية.</p><p>7. إذا كانت التطبيقات تستخدم الطاقة في الخلفية، فيمكنك الضغط أو النقر فوق الارتباط <strong> “تغيير إعدادات التطبيقات في الخلفية” </strong>وتكوين التطبيقات بحيث لا تعمل في الخلفية هذا يعمل فقط مع تطبيقات Windows 10 العالمية.</p><p>8. قم بالتمرير لأسفل إلى أبعد من ذلك وسترى قائمة بالتطبيقات، ويعتبر هذا القسم الأكثر إفادة في هذه الميزة. سيعرض قائمة بالتطبيقات التي استخدمت طاقة البطارية في تلك الفترة، وسيظهر لك النسبة المئوية من طاقة البطارية التي استخدمها كل تطبيق</p><p><img src='assets/images/qa/4.2.jpg' /></p><p> </p>",
-            "heading1": "Symptom",
-            "para1": {
-                "span1": "Windows 10 includes a new",
-                "span2": "“Battery Use”",
-                "span3": "screen that shows you what’s draining your laptop’s juice. That means it’ll tell you exactly what apps–both desktop and Windows 10 “universal” apps–are using too much power."
-            },
-            "heading2": "Affected Brands",
-            "para2": "Lenovo laptops, desktops",
-            "heading3": "Affected Systems",
-            "para3": "All",
-            "heading4": "Operating System",
+			"title": "التحقق من استخدام بطارية الجهاز",
+			"heading1": "العرض",
+            "para1": "يتضمن Windows 10 شاشة جديدة \"<strong>استخدام البطارية\"</strong> تبين لك الأسباب التي تستنزف طاقة الكمبيوتر المحمول. يعني هذا الأمر أن هذه الشاشة ستعلمك بشكل دقيق عن التطبيقات، التطبيقات \"العالمية\" لنظام Windows 10 وتطبيقات سطح المكتب، التي تستهلك قدرًا كبيرًا من الطاقة.",
+            "heading2": "العلامات التجارية المتأثرة",
+            "para2": "أجهزة الكمبيوتر المحمولة وأجهزة كمبيوتر سطح المكتب من Lenovo",
+            "heading3": "الأنظمة المتأثرة",
+            "para3": "كل",
+            "heading4": "نظام التشغيل",
             "para4": "Windows 10",
-            "heading5": "Solution",
-            "para5": {
-                "line1": "This feature is new in Windows 10, we need to find this feature first as it is not stored in your traditional",
-                "line2": "control panel",
-                "line3": "view, this feature is located in the new",
-                "line4": "“Settings”",
-                "line5": "app"
-            },
-            "para6": {
-                "span1": "A. Find the Battery Use Screen",
-                "span2": {
-                    "line1": "1. Click or Tap the",
-                    "line2": "“Settings”",
-                    "line3": "option from the start menu"
-                },
-                "span3": {
-                    "line1": "2. In",
-                    "line2": "Settings",
-                    "line3": "select",
-                    "line4": "“System”",
-                    "line5": "and then select",
-                    "line6": "“Battery saver.”"
-                },
-                "span4": {
-                    "line1": "3. Click or tap the",
-                    "line2": "“Battery use”",
-                    "line3": "link under this heading to see more details."
-                },
-                "span5": "B. Analyze Your Power Usage",
-                "span6": "4. You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last from last week",
-                "span7": {
-                    "line1": 5,
-                    "line2": "“System”,",
-                    "line3": "“Display”,",
-                    "line4": "and",
-                    "line5": "“Wi-Fi”",
-                    "line6": "percentages. This shows how much battery power has been used by system processes, the display,"
-                },
-                "span8": {
-                    "line1": "6. The",
-                    "line2": "“In use”",
-                    "line3": "and",
-                    "line4": "“Background”",
-                    "line5": "options show how much power is used by applications while you’re using them, compared to applications running in the background."
-                },
-                "span9": {
-                    "line1": "7. If apps are using power in the background, you can click or tap the",
-                    "line2": "“Change background app settings”",
-                    "line3": "link and configure apps to not run in the background. This only works for universal Windows 10 apps."
-                },
-                "span10": "8. Scroll down further and you will see a list of applications, this is considered as the most useful section of this feature. It will display a list of the apps have used battery power in that period, and show you what percentage of your battery power each app has used."
-            }
+            "heading5": "الحل",
+            "para5": "تعتبر هذه الميزة جديدة في نظام التشغيل Windows 10، ونحن نحتاج إلى العثور على هذه الميزة أولاً لأنها غير مخزنة في طريقة عرض <strong>لوحة التحكم </strong>التقليدية. تقع هذه الميزة في تطبيق <strong>“الإعدادات”</strong> الجديد.",
+            "heading6": "أ. ابحث عن شاشة استخدام البطارية",
+            "para6": "1. انقر أو اضغط على الخيار <strong>\"الإعدادات</strong>\" من قائمة البدء.",
+            "para7": "2. في <strong>الإعدادات </strong>، حدد <strong>“النظام”</strong>ثم حدد <strong>“موفر البطارية”</strong>.",
+            "para8": "3. انقر أو اضغط على الارتباط <strong>\"استخدام البطارية\"</strong> تحت هذا العنوان لرؤية المزيد من التفاصيل. ",
+            "heading7": "ب. تحليل استخدام الطاقة لديك",
+            "para9": "4. يمكنك تغيير شاشة استخدام البطارية بحيث تعرض معلومات حول استخدام البطارية من آخر 24 ساعة وصولاً إلى آخر 48 ساعة أو أخيرًا من الأسبوع الماضي.",
+            "para10": "5. النسب المئوية لكل من <strong>“النظام،”</strong> “<strong>جهاز العرض،</strong>” و\"<strong>Wi-Fi”</strong>. توضح هذه النسب مقدار طاقة البطارية المستخدمة بواسطة عمليات النظام، وجهاز العرض.",
+            "para11": "6. يُظهر الخيار <strong>“قيد الاستخدام”</strong> بالإضافة إلى الخيار <strong>“الخفية”</strong> مقدار الطاقة الذي تستخدمه التطبيقات أثناء استخدامك لها، مقارنةً بالتطبيقات التي تعمل في الخلفية.",
+            "para12": "7. إذا كانت التطبيقات تستخدم الطاقة في الخلفية، فيمكنك الضغط أو النقر فوق الارتباط <strong> “تغيير إعدادات التطبيقات في الخلفية” </strong>وتكوين التطبيقات بحيث لا تعمل في الخلفية هذا يعمل فقط مع تطبيقات Windows 10 العالمية.",
+            "para13": "8. قم بالتمرير لأسفل إلى أبعد من ذلك وسترى قائمة بالتطبيقات، ويعتبر هذا القسم الأكثر إفادة في هذه الميزة. سيعرض قائمة بالتطبيقات التي استخدمت طاقة البطارية في تلك الفترة، وسيظهر لك النسبة المئوية من طاقة البطارية التي استخدمها كل تطبيق."
         },
         "question5": {
-            "title": "استخدام الكمبيوتر الشخصي ككمبيوتر لوحي",
-            "description": "<div class='faqInFs4Fb'>    استخدام الكمبيوتر الشخصي ككمبيوتر لوحي</div><hr><p>يضفي وضع الكمبيوتر اللوحي المزيد من السهولة والبساطة على استخدام Windows عندما يكون لديك جهاز مزود بشاشة تعمل باللمس.</p><h3 class='faqInFs25FbP10'>استخدام وضع الكمبيوتر اللوحي</h3><p>لتشغيل وضع الكمبيوتر اللوحي، حدد <strong>مركز الإجراءات</strong> على شريط المهام، ثم حدد <strong>وضع الكمبيوتر اللوحي</strong> .</p><p> </p><p><img src='assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>ملحوظة</h3><p>لمعرفة ما إذا كان باستطاعة جهازك تشغيل وضع الكمبيوتر اللوحي تلقائيًا، ابحث عن جهازك على موقع الشركة المصنعة على الويب. يتوقف دعم هذه الميزة على الأجهزة وبرنامج التشغيل المثبت وكيفية إعداد جهازك بواسطة الشركة المصنعة. </p><p> </p><p>في وضع الكمبيوتر اللوحي، تفتح التطبيقات في ملء الشاشة، مما يمنحك مساحة أكبر للعمل. لإغلاق تطبيق، اسحبه إلى أسفل الشاشة.</p><p> </p><h3 class='faqInFs25FbP10'>تلميح</h3><p>يتوفر شريط المهام عندما يكون الكمبيوتر في وضع الكمبيوتر اللوحي، ولكن إذا أردت الحصول على مساحة أكبر على الشاشة، فاعمل على إخفائه. حدد زر <strong>البدء</strong>، وحدد <strong>الإعدادات </strong>> <strong>النظام </strong>> <strong> وضع الكمبيوتر اللوحي </strong>، ثم قم بتشغيل الخيار <strong>إخفاء شريط المهام تلقائيًا في وضع الكمبيوتر اللوحي</strong>. لرؤية شريط المهام المخفي، اسحب لأعلى من أسفل الشاشة، أو استخدم الماوس للتمرير هناك.</p><h3 class='faqInFs25FbP10'>استخدام تطبيقين في الوقت نفسه</h3><p>لاستخدام تطبيقين جنبًا إلى جنب في وضع الكمبيوتر اللوحي، اسحب تطبيقًا مفتوحًا إلى الأسفل وإلى الجانب. سترى المكان حيث ستتم محاذاته، وسترى أي تطبيقات مفتوحة إلى جانبه.</p><p>في طريقة العرض هذه، يمكنك أيضًا:</p><ul>    <li>استخدام الحافة المشتركة بين تطبيقين مصغرين لتغيير حجم التطبيقين في نفس الوقت.</li>    <li>فتح تطبيق جديد من طريقة عرض المهمة&mdash;حدد <strong>طريقة عرض المهمة</strong> على شريط المهام، وتحديد تطبيق، ثم سحبه إلى جانب واحد لمحاذاته على شاشتك المقسمة.</li>    <li>استخدام زر السابق على شريط المهام للعودة إلى أحد التطبيقات، أو لفتح تطبيق كنت تستخدمه من قبل.</li></ul><p> </p>",
-            "heading1": "Use tablet mode",
-            "para2": {
-                "span1": "To turn on tablet mode, select",
-                "span2": "action center",
-                "span3": "on the taskbar, then select",
-                "span4": "Tablet mode."
-            },
-            "heading2": "Note",
-            "para3": "To find out if your device can automatically turn on tablet mode, search for your device on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, and how the device was set up by the manufacturer.",
-            "para4": "In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the screen.",
-            "heading3": "Tip",
-            "para5": {
-                "span1": "The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen.",
-                "span2": "Select the",
-                "span3": "Start",
-                "span4": "button, select",
-                "span5": " Settings",
-                "span6": "System",
-                "span7": "Tablet mode",
-                "span8": ", then turn on",
-                "span9": "Automatically hide the taskbar in tablet mode.",
-                "span10": "To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there."
-            },
-            "heading4": "Use two apps simultaneously",
-            "para6": "To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and you'll see any open apps next to it.",
-            "para7": "In this view, you can also:",
-            "para8": {
-                "span1": "Use the shared edge between two snapped apps to resize both apps at the same time.",
-                "span2": {
-                    "line1": "Open a new app from task view—select",
-                    "line2": "Task view",
-                    "line3": "on the taskbar, select an app, then drag it to one side to snap it into your divided screen."
-                },
-                "span3": "Use the back button on the taskbar to go back in an app, or to open an app that you were using before."
-            }
+			"title": "استخدام الكمبيوتر الشخصي ككمبيوتر لوحي",
+			"para1": "يضفي وضع الكمبيوتر اللوحي المزيد من السهولة والبساطة على استخدام Windows عندما يكون لديك جهاز مزود بشاشة تعمل باللمس.",
+            "heading1": "استخدام وضع الكمبيوتر اللوحي",
+            "para2": "لتشغيل وضع الكمبيوتر اللوحي، حدد <strong>مركز الإجراءات</strong> على شريط المهام، ثم حدد <strong>وضع الكمبيوتر اللوحي</strong> .",
+            "heading2": "ملحوظة",
+            "para3": "لمعرفة ما إذا كان باستطاعة جهازك تشغيل وضع الكمبيوتر اللوحي تلقائيًا، ابحث عن جهازك على موقع الشركة المصنعة على الويب. يتوقف دعم هذه الميزة على الأجهزة وبرنامج التشغيل المثبت وكيفية إعداد جهازك بواسطة الشركة المصنعة. ",
+            "para4": "في وضع الكمبيوتر اللوحي، تفتح التطبيقات في ملء الشاشة، مما يمنحك مساحة أكبر للعمل. لإغلاق تطبيق، اسحبه إلى أسفل الشاشة.",
+            "heading3": "تلميح",
+            "para5": "يتوفر شريط المهام عندما يكون الكمبيوتر في وضع الكمبيوتر اللوحي، ولكن إذا أردت الحصول على مساحة أكبر على الشاشة، فاعمل على إخفائه. حدد زر <strong>البدء</strong>، وحدد <strong>الإعدادات </strong>> <strong>النظام </strong>> <strong> وضع الكمبيوتر اللوحي </strong>، ثم قم بتشغيل الخيار <strong>إخفاء شريط المهام تلقائيًا في وضع الكمبيوتر اللوحي</strong>. لرؤية شريط المهام المخفي، اسحب لأعلى من أسفل الشاشة، أو استخدم الماوس للتمرير هناك.",
+            "heading4": "استخدام تطبيقين في الوقت نفسه",
+            "para6": "لاستخدام تطبيقين جنبًا إلى جنب في وضع الكمبيوتر اللوحي، اسحب تطبيقًا مفتوحًا إلى الأسفل وإلى الجانب. سترى المكان حيث ستتم محاذاته، وسترى أي تطبيقات مفتوحة إلى جانبه.",
+            "para7": "في طريقة العرض هذه، يمكنك أيضًا:",
+            "para8": "استخدام الحافة المشتركة بين تطبيقين مصغرين لتغيير حجم التطبيقين في نفس الوقت.",
+            "para9": "فتح تطبيق جديد من طريقة عرض المهمة—حدد <strong>طريقة عرض المهمة</strong> على شريط المهام، وتحديد تطبيق، ثم سحبه إلى جانب واحد لمحاذاته على شاشتك المقسمة.",
+            "para10": "استخدام زر السابق على شريط المهام للعودة إلى أحد التطبيقات، أو لفتح تطبيق كنت تستخدمه من قبل."
         },
         "question6": {
-            "title": "التعرف على Cortana، مساعدك الشخصي",
-            "description": "<div class='faqInFs4Fb'>    التعرف على Cortana، مساعدك الشخصي</div><hr><h3 class='faqInFs25FbP10'>ما المقصود بميزة Cortana؟</h3><hr /><p>تعتبر ميزة Cortana وكيلك الرقمي. سوف تساعدك على تنفيذ مهامك.</p><p>ويساعدك استخدام Cortana على إضفاء المزيد من الطابع الشخصي على تجربتك.</p><p>لبدء الاستخدام، اكتب سؤالاً في مربع البحث، أو حدد الميكروفون وتحدث مع Cortana. (تعمل الكتابة على جميع أنواع أجهزة الكمبيوتر، لكنك تحتاج إلى ميكروفون للتحدث.)</p><p>إذا لم تكن متأكدًا مما ستقوله، فسترى اقتراحات على شاشة التأمين، وفي صفحة Cortana الرئيسية عندما تحدد مربع البحث على شريط المهام.</p><p><img src='assets/images/qa/6.1.jpg' /></p><ol class='listingNone'>    <li dir=\"rtl\">1. الصفحة الرئيسية 2. الكمبيوتر المحمول 3. الإعدادات 4. الملاحظات</li></ol><p>فيما يلي بعض الأشياء التي تستطيع Cortana القيام بها:</p><ul>    <li>تقديم تذكيرات استنادًا إلى الوقت أو الأماكن أو الأشخاص</li>    <li>تعقب العروض والفرق والاهتمامات والرحلات الجوية.</li>    <li>إرسال نصوص ورسائل إلكترونية.</li>    <li>إدارة تقويمك ومساعدتك في البقاء على اطلاع دائم.</li>    <li>إنشاء القوائم وإدارتها.</li>    <li>الدردشة وممارسة الألعاب.</li>    <li>البحث عن الحقائق والملفات والأماكن والمعلومات.</li>    <li>فتح أي تطبيق على نظامك.</li></ul><h3 class='faqInFs25FbP10'>جرّب هذا الأمر: تعيين تذكير</h3><hr /><p>تعتبر التذكيرات أحد الأشياء التي يمكن لميزة Cortana القيام بها. باستطاعة هذه الميزة تذكيرك بالأشياء استنادًا إلى الوقت أو الأماكن أو حتى الأشخاص.</p><p>على سبيل المثال، أكتب أو قل \"ذكريني بتهنئة تانيا عندما تتصل في المرة القادمة\".</p><p>سيظهر التذكير عندما تتلقى اتصالاً من تانيا.</p><p>مكافأة إضافية &mdash; إذا كان لديك هاتف يعمل بنظام Windows أو Cortana لجهاز iPhone أو Android، فيمكنك تعيين Cortana لمزامنة الإشعارات بين جهاز الكمبيوتر والهاتف.</p><p><img src='assets/images/qa/6.2.jpg' /></p><h3 class='faqInFs25FbP10'>مرحبًا Cortana؟</h3><hr /><p>يمكنك ضبط Cortana بحيث تسمعك في أي وقت تقول فيه \"مرحبًا Cortana\". حدد مربع البحث على شريط المهام لفتح صفحة Cortana الرئيسية. ثم حدد <strong>الإعدادات</strong> وقم بتشغيل الخيار <strong>السماح لـ Cortana بالرد على \"مرحبًا Cortana\".</strong></p><p><img src='assets/images/qa/6.3.jpg' /></p><p class='faqInFs25FbP10'>ملحوظة</p><p>تتوفر Cortana فقط في بعض البلدان/المناطق ، وقد لا تتوفر بعض ميزات Cortana في كل مكان.</p><p> </p>",
-            "heading1": "What is Cortana?",
-            "para1": "Cortana is your digital agent. She'll help you get things done.",
-            "para2": "The more you use Cortana, the more personalized your experience will be.",
-            "para3": "To get started, type a question in the search box, or select the microphone  and talk to Cortana. (Typing works for all types of PCs, but you need a mic to talk.)",
-            "para4": "If you’re not sure what to say, you’ll see suggestions on your lock screen, and in Cortana home when you select the search box on the taskbar.",
-            "para5": " Home 2. Notebook 3. Settings 4. Feedback",
-            "para6": "Here are some things Cortana can do for you:",
-            "bulletset1": {
-                "span1": "Give you reminders based on time, places, or people.",
-                "span2": "Track packages, teams, interests, and flights.",
-                "span3": "Send emails and texts.",
-                "span4": "Manage your calendar and keep you up to date.",
-                "span5": "Create and manage lists.",
-                "span6": "Chit chat and play games.",
-                "span7": "Find facts, files, places, and info.",
-                "span8": "Open any app on your system."
+			"title": "التعرف على Cortana، مساعدك الشخصي",
+			"heading1": "ما المقصود بميزة Cortana؟",
+            "para1": "تعتبر ميزة Cortana وكيلك الرقمي. سوف تساعدك على تنفيذ مهامك.",
+            "para2": "ويساعدك استخدام Cortana على إضفاء المزيد من الطابع الشخصي على تجربتك.",
+            "para3": "لبدء الاستخدام، اكتب سؤالاً في مربع البحث، أو حدد الميكروفون وتحدث مع Cortana. (تعمل الكتابة على جميع أنواع أجهزة الكمبيوتر، لكنك تحتاج إلى ميكروفون للتحدث.)",
+            "para4": "إذا لم تكن متأكدًا مما ستقوله، فسترى اقتراحات على شاشة التأمين، وفي صفحة Cortana الرئيسية عندما تحدد مربع البحث على شريط المهام.",
+            "para5": "1. الصفحة الرئيسية 2. الكمبيوتر المحمول 3. الإعدادات 4. الملاحظات",
+            "para6": "فيما يلي بعض الأشياء التي تستطيع Cortana القيام بها:",
+            "unorderedList1": {
+				"listItem1": "تقديم تذكيرات استنادًا إلى الوقت أو الأماكن أو الأشخاص.",
+                "listItem2": "تعقب العروض والفرق والاهتمامات والرحلات الجوية.",
+                "listItem3": "إرسال نصوص ورسائل إلكترونية.",
+                "listItem4": "إدارة تقويمك ومساعدتك في البقاء على اطلاع دائم.",
+                "listItem5": "إنشاء القوائم وإدارتها.",
+                "listItem6": "الدردشة وممارسة الألعاب.",
+                "listItem7": "البحث عن الحقائق والملفات والأماكن والمعلومات.",
+                "listItem8": "فتح أي تطبيق على نظامك."
             },
-            "heading2": "Try this: Set a reminder",
-            "para7": "One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or even people.",
-            "para8": "For example, type or say, “Remind me to congratulate Tanya the next time she calls.”",
-            "para9": "The reminder will appear when you get a call from Tanya.",
-            "para10": "Extra bonus—if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync notifications between your PC and phone.",
-            "heading3": "Hey Cortana?",
-            "para11": {
-                "span1": "Set Cortana to hear you anytime you say “Hey Cortana.” Select the search box on the taskbar to open Cortana home.",
-                "span2": {
-                    "line1": "Then select",
-                    "line2": "Settings",
-                    "line3": "and turn on",
-                    "line4": "Let Cortana respond to “Hey Cortana.”"
-                }
-            },
-            "para12": "Note",
-            "para13": "Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere."
-        },
-        "pageTitle": "دعم التفاصيل"
+			"heading2": "جرّب هذا الأمر: تعيين تذكير",
+            "para7": "تعتبر التذكيرات أحد الأشياء التي يمكن لميزة Cortana القيام بها. باستطاعة هذه الميزة تذكيرك بالأشياء استنادًا إلى الوقت أو الأماكن أو حتى الأشخاص.",
+            "para8": "على سبيل المثال، أكتب أو قل \"ذكريني بتهنئة تانيا عندما تتصل في المرة القادمة\".",
+            "para9": "سيظهر التذكير عندما تتلقى اتصالاً من تانيا.",
+            "para10": "مكافأة إضافية — إذا كان لديك هاتف يعمل بنظام Windows أو Cortana لجهاز iPhone أو Android، فيمكنك تعيين Cortana لمزامنة الإشعارات بين جهاز الكمبيوتر والهاتف.",
+            "heading3": "مرحبًا Cortana؟",
+            "para11": "يمكنك ضبط Cortana بحيث تسمعك في أي وقت تقول فيه \"مرحبًا Cortana\". حدد مربع البحث على شريط المهام لفتح صفحة Cortana الرئيسية. ثم حدد <strong>الإعدادات</strong> وقم بتشغيل الخيار <strong>السماح لـ Cortana بالرد على \"مرحبًا Cortana\".</strong>",
+            "heading4": "ملحوظة",
+            "para12": "تتوفر Cortana فقط في بعض البلدان/المناطق ، وقد لا تتوفر بعض ميزات Cortana في كل مكان."
+        }
     },
     "welcometutorial": {
         "description": "يسهّل Vantage تحديث برامج التشغيل وتشغيل عمليات التشخيص وطلب الدعم والتعرف على جهازك.  تمكّن من تخصيص تجربتك والعثور على معلومات مفيدة مصممة خصيصًا لتناسب احتياجاتك.",

@@ -2724,6 +2724,7 @@
         "ssoErrorAccountPluginNotExist": "Η προσθήκη λείπει. Θα αποκαταστήσουμε την προσθήκη στο παρασκήνιο αυτόματα, εάν είστε συνδεδεμένοι στο Internet. Αυτό μπορεί να πάρει κάποιο χρόνο, παρακαλώ δοκιμάστε ξανά αργότερα."
     },
     "faq": {
+        "pageTitle": "Λεπτομέρειες Υποστήριξης",
         "footer": {
             "title": "Δεν βρίσκει αυτό που ψάχνετε;",
             "description": "Χρειάζεστε επιπλέον υποστήριξη; Μη διστάσετε να επικοινωνήσετε μαζί μας μέσω:",
@@ -2732,354 +2733,146 @@
         },
         "question1": {
             "title": "Δημιουργία αντιγράφων ασφαλείας και επαναφορά των αρχείων σας",
-            "description": "<div>    <div class='faqInFs4Fb'>        Δημιουργία αντιγράφων ασφαλείας και επαναφορά των αρχείων σας    </div>    <hr />    <div class='faqInMb7'>        Η δημιουργία αντιγράφων ασφαλείας είναι πάντα χρήσιμη. Να διατηρείτε αντίγραφα των αρχείων σας σε άλλη μονάδα σε περίπτωση που συμβεί κάτι στα πρωτότυπα αρχεία.    </div>    <div class='faqInFs3Fb'>        Ρύθμιση του αντιγράφου ασφαλείας    </div>    <hr />    <div class='mb-5'>        Επιλέξτε το κουμπί <span class='faqInFb'>Έναρξη (Start)</span>, επιλέξτε <span class='faqInFb'>Ρυθμίσεις (Settings)</span> > <span class='faqInFb'>Ενημέρωση και ασφάλεια (Update & security)</span> > <span class='faqInFb'>Αντίγραφο ασφαλείας (Backup)</span> > <span class='faqInFb'>Προσθήκη μονάδας (Add a drive)</span> και, στη συνέχεια, επιλέξτε μια εξωτερική μονάδα ή τοποθεσία δικτύου για τα αντίγραφα ασφαλείας.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Όλα εντάξει. Κάθε ώρα, θα δημιουργούμε ένα αντίγραφο ασφαλείας όλων των περιεχομένων του φακέλου χρήστη (C:\\Users\\το όνομα χρήστη σας). Για να αλλάξετε το ποια αρχεία θα περιλαμβάνονται στα αντίγραφα ασφαλείας και πόσο συχνά θα δημιουργούνται αντίγραφα ασφαλείας, μεταβείτε στο στοιχείο <span class='faqInFb'>Περισσότερες επιλογές</span>.    </div>    <div class='faqInFs3Fb'>        Επαναφορά των αρχείων σας    </div>    <div class='mb-5'>        Αν σας λείπει ένα σημαντικό αρχείο ή φάκελος, δείτε τι μπορείτε να κάνετε για να το ανακτήσετε:    </div>    <div>        <div class='mb-3'>1. Πληκτρολογήστε <span class='faqInFb'>Επαναφορά αρχείων</span> στο πλαίσιο αναζήτησης στη γραμμή εργασιών και, στη συνέχεια, επιλέξτε <span class='faqInFb'>Επαναφορά των αρχείων σας με το Ιστορικό αρχείων (Restore your files with File History)</span>.</div>        <div class='mb-3'>2. Αναζητήστε το αρχείο που χρειάζεστε και, στη συνέχεια, χρησιμοποιήστε τα βέλη για να δείτε όλες τις εκδόσεις</div>        <div class='mb-3'>3. Μόλις βρείτε την έκδοση που θέλετε, επιλέξτε <span class='faqInFb'>Επαναφορά (Restore)</span> για να την αποθηκεύσετε στην αρχική της τοποθεσία. Για να την αποθηκεύσετε σε διαφορετική τοποθεσία, πατήστε παρατεταμένα (ή κάντε δεξί κλικ) στην επιλογή <span class='faqInFb'>Επαναφορά (Restore)</span>, επιλέξτε <span class='faqInFb'>Επαναφορά σε (Restore to)</span> και, στη συνέχεια, επιλέξτε μια νέα τοποθεσία.</div>    </div></div>",
-            "para1": {
-                "line1": "It's always good to have a backup.",
-                "line2": "Keep copies of your files on another drive in case something happens to the originals."
-            },
-            "heading1": "Set up your backup",
-            "para2": {
-                "span1": "Select the",
-                "span2": "Start",
-                "span3": "button, select",
-                "span4": "Settings",
-                "span5": "Update & security",
-                "span6": "Backup",
-                "span7": "Add a drive",
-                "span8": ", and then choose an external drive or network location for your backups."
-            },
-            "para3": {
-                "span1": "All set.",
-                "span2": "Every hour, we'll back up everything in your user folder (C:\\Users\\username).",
-                "span3": "To change which files get backed up or how often backups happen, go to",
-                "span4": "More options."
-            },
-            "heading2": "Restore your files",
-            "para4": "If you're missing an important file or folder, here's how to get it back:",
-            "para5": {
-                "span1": "1. Type",
-                "span2": "Restore files",
-                "span3": "in the search box on the taskbar, and then select",
-                "span4": "Restore your files with File History.",
-                "span5": "2. Look for the file you need, then use the arrows to see all its versions",
-                "span6": "3. When you find the version you want, select",
-                "span7": "Restore",
-                "span8": "to save it in its original location. To save it in a different place, press and hold (or right-click)",
-                "span9": "Restore",
-                "span10": ", select",
-                "span11": "Restore to",
-                "span12": "and then choose a new location."
-            }
+            "para1": "Η δημιουργία αντιγράφων ασφαλείας είναι πάντα χρήσιμη. Να διατηρείτε αντίγραφα των αρχείων σας σε άλλη μονάδα σε περίπτωση που συμβεί κάτι στα πρωτότυπα αρχεία.",
+			"heading1": "Ρύθμιση του αντιγράφου ασφαλείας",
+			"para2": "Επιλέξτε το κουμπί Έναρξη (Start), επιλέξτε Ρυθμίσεις (Settings) > Ενημέρωση και ασφάλεια (Update & security) > Αντίγραφο ασφαλείας (Backup) > Προσθήκη μονάδας (Add a drive) και, στη συνέχεια, επιλέξτε μια εξωτερική μονάδα ή τοποθεσία δικτύου για τα αντίγραφα ασφαλείας.",
+			"para3": "Όλα εντάξει. Κάθε ώρα, θα δημιουργούμε ένα αντίγραφο ασφαλείας όλων των περιεχομένων του φακέλου χρήστη (C:\\Users\\το όνομα χρήστη σας). Για να αλλάξετε το ποια αρχεία θα περιλαμβάνονται στα αντίγραφα ασφαλείας και πόσο συχνά θα δημιουργούνται αντίγραφα ασφαλείας, μεταβείτε στο στοιχείο Περισσότερες επιλογές.",
+			"heading2": "Επαναφορά των αρχείων σας",
+			"para4": "Αν σας λείπει ένα σημαντικό αρχείο ή φάκελος, δείτε τι μπορείτε να κάνετε για να το ανακτήσετε:",
+			"para5": {
+				"div1": "1. Πληκτρολογήστε Επαναφορά αρχείων στο πλαίσιο αναζήτησης στη γραμμή εργασιών και, στη συνέχεια, επιλέξτε Επαναφορά των αρχείων σας με το Ιστορικό αρχείων (Restore your files with File History).",
+				"div2": "2. Αναζητήστε το αρχείο που χρειάζεστε και, στη συνέχεια, χρησιμοποιήστε τα βέλη για να δείτε όλες τις εκδόσεις.",
+				"div3": "3. Μόλις βρείτε την έκδοση που θέλετε, επιλέξτε Επαναφορά (Restore) για να την αποθηκεύσετε στην αρχική της τοποθεσία. Για να την αποθηκεύσετε σε διαφορετική τοποθεσία, πατήστε παρατεταμένα (ή κάντε δεξί κλικ) στην επιλογή Επαναφορά (Restore), επιλέξτε Επαναφορά σε (Restore to) και, στη συνέχεια, επιλέξτε μια νέα τοποθεσία."
+			}
         },
         "question2": {
-            "title": "Πώς να κάνετε επαναφορά του υπολογιστή σας",
-            "description": "<div><div class='faqInFs4Fb'>Τρόπος επαναφοράς των Windows 10</div><hr><div class='faqInP5'>Αν παρουσιάζονται προβλήματα στον υπολογιστή σας με Windows 10 ή αν πρόκειται να τον πουλήσετε, θα πρέπει να κάνετε επαναφορά. Η εκτέλεση επαναφοράς σάς επιτρέπει να επιλέξετε να διατηρήσετε ή να καταργήσετε τα αρχεία σας, καταργεί όλες τις εφαρμογές και τις ρυθμίσεις και εγκαθιστά ένα νέο αντίγραφο των Windows. Αυτό μπορεί επίσης να διορθώσει πολλά προβλήματα όπως η αργή απόδοση.</div><div class='faqInFs25FbP10'>1. Ανοίξτε την εφαρμογή Settings</div><div class='faqInP5'>Πατήστε το κουμπί εικόνας Έναρξη που βρίσκεται στο κάτω αριστερά μέρος της οθόνης και επιλέξτε την εικόνα του γραναζιού ρυθμίσεων.</div><div class='faqInP5'><img src='assets/images/qa/2.1.jpg' /></div><div class='faqInFs25FbP10'>2. Επιλέξτε Ενημέρωση και ασφάλεια από τη λίστα κατηγοριών</div><div class='faqInP5'><img src='assets/images/qa/2.2.jpg' /></div><div class='faqInFs25FbP10'>3. Μεταβείτε στην επιλογή Αποκατάσταση από το αριστερό παράθυρο</div><div class='faqInP5'><img src='assets/images/qa/2.3.jpg' /></div><div class='faqInFs25FbP10'>4. Ξεκινήστε τη διαδικασία επαναφοράς</div><div class='faqInP5'>Στην περιοχή της επικεφαλίδας \"Επαναφορά αυτού του υπολογιστή\", στο επάνω μέρος, κάντε κλικ ή πατήστε το κουμπί Γρήγορα αποτελέσματα.</div><div class='faqInP5'><img src='assets/images/qa/2.4.jpg' /></div><div class='faqInFs25FbP10'>5. Επιλέξτε αν θέλετε να διατηρήσετε τα αρχεία σας ή όχι</div><div class='faqInP5'>Μετά από την επαναφορά, μπορείτε να συνδεθείτε στον λογαριασμό Microsoft. Θα γίνει επανεγκατάσταση οποιωνδήποτε εφαρμογών του Windows Store σε αυτόν τον λογαριασμό.</div><div class='faqInP5'><ul><li>Η επιλογή Διατήρηση των αρχείων μου καταργεί τις εφαρμογές και τις ρυθμίσεις, αλλά διατηρεί όλα τα προσωπικά αρχεία σας.</li><li>Η επιλογή Κατάργηση όλων διαγράφει τις εφαρμογές, τις ρυθμίσεις και τα προσωπικά αρχεία σας. Εάν δεν έχετε δημιουργήσει αντίγραφο ασφαλείας των αρχείων σας, ίσως θελήσετε να πατήσετε ακύρωση, να δημιουργήσετε αντίγραφο ασφαλείας και να ξεκινήσετε τη διαδικασία ξανά.</li></ul></div><div class='faqInP5'><img src='assets/images/qa/2.5.jpg' /></div><div class='faqInFs25FbP10'>6. Μπορείτε να επιλέξετε διαφορετικές επιπρόσθετες ρυθμίσεις</div><div class='faqInP5'>Αυτό θα εμφανιστεί μόνο αν έχετε ορίσετε την επιλογή \"Κατάργηση όλων\" στο προηγούμενο βήμα.</div><div class='faqInP5'><img src='assets/images/qa/2.6.1.jpg' /></div><div class='faqInP5'><img src='assets/images/qa/2.6.2.jpg' /></div><div class='faqInFs25FbP10'>7. Διαβάστε την επισκόπηση και πατήστε Επαναφορά όταν θα είστε έτοιμοι να συνεχίσετε.</div><div class='faqInP5'>Τα Windows θα προετοιμαστούν για την επαναφορά της συσκευής σας. Απλώς περιμένετε μέχρι να μεταφερθείτε σε μια μπλε οθόνη.</div><div class='faqInFs25FbP10'>8. Μόλις εμφανιστεί η οθόνη \"Ορίστε μια επιλογή\", επιλέξτε Συνέχεια.</div><div class='faqInP5'>Θα γίνει επανεκκίνηση των Windows και θα ξεκινήσει η επαναφορά. Ο υπολογιστής σας ίσως κάνει επανεκκίνηση αρκετές φορές κατά τη διάρκεια της επαναφοράς.</div><hr><div class='faqInFs25FbP10'>Ερωτήσεις και απαντήσεις κοινότητας</div><div class='faqInP5'><b>Αν επιλέξω την κατάργηση όλων, θα διαγραφούν όλες οι μονάδες δίσκου που περιέχονται/είναι συνδεδεμένες με τον υπολογιστή μου ή μόνο εκείνη στην οποία εκτελούνται τα Windows 10;</b></div><div class='faqInP5'><i>Απάντηση κοινότητας</i></div><div class='faqInP10'>Θα διαγραφεί μόνο η μονάδα δίσκου του λειτουργικού συστήματος Windows 10 (συνήθως η μονάδα δίσκου C:). Οι άλλες μονάδες δίσκου που περιέχονται/είναι συνδεδεμένες με τον υπολογιστή σας δεν θα επηρεαστούν.</div><div class='faqInP5'><b>Πώς μπορώ να το κάνω αυτό αν η οθόνη μου είναι χαλασμένη;</b></div><div class='faqInP5'><i>Απάντηση κοινότητας</i></div><div class='faqInP10'>Δυστυχώς, δεν μπορείτε να το κάνετε. Θα χρειαστεί να αποκτήσετε νέα οθόνη.</div><div class='faqInP5'><b>Αν έχω συνδεθεί σε οποιονδήποτε ιστότοπο, θα καταργηθεί και αυτό το ιστορικό επίσης;</b></div><div class='faqInP5'><i>Απάντηση κοινότητας</i></div><div class='faqInP10'>Ναι, ανάλογα με το πρόγραμμα περιήγησης που χρησιμοποιείτε. Για να καταργήσετε το ιστορικό του προγράμματος περιήγησης απλώς μεταβείτε στις ρυθμίσεις στο πρόγραμμα περιήγησης και διαγράψτε το ιστορικό σας. Μπορείτε επίσης να χρησιμοποιήσετε τις λειτουργίες ανώνυμης περιήγησης ώστε να μην αποθηκεύεται το ιστορικό σας.</div><div class='faqInP5'><b>Αν επιλέξω την κατάργηση όλων, θα προκαλέσει αυτό και την επαναφορά του κωδικού πρόσβασής μου;</b></div><div class='faqInP5'><i>Απάντηση κοινότητας</i></div><div class='faqInP10'>Ναι, μόλις κάνετε επαναφορά του υπολογιστή με τα Windows 10, θα καταργηθούν όλα τα δεδομένα χρήστη. Αυτό συμπεριλαμβάνει τα έγγραφα, τους αποθηκευμένους κωδικούς πρόσβασης, τις φωτογραφίες, τις προτιμώμενες ρυθμίσεις, τις πληροφορίες του προγράμματος περιήγησης και τα δεδομένα εφαρμογών.</div><hr><div class='faqInP5'>Παραπομπή</div><div class='faqInP5'>Τρόπος επαναφοράς των Windows 10 – WikiHow.</div></div>",
-            "heading1": "Symptom",
-            "para1": {
-                "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
-                "span2": "Windows can “refresh” your PC so it’s more like a fresh install without deleting your personal files."
-            },
-            "para2": "Refresh your PC, Here is what will happen: your files and personalized settings won’t change",
-            "para3": {
-                "span1": "Your PC settings will be changed back to its defaults",
-                "span2": "Apps from windows store will be kept",
-                "span3": "Apps you installed from disc or website will be removed",
-                "span4": "A list of removed files will be saved on your desktop"
-            },
-            "heading2": "Affected Brands",
-            "para4": "All Desktop and Laptops",
-            "heading3": "Operation System",
-            "para5": "Windows 8, 8.1 & 10",
-            "heading4": "Solution",
-            "para6": "Windows 8/8.1",
-            "para7": {
-                "span1": {
-                    "line1": "Tap or click",
-                    "line2": "Settings "
-                },
-                "span2": {
-                    "line1": "Tap or click",
-                    "line2": "Update and recovery"
-                },
-                "span3": {
-                    "line1": "Tap or click",
-                    "line2": "Recovery"
-                },
-                "span4": {
-                    "line1": "Under Refresh your PC without affecting your files, tap or click",
-                    "line2": "Get started."
-                },
-                "span5": {
-                    "line1": "Click",
-                    "line2": "\"Next\"."
-                },
-                "span6": {
-                    "line1": "Click",
-                    "line2": "\"Refresh\"",
-                    "line3": "to start the refresh process."
-                },
-                "span7": "Once the refresh process is done, you can find a Removed Apps list on the desktop",
-                "span8": "You can find the removed apps while refreshing your system"
-            },
-            "para8": "Windows 10",
-            "para9": {
-                "span1": {
-                    "line1": "Search for",
-                    "line2": "refresh",
-                    "line3": "in the search tool available in the Start menu"
-                },
-                "span2": {
-                    "line1": "Click on",
-                    "line2": "\"Refresh your PC without affecting your files\"",
-                    "line3": " in the search results as shown below."
-                },
-                "span3": {
-                    "line1": "Click on the",
-                    "line2": "Get started",
-                    "line3": "button just below the heading",
-                    "line4": "\"Refresh your PC without affecting your files\"",
-                    "line5": "to start refreshing your Windows 10 PC."
-                }
-            },
-            "header5": "Additional Information",
-            "para10": "In most cases, once you start to refresh your PC, it’ll finish on its own. However, if Windows needs missing files, you’ll be asked to insert recovery media, which is typically a DVD disc or thumb drive. If that happens, what you’ll need depends on your PC.",
-            "para11": "If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact Microsoft Support."
-        },
+			"title": "Τρόπος επαναφοράς των Windows 10",
+			"para1": "Αν παρουσιάζονται προβλήματα στον υπολογιστή σας με Windows 10 ή αν πρόκειται να τον πουλήσετε, θα πρέπει να κάνετε επαναφορά. Η εκτέλεση επαναφοράς σάς επιτρέπει να επιλέξετε να διατηρήσετε ή να καταργήσετε τα αρχεία σας, καταργεί όλες τις εφαρμογές και τις ρυθμίσεις και εγκαθιστά ένα νέο αντίγραφο των Windows. Αυτό μπορεί επίσης να διορθώσει πολλά προβλήματα όπως η αργή απόδοση.",
+			"heading1": "1. Ανοίξτε την εφαρμογή Settings",
+			"para2": "Πατήστε το κουμπί εικόνας Έναρξη που βρίσκεται στο κάτω αριστερά μέρος της οθόνης και επιλέξτε την εικόνα του γραναζιού ρυθμίσεων.",
+			"heading2": "2. Επιλέξτε Ενημέρωση και ασφάλεια από τη λίστα κατηγοριών",
+			"heading3": "3. Μεταβείτε στην επιλογή Αποκατάσταση από το αριστερό παράθυρο",
+			"heading4": "4. Ξεκινήστε τη διαδικασία επαναφοράς",
+			"para3": "Στην περιοχή της επικεφαλίδας \"Επαναφορά αυτού του υπολογιστή\", στο επάνω μέρος, κάντε κλικ ή πατήστε το κουμπί Γρήγορα αποτελέσματα.",
+			"heading5": "5. Επιλέξτε αν θέλετε να διατηρήσετε τα αρχεία σας ή όχι",
+			"para4": "Μετά από την επαναφορά, μπορείτε να συνδεθείτε στον λογαριασμό Microsoft. Θα γίνει επανεγκατάσταση οποιωνδήποτε εφαρμογών του Windows Store σε αυτόν τον λογαριασμό.",
+			"para5": {
+				"li1": "Η επιλογή Διατήρηση των αρχείων μου καταργεί τις εφαρμογές και τις ρυθμίσεις, αλλά διατηρεί όλα τα προσωπικά αρχεία σας.",
+				"li2": "Η επιλογή Κατάργηση όλων διαγράφει τις εφαρμογές, τις ρυθμίσεις και τα προσωπικά αρχεία σας. Εάν δεν έχετε δημιουργήσει αντίγραφο ασφαλείας των αρχείων σας, ίσως θελήσετε να πατήσετε ακύρωση, να δημιουργήσετε αντίγραφο ασφαλείας και να ξεκινήσετε τη διαδικασία ξανά."
+			},
+			"heading6": "6. Μπορείτε να επιλέξετε διαφορετικές επιπρόσθετες ρυθμίσεις",
+			"para6": "Αυτό θα εμφανιστεί μόνο αν έχετε ορίσετε την επιλογή \"Κατάργηση όλων\" στο προηγούμενο βήμα.",
+			"heading7": "7. Διαβάστε την επισκόπηση και πατήστε Επαναφορά όταν θα είστε έτοιμοι να συνεχίσετε.",
+			"para7": "Τα Windows θα προετοιμαστούν για την επαναφορά της συσκευής σας. Απλώς περιμένετε μέχρι να μεταφερθείτε σε μια μπλε οθόνη.",
+			"heading8": "8. Μόλις εμφανιστεί η οθόνη \"Ορίστε μια επιλογή\", επιλέξτε Συνέχεια.",
+			"para8": "Θα γίνει επανεκκίνηση των Windows και θα ξεκινήσει η επαναφορά. Ο υπολογιστής σας ίσως κάνει επανεκκίνηση αρκετές φορές κατά τη διάρκεια της επαναφοράς.",
+			"heading9": "Ερωτήσεις και απαντήσεις κοινότητας",
+			"communityAnswer": "Απάντηση κοινότητας",
+			"q1": "Αν επιλέξω την κατάργηση όλων, θα διαγραφούν όλες οι μονάδες δίσκου που περιέχονται/είναι συνδεδεμένες με τον υπολογιστή μου ή μόνο εκείνη στην οποία εκτελούνται τα Windows 10;",
+			"a1": "Θα διαγραφεί μόνο η μονάδα δίσκου του λειτουργικού συστήματος Windows 10 (συνήθως η μονάδα δίσκου C:). Οι άλλες μονάδες δίσκου που περιέχονται/είναι συνδεδεμένες με τον υπολογιστή σας δεν θα επηρεαστούν.",
+			"q2": "Πώς μπορώ να το κάνω αυτό αν η οθόνη μου είναι χαλασμένη;",
+			"a2": "Δυστυχώς, δεν μπορείτε να το κάνετε. Θα χρειαστεί να αποκτήσετε νέα οθόνη.",
+			"q3": "Αν έχω συνδεθεί σε οποιονδήποτε ιστότοπο, θα καταργηθεί και αυτό το ιστορικό επίσης;",
+			"a3": "Ναι, ανάλογα με το πρόγραμμα περιήγησης που χρησιμοποιείτε. Για να καταργήσετε το ιστορικό του προγράμματος περιήγησης απλώς μεταβείτε στις ρυθμίσεις στο πρόγραμμα περιήγησης και διαγράψτε το ιστορικό σας. Μπορείτε επίσης να χρησιμοποιήσετε τις λειτουργίες ανώνυμης περιήγησης ώστε να μην αποθηκεύεται το ιστορικό σας.",
+			"q4": "Αν επιλέξω την κατάργηση όλων, θα προκαλέσει αυτό και την επαναφορά του κωδικού πρόσβασής μου;",
+			"a4": "Ναι, μόλις κάνετε επαναφορά του υπολογιστή με τα Windows 10, θα καταργηθούν όλα τα δεδομένα χρήστη. Αυτό συμπεριλαμβάνει τα έγγραφα, τους αποθηκευμένους κωδικούς πρόσβασης, τις φωτογραφίες, τις προτιμώμενες ρυθμίσεις, τις πληροφορίες του προγράμματος περιήγησης και τα δεδομένα εφαρμογών.",
+			"para9": "Παραπομπή",
+			"para10": "Τρόπος επαναφοράς των Windows 10 – WikiHow."
+		},
         "question3": {
-            "title": "Πώς να μάθετε τη CPU του υπολογιστή σας",
-            "description": "<div class='faqInFs4Fb'>    Πώς να μάθετε τη CPU του υπολογιστή σας</div><hr><h3 class='faqInFs25FbP10'>Σύμπτωμα</h3><p>Οι όροι 32 bit και 64 bit αναφέρονται στον τρόπο με τον οποίο χειρίζεται τις πληροφορίες ο επεξεργαστής του υπολογιστή σας (ονομάζεται επίσης CPU). Η έκδοση 64 bit των Windows χειρίζεται μεγάλες ποσότητες δεδομένων της μνήμης τυχαίας προσπέλασης (RAM) πιο αποτελεσματικά από ένα σύστημα 32 bit.</p><h3 class='faqInFs25FbP10'>Επηρεαζόμενες μάρκες</h3><p>Το παραπάνω σύμπτωμα σχετίζεται, ενδεικτικά, με τα ακόλουθα συστήματα:</p><ul>    <li>Όλοι οι επιτραπέζιοι και φορητοί υπολογιστές</li></ul><h3 class='faqInFs25FbP10'>Λειτουργικό σύστημα</h3><ul>    <li>Windows 7, 8, 10</li></ul><h3 class='faqInFs25FbP10'>Λύση</h3><p><strong><u>Windows 7 ή Vista</u></strong></p><ol>    <li>Ανοίξτε το Σύστημα κάνοντας κλικ στο <strong>Κουμπί έναρξης </strong>Εικόνα του <strong>Κουμπιού έναρξης,</strong> κάνοντας δεξί κλικ στην επιλογή Υπολογιστής (Computer) και, στη συνέχεια, κλικ στην επιλογή Ιδιότητες (Properties)  </li>    <li>Στην περιοχή Σύστημα (System), μπορείτε να δείτε τον τύπο του συστήματος.</li></ol><p><strong><u>Windows 8 και Windows 10</u></strong></p><p><strong>Μέθοδος 1:</strong> Δείτε το παράθυρο Σύστημα (System) στον Πίνακα ελέγχου</p><ol>    <li>Σαρώστε προς τα μέσα από τη δεξιά άκρη της οθόνης και, στη συνέχεια, πατήστε την επιλογή <strong>Αναζήτηση (Search)</strong>. Εναλλακτικά, αν χρησιμοποιείτε ποντίκι, μεταβείτε στην κάτω δεξιά γωνία της οθόνης και, στη συνέχεια, επιλέξτε <strong>Αναζήτηση (Search).</strong></li>    <li>Πληκτρολογήστε <strong>σύστημα</strong> στο πλαίσιο αναζήτησης και, στη συνέχεια, πατήστε ή κάντε κλικ στην επιλογή <strong>Ρυθμίσεις (Settings).</strong></li>    <li>Πατήστε ή κάντε κλικ στην επιλογή <strong>Σύστημα (System)</strong></li>    <li>Αν έχετε την έκδοση 64 bit των Windows 8, στο πεδίο Τύπος συστήματος (System type) κάτω από την κεφαλίδα Σύστημα (System) εμφανίζεται η ένδειξη <strong>Λειτουργικό σύστημα 64 bit (64 bit Operating System)</strong>. Αν έχετε την έκδοση 32 <strong>bit των Windows</strong> <strong>8,</strong> στο πεδίο Τύπος συστήματος (System type) κάτω από την κεφαλίδα Σύστημα (System) εμφανίζεται η ένδειξη <strong>Λειτουργικό σύστημα 32 bit (32 bit Operating System)</strong>.<br />  </li></ol><p><strong>Μέθοδος 2</strong>: Προβολή του παραθύρου Πληροφορίες συστήματος (System information)</p><ol>    <li>Σαρώστε προς τα μέσα από τη δεξιά άκρη της οθόνης και, στη συνέχεια, πατήστε την επιλογή <strong>Αναζήτηση (Search)</strong>. Εναλλακτικά, αν χρησιμοποιείτε ποντίκι, μεταβείτε στην κάτω δεξιά γωνία της οθόνης και, στη συνέχεια, επιλέξτε <strong>Αναζήτηση (Search).</strong></li>    <li>Στο πλαίσιο αναζήτησης, πληκτρολογήστε <strong>πληροφορίες συστήματος</strong></li>    <li>Πατήστε ή κάντε κλικ στην επιλογή<strong> Σύστημα (System)</strong>, πατήστε ή κάντε κλικ στην επιλογή <strong>Πληροφορίες συστήματος (System Information)</strong> και, στη συνέχεια, κάντε κλικ στην επιλογή <strong>Σύνοψη συστήματος (System Summary).</strong></li>    <li>Αν έχετε την έκδοση <strong>64 bit </strong>των Windows 8<strong>, </strong> στο πεδίο <strong>Τύπος συστήματος (System type)</strong> κάτω από την κεφαλίδα Στοιχείο (Item), εμφανίζεται η ένδειξη Υπολογιστής x64 (x64-based PC). <br /> <br /> Αν έχετε την έκδοση<strong> 32 bit</strong> των Windows 8, στο πεδίο <strong>Τύπος συστήματος (System type)</strong> κάτω από την κεφαλίδα Στοιχείο (Item) εμφανίζεται η ένδειξη Υπολογιστής x86 (x86-based PC).  </li></ol><p> </p>",
-            "heading1": "Symptom",
-            "para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
-            "heading2": "Affected Brands",
-            "para2": "The above symptom is associated with, but not limited to, the following systems:",
-            "para3": "All Desktop and Laptops",
-            "heading3": "Operating System",
+			"title": "Πώς να μάθετε τη CPU του υπολογιστή σας",
+			"heading1": "Σύμπτωμα",
+            "para1": "Οι όροι 32 bit και 64 bit αναφέρονται στον τρόπο με τον οποίο χειρίζεται τις πληροφορίες ο επεξεργαστής του υπολογιστή σας (ονομάζεται επίσης CPU). Η έκδοση 64 bit των Windows χειρίζεται μεγάλες ποσότητες δεδομένων της μνήμης τυχαίας προσπέλασης (RAM) πιο αποτελεσματικά από ένα σύστημα 32 bit.",
+            "heading2": "Επηρεαζόμενες μάρκες",
+            "para2": "Το παραπάνω σύμπτωμα σχετίζεται, ενδεικτικά, με τα ακόλουθα συστήματα:",
+            "para3": "Όλοι οι επιτραπέζιοι και φορητοί υπολογιστές",
+            "heading3": "Λειτουργικό σύστημα",
             "para4": "Windows 7, 8, 10",
-            "heading4": "Solution",
-            "para5": "Windows 7 or Vista",
-            "para6": {
-                "span1": {
-                    "line1": "Open System by clicking the",
-                    "line2": "Start button",
-                    "line3": "Picture of the Start button, right-clicking Computer, and then clicking Properties"
-                },
-                "span2": "Under System, you can view the system type."
-            },
-            "para7": "Windows 8 and Windows 10",
-            "para8": {
-                "span1": {
-                    "line1": "Method 1:",
-                    "line2": "View the System window in Control Panel"
-                },
-                "span2": {
-                    "line1": "Swipe in from the right edge of the screen, and then tap",
-                    "line2": "Search.",
-                    "line3": "Or, if you are using a mouse, point to the lower-right corner of the screen, and then click",
-                    "line4": "Search."
-                },
-                "span3": {
-                    "line1": "Type",
-                    "line2": "system",
-                    "line3": "in the search box, and then tap or click",
-                    "line4": "Settings."
-                },
-                "span4": {
-                    "line1": "Tap or click",
-                    "line2": "System"
-                },
-                "span5": {
-                    "line1": "If you are running a 64-bit version of Windows 8,",
-                    "line2": "64-bit Operating System",
-                    "line3": "is displayed in the System type field under the System heading.",
-                    "line4": "If you are running a 32",
-                    "line5": "-bit version of Windows 8, 32-bit Operating",
-                    "line6": "System is displayed in the System type field under the System heading."
-                },
-                "span6": {
-                    "line1": "Method 2:",
-                    "line2": "View the System Information window"
-                },
-                "span7": {
-                    "line1": "Swipe in from the right edge of the screen, and then tap",
-                    "line2": "Search.",
-                    "line3": "Or, if you are using a mouse, point to the lower-right corner of the screen, and then click",
-                    "line4": "Search."
-                },
-                "span8": {
-                    "line1": "In the search box, type",
-                    "line2": "system information"
-                },
-                "span9": {
-                    "line1": "Tap or click",
-                    "line2": "System",
-                    "line3": ", tap or click",
-                    "line4": "System Information,",
-                    "line5": "and then click",
-                    "line6": "System Summary."
-                },
-                "span10": {
-                    "line1": "If you are running a",
-                    "line2": 64,
-                    "line3": "bit version of Windows 8, 32-bit Operating,",
-                    "line4": "x64-based PC is displayed in the",
-                    "line5": "System type",
-                    "line6": "field under the Item heading."
-                }
-            },
-            "para9": {
-                "line1": "If you are running a",
-                "line2": "32-bit",
-                "line3": "version of Windows 8,x86-based PC is displayed in the",
-                "line4": "System type",
-                "line5": "field under the Item heading."
-            }
+            "heading4": "Λύση",
+            "para5": "Windows 7 ή Vista",
+			"para6": "Ανοίξτε το Σύστημα κάνοντας κλικ στο <strong>Κουμπί έναρξης </strong>Εικόνα του <strong>Κουμπιού έναρξης,</strong> κάνοντας δεξί κλικ στην επιλογή Υπολογιστής (Computer) και, στη συνέχεια, κλικ στην επιλογή Ιδιότητες (Properties).",
+            "para7": "Στην περιοχή Σύστημα (System), μπορείτε να δείτε τον τύπο του συστήματος.",
+            "para8": "Windows 8 και Windows 10",
+			"para9": "<strong>Μέθοδος 1:</strong> Δείτε το παράθυρο Σύστημα (System) στον Πίνακα ελέγχου",
+            "para10": "Σαρώστε προς τα μέσα από τη δεξιά άκρη της οθόνης και, στη συνέχεια, πατήστε την επιλογή <strong>Αναζήτηση (Search)</strong>. Εναλλακτικά, αν χρησιμοποιείτε ποντίκι, μεταβείτε στην κάτω δεξιά γωνία της οθόνης και, στη συνέχεια, επιλέξτε <strong>Αναζήτηση (Search).</strong>",
+            "para11": "Πληκτρολογήστε <strong>σύστημα</strong> στο πλαίσιο αναζήτησης και, στη συνέχεια, πατήστε ή κάντε κλικ στην επιλογή <strong>Ρυθμίσεις (Settings).</strong>",
+            "para12": "Πατήστε ή κάντε κλικ στην επιλογή <strong>Σύστημα (System)</strong>.",
+            "para13": "Αν έχετε την έκδοση 64 bit των Windows 8, στο πεδίο Τύπος συστήματος (System type) κάτω από την κεφαλίδα Σύστημα (System) εμφανίζεται η ένδειξη <strong>Λειτουργικό σύστημα 64 bit (64 bit Operating System)</strong>. Αν έχετε την έκδοση 32 <strong>bit των Windows</strong> <strong>8,</strong> στο πεδίο Τύπος συστήματος (System type) κάτω από την κεφαλίδα Σύστημα (System) εμφανίζεται η ένδειξη <strong>Λειτουργικό σύστημα 32 bit (32 bit Operating System)</strong>.<br />  ",
+            "para14": "<strong>Μέθοδος 2</strong>: Προβολή του παραθύρου Πληροφορίες συστήματος (System information)",
+            "para15": "Σαρώστε προς τα μέσα από τη δεξιά άκρη της οθόνης και, στη συνέχεια, πατήστε την επιλογή <strong>Αναζήτηση (Search)</strong>. Εναλλακτικά, αν χρησιμοποιείτε ποντίκι, μεταβείτε στην κάτω δεξιά γωνία της οθόνης και, στη συνέχεια, επιλέξτε <strong>Αναζήτηση (Search).</strong>",
+            "para16": "Στο πλαίσιο αναζήτησης, πληκτρολογήστε <strong>πληροφορίες συστήματος</strong>.",
+            "para17": "Πατήστε ή κάντε κλικ στην επιλογή<strong> Σύστημα (System)</strong>, πατήστε ή κάντε κλικ στην επιλογή <strong>Πληροφορίες συστήματος (System Information)</strong> και, στη συνέχεια, κάντε κλικ στην επιλογή <strong>Σύνοψη συστήματος (System Summary).</strong>",
+            "para18": "Αν έχετε την έκδοση <strong>64 bit </strong>των Windows 8<strong>, </strong> στο πεδίο <strong>Τύπος συστήματος (System type)</strong> κάτω από την κεφαλίδα Στοιχείο (Item), εμφανίζεται η ένδειξη Υπολογιστής x64 (x64-based PC). Αν έχετε την έκδοση<strong> 32 bit</strong> των Windows 8, στο πεδίο <strong>Τύπος συστήματος (System type)</strong> κάτω από την κεφαλίδα Στοιχείο (Item) εμφανίζεται η ένδειξη Υπολογιστής x86 (x86-based PC).  "
         },
         "question4": {
-            "title": "Έλεγχος της χρήσης μπαταρίας του υπολογιστή σας",
-            "description": "<div class='faqInFs4Fb'>    Έλεγχος της χρήσης μπαταρίας του υπολογιστή σας</div><hr><h3 class='faqInFs25FbP10'>Σύμπτωμα</h3><p>Τα Windows 10 περιλαμβάνουν μια νέα οθόνη \"<strong>Χρήση μπαταρίας (Battery Use)\"</strong> που σας δείχνει ποια λειτουργία καταναλώνει την ισχύ του φορητού σας υπολογιστή. Αυτό σημαίνει ότι θα σας δείχνει ακριβώς ποιες εφαρμογές —είτε εφαρμογές επιτραπέζιου υπολογιστή ή \"γενικές\" εφαρμογές των Windows 10— καταναλώνουν πολύ μεγάλη ισχύ.</p><h3 class='faqInFs25FbP10'>Επηρεαζόμενες μάρκες</h3><ul>    <li>Φορητοί υπολογιστές, επιτραπέζιοι υπολογιστές Lenovo</li></ul><h3 class='faqInFs25FbP10'>Επηρεαζόμενα συστήματα</h3><ul>    <li>Όλες οι χώρες</li></ul><h3 class='faqInFs25FbP10'>Λειτουργικό σύστημα</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Λύση</h3><p>Αυτή η δυνατότητα είναι νέα στα Windows 10 και πρέπει πρώτα να την εντοπίσουμε, δεδομένου ότι δεν είναι αποθηκευμένη στην παραδοσιακή προβολή του <strong>πίνακα ελέγχου</strong>, αλλά βρίσκεται στη νέα εφαρμογή <strong>\"Ρυθμίσεις (Settings)\"</strong></p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>Α. Βρείτε την οθόνη Χρήση μπαταρίας (Battery Use)</h3></p><p>1. Κάντε κλικ ή πατήστε την επιλογή <strong>\"Ρυθμίσεις (Settings)\"</strong> από το μενού έναρξης</p><p>2. Στις <strong>Ρυθμίσεις (Settings) </strong> επιλέξτε <strong>\"Σύστημα (System)\"</strong>και, στη συνέχεια, επιλέξτε <strong>\"Εξοικονόμηση μπαταρίας (Battery saver)\".<br /></strong> <strong></strong></p><p><img src='assets/images/qa/4.1.jpg' /></p><p>3. Κάντε κλικ ή πατήστε τη σύνδεση <strong>\"Χρήση μπαταρίας (Battery use)\"</strong> κάτω από αυτή την κεφαλίδα για να δείτε περισσότερες λεπτομέρειες. </p><p> </p><h3 class='faqInFs25FbP10'>Β. Αναλύστε τη χρήση ενέργειας</h3><p>4. Μπορείτε να κάνετε αλλαγή ώστε να κάνετε την οθόνη χρήσης μπαταρίας να εμφανίζει τη χρήση μπαταρίας από τις τελευταίες 24 ώρες έως τις τελευταίες 48 ώρες ή από την τελευταία εβδομάδα</p><p>5. Ποσοστά για <strong>\"Σύστημα (System),\"</strong> \"<strong>Οθόνη (Display)</strong>\" και \" <strong>Wi-Fi\"</strong>. Αυτό δείχνει πόση ισχύς μπαταρίας έχει χρησιμοποιηθεί από τις διαδικασίες του συστήματος, την οθόνη,</p><p>6. Οι επιλογές <strong>\"Σε χρήση (In use)\"</strong> και <strong>\"Παρασκήνιο (Background)\"</strong> δείχνουν πόση ισχύς έχει χρησιμοποιηθεί από εφαρμογές όσο τις χρησιμοποιείτε, σε σύγκριση με τις εφαρμογές που εκτελούνται στο παρασκήνιο.</p><p>7. Αν οι εφαρμογές χρησιμοποιούν ισχύ στο παρασκήνιο, μπορείτε να κάνετε κλικ ή να πατήσετε τη σύνδεση <strong> \"Αλλαγή ρυθμίσεων εφαρμογών παρασκηνίου (Change background app settings)\" </strong>και να ρυθμίσετε τις παραμέτρους των εφαρμογών ώστε να μην εκτελούνται στο παρασκήνιο. Αυτό λειτουργεί μόνο στις γενικές εφαρμογές των Windows 10.</p><p>8. Πραγματοποιήστε κύλιση προς τα κάτω και θα δείτε μια λίστα εφαρμογών. Αυτή θεωρείται ότι είναι η πιο χρήσιμη ενότητα αυτής της δυνατότητας. Εμφανίζει μια λίστα με τις εφαρμογές που έχουν χρησιμοποιήσει ισχύ μπαταρίας εκείνη τη χρονική περίοδο και θα σας δείξει το ποσοστό ισχύος μπαταρίας που έχει χρησιμοποιήσει κάθε εφαρμογή</p><p><img src='assets/images/qa/4.2.jpg' /></p><p> </p>",
-            "heading1": "Symptom",
-            "para1": {
-                "span1": "Windows 10 includes a new",
-                "span2": "“Battery Use”",
-                "span3": "screen that shows you what’s draining your laptop’s juice. That means it’ll tell you exactly what apps–both desktop and Windows 10 “universal” apps–are using too much power."
-            },
-            "heading2": "Affected Brands",
-            "para2": "Lenovo laptops, desktops",
-            "heading3": "Affected Systems",
-            "para3": "All",
-            "heading4": "Operating System",
+			"title": "Έλεγχος της χρήσης μπαταρίας του υπολογιστή σας",
+			"heading1": "Σύμπτωμα",
+            "para1": "Τα Windows 10 περιλαμβάνουν μια νέα οθόνη \"<strong>Χρήση μπαταρίας (Battery Use)\"</strong> που σας δείχνει ποια λειτουργία καταναλώνει την ισχύ του φορητού σας υπολογιστή. Αυτό σημαίνει ότι θα σας δείχνει ακριβώς ποιες εφαρμογές —είτε εφαρμογές επιτραπέζιου υπολογιστή ή \"γενικές\" εφαρμογές των Windows 10— καταναλώνουν πολύ μεγάλη ισχύ.",
+            "heading2": "Επηρεαζόμενες μάρκες",
+            "para2": "Φορητοί υπολογιστές, επιτραπέζιοι υπολογιστές Lenovo",
+            "heading3": "Επηρεαζόμενα συστήματα",
+            "para3": "Όλες οι χώρες",
+            "heading4": "Λειτουργικό σύστημα",
             "para4": "Windows 10",
-            "heading5": "Solution",
-            "para5": {
-                "line1": "This feature is new in Windows 10, we need to find this feature first as it is not stored in your traditional",
-                "line2": "control panel",
-                "line3": "view, this feature is located in the new",
-                "line4": "“Settings”",
-                "line5": "app"
-            },
-            "para6": {
-                "span1": "A. Find the Battery Use Screen",
-                "span2": {
-                    "line1": "1. Click or Tap the",
-                    "line2": "“Settings”",
-                    "line3": "option from the start menu"
-                },
-                "span3": {
-                    "line1": "2. In",
-                    "line2": "Settings",
-                    "line3": "select",
-                    "line4": "“System”",
-                    "line5": "and then select",
-                    "line6": "“Battery saver.”"
-                },
-                "span4": {
-                    "line1": "3. Click or tap the",
-                    "line2": "“Battery use”",
-                    "line3": "link under this heading to see more details."
-                },
-                "span5": "B. Analyze Your Power Usage",
-                "span6": "4. You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last from last week",
-                "span7": {
-                    "line1": 5,
-                    "line2": "“System”,",
-                    "line3": "“Display”,",
-                    "line4": "and",
-                    "line5": "“Wi-Fi”",
-                    "line6": "percentages. This shows how much battery power has been used by system processes, the display,"
-                },
-                "span8": {
-                    "line1": "6. The",
-                    "line2": "“In use”",
-                    "line3": "and",
-                    "line4": "“Background”",
-                    "line5": "options show how much power is used by applications while you’re using them, compared to applications running in the background."
-                },
-                "span9": {
-                    "line1": "7. If apps are using power in the background, you can click or tap the",
-                    "line2": "“Change background app settings”",
-                    "line3": "link and configure apps to not run in the background. This only works for universal Windows 10 apps."
-                },
-                "span10": "8. Scroll down further and you will see a list of applications, this is considered as the most useful section of this feature. It will display a list of the apps have used battery power in that period, and show you what percentage of your battery power each app has used."
-            }
+            "heading5": "Λύση",
+            "para5": "Αυτή η δυνατότητα είναι νέα στα Windows 10 και πρέπει πρώτα να την εντοπίσουμε, δεδομένου ότι δεν είναι αποθηκευμένη στην παραδοσιακή προβολή του <strong>πίνακα ελέγχου</strong>, αλλά βρίσκεται στη νέα εφαρμογή <strong>\"Ρυθμίσεις (Settings)\"</strong>.",
+            "heading6": "Α. Βρείτε την οθόνη Χρήση μπαταρίας (Battery Use)",
+            "para6": "1. Κάντε κλικ ή πατήστε την επιλογή <strong>\"Ρυθμίσεις (Settings)\"</strong> από το μενού έναρξης.",
+            "para7": "2. Στις <strong>Ρυθμίσεις (Settings) </strong> επιλέξτε <strong>\"Σύστημα (System)\"</strong>και, στη συνέχεια, επιλέξτε <strong>\"Εξοικονόμηση μπαταρίας (Battery saver)\"</strong>.",
+            "para8": "3. Κάντε κλικ ή πατήστε τη σύνδεση <strong>\"Χρήση μπαταρίας (Battery use)\"</strong> κάτω από αυτή την κεφαλίδα για να δείτε περισσότερες λεπτομέρειες. ",
+            "heading7": "Β. Αναλύστε τη χρήση ενέργειας",
+            "para9": "4. Μπορείτε να κάνετε αλλαγή ώστε να κάνετε την οθόνη χρήσης μπαταρίας να εμφανίζει τη χρήση μπαταρίας από τις τελευταίες 24 ώρες έως τις τελευταίες 48 ώρες ή από την τελευταία εβδομάδα.",
+            "para10": "5. Ποσοστά για <strong>\"Σύστημα (System),\"</strong> \"<strong>Οθόνη (Display)</strong>\" και \" <strong>Wi-Fi\"</strong>. Αυτό δείχνει πόση ισχύς μπαταρίας έχει χρησιμοποιηθεί από τις διαδικασίες του συστήματος, την οθόνη.",
+            "para11": "6. Οι επιλογές <strong>\"Σε χρήση (In use)\"</strong> και <strong>\"Παρασκήνιο (Background)\"</strong> δείχνουν πόση ισχύς έχει χρησιμοποιηθεί από εφαρμογές όσο τις χρησιμοποιείτε, σε σύγκριση με τις εφαρμογές που εκτελούνται στο παρασκήνιο.",
+            "para12": "7. Αν οι εφαρμογές χρησιμοποιούν ισχύ στο παρασκήνιο, μπορείτε να κάνετε κλικ ή να πατήσετε τη σύνδεση <strong> \"Αλλαγή ρυθμίσεων εφαρμογών παρασκηνίου (Change background app settings)\" </strong>και να ρυθμίσετε τις παραμέτρους των εφαρμογών ώστε να μην εκτελούνται στο παρασκήνιο. Αυτό λειτουργεί μόνο στις γενικές εφαρμογές των Windows 10.",
+            "para13": "8. Πραγματοποιήστε κύλιση προς τα κάτω και θα δείτε μια λίστα εφαρμογών. Αυτή θεωρείται ότι είναι η πιο χρήσιμη ενότητα αυτής της δυνατότητας. Εμφανίζει μια λίστα με τις εφαρμογές που έχουν χρησιμοποιήσει ισχύ μπαταρίας εκείνη τη χρονική περίοδο και θα σας δείξει το ποσοστό ισχύος μπαταρίας που έχει χρησιμοποιήσει κάθε εφαρμογή."
         },
         "question5": {
-            "title": "Χρήση του υπολογιστή ως tablet",
-            "description": "<div class='faqInFs4Fb'>    Χρήση του υπολογιστή ως tablet</div><hr><p>Η λειτουργία tablet κάνει τα Windows πιο έξυπνα και εύχρηστα όταν έχετε συσκευή με οθόνη αφής.</p><h3 class='faqInFs25FbP10'>Χρήση λειτουργίας tablet</h3><p>Για να ενεργοποιήσετε τη λειτουργία tablet, επιλέξτε <strong>κέντρο ενεργειών (action center)</strong> στη γραμμή εργασιών και, στη συνέχεια, επιλέξτε <strong>Λειτουργία tablet (Tablet mode)</strong>.</p><p> </p><p><img src='assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Σημείωση</h3><p>Για να δείτε αν η συσκευή σας μπορεί να ενεργοποιεί αυτόματα τη λειτουργία tablet, πραγματοποιήστε αναζήτηση για τη συσκευή σας στον δικτυακό τόπο του κατασκευαστή. Η υποστήριξη για αυτή τη δυνατότητα εξαρτάται από το υλικό, το πρόγραμμα οδήγησης που έχει εγκατασταθεί και τον τρόπο ρύθμισης της συσκευής από τον κατασκευαστή. </p><p> </p><p>Σε λειτουργία tablet, η εφαρμογές ανοίγουν σε λειτουργία πλήρους οθόνης, παρέχοντας σας περισσότερο χώρο για εργασία. Για να κλείσετε μια εφαρμογή, σύρετέ τη στο κάτω μέρος της οθόνης.</p><p> </p><h3 class='faqInFs25FbP10'>Συμβουλή</h3><p>Η γραμμή εργασιών είναι διαθέσιμη όταν ο υπολογιστή σας βρίσκεται σε λειτουργία tablet, αλλά μπορείτε να την αποκρύψετε αν θέλετε περισσότερο χώρο στην οθόνη. Επιλέξτε το κουμπί <strong>Έναρξη (Start)</strong>, επιλέξτε <strong>Ρυθμίσεις (Settings) </strong>> <strong>Σύστημα (System) </strong>> <strong>Λειτουργία tablet (Tablet mode) </strong>και, στη συνέχεια, ενεργοποιήστε τη επιλογή <strong>Αυτόματη απόκρυψη της γραμμής εργασιών σε λειτουργία tablet (Automatically hide the taskbar in tablet mode)</strong>. Για να δείτε την κρυμμένη γραμμή εργασιών, σαρώστε προς τα επάνω από το κάτω μέρος της οθόνης ή χρησιμοποιήστε το ποντίκι για να κάνετε κατάδειξη εκεί.</p><h3 class='faqInFs25FbP10'>Ταυτόχρονη χρήση δύο εφαρμογών</h3><p>Για να χρησιμοποιήσετε δύο εφαρμογές τη μία δίπλα στην άλλη σε λειτουργία tablet, σύρετε μια ανοικτή εφαρμογή προς τα κάτω και στο πλάι. Θα δείτε που θα κουμπώσει και θα δείτε τυχόν ανοικτές εφαρμογές δίπλα της.</p><p>Σε αυτή την προβολή, μπορείτε επίσης να κάνετε τα ακόλουθα:</p><ul>    <li>Να χρησιμοποιήσετε την κοινή ακμή μεταξύ δύο κουμπωμένων εφαρμογών για να αλλάξετε το μέγεθος και των δύο εφαρμογών ταυτόχρονα.</li>    <li>Ανοίξτε τη νέα εφαρμογή από την προβολή εργασιών &mdash;επιλέξτε <strong>Προβολή εργασιών (Task view)</strong> από τη γραμμή εργασιών, επιλέξτε μια εφαρμογή και, στη συνέχεια, σύρετέ τη στη μία πλευρά για να την κουμπώσετε στη διαιρεμένη οθόνη.</li>    <li>Χρησιμοποιήστε το κουμπί επιστροφή στη γραμμή εργασιών για να επιστρέψετε σε μία εφαρμογή ή να ανοίξετε μια εφαρμογή που χρησιμοποιούσατε νωρίτερα.</li></ul><p> </p>",
-            "heading1": "Use tablet mode",
-            "para2": {
-                "span1": "To turn on tablet mode, select",
-                "span2": "action center",
-                "span3": "on the taskbar, then select",
-                "span4": "Tablet mode."
-            },
-            "heading2": "Note",
-            "para3": "To find out if your device can automatically turn on tablet mode, search for your device on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, and how the device was set up by the manufacturer.",
-            "para4": "In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the screen.",
-            "heading3": "Tip",
-            "para5": {
-                "span1": "The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen.",
-                "span2": "Select the",
-                "span3": "Start",
-                "span4": "button, select",
-                "span5": " Settings",
-                "span6": "System",
-                "span7": "Tablet mode",
-                "span8": ", then turn on",
-                "span9": "Automatically hide the taskbar in tablet mode.",
-                "span10": "To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there."
-            },
-            "heading4": "Use two apps simultaneously",
-            "para6": "To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and you'll see any open apps next to it.",
-            "para7": "In this view, you can also:",
-            "para8": {
-                "span1": "Use the shared edge between two snapped apps to resize both apps at the same time.",
-                "span2": {
-                    "line1": "Open a new app from task view—select",
-                    "line2": "Task view",
-                    "line3": "on the taskbar, select an app, then drag it to one side to snap it into your divided screen."
-                },
-                "span3": "Use the back button on the taskbar to go back in an app, or to open an app that you were using before."
-            }
+			"title": "Χρήση του υπολογιστή ως tablet",
+			"para1": "Η λειτουργία tablet κάνει τα Windows πιο έξυπνα και εύχρηστα όταν έχετε συσκευή με οθόνη αφής.",
+            "heading1": "Χρήση λειτουργίας tablet",
+            "para2": "Για να ενεργοποιήσετε τη λειτουργία tablet, επιλέξτε <strong>κέντρο ενεργειών (action center)</strong> στη γραμμή εργασιών και, στη συνέχεια, επιλέξτε <strong>Λειτουργία tablet (Tablet mode)</strong>.",
+            "heading2": "Σημείωση",
+            "para3": "Για να δείτε αν η συσκευή σας μπορεί να ενεργοποιεί αυτόματα τη λειτουργία tablet, πραγματοποιήστε αναζήτηση για τη συσκευή σας στον δικτυακό τόπο του κατασκευαστή. Η υποστήριξη για αυτή τη δυνατότητα εξαρτάται από το υλικό, το πρόγραμμα οδήγησης που έχει εγκατασταθεί και τον τρόπο ρύθμισης της συσκευής από τον κατασκευαστή. ",
+            "para4": "Σε λειτουργία tablet, η εφαρμογές ανοίγουν σε λειτουργία πλήρους οθόνης, παρέχοντας σας περισσότερο χώρο για εργασία. Για να κλείσετε μια εφαρμογή, σύρετέ τη στο κάτω μέρος της οθόνης.",
+            "heading3": "Συμβουλή",
+            "para5": "Η γραμμή εργασιών είναι διαθέσιμη όταν ο υπολογιστή σας βρίσκεται σε λειτουργία tablet, αλλά μπορείτε να την αποκρύψετε αν θέλετε περισσότερο χώρο στην οθόνη. Επιλέξτε το κουμπί <strong>Έναρξη (Start)</strong>, επιλέξτε <strong>Ρυθμίσεις (Settings) </strong>> <strong>Σύστημα (System) </strong>> <strong>Λειτουργία tablet (Tablet mode) </strong>και, στη συνέχεια, ενεργοποιήστε τη επιλογή <strong>Αυτόματη απόκρυψη της γραμμής εργασιών σε λειτουργία tablet (Automatically hide the taskbar in tablet mode)</strong>. Για να δείτε την κρυμμένη γραμμή εργασιών, σαρώστε προς τα επάνω από το κάτω μέρος της οθόνης ή χρησιμοποιήστε το ποντίκι για να κάνετε κατάδειξη εκεί.",
+            "heading4": "Ταυτόχρονη χρήση δύο εφαρμογών",
+            "para6": "Για να χρησιμοποιήσετε δύο εφαρμογές τη μία δίπλα στην άλλη σε λειτουργία tablet, σύρετε μια ανοικτή εφαρμογή προς τα κάτω και στο πλάι. Θα δείτε που θα κουμπώσει και θα δείτε τυχόν ανοικτές εφαρμογές δίπλα της.",
+            "para7": "Σε αυτή την προβολή, μπορείτε επίσης να κάνετε τα ακόλουθα:",
+            "para8": "Να χρησιμοποιήσετε την κοινή ακμή μεταξύ δύο κουμπωμένων εφαρμογών για να αλλάξετε το μέγεθος και των δύο εφαρμογών ταυτόχρονα.",
+            "para9": "Ανοίξτε τη νέα εφαρμογή από την προβολή εργασιών &mdash;επιλέξτε <strong>Προβολή εργασιών (Task view)</strong> από τη γραμμή εργασιών, επιλέξτε μια εφαρμογή και, στη συνέχεια, σύρετέ τη στη μία πλευρά για να την κουμπώσετε στη διαιρεμένη οθόνη.",
+            "para10": "Χρησιμοποιήστε το κουμπί επιστροφή στη γραμμή εργασιών για να επιστρέψετε σε μία εφαρμογή ή να ανοίξετε μια εφαρμογή που χρησιμοποιούσατε νωρίτερα."
         },
         "question6": {
-            "title": "Γνωριμία με την Cortana, την προσωπική βοηθό σας",
-            "description": "<div class='faqInFs4Fb'>    Γνωριμία με την Cortana, την προσωπική βοηθό σας</div><hr><h3 class='faqInFs25FbP10'>Τι είναι η Cortana;</h3><hr /><p>Η Cortana είναι ο ψηφιακός σας βοηθός. Θα σας βοηθάει να κάνετε πράγματα.</p><p>Όσο περισσότερο χρησιμοποιείτε την Cortana, τόσο περισσότερο εξατομικευμένη θα γίνεται η εμπειρία σας.</p><p>Για να ξεκινήσετε, πληκτρολογήστε μια ερώτηση στο πλαίσιο αναζήτησης ή επιλέξτε το μικρόφωνο και μιλήστε στην Cortana. (Η πληκτρολόγηση λειτουργεί σε όλους τους τύπους υπολογιστών, αλλά χρειάζεστε μικρόφωνο για να μιλήσετε.)</p><p>Αν δεν είστε σίγουροι τι να πείτε, θα βλέπετε υποδείξεις στην οθόνη κλειδώματος και στην αρχική οθόνη της Cortana όταν επιλέξετε το πλαίσιο αναζήτησης στη γραμμή εργασιών.</p><p><img src='assets/images/qa/6.1.jpg' /></p><ol>    <li>Αρχική σελίδα 2. Φορητός υπολογιστής 3. Ρυθμίσεις 4. Σχόλια</li></ol><p>Δείτε μερικά πράγματα που μπορεί να κάνει η Cortana για εσάς:</p><ul>    <li>Παροχή υπενθυμίσεων με βάση την ώρα, τοποθεσίες ή άτομα.</li>    <li>Παρακολούθηση πακέτων, ομάδων, ενδιαφερόντων και πτήσεων.</li>    <li>Αποστολή email και κειμένων.</li>    <li>Διαχείριση του ημερολογίου και ενημέρωσή σας.</li>    <li>Δημιουργία και διαχείριση λιστών.</li>    <li>Συνομιλία και παιχνίδια.</li>    <li>Αναζήτηση στοιχείων, αρχείων, τοποθεσιών και πληροφοριών.</li>    <li>Άνοιγμα οποιασδήποτε εφαρμογής στο σύστημά σας.</li></ul><h3 class='faqInFs25FbP10'>Δοκιμάστε το εξής: Ορισμός υπενθύμισης</h3><hr /><p>Ένα από τα πράγματα που μπορεί να κάνει η Cortana είναι να σας δίνει υπενθυμίσεις. Μπορεί να σας υπενθυμίζει να κάνετε πράγματα βάσει ώρας, τοποθεσίας ή ακόμα και ατόμων.</p><p>Για παράδειγμα, πληκτρολογήστε ή πείτε, \"Θύμισέ μου να συγχαρώ την Τάνια την επόμενη φορά που θα τηλεφωνήσει.\"</p><p>Η υπενθύμιση θα εμφανιστεί μόλις λάβετε κλήση από την Τάνια.</p><p>Επιπρόσθετο πλεονέκτημα &mdash;αν έχετε τηλέφωνο Windows ή Cortana για iPhone ή Android, μπορείτε να ρυθμίσετε την Cortana να συγχρονίζει ειδοποιήσεις μεταξύ του υπολογιστή και του τηλεφώνου.</p><p><img src='assets/images/qa/6.2.jpg' /></p><h3 class='faqInFs25FbP10'>Γεια σου Cortana</h3><hr /><p>Ρυθμίστε την Cortana να σας ακούει κάθε φορά που λέτε \"Γεια σου Cortana\". Επιλέξτε το πλαίσιο αναζήτησης στη γραμμή εργασιών για να ανοίξετε την αρχική οθόνη της Cortana. Στη συνέχεια, επιλέξτε <strong>Ρυθμίσεις (Settings)</strong> και ενεργοποιήστε το χαρακτηριστικό <strong>Να επιτρέπεται να απαντάει η Cortana στη φράση \"Γεια σου Cortana\" (Let Cortana respond to 'Hey Cortana').</strong></p><p><img src='assets/images/qa/6.3.jpg' /></p><p class='faqInFs25FbP10'>Σημείωση</p><p>Η Cortana είναι διαθέσιμη μόνο σε ορισμένες χώρες/περιοχές και μερικές δυνατότητες της Cortana μπορεί να μην είναι διαθέσιμες παντού.</p><p> </p>",
-            "heading1": "What is Cortana?",
-            "para1": "Cortana is your digital agent. She'll help you get things done.",
-            "para2": "The more you use Cortana, the more personalized your experience will be.",
-            "para3": "To get started, type a question in the search box, or select the microphone  and talk to Cortana. (Typing works for all types of PCs, but you need a mic to talk.)",
-            "para4": "If you’re not sure what to say, you’ll see suggestions on your lock screen, and in Cortana home when you select the search box on the taskbar.",
-            "para5": " Home 2. Notebook 3. Settings 4. Feedback",
-            "para6": "Here are some things Cortana can do for you:",
-            "bulletset1": {
-                "span1": "Give you reminders based on time, places, or people.",
-                "span2": "Track packages, teams, interests, and flights.",
-                "span3": "Send emails and texts.",
-                "span4": "Manage your calendar and keep you up to date.",
-                "span5": "Create and manage lists.",
-                "span6": "Chit chat and play games.",
-                "span7": "Find facts, files, places, and info.",
-                "span8": "Open any app on your system."
+			"title": "Γνωριμία με την Cortana, την προσωπική βοηθό σας",
+			"heading1": "Τι είναι η Cortana;",
+            "para1": "Η Cortana είναι ο ψηφιακός σας βοηθός. Θα σας βοηθάει να κάνετε πράγματα.",
+            "para2": "Όσο περισσότερο χρησιμοποιείτε την Cortana, τόσο περισσότερο εξατομικευμένη θα γίνεται η εμπειρία σας.",
+            "para3": "Για να ξεκινήσετε, πληκτρολογήστε μια ερώτηση στο πλαίσιο αναζήτησης ή επιλέξτε το μικρόφωνο και μιλήστε στην Cortana. (Η πληκτρολόγηση λειτουργεί σε όλους τους τύπους υπολογιστών, αλλά χρειάζεστε μικρόφωνο για να μιλήσετε.)",
+            "para4": "Αν δεν είστε σίγουροι τι να πείτε, θα βλέπετε υποδείξεις στην οθόνη κλειδώματος και στην αρχική οθόνη της Cortana όταν επιλέξετε το πλαίσιο αναζήτησης στη γραμμή εργασιών.",
+            "para5": "1. Αρχική σελίδα 2. Φορητός υπολογιστής 3. Ρυθμίσεις 4. Σχόλια",
+            "para6": "Δείτε μερικά πράγματα που μπορεί να κάνει η Cortana για εσάς:",
+            "unorderedList1": {
+				"listItem1": "Παροχή υπενθυμίσεων με βάση την ώρα, τοποθεσίες ή άτομα.",
+                "listItem2": "Παρακολούθηση πακέτων, ομάδων, ενδιαφερόντων και πτήσεων.",
+                "listItem3": "Αποστολή email και κειμένων.",
+                "listItem4": "Διαχείριση του ημερολογίου και ενημέρωσή σας.",
+                "listItem5": "Δημιουργία και διαχείριση λιστών.",
+                "listItem6": "Συνομιλία και παιχνίδια.",
+                "listItem7": "Αναζήτηση στοιχείων, αρχείων, τοποθεσιών και πληροφοριών.",
+                "listItem8": "Άνοιγμα οποιασδήποτε εφαρμογής στο σύστημά σας."
             },
-            "heading2": "Try this: Set a reminder",
-            "para7": "One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or even people.",
-            "para8": "For example, type or say, “Remind me to congratulate Tanya the next time she calls.”",
-            "para9": "The reminder will appear when you get a call from Tanya.",
-            "para10": "Extra bonus—if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync notifications between your PC and phone.",
-            "heading3": "Hey Cortana?",
-            "para11": {
-                "span1": "Set Cortana to hear you anytime you say “Hey Cortana.” Select the search box on the taskbar to open Cortana home.",
-                "span2": {
-                    "line1": "Then select",
-                    "line2": "Settings",
-                    "line3": "and turn on",
-                    "line4": "Let Cortana respond to “Hey Cortana.”"
-                }
-            },
-            "para12": "Note",
-            "para13": "Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere."
-        },
-        "pageTitle": "Λεπτομέρειες Υποστήριξης"
+			"heading2": "Δοκιμάστε το εξής: Ορισμός υπενθύμισης",
+            "para7": "Ένα από τα πράγματα που μπορεί να κάνει η Cortana είναι να σας δίνει υπενθυμίσεις. Μπορεί να σας υπενθυμίζει να κάνετε πράγματα βάσει ώρας, τοποθεσίας ή ακόμα και ατόμων.",
+            "para8": "Για παράδειγμα, πληκτρολογήστε ή πείτε, \"Θύμισέ μου να συγχαρώ την Τάνια την επόμενη φορά που θα τηλεφωνήσει\".",
+            "para9": "Η υπενθύμιση θα εμφανιστεί μόλις λάβετε κλήση από την Τάνια.",
+            "para10": "Επιπρόσθετο πλεονέκτημα &mdash;αν έχετε τηλέφωνο Windows ή Cortana για iPhone ή Android, μπορείτε να ρυθμίσετε την Cortana να συγχρονίζει ειδοποιήσεις μεταξύ του υπολογιστή και του τηλεφώνου.",
+            "heading3": "Γεια σου Cortana",
+            "para11": "Ρυθμίστε την Cortana να σας ακούει κάθε φορά που λέτε \"Γεια σου Cortana\". Επιλέξτε το πλαίσιο αναζήτησης στη γραμμή εργασιών για να ανοίξετε την αρχική οθόνη της Cortana. Στη συνέχεια, επιλέξτε <strong>Ρυθμίσεις (Settings)</strong> και ενεργοποιήστε το χαρακτηριστικό <strong>Να επιτρέπεται να απαντάει η Cortana στη φράση \"Γεια σου Cortana\" (Let Cortana respond to 'Hey Cortana').</strong>",
+            "heading4": "Σημείωση",
+            "para12": "Η Cortana είναι διαθέσιμη μόνο σε ορισμένες χώρες/περιοχές και μερικές δυνατότητες της Cortana μπορεί να μην είναι διαθέσιμες παντού."
+        }
     },
     "welcometutorial": {
         "description": "To Vantage σάς διευκολύνει να ενημερώνετε τα προγράμματα οδήγησής σας, να εκτελείτε διαγνωστικά, να ζητάτε υποστήριξη και να μαθαίνετε για τη συσκευή σας. Προσαρμόστε γρήγορα την εμπειρία σας και βρείτε χρήσιμες πληροφορίες προσαρμοσμένες στις ανάγκες σας",

@@ -2724,6 +2724,7 @@
         "ssoErrorAccountPluginNotExist": "Nedostaje dodatak. Ako ste povezani s internetom, dodatak ćemo automatski vratiti u pozadini. To bi moglo potrajati neko vrijeme, pokušajte ponovno kasnije."
     },
     "faq": {
+        "pageTitle": "Detalje o podršci",
         "footer": {
             "title": "Niste pronašli ono što tražite?",
             "description": "Trebate dodatnu podršku? Slobodno nam se obratite putem:",
@@ -2732,354 +2733,146 @@
         },
         "question1": {
             "title": "Sigurnosno kopiranje i vraćanje datoteka",
-            "description": "<div>    <div class='faqInFs4Fb'>        Sigurnosno kopiranje i vraćanje datoteka    </div>    <hr />    <div class='faqInMb7'>        Uvijek je dobro imati podršku. Čuvajte kopije datoteka na drugom pogonu u slučaju da se nešto dogodi s izvornicima.    </div>    <div class='faqInFs3Fb'>        Postavljanje sigurnosnog kopiranja    </div>    <hr />    <div class='mb-5'>        Odaberite gumb <span class='faqInFb'>Start</span> (Početak), odaberite <span class='faqInFb'>Settings</span> (Postavke) > <span class='faqInFb'>Update & security</span> (Ažuriranje i sigurnost) > <span class='faqInFb'>Backup</span> (Sigurnosno kopiranje) > <span class='faqInFb'>Add a drive</span> (Dodaj pogon), a zatim odaberite vanjski pogon ili mrežnu lokaciju za sigurnosne kopije.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Sve je spremno. Svakog sata kopirat ćemo sve što je u vašoj korisničkoj mapi (C:\\Users\\vaše korisničko ime). Da biste promijenili koje se datoteke sigurnosno kopiraju ili koliko često dolazi do sigurnosnog kopiranja, idite u <span class='faqInFb'>More options</span> (Dodatne mogućnosti).    </div>    <div class='faqInFs3Fb'>        Vratite svoje datoteke    </div>    <div class='mb-5'>        Ako vam nedostaje važna datoteka ili mapa, evo kako je vratiti:    </div>    <div>        <div class='mb-3'>1. Upišite <span class='faqInFb'>Restore files</span> (Vrati datoteke) u okviru za pretraživanje na programskoj traci, a zatim odaberite <span class='faqInFb'> Restore your files with File History</span> (Vrati datoteke s pomoću Prethodne datoteke).</div>        <div class='mb-3'>2. Potražite datoteku koja vam je potrebna, a zatim s pomoću strelica pogledajte sve njezine verzije</div>        <div class='mb-3'>3. Kada pronađete željenu verziju, odaberite <span class='faqInFb'>Restore</span> (Vrati) da biste je spremili na njezinu izvornu lokaciju. Da biste je spremili na drugo mjesto, pritisnite i držite (ili desnim klikom miša) <span class='faqInFb'>Restore</span> (Vrati), odaberite <span class='faqInFb'>Restore to</span> (Vrati u), a zatim odaberite novu lokaciju.</div>    </div></div>",
-            "para1": {
-                "line1": "It's always good to have a backup.",
-                "line2": "Keep copies of your files on another drive in case something happens to the originals."
-            },
-            "heading1": "Set up your backup",
-            "para2": {
-                "span1": "Select the",
-                "span2": "Start",
-                "span3": "button, select",
-                "span4": "Settings",
-                "span5": "Update & security",
-                "span6": "Backup",
-                "span7": "Add a drive",
-                "span8": ", and then choose an external drive or network location for your backups."
-            },
-            "para3": {
-                "span1": "All set.",
-                "span2": "Every hour, we'll back up everything in your user folder (C:\\Users\\username).",
-                "span3": "To change which files get backed up or how often backups happen, go to",
-                "span4": "More options."
-            },
-            "heading2": "Restore your files",
-            "para4": "If you're missing an important file or folder, here's how to get it back:",
-            "para5": {
-                "span1": "1. Type",
-                "span2": "Restore files",
-                "span3": "in the search box on the taskbar, and then select",
-                "span4": "Restore your files with File History.",
-                "span5": "2. Look for the file you need, then use the arrows to see all its versions",
-                "span6": "3. When you find the version you want, select",
-                "span7": "Restore",
-                "span8": "to save it in its original location. To save it in a different place, press and hold (or right-click)",
-                "span9": "Restore",
-                "span10": ", select",
-                "span11": "Restore to",
-                "span12": "and then choose a new location."
-            }
+            "para1": "Uvijek je dobro imati podršku. Čuvajte kopije datoteka na drugom pogonu u slučaju da se nešto dogodi s izvornicima.",
+			"heading1": "Postavljanje sigurnosnog kopiranja",
+			"para2": "Odaberite gumb Start (Početak), odaberite Settings (Postavke) > Update & security (Ažuriranje i sigurnost) > Backup (Sigurnosno kopiranje) > Add a drive (Dodaj pogon), a zatim odaberite vanjski pogon ili mrežnu lokaciju za sigurnosne kopije.",
+			"para3": "Sve je spremno. Svakog sata kopirat ćemo sve što je u vašoj korisničkoj mapi (C:\\Users\\vaše korisničko ime). Da biste promijenili koje se datoteke sigurnosno kopiraju ili koliko često dolazi do sigurnosnog kopiranja, idite u More options (Dodatne mogućnosti).",
+			"heading2": "Vratite svoje datoteke",
+			"para4": "Ako vam nedostaje važna datoteka ili mapa, evo kako je vratiti:",
+			"para5": {
+				"div1": "1. Upišite Restore files (Vrati datoteke) u okviru za pretraživanje na programskoj traci, a zatim odaberite  Restore your files with File History (Vrati datoteke s pomoću Prethodne datoteke).",
+				"div2": "2. Potražite datoteku koja vam je potrebna, a zatim s pomoću strelica pogledajte sve njezine verzije.",
+				"div3": "3. Kada pronađete željenu verziju, odaberite Restore (Vrati) da biste je spremili na njezinu izvornu lokaciju. Da biste je spremili na drugo mjesto, pritisnite i držite (ili desnim klikom miša) Restore (Vrati), odaberite Restore to (Vrati u), a zatim odaberite novu lokaciju."
+			}
         },
         "question2": {
-            "title": "Kako vratiti računalo na zadane postavke",
-            "description": "<div><div class='faqInFs4Fb'>Kako ponovno postaviti Windows 10</div><hr><div class='faqInP5'>Ako vaše računalo s Windows 10 ima problema ili ga prodajete, trebali biste ga ponovno postaviti. Ponovno postavljanje vam omogućava da odaberete zadržavanje ili uklanjanje datoteka, uklanja sve aplikacije i postavke i instalira novu kopiju sustava Windows. To također može riješiti mnoge poteškoće, poput sporog rada.</div><div class='faqInFs25FbP10'>1. Otvorite aplikaciju Postavke</div><div class='faqInP5'>Pritisnite gumb Start koji se nalazi u donjem lijevom dijelu zaslona i odaberite ikonu sa slikom zupčanika.</div><div class='faqInP5'><img src='assets/images/qa/2.1.jpg' /></div><div class='faqInFs25FbP10'>2. Na popisu kategorija odaberite Ažuriranje i sigurnost</div><div class='faqInP5'><img src='assets/images/qa/2.2.jpg' /></div><div class='faqInFs25FbP10'>3. U lijevom oknu idite na Oporavak</div><div class='faqInP5'><img src='assets/images/qa/2.3.jpg' /></div><div class='faqInFs25FbP10'>4. Započnite postupak ponovnog postavljanja</div><div class='faqInP5'>Pod naslovom \"Ponovno postavi ovo računalo\" na vrhu kliknite ili dodirnite gumb Početak.</div><div class='faqInP5'><img src='assets/images/qa/2.4.jpg' /></div><div class='faqInFs25FbP10'>5. Odaberite želite li zadržati datoteke ili ne</div><div class='faqInP5'>Nakon ponovnog pokretanja se možete prijaviti na svoj Microsoft račun. Sve aplikacije Windows Store kupljene na ovom računu će se ponovno instalirati.</div><div class='faqInP5'><ul><li>Zadrži moje datoteke uklanja vaše aplikacije i postavke, ali zadržava sve vaše osobne datoteke.</li><li>Ukloni sve briše aplikacije, postavke i osobne datoteke. Ako nemate sigurnosnu kopiju datoteka, možda ćete morati pritisnuti Otkaži, izraditi sigurnosnu kopiju i ponovno započeti ovaj postupak.</li></ul></div><div class='faqInP5'><img src='assets/images/qa/2.5.jpg' /></div><div class='faqInFs25FbP10'>6. Možete odabrati različite dodatne postavke</div><div class='faqInP5'>To će se prikazati samo ako ste u prethodnom koraku odabrali \"Ukloni sve\".</div><div class='faqInP5'><img src='assets/images/qa/2.6.1.jpg' /></div><div class='faqInP5'><img src='assets/images/qa/2.6.2.jpg' /></div><div class='faqInFs25FbP10'>7. Pročitajte pregled i kada ste spremni za nastavak pritisnite Ponovno pokreni.</div><div class='faqInP5'>Windows će se pripremiti za ponovno postavljanje uređaja. Jednostavno pričekajte dok vas ne prebaci na plavi zaslon.</div><div class='faqInFs25FbP10'>8. Kad se pojavi \"Odaberite mogućnost\", odaberite Nastavi.</div><div class='faqInP5'>Windows će se ponovo pokrenuti i započeti ponovno pokretanje. Računalo se može ponovno pokrenuti nekoliko puta jer se ponovno postavlja.</div><hr><div class='faqInFs25FbP10'>Pitanja i odgovori u zajednici</div><div class='faqInP5'><b>Ako odlučim ukloniti sve, brišem li sve pogone u/spojene na računalo ili samo onaj na kojem imam Windows 10?</b></div><div class='faqInP5'><i>Odgovori u zajednici</i></div><div class='faqInP10'>To će obrisati samo pogon na kojem se nalazi OS Windows 10 (obično C: pogon). To neće utjecati na druge pogone u/povezane s računalom.</div><div class='faqInP5'><b>Kako mogu to učiniti ako je zaslon polomljen?</b></div><div class='faqInP5'><i>Odgovori u zajednici</i></div><div class='faqInP10'>Nažalost, ne možete. Trebat će vam novi zaslon.</div><div class='faqInP5'><b>Ako se prijavim na bilo koje web mjesto, hoće li se i ta povijest ukloniti?</b></div><div class='faqInP5'><i>Odgovori u zajednici</i></div><div class='faqInP10'>Da, ovisno o tome koji preglednik koristite. Da biste uklonili povijest preglednika, jednostavno idite na postavke u pregledniku i obrišite povijest. Također možete koristiti anonimne načine da biste izbjegli spremanje povijesti.</div><div class='faqInP5'><b>Ako odlučim ukloniti sve, hoće li to poništiti i moju lozinku?</b></div><div class='faqInP5'><i>Odgovori u zajednici</i></div><div class='faqInP10'>Da, nakon što ponovno postavite Windows 10 računalo, uklonit će se svi korisnički podaci. To uključuje dokumente, pohranjene lozinke, slike, željene postavke, podatke preglednika i podatke o aplikacijama.</div><hr><div class='faqInP5'>Referenca</div><div class='faqInP5'>Kako ponovno postaviti Windows 10 – WikiHow.</div></div>",
-            "heading1": "Symptom",
-            "para1": {
-                "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
-                "span2": "Windows can “refresh” your PC so it’s more like a fresh install without deleting your personal files."
-            },
-            "para2": "Refresh your PC, Here is what will happen: your files and personalized settings won’t change",
-            "para3": {
-                "span1": "Your PC settings will be changed back to its defaults",
-                "span2": "Apps from windows store will be kept",
-                "span3": "Apps you installed from disc or website will be removed",
-                "span4": "A list of removed files will be saved on your desktop"
-            },
-            "heading2": "Affected Brands",
-            "para4": "All Desktop and Laptops",
-            "heading3": "Operation System",
-            "para5": "Windows 8, 8.1 & 10",
-            "heading4": "Solution",
-            "para6": "Windows 8/8.1",
-            "para7": {
-                "span1": {
-                    "line1": "Tap or click",
-                    "line2": "Settings "
-                },
-                "span2": {
-                    "line1": "Tap or click",
-                    "line2": "Update and recovery"
-                },
-                "span3": {
-                    "line1": "Tap or click",
-                    "line2": "Recovery"
-                },
-                "span4": {
-                    "line1": "Under Refresh your PC without affecting your files, tap or click",
-                    "line2": "Get started."
-                },
-                "span5": {
-                    "line1": "Click",
-                    "line2": "\"Next\"."
-                },
-                "span6": {
-                    "line1": "Click",
-                    "line2": "\"Refresh\"",
-                    "line3": "to start the refresh process."
-                },
-                "span7": "Once the refresh process is done, you can find a Removed Apps list on the desktop",
-                "span8": "You can find the removed apps while refreshing your system"
-            },
-            "para8": "Windows 10",
-            "para9": {
-                "span1": {
-                    "line1": "Search for",
-                    "line2": "refresh",
-                    "line3": "in the search tool available in the Start menu"
-                },
-                "span2": {
-                    "line1": "Click on",
-                    "line2": "\"Refresh your PC without affecting your files\"",
-                    "line3": " in the search results as shown below."
-                },
-                "span3": {
-                    "line1": "Click on the",
-                    "line2": "Get started",
-                    "line3": "button just below the heading",
-                    "line4": "\"Refresh your PC without affecting your files\"",
-                    "line5": "to start refreshing your Windows 10 PC."
-                }
-            },
-            "header5": "Additional Information",
-            "para10": "In most cases, once you start to refresh your PC, it’ll finish on its own. However, if Windows needs missing files, you’ll be asked to insert recovery media, which is typically a DVD disc or thumb drive. If that happens, what you’ll need depends on your PC.",
-            "para11": "If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact Microsoft Support."
+			"title": "Kako ponovno postaviti Windows 10",
+			"para1": "Ako vaše računalo s Windows 10 ima problema ili ga prodajete, trebali biste ga ponovno postaviti. Ponovno postavljanje vam omogućava da odaberete zadržavanje ili uklanjanje datoteka, uklanja sve aplikacije i postavke i instalira novu kopiju sustava Windows. To također može riješiti mnoge poteškoće, poput sporog rada.",
+            "heading1": "1. Otvorite aplikaciju Postavke",
+            "para2": "Pritisnite gumb Start koji se nalazi u donjem lijevom dijelu zaslona i odaberite ikonu sa slikom zupčanika.",
+            "heading2": "2. Na popisu kategorija odaberite Ažuriranje i sigurnost",
+            "heading3": "3. U lijevom oknu idite na Oporavak",
+            "heading4": "4. Započnite postupak ponovnog postavljanja",
+            "para3": "Pod naslovom \"Ponovno postavi ovo računalo\" na vrhu kliknite ili dodirnite gumb Početak.",
+            "heading5": "5. Odaberite želite li zadržati datoteke ili ne",
+            "para4": "Nakon ponovnog pokretanja se možete prijaviti na svoj Microsoft račun. Sve aplikacije Windows Store kupljene na ovom računu će se ponovno instalirati.",
+            "para5": {
+				"li1": "Zadrži moje datoteke uklanja vaše aplikacije i postavke, ali zadržava sve vaše osobne datoteke.",
+				"li2": "Ukloni sve briše aplikacije, postavke i osobne datoteke. Ako nemate sigurnosnu kopiju datoteka, možda ćete morati pritisnuti Otkaži, izraditi sigurnosnu kopiju i ponovno započeti ovaj postupak."
+			},
+			"heading6": "6. Možete odabrati različite dodatne postavke",
+            "para6": "To će se prikazati samo ako ste u prethodnom koraku odabrali \"Ukloni sve\".",
+            "heading7": "7. Pročitajte pregled i kada ste spremni za nastavak pritisnite Ponovno pokreni.",
+            "para7": "Windows će se pripremiti za ponovno postavljanje uređaja. Jednostavno pričekajte dok vas ne prebaci na plavi zaslon.",
+            "heading8": "8. Kad se pojavi \"Odaberite mogućnost\", odaberite Nastavi.",
+            "para8": "Windows će se ponovo pokrenuti i započeti ponovno pokretanje. Računalo se može ponovno pokrenuti nekoliko puta jer se ponovno postavlja.",
+            "heading9": "Pitanja i odgovori u zajednici",
+            "communityAnswer": "Odgovori u zajednici",
+			"q1": "Ako odlučim ukloniti sve, brišem li sve pogone u/spojene na računalo ili samo onaj na kojem imam Windows 10?",
+            "a1": "To će obrisati samo pogon na kojem se nalazi OS Windows 10 (obično C: pogon). To neće utjecati na druge pogone u/povezane s računalom.",
+            "q2": "Kako mogu to učiniti ako je zaslon polomljen?",
+            "a2": "Nažalost, ne možete. Trebat će vam novi zaslon.",
+            "q3": "Ako se prijavim na bilo koje web mjesto, hoće li se i ta povijest ukloniti?",
+            "a3": "Da, ovisno o tome koji preglednik koristite. Da biste uklonili povijest preglednika, jednostavno idite na postavke u pregledniku i obrišite povijest. Također možete koristiti anonimne načine da biste izbjegli spremanje povijesti.",
+            "q4": "Ako odlučim ukloniti sve, hoće li to poništiti i moju lozinku?",
+            "a4": "Da, nakon što ponovno postavite Windows 10 računalo, uklonit će se svi korisnički podaci. To uključuje dokumente, pohranjene lozinke, slike, željene postavke, podatke preglednika i podatke o aplikacijama.",
+            "para9": "Referenca",
+            "para10": "Kako ponovno postaviti Windows 10 – WikiHow."
         },
         "question3": {
-            "title": "Kako znati kojim se CPU-om vaš uređaj koristi",
-            "description": "<div class='faqInFs4Fb'>    Kako znati kojim se CPU-om vaš uređaj koristi</div><hr><h3 class='faqInFs25FbP10'>Simptom</h3><p>Pojmovi 32-bitni i 64-bitni odnose se na način na koji procesor računala (koji se naziva i CPU) obrađuje informacije. 64-bitna verzija sustava Windows obrađuje velike količine memorije s izravnim pristupom (RAM-a) učinkovitije nego 32-bitni sustav.</p><h3 class='faqInFs25FbP10'>Zahvaćene robne marke</h3><p>Prethodno navedeni simptom povezan je sa sljedećim sustavima, ali nije na njih ograničen:</p><ul>    <li>Sva stolna i prijenosna računala</li></ul><h3 class='faqInFs25FbP10'>Operacijski sustav</h3><ul>    <li>Windows 7, 8 i 10</li></ul><h3 class='faqInFs25FbP10'>Rješenje</h3><p><strong><u>U sustavu Windows 7 ili Vista</u></strong></p><ol>    <li>Otvorite System (Sustav) klikom na sliku <strong>gumb Start </strong><strong>gumba Start,</strong> desnom tipkom miša kliknite Computer (Računalo), a zatim kliknite Properties (Svojstva)  </li>    <li>U odjeljku System (Sustav) možete vidjeti vrstu sustava.</li></ol><p><strong><u>Windows 8 i Windows 10</u></strong></p><p><strong>Prva metoda:</strong> pregledajte prozor System (Sustav) u Control Panel (Upravljačka ploča)</p><ol>    <li>Prijeđite prstom od desnog ruba zaslona, a zatim dodirnite <strong>Search</strong> (Pretraživanje). Ili ako se koristite mišem, usmjerite na donji desni kut zaslona, a zatim kliknite <strong>Search</strong> (Traži).</li>    <li>Upišite <strong>system</strong> (sustav) u okvir za pretraživanje, a zatim dodirnite ili kliknite <strong>Settings</strong> (Postavke).</li>    <li>Dodirnite ili kliknite <strong>System</strong> (Sustav)</li>    <li>Ako se koristite 64-bitnom verzijom sustava Windows 8, <strong>64-bitni operacijski sustav</strong> prikazuje se u polju System type (Vrsta sustava) pod naslovom System (Sustav). Ako se koristite 32<strong>-bitnom verzijom sustava Windows</strong> <strong>8,</strong> <strong>32-bitni operacijski </strong>sustav prikazan je u polju System type (Vrsta sustava) pod naslovom System (Sustav).<br />  </li></ol><p><strong>Druga metoda</strong>: prikaz prozora System Information (Informacije o sustavu)</p><ol>    <li>Prijeđite prstom od desnog ruba zaslona, a zatim dodirnite <strong>Search</strong> (Pretraživanje). Ili ako se koristite mišem, usmjerite na donji desni kut zaslona, a zatim kliknite <strong>Search</strong> (Traži).</li>    <li>U okvir za pretraživanje upišite <strong>system information</strong> (informacije o sustavu)</li>    <li>Dodirnite ili kliknite<strong> System</strong> (Sustav), dodirnite ili kliknite <strong>System Information</strong> (Informacije o sustavu), a zatim kliknite <strong>System Summary</strong> (Sažetak sustava).</li>    <li>Ako koristite <strong>64-bitnu </strong>verziju sustava Windows 8<strong>, </strong>prikazuje se računalo s x64 u polju <strong>System type</strong> (Vrsta sustava) pod naslovom Item (Stavka). <br /><br />Ako koristite <strong>32-bitnu </strong>verziju sustava Windows 8, prikazuje se računalo s procesorom x86 u polju <strong>System type</strong> (Tip sustava) pod naslovom Item (Stavka).  </li></ol><p> </p>",
-            "heading1": "Symptom",
-            "para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
-            "heading2": "Affected Brands",
-            "para2": "The above symptom is associated with, but not limited to, the following systems:",
-            "para3": "All Desktop and Laptops",
-            "heading3": "Operating System",
-            "para4": "Windows 7, 8, 10",
-            "heading4": "Solution",
-            "para5": "Windows 7 or Vista",
-            "para6": {
-                "span1": {
-                    "line1": "Open System by clicking the",
-                    "line2": "Start button",
-                    "line3": "Picture of the Start button, right-clicking Computer, and then clicking Properties"
-                },
-                "span2": "Under System, you can view the system type."
-            },
-            "para7": "Windows 8 and Windows 10",
-            "para8": {
-                "span1": {
-                    "line1": "Method 1:",
-                    "line2": "View the System window in Control Panel"
-                },
-                "span2": {
-                    "line1": "Swipe in from the right edge of the screen, and then tap",
-                    "line2": "Search.",
-                    "line3": "Or, if you are using a mouse, point to the lower-right corner of the screen, and then click",
-                    "line4": "Search."
-                },
-                "span3": {
-                    "line1": "Type",
-                    "line2": "system",
-                    "line3": "in the search box, and then tap or click",
-                    "line4": "Settings."
-                },
-                "span4": {
-                    "line1": "Tap or click",
-                    "line2": "System"
-                },
-                "span5": {
-                    "line1": "If you are running a 64-bit version of Windows 8,",
-                    "line2": "64-bit Operating System",
-                    "line3": "is displayed in the System type field under the System heading.",
-                    "line4": "If you are running a 32",
-                    "line5": "-bit version of Windows 8, 32-bit Operating",
-                    "line6": "System is displayed in the System type field under the System heading."
-                },
-                "span6": {
-                    "line1": "Method 2:",
-                    "line2": "View the System Information window"
-                },
-                "span7": {
-                    "line1": "Swipe in from the right edge of the screen, and then tap",
-                    "line2": "Search.",
-                    "line3": "Or, if you are using a mouse, point to the lower-right corner of the screen, and then click",
-                    "line4": "Search."
-                },
-                "span8": {
-                    "line1": "In the search box, type",
-                    "line2": "system information"
-                },
-                "span9": {
-                    "line1": "Tap or click",
-                    "line2": "System",
-                    "line3": ", tap or click",
-                    "line4": "System Information,",
-                    "line5": "and then click",
-                    "line6": "System Summary."
-                },
-                "span10": {
-                    "line1": "If you are running a",
-                    "line2": 64,
-                    "line3": "bit version of Windows 8, 32-bit Operating,",
-                    "line4": "x64-based PC is displayed in the",
-                    "line5": "System type",
-                    "line6": "field under the Item heading."
-                }
-            },
-            "para9": {
-                "line1": "If you are running a",
-                "line2": "32-bit",
-                "line3": "version of Windows 8,x86-based PC is displayed in the",
-                "line4": "System type",
-                "line5": "field under the Item heading."
-            }
+			"title": "Kako znati kojim se CPU-om vaš uređaj koristi",
+			"heading1": "Simptom",
+            "para1": "Pojmovi 32-bitni i 64-bitni odnose se na način na koji procesor računala (koji se naziva i CPU) obrađuje informacije. 64-bitna verzija sustava Windows obrađuje velike količine memorije s izravnim pristupom (RAM-a) učinkovitije nego 32-bitni sustav.",
+            "heading2": "Zahvaćene robne marke",
+            "para2": "Prethodno navedeni simptom povezan je sa sljedećim sustavima, ali nije na njih ograničen:",
+            "para3": "Sva stolna i prijenosna računala",
+            "heading3": "Operacijski sustav",
+            "para4": "Windows 7, 8 i 10",
+            "heading4": "Rješenje",
+            "para5": "U sustavu Windows 7 ili Vista",
+			"para6": "Otvorite System (Sustav) klikom na sliku <strong>gumb Start </strong><strong>gumba Start,</strong> desnom tipkom miša kliknite Computer (Računalo), a zatim kliknite Properties (Svojstva).",
+            "para7": "U odjeljku System (Sustav) možete vidjeti vrstu sustava.",
+            "para8": "Windows 8 i Windows 10",
+			"para9": "<strong>Prva metoda:</strong> pregledajte prozor System (Sustav) u Control Panel (Upravljačka ploča)",
+            "para10": "Prijeđite prstom od desnog ruba zaslona, a zatim dodirnite <strong>Search</strong> (Pretraživanje). Ili ako se koristite mišem, usmjerite na donji desni kut zaslona, a zatim kliknite <strong>Search</strong> (Traži).",
+            "para11": "Upišite <strong>system</strong> (sustav) u okvir za pretraživanje, a zatim dodirnite ili kliknite <strong>Settings</strong> (Postavke).",
+            "para12": "Dodirnite ili kliknite <strong>System</strong> (Sustav).",
+            "para13": "Ako se koristite 64-bitnom verzijom sustava Windows 8, <strong>64-bitni operacijski sustav</strong> prikazuje se u polju System type (Vrsta sustava) pod naslovom System (Sustav). Ako se koristite 32<strong>-bitnom verzijom sustava Windows</strong> <strong>8,</strong> <strong>32-bitni operacijski </strong>sustav prikazan je u polju System type (Vrsta sustava) pod naslovom System (Sustav).<br />  ",
+            "para14": "<strong>Druga metoda</strong>: prikaz prozora System Information (Informacije o sustavu)",
+            "para15": "Prijeđite prstom od desnog ruba zaslona, a zatim dodirnite <strong>Search</strong> (Pretraživanje). Ili ako se koristite mišem, usmjerite na donji desni kut zaslona, a zatim kliknite <strong>Search</strong> (Traži).",
+            "para16": "U okvir za pretraživanje upišite <strong>system information</strong> (informacije o sustavu).",
+            "para17": "Dodirnite ili kliknite<strong> System</strong> (Sustav), dodirnite ili kliknite <strong>System Information</strong> (Informacije o sustavu), a zatim kliknite <strong>System Summary</strong> (Sažetak sustava).",
+            "para18": "Ako koristite <strong>64-bitnu </strong>verziju sustava Windows 8<strong>, </strong>prikazuje se računalo s x64 u polju <strong>System type</strong> (Vrsta sustava) pod naslovom Item (Stavka). Ako koristite <strong>32-bitnu </strong>verziju sustava Windows 8, prikazuje se računalo s procesorom x86 u polju <strong>System type</strong> (Tip sustava) pod naslovom Item (Stavka).  "
         },
         "question4": {
-            "title": "Provjerite korištenje baterije uređaja",
-            "description": "<div class='faqInFs4Fb'>    Provjerite korištenje baterije uređaja</div><hr><h3 class='faqInFs25FbP10'>Simptom</h3><p>Windows 10 obuhvaća novi zaslon „<strong>Battery Use”</strong> (Korištenje baterije) koji vam pokazuje što troši energiju prijenosnog računala. To znači da će vam točno reći koje aplikacije, aplikacije radne ploče i „univerzalne” aplikacije sustava Windows 10, upotrebljavaju previše energije.</p><h3 class='faqInFs25FbP10'>Zahvaćene robne marke</h3><ul>    <li>Lenovo prijenosna računala, stolna računala</li></ul><h3 class='faqInFs25FbP10'>Zahvaćeni sustavi</h3><ul>    <li>Sve</li></ul><h3 class='faqInFs25FbP10'>Operacijski sustav</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Rješenje</h3><p>Ova je značajka nova u sustavu Windows 10, a trebamo je najprije pronaći jer nije pohranjena u vašem standardnom prikazu <strong>upravljačke ploče</strong>, ta se značajka se nalazi u novoj aplikaciji <strong> „Settings”</strong> (Postavke)</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Pronađite zaslon za upotrebu baterije</h3></p><p>1. Kliknite ili dodirnite <strong>„Settings</strong>” (Postavke) u izborniku Start</p><p>2. U <strong>Settings </strong> (Postavke) odaberite <strong>„System”</strong> (Sustav), a zatim odaberite <strong>„Battery saver” (Ušteda baterije).<br /></strong><strong></strong></p><p><img src='assets/images/qa/4.1.jpg' /></p><p>3. Kliknite ili dodirnite <strong>„Battery use”</strong> (Korištenje baterije) ispod ovog naslova kako biste pogledali više pojedinosti. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analizirajte potrošnju energije</h3><p>4. Možete promijeniti zaslon za korištenje baterije kako bi se prikazala potrošnja baterije od zadnja 24 sata do 48 sati ili posljednja od prošlog tjedna</p><p>5. Postotci za <strong>„System”</strong> (Sustav), „<strong>Display</strong>” (Prikaz) i „<strong>Wi-Fi”</strong>. To pokazuje koliko je napajanja baterije korišteno u procesima sustava, zaslonu,</p><p>6. Opcije <strong>„In use”</strong> (U upotrebi) i <strong>„Background”</strong> (Pozadina) pokazuju koliko energije troše aplikacije dok ih upotrebljavate u usporedbi s aplikacijama koje se izvode u pozadini.</p><p>7. Ako aplikacije u pozadini troše napajanje, možete kliknuti ili dodirnuti poveznicu <strong>„Change background app settings”</strong> (Promjena postavki pozadinskih aplikacija) i konfigurirati aplikacije da ne rade u pozadini. Ovo funkcionira samo za univerzalne aplikacije sustava Windows 10.</p><p>8. Pomaknite se prema dolje i vidjet ćete popis aplikacija, što se smatra najkorisnijim dijelom ove značajke. Prikazat će se popis aplikacija koje su u tom razdoblju trošile napajanje baterije i prikazat će se postotak napajanja koji je svaka aplikacija potrošila</p><p><img src='assets/images/qa/4.2.jpg' /></p><p> </p>",
-            "heading1": "Symptom",
-            "para1": {
-                "span1": "Windows 10 includes a new",
-                "span2": "“Battery Use”",
-                "span3": "screen that shows you what’s draining your laptop’s juice. That means it’ll tell you exactly what apps–both desktop and Windows 10 “universal” apps–are using too much power."
-            },
-            "heading2": "Affected Brands",
-            "para2": "Lenovo laptops, desktops",
-            "heading3": "Affected Systems",
-            "para3": "All",
-            "heading4": "Operating System",
+			"title": "Provjerite korištenje baterije uređaja",
+			"heading1": "Simptom",
+            "para1": "Windows 10 obuhvaća novi zaslon „<strong>Battery Use”</strong> (Korištenje baterije) koji vam pokazuje što troši energiju prijenosnog računala. To znači da će vam točno reći koje aplikacije, aplikacije radne ploče i „univerzalne” aplikacije sustava Windows 10, upotrebljavaju previše energije.",
+            "heading2": "Zahvaćene robne marke",
+            "para2": "Lenovo prijenosna računala, stolna računala",
+            "heading3": "Zahvaćeni sustavi",
+            "para3": "Sve",
+            "heading4": "Operacijski sustav",
             "para4": "Windows 10",
-            "heading5": "Solution",
-            "para5": {
-                "line1": "This feature is new in Windows 10, we need to find this feature first as it is not stored in your traditional",
-                "line2": "control panel",
-                "line3": "view, this feature is located in the new",
-                "line4": "“Settings”",
-                "line5": "app"
-            },
-            "para6": {
-                "span1": "A. Find the Battery Use Screen",
-                "span2": {
-                    "line1": "1. Click or Tap the",
-                    "line2": "“Settings”",
-                    "line3": "option from the start menu"
-                },
-                "span3": {
-                    "line1": "2. In",
-                    "line2": "Settings",
-                    "line3": "select",
-                    "line4": "“System”",
-                    "line5": "and then select",
-                    "line6": "“Battery saver.”"
-                },
-                "span4": {
-                    "line1": "3. Click or tap the",
-                    "line2": "“Battery use”",
-                    "line3": "link under this heading to see more details."
-                },
-                "span5": "B. Analyze Your Power Usage",
-                "span6": "4. You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last from last week",
-                "span7": {
-                    "line1": 5,
-                    "line2": "“System”,",
-                    "line3": "“Display”,",
-                    "line4": "and",
-                    "line5": "“Wi-Fi”",
-                    "line6": "percentages. This shows how much battery power has been used by system processes, the display,"
-                },
-                "span8": {
-                    "line1": "6. The",
-                    "line2": "“In use”",
-                    "line3": "and",
-                    "line4": "“Background”",
-                    "line5": "options show how much power is used by applications while you’re using them, compared to applications running in the background."
-                },
-                "span9": {
-                    "line1": "7. If apps are using power in the background, you can click or tap the",
-                    "line2": "“Change background app settings”",
-                    "line3": "link and configure apps to not run in the background. This only works for universal Windows 10 apps."
-                },
-                "span10": "8. Scroll down further and you will see a list of applications, this is considered as the most useful section of this feature. It will display a list of the apps have used battery power in that period, and show you what percentage of your battery power each app has used."
-            }
+            "heading5": "Rješenje",
+            "para5": "Ova je značajka nova u sustavu Windows 10, a trebamo je najprije pronaći jer nije pohranjena u vašem standardnom prikazu <strong>upravljačke ploče</strong>, ta se značajka se nalazi u novoj aplikaciji <strong> „Settings”</strong> (Postavke).",
+            "heading6": "A. Pronađite zaslon za upotrebu baterije",
+            "para6": "1. Kliknite ili dodirnite <strong>„Settings</strong>” (Postavke) u izborniku Start.",
+            "para7": "2. U <strong>Settings </strong> (Postavke) odaberite <strong>„System”</strong> (Sustav), a zatim odaberite <strong>„Battery saver” (Ušteda baterije)</strong>.",
+            "para8": "3. Kliknite ili dodirnite <strong>„Battery use”</strong> (Korištenje baterije) ispod ovog naslova kako biste pogledali više pojedinosti. ",
+            "heading7": "B. Analizirajte potrošnju energije",
+            "para9": "4. Možete promijeniti zaslon za korištenje baterije kako bi se prikazala potrošnja baterije od zadnja 24 sata do 48 sati ili posljednja od prošlog tjedna.",
+            "para10": "5. Postotci za <strong>„System”</strong> (Sustav), „<strong>Display</strong>” (Prikaz) i „<strong>Wi-Fi”</strong>. To pokazuje koliko je napajanja baterije korišteno u procesima sustava, zaslonu.",
+            "para11": "6. Opcije <strong>„In use”</strong> (U upotrebi) i <strong>„Background”</strong> (Pozadina) pokazuju koliko energije troše aplikacije dok ih upotrebljavate u usporedbi s aplikacijama koje se izvode u pozadini.",
+            "para12": "7. Ako aplikacije u pozadini troše napajanje, možete kliknuti ili dodirnuti poveznicu <strong>„Change background app settings”</strong> (Promjena postavki pozadinskih aplikacija) i konfigurirati aplikacije da ne rade u pozadini. Ovo funkcionira samo za univerzalne aplikacije sustava Windows 10.",
+            "para13": "8. Pomaknite se prema dolje i vidjet ćete popis aplikacija, što se smatra najkorisnijim dijelom ove značajke. Prikazat će se popis aplikacija koje su u tom razdoblju trošile napajanje baterije i prikazat će se postotak napajanja koji je svaka aplikacija potrošila."
         },
         "question5": {
-            "title": "Upotrebljavajte računalo kao tablet",
-            "description": "<div class='faqInFs4Fb'>    Upotrebljavajte računalo kao tablet</div><hr><p>Način rada tableta čini Windows intuitivnijim i jednostavnijim za upotrebu kada imate uređaj osjetljiv na dodir.</p><h3 class='faqInFs25FbP10'>Upotrijebi način rada za tablet</h3><p>Da biste uključili način rada za tablet, odaberite <strong>Action center</strong> (Akcijski centar) na programskoj traci, a zatim odaberite <strong>Tablet mode</strong> (Način rada tableta).</p><p> </p><p><img src='assets/images/qa/5.1.jpg'  /></p><h3 class='faqInFs25FbP10'>Napomena</h3><p>Da biste saznali može li vaš uređaj automatski uključiti način rada tableta, potražite uređaj na web-mjestu proizvođača. Podrška za ovu značajku ovisi o hardveru, instaliranom upravljačkom programu i načinu na koji je proizvođač postavio uređaj. </p><p> </p><p>U načinu rada tableta aplikacije se otvaraju na cijelom zaslonu, što vam daje više prostora za rad. Da biste zatvorili aplikaciju, povucite je na dno zaslona.</p><p> </p><h3 class='faqInFs25FbP10'>Savjet</h3><p>Programska traka dostupna je kada je računalo u načinu rada tableta, ali ga možete sakriti ako želite više prostora na zaslonu. Odaberite gumb <strong>Start</strong>, odaberite <strong>Settings </strong>(Postavke) > <strong>System </strong> (Sustav) > <strong> Tablet mode </strong> (Način rada tableta), a zatim uključite <strong>Automatically hide the taskbar in tablet mode</strong> (Automatski sakrij programsku traku u načinu rada tableta). Da biste vidjeli skrivenu programsku traku, prijeđite prstom prema gore s dna zaslona ili lebdite s pomoću miša.</p><h3 class='faqInFs25FbP10'>Upotreba dviju aplikacija istodobno</h3><p>Da biste se u načinu rada tableta istodobno koristili dvjema aplikacijama jednom uz drugu, povucite otvorenu aplikaciju dolje i na stranu. Vidjet ćete gdje će se poravnati, a vidjet ćete i sve otvorene aplikacije pored nje.</p><p>U ovom prikazu možete i:</p><ul>    <li>Upotrebljavati zajednički rub između dviju aplikacija prikazanih na dijelu zaslona da biste istodobno promijenili veličinu obiju aplikacija.</li>    <li>Otvorite novu aplikaciju u prikazu zadatka, odaberite <strong>Task view</strong> (Prikaz zadatka) na programskoj traci, odaberite aplikaciju, a zatim je povucite na jednu stranu da biste je poravnali u podijeljeni zaslon.</li>    <li>S pomoću gumba Natrag na programskoj traci možete se vratiti u aplikaciju ili otvoriti aplikaciju koju ste upotrebljavali prije toga.</li></ul><p> </p>",
-            "heading1": "Use tablet mode",
-            "para2": {
-                "span1": "To turn on tablet mode, select",
-                "span2": "action center",
-                "span3": "on the taskbar, then select",
-                "span4": "Tablet mode."
-            },
-            "heading2": "Note",
-            "para3": "To find out if your device can automatically turn on tablet mode, search for your device on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, and how the device was set up by the manufacturer.",
-            "para4": "In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the screen.",
-            "heading3": "Tip",
-            "para5": {
-                "span1": "The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen.",
-                "span2": "Select the",
-                "span3": "Start",
-                "span4": "button, select",
-                "span5": " Settings",
-                "span6": "System",
-                "span7": "Tablet mode",
-                "span8": ", then turn on",
-                "span9": "Automatically hide the taskbar in tablet mode.",
-                "span10": "To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there."
-            },
-            "heading4": "Use two apps simultaneously",
-            "para6": "To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and you'll see any open apps next to it.",
-            "para7": "In this view, you can also:",
-            "para8": {
-                "span1": "Use the shared edge between two snapped apps to resize both apps at the same time.",
-                "span2": {
-                    "line1": "Open a new app from task view—select",
-                    "line2": "Task view",
-                    "line3": "on the taskbar, select an app, then drag it to one side to snap it into your divided screen."
-                },
-                "span3": "Use the back button on the taskbar to go back in an app, or to open an app that you were using before."
-            }
+			"title": "Upotrebljavajte računalo kao tablet",
+			"para1": "Način rada tableta čini Windows intuitivnijim i jednostavnijim za upotrebu kada imate uređaj osjetljiv na dodir.",
+            "heading1": "Upotrijebi način rada za tablet",
+            "para2": "Da biste uključili način rada za tablet, odaberite <strong>Action center</strong> (Akcijski centar) na programskoj traci, a zatim odaberite <strong>Tablet mode</strong> (Način rada tableta).",
+            "heading2": "Napomena",
+            "para3": "Da biste saznali može li vaš uređaj automatski uključiti način rada tableta, potražite uređaj na web-mjestu proizvođača. Podrška za ovu značajku ovisi o hardveru, instaliranom upravljačkom programu i načinu na koji je proizvođač postavio uređaj. ",
+            "para4": "U načinu rada tableta aplikacije se otvaraju na cijelom zaslonu, što vam daje više prostora za rad. Da biste zatvorili aplikaciju, povucite je na dno zaslona.",
+            "heading3": "Savjet",
+            "para5": "Programska traka dostupna je kada je računalo u načinu rada tableta, ali ga možete sakriti ako želite više prostora na zaslonu. Odaberite gumb <strong>Start</strong>, odaberite <strong>Settings </strong>(Postavke) > <strong>System </strong> (Sustav) > <strong> Tablet mode </strong> (Način rada tableta), a zatim uključite <strong>Automatically hide the taskbar in tablet mode</strong> (Automatski sakrij programsku traku u načinu rada tableta). Da biste vidjeli skrivenu programsku traku, prijeđite prstom prema gore s dna zaslona ili lebdite s pomoću miša.",
+            "heading4": "Upotreba dviju aplikacija istodobno",
+            "para6": "Da biste se u načinu rada tableta istodobno koristili dvjema aplikacijama jednom uz drugu, povucite otvorenu aplikaciju dolje i na stranu. Vidjet ćete gdje će se poravnati, a vidjet ćete i sve otvorene aplikacije pored nje.",
+            "para7": "U ovom prikazu možete i:",
+            "para8": "Upotrebljavati zajednički rub između dviju aplikacija prikazanih na dijelu zaslona da biste istodobno promijenili veličinu obiju aplikacija.",
+            "para9": "Otvorite novu aplikaciju u prikazu zadatka, odaberite <strong>Task view</strong> (Prikaz zadatka) na programskoj traci, odaberite aplikaciju, a zatim je povucite na jednu stranu da biste je poravnali u podijeljeni zaslon.",
+            "para10": "S pomoću gumba Natrag na programskoj traci možete se vratiti u aplikaciju ili otvoriti aplikaciju koju ste upotrebljavali prije toga."
         },
         "question6": {
-            "title": "Upoznajte Cortanu, svoju osobnu pomoćnicu",
-            "description": "<div class='faqInFs4Fb'>    Upoznajte Cortanu, svoju osobnu pomoćnicu</div><hr><h3 class='faqInFs25FbP10'>Što je Cortana?</h3><hr /><p>Cortana je vaš digitalni agent. Pomoći će vam da obavite posao.</p><p>Što se više koristite Cortanom, to će vaše iskustvo biti personaliziranije.</p><p>Da biste započeli, upišite pitanje u okvir za pretraživanje ili odaberite mikrofon i razgovarajte s Cortanom. (Tipkanje funkcionira za sve vrste računala, ali za razgovor trebate mikrofon.)</p><p>Ako niste sigurni što reći, vidjet ćete prijedloge na zaključanom zaslonu i na početnoj stranici Cortane kada odaberete okvir za pretraživanje u programskoj traci.</p><p><img src='assets/images/qa/6.1.jpg'  /></p><ol>    <li>Početna stranica 2. Bilježnica 3. Postavke 4. Povratne informacije</li></ol><p>Evo nekih stvari koje Cortana može učiniti za vas:</p><ul>    <li>Dati vam podsjetnike na temelju vremena, mjesta ili osoba.</li>    <li>Pratite pakete, timove, interese i letove.</li>    <li>Slati e-poštu i tekstove.</li>    <li>Upravljati vašim kalendarom i obavještavati vas o svemu.</li>    <li>Izrađivati popise i upravljati njima.</li>    <li>Razgovarati i igrati igre.</li>    <li>Pronaći činjenice, datoteke, mjesta i informacije.</li>    <li>Otvoriti bilo koju aplikaciju u vašem sustavu.</li></ul><h3 class='faqInFs25FbP10'>Pokušajte sljedeće: postavite podsjetnik</h3><hr /><p>Jedna od stvari koje Cortana može učiniti jest da vas podsjeti na nešto. Može vas podsjetiti da radite stvari na temelju vremena, mjesta ili čak osoba.</p><p>Primjerice, utipkajte ili recite: „Podsjeti me da čestitam Tanyi sljedeći put kad nazove.”</p><p>Podsjetnik će se pojaviti kada dobijete poziv od Tanye.</p><p>Dodatni bonus &mdash; ako imate Windows Phone ili Cortanu za iPhone ili Android, možete postaviti Cortanu da sinkronizira obavijesti između računala i telefona.</p><p><img src='assets/images/qa/6.2.jpg'  /></p><h3 class='faqInFs25FbP10'>Hej Cortana?</h3><hr /><p>Postavite Cortanu da vas čuje kad god kažete: \"Hej Cortana\". Odaberite okvir za pretraživanje na programskoj traci da biste otvorili početnu stranicu Cortane. Zatim odaberite <strong>Settings</strong> (Postavke) i uključite <strong>Let Cortana respond to \"Hey Cortana.\"</strong> (Neka Cortana odgovara na „Hej Cortana”.)</p><p><img src='assets/images/qa/6.3.jpg'  /></p><p class='faqInFs25FbP10'>Napomena</p><p>Cortana je dostupna samo u određenim zemljama/regijama, a neke značajke Cortane možda nisu dostupne svugdje.</p><p> </p>",
-            "heading1": "What is Cortana?",
-            "para1": "Cortana is your digital agent. She'll help you get things done.",
-            "para2": "The more you use Cortana, the more personalized your experience will be.",
-            "para3": "To get started, type a question in the search box, or select the microphone  and talk to Cortana. (Typing works for all types of PCs, but you need a mic to talk.)",
-            "para4": "If you’re not sure what to say, you’ll see suggestions on your lock screen, and in Cortana home when you select the search box on the taskbar.",
-            "para5": " Home 2. Notebook 3. Settings 4. Feedback",
-            "para6": "Here are some things Cortana can do for you:",
-            "bulletset1": {
-                "span1": "Give you reminders based on time, places, or people.",
-                "span2": "Track packages, teams, interests, and flights.",
-                "span3": "Send emails and texts.",
-                "span4": "Manage your calendar and keep you up to date.",
-                "span5": "Create and manage lists.",
-                "span6": "Chit chat and play games.",
-                "span7": "Find facts, files, places, and info.",
-                "span8": "Open any app on your system."
+			"title": "Upoznajte Cortanu, svoju osobnu pomoćnicu",
+			"heading1": "Što je Cortana?",
+            "para1": "Cortana je vaš digitalni agent. Pomoći će vam da obavite posao.",
+            "para2": "Što se više koristite Cortanom, to će vaše iskustvo biti personaliziranije.",
+            "para3": "Da biste započeli, upišite pitanje u okvir za pretraživanje ili odaberite mikrofon i razgovarajte s Cortanom. (Tipkanje funkcionira za sve vrste računala, ali za razgovor trebate mikrofon.)",
+            "para4": "Ako niste sigurni što reći, vidjet ćete prijedloge na zaključanom zaslonu i na početnoj stranici Cortane kada odaberete okvir za pretraživanje u programskoj traci.",
+            "para5": "1. Početna stranica 2. Bilježnica 3. Postavke 4. Povratne informacije",
+            "para6": "Evo nekih stvari koje Cortana može učiniti za vas:",
+            "unorderedList1": {
+				"listItem1": "Dati vam podsjetnike na temelju vremena, mjesta ili osoba.",
+                "listItem2": "Pratite pakete, timove, interese i letove.",
+                "listItem3": "Slati e-poštu i tekstove.",
+                "listItem4": "Upravljati vašim kalendarom i obavještavati vas o svemu.",
+                "listItem5": "Izrađivati popise i upravljati njima.",
+                "listItem6": "Razgovarati i igrati igre.",
+                "listItem7": "Pronaći činjenice, datoteke, mjesta i informacije.",
+                "listItem8": "Otvoriti bilo koju aplikaciju u vašem sustavu."
             },
-            "heading2": "Try this: Set a reminder",
-            "para7": "One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or even people.",
-            "para8": "For example, type or say, “Remind me to congratulate Tanya the next time she calls.”",
-            "para9": "The reminder will appear when you get a call from Tanya.",
-            "para10": "Extra bonus—if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync notifications between your PC and phone.",
-            "heading3": "Hey Cortana?",
-            "para11": {
-                "span1": "Set Cortana to hear you anytime you say “Hey Cortana.” Select the search box on the taskbar to open Cortana home.",
-                "span2": {
-                    "line1": "Then select",
-                    "line2": "Settings",
-                    "line3": "and turn on",
-                    "line4": "Let Cortana respond to “Hey Cortana.”"
-                }
-            },
-            "para12": "Note",
-            "para13": "Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere."
-        },
-        "pageTitle": "Detalje o podršci"
+			"heading2": "Pokušajte sljedeće: postavite podsjetnik",
+            "para7": "Jedna od stvari koje Cortana može učiniti jest da vas podsjeti na nešto. Može vas podsjetiti da radite stvari na temelju vremena, mjesta ili čak osoba.",
+            "para8": "Primjerice, utipkajte ili recite: „Podsjeti me da čestitam Tanyi sljedeći put kad nazove”.",
+            "para9": "Podsjetnik će se pojaviti kada dobijete poziv od Tanye.",
+            "para10": "Dodatni bonus — ako imate Windows Phone ili Cortanu za iPhone ili Android, možete postaviti Cortanu da sinkronizira obavijesti između računala i telefona.",
+            "heading3": "Hej Cortana?",
+            "para11": "Postavite Cortanu da vas čuje kad god kažete: \"Hej Cortana\". Odaberite okvir za pretraživanje na programskoj traci da biste otvorili početnu stranicu Cortane. Zatim odaberite <strong>Settings</strong> (Postavke) i uključite <strong>Let Cortana respond to \"Hey Cortana.\"</strong> (Neka Cortana odgovara na „Hej Cortana”.)",
+            "heading4": "Napomena",
+            "para12": "Cortana je dostupna samo u određenim zemljama/regijama, a neke značajke Cortane možda nisu dostupne svugdje."
+        }
     },
     "welcometutorial": {
         "description": "Vantage vam olakšava ažuriranje upravljačkih programa, pokretanje dijagnostike, traženje podrške i saznavanje više informacija o uređaju. Brzo prilagodite svoje iskustvo i pronađite korisne informacije prilagođene vašim potrebama",

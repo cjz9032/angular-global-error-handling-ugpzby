@@ -2724,6 +2724,7 @@
         "ssoErrorAccountPluginNotExist": "Отсутствует подключаемый модуль. Подключаемый модуль будет восстановлен автоматически в фоновом режиме при наличии подключения к Интернету. Это может занять некоторое время, повторите попытку позже."
     },
     "faq": {
+        "pageTitle": "Поддержка подробно",
         "footer": {
             "title": "Не можете найти то, что ищете?",
             "description": "Нужна дополнительная поддержка? Свяжитесь с нами:",
@@ -2732,354 +2733,146 @@
         },
         "question1": {
             "title": "Резервное копирование и восстановление файлов",
-            "description": "<div>    <div class='faqInFs4Fb'>        Резервное копирование и восстановление файлов    </div>    <hr />    <div class='faqInMb7'>        Всегда хорошо иметь резервную копию. Сохраните копии своих файлов на другом диске на случай, если что-то случится с оригиналами.    </div>    <div class='faqInFs3Fb'>        Настройка резервного копирования    </div>    <hr />    <div class='mb-5'>        Нажмите кнопку <span class='faqInFb'>Пуск</span>, выберите <span class='faqInFb'>Параметры</span> > <span class='faqInFb'>Обновление и безопасность</span> > <span class='faqInFb'>Резервное копирование</span> > <span class='faqInFb'>Добавление диска</span> и выберите внешний диск или расположение в сети для файлов резервной копии.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Все готово. Каждый час будет выполняться резервное копирование всех данных в папке пользователя (C:\\Users\\ваше имя пользователя). Чтобы изменить файлы для резервного копирования или частоту их резервного копирования, перейдите в раздел <span class='faqInFb'>Больше параметров</span>.    </div>    <div class='faqInFs3Fb'>        Восстановление файлов    </div>    <div class='mb-5'>        Если вам нужен важный файл или папка, восстановите их следующим образом:    </div>    <div>        <div class='mb-3'>1. Введите <span class='faqInFb'>Восстановить файлы</span> в поле поиска на панели задач и выберите <span class='faqInFb'>Восстановление файлов с помощью истории файлов</span>.</div>        <div class='mb-3'>2. Найдите нужный файл, затем просмотрите все его версии с помощью стрелок</div>        <div class='mb-3'>3. После выбора нужной версии нажмите <span class='faqInFb'>Восстановить</span>, чтобы сохранить ее в исходном расположении. Чтобы сохранить файл в другом месте, нажмите и удерживайте (или щелкните правой кнопкой мыши) <span class='faqInFb'>Восстановить</span>, щелкните <span class='faqInFb'>Восстановить в</span>, а затем выберите новое расположение.</div>    </div></div>",
-            "para1": {
-                "line1": "It's always good to have a backup.",
-                "line2": "Keep copies of your files on another drive in case something happens to the originals."
-            },
-            "heading1": "Set up your backup",
-            "para2": {
-                "span1": "Select the",
-                "span2": "Start",
-                "span3": "button, select",
-                "span4": "Settings",
-                "span5": "Update & security",
-                "span6": "Backup",
-                "span7": "Add a drive",
-                "span8": ", and then choose an external drive or network location for your backups."
-            },
-            "para3": {
-                "span1": "All set.",
-                "span2": "Every hour, we'll back up everything in your user folder (C:\\Users\\username).",
-                "span3": "To change which files get backed up or how often backups happen, go to",
-                "span4": "More options."
-            },
-            "heading2": "Restore your files",
-            "para4": "If you're missing an important file or folder, here's how to get it back:",
-            "para5": {
-                "span1": "1. Type",
-                "span2": "Restore files",
-                "span3": "in the search box on the taskbar, and then select",
-                "span4": "Restore your files with File History.",
-                "span5": "2. Look for the file you need, then use the arrows to see all its versions",
-                "span6": "3. When you find the version you want, select",
-                "span7": "Restore",
-                "span8": "to save it in its original location. To save it in a different place, press and hold (or right-click)",
-                "span9": "Restore",
-                "span10": ", select",
-                "span11": "Restore to",
-                "span12": "and then choose a new location."
-            }
+            "para1": "Всегда хорошо иметь резервную копию. Сохраните копии своих файлов на другом диске на случай, если что-то случится с оригиналами.",
+			"heading1": "Настройка резервного копирования",
+			"para2": "Нажмите кнопку Пуск, выберите Параметры > Обновление и безопасность > Резервное копирование > Добавление диска и выберите внешний диск или расположение в сети для файлов резервной копии.",
+			"para3": "Все готово. Каждый час будет выполняться резервное копирование всех данных в папке пользователя (C:\\Users\\ваше имя пользователя). Чтобы изменить файлы для резервного копирования или частоту их резервного копирования, перейдите в раздел Больше параметров.",
+			"heading2": "Восстановление файлов",
+			"para4": "Если вам нужен важный файл или папка, восстановите их следующим образом:",
+			"para5": {
+				"div1": "1. Введите Восстановить файлы в поле поиска на панели задач и выберите Восстановление файлов с помощью истории файлов.",
+				"div2": "2. Найдите нужный файл, затем просмотрите все его версии с помощью стрелок.",
+				"div3": "3. После выбора нужной версии нажмите Восстановить, чтобы сохранить ее в исходном расположении. Чтобы сохранить файл в другом месте, нажмите и удерживайте (или щелкните правой кнопкой мыши) Восстановить, щелкните Восстановить в, а затем выберите новое расположение."
+			}
         },
         "question2": {
-            "title": "Возврат компьютера в исходное состояние",
-            "description": "<div><div class='faqInFs4Fb'>Сброс Windows 10</div><hr><div class='faqInP5'>Если на вашем компьютере с Windows 10 возникли проблемы или если вы продаете его, следует выполнить его сброс. При сбросе удаляются все приложения и параметры и устанавливается новая копия Windows, а файлы можно сохранить или удалить. Кроме того, это может устранить многие проблемы, например низкую производительность.</div><div class='faqInFs25FbP10'>1. Откройте приложение \"Параметры\"</div><div class='faqInP5'>Нажмите кнопку \"Пуск\" в нижней левой части экрана и выберите значок раздела параметров в виде шестеренки.</div><div class='faqInP5'><img src='assets/images/qa/2.1.jpg' /></div><div class='faqInFs25FbP10'>2. Выберите \"Обновление и безопасность\" из списка категорий</div><div class='faqInP5'><img src='assets/images/qa/2.2.jpg' /></div><div class='faqInFs25FbP10'>3. Перейдите в раздел \"Восстановление\" на левой панели</div><div class='faqInP5'><img src='assets/images/qa/2.3.jpg' /></div><div class='faqInFs25FbP10'>4. Запустите процесс сброса</div><div class='faqInP5'>В подразделе \"Вернуть компьютер в исходное состояние\" наверху нажмите кнопку \"Начать\".</div><div class='faqInP5'><img src='assets/images/qa/2.4.jpg' /></div><div class='faqInFs25FbP10'>5. Выберите, следует ли сохранить файлы</div><div class='faqInP5'>После сброса можно войти в учетную запись Майкрософт. Все приложения из Магазина Windows, купленные под этой учетной записью, будут переустановлены.</div><div class='faqInP5'><ul><li>Вариант \"Сохранить мои файлы\" удаляет приложения и параметры, но оставляет все личные файлы.</li><li>Вариант \"Удалить все\" стирает приложения, параметры и личные файлы. Если у вас нет резервной копии ваших файлов, рекомендуется нажать \"Отмена\", создать резервную копию, а затем начать процесс заново.</li></ul></div><div class='faqInP5'><img src='assets/images/qa/2.5.jpg' /></div><div class='faqInFs25FbP10'>6. Можно выбрать ряд дополнительных параметров</div><div class='faqInP5'>Это окно появится, только если на предыдущем шаге вы выбрали \"Удалить все\".</div><div class='faqInP5'><img src='assets/images/qa/2.6.1.jpg' /></div><div class='faqInP5'><img src='assets/images/qa/2.6.2.jpg' /></div><div class='faqInFs25FbP10'>7. Ознакомьтесь с общими сведениями и нажмите \"Сброс\", чтобы продолжить.</div><div class='faqInP5'>Windows подготовится к сбросу устройства. Дождитесь появления синего экрана.</div><div class='faqInFs25FbP10'>8. При появлении экрана \"Выберите параметр\" нажмите \"Продолжить\".</div><div class='faqInP5'>Произойдет перезапуск Windows, и начнется сброс. В ходе сброса компьютер может несколько раз перезагрузиться.</div><hr><div class='faqInFs25FbP10'>Вопросы и ответы сообщества</div><div class='faqInP5'><b>Если выбрать вариант \"Удалить все\", будут ли данные стерты со всех дисков, установленных в компьютере или подключенных к нему, или только с того, на котором установлена ОС Windows 10?</b></div><div class='faqInP5'><i>Ответ сообщества</i></div><div class='faqInP10'>Данные будут удалены только с диска, на котором установлена ОС Windows 10 (обычно это диск C:). Другие диски, установленные в компьютере или подключенные к нему, не будут затронуты.</div><div class='faqInP5'><b>Как выполнить сброс при сломанном экране?</b></div><div class='faqInP5'><i>Ответ сообщества</i></div><div class='faqInP10'>К сожалению, это не возможно. Вам придется найти новый экран.</div><div class='faqInP5'><b>Будет ли удалена история посещения веб-сайтов?</b></div><div class='faqInP5'><i>Ответ сообщества</i></div><div class='faqInP10'>Да, в зависимости от используемого браузера. Чтобы удалить историю браузера, перейдите в раздел параметров браузера и удалите историю. Также можно использовать режим инкогнито, чтобы история не сохранялась.</div><div class='faqInP5'><b>Если выбрать вариант \"Удалить все\", будет ли также сброшен мой пароль?</b></div><div class='faqInP5'><i>Ответ сообщества</i></div><div class='faqInP10'>Да, после сброса компьютера с Windows 10 будут удалены все пользовательские данные. К ним относятся документы, сохраненные пароли, изображения, настройки предпочтений, данные браузеров и приложений.</div><hr><div class='faqInP5'>Справочные материалы</div><div class='faqInP5'>Сброс Windows 10 (WikiHow).</div></div>",
-            "heading1": "Symptom",
-            "para1": {
-                "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
-                "span2": "Windows can “refresh” your PC so it’s more like a fresh install without deleting your personal files."
-            },
-            "para2": "Refresh your PC, Here is what will happen: your files and personalized settings won’t change",
-            "para3": {
-                "span1": "Your PC settings will be changed back to its defaults",
-                "span2": "Apps from windows store will be kept",
-                "span3": "Apps you installed from disc or website will be removed",
-                "span4": "A list of removed files will be saved on your desktop"
-            },
-            "heading2": "Affected Brands",
-            "para4": "All Desktop and Laptops",
-            "heading3": "Operation System",
-            "para5": "Windows 8, 8.1 & 10",
-            "heading4": "Solution",
-            "para6": "Windows 8/8.1",
-            "para7": {
-                "span1": {
-                    "line1": "Tap or click",
-                    "line2": "Settings "
-                },
-                "span2": {
-                    "line1": "Tap or click",
-                    "line2": "Update and recovery"
-                },
-                "span3": {
-                    "line1": "Tap or click",
-                    "line2": "Recovery"
-                },
-                "span4": {
-                    "line1": "Under Refresh your PC without affecting your files, tap or click",
-                    "line2": "Get started."
-                },
-                "span5": {
-                    "line1": "Click",
-                    "line2": "\"Next\"."
-                },
-                "span6": {
-                    "line1": "Click",
-                    "line2": "\"Refresh\"",
-                    "line3": "to start the refresh process."
-                },
-                "span7": "Once the refresh process is done, you can find a Removed Apps list on the desktop",
-                "span8": "You can find the removed apps while refreshing your system"
-            },
-            "para8": "Windows 10",
-            "para9": {
-                "span1": {
-                    "line1": "Search for",
-                    "line2": "refresh",
-                    "line3": "in the search tool available in the Start menu"
-                },
-                "span2": {
-                    "line1": "Click on",
-                    "line2": "\"Refresh your PC without affecting your files\"",
-                    "line3": " in the search results as shown below."
-                },
-                "span3": {
-                    "line1": "Click on the",
-                    "line2": "Get started",
-                    "line3": "button just below the heading",
-                    "line4": "\"Refresh your PC without affecting your files\"",
-                    "line5": "to start refreshing your Windows 10 PC."
-                }
-            },
-            "header5": "Additional Information",
-            "para10": "In most cases, once you start to refresh your PC, it’ll finish on its own. However, if Windows needs missing files, you’ll be asked to insert recovery media, which is typically a DVD disc or thumb drive. If that happens, what you’ll need depends on your PC.",
-            "para11": "If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact Microsoft Support."
+			"title": "Сброс Windows 10",
+			"para1": "Если на вашем компьютере с Windows 10 возникли проблемы или если вы продаете его, следует выполнить его сброс. При сбросе удаляются все приложения и параметры и устанавливается новая копия Windows, а файлы можно сохранить или удалить. Кроме того, это может устранить многие проблемы, например низкую производительность.",
+            "heading1": "1. Откройте приложение \"Параметры\"",
+            "para2": "Нажмите кнопку \"Пуск\" в нижней левой части экрана и выберите значок раздела параметров в виде шестеренки.",
+            "heading2": "2. Выберите \"Обновление и безопасность\" из списка категорий",
+            "heading3": "3. Перейдите в раздел \"Восстановление\" на левой панели",
+            "heading4": "4. Запустите процесс сброса",
+            "para3": "В подразделе \"Вернуть компьютер в исходное состояние\" наверху нажмите кнопку \"Начать\".",
+            "heading5": "5. Выберите, следует ли сохранить файлы",
+            "para4": "После сброса можно войти в учетную запись Майкрософт. Все приложения из Магазина Windows, купленные под этой учетной записью, будут переустановлены.",
+            "para5": {
+				"li1": "Вариант \"Сохранить мои файлы\" удаляет приложения и параметры, но оставляет все личные файлы.",
+				"li2": "Вариант \"Удалить все\" стирает приложения, параметры и личные файлы. Если у вас нет резервной копии ваших файлов, рекомендуется нажать \"Отмена\", создать резервную копию, а затем начать процесс заново."
+			},
+			"heading6": "6. Можно выбрать ряд дополнительных параметров",
+            "para6": "Это окно появится, только если на предыдущем шаге вы выбрали \"Удалить все\".",
+            "heading7": "7. Ознакомьтесь с общими сведениями и нажмите \"Сброс\", чтобы продолжить.",
+            "para7": "Windows подготовится к сбросу устройства. Дождитесь появления синего экрана.",
+            "heading8": "8. При появлении экрана \"Выберите параметр\" нажмите \"Продолжить\".",
+            "para8": "Произойдет перезапуск Windows, и начнется сброс. В ходе сброса компьютер может несколько раз перезагрузиться.",
+            "heading9": "Вопросы и ответы сообщества",
+            "communityAnswer": "Ответ сообщества",
+			"q1": "Если выбрать вариант \"Удалить все\", будут ли данные стерты со всех дисков, установленных в компьютере или подключенных к нему, или только с того, на котором установлена ОС Windows 10?",
+            "a1": "Данные будут удалены только с диска, на котором установлена ОС Windows 10 (обычно это диск C:). Другие диски, установленные в компьютере или подключенные к нему, не будут затронуты.",
+            "q2": "Как выполнить сброс при сломанном экране?",
+            "a2": "К сожалению, это не возможно. Вам придется найти новый экран.",
+            "q3": "Будет ли удалена история посещения веб-сайтов?",
+            "a3": "Да, в зависимости от используемого браузера. Чтобы удалить историю браузера, перейдите в раздел параметров браузера и удалите историю. Также можно использовать режим инкогнито, чтобы история не сохранялась.",
+            "q4": "Если выбрать вариант \"Удалить все\", будет ли также сброшен мой пароль?",
+            "a4": "Да, после сброса компьютера с Windows 10 будут удалены все пользовательские данные. К ним относятся документы, сохраненные пароли, изображения, настройки предпочтений, данные браузеров и приложений.",
+            "para9": "Справочные материалы",
+            "para10": "Сброс Windows 10 (WikiHow)."
         },
         "question3": {
-            "title": "Сведения о модели ЦП в компьютере",
-            "description": "<div class='faqInFs4Fb'>    Сведения о модели ЦП в компьютере</div><hr><h3 class='faqInFs25FbP10'>Признак</h3><p>Термины \"32-разрядный\" и \"64-разрядный\" относятся к способу обработки информации процессором компьютера (также называется ЦП). 64-разрядная версия Windows обрабатывает большие объемы памяти ОЗУ (оперативное запоминающее устройство) более эффективно, чем 32-разрядная система.</p><h3 class='faqInFs25FbP10'>Затрагиваемые торговые марки</h3><p>Вышеуказанный признак связан со следующими системами, но не ограничивается ими:</p><ul>    <li>Все настольные ПК и ноутбуки</li></ul><h3 class='faqInFs25FbP10'>Операционная система</h3><ul>    <li>Windows 7, 8 и 10</li></ul><h3 class='faqInFs25FbP10'>Решение</h3><p><strong><u>Windows 7 или Vista</u></strong></p><ol>    <li>Откройте систему, нажав кнопку <strong>Пуск </strong>Изображение <strong>кнопки \"Пуск\"</strong>, щелкните правой кнопкой мыши \"Компьютер\", затем нажмите \"Свойства\"  </li>    <li>В разделе \"Система\" можно просмотреть тип системы.</li></ol><p><strong><u>Windows 8 и Windows 10</u></strong></p><p><strong>Способ 1.</strong> Просмотр окна \"Система\" на панели управления</p><ol>    <li>Проведите от правого края экрана, затем коснитесь элемента <strong>Поиск</strong>. Или, если вы используете мышь, наведите указатель на правый нижний угол экрана и нажмите <strong>Поиск.</strong></li>    <li>Введите <strong>система</strong> в поле поиска, затем коснитесь или щелкните <strong>Параметры.</strong></li>    <li>Коснитесь или щелкните <strong>Система</strong></li>    <li>Если используется 64-разрядная версия Windows 8, в поле \"Тип системы\" под заголовком \"Система\" отобразится <strong>64-разрядная операционная система</strong>. Если используется 32-<strong>разрядная версия Windows</strong> <strong>8,</strong> в поле \"Тип системы\" под заголовком \"Система\" отобразится <strong>32-разрядная операционная система</strong>.<br />  </li></ol><p><strong>Способ 2</strong>. Просмотр окна \"Сведения о системе\"</p><ol>    <li>Проведите от правого края экрана, затем коснитесь элемента <strong>Поиск</strong>. Или, если вы используете мышь, наведите указатель на правый нижний угол экрана и нажмите <strong>Поиск.</strong></li>    <li>В поле поиска введите <strong>сведения о системе</strong></li>    <li>Коснитесь или щелкните<strong> Система</strong>, коснитесь или щелкните <strong>Сведения о системе,</strong> затем нажмите <strong>Сводные сведения о системе.</strong></li>    <li>Если используется <strong>64-разрядная </strong>версия Windows 8<strong>, </strong> в поле <strong>Тип системы</strong> под заголовком \"Элемент\" отобразится \"Компьютер на базе x64\". <br /> <br /> Если используется<strong> 32-разрядная</strong> версия Windows 8, в поле <strong>Тип системы</strong> под заголовком \"Элемент\" отобразится \"Компьютер на базе x86\".  </li></ol><p> </p>",
-            "heading1": "Symptom",
-            "para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
-            "heading2": "Affected Brands",
-            "para2": "The above symptom is associated with, but not limited to, the following systems:",
-            "para3": "All Desktop and Laptops",
-            "heading3": "Operating System",
-            "para4": "Windows 7, 8, 10",
-            "heading4": "Solution",
-            "para5": "Windows 7 or Vista",
-            "para6": {
-                "span1": {
-                    "line1": "Open System by clicking the",
-                    "line2": "Start button",
-                    "line3": "Picture of the Start button, right-clicking Computer, and then clicking Properties"
-                },
-                "span2": "Under System, you can view the system type."
-            },
-            "para7": "Windows 8 and Windows 10",
-            "para8": {
-                "span1": {
-                    "line1": "Method 1:",
-                    "line2": "View the System window in Control Panel"
-                },
-                "span2": {
-                    "line1": "Swipe in from the right edge of the screen, and then tap",
-                    "line2": "Search.",
-                    "line3": "Or, if you are using a mouse, point to the lower-right corner of the screen, and then click",
-                    "line4": "Search."
-                },
-                "span3": {
-                    "line1": "Type",
-                    "line2": "system",
-                    "line3": "in the search box, and then tap or click",
-                    "line4": "Settings."
-                },
-                "span4": {
-                    "line1": "Tap or click",
-                    "line2": "System"
-                },
-                "span5": {
-                    "line1": "If you are running a 64-bit version of Windows 8,",
-                    "line2": "64-bit Operating System",
-                    "line3": "is displayed in the System type field under the System heading.",
-                    "line4": "If you are running a 32",
-                    "line5": "-bit version of Windows 8, 32-bit Operating",
-                    "line6": "System is displayed in the System type field under the System heading."
-                },
-                "span6": {
-                    "line1": "Method 2:",
-                    "line2": "View the System Information window"
-                },
-                "span7": {
-                    "line1": "Swipe in from the right edge of the screen, and then tap",
-                    "line2": "Search.",
-                    "line3": "Or, if you are using a mouse, point to the lower-right corner of the screen, and then click",
-                    "line4": "Search."
-                },
-                "span8": {
-                    "line1": "In the search box, type",
-                    "line2": "system information"
-                },
-                "span9": {
-                    "line1": "Tap or click",
-                    "line2": "System",
-                    "line3": ", tap or click",
-                    "line4": "System Information,",
-                    "line5": "and then click",
-                    "line6": "System Summary."
-                },
-                "span10": {
-                    "line1": "If you are running a",
-                    "line2": 64,
-                    "line3": "bit version of Windows 8, 32-bit Operating,",
-                    "line4": "x64-based PC is displayed in the",
-                    "line5": "System type",
-                    "line6": "field under the Item heading."
-                }
-            },
-            "para9": {
-                "line1": "If you are running a",
-                "line2": "32-bit",
-                "line3": "version of Windows 8,x86-based PC is displayed in the",
-                "line4": "System type",
-                "line5": "field under the Item heading."
-            }
+			"title": "Сведения о модели ЦП в компьютере",
+			"heading1": "Признак",
+            "para1": "Термины \"32-разрядный\" и \"64-разрядный\" относятся к способу обработки информации процессором компьютера (также называется ЦП). 64-разрядная версия Windows обрабатывает большие объемы памяти ОЗУ (оперативное запоминающее устройство) более эффективно, чем 32-разрядная система.",
+            "heading2": "Затрагиваемые торговые марки",
+            "para2": "Вышеуказанный признак связан со следующими системами, но не ограничивается ими:",
+            "para3": "Все настольные ПК и ноутбуки",
+            "heading3": "Операционная система",
+            "para4": "Windows 7, 8 и 10",
+            "heading4": "Решение",
+            "para5": "Windows 7 или Vista",
+			"para6": "Откройте систему, нажав кнопку <strong>Пуск </strong>Изображение <strong>кнопки \"Пуск\"</strong>, щелкните правой кнопкой мыши \"Компьютер\", затем нажмите \"Свойства\".",
+            "para7": "В разделе \"Система\" можно просмотреть тип системы.",
+            "para8": "Windows 8 и Windows 10",
+			"para9": "<strong>Способ 1.</strong> Просмотр окна \"Система\" на панели управления",
+            "para10": "Проведите от правого края экрана, затем коснитесь элемента <strong>Поиск</strong>. Или, если вы используете мышь, наведите указатель на правый нижний угол экрана и нажмите <strong>Поиск.</strong>",
+            "para11": "Введите <strong>система</strong> в поле поиска, затем коснитесь или щелкните <strong>Параметры.</strong>",
+            "para12": "Коснитесь или щелкните <strong>Система</strong>.",
+            "para13": "Если используется 64-разрядная версия Windows 8, в поле \"Тип системы\" под заголовком \"Система\" отобразится <strong>64-разрядная операционная система</strong>. Если используется 32-<strong>разрядная версия Windows</strong> <strong>8,</strong> в поле \"Тип системы\" под заголовком \"Система\" отобразится <strong>32-разрядная операционная система</strong>.<br />  ",
+            "para14": "<strong>Способ 2</strong>. Просмотр окна \"Сведения о системе\"",
+            "para15": "Проведите от правого края экрана, затем коснитесь элемента <strong>Поиск</strong>. Или, если вы используете мышь, наведите указатель на правый нижний угол экрана и нажмите <strong>Поиск.</strong>",
+            "para16": "В поле поиска введите <strong>сведения о системе</strong>.",
+            "para17": "Коснитесь или щелкните<strong> Система</strong>, коснитесь или щелкните <strong>Сведения о системе,</strong> затем нажмите <strong>Сводные сведения о системе.</strong>",
+            "para18": "Если используется <strong>64-разрядная </strong>версия Windows 8<strong>, </strong> в поле <strong>Тип системы</strong> под заголовком \"Элемент\" отобразится \"Компьютер на базе x64\". <br /> <br /> Если используется<strong> 32-разрядная</strong> версия Windows 8, в поле <strong>Тип системы</strong> под заголовком \"Элемент\" отобразится \"Компьютер на базе x86\".  "
         },
         "question4": {
-            "title": "Сведения об использовании аккумулятора компьютера",
-            "description": "<div class='faqInFs4Fb'>    Сведения об использовании аккумулятора компьютера</div><hr><h3 class='faqInFs25FbP10'>Признак</h3><p>В Windows 10 есть новый экран <strong>Использование батареи</strong>, на котором показано, какие процессы используют заряд аккумулятора ноутбука. Это означает, что вы точно узнаете, какие приложения (классические и \"универсальные\" приложения для Windows 10) используют слишком много энергии.</p><h3 class='faqInFs25FbP10'>Затрагиваемые торговые марки</h3><ul>    <li>Ноутбуки и настольные ПК Lenovo</li></ul><h3 class='faqInFs25FbP10'>Затрагиваемые системы</h3><ul>    <li>Все</li></ul><h3 class='faqInFs25FbP10'>Операционная система</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Решение</h3><p>Эта функция является новой в Windows 10. Сначала ее нужно найти, поскольку она отсутствует в традиционном представлении <strong>панели управления</strong>. Она доступна в новом приложении <strong>Параметры</strong></p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>А. Поиск экрана \"Использование батареи\"</h3></p><p>1. Коснитесь или щелкните пункт <strong>Параметры</strong> в меню \"Пуск\"</p><p>2. В разделе <strong>Параметры </strong> выберите <strong>Система</strong> и нажмите <strong>Экономия заряда.<br /></strong> <strong></strong></p><p><img src='assets/images/qa/4.1.jpg' /></p><p>3. Коснитесь или щелкните <strong>Использование батареи</strong> под этим заголовком, чтобы просмотреть дополнительные сведения. </p><p> </p><h3 class='faqInFs25FbP10'>B. Анализ энергопотребления</h3><p>4. Можно выбрать один из следующих вариантов отображения сведений об использовании батареи на экране: за последние 24 часа, за последние 48 часов или за последнюю неделю</p><p>5. Процентные значения <strong>Система,</strong> <strong>Дисплей</strong> и <strong>Wi-Fi</strong>. показывают, сколько заряда аккумулятора было использовано системными процессами.</p><p>6. Параметры <strong>Используется</strong> и <strong>Фон</strong> показывают, сколько энергии используется приложениями во время их использования по сравнению с приложениями, выполняемыми в фоновом режиме.</p><p>7. Если приложения используют энергию в фоновом режиме, можно коснуться или щелкнуть <strong>Изменение параметров приложений, работающих в фоновом режиме</strong> и настроить приложения таким образом, чтобы они не выполнялись в фоновом режиме. Это работает только в случае универсальных приложений для Windows 10.</p><p>8. Прокрутите вниз, чтобы просмотреть список приложений. Это считается наиболее полезной составляющей этой функции. Отобразится список приложений, использовавших заряд аккумулятора за данный период, и будет указано, какой процент заряда аккумулятора использовало каждое приложение</p><p><img src='assets/images/qa/4.2.jpg' /></p><p> </p>",
-            "heading1": "Symptom",
-            "para1": {
-                "span1": "Windows 10 includes a new",
-                "span2": "“Battery Use”",
-                "span3": "screen that shows you what’s draining your laptop’s juice. That means it’ll tell you exactly what apps–both desktop and Windows 10 “universal” apps–are using too much power."
-            },
-            "heading2": "Affected Brands",
-            "para2": "Lenovo laptops, desktops",
-            "heading3": "Affected Systems",
-            "para3": "All",
-            "heading4": "Operating System",
+			"title": "Сведения об использовании аккумулятора компьютера",
+			"heading1": "Признак",
+            "para1": "В Windows 10 есть новый экран <strong>Использование батареи</strong>, на котором показано, какие процессы используют заряд аккумулятора ноутбука. Это означает, что вы точно узнаете, какие приложения (классические и \"универсальные\" приложения для Windows 10) используют слишком много энергии.",
+            "heading2": "Затрагиваемые торговые марки",
+            "para2": "Ноутбуки и настольные ПК Lenovo",
+            "heading3": "Затрагиваемые системы",
+            "para3": "Все",
+            "heading4": "Операционная система",
             "para4": "Windows 10",
-            "heading5": "Solution",
-            "para5": {
-                "line1": "This feature is new in Windows 10, we need to find this feature first as it is not stored in your traditional",
-                "line2": "control panel",
-                "line3": "view, this feature is located in the new",
-                "line4": "“Settings”",
-                "line5": "app"
-            },
-            "para6": {
-                "span1": "A. Find the Battery Use Screen",
-                "span2": {
-                    "line1": "1. Click or Tap the",
-                    "line2": "“Settings”",
-                    "line3": "option from the start menu"
-                },
-                "span3": {
-                    "line1": "2. In",
-                    "line2": "Settings",
-                    "line3": "select",
-                    "line4": "“System”",
-                    "line5": "and then select",
-                    "line6": "“Battery saver.”"
-                },
-                "span4": {
-                    "line1": "3. Click or tap the",
-                    "line2": "“Battery use”",
-                    "line3": "link under this heading to see more details."
-                },
-                "span5": "B. Analyze Your Power Usage",
-                "span6": "4. You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last from last week",
-                "span7": {
-                    "line1": 5,
-                    "line2": "“System”,",
-                    "line3": "“Display”,",
-                    "line4": "and",
-                    "line5": "“Wi-Fi”",
-                    "line6": "percentages. This shows how much battery power has been used by system processes, the display,"
-                },
-                "span8": {
-                    "line1": "6. The",
-                    "line2": "“In use”",
-                    "line3": "and",
-                    "line4": "“Background”",
-                    "line5": "options show how much power is used by applications while you’re using them, compared to applications running in the background."
-                },
-                "span9": {
-                    "line1": "7. If apps are using power in the background, you can click or tap the",
-                    "line2": "“Change background app settings”",
-                    "line3": "link and configure apps to not run in the background. This only works for universal Windows 10 apps."
-                },
-                "span10": "8. Scroll down further and you will see a list of applications, this is considered as the most useful section of this feature. It will display a list of the apps have used battery power in that period, and show you what percentage of your battery power each app has used."
-            }
+            "heading5": "Решение",
+            "para5": "Эта функция является новой в Windows 10. Сначала ее нужно найти, поскольку она отсутствует в традиционном представлении <strong>панели управления</strong>. Она доступна в новом приложении <strong>Параметры</strong>.",
+            "heading6": "А. Поиск экрана \"Использование батареи\"",
+            "para6": "1. Коснитесь или щелкните пункт <strong>Параметры</strong> в меню \"Пуск\".",
+            "para7": "2. В разделе <strong>Параметры </strong> выберите <strong>Система</strong> и нажмите <strong>Экономия заряда</strong>.",
+            "para8": "3. Коснитесь или щелкните <strong>Использование батареи</strong> под этим заголовком, чтобы просмотреть дополнительные сведения.",
+            "heading7": "B. Анализ энергопотребления",
+            "para9": "4. Можно выбрать один из следующих вариантов отображения сведений об использовании батареи на экране: за последние 24 часа, за последние 48 часов или за последнюю неделю.",
+            "para10": "5. Процентные значения <strong>Система,</strong> <strong>Дисплей</strong> и <strong>Wi-Fi</strong>. показывают, сколько заряда аккумулятора было использовано системными процессами.",
+            "para11": "6. Параметры <strong>Используется</strong> и <strong>Фон</strong> показывают, сколько энергии используется приложениями во время их использования по сравнению с приложениями, выполняемыми в фоновом режиме.",
+            "para12": "7. Если приложения используют энергию в фоновом режиме, можно коснуться или щелкнуть <strong>Изменение параметров приложений, работающих в фоновом режиме</strong> и настроить приложения таким образом, чтобы они не выполнялись в фоновом режиме. Это работает только в случае универсальных приложений для Windows 10.",
+            "para13": "8. Прокрутите вниз, чтобы просмотреть список приложений. Это считается наиболее полезной составляющей этой функции. Отобразится список приложений, использовавших заряд аккумулятора за данный период, и будет указано, какой процент заряда аккумулятора использовало каждое приложение."
         },
         "question5": {
-            "title": "Использование компьютера в качестве планшетного ПК",
-            "description": "<div class='faqInFs4Fb'>    Использование компьютера в качестве планшетного ПК</div><hr><p>Режим планшета делает Windows более интуитивно понятным и простым в использовании, если у вас есть устройство с сенсорным экраном.</p><h3 class='faqInFs25FbP10'>Использование режима планшета</h3><p>Чтобы включить режим планшета, выберите <strong>центр уведомлений</strong> на панели задач, затем выберите <strong>Режим планшета</strong>.</p><p> </p><p><img src='assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Примечание</h3><p>Чтобы узнать, может ли устройство автоматически включать режим планшета, найдите его на веб-сайте производителя. Поддержка этой функции зависит от оборудования, установленного драйвера и способа настройки устройства производителем. </p><p> </p><p>В режиме планшета приложения открываются в полноэкранном режиме, предоставляя больше пространства для работы. Чтобы закрыть приложение, перетащите его в нижнюю часть экрана.</p><p> </p><h3 class='faqInFs25FbP10'>Рекомендация</h3><p>Панель задач доступна, когда компьютер находится в режиме планшета, но ее можно скрыть, если требуется больше пространства на экране. Нажмите кнопку <strong>Пуск</strong>, выберите <strong>Параметры </strong>> <strong>Система </strong>> <strong>Режим планшета</strong> и включите параметр <strong>Автоматически скрывать панель задач в режиме планшета</strong>. Чтобы отобразить скрытую панель задач, проведите вверх от нижней части экрана или наведите на нее указатель мыши.</p><h3 class='faqInFs25FbP10'>Использование двух приложений одновременно</h3><p>Чтобы использовать два приложения одновременно в режиме планшета, перетащите открытое приложение вниз и в сторону. Вы увидите, где оно будет прикреплено, и все открытые приложения рядом с ним.</p><p>В этом представлении также можно:</p><ul>    <li>Использовать общий край между двумя прикрепленными приложениями, чтобы изменить размер обоих приложений одновременно.</li>    <li>Открыть новое приложение из представления задач. Для этого нажмите <strong>Представление задач</strong> на панели задач, выберите приложение и перетащите его на одну сторону, чтобы прикрепить к разделенному экрану.</li>    <li>Нажать кнопку \"Назад\" на панели задач, чтобы вернуться к приложению или открыть приложение, которое использовалось ранее.</li></ul><p> </p>",
-            "heading1": "Use tablet mode",
-            "para2": {
-                "span1": "To turn on tablet mode, select",
-                "span2": "action center",
-                "span3": "on the taskbar, then select",
-                "span4": "Tablet mode."
-            },
-            "heading2": "Note",
-            "para3": "To find out if your device can automatically turn on tablet mode, search for your device on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, and how the device was set up by the manufacturer.",
-            "para4": "In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the screen.",
-            "heading3": "Tip",
-            "para5": {
-                "span1": "The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen.",
-                "span2": "Select the",
-                "span3": "Start",
-                "span4": "button, select",
-                "span5": " Settings",
-                "span6": "System",
-                "span7": "Tablet mode",
-                "span8": ", then turn on",
-                "span9": "Automatically hide the taskbar in tablet mode.",
-                "span10": "To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there."
-            },
-            "heading4": "Use two apps simultaneously",
-            "para6": "To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and you'll see any open apps next to it.",
-            "para7": "In this view, you can also:",
-            "para8": {
-                "span1": "Use the shared edge between two snapped apps to resize both apps at the same time.",
-                "span2": {
-                    "line1": "Open a new app from task view—select",
-                    "line2": "Task view",
-                    "line3": "on the taskbar, select an app, then drag it to one side to snap it into your divided screen."
-                },
-                "span3": "Use the back button on the taskbar to go back in an app, or to open an app that you were using before."
-            }
+			"title": "Использование компьютера в качестве планшетного ПК",
+			"para1": "Режим планшета делает Windows более интуитивно понятным и простым в использовании, если у вас есть устройство с сенсорным экраном.",
+            "heading1": "Использование режима планшета",
+            "para2": "Чтобы включить режим планшета, выберите <strong>центр уведомлений</strong> на панели задач, затем выберите <strong>Режим планшета</strong>.",
+            "heading2": "Примечание",
+            "para3": "Чтобы узнать, может ли устройство автоматически включать режим планшета, найдите его на веб-сайте производителя. Поддержка этой функции зависит от оборудования, установленного драйвера и способа настройки устройства производителем. ",
+            "para4": "В режиме планшета приложения открываются в полноэкранном режиме, предоставляя больше пространства для работы. Чтобы закрыть приложение, перетащите его в нижнюю часть экрана.",
+            "heading3": "Рекомендация",
+            "para5": "Панель задач доступна, когда компьютер находится в режиме планшета, но ее можно скрыть, если требуется больше пространства на экране. Нажмите кнопку <strong>Пуск</strong>, выберите <strong>Параметры </strong>> <strong>Система </strong>> <strong>Режим планшета</strong> и включите параметр <strong>Автоматически скрывать панель задач в режиме планшета</strong>. Чтобы отобразить скрытую панель задач, проведите вверх от нижней части экрана или наведите на нее указатель мыши.",
+            "heading4": "Использование двух приложений одновременно",
+            "para6": "Чтобы использовать два приложения одновременно в режиме планшета, перетащите открытое приложение вниз и в сторону. Вы увидите, где оно будет прикреплено, и все открытые приложения рядом с ним.",
+            "para7": "В этом представлении также можно:",
+            "para8": "Использовать общий край между двумя прикрепленными приложениями, чтобы изменить размер обоих приложений одновременно.",
+            "para9": "Открыть новое приложение из представления задач. Для этого нажмите <strong>Представление задач</strong> на панели задач, выберите приложение и перетащите его на одну сторону, чтобы прикрепить к разделенному экрану.",
+            "para10": "Нажать кнопку \"Назад\" на панели задач, чтобы вернуться к приложению или открыть приложение, которое использовалось ранее."
         },
         "question6": {
-            "title": "Знакомство с Кортаной, вашим личным помощником",
-            "description": "<div class='faqInFs4Fb'>    Знакомство с Кортаной, вашим личным помощником</div><hr><h3 class='faqInFs25FbP10'>Что такое Кортана?</h3><hr /><p>Кортана &mdash; это ваш цифровой агент. Она поможет выполнять поставленные задачи.</p><p>Чем больше вы используете Кортану, тем более персонализированным будет ваше взаимодействие.</p><p>Чтобы начать работу, введите вопрос в поле поиска или выберите микрофон и поговорите с Кортаной. (Набор текста работает на всех типах ПК, но для разговора нужен микрофон.)</p><p>Если вы не уверены, что сказать, вы увидите предложения на экране блокировки и на домашней странице Кортаны при выборе окна поиска на панели задач.</p><p><img src='assets/images/qa/6.1.jpg' /></p><ol>    <li>Домашняя страница 2. Записная книжка 3. Параметры 4. Отзывы</li></ol><p>Вот несколько примеров того, что может делать Кортана:</p><ul>    <li>Отправлять напоминания на основании времени, мест или людей.</li>    <li>Отслеживать пакеты, группы, интересы и рейсы.</li>    <li>Отправлять сообщения электронной почты и тексты.</li>    <li>Управлять календарем и держать вас в курсе событий.</li>    <li>Создавать списки и управлять ими.</li>    <li>Общаться и играть в игры.</li>    <li>Искать факты, файлы, места и информацию.</li>    <li>Открывать любое приложение в системе.</li></ul><h3 class='faqInFs25FbP10'>Попробуйте установить напоминание</h3><hr /><p>Одна из функций Кортаны &mdash; отправлять напоминания. Она может напомнить вам что-то сделать на основании времени, мест или даже людей.</p><p>Например, введите или скажите: \"Напомни мне поздравить Таню в следующий раз, когда она позвонит\".</p><p>Напоминание отобразится, когда вы получите звонок от Тани.</p><p>Дополнительный бонус: если у вас есть Windows Phone или Кортана для iPhone или Android, вы можете настроить Кортану для синхронизации уведомлений между компьютером и телефоном.</p><p><img src='assets/images/qa/6.2.jpg' /></p><h3 class='faqInFs25FbP10'>Привет, Кортана!</h3><hr /><p>Настройте Кортану, чтобы она слышала вас каждый раз, когда вы будете говорить \"Привет, Кортана!\" Выберите поле поиска на панели задач, чтобы открыть домашнюю страницу Кортаны. Затем выберите <strong>Параметры</strong> и включите параметр <strong>Разрешить Кортане отвечать на фразу \"Привет, Кортана!\"</strong></p><p><img src='assets/images/qa/6.3.jpg' /></p><p class='faqInFs25FbP10'>Примечание</p><p>Кортана доступна только в определенных странах/регионах, и некоторые функции Кортаны могут быть доступны не везде.</p><p> </p>",
-            "heading1": "What is Cortana?",
-            "para1": "Cortana is your digital agent. She'll help you get things done.",
-            "para2": "The more you use Cortana, the more personalized your experience will be.",
-            "para3": "To get started, type a question in the search box, or select the microphone  and talk to Cortana. (Typing works for all types of PCs, but you need a mic to talk.)",
-            "para4": "If you’re not sure what to say, you’ll see suggestions on your lock screen, and in Cortana home when you select the search box on the taskbar.",
-            "para5": " Home 2. Notebook 3. Settings 4. Feedback",
-            "para6": "Here are some things Cortana can do for you:",
-            "bulletset1": {
-                "span1": "Give you reminders based on time, places, or people.",
-                "span2": "Track packages, teams, interests, and flights.",
-                "span3": "Send emails and texts.",
-                "span4": "Manage your calendar and keep you up to date.",
-                "span5": "Create and manage lists.",
-                "span6": "Chit chat and play games.",
-                "span7": "Find facts, files, places, and info.",
-                "span8": "Open any app on your system."
+			"title": "Знакомство с Кортаной, вашим личным помощником",
+			"heading1": "Что такое Кортана?",
+            "para1": "Кортана — это ваш цифровой агент. Она поможет выполнять поставленные задачи.",
+            "para2": "Чем больше вы используете Кортану, тем более персонализированным будет ваше взаимодействие.",
+            "para3": "Чтобы начать работу, введите вопрос в поле поиска или выберите микрофон и поговорите с Кортаной. (Набор текста работает на всех типах ПК, но для разговора нужен микрофон.)",
+            "para4": "Если вы не уверены, что сказать, вы увидите предложения на экране блокировки и на домашней странице Кортаны при выборе окна поиска на панели задач.",
+            "para5": "1. Домашняя страница 2. Записная книжка 3. Параметры 4. Отзывы",
+            "para6": "Вот несколько примеров того, что может делать Кортана:",
+            "unorderedList1": {
+				"listItem1": "Отправлять напоминания на основании времени, мест или людей.",
+                "listItem2": "Отслеживать пакеты, группы, интересы и рейсы.",
+                "listItem3": "Отправлять сообщения электронной почты и тексты.",
+                "listItem4": "Управлять календарем и держать вас в курсе событий.",
+                "listItem5": "Создавать списки и управлять ими.",
+                "listItem6": "Общаться и играть в игры.",
+                "listItem7": "Искать факты, файлы, места и информацию.",
+                "listItem8": "Открывать любое приложение в системе."
             },
-            "heading2": "Try this: Set a reminder",
-            "para7": "One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or even people.",
-            "para8": "For example, type or say, “Remind me to congratulate Tanya the next time she calls.”",
-            "para9": "The reminder will appear when you get a call from Tanya.",
-            "para10": "Extra bonus—if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync notifications between your PC and phone.",
-            "heading3": "Hey Cortana?",
-            "para11": {
-                "span1": "Set Cortana to hear you anytime you say “Hey Cortana.” Select the search box on the taskbar to open Cortana home.",
-                "span2": {
-                    "line1": "Then select",
-                    "line2": "Settings",
-                    "line3": "and turn on",
-                    "line4": "Let Cortana respond to “Hey Cortana.”"
-                }
-            },
-            "para12": "Note",
-            "para13": "Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere."
-        },
-        "pageTitle": "Поддержка подробно"
+			"heading2": "Попробуйте установить напоминание",
+            "para7": "Одна из функций Кортаны — отправлять напоминания. Она может напомнить вам что-то сделать на основании времени, мест или даже людей.",
+            "para8": "Например, введите или скажите: \"Напомни мне поздравить Таню в следующий раз, когда она позвонит\".",
+            "para9": "Напоминание отобразится, когда вы получите звонок от Тани.",
+            "para10": "Дополнительный бонус: если у вас есть Windows Phone или Кортана для iPhone или Android, вы можете настроить Кортану для синхронизации уведомлений между компьютером и телефоном.",
+            "heading3": "Привет, Кортана!",
+            "para11": "Настройте Кортану, чтобы она слышала вас каждый раз, когда вы будете говорить \"Привет, Кортана!\" Выберите поле поиска на панели задач, чтобы открыть домашнюю страницу Кортаны. Затем выберите <strong>Параметры</strong> и включите параметр <strong>Разрешить Кортане отвечать на фразу \"Привет, Кортана!\"</strong>",
+            "heading4": "Примечание",
+            "para12": "Кортана доступна только в определенных странах/регионах, и некоторые функции Кортаны могут быть доступны не везде."
+        }
     },
     "welcometutorial": {
         "description": "С приложением Vantage удобно обновлять драйверы, проводить диагностику, обращаться за поддержкой и получать информацию о своем устройстве.Здесь вы сможете быстро задать индивидуальные настройки и найти полезную информацию, которая нужна именно вам",

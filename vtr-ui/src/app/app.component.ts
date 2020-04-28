@@ -349,10 +349,6 @@ export class AppComponent implements OnInit, OnDestroy {
 							},
 							(error) => this.logger.info('@sahinul server switch error ', error),
 							() => {
-								// Evaluate the translations for QA on language Change
-								// this.qaService.setTranslationService(this.translate);
-								// this.qaService.setCurrentLangTranslations();
-								// this.logger.info('@sahinul server switch completed');
 							}
 						);
 					}

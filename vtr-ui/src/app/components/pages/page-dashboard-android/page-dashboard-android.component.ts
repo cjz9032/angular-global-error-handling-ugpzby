@@ -76,10 +76,6 @@ export class PageDashboardAndroidComponent implements OnInit {
 			this.submit = value;
 			this.feedbackButtonText = this.submit;
 		}); */
-		// Evaluate the translations for QA on language Change
-		this.qaService.setTranslationService(this.translate);
-		this.qaService.setCurrentLangTranslations();
-
 	}
 
 	ngOnInit() {

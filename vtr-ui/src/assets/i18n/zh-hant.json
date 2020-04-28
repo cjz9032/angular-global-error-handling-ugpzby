@@ -2724,6 +2724,7 @@
         "ssoErrorAccountPluginNotExist": "遺漏外掛程式。如果您已連線至網際網路，我們將會在背景自動還原外掛程式。這可能需要一點時間，請稍後重試。"
     },
     "faq": {
+        "pageTitle": "支持細節",
         "footer": {
             "title": "找不到你要找的東西？",
             "description": "需要其他支援嗎？請隨時透過以下方式與我們聯絡：",
@@ -2732,354 +2733,146 @@
         },
         "question1": {
             "title": "備份及還原檔案",
-            "description": "<div>    <div class='faqInFs4Fb'>        備份及還原檔案    </div>    <hr />    <div class='faqInMb7'>        備份讓您有備無患。將檔案複本保存在另一個硬碟上，以防原件出現問題。    </div>    <div class='faqInFs3Fb'>        設定備份    </div>    <hr />    <div class='mb-5'>        選取<span class='faqInFb'>開始</span> 按鈕，接著依序選取<span class='faqInFb'>設定</span> > <span class='faqInFb'>更新和安全性</span> > <span class='faqInFb'>備份</span> > <span class='faqInFb'>新增硬碟</span>，然後選擇外部硬碟或網路位置來進行備份。    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        設定完成。使用者資料夾 (C:\\Users\\您的使用者名稱) 中的所有資料會每隔 1 小時備份一次。若要變更要進行備份的檔案或是備份的發生頻率，請前往<span class='faqInFb'>其他選項</span>。    </div>    <div class='faqInFs3Fb'>        還原檔案    </div>    <div class='mb-5'>        如果您遺漏了重要檔案或資料夾，請按以下步驟將其還原：    </div>    <div>        <div class='mb-3'>1.在工作列上的搜尋方塊中鍵入<span class='faqInFb'>還原檔案</span>，然後選取<span class='faqInFb'>使用檔案歷程記錄來還原檔案</span>。</div>        <div class='mb-3'>2.尋找需要的檔案，然後使用箭頭來查看其所有版本</div>        <div class='mb-3'>3.在找到需要版本後，選取<span class='faqInFb'>還原</span>，將其儲存到原始位置。若要將檔案儲存到不同的位置，請按住不放 (或用滑鼠右鍵按一下) <span class='faqInFb'>還原</span>，並選取<span class='faqInFb'>還原至</span>，接著選擇新位置。</div>    </div></div>",
-            "para1": {
-                "line1": "It's always good to have a backup.",
-                "line2": "Keep copies of your files on another drive in case something happens to the originals."
-            },
-            "heading1": "Set up your backup",
-            "para2": {
-                "span1": "Select the",
-                "span2": "Start",
-                "span3": "button, select",
-                "span4": "Settings",
-                "span5": "Update & security",
-                "span6": "Backup",
-                "span7": "Add a drive",
-                "span8": ", and then choose an external drive or network location for your backups."
-            },
-            "para3": {
-                "span1": "All set.",
-                "span2": "Every hour, we'll back up everything in your user folder (C:\\Users\\username).",
-                "span3": "To change which files get backed up or how often backups happen, go to",
-                "span4": "More options."
-            },
-            "heading2": "Restore your files",
-            "para4": "If you're missing an important file or folder, here's how to get it back:",
-            "para5": {
-                "span1": "1. Type",
-                "span2": "Restore files",
-                "span3": "in the search box on the taskbar, and then select",
-                "span4": "Restore your files with File History.",
-                "span5": "2. Look for the file you need, then use the arrows to see all its versions",
-                "span6": "3. When you find the version you want, select",
-                "span7": "Restore",
-                "span8": "to save it in its original location. To save it in a different place, press and hold (or right-click)",
-                "span9": "Restore",
-                "span10": ", select",
-                "span11": "Restore to",
-                "span12": "and then choose a new location."
-            }
+            "para1": "備份讓您有備無患。將檔案複本保存在另一個硬碟上，以防原件出現問題。",
+			"heading1": "設定備份",
+			"para2": "選取開始 按鈕，接著依序選取設定 > 更新和安全性 > 備份 > 新增硬碟，然後選擇外部硬碟或網路位置來進行備份。",
+			"para3": "設定完成。使用者資料夾 (C:\\Users\\您的使用者名稱) 中的所有資料會每隔 1 小時備份一次。若要變更要進行備份的檔案或是備份的發生頻率，請前往其他選項。",
+			"heading2": "還原檔案",
+			"para4": "如果您遺漏了重要檔案或資料夾，請按以下步驟將其還原：",
+			"para5": {
+				"div1": "1.在工作列上的搜尋方塊中鍵入還原檔案，然後選取使用檔案歷程記錄來還原檔案。",
+				"div2": "2.尋找需要的檔案，然後使用箭頭來查看其所有版本。",
+				"div3": "3.在找到需要版本後，選取還原，將其儲存到原始位置。若要將檔案儲存到不同的位置，請按住不放 (或用滑鼠右鍵按一下) 還原，並選取還原至，接著選擇新位置。"
+			}
         },
         "question2": {
-            "title": "如何重設您的電腦",
-            "description": "<div><div class='faqInFs4Fb'>如何重設 Windows 10</div><hr><div class='faqInP5'>如果您的 Windows 10 電腦遇到問題，或您要將它出售，請重設該電腦。執行重設可讓您選擇保留或移除您的檔案，移除所有應用程式和設定，並安裝 Windows 的新副本。這也可以修正許多問題，例如效能降低。</div><div class='faqInFs25FbP10'>1.開啟「設定」應用程式</div><div class='faqInP5'>按下螢幕左下角的「開始」影像按鈕，然後選擇「設定」齒輪影像。</div><div class='faqInP5'><img src='assets/images/qa/2.1.jpg' /></div><div class='faqInFs25FbP10'>2.在類別清單中選取「更新和安全性」</div><div class='faqInP5'><img src='assets/images/qa/2.2.jpg' /></div><div class='faqInFs25FbP10'>3.在左窗格中導覽至「復原」</div><div class='faqInP5'><img src='assets/images/qa/2.3.jpg' /></div><div class='faqInFs25FbP10'>4.開始重設程序</div><div class='faqInP5'>在頂部的「重設此電腦」標題底下，按一下或點選「開始」按鈕。</div><div class='faqInP5'><img src='assets/images/qa/2.4.jpg' /></div><div class='faqInFs25FbP10'>5.選擇是否保留您的檔案</div><div class='faqInP5'>重設之後，您可以登入您的 Microsoft 帳戶。使用此帳戶購買的所有 Windows 市集應用程式都將重新安裝。</div><div class='faqInP5'><ul><li>「保留我的檔案」會移除應用程式和設定，但會保留您的所有個人檔案。</li><li>「移除所有項目」會清除您的應用程式、設定和個人檔案。如果您沒有檔案的備份副本，建議您按下「取消」，將檔案備份，然後重新開始此程序。</li></ul></div><div class='faqInP5'><img src='assets/images/qa/2.5.jpg' /></div><div class='faqInFs25FbP10'>6.您可以選擇不同的其他設定</div><div class='faqInP5'>只有當您在上一步中選取了「移除所有項目」時，此選項才會顯示。</div><div class='faqInP5'><img src='assets/images/qa/2.6.1.jpg' /></div><div class='faqInP5'><img src='assets/images/qa/2.6.2.jpg' /></div><div class='faqInFs25FbP10'>7. 閱讀概觀，當您準備好繼續進行時按下「重設」。</div><div class='faqInP5'>Windows 將準備重設您的裝置。此時只需等待，直到您進入藍色畫面。</div><div class='faqInFs25FbP10'>8.當「選擇選項」出現時，選取「繼續」。</div><div class='faqInP5'>Windows 將重新啟動並開始重設。進行重設期間，您的電腦可能會重新開機數次。</div><hr><div class='faqInFs25FbP10'>社群問答集</div><div class='faqInP5'><b>如果我選擇移除所有項目，我電腦內部/連接的所有磁碟機都會清除內容，還是只有執行 Windows 10 所在的磁碟機會清除內容？</b></div><div class='faqInP5'><i>社群回答</i></div><div class='faqInP10'>只會清除 Windows 10 作業系統磁碟機（通常是 C: 磁碟機）。電腦內部/連接的其他磁碟機將不受影響。</div><div class='faqInP5'><b>如果螢幕壞了，我該如何執行此操作？</b></div><div class='faqInP5'><i>社群回答</i></div><div class='faqInP10'>很不幸地，這種情況下您無法執行此操作。您需要取得新螢幕。</div><div class='faqInP5'><b>如果我已登入任何網站，相關的歷程記錄也會移除嗎？</b></div><div class='faqInP5'><i>社群回答</i></div><div class='faqInP10'>是的，具體取決於您使用的瀏覽器。如果要移除您的瀏覽器歷程記錄，只要進入瀏覽器中的設定並刪除歷程記錄即可。您也可以使用匿名模式以避免儲存歷程記錄。</div><div class='faqInP5'><b>如果我選擇移除所有項目，是否也會重設我的密碼？</b></div><div class='faqInP5'><i>社群回答</i></div><div class='faqInP10'>是的，一旦重設您的 Windows 10 電腦，也將移除所有使用者資料。這包括文件、儲存的密碼、圖片、偏好設定、瀏覽器資訊和應用程式資料。</div><hr><div class='faqInP5'>參考</div><div class='faqInP5'>如何重設 Windows 10 – WikiHow。</div></div>",
-            "heading1": "Symptom",
-            "para1": {
-                "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
-                "span2": "Windows can “refresh” your PC so it’s more like a fresh install without deleting your personal files."
-            },
-            "para2": "Refresh your PC, Here is what will happen: your files and personalized settings won’t change",
-            "para3": {
-                "span1": "Your PC settings will be changed back to its defaults",
-                "span2": "Apps from windows store will be kept",
-                "span3": "Apps you installed from disc or website will be removed",
-                "span4": "A list of removed files will be saved on your desktop"
-            },
-            "heading2": "Affected Brands",
-            "para4": "All Desktop and Laptops",
-            "heading3": "Operation System",
-            "para5": "Windows 8, 8.1 & 10",
-            "heading4": "Solution",
-            "para6": "Windows 8/8.1",
-            "para7": {
-                "span1": {
-                    "line1": "Tap or click",
-                    "line2": "Settings "
-                },
-                "span2": {
-                    "line1": "Tap or click",
-                    "line2": "Update and recovery"
-                },
-                "span3": {
-                    "line1": "Tap or click",
-                    "line2": "Recovery"
-                },
-                "span4": {
-                    "line1": "Under Refresh your PC without affecting your files, tap or click",
-                    "line2": "Get started."
-                },
-                "span5": {
-                    "line1": "Click",
-                    "line2": "\"Next\"."
-                },
-                "span6": {
-                    "line1": "Click",
-                    "line2": "\"Refresh\"",
-                    "line3": "to start the refresh process."
-                },
-                "span7": "Once the refresh process is done, you can find a Removed Apps list on the desktop",
-                "span8": "You can find the removed apps while refreshing your system"
-            },
-            "para8": "Windows 10",
-            "para9": {
-                "span1": {
-                    "line1": "Search for",
-                    "line2": "refresh",
-                    "line3": "in the search tool available in the Start menu"
-                },
-                "span2": {
-                    "line1": "Click on",
-                    "line2": "\"Refresh your PC without affecting your files\"",
-                    "line3": " in the search results as shown below."
-                },
-                "span3": {
-                    "line1": "Click on the",
-                    "line2": "Get started",
-                    "line3": "button just below the heading",
-                    "line4": "\"Refresh your PC without affecting your files\"",
-                    "line5": "to start refreshing your Windows 10 PC."
-                }
-            },
-            "header5": "Additional Information",
-            "para10": "In most cases, once you start to refresh your PC, it’ll finish on its own. However, if Windows needs missing files, you’ll be asked to insert recovery media, which is typically a DVD disc or thumb drive. If that happens, what you’ll need depends on your PC.",
-            "para11": "If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact Microsoft Support."
+			"title": "如何重設 Windows 10",
+			"para1": "如果您的 Windows 10 電腦遇到問題，或您要將它出售，請重設該電腦。執行重設可讓您選擇保留或移除您的檔案，移除所有應用程式和設定，並安裝 Windows 的新副本。這也可以修正許多問題，例如效能降低。",
+            "heading1": "1.開啟「設定」應用程式",
+            "para2": "按下螢幕左下角的「開始」影像按鈕，然後選擇「設定」齒輪影像。",
+            "heading2": "2.在類別清單中選取「更新和安全性」",
+            "heading3": "3.在左窗格中導覽至「復原」",
+            "heading4": "4.開始重設程序",
+            "para3": "在頂部的「重設此電腦」標題底下，按一下或點選「開始」按鈕。",
+            "heading5": "5.選擇是否保留您的檔案",
+            "para4": "重設之後，您可以登入您的 Microsoft 帳戶。使用此帳戶購買的所有 Windows 市集應用程式都將重新安裝。",
+            "para5": {
+				"li1": "「保留我的檔案」會移除應用程式和設定，但會保留您的所有個人檔案。",
+				"li2": "「移除所有項目」會清除您的應用程式、設定和個人檔案。如果您沒有檔案的備份副本，建議您按下「取消」，將檔案備份，然後重新開始此程序。"
+			},
+			"heading6": "6.您可以選擇不同的其他設定",
+            "para6": "只有當您在上一步中選取了「移除所有項目」時，此選項才會顯示。",
+            "heading7": "7. 閱讀概觀，當您準備好繼續進行時按下「重設」。",
+            "para7": "Windows 將準備重設您的裝置。此時只需等待，直到您進入藍色畫面。",
+            "heading8": "8.當「選擇選項」出現時，選取「繼續」。",
+            "para8": "Windows 將重新啟動並開始重設。進行重設期間，您的電腦可能會重新開機數次。",
+            "heading9": "社群問答集",
+            "communityAnswer": "社群回答",
+			"q1": "如果我選擇移除所有項目，我電腦內部/連接的所有磁碟機都會清除內容，還是只有執行 Windows 10 所在的磁碟機會清除內容？",
+            "a1": "只會清除 Windows 10 作業系統磁碟機（通常是 C: 磁碟機）。電腦內部/連接的其他磁碟機將不受影響。",
+            "q2": "如果螢幕壞了，我該如何執行此操作？",
+            "a2": "很不幸地，這種情況下您無法執行此操作。您需要取得新螢幕。",
+            "q3": "如果我已登入任何網站，相關的歷程記錄也會移除嗎？",
+            "a3": "是的，具體取決於您使用的瀏覽器。如果要移除您的瀏覽器歷程記錄，只要進入瀏覽器中的設定並刪除歷程記錄即可。您也可以使用匿名模式以避免儲存歷程記錄。",
+            "q4": "如果我選擇移除所有項目，是否也會重設我的密碼？",
+            "a4": "是的，一旦重設您的 Windows 10 電腦，也將移除所有使用者資料。這包括文件、儲存的密碼、圖片、偏好設定、瀏覽器資訊和應用程式資料。",
+            "para9": "參考",
+            "para10": "如何重設 Windows 10 – WikiHow。"
         },
         "question3": {
-            "title": "如何知道電腦的 CPU",
-            "description": "<div class='faqInFs4Fb'>    如何知道電腦的 CPU</div><hr><h3 class='faqInFs25FbP10'>問題狀況</h3><p>術語 32 位元和 64 位元是指電腦處理器 (也稱為 CPU) 處理資訊的方式。64 位元版本 Windows 在處理大量隨機存取記憶體 (RAM) 時的效率比 32 位元版本系統來得高。</p><h3 class='faqInFs25FbP10'>受影響的品牌</h3><p>上述問題狀況與以下系統相關，但並不侷限於這些系統：</p><ul>    <li>所有桌上型電腦和筆記型電腦</li></ul><h3 class='faqInFs25FbP10'>作業系統</h3><ul>    <li>Windows 7、8 與 10</li></ul><h3 class='faqInFs25FbP10'>解決方案</h3><p><strong><u>Windows 7 或 Vista</u></strong></p><ol>    <li>按一下<strong>開始按鈕</strong>圖片的<strong>開始按鈕</strong>，然後用右鍵按一下電腦，接著按一下「內容」  </li>    <li>您可以在「系統」下查看系統類型。</li></ol><p><strong><u>Windows 8 與 Windows 10</u></strong></p><p><strong>方法 1：</strong>在控制面板中查看「系統」視窗</p><ol>    <li>將手指從螢幕右邊滑過，然後輕點<strong>搜尋</strong>。或者，當使用滑鼠時，請指向螢幕的右下角，然後按一下<strong>搜尋。</strong></li>    <li>在搜尋方塊中鍵入<strong>系統</strong>，然後輕點或按一下<strong>設定。</strong></li>    <li>輕點或按一下<strong>系統</strong></li>    <li>當執行 64 位元版本的 Windows 8 時，「系統」標題下的「系統類型」區段中將會顯示 <strong>64 位元作業系統</strong>。當執行 32<strong> 位元版本的 Windows</strong> <strong>8</strong> 時，「系統」標題下的「系統類型」區段中將會顯示 <strong>32 位元作業系統</strong>。<br /> </li></ol><p><strong>方法 2</strong>：檢視系統資訊視窗</p><ol>    <li>將手指從螢幕右邊滑過，然後輕點<strong>搜尋</strong>。或者，當使用滑鼠時，請指向螢幕的右下角，然後按一下<strong>搜尋。</strong></li>    <li>在搜尋方塊中，鍵入<strong>系統資訊</strong></li>    <li>輕點或按一下<strong>系統</strong>，輕點或按一下<strong>系統資訊，</strong>然後按一下<strong>系統摘要。</strong></li>    <li>當執行 <strong>64 位元</strong>版本的 Windows 8<strong></strong> 時，「項目」標題下的<strong>系統類型</strong>欄位中會顯示 x64-based PC。<br /><br />當執行<strong> 32 位元</strong>版本的 Windows 8 時，「項目」標題下的<strong>系統類型</strong>欄位會顯示 x86-based PC。 </li></ol><p> </p>",
-            "heading1": "Symptom",
-            "para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
-            "heading2": "Affected Brands",
-            "para2": "The above symptom is associated with, but not limited to, the following systems:",
-            "para3": "All Desktop and Laptops",
-            "heading3": "Operating System",
-            "para4": "Windows 7, 8, 10",
-            "heading4": "Solution",
-            "para5": "Windows 7 or Vista",
-            "para6": {
-                "span1": {
-                    "line1": "Open System by clicking the",
-                    "line2": "Start button",
-                    "line3": "Picture of the Start button, right-clicking Computer, and then clicking Properties"
-                },
-                "span2": "Under System, you can view the system type."
-            },
-            "para7": "Windows 8 and Windows 10",
-            "para8": {
-                "span1": {
-                    "line1": "Method 1:",
-                    "line2": "View the System window in Control Panel"
-                },
-                "span2": {
-                    "line1": "Swipe in from the right edge of the screen, and then tap",
-                    "line2": "Search.",
-                    "line3": "Or, if you are using a mouse, point to the lower-right corner of the screen, and then click",
-                    "line4": "Search."
-                },
-                "span3": {
-                    "line1": "Type",
-                    "line2": "system",
-                    "line3": "in the search box, and then tap or click",
-                    "line4": "Settings."
-                },
-                "span4": {
-                    "line1": "Tap or click",
-                    "line2": "System"
-                },
-                "span5": {
-                    "line1": "If you are running a 64-bit version of Windows 8,",
-                    "line2": "64-bit Operating System",
-                    "line3": "is displayed in the System type field under the System heading.",
-                    "line4": "If you are running a 32",
-                    "line5": "-bit version of Windows 8, 32-bit Operating",
-                    "line6": "System is displayed in the System type field under the System heading."
-                },
-                "span6": {
-                    "line1": "Method 2:",
-                    "line2": "View the System Information window"
-                },
-                "span7": {
-                    "line1": "Swipe in from the right edge of the screen, and then tap",
-                    "line2": "Search.",
-                    "line3": "Or, if you are using a mouse, point to the lower-right corner of the screen, and then click",
-                    "line4": "Search."
-                },
-                "span8": {
-                    "line1": "In the search box, type",
-                    "line2": "system information"
-                },
-                "span9": {
-                    "line1": "Tap or click",
-                    "line2": "System",
-                    "line3": ", tap or click",
-                    "line4": "System Information,",
-                    "line5": "and then click",
-                    "line6": "System Summary."
-                },
-                "span10": {
-                    "line1": "If you are running a",
-                    "line2": 64,
-                    "line3": "bit version of Windows 8, 32-bit Operating,",
-                    "line4": "x64-based PC is displayed in the",
-                    "line5": "System type",
-                    "line6": "field under the Item heading."
-                }
-            },
-            "para9": {
-                "line1": "If you are running a",
-                "line2": "32-bit",
-                "line3": "version of Windows 8,x86-based PC is displayed in the",
-                "line4": "System type",
-                "line5": "field under the Item heading."
-            }
+			"title": "如何知道電腦的 CPU",
+			"heading1": "問題狀況",
+            "para1": "術語 32 位元和 64 位元是指電腦處理器 (也稱為 CPU) 處理資訊的方式。64 位元版本 Windows 在處理大量隨機存取記憶體 (RAM) 時的效率比 32 位元版本系統來得高。",
+            "heading2": "受影響的品牌",
+            "para2": "上述問題狀況與以下系統相關，但並不侷限於這些系統：",
+            "para3": "所有桌上型電腦和筆記型電腦",
+            "heading3": "作業系統",
+            "para4": "Windows 7、8 與 10",
+            "heading4": "解決方案",
+            "para5": "Windows 7 或 Vista",
+			"para6": "按一下<strong>開始按鈕</strong>圖片的<strong>開始按鈕</strong>，然後用右鍵按一下電腦，接著按一下「內容」。",
+            "para7": "您可以在「系統」下查看系統類型。",
+            "para8": "Windows 8 與 Windows 10",
+			"para9": "<strong>方法 1：</strong>在控制面板中查看「系統」視窗",
+            "para10": "將手指從螢幕右邊滑過，然後輕點<strong>搜尋</strong>。或者，當使用滑鼠時，請指向螢幕的右下角，然後按一下<strong>搜尋。</strong>",
+            "para11": "在搜尋方塊中鍵入<strong>系統</strong>，然後輕點或按一下<strong>設定。</strong>",
+            "para12": "輕點或按一下<strong>系統</strong>。",
+            "para13": "當執行 64 位元版本的 Windows 8 時，「系統」標題下的「系統類型」區段中將會顯示 <strong>64 位元作業系統</strong>。當執行 32<strong> 位元版本的 Windows</strong> <strong>8</strong> 時，「系統」標題下的「系統類型」區段中將會顯示 <strong>32 位元作業系統</strong>。<br /> ",
+            "para14": "<strong>方法 2</strong>：檢視系統資訊視窗",
+            "para15": "將手指從螢幕右邊滑過，然後輕點<strong>搜尋</strong>。或者，當使用滑鼠時，請指向螢幕的右下角，然後按一下<strong>搜尋。</strong>",
+            "para16": "在搜尋方塊中，鍵入<strong>系統資訊</strong>。",
+            "para17": "輕點或按一下<strong>系統</strong>，輕點或按一下<strong>系統資訊，</strong>然後按一下<strong>系統摘要。</strong>",
+            "para18": "當執行 <strong>64 位元</strong>版本的 Windows 8<strong></strong> 時，「項目」標題下的<strong>系統類型</strong>欄位中會顯示 x64-based PC。當執行<strong> 32 位元</strong>版本的 Windows 8 時，「項目」標題下的<strong>系統類型</strong>欄位會顯示 x86-based PC。 "
         },
         "question4": {
-            "title": "檢查電腦的電池使用情況",
-            "description": "<div class='faqInFs4Fb'>    檢查電腦的電池使用情況</div><hr><h3 class='faqInFs25FbP10'>問題狀況</h3><p>Windows 10 包含一個全新的<strong>電池使用情況</strong>螢幕，其中顯示筆記型電腦電量使用情況。從這裡可以明確知道，包括桌上型電腦和 Windows 10「通用」應用程式，哪種應用程式耗用最多電力。</p><h3 class='faqInFs25FbP10'>受影響的品牌</h3><ul>    <li>Lenovo 筆記型電腦、桌上型電腦</li></ul><h3 class='faqInFs25FbP10'>受影響的系統</h3><ul>    <li>所有</li></ul><h3 class='faqInFs25FbP10'>作業系統</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>解決方案</h3><p>這是 Windows 10 首度推出的新功能，我們需要先找出此功能，因為這個功能並未儲存在傳統<strong>控制面板</strong>檢視中，而是儲存在全新的<strong>設定</strong>應用程式中</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. 找出電池使用情況螢幕</h3></p><p>1.從開始功能表按一下或輕點<strong>設定</strong>選項</p><p>2.在<strong>設定</strong>中，選取<strong>「系統」</strong>，然後選取<strong>「省電功能」。<br /></strong> <strong></strong></p><p><img src='assets/images/qa/4.1.jpg' /></p><p>3.在這個標題下，按一下或輕按<strong>「電池使用情況」</strong>連結以查看詳細資料。</p><p> </p><h3 class='faqInFs25FbP10'>B. 分析電源使用</h3><p>4. 電池使用情況螢幕可以變更成顯示從過去 24 小時到過去 48 小時、或從上週開始的電池使用情況</p><p>5. <strong>「系統」</strong>、<strong>「顯示器」</strong>和 <strong>「Wi-Fi」</strong>百分比。這會顯示系統作業，也就是顯示器，使用了多少電池電量；</p><p>6. <strong>「正在使用」</strong>和<strong>「背景」</strong>選項顯示正在使用與背景中的應用程式使用多少電力的比較。</p><p>7. 如果應用程式在背景中使用電力，則您可以按一下或輕點<strong>「變更背景應用程式設定」</strong>連接，並將應用程式設定成不在背景執行。這個設定僅適用通用 Windows 10 應用程式。</p><p>8. 繼續向下捲動，您將看到一個應用程式清單，而這堪稱此項功能最有用的部分。它將顯示列出該時段內使用電池電量的應用程式清單，並且列出每個應用程式所使用電池電量的百分比</p><p><img src='assets/images/qa/4.2.jpg' /></p><p> </p>",
-            "heading1": "Symptom",
-            "para1": {
-                "span1": "Windows 10 includes a new",
-                "span2": "“Battery Use”",
-                "span3": "screen that shows you what’s draining your laptop’s juice. That means it’ll tell you exactly what apps–both desktop and Windows 10 “universal” apps–are using too much power."
-            },
-            "heading2": "Affected Brands",
-            "para2": "Lenovo laptops, desktops",
-            "heading3": "Affected Systems",
-            "para3": "All",
-            "heading4": "Operating System",
+			"title": "檢查電腦的電池使用情況",
+			"heading1": "問題狀況",
+            "para1": "Windows 10 包含一個全新的<strong>電池使用情況</strong>螢幕，其中顯示筆記型電腦電量使用情況。從這裡可以明確知道，包括桌上型電腦和 Windows 10「通用」應用程式，哪種應用程式耗用最多電力。",
+            "heading2": "受影響的品牌",
+            "para2": "Lenovo 筆記型電腦、桌上型電腦",
+            "heading3": "受影響的系統",
+            "para3": "所有",
+            "heading4": "作業系統",
             "para4": "Windows 10",
-            "heading5": "Solution",
-            "para5": {
-                "line1": "This feature is new in Windows 10, we need to find this feature first as it is not stored in your traditional",
-                "line2": "control panel",
-                "line3": "view, this feature is located in the new",
-                "line4": "“Settings”",
-                "line5": "app"
-            },
-            "para6": {
-                "span1": "A. Find the Battery Use Screen",
-                "span2": {
-                    "line1": "1. Click or Tap the",
-                    "line2": "“Settings”",
-                    "line3": "option from the start menu"
-                },
-                "span3": {
-                    "line1": "2. In",
-                    "line2": "Settings",
-                    "line3": "select",
-                    "line4": "“System”",
-                    "line5": "and then select",
-                    "line6": "“Battery saver.”"
-                },
-                "span4": {
-                    "line1": "3. Click or tap the",
-                    "line2": "“Battery use”",
-                    "line3": "link under this heading to see more details."
-                },
-                "span5": "B. Analyze Your Power Usage",
-                "span6": "4. You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last from last week",
-                "span7": {
-                    "line1": 5,
-                    "line2": "“System”,",
-                    "line3": "“Display”,",
-                    "line4": "and",
-                    "line5": "“Wi-Fi”",
-                    "line6": "percentages. This shows how much battery power has been used by system processes, the display,"
-                },
-                "span8": {
-                    "line1": "6. The",
-                    "line2": "“In use”",
-                    "line3": "and",
-                    "line4": "“Background”",
-                    "line5": "options show how much power is used by applications while you’re using them, compared to applications running in the background."
-                },
-                "span9": {
-                    "line1": "7. If apps are using power in the background, you can click or tap the",
-                    "line2": "“Change background app settings”",
-                    "line3": "link and configure apps to not run in the background. This only works for universal Windows 10 apps."
-                },
-                "span10": "8. Scroll down further and you will see a list of applications, this is considered as the most useful section of this feature. It will display a list of the apps have used battery power in that period, and show you what percentage of your battery power each app has used."
-            }
+            "heading5": "解決方案",
+            "para5": "這是 Windows 10 首度推出的新功能，我們需要先找出此功能，因為這個功能並未儲存在傳統<strong>控制面板</strong>檢視中，而是儲存在全新的<strong>設定</strong>應用程式中。",
+            "heading6": "A. 找出電池使用情況螢幕",
+            "para6": "1.從開始功能表按一下或輕點<strong>設定</strong>選項。",
+            "para7": "2.在<strong>設定</strong>中，選取<strong>「系統」</strong>，然後選取<strong>「省電功能」</strong>。",
+            "para8": "3.在這個標題下，按一下或輕按<strong>「電池使用情況」</strong>連結以查看詳細資料。",
+            "heading7": "B. 分析電源使用",
+            "para9": "4. 電池使用情況螢幕可以變更成顯示從過去 24 小時到過去 48 小時、或從上週開始的電池使用情況。",
+            "para10": "5. <strong>「系統」</strong>、<strong>「顯示器」</strong>和 <strong>「Wi-Fi」</strong>百分比。這會顯示系統作業，也就是顯示器，使用了多少電池電量。",
+            "para11": "6. <strong>「正在使用」</strong>和<strong>「背景」</strong>選項顯示正在使用與背景中的應用程式使用多少電力的比較。",
+            "para12": "7. 如果應用程式在背景中使用電力，則您可以按一下或輕點<strong>「變更背景應用程式設定」</strong>連接，並將應用程式設定成不在背景執行。這個設定僅適用通用 Windows 10 應用程式。",
+            "para13": "8. 繼續向下捲動，您將看到一個應用程式清單，而這堪稱此項功能最有用的部分。它將顯示列出該時段內使用電池電量的應用程式清單，並且列出每個應用程式所使用電池電量的百分比。"
         },
         "question5": {
-            "title": "將電腦當作平板電腦使用",
-            "description": "<div class='faqInFs4Fb'>    將電腦當作平板電腦使用</div><hr><p>平板電腦模式讓 Windows 搭配觸控螢幕裝置使用時，更加直覺又輕鬆。</p><h3 class='faqInFs25FbP10'>使用平板電腦模式</h3><p>若要開啟平板電腦模式、請在工作列上選取<strong>動作中心</strong>，然後選取<strong>平板電腦模式</strong>。</p><p> </p><p><img src='assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>備注</h3><p>若要了解您的裝置是否可以自動啟用平板電腦模式，請在製造商網站上搜尋您的裝置。這項功能的支援會依硬體、所安裝的驅動程式和製造商對於裝置的設定方式而有差異。 </p><p> </p><p>在平板電腦模式下，應用程式會開啟全螢幕，提供更多的工作空間。若要關閉應用程式，請將其拖曳到螢幕底部。</p><p> </p><h3 class='faqInFs25FbP10'>要訣</h3><p>當電腦處於平板電腦模式時，工作列將會出現，但可在想要更多螢幕空間時將其隱藏起來。選取<strong>開始 </strong>按鈕，接著依序選取<strong>設定 </strong>> <strong>系統 </strong>> <strong> 平板電腦模式</strong>，然後啟動<strong>在平板電腦模式中自動隱藏工作列</strong>。若要查看隱藏的工作列，請從螢幕底部向上滑動，或使用滑鼠移至該處。</p><h3 class='faqInFs25FbP10'>同時使用兩個應用程式</h3><p>若要在平板電腦模式下並排使用兩個應用程式，請將開啟的應用程式往下拖動到側面。您會看到兩個應用程式貼齊到一處，而且旁邊會有任何開啟的應用程式。</p><p>在這個檢視中，您也可以：</p><ul>    <li>使用位於兩個貼齊應用程式之間的共用邊緣，同時重新調整兩個應用程式的大小。</li>    <li>從任務檢視中開啟新的應用程式&mdash;在工作列上選取<strong>工作檢視</strong>，然後選取一個應用程式，接著將其拖到一側，以便將它貼齊到分隔的螢幕。</li>    <li>使用工作列上的返回按鈕來返回應用程式，或者開啟先前使用的應用程式。</li></ul><p> </p>",
-            "heading1": "Use tablet mode",
-            "para2": {
-                "span1": "To turn on tablet mode, select",
-                "span2": "action center",
-                "span3": "on the taskbar, then select",
-                "span4": "Tablet mode."
-            },
-            "heading2": "Note",
-            "para3": "To find out if your device can automatically turn on tablet mode, search for your device on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, and how the device was set up by the manufacturer.",
-            "para4": "In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the screen.",
-            "heading3": "Tip",
-            "para5": {
-                "span1": "The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen.",
-                "span2": "Select the",
-                "span3": "Start",
-                "span4": "button, select",
-                "span5": " Settings",
-                "span6": "System",
-                "span7": "Tablet mode",
-                "span8": ", then turn on",
-                "span9": "Automatically hide the taskbar in tablet mode.",
-                "span10": "To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there."
-            },
-            "heading4": "Use two apps simultaneously",
-            "para6": "To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and you'll see any open apps next to it.",
-            "para7": "In this view, you can also:",
-            "para8": {
-                "span1": "Use the shared edge between two snapped apps to resize both apps at the same time.",
-                "span2": {
-                    "line1": "Open a new app from task view—select",
-                    "line2": "Task view",
-                    "line3": "on the taskbar, select an app, then drag it to one side to snap it into your divided screen."
-                },
-                "span3": "Use the back button on the taskbar to go back in an app, or to open an app that you were using before."
-            }
+			"title": "將電腦當作平板電腦使用",
+			"para1": "平板電腦模式讓 Windows 搭配觸控螢幕裝置使用時，更加直覺又輕鬆。",
+            "heading1": "使用平板電腦模式",
+            "para2": "若要開啟平板電腦模式、請在工作列上選取<strong>動作中心</strong>，然後選取<strong>平板電腦模式</strong>。",
+            "heading2": "備注",
+            "para3": "若要了解您的裝置是否可以自動啟用平板電腦模式，請在製造商網站上搜尋您的裝置。這項功能的支援會依硬體、所安裝的驅動程式和製造商對於裝置的設定方式而有差異。 ",
+            "para4": "在平板電腦模式下，應用程式會開啟全螢幕，提供更多的工作空間。若要關閉應用程式，請將其拖曳到螢幕底部。",
+            "heading3": "要訣",
+            "para5": "當電腦處於平板電腦模式時，工作列將會出現，但可在想要更多螢幕空間時將其隱藏起來。選取<strong>開始 </strong>按鈕，接著依序選取<strong>設定 </strong>> <strong>系統 </strong>> <strong> 平板電腦模式</strong>，然後啟動<strong>在平板電腦模式中自動隱藏工作列</strong>。若要查看隱藏的工作列，請從螢幕底部向上滑動，或使用滑鼠移至該處。",
+            "heading4": "同時使用兩個應用程式",
+            "para6": "若要在平板電腦模式下並排使用兩個應用程式，請將開啟的應用程式往下拖動到側面。您會看到兩個應用程式貼齊到一處，而且旁邊會有任何開啟的應用程式。",
+            "para7": "在這個檢視中，您也可以：",
+            "para8": "使用位於兩個貼齊應用程式之間的共用邊緣，同時重新調整兩個應用程式的大小。",
+            "para9": "從任務檢視中開啟新的應用程式—在工作列上選取<strong>工作檢視</strong>，然後選取一個應用程式，接著將其拖到一側，以便將它貼齊到分隔的螢幕。",
+            "para10": "使用工作列上的返回按鈕來返回應用程式，或者開啟先前使用的應用程式。"
         },
         "question6": {
-            "title": "瞭解您的個人助理 Cortana",
-            "description": "<div class='faqInFs4Fb'>    瞭解您的個人助理 Cortana</div><hr><h3 class='faqInFs25FbP10'>Cortana 是什麼？</h3><hr /><p>Cortana 是您的數位代理程式。她會協助您完成許多工作。</p><p>隨著使用 Cortana 次數逐漸增加，您的體驗就會越來越具個人化。</p><p>若要開始使用、請在搜尋方塊中輸入問題，或者選擇麥克風，並與 Cortana 對話。(適用於所有類型電腦的打字工作，但需要一支用來說話的麥克風。)</p><p>如果您不確定要說什麼，則當您在工作列上選擇搜尋方塊時，鎖定螢幕和 Cortana 主頁上就會出現建議話語。</p><p><img src='assets/images/qa/6.1.jpg' /></p><ol>    <li>主頁 2. 筆記型電腦 3. 設定 4. 意見回饋</li></ol><p>以下是 Cortana 可以為您做的一些事情：</p><ul>    <li>根據時間、地點或人物提供提醒。</li>    <li>追蹤包裹、團隊、興趣和航班。</li>    <li>發送電子郵件和簡訊。</li>    <li>管理行事曆，並讓您掌握最新狀態。</li>    <li>建立和管理清單。</li>    <li>輕鬆聊天和玩遊戲。</li>    <li>尋找事實、檔案、地點和資訊。</li>    <li>在系統上開啟任何應用程式。</li></ul><h3 class='faqInFs25FbP10'>試用這個功能：設定提醒</h3><hr /><p>Cortana 可以做的一件事就是提供提醒。她可以根據時間、地點，甚至是人，提醒您要做哪些事。</p><p>例如，打字或說話「下次 Tanya 打電話來的時候，提醒我祝賀她。」</p><p>當您下次收到 Tanya 的來電時，您就會收到提醒。</p><p>額外獎勵&mdash;如果是使用 Windows 手機，或者用於 iPhone 或 Android 的 Cortana，則 Cortana 可以設定為同步通知電腦與手機。</p><p><img src='assets/images/qa/6.2.jpg' /></p><h3 class='faqInFs25FbP10'>嘿 Cortana？</h3><hr /><p>設定 Cortana，使其每次聽到您說「嘿 Cortana？」時開始聆聽您的指示。選取工作列上的搜尋方塊，開啟 Cortana 主頁。然後選取<strong>設定</strong>，並開啟<strong>讓 Cortana 回應「嘿 Cortana」。</strong></p><p><img src='assets/images/qa/6.3.jpg' /></p><p class='faqInFs25FbP10'>備注</p><p>Cortana 僅適用於某些國家/地區，而且某些 Cortana 功能不適用於世界任何地方。</p><p> </p>",
-            "heading1": "What is Cortana?",
-            "para1": "Cortana is your digital agent. She'll help you get things done.",
-            "para2": "The more you use Cortana, the more personalized your experience will be.",
-            "para3": "To get started, type a question in the search box, or select the microphone  and talk to Cortana. (Typing works for all types of PCs, but you need a mic to talk.)",
-            "para4": "If you’re not sure what to say, you’ll see suggestions on your lock screen, and in Cortana home when you select the search box on the taskbar.",
-            "para5": " Home 2. Notebook 3. Settings 4. Feedback",
-            "para6": "Here are some things Cortana can do for you:",
-            "bulletset1": {
-                "span1": "Give you reminders based on time, places, or people.",
-                "span2": "Track packages, teams, interests, and flights.",
-                "span3": "Send emails and texts.",
-                "span4": "Manage your calendar and keep you up to date.",
-                "span5": "Create and manage lists.",
-                "span6": "Chit chat and play games.",
-                "span7": "Find facts, files, places, and info.",
-                "span8": "Open any app on your system."
+			"title": "瞭解您的個人助理 Cortana",
+			"heading1": "Cortana 是什麼？",
+            "para1": "Cortana 是您的數位代理程式。她會協助您完成許多工作。",
+            "para2": "隨著使用 Cortana 次數逐漸增加，您的體驗就會越來越具個人化。",
+            "para3": "若要開始使用、請在搜尋方塊中輸入問題，或者選擇麥克風，並與 Cortana 對話。(適用於所有類型電腦的打字工作，但需要一支用來說話的麥克風。)",
+            "para4": "如果您不確定要說什麼，則當您在工作列上選擇搜尋方塊時，鎖定螢幕和 Cortana 主頁上就會出現建議話語。",
+            "para5": "1. 主頁 2. 筆記型電腦 3. 設定 4. 意見回饋",
+            "para6": "以下是 Cortana 可以為您做的一些事情：",
+            "unorderedList1": {
+				"listItem1": "根據時間、地點或人物提供提醒。",
+                "listItem2": "追蹤包裹、團隊、興趣和航班。",
+                "listItem3": "發送電子郵件和簡訊。",
+                "listItem4": "管理行事曆，並讓您掌握最新狀態。",
+                "listItem5": "建立和管理清單。",
+                "listItem6": "輕鬆聊天和玩遊戲。",
+                "listItem7": "尋找事實、檔案、地點和資訊。",
+                "listItem8": "在系統上開啟任何應用程式。"
             },
-            "heading2": "Try this: Set a reminder",
-            "para7": "One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or even people.",
-            "para8": "For example, type or say, “Remind me to congratulate Tanya the next time she calls.”",
-            "para9": "The reminder will appear when you get a call from Tanya.",
-            "para10": "Extra bonus—if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync notifications between your PC and phone.",
-            "heading3": "Hey Cortana?",
-            "para11": {
-                "span1": "Set Cortana to hear you anytime you say “Hey Cortana.” Select the search box on the taskbar to open Cortana home.",
-                "span2": {
-                    "line1": "Then select",
-                    "line2": "Settings",
-                    "line3": "and turn on",
-                    "line4": "Let Cortana respond to “Hey Cortana.”"
-                }
-            },
-            "para12": "Note",
-            "para13": "Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere."
-        },
-        "pageTitle": "支持細節"
+			"heading2": "試用這個功能：設定提醒",
+            "para7": "Cortana 可以做的一件事就是提供提醒。她可以根據時間、地點，甚至是人，提醒您要做哪些事。",
+            "para8": "例如，打字或說話「下次 Tanya 打電話來的時候，提醒我祝賀她」。",
+            "para9": "當您下次收到 Tanya 的來電時，您就會收到提醒。",
+            "para10": "額外獎勵—如果是使用 Windows 手機，或者用於 iPhone 或 Android 的 Cortana，則 Cortana 可以設定為同步通知電腦與手機。",
+            "heading3": "嘿 Cortana？",
+            "para11": "設定 Cortana，使其每次聽到您說「嘿 Cortana」時開始聆聽您的指示。選取工作列上的搜尋方塊，開啟 Cortana 主頁。然後選取<strong>設定</strong>，並開啟<strong>讓 Cortana 回應「嘿 Cortana」</strong>。",
+            "heading4": "備注",
+            "para12": "Cortana 僅適用於某些國家/地區，而且某些 Cortana 功能不適用於世界任何地方。"
+        }
     },
     "welcometutorial": {
         "description": "Vantage 讓您更容易更新驅動程式、執行診斷、要求支援並瞭解裝置。快速自訂您的體驗,並找到針對您的需要量身提供的實用資訊",
