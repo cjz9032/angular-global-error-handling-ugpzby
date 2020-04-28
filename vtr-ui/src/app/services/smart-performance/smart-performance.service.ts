@@ -106,4 +106,44 @@ export class SmartPerformanceService {
 			throw new Error(error.message);
 		}
 	}
+	setScanSchedule(payload: any): Promise<any> {
+		try {
+			if (this.isShellAvailable) {
+				return this.getSmartPerformance.scheduleScan(payload);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+	unregisterScanSchedule(payload: any): Promise<any> {
+		try {
+			if (this.isShellAvailable) {
+				return this.getSmartPerformance.unregisterScheduleScan(payload);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+	getNextScanRunTime(payload: any): Promise<any> {
+		try {
+			if (this.isShellAvailable) {
+				return this.getSmartPerformance.getNextScanRunTime(payload);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+	getScheduleScanStatus(): Promise<any> {
+		try {
+			if (this.isShellAvailable) {
+				return this.getSmartPerformance.getScheduledScanStatus();
+			}
+			return undefined;
+		} catch (error) {
+            throw new Error(error.message);
+        }
+	}
 }

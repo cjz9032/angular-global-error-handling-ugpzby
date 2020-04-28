@@ -118,11 +118,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
 			this.fetchCMSArticles();
 		});
-
-		// Evaluate the translations for QA on language Change
-		// this.qaService.setTranslationService(this.translate);
-		// this.qaService.setCurrentLangTranslations();
-		this.qaService.getQATranslation(this.translate); // VAN-5872, server switch feature
+		this.qaService.setCurrentLangTranslations();
 		this.initInputAccessories();
 
 		this.isOnline = this.commonService.isOnline;
@@ -287,9 +283,6 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 	ngOnDestroy() {
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
-		}
-		if (this.qaService) {
-			this.qaService.destroyChangeSubscribed();
 		}
 		if (this.routerSubscription) {
 			this.routerSubscription.unsubscribe();

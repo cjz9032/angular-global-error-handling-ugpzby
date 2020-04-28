@@ -2724,6 +2724,7 @@
         "ssoErrorAccountPluginNotExist": "Falta el plugin. Restauraremos el plugin en segundo plano automáticamente si está conectado a Internet. Esto podría tardar un poco, intente de nuevo más tarde."
     },
     "faq": {
+        "pageTitle": "Detalle de soporte",
         "footer": {
             "title": "¿No encuentras lo que buscas?",
             "description": "¿Necesita soporte adicional? No dude en ponerse en contacto con nosotros mediante:",
@@ -2732,354 +2733,146 @@
         },
         "question1": {
             "title": "Cree copias de seguridad y restaure sus archivos",
-            "description": "<div>    <div class='faqInFs4Fb'>        Cree copias de seguridad y restaure sus archivos    </div>    <hr />    <div class='faqInMb7'>        Siempre es bueno tener una copia de seguridad. Guarde copias de los archivos en otra unidad en caso de que algo le suceda a los originales.    </div>    <div class='faqInFs3Fb'>        Configure la copia de seguridad    </div>    <hr />    <div class='mb-5'>        Seleccione el botón <span class='faqInFb'>Inicio</span>, seleccione <span class='faqInFb'>Configuración</span> > <span class='faqInFb'>Actualización y seguridad</span> > <span class='faqInFb'>Copia de seguridad</span> > <span class='faqInFb'>agregar</span> una unidad y luego seleccione una unidad externa o una ubicación de red para sus copias de seguridad.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Todo listo. Cada una hora, realizaremos una copia de seguridad de todos los datos de la carpeta de usuario (C:\\Users\\su nombre de usuario). Para cambiar de cuáles archivos se realizará una copia de seguridad o la frecuencia con la que se realizarán, vaya a <span class='faqInFb'>Más opciones</span>.    </div>    <div class='faqInFs3Fb'>        Restaure sus archivos    </div>    <div class='mb-5'>        Si le falta un archivo o carpeta importante, aquí le mostramos cómo recuperarlo:    </div>    <div>        <div class='mb-3'>1. Escriba <span class='faqInFb'>Restaurar archivos</span> en el recuadro de búsqueda de la barra de tareas y seleccione <span class='faqInFb'> Restaurar los archivos con el historial de archivos</span>.</div>        <div class='mb-3'>2. Busque el archivo que necesita y luego utilice las flechas para ver todas sus versiones</div>        <div class='mb-3'>3. Cuando encuentre la versión que desea, seleccione <span class='faqInFb'>Restaurar</span> para guardarla en su ubicación original. Para guardarla en un lugar diferente, mantenga presionado (o presione con el botón derecho) <span class='faqInFb'>Restaurar</span>, seleccione <span class='faqInFb'>Restaurar en</span> y luego elija una nueva ubicación.</div>    </div></div>",
-            "para1": {
-                "line1": "It's always good to have a backup.",
-                "line2": "Keep copies of your files on another drive in case something happens to the originals."
-            },
-            "heading1": "Set up your backup",
-            "para2": {
-                "span1": "Select the",
-                "span2": "Start",
-                "span3": "button, select",
-                "span4": "Settings",
-                "span5": "Update & security",
-                "span6": "Backup",
-                "span7": "Add a drive",
-                "span8": ", and then choose an external drive or network location for your backups."
-            },
-            "para3": {
-                "span1": "All set.",
-                "span2": "Every hour, we'll back up everything in your user folder (C:\\Users\\username).",
-                "span3": "To change which files get backed up or how often backups happen, go to",
-                "span4": "More options."
-            },
-            "heading2": "Restore your files",
-            "para4": "If you're missing an important file or folder, here's how to get it back:",
-            "para5": {
-                "span1": "1. Type",
-                "span2": "Restore files",
-                "span3": "in the search box on the taskbar, and then select",
-                "span4": "Restore your files with File History.",
-                "span5": "2. Look for the file you need, then use the arrows to see all its versions",
-                "span6": "3. When you find the version you want, select",
-                "span7": "Restore",
-                "span8": "to save it in its original location. To save it in a different place, press and hold (or right-click)",
-                "span9": "Restore",
-                "span10": ", select",
-                "span11": "Restore to",
-                "span12": "and then choose a new location."
-            }
+            "para1": "Siempre es bueno tener una copia de seguridad. Guarde copias de los archivos en otra unidad en caso de que algo le suceda a los originales.",
+			"heading1": "Configure la copia de seguridad",
+			"para2": "Seleccione el botón Inicio, seleccione Configuración > Actualización y seguridad > Copia de seguridad > agregar una unidad y luego seleccione una unidad externa o una ubicación de red para sus copias de seguridad.",
+			"para3": "Todo listo. Cada una hora, realizaremos una copia de seguridad de todos los datos de la carpeta de usuario (C:\\Users\\su nombre de usuario). Para cambiar de cuáles archivos se realizará una copia de seguridad o la frecuencia con la que se realizarán, vaya a Más opciones.",
+			"heading2": "Restaure sus archivos",
+			"para4": "Si le falta un archivo o carpeta importante, aquí le mostramos cómo recuperarlo:",
+			"para5": {
+				"div1": "1. Escriba Restaurar archivos en el recuadro de búsqueda de la barra de tareas y seleccione  Restaurar los archivos con el historial de archivos.",
+				"div2": "2. Busque el archivo que necesita y luego utilice las flechas para ver todas sus versiones.",
+				"div3": "3. Cuando encuentre la versión que desea, seleccione Restaurar para guardarla en su ubicación original. Para guardarla en un lugar diferente, mantenga presionado (o presione con el botón derecho) Restaurar, seleccione Restaurar en y luego elija una nueva ubicación."
+			}
         },
         "question2": {
-            "title": "Cómo restablecer su equipo",
-            "description": "<div><div class='faqInFs4Fb'>Cómo restablecer Windows 10</div><hr><div class='faqInP5'>Si su PC con Windows 10 está experimentando problemas o si usted la venderá, debe restablecerla. El restablecimiento le permite elegir mantener o eliminar sus archivos, elimina todas las aplicaciones y configuraciones e instala una copia nueva de Windows. Esto también puede solucionar muchos problemas, como un rendimiento lento.</div><div class='faqInFs25FbP10'>1. Abra la aplicación de configuración</div><div class='faqInP5'>Pulse el botón Iniciar imagen que está ubicado en la parte inferior izquierda de la pantalla y seleccione la imagen del engranaje de configuración.</div><div class='faqInP5'><img src='assets/images/qa/2.1.jpg' /></div><div class='faqInFs25FbP10'>2. Seleccione Actualizar seguridad de la lista de categorías</div><div class='faqInP5'><img src='assets/images/qa/2.2.jpg' /></div><div class='faqInFs25FbP10'>3. Navegue hasta Recuperación desde el panel izquierdo</div><div class='faqInP5'><img src='assets/images/qa/2.3.jpg' /></div><div class='faqInFs25FbP10'>4. Comience el proceso de restablecimiento</div><div class='faqInP5'>En el encabezado “Restablecer este equipo” que se muestra en la parte superior, haga clic o pulse sobre el botón Comenzar.</div><div class='faqInP5'><img src='assets/images/qa/2.4.jpg' /></div><div class='faqInFs25FbP10'>5. Seleccione si desea conservar los archivos o no</div><div class='faqInP5'>Después de restablecer el equipo, puede iniciar sesión en su cuenta Microsoft. Las aplicaciones de la Tienda Windows adquiridas en esta cuenta se reinstalarán.</div><div class='faqInP5'><ul><li>“Conservar mis archivos” elimina las aplicaciones y la configuración, pero conserva todos los archivos personales.</li><li>“Eliminar todo” borra las aplicaciones, la configuración y los archivos personales. Si no tiene una copia de seguridad de los archivos, es posible que desee presionar Cancelar. Haga una copia de seguridad de los archivos y comience de nuevo con este proceso.</li></ul></div><div class='faqInP5'><img src='assets/images/qa/2.5.jpg' /></div><div class='faqInFs25FbP10'>6. Puede seleccionar configuraciones adicionales diferentes</div><div class='faqInP5'>Esto solo se mostrará si ha seleccionado “Eliminar todo” en el paso anterior.</div><div class='faqInP5'><img src='assets/images/qa/2.6.1.jpg' /></div><div class='faqInP5'><img src='assets/images/qa/2.6.2.jpg' /></div><div class='faqInFs25FbP10'>7. Lea el resumen general y pulse Restablecer cuando esté listo para continuar</div><div class='faqInP5'>Windows se preparará para restablecer el dispositivo. Simplemente espere hasta que vea una pantalla azul.</div><div class='faqInFs25FbP10'>8. Cuando aparezca “Seleccione una opción”, seleccione Continuar</div><div class='faqInP5'>Windows se reiniciará y empezará a restablecerse. Es posible que su PC arranque varias veces a medida que se produzca el restablecimiento.</div><hr><div class='faqInFs25FbP10'>Preguntas y respuestas de la comunidad</div><div class='faqInP5'><b>Si elijo “Eliminar todo”: ¿se borran todas las unidades del equipo o aquellas que están conectadas a mi sistema? ¿o solo la unidad en la que estoy ejecutando Windows 10?</b></div><div class='faqInP5'><i>Respuesta de la comunidad</i></div><div class='faqInP10'>Solo borrará la unidad del sistema operativo Windows 10 (normalmente, la unidad C:). Las demás unidades del equipo no se verán afectadas.</div><div class='faqInP5'><b>¿Cómo puedo hacer esto si mi pantalla está dañada?</b></div><div class='faqInP5'><i>Respuesta de la comunidad</i></div><div class='faqInP10'>Desafortunadamente, no es posible. Tendrá que adquirir una nueva pantalla.</div><div class='faqInP5'><b>Si he iniciado sesión en un sitio web, ¿se eliminará también este historial?</b></div><div class='faqInP5'><i>Respuesta de la comunidad</i></div><div class='faqInP10'>Sí, según el navegador que esté utilizando. Para eliminar el historial del navegador, tiene que ir a la configuración del navegador y suprimir el historial. También puede utilizar los modos Incógnito para evitar guardar el historial.</div><div class='faqInP5'><b>Si selecciono “Eliminar todo”, ¿se restablecerá mi contraseña también?</b></div><div class='faqInP5'><i>Respuesta de la comunidad</i></div><div class='faqInP10'>Sí, una vez que restablezca el equipo de Windows 10, se eliminarán todos los datos de usuario. Esto incluye documentos, contraseñas almacenadas, imágenes, configuraciones preferidas, información del navegador y datos de aplicaciones.</div><hr><div class='faqInP5'>Referencia</div><div class='faqInP5'>Cómo restablecer Windows 10 - WikiHow.</div></div>",
-            "heading1": "Symptom",
-            "para1": {
-                "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
-                "span2": "Windows can “refresh” your PC so it’s more like a fresh install without deleting your personal files."
-            },
-            "para2": "Refresh your PC, Here is what will happen: your files and personalized settings won’t change",
-            "para3": {
-                "span1": "Your PC settings will be changed back to its defaults",
-                "span2": "Apps from windows store will be kept",
-                "span3": "Apps you installed from disc or website will be removed",
-                "span4": "A list of removed files will be saved on your desktop"
-            },
-            "heading2": "Affected Brands",
-            "para4": "All Desktop and Laptops",
-            "heading3": "Operation System",
-            "para5": "Windows 8, 8.1 & 10",
-            "heading4": "Solution",
-            "para6": "Windows 8/8.1",
-            "para7": {
-                "span1": {
-                    "line1": "Tap or click",
-                    "line2": "Settings "
-                },
-                "span2": {
-                    "line1": "Tap or click",
-                    "line2": "Update and recovery"
-                },
-                "span3": {
-                    "line1": "Tap or click",
-                    "line2": "Recovery"
-                },
-                "span4": {
-                    "line1": "Under Refresh your PC without affecting your files, tap or click",
-                    "line2": "Get started."
-                },
-                "span5": {
-                    "line1": "Click",
-                    "line2": "\"Next\"."
-                },
-                "span6": {
-                    "line1": "Click",
-                    "line2": "\"Refresh\"",
-                    "line3": "to start the refresh process."
-                },
-                "span7": "Once the refresh process is done, you can find a Removed Apps list on the desktop",
-                "span8": "You can find the removed apps while refreshing your system"
-            },
-            "para8": "Windows 10",
-            "para9": {
-                "span1": {
-                    "line1": "Search for",
-                    "line2": "refresh",
-                    "line3": "in the search tool available in the Start menu"
-                },
-                "span2": {
-                    "line1": "Click on",
-                    "line2": "\"Refresh your PC without affecting your files\"",
-                    "line3": " in the search results as shown below."
-                },
-                "span3": {
-                    "line1": "Click on the",
-                    "line2": "Get started",
-                    "line3": "button just below the heading",
-                    "line4": "\"Refresh your PC without affecting your files\"",
-                    "line5": "to start refreshing your Windows 10 PC."
-                }
-            },
-            "header5": "Additional Information",
-            "para10": "In most cases, once you start to refresh your PC, it’ll finish on its own. However, if Windows needs missing files, you’ll be asked to insert recovery media, which is typically a DVD disc or thumb drive. If that happens, what you’ll need depends on your PC.",
-            "para11": "If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact Microsoft Support."
-        },
+			"title": "Cómo restablecer Windows 10",
+			"para1": "Si su PC con Windows 10 está experimentando problemas o si usted la venderá, debe restablecerla. El restablecimiento le permite elegir mantener o eliminar sus archivos, elimina todas las aplicaciones y configuraciones e instala una copia nueva de Windows. Esto también puede solucionar muchos problemas, como un rendimiento lento.",
+			"heading1": "1. Abra la aplicación de configuración",
+			"para2": "Pulse el botón Iniciar imagen que está ubicado en la parte inferior izquierda de la pantalla y seleccione la imagen del engranaje de configuración.",
+			"heading2": "2. Seleccione Actualizar seguridad de la lista de categorías",
+			"heading3": "3. Navegue hasta Recuperación desde el panel izquierdo",
+			"heading4": "4. Comience el proceso de restablecimiento",
+			"para3": "En el encabezado “Restablecer este equipo” que se muestra en la parte superior, haga clic o pulse sobre el botón Comenzar.",
+			"heading5": "5. Seleccione si desea conservar los archivos o no",
+			"para4": "Después de restablecer el equipo, puede iniciar sesión en su cuenta Microsoft. Las aplicaciones de la Tienda Windows adquiridas en esta cuenta se reinstalarán.",
+			"para5": {
+				"li1": "“Conservar mis archivos” elimina las aplicaciones y la configuración, pero conserva todos los archivos personales.",
+				"li2": "“Eliminar todo” borra las aplicaciones, la configuración y los archivos personales. Si no tiene una copia de seguridad de los archivos, es posible que desee presionar Cancelar. Haga una copia de seguridad de los archivos y comience de nuevo con este proceso."
+			},
+			"heading6": "6. Puede seleccionar configuraciones adicionales diferentes",
+			"para6": "Esto solo se mostrará si ha seleccionado “Eliminar todo” en el paso anterior.",
+			"heading7": "7. Lea el resumen general y pulse Restablecer cuando esté listo para continuar",
+			"para7": "Windows se preparará para restablecer el dispositivo. Simplemente espere hasta que vea una pantalla azul.",
+			"heading8": "8. Cuando aparezca “Seleccione una opción”, seleccione Continuar",
+			"para8": "Windows se reiniciará y empezará a restablecerse. Es posible que su PC arranque varias veces a medida que se produzca el restablecimiento.",
+			"heading9": "Preguntas y respuestas de la comunidad",
+			"communityAnswer": "Respuesta de la comunidad",
+			"q1": "Si elijo “Eliminar todo”: ¿se borran todas las unidades del equipo o aquellas que están conectadas a mi sistema? ¿o solo la unidad en la que estoy ejecutando Windows 10?",
+			"a1": "Solo borrará la unidad del sistema operativo Windows 10 (normalmente, la unidad C:). Las demás unidades del equipo no se verán afectadas.",
+			"q2": "¿Cómo puedo hacer esto si mi pantalla está dañada?",
+			"a2": "Desafortunadamente, no es posible. Tendrá que adquirir una nueva pantalla.",
+			"q3": "Si he iniciado sesión en un sitio web, ¿se eliminará también este historial?",
+			"a3": "Sí, según el navegador que esté utilizando. Para eliminar el historial del navegador, tiene que ir a la configuración del navegador y suprimir el historial. También puede utilizar los modos Incógnito para evitar guardar el historial.",
+			"q4": "Si selecciono “Eliminar todo”, ¿se restablecerá mi contraseña también?",
+			"a4": "Sí, una vez que restablezca el equipo de Windows 10, se eliminarán todos los datos de usuario. Esto incluye documentos, contraseñas almacenadas, imágenes, configuraciones preferidas, información del navegador y datos de aplicaciones.",
+			"para9": "Referencia",
+			"para10": "Cómo restablecer Windows 10 - WikiHow."
+		},
         "question3": {
-            "title": "Cómo conocer la CPU de su equipo",
-            "description": "<div class='faqInFs4Fb'>    Cómo conocer la CPU de su equipo</div><hr><h3 class='faqInFs25FbP10'>Síntoma</h3><p>Los términos 32 bits y 64 bits hacen referencia a la forma en la que el procesador de sistema (también denominado CPU) gestiona la información. La versión 64 bits de Windows gestiona grandes cantidades de memoria de acceso aleatorio (RAM) de una forma más eficaz que un sistema de 32 bits.</p><h3 class='faqInFs25FbP10'>Marcas afectadas</h3><p>El síntoma anterior está asociado, pero sin limitarse a, a los siguientes sistemas:</p><ul>    <li>Todos los equipos de escritorio y portátiles</li></ul><h3 class='faqInFs25FbP10'>Sistema operativo</h3><ul>    <li>Windows 7, 8 y 10</li></ul><h3 class='faqInFs25FbP10'>Solución</h3><p><strong><u>Windows 7 o Vista</u></strong></p><ol>    <li>Para abrir sistema, haga clic en el <strong>Botón de inicio </strong>Imagen del <strong>botón de inicio,</strong> haga clic con el botón secundario del mouse en Equipo y luego haga clic en Propiedades  </li>    <li>En Sistema, puede ver el tipo de sistema.</li></ol><p><strong><u>Windows 8 y Windows 10</u></strong></p><p><strong>Método 1:</strong> ver la ventana del sistema en el panel de control</p><ol>    <li>Deslice rápidamente desde el borde derecho de la pantalla hacia el centro y luego toque <strong>Buscar</strong>. O bien, si está utilizando un mouse, apunte a la esquina inferior derecha de la pantalla y luego haga clic en <strong>Buscar.</strong></li>    <li>Escriba <strong>sistema</strong> en el cuadro de búsqueda y luego presione o haga clic en <strong>Configuración.</strong></li>    <li>Toque o haga clic en <strong>Sistema</strong></li>    <li>Si está ejecutando una versión de 64 bits de Windows 8, se mostrará el <strong>Sistema operativo de 64 bits</strong> en el campo Tipo de sistema bajo el encabezado Sistema. Si está ejecutando una versión de 32<strong> bits de Windows</strong> <strong>8, se mostrará el Sistema operativo de</strong> <strong>32 bits</strong> en el campo Tipo de sistema bajo el encabezado Sistema.<br />  </li></ol><p><strong>Método 2</strong>: ver la ventana de Información del sistema</p><ol>    <li>Deslice rápidamente desde el borde derecho de la pantalla hacia el centro y luego toque <strong>Buscar</strong>. O bien, si está utilizando un mouse, apunte a la esquina inferior derecha de la pantalla y luego haga clic en <strong>Buscar.</strong></li>    <li>En el cuadro de búsqueda, escriba <strong>información del sistema</strong></li>    <li>Toque o haga clic en<strong> Sistema</strong>, toque o haga clic en <strong>Información de sistema</strong> y luego haga clic en <strong>Resumen del sistema.</strong></li>    <li>Si está ejecutando una versión de <strong>64 bits </strong>de Windows 8<strong>, </strong>el PC basado en x64 se visualiza en el campo <strong>Tipo de sistema</strong> en el encabezado del Elemento. <br /><br /> Si está ejecutando una versión <strong>32 bits</strong> de Windows 8, el PC basado en x86 aparece en el campo <strong>Tipo de sistema</strong> en el encabezado del elemento.  </li></ol><p> </p>",
-            "heading1": "Symptom",
-            "para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
-            "heading2": "Affected Brands",
-            "para2": "The above symptom is associated with, but not limited to, the following systems:",
-            "para3": "All Desktop and Laptops",
-            "heading3": "Operating System",
-            "para4": "Windows 7, 8, 10",
-            "heading4": "Solution",
-            "para5": "Windows 7 or Vista",
-            "para6": {
-                "span1": {
-                    "line1": "Open System by clicking the",
-                    "line2": "Start button",
-                    "line3": "Picture of the Start button, right-clicking Computer, and then clicking Properties"
-                },
-                "span2": "Under System, you can view the system type."
-            },
-            "para7": "Windows 8 and Windows 10",
-            "para8": {
-                "span1": {
-                    "line1": "Method 1:",
-                    "line2": "View the System window in Control Panel"
-                },
-                "span2": {
-                    "line1": "Swipe in from the right edge of the screen, and then tap",
-                    "line2": "Search.",
-                    "line3": "Or, if you are using a mouse, point to the lower-right corner of the screen, and then click",
-                    "line4": "Search."
-                },
-                "span3": {
-                    "line1": "Type",
-                    "line2": "system",
-                    "line3": "in the search box, and then tap or click",
-                    "line4": "Settings."
-                },
-                "span4": {
-                    "line1": "Tap or click",
-                    "line2": "System"
-                },
-                "span5": {
-                    "line1": "If you are running a 64-bit version of Windows 8,",
-                    "line2": "64-bit Operating System",
-                    "line3": "is displayed in the System type field under the System heading.",
-                    "line4": "If you are running a 32",
-                    "line5": "-bit version of Windows 8, 32-bit Operating",
-                    "line6": "System is displayed in the System type field under the System heading."
-                },
-                "span6": {
-                    "line1": "Method 2:",
-                    "line2": "View the System Information window"
-                },
-                "span7": {
-                    "line1": "Swipe in from the right edge of the screen, and then tap",
-                    "line2": "Search.",
-                    "line3": "Or, if you are using a mouse, point to the lower-right corner of the screen, and then click",
-                    "line4": "Search."
-                },
-                "span8": {
-                    "line1": "In the search box, type",
-                    "line2": "system information"
-                },
-                "span9": {
-                    "line1": "Tap or click",
-                    "line2": "System",
-                    "line3": ", tap or click",
-                    "line4": "System Information,",
-                    "line5": "and then click",
-                    "line6": "System Summary."
-                },
-                "span10": {
-                    "line1": "If you are running a",
-                    "line2": 64,
-                    "line3": "bit version of Windows 8, 32-bit Operating,",
-                    "line4": "x64-based PC is displayed in the",
-                    "line5": "System type",
-                    "line6": "field under the Item heading."
-                }
-            },
-            "para9": {
-                "line1": "If you are running a",
-                "line2": "32-bit",
-                "line3": "version of Windows 8,x86-based PC is displayed in the",
-                "line4": "System type",
-                "line5": "field under the Item heading."
-            }
+			"title": "Cómo conocer la CPU de su equipo",
+			"heading1": "Síntoma",
+            "para1": "Los términos 32 bits y 64 bits hacen referencia a la forma en la que el procesador de sistema (también denominado CPU) gestiona la información. La versión 64 bits de Windows gestiona grandes cantidades de memoria de acceso aleatorio (RAM) de una forma más eficaz que un sistema de 32 bits.",
+            "heading2": "Marcas afectadas",
+            "para2": "El síntoma anterior está asociado, pero sin limitarse a, a los siguientes sistemas:",
+            "para3": "Todos los equipos de escritorio y portátiles",
+            "heading3": "Sistema operativo",
+            "para4": "Windows 7, 8 y 10",
+            "heading4": "Solución",
+            "para5": "Windows 7 o Vista",
+			"para6": "Para abrir sistema, haga clic en el <strong>Botón de inicio </strong>Imagen del <strong>botón de inicio,</strong> haga clic con el botón secundario del mouse en Equipo y luego haga clic en Propiedades.",
+            "para7": "En Sistema, puede ver el tipo de sistema.",
+            "para8": "Windows 8 y Windows 10",
+			"para9": "<strong>Método 1:</strong> ver la ventana del sistema en el panel de control",
+            "para10": "Deslice rápidamente desde el borde derecho de la pantalla hacia el centro y luego toque <strong>Buscar</strong>. O bien, si está utilizando un mouse, apunte a la esquina inferior derecha de la pantalla y luego haga clic en <strong>Buscar.</strong>",
+            "para11": "Escriba <strong>sistema</strong> en el cuadro de búsqueda y luego presione o haga clic en <strong>Configuración.</strong>",
+            "para12": "Toque o haga clic en <strong>Sistema</strong>.",
+            "para13": "Si está ejecutando una versión de 64 bits de Windows 8, se mostrará el <strong>Sistema operativo de 64 bits</strong> en el campo Tipo de sistema bajo el encabezado Sistema. Si está ejecutando una versión de 32<strong> bits de Windows</strong> <strong>8, se mostrará el Sistema operativo de</strong> <strong>32 bits</strong> en el campo Tipo de sistema bajo el encabezado Sistema.<br />  ",
+            "para14": "<strong>Método 2</strong>: ver la ventana de Información del sistema",
+            "para15": "Deslice rápidamente desde el borde derecho de la pantalla hacia el centro y luego toque <strong>Buscar</strong>. O bien, si está utilizando un mouse, apunte a la esquina inferior derecha de la pantalla y luego haga clic en <strong>Buscar.</strong>",
+            "para16": "En el cuadro de búsqueda, escriba <strong>información del sistema</strong>.",
+            "para17": "Toque o haga clic en<strong> Sistema</strong>, toque o haga clic en <strong>Información de sistema</strong> y luego haga clic en <strong>Resumen del sistema.</strong>",
+            "para18": "Si está ejecutando una versión de <strong>64 bits </strong>de Windows 8<strong>, </strong>el PC basado en x64 se visualiza en el campo <strong>Tipo de sistema</strong> en el encabezado del Elemento. Si está ejecutando una versión <strong>32 bits</strong> de Windows 8, el PC basado en x86 aparece en el campo <strong>Tipo de sistema</strong> en el encabezado del elemento.  "
         },
         "question4": {
-            "title": "Compruebe el uso de la batería de su equipo",
-            "description": "<div class='faqInFs4Fb'>    Compruebe el uso de la batería de su equipo</div><hr><h3 class='faqInFs25FbP10'>Síntoma</h3><p>Windows 10 incluye una nueva pantalla “<strong>uso de batería”</strong> que le muestra lo que está agotando la potencia de su equipo portátil. Esto significa que le dirá exactamente qué aplicaciones, tanto de escritorio como “universales” de Windows 10, están utilizando demasiada energía.</p><h3 class='faqInFs25FbP10'>Marcas afectadas</h3><ul>    <li>Equipos portátiles Lenovo, sistemas de escritorio</li></ul><h3 class='faqInFs25FbP10'>Sistemas afectados</h3><ul>    <li>Todo</li></ul><h3 class='faqInFs25FbP10'>Sistema operativo</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Solución</h3><p>Esta característica es nueva en Windows 10, necesitamos encontrar esta característica primero, ya que no está almacenada en su vista de <strong>panel de control </strong>tradicional, esta característica se encuentra en la nueva aplicación de <strong>“Configuración”</strong></p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Busque la pantalla uso de la batería</h3></p><p>1. Haga clic o toque la opción <strong>“Configuración</strong>” en el menú Inicio</p><p>2. En <strong>Configuración </strong> seleccione <strong>“Sistema”</strong>y luego seleccione <strong>“Ahorro de batería”.<br /></strong> <strong></strong></p><p><img src='assets/images/qa/4.1.jpg' /></p><p>3. Haga clic o toque el enlace <strong>“Uso de batería”</strong> bajo este encabezado para ver más detalles. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analice su uso de energía</h3><p>4. Puede cambiar para hacer que la batería utilice la pantalla para mostrar el uso de la batería desde las últimas 24 horas hasta las últimas 48 horas o desde la semana pasada</p><p>5. Porcentajes de <strong>“Sistema”,</strong> “<strong>Pantalla</strong>” y “<strong>Wi-Fi”</strong>. Esto muestra cuánta batería han utilizado los procesos del sistema, la pantalla.</p><p>6. Las opciones <strong>“En uso”</strong> y <strong>“En segundo plano”</strong> muestran la cantidad de energía que usan las aplicaciones mientras las está utilizando, en comparación con las aplicaciones que se ejecutan en segundo plano.</p><p>7. Si las aplicaciones usan energía en segundo plano, puede hacer clic o tocar el enlace <strong>“Cambiar los valores de aplicación en segundo plano” </strong>y configurar las aplicaciones para que no se ejecuten en segundo plano. Esto solo funciona para las aplicaciones universales de Windows 10.</p><p>8. Desplácese hacia abajo y verá una lista de aplicaciones, esto se considera la sección más útil de esta característica. Se mostrará una lista de las aplicaciones que han usado batería en ese período y se le mostrará el porcentaje del poder de la batería que cada aplicación haya utilizado</p><p><img src='assets/images/qa/4.2.jpg' /></p><p> </p>",
-            "heading1": "Symptom",
-            "para1": {
-                "span1": "Windows 10 includes a new",
-                "span2": "“Battery Use”",
-                "span3": "screen that shows you what’s draining your laptop’s juice. That means it’ll tell you exactly what apps–both desktop and Windows 10 “universal” apps–are using too much power."
-            },
-            "heading2": "Affected Brands",
-            "para2": "Lenovo laptops, desktops",
-            "heading3": "Affected Systems",
-            "para3": "All",
-            "heading4": "Operating System",
+			"title": "Compruebe el uso de la batería de su equipo",
+			"heading1": "Síntoma",
+            "para1": "Windows 10 incluye una nueva pantalla “<strong>uso de batería”</strong> que le muestra lo que está agotando la potencia de su equipo portátil. Esto significa que le dirá exactamente qué aplicaciones, tanto de escritorio como “universales” de Windows 10, están utilizando demasiada energía.",
+            "heading2": "Marcas afectadas",
+            "para2": "Equipos portátiles Lenovo, sistemas de escritorio",
+            "heading3": "Sistemas afectados",
+            "para3": "Todo",
+            "heading4": "Sistema operativo",
             "para4": "Windows 10",
-            "heading5": "Solution",
-            "para5": {
-                "line1": "This feature is new in Windows 10, we need to find this feature first as it is not stored in your traditional",
-                "line2": "control panel",
-                "line3": "view, this feature is located in the new",
-                "line4": "“Settings”",
-                "line5": "app"
-            },
-            "para6": {
-                "span1": "A. Find the Battery Use Screen",
-                "span2": {
-                    "line1": "1. Click or Tap the",
-                    "line2": "“Settings”",
-                    "line3": "option from the start menu"
-                },
-                "span3": {
-                    "line1": "2. In",
-                    "line2": "Settings",
-                    "line3": "select",
-                    "line4": "“System”",
-                    "line5": "and then select",
-                    "line6": "“Battery saver.”"
-                },
-                "span4": {
-                    "line1": "3. Click or tap the",
-                    "line2": "“Battery use”",
-                    "line3": "link under this heading to see more details."
-                },
-                "span5": "B. Analyze Your Power Usage",
-                "span6": "4. You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last from last week",
-                "span7": {
-                    "line1": 5,
-                    "line2": "“System”,",
-                    "line3": "“Display”,",
-                    "line4": "and",
-                    "line5": "“Wi-Fi”",
-                    "line6": "percentages. This shows how much battery power has been used by system processes, the display,"
-                },
-                "span8": {
-                    "line1": "6. The",
-                    "line2": "“In use”",
-                    "line3": "and",
-                    "line4": "“Background”",
-                    "line5": "options show how much power is used by applications while you’re using them, compared to applications running in the background."
-                },
-                "span9": {
-                    "line1": "7. If apps are using power in the background, you can click or tap the",
-                    "line2": "“Change background app settings”",
-                    "line3": "link and configure apps to not run in the background. This only works for universal Windows 10 apps."
-                },
-                "span10": "8. Scroll down further and you will see a list of applications, this is considered as the most useful section of this feature. It will display a list of the apps have used battery power in that period, and show you what percentage of your battery power each app has used."
-            }
+            "heading5": "Solución",
+            "para5": "Esta característica es nueva en Windows 10, necesitamos encontrar esta característica primero, ya que no está almacenada en su vista de <strong>panel de control </strong>tradicional, esta característica se encuentra en la nueva aplicación de <strong>“Configuración”</strong>.",
+            "heading6": "A. Busque la pantalla uso de la batería",
+            "para6": "1. Haga clic o toque la opción <strong>“Configuración</strong>” en el menú Inicio.",
+            "para7": "2. En <strong>Configuración </strong> seleccione <strong>“Sistema”</strong>y luego seleccione <strong>“Ahorro de batería”</strong>.",
+            "para8": "3. Haga clic o toque el enlace <strong>“Uso de batería”</strong> bajo este encabezado para ver más detalles. ",
+            "heading7": "B. Analice su uso de energía",
+            "para9": "4. Puede cambiar para hacer que la batería utilice la pantalla para mostrar el uso de la batería desde las últimas 24 horas hasta las últimas 48 horas o desde la semana pasada.",
+            "para10": "5. Porcentajes de <strong>“Sistema”,</strong> “<strong>Pantalla</strong>” y “<strong>Wi-Fi”</strong>. Esto muestra cuánta batería han utilizado los procesos del sistema, la pantalla.",
+            "para11": "6. Las opciones <strong>“En uso”</strong> y <strong>“En segundo plano”</strong> muestran la cantidad de energía que usan las aplicaciones mientras las está utilizando, en comparación con las aplicaciones que se ejecutan en segundo plano.",
+            "para12": "7. Si las aplicaciones usan energía en segundo plano, puede hacer clic o tocar el enlace <strong>“Cambiar los valores de aplicación en segundo plano” </strong>y configurar las aplicaciones para que no se ejecuten en segundo plano. Esto solo funciona para las aplicaciones universales de Windows 10.",
+            "para13": "8. Desplácese hacia abajo y verá una lista de aplicaciones, esto se considera la sección más útil de esta característica. Se mostrará una lista de las aplicaciones que han usado batería en ese período y se le mostrará el porcentaje del poder de la batería que cada aplicación haya utilizado."
         },
         "question5": {
-            "title": "Use su equipo como una tableta",
-            "description": "<div class='faqInFs4Fb'>    Use su equipo como una tableta</div><hr><p>La modalidad de tablero hace que Windows sea más intuitivo y más fácil de utilizar cuando tiene un dispositivo de pantalla táctil.</p><h3 class='faqInFs25FbP10'>Use la modalidad de tableta</h3><p>Para activar la modalidad de tableta, seleccione <strong>Centro de actividades</strong> en la barra de tareas y luego seleccione <strong>Modalidad de tableta</strong>.</p><p> </p><p><img src='assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Nota</h3><p>Para averiguar si el dispositivo puede activar automáticamente la modalidad de tableta, busque el dispositivo en el sitio web del fabricante. La compatibilidad con esta característica depende del hardware, del controlador instalado y de la forma en la que el fabricante configuró el dispositivo. </p><p> </p><p>En la modalidad de tableta, las aplicaciones abren la pantalla completa, lo que proporciona más espacio para trabajar. Para cerrar una aplicación, arrástrela a la parte inferior de la pantalla.</p><p> </p><h3 class='faqInFs25FbP10'>Consejo</h3><p>La barra de tareas está disponible cuando el equipo está en modalidad de tableta, pero puede ocultarla si desea disponer de más espacio en la pantalla. Seleccione el botón <strong>Inicio</strong>, seleccione <strong>Configuración </strong>> <strong>Sistema </strong>> <strong> Modalidad de tableta </strong>, luego active <strong>Ocultar barra de tareas automáticamente en modo de tableta</strong>. Para ver la barra de tareas oculta, deslice el dedo hacia arriba desde la parte inferior de la pantalla o utilice el mouse para situarse allí.</p><h3 class='faqInFs25FbP10'>Utilizar dos aplicaciones simultáneamente</h3><p>Para utilizar dos aplicaciones en paralelo en modalidad de tableta, arrastre una aplicación abierta hacia abajo y hacia el lado. Verá dónde se ajustará y verá cualquier aplicación abierta junto a ella.</p><p>En esta vista también puede:</p><ul>    <li>Utilice el borde compartido entre dos aplicaciones ajustadas para cambiar el tamaño de ambas aplicaciones al mismo tiempo.</li>    <li>Abra una nueva aplicación desde la vista de tarea: seleccione <strong>Vista de tareas</strong> en la barra de tareas, seleccione una aplicación y luego arrástrela a un lado para ajustarla a la pantalla dividida.</li>    <li>Utilice el botón atrás de la barra de tareas para volver a una aplicación o para abrir una aplicación que estaba usando antes.</li></ul><p> </p>",
-            "heading1": "Use tablet mode",
-            "para2": {
-                "span1": "To turn on tablet mode, select",
-                "span2": "action center",
-                "span3": "on the taskbar, then select",
-                "span4": "Tablet mode."
-            },
-            "heading2": "Note",
-            "para3": "To find out if your device can automatically turn on tablet mode, search for your device on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, and how the device was set up by the manufacturer.",
-            "para4": "In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the screen.",
-            "heading3": "Tip",
-            "para5": {
-                "span1": "The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen.",
-                "span2": "Select the",
-                "span3": "Start",
-                "span4": "button, select",
-                "span5": " Settings",
-                "span6": "System",
-                "span7": "Tablet mode",
-                "span8": ", then turn on",
-                "span9": "Automatically hide the taskbar in tablet mode.",
-                "span10": "To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there."
-            },
-            "heading4": "Use two apps simultaneously",
-            "para6": "To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and you'll see any open apps next to it.",
-            "para7": "In this view, you can also:",
-            "para8": {
-                "span1": "Use the shared edge between two snapped apps to resize both apps at the same time.",
-                "span2": {
-                    "line1": "Open a new app from task view—select",
-                    "line2": "Task view",
-                    "line3": "on the taskbar, select an app, then drag it to one side to snap it into your divided screen."
-                },
-                "span3": "Use the back button on the taskbar to go back in an app, or to open an app that you were using before."
-            }
+			"title": "Use su equipo como una tableta",
+			"para1": "La modalidad de tablero hace que Windows sea más intuitivo y más fácil de utilizar cuando tiene un dispositivo de pantalla táctil.",
+            "heading1": "Use la modalidad de tableta",
+            "para2": "Para activar la modalidad de tableta, seleccione <strong>Centro de actividades</strong> en la barra de tareas y luego seleccione <strong>Modalidad de tableta</strong>.",
+            "heading2": "Nota",
+            "para3": "Para averiguar si el dispositivo puede activar automáticamente la modalidad de tableta, busque el dispositivo en el sitio web del fabricante. La compatibilidad con esta característica depende del hardware, del controlador instalado y de la forma en la que el fabricante configuró el dispositivo. ",
+            "para4": "En la modalidad de tableta, las aplicaciones abren la pantalla completa, lo que proporciona más espacio para trabajar. Para cerrar una aplicación, arrástrela a la parte inferior de la pantalla.",
+            "heading3": "Consejo",
+            "para5": "La barra de tareas está disponible cuando el equipo está en modalidad de tableta, pero puede ocultarla si desea disponer de más espacio en la pantalla. Seleccione el botón <strong>Inicio</strong>, seleccione <strong>Configuración </strong>> <strong>Sistema </strong>> <strong> Modalidad de tableta </strong>, luego active <strong>Ocultar barra de tareas automáticamente en modo de tableta</strong>. Para ver la barra de tareas oculta, deslice el dedo hacia arriba desde la parte inferior de la pantalla o utilice el mouse para situarse allí.",
+            "heading4": "Utilizar dos aplicaciones simultáneamente",
+            "para6": "Para utilizar dos aplicaciones en paralelo en modalidad de tableta, arrastre una aplicación abierta hacia abajo y hacia el lado. Verá dónde se ajustará y verá cualquier aplicación abierta junto a ella.",
+            "para7": "En esta vista también puede:",
+            "para8": "Utilice el borde compartido entre dos aplicaciones ajustadas para cambiar el tamaño de ambas aplicaciones al mismo tiempo.",
+            "para9": "Abra una nueva aplicación desde la vista de tarea: seleccione <strong>Vista de tareas</strong> en la barra de tareas, seleccione una aplicación y luego arrástrela a un lado para ajustarla a la pantalla dividida.",
+            "para10": "Utilice el botón atrás de la barra de tareas para volver a una aplicación o para abrir una aplicación que estaba usando antes."
         },
         "question6": {
-            "title": "Conozca Cortana, su asistente personal",
-            "description": "<div class='faqInFs4Fb'>    Conozca Cortana, su asistente personal</div><hr><h3 class='faqInFs25FbP10'>¿Qué es Cortana?</h3><hr /><p>Cortana es su agente digital. Ella le ayudará a realizar las tareas.</p><p>Cuanto más utilice Cortana, más personalizada será su experiencia.</p><p>Para empezar, escriba una pregunta en el recuadro de búsqueda o seleccione el micrófono y hable con Cortana. (El tecleo funciona para todos los tipos de equipos, pero necesita un micrófono para la conversación.)</p><p>Si no está seguro de lo que debe decir, verá sugerencias en la pantalla de bloqueo y en la Página principal de Cortana cuando seleccione el recuadro de búsqueda en la barra de tareas.</p><p><img src='assets/images/qa/6.1.jpg' /></p><ol>    <li>Inicio 2. Equipo portátil 3. Valores 4. Informar</li></ol><p>Estas son algunas de las cosas que Cortana puede hacer por usted:</p><ul>    <li>Proporcionar avisos basados en la hora, lugares o personas.</li>    <li>Realizar un seguimiento de paquetes, equipos, intereses y vuelos.</li>    <li>Enviar mensajes de correo electrónico y textos.</li>    <li>Administrar su calendario y mantenerlo al día.</li>    <li>Crear y gestionar listas.</li>    <li>Charlar y jugar.</li>    <li>Buscar hechos, archivos, lugares e información.</li>    <li>Abrir cualquier aplicación en el sistema.</li></ul><h3 class='faqInFs25FbP10'>Intente lo siguiente: establecer un aviso</h3><hr /><p>Una de las cosas que puede hacer Cortana es proporcionarle recordatorios. Ella puede recordarle que haga las cosas según la hora, los lugares o incluso para personas.</p><p>Por ejemplo, escriba o diga “Recordarme felicitar a Tanya la próxima vez que me llame”.</p><p>El aviso aparecerá cuando reciba una llamada de Tanya.</p><p>Extra: si tiene un teléfono Windows o Cortana para iPhone o Android, puede configurar Cortana para sincronizar notificaciones entre su equipo y el teléfono.</p><p><img src='assets/images/qa/6.2.jpg' /></p><h3 class='faqInFs25FbP10'>¿Hola Cortana?</h3><hr /><p>Establece Cortana para escucharle cada vez que diga “Hola Cortana”. Seleccione el recuadro de búsqueda en la barra de tareas para abrir la página inicial de Cortana. A continuación, seleccione <strong>Configuración</strong> y active <strong>Permitir que Cortana responda a “Hola Cortana”.</strong></p><p><img src='assets/images/qa/6.3.jpg' /></p><p class='faqInFs25FbP10'>Nota</p><p>Cortana solo está disponible en ciertos países/regiones y es posible que algunas características de Cortana no estén disponibles en todos los lugares.</p><p> </p>",
-            "heading1": "What is Cortana?",
-            "para1": "Cortana is your digital agent. She'll help you get things done.",
-            "para2": "The more you use Cortana, the more personalized your experience will be.",
-            "para3": "To get started, type a question in the search box, or select the microphone  and talk to Cortana. (Typing works for all types of PCs, but you need a mic to talk.)",
-            "para4": "If you’re not sure what to say, you’ll see suggestions on your lock screen, and in Cortana home when you select the search box on the taskbar.",
-            "para5": " Home 2. Notebook 3. Settings 4. Feedback",
-            "para6": "Here are some things Cortana can do for you:",
-            "bulletset1": {
-                "span1": "Give you reminders based on time, places, or people.",
-                "span2": "Track packages, teams, interests, and flights.",
-                "span3": "Send emails and texts.",
-                "span4": "Manage your calendar and keep you up to date.",
-                "span5": "Create and manage lists.",
-                "span6": "Chit chat and play games.",
-                "span7": "Find facts, files, places, and info.",
-                "span8": "Open any app on your system."
+			"title": "Conozca Cortana, su asistente personal",
+			"heading1": "¿Qué es Cortana?",
+            "para1": "Cortana es su agente digital. Ella le ayudará a realizar las tareas.",
+            "para2": "Cuanto más utilice Cortana, más personalizada será su experiencia.",
+            "para3": "Para empezar, escriba una pregunta en el recuadro de búsqueda o seleccione el micrófono y hable con Cortana. (El tecleo funciona para todos los tipos de equipos, pero necesita un micrófono para la conversación.)",
+            "para4": "Si no está seguro de lo que debe decir, verá sugerencias en la pantalla de bloqueo y en la Página principal de Cortana cuando seleccione el recuadro de búsqueda en la barra de tareas.",
+            "para5": "1. Inicio 2. Equipo portátil 3. Valores 4. Informar",
+            "para6": "Estas son algunas de las cosas que Cortana puede hacer por usted:",
+            "unorderedList1": {
+				"listItem1": "Proporcionar avisos basados en la hora, lugares o personas.",
+                "listItem2": "Realizar un seguimiento de paquetes, equipos, intereses y vuelos.",
+                "listItem3": "Enviar mensajes de correo electrónico y textos.",
+                "listItem4": "Administrar su calendario y mantenerlo al día.",
+                "listItem5": "Crear y gestionar listas.",
+                "listItem6": "Charlar y jugar.",
+                "listItem7": "Buscar hechos, archivos, lugares e información.",
+                "listItem8": "Abrir cualquier aplicación en el sistema."
             },
-            "heading2": "Try this: Set a reminder",
-            "para7": "One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or even people.",
-            "para8": "For example, type or say, “Remind me to congratulate Tanya the next time she calls.”",
-            "para9": "The reminder will appear when you get a call from Tanya.",
-            "para10": "Extra bonus—if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync notifications between your PC and phone.",
-            "heading3": "Hey Cortana?",
-            "para11": {
-                "span1": "Set Cortana to hear you anytime you say “Hey Cortana.” Select the search box on the taskbar to open Cortana home.",
-                "span2": {
-                    "line1": "Then select",
-                    "line2": "Settings",
-                    "line3": "and turn on",
-                    "line4": "Let Cortana respond to “Hey Cortana.”"
-                }
-            },
-            "para12": "Note",
-            "para13": "Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere."
-        },
-        "pageTitle": "Detalle de soporte"
+			"heading2": "Intente lo siguiente: establecer un aviso",
+            "para7": "Una de las cosas que puede hacer Cortana es proporcionarle recordatorios. Ella puede recordarle que haga las cosas según la hora, los lugares o incluso para personas.",
+            "para8": "Por ejemplo, escriba o diga “Recordarme felicitar a Tanya la próxima vez que me llame”.",
+            "para9": "El aviso aparecerá cuando reciba una llamada de Tanya.",
+            "para10": "Extra: si tiene un teléfono Windows o Cortana para iPhone o Android, puede configurar Cortana para sincronizar notificaciones entre su equipo y el teléfono.",
+            "heading3": "¿Hola Cortana?",
+            "para11": "Establece Cortana para escucharle cada vez que diga “Hola Cortana”. Seleccione el recuadro de búsqueda en la barra de tareas para abrir la página inicial de Cortana. A continuación, seleccione <strong>Configuración</strong> y active <strong>Permitir que Cortana responda a “Hola Cortana”.</strong>",
+            "heading4": "Nota",
+            "para12": "Cortana solo está disponible en ciertos países/regiones y es posible que algunas características de Cortana no estén disponibles en todos los lugares."
+        }
     },
     "welcometutorial": {
         "description": "Vantage hace que sea simple para usted actualizar sus controladores, ejecutar diagnósticos, solicitar soporte y obtener información acerca de su dispositivo. Personalice rápidamente la experiencia y busque información útil y personalizada solo para sus necesidades",

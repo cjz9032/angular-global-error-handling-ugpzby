@@ -2724,6 +2724,7 @@
         "ssoErrorAccountPluginNotExist": "플러그인이 누락되었습니다. 인터넷에 연결하면 플러그인이 백그라운드에서 자동으로 복원됩니다. 시간이 약간 걸릴 수 있습니다. 나중에 다시 시도하십시오."
     },
     "faq": {
+        "pageTitle": "지원 세부 정보",
         "footer": {
             "title": "당신이 찾고있는 것을 찾지 못했습니까?",
             "description": "추가 지원이 필요하십니까? 다음을 통해 문의하십시오:",
@@ -2732,354 +2733,146 @@
         },
         "question1": {
             "title": "파일 백업 및 복원",
-            "description": "<div>    <div class='faqInFs4Fb'>        파일 백업 및 복원    </div>    <hr />    <div class='faqInMb7'>        항상 백업 파일을 만드는 것이 좋습니다. 원본에 무슨 일이 발생하는 경우, 파일을 다른 드라이브에 보관하십시오.    </div>    <div class='faqInFs3Fb'>        백업 설정    </div>    <hr />    <div class='mb-5'>        <span class='faqInFb'>시작</span> 버튼, <span class='faqInFb'>설정</span> > <span class='faqInFb'>업데이트 & 보안</span> > <span class='faqInFb'>백업</span> > <span class='faqInFb'>드라이브 추가</span>를 차례로 선택한 다음, 백업 파일을 저장할 외장 드라이브 또는 네트워크 위치를 선택하십시오.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        설정 완료. 매 시간마다 사용자 폴더(C:\\Users\\사용자 이름)에 있는 모든 파일을 백업합니다. 백업할 파일 또는 백업 빈도를 변경하려면, <span class='faqInFb'>추가 옵션</span>으로 이동하십시오.    </div>    <div class='faqInFs3Fb'>        파일 복구    </div>    <div class='mb-5'>        중요한 파일이나 폴더가 없는 경우, 다시 가져오는 방법은 다음과 같습니다.    </div>    <div>        <div class='mb-3'>1. 작업 표시줄의 검색 상자에서 <span class='faqInFb'>파일 복원</span>을 입력하고 <span class='faqInFb'>파일 기록으로 파일 복원</span>을 선택하십시오.</div>        <div class='mb-3'>2. 필요한 파일을 찾은 다음, 화살표를 사용하여 모든 버전 표시</div>        <div class='mb-3'>3. 원하는 버전을 찾았으면, <span class='faqInFb'>복원</span>을 선택하여 원래 위치에 저장하십시오. 다른 장소에 저장하려면, <span class='faqInFb'>복원</span>을 길게 누르고(또는 마우스 오른쪽 버튼을 클릭하고) <span class='faqInFb'>복원 위치</span>를 선택한 다음 새 위치를 선택하십시오.</div>    </div></div>",
-            "para1": {
-                "line1": "It's always good to have a backup.",
-                "line2": "Keep copies of your files on another drive in case something happens to the originals."
-            },
-            "heading1": "Set up your backup",
-            "para2": {
-                "span1": "Select the",
-                "span2": "Start",
-                "span3": "button, select",
-                "span4": "Settings",
-                "span5": "Update & security",
-                "span6": "Backup",
-                "span7": "Add a drive",
-                "span8": ", and then choose an external drive or network location for your backups."
-            },
-            "para3": {
-                "span1": "All set.",
-                "span2": "Every hour, we'll back up everything in your user folder (C:\\Users\\username).",
-                "span3": "To change which files get backed up or how often backups happen, go to",
-                "span4": "More options."
-            },
-            "heading2": "Restore your files",
-            "para4": "If you're missing an important file or folder, here's how to get it back:",
-            "para5": {
-                "span1": "1. Type",
-                "span2": "Restore files",
-                "span3": "in the search box on the taskbar, and then select",
-                "span4": "Restore your files with File History.",
-                "span5": "2. Look for the file you need, then use the arrows to see all its versions",
-                "span6": "3. When you find the version you want, select",
-                "span7": "Restore",
-                "span8": "to save it in its original location. To save it in a different place, press and hold (or right-click)",
-                "span9": "Restore",
-                "span10": ", select",
-                "span11": "Restore to",
-                "span12": "and then choose a new location."
-            }
+            "para1": "항상 백업 파일을 만드는 것이 좋습니다. 원본에 무슨 일이 발생하는 경우, 파일을 다른 드라이브에 보관하십시오.",
+			"heading1": "백업 설정",
+			"para2": "시작 버튼, 설정 > 업데이트 & 보안 > 백업 > 드라이브 추가를 차례로 선택한 다음, 백업 파일을 저장할 외장 드라이브 또는 네트워크 위치를 선택하십시오.",
+			"para3": "설정 완료. 매 시간마다 사용자 폴더(C:\\Users\\사용자 이름)에 있는 모든 파일을 백업합니다. 백업할 파일 또는 백업 빈도를 변경하려면, 추가 옵션으로 이동하십시오.",
+			"heading2": "파일 복구",
+			"para4": "중요한 파일이나 폴더가 없는 경우, 다시 가져오는 방법은 다음과 같습니다:",
+			"para5": {
+				"div1": "1. 작업 표시줄의 검색 상자에서 파일 복원을 입력하고 파일 기록으로 파일 복원을 선택하십시오.",
+				"div2": "2. 필요한 파일을 찾은 다음, 화살표를 사용하여 모든 버전 표시.",
+				"div3": "3. 원하는 버전을 찾았으면, 복원을 선택하여 원래 위치에 저장하십시오. 다른 장소에 저장하려면, 복원을 길게 누르고(또는 마우스 오른쪽 버튼을 클릭하고) 복원 위치를 선택한 다음 새 위치를 선택하십시오."
+			}
         },
         "question2": {
-            "title": "PC를 초기화하는 방법",
-            "description": "<div><div class='faqInFs4Fb'>Windows 10 초기화하는 방법</div><hr><div class='faqInP5'>Windows 10에서 문제가 발생하거나 판매하려는 경우 초기화해야 합니다. 초기화하면 파일을 보존하거나 제거하도록 선택하고 모든 앱 및 설정을 제거할 수 있으며 새로운 Windows 사본을 설치할 수 있습니다. 또한 재설정하면 성능 저하와 같은 여러 문제를 해결할 수 있습니다.</div><div class='faqInFs25FbP10'>1. 설정 앱 열기</div><div class='faqInP5'>화면 왼쪽 하단에 있는 시작 이미지 버튼을 누르고 설정 기어 이미지를 선택하십시오.</div><div class='faqInP5'><img src='assets/images/qa/2.1.jpg' /></div><div class='faqInFs25FbP10'>2. 범주 목록에서 업데이트 및 보안 선택</div><div class='faqInP5'><img src='assets/images/qa/2.2.jpg' /></div><div class='faqInFs25FbP10'>3. 왼쪽 창에서 복구로 이동</div><div class='faqInP5'><img src='assets/images/qa/2.3.jpg' /></div><div class='faqInFs25FbP10'>4. 초기화 프로세스 시작</div><div class='faqInP5'>맨 위의 \"이 PC 초기화\" 제목 아래에 있는 시작 버튼을 클릭하거나 탭하십시오.</div><div class='faqInP5'><img src='assets/images/qa/2.4.jpg' /></div><div class='faqInFs25FbP10'>5. 파일 보관 여부 선택</div><div class='faqInP5'>초기화한 후 Microsoft 계정에 로그인 할 수 있습니다. 이 계정으로 구입한 모든 Windows 스토어 앱은 재설치됩니다.</div><div class='faqInP5'><ul><li>내 파일 유지를 하면 앱과 설정이 제거되지만 모든 개인 파일은 그대로 유지됩니다.</li><li>모든 항목 제거를 하면 앱, 설정 및 개인 파일이 지워집니다. 백업된 파일 복사본이 없는 경우, 취소를 누르고 백업한 다음 이 프로세스를 다시 시작할 수 있습니다.</li></ul></div><div class='faqInP5'><img src='assets/images/qa/2.5.jpg' /></div><div class='faqInFs25FbP10'>6. 다양한 추가 설정을 선택할 수 있습니다</div><div class='faqInP5'>이는 이전 단계에서 \"모두 제거\"를 선택한 경우에만 표시됩니다.</div><div class='faqInP5'><img src='assets/images/qa/2.6.1.jpg' /></div><div class='faqInP5'><img src='assets/images/qa/2.6.2.jpg' /></div><div class='faqInFs25FbP10'>7.개요를 읽은 다음 진행할 준비가 되면 초기화를 누르십시오.</div><div class='faqInP5'>Windows에서 장치를 초기화할 준비를 합니다. 블루 스크린이 표시될 때까지 기다리십시오.</div><div class='faqInFs25FbP10'>8. \"옵션 선택\"이 나타나면 계속을 선택합니다.</div><div class='faqInP5'>Windows가 다시 시작되어 초기화를 시작합니다. 초기화가 진행되는 동안 PC가 여러 번 재부팅될 수 있습니다.</div><hr><div class='faqInFs25FbP10'>커뮤니티 Q&A</div><div class='faqInP5'><b>모든 것을 제거하도록 선택한 경우 컴퓨터에 연결된 모든 드라이브가 삭제됩니까, 아니면 Windows 10을 실행하고 있는 드라이브만 삭제됩니까?</b></div><div class='faqInP5'><i>커뮤니티 응답</i></div><div class='faqInP10'>Windows 10 OS 드라이브(보통 C: 드라이브)만 삭제합니다. 컴퓨터에 연결된 기타 드라이브는 영향을 받지 않습니다.</div><div class='faqInP5'><b>화면이 끊긴 경우 어떻게 이 방법을 사용할 수 있습니까?</b></div><div class='faqInP5'><i>커뮤니티 응답</i></div><div class='faqInP10'>죄송하지만 이 경우에는 불가능합니다. 새로운 화면을 가져와야 합니다.</div><div class='faqInP5'><b>웹 사이트에 로그인 한 경우 기록도 함께 제거됩니까?</b></div><div class='faqInP5'><i>커뮤니티 응답</i></div><div class='faqInP10'>예. 사용 중인 브라우저에 따라 달라집니다. 브라우저 기록을 제거하려면 브라우저 설정으로 이동하여 기록을 삭제하기만 하면 됩니다. 익명 모드를 사용하여 기록을 저장하지 않을 수도 있습니다.</div><div class='faqInP5'><b>모든 항목을 제거하도록 선택한 경우 암호도 초기화됩니까?</b></div><div class='faqInP5'><i>커뮤니티 응답</i></div><div class='faqInP10'>예, Windows 10 컴퓨터를 초기화하면 모든 사용자 데이터가 제거됩니다. 여기에는 문서, 저장된 암호, 그림, 기본 설정, 브라우저 정보 및 응용 프로그램 데이터가 포함됩니다.</div><hr><div class='faqInP5'>참조</div><div class='faqInP5'>Windows 10 초기화하는 방법 – WikiHow.</div></div>",
-            "heading1": "Symptom",
-            "para1": {
-                "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
-                "span2": "Windows can “refresh” your PC so it’s more like a fresh install without deleting your personal files."
-            },
-            "para2": "Refresh your PC, Here is what will happen: your files and personalized settings won’t change",
-            "para3": {
-                "span1": "Your PC settings will be changed back to its defaults",
-                "span2": "Apps from windows store will be kept",
-                "span3": "Apps you installed from disc or website will be removed",
-                "span4": "A list of removed files will be saved on your desktop"
-            },
-            "heading2": "Affected Brands",
-            "para4": "All Desktop and Laptops",
-            "heading3": "Operation System",
-            "para5": "Windows 8, 8.1 & 10",
-            "heading4": "Solution",
-            "para6": "Windows 8/8.1",
-            "para7": {
-                "span1": {
-                    "line1": "Tap or click",
-                    "line2": "Settings "
-                },
-                "span2": {
-                    "line1": "Tap or click",
-                    "line2": "Update and recovery"
-                },
-                "span3": {
-                    "line1": "Tap or click",
-                    "line2": "Recovery"
-                },
-                "span4": {
-                    "line1": "Under Refresh your PC without affecting your files, tap or click",
-                    "line2": "Get started."
-                },
-                "span5": {
-                    "line1": "Click",
-                    "line2": "\"Next\"."
-                },
-                "span6": {
-                    "line1": "Click",
-                    "line2": "\"Refresh\"",
-                    "line3": "to start the refresh process."
-                },
-                "span7": "Once the refresh process is done, you can find a Removed Apps list on the desktop",
-                "span8": "You can find the removed apps while refreshing your system"
-            },
-            "para8": "Windows 10",
-            "para9": {
-                "span1": {
-                    "line1": "Search for",
-                    "line2": "refresh",
-                    "line3": "in the search tool available in the Start menu"
-                },
-                "span2": {
-                    "line1": "Click on",
-                    "line2": "\"Refresh your PC without affecting your files\"",
-                    "line3": " in the search results as shown below."
-                },
-                "span3": {
-                    "line1": "Click on the",
-                    "line2": "Get started",
-                    "line3": "button just below the heading",
-                    "line4": "\"Refresh your PC without affecting your files\"",
-                    "line5": "to start refreshing your Windows 10 PC."
-                }
-            },
-            "header5": "Additional Information",
-            "para10": "In most cases, once you start to refresh your PC, it’ll finish on its own. However, if Windows needs missing files, you’ll be asked to insert recovery media, which is typically a DVD disc or thumb drive. If that happens, what you’ll need depends on your PC.",
-            "para11": "If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact Microsoft Support."
+			"title": "Windows 10 초기화하는 방법",
+			"para1": "Windows 10에서 문제가 발생하거나 판매하려는 경우 초기화해야 합니다. 초기화하면 파일을 보존하거나 제거하도록 선택하고 모든 앱 및 설정을 제거할 수 있으며 새로운 Windows 사본을 설치할 수 있습니다. 또한 재설정하면 성능 저하와 같은 여러 문제를 해결할 수 있습니다.",
+            "heading1": "1. 설정 앱 열기",
+            "para2": "화면 왼쪽 하단에 있는 시작 이미지 버튼을 누르고 설정 기어 이미지를 선택하십시오.",
+            "heading2": "2. 범주 목록에서 업데이트 및 보안 선택",
+            "heading3": "3. 왼쪽 창에서 복구로 이동",
+            "heading4": "4. 초기화 프로세스 시작",
+            "para3": "맨 위의 \"이 PC 초기화\" 제목 아래에 있는 시작 버튼을 클릭하거나 탭하십시오.",
+            "heading5": "5. 파일 보관 여부 선택",
+            "para4": "초기화한 후 Microsoft 계정에 로그인 할 수 있습니다. 이 계정으로 구입한 모든 Windows 스토어 앱은 재설치됩니다.",
+            "para5": {
+				"li1": "내 파일 유지를 하면 앱과 설정이 제거되지만 모든 개인 파일은 그대로 유지됩니다.",
+				"li2": "모든 항목 제거를 하면 앱, 설정 및 개인 파일이 지워집니다. 백업된 파일 복사본이 없는 경우, 취소를 누르고 백업한 다음 이 프로세스를 다시 시작할 수 있습니다."
+			},
+			"heading6": "6. 다양한 추가 설정을 선택할 수 있습니다",
+            "para6": "이는 이전 단계에서 \"모두 제거\"를 선택한 경우에만 표시됩니다.",
+            "heading7": "7.개요를 읽은 다음 진행할 준비가 되면 초기화를 누르십시오.",
+            "para7": "Windows에서 장치를 초기화할 준비를 합니다. 블루 스크린이 표시될 때까지 기다리십시오.",
+            "heading8": "8. \"옵션 선택\"이 나타나면 계속을 선택합니다.",
+            "para8": "Windows가 다시 시작되어 초기화를 시작합니다. 초기화가 진행되는 동안 PC가 여러 번 재부팅될 수 있습니다.",
+            "heading9": "커뮤니티 Q&A",
+            "communityAnswer": "커뮤니티 응답",
+			"q1": "모든 것을 제거하도록 선택한 경우 컴퓨터에 연결된 모든 드라이브가 삭제됩니까, 아니면 Windows 10을 실행하고 있는 드라이브만 삭제됩니까?",
+            "a1": "Windows 10 OS 드라이브(보통 C: 드라이브)만 삭제합니다. 컴퓨터에 연결된 기타 드라이브는 영향을 받지 않습니다.",
+            "q2": "화면이 끊긴 경우 어떻게 이 방법을 사용할 수 있습니까?",
+            "a2": "죄송하지만 이 경우에는 불가능합니다. 새로운 화면을 가져와야 합니다.",
+            "q3": "웹 사이트에 로그인 한 경우 기록도 함께 제거됩니까?",
+            "a3": "예. 사용 중인 브라우저에 따라 달라집니다. 브라우저 기록을 제거하려면 브라우저 설정으로 이동하여 기록을 삭제하기만 하면 됩니다. 익명 모드를 사용하여 기록을 저장하지 않을 수도 있습니다.",
+            "q4": "모든 항목을 제거하도록 선택한 경우 암호도 초기화됩니까?",
+            "a4": "예, Windows 10 컴퓨터를 초기화하면 모든 사용자 데이터가 제거됩니다. 여기에는 문서, 저장된 암호, 그림, 기본 설정, 브라우저 정보 및 응용 프로그램 데이터가 포함됩니다.",
+            "para9": "참조",
+            "para10": "Windows 10 초기화하는 방법 – WikiHow."
         },
         "question3": {
-            "title": "컴퓨터의 CPU를 아는 방법",
-            "description": "<div class='faqInFs4Fb'>    컴퓨터의 CPU를 아는 방법</div><hr><h3 class='faqInFs25FbP10'>증상</h3><p>32비트 및 64비트라는 용어는 컴퓨터의 프로세서(CPU라고도 함)가 정보를 처리하는 방식을 의미합니다. 64비트 버전의 Windows는 32비트 시스템보다 훨씬 효과적으로 대량의 RAM(Random Access Memory)을 처리합니다.</p><h3 class='faqInFs25FbP10'>영향을 받는 브랜드</h3><p>위 증상은 다음 시스템 등과 연결되어 있습니다.</p><ul>    <li>모든 데스크탑 및 노트북</li></ul><h3 class='faqInFs25FbP10'>운영 체제</h3><ul>    <li>Windows 7, 8 및 10</li></ul><h3 class='faqInFs25FbP10'>해결 방법</h3><p><strong><u>Windows 7 또는 Vista</u></strong></p><ol>    <li><strong>시작 버튼</strong>의 <strong>시작 버튼</strong> 그림과 컴퓨터에서 마우스 오른쪽 버튼을 차례로 클릭한 다음 속성을 클릭하여 시스템을 열기  </li>    <li>시스템에서 시스템 유형을 볼 수 있습니다.</li></ol><p><strong><u>Windows 8 및 Windows 10</u></strong></p><p><strong>방법 1:</strong> 제어판에서 시스템 창 보기</p><ol>    <li>화면의 오른쪽 가장자리부터 밀어 <strong>검색</strong> 탭을 누르십시오. 또는 마우스를 사용하는 경우, 화면의 오른쪽 아래 모서리를 가리킨 다음 <strong>검색</strong>을 클릭하십시오.</li>    <li>검색 상자에 <strong>시스템</strong>을 입력한 다음, <strong>설정</strong>을 누르거나 클릭하십시오.</li>    <li><strong>시스템</strong>을 누르거나 클릭</li>    <li>64비트 버전의 Windows 8을 실행하는 경우, <strong>64비트 운영 체제</strong>가 시스템 제목 아래의 시스템 유형 필드에 표시됩니다. 32<strong>비트 버전의 Windows</strong> <strong>8을 실행하는 경우,</strong> <strong>32비트 운영 </strong>체제가 시스템 제목 아래의 시스템 유형 필드에 표시됩니다.<br />  </li></ol><p><strong>방법 2</strong>: 시스템 정보 창 보기</p><ol>    <li>화면의 오른쪽 가장자리부터 밀어 <strong>검색</strong> 탭을 누르십시오. 또는 마우스를 사용하는 경우, 화면의 오른쪽 아래 모서리를 가리킨 다음 <strong>검색</strong>을 클릭하십시오.</li>    <li>검색 상자에 <strong>시스템 정보</strong> 입력</li>    <li><strong>시스템</strong>과 <strong>시스템 정보</strong>를 차례로 누르거나 클릭한 다음 <strong>시스템 요약</strong>을 클릭하십시오.</li>    <li><strong>64비트</strong> 버전의 Windows 8<strong>을 실행하는 경우, </strong> x64기반 PC가 항목 제목 아래의 <strong>시스템 유형</strong> 필드에 표시됩니다. <br /><br /><strong>32비트</strong> 버전의 Windows 8을 실행하는 경우, x86기반 PC가 항목 제목 아래에 <strong>시스템 유형</strong> 필드에 표시됩니다.  </li></ol><p> </p>",
-            "heading1": "Symptom",
-            "para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
-            "heading2": "Affected Brands",
-            "para2": "The above symptom is associated with, but not limited to, the following systems:",
-            "para3": "All Desktop and Laptops",
-            "heading3": "Operating System",
-            "para4": "Windows 7, 8, 10",
-            "heading4": "Solution",
-            "para5": "Windows 7 or Vista",
-            "para6": {
-                "span1": {
-                    "line1": "Open System by clicking the",
-                    "line2": "Start button",
-                    "line3": "Picture of the Start button, right-clicking Computer, and then clicking Properties"
-                },
-                "span2": "Under System, you can view the system type."
-            },
-            "para7": "Windows 8 and Windows 10",
-            "para8": {
-                "span1": {
-                    "line1": "Method 1:",
-                    "line2": "View the System window in Control Panel"
-                },
-                "span2": {
-                    "line1": "Swipe in from the right edge of the screen, and then tap",
-                    "line2": "Search.",
-                    "line3": "Or, if you are using a mouse, point to the lower-right corner of the screen, and then click",
-                    "line4": "Search."
-                },
-                "span3": {
-                    "line1": "Type",
-                    "line2": "system",
-                    "line3": "in the search box, and then tap or click",
-                    "line4": "Settings."
-                },
-                "span4": {
-                    "line1": "Tap or click",
-                    "line2": "System"
-                },
-                "span5": {
-                    "line1": "If you are running a 64-bit version of Windows 8,",
-                    "line2": "64-bit Operating System",
-                    "line3": "is displayed in the System type field under the System heading.",
-                    "line4": "If you are running a 32",
-                    "line5": "-bit version of Windows 8, 32-bit Operating",
-                    "line6": "System is displayed in the System type field under the System heading."
-                },
-                "span6": {
-                    "line1": "Method 2:",
-                    "line2": "View the System Information window"
-                },
-                "span7": {
-                    "line1": "Swipe in from the right edge of the screen, and then tap",
-                    "line2": "Search.",
-                    "line3": "Or, if you are using a mouse, point to the lower-right corner of the screen, and then click",
-                    "line4": "Search."
-                },
-                "span8": {
-                    "line1": "In the search box, type",
-                    "line2": "system information"
-                },
-                "span9": {
-                    "line1": "Tap or click",
-                    "line2": "System",
-                    "line3": ", tap or click",
-                    "line4": "System Information,",
-                    "line5": "and then click",
-                    "line6": "System Summary."
-                },
-                "span10": {
-                    "line1": "If you are running a",
-                    "line2": 64,
-                    "line3": "bit version of Windows 8, 32-bit Operating,",
-                    "line4": "x64-based PC is displayed in the",
-                    "line5": "System type",
-                    "line6": "field under the Item heading."
-                }
-            },
-            "para9": {
-                "line1": "If you are running a",
-                "line2": "32-bit",
-                "line3": "version of Windows 8,x86-based PC is displayed in the",
-                "line4": "System type",
-                "line5": "field under the Item heading."
-            }
+			"title": "컴퓨터의 CPU를 아는 방법",
+			"heading1": "증상",
+            "para1": "32비트 및 64비트라는 용어는 컴퓨터의 프로세서(CPU라고도 함)가 정보를 처리하는 방식을 의미합니다. 64비트 버전의 Windows는 32비트 시스템보다 훨씬 효과적으로 대량의 RAM(Random Access Memory)을 처리합니다.",
+            "heading2": "영향을 받는 브랜드",
+            "para2": "위 증상은 다음 시스템 등과 연결되어 있습니다.",
+            "para3": "모든 데스크탑 및 노트북",
+            "heading3": "운영 체제",
+            "para4": "Windows 7, 8 및 10",
+            "heading4": "해결 방법",
+            "para5": "Windows 7 또는 Vista",
+			"para6": "<strong>시작 버튼</strong>의 <strong>시작 버튼</strong> 그림과 컴퓨터에서 마우스 오른쪽 버튼을 차례로 클릭한 다음 속성을 클릭하여 시스템을 열기.",
+            "para7": "시스템에서 시스템 유형을 볼 수 있습니다.",
+            "para8": "Windows 8 및 Windows 10",
+			"para9": "<strong>방법 1:</strong> 제어판에서 시스템 창 보기",
+            "para10": "화면의 오른쪽 가장자리부터 밀어 <strong>검색</strong> 탭을 누르십시오. 또는 마우스를 사용하는 경우, 화면의 오른쪽 아래 모서리를 가리킨 다음 <strong>검색</strong>을 클릭하십시오.",
+            "para11": "검색 상자에 <strong>시스템</strong>을 입력한 다음, <strong>설정</strong>을 누르거나 클릭하십시오.",
+            "para12": "<strong>시스템</strong>을 누르거나 클릭.",
+            "para13": "64비트 버전의 Windows 8을 실행하는 경우, <strong>64비트 운영 체제</strong>가 시스템 제목 아래의 시스템 유형 필드에 표시됩니다. 32<strong>비트 버전의 Windows</strong> <strong>8을 실행하는 경우,</strong> <strong>32비트 운영 </strong>체제가 시스템 제목 아래의 시스템 유형 필드에 표시됩니다.<br />  ",
+            "para14": "<strong>방법 2</strong>: 시스템 정보 창 보기",
+            "para15": "화면의 오른쪽 가장자리부터 밀어 <strong>검색</strong> 탭을 누르십시오. 또는 마우스를 사용하는 경우, 화면의 오른쪽 아래 모서리를 가리킨 다음 <strong>검색</strong>을 클릭하십시오.",
+            "para16": "검색 상자에 <strong>시스템 정보</strong> 입력.",
+            "para17": "<strong>시스템</strong>과 <strong>시스템 정보</strong>를 차례로 누르거나 클릭한 다음 <strong>시스템 요약</strong>을 클릭하십시오.",
+            "para18": "<strong>64비트</strong> 버전의 Windows 8<strong>을 실행하는 경우, </strong> x64기반 PC가 항목 제목 아래의 <strong>시스템 유형</strong> 필드에 표시됩니다. <strong>32비트</strong> 버전의 Windows 8을 실행하는 경우, x86기반 PC가 항목 제목 아래에 <strong>시스템 유형</strong> 필드에 표시됩니다.  "
         },
         "question4": {
-            "title": "시스템의 배터리 사용 확인",
-            "description": "<div class='faqInFs4Fb'>    시스템의 배터리 사용 확인</div><hr><h3 class='faqInFs25FbP10'>증상</h3><p>Windows 10에는 노트북의 전력을 소모하는 것이 무엇인지 나타내는 새로운 <strong>배터리 사용</strong> 화면이 화면이 포함되어 있습니다. 이 화면은 데스크톱 앱과 Windows 10 \"범용\" 앱에서 모두 너무 많은 전력을 사용하는 앱이 어떤 것인지 정확하게 알려 줍니다.</p><h3 class='faqInFs25FbP10'>영향을 받는 브랜드</h3><ul>    <li>Lenovo 노트북, 데스크탑</li></ul><h3 class='faqInFs25FbP10'>영향을 받는 시스템</h3><ul>    <li>모두</li></ul><h3 class='faqInFs25FbP10'>운영 체제</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>해결 방법</h3><p>이 기능은 Windows 10에서 새로운 기능입니다. 기존의 <strong>제어판</strong> 보기에 저장되어 있지 않으므로 먼저 이 기능을 찾아야 하며, 새로운 <strong>\"설정\"</strong> 앱에 저장되어 있습니다</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. 배터리 사용 화면 검색</h3></p><p>1. 시작 메뉴에서 <strong>\"설정\"</strong> 옵션을 클릭하거나 누르십시오</p><p>2. <strong>설정</strong>에서 <strong>\"시스템\"</strong>과 <strong>\"배터리 절약 모드 를 차례로 선택합니다.<br /> </strong> <strong></strong></p><p><img src='assets/images/qa/4.1.jpg' /></p><p>3. 자세한 정보를 보려면, 이 제목 아래에 있는 <strong>\"배터리 사용\"</strong> 링크를 클릭하십시오. </p><p> </p><h3 class='faqInFs25FbP10'>B. 전원 사용 분석</h3><p>4. 배터리 사용 화면을 변경하여 지난 24시간에서 48시간까지 또는 지난 주부터 마지막 시간까지 배터리 사용을 표시하기 위해 할 수 있음</p><p>5. <strong>\"시스템\"</strong>, \"<strong>디스플레이,</strong>\" 및 \"<strong>Wi-Fi\"</strong> 비율. 이 기능은 시스템 프로세스에서 사용한 배터리 전력량를 나타냅니다, 디스플레이.</p><p>6. <strong>\"사용 중\"</strong> 및 <strong>\"배경\"</strong> 옵션에서는 이 애플리케이션을 사용하는 동안 배경에서 실행되는 애플리케이션에 비해 얼마나 많은 전력이 사용되는지 나타냅니다.</p><p>7. 앱이 배경에서 전력을 사용하는 경우, <strong>\"배경 앱 설정 변경\" </strong>링크를 클릭하거나 눌러 앱이 배경에서 실행되지 않도록 구성할 수 있습니다. 이 기능은 범용 Windows 10 응용 프로그램에서만 작동합니다.</p><p>8. 아래로 더 스크롤하면 응용 프로그램 목록이 표시되며, 이 기능의 가장 유용한 섹션으로 간주할 수 있습니다. 이 프로그램은 해당 기간에 배터리 전력을 사용하여 앱 목록을 표시하고, 각 앱에 사용된 배터리 전원의 비율이 얼마인지을 보여 줌</p><p><img src='assets/images/qa/4.2.jpg' /></p><p> </p>",
-            "heading1": "Symptom",
-            "para1": {
-                "span1": "Windows 10 includes a new",
-                "span2": "“Battery Use”",
-                "span3": "screen that shows you what’s draining your laptop’s juice. That means it’ll tell you exactly what apps–both desktop and Windows 10 “universal” apps–are using too much power."
-            },
-            "heading2": "Affected Brands",
-            "para2": "Lenovo laptops, desktops",
-            "heading3": "Affected Systems",
-            "para3": "All",
-            "heading4": "Operating System",
+			"title": "시스템의 배터리 사용 확인",
+			"heading1": "증상",
+            "para1": "Windows 10에는 노트북의 전력을 소모하는 것이 무엇인지 나타내는 새로운 <strong>배터리 사용</strong> 화면이 화면이 포함되어 있습니다. 이 화면은 데스크톱 앱과 Windows 10 \"범용\" 앱에서 모두 너무 많은 전력을 사용하는 앱이 어떤 것인지 정확하게 알려 줍니다.",
+            "heading2": "영향을 받는 브랜드",
+            "para2": "Lenovo 노트북, 데스크탑",
+            "heading3": "영향을 받는 시스템",
+            "para3": "모두",
+            "heading4": "운영 체제",
             "para4": "Windows 10",
-            "heading5": "Solution",
-            "para5": {
-                "line1": "This feature is new in Windows 10, we need to find this feature first as it is not stored in your traditional",
-                "line2": "control panel",
-                "line3": "view, this feature is located in the new",
-                "line4": "“Settings”",
-                "line5": "app"
-            },
-            "para6": {
-                "span1": "A. Find the Battery Use Screen",
-                "span2": {
-                    "line1": "1. Click or Tap the",
-                    "line2": "“Settings”",
-                    "line3": "option from the start menu"
-                },
-                "span3": {
-                    "line1": "2. In",
-                    "line2": "Settings",
-                    "line3": "select",
-                    "line4": "“System”",
-                    "line5": "and then select",
-                    "line6": "“Battery saver.”"
-                },
-                "span4": {
-                    "line1": "3. Click or tap the",
-                    "line2": "“Battery use”",
-                    "line3": "link under this heading to see more details."
-                },
-                "span5": "B. Analyze Your Power Usage",
-                "span6": "4. You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last from last week",
-                "span7": {
-                    "line1": 5,
-                    "line2": "“System”,",
-                    "line3": "“Display”,",
-                    "line4": "and",
-                    "line5": "“Wi-Fi”",
-                    "line6": "percentages. This shows how much battery power has been used by system processes, the display,"
-                },
-                "span8": {
-                    "line1": "6. The",
-                    "line2": "“In use”",
-                    "line3": "and",
-                    "line4": "“Background”",
-                    "line5": "options show how much power is used by applications while you’re using them, compared to applications running in the background."
-                },
-                "span9": {
-                    "line1": "7. If apps are using power in the background, you can click or tap the",
-                    "line2": "“Change background app settings”",
-                    "line3": "link and configure apps to not run in the background. This only works for universal Windows 10 apps."
-                },
-                "span10": "8. Scroll down further and you will see a list of applications, this is considered as the most useful section of this feature. It will display a list of the apps have used battery power in that period, and show you what percentage of your battery power each app has used."
-            }
+            "heading5": "해결 방법",
+            "para5": "이 기능은 Windows 10에서 새로운 기능입니다. 기존의 <strong>제어판</strong> 보기에 저장되어 있지 않으므로 먼저 이 기능을 찾아야 하며, 새로운 <strong>\"설정\"</strong> 앱에 저장되어 있습니다.",
+            "heading6": "A. 배터리 사용 화면 검색",
+            "para6": "1. 시작 메뉴에서 <strong>\"설정\"</strong> 옵션을 클릭하거나 누르십시오.",
+            "para7": "2. <strong>설정</strong>에서 <strong>\"시스템\"</strong>과 <strong>\"배터리 절약 모드 를 차례로 선택합니다</strong>.",
+            "para8": "3. 자세한 정보를 보려면, 이 제목 아래에 있는 <strong>\"배터리 사용\"</strong> 링크를 클릭하십시오.",
+            "heading7": "B. 전원 사용 분석",
+            "para9": "4. 배터리 사용 화면을 변경하여 지난 24시간에서 48시간까지 또는 지난 주부터 마지막 시간까지 배터리 사용을 표시하기 위해 할 수 있음.",
+            "para10": "5. <strong>\"시스템\"</strong>, \"<strong>디스플레이,</strong>\" 및 \"<strong>Wi-Fi\"</strong> 비율. 이 기능은 시스템 프로세스에서 사용한 배터리 전력량를 나타냅니다, 디스플레이.",
+            "para11": "6. <strong>\"사용 중\"</strong> 및 <strong>\"배경\"</strong> 옵션에서는 이 애플리케이션을 사용하는 동안 배경에서 실행되는 애플리케이션에 비해 얼마나 많은 전력이 사용되는지 나타냅니다.",
+            "para12": "7. 앱이 배경에서 전력을 사용하는 경우, <strong>\"배경 앱 설정 변경\" </strong>링크를 클릭하거나 눌러 앱이 배경에서 실행되지 않도록 구성할 수 있습니다. 이 기능은 범용 Windows 10 응용 프로그램에서만 작동합니다.",
+            "para13": "8. 아래로 더 스크롤하면 응용 프로그램 목록이 표시되며, 이 기능의 가장 유용한 섹션으로 간주할 수 있습니다. 이 프로그램은 해당 기간에 배터리 전력을 사용하여 앱 목록을 표시하고, 각 앱에 사용된 배터리 전원의 비율이 얼마인지을 보여 줌."
         },
         "question5": {
-            "title": "태블릿 같은 PC 사용",
-            "description": "<div class='faqInFs4Fb'>    태블릿 같은 PC 사용</div><hr><p>태블릿 모드는 터치 스크린 장치가 있는 경우 Windows를 더욱 직관적이고 사용하기 쉽게 만듭니다.</p><h3 class='faqInFs25FbP10'>태블릿 모드 사용</h3><p>태블릿 모드를 켜려면, 작업 표시줄에서 <strong>관리 센터</strong>를 선택한 다음 <strong>태블릿 모드</strong>를 선택하십시오.</p><p> </p><p><img src='assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>주</h3><p>장치에서 태블릿 모드를 자동으로 켤 수 있는지 확인하려면, 제조업체 웹 사이트에서 장치를 검색하십시오. 이 기능에 대한 지원은 하드웨어, 설치된 드라이버 및 제조업체에서 장치를 설정하는 방법에 따라 다릅니다. </p><p> </p><p>태블릿 모드에서는 앱이 전체 화면을 열기 때문에 작업 공간이 더 많이 제공됩니다. 앱을 닫으려면, 화면 맨 아래로 끄십시오.</p><p> </p><h3 class='faqInFs25FbP10'>팁</h3><p>작업 표시줄은 PC가 태블릿 모드에 있는 경우에 사용할 수 있지만, 화면에 여유 공간을 추가로 원한다면 숨길 수 있습니다. <strong>시작</strong> 버튼, <strong>설정 </strong>> <strong>시스템 </strong>> <strong> 태블릿 모드</strong>를 차례로 선택한 다음, <strong>태블릿 모드에서 자동으로 작업 표시줄 자동으로 숨기기</strong>를 켭니다. 숨겨진 작업 표시줄을 표시하려면, 화면 하단에서 위로 살짝 밀어 올리거나 마우스를 사용하여 위치를 가리킵니다.</p><h3 class='faqInFs25FbP10'>동시에 두 개의 앱 사용</h3><p>태블릿 모드에서 두 개의 앱을 나란히 사용하려면, 열려 있는 앱을 아래로 및 옆으로 끄십시오. 그러면 표시되는 위치를 볼 수 있으며, 옆에 열려 있는 앱이 표시됩니다.</p><p>이 보기에서 다음을 수행할 수도 있습니다.</p><ul>    <li>두 개의 딸각 소리가 나는 앱 사이의 공유 가장자리를 사용하여 동시에 두 앱의 크기를 조정하십시오.</li>    <li>작업 보기에서 새 앱 열기 &mdash; <strong>작업 표시줄</strong>에서 작업 보기를 선택하고 앱을 선택한 후, 한 쪽으로 끌어서 분할된 화면에 맞춥니다.</li>    <li>앱에서 작업 표시줄의 뒤로 버튼을 사용하여 돌아가거나 전에 사용하던 앱을 여십시오.</li></ul><p> </p>",
-            "heading1": "Use tablet mode",
-            "para2": {
-                "span1": "To turn on tablet mode, select",
-                "span2": "action center",
-                "span3": "on the taskbar, then select",
-                "span4": "Tablet mode."
-            },
-            "heading2": "Note",
-            "para3": "To find out if your device can automatically turn on tablet mode, search for your device on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, and how the device was set up by the manufacturer.",
-            "para4": "In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the screen.",
-            "heading3": "Tip",
-            "para5": {
-                "span1": "The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen.",
-                "span2": "Select the",
-                "span3": "Start",
-                "span4": "button, select",
-                "span5": " Settings",
-                "span6": "System",
-                "span7": "Tablet mode",
-                "span8": ", then turn on",
-                "span9": "Automatically hide the taskbar in tablet mode.",
-                "span10": "To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there."
-            },
-            "heading4": "Use two apps simultaneously",
-            "para6": "To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and you'll see any open apps next to it.",
-            "para7": "In this view, you can also:",
-            "para8": {
-                "span1": "Use the shared edge between two snapped apps to resize both apps at the same time.",
-                "span2": {
-                    "line1": "Open a new app from task view—select",
-                    "line2": "Task view",
-                    "line3": "on the taskbar, select an app, then drag it to one side to snap it into your divided screen."
-                },
-                "span3": "Use the back button on the taskbar to go back in an app, or to open an app that you were using before."
-            }
+			"title": "태블릿 같은 PC 사용",
+			"para1": "태블릿 모드는 터치 스크린 장치가 있는 경우 Windows를 더욱 직관적이고 사용하기 쉽게 만듭니다.",
+            "heading1": "태블릿 모드 사용",
+            "para2": "태블릿 모드를 켜려면, 작업 표시줄에서 <strong>관리 센터</strong>를 선택한 다음 <strong>태블릿 모드</strong>를 선택하십시오.",
+            "heading2": "주",
+            "para3": "장치에서 태블릿 모드를 자동으로 켤 수 있는지 확인하려면, 제조업체 웹 사이트에서 장치를 검색하십시오. 이 기능에 대한 지원은 하드웨어, 설치된 드라이버 및 제조업체에서 장치를 설정하는 방법에 따라 다릅니다. ",
+            "para4": "태블릿 모드에서는 앱이 전체 화면을 열기 때문에 작업 공간이 더 많이 제공됩니다. 앱을 닫으려면, 화면 맨 아래로 끄십시오.",
+            "heading3": "팁",
+            "para5": "작업 표시줄은 PC가 태블릿 모드에 있는 경우에 사용할 수 있지만, 화면에 여유 공간을 추가로 원한다면 숨길 수 있습니다. <strong>시작</strong> 버튼, <strong>설정 </strong>> <strong>시스템 </strong>> <strong> 태블릿 모드</strong>를 차례로 선택한 다음, <strong>태블릿 모드에서 자동으로 작업 표시줄 자동으로 숨기기</strong>를 켭니다. 숨겨진 작업 표시줄을 표시하려면, 화면 하단에서 위로 살짝 밀어 올리거나 마우스를 사용하여 위치를 가리킵니다.",
+            "heading4": "동시에 두 개의 앱 사용",
+            "para6": "태블릿 모드에서 두 개의 앱을 나란히 사용하려면, 열려 있는 앱을 아래로 및 옆으로 끄십시오. 그러면 표시되는 위치를 볼 수 있으며, 옆에 열려 있는 앱이 표시됩니다.",
+            "para7": "이 보기에서 다음을 수행할 수도 있습니다.",
+            "para8": "두 개의 딸각 소리가 나는 앱 사이의 공유 가장자리를 사용하여 동시에 두 앱의 크기를 조정하십시오.",
+            "para9": "작업 보기에서 새 앱 열기 — <strong>작업 표시줄</strong>에서 작업 보기를 선택하고 앱을 선택한 후, 한 쪽으로 끌어서 분할된 화면에 맞춥니다.",
+            "para10": "앱에서 작업 표시줄의 뒤로 버튼을 사용하여 돌아가거나 전에 사용하던 앱을 여십시오."
         },
         "question6": {
-            "title": "개인 비서 Cortana 알아 보기",
-            "description": "<div class='faqInFs4Fb'>    개인 비서 Cortana 알아 보기</div><hr><h3 class='faqInFs25FbP10'>Cortana란?</h3><hr /><p>Cortana는 사용자의 디지털 에이전트입니다. 작업을 완료하는 데 도움을 줄 수 있습니다.</p><p>Cortana를 많이 사용할수록, 경험을 더 많이 개인화할 수 있습니다.</p><p>시작하려면, 검색 상자에 질문을 입력하거나 마이크를 선택한 후 Cortana에게 문의하십시오. (모든 유형의 PC에서 입력을 할 수는 있지만, 말할 때 마이크가 필요합니다.)</p><p>무엇을 말해야 할 지 모르는 경우, 작업 표시줄의 검색 상자를 선택하면 잠금 화면 및 Cortana 홈에 제안이 표시됩니다.</p><p><img src='assets/images/qa/6.1.jpg' /></p><ol>    <li>홈 2. 노트북 3. 설정 4. 피드백</li></ol><p>Cortana가 수행할 수 있는 작업은 다음과 같습니다.</p><ul>    <li>시간, 장소 또는 사람을 기준으로 미리 알림을 제공합니다.</li>    <li>패키지, 팀, 취미 및 항공편을 추적합니다.</li>    <li>이메일 및 텍스트를 전송합니다.</li>    <li>일정을 관리하고 최신 상태를 유지할 수 있습니다.</li>    <li>목록을 작성 및 관리합니다.</li>    <li>잡담 및 게임 재생.</li>    <li>팩트, 파일, 장소 및 정보를 찾습니다.</li>    <li>시스템에서 앱을 여십시오.</li></ul><h3 class='faqInFs25FbP10'>실행 방법: 미리 알림 설정</h3><hr /><p>Cortana가 할 수 있는 사항 중 하나는 미리 알림을 제공하는 것입니다. 시간, 장소 또는 사람을 기준으로 해야 할 일들을 알려 줄 수 있습니다.</p><p>예를 들어, '다음 번에 요청할 때 Tanya를 축하해야 한다는 것을 미리'이라고 입력하십시오.</p><p>Tanya에서 전화를 받을 때 미리 알림이 표시됩니다.</p><p>추가 보너스 &mdash; iPhone 또는 Android용 Windows 전화 또는 Cortana가 있는 경우, Cortana를 설정하여 PC와 휴대폰 사이의 알림을 동기화할 수 있습니다.</p><p><img src='assets/images/qa/6.2.jpg' /></p><h3 class='faqInFs25FbP10'>안녕 Cortana?</h3><hr /><p>\"안녕 Cortana\"라고 말할 때마다 들을 수 있도록 Cortana를 설정하십시오. 작업 표시줄의 검색 상자를 선택하여 Cortana 홈을 엽니다. 그런 다음, <strong>설정</strong>을 선택하여 <strong>Cortana에게 '안녕 Cortana'에 응답하게 하기'를 켜십시오.</strong></p><p><img src='assets/images/qa/6.3.jpg' /></p><p class='faqInFs25FbP10'>주</p><p>Cortana는 특정 국가/지역에서만 사용할 수 있으며, 일부 Cortana 기능은 어디에서든 사용할 수 있는 것은 아닙니다.</p><p> </p>",
-            "heading1": "What is Cortana?",
-            "para1": "Cortana is your digital agent. She'll help you get things done.",
-            "para2": "The more you use Cortana, the more personalized your experience will be.",
-            "para3": "To get started, type a question in the search box, or select the microphone  and talk to Cortana. (Typing works for all types of PCs, but you need a mic to talk.)",
-            "para4": "If you’re not sure what to say, you’ll see suggestions on your lock screen, and in Cortana home when you select the search box on the taskbar.",
-            "para5": " Home 2. Notebook 3. Settings 4. Feedback",
-            "para6": "Here are some things Cortana can do for you:",
-            "bulletset1": {
-                "span1": "Give you reminders based on time, places, or people.",
-                "span2": "Track packages, teams, interests, and flights.",
-                "span3": "Send emails and texts.",
-                "span4": "Manage your calendar and keep you up to date.",
-                "span5": "Create and manage lists.",
-                "span6": "Chit chat and play games.",
-                "span7": "Find facts, files, places, and info.",
-                "span8": "Open any app on your system."
+			"title": "개인 비서 Cortana 알아 보기",
+			"heading1": "Cortana란?",
+            "para1": "Cortana는 사용자의 디지털 에이전트입니다. 작업을 완료하는 데 도움을 줄 수 있습니다.",
+            "para2": "Cortana를 많이 사용할수록, 경험을 더 많이 개인화할 수 있습니다.",
+            "para3": "시작하려면, 검색 상자에 질문을 입력하거나 마이크를 선택한 후 Cortana에게 문의하십시오. (모든 유형의 PC에서 입력을 할 수는 있지만, 말할 때 마이크가 필요합니다.)",
+            "para4": "무엇을 말해야 할 지 모르는 경우, 작업 표시줄의 검색 상자를 선택하면 잠금 화면 및 Cortana 홈에 제안이 표시됩니다.",
+            "para5": "1. 홈 2. 노트북 3. 설정 4. 피드백",
+            "para6": "Cortana가 수행할 수 있는 작업은 다음과 같습니다.",
+            "unorderedList1": {
+				"listItem1": "시간, 장소 또는 사람을 기준으로 미리 알림을 제공합니다.",
+                "listItem2": "패키지, 팀, 취미 및 항공편을 추적합니다.",
+                "listItem3": "이메일 및 텍스트를 전송합니다.",
+                "listItem4": "일정을 관리하고 최신 상태를 유지할 수 있습니다.",
+                "listItem5": "목록을 작성 및 관리합니다.",
+                "listItem6": "잡담 및 게임 재생.",
+                "listItem7": "팩트, 파일, 장소 및 정보를 찾습니다.",
+                "listItem8": "시스템에서 앱을 여십시오."
             },
-            "heading2": "Try this: Set a reminder",
-            "para7": "One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or even people.",
-            "para8": "For example, type or say, “Remind me to congratulate Tanya the next time she calls.”",
-            "para9": "The reminder will appear when you get a call from Tanya.",
-            "para10": "Extra bonus—if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync notifications between your PC and phone.",
-            "heading3": "Hey Cortana?",
-            "para11": {
-                "span1": "Set Cortana to hear you anytime you say “Hey Cortana.” Select the search box on the taskbar to open Cortana home.",
-                "span2": {
-                    "line1": "Then select",
-                    "line2": "Settings",
-                    "line3": "and turn on",
-                    "line4": "Let Cortana respond to “Hey Cortana.”"
-                }
-            },
-            "para12": "Note",
-            "para13": "Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere."
-        },
-        "pageTitle": "지원 세부 정보"
+			"heading2": "실행 방법: 미리 알림 설정",
+            "para7": "Cortana가 할 수 있는 사항 중 하나는 미리 알림을 제공하는 것입니다. 시간, 장소 또는 사람을 기준으로 해야 할 일들을 알려 줄 수 있습니다.",
+            "para8": "예를 들어, '다음 번에 요청할 때 Tanya를 축하해야 한다는 것을 미리'이라고 입력하십시오.",
+            "para9": "Tanya에서 전화를 받을 때 미리 알림이 표시됩니다.",
+            "para10": "추가 보너스 — iPhone 또는 Android용 Windows 전화 또는 Cortana가 있는 경우, Cortana를 설정하여 PC와 휴대폰 사이의 알림을 동기화할 수 있습니다.",
+            "heading3": "안녕 Cortana?",
+            "para11": "\"안녕 Cortana\"라고 말할 때마다 들을 수 있도록 Cortana를 설정하십시오. 작업 표시줄의 검색 상자를 선택하여 Cortana 홈을 엽니다. 그런 다음, <strong>설정</strong>을 선택하여 <strong>Cortana에게 '안녕 Cortana'에 응답하게 하기'를 켜십시오.</strong>",
+            "heading4": "주",
+            "para12": "Cortana는 특정 국가/지역에서만 사용할 수 있으며, 일부 Cortana 기능은 어디에서든 사용할 수 있는 것은 아닙니다."
+        }
     },
     "welcometutorial": {
         "description": "Vantage를 사용하면 간편하게 드라이버 업데이트, 진단 프로그램 실행, 지원 요청 및 장치에 대한 학습이 간편합니다.사용 환경을 신속하게 사용자 지정하고 사용자의 요구 사항에 맞는 유용한 정보를 찾습니다",

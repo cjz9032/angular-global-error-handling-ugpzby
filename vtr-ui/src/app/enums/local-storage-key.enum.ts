@@ -100,11 +100,11 @@ export enum LocalStorageKey {
 
 	LightingProfileByIdDesk1 = '[LocalStorageKey] LightingProfileByIdDesk1',
 	LightingProfileByIdDesk2 = '[LocalStorageKey] LightingProfileByIdDesk2',
-	LightingProfileByIdDesk3= '[LocalStorageKey] LightingProfileByIdDesk3',
+	LightingProfileByIdDesk3 = '[LocalStorageKey] LightingProfileByIdDesk3',
 
 	LightingProfileDeskDefault1 = '[LocalStorageKey] LightingProfileDeskDefault1',
 	LightingProfileDeskDefault2 = '[LocalStorageKey] LightingProfileDeskDefault2',
-	LightingProfileDeskDefault3= '[LocalStorageKey] LightingProfileDeskDefault3',
+	LightingProfileDeskDefault3 = '[LocalStorageKey] LightingProfileDeskDefault3',
 
 	// LNBX50 lighting page
 	KeyboardToggleStatusLNBx50 = '[LocalStorageKey] KeyboardToggleStatusLNBx50',
@@ -254,10 +254,10 @@ export enum LocalStorageKey {
 	TopRowFunctionsCapability = '[LocalStorageKey] TopRowFunctionsCapability',
 	BacklightCapability = '[LocalStorageKey] BacklightCapability',
 	GaugeResetInformation = '[LocalStorageKey] GaugeResetInformation',
-	IsSubscribed = '[LocalStorageKey] IsSubscribed',
-	SubscribtionDetails = '[LocalStorageKey] SubscribtionDetails',
+	IsSmartPerformanceSubscribed = '[LocalStorageKey] IsSmartPerformanceSubscribed',
+	SmartPerformanceSubscriptionDetails = '[LocalStorageKey] SmartPerformanceSubscriptionDetails',
 	IsPowerPageAvailable = '[LocalStorageKey] isPowerPageAvailable',
-	DashboardLastWelcomeText = '[LocalStorageKey] DashboardLastWelcomeText',
+	DashboardWelcomeTexts = '[LocalStorageKey] DashboardWelcomeTexts',
 	IsDolbyModeAvailable = '[LocalStorageKey] IsDolbyModeAvailable',
 	IsAudioPageAvailable = '[LocalStorageKey] IsAudioPageAvailable',
 	IsBatteryQuickSettingAvailable = '[LocalStorageKey] IsBatteryQuickSettingAvailable',
@@ -267,7 +267,7 @@ export enum LocalStorageKey {
 
 	GaugeResetCapability = '[LocalStorageKey] GaugeResetCapability',
 
-		// New feature tips
+	// New feature tips
 	NewFeatureTipsVersion = '[LocalStorageKey] NewFeatureTipsVersion',
 
 	// Device Settings storage key
@@ -280,10 +280,15 @@ export enum LocalStorageKey {
 	// UPE
 	UPEChannelTags = '[LocalStorageKey] UPEChannelTags',
 	PriorityControlCapability = '[LocalStorageKey] PriorityControlCapability',
-	KBDBacklightThinkPadCapability =  '[LocalStorageKey] KBDBacklightThinkPadCapability',
+	KBDBacklightThinkPadCapability = '[LocalStorageKey] KBDBacklightThinkPadCapability',
 
 	// Store Rating
 	RatingConditionMet = '[LocalStorageKey] RatingConditionMet',
-	RatingLastPromptTime =  '[LocalStorageKey] RatingLastPromptTime',
-	RatingPromptCount = '[LocalStorageKey] RatingPromptCount'
+	RatingLastPromptTime = '[LocalStorageKey] RatingLastPromptTime',
+	RatingPromptCount = '[LocalStorageKey] RatingPromptCount',
+
+	//Smart Performance Schedule Scan
+	IsSPScheduleScanEnabled = '[LocalStorageKey] IsSPScheduleScanEnabled',
+	IsSmartPerformanceFirstRun = "[LocalStorageKey] IsSmartPerformanceFirstRun",
+	SPScheduleScanFrequency = "[LocalStorageKey] SPScheduleScanFrequency"
 }

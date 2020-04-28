@@ -2724,6 +2724,7 @@
         "ssoErrorAccountPluginNotExist": "התוסף חסר. אם יש לך חיבור לאינטרנט, נשחזר את התוסף ברקע באופן אוטומטי. ייתכן שהפעולה תיקח זמן מה, כדאי לנסות שוב מאוחר יותר."
     },
     "faq": {
+        "pageTitle": "פרטי תמיכה",
         "footer": {
             "title": "לא למצוא את מה שאתה מחפש?",
             "description": "נדרשת תמיכה נוספת? אל תהססו לפנות אלינו באמצעות:",
@@ -2732,354 +2733,146 @@
         },
         "question1": {
             "title": "גיבוי ושחזור הקבצים",
-            "description": "<div>    <div class='faqInFs4Fb'>        גיבוי ושחזור הקבצים    </div>    <hr />    <div class='faqInMb7'>        זה תמיד טוב שיש גיבוי.שמרו עותקים של הקבצים שלכם בכונן אחר למקרה שמשהו קורה למקור.    </div>    <div class='faqInFs3Fb'>        הגדרת הגיבוי    </div>    <hr />    <div class='mb-5'>        בחרו בלחצן <span class='faqInFb'>התחל</span>, בחרו <span class='faqInFb'>הגדרות</span> > <span class='faqInFb'>עדכון ואבטחה</span> > <span class='faqInFb'>גיבוי</span> > <span class='faqInFb'>הוסף כונן</span>, ולאחר מכן בחרו כונן חיצוני או מיקום ברשת עבור הגיבויים שלכם.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg'  />    </div>    <div class='mb-5'>        הכל מוכן.כל שעה נבצע גיבוי של כל מה שנמצא בתיקיית המשתמש שלכם <span>(C:\\Users\\שם המשתמש שלכם)<span>.כדי לשנות את הקבצים לגיבוי או את תדירות הגיבויים, עברו אל <span class='faqInFb'>אפשרויות נוספות</span>.    </div>    <div class='faqInFs3Fb'>        שחזור הקבצים    </div>    <div class='mb-5'>        אם חסרים לכם תיקייה או קובץ חשובים, כך תוכלו להחזיר אותם:    </div>    <div>        <div class='mb-3'>1.הקלידו <span class='faqInFb'>שחזור קבצים</span> בתיבת החיפוש בשורת המשימות, ובחרו באפשרות <span class='faqInFb'> שחזר את הקבצים שלך באמצעות היסטוריית קבצים</span>.</div>        <div class='mb-3'>2.חפשו את הקובץ הנדרש, ולאחר מכן השתמשו בחצים כדי לצפות בכל הגרסאות שלו</div>        <div class='mb-3'>3.לאחר איתור הגרסה הרצויה, בחרו <span class='faqInFb'>שחזור</span> כדי לשמור אותה במיקום המקורי שלה.כדי לשמור אותה במקום שונה, לחצו ממושכות (או לחצו באמצעות לחצן העכבר הימני) על <span class='faqInFb'>שחזור</span>, בחרו <span class='faqInFb'>שחזור אל</span>, ולאחר מכן בחרו מיקום חדש.</div>    </div></div>",
-            "para1": {
-                "line1": "It's always good to have a backup.",
-                "line2": "Keep copies of your files on another drive in case something happens to the originals."
-            },
-            "heading1": "Set up your backup",
-            "para2": {
-                "span1": "Select the",
-                "span2": "Start",
-                "span3": "button, select",
-                "span4": "Settings",
-                "span5": "Update & security",
-                "span6": "Backup",
-                "span7": "Add a drive",
-                "span8": ", and then choose an external drive or network location for your backups."
-            },
-            "para3": {
-                "span1": "All set.",
-                "span2": "Every hour, we'll back up everything in your user folder (C:\\Users\\username).",
-                "span3": "To change which files get backed up or how often backups happen, go to",
-                "span4": "More options."
-            },
-            "heading2": "Restore your files",
-            "para4": "If you're missing an important file or folder, here's how to get it back:",
-            "para5": {
-                "span1": "1. Type",
-                "span2": "Restore files",
-                "span3": "in the search box on the taskbar, and then select",
-                "span4": "Restore your files with File History.",
-                "span5": "2. Look for the file you need, then use the arrows to see all its versions",
-                "span6": "3. When you find the version you want, select",
-                "span7": "Restore",
-                "span8": "to save it in its original location. To save it in a different place, press and hold (or right-click)",
-                "span9": "Restore",
-                "span10": ", select",
-                "span11": "Restore to",
-                "span12": "and then choose a new location."
-            }
+            "para1": "זה תמיד טוב שיש גיבוי.שמרו עותקים של הקבצים שלכם בכונן אחר למקרה שמשהו קורה למקור.",
+			"heading1": "הגדרת הגיבוי",
+			"para2": "בחרו בלחצן התחל, בחרו הגדרות > עדכון ואבטחה > גיבוי > הוסף כונן, ולאחר מכן בחרו כונן חיצוני או מיקום ברשת עבור הגיבויים שלכם.",
+			"para3": "הכל מוכן.כל שעה נבצע גיבוי של כל מה שנמצא בתיקיית המשתמש שלכם <span>(C:\\Users\\שם המשתמש שלכם)<span>.כדי לשנות את הקבצים לגיבוי או את תדירות הגיבויים, עברו אל אפשרויות נוספות.",
+			"heading2": "שחזור הקבצים",
+			"para4": "אם חסרים לכם תיקייה או קובץ חשובים, כך תוכלו להחזיר אותם:",
+			"para5": {
+				"div1": "1.הקלידו שחזור קבצים בתיבת החיפוש בשורת המשימות, ובחרו באפשרות  שחזר את הקבצים שלך באמצעות היסטוריית קבצים.",
+				"div2": "2.חפשו את הקובץ הנדרש, ולאחר מכן השתמשו בחצים כדי לצפות בכל הגרסאות שלו.",
+				"div3": "3.לאחר איתור הגרסה הרצויה, בחרו שחזור כדי לשמור אותה במיקום המקורי שלה.כדי לשמור אותה במקום שונה, לחצו ממושכות (או לחצו באמצעות לחצן העכבר הימני) על שחזור, בחרו שחזור אל, ולאחר מכן בחרו מיקום חדש."
+			}
         },
         "question2": {
-            "title": "כיצד לאפס את המחשב",
-            "description": "<div><div class='faqInFs4Fb'>כיצד לאפס את Windows 10</div><hr><div class='faqInP5'>אם נתקלתם בבעיות במחשבכם שבו מותקנת מערכת ההפעלה Windows 10, או אם אתם מוכרים אותו, עליכם לאפס את המחשב. איפוס מאפשר לכם לבחור אם ברצונכם לשמור או להסיר את הקבצים שלכם, הוא מסיר את כל האפליקציות וההגדרות ומתקין גרסה טרייה של Windows. הוא גם יכול לתקן בעיות רבות, למשל ביצועים איטיים.</div><div class='faqInFs25FbP10'>1. היכנסו לאפליקציה \"הגדרות\"</div><div class='faqInP5'>לחצו על לחצן התמונה \"התחל\" בפינה השמאלית התחתונה של המסך ובחרו את תמונת הגלגל של הגדרות.</div><div class='faqInP5'><img src='assets/images/qa/2.1.jpg' /></div><div class='faqInFs25FbP10'>2. בחרו באפשרות \"עדכון ואבטחה\" מרשימת הקטגוריות</div><div class='faqInP5'><img src='assets/images/qa/2.2.jpg' /></div><div class='faqInFs25FbP10'>3. נווטו ל\"שחזור\" מהחלונית השמאלית</div><div class='faqInP5'><img src='assets/images/qa/2.3.jpg' /></div><div class='faqInFs25FbP10'>4. התחילו את תהליך האיפוס</div><div class='faqInP5'>תחת הכותרת \"איפוס מחשב זה\" בראש המסך, לחצו או הקישו על הלחצן \"תחילת העבודה\".</div><div class='faqInP5'><img src='assets/images/qa/2.4.jpg' /></div><div class='faqInFs25FbP10'>5. בחרו אם לשמור את הקבצים שלכם או לא</div><div class='faqInP5'>לאחר האיפוס, אתם יכולים להיכנס לחשבון Microsoft שלכם. כל האפליקציות של חנות Windows שנרכשו מחשבון זה יותקנו מחדש.</div><div class='faqInP5'><ul><li>האפשרות \"שמור את הקבצים שלי\" מסירה את האפליקציות וההגדרות שלכם, אך שומרת את כל הקבצים האישיים.</li><li>האפשרות \"הסר הכל\" מוחקת את האפליקציות, ההגדרות והקבצים האישיים שלכם. אם אין לכם עותק מגובה של הקבצים, מומלץ ללחוץ על \"ביטול\", לגבות אותם ולהתחיל בתהליך זה מחדש.</li></ul></div><div class='faqInP5'><img src='assets/images/qa/2.5.jpg' /></div><div class='faqInFs25FbP10'>6. ניתן לבחור הגדרות נוספות אחרות</div><div class='faqInP5'>מסך זה יוצג רק אם בחרתם באפשרות \"הסר הכל\" בשלב הקודם.</div><div class='faqInP5'><img src='assets/images/qa/2.6.1.jpg' /></div><div class='faqInP5'><img src='assets/images/qa/2.6.2.jpg' /></div><div class='faqInFs25FbP10'>7.קראו את הסקירה הכללית ולחצו על \"איפוס\" כשתהיו מוכנים להמשיך.</div><div class='faqInP5'>Windows תתכונן לאיפוס המכשיר. פשוט המתינו עד שתועברו למסך כחול.</div><div class='faqInFs25FbP10'>8. כאשר יוצג המסך \"בחר אפשרות\", בחרו באפשרות \"המשך\".</div><div class='faqInP5'>Windows תופעל מחדש ותתחיל בתהליך האיפוס. יתכן שמחשבכם יופעל מחדש כמה פעמים בזמן האיפוס.</div><hr><div class='faqInFs25FbP10'>שאלות ותשובות של הקהילה</div><div class='faqInP5'><b>אם אבחר להסיר הכל, האם כל הכוננים בתוך המחשב שלי/כוננים המחוברים אליו נמחקים, או רק הכונן שעליו מופעלת המערכת Windows 10?</b></div><div class='faqInP5'><i>תשובת הקהילה</i></div><div class='faqInP10'>רק הכונן של מערכת ההפעלה Windows 10 נמחק (בדרך כלל כונן C:). כוננים אחרים בתוך המחשב שלכם/כוננים המחוברים אליו לא יושפעו.</div><div class='faqInP5'><b>כיצד אוכל לעשות זאת אם המסך שלי נשבר?</b></div><div class='faqInP5'><i>תשובת הקהילה</i></div><div class='faqInP10'>לצערנו, לא תוכלו לבצע זאת. תצטרכו להשיג מסך חדש.</div><div class='faqInP5'><b>אם נכנסתי לאתר כלשהו, האם היסטוריה זו תוסר גם היא?</b></div><div class='faqInP5'><i>תשובת הקהילה</i></div><div class='faqInP10'>כן, בהתאם לדפדפן שאתם משתמשים בו. כדי להסיר את היסטוריית הדפדפן, פשוט עברו להגדרות הדפדפן ומחקו את ההיסטוריה. ניתן גם להשתמש במצבי גלישה בסתר כדי למנוע את שמירת ההיסטוריה.</div><div class='faqInP5'><b>אם אבחר להסיר הכל, האם גם הסיסמה שלי תאופס?</b></div><div class='faqInP5'><i>תשובת הקהילה</i></div><div class='faqInP10'>כן, ברגע שתאפסו את המחשב עם Windows 10, כל נתוני המשתמש יוסרו. זה כולל מסמכים, סיסמאות מאוחסנות, תמונות, הגדרות מועדפות, מידע על הדפדפן ונתוני אפליקציות.</div><hr><div class='faqInP5'>הפניה</div><div class='faqInP5'>כיצד לאפס את Windows 10‏ - WikiHow.</div></div>",
-            "heading1": "Symptom",
-            "para1": {
-                "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
-                "span2": "Windows can “refresh” your PC so it’s more like a fresh install without deleting your personal files."
-            },
-            "para2": "Refresh your PC, Here is what will happen: your files and personalized settings won’t change",
-            "para3": {
-                "span1": "Your PC settings will be changed back to its defaults",
-                "span2": "Apps from windows store will be kept",
-                "span3": "Apps you installed from disc or website will be removed",
-                "span4": "A list of removed files will be saved on your desktop"
-            },
-            "heading2": "Affected Brands",
-            "para4": "All Desktop and Laptops",
-            "heading3": "Operation System",
-            "para5": "Windows 8, 8.1 & 10",
-            "heading4": "Solution",
-            "para6": "Windows 8/8.1",
-            "para7": {
-                "span1": {
-                    "line1": "Tap or click",
-                    "line2": "Settings "
-                },
-                "span2": {
-                    "line1": "Tap or click",
-                    "line2": "Update and recovery"
-                },
-                "span3": {
-                    "line1": "Tap or click",
-                    "line2": "Recovery"
-                },
-                "span4": {
-                    "line1": "Under Refresh your PC without affecting your files, tap or click",
-                    "line2": "Get started."
-                },
-                "span5": {
-                    "line1": "Click",
-                    "line2": "\"Next\"."
-                },
-                "span6": {
-                    "line1": "Click",
-                    "line2": "\"Refresh\"",
-                    "line3": "to start the refresh process."
-                },
-                "span7": "Once the refresh process is done, you can find a Removed Apps list on the desktop",
-                "span8": "You can find the removed apps while refreshing your system"
-            },
-            "para8": "Windows 10",
-            "para9": {
-                "span1": {
-                    "line1": "Search for",
-                    "line2": "refresh",
-                    "line3": "in the search tool available in the Start menu"
-                },
-                "span2": {
-                    "line1": "Click on",
-                    "line2": "\"Refresh your PC without affecting your files\"",
-                    "line3": " in the search results as shown below."
-                },
-                "span3": {
-                    "line1": "Click on the",
-                    "line2": "Get started",
-                    "line3": "button just below the heading",
-                    "line4": "\"Refresh your PC without affecting your files\"",
-                    "line5": "to start refreshing your Windows 10 PC."
-                }
-            },
-            "header5": "Additional Information",
-            "para10": "In most cases, once you start to refresh your PC, it’ll finish on its own. However, if Windows needs missing files, you’ll be asked to insert recovery media, which is typically a DVD disc or thumb drive. If that happens, what you’ll need depends on your PC.",
-            "para11": "If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact Microsoft Support."
+			"title": "כיצד לאפס את Windows 10",
+			"para1": "אם נתקלתם בבעיות במחשבכם שבו מותקנת מערכת ההפעלה Windows 10, או אם אתם מוכרים אותו, עליכם לאפס את המחשב. איפוס מאפשר לכם לבחור אם ברצונכם לשמור או להסיר את הקבצים שלכם, הוא מסיר את כל האפליקציות וההגדרות ומתקין גרסה טרייה של Windows. הוא גם יכול לתקן בעיות רבות, למשל ביצועים איטיים.",
+            "heading1": "1. היכנסו לאפליקציה \"הגדרות\"",
+            "para2": "לחצו על לחצן התמונה \"התחל\" בפינה השמאלית התחתונה של המסך ובחרו את תמונת הגלגל של הגדרות.",
+            "heading2": "2. בחרו באפשרות \"עדכון ואבטחה\" מרשימת הקטגוריות",
+            "heading3": "3. נווטו ל\"שחזור\" מהחלונית השמאלית",
+            "heading4": "4. התחילו את תהליך האיפוס",
+            "para3": "תחת הכותרת \"איפוס מחשב זה\" בראש המסך, לחצו או הקישו על הלחצן \"תחילת העבודה\".",
+            "heading5": "5. בחרו אם לשמור את הקבצים שלכם או לא",
+            "para4": "לאחר האיפוס, אתם יכולים להיכנס לחשבון Microsoft שלכם. כל האפליקציות של חנות Windows שנרכשו מחשבון זה יותקנו מחדש.",
+            "para5": {
+				"li1": "האפשרות \"שמור את הקבצים שלי\" מסירה את האפליקציות וההגדרות שלכם, אך שומרת את כל הקבצים האישיים.",
+				"li2": "האפשרות \"הסר הכל\" מוחקת את האפליקציות, ההגדרות והקבצים האישיים שלכם. אם אין לכם עותק מגובה של הקבצים, מומלץ ללחוץ על \"ביטול\", לגבות אותם ולהתחיל בתהליך זה מחדש."
+			},
+			"heading6": "6. ניתן לבחור הגדרות נוספות אחרות",
+            "para6": "מסך זה יוצג רק אם בחרתם באפשרות \"הסר הכל\" בשלב הקודם.",
+            "heading7": "7.קראו את הסקירה הכללית ולחצו על \"איפוס\" כשתהיו מוכנים להמשיך.",
+            "para7": "Windows תתכונן לאיפוס המכשיר. פשוט המתינו עד שתועברו למסך כחול.",
+            "heading8": "8. כאשר יוצג המסך \"בחר אפשרות\", בחרו באפשרות \"המשך\".",
+            "para8": "Windows תופעל מחדש ותתחיל בתהליך האיפוס. יתכן שמחשבכם יופעל מחדש כמה פעמים בזמן האיפוס.",
+            "heading9": "שאלות ותשובות של הקהילה",
+            "communityAnswer": "תשובת הקהילה",
+			"q1": "אם אבחר להסיר הכל, האם כל הכוננים בתוך המחשב שלי/כוננים המחוברים אליו נמחקים, או רק הכונן שעליו מופעלת המערכת Windows 10?",
+            "a1": "רק הכונן של מערכת ההפעלה Windows 10 נמחק (בדרך כלל כונן C:). כוננים אחרים בתוך המחשב שלכם/כוננים המחוברים אליו לא יושפעו.",
+            "q2": "כיצד אוכל לעשות זאת אם המסך שלי נשבר?",
+            "a2": "לצערנו, לא תוכלו לבצע זאת. תצטרכו להשיג מסך חדש.",
+            "q3": "אם נכנסתי לאתר כלשהו, האם היסטוריה זו תוסר גם היא?",
+            "a3": "כן, בהתאם לדפדפן שאתם משתמשים בו. כדי להסיר את היסטוריית הדפדפן, פשוט עברו להגדרות הדפדפן ומחקו את ההיסטוריה. ניתן גם להשתמש במצבי גלישה בסתר כדי למנוע את שמירת ההיסטוריה.",
+            "q4": "אם אבחר להסיר הכל, האם גם הסיסמה שלי תאופס?",
+            "a4": "כן, ברגע שתאפסו את המחשב עם Windows 10, כל נתוני המשתמש יוסרו. זה כולל מסמכים, סיסמאות מאוחסנות, תמונות, הגדרות מועדפות, מידע על הדפדפן ונתוני אפליקציות.",
+            "para9": "הפניה",
+            "para10": "כיצד לאפס את Windows 10‏ - WikiHow."
         },
         "question3": {
-            "title": "איך אפשר לדעת מה ה-CPU של המחשב",
-            "description": "<div class='faqInFs4Fb'>    איך אפשר לדעת מה ה-CPU של המחשב</div><hr><h3 class='faqInFs25FbP10'>תסמין</h3><p>המונחים 32 סיביות ו-64 סיביות מתייחסים לאופן שבו מעבד המחשב (המכונה גם CPU) מטפל במידע.גרסת 64 סיביות של Windows מטפלת בכמויות גדולות של זיכרון גישה אקראית (RAM) ביעילות רבה יותר מאשר מערכת 32 סיביות.</p><h3 class='faqInFs25FbP10'>מותגים מושפעים</h3><p>התסמין הנ\"ל קשור, אך לא רק, למערכות הבאות:</p><ul>    <li>כל המחשבים השולחניים והניידים</li></ul><h3 class='faqInFs25FbP10'>מערכת הפעלה</h3><ul>    <li>Windows ‏7, 8, 10</li></ul><h3 class='faqInFs25FbP10'>פתרון</h3><p><strong><u>Windows 7 או Vista</u></strong></p><ol>    <li>פתחו \"מערכת\" על-ידי לחיצה על <strong>הלחצן \"התחל\" </strong>תמונה של <strong>הלחצן \"התחל\",</strong> לחיצה באמצעות לחצן העכבר הימני על \"מחשב\", ולאחר מכן לחיצה על \"מאפיינים\"  </li>    <li>במקטע \"מערכת\", תוכלו לראות את סוג המערכת.</li></ol><p><strong><u>Windows 8 ו-Windows 10</u></strong></p><p><strong>שיטה 1:</strong> הצגת החלון \"מערכת\" בלוח הבקרה</p><ol>    <li>העבירו את אצבעכם כלפי פנים מהקצה הימני של המסך, ולאחר מכן הקישו על <strong>חיפוש</strong>.או, אם אתם משתמשים בעכבר, מקמו את הסמן בפינה הימנית התחתונה של המסך, ולאחר מכן לחצו על <strong>חיפוש.</strong></li>    <li>הקלידו <strong>מערכת</strong> בתיבת החיפוש, ולאחר מכן הקישו או לחצו על <strong>הגדרות.</strong></li>    <li>הקישו או לחצו על <strong>מערכת</strong></li>    <li>אם אתם משתמשים בגרסת 64 סיביות של Windows 8, <strong>מערכת הפעלה של 64 סיביות</strong> מוצגת בסוג המערכת תחת הכותרת \"מערכת\".אם אתם משתמשים בגרסת 32<strong> סיביות של Windows</strong> <strong>8,</strong> <strong>מערכת הפעלה של 32 סיביות </strong>מוצגת בסוג המערכת תחת הכותרת \"מערכת\".<br /> </li></ol><p><strong>שיטה 2</strong>: הצגת החלון \"מידע מערכת\"</p><ol>    <li>העבירו את אצבעכם כלפי פנים מהקצה הימני של המסך, ולאחר מכן הקישו על <strong>חיפוש</strong>. או, אם אתם משתמשים בעכבר, מקמו את הסמן בפינה הימנית התחתונה של המסך, ולאחר מכן לחצו על <strong>חיפוש.</strong></li>    <li>בתיבת החיפוש, הקלידו <strong>מידע מערכת</strong></li>    <li>הקישו או לחצו על<strong> מערכת</strong>, הקישו או לחצו על <strong>מידע מערכת,</strong> ולאחר מכן לחצו על <strong>תקציר מערכת.</strong></li>    <li>אם אתם משתמשים בגרסת <strong>64 סיביות </strong>של Windows 8<strong>, </strong> יוצג מחשב מבוסס x64 בשדה <strong>סוג מערכת</strong> תחת כותרת הפריט. <br /> <br /> אם אתם משתמשים בגרסת<strong> 32 סיביות</strong> של Windows 8, יוצג מחשב מבוסס x86 בשדה <strong>סוג מערכת</strong> תחת כותרת הפריט.  </li></ol><p> </p>",
-            "heading1": "Symptom",
-            "para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
-            "heading2": "Affected Brands",
-            "para2": "The above symptom is associated with, but not limited to, the following systems:",
-            "para3": "All Desktop and Laptops",
-            "heading3": "Operating System",
-            "para4": "Windows 7, 8, 10",
-            "heading4": "Solution",
-            "para5": "Windows 7 or Vista",
-            "para6": {
-                "span1": {
-                    "line1": "Open System by clicking the",
-                    "line2": "Start button",
-                    "line3": "Picture of the Start button, right-clicking Computer, and then clicking Properties"
-                },
-                "span2": "Under System, you can view the system type."
-            },
-            "para7": "Windows 8 and Windows 10",
-            "para8": {
-                "span1": {
-                    "line1": "Method 1:",
-                    "line2": "View the System window in Control Panel"
-                },
-                "span2": {
-                    "line1": "Swipe in from the right edge of the screen, and then tap",
-                    "line2": "Search.",
-                    "line3": "Or, if you are using a mouse, point to the lower-right corner of the screen, and then click",
-                    "line4": "Search."
-                },
-                "span3": {
-                    "line1": "Type",
-                    "line2": "system",
-                    "line3": "in the search box, and then tap or click",
-                    "line4": "Settings."
-                },
-                "span4": {
-                    "line1": "Tap or click",
-                    "line2": "System"
-                },
-                "span5": {
-                    "line1": "If you are running a 64-bit version of Windows 8,",
-                    "line2": "64-bit Operating System",
-                    "line3": "is displayed in the System type field under the System heading.",
-                    "line4": "If you are running a 32",
-                    "line5": "-bit version of Windows 8, 32-bit Operating",
-                    "line6": "System is displayed in the System type field under the System heading."
-                },
-                "span6": {
-                    "line1": "Method 2:",
-                    "line2": "View the System Information window"
-                },
-                "span7": {
-                    "line1": "Swipe in from the right edge of the screen, and then tap",
-                    "line2": "Search.",
-                    "line3": "Or, if you are using a mouse, point to the lower-right corner of the screen, and then click",
-                    "line4": "Search."
-                },
-                "span8": {
-                    "line1": "In the search box, type",
-                    "line2": "system information"
-                },
-                "span9": {
-                    "line1": "Tap or click",
-                    "line2": "System",
-                    "line3": ", tap or click",
-                    "line4": "System Information,",
-                    "line5": "and then click",
-                    "line6": "System Summary."
-                },
-                "span10": {
-                    "line1": "If you are running a",
-                    "line2": 64,
-                    "line3": "bit version of Windows 8, 32-bit Operating,",
-                    "line4": "x64-based PC is displayed in the",
-                    "line5": "System type",
-                    "line6": "field under the Item heading."
-                }
-            },
-            "para9": {
-                "line1": "If you are running a",
-                "line2": "32-bit",
-                "line3": "version of Windows 8,x86-based PC is displayed in the",
-                "line4": "System type",
-                "line5": "field under the Item heading."
-            }
+			"title": "איך אפשר לדעת מה ה-CPU של המחשב",
+			"heading1": "תסמין",
+            "para1": "המונחים 32 סיביות ו-64 סיביות מתייחסים לאופן שבו מעבד המחשב (המכונה גם CPU) מטפל במידע.גרסת 64 סיביות של Windows מטפלת בכמויות גדולות של זיכרון גישה אקראית (RAM) ביעילות רבה יותר מאשר מערכת 32 סיביות.",
+            "heading2": "מותגים מושפעים",
+            "para2": "התסמין הנ\"ל קשור, אך לא רק, למערכות הבאות:",
+            "para3": "כל המחשבים השולחניים והניידים",
+            "heading3": "מערכת הפעלה",
+            "para4": "Windows ‏7, 8, 10",
+            "heading4": "פתרון",
+            "para5": "Windows 7 או Vista",
+			"para6": "פתחו \"מערכת\" על-ידי לחיצה על <strong>הלחצן \"התחל\" </strong>תמונה של <strong>הלחצן \"התחל\",</strong> לחיצה באמצעות לחצן העכבר הימני על \"מחשב\", ולאחר מכן לחיצה על \"מאפיינים\".",
+            "para7": "במקטע \"מערכת\", תוכלו לראות את סוג המערכת.",
+            "para8": "Windows 8 ו-Windows 10",
+			"para9": "<strong>שיטה 1:</strong> הצגת החלון \"מערכת\" בלוח הבקרה",
+            "para10": "העבירו את אצבעכם כלפי פנים מהקצה הימני של המסך, ולאחר מכן הקישו על <strong>חיפוש</strong>.או, אם אתם משתמשים בעכבר, מקמו את הסמן בפינה הימנית התחתונה של המסך, ולאחר מכן לחצו על <strong>חיפוש.</strong>",
+            "para11": "הקלידו <strong>מערכת</strong> בתיבת החיפוש, ולאחר מכן הקישו או לחצו על <strong>הגדרות.</strong>",
+            "para12": "הקישו או לחצו על <strong>מערכת</strong>.",
+            "para13": "אם אתם משתמשים בגרסת 64 סיביות של Windows 8, <strong>מערכת הפעלה של 64 סיביות</strong> מוצגת בסוג המערכת תחת הכותרת \"מערכת\".אם אתם משתמשים בגרסת 32<strong> סיביות של Windows</strong> <strong>8,</strong> <strong>מערכת הפעלה של 32 סיביות </strong>מוצגת בסוג המערכת תחת הכותרת \"מערכת\".<br /> ",
+            "para14": "<strong>שיטה 2</strong>: הצגת החלון \"מידע מערכת\"",
+            "para15": "העבירו את אצבעכם כלפי פנים מהקצה הימני של המסך, ולאחר מכן הקישו על <strong>חיפוש</strong>. או, אם אתם משתמשים בעכבר, מקמו את הסמן בפינה הימנית התחתונה של המסך, ולאחר מכן לחצו על <strong>חיפוש.</strong>",
+            "para16": "בתיבת החיפוש, הקלידו <strong>מידע מערכת</strong>.",
+            "para17": "הקישו או לחצו על<strong> מערכת</strong>, הקישו או לחצו על <strong>מידע מערכת,</strong> ולאחר מכן לחצו על <strong>תקציר מערכת.</strong>",
+            "para18": "אם אתם משתמשים בגרסת <strong>64 סיביות </strong>של Windows 8<strong>, </strong> יוצג מחשב מבוסס x64 בשדה <strong>סוג מערכת</strong> תחת כותרת הפריט. אם אתם משתמשים בגרסת<strong> 32 סיביות</strong> של Windows 8, יוצג מחשב מבוסס x86 בשדה <strong>סוג מערכת</strong> תחת כותרת הפריט.  "
         },
         "question4": {
-            "title": "בדיקת השימוש בסוללה של המחשב",
-            "description": "<div class='faqInFs4Fb'>    בדיקת השימוש בסוללה של המחשב</div><hr><h3 class='faqInFs25FbP10'>תסמין</h3><p>Windows 10 כוללת את המסך החדש <strong>\"שימוש בסוללה\"</strong> שמראה לכם מה גורם לניצול מהיר של סוללת המחשב הנייד. כלומר, המסך יציג אילו יישומים בדיוק, הן יישומי שולחן העבודה והן היישומים \"האוניברסליים\" של Windows 10, צורכים מתח רב מדי.</p><h3 class='faqInFs25FbP10'>מותגים מושפעים</h3><ul>    <li>מחשבים שולחניים ומחשבים ניידים של Lenovo</li></ul><h3 class='faqInFs25FbP10'>המערכות המושפעות</h3><ul>    <li>הכל</li></ul><h3 class='faqInFs25FbP10'>מערכת הפעלה</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>פתרון</h3><p>זוהי תכונה חדשה ב-Windows 10, ותחילה עלינו לאתר אותה מפני שהיא אינה ממוקמת בתצוגת <strong>לוח הבקרה </strong>המסורתית. התכונה נמצאת ביישום החדש <strong>\"הגדרות\"</strong></p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>א. איתור המסך \"שימוש בסוללה\"</h3></p><p>1.הקישו או לחצו על האפשרות <strong>\"הגדרות\"</strong> בתפריט \"התחל\"</p><p>2.במקטע <strong>הגדרות </strong> בחרו <strong>\"מערכת\"</strong>ולאחר מכן בחרו <strong>\"חיסכון בצריכת הסוללה\".<br /></strong> <strong></strong></p><p><img src='assets/images/qa/4.1.jpg' /></p><p>3.לחצו או הקישו על הקישור <strong>\"שימוש בסוללה\"</strong> תחת כותרת זו לצפייה בפרטים נוספים. </p><p> </p><h3 class='faqInFs25FbP10'>ב. ניתוח צריכת החשמל שלכם</h3><p>4. תוכלו לשנות את הגדרות מסך השימוש בסוללה כך שיציג שימוש בסוללה במשך 24 השעות האחרונות עד 48 השעות האחרונות או במשך השבוע האחרון</p><p>5. אחוזי <strong>\"מערכת\",</strong> <strong>\"צג\"</strong> ו-<strong>\"Wi-Fi\"</strong>. מדד זה מראה כמה מתח סוללה מנוצל על-ידי תהליכי המערכת והצג.</p><p>6. האפשרויות <strong>\"בשימוש\"</strong> ו<strong>\"רקע\"</strong> מציגות כמה מתח מנוצל על-ידי יישומים כאשר אתם משתמשים בהם, בהשוואה ליישומים שרצים ברקע.</p><p>7. אם יישומים משתמשים במתח כאשר הם רצים ברקע, תוכלו ללחוץ או להקיש על הקישור <strong> \"שנה את ההגדרות של יישומים ברקע\" </strong>ולהגדיר את היישומים כך שלא יפעלו ברקע. אפשרות זו פועלת רק עבור היישומים האוניברסליים של Windows 10.</p><p>8. המשיכו לגלול למטה ותראו רשימת יישומים, זה נחשב למקטע המועיל ביותר של תכונה זו.הוא יציג את רשימת היישומים שהשתמשו במתח הסוללה בתקופה זו, ויציג לכם באיזה אחוז של מתח הסוללה השתמש כל אחד מהיישומים</p><p><img src='assets/images/qa/4.2.jpg' /></p><p> </p>",
-            "heading1": "Symptom",
-            "para1": {
-                "span1": "Windows 10 includes a new",
-                "span2": "“Battery Use”",
-                "span3": "screen that shows you what’s draining your laptop’s juice. That means it’ll tell you exactly what apps–both desktop and Windows 10 “universal” apps–are using too much power."
-            },
-            "heading2": "Affected Brands",
-            "para2": "Lenovo laptops, desktops",
-            "heading3": "Affected Systems",
-            "para3": "All",
-            "heading4": "Operating System",
+			"title": "בדיקת השימוש בסוללה של המחשב",
+			"heading1": "תסמין",
+            "para1": "Windows 10 כוללת את המסך החדש <strong>\"שימוש בסוללה\"</strong> שמראה לכם מה גורם לניצול מהיר של סוללת המחשב הנייד. כלומר, המסך יציג אילו יישומים בדיוק, הן יישומי שולחן העבודה והן היישומים \"האוניברסליים\" של Windows 10, צורכים מתח רב מדי.",
+            "heading2": "מותגים מושפעים",
+            "para2": "מחשבים שולחניים ומחשבים ניידים של Lenovo",
+            "heading3": "המערכות המושפעות",
+            "para3": "הכל",
+            "heading4": "מערכת הפעלה",
             "para4": "Windows 10",
-            "heading5": "Solution",
-            "para5": {
-                "line1": "This feature is new in Windows 10, we need to find this feature first as it is not stored in your traditional",
-                "line2": "control panel",
-                "line3": "view, this feature is located in the new",
-                "line4": "“Settings”",
-                "line5": "app"
-            },
-            "para6": {
-                "span1": "A. Find the Battery Use Screen",
-                "span2": {
-                    "line1": "1. Click or Tap the",
-                    "line2": "“Settings”",
-                    "line3": "option from the start menu"
-                },
-                "span3": {
-                    "line1": "2. In",
-                    "line2": "Settings",
-                    "line3": "select",
-                    "line4": "“System”",
-                    "line5": "and then select",
-                    "line6": "“Battery saver.”"
-                },
-                "span4": {
-                    "line1": "3. Click or tap the",
-                    "line2": "“Battery use”",
-                    "line3": "link under this heading to see more details."
-                },
-                "span5": "B. Analyze Your Power Usage",
-                "span6": "4. You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last from last week",
-                "span7": {
-                    "line1": 5,
-                    "line2": "“System”,",
-                    "line3": "“Display”,",
-                    "line4": "and",
-                    "line5": "“Wi-Fi”",
-                    "line6": "percentages. This shows how much battery power has been used by system processes, the display,"
-                },
-                "span8": {
-                    "line1": "6. The",
-                    "line2": "“In use”",
-                    "line3": "and",
-                    "line4": "“Background”",
-                    "line5": "options show how much power is used by applications while you’re using them, compared to applications running in the background."
-                },
-                "span9": {
-                    "line1": "7. If apps are using power in the background, you can click or tap the",
-                    "line2": "“Change background app settings”",
-                    "line3": "link and configure apps to not run in the background. This only works for universal Windows 10 apps."
-                },
-                "span10": "8. Scroll down further and you will see a list of applications, this is considered as the most useful section of this feature. It will display a list of the apps have used battery power in that period, and show you what percentage of your battery power each app has used."
-            }
+            "heading5": "פתרון",
+            "para5": "זוהי תכונה חדשה ב-Windows 10, ותחילה עלינו לאתר אותה מפני שהיא אינה ממוקמת בתצוגת <strong>לוח הבקרה </strong>המסורתית. התכונה נמצאת ביישום החדש <strong>\"הגדרות\"</strong>.",
+            "heading6": "א. איתור המסך \"שימוש בסוללה\"",
+            "para6": "1.הקישו או לחצו על האפשרות <strong>\"הגדרות\"</strong> בתפריט \"התחל\".",
+            "para7": "2.במקטע <strong>הגדרות </strong> בחרו <strong>\"מערכת\"</strong>ולאחר מכן בחרו <strong>\"חיסכון בצריכת הסוללה\"</strong>.",
+            "para8": "3.לחצו או הקישו על הקישור <strong>\"שימוש בסוללה\"</strong> תחת כותרת זו לצפייה בפרטים נוספים.",
+            "heading7": "ב. ניתוח צריכת החשמל שלכם",
+            "para9": "4. תוכלו לשנות את הגדרות מסך השימוש בסוללה כך שיציג שימוש בסוללה במשך 24 השעות האחרונות עד 48 השעות האחרונות או במשך השבוע האחרון.",
+            "para10": "5. אחוזי <strong>\"מערכת\",</strong> <strong>\"צג\"</strong> ו-<strong>\"Wi-Fi\"</strong>. מדד זה מראה כמה מתח סוללה מנוצל על-ידי תהליכי המערכת והצג.",
+            "para11": "6. האפשרויות <strong>\"בשימוש\"</strong> ו<strong>\"רקע\"</strong> מציגות כמה מתח מנוצל על-ידי יישומים כאשר אתם משתמשים בהם, בהשוואה ליישומים שרצים ברקע.",
+            "para12": "7. אם יישומים משתמשים במתח כאשר הם רצים ברקע, תוכלו ללחוץ או להקיש על הקישור <strong> \"שנה את ההגדרות של יישומים ברקע\" </strong>ולהגדיר את היישומים כך שלא יפעלו ברקע. אפשרות זו פועלת רק עבור היישומים האוניברסליים של Windows 10.",
+            "para13": "8. המשיכו לגלול למטה ותראו רשימת יישומים, זה נחשב למקטע המועיל ביותר של תכונה זו.הוא יציג את רשימת היישומים שהשתמשו במתח הסוללה בתקופה זו, ויציג לכם באיזה אחוז של מתח הסוללה השתמש כל אחד מהיישומים."
         },
         "question5": {
-            "title": "שימוש במחשב כמו במחשב לוח",
-            "description": "<div class='faqInFs4Fb'>    שימוש במחשב כמו במחשב לוח</div><hr><p>מצב לוח הופך את Windows ליותר אינטואיטיבית וקלה לשימוש כאשר יש לכם מכשיר עם מסך מגע.</p><h3 class='faqInFs25FbP10'>שימוש במצב לוח</h3><p>להפעלת מצב לוח, בחרו <strong>מרכז הפעולות</strong> בשורת המשימות, לאחר מכן בחרו <strong>מצב לוח</strong>.</p><p> </p><p><img src='assets/images/qa/5.1.jpg'  /></p><h3 class='faqInFs25FbP10'>הערה</h3><p>כדי לגלות אם מכשירכם יכול להפעיל אוטומטית את מצב הלוח, אתרו את מכשירכם באתר אינטרנט של היצרן.התמיכה בתכונה זו תלויה בחומרה, במנהל ההתקן המותקן ובאופן הגדרת המכשיר על-ידי היצרן. </p><p> </p><p>במצב לוח, היישומים נפתחים במסך מלא ומספקים לכם מרחב עבודה גדול יותר.כדי לסגור יישום, גררו אותו לתחתית המסך.</p><p> </p><h3 class='faqInFs25FbP10'>עצה</h3><p>שורת המשימות זמינה כאשר המחשב נמצא במצב לוח, אך ניתן להסתיר אותה אם אתם רוצים יותר מרחב על המסך.בחרו בלחצן <strong>התחל </strong>, בחרו <strong>הגדרות </strong>> <strong>מערכת </strong>> <strong> מצב לוח </strong>, לאחר מכן הפעילו את האפשרות <strong>הסתר באופן אוטומטי את שורת המשימות במצב לוח</strong>. כדי לראות את שורת המשימות המוסתרת, החליקו למעלה מתחתית המסך, או השתמשו בעכבר כדי לרחף באזור.</p><h3 class='faqInFs25FbP10'>שימוש בשני יישומים בו-זמנית</h3><p>כדי להשתמש בשני יישומים זה לצד זה במצב לוח, גררו יישום פתוח כלפי מטה והצידה.תראו היכן הוא ימוקם, ותראו את כל היישומים הפתוחים לצידו.</p><p>בתצוגה זו, תוכלו גם:</p><ul>    <li>להשתמש בקצה המשותף בין שני יישומים מקובעים כדי לשנות את הגודל של שני היישומים בו-זמנית.</li>    <li>לפתוח יישום חדש מתוך תצוגת המשימות&mdash;בחרו <strong>תצוגת המשימות</strong> בשורת המשימות, בחרו יישום, ולאחר מכן גררו אותו לצד אחד כדי למקמו במסך המפוצל.</li>    <li>להשתמש בלחצן החזרה בשורת המשימות כדי לחזור אחורה ביישום, או כדי לפתוח יישום שהשתמשתם בו קודם לכן.</li></ul><p> </p>",
-            "heading1": "Use tablet mode",
-            "para2": {
-                "span1": "To turn on tablet mode, select",
-                "span2": "action center",
-                "span3": "on the taskbar, then select",
-                "span4": "Tablet mode."
-            },
-            "heading2": "Note",
-            "para3": "To find out if your device can automatically turn on tablet mode, search for your device on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, and how the device was set up by the manufacturer.",
-            "para4": "In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the screen.",
-            "heading3": "Tip",
-            "para5": {
-                "span1": "The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen.",
-                "span2": "Select the",
-                "span3": "Start",
-                "span4": "button, select",
-                "span5": " Settings",
-                "span6": "System",
-                "span7": "Tablet mode",
-                "span8": ", then turn on",
-                "span9": "Automatically hide the taskbar in tablet mode.",
-                "span10": "To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there."
-            },
-            "heading4": "Use two apps simultaneously",
-            "para6": "To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and you'll see any open apps next to it.",
-            "para7": "In this view, you can also:",
-            "para8": {
-                "span1": "Use the shared edge between two snapped apps to resize both apps at the same time.",
-                "span2": {
-                    "line1": "Open a new app from task view—select",
-                    "line2": "Task view",
-                    "line3": "on the taskbar, select an app, then drag it to one side to snap it into your divided screen."
-                },
-                "span3": "Use the back button on the taskbar to go back in an app, or to open an app that you were using before."
-            }
+			"title": "שימוש במחשב כמו במחשב לוח",
+			"para1": "מצב לוח הופך את Windows ליותר אינטואיטיבית וקלה לשימוש כאשר יש לכם מכשיר עם מסך מגע.",
+            "heading1": "שימוש במצב לוח",
+            "para2": "להפעלת מצב לוח, בחרו <strong>מרכז הפעולות</strong> בשורת המשימות, לאחר מכן בחרו <strong>מצב לוח</strong>.",
+            "heading2": "הערה",
+            "para3": "כדי לגלות אם מכשירכם יכול להפעיל אוטומטית את מצב הלוח, אתרו את מכשירכם באתר אינטרנט של היצרן.התמיכה בתכונה זו תלויה בחומרה, במנהל ההתקן המותקן ובאופן הגדרת המכשיר על-ידי היצרן. ",
+            "para4": "במצב לוח, היישומים נפתחים במסך מלא ומספקים לכם מרחב עבודה גדול יותר.כדי לסגור יישום, גררו אותו לתחתית המסך.",
+            "heading3": "עצה",
+            "para5": "שורת המשימות זמינה כאשר המחשב נמצא במצב לוח, אך ניתן להסתיר אותה אם אתם רוצים יותר מרחב על המסך.בחרו בלחצן <strong>התחל </strong>, בחרו <strong>הגדרות </strong>> <strong>מערכת </strong>> <strong> מצב לוח </strong>, לאחר מכן הפעילו את האפשרות <strong>הסתר באופן אוטומטי את שורת המשימות במצב לוח</strong>. כדי לראות את שורת המשימות המוסתרת, החליקו למעלה מתחתית המסך, או השתמשו בעכבר כדי לרחף באזור.",
+            "heading4": "שימוש בשני יישומים בו-זמנית",
+            "para6": "כדי להשתמש בשני יישומים זה לצד זה במצב לוח, גררו יישום פתוח כלפי מטה והצידה.תראו היכן הוא ימוקם, ותראו את כל היישומים הפתוחים לצידו.",
+            "para7": "בתצוגה זו, תוכלו גם:",
+            "para8": "להשתמש בקצה המשותף בין שני יישומים מקובעים כדי לשנות את הגודל של שני היישומים בו-זמנית.",
+            "para9": "לפתוח יישום חדש מתוך תצוגת המשימות—בחרו <strong>תצוגת המשימות</strong> בשורת המשימות, בחרו יישום, ולאחר מכן גררו אותו לצד אחד כדי למקמו במסך המפוצל.",
+            "para10": "להשתמש בלחצן החזרה בשורת המשימות כדי לחזור אחורה ביישום, או כדי לפתוח יישום שהשתמשתם בו קודם לכן."
         },
         "question6": {
-            "title": "היכרות עם Cortana, העוזרת האישית",
-            "description": "<div class='faqInFs4Fb'>    היכרות עם Cortana, העוזרת האישית</div><hr><h3 class='faqInFs25FbP10'>מהי Cortana?</h3><hr /><p>Cortana היא הסוכנת הדיגיטלית שלכם.היא תעזור לכם לבצע את עבודתכם.</p><p>ככל שתשתמשו יותר ב-Cortana, כך החוויה תהיה אישית יותר.</p><p>לתחילת העבודה, הקלידו שאלה בתיבת החיפוש, או בחרו מיקרופון ודברו אל Cortana.(הקלדה פועלת עבור כל סוגי המחשבים, אך נדרש מיקרופון כדי לדבר).</p><p>אם אינכם בטוחים מה לומר, תראו הצעות במסך הנעילה שלכם ובדף הבית של Cortana בעת בחירתה בתיבת החיפוש מתוך שורת המשימות.</p><p><img src='assets/images/qa/6.1.jpg'  /></p><ol class='listingNone'>    <li dir=\"rtl\">1. דף הבית 2. מחשב נייד 3. הגדרות 4. משוב</li></ol><p>להלן חלק מהפעולות ש-Cortana יכולה לבצע עבורכם:</p><ul>    <li>לתת לכם תזכורות בהתבסס על זמן, מקומות או אנשים.</li>    <li>לעקוב אחר חבילות, צוותים, תחומי עניין וטיסות.</li>    <li>לשלוח הודעות דואר אלקטרוני וטקסטים.</li>    <li>לנהל את היומן שלכם ולעדכן אתכם בכל מה שקורה.</li>    <li>ליצור ולנהל רשימות.</li>    <li>לפטפט אתכם ולשחק משחקים.</li>    <li>למצוא עובדות, קבצים, מקומות ומידע.</li>    <li>לפתוח כל יישום במערכת שלכם.</li></ul><h3 class='faqInFs25FbP10'>נסו זאת: הגדרת תזכורת</h3><hr /><p>אחת מהפעולות ש-Cortana יכולה לבצע זה לתת לכם תזכורות.היא יכולה להזכיר לכם לבצע דברים בהתבסס על זמן, מקומות או אפילו אנשים.</p><p>לדוגמה, הקלידו או הגידו \"הזכירי לי לברך את תמי בפעם הבאה שהיא מתקשרת\".</p><p>התזכורת תופיע כאשר תמי תתקשר אליכם.</p><p>בונוס נוסף - אם יש לכם Windows Phone או Cortana ל-iPhone או Android, תוכלו להגדיר את Cortana לסנכרון הודעות בין המחשב לטלפון.</p><p><img src='assets/images/qa/6.2.jpg'  /></p><h3 class='faqInFs25FbP10'>היי Cortana?</h3><hr /><p>הגדירו את Cortana כך שתשמע אתכם בכל פעם שאתם אומרים \"היי Cortana\".בחרו את תיבת החיפוש בשורת המשימות כדי לפתוח את דף הבית של Cortana. לאחר מכן בחרו <strong>הגדרות</strong> והפעילו את האפשרות <strong>אפשר ל-Cortana להגיב ל\"היי Cortana\".</strong></p><p><img src='assets/images/qa/6.3.jpg'  /></p><p class='faqInFs25FbP10'>הערה</p><p>Cortana זמינה רק בארצות/אזורים מסוימים, ותכונות מסוימות של Cortana עשויות שלא להיות זמינות בכל מקום.</p><p> </p>",
-            "heading1": "What is Cortana?",
-            "para1": "Cortana is your digital agent. She'll help you get things done.",
-            "para2": "The more you use Cortana, the more personalized your experience will be.",
-            "para3": "To get started, type a question in the search box, or select the microphone  and talk to Cortana. (Typing works for all types of PCs, but you need a mic to talk.)",
-            "para4": "If you’re not sure what to say, you’ll see suggestions on your lock screen, and in Cortana home when you select the search box on the taskbar.",
-            "para5": " Home 2. Notebook 3. Settings 4. Feedback",
-            "para6": "Here are some things Cortana can do for you:",
-            "bulletset1": {
-                "span1": "Give you reminders based on time, places, or people.",
-                "span2": "Track packages, teams, interests, and flights.",
-                "span3": "Send emails and texts.",
-                "span4": "Manage your calendar and keep you up to date.",
-                "span5": "Create and manage lists.",
-                "span6": "Chit chat and play games.",
-                "span7": "Find facts, files, places, and info.",
-                "span8": "Open any app on your system."
+			"title": "היכרות עם Cortana, העוזרת האישית",
+			"heading1": "מהי Cortana?",
+            "para1": "Cortana היא הסוכנת הדיגיטלית שלכם.היא תעזור לכם לבצע את עבודתכם.",
+            "para2": "ככל שתשתמשו יותר ב-Cortana, כך החוויה תהיה אישית יותר.",
+            "para3": "לתחילת העבודה, הקלידו שאלה בתיבת החיפוש, או בחרו מיקרופון ודברו אל Cortana.(הקלדה פועלת עבור כל סוגי המחשבים, אך נדרש מיקרופון כדי לדבר).",
+            "para4": "אם אינכם בטוחים מה לומר, תראו הצעות במסך הנעילה שלכם ובדף הבית של Cortana בעת בחירתה בתיבת החיפוש מתוך שורת המשימות.",
+            "para5": "1. דף הבית 2. מחשב נייד 3. הגדרות 4. משוב",
+            "para6": "להלן חלק מהפעולות ש-Cortana יכולה לבצע עבורכם:",
+            "unorderedList1": {
+				"listItem1": "לתת לכם תזכורות בהתבסס על זמן, מקומות או אנשים.",
+                "listItem2": "לעקוב אחר חבילות, צוותים, תחומי עניין וטיסות.",
+                "listItem3": "לשלוח הודעות דואר אלקטרוני וטקסטים.",
+                "listItem4": "לנהל את היומן שלכם ולעדכן אתכם בכל מה שקורה.",
+                "listItem5": "ליצור ולנהל רשימות.",
+                "listItem6": "לפטפט אתכם ולשחק משחקים.",
+                "listItem7": "למצוא עובדות, קבצים, מקומות ומידע.",
+                "listItem8": "לפתוח כל יישום במערכת שלכם."
             },
-            "heading2": "Try this: Set a reminder",
-            "para7": "One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or even people.",
-            "para8": "For example, type or say, “Remind me to congratulate Tanya the next time she calls.”",
-            "para9": "The reminder will appear when you get a call from Tanya.",
-            "para10": "Extra bonus—if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync notifications between your PC and phone.",
-            "heading3": "Hey Cortana?",
-            "para11": {
-                "span1": "Set Cortana to hear you anytime you say “Hey Cortana.” Select the search box on the taskbar to open Cortana home.",
-                "span2": {
-                    "line1": "Then select",
-                    "line2": "Settings",
-                    "line3": "and turn on",
-                    "line4": "Let Cortana respond to “Hey Cortana.”"
-                }
-            },
-            "para12": "Note",
-            "para13": "Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere."
-        },
-        "pageTitle": "פרטי תמיכה"
+			"heading2": "נסו זאת: הגדרת תזכורת",
+            "para7": "אחת מהפעולות ש-Cortana יכולה לבצע זה לתת לכם תזכורות.היא יכולה להזכיר לכם לבצע דברים בהתבסס על זמן, מקומות או אפילו אנשים.",
+            "para8": "לדוגמה, הקלידו או הגידו \"הזכירי לי לברך את תמי בפעם הבאה שהיא מתקשרת\".",
+            "para9": "התזכורת תופיע כאשר תמי תתקשר אליכם.",
+            "para10": "בונוס נוסף - אם יש לכם Windows Phone או Cortana ל-iPhone או Android, תוכלו להגדיר את Cortana לסנכרון הודעות בין המחשב לטלפון.",
+            "heading3": "היי Cortana?",
+            "para11": "הגדירו את Cortana כך שתשמע אתכם בכל פעם שאתם אומרים \"היי Cortana\".בחרו את תיבת החיפוש בשורת המשימות כדי לפתוח את דף הבית של Cortana. לאחר מכן בחרו <strong>הגדרות</strong> והפעילו את האפשרות <strong>אפשר ל-Cortana להגיב ל\"היי Cortana\".</strong>",
+            "heading4": "הערה",
+            "para12": "Cortana זמינה רק בארצות/אזורים מסוימים, ותכונות מסוימות של Cortana עשויות שלא להיות זמינות בכל מקום."
+        }
     },
     "welcometutorial": {
         "description": "‏Vantage מאפשר לעדכן מנהלי התקנים, להפעיל אבחון, לבקש תמיכה ולקבל מידע נוסף על המכשיר בקלות. ‏בצעו במהירות התאמה אישית של חוויית השימוש שלכם וגלו מידע שימושי המותאם במיוחד עבור הצרכים שלכם",

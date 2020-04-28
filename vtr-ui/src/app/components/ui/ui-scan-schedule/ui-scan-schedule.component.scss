@@ -733,7 +733,7 @@ vtr-ui-smart-performance-scan-summary {
 				strong {
 					font-size: $fontsize_xs;
 					font-weight: $weight_bold;
-					line-height: 3.5rem;
+					line-height: 3rem;
 					color: $shade_blue;
 				}
 				&:first-child{
@@ -858,17 +858,18 @@ vtr-ui-smart-performance-scan-summary {
 			
 	}
 	.cancel-link {
-		color: $main;
 		font-size: $fontsize_xs;
-		text-decoration: underline;
+		font-weight: $weight_600;
 		vertical-align: middle;
-		padding: 1rem 3rem;
-		font-weight: $weight_bold;
-		margin-top: 1rem;
-		cursor: pointer;
-
-		&:hover {
-			text-decoration: underline;
+		letter-spacing: 0.05rem;
+		color: $menu_hover;		
+		margin: 1rem 0rem 0rem 3rem;
+		cursor: pointer;		
+		text-transform: uppercase;
+		padding: 0.3rem 0rem;
+		border-bottom: 0.2rem solid $menu_hover;
+		&:focus {
+			@include outline-border-blue;
 		}
 	}
 	.change-scan-schedule {

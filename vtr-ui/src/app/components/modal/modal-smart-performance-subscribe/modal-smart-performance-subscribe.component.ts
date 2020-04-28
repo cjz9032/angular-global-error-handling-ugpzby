@@ -71,9 +71,9 @@ export class ModalSmartPerformanceSubscribeComponent implements OnInit {
 		this.activeModal.close('close');
 	}
 	selectBilledMonthly() {
-		alert('You Have Successfully Subscibed');
-		this.commonService.setLocalStorageValue(LocalStorageKey.IsSubscribed, true);
-		this.commonService.setLocalStorageValue(LocalStorageKey.SubscribtionDetails, this.subscriptionDetails);
+	//	alert('You Have Successfully Subscibed');
+		this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceSubscribed, true);
+		this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.subscriptionDetails);
 		this.closeModal();
 		location.reload();
 		// this.router.navigate(['device/smart-performance']);

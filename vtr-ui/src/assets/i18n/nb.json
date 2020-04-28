@@ -2724,6 +2724,7 @@
         "ssoErrorAccountPluginNotExist": "Plug-in-modul mangler. Vi vil gjenopprette plug-in-modulen automatisk i bakgrunnen hvis du er koblet til Internett. Dette kan ta litt tid, prøv igjen senere."
     },
     "faq": {
+        "pageTitle": "Støttedetaljer",
         "footer": {
             "title": "Finner du ikke det du leter etter?",
             "description": "Trenger du ytterligere støtte? Ikke nøl med å kontakte oss via:",
@@ -2732,354 +2733,146 @@
         },
         "question1": {
             "title": "Sikkerhetskopier og gjenopprett filene dine",
-            "description": "<div>    <div class='faqInFs4Fb'>        Sikkerhetskopier og gjenopprett filene dine    </div>    <hr />    <div class='faqInMb7'>        Det er alltid godt å ha en sikkerhets kopi. Behold kopier av filene dine på en annen stasjon hvis det er noe som skjer med originalene.    </div>    <div class='faqInFs3Fb'>        Konfigurere din sikkerhetskopi    </div>    <hr />    <div class='mb-5'>        Velg på<span class='faqInFb'> Start</span> -knappen, <span class='faqInFb'>velg</span> innstillinger <span class='faqInFb'>> Oppdater & sikkerhets</span> <span class='faqInFb'>></span> sikkerhets <span class='faqInFb'>kopi > Legg</span> til en stasjon, og velg deretter en ekstern stasjon eller en nettverks plassering for sikkerhets kopier.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Alt er klart. Hver time sikkerhetskopierer vi alt i bruker mappen din (C:\\Users\\brukernavn). Hvis du vil endre hvilke filer som blir sikkerhets kopi ert eller hvor ofte sikkerhets <span class='faqInFb'>kopieringen</span>skal skje, kan du gå til flere alternativer.    </div>    <div class='faqInFs3Fb'>        Restaurer filene dine    </div>    <div class='mb-5'>        Hvis du mangler en viktig fil eller mappe, kan du få den tilbake på denne måten:    </div>    <div>        <div class='mb-3'>1. Skriv <span class='faqInFb'>Gjenopprett filer</span> i søke boksen på oppgave linjen, og velg <span class='faqInFb'>Gjenopprett filene med fillogg.</span></div>        <div class='mb-3'>2. Se etter filen du trenger, og bruk deretter pilene til å se alle versjonene av den</div>        <div class='mb-3'>3. Når du finner den versjonen du ønsker, velger <span class='faqInFb'>du</span> Gjenopprett for å lagre den på den opprinnelige plasseringen. Hvis du vil lagre den på et annet sted, trykker du på og holder nede (<span class='faqInFb'>eller</span> høyre klikker <span class='faqInFb'>) Gjenopprett</span>, velger Gjenopprett til og velger deretter en ny plassering.</div>    </div></div>",
-            "para1": {
-                "line1": "It's always good to have a backup.",
-                "line2": "Keep copies of your files on another drive in case something happens to the originals."
-            },
-            "heading1": "Set up your backup",
-            "para2": {
-                "span1": "Select the",
-                "span2": "Start",
-                "span3": "button, select",
-                "span4": "Settings",
-                "span5": "Update & security",
-                "span6": "Backup",
-                "span7": "Add a drive",
-                "span8": ", and then choose an external drive or network location for your backups."
-            },
-            "para3": {
-                "span1": "All set.",
-                "span2": "Every hour, we'll back up everything in your user folder (C:\\Users\\username).",
-                "span3": "To change which files get backed up or how often backups happen, go to",
-                "span4": "More options."
-            },
-            "heading2": "Restore your files",
-            "para4": "If you're missing an important file or folder, here's how to get it back:",
-            "para5": {
-                "span1": "1. Type",
-                "span2": "Restore files",
-                "span3": "in the search box on the taskbar, and then select",
-                "span4": "Restore your files with File History.",
-                "span5": "2. Look for the file you need, then use the arrows to see all its versions",
-                "span6": "3. When you find the version you want, select",
-                "span7": "Restore",
-                "span8": "to save it in its original location. To save it in a different place, press and hold (or right-click)",
-                "span9": "Restore",
-                "span10": ", select",
-                "span11": "Restore to",
-                "span12": "and then choose a new location."
-            }
+            "para1": "Det er alltid godt å ha en sikkerhets kopi. Behold kopier av filene dine på en annen stasjon hvis det er noe som skjer med originalene.",
+			"heading1": "Konfigurere din sikkerhetskopi",
+			"para2": "Velg på Start -knappen, velg innstillinger > Oppdater & sikkerhets > sikkerhets kopi > Legg til en stasjon, og velg deretter en ekstern stasjon eller en nettverks plassering for sikkerhets kopier.",
+			"para3": "Alt er klart. Hver time sikkerhetskopierer vi alt i bruker mappen din (C:\\Users\\brukernavn). Hvis du vil endre hvilke filer som blir sikkerhets kopi ert eller hvor ofte sikkerhets kopieringenskal skje, kan du gå til flere alternativer.",
+			"heading2": "Restaurer filene dine",
+			"para4": "Hvis du mangler en viktig fil eller mappe, kan du få den tilbake på denne måten:",
+			"para5": {
+				"div1": "1. Skriv Gjenopprett filer i søke boksen på oppgave linjen, og velg Gjenopprett filene med fillogg.",
+				"div2": "2. Se etter filen du trenger, og bruk deretter pilene til å se alle versjonene av den.",
+				"div3": "3. Når du finner den versjonen du ønsker, velger du Gjenopprett for å lagre den på den opprinnelige plasseringen. Hvis du vil lagre den på et annet sted, trykker du på og holder nede (eller høyre klikker ) Gjenopprett, velger Gjenopprett til og velger deretter en ny plassering."
+			}
         },
         "question2": {
-            "title": "Slik tilbakestiller du datamaskinen din",
-            "description": "<div><div class='faqInFs4Fb'>Slik tilbakestiller du Windows 10</div><hr><div class='faqInP5'>Hvis Windows 10-PC-en din har problemer eller du selger den, bør du tilbakestille den. Hvis du utfører en tilbakestilling, kan du velge å beholde eller fjerne filene, fjerne alle apper og innstillinger, og installere en ny kopi av Windows. Dette kan også løse mange problemer, for eksempel treg ytelse.</div><div class='faqInFs25FbP10'>1. Åpne Innstillinger-appen</div><div class='faqInP5'>Trykk på Start-ikonet (Windows-ikonet), som du finner nederst til venstre på skjermen, og velg Innstillinger (tannhjulsikonet).</div><div class='faqInP5'><img src='assets/images/qa/2.1.jpg' /></div><div class='faqInFs25FbP10'>2. Velg Oppdatering og sikkerhet fra listen over kategorier</div><div class='faqInP5'><img src='assets/images/qa/2.2.jpg' /></div><div class='faqInFs25FbP10'>3. Naviger til Gjenoppretting fra den venstre ruten</div><div class='faqInP5'><img src='assets/images/qa/2.3.jpg' /></div><div class='faqInFs25FbP10'>4. Start gjenopprettingsprosessen</div><div class='faqInP5'>Under overskriften \"Tilbakestill PCen\" øverst, klikker eller trykker du på Kom i gang-knappen.</div><div class='faqInP5'><img src='assets/images/qa/2.4.jpg' /></div><div class='faqInFs25FbP10'>5. Velg om du vil beholde filene dine eller ikke</div><div class='faqInP5'>Etter tilbakestillingen kan du logge deg på Microsoft-kontoen din. Windows Store-apper som er kjøpt under denne kontoen, vil bli installert på nytt.</div><div class='faqInP5'><ul><li>\"Behold filene mine\" fjerner appene og innstillingene dine, men beholder alle de personlige filene dine.</li><li>Hvis du fjerner alt, blir appene dine, innstillingene og de personlige filene slettet. Hvis du ikke har en sikkerhetskopi av filene, kan det være lurt å trykke på Avbryt, sikkerhetskopiere dem og starte denne prosessen på nytt.</li></ul></div><div class='faqInP5'><img src='assets/images/qa/2.5.jpg' /></div><div class='faqInFs25FbP10'>6. Du kan velge forskjellige tilleggsinnstillinger</div><div class='faqInP5'>Dette vil bare bli vist hvis du har valgt \"Fjern alt\" i forrige trinn.</div><div class='faqInP5'><img src='assets/images/qa/2.6.1.jpg' /></div><div class='faqInP5'><img src='assets/images/qa/2.6.2.jpg' /></div><div class='faqInFs25FbP10'>7. Les oversikten og trykk på Tilbakestill når du er klar til å fortsette.</div><div class='faqInP5'>Windows forbereder tilbakestilling av enheten. Bare vent til du får frem en blå skjerm.</div><div class='faqInFs25FbP10'>8. Når \"Velg et alternativ\" blir vist, velger du Fortsett.</div><div class='faqInP5'>Windows blir startet på nytt, og tilbakestillingen begynner. PC-en kan starte på nytt flere ganger når tilbakestillingen skjer.</div><hr><div class='faqInFs25FbP10'>Spørsmål og svar på samfunnet</div><div class='faqInP5'><b>Hvis jeg velger å fjerne alt, sletter det alle stasjonene i / koblet til maskinen min eller bare fra den jeg kjører Windows 10 på?</b></div><div class='faqInP5'><i>Svar fra samfunnet</i></div><div class='faqInP10'>Det sletter bare Windows 10-operativsystemet (vanligvis C:-stasjonen). Andre stasjoner i eller koblet til datamaskinen blir ikke påvirket.</div><div class='faqInP5'><b>Hvordan kan jeg gjøre dette hvis skjermen er ødelagt?</b></div><div class='faqInP5'><i>Svar fra samfunnet</i></div><div class='faqInP10'>Det kan du dessverre ikke. Du må skaffe en ny skjerm.</div><div class='faqInP5'><b>Vil loggen bli fjernet hvis jeg har logget på noe nettsted?</b></div><div class='faqInP5'><i>Svar fra samfunnet</i></div><div class='faqInP10'>Ja, avhengig av hvilken nettleser du bruker. Hvis du vil fjerne nettleserloggen, går du bare til innstillingene dine i nettleseren og sletter loggen. Du kan også bruke inkognitomodus for å unngå at loggen din blir lagret.</div><div class='faqInP5'><b>Må jeg tilbakestille passordet også, hvis jeg velger å fjerne alt?</b></div><div class='faqInP5'><i>Svar fra samfunnet</i></div><div class='faqInP10'>Ja, når du tilbakestiller Windows 10-datamaskinen, blir alle brukerdata fjernet. Dette omfatter dokumenter, lagrede passord, bilder, foretrukne innstillinger, nettleserinformasjon og programdata.</div><hr><div class='faqInP5'>Referanse</div><div class='faqInP5'>Slik tilbakestiller du Windows 10 – WikiHow.</div></div>",
-            "heading1": "Symptom",
-            "para1": {
-                "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
-                "span2": "Windows can “refresh” your PC so it’s more like a fresh install without deleting your personal files."
-            },
-            "para2": "Refresh your PC, Here is what will happen: your files and personalized settings won’t change",
-            "para3": {
-                "span1": "Your PC settings will be changed back to its defaults",
-                "span2": "Apps from windows store will be kept",
-                "span3": "Apps you installed from disc or website will be removed",
-                "span4": "A list of removed files will be saved on your desktop"
-            },
-            "heading2": "Affected Brands",
-            "para4": "All Desktop and Laptops",
-            "heading3": "Operation System",
-            "para5": "Windows 8, 8.1 & 10",
-            "heading4": "Solution",
-            "para6": "Windows 8/8.1",
-            "para7": {
-                "span1": {
-                    "line1": "Tap or click",
-                    "line2": "Settings "
-                },
-                "span2": {
-                    "line1": "Tap or click",
-                    "line2": "Update and recovery"
-                },
-                "span3": {
-                    "line1": "Tap or click",
-                    "line2": "Recovery"
-                },
-                "span4": {
-                    "line1": "Under Refresh your PC without affecting your files, tap or click",
-                    "line2": "Get started."
-                },
-                "span5": {
-                    "line1": "Click",
-                    "line2": "\"Next\"."
-                },
-                "span6": {
-                    "line1": "Click",
-                    "line2": "\"Refresh\"",
-                    "line3": "to start the refresh process."
-                },
-                "span7": "Once the refresh process is done, you can find a Removed Apps list on the desktop",
-                "span8": "You can find the removed apps while refreshing your system"
-            },
-            "para8": "Windows 10",
-            "para9": {
-                "span1": {
-                    "line1": "Search for",
-                    "line2": "refresh",
-                    "line3": "in the search tool available in the Start menu"
-                },
-                "span2": {
-                    "line1": "Click on",
-                    "line2": "\"Refresh your PC without affecting your files\"",
-                    "line3": " in the search results as shown below."
-                },
-                "span3": {
-                    "line1": "Click on the",
-                    "line2": "Get started",
-                    "line3": "button just below the heading",
-                    "line4": "\"Refresh your PC without affecting your files\"",
-                    "line5": "to start refreshing your Windows 10 PC."
-                }
-            },
-            "header5": "Additional Information",
-            "para10": "In most cases, once you start to refresh your PC, it’ll finish on its own. However, if Windows needs missing files, you’ll be asked to insert recovery media, which is typically a DVD disc or thumb drive. If that happens, what you’ll need depends on your PC.",
-            "para11": "If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact Microsoft Support."
+			"title": "Slik tilbakestiller du Windows 10",
+			"para1": "Hvis Windows 10-PC-en din har problemer eller du selger den, bør du tilbakestille den. Hvis du utfører en tilbakestilling, kan du velge å beholde eller fjerne filene, fjerne alle apper og innstillinger, og installere en ny kopi av Windows. Dette kan også løse mange problemer, for eksempel treg ytelse.",
+            "heading1": "1. Åpne Innstillinger-appen",
+            "para2": "Trykk på Start-ikonet (Windows-ikonet), som du finner nederst til venstre på skjermen, og velg Innstillinger (tannhjulsikonet).",
+            "heading2": "2. Velg Oppdatering og sikkerhet fra listen over kategorier",
+            "heading3": "3. Naviger til Gjenoppretting fra den venstre ruten",
+            "heading4": "4. Start gjenopprettingsprosessen",
+            "para3": "Under overskriften \"Tilbakestill PCen\" øverst, klikker eller trykker du på Kom i gang-knappen.",
+            "heading5": "5. Velg om du vil beholde filene dine eller ikke",
+            "para4": "Etter tilbakestillingen kan du logge deg på Microsoft-kontoen din. Windows Store-apper som er kjøpt under denne kontoen, vil bli installert på nytt.",
+            "para5": {
+				"li1": "\"Behold filene mine\" fjerner appene og innstillingene dine, men beholder alle de personlige filene dine.",
+				"li2": "Hvis du fjerner alt, blir appene dine, innstillingene og de personlige filene slettet. Hvis du ikke har en sikkerhetskopi av filene, kan det være lurt å trykke på Avbryt, sikkerhetskopiere dem og starte denne prosessen på nytt."
+			},
+			"heading6": "6. Du kan velge forskjellige tilleggsinnstillinger",
+            "para6": "Dette vil bare bli vist hvis du har valgt \"Fjern alt\" i forrige trinn.",
+            "heading7": "7. Les oversikten og trykk på Tilbakestill når du er klar til å fortsette.",
+            "para7": "Windows forbereder tilbakestilling av enheten. Bare vent til du får frem en blå skjerm.",
+            "heading8": "8. Når \"Velg et alternativ\" blir vist, velger du Fortsett.",
+            "para8": "Windows blir startet på nytt, og tilbakestillingen begynner. PC-en kan starte på nytt flere ganger når tilbakestillingen skjer.",
+            "heading9": "Spørsmål og svar på samfunnet",
+            "communityAnswer": "Svar fra samfunnet",
+			"q1": "Hvis jeg velger å fjerne alt, sletter det alle stasjonene i / koblet til maskinen min eller bare fra den jeg kjører Windows 10 på?",
+            "a1": "Det sletter bare Windows 10-operativsystemet (vanligvis C:-stasjonen). Andre stasjoner i eller koblet til datamaskinen blir ikke påvirket.",
+            "q2": "Hvordan kan jeg gjøre dette hvis skjermen er ødelagt?",
+            "a2": "Det kan du dessverre ikke. Du må skaffe en ny skjerm.",
+            "q3": "Vil loggen bli fjernet hvis jeg har logget på noe nettsted?",
+            "a3": "Ja, avhengig av hvilken nettleser du bruker. Hvis du vil fjerne nettleserloggen, går du bare til innstillingene dine i nettleseren og sletter loggen. Du kan også bruke inkognitomodus for å unngå at loggen din blir lagret.",
+            "q4": "Må jeg tilbakestille passordet også, hvis jeg velger å fjerne alt?",
+            "a4": "Ja, når du tilbakestiller Windows 10-datamaskinen, blir alle brukerdata fjernet. Dette omfatter dokumenter, lagrede passord, bilder, foretrukne innstillinger, nettleserinformasjon og programdata.",
+            "para9": "Referanse",
+            "para10": "Slik tilbakestiller du Windows 10 – WikiHow."
         },
         "question3": {
-            "title": "Bli kjent med datamaskinens prosessor",
-            "description": "<div class='faqInFs4Fb'>    Bli kjent med datamaskinens prosessor</div><hr><h3 class='faqInFs25FbP10'>Symptom</h3><p>Begrepene 32-bits og 64-bit henviser til hvordan prosessoren til en data maskin (også kalt en CPU) håndterer informasjon. 64-biters versjonen av Windows håndterer store mengder RAM (Random Access Memory) mer effektivt enn et 32-bits system.</p><h3 class='faqInFs25FbP10'>Berørte merker</h3><p>Symptomet ovenfor er knyttet til, men ikke begrenset til, disse systemene:</p><ul>    <li>Alle stasjonære og bærbare</li></ul><h3 class='faqInFs25FbP10'>Operativsystem</h3><ul>    <li>Windows 7 , 8 , 10</li></ul><h3 class='faqInFs25FbP10'>Løsning</h3><p><strong><u>Windows 7 eller Vista</u></strong></p><ol>    <li>Åpne systemet ved å klikke <strong>på Start </strong>-knappen på <strong>Start-knappen</strong>, høyre klikk på data maskinen og deretter på egenskaper  </li>    <li>Under system kan du se system typen.</li></ol><p><strong><u>Windows 8 og Windows 10</u></strong></p><p><strong>Metode 1:</strong> Vis system-vinduet i kontroll panel</p><ol>    <li>Dra inn fra høyre kant av skjermen og trykk deretter <strong>Søk</strong>. Hvis du bruker musen, peker du på nederste høyre hjørne på skjermen og klikker <strong>på Søk.</strong></li>    <li>Skriv <strong>systemet</strong> i søke boksen og trykk eller klikk <strong>på innstillinger.</strong></li>    <li>Klikk eller trykk på <strong>System</strong></li>    <li>Hvis du kjører en 64-biters versjon av Windows 8, <strong>blir 64-biters operativ system</strong> vist i feltet system type under system overskriften. Hvis du kjører en 32<strong>-biters versjon av Windows</strong><strong>8,</strong><strong>blir 32-biters operativ </strong>system vist i feltet system type under system overskriften.<br />  </li></ol><p><strong>Metode 2</strong>: Se vinduet Systeminformasjon</p><ol>    <li>Dra inn fra høyre kant av skjermen og trykk deretter <strong>Søk</strong>. Hvis du bruker musen, peker du på nederste høyre hjørne på skjermen og klikker <strong>på Søk.</strong></li>    <li>Skriv inn <strong>system informasjon i søke boksen</strong></li>    <li>Trykk eller klikk<strong> på</strong>system, trykk på <strong>eller klikk på</strong> system informasjon, <strong>og klikk på system Sammendrag.</strong></li>    <li>Hvis du kjører <strong>en 64 -biters </strong>versjon av Windows 8<strong>, </strong> blir det vist en x64 <strong>basert PC i feltet system</strong>type under element overskriften. <br /> <br /> Hvis du kjører<strong> en 32-biters</strong> versjon av Windows 8, blir x86-basert PC <strong>vist i feltet system</strong> type under element overskriften.  </li></ol><p> </p>",
-            "heading1": "Symptom",
-            "para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
-            "heading2": "Affected Brands",
-            "para2": "The above symptom is associated with, but not limited to, the following systems:",
-            "para3": "All Desktop and Laptops",
-            "heading3": "Operating System",
-            "para4": "Windows 7, 8, 10",
-            "heading4": "Solution",
-            "para5": "Windows 7 or Vista",
-            "para6": {
-                "span1": {
-                    "line1": "Open System by clicking the",
-                    "line2": "Start button",
-                    "line3": "Picture of the Start button, right-clicking Computer, and then clicking Properties"
-                },
-                "span2": "Under System, you can view the system type."
-            },
-            "para7": "Windows 8 and Windows 10",
-            "para8": {
-                "span1": {
-                    "line1": "Method 1:",
-                    "line2": "View the System window in Control Panel"
-                },
-                "span2": {
-                    "line1": "Swipe in from the right edge of the screen, and then tap",
-                    "line2": "Search.",
-                    "line3": "Or, if you are using a mouse, point to the lower-right corner of the screen, and then click",
-                    "line4": "Search."
-                },
-                "span3": {
-                    "line1": "Type",
-                    "line2": "system",
-                    "line3": "in the search box, and then tap or click",
-                    "line4": "Settings."
-                },
-                "span4": {
-                    "line1": "Tap or click",
-                    "line2": "System"
-                },
-                "span5": {
-                    "line1": "If you are running a 64-bit version of Windows 8,",
-                    "line2": "64-bit Operating System",
-                    "line3": "is displayed in the System type field under the System heading.",
-                    "line4": "If you are running a 32",
-                    "line5": "-bit version of Windows 8, 32-bit Operating",
-                    "line6": "System is displayed in the System type field under the System heading."
-                },
-                "span6": {
-                    "line1": "Method 2:",
-                    "line2": "View the System Information window"
-                },
-                "span7": {
-                    "line1": "Swipe in from the right edge of the screen, and then tap",
-                    "line2": "Search.",
-                    "line3": "Or, if you are using a mouse, point to the lower-right corner of the screen, and then click",
-                    "line4": "Search."
-                },
-                "span8": {
-                    "line1": "In the search box, type",
-                    "line2": "system information"
-                },
-                "span9": {
-                    "line1": "Tap or click",
-                    "line2": "System",
-                    "line3": ", tap or click",
-                    "line4": "System Information,",
-                    "line5": "and then click",
-                    "line6": "System Summary."
-                },
-                "span10": {
-                    "line1": "If you are running a",
-                    "line2": 64,
-                    "line3": "bit version of Windows 8, 32-bit Operating,",
-                    "line4": "x64-based PC is displayed in the",
-                    "line5": "System type",
-                    "line6": "field under the Item heading."
-                }
-            },
-            "para9": {
-                "line1": "If you are running a",
-                "line2": "32-bit",
-                "line3": "version of Windows 8,x86-based PC is displayed in the",
-                "line4": "System type",
-                "line5": "field under the Item heading."
-            }
+			"title": "Bli kjent med datamaskinens prosessor",
+			"heading1": "Symptom",
+            "para1": "Begrepene 32-bits og 64-bit henviser til hvordan prosessoren til en data maskin (også kalt en CPU) håndterer informasjon. 64-biters versjonen av Windows håndterer store mengder RAM (Random Access Memory) mer effektivt enn et 32-bits system.",
+            "heading2": "Berørte merker",
+            "para2": "Symptomet ovenfor er knyttet til, men ikke begrenset til, disse systemene:",
+            "para3": "Alle stasjonære og bærbare",
+            "heading3": "Operativsystem",
+            "para4": "Windows 7 , 8 , 10",
+            "heading4": "Løsning",
+            "para5": "Windows 7 eller Vista",
+			"para6": "Åpne systemet ved å klikke <strong>på Start </strong>-knappen på <strong>Start-knappen</strong>, høyre klikk på data maskinen og deretter på egenskaper.",
+            "para7": "Under system kan du se system typen.",
+            "para8": "Windows 8 og Windows 10",
+			"para9": "<strong>Metode 1:</strong> Vis system-vinduet i kontroll panel",
+            "para10": "Dra inn fra høyre kant av skjermen og trykk deretter <strong>Søk</strong>. Hvis du bruker musen, peker du på nederste høyre hjørne på skjermen og klikker <strong>på Søk.</strong>",
+            "para11": "Skriv <strong>systemet</strong> i søke boksen og trykk eller klikk <strong>på innstillinger.</strong>",
+            "para12": "Klikk eller trykk på <strong>System</strong>.",
+            "para13": "Hvis du kjører en 64-biters versjon av Windows 8, <strong>blir 64-biters operativ system</strong> vist i feltet system type under system overskriften. Hvis du kjører en 32<strong>-biters versjon av Windows</strong><strong>8,</strong><strong>blir 32-biters operativ </strong>system vist i feltet system type under system overskriften.<br />  ",
+            "para14": "<strong>Metode 2</strong>: Se vinduet Systeminformasjon",
+            "para15": "Dra inn fra høyre kant av skjermen og trykk deretter <strong>Søk</strong>. Hvis du bruker musen, peker du på nederste høyre hjørne på skjermen og klikker <strong>på Søk.</strong>",
+            "para16": "Skriv inn <strong>system informasjon i søke boksen</strong>.",
+            "para17": "Trykk eller klikk<strong> på</strong>system, trykk på <strong>eller klikk på</strong> system informasjon, <strong>og klikk på system Sammendrag.</strong>",
+            "para18": "Hvis du kjører <strong>en 64 -biters </strong>versjon av Windows 8<strong>, </strong> blir det vist en x64 <strong>basert PC i feltet system</strong>type under element overskriften. Hvis du kjører<strong> en 32-biters</strong> versjon av Windows 8, blir x86-basert PC <strong>vist i feltet system</strong> type under element overskriften.  "
         },
         "question4": {
-            "title": "Kontrollere datamaskinens batteriforbruk",
-            "description": "<div class='faqInFs4Fb'>    Kontrollere datamaskinens batteriforbruk</div><hr><h3 class='faqInFs25FbP10'>Symptom</h3><p>Windows 10 inneholder et nytt <strong>batteri bruks</strong> skjerm bilde som viser hva som skjer med din bærbare juice. Det betyr at du kan se nøyaktig hvilke applikasjoner – både stasjonære og Windows 10 \"universelle\" apper-bruker for mye strøm.</p><h3 class='faqInFs25FbP10'>Berørte merker</h3><ul>    <li>Lenovo bærbare maskiner, stasjonære maskiner</li></ul><h3 class='faqInFs25FbP10'>Gjelder for følgende systemer</h3><ul>    <li>Alle</li></ul><h3 class='faqInFs25FbP10'>Operativsystem</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Løsning</h3><p>Denne funksjonen er ny i Windows 10, men vi må først finne denne funksjonen fordi den ikke er lagret i den tradisjonelle <strong>kontroll panel </strong>visningen, denne funksjonen finnes i den nye <strong>\"Settings\"-</strong> appen</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Finn batteri bruk skjermen</h3></p><p>1. Klikk på eller trykk <strong>på \"</strong>Settings\"-alternativet på Start-menyen</p><p>2. Velg <strong>system </strong> <strong>under innstillinger</strong>, og velg <strong>deretter \"batteris paring\". <br /></strong> <strong></strong></p><p><img src='assets/images/qa/4.1.jpg' /></p><p>3. Klikk på eller trykk <strong>\"på \"batteri Bruk\"</strong> -koblingen under denne overskriften for å se flere detaljer. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analyser strøm forbruket</h3><p>4. Du kan endre for å gjøre batteriet til å bruke skjermen til å se batteri bruk fra de siste 24 timene til de siste 48 timene eller sist fra forrige uke</p><p>5. <strong>\"system\",</strong> \"<strong>skjerm</strong>\" og \" <strong>Wi-Fi\"</strong> prosenter. Dette viser hvor mye batteri strøm som er brukt av system prosesser, skjermen,</p><p>6. <strong>\"alternativene\"</strong> i bruk og <strong> bakgrunn</strong> viser hvor mye strøm som brukes av applikasjoner mens du bruker dem, sammenlignet med programmer som kjøres i bakgrunnen.</p><p>7. Hvis apper bruker strøm i bakgrunnen, kan du klikke på eller trykke på <strong>koblingen \"endre innstillinger for bakgrunns </strong>app\" og konfigurere apper slik at de ikke kan kjøres i bakgrunnen. Dette fungerer bare for universelle Windows 10-apper.</p><p>8. Rull nedover og du vil se en liste over applikasjoner, anses dette som den mest nyttige delen av denne funksjonen. Det vil se ut som en liste over appene har brukt batteriet i den perioden, og viser deg hvilken prosent del av batteriet du har brukt i hver app</p><p><img src='assets/images/qa/4.2.jpg' /></p><p> </p>",
-            "heading1": "Symptom",
-            "para1": {
-                "span1": "Windows 10 includes a new",
-                "span2": "“Battery Use”",
-                "span3": "screen that shows you what’s draining your laptop’s juice. That means it’ll tell you exactly what apps–both desktop and Windows 10 “universal” apps–are using too much power."
-            },
-            "heading2": "Affected Brands",
-            "para2": "Lenovo laptops, desktops",
-            "heading3": "Affected Systems",
-            "para3": "All",
-            "heading4": "Operating System",
+			"title": "Kontrollere datamaskinens batteriforbruk",
+			"heading1": "Symptom",
+            "para1": "Windows 10 inneholder et nytt <strong>batteri bruks</strong> skjerm bilde som viser hva som skjer med din bærbare juice. Det betyr at du kan se nøyaktig hvilke applikasjoner – både stasjonære og Windows 10 \"universelle\" apper-bruker for mye strøm.",
+            "heading2": "Berørte merker",
+            "para2": "Lenovo bærbare maskiner, stasjonære maskiner",
+            "heading3": "Gjelder for følgende systemer",
+            "para3": "Alle",
+            "heading4": "Operativsystem",
             "para4": "Windows 10",
-            "heading5": "Solution",
-            "para5": {
-                "line1": "This feature is new in Windows 10, we need to find this feature first as it is not stored in your traditional",
-                "line2": "control panel",
-                "line3": "view, this feature is located in the new",
-                "line4": "“Settings”",
-                "line5": "app"
-            },
-            "para6": {
-                "span1": "A. Find the Battery Use Screen",
-                "span2": {
-                    "line1": "1. Click or Tap the",
-                    "line2": "“Settings”",
-                    "line3": "option from the start menu"
-                },
-                "span3": {
-                    "line1": "2. In",
-                    "line2": "Settings",
-                    "line3": "select",
-                    "line4": "“System”",
-                    "line5": "and then select",
-                    "line6": "“Battery saver.”"
-                },
-                "span4": {
-                    "line1": "3. Click or tap the",
-                    "line2": "“Battery use”",
-                    "line3": "link under this heading to see more details."
-                },
-                "span5": "B. Analyze Your Power Usage",
-                "span6": "4. You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last from last week",
-                "span7": {
-                    "line1": 5,
-                    "line2": "“System”,",
-                    "line3": "“Display”,",
-                    "line4": "and",
-                    "line5": "“Wi-Fi”",
-                    "line6": "percentages. This shows how much battery power has been used by system processes, the display,"
-                },
-                "span8": {
-                    "line1": "6. The",
-                    "line2": "“In use”",
-                    "line3": "and",
-                    "line4": "“Background”",
-                    "line5": "options show how much power is used by applications while you’re using them, compared to applications running in the background."
-                },
-                "span9": {
-                    "line1": "7. If apps are using power in the background, you can click or tap the",
-                    "line2": "“Change background app settings”",
-                    "line3": "link and configure apps to not run in the background. This only works for universal Windows 10 apps."
-                },
-                "span10": "8. Scroll down further and you will see a list of applications, this is considered as the most useful section of this feature. It will display a list of the apps have used battery power in that period, and show you what percentage of your battery power each app has used."
-            }
+            "heading5": "Løsning",
+            "para5": "Denne funksjonen er ny i Windows 10, men vi må først finne denne funksjonen fordi den ikke er lagret i den tradisjonelle <strong>kontroll panel </strong>visningen, denne funksjonen finnes i den nye <strong>\"Settings\"-</strong> appen.",
+            "heading6": "A. Finn batteri bruk skjermen",
+            "para6": "1. Klikk på eller trykk <strong>på \"</strong>Settings\"-alternativet på Start-menyen.",
+            "para7": "2. Velg <strong>system </strong> <strong>under innstillinger</strong>, og velg <strong>deretter \"batteris paring\"</strong>.",
+            "para8": "3. Klikk på eller trykk <strong>\"på \"batteri Bruk\"</strong> -koblingen under denne overskriften for å se flere detaljer.",
+            "heading7": "B. Analyser strøm forbruket",
+            "para9": "4. Du kan endre for å gjøre batteriet til å bruke skjermen til å se batteri bruk fra de siste 24 timene til de siste 48 timene eller sist fra forrige uke.",
+            "para10": "5. <strong>\"system\",</strong> \"<strong>skjerm</strong>\" og \" <strong>Wi-Fi\"</strong> prosenter. Dette viser hvor mye batteri strøm som er brukt av system prosesser, skjermen.",
+            "para11": "6. <strong>\"alternativene\"</strong> i bruk og <strong> bakgrunn</strong> viser hvor mye strøm som brukes av applikasjoner mens du bruker dem, sammenlignet med programmer som kjøres i bakgrunnen.",
+            "para12": "7. Hvis apper bruker strøm i bakgrunnen, kan du klikke på eller trykke på <strong>koblingen \"endre innstillinger for bakgrunns </strong>app\" og konfigurere apper slik at de ikke kan kjøres i bakgrunnen. Dette fungerer bare for universelle Windows 10-apper.",
+            "para13": "8. Rull nedover og du vil se en liste over applikasjoner, anses dette som den mest nyttige delen av denne funksjonen. Det vil se ut som en liste over appene har brukt batteriet i den perioden, og viser deg hvilken prosent del av batteriet du har brukt i hver app."
         },
         "question5": {
-            "title": "Bruke datamaskinen som et nettbrett",
-            "description": "<div class='faqInFs4Fb'>    Bruke datamaskinen som et nettbrett</div><hr><p>Nett brett modus gjør Windows mer intuitiv og enklere å bruke når du har en berørings enhet.</p><h3 class='faqInFs25FbP10'>Bruk tavlemodus</h3><p>Hvis du vil slå på nett brett <strong>modus</strong> velger du handlings senter på oppgave linjen <strong>og velger deretter nett brett modus</strong>.</p><p> </p><p><img src='assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Merk</h3><p>Hvis du vil finne ut om enheten kan slå på nett brett modus automatisk, søker du etter enheten på produsentens nettsted. Støtte for denne funksjonen avhenger av maskin varen, driveren som er installert og hvordan enheten ble konfigurert av produsenten. </p><p> </p><p>I nett brett modus åpner apper full skjerm og gir deg mer plass å arbeide på. Hvis du vil lukke en app, drar du den til bunnen av skjermen.</p><p> </p><h3 class='faqInFs25FbP10'>Spiss</h3><p>Oppgave linjen er tilgjengelig når PC-en er i nett brett modus, men du kan skjule den hvis du vil ha mer plass på skjermen. Velg <strong>på Start</strong>-knappen, <strong>Velg</strong> innstillinger <strong>> </strong>system <strong> > nett </strong>brett modus, og <strong>slå på automatisk Skjul oppgave linjen i nett brett modus</strong>. Hvis du vil se den skjulte oppgave linjen, sveiper du ned nederst på skjermen, eller du kan bruke musen til å peke der.</p><h3 class='faqInFs25FbP10'>Bruk to apper samtidig</h3><p>Hvis du vil bruke to applikasjoner side ved side i nett brett modus, drar du en åpen app ned og til siden. Du vil se hvor den kan festes, og du vil se eventuelle åpne apper ved siden av den.</p><p>I denne visningen kan du også:</p><ul>    <li>Bruk den delte kanten mellom to festede applikasjoner til å endre størrelse på begge appene samtidig.</li>    <li>Åpne en ny app fra oppgave visning-Velg <strong>oppgave visning</strong> på oppgave linjen, Velg en app, og dra den til den ene siden for å feste den på den delte skjermen.</li>    <li>Bruk tilbake-knappen på oppgave linjen for å gå tilbake i en app eller åpne en app som du brukte tidligere.</li></ul><p> </p>",
-            "heading1": "Use tablet mode",
-            "para2": {
-                "span1": "To turn on tablet mode, select",
-                "span2": "action center",
-                "span3": "on the taskbar, then select",
-                "span4": "Tablet mode."
-            },
-            "heading2": "Note",
-            "para3": "To find out if your device can automatically turn on tablet mode, search for your device on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, and how the device was set up by the manufacturer.",
-            "para4": "In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the screen.",
-            "heading3": "Tip",
-            "para5": {
-                "span1": "The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen.",
-                "span2": "Select the",
-                "span3": "Start",
-                "span4": "button, select",
-                "span5": " Settings",
-                "span6": "System",
-                "span7": "Tablet mode",
-                "span8": ", then turn on",
-                "span9": "Automatically hide the taskbar in tablet mode.",
-                "span10": "To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there."
-            },
-            "heading4": "Use two apps simultaneously",
-            "para6": "To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and you'll see any open apps next to it.",
-            "para7": "In this view, you can also:",
-            "para8": {
-                "span1": "Use the shared edge between two snapped apps to resize both apps at the same time.",
-                "span2": {
-                    "line1": "Open a new app from task view—select",
-                    "line2": "Task view",
-                    "line3": "on the taskbar, select an app, then drag it to one side to snap it into your divided screen."
-                },
-                "span3": "Use the back button on the taskbar to go back in an app, or to open an app that you were using before."
-            }
+			"title": "Bruke datamaskinen som et nettbrett",
+			"para1": "Nett brett modus gjør Windows mer intuitiv og enklere å bruke når du har en berørings enhet.",
+            "heading1": "Bruk tavlemodus",
+            "para2": "Hvis du vil slå på nett brett <strong>modus</strong> velger du handlings senter på oppgave linjen <strong>og velger deretter nett brett modus</strong>.",
+            "heading2": "Merk",
+            "para3": "Hvis du vil finne ut om enheten kan slå på nett brett modus automatisk, søker du etter enheten på produsentens nettsted. Støtte for denne funksjonen avhenger av maskin varen, driveren som er installert og hvordan enheten ble konfigurert av produsenten. ",
+            "para4": "I nett brett modus åpner apper full skjerm og gir deg mer plass å arbeide på. Hvis du vil lukke en app, drar du den til bunnen av skjermen.",
+            "heading3": "Spiss",
+            "para5": "Oppgave linjen er tilgjengelig når PC-en er i nett brett modus, men du kan skjule den hvis du vil ha mer plass på skjermen. Velg <strong>på Start</strong>-knappen, <strong>Velg</strong> innstillinger <strong>> </strong>system <strong> > nett </strong>brett modus, og <strong>slå på automatisk Skjul oppgave linjen i nett brett modus</strong>. Hvis du vil se den skjulte oppgave linjen, sveiper du ned nederst på skjermen, eller du kan bruke musen til å peke der.",
+            "heading4": "Bruk to apper samtidig",
+            "para6": "Hvis du vil bruke to applikasjoner side ved side i nett brett modus, drar du en åpen app ned og til siden. Du vil se hvor den kan festes, og du vil se eventuelle åpne apper ved siden av den.",
+            "para7": "I denne visningen kan du også:",
+            "para8": "Bruk den delte kanten mellom to festede applikasjoner til å endre størrelse på begge appene samtidig.",
+            "para9": "Åpne en ny app fra oppgave visning-Velg <strong>oppgave visning</strong> på oppgave linjen, Velg en app, og dra den til den ene siden for å feste den på den delte skjermen.",
+            "para10": "Bruk tilbake-knappen på oppgave linjen for å gå tilbake i en app eller åpne en app som du brukte tidligere."
         },
         "question6": {
-            "title": "Bli kjent med Cortana, din personlige assistent",
-            "description": "<div class='faqInFs4Fb'>    Bli kjent med Cortana, din personlige assistent</div><hr><h3 class='faqInFs25FbP10'>Hva er Cortana?</h3><hr /><p>Cortana er den digitale agenten. Hun hjelper deg med å få ting gjort.</p><p>Jo mer du bruker Cortana, jo mer personlig blir opplevelse.</p><p>Skriv et spørsmål i søke boksen eller velg mikrofonen og snakk med Cortana for å komme i gang. (Innskriving fungerer for alle typer PCer, men du trenger en mikrofon for å snakke.)</p><p>Hvis du ikke er sikker på hva du skal si, vil du se forslag på låse skjermen din og på Cortana-hjemmesiden når du velger søk-boksen på oppgave linjen.</p><p><img src='assets/images/qa/6.1.jpg' /></p><ol>    <li>Hjem 2. Notat blokk 3. Settings 4. Spillkontroller</li></ol><p>Her er noen ting Cortana kan gjøre for deg:</p><ul>    <li>Gi deg påminnelser basert på tid, steder eller personer.</li>    <li>Spore pakker, grupper, interesser og flights.</li>    <li>Sende e-postmeldinger og-tekster.</li>    <li>Administrer kalenderen din og hold deg oppdatert.</li>    <li>Opprett og administrer lister.</li>    <li>Chit chat og spill spill.</li>    <li>Finn opplysninger, filer, steder og info.</li>    <li>Åpne en hvilken som helst app på systemet.</li></ul><h3 class='faqInFs25FbP10'>Prøv dette: Sett en påminnelse</h3><hr /><p>En av tingene Cortana kan gjøre er å gi deg påminnelser. Hun kan minne deg på å gjøre ting basert på tid, steder eller til og med personer.</p><p>Du kan for eksempel skrive eller si ' Påminn meg til congratulate Tanya neste gang hun ringer.'</p><p>Påminnelsen blir vist når du mottar en oppringing fra Tanya.</p><p>Ekstra bonus &mdash; hvis du har en Windows Phone eller Cortana for iPhone eller Android, kan du definere at Cortana skal synkronisere meldinger mellom PCen og telefonen.</p><p><img src='assets/images/qa/6.2.jpg' /></p><h3 class='faqInFs25FbP10'>Hei Cortana?</h3><hr /><p>Oppgi at Cortana skal høre deg når du sier \" Hei Cortana.\" Velg søke boksen på oppgave linjen for å åpne Cortana-hjemmesiden. Velg <strong>deretter innstillinger</strong> og slå på <strong>la Cortana svare på Hey Cortana.</strong></p><p><img src='assets/images/qa/6.3.jpg' /></p><p class='faqInFs25FbP10'>Merk</p><p>Cortana er bare tilgjengelig i visse land/regioner, og noen Cortana-funksjoner er kanskje ikke tilgjengelige overalt.</p><p> </p>",
-            "heading1": "What is Cortana?",
-            "para1": "Cortana is your digital agent. She'll help you get things done.",
-            "para2": "The more you use Cortana, the more personalized your experience will be.",
-            "para3": "To get started, type a question in the search box, or select the microphone  and talk to Cortana. (Typing works for all types of PCs, but you need a mic to talk.)",
-            "para4": "If you’re not sure what to say, you’ll see suggestions on your lock screen, and in Cortana home when you select the search box on the taskbar.",
-            "para5": " Home 2. Notebook 3. Settings 4. Feedback",
-            "para6": "Here are some things Cortana can do for you:",
-            "bulletset1": {
-                "span1": "Give you reminders based on time, places, or people.",
-                "span2": "Track packages, teams, interests, and flights.",
-                "span3": "Send emails and texts.",
-                "span4": "Manage your calendar and keep you up to date.",
-                "span5": "Create and manage lists.",
-                "span6": "Chit chat and play games.",
-                "span7": "Find facts, files, places, and info.",
-                "span8": "Open any app on your system."
+			"title": "Bli kjent med Cortana, din personlige assistent",
+			"heading1": "Hva er Cortana?",
+            "para1": "Cortana er den digitale agenten. Hun hjelper deg med å få ting gjort.",
+            "para2": "Jo mer du bruker Cortana, jo mer personlig blir opplevelse.",
+            "para3": "Skriv et spørsmål i søke boksen eller velg mikrofonen og snakk med Cortana for å komme i gang. (Innskriving fungerer for alle typer PCer, men du trenger en mikrofon for å snakke.)",
+            "para4": "Hvis du ikke er sikker på hva du skal si, vil du se forslag på låse skjermen din og på Cortana-hjemmesiden når du velger søk-boksen på oppgave linjen.",
+            "para5": "1. Hjem 2. Notat blokk 3. Settings 4. Spillkontroller",
+            "para6": "Her er noen ting Cortana kan gjøre for deg:",
+            "unorderedList1": {
+				"listItem1": "Gi deg påminnelser basert på tid, steder eller personer.",
+                "listItem2": "Spore pakker, grupper, interesser og flights.",
+                "listItem3": "Sende e-postmeldinger og-tekster.",
+                "listItem4": "Administrer kalenderen din og hold deg oppdatert.",
+                "listItem5": "Opprett og administrer lister.",
+                "listItem6": "Chit chat og spill spill.",
+                "listItem7": "Finn opplysninger, filer, steder og info.",
+                "listItem8": "Åpne en hvilken som helst app på systemet."
             },
-            "heading2": "Try this: Set a reminder",
-            "para7": "One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or even people.",
-            "para8": "For example, type or say, “Remind me to congratulate Tanya the next time she calls.”",
-            "para9": "The reminder will appear when you get a call from Tanya.",
-            "para10": "Extra bonus—if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync notifications between your PC and phone.",
-            "heading3": "Hey Cortana?",
-            "para11": {
-                "span1": "Set Cortana to hear you anytime you say “Hey Cortana.” Select the search box on the taskbar to open Cortana home.",
-                "span2": {
-                    "line1": "Then select",
-                    "line2": "Settings",
-                    "line3": "and turn on",
-                    "line4": "Let Cortana respond to “Hey Cortana.”"
-                }
-            },
-            "para12": "Note",
-            "para13": "Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere."
-        },
-        "pageTitle": "Støttedetaljer"
+			"heading2": "Prøv dette: Sett en påminnelse",
+            "para7": "En av tingene Cortana kan gjøre er å gi deg påminnelser. Hun kan minne deg på å gjøre ting basert på tid, steder eller til og med personer.",
+            "para8": "Du kan for eksempel skrive eller si ' Påminn meg til congratulate Tanya neste gang hun ringer'.",
+            "para9": "Påminnelsen blir vist når du mottar en oppringing fra Tanya.",
+            "para10": "Ekstra bonus — hvis du har en Windows Phone eller Cortana for iPhone eller Android, kan du definere at Cortana skal synkronisere meldinger mellom PCen og telefonen.",
+            "heading3": "Hei Cortana?",
+            "para11": "Oppgi at Cortana skal høre deg når du sier \" Hei Cortana.\" Velg søke boksen på oppgave linjen for å åpne Cortana-hjemmesiden. Velg <strong>deretter innstillinger</strong> og slå på <strong>la Cortana svare på Hey Cortana.</strong>",
+            "heading4": "Merk",
+            "para12": "Cortana er bare tilgjengelig i visse land/regioner, og noen Cortana-funksjoner er kanskje ikke tilgjengelige overalt."
+        }
     },
     "welcometutorial": {
         "description": "Vantage gjør det enkelt å oppdatere drivere, feilsøke, få hjelp og lære om enheten din. Tilpass brukeropplevelsen din på et blunk, og få nyttig informasjon som er skreddersydd etter behovene dine",

@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.26](https://bitbucket.tc.lenovo.com///compare/v1.5.25...v1.5.26) (2020-04-28)
+
+
+### Bug Fixes
+
+* **LWS-Accessibility:** toggle switch can't turn on/off in scan mode ([caeba56](https://bitbucket.tc.lenovo.com///commit/caeba56d1fd3a3c387303c9d2619751b70573cc1))
+* **LWS-Accessibility:** use innerText ([09e99c5](https://bitbucket.tc.lenovo.com///commit/09e99c52e8f6241a4c5bd37e76a8b0fafe219b86))
+* add  click event on toggle switch ([f2a59d0](https://bitbucket.tc.lenovo.com///commit/f2a59d0e5fce310689db77687a686ea7f52e37ee))
+
 ### [1.5.25](https://bitbucket.tc.lenovo.com///compare/v1.5.23...v1.5.25) (2020-04-27)
 
 ### [1.5.23](https://bitbucket.tc.lenovo.com///compare/v1.5.22...v1.5.23) (2020-04-24)

@@ -31,10 +31,10 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		}
 	];
   ngOnInit() {
-    this.isSubscribed=this.commonService.getLocalStorageValue(LocalStorageKey.IsSubscribed);
+    this.isSubscribed=this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartPerformanceSubscribed);
 	if(this.isSubscribed)
   	{
-		this.subscriptionDetails = this.commonService.getLocalStorageValue(LocalStorageKey.SubscribtionDetails);
+		this.subscriptionDetails = this.commonService.getLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails);
 		this.startDate = this.subscriptionDetails[0].StartDate;
 		this.endDate = this.subscriptionDetails[0].EndDate;
 		this.givenDate = new Date(this.subscriptionDetails[0].EndDate);
@@ -58,9 +58,22 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
   }
 
   openSubscribeModal() {
-	this.commonService.setLocalStorageValue(LocalStorageKey.IsSubscribed, true);
-	this.commonService.setLocalStorageValue(LocalStorageKey.SubscribtionDetails, this.localSubscriptionDetails);
-	location.reload();
+	  if(  this.isSubscribed==false)
+	  {
+		this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceSubscribed, true);
+		this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.localSubscriptionDetails);
+		this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
+		location.reload();
+	  }
+	  else
+	  {
+		this.commonService.removeLocalStorageValue(LocalStorageKey.IsSmartPerformanceSubscribed);
+		this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
+		this.commonService.removeLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails);
+
+		location.reload();
+	  }
+	
     // this.modalService.open(ModalSmartPerformanceSubscribeComponent, {
     //     backdrop: 'static',
     //     size: 'lg',

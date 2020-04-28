@@ -33,7 +33,7 @@ import { PageDeviceSettingsComponent } from 'src/app/components/pages/page-devic
 import { PageDeviceUpdatesComponent } from 'src/app/components/pages/page-device-updates/page-device-updates.component';
 import { PageQuestionsComponent } from 'src/app/components/pages/page-questions/page-questions.component';
 import { PageSmartAssistComponent } from 'src/app/components/pages/page-smart-assist/page-smart-assist.component';
-import { PageSupportDetailComponent } from 'src/app/components/pages/page-support-detail/page-support-detail.component';
+import { PageSupportDetailModule } from 'src/app/components/pages/page-support-detail/page-support-detail.module';
 import { PowerSmartSettingsComponent } from 'src/app/components/widgets/power-smart-settings/power-smart-settings.component';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared.module';
@@ -126,7 +126,6 @@ import { AntiTheftComponent } from 'src/app/components/pages/page-smart-assist/a
 		PageDeviceUpdatesComponent,
 		PageQuestionsComponent,
 		PageSmartAssistComponent,
-		PageSupportDetailComponent,
 		PowerSmartSettingsComponent,
 		SmartStandbyComponent,
 		BatteryGaugeResetComponent,
@@ -168,7 +167,8 @@ import { AntiTheftComponent } from 'src/app/components/pages/page-smart-assist/a
 		PageLayoutModule,
 		SettingsPageLayoutModule,
 		BacklightModule,
-		UiCustomSliderModule
+		UiCustomSliderModule,
+		PageSupportDetailModule
 	],
 	exports: [
 		CommonModule,

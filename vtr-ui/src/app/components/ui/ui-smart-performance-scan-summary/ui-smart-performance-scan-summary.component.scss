@@ -306,6 +306,7 @@ vtr-ui-smart-performance-scan-summary {
                         background-color: transparent;
 						border-bottom: none;
 						.btn-link{
+							width: 100%;
 							&:hover, &:focus{
 								text-decoration: none;
 							}
@@ -342,7 +343,11 @@ vtr-ui-smart-performance-scan-summary {
                             .nav-tabs {
                                 border-bottom: none;
                                 .nav-item {
-                                    width: 20%;
+									width: 20%;
+									@media #{$breakpoint_sm}{
+										max-width: 20%;
+										width: auto;
+									}
                                     .nav-link {
                                         border: none;
                                         border-left: 1px solid $grey_light;
@@ -350,6 +355,7 @@ vtr-ui-smart-performance-scan-summary {
 										color: $dark;
 										@media #{$breakpoint_xl}{
 											padding: 0.5rem 0.2rem;
+											height: 4.5rem;
 										}                                       
 										&.active {
                                             background-color: transparent;
@@ -366,6 +372,8 @@ vtr-ui-smart-performance-scan-summary {
                             .icon-box {
 								@media #{$breakpoint_sm}{
 									width: auto;
+									height: 3rem;
+									align-items: center;
 								}
 								 p{
                                     font-size: 1.1rem;
@@ -376,6 +384,7 @@ vtr-ui-smart-performance-scan-summary {
 										font-size: 1rem;
 										line-height: 1.2rem;
 										max-width: 100%;
+										margin-top: 0;
 									}
                                 }
                                 .icon {
@@ -387,8 +396,9 @@ vtr-ui-smart-performance-scan-summary {
 										margin-right: 0.5rem;
 									}
 									@media #{$breakpoint_sm}{
-										font-size: $fontsize_md;
+										font-size: $fontsize_xs;
 										margin-right: 0.2rem;
+										margin-top: -0.6rem;
 									}
                                 }
                             }
@@ -409,7 +419,7 @@ vtr-ui-smart-performance-scan-summary {
                         }
                     }
                     .status-text{
-						margin-top: 5rem;
+						margin-top: 2.2rem;
 						@media #{$breakpoint_sm}{
 							margin-top: 0rem;
 						}
