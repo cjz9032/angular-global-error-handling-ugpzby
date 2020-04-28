@@ -11,8 +11,14 @@
 				<div class="row card mb-5" [dir]="'dir' | translate">
 					<div class="col left-container">
 						<div class="row description-container">
-							<div class="col" id="{{'support-detail-qa-description-'+ qa.id}}" role="text"
-								[innerHTML]="qa.description">
+							<div class="col" id="{{'support-detail-qa-description-'+ qa.id}}" role="text" [ngSwitch]="qa.id">
+								<vtr-support-detail-article-a *ngSwitchCase="'1'" [langCode]="langCode"></vtr-support-detail-article-a>
+								<vtr-support-detail-article-b *ngSwitchCase="'2'" [langCode]="langCode"></vtr-support-detail-article-b>
+								<vtr-support-detail-article-c *ngSwitchCase="'3'"></vtr-support-detail-article-c>
+								<vtr-support-detail-article-d *ngSwitchCase="'4'" [langCode]="langCode"></vtr-support-detail-article-d>
+								<vtr-support-detail-article-e *ngSwitchCase="'5'" [langCode]="langCode"></vtr-support-detail-article-e>
+								<vtr-support-detail-article-f *ngSwitchCase="'6'" [langCode]="langCode"></vtr-support-detail-article-f>
+								<vtr-support-detail-article-a *ngSwitchDefault [langCode]="langCode"></vtr-support-detail-article-a>
 							</div>
 						</div>
 						<div class="row inset-content align-items-center justify-content-center py-3 invisible"
@@ -21,13 +27,13 @@
 							<div class="col-auto ml-auto px-0">
 								<div class="icon-bkg text-center cursor-pointer"
 									(click)="qa.like=!qa.like">
-									<fa-icon [icon]="['far','thumbs-up']"></fa-icon>
+									<fa-icon [icon]="['fal','thumbs-up']"></fa-icon>
 								</div>
 							</div>
 							<div class="col-auto px-2 ">
 								<div class="icon-bkg text-center cursor-pointer"
 									(click)="qa.dislike=!qa.dislike">
-									<fa-icon [icon]="['far','thumbs-down']"></fa-icon>
+									<fa-icon [icon]="['fal','thumbs-down']"></fa-icon>
 								</div>
 							</div>
 							<div class="col-auto mr-auto px-0 text">

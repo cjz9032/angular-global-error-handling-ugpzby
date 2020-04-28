@@ -34,10 +34,10 @@ const dolbyModeResponse = {
 	supporedModes: ['Dynamic', 'Movie', 'Music', 'Games', 'Voip'],
 	currentMode: 'Dynamic',
 	isAudioProfileEnabled: false,
-    eCourseStatus: 'True',
-    voIPStatus: 'True',
-    entertainmentStatus: 'True',
-    driverAvailability: true
+	eCourseStatus: 'True',
+	voIPStatus: 'True',
+	entertainmentStatus: 'True',
+	driverAvailability: true
 };
 const microphoneProperties = {
 	available: true,
@@ -119,7 +119,68 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		expect(spy).toHaveBeenCalled();
 	});
 
-	
+	it("onRightIconClick", () => {
+		component.onRightIconClick('', '');
+	});
+
+	it("toggleToolTip", () => {
+		let tooltip = { isOpen() { return true; }, close() { } }
+		component.toggleToolTip(tooltip, false);
+	});
+
+	it("toggleToolTip", () => {
+		let tooltip = { isOpen() { return false; }, open() { } }
+		component.toggleToolTip(tooltip, true);
+	});
+
+	it("onDolbyAudioToggleOnOff", () => {
+		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
+		component = fixture.componentInstance;
+		audioService = TestBed.get(AudioService);
+		commonService = TestBed.get(CommonService);
+		audioService.isShellAvailable = true;
+		component.dolbyModeResponse = dolbyModeResponse;
+		const event = { switchValue: true };
+		const spy = spyOn(audioService, 'setDolbyAudioState').and.returnValue(Promise.reject(true));
+		component.onDolbyAudioToggleOnOff(event);
+		expect(audioService.setDolbyAudioState).toHaveBeenCalled();
+	});
+
+	it("onVoipCheckboxChange", () => {
+		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
+		component = fixture.componentInstance;
+		audioService = TestBed.get(AudioService);
+		commonService = TestBed.get(CommonService);
+		audioService.isShellAvailable = true;
+		component.dolbyModeResponse = dolbyModeResponse;
+		const spy = spyOn(audioService, 'setDolbyAudioProfileState').and.returnValue(Promise.reject(true));
+		component.onVoipCheckboxChange(true);
+		expect(audioService.setDolbyAudioProfileState).toHaveBeenCalled();
+	});
+
+	it("onEntertainmentCheckboxChange", () => {
+		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
+		component = fixture.componentInstance;
+		audioService = TestBed.get(AudioService);
+		commonService = TestBed.get(CommonService);
+		audioService.isShellAvailable = true;
+		component.dolbyModeResponse = dolbyModeResponse;
+		const spy = spyOn(audioService, 'setDolbyAudioProfileState').and.returnValue(Promise.reject(true));
+		component.onEntertainmentCheckboxChange(true);
+		expect(audioService.setDolbyAudioProfileState).toHaveBeenCalled();
+	});
+
+	it("onToggleOfeCourseAutoOptimization", () => {
+		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
+		component = fixture.componentInstance;
+		audioService = TestBed.get(AudioService);
+		commonService = TestBed.get(CommonService);
+		audioService.isShellAvailable = true;
+		component.dolbyModeResponse = dolbyModeResponse;
+		const spy = spyOn(audioService, 'setDolbyAudioProfileState').and.returnValue(Promise.reject(true));
+		component.onToggleOfeCourseAutoOptimization(true);
+		expect(audioService.setDolbyAudioProfileState).toHaveBeenCalled();
+	});
 
 	it('should call initDolbyAudioFromCache - else block', () => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);

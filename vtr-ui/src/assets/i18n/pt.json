@@ -2724,6 +2724,7 @@
         "ssoErrorAccountPluginNotExist": "Plug-in em falta. Se estiver ligado à Internet, iremos restaurar automaticamente o plug-in em segundo plano. Isto poderá demorar algum tempo, tente novamente mais tarde."
     },
     "faq": {
+        "pageTitle": "Detalhes do suporte",
         "footer": {
             "title": "Não encontrando o que você está procurando?",
             "description": "Precisa de suporte adicional? Não hesite em contactar-nos através de:",
@@ -2732,354 +2733,146 @@
         },
         "question1": {
             "title": "Faça uma cópia de segurança e restaure os seus ficheiros",
-            "description": "<div>    <div class='faqInFs4Fb'>        Faça uma cópia de segurança e restaure os seus ficheiros    </div>    <hr />    <div class='faqInMb7'>        É sempre uma boa ideia ter uma cópia de segurança. Mantenha cópias dos seus ficheiros em outra unidade caso aconteça algo aos originais.    </div>    <div class='faqInFs3Fb'>        Configurar a cópia de segurança    </div>    <hr />    <div class='mb-5'>        Selecione o botão <span class='faqInFb'>Iniciar</span>, selecione <span class='faqInFb'>Definições</span> > <span class='faqInFb'>Atualização e segurança</span> > <span class='faqInFb'>Cópia de segurança</span> > <span class='faqInFb'>Adicionar uma unidade</span> , e, em seguida, escolha uma unidade externa ou local de rede para as suas cópias de segurança.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Configuração concluída! A cada, será feita uma cópia de segurança de tudo na sua pasta de utilizador (C:\\Users\\o seu nome de utilizador). Para alterar os ficheiros ou a frequência da cópia de segurança, vá a <span class='faqInFb'>Mais Opções</span>.    </div>    <div class='faqInFs3Fb'>        Restaurar os Ficheiros    </div>    <div class='mb-5'>        Caso lhe falte um ficheiro ou pasta importante, pode recuperá-lo através do seguinte procedimento:    </div>    <div>        <div class='mb-3'>1. Introduza <span class='faqInFb'>Restaurar ficheiros</span> na caixa de pesquisa da barra de tarefas e, em seguida, selecione <span class='faqInFb'> Restaurar os ficheiros com o Histórico de Ficheiros</span>.</div>        <div class='mb-3'>2. Procure o ficheiro de que precisa e, em seguida, utilize as setas para ver todas as versões do mesmo</div>        <div class='mb-3'>3. Quando encontrar a versão pretendida, selecione <span class='faqInFb'>Restaurar</span> para o guardar na sua localização original. Para a guardar num local diferente, prima sem soltar (ou clique com o botão direito do rato) <span class='faqInFb'>Restaurar</span>, selecione <span class='faqInFb'>Restaurar para</span>, e escolha outra localização.</div>    </div></div>",
-            "para1": {
-                "line1": "It's always good to have a backup.",
-                "line2": "Keep copies of your files on another drive in case something happens to the originals."
-            },
-            "heading1": "Set up your backup",
-            "para2": {
-                "span1": "Select the",
-                "span2": "Start",
-                "span3": "button, select",
-                "span4": "Settings",
-                "span5": "Update & security",
-                "span6": "Backup",
-                "span7": "Add a drive",
-                "span8": ", and then choose an external drive or network location for your backups."
-            },
-            "para3": {
-                "span1": "All set.",
-                "span2": "Every hour, we'll back up everything in your user folder (C:\\Users\\username).",
-                "span3": "To change which files get backed up or how often backups happen, go to",
-                "span4": "More options."
-            },
-            "heading2": "Restore your files",
-            "para4": "If you're missing an important file or folder, here's how to get it back:",
-            "para5": {
-                "span1": "1. Type",
-                "span2": "Restore files",
-                "span3": "in the search box on the taskbar, and then select",
-                "span4": "Restore your files with File History.",
-                "span5": "2. Look for the file you need, then use the arrows to see all its versions",
-                "span6": "3. When you find the version you want, select",
-                "span7": "Restore",
-                "span8": "to save it in its original location. To save it in a different place, press and hold (or right-click)",
-                "span9": "Restore",
-                "span10": ", select",
-                "span11": "Restore to",
-                "span12": "and then choose a new location."
-            }
+            "para1": "É sempre uma boa ideia ter uma cópia de segurança. Mantenha cópias dos seus ficheiros em outra unidade caso aconteça algo aos originais.",
+			"heading1": "Configurar a cópia de segurança",
+			"para2": "Selecione o botão Iniciar, selecione Definições > Atualização e segurança > Cópia de segurança > Adicionar uma unidade , e, em seguida, escolha uma unidade externa ou local de rede para as suas cópias de segurança.",
+			"para3": "Configuração concluída! A cada, será feita uma cópia de segurança de tudo na sua pasta de utilizador (C:\\Users\\o seu nome de utilizador). Para alterar os ficheiros ou a frequência da cópia de segurança, vá a Mais Opções.",
+			"heading2": "Restaurar os Ficheiros",
+			"para4": "Caso lhe falte um ficheiro ou pasta importante, pode recuperá-lo através do seguinte procedimento:",
+			"para5": {
+				"div1": "1. Introduza Restaurar ficheiros na caixa de pesquisa da barra de tarefas e, em seguida, selecione  Restaurar os ficheiros com o Histórico de Ficheiros.",
+				"div2": "2. Procure o ficheiro de que precisa e, em seguida, utilize as setas para ver todas as versões do mesmo.",
+				"div3": "3. Quando encontrar a versão pretendida, selecione Restaurar para o guardar na sua localização original. Para a guardar num local diferente, prima sem soltar (ou clique com o botão direito do rato) Restaurar, selecione Restaurar para, e escolha outra localização."
+			}
         },
         "question2": {
-            "title": "Como repor o PC",
-            "description": "<div><div class='faqInFs4Fb'>Como Repor o Windows 10</div><hr><div class='faqInP5'>Se tiver problemas no seu PC com Windows 10 ou o estiver a vender, deve fazer a sua reposição. A execução de uma reposição permite optar por manter ou remover os ficheiros, remove todas as aplicações e definições, e instala uma cópia renovada do Windows. Isto também pode corrigir muitos problemas, como um desempenho lento.</div><div class='faqInFs25FbP10'>1. Abra a aplicação Definições</div><div class='faqInP5'>Prima o botão Iniciar Imagem localizado na parte inferior esquerda do ecrã e escolha a engrenagem de definições Imagem.</div><div class='faqInP5'><img src='assets/images/qa/2.1.jpg' /></div><div class='faqInFs25FbP10'>2. Selecione Atualização e segurança na lista de categorias</div><div class='faqInP5'><img src='assets/images/qa/2.2.jpg' /></div><div class='faqInFs25FbP10'>3. Navegue para Recuperação no painel esquerdo</div><div class='faqInP5'><img src='assets/images/qa/2.3.jpg' /></div><div class='faqInFs25FbP10'>4. Inicie o processo de reposição</div><div class='faqInP5'>No título “Repor este PC” na parte superior, faça clique ou toque no botão Introdução.</div><div class='faqInP5'><img src='assets/images/qa/2.4.jpg' /></div><div class='faqInFs25FbP10'>5. Escolha se pretende manter os ficheiros</div><div class='faqInP5'>Após a reposição, pode iniciar sessão na sua conta Microsoft. Quaisquer aplicações para Windows Store compradas com esta conta serão reinstaladas.</div><div class='faqInP5'><ul><li>Manter os meus ficheiros remove as suas aplicações e definições, mas mantém todos os seus ficheiros pessoais.</li><li>Remover tudo apaga as suas aplicações, definições e ficheiros pessoais. Se não tiver uma cópia de segurança dos seus ficheiros, poderá premir cancelar, fazer uma cópia de segurança dos mesmos e voltar a iniciar este processo.</li></ul></div><div class='faqInP5'><img src='assets/images/qa/2.5.jpg' /></div><div class='faqInFs25FbP10'>6. Pode escolher diferentes definições adicionais</div><div class='faqInP5'>Isto só será mostrado se tiver selecionado “Remover tudo” no passo anterior.</div><div class='faqInP5'><img src='assets/images/qa/2.6.1.jpg' /></div><div class='faqInP5'><img src='assets/images/qa/2.6.2.jpg' /></div><div class='faqInFs25FbP10'>7.Leia a descrição geral e prima Repor quando estiver pronto para continuar.</div><div class='faqInP5'>O Windows prepara a reposição do seu dispositivo. Basta aguardar até ser apresentado um ecrã azul.</div><div class='faqInFs25FbP10'>8. Quando for apresentado “Escolher uma opção”, selecione Continuar.</div><div class='faqInP5'>O Windows é reiniciado e inicia a reposição. O seu PC pode ser reiniciado várias vezes enquanto a reposição decorrer.</div><hr><div class='faqInFs25FbP10'>Perguntas e Respostas da Comunidade</div><div class='faqInP5'><b>Se optar por remover tudo, todas as unidades no meu computador ou a ele ligadas são apagadas ou apenas aquela em que o Windows 10 está a ser executado?</b></div><div class='faqInP5'><i>Resposta da Comunidade</i></div><div class='faqInP10'>Só apaga a unidade do Windows 10 OS (normalmente, a unidade C:). As outras unidades no computador ou a ele ligadas não serão afetadas.</div><div class='faqInP5'><b>Como posso executar este procedimento se o meu ecrã estiver danificado?</b></div><div class='faqInP5'><i>Resposta da Comunidade</i></div><div class='faqInP10'>Infelizmente, não é possível. Terá de obter um novo ecrã.</div><div class='faqInP5'><b>Se tiver sessão iniciada em qualquer sítio da Web, esse histórico também será removido?</b></div><div class='faqInP5'><i>Resposta da Comunidade</i></div><div class='faqInP10'>Sim, consoante o navegador que estiver a utilizar. Para remover o histórico do navegador, basta ir para as definições no navegador e eliminar o histórico. Também pode utilizar os modos incógnitos para evitar que o seu histórico seja guardado.</div><div class='faqInP5'><b>Se optar por remover tudo, também a minha palavra-passe será reposta?</b></div><div class='faqInP5'><i>Resposta da Comunidade</i></div><div class='faqInP10'>Sim, depois de repor o computador com Windows 10, removerá todos os dados do utilizador. Inclui os documentos, palavras-passe armazenadas, imagens, definições preferenciais, informações do navegador e dados das aplicações.</div><hr><div class='faqInP5'>Referência</div><div class='faqInP5'>Como Repor o Windows 10 – WikiHow.</div></div>",
-            "heading1": "Symptom",
-            "para1": {
-                "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
-                "span2": "Windows can “refresh” your PC so it’s more like a fresh install without deleting your personal files."
-            },
-            "para2": "Refresh your PC, Here is what will happen: your files and personalized settings won’t change",
-            "para3": {
-                "span1": "Your PC settings will be changed back to its defaults",
-                "span2": "Apps from windows store will be kept",
-                "span3": "Apps you installed from disc or website will be removed",
-                "span4": "A list of removed files will be saved on your desktop"
-            },
-            "heading2": "Affected Brands",
-            "para4": "All Desktop and Laptops",
-            "heading3": "Operation System",
-            "para5": "Windows 8, 8.1 & 10",
-            "heading4": "Solution",
-            "para6": "Windows 8/8.1",
-            "para7": {
-                "span1": {
-                    "line1": "Tap or click",
-                    "line2": "Settings "
-                },
-                "span2": {
-                    "line1": "Tap or click",
-                    "line2": "Update and recovery"
-                },
-                "span3": {
-                    "line1": "Tap or click",
-                    "line2": "Recovery"
-                },
-                "span4": {
-                    "line1": "Under Refresh your PC without affecting your files, tap or click",
-                    "line2": "Get started."
-                },
-                "span5": {
-                    "line1": "Click",
-                    "line2": "\"Next\"."
-                },
-                "span6": {
-                    "line1": "Click",
-                    "line2": "\"Refresh\"",
-                    "line3": "to start the refresh process."
-                },
-                "span7": "Once the refresh process is done, you can find a Removed Apps list on the desktop",
-                "span8": "You can find the removed apps while refreshing your system"
-            },
-            "para8": "Windows 10",
-            "para9": {
-                "span1": {
-                    "line1": "Search for",
-                    "line2": "refresh",
-                    "line3": "in the search tool available in the Start menu"
-                },
-                "span2": {
-                    "line1": "Click on",
-                    "line2": "\"Refresh your PC without affecting your files\"",
-                    "line3": " in the search results as shown below."
-                },
-                "span3": {
-                    "line1": "Click on the",
-                    "line2": "Get started",
-                    "line3": "button just below the heading",
-                    "line4": "\"Refresh your PC without affecting your files\"",
-                    "line5": "to start refreshing your Windows 10 PC."
-                }
-            },
-            "header5": "Additional Information",
-            "para10": "In most cases, once you start to refresh your PC, it’ll finish on its own. However, if Windows needs missing files, you’ll be asked to insert recovery media, which is typically a DVD disc or thumb drive. If that happens, what you’ll need depends on your PC.",
-            "para11": "If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact Microsoft Support."
+			"title": "Como Repor o Windows 10",
+			"para1": "Se tiver problemas no seu PC com Windows 10 ou o estiver a vender, deve fazer a sua reposição. A execução de uma reposição permite optar por manter ou remover os ficheiros, remove todas as aplicações e definições, e instala uma cópia renovada do Windows. Isto também pode corrigir muitos problemas, como um desempenho lento.",
+            "heading1": "1. Abra a aplicação Definições",
+            "para2": "Prima o botão Iniciar Imagem localizado na parte inferior esquerda do ecrã e escolha a engrenagem de definições Imagem.",
+            "heading2": "2. Selecione Atualização e segurança na lista de categorias",
+            "heading3": "3. Navegue para Recuperação no painel esquerdo",
+            "heading4": "4. Inicie o processo de reposição",
+            "para3": "No título “Repor este PC” na parte superior, faça clique ou toque no botão Introdução.",
+            "heading5": "5. Escolha se pretende manter os ficheiros",
+            "para4": "Após a reposição, pode iniciar sessão na sua conta Microsoft. Quaisquer aplicações para Windows Store compradas com esta conta serão reinstaladas.",
+            "para5": {
+				"li1": "Manter os meus ficheiros remove as suas aplicações e definições, mas mantém todos os seus ficheiros pessoais.",
+				"li2": "Remover tudo apaga as suas aplicações, definições e ficheiros pessoais. Se não tiver uma cópia de segurança dos seus ficheiros, poderá premir cancelar, fazer uma cópia de segurança dos mesmos e voltar a iniciar este processo."
+			},
+			"heading6": "6. Pode escolher diferentes definições adicionais",
+            "para6": "Isto só será mostrado se tiver selecionado “Remover tudo” no passo anterior.",
+            "heading7": "7.Leia a descrição geral e prima Repor quando estiver pronto para continuar.",
+            "para7": "O Windows prepara a reposição do seu dispositivo. Basta aguardar até ser apresentado um ecrã azul.",
+            "heading8": "8. Quando for apresentado “Escolher uma opção”, selecione Continuar.",
+            "para8": "O Windows é reiniciado e inicia a reposição. O seu PC pode ser reiniciado várias vezes enquanto a reposição decorrer.",
+            "heading9": "Perguntas e Respostas da Comunidade",
+            "communityAnswer": "Resposta da Comunidade",
+			"q1": "Se optar por remover tudo, todas as unidades no meu computador ou a ele ligadas são apagadas ou apenas aquela em que o Windows 10 está a ser executado?",
+            "a1": "Só apaga a unidade do Windows 10 OS (normalmente, a unidade C:). As outras unidades no computador ou a ele ligadas não serão afetadas.",
+            "q2": "Como posso executar este procedimento se o meu ecrã estiver danificado?",
+            "a2": "Infelizmente, não é possível. Terá de obter um novo ecrã.",
+            "q3": "Se tiver sessão iniciada em qualquer sítio da Web, esse histórico também será removido?",
+            "a3": "Sim, consoante o navegador que estiver a utilizar. Para remover o histórico do navegador, basta ir para as definições no navegador e eliminar o histórico. Também pode utilizar os modos incógnitos para evitar que o seu histórico seja guardado.",
+            "q4": "Se optar por remover tudo, também a minha palavra-passe será reposta?",
+            "a4": "Sim, depois de repor o computador com Windows 10, removerá todos os dados do utilizador. Inclui os documentos, palavras-passe armazenadas, imagens, definições preferenciais, informações do navegador e dados das aplicações.",
+            "para9": "Referência",
+            "para10": "Como Repor o Windows 10 – WikiHow."
         },
         "question3": {
-            "title": "Como saber qual a CPU da sua máquina",
-            "description": "<div class='faqInFs4Fb'>    Como saber qual a CPU da sua máquina</div><hr><h3 class='faqInFs25FbP10'>Sintoma</h3><p>Os termos 32-bit e 64-bit referem-se à forma como o processador de um computador (também chamado de CPU) trata a informação. A versão de 64 bits do Windows lida com grandes quantidades de memória de acesso aleatório (RAM) de forma mais eficaz do que um sistema de 32 bits.</p><h3 class='faqInFs25FbP10'>Marcas Afetadas</h3><p>O sintoma acima está associado, mas não limitado aos seguintes sistemas:</p><ul>    <li>Todos os computadores de secretária e portáteis</li></ul><h3 class='faqInFs25FbP10'>Sistema Operativo</h3><ul>    <li>Windows 7, 8, e 10</li></ul><h3 class='faqInFs25FbP10'>Solução</h3><p><strong><u>Windows 7 ou Vista</u></strong></p><ol>    <li>Abra o sistema clicando no <strong>Botão Iniciar </strong>Imagem do <strong>Botão Iniciar,</strong> Clique com o botão direito do rato em Computador e clique em Propriedades  </li>    <li>Em Sistema, é possível visualizar o tipo de sistema.</li></ol><p><strong><u>Windows 8 e Windows 10</u></strong></p><p><strong>Método 1:</strong> visualizar a janela do sistema no Painel de controlo</p><ol>    <li>Deslize o dedo para dentro a partir da extremidade direita do ecrã e toque em <strong>Procurar</strong>. Ou, se estiver a usar um rato, aponte para o canto inferior direito do ecrã e clique em <strong>Procurar.</strong></li>    <li>Introduza <strong>Sistema</strong> na caixa de pesquisa e, em seguida, toque ou clique em <strong>Definições.</strong></li>    <li>Toque ou clique em <strong>Sistema</strong></li>    <li>Se estiver a executar uma versão de 64 bits do Windows 8, é mostrado <strong>Sistema operativo de 64 bits</strong> no campo Tipo de sistema sob o cabeçalho Sistema. Se estiver a executar uma versão de 32<strong> bits do Windows</strong> <strong>8,</strong> é mostrado <strong>Sistema operativo de 32 bits </strong>no campo Tipo de sistema sob o cabeçalho Sistema.<br />  </li></ol><p><strong>Método 2</strong>: ver a janela System Information Viewer (Visualizador de informações sobre o sistema)</p><ol>    <li>Deslize o dedo para dentro a partir da extremidade direita do ecrã e toque em <strong>Procurar</strong>. Ou, se estiver a usar um rato, aponte para o canto inferior direito do ecrã e clique em <strong>Procurar.</strong></li>    <li>Na caixa de pesquisa, introduza <strong>informação do sistema</strong></li>    <li>Toque ou clique em<strong> Sistema</strong>, toque ou clique em <strong>Informação do sistema,</strong> e depois clique em <strong>Resumo do sistema.</strong></li>    <li>Se estiver a executar uma versão de <strong>64 bits </strong>do Windows 8<strong>, </strong> o PC baseado em x64 é mostrado no campo <strong>Tipo de sistema</strong> sob o cabeçalho Item. <br /> <br /> Se estiver a executar uma versão de<strong> 32 bits</strong> do Windows 8, o PC baseado em x86 é mostrado no campo <strong>Tipo de sistema</strong> sob o cabeçalho Item.  </li></ol><p> </p>",
-            "heading1": "Symptom",
-            "para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
-            "heading2": "Affected Brands",
-            "para2": "The above symptom is associated with, but not limited to, the following systems:",
-            "para3": "All Desktop and Laptops",
-            "heading3": "Operating System",
-            "para4": "Windows 7, 8, 10",
-            "heading4": "Solution",
-            "para5": "Windows 7 or Vista",
-            "para6": {
-                "span1": {
-                    "line1": "Open System by clicking the",
-                    "line2": "Start button",
-                    "line3": "Picture of the Start button, right-clicking Computer, and then clicking Properties"
-                },
-                "span2": "Under System, you can view the system type."
-            },
-            "para7": "Windows 8 and Windows 10",
-            "para8": {
-                "span1": {
-                    "line1": "Method 1:",
-                    "line2": "View the System window in Control Panel"
-                },
-                "span2": {
-                    "line1": "Swipe in from the right edge of the screen, and then tap",
-                    "line2": "Search.",
-                    "line3": "Or, if you are using a mouse, point to the lower-right corner of the screen, and then click",
-                    "line4": "Search."
-                },
-                "span3": {
-                    "line1": "Type",
-                    "line2": "system",
-                    "line3": "in the search box, and then tap or click",
-                    "line4": "Settings."
-                },
-                "span4": {
-                    "line1": "Tap or click",
-                    "line2": "System"
-                },
-                "span5": {
-                    "line1": "If you are running a 64-bit version of Windows 8,",
-                    "line2": "64-bit Operating System",
-                    "line3": "is displayed in the System type field under the System heading.",
-                    "line4": "If you are running a 32",
-                    "line5": "-bit version of Windows 8, 32-bit Operating",
-                    "line6": "System is displayed in the System type field under the System heading."
-                },
-                "span6": {
-                    "line1": "Method 2:",
-                    "line2": "View the System Information window"
-                },
-                "span7": {
-                    "line1": "Swipe in from the right edge of the screen, and then tap",
-                    "line2": "Search.",
-                    "line3": "Or, if you are using a mouse, point to the lower-right corner of the screen, and then click",
-                    "line4": "Search."
-                },
-                "span8": {
-                    "line1": "In the search box, type",
-                    "line2": "system information"
-                },
-                "span9": {
-                    "line1": "Tap or click",
-                    "line2": "System",
-                    "line3": ", tap or click",
-                    "line4": "System Information,",
-                    "line5": "and then click",
-                    "line6": "System Summary."
-                },
-                "span10": {
-                    "line1": "If you are running a",
-                    "line2": 64,
-                    "line3": "bit version of Windows 8, 32-bit Operating,",
-                    "line4": "x64-based PC is displayed in the",
-                    "line5": "System type",
-                    "line6": "field under the Item heading."
-                }
-            },
-            "para9": {
-                "line1": "If you are running a",
-                "line2": "32-bit",
-                "line3": "version of Windows 8,x86-based PC is displayed in the",
-                "line4": "System type",
-                "line5": "field under the Item heading."
-            }
+			"title": "Como saber qual a CPU da sua máquina",
+			"heading1": "Sintoma",
+            "para1": "Os termos 32-bit e 64-bit referem-se à forma como o processador de um computador (também chamado de CPU) trata a informação. A versão de 64 bits do Windows lida com grandes quantidades de memória de acesso aleatório (RAM) de forma mais eficaz do que um sistema de 32 bits.",
+            "heading2": "Marcas Afetadas",
+            "para2": "O sintoma acima está associado, mas não limitado aos seguintes sistemas:",
+            "para3": "Todos os computadores de secretária e portáteis",
+            "heading3": "Sistema Operativo",
+            "para4": "Windows 7, 8, e 10",
+            "heading4": "Solução",
+            "para5": "Windows 7 ou Vista",
+			"para6": "Abra o sistema clicando no <strong>Botão Iniciar </strong>Imagem do <strong>Botão Iniciar,</strong> Clique com o botão direito do rato em Computador e clique em Propriedades.",
+            "para7": "Em Sistema, é possível visualizar o tipo de sistema.",
+            "para8": "Windows 8 e Windows 10",
+			"para9": "<strong>Método 1:</strong> visualizar a janela do sistema no Painel de controlo",
+            "para10": "Deslize o dedo para dentro a partir da extremidade direita do ecrã e toque em <strong>Procurar</strong>. Ou, se estiver a usar um rato, aponte para o canto inferior direito do ecrã e clique em <strong>Procurar.</strong>",
+            "para11": "Introduza <strong>Sistema</strong> na caixa de pesquisa e, em seguida, toque ou clique em <strong>Definições.</strong>",
+            "para12": "Toque ou clique em <strong>Sistema</strong>.",
+            "para13": "Se estiver a executar uma versão de 64 bits do Windows 8, é mostrado <strong>Sistema operativo de 64 bits</strong> no campo Tipo de sistema sob o cabeçalho Sistema. Se estiver a executar uma versão de 32<strong> bits do Windows</strong> <strong>8,</strong> é mostrado <strong>Sistema operativo de 32 bits </strong>no campo Tipo de sistema sob o cabeçalho Sistema.<br />  ",
+            "para14": "<strong>Método 2</strong>: ver a janela System Information Viewer (Visualizador de informações sobre o sistema)",
+            "para15": "Deslize o dedo para dentro a partir da extremidade direita do ecrã e toque em <strong>Procurar</strong>. Ou, se estiver a usar um rato, aponte para o canto inferior direito do ecrã e clique em <strong>Procurar.</strong>",
+            "para16": "Na caixa de pesquisa, introduza <strong>informação do sistema</strong>.",
+            "para17": "Toque ou clique em<strong> Sistema</strong>, toque ou clique em <strong>Informação do sistema,</strong> e depois clique em <strong>Resumo do sistema.</strong>",
+            "para18": "Se estiver a executar uma versão de <strong>64 bits </strong>do Windows 8<strong>, </strong> o PC baseado em x64 é mostrado no campo <strong>Tipo de sistema</strong> sob o cabeçalho Item. Se estiver a executar uma versão de<strong> 32 bits</strong> do Windows 8, o PC baseado em x86 é mostrado no campo <strong>Tipo de sistema</strong> sob o cabeçalho Item.  "
         },
         "question4": {
-            "title": "Verificar a utilização de bateria da sua máquina",
-            "description": "<div class='faqInFs4Fb'>    Verificar a utilização de bateria da sua máquina</div><hr><h3 class='faqInFs25FbP10'>Sintoma</h3><p>O Windows 10 inclui um novo ecrã \"<strong>Uso da bateria\"</strong> que mostra o que está a gastar a bateria do seu portátil. Isso significa que lhe indicará exatamente quais as aplicações - tanto as aplicações de ambiente de trabalho como as \"universais\" do Windows 10 - que estão a usar demasiada energia.</p><h3 class='faqInFs25FbP10'>Marcas Afetadas</h3><ul>    <li>Computadores de secretária e portáteis da Lenovo</li></ul><h3 class='faqInFs25FbP10'>Sistemas Afetados</h3><ul>    <li>Tudo</li></ul><h3 class='faqInFs25FbP10'>Sistema Operativo</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Solução</h3><p>Esta funcionalidade é nova no Windows 10, e precisamos de a encontrar em primeiro lugar, pois não está guardada no seu habitual ecrã do <strong>Painel de controlo, </strong>esta funcionalidade está localizada na nova aplicação <strong>\"Definições\"</strong></p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Encontre o ecrã de uso da bateria</h3></p><p>1. Clique ou toque na opção <strong>\"Definições</strong>\" no menu iniciar</p><p>2. Em <strong>Definições </strong> selecione <strong>\"Sistema\"</strong> e depois selecione <strong> \"Poupança de bateria.\" <br /></strong><strong></strong></p><p><img src='assets/images/qa/4.1.jpg' /></p><p>3. Clique ou toque na ligação <strong>\"Uso da bateria\"</strong> sob este cabeçalho para ver mais detalhes. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analise o seu uso de energia</h3><p>4. Pode mudar para fazer com que o ecrã de uso da bateria exiba o uso da bateria das últimas 24 horas, das últimas 48 horas, ou da última semana</p><p>5. percentagens<strong>\"Sistema,\"</strong> \" <strong>Apresentar</strong> \" e \"<strong>Wi-Fi\"</strong>. Isso mostra quanta energia da bateria foi usada pelos processos do sistema, o ecrã,</p><p>6. As opções <strong>\"Em uso\"</strong> e <strong>\"Fundo\"</strong> mostram quanta energia é usada pelas aplicações enquanto as utiliza, em comparação com as aplicações em execução em segundo plano.</p><p>7. Se as aplicações estiverem a usar energia em segundo plano, pode clicar ou tocar em <strong> \"Alterar definições de aplicações em segundo plano\" </strong>e configurar as aplicações para não serem executadas em segundo plano. Isto só funciona para aplicações universais do Windows 10.</p><p>8. Desloque-se para baixo e verá uma lista de aplicações, esta é considerada a secção mais útil desta funcionalidade. Irá apresentar-lhe uma lista das aplicações que usaram carga da bateria nesse período, e mostrar-lhe-á a percentagem de bateria que cada aplicação usou</p><p><img src='assets/images/qa/4.2.jpg' /></p><p> </p>",
-            "heading1": "Symptom",
-            "para1": {
-                "span1": "Windows 10 includes a new",
-                "span2": "“Battery Use”",
-                "span3": "screen that shows you what’s draining your laptop’s juice. That means it’ll tell you exactly what apps–both desktop and Windows 10 “universal” apps–are using too much power."
-            },
-            "heading2": "Affected Brands",
-            "para2": "Lenovo laptops, desktops",
-            "heading3": "Affected Systems",
-            "para3": "All",
-            "heading4": "Operating System",
+			"title": "Verificar a utilização de bateria da sua máquina",
+			"heading1": "Sintoma",
+            "para1": "O Windows 10 inclui um novo ecrã \"<strong>Uso da bateria\"</strong> que mostra o que está a gastar a bateria do seu portátil. Isso significa que lhe indicará exatamente quais as aplicações - tanto as aplicações de ambiente de trabalho como as \"universais\" do Windows 10 - que estão a usar demasiada energia.",
+            "heading2": "Marcas Afetadas",
+            "para2": "Computadores de secretária e portáteis da Lenovo",
+            "heading3": "Sistemas Afetados",
+            "para3": "Tudo",
+            "heading4": "Sistema Operativo",
             "para4": "Windows 10",
-            "heading5": "Solution",
-            "para5": {
-                "line1": "This feature is new in Windows 10, we need to find this feature first as it is not stored in your traditional",
-                "line2": "control panel",
-                "line3": "view, this feature is located in the new",
-                "line4": "“Settings”",
-                "line5": "app"
-            },
-            "para6": {
-                "span1": "A. Find the Battery Use Screen",
-                "span2": {
-                    "line1": "1. Click or Tap the",
-                    "line2": "“Settings”",
-                    "line3": "option from the start menu"
-                },
-                "span3": {
-                    "line1": "2. In",
-                    "line2": "Settings",
-                    "line3": "select",
-                    "line4": "“System”",
-                    "line5": "and then select",
-                    "line6": "“Battery saver.”"
-                },
-                "span4": {
-                    "line1": "3. Click or tap the",
-                    "line2": "“Battery use”",
-                    "line3": "link under this heading to see more details."
-                },
-                "span5": "B. Analyze Your Power Usage",
-                "span6": "4. You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last from last week",
-                "span7": {
-                    "line1": 5,
-                    "line2": "“System”,",
-                    "line3": "“Display”,",
-                    "line4": "and",
-                    "line5": "“Wi-Fi”",
-                    "line6": "percentages. This shows how much battery power has been used by system processes, the display,"
-                },
-                "span8": {
-                    "line1": "6. The",
-                    "line2": "“In use”",
-                    "line3": "and",
-                    "line4": "“Background”",
-                    "line5": "options show how much power is used by applications while you’re using them, compared to applications running in the background."
-                },
-                "span9": {
-                    "line1": "7. If apps are using power in the background, you can click or tap the",
-                    "line2": "“Change background app settings”",
-                    "line3": "link and configure apps to not run in the background. This only works for universal Windows 10 apps."
-                },
-                "span10": "8. Scroll down further and you will see a list of applications, this is considered as the most useful section of this feature. It will display a list of the apps have used battery power in that period, and show you what percentage of your battery power each app has used."
-            }
+            "heading5": "Solução",
+            "para5": "Esta funcionalidade é nova no Windows 10, e precisamos de a encontrar em primeiro lugar, pois não está guardada no seu habitual ecrã do <strong>Painel de controlo, </strong>esta funcionalidade está localizada na nova aplicação <strong>\"Definições\"</strong>.",
+            "heading6": "A. Encontre o ecrã de uso da bateria",
+            "para6": "1. Clique ou toque na opção <strong>\"Definições</strong>\" no menu iniciar.",
+            "para7": "2. Em <strong>Definições </strong> selecione <strong>\"Sistema\"</strong> e depois selecione <strong> \"Poupança de bateria\"</strong>.",
+            "para8": "3. Clique ou toque na ligação <strong>\"Uso da bateria\"</strong> sob este cabeçalho para ver mais detalhes.",
+            "heading7": "B. Analise o seu uso de energia",
+            "para9": "4. Pode mudar para fazer com que o ecrã de uso da bateria exiba o uso da bateria das últimas 24 horas, das últimas 48 horas, ou da última semana.",
+            "para10": "5. percentagens<strong>\"Sistema,\"</strong> \" <strong>Apresentar</strong> \" e \"<strong>Wi-Fi\"</strong>. Isso mostra quanta energia da bateria foi usada pelos processos do sistema, o ecrã.",
+            "para11": "6. As opções <strong>\"Em uso\"</strong> e <strong>\"Fundo\"</strong> mostram quanta energia é usada pelas aplicações enquanto as utiliza, em comparação com as aplicações em execução em segundo plano.",
+            "para12": "7. Se as aplicações estiverem a usar energia em segundo plano, pode clicar ou tocar em <strong> \"Alterar definições de aplicações em segundo plano\" </strong>e configurar as aplicações para não serem executadas em segundo plano. Isto só funciona para aplicações universais do Windows 10.",
+            "para13": "8. Desloque-se para baixo e verá uma lista de aplicações, esta é considerada a secção mais útil desta funcionalidade. Irá apresentar-lhe uma lista das aplicações que usaram carga da bateria nesse período, e mostrar-lhe-á a percentagem de bateria que cada aplicação usou."
         },
         "question5": {
-            "title": "Utilizar o PC como tablet",
-            "description": "<div class='faqInFs4Fb'>    Utilizar o PC como tablet</div><hr><p>O modo Tablet torna o Windows mais intuitivo e fácil de usar quando tem um dispositivo com um ecrã tátil.</p><h3 class='faqInFs25FbP10'>Utilizar o modo tablet</h3><p>Para ativar o modo tablet, selecione <strong>Centro de Ação</strong> na barra de tarefas e selecione <strong>Modo tablet</strong>.</p><p> </p><p><img src='assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Nota</h3><p>Para descobrir se o seu dispositivo pode ativar automaticamente o modo tablet, pesquise o seu dispositivo no sítio web do fabricante. O suporte para esta funcionalidade depende do hardware, do controlador instalado e de como o dispositivo foi configurado pelo fabricante. </p><p> </p><p>No modo tablet, as aplicações abrem em ecrã inteiro, dando-lhe mais espaço para trabalhar. Para fechar uma aplicação, arraste-a para a parte inferior do ecrã.</p><p> </p><h3 class='faqInFs25FbP10'>Sugestão</h3><p>A barra de tarefas está disponível quando o seu PC está no modo tablet, mas pode ocultá-la se quiser mais espaço no ecrã. Selecione o botão <strong>Iniciar, </strong>selecione <strong>Definições </strong>> <strong>Sistema </strong>> <strong> Modo de tablet </strong>, e ligue <strong>Ocultar automaticamente a barra de tarefas no modo de tablet</strong>. Para ver a barra de tarefas oculta, deslize para cima a partir da parte inferior do ecrã ou use o rato para pairar sobre ela.</p><h3 class='faqInFs25FbP10'>Usar duas aplicações simultaneamente</h3><p>Para utilizar duas aplicações lado a lado no modo tablet, arraste uma aplicação aberta para baixo e para o lado. Verá onde se encaixa, e todas as aplicações abertas ao lado dela.</p><p>Nesta vista, também pode:</p><ul>    <li>Usar a borda partilhada entre duas aplicações para redimensionar as duas aplicações ao mesmo tempo.</li>    <li>Abrir uma nova aplicação na vista de tarefas&mdash;selecione <strong>Vista de tarefas</strong> na barra de tarefas, selecione uma aplicação e arraste-a para um lado para a encaixar no ecrã dividido.</li>    <li>Use o botão voltar na barra de tarefas para voltar a uma aplicação ou para abrir uma aplicação que estava a usar antes.</li></ul><p> </p>",
-            "heading1": "Use tablet mode",
-            "para2": {
-                "span1": "To turn on tablet mode, select",
-                "span2": "action center",
-                "span3": "on the taskbar, then select",
-                "span4": "Tablet mode."
-            },
-            "heading2": "Note",
-            "para3": "To find out if your device can automatically turn on tablet mode, search for your device on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, and how the device was set up by the manufacturer.",
-            "para4": "In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the screen.",
-            "heading3": "Tip",
-            "para5": {
-                "span1": "The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen.",
-                "span2": "Select the",
-                "span3": "Start",
-                "span4": "button, select",
-                "span5": " Settings",
-                "span6": "System",
-                "span7": "Tablet mode",
-                "span8": ", then turn on",
-                "span9": "Automatically hide the taskbar in tablet mode.",
-                "span10": "To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there."
-            },
-            "heading4": "Use two apps simultaneously",
-            "para6": "To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and you'll see any open apps next to it.",
-            "para7": "In this view, you can also:",
-            "para8": {
-                "span1": "Use the shared edge between two snapped apps to resize both apps at the same time.",
-                "span2": {
-                    "line1": "Open a new app from task view—select",
-                    "line2": "Task view",
-                    "line3": "on the taskbar, select an app, then drag it to one side to snap it into your divided screen."
-                },
-                "span3": "Use the back button on the taskbar to go back in an app, or to open an app that you were using before."
-            }
+			"title": "Utilizar o PC como tablet",
+			"para1": "O modo Tablet torna o Windows mais intuitivo e fácil de usar quando tem um dispositivo com um ecrã tátil.",
+            "heading1": "Utilizar o modo tablet",
+            "para2": "Para ativar o modo tablet, selecione <strong>Centro de Ação</strong> na barra de tarefas e selecione <strong>Modo tablet</strong>.",
+            "heading2": "Nota",
+            "para3": "Para descobrir se o seu dispositivo pode ativar automaticamente o modo tablet, pesquise o seu dispositivo no sítio web do fabricante. O suporte para esta funcionalidade depende do hardware, do controlador instalado e de como o dispositivo foi configurado pelo fabricante. ",
+            "para4": "No modo tablet, as aplicações abrem em ecrã inteiro, dando-lhe mais espaço para trabalhar. Para fechar uma aplicação, arraste-a para a parte inferior do ecrã.",
+            "heading3": "Sugestão",
+            "para5": "A barra de tarefas está disponível quando o seu PC está no modo tablet, mas pode ocultá-la se quiser mais espaço no ecrã. Selecione o botão <strong>Iniciar, </strong>selecione <strong>Definições </strong>> <strong>Sistema </strong>> <strong> Modo de tablet </strong>, e ligue <strong>Ocultar automaticamente a barra de tarefas no modo de tablet</strong>. Para ver a barra de tarefas oculta, deslize para cima a partir da parte inferior do ecrã ou use o rato para pairar sobre ela.",
+            "heading4": "Usar duas aplicações simultaneamente",
+            "para6": "Para utilizar duas aplicações lado a lado no modo tablet, arraste uma aplicação aberta para baixo e para o lado. Verá onde se encaixa, e todas as aplicações abertas ao lado dela.",
+            "para7": "Nesta vista, também pode:",
+            "para8": "Usar a borda partilhada entre duas aplicações para redimensionar as duas aplicações ao mesmo tempo.",
+            "para9": "Abrir uma nova aplicação na vista de tarefas—selecione <strong>Vista de tarefas</strong> na barra de tarefas, selecione uma aplicação e arraste-a para um lado para a encaixar no ecrã dividido.",
+            "para10": "Use o botão voltar na barra de tarefas para voltar a uma aplicação ou para abrir uma aplicação que estava a usar antes."
         },
         "question6": {
-            "title": "Conheça a Cortana, a sua assistente pessoal",
-            "description": "<div class='faqInFs4Fb'>    Conheça a Cortana, a sua assistente pessoal</div><hr><h3 class='faqInFs25FbP10'>O que é a Cortana?</h3><hr /><p>A Cortana é a sua agente digital. Irá ajudá-lo a fazer coisas.</p><p>Quanto mais utilizar a Cortana, mais personalizada será a sua experiência.</p><p>Para começar, insira uma pergunta na caixa de pesquisa ou selecione o microfone e fale com a Cortana. (Escrever funciona para todos os tipos de PCs, mas precisa de um microfone para falar.)</p><p>Se não souber o que dizer, verá sugestões no ecrã de bloqueio e na página inicial da Cortana ao selecionar a caixa de pesquisa na barra de tarefas.</p><p><img src='assets/images/qa/6.1.jpg' /></p><ol>    <li>Início 2. Bloco de Notas 3. Definições 4. Feedback</li></ol><p>Aqui estão algumas coisas que a Cortana pode fazer por si:</p><ul>    <li>Dar-lhe lembretes com base no tempo, lugares ou pessoas.</li>    <li>Seguir encomendas, equipas, interesses e voos.</li>    <li>Enviar emails e mensagens.</li>    <li>Gerir a sua agenda e mantê-lo atualizado.</li>    <li>Criar e gerir listas.</li>    <li>Conversar e jogar.</li>    <li>Encontrar fatos, ficheiros, lugares e informações.</li>    <li>Abrir qualquer aplicações no sistema.</li></ul><h3 class='faqInFs25FbP10'>Experimente isto: definir um lembrete</h3><hr /><p>Uma das coisas que Cortana pode fazer é mostrar-lhe lembretes. Pode lembrá-lo para fazer coisas, considerando o tempo, lugar, ou mesmo pessoas.</p><p>Por exemplo, escreva ou diga: “Lembra-me de felicitar a Tânia da próxima vez que ela telefonar.”</p><p>O lembrete aparecerá quando receber um telefonema da Tânia.</p><p>Bónus extra - se tiver um telemóvel Windows ou Cortana para iPhone ou Android, pode definir a Cortana para sincronizar notificações entre o seu PC e o telemóvel.</p><p><img src='assets/images/qa/6.2.jpg' /></p><h3 class='faqInFs25FbP10'>Olá Cortana?</h3><hr /><p>Configure a Cortana para ouvir sempre que disser “Olá, Cortana”. Selecione a caixa de pesquisa na barra de tarefas para abrir a página inicial da Cortana. Em seguida, selecione <strong>Definições</strong> e ligue <strong>Responder quando eu disser “Olá Cortana.”</strong></p><p><img src='assets/images/qa/6.3.jpg' /></p><p class='faqInFs25FbP10'>Nota</p><p>A Cortana só está disponível em certos países/regiões, e algumas funcionalidades da Cortana podem não estar disponíveis em todo o lado.</p><p> </p>",
-            "heading1": "What is Cortana?",
-            "para1": "Cortana is your digital agent. She'll help you get things done.",
-            "para2": "The more you use Cortana, the more personalized your experience will be.",
-            "para3": "To get started, type a question in the search box, or select the microphone  and talk to Cortana. (Typing works for all types of PCs, but you need a mic to talk.)",
-            "para4": "If you’re not sure what to say, you’ll see suggestions on your lock screen, and in Cortana home when you select the search box on the taskbar.",
-            "para5": " Home 2. Notebook 3. Settings 4. Feedback",
-            "para6": "Here are some things Cortana can do for you:",
-            "bulletset1": {
-                "span1": "Give you reminders based on time, places, or people.",
-                "span2": "Track packages, teams, interests, and flights.",
-                "span3": "Send emails and texts.",
-                "span4": "Manage your calendar and keep you up to date.",
-                "span5": "Create and manage lists.",
-                "span6": "Chit chat and play games.",
-                "span7": "Find facts, files, places, and info.",
-                "span8": "Open any app on your system."
+			"title": "Conheça a Cortana, a sua assistente pessoal",
+			"heading1": "O que é a Cortana?",
+            "para1": "A Cortana é a sua agente digital. Irá ajudá-lo a fazer coisas.",
+            "para2": "Quanto mais utilizar a Cortana, mais personalizada será a sua experiência.",
+            "para3": "Para começar, insira uma pergunta na caixa de pesquisa ou selecione o microfone e fale com a Cortana. (Escrever funciona para todos os tipos de PCs, mas precisa de um microfone para falar.)",
+            "para4": "Se não souber o que dizer, verá sugestões no ecrã de bloqueio e na página inicial da Cortana ao selecionar a caixa de pesquisa na barra de tarefas.",
+            "para5": "1. Início 2. Bloco de Notas 3. Definições 4. Feedback",
+            "para6": "Aqui estão algumas coisas que a Cortana pode fazer por si:",
+            "unorderedList1": {
+				"listItem1": "Dar-lhe lembretes com base no tempo, lugares ou pessoas.",
+                "listItem2": "Seguir encomendas, equipas, interesses e voos.",
+                "listItem3": "Enviar emails e mensagens.",
+                "listItem4": "Gerir a sua agenda e mantê-lo atualizado.",
+                "listItem5": "Criar e gerir listas.",
+                "listItem6": "Conversar e jogar.",
+                "listItem7": "Encontrar fatos, ficheiros, lugares e informações.",
+                "listItem8": "Abrir qualquer aplicações no sistema."
             },
-            "heading2": "Try this: Set a reminder",
-            "para7": "One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or even people.",
-            "para8": "For example, type or say, “Remind me to congratulate Tanya the next time she calls.”",
-            "para9": "The reminder will appear when you get a call from Tanya.",
-            "para10": "Extra bonus—if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync notifications between your PC and phone.",
-            "heading3": "Hey Cortana?",
-            "para11": {
-                "span1": "Set Cortana to hear you anytime you say “Hey Cortana.” Select the search box on the taskbar to open Cortana home.",
-                "span2": {
-                    "line1": "Then select",
-                    "line2": "Settings",
-                    "line3": "and turn on",
-                    "line4": "Let Cortana respond to “Hey Cortana.”"
-                }
-            },
-            "para12": "Note",
-            "para13": "Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere."
-        },
-        "pageTitle": "Detalhes do suporte"
+			"heading2": "Experimente isto: definir um lembrete",
+            "para7": "Uma das coisas que Cortana pode fazer é mostrar-lhe lembretes. Pode lembrá-lo para fazer coisas, considerando o tempo, lugar, ou mesmo pessoas.",
+            "para8": "Por exemplo, escreva ou diga: “Lembra-me de felicitar a Tânia da próxima vez que ela telefonar”.",
+            "para9": "O lembrete aparecerá quando receber um telefonema da Tânia.",
+            "para10": "Bónus extra - se tiver um telemóvel Windows ou Cortana para iPhone ou Android, pode definir a Cortana para sincronizar notificações entre o seu PC e o telemóvel.",
+            "heading3": "Olá Cortana?",
+            "para11": "Configure a Cortana para ouvir sempre que disser “Olá, Cortana”. Selecione a caixa de pesquisa na barra de tarefas para abrir a página inicial da Cortana. Em seguida, selecione <strong>Definições</strong> e ligue <strong>Responder quando eu disser “Olá Cortana”</strong>.",
+            "heading4": "Nota",
+            "para12": "A Cortana só está disponível em certos países/regiões, e algumas funcionalidades da Cortana podem não estar disponíveis em todo o lado."
+        }
     },
     "welcometutorial": {
         "description": "O Lenovo Vantage permite atualizar os seus controladores, executar diagnósticos, solicitar suporte e obter mais informações acerca do seu dispositivo de forma mais simples.Personalize rapidamente a sua experiência e encontre informações úteis adaptadas às suas necessidades",

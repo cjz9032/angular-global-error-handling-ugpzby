@@ -54,10 +54,13 @@
                 height: 3.2rem;
                 text-align: center;
                 line-height: 3.2rem;
-                font-size: 3.2rem;
                 cursor: pointer;
                 color: $gaming_lightest;
-                float: left;
+                float: left; 
+                font-size: 0;
+                span{
+                    font-size: 3.2rem;
+                }
                 &.lighting-arrow-lef{
                    transform: rotate(180deg);
                 }

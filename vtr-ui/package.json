@@ -1,6 +1,6 @@
 {
   "name": "vtr-ui",
-  "version": "1.5.23",
+  "version": "1.5.25",
   "scripts": {
     "build:dev": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build -c=dev",
     "build:dev1": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng test --watch=false --browsers=ChromeHeadless --code-coverage",
@@ -13,7 +13,7 @@
     "start": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng serve",
     "build-serve": "node --max_old_space_size=8048 ./node_modules/@angular/cli/bin/ng serve --prod",
     "build": "node --max_old_space_size=4048 ./node_modules/@angular/cli/bin/ng build --prod",
-    "serve": "node --max_old_space_size=4048 ./node_modules/@angular/cli/bin/ng serve",
+    "serve": "node --max_old_space_size=4048 ./node_modules/@angular/cli/bin/ng serve -c=dev",
     "test": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng test --watch=false --browsers=ChromeHeadless --code-coverage",
     "lint": "ng lint",
     "template-lint": "node prebuild/template-lint.js",

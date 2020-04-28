@@ -42,7 +42,7 @@
 						[max]="cameraSettings.brightness.max"
 						[isDisabled]="disabledAll"
 						[value]="cameraSettings.brightness.value"
-						(sliderChange)="onBrightnessSliderChange($event)"
+						(valueChange)="onBrightnessSliderChange($event)"
 						[metricsItem]="'cameraSettings-brightness'"
 						[metricsValue]="cameraSettings.brightness.value"
 						[ariaLabel]="'camera brightness slider'"
@@ -64,7 +64,7 @@
 						[value]="cameraSettings.contrast.value"
 						[metricsItem]="'cameraSettings-contrast'"
 						[metricsValue]="cameraSettings.contrast.value"
-						(sliderChange)="onContrastSliderChange($event)"
+						(valueChange)="onContrastSliderChange($event)"
 						[ariaLabel]="'camera contrast slider'"
 						[sliderId]="'cameraSettings-contrast'">
 					</vtr-ui-custom-slider>
@@ -95,7 +95,7 @@
 							[value]="cameraSettings.exposure.value"
 							[metricsItem]="'cameraSettings-exposure'"
 							[metricsValue]="cameraSettings.exposure.value"
-							(sliderChange)="onExposureSliderChange($event)"
+							(valueChange)="onExposureSliderChange($event)"
 							[ariaLabel]="'camera exposure slider'"
 							[sliderId]="'cameraSettings-autoExposure'">
 						</vtr-ui-custom-slider>

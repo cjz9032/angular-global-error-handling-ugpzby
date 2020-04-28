@@ -150,7 +150,7 @@
 													[midLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.options.medium' | translate"
 													[maxLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjustingForIdea.options.far' | translate"
 													[max]=3
-													(sliderChange)="setZeroTouchLoginSensitivity($event)"
+													(valueChange)="setZeroTouchLoginSensitivity($event)"
 													[value]="intelligentSecurity.zeroTouchLoginDistance"
 													[isDisabled]="!intelligentSecurity.isZeroTouchLoginEnabled"
 													[metricsItem]="'distanceSensitivity'"
@@ -248,7 +248,7 @@
 													[min]="1"
 													[maxLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
 													[max]="3"
-													(sliderChange)="setZeroTouchLoginSensitivity($event)"
+													(valueChange)="setZeroTouchLoginSensitivity($event)"
 													[value]="intelligentSecurity.zeroTouchLoginDistance"
 													[isDisabled]="!intelligentSecurity.isHPDEnabled || !intelligentSecurity.isZeroTouchLoginEnabled"
 													[metricsItem]="'thinkpadDistanceSensitivity'"
@@ -497,7 +497,7 @@
 													[midLegend]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.options.medium' | translate"
 													[maxLegend]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.options.far' | translate"
 													[max]=2
-													(sliderChange)="SetZeroTouchLockDistanceSensitivity($event)"
+													(valueChange)="SetZeroTouchLockDistanceSensitivity($event)"
 													[value]="hsaIntelligentSecurity.zeroTouchLockDistance"
 													[isDisabled]="!intelligentSecurity.isZeroTouchLockEnabled || !hsaIntelligentSecurity.capacity"
 													[metricsItem]="'zeroTouchLockDistanceSensitivity'"
@@ -553,7 +553,7 @@
 												[class.disabled]="!intelligentSecurity.isZeroTouchLockEnabled">
 												<vtr-ui-custom-slider [sliderId]="'thinkpadSensitivity'"
 													[minLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.near' | translate"
-													(sliderChange)="setHPDLeaveSensitivitySetting($event)"
+													(valueChange)="setHPDLeaveSensitivitySetting($event)"
 													[mediumLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.medium' | translate"
 													[maxLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
 													[min]="1"
@@ -766,7 +766,7 @@
 													[isDisabled]="!intelligentScreen.isReadingOrBrowsingEnabled"
 													[metricsItem]="'keepMyDisplay'"
 													[metricsValue]="intelligentScreen.readingOrBrowsingTime"
-													(sliderChange)="onDisplayDimTimeChange($event)">
+													(valueChange)="onDisplayDimTimeChange($event)">
 												</vtr-ui-custom-slider>
 											</div>
 										</vtr-ui-row-switch>

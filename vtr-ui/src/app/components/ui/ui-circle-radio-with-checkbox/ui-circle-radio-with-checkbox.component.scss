@@ -58,10 +58,16 @@
 
 		.checkbox-custom:disabled+.checkbox-custom-label {
 			border: 0.1rem solid $circle_checkbox_disabled;
+			&::before {
+				display: none;
+			}
 		}
 
 		.checkbox-custom:disabled:checked+.checkbox-custom-label {
 			background: $circle_checkbox_disabled;
+			&::before {
+				display: none;
+			}
 		}
 
 		.title {

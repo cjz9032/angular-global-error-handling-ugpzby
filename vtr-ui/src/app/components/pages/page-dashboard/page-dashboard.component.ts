@@ -174,8 +174,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy {
 			}
 		});
 		this.brand = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType, -1);
-		this.qaService.getQATranslation(this.translate); // VAN-5872, server switch feature
-
+		this.qaService.setCurrentLangTranslations();
 		this.isWarrantyVisible = this.deviceService.showWarranty;
 		this.dashboardService.isDashboardDisplayed = true;
 		this.getWelcomeText();
@@ -249,7 +248,6 @@ export class PageDashboardComponent implements OnInit, OnDestroy {
 	ngOnDestroy() {
 		this.dashboardService.isDashboardDisplayed = false;
 		this.commonService.setSessionStorageValue(SessionStorageKey.DashboardInDashboardPage, false);
-		this.qaService.destroyChangeSubscribed();
 		if(this.subscription){
 			this.subscription.unsubscribe();
 		}

@@ -85,9 +85,9 @@ export class WidgetSystemToolsComponent implements OnInit {
 
 	launchAccessory() {
 		try {
-			this.gamingAccessoryService.launchAccessory().then(res => {
+			this.gamingAccessoryService.isLACSupportUriProtocol().then(res => this.gamingAccessoryService.launchAccessory(res)).then(res => {
 				this.logger.info(`Widget-SystemTools-LaunchAccessory: return value: ${res}`);
-				if (!res) {
+				if (!res && res === undefined) {
 					this.openWaringModal();
 				}
 			})

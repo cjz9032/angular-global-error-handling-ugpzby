@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DeviceService } from '../../../services/device/device.service';
 import { QaService } from '../../../services/qa/qa.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
@@ -11,7 +11,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 	templateUrl: './page-device.component.html',
 	styleUrls: ['./page-device.component.scss']
 })
-export class PageDeviceComponent implements OnInit, OnDestroy {
+export class PageDeviceComponent implements OnInit {
 
 	// title = 'My Device';
 	// back = 'BACK';
@@ -27,10 +27,6 @@ export class PageDeviceComponent implements OnInit, OnDestroy {
 		private logger: LoggerService
 	) {
 		this.fetchCMSArticles();
-		// Evaluate the translations for QA on language Change
-		// this.qaService.setTranslationService(this.translate);
-		// this.qaService.setCurrentLangTranslations();
-		this.qaService.getQATranslation(translate); // VAN-5872, server switch feature
 	}
 
 	ngOnInit() {
@@ -38,6 +34,7 @@ export class PageDeviceComponent implements OnInit, OnDestroy {
 		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
 			this.fetchCMSArticles();
 		});
+		this.qaService.setCurrentLangTranslations();
 	}
 
 	fetchCMSArticles() {
@@ -75,8 +72,4 @@ export class PageDeviceComponent implements OnInit, OnDestroy {
 		);
 	}
 
-	// VAN-5872, server switch feature
-	ngOnDestroy() {
-		this.qaService.destroyChangeSubscribed();
-	}
 }

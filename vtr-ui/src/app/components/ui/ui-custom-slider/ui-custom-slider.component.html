@@ -24,6 +24,8 @@
 			[metricsItem]="metricsItem"
 			[metricsEvent]="metricsEvent"
 			[metricsValue]="metricsValue"
+			(mousedown)="onDragStart($event)"
+			(mouseup)="onDragEnd($event)"
 			(input)="onInputChange($event)">
 		<div class="d-flex justify-content-between legends"
 			[class.legends-disabled]="isDisabled">
