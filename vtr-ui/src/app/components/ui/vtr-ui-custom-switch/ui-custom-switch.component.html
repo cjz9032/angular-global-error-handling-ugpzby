@@ -1,12 +1,13 @@
 <form class="vtr-ui-custom-switch">
-	<div class="form-group">
-		<!-- <div *ngIf="isLoading"
-			class="row spinner-row"
-			[ngClass]="{'white-theme': theme==='white',
+	<div *ngIf="isLoading"
+		class="row spinner-row"
+		[ngClass]="{'white-theme': theme==='white',
 					'blue-theme': theme==='blue'}">
-			<vtr-spinner></vtr-spinner>
-		</div> -->
-		<div class="custom-control custom-switch"  [hidden]="isLoading">
+		<vtr-spinner></vtr-spinner>
+	</div>
+	<div class="form-group">
+		<div class="custom-control custom-switch"
+			[hidden]="isLoading">
 			<input type="checkbox"
 				class="custom-control-input"
 				tabIndex="0"

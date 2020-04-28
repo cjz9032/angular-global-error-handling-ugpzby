@@ -10,7 +10,7 @@ export class UiCustomSwitchComponent implements OnInit {
 	@Input() value = false;
 	@Input() componentId = 'toggle-switch';
 	@Input() isDisabled = false;
-	@Input() isLoading = true;
+	@Input() isLoading = false;
 	@Input() theme = 'white';
 	@Input() readonly = false;
 	@Input() label: string;

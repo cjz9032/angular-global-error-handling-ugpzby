@@ -36,8 +36,9 @@ import { faCircle as falCircle } from '@fortawesome/free-regular-svg-icons/faCir
 import { faChevronDown as falChevronDown } from '@fortawesome/pro-light-svg-icons/faChevronDown';
 import { faChevronUp as falChevronUp } from '@fortawesome/pro-light-svg-icons/faChevronUp';
 import { UiDpmDropdownComponent } from 'src/app/components/ui/ui-dpm-dropdown/ui-dpm-dropdown.component';
-import { SpinnerComponent } from 'src/app/components/common/spinner/spinner.component';
 import { UiDpmEnergyComponent } from 'src/app/components/ui/ui-dpm-energy/ui-dpm-energy.component';
+import { UiCustomSwitchModule } from 'src/app/components/ui/vtr-ui-custom-switch/ui-custom-switch.module';
+import { SpinnerModule } from 'src/app/components/common/spinner/spinner.module';
 
 
 @NgModule({
@@ -53,7 +54,6 @@ import { UiDpmEnergyComponent } from 'src/app/components/ui/ui-dpm-energy/ui-dpm
 		UiRoundedRectangleRadioComponent,
 		UiRowSwitchComponent,
 		UiSwitchOnoffComponent,
-		SpinnerComponent,
 		UiSwitchTristateComponent,
 		UiSwitchTristateComponent,
 		UiTimePickerComponent,
@@ -81,7 +81,6 @@ import { UiDpmEnergyComponent } from 'src/app/components/ui/ui-dpm-energy/ui-dpm
 		UiRoundedRectangleRadioComponent,
 		UiRowSwitchComponent,
 		UiSwitchOnoffComponent,
-		SpinnerComponent,
 		UiSwitchTristateComponent,
 		UiSwitchTristateComponent,
 		UiTimePickerComponent,
@@ -96,7 +95,8 @@ import { UiDpmEnergyComponent } from 'src/app/components/ui/ui-dpm-energy/ui-dpm
 		UiDpmDropdownComponent,
 		UiDpmEnergyComponent,
 		UiBrightnessSliderComponent,
-		UiAddReduceButtonComponent
+		UiAddReduceButtonComponent,
+		UiCustomSwitchModule
 	],
 	imports: [
 		CommonModule,
@@ -105,7 +105,9 @@ import { UiDpmEnergyComponent } from 'src/app/components/ui/ui-dpm-energy/ui-dpm
 		MetricsModule,
 		NgbTooltipModule,
 		NgbCollapseModule,
-		FontAwesomeModule
+		FontAwesomeModule,
+		UiCustomSwitchModule,
+		SpinnerModule
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
