@@ -156,6 +156,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	};
 	scanScheduleDate: any;
 	issueCount: any = 0;
+	public maxDate: any;
 	// tuneindividualIssueCount: any = 0;
 	// boostindividualIssueCount: any = 0;
 	// secureindividualIssueCount: any = 0;
@@ -183,6 +184,11 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		this.scanScheduleDate = this.selectedDate;
 		this.leftAnimator = '0%';
 		this.scanSummaryTime(0);
+		this.maxDate = {
+			year: this.currentDate.getFullYear(),
+			month: this.currentDate.getMonth() + 1,
+			day: this.currentDate.getDate()
+		};
 	}
 	// tslint:disable-next-line: use-lifecycle-interface
 	ngAfterViewInit() {
@@ -238,12 +244,10 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 				this.toDate.year;
 			this.displayFromDate = moment
 				.utc(fromDateFormat)
-				.subtract(1, 'months')
 				.startOf('day')
 				.format('YYYY/MM/DD');
 			this.displayToDate = moment
 				.utc(toDateFormat)
-				.subtract(1, 'months')
 				.startOf('day')
 				.format('YYYY/MM/DD');
 			this.selectedfromDate = this.fromDate;
@@ -302,7 +306,6 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 				this.selectedfromDate.year;
 			this.displayFromDate = moment
 				.utc(fromDateFormat)
-				.subtract(1, 'months')
 				.startOf('day')
 				.format('YYYY/MM/DD');
 		} else {
@@ -314,7 +317,6 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 				this.selectedTodate.year;
 			this.displayToDate = moment
 				.utc(fromDateFormat)
-				.subtract(1, 'months')
 				.startOf('day')
 				.format('YYYY/MM/DD');
 			this.logger.info('onDateSelected.else to date', this.displayToDate);
@@ -364,18 +366,6 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 			this.scheduleTab = '';
 		} else {
 			this.scheduleTab = value;
-		}
-	}
-
-	@HostListener('window:click', ['$event'])
-	onClick(event:Event): void {
-		if(this.scheduleTab === '') {
-			return;
-		}
-		if(event.target) {
-			if(event.target['classList'][1]!=="fa-chevron-down" ) {
-				this.scheduleTab = '';
-			}
 		}
 	}
 
