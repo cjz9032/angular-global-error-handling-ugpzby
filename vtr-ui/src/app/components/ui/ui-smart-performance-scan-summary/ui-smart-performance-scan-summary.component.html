@@ -2411,16 +2411,12 @@
 																				</div>
 																			</div>
 																		</div>
-																		<div class="col date-picker">
-																			<ngb-datepicker *ngIf="isFromDate"
-																				[(ngModel)]="selectedfromDate"
-																				(select)="onDateSelected()">
-																			</ngb-datepicker>
-																			<ngb-datepicker *ngIf="!isFromDate"
-																				[(ngModel)]="selectedTodate"
-																				(select)="onDateSelected()">
-																			</ngb-datepicker>
-																		</div>
+																	</div>
+																	<div class="col date-picker">
+																		<ngb-datepicker *ngIf="isFromDate" [(ngModel)]="selectedfromDate" [maxDate]="maxDate"
+																			(select)="onDateSelected()"></ngb-datepicker>
+																		<ngb-datepicker *ngIf="!isFromDate" [(ngModel)]="selectedTodate" [maxDate]="maxDate"
+																			(select)="onDateSelected()"></ngb-datepicker>
 																	</div>
 																</div>
 															</div>

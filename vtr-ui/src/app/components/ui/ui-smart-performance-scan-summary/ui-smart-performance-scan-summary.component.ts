@@ -170,6 +170,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	IsScheduleScanEnabled: any;
 	public scanData: any = {};
 	systemSerialNumber:any;
+	public maxDate: any;
 	// tuneindividualIssueCount: any = 0;
 	// boostindividualIssueCount: any = 0;
 	// secureindividualIssueCount: any = 0;
@@ -261,6 +262,11 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		} catch (err) {
 			this.logger.error('ui-smart-performance.getNextScanRunTime.then', err);
 		}
+		this.maxDate = {
+			year: this.currentDate.getFullYear(),
+			month: this.currentDate.getMonth() + 1,
+			day: this.currentDate.getDate()
+		};
 	}
 	// tslint:disable-next-line: use-lifecycle-interface
 	ngAfterViewInit() {
@@ -316,12 +322,10 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 				this.toDate.year;
 			this.displayFromDate = moment
 				.utc(fromDateFormat)
-				.subtract(1, 'months')
 				.startOf('day')
 				.format('YYYY/MM/DD');
 			this.displayToDate = moment
 				.utc(toDateFormat)
-				.subtract(1, 'months')
 				.startOf('day')
 				.format('YYYY/MM/DD');
 			this.selectedfromDate = this.fromDate;
@@ -380,7 +384,6 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 				this.selectedfromDate.year;
 			this.displayFromDate = moment
 				.utc(fromDateFormat)
-				.subtract(1, 'months')
 				.startOf('day')
 				.format('YYYY/MM/DD');
 		} else {
@@ -392,7 +395,6 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 				this.selectedTodate.year;
 			this.displayToDate = moment
 				.utc(fromDateFormat)
-				.subtract(1, 'months')
 				.startOf('day')
 				.format('YYYY/MM/DD');
 			this.logger.info('onDateSelected.else to date', this.displayToDate);
@@ -442,18 +444,6 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 			this.scheduleTab = '';
 		} else {
 			this.scheduleTab = value;
-		}
-	}
-
-	@HostListener('window:click', ['$event'])
-	onClick(event:Event): void {
-		if(this.scheduleTab === '') {
-			return;
-		}
-		if(event.target) {
-			if(event.target['classList'][1]!=="fa-chevron-down" ) {
-				this.scheduleTab = '';
-			}
 		}
 	}
 

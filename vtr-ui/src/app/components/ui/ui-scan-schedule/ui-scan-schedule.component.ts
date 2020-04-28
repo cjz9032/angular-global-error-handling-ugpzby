@@ -241,7 +241,11 @@ export class UiScanScheduleComponent implements OnInit {
 			return;
 		}
 		if (event.target) {
-			if (event.target['classList'][1] !== "fa-chevron-down") {
+			if (event.target['classList'][1] !== "fa-chevron-down" &&
+				event.target['classList'][0] !== "time-dropdown" &&
+				event.target['classList'][0] !== "hour-text" &&
+				event.target['classList'][0] !== "min-text" &&
+				event.target['classList'][0] !== "amPm-text") {
 				this.scheduleTab = '';
 			}
 		}
