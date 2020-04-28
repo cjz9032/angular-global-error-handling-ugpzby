@@ -6,10 +6,11 @@
             [id]="'profile'" [automationId]="'profile'"></vtr-ui-lighting-profile-toggle>
         </div>
         <div class="lighting-panel-select" *ngIf="!isProfileOff"> 
-            <div class="lighting-arrow lighting-arrow-lef" (click)="panelSwitchLef()"  tabindex="{{isDisabledlef[this.currentProfileId-1]?-1:0}}" (keydown.enter)="panelSwitchLef()" [attr.aria-label]="'Look at the previous area'" role="button"
+            <button class="lighting-arrow lighting-arrow-lef" (click)="panelSwitchLef()"  tabindex="{{isDisabledlef[this.currentProfileId-1]?-1:0}}" role="button"
             [ngClass]="{'disabled-lef':isDisabledlef[this.currentProfileId-1] === true}" *ngIf= "lightingProfileCurrentDetail.panelImageType">
-                <fa-icon [icon]="['fal', 'chevron-right']"></fa-icon>
-            </div>
+            Look at the previous area {{countObj['count'+this.currentProfileId]+1}} of {{lightingProfileCurrentDetail.length}} {{lightingProfileCurrentDetail.panelName | translate}}
+            <span><fa-icon [icon]="['fal', 'chevron-right']"></fa-icon></span>
+            </button>
             <div class="lighting-panel-name"
             [ngClass]="{'text-center':lightingProfileCurrentDetail.panelImageType === false}">
             <span *ngIf= "lightingProfileCurrentDetail.panelImageType">
@@ -17,10 +18,11 @@
             </span>
             {{lightingProfileCurrentDetail.panelName | translate}}
             </div>
-            <div class="lighting-arrow lighting-arrow-rig" (click)="panelSwitchRig()" tabindex="{{isDisabledrig[this.currentProfileId-1]?-1:0}}" (keydown.enter)="panelSwitchRig()" [attr.aria-label]="'Look at the next area'" role="button"
+            <button class="lighting-arrow lighting-arrow-rig" (click)="panelSwitchRig()" tabindex="{{isDisabledrig[this.currentProfileId-1]?-1:0}}" role="button"
             [ngClass]="{'disabled-rig':isDisabledrig[this.currentProfileId-1] === true}" *ngIf= "lightingProfileCurrentDetail.panelImageType">
-                <fa-icon [icon]="['fal', 'chevron-right']"></fa-icon>
-            </div>
+            Look at the next area {{countObj['count'+this.currentProfileId]+1}} of {{lightingProfileCurrentDetail.length}} {{lightingProfileCurrentDetail.panelName | translate}}
+            <span><fa-icon [icon]="['fal', 'chevron-right']"></fa-icon></span>
+            </button>
         </div>
         <div class="lighting-desk-panel d-flex align-items-center">
             <div class="lighting-desk-panel-lef d-flex align-items-center" [ngClass]="{'is-off':isProfileOff}">
