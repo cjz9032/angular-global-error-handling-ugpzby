@@ -1,0 +1,42 @@
+@import "../../../../app.theme";
+
+
+img {
+	max-width: 90%;
+	max-height: 60rem;
+	margin-left: 5%;
+	border: 1px solid #999;
+}
+.title {
+	font-size: 3.6rem;
+	font-weight: $weight_light;
+	color: $shade_blue;
+}
+
+.heading1 {
+	font-size: 1.4rem;
+	font-weight: $weight_bold;
+	color: $shade_blue;
+	text-transform: uppercase;
+}
+
+.para1 {
+	margin-bottom: 1rem;
+	margin-top: 1rem;
+}
+
+.para2 {
+	padding: 0.5rem 0;
+}
+
+.heading2 {
+	font-size: 1.4rem;
+	font-weight: $weight_bold;
+	padding: 1rem 0;
+	color: $shade_blue;
+	text-transform: uppercase;
+}
+
+ol {
+	padding-left: 20px;
+}

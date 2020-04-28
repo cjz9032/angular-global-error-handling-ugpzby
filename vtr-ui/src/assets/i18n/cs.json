@@ -2724,6 +2724,7 @@
         "ssoErrorAccountPluginNotExist": "Chybí modul plug-in. Pokud jste připojeni k internetu, modul plug-in se automaticky obnoví na pozadí. To může nějakou dobu trvat, proto zkuste akci opakovat později."
     },
     "faq": {
+        "pageTitle": "Podrobnosti podpory",
         "footer": {
             "title": "Nenajdete to, co hledáte?",
             "description": "Potřebujete další podporu? Neváhejte nás kontaktovat prostřednictvím:",
@@ -2732,354 +2733,146 @@
         },
         "question1": {
             "title": "Zálohování a obnovení souborů",
-            "description": "<div>    <div class='faqInFs4Fb'>        Zálohování a obnovení souborů    </div>    <hr />    <div class='faqInMb7'>        Vždy je dobré mít zálohu. Uchovávejte kopie svých souborů na jiném disku pro případ, že se něco stane s původními soubory.    </div>    <div class='faqInFs3Fb'>        Nastavení zálohy    </div>    <hr />    <div class='mb-5'>        Klepněte na tlačítko <span class='faqInFb'>Start</span> a vyberte <span class='faqInFb'>Nastavení</span> > <span class='faqInFb'>Aktualizace a zabezpečení</span> > <span class='faqInFb'>Zálohování</span> > <span class='faqInFb'>Přidat jednotku</span> a poté vyberte externí jednotku nebo síťové umístění, kam se má záloha uložit.    </div>    <div class='mb-5'>        <img src='assets/images/qa/1.1.jpg' />    </div>    <div class='mb-5'>        Vše je připraveno. Každou hodinu vytvoříme zálohu veškerého obsahu vaší uživatelské složky (C:\\Users\\vaše uživatelské jméno). Chcete-li změnit, které soubory se mají zálohovat nebo jak často má záloha probíhat, otevřete nabídku <span class='faqInFb'>Další možnosti</span>.    </div>    <div class='faqInFs3Fb'>        Obnovení souborů    </div>    <div class='mb-5'>        Pokud zjistíte, že vám chybí důležitý soubor nebo složka, můžete ji obnovit následujícím způsobem:    </div>    <div>        <div class='mb-3'>1. Do vyhledávacího pole na hlavním panelu zadejte <span class='faqInFb'>obnovit soubory</span> a poté vyberte položku <span class='faqInFb'>Obnovit soubory pomocí služby Historie souborů</span>.</div>        <div class='mb-3'>2. Vyhledejte požadovaný soubor a pomocí šipek procházejte mezi všemi verzemi souboru</div>        <div class='mb-3'>3. Po nalezení požadované verze jej volbou <span class='faqInFb'>Obnovit</span> uložíte do původního umístění. Jestliže jej chcete uložit jinam, stiskněte a držte, nebo klikněte pravým tlačítkem na volbu <span class='faqInFb'>Obnovit</span>, vyberte možnost <span class='faqInFb'>Obnovit do</span> a poté vyberte nové umístění.</div>    </div></div>",
-            "para1": {
-                "line1": "It's always good to have a backup.",
-                "line2": "Keep copies of your files on another drive in case something happens to the originals."
-            },
-            "heading1": "Set up your backup",
-            "para2": {
-                "span1": "Select the",
-                "span2": "Start",
-                "span3": "button, select",
-                "span4": "Settings",
-                "span5": "Update & security",
-                "span6": "Backup",
-                "span7": "Add a drive",
-                "span8": ", and then choose an external drive or network location for your backups."
-            },
-            "para3": {
-                "span1": "All set.",
-                "span2": "Every hour, we'll back up everything in your user folder (C:\\Users\\username).",
-                "span3": "To change which files get backed up or how often backups happen, go to",
-                "span4": "More options."
-            },
-            "heading2": "Restore your files",
-            "para4": "If you're missing an important file or folder, here's how to get it back:",
-            "para5": {
-                "span1": "1. Type",
-                "span2": "Restore files",
-                "span3": "in the search box on the taskbar, and then select",
-                "span4": "Restore your files with File History.",
-                "span5": "2. Look for the file you need, then use the arrows to see all its versions",
-                "span6": "3. When you find the version you want, select",
-                "span7": "Restore",
-                "span8": "to save it in its original location. To save it in a different place, press and hold (or right-click)",
-                "span9": "Restore",
-                "span10": ", select",
-                "span11": "Restore to",
-                "span12": "and then choose a new location."
-            }
+            "para1": "Vždy je dobré mít zálohu. Uchovávejte kopie svých souborů na jiném disku pro případ, že se něco stane s původními soubory.",
+			"heading1": "Nastavení zálohy",
+			"para2": "Klepněte na tlačítko Start a vyberte Nastavení > Aktualizace a zabezpečení > Zálohování > Přidat jednotku a poté vyberte externí jednotku nebo síťové umístění, kam se má záloha uložit.",
+			"para3": "Vše je připraveno. Každou hodinu vytvoříme zálohu veškerého obsahu vaší uživatelské složky (C:\\Users\\vaše uživatelské jméno). Chcete-li změnit, které soubory se mají zálohovat nebo jak často má záloha probíhat, otevřete nabídku Další možnosti.",
+			"heading2": "Obnovení souborů",
+			"para4": "Pokud zjistíte, že vám chybí důležitý soubor nebo složka, můžete ji obnovit následujícím způsobem:",
+			"para5": {
+				"div1": "1. Do vyhledávacího pole na hlavním panelu zadejte obnovit soubory a poté vyberte položku Obnovit soubory pomocí služby Historie souborů.",
+				"div2": "2. Vyhledejte požadovaný soubor a pomocí šipek procházejte mezi všemi verzemi souboru.",
+				"div3": "3. Po nalezení požadované verze jej volbou Obnovit uložíte do původního umístění. Jestliže jej chcete uložit jinam, stiskněte a držte, nebo klikněte pravým tlačítkem na volbu Obnovit, vyberte možnost Obnovit do a poté vyberte nové umístění."
+			}
         },
         "question2": {
-            "title": "Jak obnovit počítač do továrního nastavení",
-            "description": "<div><div class='faqInFs4Fb'>Jak obnovit Windows 10 do továrního nastavení</div><hr><div class='faqInP5'>Pokud se v systému Windows 10 vyskytují problémy nebo jej prodáváte, měli byste jej obnovit do továrního nastavení. Při obnovení do továrního nastavení si můžete vybrat, zda chcete ponechat nebo odebrat vaše soubory. Obnovení odebere všechny aplikace a nastavení a nainstaluje novou kopii systému Windows. Můžete tím také opravit spoustu problémů, jako například zpomalené fungování.</div><div class='faqInFs25FbP10'>1. Otevřete aplikaci Nastavení.</div><div class='faqInP5'>V levém dolním rohu obrazovky vyberte tlačítko Start a poté vyberte ikonu ozubeného kola (Nastavení).</div><div class='faqInP5'><img src='assets/images/qa/2.1.jpg' /></div><div class='faqInFs25FbP10'>2. Ze seznamu kategorií vyberte položku Aktualizace a zabezpečení.</div><div class='faqInP5'><img src='assets/images/qa/2.2.jpg' /></div><div class='faqInFs25FbP10'>3. V levém podokně přejděte na možnost Obnovení.</div><div class='faqInP5'><img src='assets/images/qa/2.3.jpg' /></div><div class='faqInFs25FbP10'>4. Spusťte obnovení do továrního nastavení.</div><div class='faqInP5'>Nahoře pod nadpisem Obnovit počítač do továrního nastavení klikněte nebo klepněte na tlačítko Spustit.</div><div class='faqInP5'><img src='assets/images/qa/2.4.jpg' /></div><div class='faqInFs25FbP10'>5. Zvolte, zda chcete ponechat své soubory, či nikoli.</div><div class='faqInP5'>Po obnovení do továrního nastavení se můžete přihlásit ke svému účtu Microsoft. Znovu se vám nainstalují všechny aplikace, které jste si koupili ve Windows Store.</div><div class='faqInP5'><ul><li>Výběrem možnosti Zachovat moje soubory odeberete aplikace a nastavení, ale ponecháte všechny své osobní soubory.</li><li>Výběrem možnosti Odebrat všechno vymažete své aplikace, nastavení a osobní soubory. Pokud své soubory nemáte zálohované, raději zvolte možnost Zrušit, soubory si zálohujte a poté tento proces spusťte znovu.</li></ul></div><div class='faqInP5'><img src='assets/images/qa/2.5.jpg' /></div><div class='faqInFs25FbP10'>6. Můžete vybrat různá další nastavení.</div><div class='faqInP5'>Ta budou k dispozici pouze v případě, že jste v předchozím kroku vybrali možnost Odebrat všechno.</div><div class='faqInP5'><img src='assets/images/qa/2.6.1.jpg' /></div><div class='faqInP5'><img src='assets/images/qa/2.6.2.jpg' /></div><div class='faqInFs25FbP10'>7. Přečtěte si přehled a až budete připraveni pokračovat, zvolte možnost Obnovit.</div><div class='faqInP5'>Systém Windows se připraví na obnovení do továrního nastavení. Počkejte, než se zobrazí modrá obrazovka.</div><div class='faqInFs25FbP10'>8. Až se zobrazí sdělení „Vyberte možnost“, vyberte možnost Pokračovat.</div><div class='faqInP5'>Systém Windows se restartuje a zahájí obnovení do továrního nastavení. V průběhu obnovení do továrního nastavení se počítač může několikrát restartovat.</div><hr><div class='faqInFs25FbP10'>Komunitní dotazy a odpovědi</div><div class='faqInP5'><b>Když vyberu možnost Odebrat všechno, budou smazány všechny nainstalované a připojené jednotky, nebo jen jednotka, kde je systém Windows 10 nainstalovaný?</b></div><div class='faqInP5'><i>Odpověď komunity</i></div><div class='faqInP10'>Smazána bude pouze jednotka se systémem Windows 10 (obvykle C:). Ostatní nainstalované/připojené jednotky zůstanou beze změn.</div><div class='faqInP5'><b>Jak to mohu udělat, když mám rozbitý displej?</b></div><div class='faqInP5'><i>Odpověď komunity</i></div><div class='faqInP10'>Bohužel nemůžete. Musíte si pořídit nový displej.</div><div class='faqInP5'><b>Pokud jsem přihlášen(a) k nějaké webové stránce, bude odebrána i moje historie prohlížení?</b></div><div class='faqInP5'><i>Odpověď komunity</i></div><div class='faqInP10'>Ano. Záleží na prohlížeči, který používáte. Chcete-li odebrat historii prohlížeče, stačí otevřít nastavení daného prohlížeče a historii smazat. Pokud nechcete, aby se vaše online historie ukládala, můžete také používat anonymní režim prohlížeče.</div><div class='faqInP5'><b>Když vyberu možnost Odebrat všechno, bude změněno také moje heslo?</b></div><div class='faqInP5'><i>Odpověď komunity</i></div><div class='faqInP10'>Ano. Po obnovení počítače se systémem Windows 10 do továrního nastavení budou odebrána všechna uživatelská data. To znamená dokumenty, uložená hesla, obrázky, preferovaná nastavení, data prohlížeče a data aplikací.</div><hr><div class='faqInP5'>Reference</div><div class='faqInP5'>Jak obnovit Windows 10 do továrního nastavení – WikiHow.</div></div>",
-            "heading1": "Symptom",
-            "para1": {
-                "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
-                "span2": "Windows can “refresh” your PC so it’s more like a fresh install without deleting your personal files."
-            },
-            "para2": "Refresh your PC, Here is what will happen: your files and personalized settings won’t change",
-            "para3": {
-                "span1": "Your PC settings will be changed back to its defaults",
-                "span2": "Apps from windows store will be kept",
-                "span3": "Apps you installed from disc or website will be removed",
-                "span4": "A list of removed files will be saved on your desktop"
-            },
-            "heading2": "Affected Brands",
-            "para4": "All Desktop and Laptops",
-            "heading3": "Operation System",
-            "para5": "Windows 8, 8.1 & 10",
-            "heading4": "Solution",
-            "para6": "Windows 8/8.1",
-            "para7": {
-                "span1": {
-                    "line1": "Tap or click",
-                    "line2": "Settings "
-                },
-                "span2": {
-                    "line1": "Tap or click",
-                    "line2": "Update and recovery"
-                },
-                "span3": {
-                    "line1": "Tap or click",
-                    "line2": "Recovery"
-                },
-                "span4": {
-                    "line1": "Under Refresh your PC without affecting your files, tap or click",
-                    "line2": "Get started."
-                },
-                "span5": {
-                    "line1": "Click",
-                    "line2": "\"Next\"."
-                },
-                "span6": {
-                    "line1": "Click",
-                    "line2": "\"Refresh\"",
-                    "line3": "to start the refresh process."
-                },
-                "span7": "Once the refresh process is done, you can find a Removed Apps list on the desktop",
-                "span8": "You can find the removed apps while refreshing your system"
-            },
-            "para8": "Windows 10",
-            "para9": {
-                "span1": {
-                    "line1": "Search for",
-                    "line2": "refresh",
-                    "line3": "in the search tool available in the Start menu"
-                },
-                "span2": {
-                    "line1": "Click on",
-                    "line2": "\"Refresh your PC without affecting your files\"",
-                    "line3": " in the search results as shown below."
-                },
-                "span3": {
-                    "line1": "Click on the",
-                    "line2": "Get started",
-                    "line3": "button just below the heading",
-                    "line4": "\"Refresh your PC without affecting your files\"",
-                    "line5": "to start refreshing your Windows 10 PC."
-                }
-            },
-            "header5": "Additional Information",
-            "para10": "In most cases, once you start to refresh your PC, it’ll finish on its own. However, if Windows needs missing files, you’ll be asked to insert recovery media, which is typically a DVD disc or thumb drive. If that happens, what you’ll need depends on your PC.",
-            "para11": "If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact Microsoft Support."
-        },
+            "title": "Jak obnovit Windows 10 do továrního nastavení",
+			"para1": "Pokud se v systému Windows 10 vyskytují problémy nebo jej prodáváte, měli byste jej obnovit do továrního nastavení. Při obnovení do továrního nastavení si můžete vybrat, zda chcete ponechat nebo odebrat vaše soubory. Obnovení odebere všechny aplikace a nastavení a nainstaluje novou kopii systému Windows. Můžete tím také opravit spoustu problémů, jako například zpomalené fungování.",
+			"heading1": "1. Otevřete aplikaci Nastavení.",
+			"para2": "V levém dolním rohu obrazovky vyberte tlačítko Start a poté vyberte ikonu ozubeného kola (Nastavení).",
+			"heading2": "2. Ze seznamu kategorií vyberte položku Aktualizace a zabezpečení.",
+			"heading3": "3. V levém podokně přejděte na možnost Obnovení.",
+			"heading4": "4. Spusťte obnovení do továrního nastavení.",
+			"para3": "Nahoře pod nadpisem Obnovit počítač do továrního nastavení klikněte nebo klepněte na tlačítko Spustit.",
+			"heading5": "5. Zvolte, zda chcete ponechat své soubory, či nikoli.",
+			"para4": "Po obnovení do továrního nastavení se můžete přihlásit ke svému účtu Microsoft. Znovu se vám nainstalují všechny aplikace, které jste si koupili ve Windows Store.",
+			"para5": {
+				"li1": "Výběrem možnosti Zachovat moje soubory odeberete aplikace a nastavení, ale ponecháte všechny své osobní soubory.",
+				"li2": "Výběrem možnosti Odebrat všechno vymažete své aplikace, nastavení a osobní soubory. Pokud své soubory nemáte zálohované, raději zvolte možnost Zrušit, soubory si zálohujte a poté tento proces spusťte znovu."
+			},
+			"heading6": "6. Můžete vybrat různá další nastavení.",
+			"para6": "Ta budou k dispozici pouze v případě, že jste v předchozím kroku vybrali možnost Odebrat všechno.",
+			"heading7": "7. Přečtěte si přehled a až budete připraveni pokračovat, zvolte možnost Obnovit.",
+			"para7": "Systém Windows se připraví na obnovení do továrního nastavení. Počkejte, než se zobrazí modrá obrazovka.",
+			"heading8": "8. Až se zobrazí sdělení „Vyberte možnost“, vyberte možnost Pokračovat.",
+			"para8": "Systém Windows se restartuje a zahájí obnovení do továrního nastavení. V průběhu obnovení do továrního nastavení se počítač může několikrát restartovat.",
+			"heading9": "Komunitní dotazy a odpovědi",
+			"communityAnswer": "Odpověď komunity",
+			"q1": "Když vyberu možnost Odebrat všechno, budou smazány všechny nainstalované a připojené jednotky, nebo jen jednotka, kde je systém Windows 10 nainstalovaný?",
+			"a1": "Smazána bude pouze jednotka se systémem Windows 10 (obvykle C:). Ostatní nainstalované/připojené jednotky zůstanou beze změn.",
+			"q2": "Jak to mohu udělat, když mám rozbitý displej?",
+			"a2": "Bohužel nemůžete. Musíte si pořídit nový displej.",
+			"q3": "Pokud jsem přihlášen(a) k nějaké webové stránce, bude odebrána i moje historie prohlížení?",
+			"a3": "Ano. Záleží na prohlížeči, který používáte. Chcete-li odebrat historii prohlížeče, stačí otevřít nastavení daného prohlížeče a historii smazat. Pokud nechcete, aby se vaše online historie ukládala, můžete také používat anonymní režim prohlížeče.",
+			"q4": "Když vyberu možnost Odebrat všechno, bude změněno také moje heslo?",
+			"a4": "Ano. Po obnovení počítače se systémem Windows 10 do továrního nastavení budou odebrána všechna uživatelská data. To znamená dokumenty, uložená hesla, obrázky, preferovaná nastavení, data prohlížeče a data aplikací.",
+			"para9": "Reference",
+			"para10": "Jak obnovit Windows 10 do továrního nastavení – WikiHow."
+		},
         "question3": {
-            "title": "Jako poznat typ procesoru v počítači",
-            "description": "<div class='faqInFs4Fb'>    Jako poznat typ procesoru v počítači</div><hr><h3 class='faqInFs25FbP10'>Příznak</h3><p>Pojmy „32bitový“ a „64bitový“ označují způsob, jakým procesor počítače (také nazývaný CPU) zpracovává informace. 64bitová verze systému Windows zpracovává velké množství paměti RAM efektivněji než 32bitový systém.</p><h3 class='faqInFs25FbP10'>Značky, kterých se to týká</h3><p>Výše uvedený příznak se mimo jiných týká následujících systémů:</p><ul>    <li>Všechny stolní počítače a notebooky</li></ul><h3 class='faqInFs25FbP10'>Operační systém</h3><ul>    <li>Windows 7, 8 a 10</li></ul><h3 class='faqInFs25FbP10'>Řešení</h3><p><strong><u>Windows 7 nebo Vista</u></strong></p><ol>    <li>Na <strong>tlačítku Start</strong> klikněte na obrázek <strong>tlačítka Start,</strong> pravým tlačítkem klikněte na Počítač a kliknutím na položku Vlastnosti otevřete část Systém  </li>    <li>V části Systém vidíte typ systému.</li></ol><p><strong><u>Windows 8 a Windows 10</u></strong></p><p><strong>1. způsob:</strong> V Ovládacích panelech zobrazte okno Systém</p><ol>    <li>Na pracovní ploše přetáhněte prstem z pravého okraje a klepněte na volbu <strong>Hledat</strong>. Pokud používáte myš, přesuňte ukazatel do pravého dolního rohu obrazovky a klikněte na možnost <strong>Hledat</strong>.</li>    <li>Do vyhledávacího pole zadejte <strong>systém</strong> a klepněte nebo klikněte na položku <strong>Nastavení.</strong></li>    <li>Klepněte nebo klikněte na položku <strong>Systém</strong></li>    <li>Pokud používáte 64bitovou verzi systému Windows 8, v poli Typ systému pod záhlavím Systém je zobrazeno <strong>64bitový operační systém</strong>. Pokud používáte 32<strong> bitovou verzi systému Windows</strong> <strong>8,</strong> <strong>v poli Typ systému pod záhlavím </strong>Systém je zobrazeno 32bitový operační systém.<br />  </li></ol><p><strong>2. způsob</strong>: Zobrazení okna Systémové informace</p><ol>    <li>Na pracovní ploše přetáhněte prstem z pravého okraje a klepněte na volbu <strong>Hledat</strong>. Pokud používáte myš, přesuňte ukazatel do pravého dolního rohu obrazovky a klikněte na možnost <strong>Hledat</strong>.</li>    <li>Do vyhledávacího pole zadejte text <strong>systémové informace</strong></li>    <li>Klepněte nebo klikněte na položku <strong>Systém</strong>, klepněte nebo klikněte na položku <strong>Systémové informace</strong> a poté klikněte na položku <strong>Souhrn systémových informací</strong>.</li>    <li>Pokud používáte <strong>64bitovou </strong>verzi systému Windows 8<strong>, </strong>v poli <strong>Typ systému </strong>ve sloupci Položka je zobrazeno „x64-based PC“. <br /> <br />Pokud používáte<strong> 32bitovou </strong>verzi systému Windows 8, v poli <strong>Typ systému </strong>ve sloupci Položka je zobrazeno „x86-based PC“.  </li></ol><p> </p>",
-            "heading1": "Symptom",
-            "para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
-            "heading2": "Affected Brands",
-            "para2": "The above symptom is associated with, but not limited to, the following systems:",
-            "para3": "All Desktop and Laptops",
-            "heading3": "Operating System",
-            "para4": "Windows 7, 8, 10",
-            "heading4": "Solution",
-            "para5": "Windows 7 or Vista",
-            "para6": {
-                "span1": {
-                    "line1": "Open System by clicking the",
-                    "line2": "Start button",
-                    "line3": "Picture of the Start button, right-clicking Computer, and then clicking Properties"
-                },
-                "span2": "Under System, you can view the system type."
-            },
-            "para7": "Windows 8 and Windows 10",
-            "para8": {
-                "span1": {
-                    "line1": "Method 1:",
-                    "line2": "View the System window in Control Panel"
-                },
-                "span2": {
-                    "line1": "Swipe in from the right edge of the screen, and then tap",
-                    "line2": "Search.",
-                    "line3": "Or, if you are using a mouse, point to the lower-right corner of the screen, and then click",
-                    "line4": "Search."
-                },
-                "span3": {
-                    "line1": "Type",
-                    "line2": "system",
-                    "line3": "in the search box, and then tap or click",
-                    "line4": "Settings."
-                },
-                "span4": {
-                    "line1": "Tap or click",
-                    "line2": "System"
-                },
-                "span5": {
-                    "line1": "If you are running a 64-bit version of Windows 8,",
-                    "line2": "64-bit Operating System",
-                    "line3": "is displayed in the System type field under the System heading.",
-                    "line4": "If you are running a 32",
-                    "line5": "-bit version of Windows 8, 32-bit Operating",
-                    "line6": "System is displayed in the System type field under the System heading."
-                },
-                "span6": {
-                    "line1": "Method 2:",
-                    "line2": "View the System Information window"
-                },
-                "span7": {
-                    "line1": "Swipe in from the right edge of the screen, and then tap",
-                    "line2": "Search.",
-                    "line3": "Or, if you are using a mouse, point to the lower-right corner of the screen, and then click",
-                    "line4": "Search."
-                },
-                "span8": {
-                    "line1": "In the search box, type",
-                    "line2": "system information"
-                },
-                "span9": {
-                    "line1": "Tap or click",
-                    "line2": "System",
-                    "line3": ", tap or click",
-                    "line4": "System Information,",
-                    "line5": "and then click",
-                    "line6": "System Summary."
-                },
-                "span10": {
-                    "line1": "If you are running a",
-                    "line2": 64,
-                    "line3": "bit version of Windows 8, 32-bit Operating,",
-                    "line4": "x64-based PC is displayed in the",
-                    "line5": "System type",
-                    "line6": "field under the Item heading."
-                }
-            },
-            "para9": {
-                "line1": "If you are running a",
-                "line2": "32-bit",
-                "line3": "version of Windows 8,x86-based PC is displayed in the",
-                "line4": "System type",
-                "line5": "field under the Item heading."
-            }
+			"title": "Jako poznat typ procesoru v počítači",
+			"heading1": "Příznak",
+            "para1": "Pojmy „32bitový“ a „64bitový“ označují způsob, jakým procesor počítače (také nazývaný CPU) zpracovává informace. 64bitová verze systému Windows zpracovává velké množství paměti RAM efektivněji než 32bitový systém.",
+            "heading2": "Značky, kterých se to týká",
+            "para2": "Výše uvedený příznak se mimo jiných týká následujících systémů:",
+            "para3": "Všechny stolní počítače a notebooky",
+            "heading3": "Operační systém",
+            "para4": "Windows 7, 8 a 10",
+            "heading4": "Řešení",
+            "para5": "Windows 7 nebo Vista",
+			"para6": "Na <strong>tlačítku Start</strong> klikněte na obrázek <strong>tlačítka Start,</strong> pravým tlačítkem klikněte na Počítač a kliknutím na položku Vlastnosti otevřete část Systém.",
+            "para7": "V části Systém vidíte typ systému.",
+            "para8": "Windows 8 a Windows 10",
+			"para9": "<strong>1. způsob:</strong> V Ovládacích panelech zobrazte okno Systém",
+            "para10": "Na pracovní ploše přetáhněte prstem z pravého okraje a klepněte na volbu <strong>Hledat</strong>. Pokud používáte myš, přesuňte ukazatel do pravého dolního rohu obrazovky a klikněte na možnost <strong>Hledat</strong>.",
+            "para11": "Do vyhledávacího pole zadejte <strong>systém</strong> a klepněte nebo klikněte na položku <strong>Nastavení.</strong>",
+            "para12": "Klepněte nebo klikněte na položku <strong>Systém</strong>.",
+            "para13": "Pokud používáte 64bitovou verzi systému Windows 8, v poli Typ systému pod záhlavím Systém je zobrazeno <strong>64bitový operační systém</strong>. Pokud používáte 32<strong> bitovou verzi systému Windows</strong> <strong>8,</strong> <strong>v poli Typ systému pod záhlavím </strong>Systém je zobrazeno 32bitový operační systém.<br />  ",
+            "para14": "<strong>2. způsob</strong>: Zobrazení okna Systémové informace",
+            "para15": "Na pracovní ploše přetáhněte prstem z pravého okraje a klepněte na volbu <strong>Hledat</strong>. Pokud používáte myš, přesuňte ukazatel do pravého dolního rohu obrazovky a klikněte na možnost <strong>Hledat</strong>.",
+            "para16": "Do vyhledávacího pole zadejte text <strong>systémové informace</strong>.",
+            "para17": "Klepněte nebo klikněte na položku <strong>Systém</strong>, klepněte nebo klikněte na položku <strong>Systémové informace</strong> a poté klikněte na položku <strong>Souhrn systémových informací</strong>.",
+            "para18": "Pokud používáte <strong>64bitovou </strong>verzi systému Windows 8<strong>, </strong>v poli <strong>Typ systému </strong>ve sloupci Položka je zobrazeno „x64-based PC“. Pokud používáte<strong> 32bitovou </strong>verzi systému Windows 8, v poli <strong>Typ systému </strong>ve sloupci Položka je zobrazeno „x86-based PC“.  "
         },
         "question4": {
-            "title": "Kontrola využití baterie počítače",
-            "description": "<div class='faqInFs4Fb'>    Kontrola využití baterie počítače</div><hr><h3 class='faqInFs25FbP10'>Příznak</h3><p>Windows 10 obsahuje novou obrazovku <strong>Využití baterie</strong>, která vás informuje, co přesně spotřebovává energii notebooku. To znamená, že budete přesně vědět, které počítačové aplikace nebo univerzální aplikace systému Windows 10 využívají nejvíce energie.</p><h3 class='faqInFs25FbP10'>Značky, kterých se to týká</h3><ul>    <li>Notebooky a stolní počítače Lenovo</li></ul><h3 class='faqInFs25FbP10'>Systémy, kterých se to týká</h3><ul>    <li>Všechny</li></ul><h3 class='faqInFs25FbP10'>Operační systém</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Řešení</h3><p>Jelikož je tato funkce nově přidaná do systému Windows 10, musíte ji nejprve najít, protože se nenachází klasicky na <strong>Ovládacích panelech</strong>, ale je součástí nové aplikace <strong>Nastavení</strong></p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Přejděte na obrazovku Využití baterie</h3></p><p>1. V nabídce Start klikněte nebo klepněte na možnost <strong>Nastavení</strong></p><p>2. V části <strong>Nastavení</strong> vyberte položku <strong>Systém</strong> a poté vyberte volbu <strong>Spořič baterie.<br /></strong> <strong></strong></p><p><img src='assets/images/qa/4.1.jpg' /></p><p>3. Kliknutím nebo klepnutím na odkaz <strong>Využití baterie</strong> pod záhlavím Spořič baterie zobrazíte další podrobnosti. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analyzujte využití energie</h3><p>4. Údaje na obrazovce Využití baterie můžete změnit, aby se zobrazovalo využití baterie za posledních 24 nebo 48 hodin, nebo za minulý týden</p><p>5. Procenta u položek <strong>Systém</strong>, <strong>Displej</strong> a <strong>Wi-Fi</strong>. znázorňují, kolik energie baterie používají systémové procesy a displej.</p><p>6. Volby <strong>Využití</strong> a <strong>Na pozadí</strong> ukazují, kolik energie spotřebují aplikace, když je používáte, ve srovnání s aplikacemi běžícími na pozadí.</p><p>7. Pokud aplikace používají napájení na pozadí, můžete kliknout nebo klepnout na ikonu <strong>Změnit nastavení aplikací běžících na pozadí </strong>a změnit jejich konfiguraci, aby neběžely na pozadí. To však platí pouze pro univerzální aplikace systému Windows 10.</p><p>8. Přejděte dále dolů, kde se nachází seznam aplikací, což je asi nejužitečnější část této funkce. Seznam obsahuje aplikace, které využily energii baterie za dané období, a u každé z nich je uvedeno procento využité energie</p><p><img src='assets/images/qa/4.2.jpg' /></p><p> </p>",
-            "heading1": "Symptom",
-            "para1": {
-                "span1": "Windows 10 includes a new",
-                "span2": "“Battery Use”",
-                "span3": "screen that shows you what’s draining your laptop’s juice. That means it’ll tell you exactly what apps–both desktop and Windows 10 “universal” apps–are using too much power."
-            },
-            "heading2": "Affected Brands",
-            "para2": "Lenovo laptops, desktops",
-            "heading3": "Affected Systems",
-            "para3": "All",
-            "heading4": "Operating System",
+			"title": "Kontrola využití baterie počítače",
+			"heading1": "Příznak",
+            "para1": "Windows 10 obsahuje novou obrazovku <strong>Využití baterie</strong>, která vás informuje, co přesně spotřebovává energii notebooku. To znamená, že budete přesně vědět, které počítačové aplikace nebo univerzální aplikace systému Windows 10 využívají nejvíce energie.",
+            "heading2": "Značky, kterých se to týká",
+            "para2": "Notebooky a stolní počítače Lenovo",
+            "heading3": "Systémy, kterých se to týká",
+            "para3": "Všechny",
+            "heading4": "Operační systém",
             "para4": "Windows 10",
-            "heading5": "Solution",
-            "para5": {
-                "line1": "This feature is new in Windows 10, we need to find this feature first as it is not stored in your traditional",
-                "line2": "control panel",
-                "line3": "view, this feature is located in the new",
-                "line4": "“Settings”",
-                "line5": "app"
-            },
-            "para6": {
-                "span1": "A. Find the Battery Use Screen",
-                "span2": {
-                    "line1": "1. Click or Tap the",
-                    "line2": "“Settings”",
-                    "line3": "option from the start menu"
-                },
-                "span3": {
-                    "line1": "2. In",
-                    "line2": "Settings",
-                    "line3": "select",
-                    "line4": "“System”",
-                    "line5": "and then select",
-                    "line6": "“Battery saver.”"
-                },
-                "span4": {
-                    "line1": "3. Click or tap the",
-                    "line2": "“Battery use”",
-                    "line3": "link under this heading to see more details."
-                },
-                "span5": "B. Analyze Your Power Usage",
-                "span6": "4. You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last from last week",
-                "span7": {
-                    "line1": 5,
-                    "line2": "“System”,",
-                    "line3": "“Display”,",
-                    "line4": "and",
-                    "line5": "“Wi-Fi”",
-                    "line6": "percentages. This shows how much battery power has been used by system processes, the display,"
-                },
-                "span8": {
-                    "line1": "6. The",
-                    "line2": "“In use”",
-                    "line3": "and",
-                    "line4": "“Background”",
-                    "line5": "options show how much power is used by applications while you’re using them, compared to applications running in the background."
-                },
-                "span9": {
-                    "line1": "7. If apps are using power in the background, you can click or tap the",
-                    "line2": "“Change background app settings”",
-                    "line3": "link and configure apps to not run in the background. This only works for universal Windows 10 apps."
-                },
-                "span10": "8. Scroll down further and you will see a list of applications, this is considered as the most useful section of this feature. It will display a list of the apps have used battery power in that period, and show you what percentage of your battery power each app has used."
-            }
+            "heading5": "Řešení",
+            "para5": "Jelikož je tato funkce nově přidaná do systému Windows 10, musíte ji nejprve najít, protože se nenachází klasicky na <strong>Ovládacích panelech</strong>, ale je součástí nové aplikace <strong>Nastavení</strong>.",
+            "heading6": "A. Přejděte na obrazovku Využití baterie",
+            "para6": "1. V nabídce Start klikněte nebo klepněte na možnost <strong>Nastavení</strong>.",
+            "para7": "2. V části <strong>Nastavení</strong> vyberte položku <strong>Systém</strong> a poté vyberte volbu <strong>Spořič baterie</strong>.",
+            "para8": "3. Kliknutím nebo klepnutím na odkaz <strong>Využití baterie</strong> pod záhlavím Spořič baterie zobrazíte další podrobnosti.",
+            "heading7": "B. Analyzujte využití energie",
+            "para9": "4. Údaje na obrazovce Využití baterie můžete změnit, aby se zobrazovalo využití baterie za posledních 24 nebo 48 hodin, nebo za minulý týden.",
+            "para10": "5. Procenta u položek <strong>Systém</strong>, <strong>Displej</strong> a <strong>Wi-Fi</strong>. znázorňují, kolik energie baterie používají systémové procesy a displej.",
+            "para11": "6. Volby <strong>Využití</strong> a <strong>Na pozadí</strong> ukazují, kolik energie spotřebují aplikace, když je používáte, ve srovnání s aplikacemi běžícími na pozadí.",
+            "para12": "7. Pokud aplikace používají napájení na pozadí, můžete kliknout nebo klepnout na ikonu <strong>Změnit nastavení aplikací běžících na pozadí </strong>a změnit jejich konfiguraci, aby neběžely na pozadí. To však platí pouze pro univerzální aplikace systému Windows 10.",
+            "para13": "8. Přejděte dále dolů, kde se nachází seznam aplikací, což je asi nejužitečnější část této funkce. Seznam obsahuje aplikace, které využily energii baterie za dané období, a u každé z nich je uvedeno procento využité energie."
         },
         "question5": {
-            "title": "Použití počítače jako tabletu",
-            "description": "<div class='faqInFs4Fb'>    Použití počítače jako tabletu</div><hr><p>Pokud máte zařízení s dotykovou obrazovkou, režim tabletu umožňuje intuitivnější a snadnější použití systému Windows.</p><h3 class='faqInFs25FbP10'>Použití režimu tabletu</h3><p>Chcete-li zapnout režim tabletu, na hlavním panelu vyberte <strong>centrum akcí</strong> a zvolte <strong>Režim tabletu</strong>.</p><p> </p><p><img src='assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Poznámka</h3><p>Pokud chcete vědět, zda se vaše zařízení umí automaticky přepnout do režimu tabletu, vyhledejte své zařízení na webu jeho výrobce. Podpora této funkce závisí na hardwaru, nainstalovaném ovladači a způsobu nastavení zařízení výrobcem. </p><p> </p><p>V režimu tabletu se aplikace otevírají na celou obrazovku, díky čemuž máte více prostoru pro práci. Chcete-li aplikaci zavřít, přetáhněte ji do dolní části obrazovky.</p><p> </p><h3 class='faqInFs25FbP10'>Tip</h3><p>V režimu tabletu se zobrazuje hlavní panel, ale pokud chcete na obrazovce více prostoru, můžete jej skrýt. Vyberte tlačítko <strong>Start</strong>, vyberte položky <strong>Nastavení </strong>> <strong>Systém </strong>> <strong>Režim tabletu</strong> a zapněte funkci <strong>Automaticky skrývat hlavní panel v režimu tabletu</strong>. Chcete-li skrytý hlavní panel zobrazit, od dolní části obrazovky přejeďte prstem nahoru nebo do dolní části obrazovky umístěte ukazatel myši.</p><h3 class='faqInFs25FbP10'>Použití dvou aplikací současně</h3><p>Chcete-li v režimu tabletu používat dvě aplikace vedle sebe, přetáhněte otevřenou aplikaci dolů a na stranu. Uvidíte, kam se přichytí, a vedle ní uvidíte všechny otevřené aplikace.</p><p>V tomto zobrazení také můžete:</p><ul>    <li>Pomocí sdílené hrany mezi dvěma přichycenými aplikacemi změnit velikost obou aplikací najednou.</li>    <li>V zobrazení úloh otevřít novou aplikaci: Na hlavním panelu vyberte <strong>zobrazení úloh</strong>, vyberte aplikaci a přetáhněte ji na jednu stranu rozdělené obrazovky.</li>    <li>Pomocí tlačítka Zpět na hlavním panelu přejít zpět do aplikace nebo otevřít aplikaci, kterou jste používali dříve.</li></ul><p> </p>",
-            "heading1": "Use tablet mode",
-            "para2": {
-                "span1": "To turn on tablet mode, select",
-                "span2": "action center",
-                "span3": "on the taskbar, then select",
-                "span4": "Tablet mode."
-            },
-            "heading2": "Note",
-            "para3": "To find out if your device can automatically turn on tablet mode, search for your device on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, and how the device was set up by the manufacturer.",
-            "para4": "In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the screen.",
+			"title": "Použití počítače jako tabletu",
+			"para1": "Pokud máte zařízení s dotykovou obrazovkou, režim tabletu umožňuje intuitivnější a snadnější použití systému Windows.",
+            "heading1": "Použití režimu tabletu",
+            "para2": "Chcete-li zapnout režim tabletu, na hlavním panelu vyberte <strong>centrum akcí</strong> a zvolte <strong>Režim tabletu</strong>.",
+            "heading2": "Poznámka",
+            "para3": "Pokud chcete vědět, zda se vaše zařízení umí automaticky přepnout do režimu tabletu, vyhledejte své zařízení na webu jeho výrobce. Podpora této funkce závisí na hardwaru, nainstalovaném ovladači a způsobu nastavení zařízení výrobcem. ",
+            "para4": "V režimu tabletu se aplikace otevírají na celou obrazovku, díky čemuž máte více prostoru pro práci. Chcete-li aplikaci zavřít, přetáhněte ji do dolní části obrazovky.",
             "heading3": "Tip",
-            "para5": {
-                "span1": "The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen.",
-                "span2": "Select the",
-                "span3": "Start",
-                "span4": "button, select",
-                "span5": " Settings",
-                "span6": "System",
-                "span7": "Tablet mode",
-                "span8": ", then turn on",
-                "span9": "Automatically hide the taskbar in tablet mode.",
-                "span10": "To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there."
-            },
-            "heading4": "Use two apps simultaneously",
-            "para6": "To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and you'll see any open apps next to it.",
-            "para7": "In this view, you can also:",
-            "para8": {
-                "span1": "Use the shared edge between two snapped apps to resize both apps at the same time.",
-                "span2": {
-                    "line1": "Open a new app from task view—select",
-                    "line2": "Task view",
-                    "line3": "on the taskbar, select an app, then drag it to one side to snap it into your divided screen."
-                },
-                "span3": "Use the back button on the taskbar to go back in an app, or to open an app that you were using before."
-            }
+            "para5": "V režimu tabletu se zobrazuje hlavní panel, ale pokud chcete na obrazovce více prostoru, můžete jej skrýt. Vyberte tlačítko <strong>Start</strong>, vyberte položky <strong>Nastavení </strong>> <strong>Systém </strong>> <strong>Režim tabletu</strong> a zapněte funkci <strong>Automaticky skrývat hlavní panel v režimu tabletu</strong>. Chcete-li skrytý hlavní panel zobrazit, od dolní části obrazovky přejeďte prstem nahoru nebo do dolní části obrazovky umístěte ukazatel myši.",
+            "heading4": "Použití dvou aplikací současně",
+            "para6": "Chcete-li v režimu tabletu používat dvě aplikace vedle sebe, přetáhněte otevřenou aplikaci dolů a na stranu. Uvidíte, kam se přichytí, a vedle ní uvidíte všechny otevřené aplikace.",
+            "para7": "V tomto zobrazení také můžete:",
+            "para8": "Pomocí sdílené hrany mezi dvěma přichycenými aplikacemi změnit velikost obou aplikací najednou.",
+            "para9": "V zobrazení úloh otevřít novou aplikaci: Na hlavním panelu vyberte <strong>zobrazení úloh</strong>, vyberte aplikaci a přetáhněte ji na jednu stranu rozdělené obrazovky.",
+            "para10": "Pomocí tlačítka Zpět na hlavním panelu přejít zpět do aplikace nebo otevřít aplikaci, kterou jste používali dříve."
         },
         "question6": {
-            "title": "Seznamte se s Cortanou, svým osobním asistentem",
-            "description": "<div class='faqInFs4Fb'>    Seznamte se s Cortanou, svým osobním asistentem</div><hr><h3 class='faqInFs25FbP10'>Co je Cortana?</h3><hr /><p>Cortana je vaše digitální sekretářka. Pomůže vám zařídit, co potřebujete.</p><p>Čím více budete Cortanu používat, tím osobnější bude váš vztah.</p><p>Chcete-li s Cortanou začít pracovat, do vyhledávacího pole zadejte otázku nebo vyberte mikrofon a otázku položte přímo Cortaně. (Psát lze na všech typech počítačů, ale pro mluvení potřebujete mikrofon.)</p><p>Pokud nevíte, co říci, výběrem vyhledávacího okna na hlavním panelu se na zamykací obrazovce a domovské stránce Cortany zobrazí návrhy.</p><p><img src='assets/images/qa/6.1.jpg' /></p><ol>    <li>Domů 2. Notebook 3. Nastavení 4. Zpětná vazba</li></ol><p>Co pro vás může Cortana udělat:</p><ul>    <li>Připomenout vám naplánované události na základě času, míst nebo osob.</li>    <li>Sledovat zásilky, týmy, zájmy nebo odlety.</li>    <li>Odesílat e-maily a textové zprávy.</li>    <li>Spravovat kalendář a průběžně vás informovat.</li>    <li>Vytvářet a spravovat seznamy.</li>    <li>Povídat si a hrát hry.</li>    <li>Hledat faktické údaje, soubory, místa a informace.</li>    <li>Otevřít libovolnou aplikaci v systému.</li></ul><h3 class='faqInFs25FbP10'>Zkuste tohle: Nastavte upomínku</h3><hr /><p>Jednou z věcí, které Cortana dokáže, je upozornit vás na plánované události. Může vás upomenout na základě času, místa nebo dokonce i osob.</p><p>Například napište nebo řekněte: „Připomeň mi, abych popřál Lucce, jak mi bude příště volat.“</p><p>Jak bude Lucka volat, upomínka se zobrazí.</p><p>Speciální bonus &mdash; Pokud používáte telefon Windows nebo iPhone či Android s Cortanou, můžete pro Cortanu nastavit synchronizaci oznámení mezi vaším počítačem a telefonem.</p><p><img src='assets/images/qa/6.2.jpg' /></p><h3 class='faqInFs25FbP10'>Ahoj, Cortano</h3><hr /><p>Nastavte Cortanu, aby vás slyšela, když řeknete „ahoj, Cortano“. Výběrem vyhledávacího pole na hlavním panelu otevřete domovskou stránku Cortany. Poté vyberte položku <strong>Nastavení</strong> a zapněte volbu <strong>Ať Cortana odpovídá na Ahoj, Cortano</strong>.</p><p><img src='assets/images/qa/6.3.jpg' /></p><p class='faqInFs25FbP10'>Poznámka</p><p>Cortana je k dispozici pouze v některých zemích/oblastech a některé její funkce nemusí být dostupné všude.</p><p> </p>",
-            "heading1": "What is Cortana?",
-            "para1": "Cortana is your digital agent. She'll help you get things done.",
-            "para2": "The more you use Cortana, the more personalized your experience will be.",
-            "para3": "To get started, type a question in the search box, or select the microphone  and talk to Cortana. (Typing works for all types of PCs, but you need a mic to talk.)",
-            "para4": "If you’re not sure what to say, you’ll see suggestions on your lock screen, and in Cortana home when you select the search box on the taskbar.",
-            "para5": " Home 2. Notebook 3. Settings 4. Feedback",
-            "para6": "Here are some things Cortana can do for you:",
-            "bulletset1": {
-                "span1": "Give you reminders based on time, places, or people.",
-                "span2": "Track packages, teams, interests, and flights.",
-                "span3": "Send emails and texts.",
-                "span4": "Manage your calendar and keep you up to date.",
-                "span5": "Create and manage lists.",
-                "span6": "Chit chat and play games.",
-                "span7": "Find facts, files, places, and info.",
-                "span8": "Open any app on your system."
+			"title": "Seznamte se s Cortanou, svým osobním asistentem",
+			"heading1": "Co je Cortana?",
+            "para1": "Cortana je vaše digitální sekretářka. Pomůže vám zařídit, co potřebujete.",
+            "para2": "Čím více budete Cortanu používat, tím osobnější bude váš vztah.",
+            "para3": "Chcete-li s Cortanou začít pracovat, do vyhledávacího pole zadejte otázku nebo vyberte mikrofon a otázku položte přímo Cortaně. (Psát lze na všech typech počítačů, ale pro mluvení potřebujete mikrofon.)",
+            "para4": "Pokud nevíte, co říci, výběrem vyhledávacího okna na hlavním panelu se na zamykací obrazovce a domovské stránce Cortany zobrazí návrhy.",
+            "para5": "1. Domů 2. Notebook 3. Nastavení 4. Zpětná vazba",
+            "para6": "Co pro vás může Cortana udělat:",
+            "unorderedList1": {
+				"listItem1": "Připomenout vám naplánované události na základě času, míst nebo osob.",
+                "listItem2": "Sledovat zásilky, týmy, zájmy nebo odlety.",
+                "listItem3": "Odesílat e-maily a textové zprávy.",
+                "listItem4": "Spravovat kalendář a průběžně vás informovat.",
+                "listItem5": "Vytvářet a spravovat seznamy.",
+                "listItem6": "Povídat si a hrát hry.",
+                "listItem7": "Hledat faktické údaje, soubory, místa a informace.",
+                "listItem8": "Otevřít libovolnou aplikaci v systému."
             },
-            "heading2": "Try this: Set a reminder",
-            "para7": "One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or even people.",
-            "para8": "For example, type or say, “Remind me to congratulate Tanya the next time she calls.”",
-            "para9": "The reminder will appear when you get a call from Tanya.",
-            "para10": "Extra bonus—if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync notifications between your PC and phone.",
-            "heading3": "Hey Cortana?",
-            "para11": {
-                "span1": "Set Cortana to hear you anytime you say “Hey Cortana.” Select the search box on the taskbar to open Cortana home.",
-                "span2": {
-                    "line1": "Then select",
-                    "line2": "Settings",
-                    "line3": "and turn on",
-                    "line4": "Let Cortana respond to “Hey Cortana.”"
-                }
-            },
-            "para12": "Note",
-            "para13": "Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere."
-        },
-        "pageTitle": "Podrobnosti podpory"
+			"heading2": "Zkuste tohle: Nastavte upomínku",
+            "para7": "Jednou z věcí, které Cortana dokáže, je upozornit vás na plánované události. Může vás upomenout na základě času, místa nebo dokonce i osob.",
+            "para8": "Například napište nebo řekněte: „Připomeň mi, abych popřál Lucce, jak mi bude příště volat“.",
+            "para9": "Jak bude Lucka volat, upomínka se zobrazí.",
+            "para10": "Speciální bonus — Pokud používáte telefon Windows nebo iPhone či Android s Cortanou, můžete pro Cortanu nastavit synchronizaci oznámení mezi vaším počítačem a telefonem.",
+            "heading3": "Ahoj, Cortano",
+            "para11": "Nastavte Cortanu, aby vás slyšela, když řeknete „ahoj, Cortano“. Výběrem vyhledávacího pole na hlavním panelu otevřete domovskou stránku Cortany. Poté vyberte položku <strong>Nastavení</strong> a zapněte volbu <strong>Ať Cortana odpovídá na Ahoj, Cortano</strong>.",
+            "heading4": "Poznámka",
+            "para12": "Cortana je k dispozici pouze v některých zemích/oblastech a některé její funkce nemusí být dostupné všude."
+        }
     },
     "welcometutorial": {
         "description": "S pomocí Vantage lze snadno aktualizovat ovladače, spouštět diagnostiku, žádat o podporu a zjišťovat informace o zařízení. Snadno si přizpůsobíte způsob práce se zařízením a najdete užitečné informace šité na míru podle vašich potřeb",

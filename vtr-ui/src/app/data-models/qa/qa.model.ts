@@ -4,7 +4,6 @@ export class QA {
 	path: string;
 	title?: string;
 	keys?: string[];
-	description?: string;
 	like: boolean;
 	dislike: boolean;
 	category: string;
@@ -15,10 +14,5 @@ export class QA {
 		title: string,
 		like: boolean,
 		dislike: boolean,
-		keys: string[],
-		description: string) { }
-
-	getDescription?() {
-		return 'getDescription';
-	}
+		keys: string[]) { }
 }
