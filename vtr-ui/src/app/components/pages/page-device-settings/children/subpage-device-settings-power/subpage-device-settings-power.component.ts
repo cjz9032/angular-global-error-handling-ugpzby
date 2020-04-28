@@ -99,7 +99,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	isBatterySectionAvailable = false;
 	isPowerSectionAvailable = false;
 	isPowerPageAvailable = false;
-	gotoLinks = ['smartSettings', 'smartStandby', 'battery', 'power', 'other'];
+	gotoLinks = ['other', 'smartSettings', 'smartStandby', 'battery', 'power'];
 
 	// remove power smart settings after intelligent cooling code updates
 	headerMenuItems = [
@@ -107,7 +107,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			title: 'device.deviceSettings.power.powerSmartSettings.title',
 			path: 'smartSettings',
 			metricsItem: 'PowerSmartSettings',
-			order: 1
+			order: 2
 		}
 	];
 
@@ -421,7 +421,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				title: 'device.deviceSettings.power.powerSmartSettings.title',
 				path: 'smartSettings',
 				metricsItem: 'PowerSmartSettings',
-				order: 1
+				order: 2
 			};
 			this.commonService.addToObjectsList(this.headerMenuItems, smartSettingaByObj);
 		} else {
@@ -436,7 +436,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				title: 'device.deviceSettings.power.smartStandby.sectionTitle',
 				path: 'smartStandby',
 				metricsItem: 'SmartStandby',
-				order: 2
+				order: 3
 			};
 			this.commonService.addToObjectsList(this.headerMenuItems, smartStandByObj);
 		} else {
@@ -452,7 +452,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				title: 'device.deviceSettings.power.batterySettings.title',
 				path: 'battery',
 				metricsItem: 'BatterySettings',
-				order: 3
+				order: 4
 			};
 			this.headerMenuItems = this.commonService.addToObjectsList(this.headerMenuItems, batteryObj);
 		} else {
@@ -468,7 +468,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				title: 'device.deviceSettings.power.powerSettings.title',
 				path: 'power',
 				metricsItem: 'PowerSettings',
-				order: 4
+				order: 5
 			};
 			this.headerMenuItems = this.commonService.addToObjectsList(this.headerMenuItems, powerObj);
 		} else {
@@ -483,7 +483,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				title: 'device.deviceSettings.power.otherSettings.title',
 				path: 'other',
 				metricsItem: 'OtherSettings',
-				order: 5
+				order: 1
 			};
 			this.headerMenuItems = this.commonService.addToObjectsList(this.headerMenuItems, other);
 		} else {
