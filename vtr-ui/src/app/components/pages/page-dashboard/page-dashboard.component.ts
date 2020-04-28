@@ -30,7 +30,9 @@ import { FeatureContent } from 'src/app/data-models/common/feature-content.model
 import { SelfSelectService, SegmentConst } from 'src/app/services/self-select/self-select.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { FeedbackService } from 'src/app/services/feedback/feedback.service';
-import _ from 'lodash';
+import trim from 'lodash/trim';
+import sample from 'lodash/sample';
+import map from 'lodash/map';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { WelcomeTextContent } from 'src/app/data-models/welcomeText/welcome-text.model';
 
@@ -265,7 +267,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy {
 				this.localInfoService.getLocalInfo().then((localInfo: any) => {
 					const isLangCacheTexts = cacheWelcomeTexts.find(content => content.language === localInfo.Lang);
 					if (isLangCacheTexts && [SegmentConst.Consumer, SegmentConst.SMB].includes(localInfo.Segment)) {
-						this.dashboardService.welcomeText = _.sample(isLangCacheTexts.titles);
+						this.dashboardService.welcomeText = sample(isLangCacheTexts.titles);
 					}
 				})
 			}
@@ -278,9 +280,9 @@ export class PageDashboardComponent implements OnInit, OnDestroy {
 			this.localInfoService.getLocalInfo().then((localInfo: any) => {
 				if ([SegmentConst.Consumer, SegmentConst.SMB].includes(localInfo.Segment)) {
 					let dashboardWelcomeTexts: WelcomeTextContent[] = [];
-					const titles = _.map(welcomeTextContent.Title.split('|||'), _.trim);
+					const titles = map(welcomeTextContent.Title.split('|||'), trim);
 					if (!this.dashboardService.welcomeText) {
-						this.dashboardService.welcomeText = _.sample(titles);
+						this.dashboardService.welcomeText = sample(titles);
 					}
 					const cacheWelcomeTexts: WelcomeTextContent[] = this.commonService.getLocalStorageValue(LocalStorageKey.DashboardWelcomeTexts);
 					if (cacheWelcomeTexts && cacheWelcomeTexts.length > 0) {
