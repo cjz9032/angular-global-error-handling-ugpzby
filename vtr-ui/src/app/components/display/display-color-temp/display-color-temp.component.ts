@@ -23,7 +23,7 @@ export class DisplayColorTempComponent implements OnInit {
 		this.logger.info('DisplayColorTempComponent', this.displayColorTempSettings);
 	}
 
-	public onDisplayColorTemperatureChange($event: number) {
+	public onDisplayColorTemperatureChanged($event: number) {
 		this.logger.info('DisplayColorTempComponent.onDisplayColorTemperatureChange', $event);
 		this.displayColorTempSettings.current = $event;
 		this.displayColorTempChange.emit($event);
@@ -34,7 +34,7 @@ export class DisplayColorTempComponent implements OnInit {
 		this.resetTemperature.emit($event);
 	}
 
-	public dragChangeValue($event: number) {
+	public onDisplayColorTemperaturePreview($event: number) {
 		this.colorPreviewValue.emit($event);
 	}
 }

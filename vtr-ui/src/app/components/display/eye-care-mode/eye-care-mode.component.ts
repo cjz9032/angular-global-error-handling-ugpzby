@@ -61,11 +61,11 @@ export class EyeCareModeComponent implements OnInit, OnChanges {
 		this.logger.info('Reset Temperature');
 		this.resetTemperature.emit($event);
 	}
-	public onEyeCareTemperatureChange($event: number) {
+	public onEyeCareTemperatureChanged($event: number) {
 		this.eyeCareModeSettings.current = $event;
 		this.eyeCareTemperatureChange.emit($event);
 	}
-	public onEyeCareTemperatureValueChange($event: number) {
+	public onEyeCareTemperaturePreview($event: number) {
 		this.eyeCareTemperatureValueChange.emit($event);
 	}
 	public onSunsetToSunrise() {

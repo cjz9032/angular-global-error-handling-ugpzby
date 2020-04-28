@@ -10,8 +10,8 @@
 				[minLegend]="'device.deviceSettings.displayCamera.display.eyeCareMode.options.warm' | translate"
 				[maxLegend]="'device.deviceSettings.displayCamera.display.eyeCareMode.options.cold' | translate"
 				[value]="eyeCareModeSettings.current"
-				(sliderChange)="onEyeCareTemperatureChange($event)"
-				(valueChanged)="onEyeCareTemperatureValueChange($event)"
+				(dragEnd)="onEyeCareTemperatureChanged($event)"
+				(valueChange)="onEyeCareTemperaturePreview($event)"
 				[ariaLabel]="'eye care mode color temperature slider'"
 				[sliderId]="'color-temp-eyeCareMode'">
 			</vtr-ui-custom-slider>
