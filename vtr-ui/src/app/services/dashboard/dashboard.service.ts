@@ -50,7 +50,6 @@ export class DashboardService {
 	translateString: any;
 
 	welcomeText = '';
-	welcomeTextWithoutUserName = '';
 
 	constructor(
 		shellService: VantageShellService,
