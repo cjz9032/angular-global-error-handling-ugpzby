@@ -201,6 +201,9 @@
                     "legionAccessory": "Install Legion Accessory Central?",
                     "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
                     "install": "INSTALL"
+                },
+                "popup": {
+                    "closeBtn": "close"
                 }
             }
         },
@@ -1145,15 +1148,15 @@
                             }
                         },
                         "autoTransition": {
-							"description": "Включение режима \"Максимальная производительность\". Если этот режим включен, температура поверхности компьютера и шум от вентиляторов могут автоматически увеличиться.",
-							"more": "ДОПОЛНИТЕЛЬНО",
-							"less": "МЕНЬШЕ",
-							"moreContent": {
-								"desc1": "a. При использовании офисных программ, Центра обновления Windows, просмотре фильмов через Интернет и легкой нагрузке на систему компьютер должен работать тихо. В обычных играх производительность будет увеличена.",
-								"desc2": "b. В требовательных играх автоматически включается режим \"Максимальная производительность\". Это может привести к увеличению температуры поверхности компьютера и уровня шума.",
-								"desc3": "c. Как только емкость аккумулятора опустится ниже 30%, система автоматически переключится в режим \"Экономия заряда аккумулятора\"."
-							}			
-						}
+                            "description": "Включение режима \"Максимальная производительность\". Если этот режим включен, температура поверхности компьютера и шум от вентиляторов могут автоматически увеличиться.",
+                            "more": "ДОПОЛНИТЕЛЬНО",
+                            "less": "МЕНЬШЕ",
+                            "moreContent": {
+                                "desc1": "a. При использовании офисных программ, Центра обновления Windows, просмотре фильмов через Интернет и легкой нагрузке на систему компьютер должен работать тихо. В обычных играх производительность будет увеличена.",
+                                "desc2": "b. В требовательных играх автоматически включается режим \"Максимальная производительность\". Это может привести к увеличению температуры поверхности компьютера и уровня шума.",
+                                "desc3": "c. Как только емкость аккумулятора опустится ниже 30%, система автоматически переключится в режим \"Экономия заряда аккумулятора\"."
+                            }
+                        }
                     },
                     "nonintelligentCooling": {
                         "options": {
@@ -2128,7 +2131,8 @@
                 "fileAuthorizationTips": {
                     "content": "У Lenovo Vantage нет доступа к файловой системе.",
                     "link": "Перейдите в раздел параметров Windows, чтобы предоставить доступ"
-                }
+                },
+                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
             },
             "voice": {
                 "title": "Голос",

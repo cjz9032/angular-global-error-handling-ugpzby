@@ -6,23 +6,20 @@ import {
 	EventEmitter,
 	ElementRef,
 	ViewChild,
-	OnDestroy,
 } from '@angular/core';
-import { Subject } from 'rxjs/internal/Subject';
-import { debounceTime } from 'rxjs/internal/operators/debounceTime';
 
 @Component({
 	selector: 'vtr-ui-custom-slider',
 	templateUrl: './ui-custom-slider.component.html',
 	styleUrls: ['./ui-custom-slider.component.scss'],
 })
-export class UiCustomSliderComponent implements OnInit, OnDestroy {
+export class UiCustomSliderComponent implements OnInit {
 	@Input() metricsItem;
 	@Input() metricsEvent = 'featureClick';
 	@Input() metricsValue;
 	@Input() isDisabled = false;
 	@Input() sliderId = 'rangeSlider';
-	@Input() value = 55; // initial slider value
+	@Input() value = 1; // initial slider value
 	@Input() min = 1; // slider start/minimum value
 	@Input() max = 100; // slider end/maximum value
 	@Input() step = 1; // ticks or steps to change on each slide
@@ -33,30 +30,22 @@ export class UiCustomSliderComponent implements OnInit, OnDestroy {
 	@Input() ticks = [1, 55, 65, 100];
 	@Input() ariaLabel = 'slider';
 
-	@Output() sliderChange = new EventEmitter<number>();
-	@Output() valueChanged = new EventEmitter<number>();
+	// fires on every value change
+	@Output() valueChange = new EventEmitter<number>();
+	// fires when dragging is complemented
+	@Output() dragEnd = new EventEmitter<number>();
+	// fires when slider dragging starts
+	@Output() dragStart = new EventEmitter<number>();
 
 	@ViewChild('sliderBubble', { static: false }) sliderBubble: ElementRef;
 	@ViewChild('rangeSlider', { static: false }) rangeSlider: ElementRef;
 
-	private valueChangedSubject: Subject<number>;
 	public ticksArray = [];
 	constructor() { }
 
 	ngOnInit() {
-		this.valueChangedSubject = new Subject();
-		this.valueChangedSubject.pipe(debounceTime(500)).subscribe((value: number) => {
-			this.valueChanged.emit(value);
-		});
-
 		if (this.hasTicks) {
 			this.calculateTicks();
-		}
-	}
-
-	ngOnDestroy() {
-		if (this.valueChangedSubject) {
-			this.valueChangedSubject.unsubscribe();
 		}
 	}
 
@@ -72,7 +61,6 @@ export class UiCustomSliderComponent implements OnInit, OnDestroy {
 		}
 	}
 
-
 	/**
 	 *  This event is fired when user changes slider value by dragging or by keyboard
 	 * @param $event currently selected value
@@ -80,7 +68,18 @@ export class UiCustomSliderComponent implements OnInit, OnDestroy {
 	public onInputChange($event: any) {
 		const value = $event.target.valueAsNumber;
 		this.value = value;
-		this.sliderChange.emit(value);
-		this.valueChangedSubject.next(value);
+		this.valueChange.emit(value);
+	}
+
+	public onDragStart($event) {
+		const value = $event.target.valueAsNumber;
+		this.value = value;
+		this.dragStart.emit(value);
+	}
+
+	public onDragEnd($event) {
+		const value = $event.target.valueAsNumber;
+		this.value = value;
+		this.dragEnd.emit(value);
 	}
 }

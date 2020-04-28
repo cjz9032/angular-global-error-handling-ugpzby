@@ -66,12 +66,6 @@
 									color: $gaming_grey_lightest;
 									line-height: 3.2rem;
 									position: relative;
-									@media #{$white-on-black} {
-									color: $gaming_lightest;
-									}
-									@media #{$black-on-white} {
-									color: $high-contrast-grey;
-									}
 									&::after {
 										content: "";
 										position: absolute;

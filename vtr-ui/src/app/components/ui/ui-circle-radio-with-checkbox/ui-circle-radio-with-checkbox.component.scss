@@ -59,20 +59,14 @@
 		.checkbox-custom:disabled+.checkbox-custom-label {
 			border: 0.1rem solid $circle_checkbox_disabled;
 			&::before {
-				border: none;
-			}
-			&::after {
-				border: none;
+				display: none;
 			}
 		}
 
 		.checkbox-custom:disabled:checked+.checkbox-custom-label {
 			background: $circle_checkbox_disabled;
 			&::before {
-				border: none;
-			}
-			&::after {
-				border: none;
+				display: none;
 			}
 		}
 
@@ -91,25 +85,8 @@
 		.disabled-title {
 			color: $circle_checkbox_disabled;
 		}
-		.checkbox-custom:checked+.checkbox-custom-label {
+		.checkbox-custom:checked+.checkbox-custom-label{
 			background-color: $background;
-				&::before {
-				content: '';
-				border: 0.1rem solid $menu_hover;
-				position: absolute;
-				width: 2rem;
-				height: 2rem;
-				top: -3px;
-				left: 38px;
-				bottom: 0;
-				right: 0;
-				border-radius: 50%;
-				transform: scale(1.2);
-				z-index: -2;
-				}
-				&::after {
-					@include circular-button-outline;
-				}
 
 			@media #{$white-on-black}{
 				background-color: $highlight_bright;;
@@ -179,26 +156,15 @@
 	}
 	&:focus {
 		outline: 0;
-		 label::after {
+		.checkbox-custom-label::before {
+			content: '\e940';
 			@include circular-button-outline;
+		}
+		.checkbox-custom:checked+.checkbox-custom-label{
+			&::before{
+				content: '\e941';
+				@include circular-button-outline;
+			}
 		}
 	}
 }
-.vtr-ui-circle-radio-with-checkbox.blue-theme {
-	&:focus {
-		outline: 0;
-		 label::after {
-			border: 0.1rem solid $light;
-			@include circular-button-outline;
-		}
-	}
-	.checkbox-custom:checked+.checkbox-custom-label {
-		&::before {
-			border: 0.1rem solid $light;
-		}
-		&::after {
-			border: 0.1rem solid $light;
-		}
-	}
-}
-

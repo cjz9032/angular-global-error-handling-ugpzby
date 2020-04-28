@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, ViewChild, ElementRef} from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { ConnectedHomeSecurity } from '@lenovo/tan-client-bridge';
@@ -26,6 +26,8 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 	joinSuccess = false;
 	joinFailed = false;
 	isFocusIn = false;
+
+	@ViewChild('domInput') domInput: ElementRef;
 
 	constructor(
 		public activeModal: NgbActiveModal,
@@ -76,6 +78,9 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 				}).catch((err) => {
 					this.startJoin = false;
 					this.joinFailed = true;
+					setTimeout(()=>{
+						this.domInput.nativeElement.focus();
+					}, 0)
 				}).finally(() => {
 					this.metrics.sendMetrics(metricsData);
 				});
@@ -83,6 +88,9 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 			this.startJoin = false;
 			this.joinFailed = true;
 			this.metrics.sendMetrics(metricsData);
+			setTimeout(()=>{
+				this.domInput.nativeElement.focus();
+			}, 0)
 		}
 	}
 

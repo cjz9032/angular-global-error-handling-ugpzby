@@ -201,6 +201,9 @@
                     "legionAccessory": "Install Legion Accessory Central?",
                     "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
                     "install": "INSTALL"
+                },
+                "popup": {
+                    "closeBtn": "close"
                 }
             }
         },
@@ -1145,15 +1148,15 @@
                             }
                         },
                         "autoTransition": {
-							"description": "Ota käyttöön \"Erinomainen suorituskyky\" tässä tilassa. Kun tämä ominaisuus on käytössä, tietokoneesi pinnan lämpötila ja tuulettimen äänentaso saattavat nousta automaattisesti.",
-							"more": "ENEMMÄN",
-							"less": "VÄHEMMÄN",
-							"moreContent": {
-								"desc1": "a. Järjestelmä saattaa olla hiljainen toimistossa, Windows-päivityksen aikana, elokuvaa katsottaessa verkosta tai silloin, kun järjestelmän kuormitus on alhainen. Tavallisissa peliolosuhteissa sen suorituskyky on parempi.",
-								"desc2": "b. Kun pelaat raskasta peliä, \"Erinomainen suorituskyky\" -tila on automaattisesti käytössä. Se saattaa aiheuttaa enemmän ääntä tai nostaa tietokoneesi pinnan lämpötilaa.",
-								"desc3": "c. Kun akun kapasiteetti on alle 30 %, järjestelmä siirtyy automaattisesti \"Akun säästö\" tilaan."
-							}			
-						}
+                            "description": "Ota käyttöön \"Erinomainen suorituskyky\" tässä tilassa. Kun tämä ominaisuus on käytössä, tietokoneesi pinnan lämpötila ja tuulettimen äänentaso saattavat nousta automaattisesti.",
+                            "more": "ENEMMÄN",
+                            "less": "VÄHEMMÄN",
+                            "moreContent": {
+                                "desc1": "a. Järjestelmä saattaa olla hiljainen toimistossa, Windows-päivityksen aikana, elokuvaa katsottaessa verkosta tai silloin, kun järjestelmän kuormitus on alhainen. Tavallisissa peliolosuhteissa sen suorituskyky on parempi.",
+                                "desc2": "b. Kun pelaat raskasta peliä, \"Erinomainen suorituskyky\" -tila on automaattisesti käytössä. Se saattaa aiheuttaa enemmän ääntä tai nostaa tietokoneesi pinnan lämpötilaa.",
+                                "desc3": "c. Kun akun kapasiteetti on alle 30 %, järjestelmä siirtyy automaattisesti \"Akun säästö\" tilaan."
+                            }
+                        }
                     },
                     "nonintelligentCooling": {
                         "options": {
@@ -2128,7 +2131,8 @@
                 "fileAuthorizationTips": {
                     "content": "Lenovo Vantage ei voi käyttää tiedostojärjestelmää.",
                     "link": "Siirry Windows-asetuksiin ja anna käyttöoikeus"
-                }
+                },
+                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
             },
             "voice": {
                 "title": "Ääni",
