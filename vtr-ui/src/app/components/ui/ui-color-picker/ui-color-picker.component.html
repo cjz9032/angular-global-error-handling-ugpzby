@@ -2,7 +2,7 @@
    <div class="preset-color" *ngIf="isTogglePresetColor" (click)="colorPresetFun();$event.stopPropagation();">
       <ul>
          <li *ngFor="let item of presetColorList;let i = index;"  [ngStyle]="{'background':'#'+item.color}" [ngClass]="{'checked': item.isChecked}" (click)="colorChange(i)"
-         tabindex="0" [attr.aria-label]="item.isChecked?'lighting color is: ' + item.color+'selected':'lighting color is: ' + item.color+'unSelected'" (keydown.enter)="colorChange(i)">
+         tabindex="0" [attr.aria-label]="item.isChecked?'lighting color is: ' + item.color+'selected':'lighting color is: ' + item.color+'unSelected'" (keydown.enter)="colorChange(i)" role="option">
             <span></span>
          </li>
       </ul>
