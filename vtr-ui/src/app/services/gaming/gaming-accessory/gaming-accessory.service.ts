@@ -57,10 +57,6 @@ export class GamingAccessoryService {
           // launch win32 app through protocol
           const result = await WinRT.launchUri('legion-accessory-central:');
           this.logger.info(`Service-GamingAccessory-launchAccessory: WinRT.launchUri return: ${result}`);
-          // launch win32 app through plugin?
-          // const lacPath = '%ProgramData%\\Microsoft\\Windows\\Start Menu\\Programs\\Lenovo\\Legion Accessory Central.lnk';
-          // const result = await this.systemUpdateBridge.launchApp(lacPath);
-          // this.logger.info(`Service-GamingAccessory-launchAccessory: systemUpdateBridge.launchApp return: ${result}`);
           if (result) {
             resolve(true);
           }
