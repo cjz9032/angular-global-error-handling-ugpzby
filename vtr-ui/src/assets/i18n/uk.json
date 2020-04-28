@@ -201,6 +201,9 @@
                     "legionAccessory": "Install Legion Accessory Central?",
                     "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
                     "install": "INSTALL"
+                },
+                "popup": {
+                    "closeBtn": "close"
                 }
             }
         },
@@ -1145,15 +1148,15 @@
                             }
                         },
                         "autoTransition": {
-							"description": "Увімкнути \"Найвищу продуктивність\" у цьому режимі. Якщо увімкнути, температура на поверхні комп'ютера і шум вентилятора можуть автоматично підвищуватися.",
-							"more": "ДОКЛАДНІШЕ",
-							"less": "МЕНШЕ",
-							"moreContent": {
-								"desc1": "а. Під час роботи з офісними програмами, Windows Update, перегляду фільмів онлайн і легких навантажень система може працювати тихо. У звичайних іграх система працюватиме швидше.",
-								"desc2": "b. У ресурсомістких іграх режим \"Найвища продуктивність\" вмикається автоматично. Це може підвищити шум або температуру поверхні комп'ютера.",
-								"desc3": "c. Коли ємність акумулятора опускається нижче 30%, система автоматично переходить у режим \"Заощадження заряду\"."
-							}			
-						}
+                            "description": "Увімкнути \"Найвищу продуктивність\" у цьому режимі. Якщо увімкнути, температура на поверхні комп'ютера і шум вентилятора можуть автоматично підвищуватися.",
+                            "more": "ДОКЛАДНІШЕ",
+                            "less": "МЕНШЕ",
+                            "moreContent": {
+                                "desc1": "а. Під час роботи з офісними програмами, Windows Update, перегляду фільмів онлайн і легких навантажень система може працювати тихо. У звичайних іграх система працюватиме швидше.",
+                                "desc2": "b. У ресурсомістких іграх режим \"Найвища продуктивність\" вмикається автоматично. Це може підвищити шум або температуру поверхні комп'ютера.",
+                                "desc3": "c. Коли ємність акумулятора опускається нижче 30%, система автоматично переходить у режим \"Заощадження заряду\"."
+                            }
+                        }
                     },
                     "nonintelligentCooling": {
                         "options": {
@@ -2128,7 +2131,8 @@
                 "fileAuthorizationTips": {
                     "content": "Lenovo Vantage не надано доступ до файлової системи.",
                     "link": "Перейдіть до настройок Windows, щоб надати доступ"
-                }
+                },
+                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
             },
             "voice": {
                 "title": "Голос",

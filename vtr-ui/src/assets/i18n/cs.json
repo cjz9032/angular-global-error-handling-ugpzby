@@ -201,6 +201,9 @@
                     "legionAccessory": "Install Legion Accessory Central?",
                     "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
                     "install": "INSTALL"
+                },
+                "popup": {
+                    "closeBtn": "close"
                 }
             }
         },
@@ -1145,15 +1148,15 @@
                             }
                         },
                         "autoTransition": {
-							"description": "V tomto režimu povolte \"Extrémní výkon\". Jakmile je tato možnost povolena, může se automaticky zvýšit teplota povrchu počítače a hluk ventilátoru.",
-							"more": "DALŠÍ",
-							"less": "MÉNĚ",
-							"moreContent": {
-								"desc1": "a. V kancelářských aplikacích, aktualizacích Windows, online filmech nebo scénářích s lehkým zatížením systému může být systém tichý. V běžných herních scénářích má lepší výkon.",
-								"desc2": "b. Při hraní náročných her je automaticky povolen režim \"Extrémní výkon\". Ten může způsobit větší hlučnost nebo vyšší teplotu na povrchu počítače.",
-								"desc3": "c. Pokud je kapacita baterie nižší než 30 %, systém se automaticky přepne do režimu \"Úspora baterie\"."
-							}			
-						}
+                            "description": "V tomto režimu povolte \"Extrémní výkon\". Jakmile je tato možnost povolena, může se automaticky zvýšit teplota povrchu počítače a hluk ventilátoru.",
+                            "more": "DALŠÍ",
+                            "less": "MÉNĚ",
+                            "moreContent": {
+                                "desc1": "a. V kancelářských aplikacích, aktualizacích Windows, online filmech nebo scénářích s lehkým zatížením systému může být systém tichý. V běžných herních scénářích má lepší výkon.",
+                                "desc2": "b. Při hraní náročných her je automaticky povolen režim \"Extrémní výkon\". Ten může způsobit větší hlučnost nebo vyšší teplotu na povrchu počítače.",
+                                "desc3": "c. Pokud je kapacita baterie nižší než 30 %, systém se automaticky přepne do režimu \"Úspora baterie\"."
+                            }
+                        }
                     },
                     "nonintelligentCooling": {
                         "options": {
@@ -2128,7 +2131,8 @@
                 "fileAuthorizationTips": {
                     "content": "Lenovo Vantage nemá přístup k souborovému systému.",
                     "link": "Chcete-li poskytnout přístup, přejděte do nastavení systému Windows"
-                }
+                },
+                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
             },
             "voice": {
                 "title": "Hlas",

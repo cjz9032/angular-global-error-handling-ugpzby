@@ -1,0 +1,92 @@
+@import "./../../../app.theme.scss";
+
+.vtr-ui-custom-switch {
+	$font-size-base: 1.4rem;
+	$line-height-base: 1.5 !default;
+	$custom-control-indicator-border-color: $light;
+	$custom-control-indicator-size: 4.6rem / 2.4;
+	$custom-control-gutter: 0.3rem !default;
+	$custom-control-indicator-border-width: 0.1rem;
+	$custom-switch-width: 4.6rem !default;
+	$custom-switch-height: 2rem !default;
+	$custom-switch-indicator-border-radius: $custom-control-indicator-size / 2 !default;
+	$custom-switch-indicator-size: $custom-control-indicator-size - ($custom-control-indicator-border-width * 4) !default;
+	$input-focus-indicator: 0 0 0 0.1rem rgba(255, 255, 255, 1), 0 0 0 0.2rem rgba(0, 123, 255, 1);
+	$input-checked-background: transparent linear-gradient(113deg, $green_darker 0%, $green-light 100%) 0% 0% no-repeat
+					padding-box;
+	.custom-switch {
+		padding-left: $custom-switch-width + $custom-control-gutter;
+
+		.custom-control-label {
+			&::before {
+				left: -($custom-switch-width + $custom-control-gutter);
+				width: $custom-switch-width;
+				height: $custom-switch-height;
+				pointer-events: all;
+				border-radius: $custom-switch-indicator-border-radius;
+				transition: none;
+			}
+
+			&::after {
+				top: ($custom-switch-height - $custom-switch-indicator-size);
+				left: (-($custom-switch-width + $custom-control-gutter) + ($custom-control-indicator-border-width * 2));
+				width: $custom-switch-indicator-size !important;
+				height: $custom-switch-indicator-size !important;
+				background-color: $custom-control-indicator-border-color;
+				border-radius: $custom-switch-indicator-border-radius;
+			}
+		}
+
+		// maintain order of hover, focus, active
+		.custom-control-input:checked:active ~ .custom-control-label {
+			&::before {
+				background: $green-light;
+				border-color: $green-light;
+			}
+		}
+
+		.custom-control-input:focus ~ .custom-control-label {
+			&::before {
+				box-shadow: $input-focus-indicator;
+			}
+		}
+
+		.custom-control-input:checked:hover ~ .custom-control-label {
+			&::before {
+				border-color: $green_darker;
+				background: $green_darker;
+			}
+		}
+		.custom-control-input:checked ~ .custom-control-label {
+			&::before {
+				border: 0;
+				background: $input-checked-background;
+			}
+			&::after {
+				background-color: $light;
+				transform: translateX($custom-switch-width - $custom-control-indicator-size);
+			}
+		}
+		.custom-control-input:not(:checked) ~ .custom-control-label {
+			&::before {
+				border-color: $grey_dark;
+				background-color: $grey_light;
+			}
+			&::after {
+				background-color: $grey_dark;
+			}
+		}
+
+		.custom-control-input:disabled ~ .custom-control-label {
+			&::before {
+				border-color: $grey_dark;
+				background: $grey_light;
+				opacity: 0.6;
+			}
+			&::after {
+				background-color: $grey_dark;
+				opacity: 0.4;
+			}
+		}
+	}
+}

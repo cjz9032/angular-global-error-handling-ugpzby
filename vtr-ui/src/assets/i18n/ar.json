@@ -203,6 +203,9 @@
                     "legionAccessory": "Install Legion Accessory Central?",
                     "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
                     "install": "INSTALL"
+                },
+                "popup": {
+                    "closeBtn": "close"
                 }
             }
         },
@@ -1147,15 +1150,15 @@
                             }
                         },
                         "autoTransition": {
-							"description": "قم بتمكين \"الأداء الفائق\" في هذا الوضع. عند التمكين ، قد تزداد درجة الحرارة على سطح جهاز الكمبيوتر وضجيج المروحة تلقائيًا.",
-							"more": "المزيد",
-							"less": "أقل",
-							"moreContent": {
-								"desc1": "a. في المكتب ، أو أثناء تحديث Windows ، أو مشاهدة الأفلام عبر الإنترنت، أو سيناريوهات تحميل ضوء النظام، يمكن أن يكون النظام هادئًا. بينما في سيناريوهات الألعاب العادية ، يكون له أداء أفضل.",
-								"desc2": "b. عند ممارسة الألعاب الثقيلة، يتم تمكين وضع \"الأداء الفائق\" تلقائيًا. قد يسبب ضوضاء أكبر أو درجة حرارة أعلى على سطح الكمبيوتر.",
-								"desc3": "c. عندما تكون سعة البطارية أقل من 30%، يتحول النظام تلقائيًا إلى وضع \"توفير البطارية\"."
-							}			
-						}
+                            "description": "قم بتمكين \"الأداء الفائق\" في هذا الوضع. عند التمكين ، قد تزداد درجة الحرارة على سطح جهاز الكمبيوتر وضجيج المروحة تلقائيًا.",
+                            "more": "المزيد",
+                            "less": "أقل",
+                            "moreContent": {
+                                "desc1": "a. في المكتب ، أو أثناء تحديث Windows ، أو مشاهدة الأفلام عبر الإنترنت، أو سيناريوهات تحميل ضوء النظام، يمكن أن يكون النظام هادئًا. بينما في سيناريوهات الألعاب العادية ، يكون له أداء أفضل.",
+                                "desc2": "b. عند ممارسة الألعاب الثقيلة، يتم تمكين وضع \"الأداء الفائق\" تلقائيًا. قد يسبب ضوضاء أكبر أو درجة حرارة أعلى على سطح الكمبيوتر.",
+                                "desc3": "c. عندما تكون سعة البطارية أقل من 30%، يتحول النظام تلقائيًا إلى وضع \"توفير البطارية\"."
+                            }
+                        }
                     },
                     "nonintelligentCooling": {
                         "options": {
@@ -2130,7 +2133,8 @@
                 "fileAuthorizationTips": {
                     "content": "لا يمكن لـ Lenovo Vantage الوصول إلى نظام الملفات.",
                     "link": "انتقل إلى إعدادات Windows لمنح الوصول"
-                }
+                },
+                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
             },
             "voice": {
                 "title": "الصوت",

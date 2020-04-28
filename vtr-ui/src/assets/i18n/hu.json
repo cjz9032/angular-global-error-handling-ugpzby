@@ -201,6 +201,9 @@
                     "legionAccessory": "Install Legion Accessory Central?",
                     "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
                     "install": "INSTALL"
+                },
+                "popup": {
+                    "closeBtn": "close"
                 }
             }
         },
@@ -1145,15 +1148,15 @@
                             }
                         },
                         "autoTransition": {
-							"description": "Ebben az üzemmódban engedélyezett az „Extrém teljesítmény”. Ha engedélyezi, a számítógép felületeinek hőmérséklete megnőhet, és a ventilátor is hangosabban üzemelhet.",
-							"more": "TOVÁBBIAK",
-							"less": "KEVESEBB",
-							"moreContent": {
-								"desc1": "a. Az Office használata, a Windows frissítése esetén, online filmnézéskor, valamint alacsony rendszerterhelés mellett a gép valószínűleg csendes fog maradni. A játékok jobban fognak futni.",
-								"desc2": "b. Nagy teljesítményigényű játékok esetén automatikusan bekapcsol az „Extrém teljesítmény” üzemmód. Ez a számítógép felületeinek felmelegedésével és hangosabb ventilátorzajjal járhat.",
-								"desc3": "c. Ha az akkumulátor töltöttsége 30% alá csökken, a rendszer automatikusan az „Akkumulátorkímélő” üzemmódba kapcsol."
-							}			
-						}
+                            "description": "Ebben az üzemmódban engedélyezett az „Extrém teljesítmény”. Ha engedélyezi, a számítógép felületeinek hőmérséklete megnőhet, és a ventilátor is hangosabban üzemelhet.",
+                            "more": "TOVÁBBIAK",
+                            "less": "KEVESEBB",
+                            "moreContent": {
+                                "desc1": "a. Az Office használata, a Windows frissítése esetén, online filmnézéskor, valamint alacsony rendszerterhelés mellett a gép valószínűleg csendes fog maradni. A játékok jobban fognak futni.",
+                                "desc2": "b. Nagy teljesítményigényű játékok esetén automatikusan bekapcsol az „Extrém teljesítmény” üzemmód. Ez a számítógép felületeinek felmelegedésével és hangosabb ventilátorzajjal járhat.",
+                                "desc3": "c. Ha az akkumulátor töltöttsége 30% alá csökken, a rendszer automatikusan az „Akkumulátorkímélő” üzemmódba kapcsol."
+                            }
+                        }
                     },
                     "nonintelligentCooling": {
                         "options": {
@@ -2128,7 +2131,8 @@
                 "fileAuthorizationTips": {
                     "content": "A Lenovo Vantage nem fér hozzá a fájlrendszerhez.",
                     "link": "A Windows beállításaiban adhatja meg a hozzáférést"
-                }
+                },
+                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
             },
             "voice": {
                 "title": "Hang",

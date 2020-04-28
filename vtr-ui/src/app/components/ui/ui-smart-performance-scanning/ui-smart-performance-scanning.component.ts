@@ -66,191 +66,163 @@ export class UiSmartPerformanceScanningComponent implements OnInit, OnChanges {
 		private logger: LoggerService,
 		private translate: TranslateService,
 		private commonService: CommonService
-	) {}
+	) { }
 
 	ngOnInit() {
-			this.spCategoryenum = SPCategory;
-			this.spSubCategoryenum = SPSubCategory;
-			this.activegroup = this.spCategoryenum.TUNEUPPERFORMANCE;
-			this.initSpeed();
-			this.sampleDesc = this.translate.instant(
-				'smartPerformance.scanningPage.nowScanningDetail.tunePCDesc'
-			);
-			this.GetCurrentScanninRollingTexts(
-				this.translate.instant(
-					'smartPerformance.scanningPage.nowScanningDetail.tunePCScanningItems.accumulatedJunk'
-				)
-			);
-			this.updateTuneUpPerformanceSubItems(
-				this.translate.instant('smartPerformance.tunePCPerformance.title'),
-				this.sampleDesc
-			);
-	}
+		this.spCategoryenum = SPCategory;
+		this.spSubCategoryenum = SPSubCategory;
+		this.activegroup = this.spCategoryenum.TUNEUPPERFORMANCE;
+		// this.smartperformanceScanningStatusEventRef = this.getSmartPerformanceStartScanStatusEvent.bind(this);
+		// this.shellServices.registerEvent(EventTypes.smartPerformanceScanStatus, this.smartperformanceScanningStatusEventRef);
 
+		// this.shellServices.registerEvent(
+		// 	EventTypes.smartPerformanceScanStatus,
+		// 	event => {
+		// 		// console.log("event registered.................................");
+		// 		this.updateScanResponse(event);
+		// 	}
+		// );
+
+		// this.getSmartPerformanceStartScanInformation();
+		this.initSpeed();
+		this.sampleDesc = this.translate.instant(
+			'smartPerformance.scanningPage.nowScanningDetail.tunePCDesc'
+		);
+		this.GetCurrentScanninRollingTexts(
+			this.translate.instant(
+				'smartPerformance.scanningPage.nowScanningDetail.tunePCScanningItems.accumulatedJunk'
+			)
+		);
+		this.updateTitleAndSubItems(
+			this.translate.instant('smartPerformance.tunePCPerformance.title'),
+			this.sampleDesc
+		);
+	}
 	ngOnChanges(changes) {
 		if (this.scheduleScanData) {
 			this.updateScanResponse(this.scheduleScanData);
 		}
 	}
-
 	initSpeed() {
 		const self = this;
-		self.loop = setInterval(function() {
+		self.loop = setInterval(function () {
 			self.speedometer.speedCurrent = Math.floor(Math.random() * (self.speedometer.speedMax / 2)) + 1;
 		}, 1000);
-	
-		self.delay = setTimeout(function() {
+
+		self.delay = setTimeout(function () {
 			clearInterval(self.loop);
 			self.speedometer.speedCurrent = self.speedometer.speedMax * .9;
 		}, 10000);
-	} 
+	}
 	updateScanResponse(response) {
-        this.responseData = response;
-        this.scanData = response.payload;
-        this.percent = this.scanData.percentage;
-        if (this.scanData.status.category == this.spSubCategoryenum.HUNDEREAD) {
+		this.responseData = response;
+		this.scanData = response.payload;
+		this.percent = this.scanData.percentage;
+
+		if (this.scanData.status.category === this.spSubCategoryenum.HUNDEREAD) {
 			this.activegroup = this.spCategoryenum.TUNEUPPERFORMANCE;
 			this.toggle(this.activegroup);
-		} else if (
-			this.scanData.status.category == this.spSubCategoryenum.TWOHUNDEREAD
-		) {
+		} else if (this.scanData.status.category === this.spSubCategoryenum.TWOHUNDEREAD) {
 			this.activegroup = this.spCategoryenum.INTERNETPERFORMANCE;
 			this.toggle(this.activegroup);
-		} else if (
-			this.scanData.status.category ==
-			this.spSubCategoryenum.THREEHUNDEREAD
-		) {
+
+		} else if (this.scanData.status.category === this.spSubCategoryenum.THREEHUNDEREAD) {
 			this.activegroup = this.spCategoryenum.MALWARESECURITY;
 			this.toggle(this.activegroup);
 		}
-        if (this.scanData.status.category == this.spSubCategoryenum.HUNDEREAD) {
+		if (this.scanData.status.category === this.spSubCategoryenum.HUNDEREAD) {
 			this.initSpeed();
-			if (this.onehundreadFlag == true) {
+			if (this.onehundreadFlag === true) {
 				this.sampleDesc = this.translate.instant(
 					'smartPerformance.scanningPage.nowScanningDetail.tunePCDesc'
 				);
 				this.onehundreadFlag = false;
-				
 			}
-			if (
-				this.scanData.status.subcategory ==
-				this.spSubCategoryenum.HUNDEREADANDONE
-			) {
+			if (this.scanData.status.subcategory === this.spSubCategoryenum.HUNDEREADANDONE) {
 				this.GetCurrentScanninRollingTexts(
 					this.translate.instant(
 						'smartPerformance.scanningPage.nowScanningDetail.tunePCScanningItems.accumulatedJunk'
 					)
 				);
-			} else if (
-				this.scanData.status.subcategory ==
-				this.spSubCategoryenum.HUNDEREADANDTWO
-			) {
+			} else if (this.scanData.status.subcategory === this.spSubCategoryenum.HUNDEREADANDTWO) {
 				this.GetCurrentScanninRollingTexts(
 					this.translate.instant(
 						'smartPerformance.scanningPage.nowScanningDetail.tunePCScanningItems.usabilityIssues'
 					)
 				);
-			} else if (
-				this.scanData.status.subcategory ==
-				this.spSubCategoryenum.HUNDEREADANDTHREE
-			) {
+			} else if (this.scanData.status.subcategory === this.spSubCategoryenum.HUNDEREADANDTHREE) {
 				this.GetCurrentScanninRollingTexts(
 					this.translate.instant(
 						'smartPerformance.scanningPage.nowScanningDetail.tunePCScanningItems.windowsSettings'
 					)
 				);
-			} else if (
-				this.scanData.status.subcategory ==
-				this.spSubCategoryenum.HUNDEREADANDFOUR
-			) {
+			} else if (this.scanData.status.subcategory === this.spSubCategoryenum.HUNDEREADANDFOUR) {
 				this.GetCurrentScanninRollingTexts(
 					this.translate.instant(
 						'smartPerformance.scanningPage.nowScanningDetail.tunePCScanningItems.systemErrors'
 					)
 				);
-			} else if (
-				this.scanData.status.subcategory ==
-				this.spSubCategoryenum.HUNDEREADANDFIVE
-			) {
+			} else if (this.scanData.status.subcategory === this.spSubCategoryenum.HUNDEREADANDFIVE) {
 				this.GetCurrentScanninRollingTexts(
 					this.translate.instant(
 						'smartPerformance.scanningPage.nowScanningDetail.tunePCScanningItems.registryErrors'
 					)
 				);
 			}
-			this.updateTuneUpPerformanceSubItems(
+			this.updateTitleAndSubItems(
 				this.translate.instant(
 					'smartPerformance.tunePCPerformance.title'
 				),
 				this.sampleDesc
 			);
-		} else if (
-			this.scanData.status.category == this.spSubCategoryenum.TWOHUNDEREAD
-		) {
-			if (this.twohundreadFlag == true) {
+
+		} else if (this.scanData.status.category === this.spSubCategoryenum.TWOHUNDEREAD) {
+			if (this.twohundreadFlag === true) {
 				this.currentCategory = 2;
 				this.sampleDesc = this.translate.instant(
 					'smartPerformance.scanningPage.nowScanningDetail.boostDesc'
 				);
 				this.twohundreadFlag = false;
 			}
-			if (
-				this.scanData.status.subcategory ==
-				this.spSubCategoryenum.TWOHUNDEREADANDONE
-			) {
+			this.updateTitleAndSubItems(
+				this.translate.instant(
+					'smartPerformance.boostInternetPerformance.extraTitle'
+				),
+				this.sampleDesc
+			);
+			if (this.scanData.status.subcategory === this.spSubCategoryenum.TWOHUNDEREADANDONE) {
 				this.GetCurrentScanninRollingTexts(
 					this.translate.instant(
 						'smartPerformance.scanningPage.nowScanningDetail.boostcanningItems.eJunk'
 					)
 				);
-			} else if (
-				this.scanData.status.subcategory ==
-				this.spSubCategoryenum.TWOHUNDEREADANDTWO
-			) {
+			} else if (this.scanData.status.subcategory === this.spSubCategoryenum.TWOHUNDEREADANDTWO) {
 				this.GetCurrentScanninRollingTexts(
 					this.translate.instant(
 						'smartPerformance.scanningPage.nowScanningDetail.boostcanningItems.networkSettings'
 					)
 				);
-			} else if (
-				this.scanData.status.subcategory ==
-				this.spSubCategoryenum.TWOHUNDEREADANDTHREE
-			) {
+			} else if (this.scanData.status.subcategory ===	this.spSubCategoryenum.TWOHUNDEREADANDTHREE) {
 				this.GetCurrentScanninRollingTexts(
 					this.translate.instant(
 						'smartPerformance.scanningPage.nowScanningDetail.boostcanningItems.browserSettings'
 					)
 				);
-			} else if (
-				this.scanData.status.subcategory ==
-				this.spSubCategoryenum.TWOHUNDEREADANDFOUR
-			) {
+			} else if (this.scanData.status.subcategory ===	this.spSubCategoryenum.TWOHUNDEREADANDFOUR) {
 				this.GetCurrentScanninRollingTexts(
 					this.translate.instant(
 						'smartPerformance.scanningPage.nowScanningDetail.boostcanningItems.browserSecurity'
 					)
 				);
-			} else if (
-				this.scanData.status.subcategory ==
-				this.spSubCategoryenum.TWOHUNDEREADANDFIVE
-			) {
+			} else if (this.scanData.status.subcategory ===	this.spSubCategoryenum.TWOHUNDEREADANDFIVE) {
 				this.GetCurrentScanninRollingTexts(
 					this.translate.instant(
 						'smartPerformance.scanningPage.nowScanningDetail.boostcanningItems.wifiPerformance'
 					)
 				);
 			}
-			this.updateInternetPerformanceSubItems(
-				this.translate.instant(
-					'smartPerformance.boostInternetPerformance.extraTitle'
-				),
-				this.sampleDesc
-			);
-		} else if (
-			this.scanData.status.category ==
-			this.spSubCategoryenum.THREEHUNDEREAD
-		) {
-			if (this.threehundreadFlag == true) {
+		} else if (this.scanData.status.category === this.spSubCategoryenum.THREEHUNDEREAD) {
+			if (this.threehundreadFlag === true) {
 				this.currentCategory = 3;
 				this.sampleDesc = this.translate.instant(
 					'smartPerformance.scanningPage.nowScanningDetail.malwareDesc'
@@ -258,60 +230,45 @@ export class UiSmartPerformanceScanningComponent implements OnInit, OnChanges {
 				this.threehundreadFlag = false;
 				// this.initSpeed();
 			}
-			if (
-				this.scanData.status.subcategory ==
-				this.spSubCategoryenum.THREEHUNDEREADANDONE
-			) {
+			if (this.scanData.status.subcategory === this.spSubCategoryenum.THREEHUNDEREADANDONE) {
 				this.GetCurrentScanninRollingTexts(
 					this.translate.instant(
 						'smartPerformance.scanningPage.nowScanningDetail.malwareScanningItems.malwareScan'
 					)
 				);
-			} else if (
-				this.scanData.status.subcategory ==
-				this.spSubCategoryenum.THREEHUNDEREADANDTWO
-			) {
+			} else if (this.scanData.status.subcategory ===	this.spSubCategoryenum.THREEHUNDEREADANDTWO) {
 				this.GetCurrentScanninRollingTexts(
 					this.translate.instant(
 						'smartPerformance.scanningPage.nowScanningDetail.malwareScanningItems.zerodayInfections'
 					)
 				);
-			} else if (
-				this.scanData.status.subcategory ==
-				this.spSubCategoryenum.THREEHUNDEREADANDTHREE
-			) {
+			} else if (this.scanData.status.subcategory ===	this.spSubCategoryenum.THREEHUNDEREADANDTHREE) {
 				this.GetCurrentScanninRollingTexts(
 					this.translate.instant(
 						'smartPerformance.scanningPage.nowScanningDetail.malwareScanningItems.errantPrograms'
 					)
 				);
-			} else if (
-				this.scanData.status.subcategory ==
-				this.spSubCategoryenum.THREEHUNDEREADANDFOUR
-			) {
+			} else if (this.scanData.status.subcategory === this.spSubCategoryenum.THREEHUNDEREADANDFOUR) {
 				this.GetCurrentScanninRollingTexts(
 					this.translate.instant(
 						'smartPerformance.scanningPage.nowScanningDetail.malwareScanningItems.annoyingAdware'
 					)
 				);
-			} else if (
-				this.scanData.status.subcategory ==
-				this.spSubCategoryenum.THREEHUNDEREADANDFIVE
-			) {
+			} else if (this.scanData.status.subcategory === this.spSubCategoryenum.THREEHUNDEREADANDFIVE) {
 				this.GetCurrentScanninRollingTexts(
 					this.translate.instant(
 						'smartPerformance.scanningPage.nowScanningDetail.malwareScanningItems.securitySettings'
 					)
 				);
 			}
-			this.updateMalwareSubItems(
+			this.updateTitleAndSubItems(
 				this.translate.instant(
 					'smartPerformance.malwareSecurity.title'
 				),
 				this.sampleDesc
 			);
 		}
-    }
+	}
 
 	public async getSmartPerformanceStartScanInformation() {
 		let res;
@@ -322,10 +279,10 @@ export class UiSmartPerformanceScanningComponent implements OnInit, OnChanges {
 				);
 
 				if (this.isSubscribed == true) {
-                    res = await this.smartPerformanceService.launchScanAndFix();
-                    //console.log(JSON.stringify(res));
-                } else {
-				//	console.log('CALLING START SCAN');
+					res = await this.smartPerformanceService.launchScanAndFix();
+					// console.log(JSON.stringify(res));
+				} else {
+					// 	console.log('CALLING START SCAN');
 					res = await this.smartPerformanceService.startScan();
 				}
 
@@ -339,12 +296,12 @@ export class UiSmartPerformanceScanningComponent implements OnInit, OnChanges {
 					});
 				}
 			} catch (error) {
-                this.logger.error(
+				this.logger.error(
 					'getSmartPerformanceStartScanInformation :: error',
 					error.message
 				);
-                return EMPTY;
-            }
+				return EMPTY;
+			}
 		}
 	}
 
@@ -360,31 +317,40 @@ export class UiSmartPerformanceScanningComponent implements OnInit, OnChanges {
 		this.accordionComponent.expand(id);
 	}
 
-	updateTuneUpPerformanceSubItems(name, desc) {
-		this.subItems = {
-			name,
-			desc,
+	// updateTuneUpPerformanceSubItems(name, desc) {
+	// 	this.subItems = {
+	// 		name,
+	// 		desc,
+	// 		items: this.currentScanningItems
+	// 	};
+	// 	// this.subItemsList.emit(this.subItems);
+	// }
+	// updateMalwareSubItems(name, desc) {
+	// 	this.subItems = {
+	// 		name,
+	// 		desc,
+	// 		items: this.currentScanningItems
+	// 	};
+	// 	// this.subItemsList.emit(this.subItems);
+	// }
+
+	updateTitleAndSubItems(nameVal, descVal) {
+		this.subItems = { name: nameVal,	desc: descVal,
 			items: this.currentScanningItems
 		};
-		// this.subItemsList.emit(this.subItems);
-	}
-	updateMalwareSubItems(name, desc) {
-		this.subItems = {
-			name,
-			desc,
-			items: this.currentScanningItems
-		};
+		nameVal = '';
 		// this.subItemsList.emit(this.subItems);
 	}
 
-	updateInternetPerformanceSubItems(name, desc) {
-		this.subItems = {
-			name,
-			desc,
-			items: this.currentScanningItems
-		};
-		// this.subItemsList.emit(this.subItems);
-	}
+
+	// updateInternetPerformanceSubItems(name, desc) {
+	// 	this.subItems = {
+	// 		name,
+	// 		desc,
+	// 		items: this.currentScanningItems
+	// 	};
+	// 	// this.subItemsList.emit(this.subItems);
+	// }
 
 	GetCurrentScanninRollingTexts(scanitems: any) {
 		this.currentScanningItems = [];

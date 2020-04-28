@@ -201,6 +201,9 @@
                         "goInstall": "INSTALLERA"
                     },
                     "autoSwitch": "Växla automatiskt till prestandaläge när du startar spel och växla tillbaka när du är klar."
+                },
+                "popup": {
+                    "closeBtn": "close"
                 }
             }
         },
@@ -1145,15 +1148,15 @@
                             }
                         },
                         "autoTransition": {
-							"description": "Aktivera Extrem prestanda i detta läge. När funktionen är aktiverad kan temperaturen på datorns utsida och fläktljudet öka.",
-							"more": "MER",
-							"less": "MINDRE",
-							"moreContent": {
-								"desc1": "a. Du kan ställa in att enheten ska vara tyst på kontoret, vid Windows-uppdateringar, när du tittar på film online eller vid systeminläsningar. I normala spelsituationer kan du använda bättre prestanda.",
-								"desc2": "b. När du spelar dataintensiva spel aktiveras läget Extrem prestanda automatiskt. Det kan medföra högre ljud eller temperatur på datorns utsida.",
-								"desc3": "c. När batterikapaciteten är lägre än 30 % växlar systemet automatiskt till läget Spara batteri."
-							}			
-						}
+                            "description": "Aktivera Extrem prestanda i detta läge. När funktionen är aktiverad kan temperaturen på datorns utsida och fläktljudet öka.",
+                            "more": "MER",
+                            "less": "MINDRE",
+                            "moreContent": {
+                                "desc1": "a. Du kan ställa in att enheten ska vara tyst på kontoret, vid Windows-uppdateringar, när du tittar på film online eller vid systeminläsningar. I normala spelsituationer kan du använda bättre prestanda.",
+                                "desc2": "b. När du spelar dataintensiva spel aktiveras läget Extrem prestanda automatiskt. Det kan medföra högre ljud eller temperatur på datorns utsida.",
+                                "desc3": "c. När batterikapaciteten är lägre än 30 % växlar systemet automatiskt till läget Spara batteri."
+                            }
+                        }
                     },
                     "nonintelligentCooling": {
                         "options": {
@@ -2128,7 +2131,8 @@
                 "fileAuthorizationTips": {
                     "content": "Lenovo Vantage har inte åtkomst till filsystemet.",
                     "link": "Öppna Windows-inställningar för att ge åtkomst"
-                }
+                },
+                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
             },
             "voice": {
                 "title": "Röst",

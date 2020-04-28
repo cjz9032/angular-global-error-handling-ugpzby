@@ -201,6 +201,9 @@
                     "legionAccessory": "Install Legion Accessory Central?",
                     "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
                     "install": "INSTALL"
+                },
+                "popup": {
+                    "closeBtn": "close"
                 }
             }
         },
@@ -1145,15 +1148,15 @@
                             }
                         },
                         "autoTransition": {
-							"description": "Habilitar “Rendimiento extremo” en esta modalidad. Cuando está habilitado, la temperatura de la superficie del sistema y el ruido del ventilador pueden aumentar automáticamente.",
-							"more": "MÁS",
-							"less": "MENOS",
-							"moreContent": {
-								"desc1": "a. En los escenarios de oficina, de actualización de Windows, de películas en línea o de carga ligera del sistema, el sistema puede estar en silencio. En situaciones normales de juegos, el rendimiento es mejor.",
-								"desc2": "b. Al jugar juegos pesados, la modalidad “Rendimiento extremo” se habilita automáticamente. Puede producir un ruido mayor o una temperatura superior en la superficie del sistema.",
-								"desc3": "c. Cuando la capacidad de la batería es inferior al 30 %, el sistema cambia automáticamente al modalidad “Ahorro de batería”."
-							}			
-						}
+                            "description": "Habilitar “Rendimiento extremo” en esta modalidad. Cuando está habilitado, la temperatura de la superficie del sistema y el ruido del ventilador pueden aumentar automáticamente.",
+                            "more": "MÁS",
+                            "less": "MENOS",
+                            "moreContent": {
+                                "desc1": "a. En los escenarios de oficina, de actualización de Windows, de películas en línea o de carga ligera del sistema, el sistema puede estar en silencio. En situaciones normales de juegos, el rendimiento es mejor.",
+                                "desc2": "b. Al jugar juegos pesados, la modalidad “Rendimiento extremo” se habilita automáticamente. Puede producir un ruido mayor o una temperatura superior en la superficie del sistema.",
+                                "desc3": "c. Cuando la capacidad de la batería es inferior al 30 %, el sistema cambia automáticamente al modalidad “Ahorro de batería”."
+                            }
+                        }
                     },
                     "nonintelligentCooling": {
                         "options": {
@@ -2128,7 +2131,8 @@
                 "fileAuthorizationTips": {
                     "content": "Lenovo Vantage no tiene acceso al sistema de archivos.",
                     "link": "Vaya a la configuración de Windows para dar acceso"
-                }
+                },
+                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
             },
             "voice": {
                 "title": "Voz",
