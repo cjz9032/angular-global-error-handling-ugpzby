@@ -13,7 +13,8 @@
 				(keyup)="KeyPress($event)"
 				(keyup.enter)="joinGroupBy(code.value)"
 				(focusin)="focusIn()"
-				(focusout)="focusOut()" maxlength="6">
+				(focusout)="focusOut()" maxlength="6"
+				#domInput>
 		</div>
 		<div class="join-info">
 			<div class="d-flex flex-column" [ngClass]="{'joinGroupSuccess':joinSuccess}">
