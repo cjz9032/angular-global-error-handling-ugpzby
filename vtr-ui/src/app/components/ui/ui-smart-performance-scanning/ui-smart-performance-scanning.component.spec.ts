@@ -25,7 +25,7 @@ const responseData = {
     }
 }
 
-describe("UiSmartPerformanceScanningComponent", () => {
+xdescribe("UiSmartPerformanceScanningComponent", () => {
 	let component: UiSmartPerformanceScanningComponent;
 	let fixture: ComponentFixture<UiSmartPerformanceScanningComponent>;
 	let shellService: VantageShellService;
