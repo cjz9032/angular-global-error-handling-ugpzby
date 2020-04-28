@@ -2,7 +2,7 @@
 
 .auto-set-checkbox {
 	$check-box-size: 2rem;
-	$check-box-shadow: inset 0 0 0 0.15rem rgba(255, 255, 255, 1);
+	$check-box-shadow: inset 0 0 0 0.2rem rgba(255, 255, 255, 1);
 	$disabled-opacity: 0.4;
 
 	@mixin check-icon($icon-color: "white") {
@@ -58,7 +58,7 @@
 		.custom-control-input:focus ~ .custom-control-label {
 			&::before {
 				outline: solid 1px $menu_hover;
-				outline-offset: 0.15rem;
+				outline-offset: 0.2rem;
 				box-shadow: $check-box-shadow;
 				border-color: $menu_hover;
 			}
