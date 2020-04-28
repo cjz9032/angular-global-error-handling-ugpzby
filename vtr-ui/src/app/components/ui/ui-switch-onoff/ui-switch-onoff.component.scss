@@ -192,13 +192,15 @@ input.wifi-checked + .switch.switch-xs > small {
 	color: $light;
 	font-weight: $weight_bold;
 	position: absolute;
-	top: 0.6rem;
+	top: 0.1rem;
 	width: 3.5rem;
-	left: 0rem;
 	text-align: center;
 
+	&.on-label {
+		right: 1.3rem;
+	}
 	&.off-label {
-		left: 1.4rem;
+		left: 1.2rem;
 		color: $shade_darker;
 	}
 }
