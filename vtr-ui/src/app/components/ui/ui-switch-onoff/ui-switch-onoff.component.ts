@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { CommonService } from '../../../services/common/common.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-ui-switch-onoff',
@@ -22,7 +23,13 @@ export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 
 	size = 'switch-xs';
 
-	constructor(public commonService: CommonService) { }
+	switchOnText = this.tranlateService.instant('common.ui.on');
+	switchOffText = this.tranlateService.instant('common.ui.off');
+
+	constructor(
+		public commonService: CommonService,
+		public tranlateService: TranslateService
+	) { }
 
 	ngOnInit() {
 		this.readonly = this.readonly || false;

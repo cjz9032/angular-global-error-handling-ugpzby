@@ -85,6 +85,7 @@
     "@types/d3-selection": "^1.4.1",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "^2.0.8",
+    "@types/lodash": "^4.14.150",
     "@types/node": "^13.7.4",
     "acorn": "^6.4.1",
     "codelyzer": "^5.1.2",

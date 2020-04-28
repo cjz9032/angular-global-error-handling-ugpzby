@@ -257,7 +257,7 @@ export enum LocalStorageKey {
 	IsSmartPerformanceSubscribed = '[LocalStorageKey] IsSmartPerformanceSubscribed',
 	SmartPerformanceSubscriptionDetails = '[LocalStorageKey] SmartPerformanceSubscriptionDetails',
 	IsPowerPageAvailable = '[LocalStorageKey] isPowerPageAvailable',
-	DashboardLastWelcomeText = '[LocalStorageKey] DashboardLastWelcomeText',
+	DashboardWelcomeTexts = '[LocalStorageKey] DashboardWelcomeTexts',
 	IsDolbyModeAvailable = '[LocalStorageKey] IsDolbyModeAvailable',
 	IsAudioPageAvailable = '[LocalStorageKey] IsAudioPageAvailable',
 	IsBatteryQuickSettingAvailable = '[LocalStorageKey] IsBatteryQuickSettingAvailable',

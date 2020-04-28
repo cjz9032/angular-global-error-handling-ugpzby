@@ -30,6 +30,12 @@ import { FeatureContent } from 'src/app/data-models/common/feature-content.model
 import { SelfSelectService, SegmentConst } from 'src/app/services/self-select/self-select.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { FeedbackService } from 'src/app/services/feedback/feedback.service';
+import trim from 'lodash/trim';
+import sample from 'lodash/sample';
+import map from 'lodash/map';
+import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
+import { WelcomeTextContent } from 'src/app/data-models/welcomeText/welcome-text.model';
+
 interface IConfigItem {
 	cardId: string;
 	displayContent: any;
@@ -158,6 +164,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy {
 		public dccService: DccService,
 		private selfselectService: SelfSelectService,
 		private feedbackService: FeedbackService,
+		private localInfoService: LocalInfoService,
 	) {
 	}
 
@@ -177,7 +184,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy {
 		this.qaService.setCurrentLangTranslations();
 		this.isWarrantyVisible = this.deviceService.showWarranty;
 		this.dashboardService.isDashboardDisplayed = true;
-		this.getWelcomeText();
+		this.getWelcomeTextFromCache();
 		this.commonService.setSessionStorageValue(SessionStorageKey.DashboardInDashboardPage, true);
 		this.subscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
@@ -253,51 +260,45 @@ export class PageDashboardComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	private getWelcomeText() {
+	private getWelcomeTextFromCache() {
 		if (!this.dashboardService.welcomeText) {
-			const win: any = window;
-			let isShellOnline = true;
-			if (win.VantageShellExtension && win.VantageShellExtension.MsWebviewHelper.getInstance().isInOfflineMode) {
-				isShellOnline = false;
-			}
-			const dashboardLastWelcomeText = this.commonService.getLocalStorageValue(LocalStorageKey.DashboardLastWelcomeText);
-			let textIndex = 1;
-			const welcomeTextLength = 15;
-			if (dashboardLastWelcomeText && dashboardLastWelcomeText.welcomeText) {
-				const lastIndex = this.getWelcomeTextIndex(dashboardLastWelcomeText.welcomeText);
-				if (!dashboardLastWelcomeText.isOnline && isShellOnline) {
-					textIndex = lastIndex;
-				} else {
-					if (lastIndex === welcomeTextLength) {
-						textIndex = 1;
-					} else {
-						textIndex = lastIndex + 1;
+			const cacheWelcomeTexts: WelcomeTextContent[]  = this.commonService.getLocalStorageValue(LocalStorageKey.DashboardWelcomeTexts)
+			if (cacheWelcomeTexts && cacheWelcomeTexts.length > 0) {
+				this.localInfoService.getLocalInfo().then((localInfo: any) => {
+					const isLangCacheTexts = cacheWelcomeTexts.find(content => content.language === localInfo.Lang);
+					if (isLangCacheTexts && [SegmentConst.Consumer, SegmentConst.SMB].includes(localInfo.Segment)) {
+						this.dashboardService.welcomeText = sample(isLangCacheTexts.titles);
 					}
-				}
-			} else {
-				textIndex = Math.floor(SecureMath.random() * 15 + 1);
-				if (textIndex === 2) {
-					textIndex = 3;
-				} // Do not show again in first time
+				})
 			}
-			if (textIndex === 8 && this.translate.currentLang.toLocaleLowerCase() !== 'en') {
-				textIndex = 9;
-			}
-			if (textIndex === 4) { textIndex = 5; }
-			this.dashboardService.welcomeText = `lenovoId.welcomeText${textIndex}`;
-			this.dashboardService.welcomeTextWithoutUserName = `lenovoId.welcomeTextWithoutUserName${textIndex}`;
-			this.commonService.setLocalStorageValue(
-				LocalStorageKey.DashboardLastWelcomeText,
-				{
-					welcomeText: this.dashboardService.welcomeText,
-					isOnline: isShellOnline
-				}
-			);
 		}
 	}
 
-	private getWelcomeTextIndex(key: string) {
-		return parseInt(key.replace('lenovoId.welcomeText', ''), 10);
+	private getWelcomeTextFromCms(response: any) {
+		const welcomeTextContent: any = this.cmsService.getOneCMSContent(response, 'top-title-welcome-text', 'welcome-text')[0];
+		if (welcomeTextContent && welcomeTextContent.Title) {
+			this.localInfoService.getLocalInfo().then((localInfo: any) => {
+				if ([SegmentConst.Consumer, SegmentConst.SMB].includes(localInfo.Segment)) {
+					let dashboardWelcomeTexts: WelcomeTextContent[] = [];
+					const titles = map(welcomeTextContent.Title.split('|||'), trim);
+					if (!this.dashboardService.welcomeText) {
+						this.dashboardService.welcomeText = sample(titles);
+					}
+					const cacheWelcomeTexts: WelcomeTextContent[] = this.commonService.getLocalStorageValue(LocalStorageKey.DashboardWelcomeTexts);
+					if (cacheWelcomeTexts && cacheWelcomeTexts.length > 0) {
+						dashboardWelcomeTexts = cacheWelcomeTexts;
+					}
+					const language = localInfo.Lang;
+					const isLangCacheTexts = dashboardWelcomeTexts.find(content => content.language === language);
+					if (isLangCacheTexts) {
+						isLangCacheTexts.titles = titles;
+					} else {
+						dashboardWelcomeTexts.push({ language, titles });
+					}
+					this.commonService.setLocalStorageValue(LocalStorageKey.DashboardWelcomeTexts, dashboardWelcomeTexts);
+				}
+			})
+		}
 	}
 
 	private fetchContent(lang?: string) {
@@ -344,6 +345,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy {
 				if (response && response.length > 0) {
 					this.logger.info(`Performance: Dashboard page get cms content, ${callCmsUsedTime}ms`);
 					this.populateCMSContent(response);
+					this.getWelcomeTextFromCms(response)
 
 				} else {
 					const msg = `Performance: Dashboard page not have this language contents, ${callCmsUsedTime}ms`;
