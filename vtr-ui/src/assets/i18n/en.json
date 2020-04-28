@@ -1159,7 +1159,7 @@
 								"desc1": "a. In office, Windows update, online movie, or system light loading scenarios, the system can be quiet. While in normal gaming scenarios, it has better performance.",
 								"desc2": "b. When playing heavy gaming, the \"Extreme performance\" mode is automatically enabled. It might cause bigger noise or higher temperature on your computer surface.",
 								"desc3": "c. When the battery capacity is lower than 30%, the system automatically switches to the \"Battery saving\" mode."
-							}			
+							}
 						}
 					},
 					"dytc6": {
@@ -1212,10 +1212,11 @@
 					"or": "Or"
 				},
 				"otherSettings": {
-					"title": "Other settings",
+					"title": "Lenovo Vantage toolbar",
 					"vantageToolbar": {
-						"title": "Lenovo Vantage Toolbar",
-						"description": "Pin Vantage Toolbar to the Windows task bar to easily get more battery details and access to your quick settings."
+						"title": "Lenovo Vantage toolbar and premium settings",
+						"description": "Pin Lenovo Vantage toolbar to Windows task bar to easily access to your most frequently-used settings and get premium offerings and updates for you.",
+						"hint": "The options in the image depend on the capacity of the machine. For example, – some machines support backlight settings, and some may not."
 					}
 				},
 				"smartStandby": {
