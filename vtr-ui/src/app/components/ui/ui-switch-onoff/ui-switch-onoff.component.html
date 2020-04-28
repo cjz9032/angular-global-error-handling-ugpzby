@@ -41,8 +41,8 @@
 			(click)="stopPropagation($event);"
 			(keydown.enter)="stopPropagation($event);">
 			<span class="switch-label"
-				[ngClass]="{'off-label': !value, 'on-label': value}">
-				{{ value ? switchOnText : switchOffText }}
+				[ngClass]="{'off-label': !value, 'on-label': value}"
+				[innerText]="value ? switchOnText : switchOffText">
 			</span>
 			<small></small>
 		</span>
