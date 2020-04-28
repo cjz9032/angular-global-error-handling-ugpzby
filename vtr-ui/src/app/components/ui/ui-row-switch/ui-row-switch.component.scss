@@ -172,7 +172,7 @@
 			border-radius: 2.25rem;
 			background: $gradient_main;
 			color: $light;
-			font-size: $body;
+			font-size: $fontsize_xs;
 			font-weight: $weight_bold;
 			text-align: center;
 			text-transform: uppercase;
@@ -185,6 +185,9 @@
 				&::after {
 					@include button-outline-blue;
 				}
+			}
+			&:hover {
+				background: $blue_gradient;
 			}
 		}
 	}
