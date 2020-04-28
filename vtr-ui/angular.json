@@ -79,15 +79,15 @@
 									"with": "src/app/services/mock/mock.service.prod.ts"
 								}
 							],
-							"optimization": true,
-							"outputHashing": "all",
+							"optimization": false,
+							"outputHashing": "none",
 							"sourceMap": false,
-							"extractCss": true,
-							"namedChunks": true,
-							"aot": true,
+							"extractCss": false,
+							"namedChunks": false,
+							"aot": false,
 							"extractLicenses": false,
 							"vendorChunk": false,
-							"buildOptimizer": true,
+							"buildOptimizer": false,
 							"budgets": [
 								{
 									"type": "initial",
@@ -95,7 +95,7 @@
 									"maximumError": "15mb"
 								}
 							],
-							"serviceWorker": true
+							"serviceWorker": false
 						},
 						"qa": {
 							"fileReplacements": [
