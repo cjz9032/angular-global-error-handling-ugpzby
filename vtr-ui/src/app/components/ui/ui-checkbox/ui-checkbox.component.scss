@@ -22,61 +22,64 @@
 		line-height: 1.7;
 	}
 
-	.custom-control-input {
-		// maintain order of hover, focus active
-		&:hover ~ .custom-control-label::before {
-			box-shadow: none;
-			border: 0.1rem solid $menu_hover;
+	.custom-control {
+		padding-left: 2rem;
+		.custom-control-input {
+			// maintain order of hover, focus active
+			&:hover ~ .custom-control-label::before {
+				box-shadow: none;
+				border: 0.1rem solid $menu_hover;
+			}
+
+			&:focus ~ .custom-control-label::before {
+				box-shadow: none;
+				border: 0.1rem solid $menu_hover;
+				outline: 0.1rem solid $menu_hover !important;
+				outline-offset: 0.2rem;
+			}
+
+			&:active ~ .custom-control-label::before {
+				box-shadow: none;
+				border: 0.1rem solid $shade_blue !important;
+			}
+			&:active ~ .custom-control-label::after {
+				box-shadow: none;
+				border: 0.1rem solid $shade_blue !important;
+				background-color: $shade_blue !important;
+				background-image: none;
+			}
+
+			&:checked ~ .custom-control-label::before {
+				color: $menu_hover;
+				border: 0.1rem solid $menu_hover;
+				background-color: transparent;
+			}
+
+			&:not(:checked) ~ .custom-control-label::after {
+				background-color: transparent;
+			}
 		}
 
-		&:focus ~ .custom-control-label::before {
-			box-shadow: none;
-			border: 0.1rem solid $menu_hover;
-			outline: 0.1rem solid $menu_hover !important;
-			outline-offset: 0.2rem;
-		}
+		.custom-control-label {
+			font-size: $base;
+			text-transform: none;
+			padding-left: 1rem;
 
-		&:active ~ .custom-control-label::before {
-			box-shadow: none;
-			border: 0.1rem solid $shade_blue !important;
-		}
-		&:active ~ .custom-control-label::after {
-			box-shadow: none;
-			border: 0.1rem solid $shade_blue !important;
-			background-color: $shade_blue !important;
-			background-image: none;
-		}
-
-		&:checked ~ .custom-control-label::before {
-			color: $menu_hover;
-			border: 0.1rem solid $menu_hover;
-			background-color: transparent;
-		}
-
-		&:not(:checked) ~ .custom-control-label::after {
-			background-color: transparent;
-		}
-	}
-
-	.custom-control-label {
-		font-size: $base;
-		text-transform: none;
-		padding-left: 1rem;
-
-		// rounded square-box background
-		&::before {
-			width: 2rem;
-			height: 2rem;
-			border: 0.1rem solid $grey_dark;
-		}
-		// tick mark
-		&::after {
-			top: 6px;
-			width: 1.4rem;
-			height: 1.4rem;
-			left: -12px;
-			border-radius: 2px;
-			background-color: $menu_hover;
+			// rounded square-box background
+			&::before {
+				width: 2rem;
+				height: 2rem;
+				border: 0.1rem solid $grey_dark;
+			}
+			// tick mark
+			&::after {
+				top: 6px;
+				width: 1.4rem;
+				height: 1.4rem;
+				left: -12px;
+				border-radius: 2px;
+				background-color: $menu_hover;
+			}
 		}
 	}
 }
