@@ -87,6 +87,7 @@ ui-gaming-driver-popup {
 		}
 
 		.btn-container{
+			width: 100%;
 			div {
 				display: inline-block;
 			}
@@ -115,6 +116,7 @@ ui-gaming-driver-popup {
 			margin-left: 3rem;
 			border-bottom: 2px solid $blueFill;
 			cursor: pointer;
+			display: block;
 			&:hover{
 				color: $blueHover;
 				border-bottom: 2px solid $blueHover;

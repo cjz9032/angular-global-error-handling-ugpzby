@@ -282,4 +282,13 @@
 	.fade {
 		transition: opacity 0s linear !important;
 	}
+	body.focus-enable{
+	.is-gaming {
+		.vtr-widget-legion-edge{
+			&:focus{
+				@include outline-white;
+			}
+		}
+	}
+}
 }

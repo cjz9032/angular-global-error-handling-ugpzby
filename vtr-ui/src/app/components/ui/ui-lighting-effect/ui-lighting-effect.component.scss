@@ -244,4 +244,15 @@
 			}
 		}
 	}
+  body.focus-enable{
+	.is-gaming {
+      .vtr-page-lightingcustomize,.vtr-page-gaming-macrokey {
+      .dropdown-toggle,.gaming-dropdown-menu li{
+        &:focus{
+          @include outline-white;
+        }
+      }
+    }
+  }
+}
 }

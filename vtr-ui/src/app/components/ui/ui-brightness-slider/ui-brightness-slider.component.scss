@@ -68,4 +68,13 @@
 			  
 		}
 	}
+	body.focus-enable{
+	.is-gaming {
+		.ng5-slider-pointer-min{
+				&:focus{
+					@include outline-white;
+				}
+		}
+	}
+}
 }

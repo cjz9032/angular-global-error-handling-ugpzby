@@ -83,3 +83,16 @@
 		}
 	}
 }
+::ng-deep {
+body.focus-enable{
+	.is-gaming {
+      .lighting-single-color {
+      .lighting-list-option li{
+        &:focus{
+          @include outline-white;
+        }
+      }
+    }
+  }
+}
+}

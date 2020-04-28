@@ -1953,14 +1953,20 @@
 
 body.focus-enable{
 	.is-gaming {
+		.remove-app,li.add-icon div,.delete-btn{
+			&:focus{
+			@include  outline-white;
+			}
+	  }
 		.btn,.enable-button,button{
 			&:focus{
-				outline: 1px dotted !important;
+				@include outline-blue;
 				}
 		}
-		*:focus{
-		outline: 1px dotted !important;
-		box-shadow: none !important;
+	a, input, label{
+		&:focus{
+			@include outline-blue;
+		}
 	}
 		button.close,a.close{
 		opacity:1 !important
@@ -1969,16 +1975,16 @@ body.focus-enable{
 			.dropdown-content{
 				.dropdown-btn {
 					&:focus{
-						outline: 1px dotted !important;
+						@include outline-white;
 					}
 				}
 			}
 		}
 		.Article-Detail-Modal{
 		&.content-gaming{
-			*:focus{
-			outline: 1px dotted !important;
-			outline-color:$gaming_darkest !important;
+			.article-content:focus{
+			@include outline-white;
+			outline-color:$menu_hover !important;
 		}
 		}
 	}
@@ -2218,7 +2224,7 @@ button {
 	button:focus,
 	span:focus,
 	*:focus {
-		outline: 0 !important;
+		outline: 0;
 		box-shadow: none !important;
 	}
 }

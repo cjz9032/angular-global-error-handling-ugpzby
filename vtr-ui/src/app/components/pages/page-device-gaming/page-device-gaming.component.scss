@@ -67,13 +67,18 @@
 			vtr-container-card {
 				&:focus {
 					.content {
-						outline: 1px dotted !important;
+						@include outline-blue
 					}
 				}
 				a.card-image,a.action-link-a{
 					outline: none !important;
 				}
 			}
+      .vtr-widget-quicksettings-list,.vtr-widget-lighting{
+        &:focus{
+          @include outline-white;
+        }
+      }
 		}
 	}
 }
