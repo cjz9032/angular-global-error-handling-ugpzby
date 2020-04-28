@@ -1,85 +1,124 @@
 @import "./../../../app.theme.scss";
 
 .auto-set-checkbox {
+	$check-box-size: 2rem;
+	$check-box-shadow: inset 0 0 0 0.15rem rgba(255, 255, 255, 1);
+	$disabled-opacity: 0.4;
+
+	@mixin check-icon($icon-color: "white") {
+		background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' style='-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);' preserveAspectRatio='xMidYMid meet' viewBox='0 0 512 512'><path fill='none' stroke='" + $icon-color + "' stroke-linecap='round' stroke-linejoin='round' stroke-width='32' d='M416 128L192 384l-96-96'/></svg>");
+		background-size: 80%;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+
 	margin-top: 2rem;
 	position: relative;
-	input {
-		width: 1.5rem;
-		height: 1.5rem;
-		position: absolute;
-		top: 0.5rem;
-		margin-right: 0.5rem;
-		z-index: 0;
-		outline: 0;
-		background: transparent;
-	}
-	label {
-		color: $shade_blue;
+
+	.custom-checkbox {
+		padding-left: 2rem;
 		font-size: $base;
-		font-weight: $weight_light;
-		text-align: left;
-		padding-left: 2rem;
-		line-height: 1.7;
-	}
 
-	.custom-control {
-		padding-left: 2rem;
-		.custom-control-input {
-			// maintain order of hover, focus active
-			&:hover ~ .custom-control-label::before {
-				box-shadow: none;
-				border: 0.1rem solid $menu_hover;
-			}
-
-			&:focus ~ .custom-control-label::before {
-				box-shadow: none;
-				border: 0.1rem solid $menu_hover;
-				outline: 0.1rem solid $menu_hover !important;
-				outline-offset: 0.2rem;
-			}
-
-			&:active ~ .custom-control-label::before {
-				box-shadow: none;
-				border: 0.1rem solid $shade_blue !important;
-			}
-			&:active ~ .custom-control-label::after {
-				box-shadow: none;
-				border: 0.1rem solid $shade_blue !important;
-				background-color: $shade_blue !important;
-				background-image: none;
-			}
-
-			&:checked ~ .custom-control-label::before {
-				color: $menu_hover;
-				border: 0.1rem solid $menu_hover;
-				background-color: transparent;
-			}
-
-			&:not(:checked) ~ .custom-control-label::after {
-				background-color: transparent;
-			}
-		}
-
+		/* main styling */
 		.custom-control-label {
-			font-size: $base;
-			text-transform: none;
 			padding-left: 1rem;
+			padding-top: 0.15rem;
 
-			// rounded square-box background
 			&::before {
-				width: 2rem;
-				height: 2rem;
-				border: 0.1rem solid $grey_dark;
+				width: $check-box-size;
+				height: $check-box-size;
+				background-color: $light;
+				border-color: $grey_dark;
+				border-radius: 0.25rem;
 			}
-			// tick mark
 			&::after {
-				top: 6px;
-				width: 1.4rem;
-				height: 1.4rem;
-				left: -12px;
-				border-radius: 2px;
-				background-color: $menu_hover;
+				width: $check-box-size;
+				height: $check-box-size;
 			}
 		}
+
+		/* end of main styling */
+
+		/* checkbox selected state */
+
+		.custom-control-input:checked ~ .custom-control-label {
+			&::before {
+				background-color: $menu_hover;
+				box-shadow: $check-box-shadow;
+			}
+			&::after {
+				@include check-icon();
+			}
+		}
+
+		/* end of checkbox selected state */
+
+		/* checkbox focus state */
+
+		.custom-control-input:focus ~ .custom-control-label {
+			&::before {
+				outline: solid 1px $menu_hover;
+				outline-offset: 0.15rem;
+				box-shadow: $check-box-shadow;
+				border-color: $menu_hover;
+			}
+		}
+
+		/* end of checkbox focus state */
+
+		/* mouse hover state */
+
+		.custom-control-input:hover ~ .custom-control-label {
+			&::before {
+				box-shadow: $check-box-shadow;
+				border-color: $menu_hover;
+			}
+		}
+
+		/* end of mouse hover state */
+
+		/* pressed state */
+		.custom-control-input:active:not(:checked) ~ .custom-control-label {
+			&::before {
+				border-color: $shade_blue;
+			}
+		}
+		.custom-control-input:active:checked ~ .custom-control-label {
+			&::before {
+				border-color: $shade_blue;
+				background-color: $shade_blue;
+			}
+		}
+
+		/* end of pressed state */
+
+		/* disabled state */
+
+		.custom-control-input:disabled:not(:checked) ~ .custom-control-label {
+			&::before {
+				border-color: $shade_blue;
+				opacity: $disabled-opacity;
+			}
+		}
+		.custom-control-input:disabled:checked ~ .custom-control-label {
+			&::before {
+				border-color: $shade_blue;
+				background-color: $shade_blue;
+				opacity: $disabled-opacity;
+			}
+		}
+
+		/* end of disabled state */
+
+		// .custom-control-input:indeterminate ~ .custom-control-label {
+		// 	&::before {
+		// 		border-color: $custom-checkbox-indicator-indeterminate-border-color;
+		// 		@include gradient-bg($custom-checkbox-indicator-indeterminate-bg);
+		// 		@include box-shadow($custom-checkbox-indicator-indeterminate-box-shadow);
+		// 	}
+		// 	&::after {
+		// 		background-image: escape-svg($custom-checkbox-indicator-icon-indeterminate);
+		// 	}
+		// }
 	}
 }
