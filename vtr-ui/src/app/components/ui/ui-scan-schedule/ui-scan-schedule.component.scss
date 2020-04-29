@@ -753,6 +753,15 @@ vtr-ui-smart-performance-scan-summary {
 				strong{
 					font-weight: $weight_bold;
 				}
+				&::ng-deep{
+					vtr-ui-switch-onoff {
+						.checkbox {
+							.switch-label{
+								top: -0.5rem;
+							}
+						}
+					}
+				}
 			}
 		}
 		.disable-list {

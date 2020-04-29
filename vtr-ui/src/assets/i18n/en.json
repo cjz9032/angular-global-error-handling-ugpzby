@@ -2304,7 +2304,7 @@
 		"performanceandSecurityCheckSubTitle": "Let's diagnose and resolve performance and security issues in your computer",
 		"scanButton": "FREE PC SCAN",
 		"section1Heading": "How would you rate your PC Performance?",
-		"section1Description": "PC running slow? Applications taking too long to respond? Windows errors? Malware concerns? Let's diagnose whats's causing the problem and fix it.",
+		"section1Description": "PC running slow? Applications taking too long to respond? Windows errors? Malware concerns? Let's diagnose what's causing the problem and fix it.",
 		"critical": "CRITICAL",
 		"allisWell": "ALL IS WELL",
 		"zero": "0",
@@ -2365,8 +2365,8 @@
 		},
 		"malwareSecurity": {
 			"title": "MALWARE & SECURITY",
-			"heading": "Give your internet a boost",
-			"description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+			"heading": "Give your computer the extra care it needs",
+			"description": "Malware can lead to a computer crash, data compromise and performance degradation. Get Malware removal and much, much more done.",
 			"tabSet1": {
 				"tab1": "Malware scan",
 				"tab2": "Zero-day infections",
@@ -2386,7 +2386,7 @@
 		"proactiveAutomated": {
 			"title": "PROACTIVE & AUTOMATED",
 			"heading": "Get the power to resolve issues, before they impact you!",
-			"description": "Smart Performance constantly looks for hundreads of issues that impact PC performance. We fix them proactively, giving you peace of mind.",
+			"description": "Smart Performance constantly looks for hundreds of issues that impact PC performance. We fix them proactively, giving you peace of mind.",
 			"tabSet1": {
 				"tab1": "Schedule Scan",
 				"tab2": "On-demand scan",
