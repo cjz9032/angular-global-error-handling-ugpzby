@@ -31,12 +31,12 @@
             </div>
         </div>
         <div class="aria-area">
-            <button *ngIf="!isDivideArea" class="wholeAarea" tabindex="0" role="button" (click)="selectAreaFn(1,listInfo[0].lightColor);$event.stopPropagation();">
+            <button *ngIf="!isDivideArea" class="wholeAarea" [tabindex]="isDisablled ? -1 : 0" role="button" (click)="selectAreaFn(1,listInfo[0].lightColor);$event.stopPropagation();">
                 <span *ngIf="selectedArea !== 0">this keyboard area is selected</span>
                 <span *ngIf="selectedArea === 0">keyboard area</span>
             </button>
             <div *ngIf="isDivideArea" class="divideArea">
-                <button *ngFor="let area of listInfo; let areaIndex = index" tabindex="0" role="button" [class]="'keyboard-button'+areaIndex" (click)="selectAreaFn(area.lightPanelType,area.lightColor);$event.stopPropagation();">
+                <button *ngFor="let area of listInfo; let areaIndex = index" [tabindex]="isDisablled ? -1 : 0" role="button" [class]="'keyboard-button'+areaIndex" (click)="selectAreaFn(area.lightPanelType,area.lightColor);$event.stopPropagation();">
                     <span *ngIf="selectedArea === area.lightPanelType">this keyboard area is selected</span>
                     <span *ngIf="selectedArea !== area.lightPanelType">keyboard area {{areaIndex+1}} of {{listInfo.length}}</span>
                 </button>
