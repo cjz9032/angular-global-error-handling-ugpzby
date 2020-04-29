@@ -2355,12 +2355,12 @@
 				"tab5": "E-junk"
 			},
 			"tabSet2": {
-				"tab1Heading": "ZERO DAY VIRUS",
-				"tab1Description": "We remove even the newest malware infections",
-				"tab2Heading": "SPYWARE REMOVAL",
-				"tab2Description": "We remove all potentially unwanted programs",
-				"tab3Heading": "LIGHT AND FAST",
-				"tab3Description": "Scan typically takes 5-10 minutes"
+				"tab1Heading": "BROWSER ISSUES",
+				"tab1Description": "We configure and fix all your popular web browsers.",
+				"tab2Heading": "CONNECTIVITY ERRORS",
+				"tab2Description": "We can diagnose and repair your connectivity problems.",				
+				"tab3Heading": "SLOW INTERNET",
+				"tab3Description": "We will help you get maximum performance."
 			}
 		},
 		"malwareSecurity": {
@@ -2375,12 +2375,12 @@
 				"tab5": "Annoying adware"
 			},
 			"tabSet2": {
-				"tab1Heading": "SLOW INTERNET",
-				"tab1Description": "We will help you get maximum performance.",
-				"tab2Heading": "CONNECTIVITY ERRORS",
-				"tab2Description": "We can diagnose and repair your connectivity problems.",
-				"tab3Heading": "BROWSER ISSUES",
-				"tab3Description": "We configure and fix all your popular web browsers."
+				"tab1Heading": "ZERO DAY VIRUS",
+				"tab1Description": "We remove even the newest malware infections",
+				"tab2Heading": "SPYWARE REMOVAL",
+				"tab2Description": "We remove all potentially unwanted programs",
+				"tab3Heading": "LIGHT AND FAST",
+				"tab3Description": "Scan typically takes 5-10 minutes"
 			}
 		},
 		"proactiveAutomated": {
