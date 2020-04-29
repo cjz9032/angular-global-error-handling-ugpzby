@@ -54,7 +54,7 @@ export class WifisecurityProxy implements phoenix.WifiSecurity {
 				this.commonService.sendNotification(SecurityAdvisorNotifications.WifiSecurityTurnedOn);
 			}
 			return ret;
-		}, rej => rej);
+		});
 	}
 	disableWifiSecurity(): Promise<boolean> {
 		return this.wifisecurity.disableWifiSecurity();
