@@ -1,11 +1,8 @@
 <div class="vtr-ui-list-chevron">
 	<ul class="chevron-list">
 		<li *ngFor="let item of items" [ngClass]="getItemStatusClass(item)" [hidden]="item.isHidden">
-			<div *ngIf="!clickable" role="row"
-				[ngbTooltip]="(item.metricsItemName ? item.metricsItemName : item.title) + (item.detail? ' - '+item.detail:'' ) +(item.subText? ' - '+item.subText:'' )"
-				tooltipClass="vtr-system-tooltip" 
-				container="body" 
-				#ta="ngbTooltip">
+			<div *ngIf="!clickable" id="{{linkId}}-{{item.id}}" role="row" class="disabled"
+				container="body">
 				<div class="container-fluid">
 					<div class="row align-items-center">
 						<div class="col col-1 text-center" *ngIf="iconPlacement==='left'">
@@ -39,21 +36,17 @@
 							<div class="row no-gutters" [ngClass]="{'flex-column': item.notificationDetail}">
 								<div title="" class="title text-break d-flex align-items-center"
 									[ngClass]="{'light-title':item.lightTitle, 'col-12':!item.detail, 'col-6': item.detail}"
-									[ngbTooltip]="item.title" tooltipClass="vtr-system-tooltip" container="body"
-									(mouseenter)="(ta.isOpen() ? ta.close() : true )">
+									container="body">
 									{{item.title}}
 								</div>
-								<div title=""
-									class="col-6 detail word-break-all d-flex align-items-center justify-content-end"
+								<div class="col-6 detail word-break-all d-flex align-items-center justify-content-end"
 									*ngIf="item.detail" [ngClass]="getItemDetailClasses(item)"
-									[ngbTooltip]="item.detail" tooltipClass="vtr-system-tooltip" container="body"
-									(mouseenter)="(ta.isOpen() ? ta.close() : true )">
+									container="body">
 									{{item.detail}}
 								</div>
 								<div *ngIf="item.subText" class="sub-text">
 									<span title="" class="{{'dirClass' | translate}}" dir="{{'dir' | translate}}"
-										[ngbTooltip]="item.subText" tooltipClass="vtr-system-tooltip" container="body"
-										(mouseenter)="(ta.isOpen() ? ta.close() : true )">{{item.subText | characterLimit:20}}</span>
+										container="body">{{item.subText | characterLimit:20}}</span>
 									<span class="pl-3" class="{{'dirClass' | translate}}"
 										dir="{{'dir' | translate}}">{{item.date}}</span>
 								</div>

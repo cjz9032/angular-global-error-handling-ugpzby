@@ -272,4 +272,11 @@
 			}
 		}
 	}
+
+	.disabled {
+		cursor: default !important;
+		* {
+			cursor: default !important;
+		}
+	}
 }
