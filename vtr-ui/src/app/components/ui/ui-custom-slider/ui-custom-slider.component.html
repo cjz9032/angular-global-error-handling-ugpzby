@@ -1,11 +1,17 @@
 <form class="vtr-ui-custom-slider">
 	<div class="range">
-		<div class="ticks" *ngIf="hasTicks">
+		<!-- <div class="ticks" *ngIf="hasTicks">
 			<span *ngFor="let item of ticksArray" [title]="item.value">
 				<span class="tick"
 					*ngIf="item.isVisible"></span>
 			</span>
-		</div>
+		</div> -->
+		<output class="bubble"
+			#sliderBubble
+			[style.visibility]="isTooltipHidden?'hidden':'visible'"
+			[for]="sliderId">
+			{{tipValue}}
+		</output>
 		<input type="range"
 			#rangeSlider
 			role="slider"

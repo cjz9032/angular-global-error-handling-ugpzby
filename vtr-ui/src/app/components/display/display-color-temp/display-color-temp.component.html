@@ -13,6 +13,8 @@
 				(valueChange)="onDisplayColorTemperaturePreview($event)"
 				[metricsItem]="'day-time-color-temp'"
 				[metricsValue]="displayColorTempSettings.current"
+				[tipSuffix]="'K'"
+				[showTip]=true
 				[ariaLabel]="'daytime color temperature slider'"
 				[sliderId]="'day-time-color-temp'">
 			</vtr-ui-custom-slider>

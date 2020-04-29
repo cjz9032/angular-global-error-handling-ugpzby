@@ -16,7 +16,6 @@ export class DisplayColorTempComponent implements OnInit {
 	@Output() resetTemperature: any = new EventEmitter();
 	@Output() colorPreviewValue: any = new EventEmitter();
 
-
 	constructor(private logger: LoggerService) { }
 
 	ngOnInit() {
