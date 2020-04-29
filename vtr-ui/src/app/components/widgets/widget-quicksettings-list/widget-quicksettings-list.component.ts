@@ -24,6 +24,8 @@ import { WifiHomeViewModel, SecurityHealthViewModel } from 'src/app/data-models/
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { GuardService } from 'src/app/services/guard/guardService.service';
+import { DolbyModeResponse } from 'src/app/data-models/audio/dolby-mode-response';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-widget-quicksettings-list',
@@ -217,7 +219,8 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 		public translate: TranslateService,
 		public deviceService: DeviceService,
 		private guard: GuardService,
-		private router: Router
+		private router: Router,
+		private logger: LoggerService,
 	) { }
 
 	ngOnInit() {
@@ -249,6 +252,10 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 		// Binding regThermalMode event
 		if (this.gamingCapabilities.smartFanFeature) {
 			this.registerThermalModeEvent();
+		}
+		// Version3.3 Binding regDolby event
+		if(this.quickSettings[3].isVisible) {
+			this.registerDolbyChangeEvent();
 		}
 		this.commonService.getCapabalitiesNotification().subscribe((response) => {
 			if (response.type === Gaming.GamingCapabilities) {
@@ -324,15 +331,14 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 	}
 	public quicksettingListInit() {
 		const gamingStatus = this.gamingCapabilities;
-		// TODO thermalModeVersion 2.0
+		// Version 3.2 thermalModeVersion 2.0
 		if (gamingStatus.thermalModeVersion === 2) {
 			this.quickSettings[0].isVisible = false;
 		} else {
 			this.quickSettings[0].isVisible = gamingStatus.smartFanFeature;
-		}
-		// this.quickSettings[0].isVisible = gamingStatus.smartFanFeature;
-		if (gamingStatus.smartFanFeature) {
-			this.renderThermalModeStatus();
+			if (gamingStatus.smartFanFeature) {
+				this.renderThermalModeStatus();
+			}
 		}
 		this.checkQuickSettingsVisibility();
 	}
@@ -412,11 +418,22 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 	}
 	public async getDolbySettings() {
 		try {
-			const dolbySettings = await this.audioService.getDolbyFeatureStatus();
-			this.quickSettings[3].isVisible = dolbySettings.available;
-			this.quickSettings[3].isChecked = dolbySettings.status;
-			this.commonService.setLocalStorageValue(LocalStorageKey.DolbyModeCache, dolbySettings);
-		} catch (err) {
+			// version 3.3  update due to dolby API modification
+			this.audioService.getDolbyMode().then((res: DolbyModeResponse) => {
+				this.logger.info(`Widget-quicksettingslist-getDolbySettings: return value: ${res}, dolbyMode from ${this.quickSettings[3].isChecked} to: ${res.isAudioProfileEnabled}`);
+				if(res.available) {
+					this.quickSettings[3].isVisible = true;
+					if(this.quickSettings[3].isChecked !== res.isAudioProfileEnabled) {
+						this.quickSettings[3].isChecked = res.isAudioProfileEnabled;
+						this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, res)
+					}
+				}else {
+					this.quickSettings[3].isVisible = false;
+				}
+			});
+		} catch (error) {
+			this.logger.error(`Widget-quicksettingslist-getDolbySettings: get fail; Error message: `, error.message);
+			throw new Error(error.message);
 		} finally {
 			this.checkQuickSettingsVisibility();
 		}
@@ -424,16 +441,23 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 
 	public async setDolbySettings(value: any) {
 		try {
-			const isDolbyUpdated = await this.audioService.setDolbyOnOff(value);
-			if (isDolbyUpdated) {
-				this.commonService.setLocalStorageValue(LocalStorageKey.DolbyModeCache, {
-					available: this.quickSettings[3].isVisible,
-					status: value
-				});
-			} else {
-				this.quickSettings[3].isChecked = !value;
-			}
-		} catch (err) { }
+			// version 3.3 update due to dolby API modification
+			this.audioService.setDolbyAudioState(value).then(res => {
+				if(res) {
+					this.logger.info(`Widget-quicksettingslist-setDolbySettings: return value: ${res}, dolbyMode from ${this.quickSettings[3].isChecked} to: ${value}`);
+					this.quickSettings[3].isChecked = value;
+					let dolbyAudioCache: DolbyModeResponse = this.commonService.getLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache);
+					dolbyAudioCache.isAudioProfileEnabled = value;
+					this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, dolbyAudioCache);
+				} else {
+					this.quickSettings[3].isChecked = !value;
+					this.logger.error(`Widget-quicksettingslist-setDolbySettings: return value: ${res}, dolbyMode from ${this.quickSettings[3].isChecked} to: ${value}`);
+				}
+			});
+		} catch (error) {
+			this.logger.error(`Widget-quicksettingslist-getDolbySettings: set fail; Error message: `, error.message);
+			throw new Error(error.message);
+		}
 	}
 
 	public async getWifiSecuritySettings() {
@@ -530,12 +554,10 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 
 	public initialiseDolbyCache() {
 		try {
-			const { available, status } = this.commonService.getLocalStorageValue(LocalStorageKey.DolbyModeCache, {
-				available: false,
-				status: false
-			});
-			this.quickSettings[3].isVisible = available;
-			this.quickSettings[3].isChecked = status;
+			// version 3.3 update due to dolby api modification
+			let dolbyAudioCache: DolbyModeResponse = this.commonService.getLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache);
+			this.quickSettings[3].isVisible = dolbyAudioCache.available;
+			this.quickSettings[3].isChecked = dolbyAudioCache.isAudioProfileEnabled;
 		} catch (err) { }
 	}
 
@@ -592,6 +614,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 
 	ngOnDestroy(): void {
 		this.unRegisterThermalModeEvent();
+		this.unRegisterDolbyEvent();
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInGamingDashboard, false);
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog, false);
 		if (this.securityAdvisor !== undefined && this.securityAdvisor.wifiSecurity) {
@@ -605,6 +628,48 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			this.securityAdvisor.wifiSecurity.off(EventTypes.wsIsLocationServiceOnEvent, this.wsIsLocationServiceOnEventHandler);
 			this.securityAdvisor.wifiSecurity.off(EventTypes.wsPluginMissingEvent, this.wsPluginMissingEventHandler);
 			this.securityAdvisor.wifiSecurity.off(EventTypes.wsIsSupportWifiEvent, this.wsIsSupportWifiEventHandler);
+		}
+	}
+
+	// version 3.3 register & unregister dolby event
+	public registerDolbyChangeEvent() {
+		try {
+			this.audioService.startMonitorForDolby(this.handleDolbyChangeEvent.bind(this)).then(res => {
+				if(res) {
+					this.logger.info(`Widget-quicksettingslist-registerDolbyChangeEvent: return value: ${res}`);
+				} else {
+					this.logger.error(`Widget-quicksettingslist-registerDolbyChangeEvent: return value: ${res}`);
+				}
+			})
+		} catch (error) {
+			this.logger.error(`Widget-quicksettingslist-registerDolbyChangeEvent: register fail; Error message: `, error.message);
+			throw new Error(error.message);
+		}
+	}
+
+	public handleDolbyChangeEvent(dolbyModeResponse) {
+		if (dolbyModeResponse.available !== undefined && dolbyModeResponse.isAudioProfileEnabled !== undefined) {
+			this.logger.info(`Widget-quicksettingslist-handleDolbyChangeEvent: return value: ${dolbyModeResponse}, dolbyMode from ${this.quickSettings[3].isChecked} to: ${dolbyModeResponse.isAudioProfileEnabled}`);
+			if (dolbyModeResponse.isAudioProfileEnabled !== this.quickSettings[3].isChecked) {
+				this.quickSettings[3].isChecked = dolbyModeResponse.isAudioProfileEnabled;
+			}
+		} else {
+			this.logger.error(`Widget-quicksettingslist-handleDolbyChangeEvent: wrong response: ${dolbyModeResponse}`);
+		}
+	}
+
+	public unRegisterDolbyEvent() {
+		try {
+			this.audioService.stopMonitorForDolby().then(res => {
+				if(res) {
+					this.logger.info(`Widget-quicksettingslist-unRegisterDolbyEvent: return value: ${res}`);
+				} else {
+					this.logger.error(`Widget-quicksettingslist-unRegisterDolbyEvent: return value: ${res}`);
+				}
+			})
+		} catch (error) {
+			this.logger.error(`Widget-quicksettingslist-unRegisterDolbyEvent: unRegisterDolbyEvent fail; Error message: `, error.message);
+			throw new Error(error.message);
 		}
 	}
 }
