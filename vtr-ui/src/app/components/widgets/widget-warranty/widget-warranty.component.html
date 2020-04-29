@@ -4,32 +4,55 @@
 		<div class="row">
 			<div class="col"
 				*ngIf="item.info.status >= 0">
-				<div class="title pb-20" *ngIf="item.info.status !== 2">{{status.title[item.info.status] | translate}}</div>
-				<div class="title title-detail pb-20" *ngIf="item.info.status === 2">{{'support.warranty.warrantyDashboardDetails' | translate}}</div>
+				<div class="title pb-20"
+					*ngIf="item.info.status !== 2"
+					id="support-warranty-title"
+					role="heading">{{status.title[item.info.status] | translate}}</div>
+				<div class="title title-detail pb-20"
+					*ngIf="item.info.status === 2"
+					id="support-warranty-not-found-title"
+					role="heading">{{'support.warranty.warrantyDashboardDetails' | translate}}</div>
 				<div class="content"
 					*ngIf="item.info.status == 1 || item.info.status == 0">
-					<div class="sub-title">
+					<div class="sub-title"
+						id="support-warranty-year-depot"
+						role="text">
 						{{ year }}{{'support.warranty.yearDepotWarranty' | translate}}
 					</div>
-					<div class="sub-description pb-20">
+					<div class="sub-description pb-20"
+						id="support-warranty-description"
+						role="text">
 						<span [innerHTML]="'support.warranty.subDescription1' | translate"></span>
 						<span *ngIf="!isConnected && item.cache">{{'support.warranty.offlineTips1' | translate}}</span>
 						<span *ngIf="!isConnected && !item.cache">{{'support.warranty.offlineTips2' | translate}}</span>
 					</div>
-					<div class="sub-title">{{'support.warranty.warrantyDetails' | translate}}</div>
+					<div class="sub-title"
+						id="support-warranty-details-title"
+						role="text">{{'support.warranty.warrantyDetails' | translate}}</div>
 					<div class="sub-description pb-20">
 						<div class="pb-2">
-							{{'support.warranty.startDate' | translate}}<b>{{item.info.startDate | formatUTCDate}}</b></div>
+							<span id="support-warranty-start-date-name"
+								role="text">{{'support.warranty.startDate' | translate}}</span>
+							<b id="support-warranty-start-date-value"
+								role="text">{{item.info.startDate | formatUTCDate}}</b></div>
 						<div class="pb-2">
-							{{'support.warranty.endDate' | translate}}<b>{{item.info.endDate | formatUTCDate}}</b></div>
+							<span id="support-warranty-end-date-name"
+								role="text">{{'support.warranty.endDate' | translate}}</span>
+							<b id="support-warranty-end-date-value"
+								role="text">{{item.info.endDate | formatUTCDate}}</b></div>
 						<div class="pb-2">
-							{{'support.warranty.status' | translate}}<b>{{status.detail[item.info.status] | translate}}</b>
+							<span id="support-warranty-status-name"
+								role="text">{{'support.warranty.status' | translate}}</span>
+							<b id="support-warranty-status-value"
+								role="text">{{status.detail[item.info.status] | translate}}</b>
 						</div>
 					</div>
 				</div>
 				<div class="content"
 					*ngIf="item.info.status == 2">
-					<div class="sub-description pb-20">
+					<div class="sub-description pb-20"
+						id="support-warranty-not-found-description"
+						role="text">
 						<span [innerHTML]="'support.warranty.subDescription2' | translate"></span>
 						<span *ngIf="!isConnected && item.cache">{{'support.warranty.offlineTips1' | translate}}</span>
 						<span *ngIf="!isConnected && !item.cache">{{'support.warranty.offlineTips2' | translate}}</span>
