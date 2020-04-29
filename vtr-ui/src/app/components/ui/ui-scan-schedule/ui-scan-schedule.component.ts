@@ -178,6 +178,12 @@ export class UiScanScheduleComponent implements OnInit {
 		if(this.scheduleScanFrequency===undefined)
 		{
 			this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, this.selectedFrequency);
+		}
+		else
+		{
+			this.selectedFrequency=	this.scheduleScanFrequency;
+			this.frequencyValue=this.scanFrequency.indexOf(this.selectedFrequency);
+			
 		}		
 		this.IsSmartPerformanceFirstRun = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun);
 		if (this.IsSmartPerformanceFirstRun === true && this.isSubscribed == true) {
@@ -228,6 +234,7 @@ export class UiScanScheduleComponent implements OnInit {
 		}
 	}
 	openScanScheduleDropDown(value) {
+		console.log("value from openScanScheduleDropDown --------------------------- ",value);
 		if (value === this.scheduleTab) {
 			this.scheduleTab = '';
 		} else {
@@ -257,23 +264,27 @@ export class UiScanScheduleComponent implements OnInit {
 	}
 
 	changeScanFrequency(value) {
+		console.log("selected for frequencyValue ''''''''''''''''''''''", this.frequencyValue);
 		this.frequencyValue = value;
 		this.scheduleTab = '';
 		this.isDaySelectionEnable = true;
+		this.selectedDay = this.days[value];
 		this.selectedFrequency = this.scanFrequency[value];
+		console.log("selected for changeScanFrequency ''''''''''''''''''''''", this.selectedFrequency);
 	}
 	changeScanDay(value) {
 		this.dayValue = value;
 		this.scheduleTab = '';
 		this.selectedDay = this.days[value];
 		this.selectedNumber = this.dates[value];
+		console.log("selected date for changeScanDay ''''''''''''''''''''''", this.selectedDay);
 	}
 	changeScanDate(value) {
 		this.dateValue = value;
 		this.scheduleTab = '';
 		this.selectedDay = this.days[value];
 		this.selectedNumber = this.dates[value];
-		//console.log("selected date for once a month is ''''''''''''''''''''''", this.selectedNumber);
+		console.log("selected date for once a month is  changeScanDate''''''''''''''''''''''", this.selectedNumber);
 	}
 
 	cancelChangedScanSchedule() {
@@ -345,6 +356,7 @@ export class UiScanScheduleComponent implements OnInit {
 	}
 
 	saveChangedScanSchedule() {
+		let scanScheduleDate:any;
 		let scanScheduleTime = "";
 		this.scheduleTab = '';
 		this.isChangeSchedule = false;
@@ -355,23 +367,30 @@ export class UiScanScheduleComponent implements OnInit {
 		if (this.scanTime.amPm === 'PM') {
 			this.scanTime.hour = this.scanTime.hour + 12;
 		}
-		if(this.scanTime.hour<10)
+		console.log("hour is before adding 0 as prefix",this.scanTime.hour);
+		if(parseInt(this.scanTime.hour)<10)
 		{
-			this.scanTime.hour= "0"+this.scanTime.hour;
+			if(this.scanTime.hour.toString().charAt(0)!=="0")
+			{
+				console.log("hour value when it is less than 10",this.scanTime.hour);
+				this.scanTime.hour= "0"+this.scanTime.hour;
+			}
 		}
 		this.selectedFrequencyCopy = this.selectedFrequency;
 		this.selectedFrequencyCopy = this.selectedFrequency.replace(/ /g, "").toLowerCase();
 		if (this.selectedFrequencyCopy === 'onceamonth') {
 			var d = new Date();
 			d.setDate(this.selectedNumber);
+			console.log("d------------------------------------------------",d);
 			scanScheduleTime = ""+d.getFullYear() + "-" + (d.getMonth()+1) + "-" + d.getDate() +""+ "T" + this.scanTime.hour + ":" + this.scanTime.min + ":00";
 		}
 		else {
 			scanScheduleTime = this.nextDate(this.selectedDay) + "T" + this.scanTime.hour + ":" + this.scanTime.min + ":00";
 		}
+		
 		if (this.isSubscribed) {
 			if (this.selectedFrequencyCopy === 'onceamonth') {
-				this.scheduleScan('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix', '' + this.selectedFrequencyCopy + '', '', '' + scanScheduleTime + '', [new Date(scanScheduleTime).getDate()]);
+				this.scheduleScan('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix', '' + this.selectedFrequencyCopy + '', '', '' + scanScheduleTime + '', [this.selectedNumber]);
 			}
 			else {
 				this.scheduleScan('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix', '' + this.selectedFrequencyCopy + '', '' + this.selectedDay + '', '' + scanScheduleTime + '', []);
@@ -379,7 +398,8 @@ export class UiScanScheduleComponent implements OnInit {
 		}
 		else {
 			if (this.selectedFrequencyCopy === 'onceamonth') {
-				this.scheduleScan('Lenovo.Vantage.SmartPerformance.ScheduleScan', '' + this.selectedFrequencyCopy + '', '', '' + scanScheduleTime + '', [new Date(scanScheduleTime).getDate()]);
+				console.log('Lenovo.Vantage.SmartPerformance.ScheduleScan', '' + this.selectedFrequencyCopy + '', '', '' + scanScheduleTime + '', [Number(this.selectedNumber)]);
+				this.scheduleScan('Lenovo.Vantage.SmartPerformance.ScheduleScan', '' + this.selectedFrequencyCopy + '', '', '' + scanScheduleTime + '', [Number(this.selectedNumber)]);
 			}
 			else {
 				this.scheduleScan('Lenovo.Vantage.SmartPerformance.ScheduleScan', '' + this.selectedFrequencyCopy + '', '' + this.selectedDay + '', '' + scanScheduleTime + '', []);
@@ -443,8 +463,6 @@ export class UiScanScheduleComponent implements OnInit {
 	}
 
 	async scheduleScan(scantype, frequency, day, time, date) {
-		//	console.log('scheduleScan function call');
-	
 		const payload = {
 			scantype,
 			frequency,
@@ -452,6 +470,7 @@ export class UiScanScheduleComponent implements OnInit {
 			time,
 			date
 		};
+		console.log('scheduleScan function call',JSON.stringify(payload));
 		try {
 			const res: any = await this.smartPerformanceService.setScanSchedule(
 				payload
@@ -495,12 +514,13 @@ export class UiScanScheduleComponent implements OnInit {
 					if(this.selectedFrequency==="Once a month")
 					{
 						this.selectedDay = moment(momentObj).format('D');
+					//	this.dateValue=this.selectedDay;
 					}
 					else
 					{
 						this.selectedDay = weekDayName;
 					}
-					this.scanTime.hour=  moment(momentObj).format('hh');
+					this.scanTime.hour=  moment(momentObj).format('h');
 					this.scanTime.min= moment(momentObj).format('mm');
 					this.scanTime.amPm=moment(momentObj).format('A');
 			//this.nextScheduleScan = (new Date(momentString).getMonth() + 1) + "/" + new Date(momentString).getDate() + " at " + now;
