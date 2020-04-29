@@ -13,7 +13,6 @@ export class WifisecurityProxy implements phoenix.WifiSecurity {
 	constructor(originWifiSecurity: any, commonService: CommonService) {
 		this.wifisecurity = originWifiSecurity;
 		this.commonService = commonService;
-		this.on(phoenix.EventTypes.wsIsLocationServiceOnEvent, this.wsIsLocationServiceOnEventHandler.bind(this));
 	}
 	get mitt(): mitt.Emitter { return this.wifisecurity.mitt };
 	set mitt(value: mitt.Emitter) { this.wifisecurity.mitt = value };
@@ -60,7 +59,12 @@ export class WifisecurityProxy implements phoenix.WifiSecurity {
 		return this.wifisecurity.disableWifiSecurity();
 	}
 	getWifiSecurityStateOnce(): Promise<any> {
-		return this.wifisecurity.getWifiSecurityStateOnce();
+		return new Promise((resovle, reject) => {
+			this.wifisecurity.getWifiSecurityStateOnce().then(re => {
+				this.on(phoenix.EventTypes.wsIsLocationServiceOnEvent, this.wsIsLocationServiceOnEventHandler.bind(this));
+				resovle(re);
+			}, rej => reject(rej));
+		});
 	}
 	updateWifiSecurityState(res: phoenix.WifiSecurity): void {
 		return this.wifisecurity.updateWifiSecurityState(res);
