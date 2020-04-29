@@ -1968,6 +1968,20 @@ body.focus-enable{
 			@include outline-blue;
 		}
 	}
+	.gaming-dropdown-menu li{
+			&:focus{
+				outline: 0!important;
+				outline-offset: 0.2rem;
+				a{
+					border: 0.1rem solid $light !important;
+				}
+			}
+		}
+		.navbar-brand.logo-y a{
+			&:focus{
+			border: 0.1rem solid $light !important;	
+			}
+		}
 		button.close,a.close{
 		opacity:1 !important
 		}	
