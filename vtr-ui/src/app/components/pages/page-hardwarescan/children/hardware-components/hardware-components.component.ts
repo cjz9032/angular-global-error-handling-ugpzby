@@ -458,22 +458,25 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					// Updates result with the device information grouped by module (cpu, storage, etc ...)
 					// Resulting in something like:
 					// {
+					// 		moduleId: "storage",
 					//		moduleName: "Storage",
 					//		devices: [
-					//			{ id: "0", name: "WDC PC SN720 SDAPNTW-256G-1101 - 238.47 GBs" },
-					//			{ id: "1", name: "SAMSUNG HM160HX - 149.05 GBs" }
+					//			{ deviceId: "0", deviceName: "WDC PC SN720 SDAPNTW-256G-1101 - 238.47 GBs" },
+					//			{ deviceId: "1", deviceName: "SAMSUNG HM160HX - 149.05 GBs" }
 					//		]
 					// }
+					result.moduleId = category.id;
 					result.moduleName = category.name;
 					result.devices.push({
-						id: deviceInfo.id,
-						name: deviceInfo.name
+						deviceId: deviceInfo.id,
+						deviceName: deviceInfo.name
 					});
 
 					return result;
 				},
 				// This is the initial value of the resulting object.
 				{
+					moduleId: '',
 					moduleName: '',
 					devices: []
 				});
@@ -488,7 +491,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					centered: true,
 					windowClass: 'hardware-scan-modal-size'
 				});
-				modalRef.componentInstance.moduleNames = failedModules;
+				modalRef.componentInstance.moduleNames = JSON.stringify(failedModules);
 				modalRef.componentInstance.setUrl(supportUrl);
 			}
 		}
