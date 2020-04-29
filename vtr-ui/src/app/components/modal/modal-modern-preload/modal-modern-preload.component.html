@@ -40,7 +40,7 @@
 					<div class="col-12 col-lg-6 app-item"
 						*ngFor="let app of appList"
 						id="modern-preload-app-item-{{app.udcId}}"
-						role="listitem">
+						role="listitem" [hidden]="!redemptionSupport && app.isCheckDisabled">
 						<div class="custom-control custom-checkbox pl-0">
 							<input type="checkbox"
 								class="custom-control-input"
