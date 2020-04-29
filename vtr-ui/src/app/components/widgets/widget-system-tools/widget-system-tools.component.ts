@@ -102,7 +102,7 @@ export class WidgetSystemToolsComponent implements OnInit {
 		waringModalRef.componentInstance.info= {
 			title: "gaming.dashboard.device.warningPromptPopup.legionAccessory",
 			description: "gaming.dashboard.device.warningPromptPopup.accessoryDesc",
-			comfirmButton: "gaming.dashboard.device.warningPromptPopup.install",
+			comfirmButton: "gaming.dashboard.device.legionEdge.driverPopup.button",
 			cancelButton: "gaming.dashboard.device.legionEdge.driverPopup.link"
 		}
 		waringModalRef.componentInstance.emitService.subscribe((emmitedValue) => {
