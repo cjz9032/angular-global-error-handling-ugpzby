@@ -177,10 +177,10 @@
 			&:focus{
 				@include outline-blue;
 			}
-		}
-		
-		button {
-			cursor: pointer;
+
+			button {
+				cursor: pointer;
+			}
 		}
 	}
 }
