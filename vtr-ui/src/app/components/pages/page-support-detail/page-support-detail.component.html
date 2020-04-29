@@ -11,7 +11,7 @@
 				<div class="row card mb-5" [dir]="'dir' | translate">
 					<div class="col left-container">
 						<div class="row description-container">
-							<div class="col" id="{{'support-detail-qa-description-'+ qa.id}}" role="text" [ngSwitch]="qa.id">
+							<div class="col" [ngSwitch]="qa.id">
 								<vtr-support-detail-article-a *ngSwitchCase="'1'" [langCode]="langCode"></vtr-support-detail-article-a>
 								<vtr-support-detail-article-b *ngSwitchCase="'2'" [langCode]="langCode"></vtr-support-detail-article-b>
 								<vtr-support-detail-article-c *ngSwitchCase="'3'"></vtr-support-detail-article-c>
