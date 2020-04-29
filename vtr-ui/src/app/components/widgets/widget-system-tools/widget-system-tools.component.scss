@@ -107,6 +107,11 @@
 							color: $gaming_light_blue;
 							// padding-top: 0.8rem;
 						}
+						.image {
+							z-index: 2;
+							height: 4rem;
+							width: 4rem;
+						}
 					}
 					.system-image {
 						cursor: pointer;
