@@ -166,7 +166,6 @@
 			line-height: 1.5rem;
 			text-align: center;
 			text-transform: uppercase;
-			cursor: pointer;
 			border-bottom: 0.2rem solid $light;
 			padding: 0 0 0.1rem;
 
@@ -177,6 +176,10 @@
 
 			&:focus{
 				@include outline-blue;
+			}
+
+			button {
+				cursor: pointer;
 			}
 		}
 	}
