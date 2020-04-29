@@ -485,24 +485,25 @@ export class ConfigService {
 	}
 
 	filterByBeta(menu: Array<any>, isBeta: boolean): Promise<Array<any>> {
+		this.showSmartPerformance(menu, isBeta)
 		return this.canShowSearch().then((result) => {
 			this.initializeAppSearchItem(menu, result);
 			const item = menu.find(i => i.id === 'app-search');
 			if (item) item.hide = !isBeta || !result;
-			menu.forEach(i => {
-				if (i.subitems.length && i.subitems.length > 0) {
-					// i.subitems = i.subitems.filter(function(element) { return element.id !== 'smart-performance'; });
-					i.subitems.forEach(el => {
-						if (el.id === 'smart-performance') {
-							el.hide = !isBeta;
-						}
-					})
-				}
-			})
 			return menu;
 		});
 	}
-
+	showSmartPerformance(menu, isBeta) {
+		menu.forEach(i => {
+			if (i.subitems.length && i.subitems.length > 0) {
+				i.subitems.forEach(el => {
+					if (el.id === 'smart-performance') {
+						el.hide = !isBeta;
+					}
+				})
+			}
+		})
+	}
 	showSystemUpdates(): void {
 		if (!Array.isArray(this.menu)) { return; }
 
