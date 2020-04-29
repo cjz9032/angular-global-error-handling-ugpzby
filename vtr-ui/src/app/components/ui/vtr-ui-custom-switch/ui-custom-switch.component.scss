@@ -1,21 +1,28 @@
 @import "./../../../app.theme.scss";
 
 .vtr-ui-custom-switch {
-	$font-size-base: 1.4rem;
+	$font-size-base: 14px;
 	$line-height-base: 1.5 !default;
 	$custom-control-indicator-border-color: $light;
-	$custom-control-gutter: 0.3rem !default;
-	$custom-control-indicator-border-width: 0.1rem;
-	$custom-switch-width: 4.6rem !default;
-	$custom-switch-height: 2rem !default;
-	$custom-switch-indicator-border-radius: 1rem;
-	$custom-switch-indicator-size: 1.4rem;
-	$input-focus-indicator: 0 0 0 0.1rem rgba(255, 255, 255, 1), 0 0 0 0.2rem rgba(0, 123, 255, 1);
+	$custom-control-gutter: 3px !default;
+	$custom-control-indicator-border-width: 1px;
+	$custom-switch-width: 46px !default;
+	$custom-switch-height: 20px !default;
+	$custom-switch-indicator-border-radius: 10px;
+	$custom-switch-indicator-size: 14px;
+	$input-focus-indicator: 0 0 0 2px rgba(255, 255, 255, 1), 0 0 0 3px rgba(0, 123, 255, 1);
 	$input-checked-background: transparent linear-gradient(113deg, $green_darker 0%, $green-light 100%) 0% 0% no-repeat
-					padding-box;
+		padding-box;
+
 	.custom-switch {
+		height: 26px;
+		margin: 5px 4px;
 		padding-left: $custom-switch-width + $custom-control-gutter;
 
+		.custom-control-input {
+			width: 48px;
+			height: 25px;
+		}
 		.custom-control-label {
 			&::before {
 				left: -($custom-switch-width + $custom-control-gutter);
@@ -24,12 +31,13 @@
 				pointer-events: all;
 				border-radius: $custom-switch-indicator-border-radius;
 				transition: none;
+				top: 0;
 			}
 
 			&::after {
-				top: ($custom-switch-height - $custom-switch-indicator-size);
+				top: ($custom-switch-height - $custom-switch-indicator-size) /2;
 				// left: (-($custom-switch-width + $custom-control-gutter) + ($custom-control-indicator-border-width * 2));
-				left: -4.4rem;
+				left: -45px;
 				width: $custom-switch-indicator-size !important;
 				height: $custom-switch-indicator-size !important;
 				background-color: $custom-control-indicator-border-color;
@@ -64,7 +72,7 @@
 			}
 			&::after {
 				background-color: $light;
-				transform: translateX(2.2rem);
+				transform: translateX(24px);
 			}
 		}
 		.custom-control-input:not(:checked) ~ .custom-control-label {
