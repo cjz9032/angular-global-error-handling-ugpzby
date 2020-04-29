@@ -652,6 +652,9 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			this.logger.info(`Widget-quicksettingslist-handleDolbyChangeEvent: return value: ${dolbyModeResponse}, dolbyMode from ${this.quickSettings[3].isChecked} to: ${dolbyModeResponse.isAudioProfileEnabled}`);
 			if (dolbyModeResponse.isAudioProfileEnabled !== this.quickSettings[3].isChecked) {
 				this.quickSettings[3].isChecked = dolbyModeResponse.isAudioProfileEnabled;
+				let dolbyAudioCache: DolbyModeResponse = this.commonService.getLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache);
+				dolbyAudioCache.isAudioProfileEnabled = dolbyModeResponse.isAudioProfileEnabled;
+				this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, dolbyAudioCache);
 			}
 		} else {
 			this.logger.error(`Widget-quicksettingslist-handleDolbyChangeEvent: wrong response: ${dolbyModeResponse}`);
