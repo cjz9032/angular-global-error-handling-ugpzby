@@ -16,10 +16,19 @@ export class ContainerCollapsibleComponent extends BaseComponent {
 	@Output() toggle = new EventEmitter();
 	@Input() metricsParent: string;
 	@Input() tabIndex = 0;
+	@Input() headerLevel : number;
+
 	constructor() {
 		super();
 	}
 
+	ngAfterViewInit(): void {
+		if(this.headerLevel && this.headerLevel>0){
+			const domHeaderLevel = document.getElementById(this.collapseLinkId+'-collapse-card-title')
+			domHeaderLevel.setAttribute('aria-level', this.headerLevel.toString());
+		}
+	}
+	
 	public onToggle() {
 		this.isCollapsed = !this.isCollapsed;
 		this.toggle.emit(this.isCollapsed);
