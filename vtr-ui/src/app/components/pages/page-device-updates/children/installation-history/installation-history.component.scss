@@ -131,13 +131,17 @@
 					color: $main;
 					line-height: 2.8rem;
 					font-size: 2rem;
-
+					
 					a {
 						text-decoration: underline;
 						cursor: pointer;
 
 						&:hover {
 							text-decoration: none;
+						}
+
+						&:focus {
+							outline-offset: 0;
 						}
 					}
 				}
