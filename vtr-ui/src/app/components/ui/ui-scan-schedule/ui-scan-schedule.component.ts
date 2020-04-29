@@ -241,8 +241,14 @@ export class UiScanScheduleComponent implements OnInit {
 			return;
 		}
 		if (event.target) {
+			console.log('zakir ui scan schedule', event.target);
 			if (event.target['classList'][1] !== "fa-chevron-down" &&
+				event.target['classList'][0] !== "freq-dropdown" &&
+				event.target['classList'][0] !== "day-dropdown" &&
+				event.target['classList'][0] !== "date-dropdown" &&
 				event.target['classList'][0] !== "time-dropdown" &&
+				event.target['classList'][1] !== "hour-block" &&
+				event.target['classList'][1] !== "amPm-block" &&
 				event.target['classList'][0] !== "hour-text" &&
 				event.target['classList'][0] !== "min-text" &&
 				event.target['classList'][0] !== "amPm-text") {
