@@ -6,7 +6,7 @@
 		<button [ngClass]="{'action-button': !isButtonDisable(), 'action-button-disable': isButtonDisable()}"
 			[title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
 			[disabled]="isButtonDisable()"
-			(click)="startScanWaitingModules(taskTypeEnum.QuickScan)"
+			(click)="onQuickScan()"
 			>{{'hardwareScan.quickScan' | translate}}</button>
 		<a
 			vtrMetrics
@@ -15,8 +15,8 @@
 			metricsItem="HardwareScan.CustomizeScan"
 			[title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
 			[ngClass]="{'action-anchor': !isButtonDisable(), 'disabled-anchor': isButtonDisable()}"
-			(click)="startScanWaitingModules(taskTypeEnum.CustomScan)"
+			(click)="onAnchor()"
 			>{{'hardwareScan.customize.name' | translate}}
 		</a>
-	</div> 
+	</div>
 </div>

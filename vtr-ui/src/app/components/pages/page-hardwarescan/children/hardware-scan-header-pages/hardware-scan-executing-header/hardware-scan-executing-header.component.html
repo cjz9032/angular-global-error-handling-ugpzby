@@ -11,7 +11,7 @@
 		<div class="row progress-div">
 			<div class="row progress-percent-text">
 				<span class="progress-value-text">{{percent}}</span>
-				<span class="progress-complete-text">% {{completeText}}</span>
+				<span class="progress-complete-text">% {{'hardwareScan.complete' | translate}}</span>
 			</div>
 		</div>
 	</div>
@@ -44,7 +44,7 @@
 			</div>
 		</div>
 		<div class="col-12 final-result-code" *ngIf="getFinalResultCode()">
-			<span class="result-code-value-text">{{finalResultCodeText}}:</span>
+			<span class="result-code-value-text">{{'hardwareScan.finalResultCode' | translate}}:</span>
 			<span class="result-code-complete-text">{{getFinalResultCode()}}</span>
 			<fa-icon *ngIf="getTooltipInformation()" class="result-code-icon" triggers="click:blur" placement="auto" [ngbTooltip]="tooltipFinalResultCode" [icon]="['far', 'question-circle']" container="vtr-root" tooltipClass="vtr-tooltip">
 			</fa-icon>
@@ -65,7 +65,7 @@
 			metricsEvent="articleclick"
 			metricsPageNumber="1">
 			<button class='btn button'>
-				{{ lenovoSupport }}
+				{{ 'hardwareScan.support.subtitle' | translate }}
 			</button>
 		</a>
 	</div>

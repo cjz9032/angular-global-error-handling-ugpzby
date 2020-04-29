@@ -13,11 +13,19 @@ import { HardwareScanService } from '../../../../../services/hardware-scan/hardw
 })
 
 export class HardwareScanHeaderPagesComponent implements OnInit {
+	// Inputs
+	@Input() percent = 0;
+	@Input() statusText: string;
+	@Input() disableCancel: boolean;
 
-	@Input() percent;
 	public deviceInRecover: any; // Current device in Recover Bad Sectors
 	public culture: any;
 	public metrics: any
+
+	// Emitters
+	@Output() startQuickScan = new EventEmitter();
+	@Output() checkAnchor = new EventEmitter();
+	@Output() checkCancel = new EventEmitter();
 
 	constructor(
 		private hardwareScanService: HardwareScanService,
@@ -29,7 +37,19 @@ export class HardwareScanHeaderPagesComponent implements OnInit {
 
 	ngOnInit() {
 		this.culture = this.hardwareScanService.getCulture();
-	 }
+	}
+
+	onAnchor() {
+		this.checkAnchor.emit();
+	}
+
+	onQuickScan() {
+		this.startQuickScan.emit();
+	}
+
+	onCancel() {
+		this.checkCancel.emit();
+	}
 
 	public getDeviceTitle() {
 		if (this.hardwareScanService) {

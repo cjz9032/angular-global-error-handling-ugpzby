@@ -8,16 +8,31 @@ import { HardwareScanService } from '../../../../../../services/hardware-scan/ha
   styleUrls: ['./hardware-scan-executing-header.component.scss']
 })
 export class HardwareScanExecutingHeaderComponent implements OnInit {
-
-	@Input() percent;
+	// Inputs
+	@Input() percent = 0;
 	@Input() title = '';
 	@Input() subTitle = '';
+	@Input() statusText: string;
+	@Input() disableCancel: boolean;
+	@Input() finalResultCode = '';
+
+	// Metrics
+	@Input() itemParentCancel: string;
+	@Input() itemNameCancel: string;
+
+	// Emitters
+	@Output() checkCancel = new EventEmitter();
+	@Output() updateProgress = new EventEmitter();
 
 	constructor(
 		private hardwareScanService: HardwareScanService,
 		private translate: TranslateService) { }
 
 	ngOnInit() { }
+
+	onCancel() {
+		this.checkCancel.emit();
+	}
 
 	public isScanOrRBSFinished() {
 		return this.hardwareScanService.isScanOrRBSFinished();

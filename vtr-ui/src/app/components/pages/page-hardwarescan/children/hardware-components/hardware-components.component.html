@@ -17,7 +17,12 @@
 			</vtr-widget-hardware-scan> -->
 
 			<vtr-hardware-scan-header-pages *ngIf="!isScanDone"
-			[percent]="progress">
+			[percent]="progress"
+			(checkCancel)="onCancelScan()"
+			[disableCancel]="isDisableCancel()"
+			(checkAnchor)="startScanWaitingModules(taskTypeEnum.CustomScan)"
+			(startQuickScan)="startScanWaitingModules(taskTypeEnum.QuickScan)"
+			[statusText]="finalStatusToken()">
 			</vtr-hardware-scan-header-pages>
 		</div>
 	</div>
