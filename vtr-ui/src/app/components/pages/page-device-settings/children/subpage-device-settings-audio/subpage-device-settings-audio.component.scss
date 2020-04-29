@@ -59,48 +59,6 @@
 					float: left;
 					margin-top: 0px;
 					top: 3px;
-					.custom-control-label {
-						&::before {
-							top: 0.2rem;
-							width: 1.6rem;
-							height: 1.6rem;
-							box-shadow: inset 0 0 0 0 $light;
-							border: 0 solid $shade_darker;
-						}
-						&::after {
-							top: 0.2rem;
-							width: 1.6rem;
-							height: 1.6rem;
-							box-shadow: inset 0 0 0 0.1rem $light;
-							border: 0.1rem solid $shade_darker;
-						}
-					}
-					.custom-control-input:checked + .custom-control-label {
-						&::before {
-							display: none;
-						}
-						&::after {
-							top: 0.2rem;
-							width: 1.6rem;
-							height: 1.6rem;
-							box-shadow: inset 0 0 0 0.1rem $light;
-							border: 0.1rem solid $shade_darker;
-							background-color: $menu_hover;
-						}
-					}
-					.custom-control-input:disabled:checked + .custom-control-label {
-						&::after {
-							top: 0.2rem;
-							width: 1.6rem;
-							height: 1.6rem;
-							box-shadow: inset 0 0 0 0.1rem $light;
-							border: 0.1rem solid $shade_darker;
-							background-color: #bbb;
-						}
-						&::before {
-							display: none;
-						}
-					}
 				}
 			}
 
