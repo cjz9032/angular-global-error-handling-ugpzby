@@ -49,7 +49,7 @@
 					font-size: $fontsize_sm;
 					color: $menu_hover;
 					margin-left: 1.5rem;
-					margin-top: 0px;
+					margin-top: 2px;
 					cursor: pointer;
 					&:hover {
 						color: $highlight;
@@ -58,7 +58,6 @@
 				::ng-deep .auto-set-checkbox {
 					float: left;
 					margin-top: 0px;
-					top: 3px;
 				}
 			}
 
