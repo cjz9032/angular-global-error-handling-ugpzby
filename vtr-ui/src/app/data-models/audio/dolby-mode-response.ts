@@ -1,7 +1,7 @@
 export class DolbyModeResponse {
     constructor(
         public available: boolean,
-        public supporedModes: string[],
+        public supportedModes: string[],
         public currentMode: string,
 
         public isAudioProfileEnabled: boolean,
