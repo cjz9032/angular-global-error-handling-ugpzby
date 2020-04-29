@@ -161,7 +161,7 @@ export class ModalModernPreloadComponent implements OnInit, OnDestroy, AfterView
 			}
 			this.appList.push(app);
 		});
-		if (this.redemptionSupport) { this.setAppProps(); }
+		this.setAppProps();
 		this.checkedApp();
 		this.modernPreloadService.DownloadButtonStatus = DownloadButtonStatusEnum.DOWNLOAD;
 	}

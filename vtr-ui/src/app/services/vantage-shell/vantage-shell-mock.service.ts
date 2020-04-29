@@ -855,7 +855,7 @@ export class VantageShellService {
 		const obj: any = {
 			available: true,
 			currentMode: 'Dynamic',
-			supporedModes: ['Dynamic', 'Movie', 'Music', 'Games', 'Voip']
+			supportedModes: ['Dynamic', 'Movie', 'Music', 'Games', 'Voip']
 		};
 
 		dolby.getDolbyMode = this.getPromise(obj);

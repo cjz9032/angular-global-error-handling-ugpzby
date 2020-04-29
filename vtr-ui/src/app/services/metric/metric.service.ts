@@ -141,11 +141,12 @@ export class MetricService {
 	}
 
 	private sendInstallationMetric(metricEnable) {
-		if (Windows
-			&& Windows.VantageShellExtension.Metrics
-			&& Windows.VantageShellExtension.Metrics.Helper
-			&& Windows.VantageShellExtension.Metrics.Helper.SvcInstallationMetricsHelper) {
-			const SvcInstallationMetricsHelper = Windows.VantageShellExtension.Metrics.Helper.SvcInstallationMetricsHelper;
+		const win: any = window;
+		if (win.VantageShellExtension
+			&& win.VantageShellExtension.Metrics
+			&& win.VantageShellExtension.Metrics.Helper
+			&& win.VantageShellExtension.Metrics.Helper.SvcInstallationMetricsHelper) {
+			const SvcInstallationMetricsHelper = win.VantageShellExtension.Metrics.Helper.SvcInstallationMetricsHelper;
 			if (SvcInstallationMetricsHelper.needReportError) {
 				SvcInstallationMetricsHelper.sendFinishMetric(metricEnable);
 			}

@@ -15,6 +15,7 @@ export class QaService {
 			iconPath: `${this.imagePath}/svg_icon_qa_backup.svg`,
 			like: false,
 			dislike: false,
+			itemId: 'widget-support-detail-1',
 		},
 		{
 			id: 2,
@@ -23,6 +24,7 @@ export class QaService {
 			iconPath: `${this.imagePath}/svg_icon_qa_reset.svg`,
 			like: false,
 			dislike: false,
+			itemId: 'widget-support-detail-2',
 		},
 		{
 			id: 3,
@@ -31,6 +33,7 @@ export class QaService {
 			iconPath: `${this.imagePath}/svg_icon_qa_pcbit.svg`,
 			like: false,
 			dislike: false,
+			itemId: 'widget-support-detail-3',
 		},
 		{
 			id: 4,
@@ -39,6 +42,7 @@ export class QaService {
 			iconPath: `${this.imagePath}/svg_icon_qa_battery.svg`,
 			like: false,
 			dislike: false,
+			itemId: 'widget-support-detail-4',
 		},
 		{
 			id: 5,
@@ -47,6 +51,7 @@ export class QaService {
 			iconPath: `${this.imagePath}/svg_icon_qa_tablet.svg`,
 			like: false,
 			dislike: false,
+			itemId: 'widget-support-detail-5',
 		},
 		{
 			id: 6,
@@ -55,6 +60,7 @@ export class QaService {
 			iconPath: `${this.imagePath}/svg_icon_qa_cortana.svg`,
 			like: false,
 			dislike: false,
+			itemId: 'widget-support-detail-6',
 		}
 	];
 

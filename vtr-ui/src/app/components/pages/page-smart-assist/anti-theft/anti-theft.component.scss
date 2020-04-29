@@ -50,91 +50,15 @@ vtr-ui-row-switch {
   }
 
   .checkbox {
-    margin-left: 1.5px;
     ::ng-deep .auto-set-checkbox {
       margin-top: 0px !important;
-      outline: 0;
-      .custom-control-label {
-        line-height: 1.4;
-        font-size: $fontsize_xs;
-        font-weight: $weight_light;
-        &::before {
-          top: 0.2rem;
-          width: 1.5rem;
-          height: 1.5rem;
-          box-shadow: inset 0 0 0 0 $light;
-          border: 0 solid $shade_darker;
-        }
-        &::after {
-          top: 0.2rem;
-          width: 1.5rem;
-          height: 1.5rem;
-          box-shadow: inset 0 0 0 0.1rem $light;
-          border: 0.1rem solid $shade_darker;
-        }
-      }
-      .custom-control-input:checked + .custom-control-label {
-        &::before {
-          display: none;
-        }
-        &::after {
-          top: 0.2rem;
-          width: 1.5rem;
-          height: 1.5rem;
-          box-shadow: inset 0 0 0 0.1rem $light;
-          border: 0.1rem solid $shade_darker;
-          background-color: $menu_hover;
-        }
-      }
-      .custom-control-input:disabled:checked + .custom-control-label {
-        &::after {
-          top: 0.2rem;
-          width: 1.5rem;
-          height: 1.5rem;
-          box-shadow: inset 0 0 0 0.1rem $light;
-          border: 0.1rem solid $shade_darker;
-          background-color: #bbb;
-          color: #667481;
-        }
-        &::before {
-          display: none;
-        }
-      }
     }
   }
-
+  
   .select {
-    width: 360px;
-    .selectDropdown {
-      ::ng-deep .ui-dropdown {
-        height: 7.1rem !important;
-        .ui-btn-dropdown {
-          outline: 0;
-          border: 0px !important;
-        }
-        .chevron {
-          color: #667481 !important;
-        }
-        ::ng-deep .ui-menu-dropdown {
-          top: 7.1rem !important;
-          padding: 0.5rem 0rem !important;
-          a {
-            outline: 0;
-            padding: 0.8rem 1.5rem !important;
-            &:hover {
-              color: hsl(0, 0%, 100%) !important;
-              background-color: #667481 !important;
-              text-decoration: blink !important;
-            }
-            &:focus {
-              color: hsl(0, 0%, 100%) !important;
-              background-color: #667481 !important;
-              text-decoration: blink !important;
-            }
-          }
-        }
-      }
-    }
+    max-width:380px;
+    width: 45%;
+    min-width: 360px;
   }
 
   .showPhoto {

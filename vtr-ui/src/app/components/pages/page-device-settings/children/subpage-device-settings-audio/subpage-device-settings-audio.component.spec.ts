@@ -31,7 +31,7 @@ const autoDolbyFeatureStatus = {
 };
 const dolbyModeResponse = {
 	available: true,
-	supporedModes: ['Dynamic', 'Movie', 'Music', 'Games', 'Voip'],
+	supportedModes: ['Dynamic', 'Movie', 'Music', 'Games', 'Voip'],
 	currentMode: 'Dynamic',
 	isAudioProfileEnabled: false,
 	eCourseStatus: 'True',

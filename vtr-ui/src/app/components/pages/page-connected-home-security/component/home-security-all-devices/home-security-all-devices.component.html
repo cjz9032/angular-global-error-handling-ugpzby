@@ -4,7 +4,7 @@
 			*ngFor="let item of allDevices?.allDevicesItem">
 			<div class="row align-items-center">
 				<div class="icon-bkg blue col col-3 text-center">
-					<span [ngClass]="['icomoon', 'icomoon-' + getItemStatusIconClass(item)]"></span>
+					<span [ngClass]="['icomoon', 'icomoon-' + getItemStatusIconClass(item)]" aria-hidden="true"></span>
 				</div>
 				<div class="col col-9 pl-3">
 					<div class="font-weight-600 blue"
