@@ -62,7 +62,8 @@ export class ModalCancelComponent implements OnInit, AfterViewInit {
 	}
 
 	onAgree() {
-		this.description = this.translate.instant('hardwareScan.cancelTextProgress');
+		//Cleaning description because there is a cancelling message already.
+		this.description = '';
 		this.loading = true;
 		this.cancelRequested.emit();
 
