@@ -6,7 +6,6 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { NgbModal, NgbModalRef, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { HardwareScanTestResult } from 'src/app/enums/hardware-scan-test-result.enum';
 import { DeviceService } from 'src/app/services/device/device.service';
-import { MyDevice } from 'src/app/data-models/device/my-device.model';
 import { TranslateService } from '@ngx-translate/core';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { ModalHardwareScanCustomizeComponent } from '../../../../modal/modal-hardware-scan-customize/modal-hardware-scan-customize.component';
@@ -19,7 +18,7 @@ import { VantageShellService } from '../../../../../services/vantage-shell/vanta
 import { TimerService } from 'src/app/services/timer/timer.service';
 import { ModalWaitComponent } from '../../../../modal/modal-wait/modal-wait.component';
 import { TaskType, TaskStep } from 'src/app/enums/hardware-scan-metrics.enum';
-import { LenovoSupportService } from 'src/app/src/app/services/hardware-scan/lenovo-support.service';
+import { LenovoSupportService } from 'src/app/services/hardware-scan/lenovo-support.service';
 
 const RootParent = 'HardwareScan';
 const ConfirmButton = 'Confirm';
@@ -62,8 +61,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	};
 	private batteryMessage: string;
 	private culture: any;
-	private showETicket = false;
-
 	private metrics: any;
 
 	public isOnline = true;
@@ -398,32 +395,27 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		};
 
         if (this.hardwareScanService) {
-
 			this.timerService.start();
 
 			this.itemParentCancelScan = this.getMetricsParentValue();
 			this.itemNameCancelScan = this.getMetricsItemNameCancel();
 
 			this.hardwareScanService.setFinalResponse(null);
-
-			this.hardwareScanService.setFinalResponse(null);
 			this.hardwareScanService.getDoScan(payload, this.modules, this.cancelHandler)
-				.then((response) => {
+			.then((response) => {
                 this.cleaningUpScan(response);
-                if (!this.showETicket) {
-                    this.checkETicket();
-                }
+				this.showSupportPopupIfNeeded();
             })
-				.catch((ex: any) => {
+			.catch((ex: any) => {
                 this.initComponent();
             })
-				.finally(() => {
-					const metricsResult = this.getMetricsTaskResult();
-					this.sendTaskActionMetrics(this.hardwareScanService.getCurrentTaskType(), metricsResult.countSuccesses,
-						'', metricsResult.scanResultJson, this.timerService.stop());
-					this.cleaningUpScan(undefined);
-					this.itemsToDisplay = this.getItemToDisplay();
-				});
+			.finally(() => {
+				const metricsResult = this.getMetricsTaskResult();
+				this.sendTaskActionMetrics(this.hardwareScanService.getCurrentTaskType(), metricsResult.countSuccesses,
+					'', metricsResult.scanResultJson, this.timerService.stop());
+				this.cleaningUpScan(undefined);
+				this.itemsToDisplay = this.getItemToDisplay();
+			});
 		}
     }
 
@@ -440,48 +432,66 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public async checkETicket() {
-        let brokenModules = '';
-        const categoryInfoList = this.hardwareScanService.getCategoryInformation();
-        const finalResponse = this.hardwareScanService.getFinalResponse();
-        if (finalResponse) {
-			for (const scanRequest of finalResponse.responses) { // For each module
-				for (const groupResult of scanRequest.groupResults) { // For each device
-					let broken = false;
-					for (const testResult of groupResult.testResultList) { // For each test
-						// console.log("[TEST] " + testResult.result);
-						if (testResult.result === 3) { // TestResultType.Fail
-							if (brokenModules !== '') {
-								brokenModules += '; ';
-							}
+	public async showSupportPopupIfNeeded() {
+		const finalResponse = this.hardwareScanService.getFinalResponse();
+		if (finalResponse) {
+			const categoryInfoList = this.hardwareScanService.getCategoryInformation();
 
-							for (const category of categoryInfoList) {
-								if (category.id === groupResult.moduleName) {
-									brokenModules += category.name;
-								}
-							}
-							broken = true;
-							break;
-						}
-					}
-					if (broken === true) {
-						break;
-					}
+			const failedModules = finalResponse.responses.map(response => {
+				// Extracting the module list of responses having at least one test failed
+				const modulesContainingTestsFailed = response.groupResults.filter(device =>
+					device.testResultList.some(test => test.result == HardwareScanTestResult.Fail));
+
+				// Returning undefined here once this response there's no failures.
+				// It'll be removed by the 'filter' ahead.
+				if (modulesContainingTestsFailed.length == 0) {
+					return undefined;
 				}
+
+				// Transforms the filtered data to the desired format.
+				// At the beginning result is an object containing no data and it's updated with the information of each device
+				return modulesContainingTestsFailed.reduce((result, device) => {
+					// Retriving device information (id, name, etc ...)
+					const category = categoryInfoList.find(category => category.id == device.moduleName);
+					const deviceInfo = category.groupList.find(groupDevice => groupDevice.id == device.id);
+
+					// Updates result with the device information grouped by module (cpu, storage, etc ...)
+					// Resulting in something like:
+					// {
+					//		moduleName: "Storage",
+					//		devices: [
+					//			{ id: "0", name: "WDC PC SN720 SDAPNTW-256G-1101 - 238.47 GBs" },
+					//			{ id: "1", name: "SAMSUNG HM160HX - 149.05 GBs" }
+					//		]
+					// }
+					result.moduleName = category.name;
+					result.devices.push({
+						id: deviceInfo.id,
+						name: deviceInfo.name
+					});
+
+					return result;
+				},
+				// This is the initial value of the resulting object.
+				{
+					moduleName: '',
+					devices: []
+				});
+			}).filter(module => module !== undefined); // Removing empty elements from resulting list
+
+			// If there's failure, shows the support pop-up
+			if (failedModules.length > 0) {
+				const supportUrl = await this.lenovoSupportService.getSupportUrl(this.startDate);
+				const modalRef = this.modalService.open(ModalEticketComponent, {
+					backdrop: 'static',
+					size: 'lg',
+					centered: true,
+					windowClass: 'hardware-scan-modal-size'
+				});
+				modalRef.componentInstance.moduleNames = failedModules;
+				modalRef.componentInstance.setUrl(supportUrl);
 			}
 		}
-
-        if (brokenModules !== '') {
-            const supportUrl = await this.lenovoSupportService.getSupportUrl(this.startDate);
-            const modalRef = this.modalService.open(ModalEticketComponent, {
-				backdrop: 'static',
-				size: 'lg',
-				centered: true,
-				windowClass: 'hardware-scan-modal-size'
-			});
-            modalRef.componentInstance.moduleNames = brokenModules;
-            modalRef.componentInstance.setUrl(supportUrl);
-        }
     }
 
 	private doRecoverBadSectors() {
