@@ -344,29 +344,16 @@
 						padding-bottom: 0;
 					}
 					.icon-box {
-						width: 19%;
-						padding-right:1%;
-						position: relative;		
-						word-wrap:normal!important;
-						@media #{$breakpoint_sm}{
-							align-items: center;
-							height: 2.5rem;
-							margin-top: -2rem;
-							margin-bottom: 1rem;
-							padding: 0.5rem;
-							width: auto;
-						}
+						width: 20%;
+						position: relative;
 						&::after {
 							content: '';
 							position: absolute;
 							height: 100%;
 							width: 1px;
-							background: $screen_dark_15;
+							background: $light;
 							right: 0;
 							top: 0;
-							@media #{$breakpoint_sm}{
-								height: 140%;
-							}
 						}
 						&:last-child {
 							&::after {
@@ -375,8 +362,8 @@
 						}
 						.icon {
 							font-size: 2.6rem;
-							margin-right: 0.6rem;
-							color: $main_shade;
+							margin-right: 0.8rem;
+							color: $menu_hover;
 							@media #{$breakpoint_xl} {
 								font-size: $fontsize_xl;
 								margin-right: 0.5rem;
@@ -387,31 +374,20 @@
 							}
 						}
 						p {
-							font-size: 1.4rem;
+							font-size: 1.1rem;
+							font-weight: $weight_medium;
 							max-width: 6rem;
-							margin-right:0.2rem;
 							margin-top: 0.6rem;
 							line-height: 1.6rem;
-							color: $main_shade;
-							@media #{$breakpoint_xl}{
-								font-size: 1.1rem;
-								line-height: 1.2rem;
-								margin-bottom: 0;
-								max-width: 6.5rem;
-							}
-							@media #{$breakpoint_md}{
-								font-size: 1.1rem;
-								line-height: 1.2rem;
-								margin-bottom: 0;
-								max-width: 6.5rem;
-							}
-							@media #{$breakpoint_sm}{
+							color: #272A3B;
+							@media #{$breakpoint_sm} {
 								font-size: 1rem;
-								line-height: 1.2rem;
-								margin-bottom: 0;
+								line-height: 1rem;
 							}
 						}
 					}
+				}
+			}
 			&::ng-deep {
 				.tabset-main{
 					.nav-tabs {
