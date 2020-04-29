@@ -143,11 +143,7 @@
 						border-radius: 0.8rem;
 						margin-top: -0.3rem;
 
-						@media #{$black-on-white} {
-							background: $high-contrast-blue !important;
-						}
-
-						@media #{$white-on-black} {
+						@media #{$high-contrast} {
 							background: $high-contrast-blue !important;
 						}
 

@@ -28,26 +28,29 @@
 			ngbDropdownItem>
 			<div class="title pb-3"
 				*ngIf="warrantyData.info.status === 0"
-				id="in-warranty-title"
-				attr.aria-label="in-warranty-title">
+				id="header-in-warranty-title"
+				role="heading">
 				{{'support.warranty.titleInWarranty' | translate}}
 			</div>
 			<div class="title pb-3"
 				*ngIf="warrantyData.info.status === 1"
-				id="expired-warranty-title"
-				attr.aria-label="expired-warranty-title">
+				id="header-expired-warranty-title"
+				role="heading">
 				{{'support.warranty.titleWarrantyExpired' | translate}}
 			</div>
 
 			<div class="sub-description pb-4">
-				<div class="pb-1"
-					id="warranty-start-date"
-					attr.aria-label="warranty-start-date">
-					{{'support.warranty.startDate' | translate}}<b>{{ warrantyData.info.startDate | formatUTCDate }}</b>
+				<div class="pb-1">
+					<span id="header-warranty-start-date-name"
+						role="text">{{'support.warranty.startDate' | translate}}</span>
+					<b id="header-warranty-start-date-value"
+					role="text">{{ warrantyData.info.startDate | formatUTCDate }}</b>
 				</div>
-				<div id="warranty-end-date"
-					attr.aria-label="warranty-end-date">
-					{{'support.warranty.endDate' | translate}}<b>{{ warrantyData.info.endDate | formatUTCDate }}</b>
+				<div>
+					<span id="header-warranty-end-date-name"
+						role="text">{{'support.warranty.endDate' | translate}}</span>
+					<b id="header-warranty-end-date-value"
+					role="text">{{ warrantyData.info.endDate | formatUTCDate }}</b>
 				</div>
 			</div>
 
