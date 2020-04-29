@@ -80,7 +80,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	selectedFrequency: any;
 	selectedDay: any;
 	selectedNumber: any;
-	yearsList: any[] = [this.getYearObj(0), this.getYearObj(-1)];
+	yearsList: any[] = [this.getYearObj(0)];// removed last year, "this.getYearObj(-1)" to fix van-17574
 	scanFrequency: any = [
 		'Once a week',
 		'Every other week',
