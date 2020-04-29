@@ -59,11 +59,9 @@ export class WifisecurityProxy implements phoenix.WifiSecurity {
 		return this.wifisecurity.disableWifiSecurity();
 	}
 	getWifiSecurityStateOnce(): Promise<any> {
-		return new Promise((resovle, reject) => {
-			this.wifisecurity.getWifiSecurityStateOnce().then(re => {
-				this.on(phoenix.EventTypes.wsIsLocationServiceOnEvent, this.wsIsLocationServiceOnEventHandler.bind(this));
-				resovle(re);
-			}, rej => reject(rej));
+		return this.wifisecurity.getWifiSecurityStateOnce().then(re => {
+			this.on(phoenix.EventTypes.wsIsLocationServiceOnEvent, this.wsIsLocationServiceOnEventHandler.bind(this));
+			return re;
 		});
 	}
 	updateWifiSecurityState(res: phoenix.WifiSecurity): void {
