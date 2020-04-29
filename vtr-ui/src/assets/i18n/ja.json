@@ -2192,9 +2192,9 @@
             "rebootRequiredMsg": "更新を正常にインストールするために、ココンピューターはすべてが安全かつ円滑に実行されていることを確認するために再起動します。",
             "okayButton": "OK",
             "cancelButton": "キャンセル",
-            "rebootButton": "今すぐリブート",
-            "dismissButton": "却下",
-            "rebootPending": "再起動保留"
+            "rebootButton": "今すぐ再起動",
+            "dismissButton": "キャンセル",
+            "rebootPending": "再起動"
         },
         "autoUpdateSettings": {
             "title": "自動更新設定",
