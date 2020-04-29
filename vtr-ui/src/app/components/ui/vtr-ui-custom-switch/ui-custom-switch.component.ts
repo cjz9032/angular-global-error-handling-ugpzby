@@ -28,7 +28,6 @@ export class UiCustomSwitchComponent implements OnInit {
 	public onChange($event) {
 		const value = $event.target.checked;
 		this.value = value;
-		this.toggle.emit(value);
+		this.toggle.emit({ switchValue: value });
 	}
-
 }

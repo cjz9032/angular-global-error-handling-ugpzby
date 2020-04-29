@@ -10,16 +10,18 @@
 			[hidden]="isLoading">
 			<input type="checkbox"
 				class="custom-control-input"
+				role="switch"
 				tabIndex="0"
 				[id]="componentId"
 				[disabled]="isDisabled"
 				[checked]="value"
+				[value]="value"
 				[attr.aria-label]="ariaLabel"
 				[attr.aria-disabled]="isDisabled"
 				[attr.aria-checked]="value"
+				[attr.aria-valuenow]="value"
 				vtrMetrics
 				[metricsEvent]="metricsEvent"
-				[metricsParent]="metricsParent"
 				[metricsItem]="componentId"
 				[metricsValue]="value"
 				(change)="onChange($event)">
