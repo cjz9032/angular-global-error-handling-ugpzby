@@ -16,7 +16,7 @@ export class ContainerCollapsibleComponent extends BaseComponent {
 	@Output() toggle = new EventEmitter();
 	@Input() metricsParent: string;
 	@Input() tabIndex = 0;
-	@Input() headerLevel : number;
+	@Input() headerLevel : number | null = null;
 
 	constructor() {
 		super();
