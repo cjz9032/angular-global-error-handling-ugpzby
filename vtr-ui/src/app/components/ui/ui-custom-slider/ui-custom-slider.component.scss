@@ -10,7 +10,7 @@
 	$track-radius: 5px;
 
 	// SVG fill color only
-	@mixin thumb-icon($iconColor: 'white') {
+	@mixin thumb-icon($iconColor: "white") {
 		background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path d='M347.404 142.86c-4.753 4.753-4.675 12.484.173 17.14l73.203 70H91.22l73.203-70c4.849-4.656 4.927-12.387.173-17.14l-19.626-19.626c-4.686-4.686-12.284-4.686-16.971 0L3.515 247.515c-4.686 4.686-4.686 12.284 0 16.971L128 388.766c4.686 4.686 12.284 4.686 16.971 0l19.626-19.626c4.753-4.753 4.675-12.484-.173-17.14L91.22 282h329.56l-73.203 70c-4.849 4.656-4.927 12.387-.173 17.14l19.626 19.626c4.686 4.686 12.284 4.686 16.971 0l124.485-124.281c4.686-4.686 4.686-12.284 0-16.971L384 123.234c-4.686-4.686-12.284-4.686-16.971 0l-19.625 19.626z' fill='" + $iconColor + "'/></svg>")
 			$blue-light;
 		background-size: 80%;
@@ -28,7 +28,7 @@
 	}
 
 	@mixin thumb-disabled {
-		@include thumb-icon('grey');
+		@include thumb-icon("grey");
 		box-shadow: none;
 		background-color: $grey_light;
 	}
@@ -51,6 +51,26 @@
 		box-shadow: 0 0 0 1px $light, 0 0 0 2px $menu_hover;
 	}
 	.range {
+		.bubble {
+			width: auto;
+			min-width: $thumb-size;
+			text-align: center;
+			height: 24px;
+			line-height: 24px;
+			text-align: center;
+			// padding: 0 5px;
+			background: $light;
+			color: $grey_darker;
+			font-size: 12px;
+			display: inline-block;
+			position: relative;
+			border-radius: 6px;
+			left: 3px;
+			top: 0;
+			@supports (-ms-ime-align: auto) {
+				margin: 0 3px;
+			}
+		}
 		.legends {
 			padding: 0;
 			color: $grey_dark;
@@ -61,32 +81,32 @@
 		}
 
 		//And now the ticks
-		.ticks {
-			display: flex;
-			justify-content: space-between;
-			padding: 0 15px 0 13px;
-			span {
-				height: 1.8rem;
-			}
-			.tick {
-				color: $grey_dark;
-				font-size: $body;
-				position: relative;
-				display: flex;
-				justify-content: center;
+		// .ticks {
+		// 	display: flex;
+		// 	justify-content: space-between;
+		// 	padding: 0 15px 0 13px;
+		// 	span {
+		// 		height: 1.8rem;
+		// 	}
+		// 	.tick {
+		// 		color: $grey_dark;
+		// 		font-size: $body;
+		// 		position: relative;
+		// 		display: flex;
+		// 		justify-content: center;
 
-				&::after {
-					width: 0.2rem;
-					height: 2rem;
-					content: "";
-					background-color: $grey_light;
-					position: relative;
-					top: 60%;
-					// left: -50%;
-					z-index: -1;
-				}
-			}
-		}
+		// 		&::after {
+		// 			width: 0.2rem;
+		// 			height: 2rem;
+		// 			content: "";
+		// 			background-color: $grey_light;
+		// 			position: relative;
+		// 			top: 60%;
+		// 			// left: -50%;
+		// 			z-index: -1;
+		// 		}
+		// 	}
+		// }
 
 		input[type="range"] {
 			-webkit-appearance: none;

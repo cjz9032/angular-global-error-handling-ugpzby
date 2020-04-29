@@ -2,33 +2,51 @@
 	[ngClass]="{'in-warranty': item.info.status == 0, 'expired': item.info.status ==1, 'not-found': item.info.status == 2}">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col" *ngIf="item.info.status >= 0">
-				<div class="title">{{'support.warranty.warrantyDashboardDetails' | translate}}</div>
+			<div class="col"
+				*ngIf="item.info.status >= 0">
+				<div class="title"
+					id="dashboard-warranty-title"
+					role="heading">{{'support.warranty.warrantyDashboardDetails' | translate}}</div>
 				<div class="content"
 					*ngIf="item.info.status !== 2">
 					<div class="sub-description">
 						<div class="left-col">
 							<div class="pb-2">
-								<span>{{'support.warranty.status' | translate}}</span><b>{{status.detail[item.info.status] | translate}}</b>
+								<span id="dashboard-warranty-status-name"
+									role="text">{{'support.warranty.status' | translate}}</span>
+								<b id="dashboard-warranty-status-value"
+									role="text">{{status.detail[item.info.status] | translate}}</b>
 							</div>
 						</div>
 						<div class="right-col">
 							<div class="pb-2">
-								<span>{{'support.warranty.startDate' | translate}}</span>
-								<b *ngIf="item.info.status !== 2">{{ item.info.startDate | formatUTCDate}}</b>
-								<b *ngIf="item.info.status === 2">{{'common.securityAdvisor.notFound' | translate}}</b>
+								<span id="dashboard-warranty-start-date-name"
+									role="text">{{'support.warranty.startDate' | translate}}</span>
+								<b *ngIf="item.info.status !== 2"
+									id="dashboard-warranty-start-date-value"
+									role="text">{{ item.info.startDate | formatUTCDate}}</b>
+								<b *ngIf="item.info.status === 2"
+									id="dashboard-warranty-start-date-not-found"
+									role="text">{{'common.securityAdvisor.notFound' | translate}}</b>
 							</div>
 							<div class="pb-2">
-								<span>{{'support.warranty.endDate' | translate}}</span>
-								<b *ngIf="item.info.status !== 2">{{ item.info.endDate | formatUTCDate }}</b>
-								<b *ngIf="item.info.status === 2">{{'common.securityAdvisor.notFound' | translate}}</b>
+								<span id="dashboard-warranty-end-date-name"
+									role="text">{{'support.warranty.endDate' | translate}}</span>
+								<b *ngIf="item.info.status !== 2"
+									id="dashboard-warranty-end-date-value"
+									role="text">{{ item.info.endDate | formatUTCDate }}</b>
+								<b *ngIf="item.info.status === 2"
+									id="dashboard-warranty-end-date-not-found"
+									role="text">{{'common.securityAdvisor.notFound' | translate}}</b>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="content"
 					*ngIf="item.info.status === 2">
-					<div class="sub-description pb-40">
+					<div class="sub-description pb-40"
+						id="dashboard-warranty-not-found-description"
+						role="text">
 						{{'support.warranty.subDescription2' | translate}}
 						<span *ngIf="!isConnected && item.cache">{{'support.warranty.offlineTips1' | translate}}</span>
 						<span *ngIf="!isConnected && !item.cache">{{'support.warranty.offlineTips2' | translate}}</span>

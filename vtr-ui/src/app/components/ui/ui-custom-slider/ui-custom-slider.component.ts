@@ -26,9 +26,12 @@ export class UiCustomSliderComponent implements OnInit {
 	@Input() minLegend = ''; // label to display at the start of slider
 	@Input() midLegend = ''; // label to display at the center of slider
 	@Input() maxLegend = ''; // label to display at the end of slider
-	@Input() hasTicks = false;
-	@Input() ticks = [1, 55, 65, 100];
+	// @Input() hasTicks = false;
+	// @Input() ticks = [3500, 5500, 6000];
 	@Input() ariaLabel = 'slider';
+	// show current value in tooltip, for example ECM current temperature value like 6500K
+	@Input() showTip = false; // displays value when slider is dragged.
+	@Input() tipSuffix = ''; // add
 
 	// fires on every value change
 	@Output() valueChange = new EventEmitter<number>();
@@ -40,26 +43,34 @@ export class UiCustomSliderComponent implements OnInit {
 	@ViewChild('sliderBubble', { static: false }) sliderBubble: ElementRef;
 	@ViewChild('rangeSlider', { static: false }) rangeSlider: ElementRef;
 
-	public ticksArray = [];
+	// public ticksArray = [];
+	public isTooltipHidden = true;
+	public tipValue = '0';
 	constructor() { }
 
 	ngOnInit() {
-		if (this.hasTicks) {
-			this.calculateTicks();
-		}
+		// if (this.hasTicks) {
+		// 	this.calculateTicks();
+		// }
 	}
 
-	private calculateTicks() {
-		const noOfTicks = (this.max - this.min) / this.step;
-		let tickValue = this.min;
-		for (let index = 0; index <= noOfTicks; index++) {
-			if (index > 0) {
-				tickValue += this.step;
-			}
-			const isVisible = this.ticks.indexOf(tickValue) >= 0;
-			this.ticksArray[index] = { value: tickValue, isVisible };
-		}
-	}
+	// ngAfterViewInit() {
+		// if (this.sliderBubble) {
+		// 	this.setBubbleValue(this.rangeSlider.nativeElement, this.sliderBubble.nativeElement);
+		// }
+	// }
+
+	// private calculateTicks() {
+	// 	const noOfTicks = (this.max - this.min) / this.step;
+	// 	let tickValue = this.min;
+	// 	for (let index = 0; index <= noOfTicks; index++) {
+	// 		if (index > 0) {
+	// 			tickValue += this.step;
+	// 		}
+	// 		const isVisible = this.ticks.indexOf(tickValue) >= 0;
+	// 		this.ticksArray[index] = { value: tickValue, isVisible };
+	// 	}
+	// }
 
 	/**
 	 *  This event is fired when user changes slider value by dragging or by keyboard
@@ -69,17 +80,50 @@ export class UiCustomSliderComponent implements OnInit {
 		const value = $event.target.valueAsNumber;
 		this.value = value;
 		this.valueChange.emit(value);
+
+		if (this.sliderBubble && this.showTip) {
+			this.setBubbleValue($event.target, this.sliderBubble.nativeElement);
+		}
 	}
 
 	public onDragStart($event) {
 		const value = $event.target.valueAsNumber;
 		this.value = value;
 		this.dragStart.emit(value);
+
+		if (this.sliderBubble && this.showTip) {
+			this.isTooltipHidden = false;
+			this.setBubbleValue($event.target, this.sliderBubble.nativeElement);
+		}
 	}
 
 	public onDragEnd($event) {
+		this.isTooltipHidden = true;
 		const value = $event.target.valueAsNumber;
 		this.value = value;
 		this.dragEnd.emit(value);
+	}
+
+	private setBubbleValue(rangeSlider, sliderBubble) {
+		// return;
+		let newPlace = 0;
+		const value = this.value;
+		const noOfChar = value.toString(10).length;
+		const suffixLength = this.tipSuffix.length;
+		const bubbleOffset = (5 /* each digit width */ * (noOfChar + suffixLength)) + 18; // 3px both side margin
+		const width = (rangeSlider.offsetWidth - bubbleOffset);
+		const min = rangeSlider.min ? rangeSlider.min : 0;
+		const max = rangeSlider.max ? rangeSlider.max : 100;
+		const newPoint = Number(((value - min)) / (max - min));
+		if (newPoint <= 0) {
+			newPlace = 1;
+		}
+		else {
+			newPlace = Math.floor(width * newPoint);
+		}
+		sliderBubble.style.left = newPlace + 'px';
+		this.tipValue = `${this.value}${this.tipSuffix}`;
+		// sliderBubble.innerHTML = `${this.value}${this.tipSuffix}`;
+		// console.log({ newPlace, value, newPoint, bubbleOffset, width });
 	}
 }

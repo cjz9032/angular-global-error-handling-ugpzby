@@ -13,6 +13,8 @@
 				(dragEnd)="onEyeCareTemperatureChanged($event)"
 				(valueChange)="onEyeCareTemperaturePreview($event)"
 				[ariaLabel]="'eye care mode color temperature'"
+				[tipSuffix]="'K'"
+				[showTip]=true
 				[sliderId]="'color-temp-eyeCareMode'">
 			</vtr-ui-custom-slider>
 		</div>

@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.30](https://bitbucket.tc.lenovo.com///compare/v1.5.28...v1.5.30) (2020-04-29)
+
+### [1.5.28](https://bitbucket.tc.lenovo.com///compare/v1.5.27...v1.5.28) (2020-04-29)
+
+
+### Bug Fixes
+
+* **CHS-Accessibility:** change role of <a> ([ba88f1b](https://bitbucket.tc.lenovo.com///commit/ba88f1bc801120ae5f0218d7d193c309d191b9c7))
+* **CHS-Accessibility:** SH widget items read as link ([cc03b08](https://bitbucket.tc.lenovo.com///commit/cc03b087eabca93afba5ef2738bb3fb183ece981))
+* **LWS:** click 'show more' to show extra 4 wifi histories ([83d7b79](https://bitbucket.tc.lenovo.com///commit/83d7b79b1e2e36e9ff5c4097b9c9914f95078571))
+* remove tooltips and reset cursor style ([2590654](https://bitbucket.tc.lenovo.com///commit/2590654be1b907b6867e4e4ca09e444698ad5a0c))
+
 ### [1.5.27](https://bitbucket.tc.lenovo.com///compare/v1.5.26...v1.5.27) (2020-04-28)
 
 ### [1.5.26](https://bitbucket.tc.lenovo.com///compare/v1.5.25...v1.5.26) (2020-04-28)
