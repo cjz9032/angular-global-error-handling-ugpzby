@@ -45,7 +45,7 @@
 						(valueChange)="onBrightnessSliderChange($event)"
 						[metricsItem]="'cameraSettings-brightness'"
 						[metricsValue]="cameraSettings.brightness.value"
-						[ariaLabel]="'camera brightness slider'"
+						[ariaLabel]="'camera brightness'"
 						[sliderId]="'cameraSettings-brightness'">
 					</vtr-ui-custom-slider>
 				</li>
@@ -65,7 +65,7 @@
 						[metricsItem]="'cameraSettings-contrast'"
 						[metricsValue]="cameraSettings.contrast.value"
 						(valueChange)="onContrastSliderChange($event)"
-						[ariaLabel]="'camera contrast slider'"
+						[ariaLabel]="'camera contrast'"
 						[sliderId]="'cameraSettings-contrast'">
 					</vtr-ui-custom-slider>
 				</li>
@@ -79,11 +79,11 @@
 							{{'device.deviceSettings.displayCamera.camera.autoExposure' | translate}}
 						</div>
 						<div class="float-right">
-							<vtr-ui-switch-onoff [value]="cameraFeatureAccess.exposureAutoValue"
-								[disabled]="disabledAll"
+							<vtr-ui-custom-switch [value]="cameraFeatureAccess.exposureAutoValue"
+								[isDisabled]="disabledAll"
 								(toggle)="onAutoExposureChange($event)"
 								[ariaLabel]="'device.deviceSettings.displayCamera.camera.autoExposure' | translate"
-								[onOffSwitchId]="'cameraSettings-autoExposure'"></vtr-ui-switch-onoff>
+								[componentId]="'cameraSettings-autoExposure'"></vtr-ui-custom-switch>
 						</div>
 					</div>
 					<div *ngIf="!cameraFeatureAccess.exposureAutoValue">
@@ -96,7 +96,7 @@
 							[metricsItem]="'cameraSettings-exposure'"
 							[metricsValue]="cameraSettings.exposure.value"
 							(valueChange)="onExposureSliderChange($event)"
-							[ariaLabel]="'camera exposure slider'"
+							[ariaLabel]="'camera exposure'"
 							[sliderId]="'cameraSettings-autoExposure'">
 						</vtr-ui-custom-slider>
 					</div>
@@ -110,8 +110,10 @@
 						</div>
 
 						<div class="float-right">
-							<vtr-ui-switch-onoff [value]="cameraSettings.focus.autoModeSupported"
-								[onOffSwitchId]="'cameraSettings-auto-focus'"></vtr-ui-switch-onoff>
+							<!-- <vtr-ui-switch-onoff [value]="cameraSettings.focus.autoModeSupported"
+								[onOffSwitchId]="'cameraSettings-auto-focus'"></vtr-ui-switch-onoff> -->
+							<vtr-ui-custom-switch [value]="cameraSettings.focus.autoModeSupported"
+								[componentId]="'cameraSettings-auto-focus'"></vtr-ui-custom-switch>
 						</div>
 					</div>
 				</li>
