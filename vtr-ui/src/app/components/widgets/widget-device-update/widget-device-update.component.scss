@@ -151,6 +151,10 @@
 							background: $high-contrast-blue !important;
 						}
 
+						@media #{$high-contrast} {
+							background: $high-contrast-blue !important;
+						}
+
 						&.bg-info {
 							background: linear-gradient(90deg, $go_light 0%, $go_dark 100%) !important;
 						}
