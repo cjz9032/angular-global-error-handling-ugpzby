@@ -242,6 +242,7 @@ div {
 		color: $menu_hover;
 		text-align: right;
 		text-decoration: underline;
+		cursor: pointer;
 		&:hover {
 			text-decoration: underline;
 			color: $menu_hover;
@@ -251,6 +252,9 @@ div {
 			.disabled-tooltip {
 				display: block;
 			}
+		}
+		&:focus {
+			@include outline-blue;
 		}
 	}
 	&:hover,
@@ -267,6 +271,7 @@ div {
 	fa-icon {
 		color: $menu_hover;
 		font-size: $fontsize_xl2;
+		cursor: pointer;
 		&:focus {
 			@include outline-blue;
 		}
@@ -283,9 +288,13 @@ div {
 			font-weight: $weight_light;
 			color: $shade_blue;
 			letter-spacing: 0;
+			cursor: pointer;
 			&.delete-app {
 				text-decoration: underline;
 				color: $menu_hover;
+				&:focus {
+					@include outline-blue;
+				}
 			}
 		}
 	}

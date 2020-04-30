@@ -35,6 +35,14 @@
 		font-weight: 500;
 		margin-top: 1rem;
 		font-weight: $weight_bold;
+		position: relative;
+		&:focus {
+			outline: 0;
+			box-shadow: none;
+			&::after {
+				@include button-outline-blue;
+			}
+		}
 	}
 	.legends-row {
 		// max-width: 93.5%;
@@ -55,5 +63,10 @@
 		font-family: "Segoe UI", sans-serif;
 		font-size: 10px;
 		letter-spacing: 0.35px;
+	}
+	.close {
+		&:focus {
+			@include outline-blue;
+		}
 	}
 }
