@@ -254,23 +254,48 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			const sourceElement = $event.srcElement as HTMLAnchorElement;
 			const menuElement = sourceElement.parentElement.parentElement;
 			const anchors = Array.from(menuElement.querySelectorAll('[class*=dropdown-item]'));
+			// const anchors = Array.from(menuElement.querySelectorAll('.dropdown-item.link'));
 			const currentIndex = anchors.indexOf(sourceElement);
-			let nextIndex
+			const tabElements = Array.from(document.querySelectorAll('[tabindex]:not([tabindex=\'-1\']'));
+			/// const tabElements = Array.from(document.querySelectorAll('[tabIndex = \'1\']'));
+			const curElementTabIndex = tabElements.indexOf(sourceElement);
+			let nextIndex;
 
 			if ($event.shiftKey && $event.keyCode === 9) {
-				nextIndex = currentIndex - 1;
-				if (nextIndex < 0) {
+				// if previous tabbable element not in the current active dropdown menu then close menu
+				if (anchors.indexOf(tabElements[curElementTabIndex - 1]) === -1) {
+					const element = tabElements[curElementTabIndex - 1] as HTMLElement;
+					$event.stopPropagation();
+					$event.preventDefault();
+
+					element.focus();
+					// console.log('ShIFT tab curElementTabIndex closing current element curElementTabIndex')
 					activeDropdown.close();
-					// this.closeAllDD();
 				}
+				/* 	nextIndex = currentIndex - 1;
+					if (nextIndex < 0) {
+						activeDropdown.close();
+						// this.closeAllDD();
+					} */
 			}
 
 			if ($event.keyCode === 9) {
-				nextIndex = currentIndex + 1;
-				if (nextIndex >= anchors.length) {
+				// if next tabbable element not in the current active dropdown menu then close menu
+				if (anchors.indexOf(tabElements[curElementTabIndex + 1]) === -1) {
+					const element = tabElements[curElementTabIndex + 1] as HTMLElement;
+					$event.stopPropagation();
+					$event.preventDefault();
+
+					element.focus();
+					console.log('tab curElementTabIndex closing current element curElementTabIndex');
+					activeDropdown.close();
+
+				}
+				/* nextIndex = currentIndex + 1;
+				if (nextIndex > anchors.length) {
 					activeDropdown.close();
 					// this.closeAllDD();
-				}
+				} */
 			}
 		}
 

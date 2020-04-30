@@ -106,6 +106,7 @@
 							href="javascript:void(0)"
 							(click)="onMenuItemClick(item)"
 							(keydown.enter)="onMenuItemClick(item); menuItemKeyDown(item.path)"
+							(focus)="closeAllDD()"
 							*ngIf="item.label | translate">
 							<div class="icon">
 								<fa-icon *ngIf="item.icon[0]!=='icomoon'"
