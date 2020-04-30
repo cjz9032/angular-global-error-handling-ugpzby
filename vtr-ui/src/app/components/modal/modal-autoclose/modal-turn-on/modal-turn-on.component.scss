@@ -167,7 +167,10 @@ ui-popover-turn-on {
 		}
 	}
 	.action-container{
-		width: 100%;
+		div {
+			display: inline-block;
+			position: relative;
+		}
 		.enable-button {
 			background: $blueFill;
 			border-radius: 3rem;
@@ -175,7 +178,6 @@ ui-popover-turn-on {
 			font-size: $fontsize_sm;
 			padding: 1rem 3rem;
 			margin-top: 1rem;
-			margin-right: 3rem;
 			font-weight: $weight_bold;
 		&:active {
 			transform: scale(0.95);
@@ -189,13 +191,15 @@ ui-popover-turn-on {
 		padding: 0 0.5rem;
 		font-weight: $weight_600;
 		margin-top: 1rem;
+		margin-left: 3rem;
 		border-bottom: 2px solid $blueFill;
+		margin-right: 0.3rem;
 		cursor: pointer;
 		&:hover {
 			color: $blueHover;
 			border-bottom: 2px solid $blueHover;			
 			cursor: pointer;
-		  }		
+		  }	
 	}
 	}
 	

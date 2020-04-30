@@ -1953,34 +1953,72 @@
 
 body.focus-enable{
 	.is-gaming {
-		.btn,.enable-button,button{
+		.navbar-brand.logo-y a{
 			&:focus{
-				outline: 1px dotted !important;
+			border: 0.1rem solid $light !important;	
+			}
+		}
+		vtr-page-lightingcustomize,vtr-page-macrokey,
+		vtr-page-networkboost,vtr-page-autoclose,vtr-page-device-gaming{
+		.remove-app,li.add-icon div,.delete-btn,
+		.help-box button,vtr-ui-toggle button{
+			&:focus{
+			@include outline-blue-gaming;
+			}
+	  }
+		.btn,.enable-button{
+			&:focus{
+			outline: none;
+				&::before{
+					position: absolute;
+					display: block;
+					content: "";
+					top: 0.8rem;
+					left: -0.2rem;
+					right: -0.2rem;
+					bottom: -0.2rem;
+					border-radius: 3rem;
+					border: 1px solid $blueFill;
 				}
 		}
-		*:focus{
-		outline: 1px dotted !important;
-		box-shadow: none !important;
+		}
+	a:not(.btn), input, label,.btn-add-app button,
+	button.close,button.ask-again,.btn-close button{
+		&:focus{
+		@include outline-blue-gaming;
+		}
 	}
+	.gaming-dropdown-menu li{
+			&:focus{
+				outline: 0!important;
+				outline-offset: 0.2rem;
+				a{
+					border: 0.1rem solid $blueFill !important;
+				}
+			}
+		}
 		button.close,a.close{
+		&:focus{	
 		opacity:1 !important
+		}
 		}	
 		vtr-ui-header-warranty{
 			.dropdown-content{
 				.dropdown-btn {
 					&:focus{
-						outline: 1px dotted !important;
+						@include outline-white;
 					}
 				}
 			}
 		}
 		.Article-Detail-Modal{
 		&.content-gaming{
-			*:focus{
-			outline: 1px dotted !important;
-			outline-color:$gaming_darkest !important;
+			.article-content:focus{
+			@include outline-white;
+			outline-color:$menu_hover !important;
 		}
 		}
+	}
 	}
 	}
 }
@@ -2218,7 +2256,7 @@ button {
 	button:focus,
 	span:focus,
 	*:focus {
-		outline: 0 !important;
+		outline: 0;
 		box-shadow: none !important;
 	}
 }

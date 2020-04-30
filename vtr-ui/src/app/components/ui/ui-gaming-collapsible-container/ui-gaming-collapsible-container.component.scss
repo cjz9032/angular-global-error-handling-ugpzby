@@ -90,6 +90,18 @@
 
       }
     }
-
   }
+}
+::ng-deep {
+  body.focus-enable{
+	.is-gaming {
+      .vtr-page-device-gaming {
+      .dropdown-toggle{
+        &:focus{
+          @include outline-blue-gaming;
+        }
+      }
+    }
+  }
+}
 }

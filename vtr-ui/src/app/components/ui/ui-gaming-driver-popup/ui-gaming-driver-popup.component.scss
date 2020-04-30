@@ -89,6 +89,7 @@ ui-gaming-driver-popup {
 		.btn-container{
 			div {
 				display: inline-block;
+				position: relative;
 			}
 		}
 
@@ -98,7 +99,6 @@ ui-gaming-driver-popup {
 			color: $light;
 			font-size: $fontsize_sm;
 			padding: 1rem 3rem;
-			margin-right: 3rem;
 			margin-top:1rem;
 			font-weight: $weight_bold;
 			text-transform: uppercase;
@@ -112,9 +112,10 @@ ui-gaming-driver-popup {
 			padding: 0 0.5rem;
 			font-weight: $weight_600;
 			margin-top: 1.8rem;
-			margin-left: 3rem;
+			margin-left: 6rem;
 			border-bottom: 2px solid $blueFill;
 			cursor: pointer;
+			display: block;
 			&:hover{
 				color: $blueHover;
 				border-bottom: 2px solid $blueHover;
