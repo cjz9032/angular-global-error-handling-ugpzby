@@ -40,7 +40,7 @@
 										<div class="col px-5">
 											<div class="row mb-4 mt-4 ml-4">
 												<div>
-													<img role="img"
+													<img alt=""
 														class="img-fluid mx-auto d-block"
 														src="assets/images/pin_toolbar_non_dt.png"
 													>
@@ -48,7 +48,7 @@
 											</div>
 											<label *ngIf="airplaneAutoDetection"
 												id="device.deviceSettings.power.otherSettings.vantageToolbar.hint"
-												attr.aria-label="device.deviceSettings.power.otherSettings.vantageToolbar.hint"
+												attr.aria-label="{{'device.deviceSettings.power.otherSettings.vantageToolbar.hint' | translate}}"
 												class="auto-detection-note">
 												{{  'device.deviceSettings.power.otherSettings.vantageToolbar.hint' | translate }}
 											</label>
@@ -209,7 +209,7 @@
 											</vtr-ui-checkbox>
 											<label *ngIf="airplaneAutoDetection"
 												id="power.batterySettings.airPlanePower.note"
-												attr.aria-label="power.batterySettings.airPlanePower.note"
+												attr.aria-label="{{'device.deviceSettings.power.batterySettings.airPlanePower.note' | translate}}"
 												class="auto-detection-note">
 												{{  'device.deviceSettings.power.batterySettings.airPlanePower.note' | translate }}
 											</label>
