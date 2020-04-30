@@ -1,40 +1,53 @@
 <div class="modal-body vtr-modal-eticket">
-  <div class="row justify-content-end">
+   <div class="row justify-content-end">
       <button type="button" class="close" (click)="closeModal()">
-        <fa-icon [icon]="['fas', 'times']"></fa-icon>
+         <fa-icon [icon]="['fas', 'times']"></fa-icon>
       </button>
-  </div>
+   </div>
 
-  <div class="row modal-information">
-		<div class="title">{{ title }}</div>
-  </div>
+   <div class="row modal-information">
+      <div class="title">{{ title }}</div>
+   </div>
 
-  <br />
+   <br />
 
-  <div class="row modal-information">
-		<div class="description">{{ ticketDescription1 }}</div>
-  </div>
+   <div class="row modal-information">
+      <div class="description">{{ problemDetectedMessage }}</div>
+   </div>
 
-  <br />
+   <br />
 
-  <div class="row modal-information">
-		<div class="broken">{{ moduleNames }}</div>
-  </div>
+   <div class="row modal-information">
+      <!-- display modules/devices with failure -->
+   </div>
 
+   <br />
 
-  <br />
+   <div class="row modal-information">
+      <div class="description">{{ supportRequestQuestionMessage }}</div>
+   </div>
 
-  <div class="row modal-information">
-		<div class="description">{{ ticketDescription2 }}</div>
-  </div>
+   <div *ngIf="hasFailureOnStorageWithRBS(); else withoutRBS">
+      <div class="row">
+         <div class="col button-row">
+         <a class="action-button" id="rbsButton" (click)="goToRBSPage()">{{ recoverBadSectorsButtonText }}</a>
+         </div>
+      </div>
 
-  <div class="row">
-		<div class="col button-row">
-      <a class="action-button" id="lenovoSupportTicket" (click)="closeModal()" target="_blank">{{ buttonText }}</a>
-		</div>
-  </div>
-
-
+      <div class="row">
+         <div class="col button-row">
+         <a class="action-button" href="{{supportUrl}}" id="supportButtonWithRBS" (click)="closeModal()" target="_blank">{{ supportButtonText }}</a>
+         </div>
+      </div>
+   </div>
+ 
+   <ng-template #withoutRBS>
+      <div class="row">
+         <div class="col button-row">
+         <a class="action-button" href="{{supportUrl}}" id="supportButtonWithoutRBS" (click)="closeModal()" target="_blank">{{ supportButtonText }}</a>
+         </div>
+      </div>
+   </ng-template>
 
 </div>
 

@@ -2,7 +2,6 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
 
-
 @Component({
   selector: 'vtr-modal-eticket',
   templateUrl: './modal-eticket.component.html',
@@ -10,25 +9,33 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class ModalEticketComponent implements OnInit {
   @Input() title = this.translate.instant('hardwareScan.eTicket.header');
-  @Input() ticketDescription1 = this.translate.instant('hardwareScan.eTicket.problemDetected');
-  @Input() ticketDescription2 = this.translate.instant('hardwareScan.eTicket.ticketRequestQuestion');
-  @Input() buttonText = this.translate.instant('hardwareScan.eTicket.openTicket');
+  @Input() problemDetectedMessage = this.translate.instant('hardwareScan.eTicket.problemDetected');
+  @Input() supportRequestQuestionMessage = this.translate.instant('hardwareScan.eTicket.ticketRequestQuestion');
+  @Input() recoverBadSectorsButtonText = "Recover Bad Sectors"; //this.translate.instant('hardwareScan.eTicket.RecoverBadSectorsButton')
+  @Input() failedModules;
+  @Input() rbsDevices;
+  @Input() supportUrl;
+  supportButtonText = "Open Ticket"; //this.translate.instant('hardwareScan.eTicket.supportButtonText')
 
-  @Input() moduleNames;
-  @Input() eTicketUrl;
-
-  constructor(public activeModal: NgbActiveModal, private translate: TranslateService) {  }
+  constructor(public activeModal: NgbActiveModal, private translate: TranslateService) { 
+  }
 
   ngOnInit() {
+ 
   }
 
   closeModal() {
 		this.activeModal.close('close');
-	}
-
-  setUrl(url: string){
-    this.eTicketUrl = url;
-    document.getElementById("lenovoSupportTicket").setAttribute("href",this.eTicketUrl);
+  }
+  
+  // Checks the any storage device from failedModules has support for RBS (according to rbsDevices list)
+  hasFailureOnStorageWithRBS() {
+    //failedModules.module.filter(module => module.moduleId === "storage")
+    return true;
   }
 
+  // Goes to RBS page, passing defective device list to be selected when RBS page loads
+  goToRBSPage() {
+    
+  }
 }

@@ -488,14 +488,16 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			// If there's failure, shows the support pop-up
 			if (failedModules.length > 0) {
 				const supportUrl = await this.lenovoSupportService.getSupportUrl(this.startDate);
+				const rbsDevices = await this.hardwareScanService.getDevicesToRecoverBadSectors();
 				const modalRef = this.modalService.open(ModalEticketComponent, {
 					backdrop: 'static',
 					size: 'lg',
 					centered: true,
 					windowClass: 'hardware-scan-modal-size'
 				});
-				modalRef.componentInstance.moduleNames = JSON.stringify(failedModules);
-				modalRef.componentInstance.setUrl(supportUrl);
+				modalRef.componentInstance.failedModules = failedModules;
+				modalRef.componentInstance.rbsDevices = rbsDevices;
+				modalRef.componentInstance.supportUrl = supportUrl;
 			}
 		}
 	}
