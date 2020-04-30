@@ -3,16 +3,19 @@ import { CanActivate } from '@angular/router';
 import { LocalInfoService } from '../local-info/local-info.service';
 import { GuardConstants } from './guard-constants';
 import { CommonService } from '../common/common.service';
+import { BasicGuard } from './basic-guard';
 
 @Injectable({
 	providedIn: 'root',
 })
-export class VpnGuardService implements CanActivate {
+export class VpnGuardService extends BasicGuard implements CanActivate {
 	constructor(
 		private localInfoService: LocalInfoService,
 		private guardConstants: GuardConstants,
 		private commonService: CommonService
-	) { }
+	) { 
+		super(commonService, guardConstants);
+	}
 
 	canActivate() {
 		let region;
@@ -30,7 +33,7 @@ export class VpnGuardService implements CanActivate {
 
 	getCanActivate(region) {
 		if (region === 'cn') {
-			return this.commonService.isFirstPageLoaded() ? false : this.guardConstants.defaultRoute;
+			return this.guardFallbackRoute;
 		}
 		return true;
 	}

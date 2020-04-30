@@ -7,11 +7,12 @@ import { AdPolicyService } from '../ad-policy/ad-policy.service';
 import { DeviceService } from '../device/device.service';
 import { DurationCounterService } from 'src/app/services/timer/timer-service-ex.service';
 import { GuardConstants } from './guard-constants';
+import { BasicGuard } from './basic-guard';
 
 @Injectable({
 	providedIn: 'root',
 })
-export class GuardService {
+export class GuardService extends BasicGuard {
 	interTime = 0;
 	metrics: any;
 	pageContext: any;
@@ -30,7 +31,7 @@ export class GuardService {
 		private deviceService: DeviceService,
 		private guardConstants: GuardConstants,
 		private timerService: DurationCounterService) {
-
+		super(commonService, guardConstants);
 		this.metrics = shellService.getMetrics();
 	}
 
@@ -42,7 +43,7 @@ export class GuardService {
 		if (routerStateSnapshot.url.includes('system-updates') &&
 			(!this.adPolicy.IsSystemUpdateEnabled ||
 				this.deviceService.isSMode)) {
-			return this.commonService.isFirstPageLoaded() ? false : this.guardConstants.defaultRoute;
+			return this.guardFallbackRoute;
 		}
 		if (routerStateSnapshot.url.includes('dashboard')) { }
 

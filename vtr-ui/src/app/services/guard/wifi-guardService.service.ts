@@ -6,11 +6,12 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { SecurityAdvisor, WifiSecurity } from '@lenovo/tan-client-bridge';
 import { GuardConstants } from './guard-constants';
 import { LoggerService } from '../logger/logger.service';
+import { BasicGuard } from './basic-guard';
 
 @Injectable({
 	providedIn: 'root',
 })
-export class WifiGuardService implements CanActivate {
+export class WifiGuardService extends BasicGuard implements CanActivate {
 	securityAdvisor: SecurityAdvisor;
 	wifiSecurity: WifiSecurity;
 
@@ -19,7 +20,9 @@ export class WifiGuardService implements CanActivate {
 		private vantageShellService: VantageShellService,
 		private guardConstants: GuardConstants,
 		private logger: LoggerService
-	) { }
+	) { 
+		super(commonService, guardConstants);
+	}
 
 	private waitAsyncCallTimeout(func: Function, millisecond: number) : Promise<any> {
 		const timeout = new Promise((resolve, reject) => {
@@ -48,7 +51,7 @@ export class WifiGuardService implements CanActivate {
 				if (this.wifiSecurity.isSupported) return true;
 			}
 
-			return this.commonService.isFirstPageLoaded() ? false : this.guardConstants.defaultRoute;;
+			return this.guardFallbackRoute;
 		}
 
 		return cacheState;

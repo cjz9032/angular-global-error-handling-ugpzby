@@ -4,22 +4,25 @@ import { SegmentConst } from '../self-select/self-select.service';
 import { GuardConstants } from './guard-constants';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { CommonService } from '../common/common.service';
+import { BasicGuard } from './basic-guard';
 
 @Injectable({
 	providedIn: 'root',
 })
-export class NonConsumerGuard implements CanActivate {
+export class NonConsumerGuard extends BasicGuard implements CanActivate {
 
 	constructor(
 		private guardConstants: GuardConstants,
 		private commonService: CommonService
-		) { }
+	) { 
+		super(commonService, guardConstants);
+	}
 
 	getCanActivate(segmentTag) {
 		if (segmentTag !== SegmentConst.Consumer) {
 			return true;
 		}
-		return this.commonService.isFirstPageLoaded() ? false : this.guardConstants.defaultRoute;
+		return this.guardFallbackRoute;
 	}
 
 	canActivate(

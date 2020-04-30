@@ -3,17 +3,20 @@ import { CanActivate, UrlTree } from '@angular/router';
 import { ConfigService } from '../config/config.service';
 import { GuardConstants } from './guard-constants';
 import { CommonService } from '../common/common.service';
+import { BasicGuard } from './basic-guard';
 
 @Injectable({
 	providedIn: 'root',
 })
-export class HomeSecurityGuard implements CanActivate {
+export class HomeSecurityGuard extends BasicGuard implements CanActivate {
 
 	constructor(
 		private configService: ConfigService,
 		private guardConstants: GuardConstants,
 		private commonService: CommonService
-		) { }
+	) { 
+		super(commonService, guardConstants);
+	}
 
 	getShowCHS(): boolean {
 		return this.configService && this.configService.showCHS;
@@ -23,6 +26,6 @@ export class HomeSecurityGuard implements CanActivate {
 		if (this.getShowCHS()) {
 			return true;
 		}
-		return this.commonService.isFirstPageLoaded() ? false : this.guardConstants.defaultRoute;
+		return this.guardFallbackRoute;
 	}
 }

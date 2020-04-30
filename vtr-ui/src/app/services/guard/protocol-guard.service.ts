@@ -173,8 +173,6 @@ export class ProtocolGuardService implements CanActivate {
 	return '';
   }
 
-
-
   public canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) : boolean | UrlTree {
 	const path = state.url.slice(state.url.indexOf('#') + 1);
 	if (path.startsWith(this.characteristicCode)) {

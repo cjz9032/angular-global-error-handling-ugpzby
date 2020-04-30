@@ -3,17 +3,20 @@ import { CanActivate, UrlTree, ActivatedRouteSnapshot, RouterStateSnapshot } fro
 import { DeviceService } from '../device/device.service';
 import { GuardConstants } from './guard-constants';
 import { CommonService } from '../common/common.service';
+import { BasicGuard } from './basic-guard';
 
 @Injectable({
 	providedIn: 'root',
 })
-export class NonArmGuard implements CanActivate {
+export class NonArmGuard extends BasicGuard implements CanActivate {
 
 	constructor(
 		private deviceService: DeviceService,
 		private guardConstants: GuardConstants,
 		private commonService: CommonService
-		) { }
+	) {
+		super(commonService, guardConstants);
+	}
 
 	canActivate(
 		route: ActivatedRouteSnapshot,
@@ -22,6 +25,6 @@ export class NonArmGuard implements CanActivate {
 		if (!this.deviceService.isArm) {
 			return true;
 		}
-		return this.commonService.isFirstPageLoaded() ? false : this.guardConstants.defaultRoute;
+		return this.guardFallbackRoute;
 	}
 }
