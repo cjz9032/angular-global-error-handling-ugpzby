@@ -235,7 +235,6 @@ export class UiScanScheduleComponent implements OnInit {
 		}
 	}
 	openScanScheduleDropDown(value) {
-	//	console.log("value from openScanScheduleDropDown --------------------------- ",value);
 		if (value === this.scheduleTab) {
 			this.scheduleTab = '';
 		} else {
@@ -265,40 +264,29 @@ export class UiScanScheduleComponent implements OnInit {
 	}
 
 	changeScanFrequency(value) {
-	//	console.log("selected for frequencyValue ''''''''''''''''''''''", this.frequencyValue);
 		this.frequencyValue = value;
 		this.scheduleTab = '';
 		this.isDaySelectionEnable = true;
 		this.selectedDay = this.days[value];
 		this.selectedFrequency = this.scanFrequency[value];
-		//console.log("selected for changeScanFrequency ''''''''''''''''''''''", this.selectedFrequency);
 	}
 	changeScanDay(value) {
 		this.dayValue = value;
 		this.scheduleTab = '';
 		this.selectedDay = this.days[value];
 		this.selectedNumber = this.dates[value];
-		//console.log("selected date for changeScanDay ''''''''''''''''''''''", this.selectedDay);
 	}
 	changeScanDate(value) {
 		this.dateValue = value;
 		this.scheduleTab = '';
 		this.selectedDay = this.days[value];
 		this.selectedNumber = this.dates[value];
-		//console.log("selected date for once a month is  changeScanDate''''''''''''''''''''''", this.selectedNumber);
 	}
 
 	cancelChangedScanSchedule() {
 		this.scheduleTab = '';
 		this.isChangeSchedule = false;
-		//console.log("cancelChangedScanSchedule-----------------------------------fired");
 		this.getNextScanScheduleTime(this.nextScheduleScanDate);
-		// if (this.isSubscribed) {
-		// 	this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix');
-		// }
-		// else {
-		// 	this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScan');
-		// }
 	}
 
 	saveChangeScanTime() {
@@ -356,7 +344,6 @@ export class UiScanScheduleComponent implements OnInit {
 		};
 	}
 	async getHistory(startDate, endDate) {
-		// console.log(startDate, endDate);
 		const payload = {
 			filterType: 'C',
 			startDate,
@@ -376,12 +363,10 @@ export class UiScanScheduleComponent implements OnInit {
 		if (this.scanTime.amPm === 'PM') {
 			this.scanTime.hour = this.scanTime.hour + 12;
 		}
-	//	console.log("hour is before adding 0 as prefix",this.scanTime.hour);
 		if(parseInt(this.scanTime.hour)<10)
 		{
 			if(this.scanTime.hour.toString().charAt(0)!=="0")
 			{
-			//	console.log("hour value when it is less than 10",this.scanTime.hour);
 				this.scanTime.hour= "0"+this.scanTime.hour;
 			}
 		}
@@ -390,7 +375,6 @@ export class UiScanScheduleComponent implements OnInit {
 		if (this.selectedFrequencyCopy === 'onceamonth') {
 			var d = new Date();
 			d.setDate(this.selectedNumber);
-			//console.log("d------------------------------------------------",d);
 			scanScheduleTime = ""+d.getFullYear() + "-" + (d.getMonth()+1) + "-" + d.getDate() +""+ "T" + this.scanTime.hour + ":" + this.scanTime.min + ":00";
 		}
 		else {
@@ -407,7 +391,6 @@ export class UiScanScheduleComponent implements OnInit {
 		}
 		else {
 			if (this.selectedFrequencyCopy === 'onceamonth') {
-				//console.log('Lenovo.Vantage.SmartPerformance.ScheduleScan', '' + this.selectedFrequencyCopy + '', '', '' + scanScheduleTime + '', [Number(this.selectedNumber)]);
 				this.scheduleScan('Lenovo.Vantage.SmartPerformance.ScheduleScan', '' + this.selectedFrequencyCopy + '', '', '' + scanScheduleTime + '', [Number(this.selectedNumber)]);
 			}
 			else {
@@ -416,7 +399,6 @@ export class UiScanScheduleComponent implements OnInit {
 		}
 		this.scanTime.hour = this.copyScanTime.hour;
 		this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, this.selectedFrequency);
-		//console.log("this.selectedFrequency------------------------------------------",this.selectedFrequency);
 	}
 	nextDate(day) {
 		var days = {
@@ -487,7 +469,6 @@ export class UiScanScheduleComponent implements OnInit {
 			time,
 			date
 		};
-		//console.log('scheduleScan function call',JSON.stringify(payload));
 		try {
 			const res: any = await this.smartPerformanceService.setScanSchedule(
 				payload
@@ -534,7 +515,6 @@ export class UiScanScheduleComponent implements OnInit {
 						this.selectedDay = moment(momentObj).format('D');
 						this.dateValue= parseInt(moment(momentObj).format('D'))-1;
 						this.selectedNumber=parseInt(moment(momentObj).format('D'));
-						//console.log('scheduleScan Once a month ',JSON.stringify(moment(momentObj).format('D')));
 					}
 					else
 					{
@@ -551,11 +531,8 @@ export class UiScanScheduleComponent implements OnInit {
 					const amPmIndex = this.amPm.indexOf(moment(momentObj).format('A').toString());
 					this.copyScanTime.amPm = this.amPm[amPmIndex];
 					this.copyScanTime.amPmId =  parseInt(amPmIndex);
-					//console.log(console.log('scheduleScan tthis.copyScanTime.min ',amPmIndex);
-			//this.nextScheduleScan = (new Date(momentString).getMonth() + 1) + "/" + new Date(momentString).getDate() + " at " + now;
 
 		} catch (err) {
-			//console.log("error in getNextScanScheduleTime _____________________________________", err);
 			this.logger.error('ui-smart-performance-scan-summary.getNextScanScheduleTime.then', err);
 		}
 	}

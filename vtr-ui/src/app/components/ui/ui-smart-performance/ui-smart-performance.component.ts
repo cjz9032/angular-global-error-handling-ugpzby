@@ -100,7 +100,6 @@ export class UiSmartPerformanceComponent implements OnInit {
 			time,
 			date
 		};
-	//	console.log('payload--------------------------------------------------->', payload);
 		try {
 			const res: any = await this.smartPerformanceService.setScanSchedule(
 				payload
