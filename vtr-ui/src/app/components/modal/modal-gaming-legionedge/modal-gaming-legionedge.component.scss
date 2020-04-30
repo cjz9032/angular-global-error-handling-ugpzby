@@ -54,3 +54,17 @@
 		}
 	}
 }
+
+::ng-deep{
+	body.focus-enable{
+		.is-gaming{
+			.gaming-help-popup{
+				button.close,.innerContent{
+					&:focus{
+					@include outline-blue-gaming;
+					}
+				}
+			}
+		}
+	}
+}
