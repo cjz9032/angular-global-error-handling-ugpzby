@@ -3,10 +3,15 @@
 @mixin theme($name, $background, $foreground, $label-color) {
 	.vtr-ui-circle-radio-with-checkbox.#{$name} {
 		margin-right: 1.5rem;
+		margin-top: 1.5rem;
 		.checkbox {
 			position: relative;
-			height: 12rem;
+			// height: 12rem;
 			width: 11rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
 			@media screen and (min-width: 992px) and (max-width: 1199.9px){
 				width: 18rem;
 			}
@@ -14,16 +19,16 @@
 
 		.checkbox-custom {
 			opacity: 0;
-			position: absolute;
+			// position: absolute;
 		}
 
 		.checkbox-custom+.checkbox-custom-label>.icomoon {
-			position: absolute;
-			top: 50%;
-			left: 50%;
+			// position: absolute;
+			// top: 50%;
+			// left: 50%;
 			font-size: 3rem;
-			transform: translate(-50%, -50%);
-			margin: 0;
+			// transform: translate(-50%, -50%);
+			// margin: 0;
 		}
 
 		.checkbox-custom+.checkbox-custom-label>.icomoon::before {
@@ -43,10 +48,10 @@
 		}
 
 		.checkbox-custom+.checkbox-custom-label {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
+			// position: absolute;
+			// top: 50%;
+			// left: 50%;
+			// transform: translate(-50%, -50%);
 			background: $foreground;
 			border: 0.1rem solid $background;
 			display: inline-block;
@@ -54,6 +59,8 @@
 			width: 6rem;
 			height: 6rem;
 			border-radius: 50%;
+			text-align: center;
+			line-height: 6rem;
 		}
 
 		.checkbox-custom:disabled+.checkbox-custom-label {
@@ -71,11 +78,11 @@
 		}
 
 		.title {
-			position: absolute;
+			// position: absolute;
 			//bottom: 4px;
-			top:80%;
-			left: 0;
-			right: 0;
+			// top:80%;
+			// left: 0;
+			// right: 0;
 			font-weight: $weight_light;
 			font-size: $fontsize_xs;
 			color: $label-color;
@@ -97,7 +104,14 @@
 			}
 
 		}
-
+		.fa-layers {
+			position: absolute;
+			top: 0.35rem;
+			left: 2.6rem;
+			@media screen and (min-width: 992px) and (max-width: 1199.9px) {
+				left: 6rem;
+			}
+		}
 
 		.check-circle{
 			position: absolute;
