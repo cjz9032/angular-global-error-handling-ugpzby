@@ -14,7 +14,7 @@
 				(keyup.enter)="joinGroupBy(code.value)"
 				(focusin)="focusIn()"
 				(focusout)="focusOut()" maxlength="6"
-				aria-labelledby="errorMsg"
+				aria-labelledby="ws-invitation-modal-errorMsg"
 				#domInput>
 		</div>
 		<div class="join-info">
@@ -24,7 +24,7 @@
 				</div>
 				<div class="success pl-3" *ngIf="joinSuccess" [innerHTML]="'security.homeprotection.invitationcode.success' | translate"></div>
 			</div>
-			<div id="errorMsg" class="failed" *ngIf="joinFailed" [innerHTML]="'security.homeprotection.invitationcode.fail' | translate"></div>
+			<div id="ws-invitation-modal-errorMsg" class="failed" *ngIf="joinFailed" [innerHTML]="'security.homeprotection.invitationcode.fail' | translate"></div>
 		</div>
 		<div class="divider mt-5" *ngIf="!joinSuccess"></div>
 		<div class="d-flex flex-row">

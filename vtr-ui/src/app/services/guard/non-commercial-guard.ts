@@ -1,34 +1,31 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, UrlTree, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
-import { LocalInfoService } from '../local-info/local-info.service';
+import { UrlTree, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { SegmentConst } from '../self-select/self-select.service';
 import { GuardConstants } from './guard-constants';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { CommonService } from '../common/common.service';
+import { BasicGuard } from './basic-guard';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable({
 	providedIn: 'root',
 })
-export class NonCommercialGuard implements CanActivate {
+export class NonCommercialGuard extends BasicGuard {
 
 	constructor(
-		private localInfoService: LocalInfoService,
-		private guardConstants: GuardConstants,
-		private commonService: CommonService
-		) { }
-
-	getCanActivate(segmentTag) {
-		if (segmentTag !== SegmentConst.Commercial) {
-			return true;
-		}
-		return this.guardConstants.defaultRoute;
+		public guardConstants: GuardConstants,
+		public commonService: CommonService
+	) { 
+		super(commonService, guardConstants);
 	}
 
 	canActivate(
 		route: ActivatedRouteSnapshot,
 		state: RouterStateSnapshot
-	): Promise<boolean | UrlTree> | boolean | UrlTree {
+	): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 		const segment: SegmentConst = this.commonService.getLocalStorageValue(LocalStorageKey.LocalInfoSegment);
-		if (segment) { return this.getCanActivate(segment); }
+		if (segment !== SegmentConst.Commercial) return true;
+
+		return super.canActivate(route, state);
 	}
 }

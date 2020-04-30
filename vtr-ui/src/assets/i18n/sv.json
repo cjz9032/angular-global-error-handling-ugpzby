@@ -175,8 +175,7 @@
                     "description": "Felaktiga inställningar av överklockning kan leda till bestående skador på maskinvaran.",
                     "proceed": "FORTSÄTT",
                     "legionAccessory": "Install Legion Accessory Central?",
-                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
-                    "install": "INSTALL"
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc."
                 },
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "Inst. för temperaturläge",
@@ -1213,7 +1212,8 @@
                     "title": "Andra inställningar",
                     "vantageToolbar": {
                         "title": "Lenovo Vantage Toolbar",
-                        "description": "Fäst Vantage-verktygsfältet i aktivitetsfältet i Windows så att du lätt kan se mer batteriinformation och komma åt snabbinställningarna."
+                        "description": "Fäst Vantage-verktygsfältet i aktivitetsfältet i Windows så att du lätt kan se mer batteriinformation och komma åt snabbinställningarna.",
+                        "hint": "The options in the image depend on the capacity of the machine. For example, – some machines support backlight settings, and some may not."
                     }
                 },
                 "batterySettings": {
@@ -2734,20 +2734,20 @@
         "question1": {
             "title": "Säkerhetskopiera och återställa filer",
             "para1": "Det är alltid bra att ha en säkerhetskopia. Förvara kopior av dina filer på en annan disk om något skulle hända med originalen.",
-			"heading1": "Konfigurera säkerhetskopiering",
-			"para2": "Klicka på Start-knappen och sedan Inställningar > Uppdatering och säkerhet > Säkerhetskopiera > Lägg till en enhet och välj sedan en extern hårddisk eller nätverksplats för dina säkerhetskopior.",
-			"para3": "Så var det klart. Varje timme säkerhetskopieras nu allt i din användarmapp (C:\\Users\\ditt användarnamn). Om du vill ändra vilka filer som säkerhetskopieras eller hur ofta säkerhetskopieringen sker klickar du på Fler alternativ.",
-			"heading2": "Återställa dina filer",
-			"para4": "Om du saknar en viktig fil eller mapp kan du få tillbaka den på följande sätt:",
-			"para5": {
-				"div1": "1. Skriv Återställ filer i sökrutan i aktivitetsfältet och klicka sedan på  Återställ dina filer med Filhistorik.",
-				"div2": "2. Leta reda på den fil du behöver och använd sedan piltangenterna för att se alla versioner.",
-				"div3": "3. När du hittar den version du vill använda klickar du på Återställ för att spara den på sin ursprungliga plats. Om du vill spara den på en annan plats klickar och håller (eller högerklickar) du på Återställ och sedan Återställ till, och väljer sedan den plats du vill spara på."
-			}
+            "heading1": "Konfigurera säkerhetskopiering",
+            "para2": "Klicka på Start-knappen och sedan Inställningar > Uppdatering och säkerhet > Säkerhetskopiera > Lägg till en enhet och välj sedan en extern hårddisk eller nätverksplats för dina säkerhetskopior.",
+            "para3": "Så var det klart. Varje timme säkerhetskopieras nu allt i din användarmapp (C:\\Users\\ditt användarnamn). Om du vill ändra vilka filer som säkerhetskopieras eller hur ofta säkerhetskopieringen sker klickar du på Fler alternativ.",
+            "heading2": "Återställa dina filer",
+            "para4": "Om du saknar en viktig fil eller mapp kan du få tillbaka den på följande sätt:",
+            "para5": {
+                "div1": "1. Skriv Återställ filer i sökrutan i aktivitetsfältet och klicka sedan på  Återställ dina filer med Filhistorik.",
+                "div2": "2. Leta reda på den fil du behöver och använd sedan piltangenterna för att se alla versioner.",
+                "div3": "3. När du hittar den version du vill använda klickar du på Återställ för att spara den på sin ursprungliga plats. Om du vill spara den på en annan plats klickar och håller (eller högerklickar) du på Återställ och sedan Återställ till, och väljer sedan den plats du vill spara på."
+            }
         },
         "question2": {
-			"title": "Återställa Windows 10",
-			"para1": "Du bör återställa din Windows 10-dator om det inträffar problem med den eller om du säljer den. När du utför en återställning kan du välja att behålla eller ta bort dina filer, ta bort alla program och inställningar och installera en ny kopia av Windows. Detta kan också åtgärda många problem, till exempel långsam prestanda.",
+            "title": "Återställa Windows 10",
+            "para1": "Du bör återställa din Windows 10-dator om det inträffar problem med den eller om du säljer den. När du utför en återställning kan du välja att behålla eller ta bort dina filer, ta bort alla program och inställningar och installera en ny kopia av Windows. Detta kan också åtgärda många problem, till exempel långsam prestanda.",
             "heading1": "1. Öppna appen Inställningar.",
             "para2": "Tryck på Start-knappen längst ned till vänster på skärmen och klicka på kugghjulsikonen.",
             "heading2": "2. Välj Uppdatering och säkerhet på listan med kategorier.",
@@ -2757,10 +2757,10 @@
             "heading5": "5. Välj om du vill behålla dina filer eller inte.",
             "para4": "Efter återställningen kan du logga in på ditt Microsoft-konto. Alla Windows Store-appar som du har köpt med det aktuella kontot installeras om.",
             "para5": {
-				"li1": "Om du väljer Behåll mina filer raderas appar och inställningar, men alla dina personliga filer behålls.",
-				"li2": "Om du väljer Ta bort allt raderas appar, inställningar och personliga filer. Om du inte har en säkerhetskopia av dina filer bör du klicka på Avbryt, säkerhetskopiera dem och börja om processen från början."
-			},
-			"heading6": "6. Du kan välja flera ytterligare inställningar.",
+                "li1": "Om du väljer Behåll mina filer raderas appar och inställningar, men alla dina personliga filer behålls.",
+                "li2": "Om du väljer Ta bort allt raderas appar, inställningar och personliga filer. Om du inte har en säkerhetskopia av dina filer bör du klicka på Avbryt, säkerhetskopiera dem och börja om processen från början."
+            },
+            "heading6": "6. Du kan välja flera ytterligare inställningar.",
             "para6": "Detta visas bara om du valde Ta bort allt i föregående steg.",
             "heading7": "7. Läs översikten och tryck på Återställ när du är klar att fortsätta.",
             "para7": "Windows förbereder en återställning av enheten. Vänta tills du ser en blå skärm.",
@@ -2768,7 +2768,7 @@
             "para8": "Windows startar om och påbörjar återställningen. Datorn kan starta om flera gånger under återställningen.",
             "heading9": "Vanliga frågor",
             "communityAnswer": "Svar",
-			"q1": "Om jag väljer att ta bort allt, raderas alla enheter i och/eller som är anslutna till min dator eller bara enheten där Windows 10 körs?",
+            "q1": "Om jag väljer att ta bort allt, raderas alla enheter i och/eller som är anslutna till min dator eller bara enheten där Windows 10 körs?",
             "a1": "Bara Windows 10-enheten tas bort (vanligen enheten C:). Andra enheter i och/eller som är anslutna till datorn påverkas inte.",
             "q2": "Hur kan göra detta om skärmen är trasig?",
             "a2": "Det går tyvärr inte. Du behöver skaffa en ny skärm.",
@@ -2780,8 +2780,8 @@
             "para10": "Återställa Windows 10 – WikiHow."
         },
         "question3": {
-			"title": "Se din dators processor",
-			"heading1": "Symptom",
+            "title": "Se din dators processor",
+            "heading1": "Symptom",
             "para1": "Termerna ”32 bitar” och ”64 bitar” handlar om hur datorns processor (även kallad CPU) hanterar information. 64-bitarsversionen av Windows hanterar stora mängder arbetsminne (RAM) mer effektivt än ett 32-bitarssystem.",
             "heading2": "Berörda varumärken",
             "para2": "Ovanstående symptom är associerat med men inte begränsat till följande system:",
@@ -2790,10 +2790,10 @@
             "para4": "Windows 7, 8 och 10",
             "heading4": "Lösning",
             "para5": "Windows 7 eller Vista",
-			"para6": "Öppna System genom att klicka på <strong>Start-knappen </strong>Bild på <strong>Start-knappen,</strong> högerklicka på Dator och sedan klicka på Egenskaper.",
+            "para6": "Öppna System genom att klicka på <strong>Start-knappen </strong>Bild på <strong>Start-knappen,</strong> högerklicka på Dator och sedan klicka på Egenskaper.",
             "para7": "Under System ser du systemtypen.",
             "para8": "Windows 8 och Windows 10",
-			"para9": "<strong>Metod 1:</strong> Öppna Systemfönstret i Kontrollpanelen",
+            "para9": "<strong>Metod 1:</strong> Öppna Systemfönstret i Kontrollpanelen",
             "para10": "Svep inåt från skärmens högra sida och tryck sedan på <strong>Sök</strong>. Med en mus kan du peka i nedre högra hörnet på skärmen och sedan klicka på <strong>Sök</strong>.",
             "para11": "Skriv <strong>system</strong> i sökrutan och tryck eller klicka sedan på <strong>Inställningar.</strong>",
             "para12": "Tryck eller klicka på <strong>System</strong>.",
@@ -2805,8 +2805,8 @@
             "para18": "Om du kör en <strong>64-bitars </strong>version av Windows 8<strong> står det </strong> x64-baserad dator i fältet <strong>Systemtyp</strong> under rubriken Objekt. Om du kör en<strong> 32-bitars</strong> version av Windows 8 står det x86-baserad dator i fältet <strong>Systemtyp</strong> under rubriken Objekt.  "
         },
         "question4": {
-			"title": "Kontrollera datorns batteriförbrukning",
-			"heading1": "Symptom",
+            "title": "Kontrollera datorns batteriförbrukning",
+            "heading1": "Symptom",
             "para1": "Windows 10 har en ny <strong>”batterianvändnings-skärm”</strong> som visar vad det är som tömmer datorns batteri. Det betyder att du kan se exakt vilka appar (både skrivbordsappar och Windows 10:s universalappar) som använder för mycket batteri.",
             "heading2": "Berörda varumärken",
             "para2": "Lenovos bärbara och stationära datorer",
@@ -2828,8 +2828,8 @@
             "para13": "8. Längre ned hittar du en lista på appar, och den är den mest användbara delen av den här funktionen. Den visar alla appar som har använt batteri under den valda perioden och hur stor del av batterienergin i procent som varje app har använt."
         },
         "question5": {
-			"title": "Använda datorn som pekplatta",
-			"para1": "Surfplatteläget gör Windows mer intuitivt och användarvänligt när du använder en enhet med pekskärm.",
+            "title": "Använda datorn som pekplatta",
+            "para1": "Surfplatteläget gör Windows mer intuitivt och användarvänligt när du använder en enhet med pekskärm.",
             "heading1": "Använda surfplatteläge",
             "para2": "Aktivera surfplatteläge genom att klicka på <strong>åtgärdscenter</strong> i aktivitetsfältet och sedan markera <strong>Surfplatteläge</strong>.",
             "heading2": "Anmärkning",
@@ -2845,8 +2845,8 @@
             "para10": "Använd tillbakaknappen på aktivitetsfältet för att gå tillbaka i appen eller för att öppna en app du använde tidigare."
         },
         "question6": {
-			"title": "Lära känna Cortana, din personliga assistent",
-			"heading1": "Vad är Cortana?",
+            "title": "Lära känna Cortana, din personliga assistent",
+            "heading1": "Vad är Cortana?",
             "para1": "Cortana är din digitala assistent. Hon hjälper dig att göra saker.",
             "para2": "Ju mer du använder Cortana, desto mer anpassad blir din användarupplevelse.",
             "para3": "Börja med att skriva en fråga i sökrutan eller klicka på mikrofonen och prata med Cortana. (Det går att skriva på alla datorer, men du måste ha en mikrofon för att kunna prata.)",
@@ -2854,7 +2854,7 @@
             "para5": "1. Hem 2. Bärbar dator 3. Inställningar 4. Feedback",
             "para6": "Här är några saker Cortana kan göra:",
             "unorderedList1": {
-				"listItem1": "Ge dig påminnelser baserade på tid, plats eller personer.",
+                "listItem1": "Ge dig påminnelser baserade på tid, plats eller personer.",
                 "listItem2": "Spåra försändelser, idrottslag, intressen och flyg.",
                 "listItem3": "Skicka e-postmeddelanden och SMS.",
                 "listItem4": "Hantera din kalender och ge dig uppdateringar.",
@@ -2863,7 +2863,7 @@
                 "listItem7": "Hitta fakta, filer, platser och information.",
                 "listItem8": "Öppna alla appar i systemet."
             },
-			"heading2": "Prova det här: Skapa en påminnelse",
+            "heading2": "Prova det här: Skapa en påminnelse",
             "para7": "En av sakerna Cortana kan göra är att påminna dig om saker. Hon kan påminna dig om att göra saker baserat på tid, platser eller till och med personer.",
             "para8": "Skriv eller säg till exempel ”Påminn mig att gratulera Tanya nästa gång hon ringer”.",
             "para9": "Påminnelsen kommer att visas när du får ett samtal från Tanya.",

@@ -173,17 +173,13 @@ export class ProtocolGuardService implements CanActivate {
 	return '';
   }
 
-  private isFirstPage() : boolean {
-	return !this.commonService.getSessionStorageValue(SessionStorageKey.FirstPageLoaded, false);
-  }
-
   public canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) : boolean | UrlTree {
 	const path = state.url.slice(state.url.indexOf('#') + 1);
 	if (path.startsWith(this.characteristicCode)) {
 		const checkResult = this.isRedirectUrlNeeded(path);
-		return checkResult[0] ? this.router.parseUrl(checkResult[1]) : this.isFirstPage();
+		return checkResult[0] ? this.router.parseUrl(checkResult[1]) : !this.commonService.isFirstPageLoaded();
 	}
 
-	return this.isFirstPage();
+	return !this.commonService.isFirstPageLoaded();
   }
 }

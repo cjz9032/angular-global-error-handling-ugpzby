@@ -199,8 +199,7 @@
                     "description": "Nesprávne nastavenie pretaktovania môže viesť k nezvratnému poškodeniu hardvéru.",
                     "proceed": "POKRAČOVAŤ",
                     "legionAccessory": "Install Legion Accessory Central?",
-                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
-                    "install": "INSTALL"
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc."
                 },
                 "popup": {
                     "closeBtn": "close"
@@ -1213,7 +1212,8 @@
                     "title": "Ďalšie nastavenia",
                     "vantageToolbar": {
                         "title": "Panel nástrojov aplikácie Lenovo Vantage",
-                        "description": "Pripnite panel nástrojov aplikácie Vantage na panel úloh systému Windows, aby ste mohli jednoducho zobraziť ďalšie podrobnosti o batérii a získať prístup k rýchlym nastaveniam."
+                        "description": "Pripnite panel nástrojov aplikácie Vantage na panel úloh systému Windows, aby ste mohli jednoducho zobraziť ďalšie podrobnosti o batérii a získať prístup k rýchlym nastaveniam.",
+                        "hint": "The options in the image depend on the capacity of the machine. For example, – some machines support backlight settings, and some may not."
                     }
                 },
                 "batterySettings": {
@@ -2725,7 +2725,6 @@
     },
     "faq": {
         "footer": {
-            "pageTitle": "Podrobnosti podpory",
             "title": "Nenašli ste to, čo hľadáte?",
             "description": "Potrebujete ďalšiu podporu? Neváhajte nás kontaktovať prostredníctvom:",
             "body": "Spoločnosť Lenovo",
@@ -2734,20 +2733,20 @@
         "question1": {
             "title": "Zálohovanie a obnova súborov",
             "para1": "Vždy je dobré mať zálohu. Kópie svojich súborov uchovávajte na inej jednotke pre prípad, že sa niečo stane s originálmi.",
-			"heading1": "Nastavenie zálohovania",
-			"para2": "Vyberte tlačidlo Štart, vyberte položky Nastavenia > Aktualizácia a zabezpečenie > Zálohovať > Pridať jednotku a vyberte externú jednotku alebo sieťové umiestnenie pre zálohy.",
-			"para3": "Všetko je nastavené. Každú hodinu sa zálohuje celý obsah vášho priečinka používateľa (C:\\Users\\vaše používateľské meno). Ak chcete zmeniť súbory, ktoré sa zálohujú, alebo frekvenciu zálohovania, prejdite na Ďalšie možnosti.",
-			"heading2": "Obnovenie súborov",
-			"para4": "Ak vám chýba dôležitý súbor alebo priečinok, takto ho môžete obnoviť:",
-			"para5": {
-				"div1": "1. Do vyhľadávacieho poľa na paneli úloh zadajte text Obnoviť súbory a vyberte položku Obnoviť súbory pomocou histórie súborov.",
-				"div2": "2. Vyhľadajte súbor, ktorý potrebujete, a pomocou šípok si pozrite všetky jeho verzie.",
-				"div3": "3. Keď nájdete požadovanú verziu, výberom položky Obnoviť ju uložte do pôvodného umiestnenia. Ak ju chcete uložiť na iné miesto, stlačte a podržte (alebo kliknite pravým tlačidlom myši) položku Obnoviť, vyberte položku Obnoviť do umiestnenia a vyberte nové umiestnenie."
-			}
+            "heading1": "Nastavenie zálohovania",
+            "para2": "Vyberte tlačidlo Štart, vyberte položky Nastavenia > Aktualizácia a zabezpečenie > Zálohovať > Pridať jednotku a vyberte externú jednotku alebo sieťové umiestnenie pre zálohy.",
+            "para3": "Všetko je nastavené. Každú hodinu sa zálohuje celý obsah vášho priečinka používateľa (C:\\Users\\vaše používateľské meno). Ak chcete zmeniť súbory, ktoré sa zálohujú, alebo frekvenciu zálohovania, prejdite na Ďalšie možnosti.",
+            "heading2": "Obnovenie súborov",
+            "para4": "Ak vám chýba dôležitý súbor alebo priečinok, takto ho môžete obnoviť:",
+            "para5": {
+                "div1": "1. Do vyhľadávacieho poľa na paneli úloh zadajte text Obnoviť súbory a vyberte položku Obnoviť súbory pomocou histórie súborov.",
+                "div2": "2. Vyhľadajte súbor, ktorý potrebujete, a pomocou šípok si pozrite všetky jeho verzie.",
+                "div3": "3. Keď nájdete požadovanú verziu, výberom položky Obnoviť ju uložte do pôvodného umiestnenia. Ak ju chcete uložiť na iné miesto, stlačte a podržte (alebo kliknite pravým tlačidlom myši) položku Obnoviť, vyberte položku Obnoviť do umiestnenia a vyberte nové umiestnenie."
+            }
         },
         "question2": {
-			"title": "Ako vynulovať nastavenia systému Windows 10",
-			"para1": "Ak sa v počítači so systémom Windows 10 vyskytujú problémy alebo ho predávate, mali by ste vynulovať jeho nastavenia. Vynulovanie nastavení vám umožní vybrať si, či si želáte ponechať alebo odstrániť svoje súbory, odstrániť všetky aplikácie a nastavenia a nainštalovať novú kópiu systému Windows. Môže to tiež vyriešiť mnohé problémy, akým je napríklad pomalý výkon.",
+            "title": "Ako vynulovať nastavenia systému Windows 10",
+            "para1": "Ak sa v počítači so systémom Windows 10 vyskytujú problémy alebo ho predávate, mali by ste vynulovať jeho nastavenia. Vynulovanie nastavení vám umožní vybrať si, či si želáte ponechať alebo odstrániť svoje súbory, odstrániť všetky aplikácie a nastavenia a nainštalovať novú kópiu systému Windows. Môže to tiež vyriešiť mnohé problémy, akým je napríklad pomalý výkon.",
             "heading1": "1. Otvorenie aplikácie Nastavenia",
             "para2": "Stlačte tlačidlo Start Image (Spustiť obraz), ktoré sa nachádza v ľavej dolnej časti obrazovky a zvoľte ozubené koliesko pri položke Obraz.",
             "heading2": "2. V zozname kategórií vyberte možnosť Aktualizácia a zabezpečenie",
@@ -2757,10 +2756,10 @@
             "heading5": "5. Vyberte, či si chcete súbory ponechať alebo nie",
             "para4": "Po vynulovaní nastavení sa môžete prihlásiť do svojho konta Microsoft. Preinštalujú sa všetky aplikácie pre Windows Obchod zakúpené v rámci tohto konta.",
             "para5": {
-				"li1": "Možnosť Ponechať moje súbory odstráni vaše aplikácie a nastavenia, ale zachová všetky vaše osobné súbory.",
-				"li2": "Možnosť Odstrániť všetko vymaže vaše aplikácie, nastavenia a osobné súbory. Ak nemáte zálohovanú kópiu svojich súborov, môžete stlačiť možnosť Zrušiť, zálohovať ich a začať tento postup znova."
-			},
-			"heading6": "6. Môžete si vybrať rôzne ďalšie nastavenia",
+                "li1": "Možnosť Ponechať moje súbory odstráni vaše aplikácie a nastavenia, ale zachová všetky vaše osobné súbory.",
+                "li2": "Možnosť Odstrániť všetko vymaže vaše aplikácie, nastavenia a osobné súbory. Ak nemáte zálohovanú kópiu svojich súborov, môžete stlačiť možnosť Zrušiť, zálohovať ich a začať tento postup znova."
+            },
+            "heading6": "6. Môžete si vybrať rôzne ďalšie nastavenia",
             "para6": "Toto sa zobrazí iba vtedy, ak ste v predchádzajúcom kroku vybrali možnosť „Odstrániť všetko“.",
             "heading7": "7. Prečítajte si prehľad a keď budete pripravený pokračovať, stlačte možnosť Vynulovať nastavenia.",
             "para7": "Systém Windows sa pripraví na vynulovanie nastavení zariadenia. Jednoducho počkajte, kým sa nedostanete na modrú obrazovku.",
@@ -2768,7 +2767,7 @@
             "para8": "Systém Windows sa reštartuje a začne s vynulovaním nastavení. Keď dôjde k vynulovaniu nastavení, môže sa váš počítač niekoľkokrát reštartovať.",
             "heading9": "Otázky a odpovede komunity",
             "communityAnswer": "Odpoveď komunity",
-			"q1": "Ak sa rozhodnem odstrániť všetky položky, vymažú sa všetky jednotky vložené alebo pripojené k môjmu počítaču alebo iba jednotka, na ktorej mám spustený systém Windows 10?",
+            "q1": "Ak sa rozhodnem odstrániť všetky položky, vymažú sa všetky jednotky vložené alebo pripojené k môjmu počítaču alebo iba jednotka, na ktorej mám spustený systém Windows 10?",
             "a1": "Vymaže sa iba jednotka OS Windows 10 (zvyčajne jednotka C:). Ostatné jednotky vložené alebo pripojené k počítaču nebudú ovplyvnené.",
             "q2": "Ako to môžem urobiť, ak mám poškodenú obrazovku?",
             "a2": "Bohužiaľ, nemôžete. Budete si musieť zaobstarať novú obrazovku.",
@@ -2780,8 +2779,8 @@
             "para10": "Ako vynulovať nastavenia systému Windows 10 – WikiHow."
         },
         "question3": {
-			"title": "Zistenie informácií o procesore počítača",
-			"heading1": "Príznak",
+            "title": "Zistenie informácií o procesore počítača",
+            "heading1": "Príznak",
             "para1": "Výrazy 32-bitový a 64-bitový sa týkajú spôsobu, akým procesor počítača pracuje s informáciami. 64-bitová verzia systému Windows dokáže pracovať s veľkým množstvom pamäte RAM (Random Access Memory) efektívnejšie ako 32-bitový systém.",
             "heading2": "Týka sa značiek",
             "para2": "Príznak uvedený vyššie súvisí (nie však výhradne) s nasledujúcimi systémami:",
@@ -2790,10 +2789,10 @@
             "para4": "Windows 7, 8, 10",
             "heading4": "Riešenie",
             "para5": "Windows 7 alebo Vista",
-			"para6": "Otvorte okno Systém kliknutím na <strong>tlačidlo Štart</strong>, kliknutím pravým tlačidlom myši na položku Počítač a kliknutím na položku Vlastnosti.",
+            "para6": "Otvorte okno Systém kliknutím na <strong>tlačidlo Štart</strong>, kliknutím pravým tlačidlom myši na položku Počítač a kliknutím na položku Vlastnosti.",
             "para7": "V okne Systém si môžete pozrieť typ systém.",
             "para8": "Windows 8 a Windows 10",
-			"para9": "<strong>1. spôsob:</strong> Zobrazenie okna Systém v ovládacom paneli",
+            "para9": "<strong>1. spôsob:</strong> Zobrazenie okna Systém v ovládacom paneli",
             "para10": "Potiahnite prstom od pravého okraja obrazovky a ťuknite na položku <strong>Hľadať</strong>. Ak používate myš, ukážte do pravého dolného rohu obrazovky a kliknite na položku <strong>Hľadať</strong>.",
             "para11": "Do vyhľadávacieho poľa zadajte text <strong>systém</strong> a ťuknite alebo kliknite na položku <strong>Nastavenia</strong>.",
             "para12": "Ťuknite alebo kliknite na položku <strong>Systém</strong>.",
@@ -2805,8 +2804,8 @@
             "para18": "Ak používate <strong>64-bitovú </strong>verziu systému Windows 8<strong>, </strong> v poli <strong>Typ systému</strong> pod nadpisom Položka sa zobrazí Počítač s procesorom typu x64. Ak používate<strong> 32-bitovú</strong> verziu systému Windows 8, v poli <strong>Typ systému</strong> pod nadpisom Položka sa zobrazí Počítač s procesorom typu x86.  "
         },
         "question4": {
-			"title": "Kontrola využívania batérie počítača",
-			"heading1": "Príznak",
+            "title": "Kontrola využívania batérie počítača",
+            "heading1": "Príznak",
             "para1": "Systém Windows 10 obsahuje novú obrazovku <strong>Použitie batérie</strong>, ktorá zobrazuje, čo vybíja batériu počítača. Znamená to, že zobrazí aplikácie (aplikácie klasickej pracovnej plochy aj univerzálne aplikácie systému Windows 10), ktoré používajú príliš veľa energie.",
             "heading2": "Týka sa značiek",
             "para2": "Prenosné a stolné počítače Lenovo",
@@ -2828,8 +2827,8 @@
             "para13": "8. Posuňte sa ďalej nadol a zobrazí sa zoznam aplikácií, ktorý sa považuje za najužitočnejšiu časť tejto funkcie. Zobrazí sa zoznam aplikácií, ktoré v danom období používali energiu batérie. Pri každej aplikácii sa zobrazí percento energie batérie, ktoré použila."
         },
         "question5": {
-			"title": "Používanie počítača ako tabletu",
-			"para1": "Vďaka režimu tabletu je systém Windows intuitívnejší a jednoduchšie sa používa, ak máte zariadenie s dotykovou obrazovkou.",
+            "title": "Používanie počítača ako tabletu",
+            "para1": "Vďaka režimu tabletu je systém Windows intuitívnejší a jednoduchšie sa používa, ak máte zariadenie s dotykovou obrazovkou.",
             "heading1": "Používanie režimu tabletu",
             "para2": "Ak chcete zapnúť režim tabletu, vyberte <strong>centrum akcií</strong> na paneli úloh a potom vyberte položku <strong>Režim tabletu</strong>.",
             "heading2": "Poznámka",
@@ -2845,8 +2844,8 @@
             "para10": "vrátiť sa späť v aplikácii alebo otvoriť predtým používanú aplikáciu pomocou tlačidla Späť na paneli úloh."
         },
         "question6": {
-			"title": "Zoznámenie sa s osobnou asistentkou Cortana",
-			"heading1": "Čo je Cortana?",
+            "title": "Zoznámenie sa s osobnou asistentkou Cortana",
+            "heading1": "Čo je Cortana?",
             "para1": "Cortana je vaša digitálna asistentka. Pomôže vám pri práci.",
             "para2": "Čím viac budete Cortanu používať, tým viac budú vaše zážitky prispôsobené.",
             "para3": "Ak chcete začať, do vyhľadávacieho poľa zadajte otáznik alebo vyberte mikrofón a rozprávajte sa s Cortanou. (Zadávanie textu funguje pri všetkých typoch počítačov, ale na rozprávanie potrebujete mikrofón.)",
@@ -2854,7 +2853,7 @@
             "para5": "1. Domovská obrazovka 2. Poznámkový blok 3. Nastavenia 4. Spätná väzba",
             "para6": "Tu sú niektoré z vecí, ktoré pre vás Cortana môže urobiť:",
             "unorderedList1": {
-				"listItem1": "zobraziť pripomenutia na základe času, miest alebo ľudí;",
+                "listItem1": "zobraziť pripomenutia na základe času, miest alebo ľudí;",
                 "listItem2": "sledovať balíky, tímy, záujmy a lety;",
                 "listItem3": "odosielať e-maily a textové správy;",
                 "listItem4": "spravovať váš kalendár a poskytovať vám aktuálne informácie;",
@@ -2863,7 +2862,7 @@
                 "listItem7": "vyhľadávať fakty, súbory, miesta a informácie;",
                 "listItem8": "otvoriť ktorúkoľvek aplikáciu v systéme."
             },
-			"heading2": "Skúste toto: nastavenie pripomenutia",
+            "heading2": "Skúste toto: nastavenie pripomenutia",
             "para7": "Jednou z vecí, ktoré Cortana dokáže, je zobrazovanie pripomenutí. Môže vám pripomenúť veci, ktoré treba urobiť, na základe času, miest alebo dokonca ľudí.",
             "para8": "Napríklad zadajte alebo povedzte: „Pripomeň mi, aby som Táni zablahoželal(a), keď bude volať“.",
             "para9": "Keď vám Táňa zavolá, zobrazí sa pripomenutie.",
@@ -2872,7 +2871,8 @@
             "para11": "Nastavte Cortanu tak, aby vás počúvala vždy, keď poviete „Ahoj, Cortana“. Výberom vyhľadávacieho poľa na paneli úloh otvorte domovskú obrazovku Cortany. Potom vyberte položku <strong>Nastavenia</strong> a zapnite funkciu <strong>Povoliť Cortane reagovať na slovné spojenie „Hey Cortana“ (Ahoj, Cortana)</strong>.",
             "heading4": "Poznámka",
             "para12": "Cortana je k dispozícii len v určitých krajinách alebo regiónoch a niektoré funkcie Cortany nemusia byť dostupné všade."
-        }
+        },
+        "pageTitle": "Support Detail"
     },
     "welcometutorial": {
         "description": "Aplikácia Vantage zjednodušuje aktualizáciu ovládačov, spúšťanie diagnostiky, žiadosť o technickú podporu a získanie informácií o zariadení.Rýchlo prispôsobte svoje nastavenie a nájdite užitočné informácie prispôsobené vaším potrebám",

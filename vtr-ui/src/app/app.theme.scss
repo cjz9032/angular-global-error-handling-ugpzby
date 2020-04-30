@@ -459,13 +459,16 @@ $high-contrast-black-yellow: #FFFF00;
 	position: absolute;
 	width: 6rem;
 	height: 6rem;
-	top: -1.82rem;
-	left: -0.1rem;
+	top: 0;
+	left: 2.5rem;
 	bottom: 0;
 	right: 0;
 	transform: scale(1.12);
 	font-family: "icomoon";
 	font-size: 6rem;
 	color: $menu_hover;
+	@media screen and (min-width: 992px) and (max-width: 1199.9px) {
+		left: 6rem;
+	}
 }
 

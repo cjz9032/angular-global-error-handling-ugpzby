@@ -73,8 +73,24 @@ export class UiSmartPerformanceComponent implements OnInit {
 		if (this.isSubscribed !== undefined && this.isSubscribed===true) {
 			this.unregisterScheduleScan('Lenovo.Vantage.SmartPerformance.ScheduleScan');
 		}
-		this.registerScheduleScanStatus();
-		this.getSmartPerformanceStartScanInformation();
+
+		if (this.smartPerformanceService.isShellAvailable) {
+			this.smartPerformanceService
+				.getReadiness()
+				.then((getReadinessFromService: any) => {
+					this.logger.info('ScanNow.getReadiness.then', getReadinessFromService);
+					if (!getReadinessFromService) {
+						this.isScanning = true;
+						this.registerScheduleScanStatus();
+						this.getSmartPerformanceStartScanInformation();
+					}
+					else {
+						this.isScanning = false;
+					}
+				})
+				.catch(error => { });
+		}
+	
 	}
 	async scheduleScan(scantype, frequency, day, time, date) {
 		const payload = {
@@ -84,7 +100,6 @@ export class UiSmartPerformanceComponent implements OnInit {
 			time,
 			date
 		};
-	//	console.log('payload--------------------------------------------------->', payload);
 		try {
 			const res: any = await this.smartPerformanceService.setScanSchedule(
 				payload

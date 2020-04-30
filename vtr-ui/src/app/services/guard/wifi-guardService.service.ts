@@ -1,25 +1,29 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRoute, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { CanActivate, ActivatedRoute, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { CommonService } from '../common/common.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { SecurityAdvisor, WifiSecurity } from '@lenovo/tan-client-bridge';
 import { GuardConstants } from './guard-constants';
 import { LoggerService } from '../logger/logger.service';
+import { BasicGuard } from './basic-guard';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable({
 	providedIn: 'root',
 })
-export class WifiGuardService implements CanActivate {
+export class WifiGuardService extends BasicGuard {
 	securityAdvisor: SecurityAdvisor;
 	wifiSecurity: WifiSecurity;
 
 	constructor(
-		private commonService: CommonService,
+		public commonService: CommonService,
 		private vantageShellService: VantageShellService,
-		private guardConstants: GuardConstants,
+		public guardConstants: GuardConstants,
 		private logger: LoggerService
-	) { }
+	) { 
+		super(commonService, guardConstants);
+	}
 
 	private waitAsyncCallTimeout(func: Function, millisecond: number) : Promise<any> {
 		const timeout = new Promise((resolve, reject) => {
@@ -28,7 +32,10 @@ export class WifiGuardService implements CanActivate {
 		return Promise.race([func(), timeout]);
 	}
 
-	async canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+	async canActivate(
+		route: ActivatedRouteSnapshot, 
+		state: RouterStateSnapshot
+	) : Promise<any> {
 		if (state.root.queryParams['plugin'] === 'lenovowifisecurityplugin') {
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity, true);
 			return true;
@@ -45,10 +52,10 @@ export class WifiGuardService implements CanActivate {
 			}
 			if (typeof this.wifiSecurity.isSupported === 'boolean') {
 				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity, this.wifiSecurity.isSupported);
-				return this.wifiSecurity.isSupported ? true : this.guardConstants.defaultRoute;
+				if (this.wifiSecurity.isSupported) return true;
 			}
 
-			return this.guardConstants.defaultRoute;
+			return super.canActivate(route, state);
 		}
 
 		return cacheState;

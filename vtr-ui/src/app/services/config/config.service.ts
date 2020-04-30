@@ -155,24 +155,19 @@ export class ConfigService {
 
 			this.menu = await this.updateHide(resultMenu, this.activeSegment, this.isBetaUser);
 
-			this.betaService.betaFeatureAvailable = (function findBetaAvailability(menus: any[]) {
-				let result = false;
+			this.betaService.betaFeatureAvailable = (function findBetaAvailability(menus: any[], result: boolean) {
 				menus.forEach(m => {
 					if (m.beta) {
 						if (!('availability' in m) || m.availability === true) {
 							result = true;
 						}
-						// console.log(m.id, 'id', m.beta);
-						// if(m.id === 'smart-performance'){
-						// 	m.hide = true;
-						// }
 					}
 					if (m.subitems) {
-						findBetaAvailability(m.subitems);
+						result = findBetaAvailability(m.subitems, result);
 					}
 				});
 				return result;
-			})(this.menu);
+			})(this.menu, false);
 
 			this.initializeSmartAssist();
 			this.notifyMenuChange(this.menu);
