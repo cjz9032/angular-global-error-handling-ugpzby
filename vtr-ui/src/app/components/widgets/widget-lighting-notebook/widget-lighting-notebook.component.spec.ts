@@ -322,7 +322,7 @@ describe('WidgetLightingNotebookComponent', () => {
 
     it('should show keybord is disabled', () => {
         component.ifDisabledKeyboard(32);
-        expect(component.isDisablled).toEqual(true);
+        expect(component.isDisabled).toEqual(true);
     })
 
     it('should show effect that support speed', () => {

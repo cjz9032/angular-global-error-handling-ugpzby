@@ -8,7 +8,7 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class ModalGamingPromptComponent implements OnInit {
   @Output() emitService = new EventEmitter();
-  public info:any;
+  public info:any = {};
   constructor(
     public activeModal: NgbActiveModal,
     private modalService: NgbModal,

@@ -6,7 +6,7 @@ import { CommonService } from './../../../services/common/common.service';
 import { LocalStorageKey } from './../../../enums/local-storage-key.enum';
 import { TranslateStore } from '@ngx-translate/core';
 import { TranslationModule } from 'src/app/modules/translation.module';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { NO_ERRORS_SCHEMA, Component, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Gaming } from './../../../enums/gaming.enum';
 import { of } from 'rxjs';
@@ -16,6 +16,11 @@ const lightingService = jasmine.createSpyObj('GamingLightingService', [
 	'setLightingProfileEffectColor',
 	'checkAreaColorFn'
 ]);
+
+@Component({ selector: 'vtr-ui-toggle', template: '' })
+export class UiToggleStubComponent {
+    @Input() onOffSwitchId: string;
+}
 
 describe('UiLightingKeyboardLNBx50Component', () => {
 	let component: UiLightingKeyboardLNBx50Component;
@@ -118,7 +123,7 @@ describe('UiLightingKeyboardLNBx50Component', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [UiLightingKeyboardLNBx50Component],
+			declarations: [UiLightingKeyboardLNBx50Component, UiToggleStubComponent],
 			imports: [TranslationModule],
 			schemas: [NO_ERRORS_SCHEMA],
 			providers: [
