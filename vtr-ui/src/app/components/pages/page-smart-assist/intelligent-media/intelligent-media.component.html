@@ -1,8 +1,7 @@
-<div class="row pt-5 smart-assist-card"
-	id="intelligentMedia">
+<div class="row pt-5 smart-assist-card">
 	<div class="col-12 px-0"
 		id="media">
-		<vtr-container-collapsible [collapseLinkId]="'intelligentMedia'"
+		<vtr-container-collapsible [collapseLinkId]="'intelligentMedia-collapse'"
 			[tabIndex]="0"
 			[cardTitle]="'device.smartAssist.intelligentMedia.heading' | translate"
 			componentName="intelligentMediaCollapsible"
@@ -12,7 +11,7 @@
 			<ul class="list-group list-group-flush">
 				<li>
 					<vtr-ui-row-switch *ngIf="intelligentMediaAvailable"
-						[switchId]="'intelligentMedia'"
+						[switchId]="'intelligent-media-toggle'"
 						[title]="'device.smartAssist.intelligentMedia.title' | translate"
 						componentName="intelligentMediaSwitch"
 						[isLastChild]="true"
