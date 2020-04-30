@@ -1,29 +1,29 @@
-<div class="row pt-5 smart-assist-card" 
-id="intelligentMedia">
-	<div class="col-12 px-0" 
-	id="media">
-		<vtr-container-collapsible [collapseLinkId]="'intelligentMedia'" 
-		[tabIndex]="0"
+<div class="row pt-5 smart-assist-card"
+	id="intelligentMedia">
+	<div class="col-12 px-0"
+		id="media">
+		<vtr-container-collapsible [collapseLinkId]="'intelligentMedia'"
+			[tabIndex]="0"
 			[cardTitle]="'device.smartAssist.intelligentMedia.heading' | translate"
 			componentName="intelligentMediaCollapsible"
-			 [isCollapsed]="false"
-			  [allowCollapse]="true"
-			   [theme]="'white'">
+			[isCollapsed]="false"
+			[allowCollapse]="true"
+			[theme]="'white'">
 			<ul class="list-group list-group-flush">
 				<li>
-					<vtr-ui-row-switch *ngIf="intelligentMediaAvailable" 
-					[switchId]="'intelligentMedia'"
+					<vtr-ui-row-switch *ngIf="intelligentMediaAvailable"
+						[switchId]="'intelligentMedia'"
 						[title]="'device.smartAssist.intelligentMedia.title' | translate"
 						componentName="intelligentMediaSwitch"
-						 [isLastChild]="true" 
-						 [isSwitchVisible]="true"
+						[isLastChild]="true"
+						[isSwitchVisible]="true"
 						[leftIcon]="['icomoon', 'icomoon-zero-touch-playback']"
-						 [rightIcon]="['far', 'question-circle']"
+						[rightIcon]="['far', 'question-circle']"
 						[showChildContent]="false"
-						 [isSwitchChecked]="isChecked"
+						[isSwitchChecked]="isChecked"
 						[tooltipText]="'device.smartAssist.intelligentMedia.tooltip' | translate"
 						(toggleOnOff)="setVideoPauseResumeStatus($event)"
-						[caption]="'device.smartAssist.intelligentMedia.desc' | translate" 
+						[caption]="'device.smartAssist.intelligentMedia.desc' | translate"
 						[theme]="'white'"
 						[showLoaderState]="isLoading">
 					</vtr-ui-row-switch>
@@ -35,30 +35,35 @@ id="intelligentMedia">
 					<div class="border-top common-li-padding"
 						*ngIf="superResolutionAvailable && intelligentMediaAvailable"></div>
 					<vtr-ui-row-switch *ngIf="superResolutionAvailable"
-					 [switchId]="'superResolution'"
+						[switchId]="'superResolution'"
 						[title]="'device.smartAssist.superResolution.title' | translate"
-						componentName="superResolutionSwitch" 
-						[isLastChild]="true" 
+						componentName="superResolutionSwitch"
+						[isLastChild]="true"
 						[isSwitchVisible]="true"
 						[leftIcon]="['icomoon', 'icomoon-superResolution']"
-						 [rightIcon]="['far', 'question-circle']"
+						[rightIcon]="['far', 'question-circle']"
 						[showChildContent]="false"
-						 [isSwitchChecked]="isSRChecked"
+						[isSwitchChecked]="isSRChecked"
 						[tooltipText]="'device.smartAssist.superResolution.tooltip' | translate"
 						(toggleOnOff)="setSuperResolutionStatus($event)"
-						[caption]="'device.smartAssist.superResolution.desc' | translate" 
+						[caption]="'device.smartAssist.superResolution.desc' | translate"
 						[theme]="'white'"
 						[showLoaderState]="isSRLoading">
 					</vtr-ui-row-switch>
 
 					<div class="superResolution-image">
-						<img [src]="image" class="image" role="img" id="intelligent-media-superResolution-image" />
+						<img [src]="image"
+							class="image"
+							role="img"
+							id="intelligent-media-superResolution-image" />
 						<div class="superResolution-image-word">
-							<div class="superResolution-image-before imageText" role="text"
+							<div class="superResolution-image-before imageText"
+								role="text"
 								id="superResolution-image-before">
 								{{'device.smartAssist.superResolution.imageBefore' | translate}}</div>
 							<div class="superResolution-image-Arrow imageText"> </div>
-							<div class="intelligent-security-image-after imageText" role="text"
+							<div class="intelligent-security-image-after imageText"
+								role="text"
 								id="superResolution-image-after">
 								{{'device.smartAssist.superResolution.imageAfter' | translate}}
 							</div>
@@ -66,21 +71,26 @@ id="intelligentMedia">
 					</div>
 
 					<div class="row">
-						<div class="feature-note p-4" *ngIf="superResolutionAvailable">
-							<p id="superResolution-note-description" role="text">
+						<div class="feature-note p-4"
+							*ngIf="superResolutionAvailable">
+							<p id="superResolution-note-description"
+								role="text">
 								{{'device.smartAssist.superResolution.note.description' | translate}}</p>
 							<div class="m-4">
 								<ul>
 									<li>
-										<p id="superResolution-note-description1" role="text">
+										<p id="superResolution-note-description1"
+											role="text">
 											{{'device.smartAssist.superResolution.note.description1' | translate}}</p>
 									</li>
 									<li>
-										<p id="superResolution-note-description2" role="text">
+										<p id="superResolution-note-description2"
+											role="text">
 											{{'device.smartAssist.superResolution.note.description2' | translate}}</p>
 									</li>
 									<li>
-										<p id="superResolution-note-description3" role="text">
+										<p id="superResolution-note-description3"
+											role="text">
 											{{'device.smartAssist.superResolution.note.description3' | translate}}</p>
 									</li>
 								</ul>

@@ -32,11 +32,18 @@ export class IntelligentMediaComponent implements OnInit {
 	}
 
 	public setVideoPauseResumeStatus(event) {
-        this.videoPlaybackToggle.emit(event.value);
-        try {
+		this.videoPlaybackToggle.emit(event.switchValue);
+		try {
 			if (this.smartAssist.isShellAvailable) {
+				const metricsData = {
+					itemParent: 'Device.SmartAssist',
+					itemName: 'zero-touch-video-playback.toggle-button',
+					value: event.switchValue
+				};
+				this.metrics.sendMetrics(metricsData);
+
 				this.smartAssist.setVideoPauseResumeStatus(event.switchValue)
-					.then((value: boolean) => {}).catch(error => {
+					.then((value: boolean) => { }).catch(error => {
 						this.logger.error('setVideoPauseResumeStatus', error.message);
 						return EMPTY;
 					});
@@ -45,12 +52,12 @@ export class IntelligentMediaComponent implements OnInit {
 			this.logger.error('setVideoPauseResumeStatus' + error.message);
 			return EMPTY;
 		}
-    }
+	}
 
 	public setSuperResolutionStatus(event) {
-		this.superResolutionToggle.emit(event.value);
+		this.superResolutionToggle.emit(event.switchValue);
 		const metricsData = {
-			itemParent: 'Device.DeviceSettings',
+			itemParent: 'Device.SmartAssist',
 			itemName: 'Video-Resolution-Upscaling.toggle-button',
 			value: event.switchValue
 		};
@@ -59,11 +66,11 @@ export class IntelligentMediaComponent implements OnInit {
 			if (this.smartAssist.isShellAvailable) {
 				this.smartAssist.setSuperResolutionStatus(event.switchValue)
 					.then((value: boolean) => {
-						this.logger.info('setSuperResolutionStatus',value);
+						this.logger.info('setSuperResolutionStatus', value);
 					}).catch(error => {
 						this.logger.error('setSuperResolutionStatus' + error.message);
 					});
 			}
-		} catch (error) {}
+		} catch (error) { }
 	}
 }
