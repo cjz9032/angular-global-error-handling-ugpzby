@@ -41,7 +41,7 @@ export class SmartAssistService {
 		this.antiTheft = shellService.getAntiTheft();
 		this.windows = shellService.getWindows();
 		this.activeProtectionSystem ? this.isAPSavailable = true : this.isAPSavailable = false;
-		if (this.intelligentSensing && this.intelligentMedia && this.lenovoVoice && this.superResolution && this.antiTheft) {
+		if (this.intelligentSensing && this.intelligentMedia && this.lenovoVoice && this.superResolution) {
 			this.isShellAvailable = true;
 		}
 	}
