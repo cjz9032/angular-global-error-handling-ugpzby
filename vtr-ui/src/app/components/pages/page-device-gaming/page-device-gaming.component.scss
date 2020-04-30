@@ -67,7 +67,7 @@
 			vtr-container-card {
 				&:focus {
 					.content {
-						@include outline-blue
+						@include outline-blue-gaming;
 					}
 				}
 				a.card-image,a.action-link-a{
@@ -76,7 +76,7 @@
 			}
       .vtr-widget-quicksettings-list,.vtr-widget-lighting{
         &:focus{
-          @include outline-white;
+          @include outline-blue-gaming;
         }
       }
 		}

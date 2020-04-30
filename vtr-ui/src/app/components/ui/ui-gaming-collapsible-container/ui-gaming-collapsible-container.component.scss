@@ -96,9 +96,9 @@
   body.focus-enable{
 	.is-gaming {
       .vtr-page-device-gaming {
-      .dropdown-toggle,.gaming-dropdown-menu li{
+      .dropdown-toggle{
         &:focus{
-          @include outline-white;
+          @include outline-blue-gaming;
         }
       }
     }

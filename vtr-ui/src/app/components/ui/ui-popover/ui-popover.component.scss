@@ -88,7 +88,9 @@ ui-popover {
 			color: $light-grey;
 			padding: 0.5rem 0;
 		}
-
+		.action-container{
+			position: relative;
+		}
 		.enable-button {
 			background: $blueFill;
 			border-radius: 3rem;
@@ -96,7 +98,6 @@ ui-popover {
 			font-size: $fontsize_sm;
 			padding: 1rem 3rem;
 			margin-top: 1rem;
-			margin-right: 3rem;
 			font-weight: $weight_bold;
 		}
 

@@ -1,6 +1,6 @@
 <div class="select-box">
 	<div class="dropdown">
-		<div class="dropdown-toggle" id="{{automationId}}" (click)="toggleOptions()" (keydown.enter)="toggleOptions()"
+		<div class="dropdown-toggle" #focusDropdown id="{{automationId}}" (click)="toggleOptions()" (keydown.enter)="toggleOptions()"
 			attr.aria-label="{{('gaming.lightingProfile.lightingeffectnarrator.lightingEffect.title' | translate)+(selectedOption.label | translate)}}" role="combobox"
 			[attr.aria-expanded]="showOptions" aria-haspopup="true" tabindex="{{tabindex}}">
 			<span class ="{{selectedOption.show_tool_tip ? selectedOption.id : ''}} name w-100" title="{{ (selectedOption.show_tool_tip ? selectedOption.name : '') | translate }}" *ngIf="selectedOption && isEffectChange">{{ selectedOption.name | translate }}</span>

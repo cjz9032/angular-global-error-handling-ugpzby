@@ -89,7 +89,7 @@ body.focus-enable{
       .lighting-single-color {
       .lighting-list-option li{
         &:focus{
-          @include outline-white;
+          @include outline-blue-gaming;
         }
       }
     }

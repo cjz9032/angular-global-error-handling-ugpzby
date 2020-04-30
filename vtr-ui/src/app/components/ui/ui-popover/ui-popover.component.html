@@ -16,6 +16,7 @@
 		</div>
 		<hr>
 		<div class="row" >
+			<div class="action-container">
 			<a id="{{automationId+'_restart_popup_ok_btn'}}" attr.aria-label="gaming popup ok" tabindex="1"
 				class="btn enable-button" vtrMetrics
 				[metricsItem]="'popover_ok'"
@@ -23,6 +24,7 @@
 				(click)="close()"
 				(keyup.enter)="close()" (keydown)="runappKeyup($event)"
 				 role="button">{{'gaming.dashboard.device.legionEdge.popup.button' | translate}}</a>
+				</div>
 		</div>
 	</div>
 	<!--Need input from Raghu on this-->

@@ -1953,19 +1953,39 @@
 
 body.focus-enable{
 	.is-gaming {
-		.remove-app,li.add-icon div,.delete-btn{
+		.navbar-brand.logo-y a{
 			&:focus{
-			@include  outline-white;
+			border: 0.1rem solid $light !important;	
+			}
+		}
+		vtr-page-lightingcustomize,vtr-page-macrokey,
+		vtr-page-networkboost,vtr-page-autoclose,vtr-page-device-gaming{
+		.remove-app,li.add-icon div,.delete-btn,
+		.help-box button,vtr-ui-toggle button{
+			&:focus{
+			@include outline-blue-gaming;
 			}
 	  }
-		.btn,.enable-button,button{
+		.btn,.enable-button{
 			&:focus{
-				@include outline-blue;
+			outline: none;
+				&::before{
+					position: absolute;
+					display: block;
+					content: "";
+					top: 0.8rem;
+					left: -0.2rem;
+					right: -0.2rem;
+					bottom: -0.2rem;
+					border-radius: 3rem;
+					border: 1px solid $blueFill;
 				}
 		}
-	a, input, label{
+		}
+	a:not(.btn), input, label,.btn-add-app button,
+	button.close,button.ask-again,.btn-close button{
 		&:focus{
-			@include outline-blue;
+		@include outline-blue-gaming;
 		}
 	}
 	.gaming-dropdown-menu li{
@@ -1973,17 +1993,14 @@ body.focus-enable{
 				outline: 0!important;
 				outline-offset: 0.2rem;
 				a{
-					border: 0.1rem solid $light !important;
+					border: 0.1rem solid $blueFill !important;
 				}
 			}
 		}
-		.navbar-brand.logo-y a{
-			&:focus{
-			border: 0.1rem solid $light !important;	
-			}
-		}
 		button.close,a.close{
+		&:focus{	
 		opacity:1 !important
+		}
 		}	
 		vtr-ui-header-warranty{
 			.dropdown-content{
@@ -2001,6 +2018,7 @@ body.focus-enable{
 			outline-color:$menu_hover !important;
 		}
 		}
+	}
 	}
 	}
 }

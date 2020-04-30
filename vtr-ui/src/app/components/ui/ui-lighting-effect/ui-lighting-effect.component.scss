@@ -247,9 +247,9 @@
   body.focus-enable{
 	.is-gaming {
       .vtr-page-lightingcustomize,.vtr-page-gaming-macrokey {
-      .dropdown-toggle,.gaming-dropdown-menu li{
+      .dropdown-toggle{
         &:focus{
-          @include outline-white;
+          @include outline-blue-gaming;
         }
       }
     }

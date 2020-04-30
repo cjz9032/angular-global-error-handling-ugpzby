@@ -12,6 +12,7 @@
 	<div class="row">
 		<div class="d-flex rgb-header">
 			<h3 class="content-title">{{'gaming.lightingProfile.colourwheel.text7.title' | translate}}</h3>
+			<div class="btn-container">
 			<button vtrMetrics [metricsItem]="'lighting_color_apply'" metricsEvent="featureClick" class="btn enable-button"
 				[ngClass]="{'disable-button': btnStatus !== 'apply'}" (click)="onApplyColorEffect(backColor)"
 				id="{{ automationId+'_color_'}}{{ ( btnStatus == 'apply' )? ('gaming.lightingProfile.colourwheel.text2.title' | translate) : ('gaming.lightingProfile.colourwheel.text3.title' | translate)}}"
@@ -24,6 +25,7 @@
 				</span>
 				<!-- <vtr-spinner *ngIf="btnStatus === 'loading'"></vtr-spinner> -->
 			</button>
+			</div>
 		</div>
 	</div>
 

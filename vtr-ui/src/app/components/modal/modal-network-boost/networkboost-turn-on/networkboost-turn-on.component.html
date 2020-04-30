@@ -25,14 +25,18 @@
         <hr>
         <div class="row">
           <div class="action-container">
+            <div>
             <button class="btn enable-button"
               (click)="turnOnAction(true)" id="nbTurnOnModal_turnon_button"
               tabindex="1" attr.aria-label="{{'gaming.narrator.networkBoost.turnOnModal.turnOnButton' | translate}}"
-			  (keyup.enter)="turnOnAction(true)">{{ 'gaming.autoClose.modalTurnAutoClose.btnConfirm' | translate}}</button>
+			        (keyup.enter)="turnOnAction(true)">{{ 'gaming.autoClose.modalTurnAutoClose.btnConfirm' | translate}}</button>
+            </div>
+            <div>
             <a (click)="notNowAction(false)"
               class="cancel-link active"
               tabindex="1" attr.aria-label="{{'gaming.narrator.networkBoost.turnOnModal.notOnButton' | translate}}" role="button" id="nbTurnOnModal_notnow"
-			   (keyup.enter)="notNowAction(false)" (keydown)="keydownFn($event)">{{ 'gaming.autoClose.modalTurnAutoClose.btnCancel' | translate}}</a>
+			        (keyup.enter)="notNowAction(false)" (keydown)="keydownFn($event)">{{ 'gaming.autoClose.modalTurnAutoClose.btnCancel' | translate}}</a>
+            </div>
           </div>
         </div>
       </div>

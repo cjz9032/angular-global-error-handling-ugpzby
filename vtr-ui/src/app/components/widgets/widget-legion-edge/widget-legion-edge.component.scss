@@ -285,7 +285,7 @@
 	.is-gaming {
 		.vtr-widget-legion-edge{
 			&:focus{
-				@include outline-white;
+				@include outline-blue-gaming;
 			}
 		}
 	}
