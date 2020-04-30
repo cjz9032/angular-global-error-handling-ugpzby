@@ -319,7 +319,7 @@ describe('ModalGamingThermalMode2Component', () => {
             component.unRegisterThermalModeChangeEvent();
             expect(shellService.unRegisterEvent).toHaveBeenCalledTimes(1);
         });
-        it('ngOnDestory', () => {
+        it('ngOnDestroy', () => {
             spyOn(component, 'unRegisterThermalModeChangeEvent').and.callThrough();
             expect(component.unRegisterThermalModeChangeEvent).toHaveBeenCalledTimes(0);
             component.ngOnDestroy();
@@ -366,13 +366,15 @@ describe('ModalGamingThermalMode2Component', () => {
             component.gamingCapabilities.gpuOCFeature = true;
             expect(component.OCsupportted).toBe(3, 'OCsupported should be 3');
             performanceOCSetting = false;
+            component.isPerformancOCSetted = false;
             component.getPerformanceOCSetting();
             tick();
             expect(component.OCSettings).toBe(false, 'component.OCSettings should be false');
             expect(cpuOCStatusCache).toBe(3, 'cpuOCStatusCache should be 3(false)');
             expect(gpuOCStatusCache).toBe(3, 'gpuOCStatusCache should be 3(false)');
-
+            tick();
             performanceOCSetting = true;
+            component.isPerformancOCSetted = false;
             component.getPerformanceOCSetting();
             tick();
             expect(component.OCSettings).toBe(true, 'component.OCSettings should be true');
