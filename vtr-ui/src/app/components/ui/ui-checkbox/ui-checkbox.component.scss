@@ -20,6 +20,11 @@
 		font-size: $base;
 
 		/* main styling */
+		.custom-control-input {
+			width: $check-box-size + 1;
+			height: $check-box-size + 0.5;
+		}
+
 		.custom-control-label {
 			padding-left: 1rem;
 			padding-top: 0.15rem;
