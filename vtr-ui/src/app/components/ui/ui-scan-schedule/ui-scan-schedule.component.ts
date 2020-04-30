@@ -162,6 +162,7 @@ export class UiScanScheduleComponent implements OnInit {
 	selectedFrequencyCopy: any;
 	public scanData: any = {};
 	scheduleScanFrequency:any;
+	nextScheduleScanDate:any;
 	ngOnInit() {
 		this.isSubscribed = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartPerformanceSubscribed);
 		this.currentDate = new Date();
@@ -290,6 +291,14 @@ export class UiScanScheduleComponent implements OnInit {
 	cancelChangedScanSchedule() {
 		this.scheduleTab = '';
 		this.isChangeSchedule = false;
+		//console.log("cancelChangedScanSchedule-----------------------------------fired");
+		this.getNextScanScheduleTime(this.nextScheduleScanDate);
+		// if (this.isSubscribed) {
+		// 	this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix');
+		// }
+		// else {
+		// 	this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScan');
+		// }
 	}
 
 	saveChangeScanTime() {
@@ -497,6 +506,7 @@ export class UiScanScheduleComponent implements OnInit {
 			const res: any = await this.smartPerformanceService.getNextScanRunTime(payload);
 			if (res!=undefined) {
 				this.getNextScanScheduleTime(res.nextruntime);
+				this.nextScheduleScanDate = res.nextruntime;
 			}
 			this.logger.info('ui-smart-performance.getNextScanRunTime.then', JSON.stringify(res));
 
@@ -522,7 +532,9 @@ export class UiScanScheduleComponent implements OnInit {
 					if(this.selectedFrequency==="Once a month")
 					{
 						this.selectedDay = moment(momentObj).format('D');
-					//	this.dateValue=this.selectedDay;
+						this.dateValue= parseInt(moment(momentObj).format('D'))-1;
+						this.selectedNumber=parseInt(moment(momentObj).format('D'));
+						//console.log('scheduleScan Once a month ',JSON.stringify(moment(momentObj).format('D')));
 					}
 					else
 					{
@@ -531,6 +543,15 @@ export class UiScanScheduleComponent implements OnInit {
 					this.scanTime.hour=  moment(momentObj).format('h');
 					this.scanTime.min= moment(momentObj).format('mm');
 					this.scanTime.amPm=moment(momentObj).format('A');
+					this.copyScanTime.hour = this.hours[parseInt(moment(momentObj).format('h'))-1];
+					this.copyScanTime.hourId = parseInt(moment(momentObj).format('h'))-1;
+					const minIndex = this.mins.indexOf(moment(momentObj).format('mm').toString());
+					this.copyScanTime.min =this.mins[minIndex];
+					this.copyScanTime.minId = parseInt(minIndex);
+					const amPmIndex = this.amPm.indexOf(moment(momentObj).format('A').toString());
+					this.copyScanTime.amPm = this.amPm[amPmIndex];
+					this.copyScanTime.amPmId =  parseInt(amPmIndex);
+					//console.log(console.log('scheduleScan tthis.copyScanTime.min ',amPmIndex);
 			//this.nextScheduleScan = (new Date(momentString).getMonth() + 1) + "/" + new Date(momentString).getDate() + " at " + now;
 
 		} catch (err) {
