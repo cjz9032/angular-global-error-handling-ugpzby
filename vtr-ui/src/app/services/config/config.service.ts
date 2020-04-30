@@ -162,6 +162,10 @@ export class ConfigService {
 						if (!('availability' in m) || m.availability === true) {
 							result = true;
 						}
+						// console.log(m.id, 'id', m.beta);
+						// if(m.id === 'smart-performance'){
+						// 	m.hide = true;
+						// }
 					}
 					if (m.subitems) {
 						findBetaAvailability(m.subitems);
@@ -481,15 +485,27 @@ export class ConfigService {
 	}
 
 	filterByBeta(menu: Array<any>, isBeta: boolean): Promise<Array<any>> {
+		this.showSmartPerformance(menu, isBeta);
 		return this.canShowSearch().then((result) => {
 			this.initializeAppSearchItem(menu, result);
 			const item = menu.find(i => i.id === 'app-search');
 			if (item) item.hide = !isBeta || !result;
-
 			return menu;
 		});
 	}
-
+	showSmartPerformance(menu, isBeta) {
+		menu.forEach(i => {
+			if (i.subitems) {
+				if (i.subitems.length && i.subitems.length > 0) {
+					i.subitems.forEach(el => {
+						if (el.id === 'smart-performance') {
+							el.hide = !isBeta;
+						}
+					})
+				}
+			}
+		})
+	}
 	showSystemUpdates(): void {
 		if (!Array.isArray(this.menu)) { return; }
 
