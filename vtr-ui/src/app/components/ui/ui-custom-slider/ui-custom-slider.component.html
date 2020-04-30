@@ -7,6 +7,7 @@
 			</span>
 		</div> -->
 		<output class="bubble"
+			*ngIf="showTip"
 			#sliderBubble
 			[style.visibility]="isTooltipHidden?'hidden':'visible'"
 			[for]="sliderId">
