@@ -199,8 +199,7 @@
                     "description": "A Túlpörgetés helytelen beállítása visszafordíthatatlan hardverkárosodást okozhat.",
                     "proceed": "FOLYTATÁS",
                     "legionAccessory": "Install Legion Accessory Central?",
-                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
-                    "install": "INSTALL"
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc."
                 },
                 "popup": {
                     "closeBtn": "close"
@@ -1213,7 +1212,8 @@
                     "title": "Egyéb beállítások",
                     "vantageToolbar": {
                         "title": "Lenovo Vantage eszköztár",
-                        "description": "A Vantage Eszköztár rögzítése a Windows tálcájára; így könnyen és részletesebben tekintheti át az akkumulátor részleteit, és egyszerűbben férhet hozzá a gyorsbeállításokhoz."
+                        "description": "A Vantage Eszköztár rögzítése a Windows tálcájára; így könnyen és részletesebben tekintheti át az akkumulátor részleteit, és egyszerűbben férhet hozzá a gyorsbeállításokhoz.",
+                        "hint": "The options in the image depend on the capacity of the machine. For example, – some machines support backlight settings, and some may not."
                     }
                 },
                 "batterySettings": {
@@ -2734,20 +2734,20 @@
         "question1": {
             "title": "Fájlok biztonsági mentése és visszaállítása",
             "para1": "Mindig érdemes biztonsági mentést készíteni. Tárolja a fájljai másolatát egy másik meghajtón arra az esetre, ha valami történne az eredetikkel.",
-			"heading1": "A biztonsági mentés beállítása",
-			"para2": "Kattintson a Start gombra, és válassza a Gépház > Frissítés és biztonság > Biztonsági mentés > Meghajtó felvétele lehetőséget, majd válasszon ki egy külső meghajtót vagy hálózati helyet a biztonsági mentések számára.",
-			"para3": "Kész is van. Minden órában biztonsági másolatot készítünk a felhasználói mappája (C:\\Users\\az Ön felhasználóneve) teljes tartalmáról. Ha módosítani szeretné, hogy melyik fájlokról készüljön biztonsági másolat, vagy meg szeretné változtatni a mentések nyissa meg a További lehetőségek menüpontot.",
-			"heading2": "A fájlok visszaállítása",
-			"para4": "Ha hiányzik egy fontos fájl vagy mappa, itt láthatja, hogyan lehet visszaállítani:",
-			"para5": {
-				"div1": "1. Írja be a Fájlok visszaállítása kifejezést a tálcán található keresőmezőbe, majd válassza a Fájlok visszaállítása a Fájlelőzmények szolgáltatással lehetőséget.",
-				"div2": "2. Keresse meg a hiányzó fájlt, majd a nyílbillentyűk segítségével tekintse meg a verzióit.",
-				"div3": "3. Ha megtalálta a kívánt verziót, válassza a Visszaállítás lehetőséget a fájl eredeti helyre mentéséhez. Ha másik helyre szeretné menteni, tartsa nyomva a Visszaállítás lehetőséget (vagy kattintson rá a jobb gombbal), és válassza a Visszaállítás máshova parancsot, majd válassza ki az új helyet."
-			}
+            "heading1": "A biztonsági mentés beállítása",
+            "para2": "Kattintson a Start gombra, és válassza a Gépház > Frissítés és biztonság > Biztonsági mentés > Meghajtó felvétele lehetőséget, majd válasszon ki egy külső meghajtót vagy hálózati helyet a biztonsági mentések számára.",
+            "para3": "Kész is van. Minden órában biztonsági másolatot készítünk a felhasználói mappája (C:\\Users\\az Ön felhasználóneve) teljes tartalmáról. Ha módosítani szeretné, hogy melyik fájlokról készüljön biztonsági másolat, vagy meg szeretné változtatni a mentések nyissa meg a További lehetőségek menüpontot.",
+            "heading2": "A fájlok visszaállítása",
+            "para4": "Ha hiányzik egy fontos fájl vagy mappa, itt láthatja, hogyan lehet visszaállítani:",
+            "para5": {
+                "div1": "1. Írja be a Fájlok visszaállítása kifejezést a tálcán található keresőmezőbe, majd válassza a Fájlok visszaállítása a Fájlelőzmények szolgáltatással lehetőséget.",
+                "div2": "2. Keresse meg a hiányzó fájlt, majd a nyílbillentyűk segítségével tekintse meg a verzióit.",
+                "div3": "3. Ha megtalálta a kívánt verziót, válassza a Visszaállítás lehetőséget a fájl eredeti helyre mentéséhez. Ha másik helyre szeretné menteni, tartsa nyomva a Visszaállítás lehetőséget (vagy kattintson rá a jobb gombbal), és válassza a Visszaállítás máshova parancsot, majd válassza ki az új helyet."
+            }
         },
         "question2": {
-			"title": "A Windows 10 visszaállítása alapállapotba",
-			"para1": "Ha a Windows 10 rendszert futtató számítógépen problémák merültek fel, vagy szeretné eladni a gépet, állítsa vissza alapállapotba. Az alapállapotba való visszaállításkor megadhatja, hogy megőrzi vagy eltávolítja a fájlokat. Ilyenkor a rendszer eltávolítja az összes alkalmazást és beállítást, és telepít egy új Windows-példányt. Ezzel számos problémát megoldhat, például a gyenge teljesítményt.",
+            "title": "A Windows 10 visszaállítása alapállapotba",
+            "para1": "Ha a Windows 10 rendszert futtató számítógépen problémák merültek fel, vagy szeretné eladni a gépet, állítsa vissza alapállapotba. Az alapállapotba való visszaállításkor megadhatja, hogy megőrzi vagy eltávolítja a fájlokat. Ilyenkor a rendszer eltávolítja az összes alkalmazást és beállítást, és telepít egy új Windows-példányt. Ezzel számos problémát megoldhat, például a gyenge teljesítményt.",
             "heading1": "1. Nyissa meg a Beállítások alkalmazást.",
             "para2": "Nyomja meg a Start menü gombját, amely a képernyő bal alsó sarkában található, majd válassza ki a Beállítások fogaskerék ikonját.",
             "heading2": "2. A kategóriák listájából válassza ki a Frissítés és biztonság lehetőséget.",
@@ -2757,10 +2757,10 @@
             "heading5": "5. Válassza ki, hogy meg kívánja-e őrizni a fájljait.",
             "para4": "Az alapállapotba állítást követően bejelentkezhet a saját Microsoft-fiókjába. Az e fiókkal vásárolt Windows Áruházbeli alkalmazások újratelepülnek.",
             "para5": {
-				"li1": "Ha a „Fájlok megtartása” lehetőséget választja, a rendszer eltávolítja az alkalmazásokat és a beállításokat, de az Ön személyes fájljai megmaradnak.",
-				"li2": "Ha a „Minden elem eltávolítása” lehetőséget választja, a rendszer az alkalmazásokat, a beállításokat és a személyes fájlokat egyaránt törli. Ha nincs biztonsági mentése a fájlokról, érdemes lehet a Mégse lehetőséget választani, biztonsági mentést készíteni, majd újraindítani a folyamatot."
-			},
-			"heading6": "6. Ezenfelül további beállításokat is megadhat.",
+                "li1": "Ha a „Fájlok megtartása” lehetőséget választja, a rendszer eltávolítja az alkalmazásokat és a beállításokat, de az Ön személyes fájljai megmaradnak.",
+                "li2": "Ha a „Minden elem eltávolítása” lehetőséget választja, a rendszer az alkalmazásokat, a beállításokat és a személyes fájlokat egyaránt törli. Ha nincs biztonsági mentése a fájlokról, érdemes lehet a Mégse lehetőséget választani, biztonsági mentést készíteni, majd újraindítani a folyamatot."
+            },
+            "heading6": "6. Ezenfelül további beállításokat is megadhat.",
             "para6": "Ez a lehetőség csak akkor jelenik meg, ha az előző lépésben a „Minden elem eltávolítása” lehetőséget választotta.",
             "heading7": "7. Olvassa el az áttekintést, és nyomja meg az Alaphelyzetbe állítás gombot, ha készen áll a folytatásra.",
             "para7": "A Windows felkészül az eszköz alaphelyzetbe állítására. Várja meg, hogy megjelenjen a kék képernyő.",
@@ -2768,7 +2768,7 @@
             "para8": "A Windows újraindul, és megkezdi az alaphelyzetbe állítást. Az alapállapot visszaállítása során a számítógép többször újraindul.",
             "heading9": "Közösségi kérdések és válaszok",
             "communityAnswer": "Közösségi válasz",
-			"q1": "Ha a „Minden elem eltávolítása” lehetőséget választom, azzal a számítógépbe szerelt/számítógéphez csatlakoztatott összes meghajtóról letörlök mindent, vagy csak arról, amelyen a Windows 10 fut?",
+            "q1": "Ha a „Minden elem eltávolítása” lehetőséget választom, azzal a számítógépbe szerelt/számítógéphez csatlakoztatott összes meghajtóról letörlök mindent, vagy csak arról, amelyen a Windows 10 fut?",
             "a1": "Ezzel csak a Windows 10 operációs rendszer meghajtójának (általában a C: meghajtó) tartalmát törli. A számítógépbe szerelt/számítógéphez csatlakoztatott többi meghajtót a művelet nem érinti.",
             "q2": "Hogyan lehet elvégezni a műveletet, ha a képernyőm nem működik?",
             "a2": "Sajnos sehogy. Be kell szereltetnie egy új képernyőt.",
@@ -2780,8 +2780,8 @@
             "para10": "A Windows 10 visszaállítása alapállapotba – WikiHow."
         },
         "question3": {
-			"title": "A számítógép CPU-típusának megtekintése",
-			"heading1": "Tünet",
+            "title": "A számítógép CPU-típusának megtekintése",
+            "heading1": "Tünet",
             "para1": "A 32 bites és 64 bites kifejezések arra utalnak, hogy a számítógép processzora (más néven CPU) hogyan kezeli az információt. A Windows 64 bites verziója nagy mennyiségű véletlen hozzáférésű memóriát (RAM) tud kezelni a 32 bites rendszereknél hatékonyabban.",
             "heading2": "Érintett márkák",
             "para2": "A fenti tünet az alábbi rendszerekhez kapcsolódik (de nem csak azokon fordul elő):",
@@ -2790,10 +2790,10 @@
             "para4": "Windows 7, 8 és 10",
             "heading4": "Megoldás",
             "para5": "Windows 7 vagy Vista",
-			"para6": "Nyissa meg a Rendszer menüt a <strong>Start gombra</strong>A <strong>Start gomb</strong> képe, majd a jobb gombbal a Számítógép elemre kattintva, végül a Tulajdonságok lehetőséget választva.",
+            "para6": "Nyissa meg a Rendszer menüt a <strong>Start gombra</strong>A <strong>Start gomb</strong> képe, majd a jobb gombbal a Számítógép elemre kattintva, végül a Tulajdonságok lehetőséget választva.",
             "para7": "A Rendszer területen megtekintheti a rendszer típusát.",
             "para8": "Windows 8 és Windows 10",
-			"para9": "<strong>1. módszer:</strong> Tekintse meg a Vezérlőpult Rendszer ablakát",
+            "para9": "<strong>1. módszer:</strong> Tekintse meg a Vezérlőpult Rendszer ablakát",
             "para10": "Pöccintsen befelé a képernyő jobb széléről, és koppintson a <strong>Keresés</strong> lehetőségre. Vagy ha egeret használ, mutasson a képernyő jobb alsó sarkára, majd kattintson a <strong>Keresés</strong> gombra.",
             "para11": "Írja be a <strong>rendszer</strong> szót a keresőmezőbe, majd kattintson vagy koppintson a <strong>Beállítások</strong> lehetőségre.",
             "para12": "Kattintson vagy koppintson a <strong>Rendszer</strong> lehetőségre.",
@@ -2805,8 +2805,8 @@
             "para18": "Ha <strong>64-bites </strong>Windows 8-verziót futtat<strong>, az </strong>x64 alapú számítógép felirat jelenik meg a <strong>Rendszer típusa</strong> mezőben az elemfejléc alatt. Ha <strong>32-bites</strong> Windows 8-verziót futtat, az X86 alapú PC felirat jelenik meg a <strong>Rendszer típusa </strong>mezőben az elemfejléc alatt.  "
         },
         "question4": {
-			"title": "A gép akkumulátorhasználatának ellenőrzése",
-			"heading1": "Tünet",
+            "title": "A gép akkumulátorhasználatának ellenőrzése",
+            "heading1": "Tünet",
             "para1": "A Windows 10 rendszer része az új <strong>Akkumulátorhasználat</strong> képernyő, amelyen látható, hogy mi meríti a laptop akkumulátorát. Ez azt jelenti, hogy pontosan megmutatja, hogy melyik alkalmazások – asztali vagy univerzális Windows 10-alkalmazások – használnak túl sok energiát.",
             "heading2": "Érintett márkák",
             "para2": "Lenovo laptopok, asztali számítógépek",
@@ -2828,8 +2828,8 @@
             "para13": "8. Görgessen lejjebb, és megjelenik az alkalmazások listája – ez a funkció leghasznosabb része. Megjelenít egy listát azokról az alkalmazásokról, amelyek az adott időszakban használják az akkumulátort, és megmutatja, hogy az egyes alkalmazások százalékosan mekkora részét használják az akkumulátorok energiájának."
         },
         "question5": {
-			"title": "A számítógép táblagépként történő használata",
-			"para1": "A Táblagép mód intuitívabbá és könnyebben használhatóvá teszi a Windows rendszert érintőképernyős eszközökön.",
+            "title": "A számítógép táblagépként történő használata",
+            "para1": "A Táblagép mód intuitívabbá és könnyebben használhatóvá teszi a Windows rendszert érintőképernyős eszközökön.",
             "heading1": "A Táblagép mód használata",
             "para2": "A Táblagép mód bekapcsolásához válassza a <strong>műveletközpontot</strong> a tálcán, majd válassza a <strong>Táblagép mód</strong> lehetőséget.",
             "heading2": "Megjegyzés",
@@ -2845,8 +2845,8 @@
             "para10": "Használja a tálcán található Vissza gombot az alkalmazásokban való visszalépéshez vagy egy korábban használt alkalmazás megnyitásához."
         },
         "question6": {
-			"title": "Ismerje meg Cortanát, a személyi asszisztensét",
-			"heading1": "Ki az a Cortana?",
+            "title": "Ismerje meg Cortanát, a személyi asszisztensét",
+            "heading1": "Ki az a Cortana?",
             "para1": "A Cortana a digitális asszisztens. Segít elintézni a teendőit.",
             "para2": "Minél többet használja Cortanát, annál személyre szabottabb élményben lesz része.",
             "para3": "A kezdéshez írjon be egy kérdést a keresőmezőbe, vagy válassza ki a mikrofont, és beszéljen Cortanához. (A gépelési minden számítógépen működik, a beszédhez azonban mikrofonra van szükség.)",
@@ -2854,7 +2854,7 @@
             "para5": "1. Kezdőlap 2. Jegyzetfüzet 3. Beállítások 4. Visszajelzés",
             "para6": "Íme néhány dolog, amit Cortana el tud végezni:",
             "unorderedList1": {
-				"listItem1": "Emlékeztetheti dolgokra az időpont, a helyek és az emberek alapján.",
+                "listItem1": "Emlékeztetheti dolgokra az időpont, a helyek és az emberek alapján.",
                 "listItem2": "Nyomon követheti a csomagokat, a kedvenc csapatait, az érdeklődési köreit és a repülőjáratokat.",
                 "listItem3": "E-maileket és üzeneteket küldhet.",
                 "listItem4": "Kezelheti a naptárat és tájékoztathatja Önt.",
@@ -2863,7 +2863,7 @@
                 "listItem7": "Adatokat, fájlokat, helyeket és információkat kereshet.",
                 "listItem8": "Megnyithatja a rendszeren lévő bármely alkalmazást."
             },
-			"heading2": "Próbálja ki: állítson be egy emlékeztetőt",
+            "heading2": "Próbálja ki: állítson be egy emlékeztetőt",
             "para7": "A Cortana egyik képessége, hogy emlékeztetni tudja Önt a dolgokra. Idő-, hely- vagy akár személyalapú emlékeztetők is beállíthatók.",
             "para8": "Például írj be vagy diktálja le az „Emlékeztess rá, hogy gratuláljak Andreának, amikor legközelebb telefonál” mondatot.",
             "para9": "Az emlékeztető meg fog jelenni, amikor Andrea legközelebb telefonál.",

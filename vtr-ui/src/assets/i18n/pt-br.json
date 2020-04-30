@@ -199,8 +199,7 @@
                     "description": "Configurações inadequadas de Overclocking podem causar danos irreversíveis ao hardware.",
                     "proceed": "CONTINUAR",
                     "legionAccessory": "Install Legion Accessory Central?",
-                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
-                    "install": "INSTALL"
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc."
                 },
                 "popup": {
                     "closeBtn": "close"
@@ -1213,7 +1212,8 @@
                     "title": "Outras configurações",
                     "vantageToolbar": {
                         "title": "Barra de ferramentas do Lenovo Vantage",
-                        "description": "Fixe a Barra de Ferramentas do Vantage à barra de tarefas do Windows para obter facilmente mais detalhes da bateria e acessar suas configurações rápidas."
+                        "description": "Fixe a Barra de Ferramentas do Vantage à barra de tarefas do Windows para obter facilmente mais detalhes da bateria e acessar suas configurações rápidas.",
+                        "hint": "The options in the image depend on the capacity of the machine. For example, – some machines support backlight settings, and some may not."
                     }
                 },
                 "batterySettings": {
@@ -2734,20 +2734,20 @@
         "question1": {
             "title": "Fazer backup e restaurar arquivos",
             "para1": "É sempre bom ter um backup. Mantenha cópias de seus arquivos em outra unidade, caso algo aconteça com os originais.",
-			"heading1": "Configurar o backup",
-			"para2": "Selecione o botão Iniciar, selecione Configurações > Atualização e segurança > Backup > Adicionar uma unidade e escolha uma unidade externa ou um local de rede para seus backups.",
-			"para3": "Tudo pronto. A cada hora, faremos backup de tudo na sua pasta de usuário (C:\\Users\\seu nome de usuário). Para alterar quais arquivos são armazenados em backup ou com que frequência os backups ocorrem, vá para Mais opções.",
-			"heading2": "Restaurar seus arquivos",
-			"para4": "Se você está sentindo falta de um arquivo ou uma pasta importante, veja como recuperá-lo:",
-			"para5": {
-				"div1": "1. Digite Restaurar arquivos na caixa de pesquisa na barra de tarefas e selecione  Restaurar seus arquivos com Histórico de Arquivos.",
-				"div2": "2. Procure o arquivo que você precisa e use as setas para ver todas as suas versões.",
-				"div3": "3. Quando você encontrar a versão desejada, selecione Restaurar para salvá-la em seu local original. Para salvá-la em outro lugar, pressione e segure (ou clique com o botão direito do mouse) Restaurar, selecione Restaurar para e, em seguida, escolha um novo local."
-			}
+            "heading1": "Configurar o backup",
+            "para2": "Selecione o botão Iniciar, selecione Configurações > Atualização e segurança > Backup > Adicionar uma unidade e escolha uma unidade externa ou um local de rede para seus backups.",
+            "para3": "Tudo pronto. A cada hora, faremos backup de tudo na sua pasta de usuário (C:\\Users\\seu nome de usuário). Para alterar quais arquivos são armazenados em backup ou com que frequência os backups ocorrem, vá para Mais opções.",
+            "heading2": "Restaurar seus arquivos",
+            "para4": "Se você está sentindo falta de um arquivo ou uma pasta importante, veja como recuperá-lo:",
+            "para5": {
+                "div1": "1. Digite Restaurar arquivos na caixa de pesquisa na barra de tarefas e selecione  Restaurar seus arquivos com Histórico de Arquivos.",
+                "div2": "2. Procure o arquivo que você precisa e use as setas para ver todas as suas versões.",
+                "div3": "3. Quando você encontrar a versão desejada, selecione Restaurar para salvá-la em seu local original. Para salvá-la em outro lugar, pressione e segure (ou clique com o botão direito do mouse) Restaurar, selecione Restaurar para e, em seguida, escolha um novo local."
+            }
         },
         "question2": {
-			"title": "Como restaurar o Windows 10",
-			"para1": "Se o seu PC com Windows 10 estiver com problemas ou você estiver vendendo-o, deverá restaurá-lo. Executar uma restauração permite optar por manter ou remover seus arquivos, remove todos os aplicativos e configurações e instala uma nova cópia do Windows. Isso também pode corrigir muitos problemas, como desempenho lento.",
+            "title": "Como restaurar o Windows 10",
+            "para1": "Se o seu PC com Windows 10 estiver com problemas ou você estiver vendendo-o, deverá restaurá-lo. Executar uma restauração permite optar por manter ou remover seus arquivos, remove todos os aplicativos e configurações e instala uma nova cópia do Windows. Isso também pode corrigir muitos problemas, como desempenho lento.",
             "heading1": "1. Abra o aplicativo Configurações",
             "para2": "Pressione o botão Iniciar imagem, localizado na parte inferior esquerda da tela, e escolha a imagem de ingrenagem Configurações.",
             "heading2": "2. Selecione Atualização e segurança na lista de categorias",
@@ -2757,10 +2757,10 @@
             "heading5": "5. Escolha se deseja manter seus arquivos ou não",
             "para4": "Após a restauração, você pode fazer login na sua conta da Microsoft. Todos os aplicativos da Windows Store comprados nesta conta serão reinstalados.",
             "para5": {
-				"li1": "Manter meus arquivos remove seus aplicativos e configurações, mas mantém todos os seus arquivos pessoais.",
-				"li2": "Remover tudo apaga seus aplicativos, configurações e arquivos pessoais. Se você não tiver uma cópia de backup dos arquivos, convém pressionar Cancelar, fazer backup deles e iniciar esse processo novamente."
-			},
-			"heading6": "6. Você pode escolher diferentes configurações adicionais",
+                "li1": "Manter meus arquivos remove seus aplicativos e configurações, mas mantém todos os seus arquivos pessoais.",
+                "li2": "Remover tudo apaga seus aplicativos, configurações e arquivos pessoais. Se você não tiver uma cópia de backup dos arquivos, convém pressionar Cancelar, fazer backup deles e iniciar esse processo novamente."
+            },
+            "heading6": "6. Você pode escolher diferentes configurações adicionais",
             "para6": "Isso só será exibido se você tiver selecionado \"Remover tudo\" na etapa anterior.",
             "heading7": "7. Leia a visão geral e pressione Restaurar quando estiver pronto para prosseguir.",
             "para7": "O Windows vai se preparar para restaurar o dispositivo. Basta esperar até ser levado para uma tela azul.",
@@ -2768,7 +2768,7 @@
             "para8": "O Windows será reiniciado e começará a restauração. Seu PC poderá ser reinicializado várias vezes durante a restauração.",
             "heading9": "Perguntas e respostas da comunidade",
             "communityAnswer": "Resposta da comunidade",
-			"q1": "Se eu optar por remover tudo, todas as unidades em/conectadas ao meu computador serão apagadas ou apenas aquela em que estou executando o Windows 10?",
+            "q1": "Se eu optar por remover tudo, todas as unidades em/conectadas ao meu computador serão apagadas ou apenas aquela em que estou executando o Windows 10?",
             "a1": "Apenas a unidade do sistema operacional Windows 10 será apagada (geralmente a unidade C:). Outras unidades em/conectadas ao seu computador não serão afetadas.",
             "q2": "Como posso fazer isso se minha tela estiver quebrada?",
             "a2": "Não é possível, infelizmente. Você precisará obter uma nova tela.",
@@ -2780,8 +2780,8 @@
             "para10": "Como restaurar o Windows 10 – WikiHow."
         },
         "question3": {
-			"title": "Como saber qual é a CPU do computador",
-			"heading1": "Sintoma",
+            "title": "Como saber qual é a CPU do computador",
+            "heading1": "Sintoma",
             "para1": "Os termos 32 bits e 64 bits referem-se à maneira como o processador de um computador (também chamado de CPU) lida com informações. A versão de 64 bits do Windows manipula grandes quantidades de memória de acesso aleatório (RAM) de forma mais eficaz do que um sistema de 32 bits.",
             "heading2": "Marcas afetadas",
             "para2": "O sintoma acima está associado, mas não limitado, aos seguintes sistemas:",
@@ -2790,10 +2790,10 @@
             "para4": "Windows 7, 8 e 10",
             "heading4": "Solução",
             "para5": "Windows 7 ou Vista",
-			"para6": "Abra o sistema clicando no <strong>Botão Iniciar </strong>Imagem do <strong>Botão Iniciar,</strong> clique com o botão direito do mouse em Computador e clique em Propriedades.",
+            "para6": "Abra o sistema clicando no <strong>Botão Iniciar </strong>Imagem do <strong>Botão Iniciar,</strong> clique com o botão direito do mouse em Computador e clique em Propriedades.",
             "para7": "Em Sistema, você pode visualizar o tipo de sistema.",
             "para8": "Windows 8 e Windows 10",
-			"para9": "<strong>Método 1:</strong> exibir a janela do sistema no Painel de Controle",
+            "para9": "<strong>Método 1:</strong> exibir a janela do sistema no Painel de Controle",
             "para10": "Deslize a partir da borda direita da tela e toque em <strong>Pesquisar</strong>. Ou, se você estiver usando um mouse, aponte para o canto inferior direito da tela e clique em <strong>Pesquisar.</strong>",
             "para11": "Digite <strong>sistema</strong> na caixa de pesquisa e, em seguida, toque ou clique em <strong>Configurações.</strong>",
             "para12": "Toque ou clique em <strong>Sistema</strong>.",
@@ -2805,8 +2805,8 @@
             "para18": "Se você estiver executando uma versão de <strong>64 bits </strong>versão do Windows 8<strong>, </strong>PC baseado em x64 será exibido no campo <strong>Tipo de sistema</strong> sob o cabeçalho Item. Se você estiver executando uma versão de <strong>32 bits</strong> versão do Windows 8, PC baseado em x86 será exibido no campo <strong>Tipo de sistema</strong> sob o cabeçalho Item.  "
         },
         "question4": {
-			"title": "Verificar o uso da bateria do computador",
-			"heading1": "Sintoma",
+            "title": "Verificar o uso da bateria do computador",
+            "heading1": "Sintoma",
             "para1": "O Windows 10 inclui uma nova tela \"<strong>Uso da bateria\"</strong> que mostra o que está drenando a energia do seu laptop. Isso significa que você saberá exatamente quais aplicativos – tanto aplicativos da área de trabalho quanto \"universais\" do Windows 10 – estão usando muita energia.",
             "heading2": "Marcas afetadas",
             "para2": "Laptops, desktops Lenovo",
@@ -2828,8 +2828,8 @@
             "para13": "8. Role a tela mais para baixo e você verá uma lista de aplicativos. Essa é considerada a seção mais útil deste recurso. Ela exibirá uma lista de aplicativos que usaram a energia da bateria nesse período e mostrará a porcentagem da energia de bateria usada por cada aplicativo."
         },
         "question5": {
-			"title": "Usar o PC como um tablet",
-			"para1": "O modo Tablet torna o Windows mais intuitivo e fácil de usar quando você tem um dispositivo touchscreen.",
+            "title": "Usar o PC como um tablet",
+            "para1": "O modo Tablet torna o Windows mais intuitivo e fácil de usar quando você tem um dispositivo touchscreen.",
             "heading1": "Usar o modo tablet",
             "para2": "Para ativar o modo tablet, selecione <strong>Central de ações</strong> na barra de tarefas e selecione <strong>Modo tablet</strong>.",
             "heading2": "Nota",
@@ -2845,8 +2845,8 @@
             "para10": "Usar o botão Voltar na barra de tarefas para voltar em um aplicativo ou abrir um aplicativo que você estava usando antes."
         },
         "question6": {
-			"title": "Conheça a Cortana, sua assistente pessoal",
-			"heading1": "O que é a Cortana?",
+            "title": "Conheça a Cortana, sua assistente pessoal",
+            "heading1": "O que é a Cortana?",
             "para1": "A Cortana é o seu agente digital. Ela vai ajudar você a executar as tarefas.",
             "para2": "Quanto mais você usar a Cortana, mais personalizada será a sua experiência.",
             "para3": "Para começar, digite uma pergunta na caixa de pesquisa ou selecione o microfone e fale com Cortana. (A digitação funciona para todos os tipos de PCs, mas você precisa de um microfone para falar.)",
@@ -2854,7 +2854,7 @@
             "para5": "1. Início 2. Notebook 3. Configurações 4. Feedback",
             "para6": "Aqui estão algumas tarefas que a Cortana pode fazer por você:",
             "unorderedList1": {
-				"listItem1": "Mostrar lembretes com base em tempo, lugares ou pessoas.",
+                "listItem1": "Mostrar lembretes com base em tempo, lugares ou pessoas.",
                 "listItem2": "Acompanhar pacotes, equipes, interesses e voos.",
                 "listItem3": "Enviar e-mails e textos.",
                 "listItem4": "Gerenciar sua agenda e manter você atualizado.",
@@ -2863,7 +2863,7 @@
                 "listItem7": "Encontrar fatos, arquivos, lugares e informações.",
                 "listItem8": "Abrir qualquer aplicativo no seu sistema."
             },
-			"heading2": "Tente isto: defina um lembrete",
+            "heading2": "Tente isto: defina um lembrete",
             "para7": "Uma das coisas que a Cortana pode fazer é mostrar lembretes. Ela pode lembrá-lo de fazer coisas com base no tempo, nos lugares ou até mesmo nas pessoas.",
             "para8": "Por exemplo, digite ou diga: \"Lembre-me de parabenizar Tanya na próxima vez em que ligar\".",
             "para9": "O lembrete aparecerá quando você receber uma ligação de Tanya.",

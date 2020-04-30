@@ -199,8 +199,7 @@
                     "description": "Ukorrekte innstillinger av Overklokking kan føre til uopprettelige maskinvareskader.",
                     "proceed": "FORTSETT",
                     "legionAccessory": "Install Legion Accessory Central?",
-                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
-                    "install": "INSTALL"
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc."
                 },
                 "popup": {
                     "closeBtn": "close"
@@ -1213,7 +1212,8 @@
                     "title": "Andre innstillinger",
                     "vantageToolbar": {
                         "title": "Lenovo Vantage-verktøylinje",
-                        "description": "Fest Vantage-verktøylinjen til Windows-oppgavelinjen for enkelt å få flere batteridetaljer samt tilgang til hurtiginnstillingene."
+                        "description": "Fest Vantage-verktøylinjen til Windows-oppgavelinjen for enkelt å få flere batteridetaljer samt tilgang til hurtiginnstillingene.",
+                        "hint": "The options in the image depend on the capacity of the machine. For example, – some machines support backlight settings, and some may not."
                     }
                 },
                 "batterySettings": {
@@ -2734,20 +2734,20 @@
         "question1": {
             "title": "Sikkerhetskopier og gjenopprett filene dine",
             "para1": "Det er alltid godt å ha en sikkerhets kopi. Behold kopier av filene dine på en annen stasjon hvis det er noe som skjer med originalene.",
-			"heading1": "Konfigurere din sikkerhetskopi",
-			"para2": "Velg på Start -knappen, velg innstillinger > Oppdater & sikkerhets > sikkerhets kopi > Legg til en stasjon, og velg deretter en ekstern stasjon eller en nettverks plassering for sikkerhets kopier.",
-			"para3": "Alt er klart. Hver time sikkerhetskopierer vi alt i bruker mappen din (C:\\Users\\brukernavn). Hvis du vil endre hvilke filer som blir sikkerhets kopi ert eller hvor ofte sikkerhets kopieringenskal skje, kan du gå til flere alternativer.",
-			"heading2": "Restaurer filene dine",
-			"para4": "Hvis du mangler en viktig fil eller mappe, kan du få den tilbake på denne måten:",
-			"para5": {
-				"div1": "1. Skriv Gjenopprett filer i søke boksen på oppgave linjen, og velg Gjenopprett filene med fillogg.",
-				"div2": "2. Se etter filen du trenger, og bruk deretter pilene til å se alle versjonene av den.",
-				"div3": "3. Når du finner den versjonen du ønsker, velger du Gjenopprett for å lagre den på den opprinnelige plasseringen. Hvis du vil lagre den på et annet sted, trykker du på og holder nede (eller høyre klikker ) Gjenopprett, velger Gjenopprett til og velger deretter en ny plassering."
-			}
+            "heading1": "Konfigurere din sikkerhetskopi",
+            "para2": "Velg på Start -knappen, velg innstillinger > Oppdater & sikkerhets > sikkerhets kopi > Legg til en stasjon, og velg deretter en ekstern stasjon eller en nettverks plassering for sikkerhets kopier.",
+            "para3": "Alt er klart. Hver time sikkerhetskopierer vi alt i bruker mappen din (C:\\Users\\brukernavn). Hvis du vil endre hvilke filer som blir sikkerhets kopi ert eller hvor ofte sikkerhets kopieringenskal skje, kan du gå til flere alternativer.",
+            "heading2": "Restaurer filene dine",
+            "para4": "Hvis du mangler en viktig fil eller mappe, kan du få den tilbake på denne måten:",
+            "para5": {
+                "div1": "1. Skriv Gjenopprett filer i søke boksen på oppgave linjen, og velg Gjenopprett filene med fillogg.",
+                "div2": "2. Se etter filen du trenger, og bruk deretter pilene til å se alle versjonene av den.",
+                "div3": "3. Når du finner den versjonen du ønsker, velger du Gjenopprett for å lagre den på den opprinnelige plasseringen. Hvis du vil lagre den på et annet sted, trykker du på og holder nede (eller høyre klikker ) Gjenopprett, velger Gjenopprett til og velger deretter en ny plassering."
+            }
         },
         "question2": {
-			"title": "Slik tilbakestiller du Windows 10",
-			"para1": "Hvis Windows 10-PC-en din har problemer eller du selger den, bør du tilbakestille den. Hvis du utfører en tilbakestilling, kan du velge å beholde eller fjerne filene, fjerne alle apper og innstillinger, og installere en ny kopi av Windows. Dette kan også løse mange problemer, for eksempel treg ytelse.",
+            "title": "Slik tilbakestiller du Windows 10",
+            "para1": "Hvis Windows 10-PC-en din har problemer eller du selger den, bør du tilbakestille den. Hvis du utfører en tilbakestilling, kan du velge å beholde eller fjerne filene, fjerne alle apper og innstillinger, og installere en ny kopi av Windows. Dette kan også løse mange problemer, for eksempel treg ytelse.",
             "heading1": "1. Åpne Innstillinger-appen",
             "para2": "Trykk på Start-ikonet (Windows-ikonet), som du finner nederst til venstre på skjermen, og velg Innstillinger (tannhjulsikonet).",
             "heading2": "2. Velg Oppdatering og sikkerhet fra listen over kategorier",
@@ -2757,10 +2757,10 @@
             "heading5": "5. Velg om du vil beholde filene dine eller ikke",
             "para4": "Etter tilbakestillingen kan du logge deg på Microsoft-kontoen din. Windows Store-apper som er kjøpt under denne kontoen, vil bli installert på nytt.",
             "para5": {
-				"li1": "\"Behold filene mine\" fjerner appene og innstillingene dine, men beholder alle de personlige filene dine.",
-				"li2": "Hvis du fjerner alt, blir appene dine, innstillingene og de personlige filene slettet. Hvis du ikke har en sikkerhetskopi av filene, kan det være lurt å trykke på Avbryt, sikkerhetskopiere dem og starte denne prosessen på nytt."
-			},
-			"heading6": "6. Du kan velge forskjellige tilleggsinnstillinger",
+                "li1": "\"Behold filene mine\" fjerner appene og innstillingene dine, men beholder alle de personlige filene dine.",
+                "li2": "Hvis du fjerner alt, blir appene dine, innstillingene og de personlige filene slettet. Hvis du ikke har en sikkerhetskopi av filene, kan det være lurt å trykke på Avbryt, sikkerhetskopiere dem og starte denne prosessen på nytt."
+            },
+            "heading6": "6. Du kan velge forskjellige tilleggsinnstillinger",
             "para6": "Dette vil bare bli vist hvis du har valgt \"Fjern alt\" i forrige trinn.",
             "heading7": "7. Les oversikten og trykk på Tilbakestill når du er klar til å fortsette.",
             "para7": "Windows forbereder tilbakestilling av enheten. Bare vent til du får frem en blå skjerm.",
@@ -2768,7 +2768,7 @@
             "para8": "Windows blir startet på nytt, og tilbakestillingen begynner. PC-en kan starte på nytt flere ganger når tilbakestillingen skjer.",
             "heading9": "Spørsmål og svar på samfunnet",
             "communityAnswer": "Svar fra samfunnet",
-			"q1": "Hvis jeg velger å fjerne alt, sletter det alle stasjonene i / koblet til maskinen min eller bare fra den jeg kjører Windows 10 på?",
+            "q1": "Hvis jeg velger å fjerne alt, sletter det alle stasjonene i / koblet til maskinen min eller bare fra den jeg kjører Windows 10 på?",
             "a1": "Det sletter bare Windows 10-operativsystemet (vanligvis C:-stasjonen). Andre stasjoner i eller koblet til datamaskinen blir ikke påvirket.",
             "q2": "Hvordan kan jeg gjøre dette hvis skjermen er ødelagt?",
             "a2": "Det kan du dessverre ikke. Du må skaffe en ny skjerm.",
@@ -2780,8 +2780,8 @@
             "para10": "Slik tilbakestiller du Windows 10 – WikiHow."
         },
         "question3": {
-			"title": "Bli kjent med datamaskinens prosessor",
-			"heading1": "Symptom",
+            "title": "Bli kjent med datamaskinens prosessor",
+            "heading1": "Symptom",
             "para1": "Begrepene 32-bits og 64-bit henviser til hvordan prosessoren til en data maskin (også kalt en CPU) håndterer informasjon. 64-biters versjonen av Windows håndterer store mengder RAM (Random Access Memory) mer effektivt enn et 32-bits system.",
             "heading2": "Berørte merker",
             "para2": "Symptomet ovenfor er knyttet til, men ikke begrenset til, disse systemene:",
@@ -2790,10 +2790,10 @@
             "para4": "Windows 7 , 8 , 10",
             "heading4": "Løsning",
             "para5": "Windows 7 eller Vista",
-			"para6": "Åpne systemet ved å klikke <strong>på Start </strong>-knappen på <strong>Start-knappen</strong>, høyre klikk på data maskinen og deretter på egenskaper.",
+            "para6": "Åpne systemet ved å klikke <strong>på Start </strong>-knappen på <strong>Start-knappen</strong>, høyre klikk på data maskinen og deretter på egenskaper.",
             "para7": "Under system kan du se system typen.",
             "para8": "Windows 8 og Windows 10",
-			"para9": "<strong>Metode 1:</strong> Vis system-vinduet i kontroll panel",
+            "para9": "<strong>Metode 1:</strong> Vis system-vinduet i kontroll panel",
             "para10": "Dra inn fra høyre kant av skjermen og trykk deretter <strong>Søk</strong>. Hvis du bruker musen, peker du på nederste høyre hjørne på skjermen og klikker <strong>på Søk.</strong>",
             "para11": "Skriv <strong>systemet</strong> i søke boksen og trykk eller klikk <strong>på innstillinger.</strong>",
             "para12": "Klikk eller trykk på <strong>System</strong>.",
@@ -2805,8 +2805,8 @@
             "para18": "Hvis du kjører <strong>en 64 -biters </strong>versjon av Windows 8<strong>, </strong> blir det vist en x64 <strong>basert PC i feltet system</strong>type under element overskriften. Hvis du kjører<strong> en 32-biters</strong> versjon av Windows 8, blir x86-basert PC <strong>vist i feltet system</strong> type under element overskriften.  "
         },
         "question4": {
-			"title": "Kontrollere datamaskinens batteriforbruk",
-			"heading1": "Symptom",
+            "title": "Kontrollere datamaskinens batteriforbruk",
+            "heading1": "Symptom",
             "para1": "Windows 10 inneholder et nytt <strong>batteri bruks</strong> skjerm bilde som viser hva som skjer med din bærbare juice. Det betyr at du kan se nøyaktig hvilke applikasjoner – både stasjonære og Windows 10 \"universelle\" apper-bruker for mye strøm.",
             "heading2": "Berørte merker",
             "para2": "Lenovo bærbare maskiner, stasjonære maskiner",
@@ -2828,8 +2828,8 @@
             "para13": "8. Rull nedover og du vil se en liste over applikasjoner, anses dette som den mest nyttige delen av denne funksjonen. Det vil se ut som en liste over appene har brukt batteriet i den perioden, og viser deg hvilken prosent del av batteriet du har brukt i hver app."
         },
         "question5": {
-			"title": "Bruke datamaskinen som et nettbrett",
-			"para1": "Nett brett modus gjør Windows mer intuitiv og enklere å bruke når du har en berørings enhet.",
+            "title": "Bruke datamaskinen som et nettbrett",
+            "para1": "Nett brett modus gjør Windows mer intuitiv og enklere å bruke når du har en berørings enhet.",
             "heading1": "Bruk tavlemodus",
             "para2": "Hvis du vil slå på nett brett <strong>modus</strong> velger du handlings senter på oppgave linjen <strong>og velger deretter nett brett modus</strong>.",
             "heading2": "Merk",
@@ -2845,8 +2845,8 @@
             "para10": "Bruk tilbake-knappen på oppgave linjen for å gå tilbake i en app eller åpne en app som du brukte tidligere."
         },
         "question6": {
-			"title": "Bli kjent med Cortana, din personlige assistent",
-			"heading1": "Hva er Cortana?",
+            "title": "Bli kjent med Cortana, din personlige assistent",
+            "heading1": "Hva er Cortana?",
             "para1": "Cortana er den digitale agenten. Hun hjelper deg med å få ting gjort.",
             "para2": "Jo mer du bruker Cortana, jo mer personlig blir opplevelse.",
             "para3": "Skriv et spørsmål i søke boksen eller velg mikrofonen og snakk med Cortana for å komme i gang. (Innskriving fungerer for alle typer PCer, men du trenger en mikrofon for å snakke.)",
@@ -2854,7 +2854,7 @@
             "para5": "1. Hjem 2. Notat blokk 3. Settings 4. Spillkontroller",
             "para6": "Her er noen ting Cortana kan gjøre for deg:",
             "unorderedList1": {
-				"listItem1": "Gi deg påminnelser basert på tid, steder eller personer.",
+                "listItem1": "Gi deg påminnelser basert på tid, steder eller personer.",
                 "listItem2": "Spore pakker, grupper, interesser og flights.",
                 "listItem3": "Sende e-postmeldinger og-tekster.",
                 "listItem4": "Administrer kalenderen din og hold deg oppdatert.",
@@ -2863,7 +2863,7 @@
                 "listItem7": "Finn opplysninger, filer, steder og info.",
                 "listItem8": "Åpne en hvilken som helst app på systemet."
             },
-			"heading2": "Prøv dette: Sett en påminnelse",
+            "heading2": "Prøv dette: Sett en påminnelse",
             "para7": "En av tingene Cortana kan gjøre er å gi deg påminnelser. Hun kan minne deg på å gjøre ting basert på tid, steder eller til og med personer.",
             "para8": "Du kan for eksempel skrive eller si ' Påminn meg til congratulate Tanya neste gang hun ringer'.",
             "para9": "Påminnelsen blir vist når du mottar en oppringing fra Tanya.",

@@ -199,8 +199,7 @@
                     "description": "Nesprávné nastavení hodnoty Přetaktování mohou způsobit nevratné poškození hardwaru.",
                     "proceed": "POKRAčOVAT",
                     "legionAccessory": "Install Legion Accessory Central?",
-                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
-                    "install": "INSTALL"
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc."
                 },
                 "popup": {
                     "closeBtn": "close"
@@ -1213,7 +1212,8 @@
                     "title": "Další nastavení",
                     "vantageToolbar": {
                         "title": "Nástrojová lišta Lenovo Vantage",
-                        "description": "Chcete-li snadno získat další podrobnosti o baterii a získat přístup k rychlým možnostem nastavení, je třeba panel nástrojů Vantage připnout na hlavní panel systému Windows."
+                        "description": "Chcete-li snadno získat další podrobnosti o baterii a získat přístup k rychlým možnostem nastavení, je třeba panel nástrojů Vantage připnout na hlavní panel systému Windows.",
+                        "hint": "The options in the image depend on the capacity of the machine. For example, – some machines support backlight settings, and some may not."
                     }
                 },
                 "batterySettings": {
@@ -2734,54 +2734,54 @@
         "question1": {
             "title": "Zálohování a obnovení souborů",
             "para1": "Vždy je dobré mít zálohu. Uchovávejte kopie svých souborů na jiném disku pro případ, že se něco stane s původními soubory.",
-			"heading1": "Nastavení zálohy",
-			"para2": "Klepněte na tlačítko Start a vyberte Nastavení > Aktualizace a zabezpečení > Zálohování > Přidat jednotku a poté vyberte externí jednotku nebo síťové umístění, kam se má záloha uložit.",
-			"para3": "Vše je připraveno. Každou hodinu vytvoříme zálohu veškerého obsahu vaší uživatelské složky (C:\\Users\\vaše uživatelské jméno). Chcete-li změnit, které soubory se mají zálohovat nebo jak často má záloha probíhat, otevřete nabídku Další možnosti.",
-			"heading2": "Obnovení souborů",
-			"para4": "Pokud zjistíte, že vám chybí důležitý soubor nebo složka, můžete ji obnovit následujícím způsobem:",
-			"para5": {
-				"div1": "1. Do vyhledávacího pole na hlavním panelu zadejte obnovit soubory a poté vyberte položku Obnovit soubory pomocí služby Historie souborů.",
-				"div2": "2. Vyhledejte požadovaný soubor a pomocí šipek procházejte mezi všemi verzemi souboru.",
-				"div3": "3. Po nalezení požadované verze jej volbou Obnovit uložíte do původního umístění. Jestliže jej chcete uložit jinam, stiskněte a držte, nebo klikněte pravým tlačítkem na volbu Obnovit, vyberte možnost Obnovit do a poté vyberte nové umístění."
-			}
+            "heading1": "Nastavení zálohy",
+            "para2": "Klepněte na tlačítko Start a vyberte Nastavení > Aktualizace a zabezpečení > Zálohování > Přidat jednotku a poté vyberte externí jednotku nebo síťové umístění, kam se má záloha uložit.",
+            "para3": "Vše je připraveno. Každou hodinu vytvoříme zálohu veškerého obsahu vaší uživatelské složky (C:\\Users\\vaše uživatelské jméno). Chcete-li změnit, které soubory se mají zálohovat nebo jak často má záloha probíhat, otevřete nabídku Další možnosti.",
+            "heading2": "Obnovení souborů",
+            "para4": "Pokud zjistíte, že vám chybí důležitý soubor nebo složka, můžete ji obnovit následujícím způsobem:",
+            "para5": {
+                "div1": "1. Do vyhledávacího pole na hlavním panelu zadejte obnovit soubory a poté vyberte položku Obnovit soubory pomocí služby Historie souborů.",
+                "div2": "2. Vyhledejte požadovaný soubor a pomocí šipek procházejte mezi všemi verzemi souboru.",
+                "div3": "3. Po nalezení požadované verze jej volbou Obnovit uložíte do původního umístění. Jestliže jej chcete uložit jinam, stiskněte a držte, nebo klikněte pravým tlačítkem na volbu Obnovit, vyberte možnost Obnovit do a poté vyberte nové umístění."
+            }
         },
         "question2": {
             "title": "Jak obnovit Windows 10 do továrního nastavení",
-			"para1": "Pokud se v systému Windows 10 vyskytují problémy nebo jej prodáváte, měli byste jej obnovit do továrního nastavení. Při obnovení do továrního nastavení si můžete vybrat, zda chcete ponechat nebo odebrat vaše soubory. Obnovení odebere všechny aplikace a nastavení a nainstaluje novou kopii systému Windows. Můžete tím také opravit spoustu problémů, jako například zpomalené fungování.",
-			"heading1": "1. Otevřete aplikaci Nastavení.",
-			"para2": "V levém dolním rohu obrazovky vyberte tlačítko Start a poté vyberte ikonu ozubeného kola (Nastavení).",
-			"heading2": "2. Ze seznamu kategorií vyberte položku Aktualizace a zabezpečení.",
-			"heading3": "3. V levém podokně přejděte na možnost Obnovení.",
-			"heading4": "4. Spusťte obnovení do továrního nastavení.",
-			"para3": "Nahoře pod nadpisem Obnovit počítač do továrního nastavení klikněte nebo klepněte na tlačítko Spustit.",
-			"heading5": "5. Zvolte, zda chcete ponechat své soubory, či nikoli.",
-			"para4": "Po obnovení do továrního nastavení se můžete přihlásit ke svému účtu Microsoft. Znovu se vám nainstalují všechny aplikace, které jste si koupili ve Windows Store.",
-			"para5": {
-				"li1": "Výběrem možnosti Zachovat moje soubory odeberete aplikace a nastavení, ale ponecháte všechny své osobní soubory.",
-				"li2": "Výběrem možnosti Odebrat všechno vymažete své aplikace, nastavení a osobní soubory. Pokud své soubory nemáte zálohované, raději zvolte možnost Zrušit, soubory si zálohujte a poté tento proces spusťte znovu."
-			},
-			"heading6": "6. Můžete vybrat různá další nastavení.",
-			"para6": "Ta budou k dispozici pouze v případě, že jste v předchozím kroku vybrali možnost Odebrat všechno.",
-			"heading7": "7. Přečtěte si přehled a až budete připraveni pokračovat, zvolte možnost Obnovit.",
-			"para7": "Systém Windows se připraví na obnovení do továrního nastavení. Počkejte, než se zobrazí modrá obrazovka.",
-			"heading8": "8. Až se zobrazí sdělení „Vyberte možnost“, vyberte možnost Pokračovat.",
-			"para8": "Systém Windows se restartuje a zahájí obnovení do továrního nastavení. V průběhu obnovení do továrního nastavení se počítač může několikrát restartovat.",
-			"heading9": "Komunitní dotazy a odpovědi",
-			"communityAnswer": "Odpověď komunity",
-			"q1": "Když vyberu možnost Odebrat všechno, budou smazány všechny nainstalované a připojené jednotky, nebo jen jednotka, kde je systém Windows 10 nainstalovaný?",
-			"a1": "Smazána bude pouze jednotka se systémem Windows 10 (obvykle C:). Ostatní nainstalované/připojené jednotky zůstanou beze změn.",
-			"q2": "Jak to mohu udělat, když mám rozbitý displej?",
-			"a2": "Bohužel nemůžete. Musíte si pořídit nový displej.",
-			"q3": "Pokud jsem přihlášen(a) k nějaké webové stránce, bude odebrána i moje historie prohlížení?",
-			"a3": "Ano. Záleží na prohlížeči, který používáte. Chcete-li odebrat historii prohlížeče, stačí otevřít nastavení daného prohlížeče a historii smazat. Pokud nechcete, aby se vaše online historie ukládala, můžete také používat anonymní režim prohlížeče.",
-			"q4": "Když vyberu možnost Odebrat všechno, bude změněno také moje heslo?",
-			"a4": "Ano. Po obnovení počítače se systémem Windows 10 do továrního nastavení budou odebrána všechna uživatelská data. To znamená dokumenty, uložená hesla, obrázky, preferovaná nastavení, data prohlížeče a data aplikací.",
-			"para9": "Reference",
-			"para10": "Jak obnovit Windows 10 do továrního nastavení – WikiHow."
-		},
+            "para1": "Pokud se v systému Windows 10 vyskytují problémy nebo jej prodáváte, měli byste jej obnovit do továrního nastavení. Při obnovení do továrního nastavení si můžete vybrat, zda chcete ponechat nebo odebrat vaše soubory. Obnovení odebere všechny aplikace a nastavení a nainstaluje novou kopii systému Windows. Můžete tím také opravit spoustu problémů, jako například zpomalené fungování.",
+            "heading1": "1. Otevřete aplikaci Nastavení.",
+            "para2": "V levém dolním rohu obrazovky vyberte tlačítko Start a poté vyberte ikonu ozubeného kola (Nastavení).",
+            "heading2": "2. Ze seznamu kategorií vyberte položku Aktualizace a zabezpečení.",
+            "heading3": "3. V levém podokně přejděte na možnost Obnovení.",
+            "heading4": "4. Spusťte obnovení do továrního nastavení.",
+            "para3": "Nahoře pod nadpisem Obnovit počítač do továrního nastavení klikněte nebo klepněte na tlačítko Spustit.",
+            "heading5": "5. Zvolte, zda chcete ponechat své soubory, či nikoli.",
+            "para4": "Po obnovení do továrního nastavení se můžete přihlásit ke svému účtu Microsoft. Znovu se vám nainstalují všechny aplikace, které jste si koupili ve Windows Store.",
+            "para5": {
+                "li1": "Výběrem možnosti Zachovat moje soubory odeberete aplikace a nastavení, ale ponecháte všechny své osobní soubory.",
+                "li2": "Výběrem možnosti Odebrat všechno vymažete své aplikace, nastavení a osobní soubory. Pokud své soubory nemáte zálohované, raději zvolte možnost Zrušit, soubory si zálohujte a poté tento proces spusťte znovu."
+            },
+            "heading6": "6. Můžete vybrat různá další nastavení.",
+            "para6": "Ta budou k dispozici pouze v případě, že jste v předchozím kroku vybrali možnost Odebrat všechno.",
+            "heading7": "7. Přečtěte si přehled a až budete připraveni pokračovat, zvolte možnost Obnovit.",
+            "para7": "Systém Windows se připraví na obnovení do továrního nastavení. Počkejte, než se zobrazí modrá obrazovka.",
+            "heading8": "8. Až se zobrazí sdělení „Vyberte možnost“, vyberte možnost Pokračovat.",
+            "para8": "Systém Windows se restartuje a zahájí obnovení do továrního nastavení. V průběhu obnovení do továrního nastavení se počítač může několikrát restartovat.",
+            "heading9": "Komunitní dotazy a odpovědi",
+            "communityAnswer": "Odpověď komunity",
+            "q1": "Když vyberu možnost Odebrat všechno, budou smazány všechny nainstalované a připojené jednotky, nebo jen jednotka, kde je systém Windows 10 nainstalovaný?",
+            "a1": "Smazána bude pouze jednotka se systémem Windows 10 (obvykle C:). Ostatní nainstalované/připojené jednotky zůstanou beze změn.",
+            "q2": "Jak to mohu udělat, když mám rozbitý displej?",
+            "a2": "Bohužel nemůžete. Musíte si pořídit nový displej.",
+            "q3": "Pokud jsem přihlášen(a) k nějaké webové stránce, bude odebrána i moje historie prohlížení?",
+            "a3": "Ano. Záleží na prohlížeči, který používáte. Chcete-li odebrat historii prohlížeče, stačí otevřít nastavení daného prohlížeče a historii smazat. Pokud nechcete, aby se vaše online historie ukládala, můžete také používat anonymní režim prohlížeče.",
+            "q4": "Když vyberu možnost Odebrat všechno, bude změněno také moje heslo?",
+            "a4": "Ano. Po obnovení počítače se systémem Windows 10 do továrního nastavení budou odebrána všechna uživatelská data. To znamená dokumenty, uložená hesla, obrázky, preferovaná nastavení, data prohlížeče a data aplikací.",
+            "para9": "Reference",
+            "para10": "Jak obnovit Windows 10 do továrního nastavení – WikiHow."
+        },
         "question3": {
-			"title": "Jako poznat typ procesoru v počítači",
-			"heading1": "Příznak",
+            "title": "Jako poznat typ procesoru v počítači",
+            "heading1": "Příznak",
             "para1": "Pojmy „32bitový“ a „64bitový“ označují způsob, jakým procesor počítače (také nazývaný CPU) zpracovává informace. 64bitová verze systému Windows zpracovává velké množství paměti RAM efektivněji než 32bitový systém.",
             "heading2": "Značky, kterých se to týká",
             "para2": "Výše uvedený příznak se mimo jiných týká následujících systémů:",
@@ -2790,10 +2790,10 @@
             "para4": "Windows 7, 8 a 10",
             "heading4": "Řešení",
             "para5": "Windows 7 nebo Vista",
-			"para6": "Na <strong>tlačítku Start</strong> klikněte na obrázek <strong>tlačítka Start,</strong> pravým tlačítkem klikněte na Počítač a kliknutím na položku Vlastnosti otevřete část Systém.",
+            "para6": "Na <strong>tlačítku Start</strong> klikněte na obrázek <strong>tlačítka Start,</strong> pravým tlačítkem klikněte na Počítač a kliknutím na položku Vlastnosti otevřete část Systém.",
             "para7": "V části Systém vidíte typ systému.",
             "para8": "Windows 8 a Windows 10",
-			"para9": "<strong>1. způsob:</strong> V Ovládacích panelech zobrazte okno Systém",
+            "para9": "<strong>1. způsob:</strong> V Ovládacích panelech zobrazte okno Systém",
             "para10": "Na pracovní ploše přetáhněte prstem z pravého okraje a klepněte na volbu <strong>Hledat</strong>. Pokud používáte myš, přesuňte ukazatel do pravého dolního rohu obrazovky a klikněte na možnost <strong>Hledat</strong>.",
             "para11": "Do vyhledávacího pole zadejte <strong>systém</strong> a klepněte nebo klikněte na položku <strong>Nastavení.</strong>",
             "para12": "Klepněte nebo klikněte na položku <strong>Systém</strong>.",
@@ -2805,8 +2805,8 @@
             "para18": "Pokud používáte <strong>64bitovou </strong>verzi systému Windows 8<strong>, </strong>v poli <strong>Typ systému </strong>ve sloupci Položka je zobrazeno „x64-based PC“. Pokud používáte<strong> 32bitovou </strong>verzi systému Windows 8, v poli <strong>Typ systému </strong>ve sloupci Položka je zobrazeno „x86-based PC“.  "
         },
         "question4": {
-			"title": "Kontrola využití baterie počítače",
-			"heading1": "Příznak",
+            "title": "Kontrola využití baterie počítače",
+            "heading1": "Příznak",
             "para1": "Windows 10 obsahuje novou obrazovku <strong>Využití baterie</strong>, která vás informuje, co přesně spotřebovává energii notebooku. To znamená, že budete přesně vědět, které počítačové aplikace nebo univerzální aplikace systému Windows 10 využívají nejvíce energie.",
             "heading2": "Značky, kterých se to týká",
             "para2": "Notebooky a stolní počítače Lenovo",
@@ -2828,8 +2828,8 @@
             "para13": "8. Přejděte dále dolů, kde se nachází seznam aplikací, což je asi nejužitečnější část této funkce. Seznam obsahuje aplikace, které využily energii baterie za dané období, a u každé z nich je uvedeno procento využité energie."
         },
         "question5": {
-			"title": "Použití počítače jako tabletu",
-			"para1": "Pokud máte zařízení s dotykovou obrazovkou, režim tabletu umožňuje intuitivnější a snadnější použití systému Windows.",
+            "title": "Použití počítače jako tabletu",
+            "para1": "Pokud máte zařízení s dotykovou obrazovkou, režim tabletu umožňuje intuitivnější a snadnější použití systému Windows.",
             "heading1": "Použití režimu tabletu",
             "para2": "Chcete-li zapnout režim tabletu, na hlavním panelu vyberte <strong>centrum akcí</strong> a zvolte <strong>Režim tabletu</strong>.",
             "heading2": "Poznámka",
@@ -2845,8 +2845,8 @@
             "para10": "Pomocí tlačítka Zpět na hlavním panelu přejít zpět do aplikace nebo otevřít aplikaci, kterou jste používali dříve."
         },
         "question6": {
-			"title": "Seznamte se s Cortanou, svým osobním asistentem",
-			"heading1": "Co je Cortana?",
+            "title": "Seznamte se s Cortanou, svým osobním asistentem",
+            "heading1": "Co je Cortana?",
             "para1": "Cortana je vaše digitální sekretářka. Pomůže vám zařídit, co potřebujete.",
             "para2": "Čím více budete Cortanu používat, tím osobnější bude váš vztah.",
             "para3": "Chcete-li s Cortanou začít pracovat, do vyhledávacího pole zadejte otázku nebo vyberte mikrofon a otázku položte přímo Cortaně. (Psát lze na všech typech počítačů, ale pro mluvení potřebujete mikrofon.)",
@@ -2854,7 +2854,7 @@
             "para5": "1. Domů 2. Notebook 3. Nastavení 4. Zpětná vazba",
             "para6": "Co pro vás může Cortana udělat:",
             "unorderedList1": {
-				"listItem1": "Připomenout vám naplánované události na základě času, míst nebo osob.",
+                "listItem1": "Připomenout vám naplánované události na základě času, míst nebo osob.",
                 "listItem2": "Sledovat zásilky, týmy, zájmy nebo odlety.",
                 "listItem3": "Odesílat e-maily a textové zprávy.",
                 "listItem4": "Spravovat kalendář a průběžně vás informovat.",
@@ -2863,7 +2863,7 @@
                 "listItem7": "Hledat faktické údaje, soubory, místa a informace.",
                 "listItem8": "Otevřít libovolnou aplikaci v systému."
             },
-			"heading2": "Zkuste tohle: Nastavte upomínku",
+            "heading2": "Zkuste tohle: Nastavte upomínku",
             "para7": "Jednou z věcí, které Cortana dokáže, je upozornit vás na plánované události. Může vás upomenout na základě času, místa nebo dokonce i osob.",
             "para8": "Například napište nebo řekněte: „Připomeň mi, abych popřál Lucce, jak mi bude příště volat“.",
             "para9": "Jak bude Lucka volat, upomínka se zobrazí.",

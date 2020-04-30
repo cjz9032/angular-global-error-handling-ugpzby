@@ -199,8 +199,7 @@
                     "description": "Nieprawidłowe ustawienia Przetaktowywania mogą nieodwracalnie uszkodzić sprzęt.",
                     "proceed": "WYKONAJ",
                     "legionAccessory": "Install Legion Accessory Central?",
-                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
-                    "install": "INSTALL"
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc."
                 },
                 "popup": {
                     "closeBtn": "close"
@@ -1213,7 +1212,8 @@
                     "title": "Inne ustawienia",
                     "vantageToolbar": {
                         "title": "Pasek narzędzi Lenovo Vantage",
-                        "description": "Przypnij pasek narzędzi Vantage do paska zadań systemu Windows, aby łatwo uzyskać więcej informacji o akumulatorze oraz dostęp do szybkich ustawień."
+                        "description": "Przypnij pasek narzędzi Vantage do paska zadań systemu Windows, aby łatwo uzyskać więcej informacji o akumulatorze oraz dostęp do szybkich ustawień.",
+                        "hint": "The options in the image depend on the capacity of the machine. For example, – some machines support backlight settings, and some may not."
                     }
                 },
                 "batterySettings": {
@@ -2734,20 +2734,20 @@
         "question1": {
             "title": "Tworzenie kopii zapasowych plików i ich przywracanie",
             "para1": "Zawsze dobrze jest mieć plan awaryjny. Umieść kopie plików na innym dysku na wypadek, gdyby coś się stało z oryginałami.",
-			"heading1": "Konfigurowanie funkcji tworzenia kopii zapasowej",
-			"para2": "Naciśnij przycisk Start, wybierz kolejno opcje Ustawienia > Aktualizacja i zabezpieczenia > Kopia zapasowa > Dodaj dysk, a następnie dodaj zewnętrzny dysk twardy lub lokalizację sieciową, gdzie chcesz umieścić kopie zapasowe.",
-			"para3": "Wszystko gotowe. Co godzinę będziemy wykonywać kopię zapasową całej zawartości Twojego folderu użytkownika (C:\\Users\\Twoja nazwa użytkownika). Aby zmienić zakres plików objętych kopią zapasową albo częstotliwość wykonywania kopii, kliknij łącze Więcej opcji.",
-			"heading2": "Przywracanie plików",
-			"para4": "Jeśli brakuje ważnego pliku lub folderu, oto sposób jego odzyskania:",
-			"para5": {
-				"div1": "1. Na pasku zadań w polu wyszukiwania wpisz wyrażenie Przywróć pliki, a następnie kliknij pozycję Przywróć pliki za pomocą historii plików.",
-				"div2": "2. Poszukaj potrzebnego pliku, a następnie za pomocą strzałek przejrzyj jego wszystkie wersje.",
-				"div3": "3. Po znalezieniu żądanej wersji naciśnij przycisk Przywróć, a plik zostanie zapisany w swojej oryginalnej lokalizacji. Jeżeli chcesz zapisać go w innym miejscu, naciśnij i przytrzymaj (lub kliknij prawym przyciskiem myszy) przycisk Przywróć, wybierz polecenie Przywróć do, a następnie wybierz nową lokalizację."
-			}
+            "heading1": "Konfigurowanie funkcji tworzenia kopii zapasowej",
+            "para2": "Naciśnij przycisk Start, wybierz kolejno opcje Ustawienia > Aktualizacja i zabezpieczenia > Kopia zapasowa > Dodaj dysk, a następnie dodaj zewnętrzny dysk twardy lub lokalizację sieciową, gdzie chcesz umieścić kopie zapasowe.",
+            "para3": "Wszystko gotowe. Co godzinę będziemy wykonywać kopię zapasową całej zawartości Twojego folderu użytkownika (C:\\Users\\Twoja nazwa użytkownika). Aby zmienić zakres plików objętych kopią zapasową albo częstotliwość wykonywania kopii, kliknij łącze Więcej opcji.",
+            "heading2": "Przywracanie plików",
+            "para4": "Jeśli brakuje ważnego pliku lub folderu, oto sposób jego odzyskania:",
+            "para5": {
+                "div1": "1. Na pasku zadań w polu wyszukiwania wpisz wyrażenie Przywróć pliki, a następnie kliknij pozycję Przywróć pliki za pomocą historii plików.",
+                "div2": "2. Poszukaj potrzebnego pliku, a następnie za pomocą strzałek przejrzyj jego wszystkie wersje.",
+                "div3": "3. Po znalezieniu żądanej wersji naciśnij przycisk Przywróć, a plik zostanie zapisany w swojej oryginalnej lokalizacji. Jeżeli chcesz zapisać go w innym miejscu, naciśnij i przytrzymaj (lub kliknij prawym przyciskiem myszy) przycisk Przywróć, wybierz polecenie Przywróć do, a następnie wybierz nową lokalizację."
+            }
         },
         "question2": {
-			"title": "Jak zresetować ustawienia systemu Windows 10",
-			"para1": "Jeśli na komputerze z systemem Windows 10 występują problemy lub jeśli zamierzasz go sprzedać, zresetuj ustawienia systemu. Wykonanie procedury resetowania ustawień pozwala zachować lub usunąć pliki, usunąć wszystkie aplikacje i ustawienia oraz zainstalować nową kopię systemu Windows. Zresetowanie ustawień może również rozwiązać wiele problemów, takich jak niska wydajność komputera.",
+            "title": "Jak zresetować ustawienia systemu Windows 10",
+            "para1": "Jeśli na komputerze z systemem Windows 10 występują problemy lub jeśli zamierzasz go sprzedać, zresetuj ustawienia systemu. Wykonanie procedury resetowania ustawień pozwala zachować lub usunąć pliki, usunąć wszystkie aplikacje i ustawienia oraz zainstalować nową kopię systemu Windows. Zresetowanie ustawień może również rozwiązać wiele problemów, takich jak niska wydajność komputera.",
             "heading1": "1. Otwórz aplikację Ustawienia",
             "para2": "Naciśnij przycisk Start Obraz, który znajduje się w lewym dolnym rogu ekranu, i wybierz ustawienia oznaczone ikoną koła zębatego Obraz.",
             "heading2": "2. Z listy kategorii wybierz opcję Aktualizacja i zabezpieczenia",
@@ -2757,10 +2757,10 @@
             "heading5": "5. Określ, czy chcesz zachować swoje pliki",
             "para4": "Po zresetowaniu ustawień możesz zalogować się na swoje konto Microsoft. Wszelkie aplikacje ze Sklepu Windows zakupione na tym koncie zostaną ponownie zainstalowane.",
             "para5": {
-				"li1": "Wybór opcji Zachowaj moje pliki powoduje usunięcie aplikacji i ustawień przy jednoczesnym zachowaniu wszystkich plików osobistych.",
-				"li2": "Wybór opcji Usuń wszystko powoduje usunięcie aplikacji, ustawień i plików osobistych. Jeśli nie masz wykonanej kopii zapasowej plików, możesz nacisnąć przycisk Anuluj, wykonać kopię zapasową i ponownie rozpocząć proces."
-			},
-			"heading6": "6. Możesz wybrać różne dodatkowe ustawienia",
+                "li1": "Wybór opcji Zachowaj moje pliki powoduje usunięcie aplikacji i ustawień przy jednoczesnym zachowaniu wszystkich plików osobistych.",
+                "li2": "Wybór opcji Usuń wszystko powoduje usunięcie aplikacji, ustawień i plików osobistych. Jeśli nie masz wykonanej kopii zapasowej plików, możesz nacisnąć przycisk Anuluj, wykonać kopię zapasową i ponownie rozpocząć proces."
+            },
+            "heading6": "6. Możesz wybrać różne dodatkowe ustawienia",
             "para6": "Wyświetlą się one wyłącznie, jeśli w poprzednim kroku wybrano opcję „Usuń wszystko”.",
             "heading7": "7. Zapoznaj się z przeglądem informacji i naciśnij opcję Resetuj, aby kontynuować.",
             "para7": "System Windows przygotuje się do zresetowania urządzenia. Wystarczy, że poczekasz, aż pojawi się niebieski ekran.",
@@ -2768,7 +2768,7 @@
             "para8": "System Windows uruchomi się ponownie i rozpocznie resetowanie. W trakcie resetowania komputer może kilka razy ponownie się uruchomić.",
             "heading9": "Pytania i odpowiedzi — społeczność",
             "communityAnswer": "Odpowiedź społeczności",
-			"q1": "Jeśli zdecyduję się usunąć wszystko, to czy spowoduje to wymazanie wszystkich dysków zamontowanych w moim komputerze lub podłączonych do niego, czy też tylko tego, na którym używam systemu Windows 10?",
+            "q1": "Jeśli zdecyduję się usunąć wszystko, to czy spowoduje to wymazanie wszystkich dysków zamontowanych w moim komputerze lub podłączonych do niego, czy też tylko tego, na którym używam systemu Windows 10?",
             "a1": "Skasowany zostanie tylko dysk systemu Windows 10 (zwykle jest to dysk C:). Ta procedura nie wpłynie na inne dyski zamontowane w komputerze lub podłączone do niego.",
             "q2": "Jak mogę to zrobić, jeśli mój ekran jest zepsuty?",
             "a2": "Niestety, w takim przypadku nie możesz tego zrobić. Trzeba będzie zakupić nowy ekran.",
@@ -2780,8 +2780,8 @@
             "para10": "Jak zresetować ustawienia systemu Windows 10 — WikiHow."
         },
         "question3": {
-			"title": "Jak sprawdzić procesor komputera",
-			"heading1": "Objaw",
+            "title": "Jak sprawdzić procesor komputera",
+            "heading1": "Objaw",
             "para1": "Określenia „32-bitowy” i „64-bitowy” odnoszą się do sposobu obsługiwania informacji przez procesor komputera (zwany również CPU). 64-bitowa wersja systemu Windows obsługuje duże ilości pamięci o dostępie swobodnym (RAM) znacznie sprawniej, niż system 32-bitowy.",
             "heading2": "Marki, w których problem występuje",
             "para2": "Powyższe objawy mogą wystąpić m.in. w następujących systemach:",
@@ -2790,10 +2790,10 @@
             "para4": "Windows 7, 8 i 10",
             "heading4": "Rozwiązanie",
             "para5": "Windows 7 lub Vista",
-			"para6": "Owórz okno System. W tym celu kliknij <strong>przycisk Start </strong>Ilustracja z przyciskiem <strong>Start</strong>, kliknij prawym przyciskiem myszy pozycję Komputer i wybierz polecenie Właściwości.",
+            "para6": "Owórz okno System. W tym celu kliknij <strong>przycisk Start </strong>Ilustracja z przyciskiem <strong>Start</strong>, kliknij prawym przyciskiem myszy pozycję Komputer i wybierz polecenie Właściwości.",
             "para7": "W oknie System można sprawdzić rodzaj systemu.",
             "para8": "Windows 8 i Windows 10",
-			"para9": "<strong>Metoda 1:</strong> Wyświetlenie okna System w Panelu sterowania",
+            "para9": "<strong>Metoda 1:</strong> Wyświetlenie okna System w Panelu sterowania",
             "para10": "Przeciągnij palcem od prawej krawędzi ekranu, a następnie dotknij opcji <strong>Wyszukaj</strong>. Alternatywnie, jeśli używasz myszy, wskaż prawy dolny róg ekranu i kliknij opcję <strong>Wyszukaj</strong>.",
             "para11": "W polu wyszukiwania wpisz słowo <strong>system</strong>, a następnie dotknij lub kliknij opcję <strong>Ustawienia</strong>.",
             "para12": "Dotknij lub kliknij opcję <strong>System</strong>.",
@@ -2805,8 +2805,8 @@
             "para18": "Jeśli używasz <strong>64-bitowej</strong> wersji systemu Windows 8<strong>, </strong>pod nagłówkiem Element w polu <strong>Typ systemu</strong> jest wyświetlana wartość „x64-based PC”. Jeśli używasz <strong>32-bitowej</strong> wersji systemu Windows 8, pod nagłówkiem Element w polu <strong>Typ systemu</strong> jest wyświetlana wartość „x86-based PC”.  "
         },
         "question4": {
-			"title": "Jak sprawdzić poziom wykorzystania akumulatora urządzenia",
-			"heading1": "Objaw",
+            "title": "Jak sprawdzić poziom wykorzystania akumulatora urządzenia",
+            "heading1": "Objaw",
             "para1": "System Windows 10 zawiera nowy ekran <strong>Użycie baterii</strong>, który pokazuje zasoby zużywające energię akumulatora laptopa. Innymi słowy dokładnie poinformuje, które aplikacje — zarówno klasyczne, jak i „uniwersalne” aplikacje Windows 10 — powodują za duży pobór mocy.",
             "heading2": "Marki, w których problem występuje",
             "para2": "Laptopy i komputery stacjonarne Lenovo",
@@ -2828,8 +2828,8 @@
             "para13": "8. Przewiń w dół, a zobaczysz listę aplikacji. To jest prawdopodobnie najbardziej przydatna część tej funkcji. Jest to spis aplikacji, które zużywały energię baterii w ustawionym okresie, wraz z procentowymi wartościami zużycia przez każdą aplikację."
         },
         "question5": {
-			"title": "Używanie komputera jak tabletu",
-			"para1": "Tryb tabletu sprawia, że system Windows jest bardziej intuicyjny i łatwiejszy w obsłudze na urządzeniu z ekranem dotykowym.",
+            "title": "Używanie komputera jak tabletu",
+            "para1": "Tryb tabletu sprawia, że system Windows jest bardziej intuicyjny i łatwiejszy w obsłudze na urządzeniu z ekranem dotykowym.",
             "heading1": "Używanie trybu tabletu",
             "para2": "Aby włączyć tryb tabletu, na pasku zadań kliknij pozycję <strong>centrum akcji</strong> i wybierz opcję <strong>Tryb tabletu</strong>.",
             "heading2": "Uwaga",
@@ -2845,8 +2845,8 @@
             "para10": "Użyć przycisku Wstecz na pasku zadań, aby wrócić do poprzedniego okna w obecnej aplikacji lub otworzyć wcześniej używaną aplikację."
         },
         "question6": {
-			"title": "Poznaj Cortanę, swoją osobistą asystentkę",
-			"heading1": "Czym jest Cortana?",
+            "title": "Poznaj Cortanę, swoją osobistą asystentkę",
+            "heading1": "Czym jest Cortana?",
             "para1": "Cortana to Twoja cyfrowa asystentka. Pomoże Ci wykonać różne zadania.",
             "para2": "Im częściej używasz Cortany, tym bardziej zostanie spersonalizowana konkretnie dla Ciebie.",
             "para3": "Aby rozpocząć, wpisz pytanie w polu wyszukiwania lub kliknij ikonę mikrofonu i porozmawiaj z Cortaną. (Wpisywanie działa na wszystkich typach komputerów, ale do mówienia jest potrzebny mikrofon).",
@@ -2854,7 +2854,7 @@
             "para5": "1. Ekran główny 2. Notes 3. Ustawienia 4. Opinia",
             "para6": "Oto kilka rzeczy, w których może pomagać Cortana:",
             "unorderedList1": {
-				"listItem1": "Przypominanie na podstawie kryterium czasu, miejsc lub ludzi.",
+                "listItem1": "Przypominanie na podstawie kryterium czasu, miejsc lub ludzi.",
                 "listItem2": "Śledzenie paczek, zespołów, zainteresowań i lotów.",
                 "listItem3": "Wysyłanie wiadomości e-mail i tekstowych.",
                 "listItem4": "Zarządzanie Twoim kalendarzem i bieżące informowanie Cię o istotnych wydarzeniach.",
@@ -2863,7 +2863,7 @@
                 "listItem7": "Znajdowanie faktów, plików, miejsc i informacji.",
                 "listItem8": "Otwieranie dowolnych aplikacji na Twoim urządzeniu."
             },
-			"heading2": "Spróbuj tego: ustawianie przypomnienia",
+            "heading2": "Spróbuj tego: ustawianie przypomnienia",
             "para7": "Jedną z funkcji, jaką może wykonywać Cortana, jest przypominanie. Może przypominać Ci o konieczności zrobienia różnych rzeczy w związku z konkretnym czasem, miejscami lub osobami.",
             "para8": "Na przykład wpisz lub powiedz „Przypomnij mi, aby pogratulować Tanyi następnym razem, gdy zadzwoni”.",
             "para9": "Przypomnienie pojawi się, gdy otrzymasz telefon od Tanyi.",

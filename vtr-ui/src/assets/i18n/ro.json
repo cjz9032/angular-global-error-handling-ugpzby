@@ -199,8 +199,7 @@
                     "description": "Setările necorespunzătoare ale caracteristicii Overclocking pot produce deteriorări hardware ireversibile.",
                     "proceed": "CONTINUAȚI",
                     "legionAccessory": "Install Legion Accessory Central?",
-                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
-                    "install": "INSTALL"
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc."
                 },
                 "popup": {
                     "closeBtn": "close"
@@ -1213,7 +1212,8 @@
                     "title": "Alte setări",
                     "vantageToolbar": {
                         "title": "Bara de instrumente Lenovo Vantage",
-                        "description": "Fixați bara de instrumente Vantage în bara de activități Windows pentru a obține într-un mod mai simplu mai multe detalii despre baterie și acces la setările rapide."
+                        "description": "Fixați bara de instrumente Vantage în bara de activități Windows pentru a obține într-un mod mai simplu mai multe detalii despre baterie și acces la setările rapide.",
+                        "hint": "The options in the image depend on the capacity of the machine. For example, – some machines support backlight settings, and some may not."
                     }
                 },
                 "batterySettings": {
@@ -2734,20 +2734,20 @@
         "question1": {
             "title": "Copii de siguranță și restaurarea fișierelor",
             "para1": "Întotdeauna este bine să aveți o copie de siguranță. Păstrați copiile fișierelor pe o altă unitate, în cazul în care se întâmplă ceva cu cele originale.",
-			"heading1": "Configurați-vă copiile de siguranță",
-			"para2": "Selectați butonul Start, selectați Settings > Update & security > Backup > Add a drive și apoi alegeți o unitate externă sau o locație din rețea pentru copiile de siguranță.",
-			"para3": "Totul este gata. Vom face copii de siguranță, la interval de o oră, pentru toate fișierele din folderul utilizatorului (C:\\Users\\numele dvs. de utilizator). Pentru a alege pentru ce fișiere sau la ce interval de timp se fac copiile de siguranță, accesați More options.",
-			"heading2": "Restaurați-vă fișierele",
-			"para4": "Dacă vă lipsește un fișier sau folder important, iată ce puteți face pentru a-l recupera:",
-			"para5": {
-				"div1": "1. În caseta de căutare din bara de activități, introduceți Restore files și apoi selectați  Restore your files with File History.",
-				"div2": "2. Căutați fișierul, apoi folosiți săgețile pentru a vedea toate versiunile acestuia.",
-				"div3": "3. Când găsiți versiunea pe care o doriți, selectați Restore pentru a o salva în locația originală. Pentru a o salva în altă locație țineți apăsat (sau dați clic dreapta pe) Restore, selectați Restore to și apoi alegeți o nouă locație."
-			}
+            "heading1": "Configurați-vă copiile de siguranță",
+            "para2": "Selectați butonul Start, selectați Settings > Update & security > Backup > Add a drive și apoi alegeți o unitate externă sau o locație din rețea pentru copiile de siguranță.",
+            "para3": "Totul este gata. Vom face copii de siguranță, la interval de o oră, pentru toate fișierele din folderul utilizatorului (C:\\Users\\numele dvs. de utilizator). Pentru a alege pentru ce fișiere sau la ce interval de timp se fac copiile de siguranță, accesați More options.",
+            "heading2": "Restaurați-vă fișierele",
+            "para4": "Dacă vă lipsește un fișier sau folder important, iată ce puteți face pentru a-l recupera:",
+            "para5": {
+                "div1": "1. În caseta de căutare din bara de activități, introduceți Restore files și apoi selectați  Restore your files with File History.",
+                "div2": "2. Căutați fișierul, apoi folosiți săgețile pentru a vedea toate versiunile acestuia.",
+                "div3": "3. Când găsiți versiunea pe care o doriți, selectați Restore pentru a o salva în locația originală. Pentru a o salva în altă locație țineți apăsat (sau dați clic dreapta pe) Restore, selectați Restore to și apoi alegeți o nouă locație."
+            }
         },
         "question2": {
-			"title": "Cum se resetează Windows 10",
-			"para1": "Dacă PC-ul dvs. Windows 10 are probleme sau îl vindeți, ar trebui să îl resetați. Efectuarea unei resetări vă permite să alegeți să vă păstrați sau să eliminați fișierele, să eliminați toate aplicațiile și setările și să instalați o copie nouă de Windows. Aceasta poate rezolva, de asemenea, multe probleme, cum ar fi performanțele reduse.",
+            "title": "Cum se resetează Windows 10",
+            "para1": "Dacă PC-ul dvs. Windows 10 are probleme sau îl vindeți, ar trebui să îl resetați. Efectuarea unei resetări vă permite să alegeți să vă păstrați sau să eliminați fișierele, să eliminați toate aplicațiile și setările și să instalați o copie nouă de Windows. Aceasta poate rezolva, de asemenea, multe probleme, cum ar fi performanțele reduse.",
             "heading1": "1. Deschideți aplicația Setări",
             "para2": "Apăsați butonul cu imagine Start, care este situat în partea din stânga jos a ecranului și alegeți imaginea cu rotița pentru setări.",
             "heading2": "2. Selectați Actualizare și securitate din lista de categorii",
@@ -2757,10 +2757,10 @@
             "heading5": "5. Alegeți dacă păstrați fișierele sau nu",
             "para4": "După resetare, vă puteți autentifica în contul Microsoft. Orice aplicații din Magazin Windows achiziționate cu acest cont vor fi reinstalate.",
             "para5": {
-				"li1": "Opțiunea Păstrați fișierele mele elimină aplicațiile și setările, dar păstrează toate fișierele personale.",
-				"li2": "Opțiunea Eliminați totul șterge aplicațiile, setările și fișierele personale. Dacă nu aveți o copie de rezervă a fișierelor dvs., este posibil să doriți să apăsați Anulare, să le faceți copii de rezervă și să începeți acest proces din nou."
-			},
-			"heading6": "6. Puteți alege diferite setări suplimentare",
+                "li1": "Opțiunea Păstrați fișierele mele elimină aplicațiile și setările, dar păstrează toate fișierele personale.",
+                "li2": "Opțiunea Eliminați totul șterge aplicațiile, setările și fișierele personale. Dacă nu aveți o copie de rezervă a fișierelor dvs., este posibil să doriți să apăsați Anulare, să le faceți copii de rezervă și să începeți acest proces din nou."
+            },
+            "heading6": "6. Puteți alege diferite setări suplimentare",
             "para6": "Acest lucru va fi afișat numai dacă ați selectat „Ștergeți totul” la pasul anterior.",
             "heading7": "7. Citiți prezentarea generală și apăsați Resetare atunci când sunteți gata să continuați.",
             "para7": "Windows se va pregăti să reseteze dispozitivul. Așteptați până când ajungeți la un ecran albastru.",
@@ -2768,7 +2768,7 @@
             "para8": "Windows va reporni și va începe resetarea. PC-ul poate reporni de mai multe ori pe măsură ce are loc resetarea.",
             "heading9": "Întrebări și răspunsuri comunitate",
             "communityAnswer": "Răspuns comunitate",
-			"q1": "Dacă aleg să șterg totul, sunt șterse toate unitățile din/conectate la computerul meu sau doar cele pe care rulez Windows 10?",
+            "q1": "Dacă aleg să șterg totul, sunt șterse toate unitățile din/conectate la computerul meu sau doar cele pe care rulez Windows 10?",
             "a1": "Este ștearsă doar unitatea cu sistemul de operare Windows 10 (de obicei, unitatea C:). Alte unități din/conectate la computer nu vor fi afectate.",
             "q2": "Cum pot face acest lucru dacă ecranul meu este spart?",
             "a2": "Nu puteți, din păcate. Va trebui să înlocuiți ecranul.",
@@ -2780,8 +2780,8 @@
             "para10": "Cum se resetează Windows 10 – WikiHow."
         },
         "question3": {
-			"title": "Cum să cunoașteți procesorul dispozitivului",
-			"heading1": "Simptom",
+            "title": "Cum să cunoașteți procesorul dispozitivului",
+            "heading1": "Simptom",
             "para1": "Termenii 32 de biți și 64 de biți se referă la modul în care procesorul unui computer (numit și CPU) gestionează informațiile. Versiunea pe 64 de biți a Windows gestionează cantități mari de memorie RAM mai eficient decât un sistem pe 32 de biți.",
             "heading2": "Mărci afectate",
             "para2": "Simptomul de mai sus este asociat cu, dar fără a se limita la următoarele sisteme:",
@@ -2790,10 +2790,10 @@
             "para4": "Windows 7, 8 și 10",
             "heading4": "Soluție",
             "para5": "Windows 7 sau Vista",
-			"para6": "Deschideți System dând clic pe imaginea <strong>Start button </strong>a <strong>Start button,</strong> apoi dând clic dreapta pe Computer, iar apoi dând clic pe Properties.",
+            "para6": "Deschideți System dând clic pe imaginea <strong>Start button </strong>a <strong>Start button,</strong> apoi dând clic dreapta pe Computer, iar apoi dând clic pe Properties.",
             "para7": "În System, puteți vedea tipul sistemului.",
             "para8": "Windows 8 și Windows 10",
-			"para9": "<strong>Metoda 1:</strong> vizualizați fereastra System din Control Panel",
+            "para9": "<strong>Metoda 1:</strong> vizualizați fereastra System din Control Panel",
             "para10": "Treceți cu degetele de la marginea din dreapta a afișajului și atingeți <strong>Search</strong>. Sau, dacă folosiți un mouse, duceți indicatorul în colțul din dreapta-jos al ecranului, apoi dați clic pe <strong>Search.</strong>",
             "para11": "Introduceți <strong>system</strong> în caseta de căutare, iar apoi atingeți sau dați clic pe <strong>Settings.</strong>",
             "para12": "Atingeți sau dați clic pe <strong>System</strong>.",
@@ -2805,8 +2805,8 @@
             "para18": "Dacă rulați o versiune pe <strong>64 de biți </strong>a Windows 8<strong>, </strong> este afișat mesajul x64-based PC în câmpul <strong>System type</strong>, sub titlul Item. Dacă rulați o versiune pe<strong> 32 de biți</strong> a Windows 8, este afișat mesajul x86-based PC în câmpul <strong>System type</strong>, sub titlul Item.  "
         },
         "question4": {
-			"title": "Verificați utilizarea bateriei dispozitivului",
-			"heading1": "Simptom",
+            "title": "Verificați utilizarea bateriei dispozitivului",
+            "heading1": "Simptom",
             "para1": "Windows 10 include un nou ecran „<strong>Battery Use”</strong> care vă arată ce utilizează bateria laptopului. Aceasta înseamnă că vă va spune exact ce aplicații (atât desktop, cât și aplicații „universale” Windows 10) utilizează prea multă energie.",
             "heading2": "Mărci afectate",
             "para2": "Laptopuri, desktopuri Lenovo",
@@ -2828,8 +2828,8 @@
             "para13": "8. Derulați mai jos și veți vedea o listă de aplicații. Aceasta este considerată cea mai utilă secțiune a caracteristicii. Aici sunt afișate aplicațiile care au utilizat energia bateriei în acea perioadă și vă arată ce procentaj din energia bateriei a fost utilizat de fiecare aplicație."
         },
         "question5": {
-			"title": "Folosiți PC-ul ca o tabletă",
-			"para1": "Modul Tabletă face sistemul Windows mai intuitiv și mai ușor de folosit dacă aveți un dispozitiv cu touchscreen.",
+            "title": "Folosiți PC-ul ca o tabletă",
+            "para1": "Modul Tabletă face sistemul Windows mai intuitiv și mai ușor de folosit dacă aveți un dispozitiv cu touchscreen.",
             "heading1": "modul Tabletă",
             "para2": "Pentru a activa modul Tabletă, selectați <strong>action center</strong> din bara de activități, apoi selectați <strong>Tablet mode</strong>.",
             "heading2": "Notă",
@@ -2845,8 +2845,8 @@
             "para10": "Utilizați butonul înapoi de pe bara de activități pentru a vă întoarce într-o aplicație sau pentru a deschide o aplicație pe care ați utilizat-o înainte."
         },
         "question6": {
-			"title": "Cunoașteți-o pe Cortana, asistentul personal",
-			"heading1": "Ce este Cortana?",
+            "title": "Cunoașteți-o pe Cortana, asistentul personal",
+            "heading1": "Ce este Cortana?",
             "para1": "Cortana este agentul dvs. digital. Ea vă va ajuta să faceți acțiuni.",
             "para2": "Cu cât o utilizați mai mult Cortana, cu atât va fi mai personalizată experiența dvs.",
             "para3": "Pentru a începe, tastați o întrebare în caseta de căutare sau selectați microfonul și vorbiți cu Cortana. (Tastarea funcționează pe toate tipurile de computere, însă aveți nevoie de un microfon pentru a vorbi.)",
@@ -2854,7 +2854,7 @@
             "para5": "1. Pagina de pornire 2. Blocnotes 3. Setări 4. Feedback",
             "para6": "Iată câteva lucruri pe care Cortana le poate face:",
             "unorderedList1": {
-				"listItem1": "Vă poate afișa mementouri în funcție de timp, locație sau persoane.",
+                "listItem1": "Vă poate afișa mementouri în funcție de timp, locație sau persoane.",
                 "listItem2": "Poate urmări colete, echipe, interese și zboruri.",
                 "listItem3": "Poate trimite e-mailuri și mesaje SMS.",
                 "listItem4": "Poate gestiona calendarul și vă poate ține la curent.",
@@ -2863,7 +2863,7 @@
                 "listItem7": "Poate găsi fapte, fișiere, locuri și informații.",
                 "listItem8": "Poate deschide orice aplicație din sistemul dvs."
             },
-			"heading2": "Încercați această acțiune: setați un memento",
+            "heading2": "Încercați această acțiune: setați un memento",
             "para7": "Unul dintre lucrurile pe care Cortana le poate face este să vă afișeze mementouri. Vă poate reaminti să faceți anumite lucruri în funcție de timp, loc sau chiar persoane.",
             "para8": "De exemplu, tastați sau rostiți „Remind me to congratulate Tanya the next time she calls” („Reamintește-mi să o felicit pe Tanya data viitoare când sună”).",
             "para9": "Mementoul va apărea când primiți un apel de la Tanya.",

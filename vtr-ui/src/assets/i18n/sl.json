@@ -199,8 +199,7 @@
                     "description": "Nepravilne nastavitve Zvišanja takta lahko povzročijo nepopravljive poškodbe strojne opreme.",
                     "proceed": "NADALJUJ",
                     "legionAccessory": "Install Legion Accessory Central?",
-                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
-                    "install": "INSTALL"
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc."
                 },
                 "popup": {
                     "closeBtn": "close"
@@ -1213,7 +1212,8 @@
                     "title": "Druge nastavitve",
                     "vantageToolbar": {
                         "title": "Orodna vrstica programa Lenovo Vantage",
-                        "description": "Orodno vrstico Vantage pripnite v opravilno vrstico sistema Windows, da boste lažje dobili več podrobnosti o bateriji in dostop do hitrih nastavitev."
+                        "description": "Orodno vrstico Vantage pripnite v opravilno vrstico sistema Windows, da boste lažje dobili več podrobnosti o bateriji in dostop do hitrih nastavitev.",
+                        "hint": "The options in the image depend on the capacity of the machine. For example, – some machines support backlight settings, and some may not."
                     }
                 },
                 "batterySettings": {
@@ -2734,20 +2734,20 @@
         "question1": {
             "title": "Varnostno kopiranje in obnovitev datotek",
             "para1": "Vedno je dobro imeti varnostno kopijo datotek. Kopije datotek hranite na drugem pogonu za vsak primer, če se kaj nepredvidenega zgodi z izvirniki.",
-			"heading1": "Nastavitev varnostnega kopiranja",
-			"para2": "Izberite gumb Start, odprite Nastavitve > Posodabljanje in varnost > Varnostno kopiranje > Dodaj pogon in nato izberite zunanji pogon ali omrežno mesto za shranjevanje varnostnih kopij.",
-			"para3": "Postopek je končan. Varnostna kopija vsebine uporabniške mape (C:\\Users\\vaše uporabniško ime) bo izdelana vsako uro. Če želite spremeniti, katere datoteke se varnostno kopirajo ali kako pogosto se izdelujejo varnostne kopije, odprite Več možnosti.",
-			"heading2": "Obnovite datoteke",
-			"para4": "Če ne najdete pomembne datoteke ali mape, jo lahko obnovite tako:",
-			"para5": {
-				"div1": "1. V iskalno polje v opravilni vrstici vnesite Obnovitev datotek in nato izberite Obnovite datoteke z Zgodovino datoteke.",
-				"div2": "2. Poiščite želeno datoteko in nato uporabite puščice, da si ogledate vse njene različice.",
-				"div3": "3. Ko najdete želeno različico, izberite Obnovi, če želite datoteko shraniti na prvotno mesto. Če jo želite shraniti na drugo mesto, pridržite (ali z desno tipko miške kliknite) Obnovi, izberite Obnovi v in nato izberite novo mesto."
-			}
+            "heading1": "Nastavitev varnostnega kopiranja",
+            "para2": "Izberite gumb Start, odprite Nastavitve > Posodabljanje in varnost > Varnostno kopiranje > Dodaj pogon in nato izberite zunanji pogon ali omrežno mesto za shranjevanje varnostnih kopij.",
+            "para3": "Postopek je končan. Varnostna kopija vsebine uporabniške mape (C:\\Users\\vaše uporabniško ime) bo izdelana vsako uro. Če želite spremeniti, katere datoteke se varnostno kopirajo ali kako pogosto se izdelujejo varnostne kopije, odprite Več možnosti.",
+            "heading2": "Obnovite datoteke",
+            "para4": "Če ne najdete pomembne datoteke ali mape, jo lahko obnovite tako:",
+            "para5": {
+                "div1": "1. V iskalno polje v opravilni vrstici vnesite Obnovitev datotek in nato izberite Obnovite datoteke z Zgodovino datoteke.",
+                "div2": "2. Poiščite želeno datoteko in nato uporabite puščice, da si ogledate vse njene različice.",
+                "div3": "3. Ko najdete želeno različico, izberite Obnovi, če želite datoteko shraniti na prvotno mesto. Če jo želite shraniti na drugo mesto, pridržite (ali z desno tipko miške kliknite) Obnovi, izberite Obnovi v in nato izberite novo mesto."
+            }
         },
         "question2": {
-			"title": "Kako ponastaviti Windows 10",
-			"para1": "Če imate težave z računalnikom z operacijskim sistemom Windows 10 oziroma ga prodajate, ga morate ponastaviti. Ponastavitev vam omogoča, da shranite ali odstranite datoteke, odstrani vse aplikacije in nastavitve ter namesti novo kopijo sistema Windows. To lahko odpravi tudi številne težave, denimo počasno delovanje.",
+            "title": "Kako ponastaviti Windows 10",
+            "para1": "Če imate težave z računalnikom z operacijskim sistemom Windows 10 oziroma ga prodajate, ga morate ponastaviti. Ponastavitev vam omogoča, da shranite ali odstranite datoteke, odstrani vse aplikacije in nastavitve ter namesti novo kopijo sistema Windows. To lahko odpravi tudi številne težave, denimo počasno delovanje.",
             "heading1": "1. Odprite program Nastavitve",
             "para2": "Pritisnite gumb s sliko Start v spodnjem levem kotu zaslona in izberite sliko zobnika za nastavitve.",
             "heading2": "2. Na seznamu kategorij izberite Posodabljanje in varnost",
@@ -2757,10 +2757,10 @@
             "heading5": "5. Izberite, ali želite ohraniti datoteke ali ne",
             "para4": "Po ponastavitvi se lahko prijavite v Microsoftov račun. Vsi programi iz Trgovine Windows, kupljeni s tem računom, bodo znova nameščeni.",
             "para5": {
-				"li1": "Možnost »Ohrani moje datoteke« odstrani vaše programe in nastavitve, vendar ohrani vse vaše osebne datoteke.",
-				"li2": "Možnost »Odstrani vse« izbriše vaše programe, nastavitve in osebne datoteke. Če nimate varnostne kopije datotek, lahko pritisnete Prekliči, jih varnostno kopirate in postopek znova zaženete."
-			},
-			"heading6": "6. Izberete lahko različne dodatne nastavitve",
+                "li1": "Možnost »Ohrani moje datoteke« odstrani vaše programe in nastavitve, vendar ohrani vse vaše osebne datoteke.",
+                "li2": "Možnost »Odstrani vse« izbriše vaše programe, nastavitve in osebne datoteke. Če nimate varnostne kopije datotek, lahko pritisnete Prekliči, jih varnostno kopirate in postopek znova zaženete."
+            },
+            "heading6": "6. Izberete lahko različne dodatne nastavitve",
             "para6": "To bo prikazano le, če ste v prejšnjem koraku izbrali »Odstrani vse«.",
             "heading7": "7. Preberite pregled in pritisnite Ponastavi, ko ste pripravljeni nadaljevati.",
             "para7": "Windows se bo pripravil na ponastavitev naprave. Preprosto počakajte, da boste preusmerjeni na moder zaslon.",
@@ -2768,7 +2768,7 @@
             "para8": "Windows se bo znova zagnal in začel ponastavitev. V času ponastavitve se lahko računalnik večkrat znova zažene.",
             "heading9": "Vprašanja in odgovori Skupnosti",
             "communityAnswer": "Odgovor skupnosti",
-			"q1": "Če se odločim za odstranitev vsega, ali se s tem izbrišejo vsi pogoni, ki so v računalniku oziroma priključeni vanj, ali samo tisti, na katerem je nameščen sistem Windows 10?",
+            "q1": "Če se odločim za odstranitev vsega, ali se s tem izbrišejo vsi pogoni, ki so v računalniku oziroma priključeni vanj, ali samo tisti, na katerem je nameščen sistem Windows 10?",
             "a1": "Izbrisan bo samo pogon z operacijskim sistemom Windows 10 (običajno je to pogon C:). Na druge pogone, ki so v računalniku oziroma so priključeni vanj, to ne bo vplivalo.",
             "q2": "Kako lahko to storim, če je zaslon pokvarjen?",
             "a2": "To žal ni mogoče. Potrebovali boste nov zaslon.",
@@ -2780,8 +2780,8 @@
             "para10": "Kako ponastaviti Windows 10 – WikiHow."
         },
         "question3": {
-			"title": "Ugotavljanje, kateri CPE ima računalnik",
-			"heading1": "Znamenje težav",
+            "title": "Ugotavljanje, kateri CPE ima računalnik",
+            "heading1": "Znamenje težav",
             "para1": "Izraza 32-bitni in 64-bitni označujeta način, na katerega procesor računalnika (CPE) obdeluje podatke. 64-bitna različica sistema Windows obdeluje večje količine podatkov v delovnem pomnilniku (pomnilniku RAM) učinkoviteje kot 32-bitna različica.",
             "heading2": "Blagovne znamke, na katere to vpliva",
             "para2": "Navedeno znamenje težav se med drugim pojavlja v teh sistemih:",
@@ -2790,10 +2790,10 @@
             "para4": "Windows 7, 8, 10",
             "heading4": "Rešitev",
             "para5": "Windows 7 ali Vista",
-			"para6": "Odprite sistem tako, da kliknete <strong>gumb Start</strong>, pod sliko <strong>v meniju Start</strong> z desno tipko miške kliknete »Računalnik« in nato izberete »Lastnosti«.",
+            "para6": "Odprite sistem tako, da kliknete <strong>gumb Start</strong>, pod sliko <strong>v meniju Start</strong> z desno tipko miške kliknete »Računalnik« in nato izberete »Lastnosti«.",
             "para7": "V razdelku »Sistem« si lahko ogledate vrsto sistema.",
             "para8": "Windows 8 in Windows 10",
-			"para9": "<strong>1. način:</strong> Ogled okna »Sistem« na nadzorni plošči",
+            "para9": "<strong>1. način:</strong> Ogled okna »Sistem« na nadzorni plošči",
             "para10": "S prstom povlecite od desnega roba zaslona proti sredini in nato tapnite <strong>Iskanje</strong>. Če uporabljate miško, kazalec premaknite v spodnji desni kot zaslona in nato kliknite <strong>Iskanje</strong>.",
             "para11": "V iskalno polje vnesite izraz <strong>sistem</strong> in nato tapnite ali kliknite <strong>Nastavitve</strong>.",
             "para12": "Tapnite ali kliknite <strong>Sistem</strong>.",
@@ -2805,8 +2805,8 @@
             "para18": "Če uporabljate <strong>64-bitno</strong> <strong>različico sistema Windows 8</strong>, je v polju <strong>Vrsta sistema</strong> pod naslovom elementa navedeno »Računalnik, ki uporablja x64«. Če uporabljate <strong>32-bitno različico sistema Windows 8</strong>, je v polju <strong>Vrsta sistema</strong> pod naslovom elementa navedeno »Računalnik, ki uporablja x86«.  "
         },
         "question4": {
-			"title": "Preverjanje uporabe baterije računalnika",
-			"heading1": "Znamenje težav",
+            "title": "Preverjanje uporabe baterije računalnika",
+            "heading1": "Znamenje težav",
             "para1": "Sistem Windows 10 vključuje nov zaslon <strong>Poraba energije baterije</strong>, na katerem so prikazani največji porabniki energije baterije prenosnega računalnika. To pomeni, da si lahko natančno ogledate, kateri programi – t.i. univerzalni programi tako za namizne računalnike kot sistema Windows 10 – porabljajo preveč energije.",
             "heading2": "Blagovne znamke, na katere to vpliva",
             "para2": "Prenosni in namizni računalniki Lenovo",
@@ -2828,8 +2828,8 @@
             "para13": "8. Če se pomaknete navzdol, si lahko ogledate seznam programov, ki je najuporabnejši del te funkcije. Prikaže se seznam programov, ki so v izbranem obdobju porabljale energijo baterije, ob vsakem od njih pa je naveden odstotek porabe."
         },
         "question5": {
-			"title": "Uporaba računalnika kot tabličnega računalnika",
-			"para1": "S tabličnim načinom lahko naredite sistem Windows intuitivnejši in preprostejši za uporabo, če ima naprava vgrajen zaslon na dotik.",
+            "title": "Uporaba računalnika kot tabličnega računalnika",
+            "para1": "S tabličnim načinom lahko naredite sistem Windows intuitivnejši in preprostejši za uporabo, če ima naprava vgrajen zaslon na dotik.",
             "heading1": "Uporaba tabličnega načina",
             "para2": "Če želite vklopiti tablični način, v opravilni vrstici izberite <strong>Središče za opravila</strong> in nato še <strong>Tablični način</strong>.",
             "heading2": "Opomba",
@@ -2845,8 +2845,8 @@
             "para10": "Gumb za vračanje nazaj v opravilni vrstici lahko uporabite za pomik nazaj v programu ali odpiranje predhodno uporabljenega programa."
         },
         "question6": {
-			"title": "Spoznavanje osebne pomočnice Cortane",
-			"heading1": "Kaj je Cortana?",
+            "title": "Spoznavanje osebne pomočnice Cortane",
+            "heading1": "Kaj je Cortana?",
             "para1": "Cortana je vaša digitalna pomočnica. Pomagala vam bo pri izvajanju opravil.",
             "para2": "Čim več jo boste uporabljali, tem bolje se boste z njo razumeli in tem boljša bo vaša uporabniška izkušnja.",
             "para3": "Če želite začeti, vnesite vprašanje v iskalno polje ali izberite mikrofon in se pogovorite s Cortano. (Vnašanje s tipkovnico deluje v vseh vrstah računalnikov, medtem ko boste za pogovor potrebovali mikrofon.)",
@@ -2854,7 +2854,7 @@
             "para5": "1. Začetni zaslon 2. Beležnica 3. Nastavitve 4. Povratne informacije",
             "para6": "Cortana lahko za vas med drugim izvaja ta opravila:",
             "unorderedList1": {
-				"listItem1": "Prikazuje opomnike na podlagi ure, krajev ali ljudi.",
+                "listItem1": "Prikazuje opomnike na podlagi ure, krajev ali ljudi.",
                 "listItem2": "Sledi pošiljkam, spremlja zaposlene in letalske polete ter beleži, kaj vas zanima.",
                 "listItem3": "Pošilja elektronsko pošto in sporočila SMS.",
                 "listItem4": "Upravlja koledar in vas sproti obvešča o dogodkih v koledarju.",
@@ -2863,7 +2863,7 @@
                 "listItem7": "Išče verodostojne podatke, datoteke, kraje in informacije.",
                 "listItem8": "Odpira poljubne programe, nameščene v sistemu."
             },
-			"heading2": "Preizkusite jo tako, da nastavite opomnik",
+            "heading2": "Preizkusite jo tako, da nastavite opomnik",
             "para7": "Prikazovanje opomnikov je ena od reči, ki jih Cortana obvlada. Na podlagi ure, krajev in celo ljudi vas lahko opomni na opravila, ki vas čakajo.",
             "para8": "Vnesite ali izgovorite na primer: »Opomni me, naj čestitam Tanji, ko me naslednjič pokliče«.",
             "para9": "Ko vas bo Tanja naslednjič poklicala, se bo opomnik prikazal samodejno.",

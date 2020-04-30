@@ -199,8 +199,7 @@
                     "description": "Un ajuste inadecuado de la Aceleración puede producir daños de hardware irreversible.",
                     "proceed": "PROCEDER",
                     "legionAccessory": "Install Legion Accessory Central?",
-                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
-                    "install": "INSTALL"
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc."
                 },
                 "popup": {
                     "closeBtn": "close"
@@ -1213,7 +1212,8 @@
                     "title": "Otros valores",
                     "vantageToolbar": {
                         "title": "Barra de herramientas del Lenovo Vantage",
-                        "description": "Ancle la barra de herramientas de Vantage a la barra de tareas de Windows para obtener fácilmente más detalles sobre la batería y acceder a su configuración rápida."
+                        "description": "Ancle la barra de herramientas de Vantage a la barra de tareas de Windows para obtener fácilmente más detalles sobre la batería y acceder a su configuración rápida.",
+                        "hint": "The options in the image depend on the capacity of the machine. For example, – some machines support backlight settings, and some may not."
                     }
                 },
                 "batterySettings": {
@@ -2734,54 +2734,54 @@
         "question1": {
             "title": "Cree copias de seguridad y restaure sus archivos",
             "para1": "Siempre es bueno tener una copia de seguridad. Guarde copias de los archivos en otra unidad en caso de que algo le suceda a los originales.",
-			"heading1": "Configure la copia de seguridad",
-			"para2": "Seleccione el botón Inicio, seleccione Configuración > Actualización y seguridad > Copia de seguridad > agregar una unidad y luego seleccione una unidad externa o una ubicación de red para sus copias de seguridad.",
-			"para3": "Todo listo. Cada una hora, realizaremos una copia de seguridad de todos los datos de la carpeta de usuario (C:\\Users\\su nombre de usuario). Para cambiar de cuáles archivos se realizará una copia de seguridad o la frecuencia con la que se realizarán, vaya a Más opciones.",
-			"heading2": "Restaure sus archivos",
-			"para4": "Si le falta un archivo o carpeta importante, aquí le mostramos cómo recuperarlo:",
-			"para5": {
-				"div1": "1. Escriba Restaurar archivos en el recuadro de búsqueda de la barra de tareas y seleccione  Restaurar los archivos con el historial de archivos.",
-				"div2": "2. Busque el archivo que necesita y luego utilice las flechas para ver todas sus versiones.",
-				"div3": "3. Cuando encuentre la versión que desea, seleccione Restaurar para guardarla en su ubicación original. Para guardarla en un lugar diferente, mantenga presionado (o presione con el botón derecho) Restaurar, seleccione Restaurar en y luego elija una nueva ubicación."
-			}
+            "heading1": "Configure la copia de seguridad",
+            "para2": "Seleccione el botón Inicio, seleccione Configuración > Actualización y seguridad > Copia de seguridad > agregar una unidad y luego seleccione una unidad externa o una ubicación de red para sus copias de seguridad.",
+            "para3": "Todo listo. Cada una hora, realizaremos una copia de seguridad de todos los datos de la carpeta de usuario (C:\\Users\\su nombre de usuario). Para cambiar de cuáles archivos se realizará una copia de seguridad o la frecuencia con la que se realizarán, vaya a Más opciones.",
+            "heading2": "Restaure sus archivos",
+            "para4": "Si le falta un archivo o carpeta importante, aquí le mostramos cómo recuperarlo:",
+            "para5": {
+                "div1": "1. Escriba Restaurar archivos en el recuadro de búsqueda de la barra de tareas y seleccione  Restaurar los archivos con el historial de archivos.",
+                "div2": "2. Busque el archivo que necesita y luego utilice las flechas para ver todas sus versiones.",
+                "div3": "3. Cuando encuentre la versión que desea, seleccione Restaurar para guardarla en su ubicación original. Para guardarla en un lugar diferente, mantenga presionado (o presione con el botón derecho) Restaurar, seleccione Restaurar en y luego elija una nueva ubicación."
+            }
         },
         "question2": {
-			"title": "Cómo restablecer Windows 10",
-			"para1": "Si su PC con Windows 10 está experimentando problemas o si usted la venderá, debe restablecerla. El restablecimiento le permite elegir mantener o eliminar sus archivos, elimina todas las aplicaciones y configuraciones e instala una copia nueva de Windows. Esto también puede solucionar muchos problemas, como un rendimiento lento.",
-			"heading1": "1. Abra la aplicación de configuración",
-			"para2": "Pulse el botón Iniciar imagen que está ubicado en la parte inferior izquierda de la pantalla y seleccione la imagen del engranaje de configuración.",
-			"heading2": "2. Seleccione Actualizar seguridad de la lista de categorías",
-			"heading3": "3. Navegue hasta Recuperación desde el panel izquierdo",
-			"heading4": "4. Comience el proceso de restablecimiento",
-			"para3": "En el encabezado “Restablecer este equipo” que se muestra en la parte superior, haga clic o pulse sobre el botón Comenzar.",
-			"heading5": "5. Seleccione si desea conservar los archivos o no",
-			"para4": "Después de restablecer el equipo, puede iniciar sesión en su cuenta Microsoft. Las aplicaciones de la Tienda Windows adquiridas en esta cuenta se reinstalarán.",
-			"para5": {
-				"li1": "“Conservar mis archivos” elimina las aplicaciones y la configuración, pero conserva todos los archivos personales.",
-				"li2": "“Eliminar todo” borra las aplicaciones, la configuración y los archivos personales. Si no tiene una copia de seguridad de los archivos, es posible que desee presionar Cancelar. Haga una copia de seguridad de los archivos y comience de nuevo con este proceso."
-			},
-			"heading6": "6. Puede seleccionar configuraciones adicionales diferentes",
-			"para6": "Esto solo se mostrará si ha seleccionado “Eliminar todo” en el paso anterior.",
-			"heading7": "7. Lea el resumen general y pulse Restablecer cuando esté listo para continuar",
-			"para7": "Windows se preparará para restablecer el dispositivo. Simplemente espere hasta que vea una pantalla azul.",
-			"heading8": "8. Cuando aparezca “Seleccione una opción”, seleccione Continuar",
-			"para8": "Windows se reiniciará y empezará a restablecerse. Es posible que su PC arranque varias veces a medida que se produzca el restablecimiento.",
-			"heading9": "Preguntas y respuestas de la comunidad",
-			"communityAnswer": "Respuesta de la comunidad",
-			"q1": "Si elijo “Eliminar todo”: ¿se borran todas las unidades del equipo o aquellas que están conectadas a mi sistema? ¿o solo la unidad en la que estoy ejecutando Windows 10?",
-			"a1": "Solo borrará la unidad del sistema operativo Windows 10 (normalmente, la unidad C:). Las demás unidades del equipo no se verán afectadas.",
-			"q2": "¿Cómo puedo hacer esto si mi pantalla está dañada?",
-			"a2": "Desafortunadamente, no es posible. Tendrá que adquirir una nueva pantalla.",
-			"q3": "Si he iniciado sesión en un sitio web, ¿se eliminará también este historial?",
-			"a3": "Sí, según el navegador que esté utilizando. Para eliminar el historial del navegador, tiene que ir a la configuración del navegador y suprimir el historial. También puede utilizar los modos Incógnito para evitar guardar el historial.",
-			"q4": "Si selecciono “Eliminar todo”, ¿se restablecerá mi contraseña también?",
-			"a4": "Sí, una vez que restablezca el equipo de Windows 10, se eliminarán todos los datos de usuario. Esto incluye documentos, contraseñas almacenadas, imágenes, configuraciones preferidas, información del navegador y datos de aplicaciones.",
-			"para9": "Referencia",
-			"para10": "Cómo restablecer Windows 10 - WikiHow."
-		},
+            "title": "Cómo restablecer Windows 10",
+            "para1": "Si su PC con Windows 10 está experimentando problemas o si usted la venderá, debe restablecerla. El restablecimiento le permite elegir mantener o eliminar sus archivos, elimina todas las aplicaciones y configuraciones e instala una copia nueva de Windows. Esto también puede solucionar muchos problemas, como un rendimiento lento.",
+            "heading1": "1. Abra la aplicación de configuración",
+            "para2": "Pulse el botón Iniciar imagen que está ubicado en la parte inferior izquierda de la pantalla y seleccione la imagen del engranaje de configuración.",
+            "heading2": "2. Seleccione Actualizar seguridad de la lista de categorías",
+            "heading3": "3. Navegue hasta Recuperación desde el panel izquierdo",
+            "heading4": "4. Comience el proceso de restablecimiento",
+            "para3": "En el encabezado “Restablecer este equipo” que se muestra en la parte superior, haga clic o pulse sobre el botón Comenzar.",
+            "heading5": "5. Seleccione si desea conservar los archivos o no",
+            "para4": "Después de restablecer el equipo, puede iniciar sesión en su cuenta Microsoft. Las aplicaciones de la Tienda Windows adquiridas en esta cuenta se reinstalarán.",
+            "para5": {
+                "li1": "“Conservar mis archivos” elimina las aplicaciones y la configuración, pero conserva todos los archivos personales.",
+                "li2": "“Eliminar todo” borra las aplicaciones, la configuración y los archivos personales. Si no tiene una copia de seguridad de los archivos, es posible que desee presionar Cancelar. Haga una copia de seguridad de los archivos y comience de nuevo con este proceso."
+            },
+            "heading6": "6. Puede seleccionar configuraciones adicionales diferentes",
+            "para6": "Esto solo se mostrará si ha seleccionado “Eliminar todo” en el paso anterior.",
+            "heading7": "7. Lea el resumen general y pulse Restablecer cuando esté listo para continuar",
+            "para7": "Windows se preparará para restablecer el dispositivo. Simplemente espere hasta que vea una pantalla azul.",
+            "heading8": "8. Cuando aparezca “Seleccione una opción”, seleccione Continuar",
+            "para8": "Windows se reiniciará y empezará a restablecerse. Es posible que su PC arranque varias veces a medida que se produzca el restablecimiento.",
+            "heading9": "Preguntas y respuestas de la comunidad",
+            "communityAnswer": "Respuesta de la comunidad",
+            "q1": "Si elijo “Eliminar todo”: ¿se borran todas las unidades del equipo o aquellas que están conectadas a mi sistema? ¿o solo la unidad en la que estoy ejecutando Windows 10?",
+            "a1": "Solo borrará la unidad del sistema operativo Windows 10 (normalmente, la unidad C:). Las demás unidades del equipo no se verán afectadas.",
+            "q2": "¿Cómo puedo hacer esto si mi pantalla está dañada?",
+            "a2": "Desafortunadamente, no es posible. Tendrá que adquirir una nueva pantalla.",
+            "q3": "Si he iniciado sesión en un sitio web, ¿se eliminará también este historial?",
+            "a3": "Sí, según el navegador que esté utilizando. Para eliminar el historial del navegador, tiene que ir a la configuración del navegador y suprimir el historial. También puede utilizar los modos Incógnito para evitar guardar el historial.",
+            "q4": "Si selecciono “Eliminar todo”, ¿se restablecerá mi contraseña también?",
+            "a4": "Sí, una vez que restablezca el equipo de Windows 10, se eliminarán todos los datos de usuario. Esto incluye documentos, contraseñas almacenadas, imágenes, configuraciones preferidas, información del navegador y datos de aplicaciones.",
+            "para9": "Referencia",
+            "para10": "Cómo restablecer Windows 10 - WikiHow."
+        },
         "question3": {
-			"title": "Cómo conocer la CPU de su equipo",
-			"heading1": "Síntoma",
+            "title": "Cómo conocer la CPU de su equipo",
+            "heading1": "Síntoma",
             "para1": "Los términos 32 bits y 64 bits hacen referencia a la forma en la que el procesador de sistema (también denominado CPU) gestiona la información. La versión 64 bits de Windows gestiona grandes cantidades de memoria de acceso aleatorio (RAM) de una forma más eficaz que un sistema de 32 bits.",
             "heading2": "Marcas afectadas",
             "para2": "El síntoma anterior está asociado, pero sin limitarse a, a los siguientes sistemas:",
@@ -2790,10 +2790,10 @@
             "para4": "Windows 7, 8 y 10",
             "heading4": "Solución",
             "para5": "Windows 7 o Vista",
-			"para6": "Para abrir sistema, haga clic en el <strong>Botón de inicio </strong>Imagen del <strong>botón de inicio,</strong> haga clic con el botón secundario del mouse en Equipo y luego haga clic en Propiedades.",
+            "para6": "Para abrir sistema, haga clic en el <strong>Botón de inicio </strong>Imagen del <strong>botón de inicio,</strong> haga clic con el botón secundario del mouse en Equipo y luego haga clic en Propiedades.",
             "para7": "En Sistema, puede ver el tipo de sistema.",
             "para8": "Windows 8 y Windows 10",
-			"para9": "<strong>Método 1:</strong> ver la ventana del sistema en el panel de control",
+            "para9": "<strong>Método 1:</strong> ver la ventana del sistema en el panel de control",
             "para10": "Deslice rápidamente desde el borde derecho de la pantalla hacia el centro y luego toque <strong>Buscar</strong>. O bien, si está utilizando un mouse, apunte a la esquina inferior derecha de la pantalla y luego haga clic en <strong>Buscar.</strong>",
             "para11": "Escriba <strong>sistema</strong> en el cuadro de búsqueda y luego presione o haga clic en <strong>Configuración.</strong>",
             "para12": "Toque o haga clic en <strong>Sistema</strong>.",
@@ -2805,8 +2805,8 @@
             "para18": "Si está ejecutando una versión de <strong>64 bits </strong>de Windows 8<strong>, </strong>el PC basado en x64 se visualiza en el campo <strong>Tipo de sistema</strong> en el encabezado del Elemento. Si está ejecutando una versión <strong>32 bits</strong> de Windows 8, el PC basado en x86 aparece en el campo <strong>Tipo de sistema</strong> en el encabezado del elemento.  "
         },
         "question4": {
-			"title": "Compruebe el uso de la batería de su equipo",
-			"heading1": "Síntoma",
+            "title": "Compruebe el uso de la batería de su equipo",
+            "heading1": "Síntoma",
             "para1": "Windows 10 incluye una nueva pantalla “<strong>uso de batería”</strong> que le muestra lo que está agotando la potencia de su equipo portátil. Esto significa que le dirá exactamente qué aplicaciones, tanto de escritorio como “universales” de Windows 10, están utilizando demasiada energía.",
             "heading2": "Marcas afectadas",
             "para2": "Equipos portátiles Lenovo, sistemas de escritorio",
@@ -2828,8 +2828,8 @@
             "para13": "8. Desplácese hacia abajo y verá una lista de aplicaciones, esto se considera la sección más útil de esta característica. Se mostrará una lista de las aplicaciones que han usado batería en ese período y se le mostrará el porcentaje del poder de la batería que cada aplicación haya utilizado."
         },
         "question5": {
-			"title": "Use su equipo como una tableta",
-			"para1": "La modalidad de tablero hace que Windows sea más intuitivo y más fácil de utilizar cuando tiene un dispositivo de pantalla táctil.",
+            "title": "Use su equipo como una tableta",
+            "para1": "La modalidad de tablero hace que Windows sea más intuitivo y más fácil de utilizar cuando tiene un dispositivo de pantalla táctil.",
             "heading1": "Use la modalidad de tableta",
             "para2": "Para activar la modalidad de tableta, seleccione <strong>Centro de actividades</strong> en la barra de tareas y luego seleccione <strong>Modalidad de tableta</strong>.",
             "heading2": "Nota",
@@ -2845,8 +2845,8 @@
             "para10": "Utilice el botón atrás de la barra de tareas para volver a una aplicación o para abrir una aplicación que estaba usando antes."
         },
         "question6": {
-			"title": "Conozca Cortana, su asistente personal",
-			"heading1": "¿Qué es Cortana?",
+            "title": "Conozca Cortana, su asistente personal",
+            "heading1": "¿Qué es Cortana?",
             "para1": "Cortana es su agente digital. Ella le ayudará a realizar las tareas.",
             "para2": "Cuanto más utilice Cortana, más personalizada será su experiencia.",
             "para3": "Para empezar, escriba una pregunta en el recuadro de búsqueda o seleccione el micrófono y hable con Cortana. (El tecleo funciona para todos los tipos de equipos, pero necesita un micrófono para la conversación.)",
@@ -2854,7 +2854,7 @@
             "para5": "1. Inicio 2. Equipo portátil 3. Valores 4. Informar",
             "para6": "Estas son algunas de las cosas que Cortana puede hacer por usted:",
             "unorderedList1": {
-				"listItem1": "Proporcionar avisos basados en la hora, lugares o personas.",
+                "listItem1": "Proporcionar avisos basados en la hora, lugares o personas.",
                 "listItem2": "Realizar un seguimiento de paquetes, equipos, intereses y vuelos.",
                 "listItem3": "Enviar mensajes de correo electrónico y textos.",
                 "listItem4": "Administrar su calendario y mantenerlo al día.",
@@ -2863,7 +2863,7 @@
                 "listItem7": "Buscar hechos, archivos, lugares e información.",
                 "listItem8": "Abrir cualquier aplicación en el sistema."
             },
-			"heading2": "Intente lo siguiente: establecer un aviso",
+            "heading2": "Intente lo siguiente: establecer un aviso",
             "para7": "Una de las cosas que puede hacer Cortana es proporcionarle recordatorios. Ella puede recordarle que haga las cosas según la hora, los lugares o incluso para personas.",
             "para8": "Por ejemplo, escriba o diga “Recordarme felicitar a Tanya la próxima vez que me llame”.",
             "para9": "El aviso aparecerá cuando reciba una llamada de Tanya.",

@@ -199,8 +199,7 @@
                     "description": "Impostazioni non corrette dell'overclock possono provocare danni hardware irreversibili.",
                     "proceed": "CONTINUA",
                     "legionAccessory": "Install Legion Accessory Central?",
-                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
-                    "install": "INSTALL"
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc."
                 },
                 "popup": {
                     "closeBtn": "close"
@@ -1213,7 +1212,8 @@
                     "title": "Altre impostazioni",
                     "vantageToolbar": {
                         "title": "Barra degli strumenti di Lenovo Vantage",
-                        "description": "Aggiunge la barra degli strumenti di Vantage alla barra delle applicazioni di Windows per ottenere facilmente ulteriori dettagli sulla batteria e l'accesso alle impostazioni rapide."
+                        "description": "Aggiunge la barra degli strumenti di Vantage alla barra delle applicazioni di Windows per ottenere facilmente ulteriori dettagli sulla batteria e l'accesso alle impostazioni rapide.",
+                        "hint": "The options in the image depend on the capacity of the machine. For example, – some machines support backlight settings, and some may not."
                     }
                 },
                 "batterySettings": {
@@ -2734,20 +2734,20 @@
         "question1": {
             "title": "Backup e ripristino dei file",
             "para1": "È sempre consigliabile disporre di una copia di backup. Si consiglia di salvare le copie dei file su un'altra unità, in caso di problemi ai file originali.",
-			"heading1": "Configurazione del backup",
-			"para2": "Selezionare il pulsante Start, fare clic su Impostazioni > Aggiornamento e sicurezza > Backup > Aggiungi un'unità e scegliere un'unità esterna o il percorso di rete per i backup.",
-			"para3": "Tutto è pronto. Il backup verrà eseguito ogni ora nella cartella utente (C:\\Users\\nome utente). Per modificare i file di cui eseguire il backup o la frequenza dei backup, accedere alla sezione Altre opzioni.",
-			"heading2": "Ripristino dei file",
-			"para4": "Se manca un file o una cartella importante, ecco come recuperarlo:",
-			"para5": {
-				"div1": "1. Digitare Ripristina file nella casella di ricerca sulla barra delle applicazioni, quindi selezionare  Ripristina file con Cronologia file.",
-				"div2": "2. Cercare il file che si desidera, quindi utilizzare le frecce per visualizzare tutte le versioni.",
-				"div3": "3. Una volta trovata la versione desiderata, selezionare Ripristina per salvarla nel percorso originale. Per salvarla in un percorso differente, tenere premuto (o fare clic con il pulsante destro del mouse su) Ripristina, selezionare Ripristina in e scegliere un nuovo percorso."
-			}
+            "heading1": "Configurazione del backup",
+            "para2": "Selezionare il pulsante Start, fare clic su Impostazioni > Aggiornamento e sicurezza > Backup > Aggiungi un'unità e scegliere un'unità esterna o il percorso di rete per i backup.",
+            "para3": "Tutto è pronto. Il backup verrà eseguito ogni ora nella cartella utente (C:\\Users\\nome utente). Per modificare i file di cui eseguire il backup o la frequenza dei backup, accedere alla sezione Altre opzioni.",
+            "heading2": "Ripristino dei file",
+            "para4": "Se manca un file o una cartella importante, ecco come recuperarlo:",
+            "para5": {
+                "div1": "1. Digitare Ripristina file nella casella di ricerca sulla barra delle applicazioni, quindi selezionare  Ripristina file con Cronologia file.",
+                "div2": "2. Cercare il file che si desidera, quindi utilizzare le frecce per visualizzare tutte le versioni.",
+                "div3": "3. Una volta trovata la versione desiderata, selezionare Ripristina per salvarla nel percorso originale. Per salvarla in un percorso differente, tenere premuto (o fare clic con il pulsante destro del mouse su) Ripristina, selezionare Ripristina in e scegliere un nuovo percorso."
+            }
         },
         "question2": {
-			"title": "Come ripristinare le impostazioni di fabbrica di Windows 10",
-			"para1": "Se sul PC Windows 10 si stanno riscontrando problemi o se si ha intenzione di venderlo, è necessario reimpostarlo. L'esecuzione di una reimpostazione consente di scegliere di conservare o rimuovere i file, di rimuovere tutte le applicazioni e le impostazioni e di installare una nuova copia di Windows. Questo può anche risolvere molti problemi, come le prestazioni lente.",
+            "title": "Come ripristinare le impostazioni di fabbrica di Windows 10",
+            "para1": "Se sul PC Windows 10 si stanno riscontrando problemi o se si ha intenzione di venderlo, è necessario reimpostarlo. L'esecuzione di una reimpostazione consente di scegliere di conservare o rimuovere i file, di rimuovere tutte le applicazioni e le impostazioni e di installare una nuova copia di Windows. Questo può anche risolvere molti problemi, come le prestazioni lente.",
             "heading1": "1. Apertura dell'app Impostazioni",
             "para2": "Premere il pulsante con l'icona Start ubicato in basso a sinistra dello schermo e selezionare l'immagine dell'ingranaggio delle impostazioni.",
             "heading2": "2. Selezionare Aggiornamento e sicurezza dall'elenco delle categorie",
@@ -2757,10 +2757,10 @@
             "heading5": "5. Scegliere se conservare o meno i file",
             "para4": "Dopo la reimpostazione, è possibile accedere al proprio account Microsoft. Tutte le app di Windows Store acquistate con questo account verranno reinstallate.",
             "para5": {
-				"li1": "Mantieni i file rimuove le applicazioni e le impostazioni, ma mantiene tutti i file personali.",
-				"li2": "Rimuovi tutto cancella le app, le impostazioni e i file personali. Se non si dispone di una copia di backup dei file, è possibile premere Annulla, eseguirne il backup e iniziare di nuovo questo processo."
-			},
-			"heading6": "6. È possibile selezionare diverse impostazioni aggiuntive",
+                "li1": "Mantieni i file rimuove le applicazioni e le impostazioni, ma mantiene tutti i file personali.",
+                "li2": "Rimuovi tutto cancella le app, le impostazioni e i file personali. Se non si dispone di una copia di backup dei file, è possibile premere Annulla, eseguirne il backup e iniziare di nuovo questo processo."
+            },
+            "heading6": "6. È possibile selezionare diverse impostazioni aggiuntive",
             "para6": "Questo viene visualizzato solo se è stato selezionato \"Rimuovi tutto\" nel passaggio precedente.",
             "heading7": "7. Leggere la panoramica e premere Reimposta quando si è pronti per procedere.",
             "para7": "Windows si preparerà per reimpostare il dispositivo. Attendere che appaia una schermata blu.",
@@ -2768,7 +2768,7 @@
             "para8": "Windows verrà riavviato e inizierà la reimpostazione. Il PC potrebbe riavviarsi varie volte durante la reimpostazione.",
             "heading9": "Domande e risposte della comunità",
             "communityAnswer": "Risposta della community",
-			"q1": "Se si sceglie di rimuovere tutto, si cancellano tutte le unità sul/collegate al computer o solo quella su cui Windows 10 è in esecuzione?",
+            "q1": "Se si sceglie di rimuovere tutto, si cancellano tutte le unità sul/collegate al computer o solo quella su cui Windows 10 è in esecuzione?",
             "a1": "Si cancellerà solo l'unità del sistema operativo Windows 10 (di solito è l'unità C:). Altre unità sul/collegato al computer non saranno interessate.",
             "q2": "Come posso fare questo se il mio schermo è rotto?",
             "a2": "Non puoi fare niente, purtroppo. Sarà necessario ottenere un nuovo schermo.",
@@ -2780,8 +2780,8 @@
             "para10": "Come ripristinare le impostazioni di fabbrica di Windows 10 - WikiHow."
         },
         "question3": {
-			"title": "Informazioni sulla CPU",
-			"heading1": "Sintomo",
+            "title": "Informazioni sulla CPU",
+            "heading1": "Sintomo",
             "para1": "I termini 32 bit e 64 bit si riferiscono al modo in cui il processore di un computer (chiamato anche CPU), gestisce le informazioni. La versione a 64 bit di Windows gestisce in modo più efficiente grandi quantità di memoria RAM (Random Access Memory) rispetto a un sistema a 32 bit.",
             "heading2": "Marchi interessati",
             "para2": "Il sintomo sopra riportato è associato, ma non limitato, ai seguenti sistemi:",
@@ -2790,10 +2790,10 @@
             "para4": "Windows 7, 8, 10",
             "heading4": "Soluzione",
             "para5": "Windows 7 o Vista",
-			"para6": "Accedere al sistema facendo clic sul <strong>pulsante Start </strong>Immagine del <strong>pulsante Start</strong>, facendo clic con il tasto destro del mouse su Computer; quindi fare clic su Proprietà.",
+            "para6": "Accedere al sistema facendo clic sul <strong>pulsante Start </strong>Immagine del <strong>pulsante Start</strong>, facendo clic con il tasto destro del mouse su Computer; quindi fare clic su Proprietà.",
             "para7": "In sistema, è possibile visualizzare il tipo di sistema.",
             "para8": "Windows 8 e Windows 10",
-			"para9": "<strong>Metodo 1:</strong> visualizzare la finestra Sistema nel pannello di controllo",
+            "para9": "<strong>Metodo 1:</strong> visualizzare la finestra Sistema nel pannello di controllo",
             "para10": "Scorrere un dito verso l'interno dal bordo destro dello schermo e quindi toccare <strong>Cerca</strong>. In alternativa, se si sta utilizzando un mouse, puntare all'angolo inferiore destro dello schermo, quindi fare clic su <strong>Cerca.</strong>",
             "para11": "Digitare <strong>Sistema</strong> nella casella di ricerca, quindi toccare o fare clic su <strong>Impostazioni.</strong>",
             "para12": "Toccare o fare clic su <strong>Sistema</strong>.",
@@ -2805,8 +2805,8 @@
             "para18": "Se si sta utilizzando una versione a <strong>64 bit </strong>di Windows 8<strong>, </strong> PC basato su x64 viene visualizzato nel campo <strong>Tipo sistema</strong> sotto l'intestazione Elemento. Se si sta utilizzando una versione a<strong> 32 bit</strong> di Windows 8, PC basato su x86 viene visualizzato nel campo <strong>Tipo sistema</strong> sotto l'intestazione Elemento.  "
         },
         "question4": {
-			"title": "Informazioni sull'uso della batteria",
-			"heading1": "Sintomo",
+            "title": "Informazioni sull'uso della batteria",
+            "heading1": "Sintomo",
             "para1": "Windows 10 include una nuova schermata \"<strong>Uso batteria\"</strong> che mostra le risorse che stanno utilizzando maggiormente la batteria del notebook. Ciò significa che in questa schermata vengono visualizzate le app desktop e le app universali di Windows 10 che richiedono più potenza.",
             "heading2": "Marchi interessati",
             "para2": "Desktop, notebook Lenovo",
@@ -2828,8 +2828,8 @@
             "para13": "8. Scorrere verso il basso per visualizzare la funzione più utile: un elenco delle applicazioni. In questa sezione è disponibile un elenco di tutte le app che hanno utilizzato la batteria in un determinato periodo di tempo e la percentuale di batteria usata da ogni app."
         },
         "question5": {
-			"title": "Utilizzo del PC come un tablet",
-			"para1": "La modalità tablet rende Windows più intuitivo e più facile da usare quando si dispone di un dispositivo touchscreen.",
+            "title": "Utilizzo del PC come un tablet",
+            "para1": "La modalità tablet rende Windows più intuitivo e più facile da usare quando si dispone di un dispositivo touchscreen.",
             "heading1": "Utilizzo della modalità tablet",
             "para2": "Per attivare la modalità tablet, selezionare <strong>Centro notifiche</strong> sulla barra delle applicazioni, quindi scegliere <strong>Modalità tablet</strong> .",
             "heading2": "Nota",
@@ -2845,8 +2845,8 @@
             "para10": "Utilizzare il pulsante Indietro sulla barra delle applicazioni per tornare a un'app o per aprire un'app che si stava utilizzando."
         },
         "question6": {
-			"title": "Informazioni su Cortana, la tua assistente personale",
-			"heading1": "Cos'è Cortana?",
+            "title": "Informazioni su Cortana, la tua assistente personale",
+            "heading1": "Cos'è Cortana?",
             "para1": "Cortana è il tuo agente digitale. Ti aiuterà a completare le attività.",
             "para2": "Più usi Cortana, più la tua esperienza sarà personalizzata.",
             "para3": "Per iniziare, digita una domanda nella casella di ricerca o seleziona il microfono per parlare con Cortana. (La digitazione è compatibile con tutti i tipi di PC, ma è necessario un microfono per parlare.)",
@@ -2854,7 +2854,7 @@
             "para5": "1. Casa 2. Notebook 3. Impostazioni 4. Feeback",
             "para6": "Ecco alcune cose che Cortana può fare per te:",
             "unorderedList1": {
-				"listItem1": "Impostare un promemoria in base a ora, luoghi o persone.",
+                "listItem1": "Impostare un promemoria in base a ora, luoghi o persone.",
                 "listItem2": "Monitorare pacchi, squadre, interessi e voli.",
                 "listItem3": "Inviare e-mail e testi.",
                 "listItem4": "Gestire il calendario e mantenerti aggiornato.",
@@ -2863,7 +2863,7 @@
                 "listItem7": "Trovare notizie, file, luoghi e informazioni.",
                 "listItem8": "Aprire qualsiasi app sul sistema."
             },
-			"heading2": "Prova a scrivere o dire: imposta un promemoria",
+            "heading2": "Prova a scrivere o dire: imposta un promemoria",
             "para7": "Una delle cose che Cortana può fare è impostare un promemoria. Può ricordarti le attività in base a tempo, luoghi o persone.",
             "para8": "Ad esempio, digita o dici: \"Ricordami di congratularmi con Tanya la prossima volta che mi chiama\".",
             "para9": "Il promemoria verrà visualizzato quando riceverai una chiamata da Tanya.",
