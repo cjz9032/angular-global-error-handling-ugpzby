@@ -5,7 +5,7 @@ import { DeviceService } from './../../../services/device/device.service';
 import { TranslateService } from '@ngx-translate/core';
 import { DashboardService } from './../../../services/dashboard/dashboard.service';
 import { VantageShellService } from './../../../services/vantage-shell/vantage-shell-mock.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute,Router } from '@angular/router';
 import { CMSService } from './../../../services/cms/cms.service';
 import { CommonService } from './../../../services/common/common.service';
 import { Title } from '@angular/platform-browser';
@@ -60,10 +60,18 @@ describe('PageLightingcustomizeComponent', () => {
 				{ provide: VantageShellService, useValue: shellServiceMock },
 				{ provide: DashboardService, useValue: {} },
 				{ provide: TranslateService, useValue: translateServiceMock },
-				{ provide: DeviceService, useValue: deviceServiceMock }],
+				{ provide: DeviceService, useValue: deviceServiceMock },
+				{
+					provide: Router,
+					useClass: class {
+						navigate = jasmine.createSpy('navigate');
+					}
+				},
+				RouterTestingModule
+			],
 			schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA],
 			imports: [
-				RouterTestingModule.withRoutes([]),HttpClientModule
+				HttpClientModule
 			],
 		}).compileComponents();
 	}));

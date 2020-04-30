@@ -169,7 +169,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 				this.eCourseLoader = false;
 			}
 		} catch (error) {
-			this.logger.exception('initExpressChargingFromCache', error);
+			this.logger.exception('initDolbyAudioFromCache', error);
 		}
 	}
 
@@ -296,12 +296,10 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 						this.logger.info('getDolbyModesStatus:', response);
 					}).catch(error => {
 						this.logger.error('getDolbyModesStatus', error.message);
-						return EMPTY;
 					});
 			}
 		} catch (error) {
 			this.logger.error('getDolbyModesStatus' + error.message);
-			return EMPTY;
 		}
 	}
 
@@ -331,12 +329,10 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 						this.logger.info('startMonitorForDolby', value);
 					}).catch(error => {
 						this.logger.error('startMonitorForDolby', error.message);
-						return EMPTY;
 					});
 			}
 		} catch (error) {
 			this.logger.error('startMonitorForDolby' + error.message);
-			return EMPTY;
 		}
 	}
 
@@ -348,17 +344,15 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 						this.logger.info('stopMonitorForDolby', value);
 					}).catch(error => {
 						this.logger.error('stopMonitorForDolby', error.message);
-						return EMPTY;
 					});
 			}
 		} catch (error) {
 			this.logger.error('stopMonitorForDolby' + error.message);
-			return EMPTY;
 		}
 	}
 
 	refreshDolbyAudioProfileState() {
-		this.logger.info('refreshDolbyAudioProfileState',this.dolbyModeResponse);
+		this.logger.info('refreshDolbyAudioProfileState', this.dolbyModeResponse);
 		if (this.dolbyModeResponse.voIPStatus === undefined || this.dolbyModeResponse.voIPStatus === 'NotSupport') {
 			this.voipStatus.available = false;
 		}
@@ -397,10 +391,10 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 				this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyModeResponse);
 			}
 		}
-		
+
 	}
 
-	onDolbyAudioToggleOnOff(event) {
+	onDolbyAudioToggleOnOff(event: any) {
 		if (!event.switchValue) {
 			this.eCourseStatus.status = event.switchValue;
 			this.dolbyModeResponse.eCourseStatus = 'False';
@@ -502,7 +496,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	onToggleOfeCourseAutoOptimization(event) {
+	onToggleOfeCourseAutoOptimization(event: any) {
 		this.eCourseStatus.status = event.switchValue;
 		if (event.switchValue) {
 			this.dolbyModeResponse.isAudioProfileEnabled = event.switchValue;
@@ -534,23 +528,19 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	startMonitorHandlerForDolby(response) {
+	startMonitorHandlerForDolby(response: any) {
 		this.logger.info('startMonitorHandlerForDolby', response);
 		this.dolbyModeResponse.available = (Object.keys(response).indexOf('available') !== -1 && response.available !== undefined) ? response.available : this.dolbyModeResponse.available;
-		//this.dolbyModeResponse.supportedModes = (Object.keys(response).indexOf('supportedModes') !== -1  && response.supportedModes !==  undefined) ? response.supportedModes : this.dolbyModeResponse.supportedModes;
 		this.dolbyModeResponse.currentMode = (Object.keys(response).indexOf('currentMode') !== -1 && response.currentMode !== undefined) ? response.currentMode : this.dolbyModeResponse.currentMode;
-
 		this.dolbyModeResponse.isAudioProfileEnabled = (Object.keys(response).indexOf('isAudioProfileEnabled') !== -1 && response.isAudioProfileEnabled !== undefined) ? response.isAudioProfileEnabled : this.dolbyModeResponse.isAudioProfileEnabled;
 		this.dolbyModeResponse.eCourseStatus = (Object.keys(response).indexOf('eCourseStatus') !== -1 && response.eCourseStatus !== undefined) ? response.eCourseStatus : this.dolbyModeResponse.eCourseStatus;
-		//this.dolbyModeResponse.voIPStatus = (Object.keys(response).indexOf('voIPStatus') !== -1 && response.voIPStatus !==  undefined) ? response.voIPStatus : this.dolbyModeResponse.voIPStatus;
-		//this.dolbyModeResponse.entertainmentStatus = (Object.keys(response).indexOf('entertainmentStatus') !== -1 && response.entertainmentStatus !==  undefined) ? response.entertainmentStatus : this.dolbyModeResponse.entertainmentStatus;
 		this.dolbyModeResponse.driverAvailability = (Object.keys(response).indexOf('driverAvailability') !== -1 && response.driverAvailability !== undefined) ? response.driverAvailability : this.dolbyModeResponse.driverAvailability;
 		this.refreshDolbyAudioProfileState();
 		this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyModeResponse);
 		this.initVisibility();
 	}
 
-	onDolbySettingRadioChange(event) {
+	onDolbySettingRadioChange(event: any) {
 		try {
 			this.dolbyModeResponse.currentMode = event.target.value;
 			if (this.audioService.isShellAvailable) {
@@ -566,12 +556,10 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 						this.logger.info('onDolbySettingRadioChange', value);
 					}).catch(error => {
 						this.logger.error('onDolbySettingRadioChange', error.message);
-						return EMPTY;
 					});
 			}
 		} catch (error) {
 			this.logger.error('onDolbySettingRadioChange' + error.message);
-			return EMPTY;
 		}
 	}
 
