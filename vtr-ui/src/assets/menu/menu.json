@@ -19,7 +19,7 @@
 			"subitems": []
 		},
 		{
-			"id": "wifi-security",
+			"id": "security",
 			"label": "common.menu.security.title",
 			"path": "security/wifi-security",
 			"icon": [
@@ -383,17 +383,18 @@
 				{
 					"id": "support",
 					"label": "common.menu.support",
-					"path":null,
+					"path": null,
 					"icon": null,
 					"metricsEvent": "itemClick",
 					"metricsParent": "navbar",
 					"metricsItem": "link.support",
 					"routerLinkActiveOptions": {
-						"exact": true},
-						"forArm": false,
-						"sMode": true,
-					"subitems": []
+						"exact": true
 					},
+					"forArm": false,
+					"sMode": true,
+					"subitems": []
+				},
 				{
 					"id": "smart-performance",
 					"label": "gaming.common.menu.smartPerformance",
