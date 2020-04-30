@@ -485,7 +485,7 @@ export class ConfigService {
 	}
 
 	filterByBeta(menu: Array<any>, isBeta: boolean): Promise<Array<any>> {
-		this.showSmartPerformance(menu, isBeta)
+		this.showSmartPerformance(menu, isBeta);
 		return this.canShowSearch().then((result) => {
 			this.initializeAppSearchItem(menu, result);
 			const item = menu.find(i => i.id === 'app-search');
@@ -495,12 +495,14 @@ export class ConfigService {
 	}
 	showSmartPerformance(menu, isBeta) {
 		menu.forEach(i => {
-			if (i.subitems.length && i.subitems.length > 0) {
-				i.subitems.forEach(el => {
-					if (el.id === 'smart-performance') {
-						el.hide = !isBeta;
-					}
-				})
+			if (i.subitems) {
+				if (i.subitems.length && i.subitems.length > 0) {
+					i.subitems.forEach(el => {
+						if (el.id === 'smart-performance') {
+							el.hide = !isBeta;
+						}
+					})
+				}
 			}
 		})
 	}
