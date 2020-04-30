@@ -361,8 +361,8 @@ export class SmartAssistService {
 					antiTheftDate.alarmOften = obj.alarmDuration;
 					antiTheftDate.photoNumber = obj.photoNumber;
 				}
-				return Promise.resolve(antiTheftDate);
 			}
+			return Promise.resolve(antiTheftDate);
 		} catch (error) {
 			return Promise.resolve(antiTheftDate);
 		}
