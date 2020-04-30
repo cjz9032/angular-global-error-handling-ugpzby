@@ -74,7 +74,7 @@ export class LenovoSupportService {
     return url.toString();
   }
 
-  private async getPremierUrl(): Promise<string> {
+  public async getPremierUrl(): Promise<string> {
     const machineSerialNumber = (await this.deviceInfo).sn;
 
     // Premier home url is as follows:

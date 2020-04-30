@@ -491,7 +491,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					centered: true,
 					windowClass: 'hardware-scan-modal-size'
 				});
-				modalRef.componentInstance.moduleNames = JSON.stringify(failedModules);
+				modalRef.componentInstance.moduleNames = failedModules;
 				modalRef.componentInstance.setUrl(supportUrl);
 			}
 		}
