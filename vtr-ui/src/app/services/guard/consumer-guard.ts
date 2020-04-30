@@ -21,7 +21,7 @@ export class ConsumerGuard implements CanActivate {
 		if (segmentTag === SegmentConst.Consumer) {
 			return true;
 		}
-		return this.guardConstants.defaultRoute;
+		return this.commonService.isFirstPageLoaded() ? false : this.guardConstants.defaultRoute;
 	}
 
 	canActivate(

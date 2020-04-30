@@ -21,7 +21,7 @@ export class NonCommercialGuard implements CanActivate {
 		if (segmentTag !== SegmentConst.Commercial) {
 			return true;
 		}
-		return this.guardConstants.defaultRoute;
+		return this.commonService.isFirstPageLoaded() ? false : this.guardConstants.defaultRoute;
 	}
 
 	canActivate(

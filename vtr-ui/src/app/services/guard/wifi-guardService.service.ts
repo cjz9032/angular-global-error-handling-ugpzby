@@ -45,10 +45,10 @@ export class WifiGuardService implements CanActivate {
 			}
 			if (typeof this.wifiSecurity.isSupported === 'boolean') {
 				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity, this.wifiSecurity.isSupported);
-				return this.wifiSecurity.isSupported ? true : this.guardConstants.defaultRoute;
+				if (this.wifiSecurity.isSupported) return true;
 			}
 
-			return this.guardConstants.defaultRoute;
+			return this.commonService.isFirstPageLoaded() ? false : this.guardConstants.defaultRoute;;
 		}
 
 		return cacheState;

@@ -42,7 +42,7 @@ export class GuardService {
 		if (routerStateSnapshot.url.includes('system-updates') &&
 			(!this.adPolicy.IsSystemUpdateEnabled ||
 				this.deviceService.isSMode)) {
-			return this.guardConstants.defaultRoute;
+			return this.commonService.isFirstPageLoaded() ? false : this.guardConstants.defaultRoute;
 		}
 		if (routerStateSnapshot.url.includes('dashboard')) { }
 

@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, UrlTree, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
-import { LocalInfoService } from '../local-info/local-info.service';
 import { SegmentConst } from '../self-select/self-select.service';
 import { GuardConstants } from './guard-constants';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -12,7 +11,6 @@ import { CommonService } from '../common/common.service';
 export class SMBGuard implements CanActivate {
 
 	constructor(
-		private localInfoService: LocalInfoService,
 		private guardConstants: GuardConstants,
 		private commonService: CommonService
 		) { }
@@ -21,7 +19,7 @@ export class SMBGuard implements CanActivate {
 		if (segmentTag === SegmentConst.SMB) {
 			return true;
 		}
-		return this.guardConstants.defaultRoute;
+		return this.commonService.isFirstPageLoaded() ? false : this.guardConstants.defaultRoute;
 	}
 
 	canActivate(

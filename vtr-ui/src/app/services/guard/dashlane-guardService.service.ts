@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { CanActivate } from '@angular/router';
 import { LocalInfoService } from '../local-info/local-info.service';
 import { GuardConstants } from './guard-constants';
+import { CommonService } from '../common/common.service';
 
 @Injectable({
 	providedIn: 'root',
@@ -9,7 +10,8 @@ import { GuardConstants } from './guard-constants';
 export class DashlaneGuardService implements CanActivate {
 	constructor(
 		private localInfoService: LocalInfoService,
-		private guardConstants: GuardConstants
+		private guardConstants: GuardConstants,
+		private commonService: CommonService
 	) { }
 
 	canActivate() {
@@ -28,7 +30,7 @@ export class DashlaneGuardService implements CanActivate {
 
 	getCanActivate(region) {
 		if (region === 'cn') {
-			return this.guardConstants.defaultRoute;
+			return this.commonService.isFirstPageLoaded() ? false : this.guardConstants.defaultRoute;
 		}
 		return true;
 	}

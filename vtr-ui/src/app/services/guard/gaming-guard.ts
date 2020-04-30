@@ -21,7 +21,7 @@ export class GamingGuard implements CanActivate {
 		if (segmentTag === SegmentConst.Gaming) {
 			return true;
 		}
-		return this.guardConstants.defaultRoute;
+		return this.commonService.isFirstPageLoaded() ? false : this.guardConstants.defaultRoute;
 	}
 
 	canActivate(

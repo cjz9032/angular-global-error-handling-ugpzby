@@ -304,4 +304,8 @@ export class CommonService {
 			this.sendNotification(LocalStorageKey.IsPowerPageAvailable, {available: isPowerPageAvailable, link: false });
 		}
 	}
+
+	isFirstPageLoaded() : boolean {
+		return this.getSessionStorageValue(SessionStorageKey.FirstPageLoaded, false);
+	}
 }
