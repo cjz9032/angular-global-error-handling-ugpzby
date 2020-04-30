@@ -41,7 +41,7 @@ export class SmartAssistService {
 		this.antiTheft = shellService.getAntiTheft();
 		this.windows = shellService.getWindows();
 		this.activeProtectionSystem ? this.isAPSavailable = true : this.isAPSavailable = false;
-		if (this.intelligentSensing && this.intelligentMedia && this.lenovoVoice && this.superResolution) {
+		if (this.intelligentSensing && this.intelligentMedia && this.lenovoVoice && this.superResolution && this.antiTheft) {
 			this.isShellAvailable = true;
 		}
 	}
@@ -361,8 +361,8 @@ export class SmartAssistService {
 					antiTheftDate.alarmOften = obj.alarmDuration;
 					antiTheftDate.photoNumber = obj.photoNumber;
 				}
-				return Promise.resolve(antiTheftDate);
 			}
+			return Promise.resolve(antiTheftDate);
 		} catch (error) {
 			return Promise.resolve(antiTheftDate);
 		}
