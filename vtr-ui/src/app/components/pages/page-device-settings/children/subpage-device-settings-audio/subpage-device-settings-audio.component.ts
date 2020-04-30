@@ -115,7 +115,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 
 		if (this.microphoneDevice) {
 			this.microphnePermissionHandler = (args: any) => {
-				if (args && args.status) {
+				if (args && (args.status != null)) {
 					switch (args.status) {
 						case 1:
 							this.microphoneProperties.permission = true;
