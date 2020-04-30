@@ -2083,8 +2083,11 @@
                 "note": {
                     "description": "此功能在以下情况下无效：",
                     "description1": "已启用省电模式。",
-                    "description2": "CPU 温度过高。"
-                }
+                    "description2": "CPU 温度过高。",
+                    "description3": "设备设置为[智能冷却]中的节电模式。"
+                },
+                "imageBefore":"前",
+                "imageAfter":"后"
             },
             "antiTheft": {
                 "heading": "智能感知",
