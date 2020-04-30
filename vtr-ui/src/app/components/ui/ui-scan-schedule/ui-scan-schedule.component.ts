@@ -373,6 +373,7 @@ export class UiScanScheduleComponent implements OnInit {
 		this.selectedFrequencyCopy = this.selectedFrequency;
 		this.selectedFrequencyCopy = this.selectedFrequency.replace(/ /g, "").toLowerCase();
 		if (this.selectedFrequencyCopy === 'onceamonth') {
+			this.selectedDay=this.selectedNumber;
 			var d = new Date();
 			d.setDate(this.selectedNumber);
 			scanScheduleTime = ""+d.getFullYear() + "-" + (d.getMonth()+1) + "-" + d.getDate() +""+ "T" + this.scanTime.hour + ":" + this.scanTime.min + ":00";
@@ -519,6 +520,7 @@ export class UiScanScheduleComponent implements OnInit {
 					else
 					{
 						this.selectedDay = weekDayName;
+						this.dayValue=this.days.indexOf(this.selectedDay);
 					}
 					this.scanTime.hour=  moment(momentObj).format('h');
 					this.scanTime.min= moment(momentObj).format('mm');
