@@ -199,8 +199,7 @@
                     "description": "Forkerte indstillinger for overclocking kan medføre hardwareskader, der ikke kan genoprettes.",
                     "proceed": "FORTSÆT",
                     "legionAccessory": "Install Legion Accessory Central?",
-                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
-                    "install": "INSTALL"
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc."
                 },
                 "popup": {
                     "closeBtn": "close"
@@ -1213,7 +1212,8 @@
                     "title": "Andre indstillinger",
                     "vantageToolbar": {
                         "title": "Værktøjslinjen i Lenovo Vantage",
-                        "description": "Fastgør Vantage-værktøjslinjen til Windows-proceslinjen, så du nemt kan få flere oplysninger om batteriet og få adgang til dine hurtige indstillinger."
+                        "description": "Fastgør Vantage-værktøjslinjen til Windows-proceslinjen, så du nemt kan få flere oplysninger om batteriet og få adgang til dine hurtige indstillinger.",
+                        "hint": "The options in the image depend on the capacity of the machine. For example, – some machines support backlight settings, and some may not."
                     }
                 },
                 "batterySettings": {
@@ -2734,54 +2734,54 @@
         "question1": {
             "title": "Sikkerhedskopiér og gendan dine filer",
             "para1": "Det er altid godt at have en sikkerhedskopi. Opbevar kopier af dine filer på et andet drev, i tilfælde af at der sker noget med originalerne.",
-			"heading1": "Konfigurer din sikkerhedskopiering",
-			"para2": "Vælg knappen Start, vælg Indstillinger > Opdatering og sikkerhed > Sikkerhedskopiering > Tilføj et drev, og vælg derefter et eksternt drev eller en ekstern netværksplacering til dine sikkerhedskopier.",
-			"para3": "Du er klar. Hver time sikkerhedskopierer vi alt i din brugermappe (C:\\Users\\dit brugernavn). Hvis du vil ændre, hvilke filer der bliver sikkerhedskopieret, eller hvor ofte sikkerhedskopiering udføres, skal du gå til Flere indstillinger.",
-			"heading2": "Gendan dine filer",
-			"para4": "Hvis du mangler en vigtig fil eller mappe, kan du gå tilbage på følgende måde:",
-			"para5": {
-				"div1": "1. Skriv Gendan filer i søgefeltet på proceslinjen, og vælg derefter Gendan dine filer med filhistorik.",
-				"div2": "2. Søg efter den fil, du skal bruge, og brug derefter pilene til at se alle dens versioner.",
-				"div3": "3. Når du har fundet den ønskede version, skal du vælge Gendan for at gemme den på sin oprindelige placering. Hvis du vil gemme den et andet sted, skal du trykke på og holde tasten Gendan nede (eller højreklikke), vælge Gendan til og derefter vælge en ny placering."
-			}
+            "heading1": "Konfigurer din sikkerhedskopiering",
+            "para2": "Vælg knappen Start, vælg Indstillinger > Opdatering og sikkerhed > Sikkerhedskopiering > Tilføj et drev, og vælg derefter et eksternt drev eller en ekstern netværksplacering til dine sikkerhedskopier.",
+            "para3": "Du er klar. Hver time sikkerhedskopierer vi alt i din brugermappe (C:\\Users\\dit brugernavn). Hvis du vil ændre, hvilke filer der bliver sikkerhedskopieret, eller hvor ofte sikkerhedskopiering udføres, skal du gå til Flere indstillinger.",
+            "heading2": "Gendan dine filer",
+            "para4": "Hvis du mangler en vigtig fil eller mappe, kan du gå tilbage på følgende måde:",
+            "para5": {
+                "div1": "1. Skriv Gendan filer i søgefeltet på proceslinjen, og vælg derefter Gendan dine filer med filhistorik.",
+                "div2": "2. Søg efter den fil, du skal bruge, og brug derefter pilene til at se alle dens versioner.",
+                "div3": "3. Når du har fundet den ønskede version, skal du vælge Gendan for at gemme den på sin oprindelige placering. Hvis du vil gemme den et andet sted, skal du trykke på og holde tasten Gendan nede (eller højreklikke), vælge Gendan til og derefter vælge en ny placering."
+            }
         },
         "question2": {
-			"title": "Sådan nulstiller du Windows 10",
-			"para1": "Hvis du oplever problemer med din Windows 10-pc, eller hvis du skal sælge den, bør du nulstille den. Når du udfører en nulstilling, kan du vælge at beholde eller fjerne dine filer, fjerne alle apps og indstillinger og installere en ny kopi af Windows. Dette kan også løse mange problemer som f. eks. dårlig ydeevne.",
-			"heading1": "1. Åbn appen Indstillinger",
-			"para2": "Tryk på ikonet for Start-knappen, der er placeret nederst til venstre på skærmen, og vælg tandhjulsikonet for at gå til indstillingerne.",
-			"heading2": "2. Vælg Opdatering og sikkerhed på listen over kategorier",
-			"heading3": "3. Gå til Genoprettelse i den venstre rude",
-			"heading4": "4. Start nulstillingsprocessen",
-			"para3": "Klik eller tryk på knappen Kom i gang under overskriften \"Nulstil denne pc\" øverst på siden.",
-			"heading5": "5. Vælg, om du vil beholde dine filer",
-			"para4": "Når du har nulstillet, kan du logge på din Microsoft-konto. Alle Windows Store-apps, der er købt med denne konto, bliver installeret igen.",
-			"para5": {
-				"li1": "Gem mine filer fjerner dine apps og indstillinger, men beholder alle dine personlige filer.",
-				"li2": "Fjern alt sletter dine apps, indstillinger og personlige filer. Hvis du ikke har en sikkerhedskopi af filerne, skal du klikke på Annuller, sikkerhedskopiere dem og starte denne proces igen."
-			},
-			"heading6": "6. Du kan vælge forskellige andre indstillinger",
-			"para6": "Dette vises kun, hvis du har valgt \"Fjern alt\" i forrige trin.",
-			"heading7": "7. Læs oversigten, og tryk på Nulstil, når du er klar til at fortsætte.",
-			"para7": "Windows forbereder nulstilling af din enhed. Du skal blot vente, indtil du får vist en blå skærm.",
-			"heading8": "8. Vælg Fortsæt, når \"Vælg en indstilling\" vises.",
-			"para8": "Windows genstartes, og nulstillingen går i gang. Din pc bliver muligvis genstartet flere gange under nulstillingen.",
-			"heading9": "Spørgsmål og svar fra gruppen",
-			"communityAnswer": "Svar fra gruppen",
-			"q1": "Hvis jeg vælger at fjerne alt, slettes så alle de drev, der sidder i computeren eller er tilsluttet computeren? Eller slettes kun det drev, jeg kører Windows 10 på?",
-			"a1": "Det er kun drevet med Windows 10-operativsystemet, der bliver slettet (som regel C:-drevet). Andre drev, der er installeret i eller tilsluttet computeren, bliver ikke påvirket.",
-			"q2": "Hvordan kan jeg gøre dette, hvis skærmen er gået i stykker?",
-			"a2": "Det kan du desværre ikke. Du skal have en ny skærm.",
-			"q3": "Bliver oversigten over de webstedet, jeg har besøgt, også fjernet?",
-			"a3": "Ja, afhængigt af hvilken browser du bruger. Hvis du vil fjerne browseroversigten, skal du blot gå til indstillingerne i browseren og slette oversigten. Du kan også bruge incognitotilstande til at undgå, at oversigten bliver gemt.",
-			"q4": "Bliver min adgangskode også nulstillet, hvis jeg vælger at fjerne alt?",
-			"a4": "Ja, når du nulstiller Windows 10-computeren, fjernes alle brugerdata. Det omfatter dokumenter, gemte adgangskoder, billeder, foretrukne indstillinger, browseroplysninger og programdata.",
-			"para9": "Reference",
-			"para10": "Sådan nulstiller du Windows 10 – WikiHow."
-		},
+            "title": "Sådan nulstiller du Windows 10",
+            "para1": "Hvis du oplever problemer med din Windows 10-pc, eller hvis du skal sælge den, bør du nulstille den. Når du udfører en nulstilling, kan du vælge at beholde eller fjerne dine filer, fjerne alle apps og indstillinger og installere en ny kopi af Windows. Dette kan også løse mange problemer som f. eks. dårlig ydeevne.",
+            "heading1": "1. Åbn appen Indstillinger",
+            "para2": "Tryk på ikonet for Start-knappen, der er placeret nederst til venstre på skærmen, og vælg tandhjulsikonet for at gå til indstillingerne.",
+            "heading2": "2. Vælg Opdatering og sikkerhed på listen over kategorier",
+            "heading3": "3. Gå til Genoprettelse i den venstre rude",
+            "heading4": "4. Start nulstillingsprocessen",
+            "para3": "Klik eller tryk på knappen Kom i gang under overskriften \"Nulstil denne pc\" øverst på siden.",
+            "heading5": "5. Vælg, om du vil beholde dine filer",
+            "para4": "Når du har nulstillet, kan du logge på din Microsoft-konto. Alle Windows Store-apps, der er købt med denne konto, bliver installeret igen.",
+            "para5": {
+                "li1": "Gem mine filer fjerner dine apps og indstillinger, men beholder alle dine personlige filer.",
+                "li2": "Fjern alt sletter dine apps, indstillinger og personlige filer. Hvis du ikke har en sikkerhedskopi af filerne, skal du klikke på Annuller, sikkerhedskopiere dem og starte denne proces igen."
+            },
+            "heading6": "6. Du kan vælge forskellige andre indstillinger",
+            "para6": "Dette vises kun, hvis du har valgt \"Fjern alt\" i forrige trin.",
+            "heading7": "7. Læs oversigten, og tryk på Nulstil, når du er klar til at fortsætte.",
+            "para7": "Windows forbereder nulstilling af din enhed. Du skal blot vente, indtil du får vist en blå skærm.",
+            "heading8": "8. Vælg Fortsæt, når \"Vælg en indstilling\" vises.",
+            "para8": "Windows genstartes, og nulstillingen går i gang. Din pc bliver muligvis genstartet flere gange under nulstillingen.",
+            "heading9": "Spørgsmål og svar fra gruppen",
+            "communityAnswer": "Svar fra gruppen",
+            "q1": "Hvis jeg vælger at fjerne alt, slettes så alle de drev, der sidder i computeren eller er tilsluttet computeren? Eller slettes kun det drev, jeg kører Windows 10 på?",
+            "a1": "Det er kun drevet med Windows 10-operativsystemet, der bliver slettet (som regel C:-drevet). Andre drev, der er installeret i eller tilsluttet computeren, bliver ikke påvirket.",
+            "q2": "Hvordan kan jeg gøre dette, hvis skærmen er gået i stykker?",
+            "a2": "Det kan du desværre ikke. Du skal have en ny skærm.",
+            "q3": "Bliver oversigten over de webstedet, jeg har besøgt, også fjernet?",
+            "a3": "Ja, afhængigt af hvilken browser du bruger. Hvis du vil fjerne browseroversigten, skal du blot gå til indstillingerne i browseren og slette oversigten. Du kan også bruge incognitotilstande til at undgå, at oversigten bliver gemt.",
+            "q4": "Bliver min adgangskode også nulstillet, hvis jeg vælger at fjerne alt?",
+            "a4": "Ja, når du nulstiller Windows 10-computeren, fjernes alle brugerdata. Det omfatter dokumenter, gemte adgangskoder, billeder, foretrukne indstillinger, browseroplysninger og programdata.",
+            "para9": "Reference",
+            "para10": "Sådan nulstiller du Windows 10 – WikiHow."
+        },
         "question3": {
-			"title": "Sådan får du mere at vide om computerens CPU",
-			"heading1": "Symptom",
+            "title": "Sådan får du mere at vide om computerens CPU",
+            "heading1": "Symptom",
             "para1": "Udtrykkene 32-bit og 64-bit henviser til den måde, en computers processor (også kaldet en CPU) håndterer oplysninger på. 64-bit-versionen af Windows håndterer store mængder RAM (Random Access Memory) mere effektivt end et 32-bit system.",
             "heading2": "Påvirkede mærker",
             "para2": "Symptomet ovenfor er forbundet med, men ikke begrænset til, følgende systemer:",
@@ -2790,10 +2790,10 @@
             "para4": "Windows 7, 8 og 10",
             "heading4": "Løsning",
             "para5": "Windows 7 eller Vista",
-			"para6": "Åbn System ved at klikke på <strong>knappen Start </strong>Billede af <strong>knappen Start</strong>. Højreklik på Computer, og klik derefter på Egenskaber.",
+            "para6": "Åbn System ved at klikke på <strong>knappen Start </strong>Billede af <strong>knappen Start</strong>. Højreklik på Computer, og klik derefter på Egenskaber.",
             "para7": "Under System kan du se systemtypen.",
             "para8": "Windows 8 og Windows 10",
-			"para9": "<strong>Metode 1:</strong> Visning af vinduet System i Kontrolpanel",
+            "para9": "<strong>Metode 1:</strong> Visning af vinduet System i Kontrolpanel",
             "para10": "Træk fingeren fra højre skærmkant, og tryk derefter på <strong>Søg</strong>. Hvis du bruger en mus, skal du pege på det nederste højre hjørne af skærmen og derefter klikke på <strong>Søg</strong>.",
             "para11": "Skriv <strong>System</strong> i søgefeltet, og tryk eller klik derefter på <strong>Indstillinger</strong>.",
             "para12": "Tryk eller klik på <strong>System</strong>.",
@@ -2805,8 +2805,8 @@
             "para18": "Hvis du bruger en <strong>64-bit</strong> version af Windows 8 vises<strong>x64-baseret pc</strong> i feltet <strong>Systemtype</strong> under elementets overskrift. Hvis du bruger en<strong> 32-bit</strong> version af Windows 8, vises x86-baseret pc i feltet <strong>Systemtype</strong> under elementets overskrift.  "
         },
         "question4": {
-			"title": "Kontrollér computerens batteriforbrug",
-			"heading1": "Symptom",
+            "title": "Kontrollér computerens batteriforbrug",
+            "heading1": "Symptom",
             "para1": "Windows 10 indeholder det nye skærmbillede <strong>Batteribrug</strong>, som viser, hvad der opbruger din bærbare computers strømlager. Det betyder, at du ved præcist, hvilke apps – både til stationære computere og 'generelle' apps til Windows 10 – der bruger for meget strøm.",
             "heading2": "Påvirkede mærker",
             "para2": "Bærbare og stationære computere fra Lenovo",
@@ -2828,8 +2828,8 @@
             "para13": "8. Rul længere ned, hvor du får vist en liste over applikationer, som betragtes som den mest nyttige del af denne funktion. Den viser en liste over de apps, der har forbrugt batteristrøm i den aktuelle periode, og viser, hvor stor en procentdel af batteriets kapacitet hver enkelt app har forbrugt."
         },
         "question5": {
-			"title": "Brug din pc som en tablet",
-			"para1": "Tablettilstand gør Windows mere intuitiv og nemmere at bruge, fordi du har en berøringsfølsom skærmenhed.",
+            "title": "Brug din pc som en tablet",
+            "para1": "Tablettilstand gør Windows mere intuitiv og nemmere at bruge, fordi du har en berøringsfølsom skærmenhed.",
             "heading1": "Brug tablettilstand",
             "para2": "Hvis du vil aktivere tablettilstand, skal du vælge <strong>Handlingscenter</strong> på proceslinjen og derefter vælge <strong>Tablettilstand</strong>.",
             "heading2": "Bemærk",
@@ -2845,8 +2845,8 @@
             "para10": "Brug knappen Tilbage på proceslinjen til at gå tilbage i en app eller åbne en app, du har brugt før."
         },
         "question6": {
-			"title": "Lær Cortana, din personlige assistent, at kende",
-			"heading1": "Hvad er Cortana?",
+            "title": "Lær Cortana, din personlige assistent, at kende",
+            "heading1": "Hvad er Cortana?",
             "para1": "Cortana er din digitale agent. Hun hjælper dig med at få tingene udført.",
             "para2": "Jo mere du bruger Cortana, jo mere personlig bliver din oplevelse.",
             "para3": "For at komme i gang skal du skrive et spørgsmål i søgefeltet eller vælge mikrofonen for at tale med Cortana. (Du kan også skrive på alle typer af computere, men du skal have en mikrofon for at kunne tale sammen.)",
@@ -2854,7 +2854,7 @@
             "para5": "1. Startside 2. Notebook 3. Indstillinger 4. Feedback",
             "para6": "Her er nogle af de ting, som Cortana kan gøre for dig:",
             "unorderedList1": {
-				"listItem1": "Give dig påmindelser baseret på tidspunkter, steder eller personer.",
+                "listItem1": "Give dig påmindelser baseret på tidspunkter, steder eller personer.",
                 "listItem2": "Spore pakker, teams, interesser og flyvninger.",
                 "listItem3": "Sende e-mails og beskeder.",
                 "listItem4": "Administrere din kalender og holde dig opdateret.",
@@ -2863,7 +2863,7 @@
                 "listItem7": "Finde fakta, filer, steder og oplysninger.",
                 "listItem8": "Åbne alle apps på systemet."
             },
-			"heading2": "Prøv følgende: Angiv en påmindelse",
+            "heading2": "Prøv følgende: Angiv en påmindelse",
             "para7": "En af de ting, Cortana kan gøre, er at give dig påmindelser. Hun kan minde dig om ting baseret på tidspunkter, steder eller endda personer.",
             "para8": "Du kan f.eks. skrive eller sige \"Mind mig om at ønske Tanya tillykke, næste gang hun ringer\".",
             "para9": "Påmindelsen vises, når du får et opkald fra Tanya.",

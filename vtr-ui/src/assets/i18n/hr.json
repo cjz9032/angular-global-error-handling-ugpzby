@@ -199,8 +199,7 @@
                     "description": "Neispravne postavke procesa Overclocking mogu dovesti do nepovratnog oštećenja hardvera.",
                     "proceed": "NASTAVI",
                     "legionAccessory": "Install Legion Accessory Central?",
-                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
-                    "install": "INSTALL"
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc."
                 },
                 "popup": {
                     "closeBtn": "close"
@@ -1213,7 +1212,8 @@
                     "title": "Ostale postavke",
                     "vantageToolbar": {
                         "title": "Alatna traka za Lenovo Vantage",
-                        "description": "Pričvrstite alatnu traku Vantage na programsku traku sustava Windows kako biste jednostavnije dobili pojedinosti o bateriji i pristup brzim postavkama."
+                        "description": "Pričvrstite alatnu traku Vantage na programsku traku sustava Windows kako biste jednostavnije dobili pojedinosti o bateriji i pristup brzim postavkama.",
+                        "hint": "The options in the image depend on the capacity of the machine. For example, – some machines support backlight settings, and some may not."
                     }
                 },
                 "batterySettings": {
@@ -2734,20 +2734,20 @@
         "question1": {
             "title": "Sigurnosno kopiranje i vraćanje datoteka",
             "para1": "Uvijek je dobro imati podršku. Čuvajte kopije datoteka na drugom pogonu u slučaju da se nešto dogodi s izvornicima.",
-			"heading1": "Postavljanje sigurnosnog kopiranja",
-			"para2": "Odaberite gumb Start (Početak), odaberite Settings (Postavke) > Update & security (Ažuriranje i sigurnost) > Backup (Sigurnosno kopiranje) > Add a drive (Dodaj pogon), a zatim odaberite vanjski pogon ili mrežnu lokaciju za sigurnosne kopije.",
-			"para3": "Sve je spremno. Svakog sata kopirat ćemo sve što je u vašoj korisničkoj mapi (C:\\Users\\vaše korisničko ime). Da biste promijenili koje se datoteke sigurnosno kopiraju ili koliko često dolazi do sigurnosnog kopiranja, idite u More options (Dodatne mogućnosti).",
-			"heading2": "Vratite svoje datoteke",
-			"para4": "Ako vam nedostaje važna datoteka ili mapa, evo kako je vratiti:",
-			"para5": {
-				"div1": "1. Upišite Restore files (Vrati datoteke) u okviru za pretraživanje na programskoj traci, a zatim odaberite  Restore your files with File History (Vrati datoteke s pomoću Prethodne datoteke).",
-				"div2": "2. Potražite datoteku koja vam je potrebna, a zatim s pomoću strelica pogledajte sve njezine verzije.",
-				"div3": "3. Kada pronađete željenu verziju, odaberite Restore (Vrati) da biste je spremili na njezinu izvornu lokaciju. Da biste je spremili na drugo mjesto, pritisnite i držite (ili desnim klikom miša) Restore (Vrati), odaberite Restore to (Vrati u), a zatim odaberite novu lokaciju."
-			}
+            "heading1": "Postavljanje sigurnosnog kopiranja",
+            "para2": "Odaberite gumb Start (Početak), odaberite Settings (Postavke) > Update & security (Ažuriranje i sigurnost) > Backup (Sigurnosno kopiranje) > Add a drive (Dodaj pogon), a zatim odaberite vanjski pogon ili mrežnu lokaciju za sigurnosne kopije.",
+            "para3": "Sve je spremno. Svakog sata kopirat ćemo sve što je u vašoj korisničkoj mapi (C:\\Users\\vaše korisničko ime). Da biste promijenili koje se datoteke sigurnosno kopiraju ili koliko često dolazi do sigurnosnog kopiranja, idite u More options (Dodatne mogućnosti).",
+            "heading2": "Vratite svoje datoteke",
+            "para4": "Ako vam nedostaje važna datoteka ili mapa, evo kako je vratiti:",
+            "para5": {
+                "div1": "1. Upišite Restore files (Vrati datoteke) u okviru za pretraživanje na programskoj traci, a zatim odaberite  Restore your files with File History (Vrati datoteke s pomoću Prethodne datoteke).",
+                "div2": "2. Potražite datoteku koja vam je potrebna, a zatim s pomoću strelica pogledajte sve njezine verzije.",
+                "div3": "3. Kada pronađete željenu verziju, odaberite Restore (Vrati) da biste je spremili na njezinu izvornu lokaciju. Da biste je spremili na drugo mjesto, pritisnite i držite (ili desnim klikom miša) Restore (Vrati), odaberite Restore to (Vrati u), a zatim odaberite novu lokaciju."
+            }
         },
         "question2": {
-			"title": "Kako ponovno postaviti Windows 10",
-			"para1": "Ako vaše računalo s Windows 10 ima problema ili ga prodajete, trebali biste ga ponovno postaviti. Ponovno postavljanje vam omogućava da odaberete zadržavanje ili uklanjanje datoteka, uklanja sve aplikacije i postavke i instalira novu kopiju sustava Windows. To također može riješiti mnoge poteškoće, poput sporog rada.",
+            "title": "Kako ponovno postaviti Windows 10",
+            "para1": "Ako vaše računalo s Windows 10 ima problema ili ga prodajete, trebali biste ga ponovno postaviti. Ponovno postavljanje vam omogućava da odaberete zadržavanje ili uklanjanje datoteka, uklanja sve aplikacije i postavke i instalira novu kopiju sustava Windows. To također može riješiti mnoge poteškoće, poput sporog rada.",
             "heading1": "1. Otvorite aplikaciju Postavke",
             "para2": "Pritisnite gumb Start koji se nalazi u donjem lijevom dijelu zaslona i odaberite ikonu sa slikom zupčanika.",
             "heading2": "2. Na popisu kategorija odaberite Ažuriranje i sigurnost",
@@ -2757,10 +2757,10 @@
             "heading5": "5. Odaberite želite li zadržati datoteke ili ne",
             "para4": "Nakon ponovnog pokretanja se možete prijaviti na svoj Microsoft račun. Sve aplikacije Windows Store kupljene na ovom računu će se ponovno instalirati.",
             "para5": {
-				"li1": "Zadrži moje datoteke uklanja vaše aplikacije i postavke, ali zadržava sve vaše osobne datoteke.",
-				"li2": "Ukloni sve briše aplikacije, postavke i osobne datoteke. Ako nemate sigurnosnu kopiju datoteka, možda ćete morati pritisnuti Otkaži, izraditi sigurnosnu kopiju i ponovno započeti ovaj postupak."
-			},
-			"heading6": "6. Možete odabrati različite dodatne postavke",
+                "li1": "Zadrži moje datoteke uklanja vaše aplikacije i postavke, ali zadržava sve vaše osobne datoteke.",
+                "li2": "Ukloni sve briše aplikacije, postavke i osobne datoteke. Ako nemate sigurnosnu kopiju datoteka, možda ćete morati pritisnuti Otkaži, izraditi sigurnosnu kopiju i ponovno započeti ovaj postupak."
+            },
+            "heading6": "6. Možete odabrati različite dodatne postavke",
             "para6": "To će se prikazati samo ako ste u prethodnom koraku odabrali \"Ukloni sve\".",
             "heading7": "7. Pročitajte pregled i kada ste spremni za nastavak pritisnite Ponovno pokreni.",
             "para7": "Windows će se pripremiti za ponovno postavljanje uređaja. Jednostavno pričekajte dok vas ne prebaci na plavi zaslon.",
@@ -2768,7 +2768,7 @@
             "para8": "Windows će se ponovo pokrenuti i započeti ponovno pokretanje. Računalo se može ponovno pokrenuti nekoliko puta jer se ponovno postavlja.",
             "heading9": "Pitanja i odgovori u zajednici",
             "communityAnswer": "Odgovori u zajednici",
-			"q1": "Ako odlučim ukloniti sve, brišem li sve pogone u/spojene na računalo ili samo onaj na kojem imam Windows 10?",
+            "q1": "Ako odlučim ukloniti sve, brišem li sve pogone u/spojene na računalo ili samo onaj na kojem imam Windows 10?",
             "a1": "To će obrisati samo pogon na kojem se nalazi OS Windows 10 (obično C: pogon). To neće utjecati na druge pogone u/povezane s računalom.",
             "q2": "Kako mogu to učiniti ako je zaslon polomljen?",
             "a2": "Nažalost, ne možete. Trebat će vam novi zaslon.",
@@ -2780,8 +2780,8 @@
             "para10": "Kako ponovno postaviti Windows 10 – WikiHow."
         },
         "question3": {
-			"title": "Kako znati kojim se CPU-om vaš uređaj koristi",
-			"heading1": "Simptom",
+            "title": "Kako znati kojim se CPU-om vaš uređaj koristi",
+            "heading1": "Simptom",
             "para1": "Pojmovi 32-bitni i 64-bitni odnose se na način na koji procesor računala (koji se naziva i CPU) obrađuje informacije. 64-bitna verzija sustava Windows obrađuje velike količine memorije s izravnim pristupom (RAM-a) učinkovitije nego 32-bitni sustav.",
             "heading2": "Zahvaćene robne marke",
             "para2": "Prethodno navedeni simptom povezan je sa sljedećim sustavima, ali nije na njih ograničen:",
@@ -2790,10 +2790,10 @@
             "para4": "Windows 7, 8 i 10",
             "heading4": "Rješenje",
             "para5": "U sustavu Windows 7 ili Vista",
-			"para6": "Otvorite System (Sustav) klikom na sliku <strong>gumb Start </strong><strong>gumba Start,</strong> desnom tipkom miša kliknite Computer (Računalo), a zatim kliknite Properties (Svojstva).",
+            "para6": "Otvorite System (Sustav) klikom na sliku <strong>gumb Start </strong><strong>gumba Start,</strong> desnom tipkom miša kliknite Computer (Računalo), a zatim kliknite Properties (Svojstva).",
             "para7": "U odjeljku System (Sustav) možete vidjeti vrstu sustava.",
             "para8": "Windows 8 i Windows 10",
-			"para9": "<strong>Prva metoda:</strong> pregledajte prozor System (Sustav) u Control Panel (Upravljačka ploča)",
+            "para9": "<strong>Prva metoda:</strong> pregledajte prozor System (Sustav) u Control Panel (Upravljačka ploča)",
             "para10": "Prijeđite prstom od desnog ruba zaslona, a zatim dodirnite <strong>Search</strong> (Pretraživanje). Ili ako se koristite mišem, usmjerite na donji desni kut zaslona, a zatim kliknite <strong>Search</strong> (Traži).",
             "para11": "Upišite <strong>system</strong> (sustav) u okvir za pretraživanje, a zatim dodirnite ili kliknite <strong>Settings</strong> (Postavke).",
             "para12": "Dodirnite ili kliknite <strong>System</strong> (Sustav).",
@@ -2805,8 +2805,8 @@
             "para18": "Ako koristite <strong>64-bitnu </strong>verziju sustava Windows 8<strong>, </strong>prikazuje se računalo s x64 u polju <strong>System type</strong> (Vrsta sustava) pod naslovom Item (Stavka). Ako koristite <strong>32-bitnu </strong>verziju sustava Windows 8, prikazuje se računalo s procesorom x86 u polju <strong>System type</strong> (Tip sustava) pod naslovom Item (Stavka).  "
         },
         "question4": {
-			"title": "Provjerite korištenje baterije uređaja",
-			"heading1": "Simptom",
+            "title": "Provjerite korištenje baterije uređaja",
+            "heading1": "Simptom",
             "para1": "Windows 10 obuhvaća novi zaslon „<strong>Battery Use”</strong> (Korištenje baterije) koji vam pokazuje što troši energiju prijenosnog računala. To znači da će vam točno reći koje aplikacije, aplikacije radne ploče i „univerzalne” aplikacije sustava Windows 10, upotrebljavaju previše energije.",
             "heading2": "Zahvaćene robne marke",
             "para2": "Lenovo prijenosna računala, stolna računala",
@@ -2828,8 +2828,8 @@
             "para13": "8. Pomaknite se prema dolje i vidjet ćete popis aplikacija, što se smatra najkorisnijim dijelom ove značajke. Prikazat će se popis aplikacija koje su u tom razdoblju trošile napajanje baterije i prikazat će se postotak napajanja koji je svaka aplikacija potrošila."
         },
         "question5": {
-			"title": "Upotrebljavajte računalo kao tablet",
-			"para1": "Način rada tableta čini Windows intuitivnijim i jednostavnijim za upotrebu kada imate uređaj osjetljiv na dodir.",
+            "title": "Upotrebljavajte računalo kao tablet",
+            "para1": "Način rada tableta čini Windows intuitivnijim i jednostavnijim za upotrebu kada imate uređaj osjetljiv na dodir.",
             "heading1": "Upotrijebi način rada za tablet",
             "para2": "Da biste uključili način rada za tablet, odaberite <strong>Action center</strong> (Akcijski centar) na programskoj traci, a zatim odaberite <strong>Tablet mode</strong> (Način rada tableta).",
             "heading2": "Napomena",
@@ -2845,8 +2845,8 @@
             "para10": "S pomoću gumba Natrag na programskoj traci možete se vratiti u aplikaciju ili otvoriti aplikaciju koju ste upotrebljavali prije toga."
         },
         "question6": {
-			"title": "Upoznajte Cortanu, svoju osobnu pomoćnicu",
-			"heading1": "Što je Cortana?",
+            "title": "Upoznajte Cortanu, svoju osobnu pomoćnicu",
+            "heading1": "Što je Cortana?",
             "para1": "Cortana je vaš digitalni agent. Pomoći će vam da obavite posao.",
             "para2": "Što se više koristite Cortanom, to će vaše iskustvo biti personaliziranije.",
             "para3": "Da biste započeli, upišite pitanje u okvir za pretraživanje ili odaberite mikrofon i razgovarajte s Cortanom. (Tipkanje funkcionira za sve vrste računala, ali za razgovor trebate mikrofon.)",
@@ -2854,7 +2854,7 @@
             "para5": "1. Početna stranica 2. Bilježnica 3. Postavke 4. Povratne informacije",
             "para6": "Evo nekih stvari koje Cortana može učiniti za vas:",
             "unorderedList1": {
-				"listItem1": "Dati vam podsjetnike na temelju vremena, mjesta ili osoba.",
+                "listItem1": "Dati vam podsjetnike na temelju vremena, mjesta ili osoba.",
                 "listItem2": "Pratite pakete, timove, interese i letove.",
                 "listItem3": "Slati e-poštu i tekstove.",
                 "listItem4": "Upravljati vašim kalendarom i obavještavati vas o svemu.",
@@ -2863,7 +2863,7 @@
                 "listItem7": "Pronaći činjenice, datoteke, mjesta i informacije.",
                 "listItem8": "Otvoriti bilo koju aplikaciju u vašem sustavu."
             },
-			"heading2": "Pokušajte sljedeće: postavite podsjetnik",
+            "heading2": "Pokušajte sljedeće: postavite podsjetnik",
             "para7": "Jedna od stvari koje Cortana može učiniti jest da vas podsjeti na nešto. Može vas podsjetiti da radite stvari na temelju vremena, mjesta ili čak osoba.",
             "para8": "Primjerice, utipkajte ili recite: „Podsjeti me da čestitam Tanyi sljedeći put kad nazove”.",
             "para9": "Podsjetnik će se pojaviti kada dobijete poziv od Tanye.",

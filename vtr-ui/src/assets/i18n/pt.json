@@ -199,8 +199,7 @@
                     "description": "Definições de Overclocking incorretas poderão causar danos irreversíveis no hardware.",
                     "proceed": "CONTINUAR",
                     "legionAccessory": "Install Legion Accessory Central?",
-                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
-                    "install": "INSTALL"
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc."
                 },
                 "popup": {
                     "closeBtn": "close"
@@ -1213,7 +1212,8 @@
                     "title": "Outras definições",
                     "vantageToolbar": {
                         "title": "Barra de ferramentas do Lenovo Vantage",
-                        "description": "Fixe a barra de ferramentas do Vantage na barra de tarefas do Windows para obter facilmente mais detalhes da bateria e acesso às suas definições rápidas."
+                        "description": "Fixe a barra de ferramentas do Vantage na barra de tarefas do Windows para obter facilmente mais detalhes da bateria e acesso às suas definições rápidas.",
+                        "hint": "The options in the image depend on the capacity of the machine. For example, – some machines support backlight settings, and some may not."
                     }
                 },
                 "batterySettings": {
@@ -2734,20 +2734,20 @@
         "question1": {
             "title": "Faça uma cópia de segurança e restaure os seus ficheiros",
             "para1": "É sempre uma boa ideia ter uma cópia de segurança. Mantenha cópias dos seus ficheiros em outra unidade caso aconteça algo aos originais.",
-			"heading1": "Configurar a cópia de segurança",
-			"para2": "Selecione o botão Iniciar, selecione Definições > Atualização e segurança > Cópia de segurança > Adicionar uma unidade , e, em seguida, escolha uma unidade externa ou local de rede para as suas cópias de segurança.",
-			"para3": "Configuração concluída! A cada, será feita uma cópia de segurança de tudo na sua pasta de utilizador (C:\\Users\\o seu nome de utilizador). Para alterar os ficheiros ou a frequência da cópia de segurança, vá a Mais Opções.",
-			"heading2": "Restaurar os Ficheiros",
-			"para4": "Caso lhe falte um ficheiro ou pasta importante, pode recuperá-lo através do seguinte procedimento:",
-			"para5": {
-				"div1": "1. Introduza Restaurar ficheiros na caixa de pesquisa da barra de tarefas e, em seguida, selecione  Restaurar os ficheiros com o Histórico de Ficheiros.",
-				"div2": "2. Procure o ficheiro de que precisa e, em seguida, utilize as setas para ver todas as versões do mesmo.",
-				"div3": "3. Quando encontrar a versão pretendida, selecione Restaurar para o guardar na sua localização original. Para a guardar num local diferente, prima sem soltar (ou clique com o botão direito do rato) Restaurar, selecione Restaurar para, e escolha outra localização."
-			}
+            "heading1": "Configurar a cópia de segurança",
+            "para2": "Selecione o botão Iniciar, selecione Definições > Atualização e segurança > Cópia de segurança > Adicionar uma unidade , e, em seguida, escolha uma unidade externa ou local de rede para as suas cópias de segurança.",
+            "para3": "Configuração concluída! A cada, será feita uma cópia de segurança de tudo na sua pasta de utilizador (C:\\Users\\o seu nome de utilizador). Para alterar os ficheiros ou a frequência da cópia de segurança, vá a Mais Opções.",
+            "heading2": "Restaurar os Ficheiros",
+            "para4": "Caso lhe falte um ficheiro ou pasta importante, pode recuperá-lo através do seguinte procedimento:",
+            "para5": {
+                "div1": "1. Introduza Restaurar ficheiros na caixa de pesquisa da barra de tarefas e, em seguida, selecione  Restaurar os ficheiros com o Histórico de Ficheiros.",
+                "div2": "2. Procure o ficheiro de que precisa e, em seguida, utilize as setas para ver todas as versões do mesmo.",
+                "div3": "3. Quando encontrar a versão pretendida, selecione Restaurar para o guardar na sua localização original. Para a guardar num local diferente, prima sem soltar (ou clique com o botão direito do rato) Restaurar, selecione Restaurar para, e escolha outra localização."
+            }
         },
         "question2": {
-			"title": "Como Repor o Windows 10",
-			"para1": "Se tiver problemas no seu PC com Windows 10 ou o estiver a vender, deve fazer a sua reposição. A execução de uma reposição permite optar por manter ou remover os ficheiros, remove todas as aplicações e definições, e instala uma cópia renovada do Windows. Isto também pode corrigir muitos problemas, como um desempenho lento.",
+            "title": "Como Repor o Windows 10",
+            "para1": "Se tiver problemas no seu PC com Windows 10 ou o estiver a vender, deve fazer a sua reposição. A execução de uma reposição permite optar por manter ou remover os ficheiros, remove todas as aplicações e definições, e instala uma cópia renovada do Windows. Isto também pode corrigir muitos problemas, como um desempenho lento.",
             "heading1": "1. Abra a aplicação Definições",
             "para2": "Prima o botão Iniciar Imagem localizado na parte inferior esquerda do ecrã e escolha a engrenagem de definições Imagem.",
             "heading2": "2. Selecione Atualização e segurança na lista de categorias",
@@ -2757,10 +2757,10 @@
             "heading5": "5. Escolha se pretende manter os ficheiros",
             "para4": "Após a reposição, pode iniciar sessão na sua conta Microsoft. Quaisquer aplicações para Windows Store compradas com esta conta serão reinstaladas.",
             "para5": {
-				"li1": "Manter os meus ficheiros remove as suas aplicações e definições, mas mantém todos os seus ficheiros pessoais.",
-				"li2": "Remover tudo apaga as suas aplicações, definições e ficheiros pessoais. Se não tiver uma cópia de segurança dos seus ficheiros, poderá premir cancelar, fazer uma cópia de segurança dos mesmos e voltar a iniciar este processo."
-			},
-			"heading6": "6. Pode escolher diferentes definições adicionais",
+                "li1": "Manter os meus ficheiros remove as suas aplicações e definições, mas mantém todos os seus ficheiros pessoais.",
+                "li2": "Remover tudo apaga as suas aplicações, definições e ficheiros pessoais. Se não tiver uma cópia de segurança dos seus ficheiros, poderá premir cancelar, fazer uma cópia de segurança dos mesmos e voltar a iniciar este processo."
+            },
+            "heading6": "6. Pode escolher diferentes definições adicionais",
             "para6": "Isto só será mostrado se tiver selecionado “Remover tudo” no passo anterior.",
             "heading7": "7.Leia a descrição geral e prima Repor quando estiver pronto para continuar.",
             "para7": "O Windows prepara a reposição do seu dispositivo. Basta aguardar até ser apresentado um ecrã azul.",
@@ -2768,7 +2768,7 @@
             "para8": "O Windows é reiniciado e inicia a reposição. O seu PC pode ser reiniciado várias vezes enquanto a reposição decorrer.",
             "heading9": "Perguntas e Respostas da Comunidade",
             "communityAnswer": "Resposta da Comunidade",
-			"q1": "Se optar por remover tudo, todas as unidades no meu computador ou a ele ligadas são apagadas ou apenas aquela em que o Windows 10 está a ser executado?",
+            "q1": "Se optar por remover tudo, todas as unidades no meu computador ou a ele ligadas são apagadas ou apenas aquela em que o Windows 10 está a ser executado?",
             "a1": "Só apaga a unidade do Windows 10 OS (normalmente, a unidade C:). As outras unidades no computador ou a ele ligadas não serão afetadas.",
             "q2": "Como posso executar este procedimento se o meu ecrã estiver danificado?",
             "a2": "Infelizmente, não é possível. Terá de obter um novo ecrã.",
@@ -2780,8 +2780,8 @@
             "para10": "Como Repor o Windows 10 – WikiHow."
         },
         "question3": {
-			"title": "Como saber qual a CPU da sua máquina",
-			"heading1": "Sintoma",
+            "title": "Como saber qual a CPU da sua máquina",
+            "heading1": "Sintoma",
             "para1": "Os termos 32-bit e 64-bit referem-se à forma como o processador de um computador (também chamado de CPU) trata a informação. A versão de 64 bits do Windows lida com grandes quantidades de memória de acesso aleatório (RAM) de forma mais eficaz do que um sistema de 32 bits.",
             "heading2": "Marcas Afetadas",
             "para2": "O sintoma acima está associado, mas não limitado aos seguintes sistemas:",
@@ -2790,10 +2790,10 @@
             "para4": "Windows 7, 8, e 10",
             "heading4": "Solução",
             "para5": "Windows 7 ou Vista",
-			"para6": "Abra o sistema clicando no <strong>Botão Iniciar </strong>Imagem do <strong>Botão Iniciar,</strong> Clique com o botão direito do rato em Computador e clique em Propriedades.",
+            "para6": "Abra o sistema clicando no <strong>Botão Iniciar </strong>Imagem do <strong>Botão Iniciar,</strong> Clique com o botão direito do rato em Computador e clique em Propriedades.",
             "para7": "Em Sistema, é possível visualizar o tipo de sistema.",
             "para8": "Windows 8 e Windows 10",
-			"para9": "<strong>Método 1:</strong> visualizar a janela do sistema no Painel de controlo",
+            "para9": "<strong>Método 1:</strong> visualizar a janela do sistema no Painel de controlo",
             "para10": "Deslize o dedo para dentro a partir da extremidade direita do ecrã e toque em <strong>Procurar</strong>. Ou, se estiver a usar um rato, aponte para o canto inferior direito do ecrã e clique em <strong>Procurar.</strong>",
             "para11": "Introduza <strong>Sistema</strong> na caixa de pesquisa e, em seguida, toque ou clique em <strong>Definições.</strong>",
             "para12": "Toque ou clique em <strong>Sistema</strong>.",
@@ -2805,8 +2805,8 @@
             "para18": "Se estiver a executar uma versão de <strong>64 bits </strong>do Windows 8<strong>, </strong> o PC baseado em x64 é mostrado no campo <strong>Tipo de sistema</strong> sob o cabeçalho Item. Se estiver a executar uma versão de<strong> 32 bits</strong> do Windows 8, o PC baseado em x86 é mostrado no campo <strong>Tipo de sistema</strong> sob o cabeçalho Item.  "
         },
         "question4": {
-			"title": "Verificar a utilização de bateria da sua máquina",
-			"heading1": "Sintoma",
+            "title": "Verificar a utilização de bateria da sua máquina",
+            "heading1": "Sintoma",
             "para1": "O Windows 10 inclui um novo ecrã \"<strong>Uso da bateria\"</strong> que mostra o que está a gastar a bateria do seu portátil. Isso significa que lhe indicará exatamente quais as aplicações - tanto as aplicações de ambiente de trabalho como as \"universais\" do Windows 10 - que estão a usar demasiada energia.",
             "heading2": "Marcas Afetadas",
             "para2": "Computadores de secretária e portáteis da Lenovo",
@@ -2828,8 +2828,8 @@
             "para13": "8. Desloque-se para baixo e verá uma lista de aplicações, esta é considerada a secção mais útil desta funcionalidade. Irá apresentar-lhe uma lista das aplicações que usaram carga da bateria nesse período, e mostrar-lhe-á a percentagem de bateria que cada aplicação usou."
         },
         "question5": {
-			"title": "Utilizar o PC como tablet",
-			"para1": "O modo Tablet torna o Windows mais intuitivo e fácil de usar quando tem um dispositivo com um ecrã tátil.",
+            "title": "Utilizar o PC como tablet",
+            "para1": "O modo Tablet torna o Windows mais intuitivo e fácil de usar quando tem um dispositivo com um ecrã tátil.",
             "heading1": "Utilizar o modo tablet",
             "para2": "Para ativar o modo tablet, selecione <strong>Centro de Ação</strong> na barra de tarefas e selecione <strong>Modo tablet</strong>.",
             "heading2": "Nota",
@@ -2845,8 +2845,8 @@
             "para10": "Use o botão voltar na barra de tarefas para voltar a uma aplicação ou para abrir uma aplicação que estava a usar antes."
         },
         "question6": {
-			"title": "Conheça a Cortana, a sua assistente pessoal",
-			"heading1": "O que é a Cortana?",
+            "title": "Conheça a Cortana, a sua assistente pessoal",
+            "heading1": "O que é a Cortana?",
             "para1": "A Cortana é a sua agente digital. Irá ajudá-lo a fazer coisas.",
             "para2": "Quanto mais utilizar a Cortana, mais personalizada será a sua experiência.",
             "para3": "Para começar, insira uma pergunta na caixa de pesquisa ou selecione o microfone e fale com a Cortana. (Escrever funciona para todos os tipos de PCs, mas precisa de um microfone para falar.)",
@@ -2854,7 +2854,7 @@
             "para5": "1. Início 2. Bloco de Notas 3. Definições 4. Feedback",
             "para6": "Aqui estão algumas coisas que a Cortana pode fazer por si:",
             "unorderedList1": {
-				"listItem1": "Dar-lhe lembretes com base no tempo, lugares ou pessoas.",
+                "listItem1": "Dar-lhe lembretes com base no tempo, lugares ou pessoas.",
                 "listItem2": "Seguir encomendas, equipas, interesses e voos.",
                 "listItem3": "Enviar emails e mensagens.",
                 "listItem4": "Gerir a sua agenda e mantê-lo atualizado.",
@@ -2863,7 +2863,7 @@
                 "listItem7": "Encontrar fatos, ficheiros, lugares e informações.",
                 "listItem8": "Abrir qualquer aplicações no sistema."
             },
-			"heading2": "Experimente isto: definir um lembrete",
+            "heading2": "Experimente isto: definir um lembrete",
             "para7": "Uma das coisas que Cortana pode fazer é mostrar-lhe lembretes. Pode lembrá-lo para fazer coisas, considerando o tempo, lugar, ou mesmo pessoas.",
             "para8": "Por exemplo, escreva ou diga: “Lembra-me de felicitar a Tânia da próxima vez que ela telefonar”.",
             "para9": "O lembrete aparecerá quando receber um telefonema da Tânia.",

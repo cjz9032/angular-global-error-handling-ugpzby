@@ -199,8 +199,7 @@
                     "description": "Nepravilne postavke Overkloka mogu dovesti do nepovratnog oštećenja hardvera.",
                     "proceed": "NASTAVI",
                     "legionAccessory": "Install Legion Accessory Central?",
-                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
-                    "install": "INSTALL"
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc."
                 },
                 "popup": {
                     "closeBtn": "close"
@@ -1213,7 +1212,8 @@
                     "title": "Ostale postavke",
                     "vantageToolbar": {
                         "title": "Traka sa alatkama aplikacije Lenovo Vantage",
-                        "description": "Zakačite traku sa alatkama aplikacije Vantage na Windows traku zadataka da biste lako dobili više detalja o bateriji i pristup brzim postavkama."
+                        "description": "Zakačite traku sa alatkama aplikacije Vantage na Windows traku zadataka da biste lako dobili više detalja o bateriji i pristup brzim postavkama.",
+                        "hint": "The options in the image depend on the capacity of the machine. For example, – some machines support backlight settings, and some may not."
                     }
                 },
                 "batterySettings": {
@@ -2734,20 +2734,20 @@
         "question1": {
             "title": "Pravljenje rezervne kopije i vraćanje datoteka u prethodno stanje",
             "para1": "Uvek je dobro da imate rezervnu kopiju. Čuvajte kopije datoteka na drugom disku u slučaju da se nešto desi originalima.",
-			"heading1": "Podešavanje rezervne kopije",
-			"para2": "Izaberite dugme Start, izaberite Settings (Postavke) > Update & Security (Ispravka i bezbednost) > Backup (Rezervna kopija) > Add a drive (Dodaj disk), a zatim dodajte spoljnu disk jedinicu ili mrežnu lokaciju za rezervne kopije.",
-			"para3": "Sve je podešeno. Svakog sata ćemo u vašoj korisničkoj fascikli (C:\\Users\\vaše korisničko ime) praviti rezervnu kopiju svega što koristite. Da biste promenili za koje datoteke pravimo rezervne kopije ili učestalost njihovog pravljenja, idite na More options (Još opcija).",
-			"heading2": "Vraćanje datoteka u prethodno stanje",
-			"para4": "Ako vam nedostaje važna datoteka ili fascikla, evo kako da je vratite:",
-			"para5": {
-				"div1": "1. U polje za pretragu na traci zadatak ukucajte Restore files (Oporavak datoteka), a zatim izaberite  Restore your files with File History (Vraćanje datoteka u prethodno stanje pomoću funkcije „Istorija datoteka“).",
-				"div2": "2. Potražite datoteku koja vam je potrebna, zatim koristite strelice da biste videli sve njene verzije.",
-				"div3": "3. Kada pronađete željenu verziju, izaberite Restore (Vrati u prethodno stanje) da biste je sačuvali na prvobitnoj lokaciji. Da biste je sačuvali na drugoj lokaciji, pritisnite i držite (ili kliknite desnim tasterom miša) Restore (Vrati u prethodno stanje), izaberite Restore to (Vrati u prethodno stanje na lokaciji), a zatim odaberite novu lokaciju."
-			}
+            "heading1": "Podešavanje rezervne kopije",
+            "para2": "Izaberite dugme Start, izaberite Settings (Postavke) > Update & Security (Ispravka i bezbednost) > Backup (Rezervna kopija) > Add a drive (Dodaj disk), a zatim dodajte spoljnu disk jedinicu ili mrežnu lokaciju za rezervne kopije.",
+            "para3": "Sve je podešeno. Svakog sata ćemo u vašoj korisničkoj fascikli (C:\\Users\\vaše korisničko ime) praviti rezervnu kopiju svega što koristite. Da biste promenili za koje datoteke pravimo rezervne kopije ili učestalost njihovog pravljenja, idite na More options (Još opcija).",
+            "heading2": "Vraćanje datoteka u prethodno stanje",
+            "para4": "Ako vam nedostaje važna datoteka ili fascikla, evo kako da je vratite:",
+            "para5": {
+                "div1": "1. U polje za pretragu na traci zadatak ukucajte Restore files (Oporavak datoteka), a zatim izaberite  Restore your files with File History (Vraćanje datoteka u prethodno stanje pomoću funkcije „Istorija datoteka“).",
+                "div2": "2. Potražite datoteku koja vam je potrebna, zatim koristite strelice da biste videli sve njene verzije.",
+                "div3": "3. Kada pronađete željenu verziju, izaberite Restore (Vrati u prethodno stanje) da biste je sačuvali na prvobitnoj lokaciji. Da biste je sačuvali na drugoj lokaciji, pritisnite i držite (ili kliknite desnim tasterom miša) Restore (Vrati u prethodno stanje), izaberite Restore to (Vrati u prethodno stanje na lokaciji), a zatim odaberite novu lokaciju."
+            }
         },
         "question2": {
-			"title": "Kako se uspostavljaju početne vrednosti operativnog sistema Windows 10",
-			"para1": "Ako vaš Windows 10 računar ima problema ili ako ga prodajete, trebalo bi da uspostavite početne vrednosti računara. Uspostavljanje početnih vrednosti računara vam omogućavaju da odaberete da li da sačuvate ili uklonite datoteke, da uklonite sve aplikacije i postavke i da instalirate novu kopiju operativnog sistema Windows. To može da reši i mnoge probleme kao što su spori rad.",
+            "title": "Kako se uspostavljaju početne vrednosti operativnog sistema Windows 10",
+            "para1": "Ako vaš Windows 10 računar ima problema ili ako ga prodajete, trebalo bi da uspostavite početne vrednosti računara. Uspostavljanje početnih vrednosti računara vam omogućavaju da odaberete da li da sačuvate ili uklonite datoteke, da uklonite sve aplikacije i postavke i da instalirate novu kopiju operativnog sistema Windows. To može da reši i mnoge probleme kao što su spori rad.",
             "heading1": "1. Otvorite aplikaciju Settings (Postavke)",
             "para2": "Pritisnite dugme „Pokreni sliku“ koje se nalazi u donjem levom uglu ekrana i odaberite sliku zupčanika za postavke.",
             "heading2": "2. Izaberite „Ispravka i bezbednost“ sa liste kategorija",
@@ -2757,10 +2757,10 @@
             "heading5": "5. Odaberite da li želite da zadržite datoteke ili ne",
             "para4": "Nakon što uspostavite početne vrednosti, možete da se prijavite na Microsoft nalog. Sve aplikacije za Windows prodavnicu koje su kupljene u okviru ovog naloga će se ponovo instalirati.",
             "para5": {
-				"li1": "„Zadrži moje datoteke“ uklanja vaše aplikacije i postavke, ali zadržava sve lične datoteke.",
-				"li2": "„Ukloni sve“ briše aplikacije, postavke i lične datoteke. Ako nemate rezervnu kopiju datoteka, možda ćete želeti da kliknete na dugme „Otkaži“, napravite njihovu rezervnu kopiju i ponovo započnete proces."
-			},
-			"heading6": "6. Možete odabrati različite dodatne postavke",
+                "li1": "„Zadrži moje datoteke“ uklanja vaše aplikacije i postavke, ali zadržava sve lične datoteke.",
+                "li2": "„Ukloni sve“ briše aplikacije, postavke i lične datoteke. Ako nemate rezervnu kopiju datoteka, možda ćete želeti da kliknete na dugme „Otkaži“, napravite njihovu rezervnu kopiju i ponovo započnete proces."
+            },
+            "heading6": "6. Možete odabrati različite dodatne postavke",
             "para6": "Ovo će se prikazati samo ako ste u prethodnom koraku izabrali opciju „Ukloni sve“.",
             "heading7": "7.Pročitajte pregled i pritisnite dugme „Uspostavi početne vrednosti“ kada budete bili spremni za nastavak.",
             "para7": "Windows će se pripremiti za uspostavljanje početnih vrednosti uređaja. Jednostavno sačekajte da dođete do plavog ekrana.",
@@ -2768,7 +2768,7 @@
             "para8": "Windows će se ponovo pokrenuti i započeti uspostavljanje početnih vrednosti. Računar može nekoliko puta ponovo da se pokrene tokom uspostavljanja početnih vrednosti.",
             "heading9": "Pitanja i odgovori zajednice",
             "communityAnswer": "Odgovor zajednice",
-			"q1": "Ako odaberem da uklonim sve, da li se brišu sve disk jedinice na/povezane sa mojim računarom ili samo ona na kojoj mi je pokrenut operativni sistem Windows 10?",
+            "q1": "Ako odaberem da uklonim sve, da li se brišu sve disk jedinice na/povezane sa mojim računarom ili samo ona na kojoj mi je pokrenut operativni sistem Windows 10?",
             "a1": "Obrisaće samo disk jedinicu sa Windows 10 OS (obično C: drive). Neće uticati na ostale disk jedinice na/povezane sa vašim računarom.",
             "q2": "Kako to mogu da uradim ako je ekran slomljen?",
             "a2": "Ne možete, nažalost. Moraćete da nabavite novi ekran.",
@@ -2780,8 +2780,8 @@
             "para10": "Kako se uspostavljaju početne vrednosti operativnog sistema Windows 10 – WikiHow."
         },
         "question3": {
-			"title": "Kako da saznate CPU mašine",
-			"heading1": "Simptom",
+            "title": "Kako da saznate CPU mašine",
+            "heading1": "Simptom",
             "para1": "Termini 32-bitni i 64-bitni se odnose na način na koji procesor računara (drugi naziv je CPU), obrađuje informacije. 64-bitna verzija operativnog sistema Windows efikasnije obrađuje velike količine memorije direktnog pristupa (RAM) od 32-bitnog sistema.",
             "heading2": "Brendovi na koje ovo utiče",
             "para2": "Gorenavedeni simptom je povezan sa sledećim sistemima, ali nije ograničen na njih:",
@@ -2790,10 +2790,10 @@
             "para4": "Windows 7, 8, 10",
             "heading4": "Rešenje",
             "para5": "Windows 7 ili Vista",
-			"para6": "Otvorite System (Sistem) tako što ćete kliknuti na <strong>dugme Start </strong>Slika <strong>dugmeta Start,</strong> kliknuti desnim tasterom miša na Computer (Računar), a zatim kliknuti na Properties (Svojstva).",
+            "para6": "Otvorite System (Sistem) tako što ćete kliknuti na <strong>dugme Start </strong>Slika <strong>dugmeta Start,</strong> kliknuti desnim tasterom miša na Computer (Računar), a zatim kliknuti na Properties (Svojstva).",
             "para7": "U okviru opcije System (Sistem), možete da vidite tip sistema.",
             "para8": "Windows 8 i Windows 10",
-			"para9": "<strong>1. način:</strong> Prikaz prozora System (Sistem) u opciji Control Panel (Kontrolna tabla)",
+            "para9": "<strong>1. način:</strong> Prikaz prozora System (Sistem) u opciji Control Panel (Kontrolna tabla)",
             "para10": "Prevucite prstom od desne ivice ekrana, a zatim dodirnite <strong>Search</strong> (Pretraga). Ili ako koristite miš, postavite pokazivač na desni donji ugao ekrana, a zatim kliknite na <strong>Search</strong> (Pretraga).",
             "para11": "U polje za pretragu ukucajte <strong>system</strong> (sistem), a zatim dodirnite ili kliknite na <strong>Settings</strong> (Postavke).",
             "para12": "Dodirnite ili kliknite na <strong>System</strong> (Sistem).",
@@ -2805,8 +2805,8 @@
             "para18": "Ako koristite <strong>64-bitnu </strong>verziju sistema Windows 8<strong>, </strong> x64-based PC (računar zasnovan na x64-bitnom) je prikazano u polju <strong>System type</strong> (Tip sistema) u okviru zaglavlja Item (Stavka). Ako koristite<strong> 32-bitnu</strong> verziju sistema Windows 8, x86-based PC (računar zasnovan na x32-bitnom) je prikazano u polju <strong>System type</strong> (Tip sistema) u okviru zaglavlja Item (Stavka).  "
         },
         "question4": {
-			"title": "Proverite iskorišćenost baterije mašine",
-			"heading1": "Simptom",
+            "title": "Proverite iskorišćenost baterije mašine",
+            "heading1": "Simptom",
             "para1": "Windows 10 sadrži novi ekran „<strong>Battery Use“</strong> (Potrošnja baterije) koji prikazuje šta troši energiju računara. To znači da vam tačno pokazuje koje aplikacije (i aplikacije za računar i Windows 10 „univerzalne“ aplikacije) koriste previše energije.",
             "heading2": "Brendovi na koje ovo utiče",
             "para2": "Lenovo laptopovi, stoni računari",
@@ -2828,8 +2828,8 @@
             "para13": "8. Listajte dalje nadole i videćete listu aplikacija. Ovo se smatra najkorisnijim odeljkom ove funkcije. Prikazivaće listu aplikacija koje su koristile energiju baterije u tom periodu i prikazuje vam koji procenat energije baterije je svaka aplikacija iskoristila."
         },
         "question5": {
-			"title": "Korišćenje računara kao tableta",
-			"para1": "Uz režim tablet računara, Windows je intuitivniji i lakši za korišćenje kada imate uređaj osetljiv na dodir.",
+            "title": "Korišćenje računara kao tableta",
+            "para1": "Uz režim tablet računara, Windows je intuitivniji i lakši za korišćenje kada imate uređaj osetljiv na dodir.",
             "heading1": "Korišćenje u režimu tablet računara",
             "para2": "Da biste uključili režim tablet računara, izaberite <strong>Centar aktivnosti</strong> na traci zadataka, a zatim izaberite <strong>Tablet mode</strong> (Režim tablet računara).",
             "heading2": "Napomena",
@@ -2845,8 +2845,8 @@
             "para10": "Koristite dugme „Nazad“ na traci zadataka da biste se vratili u aplikaciji ili da biste otvorili aplikaciju koju ste prethodno koristili."
         },
         "question6": {
-			"title": "Upoznajte Cortana, vašeg ličnog pomoćnika",
-			"heading1": "Šta je Cortana?",
+            "title": "Upoznajte Cortana, vašeg ličnog pomoćnika",
+            "heading1": "Šta je Cortana?",
             "para1": "Cortana je vaš digitalni agent. Pomoći će vam da obavite stvari.",
             "para2": "Što više budete koristili Cortana, to će vaše iskustvo biti više personalizovano.",
             "para3": "Za početak, ukucajte pitanje u polje za pretragu ili izaberite mikrofon i razgovarajte sa pomoćnikom Cortana. (Kucanje funkcioniše za sve vrste računara, ali vam je za razgovor potreban mikrofon.)",
@@ -2854,7 +2854,7 @@
             "para5": "1. Početak 2. Notebook 3. Postavke 4. Povratne informacije",
             "para6": "Evo nekih stvari koje Cortana može da uradi za vas:",
             "unorderedList1": {
-				"listItem1": "Daje vam podsetnike na osnovu vašeg vremena, mesta ili osoba.",
+                "listItem1": "Daje vam podsetnike na osnovu vašeg vremena, mesta ili osoba.",
                 "listItem2": "Prati pakete, timove, interesovanja i letove.",
                 "listItem3": "Šalje e-poruke i tekstove.",
                 "listItem4": "Upravlja vašim kalendarom i brine se da ste u toku.",
@@ -2863,7 +2863,7 @@
                 "listItem7": "Pronalazi činjenice, datoteke, mesta i informacije.",
                 "listItem8": "Otvara bilo koju aplikaciju u sistemu."
             },
-			"heading2": "Isprobajte ovo: Postavite podsetnik",
+            "heading2": "Isprobajte ovo: Postavite podsetnik",
             "para7": "Jedna od stvari koje Cortana može da uradi jeste da vas podseća. Može da vas podseti da radite stvari na osnovu vremena, mesta ili čak osoba.",
             "para8": "Na primer, ukucajte ili recite „Podseti me da čestitam Tanji sledeći put kada pozove“.",
             "para9": "Podsetnik će se pojaviti kada vas Tanja pozove.",

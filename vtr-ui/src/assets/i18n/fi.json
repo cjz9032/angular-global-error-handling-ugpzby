@@ -199,8 +199,7 @@
                     "description": "Ylikellotuksen epäasianmukaiset asetukset saattavat aiheuttaa peruuttamatonta laitteistovahinkoa.",
                     "proceed": "JATKA",
                     "legionAccessory": "Install Legion Accessory Central?",
-                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
-                    "install": "INSTALL"
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc."
                 },
                 "popup": {
                     "closeBtn": "close"
@@ -1213,7 +1212,8 @@
                     "title": "Muut asetukset",
                     "vantageToolbar": {
                         "title": "Lenovo Vantage -työkalurivi",
-                        "description": "Kiinnitä Vantage-työkalurivi Windowsin tehtäväpalkkiin, jotta saat helposti lisää akun tietoja ja voit käyttää pika-asetuksia."
+                        "description": "Kiinnitä Vantage-työkalurivi Windowsin tehtäväpalkkiin, jotta saat helposti lisää akun tietoja ja voit käyttää pika-asetuksia.",
+                        "hint": "The options in the image depend on the capacity of the machine. For example, – some machines support backlight settings, and some may not."
                     }
                 },
                 "batterySettings": {
@@ -2734,54 +2734,54 @@
         "question1": {
             "title": "Tiedostojen varmuuskopiointi ja palauttaminen",
             "para1": "Varmuuskopiointi on aina hyvä asia. Säilytä tiedostojen kopioita toisella asemalla siltä varalta, että alkuperäisille tapahtuu jotain.",
-			"heading1": "Varmuuskopioinnin määritys",
-			"para2": "Valitse Käynnistä-painike ja sitten Asetukset > Päivittäminen ja suojaus > Varmuuskopiointi > Lisää asema, ja valitse sitten ulkoinen asema tai verkkosijainti.varmuuskopiointia varten.",
-			"para3": "Valmista. Varmuuskopioimme kaikki käyttäjän kansiossa olevat tiedostot (C:\\Users\\käyttäjänimesi) tunnin väliajoin. Jos haluat määrittää, mitkä tiedostot varmuuskopioidaan tai kuinka usein varmuuskopiointi tapahtuu, siirry kohtaan Lisää vaihtoehtoja.",
-			"heading2": "Tiedostojen palauttaminen",
-			"para4": "Jos sinulta puuttuu tärkeä tiedosto tai kansio, voit palauttaa sen seuraavasti:",
-			"para5": {
-				"div1": "1. Kirjoita Tiedostojen palautus tehtäväpalkin hakuruutuun ja valitse sitten  Palauta tiedostot ja tiedostohistoria.",
-				"div2": "2. Etsi tarvitsemasi tiedosto ja tarkastele kaikkia sen versioita nuolien avulla.",
-				"div3": "3. Kun löydät haluamasi version, valitse Palauta, jos haluat tallentaa tiedoston sen alkuperäiseen sijaintipaikkaan. Jos haluat tallentaa sen eri paikkaan, paina pitkään (tai napsauta hiiren kakkospainikkeella) Palauta-painiketta, valitse Palauta sijaintiin -vaihtoehto ja valitse sitten uusi sijainti."
-			}
+            "heading1": "Varmuuskopioinnin määritys",
+            "para2": "Valitse Käynnistä-painike ja sitten Asetukset > Päivittäminen ja suojaus > Varmuuskopiointi > Lisää asema, ja valitse sitten ulkoinen asema tai verkkosijainti.varmuuskopiointia varten.",
+            "para3": "Valmista. Varmuuskopioimme kaikki käyttäjän kansiossa olevat tiedostot (C:\\Users\\käyttäjänimesi) tunnin väliajoin. Jos haluat määrittää, mitkä tiedostot varmuuskopioidaan tai kuinka usein varmuuskopiointi tapahtuu, siirry kohtaan Lisää vaihtoehtoja.",
+            "heading2": "Tiedostojen palauttaminen",
+            "para4": "Jos sinulta puuttuu tärkeä tiedosto tai kansio, voit palauttaa sen seuraavasti:",
+            "para5": {
+                "div1": "1. Kirjoita Tiedostojen palautus tehtäväpalkin hakuruutuun ja valitse sitten  Palauta tiedostot ja tiedostohistoria.",
+                "div2": "2. Etsi tarvitsemasi tiedosto ja tarkastele kaikkia sen versioita nuolien avulla.",
+                "div3": "3. Kun löydät haluamasi version, valitse Palauta, jos haluat tallentaa tiedoston sen alkuperäiseen sijaintipaikkaan. Jos haluat tallentaa sen eri paikkaan, paina pitkään (tai napsauta hiiren kakkospainikkeella) Palauta-painiketta, valitse Palauta sijaintiin -vaihtoehto ja valitse sitten uusi sijainti."
+            }
         },
         "question2": {
-			"title": "Windows 10:n palauttaminen oletusasetuksiin",
-			"para1": "Jos Windows 10 -tietokoneessasi on ongelmia tai olet myymässä sitä, sinun tulisi palauttaa se oletusasetuksiin. Kun palautat tietokoneen oletusasetuksiin, voit säilyttää tai poistaa tiedostosi, poistaa kaikki sovellukset ja asetukset sekä asentaa tuoreen Windows-kopion. Se voi myös korjata useita ongelmia, kuten hidastuneen suorituskyvyn.",
-			"heading1": "1. Avaa Asetukset-sovellus",
-			"para2": "Paina Aloitus-kuvapainiketta näyttösi vasemmasta alakulmasta ja valitse asetusten hammasrataskuvake.",
-			"heading2": "2. Valitse luokkien luettelosta Päivittäminen ja suojaus",
-			"heading3": "3. Valitse vasemmanpuoleisesta paneelista Palauttaminen",
-			"heading4": "4. Käynnistä palautusprosessi",
-			"para3": "Napsauta tai napauta Aloita-painiketta ylälaidassa olevan Palauta tietokoneen oletusasetukset -otsikon alta.",
-			"heading5": "5. Valitse, haluatko säilyttää tiedostosi vai et",
-			"para4": "Kun tietokoneen oletusasetukset on palautettu, voit kirjautua sisään Microsoft-tilillesi. Kaikki tällä tilillä ostetut Windows Store -sovellukset asennetaan uudelleen.",
-			"para5": {
-				"li1": "Säilytä tiedostoni -vaihtoehto poistaa sovelluksesi ja asetuksesi, mutta säilyttää kaikki henkilökohtaiset tiedostosi.",
-				"li2": "Poista kaikki -vaihtoehto poistaa sovelluksesi, asetuksesi ja henkilökohtaiset tiedostosi. Jos sinulla ei ole varmuuskopiota tiedostoistasi, voit painaa Peruuta, varmuuskopioida ne ja aloittaa prosessin alusta."
-			},
-			"heading6": "6. Voit valita erilaisia lisäasetuksia",
-			"para6": "Tämä vaihtoehto näytetään vain, jos valitsit \"Poista kaikki\" -vaihtoehdon edellisessä vaiheessa.",
-			"heading7": "7. Lue yleiskatsaus ja paina Palauta, kun olet valmis jatkamaan.",
-			"para7": "Windows valmistautuu palauttamaan laitteesi oletusasetukset. Odota, kunnes näet sinisen ruudun.",
-			"heading8": "8. Kun näet \"Valitse vaihtoehto\" -tekstin, valitse Jatka.",
-			"para8": "Windows käynnistyy uudelleen ja aloittaa oletusasetusten palauttamisen. Tietokoneesi saattaa käynnistyä uudelleen useita kertoja, kun oletusasetuksia palautetaan.",
-			"heading9": "Yhteisön kysymykset ja vastaukset",
-			"communityAnswer": "Yhteisön vastaus",
-			"q1": "Jos päätän poistaa kaiken, tyhjennetäänkö kaikki tietokoneeseeni liitetyt/kytketyt asemat vai ainoastaan Windows 10 -käyttöjärjestelmän sisältävä asema?",
-			"a1": "Vain Windows 10 -käyttöjärjestelmän sisältävä asema tyhjennetään (tavallisesti C:-asema). Muut tietokoneeseen liitetyt/kytketyt asemat eivät muutu.",
-			"q2": "Miten suoritan tämän toimenpiteen, jos näyttöni on rikki?",
-			"a2": "Valitettavasti se ei ole mahdollista. Sinun täytyy hankkia uusi näyttö.",
-			"q3": "Jos olet kirjautunut sisään verkkosivustolle, poistetaanko myös sen historia?",
-			"a3": "Kyllä, riippuen käyttämästäsi selaimesta. Jos haluat poistaa selainhistoriasi, avaa selaimesi asetukset ja poista historiasi. Voit myös käyttää yksityistä tilaa välttyäksesi historiasi tallentamiselta.",
-			"q4": "Jos päätän poistaa kaiken, nollataanko myös salasanani?",
-			"a4": "Kyllä. Kun palautat Windows 10 -tietokoneesi oletusasetuksiin, kaikki käyttäjätiedot poistetaan. Tämä sisältää asiakirjat, tallennetut salasanat, kuvat, määritetyt asetukset, selaintiedot ja sovellustiedot.",
-			"para9": "Viite",
-			"para10": "Windows 10:n palauttaminen oletusasetuksiin – WikiHow."
-		},
+            "title": "Windows 10:n palauttaminen oletusasetuksiin",
+            "para1": "Jos Windows 10 -tietokoneessasi on ongelmia tai olet myymässä sitä, sinun tulisi palauttaa se oletusasetuksiin. Kun palautat tietokoneen oletusasetuksiin, voit säilyttää tai poistaa tiedostosi, poistaa kaikki sovellukset ja asetukset sekä asentaa tuoreen Windows-kopion. Se voi myös korjata useita ongelmia, kuten hidastuneen suorituskyvyn.",
+            "heading1": "1. Avaa Asetukset-sovellus",
+            "para2": "Paina Aloitus-kuvapainiketta näyttösi vasemmasta alakulmasta ja valitse asetusten hammasrataskuvake.",
+            "heading2": "2. Valitse luokkien luettelosta Päivittäminen ja suojaus",
+            "heading3": "3. Valitse vasemmanpuoleisesta paneelista Palauttaminen",
+            "heading4": "4. Käynnistä palautusprosessi",
+            "para3": "Napsauta tai napauta Aloita-painiketta ylälaidassa olevan Palauta tietokoneen oletusasetukset -otsikon alta.",
+            "heading5": "5. Valitse, haluatko säilyttää tiedostosi vai et",
+            "para4": "Kun tietokoneen oletusasetukset on palautettu, voit kirjautua sisään Microsoft-tilillesi. Kaikki tällä tilillä ostetut Windows Store -sovellukset asennetaan uudelleen.",
+            "para5": {
+                "li1": "Säilytä tiedostoni -vaihtoehto poistaa sovelluksesi ja asetuksesi, mutta säilyttää kaikki henkilökohtaiset tiedostosi.",
+                "li2": "Poista kaikki -vaihtoehto poistaa sovelluksesi, asetuksesi ja henkilökohtaiset tiedostosi. Jos sinulla ei ole varmuuskopiota tiedostoistasi, voit painaa Peruuta, varmuuskopioida ne ja aloittaa prosessin alusta."
+            },
+            "heading6": "6. Voit valita erilaisia lisäasetuksia",
+            "para6": "Tämä vaihtoehto näytetään vain, jos valitsit \"Poista kaikki\" -vaihtoehdon edellisessä vaiheessa.",
+            "heading7": "7. Lue yleiskatsaus ja paina Palauta, kun olet valmis jatkamaan.",
+            "para7": "Windows valmistautuu palauttamaan laitteesi oletusasetukset. Odota, kunnes näet sinisen ruudun.",
+            "heading8": "8. Kun näet \"Valitse vaihtoehto\" -tekstin, valitse Jatka.",
+            "para8": "Windows käynnistyy uudelleen ja aloittaa oletusasetusten palauttamisen. Tietokoneesi saattaa käynnistyä uudelleen useita kertoja, kun oletusasetuksia palautetaan.",
+            "heading9": "Yhteisön kysymykset ja vastaukset",
+            "communityAnswer": "Yhteisön vastaus",
+            "q1": "Jos päätän poistaa kaiken, tyhjennetäänkö kaikki tietokoneeseeni liitetyt/kytketyt asemat vai ainoastaan Windows 10 -käyttöjärjestelmän sisältävä asema?",
+            "a1": "Vain Windows 10 -käyttöjärjestelmän sisältävä asema tyhjennetään (tavallisesti C:-asema). Muut tietokoneeseen liitetyt/kytketyt asemat eivät muutu.",
+            "q2": "Miten suoritan tämän toimenpiteen, jos näyttöni on rikki?",
+            "a2": "Valitettavasti se ei ole mahdollista. Sinun täytyy hankkia uusi näyttö.",
+            "q3": "Jos olet kirjautunut sisään verkkosivustolle, poistetaanko myös sen historia?",
+            "a3": "Kyllä, riippuen käyttämästäsi selaimesta. Jos haluat poistaa selainhistoriasi, avaa selaimesi asetukset ja poista historiasi. Voit myös käyttää yksityistä tilaa välttyäksesi historiasi tallentamiselta.",
+            "q4": "Jos päätän poistaa kaiken, nollataanko myös salasanani?",
+            "a4": "Kyllä. Kun palautat Windows 10 -tietokoneesi oletusasetuksiin, kaikki käyttäjätiedot poistetaan. Tämä sisältää asiakirjat, tallennetut salasanat, kuvat, määritetyt asetukset, selaintiedot ja sovellustiedot.",
+            "para9": "Viite",
+            "para10": "Windows 10:n palauttaminen oletusasetuksiin – WikiHow."
+        },
         "question3": {
-			"title": "Koneen suorittimen tunnistaminen",
-			"heading1": "Tilanne",
+            "title": "Koneen suorittimen tunnistaminen",
+            "heading1": "Tilanne",
             "para1": "Termit 32-bittinen ja 64-bittinen viittaavat tapaan, jolla tietokoneen suoritin (kutsutaan myös keskusyksiköksi tai CPU:ksi) käsittelee tietoja. 64-bittinen Windows-versio käsittelee suuria määriä RAM (Random Access Memory) -muistia tehokkaammin kuin 32-bittinen järjestelmä.",
             "heading2": "Tuotemerkit, joita tämä koskee",
             "para2": "Yllä mainittu tilanne liittyy seuraaviin järjestelmiin, näihin kuitenkaan rajoittumatta:",
@@ -2790,10 +2790,10 @@
             "para4": "Windows 7, 8, 10",
             "heading4": "Ratkaisu",
             "para5": "Windows 7 tai Vista",
-			"para6": "Avaa järjestelmä napsauttamalla <strong>Käynnistä-painiketta </strong>Kuva <strong>Käynnistä-painikkeesta,</strong> napsauta hiiren oikealla painikkeella Tietokone ja valitse sitten Ominaisuudet.",
+            "para6": "Avaa järjestelmä napsauttamalla <strong>Käynnistä-painiketta </strong>Kuva <strong>Käynnistä-painikkeesta,</strong> napsauta hiiren oikealla painikkeella Tietokone ja valitse sitten Ominaisuudet.",
             "para7": "Järjestelmä-kohdassa voit tarkastella järjestelmän lajia.",
             "para8": "Windows 8 ja Windows 10",
-			"para9": "<strong>Tapa 1:</strong> Tarkastele järjestelmäikkunaa Ohjauspaneelissa",
+            "para9": "<strong>Tapa 1:</strong> Tarkastele järjestelmäikkunaa Ohjauspaneelissa",
             "para10": "Sipaise kuvaruudun oikeasta reunasta sisäänpäin ja napauta sitten <strong>Hae</strong>. Jos käytät hiirtä, osoita näytön oikeaa alakulmaa ja napsauta sitten <strong>Haku-painiketta.</strong>",
             "para11": "Kirjoita hakukenttään <strong>järjestelmä</strong> ja valitse sitten <strong>Asetukset.</strong>",
             "para12": "Valitse <strong>Järjestelmä</strong>.",
@@ -2805,8 +2805,8 @@
             "para18": "Jos käytät Windows 8 -käyttöjärjestelmän <strong>64-bittistä </strong>versiota<strong>, </strong> x64-pohjainen tietokone näkyy <strong>Järjestelmän tyyppi</strong> -kohdassa nimikkeen otsikon alla. Jos käytät Windows 8 -käyttöjärjestelmän<strong> 32-bittistä</strong> versiota, x86-pohjainen tietokone näkyy <strong>Järjestelmän tyyppi</strong> -kentässä nimikkeen otsikon alla.  "
         },
         "question4": {
-			"title": "Tarkista koneen akun käyttö",
-			"heading1": "Tilanne",
+            "title": "Tarkista koneen akun käyttö",
+            "heading1": "Tilanne",
             "para1": "Windows 10 -käyttöjärjestelmään kuuluu uusi ”<strong>Akun käyttö”</strong> -näyttö, josta näet mikä tyhjentää kannettavasi akkua. Tämä tarkoittaa, että se kertoo tarkalleen, mitkä sovellukset – sekä työpöytäversiot että Windows 10 -käyttöjärjestelmän yleissovellukset – käyttävät liikaa virtaa.",
             "heading2": "Tuotemerkit, joita tämä koskee",
             "para2": "Lenovon kannettavat tietokoneet, pöytätietokoneet",
@@ -2828,8 +2828,8 @@
             "para13": "8. Vieritä pidemmälle alaspäin ja näet luettelon sovelluksista. Tätä pidetään tämän toiminnon hyödyllisimpänä osiona. Se tuo näkyviin luettelon sovelluksista, jotka ovat käyttäneet akkuvirtaa kyseisenä ajanjaksona ja näyttää, kuinka monta prosenttia akkuvirtaa kukin sovellus on käyttänyt."
         },
         "question5": {
-			"title": "Tietokoneen käyttö taulutietokoneen tavoin",
-			"para1": "Muistiotila tekee Windows-käyttöjärjestelmästä entistä intuitiivisemman ja helppokäyttöisemmän, kun käytössä on kosketusnäytöllinen laite.",
+            "title": "Tietokoneen käyttö taulutietokoneen tavoin",
+            "para1": "Muistiotila tekee Windows-käyttöjärjestelmästä entistä intuitiivisemman ja helppokäyttöisemmän, kun käytössä on kosketusnäytöllinen laite.",
             "heading1": "Muistiotila",
             "para2": "Voit ottaa muistiotilan käyttöön napsauttamalla tehtäväpalkissa <strong>toimintokeskus</strong> ja valitsemalla sitten <strong>Muistiotila</strong>.",
             "heading2": "Huomautus",
@@ -2845,8 +2845,8 @@
             "para10": "Voit siirtyä takaisin sovellukseen tai avata aiemmin käyttämäsi sovelluksen napsauttamalla tehtäväpalkin Edellinen-painiketta."
         },
         "question6": {
-			"title": "Tutustu Cortanaan, henkilökohtaiseen avustajaasi",
-			"heading1": "Mikä Cortana on?",
+            "title": "Tutustu Cortanaan, henkilökohtaiseen avustajaasi",
+            "heading1": "Mikä Cortana on?",
             "para1": "Cortana on digitaalinen agenttisi. Hän auttaa sinua saamaan asioita aikaan.",
             "para2": "Mitä enemmän käytät Cortanaa, sitä räätälöidympi kokemuksesi tulee olemaan.",
             "para3": "Aloita kirjoittamalla kysymys hakukenttään, tai valitse mikrofoni ja puhu Cortanalle. (Kirjoitus toimii kaikentyyppisissä tietokoneissa, mutta sinulla on oltava mikrofoni, jotta voit ohjata sovellusta puheella.)",
@@ -2854,7 +2854,7 @@
             "para5": "1. Koti 2. Kannettava tietokone 3. Asetukset 4. Palaute",
             "para6": "Seuraavassa on joitakin tapoja, joilla Cortana voi auttaa sinua:",
             "unorderedList1": {
-				"listItem1": "Saat aikaan, paikkoihin tai henkilöihin perustuvia muistutuksia.",
+                "listItem1": "Saat aikaan, paikkoihin tai henkilöihin perustuvia muistutuksia.",
                 "listItem2": "Seuraa paketteja, tiimejä, kiinnostuksen kohteita ja lentoja.",
                 "listItem3": "Lähetä sähköposteja ja tekstiviestejä.",
                 "listItem4": "Hallitse kalenteriasi ja pidä itsesi ajan tasalla.",
@@ -2863,7 +2863,7 @@
                 "listItem7": "Hae faktoja, tiedostoja, paikkoja ja tietoja.",
                 "listItem8": "Avaa mikä tahansa järjestelmän sovellus."
             },
-			"heading2": "Kokeile tätä: muistutuksen asetus",
+            "heading2": "Kokeile tätä: muistutuksen asetus",
             "para7": "Yksi asioista, jotka Cortana voi tehdä, on antaa sinulle muistutuksia. Hän voi muistuttaa sinua tekemään asioita perustuen aikaan, paikkoihin tai jopa ihmisiin.",
             "para8": "Voit esimerkiksi kirjoittaa tai sanoa: \"Muistuta minua onnittelemaan Tarjaa, kun hän soittaa seuraavan kerran\".",
             "para9": "Muistutus tulee näkyviin, kun Tarja soittaa sinulle.",

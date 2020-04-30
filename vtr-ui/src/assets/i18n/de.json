@@ -199,8 +199,7 @@
                     "description": "Unsachgemäße Einstellungen für Overclocking können zu irreversiblen Hardwareschaden führen.",
                     "proceed": "FORTFAHREN",
                     "legionAccessory": "Install Legion Accessory Central?",
-                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
-                    "install": "INSTALL"
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc."
                 },
                 "popup": {
                     "closeBtn": "close"
@@ -1213,7 +1212,8 @@
                     "title": "Weitere Einstellungen",
                     "vantageToolbar": {
                         "title": "Lenovo Vantage-Symbolleiste",
-                        "description": "Vantage-Symbolleiste an die Windows-Taskleiste anheften, um weitere Akkudetails und Zugriff auf Ihre Schnelleinstellungen zu erhalten."
+                        "description": "Vantage-Symbolleiste an die Windows-Taskleiste anheften, um weitere Akkudetails und Zugriff auf Ihre Schnelleinstellungen zu erhalten.",
+                        "hint": "The options in the image depend on the capacity of the machine. For example, – some machines support backlight settings, and some may not."
                     }
                 },
                 "batterySettings": {
@@ -2734,54 +2734,54 @@
         "question1": {
             "title": "Ihre Dateien sichern und wiederherstellen",
             "para1": "Es ist immer gut, eine Sicherung zu haben. Bewahren Sie Kopien Ihrer Dateien auf einem anderen Laufwerk auf, falls etwas mit den Originalen geschieht.",
-			"heading1": "Sicherung konfigurieren",
-			"para2": "Wählen Sie die Schaltfläche Start aus, wählen Sie Einstellungen > Update und Sicherheit > Sicherung > Laufwerk hinzufügen und wählen Sie dann ein externes Laufwerk oder einen Netzwerkstandort für Ihre Sicherungen aus.",
-			"para3": "Fertig. Jede Stunde wird eine Sicherung aller Inhalte in Ihrem Benutzerordner erstellt (C:\\Users\\Ihr Benutzername). Um zu ändern, welche Dateien gesichert oder wie oft Sicherungen erstellt werden, wechseln Sie zu Weitere Optionen.",
-			"heading2": "Ihre Dateien wiederherstellen",
-			"para4": "Sollte eine wichtige Datei oder ein wichtiger Ordner fehlen, gehen Sie wie folgt vor:",
-			"para5": {
-				"div1": "1. Geben Sie Dateien wiederherstellen in das Suchfeld in der Taskleiste ein und wählen Sie dann  Ihre Dateien mit Dateiversionsverlauf wiederherstellen.",
-				"div2": "2. Suchen Sie die Dateien, die Sie benötigen, und verwenden Sie dann die Pfeile, um all ihre Versionen anzuzeigen.",
-				"div3": "3. Wenn Sie die gewünschte Version gefunden haben, wählen Sie Wiederherstellen aus, um sie an ihrem ursprünglichen Speicherort zu speichern. Wenn Sie die Version an einem andern Ort speichern möchten, halten Sie Wiederherstellen gedrückt (oder Rechtsklick), wählen Sie Wiederherstellen in und wählen Sie dann einen neuen Speicherort aus."
-			}
+            "heading1": "Sicherung konfigurieren",
+            "para2": "Wählen Sie die Schaltfläche Start aus, wählen Sie Einstellungen > Update und Sicherheit > Sicherung > Laufwerk hinzufügen und wählen Sie dann ein externes Laufwerk oder einen Netzwerkstandort für Ihre Sicherungen aus.",
+            "para3": "Fertig. Jede Stunde wird eine Sicherung aller Inhalte in Ihrem Benutzerordner erstellt (C:\\Users\\Ihr Benutzername). Um zu ändern, welche Dateien gesichert oder wie oft Sicherungen erstellt werden, wechseln Sie zu Weitere Optionen.",
+            "heading2": "Ihre Dateien wiederherstellen",
+            "para4": "Sollte eine wichtige Datei oder ein wichtiger Ordner fehlen, gehen Sie wie folgt vor:",
+            "para5": {
+                "div1": "1. Geben Sie Dateien wiederherstellen in das Suchfeld in der Taskleiste ein und wählen Sie dann  Ihre Dateien mit Dateiversionsverlauf wiederherstellen.",
+                "div2": "2. Suchen Sie die Dateien, die Sie benötigen, und verwenden Sie dann die Pfeile, um all ihre Versionen anzuzeigen.",
+                "div3": "3. Wenn Sie die gewünschte Version gefunden haben, wählen Sie Wiederherstellen aus, um sie an ihrem ursprünglichen Speicherort zu speichern. Wenn Sie die Version an einem andern Ort speichern möchten, halten Sie Wiederherstellen gedrückt (oder Rechtsklick), wählen Sie Wiederherstellen in und wählen Sie dann einen neuen Speicherort aus."
+            }
         },
         "question2": {
-			"title": "Zurücksetzen von Windows 10",
-			"para1": "Wenn bei Ihrem Windows 10-PC Probleme auftreten oder Sie ihn verkaufen möchten, sollten Sie ihn zurücksetzen. Bei einer Rücksetzung können Sie auswählen, ob Sie Ihre Dateien beibehalten oder entfernen, alle Apps und Einstellungen entfernen und eine neue Kopie von Windows installieren möchten. Dadurch können auch viele Fehler behoben werden, wie z. B. eine verringerte Leistung.",
-			"heading1": "1. Öffnen Sie die App \"Einstellungen\".",
-			"para2": "Drücken Sie die Symboltaste \"Start\", die sich unten links auf Ihrem Bildschirm befindet, und wählen Sie das Zahnradsymbol für \"Einstellungen\" aus.",
-			"heading2": "2. Wählen Sie in der Liste der Kategorien die Option \"Update und Sicherheit\" aus.",
-			"heading3": "3. Navigieren Sie im linken Bereich zu \"Wiederherstellung\".",
-			"heading4": "4. Starten Sie den Rücksetzungsvorgang.",
-			"para3": "Klicken oder tippen Sie unter der Überschrift \"Diesen PC zurücksetzen\" oben auf die Schaltfläche \"Erste Schritte\".",
-			"heading5": "5. Wählen Sie aus, ob Ihre Dateien beibehalten werden sollen.",
-			"para4": "Nach dem Rücksetzungsvorgang können Sie sich bei Ihrem Microsoft-Konto anmelden. Alle Windows Store-Apps, die unter diesem Konto erworben wurden, werden neu installiert.",
-			"para5": {
-				"li1": "Durch Auswählen der Option \"Eigene Dateien beibehalten\" werden Ihre Apps und Einstellungen entfernt, jedoch alle persönlichen Dateien beibehalten.",
-				"li2": "Durch Auswählen der Option \"Alles entfernen\" werden Ihre Apps, Einstellungen und persönlichen Dateien gelöscht. Wenn Sie keine gesicherte Kopie Ihrer Dateien haben, sollten Sie \"Abbrechen\" drücken, die Dateien sichern und diesen Rücksetzvorgang erneut durchführen."
-			},
-			"heading6": "6. Sie können verschiedene zusätzliche Einstellungen auswählen.",
-			"para6": "Dies wird nur angezeigt, wenn Sie im vorherigen Schritt die Option \"Alles entfernen\" ausgewählt haben.",
-			"heading7": "7. Lesen Sie die Übersicht und drücken Sie \"Zurücksetzen\", wenn Sie zum Fortfahren bereit sind.",
-			"para7": "Windows bereitet die Rücksetzung Ihrer Einheit vor. Warten Sie einfach, bis ein blauer Bildschirm angezeigt wird.",
-			"heading8": "8. Wenn \"Option auswählen\" angezeigt wird, wählen Sie \"Weiter\" aus.",
-			"para8": "Windows wird neu gestartet und beginnt mit dem Rücksetzvorgang. Möglicherweise wird Ihr PC während des Rücksetzvorgangs mehrmals neu gestartet.",
-			"heading9": "Fragen und Antworten der Community",
-			"communityAnswer": "Antwort der Community",
-			"q1": "Werden durch Auswählen der Option \"Alles entfernen\" alle Laufwerke in meinem Computer bzw. die an meinem Computer angeschlossen Laufwerke gelöscht oder nur die Laufwerke unter Windows 10?",
-			"a1": "Es wird nur das Laufwerk mit dem Windows 10-Betriebssystem (normalerweise Laufwerk C:) gelöscht. Andere Laufwerke in Ihrem Computer bzw. die an Ihrem Computer angeschlossenen Laufwerke sind hiervon nicht betroffen.",
-			"q2": "Wie kann ich diese Schritte ausführen, wenn der Bildschirm beschädigt ist?",
-			"a2": "Bei beschädigtem Bildschirm können Sie diese Schritte leider nicht ausführen. Sie müssen einen neuen Bildschirm erwerben.",
-			"q3": "Wenn ich mich bei einer Website angemeldet habe, wird dieser Verlauf auch entfernt?",
-			"a3": "Ja. Dies hängt jedoch davon ab, welcher Browser verwendet wird. Um den Browserverlauf zu entfernen, wechseln Sie einfach zu den Einstellungen im Browser und löschen Sie den Verlauf. Sie können auch einen Inkognito-Modus verwenden, um zu vermeiden, dass Ihr Verlauf gespeichert wird.",
-			"q4": "Wird durch Auswählen der Option \"Alles entfernen\" auch mein Kennwort zurückgesetzt?",
-			"a4": "Ja. Wenn Sie Ihren Windows 10-Computer zurücksetzen, werden alle Benutzerdaten entfernt. Dazu gehören Dokumente, gespeicherte Kennwörter, Bilder, bevorzugte Einstellungen, Browserinformationen und Anwendungsdaten.",
-			"para9": "Nachschlagewerke",
-			"para10": "Zurücksetzen von Windows 10 – WikiHow."
-		},
+            "title": "Zurücksetzen von Windows 10",
+            "para1": "Wenn bei Ihrem Windows 10-PC Probleme auftreten oder Sie ihn verkaufen möchten, sollten Sie ihn zurücksetzen. Bei einer Rücksetzung können Sie auswählen, ob Sie Ihre Dateien beibehalten oder entfernen, alle Apps und Einstellungen entfernen und eine neue Kopie von Windows installieren möchten. Dadurch können auch viele Fehler behoben werden, wie z. B. eine verringerte Leistung.",
+            "heading1": "1. Öffnen Sie die App \"Einstellungen\".",
+            "para2": "Drücken Sie die Symboltaste \"Start\", die sich unten links auf Ihrem Bildschirm befindet, und wählen Sie das Zahnradsymbol für \"Einstellungen\" aus.",
+            "heading2": "2. Wählen Sie in der Liste der Kategorien die Option \"Update und Sicherheit\" aus.",
+            "heading3": "3. Navigieren Sie im linken Bereich zu \"Wiederherstellung\".",
+            "heading4": "4. Starten Sie den Rücksetzungsvorgang.",
+            "para3": "Klicken oder tippen Sie unter der Überschrift \"Diesen PC zurücksetzen\" oben auf die Schaltfläche \"Erste Schritte\".",
+            "heading5": "5. Wählen Sie aus, ob Ihre Dateien beibehalten werden sollen.",
+            "para4": "Nach dem Rücksetzungsvorgang können Sie sich bei Ihrem Microsoft-Konto anmelden. Alle Windows Store-Apps, die unter diesem Konto erworben wurden, werden neu installiert.",
+            "para5": {
+                "li1": "Durch Auswählen der Option \"Eigene Dateien beibehalten\" werden Ihre Apps und Einstellungen entfernt, jedoch alle persönlichen Dateien beibehalten.",
+                "li2": "Durch Auswählen der Option \"Alles entfernen\" werden Ihre Apps, Einstellungen und persönlichen Dateien gelöscht. Wenn Sie keine gesicherte Kopie Ihrer Dateien haben, sollten Sie \"Abbrechen\" drücken, die Dateien sichern und diesen Rücksetzvorgang erneut durchführen."
+            },
+            "heading6": "6. Sie können verschiedene zusätzliche Einstellungen auswählen.",
+            "para6": "Dies wird nur angezeigt, wenn Sie im vorherigen Schritt die Option \"Alles entfernen\" ausgewählt haben.",
+            "heading7": "7. Lesen Sie die Übersicht und drücken Sie \"Zurücksetzen\", wenn Sie zum Fortfahren bereit sind.",
+            "para7": "Windows bereitet die Rücksetzung Ihrer Einheit vor. Warten Sie einfach, bis ein blauer Bildschirm angezeigt wird.",
+            "heading8": "8. Wenn \"Option auswählen\" angezeigt wird, wählen Sie \"Weiter\" aus.",
+            "para8": "Windows wird neu gestartet und beginnt mit dem Rücksetzvorgang. Möglicherweise wird Ihr PC während des Rücksetzvorgangs mehrmals neu gestartet.",
+            "heading9": "Fragen und Antworten der Community",
+            "communityAnswer": "Antwort der Community",
+            "q1": "Werden durch Auswählen der Option \"Alles entfernen\" alle Laufwerke in meinem Computer bzw. die an meinem Computer angeschlossen Laufwerke gelöscht oder nur die Laufwerke unter Windows 10?",
+            "a1": "Es wird nur das Laufwerk mit dem Windows 10-Betriebssystem (normalerweise Laufwerk C:) gelöscht. Andere Laufwerke in Ihrem Computer bzw. die an Ihrem Computer angeschlossenen Laufwerke sind hiervon nicht betroffen.",
+            "q2": "Wie kann ich diese Schritte ausführen, wenn der Bildschirm beschädigt ist?",
+            "a2": "Bei beschädigtem Bildschirm können Sie diese Schritte leider nicht ausführen. Sie müssen einen neuen Bildschirm erwerben.",
+            "q3": "Wenn ich mich bei einer Website angemeldet habe, wird dieser Verlauf auch entfernt?",
+            "a3": "Ja. Dies hängt jedoch davon ab, welcher Browser verwendet wird. Um den Browserverlauf zu entfernen, wechseln Sie einfach zu den Einstellungen im Browser und löschen Sie den Verlauf. Sie können auch einen Inkognito-Modus verwenden, um zu vermeiden, dass Ihr Verlauf gespeichert wird.",
+            "q4": "Wird durch Auswählen der Option \"Alles entfernen\" auch mein Kennwort zurückgesetzt?",
+            "a4": "Ja. Wenn Sie Ihren Windows 10-Computer zurücksetzen, werden alle Benutzerdaten entfernt. Dazu gehören Dokumente, gespeicherte Kennwörter, Bilder, bevorzugte Einstellungen, Browserinformationen und Anwendungsdaten.",
+            "para9": "Nachschlagewerke",
+            "para10": "Zurücksetzen von Windows 10 – WikiHow."
+        },
         "question3": {
-			"title": "So finden Sie heraus, welche CPU Ihr Computer hat",
-			"heading1": "Symptom",
+            "title": "So finden Sie heraus, welche CPU Ihr Computer hat",
+            "heading1": "Symptom",
             "para1": "Die Begriffe 32 Bit und 64 Bit bezeichnen die Art und Weise, wie der Prozessor eines Computers (auch CPU genannt) Informationen verarbeitet. Die 64-Bit-Version von Windows verarbeitet große Mengen an Random Access Memory (RAM) effektiver als ein 32-Bit-System.",
             "heading2": "Betroffene Marken",
             "para2": "Das obige Symptom wird mit folgenden Systemen assoziiert (ohne darauf beschränkt zu sein):",
@@ -2790,10 +2790,10 @@
             "para4": "Windows 7, 8, 10",
             "heading4": "Lösung",
             "para5": "Windows 7 oder Vista",
-			"para6": "Öffnen Sie das System, indem Sie auf das <strong>Bild </strong>der <strong>Startschaltfläche</strong> klicken, mit der rechten Maustaste auf \"Computer\" und anschließend auf \"Eigenschaften\" klicken.",
+            "para6": "Öffnen Sie das System, indem Sie auf das <strong>Bild </strong>der <strong>Startschaltfläche</strong> klicken, mit der rechten Maustaste auf \"Computer\" und anschließend auf \"Eigenschaften\" klicken.",
             "para7": "Unter \"System\" können Sie den Systemtyp anzeigen.",
             "para8": "Windows 8 und Windows 10",
-			"para9": "<strong>Methode 1:</strong> Das Systemfenster in der Systemsteuerung anzeigen",
+            "para9": "<strong>Methode 1:</strong> Das Systemfenster in der Systemsteuerung anzeigen",
             "para10": "Gleiten Sie vom rechten Rand aus auf den Bildschirm und tippen Sie dann auf <strong>Suchen</strong>. Sollten Sie eine Maus verwenden, bewegen Sie den Mauszeiger in die rechte untere Ecke des Bildschirms und klicken Sie dann auf <strong>Suchen.</strong>",
             "para11": "Geben Sie <strong>System</strong> in das Suchfeld ein und tippen oder klicken Sie auf <strong>Einstellungen</strong>.",
             "para12": "Tippen oder klicken Sie auf <strong>System</strong>.",
@@ -2805,8 +2805,8 @@
             "para18": "Wenn Sie eine <strong>64-Bit-Version</strong> von Windows 8 ausführen, wird \"x64-basierter PC\" im Feld <strong>Systemtyp</strong> unter der Überschrift \"Element\" angezeigt. Wenn Sie eine<strong> 32-Bit-Version</strong> von Windows 8 ausführen, wird \"x86-basierter PC\" im Feld <strong>Systemtyp</strong> unter der Überschrift \"Element\" angezeigt.  "
         },
         "question4": {
-			"title": "Den Akkuverbrauch Ihres Computers überprüfen",
-			"heading1": "Symptom",
+            "title": "Den Akkuverbrauch Ihres Computers überprüfen",
+            "heading1": "Symptom",
             "para1": "Windows 10 beinhaltet einen neuen Bildschirm namens \"<strong>Akkunutzung\"</strong>, auf dem angezeigt wird, wodurch Ihr Laptop Saft verliert. Mit anderen Worten, Sie erfahren genau, welche Apps – Desktop und \"universelle\" Windows 10-Apps – zu viel Energie verbrauchen.",
             "heading2": "Betroffene Marken",
             "para2": "Lenovo Laptops, Desktops",
@@ -2828,8 +2828,8 @@
             "para13": "8. Scrollen Sie weiter nach untern und es wird eine Liste von Anwendungen angezeigt. Dies wird als nützlichster Bereich dieser Funktion betrachtet. Es wird eine Liste der Apps angezeigt, die in diesem Zeitraum Akkuleistung verbraucht haben. Außerdem sehen Sie, wie viel Ihrer Akkuleistung jede App verbraucht hat."
         },
         "question5": {
-			"title": "Verwenden Sie Ihren PC wie ein Tablet",
-			"para1": "Mit dem Tabletmodus wird Windows intuitiver und benutzerfreundlicher, wenn Sie ein Gerät mit Touchscreen verwenden.",
+            "title": "Verwenden Sie Ihren PC wie ein Tablet",
+            "para1": "Mit dem Tabletmodus wird Windows intuitiver und benutzerfreundlicher, wenn Sie ein Gerät mit Touchscreen verwenden.",
             "heading1": "Tabletmodus verwenden",
             "para2": "Aktivieren Sie den Tabletmodus, wählen Sie in der Taskleiste <strong>Info-Center</strong> und anschließend <strong>Tabletmodus</strong> aus.",
             "heading2": "Anmerkung",
@@ -2845,8 +2845,8 @@
             "para10": "Verwenden Sie die Schaltfläche \"Zurück\" in der Taskleiste, um zu einer App zurückzukehren oder eine App zu öffnen, die Sie zuvor verwendet haben."
         },
         "question6": {
-			"title": "Lernen Sie Cortana, Ihre persönliche Assistentin, kennen",
-			"heading1": "Was ist Cortana?",
+            "title": "Lernen Sie Cortana, Ihre persönliche Assistentin, kennen",
+            "heading1": "Was ist Cortana?",
             "para1": "Cortana ist Ihre digitale Agentin. Sie wird Ihnen helfen, Dinge zu erledigen.",
             "para2": "Je mehr Sie Cortana verwenden, desto personalisierter wird Ihre Erfahrung sein.",
             "para3": "Geben Sie zunächst eine Frage in das Suchfeld ein oder wählen Sie das Mikrofon aus, um mit Cortana zu sprechen. (Tastatureingaben funktionieren bei allen Arten von PCs, aber zum Sprechen benötigen Sie ein Mikrofon.)",
@@ -2854,7 +2854,7 @@
             "para5": "1. Startbildschirm 2. Notebook 3. Einstellungen 4. Feedback",
             "para6": "Hier einige Dinge, die Cortana für Sie tun kann:",
             "unorderedList1": {
-				"listItem1": "Ihnen Erinnerungen basierend auf Zeit, Ort und Personen geben.",
+                "listItem1": "Ihnen Erinnerungen basierend auf Zeit, Ort und Personen geben.",
                 "listItem2": "Pakete, Teams, Interessen und Flüge nachverfolgen.",
                 "listItem3": "E-Mails oder SMS senden.",
                 "listItem4": "Ihren Kalender verwalten und Sie auf dem neuesten Stand halten.",
@@ -2863,7 +2863,7 @@
                 "listItem7": "Fakten, Dateien, Orte und Informationen finden.",
                 "listItem8": "Jede App auf Ihrem System öffnen."
             },
-			"heading2": "Versuchen Sie Folgendes: Eine Erinnerung einrichten",
+            "heading2": "Versuchen Sie Folgendes: Eine Erinnerung einrichten",
             "para7": "Eines der Dinge, die Cortana erledigen kann, ist, Ihnen Erinnerungen zu geben. Sie kann Sie basierend auf Zeit, Orten und sogar Personen daran erinnern, Dinge zu erledigen.",
             "para8": "Tippen oder sagen Sie beispielsweise \"Erinnere mich daran, Tanya zu gratulieren, wenn Sie das nächste Mal anruft\".",
             "para9": "Die Erinnerung wird angezeigt, wenn Sie einen Anruf von Tanya erhalten.",

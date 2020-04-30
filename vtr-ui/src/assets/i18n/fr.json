@@ -199,8 +199,7 @@
                     "description": "Des paramètres inadaptés du Surfréquençage peuvent entraîner des dégâts matériel irréversibles.",
                     "proceed": "CONTINUER",
                     "legionAccessory": "Install Legion Accessory Central?",
-                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
-                    "install": "INSTALL"
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc."
                 },
                 "popup": {
                     "closeBtn": "close"
@@ -1213,7 +1212,8 @@
                     "title": "Autres paramètres",
                     "vantageToolbar": {
                         "title": "Barre d'outils de Lenovo Vantage",
-                        "description": "Épinglez la barre d'outils Vantage à la barre des tâches Windows pour obtenir plus de détails sur la batterie et accéder à vos paramètres rapides."
+                        "description": "Épinglez la barre d'outils Vantage à la barre des tâches Windows pour obtenir plus de détails sur la batterie et accéder à vos paramètres rapides.",
+                        "hint": "The options in the image depend on the capacity of the machine. For example, – some machines support backlight settings, and some may not."
                     }
                 },
                 "batterySettings": {
@@ -2734,16 +2734,16 @@
         "question1": {
             "title": "Sauvegarde et restauration de vos fichiers",
             "para1": "Il est toujours préférable de disposer d'une sauvegarde. Conservez des copies de vos fichiers sur un autre disque dur s'il arrive quelque chose à l'original.",
-			"heading1": "Configuration de votre sauvegarde",
-			"para2": "Sélectionnez le bouton démarrer, sélectionnez paramètres > mettre à jour et sécurité > sauvegarde > ajouter une unité, puis choisissez un lecteur externe ou un emplacement réseau pour vos sauvegardes.",
-			"para3": "Tout est prêt ! Toutes les heures, nous sauvegarderons tout dans votre dossier utilisateur (C:\\Users\\votre nom d'utilisateur). Pour modifier les fichiers à sauvegarder ou la fréquence des sauvegardes, accédez à plus d'options.",
-			"heading2": "Restaurez vos fichiers",
-			"para4": "S'il vous manque un fichier ou un dossier important, procédez comme suit pour le restaurer :",
-			"para5": {
-				"div1": "1. Saisissez restaurer les fichiers dans la zone de recherche de la barre des tâches , puis sélectionnez restaurer les fichiersà l'aide de l'historique des fichiers.",
-				"div2": "2. Recherchez le fichier dont vous avez besoin, puis utilisez les flèches pour afficher toutes ses versions.",
-				"div3": "3. Une fois que vous avez trouvé la version souhaitée, sélectionnez Restaurer pour l'enregistrer à son emplacement d'origine. Pour l'enregistrer à un autre emplacement, maintenez la touche CTRL enfoncée (ou cliquezdessus avec le boutondroit de la souris), sélectionnez restaurer vers, puis choisissez un nouvel emplacement."
-			}
+            "heading1": "Configuration de votre sauvegarde",
+            "para2": "Sélectionnez le bouton démarrer, sélectionnez paramètres > mettre à jour et sécurité > sauvegarde > ajouter une unité, puis choisissez un lecteur externe ou un emplacement réseau pour vos sauvegardes.",
+            "para3": "Tout est prêt ! Toutes les heures, nous sauvegarderons tout dans votre dossier utilisateur (C:\\Users\\votre nom d'utilisateur). Pour modifier les fichiers à sauvegarder ou la fréquence des sauvegardes, accédez à plus d'options.",
+            "heading2": "Restaurez vos fichiers",
+            "para4": "S'il vous manque un fichier ou un dossier important, procédez comme suit pour le restaurer :",
+            "para5": {
+                "div1": "1. Saisissez restaurer les fichiers dans la zone de recherche de la barre des tâches , puis sélectionnez restaurer les fichiersà l'aide de l'historique des fichiers.",
+                "div2": "2. Recherchez le fichier dont vous avez besoin, puis utilisez les flèches pour afficher toutes ses versions.",
+                "div3": "3. Une fois que vous avez trouvé la version souhaitée, sélectionnez Restaurer pour l'enregistrer à son emplacement d'origine. Pour l'enregistrer à un autre emplacement, maintenez la touche CTRL enfoncée (ou cliquezdessus avec le boutondroit de la souris), sélectionnez restaurer vers, puis choisissez un nouvel emplacement."
+            }
         },
         "question2": {
             "title": "Comment réinitialiser Windows 10",
@@ -2757,10 +2757,10 @@
             "heading5": "5. Choisissez si vous souhaitez conserver vos fichiers ou non",
             "para4": "Après la réinitialisation, vous pouvez vous connecter à votre compte Microsoft. Toutes les applications du Windows Store achetées par ce compte sont réinstallées.",
             "para5": {
-				"li1": "Conserver mes fichiers supprime vos applications et paramètres, mais conserve vos fichiers personnels.",
-				"li2": "Tout supprimer efface vos applications, paramètres et fichiers personnels. Si vous ne disposez pas de copies sauvegardées de vos fichiers, vous pouvez cliquez sur Annuler, les sauvegarder et recommencer l'opération."
-			},
-			"heading6": "6. Vous pouvez choisir différents paramètres supplémentaires",
+                "li1": "Conserver mes fichiers supprime vos applications et paramètres, mais conserve vos fichiers personnels.",
+                "li2": "Tout supprimer efface vos applications, paramètres et fichiers personnels. Si vous ne disposez pas de copies sauvegardées de vos fichiers, vous pouvez cliquez sur Annuler, les sauvegarder et recommencer l'opération."
+            },
+            "heading6": "6. Vous pouvez choisir différents paramètres supplémentaires",
             "para6": "Ce bouton ne s'affiche que si vous avez sélectionné l'option \"Tout supprimer\" à l'étape précédente.",
             "heading7": "7. Lisez la présentation et appuyez sur Réinitialisation lorsque vous êtes prêt à continuer.",
             "para7": "Windows prépare la réinitialisation de votre périphérique. Il vous suffit de patienter jusqu'à ce que vous soyez dirigé vers un écran bleu.",
@@ -2780,8 +2780,8 @@
             "para10": "Comment réinitialiser Windows 10 – WikiHow."
         },
         "question3": {
-			"title": "Procédure pour connaître l'unité centrale de votre ordinateur",
-			"heading1": "Symptôme",
+            "title": "Procédure pour connaître l'unité centrale de votre ordinateur",
+            "heading1": "Symptôme",
             "para1": "Les dispositions 32 bits et 64 bits font référence à la manière dont le processeur d'un ordinateur (également appelé CPU) gère les informations. La version 64 bits de Windows traite de grandes quantités de mémoire RAM (Random Access Memory) de manière plus efficace qu'un système 32 bits.",
             "heading2": "Marques concernées",
             "para2": "Le symptôme ci-dessus est associé aux systèmes suivants, mais pas exclusivement :",
@@ -2790,10 +2790,10 @@
             "para4": "Windows 7, 8, 10",
             "heading4": "Solution",
             "para5": "Windows 7 ou Vista",
-			"para6": "Ouvrez le système en cliquant sur l'image du <strong>Bouton Démarrer </strong>, <strong>Bouton Démarrer</strong>, en cliquant avec le bouton droit de la souris sur poste de travail, puis en cliquant sur Propriétés.",
+            "para6": "Ouvrez le système en cliquant sur l'image du <strong>Bouton Démarrer </strong>, <strong>Bouton Démarrer</strong>, en cliquant avec le bouton droit de la souris sur poste de travail, puis en cliquant sur Propriétés.",
             "para7": "Sous système, vous pouvez afficher le type de système.",
             "para8": "Windows 8 et Windows 10",
-			"para9": "<strong>Méthode 1:</strong> afficher la fenêtre système dans le panneau de configuration",
+            "para9": "<strong>Méthode 1:</strong> afficher la fenêtre système dans le panneau de configuration",
             "para10": "Faites glisser votre doigt depuis la partie droite de l'écran et touchez <strong>Rechercher</strong>. Ou, si vous utilisez une souris, pointez sur le bas à droite de l'écran, puis cliquez sur <strong>Rechercher</strong>.",
             "para11": "Saisissez <strong>System</strong> dans la zone de recherche, puis appuyez ou cliquez sur <strong>Paramètres.</strong>",
             "para12": "Touchez ou cliquez sur <strong>Système</strong>.",
@@ -2805,8 +2805,8 @@
             "para18": "Si vous exécutez une <strong>version 64 bits </strong>de Windows 8<strong>, le PC </strong>à base x64 est affiché dans le champs <strong>type de système</strong> situé sous l'en-tête de l'élément. Si vous exécutez une version <strong>32 bits</strong> de Windows 8, le PC à base x86 s'affiche dans le champ <strong>type du système</strong>, sous l'en-tête de l'élément.  "
         },
         "question4": {
-			"title": "Vérifiez l'utilisation de la batterie de votre ordinateur",
-			"heading1": "Symptôme",
+            "title": "Vérifiez l'utilisation de la batterie de votre ordinateur",
+            "heading1": "Symptôme",
             "para1": "Windows 10 comprend un nouvel écran \"<strong> Utilisation de la Batterie\"</strong> qui vous permet de voir ce qui épuise la batterie de votre ordinateur portable. Cela signifie qu'il vous indiquera exactement les applications (les applications bureautiques et Windows 10 \"universelles\" qui utilisent trop d'énergie).",
             "heading2": "Marques concernées",
             "para2": "Ordinateurs portables Lenovo, ordinateurs de bureau",
@@ -2828,8 +2828,8 @@
             "para13": "8. faites défiler la liste des applications et vous verrez s'afficher la section la plus utile de cette fonction. Elle affichera une liste des applications utilisées par la batterie pendant cette période et vous montrera le pourcentage de charge de la batterie utilisé par chaque application."
         },
         "question5": {
-			"title": "Utilisez votre ordinateur comme une tablette",
-			"para1": "Le mode tablette graphique rend Windows plus intuitif et plus facile à utiliser si vous utilisez un périphérique à écran tactile.",
+            "title": "Utilisez votre ordinateur comme une tablette",
+            "para1": "Le mode tablette graphique rend Windows plus intuitif et plus facile à utiliser si vous utilisez un périphérique à écran tactile.",
             "heading1": "Utiliser le Mode Tablette",
             "para2": "Pour activer le mode tablette, sélectionnez le <strong>Centre de notifications</strong> dans la barre des taches, puis sélectionner le<strong>mode tablette</strong>.",
             "heading2": "Important",
@@ -2845,8 +2845,8 @@
             "para10": "Utilisez le bouton précédent de la barre des tâches pour revenir en arrière dans une application ou pour ouvrir une application que vous utilisiez auparavant."
         },
         "question6": {
-			"title": "Faites la connaissance de Cortana, votre assistante personnelle",
-			"heading1": "Qu'est-ce que Cortana ?",
+            "title": "Faites la connaissance de Cortana, votre assistante personnelle",
+            "heading1": "Qu'est-ce que Cortana ?",
             "para1": "Cortana est votre agent numérique. Elle va vous aider à accomplir vos tâches.",
             "para2": "Plus vous utilisez Cortana, plus votre expérience sera personnalisée.",
             "para3": "Pour commencer, tapez une question dans la zone de recherche ou sélectionnez le micro et parlez à Cortana. (La frappe s'applique à tous les types de PC, mais vous avez besoin d'un micro pour parler.)",
@@ -2854,7 +2854,7 @@
             "para5": "1. Accueil 2. Bloc-notes 3. Paramètres 4. Informations",
             "para6": "Voici quelques tâches que Cortana peut effectuer pour vous :",
             "unorderedList1": {
-				"listItem1": "Faites des rappels en fonction de l'heure, du lieu ou de la personne.",
+                "listItem1": "Faites des rappels en fonction de l'heure, du lieu ou de la personne.",
                 "listItem2": "Suivre les colis, les équipes, les centres d'intérêt et les vols.",
                 "listItem3": "Envoyez des e-mails et des textes.",
                 "listItem4": "Gérer votre calendrier et vous tenir à jour.",
@@ -2863,7 +2863,7 @@
                 "listItem7": "Recherchez des faits, des fichiers, des lieux et des informations.",
                 "listItem8": "Ouvrez une application quelconque sur votre système."
             },
-			"heading2": "Essayez ceci : définition d'un rappel",
+            "heading2": "Essayez ceci : définition d'un rappel",
             "para7": "L'un des avantages de Cortana est de vous envoyer des rappels. Elle peut vous rappeler d'effectuer des opérations en fonction de l'heure, du lieu ou même des personnes.",
             "para8": "Par exemple, tapez ou dites \"me rappeler de féliciter Tanya lors du prochain appel\".",
             "para9": "Le rappel s'affiche lorsque vous recevez un appel de Tanya.",

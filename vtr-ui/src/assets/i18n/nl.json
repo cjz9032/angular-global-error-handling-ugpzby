@@ -199,8 +199,7 @@
                     "description": "Foutieve instellingen van Overklokken kunnen leiden tot onherstelbare hardwarebeschadigingen.",
                     "proceed": "DOORGAAN",
                     "legionAccessory": "Install Legion Accessory Central?",
-                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc.",
-                    "install": "INSTALL"
+                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc."
                 },
                 "popup": {
                     "closeBtn": "close"
@@ -1213,7 +1212,8 @@
                     "title": "Overige instellingen",
                     "vantageToolbar": {
                         "title": "Werkbalk van Lenovo Vantage",
-                        "description": "Maak de werkbalk van Lenovo Vantage vast aan de Windows-taakbalk om snel meer batterijgegevens en toegang tot snelle instellingen te krijgen."
+                        "description": "Maak de werkbalk van Lenovo Vantage vast aan de Windows-taakbalk om snel meer batterijgegevens en toegang tot snelle instellingen te krijgen.",
+                        "hint": "The options in the image depend on the capacity of the machine. For example, – some machines support backlight settings, and some may not."
                     }
                 },
                 "batterySettings": {
@@ -2734,20 +2734,20 @@
         "question1": {
             "title": "Back-ups maken en bestanden terugzetten",
             "para1": "Het is altijd verstandig om een back-up te hebben. Bewaar kopieën van uw bestanden op een ander station voor het geval er iets met de originelen gebeurt.",
-			"heading1": "Uw back-up instellen",
-			"para2": "Selecteer de knop Start, selecteer Instellingen > Bijwerken en beveiliging > Back-up > Een station toevoegen en kies vervolgens een extern station of netwerklocatie voor uw back-ups.",
-			"para3": "Klaar. Elk uur maken we een back-up van de hele inhoud van uw gebruikersmap (C:\\Users\\Je gebruikersnaam). Als u wilt wijzigen van welke bestanden een back-up wordt gemaakt of hoe vaak er een back-up wordt gemaakt, gaat u naar Meer opties.",
-			"heading2": "Bestanden terugzetten",
-			"para4": "Als een belangrijk bestand of belangrijke map ontbreekt, gaat u als volgt te werk om dit bestand of deze map te herstellen:",
-			"para5": {
-				"div1": "1. Typ Bestanden terugzetten in het zoekvak op de taakbalk en selecteer vervolgens Bestanden vanuit een back-up terugzetten met Bestandsgeschiedenis.",
-				"div2": "2. Zoek het bestand dat u nodig hebt en gebruik vervolgens de pijlen om alle versies ervan te zien.",
-				"div3": "3. Wanneer u de gewenste versie hebt gevonden, selecteert u Terugzetten om het bestand op te slaan op de oorspronkelijke locatie. Als u het bestand op een andere locatie wilt opslaan, houdt u de knop Terugzetten ingedrukt (of klikt u erop met de rechtermuisknop), selecteert u Terugzetten naar en kiest u vervolgens een nieuwe locatie."
-			}
+            "heading1": "Uw back-up instellen",
+            "para2": "Selecteer de knop Start, selecteer Instellingen > Bijwerken en beveiliging > Back-up > Een station toevoegen en kies vervolgens een extern station of netwerklocatie voor uw back-ups.",
+            "para3": "Klaar. Elk uur maken we een back-up van de hele inhoud van uw gebruikersmap (C:\\Users\\Je gebruikersnaam). Als u wilt wijzigen van welke bestanden een back-up wordt gemaakt of hoe vaak er een back-up wordt gemaakt, gaat u naar Meer opties.",
+            "heading2": "Bestanden terugzetten",
+            "para4": "Als een belangrijk bestand of belangrijke map ontbreekt, gaat u als volgt te werk om dit bestand of deze map te herstellen:",
+            "para5": {
+                "div1": "1. Typ Bestanden terugzetten in het zoekvak op de taakbalk en selecteer vervolgens Bestanden vanuit een back-up terugzetten met Bestandsgeschiedenis.",
+                "div2": "2. Zoek het bestand dat u nodig hebt en gebruik vervolgens de pijlen om alle versies ervan te zien.",
+                "div3": "3. Wanneer u de gewenste versie hebt gevonden, selecteert u Terugzetten om het bestand op te slaan op de oorspronkelijke locatie. Als u het bestand op een andere locatie wilt opslaan, houdt u de knop Terugzetten ingedrukt (of klikt u erop met de rechtermuisknop), selecteert u Terugzetten naar en kiest u vervolgens een nieuwe locatie."
+            }
         },
         "question2": {
-			"title": "Windows 10 opnieuw instellen",
-			"para1": "Als uw Windows 10-pc niet goed werkt of als u hem verkoopt, moet u de pc opnieuw instellen. Wanneer u de pc opnieuw instelt, worden alle apps en instellingen gewist en wordt er een nieuw exemplaar van Windows geïnstalleerd. U kunt u ervoor kiezen om uw bestanden te behouden of te verwijderen. Dit kan ook problemen zoals traagheid oplossen.",
+            "title": "Windows 10 opnieuw instellen",
+            "para1": "Als uw Windows 10-pc niet goed werkt of als u hem verkoopt, moet u de pc opnieuw instellen. Wanneer u de pc opnieuw instelt, worden alle apps en instellingen gewist en wordt er een nieuw exemplaar van Windows geïnstalleerd. U kunt u ervoor kiezen om uw bestanden te behouden of te verwijderen. Dit kan ook problemen zoals traagheid oplossen.",
             "heading1": "1. Open de app 'Instellingen'",
             "para2": "Druk op de knop met de afbeelding 'Start' in de linkeronderhoek van het scherm en selecteer de afbeelding met het tandwiel.",
             "heading2": "2. Selecteer 'Bijwerken en beveiliging' in de lijst met categorieën",
@@ -2757,10 +2757,10 @@
             "heading5": "5. Geef aan of u uw bestanden wilt behouden of niet",
             "para4": "Zodra de pc opnieuw is ingesteld, meldt u zich aan bij uw Microsoft-account. Alle Windows Store-apps die u onder dit account hebt aangeschaft, worden opnieuw geïnstalleerd.",
             "para5": {
-				"li1": "Als u 'Mijn bestanden behouden' selecteert, worden uw apps en instellingen verwijderd, maar al uw persoonlijke bestanden bewaard.",
-				"li2": "Als u 'Alles verwijderen' selecteert, worden uw apps, instellingen en persoonlijke bestanden verwijderd. Als u geen reservekopie van uw bestanden hebt, kunt u beter op 'Annuleren' klikken, een reservekopie van uw bestanden maken en de procedure opnieuw starten."
-			},
-			"heading6": "6. U kunt verschillende aanvullende instellingen selecteren",
+                "li1": "Als u 'Mijn bestanden behouden' selecteert, worden uw apps en instellingen verwijderd, maar al uw persoonlijke bestanden bewaard.",
+                "li2": "Als u 'Alles verwijderen' selecteert, worden uw apps, instellingen en persoonlijke bestanden verwijderd. Als u geen reservekopie van uw bestanden hebt, kunt u beter op 'Annuleren' klikken, een reservekopie van uw bestanden maken en de procedure opnieuw starten."
+            },
+            "heading6": "6. U kunt verschillende aanvullende instellingen selecteren",
             "para6": "Deze worden alleen weergegeven als u 'Alles verwijderen' hebt geselecteerd in de vorige stap.",
             "heading7": "7. Lees het overzicht en druk op 'Opnieuw instellen' als u klaar bent om verder te gaan.",
             "para7": "Het opnieuw installen van het apparaat wordt nu voorbereid. Wacht totdat er een blauw scherm verschijnt.",
@@ -2768,7 +2768,7 @@
             "para8": "Windows wordt nu opnieuw opgestart en opnieuw ingesteld. Uw pc start mogelijk meerdere malen opnieuw op tijdens dit proces.",
             "heading9": "Vraag aan de gemeenschap",
             "communityAnswer": "Antwoord van de gemeenschap",
-			"q1": "Als ik de optie selecteer om alles te verwijderen, worden dan alle stations gewist die zich in mijn computer bevinden of daarop zijn aangesloten, of alleen dat waarop ik Windows 10 heb geïnstalleerd?",
+            "q1": "Als ik de optie selecteer om alles te verwijderen, worden dan alle stations gewist die zich in mijn computer bevinden of daarop zijn aangesloten, of alleen dat waarop ik Windows 10 heb geïnstalleerd?",
             "a1": "Alleen het station met het Windows 10-besturingsysteem wordt gewist (meestal C:). Andere stations die zich in uw computer bevinden of daarop zijn aangesloten, worden niet gewist.",
             "q2": "Hoe doe ik dit als mijn scherm kapot is?",
             "a2": "Dat is helaas niet mogelijk. U moet eerst een nieuw scherm aanschaffen.",
@@ -2780,8 +2780,8 @@
             "para10": "Windows 10 resetten – WikiHow."
         },
         "question3": {
-			"title": "Weten welke CPU u hebt",
-			"heading1": "Symptoom",
+            "title": "Weten welke CPU u hebt",
+            "heading1": "Symptoom",
             "para1": "De termen 32-bits en 64-bits verwijzen naar de manier waarop de processor van een computer (ook wel een CPU genoemd) informatie verwerkt. De 64-bits versie van Windows verwerkt veel RAM-geheugen (Random Access Memory) effectiever dan een 32-bits systeem.",
             "heading2": "Merken waarbij dit van toepassing is",
             "para2": "Het bovenstaande symptoom is van toepassing op, maar niet beperkt tot, de volgende systemen:",
@@ -2790,10 +2790,10 @@
             "para4": "Windows 7, 8, 10",
             "heading4": "Oplossing",
             "para5": "Windows 7 of Vista",
-			"para6": "Open Systeem door op de <strong>knop Start</strong> (afbeelding van de <strong>knop Start</strong>) te klikken, met de rechtermuisknop op Computer te klikken en vervolgens op Eigenschappen te klikken.",
+            "para6": "Open Systeem door op de <strong>knop Start</strong> (afbeelding van de <strong>knop Start</strong>) te klikken, met de rechtermuisknop op Computer te klikken en vervolgens op Eigenschappen te klikken.",
             "para7": "U kunt onder Systeem het systeemtype bekijken.",
             "para8": "Windows 8 en Windows 10",
-			"para9": "<strong>Methode 1:</strong> het venster Systeem in het Configuratiescherm weergeven",
+            "para9": "<strong>Methode 1:</strong> het venster Systeem in het Configuratiescherm weergeven",
             "para10": "Swipe naar binnen vanaf de rechterrand van het scherm en tik vervolgens op <strong>Zoeken</strong>. Als u een muis gebruikt, gaat u met de muisaanwijzer naar de rechterbenedenhoek van het scherm en klikt u vervolgens op <strong>Zoeken</strong>.",
             "para11": "Typ <strong>systeem</strong> in het zoekvak en tik of klik op <strong>Instellingen</strong>.",
             "para12": "Tik of klik op <strong>Systeem</strong>.",
@@ -2805,8 +2805,8 @@
             "para18": "Als u een <strong>64-bits</strong> versie van Windows 8 gebruikt, wordt <strong>Op x64 gebaseerde pc</strong> weergegeven in het veld <strong>Systeemtype</strong> onder de kop Item. Als u een <strong>32-bits</strong> versie van Windows 8 gebruikt, wordt Op x86 gebaseerde pc weergegeven in het veld <strong>Systeemtype</strong> onder de kop Item.  "
         },
         "question4": {
-			"title": "Uw batterijgebruik controleren",
-			"heading1": "Symptoom",
+            "title": "Uw batterijgebruik controleren",
+            "heading1": "Symptoom",
             "para1": "Windows 10 bevat een nieuw scherm <strong>\"Batterijgebruik\"</strong>, waar wordt weergegeven waardoor de batterij van uw laptop leegloopt. Dat betekent dat het u precies vertelt welke apps – zowel bureaublad-apps als \"universele\" apps in Windows 10 – te veel energie verbruiken.",
             "heading2": "Merken waarbij dit van toepassing is",
             "para2": "Lenovo-laptops, -desktops",
@@ -2828,8 +2828,8 @@
             "para13": "8. Schuif verder omlaag en u ziet een lijst met toepassingen. Dit wordt beschouwd als het nuttigste gedeelte van deze functie. Er wordt een lijst met apps weergegeven die batterijvoeding in die periode hebben gebruikt. Er wordt weergegeven welk percentage van uw batterijvoeding elke app heeft gebruikt."
         },
         "question5": {
-			"title": "Uw pc als tablet gebruiken",
-			"para1": "In de tabletmodus is Windows intuïtiever en gemakkelijker te gebruiken wanneer u een aanraakapparaat hebt.",
+            "title": "Uw pc als tablet gebruiken",
+            "para1": "In de tabletmodus is Windows intuïtiever en gemakkelijker te gebruiken wanneer u een aanraakapparaat hebt.",
             "heading1": "Tabletmodus gebruiken",
             "para2": "Als u de tabletmodus wilt inschakelen, selecteert u <strong>Actiecentrum</strong> op de taakbalk en selecteert u vervolgens <strong>Tabletmodus</strong>.",
             "heading2": "Opmerking",
@@ -2845,8 +2845,8 @@
             "para10": "Gebruik de knop Vorige op de taakbalk om in een app terug te gaan of om een app te openen die u eerder hebt gebruikt."
         },
         "question6": {
-			"title": "Kennismaken met Cortana, uw persoonlijke assistent",
-			"heading1": "Wat is Cortana?",
+            "title": "Kennismaken met Cortana, uw persoonlijke assistent",
+            "heading1": "Wat is Cortana?",
             "para1": "Cortana is uw digitale helper. Ze helpt u om dingen voor elkaar te krijgen.",
             "para2": "Hoe meer u Cortana gebruikt, hoe persoonlijker uw ervaring is.",
             "para3": "Als u aan de slag wilt gaan, typt u een vraag in het zoekvak of selecteert u de microfoon en praat u met Cortana. (Typen werkt voor alle typen pc's, maar u hebt een microfoon nodig om te praten.)",
@@ -2854,7 +2854,7 @@
             "para5": "1. Beginscherm 2. Notitieblok 3. Instellingen 4. Feedback",
             "para6": "Hier volgen enkele dingen die Cortana voor u kan doen:",
             "unorderedList1": {
-				"listItem1": "U ergens aan herinneren op basis van tijd, plaatsen of mensen.",
+                "listItem1": "U ergens aan herinneren op basis van tijd, plaatsen of mensen.",
                 "listItem2": "Pakjes traceren en teams, interesses en vluchten volgen.",
                 "listItem3": "E-mails en tekstberichten verzenden.",
                 "listItem4": "Uw agenda beheren en u op de hoogte houden.",
@@ -2863,7 +2863,7 @@
                 "listItem7": "Feiten, bestanden, plaatsen en info opzoeken.",
                 "listItem8": "Elke willekeurige app op uw systeem openen."
             },
-			"heading2": "Probeer dit: een herinnering instellen",
+            "heading2": "Probeer dit: een herinnering instellen",
             "para7": "Een van de dingen die Cortana kan doen, is u ergens aan herinneren. Ze kan u eraan herinneren om dingen te doen op basis van tijd, plaatsen of zelfs mensen.",
             "para8": "Typ of zeg bijvoorbeeld \"Herinner mij eraan Tanya te feliciteren de volgende keer dat ze belt\".",
             "para9": "De herinnering verschijnt wanneer u een oproep van Tanya ontvangt.",
