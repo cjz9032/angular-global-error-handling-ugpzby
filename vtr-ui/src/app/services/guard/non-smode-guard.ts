@@ -1,25 +1,29 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, UrlTree, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { UrlTree, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { DeviceService } from '../device/device.service';
 import { GuardConstants } from './guard-constants';
+import { CommonService } from '../common/common.service';
+import { BasicGuard } from './basic-guard';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable({
 	providedIn: 'root',
 })
-export class NonSmodeGuard implements CanActivate {
+export class NonSmodeGuard extends BasicGuard {
 
 	constructor(
 		private deviceService: DeviceService,
-		private guardConstants: GuardConstants,
-		) { }
+		public guardConstants: GuardConstants,
+		public commonService: CommonService
+	) { 
+		super(commonService, guardConstants);
+	}
 
 	canActivate(
 		route: ActivatedRouteSnapshot,
 		state: RouterStateSnapshot
-	): boolean | UrlTree {
-		if (!this.deviceService.isSMode) {
-			return true;
-		}
-		return this.guardConstants.defaultRoute;
+	): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+		if (!this.deviceService.isSMode) return true;
+		return super.canActivate(route, state);
 	}
 }
