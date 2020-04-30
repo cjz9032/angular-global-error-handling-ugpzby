@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.31](https://bitbucket.tc.lenovo.com///compare/v1.5.30...v1.5.31) (2020-04-30)
+
+
+### Bug Fixes
+
+* ensure id is unique ([a6f9e2d](https://bitbucket.tc.lenovo.com///commit/a6f9e2db80da3b7ff10c7eb198d693980b6af5c0))
+* **CHS-Accessibility:** no error mesage read in scan mode ([720f77f](https://bitbucket.tc.lenovo.com///commit/720f77f54d2e2ae9449ee8a521d132a68e1ba454))
+
 ### [1.5.30](https://bitbucket.tc.lenovo.com///compare/v1.5.28...v1.5.30) (2020-04-29)
 
 ### [1.5.28](https://bitbucket.tc.lenovo.com///compare/v1.5.27...v1.5.28) (2020-04-29)
