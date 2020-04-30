@@ -1,9 +1,7 @@
 <form class="vtr-ui-custom-switch">
 	<div *ngIf="isLoading"
-		class="row"
-		[ngClass]="{'white-theme': theme==='white',
-					'blue-theme': theme==='blue'}">
-		<vtr-spinner [className]="'spinner'"></vtr-spinner>
+		class="row">
+		<vtr-spinner></vtr-spinner>
 	</div>
 	<div class="form-group">
 		<div class="custom-control custom-switch"

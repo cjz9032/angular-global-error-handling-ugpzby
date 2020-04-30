@@ -92,20 +92,10 @@
 				</div>
 				<div class=""
 					*ngIf="isSwitchVisible">
-					<!-- <vtr-ui-switch-onoff [onOffSwitchId]="switchId"
-						[value]="isSwitchChecked"
-						[ariaLabel]="title"
-						[disabled]="disabled || isDisabled"
-						(toggle)="onOnOffChange($event)"
-						[showLoader]="showLoaderState"
-						[theme]="theme"
-						[isSwitchDisable]="isDisabled"
-						[tabIndex]="0"
-						id="{{switchId}}-onOffButton"></vtr-ui-switch-onoff> -->
 					<vtr-ui-custom-switch [componentId]="switchId"
 						[value]="isSwitchChecked"
 						[ariaLabel]="title"
-						[isLoading]="true"
+						[isLoading]="showLoaderState"
 						[isDisabled]="disabled || isDisabled"
 						(toggle)="onOnOffChange($event)"></vtr-ui-custom-switch>
 				</div>
