@@ -1,15 +1,12 @@
 <!-- <div class="modal-header" [ngClass]="{'padding-header':loading}">
   <button *ngIf="!loading" type="button" class="close close-button" aria-label="Close" (click)="closeModal()"><span aria-hidden="true">&times;</span></button>
 </div> -->
-<div class="modal-body">
+<div class="modal-body vtr-modal-cancel">
 
-  <div class="title">{{title}}</div>
+  <h1 class="title">{{'hardwareScan.attention' | translate}}</h1>
 
-  <br />
-
-  <div class="description">{{description}}</div>
-
-  <br />
+  <p>{{description}}</p>
+  <p *ngIf="isInCountdown">{{'hardwareScan.cancelTextPrompt' | translate}}</p>
 
   <div class="row">
     <div class="col" *ngIf="!loading">

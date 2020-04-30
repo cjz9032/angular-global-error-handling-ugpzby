@@ -3110,7 +3110,8 @@
         },
         "warningMessage": "Λάβετε υπόψη ότι οι δοκιμές θα ακυρωθούν εάν το σύστημα είναι σε κατάσταση αναστολής λειτουργίας ή αδρανοποίησης",
         "refreshMessage": "Η ανανέωση ενδέχεται να διαρκέσει αρκετή ώρα, επειδή απαιτείται επαναφόρτωση όλων των στοιχείων",
-        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
+        "processFinishedCannotBeCanceled": "Η διαδικασία που εκτελείται δεν χρειάζεται να ακυρωθεί πια, δεδομένου ότι έχει ολοκληρωθεί.",
+        "cancelMayTakeSomeTime": "Περιμένετε, μπορεί να χρειαστεί λίγος χρόνος για την ακύρωση ανάλογα με το σύστημά σας."
     },
     "smartPerformance": {
         "title": "Health & Support",

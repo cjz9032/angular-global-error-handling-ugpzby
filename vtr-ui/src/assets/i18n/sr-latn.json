@@ -3110,7 +3110,8 @@
         },
         "warningMessage": "Imajte na umu da će testovi biti otkazani ako sistem bude u stanju spavanja ili hibernacije",
         "refreshMessage": "Osvežavanje može da potraje jer treba da se ponovo učitaju sve komponente",
-        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
+        "processFinishedCannotBeCanceled": "Proces pokretanja više ne mora da se otkazuje jer je završen.",
+        "cancelMayTakeSomeTime": "Sačekajte, otkazivanje će možda duže potrajati, u zavisnosti od sistema."
     },
     "smartPerformance": {
         "title": "Health & Support",
