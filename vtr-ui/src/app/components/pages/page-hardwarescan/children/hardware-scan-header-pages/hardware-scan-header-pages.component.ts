@@ -17,10 +17,11 @@ export class HardwareScanHeaderPagesComponent implements OnInit {
 	@Input() percent = 0;
 	@Input() statusText: string;
 	@Input() disableCancel: boolean;
+	@Input() deviceInRecover: any; // Current device in Recover Bad Sectors
 
-	public deviceInRecover: any; // Current device in Recover Bad Sectors
-	public culture: any;
-	public metrics: any
+	// Metrics
+	@Input() itemParentCancel: string;
+	@Input() itemNameCancel: string;
 
 	// Emitters
 	@Output() startQuickScan = new EventEmitter();
@@ -29,15 +30,11 @@ export class HardwareScanHeaderPagesComponent implements OnInit {
 
 	constructor(
 		private hardwareScanService: HardwareScanService,
-		private shellService: VantageShellService,
 		private translate: TranslateService
 		) {
-			this.metrics = this.shellService.getMetrics();
 		}
 
-	ngOnInit() {
-		this.culture = this.hardwareScanService.getCulture();
-	}
+	ngOnInit() { }
 
 	onAnchor() {
 		this.checkAnchor.emit();

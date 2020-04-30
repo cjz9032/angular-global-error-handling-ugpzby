@@ -3,21 +3,21 @@
 		<div class="row" [ngSwitch]="isExecutingAnyScan()">
 			<div class="col col-12 hardwarescan-background" *ngSwitchCase="true">
 				<vtr-hardware-scan-executing-header
-				[title]="getDeviceTitle()"
-				[subTitle]="getDeviceSubTitle()"
-				[percent]="percent"
-				(checkCancel)="onCancel()"
-				[statusText]="statusText"
-				[disableCancel]="disableCancel"
-				></vtr-hardware-scan-executing-header>
+					[title]="getDeviceTitle()"
+					[subTitle]="getDeviceSubTitle()"
+					[percent]="percent"
+					(checkCancel)="onCancel()"
+					[statusText]="statusText"
+					[disableCancel]="disableCancel"
+					itemParentCancel="{{itemParentCancel}}"
+					itemNameCancel= "{{itemNameCancel}}">
+				</vtr-hardware-scan-executing-header>
 			</div>
 			<div class="col col-12 hardwarescan-background" *ngSwitchDefault>
 				<vtr-hardware-scan-wait-select-header
-				[culture]="culture"
-				[metrics]="metrics"
-				(startQuickScan)="onQuickScan()"
-				(checkAnchor)="onAnchor()"
-				></vtr-hardware-scan-wait-select-header>
+					(startQuickScan)="onQuickScan()"
+					(checkAnchor)="onAnchor()">
+				</vtr-hardware-scan-wait-select-header>
 			</div>
 		</div>
 	</div>

@@ -14,7 +14,6 @@ export class HardwareScanExecutingHeaderComponent implements OnInit {
 	@Input() subTitle = '';
 	@Input() statusText: string;
 	@Input() disableCancel: boolean;
-	@Input() finalResultCode = '';
 
 	// Metrics
 	@Input() itemParentCancel: string;
@@ -22,11 +21,8 @@ export class HardwareScanExecutingHeaderComponent implements OnInit {
 
 	// Emitters
 	@Output() checkCancel = new EventEmitter();
-	@Output() updateProgress = new EventEmitter();
 
-	constructor(
-		private hardwareScanService: HardwareScanService,
-		private translate: TranslateService) { }
+	constructor(private hardwareScanService: HardwareScanService) { }
 
 	ngOnInit() { }
 

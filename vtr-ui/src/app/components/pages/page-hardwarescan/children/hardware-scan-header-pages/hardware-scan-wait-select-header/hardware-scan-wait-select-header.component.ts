@@ -17,14 +17,8 @@ import { HardwareScanService } from '../../../../../../services/hardware-scan/ha
 })
 
 export class HardwareScanWaitSelectHeaderComponent implements OnInit {
-
-	// Inputs
-	@Input() culture;
-	@Input() metrics;
-
 	// Emitters
 	@Output() startQuickScan = new EventEmitter();
-	@Output() updateProgress = new EventEmitter();
 	@Output() checkAnchor = new EventEmitter();
 
 	constructor(private executeScanService : ExecuteHardwareScanService) { }
