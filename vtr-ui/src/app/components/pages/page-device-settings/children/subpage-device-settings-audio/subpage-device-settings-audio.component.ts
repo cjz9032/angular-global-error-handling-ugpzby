@@ -26,9 +26,9 @@ import { MetricService } from 'src/app/services/metric/metric.service';
 export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	title = 'device.deviceSettings.audio.subtitle';
 	headerCaption = 'device.deviceSettings.audio.description';
-
 	radioGroupAutoDolbySettings = 'radio-grp-auto-dolby-settings';
 	radioOptimiseMicSettings = 'radio-grp-optimise-mic-settings';
+
 	public microphoneProperties: Microphone;
 	public autoDolbyFeatureStatus: FeatureStatus;
 	public dolbyModeResponse: DolbyModeResponse;
@@ -51,6 +51,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	public isNewplugin = true;
 	public dolbyToggleButtonStatus = undefined;
 	public eCourseToggleButtonStatus = undefined;
+
 	@Output() tooltipClick = new EventEmitter<boolean>();
 
 	@Input() dolbyModeDisabled = false;
@@ -95,7 +96,6 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
-
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
 		});
@@ -115,7 +115,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 
 		if (this.microphoneDevice) {
 			this.microphnePermissionHandler = (args: any) => {
-				if (args && args.status) {
+				if (args && (args.status != null)) {
 					switch (args.status) {
 						case 1:
 							this.microphoneProperties.permission = true;
@@ -206,7 +206,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	// 	}
 	// }
 
-	onOptimizeModesRadioChange(event) {
+	onOptimizeModesRadioChange(event: any) {
 		try {
 			const newVal = event.target.value;
 			if (this.microOptimizeModeResponse.current === newVal) {
@@ -224,7 +224,6 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 						return EMPTY;
 					});
 			}
-
 		} catch (error) {
 			this.logger.error('onOptimizeModesRadioChange' + error.message);
 			return EMPTY;
@@ -597,7 +596,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public onToggleOfMicrophone(event) {
+	public onToggleOfMicrophone(event: any) {
 		try {
 			this.microphoneProperties.muteDisabled = event.switchValue;
 			this.updateMicrophoneCache();
@@ -620,7 +619,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public onToggleOfSuppressKbdNoise(event) {
+	public onToggleOfSuppressKbdNoise(event: any) {
 		try {
 			this.microphoneProperties.keyboardNoiseSuppression = event.switchValue;
 			this.updateMicrophoneCache();
@@ -641,7 +640,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public setMicrophoneAEC(event) {
+	public setMicrophoneAEC(event: any) {
 		try {
 			this.microphoneProperties.AEC = event.switchValue;
 			this.updateMicrophoneCache();
@@ -710,7 +709,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	}
 
 	initMockData() {
-		this.microphoneProperties = new Microphone(true, false, 0, '', false, false, false, false, true);
+		this.microphoneProperties = new Microphone(true, false, 0, '', undefined, false, undefined, false, true);
 
 		const dolbySupportedMode = ['device.deviceSettings.audio.audioSmartsettings.dolby.options.dynamic',
 			'device.deviceSettings.audio.audioSmartsettings.dolby.options.movie',
@@ -780,7 +779,8 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			this.microphoneProperties.muteDisabled = msg.muteDisabled;
 		}
 		if (msg.hasOwnProperty('volume')) {
-			this.logger.info('*****ready to change volume ' + msg.volume); this.microphoneProperties.volume = msg.volume;
+			this.logger.info('*****ready to change volume ' + msg.volume);
+			this.microphoneProperties.volume = msg.volume;
 		}
 		if (msg.hasOwnProperty('permission')) {
 			this.microphoneProperties.permission = msg.permission;

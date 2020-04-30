@@ -15,7 +15,7 @@ export class UiLightingKeyboardLNBx50Component implements OnInit, OnChanges{
   @Input() isDefault:boolean;
   @Input() profileId;
   @Input() isColorPicker;
-  @Input() isDisablled:boolean;
+  @Input() isDisabled:boolean;
 
   @Output() areaSetting: EventEmitter<any> = new EventEmitter();
   @Output() changeIsDefault: EventEmitter<any> = new EventEmitter();

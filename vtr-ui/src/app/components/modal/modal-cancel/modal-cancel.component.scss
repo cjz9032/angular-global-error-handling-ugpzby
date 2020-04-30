@@ -4,6 +4,7 @@
     font-size: $fontsize_xl;
 	font-weight: $weight_600;
 	color: $shade_blue;
+	margin-bottom: 1.5rem;
 }
 
 .loading {
@@ -11,7 +12,7 @@
     color: $main;
 }
 
-.description {
+.vtr-modal-cancel p {
     font-size: $fontsize_xs;
 	font-weight: $weight_bold;
 	color: $shade_blue;

@@ -17,7 +17,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
   @Input() currentProfileId: number;
   public color:string;
   public isDefault:boolean;
-  public isDisablled:boolean = false;
+  public isDisabled:boolean = false;
   public lightingCapabilities:any = new LightingDataList().lightingCapality;
   public lightingProfileById:any;
   public lightingEffectData:any = new LightingDataList().lightingEffectNoteData;
@@ -525,9 +525,9 @@ export class WidgetLightingNotebookComponent implements OnInit {
 
   public ifDisabledKeyboard(value) {
     if(value === 1024 || value === 32 || value === 4096 || value === 8192){
-      this.isDisablled = true;
+      this.isDisabled = true;
     }else{
-      this.isDisablled = false;
+      this.isDisabled = false;
     }
   }
  

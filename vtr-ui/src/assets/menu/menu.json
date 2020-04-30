@@ -397,6 +397,7 @@
 				{
 					"id": "smart-performance",
 					"label": "gaming.common.menu.smartPerformance",
+					"beta": true,
 					"path": "smart-performance",
 					"icon": "",
 					"metricsEvent": "itemClick",

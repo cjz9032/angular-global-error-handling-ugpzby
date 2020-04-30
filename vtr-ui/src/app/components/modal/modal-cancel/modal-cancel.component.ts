@@ -9,8 +9,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class ModalCancelComponent implements OnInit, AfterViewInit {
 
-	title: string = this.translate.instant('hardwareScan.attention');
-	description: string = this.translate.instant('hardwareScan.cancelTextPrompt');
+	description: string = this.translate.instant('hardwareScan.cancelMayTakeSomeTime');
 	buttonText: string = this.translate.instant('hardwareScan.yes');
 	isInCountdown: boolean = true;
 
@@ -61,7 +60,6 @@ export class ModalCancelComponent implements OnInit, AfterViewInit {
 	}
 
 	onAgree() {
-		this.description = this.translate.instant('hardwareScan.cancelTextProgress');
 		this.loading = true;
 		this.cancelRequested.emit();
 
@@ -70,8 +68,13 @@ export class ModalCancelComponent implements OnInit, AfterViewInit {
 		}
 	}
 
-	public stopCountdown() {
+	private stopCountdown() {
 		this.isInCountdown = false;
 		clearInterval(this.timerRef);
+	}
+
+	public showProcessFinishedMessage() {
+		this.stopCountdown();
+		this.description = this.translate.instant('hardwareScan.processFinishedCannotBeCanceled');
 	}
 }

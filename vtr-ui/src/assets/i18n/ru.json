@@ -3110,7 +3110,8 @@
         },
         "warningMessage": "Имейте в виду, что тесты будут отменены при переходе системы в спящий режим или режим гибернации",
         "refreshMessage": "Обновление может занять некоторое время, так как необходимо снова загрузить все компоненты",
-        "processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed."
+        "processFinishedCannotBeCanceled": "Выполняемый процесс больше не требует отмены, так как он уже завершен.",
+        "cancelMayTakeSomeTime": "Подождите. Отмена может занять некоторое время в зависимости от конфигурации системы."
     },
     "smartPerformance": {
         "title": "Health & Support",
