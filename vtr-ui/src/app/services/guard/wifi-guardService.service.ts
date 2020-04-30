@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRoute, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { CanActivate, ActivatedRoute, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { CommonService } from '../common/common.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -7,18 +7,19 @@ import { SecurityAdvisor, WifiSecurity } from '@lenovo/tan-client-bridge';
 import { GuardConstants } from './guard-constants';
 import { LoggerService } from '../logger/logger.service';
 import { BasicGuard } from './basic-guard';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable({
 	providedIn: 'root',
 })
-export class WifiGuardService extends BasicGuard implements CanActivate {
+export class WifiGuardService extends BasicGuard {
 	securityAdvisor: SecurityAdvisor;
 	wifiSecurity: WifiSecurity;
 
 	constructor(
-		private commonService: CommonService,
+		public commonService: CommonService,
 		private vantageShellService: VantageShellService,
-		private guardConstants: GuardConstants,
+		public guardConstants: GuardConstants,
 		private logger: LoggerService
 	) { 
 		super(commonService, guardConstants);
@@ -31,7 +32,10 @@ export class WifiGuardService extends BasicGuard implements CanActivate {
 		return Promise.race([func(), timeout]);
 	}
 
-	async canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+	async canActivate(
+		route: ActivatedRouteSnapshot, 
+		state: RouterStateSnapshot
+	) : Promise<any> {
 		if (state.root.queryParams['plugin'] === 'lenovowifisecurityplugin') {
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity, true);
 			return true;
@@ -51,7 +55,7 @@ export class WifiGuardService extends BasicGuard implements CanActivate {
 				if (this.wifiSecurity.isSupported) return true;
 			}
 
-			return this.guardFallbackRoute;
+			return super.canActivate(route, state);
 		}
 
 		return cacheState;

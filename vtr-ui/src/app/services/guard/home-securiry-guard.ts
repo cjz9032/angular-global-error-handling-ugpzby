@@ -1,31 +1,29 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, UrlTree } from '@angular/router';
+import { UrlTree, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { ConfigService } from '../config/config.service';
 import { GuardConstants } from './guard-constants';
 import { CommonService } from '../common/common.service';
 import { BasicGuard } from './basic-guard';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable({
 	providedIn: 'root',
 })
-export class HomeSecurityGuard extends BasicGuard implements CanActivate {
+export class HomeSecurityGuard extends BasicGuard {
 
 	constructor(
 		private configService: ConfigService,
-		private guardConstants: GuardConstants,
-		private commonService: CommonService
+		public guardConstants: GuardConstants,
+		public commonService: CommonService
 	) { 
 		super(commonService, guardConstants);
 	}
 
-	getShowCHS(): boolean {
-		return this.configService && this.configService.showCHS;
-	}
-
-	canActivate(): boolean | UrlTree {
-		if (this.getShowCHS()) {
-			return true;
-		}
-		return this.guardFallbackRoute;
+	canActivate(
+		route: ActivatedRouteSnapshot,
+		state: RouterStateSnapshot
+	): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+		if (this.configService && this.configService.showCHS) return true;
+		return super.canActivate(route, state);
 	}
 }

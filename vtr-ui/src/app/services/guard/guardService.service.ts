@@ -26,24 +26,26 @@ export class GuardService extends BasicGuard {
 
 	constructor(
 		shellService: VantageShellService,
-		private commonService: CommonService,
+		public commonService: CommonService,
 		private adPolicy: AdPolicyService,
 		private deviceService: DeviceService,
-		private guardConstants: GuardConstants,
+		public guardConstants: GuardConstants,
 		private timerService: DurationCounterService) {
 		super(commonService, guardConstants);
 		this.metrics = shellService.getMetrics();
 	}
 
-	canActivate(activatedRouteSnapshot: ActivatedRouteSnapshot, routerStateSnapshot: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean | UrlTree {
-		// this.interTime = Date.now();
+	canActivate(
+		activatedRouteSnapshot: ActivatedRouteSnapshot, 
+		routerStateSnapshot: RouterStateSnapshot
+	): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 		this.focusDurationCounter = this.timerService.getFocusDurationCounter();
 		this.blurDurationCounter = this.timerService.getBlurDurationCounter();
 
 		if (routerStateSnapshot.url.includes('system-updates') &&
 			(!this.adPolicy.IsSystemUpdateEnabled ||
 				this.deviceService.isSMode)) {
-			return this.guardFallbackRoute;
+			return super.canActivate(activatedRouteSnapshot, routerStateSnapshot);
 		}
 		if (routerStateSnapshot.url.includes('dashboard')) { }
 
@@ -56,7 +58,7 @@ export class GuardService extends BasicGuard {
 		this.pageContext = activatedRouteSnapshot.data.pageContent;
 		this.previousPageName = activatedRouteSnapshot.data.pageName;
 
-		if (this.activePageViewMetric === true) { // Escape from duplicate pageview metrics to be sent.
+		if (this.activePageViewMetric === true) {
 			this.activePageViewMetric = false;
 			this.sendPageViewMetric(activatedRouteSnapshot);
 		}
@@ -68,14 +70,13 @@ export class GuardService extends BasicGuard {
 		if (this.pageContext && this.pageContext.indexOf('[LocalStorageKey]') !== -1) {
 			this.pageContext = this.commonService.getLocalStorageValue(this.pageContext);
 		}
-		// const time = this.timerService.stop();
 		const focusDuration = this.focusDurationCounter !== null ? this.focusDurationCounter.getDuration() : 0;
 		const blurDuration = this.blurDurationCounter !== null ? this.blurDurationCounter.getDuration() : 0;
 
 		const data = {
 			ItemType: 'PageView',
 			PageName: activatedRouteSnapshot.data.pageName,
-			PageDuration: focusDuration, // this.duration + parseInt(`${Math.floor((Date.now() - this.interTime) / 1000)}`, 10),
+			PageDuration: focusDuration,
 			PageDurationBlur: blurDuration,
 			PageContext: this.pageContext
 		};

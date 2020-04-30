@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate } from '@angular/router';
+import { ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { LocalInfoService } from '../local-info/local-info.service';
 import { GuardConstants } from './guard-constants';
 import { CommonService } from '../common/common.service';
@@ -8,33 +8,27 @@ import { BasicGuard } from './basic-guard';
 @Injectable({
 	providedIn: 'root',
 })
-export class VpnGuardService extends BasicGuard implements CanActivate {
+export class VpnGuardService extends BasicGuard {
 	constructor(
 		private localInfoService: LocalInfoService,
-		private guardConstants: GuardConstants,
-		private commonService: CommonService
+		public guardConstants: GuardConstants,
+		public commonService: CommonService
 	) { 
 		super(commonService, guardConstants);
 	}
 
-	canActivate() {
-		let region;
+    canActivate(
+		route: ActivatedRouteSnapshot,
+		state: RouterStateSnapshot
+	): Promise<any> {
 		return this.localInfoService
 			.getLocalInfo()
 			.then((result) => {
-				region = result.GEO;
-				return this.getCanActivate(region);
+				if (result.GEO === 'cn') {
+					return super.canActivate(route, state);
+				}
+				return true;
 			})
-			.catch((e) => {
-				region = 'us';
-				return this.getCanActivate(region);
-			});
-	}
-
-	getCanActivate(region) {
-		if (region === 'cn') {
-			return this.guardFallbackRoute;
-		}
-		return true;
+			.catch(() => true);
 	}
 }
