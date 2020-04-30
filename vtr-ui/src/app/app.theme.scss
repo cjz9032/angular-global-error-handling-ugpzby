@@ -435,6 +435,10 @@ $high-contrast-black-yellow: #FFFF00;
 	outline: 0.1rem solid $light;
 	outline-offset: 0.2rem;
 }
+@mixin outline-blue-gaming {
+	outline: 1px solid $blueFill !important;
+  // box-shadow: 0px 0px 10px $blueFill !important;
+}
 @mixin outline-border-white {
 	outline: 0;
 	border: 0.1rem solid $light;

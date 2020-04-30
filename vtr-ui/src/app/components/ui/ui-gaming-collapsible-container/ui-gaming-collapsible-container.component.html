@@ -1,6 +1,6 @@
 <div class="select-box">
 	<div class="dropdown">
-		<div class="dropdown-toggle" id="{{'gaming-drop '+ariaLabel}}" [attr.aria-label]="ariaLabel+' '+currentOption" (click)="toggleOptions(options)"
+		<div class="dropdown-toggle" #focusDropdown id="{{'gaming-drop '+ariaLabel}}" [attr.aria-label]="ariaLabel+' '+currentOption" (click)="toggleOptions(options)"
 		name="dropdown" role="combobox" [attr.aria-expanded]="showOptions" aria-haspopup="true"
 		 (keydown.enter)="toggleOptions(options)" tabindex="1">
 			<span *ngFor="let option of options.dropOptions"

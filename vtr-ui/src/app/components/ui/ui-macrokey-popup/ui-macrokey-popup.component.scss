@@ -83,6 +83,9 @@ ui-popover {
 			&:hover {
 				opacity: 0.75;
 			}
+			&:focus{
+				outline:1px solid $blueFill !important;
+			}
 		}
 	}
 	.enable-button {
@@ -92,7 +95,6 @@ ui-popover {
 		font-size: $fontsize_sm;
 		padding: 1rem 3rem;
 		margin-top: 1rem;
-		margin-right: 3rem;
 		font-weight: $weight_bold;
 	}
 	.cancel-link {
@@ -103,13 +105,33 @@ ui-popover {
 		padding: 0 0.5rem;
 		font-weight: $weight_600;
 		margin-top: 1rem;
+		margin-left: 3rem;
 		border-bottom: 2px solid $blueFill;
 		cursor: pointer;
 		&:hover {
 			color: $blueHover;
 			border-bottom: 2px solid $blueHover;			
 			cursor: pointer;
-		  }		
+		  }
+		&:focus{
+			outline: none !important;
+		&::before{
+			position: absolute;
+				display: block;
+				content: "";
+				top: -0.3rem;
+				left: 2.7rem;
+				right: 0rem;
+				bottom: -0.3rem;
+				border: 1px solid $blueFill !important;
+		}	
+		}	
+	}
+	.macro-key-btn-content{
+		div{
+		position: relative;
+		display: inline-block;
+		}
 	}
 }
 

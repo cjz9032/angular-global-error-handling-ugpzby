@@ -24,17 +24,17 @@ export class UiMacrokeyPopupComponent implements OnInit {
 
 	keydownFn(event) {
 		if (event.which === 9) {
-			setTimeout(() => {
-				this.focusElement();
-			},2)
+			this.focusElement();
 		}
 	}
 
 	focusElement() {
-		const popupFocus = document.getElementsByClassName('macrokey_popup_close_btn')[0] as HTMLElement;
-		if (popupFocus) {
-			popupFocus.focus();
-		}
+		setTimeout(() => {
+			const popupFocus = document.getElementsByClassName('macrokey_popup_close_btn')[0] as HTMLElement;
+			if (popupFocus) {
+				popupFocus.focus();
+			}
+		}, 10);
 	}
 
 	hiddenScroll() {

@@ -164,4 +164,11 @@ export class WidgetLightingComponent implements OnInit {
 			this.isdriverpopup = true;
 		}
 	}
+	onCustomizeKeyDown(event) {
+		if (event.which === 9) {
+			setTimeout(() => {
+				document.getElementById('header-warranty-icon').focus();
+			}, 10);
+		}
+	}
 }

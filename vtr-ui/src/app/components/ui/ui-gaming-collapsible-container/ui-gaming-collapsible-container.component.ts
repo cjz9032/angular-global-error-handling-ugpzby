@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ElementRef, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, Output, EventEmitter, OnChanges, SimpleChanges, ViewChild } from '@angular/core';
 
 @Component({
 	selector: 'vtr-ui-gaming-collapsible-container',
@@ -9,7 +9,7 @@ import { Component, OnInit, Input, ElementRef, Output, EventEmitter, OnChanges, 
 	},
 })
 export class UiGamingCollapsibleContainerComponent implements OnInit {
-
+	@ViewChild('focusDropdown', { static: false }) focusDropdown: ElementRef;
 	@Input() public options;
 	@Input() ariaLabel: any;
 	@Output() public change = new EventEmitter<any>();
@@ -70,6 +70,7 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 		this.currentDescription = this.selectedDescription;
 		this.showOptions = false;
 		this.change.emit(option);
+		this.focusElement();
 	}
 
 	public changeDescription(option) {
@@ -94,8 +95,17 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 		}
 	}
 	public keyupTabFn(event, i) {
-        if ((this.options.dropOptions.length - 1) === i) {
-			if (event.keyCode === 9) { this.showOptions = false; }
+		if ((this.options.dropOptions.length - 1) === i) {
+			if (event.keyCode === 9) {
+				this.showOptions = false;
+				this.focusElement();
+			}
 		}
-    }
+	}
+
+	focusElement() {
+		setTimeout(() => {
+			this.focusDropdown.nativeElement.focus();
+		}, 100);
+	}
 }

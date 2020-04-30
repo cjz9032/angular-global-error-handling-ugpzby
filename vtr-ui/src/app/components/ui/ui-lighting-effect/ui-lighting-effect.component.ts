@@ -13,6 +13,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 	}
 })
 export class UiLightingEffectComponent implements OnInit, OnChanges {
+	@ViewChild('focusDropdown', { static: false }) focusDropdown: ElementRef;
 	@Input() public options;
 	@Input() public tabindex;
 	@Input() public selectedValue;
@@ -112,6 +113,7 @@ export class UiLightingEffectComponent implements OnInit, OnChanges {
 		this.showOptions = false;
 		this.change.emit(option);
 		document.getElementById('');
+		this.focusElement();
 	}
 
 	public changeDescription(option) {
@@ -136,8 +138,15 @@ export class UiLightingEffectComponent implements OnInit, OnChanges {
 		if (i === this.options.length - 1) {
 			if (event.keyCode === 9) {
 				this.showOptions = false;
+				this.focusElement();
 			}
 		}
+	}
+
+	focusElement() {
+		setTimeout(() => {
+			this.focusDropdown.nativeElement.focus();
+		}, 100);
 	}
 
 	ngOnChanges(changes) {

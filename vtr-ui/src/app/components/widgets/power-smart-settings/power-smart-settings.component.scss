@@ -100,7 +100,7 @@
 				text-decoration: underline;
 			}
 			&:focus {
-				@include outline-white;
+				@include outline-blue;
 			}
 		}
 		fa-icon {
@@ -120,7 +120,7 @@
 			color: $yellow;
 		}
 		&:focus {
-			@include outline-white;
+			@include outline-blue;
 			outline-offset: 0;
 		}
 	}
@@ -156,7 +156,7 @@
 				min-height: 2.5rem;
 				font-weight:400;
 				margin-bottom: 0rem !important;
-				
+
 	}
 	.transitionReadMore {
 		cursor: pointer;

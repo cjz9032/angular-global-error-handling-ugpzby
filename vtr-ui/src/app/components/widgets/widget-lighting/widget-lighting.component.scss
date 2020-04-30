@@ -257,7 +257,7 @@
 		.multi-state-toggle{		
 			.inner-toggle{
 					input:checked:focus+label.gamingTextColor{
-							outline: 1px dotted !important;
+							@include outline-blue-gaming;
 					}	
 				}
 		}

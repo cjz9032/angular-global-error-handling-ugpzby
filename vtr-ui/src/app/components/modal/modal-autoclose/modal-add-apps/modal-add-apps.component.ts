@@ -30,10 +30,12 @@ export class ModalAddAppsComponent implements OnInit, AfterViewInit {
 	}
 
 	focusElement() {
-		const modal = document.getElementsByClassName('autoclose_close_add_apps')[0] as HTMLElement;
-		if (modal) {
-		modal.focus();
-		}
+		setTimeout(() => {
+			const modal = document.getElementsByClassName('autoclose_close_add_apps')[0] as HTMLElement;
+			if (modal) {
+				modal.focus();
+			}
+		}, 2);
 	}
 
 	async refreshRunningList() {

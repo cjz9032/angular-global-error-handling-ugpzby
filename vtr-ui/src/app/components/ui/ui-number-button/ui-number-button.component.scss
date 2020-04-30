@@ -175,3 +175,16 @@
 		}
 	}
 }
+::ng-deep{
+body.focus-enable{
+	.is-gaming {
+      .vtr-page-gaming-macrokey {
+      .numberpad-popup li{
+        &:focus{
+          @include outline-blue-gaming;
+        }
+      }
+    }
+  }
+}
+}
