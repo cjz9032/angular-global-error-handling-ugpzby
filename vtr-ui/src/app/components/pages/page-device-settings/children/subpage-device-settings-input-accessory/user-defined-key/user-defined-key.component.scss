@@ -277,6 +277,8 @@ div {
 			border-bottom: none;
 		}
 		.app-name {
+			max-width: 26.5rem;
+			display: block;
 			font-size: $fontsize_xs;
 			font-weight: $weight_light;
 			color: $shade_blue;
