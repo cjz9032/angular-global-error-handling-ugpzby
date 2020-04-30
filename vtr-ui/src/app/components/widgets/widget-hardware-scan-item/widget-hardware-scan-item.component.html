@@ -1,8 +1,10 @@
 <div class="vtr-widget-hardware-scan-item" *ngFor="let item of items">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="row module-information">
+			<div class="module-information">
 				<div class="module-icon" *ngIf="item.icon !== undefined">
+
+					<!-- Defines an icon according to the hardware component -->
 					<div class="test-status" [ngSwitch]="item.icon">
 						<img alt="processor" class="img-icon" *ngSwitchCase="'cpu'" [src]="'assets/icons/hardware-scan/icon_hardware_processor.svg' | svgInline | async" />
 						<img alt="memory" class="img-icon" *ngSwitchCase="'memory'" [src]=" 'assets/icons/hardware-scan/icon_hardware_memory.svg' | svgInline | async" />
@@ -12,58 +14,67 @@
 						<img alt="wireless" class="img-icon" *ngSwitchCase="'wireless'" [src]=" 'assets/icons/hardware-scan/icon_hardware_wireless.svg' | svgInline | async" />
 						<img alt="storage" class="img-icon" *ngSwitchCase="'storage'" [src]=" 'assets/icons/hardware-scan/icon_hardware_hdd.svg' | svgInline | async" />
 					</div>
-				</div>
-				<div class="title">
-					<div class="row col-12 module-name">
-						{{item.module}}
-						<div class="row col-12 description">
-							<div class="subtitle">{{item.name}}
-								<span *ngIf="item.details" (click)="item.collapsed = !item.collapsed">
-									<a href="javascript:void(0);"
-										aria-label="module-details"
-										class="details"
-										triggers="click:blur">
-										<fa-icon [icon]="['fas', 'caret-right']" *ngIf="!item.collapsed"></fa-icon>
-										<fa-icon [icon]="['fas', 'caret-down']" *ngIf="item.collapsed"></fa-icon>{{ detailsText }}
-									</a>
-								</span>
-							</div>
-						</div>
+
+					<!-- Defines a style title based on the response received -->
+					<div class="row">
+						<p class="title">{{item.module}}</p><p class="subtitle">{{item.name}}</p>
 					</div>
 				</div>
+
+				<a *ngIf="item.details"
+					href="javascript:void(0);"
+					aria-label="module-details"
+					class="details"
+					(click)="item.collapsed = !item.collapsed">
+					<fa-icon [ngClass]="{'rotate': item.collapsed}"
+						[icon]="['fas', 'caret-down']" 
+						[attr.aria-expanded]="item.collapsed">
+					</fa-icon>
+					{{ detailsText }}
+				</a>
+
+				<!-- Icon to expand and collapse test list -->
+				<a *ngIf="isScanExecute" href="javascript:void(0);"
+					(click)="item.collapsed = !item.collapsed"
+					[ngClass]="{'rotate': item.collapsed}">
+					<fa-icon [icon]="['fal', 'angle-down']"
+						[attr.aria-expanded]="item.collapsed">
+					</fa-icon>
+				</a>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col">
-				<div class="settings-container">
-					<vtr-ui-hardware-list *ngIf="isLoadingDone" [items]="item.listTest" [details]="item.details"
-						[template]="2" [collapsed]="item.collapsed">
-					</vtr-ui-hardware-list>
-				</div>
+
+		<div class="row col" *ngIf="isScanExecute">
+			<!-- Result code information -->
+			<div class="result-code" *ngIf="item.resultCode">
+				<p class="title">{{resultCodeText}}:</p>
+				<p class="subtitle">{{item.resultCode}}</p>
+				<a *ngIf="item.information"
+					href="javascript:void(0)"
+					(click)="getInformation(item.information)"
+					aria-label="module-result-code-question-mark"
+					class="result-code-icon"
+					triggers="click"
+					[ngbTooltip]="tooltipRefModule"
+					container="vtr-root"
+					tooltipClass="vtr-tooltip"
+					placement="auto">
+					<fa-icon [icon]="['far', 'question-circle']"></fa-icon>
+				</a>
+			</div>
+
+			<!-- Test List -->
+			<div class="test-list col">
+				<vtr-ui-hardware-list
+					[ngbCollapse]="!item.collapsed"
+					[items]="item.listTest"
+					[details]="item.details"
+					[template]="2"
+					[collapsed]="item.collapsed">
+				</vtr-ui-hardware-list>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col pt-3">
-			<div class="result-code d-flex justify-content-end" *ngIf="item.resultCode">
-				<div class="result-code-value-text pr-2"><span>{{resultCodeText}}:</span></div>
-				<div class="left-code-result">
-					<span class="result-code-complete-text"> {{item.resultCode}}</span>
-					<a *ngIf="item.information"
-						href="javascript:void(0)"
-						(click)="getInformation(item.information)"
-						aria-label="module-result-code-question-mark"
-						class="result-code-icon"
-						triggers="click"
-						[ngbTooltip]="tooltipRefModule"
-						container="vtr-root"
-						tooltipClass="vtr-tooltip"
-						placement="auto">
-						<fa-icon [icon]="['far', 'question-circle']"></fa-icon>
-					</a>
-				</div>
-			</div>
-		</div>
-		</div>
+		<hr>
 	</div>
 </div>
 <ng-template #tooltipRefModule>

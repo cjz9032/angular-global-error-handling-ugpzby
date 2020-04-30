@@ -10,8 +10,9 @@ export class WidgetHardwareScanItemComponent implements OnInit {
 	@Input() items: any[];
 	@Input() resultCodeText: string;
 	@Input() detailsText: string;
-	@Input() isLoadingDone = false;
+	@Input() isScanExecute = false;
 	@Input() lenovoSupport: string = this.translate.instant('hardwareScan.support.subtitle');
+
 	public tooltipText: string;
 
 	constructor(
