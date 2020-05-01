@@ -24,6 +24,7 @@
 			height: 25px;
 		}
 		.custom-control-label {
+			cursor: pointer;
 			&::before {
 				left: -($custom-switch-width + $custom-control-gutter);
 				width: $custom-switch-width;
