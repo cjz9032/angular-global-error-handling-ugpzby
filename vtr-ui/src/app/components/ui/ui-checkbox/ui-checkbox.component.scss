@@ -28,6 +28,7 @@
 		.custom-control-label {
 			padding-left: 1rem;
 			padding-top: 0.15rem;
+			cursor: pointer;
 
 			&::before {
 				width: $check-box-size;
