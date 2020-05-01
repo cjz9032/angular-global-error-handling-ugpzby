@@ -267,16 +267,11 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 					const element = tabElements[curElementTabIndex - 1] as HTMLElement;
 					$event.stopPropagation();
 					$event.preventDefault();
-
 					element.focus();
 					// console.log('ShIFT tab curElementTabIndex closing current element curElementTabIndex')
 					activeDropdown.close();
 				}
-				/* 	nextIndex = currentIndex - 1;
-					if (nextIndex < 0) {
-						activeDropdown.close();
-						// this.closeAllDD();
-					} */
+
 			}
 
 			if ($event.keyCode === 9) {
