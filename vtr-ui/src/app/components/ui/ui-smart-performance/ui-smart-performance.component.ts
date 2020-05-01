@@ -88,7 +88,9 @@ export class UiSmartPerformanceComponent implements OnInit {
 						this.isScanning = false;
 					}
 				})
-				.catch(error => { });
+				.catch(error => { 
+					this.logger.error('this.smartPerformanceService.getReadiness()', error);
+				});
 		}
 	
 	}
