@@ -291,6 +291,20 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 
 	}
 
+	@HostListener('keydown', ['$event'])
+	onKeyDown(event: KeyboardEvent) {
+		if (event.shiftKey &&
+			event.key === 'Tab' &&
+			document.getElementById('header-warranty-icon')
+		) {
+			if (this.isGamingHome) {
+				setTimeout(() => {
+					(document.getElementById('lighting_customize') as HTMLElement).focus();
+				}, 10);
+			}
+		}
+	}
+
 	private loadMenuOptions(machineType: number) {
 		// if IdeaPad or ThinkPad then call below function
 		if (machineType === 0 || machineType === 1) {
