@@ -35,13 +35,6 @@ export class IntelligentMediaComponent implements OnInit {
 		this.videoPlaybackToggle.emit(event.switchValue);
 		try {
 			if (this.smartAssist.isShellAvailable) {
-				const metricsData = {
-					itemParent: 'Device.SmartAssist',
-					itemName: 'zero-touch-video-playback.toggle-button',
-					value: event.switchValue
-				};
-				this.metrics.sendMetrics(metricsData);
-
 				this.smartAssist.setVideoPauseResumeStatus(event.switchValue)
 					.then((value: boolean) => { }).catch(error => {
 						this.logger.error('setVideoPauseResumeStatus', error.message);
@@ -56,12 +49,6 @@ export class IntelligentMediaComponent implements OnInit {
 
 	public setSuperResolutionStatus(event) {
 		this.superResolutionToggle.emit(event.switchValue);
-		const metricsData = {
-			itemParent: 'Device.SmartAssist',
-			itemName: 'Video-Resolution-Upscaling.toggle-button',
-			value: event.switchValue
-		};
-		this.metrics.sendMetrics(metricsData);
 		try {
 			if (this.smartAssist.isShellAvailable) {
 				this.smartAssist.setSuperResolutionStatus(event.switchValue)

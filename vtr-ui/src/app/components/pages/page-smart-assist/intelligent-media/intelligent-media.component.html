@@ -11,7 +11,7 @@
 			<ul class="list-group list-group-flush">
 				<li>
 					<vtr-ui-row-switch *ngIf="intelligentMediaAvailable"
-						[switchId]="'intelligent-media-toggle'"
+						[switchId]="'zero-touch-video-playback.toggle-button'"
 						[title]="'device.smartAssist.intelligentMedia.title' | translate"
 						componentName="intelligentMediaSwitch"
 						[isLastChild]="true"
@@ -34,7 +34,7 @@
 					<div class="border-top common-li-padding"
 						*ngIf="superResolutionAvailable && intelligentMediaAvailable"></div>
 					<vtr-ui-row-switch *ngIf="superResolutionAvailable"
-						[switchId]="'superResolution'"
+						[switchId]="'video-resolution-upscaling.toggle-button'"
 						[title]="'device.smartAssist.superResolution.title' | translate"
 						componentName="superResolutionSwitch"
 						[isLastChild]="true"
