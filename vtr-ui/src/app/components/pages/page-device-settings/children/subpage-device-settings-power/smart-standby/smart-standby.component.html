@@ -1,10 +1,9 @@
 <div class="row pt-5 smart-settings-card"
-	id="smartStandby"
 	*ngIf="smartStandby?.isCapable">
 	<div class="col-12 px-0 container-border">
 		<vtr-container-collapsible [cardTitle]="'device.deviceSettings.power.smartStandby.sectionTitle' | translate"
 			[isCollapsed]="false"
-			[collapseLinkId]="'smartrStandby'"
+			[collapseLinkId]="'smart-standby-collapse'"
 			[tabIndex]="0">
 			<ul class="list-group list-group-flush">
 				<li>
@@ -18,7 +17,7 @@
 						[tooltipText]="tooltipText"
 						[isSwitchChecked]="smartStandby.isEnabled"
 						(toggleOnOff)="onSmartStandbyToggle($event)"
-						[switchId]="'smartStandby'">
+						[switchId]="'smart-standby-toggle'">
 						<div class="pl-4 mt-3 ml-2">
 							<div>
 								<div *ngIf="isAutonomicCapability"
