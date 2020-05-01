@@ -44,12 +44,6 @@ export class UiScanScheduleComponent implements OnInit {
 	public lastYear: any;
 	// historyRes: any = {};
 	// historyScanResults = [];
-	public quarterlyMenu: any = [
-		{ displayName: 'Jan-Mar', ...this.getQuartesDates(0, 2), key: 1 },
-		{ displayName: 'Apr-Jun', ...this.getQuartesDates(3, 5), key: 2 },
-		{ displayName: 'Jul-Sept', ...this.getQuartesDates(6, 8), key: 3 },
-		{ displayName: 'Oct-Dec', ...this.getQuartesDates(9, 11), key: 4 }
-	];
 	menuStatus = true;
 	selectedResult: any;
 	annualYear: any;
@@ -74,7 +68,7 @@ export class UiScanScheduleComponent implements OnInit {
 	selectedFrequency: any;
 	selectedDay: any;
 	selectedNumber: any;
-	yearsList: any[] = [this.getYearObj(0), this.getYearObj(-1)];
+	
 	scanFrequency: any = [
 		'Once a week',
 		'Every other week',
@@ -137,7 +131,7 @@ export class UiScanScheduleComponent implements OnInit {
 	amPm: any = ['AM', 'PM'];
 	isDaySelectionEnable = true;
 	scanToggleValue = true;
-	frequencyValue = 1;
+	frequencyValue = 0;
 	dayValue = 0;
 	dateValue = 0;
 	scanTime: any = {
@@ -274,18 +268,19 @@ export class UiScanScheduleComponent implements OnInit {
 		this.dayValue = value;
 		this.scheduleTab = '';
 		this.selectedDay = this.days[value];
-		this.selectedNumber = this.dates[value];
+		//this.selectedNumber = this.dates[value];
 	}
 	changeScanDate(value) {
 		this.dateValue = value;
 		this.scheduleTab = '';
-		this.selectedDay = this.days[value];
+		//this.selectedDay = this.days[value];
 		this.selectedNumber = this.dates[value];
 	}
 
 	cancelChangedScanSchedule() {
 		this.scheduleTab = '';
 		this.isChangeSchedule = false;
+		this.changeScanFrequency(this.scanFrequency.indexOf(this.scheduleScanFrequency));
 		this.getNextScanScheduleTime(this.nextScheduleScanDate);
 	}
 
@@ -322,34 +317,7 @@ export class UiScanScheduleComponent implements OnInit {
 	changeScanScheduleDate() {
 		this.scheduleTab = '';
 	}
-
-	getQuartesDates(start, end) {
-		return {
-			startDate: moment()
-				.month(start)
-				.startOf('month')
-				.format('YYYY-MM-DD HH:mm:ss'),
-			endDate: moment()
-				.month(end)
-				.endOf('month')
-				.format('YYYY-MM-DD HH:mm:ss')
-		};
-	}
-	getYearObj(yearCount) {
-		const year = moment().add(yearCount, 'year');
-		return {
-			displayName: year.format('YYYY'),
-			startDate: year.startOf('year').format('YYYY-MM-DD HH:mm:ss'),
-			endDate: year.endOf('year').format('YYYY-MM-DD HH:mm:ss')
-		};
-	}
-	async getHistory(startDate, endDate) {
-		const payload = {
-			filterType: 'C',
-			startDate,
-			endDate
-		};
-	}
+	
 
 	saveChangedScanSchedule() {
 		let scanScheduleDate:any;
