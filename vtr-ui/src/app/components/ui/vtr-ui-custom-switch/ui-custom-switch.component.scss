@@ -85,11 +85,12 @@
 			}
 		}
 
+		.custom-control-input:disabled:hover ~ .custom-control-label,
 		.custom-control-input:disabled ~ .custom-control-label {
 			&::before {
-				border-color: $grey_darker;
 				background: $grey_light;
-				opacity: 0.6;
+				opacity: 0.8;
+				border: $grey_darker solid 1px;
 			}
 			&::after {
 				background-color: $grey_darker;
