@@ -16,6 +16,7 @@ import { SupportService } from 'src/app/services/support/support.service';
 	styleUrls: ['./ui-smart-performance-scan-summary.component.scss']
 })
 export class UiSmartPerformanceScanSummaryComponent implements OnInit {
+	public sizeExtension: string;
 	constructor(
 		private modalService: NgbModal,
 		private commonService: CommonService,
@@ -72,7 +73,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	customDate: any;
 	@Output() backToScan = new EventEmitter();
 
-	//@Output() sendScanData = new EventEmitter();
+	// @Output() sendScanData = new EventEmitter();
 	@Output() sendScanData: EventEmitter<any> = new EventEmitter();
 	// scan settings
 	scheduleTab;
@@ -198,7 +199,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		this.scanScheduleDate = this.selectedDate;
 		this.leftAnimator = '0%';
 		this.scanSummaryTime(0);
-		
+
 		if (this.isSubscribed) {
 			this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix');
 		}
@@ -213,9 +214,9 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 
 	getNextScanScheduleTime(scandate) {
 		try {
-			var dateObj = new Date(scandate);
-			var momentObj = moment(dateObj);
-			var momentString = momentObj.format('YYYY-MM-DD');
+			const dateObj = new Date(scandate);
+			const momentObj = moment(dateObj);
+			const momentString = momentObj.format('YYYY-MM-DD');
 			const now =
 				new Intl.DateTimeFormat('default',
 					{
@@ -223,18 +224,16 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 						hour: 'numeric',
 						minute: 'numeric'
 					}).format(dateObj);
-			this.nextScheduleScan = (new Date(momentString).getMonth() + 1) + "/" + new Date(momentString).getDate() + " at " + now;
+			this.nextScheduleScan = (new Date(momentString).getMonth() + 1) + '/' + new Date(momentString).getDate() + ' at ' + now;
 		} catch (err) {
-			//console.log("error in getNextScanScheduleTime _____________________________________", err);
 			this.logger.error('ui-smart-performance-scan-summary.getNextScanScheduleTime.then', err);
 		}
 	}
 	getMostecentScanDateTime(scandate) {
 		try {
-			//console.log('getMostecentScanDateTime Response--------------------------------------------------------------->' + JSON.stringify(scandate));
-			var dateObj = new Date(scandate);
-			var momentObj = moment(dateObj);
-			var momentString = momentObj.format('YYYY-MM-DD');
+			const dateObj = new Date(scandate);
+			const momentObj = moment(dateObj);
+			const momentString = momentObj.format('YYYY-MM-DD');
 			const now =
 				new Intl.DateTimeFormat('default',
 					{
@@ -242,7 +241,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 						hour: 'numeric',
 						minute: 'numeric'
 					}).format(dateObj);
-			this.mostRecentScan = (new Date(momentString).getMonth() + 1) + "/" + new Date(momentString).getDate() + " at " + now;
+			this.mostRecentScan = (new Date(momentString).getMonth() + 1) + '/' + new Date(momentString).getDate() + ' at ' + now;
 		} catch (err) {
 			this.logger.error('ui-smart-performance-scan-summary.getMostecentScanDateTime.then', err);
 		}
@@ -549,24 +548,29 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 			const res: any = await this.smartPerformanceService.getHistory(
 				payload
 			);
-			 
+
 			if (res.lastscanresults) {
-                this.historyRes = {
+				this.historyRes = {
 					Tune: res.Tune,
 					Boost: res.Boost,
 					Secure: res.Secure
 				};
-                // console.log(JSON.stringify(this.historyRes));
 				this.historyScanResults = res.lastscanresults || [];
 				this.getMostecentScanDateTime(this.historyScanResults[0].scanruntime);
-            } else {
+			} else {
 				this.historyScanResults = [];
 				this.historyRes = {};
 			}
 		} catch (err) {
-			// console.log(err);
 			this.historyScanResults = [];
 			this.historyRes = {};
 		}
 	}
+	formatMemorySize(mbytes) {
+		const k = 1024;
+			const sizes = ['MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+			const i = Math.floor(Math.log(mbytes) / Math.log(k));
+			this.sizeExtension = sizes[i];
+		return parseFloat((mbytes / Math.pow(k, i)).toFixed(1));
+	 }
 }

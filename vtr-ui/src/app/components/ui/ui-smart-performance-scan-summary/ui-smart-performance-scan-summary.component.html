@@ -2414,10 +2414,9 @@
 																<div class="box-title d-flex  justify-content-between">
 																	<h5>{{'smartPerformance.subscriberScanHomePage.scanSummary.tune' |translate }}</h5>
 																	<div class="icon icon-performance"></div>
-																</div>
-																
+																</div>																
 																<div class="value">
-																	{{historyRes.Tune || 0}}<span>MB</span>
+																	{{formatMemorySize(historyRes.Tune) || 0}} <span>{{sizeExtension}}</span>
 																</div>
 																<p>{{'smartPerformance.subscriberScanHomePage.scanSummary.tuneSummary' |translate }}
 																</p>
