@@ -60,7 +60,7 @@
 					<span role="text"
 						*ngIf="machineFamilyName">{{machineFamilyName}}</span>
 					<span class="warranty-icon">
-						<vtr-ui-header-warranty *ngIf="machineFamilyName"
+						<vtr-ui-header-warranty (tabFocusElem)="onTabFocusElem($event)" *ngIf="machineFamilyName"
 							[pageParent]="'NavBar'"></vtr-ui-header-warranty>
 					</span>
 				</div>

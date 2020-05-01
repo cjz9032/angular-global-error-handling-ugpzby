@@ -165,7 +165,7 @@ export class WidgetLightingComponent implements OnInit {
 		}
 	}
 	onCustomizeKeyDown(event) {
-		if (event.which === 9) {
+		if (!event.shiftKey && event.which === 9) {
 			setTimeout(() => {
 				document.getElementById('header-warranty-icon').focus();
 			}, 10);

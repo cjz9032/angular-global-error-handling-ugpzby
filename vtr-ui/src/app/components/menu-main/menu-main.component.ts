@@ -291,6 +291,16 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 
 	}
 
+	onTabFocusElem(event: any) {
+		if (event.shiftKey && event.key === 'Tab') {
+			if (this.isGamingHome) {
+				setTimeout(() => {
+					(document.getElementById('lighting_customize') as HTMLElement).focus();
+				}, 10);
+			}
+		}
+	}
+
 	private loadMenuOptions(machineType: number) {
 		// if IdeaPad or ThinkPad then call below function
 		if (machineType === 0 || machineType === 1) {
