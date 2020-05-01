@@ -291,12 +291,8 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 
 	}
 
-	@HostListener('keydown', ['$event'])
-	onKeyDown(event: KeyboardEvent) {
-		if (event.shiftKey &&
-			event.key === 'Tab' &&
-			document.getElementById('header-warranty-icon')
-		) {
+	onTabFocusElem(event: any) {
+		if (event.shiftKey && event.key === 'Tab') {
 			if (this.isGamingHome) {
 				setTimeout(() => {
 					(document.getElementById('lighting_customize') as HTMLElement).focus();
