@@ -155,12 +155,15 @@ vtr-ui-smart-performance-scan-summary {
 				background: #F5F7F8;
 				height: auto;
 				border-radius: 0.5rem;
-				padding: 1.7rem 3rem;
+				padding: 1.7rem 2.5rem;
 				color: #303D49;
 				width: calc(33.33% - 4.5rem);
 				@media #{$breakpoint_xl}{
 					width: calc(33.33% - 1.6rem);
 					padding: 1.7rem;
+				}
+				@media #{$breakpoint_lg}{
+					padding: 1.5rem 2rem;
 				}
 				h5 {
 					font-size: 1.6rem;
@@ -172,6 +175,9 @@ vtr-ui-smart-performance-scan-summary {
 					font-weight: $weight_bold;
 					@media #{$breakpoint_xl}{
 						font-size: 3.2rem;
+					}
+					@media #{$breakpoint_sm}{
+						font-size: 2.7rem;
 					}
 					span {
 						font-size: 1.6rem;
@@ -188,6 +194,9 @@ vtr-ui-smart-performance-scan-summary {
 					color: $main;
 					font-size: 4rem;
 					line-height: 1;
+					@media #{$breakpoint_sm}{
+						font-size: 3rem;
+					}
 				}
 			}
 			.scan-list-container {
