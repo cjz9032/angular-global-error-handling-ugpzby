@@ -2426,41 +2426,49 @@
 												</div>
 												<div class="row my-5 d-flex justify-content-between px-0">
 													<div class="tune">
-														<div class="d-flex justify-content-between">
-															<div class="flex-column">
-																<h5>{{'smartPerformance.subscriberScanHomePage.scanSummary.tune' |translate }}
-																</h5>
+														<div class="d-flex">
+															<div class="w-100">
+																<div class="box-title d-flex  justify-content-between">
+																	<h5>{{'smartPerformance.subscriberScanHomePage.scanSummary.tune' |translate }}</h5>
+																	<div class="icon icon-performance"></div>
+																</div>
+																
 																<div class="value">
 																	{{historyRes.Tune || 0}}<span>MB</span>
 																</div>
 																<p>{{'smartPerformance.subscriberScanHomePage.scanSummary.tuneSummary' |translate }}
 																</p>
 															</div>
-															<div class="icon icon-performance"></div>
+															
 														</div>
 													</div>
 													<div class="boost">
-														<div class="d-flex justify-content-between">
-															<div class="flex-column">
-																<h5>{{'smartPerformance.subscriberScanHomePage.scanSummary.boost' |translate }}
-																</h5>
+														<div class="d-flex">
+															<div class="w-100">
+																<div class="box-title d-flex  justify-content-between">
+																	<h5>{{'smartPerformance.subscriberScanHomePage.scanSummary.boost' |translate }}</h5>
+																	<div class="icon icon-internet-performance"></div>
+																</div>
 																<div class="value">{{historyRes.Boost || 0}}</div>
 																<p>{{'smartPerformance.subscriberScanHomePage.scanSummary.boostSummary' |translate }}
 																</p>
 															</div>
-															<div class="icon icon-internet-performance"></div>
+															
 														</div>
 													</div>
 													<div class="secure">
-														<div class="d-flex justify-content-between">
-															<div class="flex-column">
-																<h5>{{'smartPerformance.subscriberScanHomePage.scanSummary.secure' |translate }}
-																</h5>
+														<div class="d-flex">
+															<div class="w-100">
+																<div class="box-title d-flex  justify-content-between">
+																	<h5>{{'smartPerformance.subscriberScanHomePage.scanSummary.secure' |translate }}</h5>
+																	<div class="icon icon-malware-security"></div>
+																</div>
+																
 																<div class="value">{{historyRes.Secure || 0}}</div>
 																<p>{{'smartPerformance.subscriberScanHomePage.scanSummary.secureSummary' |translate }}
 																</p>
 															</div>
-															<div class="icon icon-malware-security"></div>
+															
 														</div>
 													</div>
 												</div>
