@@ -307,6 +307,26 @@ vtr-ui-smart-performance-scan-summary {
 						border-bottom: none;
 						.btn-link{
 							width: 100%;
+							&:before{								
+								content: "\276F";
+								transform-origin: 0 0;
+  								transform: rotate(-90deg);
+								color:$shade_dark;
+								font-size:2rem;																
+								width:1.75rem;
+								height:1.75rem;
+								right:2.75rem;
+								@media #{$breakpoint_sm}{
+									right:5%;
+									top:4.5rem!important;
+								}
+								@media #{$breakpoint_md}{
+									right:4.5%;
+									top:5.5rem;
+								}
+								position:absolute;
+								top:5.5rem;
+							}
 							&:hover, &:focus{
 								text-decoration: none;
 							}
@@ -315,6 +335,28 @@ vtr-ui-smart-performance-scan-summary {
 								padding-right: 0;
 								width: 100%;
 							}
+						}
+						.collapsed{
+							&:before{								
+								content: "\276E";
+								transform-origin: 0 0;
+ 								transform: rotate(-90deg);
+								color:$shade_dark;
+								font-size:2rem;								
+								right:2.75rem;
+								@media #{$breakpoint_sm}{
+									right:5%;
+									top:4.5rem!important;
+								}
+								@media #{$breakpoint_md}{
+									right:4.5%;
+									top:5.5rem;
+								}
+								width:1.75rem;
+								height:1.75rem;
+								position:absolute;
+								top:5.5rem;							
+							}														
 						}
                         .heading {
                             h3, h2{
@@ -429,6 +471,7 @@ vtr-ui-smart-performance-scan-summary {
                             text-align: right;
 							color: $shade_dark;
 							right: 5rem;
+							padding-right:2rem;
 							letter-spacing: 0;
 							@media #{$breakpoint_sm}{
 								margin-top: 1rem;
