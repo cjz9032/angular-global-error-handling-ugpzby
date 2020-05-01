@@ -282,7 +282,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 					$event.preventDefault();
 
 					element.focus();
-					console.log('tab curElementTabIndex closing current element curElementTabIndex');
+					//console.log('tab curElementTabIndex closing current element curElementTabIndex');
 					activeDropdown.close();
 
 				}
