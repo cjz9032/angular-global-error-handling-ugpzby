@@ -37,7 +37,7 @@ import { faChevronDown as falChevronDown } from '@fortawesome/pro-light-svg-icon
 import { faChevronUp as falChevronUp } from '@fortawesome/pro-light-svg-icons/faChevronUp';
 import { UiDpmDropdownComponent } from 'src/app/components/ui/ui-dpm-dropdown/ui-dpm-dropdown.component';
 import { UiDpmEnergyComponent } from 'src/app/components/ui/ui-dpm-energy/ui-dpm-energy.component';
-import { UiCustomSwitchModule } from 'src/app/components/ui/vtr-ui-custom-switch/ui-custom-switch.module';
+import { UiCustomSwitchModule } from 'src/app/components/ui/ui-custom-switch/ui-custom-switch.module';
 import { SpinnerModule } from 'src/app/components/common/spinner/spinner.module';
 
 
