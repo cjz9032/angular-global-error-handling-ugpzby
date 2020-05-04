@@ -27,7 +27,7 @@
       <div class="description">{{ supportRequestQuestionMessage }}</div>
    </div>
 
-   <div *ngIf="hasFailureOnStorageWithRBS(); else withoutRBS">
+   <div *ngIf="hasFailedRbsDevices(); else withoutRBS">
       <div class="row">
          <div class="col button-row">
          <a class="action-button" id="rbsButton" (click)="goToRBSPage()">{{ recoverBadSectorsButtonText }}</a>
