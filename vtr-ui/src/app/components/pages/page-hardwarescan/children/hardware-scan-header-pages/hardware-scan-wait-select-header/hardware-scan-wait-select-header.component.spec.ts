@@ -22,4 +22,8 @@ describe('HardwareScanWaitSelectHeaderComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('button should be enabled', () => {
+	expect(component.isButtonDisable()).toEqual(false);
+  });
 });

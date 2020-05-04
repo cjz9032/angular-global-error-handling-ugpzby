@@ -13,4 +13,12 @@ describe('ExecuteHardwareScanService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('service should modify button statuses', () => {
+	expect(service.getIsButtonDisable()).toBe(false);
+	service.setIsButtonDisable(true);
+	expect(service.getIsButtonDisable()).toBe(true);
+	service.setIsButtonDisable(false);
+	expect(service.getIsButtonDisable()).toBe(false);
+  });
 });
