@@ -1,0 +1,67 @@
+<!-- <div class="vtr-ui-rounded-rectangle-radio {{group}}"
+	[ngClass]="{'border-blue':checked && !disabled,
+	'border-grey':!checked&&!disabled,
+	'large-width': isLarge,
+	'border-checked-disabled': checked && disabled,
+	'border-disabled': disabled && !checked}"
+	id="{{'div'+radioId}}"
+	role="radio"
+	#radioButton
+	[tabIndex]="disabled ?-1:checked? 0 :-1"
+	[attr.aria-disabled]="disabled"
+	[attr.aria-checked]="checked"
+	[attr.aria-labelledby]="radioId"
+	(keydown)="navigateByKeys($event,radio)">
+	<input id="{{radioId}}"
+		style="display: none;"
+		attr.aria-labelledby="{{radioId}}-title"
+		name="{{group}}"
+		type="radio"
+		[value]="value"
+		[checked]="checked"
+		[disabled]="disabled"
+		#radio
+		(click)="onChange(value)"
+		aria-hidden="true"
+		tabindex="-1"
+		vtrMetrics
+		metricsEvent="featureClick"
+		[metricsItem]="radioLabel+label"
+		[metricsValue]="checked" />
+	<label for="{{radioId}}"
+		id="{{radioId}}-label"
+		attr.aria-labelledby="{{radioId}}-title">
+		<fa-layers [fixedWidth]="true"
+			class="icon-circle">
+			<fa-icon [icon]="['fal', 'circle']"></fa-icon>
+			<fa-icon [icon]="['fas', 'circle']"
+				transform="shrink-6"
+				*ngIf="checked"
+				class="checked-circle"></fa-icon>
+		</fa-layers>
+		<span class="label"
+			id="{{radioId}}-title">{{label}}</span>
+	</label>
+</div> -->
+
+<div class="vtr-ui-rounded-rectangle-radio-list">
+
+	<div role="radiogroup"
+		class="radio-group"
+		[id]="model.groupName">
+		<ng-template ngFor
+			let-item
+			[ngForOf]="model.radioDetails"
+			let-i="index">
+			<div role="radio"
+				[id]="item.componentId"
+				[attr.aria-checked]="item.isChecked"
+				[attr.aria-readonly]="item.isReadOnly"
+				(click)="onClick($event)"
+				(keydown)="onClick($event)"
+				[tabindex]="item.isChecked ? 0 : -1">
+				{{item.componentId}}
+			</div>
+		</ng-template>
+	</div>
+</div>
