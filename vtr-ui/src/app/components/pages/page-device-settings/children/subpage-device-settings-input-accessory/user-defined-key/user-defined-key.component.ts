@@ -129,7 +129,7 @@ export class UserDefinedKeyComponent implements OnInit {
 				this.selectedValue = this.userDefinedKeyOptions[this.udkActionInfo.index];
 				this.url = this.udkActionInfo.actionValue;
 				this.userDefinedKeyOptions = this.commonService.removeObjFrom(this.userDefinedKeyOptions, '1');
-				break;	
+				break;
 			case 3:
 				this.selectedValue = this.userDefinedKeyOptions[this.udkActionInfo.index];
 				this.keyCode = this.udkActionInfo.actionValue;
@@ -148,7 +148,7 @@ export class UserDefinedKeyComponent implements OnInit {
 				this.selectedValue = this.userDefinedKeyOptions[this.udkActionInfo.index];
 				this.description = this.udkActionInfo.actionValue;
 				this.userDefinedKeyOptions = this.commonService.removeObjFrom(this.userDefinedKeyOptions, '1');
-				break;	
+				break;
 		}
 	}
 	checkDropDown(userDefineDrop: any, i, event) {
@@ -293,10 +293,9 @@ export class UserDefinedKeyComponent implements OnInit {
 			event.preventDefault();
 		}
 	}
-
 	public invokeKeySequence(event) {
 		event.preventDefault();
-		if (event.keyCode === 255 || (event.keyCode >= 186 && event.keyCode <= 222) || event.keyCode === 8) {
+		if (event.keyCode === 255 || (event.keyCode >= 173 && event.keyCode <= 222)) {
 			event.preventDefault();
 			event.key = ''
 		}
