@@ -770,6 +770,9 @@ vtr-ui-smart-performance-scan-summary {
 				strong{
 					font-weight: $weight_bold;
 				}
+				fa-icon {
+					cursor: pointer;
+				}
 				&::ng-deep{
 					vtr-ui-switch-onoff {
 						.checkbox {
