@@ -1,23 +1,27 @@
-import { AfterViewInit, Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChildren, QueryList } from '@angular/core';
 import { KeyCode as KEYCODE } from 'src/app/enums/key-code.enum';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from 'src/app/services/metric/metric.service';
-import { UICustomRadio } from '../ui-custom-radio/ui-custom-radio';
-import { AppEvent } from './../../../enums/app-event.enum';
 import { UiRoundedRectangleRadioListModel, UiRoundedRectangleRadioModel } from './ui-rounded-rectangle-radio-list.model';
 
+/**
+ * this radio group implementation is based on W3C KB navigation example
+ * https://www.w3.org/TR/2016/WD-wai-aria-practices-1.1-20160317/examples/radio/radio.html
+ */
 @Component({
 	selector: 'vtr-ui-rounded-rectangle-radio-list',
 	templateUrl: './ui-rounded-rectangle-radio-list.component.html',
 	styleUrls: ['./ui-rounded-rectangle-radio-list.component.scss']
 })
-export class UiRoundedRectangleRadioListComponent implements OnInit, AfterViewInit {
+export class UiRoundedRectangleRadioListComponent implements OnInit {
 	@Input() radioId: string;
 	@Input() tooltip: string;
 	@Input() disabled = false;
 	@Input() name: string;
 	@Input() isLarge = false;
-	@Output() selectionChange = new EventEmitter<boolean>();
+	@Output() selectionChange = new EventEmitter<UiRoundedRectangleRadioModel>();
+
+	@ViewChildren('radioRef') radioButtons: QueryList<any>;
 
 	public model = new UiRoundedRectangleRadioListModel(
 		'pizza-radio-group',
@@ -28,72 +32,100 @@ export class UiRoundedRectangleRadioListComponent implements OnInit, AfterViewIn
 		]
 	);
 
-	public currentSelection
-
 	constructor(logger: LoggerService, metrics: MetricService) {
 	}
 
 	ngOnInit() { }
 
-	ngAfterViewInit() {
-
-	}
-
-	onChange($event) {
-		const { value } = $event.target;
-		this.selectionChange.emit(value);
-	}
-	onkeyPress($event) {
-		// 	const { keyCode } = $event;
-		// 	if (keyCode === KeyCode.LEFT) {
-		// 		this.customKeyEvent.emit({ customeEvent: AppEvent.LEFT });
-		// 	} else if (keyCode === KeyCode.RIGHT) {
-		// 		this.customKeyEvent.emit({ customeEvent: AppEvent.RIGHT });
-		// 	}
-		// }
-
-	}
-
 	onClick($event) {
-		const { id, ariaChecked } = $event.target;
-		this.updateSelection(id);
-		console.log(id, ariaChecked);
+		const { id } = $event.target;
+		const radio = this.updateSelection(id);
+		this.invokeSelectionChangeEvent(radio);
 	}
 
-	onKeyDown($event) {
-		this.handleKeyPressEvent($event);
-	}
-
-	private updateSelection(radioId: string) {
-		if (this.model && this.model.radioDetails?.length > 0) {
-			this.model.radioDetails.forEach(radioDetail => {
-				radioDetail.isChecked = (radioDetail.componentId === radioId);
-			});
+	onKeyDown($event, index: number) {
+		if (this.model?.radioDetails?.length > 0) {
+			this.handleKeyPressEvent($event, index);
 		}
 	}
 
-	private handleKeyPressEvent(event) {
-		const { type } = event;
-		let next;
+	private updateSelection(radioId: string, hasFocus = false) {
+		let radio: UiRoundedRectangleRadioModel;
+		if (this.model?.radioDetails?.length > 0) {
+			let hasFound = false;
+			this.model.radioDetails.forEach(radioDetail => {
+				if ((radioDetail.componentId === radioId)) {
+					radio = radioDetail;
+					hasFound = true;
+					radioDetail.isChecked = true;
+				} else {
+					radioDetail.isChecked = false;
+				}
+			});
 
-		if (type === 'keydown') {
-			const node = event.currentTarget;
-
-			switch (event.keyCode) {
-				case KEYCODE.DOWN:
-				case KEYCODE.RIGHT:
-
-					break;
-
-				case KEYCODE.UP:
-				case KEYCODE.LEFT:
-
-					break;
-
-				case KEYCODE.SPACE:
-					next = node;
-					break;
+			// set selected if its found had requires focus
+			if (hasFound && hasFocus) {
+				this.radioButtons.forEach(radioButton => {
+					if (radioButton.nativeElement.id === radioId) {
+						radioButton.nativeElement.focus();
+					}
+				});
 			}
 		}
+		return null;
+	}
+
+	private setNodeActive(index: number): UiRoundedRectangleRadioModel {
+		if (index >= 0) {
+			const radioId = this.model.radioDetails[index].componentId;
+			// get element by index and pass its id to next FN
+			return this.updateSelection(radioId, true);
+		}
+		return null;
+	}
+
+	private handleKeyPressEvent(event, index) {
+		const { type } = event;
+		const { id } = event.target;
+		let nextIndex = index;
+		let isHandled = false;
+
+		if (type === 'keydown') {
+			// const node = event.currentTarget;
+
+			switch (event.keyCode) {
+				// next item
+				case KEYCODE.DOWN:
+				case KEYCODE.RIGHT:
+					// if index is equal to last item then set 0 else ++
+					nextIndex = (index === this.model.radioDetails.length - 1) ? 0 : index + 1;
+					isHandled = true;
+
+					break;
+				// previous item
+				case KEYCODE.UP:
+				case KEYCODE.LEFT:
+					// if index is equal to 0 item then set length -1 else --
+					nextIndex = (index === 0) ? this.model.radioDetails.length - 1 : index - 1;
+					isHandled = true;
+					break;
+
+				// for Narrator selection
+				case KEYCODE.SPACE:
+					isHandled = true;
+					break;
+			}
+
+			if (isHandled) {
+				const radio = this.setNodeActive(nextIndex);
+				this.invokeSelectionChangeEvent(radio);
+				event.preventDefault();
+				event.stopPropagation();
+			}
+		}
+	}
+
+	private invokeSelectionChangeEvent(radio: UiRoundedRectangleRadioModel) {
+		this.selectionChange.emit(radio);
 	}
 }

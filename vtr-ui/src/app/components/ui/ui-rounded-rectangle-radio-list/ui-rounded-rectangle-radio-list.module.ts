@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { MetricsModule } from 'src/app/services/metric/metrics.module';
 import { FormsModule } from '@angular/forms';
 import { UiRoundedRectangleRadioListComponent } from './ui-rounded-rectangle-radio-list.component';
+
 @NgModule({
 	declarations: [
 		UiRoundedRectangleRadioListComponent
@@ -10,9 +11,9 @@ import { UiRoundedRectangleRadioListComponent } from './ui-rounded-rectangle-rad
 	imports: [
 		CommonModule,
 		FormsModule,
-		MetricsModule,
+		MetricsModule
 	],
-	exports:[
+	exports: [
 		UiRoundedRectangleRadioListComponent
 	]
 })

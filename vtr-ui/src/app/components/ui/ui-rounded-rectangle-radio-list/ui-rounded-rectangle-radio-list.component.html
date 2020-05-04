@@ -45,23 +45,23 @@
 </div> -->
 
 <div class="vtr-ui-rounded-rectangle-radio-list">
-
 	<div role="radiogroup"
 		class="radio-group"
 		[id]="model.groupName">
 		<ng-template ngFor
 			let-item
 			[ngForOf]="model.radioDetails"
-			let-i="index">
-			<div role="radio"
-				[id]="item.componentId"
-				[attr.aria-checked]="item.isChecked"
-				[attr.aria-readonly]="item.isReadOnly"
-				(click)="onClick($event)"
-				(keydown)="onClick($event)"
-				[tabindex]="item.isChecked ? 0 : -1">
-				{{item.componentId}}
-			</div>
+			let-index="index">
+				<div role="radio"
+					#radioRef
+					[id]="item.componentId"
+					[attr.aria-checked]="item.isChecked"
+					[attr.aria-readonly]="item.isReadOnly"
+					(click)="onClick($event)"
+					(keydown)="onKeyDown($event, index)"
+					[tabindex]="item.isChecked ? 0 : -1">
+					{{item.componentId}}
+				</div>
 		</ng-template>
 	</div>
 </div>
