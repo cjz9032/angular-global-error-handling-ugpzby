@@ -113,6 +113,7 @@
 		color: $grey_dark;
 		text-decoration: underline;
 		cursor: pointer;
+		border: 0.1rem solid transparent;
 		@media #{$black-on-white} {
 			color: $high-contrast-blue;
 		}
@@ -120,8 +121,7 @@
 			color: $yellow;
 		}
 		&:focus {
-			@include outline-blue;
-			outline-offset: 0;
+			@include outline-border-blue;
 		}
 	}
 	.optimize {
