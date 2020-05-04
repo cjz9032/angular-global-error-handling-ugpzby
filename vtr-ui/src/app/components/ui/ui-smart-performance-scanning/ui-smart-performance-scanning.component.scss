@@ -441,22 +441,26 @@
 	}
 	.labels {
 		.badge {
-			font-size: 1.2rem;
+			font-size: 1rem;
+			line-height: 1.2rem;
 			margin-bottom: 0.6rem;
 		}
 		.badge-primary{
 			position: relative;
-			height: 2rem;
+			height: 1.8rem;
+			font-size: 1rem;
+			line-height: 1.2rem;
+			background: $menu_hover;
 			&::after {
 				content: "";
 				position: absolute;
-				top:1px;
-				right:-7px;
-				width: 0px;
-				height: 0px;
-				border-top: 7px solid transparent;
-				border-bottom: 7px solid transparent;
-				border-left: 7px solid $main;
+				top:0;
+				right:-0.8rem;
+				width: 0;
+				height: 0;
+				border-top: 9px solid transparent;
+				border-bottom: 9px solid transparent;
+				border-left: 9px solid $menu_hover;
 			}
 		}
 		.badge-light {
@@ -526,20 +530,20 @@
 	overflow: hidden;
 	vertical-align: middle;
 	-webkit-mask-image: linear-gradient(transparent, white, white, white, transparent);
-	mask-image: linear-gradient(transparent, white, white, white, transparent);
+	mask-image: linear-gradient(white, white, white, white, transparent);
 	mask-type: luminance;
 	mask-mode: alpha;
 	position: relative;
 	left: 3rem;
-	&::after {
-		content: '';
-		position: absolute;
-		height: 50%;
-		width: 100%;
-		bottom: 0;
-		left: 0;
-		background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
-	}
+	// &::after {
+	// 	content: '';
+	// 	position: absolute;
+	// 	height: 50%;
+	// 	width: 100%;
+	// 	bottom: 0;
+	// 	left: 0;
+	// 	background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+	// }
 	.ms-slider__words {
 		display: inline-block;
 		margin: 0;
@@ -564,23 +568,27 @@
 
 @keyframes wordSlider {
 	0%,
-	20% {
+	16.6% {
 		transform: translateY(0%);
 	}
-	21%,
-	40% {
-		transform: translateY(-20%);
+	17%,
+	33.6% {
+		transform: translateY(-16.6%);
 	}
-	41%,
-	60% {
-		transform: translateY(-40%);
+	34%,
+	50.6% {
+		transform: translateY(-33.6%);
 	}
-	61%,
-	80% {
-		transform: translateY(-60%);
+	51%,
+	67.6% {
+		transform: translateY(-50.6%);
 	}
-	81%,
+	68%,
+	84.6% {
+		transform: translateY(-67.6%);
+	}
+	85%,
 	100% {
-		transform: translateY(-80%);
+		transform: translateY(-85%);
 	}
 }

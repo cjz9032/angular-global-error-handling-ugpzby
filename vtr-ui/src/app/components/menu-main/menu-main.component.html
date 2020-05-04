@@ -60,7 +60,7 @@
 					<span role="text"
 						*ngIf="machineFamilyName">{{machineFamilyName}}</span>
 					<span class="warranty-icon">
-						<vtr-ui-header-warranty *ngIf="machineFamilyName"
+						<vtr-ui-header-warranty (tabFocusElem)="onTabFocusElem($event)" *ngIf="machineFamilyName"
 							[pageParent]="'NavBar'"></vtr-ui-header-warranty>
 					</span>
 				</div>
@@ -106,6 +106,7 @@
 							href="javascript:void(0)"
 							(click)="onMenuItemClick(item)"
 							(keydown.enter)="onMenuItemClick(item); menuItemKeyDown(item.path)"
+							(focus)="closeAllDD()"
 							*ngIf="item.label | translate">
 							<div class="icon">
 								<fa-icon *ngIf="item.icon[0]!=='icomoon'"

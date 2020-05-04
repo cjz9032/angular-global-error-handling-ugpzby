@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { WarrantyService } from 'src/app/services/warranty/warranty.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { WarrantyService } from 'src/app/services/warranty/warranty.service';
 export class UiHeaderWarrantyComponent implements OnInit {
 
 	@Input() pageParent: string;
-
+	@Output() tabFocusElem: EventEmitter<number> = new EventEmitter();
 	warrantyData: any;
 
 	constructor(
@@ -36,6 +36,10 @@ export class UiHeaderWarrantyComponent implements OnInit {
 				};
 			}
 		});
+	}
+
+	activeTabFocus($event:any) {
+		this.tabFocusElem.emit($event);
 	}
 
 }

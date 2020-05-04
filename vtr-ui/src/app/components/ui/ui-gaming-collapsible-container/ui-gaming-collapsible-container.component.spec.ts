@@ -87,10 +87,15 @@ describe('UiGamingCollapsibleContainerComponent', () => {
 	}));
 
 	it('Checking call have been made for optionSelected function', fakeAsync(() => {
+		fixture.detectChanges();
 		component.optionSelected(Option);
 		spyOn(component, 'optionSelected');
 		component.optionSelected(Option);
+		spyOn(component, 'focusElement');
+		tick(100);
+		component.focusElement();
 		expect(component.optionSelected).toHaveBeenCalled();
+
 	}));
 
 	it('Checking call have been made for changeDescription function', fakeAsync(() => {

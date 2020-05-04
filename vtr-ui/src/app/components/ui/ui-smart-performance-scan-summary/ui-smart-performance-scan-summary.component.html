@@ -2278,23 +2278,6 @@
 									<div class="vtr-ui-smart-performance-scan-summary" *ngIf="isSubscribed">
 										<div class="vtr-scan-information mt-5">
 											<div class="scan-summary-block">
-												<!-- <div class="row px-0">
-												<div class="navbar bkg-transparent justify-content-between w-100">
-													<div class="title-block col">
-														<h3>Scan summary:</h3>
-														<p>we are constantly tuning your computer</p>
-													</div>
-													<div class="summary-period col-auto pr-0 py-0">
-														<ul class="list-group list-group-horizontal">
-															<li class="list-group-item">Annual</li>
-															<li class="list-group-item">quarterly</li>
-															<li class="list-group-item">custom</li>
-															<li class="list-group-item cl">
-																<fa-icon [icon]="['fal', 'calendar-alt']"></fa-icon>October 8th 2019</li>
-														</ul>
-													</div>
-												</div>
-											</div> -->
 												<div class="row px-0">
 													<div class="navbar bkg-transparent justify-content-between w-100">
 
@@ -2431,10 +2414,9 @@
 																<div class="box-title d-flex  justify-content-between">
 																	<h5>{{'smartPerformance.subscriberScanHomePage.scanSummary.tune' |translate }}</h5>
 																	<div class="icon icon-performance"></div>
-																</div>
-																
+																</div>																
 																<div class="value">
-																	{{historyRes.Tune || 0}}<span>MB</span>
+																	{{formatMemorySize(historyRes.Tune) || 0}} <span>{{sizeExtension}}</span>
 																</div>
 																<p>{{'smartPerformance.subscriberScanHomePage.scanSummary.tuneSummary' |translate }}
 																</p>
@@ -2504,7 +2486,11 @@
 																			<div class="container-fluid">
 																				<div class="row align-items-center">
 																					<div class="col-1 text-center">
-																						<fa-icon class="chevron-down"
+																						<fa-icon *ngIf="toggleValue === ind" class="chevron-up"
+																							[icon]="['fal', 'chevron-up']"
+																							(click)="expandRow(ind)">
+																						</fa-icon>
+																						<fa-icon *ngIf="toggleValue != ind" class="chevron-down"
 																							[icon]="['fal', 'chevron-down']"
 																							(click)="expandRow(ind)">
 																						</fa-icon>
@@ -2514,7 +2500,7 @@
 																						<span> -
 																							{{item.scanruntime | date: 'h:mm a'}}</span>
 																					</div>
-																					<div class="col-2">{{item.fixcount}}
+																					<div class="col-2">{{item.fixcount}} Fixes 
 																					</div>
 																					<div class="col-2 px-2"
 																						*ngIf="item.status">
@@ -2539,7 +2525,7 @@
 																				</div>
 																				<div class="row pl-0 pr-0" *ngIf="toggleValue === ind">
 																					<div class="col-12 pl-0 pr-0">
-																						<div class="row pl-0 pr-0">
+																						<div class="row pl-0 pr-0 pt-3">
 																							<div class="col-1">&nbsp;</div>
 																							<div class="scan-items col-7">
 																								<div class="row">
