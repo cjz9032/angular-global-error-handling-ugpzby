@@ -253,19 +253,19 @@ export class UiSmartPerformanceComponent implements OnInit {
 			}
 		}
 	}
-	ScanNow() {
+	scanNow() {
 		if (this.smartPerformanceService.isShellAvailable) {
 			this.smartPerformanceService
 				.getReadiness()
 				.then((getReadinessFromService: any) => {
 					this.logger.info('ScanNow.getReadiness.then', getReadinessFromService);
 					if (getReadinessFromService) {
-						this.isScanning = true;
 						this.shellServices.registerEvent(EventTypes.smartPerformanceScanStatus,
 							event => {
 								this.updateScheduleScanStatus(event);
 							}
-						);
+							);
+						this.isScanning = true;
 						this.scanAndFixInformation();
 					}
 					else {
