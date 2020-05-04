@@ -361,20 +361,21 @@
 							}
 						}
 						.icon {
-							font-size: 2.6rem;
-							margin-right: 0.8rem;
+							font-size: 2.2rem;
+							margin-right: 0.2rem;
 							color: $menu_hover;
-							@media #{$breakpoint_xl} {
-								font-size: $fontsize_xl;
-								margin-right: 0.5rem;
-							}
+							// @media #{$breakpoint_xl} {
+							// 	font-size: 2.2rem;
+							// 	margin-right: 0.5rem;
+							// }
 							@media #{$breakpoint_sm}{
-								font-size: $fontsize_md;
+								font-size: $fontsize_sm;
 								margin-right: 0.2rem;
+								margin-left:0.1rem;
 							}
 						}
 						p {
-							font-size: 1.1rem;
+							font-size: 1.2rem;
 							font-weight: $weight_medium;
 							max-width: 6rem;
 							margin-top: 0.6rem;

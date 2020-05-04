@@ -433,25 +433,25 @@ vtr-ui-smart-performance-scan-summary {
 									align-items: center;
 								}
 								 p{
-                                    font-size: 1.1rem;
+                                    font-size: 1.2rem;
                                     max-width: 8.1rem;
                                     margin-top: 0.6rem;
 									line-height: 1.2rem;
 									@media #{$breakpoint_sm}{
-										font-size: 1rem;
+										font-size: 0.8rem;
 										line-height: 1.2rem;
 										max-width: 100%;
 										margin-top: 0;
 									}
                                 }
                                 .icon {
-                                    font-size: 2.6rem;
-                                    margin-right: 0.8rem;
+                                    font-size: 2.2rem;
+                                    margin-right: 0.2rem;
 									color: $main;
-									@media #{$breakpoint_xl} {
-										font-size: $fontsize_xl;
-										margin-right: 0.5rem;
-									}
+									// @media #{$breakpoint_xl} {
+									// 	font-size: 2.2rem;
+									// 	margin-right: 0.5rem;
+									// }
 									@media #{$breakpoint_sm}{
 										font-size: $fontsize_xs;
 										margin-right: 0.2rem;
