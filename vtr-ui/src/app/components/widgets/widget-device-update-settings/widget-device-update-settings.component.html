@@ -41,7 +41,7 @@
 											</a>
 											<a tabindex="-1" href="javascript:void();" *ngIf="item.isSwitchVisible"
 												class="d-flex no-pointer">
-												<vtr-ui-toggle (toggle)="onToggleOnOff($event)"
+												<vtr-ui-toggle (toggle)="onToggleOnOff($event)" (runFocusElem)="onFocusEnabled($event,in,item)"
 													[focus]="item.focus || false" [label]="item.ariaLabel"
 													[toggleId]="item.id" [name]="item.type" [onOffSwitchId]="item.name"
 													[value]="item.isChecked" [notChange]="item.readonly" [parentId]="'Gaming.Dashboard'">

@@ -12,6 +12,7 @@ export class UiToggleComponent implements OnInit, OnDestroy, OnChanges {
 	@Output() toggle: EventEmitter<any> = new EventEmitter();
 	@Output() toggleStatus: EventEmitter<any> = new EventEmitter();
 	@Output() hideColordisk: EventEmitter<any> = new EventEmitter();
+	@Output() runFocusElem: EventEmitter<any> = new EventEmitter();
 	@Input() value = true;
 	@Input() onOffSwitchId: string;
 	@Input() notChange = false;
@@ -89,6 +90,10 @@ export class UiToggleComponent implements OnInit, OnDestroy, OnChanges {
 		   document.getElementById("colorPicker").style.display = "none"; 
 		   this.hideColordisk.emit();
 		}
+	}
+
+	focusEnabled($event: any) {
+		this.runFocusElem.emit($event);
 	}
 
 }

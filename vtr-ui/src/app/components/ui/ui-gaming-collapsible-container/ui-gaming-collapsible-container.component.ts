@@ -10,6 +10,8 @@ import { Component, OnInit, Input, ElementRef, Output, EventEmitter, OnChanges, 
 })
 export class UiGamingCollapsibleContainerComponent implements OnInit {
 	@ViewChild('focusDropdown', { static: false }) focusDropdown: ElementRef;
+	@ViewChild('dropdownLightingEle', { static: false })
+	dropdownEle: ElementRef;
 	@Input() public options;
 	@Input() ariaLabel: any;
 	@Output() public change = new EventEmitter<any>();
@@ -20,7 +22,8 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 	public currentOption: string;
 	public currentDescription: string;
 	public selectedDescription: string;
-
+	intervalObj: any;
+	isItemsFocused = false;
 
 	constructor(
 		private elementRef: ElementRef,
@@ -94,18 +97,25 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 			}
 		}
 	}
-	public keyupTabFn(event, i) {
-		if ((this.options.dropOptions.length - 1) === i) {
-			if (event.keyCode === 9) {
-				this.showOptions = false;
-				this.focusElement();
-			}
-		}
-	}
 
 	focusElement() {
 		setTimeout(() => {
 			this.focusDropdown.nativeElement.focus();
 		}, 100);
+	}
+
+	itemsFocused() {
+		if (this.showOptions && !this.isItemsFocused) {
+			this.intervalObj = setInterval(() => {
+				if (this.dropdownEle) {
+					if (this.dropdownEle.nativeElement.querySelectorAll('li:focus').length === 0) {
+						this.showOptions = false;
+						this.isItemsFocused = false;
+						clearInterval(this.intervalObj);
+					}
+				}
+			}, 100);
+			this.isItemsFocused = true;
+		}
 	}
 }
