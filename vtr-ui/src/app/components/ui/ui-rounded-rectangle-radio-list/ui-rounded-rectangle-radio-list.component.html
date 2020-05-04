@@ -52,16 +52,20 @@
 			let-item
 			[ngForOf]="model.radioDetails"
 			let-index="index">
-				<div role="radio"
-					#radioRef
-					[id]="item.componentId"
-					[attr.aria-checked]="item.isChecked"
-					[attr.aria-readonly]="item.isReadOnly"
-					(click)="onClick($event)"
-					(keydown)="onKeyDown($event, index)"
-					[tabindex]="item.isChecked ? 0 : -1">
-					{{item.componentId}}
-				</div>
+			<div role="radio"
+				#radioRef
+				[id]="item.componentId"
+				[attr.aria-checked]="item.isChecked"
+				[attr.aria-readonly]="item.isReadOnly"
+				(click)="onClick($event)"
+				(keydown)="onKeyDown($event, index)"
+				[tabindex]="item.isChecked ? 0 : -1"
+				vtrMetrics
+				[metricsEvent]="metricsEvent"
+				[metricsItem]="item.componentId"
+				[metricsValue]="item.isChecked">
+				{{item.label}}
+			</div>
 		</ng-template>
 	</div>
 </div>

@@ -19,6 +19,8 @@ export class UiRoundedRectangleRadioListComponent implements OnInit {
 	@Input() disabled = false;
 	@Input() name: string;
 	@Input() isLarge = false;
+	@Input() metricsEvent = 'ItemClick';
+
 	@Output() selectionChange = new EventEmitter<UiRoundedRectangleRadioModel>();
 
 	@ViewChildren('radioRef') radioButtons: QueryList<any>;
@@ -26,9 +28,9 @@ export class UiRoundedRectangleRadioListComponent implements OnInit {
 	public model = new UiRoundedRectangleRadioListModel(
 		'pizza-radio-group',
 		[
-			new UiRoundedRectangleRadioModel(1, 'regular-crust', false, false),
-			new UiRoundedRectangleRadioModel(2, 'thin-crust', false, true),
-			new UiRoundedRectangleRadioModel(3, 'deep-dish', false, false),
+			new UiRoundedRectangleRadioModel('regular-crust', false, false, 'regular crust'),
+			new UiRoundedRectangleRadioModel('thin-crust', false, true, 'thin crust'),
+			new UiRoundedRectangleRadioModel('deep-dish', false, false, 'deep dish'),
 		]
 	);
 

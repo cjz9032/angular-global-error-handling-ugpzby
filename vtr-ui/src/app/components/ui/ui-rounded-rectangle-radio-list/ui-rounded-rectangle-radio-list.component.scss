@@ -1,18 +1,51 @@
 @import "../../../app.theme";
 
 .vtr-ui-rounded-rectangle-radio-list {
-	.radio-group {
-		[role="radio"] {
-			display: block;
-			position: relative;
-			margin: 0.5em;
-			padding-left: 20px;
-			border: thin transparent solid;
+	$radio-gutter: 0.3rem;
+	$radio-control-width: 25rem;
+	$radio-control-height: 5rem;
+	$radio-indicator-size: 2rem;
+	$radio-indicator-inner-size: 1.4rem;
+	$radio-text-height: 2rem;
+	$radio-indicator-top-position: (($radio-control-height / 2) - ($radio-indicator-size / 2)) - $radio-gutter;
+	$radio-text-top-position: (($radio-control-height / 2) - $radio-text-height) + $radio-gutter;
+	$radio-text-left-position: $radio-indicator-top-position + $radio-indicator-size + 0.8;
+	$radio-indicator-inner-position: $radio-indicator-inner-size + 0.1;
 
-			&:focus{
-				outline: red solid 1px;
-				outline-offset: 3px;
-			}
+	padding: $radio-gutter 0 0 $radio-gutter;
+	.radio-group {
+		display: flex;
+		flex-direction: row;
+		[role="radio"] {
+			// box-sizing: border-box;
+			position: relative;
+			padding-top: $radio-text-top-position;
+			padding-left: $radio-text-left-position;
+			border: 1px solid $grey_light;
+			background: $grey_lighter;
+			width: $radio-control-width;
+			height: $radio-control-height;
+			border-radius: 20rem;
+			margin-right: 1.5rem;
+			margin-bottom: 1rem;
+			cursor: pointer;
+			outline: none;
+			font-size: $base;
+
+			// &:focus {
+			// 	outline: none;
+			// 	&:before {
+			// 		content: "";
+			// 		display: block;
+			// 		position: absolute;
+			// 		left: -0.6rem;
+			// 		top: -0.6rem;
+			// 		border-radius: 500px;
+			// 		width: calc(100% + 1.2rem);
+			// 		height: calc(100% + 1.2rem);
+			// 		border: 0.1rem solid $menu_hover;
+			// 	}
+			// }
 		}
 
 		/* This creates the visuals for the radio buttons */
@@ -25,173 +58,178 @@
 		}
 
 		[role="radio"]::before {
-			top: 0;
-			left: 0;
-			width: 14px;
-			height: 14px;
-			border: 1px solid #000;
-			background: #fff;
+			top: $radio-indicator-top-position;
+			left: $radio-indicator-top-position;
+			width: $radio-indicator-size;
+			height: $radio-indicator-size;
+			border: 1px solid $grey_dark;
+			background: $light;
 		}
 
-		[role="radio"][aria-checked="true"]::after {
-			top: 2px;
-			left: 2px;
-			border: 5px solid #000;
-			content: "";
-		}
-	}
-
-	.rounded-rectangle-radio {
-		box-sizing: border-box;
-		background: transparent linear-gradient(270deg, $solitude 0%, $grey_lighter 100%) 0% 0% no-repeat padding-box;
-		display: inline-block;
-		margin-right: 1.5rem;
-		margin-bottom: 1rem;
-		position: relative;
-		width: 25rem;
-		height: 6.5rem;
-		border-radius: 20rem;
-		cursor: pointer;
-		outline: none;
-
-		&:focus {
-			outline: none;
-			&:before {
+		[role="radio"][aria-checked="true"] {
+			border: 1px solid $grey_dark;
+			&::after {
+				top: $radio-indicator-inner-position;
+				left: $radio-indicator-inner-position;
+				background-color: $grey_darker;
+				width: $radio-indicator-inner-size;
+				height: $radio-indicator-inner-size;
 				content: "";
-				display: block;
-				position: absolute;
-				left: -0.6rem;
-				top: -0.6rem;
-				border-radius: 500px;
-				width: calc(100% + 1.2rem);
-				height: calc(100% + 1.2rem);
-				border: 0.2rem solid $menu_hover;
-			}
-		}
-
-		@media #{$breakpoint_xl} {
-			width: 20rem;
-		}
-
-		label {
-			box-sizing: border-box;
-			padding: 0rem;
-			width: 100%;
-			height: 100%;
-			display: block;
-			position: relative;
-			z-index: 2;
-			overflow: hidden;
-			.label {
-				// @media #{$mediaquery_X4} {
-				// 	padding-right: .5rem;
-				// 	font-size: 1rem;
-				// 	position: absolute;
-				// 	top:1.5rem;
-				// 	left:5rem;
-
-				// }
-				position: absolute;
-				top: 48.5%;
-				left: 6rem;
-				color: $shade_blue;
-				font-size: $fontsize_xs;
-				font-weight: $weight_light;
-				word-wrap: break-word;
-				word-break: break-all;
-				padding-right: 1rem;
-				transform: translateY(-50%);
-			}
-
-			.icon-circle {
-				font-size: 3rem;
-				color: $grey_darker;
-				top: 1.5rem;
-				left: 1.3rem;
-				.checked-circle {
-					color: $menu_hover;
-				}
-				@media #{$white-on-black} {
-					background-color: $dark;
-					border: none;
-					color: $highlight_bright;
-				}
-				@media #{$black-on-white} {
-					background-color: $light;
-					border: none;
-					color: $high-contrast-white-textselected;
-				}
-			}
-
-			fa-icon.icon {
-				position: absolute;
-				left: 9rem;
-				top: 9rem;
-				font-size: 3.2rem;
-				color: $menu_hover;
-			}
-
-			span.question {
-				position: absolute;
-				left: 9.5rem;
-				top: 9.3rem;
-				font-size: 1.8rem;
-				color: $main;
-			}
-		}
-
-		input[type="radio"]:not(:checked) + label::after {
-			opacity: 0;
-			transition: all 1s ease;
-		}
-		input:checked + label::after {
-			opacity: 1;
-		}
-
-		input {
-			position: absolute;
-			visibility: hidden;
-		}
-
-		&.border-blue {
-			border: 0.2rem solid $dim_gray;
-			// transition: all 50ms ease-in;
-			@media #{$black-on-white} {
-				border: 0.2rem solid $high-contrast-white-textselected;
-			}
-		}
-		&.border-grey {
-			border: 0.2rem solid $note_border;
-			// transition: all 50ms ease-in;
-			@media #{$black-on-white} {
-				border: none;
-			}
-		}
-
-		&.border-checked-disabled {
-			border: 0.2rem solid #667481;
-			opacity: 0.7;
-			pointer-events: none;
-			cursor: default;
-			label {
-				.icon-circle {
-					color: $grey_darker;
-				}
-			}
-		}
-		&.border-disabled {
-			border: 0.2rem solid #e6eaeb;
-			opacity: 0.7;
-			pointer-events: none;
-			cursor: default;
-			label {
-				.icon-circle {
-					color: $grey_darker;
-				}
 			}
 		}
 	}
-	.large-width {
-		width: 29rem;
-	}
+
+	// .rounded-rectangle-radio {
+	// 	box-sizing: border-box;
+	// 	background: transparent linear-gradient(270deg, $solitude 0%, $grey_lighter 100%) 0% 0% no-repeat padding-box;
+	// 	display: inline-block;
+	// 	margin-right: 1.5rem;
+	// 	margin-bottom: 1rem;
+	// 	position: relative;
+	// 	width: 25rem;
+	// 	height: 6.5rem;
+	// 	border-radius: 20rem;
+	// 	cursor: pointer;
+	// 	outline: none;
+
+	// 	&:focus {
+	// 		outline: none;
+	// 		&:before {
+	// 			content: "";
+	// 			display: block;
+	// 			position: absolute;
+	// 			left: -0.6rem;
+	// 			top: -0.6rem;
+	// 			border-radius: 500px;
+	// 			width: calc(100% + 1.2rem);
+	// 			height: calc(100% + 1.2rem);
+	// 			border: 0.2rem solid $menu_hover;
+	// 		}
+	// 	}
+
+	// 	@media #{$breakpoint_xl} {
+	// 		width: 20rem;
+	// 	}
+
+	// 	label {
+	// 		box-sizing: border-box;
+	// 		padding: 0rem;
+	// 		width: 100%;
+	// 		height: 100%;
+	// 		display: block;
+	// 		position: relative;
+	// 		z-index: 2;
+	// 		overflow: hidden;
+	// 		.label {
+	// 			// @media #{$mediaquery_X4} {
+	// 			// 	padding-right: .5rem;
+	// 			// 	font-size: 1rem;
+	// 			// 	position: absolute;
+	// 			// 	top:1.5rem;
+	// 			// 	left:5rem;
+
+	// 			// }
+	// 			position: absolute;
+	// 			top: 48.5%;
+	// 			left: 6rem;
+	// 			color: $shade_blue;
+	// 			font-size: $fontsize_xs;
+	// 			font-weight: $weight_light;
+	// 			word-wrap: break-word;
+	// 			word-break: break-all;
+	// 			padding-right: 1rem;
+	// 			transform: translateY(-50%);
+	// 		}
+
+	// 		.icon-circle {
+	// 			font-size: 3rem;
+	// 			color: $grey_darker;
+	// 			top: 1.5rem;
+	// 			left: 1.3rem;
+	// 			.checked-circle {
+	// 				color: $menu_hover;
+	// 			}
+	// 			@media #{$white-on-black} {
+	// 				background-color: $dark;
+	// 				border: none;
+	// 				color: $highlight_bright;
+	// 			}
+	// 			@media #{$black-on-white} {
+	// 				background-color: $light;
+	// 				border: none;
+	// 				color: $high-contrast-white-textselected;
+	// 			}
+	// 		}
+
+	// 		fa-icon.icon {
+	// 			position: absolute;
+	// 			left: 9rem;
+	// 			top: 9rem;
+	// 			font-size: 3.2rem;
+	// 			color: $menu_hover;
+	// 		}
+
+	// 		span.question {
+	// 			position: absolute;
+	// 			left: 9.5rem;
+	// 			top: 9.3rem;
+	// 			font-size: 1.8rem;
+	// 			color: $main;
+	// 		}
+	// 	}
+
+	// 	input[type="radio"]:not(:checked) + label::after {
+	// 		opacity: 0;
+	// 		transition: all 1s ease;
+	// 	}
+	// 	input:checked + label::after {
+	// 		opacity: 1;
+	// 	}
+
+	// 	input {
+	// 		position: absolute;
+	// 		visibility: hidden;
+	// 	}
+
+	// 	&.border-blue {
+	// 		border: 0.2rem solid $dim_gray;
+	// 		// transition: all 50ms ease-in;
+	// 		@media #{$black-on-white} {
+	// 			border: 0.2rem solid $high-contrast-white-textselected;
+	// 		}
+	// 	}
+	// 	&.border-grey {
+	// 		border: 0.2rem solid $note_border;
+	// 		// transition: all 50ms ease-in;
+	// 		@media #{$black-on-white} {
+	// 			border: none;
+	// 		}
+	// 	}
+
+	// 	&.border-checked-disabled {
+	// 		border: 0.2rem solid #667481;
+	// 		opacity: 0.7;
+	// 		pointer-events: none;
+	// 		cursor: default;
+	// 		label {
+	// 			.icon-circle {
+	// 				color: $grey_darker;
+	// 			}
+	// 		}
+	// 	}
+	// 	&.border-disabled {
+	// 		border: 0.2rem solid #e6eaeb;
+	// 		opacity: 0.7;
+	// 		pointer-events: none;
+	// 		cursor: default;
+	// 		label {
+	// 			.icon-circle {
+	// 				color: $grey_darker;
+	// 			}
+	// 		}
+	// 	}
+	// }
+	// .large-width {
+	// 	width: 29rem;
+	// }
 }

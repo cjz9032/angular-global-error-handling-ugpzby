@@ -16,9 +16,6 @@ export class UiCustomSwitchComponent implements OnInit {
 	@Input() label: string;
 	@Input() ariaLabel: string;
 	@Input() metricsEvent = 'ItemClick';
-	@Input() metricsParent: string;
-	@Input() metricsItem: string;
-	@Input() metricsValue: any;
 
 	constructor() { }
 
