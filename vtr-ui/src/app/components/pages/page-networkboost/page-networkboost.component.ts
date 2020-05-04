@@ -183,14 +183,10 @@ export class PageNetworkboostComponent implements OnInit {
 
 	hiddenScroll(action: boolean) {
 		const selectorVtr = (document.getElementsByClassName('vtr-app')[0] as HTMLElement);
+		selectorVtr.style.overflowY = 'auto';
 		if (action) {
 			selectorVtr.style.overflowY = 'hidden';
 			selectorVtr.style.overflowX = 'hidden';
-		} else {
-			if (selectorVtr.style.overflowY === 'hidden') {
-				selectorVtr.style.overflowY = 'auto';
-				selectorVtr.style.overflowX = 'hidden';
-			}
 		}
 	}
 
