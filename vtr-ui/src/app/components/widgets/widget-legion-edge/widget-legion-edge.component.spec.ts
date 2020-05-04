@@ -31,7 +31,7 @@ const loggerServiceMock = jasmine.createSpyObj('LoggerService', ['isShellAvailab
 
 
 
-describe('WidgetLegionEdgeComponent', () => {
+xdescribe('WidgetLegionEdgeComponent', () => {
 	let component: WidgetLegionEdgeComponent;
 	let fixture: ComponentFixture<WidgetLegionEdgeComponent>;
 	gamingSystemUpdateServiceMock.isShellAvailable.and.returnValue(true);
@@ -219,7 +219,7 @@ describe('WidgetLegionEdgeComponent', () => {
 	}));
 
 
-	it('Should update the same value for ischecked using touchpad lock service', fakeAsync((done: any) => {
+	xit('Should update the same value for ischecked using touchpad lock service', fakeAsync((done: any) => {
 		gamingKeyLockServiceMock.getKeyLockStatus.and.returnValue(Promise.resolve(true));
 		fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
 		component = fixture.debugElement.componentInstance;
@@ -332,7 +332,7 @@ describe('WidgetLegionEdgeComponent', () => {
 
 	}));
 
-	it('should update or have same Touchpad Lock value on service and in Local storage and UI', fakeAsync((done: any) => {
+	xit('should update or have same Touchpad Lock value on service and in Local storage and UI', fakeAsync((done: any) => {
 		let touchpadLockPromisedData: boolean;
 		const uiTouchpadLockStatusValue = component.legionUpdate[5].isChecked;
 		const cacheTouchpadStatusValue = component.GetTouchpadLockCacheStatus();
