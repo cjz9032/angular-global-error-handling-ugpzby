@@ -70,8 +70,9 @@
 			color: #4579f0;
 			font-size: 2rem;
 			padding: 0 2.5rem;
+			border: 0.1rem solid transparent;
 			&:focus {
-				@include outline-blue;
+				@include outline-border-blue;
 			}
 		}
 	}
