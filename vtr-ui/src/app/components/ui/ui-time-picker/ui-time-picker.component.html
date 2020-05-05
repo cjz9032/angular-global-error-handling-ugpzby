@@ -31,7 +31,7 @@
 										attr.aria-label="hours">
 										{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit1' | translate | uppercase }}
 									</p>
-									<span class="" role="text" 
+									<span class="" role="text"
 									id="{{linkId}}-hours-value">{{hours[hour]}}</span>
 								</div>
 								<div class="time-headings">
@@ -41,8 +41,8 @@
 										attr.aria-label="minutes">
 										{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit2' | translate | uppercase }}
 									</p>
-									<span class="" 
-									role="text" 
+									<span class=""
+									role="text"
 									id="{{linkId}}-minutes-value">{{minutes[minute]}}</span>
 								</div>
 								<div class="time-headings">
@@ -52,8 +52,8 @@
 										attr.aria-label="amPm">
 										{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit3' | translate }}
 									</p>
-									<span class="" 
-									role="text" 
+									<span class=""
+									role="text"
 									id="{{linkId}}-amPm-value">{{amPms[amPm] | translate}}</span>
 								</div>
 
@@ -193,6 +193,7 @@
 									role="button"
 									(click)="clearSettings()"
 									(keydown.enter)="[clearSettings(),combo.focus()]"
+									(keydown.Tab)="[clearSettings(),combo.focus()]"
 									id="smartStandby-{{linkId}}-close-icon"
 									aria-label="'cancel'"></fa-icon>
 							</div>
