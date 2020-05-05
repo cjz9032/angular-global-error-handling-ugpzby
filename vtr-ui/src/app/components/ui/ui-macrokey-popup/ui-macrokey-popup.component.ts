@@ -39,9 +39,11 @@ export class UiMacrokeyPopupComponent implements OnInit {
 
 	hiddenScroll() {
 		const selectorVtr = (document.getElementsByClassName('vtr-app')[0] as HTMLElement);
+		selectorVtr.style.overflowX = 'hidden';
 		if (selectorVtr.style.overflowY === 'hidden') {
 			selectorVtr.style.overflowY = 'auto';
-			selectorVtr.style.overflowX = 'hidden';
+		}else{
+			selectorVtr.style.overflowY = 'hidden';
 		}
 	}
 }
