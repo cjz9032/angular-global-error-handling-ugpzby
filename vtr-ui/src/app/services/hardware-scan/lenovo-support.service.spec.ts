@@ -9,7 +9,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { LoggerService } from '../logger/logger.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 
-fdescribe('LenovoSupportService', () => {
+describe('LenovoSupportService', () => {
 	let service: LenovoSupportService;
 
 	// Mocked values returned by mocked services
