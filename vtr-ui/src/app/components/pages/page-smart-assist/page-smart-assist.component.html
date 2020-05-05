@@ -71,7 +71,7 @@
 										<div class="pl-4 border-bottom pb-4 ml-4"
 											*ngIf="!zeroTouchLoginShowAdvancedSection">
 											<span class="link-text mt-2 ml-4"
-												role="button"
+												role="link"
 												tabindex="0"
 												id="smartAssist-intelligentSecurity-zeroTouchLogin-showAdvSettings"
 												attr-aria-label="smartAssist.intelligentSecurity.zeroTouchLogin.showAdvSettings"
@@ -192,7 +192,7 @@
 											[ngClass]="{'zeroTouchHideAdv': intelligentSecurity.isZeroTouchLoginAdjustEnabled && !intelligentSecurity.isWindowsHelloRegistered}"
 											*ngIf="zeroTouchLoginShowAdvancedSection">
 											<span class="link-text mt-2 ml-4"
-												role="button"
+												role="link"
 												tabindex="0"
 												id="smartAssist-intelligentSecurity-zeroTouchLogin-hideAdvSettings"
 												attr.aria-label="smartAssist.intelligentSecurity.zeroTouchLogin.hideAdvSettings"
@@ -305,7 +305,7 @@
 										<div class="pl-4 border-bottom pb-4 ml-4"
 											*ngIf="!zeroTouchLockShowAdvancedSection">
 											<span class="link-text mt-2 ml-4"
-												role="button"
+												role="link"
 												tabindex="0"
 												id="smartAssist-intelligentSecurity-zeroTouchLock-showAdvSettings"
 												attr-aria-label="smartAssist.intelligentSecurity.zeroTouchLock.showAdvSettings"
@@ -449,7 +449,8 @@
 										<!-- distance sensitivity adjusting -- ideapad section -->
 										<div class="pl-5 bold-title-idea no-border-bottom pb-4"
 											*ngIf="zeroTouchLockShowAdvancedSection && zeroTouchPresenceLeaveDistanceAutoAdjustCapability">
-											<vtr-ui-row-switch [switchId]="'smartAssist-intelligentSecurity-zeroTouchLock-distanceSensitivityAutoAdjusting'"
+											<vtr-ui-row-switch
+												[switchId]="'smartAssist-intelligentSecurity-zeroTouchLock-distanceSensitivityAutoAdjusting'"
 												*ngIf="zeroTouchPresenceLeaveDistanceAutoAdjustCapability"
 												[title]="'device.smartAssist.intelligentSecurity.zeroTouchLock.distanceSensitivityAdjusting.title' | translate"
 												[isSwitchVisible]="true"
@@ -511,7 +512,7 @@
 											[ngClass]="{'zeroTouchHideAdv': hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust}"
 											*ngIf="zeroTouchLockShowAdvancedSection">
 											<span class="link-text mt-2 ml-4"
-												role="button"
+												role="link"
 												tabindex="0"
 												id="smartAssist-intelligentSecurity-zeroTouchLock-hideAdvSettings"
 												attr.aria-label="smartAssist.intelligentSecurity.zeroTouchLock.hideAdvSettings"
