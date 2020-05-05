@@ -4,7 +4,7 @@
 	position: relative;
 	.widget-container {
 		border-radius: 2rem;
-		background: $gaming_dark;
+		background: $main_darkest;
 		padding: 0 2rem;
 		width: 66rem;
 		height: 23rem;
@@ -50,10 +50,23 @@
 			.monitor-speed {
 				position: absolute;
 				left: -19rem;
-				background-color: $gaming_dark;
+				background-color: $main_darkest;
 				width: 38rem;
 				height: 38rem;
 				border-radius: 50%;
+				&::after{
+					position: absolute;
+					content: " ";
+					height: 100%;
+					width: 100%;
+					width: 34.5rem;
+					height: 34.5rem;
+					top: 1.75rem;
+					left: 1.75rem;
+					background: url("~/assets/images/smart-performance/smart-speed-ring-cover.svg") 50% no-repeat;
+					background-size: 100%;
+					z-index: 1;
+				}
 
 				.speed-ring {
 					// background-color: $highlight;
@@ -67,7 +80,8 @@
 					top: 1.75rem;
 					left: 1.75rem;
 					border-radius: 50%;
-					border: 0.75rem solid $gaming_darkest;
+					border: 0.75rem solid $main_darkest;
+					z-index: 0;
 				}
 
 				.speed-mask {
@@ -84,7 +98,7 @@
 					}
 					.mask-obj {
 						overflow: hidden;
-						background-color: $gaming_dark;
+						background-color: $main_darkest;
 						width: 17.25rem;
 						height: 34.5rem;
 						position: absolute;
@@ -97,14 +111,14 @@
 							position: absolute;
 							left: 0;
 							border-radius: 50%;
-							background-color: $gaming_bg;
+							background-color: $shade_blue;
 						}
 					}
 					&.right {
 						left: 19rem;
 						.mask-obj {
-							background-color: $gaming_darkest;
-							content: "";
+							background-color: $main_darkest;
+							content: " ";
 							position: absolute;
 							width: 17.25rem;
 							height: 34.5rem;
@@ -121,11 +135,11 @@
 					position: absolute;
 					top: 6rem;
 					left: 6rem;
-					background-color: $gaming_dark;
+					background-color: $main_darkest;
 					width: 26rem;
 					height: 26rem;
 					border-radius: 50%;
-					border: 0.75rem solid $gaming_darkest;
+					//border: 0.75rem solid $gaming_darkest;
 					background-image: url("~/assets/images/smart-performance/smart-speed-needle.svg");
 					background-size: 90% 90%;
 					background-position: 50% 50%;
