@@ -2083,8 +2083,11 @@
                 "note": {
                     "description": "此功能在下列情況中無法運作：",
                     "description1": "省電功能模式已啟用。",
-                    "description2": "CPU 溫度過高。"
-                }
+                    "description2": "CPU 溫度過高。",
+                    "description3": "The device is set to Battery saving mode in \"Intelligent cooling\"."
+                },
+                "imageBefore": "Before",
+                "imageAfter": "After"
             },
             "antiTheft": {
                 "heading": "智慧型感應",

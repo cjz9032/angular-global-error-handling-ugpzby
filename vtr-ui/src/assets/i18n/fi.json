@@ -2083,8 +2083,11 @@
                 "note": {
                     "description": "Wi-Fi-toiminto ei toimi seuraavissa tilanteissa:",
                     "description1": "Virransäästötila on käytössä.",
-                    "description2": "Keskusyksikön lämpötila on liian korkea."
-                }
+                    "description2": "Keskusyksikön lämpötila on liian korkea.",
+                    "description3": "The device is set to Battery saving mode in \"Intelligent cooling\"."
+                },
+                "imageBefore": "Before",
+                "imageAfter": "After"
             },
             "antiTheft": {
                 "heading": "Älykäs tunnistustoiminto",

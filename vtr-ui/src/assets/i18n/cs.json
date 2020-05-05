@@ -2083,8 +2083,11 @@
                 "note": {
                     "description": "Tato funkce nepracuje v následujících případech:",
                     "description1": "Je povolen režim úspory baterie.",
-                    "description2": "Teplota procesoru je příliš vysoká."
-                }
+                    "description2": "Teplota procesoru je příliš vysoká.",
+                    "description3": "The device is set to Battery saving mode in \"Intelligent cooling\"."
+                },
+                "imageBefore": "Before",
+                "imageAfter": "After"
             },
             "antiTheft": {
                 "heading": "Inteligentní detekce",

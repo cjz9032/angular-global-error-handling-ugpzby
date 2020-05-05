@@ -2083,8 +2083,11 @@
                 "note": {
                     "description": "Funkcja nie działa, gdy:",
                     "description1": "Tryb oszczędzania baterii jest włączony.",
-                    "description2": "Temperatura procesora jest za wysoka."
-                }
+                    "description2": "Temperatura procesora jest za wysoka.",
+                    "description3": "The device is set to Battery saving mode in \"Intelligent cooling\"."
+                },
+                "imageBefore": "Before",
+                "imageAfter": "After"
             },
             "antiTheft": {
                 "heading": "Inteligentna detekcja",

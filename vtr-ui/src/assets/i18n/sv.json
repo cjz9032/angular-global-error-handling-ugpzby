@@ -2083,8 +2083,11 @@
                 "note": {
                     "description": "Funktionen fungerar inte när",
                     "description1": "Batterisparläge är aktiverat.",
-                    "description2": "processortemperaturen är för hög."
-                }
+                    "description2": "processortemperaturen är för hög.",
+                    "description3": "The device is set to Battery saving mode in \"Intelligent cooling\"."
+                },
+                "imageBefore": "Before",
+                "imageAfter": "After"
             },
             "antiTheft": {
                 "heading": "Intelligent avkänning",
