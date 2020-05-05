@@ -13,6 +13,7 @@ import { PowerService } from 'src/app/services/power/power.service';
 import { SmartStandbyService } from 'src/app/services/smart-standby/smart-standby.service';
 
 
+
 @Component({
 	selector: 'vtr-smart-standby',
 	templateUrl: './smart-standby.component.html',
@@ -33,7 +34,10 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	public smartStandByInterval: any;
 	public caption = this.translate.instant('device.deviceSettings.power.smartStandby.description');
 	public tooltipText = this.translate.instant('device.deviceSettings.power.smartStandby.tooltip');
+	clicktoChangeId='smartstandby-click-to-change'
+	collapseId='smartstandby-click-to-change-collapse'
 	firstTimeLoad: boolean;
+	timeOut = 100;
 	@Output() smartStandbyCapability = new EventEmitter<boolean>();
 
 	constructor(
@@ -345,10 +349,29 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		this.setSmartStandbyIsAutonomic(this.checkbox);
 	}
 
+
+
+	focusElement(elementId) {
+		setTimeout(() => {
+			const focusElement = document.getElementById(`${elementId}`) as HTMLElement;
+			if (focusElement) {
+				focusElement.focus()
+			}
+		}, this.timeOut);
+	}
+
 	public onToggle(elem: HTMLElement) {
 		elem.focus();
 		this.isCollapsed = !this.isCollapsed;
 		this.showDropDown = [false, false, false];
+		if(this.isCollapsed){
+			this.focusElement(this.clicktoChangeId);
+			
+		}
+		if (!this.isCollapsed) {
+			this.focusElement(this.collapseId);
+
+		}
 	}
 	public showUsageGraph() {
 		if (this.smartStandby.isEnabled) {

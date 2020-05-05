@@ -86,7 +86,7 @@
 									(keydown.enter)="onToggle(timeToggle)"
 									#timeToggle>
 									<div>
-										<div *ngIf="isCollapsed"
+										<div [style.display]="isCollapsed? 'block':'none'"  
 											class="collapse-text"
 											role="button"
 											[attr.aria-expanded]="!isCollapsed"
@@ -95,7 +95,7 @@
 											<!-- Expand -->
 											{{'common.ui.clickToChange' | translate | uppercase }}
 										</div>
-										<div *ngIf="!isCollapsed"
+										<div [style.display]="isCollapsed? 'none':'block'"  
 											class="collapse-text"
 											id="smartstandby-click-to-change-collapse"
 											role="button"
