@@ -2083,8 +2083,11 @@
                 "note": {
                     "description": "Cette fonction est inopérante quand :",
                     "description1": "Le mode d'économie de la batterie est activé.",
-                    "description2": "La température de l'unité centrale est trop élevée."
-                }
+                    "description2": "La température de l'unité centrale est trop élevée.",
+                    "description3": "The device is set to Battery saving mode in \"Intelligent cooling\"."
+                },
+                "imageBefore": "Before",
+                "imageAfter": "After"
             },
             "antiTheft": {
                 "heading": "Capteur intelligent",

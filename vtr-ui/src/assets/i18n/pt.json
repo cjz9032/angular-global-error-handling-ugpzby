@@ -2083,8 +2083,11 @@
                 "note": {
                     "description": "Esta funcionalidade não funciona quando:",
                     "description1": "O modo de poupança de bateria está ativado.",
-                    "description2": "A temperatura da CPU é demasiado elevada."
-                }
+                    "description2": "A temperatura da CPU é demasiado elevada.",
+                    "description3": "The device is set to Battery saving mode in \"Intelligent cooling\"."
+                },
+                "imageBefore": "Before",
+                "imageAfter": "After"
             },
             "antiTheft": {
                 "heading": "Deteção Inteligente",

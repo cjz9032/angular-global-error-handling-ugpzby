@@ -2083,8 +2083,11 @@
                 "note": {
                     "description": "Ця функція не працює, коли:",
                     "description1": "Увімкнено режим економії акумулятора.",
-                    "description2": "Температура процесора зависока."
-                }
+                    "description2": "Температура процесора зависока.",
+                    "description3": "The device is set to Battery saving mode in \"Intelligent cooling\"."
+                },
+                "imageBefore": "Before",
+                "imageAfter": "After"
             },
             "antiTheft": {
                 "heading": "Інтелектуальне зчитування",

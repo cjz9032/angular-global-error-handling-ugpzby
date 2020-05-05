@@ -248,6 +248,7 @@ export class UiScanScheduleComponent implements OnInit {
 				event.target['classList'][0] !== "date-dropdown" &&
 				event.target['classList'][0] !== "time-dropdown" &&
 				event.target['classList'][1] !== "hour-block" &&
+				event.target['classList'][1] !== "minutes-block" &&
 				event.target['classList'][1] !== "amPm-block" &&
 				event.target['classList'][0] !== "hour-text" &&
 				event.target['classList'][0] !== "min-text" &&

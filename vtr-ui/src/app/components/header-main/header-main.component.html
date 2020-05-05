@@ -24,7 +24,7 @@
 			attr.aria-label="{{title}}"
 			[hidden]="hideTitle || title === ''"
 			[innerHTML]="title"></h1>
-		<div class="welcomeText-placeholder"
+		<div *ngIf="!deviceService.isGaming" class="welcomeText-placeholder"
 			[hidden]="!(hideTitle || title === '')"></div>
 		<ng-content></ng-content>
 		<div *ngIf="forwardLink"

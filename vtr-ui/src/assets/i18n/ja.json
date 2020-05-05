@@ -2083,8 +2083,11 @@
                 "note": {
                     "description": "この機能は次の場合は動作しません。",
                     "description1": "バッテリー節約モードが有効になっている場合。",
-                    "description2": "CPU の温度が高すぎる場合。"
-                }
+                    "description2": "CPU の温度が高すぎる場合。",
+                    "description3": "The device is set to Battery saving mode in \"Intelligent cooling\"."
+                },
+                "imageBefore": "Before",
+                "imageAfter": "After"
             },
             "antiTheft": {
                 "heading": "インテリジェント・センサー",

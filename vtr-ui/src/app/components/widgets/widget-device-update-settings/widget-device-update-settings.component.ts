@@ -73,4 +73,15 @@ export class WidgetDeviceUpdateSettingsComponent extends BaseComponent implement
 			this.iconClick.emit(item);
 		}
 	}
+
+	onFocusEnabled($event, index, item: any) {
+		const lightingElem = document.getElementById('lighting_customize');
+		if (!$event.shiftKey && !lightingElem && $event.which === 9) {
+			if ((index === this.items.length - 1) && item.isQuickSettings) {
+					setTimeout(() => {
+						document.getElementById('header-warranty-icon').focus();
+					}, 10);
+				}
+			}
+	}
 }

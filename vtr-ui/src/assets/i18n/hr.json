@@ -2083,8 +2083,11 @@
                 "note": {
                     "description": "Ova značajka ne funkcionira kad:",
                     "description1": "Omogućen je način rada štednja baterije.",
-                    "description2": "je temperatura CPU-a previsoka."
-                }
+                    "description2": "je temperatura CPU-a previsoka.",
+                    "description3": "The device is set to Battery saving mode in \"Intelligent cooling\"."
+                },
+                "imageBefore": "Before",
+                "imageAfter": "After"
             },
             "antiTheft": {
                 "heading": "Pametni senzori",

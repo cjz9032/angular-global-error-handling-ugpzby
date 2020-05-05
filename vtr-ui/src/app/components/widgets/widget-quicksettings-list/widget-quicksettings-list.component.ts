@@ -62,7 +62,8 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			id: 'quicksettings thermalmode',
 			ariaLabel: 'thermal mode',
 			type: 'auto-updates',
-			settings: ''
+			settings: '',
+			isQuickSettings: true
 		},
 		{
 			readMoreText: '',
@@ -83,7 +84,8 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			id: 'quicksettings repidcharge',
 			ariaLabel: 'repid charge',
 			type: 'gaming.dashboard.device.quickSettings.rapidCharge',
-			settings: ''
+			settings: '',
+			isQuickSettings: true
 		},
 		{
 			readMoreText: '',
@@ -104,7 +106,8 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			id: 'quicksettings wifisecurity',
 			ariaLabel: 'wifi security',
 			type: 'auto-updates',
-			settings: 'quicksettings_wifisecurity'
+			settings: 'quicksettings_wifisecurity',
+			isQuickSettings: true
 		},
 		{
 			readMoreText: '',
@@ -125,7 +128,8 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			id: 'quicksettings dolby',
 			ariaLabel: 'dolby',
 			type: 'gaming.dashboard.device.quickSettings.dolby',
-			settings: 'quicksettings_dolby_gear'
+			settings: 'quicksettings_dolby_gear',
+			isQuickSettings: true
 		}
 	];
 

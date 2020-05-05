@@ -21,8 +21,8 @@ export class UiLightingEffectComponent implements OnInit, OnChanges {
 	@Output() public change = new EventEmitter<any>();
 	@Input() enableBrightCondition1: boolean;
 	@Input() showDescription: boolean;
-	@Input() isEffectChange:boolean = true;
-	@Input() showOptions:boolean = false;
+	@Input() isEffectChange: boolean = true;
+	@Input() showOptions: boolean = false;
 	public buttonName: any = 'Show';
 	public selected = false;
 	public currentOption: string;
@@ -43,7 +43,7 @@ export class UiLightingEffectComponent implements OnInit, OnChanges {
 	dropdownEle: ElementRef;
 	intervalObj: any;
 	isItemsFocused = false;
-    @Output() public isEffectList = new EventEmitter<any>();
+	@Output() public isEffectList = new EventEmitter<any>();
 	// for macrokey
 	@Input() public enableDescription = true;
 	@Input() isRecording = false;
@@ -68,6 +68,9 @@ export class UiLightingEffectComponent implements OnInit, OnChanges {
 			this.defaultLanguage = value.locale;
 		});
 		this.loggerService.info('ui-lighting-effect.component.ngOnInit', '--->' + this.options);
+		if (this.selectedOption === undefined) {
+			this.selectedOption = this.options.dropOptions.filter((option) => option.value === this.options.curSelected);
+		}
 	}
 
 	public toggleOptions() {
@@ -104,7 +107,7 @@ export class UiLightingEffectComponent implements OnInit, OnChanges {
 
 	public optionSelected(option) {
 		this.selectedOption = option;
-		if(this.isEffectChange){
+		if (this.isEffectChange) {
 			if (option.value === 4 || option.value === 8) {
 				this.effectOptionName = option.name;
 			}

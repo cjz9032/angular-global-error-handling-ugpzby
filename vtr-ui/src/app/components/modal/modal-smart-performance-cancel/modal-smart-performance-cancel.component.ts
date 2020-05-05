@@ -13,12 +13,34 @@ export class ModalSmartPerformanceCancelComponent implements OnInit {
   constructor(public activeModal: NgbActiveModal,
 	public smartPerformanceService: SmartPerformanceService,
 	private router: Router) { }
+	private timerRef: any;
+	public secondsCountdown = 9;
 
   ngOnInit() {
+	this.timerRef = setInterval(() => {
+		if (this.secondsCountdown-- === 0) {
+			this.onAgree();
+		}
+	}, 1000);
   }
-  closeModal() {
+  public closeModal() {
+	if (this.timerRef) {
+		this.stopCountdown();
+	}
+
 	this.activeModal.close('close');
-  }
+}
+
+onAgree() {
+	if (this.timerRef) {
+		this.stopCountdown()
+	}
+	this.closeModal();
+}
+
+private stopCountdown() {
+	clearInterval(this.timerRef);
+}
   @HostListener('window: focus')
   onFocus(): void {
   const modal = document.querySelector('.cancel-modal') as HTMLElement;

@@ -42,9 +42,6 @@ export class UiMacrokeyPopupComponent implements OnInit {
 		if (selectorVtr.style.overflowY === 'hidden') {
 			selectorVtr.style.overflowY = 'auto';
 			selectorVtr.style.overflowX = 'hidden';
-		} else {
-			selectorVtr.style.overflowY = 'hidden';
-			selectorVtr.style.overflowX = 'hidden';
 		}
 	}
 }

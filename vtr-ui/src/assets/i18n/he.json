@@ -2083,8 +2083,11 @@
                 "note": {
                     "description": "התכונה אינה פועלת כאשר:",
                     "description1": "מצב חיסכון בסוללה מופעל.",
-                    "description2": "טמפרטורת המעבד גבוהה מדי."
-                }
+                    "description2": "טמפרטורת המעבד גבוהה מדי.",
+                    "description3": "The device is set to Battery saving mode in \"Intelligent cooling\"."
+                },
+                "imageBefore": "Before",
+                "imageAfter": "After"
             },
             "antiTheft": {
                 "heading": "חישה חכמה",

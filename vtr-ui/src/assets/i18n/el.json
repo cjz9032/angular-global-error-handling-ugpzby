@@ -2083,8 +2083,11 @@
                 "note": {
                     "description": "Αυτή η δυνατότητα δεν λειτουργεί όταν:",
                     "description1": "Η λειτουργία εξοικονόμησης μπαταρίας είναι ενεργοποιημένη.",
-                    "description2": "Η θερμοκρασία της CPU είναι πολύ υψηλή."
-                }
+                    "description2": "Η θερμοκρασία της CPU είναι πολύ υψηλή.",
+                    "description3": "The device is set to Battery saving mode in \"Intelligent cooling\"."
+                },
+                "imageBefore": "Before",
+                "imageAfter": "After"
             },
             "antiTheft": {
                 "heading": "Έξυπνη ανίχνευση",
