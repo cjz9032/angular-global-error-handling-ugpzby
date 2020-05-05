@@ -2083,8 +2083,11 @@
                 "note": {
                     "description": "Ta funkcija ne deluje v naslednjih primerih:",
                     "description1": "Omogočen je način varčevanja energije baterije.",
-                    "description2": "Temperatura CPE je previsoka."
-                }
+                    "description2": "Temperatura CPE je previsoka.",
+                    "description3": "The device is set to Battery saving mode in \"Intelligent cooling\"."
+                },
+                "imageBefore": "Before",
+                "imageAfter": "After"
             },
             "antiTheft": {
                 "heading": "Pametno zaznavanje",

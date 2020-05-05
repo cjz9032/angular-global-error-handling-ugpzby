@@ -2083,8 +2083,11 @@
                 "note": {
                     "description": "Funkcia nefunguje v týchto prípadoch:",
                     "description1": "Režim šetriča batérie je povolený.",
-                    "description2": "Teplota procesora je príliš vysoká."
-                }
+                    "description2": "Teplota procesora je príliš vysoká.",
+                    "description3": "The device is set to Battery saving mode in \"Intelligent cooling\"."
+                },
+                "imageBefore": "Before",
+                "imageAfter": "After"
             },
             "antiTheft": {
                 "heading": "Inteligentné snímanie",

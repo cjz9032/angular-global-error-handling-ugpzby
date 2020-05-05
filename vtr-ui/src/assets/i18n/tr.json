@@ -2083,8 +2083,11 @@
                 "note": {
                     "description": "Bu özellik şu durumlarda çalışmaz:",
                     "description1": "Pil tasarrufu kipi etkin.",
-                    "description2": "CPU sıcaklığı çok yüksek."
-                }
+                    "description2": "CPU sıcaklığı çok yüksek.",
+                    "description3": "The device is set to Battery saving mode in \"Intelligent cooling\"."
+                },
+                "imageBefore": "Before",
+                "imageAfter": "After"
             },
             "antiTheft": {
                 "heading": "Akıllı Algılama",

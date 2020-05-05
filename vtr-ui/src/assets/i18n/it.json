@@ -2083,8 +2083,11 @@
                 "note": {
                     "description": "Questa funzione non può essere utilizzata quando:",
                     "description1": "La modalità risparmio batteria è abilitata.",
-                    "description2": "La temperatura della CPU è elevata."
-                }
+                    "description2": "La temperatura della CPU è elevata.",
+                    "description3": "The device is set to Battery saving mode in \"Intelligent cooling\"."
+                },
+                "imageBefore": "Before",
+                "imageAfter": "After"
             },
             "antiTheft": {
                 "heading": "Rilevamento intelligente",

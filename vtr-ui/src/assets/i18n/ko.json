@@ -2083,8 +2083,11 @@
                 "note": {
                     "description": "다음의 경우에는 이 기능이 작동하지 않습니다.",
                     "description1": "배터리 절약 모드가 활성화됩니다.",
-                    "description2": "CPU 온도가 너무 높습니다."
-                }
+                    "description2": "CPU 온도가 너무 높습니다.",
+                    "description3": "The device is set to Battery saving mode in \"Intelligent cooling\"."
+                },
+                "imageBefore": "Before",
+                "imageAfter": "After"
             },
             "antiTheft": {
                 "heading": "지능형 센싱",

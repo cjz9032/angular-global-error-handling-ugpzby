@@ -2083,8 +2083,11 @@
                 "note": {
                     "description": "Deze functie werkt niet als:",
                     "description1": "De spaarstand voor batterijverbruik is ingeschakeld.",
-                    "description2": "De CPU-temperatuur te hoog is."
-                }
+                    "description2": "De CPU-temperatuur te hoog is.",
+                    "description3": "The device is set to Battery saving mode in \"Intelligent cooling\"."
+                },
+                "imageBefore": "Before",
+                "imageAfter": "After"
             },
             "antiTheft": {
                 "heading": "Intelligent Sensing",

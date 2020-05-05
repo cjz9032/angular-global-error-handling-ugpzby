@@ -2083,8 +2083,11 @@
                 "note": {
                     "description": "Diese Funktion funktioniert nicht, wenn:",
                     "description1": "Der Akkusparmodus ist aktiviert.",
-                    "description2": "Die CPU-Temperatur zu hoch ist."
-                }
+                    "description2": "Die CPU-Temperatur zu hoch ist.",
+                    "description3": "The device is set to Battery saving mode in \"Intelligent cooling\"."
+                },
+                "imageBefore": "Before",
+                "imageAfter": "After"
             },
             "antiTheft": {
                 "heading": "Intelligente Sensorik",

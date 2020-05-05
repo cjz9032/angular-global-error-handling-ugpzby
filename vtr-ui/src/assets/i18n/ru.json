@@ -2083,8 +2083,11 @@
                 "note": {
                     "description": "Эта функция не работает, если:",
                     "description1": "Включен режим экономии заряда аккумулятора.",
-                    "description2": "температура процессора слишком высокая."
-                }
+                    "description2": "температура процессора слишком высокая.",
+                    "description3": "The device is set to Battery saving mode in \"Intelligent cooling\"."
+                },
+                "imageBefore": "Before",
+                "imageAfter": "After"
             },
             "antiTheft": {
                 "heading": "Интеллектуальное распознавание",
