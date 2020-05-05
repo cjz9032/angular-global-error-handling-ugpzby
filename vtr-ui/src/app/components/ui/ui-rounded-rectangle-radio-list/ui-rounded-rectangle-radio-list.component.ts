@@ -29,7 +29,7 @@ export class UiRoundedRectangleRadioListComponent implements OnInit {
 		'pizza-radio-group',
 		[
 			new UiRoundedRectangleRadioModel('regular-crust', false, false, 'regular crust'),
-			new UiRoundedRectangleRadioModel('thin-crust', false, true, 'thin crust'),
+			new UiRoundedRectangleRadioModel('thin-crust', false, false, 'thin crust'),
 			new UiRoundedRectangleRadioModel('deep-dish', false, false, 'deep dish'),
 		]
 	);
@@ -114,6 +114,7 @@ export class UiRoundedRectangleRadioListComponent implements OnInit {
 
 				// for Narrator selection
 				case KEYCODE.SPACE:
+				case KEYCODE.RETURN:
 					isHandled = true;
 					break;
 			}

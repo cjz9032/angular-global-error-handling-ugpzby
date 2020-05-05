@@ -1,235 +1,135 @@
 @import "../../../app.theme";
 
+/*
+* UI Spec link
+* https://xd.adobe.com/spec/4dd677d9-0bab-4b71-46f7-ac1f2efe0878-3be7/screen/b2046b82-01ad-465f-b000-572df2e3b668/Selectors/
+*/
+
 .vtr-ui-rounded-rectangle-radio-list {
-	$radio-gutter: 0.3rem;
-	$radio-control-width: 25rem;
-	$radio-control-height: 5rem;
+	$radio-gutter: 0.8rem;
+	$radio-width: 25rem;
+	$radio-height: 5rem;
+	$radio-border: 0.1rem;
 	$radio-indicator-size: 2rem;
 	$radio-indicator-inner-size: 1.4rem;
 	$radio-text-height: 2rem;
-	$radio-indicator-top-position: (($radio-control-height / 2) - ($radio-indicator-size / 2)) - $radio-gutter;
-	$radio-text-top-position: (($radio-control-height / 2) - $radio-text-height) + $radio-gutter;
+	$radio-indicator-top-position: (($radio-height / 2) - ($radio-indicator-size / 2));
+	$radio-text-padding-top: (($radio-height / 2) - $radio-text-height) + $radio-gutter;
 	$radio-text-left-position: $radio-indicator-top-position + $radio-indicator-size + 0.8;
-	$radio-indicator-inner-position: $radio-indicator-inner-size + 0.1;
+	$radio-indicator-inner-position: ($radio-gutter / 2) + $radio-indicator-inner-size;
+	$radio-unselected-box-shadow: 0 0 0 0.1rem $grey_light;
+	$radio-selected-box-shadow: 0 0 0 0.2rem $grey_dark;
+	$radio-focus-box-shadow: 0 0 0 0.2rem $grey_dark, 0 0 0 0.4rem $light, 0 0 0 0.5rem $menu_hover;
 
-	padding: $radio-gutter 0 0 $radio-gutter;
+	margin: $radio-gutter;
+
 	.radio-group {
 		display: flex;
 		flex-direction: row;
 		[role="radio"] {
-			// box-sizing: border-box;
+			margin: $radio-gutter;
 			position: relative;
-			padding-top: $radio-text-top-position;
+			padding-top: $radio-text-padding-top + 0.1;
 			padding-left: $radio-text-left-position;
-			border: 1px solid $grey_light;
+			box-shadow: $radio-unselected-box-shadow;
 			background: $grey_lighter;
-			width: $radio-control-width;
-			height: $radio-control-height;
+			width: $radio-width;
+			height: $radio-height;
 			border-radius: 20rem;
-			margin-right: 1.5rem;
-			margin-bottom: 1rem;
 			cursor: pointer;
 			outline: none;
 			font-size: $base;
+			color: $grey_darker;
 
-			// &:focus {
-			// 	outline: none;
-			// 	&:before {
-			// 		content: "";
-			// 		display: block;
-			// 		position: absolute;
-			// 		left: -0.6rem;
-			// 		top: -0.6rem;
-			// 		border-radius: 500px;
-			// 		width: calc(100% + 1.2rem);
-			// 		height: calc(100% + 1.2rem);
-			// 		border: 0.1rem solid $menu_hover;
-			// 	}
-			// }
-		}
+			// common style for indicator and indicator outer side
+			&::before,
+			&::after {
+				display: block;
+				position: absolute;
+				border-radius: 50%;
+				content: "";
+			}
 
-		/* This creates the visuals for the radio buttons */
-		[role="radio"]::before,
-		[role="radio"]::after {
-			display: block;
-			position: absolute;
-			border-radius: 50%;
-			content: "";
-		}
+			&::before {
+				top: $radio-indicator-top-position;
+				left: $radio-indicator-top-position;
+				width: $radio-indicator-size;
+				height: $radio-indicator-size;
+				border: $radio-border solid $grey_dark;
+				background: $light;
+			}
 
-		[role="radio"]::before {
-			top: $radio-indicator-top-position;
-			left: $radio-indicator-top-position;
-			width: $radio-indicator-size;
-			height: $radio-indicator-size;
-			border: 1px solid $grey_dark;
-			background: $light;
+			&:hover {
+				box-shadow: $radio-selected-box-shadow;
+				&::before {
+					border-color: $menu_hover;
+				}
+			}
+
+			&:focus {
+				box-shadow: $radio-focus-box-shadow;
+
+				&::before {
+					border-color: $menu_hover;
+				}
+			}
+
+			&:active {
+				box-shadow: $radio-unselected-box-shadow;
+				background: $grey_light;
+
+				&::before {
+					border-color: $grey_darker;
+				}
+			}
+
+			&[aria-disabled="true"] {
+				background: $grey_lighter;
+				opacity: 0.6;
+				pointer-events: none;
+
+				&:hover {
+					box-shadow: $radio-unselected-box-shadow;
+				}
+
+				&::before {
+					border-color: $grey_darker;
+				}
+			}
 		}
 
 		[role="radio"][aria-checked="true"] {
-			border: 1px solid $grey_dark;
+			box-shadow: $radio-selected-box-shadow;
+			&:focus {
+				box-shadow: $radio-focus-box-shadow;
+			}
+			&:active {
+				box-shadow: $radio-selected-box-shadow;
+
+				&::before {
+					border-color: $grey_darker;
+				}
+				&::after {
+					background-color: $grey_darker;
+				}
+			}
 			&::after {
 				top: $radio-indicator-inner-position;
 				left: $radio-indicator-inner-position;
-				background-color: $grey_darker;
+				background-color: $menu_hover;
 				width: $radio-indicator-inner-size;
 				height: $radio-indicator-inner-size;
 				content: "";
 			}
+			&[aria-disabled="true"] {
+				background: $grey_lighter;
+				opacity: 0.6;
+				pointer-events: none;
+
+				&::after {
+					background-color: $grey_darker;
+				}
+			}
 		}
 	}
-
-	// .rounded-rectangle-radio {
-	// 	box-sizing: border-box;
-	// 	background: transparent linear-gradient(270deg, $solitude 0%, $grey_lighter 100%) 0% 0% no-repeat padding-box;
-	// 	display: inline-block;
-	// 	margin-right: 1.5rem;
-	// 	margin-bottom: 1rem;
-	// 	position: relative;
-	// 	width: 25rem;
-	// 	height: 6.5rem;
-	// 	border-radius: 20rem;
-	// 	cursor: pointer;
-	// 	outline: none;
-
-	// 	&:focus {
-	// 		outline: none;
-	// 		&:before {
-	// 			content: "";
-	// 			display: block;
-	// 			position: absolute;
-	// 			left: -0.6rem;
-	// 			top: -0.6rem;
-	// 			border-radius: 500px;
-	// 			width: calc(100% + 1.2rem);
-	// 			height: calc(100% + 1.2rem);
-	// 			border: 0.2rem solid $menu_hover;
-	// 		}
-	// 	}
-
-	// 	@media #{$breakpoint_xl} {
-	// 		width: 20rem;
-	// 	}
-
-	// 	label {
-	// 		box-sizing: border-box;
-	// 		padding: 0rem;
-	// 		width: 100%;
-	// 		height: 100%;
-	// 		display: block;
-	// 		position: relative;
-	// 		z-index: 2;
-	// 		overflow: hidden;
-	// 		.label {
-	// 			// @media #{$mediaquery_X4} {
-	// 			// 	padding-right: .5rem;
-	// 			// 	font-size: 1rem;
-	// 			// 	position: absolute;
-	// 			// 	top:1.5rem;
-	// 			// 	left:5rem;
-
-	// 			// }
-	// 			position: absolute;
-	// 			top: 48.5%;
-	// 			left: 6rem;
-	// 			color: $shade_blue;
-	// 			font-size: $fontsize_xs;
-	// 			font-weight: $weight_light;
-	// 			word-wrap: break-word;
-	// 			word-break: break-all;
-	// 			padding-right: 1rem;
-	// 			transform: translateY(-50%);
-	// 		}
-
-	// 		.icon-circle {
-	// 			font-size: 3rem;
-	// 			color: $grey_darker;
-	// 			top: 1.5rem;
-	// 			left: 1.3rem;
-	// 			.checked-circle {
-	// 				color: $menu_hover;
-	// 			}
-	// 			@media #{$white-on-black} {
-	// 				background-color: $dark;
-	// 				border: none;
-	// 				color: $highlight_bright;
-	// 			}
-	// 			@media #{$black-on-white} {
-	// 				background-color: $light;
-	// 				border: none;
-	// 				color: $high-contrast-white-textselected;
-	// 			}
-	// 		}
-
-	// 		fa-icon.icon {
-	// 			position: absolute;
-	// 			left: 9rem;
-	// 			top: 9rem;
-	// 			font-size: 3.2rem;
-	// 			color: $menu_hover;
-	// 		}
-
-	// 		span.question {
-	// 			position: absolute;
-	// 			left: 9.5rem;
-	// 			top: 9.3rem;
-	// 			font-size: 1.8rem;
-	// 			color: $main;
-	// 		}
-	// 	}
-
-	// 	input[type="radio"]:not(:checked) + label::after {
-	// 		opacity: 0;
-	// 		transition: all 1s ease;
-	// 	}
-	// 	input:checked + label::after {
-	// 		opacity: 1;
-	// 	}
-
-	// 	input {
-	// 		position: absolute;
-	// 		visibility: hidden;
-	// 	}
-
-	// 	&.border-blue {
-	// 		border: 0.2rem solid $dim_gray;
-	// 		// transition: all 50ms ease-in;
-	// 		@media #{$black-on-white} {
-	// 			border: 0.2rem solid $high-contrast-white-textselected;
-	// 		}
-	// 	}
-	// 	&.border-grey {
-	// 		border: 0.2rem solid $note_border;
-	// 		// transition: all 50ms ease-in;
-	// 		@media #{$black-on-white} {
-	// 			border: none;
-	// 		}
-	// 	}
-
-	// 	&.border-checked-disabled {
-	// 		border: 0.2rem solid #667481;
-	// 		opacity: 0.7;
-	// 		pointer-events: none;
-	// 		cursor: default;
-	// 		label {
-	// 			.icon-circle {
-	// 				color: $grey_darker;
-	// 			}
-	// 		}
-	// 	}
-	// 	&.border-disabled {
-	// 		border: 0.2rem solid #e6eaeb;
-	// 		opacity: 0.7;
-	// 		pointer-events: none;
-	// 		cursor: default;
-	// 		label {
-	// 			.icon-circle {
-	// 				color: $grey_darker;
-	// 			}
-	// 		}
-	// 	}
-	// }
-	// .large-width {
-	// 	width: 29rem;
-	// }
 }
