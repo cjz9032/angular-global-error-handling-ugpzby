@@ -113,8 +113,6 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 							this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'finish');
 						});
 					}
-				} else {
-					this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'notShow');
 				}
 			}, 0);
 		}
@@ -162,7 +160,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 				this.common.isOnline = this.isOnline;
 			}
 			const showPluginMissingDialog = this.commonService.getSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog);
-			if (showPluginMissingDialog === 'notShow' || showPluginMissingDialog === 'finish') {
+			if (showPluginMissingDialog === 'notShow') {
 				const showWelcomeDialog = this.commonService.getSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog);
 				if (showWelcomeDialog === 'notShow' || showWelcomeDialog === 'finish') {
 					if (!this.isOnline && this.isOnline !== cacheIsOnline) {
@@ -299,34 +297,20 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			const welcomeComplete = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, false) === true;
 			const showWelcome = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityShowWelcome, 0);
 			if (welcomeComplete) {
-				if (this.locationPermission.hasSystemPermissionShowed) {
-					if (this.locationPermission.isLocationServiceOn) {
-						this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'notShow');
-						return;
-					}
-					if (this.chs.account.state !== CHSAccountState.local) {
-						this.dialogService.openCHSPermissionModal(this.locationPermission).result.then(() => {
-							this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'finish');
-						});
-					} else {
-						this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'notShow');
-					}
-				} else {
-					if (this.chs.account.state !== CHSAccountState.local) {
-						this.dialogService.openCHSPermissionModal(this.locationPermission).result.then(() => {
-							this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'finish');
-						});
-					} else {
-						this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'notShow');
-					}
+				if (this.locationPermission.hasSystemPermissionShowed && this.locationPermission.isLocationServiceOn) {
+					this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'notShow');
+					return;
+				}
+				if (this.chs.account.state !== CHSAccountState.local) {
+					this.dialogService.openCHSPermissionModal(this.locationPermission).result.then(() => {
+						this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'finish');
+					})
 				}
 			} else {
 				this.dialogService.openWelcomeModal(showWelcome, this.locationPermission).result.then(() => {
 					this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'finish');
 				});
 			}
-		} else {
-			this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'notShow');
 		}
 	}
 
