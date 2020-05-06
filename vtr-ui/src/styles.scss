@@ -415,9 +415,14 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	}
 }
 
-.wifi-security-invitation-modal {
+.wifi-security-invitation-modal,  .wifi-security-location-modal {
 	.modal-dialog {
-		margin-top: 8rem;
+		margin: auto;
+
+		@media #{$breakpoint_sm} {
+			max-width: 90% !important;
+			margin: 1rem auto !important;
+		}
 
 		.modal-content {
 			background-color: transparent;
@@ -426,13 +431,11 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	}
 }
 
-.wifi-security-location-modal {
+.trial-container-Modal {
 	.modal-dialog {
-		margin-top: 8rem;
-
-		.modal-content {
-			background-color: transparent;
-			border: none;
+		@media #{$breakpoint_sm} {
+			max-width: 90% !important;
+			margin: 1rem auto !important;
 		}
 	}
 }
