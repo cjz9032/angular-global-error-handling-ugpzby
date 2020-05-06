@@ -33,9 +33,14 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	title = 'smartPerformance.title';
 	public menuItems: any = [
 		{ itemName: 'Annual', itemKey: 'ANNUAL' },
-		{ itemName: 'Quarterly', itemKey: 'QUARTERLY' },
-		{ itemName: 'Custom', itemKey: 'CUSTOM' }
+		{ itemName: 'Half yearly', itemKey: 'HALFYEARLY' },
+		{ itemName: 'Quarterly', itemKey: 'QUARTERLY' }
 	];
+	// public menuItems: any = [
+	// 	{ itemName: '', itemKey: 'ANNUAL' },
+	// 	{ itemName: 'Quarterly', itemKey: 'QUARTERLY' },
+	// 	{ itemName: 'Custom', itemKey: 'CUSTOM' }
+	// ];
 	leftAnimator: any;
 	@Input() isScanning = false;
 	@Input() isScanningCompleted = false;
@@ -176,6 +181,11 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	// boostindividualIssueCount: any = 0;
 	// secureindividualIssueCount: any = 0;
 	ngOnInit() {
+		this.historyRes = {
+			Tune: 200,
+			Boost: 100,
+			Secure: 120
+		};
 		const cacheMachineFamilyName = this.commonService.getLocalStorageValue(
 			LocalStorageKey.MachineFamilyName,
 			undefined
@@ -548,12 +558,15 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 			const res: any = await this.smartPerformanceService.getHistory(
 				payload
 			);
-
-			if (res.lastscanresults) {
+			this.logger.info('History Response', res);
+// console.log(res, 'Res');
+			if (res) {
 				this.historyRes = {
 					Tune: res.Tune,
 					Boost: res.Boost,
-					Secure: res.Secure
+					Secure: res.Secure,
+					Tunesize: res.Tunesize,
+					Boostsize: res.Boostsize
 				};
 				this.historyScanResults = res.lastscanresults || [];
 				this.getMostecentScanDateTime(this.historyScanResults[0].scanruntime);
@@ -568,9 +581,11 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	}
 	formatMemorySize(mbytes) {
 		const k = 1024;
-			const sizes = ['MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
-			const i = Math.floor(Math.log(mbytes) / Math.log(k));
-			this.sizeExtension = sizes[i];
-		return parseFloat((mbytes / Math.pow(k, i)).toFixed(1));
-	 }
+		const mb = mbytes ? mbytes : 0;
+		if (mb === 0) { return 0 +' ' +'MB' }
+		const sizes = ['MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+		const i = Math.floor(Math.log(mb) / Math.log(k));
+		this.sizeExtension = sizes[i];
+		return parseFloat((mb / Math.pow(k, i)).toFixed(1));
+	}
 }

@@ -2291,16 +2291,6 @@
 
 														<div class="summary-period">
 															<ul class="list-group list-group-horizontal">
-																<li class="list-group-item"
-																	*ngFor="let item of menuItems;let ind=index"
-																	(click)="scanSummaryTime(ind)"
-																	[ngClass]="{'selected-list-item': tabIndex === ind}">
-																	{{item.itemName}}
-																	<!-- <div class="list-item" >
-																	</div> -->
-																</li>
-																<!-- <li class="list-group-item" (click)="scanSummaryTime()">quarterly</li>
-																<li class="list-group-item" (click)="scanSummaryTime()">custom</li> -->
 																<div class="dropdown">
 																	<li id="dropdownMenu1"
 																		class="list-group-item cl list-selected-item">
@@ -2325,6 +2315,17 @@
 																		</fa-icon>
 																	</li>
 																</div>
+																<li class="list-group-item"
+																	*ngFor="let item of menuItems;let ind=index"
+																	(click)="scanSummaryTime(ind)"
+																	[ngClass]="{'selected-list-item': tabIndex === ind}">
+																	{{item.itemName}}
+																	<!-- <div class="list-item" >
+																	</div> -->
+																</li>
+																<!-- <li class="list-group-item" (click)="scanSummaryTime()">quarterly</li>
+																<li class="list-group-item" (click)="scanSummaryTime()">custom</li> -->
+															
 															</ul>
 															<div *ngIf="isDropDownOpen && tabIndex != 2"
 																[ngClass]="[tabIndex ===2 ? 'calender-drop' : 'dropdownmenu']">
@@ -2412,13 +2413,13 @@
 														<div class="d-flex">
 															<div class="w-100">
 																<div class="box-title d-flex  justify-content-between">
-																	<h5>{{'smartPerformance.subscriberScanHomePage.scanSummary.tune' |translate }}</h5>
+																	<h5>{{'smartPerformance.tunePCPerformance.title' |translate }}</h5>
 																	<div class="icon icon-performance"></div>
 																</div>																
-																<div class="value">
-																	{{formatMemorySize(historyRes.Tune) || 0}} <span>{{sizeExtension}}</span>
+																<div class="value text-center">
+																	{{historyRes.Tune || 0}} <span>{{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' |translate }}</span>
 																</div>
-																<p>{{'smartPerformance.subscriberScanHomePage.scanSummary.tuneSummary' |translate }}
+																<p>{{formatMemorySize(historyRes.Tunesize)}} <span class="mr-1">{{sizeExtension}}</span> {{'smartPerformance.subscriberScanHomePage.scanSummary.summaryCaption' |translate }}
 																</p>
 															</div>
 															
@@ -2428,11 +2429,11 @@
 														<div class="d-flex">
 															<div class="w-100">
 																<div class="box-title d-flex  justify-content-between">
-																	<h5>{{'smartPerformance.subscriberScanHomePage.scanSummary.boost' |translate }}</h5>
+																	<h5>{{'smartPerformance.boostInternetPerformance.extraTitle' |translate }}</h5>
 																	<div class="icon icon-internet-performance"></div>
 																</div>
-																<div class="value">{{historyRes.Boost || 0}}</div>
-																<p>{{'smartPerformance.subscriberScanHomePage.scanSummary.boostSummary' |translate }}
+																<div class="value">{{historyRes.Boost || 0}} <span>{{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' |translate }}</span></div>
+																<p>{{formatMemorySize(historyRes.Boostsize)}}  <span class="mr-1">{{sizeExtension}}</span> {{'smartPerformance.subscriberScanHomePage.scanSummary.summaryCaption' |translate }}
 																</p>
 															</div>
 															
@@ -2442,13 +2443,12 @@
 														<div class="d-flex">
 															<div class="w-100">
 																<div class="box-title d-flex  justify-content-between">
-																	<h5>{{'smartPerformance.subscriberScanHomePage.scanSummary.secure' |translate }}</h5>
+																	<h5>{{'smartPerformance.malwareSecurity.title' |translate }}</h5>
 																	<div class="icon icon-malware-security"></div>
 																</div>
 																
-																<div class="value">{{historyRes.Secure || 0}}</div>
-																<p>{{'smartPerformance.subscriberScanHomePage.scanSummary.secureSummary' |translate }}
-																</p>
+																<div class="value">{{historyRes.Secure || 0}} <span>{{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' |translate }}</span></div>
+																<!-- <p>{{'smartPerformance.subscriberScanHomePage.scanSummary.secureSummary' |translate }}</p> -->
 															</div>
 															
 														</div>
