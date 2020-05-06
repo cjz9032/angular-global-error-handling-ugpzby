@@ -160,7 +160,7 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col col-12 content">
-					<a [attr.href]="!item.ActionLink ? null : (item.ActionLink | sanitize : 'resourceUrl')"
+					<a tabindex="-1" [attr.href]="!item.ActionLink ? null : (item.ActionLink | sanitize : 'resourceUrl')"
 						attr.aria-label="{{ item.Title | htmlText }}"
 						(click)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 						metricsItemCategory="highlight"

@@ -63,7 +63,7 @@
 													container="body" tooltipClass="vtr-tooltip">
 												</fa-icon>
 											</a>
-											<a href="javascript:void();" class="link-text" *ngIf="!item.isSwitchVisible"
+											<a tabindex="-1" href="javascript:void();" class="link-text" *ngIf="!item.isSwitchVisible"
 												(click)="onLinkClick(item.linkPath)">
 												{{item.linkText}}
 											</a>

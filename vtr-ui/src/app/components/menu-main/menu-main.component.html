@@ -60,7 +60,7 @@
 					<span role="text"
 						*ngIf="machineFamilyName">{{machineFamilyName}}</span>
 					<span class="warranty-icon">
-						<vtr-ui-header-warranty (tabFocusElem)="onTabFocusElem($event)" *ngIf="machineFamilyName"
+						<vtr-ui-header-warranty *ngIf="machineFamilyName"
 							[pageParent]="'NavBar'"></vtr-ui-header-warranty>
 					</span>
 				</div>
@@ -95,12 +95,12 @@
 						<a class="nav-link {{item.id}}"
 							[ngClass]="{'beta-item':item.beta}"
 							vtrMetrics
-							tabindex="1"
+							[attr.tabindex]="isGamingHome && (item.id === 'device') ? -1 : 1"
 							id="menu-main-nav-lnk-{{item.id}}"
 							attr.new-tip-id="new-tip-{{item.id}}"
 							[metricsEvent]="item.metricsEvent"
 							[metricsParent]="item.metricsParent"
-							[metricsItem]="item.metricsItem"
+							[metricsItem]="item.metricsItem" 
 							routerLink="/{{item.path}}"
 							routerLinkActive="active"
 							href="javascript:void(0)"

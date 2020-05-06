@@ -311,24 +311,6 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 
 	}
 
-	activeTabFocus(selector :any ) {
-		setTimeout(() => {
-			selector.focus();
-		}, 10);
-	}
-
-	onTabFocusElem(event: any) {
-		if (event.shiftKey && event.key === 'Tab' && this.isGamingHome) {
-			const focusLighting = document.getElementById('lighting_customize') as HTMLElement;
-			const toggleElem = document.querySelector('.quickSettings-list-items li:last-child button.toggle-button') as HTMLElement;
-				if (focusLighting) {
-					this.activeTabFocus(focusLighting);
-				} else {
-					this.activeTabFocus(toggleElem);
-				}
-			}
-	}
-
 	private loadMenuOptions(machineType: number) {
 		// if IdeaPad or ThinkPad then call below function
 		if (machineType === 0 || machineType === 1) {

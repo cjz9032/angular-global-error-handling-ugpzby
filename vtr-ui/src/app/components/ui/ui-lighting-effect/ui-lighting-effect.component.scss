@@ -190,6 +190,16 @@
 					}
 				}
 			}
+			&:first-child{
+        a.dropdown-item{
+        border-radius: 0.8rem 0.8rem 0 0;
+        }
+      }
+      &:last-child{
+         a.dropdown-item{
+        border-radius: 0 0 0.8rem 0.8rem;
+         }
+      }
 		}
 		.information {
 			margin: 1.6rem;
