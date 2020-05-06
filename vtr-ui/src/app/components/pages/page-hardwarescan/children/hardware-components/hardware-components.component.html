@@ -1,7 +1,7 @@
 <div class="vtr-hardware-components">
 	<div class="row">
 		<div class="col col-12">
-			<vtr-hardware-scan-header-pages *ngIf="!isScanDone"
+			<vtr-hardware-scan-header-pages
 				[percent]="progress"
 				(checkCancel)="onCancelScan()"
 				[disableCancel]="isDisableCancel()"
@@ -19,14 +19,6 @@
 		<div class="row px-0">
 			<div class="col-12 header">
 				<h2 class="heading2">{{getComponentsTitle()}}</h2>
-				<a class="action-anchor" (click)="isScanExecuting() ? onViewResults() : onViewResultsRecover()"
-					*ngIf="getEnableViewResults()" [routerLink]="viewResultsPath"
-					routerLinkActive="active"
-					vtrMetrics
-					metricsEvent="FeatureClick"
-					metricsParent="{{itemParentSummary}}"
-					metricsItem="{{itemNameSummary}}">{{'hardwareScan.viewResults' | translate}}
-				</a>
 				<a class="refresh-button"
 					*ngIf="!isRefreshingModules() && !isScanExecuting() && !isRecoverExecuting()"
 					vtrMetrics
@@ -54,8 +46,8 @@
 						*ngIf="!isRefreshingModules() && !isRecoverExecuting()"
 						[items]="modules"
 						[resultCodeText]="'hardwareScan.resultCode' | translate"
-						[lenovoSupport]="'hardwareScan.support.subtitle' | translate"
-						[isScanExecute]="isScanExecuting()">
+						[isScanExecute]="isScanExecuting()"
+						[isEnableViewResults]="getEnableViewResults()">
 					</vtr-widget-hardware-scan-item>
 
 					<div class="loading-components" *ngIf="isRefreshingModules() && !isRecoverExecuting()">

@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-widget-hardware-scan-item',
@@ -9,19 +8,23 @@ import { TranslateService } from '@ngx-translate/core';
 export class WidgetHardwareScanItemComponent implements OnInit {
 	@Input() items: any[];
 	@Input() resultCodeText: string;
-	@Input() detailsText: string;
 	@Input() isScanExecute = false;
-	@Input() lenovoSupport: string = this.translate.instant('hardwareScan.support.subtitle');
+	@Input() isEnableViewResults = false;
 
 	public tooltipText: string;
 
-	constructor(
-		private translate: TranslateService,
-	) {
-
+	constructor() {
 	}
 
 	ngOnInit() {
+	}
+
+	public getKey(obj: any) {
+		return Object.keys(obj);
+	}
+
+	public getValue(obj: any) {
+		return Object.values(obj);
 	}
 
 	public getInformation(text: string) {

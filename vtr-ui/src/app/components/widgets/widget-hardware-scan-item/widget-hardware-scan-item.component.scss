@@ -34,7 +34,7 @@
 
 	.subtitle {
 		font-size: $fontsize_xs;
-		padding-left: 1rem;
+		padding: 0 1rem;
 		color: $shade_blue;
 		font-weight: $weight_light;
 	}
@@ -52,45 +52,50 @@
 		padding-top: 0.5rem;
 	}
 
-	.description {
-		.details {
-			color: $shade_darker;
-			text-decoration: underline;
+	.details-link {
+		display: flex;
+		color: $blue_lightest;
+		font-size: $fontsize_xs2;
+		text-decoration: underline;
 
-			&:hover {
-				text-decoration: none;
-				cursor: pointer;
-			}
-
-			fa-icon {
-				font-size: $fontsize_lg;
-				padding-left: 1rem;
-				padding-right: 0.5rem;
-				vertical-align: -0.25rem!important;				
-			}
+		&:hover {
+			text-decoration: none;
+			cursor: pointer;
 		}
 
-		.button-box {
-			padding: 0.5rem;
-			@media #{$mediaquery_7} {
-				margin-top: 1.2rem;
-			}
+		fa-icon {
+			font-size: $fontsize_xs;
+			color:$blue_lightest;
+			padding: 0 1rem;
+		}
+	}
 
-			.button {
-				min-height: 2rem;
-				border-radius: 3rem;
-				min-width: 5rem;
-				background: $gradient_main !important;
-				border: none;
-				color: $light !important;
-				font-size: 1rem;
-				font-weight: $weight_bold !important;
-				text-align: center !important;
-				text-decoration: none;
-				display: inline-block;
-				// cursor: pointer;
-				padding: 0 2.5rem;
-			}
+	.details-list {
+		margin-left: 4.2rem;
+		.table-details {
+			border-radius: $border_radius;
+		}
+	}
+
+	.button-box {
+		padding: 0.5rem;
+		@media #{$mediaquery_7} {
+			margin-top: 1.2rem;
+		}
+
+		.button {
+			min-height: 2rem;
+			border-radius: 3rem;
+			min-width: 5rem;
+			background: $gradient_main !important;
+			border: none;
+			color: $light !important;
+			font-size: 1rem;
+			font-weight: $weight_bold !important;
+			text-align: center !important;
+			text-decoration: none;
+			display: inline-block;
+			padding: 0 2.5rem;
 		}
 	}
 

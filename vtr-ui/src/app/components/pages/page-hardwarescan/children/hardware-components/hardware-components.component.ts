@@ -108,7 +108,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			this.onNotification(response);
 		});
 
-		this.modules = this.getItemToDisplay();
 		this.initComponent();
 		this.initResultSeverityConversion();
 	}
@@ -133,6 +132,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	public initComponent() {
 		this.setPageTitle();
+		this.modules = this.getItemToDisplay();
 
 		if (this.hardwareScanService) {
 			if (this.hardwareScanService.isRecoverInit()) {
@@ -414,6 +414,9 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				this.sendTaskActionMetrics(this.hardwareScanService.getCurrentTaskType(), metricsResult.countSuccesses,
 					'', metricsResult.scanResultJson, this.timerService.stop());
 				this.cleaningUpScan(undefined);
+
+				// Defines information about module details
+				this.onViewResults();
 			});
 		}
 	}
@@ -685,14 +688,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	}
 
 	public onViewResults() {
-		const date = new Date();
-		const day = date.getDate().toString();
-		const month = date.getMonth() + 1;
-		const monthString = month.toString();
-		const year = date.getFullYear().toString();
-		const time = date.toTimeString().split(' ');
-		const dateString = year + '/' + monthString + '/' + day + ' ' + time[0];
-
 		const results = {
 			finalResultCode: this.hardwareScanService.getFinalResultCode(),
 			status: HardwareScanTestResult[HardwareScanTestResult.Pass],
@@ -755,13 +750,10 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			results.items.push(item);
 		}
 
-		this.hardwareScanService.setIsViewingRecoverLog(false);
+		// Update the ViewResultItem and list of the modules with the details
 		this.hardwareScanService.setViewResultItems(results);
-		this.hardwareScanService.setScanExecutionStatus(false);
-		this.hardwareScanService.setIsScanDone(false);
-		this.isScanDone = true;
+		this.modules = results.items;
 	}
-
 
 	public onViewResultsRecover() {
 		const date = new Date();
@@ -819,11 +811,8 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			results.items.push(item);
 		}
 
-		this.hardwareScanService.setIsViewingRecoverLog(true);
 		this.hardwareScanService.setViewResultItems(results);
-		this.hardwareScanService.setRecoverExecutionStatus(false);
-		this.hardwareScanService.setIsScanDone(false);
-		this.isScanDone = true;
+		this.modules = results.items;
 	}
 
 	private statusToken(status) {

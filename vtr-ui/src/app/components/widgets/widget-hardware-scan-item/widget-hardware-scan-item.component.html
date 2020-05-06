@@ -19,22 +19,22 @@
 					<div class="row">
 						<p class="title">{{item.module}}</p><p class="subtitle">{{item.name}}</p>
 					</div>
+
+					<!-- Icon to expand and collapse details list -->
+					<a *ngIf="isEnableViewResults || item.details"
+						href="javascript:void(0);"
+						aria-label="module-details"
+						class="details-link"
+						(click)="item.collapsed = !item.collapsed">
+						<fa-icon [icon]="['fas', 'caret-right']" *ngIf="!item.collapsed"></fa-icon>
+						<fa-icon [icon]="['fas', 'caret-up']" *ngIf="item.collapsed"></fa-icon>
+						{{ 'hardwareScan.details' | translate }}
+					</a>
 				</div>
 
-				<a *ngIf="item.details"
-					href="javascript:void(0);"
-					aria-label="module-details"
-					class="details"
-					(click)="item.collapsed = !item.collapsed">
-					<fa-icon [ngClass]="{'rotate': item.collapsed}"
-						[icon]="['fas', 'caret-down']" 
-						[attr.aria-expanded]="item.collapsed">
-					</fa-icon>
-					{{ detailsText }}
-				</a>
-
 				<!-- Icon to expand and collapse test list -->
-				<a *ngIf="isScanExecute" href="javascript:void(0);"
+				<a *ngIf="isScanExecute && !isEnableViewResults"
+					href="javascript:void(0);"
 					(click)="item.collapsed = !item.collapsed"
 					[ngClass]="{'rotate': item.collapsed}">
 					<fa-icon [icon]="['fal', 'angle-down']"
@@ -44,7 +44,19 @@
 			</div>
 		</div>
 
-		<div class="row col" *ngIf="isScanExecute">
+		<!-- Details List with information about the module -->
+		<div class="row details-list" *ngIf="(isEnableViewResults || item.details) && item.collapsed">
+			<table class="table table-details table-active table-borderless">
+				<tbody>
+					<tr *ngFor="let detail of item.details">
+						<th>{{getKey(detail)}}</th>
+						<td>{{getValue(detail)}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="row col">
 			<!-- Result code information -->
 			<div class="result-code" *ngIf="item.resultCode">
 				<p class="title">{{resultCodeText}}:</p>
@@ -63,14 +75,20 @@
 				</a>
 			</div>
 
-			<!-- Test List -->
-			<div class="test-list col">
+			<!-- Test List with collapsed running test-->
+			<div class="test-list col" *ngIf="isScanExecute && !isEnableViewResults">
 				<vtr-ui-hardware-list
 					[ngbCollapse]="!item.collapsed"
 					[items]="item.listTest"
-					[details]="item.details"
-					[template]="2"
-					[collapsed]="item.collapsed">
+					[template]="2">
+				</vtr-ui-hardware-list>
+			</div>
+
+			<!-- Test List with deails test-->
+			<div class="test-list col" *ngIf="isEnableViewResults || item.details">
+				<vtr-ui-hardware-list
+					[items]="item.listTest"
+					[template]="2">
 				</vtr-ui-hardware-list>
 			</div>
 		</div>
@@ -90,7 +108,7 @@
 			metricsEvent="articleclick"
 			metricsPageNumber="1">
 			<button class='btn button'>
-				{{ lenovoSupport }}
+				{{ 'hardwareScan.support.subtitle' | translate }}
 			</button>
 		</a>
 	</div>
