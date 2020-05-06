@@ -14,14 +14,4 @@ export class BatteryDetailMockService  {
 		private http: HttpClient
 	) {
 	}
-
-	/**
-	 * return data from mock json file
-	 */
-// 	getBatteryDetail(): Promise<BatteryDetail[]> {
-// 		return this.http.get<BatteryDetail[]>(
-// 			`mock-api/battery-data.mock.json`
-// 		);
-// 	}
-// 
 }
