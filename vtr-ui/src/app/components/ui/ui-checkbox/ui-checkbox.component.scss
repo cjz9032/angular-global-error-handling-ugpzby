@@ -2,7 +2,7 @@
 
 .auto-set-checkbox {
 	$check-box-size: 2rem;
-	$check-box-shadow: inset 0 0 0 0.2rem rgba(255, 255, 255, 1);
+	$check-box-shadow: inset 0 0 0 0.2rem $light;
 	$disabled-opacity: 0.4;
 
 	@mixin check-icon($icon-color: "white") {
@@ -87,6 +87,7 @@
 		.custom-control-input:active:not(:checked) ~ .custom-control-label {
 			&::before {
 				border-color: $shade_blue;
+				background-color: $shade_blue;
 			}
 		}
 		.custom-control-input:active:checked ~ .custom-control-label {
@@ -104,6 +105,9 @@
 			&::before {
 				border-color: $shade_blue;
 				opacity: $disabled-opacity;
+			}
+			&::after {
+				background-color: $shade_blue;
 			}
 		}
 		.custom-control-input:disabled:checked ~ .custom-control-label {
