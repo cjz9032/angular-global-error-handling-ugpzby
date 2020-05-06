@@ -40,7 +40,11 @@
 										<div class="col px-5">
 											<div class="row mb-4 mt-4 ml-4">
 												<div>
-													<img alt=""
+													<img *ngIf="isDesktopMachine" alt=""
+														class="img-fluid mx-auto d-block"
+														src="assets/images/pin_toolbar_dt.png"
+													>
+													<img *ngIf="!isDesktopMachine" alt=""
 														class="img-fluid mx-auto d-block"
 														src="assets/images/pin_toolbar_non_dt.png"
 													>
