@@ -2090,8 +2090,9 @@
                 "imageAfter": "After"
             },
             "antiTheft": {
-                "heading": "Pametni senzori",
-                "title": "Pametno upozorenje o kretanju",
+                "heading": "Pametno otkrivanje",
+                "title": "Pametni alarm kretanja",
+                "tooltip":"<div>Ova značajka ne radi ako je računalo u stanju hibernacije ili isključeno. Provjerite postavke u sljedećim radnjama:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>radnje zatvaranja poklopca</li><li>radnje kod kritične/slabe baterije</li><li>radnja gumba za napajanje</li><li>radnja gumba za stanje mirovanja</li><li>postavke vremenskog ograničenja mirovanja do hibernacije</li></ul></div>U suprotnom se alarm neće aktivirati, niti će fotografirati.</div>",
                 "desc": "<p><label>Kada omogućite ovu značajku, uređaj će početi piskati kad je vaš zaslon zaključan a otkrije se pokrete, naročito na javnom mjestu.</label></p> <p><label>Da biste isključili alarm, unesite pravilnu lozinku ili se prijavite u sustav Windows Hello.</label></p>",
                 "note": {
                     "description": "Nakon uspješne prijave u sustav, ova će se značajka automatski isključiti. Da biste je opet koristili morate je ponovo uključiti."
@@ -2134,8 +2135,7 @@
                 "fileAuthorizationTips": {
                     "content": "Lenovo Vantage nema pristup datotečnom sustavu.",
                     "link": "Idite na postavke sustava Windows za omogućivanje pristupa"
-                },
-                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
+                }
             },
             "voice": {
                 "title": "Glas",

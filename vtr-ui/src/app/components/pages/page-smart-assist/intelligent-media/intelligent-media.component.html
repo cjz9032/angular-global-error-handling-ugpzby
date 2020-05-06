@@ -29,7 +29,7 @@
 				</li>
 			</ul>
 
-			<ul class="list-group list-group-flush superResolution-group">
+			<ul class="list-group list-group-flush superResolution-group" *ngIf="superResolutionAvailable">
 				<li>
 					<div class="border-top common-li-padding"
 						*ngIf="superResolutionAvailable && intelligentMediaAvailable"></div>
@@ -50,7 +50,7 @@
 						[showLoaderState]="isSRLoading">
 					</vtr-ui-row-switch>
 
-					<div class="superResolution-image">
+					<div class="superResolution-image" *ngIf="superResolutionAvailable">
 						<img [src]="image"
 							class="image"
 							role="img"

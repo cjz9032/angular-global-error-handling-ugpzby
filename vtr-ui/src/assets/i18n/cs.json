@@ -2092,6 +2092,7 @@
             "antiTheft": {
                 "heading": "Inteligentní detekce",
                 "title": "Inteligentní varování při pohybu",
+                "tooltip":"<div>Tato funkce nefunguje, když je počítač v režimu hibernace nebo vypnutý. Zkontrolujte nastavení v následujících akcích:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>Akce uzavírání víka</li><li>Akce při nízké/kriticky nízké kapacitě baterie</li><li>Akce hlavního vypínače napájení</li><li>Akce tlačítka režimu spánku</li><li>Nastavení doby nečinnosti do přechodu k hibernaci</li></ul></div>Jinak se nespustí varování, ani se nepořídí snímky.</div>",
                 "desc": "<p><label>Při povolení této funkce začne zařízení vydávat zvukový signál, když je obrazovka uzamčena a je zjištěn pohyb, zejména na veřejném místě.</label></p> <p><label>Chcete-li varování zrušit, zadejte správné heslo nebo se přihlaste funkcí Windows Hello.</label></p>",
                 "note": {
                     "description": "Po úspěšném přihlášení do systému se tato funkce automaticky vypne. Abyste ji mohli používat, musíte ji znovu povolit."
@@ -2134,8 +2135,7 @@
                 "fileAuthorizationTips": {
                     "content": "Lenovo Vantage nemá přístup k souborovému systému.",
                     "link": "Chcete-li poskytnout přístup, přejděte do nastavení systému Windows"
-                },
-                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
+                }
             },
             "voice": {
                 "title": "Hlas",

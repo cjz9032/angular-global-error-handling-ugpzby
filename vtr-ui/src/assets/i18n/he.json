@@ -2092,6 +2092,7 @@
             "antiTheft": {
                 "heading": "חישה חכמה",
                 "title": "התראת Smart Motion",
+                "tooltip":"<div>תכונה זו אינה פועלת כאשר המחשב נמצא במצב שינה או במצב כיבוי. בדקו את ההגדרות בפעולות הבאות:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>פעולות של מכסה הסגירה</li><li>פעולה של סוללה נמוכה/במצב קריטי</li><li>פעולה של מתג הפעלה</li><li>פעולה של לחצן שינה</li><li>הגדרות פסק זמן ללא פעילות למצב שינה</li></ul></div>אחרת, לא תופעל אזעקה, וגם לא יופעל צילום תמונות.</div>",
                 "desc": "<p><label>בעת הפעלת תכונה זו, המכשיר יתחיל לצפצף כאשר המסך נעול ויזוהו תנועות, במיוחד במקום ציבורי.</label></p> <p><label>כדי לבטל את ההתראה, הזינו את הסיסמה הנכונה או התחברו באמצעות Windows Hello.</label></p>",
                 "note": {
                     "description": "לאחר כניסה למערכת בהצלחה, תכונה זו תושבת אוטומטית. צריך להפעיל אותה שוב כדי להשתמש בה."
@@ -2134,8 +2135,7 @@
                 "fileAuthorizationTips": {
                     "content": "ל-Lenovo Vantage אין גישה למערכת הקבצים.",
                     "link": "עברו להגדרות Windows כדי לאפשר גישה"
-                },
-                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
+                }
             },
             "voice": {
                 "title": "קול",

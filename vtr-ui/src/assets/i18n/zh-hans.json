@@ -2092,7 +2092,7 @@
             "antiTheft": {
                 "heading": "智能感知",
                 "title": "智能运动警报",
-                "tooltip": "<div>当计算机处于休眠模式或关闭电源时，此功能不起作用。检查以下操作中的设置：<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>闭合盖的操作</li><li>关键/低电池作用</li><li>电源按钮操作</li><li>睡眠按钮操作</li><li>空闲超时设置以休眠</li></ul></div>否则，它将不会触发报警，既不拍照。</div>",
+                "tooltip":"<div>计算机处于休眠模式或电源已关闭时，此功能无效。请检查以下操作的设置：<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>合上外盖操作</li><li>电量严重不足/电量低操作</li><li>电源按钮操作</li><li>睡眠按钮操作</li><li>休眠的空闲超时设置</li></ul></div>否则，不会触发警报和拍照。</div>",
                 "desc": "<p><label>启用此功能后，当屏幕锁定并检测到运动时（尤其是在公共场所），设备将发出蜂鸣声。</label></p> <p><label>要消除警报，请输入正确的密码或通过 Windows Hello 登录。</label></p>",
                 "note": {
                     "description": "成功登录系统后，此功能将自动关闭。需要再次启用此功能才能使用。"

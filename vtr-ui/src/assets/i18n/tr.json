@@ -2090,8 +2090,9 @@
                 "imageAfter": "After"
             },
             "antiTheft": {
-                "heading": "Akıllı Algılama",
-                "title": "Akıllı Hareket Uyarısı",
+                "heading": "Akıllı algılama",
+                "title": "Akıllı hareket alarmı",
+                "tooltip":"<div>Bu özellik, bilgisayar uyku kipindeyken veya kapalıyken çalışmaz. Aşağıdaki işlemlerin ayarlarını kontrol edin:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>kapağı kapatma işlemleri</li><li>kritik düzeyde/düşük pil işlemi</li><li>Açma/kapama düğmesi işlemi</li><li>uyku düğmesi işlemi</li><li>uyku kipine geçiş için boşta kalma zaman aşımı ayarları</li></ul></div>Aksi takdirde, alarm tetiklenmez veya fotoğraf çekmez.</div>",
                 "desc": "<p><label>Bu özelliği etkin durumdayken, ekranınız kilitlendiğinde ve özellikle halka açık bir yerde hareket algılandığında cihaz bip sesi çıkarmaya başlar.</label></p> <p><label>Alarmı kapatmak için doğru parolayı girin veya Windows Hello ile giriş yapın.</label></p>",
                 "note": {
                     "description": "Sisteme başarıyla giriş yaptıktan sonra, bu özellik otomatik olarak kapanır. Özelliği kullanmak için yeniden etkinleştirmeniz gerekir."
@@ -2134,8 +2135,7 @@
                 "fileAuthorizationTips": {
                     "content": "Lenovo Vantage, dosya sistemine erişemiyor.",
                     "link": "Erişim izni vermek için Windows Ayarları bölümüne gidin"
-                },
-                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
+                }
             },
             "voice": {
                 "title": "Ses",

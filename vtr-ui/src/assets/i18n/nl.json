@@ -2090,8 +2090,9 @@
                 "imageAfter": "After"
             },
             "antiTheft": {
-                "heading": "Intelligent Sensing",
-                "title": "Slimme bewegingsmelding",
+                "heading": "Intelligente sensoren",
+                "title": "Slim bewegingsalarm",
+                "tooltip":"<div>Deze functie werkt niet als de computer in de sluimerstand staat of is uitgeschakeld. Schakel de instellingen voor de volgende acties in:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>acties voor sluiten van het deksel</li><li>actie voor bijna lege batterij</li><li>actie voor de aan/uit-knop</li><li>actie voor de slaapstandknop</li><li>instellingen voor time-out bij inactiviteit naar sluimerstand</li></ul></div>Als je deze niet instelt, worden geen waarschuwingen geactiveerd of foto's genomen.</div>",
                 "desc": "<p><label>Als u deze functie inschakelt, begint het apparaat te piepen wanneer uw scherm vergrendeld is en er bewegingen worden gedetecteerd, vooral in openbare omgevingen.</label></p> <p><label>Om het alarm uit te schakelen geeft u het juiste wachtwoord op of meldt u zich aan bij Windows Hello.</label></p>",
                 "note": {
                     "description": "Als u eenmaal bij het systeem bent aangemeld, wordt deze functie automatisch uitgeschakeld. Om deze functie weer te gebruiken, moet u de functie opnieuw inschakelen."
@@ -2134,8 +2135,7 @@
                 "fileAuthorizationTips": {
                     "content": "Lenovo Vantage heeft geen toegang tot het bestandssysteem.",
                     "link": "Ga naar de Windows-instellingen om toegang te geven"
-                },
-                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
+                }
             },
             "voice": {
                 "title": "Spraak",

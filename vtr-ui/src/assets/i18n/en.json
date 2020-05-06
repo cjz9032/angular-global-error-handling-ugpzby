@@ -1465,32 +1465,28 @@
                     "title": "Audio smart settings",
                     "dolby": {
                         "title": "Dolby audio",
-                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
+                        "description": "Select the mode as you desired from the following. You also can check the \"Automatically optimize audio for ...\" checkbox. When selected, Dolby audio automatically picks up the best audio effect for you according to the modes you are in.",
                         "options": {
-                            "dynamic": "DYNAMIC",
-							"movie": "MOVIE",
-							"music": "MUSIC",
-							"games": "GAME",
-							"voip": "VOICE"
+                            "dynamic": "Dynamic",
+							"movie": "Movie",
+							"music": "Music",
+							"games": "Game",
+							"voip": "Voice"
                         },
-                        "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "checkboxText": "Automatically optimize audio for VOIP",
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
+                                "checkboxText": "Automatically optimize audio for VoIP",
+                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.). When enabled, Dolby audio automatically changes to the Voice mode for better voice quality."
                             },
                             "entertainmentMode": {
                                 "checkboxText": "Automatically optimize audio for entertainment",
-                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1":"If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2":"If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3":"If you are using gaming apps, it changes to the Gaming mode accordingly."
+                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are using:<br>• If you are using apps such as iTunes, it changes to the Music mode.<br>• If you are using apps such as Youtube, it changes to the Movie mode.<br>• If you are using gaming apps, it changes to the Gaming mode accordingly."
                             }
                         }
                     },
                     "eCourse": {
                         "title": "Interactive E-course mode",
-                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
+                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teachers and students. When enabled, Dolby audio automatically changes to Voice mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
                     }
                 },
 				"microphone": {

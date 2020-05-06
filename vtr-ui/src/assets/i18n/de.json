@@ -2091,7 +2091,8 @@
             },
             "antiTheft": {
                 "heading": "Intelligente Sensorik",
-                "title": "Intelligente Bewegungswarnung",
+                "title": "Intelligenter Bewegungsalarm",
+                "tooltip":"<div>Diese Funktion funktioniert nicht, wenn sich der Computer im Ruhezustand befindet oder ausgeschaltet ist. Überprüfen Sie die Einstellungen der folgenden Aktionen:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>Aktionen beim Zuklappen</li><li>Aktion bei kritischem/niedrigem Akkuzustand</li><li>Aktion für Netzschalter</li><li>Aktion für Energiespartaste</li><li>Einstellungen für Leerlaufzeitüberschreitung zu Ruhezustand</li></ul></div>Andernfalls wird kein Alarm ausgelöst und es werden keine Fotos gespeichert.</div>",
                 "desc": "<p><label>Wenn diese Funktion aktiviert ist, beginnt die Einheit zu piepen, wenn der Bildschirm gesperrt ist und Bewegungen erkannt werden, vor allem an einem öffentlichen Ort.</label></p> <p><label>Geben Sie zum Beenden des Alarms das richtige Kennwort ein oder melden Sie sich mit Windows Hello an.</label></p>",
                 "note": {
                     "description": "Wenn Sie sich erfolgreich beim System angemeldet haben, wird die Funktion automatisch ausgeschaltet. Sie müssen sie erneut aktivieren, um sie verwenden zu können."
@@ -2134,8 +2135,7 @@
                 "fileAuthorizationTips": {
                     "content": "Lenovo Vantage hat keinen Zugriff auf das Dateisystem.",
                     "link": "Zu Windows-Einstellungen wechseln, um Zugriff zu gewähren"
-                },
-                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
+                }
             },
             "voice": {
                 "title": "Sprache",

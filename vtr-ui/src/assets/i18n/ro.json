@@ -2092,6 +2092,7 @@
             "antiTheft": {
                 "heading": "Detectare inteligentă",
                 "title": "Alertă Smart Motion",
+                "tooltip":"<div>Această caracteristică nu funcționează atunci când computerul este în modul de hibernare sau este oprit. Verificați setările pentru următoarele acțiuni:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>acțiuni de închidere a capacului</li><li>acțiuni pentru nivelul critic/scăzut al energiei bateriei</li><li>acțiuni ale butonului de alimentare</li><li>acțiuni ale butonului de repaus</li><li>setările de expirare a timpului de inactivitate până la trecerea în hibernare</li></ul></div>În caz contrar, caracteristica nu va declanșa alarma și nici nu va realiza fotografii.</div>",
                 "desc": "<p><label>Când activați această caracteristică, dispozitivul va începe să sune atunci când ecranul este blocat și se detectează mișcări, în special într-un loc public.</label></p> <p><label>Pentru a respinge alarma, introduceți parola corectă sau conectați-vă prin Windows Hello.</label></p>",
                 "note": {
                     "description": "După ce v-ați conectat cu succes la sistem, această caracteristică va fi oprită automat. Trebuie să o activați din nou pentru a o utiliza."
@@ -2134,8 +2135,7 @@
                 "fileAuthorizationTips": {
                     "content": "Lenovo Vantage nu are acces la sistemul de fișiere.",
                     "link": "Accesați setările Windows pentru a acorda acces."
-                },
-                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
+                }
             },
             "voice": {
                 "title": "Voce",

@@ -2091,7 +2091,8 @@
             },
             "antiTheft": {
                 "heading": "Inteligentné snímanie",
-                "title": "Inteligentné upozornenie na pohyb",
+                "title": "Inteligentná signalizácia pohybu",
+                "tooltip":"<div>Táto funkcia nefunguje, keď je počítač v režime dlhodobého spánku alebo je vypnutý. Skontrolujte nastavenia nasledujúcich akcií:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>akcie pri zatvorení krytu</li><li>akcia pri kriticky vybitej/takmer vybitej batérii</li><li>akcia pri stlačení tlačidla napájania</li><li>funkcia pri stlačení tlačidla spánku</li><li>nastavenia časového limitu prechodu z režimu nečinnosti do režimu dlhodobého spánku</li></ul></div>V opačnom prípade sa nespustí budík, ani sa nedá fotografovať.</div>",
                 "desc": "<p><label>Keď povolíte túto funkciu, zariadenie začne vydávať zvukový signál, keď je obrazovka uzamknutá a zistí sa pohyb, najmä vo verejnom priestore.</label></p> <p><label>Ak chcete upozornenie zrušiť, zadajte správne heslo alebo sa prihláste pomocou služby Windows Hello.</label></p>",
                 "note": {
                     "description": "Po úspešnom prihlásení do systému sa táto funkcia automaticky vypne. Ak ju chcete používať, musíte ju znova povoliť."
@@ -2134,8 +2135,7 @@
                 "fileAuthorizationTips": {
                     "content": "Lenovo Vantage nemá prístup k systému súborov.",
                     "link": "Prejdite do nastavení systému Windows a povoľte prístup"
-                },
-                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
+                }
             },
             "voice": {
                 "title": "Hlas",

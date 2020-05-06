@@ -2091,7 +2091,8 @@
             },
             "antiTheft": {
                 "heading": "Інтелектуальне зчитування",
-                "title": "Інтелектуальне виявлення рухів",
+                "title": "Інтелектуальна тривога за виявлення рухів",
+                "tooltip":"<div>Ця функція не працює, коли комп'ютер перебуває в режимі глибокого сну або вимкнений. Перевірте настройки таких дій:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>дії закриття кришки;</li><li>дія критично низького/низького заряду акумулятора;</li><li>дія кнопки живлення;</li><li>дія кнопки сну;</li><li>настройки часу без активності до переходу в режим сну.</li></ul></div>В іншому випадку сигнал тривоги не спрацює, крім того, не буде зроблено фото.</div>",
                 "desc": "<p><label>Якщо ввімкнути цю функцію, пристрій подаватиме сигнал в разі виявлення рухів перед заблокованим екраном, особливо в громадських місцях.</label></p> <p><label>Щоб вимкнути сигнал, введіть правильний пароль або увійдіть через Windows Hello.</label></p>",
                 "note": {
                     "description": "Після успішного входу в систему цю функцію буде автоматично вимкнуто. Для подальшого використання її доведеться ввімкнути."
@@ -2134,8 +2135,7 @@
                 "fileAuthorizationTips": {
                     "content": "Lenovo Vantage не надано доступ до файлової системи.",
                     "link": "Перейдіть до настройок Windows, щоб надати доступ"
-                },
-                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
+                }
             },
             "voice": {
                 "title": "Голос",

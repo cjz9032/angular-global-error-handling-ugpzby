@@ -2091,7 +2091,8 @@
             },
             "antiTheft": {
                 "heading": "Intelligent avkänning",
-                "title": "Smart rörelsevarning",
+                "title": "Smart rörelselarm",
+                "tooltip":"<div>Funktionen fungerar inte om datorn är i viloläge eller avstängd. Kontrollera inställningarna för följande åtgärder:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>stänga locket</li><li>kritisk/låg batteriladdning</li><li>strömbrytare</li><li>knapp för strömsparläge</li><li>från inaktiv till viloläge</li></ul></div>I annat fall utlöses inte larmet och det går inte heller att ta foton.</div>",
                 "desc": "<p><label>Om du aktiverar den här funktionen börjar enheten signalera när bildskärmen är låst och rörelser identifieras, speciellt på en offentlig plats.</label></p> <p><label>Du stänger av larmet genom att ange rätt lösenord eller logga in med Windows Hello.</label></p>",
                 "note": {
                     "description": "När du har loggat in på systemet stängs funktionen av automatiskt. Du måste aktivera den igen om du vill använda den."
@@ -2134,8 +2135,7 @@
                 "fileAuthorizationTips": {
                     "content": "Lenovo Vantage har inte åtkomst till filsystemet.",
                     "link": "Öppna Windows-inställningar för att ge åtkomst"
-                },
-                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
+                }
             },
             "voice": {
                 "title": "Röst",

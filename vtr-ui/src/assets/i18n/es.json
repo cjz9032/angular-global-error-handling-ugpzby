@@ -2092,6 +2092,7 @@
             "antiTheft": {
                 "heading": "Detección inteligente",
                 "title": "Alerta de movimiento inteligente",
+                "tooltip":"<div>Esta característica no funciona cuando el sistema está en modalidad de hibernación o está apagado. Compruebe los valores en las siguientes acciones:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>acciones de la cubierta de cierre</li><li>acción de batería crítica/baja</li><li>acción del botón de encendido</li><li>acción del botón de suspensión</li><li>valores de tiempo de espera de inactividad hasta hibernación</li></ul></div>De lo contrario, no activará la alarma ni tomará las fotos.</div>",
                 "desc": "<p><label>Al habilitar esta característica, el dispositivo empezará a emitir un pitido cuando la pantalla esté bloqueada y se detecten movimientos, especialmente en un espacio público.</label></p> <p><label>Para descartar la alarma, especifique la contraseña correcta o inicie sesión en Windows Hello.</label></p>",
                 "note": {
                     "description": "Una vez inicie sesión satisfactoriamente en el sistema, esta característica se desactivará automáticamente. Debe habilitarla de nuevo para utilizarla."
@@ -2134,8 +2135,7 @@
                 "fileAuthorizationTips": {
                     "content": "Lenovo Vantage no tiene acceso al sistema de archivos.",
                     "link": "Vaya a la configuración de Windows para dar acceso"
-                },
-                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
+                }
             },
             "voice": {
                 "title": "Voz",

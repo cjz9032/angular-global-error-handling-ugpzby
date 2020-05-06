@@ -2091,7 +2091,8 @@
             },
             "antiTheft": {
                 "heading": "지능형 센싱",
-                "title": "스마트 모션 알림",
+                "title": "스마트 모션 알람",
+                "tooltip":"<div>컴퓨터가 최대 절전 모드이거나 전원이 꺼진 경우에는 해당 기능이 작동하지 않습니다. 다음 동작에서 설정을 확인하십시오.<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>덮개 닫기 동작</li><li>배터리 부족/경보 동작</li><li>전원 버튼 동작</li><li>절전 버튼 동작</li><li>최대 절전 모드에 대한 유휴 시간 제한 설정</li></ul></div>그렇지 않으면 알람이 울리지 않고 사진을 찍지도 않습니다.</div>",
                 "desc": "<p><label>이 기능을 활성화하면 화면이 잠겨 있을 때, 특히 공공장소에서 이동이 감지될 때 장치에서 신호음이 울리기 시작합니다.</label></p> <p><label>알람을 해제하려면 올바른 암호를 입력하거나 Windows Hello로 로그인하십시오.</label></p>",
                 "note": {
                     "description": "시스템에 로그인하면 이 기능이 자동으로 꺼집니다. 다시 기능을 활성화해야 사용할 수 있습니다."
@@ -2134,8 +2135,7 @@
                 "fileAuthorizationTips": {
                     "content": "Lenovo Vantage는 파일 시스템에 액세스할 수 없습니다.",
                     "link": "액세스 권한을 부여하려면, Windows 설정으로 이동합니다"
-                },
-                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
+                }
             },
             "voice": {
                 "title": "음성",

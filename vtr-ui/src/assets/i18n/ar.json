@@ -2094,6 +2094,7 @@
             "antiTheft": {
                 "heading": "الاستشعار الذكي",
                 "title": "تنبيه الحركة الذكية",
+                "tooltip": "<div>لا تعمل هذه الميزة عندما يكون الكمبيوتر في وضع الإسبات أو غير موصول بالطاقة. تحقق من الإعدادات في الإجراءات التالية:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>إجراءات إغلاق الغطاء</li><li>إجراء بطارية حرجة/منخفضة الشحنة</li><li>إجراء زر الطاقة</li><li>إجراء زر السكون</li><li>إعدادات مهلة الخمول للإسبات</li></ul></div>بخلاف ذلك، لن تشغل المنبه، كما أنها لن تلتقط الصور.</div>",
                 "desc": "<p><label>عند تمكين هذه الميزة، سيبدأ الجهاز بإصدار صوت طنين عندما تكون الشاشة مقفلة ويتم اكتشاف الحركات خاصة في مكان عام.</label></p> <p><label>لاستبعاد التنبيه، أدخل كلمة المرور الصحيحة أو قم بتسجيل الدخول بواسطة Windows Hello.</label></p>",
                 "note": {
                     "description": "بمجرد تسجيل الدخول إلى النظام بنجاح، سيتم إيقاف تشغيل هذه الميزة تلقائيًا. يجب تمكينه مرة أخرى لاستخدامه."
@@ -2136,8 +2137,7 @@
                 "fileAuthorizationTips": {
                     "content": "لا يمكن لـ Lenovo Vantage الوصول إلى نظام الملفات.",
                     "link": "انتقل إلى إعدادات Windows لمنح الوصول"
-                },
-                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
+                }
             },
             "voice": {
                 "title": "الصوت",
