@@ -121,22 +121,7 @@
 												attr.aria-label="{{'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.entertainmentMode.tooltip' | translate}}{{'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.entertainmentMode.description1' | translate}}{{'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.entertainmentMode.description2' | translate}}{{'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.entertainmentMode.description3' | translate}}">
 											</fa-icon>
 											<ng-template #tooltipRef>
-												<div id="entertainmentTooltip">
-													{{'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.entertainmentMode.tooltip' | translate}}
-													<div class="entertainmentDescription">
-														<ul>
-															<li>
-																{{'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.entertainmentMode.description1' | translate}}
-															</li>
-															<li>
-																{{'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.entertainmentMode.description2' | translate}}
-															</li>
-															<li>
-																{{'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.entertainmentMode.description3' | translate}}
-															</li>
-														</ul>
-													</div>
-												</div>
+												<div id="entertainmentTooltip" [innerHTML]="'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.entertainmentMode.tooltip' | translate"></div>
 											</ng-template>
 										</div>
 									</div>
