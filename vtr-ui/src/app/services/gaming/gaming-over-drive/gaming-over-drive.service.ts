@@ -3,25 +3,25 @@ import { VantageShellService } from '../../vantage-shell/vantage-shell.service';
 import { LoggerService } from '../../logger/logger.service';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class GamingOverDriveService {
-  private gamingOverDrive: any;
-  public isShellAvailable = false;
+	private gamingOverDrive: any;
+	public isShellAvailable = false;
 
-  constructor(
-    shellService: VantageShellService,
-    private logger: LoggerService
-  ) { 
-    this.gamingOverDrive = shellService.getGamingOverDrive();
-    if(this.gamingOverDrive) {
-      this.isShellAvailable = true;
-    }
-  }
+	constructor(
+		shellService: VantageShellService,
+		private logger: LoggerService
+	) {
+		this.gamingOverDrive = shellService.getGamingOverDrive();
+		if (this.gamingOverDrive) {
+			this.isShellAvailable = true;
+		}
+	}
 
-  getOverDriveStatus(): Promise<any> {
+	getOverDriveStatus(): Promise<any> {
 		try {
-			if(this.isShellAvailable) {
+			if (this.isShellAvailable) {
 				return this.gamingOverDrive.getOverDriveStatus();
 			}
 			this.logger.error(`Service-GamingOverDrive-SetOverDriveStatus: return undefined, shell Available: ${this.isShellAvailable}`);
@@ -34,7 +34,7 @@ export class GamingOverDriveService {
 
 	setOverDriveStatus(value: Boolean): Promise<any> {
 		try {
-			if(this.isShellAvailable) {
+			if (this.isShellAvailable) {
 				return this.gamingOverDrive.setOverDriveStatus(value);
 			}
 			this.logger.error(`Service-GamingOverDrive-SetOverDriveStatus: return undefined, shell Available: ${this.isShellAvailable}`);
