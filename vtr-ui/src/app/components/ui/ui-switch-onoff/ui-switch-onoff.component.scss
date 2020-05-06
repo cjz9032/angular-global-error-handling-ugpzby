@@ -220,14 +220,14 @@ input.wifi-checked + .switch.switch-xs > small {
 	color: $light;
 }
 
-.checkbox.blue-theme {
-	&:focus {
-		@include outline-border-white;
-	}
-}
+// .checkbox.blue-theme {
+// 	&:focus {
+// 		@include outline-border-white;
+// 	}
+// }
 
-.checkbox.white-theme {
-	&:focus {
-		@include outline-border-blue;
-	}
-}
+// .checkbox.white-theme {
+// 	&:focus {
+// 		@include outline-border-blue;
+// 	}
+// }
