@@ -50,7 +50,6 @@
 	<div class="custom-control custom-checkbox eye-care-checkbox"
 		*ngIf="sunsetToSunriseStatus && sunsetToSunriseStatus.available && !enableSunsetToSunrise">
 		<vtr-ui-checkbox componentId="cb-eye-care-schedule"
-			tabindex="-1"
 			[disabled]="missingGraphicDriver"
 			[checked]="sunsetToSunriseStatus.status"
 			[value]="sunsetToSunriseStatus.status"

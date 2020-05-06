@@ -47,7 +47,6 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			id: 'audio',
 			label: 'device.deviceSettings.audio.title',
 			path: 'device-settings/audio',
-			params: { fromTab: true },
 			icon: 'audio',
 			iconClass: 'icomoon-audio',
 			canDeactivate: [GuardService],
@@ -58,7 +57,6 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			id: 'display-camera',
 			label: 'device.deviceSettings.displayCamera.title',
 			path: 'device-settings/display-camera',
-			params: { fromTab: true },
 			icon: 'display-camera',
 			iconClass: 'icomoon-display_camera',
 			canDeactivate: [GuardService],
@@ -69,7 +67,6 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			id: 'input-accessories',
 			label: 'device.deviceSettings.inputAccessories.title',
 			path: 'device-settings/input-accessories',
-			params: { fromTab: true },
 			icon: 'input-accessories',
 			iconClass: 'icomoon-input_accessories',
 			canDeactivate: [GuardService],
@@ -149,7 +146,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 	hidePowerPage(routeTo: boolean = true) {
 		this.menuItems = this.commonService.removeObjById(this.menuItems, 'power');
 		if (routeTo) {
-			this.router.navigate(['device/device-settings/audio', { queryParams: this.params }], { replaceUrl: true });
+			this.router.navigate(['device/device-settings/audio'], { replaceUrl: true });
 		}
 	}
 
