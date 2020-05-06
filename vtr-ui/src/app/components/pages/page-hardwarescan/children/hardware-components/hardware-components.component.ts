@@ -10,7 +10,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { ModalHardwareScanCustomizeComponent } from '../../../../modal/modal-hardware-scan-customize/modal-hardware-scan-customize.component';
 import { ModalCancelComponent } from '../../../../modal/modal-cancel/modal-cancel.component';
-import { ModalEticketComponent } from '../../../../modal/modal-eticket/modal-eticket.component';
+import { ModalScanFailureComponent } from '../../../../modal/modal-scan-failure/modal-scan-failure.component';
 import { ModalScheduleScanCollisionComponent } from '../../../../modal/modal-schedule-scan-collision/modal-schedule-scan-collision.component';
 import { HardwareScanService } from '../../../../../services/hardware-scan/hardware-scan.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
@@ -488,8 +488,8 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			// If there's failure, shows the support pop-up
 			if (failedModules.length > 0) {
 				const supportUrl = await this.lenovoSupportService.getSupportUrl(this.startDate);
-				const rbsDevices = await this.hardwareScanService.getDevicesToRecoverBadSectors();
-				const modalRef = this.modalService.open(ModalEticketComponent, {
+				const rbsDevices = this.hardwareScanService.getDevicesToRecoverBadSectors();
+				const modalRef = this.modalService.open(ModalScanFailureComponent, {
 					backdrop: 'static',
 					size: 'lg',
 					centered: true,

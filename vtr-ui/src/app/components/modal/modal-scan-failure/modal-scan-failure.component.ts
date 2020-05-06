@@ -4,11 +4,11 @@ import { TranslateService } from '@ngx-translate/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'vtr-modal-eticket',
-  templateUrl: './modal-eticket.component.html',
-  styleUrls: ['./modal-eticket.component.scss']
+  selector: 'vtr-modal-scan-failure',
+  templateUrl: './modal-scan-failure.component.html',
+  styleUrls: ['./modal-scan-failure.component.scss']
 })
-export class ModalEticketComponent implements OnInit {
+export class ModalScanFailureComponent implements OnInit {
   @Input() title = this.translate.instant('hardwareScan.eTicket.header');
   @Input() problemDetectedMessage = this.translate.instant('hardwareScan.eTicket.problemDetected');
   @Input() supportRequestQuestionMessage = this.translate.instant('hardwareScan.eTicket.ticketRequestQuestion');
