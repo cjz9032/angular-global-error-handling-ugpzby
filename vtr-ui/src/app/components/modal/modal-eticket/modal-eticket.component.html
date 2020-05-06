@@ -5,29 +5,27 @@
       </button>
    </div>
 
-   <div class="row modal-information">
-      <div class="title">{{ title }}</div>
-   </div>
+  <div class="modal-information">
+    <div class="title">{{ title }}</div>
+    <div class="description">{{ problemDetectedMessage }}</div>
 
-   <br />
+    <div class="modules">
+      <li class="list-module" *ngFor="let module of failedModules; let id = index">
+        <div class="module-row">
+          <fa-icon aria-hidden="true" aria-labelledby="exclamation-icon" class="warning" [icon]="['fas', 'exclamation-circle']">
+          </fa-icon>
+          <span class="module-name">{{ module.moduleName }}</span>
+        </div>
+        <div *ngIf="module.moduleId == 'storage'">
+          <li class="list-device" *ngFor="let device of module.devices; let id = index">
+            <span class="description device-name">{{ device.deviceName }}</span>
+          </li>
+        </div>
+      </li>
+    </div>
 
-   <div class="row modal-information">
-      <div class="description">{{ problemDetectedMessage }}</div>
-   </div>
-
-   <br />
-
-   <div class="row modal-information">
-      <!-- display modules/devices with failure -->
-   </div>
-
-   <br />
-
-   <div class="row modal-information">
-      <div class="description">{{ supportRequestQuestionMessage }}</div>
-   </div>
-
-   <div *ngIf="hasFailedRbsDevices(); else withoutRBS">
+    <div *ngIf="hasFailedRbsDevice; else withoutRBS">
+      <div class="description">{{ suggestedActionRbs }}</div>
       <div class="row">
          <div class="col button-row">
          <a class="action-button" id="rbsButton" (click)="goToRBSPage()">{{ recoverBadSectorsButtonText }}</a>
@@ -40,7 +38,7 @@
          </div>
       </div>
    </div>
- 
+
    <ng-template #withoutRBS>
       <div class="row">
          <div class="col button-row">

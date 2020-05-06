@@ -23,14 +23,36 @@
 			font-weight: $weight_medium;
 		}
 
-		.broken {
-			width: 100%;
-			color: $blue-dark;
-			font-size: 2.1rem;
-			font-weight: bold;
+		.modules {
+			padding-bottom: 1rem;
+			.warning {
+				color: $orange_light;
+			}
+			.list-module {
+				list-style-type: none;
+
+				.module-row {
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					padding: 0 1.5rem 0 0rem;
+				}
+
+				.module-name {
+					width: 100%;
+					color: $shade-darker;
+					font-size: $fontsize_xs2;
+					padding-left: 1rem;
+					font-weight: $weight_bold;
+				}
+
+				.list-device {
+					padding: 0 0 0 3.4rem; // icon size (2.4rem) + module-name spacing (1rem)
+				}
+			}
 		}
     }
-    
+
     .modal-body{
         padding: 0 5rem 3rem 5rem;
     }
