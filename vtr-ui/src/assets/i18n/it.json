@@ -3128,7 +3128,15 @@
         "warningMessage": "I test verranno annullati se il sistema entra in modalità Ibernazione o Sospensione",
         "refreshMessage": "L'aggiornamento potrebbe richiedere del tempo poiché è necessario caricare di nuovo tutti i componenti",
         "processFinishedCannotBeCanceled": "Il processo in esecuzione non deve più essere annullato, poiché è stato completato.",
-        "cancelMayTakeSomeTime": "Attendere. La procedura di annullamento potrebbe richiedere del tempo a seconda del sistema."
+        "cancelMayTakeSomeTime": "Attendere. La procedura di annullamento potrebbe richiedere del tempo a seconda del sistema.",
+        "scanFailureModal": {
+            "title": "Hardware Problem Detected",
+            "problemDetected": "There were detected problems on the following components on your computer:",
+            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
+            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
+            "supportButtonText": "Open Ticket",
+            "recoverBadSectorsButtonText": "Recover Bad Sectors"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

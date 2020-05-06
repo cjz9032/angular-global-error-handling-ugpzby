@@ -3128,7 +3128,15 @@
         "warningMessage": "請記住，如果系統進入睡眠或休眠狀態，將會取消測試",
         "refreshMessage": "重新整理可能需要一些時間，因為此時需要再度載入所有元件",
         "processFinishedCannotBeCanceled": "由於執行中的程序已完成，因此不再需要取消。",
-        "cancelMayTakeSomeTime": "請稍候，視您的系統而定，取消可能需要一些時間。"
+        "cancelMayTakeSomeTime": "請稍候，視您的系統而定，取消可能需要一些時間。",
+        "scanFailureModal": {
+            "title": "Hardware Problem Detected",
+            "problemDetected": "There were detected problems on the following components on your computer:",
+            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
+            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
+            "supportButtonText": "Open Ticket",
+            "recoverBadSectorsButtonText": "Recover Bad Sectors"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

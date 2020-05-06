@@ -3128,7 +3128,15 @@
         "warningMessage": "Lembre-se de que os testes serão cancelados se o sistema entrar em suspensão ou hibernar",
         "refreshMessage": "A atualização pode levar algum tempo, pois precisa carregar todos os componentes novamente",
         "processFinishedCannotBeCanceled": "O processo em execução não precisa mais ser cancelado, pois foi concluído.",
-        "cancelMayTakeSomeTime": "Por favor, aguarde. Dependendo do seu sistema, o cancelamento poderá levar algum tempo."
+        "cancelMayTakeSomeTime": "Por favor, aguarde. Dependendo do seu sistema, o cancelamento poderá levar algum tempo.",
+        "scanFailureModal": {
+            "title": "Problema de Hardware Detectado",
+            "problemDetected": "Foram detectados problemas nos seguintes componentes do seu computador:",
+            "suggestedActionSupport": "Se o seu computador está sob Garantia, clique em <b>abrir tíquete</b> para uma peça de substituição. Para mais informações, acesse o site Lenovo Support Web",
+            "suggestedActionRbs": "Você pode tentar recuperar os seus dispositivos de armazenamento clicando em <b>recuperar setores ruins</b>. Se o problema persistir, você pode clicar em <b>abrir tíquete</b> para suporte adicional.",
+            "supportButtonText": "Abrir tíquete",
+            "recoverBadSectorsButtonText": "Recuperar Setores Ruins"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

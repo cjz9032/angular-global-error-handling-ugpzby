@@ -6,8 +6,8 @@
    </div>
 
   <div class="modal-information">
-    <div class="title">{{ title }}</div>
-    <div class="description">{{ problemDetectedMessage }}</div>
+    <div class="title">{{ 'hardwareScan.scanFailureModal.title' | translate }}</div>
+    <div class="description">{{ 'hardwareScan.scanFailureModal.problemDetected'  | translate }}</div>
 
     <div class="modules">
       <li class="list-module" *ngFor="let module of failedModules; let id = index">
@@ -25,25 +25,30 @@
     </div>
 
     <div *ngIf="hasFailedRbsDevice; else withoutRBS">
-      <div class="description">{{ suggestedActionRbs }}</div>
+      <div class="description" [innerHTML]="'hardwareScan.scanFailureModal.suggestedActionRbs' | translate"></div>
       <div class="row">
-         <div class="col button-row">
-         <a class="action-button" id="rbsButton" (click)="goToRBSPage()">{{ recoverBadSectorsButtonText }}</a>
-         </div>
+        <div class="col button-row">
+          <vtr-ui-button id="rbsButton" tabindex="1" (click)="goToRBSPage()"
+            [tooltipText]="'hardwareScan.scanFailureModal.supportButtonText' | translate"
+            [label]="'hardwareScan.scanFailureModal.recoverBadSectorsButtonText' | translate">
+          </vtr-ui-button>
+          <button type="button" id="supportButtonWithRBS" attr.aria-label="supportButtonWithRBS"
+            class="btn btn-link support-button" (click)="openSupportPage()">{{'hardwareScan.scanFailureModal.supportButtonText' | translate }}</button>
+        </div>
       </div>
+	</div>
 
-      <div class="row">
-         <div class="col button-row">
-         <a class="action-button" href="{{supportUrl}}" id="supportButtonWithRBS" (click)="closeModal()" target="_blank">{{ supportButtonText }}</a>
-         </div>
+    <ng-template #withoutRBS>
+      <div class="description">
+        <p [innerHTML]="'hardwareScan.scanFailureModal.suggestedActionSupport' | translate"></p>
       </div>
-   </div>
-
-   <ng-template #withoutRBS>
       <div class="row">
-         <div class="col button-row">
-         <a class="action-button" href="{{supportUrl}}" id="supportButtonWithoutRBS" (click)="closeModal()" target="_blank">{{ supportButtonText }}</a>
-         </div>
+        <div class="col button-row">
+          <vtr-ui-button id="supportButtonWithoutRBS" tabindex="1" (click)="openSupportPage()"
+            [tooltipText]="'hardwareScan.scanFailureModal.supportButtonText' | translate"
+            [label]="'hardwareScan.scanFailureModal.supportButtonText' | translate">
+          </vtr-ui-button>
+        </div>
       </div>
    </ng-template>
 
