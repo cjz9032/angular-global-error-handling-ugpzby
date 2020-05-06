@@ -12,7 +12,7 @@ export class WidgetDeviceUpdateSettingsComponent extends BaseComponent implement
 	@Input() title: string;
 	@Input() description: string;
 	@Input() items: any[];
-	@Input() disableButtons: Boolean = false;
+	@Input() disableButtons = false;
 	@Input() options;
 	@Output() optionSelected = new EventEmitter<any>();
 	@Output() toggleOnOff = new EventEmitter<any>();
@@ -37,11 +37,11 @@ export class WidgetDeviceUpdateSettingsComponent extends BaseComponent implement
 
 	ngOnInit() { }
 	currentFocus(id) {
-        const focElement = document.getElementById(id);
-        if (focElement) {
+		const focElement = document.getElementById(id);
+		if (focElement) {
 			focElement.focus();
 		}
-    }
+	}
 	public onToggleOnOff($event: any) {
 		this.toggleOnOff.emit($event);
 	}
@@ -78,10 +78,10 @@ export class WidgetDeviceUpdateSettingsComponent extends BaseComponent implement
 		const lightingElem = document.getElementById('lighting_customize');
 		if (!$event.shiftKey && !lightingElem && $event.which === 9) {
 			if ((index === this.items.length - 1) && item.isQuickSettings) {
-					setTimeout(() => {
-						document.getElementById('header-warranty-icon').focus();
-					}, 10);
-				}
+				setTimeout(() => {
+					document.getElementById('header-warranty-icon').focus();
+				}, 10);
 			}
+		}
 	}
 }
