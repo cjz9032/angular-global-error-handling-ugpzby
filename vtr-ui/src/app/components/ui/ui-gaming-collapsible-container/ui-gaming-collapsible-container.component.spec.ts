@@ -72,12 +72,17 @@ describe('UiGamingCollapsibleContainerComponent', () => {
 		expect(component.getCurrentOption).toHaveBeenCalled();
 	}));
 
-	it('Checking call have been made for toggleOptions function', fakeAsync(() => {
-		component.toggleOptions(1);
-		spyOn(component, 'toggleOptions');
-		component.toggleOptions(1);
-		expect(component.toggleOptions).toHaveBeenCalled();
-	}));
+	it('should show button as HIDE', () => {
+		component.showOptions = false;
+		component.toggleOptions(false);
+		expect(component.buttonName).toBe('Hide');
+	});
+
+	it('should show button as SHOW', () => {
+		component.showOptions = true;
+		component.toggleOptions(true);
+		expect(component.buttonName).toBe('Show');
+	});
 
 	it('Checking call have been made for setDefaultOption function', fakeAsync(() => {
 		component.setDefaultOption(Option);
@@ -100,6 +105,7 @@ describe('UiGamingCollapsibleContainerComponent', () => {
 
 	it('Checking call have been made for changeDescription function', fakeAsync(() => {
 		component.changeDescription(Option);
+		component.options.curSelected = 1;
 		spyOn(component, 'changeDescription');
 		component.changeDescription(Option);
 		expect(component.changeDescription).toHaveBeenCalled();
@@ -107,27 +113,38 @@ describe('UiGamingCollapsibleContainerComponent', () => {
 
 	it('Checking call have been made for resetDescription function', fakeAsync(() => {
 		component.resetDescription(Option);
+		component.currentDescription = '';
 		spyOn(component, 'resetDescription');
 		component.resetDescription(Option);
 		expect(component.resetDescription).toHaveBeenCalled();
 	}));
 
-	it('Checking call have been made for generalClick function', fakeAsync(() => {
-		let event = new Event('click');
-		component.generalClick(event);
-		spyOn(component, 'generalClick');
-		component.generalClick(event);
-		expect(component.generalClick).toHaveBeenCalled();
-	}));
+	it('should generate the click', () => {
+		try {
+			const event = new Event('click');
+			component.showOptions = true;
+			component.generalClick(event);
+			expect(component.showOptions).toEqual(false);
+			component.showOptions = false;
+			component.generalClick(event);
+			expect(component.generalClick(event)).toBeUndefined();
+		} catch (e) {
 
-	it('Checking call have been made for keyupTabFn function', fakeAsync(() => {
-		let event = new Event('keyup');
-		component.keyupTabFn(event, drop.dropOptions.length-1);
-		spyOn(component, 'keyupTabFn');
-		component.keyupTabFn(event, drop.dropOptions.length-1);
-		expect(component.keyupTabFn).toHaveBeenCalled();
-	}));
+		}
+	});
 
+	it('Checking current focus item', fakeAsync(() => {
+		const dropDownEle: any = { nativeElement: { querySelectorAll: (param) => [] } };
+		component.showOptions = true;
+		component.isItemsFocused = false;
+		component.dropdownEle = dropDownEle;
+		component.itemsFocused();
+		tick(110);
+		expect(component.showOptions).toBe(false);
+		component.showOptions = false;
+		component.itemsFocused();
+		expect(component.itemsFocused()).toBeUndefined();
+	}));
 });
 
 export function mockPipe(options: Pipe): Pipe {
