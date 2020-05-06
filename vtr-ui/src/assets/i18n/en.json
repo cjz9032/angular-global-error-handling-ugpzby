@@ -1183,6 +1183,16 @@
 							"desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
 						}
 					},
+					"dytc61": {
+						"title1": "Quiet mode(only for on battery mode)",
+						"desc1": "The slider is on the far left. Both fan speed and performance are low for a cooler, quieter computer and the best battery life.",
+						"title2": "Balanced mode",
+						"desc2": "The slider is in the left or center left. Fan speed and performance are dynamically balanced for the best experience.",
+						"title3": "Performance mode",
+						"desc3": "The slider is in the center or center right. Both fan speed and surface temperature are higher.",
+						"title4": "Ultra-performance mode",
+						"desc4": "The slider is far right, providing ultra-high performance with bigger noise and higher surface temperature."
+					},
 					"nonintelligentCooling": {
 						"options": {
 							"intelligentCooling": "INTELLIGENT COOLING",
