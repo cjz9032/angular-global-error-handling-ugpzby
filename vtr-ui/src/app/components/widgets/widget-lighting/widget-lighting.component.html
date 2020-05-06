@@ -58,7 +58,7 @@
 						</vtr-ui-gaming-driver-popup>
 						<ul class="list-group">
 							<li class="list-group-item">
-								<a  *ngIf="isPopupVisible" (keydown)="onCustomizeKeyDown($event)"  (click)="checkStatus(isPopupVisible)"
+								<a  *ngIf="isPopupVisible" (click)="checkStatus(isPopupVisible)"
 									(keydown.enter)="checkStatus(isPopupVisible)" vtrMetrics
 									[metricsItem]="'lighting_customize'" metricsEvent="featureClick"
 									metricsParam="lightingcustomize" metricsValue="{{setprofId}}"
@@ -68,7 +68,7 @@
 									  <fa-icon class="icon" [icon]="['fal', 'cog']" id="gaming_dashboard_lighting_customize_gear" role="img"></fa-icon>
 									   {{'gaming.lightingProfile.lightingProfileHeading.Customize.title' | translate}}</a>
 
-								<a  *ngIf="!isPopupVisible" (keydown)="onCustomizeKeyDown($event)" [routerLink]="['/gaming/lightingcustomize/'+setprofId]"
+								<a  *ngIf="!isPopupVisible" [routerLink]="['/gaming/lightingcustomize/'+setprofId]"
 									vtrMetrics [metricsItem]="'lighting_customize'" metricsEvent="featureClick"
 									metricsParam="lightingcustomize" metricsValue="{{setprofId}}"
 									metricsParent="Gaming.Dashboard" id="lighting_customize" class="d-inline-block mt-2"
