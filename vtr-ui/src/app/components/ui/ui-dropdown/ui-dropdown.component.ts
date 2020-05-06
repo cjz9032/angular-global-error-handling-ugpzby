@@ -1,119 +1,140 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
-import { DropDownInterval } from 'src/app/data-models/common/drop-down-interval.model';
-import { faChevronDown } from '@fortawesome/pro-light-svg-icons/faChevronDown';
-import { faChevronUp } from '@fortawesome/pro-light-svg-icons/faChevronUp';
-import { LoggerService } from 'src/app/services/logger/logger.service';
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import { TranslateService } from "@ngx-translate/core";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons/faChevronDown";
+import { faChevronUp } from "@fortawesome/free-solid-svg-icons/faChevronUp";
+import { LoggerService } from "src/app/services/logger/logger.service";
 
 @Component({
-	selector: 'vtr-ui-dropdown',
-	templateUrl: './ui-dropdown.component.html',
-	styleUrls: ['./ui-dropdown.component.scss']
+	selector: "vtr-ui-dropdown",
+	templateUrl: "./ui-dropdown.component.html",
+	styleUrls: ["./ui-dropdown.component.scss"],
 })
 export class UiDropDownComponent implements OnInit {
-	iconUp = faChevronUp;
-	iconDown = faChevronDown
 	@Input() dropDownId: string;
 	@Input() dropDownName: string;
-	@Input() list: DropDownInterval[];
+	@Input() list: any[];
 	@Input() value: number;
 	@Input() disabled: boolean = false;
 	@Input() textCase: string;
-	@Output() change: EventEmitter<DropDownInterval> = new EventEmitter<DropDownInterval>();
+	@Input() dropdownType: string = "oled-dimmer";
+	@Output() change: EventEmitter<any> = new EventEmitter<any>();
+	iconUp = faChevronUp;
+	iconDown = faChevronDown;
 	isDropDownOpen: boolean = false;
 	name: string;
 	placeholder: string;
 	narratorLabel: string;
-	selectedDuration: number;
+	selectedValue: number;
 	applyHoverClass: boolean;
 	applyFocusClass: boolean;
 
-	constructor(private translate: TranslateService, private logger: LoggerService) { }
+	constructor(
+		private translate: TranslateService,
+		private logger: LoggerService
+	) {}
 
 	ngOnInit() {
 		this.setDropDownValue();
 	}
 
-	// ngOnChanges(changes: SimpleChanges) {
-	// 	// only run when property "data" changed
-	// 	if (changes['value']) {
-	// 		this.setDropDownValue();
-	// 	}
-	// }
-
-	// refactoring duplicate lines of code
+	// refactoring duplicate lines of code for interval
 	settingDimmerIntervals(interval) {
-		this.selectedDuration = this.list.indexOf(interval)
+		this.selectedValue = this.list.indexOf(interval);
 		this.name = interval.name;
 		this.placeholder = interval.placeholder;
-		this.narratorLabel = this.dropDownId.slice(5, this.dropDownId.length - 9) + '-' + interval.text;
+		this.narratorLabel =
+			this.dropDownId.slice(5, this.dropDownId.length - 9) +
+			"-" +
+			interval.text;
 	}
 
+	// refactoring duplicate lines of code for userdefined key
+	setUserDefinedKey(key) {
+		this.selectedValue = this.list.indexOf(key);
+		this.name = this.translate.instant(
+			"device.deviceSettings.inputAccessories.userDefinedKey.dropDown.title"
+		);
+		this.placeholder = this.translate.instant(key.title);
+		this.narratorLabel = this.name + "-" + this.placeholder;
+	}
 
+	// checks for any previous selected value if any; if no value then calls 'setDropDropValue method
 	setDropDownValue() {
-		if(this.value != undefined && this.list) {
-			const interval = this.list.find((ddi:DropDownInterval) => ddi.value === this.value );
-			if(interval) {
-				this.settingDimmerIntervals(interval)
-				return
+		if (this.value != undefined && this.list) {
+			const itemValue = this.list.find(
+				(item) => item.value === this.value
+			);
+			if (this.dropdownType === "oled-dimmer") {
+				this.settingDimmerIntervals(itemValue);
+				return;
+			}
+			if (this.dropdownType === "userdefined-key") {
+				this.setUserDefinedKey(itemValue);
+				return;
 			}
 		} else {
-			this.name = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.select');
-			this.placeholder = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.time');
-			this.narratorLabel = this.dropDownId.slice(5, this.dropDownId.length - 9) + '-' + this.name + '-' + this.placeholder;
+			this.setDefaultDropValue();
 		}
 	}
 
+	// sets 'select-time' or 'please-select'
+	setDefaultDropValue() {
+		switch (this.dropdownType) {
+			case "oled-dimmer":
+				this.name = this.translate.instant(
+					"device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.select"
+				);
+				this.placeholder = this.translate.instant(
+					"device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.time"
+				);
+				this.narratorLabel =
+					this.dropDownId.slice(5, this.dropDownId.length - 9) +
+					"-" +
+					this.name +
+					"-" +
+					this.placeholder;
+				break;
+			case "userdefined-key":
+				this.name = this.translate.instant(
+					"device.deviceSettings.inputAccessories.userDefinedKey.dropDown.title"
+				);
+				this.placeholder = this.translate.instant(
+					"device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option1"
+				);
+				this.narratorLabel = this.name + "-" + this.placeholder;
+				break;
+		}
+	}
+
+	// toggles dropdown-list when we click on chevron icon
 	toggleList(event) {
 		event.stopPropagation();
-		if(!this.disabled) {
-		this.isDropDownOpen = !this.isDropDownOpen;
-		this.applyFocusClass = false;
+		if (!this.disabled) {
+			this.isDropDownOpen = !this.isDropDownOpen;
+			this.applyFocusClass = false;
 		}
 	}
 
 	// Below method is triggered from directive to close the dropdown list and set the change in interval if any.
-	closeDropdown(eventObj: any ) {	
+	closeDropdown(event) {
 		try {
-			const interval = this.list.find((ddi:DropDownInterval, idx) => idx === eventObj.value );
-			this.isDropDownOpen = eventObj.hideList
-			if(interval) {
-				this.settingDimmerIntervals(interval)
-				this.change.emit(interval)
-				return;		
+			const value = this.list.find((item, idx) => idx === event.value);
+			this.isDropDownOpen = event.hideList;
+			if (this.dropdownType === "oled-dimmer" && value !== undefined) {
+				this.settingDimmerIntervals(value);
+				this.change.emit(value);
+				return;
+			}
+			if (
+				this.dropdownType === "userdefined-key" &&
+				value !== undefined
+			) {
+				this.setUserDefinedKey(value);
+				this.change.emit(value);
+				return;
 			}
 		} catch (error) {
-			this.logger.error("Error", error)
-		}		
-	}
-
-	// public toggle() {
-	// 	if (!this.disabled) {
-	// 		this.isDropDownOpen = !this.isDropDownOpen;
-	// 	}
-	// }
-
-	// public select(item: DropDownInterval) {
-	// 	this.value = item.value;
-	// 	this.name = item.name;
-	// 	this.placeholder = item.placeholder;
-	// 	this.selectedDuration = this.list.indexOf(item)
-	// 	this.isDropDownOpen = !this.isDropDownOpen;
-	// 	this.change.emit(item);
-	// 	// this.toggleButton.nativeElement.focus()
-	// }
-
-	public customCamelCase(value: string) {
-		if (value === null) {
-			return '';
-		}
-		//starts with
-		if (value.match(/^\d/)) {
-			let firstWord = value.substring(0, value.indexOf(' ') + 1);
-			let secondWord = value.substring(value.indexOf(' ') + 1, value.length);
-			return firstWord + secondWord.charAt(0).toUpperCase() + secondWord.slice(1);
-		} else {
-			return value.charAt(0).toUpperCase() + value.slice(1);
+			this.logger.error("Error", error);
 		}
 	}
 }

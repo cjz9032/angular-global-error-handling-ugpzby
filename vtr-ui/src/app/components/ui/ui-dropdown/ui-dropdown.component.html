@@ -1,37 +1,7 @@
-<!-- <div class='cover' id="{{dropDownId}}" attr.aria-label="{{dropDownId}}" *ngIf='isDropDownOpen' [attr.aria-hidden]="!isDropDownOpen" (click)="toggle()" (keydown.enter)="toggle()" tabindex="0"></div>
-<section class="vtr-ui-dropdown">
-	<div #toggleBtn class="input" (click)="toggle()" (keydown.enter)="toggle()" id="{{dropDownId}}" role="combobox" [attr.aria-expanded]="isDropDownOpen" aria-haspopup="true" tabindex="0">
-		<div class="list" *ngIf="isDropDownOpen && !disabled" role="listbox" tabindex="0" [attr.aria-hidden]="!isDropDownOpen">
-			<ul>
-				<li (click)="[select(i, toggleBtn),toggle()]" role="option" (keydown.enter)="[select(i, toggleBtn),toggle()]" tabindex="0" vtrMetrics metricsEvent="FeatureClick" [metricsItem]="dropDownName" [metricsValue]="i" *ngFor="let i of list" >
-                    <span *ngIf="textCase === 'default'" role="link" id="{{i.text}}"
-                        attr.aria-label="{{ i.text }}">{{i.text | titlecase }}</span>
-                    <span *ngIf="textCase === 'oled'" role="link" id="{{i.text}}"
-                        attr.aria-label="{{ i.text }}">{{customCamelCase(i.text)}}</span>
-                </li>
-
-			</ul>
-		</div>
-		<div class="time">
-            <span *ngIf="textCase === 'default'" role="link" id="dropdown-{{dropDownId}}" attr.aria-label="{{ name }} {{placeholder | titlecase}}">{{name}}
-                {{placeholder | titlecase }} </span>
-            <span *ngIf="textCase === 'oled'" role="link" id="{{name}}" attr.aria-label="{{ name }}">{{name}}
-                {{placeholder | lowercase }} </span>
-		</div>
-		<p class="chevron">
-			<fa-icon *ngIf="!isDropDownOpen" [icon]="['fal', 'chevron-down']">
-			</fa-icon>
-			<fa-icon *ngIf="isDropDownOpen" [icon]="['fal', 'chevron-up']">
-			</fa-icon>
-		</p>
-	</div>
-
-</section> -->
-
 <div class="ui-dropdown" [ngClass]="{ 'knock-out-wrap': disabled }">
 	<button
 		#toggleBtn
-		class="ui-btn-dropdown"
+		class="ui-dropdown-btn"
 		[ngClass]="{
 			'knock-out-btn': disabled,
 			'apply-btn-hover': !disabled && applyHoverClass,
@@ -42,7 +12,7 @@
 		id="{{ dropDownId }}"
 		[attr.aria-label]="narratorLabel"
 		role="combobox"
-		aria-haspopup="listbox"
+		aria-haspopup="true"
 		[attr.aria-expanded]="isDropDownOpen"
 		[disabled]="disabled"
 		(click)="
@@ -55,12 +25,26 @@
 		tabindex="0"
 	>
 		<div
+			*ngIf="dropdownType === 'oled-dimmer'"
 			aria-hidden="true"
-			class="label-name"
+			class="ui-dropdown-btn-s-label"
 			[ngClass]="{ 'knock-out-label': disabled }"
 		>
 			{{ name }}
 			{{ placeholder }}
+		</div>
+		<div
+			*ngIf="dropdownType === 'userdefined-key'"
+			aria-hidden="true"
+			class="ui-dropdown-btn-m-label"
+			[ngClass]="{ 'knock-out-label': disabled }"
+		>
+			{{ name }}
+			<span
+				class="ui-dropdown-btn-m-label-s"
+				[ngClass]="{ 'knock-out-label': disabled }"
+				>{{ placeholder }}</span
+			>
 		</div>
 		<span
 			><fa-icon
@@ -78,26 +62,46 @@
 	<div
 		uiDropdownNavigate
 		[isDropdownOpen]="isDropDownOpen"
-		[selectedChild]="selectedDuration"
+		[selectedChild]="selectedValue"
 		(closeDropdown)="closeDropdown($event)"
 		class="ui-menu-dropdown"
 		*ngIf="isDropDownOpen && !disabled"
 		role="listbox"
 		[tabindex]="isDropDownOpen ? 0 : -1"
+		[attr.aria-labelledby]="dropDownId"
 	>
-		<a
-			*ngFor="let item of list; let i = index"
-			role="option"
-			[ngClass]="{'selected-list-item': selectedDuration === i}"
-			id="{{ item.text }}"
-			(click)="closeDropdown({ value: i, hideList: false })"
-			vtrMetrics
-			metricsEvent="FeatureClick"
-			[metricsItem]="dropDownName"
-			[metricsValue]="item"
-			tabindex="-1"
-			[attr.aria-selected]="selectedDuration === i ? true : false"
-			>{{ item.text }}</a
-		>
+		<ng-container *ngIf="dropdownType === 'oled-dimmer'">
+			<a
+				*ngFor="let item of list; let i = index"
+				role="option"
+				[ngClass]="{ 'selected-list-item': selectedValue === i }"
+				id="{{ item.text }}"
+				(click)="closeDropdown({ value: i, hideList: false })"
+				vtrMetrics
+				metricsEvent="FeatureClick"
+				[metricsItem]="dropDownName"
+				[metricsValue]="item"
+				tabindex="-1"
+				[attr.aria-selected]="selectedValue === i ? true : false"
+				>{{ item.text }}</a
+			>
+		</ng-container>
+		<ng-container *ngIf="dropdownType === 'userdefined-key'">
+			<a
+				*ngFor="let item of list; let i = index"
+				[ngClass]="{ 'selected-list-item': selectedValue === i }"
+				id="userdefinedkey-{{ i }}"
+				role="option"
+				tabindex="-1"
+				(click)="closeDropdown({ value: i, hideList: false })"
+				[attr.aria-selected]="selectedValue === i ? true : false"
+				vtrMetrics
+				metricsEvent="FeatureClick"
+				metricsParent="Device.InputAccessories"
+				[metricsItem]="dropDownName"
+				metricsValue="{{ item.title | translate }}"
+				>{{ item.title | translate }}</a
+			>
+		</ng-container>
 	</div>
 </div>
