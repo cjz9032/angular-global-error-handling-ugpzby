@@ -132,7 +132,7 @@ export class ConfigService {
 	initGetMenuItemsAsync(): Promise<any> {
 		return new Promise(async (resolve) => {
 			this.isBetaUser = this.betaService.getBetaStatus() === BetaStatus.On;
-			const machineInfo = await this.deviceService.getMachineInfo();
+			const machineInfo = this.deviceService.machineInfo;
 			const localInfo = await this.localInfoService.getLocalInfo();
 			this.activeSegment = localInfo.Segment ? localInfo.Segment : SegmentConst.Commercial;
 			this.country = machineInfo && machineInfo.country ? machineInfo.country : 'US';
@@ -294,7 +294,7 @@ export class ConfigService {
 					element.hide = true;
 				}
 				if (element.subitems.length > 0) {
-					element.subitems = this.smodeFilter(element.subitems, isArm);
+					this.armFilter(element.subitems, isArm);
 				}
 			});
 		}
