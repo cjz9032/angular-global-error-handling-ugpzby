@@ -20,6 +20,7 @@ export class DeviceService {
 	private microphone: any;
 	public isShellAvailable = false;
 	public isArm = false;
+	private isInitArm = false;
 	public isAndroid = false;
 	public is64bit = true;
 	public isGaming = false;
@@ -45,24 +46,26 @@ export class DeviceService {
 		if (this.device && this.sysInfo) {
 			this.isShellAvailable = true;
 		}
-		this.initIsArm();
 		this.initShowSearch();
 	}
 
-	private async initIsArm() {
+	public initIsArm() {
+		if (this.isInitArm) {
+			return Promise.resolve(this.isArm);
+		}
 		this.isAndroid = this.androidService.isAndroid;
 		if (this.isAndroid) {
-			return true;
+			return Promise.resolve(true);
 		}
-		try {
-			if (this.isShellAvailable) {
-				const machineInfo = await this.getMachineInfo();
-				this.isArm = this.isAndroid || machineInfo.cpuArchitecture.toUpperCase().trim() === 'ARM64';
+		if (this.isShellAvailable) {
+			return this.getMachineInfo().then((res) => {
+				this.isArm = this.isAndroid || (res && res.cpuArchitecture && res.cpuArchitecture.toUpperCase().trim() === 'ARM64');
+				this.isInitArm = true;
 				return this.isArm;
-			}
-		} catch (error) {
-			this.logger.error('getIsARM' + error.message);
-			return this.isArm;
+			}).catch((error) => {
+				this.logger.error('getIsARM' + error.message);
+				return this.isArm;
+			});
 		}
 	}
 

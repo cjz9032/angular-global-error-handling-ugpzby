@@ -14,9 +14,10 @@ export class InitializerService {
 
 	constructor(private vantageShellService: VantageShellService, private deviceService: DeviceService, private commonService: CommonService) { }
 
-	initialize() {
+	initialize(): Promise<any> {
 		this.commonService.setSessionStorageValue(SessionStorageKey.FirstPageLoaded, false);
 		this.initializeAntivirus();
+		return this.deviceService.initIsArm();
 	}
 
 	initializeAntivirus() {
