@@ -550,6 +550,11 @@ export class ConfigService {
 		this.armFilter(menu, this.deviceService.isArm);
 		if (segment !== SegmentConst.Gaming) this.segmentFilter(menu, segment);
 		await this.filterByBeta(menu, beta);
+		menu.forEach(item => {
+			if (item.subitems.length > 0) {
+				item.hide = item.subitems.length === item.subitems.filter(i => i.hide).length;
+			}
+		});
 		return menu;
 	}
 
