@@ -113,6 +113,8 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 							this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'finish');
 						});
 					}
+				} else {
+					this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'notShow');
 				}
 			}, 0);
 		}
@@ -306,12 +308,16 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 						this.dialogService.openCHSPermissionModal(this.locationPermission).result.then(() => {
 							this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'finish');
 						});
+					} else {
+						this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'notShow');
 					}
 				} else {
 					if (this.chs.account.state !== CHSAccountState.local) {
 						this.dialogService.openCHSPermissionModal(this.locationPermission).result.then(() => {
 							this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'finish');
 						});
+					} else {
+						this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'notShow');
 					}
 				}
 			} else {
