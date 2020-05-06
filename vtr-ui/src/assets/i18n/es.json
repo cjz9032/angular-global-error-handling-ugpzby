@@ -1136,7 +1136,7 @@
                             "quiteCool": "Este modalidad habilita la mejor experiencia con la velocidad del ventilador y el rendimiento del sistema equilibrado. Por ejemplo, cuando se trata de juegos, optimiza el rendimiento. En la oficina, reduce el ruido.",
                             "batterySaving14": "Este modo permite la duración máxima de la batería ajustando automáticamente el brillo, cambiando los valores de energía, inhabilitando características en el procesamiento avanzado de imágenes, etc.",
                             "performance": "Este modo habilita el rendimiento máximo del sistema. En este modo, la velocidad del ventilador rápido puede causar un ruido muy alto.",
-                            "batterySaving15": "Este modo permite la duración máxima de la batería al ajustar automáticamente el brillo, cargar los valores de energía, deshabilitar el Audio Dolby, etc. Con todo lo anterior, puede ampliarse hasta el 20 % de la duración de la batería."
+                            "batterySaving15": "Este modo permite la duración máxima de la batería al ajustar automáticamente el brillo, cambiar los valores de energía, deshabilitar el Audio Dolby, etc. Con todo lo anterior, puede ampliarse hasta el 20 % de la duración de la batería."
                         },
                         "intelligentCoolingModesModal": {
                             "title": "Cambiar modos de enfriamiento inteligente",
