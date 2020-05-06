@@ -1,17 +1,5 @@
 <div class="vtr-ui-list-hardware">
 	<ul class="list-group" [ngClass]="{'list1': template === 1, 'list2': template === 2, 'list3' : template === 3}">
-		<li class=" list-group-item details" *ngIf="collapsed && details">
-			<div class="row align-items-center">
-				<table class="table table-bordered">
-					<tbody>
-						<tr *ngFor="let detail of details">
-							<td>{{getKey(detail)}}</td>
-							<td>{{getValue(detail)}}</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</li>
 		<li class=" list-group-item" *ngFor="let item of items">
 			<div class="col text button-box">
 				<div class="row item-line">
