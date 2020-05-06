@@ -46,17 +46,22 @@ export class WidgetSystemToolsComponent implements OnInit {
 		);
 		// version 3.3 legion accessory cache
 		this.showLegionAccessory = this.commonService.getLocalStorageValue(LocalStorageKey.accessoryFeature);
+		this.showHWScanMenu = this.commonService.getLocalStorageValue(LocalStorageKey.hardwareScanFeature);
 		this.calcToolLength();
 
-		// if (this.hardwareScanService && this.hardwareScanService.isAvailable) {
-		// 	this.hardwareScanService.isAvailable()
-		// 		.then((isAvailable: any) => {
-		// 			this.showHWScanMenu = isAvailable;
-		// 		})
-		// 		.catch(() => {
-		// 			this.showHWScanMenu = false;
-		// 		});
-		// }
+		if (this.hardwareScanService && this.hardwareScanService.isAvailable) {
+			this.hardwareScanService.isAvailable()
+				.then((response: any) => {
+					if(response !== this.showHWScanMenu && response !== undefined) {
+						this.showHWScanMenu = response;
+						this.commonService.setLocalStorageValue(LocalStorageKey.hardwareScanFeature, response);
+						this.calcToolLength();
+					}
+				})
+				.catch(() => {
+					this.showHWScanMenu = false;
+				});
+		}
 
 		// version 3.3 legion accessory get reg status
 		this.gamingAccessoryService.isLACSupportUriProtocol().then(res => {
