@@ -222,9 +222,10 @@
 									<div class="row no-gutters">
 										<div class="col mt-3">
 											<div class="open-apps-block"
-												(click)="udkSubmit(4);"
 												*ngIf=!applicationList.length>
 												<fa-icon [icon]="['fal', 'plus-square']"
+													(click)="udkSubmit(4);"
+													(keydown.enter)="udkSubmit(4)"
 													tabindex="0">
 												</fa-icon>
 											</div>
@@ -233,7 +234,6 @@
 												<div
 													class="d-flex justify-content-between align-items-center p-4 apps-list">
 													<div class="app-name">
-														{{application.value}}
 													</div>
 													<div class="app-name delete-app"
 														id="delete-app-{{i+1}}"
@@ -279,9 +279,10 @@
 									<div class="row no-gutters">
 										<div class="col mt-3">
 											<div class="open-apps-block"
-												(click)="udkSubmit(5);"
 												*ngIf=!fileList.length>
 												<fa-icon [icon]="['fal', 'plus-square']"
+													(click)="udkSubmit(5);"
+													(keydown.enter)="udkSubmit(5)"
 													tabindex="0">
 												</fa-icon>
 											</div>
