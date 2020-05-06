@@ -47,8 +47,10 @@ describe('UiColorPickerComponent', () => {
   })
 
   it('should change color', () => {
-	component.colorChange(0);
+	component.colorChange(0,true);
 	expect(component.isColorPicker).toEqual(false);
+	component.colorChange(0,false);
+	expect(component.isColorPicker).toEqual(true);
   })
 
   it('should click apply button to choose color', () => {

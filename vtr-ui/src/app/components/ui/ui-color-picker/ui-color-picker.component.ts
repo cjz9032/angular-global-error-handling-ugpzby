@@ -47,13 +47,19 @@ export class UiColorPickerComponent implements OnInit , OnChanges {
 
   ngOnChanges(changes){}
 
-  public colorChange(index){
+  public colorChange(index,flag){
+	if(flag === true){
+		this.isColorPicker = false;
+		this.isToggleColorPicker.emit(this.isColorPicker);
+	}else{
+		this.isColorPicker = true;
+		this.isToggleColorPicker.emit(this.isColorPicker);
+		document.getElementById("colorPicker").focus();
+	}
 	this.presetColorList.forEach(element => {
 		element.isChecked = false;
 	});
 	this.presetColorList[index].isChecked = true;
-	this.isColorPicker = false;
-	this.isToggleColorPicker.emit(this.isColorPicker);
 	this.setColor.emit(this.presetColorList[index].color);
   }
 
