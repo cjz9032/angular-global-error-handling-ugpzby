@@ -50,7 +50,7 @@
 						[showLoaderState]="isSRLoading">
 					</vtr-ui-row-switch>
 
-					<div class="superResolution-image">
+					<div class="superResolution-image" *ngIf="superResolutionAvailable">
 						<img [src]="image"
 							class="image"
 							role="img"
