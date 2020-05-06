@@ -353,26 +353,23 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 
 	refreshDolbyAudioProfileState() {
 		this.logger.info('refreshDolbyAudioProfileState', this.dolbyModeResponse);
-		if (this.dolbyModeResponse.voIPStatus === undefined || this.dolbyModeResponse.voIPStatus === 'NotSupport') {
-			this.voipStatus.available = false;
-		}
-		else {
+		if (this.dolbyModeResponse.voIPStatus === 'True' || this.dolbyModeResponse.voIPStatus === 'False') {
 			this.voipStatus.available = true;
 			this.voipStatus.status = (this.dolbyModeResponse.voIPStatus === 'True');
 		}
-		if (this.dolbyModeResponse.entertainmentStatus === undefined || this.dolbyModeResponse.entertainmentStatus === 'NotSupport') {
-			this.entertainmentStatus.available = false;
-		}
 		else {
+			this.voipStatus.available = false;
+		}
+
+		if (this.dolbyModeResponse.entertainmentStatus === 'True' || this.dolbyModeResponse.entertainmentStatus === 'False') {
 			this.entertainmentStatus.available = true;
 			this.entertainmentStatus.status = (this.dolbyModeResponse.entertainmentStatus === 'True');
 		}
-		if (this.dolbyModeResponse.eCourseStatus === undefined || this.dolbyModeResponse.eCourseStatus === 'NotSupport') {
-			this.eCourseStatus.available = false;
-			this.automaticAudioDisabled = false;
-			this.dolbyModeDisabled = false;
-		}
 		else {
+			this.entertainmentStatus.available = false;
+		}
+
+		if (this.dolbyModeResponse.eCourseStatus === 'True' || this.dolbyModeResponse.eCourseStatus === 'False') {
 			this.eCourseStatus.available = true;
 			this.eCourseStatus.status = (this.dolbyModeResponse.eCourseStatus === 'True') ? true : false;
 			this.automaticAudioDisabled = this.eCourseStatus.status;
@@ -390,12 +387,16 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 				this.dolbyToggleButtonStatus = this.dolbyModeResponse.isAudioProfileEnabled;
 				this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyModeResponse);
 			}
+		} else {
+			this.eCourseStatus.available = false;
+			this.automaticAudioDisabled = false;
+			this.dolbyModeDisabled = false;
 		}
 
 	}
 
 	onDolbyAudioToggleOnOff(event: any) {
-		if (!event.switchValue && this.dolbyModeResponse.eCourseStatus !== undefined && this.dolbyModeResponse.eCourseStatus !== 'NotSupport') {
+		if (!event.switchValue && this.dolbyModeResponse.eCourseStatus === 'True') {
 			this.eCourseStatus.status = event.switchValue;
 			this.dolbyModeResponse.eCourseStatus = 'False';
 			this.eCourseToggleButtonStatus = false;

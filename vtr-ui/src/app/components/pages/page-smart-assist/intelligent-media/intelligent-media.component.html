@@ -32,8 +32,8 @@
 			<ul class="list-group list-group-flush superResolution-group" *ngIf="superResolutionAvailable">
 				<li>
 					<div class="border-top common-li-padding"
-						*ngIf="superResolutionAvailable && intelligentMediaAvailable"></div>
-					<vtr-ui-row-switch *ngIf="superResolutionAvailable"
+						*ngIf="intelligentMediaAvailable"></div>
+					<vtr-ui-row-switch
 						[switchId]="'video-resolution-upscaling.toggle-button'"
 						[title]="'device.smartAssist.superResolution.title' | translate"
 						componentName="superResolutionSwitch"
@@ -50,7 +50,7 @@
 						[showLoaderState]="isSRLoading">
 					</vtr-ui-row-switch>
 
-					<div class="superResolution-image" *ngIf="superResolutionAvailable">
+					<div class="superResolution-image">
 						<img [src]="image"
 							class="image"
 							role="img"
@@ -70,8 +70,7 @@
 					</div>
 
 					<div class="row">
-						<div class="feature-note p-4"
-							*ngIf="superResolutionAvailable">
+						<div class="feature-note p-4">
 							<p id="superResolution-note-description"
 								role="text">
 								{{'device.smartAssist.superResolution.note.description' | translate}}</p>
