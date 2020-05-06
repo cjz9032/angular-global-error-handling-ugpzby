@@ -61,7 +61,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	public isSuperResolutionLoading = true;
 	public superResolution = new FeatureStatus(false, true);
 	public hsaIntelligentSecurity = new HsaIntelligentSecurityResponse(false, false);
-	public image = '/assets/images/smart-assist/intelligent-security/HPD_Image.png';
+	public image = '/assets/images/smart-assist/intelligent-security/HPD_Img.png';
 	public zeroTouchLoginShowAdvancedSection: boolean;
 	public zeroTouchLockShowAdvancedSection: boolean;
 	public zeroTouchPresenceLeaveDistanceCapability = false;

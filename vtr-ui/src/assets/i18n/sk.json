@@ -1976,7 +1976,7 @@
                     "options": {
                         "near": "Blízko",
                         "far": "Ďaleko",
-                        "medium": "Stredné"
+                        "medium": "Stredne"
                     },
                     "readMore": "K dispozícii sú tri možnosti. Obrazovka sa pri každom z rozsahov prebudí pri rozpoznaní pohybov človeka.",
                     "readMoreForSensor1": {
