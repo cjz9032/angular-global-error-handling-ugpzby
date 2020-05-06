@@ -1,8 +1,8 @@
 <div class="ui-color-picker" tabindex="0"  id="colorPicker" [attr.aria-label]="'lighting colorPicker'">
    <div class="preset-color" *ngIf="isTogglePresetColor" (click)="colorPresetFun();$event.stopPropagation();">
       <ul>
-         <li *ngFor="let item of presetColorList;let i = index;"  [ngStyle]="{'background':'#'+item.color}" [ngClass]="{'checked': item.isChecked}" (click)="colorChange(i)"
-         tabindex="0" [attr.aria-label]="item.isChecked?'lighting color is: ' + item.color+'selected':'lighting color is: ' + item.color+'unSelected'" (keydown.enter)="colorChange(i)" role="option">
+         <li *ngFor="let item of presetColorList;let i = index;"  [ngStyle]="{'background':'#'+item.color}" [ngClass]="{'checked': item.isChecked}" (click)="colorChange(i,true)"
+         tabindex="0" [attr.aria-label]="item.isChecked?'lighting color is: ' + item.color+'selected':'lighting color is: ' + item.color+'unSelected'" (keydown.enter)="colorChange(i,false)" role="option">
             <span></span>
          </li>
       </ul>
