@@ -6,9 +6,9 @@
 		<li class="qa_item" *ngFor="let item of questions; let i = index">
 			<a href="javascript:void(0);" (click)="openAccordion(i)" id="sa-ov-widget-link-question-{{i+1}}">
 				<div class="d-flex align-items-center row">
-					<div class="d-flex col-10">
+					<div class="d-flex col-10 pr-0">
 						<fa-icon [icon]="['fal', item.icon]" class="item-icon d-flex align-items-center"></fa-icon>
-						<div class="item-title col-10">
+						<div class="item-title">
 							<span class="list-text">{{item.title | translate}}</span>
 						</div>
 					</div>
