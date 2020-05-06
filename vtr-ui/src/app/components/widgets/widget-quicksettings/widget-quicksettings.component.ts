@@ -83,6 +83,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		this.cameraStatus.isLoading = false;
 		this.microphoneStatus.isLoading = false;
 		this.Windows = vantageShellService.getWindows();
+
 		if (this.Windows) {
 			this.windowsObj = this.Windows.Devices.Enumeration.DeviceAccessInformation
 				.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.videoCapture);
@@ -130,6 +131,8 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			};
 			this.microphoneDevice.addEventListener('accesschanged', this.microphnePermissionHandler, false);
 		}
+		this.Windows.Media.Devices.MediaDevice.addEventListener("defaultaudiocapturedevicechanged", this.defaultAudioCaptureDeviceChanged);
+
 		if (this.windowsObj) {
 			this.cameraAccessChangedHandler = (args:any) => {
 				if (args) {
@@ -178,6 +181,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		if (this.microphoneDevice) {
 			this.microphoneDevice.removeEventListener('accesschanged', this.microphnePermissionHandler, false);
 		}
+		this.Windows.Media.Devices.MediaDevice.removeEventListener("defaultaudiocapturedevicechanged", this.defaultAudioCaptureDeviceChanged);
 
 		if (this.windowsObj) {
 			this.windowsObj.removeEventListener('accesschanged', this.cameraAccessChangedHandler);
@@ -370,10 +374,10 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 						const win: any = window;
 						if (win.VantageShellExtension && win.VantageShellExtension.AudioClient) {
 							try {
-								const a = performance.now();
+								// const a = performance.now();
 								this.audioClient = win.VantageShellExtension.AudioClient.getInstance();
-								const b = performance.now();
-								this.logger.info('audioclient init ' + (b - a) + 'ms');
+								// const b = performance.now();
+								// this.logger.info('audioclient init ' + (b - a) + 'ms');
 								if (this.audioClient) {
 									this.audioClient.onchangecallback = (data: string) => {
 										if (data) {
@@ -403,7 +407,6 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 							}
 						} else {
 							this.logger.info('current shell version maybe not support core audio');
-							// this.deviceService.startMicrophoneMonitor();
 						}
 					}
 				})
@@ -678,5 +681,9 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 					return EMPTY;
 				});
 		}
+	}
+
+	private defaultAudioCaptureDeviceChanged(args: any) {
+		this.updateMicrophoneStatus();
 	}
 }

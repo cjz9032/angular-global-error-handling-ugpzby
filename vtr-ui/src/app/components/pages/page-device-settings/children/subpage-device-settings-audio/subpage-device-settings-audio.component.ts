@@ -133,6 +133,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			};
 			this.microphoneDevice.addEventListener('accesschanged', this.microphnePermissionHandler, false);
 		}
+		this.Windows.Media.Devices.MediaDevice.addEventListener("defaultaudiocapturedevicechanged", this.defaultAudioCaptureDeviceChanged);
 	}
 
 	private initFeatures() {
@@ -158,6 +159,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		if (this.microphoneDevice) {
 			this.microphoneDevice.removeEventListener('accesschanged', this.microphnePermissionHandler, false);
 		}
+		this.Windows.Media.Devices.MediaDevice.removeEventListener("defaultaudiocapturedevicechanged", this.defaultAudioCaptureDeviceChanged);
 	}
 
 	initDolbyAudioFromCache() {
@@ -807,6 +809,10 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		if (!this.microphoneProperties.available) {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'microphone');
 		}
+	}
+
+	private defaultAudioCaptureDeviceChanged(args: any) {
+		this.getMicrophoneSettingsAsync();
 	}
 
 	initVisibility() {
