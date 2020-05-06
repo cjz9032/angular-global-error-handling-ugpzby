@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.35](https://bitbucket.tc.lenovo.com///compare/v1.5.34...v1.5.35) (2020-05-06)
+
+
+### Bug Fixes
+
+* **chs:** refactor showWelcomeDialog code ([c423995](https://bitbucket.tc.lenovo.com///commit/c423995f683961f7e79dfaeb3e8662b9f8195829))
+* **CHS:** modify offline dialog pop-up conditions ([e1f9c77](https://bitbucket.tc.lenovo.com///commit/e1f9c77cb64968708f083174ea2f05c6200f3905))
+* **CHS style:** fixed some dialog style weird in minisize ([38ee8f2](https://bitbucket.tc.lenovo.com///commit/38ee8f29bc94cf2892f1baa593ec20802edc9393))
+* **LWS-Accessibility:** The location dialog will popup again ([584c6f4](https://bitbucket.tc.lenovo.com///commit/584c6f4d87b8f1ee6112f9d05cdd2c595adf8125))
+* **menu:** hide parent menu if child menu item all hide ([6de791a](https://bitbucket.tc.lenovo.com///commit/6de791a8053adf4b1d3d94c4923f57ddc49b3434))
+* **SA:** fixed Q and A description text and style ([1ce6fbe](https://bitbucket.tc.lenovo.com///commit/1ce6fbe9956a0980551ab475d9997e5accaf86e6))
+
 ### [1.5.34](https://bitbucket.tc.lenovo.com///compare/v1.5.33...v1.5.34) (2020-05-05)
 
 ### [1.5.33](https://bitbucket.tc.lenovo.com///compare/v1.5.32...v1.5.33) (2020-05-04)
