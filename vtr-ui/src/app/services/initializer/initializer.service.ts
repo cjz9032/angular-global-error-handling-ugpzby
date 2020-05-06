@@ -17,7 +17,7 @@ export class InitializerService {
 	initialize(): Promise<any> {
 		this.commonService.setSessionStorageValue(SessionStorageKey.FirstPageLoaded, false);
 		this.initializeAntivirus();
-		return this.deviceService.initIsArm();
+		return Promise.all([this.deviceService.initIsArm()]);
 	}
 
 	initializeAntivirus() {
