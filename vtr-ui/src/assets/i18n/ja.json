@@ -2091,7 +2091,8 @@
             },
             "antiTheft": {
                 "heading": "インテリジェント・センサー",
-                "title": "スマート・モーション・アラート",
+                "title": "スマート・モーション・アラーム",
+                "tooltip":"<div>この機能は、コンピューターが休止状態または電源がオフのときは機能しません。次の動作の設定を確認してください。<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>閉じる動作</li><li>重要なアクション/バッテリー低下時の動作</li><li>電源ボタンの動作</li><li>スリープ・ボタンの動作</li><li>休止状態までのアイドル・タイムアウト設定</li></ul></div>それ以外の場合は、アラームがトリガーされず、写真も撮られません。</div>",
                 "desc": "<p><label>この機能を有効にした場合は、画面がロックされた状態で、特に公共の場所で動きが検出されると、デバイスのビープ音が鳴ります。</label></p> <p><label>アラームを解除するには、正しいパスワードを入力するか、Windows Hello でログインします。</label></p>",
                 "note": {
                     "description": "システムに正しくログインすると、この機能は自動的にオフになります。使用するには、再度有効にする必要があります。"
@@ -2134,8 +2135,7 @@
                 "fileAuthorizationTips": {
                     "content": "Lenovo Vantage がファイル・システムにアクセスできません。",
                     "link": "Windows の設定に移動してアクセスできるようにします"
-                },
-                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
+                }
             },
             "voice": {
                 "title": "音声",

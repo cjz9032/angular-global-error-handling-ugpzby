@@ -2091,7 +2091,8 @@
             },
             "antiTheft": {
                 "heading": "Intelligent føler",
-                "title": "Smart bevegelsesvarsel",
+                "title": "Smartbevegelsesalarm",
+                "tooltip":"<div>Denne funksjonen fungerer ikke når datamaskinen er i dvalemodus eller er slått av. Kontroller innstillingene i disse handlingene:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>handlinger til lokket</li><li>handling ved kritisk lavt / svakt batteri</li><li>handling for strømbryter</li><li>handling for hvilemodus</li><li>tidsavbruddinnstillinger for dvalemodus</li></ul></div>Ellers vil det ikke utløses noen alarm eller blir tatt noen bilder.</div>",
                 "desc": "<p><label>Når du aktiverer denne funksjonen, avgir enheten et lydsignal når skjermen er låst og det oppdages bevegelse, spesielt på offentlige steder.</label></p> <p><label>Hvis du vil avbryte alarmen, skriver du inn riktig passord eller logger på med Windows Hello.</label></p>",
                 "note": {
                     "description": "Når du har logget på systemet, vil denne funksjonen bli slått av automatisk. Du må aktivere den på nytt for å bruke den."
@@ -2134,8 +2135,7 @@
                 "fileAuthorizationTips": {
                     "content": "Lenovo Vantage har ikke tilgang til filsystemet.",
                     "link": "Gå til Windows-innstillingene for å gi tilgang"
-                },
-                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
+                }
             },
             "voice": {
                 "title": "Tale",

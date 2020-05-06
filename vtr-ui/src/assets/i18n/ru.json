@@ -2092,6 +2092,7 @@
             "antiTheft": {
                 "heading": "Интеллектуальное распознавание",
                 "title": "Интеллектуальное оповещение о движении",
+                "tooltip":"<div>Эта функция не работает, когда компьютер находится в режиме гибернации или выключен. Проверьте настройки в следующих действиях:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>действия закрытия крышки</li><li>действие при критически низком уровне заряда аккумулятора</li><li>действие кнопки питания</li><li>действие кнопки спящего режима</li><li>настройки тайм-аута бездействия до перехода в режим гибернации</li></ul></div>В противном случае не будет включен сигнал и не будут сделаны фотографии.</div>",
                 "desc": "<p><label>Если эта функция включена, устройство будет подавать звуковой сигнал при заблокированном экране, если обнаружено движение, особенно в общественных местах.</label></p> <p><label>Чтобы отключить сигнал, введите правильный пароль или войдите в систему с помощью Windows Hello.</label></p>",
                 "note": {
                     "description": "После успешного входа в систему эта функция будет автоматически отключена. Для использования ее нужно снова включить."
@@ -2134,8 +2135,7 @@
                 "fileAuthorizationTips": {
                     "content": "У Lenovo Vantage нет доступа к файловой системе.",
                     "link": "Перейдите в раздел параметров Windows, чтобы предоставить доступ"
-                },
-                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
+                }
             },
             "voice": {
                 "title": "Голос",

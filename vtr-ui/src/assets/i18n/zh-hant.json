@@ -2092,6 +2092,7 @@
             "antiTheft": {
                 "heading": "智慧型感應",
                 "title": "智慧型移動警示",
+                "tooltip":"<div>當電腦處於休眠模式或關閉電源時，此功能無法運作。檢查下列動作中的設定：<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>闔上機蓋的動作</li><li>電力不足/偏低時的動作</li><li>電源按鈕動作</li><li>睡眠按鈕動作</li><li>閒置逾時設定進入休眠</li></ul></div>否則，它不會引發警示，也不會拍照。</div>",
                 "desc": "<p><label>啟用此功能時，裝置將在螢幕鎖定及偵測到移動時開始發出嗶聲，特別是在公共場所。</label></p> <p><label>若要關閉警示音，請輸入正確密碼或透過 Windows Hello 登入。</label></p>",
                 "note": {
                     "description": "成功登入系統後，此功能將自動關閉。您必須重新啟用才能使用此功能。"
@@ -2134,8 +2135,7 @@
                 "fileAuthorizationTips": {
                     "content": "Lenovo Vantage 無權存取檔案系統。",
                     "link": "移至 Windows 設定以授與存取權"
-                },
-                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
+                }
             },
             "voice": {
                 "title": "語音",

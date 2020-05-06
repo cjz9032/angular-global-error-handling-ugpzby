@@ -2091,7 +2091,8 @@
             },
             "antiTheft": {
                 "heading": "Έξυπνη ανίχνευση",
-                "title": "Έξυπνη ειδοποίηση κίνησης",
+                "title": "Έξυπνος συναγερμός κίνησης",
+                "tooltip":"<div>Αυτή η δυνατότητα δεν λειτουργεί, όταν ο υπολογιστής είναι σε κατάσταση αδρανοποίησης ή απενεργοποιημένος. Ελέγξτε τις ρυθμίσεις στις εξής ενέργειες:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>ενέργειες του καπακιού κλεισίματος</li><li>ενέργεια κρίσιμου/χαμηλού επιπέδου φόρτισης μπαταρίας</li><li>ενέργεια κουμπιού τροφοδοσίας</li><li>ενέργεια κουμπιού αναστολής λειτουργίας</li><li>ρυθμίσεις χρονικού ορίου αδράνειας για μετάβαση του συστήματος σε κατάσταση αδρανοποίησης</li></ul></div>Διαφορετικά, δεν θα ενεργοποιήσει συναγερμό, ούτε τη λήψη φωτογραφιών.</div>",
                 "desc": "<p><label>Όταν αυτή τη δυνατότητα είναι ενεργοποιημένη, η συσκευή θα αρχίσει να ηχεί όταν η οθόνη είναι κλειδωμένη και εντοπιστούν κινήσεις ιδίως σε δημόσιο χώρο.</label></p> <p><label>Για να απορρίψετε τον συναγερμό, πληκτρολογήστε τον σωστό κωδικό πρόσβασης ή συνδεθείτε από το Windows Hello.</label></p>",
                 "note": {
                     "description": "Μόλις συνδεθείτε στο σύστημα με επιτυχία, αυτή η δυνατότητα θα απενεργοποιηθεί αυτόματα. Θα πρέπει να την ενεργοποιήσετε ξανά για να τη χρησιμοποιήσετε."
@@ -2134,8 +2135,7 @@
                 "fileAuthorizationTips": {
                     "content": "Το Lenovo Vantage δεν έχει πρόσβαση στο σύστημα των αρχείων.",
                     "link": "Μεταβείτε στις Ρυθμίσεις των Windows για να αποκτήσετε πρόσβαση"
-                },
-                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
+                }
             },
             "voice": {
                 "title": "Φωνή",

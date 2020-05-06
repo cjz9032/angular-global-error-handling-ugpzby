@@ -2092,6 +2092,7 @@
             "antiTheft": {
                 "heading": "Detecção inteligente",
                 "title": "Alerta de movimento inteligente",
+                "tooltip":"<div>Este recurso não funciona quando o computador está no modo de hibernação ou desligado. Verifique as configurações nas seguintes ações:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>ações de fechamento da tampa</li><li>ação de bateria fraca/crítica</li><li>ação do botão liga/desliga</li><li>ação do botão de suspensão</li><li>configurações de tempo limite inativo para hibernação</li></ul></div>Caso contrário, ele não dispara o alarme nem tira fotos.</div>",
                 "desc": "<p><label>Ao ativar esse recurso, o dispositivo começará a emitir um sinal sonoro quando a tela estiver bloqueada e movimentos forem detectados, principalmente em um local público.</label></p> <p><label>Para descartar o alarme, digite a senha correta ou faça login no Windows Hello.</label></p>",
                 "note": {
                     "description": "Após o login no sistema, esse recurso será desativado automaticamente. Você precisa habilitá-lo novamente para usá-lo."
@@ -2134,8 +2135,7 @@
                 "fileAuthorizationTips": {
                     "content": "O Lenovo Vantage não tem acesso ao sistema de arquivos.",
                     "link": "Ir para as Configurações do Windows para dar acesso"
-                },
-                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
+                }
             },
             "voice": {
                 "title": "Voz",

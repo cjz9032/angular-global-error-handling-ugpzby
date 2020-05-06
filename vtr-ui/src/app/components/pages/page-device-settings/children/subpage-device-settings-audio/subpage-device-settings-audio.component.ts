@@ -395,7 +395,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	}
 
 	onDolbyAudioToggleOnOff(event: any) {
-		if (!event.switchValue) {
+		if (!event.switchValue && this.dolbyModeResponse.eCourseStatus !== undefined && this.dolbyModeResponse.eCourseStatus !== 'NotSupport') {
 			this.eCourseStatus.status = event.switchValue;
 			this.dolbyModeResponse.eCourseStatus = 'False';
 			this.eCourseToggleButtonStatus = false;

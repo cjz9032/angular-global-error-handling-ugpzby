@@ -2090,8 +2090,9 @@
                 "imageAfter": "After"
             },
             "antiTheft": {
-                "heading": "Deteção Inteligente",
-                "title": "Alerta de movimento inteligente",
+                "heading": "Deteção inteligente",
+                "title": "Alarme de movimento inteligente",
+                "tooltip":"<div>Esta funcionalidade não funciona quando o computador está modo de hibernação ou desligado. Verifique as definições nas seguintes ações:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>ações após o fecho da tampa</li><li>ação de bateria crítica/baixa</li><li>ação do interruptor de alimentação</li><li>ação do botão de suspensão</li><li>definições de tempo de espera por inatividade para hibernação</li></ul></div>Caso contrário, não aciona o alarme, nem tira fotografias.</div>",
                 "desc": "<p><label>Ao ativar esta funcionalidade, o dispositivo começará a emitir um sinal sonoro quando o seu ecrã estiver bloqueado e forem detetados movimentos, especialmente num local público.</label></p> <p><label>Para dispensar o alarme, introduza a palavra-passe correta ou inicie sessão com o Windows Hello.</label></p>",
                 "note": {
                     "description": "Depois de iniciar sessão com êxito no sistema, esta funcionalidade será desativada automaticamente. Terá de voltar a ativá-la para utilizá-la."
@@ -2134,8 +2135,7 @@
                 "fileAuthorizationTips": {
                     "content": "O Lenovo Vantage não tem acesso ao sistema de ficheiros.",
                     "link": "Vá às Definições do Windows para dar acesso"
-                },
-                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
+                }
             },
             "voice": {
                 "title": "Voz",

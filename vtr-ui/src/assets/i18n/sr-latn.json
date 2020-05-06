@@ -2092,6 +2092,7 @@
             "antiTheft": {
                 "heading": "Inteligentno raspoznavanje",
                 "title": "Pametno upozorenje o pokretu",
+                "tooltip":"<div>Ova funkcija ne radi kada se računar nalazi u režimu hibernacije ili je isključen. Proverite postavke u sledećim radnjama:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>radnje zatvaranja poklopca</li><li>radnja prazne / gotovo ispražnjene baterije</li><li>radnja dugmeta za napajanje</li><li>radnja dugmeta za spavanje</li><li>postavke vremenskog ograničenja u stanju mirovanja u stanje hibernacije</li></ul></div>U suprotnom, neće se aktivirati alarm, niti će se fotografisati.</div>",
                 "desc": "<p><label>Kada omogućite ovu funkciju, uređaj će početi da emituje zvučne signale kada je ekran zaključan, a detektuju se pokreti, posebno na javnom mestu.</label></p> <p><label>Da biste odbacili alarm, unesite ispravnu lozinku ili se prijavite pomoću programa Windows Hello.</label></p>",
                 "note": {
                     "description": "Kada uspešno prijavite sistem, ova funkcija se automatski isključuje. Potrebno je da je ponovo omogućite da biste je koristili."
@@ -2134,8 +2135,7 @@
                 "fileAuthorizationTips": {
                     "content": "Lenovo Vantage nema pristup sistemu datoteka.",
                     "link": "Idite na postavke operativnog sistema Windows da biste dali pristup"
-                },
-                "tooltip": "<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>"
+                }
             },
             "voice": {
                 "title": "Glas",
