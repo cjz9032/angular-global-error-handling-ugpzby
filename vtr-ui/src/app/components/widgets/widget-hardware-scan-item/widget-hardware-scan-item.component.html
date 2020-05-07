@@ -85,7 +85,7 @@
 			</div>
 
 			<!-- Test List with deails test-->
-			<div class="test-list col" *ngIf="isEnableViewResults || item.details">
+			<div class="test-list col" *ngIf="isEnableViewResults || item.details || isRecoverExecute">
 				<vtr-ui-hardware-list
 					[items]="item.listTest"
 					[template]="2">

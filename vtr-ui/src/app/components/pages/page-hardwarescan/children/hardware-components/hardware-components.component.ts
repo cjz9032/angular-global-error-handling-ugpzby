@@ -510,6 +510,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		const devicesId = [];
 
 		this.devicesRecoverBadSectors = this.hardwareScanService.getDevicesRecover();
+		this.standardizeRbsResponse();
 		if (this.devicesRecoverBadSectors[0].name) {
 			this.deviceInRecover = this.devicesRecoverBadSectors[0].name;
 		}
@@ -532,6 +533,10 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				const rbsTaskActionResult = this.getRecoverBadSectorsMetricsTaskResult(response);
 				this.sendTaskActionMetrics(TaskType.RecoverBadSectors, rbsTaskActionResult.taskCount,
 					'', rbsTaskActionResult.taskResult, this.timerService.stop());
+			})
+				.finally(() => {
+					// Defines information about module details
+					this.onViewResultsRecover();
 			});
 		}
 	}
@@ -755,64 +760,103 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		this.modules = results.items;
 	}
 
+	/* This function is used to standardize the RBS intermediate response with the same used by a Scan. */
+	public standardizeRbsResponse(){
+		const moduleInformation = this.hardwareScanService.getModulesRetrieved();
+		if ( moduleInformation ) {
+			let storageModule =
+				moduleInformation.categoryList.find( category => category.id === 'storage' );
+
+			const results = { items: [] };
+
+			for (const device of this.devicesRecoverBadSectors) {
+				const item = {
+					module: storageModule.name,
+					icon: storageModule.id,
+					name: device.name,
+					collapsed: false,
+					listTest: [],
+				};
+
+				item.listTest.push({
+					id: '',
+					name: device.name,
+					status: device.status,
+					percent:device.percent,
+				});
+
+				results.items.push(item);
+			}
+			this.modules = results.items;
+		}
+	}
+
 	public onViewResultsRecover() {
-		const date = new Date();
-		const day = date.getDate().toString();
-		const month = date.getMonth() + 1;
-		const monthString = month.toString();
-		const year = date.getFullYear().toString();
-		const time = date.toTimeString().split(' ');
-		const dateString = year + '/' + monthString + '/' + day + ' ' + time[0];
 
-		const results = {
-			status: HardwareScanTestResult[HardwareScanTestResult.Pass],
-			statusValue: HardwareScanTestResult.Pass,
-			statusToken: this.statusToken(HardwareScanTestResult.Pass),
-			date: dateString,
-			items: []
-		};
+		const moduleInformation = this.hardwareScanService.getModulesRetrieved();
+		if ( moduleInformation ) {
+			let storageModule = moduleInformation.categoryList.find( category => category.id === 'storage' );
 
-		for (const device of this.devicesRecoverBadSectors) {
-			const item = {
-				module: this.translate.instant('hardwareScan.recoverBadSectors.localDevices'),
-				name: '',
-				collapsed: false,
-				details: [],
-				listTest: []
+			const date = new Date();
+			const day = date.getDate().toString();
+			const month = date.getMonth() + 1;
+			const monthString = month.toString();
+			const year = date.getFullYear().toString();
+			const time = date.toTimeString().split(' ');
+			const dateString = year + '/' + monthString + '/' + day + ' ' + time[0];
+
+			const results = {
+				status: HardwareScanTestResult[HardwareScanTestResult.Pass],
+				statusValue: HardwareScanTestResult.Pass,
+				statusToken: this.statusToken(HardwareScanTestResult.Pass),
+				date: dateString,
+				items: []
 			};
 
-			item.details = [
-				{ [this.translate.instant('hardwareScan.recoverBadSectors.numberSectors')]: device.numberOfSectors },
-				{ [this.translate.instant('hardwareScan.recoverBadSectors.numberBadSectors')]: device.numberOfBadSectors },
-				{ [this.translate.instant('hardwareScan.recoverBadSectors.numberFixedSectors')]: device.numberOfFixedSectors },
-				{ [this.translate.instant('hardwareScan.recoverBadSectors.numberNonFixedSectors')]: device.numberOfNonFixedSectors },
-				{ [this.translate.instant('hardwareScan.recoverBadSectors.elapsedTime')]: device.elapsedTime }
-			];
+			for (const device of this.devicesRecoverBadSectors) {
+				const item = {
+					module: storageModule.name,
+					icon: storageModule.id,
+					name: device.name,
+					collapsed: false,
+					details: [],
+					listTest: [],
+				};
 
-			item.listTest.push({
-				id: '',
-				name: device.name,
-				status: device.status,
-			});
+				item.details = [
+					{ [this.translate.instant('hardwareScan.recoverBadSectors.numberSectors')]: device.numberOfSectors },
+					{ [this.translate.instant('hardwareScan.recoverBadSectors.numberBadSectors')]: device.numberOfBadSectors },
+					{ [this.translate.instant('hardwareScan.recoverBadSectors.numberFixedSectors')]: device.numberOfFixedSectors },
+					{ [this.translate.instant('hardwareScan.recoverBadSectors.numberNonFixedSectors')]: device.numberOfNonFixedSectors },
+					{ [this.translate.instant('hardwareScan.recoverBadSectors.elapsedTime')]: device.elapsedTime }
+				];
 
-			if (device.status === HardwareScanTestResult.Cancelled) {
-				results.status = HardwareScanTestResult[HardwareScanTestResult.Cancelled];
-				results.statusValue = HardwareScanTestResult.Cancelled;
-				results.statusToken = this.statusToken(HardwareScanTestResult.Cancelled);
-			} else if (device.status === HardwareScanTestResult.Fail) {
-				results.status = HardwareScanTestResult[HardwareScanTestResult.Fail];
-				results.statusValue = HardwareScanTestResult.Fail;
-				results.statusToken = this.statusToken(HardwareScanTestResult.Fail);
-			} else if (device.status === HardwareScanTestResult.Warning) {
-				results.status = HardwareScanTestResult[HardwareScanTestResult.Warning];
-				results.statusValue = HardwareScanTestResult.Warning;
-				results.statusToken = this.statusToken(HardwareScanTestResult.Warning);
+				item.listTest.push({
+					id: '',
+					name: device.name,
+					status: device.status,
+					percent:device.percent,
+				});
+
+				if (device.status === HardwareScanTestResult.Cancelled) {
+					results.status = HardwareScanTestResult[HardwareScanTestResult.Cancelled];
+					results.statusValue = HardwareScanTestResult.Cancelled;
+					results.statusToken = this.statusToken(HardwareScanTestResult.Cancelled);
+				} else if (device.status === HardwareScanTestResult.Fail) {
+					results.status = HardwareScanTestResult[HardwareScanTestResult.Fail];
+					results.statusValue = HardwareScanTestResult.Fail;
+					results.statusToken = this.statusToken(HardwareScanTestResult.Fail);
+				} else if (device.status === HardwareScanTestResult.Warning) {
+					results.status = HardwareScanTestResult[HardwareScanTestResult.Warning];
+					results.statusValue = HardwareScanTestResult.Warning;
+					results.statusToken = this.statusToken(HardwareScanTestResult.Warning);
+				}
+				results.items.push(item);
 			}
-			results.items.push(item);
-		}
 
 		this.hardwareScanService.setViewResultItems(results);
 		this.modules = results.items;
+		}
 	}
 
 	private statusToken(status) {
@@ -862,6 +906,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					break;
 				case HardwareScanProgress.RecoverResponse:
 					this.devicesRecoverBadSectors = payload.devices;
+					this.standardizeRbsResponse();
 					if (payload.deviceInRecover) {
 						this.deviceInRecover = payload.deviceInRecover;
 					}

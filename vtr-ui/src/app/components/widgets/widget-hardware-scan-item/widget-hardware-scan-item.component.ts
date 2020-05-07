@@ -9,6 +9,7 @@ export class WidgetHardwareScanItemComponent implements OnInit {
 	@Input() items: any[];
 	@Input() resultCodeText: string;
 	@Input() isScanExecute = false;
+	@Input() isRecoverExecute = false;
 	@Input() isEnableViewResults = false;
 
 	public tooltipText: string;

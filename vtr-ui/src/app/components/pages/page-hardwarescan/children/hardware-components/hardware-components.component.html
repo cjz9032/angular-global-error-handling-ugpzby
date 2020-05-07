@@ -43,10 +43,11 @@
 				<div class="hardware-lists-container">
 
 					<vtr-widget-hardware-scan-item
-						*ngIf="!isRefreshingModules() && !isRecoverExecuting()"
+						*ngIf="!isRefreshingModules()"
 						[items]="modules"
 						[resultCodeText]="'hardwareScan.resultCode' | translate"
 						[isScanExecute]="isScanExecuting()"
+						[isRecoverExecute]="isRecoverExecuting()"
 						[isEnableViewResults]="getEnableViewResults()">
 					</vtr-widget-hardware-scan-item>
 
@@ -58,10 +59,6 @@
 					<div class="refresh-message" *ngIf="isRefreshingModules() && !isRecoverExecuting()">
 						{{ 'hardwareScan.refreshMessage' | translate }}
 					</div>
-
-					<vtr-ui-hardware-list *ngIf="isRecoverExecuting() && !isScanExecuting()"
-						[items]="devicesRecoverBadSectors">
-					</vtr-ui-hardware-list>
 				</div>
 			</div>
 		</div>
