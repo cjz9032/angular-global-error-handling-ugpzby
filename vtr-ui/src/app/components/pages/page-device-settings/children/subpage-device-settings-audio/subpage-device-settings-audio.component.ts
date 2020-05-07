@@ -16,7 +16,6 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { PageAnchorLink } from 'src/app/data-models/common/page-achor-link.model';
-import { MetricService } from 'src/app/services/metric/metric.service';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-audio',
@@ -85,7 +84,6 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		private dashboardService: DashboardService,
 		private logger: LoggerService,
 		private commonService: CommonService,
-		private metrics: MetricService,
 		private vantageShellService: VantageShellService) {
 		this.dolbyAudioCache = this.commonService.getLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, undefined);
 		this.Windows = vantageShellService.getWindows();

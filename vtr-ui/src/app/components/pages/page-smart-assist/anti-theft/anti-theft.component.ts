@@ -6,7 +6,6 @@ import { DeviceService } from 'src/app/services/device/device.service';
 import { DisplayService } from 'src/app/services/display/display.service';
 import { DropDownInterval } from '../../../../data-models/common/drop-down-interval.model';
 import { TranslateService } from '@ngx-translate/core';
-import { MetricService } from 'src/app/services/metric/metric.service';
 import { AntiTheftResponse } from 'src/app/data-models/antiTheft/antiTheft.model';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -48,7 +47,6 @@ export class AntiTheftComponent implements OnInit {
 		private deviceService: DeviceService,
 		private displayService: DisplayService,
 		private translate: TranslateService,
-		private metrics: MetricService,
 		private commonService: CommonService) {
 		this.smartAssistCapability = this.commonService.getLocalStorageValue(LocalStorageKey.SmartAssistCapability, undefined);
 		this.antiTheftCache = this.commonService.getLocalStorageValue(LocalStorageKey.AntiTheftCache, undefined);
