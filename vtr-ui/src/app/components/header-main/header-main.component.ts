@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, Output, EventEmitter, AfterViewInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
 import { DccService } from 'src/app/services/dcc/dcc.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 
@@ -25,13 +24,10 @@ export class HeaderMainComponent implements OnInit, AfterViewInit {
 	@Input() hideBack = false;
 	@Output() innerBack = new EventEmitter();
 	@Input() hideTitle = false;
-	prevUrl: string;
 
 	constructor(
-		private router: Router,
 		public deviceService: DeviceService,
-		public dccService: DccService,
-		private route: ActivatedRoute
+		public dccService: DccService
 	) {
 	}
 
@@ -42,14 +38,6 @@ export class HeaderMainComponent implements OnInit, AfterViewInit {
 				d.path = self.parentPath + '/' + d.path;
 			});
 		}
-		this.route.queryParams.subscribe(params => {
-			if (params.prevUrl) {
-				try {
-					this.prevUrl = atob(params.prevUrl);
-				} catch {
-				}
-			}
-		});
 	}
 
 	ngAfterViewInit() {
@@ -69,12 +57,7 @@ export class HeaderMainComponent implements OnInit, AfterViewInit {
 		if (this.isInnerBack) {
 			this.onInnerBack();
 		} else {
-			if (window.history.length > 1
-				&& !(this.prevUrl && this.prevUrl.startsWith('ms-appx-web:'))) {
-				return window.history.back();
-			} else if (typeof this.deviceService.isGaming === 'boolean') {
-				this.router.navigate([this.deviceService.isGaming ? 'device-gaming' : 'dashboard']);
-			}
+			return window.history.back();
 		}
 	}
 }
