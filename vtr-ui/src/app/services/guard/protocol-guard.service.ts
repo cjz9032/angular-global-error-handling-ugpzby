@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlSegment, UrlMatchResult, UrlTree, Router, ActivatedRoute, NavigationEnd, NavigationError, NavigationCancel } from '@angular/router';
 import { GuardConstants } from './guard-constants';
 import { CommonService } from '../common/common.service';
-import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
+import { DeviceService } from '../device/device.service';
 
 @Injectable({
   providedIn: 'root'
@@ -75,7 +75,8 @@ export class ProtocolGuardService implements CanActivate {
 
   constructor(
 	private router: Router,
-	private commonService: CommonService
+	private commonService: CommonService,
+	private deviceService: DeviceService
   ) {
   }
 
@@ -176,8 +177,16 @@ export class ProtocolGuardService implements CanActivate {
   public canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) : boolean | UrlTree {
 	const path = state.url.slice(state.url.indexOf('#') + 1);
 	if (path.startsWith(this.characteristicCode)) {
-		const checkResult = this.isRedirectUrlNeeded(path);
-		return checkResult[0] ? this.router.parseUrl(checkResult[1]) : !this.commonService.isFirstPageLoaded();
+		const checkResult = this.isRedirectUrlNeeded(path.split('&')[0]);
+		if (checkResult[0]) {
+			if (this.commonService.isFirstPageLoaded()) {
+				window.history.replaceState([], '', '#' + checkResult[1]);
+			} else {
+				window.history.replaceState([], '', `#${this.deviceService.isGaming ? '/device-gaming' : '/dashboard'}`);
+			}
+
+			return this.router.parseUrl(checkResult[1]);
+		}
 	}
 
 	return !this.commonService.isFirstPageLoaded();
