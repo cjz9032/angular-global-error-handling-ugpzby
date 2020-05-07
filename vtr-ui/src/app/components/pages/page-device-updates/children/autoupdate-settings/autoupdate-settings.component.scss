@@ -46,7 +46,11 @@
 				cursor: pointer;
 			}
 			&:focus {
-				@include outline-border-blue;
+				outline: 0;
+				border: 0.1rem solid $menu_hover;
+				@media #{$high-contrast} {
+					border: 0.1rem solid $menu_hover!important;
+				}
 			}
 		}
 

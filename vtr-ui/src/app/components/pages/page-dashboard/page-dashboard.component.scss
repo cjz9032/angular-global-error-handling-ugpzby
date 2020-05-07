@@ -27,14 +27,8 @@
 		}
 	}
 	@media #{$breakpoint_md}{
-		flex-direction: row;
-		justify-content: space-between;
-		.custom-card {
-			width: 50%;
-		}
-	}
-	@media #{$breakpoint_sm}{
 		flex-direction: column;
+		justify-content: flex-start;
 		.custom-card {
 			width: 100%;
 		}
@@ -59,10 +53,6 @@
 	}
 	@media #{$breakpoint_md} {
 		padding-left: 0;
-		padding-right: 1.2rem;
-	}
-	@media #{$breakpoint_sm} {
-		padding-left: 0;
 		padding-right: 0;
 	}
 }
@@ -83,10 +73,6 @@
 		padding-right: 0;
 	}
 	@media #{$breakpoint_md} {
-		padding-left: 1.2rem;
-		padding-right: 0;
-	}
-	@media #{$breakpoint_sm} {
 		padding-left: 0;
 		padding-right: 0;
 	}
