@@ -18,6 +18,7 @@
 	.custom-checkbox {
 		padding-left: 2rem;
 		font-size: $base;
+		color: $grey_darker;
 
 		/* main styling */
 		.custom-control-input {
@@ -102,15 +103,16 @@
 		/* disabled state */
 
 		.custom-control-input:disabled:not(:checked) ~ .custom-control-label {
+			pointer-events: none;
+
 			&::before {
 				border-color: $shade_blue;
 				opacity: $disabled-opacity;
 			}
-			&::after {
-				background-color: $shade_blue;
-			}
 		}
 		.custom-control-input:disabled:checked ~ .custom-control-label {
+			pointer-events: none;
+
 			&::before {
 				border-color: $shade_blue;
 				background-color: $shade_blue;
