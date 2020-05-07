@@ -61,11 +61,22 @@
 		color: $main;
 		font-size: $fontsize_xs;
 		font-weight: $weight_bold;
-		padding: 0.5rem 0 0;
-		height: 2.8rem;
-		line-height: 2.8rem;
+		padding: 0;
+		height: 4rem;
+		line-height: 4rem;
 		border-radius: 0;
-		border-bottom: 0.2rem solid $main;
+		//border-bottom: 0.2rem solid $main;
 		text-transform: uppercase;
+		&:focus {
+			outline: 0;
+			border: 0.1rem solid $menu_hover;
+			@media #{$high-contrast} {
+				border: 0.1rem solid $menu_hover!important;
+			}
+		}
+	}
+
+	.underline{
+		border-bottom: 0.2rem solid $main;
 	}
 }
