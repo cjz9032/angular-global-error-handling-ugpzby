@@ -5,7 +5,6 @@
 	(click)="sendChangeEvent($event)"
 	[value]="value"
 	[name]="onOffSwitchId"
-	(keydown)="focusEnabled($event)"
 	[attr.aria-label]="value ? toggleId+' on' : toggleId+' off'"
 	vtrMetrics
 	metricsEvent="featureClick"

@@ -176,15 +176,19 @@
 	}
 }
 ::ng-deep{
-body.focus-enable{
-	.is-gaming {
-      .vtr-page-gaming-macrokey {
-      .numberpad-popup li{
-        &:focus{
-          @include outline-blue-gaming;
-        }
-      }
-    }
-  }
-}
+	body.focus-enable{
+		.is-gaming {
+				.vtr-page-gaming-macrokey {
+					vtr-ui-number-button{
+					.numbers-holder{
+						li{
+							&:focus{
+							@include outline-blue-gaming;
+							}
+						}
+					}
+				}	
+			}
+		}
+	}
 }
