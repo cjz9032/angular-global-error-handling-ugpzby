@@ -67,5 +67,8 @@
 		border-radius: 0;
 		border-bottom: 0.2rem solid $main;
 		text-transform: uppercase;
+		&:focus {
+			@include outline-border-blue;
+		}
 	}
 }
