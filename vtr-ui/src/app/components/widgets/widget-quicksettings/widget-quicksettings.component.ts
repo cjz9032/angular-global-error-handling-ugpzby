@@ -254,7 +254,8 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 							this.cameraNoAccessNoteShow = true;
 						}
                         this.cameraStatus.permission = result.permission;
-                        this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraStatus); this.cameraStatus.isLoading = false;
+						this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraStatus);
+						this.cameraStatus.isLoading = false;
                     }
                 }).catch(error => {
 						this.logger.error('getCameraPermission', error.message);
@@ -367,8 +368,8 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	private getMicrophoneStatus() {
 		if (this.dashboardService.isShellAvailable) {
 			this.dashboardService.getMicrophoneStatus()
-				.then((featureStatus: FeatureStatus) => {
-					this.microphoneStatus = featureStatus;
+				.then((featureStatus) => {
+					this.microphoneStatus = {...this.microphoneStatus, ...featureStatus};
 					this.microPhoneGreyOut = false;
 					if (featureStatus.available) {
 						const win: any = window;
