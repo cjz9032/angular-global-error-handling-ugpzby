@@ -3,12 +3,15 @@
 		<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 pl-0 pr-0">
 			<div class="camera-preview">
 				<video #cameraPreview
+					id="camera-preview"
 					*ngIf="!disabledAll && !isCameraInErrorState"
 					class="feed"></video>
 				<img class="feed disable"
 					*ngIf="disabledAll && !isCameraInErrorState"
 					src="assets/images/camera-disable.png"
 					title=""
+					id="camera-notAvailable"
+					role="img"
 					[ngbTooltip]="'device.deviceSettings.displayCamera.camera.notAvailable' | translate"
 					tooltipClass="vtr-system-tooltip"
 					container="body" />
