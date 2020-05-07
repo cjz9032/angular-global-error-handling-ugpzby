@@ -1,9 +1,4 @@
 <div class="modal-body vtr-modal-scan-failure">
-   <div class="row justify-content-end">
-      <button type="button" class="close" (click)="closeModal()">
-         <fa-icon [icon]="['fas', 'times']"></fa-icon>
-      </button>
-   </div>
 
   <div class="modal-information">
     <div class="title">{{ 'hardwareScan.scanFailureModal.title' | translate }}</div>
@@ -28,11 +23,20 @@
       <div class="description" [innerHTML]="'hardwareScan.scanFailureModal.suggestedActionRbs' | translate"></div>
       <div class="row">
         <div class="col button-row">
-          <vtr-ui-button id="rbsButton" tabindex="1" (click)="goToRBSPage()"
+          <vtr-ui-button
+            metricsEvent="FeatureClick"
+            metricsParent="HardwareScan.ScanFailureActions"
+            metricsItem="ScanFailureActions.RecoverBadSectors"
+            id="rbsButton" tabindex="1" (click)="goToRBSPage()"
             [tooltipText]="'hardwareScan.scanFailureModal.supportButtonText' | translate"
             [label]="'hardwareScan.scanFailureModal.recoverBadSectorsButtonText' | translate">
           </vtr-ui-button>
-          <button type="button" id="supportButtonWithRBS" attr.aria-label="supportButtonWithRBS"
+          <button
+            vtrMetrics
+            metricsEvent="FeatureClick"
+            metricsParent="HardwareScan.ScanFailureActions"
+            metricsItem="HardwareScan.LenovoSupport"
+            type="button" id="supportButtonWithRBS" attr.aria-label="supportButtonWithRBS"
             class="btn btn-link support-button" (click)="openSupportPage()">{{'hardwareScan.scanFailureModal.supportButtonText' | translate }}</button>
         </div>
       </div>
@@ -44,7 +48,11 @@
       </div>
       <div class="row">
         <div class="col button-row">
-          <vtr-ui-button id="supportButtonWithoutRBS" tabindex="1" (click)="openSupportPage()"
+          <vtr-ui-button
+            metricsEvent="FeatureClick"
+            metricsParent="HardwareScan.ScanFailureActions"
+            metricsItem="ScanFailureActions.LenovoSupport"
+            id="supportButtonWithoutRBS" tabindex="1" (click)="openSupportPage()"
             [tooltipText]="'hardwareScan.scanFailureModal.supportButtonText' | translate"
             [label]="'hardwareScan.scanFailureModal.supportButtonText' | translate">
           </vtr-ui-button>
@@ -52,5 +60,13 @@
       </div>
    </ng-template>
 
+    <a
+      vtrMetrics
+      metricsEvent="FeatureClick"
+      metricsParent="HardwareScan.ScanFailureActions"
+      metricsItem="ScanFailureActions.Close"
+      role="button" href="javascript:;" class="close-btn" (click)="closeModal()">
+      <img [src]=" 'assets/icons/Close.svg' | svgInline | async" alt="" srcset="">
+	</a>
 </div>
-
+</div>
