@@ -46,14 +46,20 @@ export class UiRoundedRectangleRadioListComponent implements OnInit {
 	}
 
 	onKeyDown($event, index: number) {
-		if (this.model?.radioDetails?.length > 0) {
+		if (
+			this.model
+			&& this.model.radioDetails
+			&& this.model.radioDetails.length > 0) {
 			this.handleKeyPressEvent($event, index);
 		}
 	}
 
 	private updateSelection(radioId: string, hasFocus = false) {
 		let radio: UiRoundedRectangleRadioModel;
-		if (this.model?.radioDetails?.length > 0) {
+		if (
+			this.model
+			&& this.model.radioDetails
+			&& this.model.radioDetails.length > 0) {
 			let hasFound = false;
 			this.model.radioDetails.forEach(radioDetail => {
 				if ((radioDetail.componentId === radioId)) {

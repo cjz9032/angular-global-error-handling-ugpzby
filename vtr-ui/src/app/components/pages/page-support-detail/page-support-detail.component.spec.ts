@@ -176,56 +176,52 @@ xdescribe('PageSupportDetailComponent', () => {
 		expect(component).toBeTruthy();
 	});
 
-	it('#PageSupportDetailComponent #qaService setTranslationService ', async () => {
+	// it('#PageSupportDetailComponent #qaService setTranslationService ', async () => {
 
-		spyOn(qaService, 'setTranslationService').and.callThrough();
-		translate.resetLang('el');
-		qaService.preserveTransKeys.isSubscribed = false;
-		qaService.setTranslationService(translate);
-		expect(qaService.setTranslationService).toHaveBeenCalled();
+	// 	spyOn(qaService, 'setTranslationService').and.callThrough();
+	// 	translate.resetLang('el');
+	// 	qaService.preserveTransKeys.isSubscribed = false;
+	// 	qaService.setTranslationService(translate);
+	// 	expect(qaService.setTranslationService).toHaveBeenCalled();
 
-	});
+	// });
 
 	it('#PageSupportDetailComponent #qaService setCurrentLangTranslations ', async () => {
 		spyOn(translate.onLangChange, 'subscribe').and.callThrough();
 		spyOn(qaService, 'setCurrentLangTranslations').and.callThrough();
-		//translate.resetLang('es');
+		// translate.resetLang('es');
 		translate.use('es');
-		qaService.preserveTransKeys.isSubscribed = false;
 		qaService.setCurrentLangTranslations();
 		expect(qaService.setCurrentLangTranslations).toHaveBeenCalled();
 	});
 
 
-	it('#PageSupportDetailComponent #qaService getQATranslation qaService.preserveTransKeys.isSubscribed false ', async () => {
-		spyOn(qaService, 'getQATranslation').and.callThrough();
-		// translate.use('fr');
-		translate.resetLang('fr');
-		qaService.preserveTransKeys.isSubscribed = false;
-		qaService.getQATranslation(translate);
-		// passes
-		expect(qaService.getQATranslation).toHaveBeenCalled();
+	// it('#PageSupportDetailComponent #qaService getQATranslation qaService.preserveTransKeys.isSubscribed false ', async () => {
+	// 	spyOn(qaService, 'getQATranslation').and.callThrough();
+	// 	// translate.use('fr');
+	// 	translate.resetLang('fr');
+	// 	qaService.preserveTransKeys.isSubscribed = false;
+	// 	qaService.getQATranslation(translate);
+	// 	// passes
+	// 	expect(qaService.getQATranslation).toHaveBeenCalled();
 
-	});
+	// });
 
-	it('#PageSupportDetailComponent #qaService getObjectValue ', async () => {
-		spyOn(qaService, 'getObjectValue').and.callThrough();
-		// translate.use('fr');
-		translate.resetLang('fr');
-		qaService.preserveTransKeys.isSubscribed = false;
-		qaService.getObjectValue(testQuestion, 'faq.question1.title');
-		// passes
-		expect(qaService.getObjectValue).toHaveBeenCalled();
+	// it('#PageSupportDetailComponent #qaService getObjectValue ', async () => {
+	// 	spyOn(qaService, 'getObjectValue').and.callThrough();
+	// 	// translate.use('fr');
+	// 	translate.resetLang('fr');
+	// 	qaService.preserveTransKeys.isSubscribed = false;
+	// 	qaService.getObjectValue(testQuestion, 'faq.question1.title');
+	// 	// passes
+	// 	expect(qaService.getObjectValue).toHaveBeenCalled();
 
-	});
+	// });
 
 	it('#PageSupportDetailComponent onNavigate', async () => {
 		spyOn(component, 'onNavigate').and.callThrough();
 		component.onNavigate();
 		// passes
 		expect(component.onNavigate).toHaveBeenCalled();
-
 	});
-
-
 });
