@@ -6,12 +6,15 @@
 			[automationId]="(simpleOrComplex===1) ? 'single':'profile'"></vtr-ui-lighting-profile-toggle>
 		<vtr-ui-brightness-slider *ngIf="!isProfileOff && showBrightnessSlider===true"
 			[lightingData]="profileBrightness" [metricsId]="'lighting_profile_brightness'"
-			(onSliderChanged)="setLightingBrightness($event)" [lightingBrightness]="'gaming_lighting_brightness_slider'">
+			(onSliderChanged)="setLightingBrightness($event)"
+			[lightingBrightness]="'gaming_lighting_brightness_slider'">
 		</vtr-ui-brightness-slider>
 	</div>
 	<div class="lighting-area">
 		<div class="d-flex justify-content-between">
-			<div class="gaming-device-image d-flex align-items-center"  id="{{(simpleOrComplex===1) ? 'gaming_subpage_singlelighting_img' : 'gaming_subpage_RGBlighting_front_img'}}" role="img">
+			<div class="gaming-device-image d-flex align-items-center"
+				id="{{(simpleOrComplex===1) ? 'gaming_subpage_singlelighting_img' : 'gaming_subpage_RGBlighting_front_img'}}"
+				role="img">
 				<img src='{{panelImage1}}' class="img-responsive" />
 			</div>
 			<div class="gaming-light-options">
@@ -23,8 +26,9 @@
 						[selectedOptionId]="selectedSingleColorOptionId">
 					</vtr-ui-lighting-single-color>
 				</div>
-				<div role="text" *ngIf="isProfileOff" id="{{(simpleOrComplex===1) ? 'gaming_subpage_singlelighting_off_description' : 'gaming_subpage_RGBlighting_off_front_description'}}" role="text"
-					 class="light-option lighting-off d-flex justify-content-center align-items-center">
+				<div role="text" *ngIf="isProfileOff"
+					id="{{(simpleOrComplex===1) ? 'gaming_subpage_singlelighting_off_description' : 'gaming_subpage_RGBlighting_off_front_description'}}"
+					role="text"  class="light-option lighting-off d-flex justify-content-center align-items-center">
 					<p *ngIf="defaultLanguage !== 'ar'">{{'gaming.lightingProfile.profile.text1.title' | translate}}</p>
 					<p *ngIf="defaultLanguage === 'ar'" dir="rtl">
 						{{'gaming.lightingProfile.profile.text1.title' | translate}}</p>
@@ -36,6 +40,7 @@
 
 						<vtr-ui-lighting-effect [options]="lightingEffectData.drop[0]" [defaultLang]="defaultLanguage"
 							[effectOptionName]="lightEffectRGBOptionName"
+							[ariaLabel]="'gaming.lightingProfile.lightingeffectnarrator.lightingEffect.title' | translate"
 							[enableBrightCondition1] = "enableBrightCondition" [selectedValue]="frontSelectedValue"
 							[showDescription]="showHideDescription" (change)="optionChangedRGBTop($event, null)"
 							[tabindex]="0" [automationId]="'gaming_lighting_profile_effect_front'">
@@ -44,7 +49,8 @@
 						<vtr-ui-color-wheel *ngIf="profileRGBFeature===255" [showOverlay]="showHideOverlay"
 							[inHEX]="inHex1" [defaultLang]="defaultLanguage" [btnStatus]="applyBtnStatus1"
 							(colorEffectChanged)="colorEffectChangedFront($event)"
-							(colorChanged)="colorChangedFront($event)" [automationId]="'gaming_subpage_RGBlighting_front'" >
+							(colorChanged)="colorChangedFront($event)"
+							[automationId]="'gaming_subpage_RGBlighting_front'">
 						</vtr-ui-color-wheel>
 					</div>
 				</div>
@@ -54,7 +60,8 @@
 
 	<div class="lighting-area" *ngIf="profileRGBFeature===255 || simpleOrComplex===3">
 		<div class="d-flex justify-content-between">
-			<div class="gaming-device-image d-flex align-items-center" id="gaming_subpage_RGBlighting_side_img" role="img">
+			<div class="gaming-device-image d-flex align-items-center" id="gaming_subpage_RGBlighting_side_img"
+				role="img">
 				<img src='{{panelImage2}}' class="img-responsive" />
 			</div>
 			<div class="gaming-light-options">
@@ -67,13 +74,16 @@
 					<h3 class="content-title">{{'gaming.lightingProfile.profile.text3.title' | translate}}</h3>
 					<vtr-ui-lighting-effect [options]="lightingEffectData.drop[1]" [defaultLang]="defaultLanguage"
 						[enableBrightCondition1] = "enableBrightConditionside" [selectedValue]="sideSelectedValue"
+						[ariaLabel]="'gaming.lightingProfile.lightingeffectnarrator.lightingEffect.title' | translate"
 						[showDescription]="showHideDescription" [effectOptionName]="lightEffectRGBOptionNameSide"
-						(change)="optionChangedRGBSide($event,null)" [tabindex]="0" [automationId]="'gaming_lighting_profile_effect_side'">
+						(change)="optionChangedRGBSide($event,null)" [tabindex]="0"
+						[automationId]="'gaming_lighting_profile_effect_side'">
 					</vtr-ui-lighting-effect>
 
 					<vtr-ui-color-wheel *ngIf="profileRGBFeature===255" [showOverlay]="showHideOverlaySide"
 						[inHEX]="inHex2" [defaultLang]="defaultLanguage" [btnStatus]="applyBtnStatus2"
-						(colorEffectChanged)="colorEffectChangedSide($event)" (colorChanged)="colorChangedSide($event)" [automationId]="'gaming_subpage_RGBlighting_side'">
+						(colorEffectChanged)="colorEffectChangedSide($event)" (colorChanged)="colorChangedSide($event)"
+						[automationId]="'gaming_subpage_RGBlighting_side'">
 					</vtr-ui-color-wheel>
 				</div>
 			</div>

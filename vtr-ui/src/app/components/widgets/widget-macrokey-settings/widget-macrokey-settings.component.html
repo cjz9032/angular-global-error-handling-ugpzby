@@ -7,8 +7,12 @@
 				</div>
 				<div class="col-12 macrokey-status-wrapper" *ngIf="isNumpad">
 					<div class="select-wrapper">
-						<vtr-ui-lighting-effect [tooltip_value]= "tooltips_value | translate" [isRecording]="isRecording" [options]="macroKeyOptions[0]"
-							[selectedValue]="macroKeyTypeStatus.MacroKeyStatus" (change)="optionChanged($event)" [tabindex]="1" [automationId]="'gaming_macrokey_settings_drop_menu'">
+						<vtr-ui-lighting-effect
+							[ariaLabel]="'gaming.macroKey.narrator.macrokeyStatus.label' | translate"
+							[tooltip_value]="tooltips_value | translate" [isRecording]="isRecording"
+							[options]="macroKeyOptions[0]" [selectedValue]="macroKeyTypeStatus.MacroKeyStatus"
+							(change)="optionChanged($event)" [tabindex]="1"
+							[automationId]="'gaming_macrokey_settings_drop_menu'">
 						</vtr-ui-lighting-effect>
 					</div>
 
