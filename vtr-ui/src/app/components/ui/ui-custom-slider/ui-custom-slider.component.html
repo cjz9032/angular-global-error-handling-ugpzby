@@ -39,14 +39,17 @@
 		<div class="d-flex justify-content-between legends"
 			[class.legends-disabled]="isDisabled">
 			<span *ngIf="minLegend?.length>0"
+				id='min-legend'
 				[attr.aria-label]="minLegend">
 				{{ minLegend }}
 			</span>
 			<span *ngIf="midLegend?.length>0"
+				id='mid-legend'
 				[attr.aria-label]="midLegend">
 				{{ midLegend }}
 			</span>
 			<div *ngIf="maxLegend?.length>0"
+				id='max-legend'
 				[attr.aria-label]="maxLegend">
 				{{ maxLegend }}
 			</div>
