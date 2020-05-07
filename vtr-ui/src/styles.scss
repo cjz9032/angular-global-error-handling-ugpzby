@@ -1006,6 +1006,9 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 			&:focus {
 				outline: none;
 				border: 0.1rem solid $menu_hover;
+				@media #{$high-contrast} {
+					border: 0.1rem solid $high-contrast-black-textselected!important;
+				}
 			}
 		}
 
@@ -1017,6 +1020,9 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 			&:focus {
 				outline: none;
 				border: 0.1rem solid $menu_hover;
+				@media #{$high-contrast} {
+					border: 0.1rem solid $high-contrast-black-textselected!important;
+				}
 			}
 		}
 	}
