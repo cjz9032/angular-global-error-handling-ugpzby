@@ -51,7 +51,7 @@
 					</vtr-widget-hardware-scan-item>
 
 					<vtr-ui-hardware-list *ngIf="!isRefreshingModules() && !isScanExecuting() && !isRecoverExecuting()"
-						[items]="fillItemsToDisplay()">
+						[items]="itemsToDisplay">
 					</vtr-ui-hardware-list>
 
 					<div class="loading-components" *ngIf="isRefreshingModules() && !isRecoverExecuting()">

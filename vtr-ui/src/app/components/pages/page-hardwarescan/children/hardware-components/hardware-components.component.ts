@@ -112,16 +112,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		this.initResultSeverityConversion();
 	}
 
-	public fillItemsToDisplay() : any {
-		// Find if there is no itemsToDisplay available
-		let hasNameToDisplay = this.itemsToDisplay.find(x => x.name !== "").length;
-
-		if (hasNameToDisplay === undefined) {
-			this.itemsToDisplay = this.getItemToDisplay();
-		}
-		return this.itemsToDisplay;
-	}
-
 	ngOnDestroy() {
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
