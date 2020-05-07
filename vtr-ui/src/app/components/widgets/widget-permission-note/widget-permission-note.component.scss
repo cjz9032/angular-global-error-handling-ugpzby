@@ -32,10 +32,9 @@
 			border:none;
 
 		}
-	}
-	.text-dark {
 		&:focus {
 			@include outline-blue;
+			outline-offset: 0;
 		}
 	}
 }
