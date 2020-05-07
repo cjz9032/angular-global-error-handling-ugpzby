@@ -16,7 +16,6 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { PageAnchorLink } from 'src/app/data-models/common/page-achor-link.model';
-import { MetricService } from 'src/app/services/metric/metric.service';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-audio',
@@ -85,7 +84,6 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		private dashboardService: DashboardService,
 		private logger: LoggerService,
 		private commonService: CommonService,
-		private metrics: MetricService,
 		private vantageShellService: VantageShellService) {
 		this.dolbyAudioCache = this.commonService.getLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, undefined);
 		this.Windows = vantageShellService.getWindows();
@@ -382,7 +380,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			}
 			if (!this.dolbyModeResponse.isAudioProfileEnabled && (this.dolbyToggleButtonStatus !== this.dolbyModeResponse.isAudioProfileEnabled) && this.dolbyToggleButtonStatus !== undefined) {
 				this.eCourseStatus.status = false;
-				this.dolbyModeResponse.eCourseStatus = 'False'
+				this.dolbyModeResponse.eCourseStatus = 'False';
 				this.eCourseToggleButtonStatus = false;
 				this.dolbyToggleButtonStatus = this.dolbyModeResponse.isAudioProfileEnabled;
 				this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyModeResponse);
@@ -411,12 +409,6 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		if (this.audioService.isShellAvailable) {
 			this.audioService.setDolbyAudioState(event.switchValue)
 				.then((response: boolean) => {
-					const metricsData = {
-						itemParent: 'Device.MyDeviceSettings',
-						itemName: 'Dolby-audio.dolby-toggle-button',
-						value: event.switchValue
-					};
-					this.metrics.sendMetrics(metricsData);
 					this.logger.info('onDolbyAudioToggleOnOff:', response);
 				}).catch(error => {
 					this.logger.error('onDolbyAudioToggleOnOff', error.message);
@@ -428,12 +420,6 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		this.voipStatus.status = value;
 		this.dolbyModeResponse.voIPStatus = (value) ? 'True' : 'False';
 		this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyModeResponse);
-		const voipMetricsData = {
-			itemParent: 'Device.MyDeviceSettings',
-			itemName: 'Dolby-audio.VoIP-Checkbox',
-			value: value
-		};
-		this.metrics.sendMetrics(voipMetricsData);
 		try {
 			if (this.isNewplugin) {
 				if (this.audioService.isShellAvailable) {
@@ -467,12 +453,6 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		this.entertainmentStatus.status = value;
 		this.dolbyModeResponse.entertainmentStatus = (value) ? 'True' : 'False';
 		this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyModeResponse);
-		const entertainmentMetricsData = {
-			itemParent: 'Device.MyDeviceSettings',
-			itemName: 'Dolby-audio.Entertainment-Checkbox',
-			value: value
-		};
-		this.metrics.sendMetrics(entertainmentMetricsData);
 		try {
 			if (this.isNewplugin) {
 				this.audioService.setDolbyAudioProfileState('EntertainmentStatus', value)
@@ -513,12 +493,6 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			if (this.audioService.isShellAvailable) {
 				this.audioService.setDolbyAudioProfileState('ECourseStatus', event.switchValue)
 					.then((response: boolean) => {
-						const metricsData = {
-							itemParent: 'Device.MyDeviceSettings',
-							itemName: 'Dolby-audio.eCourse-toggle-button',
-							value: event.switchValue
-						};
-						this.metrics.sendMetrics(metricsData);
 						this.logger.info('onToggleOfeCourseAutoOptimization:', response);
 					}).catch(error => {
 						this.logger.error('onToggleOfeCourseAutoOptimization', error.message);
@@ -548,12 +522,6 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 				this.audioService.setDolbyMode(this.dolbyModeResponse.currentMode)
 					.then((value) => {
 						this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyModeResponse);
-						const metricsData = {
-							itemParent: 'Device.MyDeviceSettings',
-							itemName: 'Dolby-audio.dolbyMode-RadioButton',
-							value: this.dolbyModeResponse.currentMode
-						};
-						this.metrics.sendMetrics(metricsData);
 						this.logger.info('onDolbySettingRadioChange', value);
 					}).catch(error => {
 						this.logger.error('onDolbySettingRadioChange', error.message);

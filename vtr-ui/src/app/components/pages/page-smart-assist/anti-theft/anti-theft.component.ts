@@ -6,7 +6,6 @@ import { DeviceService } from 'src/app/services/device/device.service';
 import { DisplayService } from 'src/app/services/display/display.service';
 import { DropDownInterval } from '../../../../data-models/common/drop-down-interval.model';
 import { TranslateService } from '@ngx-translate/core';
-import { MetricService } from 'src/app/services/metric/metric.service';
 import { AntiTheftResponse } from 'src/app/data-models/antiTheft/antiTheft.model';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -48,7 +47,6 @@ export class AntiTheftComponent implements OnInit {
 		private deviceService: DeviceService,
 		private displayService: DisplayService,
 		private translate: TranslateService,
-		private metrics: MetricService,
 		private commonService: CommonService) {
 		this.smartAssistCapability = this.commonService.getLocalStorageValue(LocalStorageKey.SmartAssistCapability, undefined);
 		this.antiTheftCache = this.commonService.getLocalStorageValue(LocalStorageKey.AntiTheftCache, undefined);
@@ -209,12 +207,6 @@ export class AntiTheftComponent implements OnInit {
 
 	public setAntiTheftStatus(event: any) {
 		this.antiTheft.status = event.switchValue;
-		const metricsData = {
-			itemParent: 'Device.SmartAssist',
-			itemName: 'Smart-motion-alarm.toggle-button',
-			value: event.switchValue
-		};
-		this.metrics.sendMetrics(metricsData);
 		try {
 			if (this.smartAssist.isShellAvailable) {
 				this.smartAssist.setAntiTheftStatus(event.switchValue)
@@ -232,13 +224,6 @@ export class AntiTheftComponent implements OnInit {
 
 	public setAlarmOften(value: number) {
 		this.antiTheft.alarmOften = value;
-		this.antiTheftToggle.emit(value);
-		const metricsData = {
-			itemParent: 'Device.SmartAssist',
-			itemName: 'Smart-motion-alarm.alarm-drop-down',
-			value: value
-		};
-		this.metrics.sendMetrics(metricsData);
 		try {
 			if (this.smartAssist.isShellAvailable) {
 				this.smartAssist.setAlarmOften(value)
@@ -256,13 +241,6 @@ export class AntiTheftComponent implements OnInit {
 
 	public setPhotoNumber(value: number) {
 		this.antiTheft.photoNumber = value;
-		this.antiTheftToggle.emit(value);
-		const metricsData = {
-			itemParent: 'Device.SmartAssist',
-			itemName: 'Smart-motion-alarm.photo-drop-down',
-			value: value
-		};
-		this.metrics.sendMetrics(metricsData);
 		try {
 			if (this.smartAssist.isShellAvailable) {
 				this.smartAssist.setPhotoNumber(value)
@@ -280,12 +258,6 @@ export class AntiTheftComponent implements OnInit {
 
 	public setAllowCamera(value: boolean) {
 		this.antiTheft.isSupportPhoto = value;
-		const metricsData = {
-			itemParent: 'Device.SmartAssist',
-			itemName: 'Smart-motion-alarm.photo-checkbox',
-			value: value
-		};
-		this.metrics.sendMetrics(metricsData);
 		try {
 			this.smartAssist.setAllowCamera(value)
 				.then((value: boolean) => {
