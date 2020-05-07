@@ -441,10 +441,16 @@ $high-contrast-black-yellow: #FFFF00;
 @mixin outline-border-white {
 	outline: 0;
 	border: 0.1rem solid $light;
+	@media #{$high-contrast} {
+		border: 0.1rem solid $light!important;
+	}
 }
 @mixin outline-border-blue {
 	outline: 0;
 	border: 0.1rem solid $menu_hover;
+	@media #{$high-contrast} {
+		border: 0.1rem solid $menu_hover!important;
+	}
 }
 @mixin button-outline-blue {
 		content: '';
