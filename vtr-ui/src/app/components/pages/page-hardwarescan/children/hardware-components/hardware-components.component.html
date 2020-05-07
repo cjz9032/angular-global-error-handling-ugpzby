@@ -1,20 +1,17 @@
 <div class="vtr-hardware-components">
 	<div class="row">
 		<div class="col col-12">
-			<vtr-widget-hardware-scan *ngIf="!isScanDone" [title]="getDeviceTitle()"
-				[subTitle]="getDeviceSubTitle()" [buttonText]="'hardwareScan.quickScan' | translate"
-				[anchorText]="'hardwareScan.customize.name' | translate" [percent]="progress"
-				[finalResultCodeText]="'hardwareScan.finalResultCode' | translate"
-				[disableQuickScan]="startScanClicked"
+			<vtr-hardware-scan-header-pages *ngIf="!isScanDone"
+				[percent]="progress"
+				(checkCancel)="onCancelScan()"
 				[disableCancel]="isDisableCancel()"
-				[lenovoSupport]="'hardwareScan.support.subtitle' | translate"
-				[offlineText]="'dashboard.offlineInfo.title' | translate" [isOnline]="isOnline"
-				[showProgress]="isScanExecuting() || isRecoverExecuting()" (startQuickScan)="startScanWaitingModules(taskTypeEnum.QuickScan)"
-				(checkCancel)="onCancelScan()" (checkAnchor)="startScanWaitingModules(taskTypeEnum.CustomScan)" [statusText]="finalStatusToken()"
+				(checkAnchor)="startScanWaitingModules(taskTypeEnum.CustomScan)"
+				(startQuickScan)="startScanWaitingModules(taskTypeEnum.QuickScan)"
+				[statusText]="finalStatusToken()"
+				[deviceInRecover]="deviceInRecover"
 				itemParentCancel="{{itemParentCancelScan}}"
-				[hideBack]="!isScanDone"
 				itemNameCancel= "{{itemNameCancelScan}}">
-			</vtr-widget-hardware-scan>
+			</vtr-hardware-scan-header-pages>
 		</div>
 	</div>
 

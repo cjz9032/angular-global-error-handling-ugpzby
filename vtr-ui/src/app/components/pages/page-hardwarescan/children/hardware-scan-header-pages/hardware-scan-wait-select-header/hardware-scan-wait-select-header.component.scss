@@ -1,0 +1,71 @@
+@import "../../../../../../app.theme";
+
+.title {
+	color: $light;
+	font-size: $fontsize_xl2;
+	font-weight: $weight_light;
+	line-height: 4.2rem;
+	padding-left: 2.4rem;
+	padding-top: 3rem;
+	padding-bottom: 0.5rem;
+	padding-right: 2.4rem;
+}
+
+.button-row {
+	padding-left: 2.4rem;
+	padding-bottom: 3rem;
+	padding-top: 3rem;
+	padding-right: 2.4rem;
+	.action-button {
+		border-radius: 2.5rem;
+		background: $gradient_main;
+		text-transform: uppercase;
+		padding: 0 3rem;
+		color: $light;
+		font-size: $fontsize_xs;
+		height: 5rem;
+		font-weight: $weight_bold;
+		line-height: 5rem;
+		text-align: center;
+		border: 0rem;
+		cursor: pointer;
+	}
+	.action-button-disable {
+		border-radius: 2.5rem;
+		background: $light-grey;
+		text-transform: uppercase;
+		padding: 0 3rem;
+		color: $light;
+		font-size: $fontsize_xs;
+		height: 5rem;
+		font-weight: $weight_bold;
+		line-height: 5rem;
+		text-align: center;
+		border: 0rem;
+		cursor: default;
+	}
+	.action-anchor {
+		font-size: $fontsize_xs2;
+		font-weight: $weight_bold;
+		color: $light;
+		border-bottom: 0.2rem solid $light;
+		padding-bottom: 0.2rem;
+		margin-left: 2.5rem;
+		text-transform: uppercase;
+		cursor: pointer;
+		&:hover {
+			border: none;
+		}
+	}
+	.disabled-anchor {
+		font-size: $fontsize_xs2;
+		font-weight: $weight_bold;
+		color: $shade_light;
+		border-bottom: 0.2rem solid $shade_light;
+		padding-bottom: 0.2rem;
+		margin-left: 2.5rem;
+		text-transform: uppercase;
+		cursor: default;
+		pointer-events: none !important;
+	}
+}
