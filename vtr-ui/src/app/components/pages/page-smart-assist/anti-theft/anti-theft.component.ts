@@ -209,12 +209,6 @@ export class AntiTheftComponent implements OnInit {
 
 	public setAntiTheftStatus(event: any) {
 		this.antiTheft.status = event.switchValue;
-		const metricsData = {
-			itemParent: 'Device.SmartAssist',
-			itemName: 'Smart-motion-alarm.toggle-button',
-			value: event.switchValue
-		};
-		this.metrics.sendMetrics(metricsData);
 		try {
 			if (this.smartAssist.isShellAvailable) {
 				this.smartAssist.setAntiTheftStatus(event.switchValue)
@@ -232,13 +226,6 @@ export class AntiTheftComponent implements OnInit {
 
 	public setAlarmOften(value: number) {
 		this.antiTheft.alarmOften = value;
-		this.antiTheftToggle.emit(value);
-		const metricsData = {
-			itemParent: 'Device.SmartAssist',
-			itemName: 'Smart-motion-alarm.alarm-drop-down',
-			value: value
-		};
-		this.metrics.sendMetrics(metricsData);
 		try {
 			if (this.smartAssist.isShellAvailable) {
 				this.smartAssist.setAlarmOften(value)
@@ -256,13 +243,6 @@ export class AntiTheftComponent implements OnInit {
 
 	public setPhotoNumber(value: number) {
 		this.antiTheft.photoNumber = value;
-		this.antiTheftToggle.emit(value);
-		const metricsData = {
-			itemParent: 'Device.SmartAssist',
-			itemName: 'Smart-motion-alarm.photo-drop-down',
-			value: value
-		};
-		this.metrics.sendMetrics(metricsData);
 		try {
 			if (this.smartAssist.isShellAvailable) {
 				this.smartAssist.setPhotoNumber(value)
@@ -280,12 +260,6 @@ export class AntiTheftComponent implements OnInit {
 
 	public setAllowCamera(value: boolean) {
 		this.antiTheft.isSupportPhoto = value;
-		const metricsData = {
-			itemParent: 'Device.SmartAssist',
-			itemName: 'Smart-motion-alarm.photo-checkbox',
-			value: value
-		};
-		this.metrics.sendMetrics(metricsData);
 		try {
 			this.smartAssist.setAllowCamera(value)
 				.then((value: boolean) => {
