@@ -297,15 +297,14 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			const welcomeComplete = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, false) === true;
 			const showWelcome = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityShowWelcome, 0);
 			if (welcomeComplete) {
-				if (this.locationPermission.hasSystemPermissionShowed && this.locationPermission.isLocationServiceOn) {
+				if ((this.locationPermission.hasSystemPermissionShowed && this.locationPermission.isLocationServiceOn)
+					|| (this.chs.account.state === CHSAccountState.local)) {
 					this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'notShow');
 					return;
 				}
-				if (this.chs.account.state !== CHSAccountState.local) {
-					this.dialogService.openCHSPermissionModal(this.locationPermission).result.then(() => {
-						this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'finish');
-					})
-				}
+				this.dialogService.openCHSPermissionModal(this.locationPermission).result.then(() => {
+					this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'finish');
+				})
 			} else {
 				this.dialogService.openWelcomeModal(showWelcome, this.locationPermission).result.then(() => {
 					this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'finish');
