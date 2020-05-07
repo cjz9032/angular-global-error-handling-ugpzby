@@ -21,7 +21,6 @@ export class RecoverBadSectorsComponent implements OnInit, OnChanges, OnDestroy 
 	public errorMessage: string;
 	private failedDevicesList: Array<string>;
 
-	public textButton = this.translate.instant('hardwareScan.recoverBadSectors.title');
 	recoverInProgress = false;
 
 	constructor(
@@ -80,7 +79,7 @@ export class RecoverBadSectorsComponent implements OnInit, OnChanges, OnDestroy 
 				centered: true,
 				windowClass: 'hardware-scan-modal-size'
 			});
-			
+
 			modal.componentInstance.ItemParent = "HardwareScan.ConfirmRecoverBadSectors";
 			modal.componentInstance.CancelItemName = "ConfirmRecoverBadSectors.Close";
 			modal.componentInstance.ConfirmItemName = "ConfirmRecoverBadSectors.Confirm";
