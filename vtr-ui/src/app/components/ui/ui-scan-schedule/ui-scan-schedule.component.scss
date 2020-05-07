@@ -483,6 +483,9 @@ vtr-ui-smart-performance-scan-summary {
 			opacity: 0.5;
 			line-height: 2;
 			font-weight: $weight_regular;
+			@media #{$breakpoint_sm}{
+				font-size: 1.4rem;
+			}
 		}
 		.icon {
 			color: #7D5FEF;
