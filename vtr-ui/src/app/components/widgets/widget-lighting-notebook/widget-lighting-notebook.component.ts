@@ -34,7 +34,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
   public isSetDefault:boolean;
   public isEffectChange:boolean;
   public isValChange:boolean = true;
-  public showOptions:boolean;
+  public showOptions:boolean = false;
 
   @HostListener('document:click', ['$event']) onClick(event) {
     this.isSetDefault =false;
