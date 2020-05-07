@@ -1555,7 +1555,7 @@
 				"display": {
 					"title": "Display",
 					"displayColorTemperature": {
-						"title": "Eye Care Mode",
+						"title": "Eye care mode",
 						"description": "To avoid eye strain, you can adjust the color temperature of your display to filter out the blue light when you use your computer for a long time. In addition, warm colors are good for your sleeping especially in the night.",
 						"link": {
 							"click": "Click",
@@ -1760,8 +1760,8 @@
 				"backlight": {
 					"title": "Keyboard backlight",
 					"description": {
-						"base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-						"auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+						"base": "Activate the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backllight settings by pressing the Fn+Space key combinations.",
+						"auto": "Activate the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key combinations or set it as \"Auto\". In \"Auto\" mode, the system automatically adjusts the keyboard backlight according to the ambient light."
 					},
 					"level": {
 						"auto": "Auto",

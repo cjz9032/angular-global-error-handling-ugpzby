@@ -1857,10 +1857,10 @@
                 },
                 "backlight": {
                     "title": "Bakgrundsbelysning för tangentbord",
-                    "description": {
-                        "base": "Aktivera tangentbordets bakgrundsbelysning om du vill göra det lättare att skriva i mörker eller dåligt ljus. Du kan också ändra inställningarna för tangentbordets bakgrundsbelysning genom att trycka på Fn+Mellanslag.",
-                        "auto": "Aktivera tangentbordets bakgrundsbelysning om du vill göra det lättare att skriva i mörker eller dåligt ljus. Du kan ändra inställningarna för bakgrundsbelysningen genom att trycka på Fn+Mellanslag eller ange inställningen till Automatisk. Med alternativet Automatisk anpassas tangentbordets bakgrundsbelysning efter omgivande ljusförhållanden."
-                    },
+					"description": {
+						"base": "Aktivera tangentbordets bakgrundsbelysning om du vill kunna skriva i mörker eller dåligt ljus lättare. Du kan även ändra inställningarna för tangentbordets bakgrundsbelysning genom att trycka på Fn+Mellanslag.",
+						"auto": "Aktivera tangentbordets bakgrundsbelysning om du vill kunna skriva i mörker eller dåligt ljus lättare. Du kan ändra inställningarna för bakgrundsbelysningen genom att trycka på Fn+Mellanslag eller välja inställningen Automatisk. Med inställningen Automatisk anpassas tangentbordets bakgrundsbelysning efter omgivningens ljusförhållanden."
+					},
                     "level": {
                         "auto": "Automatisk",
                         "low": "Låg",

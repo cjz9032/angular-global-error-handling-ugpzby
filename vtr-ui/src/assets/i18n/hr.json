@@ -1857,10 +1857,10 @@
                 },
                 "backlight": {
                     "title": "Pozadinsko osvjetljenje tipkovnice",
-                    "description": {
-                        "base": "Aktivirajte pozadinsko osvjetljenje tipkovnice kako biste olakšali tipkanje u uvjetima tamnog ili slabog svjetla. Također možete promijeniti postavke pozadinskog osvjetljenja tipkovnice pritiskom na tipku Fn+razmak.",
-                        "auto": "Aktivirajte pozadinsko osvjetljenje tipkovnice kako biste olakšali tipkanje u uvjetima tamnog ili slabog svjetla. Postavke pozadinskog osvjetljenja možete promijeniti pritiskom tipke Fn+ili je postavite na \"Auto\". Mogućnost \"Auto\" automatski podešava pozadinsko osvjetljenje tipkovnice prema ambijentalnom svjetlu."
-                    },
+					"description": {
+						"base": "Aktivirajte pozadinsko osvjetljenje tipkovnice kako biste olakšali tipkanje u uvjetima tamnog ili slabog svjetla. Također možete promijeniti postavke pozadinskog osvjetljenja tipkovnice pritiskom na kombinaciju tipki Fn+razmak.",
+						"auto": "Aktivirajte pozadinsko osvjetljenje tipkovnice kako biste olakšali tipkanje u uvjetima tamnog ili slabog svjetla. Postavke pozadinskog osvjetljenja možete promijeniti pritiskom na kombinaciju tipki Fn+razmak ili je postavite na \"Auto\". U načinu rada \"Auto\", sustav automatski podešava pozadinsko osvjetljenje tipkovnice prema ambijentalnom svjetlu."
+					},
                     "level": {
                         "auto": "Automatski",
                         "low": "Nisko",
