@@ -68,7 +68,7 @@
 
 			<!-- ****************** Power Smart Settings Section ******************************** -->
 			<vtr-power-smart-settings *ngIf="!isDesktopMachine"
-				(isPowerSmartSettingVisible)="onSetSmartSettingsCapability(true)">
+				(isPowerSmartSettingVisible)="onSetSmartSettingsCapability($event)">
 			</vtr-power-smart-settings>
 			<!-- ****************** Power Smart Settings Section ******************************** -->
 

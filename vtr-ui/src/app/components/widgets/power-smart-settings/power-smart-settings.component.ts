@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output, AfterViewInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
 import { EMPTY } from 'rxjs';
@@ -18,7 +18,7 @@ const ideapad = 0;
 	templateUrl: './power-smart-settings.component.html',
 	styleUrls: ['./power-smart-settings.component.scss']
 })
-export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
+export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterViewInit {
 	intelligentCoolingModes = IntelligentCoolingHardware.ITS;
 	dYTCRevision = 0;
 	cQLCapability = false;
@@ -46,7 +46,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 	public isAutoTransitionEnabled = false;
 	public autoTransitionIsReadMore = false;
 	public smartSettingsCapability = false;
-	@Output() isPowerSmartSettingVisible = new EventEmitter<any>();
+
+	@Output() isPowerSmartSettingVisible = new EventEmitter<boolean>();
 
 	constructor(
 		public powerService: PowerService,
@@ -70,16 +71,28 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 		}
 	}
 
+	ngAfterViewInit() {
+		if(this.cache) {
+			if (this.cache.showIC === 0) {
+				this.showPowerSmartSettings(false);
+			} else {
+				this.showPowerSmartSettings(true);
+			}
+		}
+	}
+
+
+
 	initDataFromCache() {
 		this.cache = this.commonService.getLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, undefined);
 		if (this.cache) {
 			// init ui
 			this.showIC = this.cache.showIC;
-			if (this.showIC === 0) {
-				this.showPowerSmartSettings(false);
-				return;
-			}
-			this.showPowerSmartSettings(true);
+			// if (this.showIC === 0) {
+			// 	this.showPowerSmartSettings(false);
+			// 	return;
+			// }
+			// this.showPowerSmartSettings(true);
 			if (this.showIC === 6) {
 				this.dytc6Mode = this.cache.captionText;
 				this.dytc6IsAutoModeSupported = this.cache.autoModeToggle.available;
@@ -107,7 +120,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 			if (!flag) {
 				this.showIC = 0;
 				this.cache.showIC = this.showIC;
-				this.isPowerSmartSettingVisible.emit(true);
+				this.isPowerSmartSettingVisible.emit(false);
 				this.commonService.setLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, this.cache);
 			} else {
 				this.isPowerSmartSettingVisible.emit(true);
