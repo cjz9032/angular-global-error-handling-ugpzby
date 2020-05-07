@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.36](https://bitbucket.tc.lenovo.com///compare/v1.5.35...v1.5.36) (2020-05-07)
+
+
+### Features
+
+* **license:** regular update June 2020 ([ba881b0](https://bitbucket.tc.lenovo.com///commit/ba881b0f98ee690c837f3f3efb33837fcb04aaa6))
+
+
+### Bug Fixes
+
+* **chs:** VAN-16741 fixed offline dialog won't popup ([2633504](https://bitbucket.tc.lenovo.com///commit/2633504ed7b9c3f2d966991e472b4e4e764308f0))
+* add disable atribute to checkbox ([2e8a478](https://bitbucket.tc.lenovo.com///commit/2e8a4786060a6b6e435f1fcb12e2be7876e86014))
+
 ### [1.5.35](https://bitbucket.tc.lenovo.com///compare/v1.5.34...v1.5.35) (2020-05-06)
 
 
