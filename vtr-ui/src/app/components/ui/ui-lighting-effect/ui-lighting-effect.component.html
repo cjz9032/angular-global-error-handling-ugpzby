@@ -1,7 +1,7 @@
 <div class="select-box">
 	<div class="dropdown">
 		<div class="dropdown-toggle" #focusDropdown id="{{automationId}}" (click)="toggleOptions()"
-			(keydown.enter)="toggleOptions()" attr.aria-label="{{(ariaLabel)+(selectedOption.label | translate)}}"
+			(keydown.enter)="toggleOptions()" attr.aria-label="{{(ariaLabel)+' '+(selectedOption.label | translate)}}"
 			role="combobox" [attr.aria-expanded]="showOptions" tabindex="{{tabindex}}">
 			<span class="{{selectedOption.show_tool_tip ? selectedOption.id : ''}} name w-100"
 				title="{{ (selectedOption.show_tool_tip ? selectedOption.name : '') | translate }}"
