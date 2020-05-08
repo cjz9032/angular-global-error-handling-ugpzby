@@ -27,9 +27,5 @@ export class ModalRebootConfirmComponent implements OnInit {
 		this.closeModal();
 	}
 
-	/* 	@HostListener('window: focus')
-		onFocus(): void {
-			const modal = document.querySelector('.Battery-Charge-Threshold-Modal') as HTMLElement;
-			modal.focus();
-		} */
+
 }
