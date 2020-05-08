@@ -77,6 +77,7 @@ export class ModalSmartPerformanceCancelComponent implements OnInit {
 
 				});
 		}
+		this.smartPerformanceService.canExit.next(false)
 		this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceForceClose, true);
 		// this.activeModal.close('close');
 	}

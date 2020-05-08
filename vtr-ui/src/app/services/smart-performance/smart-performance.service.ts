@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { CommonService } from "../common/common.service";
 import { VantageShellService } from "../vantage-shell/vantage-shell.service";
+import { Subject } from 'rxjs';
 
 @Injectable({
 	providedIn: "root"
@@ -8,6 +9,7 @@ import { VantageShellService } from "../vantage-shell/vantage-shell.service";
 export class SmartPerformanceService {
 	getSmartPerformance: any;
 	public isShellAvailable = false;
+	canExit = new Subject<boolean>()
 	constructor(shellService: VantageShellService) {
 		
 		this.getSmartPerformance = shellService.getSmartPerformance();
