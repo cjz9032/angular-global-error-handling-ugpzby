@@ -238,7 +238,9 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 					this.logger.info('getAudioPageSettings.Promise.all', responses);
 					this.commonService.setLocalStorageValue(LocalStorageKey.IsDolbyModeAvailable, dolbyModeResponse.available);
 					if (!microphone && !dolbyModeResponse.available) {
-						this.menuItems = this.commonService.removeObjById(this.menuItems, 'audio');
+						// Array.filter won't trigger changeDetect automatically, so we do it manually.
+						const tempMenuItems = this.commonService.removeObjById(this.menuItems, 'audio');
+						this.menuItems = tempMenuItems;
 						this.commonService.setLocalStorageValue(LocalStorageKey.IsAudioPageAvailable, false);
 					} else {
 						this.commonService.setLocalStorageValue(LocalStorageKey.IsAudioPageAvailable, true);
