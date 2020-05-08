@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.37](https://bitbucket.tc.lenovo.com///compare/v1.5.36...v1.5.37) (2020-05-08)
+
+
+### Bug Fixes
+
+* **CHS-Accessibility:** description in some dialog not read in scan mode ([067dff0](https://bitbucket.tc.lenovo.com///commit/067dff0d8f68957ac29fa46ad44768253ad2a89e))
+* **menu:** add support for arm ([fbf30e0](https://bitbucket.tc.lenovo.com///commit/fbf30e0302c983cd00bd068dc16e992e2a2ee846))
+* **menu:** vantage logo has no focus rect ([e859719](https://bitbucket.tc.lenovo.com///commit/e859719c5ee77761dbcab26840f32d3c2006311f))
+* **Will affect the menu:** fix menu show two security issue ([5cb8dec](https://bitbucket.tc.lenovo.com///commit/5cb8dec7c524428d56b2e82fcd6bd12d671520c2))
+
 ### [1.5.36](https://bitbucket.tc.lenovo.com///compare/v1.5.35...v1.5.36) (2020-05-07)
 
 
