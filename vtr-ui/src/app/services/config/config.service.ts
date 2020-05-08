@@ -43,6 +43,13 @@ interface MenuItem {
 	availability?: boolean
 }
 
+interface SecurityMenuCondition {
+	wifiIsSupport: boolean,
+	currentSegment: string,
+	isSmode?: boolean,
+	isArm?: boolean
+}
+
 @Injectable({
 	providedIn: 'root'
 })
@@ -209,13 +216,8 @@ export class ConfigService {
 	initializeSecurityItem(region, items) {
 		this.supportFilter(items, 'security', true);
 		this.supportFilter(items, 'anti-virus', true);
-		if (region.toLowerCase() === 'cn') {
-			this.supportFilter(items, 'password-protection', false);
-			this.supportFilter(items, 'internet-protection', false);
-		} else {
-			this.supportFilter(items, 'internet-protection', true);
-			this.supportFilter(items, 'password-protection', true);
-		}
+		this.supportFilter(items, 'password-protection', region.toLowerCase() !== 'cn');
+		this.supportFilter(items, 'internet-protection', region.toLowerCase() !== 'cn');
 		this.initializeWiFiItem(items);
 	}
 
@@ -223,28 +225,42 @@ export class ConfigService {
 		if (typeof this.wifiSecurity.isSupported === 'boolean') {
 			items = this.supportFilter(items, 'wifi-security', this.wifiSecurity.isSupported);
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity, this.wifiSecurity.isSupported);
-			this.updateSecurityMenuHide(items, this.wifiSecurity.isSupported, this.activeSegment);
+			this.updateSecurityMenuHide(items, {
+				wifiIsSupport: this.wifiSecurity.isSupported,
+				currentSegment: this.activeSegment
+			});
 		} else {
 			const cacheWifi = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity, false);
 			items = this.supportFilter(items, 'wifi-security', cacheWifi);
-			this.updateSecurityMenuHide(items, cacheWifi, this.activeSegment);
+			this.updateSecurityMenuHide(items, {
+				wifiIsSupport: cacheWifi,
+				currentSegment: this.activeSegment
+			});
 		}
 	}
 
 	updateWifiMenu(menu: MenuItem[], wifiIsSupport) {
 		this.supportFilter(menu, 'wifi-security', wifiIsSupport
-		&& !this.deviceService.isSMode
-		&& !this.deviceService.isArm);
+			&& !this.deviceService.isSMode
+			&& !this.deviceService.isArm);
 		this.updateWifiStateCache(wifiIsSupport);
-		this.updateSecurityMenuHide(menu, wifiIsSupport, this.activeSegment, this.deviceService.isSMode, this.deviceService.isArm);
+		this.updateSecurityMenuHide(menu, {
+			wifiIsSupport,
+			currentSegment: this.activeSegment,
+			isSmode: this.deviceService.isSMode,
+			isArm: this.deviceService.isArm
+		});
 	}
 
-	private updateSecurityMenuHide(menu: MenuItem[], wifiIsSupport, currentSegment, isSmode?, isArm?) {
+	private updateSecurityMenuHide(menu: MenuItem[], securityMenuCondition: SecurityMenuCondition) {
 		const securityMenu =menu.find((item) => item.id === 'security');
 		if (!securityMenu) return;
-		securityMenu.hide = isSmode
-		|| isArm
-		|| (!wifiIsSupport && (currentSegment === SegmentConst.Commercial || currentSegment === SegmentConst.Gaming));
+		if (!securityMenuCondition) return;
+		securityMenu.hide = securityMenuCondition.isSmode
+			|| securityMenuCondition.isArm
+			|| (!securityMenuCondition.wifiIsSupport
+			&& (securityMenuCondition.currentSegment === SegmentConst.Commercial
+			|| securityMenuCondition.currentSegment === SegmentConst.Gaming));
 	}
 
 	updateWifiStateCache(wifiIsSupport: boolean) {
