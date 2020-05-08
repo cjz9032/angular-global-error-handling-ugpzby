@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalSmartPerformanceSubscribeComponent } from '../../modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
@@ -30,6 +30,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 	public boost = 0;
 	public secure = 0;
 	public rating = 0;
+	@Output() showWarning = new EventEmitter<boolean>()
 
 	scheduleScanObj = null;
 	isScheduleScan = false;
@@ -167,6 +168,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 						);
 						this.scanAndFixInformation();
 						this.isScanning = true;
+						this.showWarning.emit(true)
 					}
 					else {
 						this.isScanning = false;
@@ -273,6 +275,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 							}
 							);
 						this.isScanning = true;
+						this.showWarning.emit(true)
 						this.scanAndFixInformation();
 					}
 					else {
@@ -285,6 +288,10 @@ export class UiSmartPerformanceComponent implements OnInit {
 	cancelScan() {
 		this.isScanning = false;
 		this.isScanningCompleted = false;
+	}
+
+	toggleScanningValue(value: boolean) {
+		this.showWarning.next(value)
 	}
 	
 	async unregisterScheduleScan(scantype) {
