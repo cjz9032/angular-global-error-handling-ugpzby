@@ -299,7 +299,7 @@ export class AntiTheftComponent implements OnInit {
 				this.isShowfileAuthorizationTips = false;
 			}
 		} catch (error) {
-			this.logger.error('showPhotoFolder error message:' + error.message + "error number:" + error.number);
+			this.logger.info('showPhotoFolder error message:' + error.message + "error number:" + error.number);
 			if (error.number === -2147024891) {
 				this.isShowfileAuthorizationTips = true;
 			}

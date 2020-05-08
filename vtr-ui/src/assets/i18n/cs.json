@@ -2076,19 +2076,18 @@
                 "tooltip": "Tato funkce není použitelná pro webové přehrávače videa. Oblíbené přehrávače videí v počítači (například Windows Media Player, 5KPlayer apod.) tuto funkci podporují."
             },
             "superResolution": {
-                "heading": "Inteligentní média",
-                "title": "Zvýšení rozlišení videa",
-                "desc": "<p><label>Tato funkce vylepšuje zlepšením rozlišení videorekordéru zážitek z přehrávání videa. Funguje zejména v případě, kdy má video špatné rozlišení.</label></p> <p><label>Tato funkce může ovlivnit životnost baterie, teplotu baterie a způsobit šum. V režimu DC (režim s napájením z baterie) ji nepoužívejte. Jinak se zvýší spotřeba energie a zkrátí výdrž baterie.</label></p>",
-                "tooltip": "Tato funkce funguje pouze pro přehrávače videa uvedené dále:<br>Windows Media Player<br>Chrome<br>Přehrávač filmů a televize<br>PotPlayer<br>Přehrávač GOM Player<br>Přehrávače založené na webovém prohlížeči (např. Chrome)<br><br>Pokyny, jak povolit tuto funkci v přehrávači PotPlayer a GOM Player, naleznete v Uživatelské příručce dodávané s počítačem.",
-                "note": {
-                    "description": "Tato funkce nepracuje v následujících případech:",
-                    "description1": "Je povolen režim úspory baterie.",
+				"title": "Zvýšení rozlišení videa",
+				"desc": "<p><label>Tato funkce vylepšuje zlepšením rozlišení videa zážitek z přehrávání videa. Funguje zejména v případě, kdy má video špatné rozlišení.</label></p> <p><label>Tato funkce může ovlivnit životnost baterie, teplotu baterie a způsobit šum. V režimu DC (režim s napájením z baterie) ji nepoužívejte. Jinak se zvýší spotřeba energie a zkrátí výdrž baterie.</label></p>",
+				"tooltip": "<p>Tato funkce funguje pouze pro tyto přehrávače videa:<br>Windows Media Player<br>Přehrávač založený na prohlížeči Chrome<br>Filmy a TV pořady<br>PotPlayer<br>GOM player</p><p class='srTooltip'>Pokyny, jak tuto funkci povolit v přehrávači PotPlayer a GOM Player, naleznete v Uživatelské příručce dodávané s počítačem.</p>",
+				"note": {
+					"description": "Tato funkce nepracuje v následujících případech:",
+					"description1": "Je povolen režim úspory baterie.",
                     "description2": "Teplota procesoru je příliš vysoká.",
-                    "description3": "The device is set to Battery saving mode in \"Intelligent cooling\"."
-                },
-                "imageBefore": "Before",
-                "imageAfter": "After"
-            },
+                    "description3": "Zařízení je nastaveno na režim úspory baterie v možnosti „Intelligent cooling“."
+				},
+				"imageBefore":"Před",
+                "imageAfter":"Po"
+			},
             "antiTheft": {
                 "heading": "Inteligentní detekce",
                 "title": "Inteligentní varování při pohybu",

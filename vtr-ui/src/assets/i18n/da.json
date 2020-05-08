@@ -2076,19 +2076,18 @@
                 "tooltip": "Denne funktion kan ikke bruges med internetvideoafspillere. Populære lokale videoafspillere som f.eks. Windows Media Player, 5KPlayer osv. understøtter denne funktion."
             },
             "superResolution": {
-                "heading": "Intelligente medier",
-                "title": "Opskalering af videoopløsning",
-                "desc": "<p><label>Denne funktion giver en bedre oplevelse i forbindelse med videoafspilning ved at forbedre videoopløsningen. Det fungerer især godt, når videoen er i dårlig opløsning.</label></p> <p><label>Denne funktion kan påvirke batteriets levetid, batteriets temperatur og medføre støj. Brug den ikke i DC-tilstand (batteritilstand). Ellers bliver strømforbruget større, og batterilevetiden afkortes.</label></p>",
-                "tooltip": "Denne funktion fungerer kun i nedenstående videoafspillere:<br>Windows Media Player<br>Chrome<br>Film og tv<br>PotPlayer<br>GOM player<br>webbrowserbaserede afspillere (f.eks. Chrome)<br><br>Du kan finde oplysninger om, hvordan denne funktion aktiveres i PotPlayer og GOM player, i brugervejledningen, der fulgte med din computer.",
-                "note": {
-                    "description": "Denne funktion virker ikke i disse situationer:",
-                    "description1": "Strømsparetilstanden er aktiveret.",
+				"title": "Opskalering af videoopløsning",
+				"desc": "<p><label>Denne funktion giver en bedre oplevelse i forbindelse med videoafspilning ved at forbedre videoopløsningen. Det fungerer især godt, når videoen er i dårlig opløsning.</label></p> <p><label>Denne funktion kan påvirke batteriets levetid, batteriets temperatur og medføre støj. Brug den ikke i DC-tilstand (batteritilstand). Ellers bliver strømforbruget større, og batterilevetiden afkortes.</label></p>",
+				"tooltip": "<p>Denne funktion fungerer kun med følgende videoafspillere<br>: Windows Media Player<br>Chrome-baserede afspiller<br>Film og tv<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>Oplysninger om, hvordan denne funktion aktiveres på PotPlayer og GOM Player, finder du i den brugervejledning, der leveres sammen med computeren.</p>",
+				"note": {
+					"description": "Denne funktion virker ikke i disse situationer:",
+					"description1": "Strømsparetilstanden er aktiveret.",
                     "description2": "CPU-temperaturen er for høj.",
-                    "description3": "The device is set to Battery saving mode in \"Intelligent cooling\"."
-                },
-                "imageBefore": "Before",
-                "imageAfter": "After"
-            },
+                    "description3": "Enheden er indstillet til Strømbesparelsestilstand i \"Intelligent køling\"."
+				},
+				"imageBefore":"Før",
+                "imageAfter":"Efter"
+			},
             "antiTheft": {
                 "heading": "Intelligent registrering",
                 "title": "Smart bevægelsesalarm",

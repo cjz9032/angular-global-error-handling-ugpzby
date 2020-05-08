@@ -2076,19 +2076,18 @@
                 "tooltip": "Ta funkcja nie dotyczy odtwarzaczy wideo w sieci Web. Popularne lokalne odtwarzacze wideo, takie jak program Windows Media Player, 5KPlayer itd., obsługują tę funkcję."
             },
             "superResolution": {
-                "heading": "Inteligentne multimedia",
-                "title": "Skalowanie rozdzielczości wideo",
-                "desc": "<p><label>Ta funkcja poprawia rozdzielczość odtwarzania filmów, a tym samym zapewnia lepsze wrażenia z ich oglądania. Jej skuteczność jest największa w przypadku materiałów wideo o niskiej rozdzielczości.</label></p> <p><label>Ta funkcja może wpływać na żywotność baterii, temperaturę baterii i powodować hałas. Nie należy używać jej w trybie prądu stałego (tryb akumulatora). Może to przyspieszyć zużycie energii i skrócić żywotność akumulatora.</label></p>",
-                "tooltip": "Ta funkcja działa tylko w przypadku następujących odtwarzaczy wideo:<br>Windows Media Player<br>Chrome<br>Filmy i TV<br>PotPlayer<br>GOM Player<br>Odtwarzacze działające w przeglądarce (np. Chrome)<br><br>Instrukcje pozwalające włączyć tę funkcję w odtwarzaczach PotPlayer i GOM Player znajdują się w instrukcji obsługi dołączonej do komputera.",
-                "note": {
-                    "description": "Funkcja nie działa, gdy:",
-                    "description1": "Tryb oszczędzania baterii jest włączony.",
+				"title": "Skalowanie rozdzielczości wideo",
+				"desc": "<p><label>Ta funkcja poprawia rozdzielczość odtwarzania filmów, a tym samym zapewnia lepsze wrażenia z ich oglądania. Jej skuteczność jest największa w przypadku materiałów wideo o niskiej rozdzielczości.</label></p> <p><label>Ta funkcja może wpływać na żywotność baterii, temperaturę baterii i powodować hałas. Nie należy używać jej w trybie prądu stałego (tryb akumulatora). Może to przyspieszyć zużycie energii i skrócić żywotność akumulatora.</label></p>",
+				"tooltip": "<p>Ta funkcja działa tylko w przypadku następujących odtwarzaczy wideo:<br>Windows Media Player<br>Odtwarzacz działający w przeglądarce Chrome<br>Filmy i TV<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>Aby dowiedzieć się, jak włączyć tę funkcję w odtwarzaczach PotPlayer i GOM Player, zapoznaj się z podręcznikiem użytkownika dostarczonym z komputerem.</p>",
+				"note": {
+					"description": "Funkcja nie działa, gdy:",
+					"description1": "Tryb oszczędzania baterii jest włączony.",
                     "description2": "Temperatura procesora jest za wysoka.",
-                    "description3": "The device is set to Battery saving mode in \"Intelligent cooling\"."
-                },
-                "imageBefore": "Before",
-                "imageAfter": "After"
-            },
+                    "description3": "Urządzenie działa w trybie oszczędzania baterii po ustawieniu trybu „Inteligentne chłodzenie”."
+				},
+				"imageBefore":"Przed",
+                "imageAfter":"Po"
+			},
             "antiTheft": {
                 "heading": "Inteligentna detekcja",
                 "title": "Inteligentny alert wykrycia ruchu",
