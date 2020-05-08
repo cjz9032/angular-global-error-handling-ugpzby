@@ -220,11 +220,14 @@ export class ConfigService {
 	}
 
 	initializeWiFiItem(items) {
-		const cacheWifi = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity, false);
-		items = this.supportFilter(items, 'wifi-security', cacheWifi);
 		if (typeof this.wifiSecurity.isSupported === 'boolean') {
 			items = this.supportFilter(items, 'wifi-security', this.wifiSecurity.isSupported);
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity, this.wifiSecurity.isSupported);
+			this.updateSecurityMenuHide(items, this.wifiSecurity.isSupported, this.activeSegment);
+		} else {
+			const cacheWifi = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity, false);
+			items = this.supportFilter(items, 'wifi-security', cacheWifi);
+			this.updateSecurityMenuHide(items, cacheWifi, this.activeSegment);
 		}
 	}
 
@@ -232,8 +235,14 @@ export class ConfigService {
 		this.supportFilter(menu, 'wifi-security', wifiIsSupport
 		&& !this.deviceService.isSMode
 		&& !this.deviceService.isArm);
-		if (this.activeSegment !== SegmentConst.Gaming) this.segmentFilter(menu, this.activeSegment);
 		this.updateWifiStateCache(wifiIsSupport);
+		this.updateSecurityMenuHide(menu, wifiIsSupport, this.activeSegment);
+	}
+
+	private updateSecurityMenuHide(menu: MenuItem[], wifiIsSupport, currentSegment) {
+		const securityMenu =menu.find((item) => item.id === 'security');
+		if (!securityMenu) return;
+		securityMenu.hide = !wifiIsSupport && (currentSegment === SegmentConst.Commercial || currentSegment === SegmentConst.Gaming);
 	}
 
 	updateWifiStateCache(wifiIsSupport: boolean) {
@@ -550,11 +559,6 @@ export class ConfigService {
 		this.armFilter(menu, this.deviceService.isArm);
 		if (segment !== SegmentConst.Gaming) this.segmentFilter(menu, segment);
 		await this.filterByBeta(menu, beta);
-		menu.forEach(item => {
-			if (item.subitems.length > 0) {
-				item.hide = item.subitems.length === item.subitems.filter(i => i.hide).length;
-			}
-		});
 		return menu;
 	}
 
