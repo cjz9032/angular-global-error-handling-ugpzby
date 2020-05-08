@@ -49,16 +49,16 @@
 		</div>
 		<div class="navbar-text clearfix">
 			<span *ngIf="configService.appBrand && configService.appName">
-				<div class="app-title">{{configService.appBrand}}
+				<div class="app-title" id="menu-main-text-appBrand" role="text">{{configService.appBrand}}
 					<span role="text"
-						class="app-name">{{configService.appName}}</span>
+						class="app-name" id="menu-main-text-appName">{{configService.appName}}</span>
 				</div>
 			</span>
 			<span>
 				<div class="device-type">
 					<span *ngIf="!machineFamilyName">&nbsp;</span>
 					<span role="text"
-						*ngIf="machineFamilyName">{{machineFamilyName}}</span>
+						*ngIf="machineFamilyName" id="menu-main-text-machineFamilyName">{{machineFamilyName}}</span>
 					<span class="warranty-icon">
 						<vtr-ui-header-warranty *ngIf="machineFamilyName"
 							[pageParent]="'NavBar'"></vtr-ui-header-warranty>
