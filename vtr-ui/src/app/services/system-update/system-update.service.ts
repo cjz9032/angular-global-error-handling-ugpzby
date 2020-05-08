@@ -13,6 +13,7 @@ import { UpdateInstallSeverity } from 'src/app/enums/update-install-severity.enu
 import { WinRT } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { MetricService } from '../metric/metric.service';
+import { LoggerService } from '../logger/logger.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -23,6 +24,7 @@ export class SystemUpdateService {
 	constructor(
 		shellService: VantageShellService,
 		private commonService: CommonService,
+		private loggerService: LoggerService,
 		private metricService: MetricService) {
 		this.systemUpdateBridge = shellService.getSystemUpdate();
 		if (this.systemUpdateBridge) {
@@ -103,9 +105,14 @@ export class SystemUpdateService {
 				.then((response) => {
 					const taskParam = 'critical-update:' + request.criticalAutoUpdates + ',recommanded-update:' + request.recommendedAutoUpdates;
 					this.metricService.sendSetUpdateSchedure(taskParam, response);
-					this.getUpdateSchedule();
+					this.autoUpdateStatus = {
+						criticalAutoUpdates: (response.criticalAutoUpdates === 'ON') ? true : false,
+						recommendedAutoUpdates: (response.recommendedAutoUpdates === 'ON') ? true : false
+					};
+					this.commonService.sendNotification(UpdateProgress.AutoUpdateStatus, this.autoUpdateStatus);
 				}).catch((error) => {
 					// get current status
+					this.loggerService.error('SystemUdpateService.setUpdateSchedule failed for ', error.message);
 					this.getUpdateSchedule();
 				});
 		}
