@@ -1187,6 +1187,16 @@
                             "desc3": "スライダーを右端に移動します。最高のパフォーマンスを得るために、ファン速度と許容表面温度が高くなります。"
                         },
                         "desc3_1": "一部のモードでは、動作に基づいてより広範にパフォーマンスを自動調整できます。自動モードを無効にするには、Fn+ T を押します。"
+                    },
+                    "dytc61": {
+                        "title1": "Quiet mode(only for on battery mode)",
+                        "desc1": "The slider is on the far left. Both fan speed and performance are low for a cooler, quieter computer and the best battery life.",
+                        "title2": "Balanced mode",
+                        "desc2": "The slider is on the left or center left. Fan speed and performance are dynamically balanced for the best experience.",
+                        "title3": "Performance mode",
+                        "desc3": "The slider is on the center or center right. Both fan speed and surface temperature are high.",
+                        "title4": "Ultra-performance mode",
+                        "desc4": "The slider is far right, providing ultra-high performance with bigger noise and higher surface temperature."
                     }
                 },
                 "powerSettings": {
@@ -1209,11 +1219,11 @@
                     "or": "または"
                 },
                 "otherSettings": {
-                    "title": "他の設定",
+                    "title": "Lenovo Vantage ツールバー",
                     "vantageToolbar": {
-                        "title": "Lenovo Vantage ツールバー",
-                        "description": "Vantage ツールバーを Windows のタスクバーに固定すると、簡単にバッテリーの詳細を確認できたり、クイック設定にアクセスしたりできます。",
-                        "hint": "The options in the image depend on the capacity of the machine. For example, – some machines support backlight settings, and some may not."
+                        "title": "Lenovo Vantage ツールバーとプレミアム設定",
+                        "description": "Lenovo Vantage ツールバーを Windows のタスクバーに固定すると、最も頻繁に使用される設定に簡単にアクセスしたり、プレミアム・サービスやアップデートを入手したりできます。",
+                        "hint": "画像のオプションは、マシンの容量によって異なります。たとえば、バックライト設定をサポートしているマシンもあれば、サポートしていないマシンもあります。"
                     }
                 },
                 "batterySettings": {
@@ -1471,7 +1481,6 @@
                             "games": "GAME",
                             "voip": "VOICE"
                         },
-                        "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
                                 "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
@@ -1479,9 +1488,6 @@
                             },
                             "entertainmentMode": {
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
                                 "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
@@ -1857,10 +1863,10 @@
                 },
                 "backlight": {
                     "title": "キーボードのバックライト",
-					"description": {
-						"base": "キーボードのバックライトを点灯し、暗い環境での入力を容易にします。Fn+Space キーを同時に押して、キーボードのバックライトの設定を変更することもできます。",
-						"auto": "キーボードのバックライトを点灯し、暗い環境での入力を容易にします。Fn+Space キーを同時に押して、キーボードのバックライトの設定を 「自動」 に変更することもできます。「自動」 モードでは、周囲の明るさに応じてキーボードのバックライトが自動的に調整されます。"
-					},
+                    "description": {
+                        "base": "キーボードのバックライトを点灯し、暗い環境での入力を容易にします。Fn+Space キーを同時に押して、キーボードのバックライトの設定を変更することもできます。",
+                        "auto": "キーボードのバックライトを点灯し、暗い環境での入力を容易にします。Fn+Space キーを同時に押して、キーボードのバックライトの設定を 「自動」 に変更することもできます。「自動」 モードでは、周囲の明るさに応じてキーボードのバックライトが自動的に調整されます。"
+                    },
                     "level": {
                         "auto": "自動",
                         "low": "低",
@@ -2091,7 +2097,7 @@
             "antiTheft": {
                 "heading": "インテリジェント・センサー",
                 "title": "スマート・モーション・アラーム",
-                "tooltip":"<div>この機能は、コンピューターが休止状態または電源がオフのときは機能しません。次の動作の設定を確認してください。<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>閉じる動作</li><li>重要なアクション/バッテリー低下時の動作</li><li>電源ボタンの動作</li><li>スリープ・ボタンの動作</li><li>休止状態までのアイドル・タイムアウト設定</li></ul></div>それ以外の場合は、アラームがトリガーされず、写真も撮られません。</div>",
+                "tooltip": "<div>この機能は、コンピューターが休止状態または電源がオフのときは機能しません。次の動作の設定を確認してください。<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>閉じる動作</li><li>重要なアクション/バッテリー低下時の動作</li><li>電源ボタンの動作</li><li>スリープ・ボタンの動作</li><li>休止状態までのアイドル・タイムアウト設定</li></ul></div>それ以外の場合は、アラームがトリガーされず、写真も撮られません。</div>",
                 "desc": "<p><label>この機能を有効にした場合は、画面がロックされた状態で、特に公共の場所で動きが検出されると、デバイスのビープ音が鳴ります。</label></p> <p><label>アラームを解除するには、正しいパスワードを入力するか、Windows Hello でログインします。</label></p>",
                 "note": {
                     "description": "システムに正しくログインすると、この機能は自動的にオフになります。使用するには、再度有効にする必要があります。"
@@ -3698,7 +3704,9 @@
                 "custom": "Custom",
                 "txtFrom": "From",
                 "txtTo": "To",
-                "txtGo": "Go"
+                "txtGo": "Go",
+                "summaryCaption": "space reclaimed",
+                "fixes": "fixes"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

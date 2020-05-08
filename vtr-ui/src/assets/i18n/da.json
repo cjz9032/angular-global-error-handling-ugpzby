@@ -1187,6 +1187,16 @@
                             "desc3": "Skyderen er helt til højre. Blæserens hastighed og den tilladte overfladetemperatur er højere for at få den optimale ydeevne."
                         },
                         "desc3_1": "Nogle af tilstandene kan automatisk justeres over et større ydeevneområde baseret på din aktivitet. Tryk på Fn+ T for at deaktivere automatisk tilstand."
+                    },
+                    "dytc61": {
+                        "title1": "Quiet mode(only for on battery mode)",
+                        "desc1": "The slider is on the far left. Both fan speed and performance are low for a cooler, quieter computer and the best battery life.",
+                        "title2": "Balanced mode",
+                        "desc2": "The slider is on the left or center left. Fan speed and performance are dynamically balanced for the best experience.",
+                        "title3": "Performance mode",
+                        "desc3": "The slider is on the center or center right. Both fan speed and surface temperature are high.",
+                        "title4": "Ultra-performance mode",
+                        "desc4": "The slider is far right, providing ultra-high performance with bigger noise and higher surface temperature."
                     }
                 },
                 "powerSettings": {
@@ -1209,11 +1219,11 @@
                     "or": "Eller"
                 },
                 "otherSettings": {
-                    "title": "Andre indstillinger",
+                    "title": "Værktøjslinjen i Lenovo Vantage",
                     "vantageToolbar": {
-                        "title": "Værktøjslinjen i Lenovo Vantage",
-                        "description": "Fastgør Vantage-værktøjslinjen til Windows-proceslinjen, så du nemt kan få flere oplysninger om batteriet og få adgang til dine hurtige indstillinger.",
-                        "hint": "The options in the image depend on the capacity of the machine. For example, – some machines support backlight settings, and some may not."
+                        "title": "Værktøjslinjen i Lenovo Vantage og indstillinger for førsteklasses kvalitet",
+                        "description": "Fastgør værktøjslinjen i Lenovo Vantage til Windows-proceslinjen, så du nemt kan få adgang til de hyppigst anvendte indstillinger og få førsteklasses tilbud og opdateringer.",
+                        "hint": "Valgmulighederne i billedet afhænger af maskinens kapacitet. Visse maskiner understøtter f.eks. indstillinger for baggrundslys, mens andre ikke gør det."
                     }
                 },
                 "batterySettings": {
@@ -1471,7 +1481,6 @@
                             "games": "GAME",
                             "voip": "VOICE"
                         },
-                        "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
                                 "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
@@ -1479,9 +1488,6 @@
                             },
                             "entertainmentMode": {
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
                                 "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
@@ -1857,10 +1863,10 @@
                 },
                 "backlight": {
                     "title": "Baggrundslys for tastatur",
-					"description": {
-						"base": "Aktiver tastaturets baggrundslys for at gøre det lettere at skrive i mørke eller dårlig belysning. Du kan også ændre indstillingerne for tastaturets baggrundslys ved at trykke på Fn+mellemrumstasten.",
-						"auto": "Aktiver tastaturets baggrundslys for at gøre det lettere at skrive i mørke eller dårlig belysning. Du kan ændre indstillingerne for baggrundslyset ved at trykke på Fn + mellemrumstasten eller indstille det til \"Auto\". I tilstanden \"Auto\" justerer systemet automatisk tastaturets baggrundslys i forhold til det omgivende lys."
-					},
+                    "description": {
+                        "base": "Aktiver tastaturets baggrundslys for at gøre det lettere at skrive i mørke eller dårlig belysning. Du kan også ændre indstillingerne for tastaturets baggrundslys ved at trykke på Fn+mellemrumstasten.",
+                        "auto": "Aktiver tastaturets baggrundslys for at gøre det lettere at skrive i mørke eller dårlig belysning. Du kan ændre indstillingerne for baggrundslyset ved at trykke på Fn + mellemrumstasten eller indstille det til \"Auto\". I tilstanden \"Auto\" justerer systemet automatisk tastaturets baggrundslys i forhold til det omgivende lys."
+                    },
                     "level": {
                         "auto": "Auto",
                         "low": "Lav",
@@ -2091,7 +2097,7 @@
             "antiTheft": {
                 "heading": "Intelligent registrering",
                 "title": "Smart bevægelsesalarm",
-                "tooltip":"<div>Denne funktion fungerer ikke, når computeren er i slumretilstand eller slukket. Tjek indstillingerne for følgende handlinger:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>handlinger, når låget lukkes</li><li>handling ved kritisk/lavt batteriniveau</li><li>handling for tænd/sluk-knap</li><li>handling for slumreknap</li><li>Indstillinger for timeout til slumre ved inaktivitet</li></ul></div>Ellers udløser den ikke en alarm og tager ikke nogen billeder.</div>",
+                "tooltip": "<div>Denne funktion fungerer ikke, når computeren er i slumretilstand eller slukket. Tjek indstillingerne for følgende handlinger:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>handlinger, når låget lukkes</li><li>handling ved kritisk/lavt batteriniveau</li><li>handling for tænd/sluk-knap</li><li>handling for slumreknap</li><li>Indstillinger for timeout til slumre ved inaktivitet</li></ul></div>Ellers udløser den ikke en alarm og tager ikke nogen billeder.</div>",
                 "desc": "<p><label>Når denne funktion er aktiveret, begynder enheden at bippe, når skærmen er låst, og der registreres bevægelser, især på et offentligt sted.</label></p> <p><label>Hvis du vil afvise alarmen, skal du angive den korrekte adgangskode eller logge på med Windows Hello.</label></p>",
                 "note": {
                     "description": "Når du er logget på systemet, bliver denne funktionen automatisk slået fra. Du skal aktivere den igen for at bruge den."
@@ -3698,7 +3704,9 @@
                 "custom": "Custom",
                 "txtFrom": "From",
                 "txtTo": "To",
-                "txtGo": "Go"
+                "txtGo": "Go",
+                "summaryCaption": "space reclaimed",
+                "fixes": "fixes"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

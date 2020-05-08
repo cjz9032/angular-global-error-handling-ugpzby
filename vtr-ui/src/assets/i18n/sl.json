@@ -1187,6 +1187,16 @@
                             "desc3": "Drsnik je skrajno desno. Hitrost ventilatorja in dopustna površinska temperatura sta višja za največjo učinkovitost delovanja."
                         },
                         "desc3_1": "Nekateri načini delovanja se lahko na podlagi vaše dejavnosti samodejno prilagajajo v širšem obsegu zmogljivosti. Če želite onemogočiti samodejni način, pritisnite Fn+ T."
+                    },
+                    "dytc61": {
+                        "title1": "Quiet mode(only for on battery mode)",
+                        "desc1": "The slider is on the far left. Both fan speed and performance are low for a cooler, quieter computer and the best battery life.",
+                        "title2": "Balanced mode",
+                        "desc2": "The slider is on the left or center left. Fan speed and performance are dynamically balanced for the best experience.",
+                        "title3": "Performance mode",
+                        "desc3": "The slider is on the center or center right. Both fan speed and surface temperature are high.",
+                        "title4": "Ultra-performance mode",
+                        "desc4": "The slider is far right, providing ultra-high performance with bigger noise and higher surface temperature."
                     }
                 },
                 "powerSettings": {
@@ -1209,11 +1219,11 @@
                     "or": "Ali"
                 },
                 "otherSettings": {
-                    "title": "Druge nastavitve",
+                    "title": "Orodna vrstica programa Lenovo Vantage",
                     "vantageToolbar": {
-                        "title": "Orodna vrstica programa Lenovo Vantage",
-                        "description": "Orodno vrstico Vantage pripnite v opravilno vrstico sistema Windows, da boste lažje dobili več podrobnosti o bateriji in dostop do hitrih nastavitev.",
-                        "hint": "The options in the image depend on the capacity of the machine. For example, – some machines support backlight settings, and some may not."
+                        "title": "Orodna vrstica Lenovo Vantage in premium nastavitve",
+                        "description": "Za preprost dostop do najpogosteje uporabljenih nastavitev pripnite orodno vrstico Lenovo Vantage v opravilno vrstico Windows ter si zagotovite premium ponudbe in posodobitve.",
+                        "hint": "Možnosti na sliki so odvisne od zmogljivosti računalnika. Nekateri računalniki na primer podpirajo nastavitve osvetlitve, nekateri pa ne."
                     }
                 },
                 "batterySettings": {
@@ -1471,7 +1481,6 @@
                             "games": "GAME",
                             "voip": "VOICE"
                         },
-                        "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
                                 "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
@@ -1479,9 +1488,6 @@
                             },
                             "entertainmentMode": {
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
                                 "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
@@ -1857,10 +1863,10 @@
                 },
                 "backlight": {
                     "title": "Osvetlitev tipkovnice",
-					"description": {
-						"base": "Aktivirajte osvetlitev tipkovnice za lažje tipkanje v temnih ali slabših svetlobnih pogojih. S kombinacijami tipk Fn + preslednica lahko tudi spremenite nastavitve osvetlitve tipkovnice.",
-						"auto": "Aktivirajte osvetlitev tipkovnice za lažje tipkanje v temnih ali slabših svetlobnih pogojih. S kombinacijami tipk Fn + preslednica lahko spremenite nastavitve osvetlitve ali pa osvetlitev nastavite na »Samodejno«. V načinu »Samodejno« sistem samodejno prilagodi osvetlitev tipkovnice glede na okoljsko svetlobo."
-					},
+                    "description": {
+                        "base": "Aktivirajte osvetlitev tipkovnice za lažje tipkanje v temnih ali slabših svetlobnih pogojih. S kombinacijami tipk Fn + preslednica lahko tudi spremenite nastavitve osvetlitve tipkovnice.",
+                        "auto": "Aktivirajte osvetlitev tipkovnice za lažje tipkanje v temnih ali slabših svetlobnih pogojih. S kombinacijami tipk Fn + preslednica lahko spremenite nastavitve osvetlitve ali pa osvetlitev nastavite na »Samodejno«. V načinu »Samodejno« sistem samodejno prilagodi osvetlitev tipkovnice glede na okoljsko svetlobo."
+                    },
                     "level": {
                         "auto": "Samodejno",
                         "low": "Nizko",
@@ -2091,7 +2097,7 @@
             "antiTheft": {
                 "heading": "Pametno zaznavanje",
                 "title": "Pametno opozarjanje na premikanje",
-                "tooltip":"<div>Ta funkcija ne deluje, če je računalnik v načinu mirovanja ali izklopljen. Za naslednja dejanja preverite nastavitve:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>dejanja zapiranja pokrova</li><li>dejanje kritične/nizke napolnjenosti baterije</li><li>dejanje gumba za vklop</li><li>dejanje gumba za spanje</li><li>nastavitve časovne omejitve nedejavnosti za preklop v način mirovanja</li></ul></div>V nasprotnem primeru se alarm ne bo sprožil in fotografije se ne bodo posnele.</div>",
+                "tooltip": "<div>Ta funkcija ne deluje, če je računalnik v načinu mirovanja ali izklopljen. Za naslednja dejanja preverite nastavitve:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>dejanja zapiranja pokrova</li><li>dejanje kritične/nizke napolnjenosti baterije</li><li>dejanje gumba za vklop</li><li>dejanje gumba za spanje</li><li>nastavitve časovne omejitve nedejavnosti za preklop v način mirovanja</li></ul></div>V nasprotnem primeru se alarm ne bo sprožil in fotografije se ne bodo posnele.</div>",
                 "desc": "<p><label>Ko je ta funkcija omogočena, naprava začne piskati, kadar pri zaklenjenem zaslonu in predvsem na javnem mestu zazna premikanje.</label></p> <p><label>Opozarjanje s piskanjem izklopite z vnosom pravilnega gesla ali prijavo s funkcijo Windows Hello.</label></p>",
                 "note": {
                     "description": "Po uspešni prijavi v sistem se ta funkcija samodejno izklopi. Pred vnovično uporabo jo boste morali znova omogočiti."
@@ -3698,7 +3704,9 @@
                 "custom": "Custom",
                 "txtFrom": "From",
                 "txtTo": "To",
-                "txtGo": "Go"
+                "txtGo": "Go",
+                "summaryCaption": "space reclaimed",
+                "fixes": "fixes"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

@@ -1187,6 +1187,16 @@
                             "desc3": "Ползунок в крайнем правом положении. Скорость вращения вентиляторов и допустимая температура поверхности увеличены для максимальной производительности."
                         },
                         "desc3_1": "Некоторые режимы могут автоматически изменяться в широком диапазоне производительности в зависимости от вашей активности. Чтобы выключить автоматический режим, нажмите сочетание клавиш Fn+ T."
+                    },
+                    "dytc61": {
+                        "title1": "Quiet mode(only for on battery mode)",
+                        "desc1": "The slider is on the far left. Both fan speed and performance are low for a cooler, quieter computer and the best battery life.",
+                        "title2": "Balanced mode",
+                        "desc2": "The slider is on the left or center left. Fan speed and performance are dynamically balanced for the best experience.",
+                        "title3": "Performance mode",
+                        "desc3": "The slider is on the center or center right. Both fan speed and surface temperature are high.",
+                        "title4": "Ultra-performance mode",
+                        "desc4": "The slider is far right, providing ultra-high performance with bigger noise and higher surface temperature."
                     }
                 },
                 "powerSettings": {
@@ -1209,11 +1219,11 @@
                     "or": "Или"
                 },
                 "otherSettings": {
-                    "title": "Другие параметры",
+                    "title": "Панель инструментов Lenovo Vantage",
                     "vantageToolbar": {
-                        "title": "Панель инструментов Lenovo Vantage",
-                        "description": "Прикрепите панель инструментов Vantage к панели задач Windows, чтобы получить удобный доступ к дополнительным сведениям об аккумуляторе и быстрым параметрам.",
-                        "hint": "The options in the image depend on the capacity of the machine. For example, – some machines support backlight settings, and some may not."
+                        "title": "Панель инструментов и расширенные настройки Lenovo Vantage",
+                        "description": "Закрепите панель инструментов Lenovo Vantage на панели задач Windows для удобного доступа к наиболее часто используемым настройкам и получения расширенных предложений и обновлений.",
+                        "hint": "Набор параметров на изображении зависит от конфигурации компьютера. Например, не все компьютеры поддерживают настройку подсветки."
                     }
                 },
                 "batterySettings": {
@@ -1471,7 +1481,6 @@
                             "games": "GAME",
                             "voip": "VOICE"
                         },
-                        "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
                                 "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
@@ -1479,9 +1488,6 @@
                             },
                             "entertainmentMode": {
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
                                 "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
@@ -1857,10 +1863,10 @@
                 },
                 "backlight": {
                     "title": "Подсветка клавиатуры",
-					"description": {
-						"base": "Включите подсветку клавиатуры, чтобы печатать в темноте или при плохом освещении. Для изменения параметров подсветки клавиатуры нажмите сочетание клавиш Fn+ПРОБЕЛ.",
-						"auto": "Включите подсветку клавиатуры, чтобы печатать в темноте или при плохом освещении. Для изменения параметров подсветки нажмите сочетание клавиш Fn+ПРОБЕЛ или выберите параметр \"Автоматический\". В режиме \"Автоматический\" система автоматически регулирует подсветку клавиатуры с учетом окружающего освещения."
-					},
+                    "description": {
+                        "base": "Включите подсветку клавиатуры, чтобы печатать в темноте или при плохом освещении. Для изменения параметров подсветки клавиатуры нажмите сочетание клавиш Fn+ПРОБЕЛ.",
+                        "auto": "Включите подсветку клавиатуры, чтобы печатать в темноте или при плохом освещении. Для изменения параметров подсветки нажмите сочетание клавиш Fn+ПРОБЕЛ или выберите параметр \"Автоматический\". В режиме \"Автоматический\" система автоматически регулирует подсветку клавиатуры с учетом окружающего освещения."
+                    },
                     "level": {
                         "auto": "Авто",
                         "low": "Низкая",
@@ -2091,7 +2097,7 @@
             "antiTheft": {
                 "heading": "Интеллектуальное распознавание",
                 "title": "Интеллектуальное оповещение о движении",
-                "tooltip":"<div>Эта функция не работает, когда компьютер находится в режиме гибернации или выключен. Проверьте настройки в следующих действиях:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>действия закрытия крышки</li><li>действие при критически низком уровне заряда аккумулятора</li><li>действие кнопки питания</li><li>действие кнопки спящего режима</li><li>настройки тайм-аута бездействия до перехода в режим гибернации</li></ul></div>В противном случае не будет включен сигнал и не будут сделаны фотографии.</div>",
+                "tooltip": "<div>Эта функция не работает, когда компьютер находится в режиме гибернации или выключен. Проверьте настройки в следующих действиях:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>действия закрытия крышки</li><li>действие при критически низком уровне заряда аккумулятора</li><li>действие кнопки питания</li><li>действие кнопки спящего режима</li><li>настройки тайм-аута бездействия до перехода в режим гибернации</li></ul></div>В противном случае не будет включен сигнал и не будут сделаны фотографии.</div>",
                 "desc": "<p><label>Если эта функция включена, устройство будет подавать звуковой сигнал при заблокированном экране, если обнаружено движение, особенно в общественных местах.</label></p> <p><label>Чтобы отключить сигнал, введите правильный пароль или войдите в систему с помощью Windows Hello.</label></p>",
                 "note": {
                     "description": "После успешного входа в систему эта функция будет автоматически отключена. Для использования ее нужно снова включить."
@@ -3698,7 +3704,9 @@
                 "custom": "Custom",
                 "txtFrom": "From",
                 "txtTo": "To",
-                "txtGo": "Go"
+                "txtGo": "Go",
+                "summaryCaption": "space reclaimed",
+                "fixes": "fixes"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

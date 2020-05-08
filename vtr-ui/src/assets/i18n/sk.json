@@ -1187,6 +1187,16 @@
                             "desc3": "Jazdec sa nachádza úplne vľavo. Otáčky ventilátora a povolená teplota povrchu počítača sú vyššie s cieľom zaistiť maximálny výkon."
                         },
                         "desc3_1": "Niektoré režimy sa môžu automaticky upravovať v rámci širšieho rozsahu výkonu na základe vašej činnosti. Ak chcete vypnúť automatický režim, stlačte kombináciu klávesov Fn+ T."
+                    },
+                    "dytc61": {
+                        "title1": "Quiet mode(only for on battery mode)",
+                        "desc1": "The slider is on the far left. Both fan speed and performance are low for a cooler, quieter computer and the best battery life.",
+                        "title2": "Balanced mode",
+                        "desc2": "The slider is on the left or center left. Fan speed and performance are dynamically balanced for the best experience.",
+                        "title3": "Performance mode",
+                        "desc3": "The slider is on the center or center right. Both fan speed and surface temperature are high.",
+                        "title4": "Ultra-performance mode",
+                        "desc4": "The slider is far right, providing ultra-high performance with bigger noise and higher surface temperature."
                     }
                 },
                 "powerSettings": {
@@ -1209,11 +1219,11 @@
                     "or": "Alebo"
                 },
                 "otherSettings": {
-                    "title": "Ďalšie nastavenia",
+                    "title": "Panel s nástrojmi Lenovo Vantage",
                     "vantageToolbar": {
-                        "title": "Panel nástrojov aplikácie Lenovo Vantage",
-                        "description": "Pripnite panel nástrojov aplikácie Vantage na panel úloh systému Windows, aby ste mohli jednoducho zobraziť ďalšie podrobnosti o batérii a získať prístup k rýchlym nastaveniam.",
-                        "hint": "The options in the image depend on the capacity of the machine. For example, – some machines support backlight settings, and some may not."
+                        "title": "Panel s nástrojmi Lenovo Vantage a prémiové nastavenia",
+                        "description": "Pripnite panel s nástrojmi Lenovo Vantage na panel úloh systému Windows, aby ste mali jednoduchý prístup k vašim najčastejšie používaným nastaveniam a mohli ste dostávať prémiové ponuky a aktualizácie.",
+                        "hint": "Možnosti na obrázku závisia od kapacity zariadenia. Napríklad niektoré zariadenia podporujú nastavenie podsvietenia, no iné ho podporovať nemusia."
                     }
                 },
                 "batterySettings": {
@@ -1471,7 +1481,6 @@
                             "games": "GAME",
                             "voip": "VOICE"
                         },
-                        "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
                                 "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
@@ -1479,9 +1488,6 @@
                             },
                             "entertainmentMode": {
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
                                 "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
@@ -1857,10 +1863,10 @@
                 },
                 "backlight": {
                     "title": "Podsvietenie klávesnice",
-					"description": {
-						"base": "Aktivujte podsvietenie klávesnice a uľahčite si písanie v tme alebo pri slabom svetle. Nastavenia podsvietenia klávesnice môžete zmeniť aj stlačením kombinácie klávesov Fn+medzerník.",
-						"auto": "Aktivujte podsvietenie klávesnice a uľahčite si písanie v tme alebo pri slabom svetle. Nastavenia podsvietenia klávesnice môžete zmeniť stlačením kombinácie klávesov Fn+medzerník alebo nastaviť na možnosť „Automaticky“. V režime „Automaticky“ systém automaticky upravuje podsvietenie klávesnice podľa okolitého svetla."
-					},
+                    "description": {
+                        "base": "Aktivujte podsvietenie klávesnice a uľahčite si písanie v tme alebo pri slabom svetle. Nastavenia podsvietenia klávesnice môžete zmeniť aj stlačením kombinácie klávesov Fn+medzerník.",
+                        "auto": "Aktivujte podsvietenie klávesnice a uľahčite si písanie v tme alebo pri slabom svetle. Nastavenia podsvietenia klávesnice môžete zmeniť stlačením kombinácie klávesov Fn+medzerník alebo nastaviť na možnosť „Automaticky“. V režime „Automaticky“ systém automaticky upravuje podsvietenie klávesnice podľa okolitého svetla."
+                    },
                     "level": {
                         "auto": "Automaticky",
                         "low": "Nízke",
@@ -2091,7 +2097,7 @@
             "antiTheft": {
                 "heading": "Inteligentné snímanie",
                 "title": "Inteligentná signalizácia pohybu",
-                "tooltip":"<div>Táto funkcia nefunguje, keď je počítač v režime dlhodobého spánku alebo je vypnutý. Skontrolujte nastavenia nasledujúcich akcií:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>akcie pri zatvorení krytu</li><li>akcia pri kriticky vybitej/takmer vybitej batérii</li><li>akcia pri stlačení tlačidla napájania</li><li>funkcia pri stlačení tlačidla spánku</li><li>nastavenia časového limitu prechodu z režimu nečinnosti do režimu dlhodobého spánku</li></ul></div>V opačnom prípade sa nespustí budík, ani sa nedá fotografovať.</div>",
+                "tooltip": "<div>Táto funkcia nefunguje, keď je počítač v režime dlhodobého spánku alebo je vypnutý. Skontrolujte nastavenia nasledujúcich akcií:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>akcie pri zatvorení krytu</li><li>akcia pri kriticky vybitej/takmer vybitej batérii</li><li>akcia pri stlačení tlačidla napájania</li><li>funkcia pri stlačení tlačidla spánku</li><li>nastavenia časového limitu prechodu z režimu nečinnosti do režimu dlhodobého spánku</li></ul></div>V opačnom prípade sa nespustí budík, ani sa nedá fotografovať.</div>",
                 "desc": "<p><label>Keď povolíte túto funkciu, zariadenie začne vydávať zvukový signál, keď je obrazovka uzamknutá a zistí sa pohyb, najmä vo verejnom priestore.</label></p> <p><label>Ak chcete upozornenie zrušiť, zadajte správne heslo alebo sa prihláste pomocou služby Windows Hello.</label></p>",
                 "note": {
                     "description": "Po úspešnom prihlásení do systému sa táto funkcia automaticky vypne. Ak ju chcete používať, musíte ju znova povoliť."
@@ -3698,7 +3704,9 @@
                 "custom": "Custom",
                 "txtFrom": "From",
                 "txtTo": "To",
-                "txtGo": "Go"
+                "txtGo": "Go",
+                "summaryCaption": "space reclaimed",
+                "fixes": "fixes"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

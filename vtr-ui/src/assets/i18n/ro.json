@@ -1187,6 +1187,16 @@
                             "desc3": "Cursorul este în partea dreaptă. Viteza ventilatorului şi temperatura permisă a suprafeţei sunt mai ridicate – pentru performanţă maximă."
                         },
                         "desc3_1": "Unele dintre moduri se pot regla automat într-o gamă mai largă de performanţă, în funcţie de activitatea dvs. Pentru a dezactiva modul automat, apăsaţi Fn + T."
+                    },
+                    "dytc61": {
+                        "title1": "Quiet mode(only for on battery mode)",
+                        "desc1": "The slider is on the far left. Both fan speed and performance are low for a cooler, quieter computer and the best battery life.",
+                        "title2": "Balanced mode",
+                        "desc2": "The slider is on the left or center left. Fan speed and performance are dynamically balanced for the best experience.",
+                        "title3": "Performance mode",
+                        "desc3": "The slider is on the center or center right. Both fan speed and surface temperature are high.",
+                        "title4": "Ultra-performance mode",
+                        "desc4": "The slider is far right, providing ultra-high performance with bigger noise and higher surface temperature."
                     }
                 },
                 "powerSettings": {
@@ -1209,11 +1219,11 @@
                     "or": "Sau"
                 },
                 "otherSettings": {
-                    "title": "Alte setări",
+                    "title": "Bara de instrumente Lenovo Vantage",
                     "vantageToolbar": {
-                        "title": "Bara de instrumente Lenovo Vantage",
-                        "description": "Fixați bara de instrumente Vantage în bara de activități Windows pentru a obține într-un mod mai simplu mai multe detalii despre baterie și acces la setările rapide.",
-                        "hint": "The options in the image depend on the capacity of the machine. For example, – some machines support backlight settings, and some may not."
+                        "title": "Bara de instrumente Lenovo Vantage și setările premium",
+                        "description": "Fixați bara de instrumente Lenovo Vantage în bara de activități din Windows, pentru a accesa cu ușurință setările utilizate cel mai frecvent și pentru a primi ofertele și actualizările premium adresate dumneavoastră.",
+                        "hint": "Opțiunile din imagine depind de funcționalitățile dispozitivului. De exemplu – unele dispozitive acceptă setările pentru iluminarea de fundal, iar altele nu."
                     }
                 },
                 "batterySettings": {
@@ -1471,7 +1481,6 @@
                             "games": "GAME",
                             "voip": "VOICE"
                         },
-                        "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
                                 "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
@@ -1479,9 +1488,6 @@
                             },
                             "entertainmentMode": {
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
                                 "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
@@ -1547,7 +1553,7 @@
                 "display": {
                     "title": "Afișaj",
                     "displayColorTemperature": {
-						"title": "Modul de protejare a ochilor",
+                        "title": "Modul de protejare a ochilor",
                         "description": "Pentru a evita oboseala ochilor, puteți regla temperatura culorii afișajului pentru a filtra lumina albastră, atunci când utilizați computerul un timp îndelungat. În plus, culorile calde sunt recomandate pentru somnul dumneavoastră, în special noaptea.",
                         "link": {
                             "click": "Clic",
@@ -1857,10 +1863,10 @@
                 },
                 "backlight": {
                     "title": "Retroilum tast",
-					"description": {
-						"base": "Activați iluminarea de fundal a tastaturii pentru a simplifica tastarea în medii întunecate sau slab iluminate. De asemenea, puteți modifica setările iluminării de fundal a tastaturii apăsând combinația de taste Fn+Spațiu.",
-						"auto": "Activați iluminarea de fundal a tastaturii pentru a simplifica tastarea în medii întunecate sau slab iluminate. De asemenea, puteți modifica setările iluminării de fundal a tastaturii apăsând combinația de taste Fn+Spațiu sau alegând opțiunea „Auto”. Opțiunea „Auto” reglează automat nivelul iluminării de fundal a tastaturii în funcție de lumina ambientală."
-					},
+                    "description": {
+                        "base": "Activați iluminarea de fundal a tastaturii pentru a simplifica tastarea în medii întunecate sau slab iluminate. De asemenea, puteți modifica setările iluminării de fundal a tastaturii apăsând combinația de taste Fn+Spațiu.",
+                        "auto": "Activați iluminarea de fundal a tastaturii pentru a simplifica tastarea în medii întunecate sau slab iluminate. De asemenea, puteți modifica setările iluminării de fundal a tastaturii apăsând combinația de taste Fn+Spațiu sau alegând opțiunea „Auto”. Opțiunea „Auto” reglează automat nivelul iluminării de fundal a tastaturii în funcție de lumina ambientală."
+                    },
                     "level": {
                         "auto": "Auto",
                         "low": "Minim",
@@ -2091,7 +2097,7 @@
             "antiTheft": {
                 "heading": "Detectare inteligentă",
                 "title": "Alertă Smart Motion",
-                "tooltip":"<div>Această caracteristică nu funcționează atunci când computerul este în modul de hibernare sau este oprit. Verificați setările pentru următoarele acțiuni:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>acțiuni de închidere a capacului</li><li>acțiuni pentru nivelul critic/scăzut al energiei bateriei</li><li>acțiuni ale butonului de alimentare</li><li>acțiuni ale butonului de repaus</li><li>setările de expirare a timpului de inactivitate până la trecerea în hibernare</li></ul></div>În caz contrar, caracteristica nu va declanșa alarma și nici nu va realiza fotografii.</div>",
+                "tooltip": "<div>Această caracteristică nu funcționează atunci când computerul este în modul de hibernare sau este oprit. Verificați setările pentru următoarele acțiuni:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>acțiuni de închidere a capacului</li><li>acțiuni pentru nivelul critic/scăzut al energiei bateriei</li><li>acțiuni ale butonului de alimentare</li><li>acțiuni ale butonului de repaus</li><li>setările de expirare a timpului de inactivitate până la trecerea în hibernare</li></ul></div>În caz contrar, caracteristica nu va declanșa alarma și nici nu va realiza fotografii.</div>",
                 "desc": "<p><label>Când activați această caracteristică, dispozitivul va începe să sune atunci când ecranul este blocat și se detectează mișcări, în special într-un loc public.</label></p> <p><label>Pentru a respinge alarma, introduceți parola corectă sau conectați-vă prin Windows Hello.</label></p>",
                 "note": {
                     "description": "După ce v-ați conectat cu succes la sistem, această caracteristică va fi oprită automat. Trebuie să o activați din nou pentru a o utiliza."
@@ -3698,7 +3704,9 @@
                 "custom": "Custom",
                 "txtFrom": "From",
                 "txtTo": "To",
-                "txtGo": "Go"
+                "txtGo": "Go",
+                "summaryCaption": "space reclaimed",
+                "fixes": "fixes"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

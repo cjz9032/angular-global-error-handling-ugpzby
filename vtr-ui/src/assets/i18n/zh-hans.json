@@ -1187,6 +1187,16 @@
                             "desc3": "滑块位于最右边。提高风扇速度和允许的表面温度以获得最大性能。"
                         },
                         "desc3_1": "有些模式可以根据您的活动在更广泛的性能范围内进行自动调节。要禁用自动模式，请按 Fn+ T。"
+                    },
+                    "dytc61": {
+                        "title1": "Quiet mode(only for on battery mode)",
+                        "desc1": "The slider is on the far left. Both fan speed and performance are low for a cooler, quieter computer and the best battery life.",
+                        "title2": "Balanced mode",
+                        "desc2": "The slider is on the left or center left. Fan speed and performance are dynamically balanced for the best experience.",
+                        "title3": "Performance mode",
+                        "desc3": "The slider is on the center or center right. Both fan speed and surface temperature are high.",
+                        "title4": "Ultra-performance mode",
+                        "desc4": "The slider is far right, providing ultra-high performance with bigger noise and higher surface temperature."
                     }
                 },
                 "powerSettings": {
@@ -1209,11 +1219,11 @@
                     "or": "或"
                 },
                 "otherSettings": {
-                    "title": "其他设置",
+                    "title": "Lenovo Vantage 工具栏",
                     "vantageToolbar": {
-                        "title": "Lenovo Vantage 工具栏",
-                        "description": "将 Vantage 工具栏固定到 Windows 任务栏以轻松地获取更多电池详细信息及访问快速设置。",
-                        "hint": "The options in the image depend on the capacity of the machine. For example, – some machines support backlight settings, and some may not."
+                        "title": "Lenovo Vantage 工具栏和高级设置",
+                        "description": "将 Lenovo Vantage 工具栏固定到 Windows 任务栏，即可轻松访问您最常用的设置并为您获取高级产品和更新。",
+                        "hint": "图像中的选项取决于该机型的容量。例如，有些机型支持背光设置，有些不支持。"
                     }
                 },
                 "batterySettings": {
@@ -1471,7 +1481,6 @@
                             "games": "游戏",
                             "voip": "语音"
                         },
-                        "automaticAudioCheckboxText": "自动音频优化",
                         "automaticAudioMode": {
                             "voIPMode": {
                                 "checkboxText": "自动优化 VOIP 音频",
@@ -1479,10 +1488,7 @@
                             },
                             "entertainmentMode": {
                                 "checkboxText": "自动优化用于娱乐的音频",
-                                "tooltip": "选择此选项后，Dolby 音频会根据您使用的应用自动调整模式：",
-                                "description1": "如果您正在使用 iTunes 等应用，它将更改为\"音乐\"模式。",
-                                "description2": "如果您正在使用 Youtube 等应用，它将更改为\"电影\"模式。",
-                                "description3": "如果您使用的是游戏应用，它将相应地更改为游戏模式。"
+                                "tooltip": "选择此选项后，Dolby 音频会根据您使用的应用自动调整模式："
                             }
                         }
                     },
@@ -1857,10 +1863,10 @@
                 },
                 "backlight": {
                     "title": "键盘背光",
-					"description": {
-						"base": "激活键盘背光，以便在黑暗或光线不足的情况下打字。您也可以通过按 Fn + 空格键组合更改键盘背光设置。",
-						"auto": "激活键盘背光，以便在黑暗或光线不足的情况下打字。您也可以通过按 Fn + 空格键组合更改键盘背光设置，或将其设置为“自动”。在“自动”模式下，系统将根据环境光自动调整键盘背光。"
-					},
+                    "description": {
+                        "base": "激活键盘背光，以便在黑暗或光线不足的情况下打字。您也可以通过按 Fn + 空格键组合更改键盘背光设置。",
+                        "auto": "激活键盘背光，以便在黑暗或光线不足的情况下打字。您也可以通过按 Fn + 空格键组合更改键盘背光设置，或将其设置为“自动”。在“自动”模式下，系统将根据环境光自动调整键盘背光。"
+                    },
                     "level": {
                         "auto": "自动",
                         "low": "低",
@@ -2091,7 +2097,7 @@
             "antiTheft": {
                 "heading": "智能感知",
                 "title": "智能运动警报",
-                "tooltip":"<div>计算机处于休眠模式或电源已关闭时，此功能无效。请检查以下操作的设置：<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>合上外盖操作</li><li>电量严重不足/电量低操作</li><li>电源按钮操作</li><li>睡眠按钮操作</li><li>休眠的空闲超时设置</li></ul></div>否则，不会触发警报和拍照。</div>",
+                "tooltip": "<div>计算机处于休眠模式或电源已关闭时，此功能无效。请检查以下操作的设置：<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>合上外盖操作</li><li>电量严重不足/电量低操作</li><li>电源按钮操作</li><li>睡眠按钮操作</li><li>休眠的空闲超时设置</li></ul></div>否则，不会触发警报和拍照。</div>",
                 "desc": "<p><label>启用此功能后，当屏幕锁定并检测到运动时（尤其是在公共场所），设备将发出蜂鸣声。</label></p> <p><label>要消除警报，请输入正确的密码或通过 Windows Hello 登录。</label></p>",
                 "note": {
                     "description": "成功登录系统后，此功能将自动关闭。需要再次启用此功能才能使用。"
@@ -3698,7 +3704,9 @@
                 "custom": "Custom",
                 "txtFrom": "From",
                 "txtTo": "To",
-                "txtGo": "Go"
+                "txtGo": "Go",
+                "summaryCaption": "space reclaimed",
+                "fixes": "fixes"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

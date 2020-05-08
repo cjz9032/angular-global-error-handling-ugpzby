@@ -1187,6 +1187,16 @@
                             "desc3": "המחוון נמצא בצד ימין. מהירות המאוורר וטמפרטורת המשטח המותרת גבוהות יותר כדי להשיג את הביצועים הטובים ביותר."
                         },
                         "desc3_1": "ניתן לכוונן חלק מהמצבים באופן אוטומטי לטווח רחב יותר של ביצועים בהתאם לפעילות. כדי להשבית את המצב האוטומטי, לוחצים על Fn+ T."
+                    },
+                    "dytc61": {
+                        "title1": "Quiet mode(only for on battery mode)",
+                        "desc1": "The slider is on the far left. Both fan speed and performance are low for a cooler, quieter computer and the best battery life.",
+                        "title2": "Balanced mode",
+                        "desc2": "The slider is on the left or center left. Fan speed and performance are dynamically balanced for the best experience.",
+                        "title3": "Performance mode",
+                        "desc3": "The slider is on the center or center right. Both fan speed and surface temperature are high.",
+                        "title4": "Ultra-performance mode",
+                        "desc4": "The slider is far right, providing ultra-high performance with bigger noise and higher surface temperature."
                     }
                 },
                 "powerSettings": {
@@ -1209,11 +1219,11 @@
                     "or": "או"
                 },
                 "otherSettings": {
-                    "title": "הגדרות נוספות",
+                    "title": "סרגל הכלים של Lenovo Vantage",
                     "vantageToolbar": {
-                        "title": "סרגל הכלים של Lenovo Vantage",
-                        "description": "<span dir='rtl'>הצמידו את סרגל הכלים של Vantage לשורת המשימות של Windows כדי לקבל בקלות פרטים נוספים על הסוללה וגישה להגדרות המהירות.</span>",
-                        "hint": "The options in the image depend on the capacity of the machine. For example, – some machines support backlight settings, and some may not."
+                        "title": "סרגל הכלים של Lenovo Vantage והגדרות פרימיום",
+                        "description": "הצמידו את סרגל הכלים של Lenovo Vantage לסרגל המשימות של Windows כדי לגשת בקלות להגדרות הנפוצות ביותר ולקבל הצעות ועדכוני פרימיום.",
+                        "hint": "האפשרויות בתמונה תלויות בקיבולת המחשב. לדוגמה - יש מחשבים שתומכים בהגדרות של תאורה אחורית, ויש כאלה שלא."
                     }
                 },
                 "batterySettings": {
@@ -1471,7 +1481,6 @@
                             "games": "GAME",
                             "voip": "VOICE"
                         },
-                        "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
                                 "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
@@ -1479,9 +1488,6 @@
                             },
                             "entertainmentMode": {
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
                                 "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
@@ -1857,10 +1863,10 @@
                 },
                 "backlight": {
                     "title": "תאורת המקלדת",
-					"description": {
-						"base": "הפעילו את התאורה האחורית של המקלדת כדי להקל על ההקלדה בתנאי תאורה חלשה או מקום חשוך. ניתן גם לשנות את הגדרות התאורה האחורית של המקלדת על ידי לחיצה על שילוב המקשים Fn+רווח.",
-						"auto": "הפעילו את התאורה האחורית של המקלדת כדי להקל על ההקלדה בתנאי תאורה חלשה או מקום חשוך. ניתן גם לשנות את הגדרות התאורה האחורית של המקלדת על ידי לחיצה על שילוב המקשים Fn+רווח או להגדיר אותה למצב \"אוטומטי\". במצב \"אוטומטי\" המערכת מתאימה אוטומטית את התאורה האחורית של המקלדת בהתאם לאור הסביבה."
-					},
+                    "description": {
+                        "base": "הפעילו את התאורה האחורית של המקלדת כדי להקל על ההקלדה בתנאי תאורה חלשה או מקום חשוך. ניתן גם לשנות את הגדרות התאורה האחורית של המקלדת על ידי לחיצה על שילוב המקשים Fn+רווח.",
+                        "auto": "הפעילו את התאורה האחורית של המקלדת כדי להקל על ההקלדה בתנאי תאורה חלשה או מקום חשוך. ניתן גם לשנות את הגדרות התאורה האחורית של המקלדת על ידי לחיצה על שילוב המקשים Fn+רווח או להגדיר אותה למצב \"אוטומטי\". במצב \"אוטומטי\" המערכת מתאימה אוטומטית את התאורה האחורית של המקלדת בהתאם לאור הסביבה."
+                    },
                     "level": {
                         "auto": "אוטומטי",
                         "low": "נמוך",
@@ -2091,7 +2097,7 @@
             "antiTheft": {
                 "heading": "חישה חכמה",
                 "title": "התראת Smart Motion",
-                "tooltip":"<div>תכונה זו אינה פועלת כאשר המחשב נמצא במצב שינה או במצב כיבוי. בדקו את ההגדרות בפעולות הבאות:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>פעולות של מכסה הסגירה</li><li>פעולה של סוללה נמוכה/במצב קריטי</li><li>פעולה של מתג הפעלה</li><li>פעולה של לחצן שינה</li><li>הגדרות פסק זמן ללא פעילות למצב שינה</li></ul></div>אחרת, לא תופעל אזעקה, וגם לא יופעל צילום תמונות.</div>",
+                "tooltip": "<div>תכונה זו אינה פועלת כאשר המחשב נמצא במצב שינה או במצב כיבוי. בדקו את ההגדרות בפעולות הבאות:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>פעולות של מכסה הסגירה</li><li>פעולה של סוללה נמוכה/במצב קריטי</li><li>פעולה של מתג הפעלה</li><li>פעולה של לחצן שינה</li><li>הגדרות פסק זמן ללא פעילות למצב שינה</li></ul></div>אחרת, לא תופעל אזעקה, וגם לא יופעל צילום תמונות.</div>",
                 "desc": "<p><label>בעת הפעלת תכונה זו, המכשיר יתחיל לצפצף כאשר המסך נעול ויזוהו תנועות, במיוחד במקום ציבורי.</label></p> <p><label>כדי לבטל את ההתראה, הזינו את הסיסמה הנכונה או התחברו באמצעות Windows Hello.</label></p>",
                 "note": {
                     "description": "לאחר כניסה למערכת בהצלחה, תכונה זו תושבת אוטומטית. צריך להפעיל אותה שוב כדי להשתמש בה."
@@ -3698,7 +3704,9 @@
                 "custom": "Custom",
                 "txtFrom": "From",
                 "txtTo": "To",
-                "txtGo": "Go"
+                "txtGo": "Go",
+                "summaryCaption": "space reclaimed",
+                "fixes": "fixes"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

@@ -1189,6 +1189,16 @@
                             "desc3": "يوجد شريط التمرير في أقصى اليسار. سرعة المروحة ودرجة حرارة سطح الكمبيوتر المسموحة من أجل الحصول على الأداء الأقصى."
                         },
                         "desc3_1": "يمكن ضبط بعض الأوضاع تلقائيًا عبر مجموعة واسعة من إعدادات الأداء استنادًا إلى نشاطك. لتعطيل الوضع التلقائي، اضغط على Fn+ T."
+                    },
+                    "dytc61": {
+                        "title1": "Quiet mode(only for on battery mode)",
+                        "desc1": "The slider is on the far left. Both fan speed and performance are low for a cooler, quieter computer and the best battery life.",
+                        "title2": "Balanced mode",
+                        "desc2": "The slider is on the left or center left. Fan speed and performance are dynamically balanced for the best experience.",
+                        "title3": "Performance mode",
+                        "desc3": "The slider is on the center or center right. Both fan speed and surface temperature are high.",
+                        "title4": "Ultra-performance mode",
+                        "desc4": "The slider is far right, providing ultra-high performance with bigger noise and higher surface temperature."
                     }
                 },
                 "powerSettings": {
@@ -1211,11 +1221,11 @@
                     "or": "أو"
                 },
                 "otherSettings": {
-                    "title": "إعدادات أخرى",
+                    "title": "شريط أدوات Lenovo Vantage",
                     "vantageToolbar": {
-                        "title": "شريط أدوات Lenovo Vantage",
-                        "description": "<span dir='rtl'>قم بتثبيت شريط أدوات Vantage في شريط مهام Windows للحصول بسهولة على مزيد من تفاصيل البطارية والوصول إلى إعداداتك السريعة.</span>",
-                        "hint": "The options in the image depend on the capacity of the machine. For example, – some machines support backlight settings, and some may not."
+                        "title": "شريط أدوات Lenovo Vantage والإعدادات المتميزة",
+                        "description": "قم بتثبيت شريط أدوات Lenovo Vantage في شريط مهام Windows للوصول بسهولة إلى الإعدادات الأكثر استخدامًا والحصول على عروض وتحديثات متميزة لك.",
+                        "hint": "تتوقف الخيارات في الصورة على سعة الجهاز. على سبيل المثال، يدعم بعض الأجهزة الإضاءة الخلفية، بينما قد لا يدعمها البعض الآخر."
                     }
                 },
                 "batterySettings": {
@@ -1473,7 +1483,6 @@
                             "games": "GAME",
                             "voip": "VOICE"
                         },
-                        "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
                                 "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
@@ -1481,9 +1490,6 @@
                             },
                             "entertainmentMode": {
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
                                 "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
@@ -1859,10 +1865,10 @@
                 },
                 "backlight": {
                     "title": "الإضاءة الخلفية للوحة المفاتيح",
-					"description": {
-						"base": "نشّط الإضاءة الخلفية للوحة المفاتيح لتسهيل الكتابة في ظروف الإضاءة الداكنة أو الضعيفة. يمكنك أيضًا تغيير إعدادات الإضاءة الخلفية للوحة المفاتيح عن طريق الضغط على تركيبات مفاتيح Fn+مفتاح المسافة.",
-						"auto": "نشّط الإضاءة الخلفية للوحة المفاتيح لتسهيل الكتابة في ظروف الإضاءة الداكنة أو الضعيفة. يمكنك تغيير إعدادات الإضاءة الخلفية عن طريق الضغط على تركيبات مفاتيح Fn+مفتاح المسافة أو تحديد الخيار \"تلقائي\" لها. في الوضع \"تلقائي\"، يضبط النظام الإضاءة الخلفية للوحة المفاتيح بشكل تلقائي وفقًا للضوء المحيط."
-					},
+                    "description": {
+                        "base": "نشّط الإضاءة الخلفية للوحة المفاتيح لتسهيل الكتابة في ظروف الإضاءة الداكنة أو الضعيفة. يمكنك أيضًا تغيير إعدادات الإضاءة الخلفية للوحة المفاتيح عن طريق الضغط على تركيبات مفاتيح Fn+مفتاح المسافة.",
+                        "auto": "نشّط الإضاءة الخلفية للوحة المفاتيح لتسهيل الكتابة في ظروف الإضاءة الداكنة أو الضعيفة. يمكنك تغيير إعدادات الإضاءة الخلفية عن طريق الضغط على تركيبات مفاتيح Fn+مفتاح المسافة أو تحديد الخيار \"تلقائي\" لها. في الوضع \"تلقائي\"، يضبط النظام الإضاءة الخلفية للوحة المفاتيح بشكل تلقائي وفقًا للضوء المحيط."
+                    },
                     "level": {
                         "auto": "تلقائي",
                         "low": "منخفض",
@@ -3700,7 +3706,9 @@
                 "custom": "Custom",
                 "txtFrom": "From",
                 "txtTo": "To",
-                "txtGo": "Go"
+                "txtGo": "Go",
+                "summaryCaption": "space reclaimed",
+                "fixes": "fixes"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

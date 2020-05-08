@@ -1187,6 +1187,16 @@
                             "desc3": "Suwak znajduje się po prawej stronie. Szybkość wentylatora i dopuszczalna temperatura powierzchni są wyższe dla uzyskania najlepszej wydajności."
                         },
                         "desc3_1": "Niektóre tryby mogą się automatycznie dostosowywać w szerszym zakresie wydajności zależnie od Twojej aktywności. Aby wyłączyć tryb automatyczny, naciśnij Fn+ T."
+                    },
+                    "dytc61": {
+                        "title1": "Quiet mode(only for on battery mode)",
+                        "desc1": "The slider is on the far left. Both fan speed and performance are low for a cooler, quieter computer and the best battery life.",
+                        "title2": "Balanced mode",
+                        "desc2": "The slider is on the left or center left. Fan speed and performance are dynamically balanced for the best experience.",
+                        "title3": "Performance mode",
+                        "desc3": "The slider is on the center or center right. Both fan speed and surface temperature are high.",
+                        "title4": "Ultra-performance mode",
+                        "desc4": "The slider is far right, providing ultra-high performance with bigger noise and higher surface temperature."
                     }
                 },
                 "powerSettings": {
@@ -1209,11 +1219,11 @@
                     "or": "Lub"
                 },
                 "otherSettings": {
-                    "title": "Inne ustawienia",
+                    "title": "Pasek narzędzi Lenovo Vantage",
                     "vantageToolbar": {
-                        "title": "Pasek narzędzi Lenovo Vantage",
-                        "description": "Przypnij pasek narzędzi Vantage do paska zadań systemu Windows, aby łatwo uzyskać więcej informacji o akumulatorze oraz dostęp do szybkich ustawień.",
-                        "hint": "The options in the image depend on the capacity of the machine. For example, – some machines support backlight settings, and some may not."
+                        "title": "Pasek narzędzi Lenovo Vantage i ustawienia premium",
+                        "description": "Przypnij pasek narzędzi Lenovo Vantage do paska zadań systemu Windows, aby móc łatwo uzyskiwać dostęp do najczęściej używanych ustawień oraz obierać aktualizacje i oferty premium.",
+                        "hint": "Wyświetlane opcje zależą od funkcji i możliwości urządzenia. Przykładowo, niektóre urządzenia obsługują ustawienia podświetlenia, a inne nie."
                     }
                 },
                 "batterySettings": {
@@ -1471,7 +1481,6 @@
                             "games": "GAME",
                             "voip": "VOICE"
                         },
-                        "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
                                 "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
@@ -1479,9 +1488,6 @@
                             },
                             "entertainmentMode": {
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
                                 "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
@@ -1857,10 +1863,10 @@
                 },
                 "backlight": {
                     "title": "Podświetlenie klawiatury",
-					"description": {
-						"base": "Włącz podświetlenie klawiatury, aby ułatwić sobie pisanie w ciemności lub przy słabym oświetleniu. Możesz także zmienić ustawienia podświetlenia klawiatury, naciskając kombinację klawiszy Fn+spacja.",
-						"auto": "Włącz podświetlenie klawiatury, aby ułatwić sobie pisanie w ciemności lub przy słabym oświetleniu. Możesz także zmienić ustawienia podświetlenia klawiatury, naciskając kombinację klawiszy Fn+spacja, lub włączyć tryb „Automatyczne”. Wybór ustawienia „Automatyczne” powoduje, że system automatycznie dostosowuje podświetlenie klawiatury do oświetlenia otoczenia."
-					},
+                    "description": {
+                        "base": "Włącz podświetlenie klawiatury, aby ułatwić sobie pisanie w ciemności lub przy słabym oświetleniu. Możesz także zmienić ustawienia podświetlenia klawiatury, naciskając kombinację klawiszy Fn+spacja.",
+                        "auto": "Włącz podświetlenie klawiatury, aby ułatwić sobie pisanie w ciemności lub przy słabym oświetleniu. Możesz także zmienić ustawienia podświetlenia klawiatury, naciskając kombinację klawiszy Fn+spacja, lub włączyć tryb „Automatyczne”. Wybór ustawienia „Automatyczne” powoduje, że system automatycznie dostosowuje podświetlenie klawiatury do oświetlenia otoczenia."
+                    },
                     "level": {
                         "auto": "Automatyczny",
                         "low": "Niski",
@@ -2091,7 +2097,7 @@
             "antiTheft": {
                 "heading": "Inteligentna detekcja",
                 "title": "Inteligentny alert wykrycia ruchu",
-                "tooltip":"<div>Ta funkcja nie działa, gdy komputer znajduje się w trybie hibernacji lub jest wyłączony. Sprawdź ustawienia dotyczące czynności wykonywanych w następujących sytuacjach:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>czynności wykonywane po zamknięciu pokrywy</li><li>czynność wykonywana w przypadku niskiego/krytycznie niskiego poziomu naładowania akumulatora</li><li>czynność wykonywana po naciśnięciu przycisku zasilania</li><li>czynność wykonywana po naciśnięciu przycisku uśpienia</li><li>ustawienia limitu czasu bezczynności do przełączenia w stan hibernacji</li></ul></div>W przeciwnym razie nie zostanie uruchomiony alarm ani nie zostaną wykonane zdjęcia.</div>",
+                "tooltip": "<div>Ta funkcja nie działa, gdy komputer znajduje się w trybie hibernacji lub jest wyłączony. Sprawdź ustawienia dotyczące czynności wykonywanych w następujących sytuacjach:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>czynności wykonywane po zamknięciu pokrywy</li><li>czynność wykonywana w przypadku niskiego/krytycznie niskiego poziomu naładowania akumulatora</li><li>czynność wykonywana po naciśnięciu przycisku zasilania</li><li>czynność wykonywana po naciśnięciu przycisku uśpienia</li><li>ustawienia limitu czasu bezczynności do przełączenia w stan hibernacji</li></ul></div>W przeciwnym razie nie zostanie uruchomiony alarm ani nie zostaną wykonane zdjęcia.</div>",
                 "desc": "<p><label>Jeśli włączysz tę funkcję, urządzenie zacznie emitować sygnał dźwiękowy, gdy po zablokowaniu ekranu zostanie wykryty ruch — zwłaszcza, jeśli urządzenie znajduje się w miejscu publicznym.</label></p> <p><label>Aby wyłączyć alarm, wprowadź poprawne hasło lub zaloguj się, korzystając z funkcji Windows Hello.</label></p>",
                 "note": {
                     "description": "Po pomyślnym zalogowaniu się do systemu nastąpi automatyczne wyłączenie funkcji. Aby ponownie użyć tej funkcji, należy jeszcze raz ją włączyć."
@@ -3698,7 +3704,9 @@
                 "custom": "Custom",
                 "txtFrom": "From",
                 "txtTo": "To",
-                "txtGo": "Go"
+                "txtGo": "Go",
+                "summaryCaption": "space reclaimed",
+                "fixes": "fixes"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

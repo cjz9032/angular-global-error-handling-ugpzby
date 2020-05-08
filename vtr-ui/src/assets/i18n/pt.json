@@ -1187,6 +1187,16 @@
                             "desc3": "O controlo de deslize está na extremidade direita. A velocidade da ventoinha e a temperatura superficial permitida são superiores para obter o máximo desempenho."
                         },
                         "desc3_1": "Alguns dos modos podem ser ajustados automaticamente ao longo de uma gama mais ampla de desempenho em função da sua atividade. Para desativar o modo automático, prima Fn+ T."
+                    },
+                    "dytc61": {
+                        "title1": "Quiet mode(only for on battery mode)",
+                        "desc1": "The slider is on the far left. Both fan speed and performance are low for a cooler, quieter computer and the best battery life.",
+                        "title2": "Balanced mode",
+                        "desc2": "The slider is on the left or center left. Fan speed and performance are dynamically balanced for the best experience.",
+                        "title3": "Performance mode",
+                        "desc3": "The slider is on the center or center right. Both fan speed and surface temperature are high.",
+                        "title4": "Ultra-performance mode",
+                        "desc4": "The slider is far right, providing ultra-high performance with bigger noise and higher surface temperature."
                     }
                 },
                 "powerSettings": {
@@ -1209,11 +1219,11 @@
                     "or": "Ou"
                 },
                 "otherSettings": {
-                    "title": "Outras definições",
+                    "title": "Barra de ferramentas do Lenovo Vantage",
                     "vantageToolbar": {
-                        "title": "Barra de ferramentas do Lenovo Vantage",
-                        "description": "Fixe a barra de ferramentas do Vantage na barra de tarefas do Windows para obter facilmente mais detalhes da bateria e acesso às suas definições rápidas.",
-                        "hint": "The options in the image depend on the capacity of the machine. For example, – some machines support backlight settings, and some may not."
+                        "title": "Barra de ferramentas Lenovo Vantage e definições premium",
+                        "description": "Afixe a barra de ferramentas Lenovo Vantage à barra de tarefas do Windows para aceder facilmente às definições mais utilizadas, e obtenha ofertas premium e atualizações à sua medida.",
+                        "hint": "As opções na imagem dependem da capacidade da máquina. Por exemplo, algumas máquinas suportam definições de retroiluminação e outras não."
                     }
                 },
                 "batterySettings": {
@@ -1471,7 +1481,6 @@
                             "games": "GAME",
                             "voip": "VOICE"
                         },
-                        "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
                                 "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
@@ -1479,9 +1488,6 @@
                             },
                             "entertainmentMode": {
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
                                 "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
@@ -1547,7 +1553,7 @@
                 "display": {
                     "title": "Ecrã",
                     "displayColorTemperature": {
-						"title": "Modo cuidados com a visão",
+                        "title": "Modo cuidados com a visão",
                         "description": "Para evitar o cansaço dos olhos, pode ajustar a temperatura da cor do ecrã para filtrar a luz azul quando utiliza o computador durante muito tempo. Além disso, as cores quentes são benéficas para o sono, sobretudo à noite.",
                         "link": {
                             "click": "Clique",
@@ -1857,10 +1863,10 @@
                 },
                 "backlight": {
                     "title": "Retroiluminação do teclado",
-					"description": {
-						"base": "Ative a retroiluminação do teclado para facilitar a digitação num ambiente escuro ou mal iluminado. Também pode alterar as definições de retroiluminação do teclado ao premir a combinação de teclas Fn+Barra de espaços.",
-						"auto": "Ative a retroiluminação do teclado para facilitar a digitação num ambiente escuro ou mal iluminado. Pode alterar as definições de retroiluminação ao premir a combinação Fn+Barra de espaços ou ao defini-las como \"Automático\". No modo \"Automático\", o sistema ajusta automaticamente a retroiluminação do teclado de acordo com a luz ambiente."
-					},
+                    "description": {
+                        "base": "Ative a retroiluminação do teclado para facilitar a digitação num ambiente escuro ou mal iluminado. Também pode alterar as definições de retroiluminação do teclado ao premir a combinação de teclas Fn+Barra de espaços.",
+                        "auto": "Ative a retroiluminação do teclado para facilitar a digitação num ambiente escuro ou mal iluminado. Pode alterar as definições de retroiluminação ao premir a combinação Fn+Barra de espaços ou ao defini-las como \"Automático\". No modo \"Automático\", o sistema ajusta automaticamente a retroiluminação do teclado de acordo com a luz ambiente."
+                    },
                     "level": {
                         "auto": "Auto",
                         "low": "Baixo",
@@ -2091,7 +2097,7 @@
             "antiTheft": {
                 "heading": "Deteção inteligente",
                 "title": "Alarme de movimento inteligente",
-                "tooltip":"<div>Esta funcionalidade não funciona quando o computador está modo de hibernação ou desligado. Verifique as definições nas seguintes ações:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>ações após o fecho da tampa</li><li>ação de bateria crítica/baixa</li><li>ação do interruptor de alimentação</li><li>ação do botão de suspensão</li><li>definições de tempo de espera por inatividade para hibernação</li></ul></div>Caso contrário, não aciona o alarme, nem tira fotografias.</div>",
+                "tooltip": "<div>Esta funcionalidade não funciona quando o computador está modo de hibernação ou desligado. Verifique as definições nas seguintes ações:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>ações após o fecho da tampa</li><li>ação de bateria crítica/baixa</li><li>ação do interruptor de alimentação</li><li>ação do botão de suspensão</li><li>definições de tempo de espera por inatividade para hibernação</li></ul></div>Caso contrário, não aciona o alarme, nem tira fotografias.</div>",
                 "desc": "<p><label>Ao ativar esta funcionalidade, o dispositivo começará a emitir um sinal sonoro quando o seu ecrã estiver bloqueado e forem detetados movimentos, especialmente num local público.</label></p> <p><label>Para dispensar o alarme, introduza a palavra-passe correta ou inicie sessão com o Windows Hello.</label></p>",
                 "note": {
                     "description": "Depois de iniciar sessão com êxito no sistema, esta funcionalidade será desativada automaticamente. Terá de voltar a ativá-la para utilizá-la."
@@ -3698,7 +3704,9 @@
                 "custom": "Custom",
                 "txtFrom": "From",
                 "txtTo": "To",
-                "txtGo": "Go"
+                "txtGo": "Go",
+                "summaryCaption": "space reclaimed",
+                "fixes": "fixes"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",
