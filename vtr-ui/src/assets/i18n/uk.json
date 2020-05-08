@@ -1187,6 +1187,16 @@
                             "desc3": "Повзунок розташований із правого краю. Швидкість вентилятора та припустима температура поверхні вищі, ніж в інших режимах. Комп'ютер має найвищу швидкодію."
                         },
                         "desc3_1": "Певні режими можуть автоматично підлаштовуватись у ширшому діапазоні продуктивності залежно від вашої активності. Щоб вимкнути автоматичний режим, натисніть Fn+ T."
+                    },
+                    "dytc61": {
+                        "title1": "Quiet mode(only for on battery mode)",
+                        "desc1": "The slider is on the far left. Both fan speed and performance are low for a cooler, quieter computer and the best battery life.",
+                        "title2": "Balanced mode",
+                        "desc2": "The slider is on the left or center left. Fan speed and performance are dynamically balanced for the best experience.",
+                        "title3": "Performance mode",
+                        "desc3": "The slider is on the center or center right. Both fan speed and surface temperature are high.",
+                        "title4": "Ultra-performance mode",
+                        "desc4": "The slider is far right, providing ultra-high performance with bigger noise and higher surface temperature."
                     }
                 },
                 "powerSettings": {
@@ -1209,11 +1219,11 @@
                     "or": "Або"
                 },
                 "otherSettings": {
-                    "title": "Інші настройки",
+                    "title": "Панель інструментів Lenovo Vantage",
                     "vantageToolbar": {
-                        "title": "Панель інструментів Lenovo Vantage",
-                        "description": "Закріпіть панель інструментів Vantage на панелі завдань Windows, щоб легко отримувати додаткові відомості про акумулятор і доступ до швидких настройок.",
-                        "hint": "The options in the image depend on the capacity of the machine. For example, – some machines support backlight settings, and some may not."
+                        "title": "Панель інструментів Lenovo Vantage та настройки преміум-класу",
+                        "description": "Закріпіть панель інструментів Lenovo Vantage на панелі завдань Windows, щоб легко отримувати доступ до найчастіше використовуваних настройок, преміальних пропозицій і оновлень.",
+                        "hint": "Параметри на зображенні залежать від можливостей пристрою. Наприклад, деякі пристрої не підтримують настройки підсвічування."
                     }
                 },
                 "batterySettings": {
@@ -1471,7 +1481,6 @@
                             "games": "GAME",
                             "voip": "VOICE"
                         },
-                        "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
                                 "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
@@ -1479,9 +1488,6 @@
                             },
                             "entertainmentMode": {
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
                                 "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
@@ -1857,10 +1863,10 @@
                 },
                 "backlight": {
                     "title": "Підсвічування клавіатури",
-					"description": {
-						"base": "Увімкніть підсвічування клавіатури, щоб полегшити введення тексту в умовах поганого освітлення. Ви також можете змінити настройки підсвічування клавіатури, натиснувши сполучення клавіш Fn+пробіл.",
-						"auto": "Увімкніть підсвічування клавіатури, щоб полегшити введення тексту в умовах поганого освітлення. Ви можете змінити настройки підсвічування клавіатури, натиснувши сполучення клавіш Fn+пробіл або вибравши параметр \"Автоматичний\". Параметр \"Автоматичний\" коригує підсвічування клавіатури відповідно до навколишнього освітлення."
-					},
+                    "description": {
+                        "base": "Увімкніть підсвічування клавіатури, щоб полегшити введення тексту в умовах поганого освітлення. Ви також можете змінити настройки підсвічування клавіатури, натиснувши сполучення клавіш Fn+пробіл.",
+                        "auto": "Увімкніть підсвічування клавіатури, щоб полегшити введення тексту в умовах поганого освітлення. Ви можете змінити настройки підсвічування клавіатури, натиснувши сполучення клавіш Fn+пробіл або вибравши параметр \"Автоматичний\". Параметр \"Автоматичний\" коригує підсвічування клавіатури відповідно до навколишнього освітлення."
+                    },
                     "level": {
                         "auto": "Автоматичний",
                         "low": "Низький",
@@ -2091,7 +2097,7 @@
             "antiTheft": {
                 "heading": "Інтелектуальне зчитування",
                 "title": "Інтелектуальна тривога за виявлення рухів",
-                "tooltip":"<div>Ця функція не працює, коли комп'ютер перебуває в режимі глибокого сну або вимкнений. Перевірте настройки таких дій:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>дії закриття кришки;</li><li>дія критично низького/низького заряду акумулятора;</li><li>дія кнопки живлення;</li><li>дія кнопки сну;</li><li>настройки часу без активності до переходу в режим сну.</li></ul></div>В іншому випадку сигнал тривоги не спрацює, крім того, не буде зроблено фото.</div>",
+                "tooltip": "<div>Ця функція не працює, коли комп'ютер перебуває в режимі глибокого сну або вимкнений. Перевірте настройки таких дій:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>дії закриття кришки;</li><li>дія критично низького/низького заряду акумулятора;</li><li>дія кнопки живлення;</li><li>дія кнопки сну;</li><li>настройки часу без активності до переходу в режим сну.</li></ul></div>В іншому випадку сигнал тривоги не спрацює, крім того, не буде зроблено фото.</div>",
                 "desc": "<p><label>Якщо ввімкнути цю функцію, пристрій подаватиме сигнал в разі виявлення рухів перед заблокованим екраном, особливо в громадських місцях.</label></p> <p><label>Щоб вимкнути сигнал, введіть правильний пароль або увійдіть через Windows Hello.</label></p>",
                 "note": {
                     "description": "Після успішного входу в систему цю функцію буде автоматично вимкнуто. Для подальшого використання її доведеться ввімкнути."
@@ -3698,7 +3704,9 @@
                 "custom": "Custom",
                 "txtFrom": "From",
                 "txtTo": "To",
-                "txtGo": "Go"
+                "txtGo": "Go",
+                "summaryCaption": "space reclaimed",
+                "fixes": "fixes"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

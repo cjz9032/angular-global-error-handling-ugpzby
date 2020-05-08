@@ -1187,6 +1187,16 @@
                             "desc3": "De schuifregelaar bevindt zich uiterst rechts. Er worden een hogere ventilatorsnelheid en een hogere temperatuur van de buitenkant van de computer toegelaten voor maximale prestaties."
                         },
                         "desc3_1": "Sommige modi kunnen automatisch aangepast worden over een breder prestatiebereik gebaseerd op uw activiteit. Druk op Fn+ T om de automatische modus uit te schakelen."
+                    },
+                    "dytc61": {
+                        "title1": "Quiet mode(only for on battery mode)",
+                        "desc1": "The slider is on the far left. Both fan speed and performance are low for a cooler, quieter computer and the best battery life.",
+                        "title2": "Balanced mode",
+                        "desc2": "The slider is on the left or center left. Fan speed and performance are dynamically balanced for the best experience.",
+                        "title3": "Performance mode",
+                        "desc3": "The slider is on the center or center right. Both fan speed and surface temperature are high.",
+                        "title4": "Ultra-performance mode",
+                        "desc4": "The slider is far right, providing ultra-high performance with bigger noise and higher surface temperature."
                     }
                 },
                 "powerSettings": {
@@ -1209,11 +1219,11 @@
                     "or": "Of"
                 },
                 "otherSettings": {
-                    "title": "Overige instellingen",
+                    "title": "Lenovo Vantage-werkbalk",
                     "vantageToolbar": {
-                        "title": "Werkbalk van Lenovo Vantage",
-                        "description": "Maak de werkbalk van Lenovo Vantage vast aan de Windows-taakbalk om snel meer batterijgegevens en toegang tot snelle instellingen te krijgen.",
-                        "hint": "The options in the image depend on the capacity of the machine. For example, – some machines support backlight settings, and some may not."
+                        "title": "Lenovo Vantage-werkbalk en premium-instellingen",
+                        "description": "Zet de Lenovo Vantage-werkbalk vast op de Windows-taakbalk voor snelle toegang tot de meest gebruikte instellingen en om premium-aanbiedingen en updates voor u op te halen.",
+                        "hint": "De opties in de afbeelding zijn afhankelijk van de mogelijkheden van uw computer. Sommige computers ondersteunen bijvoorbeeld instellingen voor achtergrondverlichting, andere niet."
                     }
                 },
                 "batterySettings": {
@@ -1471,7 +1481,6 @@
                             "games": "GAME",
                             "voip": "VOICE"
                         },
-                        "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
                                 "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
@@ -1479,9 +1488,6 @@
                             },
                             "entertainmentMode": {
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
                                 "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
@@ -1547,7 +1553,7 @@
                 "display": {
                     "title": "Weergave",
                     "displayColorTemperature": {
-						"title": "Oogzorgmodus",
+                        "title": "Oogzorgmodus",
                         "description": "Om de vermoeide ogen te voorkomen, kunt u de kleurtemperatuur van het beeldscherm aanpassen om het blauwe lampje uit te filteren als u de computer voor langere tijd gebruikt. Bovendien zijn warme kleuren goed voor uw slaap, vooral 's avonds.",
                         "link": {
                             "click": "Klik",
@@ -1857,10 +1863,10 @@
                 },
                 "backlight": {
                     "title": "Achtergrondverlichting toetsenbord",
-					"description": {
-						"base": "Activeer de achtergrondverlichting van het toetsenbord om het typen in het donker of bij weinig licht te vergemakkelijken. U kunt de instellingen voor de achtergrondverlichting van het toetsenbord ook wijzigen door op Fn+spatiebalk-toetscombinaties te drukken.",
-						"auto": "Activeer de achtergrondverlichting van het toetsenbord om het typen in het donker of bij weinig licht te vergemakkelijken. U kunt de instellingen voor de achtergrondverlichting wijzigen door op Fn+spatiebalk-toetscombinaties te drukken of door deze op \"Automatisch\" in te stellen. In de modus \"Automatisch\" wordt de achtergrondverlichting van het toetsenbord automatisch aan het omgevingslicht aangepast."
-					},
+                    "description": {
+                        "base": "Activeer de achtergrondverlichting van het toetsenbord om het typen in het donker of bij weinig licht te vergemakkelijken. U kunt de instellingen voor de achtergrondverlichting van het toetsenbord ook wijzigen door op Fn+spatiebalk-toetscombinaties te drukken.",
+                        "auto": "Activeer de achtergrondverlichting van het toetsenbord om het typen in het donker of bij weinig licht te vergemakkelijken. U kunt de instellingen voor de achtergrondverlichting wijzigen door op Fn+spatiebalk-toetscombinaties te drukken of door deze op \"Automatisch\" in te stellen. In de modus \"Automatisch\" wordt de achtergrondverlichting van het toetsenbord automatisch aan het omgevingslicht aangepast."
+                    },
                     "level": {
                         "auto": "Automatisch",
                         "low": "Laag",
@@ -2091,7 +2097,7 @@
             "antiTheft": {
                 "heading": "Intelligente sensoren",
                 "title": "Slim bewegingsalarm",
-                "tooltip":"<div>Deze functie werkt niet als de computer in de sluimerstand staat of is uitgeschakeld. Schakel de instellingen voor de volgende acties in:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>acties voor sluiten van het deksel</li><li>actie voor bijna lege batterij</li><li>actie voor de aan/uit-knop</li><li>actie voor de slaapstandknop</li><li>instellingen voor time-out bij inactiviteit naar sluimerstand</li></ul></div>Als je deze niet instelt, worden geen waarschuwingen geactiveerd of foto's genomen.</div>",
+                "tooltip": "<div>Deze functie werkt niet als de computer in de sluimerstand staat of is uitgeschakeld. Schakel de instellingen voor de volgende acties in:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>acties voor sluiten van het deksel</li><li>actie voor bijna lege batterij</li><li>actie voor de aan/uit-knop</li><li>actie voor de slaapstandknop</li><li>instellingen voor time-out bij inactiviteit naar sluimerstand</li></ul></div>Als je deze niet instelt, worden geen waarschuwingen geactiveerd of foto's genomen.</div>",
                 "desc": "<p><label>Als u deze functie inschakelt, begint het apparaat te piepen wanneer uw scherm vergrendeld is en er bewegingen worden gedetecteerd, vooral in openbare omgevingen.</label></p> <p><label>Om het alarm uit te schakelen geeft u het juiste wachtwoord op of meldt u zich aan bij Windows Hello.</label></p>",
                 "note": {
                     "description": "Als u eenmaal bij het systeem bent aangemeld, wordt deze functie automatisch uitgeschakeld. Om deze functie weer te gebruiken, moet u de functie opnieuw inschakelen."
@@ -3698,7 +3704,9 @@
                 "custom": "Custom",
                 "txtFrom": "From",
                 "txtTo": "To",
-                "txtGo": "Go"
+                "txtGo": "Go",
+                "summaryCaption": "space reclaimed",
+                "fixes": "fixes"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

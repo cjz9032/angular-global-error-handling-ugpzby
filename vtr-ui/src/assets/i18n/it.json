@@ -1187,6 +1187,16 @@
                             "desc3": "Il dispositivo di scorrimento si trova all'estrema destra. La velocità della ventola e la temperatura consentita della superficie sono più elevate per ottenere le massime prestazioni."
                         },
                         "desc3_1": "Le prestazioni di alcune modalità possono essere regolate automaticamente in base all'attività. Per disabilitare la modalità automatica, premere Fn+ T."
+                    },
+                    "dytc61": {
+                        "title1": "Quiet mode(only for on battery mode)",
+                        "desc1": "The slider is on the far left. Both fan speed and performance are low for a cooler, quieter computer and the best battery life.",
+                        "title2": "Balanced mode",
+                        "desc2": "The slider is on the left or center left. Fan speed and performance are dynamically balanced for the best experience.",
+                        "title3": "Performance mode",
+                        "desc3": "The slider is on the center or center right. Both fan speed and surface temperature are high.",
+                        "title4": "Ultra-performance mode",
+                        "desc4": "The slider is far right, providing ultra-high performance with bigger noise and higher surface temperature."
                     }
                 },
                 "powerSettings": {
@@ -1209,11 +1219,11 @@
                     "or": "Oppure"
                 },
                 "otherSettings": {
-                    "title": "Altre impostazioni",
+                    "title": "Barra degli strumenti di Lenovo Vantage",
                     "vantageToolbar": {
-                        "title": "Barra degli strumenti di Lenovo Vantage",
-                        "description": "Aggiunge la barra degli strumenti di Vantage alla barra delle applicazioni di Windows per ottenere facilmente ulteriori dettagli sulla batteria e l'accesso alle impostazioni rapide.",
-                        "hint": "The options in the image depend on the capacity of the machine. For example, – some machines support backlight settings, and some may not."
+                        "title": "Barra degli strumenti e impostazioni premium di Lenovo Vantage",
+                        "description": "Aggiungi la barra degli strumenti di Lenovo Vantage alla barra delle applicazioni di Windows per accedere facilmente alle impostazioni utilizzate più spesso e ottenere offerte e aggiornamenti premium.",
+                        "hint": "Le opzioni nell'immagine dipendono dalla capacità del computer. Ad esempio, alcuni computer supportano le impostazioni della retroilluminazione e altri no."
                     }
                 },
                 "batterySettings": {
@@ -1471,7 +1481,6 @@
                             "games": "GAME",
                             "voip": "VOICE"
                         },
-                        "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
                                 "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
@@ -1479,9 +1488,6 @@
                             },
                             "entertainmentMode": {
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
                                 "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
@@ -1547,7 +1553,7 @@
                 "display": {
                     "title": "Schermo",
                     "displayColorTemperature": {
-						"title": "Modalità Eye care",
+                        "title": "Modalità Eye care",
                         "description": "Per evitare l'affaticamento della vista, è possibile regolare la temperatura del colore dello schermo per filtrare la luce blu quando si usa il computer per periodi di tempo prolungati. Inoltre, i colori caldi favoriscono il riposo notturno.",
                         "link": {
                             "click": "Fare clic",
@@ -1857,10 +1863,10 @@
                 },
                 "backlight": {
                     "title": "Retroilluminazione tastiera",
-					"description": {
-						"base": "Attiva la retroilluminazione della tastiera per facilitare la digitazione in condizioni di scarsa illuminazione. È inoltre possibile modificare le impostazioni della retroilluminazione della tastiera premendo la combinazione di tasti Fn+Barra spaziatrice.",
-						"auto": "Attiva la retroilluminazione della tastiera per facilitare la digitazione in condizioni di scarsa illuminazione. È inoltre possibile modificare le impostazioni della retroilluminazione premendo la combinazione di tasti Fn+Barra spaziatrice o impostarla su \"Auto\". In modalità \"Auto\", il sistema regola automaticamente la retroilluminazione della tastiera in base alla luce ambientale."
-					},
+                    "description": {
+                        "base": "Attiva la retroilluminazione della tastiera per facilitare la digitazione in condizioni di scarsa illuminazione. È inoltre possibile modificare le impostazioni della retroilluminazione della tastiera premendo la combinazione di tasti Fn+Barra spaziatrice.",
+                        "auto": "Attiva la retroilluminazione della tastiera per facilitare la digitazione in condizioni di scarsa illuminazione. È inoltre possibile modificare le impostazioni della retroilluminazione premendo la combinazione di tasti Fn+Barra spaziatrice o impostarla su \"Auto\". In modalità \"Auto\", il sistema regola automaticamente la retroilluminazione della tastiera in base alla luce ambientale."
+                    },
                     "level": {
                         "auto": "Automatico",
                         "low": "Basso",
@@ -2091,7 +2097,7 @@
             "antiTheft": {
                 "heading": "Rilevamento intelligente",
                 "title": "Avviso Smart Motion",
-                "tooltip":"<div>Questa funzione non è disponibile quando il computer è in modalità Ibernazione o è spento. Controllare le impostazioni nelle seguenti azioni:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>azioni del coperchio di chiusura</li><li>azione livello di carica batteria critico/basso</li><li>azione pulsante di alimentazione</li><li>azione pulsante Sospensione</li><li>impostazioni timeout inattività per la modalità Ibernazione</li></ul></div>In caso contrario, l'allarme non verrà attivato, né sarà possibile scattare foto.</div>",
+                "tooltip": "<div>Questa funzione non è disponibile quando il computer è in modalità Ibernazione o è spento. Controllare le impostazioni nelle seguenti azioni:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>azioni del coperchio di chiusura</li><li>azione livello di carica batteria critico/basso</li><li>azione pulsante di alimentazione</li><li>azione pulsante Sospensione</li><li>impostazioni timeout inattività per la modalità Ibernazione</li></ul></div>In caso contrario, l'allarme non verrà attivato, né sarà possibile scattare foto.</div>",
                 "desc": "<p><label>Quando si abilita questa funzione, il dispositivo inizierà a emettere un segnale acustico quando lo schermo è bloccato e vengono rilevati movimenti, soprattutto in un luogo pubblico.</label></p> <p><label>Per disattivare l'allarme, immettere la password corretta o accedere tramite Windows Hello.</label></p>",
                 "note": {
                     "description": "Una volta effettuato l'accesso al sistema, questa funzione verrà disattivata automaticamente. Per utilizzare la funzione è necessario abilitarla nuovamente."
@@ -3698,7 +3704,9 @@
                 "custom": "Custom",
                 "txtFrom": "From",
                 "txtTo": "To",
-                "txtGo": "Go"
+                "txtGo": "Go",
+                "summaryCaption": "space reclaimed",
+                "fixes": "fixes"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

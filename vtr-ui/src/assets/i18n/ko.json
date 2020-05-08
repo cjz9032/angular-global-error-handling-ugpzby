@@ -1187,6 +1187,16 @@
                             "desc3": "슬라이더가 오른쪽 끝에 있습니다. 팬 속도와 허용 표면 온도가 더 높아져 성능을 극대화할 수 있습니다."
                         },
                         "desc3_1": "일부 모드는 활동 내용을 기반으로 넓은 성능 범위에서 자동으로 조정될 수 있습니다. 자동 모드를 사용하지 않으려면 Fn+ T를 누르십시오."
+                    },
+                    "dytc61": {
+                        "title1": "Quiet mode(only for on battery mode)",
+                        "desc1": "The slider is on the far left. Both fan speed and performance are low for a cooler, quieter computer and the best battery life.",
+                        "title2": "Balanced mode",
+                        "desc2": "The slider is on the left or center left. Fan speed and performance are dynamically balanced for the best experience.",
+                        "title3": "Performance mode",
+                        "desc3": "The slider is on the center or center right. Both fan speed and surface temperature are high.",
+                        "title4": "Ultra-performance mode",
+                        "desc4": "The slider is far right, providing ultra-high performance with bigger noise and higher surface temperature."
                     }
                 },
                 "powerSettings": {
@@ -1209,11 +1219,11 @@
                     "or": "또는"
                 },
                 "otherSettings": {
-                    "title": "기타 설정",
+                    "title": "Lenovo Vantage 도구 모음",
                     "vantageToolbar": {
-                        "title": "Lenovo Vantage 도구 모음",
-                        "description": "Vantage 도구 모음을 Windows 작업 표시줄에 고정시켜 쉽게 배터리 상세 정보를 얻어 빠른 설정에 액세스할 수 있습니다.",
-                        "hint": "The options in the image depend on the capacity of the machine. For example, – some machines support backlight settings, and some may not."
+                        "title": "Lenovo Vantage 도구 모음 및 고급 설정",
+                        "description": "자주 사용하는 설정에 쉽게 액세스할 수 있도록 Lenovo Vantage 도구 모음을 Windows 작업 표시줄에 고정시켜 프리미엄 혜택 및 업데이트를 받습니다.",
+                        "hint": "이미지의 옵션은 시스템의 용량에 따라 달라집니다. 예를 들어 – 백라이트 설정을 지원하는 시스템도 있고 지원하지 않는 시스템도 있습니다."
                     }
                 },
                 "batterySettings": {
@@ -1471,7 +1481,6 @@
                             "games": "GAME",
                             "voip": "VOICE"
                         },
-                        "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
                                 "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
@@ -1479,9 +1488,6 @@
                             },
                             "entertainmentMode": {
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
                                 "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
@@ -1857,10 +1863,10 @@
                 },
                 "backlight": {
                     "title": "키보드 백라이트",
-					"description": {
-						"base": "키보드 백라이트를 켜면 어두운 곳에서도 원활하게 입력할 수 있습니다. 또한 Fn+Space 키 조합을 눌러 키보드 백라이트 설정을 변경할 수도 있습니다.",
-						"auto": "키보드 백라이트를 켜면 어두운 곳에서도 원활하게 입력할 수 있습니다. Fn+Space 키 조합을 눌러 키보드 백라이트 설정을 변경하거나 이를 \"자동\"으로 설정할 수 있습니다. \"자동\" 모드에서 시스템은 주변 밝기에 따라 키보드 조명을 자동으로 조정합니다."
-					},
+                    "description": {
+                        "base": "키보드 백라이트를 켜면 어두운 곳에서도 원활하게 입력할 수 있습니다. 또한 Fn+Space 키 조합을 눌러 키보드 백라이트 설정을 변경할 수도 있습니다.",
+                        "auto": "키보드 백라이트를 켜면 어두운 곳에서도 원활하게 입력할 수 있습니다. Fn+Space 키 조합을 눌러 키보드 백라이트 설정을 변경하거나 이를 \"자동\"으로 설정할 수 있습니다. \"자동\" 모드에서 시스템은 주변 밝기에 따라 키보드 조명을 자동으로 조정합니다."
+                    },
                     "level": {
                         "auto": "자동",
                         "low": "낮음",
@@ -2091,7 +2097,7 @@
             "antiTheft": {
                 "heading": "지능형 센싱",
                 "title": "스마트 모션 알람",
-                "tooltip":"<div>컴퓨터가 최대 절전 모드이거나 전원이 꺼진 경우에는 해당 기능이 작동하지 않습니다. 다음 동작에서 설정을 확인하십시오.<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>덮개 닫기 동작</li><li>배터리 부족/경보 동작</li><li>전원 버튼 동작</li><li>절전 버튼 동작</li><li>최대 절전 모드에 대한 유휴 시간 제한 설정</li></ul></div>그렇지 않으면 알람이 울리지 않고 사진을 찍지도 않습니다.</div>",
+                "tooltip": "<div>컴퓨터가 최대 절전 모드이거나 전원이 꺼진 경우에는 해당 기능이 작동하지 않습니다. 다음 동작에서 설정을 확인하십시오.<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>덮개 닫기 동작</li><li>배터리 부족/경보 동작</li><li>전원 버튼 동작</li><li>절전 버튼 동작</li><li>최대 절전 모드에 대한 유휴 시간 제한 설정</li></ul></div>그렇지 않으면 알람이 울리지 않고 사진을 찍지도 않습니다.</div>",
                 "desc": "<p><label>이 기능을 활성화하면 화면이 잠겨 있을 때, 특히 공공장소에서 이동이 감지될 때 장치에서 신호음이 울리기 시작합니다.</label></p> <p><label>알람을 해제하려면 올바른 암호를 입력하거나 Windows Hello로 로그인하십시오.</label></p>",
                 "note": {
                     "description": "시스템에 로그인하면 이 기능이 자동으로 꺼집니다. 다시 기능을 활성화해야 사용할 수 있습니다."
@@ -3698,7 +3704,9 @@
                 "custom": "Custom",
                 "txtFrom": "From",
                 "txtTo": "To",
-                "txtGo": "Go"
+                "txtGo": "Go",
+                "summaryCaption": "space reclaimed",
+                "fixes": "fixes"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

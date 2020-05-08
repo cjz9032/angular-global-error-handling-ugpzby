@@ -1187,6 +1187,16 @@
                             "desc3": "滑桿在最右邊。風扇速度和允許的表面溫度可以提高，以達最佳效能。"
                         },
                         "desc3_1": "部分模式可以根據您的活動在更大的效能範圍內自動調整。若要停用自動模式，請按 Fn+ T。"
+                    },
+                    "dytc61": {
+                        "title1": "Quiet mode(only for on battery mode)",
+                        "desc1": "The slider is on the far left. Both fan speed and performance are low for a cooler, quieter computer and the best battery life.",
+                        "title2": "Balanced mode",
+                        "desc2": "The slider is on the left or center left. Fan speed and performance are dynamically balanced for the best experience.",
+                        "title3": "Performance mode",
+                        "desc3": "The slider is on the center or center right. Both fan speed and surface temperature are high.",
+                        "title4": "Ultra-performance mode",
+                        "desc4": "The slider is far right, providing ultra-high performance with bigger noise and higher surface temperature."
                     }
                 },
                 "powerSettings": {
@@ -1209,11 +1219,11 @@
                     "or": "或"
                 },
                 "otherSettings": {
-                    "title": "其他設定",
+                    "title": "Lenovo Vantage 工具列",
                     "vantageToolbar": {
-                        "title": "Lenovo Vantage 工具列",
-                        "description": "將 Vantage 工具列釘到 Windows 工作列中，就能輕鬆取得詳細的電池資訊，以及操作您的快速設定。",
-                        "hint": "The options in the image depend on the capacity of the machine. For example, – some machines support backlight settings, and some may not."
+                        "title": "Lenovo Vantage 工具列和進階設定",
+                        "description": "將 Lenovo Vantage 工具列釘選到 Windows 工作列，即可輕鬆存取您最常用的設定，並獲得您專屬的特級產品和更新。",
+                        "hint": "映像中的選配產品取決於電腦的容量。例如，有些電腦支援背光設定，有些則可能不支援。"
                     }
                 },
                 "batterySettings": {
@@ -1471,7 +1481,6 @@
                             "games": "GAME",
                             "voip": "VOICE"
                         },
-                        "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
                                 "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
@@ -1479,9 +1488,6 @@
                             },
                             "entertainmentMode": {
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
                                 "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
@@ -1857,10 +1863,10 @@
                 },
                 "backlight": {
                     "title": "鍵盤背光",
-					"description": {
-						"base": "啟動鍵盤背光，以便在昏暗亮度狀況下打字。您也可以按下 Fn+Space 按鍵組合，藉此變更鍵盤背光設定。",
-						"auto": "啟動鍵盤背光，以便在昏暗亮度狀況下打字。您可以按下 Fn+Space 按鍵組合，藉此變更鍵盤背光設定，或直接設為「自動」。在「自動」模式下，系統會依據環境亮度自動調整鍵盤背光。"
-					},
+                    "description": {
+                        "base": "啟動鍵盤背光，以便在昏暗亮度狀況下打字。您也可以按下 Fn+Space 按鍵組合，藉此變更鍵盤背光設定。",
+                        "auto": "啟動鍵盤背光，以便在昏暗亮度狀況下打字。您可以按下 Fn+Space 按鍵組合，藉此變更鍵盤背光設定，或直接設為「自動」。在「自動」模式下，系統會依據環境亮度自動調整鍵盤背光。"
+                    },
                     "level": {
                         "auto": "自動",
                         "low": "低",
@@ -2091,7 +2097,7 @@
             "antiTheft": {
                 "heading": "智慧型感應",
                 "title": "智慧型移動警示",
-                "tooltip":"<div>當電腦處於休眠模式或關閉電源時，此功能無法運作。檢查下列動作中的設定：<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>闔上機蓋的動作</li><li>電力不足/偏低時的動作</li><li>電源按鈕動作</li><li>睡眠按鈕動作</li><li>閒置逾時設定進入休眠</li></ul></div>否則，它不會引發警示，也不會拍照。</div>",
+                "tooltip": "<div>當電腦處於休眠模式或關閉電源時，此功能無法運作。檢查下列動作中的設定：<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>闔上機蓋的動作</li><li>電力不足/偏低時的動作</li><li>電源按鈕動作</li><li>睡眠按鈕動作</li><li>閒置逾時設定進入休眠</li></ul></div>否則，它不會引發警示，也不會拍照。</div>",
                 "desc": "<p><label>啟用此功能時，裝置將在螢幕鎖定及偵測到移動時開始發出嗶聲，特別是在公共場所。</label></p> <p><label>若要關閉警示音，請輸入正確密碼或透過 Windows Hello 登入。</label></p>",
                 "note": {
                     "description": "成功登入系統後，此功能將自動關閉。您必須重新啟用才能使用此功能。"
@@ -3698,7 +3704,9 @@
                 "custom": "Custom",
                 "txtFrom": "From",
                 "txtTo": "To",
-                "txtGo": "Go"
+                "txtGo": "Go",
+                "summaryCaption": "space reclaimed",
+                "fixes": "fixes"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

@@ -1187,6 +1187,16 @@
                             "desc3": "Το ρυθμιστικό βρίσκεται στο δεξιό άκρο. Η ταχύτητα του ανεμιστήρα και η επιτρεπόμενη θερμοκρασία επιφανείας είναι υψηλότερες, για επίτευξη των βέλτιστων επιδόσεων."
                         },
                         "desc3_1": "Ορισμένες από τις λειτουργίες μπορούν να προσαρμοστούν αυτόματα σε ένα μεγαλύτερο εύρος απόδοσης που βασίζεται στη δραστηριότητά σας. Για να απενεργοποιήσετε τον αυτόματο τρόπο λειτουργίας, πατήστε Fn+ T."
+                    },
+                    "dytc61": {
+                        "title1": "Quiet mode(only for on battery mode)",
+                        "desc1": "The slider is on the far left. Both fan speed and performance are low for a cooler, quieter computer and the best battery life.",
+                        "title2": "Balanced mode",
+                        "desc2": "The slider is on the left or center left. Fan speed and performance are dynamically balanced for the best experience.",
+                        "title3": "Performance mode",
+                        "desc3": "The slider is on the center or center right. Both fan speed and surface temperature are high.",
+                        "title4": "Ultra-performance mode",
+                        "desc4": "The slider is far right, providing ultra-high performance with bigger noise and higher surface temperature."
                     }
                 },
                 "powerSettings": {
@@ -1209,11 +1219,11 @@
                     "or": "ή"
                 },
                 "otherSettings": {
-                    "title": "Άλλες ρυθμίσεις",
+                    "title": "Γραμμή εργαλείων του Lenovo Vantage",
                     "vantageToolbar": {
-                        "title": "Γραμμή εργαλείων του Lenovo Vantage",
-                        "description": "Καρφιτσώστε τη γραμμή εργαλείων Vantage στη γραμμή εργασιών των Windows για εύκολη λήψη περισσότερων λεπτομερειών για τις μπαταρίες και πρόσβαση στις γρήγορες ρυθμίσεις σας.",
-                        "hint": "The options in the image depend on the capacity of the machine. For example, – some machines support backlight settings, and some may not."
+                        "title": "Γραμμή εργαλείων και ρυθμίσεις premium του Lenovo Vantage",
+                        "description": "Καρφιτσώστε τη γραμμή εργαλείων του Lenovo Vantage στη γραμμή εργασιών των Windows για εύκολη πρόσβαση στις συχνότερα χρησιμοποιούμενες ρυθμίσεις σας και λάβετε premium προσφορές και ενημερώσεις.",
+                        "hint": "Οι επιλογές στην εικόνα εξαρτώνται από τη χωρητικότητα του μηχανήματος. Για παράδειγμα, ορισμένα μηχανήματα υποστηρίζουν ρυθμίσεις οπίσθιου φωτισμού και ορισμένα ενδέχεται να μην υποστηρίζουν."
                     }
                 },
                 "batterySettings": {
@@ -1471,7 +1481,6 @@
                             "games": "GAME",
                             "voip": "VOICE"
                         },
-                        "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
                                 "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
@@ -1479,9 +1488,6 @@
                             },
                             "entertainmentMode": {
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
                                 "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
@@ -1547,7 +1553,7 @@
                 "display": {
                     "title": "Παρουσίαση",
                     "displayColorTemperature": {
-						"title": "Λειτουργία φροντίδας ματιών",
+                        "title": "Λειτουργία φροντίδας ματιών",
                         "description": "Για να αποφύγετε την καταπόνηση των ματιών, μπορείτε να προσαρμόσετε τη θερμοκρασία χρώματος της οθόνης σας για να φιλτράρετε το μπλε φως, όταν χρησιμοποιείτε τον υπολογιστή σας για μεγάλο χρονικό διάστημα. Επιπλέον, τα ζεστά χρώματα είναι καλά για τον ύπνο σας, ιδίως τη νύχτα.",
                         "link": {
                             "click": "Κάντε κλικ",
@@ -1857,10 +1863,10 @@
                 },
                 "backlight": {
                     "title": "Οπίσθιος φωτισμός πληκτρολογίου",
-					"description": {
-						"base": "Ενεργοποιήστε τον οπίσθιο φωτισμό του πληκτρολογίου για να διευκολύνετε την πληκτρολόγηση σε συνθήκες σκότους ή χαμηλού φωτισμού. Μπορείτε επίσης να αλλάξετε τις ρυθμίσεις οπίσθιου φωτισμού του πληκτρολογίου πιέζοντας τον συνδυασμό πλήκτρων Fn+Διάστημα.",
-						"auto": "Ενεργοποιήστε τον οπίσθιο φωτισμό του πληκτρολογίου για να διευκολύνετε την πληκτρολόγηση σε συνθήκες σκότους ή χαμηλού φωτισμού. Μπορείτε επίσης να αλλάξετε τις ρυθμίσεις οπίσθιου φωτισμού πιέζοντας τον συνδυασμό πλήκτρων Fn+Διάστημα ή να ορίσετε την επιλογή «Αυτόματος». Στη λειτουργία «Αυτόματος», το σύστημα ρυθμίζει αυτόματα τον οπίσθιο φωτισμό του πληκτρολογίου ανάλογα με τον φωτισμό του περιβάλλοντος."
-					},
+                    "description": {
+                        "base": "Ενεργοποιήστε τον οπίσθιο φωτισμό του πληκτρολογίου για να διευκολύνετε την πληκτρολόγηση σε συνθήκες σκότους ή χαμηλού φωτισμού. Μπορείτε επίσης να αλλάξετε τις ρυθμίσεις οπίσθιου φωτισμού του πληκτρολογίου πιέζοντας τον συνδυασμό πλήκτρων Fn+Διάστημα.",
+                        "auto": "Ενεργοποιήστε τον οπίσθιο φωτισμό του πληκτρολογίου για να διευκολύνετε την πληκτρολόγηση σε συνθήκες σκότους ή χαμηλού φωτισμού. Μπορείτε επίσης να αλλάξετε τις ρυθμίσεις οπίσθιου φωτισμού πιέζοντας τον συνδυασμό πλήκτρων Fn+Διάστημα ή να ορίσετε την επιλογή «Αυτόματος». Στη λειτουργία «Αυτόματος», το σύστημα ρυθμίζει αυτόματα τον οπίσθιο φωτισμό του πληκτρολογίου ανάλογα με τον φωτισμό του περιβάλλοντος."
+                    },
                     "level": {
                         "auto": "Αυτόματο",
                         "low": "Χαμηλή",
@@ -2091,7 +2097,7 @@
             "antiTheft": {
                 "heading": "Έξυπνη ανίχνευση",
                 "title": "Έξυπνος συναγερμός κίνησης",
-                "tooltip":"<div>Αυτή η δυνατότητα δεν λειτουργεί, όταν ο υπολογιστής είναι σε κατάσταση αδρανοποίησης ή απενεργοποιημένος. Ελέγξτε τις ρυθμίσεις στις εξής ενέργειες:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>ενέργειες του καπακιού κλεισίματος</li><li>ενέργεια κρίσιμου/χαμηλού επιπέδου φόρτισης μπαταρίας</li><li>ενέργεια κουμπιού τροφοδοσίας</li><li>ενέργεια κουμπιού αναστολής λειτουργίας</li><li>ρυθμίσεις χρονικού ορίου αδράνειας για μετάβαση του συστήματος σε κατάσταση αδρανοποίησης</li></ul></div>Διαφορετικά, δεν θα ενεργοποιήσει συναγερμό, ούτε τη λήψη φωτογραφιών.</div>",
+                "tooltip": "<div>Αυτή η δυνατότητα δεν λειτουργεί, όταν ο υπολογιστής είναι σε κατάσταση αδρανοποίησης ή απενεργοποιημένος. Ελέγξτε τις ρυθμίσεις στις εξής ενέργειες:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>ενέργειες του καπακιού κλεισίματος</li><li>ενέργεια κρίσιμου/χαμηλού επιπέδου φόρτισης μπαταρίας</li><li>ενέργεια κουμπιού τροφοδοσίας</li><li>ενέργεια κουμπιού αναστολής λειτουργίας</li><li>ρυθμίσεις χρονικού ορίου αδράνειας για μετάβαση του συστήματος σε κατάσταση αδρανοποίησης</li></ul></div>Διαφορετικά, δεν θα ενεργοποιήσει συναγερμό, ούτε τη λήψη φωτογραφιών.</div>",
                 "desc": "<p><label>Όταν αυτή τη δυνατότητα είναι ενεργοποιημένη, η συσκευή θα αρχίσει να ηχεί όταν η οθόνη είναι κλειδωμένη και εντοπιστούν κινήσεις ιδίως σε δημόσιο χώρο.</label></p> <p><label>Για να απορρίψετε τον συναγερμό, πληκτρολογήστε τον σωστό κωδικό πρόσβασης ή συνδεθείτε από το Windows Hello.</label></p>",
                 "note": {
                     "description": "Μόλις συνδεθείτε στο σύστημα με επιτυχία, αυτή η δυνατότητα θα απενεργοποιηθεί αυτόματα. Θα πρέπει να την ενεργοποιήσετε ξανά για να τη χρησιμοποιήσετε."
@@ -3698,7 +3704,9 @@
                 "custom": "Custom",
                 "txtFrom": "From",
                 "txtTo": "To",
-                "txtGo": "Go"
+                "txtGo": "Go",
+                "summaryCaption": "space reclaimed",
+                "fixes": "fixes"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

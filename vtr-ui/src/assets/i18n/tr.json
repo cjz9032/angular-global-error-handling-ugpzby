@@ -1187,6 +1187,16 @@
                             "desc3": "Kaydırıcı en sağdadır. Maksimum performans için fan hızı ve izin verilen yüzey sıcaklığı daha yüksektir."
                         },
                         "desc3_1": "Kiplerden bazıları, etkinliğinize göre otomatik olarak daha geniş bir performans aralığına ayarlanabilir. Otomatik kipi devre dışı bırakmak için Fn+ T tuşlarına basın."
+                    },
+                    "dytc61": {
+                        "title1": "Quiet mode(only for on battery mode)",
+                        "desc1": "The slider is on the far left. Both fan speed and performance are low for a cooler, quieter computer and the best battery life.",
+                        "title2": "Balanced mode",
+                        "desc2": "The slider is on the left or center left. Fan speed and performance are dynamically balanced for the best experience.",
+                        "title3": "Performance mode",
+                        "desc3": "The slider is on the center or center right. Both fan speed and surface temperature are high.",
+                        "title4": "Ultra-performance mode",
+                        "desc4": "The slider is far right, providing ultra-high performance with bigger noise and higher surface temperature."
                     }
                 },
                 "powerSettings": {
@@ -1209,11 +1219,11 @@
                     "or": "Ya da"
                 },
                 "otherSettings": {
-                    "title": "Diğer Ayarlar",
+                    "title": "Lenovo Vantage araç çubuğu",
                     "vantageToolbar": {
-                        "title": "Lenovo Vantage Araç Çubuğu",
-                        "description": "Kolayca daha fazla pil ayrıntısı edinmek ve hızlı ayarlarınıza erişmek için Vantage Araç Çubuğu'nu Windows görev çubuğuna sabitleyin.",
-                        "hint": "The options in the image depend on the capacity of the machine. For example, – some machines support backlight settings, and some may not."
+                        "title": "Lenovo Vantage araç çubuğu ve premium ayarları",
+                        "description": "En sık kullandığınız ayarlara kolayca erişmek ve size özel premium teklifleri ve güncellemeleri almak için Lenovo Vantage araç çubuğunu Windows görev çubuğuna sabitleyin.",
+                        "hint": "Görüntüdeki seçenekler makinenin kapasitesine bağlıdır. Örneğin, bazı makineler arka ışık ayarlarını desteklerken bazıları desteklemeyebilir."
                     }
                 },
                 "batterySettings": {
@@ -1471,7 +1481,6 @@
                             "games": "GAME",
                             "voip": "VOICE"
                         },
-                        "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
                                 "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
@@ -1479,9 +1488,6 @@
                             },
                             "entertainmentMode": {
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
                                 "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
@@ -1547,7 +1553,7 @@
                 "display": {
                     "title": "Ekran",
                     "displayColorTemperature": {
-						"title": "Göz koruması kipi",
+                        "title": "Göz koruması kipi",
                         "description": "Göz yorgunluğunu önlemek için bilgisayarınızı uzun süre kullandığınızda ekranınızın renk sıcaklığını mavi ışığı filtreleyecek şekilde ayarlayabilirsiniz. Ayrıca, sıcak renkler özellikle geceleri uyumanız için iyidir.",
                         "link": {
                             "click": "Renk sıcaklığını değiştirmek için",
@@ -1857,10 +1863,10 @@
                 },
                 "backlight": {
                     "title": "Klavye arka ışığı",
-					"description": {
-						"base": "Karanlıkta veya zayıf ışık koşullarında yazmayı kolaylaştırmak için klavye arka ışığını etkinleştirin. Klavye arka ışığı ayarlarını Fn+Ara çubuğu tuş birleşimine basarak da değiştirebilirsiniz.",
-						"auto": "Karanlıkta veya zayıf ışık koşullarında yazmayı kolaylaştırmak için klavye arka ışığını etkinleştirin. Arka ışık ayarlarını Fn+Ara çubuğu tuş kombinasyonuna basarak veya \"Otomatik\" değerine ayarlayarak değiştirebilirsiniz. \"Otomatik\" kipinde sistem, klavye arka ışığını ortam ışığına göre otomatik olarak ayarlar."
-					},
+                    "description": {
+                        "base": "Karanlıkta veya zayıf ışık koşullarında yazmayı kolaylaştırmak için klavye arka ışığını etkinleştirin. Klavye arka ışığı ayarlarını Fn+Ara çubuğu tuş birleşimine basarak da değiştirebilirsiniz.",
+                        "auto": "Karanlıkta veya zayıf ışık koşullarında yazmayı kolaylaştırmak için klavye arka ışığını etkinleştirin. Arka ışık ayarlarını Fn+Ara çubuğu tuş kombinasyonuna basarak veya \"Otomatik\" değerine ayarlayarak değiştirebilirsiniz. \"Otomatik\" kipinde sistem, klavye arka ışığını ortam ışığına göre otomatik olarak ayarlar."
+                    },
                     "level": {
                         "auto": "Otomatik",
                         "low": "Düşük",
@@ -2091,7 +2097,7 @@
             "antiTheft": {
                 "heading": "Akıllı algılama",
                 "title": "Akıllı hareket alarmı",
-                "tooltip":"<div>Bu özellik, bilgisayar uyku kipindeyken veya kapalıyken çalışmaz. Aşağıdaki işlemlerin ayarlarını kontrol edin:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>kapağı kapatma işlemleri</li><li>kritik düzeyde/düşük pil işlemi</li><li>Açma/kapama düğmesi işlemi</li><li>uyku düğmesi işlemi</li><li>uyku kipine geçiş için boşta kalma zaman aşımı ayarları</li></ul></div>Aksi takdirde, alarm tetiklenmez veya fotoğraf çekmez.</div>",
+                "tooltip": "<div>Bu özellik, bilgisayar uyku kipindeyken veya kapalıyken çalışmaz. Aşağıdaki işlemlerin ayarlarını kontrol edin:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>kapağı kapatma işlemleri</li><li>kritik düzeyde/düşük pil işlemi</li><li>Açma/kapama düğmesi işlemi</li><li>uyku düğmesi işlemi</li><li>uyku kipine geçiş için boşta kalma zaman aşımı ayarları</li></ul></div>Aksi takdirde, alarm tetiklenmez veya fotoğraf çekmez.</div>",
                 "desc": "<p><label>Bu özelliği etkin durumdayken, ekranınız kilitlendiğinde ve özellikle halka açık bir yerde hareket algılandığında cihaz bip sesi çıkarmaya başlar.</label></p> <p><label>Alarmı kapatmak için doğru parolayı girin veya Windows Hello ile giriş yapın.</label></p>",
                 "note": {
                     "description": "Sisteme başarıyla giriş yaptıktan sonra, bu özellik otomatik olarak kapanır. Özelliği kullanmak için yeniden etkinleştirmeniz gerekir."
@@ -3698,7 +3704,9 @@
                 "custom": "Custom",
                 "txtFrom": "From",
                 "txtTo": "To",
-                "txtGo": "Go"
+                "txtGo": "Go",
+                "summaryCaption": "space reclaimed",
+                "fixes": "fixes"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

@@ -1187,6 +1187,16 @@
                             "desc3": "El graduador está en el extremo derecho. La velocidad del ventilador y la temperatura permisible de la superficie son superiores para obtener el rendimiento máximo."
                         },
                         "desc3_1": "Algunas de las modalidades pueden ajustarse automáticamente en un rango de rendimiento más amplio en función de su actividad. Para deshabilitar la modalidad automática, presione Fn+ T."
+                    },
+                    "dytc61": {
+                        "title1": "Quiet mode(only for on battery mode)",
+                        "desc1": "The slider is on the far left. Both fan speed and performance are low for a cooler, quieter computer and the best battery life.",
+                        "title2": "Balanced mode",
+                        "desc2": "The slider is on the left or center left. Fan speed and performance are dynamically balanced for the best experience.",
+                        "title3": "Performance mode",
+                        "desc3": "The slider is on the center or center right. Both fan speed and surface temperature are high.",
+                        "title4": "Ultra-performance mode",
+                        "desc4": "The slider is far right, providing ultra-high performance with bigger noise and higher surface temperature."
                     }
                 },
                 "powerSettings": {
@@ -1209,11 +1219,11 @@
                     "or": "- O bien -"
                 },
                 "otherSettings": {
-                    "title": "Otros valores",
+                    "title": "Barra de herramientas de Lenovo Vantage",
                     "vantageToolbar": {
-                        "title": "Barra de herramientas del Lenovo Vantage",
-                        "description": "Ancle la barra de herramientas de Vantage a la barra de tareas de Windows para obtener fácilmente más detalles sobre la batería y acceder a su configuración rápida.",
-                        "hint": "The options in the image depend on the capacity of the machine. For example, – some machines support backlight settings, and some may not."
+                        "title": "Configuración de barra de herramientas de Lenovo Vantage y Premium",
+                        "description": "Ancle la barra de herramientas de Lenovo Vantage a la barra de tareas de Windows para acceder fácilmente a las configuraciones más utilizadas y obtener ofertas Premium y actualizaciones para usted.",
+                        "hint": "Las opciones de la imagen dependen de la capacidad del sistema. Por ejemplo, algunas máquinas admiten configuraciones de retroiluminación y otras no."
                     }
                 },
                 "batterySettings": {
@@ -1471,7 +1481,6 @@
                             "games": "GAME",
                             "voip": "VOICE"
                         },
-                        "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
                                 "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
@@ -1479,9 +1488,6 @@
                             },
                             "entertainmentMode": {
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
                                 "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
@@ -1857,10 +1863,10 @@
                 },
                 "backlight": {
                     "title": "Retroiluminación del teclado",
-					"description": {
-						"base": "Active la retroiluminación del teclado para facilitar la escritura en una condición de luz oscura o deficiente. También puede cambiar los valores de la iluminación posterior presionando la combinación de las teclas Fn+barra espaciadora.",
-						"auto": "Active la retroiluminación del teclado para facilitar la escritura en una condición de luz oscura o deficiente. Puede cambiar los valores de la iluminación posterior pulsando las combinaciones de las teclas Fn+barra espaciadora o configurándolo en “Auto”. En el modo “Auto”, el sistema se ajusta automáticamente la iluminación posterior del teclado según la luz ambiental."
-					},
+                    "description": {
+                        "base": "Active la retroiluminación del teclado para facilitar la escritura en una condición de luz oscura o deficiente. También puede cambiar los valores de la iluminación posterior presionando la combinación de las teclas Fn+barra espaciadora.",
+                        "auto": "Active la retroiluminación del teclado para facilitar la escritura en una condición de luz oscura o deficiente. Puede cambiar los valores de la iluminación posterior pulsando las combinaciones de las teclas Fn+barra espaciadora o configurándolo en “Auto”. En el modo “Auto”, el sistema se ajusta automáticamente la iluminación posterior del teclado según la luz ambiental."
+                    },
                     "level": {
                         "auto": "Automático",
                         "low": "Baja",
@@ -2091,7 +2097,7 @@
             "antiTheft": {
                 "heading": "Detección inteligente",
                 "title": "Alerta de movimiento inteligente",
-                "tooltip":"<div>Esta característica no funciona cuando el sistema está en modalidad de hibernación o está apagado. Compruebe los valores en las siguientes acciones:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>acciones de la cubierta de cierre</li><li>acción de batería crítica/baja</li><li>acción del botón de encendido</li><li>acción del botón de suspensión</li><li>valores de tiempo de espera de inactividad hasta hibernación</li></ul></div>De lo contrario, no activará la alarma ni tomará las fotos.</div>",
+                "tooltip": "<div>Esta característica no funciona cuando el sistema está en modalidad de hibernación o está apagado. Compruebe los valores en las siguientes acciones:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>acciones de la cubierta de cierre</li><li>acción de batería crítica/baja</li><li>acción del botón de encendido</li><li>acción del botón de suspensión</li><li>valores de tiempo de espera de inactividad hasta hibernación</li></ul></div>De lo contrario, no activará la alarma ni tomará las fotos.</div>",
                 "desc": "<p><label>Al habilitar esta característica, el dispositivo empezará a emitir un pitido cuando la pantalla esté bloqueada y se detecten movimientos, especialmente en un espacio público.</label></p> <p><label>Para descartar la alarma, especifique la contraseña correcta o inicie sesión en Windows Hello.</label></p>",
                 "note": {
                     "description": "Una vez inicie sesión satisfactoriamente en el sistema, esta característica se desactivará automáticamente. Debe habilitarla de nuevo para utilizarla."
@@ -3698,7 +3704,9 @@
                 "custom": "Custom",
                 "txtFrom": "From",
                 "txtTo": "To",
-                "txtGo": "Go"
+                "txtGo": "Go",
+                "summaryCaption": "space reclaimed",
+                "fixes": "fixes"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

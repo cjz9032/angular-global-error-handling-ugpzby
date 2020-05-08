@@ -1187,6 +1187,16 @@
                             "desc3": "Liukusäädin on ääriasennossa oikealla. Tuulettimen kierrosnopeus ja sallittu pinnan lämpötila ovat suurempia parhaan suorituskyvyn turvaamiseksi."
                         },
                         "desc3_1": "Jotkin toimintatilat voivat säätyä automaattisesti laajemman suorituskykyskaalan sisällä eri toimintojen mukaan. Jos haluat poistaa automaattisen tilan käytöstä, paina Fn+ T."
+                    },
+                    "dytc61": {
+                        "title1": "Quiet mode(only for on battery mode)",
+                        "desc1": "The slider is on the far left. Both fan speed and performance are low for a cooler, quieter computer and the best battery life.",
+                        "title2": "Balanced mode",
+                        "desc2": "The slider is on the left or center left. Fan speed and performance are dynamically balanced for the best experience.",
+                        "title3": "Performance mode",
+                        "desc3": "The slider is on the center or center right. Both fan speed and surface temperature are high.",
+                        "title4": "Ultra-performance mode",
+                        "desc4": "The slider is far right, providing ultra-high performance with bigger noise and higher surface temperature."
                     }
                 },
                 "powerSettings": {
@@ -1209,11 +1219,11 @@
                     "or": "Tai"
                 },
                 "otherSettings": {
-                    "title": "Muut asetukset",
+                    "title": "Lenovo Vantage -työkalurivi",
                     "vantageToolbar": {
-                        "title": "Lenovo Vantage -työkalurivi",
-                        "description": "Kiinnitä Vantage-työkalurivi Windowsin tehtäväpalkkiin, jotta saat helposti lisää akun tietoja ja voit käyttää pika-asetuksia.",
-                        "hint": "The options in the image depend on the capacity of the machine. For example, – some machines support backlight settings, and some may not."
+                        "title": "Lenovo Vantage -työkalurivi ja premium-asetukset",
+                        "description": "Kiinnitä Lenovo Vantage -työkalurivi Windowsin tehtäväpalkkiin päästäksesi helposti käsiksi eniten käyttämiisi asetuksiin ja nähdäksesi sinulle sopivia tarjouksia ja päivityksiä.",
+                        "hint": "Kuvassa esitetyt vaihtoehdot riippuvat tietokoneen kapasiteetista. Esimerkiksi kaikki tietokoneet eivät välttämättä tue taustavalon asetuksia."
                     }
                 },
                 "batterySettings": {
@@ -1471,7 +1481,6 @@
                             "games": "GAME",
                             "voip": "VOICE"
                         },
-                        "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
                                 "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
@@ -1479,9 +1488,6 @@
                             },
                             "entertainmentMode": {
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
                                 "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
@@ -1857,10 +1863,10 @@
                 },
                 "backlight": {
                     "title": "Näppäimistön taustavalo",
-					"description": {
-						"base": "Aktivoi näppäimistön taustavalo helpottaaksesi kirjoittamista pimeässä tai heikosti valaistuissa olosuhteissa. Voit myös muuttaa näppäimistön taustavalon asetuksia painamalla Fn+välilyönti.",
-						"auto": "Aktivoi näppäimistön taustavalo helpottaaksesi kirjoittamista pimeässä tai heikosti valaistuissa olosuhteissa. Voit muuttaa taustavalon asetuksia painamalla Fn+välilyönti tai valitsemalla ”Automaattinen”. ”Automaattinen”-tilassa järjestelmä säätää näppäimistön taustavaloa automaattisesti ympäristön valon mukaan."
-					},
+                    "description": {
+                        "base": "Aktivoi näppäimistön taustavalo helpottaaksesi kirjoittamista pimeässä tai heikosti valaistuissa olosuhteissa. Voit myös muuttaa näppäimistön taustavalon asetuksia painamalla Fn+välilyönti.",
+                        "auto": "Aktivoi näppäimistön taustavalo helpottaaksesi kirjoittamista pimeässä tai heikosti valaistuissa olosuhteissa. Voit muuttaa taustavalon asetuksia painamalla Fn+välilyönti tai valitsemalla ”Automaattinen”. ”Automaattinen”-tilassa järjestelmä säätää näppäimistön taustavaloa automaattisesti ympäristön valon mukaan."
+                    },
                     "level": {
                         "auto": "Automaattinen",
                         "low": "Pieni",
@@ -2091,7 +2097,7 @@
             "antiTheft": {
                 "heading": "Älykäs tunnistustoiminto",
                 "title": "Älykäs liikkeentunnistus",
-                "tooltip":"<div>Tämä ominaisuus ei toimi tietokoneen ollessa horrostilassa tai sammutettuna. Tarkista seuraavien toimintojen asetukset:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>kannen sulkemisen toiminnot</li><li>toiminto akun varauksen ollessa loppumassa</li><li>virtapainikkeen toiminto</li><li>lepotilapainikkeen toiminto</li><li>horrostilaan siirtymisen aikakatkaisun asetukset</li></ul></div>Muussa tapauksessa se ei aiheuta hälytystä tai ota valokuvia.</div>",
+                "tooltip": "<div>Tämä ominaisuus ei toimi tietokoneen ollessa horrostilassa tai sammutettuna. Tarkista seuraavien toimintojen asetukset:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>kannen sulkemisen toiminnot</li><li>toiminto akun varauksen ollessa loppumassa</li><li>virtapainikkeen toiminto</li><li>lepotilapainikkeen toiminto</li><li>horrostilaan siirtymisen aikakatkaisun asetukset</li></ul></div>Muussa tapauksessa se ei aiheuta hälytystä tai ota valokuvia.</div>",
                 "desc": "<p><label>Kun tämä ominaisuus on käytössä, laite aloittaa äänimerkin toistamisen, jos näyttösi ollessa lukittuna havaitaan liikettä, varsinkin julkisissa tiloissa.</label></p> <p><label>Lopeta hälytys syöttämällä oikea salasana tai kirjautumalla sisään Windows Hellon avulla.</label></p>",
                 "note": {
                     "description": "Kun kirjaudut järjestelmään onnistuneesti, tämä ominaisuus poistetaan automaattisesti käytöstä. Sinun täytyy ottaa se uudelleen käyttöön käyttääksesi sitä."
@@ -3698,7 +3704,9 @@
                 "custom": "Custom",
                 "txtFrom": "From",
                 "txtTo": "To",
-                "txtGo": "Go"
+                "txtGo": "Go",
+                "summaryCaption": "space reclaimed",
+                "fixes": "fixes"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

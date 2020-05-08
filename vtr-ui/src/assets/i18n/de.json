@@ -1187,6 +1187,16 @@
                             "desc3": "Der Schieberegler ist ganz rechts. Lüftergeschwindigkeit und zulässige Oberflächentemperatur sind höher für maximale Leistung."
                         },
                         "desc3_1": "Einige Modi können je nach Aktivität automatisch über einen größeren Leistungsumfang angepasst werden. Um den Automatikmodus zu deaktivieren, drücken Sie die Tastenkombination Fn+ T."
+                    },
+                    "dytc61": {
+                        "title1": "Quiet mode(only for on battery mode)",
+                        "desc1": "The slider is on the far left. Both fan speed and performance are low for a cooler, quieter computer and the best battery life.",
+                        "title2": "Balanced mode",
+                        "desc2": "The slider is on the left or center left. Fan speed and performance are dynamically balanced for the best experience.",
+                        "title3": "Performance mode",
+                        "desc3": "The slider is on the center or center right. Both fan speed and surface temperature are high.",
+                        "title4": "Ultra-performance mode",
+                        "desc4": "The slider is far right, providing ultra-high performance with bigger noise and higher surface temperature."
                     }
                 },
                 "powerSettings": {
@@ -1209,11 +1219,11 @@
                     "or": "Oder"
                 },
                 "otherSettings": {
-                    "title": "Weitere Einstellungen",
+                    "title": "Lenovo Vantage-Symbolleiste",
                     "vantageToolbar": {
-                        "title": "Lenovo Vantage-Symbolleiste",
-                        "description": "Vantage-Symbolleiste an die Windows-Taskleiste anheften, um weitere Akkudetails und Zugriff auf Ihre Schnelleinstellungen zu erhalten.",
-                        "hint": "The options in the image depend on the capacity of the machine. For example, – some machines support backlight settings, and some may not."
+                        "title": "Lenovo Vantage-Symbolleiste und Premium-Einstellungen",
+                        "description": "Heften Sie die Lenovo Vantage-Symbolleiste an die Windows-Taskleiste an, um einfach auf häufig verwendete Einstellungen zuzugreifen und Premium-Angebote und Aktualisierungen zu erhalten.",
+                        "hint": "Die Optionen im Bild hängen von der Kapazität des Computers ab. Einige Computer unterstützen beispielsweise Einstellungen für die Hintergrundbeleuchtung, andere möglicherweise nicht."
                     }
                 },
                 "batterySettings": {
@@ -1471,7 +1481,6 @@
                             "games": "GAME",
                             "voip": "VOICE"
                         },
-                        "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
                                 "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
@@ -1479,9 +1488,6 @@
                             },
                             "entertainmentMode": {
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
                                 "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
@@ -1857,10 +1863,10 @@
                 },
                 "backlight": {
                     "title": "Tastaturhintergrundbeleuchtung",
-					"description": {
-						"base": "Aktivieren Sie die Tastaturhintergrundbeleuchtung, um die Eingabe bei dunklen oder schlechten Lichtverhältnissen zu erleichtern. Sie können die Einstellungen für die Tastaturbeleuchtung auch ändern, indem Sie die Tastenkombination Fn+Leertaste drücken.",
-						"auto": "Aktivieren Sie die Tastaturhintergrundbeleuchtung, um die Eingabe bei dunklen oder schlechten Lichtverhältnissen zu erleichtern. Sie können die Einstellungen für die Beleuchtung ändern, indem Sie die Tastenkombination Fn+Leertaste drücken oder \"Auto\" einstellen. Im Modus \"Auto\" passt das System die Tastaturhintergrundbeleuchtung automatisch an das Umgebungslicht an."
-					},
+                    "description": {
+                        "base": "Aktivieren Sie die Tastaturhintergrundbeleuchtung, um die Eingabe bei dunklen oder schlechten Lichtverhältnissen zu erleichtern. Sie können die Einstellungen für die Tastaturbeleuchtung auch ändern, indem Sie die Tastenkombination Fn+Leertaste drücken.",
+                        "auto": "Aktivieren Sie die Tastaturhintergrundbeleuchtung, um die Eingabe bei dunklen oder schlechten Lichtverhältnissen zu erleichtern. Sie können die Einstellungen für die Beleuchtung ändern, indem Sie die Tastenkombination Fn+Leertaste drücken oder \"Auto\" einstellen. Im Modus \"Auto\" passt das System die Tastaturhintergrundbeleuchtung automatisch an das Umgebungslicht an."
+                    },
                     "level": {
                         "auto": "Automatisch",
                         "low": "Niedrig",
@@ -2091,7 +2097,7 @@
             "antiTheft": {
                 "heading": "Intelligente Sensorik",
                 "title": "Intelligenter Bewegungsalarm",
-                "tooltip":"<div>Diese Funktion funktioniert nicht, wenn sich der Computer im Ruhezustand befindet oder ausgeschaltet ist. Überprüfen Sie die Einstellungen der folgenden Aktionen:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>Aktionen beim Zuklappen</li><li>Aktion bei kritischem/niedrigem Akkuzustand</li><li>Aktion für Netzschalter</li><li>Aktion für Energiespartaste</li><li>Einstellungen für Leerlaufzeitüberschreitung zu Ruhezustand</li></ul></div>Andernfalls wird kein Alarm ausgelöst und es werden keine Fotos gespeichert.</div>",
+                "tooltip": "<div>Diese Funktion funktioniert nicht, wenn sich der Computer im Ruhezustand befindet oder ausgeschaltet ist. Überprüfen Sie die Einstellungen der folgenden Aktionen:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>Aktionen beim Zuklappen</li><li>Aktion bei kritischem/niedrigem Akkuzustand</li><li>Aktion für Netzschalter</li><li>Aktion für Energiespartaste</li><li>Einstellungen für Leerlaufzeitüberschreitung zu Ruhezustand</li></ul></div>Andernfalls wird kein Alarm ausgelöst und es werden keine Fotos gespeichert.</div>",
                 "desc": "<p><label>Wenn diese Funktion aktiviert ist, beginnt die Einheit zu piepen, wenn der Bildschirm gesperrt ist und Bewegungen erkannt werden, vor allem an einem öffentlichen Ort.</label></p> <p><label>Geben Sie zum Beenden des Alarms das richtige Kennwort ein oder melden Sie sich mit Windows Hello an.</label></p>",
                 "note": {
                     "description": "Wenn Sie sich erfolgreich beim System angemeldet haben, wird die Funktion automatisch ausgeschaltet. Sie müssen sie erneut aktivieren, um sie verwenden zu können."
@@ -3698,7 +3704,9 @@
                 "custom": "Custom",
                 "txtFrom": "From",
                 "txtTo": "To",
-                "txtGo": "Go"
+                "txtGo": "Go",
+                "summaryCaption": "space reclaimed",
+                "fixes": "fixes"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",

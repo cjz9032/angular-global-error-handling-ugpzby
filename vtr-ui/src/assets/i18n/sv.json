@@ -1187,6 +1187,16 @@
                             "desc3": "Reglaget är skjutet längst åt höger. Fläkthastighet och tillåten yttemperatur ökas för maximal prestanda."
                         },
                         "desc3_1": "Vissa av lägena kan justeras automatiskt i ett större prestandaintervall baserat på din aktivitet. Tryck på Fn+ T för att inaktivera automatiskt läge."
+                    },
+                    "dytc61": {
+                        "title1": "Quiet mode(only for on battery mode)",
+                        "desc1": "The slider is on the far left. Both fan speed and performance are low for a cooler, quieter computer and the best battery life.",
+                        "title2": "Balanced mode",
+                        "desc2": "The slider is on the left or center left. Fan speed and performance are dynamically balanced for the best experience.",
+                        "title3": "Performance mode",
+                        "desc3": "The slider is on the center or center right. Both fan speed and surface temperature are high.",
+                        "title4": "Ultra-performance mode",
+                        "desc4": "The slider is far right, providing ultra-high performance with bigger noise and higher surface temperature."
                     }
                 },
                 "powerSettings": {
@@ -1209,11 +1219,11 @@
                     "or": "Eller"
                 },
                 "otherSettings": {
-                    "title": "Andra inställningar",
+                    "title": "Lenovo Vantage-verktygsfältet",
                     "vantageToolbar": {
-                        "title": "Lenovo Vantage Toolbar",
-                        "description": "Fäst Vantage-verktygsfältet i aktivitetsfältet i Windows så att du lätt kan se mer batteriinformation och komma åt snabbinställningarna.",
-                        "hint": "The options in the image depend on the capacity of the machine. For example, – some machines support backlight settings, and some may not."
+                        "title": "Lenovo Vantage-verktygsfältet och premiuminställningar",
+                        "description": "Fäst Lenovo Vantage-verktygsfältet i aktivitetsfältet i Windows så att du snabbt kommer åt dina vanligaste inställningar och får personligt anpassade premiumerbjudanden och uppdateringar.",
+                        "hint": "Alternativen i bilden beror på enhetens kapacitet. Vissa enheter har till exempel stöd för inställningar av bakgrundsbelysning och andra inte."
                     }
                 },
                 "batterySettings": {
@@ -1471,7 +1481,6 @@
                             "games": "GAME",
                             "voip": "VOICE"
                         },
-                        "automaticAudioCheckboxText": "Automatic audio optimization for",
                         "automaticAudioMode": {
                             "voIPMode": {
                                 "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
@@ -1479,9 +1488,6 @@
                             },
                             "entertainmentMode": {
                                 "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "description1": "If you are using apps such as iTunes, it changes to the Music mode.",
-                                "description2": "If you are using apps such as Youtube, it changes to the Movie mode.",
-                                "description3": "If you are using gaming apps, it changes to the Gaming mode accordingly.",
                                 "checkboxText": "Automatically optimize audio for entertainment"
                             }
                         }
@@ -1857,10 +1863,10 @@
                 },
                 "backlight": {
                     "title": "Bakgrundsbelysning för tangentbord",
-					"description": {
-						"base": "Aktivera tangentbordets bakgrundsbelysning om du vill kunna skriva i mörker eller dåligt ljus lättare. Du kan även ändra inställningarna för tangentbordets bakgrundsbelysning genom att trycka på Fn+Mellanslag.",
-						"auto": "Aktivera tangentbordets bakgrundsbelysning om du vill kunna skriva i mörker eller dåligt ljus lättare. Du kan ändra inställningarna för bakgrundsbelysningen genom att trycka på Fn+Mellanslag eller välja inställningen Automatisk. Med inställningen Automatisk anpassas tangentbordets bakgrundsbelysning efter omgivningens ljusförhållanden."
-					},
+                    "description": {
+                        "base": "Aktivera tangentbordets bakgrundsbelysning om du vill kunna skriva i mörker eller dåligt ljus lättare. Du kan även ändra inställningarna för tangentbordets bakgrundsbelysning genom att trycka på Fn+Mellanslag.",
+                        "auto": "Aktivera tangentbordets bakgrundsbelysning om du vill kunna skriva i mörker eller dåligt ljus lättare. Du kan ändra inställningarna för bakgrundsbelysningen genom att trycka på Fn+Mellanslag eller välja inställningen Automatisk. Med inställningen Automatisk anpassas tangentbordets bakgrundsbelysning efter omgivningens ljusförhållanden."
+                    },
                     "level": {
                         "auto": "Automatisk",
                         "low": "Låg",
@@ -2091,7 +2097,7 @@
             "antiTheft": {
                 "heading": "Intelligent avkänning",
                 "title": "Smart rörelselarm",
-                "tooltip":"<div>Funktionen fungerar inte om datorn är i viloläge eller avstängd. Kontrollera inställningarna för följande åtgärder:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>stänga locket</li><li>kritisk/låg batteriladdning</li><li>strömbrytare</li><li>knapp för strömsparläge</li><li>från inaktiv till viloläge</li></ul></div>I annat fall utlöses inte larmet och det går inte heller att ta foton.</div>",
+                "tooltip": "<div>Funktionen fungerar inte om datorn är i viloläge eller avstängd. Kontrollera inställningarna för följande åtgärder:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>stänga locket</li><li>kritisk/låg batteriladdning</li><li>strömbrytare</li><li>knapp för strömsparläge</li><li>från inaktiv till viloläge</li></ul></div>I annat fall utlöses inte larmet och det går inte heller att ta foton.</div>",
                 "desc": "<p><label>Om du aktiverar den här funktionen börjar enheten signalera när bildskärmen är låst och rörelser identifieras, speciellt på en offentlig plats.</label></p> <p><label>Du stänger av larmet genom att ange rätt lösenord eller logga in med Windows Hello.</label></p>",
                 "note": {
                     "description": "När du har loggat in på systemet stängs funktionen av automatiskt. Du måste aktivera den igen om du vill använda den."
@@ -3698,7 +3704,9 @@
                 "custom": "Custom",
                 "txtFrom": "From",
                 "txtTo": "To",
-                "txtGo": "Go"
+                "txtGo": "Go",
+                "summaryCaption": "space reclaimed",
+                "fixes": "fixes"
             },
             "lastScanResults": {
                 "title": "Last 5 scan results:",
