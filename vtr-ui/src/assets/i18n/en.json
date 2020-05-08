@@ -368,14 +368,23 @@
 				"numbersSelectedNumpad": "selected macrokey numpad",
 				"macrokeySettings1": {
 					"option1": "on",
-					"option2": "macro key settings enabled when gaming",
-					"option3": "macro key settings off"
+					"option2": "enabled when gaming",
+					"option3": "off"
 				},
 				"numberInput": {
 					"title": "Number",
 					"bundled": "bundled",
 					"unbundled": "unbundled",
 					"isSelected": "is selected"
+				},
+				"macrokeyStatus": {
+					"label": "Macro Key status"
+				},
+				"ignoreIntervalStatus": {
+					"label": "Interval setting"
+				},
+				"repeatStatus": {
+					"label": "Repeat frequency"
 				}
 			}
 		},
