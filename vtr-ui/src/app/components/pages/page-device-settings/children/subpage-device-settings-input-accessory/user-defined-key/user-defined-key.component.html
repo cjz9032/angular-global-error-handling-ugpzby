@@ -76,11 +76,10 @@
 										</a>
 									</div>
 								</div> -->
-								<vtr-ui-dropdown 
-									[dropdownType]="'userdefined-key'"
+								<vtr-ui-dropdown [dropdownType]="'userdefined-key'"
 									[dropDownName]="'UserDefinedKeyState.Dropdown'"
-									[value]="selectedValue.value" 
-									[dropDownId]="'ip-userdefinedkey-dropdown-btn'" 
+									[value]="selectedValue.value"
+									[dropDownId]="'ip-userdefinedkey-dropdown-btn'"
 									[list]="userDefinedKeyOptions"
 									[disabled]="false"
 									(change)="onChange($event)">
@@ -340,16 +339,19 @@
 													name="invoke-key-value"
 													spellcheck="false"
 													id="invoke-key-sequence"
-													attr.araia-label="invoke-key-sequence"
+													attr.aria-label="invoke-key-sequence"
 													[(ngModel)]="this.keyCode"
 													[placeholder]="'device.deviceSettings.inputAccessories.userDefinedKey.invokeKeySequence.placeholder' | translate"
 													(keydown)="invokeKeySequence($event)"
 													required></textarea>
 												<div class="del-btn"
+													#deleteKeyFocus
 													*ngIf="this.keyCode"
 													id="delete-key-sequence"
+													tabindex="0"
 													attr.aria-label="delete-key-sequence"
-													(click)="resetInvokeSequence($event);">
+													(click)="resetInvokeSequence($event);"
+													(keydown.enter)="resetInvokeSequence($event);">
 													<a>{{'hardwareScan.scheduledScan.delete'| translate}}</a></div>
 											</div>
 										</div>

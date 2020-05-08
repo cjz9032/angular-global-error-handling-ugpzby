@@ -307,6 +307,9 @@ div {
 		width: 75%;
 	}
 	.del-btn {
+		&:focus {
+			@include outline-blue;
+		}
 		text-align: right;
 		margin-top: 1rem;
 		a {
