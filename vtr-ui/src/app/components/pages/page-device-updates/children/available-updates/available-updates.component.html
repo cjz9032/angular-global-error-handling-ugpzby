@@ -115,8 +115,10 @@
 									{{'systemUpdates.ignoredUpdates' | translate}}</div>
 								<div class="px-3 collapse-control"
 									id="su-col-exp-ignore"
-									aria-label="su-col-exp-ignore"
+									role="button"
+									aria-label="ignored updates collapse"
 									tabindex="0"
+									[attr.aria-expanded]="!isCollapsed"
 									(keydown.enter)="onToggle()"
 									(click)="onToggle()">
 									<div *ngIf="isCollapsed"
