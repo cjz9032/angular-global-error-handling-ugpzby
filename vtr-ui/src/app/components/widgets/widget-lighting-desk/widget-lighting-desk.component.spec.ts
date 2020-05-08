@@ -9,17 +9,38 @@ import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 const gamingLightingServiceMock = jasmine.createSpyObj('GamingLightingService', ['getLightingProfileId', 'getLightingProfileById', 'setLightingProfileId', 'setLightingProfileBrightness',
     'isShellAvailable', 'getLightingCapabilities', 'setLightingDefaultProfileById', 'setLightingProfileEffectColor']);
-const commonServiceMock = {
-    getLocalStorageValue: (key, defaultVal) => {
-        if(localStorage.getItem(key) !== "undefined"){
-            return JSON.parse(localStorage.getItem(key));
-        }else{
-            return undefined;
+let commonServiceMock = {  
+    getLocalStorageValue(key: any) {
+        switch (key) {
+            case '[LocalStorageKey] LightingCapabilitiesNewversionDesk':
+                return lightingCapility;
+            case '[LocalStorageKey] ProfileId':
+                return profileId;
+            case '[LocalStorageKey] LightingProfileByIdDesk2':
+                return getLightingProfileById;
+            case '[LocalStorageKey] LightingProfileDeskDefault2':
+                return getLightingProfileById;
         }
     },
-    setLocalStorageValue: (key, value) => localStorage.setItem(key, JSON.stringify(value))
+    setLocalStorageValue(key: any, value: any) {
+        switch (key) {
+            case '[LocalStorageKey] LightingCapabilitiesNewversionDesk':
+                lightingCapility = value;
+                break;
+            case '[LocalStorageKey] ProfileId':
+                profileId = value;
+                break;
+            case '[LocalStorageKey] LightingProfileByIdDesk2':
+                getLightingProfileById = value;
+                break;
+            case '[LocalStorageKey] LightingProfileDeskDefault2':
+                getLightingProfileById = value;
+                break;
+        }
+    }
 };
-const getLightingProfileById: any = {
+let profileId:number = 2;
+let getLightingProfileById: any = {
     didSuccess: true,
     profileId: 2,
     brightness: 0,
@@ -39,7 +60,7 @@ const getLightingProfileByIdFail: any = {
         { lightPanelType: 4, lightEffectType: 1, lightColor: "009BFA", lightBrightness: 3, lightSpeed: 1 },
         { lightPanelType: 8, lightEffectType: 1, lightColor: "009BFA", lightBrightness: 3, lightSpeed: 2 }]
 }
-const lightingCapility: any = {
+let lightingCapility: any = {
     LightPanelType: [1, 2, 4, 8],
     LedType_Complex: [268435456, 1, 2, 4, 8, 32, 256, 512],
     LedType_simple: [268435456, 1, 2, 3, 4],
@@ -76,12 +97,12 @@ describe('WidgetLightingDeskComponent', () => {
         }).compileComponents();
         fixture = TestBed.createComponent(WidgetLightingDeskComponent);
         component = fixture.debugElement.componentInstance;
-        if(localStorage.getItem("[LocalStorageKey] LightingCapabilitiesNewversionDesk") === null || localStorage.getItem("[LocalStorageKey] LightingCapabilitiesNewversionDesk") === undefined){
-            localStorage.setItem("[LocalStorageKey] LightingCapabilitiesNewversionDesk",JSON.stringify(lightingCapility));
+        if(commonServiceMock.getLocalStorageValue("[LocalStorageKey] LightingCapabilitiesNewversionDesk") === null || commonServiceMock.getLocalStorageValue("[LocalStorageKey] LightingCapabilitiesNewversionDesk") === undefined){
+            commonServiceMock.setLocalStorageValue("[LocalStorageKey] LightingCapabilitiesNewversionDesk",lightingCapility);
         }
-        localStorage.setItem('[LocalStorageKey] ProfileId', "2");
+        commonServiceMock.setLocalStorageValue('[LocalStorageKey] ProfileId', 2);
         fixture.detectChanges();
-    }));
+    }));  
 
     it('should create', fakeAsync(() => {
         expect(component).toBeTruthy();
@@ -97,7 +118,7 @@ describe('WidgetLightingDeskComponent', () => {
 
     it('Profile should be off', fakeAsync(() => {
         gamingLightingServiceMock.isShellAvailable = true;
-        localStorage.setItem('[LocalStorageKey] ProfileId', "0");
+        commonServiceMock.setLocalStorageValue('[LocalStorageKey] ProfileId', 0);
         component.lightingCapabilities.LightPanelType = [4];
         component.lightingProfileById = undefined;
         component.ngOnInit();
@@ -180,20 +201,20 @@ describe('WidgetLightingDeskComponent', () => {
         expect(component.currentProfileId).toBeLessThanOrEqual(2);
     })
 
-    // it('should switch right button', fakeAsync(() => {
-    //     gamingLightingServiceMock.isShellAvailable = true;
-    //     component.countObj['count'+component.currentProfileId] = 1;
-    //     component.lightingCapabilities.LightPanelType.length = 4;
-    //     component.panelSwitchRig();
-    //     tick(10);
-    //     expect(component.currentProfileId).toBeLessThanOrEqual(2);
+    it('should switch right button', fakeAsync(() => {
+        gamingLightingServiceMock.isShellAvailable = true;
+        component.countObj['count'+component.currentProfileId] = 1;
+        component.lightingCapabilities.LightPanelType.length = 4;
+        component.panelSwitchRig();
+        tick(10);
+        expect(component.currentProfileId).toBeLessThanOrEqual(2);
 
-    //     component.countObj['count'+component.currentProfileId] = 4;
-    //     component.lightingCapabilities.LightPanelType.length = 5;
-    //     component.panelSwitchRig();
-    //     tick(10);
-    //     expect(component.isDisabledrig[component.currentProfileId-1]).toEqual(true);
-    // }))
+        component.countObj['count'+component.currentProfileId] = 4;
+        component.lightingCapabilities.LightPanelType.length = 5;
+        component.panelSwitchRig();
+        tick(10);
+        expect(component.isDisabledrig[component.currentProfileId-1]).toEqual(true);
+    }))
 
     it('should set the lighting profile', fakeAsync(() => {
         const event = {'target':{'value':2}};
@@ -209,7 +230,7 @@ describe('WidgetLightingDeskComponent', () => {
 
         const event2 = {'target':{'value':0}};
         gamingLightingServiceMock.setLightingProfileId.and.returnValue(Promise.resolve(getLightingProfileByIdFail));
-        localStorage.setItem('[LocalStorageKey] ProfileId', "0");
+        commonServiceMock.setLocalStorageValue('[LocalStorageKey] ProfileId', 0);
         component.lightingCapabilities.LightPanelType = [4];
         component.setLightingProfileId(event2);
         tick(10);
@@ -392,7 +413,7 @@ describe('WidgetLightingDeskComponent', () => {
     it('should show profileId when enter lighting subpage', () => {
         gamingLightingServiceMock.isShellAvailable = true;
         component.currentProfileId = 2;
-        localStorage.setItem('[LocalStorageKey] ProfileId',undefined);
+        commonServiceMock.setLocalStorageValue('[LocalStorageKey] ProfileId',undefined);
         component.initProfileId();
         expect(component.initProfileId()).toBeUndefined();
         component.currentProfileId = null;
