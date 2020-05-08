@@ -1,13 +1,8 @@
 <div class="modal-smart-performance-cancel">
 	<div class="row justify-content-end">
 		<div class="btn-close">
-			<button type="button"
-				class="close"
-				vtrMetrics
-				metricsEvent="FeatureClick"
-				metricsParent="Pages.support.smartPerformance"
-				metricsItem="'btn.closeModal'"
-				(click)="closeModal()">
+			<button type="button" class="close" vtrMetrics metricsEvent="FeatureClick"
+				metricsParent="Pages.support.smartPerformance" metricsItem="'btn.closeModal'" (click)="closeModal()">
 				<fa-icon [icon]="['fal', 'times']"></fa-icon>
 			</button>
 		</div>
@@ -16,19 +11,22 @@
 		<h1>{{'smartPerformance.scanningPage.cancelScan.title' |translate }}</h1>
 		<p>{{'smartPerformance.scanningPage.cancelScan.description' |translate }}</p>
 		<hr>
-		<div class="row">
-			<button class="btn cancel-button" (click)="cancelScan()" vtrMetrics
-			metricsEvent="ItemClick"
-			metricsParent="Pages.support.smartPerformance"
-			metricsItem="'btn.cancelScan'"
-			class="btn btn-link cancel-button">{{'smartPerformance.scanningPage.cancelScan.yesButton' |translate }} ({{secondsCountdown}})</button>
+		<div class="vtr-battery-card" *ngIf="isLoading">
+			<div class="container" [style.height.px]="40">
+				<div class="loader center-block">
+					<div class="spinner-border text-secondary progress-spinner" role="status"></div>
+				</div>
+			</div>
+		</div>
+		<div class="row" *ngIf="!isLoading">
+			<button class="btn cancel-button" (click)="cancelScan()" vtrMetrics metricsEvent="ItemClick"
+				metricsParent="Pages.support.smartPerformance" metricsItem="'btn.cancelScan'"
+				class="btn btn-link cancel-button">{{'smartPerformance.scanningPage.cancelScan.yesButton' |translate }}</button>
 			<div class="py-5 ml-5">
-				<a (click)="closeModal()" class="resume-scan"
-				vtrMetrics
-				metricsEvent="ItemClick"
-				metricsParent="Pages.support.smartPerformance"
-				metricsItem="'btn.resumeScan'"
-				>{{'smartPerformance.scanningPage.cancelScan.noButton' |translate }}</a>
+				<a (click)="closeModal()" class="resume-scan" vtrMetrics metricsEvent="ItemClick"
+					metricsParent="Pages.support.smartPerformance"
+					metricsItem="'btn.resumeScan'">{{'smartPerformance.scanningPage.cancelScan.noButton' |translate }}
+					({{secondsCountdown}})</a>
 			</div>
 		</div>
 	</div>

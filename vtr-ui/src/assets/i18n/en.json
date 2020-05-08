@@ -2340,6 +2340,7 @@
 		"section2Description": "Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
 		"tunePCPerformance": {
 			"title": "TUNE PC PERFORMANCE",
+			"summaryTitle":"Tune PC Performance",
 			"heading": "Show your computer some extra love",
 			"description": "Even the best computer will benefit from periodic tune-ups. Get a tune-up and get more done with our powerful app.",
 			"tabSet1": {
@@ -2361,6 +2362,7 @@
 		"boostInternetPerformance": {
 			"title": "BOOST INTERNET PERFORMANCE",
 			"extraTitle": "INTERNET PERFORMANCE",
+			"summaryTitle":"Internet Performance",
 			"heading": "Give your internet a boost",
 			"description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
 			"tabSet1": {
@@ -2381,6 +2383,7 @@
 		},
 		"malwareSecurity": {
 			"title": "MALWARE & SECURITY",
+			"summaryTitle":"Malware & Security",
 			"heading": "Give your computer the extra care it needs",
 			"description": "Malware can lead to a computer crash, data compromise and performance degradation. Get Malware removal and much, much more done.",
 			"tabSet1": {
