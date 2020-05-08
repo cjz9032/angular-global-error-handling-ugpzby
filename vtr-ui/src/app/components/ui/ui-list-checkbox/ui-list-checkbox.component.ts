@@ -136,6 +136,7 @@ export class UiListCheckboxComponent implements OnInit {
 			});
 		modalRef.componentInstance.url = this.readMeUrl;
 		modalRef.componentInstance.updateModalMetrics = updateModalMetrics;
+		this.focusOnElement('system-update-back-btn');
 	}
 
 	public onIgnoreUpdateClick(packageName: string, isIgnored: boolean) {
@@ -149,5 +150,9 @@ export class UiListCheckboxComponent implements OnInit {
 		this.translate.stream(this.notInstalledText).subscribe((res) => {
 			this.notInstalledText = res;
 		});
+	}
+
+	private focusOnElement(element) {
+		document.getElementById(element).focus();
 	}
 }
