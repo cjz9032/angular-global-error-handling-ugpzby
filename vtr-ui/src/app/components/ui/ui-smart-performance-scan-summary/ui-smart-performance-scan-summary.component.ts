@@ -33,8 +33,8 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	title = 'smartPerformance.title';
 	public menuItems: any = [
 		{ itemName: 'Annual', itemKey: 'ANNUAL' },
-		{ itemName: 'Half yearly', itemKey: 'HALFYEARLY' },
-		{ itemName: 'Quarterly', itemKey: 'QUARTERLY' }
+		{ itemName: 'Quarterly', itemKey: 'QUARTERLY' },
+		{ itemName: 'Half yearly', itemKey: 'HALFYEARLY' }
 	];
 	// public menuItems: any = [
 	// 	{ itemName: '', itemKey: 'ANNUAL' },
