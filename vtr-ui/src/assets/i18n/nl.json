@@ -2076,19 +2076,18 @@
                 "tooltip": "Deze functie is niet van toepassing op webvideospelers. Populaire lokale videospelers, zoals Windows Media Player, 5KPlayer en dergelijke, ondersteunen deze functie."
             },
             "superResolution": {
-                "heading": "Intelligente media",
-                "title": "Schaalverhoging beeldschermresolutie",
-                "desc": "<p><label>Deze functie verbetert de beleving van het kijken van video's door de resolutie van de video te verbeteren. Dit werkt het beste als de video een lage resolutie heeft.</label></p> <p><label>Deze functie kan invloed hebben op de levensduur en temperatuur van de batterij en kan ruis veroorzaken. Niet gebruiken in gelijkstroommodus (batterijstroom). anders neemt het stroomverbruik toe en gaat de batterij minder lang mee.</label></p>",
-                "tooltip": "Deze functie werkt alleen voor onderstaande videospelers:<br>Windows Media Player<br>Chrome<br>Films en tv<br>PotPlayer<br>GOM Player<br>Web-browser-gebaseerde spelers (bv. Chrome)<br><br>Zie de handleiding bij de computer voor informatie over het inschakelen van deze functie voor PotPlayer en GOM Player.",
-                "note": {
-                    "description": "Deze functie werkt niet als:",
-                    "description1": "De spaarstand voor batterijverbruik is ingeschakeld.",
+				"title": "Schaalverhoging beeldschermresolutie",
+				"desc": "<p><label>Deze functie verbetert de beleving van het kijken van video's door de beeldschermresolutie te verbeteren. Dit werkt het beste als de video een lage resolutie heeft.</label></p> <p><label>Deze functie kan invloed hebben op de levensduur en temperatuur van de batterij en kan ruis veroorzaken. Niet gebruiken in gelijkstroommodus (batterijstroom). anders neemt het stroomverbruik toe en gaat de batterij minder lang mee.</label></p>",
+				"tooltip": "<p>Deze functie werkt alleen voor onderstaande videospelers:<br>Windows Media Player<br>Chrome-speler<br>Films en tv<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>Zie de handleiding bij de computer voor instructies over het inschakelen van deze functie in PotPlayer en GOM Player.</p>",
+				"note": {
+					"description": "Deze functie werkt niet als:",
+					"description1": "De spaarstand voor batterijverbruik is ingeschakeld.",
                     "description2": "De CPU-temperatuur te hoog is.",
-                    "description3": "The device is set to Battery saving mode in \"Intelligent cooling\"."
-                },
-                "imageBefore": "Before",
-                "imageAfter": "After"
-            },
+                    "description3": "Het apparaat is ingesteld op de energiebesparingsmodus in \"Intelligent koelen\"."
+				},
+				"imageBefore":"Voor",
+                "imageAfter":"Na"
+			},
             "antiTheft": {
                 "heading": "Intelligente sensoren",
                 "title": "Slim bewegingsalarm",

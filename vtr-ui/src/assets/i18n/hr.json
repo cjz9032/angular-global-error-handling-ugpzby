@@ -2076,19 +2076,18 @@
                 "tooltip": "Ta značajka nije primjenjiva na web-reproduktore videosadržaja. Popularni lokalni reproduktori videosadržaja, kao što su Windows Media Player, 5KPlayer itd., podržavaju tu značajku."
             },
             "superResolution": {
-                "heading": "Inteligentni mediji",
-                "title": "Povećanje razlučivosti videozapisa",
-                "desc": "<p><label>Ova značajka poboljšava iskustvo reprodukcije videa poboljšanjem razlučivosti videozapisa. Posebno djeluje kada je video loše razlučivosti.</label></p> <p><label>Ova funkcija može utjecati na trajanje baterije, temperaturu baterije i uzrokovati buku. Nemojte ga koristiti u DC načinu rada (način rada baterije). U suprotnom će doći do ubrzanja potrošnje električne energije i skraćivanja vijeka trajanja baterije.</label></p>",
-                "tooltip": "Ova značajka radi samo za video reproduktore ispod video zapisa:<br>Windows Media Player<br>Chrome<br>filmovi i televizija<br>PotPlayer<br>GOM player<br>Reproduktori temeljeni na web preglednicima (npr. Chrome)<br><br>Za upute o tome kako omogućiti ovu funkciju na PotPlayeru i GOM player uređaju, pogledajte korisnički priručnik koji ste dobili s računalom.",
-                "note": {
-                    "description": "Ova značajka ne funkcionira kad:",
-                    "description1": "Omogućen je način rada štednja baterije.",
+				"title": "Povećanje razlučivosti videozapisa",
+				"desc": "<p><label>Ova značajka poboljšava iskustvo reprodukcije videa poboljšanjem razlučivosti videozapisa. Posebno djeluje kada je video loše razlučivosti.</label></p> <p><label>Ova funkcija može utjecati na trajanje baterije, temperaturu baterije i uzrokovati buku. Nemojte ga koristiti u DC načinu rada (način rada baterije). U suprotnom će doći do ubrzanja potrošnje električne energije i skraćivanja vijeka trajanja baterije.</label></p>",
+				"tooltip": "<p>Ova značajka radi samo za sljedeće reproduktore videozapisa:<br>Windows Media Player<br>Player sa sustavom Chrome<br>Filmovi i TV<br>PotPlayer<br>GOM player</p><p class='srTooltip'>Za upute o tome kako omogućiti ovu funkciju na reproduktorima PotPlayer i GOM player, pogledajte korisnički priručnik koji dolazi uz vaše računalo.</p>",
+				"note": {
+					"description": "Ova značajka ne funkcionira kad:",
+					"description1": "Omogućen je način rada štednja baterije.",
                     "description2": "je temperatura CPU-a previsoka.",
-                    "description3": "The device is set to Battery saving mode in \"Intelligent cooling\"."
-                },
-                "imageBefore": "Before",
-                "imageAfter": "After"
-            },
+                    "description3": "Uređaj je postavljen na način uštede baterije u \"Inteligentnom hlađenju\"."
+				},
+				"imageBefore":"Prije",
+                "imageAfter":"Poslije"
+			},
             "antiTheft": {
                 "heading": "Pametno otkrivanje",
                 "title": "Pametni alarm kretanja",
