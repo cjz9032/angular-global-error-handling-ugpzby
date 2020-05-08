@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -16,7 +16,7 @@ import { keyboardMap } from './keyboardKeysMapping';
 	styleUrls: ['./user-defined-key.component.scss']
 })
 export class UserDefinedKeyComponent implements OnInit {
-
+	@ViewChild('deleteKeyFocus') deleteKeyFocus: ElementRef;
 	title = 'device.deviceSettings.inputAccessories.title';
 	udkActionInfo: UDKActionInfo;
 	hasUDKCapability = false;
@@ -304,6 +304,9 @@ export class UserDefinedKeyComponent implements OnInit {
 			if (this.counter <= 5) {
 				this.keyCode = this.keyCode + '+ ' + Object(this.keyboardMappedValues)[event.keyCode];
 				this.keyCodeValue = this.keyCodeValue + ' ' + event.keyCode;
+			}
+			else {
+				this.deleteKeyFocus.nativeElement.focus()
 			}
 		}
 		if (this.counter === 1) {
