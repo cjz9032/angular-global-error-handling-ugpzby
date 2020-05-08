@@ -124,6 +124,9 @@
 			font-size: 2rem;
 			line-height: 3rem;
 			color: $shade_blue;
+			&:focus {
+				outline: 0rem;
+			}
 		}
 		.successtitle{
 			font-weight: $weight_regular;
@@ -165,6 +168,9 @@
 		}
 		.connecting {
 			font-size: 2rem;
+			&:focus {
+				outline: 0rem;
+			}
 		}
 	}
 

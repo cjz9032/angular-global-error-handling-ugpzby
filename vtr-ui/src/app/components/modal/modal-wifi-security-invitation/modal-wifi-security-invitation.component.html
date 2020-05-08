@@ -5,7 +5,7 @@
 			[innerHTML]="headerDescription | translate">
 		</p>
 		<p *ngIf="!joinSuccess" class="description mt-5 mb-3"
-			[innerHTML]="description | translate">
+			[innerHTML]="description | translate" role="text">
 		</p>
 		<div class="form-group code-input-group p-3" [ngClass]="{'d-none': joinSuccess, 'joinfailed': joinFailed, 'input-focus': isFocusIn}">
 			<input type="text" id="chs-btn-inviatation-input" class="form-control"
@@ -22,7 +22,7 @@
 				<div *ngIf="joinSuccess" class="successIcon pb-5">
 					<img [src]=" 'assets/images/connected-home-security/success-join.svg' | svgInline | async">
 				</div>
-				<div class="success pl-3" *ngIf="joinSuccess" [innerHTML]="'security.homeprotection.invitationcode.success' | translate"></div>
+				<div class="success pl-3" *ngIf="joinSuccess" role="text" tabindex="-1" #successMsg [innerHTML]="'security.homeprotection.invitationcode.success' | translate"></div>
 			</div>
 			<div id="ws-invitation-modal-errorMsg" class="failed" *ngIf="joinFailed" [innerHTML]="'security.homeprotection.invitationcode.fail' | translate"></div>
 		</div>
@@ -53,7 +53,7 @@
 	</div>
 	<div class="loading-container flex-column" *ngIf="startJoin">
 		<div class="spinner-border text-primary progress-spinner" role="status"></div>
-		<div class="connecting mt-5" [innerHTML]="'security.homeprotection.invitationcode.connecting' | translate"></div>
+		<div class="connecting mt-5" role="text" tabindex="-1" #connectingMsg [innerHTML]="'security.homeprotection.invitationcode.connecting' | translate"></div>
 	</div>
 
 	<div class="btn-modal-close">
