@@ -1,4 +1,4 @@
-import { Component,	OnInit,	OnDestroy } from '@angular/core';
+import { Component,	OnInit,	OnDestroy, ViewChild, ElementRef } from '@angular/core';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import * as Phoenix from '@lenovo/tan-client-bridge';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
@@ -21,6 +21,10 @@ export class ModalChsStartTrialContainerComponent implements OnInit, OnDestroy {
 	showWhichPage: CHSTrialModalPage;
 	loadingText: string;
 	currentConsoleUrl: string;
+
+	@ViewChild('loadingCHSMsg') loadingCHSMsg: ElementRef;
+	@ViewChild('startTrailModal') startTrailModal: ElementRef;
+
 	constructor(
 		public activeModal: NgbActiveModal,
 		private vantageShellService: VantageShellService,
@@ -43,6 +47,11 @@ export class ModalChsStartTrialContainerComponent implements OnInit, OnDestroy {
 				this.chs.on(EventTypes.chsEvent, this.consoleUrlCallback);
 			}
 		}
+		if (this.showWhichPage === CHSTrialModalPage.disconnect) {
+			setTimeout(() => {
+				this.startTrailModal.nativeElement.focus();
+			}, 0);
+		}
 	}
 
 	closeModal() {
@@ -52,6 +61,9 @@ export class ModalChsStartTrialContainerComponent implements OnInit, OnDestroy {
 	disconnect() {
 		this.showWhichPage = CHSTrialModalPage.loading;
 		this.loadingText = 'homeSecurity.modal.disconnecting';
+		setTimeout(() => {
+			this.loadingCHSMsg.nativeElement.focus();
+		}, 0);
 		this.chs.quitAccount().then((response) => {
 			if (response === 'success') {
 				this.closeModal();
