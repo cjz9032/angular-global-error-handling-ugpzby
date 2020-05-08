@@ -770,20 +770,19 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			const results = { items: [] };
 
 			for (const device of this.devicesRecoverBadSectors) {
+
 				const item = {
 					module: storageModule.name,
 					icon: storageModule.id,
 					name: device.name,
 					collapsed: false,
-					listTest: [],
+					listTest: [{
+						id: '',
+						name: device.name,
+						status: device.status,
+						percent:device.percent,
+					}],
 				};
-
-				item.listTest.push({
-					id: '',
-					name: device.name,
-					status: device.status,
-					percent:device.percent,
-				});
 
 				results.items.push(item);
 			}
@@ -819,24 +818,20 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					icon: storageModule.id,
 					name: device.name,
 					collapsed: false,
-					details: [],
-					listTest: [],
+					details: [
+						{ [this.translate.instant('hardwareScan.recoverBadSectors.numberSectors')]: device.numberOfSectors },
+						{ [this.translate.instant('hardwareScan.recoverBadSectors.numberBadSectors')]: device.numberOfBadSectors },
+						{ [this.translate.instant('hardwareScan.recoverBadSectors.numberFixedSectors')]: device.numberOfFixedSectors },
+						{ [this.translate.instant('hardwareScan.recoverBadSectors.numberNonFixedSectors')]: device.numberOfNonFixedSectors },
+						{ [this.translate.instant('hardwareScan.recoverBadSectors.elapsedTime')]: device.elapsedTime }
+					],
+					listTest: [{
+						id: '',
+						name: device.name,
+						status: device.status,
+						percent:device.percent,
+					}],
 				};
-
-				item.details = [
-					{ [this.translate.instant('hardwareScan.recoverBadSectors.numberSectors')]: device.numberOfSectors },
-					{ [this.translate.instant('hardwareScan.recoverBadSectors.numberBadSectors')]: device.numberOfBadSectors },
-					{ [this.translate.instant('hardwareScan.recoverBadSectors.numberFixedSectors')]: device.numberOfFixedSectors },
-					{ [this.translate.instant('hardwareScan.recoverBadSectors.numberNonFixedSectors')]: device.numberOfNonFixedSectors },
-					{ [this.translate.instant('hardwareScan.recoverBadSectors.elapsedTime')]: device.elapsedTime }
-				];
-
-				item.listTest.push({
-					id: '',
-					name: device.name,
-					status: device.status,
-					percent:device.percent,
-				});
 
 				if (device.status === HardwareScanTestResult.Cancelled) {
 					results.status = HardwareScanTestResult[HardwareScanTestResult.Cancelled];
