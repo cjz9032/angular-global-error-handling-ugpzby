@@ -2101,7 +2101,7 @@
                 "heading": "Intelligent sensing",
 				"title": "Smart motion alarm",
 				"tooltip":"<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>",
-                "desc": "<p><label>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</label></p> <p><label>To dismiss the alarm, enter the correct password or log in by Windows Hello.</label></p>",
+                "desc": "<p><label>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</label></p> <p><label>To dismiss the alarm, please log in to Windows.</label></p>",
                 "note": {
                     "description": "Once you log in the system successfully, this feature will be turned off automatically. You need to enable it again to use it."
                 },
@@ -2115,7 +2115,7 @@
                 },
                 "allowCamera": {
                     "title":"TAKING PHOTOS",
-                    "describe":"When enabling this feature, the camera takes photos automatically when detecting any movement if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
+                    "describe":"When enabling this feature, the camera takes photos automatically when movements are detected if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
                     "checkBoxText":"Enable this feature"
                 },
                 "cameraPrivacy": {
@@ -2127,7 +2127,7 @@
                     "linkText":"Go to Windows Settings to give access"
                 },
                 "photo": {
-                    "title":"THE NUMBER OF PHOTOS TAKEN DURING THE MOVEMENT",
+                    "title":"THE NUMBER OF PHOTOS TAKEN",
                     "tooltip": "The camera on your computer automatically activates to take pictures when movements are detected. Pictures are taken every 2 seconds and are saved to your local storage.",
                     "option1":"5",
                     "option2":"10",

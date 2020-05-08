@@ -273,6 +273,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			if (this.audioService.isShellAvailable) {
 				this.audioService.getDolbyMode()
 					.then((response: DolbyModeResponse) => {
+						response.entertainmentStatus = (response.entertainmentStatus === undefined)? this.dolbyAudioCache.entertainmentStatus : response.entertainmentStatus;
 						this.dolbyModeResponse = response;
 						this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyModeResponse);
 						if (this.dolbyModeResponse.eCourseStatus === undefined) {
