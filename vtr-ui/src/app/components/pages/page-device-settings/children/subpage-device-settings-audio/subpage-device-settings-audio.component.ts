@@ -274,6 +274,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 				this.audioService.getDolbyMode()
 					.then((response: DolbyModeResponse) => {
 						if (response.entertainmentStatus === undefined) {
+							// Old plugin return undefined, Dealing with ui latency issues
 							response.entertainmentStatus = this.dolbyModeResponse.entertainmentStatus;
 						}
 						this.dolbyModeResponse = response;
