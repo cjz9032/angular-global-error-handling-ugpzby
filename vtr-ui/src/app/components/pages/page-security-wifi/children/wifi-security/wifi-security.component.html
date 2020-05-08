@@ -7,7 +7,7 @@
 			<div class="pull right">
 				<img *ngIf="!deviceService.isGaming"
 					class="coronet-logo"
-					[src]=" 'assets/images/coronet-logo.svg' | svgInline | async" 
+					[src]=" 'assets/images/coronet-logo.svg' | svgInline | async"
 					alt="coronet logo"/>
 				<img *ngIf="deviceService.isGaming"
 					class="coronet-logo"
@@ -106,10 +106,11 @@
 													</span>
 												</div>
 												<div class="connection-name media-body border-0 pl-3">
-													<h5 class="mt-0"
-														title=""
+													<span class="hide-text" id="network-history">{{networkLevel[history.good]}}</span>
+													<span class="mt-0 network-name"
+														attr.aria-labelledby="network-history"
 														[ngbTooltip]="history.ssid" tooltipClass="vtr-system-tooltip" container="body"
-														>{{history.ssid}}</h5>
+														>{{history.ssid}}</span>
 													<small class="connection-status text-muted">
 														{{'security.wifisecurity.container.connect' | translate}}
 														{{history.info}}
