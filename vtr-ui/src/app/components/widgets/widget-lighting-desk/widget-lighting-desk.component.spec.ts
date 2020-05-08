@@ -197,6 +197,7 @@ describe('WidgetLightingDeskComponent', () => {
     it('should switch left button',() => {
         gamingLightingServiceMock.isShellAvailable = true;
         component.countObj['count'+component.currentProfileId] = 1;
+        component.lightingProfileById = getLightingProfileById;
         component.panelSwitchLef();
         expect(component.currentProfileId).toBeLessThanOrEqual(2);
     })
