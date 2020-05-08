@@ -534,9 +534,9 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				this.sendTaskActionMetrics(TaskType.RecoverBadSectors, rbsTaskActionResult.taskCount,
 					'', rbsTaskActionResult.taskResult, this.timerService.stop());
 			})
-				.finally(() => {
-					// Defines information about module details
-					this.onViewResultsRecover();
+			.finally(() => {
+				// Defines information about module details
+				this.onViewResultsRecover();
 			});
 		}
 	}
