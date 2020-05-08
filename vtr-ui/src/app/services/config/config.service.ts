@@ -207,7 +207,6 @@ export class ConfigService {
 	}
 
 	initializeSecurityItem(region, items) {
-		this.initializeWiFiItem(items);
 		this.supportFilter(items, 'security', true);
 		this.supportFilter(items, 'anti-virus', true);
 		if (region.toLowerCase() === 'cn') {
@@ -217,6 +216,7 @@ export class ConfigService {
 			this.supportFilter(items, 'internet-protection', true);
 			this.supportFilter(items, 'password-protection', true);
 		}
+		this.initializeWiFiItem(items);
 	}
 
 	initializeWiFiItem(items) {
@@ -236,13 +236,15 @@ export class ConfigService {
 		&& !this.deviceService.isSMode
 		&& !this.deviceService.isArm);
 		this.updateWifiStateCache(wifiIsSupport);
-		this.updateSecurityMenuHide(menu, wifiIsSupport, this.activeSegment);
+		this.updateSecurityMenuHide(menu, wifiIsSupport, this.activeSegment, this.deviceService.isSMode, this.deviceService.isArm);
 	}
 
-	private updateSecurityMenuHide(menu: MenuItem[], wifiIsSupport, currentSegment) {
+	private updateSecurityMenuHide(menu: MenuItem[], wifiIsSupport, currentSegment, isSmode?, isArm?) {
 		const securityMenu =menu.find((item) => item.id === 'security');
 		if (!securityMenu) return;
-		securityMenu.hide = !wifiIsSupport && (currentSegment === SegmentConst.Commercial || currentSegment === SegmentConst.Gaming);
+		securityMenu.hide = isSmode
+		|| isArm
+		|| (!wifiIsSupport && (currentSegment === SegmentConst.Commercial || currentSegment === SegmentConst.Gaming));
 	}
 
 	updateWifiStateCache(wifiIsSupport: boolean) {
