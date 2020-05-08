@@ -1,87 +1,87 @@
 import { TestBed, async } from '@angular/core/testing';
 
 import { QaService } from './qa.service';
-import { TranslateModule, TranslateService, TranslateLoader, LangChangeEvent } from '@ngx-translate/core';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { HttpLoaderFactory } from 'src/app/modules/translation.module';
-import { HttpClient } from '@angular/common/http';
-import { QA } from 'src/app/data-models/qa/qa.model';
-import { of } from 'rxjs';
+// import { TranslateModule, TranslateService, TranslateLoader, LangChangeEvent } from '@ngx-translate/core';
+// import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+// import { HttpLoaderFactory } from 'src/app/modules/translation.module';
+// import { HttpClient } from '@angular/common/http';
+// import { QA } from 'src/app/data-models/qa/qa.model';
+// import { of } from 'rxjs';
 
 
 
 describe('QaService', () => {
-	let service: QaService;
-	let translate: TranslateService;
-	// let http: HttpTestingController;
-	const TRANSLATIONS_EN = 'assets/i18n/en.json';
-	const TRANSLATIONS_FR = 'assets/i18n/fr.json';
+	// let service: QaService;
+	// let translate: TranslateService;
+	// // let http: HttpTestingController;
+	// const TRANSLATIONS_EN = 'assets/i18n/en.json';
+	// const TRANSLATIONS_FR = 'assets/i18n/fr.json';
 
-	const imagePath = 'assets/images/qa';
-	const qas: QA[] = [
-		{
-			id: 1,
-			category: 'q&a',
-			path: '/device/support-detail/1',
-			iconPath: `${imagePath}/svg_icon_qa_backup.svg`,
-			like: false,
-			dislike: false,
-			itemId: '1'
-		},
-		{
-			id: 3,
-			category: 'q&a',
-			path: '/device/support-detail/3',
-			iconPath: `${imagePath}/svg_icon_qa_pcbit.svg`,
-			like: false,
-			dislike: false,
-			itemId: '1'
-		},
-		{
-			id: 4,
-			category: 'q&a',
-			path: '/device/support-detail/4',
-			iconPath: `${imagePath}/svg_icon_qa_battery.svg`,
-			like: false,
-			dislike: false,
-			itemId: '1'
-		},
-		{
-			id: 5,
-			category: 'q&a',
-			path: '/device/support-detail/5',
-			iconPath: `${imagePath}/svg_icon_qa_tablet.svg`,
-			like: false,
-			dislike: false,
-			itemId: '1'
-		},
-		{
-			id: 6,
-			category: 'q&a',
-			path: '/device/support-detail/6',
-			iconPath: `${imagePath}/svg_icon_qa_cortana.svg`,
-			like: false,
-			dislike: false,
-			itemId: '1'
-		}
-	];
+	// const imagePath = 'assets/images/qa';
+	// const qas: QA[] = [
+	// 	{
+	// 		id: 1,
+	// 		category: 'q&a',
+	// 		path: '/device/support-detail/1',
+	// 		iconPath: `${imagePath}/svg_icon_qa_backup.svg`,
+	// 		like: false,
+	// 		dislike: false,
+	// 		itemId: '1'
+	// 	},
+	// 	{
+	// 		id: 3,
+	// 		category: 'q&a',
+	// 		path: '/device/support-detail/3',
+	// 		iconPath: `${imagePath}/svg_icon_qa_pcbit.svg`,
+	// 		like: false,
+	// 		dislike: false,
+	// 		itemId: '1'
+	// 	},
+	// 	{
+	// 		id: 4,
+	// 		category: 'q&a',
+	// 		path: '/device/support-detail/4',
+	// 		iconPath: `${imagePath}/svg_icon_qa_battery.svg`,
+	// 		like: false,
+	// 		dislike: false,
+	// 		itemId: '1'
+	// 	},
+	// 	{
+	// 		id: 5,
+	// 		category: 'q&a',
+	// 		path: '/device/support-detail/5',
+	// 		iconPath: `${imagePath}/svg_icon_qa_tablet.svg`,
+	// 		like: false,
+	// 		dislike: false,
+	// 		itemId: '1'
+	// 	},
+	// 	{
+	// 		id: 6,
+	// 		category: 'q&a',
+	// 		path: '/device/support-detail/6',
+	// 		iconPath: `${imagePath}/svg_icon_qa_cortana.svg`,
+	// 		like: false,
+	// 		dislike: false,
+	// 		itemId: '1'
+	// 	}
+	// ];
 
-	beforeEach(() => TestBed.configureTestingModule({
-		imports: [
-			HttpClientTestingModule,
-			TranslateModule.forRoot({
-				loader: {
-					provide: TranslateLoader,
-					useFactory: HttpLoaderFactory,
-					deps: [HttpClient]
-				}
-			})
-		],
-		providers: [
-			QaService,
-			TranslateService
-		]
-	}));
+	// beforeEach(() => TestBed.configureTestingModule({
+	// 	imports: [
+	// 		HttpClientTestingModule,
+	// 		TranslateModule.forRoot({
+	// 			loader: {
+	// 				provide: TranslateLoader,
+	// 				useFactory: HttpLoaderFactory,
+	// 				deps: [HttpClient]
+	// 			}
+	// 		})
+	// 	],
+	// 	providers: [
+	// 		QaService,
+	// 		TranslateService
+	// 	]
+	// }));
 
 	// it('should set Translation service', () => {
 	// 	// const translate = TestBed.get(QaService)
@@ -90,31 +90,31 @@ describe('QaService', () => {
 	// 	expect(service).toEqual(translate)
 	// });
 
-	it('#QaService should call getById', async () => {
-		const id = 1
-		service = TestBed.get(QaService);
-		const output = qas.find((element, index, array) => {
-			return element.id === id;
-		})
-		expect(service.getById(id)).toEqual(output);
-	});
+	// it('#QaService should call getById', async () => {
+	// 	const id = 1
+	// 	service = TestBed.get(QaService);
+	// 	const output = qas.find((element, index, array) => {
+	// 		return element.id === id;
+	// 	})
+	// 	expect(service.getById(id)).toEqual(output);
+	// });
 
-	it('should set language translations', () => {
-		const evt: LangChangeEvent = {
-			lang: 'en',
-			translations: TRANSLATIONS_EN
-		}
-		service = TestBed.get(QaService)
-		const qa = {
-			title: 'Support Detail',
-			description: 'Some description of translation',
-			keys: 'en'
-		}
-		translate = TestBed.get(TranslateService)
-		spyOnProperty(translate, 'onLangChange').and.returnValue(of(evt))
-		// spyOn(translate, 'stream').and.returnValue(of(qa))
-		service.setCurrentLangTranslations()
-	});
+	// it('should set language translations', () => {
+	// 	const evt: LangChangeEvent = {
+	// 		lang: 'en',
+	// 		translations: TRANSLATIONS_EN
+	// 	}
+	// 	service = TestBed.get(QaService)
+	// 	const qa = {
+	// 		title: 'Support Detail',
+	// 		description: 'Some description of translation',
+	// 		keys: 'en'
+	// 	}
+	// 	translate = TestBed.get(TranslateService)
+	// 	spyOnProperty(translate, 'onLangChange').and.returnValue(of(evt))
+	// 	// spyOn(translate, 'stream').and.returnValue(of(qa))
+	// 	service.setCurrentLangTranslations()
+	// });
 
 	// it('should call getQATranslation --- isPreserved', () => {
 	// 	service = TestBed.get(QaService);
