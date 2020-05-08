@@ -85,7 +85,6 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		private logger: LoggerService,
 		private commonService: CommonService,
 		private vantageShellService: VantageShellService) {
-		this.dolbyAudioCache = this.commonService.getLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, undefined);
 		this.Windows = vantageShellService.getWindows();
 		if (this.Windows) {
 			this.microphoneDevice = this.Windows.Devices.Enumeration.DeviceAccessInformation
@@ -160,8 +159,9 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	initDolbyAudioFromCache() {
 		try {
 			this.dolbyModeResponse.available = this.commonService.getLocalStorageValue(LocalStorageKey.IsDolbyModeAvailable, true);
-			if (this.dolbyAudioCache !== undefined) {
-				this.dolbyModeResponse = this.dolbyAudioCache;
+			const dolbyAudioCache = this.commonService.getLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, undefined);
+			if (dolbyAudioCache !== undefined) {
+				this.dolbyModeResponse = dolbyAudioCache;
 				this.refreshDolbyAudioProfileState();
 				this.autoDolbyFeatureLoader = false;
 				this.eCourseLoader = false;
@@ -273,7 +273,9 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			if (this.audioService.isShellAvailable) {
 				this.audioService.getDolbyMode()
 					.then((response: DolbyModeResponse) => {
-						response.entertainmentStatus = (response.entertainmentStatus === undefined)? this.dolbyAudioCache.entertainmentStatus : response.entertainmentStatus;
+						if (response.entertainmentStatus === undefined) {
+							response.entertainmentStatus = this.dolbyModeResponse.entertainmentStatus;
+						}
 						this.dolbyModeResponse = response;
 						this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyModeResponse);
 						if (this.dolbyModeResponse.eCourseStatus === undefined) {
