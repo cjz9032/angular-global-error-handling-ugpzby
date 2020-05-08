@@ -102,14 +102,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	gotoLinks = ['other', 'smartSettings', 'smartStandby', 'battery', 'power'];
 
 	// remove power smart settings after intelligent cooling code updates
-	headerMenuItems = [
-		{
-			title: 'device.deviceSettings.power.powerSmartSettings.title',
-			path: 'smartSettings',
-			metricsItem: 'PowerSmartSettings',
-			order: 2
-		}
-	];
+	headerMenuItems = [];
 
 	constructor(
 		private routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
@@ -128,9 +121,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.initDataFromCache();
 		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
 		if (this.isDesktopMachine) {
-			// TODO: remove onSetSmartSettingsCapability when intelligent cooling fixed
-			this.onSetSmartSettingsCapability(false);
-			// this.checkIsPowerPageAvailable(false, 'smartSettings');
+			this.checkIsPowerPageAvailable(false, 'smartSettings');
 			this.checkIsPowerPageAvailable(false, 'smartStandby');
 			this.checkIsPowerPageAvailable(false, 'battery');
 		}
@@ -185,7 +176,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	initDataFromCache() {
 		// this.initBatteryLinkFromCache();
 		this.initSmartStandbyFromCache();
-		this.initPowerSmartSettingFromCache();
 		this.initAirplanePowerFromCache();
 		this.initBatteryChargeThresholdFromCache();
 		this.initGaugeResetInfoFromCache();
@@ -197,19 +187,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	}
 
-	public initPowerSmartSettingFromCache() {
-		try {
-			const cache = this.commonService.getLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, undefined);
-			if (cache) {
-				const showIC = cache.showIC;
-				if (showIC === 0) {
-					this.onSetSmartSettingsCapability(false);
-				}
-			}
-		} catch (error) {
-			this.logger.exception('initPowerSmartSettingFromCache', error);
-		}
-	}
 
 	initSmartStandbyFromCache() {
 		const capability = this.commonService.getLocalStorageValue(LocalStorageKey.SmartStandbyCapability, undefined);

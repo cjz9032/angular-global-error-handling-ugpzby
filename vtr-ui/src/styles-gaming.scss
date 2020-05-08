@@ -2250,7 +2250,6 @@ button {
 	}
 }
 
-.is-gaming,
 .gaming-help-popup,
 .battery-modal-size {
 	button:focus,
@@ -2258,5 +2257,17 @@ button {
 	*:focus {
 		outline: 0;
 		box-shadow: none !important;
+	}
+}
+.is-gaming{
+vtr-page-lightingcustomize,vtr-page-macrokey,
+vtr-page-networkboost,vtr-page-autoclose,
+vtr-page-device-gaming {
+		button:focus,
+		span:focus,
+		*:focus {
+			outline: 0;
+			box-shadow: none !important;
+		}
 	}
 }

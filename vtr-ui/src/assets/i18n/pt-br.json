@@ -1547,7 +1547,7 @@
                 "display": {
                     "title": "Monitor",
                     "displayColorTemperature": {
-                        "title": "Modo Proteção Ocular",
+						"title": "Modo de proteção ocular",
                         "description": "Para evitar cansaço visual, você pode ajustar a temperatura da cor da tela para filtrar a luz azul quando usar o computador por um longo período de tempo. Além disso, cores quentes são boas para dormir, especialmente à noite.",
                         "link": {
                             "click": "Clique",
@@ -1857,10 +1857,10 @@
                 },
                 "backlight": {
                     "title": "Retroiluminação do teclado",
-                    "description": {
-                        "base": "Ative a luz de fundo do teclado para facilitar a digitação em condições de luz escura ou fraca. Você também pode alterar as configurações da luz de fundo do teclado pressionando a tecla Fn+Espaço.",
-                        "auto": "Ative a luz de fundo do teclado para facilitar a digitação em condições de luz escura ou fraca. Você pode alterar as configurações da luz de fundo pressionando a tecla Fn+Espaço ou defini-la como \"Automático\". A opção \"Automático\" ajusta automaticamente a luz de fundo do teclado de acordo com a luz ambiente."
-                    },
+					"description": {
+						"base": "Ative a luz de fundo do teclado para facilitar a digitação em ambientes escuros ou sob iluminação fraca. Você também pode alterar as configurações da luz de fundo do teclado pressionando a combinação de teclas Fn+Espaço.",
+						"auto": "Ative a luz de fundo do teclado para facilitar a digitação em ambientes escuros ou sob iluminação fraca. Você pode alterar as configurações da luz de fundo pressionando a combinação de teclas Fn+Espaço ou definindo-as como \"Automático\". No modo \"Automático\", o sistema ajusta automaticamente a luz de fundo do teclado de acordo com a luz ambiente."
+					},
                     "level": {
                         "auto": "Automático",
                         "low": "Baixo",

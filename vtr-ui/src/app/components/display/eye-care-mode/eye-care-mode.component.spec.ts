@@ -2,7 +2,6 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA, Pipe, SimpleChange } from '@angular/core';
 import { EyeCareModeComponent } from './eye-care-mode.component';
 import { TranslateModule } from '@ngx-translate/core';
-import { ChangeContext, PointerType } from 'ng5-slider';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 const eyeCareModeSettings = {
 	available: true,
@@ -13,13 +12,15 @@ const eyeCareModeSettings = {
 };
 const sunsetToSunriseStatus = {
 	available: true,
-	status: true
+	status: true,
+	permission: true,
+	sunriseTime: '06:00',
+	sunsetTime: '06:00'
 };
-let pt: PointerType;
-const changeContext: ChangeContext = {
+
+const changeContext = {
 	value: 10,
-	highValue: 12,
-	pointerType: pt
+	highValue: 12
 };
 describe('EyeCareModeComponent', () => {
 	let component: EyeCareModeComponent;
@@ -41,23 +42,23 @@ describe('EyeCareModeComponent', () => {
 	it('should create', () => {
 		expect(component).toBeTruthy();
 	});
-	it('should test onResetTemparature method', () => {
+	it('should test onResetTemperature method', () => {
 		spyOn(component.resetTemperature, 'emit').and.callThrough();
 		component.onResetTemperature(new Event('click'));
 		expect(component.resetTemperature.emit).toHaveBeenCalled();
 	});
 
-	it('should test onEyeCareTemparatureChange method', () => {
+	it('should test onEyeCareTemperatureChanged method', () => {
 		spyOn(component.eyeCareTemperatureChange, 'emit').and.callThrough();
-		component.onEyeCareTemperatureChange(changeContext.value);
+		component.onEyeCareTemperatureChanged(changeContext.value);
 		expect(component.eyeCareTemperatureChange.emit).toHaveBeenCalled();
 	});
-	it('should test onEyeCareTemparatureValueChange method', () => {
+	it('should test onEyeCareTemperaturePreview method', () => {
 		spyOn(
 			component.eyeCareTemperatureValueChange,
 			'emit'
 		).and.callThrough();
-		component.onEyeCareTemperatureValueChange(changeContext.value);
+		component.onEyeCareTemperaturePreview(changeContext.value);
 		expect(component.eyeCareTemperatureValueChange.emit).toHaveBeenCalled();
 	});
 	it('should test onSunsetToSunrise method', () => {
@@ -67,13 +68,13 @@ describe('EyeCareModeComponent', () => {
 	});
 
 	it('should check sunsetToSunriseStatus in onChanges method', () => {
-		const sunsetToSunriseStatus = {
-			available: true,
-			status: true,
-			permission: true,
-			sunriseTime: 'abc',
-			sunsetTime: 'xyz'
-		};
+		// const sunsetToSunriseStatus = {
+		// 	available: true,
+		// 	status: true,
+		// 	permission: true,
+		// 	sunriseTime: 'abc',
+		// 	sunsetTime: 'xyz'
+		// };
 
 		component.ngOnChanges({
 			sunsetToSunriseStatus: new SimpleChange(
@@ -86,14 +87,6 @@ describe('EyeCareModeComponent', () => {
 		expect(component.sunriseToSunsetText).toBe('');
 	});
 	it('should check sunsetToSunriseStatus in onChanges method', () => {
-		const sunsetToSunriseStatus = {
-			available: true,
-			status: true,
-			permission: true,
-			sunriseTime: 'abc',
-			sunsetTime: 'xyz'
-		};
-
 		component.ngOnChanges({
 			sunsetToSunriseStatus: new SimpleChange(
 				null,

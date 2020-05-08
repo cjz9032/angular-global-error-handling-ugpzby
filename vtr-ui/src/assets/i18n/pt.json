@@ -1547,7 +1547,7 @@
                 "display": {
                     "title": "Ecrã",
                     "displayColorTemperature": {
-                        "title": "Modo Cuidados com a Visão",
+						"title": "Modo cuidados com a visão",
                         "description": "Para evitar o cansaço dos olhos, pode ajustar a temperatura da cor do ecrã para filtrar a luz azul quando utiliza o computador durante muito tempo. Além disso, as cores quentes são benéficas para o sono, sobretudo à noite.",
                         "link": {
                             "click": "Clique",
@@ -1857,10 +1857,10 @@
                 },
                 "backlight": {
                     "title": "Retroiluminação do teclado",
-                    "description": {
-                        "base": "Ative a retroiluminação do teclado para facilitar a digitação num ambiente escuro ou mal iluminado. Também pode alterar as definições de retroiluminação do teclado ao premir Fn+Barra de espaços.",
-                        "auto": "Ative a retroiluminação do teclado para facilitar a digitação num ambiente escuro ou mal iluminado. Pode alterar as definições de retroiluminação ao premir Fn+Barra de espaços ou ao defini-las como \"Automático\". A opção \"Automático\" ajusta automaticamente a retroiluminação do teclado de acordo com a luz ambiente."
-                    },
+					"description": {
+						"base": "Ative a retroiluminação do teclado para facilitar a digitação num ambiente escuro ou mal iluminado. Também pode alterar as definições de retroiluminação do teclado ao premir a combinação de teclas Fn+Barra de espaços.",
+						"auto": "Ative a retroiluminação do teclado para facilitar a digitação num ambiente escuro ou mal iluminado. Pode alterar as definições de retroiluminação ao premir a combinação Fn+Barra de espaços ou ao defini-las como \"Automático\". No modo \"Automático\", o sistema ajusta automaticamente a retroiluminação do teclado de acordo com a luz ambiente."
+					},
                     "level": {
                         "auto": "Auto",
                         "low": "Baixo",

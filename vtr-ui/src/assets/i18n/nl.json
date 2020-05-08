@@ -1547,7 +1547,7 @@
                 "display": {
                     "title": "Weergave",
                     "displayColorTemperature": {
-                        "title": "Oogzorg-modus",
+						"title": "Oogzorgmodus",
                         "description": "Om de vermoeide ogen te voorkomen, kunt u de kleurtemperatuur van het beeldscherm aanpassen om het blauwe lampje uit te filteren als u de computer voor langere tijd gebruikt. Bovendien zijn warme kleuren goed voor uw slaap, vooral 's avonds.",
                         "link": {
                             "click": "Klik",
@@ -1857,10 +1857,10 @@
                 },
                 "backlight": {
                     "title": "Achtergrondverlichting toetsenbord",
-                    "description": {
-                        "base": "Activeer de achtergrondverlichting van het toetsenbord om het typen in het donker of bij weinig licht te vergemakkelijken. U kunt de instellingen voor de achtergrondverlichting van het toetsenbord ook wijzigen door op Fn+spatiebalk te drukken.",
-                        "auto": "Activeer de achtergrondverlichting van het toetsenbord om het typen in het donker of bij weinig licht te vergemakkelijken. U kunt de instellingen voor de achtergrondverlichting wijzigen door op Fn+spatiebalk te drukken of door deze op \"Automatisch\" in te stellen. Bij de optie \"Automatisch\" wordt de achtergrondverlichting van het toetsenbord automatisch aan het omgevingslicht aangepast."
-                    },
+					"description": {
+						"base": "Activeer de achtergrondverlichting van het toetsenbord om het typen in het donker of bij weinig licht te vergemakkelijken. U kunt de instellingen voor de achtergrondverlichting van het toetsenbord ook wijzigen door op Fn+spatiebalk-toetscombinaties te drukken.",
+						"auto": "Activeer de achtergrondverlichting van het toetsenbord om het typen in het donker of bij weinig licht te vergemakkelijken. U kunt de instellingen voor de achtergrondverlichting wijzigen door op Fn+spatiebalk-toetscombinaties te drukken of door deze op \"Automatisch\" in te stellen. In de modus \"Automatisch\" wordt de achtergrondverlichting van het toetsenbord automatisch aan het omgevingslicht aangepast."
+					},
                     "level": {
                         "auto": "Automatisch",
                         "low": "Laag",

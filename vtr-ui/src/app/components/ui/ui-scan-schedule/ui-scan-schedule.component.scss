@@ -483,6 +483,9 @@ vtr-ui-smart-performance-scan-summary {
 			opacity: 0.5;
 			line-height: 2;
 			font-weight: $weight_regular;
+			@media #{$breakpoint_sm}{
+				font-size: 1.4rem;
+			}
 		}
 		.icon {
 			color: #7D5FEF;
@@ -787,6 +790,11 @@ vtr-ui-smart-performance-scan-summary {
 		.disable-list {
 			background: $gaming_switch_light;
 			opacity: 0.3;
+			.status {
+				fa-icon {
+					cursor: default;
+				}
+			}
 		}
 	}
 	.labels { 

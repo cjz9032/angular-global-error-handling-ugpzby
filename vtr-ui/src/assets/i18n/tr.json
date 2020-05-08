@@ -1547,7 +1547,7 @@
                 "display": {
                     "title": "Ekran",
                     "displayColorTemperature": {
-                        "title": "Göz Koruması Kipi",
+						"title": "Göz koruması kipi",
                         "description": "Göz yorgunluğunu önlemek için bilgisayarınızı uzun süre kullandığınızda ekranınızın renk sıcaklığını mavi ışığı filtreleyecek şekilde ayarlayabilirsiniz. Ayrıca, sıcak renkler özellikle geceleri uyumanız için iyidir.",
                         "link": {
                             "click": "Renk sıcaklığını değiştirmek için",
@@ -1857,10 +1857,10 @@
                 },
                 "backlight": {
                     "title": "Klavye arka ışığı",
-                    "description": {
-                        "base": "Karanlıkta veya zayıf ışık koşullarında yazmayı kolaylaştırmak için klavye arka ışığını etkinleştirin. Klavye arka ışığı ayarlarını Fn+Ara çubuğu tuşlarına basarak da değiştirebilirsiniz.",
-                        "auto": "Karanlıkta veya zayıf ışık koşullarında yazmayı kolaylaştırmak için klavye arka ışığını etkinleştirin. Arka ışık ayarlarını Fn+Ara çubuğu tuşlarına basarak veya “Otomatik” olarak ayarlayarak değiştirebilirsiniz. “Otomatik” seçeneği, klavye arka ışığını ortam ışığına göre otomatik olarak ayarlar."
-                    },
+					"description": {
+						"base": "Karanlıkta veya zayıf ışık koşullarında yazmayı kolaylaştırmak için klavye arka ışığını etkinleştirin. Klavye arka ışığı ayarlarını Fn+Ara çubuğu tuş birleşimine basarak da değiştirebilirsiniz.",
+						"auto": "Karanlıkta veya zayıf ışık koşullarında yazmayı kolaylaştırmak için klavye arka ışığını etkinleştirin. Arka ışık ayarlarını Fn+Ara çubuğu tuş kombinasyonuna basarak veya \"Otomatik\" değerine ayarlayarak değiştirebilirsiniz. \"Otomatik\" kipinde sistem, klavye arka ışığını ortam ışığına göre otomatik olarak ayarlar."
+					},
                     "level": {
                         "auto": "Otomatik",
                         "low": "Düşük",

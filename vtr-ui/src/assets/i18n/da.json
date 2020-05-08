@@ -1857,10 +1857,10 @@
                 },
                 "backlight": {
                     "title": "Baggrundslys for tastatur",
-                    "description": {
-                        "base": "Aktiver tastaturets baggrundslys for at gøre det lettere at skrive i mørke eller dårlig belysning. Du kan også ændre indstillingerne for tastaturets baggrundslys ved at trykke på Fn+mellemrumstasten.",
-                        "auto": "Aktiver tastaturets baggrundslys for at gøre det lettere at skrive i mørke eller dårlig belysning. Du kan ændre indstillingerne for baggrundslyset ved at trykke på Fn+mellemrumstasten eller indstille det til \"Auto\". Indstillingen \"Auto\" justerer automatisk tastaturets baggrundslys i forhold til det omgivende lys."
-                    },
+					"description": {
+						"base": "Aktiver tastaturets baggrundslys for at gøre det lettere at skrive i mørke eller dårlig belysning. Du kan også ændre indstillingerne for tastaturets baggrundslys ved at trykke på Fn+mellemrumstasten.",
+						"auto": "Aktiver tastaturets baggrundslys for at gøre det lettere at skrive i mørke eller dårlig belysning. Du kan ændre indstillingerne for baggrundslyset ved at trykke på Fn + mellemrumstasten eller indstille det til \"Auto\". I tilstanden \"Auto\" justerer systemet automatisk tastaturets baggrundslys i forhold til det omgivende lys."
+					},
                     "level": {
                         "auto": "Auto",
                         "low": "Lav",

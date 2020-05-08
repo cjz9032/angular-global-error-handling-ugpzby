@@ -1857,10 +1857,10 @@
                 },
                 "backlight": {
                     "title": "Osvetlitev tipkovnice",
-                    "description": {
-                        "base": "Aktivirajte osvetlitev tipkovnice za lažje tipkanje v temnih ali slabih svetlobnih pogojih. S tipkama »Fn+preslednica« lahko tudi spremenite nastavitve osvetlitve tipkovnice.",
-                        "auto": "Aktivirajte osvetlitev tipkovnice za lažje tipkanje v temnih ali slabih svetlobnih pogojih. S tipkama »Fn+preslednica« lahko tudi spremenite nastavitve osvetlitve tipkovnice ali pa osvetlitev nastavite na »Samodejno«. Možnost »Samodejno« bo samodejno prilagodila osvetlitev tipkovnice glede na okoljsko svetlobo."
-                    },
+					"description": {
+						"base": "Aktivirajte osvetlitev tipkovnice za lažje tipkanje v temnih ali slabših svetlobnih pogojih. S kombinacijami tipk Fn + preslednica lahko tudi spremenite nastavitve osvetlitve tipkovnice.",
+						"auto": "Aktivirajte osvetlitev tipkovnice za lažje tipkanje v temnih ali slabših svetlobnih pogojih. S kombinacijami tipk Fn + preslednica lahko spremenite nastavitve osvetlitve ali pa osvetlitev nastavite na »Samodejno«. V načinu »Samodejno« sistem samodejno prilagodi osvetlitev tipkovnice glede na okoljsko svetlobo."
+					},
                     "level": {
                         "auto": "Samodejno",
                         "low": "Nizko",

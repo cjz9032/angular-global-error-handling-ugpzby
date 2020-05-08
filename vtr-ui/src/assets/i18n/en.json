@@ -1196,9 +1196,9 @@
 						"title1": "Quiet mode(only for on battery mode)",
 						"desc1": "The slider is on the far left. Both fan speed and performance are low for a cooler, quieter computer and the best battery life.",
 						"title2": "Balanced mode",
-						"desc2": "The slider is in the left or center left. Fan speed and performance are dynamically balanced for the best experience.",
+						"desc2": "The slider is on the left or center left. Fan speed and performance are dynamically balanced for the best experience.",
 						"title3": "Performance mode",
-						"desc3": "The slider is in the center or center right. Both fan speed and surface temperature are higher.",
+						"desc3": "The slider is on the center or center right. Both fan speed and surface temperature are high.",
 						"title4": "Ultra-performance mode",
 						"desc4": "The slider is far right, providing ultra-high performance with bigger noise and higher surface temperature."
 					},
@@ -1564,7 +1564,7 @@
 				"display": {
 					"title": "Display",
 					"displayColorTemperature": {
-						"title": "Eye Care Mode",
+						"title": "Eye care mode",
 						"description": "To avoid eye strain, you can adjust the color temperature of your display to filter out the blue light when you use your computer for a long time. In addition, warm colors are good for your sleeping especially in the night.",
 						"link": {
 							"click": "Click",
@@ -1769,8 +1769,8 @@
 				"backlight": {
 					"title": "Keyboard backlight",
 					"description": {
-						"base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backlight settings by pressing the Fn+Space key.",
-						"auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key or set it as \"Auto\". The \"Auto\" option automatically adjusts the keyboard backlight according to the ambient light."
+						"base": "Activate the keyboard backlight to facilitate typing in a dark or poor light condition. You also can change the keyboard backllight settings by pressing the Fn+Space key combinations.",
+						"auto": "Activate the keyboard backlight to facilitate typing in a dark or poor light condition. You can change the backlight settings by pressing the Fn+Space key combinations or set it as \"Auto\". In \"Auto\" mode, the system automatically adjusts the keyboard backlight according to the ambient light."
 					},
 					"level": {
 						"auto": "Auto",
@@ -1941,7 +1941,7 @@
 					},
 					"facialRecognition": {
 						"title": "FACIAL RECOGNITION",
-						"caption": "This feature helps to improve the recognition performance and avoid unexpected screen lock especially when you lean back in your chair. This feature is processded locally on your device. Lenovo does not access or use it.",
+						"caption": "This feature helps to improve the recognition performance and avoid unexpected screen lock especially when you lean back in your chair. This feature is processed locally on your device. Lenovo does not access or use it.",
 						"checkBox": "Turn on the camera and enable this feature",
 						"note": {
 							"permission": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
@@ -2015,7 +2015,7 @@
 					"description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect any personal data.",
 					"description3": "1. To use above functions, please adjust your screen to an approriate angle so that your face can be recognized.",
 					"description4": "2. Above functions are not supported when:",
-					"description5a": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your compurter, please refer to User Guide that comes with it.",
+					"description5a": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your computer, please refer to User Guide that comes with it.",
 					"description5b": "b. Your computer is in hibernation mode or has been turned off.",
 					"description6": "3. If the Airplane mode is enabled on your computer, these features are disabled.",
 					"description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
@@ -2110,7 +2110,7 @@
                 "heading": "Intelligent sensing",
 				"title": "Smart motion alarm",
 				"tooltip":"<div>This feature does not work when the computer is in hibernation mode or powered off. Check settings in the following actions:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions of the closing lid</li><li>critical/low battery action</li><li>power button action</li><li>sleep button action</li><li>idle timeout settings to hibernation</li></ul></div>Otherwise, it will not trigger alarm, neither taking photos.</div>",
-                "desc": "<p><label>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</label></p> <p><label>To dismiss the alarm, enter the correct password or log in by Windows Hello.</label></p>",
+                "desc": "<p><label>When enabling this feature, the device will start beeping when your screen is locked and movements are detected especially in a public place.</label></p> <p><label>To dismiss the alarm, please log in to Windows.</label></p>",
                 "note": {
                     "description": "Once you log in the system successfully, this feature will be turned off automatically. You need to enable it again to use it."
                 },
@@ -2124,7 +2124,7 @@
                 },
                 "allowCamera": {
                     "title":"TAKING PHOTOS",
-                    "describe":"When enabling this feature, the camera takes photos automatically when detecting any movement if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
+                    "describe":"When enabling this feature, the camera takes photos automatically when movements are detected if your screen is locked. This data is processed locally on your device. Lenovo does not access or use it.",
                     "checkBoxText":"Enable this feature"
                 },
                 "cameraPrivacy": {
@@ -2136,7 +2136,7 @@
                     "linkText":"Go to Windows Settings to give access"
                 },
                 "photo": {
-                    "title":"THE NUMBER OF PHOTOS TAKEN DURING THE MOVEMENT",
+                    "title":"THE NUMBER OF PHOTOS TAKEN",
                     "tooltip": "The camera on your computer automatically activates to take pictures when movements are detected. Pictures are taken every 2 seconds and are saved to your local storage.",
                     "option1":"5",
                     "option2":"10",
@@ -2888,7 +2888,7 @@
 				"title": "Scan summary:",
 				"description": "We are constantly tuning your computer",
 				"tune": "Tune",
-				"tuneSummary": "Disk space reclaimed",				
+				"tuneSummary": "Disk space reclaimed",
 				"summaryCaption": "space reclaimed",
 				"fixes": "fixes",
 				"boost": "Boost",
@@ -3671,7 +3671,7 @@
 		"betaSettingTitle": "Beta program",
 		"betaProgram": "Beta Program",
 		"betaSettingDescription": "Try the latest features we're working on.",
-		"betaSettingNewDescription": "We are glad to invite you to the Beta program of Smart Performance. It helps to improve your PC performance by:<br/><ul class='pl-4'><li style='list-style-type:disc;'>Proactively diagnosing bugs and optimizing settings.</li><li>Boost Internet performance by Network and Brower Optimization.</li><li>Performing quick scan and remediation without using the existing Antivirus program.</li></ul>"
+		"betaSettingNewDescription": "We are glad to invite you to the Beta program of Smart Performance. It helps to improve your PC performance by:<br/><ul class='pl-4'><li style='list-style-type:disc;'>Proactively diagnosing bugs and optimizing settings.</li><li>Boost Internet performance by Network and Browser Optimization.</li><li>Performing quick scan and remediation without using the existing Antivirus program.</li></ul>"
 	},
 	"modernPreload": {
 		"cancel": "Cancel",

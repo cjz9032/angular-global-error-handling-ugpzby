@@ -1857,10 +1857,10 @@
                 },
                 "backlight": {
                     "title": "Bakgrunnslys for tastaturet",
-                    "description": {
-                        "base": "Aktiver bakgrunnslyset for tastaturet for å gjøre det enklere å skrive når det er mørkt eller dårlige lysforhold. Du kan også endre innstillingene bakgrunnslyset for tastaturet ved å trykke på Fn+mellomrom.",
-                        "auto": "Aktiver bakgrunnslyset for tastaturet for å gjøre det enklere å skrive når det er mørkt eller dårlige lysforhold. Du kan også endre innstillingene bakgrunnslyset for tastaturet ved å trykke på Fn+mellomrom eller sette til Automatisk. Alternativet Automatisk justerer automatisk bakgrunnslyset for tastaturet i henhold til omgivelseslyset."
-                    },
+					"description": {
+						"base": "Aktiver bakgrunnslyset for tastaturet for å gjøre det enklere å skrive når det er mørkt eller dårlige lysforhold. Du kan også endre innstillingene bakgrunnslyset for tastaturet ved å trykke på tastekombinasjonen Fn+mellomrom.",
+						"auto": "Aktiver bakgrunnslyset for tastaturet for å gjøre det enklere å skrive når det er mørkt eller dårlige lysforhold. Du kan også endre innstillingene bakgrunnslyset for tastaturet ved å trykke på tastekombinasjonen Fn+mellomrom eller sette til Automatisk. I Automatisk-modus justerer systemet automatisk bakgrunnslyset for tastaturet i henhold til omgivelseslyset."
+					},
                     "level": {
                         "auto": "Auto",
                         "low": "Lav",

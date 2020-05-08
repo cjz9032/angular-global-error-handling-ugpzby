@@ -1547,7 +1547,7 @@
                 "display": {
                     "title": "Afișaj",
                     "displayColorTemperature": {
-                        "title": "Modul de îngrijire ochi",
+						"title": "Modul de protejare a ochilor",
                         "description": "Pentru a evita oboseala ochilor, puteți regla temperatura culorii afișajului pentru a filtra lumina albastră, atunci când utilizați computerul un timp îndelungat. În plus, culorile calde sunt recomandate pentru somnul dumneavoastră, în special noaptea.",
                         "link": {
                             "click": "Clic",
@@ -1857,10 +1857,10 @@
                 },
                 "backlight": {
                     "title": "Retroilum tast",
-                    "description": {
-                        "base": "Activați iluminarea de fundal a tastaturii pentru a simplifica tastarea în medii întunecate sau slab iluminate. De asemenea, puteți modifica setările iluminării de fundal a tastaturii apăsând tastele Fn+Space.",
-                        "auto": "Activați iluminarea de fundal a tastaturii pentru a simplifica tastarea în medii întunecate sau slab iluminate. De asemenea, puteți modifica setările iluminării de fundal a tastaturii apăsând tastele Fn+Space sau alegând opțiunea „Auto”. Opțiunea „Auto” reglează nivelul iluminării de fundal a tastaturii în funcție de lumina ambientală."
-                    },
+					"description": {
+						"base": "Activați iluminarea de fundal a tastaturii pentru a simplifica tastarea în medii întunecate sau slab iluminate. De asemenea, puteți modifica setările iluminării de fundal a tastaturii apăsând combinația de taste Fn+Spațiu.",
+						"auto": "Activați iluminarea de fundal a tastaturii pentru a simplifica tastarea în medii întunecate sau slab iluminate. De asemenea, puteți modifica setările iluminării de fundal a tastaturii apăsând combinația de taste Fn+Spațiu sau alegând opțiunea „Auto”. Opțiunea „Auto” reglează automat nivelul iluminării de fundal a tastaturii în funcție de lumina ambientală."
+					},
                     "level": {
                         "auto": "Auto",
                         "low": "Minim",

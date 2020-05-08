@@ -40,12 +40,12 @@ describe('DisplayColorTempComponent', () => {
 		expect(component).toBeTruthy();
 	});
 
-	it('should call onDisplayColorTemperatureChange', () => {
+	it('should call onDisplayColorTemperatureChanged', () => {
 		fixture = TestBed.createComponent(DisplayColorTempComponent);
 		component = fixture.debugElement.componentInstance;
 		const event = 20;
 		const spy = spyOn(component.displayColorTempChange, 'emit');
-		component.onDisplayColorTemperatureChange(event);
+		component.onDisplayColorTemperatureChanged(event);
 		expect(spy).toHaveBeenCalled();
 	});
 
@@ -58,12 +58,12 @@ describe('DisplayColorTempComponent', () => {
 		expect(spy).toHaveBeenCalled();
 	});
 
-	it('should call dragChangeValue', () => {
+	it('should call onDisplayColorTemperaturePreview', () => {
 		fixture = TestBed.createComponent(DisplayColorTempComponent);
 		component = fixture.debugElement.componentInstance;
 		const event = 10;
 		const spy = spyOn(component.colorPreviewValue, 'emit');
-		component.dragChangeValue(event);
+		component.onDisplayColorTemperaturePreview(event);
 		expect(spy).toHaveBeenCalled();
 	});
 });

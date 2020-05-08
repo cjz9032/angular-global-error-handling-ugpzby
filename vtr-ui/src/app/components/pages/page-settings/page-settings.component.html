@@ -29,7 +29,7 @@
 							<ul class="list-group list-group-flush">
 								<li>
 									<vtr-ui-row-switch [title]="'settings.appFeatures' | translate"
-										[switchId]="'settingsAppFeaturesToggle'"
+										[switchId]="'settingsAppFeaturesToggle_checkbox'"
 										id="settings-appFeaturesToggle"
 										aria-label="settings-appFeatures"
 										[caption]="'settings.appFeaturesDescription' | translate"
@@ -43,7 +43,7 @@
 								<li>
 									<vtr-ui-row-switch [title]="'settings.marketing' | translate"
 										[vtrAppSearchScroller]="['search-preference-marketing']"
-										[switchId]="'settingsMarketingToggle'"
+										[switchId]="'settingsMarketingToggle_checkbox'"
 										id="settings-marketingToggle"
 										aria-label="settings-marketingToggle"
 										[caption]="'settings.marketingDescription' | translate"
@@ -57,7 +57,7 @@
 								<li>
 									<vtr-ui-row-switch [title]="'settings.actionTriggered' | translate"
 										[vtrAppSearchScroller]="['search-preference-action-trigger']"
-										[switchId]="'settingsActionTriggeredToggle'"
+										[switchId]="'settingsActionTriggeredToggle_checkbox'"
 										id="settings-actionTriggeredToggle"
 										aria-label="settings-actionTriggeredToggle"
 										[caption]="'settings.actionTriggeredDescription' | translate"
@@ -84,9 +84,10 @@
 							<ul class="list-group list-group-flush">
 								<li>
 									<vtr-ui-row-switch [title]="'settings.betaProgram' | translate"
-										[switchId]="'settingsBetaProgramToggle'"
+										[switchId]="'settingsBetaProgramToggle_checkbox'"
 										[vtrAppSearchScroller]="['search-preference-beta']"
 										id="settings-betaProgramToggle"
+										aria-label="settings-betaProgramToggle"
 										[caption]="'settings.betaSettingNewDescription' | translate"
 										[isSwitchVisible]=true
 										[isLastChild]=true
@@ -109,7 +110,7 @@
 							<ul class="list-group list-group-flush">
 								<li *ngIf="isToggleUsageStatistics">
 									<vtr-ui-row-switch [title]="'settings.usageStatistics' | translate"
-										[switchId]="'settingsUsageStatisticsToggle'"
+										[switchId]="'settingsUsageStatisticsToggle_checkbox'"
 										[vtrAppSearchScroller]="['search-preference-statistics']"
 										id="settings-usageStatisticsToggle"
 										aria-label="settings-usageStatisticsToggle"
@@ -124,7 +125,7 @@
 								</li>
 								<li *ngIf="isToggleDeviceStatistics">
 									<vtr-ui-row-switch [title]="'settings.deviceStatistics' | translate"
-										[switchId]="'settingsDeviceStatisticsToggle'"
+										[switchId]="'settingsDeviceStatisticsToggle_checkbox'"
 										[vtrAppSearchScroller]="['search-preference-device-statistics']"
 										id="settings-deviceStatisticsToggle"
 										aria-label="settings-deviceStatisticsToggle"

@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UiDropDownComponent } from './ui-dropdown.component';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { TranslateModule } from "@ngx-translate/core";
+import { TranslateModule } from '@ngx-translate/core';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { faChevronDown } from '@fortawesome/pro-light-svg-icons/faChevronDown';
 import { faChevronUp } from '@fortawesome/pro-light-svg-icons/faChevronUp';
@@ -124,18 +124,18 @@ describe('UiDropdownComponent', () => {
 		expect(spy).toHaveBeenCalled()
 	});
 
-	it('should call customCamelCase - when value null', () => {
-		const value = null
-		expect(component.customCamelCase(value)).toEqual('')
-	});
+	// it('should call customCamelCase - when value null', () => {
+	// 	const value = null
+	// 	expect(component.customCamelCase(value)).toEqual('')
+	// });
 
-	it('should call customCaseCase - when some value starts with digit', () => {
-		const value = '1 minute'
-		expect(component.customCamelCase(value)).toEqual('1 Minute')
-	});
+	// it('should call customCaseCase - when some value starts with digit', () => {
+	// 	const value = '1 minute'
+	// 	expect(component.customCamelCase(value)).toEqual('1 Minute')
+	// });
 
-	it('should call customCaseCase - when some value starts with string', () => {
-		const value = 'never'
-		expect(component.customCamelCase(value)).toEqual('Never')
-	});
+	// it('should call customCaseCase - when some value starts with string', () => {
+	// 	const value = 'never'
+	// 	expect(component.customCamelCase(value)).toEqual('Never')
+	// });
 });

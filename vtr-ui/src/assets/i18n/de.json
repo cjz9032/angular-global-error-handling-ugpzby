@@ -1857,10 +1857,10 @@
                 },
                 "backlight": {
                     "title": "Tastaturhintergrundbeleuchtung",
-                    "description": {
-                        "base": "Aktivieren Sie die Tastaturhintergrundbeleuchtung, um die Eingabe bei dunklen oder schlechten Lichtverhältnissen zu erleichtern. Sie können die Einstellungen für die Tastaturbeleuchtung auch ändern, indem Sie die Tastenkombination Fn+Leertaste drücken.",
-                        "auto": "Aktivieren Sie die Tastaturhintergrundbeleuchtung, um die Eingabe bei dunklen oder schlechten Lichtverhältnissen zu erleichtern. Sie können die Einstellungen für die Beleuchtung ändern, indem Sie die Tastenkombination Fn+Leertaste drücken oder für die Beleuchtung \"Auto\" einstellen. Mit der Option \"Auto\" wird die Tastaturhintergrundbeleuchtung automatisch an das Umgebungslicht angepasst."
-                    },
+					"description": {
+						"base": "Aktivieren Sie die Tastaturhintergrundbeleuchtung, um die Eingabe bei dunklen oder schlechten Lichtverhältnissen zu erleichtern. Sie können die Einstellungen für die Tastaturbeleuchtung auch ändern, indem Sie die Tastenkombination Fn+Leertaste drücken.",
+						"auto": "Aktivieren Sie die Tastaturhintergrundbeleuchtung, um die Eingabe bei dunklen oder schlechten Lichtverhältnissen zu erleichtern. Sie können die Einstellungen für die Beleuchtung ändern, indem Sie die Tastenkombination Fn+Leertaste drücken oder \"Auto\" einstellen. Im Modus \"Auto\" passt das System die Tastaturhintergrundbeleuchtung automatisch an das Umgebungslicht an."
+					},
                     "level": {
                         "auto": "Automatisch",
                         "low": "Niedrig",
