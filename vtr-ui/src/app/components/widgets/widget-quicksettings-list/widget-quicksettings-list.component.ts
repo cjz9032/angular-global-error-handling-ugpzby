@@ -1,5 +1,5 @@
 import { Router } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
+// import { TranslateService } from '@ngx-translate/core';
 import { DialogService } from './../../../services/dialog/dialog.service';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { PowerService } from './../../../services/power/power.service';
@@ -12,17 +12,11 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { GamingAllCapabilities } from 'src/app/data-models/gaming/gaming-all-capabilities';
 import { Gaming } from 'src/app/enums/gaming.enum';
-import {
-	EventTypes,
-	WifiSecurity,
-	PluginMissingError,
-	SecurityAdvisor,
-	ConnectedHomeSecurity
-} from '@lenovo/tan-client-bridge';
+import { EventTypes, WifiSecurity, PluginMissingError, SecurityAdvisor, ConnectedHomeSecurity } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { WifiHomeViewModel, SecurityHealthViewModel } from 'src/app/data-models/security-advisor/wifisecurity.model';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
-import { DeviceService } from 'src/app/services/device/device.service';
+// import { DeviceService } from 'src/app/services/device/device.service';
 import { GuardService } from 'src/app/services/guard/guardService.service';
 import { DolbyModeResponse } from 'src/app/data-models/audio/dolby-mode-response';
 import { LoggerService } from 'src/app/services/logger/logger.service';
@@ -220,8 +214,8 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 		private powerService: PowerService,
 		private dialogService: DialogService,
 		private ngZone: NgZone,
-		public translate: TranslateService,
-		public deviceService: DeviceService,
+		// public translate: TranslateService,
+		// public deviceService: DeviceService,
 		private guard: GuardService,
 		private router: Router,
 		private logger: LoggerService,
@@ -238,7 +232,6 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 		this.gamingCapabilities.smartFanFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.smartFanFeature
 		);
-
 		this.gamingCapabilities.smartFanStatus = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.PrevThermalModeStatus
 		);
@@ -254,7 +247,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 		// Initialize Quicksetting;
 		this.quicksettingListInit();
 		// Binding regThermalMode event
-		if (this.gamingCapabilities.smartFanFeature) {
+		if (this.gamingCapabilities.smartFanFeature && this.gamingCapabilities.thermalModeVersion === 1) {
 			this.registerThermalModeEvent();
 		}
 		// Version3.3 Binding regDolby event
@@ -264,7 +257,8 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 		this.commonService.getCapabalitiesNotification().subscribe((response) => {
 			if (response.type === Gaming.GamingCapabilities) {
 				this.gamingCapabilities = response.payload;
-				if (this.gamingCapabilities.smartFanFeature) {
+				if (this.gamingCapabilities.smartFanFeature && this.gamingCapabilities.thermalModeVersion === 1) {
+					this.unRegisterThermalModeEvent();
 					this.registerThermalModeEvent();
 				}
 				this.quicksettingListInit();
@@ -303,7 +297,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 
 	public onRegThermalModeEvent(status: any) {
 		if (status !== undefined) {
-			const regThermalModeStatusObj = new ThermalModeStatus();
+			// const regThermalModeStatusObj = new ThermalModeStatus();
 			// setting previous value to localstorage
 			const regThermalModePreValue = this.GetThermalModeCacheStatus();
 			this.commonService.setLocalStorageValue(LocalStorageKey.PrevThermalModeStatus, regThermalModePreValue);
@@ -362,8 +356,8 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 				const thermalModeStatus = await this.gamingThermalModeService.getThermalModeSettingStatus();
 				if (thermalModeStatus !== undefined) {
 					this.drop.curSelected = thermalModeStatus;
-					const ThermalModeStatusObj = new thermalModeStatus();
-					ThermalModeStatusObj.thermalModeStatus = thermalModeStatus;
+					// const ThermalModeStatusObj = new thermalModeStatus();
+					// ThermalModeStatusObj.thermalModeStatus = thermalModeStatus;
 					this.commonService.setLocalStorageValue(
 						LocalStorageKey.CurrentThermalModeStatus,
 						this.drop.curSelected
@@ -382,16 +376,15 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			this.gamingThermalModeService
 				.setThermalModeSettingStatus(this.setThermalModeStatus.thermalModeStatus)
 				.then((statusValue: boolean) => {
+					// unreasonable conditions
 					if (!statusValue) {
 						this.drop.curSelected = this.GetThermalModeCacheStatus();
 					} else if (statusValue) {
 						// binding to UI
 						this.drop.curSelected = this.setThermalModeStatus.thermalModeStatus;
-
 						// updating the previous local cache value with last value of current local cache value
 						const previousValue = this.GetThermalModeCacheStatus();
 						this.commonService.setLocalStorageValue(LocalStorageKey.PrevThermalModeStatus, previousValue);
-
 						try {
 							// updating the current local cache value
 							this.commonService.setLocalStorageValue(
@@ -425,6 +418,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			// version 3.3  update due to dolby API modification
 			this.audioService.getDolbyMode().then((res: DolbyModeResponse) => {
 				this.logger.info(`Widget-quicksettingslist-getDolbySettings: return value: ${res}, dolbyMode from ${this.quickSettings[3].isChecked} to: ${res.isAudioProfileEnabled}`);
+				// TODO conditions need to be modeified by Guo Jing 200508
 				if(res.available) {
 					this.quickSettings[3].isVisible = true;
 					if(this.quickSettings[3].isChecked !== res.isAudioProfileEnabled) {
@@ -591,6 +585,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 	public async setRapidChargeSettings(status: any) {
 		try {
 			const isRapidChargeStatusUpdated = await this.powerService.setRapidChargeModeStatusIdeaNoteBook(status);
+			// if set return false, No error correction
 			if (isRapidChargeStatusUpdated) {
 				this.commonService.setLocalStorageValue(LocalStorageKey.RapidChargeCache, {
 					available: this.quickSettings[1].isVisible,
