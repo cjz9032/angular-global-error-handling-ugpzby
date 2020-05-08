@@ -67,9 +67,8 @@
 			<!-- ****************** End of Lenovo Vantage toolbar ******************************** -->
 
 			<!-- ****************** Power Smart Settings Section ******************************** -->
-			<vtr-power-smart-settings (isPowerSmartSettingHidden)="onSetSmartSettingsCapability(false)"
-			(isPowerSmartSettingAdd)="onSetSmartSettingsCapability(true)"
-				*ngIf="!isDesktopMachine">
+			<vtr-power-smart-settings *ngIf="!isDesktopMachine"
+				(isPowerSmartSettingVisible)="onSetSmartSettingsCapability($event)">
 			</vtr-power-smart-settings>
 			<!-- ****************** Power Smart Settings Section ******************************** -->
 
