@@ -1857,10 +1857,10 @@
                 },
                 "backlight": {
                     "title": "Retroiluminación del teclado",
-                    "description": {
-                        "base": "Active la retroiluminación del teclado para facilitar la escritura en una condición de luz oscura o deficiente. También puede cambiar los valores de la iluminación posterior pulsando la tecla Fn+barra espaciadora.",
-                        "auto": "Active la retroiluminación del teclado para facilitar la escritura en una condición de luz oscura o deficiente. Puede cambiar los valores de la iluminación posterior pulsando la tecla Fn+barra espaciadora o configurándolo en “Auto”. La opción “Auto” ajusta automáticamente la iluminación posterior del teclado según la luz ambiental."
-                    },
+					"description": {
+						"base": "Active la retroiluminación del teclado para facilitar la escritura en una condición de luz oscura o deficiente. También puede cambiar los valores de la iluminación posterior presionando la combinación de las teclas Fn+barra espaciadora.",
+						"auto": "Active la retroiluminación del teclado para facilitar la escritura en una condición de luz oscura o deficiente. Puede cambiar los valores de la iluminación posterior pulsando las combinaciones de las teclas Fn+barra espaciadora o configurándolo en “Auto”. En el modo “Auto”, el sistema se ajusta automáticamente la iluminación posterior del teclado según la luz ambiental."
+					},
                     "level": {
                         "auto": "Automático",
                         "low": "Baja",

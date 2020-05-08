@@ -1857,10 +1857,10 @@
                 },
                 "backlight": {
                     "title": "Podsvícení klávesnice",
-                    "description": {
-                        "base": "Zapněte podsvícení klávesnice a usnadněte si tak psaní při špatném osvětlení nebo ve tmě. Nastavení podsvícení klávesnice můžete změnit stisknutím klávesy Fn+Space.",
-                        "auto": "Zapněte podsvícení klávesnice a usnadněte si tak psaní při špatném osvětlení nebo ve tmě. Nastavení podsvícení klávesnice můžete změnit stisknutím klávesy Fn+Space nebo ho nastavit jako „Auto“. Volba „Auto“ automaticky nastaví podsvícení klávesnice podle okolního světla."
-                    },
+					"description": {
+						"base": "Zapněte podsvícení klávesnice a usnadněte si tak psaní při špatném osvětlení nebo ve tmě. Nastavení podsvícení klávesnice můžete změnit stisknutím kombinace kláves Fn+Mezerník.",
+						"auto": "Zapněte podsvícení klávesnice a usnadněte si tak psaní při špatném osvětlení nebo ve tmě. Nastavení podsvícení klávesnice můžete změnit stisknutím kombinace kláves Fn+Mezerník nebo ho nastavit jako „Auto“. V režimu „Auto“ systém automaticky nastaví podsvícení klávesnice podle okolního světla."
+					},
                     "level": {
                         "auto": "Automatické",
                         "low": "Nízká",

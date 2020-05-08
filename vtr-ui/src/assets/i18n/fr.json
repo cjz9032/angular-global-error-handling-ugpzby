@@ -1857,10 +1857,10 @@
                 },
                 "backlight": {
                     "title": "Rétro-éclairage du clavier",
-                    "description": {
-                        "base": "Activer le rétro-éclairage du clavier pour faciliter la saisie dans un environnement obscurité ou à faible luminosité. Vous pouvez également modifier les paramètres de rétro-éclairage du clavier en appuyant sur la touche FN+espace.",
-                        "auto": "Activer le rétro-éclairage du clavier pour faciliter la saisie dans un environnement obscurité ou à faible luminosité. Vous pouvez modifier les paramètres de rétro-éclairage en appuyant sur la touche FN+espace ou le paramétrer sur \"Auto\". L'option \"Auto\" règle automatiquement le rétro-éclairage du clavier en fonction de la lumière ambiante."
-                    },
+					"description": {
+						"base": "Activer le rétro-éclairage du clavier pour faciliter la saisie dans un environnement obscur ou à faible luminosité. Vous pouvez également modifier les paramètres de rétro-éclairage du clavier en appuyant sur les combinaisons de touche Fn + Espace.",
+						"auto": "Activer le rétro-éclairage du clavier pour faciliter la saisie dans un environnement obscur ou à faible luminosité. Vous pouvez modifier les paramètres de rétro-éclairage en appuyant sur les combinaisons de touches Fn + Espace ou les définir sur « Auto ». Dans le mode « Auto » le système règle automatiquement le rétro-éclairage du clavier en fonction de la lumière ambiante."
+					},
                     "level": {
                         "auto": "Auto",
                         "low": "Faible",
