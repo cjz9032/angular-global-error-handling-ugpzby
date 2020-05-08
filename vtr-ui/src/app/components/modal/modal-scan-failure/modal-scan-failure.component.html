@@ -27,7 +27,7 @@
             metricsEvent="FeatureClick"
             metricsParent="HardwareScan.ScanFailureActions"
             metricsItem="ScanFailureActions.RecoverBadSectors"
-            id="rbsButton" tabindex="1" (click)="goToRBSPage()"
+            id="rbsButton"  (click)="goToRBSPage()"
             [tooltipText]="'hardwareScan.scanFailureModal.supportButtonText' | translate"
             [label]="'hardwareScan.scanFailureModal.recoverBadSectorsButtonText' | translate">
           </vtr-ui-button>
@@ -36,7 +36,7 @@
             metricsEvent="FeatureClick"
             metricsParent="HardwareScan.ScanFailureActions"
             metricsItem="HardwareScan.LenovoSupport"
-            type="button" id="supportButtonWithRBS" attr.aria-label="supportButtonWithRBS"
+            type="button" id="supportButtonWithRBS"  attr.aria-label="supportButtonWithRBS"
             class="btn btn-link support-button" (click)="openSupportPage()">{{'hardwareScan.scanFailureModal.supportButtonText' | translate }}</button>
         </div>
       </div>
@@ -52,7 +52,7 @@
             metricsEvent="FeatureClick"
             metricsParent="HardwareScan.ScanFailureActions"
             metricsItem="ScanFailureActions.LenovoSupport"
-            id="supportButtonWithoutRBS" tabindex="1" (click)="openSupportPage()"
+            id="supportButtonWithoutRBS"  (click)="openSupportPage()"
             [tooltipText]="'hardwareScan.scanFailureModal.supportButtonText' | translate"
             [label]="'hardwareScan.scanFailureModal.supportButtonText' | translate">
           </vtr-ui-button>
@@ -65,7 +65,7 @@
       metricsEvent="FeatureClick"
       metricsParent="HardwareScan.ScanFailureActions"
       metricsItem="ScanFailureActions.Close"
-      role="button" href="javascript:;" class="close-btn" (click)="closeModal()">
+       role="button" href="javascript:;" class="close-btn" (click)="closeModal()">
       <img [src]=" 'assets/icons/Close.svg' | svgInline | async" alt="" srcset="">
 	</a>
 </div>
