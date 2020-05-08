@@ -46,7 +46,6 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	public voipStatus = new FeatureStatus(false, true);
 	public entertainmentStatus = new FeatureStatus(false, true);
 	public eCourseLoader = true;
-	public dolbyAudioCache: DolbyModeResponse = undefined;
 	public isNewplugin = true;
 	public dolbyToggleButtonStatus = undefined;
 	public eCourseToggleButtonStatus = undefined;
