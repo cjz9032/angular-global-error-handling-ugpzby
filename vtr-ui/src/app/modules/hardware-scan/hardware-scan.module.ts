@@ -45,7 +45,6 @@ import { faCheckCircle } from '@fortawesome/free-solid-svg-icons/faCheckCircle';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons/faTimesCircle';
 import { HardwareScanExecutingHeaderComponent } from '../../components/pages/page-hardwarescan/children/hardware-scan-header-pages/hardware-scan-executing-header/hardware-scan-executing-header.component';
 import { HardwareScanWaitSelectHeaderComponent } from '../../components/pages/page-hardwarescan/children/hardware-scan-header-pages/hardware-scan-wait-select-header/hardware-scan-wait-select-header.component';
-import { faFortAwesome } from '@fortawesome/free-brands-svg-icons';
 
 @NgModule({
 	declarations: [
