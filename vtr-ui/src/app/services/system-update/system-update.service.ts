@@ -103,7 +103,11 @@ export class SystemUpdateService {
 				.then((response) => {
 					const taskParam = 'critical-update:' + request.criticalAutoUpdates + ',recommanded-update:' + request.recommendedAutoUpdates;
 					this.metricService.sendSetUpdateSchedure(taskParam, response);
-					this.getUpdateSchedule();
+					this.autoUpdateStatus = {
+						criticalAutoUpdates: (response.criticalAutoUpdates === 'ON') ? true : false,
+						recommendedAutoUpdates: (response.recommendedAutoUpdates === 'ON') ? true : false
+					};
+					this.commonService.sendNotification(UpdateProgress.AutoUpdateStatus, this.autoUpdateStatus);
 				}).catch((error) => {
 					// get current status
 					this.getUpdateSchedule();
