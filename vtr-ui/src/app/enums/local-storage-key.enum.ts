@@ -256,6 +256,7 @@ export enum LocalStorageKey {
 	BacklightCapability = '[LocalStorageKey] BacklightCapability',
 	GaugeResetInformation = '[LocalStorageKey] GaugeResetInformation',
 	IsSmartPerformanceSubscribed = '[LocalStorageKey] IsSmartPerformanceSubscribed',
+	IsSmartPerformanceForceClose = '[LocalStorageKey] IsSmartPerformanceForceClose',
 	SmartPerformanceSubscriptionDetails = '[LocalStorageKey] SmartPerformanceSubscriptionDetails',
 	IsPowerPageAvailable = '[LocalStorageKey] isPowerPageAvailable',
 	DashboardWelcomeTexts = '[LocalStorageKey] DashboardWelcomeTexts',

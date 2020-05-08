@@ -92,7 +92,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 					this.logger.error('this.smartPerformanceService.getReadiness()', error);
 				});
 		}
-	
+
 	}
 	async scheduleScan(scantype, frequency, day, time, date) {
 		const payload = {
@@ -236,7 +236,14 @@ export class UiSmartPerformanceComponent implements OnInit {
 					res = await this.smartPerformanceService.startScan();
 				}
 				if (res && res.state === true) {
-					this.isScanningCompleted = true;
+					let spForceClose = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartPerformanceForceClose);
+					if(spForceClose) {
+						this.isScanningCompleted = false;
+						this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceForceClose, false);
+					}
+					else {
+						this.isScanningCompleted = true;
+					}
 					this.isScanning = false;
 					this.rating = res.rating;
 					this.tune = res.result.tune;
