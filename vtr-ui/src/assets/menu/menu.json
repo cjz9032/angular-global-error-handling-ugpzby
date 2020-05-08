@@ -248,7 +248,6 @@
 				"fal",
 				"lock"
 			],
-			"segment": "-[Commercial]",
 			"metricsEvent": "itemClick",
 			"metricsParent": "navbar",
 			"metricsItem": "link.security",
@@ -325,38 +324,6 @@
 					"icon": null,
 					"segment": "-[Commercial]",
 					"subitems": []
-				}
-			]
-		},
-		{
-			"id": "security",
-			"label": "common.menu.security.title",
-			"path": "security/wifi-security",
-			"icon": [
-				"fal",
-				"lock"
-			],
-			"metricsEvent": "itemClick",
-			"metricsParent": "navbar",
-			"metricsItem": "link.security",
-			"segment": "+[Commercial]",
-			"forArm": false,
-			"subitems": [
-				{
-					"id": "wifi-security",
-					"label": "common.menu.security.sub3",
-					"path": null,
-					"icon": null,
-					"metricsEvent": "itemClick",
-					"metricsParent": "navbar",
-					"metricsItem": "link.wifisecurity",
-					"routerLinkActiveOptions": {
-						"exact": true
-					},
-					"subitems": [],
-					"pre": [
-						"assets/images/coronet-logo.svg"
-					]
 				}
 			]
 		},
