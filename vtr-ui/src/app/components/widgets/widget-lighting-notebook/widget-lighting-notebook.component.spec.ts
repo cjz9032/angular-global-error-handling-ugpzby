@@ -9,17 +9,60 @@ import { MetricService } from '../../../../../src/app/services/metric/metric.ser
 
 const gamingLightingServiceMock = jasmine.createSpyObj('GamingLightingService', ['getLightingProfileId', 'getLightingProfileById', 'setLightingProfileId', 'setLightingProfileBrightness',
     'isShellAvailable', 'getLightingCapabilities', 'setLightingDefaultProfileById', 'setLightingProfileEffectColor', 'checkAreaColorFn', 'regLightingProfileIdChangeEvent']);
-const commonServiceMock = {
-    getLocalStorageValue: (key, defaultVal) => {
-        if(localStorage.getItem(key) !== "undefined"){
-            return JSON.parse(localStorage.getItem(key));
-        }else{
-            return undefined;
-        } 
+let commonServiceMock = {  
+    getLocalStorageValue(key: any) {
+        switch (key) {
+            case '[LocalStorageKey] KeyboardToggleStatusLNBx50':
+                return toggleStatus;
+            case '[LocalStorageKey] ProfileId':
+                return profileId;
+            case '[LocalStorageKey] LedSwitchButtonFeature':
+                return ledSwitchButtonFeature;
+            case '[LocalStorageKey] LightingProfileByIdNoteOn1':
+                return lightingProfileById;
+            case '[LocalStorageKey] LightingProfileByIdNoteOn2':
+                return lightingProfileById;
+            case '[LocalStorageKey] LightingProfileByIdNoteOff2':
+                return lightingProfileById;
+            case '[LocalStorageKey] LightingProfileByIdDefault2':
+                return lightingProfileById;
+            case '[LocalStorageKey] LightingCapabilitiesNewversionNote':
+                return lightingCapility;
+        }
     },
-    setLocalStorageValue: (key, value) => localStorage.setItem(key, JSON.stringify(value))
+    setLocalStorageValue(key: any, value: any) {
+        switch (key) {
+            case '[LocalStorageKey] KeyboardToggleStatusLNBx50':
+                toggleStatus = value;
+                break;
+            case '[LocalStorageKey] ProfileId':
+                profileId = value;
+                break;
+            case '[LocalStorageKey] LedSwitchButtonFeature':
+                ledSwitchButtonFeature = value;
+                break;
+            case '[LocalStorageKey] LightingProfileByIdNoteOn1':
+                lightingProfileById = value;
+                break;
+            case '[LocalStorageKey] LightingProfileByIdNoteOn2':
+                lightingProfileById = value;
+                break;
+            case '[LocalStorageKey] LightingProfileByIdNoteOff2':
+                lightingProfileById = value;
+                break;
+            case '[LocalStorageKey] LightingProfileByIdDefault2':
+                lightingProfileById = value;
+                break;
+            case '[LocalStorageKey] LightingCapabilitiesNewversionNote':
+                lightingCapility = value;
+                break;
+        }
+    }
 };
-const lightingProfileById: any = {
+
+let profileId:number = 2;
+let ledSwitchButtonFeature:boolean = true;
+let lightingProfileById: any = {
     didSuccess: true,
     profileId: 2,
     brightness: 0,
@@ -39,7 +82,7 @@ const lightingProfileByIdFail: any = {
         { lightPanelType: 4, lightEffectType: 2, lightColor: "009BFA", lightBrightness: 2, lightSpeed: 2 },
         { lightPanelType: 8, lightEffectType: 2, lightColor: "009BFA", lightBrightness: 2, lightSpeed: 2 }]
 }
-const lightingCapility: any = {
+let lightingCapility: any = {
     LightPanelType: [1, 2, 4, 8],
     LedType_Complex: [268435456, 1, 2, 4, 8, 32, 256, 512],
     LedType_simple: [268435456, 1, 2, 3, 4],
@@ -51,7 +94,7 @@ const lightingCapility: any = {
     SupportSpeedSetList: [4, 8],
     UnifySetList: [0]
 }
-const toggleStatus: any = {
+let toggleStatus: any = {
     "profileId2": { "status": true, "defaultStatus": "undefined" },
     "profileId1": { "status": false, "defaultStatus": "undefined" },
     "profileId3": { "status": true, "defaultStatus": "undefined" }
@@ -84,12 +127,12 @@ describe('WidgetLightingNotebookComponent', () => {
         fixture = TestBed.createComponent(WidgetLightingNotebookComponent);
         component = fixture.debugElement.componentInstance;
         component.currentProfileId = 2;
-        localStorage.setItem('[LocalStorageKey] ProfileId', "2");
-        if (localStorage.getItem('[LocalStorageKey] KeyboardToggleStatusLNBx50') == null || localStorage.getItem('[LocalStorageKey] KeyboardToggleStatusLNBx50') === undefined) {
-            localStorage.setItem('[LocalStorageKey] KeyboardToggleStatusLNBx50', JSON.stringify(toggleStatus));
+        commonServiceMock.setLocalStorageValue('[LocalStorageKey] ProfileId', 2);
+        if (commonServiceMock.getLocalStorageValue('[LocalStorageKey] KeyboardToggleStatusLNBx50') == null || commonServiceMock.getLocalStorageValue('[LocalStorageKey] KeyboardToggleStatusLNBx50') === undefined) {
+            commonServiceMock.setLocalStorageValue('[LocalStorageKey] KeyboardToggleStatusLNBx50', toggleStatus);
         }
-        if (localStorage.getItem('[LocalStorageKey] LedSwitchButtonFeature') == null) {
-            localStorage.setItem('[LocalStorageKey] LedSwitchButtonFeature', "true");
+        if (commonServiceMock.getLocalStorageValue('[LocalStorageKey] LedSwitchButtonFeature') == null) {
+            commonServiceMock.setLocalStorageValue('[LocalStorageKey] LedSwitchButtonFeature', true);
         }
         
         fixture.detectChanges();
@@ -142,7 +185,7 @@ describe('WidgetLightingNotebookComponent', () => {
         component.setLightingProfileId(event);
         tick(10);
         expect(component.currentProfileId).toBeLessThanOrEqual(2);
-        localStorage.setItem('[LocalStorageKey] ProfileId', "0");
+        commonServiceMock.setLocalStorageValue('[LocalStorageKey] ProfileId', 0);
         component.setLightingProfileId({ "target": { "value": 0 } });
         tick(10);
         expect(component.isProfileOff).toEqual(true);
@@ -220,7 +263,7 @@ describe('WidgetLightingNotebookComponent', () => {
         component.getProfileEvent(2);
         expect(component.currentProfileId).toBeLessThanOrEqual(2);
         component.isSetDefault = false;
-        localStorage.setItem('[LocalStorageKey] KeyboardToggleStatusLNBx50',"undefined");
+        commonServiceMock.setLocalStorageValue('[LocalStorageKey] KeyboardToggleStatusLNBx50',undefined);
         component.getProfileEvent(1);
         tick(10);
         expect(component.currentProfileId).toBeLessThanOrEqual(2);
@@ -260,7 +303,7 @@ describe('WidgetLightingNotebookComponent', () => {
             "profileId1": { "status": false, "defaultStatus": "undefined" },
             "profileId3": { "status": true, "defaultStatus": "undefined" }
         };
-        localStorage.setItem("[LocalStorageKey] KeyboardToggleStatusLNBx50", JSON.stringify(toggleStatus));
+        commonServiceMock.setLocalStorageValue("[LocalStorageKey] KeyboardToggleStatusLNBx50", toggleStatus);
         component.getCacheList();
         expect(component.currentProfileId).toEqual(2);
         const toggleStatus2 = {
@@ -268,7 +311,7 @@ describe('WidgetLightingNotebookComponent', () => {
             "profileId1": { "status": false, "defaultStatus": "undefined" },
             "profileId3": { "status": true, "defaultStatus": "undefined" }
         };
-        localStorage.setItem("[LocalStorageKey] KeyboardToggleStatusLNBx50", JSON.stringify(toggleStatus2));
+        commonServiceMock.setLocalStorageValue("[LocalStorageKey] KeyboardToggleStatusLNBx50", toggleStatus2);
         component.getCacheList();
         expect(component.currentProfileId).toEqual(2);
         component.lightingProfileById = lightingProfileById;
@@ -301,7 +344,7 @@ describe('WidgetLightingNotebookComponent', () => {
             "profileId1": { "status": false, "defaultStatus": "undefined" },
             "profileId3": { "status": true, "defaultStatus": "undefined" }
         };
-        localStorage.setItem("[LocalStorageKey] KeyboardToggleStatusLNBx50", JSON.stringify(toggleStatus));
+        commonServiceMock.setLocalStorageValue("[LocalStorageKey] KeyboardToggleStatusLNBx50", toggleStatus);
         component.setCacheList();
         expect(component.currentProfileId).toEqual(2);
         const toggleStatus2 = {
@@ -309,7 +352,7 @@ describe('WidgetLightingNotebookComponent', () => {
             "profileId1": { "status": false, "defaultStatus": "undefined" },
             "profileId3": { "status": true, "defaultStatus": "undefined" }
         };
-        localStorage.setItem("[LocalStorageKey] KeyboardToggleStatusLNBx50", JSON.stringify(toggleStatus2));
+        commonServiceMock.setLocalStorageValue("[LocalStorageKey] KeyboardToggleStatusLNBx50", toggleStatus2);
         component.setCacheList();
         expect(component.currentProfileId).toEqual(2);
     })
@@ -346,7 +389,7 @@ describe('WidgetLightingNotebookComponent', () => {
                 { lightPanelType: 4, lightEffectType: 2, lightColor: "009BFA", lightBrightness: 2, lightSpeed: 2 },
                 { lightPanelType: 8, lightEffectType: 2, lightColor: "009BFA", lightBrightness: 2, lightSpeed: 2 }]
         }
-        localStorage.setItem('[LocalStorageKey] LightingProfileByIdNoteOn1','undefined');
+        commonServiceMock.setLocalStorageValue('[LocalStorageKey] LightingProfileByIdNoteOn1',undefined);
         component.publicProfileIdInfo(lightingProfileById);
         expect(component.currentProfileId).toEqual(1);
         component.publicProfileIdInfo(undefined);
