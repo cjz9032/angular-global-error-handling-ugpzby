@@ -215,6 +215,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 				const capture = new Windows.Media.Capture.MediaCapture();
 				const init = new Windows.Media.Capture.MediaCaptureInitializationSettings();
 				init.audioDeviceId = '';
+				init.streamingCaptureMode = 1; // Windows.Media.Capture.StreamingCaptureMode.audio;
 				const microphonePromise = new Promise<boolean>(resolve => {
 					capture.initializeAsync(init).then(
 						() => {
@@ -222,10 +223,17 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 							return resolve(!controller.muted);
 						},
 						error => {
-							if (error.number === -1072845856) {
-								// microphone device was disabled
-								resolve(false);
+							if (error.number === -2147024891) {
+								// check if audio device exist or not
+								const defaultRole = Windows.Media.Devices.MediaDevice.getDefaultAudioCaptureId(0);
+								const commuRole = Windows.Media.Devices.MediaDevice.getDefaultAudioCaptureId(1);
+								return resolve(defaultRole === '' && commuRole === '')
 							}
+							// if (error.number === -1072845856) {
+							// 	// microphone device was disabled
+							// 	resolve(false);
+							// }
+							return resolve(false);
 						}
 					);
 				})
@@ -240,7 +248,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 					if (!microphone && !dolbyModeResponse.available) {
 						// Array.filter won't trigger changeDetect automatically, so we do it manually.
 						const tempMenuItems = this.commonService.removeObjById(this.menuItems, 'audio');
-						this.menuItems = tempMenuItems;
+						this.menuItems = tempMenuItems.slice();
 						this.commonService.setLocalStorageValue(LocalStorageKey.IsAudioPageAvailable, false);
 					} else {
 						this.commonService.setLocalStorageValue(LocalStorageKey.IsAudioPageAvailable, true);
