@@ -33,8 +33,8 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	title = 'smartPerformance.title';
 	public menuItems: any = [
 		{ itemName: 'Annual', itemKey: 'ANNUAL' },
-		{ itemName: 'Half yearly', itemKey: 'HALFYEARLY' },
-		{ itemName: 'Quarterly', itemKey: 'QUARTERLY' }
+		{ itemName: 'Quarterly', itemKey: 'QUARTERLY' },
+		{ itemName: 'Half yearly', itemKey: 'HALFYEARLY' }
 	];
 	// public menuItems: any = [
 	// 	{ itemName: '', itemKey: 'ANNUAL' },
@@ -181,11 +181,6 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	// boostindividualIssueCount: any = 0;
 	// secureindividualIssueCount: any = 0;
 	ngOnInit() {
-		this.historyRes = {
-			Tune: 200,
-			Boost: 100,
-			Secure: 120
-		};
 		const cacheMachineFamilyName = this.commonService.getLocalStorageValue(
 			LocalStorageKey.MachineFamilyName,
 			undefined
@@ -579,9 +574,9 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 			this.historyRes = {};
 		}
 	}
-	formatMemorySize(mbytes) {
+	formatMemorySize(mbytes: number) {
 		const k = 1024;
-		const mb = mbytes ? mbytes : 0;
+		const mb: number = mbytes ? mbytes : 0;
 		if (mb === 0) { return 0 +' ' +'MB' }
 		const sizes = ['MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
 		const i = Math.floor(Math.log(mb) / Math.log(k));

@@ -20,6 +20,8 @@ export class ModalSmartPerformanceCancelComponent implements OnInit {
 	) { }
 	private timerRef: any;
 	public secondsCountdown = 9;
+	public isLoading = false;
+
 
 	ngOnInit() {
 		this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceForceClose, false);
@@ -54,11 +56,14 @@ export class ModalSmartPerformanceCancelComponent implements OnInit {
 	}
 	cancelScan() {
 		if (this.smartPerformanceService.isShellAvailable) {
+			this.isLoading = true;
 			this.smartPerformanceService
 				.cancelScan()
 				.then((cancelScanFromService: any) => {
 
 					if (cancelScanFromService) {
+						this.isLoading = false;
+						this.activeModal.close('close');
 						// this.router.navigate(['support/smart-performance']);
 						// this.stopScanning.emit();
 						// this.router.navigateByUrl('/support/smart-performance?SPForceClose=true&d='+(new Date).getTime(), {skipLocationChange: false});
@@ -73,6 +78,6 @@ export class ModalSmartPerformanceCancelComponent implements OnInit {
 				});
 		}
 		this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceForceClose, true);
-		this.activeModal.close('close');
+		// this.activeModal.close('close');
 	}
 }
