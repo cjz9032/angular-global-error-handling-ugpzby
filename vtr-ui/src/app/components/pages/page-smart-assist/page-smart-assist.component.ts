@@ -837,12 +837,26 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 					.then((response: FeatureStatus) => {
 						this.isSuperResolutionLoading = false;
 						this.superResolution = response;
+						this.smartAssistCapability.isSuperResolutionSupported = this.superResolution;
+						if (!response.available && !this.smartAssistCache.intelligentMedia.available) {
+							this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'media');
+							this.checkMenuItemsLength();
+						}
 					}).catch(error => {
 						this.logger.error('getSuperResolutionStatus.error', error);
 					});
 			}
 		} catch (error) {
 			this.logger.error('getSuperResolutionStatus' + error.message);
+		}
+	}
+
+	public removeSensingHeaderMenu() {
+		try {
+			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'sensing');
+			this.checkMenuItemsLength();
+		} catch (error) {
+			this.logger.error('removeSensingHeaderMenu' + error.message);
 		}
 	}
 
