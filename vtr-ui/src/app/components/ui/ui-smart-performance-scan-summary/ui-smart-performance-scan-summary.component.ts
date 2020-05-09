@@ -79,7 +79,6 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	displayToDate: any;
 	customDate: any;
 	@Output() backToScan = new EventEmitter();
-	@Output() setScanning = new EventEmitter()
 	// @Output() sendScanData = new EventEmitter();
 	@Output() sendScanData: EventEmitter<any> = new EventEmitter();
 	// scan settings
@@ -217,8 +216,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		this.supportService.getMachineInfo().then(async (machineInfo) => {
 			this.systemSerialNumber = machineInfo.serialnumber;
 		});
-		this.setScanning.emit(false)
-	}
+		}
 
 	getNextScanScheduleTime(scandate) {
 		try {

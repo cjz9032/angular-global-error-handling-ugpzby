@@ -9,7 +9,6 @@ import { Subject } from 'rxjs';
 export class SmartPerformanceService {
 	getSmartPerformance: any;
 	public isShellAvailable = false;
-	canExit = new Subject<boolean>()
 	constructor(shellService: VantageShellService) {
 		
 		this.getSmartPerformance = shellService.getSmartPerformance();

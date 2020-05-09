@@ -93,14 +93,6 @@ export class UiSmartPerformanceComponent implements OnInit {
 					this.logger.error('this.smartPerformanceService.getReadiness()', error);
 				});
 		}
-		this.smartPerformanceService.canExit.subscribe(value => {
-			if(!value) {
-				this.showWarning.emit(false)
-			}
-		})
-		if(!this.isScanning) {
-			this.showWarning.emit(false)
-		}
 
 	}
 	async scheduleScan(scantype, frequency, day, time, date) {
@@ -162,7 +154,6 @@ export class UiSmartPerformanceComponent implements OnInit {
 		}
 	}
 	changeScanEvent() {
-
 		if (this.smartPerformanceService.isShellAvailable) {
 			this.smartPerformanceService
 				.getReadiness()
@@ -296,10 +287,6 @@ export class UiSmartPerformanceComponent implements OnInit {
 	cancelScan() {
 		this.isScanning = false;
 		this.isScanningCompleted = false;
-	}
-
-	toggleScanningValue(value: boolean) {
-		this.showWarning.next(value)
 	}
 	
 	async unregisterScheduleScan(scantype) {

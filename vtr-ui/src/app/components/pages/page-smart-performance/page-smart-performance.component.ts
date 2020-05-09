@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { CanComponentDeactivate } from '../../../services/guard/can-deactivate-guard.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ModalSmartPerformanceCancelComponent } from '../../modal/modal-smart-performance-cancel/modal-smart-performance-cancel.component';
+import { ModalConfirmWarning } from '../../modal/modal-confirm-warning/modal-confirm-warning.component';
 
 @Component({
   selector: 'vtr-page-smart-performance',
@@ -22,15 +22,20 @@ export class PageSmartPerformanceComponent implements OnInit, CanComponentDeacti
   }
 
   canDeactivate(): Observable<boolean> | Promise<boolean> | boolean {
-		if(this.isScanning) {
-      this.modalService.open(ModalSmartPerformanceCancelComponent, {
-        backdrop: 'static',
-        centered: true,
-        windowClass: 'cancel-modal'
-      });      
+		if(this.isScanning) { 
+      return this.openModal()    
 		} else {
 			return true
 		}
+  }
+
+  async openModal(): Promise<boolean> {
+    const modalRef = this.modalService.open(ModalConfirmWarning, {
+      backdrop: 'static',
+      centered: true
+    });
+    const response = await modalRef.result
+    return response;
   }
 
 }
