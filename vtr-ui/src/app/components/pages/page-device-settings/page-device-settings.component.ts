@@ -224,7 +224,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 								// check if audio device exist or not
 								const defaultRole = Windows.Media.Devices.MediaDevice.getDefaultAudioCaptureId(0);
 								const commuRole = Windows.Media.Devices.MediaDevice.getDefaultAudioCaptureId(1);
-								return resolve(defaultRole === '' && commuRole === '')
+								return resolve(defaultRole !== '' && commuRole !== '')
 							}
 							// if (error.number === -1072845856) {
 							// 	// microphone device was disabled
