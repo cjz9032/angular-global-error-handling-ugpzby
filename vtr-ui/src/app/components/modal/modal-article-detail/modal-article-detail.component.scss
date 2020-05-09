@@ -11,6 +11,10 @@
 	height: calc(100vh - 5.5rem);
 	box-sizing: border-box;
 
+	&:focus {
+		outline: 0rem;
+	}
+
 	fa-icon {
 		font-size: 2rem;
 		color: $main;
