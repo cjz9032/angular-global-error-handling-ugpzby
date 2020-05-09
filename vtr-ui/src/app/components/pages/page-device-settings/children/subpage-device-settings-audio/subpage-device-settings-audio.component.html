@@ -84,7 +84,7 @@
 												(click)="onRightIconClick(rightToolTip1, $event)"
 												(keydown.enter)="onRightIconClick(rightToolTip1, $event)"
 												tabindex="0"
-												attr.aria-label="{{'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.voIPMode.tooltip' | translate}}">
+												attr.aria-label="'Dolby audio voip tooltip, which reads:'+ {{'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.voIPMode.tooltip' | translate}}">
 											</fa-icon>
 											<ng-template #tooltipRef>
 												<div id="voipTooltip"
@@ -118,7 +118,7 @@
 												(click)="onRightIconClick(rightToolTip1, $event)"
 												(keydown.enter)="onRightIconClick(rightToolTip1, $event)"
 												tabindex="0"
-												attr.aria-label="{{'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.entertainmentMode.tooltip' | translate}}{{'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.entertainmentMode.description1' | translate}}{{'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.entertainmentMode.description2' | translate}}{{'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.entertainmentMode.description3' | translate}}">
+												[attr.aria-label] ="'Dolby audio entertainment tooltip, which reads:'+ entertainmentTooltip">
 											</fa-icon>
 											<ng-template #tooltipRef>
 												<div id="entertainmentTooltip" [innerHTML]="'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.entertainmentMode.tooltip' | translate"></div>
