@@ -16,6 +16,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { PageAnchorLink } from 'src/app/data-models/common/page-achor-link.model';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-audio',
@@ -45,6 +46,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	public eCourseStatus = new FeatureStatus(false, true);
 	public voipStatus = new FeatureStatus(false, true);
 	public entertainmentStatus = new FeatureStatus(false, true);
+	public entertainmentTooltip;
 	public eCourseLoader = true;
 	public isNewplugin = true;
 	public dolbyToggleButtonStatus = undefined;
@@ -83,12 +85,15 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		private dashboardService: DashboardService,
 		private logger: LoggerService,
 		private commonService: CommonService,
+		private translate: TranslateService,
 		private vantageShellService: VantageShellService) {
 		this.Windows = vantageShellService.getWindows();
 		if (this.Windows) {
 			this.microphoneDevice = this.Windows.Devices.Enumeration.DeviceAccessInformation
 				.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.audioCapture);
 		}
+		const entertainmentTooltipText = this.translate.instant('device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.entertainmentMode.tooltip');
+		this.entertainmentTooltip = JSON.parse(JSON.stringify(entertainmentTooltipText).replace(/<\/?.+?\/?>/g, ""));
 	}
 
 	ngOnInit() {
@@ -158,7 +163,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	initDolbyAudioFromCache() {
 		try {
 			this.dolbyModeResponse.available = this.commonService.getLocalStorageValue(LocalStorageKey.IsDolbyModeAvailable, true);
-			const dolbyAudioCache = this.commonService.getLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, undefined);
+			const dolbyAudioCache = this.commonService.getLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, undefined);
 			if (dolbyAudioCache !== undefined) {
 				this.dolbyModeResponse = dolbyAudioCache;
 				this.refreshDolbyAudioProfileState();
