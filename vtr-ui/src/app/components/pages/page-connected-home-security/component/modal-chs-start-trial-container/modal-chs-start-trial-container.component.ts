@@ -23,7 +23,6 @@ export class ModalChsStartTrialContainerComponent implements OnInit, OnDestroy {
 	currentConsoleUrl: string;
 
 	@ViewChild('loadingCHSMsg') loadingCHSMsg: ElementRef;
-	@ViewChild('startTrailModal') startTrailModal: ElementRef;
 
 	constructor(
 		public activeModal: NgbActiveModal,
@@ -46,11 +45,6 @@ export class ModalChsStartTrialContainerComponent implements OnInit, OnDestroy {
 			} else if (!this.currentConsoleUrl) {
 				this.chs.on(EventTypes.chsEvent, this.consoleUrlCallback);
 			}
-		}
-		if (this.showWhichPage === CHSTrialModalPage.disconnect) {
-			setTimeout(() => {
-				this.startTrailModal.nativeElement.focus();
-			}, 0);
 		}
 	}
 
