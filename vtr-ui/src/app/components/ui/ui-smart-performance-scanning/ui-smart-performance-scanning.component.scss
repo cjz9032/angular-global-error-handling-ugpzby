@@ -120,6 +120,7 @@
                     //padding: 1rem;
                     margin: 1.5rem auto;
 					width: 85%;
+					pointer-events: none;
 					@media #{$breakpoint_xl}{
 						width: calc(100% - 0.9rem);
 					}
