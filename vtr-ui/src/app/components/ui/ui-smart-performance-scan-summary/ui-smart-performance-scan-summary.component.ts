@@ -7,8 +7,6 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import moment from 'moment';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { EventTypes } from '@lenovo/tan-client-bridge';
-import { EMPTY } from 'rxjs';
 import { SupportService } from 'src/app/services/support/support.service';
 @Component({
 	selector: 'vtr-ui-smart-performance-scan-summary',
@@ -175,11 +173,12 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	IsSmartPerformanceFirstRun: any;
 	IsScheduleScanEnabled: any;
 	public scanData: any = {};
-	systemSerialNumber:any;
+	systemSerialNumber: any;
 	public maxDate: any;
 	// tuneindividualIssueCount: any = 0;
 	// boostindividualIssueCount: any = 0;
 	// secureindividualIssueCount: any = 0;
+	public data = [{name: 'D', value: 4}]
 	ngOnInit() {
 		const cacheMachineFamilyName = this.commonService.getLocalStorageValue(
 			LocalStorageKey.MachineFamilyName,
@@ -258,7 +257,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		this.logger.info('ui-smart-performance.getNextScanRunTime', JSON.stringify(payload));
 		try {
 			const res: any = await this.smartPerformanceService.getNextScanRunTime(payload);
-			if (res!=undefined) {
+			if (res != undefined) {
 				this.getNextScanScheduleTime(res.nextruntime);
 			}
 			this.logger.info('ui-smart-performance.getNextScanRunTime.then', JSON.stringify(res));
@@ -287,7 +286,6 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		this.dropDownToggle = true;
 		this.isDropDownOpen = false;
 		this.tabIndex = value;
-		// console.log(value + 'VALUE for the tabindex');
 		this.logger.info('scanSummaryTime.tabIndex', this.tabIndex);
 		if (value === 0) {
 			const d = new Date();
@@ -311,7 +309,6 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 			this.toDate = this.calendar.getToday();
 
 			this.isFromDate = true;
-			// console.log(this.fromDate);
 			const fromDateFormat =
 				this.fromDate.month +
 				'/' +
@@ -334,7 +331,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 				.format('YYYY/MM/DD');
 			this.selectedfromDate = this.fromDate;
 			this.selectedTodate = this.toDate;
-			this.customDate =  this.displayFromDate + ' - ' + this.displayToDate;
+			this.customDate = this.displayFromDate + ' - ' + this.displayToDate;
 			// console.log('---------IN THE TABINDEX 2' + this.customDate);
 			this.getHistory(
 				moment
@@ -542,19 +539,16 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	}
 
 	async getHistory(startDate, endDate) {
-		// console.log(startDate, endDate);
 		const payload = {
 			filterType: 'C',
 			startDate,
 			endDate
 		};
-		// console.log(JSON.stringify(payload));
 		try {
 			const res: any = await this.smartPerformanceService.getHistory(
 				payload
 			);
 			this.logger.info('History Response', res);
-// console.log(res, 'Res');
 			if (res) {
 				this.historyRes = {
 					Tune: res.Tune,
@@ -577,7 +571,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	formatMemorySize(mbytes: number) {
 		const k = 1024;
 		const mb: number = mbytes ? mbytes : 0;
-		if (mb === 0) { return 0 +' ' +'MB' }
+		if (mb === 0) { return 0 + ' ' + 'MB' }
 		const sizes = ['MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
 		const i = Math.floor(Math.log(mb) / Math.log(k));
 		this.sizeExtension = sizes[i];
