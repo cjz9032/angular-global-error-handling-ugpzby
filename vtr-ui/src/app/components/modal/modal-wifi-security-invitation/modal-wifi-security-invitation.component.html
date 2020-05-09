@@ -1,6 +1,6 @@
 <div class="wifi-security-invitation-modal" role="dialog">
 	<div class="content-container" *ngIf="!startJoin">
-		<h1 *ngIf="!joinSuccess" [innerHTML]="header | translate"></h1>
+		<h1 *ngIf="!joinSuccess" [innerHTML]="header | translate" role="none"></h1>
 		<p *ngIf="!joinSuccess" class="description header-description pb-3"
 			[innerHTML]="headerDescription | translate">
 		</p>
