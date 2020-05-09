@@ -68,6 +68,8 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 	private DeviceInformation: any;
 	private DeviceClass: any;
 	public isOnline: any = true;
+	private cameraAccessChangedHandler: any;
+	private windowsObj: any;
 	isSet = {
 		isSetDaytimeColorTemperatureValue: false,
 		isSetEyecaremodeValue: false,
@@ -210,6 +212,8 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		if (this.Windows) {
 			this.DeviceInformation = this.Windows.Devices.Enumeration.DeviceInformation;
 			this.DeviceClass = this.Windows.Devices.Enumeration.DeviceClass;
+			this.windowsObj = this.Windows.Devices.Enumeration.DeviceAccessInformation
+				.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.videoCapture);
 		}
 	}
 
@@ -247,6 +251,15 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 					document.getElementById('camera').scrollIntoView();
 				}, 500);
 			});
+
+			if (this.windowsObj) {
+				this.cameraAccessChangedHandler = (args:any) => {
+					if (args && this.isAllInOneMachineFlag) {
+						this.getCameraDetails();
+					}
+				}
+				this.windowsObj.addEventListener('accesschanged', this.cameraAccessChangedHandler);
+			}		
 	}
 
 	ngAfterViewInit() {
@@ -479,6 +492,10 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		if (this.cameraSessionId) {
 			this.cameraSessionId.unsubscribe();
 		}
+
+		if (this.windowsObj) {
+			this.windowsObj.removeEventListener('accesschanged', this.cameraAccessChangedHandler);
+		} 
 	}
 
 	/**
@@ -519,6 +536,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 					if (this.dataSource.permission === true) {
 						this.shouldCameraSectionDisabled = false;
 						this.logger.debug('getCameraDetails.then permission', this.dataSource.permission);
+						this.hideNote = false;
 					} else {
 						// 	response.exposure.autoValue = true;
 						this.dataSource = this.emptyCameraDetails[0];

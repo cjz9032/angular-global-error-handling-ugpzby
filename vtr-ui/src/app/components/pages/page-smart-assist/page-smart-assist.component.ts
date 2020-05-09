@@ -66,6 +66,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	public zeroTouchLockShowAdvancedSection: boolean;
 	public zeroTouchPresenceLeaveDistanceCapability = false;
 	public zeroTouchPresenceLeaveDistanceAutoAdjustCapability = false;
+	private cameraAccessChangedHandler: any;
 
 	headerMenuItems: PageAnchorLink[] = [
 		{
@@ -148,10 +149,6 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		if (this.Windows) {
 			this.windowsObj = this.Windows.Devices.Enumeration.DeviceAccessInformation
 				.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.videoCapture);
-
-			this.windowsObj.addEventListener('accesschanged', () => {
-				this.permissionChanged();
-			});
 		}
 	}
 
@@ -170,10 +167,23 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			this.getHPDLeaveSensitivityVisibilityStatus();
 			this.startMonitorHsaIntelligentSecurityStatus();
 		}
+
+		if (this.windowsObj) {
+			this.cameraAccessChangedHandler = (args:any) => {
+				if (args && this.intelligentSecurity.isZeroTouchLockFacialRecoVisible) {
+					this.permissionChanged();
+				}
+			}
+			this.windowsObj.addEventListener('accesschanged', this.cameraAccessChangedHandler);
+		} 
 	}
 
 	ngOnDestroy() {
 		document.removeEventListener('visibilitychange', this.visibilityChange);
+
+		if (this.windowsObj) {
+			this.windowsObj.removeEventListener('accesschanged', this.cameraAccessChangedHandler);
+		} 
 	}
 
 	initDataFromCache() {
