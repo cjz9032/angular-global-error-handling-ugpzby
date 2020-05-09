@@ -79,7 +79,7 @@
                     "hardwareScan": "Skanowanie sprzętu",
                     "systemUpdate": "Aktual. systemu",
                     "header": "Narzędzia system",
-                    "legionAccessory": "Legion Accessory"
+                    "legionAccessory": "Legion Accessory Central"
                 },
                 "lighting": {
                     "title": "Dostosuj oświetlenie",
@@ -98,7 +98,7 @@
                     "line10": "<b>Autozamykanie </b><br> Wyczyść procesy, które nie są potrzebne do grania przed rozpoczęciem gry, aby zmaksymalizować dostępne zasoby systemowe",
                     "line11": "<b>Tryb term </b><br> Ustaw preferowany profil urządzenia dotyczący prędkości wentylatora i sterowania chłodzeniem.",
                     "line12": "<b>Klawisz makr</b><br> Dostosuj klawiaturę do swojego stylu grania",
-                    "line13": "<b>Over Drive </b><br> This function makes your screen respond faster"
+                    "line13": "<b>Over Drive </b><br> Skróć czas reakcji swojego ekranu"
                 },
                 "systemInfo": {
                     "systenTooltip": "Najedź kursorem myszy na CPU/GPU/RAM i różne dyski, aby wyświetlić ich opis wraz z informacjami o producencie i modelu"
@@ -198,8 +198,8 @@
                     "title": "Ostrzeżenie!",
                     "description": "Nieprawidłowe ustawienia Przetaktowywania mogą nieodwracalnie uszkodzić sprzęt.",
                     "proceed": "WYKONAJ",
-                    "legionAccessory": "Install Legion Accessory Central?",
-                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc."
+                    "legionAccessory": "Czy chcesz zainstalować aplikację Legion Accessory Central?",
+                    "accessoryDesc": "Legion Accessory Central to aplikacja służąca do konfiguracji myszy, klawiatury, słuchawek itp. z serii Legion."
                 },
                 "popup": {
                     "closeBtn": "close"

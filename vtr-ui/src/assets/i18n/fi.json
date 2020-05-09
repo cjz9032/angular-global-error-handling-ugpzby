@@ -79,7 +79,7 @@
                     "hardwareScan": "Laitteistotarkistus",
                     "systemUpdate": "Järj.päivitys",
                     "header": "Järj.työkalut",
-                    "legionAccessory": "Legion Accessory"
+                    "legionAccessory": "Legion Accessory Central"
                 },
                 "lighting": {
                     "title": "Valaistuksen mukautus",
@@ -98,7 +98,7 @@
                     "line10": "<b>Automaattinen sulkeminen </b><br> Maksimoi käytettävissä olevat järjestelmäresurssit tyhjentämällä ennen pelaamisen aloittamista prosessit, joita ei tarvita pelaamiseen",
                     "line11": "<b>Lämpö-tila </b><br> Määritä haluamaasi laitteen profiiliin tuulettimen kierrosnopeuden ja jäähdytyksen säätö",
                     "line12": "<b>Makronäppäin</b><br> Näppäimistötoimintojen mukauttaminen pelityyliisi sopiviksi",
-                    "line13": "<b>Over Drive </b><br> This function makes your screen respond faster"
+                    "line13": "<b>Over Drive </b><br> Salli näyttösi reagoida nopeammin"
                 },
                 "systemInfo": {
                     "systenTooltip": "Näytä keskusyksikön/näytönohjaimen/RAM-muistin kuvaukset, mukaan lukien valmistus- ja mallitiedot, viemällä osoitin näiden ja eri asemien päälle"
@@ -198,8 +198,8 @@
                     "title": "Varoitus!",
                     "description": "Ylikellotuksen epäasianmukaiset asetukset saattavat aiheuttaa peruuttamatonta laitteistovahinkoa.",
                     "proceed": "JATKA",
-                    "legionAccessory": "Install Legion Accessory Central?",
-                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc."
+                    "legionAccessory": "Haluatko asentaa Legion Accessory Centralin?",
+                    "accessoryDesc": "Legion Accessory Central on sovellus, jolla voit hallita Legion-hiirtäsi, -näppäimistöäsi, -kuulokkeitasi jne."
                 },
                 "popup": {
                     "closeBtn": "close"

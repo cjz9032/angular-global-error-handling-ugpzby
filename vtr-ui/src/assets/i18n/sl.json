@@ -79,7 +79,7 @@
                     "hardwareScan": "Pregled strojne opreme",
                     "systemUpdate": "Posodob. sistema",
                     "header": "Sistemska orodja",
-                    "legionAccessory": "Legion Accessory"
+                    "legionAccessory": "Legion Accessory Central"
                 },
                 "lighting": {
                     "title": "Prilagajanje osvetlitve",
@@ -98,7 +98,7 @@
                     "line10": "<b>Samodejno zapiranje </b><br> Pred začetkom igranja počistite nepotrebne procese in v celoti izkoristite razpoložljiva sistemska sredstva",
                     "line11": "<b>Toplotni način </b><br> Nastavite želeni profil naprave za nadzor hitrosti ventilatorja in hlajenja",
                     "line12": "<b>Makro tipka </b><br>Prilagodite dejanja tipkovnice, da se bodo prilegale vašemu slogu igranja",
-                    "line13": "<b>Over Drive </b><br> This function makes your screen respond faster"
+                    "line13": "<b>Over Drive </b><br> Zagotovite si hitrejši odziv zaslona"
                 },
                 "systemInfo": {
                     "systenTooltip": "Kazalec zadržite na CPE/GPE/RAM in različnih pogonih, če si želite ogledati njihove opise, vključno z informacijami o proizvajalcu in modelu"
@@ -198,8 +198,8 @@
                     "title": "Opozorilo!",
                     "description": "Nepravilne nastavitve Zvišanja takta lahko povzročijo nepopravljive poškodbe strojne opreme.",
                     "proceed": "NADALJUJ",
-                    "legionAccessory": "Install Legion Accessory Central?",
-                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc."
+                    "legionAccessory": "Ali želite namestiti Legion Accessory Central?",
+                    "accessoryDesc": "Legion Accessory Central je aplikacija za konfiguriranje miške, tipkovnice, slušalk in drugih izdelkov Legion."
                 },
                 "popup": {
                     "closeBtn": "close"
