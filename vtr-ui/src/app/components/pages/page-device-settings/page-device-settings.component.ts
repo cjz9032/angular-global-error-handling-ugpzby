@@ -218,10 +218,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 				init.streamingCaptureMode = 1; // Windows.Media.Capture.StreamingCaptureMode.audio;
 				const microphonePromise = new Promise<boolean>(resolve => {
 					capture.initializeAsync(init).then(
-						() => {
-							const controller = capture.audioDeviceController;
-							return resolve(!controller.muted);
-						},
+						() => true,
 						error => {
 							if (error.number === -2147024891) {
 								// check if audio device exist or not
