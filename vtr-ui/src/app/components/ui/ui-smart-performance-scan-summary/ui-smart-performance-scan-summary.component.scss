@@ -315,6 +315,7 @@ vtr-ui-smart-performance-scan-summary {
 						}
 						.chevron-down, .chevron-up {
 							color: $main;
+							cursor: pointer;
 						}
 						.scan-items {
 							font-size: 1.2rem;
