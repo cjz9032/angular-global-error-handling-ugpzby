@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { CanComponentDeactivate } from '../../../services/guard/can-deactivate-guard.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ModalConfirmWarning } from '../../modal/modal-confirm-warning/modal-confirm-warning.component';
+import { ModalSmartPerformanceCancelComponent } from '../../modal/modal-smart-performance-cancel/modal-smart-performance-cancel.component';
 
 @Component({
   selector: 'vtr-page-smart-performance',
@@ -11,6 +11,7 @@ import { ModalConfirmWarning } from '../../modal/modal-confirm-warning/modal-con
 })
 export class PageSmartPerformanceComponent implements OnInit, CanComponentDeactivate {
   isScanning: boolean = false;
+  showPromptMsg: boolean = true
 
   constructor(private modalService: NgbModal) { }
 
@@ -30,10 +31,11 @@ export class PageSmartPerformanceComponent implements OnInit, CanComponentDeacti
   }
 
   async openModal(): Promise<boolean> {
-    const modalRef = this.modalService.open(ModalConfirmWarning, {
+    const modalRef = this.modalService.open(ModalSmartPerformanceCancelComponent, {
       backdrop: 'static',
       centered: true
     });
+    modalRef.componentInstance.promptMsg = this.showPromptMsg
     const response = await modalRef.result
     return response;
   }

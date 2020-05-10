@@ -39,7 +39,6 @@ import { PageLayoutComponent } from 'src/app/components/page-layout/page-layout.
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 import { SanitizeModule } from '../sanitize.module';
 import { UiScanScheduleComponent } from '../../components/ui/ui-scan-schedule/ui-scan-schedule.component';
-import { ModalConfirmWarning } from 'src/app/components/modal/modal-confirm-warning/modal-confirm-warning.component';
 
 @NgModule({
 	declarations: [
@@ -54,7 +53,6 @@ import { ModalConfirmWarning } from 'src/app/components/modal/modal-confirm-warn
 		WidgetSubscriptiondetailsComponent,
 		WidgetScansettingsComponent,
 		UiScanScheduleComponent,
-		ModalConfirmWarning
 	],
 	imports: [
 		CommonModule,
@@ -77,7 +75,6 @@ import { ModalConfirmWarning } from 'src/app/components/modal/modal-confirm-warn
 		ModalSmartPerformanceSubscribeComponent,
 		WidgetSpeedometerComponent,
 		UiSmartPerformanceScanSummaryComponent,
-		ModalConfirmWarning,
 		CommonUiModule
 	],
 	bootstrap: [
@@ -86,8 +83,7 @@ import { ModalConfirmWarning } from 'src/app/components/modal/modal-confirm-warn
 		ModalSmartPerformanceCancelComponent,
 		ModalSmartPerformanceSubscribeComponent,
 		WidgetSpeedometerComponent,
-		UiSmartPerformanceScanSummaryComponent,
-		ModalConfirmWarning
+		UiSmartPerformanceScanSummaryComponent
 	]
 })
 export class SmartPerformanceModule {
