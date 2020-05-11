@@ -374,6 +374,15 @@
                     "bundled": "bundled",
                     "unbundled": "unbundled",
                     "isSelected": "is selected"
+                },
+                "macrokeyStatus": {
+                    "label": "Macro Key status"
+                },
+                "ignoreIntervalStatus": {
+                    "label": "Interval setting"
+                },
+                "repeatStatus": {
+                    "label": "Repeat frequency"
                 }
             }
         },
@@ -2082,18 +2091,18 @@
                 "tooltip": "Tämä ominaisuus ei ole käytettävissä verkkovideosoittimissa. Suositut paikalliset videosoittimet (kuten Windows Media Player ja 5KPlayer) tukevat tätä ominaisuutta."
             },
             "superResolution": {
-				"title": "Näytön tarkkuuden skaalaus",
-				"desc": "<p><label>Tämä ominaisuus parantaa videoiden katselukokemusta parantamalla videoiden resoluutiota. Se toimii erityisen hyvin, kun videon resoluutio on alhainen.</label></p> <p><label>Tämä toiminto saattaa heikentää akun käyttöaikaa, akun lämpötilaa ja aiheuttaa ääniä. Älä käytä sitä DC-tilassa (akkuvirralla). Muutoin se nopeuttaa virrankulutusta ja lyhentää akun käyttöikää.</label></p>",
-				"tooltip": "<p>Tämä ominaisuus toimii vain seuraavilla videosoittimilla:<br>Windows Media Player<br>Chrome-pohjainen soitin<br>Elokuvat ja TV<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>Lisätietoja tämän ominaisuuden ottamisesta käyttöön PotPlayer- ja GOM Player -soittimille on tietokoneesi mukana toimitetussa käyttöoppaassa.</p>",
-				"note": {
-					"description": "Wi-Fi-toiminto ei toimi seuraavissa tilanteissa:",
-					"description1": "Virransäästötila on käytössä.",
+                "title": "Näytön tarkkuuden skaalaus",
+                "desc": "<p><label>Tämä ominaisuus parantaa videoiden katselukokemusta parantamalla videoiden resoluutiota. Se toimii erityisen hyvin, kun videon resoluutio on alhainen.</label></p> <p><label>Tämä toiminto saattaa heikentää akun käyttöaikaa, akun lämpötilaa ja aiheuttaa ääniä. Älä käytä sitä DC-tilassa (akkuvirralla). Muutoin se nopeuttaa virrankulutusta ja lyhentää akun käyttöikää.</label></p>",
+                "tooltip": "<p>Tämä ominaisuus toimii vain seuraavilla videosoittimilla:<br>Windows Media Player<br>Chrome-pohjainen soitin<br>Elokuvat ja TV<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>Lisätietoja tämän ominaisuuden ottamisesta käyttöön PotPlayer- ja GOM Player -soittimille on tietokoneesi mukana toimitetussa käyttöoppaassa.</p>",
+                "note": {
+                    "description": "Wi-Fi-toiminto ei toimi seuraavissa tilanteissa:",
+                    "description1": "Virransäästötila on käytössä.",
                     "description2": "Keskusyksikön lämpötila on liian korkea.",
                     "description3": "Laite asetetaan akun virransäästötilaan kohdasta ”Älykäs jäähdytys”."
-				},
-				"imageBefore":"Ennen",
-                "imageAfter":"Jälkeen"
-			},
+                },
+                "imageBefore": "Ennen",
+                "imageAfter": "Jälkeen"
+            },
             "antiTheft": {
                 "heading": "Älykäs tunnistustoiminto",
                 "title": "Älykäs liikkeentunnistus",
@@ -3163,7 +3172,8 @@
                 "tab2Description": "Get a 100 point check done in under 5 minutes",
                 "tab3Heading": "IT'S SAFE",
                 "tab3Description": "No scareware, built with best practises"
-            }
+            },
+            "summaryTitle": "Tune PC Performance"
         },
         "boostInternetPerformance": {
             "title": "BOOST INTERNET PERFORMANCE",
@@ -3184,7 +3194,8 @@
                 "tab2Description": "We remove all potentially unwanted programs",
                 "tab3Heading": "LIGHT AND FAST",
                 "tab3Description": "Scan typically takes 5-10 minutes"
-            }
+            },
+            "summaryTitle": "Internet Performance"
         },
         "malwareSecurity": {
             "title": "MALWARE & SECURITY",
@@ -3204,7 +3215,8 @@
                 "tab2Description": "We can diagnose and repair your connectivity problems.",
                 "tab3Heading": "BROWSER ISSUES",
                 "tab3Description": "We configure and fix all your popular web browsers."
-            }
+            },
+            "summaryTitle": "Malware & Security"
         },
         "proactiveAutomated": {
             "title": "PROACTIVE & AUTOMATED",
@@ -3249,7 +3261,17 @@
             "txtDay": "Day",
             "txtTime": "Time",
             "txtSave": "save",
-            "txtCancel": "cancel"
+            "txtCancel": "cancel",
+            "scanFrequencyWeek": "Once a week",
+            "scanFrequencyEveryWeek": "Every other week",
+            "scanFrequencyMonth": "Every month",
+            "mon": "Monday",
+            "tue": "Tuesday",
+            "wed": "Wednesday",
+            "thu": "Thursday",
+            "fri": "Friday",
+            "sat": "Saturday",
+            "sun": "Sunday"
         },
         "scanningPage": {
             "title": "Performance & security check",

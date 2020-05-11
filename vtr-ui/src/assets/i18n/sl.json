@@ -374,6 +374,15 @@
                     "bundled": "bundled",
                     "unbundled": "unbundled",
                     "isSelected": "is selected"
+                },
+                "macrokeyStatus": {
+                    "label": "Macro Key status"
+                },
+                "ignoreIntervalStatus": {
+                    "label": "Interval setting"
+                },
+                "repeatStatus": {
+                    "label": "Repeat frequency"
                 }
             }
         },
@@ -2082,18 +2091,18 @@
                 "tooltip": "Ta funkcija se ne uporablja za spletne videopredvajalnike. To funkcijo podpirajo priljubljeni lokalni videopredvajalniki, kot so Windows Media Player, 5KPlayer in drugi."
             },
             "superResolution": {
-				"title": "Povečanje ločljivosti videoposnetkov",
-				"desc": "<p><label>Ta funkcija s povečanjem ločljivosti videoposnetka izboljša izkušnjo predvajanja videoposnetkov. Posebej primerna je za videoposnetke v slabši ločljivosti.</label></p> <p><label>Ta funkcija lahko vpliva na čas delovanja in temperaturo baterije ter poveča glasnost računalnika. Ne uporabljajte je pri napajanju iz baterije (način DC), sicer bo pospešila porabo energije in skrajšala čas delovanja baterije.</label></p>",
-				"tooltip": "<p>Ta funkcija deluje samo s temi predvajalniki videoposnetkov:<br>Windows Media Player<br>predvajalnik v brskalniku Chrome<br>Filmi in oddaje<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>Navodila za omogočanje te funkcije v predvajalnikih PotPlayer in GOM Player najdete v Vodiču za uporabnika, ki je priložen računalniku.</p>",
-				"note": {
-					"description": "Ta funkcija ne deluje v naslednjih primerih:",
-					"description1": "Omogočen je način varčevanja energije baterije.",
+                "title": "Povečanje ločljivosti videoposnetkov",
+                "desc": "<p><label>Ta funkcija s povečanjem ločljivosti videoposnetka izboljša izkušnjo predvajanja videoposnetkov. Posebej primerna je za videoposnetke v slabši ločljivosti.</label></p> <p><label>Ta funkcija lahko vpliva na čas delovanja in temperaturo baterije ter poveča glasnost računalnika. Ne uporabljajte je pri napajanju iz baterije (način DC), sicer bo pospešila porabo energije in skrajšala čas delovanja baterije.</label></p>",
+                "tooltip": "<p>Ta funkcija deluje samo s temi predvajalniki videoposnetkov:<br>Windows Media Player<br>predvajalnik v brskalniku Chrome<br>Filmi in oddaje<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>Navodila za omogočanje te funkcije v predvajalnikih PotPlayer in GOM Player najdete v Vodiču za uporabnika, ki je priložen računalniku.</p>",
+                "note": {
+                    "description": "Ta funkcija ne deluje v naslednjih primerih:",
+                    "description1": "Omogočen je način varčevanja energije baterije.",
                     "description2": "Temperatura CPE je previsoka.",
                     "description3": "Naprava je nastavljena na način varčevanja z energijo baterije pri vklopljenem pametnem hlajenju."
-				},
-				"imageBefore":"Prej",
-                "imageAfter":"Potem"
-			},
+                },
+                "imageBefore": "Prej",
+                "imageAfter": "Potem"
+            },
             "antiTheft": {
                 "heading": "Pametno zaznavanje",
                 "title": "Pametno opozarjanje na premikanje",
@@ -3163,7 +3172,8 @@
                 "tab2Description": "Get a 100 point check done in under 5 minutes",
                 "tab3Heading": "IT'S SAFE",
                 "tab3Description": "No scareware, built with best practises"
-            }
+            },
+            "summaryTitle": "Tune PC Performance"
         },
         "boostInternetPerformance": {
             "title": "BOOST INTERNET PERFORMANCE",
@@ -3184,7 +3194,8 @@
                 "tab2Description": "We remove all potentially unwanted programs",
                 "tab3Heading": "LIGHT AND FAST",
                 "tab3Description": "Scan typically takes 5-10 minutes"
-            }
+            },
+            "summaryTitle": "Internet Performance"
         },
         "malwareSecurity": {
             "title": "MALWARE & SECURITY",
@@ -3204,7 +3215,8 @@
                 "tab2Description": "We can diagnose and repair your connectivity problems.",
                 "tab3Heading": "BROWSER ISSUES",
                 "tab3Description": "We configure and fix all your popular web browsers."
-            }
+            },
+            "summaryTitle": "Malware & Security"
         },
         "proactiveAutomated": {
             "title": "PROACTIVE & AUTOMATED",
@@ -3249,7 +3261,17 @@
             "txtDay": "Day",
             "txtTime": "Time",
             "txtSave": "save",
-            "txtCancel": "cancel"
+            "txtCancel": "cancel",
+            "scanFrequencyWeek": "Once a week",
+            "scanFrequencyEveryWeek": "Every other week",
+            "scanFrequencyMonth": "Every month",
+            "mon": "Monday",
+            "tue": "Tuesday",
+            "wed": "Wednesday",
+            "thu": "Thursday",
+            "fri": "Friday",
+            "sat": "Saturday",
+            "sun": "Sunday"
         },
         "scanningPage": {
             "title": "Performance & security check",

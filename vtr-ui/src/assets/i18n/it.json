@@ -374,6 +374,15 @@
                     "bundled": "bundled",
                     "unbundled": "unbundled",
                     "isSelected": "is selected"
+                },
+                "macrokeyStatus": {
+                    "label": "Macro Key status"
+                },
+                "ignoreIntervalStatus": {
+                    "label": "Interval setting"
+                },
+                "repeatStatus": {
+                    "label": "Repeat frequency"
                 }
             }
         },
@@ -2082,18 +2091,18 @@
                 "tooltip": "Questa funzione non è applicabile ai lettori video Web. I principali lettori video locali, come Windows Media Player, 5KPlayer e così via supportano questa funzione."
             },
             "superResolution": {
-				"title": "Upscaling della risoluzione video",
-				"desc": "<p><label>Questa funzione migliora l'esperienza della riproduzione video aumentando la risoluzione video. Funziona soprattutto in caso di scarsa risoluzione video.</label></p> <p><label>Questa funzione potrebbe influire sulla durata e la temperatura della batteria, aumentando la rumorosità del dispositivo. Non utilizzarla in modalità CC (modalità batteria). altrimenti accelererà il consumo energetico e ridurrà la durata della batteria.</label></p>",
-				"tooltip": "<p>Questa funzione è disponibile solo per i seguenti lettori video:<br>Windows Media Player<br>Lettore basato su Chrome<br>Film e TV<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>Per istruzioni su come abilitare questa funzione su PotPlayer e GOM Player, consultare la guida per l'utente fornita con il computer.</p>",
-				"note": {
-					"description": "Questa funzione non può essere utilizzata quando:",
-					"description1": "La modalità risparmio batteria è abilitata.",
+                "title": "Upscaling della risoluzione video",
+                "desc": "<p><label>Questa funzione migliora l'esperienza della riproduzione video aumentando la risoluzione video. Funziona soprattutto in caso di scarsa risoluzione video.</label></p> <p><label>Questa funzione potrebbe influire sulla durata e la temperatura della batteria, aumentando la rumorosità del dispositivo. Non utilizzarla in modalità CC (modalità batteria). altrimenti accelererà il consumo energetico e ridurrà la durata della batteria.</label></p>",
+                "tooltip": "<p>Questa funzione è disponibile solo per i seguenti lettori video:<br>Windows Media Player<br>Lettore basato su Chrome<br>Film e TV<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>Per istruzioni su come abilitare questa funzione su PotPlayer e GOM Player, consultare la guida per l'utente fornita con il computer.</p>",
+                "note": {
+                    "description": "Questa funzione non può essere utilizzata quando:",
+                    "description1": "La modalità risparmio batteria è abilitata.",
                     "description2": "La temperatura della CPU è elevata.",
                     "description3": "Il dispositivo è impostato sulla modalità di risparmio della batteria in \"Raffreddamento intelligente\"."
-				},
-				"imageBefore":"Prima",
-                "imageAfter":"Dopo"
-			},
+                },
+                "imageBefore": "Prima",
+                "imageAfter": "Dopo"
+            },
             "antiTheft": {
                 "heading": "Rilevamento intelligente",
                 "title": "Avviso Smart Motion",
@@ -3163,7 +3172,8 @@
                 "tab2Description": "Get a 100 point check done in under 5 minutes",
                 "tab3Heading": "IT'S SAFE",
                 "tab3Description": "No scareware, built with best practises"
-            }
+            },
+            "summaryTitle": "Tune PC Performance"
         },
         "boostInternetPerformance": {
             "title": "BOOST INTERNET PERFORMANCE",
@@ -3184,7 +3194,8 @@
                 "tab2Description": "We remove all potentially unwanted programs",
                 "tab3Heading": "LIGHT AND FAST",
                 "tab3Description": "Scan typically takes 5-10 minutes"
-            }
+            },
+            "summaryTitle": "Internet Performance"
         },
         "malwareSecurity": {
             "title": "MALWARE & SECURITY",
@@ -3204,7 +3215,8 @@
                 "tab2Description": "We can diagnose and repair your connectivity problems.",
                 "tab3Heading": "BROWSER ISSUES",
                 "tab3Description": "We configure and fix all your popular web browsers."
-            }
+            },
+            "summaryTitle": "Malware & Security"
         },
         "proactiveAutomated": {
             "title": "PROACTIVE & AUTOMATED",
@@ -3249,7 +3261,17 @@
             "txtDay": "Day",
             "txtTime": "Time",
             "txtSave": "save",
-            "txtCancel": "cancel"
+            "txtCancel": "cancel",
+            "scanFrequencyWeek": "Once a week",
+            "scanFrequencyEveryWeek": "Every other week",
+            "scanFrequencyMonth": "Every month",
+            "mon": "Monday",
+            "tue": "Tuesday",
+            "wed": "Wednesday",
+            "thu": "Thursday",
+            "fri": "Friday",
+            "sat": "Saturday",
+            "sun": "Sunday"
         },
         "scanningPage": {
             "title": "Performance & security check",

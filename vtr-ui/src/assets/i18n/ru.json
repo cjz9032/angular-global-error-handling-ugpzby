@@ -374,6 +374,15 @@
                     "bundled": "bundled",
                     "unbundled": "unbundled",
                     "isSelected": "is selected"
+                },
+                "macrokeyStatus": {
+                    "label": "Macro Key status"
+                },
+                "ignoreIntervalStatus": {
+                    "label": "Interval setting"
+                },
+                "repeatStatus": {
+                    "label": "Repeat frequency"
                 }
             }
         },
@@ -2082,18 +2091,18 @@
                 "tooltip": "Эта функция не распространяется на интернет-проигрыватели видео. Самые популярные локальные видеопроигрыватели (например,проигрыватель Windows Media Player, 5KPlayer и т. д.) поддерживают эту функцию."
             },
             "superResolution": {
-				"title": "Масштабирование разрешения видео",
-				"desc": "<p><label>Эта функция повышает качество воспроизведения видео, увеличивая его разрешение. Ее действие особенно заметно при низком разрешении видео.</label></p> <p><label>Эта функция может повлиять на время работы и температуру аккумулятора, а также привести к возникновению шума. Не используйте ее в режиме DC (режим работы от аккумулятора). В противном случае увеличится энергопотребление и сократится время работы аккумулятора.</label></p>",
-				"tooltip": "<p>Эта функция работает только в следующих видеопроигрывателях:<br>Windows Media Player<br>Проигрыватель на основе браузера Chrome<br>Кино и ТВ<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>Инструкции по включению этой функции в проигрывателях PotPlayer и GOM Player см. в Руководстве пользователя из комплекта поставки вашего компьютера.</p>",
-				"note": {
-					"description": "Эта функция не работает, если:",
-					"description1": "Включен режим экономии заряда аккумулятора.",
+                "title": "Масштабирование разрешения видео",
+                "desc": "<p><label>Эта функция повышает качество воспроизведения видео, увеличивая его разрешение. Ее действие особенно заметно при низком разрешении видео.</label></p> <p><label>Эта функция может повлиять на время работы и температуру аккумулятора, а также привести к возникновению шума. Не используйте ее в режиме DC (режим работы от аккумулятора). В противном случае увеличится энергопотребление и сократится время работы аккумулятора.</label></p>",
+                "tooltip": "<p>Эта функция работает только в следующих видеопроигрывателях:<br>Windows Media Player<br>Проигрыватель на основе браузера Chrome<br>Кино и ТВ<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>Инструкции по включению этой функции в проигрывателях PotPlayer и GOM Player см. в Руководстве пользователя из комплекта поставки вашего компьютера.</p>",
+                "note": {
+                    "description": "Эта функция не работает, если:",
+                    "description1": "Включен режим экономии заряда аккумулятора.",
                     "description2": "температура процессора слишком высокая.",
                     "description3": "Устройство переведено в режим экономии заряда аккумулятора в разделе \"Интеллектуальное охлаждение\"."
-				},
-				"imageBefore":"До",
-                "imageAfter":"После"
-			},
+                },
+                "imageBefore": "До",
+                "imageAfter": "После"
+            },
             "antiTheft": {
                 "heading": "Интеллектуальное распознавание",
                 "title": "Интеллектуальное оповещение о движении",
@@ -3163,7 +3172,8 @@
                 "tab2Description": "Get a 100 point check done in under 5 minutes",
                 "tab3Heading": "IT'S SAFE",
                 "tab3Description": "No scareware, built with best practises"
-            }
+            },
+            "summaryTitle": "Tune PC Performance"
         },
         "boostInternetPerformance": {
             "title": "BOOST INTERNET PERFORMANCE",
@@ -3184,7 +3194,8 @@
                 "tab2Description": "We remove all potentially unwanted programs",
                 "tab3Heading": "LIGHT AND FAST",
                 "tab3Description": "Scan typically takes 5-10 minutes"
-            }
+            },
+            "summaryTitle": "Internet Performance"
         },
         "malwareSecurity": {
             "title": "MALWARE & SECURITY",
@@ -3204,7 +3215,8 @@
                 "tab2Description": "We can diagnose and repair your connectivity problems.",
                 "tab3Heading": "BROWSER ISSUES",
                 "tab3Description": "We configure and fix all your popular web browsers."
-            }
+            },
+            "summaryTitle": "Malware & Security"
         },
         "proactiveAutomated": {
             "title": "PROACTIVE & AUTOMATED",
@@ -3249,7 +3261,17 @@
             "txtDay": "Day",
             "txtTime": "Time",
             "txtSave": "save",
-            "txtCancel": "cancel"
+            "txtCancel": "cancel",
+            "scanFrequencyWeek": "Once a week",
+            "scanFrequencyEveryWeek": "Every other week",
+            "scanFrequencyMonth": "Every month",
+            "mon": "Monday",
+            "tue": "Tuesday",
+            "wed": "Wednesday",
+            "thu": "Thursday",
+            "fri": "Friday",
+            "sat": "Saturday",
+            "sun": "Sunday"
         },
         "scanningPage": {
             "title": "Performance & security check",
