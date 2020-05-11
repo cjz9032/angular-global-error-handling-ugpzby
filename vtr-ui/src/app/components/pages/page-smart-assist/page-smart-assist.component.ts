@@ -306,6 +306,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			}
 			if (this.smartAssistCapability.isSuperResolutionSupported) {
 				this.superResolution = this.smartAssistCapability.isSuperResolutionSupported;
+				this.isSuperResolutionLoading = false;
 				this.getSuperResolutionStatus();
 			}
 			if (this.smartAssistCapability.isHsaIntelligentSecuritySupported) {
@@ -784,7 +785,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 					this.intelligentMedia = assistCapability.isIntelligentMediaSupported;
 					this.logger.debug('PageSmartAssistComponent.getVideoPauseResumeStatus: cache found', this.intelligentMedia);
 					this.isIntelligentMediaLoading = false;
-					if (!this.intelligentMedia.available && !this.smartAssistCapability.isSuperResolutionSupported.available) {
+					if (!this.intelligentMedia.available && !this.superResolution.available) {
 						this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'media');
 						this.checkMenuItemsLength();
 					}
@@ -798,7 +799,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 						this.intelligentMedia = response;
 						this.logger.debug('PageSmartAssistComponent.getVideoPauseResumeStatus: response from API', response);
 
-						if (!response.available && !this.smartAssistCapability.isSuperResolutionSupported.available) {
+						if (!response.available && !this.superResolution.available) {
 							this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'media');
 							this.checkMenuItemsLength();
 						}
@@ -837,7 +838,6 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 					.then((response: FeatureStatus) => {
 						this.isSuperResolutionLoading = false;
 						this.superResolution = response;
-						this.smartAssistCapability.isSuperResolutionSupported = this.superResolution;
 						if (!response.available && !this.smartAssistCache.intelligentMedia.available) {
 							this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'media');
 							this.checkMenuItemsLength();
