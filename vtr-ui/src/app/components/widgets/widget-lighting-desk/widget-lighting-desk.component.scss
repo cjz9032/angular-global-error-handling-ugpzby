@@ -334,7 +334,7 @@
 		.ui-lighting-desk{		
 			.lighting-panel-select{
                 button:focus{
-                    @include border-blue-gaming;
+                    @include default-button-border;
                 }
             }
             .lighting-default-text{

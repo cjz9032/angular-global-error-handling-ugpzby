@@ -229,7 +229,7 @@
 	.is-gaming {
         .aria-area{
             button:focus{
-                @include border-blue-gaming;
+                @include default-button-border;
             }
         }
 	}

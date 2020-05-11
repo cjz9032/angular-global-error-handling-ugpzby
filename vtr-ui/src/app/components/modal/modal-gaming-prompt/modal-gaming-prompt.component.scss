@@ -33,6 +33,7 @@
             padding: 0;
             letter-spacing: normal;
             font-family: 'SegoeUI';
+            outline: none;
         }
     }
     .modal-body {
@@ -54,6 +55,9 @@
         padding: 1.2rem 0 0;
         height: 5.7rem;
         border-top: 1px solid $screen_dark_10 !important;
+        button{
+            outline: none;
+        }
     }
 }
 .cancel{
@@ -61,4 +65,26 @@
 }
 .detailed-description{
     font-family: "Segoe UI Semibold";
+}
+
+::ng-deep body.focus-enable{
+	.is-gaming {
+        .gaming-modal-prompt{
+            .close:focus{
+                @include default-button-border;
+            }
+            .border-radius-button:focus {
+                outline: 0;
+                box-shadow: none;
+                position: relative;
+                &::after {
+                    @include circular-button-border;
+                }
+            }
+            .under-line-button:focus {
+                @include under-line-button-outline;
+            }
+            
+        }
+	}
 }

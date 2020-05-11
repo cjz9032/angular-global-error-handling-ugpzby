@@ -122,5 +122,22 @@
     .modal-footer {
         padding-top: 1.73rem;
         justify-content: flex-end;
+        button{
+            outline: none;
+        }
     }
+}
+
+::ng-deep body.focus-enable{
+	.is-gaming {
+        .gaming-modal-fun{
+            .close:focus{
+                @include default-button-border;
+            }
+            .under-line-button:focus {
+                @include under-line-button-outline;
+            }
+            
+        }
+	}
 }

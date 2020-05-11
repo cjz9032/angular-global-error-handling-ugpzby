@@ -10,6 +10,7 @@
     }
     button {
         font-size: 0;
+        outline: none;
         span {
             font-size: 3rem;
             margin-top: -0.3rem;
@@ -45,7 +46,7 @@
 	.is-gaming {
 		.vtr-ui-add-reduce-button{
             button:focus{
-                @include border-blue-gaming;
+                @include default-button-border;
             }
 		}
 	}
