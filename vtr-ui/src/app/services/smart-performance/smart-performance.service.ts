@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { CommonService } from "../common/common.service";
 import { VantageShellService } from "../vantage-shell/vantage-shell.service";
+import { Subject } from 'rxjs';
 
 @Injectable({
 	providedIn: "root"
