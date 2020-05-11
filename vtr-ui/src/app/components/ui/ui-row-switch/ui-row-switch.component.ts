@@ -241,6 +241,15 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, After
 		this.subscriptionList.forEach((s: Subscription) => s.unsubscribe());
 	}
 
+	removeHTMLFormatting(source: string) {
+		try {
+			return source.replace(/<\/?.+?\/?>/g, ' ').replace(/  +/g, ' ')
+		}
+		catch (error) {
+
+			return source;
+		}
+	}
 	// private closeTooltip($event: Event) {
 	// 	if (!$event.srcElement.classList.contains('fa-question-circle') && this.tooltip && this.tooltip.isOpen()) {
 	// 		this.tooltip.close();
