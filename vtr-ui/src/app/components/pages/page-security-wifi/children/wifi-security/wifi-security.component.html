@@ -7,7 +7,7 @@
 			<div class="pull right">
 				<img *ngIf="!deviceService.isGaming"
 					class="coronet-logo"
-					[src]=" 'assets/images/coronet-logo.svg' | svgInline | async" 
+					[src]=" 'assets/images/coronet-logo.svg' | svgInline | async"
 					alt="coronet logo"/>
 				<img *ngIf="deviceService.isGaming"
 					class="coronet-logo"
@@ -89,7 +89,7 @@
 								<div class="card-body p-0 show"
 									[hidden]="data?.histories?.length === 0">
 									<div class="row no-gutters wifi-card">
-										<div *ngFor="let history of data.histories"
+										<div *ngFor="let history of data.histories; let i = index;"
 											class="col-sm-12 col-md-6 col-lg-12 col-xl-6 pr-3 pb-3 wifi">
 											<div class="media pt-3 border-0">
 												<div class="status-icon pr-3 pl-3">
@@ -106,10 +106,11 @@
 													</span>
 												</div>
 												<div class="connection-name media-body border-0 pl-3">
-													<h5 class="mt-0"
-														title=""
+													<span class="hide-text" id="network-history-{{i}}">{{networkLevel[history.good]}}</span>
+													<span class="mt-0 network-name"
+														attr.aria-labelledby="network-history-{{i}}"
 														[ngbTooltip]="history.ssid" tooltipClass="vtr-system-tooltip" container="body"
-														>{{history.ssid}}</h5>
+														>{{history.ssid}}</span>
 													<small class="connection-status text-muted">
 														{{'security.wifisecurity.container.connect' | translate}}
 														{{history.info}}

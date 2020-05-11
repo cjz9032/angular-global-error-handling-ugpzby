@@ -81,7 +81,7 @@
                     "hardwareScan": "فحص الأجهزة",
                     "systemUpdate": "‏‫تحديث النظام‬",
                     "header": "أدوات النظام",
-                    "legionAccessory": "Legion Accessory"
+                    "legionAccessory": "Legion Accessory Central"
                 },
                 "systemStatus": {
                     "info": "معلومات"
@@ -103,7 +103,7 @@
                     "line10": "<b>إغلاق تلقائي</b><br> مسح العمليات غير اللازمة للألعاب قبل البدء في اللعب لزيادة موارد النظام المتاحة إلى أقصى حد",
                     "line11": "<b>الوضع الحراري</b><br> تعيين ملف تعريف الجهاز المفضل لسرعة المروحة والتحكم في التبريد",
                     "line12": "<b>مفتاح الماكرو </b><br> يمكنك تخصيص إجراءات لوحة المفاتيح لتتناسب مع نمط اللعب الخاص بك",
-                    "line13": "<b>Over Drive </b><br> This function makes your screen respond faster"
+                    "line13": "<b>Over Drive </b><br> اجعل شاشتك تستجيب بشكل أسرع"
                 },
                 "systemInfo": {
                     "systenTooltip": "قم بتمرير الماوس فوق CPU/GPU/RAM ومحركات الأقراص المختلفة لإظهار أوصافها بما في ذلك معلومات التصنيع والطراز"
@@ -200,8 +200,8 @@
                     "title": "تحذير!",
                     "description": "قد تؤدي الإعدادات غير السليمة لـ زيادة الأداء إلى تلف بالجهاز لا يمكن التراجع عنه.",
                     "proceed": "المتابعة",
-                    "legionAccessory": "Install Legion Accessory Central?",
-                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc."
+                    "legionAccessory": "هل تريد تثبيت Legion Accessory Central؟",
+                    "accessoryDesc": "إن Legion Accessory Central عبارة عن تطبيق لتكوين الماوس ولوحة المفاتيح وسماعات الرأس وغيرها من Legion."
                 },
                 "popup": {
                     "closeBtn": "close"

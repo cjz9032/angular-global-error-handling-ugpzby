@@ -76,7 +76,6 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	displayToDate: any;
 	customDate: any;
 	@Output() backToScan = new EventEmitter();
-
 	// @Output() sendScanData = new EventEmitter();
 	@Output() sendScanData: EventEmitter<any> = new EventEmitter();
 	// scan settings
@@ -87,18 +86,18 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	selectedNumber: any;
 	yearsList: any[] = [this.getYearObj(0)];// removed last year, "this.getYearObj(-1)" to fix van-17574
 	scanFrequency: any = [
-		'Once a week',
-		'Every other week',
-		'Once a month'
+		this.translate.instant('smartPerformance.scanSettings.scanFrequencyWeek'),
+		this.translate.instant('smartPerformance.scanSettings.scanFrequencyEveryWeek'),
+		this.translate.instant('smartPerformance.scanSettings.scanFrequencyMonth')
 	];
 	days: any = [
-		'Sunday',
-		'Monday',
-		'Tuesday',
-		'Wednesday',
-		'Thursday',
-		'Friday',
-		'Saturday'
+		this.translate.instant('smartPerformance.scanSettings.sun'),
+		this.translate.instant('smartPerformance.scanSettings.mon'),
+		this.translate.instant('smartPerformance.scanSettings.tue'),
+		this.translate.instant('smartPerformance.scanSettings.wed'),
+		this.translate.instant('smartPerformance.scanSettings.thu'),
+		this.translate.instant('smartPerformance.scanSettings.fri'),
+		this.translate.instant('smartPerformance.scanSettings.sat')
 	];
 	dates: any = [
 		'1',

@@ -79,7 +79,7 @@
                     "hardwareScan": "סריקת חומרה",
                     "systemUpdate": "‏‫עדכון המערכת‬",
                     "header": "כלי מערכת",
-                    "legionAccessory": "Legion Accessory"
+                    "legionAccessory": "Legion Accessory Central"
                 },
                 "lighting": {
                     "title": "התאמה אישית של התאורה",
@@ -98,7 +98,7 @@
                     "line10": "<b>סגירה אוטומטית</b><br> נקו תהליכים שאינם נדרשים למשחק לפני שאתם מתחילים לשחק כדי לשפר את המשאבים הזמינים של המערכת",
                     "line11": "<b>מצב תרמי </b><br> הגדרת פרופיל ההתקן המועדף למהירות המאוורר ובקרת הצינון",
                     "line12": "<b>מקש מאקרו </b><br> התאימו אישית את פעולות המקלדת כך שיתאימו לסגנון המשחק שלכם",
-                    "line13": "<b>Over Drive </b><br> This function makes your screen respond faster"
+                    "line13": "<b>Over Drive </b><br> שפרו את המהירות של תגובת המסך"
                 },
                 "systemInfo": {
                     "systenTooltip": "העבר את העכבר מעל CPU/GPU/RAM וכוננים שונים כדי להציג את התיאורים שלהם, כולל נתוני ייצור ומידע על הדגם"
@@ -174,8 +174,8 @@
                     "title": "אזהרה!",
                     "description": "הגדרות לא נכונות של אוברקלוקינג עלולות לגרום נזק בלתי הפיך לחומרה.",
                     "proceed": "המשך",
-                    "legionAccessory": "Install Legion Accessory Central?",
-                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc."
+                    "legionAccessory": "האם ברצונכם להתקין את Legion Accessory Central?",
+                    "accessoryDesc": "Legion Accessory Central היא אפליקציה להגדרת העכבר, המקלדת, האוזניות ואביזרים נוספים של Legion."
                 },
                 "thermalMode2Popup": {
                     "thermalMode2SettingTitle": "הגדרת מצב תרמי",

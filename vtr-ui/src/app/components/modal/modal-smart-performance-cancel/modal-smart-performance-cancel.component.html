@@ -10,6 +10,7 @@
 	<div class="content-block px-3">
 		<h1>{{'smartPerformance.scanningPage.cancelScan.title' |translate }}</h1>
 		<p>{{'smartPerformance.scanningPage.cancelScan.description' |translate }}</p>
+		<h5 *ngIf="promptMsg" class="mt-2">{{ 'hardwareScan.cancelTextPrompt' | translate }}</h5>
 		<hr>
 		<div class="vtr-battery-card" *ngIf="isLoading">
 			<div class="container" [style.height.px]="40">

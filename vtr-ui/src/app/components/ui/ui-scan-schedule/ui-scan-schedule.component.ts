@@ -6,6 +6,7 @@ import { SmartPerformanceService } from 'src/app/services/smart-performance/smar
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import moment from 'moment';
 import { ModalSmartPerformanceSubscribeComponent } from '../../modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-ui-scan-schedule',
@@ -20,6 +21,7 @@ export class UiScanScheduleComponent implements OnInit {
 		private calendar: NgbCalendar,
 		private logger: LoggerService,
 		public smartPerformanceService: SmartPerformanceService,
+		private translate: TranslateService,
 	) { }
 	public machineFamilyName: string;
 	public today = new Date();
@@ -70,18 +72,18 @@ export class UiScanScheduleComponent implements OnInit {
 	selectedNumber: any;
 	
 	scanFrequency: any = [
-		'Once a week',
-		'Every other week',
-		'Once a month'
+		this.translate.instant('smartPerformance.scanSettings.scanFrequencyWeek'),
+		this.translate.instant('smartPerformance.scanSettings.scanFrequencyEveryWeek'),
+		this.translate.instant('smartPerformance.scanSettings.scanFrequencyMonth')
 	];
 	days: any = [
-		'Sunday',
-		'Monday',
-		'Tuesday',
-		'Wednesday',
-		'Thursday',
-		'Friday',
-		'Saturday'
+		this.translate.instant('smartPerformance.scanSettings.sun'),
+		this.translate.instant('smartPerformance.scanSettings.mon'),
+		this.translate.instant('smartPerformance.scanSettings.tue'),
+		this.translate.instant('smartPerformance.scanSettings.wed'),
+		this.translate.instant('smartPerformance.scanSettings.thu'),
+		this.translate.instant('smartPerformance.scanSettings.fri'),
+		this.translate.instant('smartPerformance.scanSettings.sat')
 	];
 	dates: any = [
 		'1',
@@ -281,8 +283,16 @@ export class UiScanScheduleComponent implements OnInit {
 	cancelChangedScanSchedule() {
 		this.scheduleTab = '';
 		this.isChangeSchedule = false;
+		this.scheduleScanFrequency = this.commonService.getLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency);
 		this.changeScanFrequency(this.scanFrequency.indexOf(this.scheduleScanFrequency));
-		this.getNextScanScheduleTime(this.nextScheduleScanDate);
+		if (this.isSubscribed) {
+			this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix');
+			this.getNextScanScheduleTime(this.nextScheduleScanDate);
+		}
+		else {
+			this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScan');
+			this.getNextScanScheduleTime(this.nextScheduleScanDate);
+		}
 	}
 
 	saveChangeScanTime() {

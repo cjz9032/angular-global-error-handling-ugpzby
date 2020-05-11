@@ -79,7 +79,7 @@
                     "hardwareScan": "하드웨어 검사",
                     "systemUpdate": "시스템 업데이트",
                     "header": "시스템 도구",
-                    "legionAccessory": "Legion Accessory"
+                    "legionAccessory": "Legion Accessory Central"
                 },
                 "lighting": {
                     "title": "조명 사용자 정의",
@@ -98,7 +98,7 @@
                     "line10": "<b>자동 닫기 </b><br> 게임을 시작하기 전에 사용 가능한 시스템 리소스를 극대화하기 위해 필요하지 않은 프로세스 지우기",
                     "line11": "<b>열 모드 </b><br> 팬 속도 및 냉각 제어를 위해 선호하는 장치 프로파일 설정",
                     "line12": "<b>매크로 키 </b><br> 게임 스타일에 맞게 키보드 동작을 사용자 정의합니다",
-                    "line13": "<b>Over Drive </b><br> This function makes your screen respond faster"
+                    "line13": "<b>Over Drive </b><br> 화면 응답 속도 높이기"
                 },
                 "systemInfo": {
                     "systenTooltip": "제조 및 모델 정보를 포함한 설명이 표시되도록 CPU/GPU/RAM 및 다른 드라이브를 가리킴"
@@ -198,8 +198,8 @@
                     "title": "경고!",
                     "description": "오버클럭 설정이 적절하지 않으면 하드웨어가 영구적으로 손상될 수 있습니다.",
                     "proceed": "계속",
-                    "legionAccessory": "Install Legion Accessory Central?",
-                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc."
+                    "legionAccessory": "Legion Accessory Central을 설치하시겠습니까?",
+                    "accessoryDesc": "Legion Accessory Central은 Legion 마우스, 키보드, 헤드폰 등을 구성하는 응용 프로그램입니다."
                 },
                 "popup": {
                     "closeBtn": "close"

@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, HostListener, SecurityContext } from '@angular/core';
+import { Component, OnInit, ElementRef, HostListener, SecurityContext, ViewChild } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
@@ -34,6 +34,8 @@ export class ModalArticleDetailComponent implements OnInit {
 	}
 	contentStatus = this.AllContentStatus.Loading;
 
+	@ViewChild('articleDetailModal') articleDetailModal: ElementRef;
+
 	constructor(
 		public activeModal: NgbActiveModal,
 		private cmsService: CMSService,
@@ -64,6 +66,7 @@ export class ModalArticleDetailComponent implements OnInit {
 						.replace(/(<\/video>)/gi, '</iframe>')
 						.replace(/(autoplay=\")/gi, 'allow="');
 					this.articleBody = this.sanitizer.bypassSecurityTrustHtml(replaceBody);
+					setTimeout(() => { this.articleDetailModal.nativeElement.focus(); }, 0);
 					this.contentStatus = this.AllContentStatus.Content;
 					if (response.Results.Category && response.Results.Category.length > 0) {
 						this.articleCategory = response.Results.Category.map((category: any) => category.Id).join(' ');
@@ -81,7 +84,6 @@ export class ModalArticleDetailComponent implements OnInit {
 
 		this.focusDurationCounter = this.timerService.getFocusDurationCounter();
 		this.blurDurationCounter = this.timerService.getBlurDurationCounter();
-		setTimeout(() => { (document.querySelector('.Article-Detail-Modal') as HTMLElement).focus(); }, 0);
 	}
 
 	private getPageName(activatedRoute: ActivatedRoute) {

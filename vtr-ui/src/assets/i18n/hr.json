@@ -79,7 +79,7 @@
                     "hardwareScan": "Skeniranje hardvera",
                     "systemUpdate": "Ažuriranje sustava",
                     "header": "Alati sustava",
-                    "legionAccessory": "Legion Accessory"
+                    "legionAccessory": "Legion Accessory Central"
                 },
                 "lighting": {
                     "title": "Prilagodba rasvjete",
@@ -98,7 +98,7 @@
                     "line10": "<b>Automatsko zatvaranje </b><br> Prije igranja očistite procese koji nisu nužni za igranje da biste maksimizirali upotrebu dostupnih resursa sustava",
                     "line11": "<b>Termički način rada </b><br> Postavite željeni profil uređaja za brzinu ventilatora i kontrolu hlađenja",
                     "line12": "<b>Makro tipka </b><br> Prilagodite radnje tipkovnice u skladu s vašim stilom igranja",
-                    "line13": "<b>Over Drive </b><br> This function makes your screen respond faster"
+                    "line13": "<b>Over Drive </b><br> Ubrzajte odgovor svog zaslona"
                 },
                 "systemInfo": {
                     "systenTooltip": "Zadržite pokazivač na CPU/GPU/RAM i različitim pogonima da biste prikazali njihove opise, uključujući podatke o proizvodnji i modelu"
@@ -198,8 +198,8 @@
                     "title": "Upozorenje!",
                     "description": "Neispravne postavke procesa Overclocking mogu dovesti do nepovratnog oštećenja hardvera.",
                     "proceed": "NASTAVI",
-                    "legionAccessory": "Install Legion Accessory Central?",
-                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc."
+                    "legionAccessory": "Želite li instalirati Legion Accessory Central?",
+                    "accessoryDesc": "Legion Accessory Central aplikacija je za konfiguriranje vašeg Legion miša, tipkovnice, slušalica itd."
                 },
                 "popup": {
                     "closeBtn": "close"

@@ -73,7 +73,8 @@
 margin-top: 3rem;
 .text-regular {
 	font-size: 1.6rem;
-	color: $main_shade;
+  color: $main_shade;
+  padding: 0.2rem 0.3rem;
 	@media #{$mediaquery_lg} {
 	font-size: 1.3rem;
 		}

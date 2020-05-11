@@ -79,7 +79,7 @@
                     "hardwareScan": "Analyse matérielle",
                     "systemUpdate": "Mise à jour Système",
                     "header": "Outils système",
-                    "legionAccessory": "Legion Accessory"
+                    "legionAccessory": "Legion Accessory Central"
                 },
                 "lighting": {
                     "title": "Personnalisation de l'éclairage",
@@ -98,7 +98,7 @@
                     "line10": "<b>Fermeture automatique </b><br> Effacez les processus qui ne sont pas nécessaires pour le jeu avant de commencer à jouer pour optimiser les ressources système disponibles",
                     "line11": "<b>Mode thermique </b><br> Définissez votre profil périphérique favori pour contrôler la vitesse du ventilateur et le refroidissement",
                     "line12": "<b>Touche de macro </b><br> Personnalisez les actions du clavier en fonction de votre style de jeu",
-                    "line13": "<b>Over Drive </b><br> This function makes your screen respond faster"
+                    "line13": "<b>Over Drive </b><br> Accélérez votre réponse à l'écran"
                 },
                 "systemInfo": {
                     "systenTooltip": "Placez le curseur sur UC/GPU/RAM et sur différents lecteurs pour afficher leurs descriptions, y compris les informations relatives à la fabrication et au modèle"
@@ -198,8 +198,8 @@
                     "title": "Avertissement !",
                     "description": "Des paramètres inadaptés du Surfréquençage peuvent entraîner des dégâts matériel irréversibles.",
                     "proceed": "CONTINUER",
-                    "legionAccessory": "Install Legion Accessory Central?",
-                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc."
+                    "legionAccessory": "Voulez-vous installer Legion Accessory Central ?",
+                    "accessoryDesc": "Legion Accessory Central est une application permettant de configurer votre souris, votre clavier, vos écouteurs Legion, etc."
                 },
                 "popup": {
                     "closeBtn": "close"
