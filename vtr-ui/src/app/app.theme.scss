@@ -475,3 +475,8 @@ $high-contrast-black-yellow: #FFFF00;
 	}
 }
 
+//gaming version 3.3
+@mixin border-blue-gaming {
+	outline: 0;
+	border: 0.1rem solid $blueFill;
+}

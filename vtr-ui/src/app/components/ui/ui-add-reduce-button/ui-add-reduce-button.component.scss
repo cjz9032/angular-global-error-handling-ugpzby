@@ -40,3 +40,13 @@
         }
     }
 }
+
+::ng-deep body.focus-enable{
+	.is-gaming {
+		.vtr-ui-add-reduce-button{
+            button:focus{
+                @include border-blue-gaming;
+            }
+		}
+	}
+}
