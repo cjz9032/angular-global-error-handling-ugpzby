@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.38](https://bitbucket.tc.lenovo.com///compare/v1.5.37...v1.5.38) (2020-05-11)
+
+
+### Features
+
+* **VAN-16979:** audio menu navigation remove permission detected ([6f2c018](https://bitbucket.tc.lenovo.com///commit/6f2c01801ac83bacd633fd58beac70c26d37881c))
+
+
+### Bug Fixes
+
+* **CHS-Accessibility:** add role to article main body, remove useless id ([186ac19](https://bitbucket.tc.lenovo.com///commit/186ac1917c6837e1d4b112e735b2f8982368779b))
+* **CHS-Accessibility:** empty document when open dialog use narrator ([35dc7f6](https://bitbucket.tc.lenovo.com///commit/35dc7f6fbedb6490c3ca7ccdd01e1285ffc13317))
+* **Offline dialog:** The description in dialog couldn't read completely ([45cfc95](https://bitbucket.tc.lenovo.com///commit/45cfc95bf2a4f0d617eef8a4062c40a99c91c2b4))
+* article modal read empty document with narrator ([c4e0e1e](https://bitbucket.tc.lenovo.com///commit/c4e0e1eb9985943ff2db2fac8347b991767a201c))
+* **SA-Accessibility:** privacy and terms of service links focus issue ([16a5a5e](https://bitbucket.tc.lenovo.com///commit/16a5a5e11db112723c255850e8a1a6b5934ddbc3))
+* **wifi accessibility:** VAN-17380 fixed scan mode can't read netwoek state ([1677df0](https://bitbucket.tc.lenovo.com///commit/1677df0ced19921defa570553963273d18e4b0e9))
+* **wifi accessibility:** VAN-17380 fixed scan mode can't read network state ([b11c9ee](https://bitbucket.tc.lenovo.com///commit/b11c9ee3b10c32246e4faa2c55d48b4f09c4b069))
+
 ### [1.5.37](https://bitbucket.tc.lenovo.com///compare/v1.5.36...v1.5.37) (2020-05-08)
 
 
