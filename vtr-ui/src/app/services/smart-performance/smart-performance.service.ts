@@ -9,6 +9,7 @@ import { Subject } from 'rxjs';
 export class SmartPerformanceService {
 	getSmartPerformance: any;
 	public isShellAvailable = false;
+	scanningStopped = new Subject<boolean>()
 	constructor(shellService: VantageShellService) {
 		
 		this.getSmartPerformance = shellService.getSmartPerformance();
