@@ -374,6 +374,15 @@
                     "bundled": "bundled",
                     "unbundled": "unbundled",
                     "isSelected": "is selected"
+                },
+                "macrokeyStatus": {
+                    "label": "Macro Key status"
+                },
+                "ignoreIntervalStatus": {
+                    "label": "Interval setting"
+                },
+                "repeatStatus": {
+                    "label": "Repeat frequency"
                 }
             }
         },
@@ -2082,18 +2091,18 @@
                 "tooltip": "Denna funktion fungerar inte på onlinevideospelare. Vanliga lokala videospelare (som Windows Media Player och 5KPlayer) har stöd för denna funktion."
             },
             "superResolution": {
-				"title": "Öka videoupplösningen",
-				"desc": "<p><label>Denna funktion förbättrar videoupplösningen, vilket gör videouppspelningen bättre. Den är särskilt användbar om videon har dålig upplösning.</label></p> <p><label>Funktionen kan påverka batteriets livslängd och temperatur och orsaka brus. Använd inte funktionen i DC-läge (batteriläge). Detta orsakar ökad energiförbrukning och batteriets livslängd förkortas.</label></p>",
-				"tooltip": "<p>Denna funktion fungerar bara för nedanstående videospelare:<br>Windows Media Player<br>Chrome-baserad spelare<br>Film & TV<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>Anvisningar om hur du aktiverar denna funktion i PotPlayer och GOM Player finns i användarhandboken som medföljer datorn.</p>",
-				"note": {
-					"description": "Funktionen fungerar inte när",
-					"description1": "Batterisparläge är aktiverat.",
+                "title": "Öka videoupplösningen",
+                "desc": "<p><label>Denna funktion förbättrar videoupplösningen, vilket gör videouppspelningen bättre. Den är särskilt användbar om videon har dålig upplösning.</label></p> <p><label>Funktionen kan påverka batteriets livslängd och temperatur och orsaka brus. Använd inte funktionen i DC-läge (batteriläge). Detta orsakar ökad energiförbrukning och batteriets livslängd förkortas.</label></p>",
+                "tooltip": "<p>Denna funktion fungerar bara för nedanstående videospelare:<br>Windows Media Player<br>Chrome-baserad spelare<br>Film & TV<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>Anvisningar om hur du aktiverar denna funktion i PotPlayer och GOM Player finns i användarhandboken som medföljer datorn.</p>",
+                "note": {
+                    "description": "Funktionen fungerar inte när",
+                    "description1": "Batterisparläge är aktiverat.",
                     "description2": "processortemperaturen är för hög.",
                     "description3": "Enheten är inställd på batterisparläge i Intelligent nedkylning."
-				},
-				"imageBefore":"Före",
-                "imageAfter":"Efter"
-			},
+                },
+                "imageBefore": "Före",
+                "imageAfter": "Efter"
+            },
             "antiTheft": {
                 "heading": "Intelligent avkänning",
                 "title": "Smart rörelselarm",
@@ -3163,7 +3172,8 @@
                 "tab2Description": "Get a 100 point check done in under 5 minutes",
                 "tab3Heading": "IT'S SAFE",
                 "tab3Description": "No scareware, built with best practises"
-            }
+            },
+            "summaryTitle": "Tune PC Performance"
         },
         "boostInternetPerformance": {
             "title": "BOOST INTERNET PERFORMANCE",
@@ -3184,7 +3194,8 @@
                 "tab2Description": "We remove all potentially unwanted programs",
                 "tab3Heading": "LIGHT AND FAST",
                 "tab3Description": "Scan typically takes 5-10 minutes"
-            }
+            },
+            "summaryTitle": "Internet Performance"
         },
         "malwareSecurity": {
             "title": "MALWARE & SECURITY",
@@ -3204,7 +3215,8 @@
                 "tab2Description": "We can diagnose and repair your connectivity problems.",
                 "tab3Heading": "BROWSER ISSUES",
                 "tab3Description": "We configure and fix all your popular web browsers."
-            }
+            },
+            "summaryTitle": "Malware & Security"
         },
         "proactiveAutomated": {
             "title": "PROACTIVE & AUTOMATED",
@@ -3249,7 +3261,17 @@
             "txtDay": "Day",
             "txtTime": "Time",
             "txtSave": "save",
-            "txtCancel": "cancel"
+            "txtCancel": "cancel",
+            "scanFrequencyWeek": "Once a week",
+            "scanFrequencyEveryWeek": "Every other week",
+            "scanFrequencyMonth": "Every month",
+            "mon": "Monday",
+            "tue": "Tuesday",
+            "wed": "Wednesday",
+            "thu": "Thursday",
+            "fri": "Friday",
+            "sat": "Saturday",
+            "sun": "Sunday"
         },
         "scanningPage": {
             "title": "Performance & security check",

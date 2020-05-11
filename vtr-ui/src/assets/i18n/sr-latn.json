@@ -374,6 +374,15 @@
                     "bundled": "bundled",
                     "unbundled": "unbundled",
                     "isSelected": "is selected"
+                },
+                "macrokeyStatus": {
+                    "label": "Macro Key status"
+                },
+                "ignoreIntervalStatus": {
+                    "label": "Interval setting"
+                },
+                "repeatStatus": {
+                    "label": "Repeat frequency"
                 }
             }
         },
@@ -2082,18 +2091,18 @@
                 "tooltip": "Ova funkcija nije primenjiva na Web video plejere. Popularni lokalni video plejeri kao što su Windows Media Player, 5KPlayer itd. podržavaju ovu funkciju."
             },
             "superResolution": {
-				"title": "Poboljšavanje video rezolucije",
-				"desc": "<p><label>Ova funkcija poboljšava iskustvo reprodukcije video zapisa poboljšanjem video rezolucije. On radi posebno kada je video u slaboj rezoluciji.</label></p> <p><label>Ova funkcija može da utiče na vek trajanja baterije, temperaturu baterije i može da izazove buku. Nemojte koristiti u režimu rada na jednosmernu struju (režim baterije). U suprotnom će se baterija brže istrošiti i skratiće se radni vek baterije.</label></p>",
-				"tooltip": "<p>Ova funkcija radi samo na dolenavedenim video plejerima:<br>Windows Media Player<br>Plejer zasnovan na pregledaču Chrome<br>Movies & TV<br>PotPlayer<br>GOM player</p><p class='srTooltip'>Uputstva o tome kako da omogućite ovu funkciju u plejeru PotPlayer i GOM player potražite u Uputstvu za korisnike koje ste dobili uz računar.</p>",
-				"note": {
-					"description": "Ova funkcija ne radi kada:",
-					"description1": "Omogućen je režim uštede baterije.",
+                "title": "Poboljšavanje video rezolucije",
+                "desc": "<p><label>Ova funkcija poboljšava iskustvo reprodukcije video zapisa poboljšanjem video rezolucije. On radi posebno kada je video u slaboj rezoluciji.</label></p> <p><label>Ova funkcija može da utiče na vek trajanja baterije, temperaturu baterije i može da izazove buku. Nemojte koristiti u režimu rada na jednosmernu struju (režim baterije). U suprotnom će se baterija brže istrošiti i skratiće se radni vek baterije.</label></p>",
+                "tooltip": "<p>Ova funkcija radi samo na dolenavedenim video plejerima:<br>Windows Media Player<br>Plejer zasnovan na pregledaču Chrome<br>Movies & TV<br>PotPlayer<br>GOM player</p><p class='srTooltip'>Uputstva o tome kako da omogućite ovu funkciju u plejeru PotPlayer i GOM player potražite u Uputstvu za korisnike koje ste dobili uz računar.</p>",
+                "note": {
+                    "description": "Ova funkcija ne radi kada:",
+                    "description1": "Omogućen je režim uštede baterije.",
                     "description2": "Temperatura procesora je previsoka.",
                     "description3": "Uređaj je podešen na režim uštede baterije u delu „Pametno hlađenje“."
-				},
-				"imageBefore":"Pre",
-                "imageAfter":"Posle"
-			},
+                },
+                "imageBefore": "Pre",
+                "imageAfter": "Posle"
+            },
             "antiTheft": {
                 "heading": "Inteligentno raspoznavanje",
                 "title": "Pametno upozorenje o pokretu",
@@ -3163,7 +3172,8 @@
                 "tab2Description": "Get a 100 point check done in under 5 minutes",
                 "tab3Heading": "IT'S SAFE",
                 "tab3Description": "No scareware, built with best practises"
-            }
+            },
+            "summaryTitle": "Tune PC Performance"
         },
         "boostInternetPerformance": {
             "title": "BOOST INTERNET PERFORMANCE",
@@ -3184,7 +3194,8 @@
                 "tab2Description": "We remove all potentially unwanted programs",
                 "tab3Heading": "LIGHT AND FAST",
                 "tab3Description": "Scan typically takes 5-10 minutes"
-            }
+            },
+            "summaryTitle": "Internet Performance"
         },
         "malwareSecurity": {
             "title": "MALWARE & SECURITY",
@@ -3204,7 +3215,8 @@
                 "tab2Description": "We can diagnose and repair your connectivity problems.",
                 "tab3Heading": "BROWSER ISSUES",
                 "tab3Description": "We configure and fix all your popular web browsers."
-            }
+            },
+            "summaryTitle": "Malware & Security"
         },
         "proactiveAutomated": {
             "title": "PROACTIVE & AUTOMATED",
@@ -3249,7 +3261,17 @@
             "txtDay": "Day",
             "txtTime": "Time",
             "txtSave": "save",
-            "txtCancel": "cancel"
+            "txtCancel": "cancel",
+            "scanFrequencyWeek": "Once a week",
+            "scanFrequencyEveryWeek": "Every other week",
+            "scanFrequencyMonth": "Every month",
+            "mon": "Monday",
+            "tue": "Tuesday",
+            "wed": "Wednesday",
+            "thu": "Thursday",
+            "fri": "Friday",
+            "sat": "Saturday",
+            "sun": "Sunday"
         },
         "scanningPage": {
             "title": "Performance & security check",

@@ -374,6 +374,15 @@
                     "bundled": "bundled",
                     "unbundled": "unbundled",
                     "isSelected": "is selected"
+                },
+                "macrokeyStatus": {
+                    "label": "Macro Key status"
+                },
+                "ignoreIntervalStatus": {
+                    "label": "Interval setting"
+                },
+                "repeatStatus": {
+                    "label": "Repeat frequency"
                 }
             }
         },
@@ -2082,18 +2091,18 @@
                 "tooltip": "この機能は Web ビデオ・プレイヤーに適用できません。Windows Media Player、5KPlayer など、人気のあるローカル・ビデオ・プレイヤーは、この機能をサポートしています。"
             },
             "superResolution": {
-				"title": "ビデオ解像度のアップスケーリング",
-				"desc": "<p><label>この機能は、ビデオ解像度を改善することで、ビデオ再生のエクスペリエンスを向上させます。特にビデオの解像度が低い場合に効果があります。</label></p> <p><label>この機能は、バッテリー寿命、バッテリー温度に影響を与え、ノイズを引き起こす可能性があります。DC モード (バッテリー・モード) では使用しないでください。そうしないと、電力消費が速くなり、バッテリー寿命が短くなります。</label></p>",
-				"tooltip": "<p>この機能は、以下のビデオプレーヤーでのみ機能します。<br>Windows Media Player<br>Chrome ベースのプレーヤー<br>映画とテレビ<br>PotPlayer<br>GOM player</p><p class='srTooltip'>PotPlayer および GOM Player でこの機能を有効にする方法については、コンピューターに付属のユーザー・ガイドを参照してください。</p>",
-				"note": {
-					"description": "この機能は次の場合は動作しません。",
-					"description1": "バッテリー節約モードが有効になっている場合。",
+                "title": "ビデオ解像度のアップスケーリング",
+                "desc": "<p><label>この機能は、ビデオ解像度を改善することで、ビデオ再生のエクスペリエンスを向上させます。特にビデオの解像度が低い場合に効果があります。</label></p> <p><label>この機能は、バッテリー寿命、バッテリー温度に影響を与え、ノイズを引き起こす可能性があります。DC モード (バッテリー・モード) では使用しないでください。そうしないと、電力消費が速くなり、バッテリー寿命が短くなります。</label></p>",
+                "tooltip": "<p>この機能は、以下のビデオプレーヤーでのみ機能します。<br>Windows Media Player<br>Chrome ベースのプレーヤー<br>映画とテレビ<br>PotPlayer<br>GOM player</p><p class='srTooltip'>PotPlayer および GOM Player でこの機能を有効にする方法については、コンピューターに付属のユーザー・ガイドを参照してください。</p>",
+                "note": {
+                    "description": "この機能は次の場合は動作しません。",
+                    "description1": "バッテリー節約モードが有効になっている場合。",
                     "description2": "CPU の温度が高すぎる場合。",
                     "description3": "デバイスは 「インテリジェント・クーリング」 でバッテリー節約モードに設定されています。"
-				},
-				"imageBefore":"前",
-                "imageAfter":"後"
-			},
+                },
+                "imageBefore": "前",
+                "imageAfter": "後"
+            },
             "antiTheft": {
                 "heading": "インテリジェント・センサー",
                 "title": "スマート・モーション・アラーム",
@@ -3163,7 +3172,8 @@
                 "tab2Description": "Get a 100 point check done in under 5 minutes",
                 "tab3Heading": "IT'S SAFE",
                 "tab3Description": "No scareware, built with best practises"
-            }
+            },
+            "summaryTitle": "Tune PC Performance"
         },
         "boostInternetPerformance": {
             "title": "BOOST INTERNET PERFORMANCE",
@@ -3184,7 +3194,8 @@
                 "tab2Description": "We remove all potentially unwanted programs",
                 "tab3Heading": "LIGHT AND FAST",
                 "tab3Description": "Scan typically takes 5-10 minutes"
-            }
+            },
+            "summaryTitle": "Internet Performance"
         },
         "malwareSecurity": {
             "title": "MALWARE & SECURITY",
@@ -3204,7 +3215,8 @@
                 "tab2Description": "We can diagnose and repair your connectivity problems.",
                 "tab3Heading": "BROWSER ISSUES",
                 "tab3Description": "We configure and fix all your popular web browsers."
-            }
+            },
+            "summaryTitle": "Malware & Security"
         },
         "proactiveAutomated": {
             "title": "PROACTIVE & AUTOMATED",
@@ -3249,7 +3261,17 @@
             "txtDay": "Day",
             "txtTime": "Time",
             "txtSave": "save",
-            "txtCancel": "cancel"
+            "txtCancel": "cancel",
+            "scanFrequencyWeek": "Once a week",
+            "scanFrequencyEveryWeek": "Every other week",
+            "scanFrequencyMonth": "Every month",
+            "mon": "Monday",
+            "tue": "Tuesday",
+            "wed": "Wednesday",
+            "thu": "Thursday",
+            "fri": "Friday",
+            "sat": "Saturday",
+            "sun": "Sunday"
         },
         "scanningPage": {
             "title": "Performance & security check",

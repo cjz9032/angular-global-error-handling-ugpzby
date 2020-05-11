@@ -374,6 +374,15 @@
                     "bundled": "bundled",
                     "unbundled": "unbundled",
                     "isSelected": "is selected"
+                },
+                "macrokeyStatus": {
+                    "label": "Macro Key status"
+                },
+                "ignoreIntervalStatus": {
+                    "label": "Interval setting"
+                },
+                "repeatStatus": {
+                    "label": "Repeat frequency"
                 }
             }
         },
@@ -2082,18 +2091,18 @@
                 "tooltip": "Cette fonction n'est pas applicable aux lecteurs vidéo Web. Les lecteurs vidéo locaux populaires tels que Windows Media Player, 5KPlayer, etc. prennent en charge cette fonction."
             },
             "superResolution": {
-				"title": "Mise à l'échelle de la résolution vidéo",
-				"desc": "<p><label>Cette fonction améliore l'expérience de la lecture vidéo en améliorant la résolution de la vidéo. Cela est particulièrement efficace lorsque la vidéo est de faible résolution.</label></p> <p><label>Cette fonction peut influencer la durée de vie de la batterie, sa température et produire des sons. Veillez à ne pas l'utiliser en mode courant continu (mode batterie). Sinon, cela accélérera la consommation d'énergie et réduira la durée de vie de la batterie.</label></p>",
-				"tooltip": "<p>Cette fonction n'est disponible que pour les lecteurs vidéo suivants :<br>Windows Media Player<br>lecteur Chrome<br>Films et séries TV<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>Pour savoir comment activer cette fonction sur PotPlayer et GOM Player, reportez-vous au guide d'utilisation fourni avec votre ordinateur.</p>",
-				"note": {
-					"description": "Cette fonction est inopérante quand :",
-					"description1": "Le mode d'économie de la batterie est activé.",
+                "title": "Mise à l'échelle de la résolution vidéo",
+                "desc": "<p><label>Cette fonction améliore l'expérience de la lecture vidéo en améliorant la résolution de la vidéo. Cela est particulièrement efficace lorsque la vidéo est de faible résolution.</label></p> <p><label>Cette fonction peut influencer la durée de vie de la batterie, sa température et produire des sons. Veillez à ne pas l'utiliser en mode courant continu (mode batterie). Sinon, cela accélérera la consommation d'énergie et réduira la durée de vie de la batterie.</label></p>",
+                "tooltip": "<p>Cette fonction n'est disponible que pour les lecteurs vidéo suivants :<br>Windows Media Player<br>lecteur Chrome<br>Films et séries TV<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>Pour savoir comment activer cette fonction sur PotPlayer et GOM Player, reportez-vous au guide d'utilisation fourni avec votre ordinateur.</p>",
+                "note": {
+                    "description": "Cette fonction est inopérante quand :",
+                    "description1": "Le mode d'économie de la batterie est activé.",
                     "description2": "La température de l'unité centrale est trop élevée.",
                     "description3": "Le périphérique est défini sur le mode d'économie de batterie dans le « système de refroidissement intelligent »."
-				},
-				"imageBefore":"Avant",
-                "imageAfter":"Après"
-			},
+                },
+                "imageBefore": "Avant",
+                "imageAfter": "Après"
+            },
             "antiTheft": {
                 "heading": "Capteur intelligent",
                 "title": "Alerte de mouvement intelligente",
@@ -3163,7 +3172,8 @@
                 "tab2Description": "Get a 100 point check done in under 5 minutes",
                 "tab3Heading": "IT'S SAFE",
                 "tab3Description": "No scareware, built with best practises"
-            }
+            },
+            "summaryTitle": "Tune PC Performance"
         },
         "boostInternetPerformance": {
             "title": "BOOST INTERNET PERFORMANCE",
@@ -3184,7 +3194,8 @@
                 "tab2Description": "We remove all potentially unwanted programs",
                 "tab3Heading": "LIGHT AND FAST",
                 "tab3Description": "Scan typically takes 5-10 minutes"
-            }
+            },
+            "summaryTitle": "Internet Performance"
         },
         "malwareSecurity": {
             "title": "MALWARE & SECURITY",
@@ -3204,7 +3215,8 @@
                 "tab2Description": "We can diagnose and repair your connectivity problems.",
                 "tab3Heading": "BROWSER ISSUES",
                 "tab3Description": "We configure and fix all your popular web browsers."
-            }
+            },
+            "summaryTitle": "Malware & Security"
         },
         "proactiveAutomated": {
             "title": "PROACTIVE & AUTOMATED",
@@ -3249,7 +3261,17 @@
             "txtDay": "Day",
             "txtTime": "Time",
             "txtSave": "save",
-            "txtCancel": "cancel"
+            "txtCancel": "cancel",
+            "scanFrequencyWeek": "Once a week",
+            "scanFrequencyEveryWeek": "Every other week",
+            "scanFrequencyMonth": "Every month",
+            "mon": "Monday",
+            "tue": "Tuesday",
+            "wed": "Wednesday",
+            "thu": "Thursday",
+            "fri": "Friday",
+            "sat": "Saturday",
+            "sun": "Sunday"
         },
         "scanningPage": {
             "title": "Performance & security check",

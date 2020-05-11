@@ -374,6 +374,15 @@
                     "bundled": "bundled",
                     "unbundled": "unbundled",
                     "isSelected": "is selected"
+                },
+                "macrokeyStatus": {
+                    "label": "Macro Key status"
+                },
+                "ignoreIntervalStatus": {
+                    "label": "Interval setting"
+                },
+                "repeatStatus": {
+                    "label": "Repeat frequency"
                 }
             }
         },
@@ -2082,18 +2091,18 @@
                 "tooltip": "Deze functie is niet van toepassing op webvideospelers. Populaire lokale videospelers, zoals Windows Media Player, 5KPlayer en dergelijke, ondersteunen deze functie."
             },
             "superResolution": {
-				"title": "Schaalverhoging beeldschermresolutie",
-				"desc": "<p><label>Deze functie verbetert de beleving van het kijken van video's door de beeldschermresolutie te verbeteren. Dit werkt het beste als de video een lage resolutie heeft.</label></p> <p><label>Deze functie kan invloed hebben op de levensduur en temperatuur van de batterij en kan ruis veroorzaken. Niet gebruiken in gelijkstroommodus (batterijstroom). anders neemt het stroomverbruik toe en gaat de batterij minder lang mee.</label></p>",
-				"tooltip": "<p>Deze functie werkt alleen voor onderstaande videospelers:<br>Windows Media Player<br>Chrome-speler<br>Films en tv<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>Zie de handleiding bij de computer voor instructies over het inschakelen van deze functie in PotPlayer en GOM Player.</p>",
-				"note": {
-					"description": "Deze functie werkt niet als:",
-					"description1": "De spaarstand voor batterijverbruik is ingeschakeld.",
+                "title": "Schaalverhoging beeldschermresolutie",
+                "desc": "<p><label>Deze functie verbetert de beleving van het kijken van video's door de beeldschermresolutie te verbeteren. Dit werkt het beste als de video een lage resolutie heeft.</label></p> <p><label>Deze functie kan invloed hebben op de levensduur en temperatuur van de batterij en kan ruis veroorzaken. Niet gebruiken in gelijkstroommodus (batterijstroom). anders neemt het stroomverbruik toe en gaat de batterij minder lang mee.</label></p>",
+                "tooltip": "<p>Deze functie werkt alleen voor onderstaande videospelers:<br>Windows Media Player<br>Chrome-speler<br>Films en tv<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>Zie de handleiding bij de computer voor instructies over het inschakelen van deze functie in PotPlayer en GOM Player.</p>",
+                "note": {
+                    "description": "Deze functie werkt niet als:",
+                    "description1": "De spaarstand voor batterijverbruik is ingeschakeld.",
                     "description2": "De CPU-temperatuur te hoog is.",
                     "description3": "Het apparaat is ingesteld op de energiebesparingsmodus in \"Intelligent koelen\"."
-				},
-				"imageBefore":"Voor",
-                "imageAfter":"Na"
-			},
+                },
+                "imageBefore": "Voor",
+                "imageAfter": "Na"
+            },
             "antiTheft": {
                 "heading": "Intelligente sensoren",
                 "title": "Slim bewegingsalarm",
@@ -3163,7 +3172,8 @@
                 "tab2Description": "Get a 100 point check done in under 5 minutes",
                 "tab3Heading": "IT'S SAFE",
                 "tab3Description": "No scareware, built with best practises"
-            }
+            },
+            "summaryTitle": "Tune PC Performance"
         },
         "boostInternetPerformance": {
             "title": "BOOST INTERNET PERFORMANCE",
@@ -3184,7 +3194,8 @@
                 "tab2Description": "We remove all potentially unwanted programs",
                 "tab3Heading": "LIGHT AND FAST",
                 "tab3Description": "Scan typically takes 5-10 minutes"
-            }
+            },
+            "summaryTitle": "Internet Performance"
         },
         "malwareSecurity": {
             "title": "MALWARE & SECURITY",
@@ -3204,7 +3215,8 @@
                 "tab2Description": "We can diagnose and repair your connectivity problems.",
                 "tab3Heading": "BROWSER ISSUES",
                 "tab3Description": "We configure and fix all your popular web browsers."
-            }
+            },
+            "summaryTitle": "Malware & Security"
         },
         "proactiveAutomated": {
             "title": "PROACTIVE & AUTOMATED",
@@ -3249,7 +3261,17 @@
             "txtDay": "Day",
             "txtTime": "Time",
             "txtSave": "save",
-            "txtCancel": "cancel"
+            "txtCancel": "cancel",
+            "scanFrequencyWeek": "Once a week",
+            "scanFrequencyEveryWeek": "Every other week",
+            "scanFrequencyMonth": "Every month",
+            "mon": "Monday",
+            "tue": "Tuesday",
+            "wed": "Wednesday",
+            "thu": "Thursday",
+            "fri": "Friday",
+            "sat": "Saturday",
+            "sun": "Sunday"
         },
         "scanningPage": {
             "title": "Performance & security check",
