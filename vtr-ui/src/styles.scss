@@ -1588,6 +1588,30 @@ vtr-ui-smart-performance-scanning {
 	}
 }
 
+.support-modal-hwscan {
+	.modal-dialog {
+		max-width: 30%;
+		margin: 0 auto;
+		@media #{$breakpoint_lg} {
+			max-width: 55%;
+		}
+		@media #{$breakpoint_md} {
+			max-width: 60%;
+		}
+		@media #{$breakpoint_sm} {
+			max-width: 65%;
+		}
+		.modal-content {
+			border-radius: 1rem;
+			.description {
+				.question {
+					font-weight: $weight_bold;
+				}
+			}
+		}
+	}
+}
+
 .cancel-modal-hwscan {
 	.modal-dialog {
 		max-width: 50%;

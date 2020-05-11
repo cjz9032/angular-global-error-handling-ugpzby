@@ -29,9 +29,8 @@
 						[tooltipText]="'hardwareScan.scanFailureModal.supportButtonText' | translate"
 						[label]="'hardwareScan.scanFailureModal.recoverBadSectorsButtonText' | translate">
 					</vtr-ui-button>
-					<button vtrMetrics metricsEvent="FeatureClick" metricsParent="HardwareScan.ScanFailureActions"
-						metricsItem="HardwareScan.LenovoSupport" type="button" id="supportButtonWithRBS"
-						attr.aria-label="supportButtonWithRBS" class="btn btn-link support-button"
+					<button class="btn btn-link support-button" type="button" id="supportButtonWithRBS"
+						vtrMetrics metricsEvent="FeatureClick" metricsParent="HardwareScan.ScanFailureActions" metricsItem="HardwareScan.LenovoSupport"
 						(click)="openSupportPage()">{{'hardwareScan.scanFailureModal.supportButtonText' | translate }}</button>
 				</div>
 			</div>
@@ -53,7 +52,7 @@
 			</div>
 		</ng-template>
 
-		<a vtrMetrics metricsEvent="FeatureClick" metricsParent="HardwareScan.ScanFailureActions"
+		<a vtrMetrics metricsEvent="FeatureClick" metricsParent="HardwareScan.ScanFailureActions" aria-label="Close"
 			metricsItem="ScanFailureActions.Close" role="button" href="javascript:;" class="close-btn"
 			(click)="closeModal()">
 			<img [src]=" 'assets/icons/Close.svg' | svgInline | async" alt="" srcset="">
