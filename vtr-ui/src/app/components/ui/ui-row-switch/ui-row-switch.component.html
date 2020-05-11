@@ -124,7 +124,7 @@
 					*ngIf="rightIcon.length > 0 && !voice && !toolTipStatus && !fnCtrltoolTip"
 					[ngClass]="{'auto-screen-lock-help-icon': !isSwitchVisible}">
 					<fa-icon id="{{switchId}}-tooltip_right_icon"
-						[attr.aria-label]="title +' tooltip, which reads: '+ tooltipText"
+						[attr.aria-label]="title +' tooltip, which reads: '+ removeHTMLFormatting(tooltipText)"
 						class="right-icon"
 						tabindex="0"
 						role="img"
@@ -146,7 +146,7 @@
 					*ngIf="rightIcon.length > 0 && toolTipStatus">
 					<fa-icon id="{{switchId+ '_smartTooltip_right_icon'}}"
 						tabindex="0"
-						[attr.aria-label]="title +' tooltip, which reads: '+ tooltipText"
+						[attr.aria-label]="title +' tooltip, which reads: '+ removeHTMLFormatting(tooltipText)"
 						class="right-icon"
 						triggers="manual"
 						placement="left"
@@ -168,7 +168,7 @@
 					*ngIf="rightIcon.length > 0 && fnCtrltoolTip">
 					<fa-icon id="{{switchId+ '_fnCtrl_right_icon'}}"
 						tabindex="0"
-						[attr.aria-label]="title +' tooltip, which reads: '+ tooltipText"
+						[attr.aria-label]="title +' tooltip, which reads: '+ removeHTMLFormatting(tooltipText)"
 						class="right-icon"
 						triggers="manual"
 						placement="left"
@@ -192,7 +192,7 @@
 						metricsParent="Device.SmartAssist"
 						metricsItem="{{metricsParent}}HelpIcon"
 						id="{{switchId+ '_voice_right_icon'}}"
-						[attr.aria-label]="title +' tooltip, which reads: '+ tooltipText"
+						[attr.aria-label]="title +' tooltip, which reads: '+ removeHTMLFormatting(tooltipText)"
 						class="right-icon"
 						tabindex="0"
 						[icon]="rightIcon"
