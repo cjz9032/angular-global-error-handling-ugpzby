@@ -168,6 +168,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 						);
 						this.scanAndFixInformation();
 						this.isScanning = true;
+						this.showWarning.emit(true);
 						// Subscriber Scan Completed 
 						if(this.isSubscribed) {
 							this.hasSubscribedScanCompleted = true;
