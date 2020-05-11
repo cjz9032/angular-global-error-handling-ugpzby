@@ -24,6 +24,7 @@ export class AntiTheftComponent implements OnInit {
 	@Input() isShowfileAuthorizationTips = false;
 	@Output() antiTheftToggle: EventEmitter<any> = new EventEmitter();
 	@Output() tooltipClick = new EventEmitter<boolean>();
+	@Output() removeSensingHeaderMenu = new EventEmitter();
 	public antiTheft = new AntiTheftResponse(false, false, false, false, false);
 	public antiTheftCache: AntiTheftResponse = undefined;
 
@@ -193,6 +194,9 @@ export class AntiTheftComponent implements OnInit {
 						this.antiTheft.photoAddress = response.photoAddress;
 						this.antiTheft.alarmOften = response.alarmOften;
 						this.antiTheft.photoNumber = response.photoNumber;
+						if (!this.antiTheft.available) {
+							this.removeSensingHeaderMenu.emit();
+						}
 						this.commonService.setLocalStorageValue(LocalStorageKey.AntiTheftCache, this.antiTheft);
 						this.isLoading = false;
 						this.logger.info(`getAntiTheftStatus then`, response);
