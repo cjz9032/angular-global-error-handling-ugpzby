@@ -11,16 +11,10 @@
 			scrolling="no"
 			frameborder="0"></iframe>
 	</div>
-	<a href="javascript:;"
-		role="button"
-		id="sa-ws-btn-closelocator"
-		class="close-btn"
-		vtrMetrics
+	<div class="btn-modal-close">
+	<vtr-ui-close-button linkId="sa-ws-btn-closelocator"
 		metricsItem="ThreatLocatorDialogCloseButton"
-		metricsEvent="FeatureClick"
 		metricsParent="Wifi Security"
-		[attr.aria-label]="'common.ui.close' | translate"
-		(click)="closeModal()">
-		<img [src]=" 'assets/icons/Close.svg' | svgInline | async" alt="" srcset="">
-	</a>
+		(clickClose)="closeModal()"></vtr-ui-close-button>
+	</div>
 </div>
