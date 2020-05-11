@@ -283,8 +283,16 @@ export class UiScanScheduleComponent implements OnInit {
 	cancelChangedScanSchedule() {
 		this.scheduleTab = '';
 		this.isChangeSchedule = false;
+		this.scheduleScanFrequency = this.commonService.getLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency);
 		this.changeScanFrequency(this.scanFrequency.indexOf(this.scheduleScanFrequency));
-		this.getNextScanScheduleTime(this.nextScheduleScanDate);
+		if (this.isSubscribed) {
+			this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix');
+			this.getNextScanScheduleTime(this.nextScheduleScanDate);
+		}
+		else {
+			this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScan');
+			this.getNextScanScheduleTime(this.nextScheduleScanDate);
+		}
 	}
 
 	saveChangeScanTime() {
