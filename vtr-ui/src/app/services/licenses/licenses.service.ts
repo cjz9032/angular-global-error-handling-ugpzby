@@ -15,8 +15,8 @@ export class LicensesService {
 		public modalService: NgbModal,
 	) { }
 
-	openLicensesAgreement() {
-		if (this.modalService.hasOpenModals()) return;
+	openLicensesAgreement(isCalledbyAbout?: boolean) {
+		if (!isCalledbyAbout && this.modalService.hasOpenModals()) return;
 		if (this.translate.currentLang) { this.lang = this.translate.currentLang; }
 		const useLang = this.checkLangName(this.lang);
 		const agreementUrl = `assets/licenses/Agreement/${useLang}.html`;
@@ -37,8 +37,8 @@ export class LicensesService {
 		licenseModal.componentInstance.licenseModalMetrics = licenseModalMetrics;
 	}
 
-	openOpenSource() {
-		if (this.modalService.hasOpenModals()) return;
+	openOpenSource(isCalledbyAbout?: boolean) {
+		if (!isCalledbyAbout && this.modalService.hasOpenModals()) return;
 		const openSourceUrl = `assets/licenses/OpenSource/OpenSourceLicenses.txt`;
 		const licenseModalMetrics = {
 			pageName: 'Page.Support.Article',
