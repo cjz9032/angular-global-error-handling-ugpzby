@@ -1,3 +1,4 @@
+import { UiCloseButtonModule } from 'src/app/components/ui/ui-close-button/ui-close-button.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -19,6 +20,7 @@ import { TranslationModule } from '../translation.module';
 		LocationNoticeRoutingModule,
 		CommonPipeModule,
 		UiButtonModule,
+		UiCloseButtonModule,
 		WidgetOfflineModule,
 		FontAwesomeModule,
 		RouterModule,

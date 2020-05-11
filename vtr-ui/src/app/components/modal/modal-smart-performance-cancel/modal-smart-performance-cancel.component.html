@@ -1,6 +1,6 @@
 <div class="modal-smart-performance-cancel">
 	<div class="row justify-content-end">
-		<div class="btn-close">
+		<div class="btn-close pr-4 pt-3">
 			<button type="button" class="close" vtrMetrics metricsEvent="FeatureClick" [disabled]= "isLoading"
 				metricsParent="Pages.support.smartPerformance" metricsItem="'btn.closeModal'" (click)="closeModal()">
 				<fa-icon [icon]="['fal', 'times']"></fa-icon>
@@ -10,6 +10,7 @@
 	<div class="content-block px-3">
 		<h1>{{'smartPerformance.scanningPage.cancelScan.title' |translate }}</h1>
 		<p>{{'smartPerformance.scanningPage.cancelScan.description' |translate }}</p>
+		<h5 *ngIf="promptMsg" class="mt-2">{{ 'hardwareScan.cancelTextPrompt' | translate }}</h5>
 		<hr>
 		<div class="vtr-battery-card" *ngIf="isLoading">
 			<div class="container" [style.height.px]="40">

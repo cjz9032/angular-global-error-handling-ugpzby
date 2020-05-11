@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalSmartPerformanceSubscribeComponent } from '../../modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
@@ -31,6 +31,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 	public boost = 0;
 	public secure = 0;
 	public rating = 0;
+	@Output() showWarning = new EventEmitter<boolean>()
 
 	scheduleScanObj = null;
 	isScheduleScan = false;
@@ -154,7 +155,6 @@ export class UiSmartPerformanceComponent implements OnInit {
 		}
 	}
 	changeScanEvent() {
-
 		if (this.smartPerformanceService.isShellAvailable) {
 			this.smartPerformanceService
 				.getReadiness()
@@ -171,11 +171,9 @@ export class UiSmartPerformanceComponent implements OnInit {
 						// Subscriber Scan Completed 
 						if(this.isSubscribed) {
 							this.hasSubscribedScanCompleted = true;
-							console.log('zakir is subscriber making hasSubscribedScanCompleted true');
 						}
 						else {
 							this.hasSubscribedScanCompleted = false;
-							console.log('zakir is subscriber making hasSubscribedScanCompleted false');
 						}
 					}
 					else {
@@ -293,6 +291,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 							}
 							);
 						this.isScanning = true;
+						this.showWarning.emit(true)
 						this.scanAndFixInformation();
 					}
 					else {
