@@ -123,6 +123,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 	registerScheduleScanStatus() {
 		this.shellServices.registerEvent(EventTypes.smartPerformanceScheduleScanStatus,
 			event => {
+				this.scheduleScanObj=null;
 				this.updateScheduleScanStatus(event);
 			}
 		);
@@ -162,6 +163,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 					if (getReadinessFromService) {
 						this.shellServices.registerEvent(EventTypes.smartPerformanceScanStatus,
 							event => {
+								this.scheduleScanObj=null;
 								this.updateScheduleScanStatus(event);
 							}
 						);
@@ -269,6 +271,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 					if (getReadinessFromService) {
 						this.shellServices.registerEvent(EventTypes.smartPerformanceScanStatus,
 							event => {
+								this.scheduleScanObj=null;
 								this.updateScheduleScanStatus(event);
 							}
 							);

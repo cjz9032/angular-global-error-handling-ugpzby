@@ -255,16 +255,17 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		const payload = {
 			scantype
 		};
-		this.logger.info('ui-smart-performance.getNextScanRunTime', JSON.stringify(payload));
+		this.logger.info('ui-smart-performance-scan-summary.getNextScanRunTime', JSON.stringify(payload));
 		try {
 			const res: any = await this.smartPerformanceService.getNextScanRunTime(payload);
 			if (res!=undefined) {
+
 				this.getNextScanScheduleTime(res.nextruntime);
 			}
-			this.logger.info('ui-smart-performance.getNextScanRunTime.then', JSON.stringify(res));
+			this.logger.info('ui-smart-performance-scan-summary.getNextScanRunTime.then', JSON.stringify(res));
 
 		} catch (err) {
-			this.logger.error('ui-smart-performance.getNextScanRunTime.then', err);
+			this.logger.error('ui-smart-performance-scan-summary.getNextScanRunTime.then', err);
 		}
 		this.maxDate = {
 			year: this.currentDate.getFullYear(),
@@ -583,4 +584,14 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		this.sizeExtension = sizes[i];
 		return parseFloat((mb / Math.pow(k, i)).toFixed(1));
 	}
+	changeNextScanDateValue() { 
+		//console.log("event emitted------------------------------",this.isSubscribed);
+		if (this.isSubscribed) {
+			this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix');
+		}
+		else {
+			this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScan');
+		}
+	
+	 } 
 }

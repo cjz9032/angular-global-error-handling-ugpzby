@@ -69,9 +69,17 @@ export class UiSmartPerformanceScanningComponent implements OnInit, OnChanges {
 	) { }
 
 	ngOnInit() {
+		this.percent=0;
 		this.spCategoryenum = SPCategory;
 		this.spSubCategoryenum = SPSubCategory;
 		this.activegroup = this.spCategoryenum.TUNEUPPERFORMANCE;
+		//let myTag = this.el.nativeElement.querySelector(".scrollingTextUL");
+		
+		// if(!myTag.classList.contains('ms-slider__words'))
+		// {
+		// 	console.log("---------------------------------------------------",myTag);
+		// 	myTag.classList.add('ms-slider__words'); 
+		// }
 		// this.smartperformanceScanningStatusEventRef = this.getSmartPerformanceStartScanStatusEvent.bind(this);
 		// this.shellServices.registerEvent(EventTypes.smartPerformanceScanStatus, this.smartperformanceScanningStatusEventRef);
 
@@ -119,6 +127,7 @@ export class UiSmartPerformanceScanningComponent implements OnInit, OnChanges {
 		this.scanData = response.payload;
 		this.percent = this.scanData.percentage;
 		const catVal = this.scanData.status.category;
+		const subCatVal = this.scanData.status.subcategory;
 
 		if (catVal === this.spSubCategoryenum.HUNDEREAD) {
 			this.activegroup = this.spCategoryenum.TUNEUPPERFORMANCE;
@@ -140,31 +149,31 @@ export class UiSmartPerformanceScanningComponent implements OnInit, OnChanges {
 				);
 				this.onehundreadFlag = false;
 			}
-			if (catVal === this.spSubCategoryenum.HUNDEREADANDONE) {
+			if (subCatVal === this.spSubCategoryenum.HUNDEREADANDONE) {
 				this.GetCurrentScanninRollingTexts(
 					this.translate.instant(
 						'smartPerformance.scanningPage.nowScanningDetail.tunePCScanningItems.accumulatedJunk'
 					)
 				);
-			} else if (catVal === this.spSubCategoryenum.HUNDEREADANDTWO) {
+			} else if (subCatVal === this.spSubCategoryenum.HUNDEREADANDTWO) {
 				this.GetCurrentScanninRollingTexts(
 					this.translate.instant(
 						'smartPerformance.scanningPage.nowScanningDetail.tunePCScanningItems.usabilityIssues'
 					)
 				);
-			} else if (catVal === this.spSubCategoryenum.HUNDEREADANDTHREE) {
+			} else if (subCatVal === this.spSubCategoryenum.HUNDEREADANDTHREE) {
 				this.GetCurrentScanninRollingTexts(
 					this.translate.instant(
 						'smartPerformance.scanningPage.nowScanningDetail.tunePCScanningItems.windowsSettings'
 					)
 				);
-			} else if (catVal === this.spSubCategoryenum.HUNDEREADANDFOUR) {
+			} else if (subCatVal === this.spSubCategoryenum.HUNDEREADANDFOUR) {
 				this.GetCurrentScanninRollingTexts(
 					this.translate.instant(
 						'smartPerformance.scanningPage.nowScanningDetail.tunePCScanningItems.systemErrors'
 					)
 				);
-			} else if (catVal === this.spSubCategoryenum.HUNDEREADANDFIVE) {
+			} else if (subCatVal === this.spSubCategoryenum.HUNDEREADANDFIVE) {
 				this.GetCurrentScanninRollingTexts(
 					this.translate.instant(
 						'smartPerformance.scanningPage.nowScanningDetail.tunePCScanningItems.registryErrors'
@@ -187,38 +196,38 @@ export class UiSmartPerformanceScanningComponent implements OnInit, OnChanges {
 				this.twohundreadFlag = false;
 			}
 			if (catVal) {
-				if (catVal === this.spSubCategoryenum.TWOHUNDEREADANDONE) {
-					this.GetCurrentScanninRollingTexts(
+                if (subCatVal === this.spSubCategoryenum.TWOHUNDEREADANDONE) {
+                    this.GetCurrentScanninRollingTexts(
 						this.translate.instant(
-							'smartPerformance.scanningPage.nowScanningDetail.boostcanningItems.networkSettings'
+							'smartPerformance.scanningPage.nowScanningDetail.boostScanningItems.eJunk'
 						)
 					);
-				} else if (catVal === this.spSubCategoryenum.TWOHUNDEREADANDTWO) {
+                } else if (subCatVal === this.spSubCategoryenum.TWOHUNDEREADANDTWO) {
 					this.GetCurrentScanninRollingTexts(
 						this.translate.instant(
-							'smartPerformance.scanningPage.nowScanningDetail.boostcanningItems.browserSettings'
+							'smartPerformance.scanningPage.nowScanningDetail.boostScanningItems.networkSettings'
 						)
 					);
-				} else if (catVal === this.spSubCategoryenum.TWOHUNDEREADANDTHREE) {
+				} else if (subCatVal === this.spSubCategoryenum.TWOHUNDEREADANDTHREE) {
 					this.GetCurrentScanninRollingTexts(
 						this.translate.instant(
-							'smartPerformance.scanningPage.nowScanningDetail.boostcanningItems.browserSecurity'
+							'smartPerformance.scanningPage.nowScanningDetail.boostScanningItems.browserSettings'
 						)
 					);
-				} else if (catVal === this.spSubCategoryenum.TWOHUNDEREADANDFOUR) {
+				} else if (subCatVal === this.spSubCategoryenum.TWOHUNDEREADANDFOUR) {
 					this.GetCurrentScanninRollingTexts(
 						this.translate.instant(
-							'smartPerformance.scanningPage.nowScanningDetail.boostcanningItems.wifiPerformance'
+							'smartPerformance.scanningPage.nowScanningDetail.boostScanningItems.browserSecurity'
 						)
 					);
-				} else if (catVal === this.spSubCategoryenum.TWOHUNDEREADANDFIVE) {
+				} else if (subCatVal === this.spSubCategoryenum.TWOHUNDEREADANDFIVE) {
 					this.GetCurrentScanninRollingTexts(
 						this.translate.instant(
-							'smartPerformance.scanningPage.nowScanningDetail.boostcanningItems.eJunk'
+							'smartPerformance.scanningPage.nowScanningDetail.boostScanningItems.wifiPerformance'
 						)
 					);
 				}
-			}
+            }
 			this.updateTitleAndSubItems(
 				this.translate.instant(
 					'smartPerformance.boostInternetPerformance.extraTitle'
@@ -234,31 +243,31 @@ export class UiSmartPerformanceScanningComponent implements OnInit, OnChanges {
 				this.threehundreadFlag = false;
 				// this.initSpeed();
 			}
-			if (catVal === this.spSubCategoryenum.THREEHUNDEREADANDONE) {
+			if (subCatVal === this.spSubCategoryenum.THREEHUNDEREADANDONE) {
 				this.GetCurrentScanninRollingTexts(
 					this.translate.instant(
 						'smartPerformance.scanningPage.nowScanningDetail.malwareScanningItems.malwareScan'
 					)
 				);
-			} else if (catVal === this.spSubCategoryenum.THREEHUNDEREADANDTWO) {
+			} else if (subCatVal === this.spSubCategoryenum.THREEHUNDEREADANDTWO) {
 				this.GetCurrentScanninRollingTexts(
 					this.translate.instant(
 						'smartPerformance.scanningPage.nowScanningDetail.malwareScanningItems.zerodayInfections'
 					)
 				);
-			} else if (catVal === this.spSubCategoryenum.THREEHUNDEREADANDTHREE) {
+			} else if (subCatVal === this.spSubCategoryenum.THREEHUNDEREADANDTHREE) {
 				this.GetCurrentScanninRollingTexts(
 					this.translate.instant(
 						'smartPerformance.scanningPage.nowScanningDetail.malwareScanningItems.errantPrograms'
 					)
 				);
-			} else if (catVal === this.spSubCategoryenum.THREEHUNDEREADANDFOUR) {
+			} else if (subCatVal === this.spSubCategoryenum.THREEHUNDEREADANDFOUR) {
 				this.GetCurrentScanninRollingTexts(
 					this.translate.instant(
 						'smartPerformance.scanningPage.nowScanningDetail.malwareScanningItems.annoyingAdware'
 					)
 				);
-			} else if (catVal === this.spSubCategoryenum.THREEHUNDEREADANDFIVE) {
+			} else if (subCatVal === this.spSubCategoryenum.THREEHUNDEREADANDFIVE) {
 				this.GetCurrentScanninRollingTexts(
 					this.translate.instant(
 						'smartPerformance.scanningPage.nowScanningDetail.malwareScanningItems.securitySettings'
@@ -357,12 +366,15 @@ export class UiSmartPerformanceScanningComponent implements OnInit, OnChanges {
 	// }
 
 	GetCurrentScanninRollingTexts(scanitems: any) {
+
+		
 		this.currentScanningItems = [];
 		for (const val in scanitems) {
-			// console.log(scanitems[val]); // prints values: 10, 20, 30, 40
+			//console.log(scanitems[val]); // prints values: 10, 20, 30, 40
 			this.currentScanningItems.push({ key: scanitems[val] });
 		}
+		//console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++",this.currentScanningItems);
 		this.currentScanningItems[0]['isCurrent'] = true;
-		// console.log(this.currentScanningItems);
+		
 	}
 }
