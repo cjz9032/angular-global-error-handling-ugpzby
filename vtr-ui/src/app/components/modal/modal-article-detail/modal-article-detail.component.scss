@@ -4,16 +4,18 @@
 	position: relative;
 }
 
+.article-main-body {
+	&:focus {
+		outline: 0rem;
+	}
+}
+
 .vtr-modal-article-detail {
 	padding: 0;
 	display: flex;
 	flex-flow: column;
 	height: calc(100vh - 5.5rem);
 	box-sizing: border-box;
-
-	&:focus {
-		outline: 0rem;
-	}
 
 	fa-icon {
 		font-size: 2rem;
