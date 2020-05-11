@@ -376,6 +376,15 @@
                     "bundled": "bundled",
                     "unbundled": "unbundled",
                     "isSelected": "is selected"
+                },
+                "macrokeyStatus": {
+                    "label": "Macro Key status"
+                },
+                "ignoreIntervalStatus": {
+                    "label": "Interval setting"
+                },
+                "repeatStatus": {
+                    "label": "Repeat frequency"
                 }
             }
         },
@@ -2084,18 +2093,18 @@
                 "tooltip": "لا تنطبق هذه الميزة على مشغلات فيديو الويب. تدعم مشغلات الفيديو المحلية الأكثر رواجًا، مثل Windows Media Player و5KPlayer وغيرها، هذه الميزة."
             },
             "superResolution": {
-				"title": "رفع مستوى دقة الفيديو",
-				"desc": "<p><label>تعمل هذه الميزة على تحسين تجربة تشغيل الفيديو من خلال تحسين دقة الفيديو. وهي تعمل بشكل خاص عندما يكون الفيديو بدقة منخفضة.</label></p> <p><label>قد تؤثر هذه الوظيفة على عمر البطارية ودرجة حرارة البطارية، وقد تتسبب في حدوث ضوضاء. يرجى عدم الاستخدام في وضع التيار المباشر (وضع البطارية)‬. وإلا سوف تسرع استهلاك الطاقة وتقصير عمر البطارية.</label></p>",
-				"tooltip": "<p>تعمل هذه الميزة فقط مع مشغلات الفيديو التالية:<br>Windows Media Player<br>مشغل قائم على Chrome<br>الأفلام والبرامج التلفزيونية<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>للحصول على إرشادات حول كيفية تمكين هذه الوظيفة على PotPlayer وGOM player، راجع دليل المستخدم المرفق مع جهاز الكمبيوتر.</p>",
-				"note": {
-					"description": "لا تعمل هذه الميزة في الحالات التالية:",
-					"description1": "وضع موفر البطارية ممكّن.",
+                "title": "رفع مستوى دقة الفيديو",
+                "desc": "<p><label>تعمل هذه الميزة على تحسين تجربة تشغيل الفيديو من خلال تحسين دقة الفيديو. وهي تعمل بشكل خاص عندما يكون الفيديو بدقة منخفضة.</label></p> <p><label>قد تؤثر هذه الوظيفة على عمر البطارية ودرجة حرارة البطارية، وقد تتسبب في حدوث ضوضاء. يرجى عدم الاستخدام في وضع التيار المباشر (وضع البطارية)‬. وإلا سوف تسرع استهلاك الطاقة وتقصير عمر البطارية.</label></p>",
+                "tooltip": "<p>تعمل هذه الميزة فقط مع مشغلات الفيديو التالية:<br>Windows Media Player<br>مشغل قائم على Chrome<br>الأفلام والبرامج التلفزيونية<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>للحصول على إرشادات حول كيفية تمكين هذه الوظيفة على PotPlayer وGOM player، راجع دليل المستخدم المرفق مع جهاز الكمبيوتر.</p>",
+                "note": {
+                    "description": "لا تعمل هذه الميزة في الحالات التالية:",
+                    "description1": "وضع موفر البطارية ممكّن.",
                     "description2": "درجة حرارة وحدة المعالجة المركزية (CPU) مرتفعة جدًا.",
                     "description3": "الجهاز معين إلى وضع توفير طاقة البطارية في \"التبريد الذكي‬\"."
-				},
-				"imageBefore":"قبل",
-                "imageAfter":"بعد‬"
-			},
+                },
+                "imageBefore": "قبل",
+                "imageAfter": "بعد‬"
+            },
             "antiTheft": {
                 "heading": "الاستشعار الذكي",
                 "title": "تنبيه الحركة الذكية",
@@ -3165,7 +3174,8 @@
                 "tab2Description": "Get a 100 point check done in under 5 minutes",
                 "tab3Heading": "IT'S SAFE",
                 "tab3Description": "No scareware, built with best practises"
-            }
+            },
+            "summaryTitle": "Tune PC Performance"
         },
         "boostInternetPerformance": {
             "title": "BOOST INTERNET PERFORMANCE",
@@ -3186,7 +3196,8 @@
                 "tab2Description": "We remove all potentially unwanted programs",
                 "tab3Heading": "LIGHT AND FAST",
                 "tab3Description": "Scan typically takes 5-10 minutes"
-            }
+            },
+            "summaryTitle": "Internet Performance"
         },
         "malwareSecurity": {
             "title": "MALWARE & SECURITY",
@@ -3206,7 +3217,8 @@
                 "tab2Description": "We can diagnose and repair your connectivity problems.",
                 "tab3Heading": "BROWSER ISSUES",
                 "tab3Description": "We configure and fix all your popular web browsers."
-            }
+            },
+            "summaryTitle": "Malware & Security"
         },
         "proactiveAutomated": {
             "title": "PROACTIVE & AUTOMATED",
@@ -3251,7 +3263,17 @@
             "txtDay": "Day",
             "txtTime": "Time",
             "txtSave": "save",
-            "txtCancel": "cancel"
+            "txtCancel": "cancel",
+            "scanFrequencyWeek": "Once a week",
+            "scanFrequencyEveryWeek": "Every other week",
+            "scanFrequencyMonth": "Every month",
+            "mon": "Monday",
+            "tue": "Tuesday",
+            "wed": "Wednesday",
+            "thu": "Thursday",
+            "fri": "Friday",
+            "sat": "Saturday",
+            "sun": "Sunday"
         },
         "scanningPage": {
             "title": "Performance & security check",

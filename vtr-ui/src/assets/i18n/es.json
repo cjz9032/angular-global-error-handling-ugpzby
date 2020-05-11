@@ -374,6 +374,15 @@
                     "bundled": "bundled",
                     "unbundled": "unbundled",
                     "isSelected": "is selected"
+                },
+                "macrokeyStatus": {
+                    "label": "Macro Key status"
+                },
+                "ignoreIntervalStatus": {
+                    "label": "Interval setting"
+                },
+                "repeatStatus": {
+                    "label": "Repeat frequency"
                 }
             }
         },
@@ -2082,18 +2091,18 @@
                 "tooltip": "Esta característica no se aplica a reproductores de video Web. Los reproductores de video locales más populares, como Windows Media Player, 5KPlayer, etc., admiten esta característica."
             },
             "superResolution": {
-				"title": "Escalado de resolución del video",
-				"desc": "<p><label>Esta característica mejora la experiencia de la reproducción de video al mejorar la resolución del video. Funciona especialmente cuando el video tiene una mala resolución.</label></p> <p><label>Esta función puede afectar a la duración de la batería, a la temperatura de la batería y causar ruidos. No lo utilice en la modalidad de CC (modalidad de batería). De lo contrario, se acelerará el consumo de energía y se acortará la vida de la batería.</label></p>",
-				"tooltip": "<p>Esta característica solo funciona para los siguientes reproductores de video:<br>Windows Media Player<br>Reproductor basado en Chrome<br>Películas y TV<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>Para obtener instrucciones sobre cómo habilitar esta función en PotPlayer y GOM Player, consulte la guía del usuario que se proporciona con el sistema.</p>",
-				"note": {
-					"description": "Esta característica no funciona cuando;",
-					"description1": "El modo de ahorro de batería está habilitado.",
+                "title": "Escalado de resolución del video",
+                "desc": "<p><label>Esta característica mejora la experiencia de la reproducción de video al mejorar la resolución del video. Funciona especialmente cuando el video tiene una mala resolución.</label></p> <p><label>Esta función puede afectar a la duración de la batería, a la temperatura de la batería y causar ruidos. No lo utilice en la modalidad de CC (modalidad de batería). De lo contrario, se acelerará el consumo de energía y se acortará la vida de la batería.</label></p>",
+                "tooltip": "<p>Esta característica solo funciona para los siguientes reproductores de video:<br>Windows Media Player<br>Reproductor basado en Chrome<br>Películas y TV<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>Para obtener instrucciones sobre cómo habilitar esta función en PotPlayer y GOM Player, consulte la guía del usuario que se proporciona con el sistema.</p>",
+                "note": {
+                    "description": "Esta característica no funciona cuando;",
+                    "description1": "El modo de ahorro de batería está habilitado.",
                     "description2": "La temperatura de la CPU es demasiado alta.",
                     "description3": "El dispositivo está establecido en Modalidad de ahorro de batería en “Enfriamiento inteligente”."
-				},
-				"imageBefore":"Antes",
-                "imageAfter":"Después"
-			},
+                },
+                "imageBefore": "Antes",
+                "imageAfter": "Después"
+            },
             "antiTheft": {
                 "heading": "Detección inteligente",
                 "title": "Alerta de movimiento inteligente",
@@ -3163,7 +3172,8 @@
                 "tab2Description": "Get a 100 point check done in under 5 minutes",
                 "tab3Heading": "IT'S SAFE",
                 "tab3Description": "No scareware, built with best practises"
-            }
+            },
+            "summaryTitle": "Tune PC Performance"
         },
         "boostInternetPerformance": {
             "title": "BOOST INTERNET PERFORMANCE",
@@ -3184,7 +3194,8 @@
                 "tab2Description": "We remove all potentially unwanted programs",
                 "tab3Heading": "LIGHT AND FAST",
                 "tab3Description": "Scan typically takes 5-10 minutes"
-            }
+            },
+            "summaryTitle": "Internet Performance"
         },
         "malwareSecurity": {
             "title": "MALWARE & SECURITY",
@@ -3204,7 +3215,8 @@
                 "tab2Description": "We can diagnose and repair your connectivity problems.",
                 "tab3Heading": "BROWSER ISSUES",
                 "tab3Description": "We configure and fix all your popular web browsers."
-            }
+            },
+            "summaryTitle": "Malware & Security"
         },
         "proactiveAutomated": {
             "title": "PROACTIVE & AUTOMATED",
@@ -3249,7 +3261,17 @@
             "txtDay": "Day",
             "txtTime": "Time",
             "txtSave": "save",
-            "txtCancel": "cancel"
+            "txtCancel": "cancel",
+            "scanFrequencyWeek": "Once a week",
+            "scanFrequencyEveryWeek": "Every other week",
+            "scanFrequencyMonth": "Every month",
+            "mon": "Monday",
+            "tue": "Tuesday",
+            "wed": "Wednesday",
+            "thu": "Thursday",
+            "fri": "Friday",
+            "sat": "Saturday",
+            "sun": "Sunday"
         },
         "scanningPage": {
             "title": "Performance & security check",

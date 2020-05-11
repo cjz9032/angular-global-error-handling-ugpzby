@@ -374,6 +374,15 @@
                     "bundled": "bundled",
                     "unbundled": "unbundled",
                     "isSelected": "is selected"
+                },
+                "macrokeyStatus": {
+                    "label": "Macro Key status"
+                },
+                "ignoreIntervalStatus": {
+                    "label": "Interval setting"
+                },
+                "repeatStatus": {
+                    "label": "Repeat frequency"
                 }
             }
         },
@@ -2082,18 +2091,18 @@
                 "tooltip": "Ez a funkció nem használható internetes videólejátszókhoz. A népszerű helyi videólejátszók (pl. a Windows Media Player vagy a 5KPlayer) támogatják ezt a funkciót."
             },
             "superResolution": {
-				"title": "Videófelbontás megnövelése",
-				"desc": "<p><label>Ez a funkció növeli a videók felbontását, és ezzel élvezetesebbé teszi a videók megtekintését. Különösen akkor hasznos, ha a videó felbontása alacsony.</label></p> <p><label>Ez a funkció befolyásolhatja az akkumulátor élettartamát és hőmérsékletét, továbbá zajt kelthet. Ne használja DC üzemmódban (a rendszer akkumulátorról üzemel). Ellenkező esetben felgyorsítja az energiafogyasztást és lerövidíti az akkumulátor élettartamát.</label></p>",
-				"tooltip": "<p>Ez a funkció kizárólag az alábbi videolejátszókkal működik:<br>Windows Media Player<br>Chrome-alapú lejátszó<br>Filmek+TV<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>A funkció PotPlayer és GOM Player lejátszókban való engedélyezésével kapcsolatban olvassa el a számítógéphez kapott felhasználói kézikönyvet.</p>",
-				"note": {
-					"description": "A funkció az alábbi esetekben nem működik:",
-					"description1": "Az Akkumulátorkímélő mód engedélyezve van.",
+                "title": "Videófelbontás megnövelése",
+                "desc": "<p><label>Ez a funkció növeli a videók felbontását, és ezzel élvezetesebbé teszi a videók megtekintését. Különösen akkor hasznos, ha a videó felbontása alacsony.</label></p> <p><label>Ez a funkció befolyásolhatja az akkumulátor élettartamát és hőmérsékletét, továbbá zajt kelthet. Ne használja DC üzemmódban (a rendszer akkumulátorról üzemel). Ellenkező esetben felgyorsítja az energiafogyasztást és lerövidíti az akkumulátor élettartamát.</label></p>",
+                "tooltip": "<p>Ez a funkció kizárólag az alábbi videolejátszókkal működik:<br>Windows Media Player<br>Chrome-alapú lejátszó<br>Filmek+TV<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>A funkció PotPlayer és GOM Player lejátszókban való engedélyezésével kapcsolatban olvassa el a számítógéphez kapott felhasználói kézikönyvet.</p>",
+                "note": {
+                    "description": "A funkció az alábbi esetekben nem működik:",
+                    "description1": "Az Akkumulátorkímélő mód engedélyezve van.",
                     "description2": "A processzor hőmérséklete túl magas.",
                     "description3": "\"Intelligens hűtés\" üzemmódban be van kapcsolva az Akkumulátorkímélő kód."
-				},
-				"imageBefore":"Előtte",
-                "imageAfter":"Utána"
-			},
+                },
+                "imageBefore": "Előtte",
+                "imageAfter": "Utána"
+            },
             "antiTheft": {
                 "heading": "Intelligens észlelés",
                 "title": "Intelligens mozgásérzékeléses riasztás",
@@ -3163,7 +3172,8 @@
                 "tab2Description": "Get a 100 point check done in under 5 minutes",
                 "tab3Heading": "IT'S SAFE",
                 "tab3Description": "No scareware, built with best practises"
-            }
+            },
+            "summaryTitle": "Tune PC Performance"
         },
         "boostInternetPerformance": {
             "title": "BOOST INTERNET PERFORMANCE",
@@ -3184,7 +3194,8 @@
                 "tab2Description": "We remove all potentially unwanted programs",
                 "tab3Heading": "LIGHT AND FAST",
                 "tab3Description": "Scan typically takes 5-10 minutes"
-            }
+            },
+            "summaryTitle": "Internet Performance"
         },
         "malwareSecurity": {
             "title": "MALWARE & SECURITY",
@@ -3204,7 +3215,8 @@
                 "tab2Description": "We can diagnose and repair your connectivity problems.",
                 "tab3Heading": "BROWSER ISSUES",
                 "tab3Description": "We configure and fix all your popular web browsers."
-            }
+            },
+            "summaryTitle": "Malware & Security"
         },
         "proactiveAutomated": {
             "title": "PROACTIVE & AUTOMATED",
@@ -3249,7 +3261,17 @@
             "txtDay": "Day",
             "txtTime": "Time",
             "txtSave": "save",
-            "txtCancel": "cancel"
+            "txtCancel": "cancel",
+            "scanFrequencyWeek": "Once a week",
+            "scanFrequencyEveryWeek": "Every other week",
+            "scanFrequencyMonth": "Every month",
+            "mon": "Monday",
+            "tue": "Tuesday",
+            "wed": "Wednesday",
+            "thu": "Thursday",
+            "fri": "Friday",
+            "sat": "Saturday",
+            "sun": "Sunday"
         },
         "scanningPage": {
             "title": "Performance & security check",

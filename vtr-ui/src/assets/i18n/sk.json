@@ -374,6 +374,15 @@
                     "bundled": "bundled",
                     "unbundled": "unbundled",
                     "isSelected": "is selected"
+                },
+                "macrokeyStatus": {
+                    "label": "Macro Key status"
+                },
+                "ignoreIntervalStatus": {
+                    "label": "Interval setting"
+                },
+                "repeatStatus": {
+                    "label": "Repeat frequency"
                 }
             }
         },
@@ -2082,18 +2091,18 @@
                 "tooltip": "Táto funkcia sa nevzťahuje na webové video prehrávače. Obľúbené lokálne prehrávače videa (prehrávač Windows Media Player, 5KPlayer a pod.) túto funkciu podporujú."
             },
             "superResolution": {
-				"title": "Zvýšenie rozlíšenia videa",
-				"desc": "<p><label>Táto funkcia zvyšuje zážitok z prehrávania videa zlepšením jeho rozlíšenia. Prejaví sa najmä pri nízkom rozlíšení videa.</label></p> <p><label>Táto funkcia môže ovplyvniť výdrž batérie, teplotu batérie a vytvárať hluk. Nepoužívajte v režime jednosmerného prúdu (režim napájania z batérie). V opačnom prípade sa zväčší spotreba energie a skráti životnosť batérie.</label></p>",
-				"tooltip": "<p>Táto funkcia funguje iba v prípade nasledujúcich prehrávačov videa:<br>Windows Media Player<br>Prehrávač založený na prehľadávači Chrome<br>Filmy a TV programy<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>Pokyny na zapnutie tejto funkcie v prehrávačoch PotPlayer a GOM Player nájdete v používateľskej príručke dodanej s vaším počítačom.</p>",
-				"note": {
-					"description": "Funkcia nefunguje v týchto prípadoch:",
-					"description1": "Režim šetriča batérie je povolený.",
+                "title": "Zvýšenie rozlíšenia videa",
+                "desc": "<p><label>Táto funkcia zvyšuje zážitok z prehrávania videa zlepšením jeho rozlíšenia. Prejaví sa najmä pri nízkom rozlíšení videa.</label></p> <p><label>Táto funkcia môže ovplyvniť výdrž batérie, teplotu batérie a vytvárať hluk. Nepoužívajte v režime jednosmerného prúdu (režim napájania z batérie). V opačnom prípade sa zväčší spotreba energie a skráti životnosť batérie.</label></p>",
+                "tooltip": "<p>Táto funkcia funguje iba v prípade nasledujúcich prehrávačov videa:<br>Windows Media Player<br>Prehrávač založený na prehľadávači Chrome<br>Filmy a TV programy<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>Pokyny na zapnutie tejto funkcie v prehrávačoch PotPlayer a GOM Player nájdete v používateľskej príručke dodanej s vaším počítačom.</p>",
+                "note": {
+                    "description": "Funkcia nefunguje v týchto prípadoch:",
+                    "description1": "Režim šetriča batérie je povolený.",
                     "description2": "Teplota procesora je príliš vysoká.",
                     "description3": "Funkcia „Inteligentné chladenie“ nastavila zariadenie do režimu úspory batérie."
-				},
-				"imageBefore":"Pred",
-                "imageAfter":"Po"
-			},
+                },
+                "imageBefore": "Pred",
+                "imageAfter": "Po"
+            },
             "antiTheft": {
                 "heading": "Inteligentné snímanie",
                 "title": "Inteligentná signalizácia pohybu",
@@ -3163,7 +3172,8 @@
                 "tab2Description": "Get a 100 point check done in under 5 minutes",
                 "tab3Heading": "IT'S SAFE",
                 "tab3Description": "No scareware, built with best practises"
-            }
+            },
+            "summaryTitle": "Tune PC Performance"
         },
         "boostInternetPerformance": {
             "title": "BOOST INTERNET PERFORMANCE",
@@ -3184,7 +3194,8 @@
                 "tab2Description": "We remove all potentially unwanted programs",
                 "tab3Heading": "LIGHT AND FAST",
                 "tab3Description": "Scan typically takes 5-10 minutes"
-            }
+            },
+            "summaryTitle": "Internet Performance"
         },
         "malwareSecurity": {
             "title": "MALWARE & SECURITY",
@@ -3204,7 +3215,8 @@
                 "tab2Description": "We can diagnose and repair your connectivity problems.",
                 "tab3Heading": "BROWSER ISSUES",
                 "tab3Description": "We configure and fix all your popular web browsers."
-            }
+            },
+            "summaryTitle": "Malware & Security"
         },
         "proactiveAutomated": {
             "title": "PROACTIVE & AUTOMATED",
@@ -3249,7 +3261,17 @@
             "txtDay": "Day",
             "txtTime": "Time",
             "txtSave": "save",
-            "txtCancel": "cancel"
+            "txtCancel": "cancel",
+            "scanFrequencyWeek": "Once a week",
+            "scanFrequencyEveryWeek": "Every other week",
+            "scanFrequencyMonth": "Every month",
+            "mon": "Monday",
+            "tue": "Tuesday",
+            "wed": "Wednesday",
+            "thu": "Thursday",
+            "fri": "Friday",
+            "sat": "Saturday",
+            "sun": "Sunday"
         },
         "scanningPage": {
             "title": "Performance & security check",
