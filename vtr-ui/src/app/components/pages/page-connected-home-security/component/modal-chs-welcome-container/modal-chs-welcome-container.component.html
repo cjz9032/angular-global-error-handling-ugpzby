@@ -24,13 +24,13 @@
 	</div>
 	<!-- end of page1-->
 	<!-- start of page 2-->
-	<div class="page page-two" *ngIf="switchPage === 2 && showPageLocation === true">
+	<div class="page page-two" *ngIf="switchPage === 2 && showPageLocation === true" role="dialog">
 		<p class="description" [innerHTML]="'homeSecurity.tour.locationTitle' | translate"></p>
 		<p class="sub-desc" [innerHTML]="'homeSecurity.tour.locationPermission' | translate"></p>
 		<div class="d-flex justify-content-between">
 			<button class="modal-button allow-btn"
 				id="chs-tour-btn-openLocation"
-				#allowButton
+				#allowButton 
 				vtrMetrics
 				metricsEvent="FeatureClick"
 				metricsItem="CHSWelcomeOpenLocationButton"

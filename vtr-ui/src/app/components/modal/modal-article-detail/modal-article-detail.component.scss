@@ -4,6 +4,12 @@
 	position: relative;
 }
 
+.article-main-body {
+	&:focus {
+		outline: 0rem;
+	}
+}
+
 .vtr-modal-article-detail {
 	padding: 0;
 	display: flex;
