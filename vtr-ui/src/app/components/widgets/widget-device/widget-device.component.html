@@ -5,37 +5,36 @@
 				>
 				<div class="family"
 					id="myDevice-machine-info"
-					attr.aria-label="myDevice-machine-info">{{myDevice.family}}</div>
+					role="text">{{myDevice.family}}</div>
 				<div class="col-12 px-0 {{'dirClass' | translate}}">
 					<span class="sub-header-separator">
 						<fa-icon [icon]="['fas', 'minus']"></fa-icon>
 					</span>
-					<span class="device-sub-header"
-						id="myDevice-serial"
-						attr.aria-label="myDevice-serial"><span class="{{'dirClass' | translate}}"
+					<span class="device-sub-header">
+						<span class="{{'dirClass' | translate}}" id="myDevice-serial" role="text"
 							dir="{{'dir' | translate}}">{{'device.myDevice.serial' | translate}}</span>:
-						{{myDevice.sn}}</span>
+						<span id="myDevice-serial-value" role="text">{{myDevice.sn}}</span>
+					</span>
 				</div>
 				<div class="col-12 px-0">
 					<span class="sub-header-separator">
 						<fa-icon [icon]="['fas', 'minus']"></fa-icon>
 					</span>
-					<span class="device-sub-header"
-						id="myDevice-product-number"
-						attr.aria-label="myDevice-product-number"><span class="{{'dirClass' | translate}}"
+					<span class="device-sub-header">
+						<span class="{{'dirClass' | translate}}" id="myDevice-product-number" role="text"
 							dir="{{'dir' | translate}}">{{'device.myDevice.productNumber' | translate}}</span>:
-						{{myDevice.productNo}}</span>
+						<span id="myDevice-product-number-value" role="text">{{myDevice.productNo}}</span>
+					</span>
 				</div>
 				<div class="col-12 px-0">
 					<span class="sub-header-separator">
 						<fa-icon [icon]="['fas', 'minus']"></fa-icon>
 					</span>
-					<span id="myDevice-bios-version"
-						attr.aria-label="myDevice-bios-version"
-						class="{{'dirClass' | translate}} device-sub-header text-wrap"
-						dir="{{'dir' | translate}}">{{'device.myDevice.biosVersion'|translate}}</span>
-					<span class="device-sub-header text-wrap">: {{myDevice.bios}}</span>
-
+					<span class="device-sub-header">
+						<span class="{{'dirClass' | translate}}" id="myDevice-bios-version" role="text"
+							dir="{{'dir' | translate}}">{{'device.myDevice.biosVersion'|translate}}</span>:
+						<span id="myDevice-bios-version-value" role="text">{{myDevice.bios}}</span>
+					</span>
 				</div>
 			</div>
 			<div class="col device-image">
@@ -43,11 +42,13 @@
 					<img class=""
 						*ngIf="!deviceService.isGaming"
 						[src]=" 'assets/icons/logo-lenovo-red.svg' | svgInline | async"
-						alt="Lenovo logo">
+						alt="Lenovo logo"
+						id="myDevice-logo-lenovo-red">
 					<img class=""
 						*ngIf="deviceService.isGaming"
 						[src]=" 'assets/icons/logo-lenovo-white.svg' | svgInline | async"
-						alt="Lenovo logo">
+						alt="Lenovo logo"
+						id="myDevice-logo-lenovo-white">
 				</div>
 			</div>
 		</div>
