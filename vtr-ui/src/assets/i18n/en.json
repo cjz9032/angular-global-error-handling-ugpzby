@@ -2445,7 +2445,17 @@
 			"txtDay": "Day",
 			"txtTime": "Time",
 			"txtSave": "save",
-			"txtCancel": "cancel"
+			"txtCancel": "cancel",
+			"scanFrequencyWeek": "Once a week",
+			"scanFrequencyEveryWeek": "Every other week",
+			"scanFrequencyMonth": "Every month",
+			"mon": "Monday",
+			"tue": "Tuesday",
+			"wed": "Wednesday",
+			"thu": "Thursday",
+			"fri": "Friday",
+			"sat": "Saturday",
+			"sun": "Sunday"
 		},
 		"scanningPage": {
 			"title": "Performance & security check",
