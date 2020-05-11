@@ -79,7 +79,7 @@
                     "hardwareScan": "Maskinvaresøk",
                     "systemUpdate": "Systemoppdateringer",
                     "header": "Systemverktøy",
-                    "legionAccessory": "Legion Accessory"
+                    "legionAccessory": "Legion Accessory Central"
                 },
                 "lighting": {
                     "title": "Tilpass belysning",
@@ -98,7 +98,7 @@
                     "line10": "<b>Lukk automatisk </b><br> For å maksimere de tilgjengelige systemressursene kan du fjerne prosesser som spillet ikke trenger, før du begynner å spille",
                     "line11": "<b>Termisk modus </b><br> Angi ønsket enhetsprofil for viftehastigheten og kjølingskontroll",
                     "line12": "<b>Makrotast</b><br> Tilpass tastaturhandlinger slik at de passer til spillestilen din",
-                    "line13": "<b>Over Drive </b><br> This function makes your screen respond faster"
+                    "line13": "<b>Over Drive </b><br> Gjør at skjermen din responderer raskere"
                 },
                 "systemInfo": {
                     "systenTooltip": "Hold pekeren over CPU/GPU/RAM og ulike stasjoner for å vise beskrivelser, deriblant informasjon om fabrikant og modell"
@@ -198,8 +198,8 @@
                     "title": "Advarsel!",
                     "description": "Ukorrekte innstillinger av Overklokking kan føre til uopprettelige maskinvareskader.",
                     "proceed": "FORTSETT",
-                    "legionAccessory": "Install Legion Accessory Central?",
-                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc."
+                    "legionAccessory": "Vil du installere Legion Accessory Central?",
+                    "accessoryDesc": "Legion Accessory Central er en app for å konfigurere Legion-musen, -tastaturet, -hodetelefoner osv."
                 },
                 "popup": {
                     "closeBtn": "close"

@@ -79,7 +79,7 @@
                     "hardwareScan": "Donanım Taraması",
                     "systemUpdate": "Sistem Güncellemesi",
                     "header": "Sistem Araçları",
-                    "legionAccessory": "Legion Accessory"
+                    "legionAccessory": "Legion Accessory Central"
                 },
                 "lighting": {
                     "title": "Aydınlatmayı Özelleştirme",
@@ -98,7 +98,7 @@
                     "line10": "<b>Oto. Kapat </b><br> Kullanılabilir sistem kaynaklarını en üst düzeye çıkarmak için oyuna başlamadan önce gerekli olmayan işlemleri temizleyin",
                     "line11": "<b>Isı Kipi </b><br> Fan hızı ve soğutma kontrolü için tercih ettiğiniz cihaz profilini ayarlayın",
                     "line12": "<b>Makro Tuşu </b><br> Klavye işlemlerinizi oyun stilinize uygun şekilde özelleştirme",
-                    "line13": "<b>Over Drive </b><br> This function makes your screen respond faster"
+                    "line13": "<b>Over Drive </b><br> Ekran yanıt verme süresini kısaltın"
                 },
                 "systemInfo": {
                     "systenTooltip": "Üretim ve model bilgilerini de içeren açıklamaları göstermek için CPU/GPU/RAM ve farklı sürücülerin üzerine gelin"
@@ -198,8 +198,8 @@
                     "title": "Uyarı!",
                     "description": "Yanlış Hız Aşırtma ayarları geri dönüşü olmayan donanım hasarına yol açabilir.",
                     "proceed": "DEVAM ET",
-                    "legionAccessory": "Install Legion Accessory Central?",
-                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc."
+                    "legionAccessory": "Legion Accessory Central'ı yüklemek istiyor musunuz?",
+                    "accessoryDesc": "Legion Accessory Central, Legion fareniz, klavyeniz, kulaklığınız gibi donatıları yapılandırmak için tasarlanmış bir uygulamadır."
                 },
                 "popup": {
                     "closeBtn": "close"

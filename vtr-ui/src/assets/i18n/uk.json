@@ -79,7 +79,7 @@
                     "hardwareScan": "Сканування устаткування",
                     "systemUpdate": "Оновлення системи",
                     "header": "Сист. інструменти",
-                    "legionAccessory": "Legion Accessory"
+                    "legionAccessory": "Legion Accessory Central"
                 },
                 "lighting": {
                     "title": "Настроювання підсвітки",
@@ -98,7 +98,7 @@
                     "line10": "<b>Автоматичне закриття </b><br> Закривайте процеси, які не потрібні для гри, щоб найефективніше використовувати ресурси системи",
                     "line11": "<b>Терморежим </b><br> Виберіть профіль пристрою для керування швидкістю вентилятора й охолодженням",
                     "line12": "<b>Клавіша макросів </b><br> Настройте дії клавіатури відповідно до стилю гри",
-                    "line13": "<b>Over Drive </b><br> This function makes your screen respond faster"
+                    "line13": "<b>Over Drive </b><br> Налаштуйте швидшу реакцію екрана"
                 },
                 "systemInfo": {
                     "systenTooltip": "Наводьте вказівник на ЦП/ГП/ОЗП та драйвери, щоб побачити їхній опис, зокрема дані про виробника та модель"
@@ -198,8 +198,8 @@
                     "title": "Увага!",
                     "description": "Неправильні настройки розгону можуть непоправно пошкодити обладнання.",
                     "proceed": "ПРОДОВЖИТИ",
-                    "legionAccessory": "Install Legion Accessory Central?",
-                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc."
+                    "legionAccessory": "Ви хочете інсталювати Legion Accessory Central?",
+                    "accessoryDesc": "Legion Accessory Central — це програма для налаштування миші, клавіатури, навушників та інших пристроїв Legion."
                 },
                 "popup": {
                     "closeBtn": "close"

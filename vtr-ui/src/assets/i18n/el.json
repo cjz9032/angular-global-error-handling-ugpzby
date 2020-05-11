@@ -79,7 +79,7 @@
                     "hardwareScan": "Σάρωση υλικού",
                     "systemUpdate": "Ενημ. συστήματος",
                     "header": "Εργαλεία συστημ",
-                    "legionAccessory": "Legion Accessory"
+                    "legionAccessory": "Legion Accessory Central"
                 },
                 "lighting": {
                     "title": "Προσαρμογή φωτισμού",
@@ -98,7 +98,7 @@
                     "line10": "<b>Αυτόματο κλείσιμο </b><br> Κατάργηση διεργασιών που δεν είναι απαραίτητες για το παιχνίδι, πριν αρχίσετε να παίζετε, για μεγιστοποίηση των διαθέσιμων πόρων του συστήματος",
                     "line11": "<b>Θερμική λειτουργία </b><br> Ρύθμιση επιθυμητού προφίλ συσκευής για τον έλεγχο ταχύτητας και ψύξης ανεμιστήρα",
                     "line12": "<b>Πλήκτρο μακροεντολής </b><br> Προσαρμόστε τις ενέργειες του πληκτρολογίου σας ώστε να ταιριάζουν στο στυλ που παίζετε",
-                    "line13": "<b>Over Drive </b><br> This function makes your screen respond faster"
+                    "line13": "<b>Over Drive </b><br> Βελτιώστε την ταχύτητα απόκρισης της οθόνης σας"
                 },
                 "systemInfo": {
                     "systenTooltip": "Τοποθετήστε τον δείκτη του ποντικιού στην CPU /GPU/RAM και διάφορες μονάδες δίσκων για να εμφανιστεί η περιγραφή τους, συμπεριλαμβανομένων πληροφοριών κατασκευής και μοντέλου"
@@ -198,8 +198,8 @@
                     "title": "Προειδοποίηση!",
                     "description": "Τυχόν ακατάλληλες ρυθμίσεις του στοιχείου Υπερχρονισμού μπορεί να οδηγήσουν σε μη αναστρέψιμη βλάβη υλικού.",
                     "proceed": "ΣΥΝΕΧΕΙΑ",
-                    "legionAccessory": "Install Legion Accessory Central?",
-                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc."
+                    "legionAccessory": "Θέλετε να εγκαταστήσετε το Legion Accessory Central;",
+                    "accessoryDesc": "Το Legion Accessory Central είναι μια εφαρμογή για τη διαμόρφωση του ποντικιού, του πληκτρολογίου, των ακουστικών Legion κ.λπ."
                 },
                 "popup": {
                     "closeBtn": "close"

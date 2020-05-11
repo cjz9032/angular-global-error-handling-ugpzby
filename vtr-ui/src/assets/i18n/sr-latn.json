@@ -79,7 +79,7 @@
                     "hardwareScan": "Skeniranje hardvera",
                     "systemUpdate": "Ažuriranje sistema",
                     "header": "Sistemske alatke",
-                    "legionAccessory": "Legion Accessory"
+                    "legionAccessory": "Legion Accessory Central"
                 },
                 "systemStatus": {
                     "info": "INFORMACIJE"
@@ -101,7 +101,7 @@
                     "line10": "<b>Automatsko zatvaranje </b><br> Obrišite procese koji nisu potrebni za igranje pre nego što počnete kako biste maksimalno iskoristili dostupne sistemske resurse",
                     "line11": "<b>Toplotni režim </b><br> Postavite željeni profil uređaja za kontrolu brzine ventilatora i hlađenja",
                     "line12": "<b>Taster makroa </b><br> Prilagodite radnje na tastaturi tako da odgovaraju vašem stilu za igru",
-                    "line13": "<b>Over Drive </b><br> This function makes your screen respond faster"
+                    "line13": "<b>Over Drive </b><br> Brži odgovor na ekranu"
                 },
                 "systemInfo": {
                     "systenTooltip": "Zadržite pokazivač na procesoru (CPU) / GPU / RAM i različitim diskovima da biste prikazali njihove opise, uključujući podatke o proizvodnji i modelu"
@@ -198,8 +198,8 @@
                     "title": "Upozorenje!",
                     "description": "Nepravilne postavke Overkloka mogu dovesti do nepovratnog oštećenja hardvera.",
                     "proceed": "NASTAVI",
-                    "legionAccessory": "Install Legion Accessory Central?",
-                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc."
+                    "legionAccessory": "Želite li da instalirate Legion Accessory Central?",
+                    "accessoryDesc": "Legion Accessory Central je aplikacija za konfigurisanje Legion miša, tastature, slušalica itd."
                 },
                 "popup": {
                     "closeBtn": "close"

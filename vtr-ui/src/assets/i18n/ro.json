@@ -79,7 +79,7 @@
                     "hardwareScan": "Scanare hardware",
                     "systemUpdate": "Actualizare sistem",
                     "header": "Instrumente sistem",
-                    "legionAccessory": "Legion Accessory"
+                    "legionAccessory": "Legion Accessory Central"
                 },
                 "lighting": {
                     "title": "Personalizarea iluminării",
@@ -98,7 +98,7 @@
                     "line10": "<b>Închidere automată </b><br> Eliminați procesele care sunt inutile pentru jocuri, înainte de a începe să jucați, pentru a amplifica la maximum resursele de sistem disponibile",
                     "line11": "<b>Mod termic </b><br> Setați profilul dispozitivului favorit pentru viteza ventilatorului și pentru controlul răcirii",
                     "line12": "<b>Tastă macro </b><br> Personalizați-vă acțiunile tastaturii pentru a corespunde stilului dvs. de joc",
-                    "line13": "<b>Over Drive </b><br> This function makes your screen respond faster"
+                    "line13": "<b>Over Drive </b><br> Măriți viteza de răspuns a ecranului"
                 },
                 "systemInfo": {
                     "systenTooltip": "Plasați cursorul pe CPU/GPU/RAM și pe alte drivere pentru a afișa descrierile acestora, inclusiv informațiile de fabricare și modelul"
@@ -198,8 +198,8 @@
                     "title": "Avertisment!",
                     "description": "Setările necorespunzătoare ale caracteristicii Overclocking pot produce deteriorări hardware ireversibile.",
                     "proceed": "CONTINUAȚI",
-                    "legionAccessory": "Install Legion Accessory Central?",
-                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc."
+                    "legionAccessory": "Doriți să instalați Legion Accessory Central?",
+                    "accessoryDesc": "Legion Accessory Central este o aplicație pentru configurarea mouse-ului, tastaturii, căștilor Legion etc."
                 },
                 "popup": {
                     "closeBtn": "close"

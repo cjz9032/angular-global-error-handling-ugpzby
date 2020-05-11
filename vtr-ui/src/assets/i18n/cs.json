@@ -79,7 +79,7 @@
                     "hardwareScan": "Kontrola hardwaru",
                     "systemUpdate": "Aktualizace systému",
                     "header": "Systémové nástroje",
-                    "legionAccessory": "Legion Accessory"
+                    "legionAccessory": "Legion Accessory Central"
                 },
                 "systemStatus": {
                     "info": "INFO"
@@ -101,7 +101,7 @@
                     "line10": "<b>Automaticky zavřít </b><br> Před hraním her ukončete procesy, které nepotřebuje, abyste měli k dispozici co nejvíce systémových prostředků",
                     "line11": "<b>Režim tepl </b><br> Nastavte svůj profil zařízení pro otáčky ventilátoru a řízení chlazení",
                     "line12": "<b>Klávesa maker</b><br>Přizpůsobte si akce na klávesnici podle svého stylu hraní",
-                    "line13": "<b>Over Drive </b><br> This function makes your screen respond faster"
+                    "line13": "<b>Over Drive </b><br> Zrychlete odezvu své obrazovky"
                 },
                 "systemInfo": {
                     "systenTooltip": "Umístěním kurzoru na CPU/GPU/RAM a různé jednotky zobrazíte jejich popisy, včetně informací o výrobci a modelu"
@@ -198,8 +198,8 @@
                     "title": "Varování!",
                     "description": "Nesprávné nastavení hodnoty Přetaktování mohou způsobit nevratné poškození hardwaru.",
                     "proceed": "POKRAčOVAT",
-                    "legionAccessory": "Install Legion Accessory Central?",
-                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc."
+                    "legionAccessory": "Chcete nainstalovat Legion Accessory Central?",
+                    "accessoryDesc": "Legion Accessory Central je aplikace na konfiguraci myši, klávesnice, sluchátek atd. Legion."
                 },
                 "popup": {
                     "closeBtn": "close"
