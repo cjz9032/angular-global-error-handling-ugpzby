@@ -64,7 +64,7 @@
 		</div>
 		<div class="row">
 			<div class="col">
-				<ul class="status-list">
+				<ul class="status-list" id="myDevice-status-list">
 					<li *ngFor="let item of deviceStatus; let i=index"
 						[ngClass]="[!item.status?'good':'bad']"
 						[hidden]="item.isHidden">
