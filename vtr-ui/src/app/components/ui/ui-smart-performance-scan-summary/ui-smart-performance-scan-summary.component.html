@@ -31,13 +31,16 @@
 														<hr class="light-dashline" />
 													</div>
 													<div class="performance-slider-block scan-results">
-														<h3 class="recomendation-text">
+														<h3 class="recomendation-text"  *ngIf="!isSubscribed">
+															{{'smartPerformance.scanCompletePage.scanRates' |translate }}<span>{{rating}}</span>
+														</h3>
+														<h3 class="recomendation-text"  *ngIf="(isSubscribed && hasSubscribedScanCompleted)">
 															{{'smartPerformance.scanCompletePage.scanRates' |translate }}<span>{{rating}}</span>
 														</h3>
 														<div class="slider">
 															<div class="verticle-lines">
-																<div class="scan-pointer"
-																	[ngStyle]="{'left': leftAnimator}">&#9660;</div>
+																<div class="scan-pointer" [ngStyle]="{'left': leftAnimator}" *ngIf="!isSubscribed">&#9660;</div>
+																<div class="scan-pointer" [ngStyle]="{'left': leftAnimator}" *ngIf="hasSubscribedScanCompleted">&#9660;</div>
 																<div class="line"></div>
 																<div class="line"></div>
 																<div class="line"></div>

@@ -46,6 +46,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	leftAnimator: any;
 	@Input() isScanning = false;
 	@Input() isScanningCompleted = false;
+	@Input() hasSubscribedScanCompleted = false;
 	@Input() tune = 0;
 	@Input() boost = 0;
 	@Input() secure = 0;

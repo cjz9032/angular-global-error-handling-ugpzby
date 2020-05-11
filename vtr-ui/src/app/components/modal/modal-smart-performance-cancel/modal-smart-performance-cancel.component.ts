@@ -25,6 +25,7 @@ export class ModalSmartPerformanceCancelComponent implements OnInit {
 
 	ngOnInit() {
 		this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceForceClose, false);
+		this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, false);
 		this.timerRef = setInterval(() => {
 			if (this.secondsCountdown-- === 0) {
 				this.onAgree();
@@ -78,6 +79,7 @@ export class ModalSmartPerformanceCancelComponent implements OnInit {
 				});
 		}
 		this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceForceClose, true);
+		this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, true);
 		// this.activeModal.close('close');
 	}
 }

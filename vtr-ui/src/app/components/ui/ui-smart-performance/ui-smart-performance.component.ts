@@ -22,6 +22,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 	backarrow = '< ';
 	isScanning = false;
 	isScanningCompleted = false;
+	public hasSubscribedScanCompleted = false;
 	subItems = [];
 	currentSubItemCategory: any = {};
 	@Input() activegroup = "Tune up performance";
@@ -167,6 +168,15 @@ export class UiSmartPerformanceComponent implements OnInit {
 						);
 						this.scanAndFixInformation();
 						this.isScanning = true;
+						// Subscriber Scan Completed 
+						if(this.isSubscribed) {
+							this.hasSubscribedScanCompleted = true;
+							console.log('zakir is subscriber making hasSubscribedScanCompleted true');
+						}
+						else {
+							this.hasSubscribedScanCompleted = false;
+							console.log('zakir is subscriber making hasSubscribedScanCompleted false');
+						}
 					}
 					else {
 						this.isScanning = false;
@@ -236,6 +246,16 @@ export class UiSmartPerformanceComponent implements OnInit {
 					res = await this.smartPerformanceService.startScan();
 				}
 				if (res && res.state === true) {
+                    // Subscriber Scan cancel model
+					let spSubscribeCancelModel = this.commonService.getLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted);
+					if(spSubscribeCancelModel) {
+						this.hasSubscribedScanCompleted = false;
+						this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, false);
+					}
+					else {
+						this.hasSubscribedScanCompleted = true;
+					}
+
 					let spForceClose = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartPerformanceForceClose);
 					if(spForceClose) {
 						this.isScanningCompleted = false;
