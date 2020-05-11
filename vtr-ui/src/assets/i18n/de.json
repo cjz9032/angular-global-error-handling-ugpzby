@@ -374,6 +374,15 @@
                     "bundled": "bundled",
                     "unbundled": "unbundled",
                     "isSelected": "is selected"
+                },
+                "macrokeyStatus": {
+                    "label": "Macro Key status"
+                },
+                "ignoreIntervalStatus": {
+                    "label": "Interval setting"
+                },
+                "repeatStatus": {
+                    "label": "Repeat frequency"
                 }
             }
         },
@@ -2082,18 +2091,18 @@
                 "tooltip": "Diese Funktion funktioniert nicht bei Web-Videoplayern. Bekannte lokale Videoplayer unterstützen diese Funktion, z. B. Windows Media Player, 5KPlayer etc."
             },
             "superResolution": {
-				"title": "Upscaling der Videoauflösung",
-				"desc": "<p><label>Diese Funktion optimiert die Videowiedergabe, indem die Videoauflösung verbessert wird. Sie ist besonders nützlich, wenn das Video eine schlechte Auflösung hat.</label></p> <p><label>Diese Funktion kann die Akkulebensdauer und -temperatur beeinflussen und Geräusche verursachen. Verwenden Sie sie nicht im Gleichstrommodus (Akkubetrieb). Andernfalls wird schneller Strom verbraucht und die Lebensdauer des Akkus verkürzt.</label></p>",
-				"tooltip": "<p>Diese Funktion funktioniert nur mit den folgenden Videoplayern:<br>Windows Media Player<br>Chrome-basierte Player<br>Filme & TV<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>Anweisungen zum Aktivieren dieser Funktion auf PotPlayer und GOM Player finden Sie im Benutzerhandbuch, das im Lieferumfang des Computers enthalten ist.</p>",
-				"note": {
-					"description": "Diese Funktion funktioniert nicht, wenn:",
-					"description1": "Der Akkusparmodus ist aktiviert.",
+                "title": "Upscaling der Videoauflösung",
+                "desc": "<p><label>Diese Funktion optimiert die Videowiedergabe, indem die Videoauflösung verbessert wird. Sie ist besonders nützlich, wenn das Video eine schlechte Auflösung hat.</label></p> <p><label>Diese Funktion kann die Akkulebensdauer und -temperatur beeinflussen und Geräusche verursachen. Verwenden Sie sie nicht im Gleichstrommodus (Akkubetrieb). Andernfalls wird schneller Strom verbraucht und die Lebensdauer des Akkus verkürzt.</label></p>",
+                "tooltip": "<p>Diese Funktion funktioniert nur mit den folgenden Videoplayern:<br>Windows Media Player<br>Chrome-basierte Player<br>Filme & TV<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>Anweisungen zum Aktivieren dieser Funktion auf PotPlayer und GOM Player finden Sie im Benutzerhandbuch, das im Lieferumfang des Computers enthalten ist.</p>",
+                "note": {
+                    "description": "Diese Funktion funktioniert nicht, wenn:",
+                    "description1": "Der Akkusparmodus ist aktiviert.",
                     "description2": "Die CPU-Temperatur zu hoch ist.",
                     "description3": "Die Einheit ist in \"Intelligente Kühlung\" auf den Akkusparmodus eingestellt."
-				},
-				"imageBefore":"Vorher",
-                "imageAfter":"Nachher"
-			},
+                },
+                "imageBefore": "Vorher",
+                "imageAfter": "Nachher"
+            },
             "antiTheft": {
                 "heading": "Intelligente Sensorik",
                 "title": "Intelligenter Bewegungsalarm",
@@ -3163,7 +3172,8 @@
                 "tab2Description": "Get a 100 point check done in under 5 minutes",
                 "tab3Heading": "IT'S SAFE",
                 "tab3Description": "No scareware, built with best practises"
-            }
+            },
+            "summaryTitle": "Tune PC Performance"
         },
         "boostInternetPerformance": {
             "title": "BOOST INTERNET PERFORMANCE",
@@ -3184,7 +3194,8 @@
                 "tab2Description": "We remove all potentially unwanted programs",
                 "tab3Heading": "LIGHT AND FAST",
                 "tab3Description": "Scan typically takes 5-10 minutes"
-            }
+            },
+            "summaryTitle": "Internet Performance"
         },
         "malwareSecurity": {
             "title": "MALWARE & SECURITY",
@@ -3204,7 +3215,8 @@
                 "tab2Description": "We can diagnose and repair your connectivity problems.",
                 "tab3Heading": "BROWSER ISSUES",
                 "tab3Description": "We configure and fix all your popular web browsers."
-            }
+            },
+            "summaryTitle": "Malware & Security"
         },
         "proactiveAutomated": {
             "title": "PROACTIVE & AUTOMATED",
@@ -3249,7 +3261,17 @@
             "txtDay": "Day",
             "txtTime": "Time",
             "txtSave": "save",
-            "txtCancel": "cancel"
+            "txtCancel": "cancel",
+            "scanFrequencyWeek": "Once a week",
+            "scanFrequencyEveryWeek": "Every other week",
+            "scanFrequencyMonth": "Every month",
+            "mon": "Monday",
+            "tue": "Tuesday",
+            "wed": "Wednesday",
+            "thu": "Thursday",
+            "fri": "Friday",
+            "sat": "Saturday",
+            "sun": "Sunday"
         },
         "scanningPage": {
             "title": "Performance & security check",

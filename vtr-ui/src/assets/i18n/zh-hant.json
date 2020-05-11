@@ -374,6 +374,15 @@
                     "bundled": "bundled",
                     "unbundled": "unbundled",
                     "isSelected": "is selected"
+                },
+                "macrokeyStatus": {
+                    "label": "Macro Key status"
+                },
+                "ignoreIntervalStatus": {
+                    "label": "Interval setting"
+                },
+                "repeatStatus": {
+                    "label": "Repeat frequency"
                 }
             }
         },
@@ -2082,18 +2091,18 @@
                 "tooltip": "此功能不適用於 Web 視訊播放程式。受歡迎的本端視訊播放程式（例如 Windows Media Player、5KPlayer 等）都支援此功能。"
             },
             "superResolution": {
-				"title": "視訊解析度升級",
-				"desc": "<p><label>此功能可改進視訊解析度，藉此強化視訊播放體驗。特別適合視訊解析度不佳時。</label></p> <p><label>此功能可能會影響電池續航力、電池溫度，並造成噪音。請勿在 DC 模式（電池模式）下使用。否則，電力會消耗得更快，且電池壽命會變得更短。</label></p>",
-				"tooltip": "<p>此功能只適用於以下視訊播放程式：<br>Windows Media Player<br>Chrome 播放器<br>Movies & TV<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>如需在 PotPlayer 和 GOM Player 上啟用此功能的指示，請參閱電腦隨附的使用手冊。</p>",
-				"note": {
-					"description": "此功能在下列情況中無法運作：",
-					"description1": "省電功能模式已啟用。",
+                "title": "視訊解析度升級",
+                "desc": "<p><label>此功能可改進視訊解析度，藉此強化視訊播放體驗。特別適合視訊解析度不佳時。</label></p> <p><label>此功能可能會影響電池續航力、電池溫度，並造成噪音。請勿在 DC 模式（電池模式）下使用。否則，電力會消耗得更快，且電池壽命會變得更短。</label></p>",
+                "tooltip": "<p>此功能只適用於以下視訊播放程式：<br>Windows Media Player<br>Chrome 播放器<br>Movies & TV<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>如需在 PotPlayer 和 GOM Player 上啟用此功能的指示，請參閱電腦隨附的使用手冊。</p>",
+                "note": {
+                    "description": "此功能在下列情況中無法運作：",
+                    "description1": "省電功能模式已啟用。",
                     "description2": "CPU 溫度過高。",
                     "description3": "此裝置已在「智慧型冷卻」中設為省電模式。"
-				},
-				"imageBefore":"啟用前",
-                "imageAfter":"啟用後"
-			},
+                },
+                "imageBefore": "啟用前",
+                "imageAfter": "啟用後"
+            },
             "antiTheft": {
                 "heading": "智慧型感應",
                 "title": "智慧型移動警示",
@@ -3163,7 +3172,8 @@
                 "tab2Description": "Get a 100 point check done in under 5 minutes",
                 "tab3Heading": "IT'S SAFE",
                 "tab3Description": "No scareware, built with best practises"
-            }
+            },
+            "summaryTitle": "Tune PC Performance"
         },
         "boostInternetPerformance": {
             "title": "BOOST INTERNET PERFORMANCE",
@@ -3184,7 +3194,8 @@
                 "tab2Description": "We remove all potentially unwanted programs",
                 "tab3Heading": "LIGHT AND FAST",
                 "tab3Description": "Scan typically takes 5-10 minutes"
-            }
+            },
+            "summaryTitle": "Internet Performance"
         },
         "malwareSecurity": {
             "title": "MALWARE & SECURITY",
@@ -3204,7 +3215,8 @@
                 "tab2Description": "We can diagnose and repair your connectivity problems.",
                 "tab3Heading": "BROWSER ISSUES",
                 "tab3Description": "We configure and fix all your popular web browsers."
-            }
+            },
+            "summaryTitle": "Malware & Security"
         },
         "proactiveAutomated": {
             "title": "PROACTIVE & AUTOMATED",
@@ -3249,7 +3261,17 @@
             "txtDay": "Day",
             "txtTime": "Time",
             "txtSave": "save",
-            "txtCancel": "cancel"
+            "txtCancel": "cancel",
+            "scanFrequencyWeek": "Once a week",
+            "scanFrequencyEveryWeek": "Every other week",
+            "scanFrequencyMonth": "Every month",
+            "mon": "Monday",
+            "tue": "Tuesday",
+            "wed": "Wednesday",
+            "thu": "Thursday",
+            "fri": "Friday",
+            "sat": "Saturday",
+            "sun": "Sunday"
         },
         "scanningPage": {
             "title": "Performance & security check",

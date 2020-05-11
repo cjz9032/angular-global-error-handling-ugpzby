@@ -1,0 +1,253 @@
+@import '../../../app.theme.scss';
+
+.pc-info-card{
+    &::ng-deep {
+        ngb-accordion{
+            .card {
+                border-radius: 0.6rem;
+                border: 1px solid  $screen_dark_01;
+                background: $grey_lighter;
+                //padding: 1rem;
+                margin: 1.5rem auto;
+                width: 100%;
+                .card-header {
+                    background-color: transparent;
+                    border-bottom: none;
+                    .btn-link{
+                        width: 100%;
+                        &:before{								
+                            content: "\276F";
+                            transform-origin: 0 0;
+                              transform: rotate(-90deg);
+                            color:$shade_dark;
+                            font-size:2rem;																
+                            width:1.75rem;
+                            height:1.75rem;
+                            right:2.75rem;
+                            @media #{$breakpoint_sm}{
+                                right:5%;
+                                top:4.5rem!important;
+                            }
+                            @media #{$breakpoint_md}{
+                                right:4.5%;
+                                top:5.5rem;
+                            }
+                            position:absolute;
+                            top:5.5rem;
+                        }
+                        &:hover, &:focus{
+                            text-decoration: none;
+                        }
+                        @media #{$breakpoint_sm}{
+                            padding-left: 0;
+                            padding-right: 0;
+                            width: 100%;
+                        }
+                    }
+                    .collapsed{
+                        &:before{								
+                            content: "\276E";
+                            transform-origin: 0 0;
+                             transform: rotate(-90deg);
+                            color:$shade_dark;
+                            font-size:2rem;								
+                            right:2.75rem;
+                            @media #{$breakpoint_sm}{
+                                right:5%;
+                                top:4.5rem!important;
+                            }
+                            @media #{$breakpoint_md}{
+                                right:4.5%;
+                                top:5.5rem;
+                            }
+                            width:1.75rem;
+                            height:1.75rem;
+                            position:absolute;
+                            top:5.5rem;							
+                        }														
+                    }
+                    .heading {
+                        h3, h2{
+                            font-size: $fontsize_md;
+                            color: $main_shade !important;
+                            letter-spacing: 0;
+                            font-weight: $weight_bold;
+                            @media #{$breakpoint_sm}{
+                                font-size: 1.7rem;
+                                letter-spacing: -0.02rem;
+                                margin-bottom: 0;
+                            }
+                        }
+                        .icon{
+                            color: $menu_hover;
+                            @media #{$breakpoint_sm}{
+                                margin-right: 0.4rem;
+                                margin-bottom: 1rem;
+                            }
+                        }
+                    }
+                }
+                .card-body {
+                    padding: 0 1.25rem;
+                    .scan-result-tabs {
+                        .nav-tabs {
+                            border-bottom: none;
+                            .nav-item {
+                                width: 20%;
+                                @media #{$breakpoint_sm}{
+                                    max-width: 20%;
+                                    width: auto;
+                                }
+                                .nav-link {
+                                    border: none;
+                                    border-left: 1px solid $grey_light;
+                                    border-bottom: 1px solid $grey_light;
+                                    color: $dark;
+                                    @media #{$breakpoint_xl}{
+                                        padding: 0.5rem 0.2rem;
+                                        height: 4.5rem;
+                                    }                                       
+                                    &.active {
+                                        background-color: transparent;
+                                        border-bottom-color: transparent;
+                                    }                                    
+                                }
+                                &:first-child{
+                                    .nav-link{
+                                        border-left: none;
+                                    }
+                                }
+                            }
+                        }
+                        .icon-box {
+                            @media #{$breakpoint_sm}{
+                                width: auto;
+                                height: 3rem;
+                                align-items: center;
+                            }
+                             p{
+                                font-size: 1.2rem;
+                                max-width: 8.1rem;
+                                margin-top: 0.6rem;
+                                line-height: 1.2rem;
+                                @media #{$breakpoint_sm}{
+                                    font-size: 0.8rem;
+                                    line-height: 1.2rem;
+                                    max-width: 100%;
+                                    margin-top: 0;
+                                }
+                            }
+                            .icon {
+                                font-size: 2.2rem;
+                                margin-right: 0.2rem;
+                                color: $main;
+                                // @media #{$breakpoint_xl} {
+                                // 	font-size: 2.2rem;
+                                // 	margin-right: 0.5rem;
+                                // }
+                                @media #{$breakpoint_sm}{
+                                    font-size: $fontsize_xs;
+                                    margin-right: 0.2rem;
+                                    margin-top: -0.6rem;
+                                }
+                            }
+                        }
+                        .scanned-list {
+                            list-style-type: none;
+                            padding: 0;
+                            .list-item {
+                                p{
+                                    font-size: 1.4rem;
+                                }
+                                    fa-icon {
+                                        font-size: 1.4rem;
+                                        margin-right: 0.8rem;
+                                        color: $go_dark;
+                                    }
+                            }
+                        }
+                    }
+                }
+                .status-text{
+                    margin-top: 2.2rem;
+                    @media #{$breakpoint_sm}{
+                        margin-top: 0rem;
+                    }
+                    p {
+                        text-transform: uppercase;
+                        font-size: 1.6rem;
+                        text-align: right;
+                        color: $shade_dark;
+                        right: 5rem;
+                        padding-right:2rem;
+                        letter-spacing: 0;
+                        @media #{$breakpoint_sm}{
+                            margin-top: 1rem;
+                        }
+                        // top: 40%;
+                    }
+                    vtr-widget-speedometer {
+                        position: absolute;
+                        right: -54%;
+                        top: 2.2rem;
+                    }
+                }
+            }
+            &.panel-open{
+                .card-header {
+                    .heading {
+                        h3, h2{
+                            font-size: 2.5rem;
+                            color: $dark !important;
+                        }
+                        .icon{
+                            color: $menu_hover;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.card-small{
+        margin: 2rem auto 0rem auto;
+        .heading {
+            .icon{
+                font-size: 4rem;
+                margin-right: 1.5rem;
+                color: $main_shade;
+            }
+        }
+    }
+    .heading {
+        display: flex;
+        align-items: center;
+        .icon{
+            font-size: 4.6rem;
+            margin-right: 1.5rem;
+            color: $main_gstart;
+            @media #{$breakpoint_sm}{
+                font-size: 3rem;
+                height: 3rem;
+                width: 3rem;
+            }
+        }
+        h2 {
+            font-size: 2.5rem;
+            padding: 0;
+            font-weight: $weight_medium;
+            color: $main_darkest;
+            text-transform: uppercase;
+            @media #{$breakpoint_sm}{
+                font-size: $fontsize_sm;
+            }
+        }
+        h3 {
+            font-size: 2rem;
+            padding: 0;
+            font-weight: $weight_medium;
+            color: $main_shade;
+            text-transform: uppercase;
+        }
+    }
+}

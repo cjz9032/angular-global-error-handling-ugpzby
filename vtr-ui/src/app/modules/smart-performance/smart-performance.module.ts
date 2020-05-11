@@ -39,6 +39,7 @@ import { PageLayoutComponent } from 'src/app/components/page-layout/page-layout.
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 import { SanitizeModule } from '../sanitize.module';
 import { UiScanScheduleComponent } from '../../components/ui/ui-scan-schedule/ui-scan-schedule.component';
+import { UiAccordionComponent } from 'src/app/components/ui/ui-accordion/ui-accordion.component';
 
 @NgModule({
 	declarations: [
@@ -53,6 +54,7 @@ import { UiScanScheduleComponent } from '../../components/ui/ui-scan-schedule/ui
 		WidgetSubscriptiondetailsComponent,
 		WidgetScansettingsComponent,
 		UiScanScheduleComponent,
+		UiAccordionComponent
 	],
 	imports: [
 		CommonModule,

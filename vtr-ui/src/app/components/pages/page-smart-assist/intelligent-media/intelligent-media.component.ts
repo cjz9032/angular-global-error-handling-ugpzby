@@ -1,9 +1,7 @@
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
-import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
-import { MetricService } from 'src/app/services/metric/metric.service';
 
 @Component({
 	selector: 'vtr-intelligent-media',
@@ -21,11 +19,10 @@ export class IntelligentMediaComponent implements OnInit {
 	@Input() superResolutionAvailable = false;
 	@Output() superResolutionToggle: EventEmitter<any> = new EventEmitter();
 	public image = '/assets/images/smart-assist/intelligent-media/VideoResolutionUpscaling.png';
-
+	
 	constructor(
 		private smartAssist: SmartAssistService,
-		private logger: LoggerService,
-		private metrics: MetricService
+		private logger: LoggerService
 	) { }
 
 	ngOnInit() {

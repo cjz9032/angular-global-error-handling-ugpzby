@@ -1,48 +1,30 @@
 @import "../../../app.theme.scss";
+
 .error-message-modal {
-	border-radius: $border_radius;
-	background: $light;
-	background-size: cover;
-	color: $main_dark;
-	box-shadow: $drop_shadow;
-	padding: 4rem;
-	position: relative;
-	h1 {
-		font-size: 2.6rem;
-		font-weight: $weight_regular;
+	.error-message-content {
+		border-radius: $border_radius;
+		background: $light;
+		background-size: cover;
 		color: $main_dark;
-		letter-spacing: 0;
-	}
-	.description {
-		font-size: 1.5rem;
-		font-weight: $weight_light;
-		color: $main_dark;
-		letter-spacing: 0;
-		padding-bottom: 1.5rem;
-		margin-bottom: 2rem;
-		border-bottom: 0.1rem solid $main_lightest;
-	}
-	.close-btn{
-		position: absolute;
-		right: 1.8rem;
-		top: 1.8rem;
-		width: 2.2rem;
-		height: 2.2rem;
-		cursor: pointer;
-		&:hover{
-			opacity: .7;
+		box-shadow: $drop_shadow;
+		padding: 4rem;
+		position: relative;
+		h1 {
+			font-size: 2.6rem;
+			font-weight: $weight_regular;
+			color: $main_dark;
+			letter-spacing: 0;
 		}
-		img{
-			width: 100%;
-			height: 100%;
+		.description {
+			font-size: 1.5rem;
+			font-weight: $weight_light;
+			color: $main_dark;
+			letter-spacing: 0;
+			padding-bottom: 1.5rem;
+			margin-bottom: 2rem;
+			border-bottom: 0.1rem solid $main_lightest;
 		}
 	}
-	ul {
-		list-style: none;
-		padding: 0;
-		li {
-			text-decoration: none;
-			font-size: 2rem;
-		}
-	}
+
 }
+
