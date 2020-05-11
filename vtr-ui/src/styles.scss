@@ -733,6 +733,12 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 				a {
 					color: $blue-lighter;
 					text-decoration: underline;
+					padding: 0.2rem;
+					&:focus {
+						outline: none;
+						padding: 0.1rem;
+						border: 0.1rem solid $menu_hover;
+					}
 				}
 			}
 

@@ -79,7 +79,7 @@
                     "hardwareScan": "硬件扫描",
                     "systemUpdate": "系统更新",
                     "header": "系统工具",
-                    "legionAccessory": "Legion Accessory"
+                    "legionAccessory": "Legion Accessory Central"
                 },
                 "systemStatus": {
                     "info": "信息"
@@ -101,7 +101,7 @@
                     "line10": "<b>自动关闭 </b><br> 在畅玩游戏之前清理与游戏无关的进程，从而最大限度地利用可用的系统资源",
                     "line11": "<b>散热模式 </b><br> 设置风扇速度和冷却控制的首选设备配置文件",
                     "line12": "<b>宏键 </b><br> 自定义键盘操作以适合您的游戏风格",
-                    "line13": "<b>Over Drive </b><br> This function makes your screen respond faster"
+                    "line13": "<b>Over Drive </b><br> 该功能使您的屏幕响应更快"
                 },
                 "systemInfo": {
                     "systenTooltip": "将鼠标悬停在 CPU/GPU/RAM 和不同的驱动器上以显示其描述（包括制造和型号信息）"
@@ -198,8 +198,8 @@
                     "title": "警告！",
                     "description": "超频设置不当可能会导致不可逆转的硬件损坏。",
                     "proceed": "继续",
-                    "legionAccessory": "Install Legion Accessory Central?",
-                    "accessoryDesc": "It is an app for configuring your Legion mouse, keyboard, headphones, etc."
+                    "legionAccessory": "是否要安装 Legion Accessory Central?",
+                    "accessoryDesc": "Legion Accessory Central 是用于配置 Legion 鼠标、键盘、耳机等的应用程序。"
                 },
                 "popup": {
                     "closeBtn": "close"

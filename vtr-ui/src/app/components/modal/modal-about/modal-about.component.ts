@@ -42,12 +42,12 @@ export class ModalAboutComponent implements OnInit {
 	}
 
 	agreementClicked() {
-		this.licensesService.openLicensesAgreement();
+		this.licensesService.openLicensesAgreement(true);
 		this.closeModal();
 	}
 
 	openSourceClicked() {
-		this.licensesService.openOpenSource();
+		this.licensesService.openOpenSource(true);
 		this.closeModal();
 	}
 

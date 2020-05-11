@@ -4,6 +4,8 @@ import { UrlSegment, ActivatedRouteSnapshot, RouterStateSnapshot, Router, Router
 import { GuardConstants } from './guard-constants';
 import { TestBed } from '@angular/core/testing';
 import { BrowserDynamicTestingModule, platformBrowserDynamicTesting } from '@angular/platform-browser-dynamic/testing';
+import { DeviceService } from '../device/device.service';
+import { CommonService } from '../common/common.service';
 
 describe('service', () => {
   class MockRouterStateSnapshot {
@@ -16,6 +18,17 @@ describe('service', () => {
       return url;
     }
   }
+
+  class MockDeviceService {
+	isGaming: boolean;
+  }
+
+  class MockCommonService {
+	isFirstPageLoaded () : boolean {
+		return true;
+	}
+  }
+
   let service: ProtocolGuardService;
   beforeEach(() => {
 	const spy = jasmine.createSpyObj('GuardConstants', ['test']);
@@ -31,11 +44,19 @@ describe('service', () => {
 			{
 				provide: GuardConstants,
 				useValue: spy
-      },
-      {
-        provide: RouterStateSnapshot,
-        useClass: MockRouterStateSnapshot
-      },
+			},
+			{
+				provide: RouterStateSnapshot,
+				useClass: MockRouterStateSnapshot
+			},
+			{
+				provide: DeviceService,
+				useClass: MockDeviceService
+			},
+			{
+				provide: CommonService,
+				useClass: MockCommonService
+			},
 			ProtocolGuardService
 		]
 	})
@@ -216,8 +237,9 @@ describe('service', () => {
   });
 
   it('canActivate return true', () => {
-  const state = TestBed.get(RouterStateSnapshot);
-  state.url = '#/security';
+  	const state = TestBed.get(RouterStateSnapshot);
+ 	state.url = '#/security';
+  	spyOn<any>(service['commonService'], 'isFirstPageLoaded').and.returnValue(false);
 	expect(service['canActivate'](null, state)).toEqual(true);
   })
 
@@ -230,8 +252,9 @@ describe('service', () => {
 
   it('canActivate invalid protocol', () => {
     const state = TestBed.get(RouterStateSnapshot);
-    state.url = '#/?protocol=xxxxxxx';
-    expect(service['canActivate'](null, state)).toEqual(window.history.length === 1);
+	state.url = '#/?protocol=xxxxxxx';
+	spyOn<any>(service['commonService'], 'isFirstPageLoaded').and.returnValue(true);
+    expect(service['canActivate'](null, state)).toEqual(false);
   })
 
   it('addTimestampQueryParam undefined params', () => {

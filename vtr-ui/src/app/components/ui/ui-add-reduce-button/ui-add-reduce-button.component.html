@@ -6,6 +6,6 @@
         <span>{{value}}<span *ngIf="unit">{{unit}}</span></span>
     </p>
     <button (click)="addFn()" [ngClass]="{'disabled': value == maxData}" [ngStyle]="{'width':btnWidth}" [tabindex]="tabIndexNum" role="button" (focus)="hideColorPicker()">
-        {{ariaLabelValue}} <span tabindex="-1">+</span> <em *ngIf="value != maxData && value < 0">plus</em> <em *ngIf="value == maxData">Maximum value</em>  {{value}} {{unit}}
+        {{ariaLabelValue}} <span tabindex="-1">+</span> <em *ngIf="value == maxData">Maximum value</em>  {{value}} {{unit}}
     </button>
 </div>

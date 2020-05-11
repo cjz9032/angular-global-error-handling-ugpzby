@@ -96,6 +96,7 @@
 		.text-regular {
 			font-size: 1.4rem;
 			color: $main_shade;
+			padding: 0.2rem 0.3rem;
 			@media #{$mediaquery_X46} {
 				font-size: 1.3rem;
 			}

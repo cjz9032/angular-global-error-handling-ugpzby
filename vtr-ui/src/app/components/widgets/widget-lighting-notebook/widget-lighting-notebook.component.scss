@@ -199,3 +199,14 @@
 
     }
 }
+
+::ng-deep body.focus-enable{
+	.is-gaming {
+		.ui-lighting-notebook .lighting-default-text{
+            button:focus{
+                @include outline-blue-gaming;
+                outline-offset: 0.2rem;
+            }
+		}
+	}
+}

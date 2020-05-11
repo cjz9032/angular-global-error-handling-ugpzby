@@ -124,6 +124,7 @@
 							height: 34.5rem;
 							border-radius: 0 17.25rem 17.25rem 0;
 							transform-origin: left center;
+							transition: all .2s ease-in;
 							.mask-ring {
 								left: -17.25rem;
 							}
@@ -144,6 +145,7 @@
 					background-size: 90% 90%;
 					background-position: 50% 50%;
 					background-repeat: no-repeat;
+					transition: all .2s ease-in;
 				}
 			}
 		}

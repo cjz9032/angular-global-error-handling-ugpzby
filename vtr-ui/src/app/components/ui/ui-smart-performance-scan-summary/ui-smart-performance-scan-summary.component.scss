@@ -454,10 +454,15 @@ vtr-ui-smart-performance-scan-summary {
                                         border-left: 1px solid $grey_light;
                                         border-bottom: 1px solid $grey_light;
 										color: $dark;
+										height: 5rem;
 										@media #{$breakpoint_xl}{
 											padding: 0.5rem 0.2rem;
 											height: 4.5rem;
-										}                                       
+										}
+										@media #{$breakpoint_sm}{
+											padding: 0.5rem 0.2rem;
+											height: 3.5rem;
+										}
 										&.active {
                                             background-color: transparent;
                                             border-bottom-color: transparent;

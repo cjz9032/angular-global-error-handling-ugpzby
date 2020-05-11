@@ -52,7 +52,7 @@ import { UiScanScheduleComponent } from '../../components/ui/ui-scan-schedule/ui
 		UiSmartPerformanceScanSummaryComponent,
 		WidgetSubscriptiondetailsComponent,
 		WidgetScansettingsComponent,
-		UiScanScheduleComponent
+		UiScanScheduleComponent,
 	],
 	imports: [
 		CommonModule,

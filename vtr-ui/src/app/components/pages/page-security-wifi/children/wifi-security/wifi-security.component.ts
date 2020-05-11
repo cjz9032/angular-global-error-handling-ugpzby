@@ -45,6 +45,12 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	showMoreText = this.translate.instant('security.wifisecurity.container.showmore');
 	showLessText = this.translate.instant('security.wifisecurity.container.showless');
 
+	networkLevel = [
+		'neutral network',
+		'abnormal network',
+		'highly suspicious network'
+	]
+
 	constructor(
 		public modalService: NgbModal,
 		private commonService: CommonService,

@@ -156,3 +156,13 @@
         }
     }
 }
+
+::ng-deep body.focus-enable{
+	.is-gaming {
+		.ui-color-picker,.preset-color ul li{		
+			&:focus{
+                @include outline-blue-gaming;
+            }
+		}
+	}
+}

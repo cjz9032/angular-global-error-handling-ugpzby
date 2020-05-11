@@ -236,6 +236,9 @@
                             @media #{$high-contrast} {
                                 -ms-high-contrast-adjust: none;
                             }
+                            &:focus{
+                               @include outline-blue-gaming;
+                            }
                         }
                         vtr-ui-color-picker{
                             position: absolute;
@@ -323,5 +326,23 @@
 		.vtr-page-column-shift-up {
             overflow: visible !important;
 		}	
+	}
+}
+
+::ng-deep body.focus-enable{
+	.is-gaming {
+		.ui-lighting-desk{		
+			.lighting-panel-select{
+                button:focus{
+                    @include outline-border-blue;
+                }
+            }
+            .lighting-default-text{
+                button:focus{
+                    @include outline-blue-gaming;
+                    outline-offset: 0.2rem;
+                }
+            }
+		}
 	}
 }
