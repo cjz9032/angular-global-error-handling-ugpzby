@@ -1114,7 +1114,7 @@
 					"description5": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life. This feature has 3 modes (Quiet mode, Balanced mode and Performance mode) and is now accessible by the Windows performance power slider.",
 					"readMore": "Read more",
 					"gotoWindows": {
-						"title": "Go to windows settings",
+						"title": "Go to Windows settings",
 						"modalBodyText1": "Click on Windows battery icon on System tray to access Windows performance power slider"
 					},
 					"intelligentCooling": {
@@ -2011,9 +2011,9 @@
 					}
 				},
 				"note": {
-					"description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
+					"description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in Windows settings.",
 					"description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect any personal data.",
-					"description3": "1. To use above functions, please adjust your screen to an approriate angle so that your face can be recognized.",
+					"description3": "1. To use above functions, please adjust your screen to an appropriate angle so that your face can be recognized.",
 					"description4": "2. Above functions are not supported when:",
 					"description5a": "a. Your computer is in Tent, Tablet, Stand mode, or Detached mode. For the modes supported on your computer, please refer to User Guide that comes with it.",
 					"description5b": "b. Your computer is in hibernation mode or has been turned off.",
