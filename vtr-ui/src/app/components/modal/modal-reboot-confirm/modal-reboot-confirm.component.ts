@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -7,12 +7,19 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 	styleUrls: ['./modal-reboot-confirm.component.scss']
 })
 export class ModalRebootConfirmComponent implements OnInit {
-public description: string;
+	public description: string;
+	@ViewChild('btnClose', { static: false }) set btnClose(element: ElementRef) {
+		if (element) {
+			element.nativeElement.focus();
+		}
+	}
 
 	constructor(public activeModal: NgbActiveModal) { }
 
 	ngOnInit() {
+		this.btnClose.nativeElement.focus();
 	}
+
 	proceedToReboot() {
 		this.activeModal.close('enable');
 	}
@@ -25,9 +32,5 @@ public description: string;
 		this.closeModal();
 	}
 
-	@HostListener('window: focus')
-	onFocus(): void {
-		const modal = document.querySelector('.Battery-Charge-Threshold-Modal') as HTMLElement;
-		modal.focus();
-	}
+
 }
