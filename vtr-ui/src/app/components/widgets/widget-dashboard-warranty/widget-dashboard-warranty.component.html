@@ -24,7 +24,7 @@
 									role="text">{{'support.warranty.startDate' | translate}}</span>
 								<b *ngIf="item.info.status !== 2"
 									id="dashboard-warranty-start-date-value"
-									role="text">{{ item.info.startDate | formatUTCDate}}</b>
+									role="text">{{ item.info.startDate | formatLocaleDate}}</b>
 								<b *ngIf="item.info.status === 2"
 									id="dashboard-warranty-start-date-not-found"
 									role="text">{{'common.securityAdvisor.notFound' | translate}}</b>
@@ -34,7 +34,7 @@
 									role="text">{{'support.warranty.endDate' | translate}}</span>
 								<b *ngIf="item.info.status !== 2"
 									id="dashboard-warranty-end-date-value"
-									role="text">{{ item.info.endDate | formatUTCDate }}</b>
+									role="text">{{ item.info.endDate | formatLocaleDate }}</b>
 								<b *ngIf="item.info.status === 2"
 									id="dashboard-warranty-end-date-not-found"
 									role="text">{{'common.securityAdvisor.notFound' | translate}}</b>

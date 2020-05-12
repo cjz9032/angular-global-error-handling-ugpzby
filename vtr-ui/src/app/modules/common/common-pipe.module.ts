@@ -11,7 +11,7 @@ import { SvgInlinePipe } from 'src/app/pipe/svg-inline/svg-inline.pipe';
 import { TextClassPipe } from 'src/app/pipe/ui-security-statusbar/text-class.pipe';
 import { StripTagsPipe } from 'src/app/pipe/strip-tags/strip-tags.pipe';
 import { RemoveSpacePipe } from 'src/app/pipe/remove-space/remove-space.pipe';
-import { FormatUTCDatePipe } from 'src/app/pipe/format-utc-date/format-utc-date.pipe';
+import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-locale-date.pipe';
 import { HtmlTextPipe } from 'src/app/pipe/html-text/html-text.pipe';
 
 @NgModule({
@@ -27,7 +27,7 @@ import { HtmlTextPipe } from 'src/app/pipe/html-text/html-text.pipe';
 		SvgInlinePipe,
 		TextClassPipe,
 		StripTagsPipe,
-		FormatUTCDatePipe,
+		FormatLocaleDatePipe,
 		RemoveSpacePipe,
 	],
 	exports: [
@@ -44,14 +44,14 @@ import { HtmlTextPipe } from 'src/app/pipe/html-text/html-text.pipe';
 		TextClassPipe,
 		StripTagsPipe,
 		SanitizeModule,
-		FormatUTCDatePipe,
+		FormatLocaleDatePipe,
 		RemoveSpacePipe,
 	],
 	imports: [
 		SanitizeModule,
 	],
 	providers: [
-
+		FormatLocaleDatePipe,
 	],
 	entryComponents: [
 	],
