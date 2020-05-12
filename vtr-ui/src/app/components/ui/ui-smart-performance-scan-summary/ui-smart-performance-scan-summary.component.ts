@@ -11,6 +11,7 @@ import { EMPTY } from 'rxjs';
 import { SupportService } from 'src/app/services/support/support.service';
 import { v4 as uuid } from 'uuid';
 import { formatDate } from '@angular/common';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-ui-smart-performance-scan-summary',
