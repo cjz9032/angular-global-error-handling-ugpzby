@@ -64,6 +64,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	private audioData: string;
 	private microphoneDevice: any;
 	private microphnePermissionHandler: any;
+	// private deviceWatcher: any;
 	private cameraStatusChangeBySet = false;
 	private cameraAccessChangedHandler: any;
 
@@ -83,12 +84,15 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		this.cameraStatus.isLoading = false;
 		this.microphoneStatus.isLoading = false;
 		this.Windows = vantageShellService.getWindows();
+
 		if (this.Windows) {
 			this.windowsObj = this.Windows.Devices.Enumeration.DeviceAccessInformation
 				.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.videoCapture);
 
 			this.microphoneDevice = this.Windows.Devices.Enumeration.DeviceAccessInformation
 				.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.audioCapture);
+			
+			// this.deviceWatcher = this.Windows.Devices.Enumeration.DeviceInformation.createWatcher();
 		}
 	}
 
@@ -130,6 +134,8 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			};
 			this.microphoneDevice.addEventListener('accesschanged', this.microphnePermissionHandler, false);
 		}
+		// this.Windows.Media.Devices.MediaDevice.addEventListener("defaultaudiocapturedevicechanged", this.defaultAudioCaptureDeviceChanged.bind(this));
+
 		if (this.windowsObj) {
 			this.cameraAccessChangedHandler = (args:any) => {
 				if (args) {
@@ -139,6 +145,15 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 				}
 			}
 			this.windowsObj.addEventListener('accesschanged', this.cameraAccessChangedHandler);
+
+			// if (this.deviceWatcher) {
+			// 	this.deviceWatcher.addEventListener("added", this.deviceAdd.bind(this));
+			// 	this.deviceWatcher.addEventListener("removed", this.deviceRemove.bind(this));
+			// 	this.deviceWatcher.addEventListener("updated", this.deviceUpdated.bind(this));
+			// 	this.deviceWatcher.addEventListener("enumerationcompleted", this.deviceCompleted.bind(this));
+			// 	this.deviceWatcher.start();
+			// 	this.logger.info('device watcher start');
+			// }
 		} 
 	}
 
@@ -178,9 +193,18 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		if (this.microphoneDevice) {
 			this.microphoneDevice.removeEventListener('accesschanged', this.microphnePermissionHandler, false);
 		}
+		// this.Windows.Media.Devices.MediaDevice.removeEventListener("defaultaudiocapturedevicechanged", this.defaultAudioCaptureDeviceChanged);
 
 		if (this.windowsObj) {
 			this.windowsObj.removeEventListener('accesschanged', this.cameraAccessChangedHandler);
+
+			// try {
+			// 	if (this.deviceWatcher){
+			// 		this.deviceWatcher.stop();
+			// 	}
+			// } catch (error) {
+			// 	this.logger.info('cannot stop device watcher ' + error);
+			// }
 		} 
 	}
 
@@ -250,7 +274,8 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 							this.cameraNoAccessNoteShow = true;
 						}
                         this.cameraStatus.permission = result.permission;
-                        this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraStatus); this.cameraStatus.isLoading = false;
+						this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraStatus);
+						this.cameraStatus.isLoading = false;
                     }
                 }).catch(error => {
 						this.logger.error('getCameraPermission', error.message);
@@ -363,17 +388,17 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	private getMicrophoneStatus() {
 		if (this.dashboardService.isShellAvailable) {
 			this.dashboardService.getMicrophoneStatus()
-				.then((featureStatus: FeatureStatus) => {
-					this.microphoneStatus = featureStatus;
+				.then((featureStatus) => {
+					this.microphoneStatus = {...this.microphoneStatus, ...featureStatus};
 					this.microPhoneGreyOut = false;
 					if (featureStatus.available) {
 						const win: any = window;
 						if (win.VantageShellExtension && win.VantageShellExtension.AudioClient) {
 							try {
-								const a = performance.now();
+								// const a = performance.now();
 								this.audioClient = win.VantageShellExtension.AudioClient.getInstance();
-								const b = performance.now();
-								this.logger.info('audioclient init ' + (b - a) + 'ms');
+								// const b = performance.now();
+								// this.logger.info('audioclient init ' + (b - a) + 'ms');
 								if (this.audioClient) {
 									this.audioClient.onchangecallback = (data: string) => {
 										if (data) {
@@ -403,7 +428,6 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 							}
 						} else {
 							this.logger.info('current shell version maybe not support core audio');
-							// this.deviceService.startMicrophoneMonitor();
 						}
 					}
 				})
@@ -670,13 +694,33 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	private updateMicrophoneStatus() {
 		if (this.dashboardService.isShellAvailable) {
 			this.dashboardService.getMicrophoneStatus()
-				.then((featureStatus: FeatureStatus) => {
-					this.microphoneStatus = featureStatus;
+				.then((featureStatus: any) => {
+					this.microphoneStatus = {...this.microphoneStatus, ...featureStatus};
 				})
 				.catch(error => {
 					this.logger.error('getMicrophoneStatus', error.message);
-					return EMPTY;
 				});
 		}
 	}
+
+	private defaultAudioCaptureDeviceChanged(args: any) {
+		this.logger.info('defaultAudioCaptureDeviceChanged args ' + JSON.stringify(args));
+		this.updateMicrophoneStatus();
+	}
+
+	// private deviceAdd(device: any) {
+	// 	this.logger.info('deviceAdd' + JSON.stringify(device));
+	// }
+
+	// private deviceRemove(device: any) {
+	// 	this.logger.info('deviceRemove' + JSON.stringify(device));
+	// }
+
+	// private deviceUpdated(device: any) {
+	// 	this.logger.info('deviceUpdated' + JSON.stringify(device));
+	// }
+
+	// private deviceCompleted(obj: any) {
+	// 	this.logger.info('deviceCompleted'+ JSON.stringify(obj));
+	// }
 }
