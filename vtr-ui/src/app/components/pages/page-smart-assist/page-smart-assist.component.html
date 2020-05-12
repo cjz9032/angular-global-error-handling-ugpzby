@@ -24,7 +24,7 @@
 					<!-- Start of Intelligent Security -->
 					<div class="row pt-5 smart-assist-card"
 						id="security"
-						>
+						*ngIf="intelligentSecurity.isIntelligentSecuritySupported">
 						<div class="col-12 px-0 intelligent-security-block">
 							<vtr-container-collapsible [collapseLinkId]="'intelligentSecurity'"
 								[tabIndex]="0"
@@ -52,7 +52,7 @@
 								</div>
 								<!-- zeroTouchLogin -- ideaPad section -->
 								<ul class="list-group list-group-flush"
-									>
+									*ngIf="!isThinkPad">
 									<li class="no-border-bottom common-li-padding">
 										<vtr-ui-row-switch [switchId]="'zeroTouchLogin'"
 											[title]="'device.smartAssist.intelligentSecurity.zeroTouchLoginForIdea.title' | translate"
@@ -205,7 +205,7 @@
 								</ul>
 								<!-- zeroTouchLogin -- thinkPad section -->
 								<ul class="list-group list-group-flush"
-									*ngIf="!isThinkPad">
+									*ngIf="isThinkPad">
 									<li class="common-li-padding">
 										<vtr-ui-row-switch [switchId]="'humanPresenceDetection'"
 											[title]="'device.smartAssist.intelligentSecurity.humanPresenceDetection.title' | translate"
@@ -287,7 +287,7 @@
 								<!-- zeroTouchLock -- ideaPad section -->
 								<ul class="list-group list-group-flush no-border-bottom"
 									[class.disabled-overlay]="!intelligentSecurity.isHPDEnabled"
-									*ngIf="intelligentSecurity.isZeroTouchLockVisible">
+									*ngIf="intelligentSecurity.isZeroTouchLockVisible && !isThinkPad">
 									<li class="auto-screen-block common-li-padding">
 										<vtr-ui-row-switch [switchId]="'zeroTouchLock'"
 											[title]="'device.smartAssist.intelligentSecurity.zeroTouchLock.title' | translate"
@@ -526,7 +526,7 @@
 								<!-- zeroTouchLock -- thinkPad section -->
 								<ul class="list-group list-group-flush no-border-bottom"
 									[class.disabled-overlay]="!intelligentSecurity.isHPDEnabled"
-									*ngIf="intelligentSecurity.isZeroTouchLockVisible && !isThinkPad">
+									*ngIf="intelligentSecurity.isZeroTouchLockVisible && isThinkPad">
 									<li class="auto-screen-block common-li-padding">
 										<vtr-ui-row-switch [switchId]="'zeroTouchLock'"
 											[title]="'device.smartAssist.intelligentSecurity.zeroTouchLock.title' | translate"

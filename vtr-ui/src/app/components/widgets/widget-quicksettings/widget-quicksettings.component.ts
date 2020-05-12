@@ -64,7 +64,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	private audioData: string;
 	private microphoneDevice: any;
 	private microphnePermissionHandler: any;
-	private deviceWatcher: any;
+	// private deviceWatcher: any;
 	private cameraStatusChangeBySet = false;
 	private cameraAccessChangedHandler: any;
 
@@ -92,7 +92,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			this.microphoneDevice = this.Windows.Devices.Enumeration.DeviceAccessInformation
 				.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.audioCapture);
 			
-			this.deviceWatcher = this.Windows.Devices.Enumeration.DeviceInformation.createWatcher();
+			// this.deviceWatcher = this.Windows.Devices.Enumeration.DeviceInformation.createWatcher();
 		}
 	}
 
@@ -134,7 +134,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			};
 			this.microphoneDevice.addEventListener('accesschanged', this.microphnePermissionHandler, false);
 		}
-		this.Windows.Media.Devices.MediaDevice.addEventListener("defaultaudiocapturedevicechanged", this.defaultAudioCaptureDeviceChanged.bind(this));
+		// this.Windows.Media.Devices.MediaDevice.addEventListener("defaultaudiocapturedevicechanged", this.defaultAudioCaptureDeviceChanged.bind(this));
 
 		if (this.windowsObj) {
 			this.cameraAccessChangedHandler = (args:any) => {
@@ -146,14 +146,14 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			}
 			this.windowsObj.addEventListener('accesschanged', this.cameraAccessChangedHandler);
 
-			if (this.deviceWatcher) {
-				this.deviceWatcher.addEventListener("added", this.deviceAdd.bind(this));
-				this.deviceWatcher.addEventListener("removed", this.deviceRemove.bind(this));
-				this.deviceWatcher.addEventListener("updated", this.deviceUpdated.bind(this));
-				this.deviceWatcher.addEventListener("enumerationcompleted", this.deviceCompleted.bind(this));
-				// this.deviceWatcher.start();
-				// this.logger.info('device watcher start');
-			}
+			// if (this.deviceWatcher) {
+			// 	this.deviceWatcher.addEventListener("added", this.deviceAdd.bind(this));
+			// 	this.deviceWatcher.addEventListener("removed", this.deviceRemove.bind(this));
+			// 	this.deviceWatcher.addEventListener("updated", this.deviceUpdated.bind(this));
+			// 	this.deviceWatcher.addEventListener("enumerationcompleted", this.deviceCompleted.bind(this));
+			// 	this.deviceWatcher.start();
+			// 	this.logger.info('device watcher start');
+			// }
 		} 
 	}
 
@@ -193,18 +193,18 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		if (this.microphoneDevice) {
 			this.microphoneDevice.removeEventListener('accesschanged', this.microphnePermissionHandler, false);
 		}
-		this.Windows.Media.Devices.MediaDevice.removeEventListener("defaultaudiocapturedevicechanged", this.defaultAudioCaptureDeviceChanged);
+		// this.Windows.Media.Devices.MediaDevice.removeEventListener("defaultaudiocapturedevicechanged", this.defaultAudioCaptureDeviceChanged);
 
 		if (this.windowsObj) {
 			this.windowsObj.removeEventListener('accesschanged', this.cameraAccessChangedHandler);
 
-			try {
-				if (this.deviceWatcher){
-					// this.deviceWatcher.stop();
-				}
-			} catch (error) {
-				this.logger.info('cannot stop device watcher ' + error);
-			}
+			// try {
+			// 	if (this.deviceWatcher){
+			// 		this.deviceWatcher.stop();
+			// 	}
+			// } catch (error) {
+			// 	this.logger.info('cannot stop device watcher ' + error);
+			// }
 		} 
 	}
 
@@ -708,19 +708,19 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		this.updateMicrophoneStatus();
 	}
 
-	private deviceAdd(device: any) {
-		this.logger.info('deviceAdd' + JSON.stringify(device));
-	}
+	// private deviceAdd(device: any) {
+	// 	this.logger.info('deviceAdd' + JSON.stringify(device));
+	// }
 
-	private deviceRemove(device: any) {
-		this.logger.info('deviceRemove' + JSON.stringify(device));
-	}
+	// private deviceRemove(device: any) {
+	// 	this.logger.info('deviceRemove' + JSON.stringify(device));
+	// }
 
-	private deviceUpdated(device: any) {
-		this.logger.info('deviceUpdated' + JSON.stringify(device));
-	}
+	// private deviceUpdated(device: any) {
+	// 	this.logger.info('deviceUpdated' + JSON.stringify(device));
+	// }
 
-	private deviceCompleted(obj: any) {
-		this.logger.info('deviceCompleted'+ JSON.stringify(obj));
-	}
+	// private deviceCompleted(obj: any) {
+	// 	this.logger.info('deviceCompleted'+ JSON.stringify(obj));
+	// }
 }

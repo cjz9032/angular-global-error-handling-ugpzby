@@ -223,36 +223,12 @@ export class SmartAssistService {
 					intelligentSecurityDate.zeroTouchLockDistanceAutoAdjust = obj.presenceLeaveDistanceAutoAdjust;
 					intelligentSecurityDate.zeroTouchLockDistance = obj.presenceLeaveDistance;
 				}
-				intelligentSecurityDate.capacity = true;
-				intelligentSecurityDate.capability = 2048;
-				intelligentSecurityDate.sensorType = 1;
-				intelligentSecurityDate.zeroTouchLockDistanceAutoAdjust = true;
-				intelligentSecurityDate.zeroTouchLockDistance = 1;
-
 				return Promise.resolve(intelligentSecurityDate);
 			}
 		} catch (error) {
 			//throw new Error(error.message);
 			return Promise.reject(error.message);
 		}
-	}
-
-	public registerHPDRpcCallback() {
-		if (this.hsaIntelligentSecurity) {
-			this.hsaIntelligentSecurity.registerCallback();
-		}
-	}
-	public unRegisterHPDRpcCallback() {
-		if (this.hsaIntelligentSecurity) {
-			this.hsaIntelligentSecurity.unRegisterCallback();
-		}
-	}
-
-	public getEventUsed() {
-		if (this.hsaIntelligentSecurity) {
-			return this.hsaIntelligentSecurity.eventUsed;
-		}
-		return undefined;
 	}
 
 	public setZeroTouchLockDistanceSensitivityAutoAdjust(value: boolean): Promise<number> {
@@ -368,16 +344,6 @@ export class SmartAssistService {
 	}
 
 	//#endregion
-	public registerSMACallback() {
-		if (this.antiTheft) {
-			this.antiTheft.registerCallback();
-		}
-	}
-	public unRegisterSMACallback() {
-		if (this.antiTheft) {
-			this.antiTheft.unRegisterCallback();
-		}
-	}
 
 	//region Intelligent Sensting (anti theft) section
 
