@@ -53,7 +53,6 @@ export class UiColorPickerComponent implements OnInit , OnChanges {
 		this.isToggleColorPicker.emit(this.isColorPicker);
 	}else{
 		this.isColorPicker = true;
-		this.isToggleColorPicker.emit(this.isColorPicker);
 		document.getElementById("colorPicker").focus();
 	}
 	this.presetColorList.forEach(element => {
