@@ -337,6 +337,10 @@ describe('WidgetLightingDeskComponent', () => {
         lightingProfileByIdRes.lightInfo[0].lightEffectType = 5;
         component.lightingProfileDetail(lightingProfileByIdRes,count,lightingCapabilitiesRes);
         expect(component.lightingProfileDetail(lightingProfileByIdRes,count,lightingCapabilitiesRes)).toBeUndefined();
+        lightingProfileByIdRes.lightInfo[0].lightBrightness = null;
+        lightingProfileByIdRes.lightInfo[0].lightSpeed = null;
+        component.lightingProfileDetail(lightingProfileByIdRes,count,lightingCapabilitiesRes);
+        expect(component.lightingProfileDetail(lightingProfileByIdRes,count,lightingCapabilitiesRes)).toBeUndefined();
     });
 
     it('should show default img when profile is 0', fakeAsync(() => {

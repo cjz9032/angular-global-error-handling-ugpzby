@@ -1156,12 +1156,12 @@
                             }
                         },
                         "autoTransition": {
-                            "description": "Ebben az üzemmódban engedélyezett az „Extrém teljesítmény”. Ha engedélyezi, a számítógép felületeinek hőmérséklete megnőhet, és a ventilátor is hangosabban üzemelhet.",
+                            "description": "Az \"Extrém teljesítmény\" mód automatikus bekapcsolásának engedélyezése. Ha engedélyezi, a számítógép felületeinek hőmérséklete megnőhet, és a ventilátor is hangosabban üzemelhet.",
                             "more": "TOVÁBBIAK",
                             "less": "KEVESEBB",
                             "moreContent": {
                                 "desc1": "a. Az Office használata, a Windows frissítése esetén, online filmnézéskor, valamint alacsony rendszerterhelés mellett a gép valószínűleg csendes fog maradni. A játékok jobban fognak futni.",
-                                "desc2": "b. Nagy teljesítményigényű játékok esetén automatikusan bekapcsol az „Extrém teljesítmény” üzemmód. Ez a számítógép felületeinek felmelegedésével és hangosabb ventilátorzajjal járhat.",
+                                "desc2": "b. Nagy teljesítményigényű játékok esetén a rendszer valószínűleg automatikusan bekapcsolja az \"Extrém teljesítmény\" üzemmódot. Ebben az esetben a számítógép felületeinek hőmérséklete megnőhet, és a ventilátor is hangosabban üzemelhet.",
                                 "desc3": "c. Ha az akkumulátor töltöttsége 30% alá csökken, a rendszer automatikusan az „Akkumulátorkímélő” üzemmódba kapcsol."
                             }
                         }

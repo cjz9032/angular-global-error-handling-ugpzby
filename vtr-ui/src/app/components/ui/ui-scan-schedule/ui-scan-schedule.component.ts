@@ -244,7 +244,7 @@ export class UiScanScheduleComponent implements OnInit {
 		if (this.scheduleTab === '') {
 			return;
 		}
-		if (event.target) {
+		// if (event.target) {
 			if (event.target['classList'][1] !== "fa-chevron-down" &&
 				event.target['classList'][0] !== "freq-dropdown" &&
 				event.target['classList'][0] !== "day-dropdown" &&
@@ -255,10 +255,12 @@ export class UiScanScheduleComponent implements OnInit {
 				event.target['classList'][1] !== "amPm-block" &&
 				event.target['classList'][0] !== "hour-text" &&
 				event.target['classList'][0] !== "min-text" &&
-				event.target['classList'][0] !== "amPm-text") {
+				event.target['classList'][0] !== "amPm-text" &&
+				event.target['classList'][0] !== 'status' &&
+				event.target['classList'][0] !== 'ml-3') {
 				this.scheduleTab = '';
 			}
-		}
+		// }
 	}
 
 	changeScanFrequency(value) {

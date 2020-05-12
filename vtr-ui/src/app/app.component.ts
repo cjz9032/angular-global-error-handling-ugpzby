@@ -140,6 +140,20 @@ export class AppComponent implements OnInit, OnDestroy {
 		}
 
 		this.setRunVersionToRegistry();
+
+		if (this.deviceService.isGaming) {
+			// Remove focus when the mouse is being used
+			document.body.addEventListener('mousedown', () => {
+				document.body.classList.remove('focus-enable');
+			});
+
+			// Re-enable focus styling when Tab is pressed
+			document.body.addEventListener('keydown', (event) => {
+				if (event.keyCode === 9) {
+					document.body.classList.add('focus-enable');
+				}
+			});
+		}
 	}
 
 	onDragStart(event: DragEvent): boolean {

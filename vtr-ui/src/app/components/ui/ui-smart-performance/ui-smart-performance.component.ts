@@ -95,6 +95,12 @@ export class UiSmartPerformanceComponent implements OnInit {
 				});
 		}
 
+		this.smartPerformanceService.scanningStopped.subscribe((res: boolean) => {
+			if(res) {
+				this.showWarning.emit(false)
+			}
+		})
+
 	}
 	async scheduleScan(scantype, frequency, day, time, date) {
 		const payload = {

@@ -1156,12 +1156,12 @@
                             }
                         },
                         "autoTransition": {
-                            "description": "Schakel in deze werkstand \"Extreme prestaties\" in. Als u deze functie inschakelt, kan de temperatuur van de buitenkant van uw computer hoger worden en het geluid van de ventilator harder.",
+                            "description": "Schakel de automatische overgang in naar de werkstand \"Extreme prestaties\". Als u deze functie inschakelt, kan de temperatuur van de buitenkant van uw computer hoger worden en de ventilator luider klinken.",
                             "more": "MEER",
                             "less": "MINDER",
                             "moreContent": {
                                 "desc1": "a. Op kantoor, Windows Update, online film of scenario's voor systeemverlichting, kan het systeem stil zijn. Bij normaal gamen levert de computer betere prestaties.",
-                                "desc2": "b. Als u zware games speelt, wordt de werkstand \"Extreme prestaties\" automatisch ingeschakeld. Dit kan leiden tot meer geluid of een hogere temperatuur van de buitenkant van uw computer.",
+                                "desc2": "b. Als u zware games speelt, kan automatisch worden overgeschakeld naar de werkstand \"Extreme prestaties\". In dat geval kan de temperatuur van de buitenkant van uw computer hoger worden en de ventilator luider klinken.",
                                 "desc3": "c. Als de capaciteit van de batterij lager is dan 30%, schakelt het systeem automatisch over naar de werkstand \"Batterijbesparing\"."
                             }
                         }

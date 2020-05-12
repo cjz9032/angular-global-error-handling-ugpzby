@@ -1156,12 +1156,12 @@
                             }
                         },
                         "autoTransition": {
-                            "description": "Ota käyttöön \"Erinomainen suorituskyky\" tässä tilassa. Kun tämä ominaisuus on käytössä, tietokoneesi pinnan lämpötila ja tuulettimen äänentaso saattavat nousta automaattisesti.",
+                            "description": "Ota käyttöön automaattinen siirtyminen \"Erinomainen suorituskyky\" -tilaan. Kun tämä ominaisuus on käytössä, tietokoneesi lämpötila ja tuulettimen äänentaso saattavat nousta automaattisesti.",
                             "more": "ENEMMÄN",
                             "less": "VÄHEMMÄN",
                             "moreContent": {
                                 "desc1": "a. Järjestelmä saattaa olla hiljainen toimistossa, Windows-päivityksen aikana, elokuvaa katsottaessa verkosta tai silloin, kun järjestelmän kuormitus on alhainen. Tavallisissa peliolosuhteissa sen suorituskyky on parempi.",
-                                "desc2": "b. Kun pelaat raskasta peliä, \"Erinomainen suorituskyky\" -tila on automaattisesti käytössä. Se saattaa aiheuttaa enemmän ääntä tai nostaa tietokoneesi pinnan lämpötilaa.",
+                                "desc2": "b. Kun pelaat raskasta peliä, järjestelmä voi todennäköisesti siirtyä \"Erinomainen suorituskyky\" -tilaan. Tällöin tietokoneesi pinnan lämpötila ja tuulettimen äänentaso saattavat nousta.",
                                 "desc3": "c. Kun akun kapasiteetti on alle 30 %, järjestelmä siirtyy automaattisesti \"Akun säästö\" tilaan."
                             }
                         }
