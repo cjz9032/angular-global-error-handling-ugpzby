@@ -22,7 +22,7 @@ export class ModalThreatLocatorComponent implements OnInit {
 	online: boolean;
 	private metrics: any;
 
-	@ViewChild('domIframe') domIframe: ElementRef;
+	@ViewChild('domModalDiv') domModalDiv: ElementRef;
 
 	constructor(
 		public activeModal: NgbActiveModal,
@@ -95,7 +95,7 @@ export class ModalThreatLocatorComponent implements OnInit {
 			this.getThreatLocatorLanguageId(navigator.language)
 		);
 		setTimeout(() => {
-			this.domIframe.nativeElement.focus();
+			this.domModalDiv.nativeElement.focus();
 		}, 0);
 	}
 
