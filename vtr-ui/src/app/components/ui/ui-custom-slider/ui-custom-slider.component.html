@@ -10,15 +10,15 @@
 			*ngIf="showTip"
 			#sliderBubble
 			[style.visibility]="isTooltipHidden?'hidden':'visible'"
-			[for]="sliderId">
+			[for]="sliderId+'-slider'">
 			{{tipValue}}
 		</output>
 		<input type="range"
 			#rangeSlider
 			role="slider"
 			[disabled]="isDisabled"
-			[name]="sliderId"
-			[id]="sliderId"
+			[name]="sliderId+'-slider'"
+			[id]="sliderId+'-slider'"
 			[attr.aria-valuemin]="min"
 			[attr.aria-valuemax]="max"
 			[attr.aria-valuenow]="value"

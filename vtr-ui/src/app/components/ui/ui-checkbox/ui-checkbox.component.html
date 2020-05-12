@@ -1,10 +1,10 @@
 <div class="auto-set-checkbox ">
 	<div class="custom-checkbox-gaming custom-control custom-checkbox">
-		<input [id]="componentId"
+		<input [id]="componentId+'_checkbox'"
 			class="custom-control-input"
 			type="checkbox"
 			role="checkbox"
-			[name]="componentId"
+			[name]="componentId+'_checkbox'"
 			[value]="value"
 			[disabled]="disabled"
 			[checked]="checked"
@@ -14,16 +14,16 @@
 			vtrMetrics
 			[metricsEvent]="metricsEvent"
 			[metricsParent]="metricsParent"
-			[metricsItem]="componentId"
+			[metricsItem]="componentId+'_checkbox'"
 			[metricsValue]="checked"
 			(change)="onChange($event)" />
 		<label *ngIf="hasChild; else elseBlock"
 			class="custom-control-label"
-			[for]="componentId">
+			[for]="componentId+'_checkbox'">
 			<ng-content></ng-content>
 		</label>
 		<ng-template #elseBlock>
-			<label [for]="componentId"
+			<label [for]="componentId+'_checkbox'"
 				class="custom-control-label">
 				{{ label }}
 			</label>
