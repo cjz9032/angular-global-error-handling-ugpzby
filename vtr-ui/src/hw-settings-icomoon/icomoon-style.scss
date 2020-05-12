@@ -1,7 +1,5 @@
 @import "icomoon-variables";
 
-
-
 .icomoon-Active-protection {
   &:before {
     content: $icomoon-Active-protection; 
@@ -368,6 +366,12 @@
     color: #fff;
   }
 }
+.icomoon-junk {
+  &:before {
+    content: $icomoon-junk;     
+    color: #4a81fd;
+  }
+}
 .icomoon-keep-my-display {
   &:before {
     content: $icomoon-keep-my-display; 
@@ -718,6 +722,12 @@
     color: #4a81fd;
   }
 }
+.icomoon-malware {
+  &:before {
+    content: $icomoon-malware;     
+    color: #2081f7;
+  }
+}
 .icomoon-movie {
   &:before {
     content: $icomoon-movie;     
@@ -756,6 +766,18 @@
     color: #4a81fd;
   }
 }
+.icomoon-pcScan {
+  &:before {
+    content: $icomoon-pcScan;     
+    color: #7e5fef;
+  }
+}
+.icomoon-pcSearch {
+  &:before {
+    content: $icomoon-pcSearch;     
+    color: #4a81fd;
+  }
+}
 .icomoon-performance {
   &:before {
     content: $icomoon-performance; 
@@ -785,6 +807,12 @@
     color: #4a81fd;
   }
 }
+.icomoon-proactive {
+  &:before {
+    content: $icomoon-proactive;     
+    color: #4a81fd;
+  }
+}
 .icomoon-Quick-settings_Charge-threshold-off {
   &:before {
     content: $icomoon-Quick-settings_Charge-threshold-off; 
@@ -793,6 +821,12 @@
 .icomoon-quick-setting-system-update {
   &:before {
     content: $icomoon-quick-setting-system-update; 
+  }
+}
+.icomoon-registryError {
+  &:before {
+    content: $icomoon-registryError;     
+    color: #4a81fd;
   }
 }
 .icomoon-Special-function {
@@ -812,6 +846,12 @@
     color: #4a81fd;
   }
 }
+.icomoon-systemError {
+  &:before {
+    content: $icomoon-systemError;     
+    color: #4a81fd;
+  }
+}
 .icomoon-Top-row-keys {
   &:before {
     content: $icomoon-Top-row-keys;     
@@ -821,6 +861,12 @@
 .icomoon-translation {
   &:before {
     content: $icomoon-translation; 
+  }
+}
+.icomoon-usibilityIssue {
+  &:before {
+    content: $icomoon-usibilityIssue;     
+    color: #4a81fd;
   }
 }
 .icomoon-voicerecognition {
@@ -849,6 +895,12 @@
 .icomoon-wifiNetworks {
   &:before {
     content: $icomoon-wifiNetworks;     
+    color: #4a81fd;
+  }
+}
+.icomoon-windows {
+  &:before {
+    content: $icomoon-windows;     
     color: #4a81fd;
   }
 }

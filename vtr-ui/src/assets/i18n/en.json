@@ -2455,7 +2455,8 @@
 			"thu": "Thursday",
 			"fri": "Friday",
 			"sat": "Saturday",
-			"sun": "Sunday"
+			"sun": "Sunday",
+			"tooltipText": "Enable this toggle to automatically initiate a system performance scan on your selected date and time."
 		},
 		"scanningPage": {
 			"title": "Performance & security check",
@@ -2465,7 +2466,7 @@
 			"cancelScan": {
 				"button": "CANCEL SCAN",
 				"title": "Cancel the scan?",
-				"description": "If you leave the current screen the scan will be cancelled and you will be returned to the Dashboard. However, you can run the scan again at any time",
+				"description": "If you leave the current screen the scan will be cancelled and you will be returned to the Home. However, you can run the scan again at any time",
 				"yesButton": "YES, CANCEL",
 				"noButton": "NO, RESUME SCAN"
 			},

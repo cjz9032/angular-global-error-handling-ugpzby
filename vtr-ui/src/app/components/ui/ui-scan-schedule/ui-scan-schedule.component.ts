@@ -7,6 +7,7 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import moment from 'moment';
 import { ModalSmartPerformanceSubscribeComponent } from '../../modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
 import { TranslateService } from '@ngx-translate/core';
+import { enumScanFrequency } from 'src/app/enums/smart-performance.enum';
 
 @Component({
 	selector: 'vtr-ui-scan-schedule',
@@ -160,6 +161,7 @@ export class UiScanScheduleComponent implements OnInit {
 	public scanData: any = {};
 	scheduleScanFrequency:any;
 	nextScheduleScanDate:any;
+	public enumLocalScanFrequncy:any;
 	ngOnInit() {
 		this.isSubscribed = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartPerformanceSubscribed);
 		this.currentDate = new Date();
@@ -171,6 +173,7 @@ export class UiScanScheduleComponent implements OnInit {
 		this.selectedNumber = this.dates[0];
 		this.isDaySelectionEnable = false;
 		this.scanScheduleDate = this.selectedDate;
+		this.enumLocalScanFrequncy = enumScanFrequency;
 		//this.scanSummaryTime(0);
 		this.scheduleScanFrequency = this.commonService.getLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency);
 		if(this.scheduleScanFrequency===undefined)
@@ -501,7 +504,7 @@ async getNextScanRunTime(scantype) {
 					//| slice:0:3
 					var weekDayName =  moment(momentObj).format('dddd');
 					this.selectedFrequency=this.scheduleScanFrequency;
-					if(this.selectedFrequency==="Once a month")
+					if(this.selectedFrequency===this.enumLocalScanFrequncy.ONCEAMONTH)
 					{
 						this.selectedDay = moment(momentObj).format('D');
 						this.dateValue= parseInt(moment(momentObj).format('D'))-1;

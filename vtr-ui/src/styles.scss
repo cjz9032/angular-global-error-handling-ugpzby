@@ -1202,7 +1202,7 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 						line-height: 1.2rem;
 						height: 12rem;
 					}
-					.icon {
+					.icon, .icomoon {
 						height: 12rem;
 						width: 10rem;
 						line-height: 12rem;
@@ -1444,6 +1444,9 @@ vtr-ui-smart-performance-scanning {
 						font-style: normal;
 					}
 				}
+			}
+			.btn-light{
+				cursor: pointer;
 			}
 			.bg-primary {
 				background: transparent !important;
