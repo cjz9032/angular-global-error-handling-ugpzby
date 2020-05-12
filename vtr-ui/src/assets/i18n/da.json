@@ -1156,12 +1156,12 @@
                             }
                         },
                         "autoTransition": {
-                            "description": "Aktiver \"Ekstrem ydeevne\" i denne tilstand. Når den er aktiveret, kan temperaturen på computerens overflade og støjen i blæseren øges automatisk.",
+                            "description": "Aktiver automatisk skift til tilstanden \"Ekstrem ydeevne\". Når den er aktiveret, kan temperaturen på computeren og støjen fra blæseren blive øget automatisk.",
                             "more": "FLERE",
                             "less": "FÆRRE",
                             "moreContent": {
                                 "desc1": "a. I forbindelse med brug af Office, Windows Update og onlinefilm eller ved lav systembelastning kan systemet være stille. Men i normale gaming-situationer har det bedre ydeevne.",
-                                "desc2": "b. Når du spiller ressourcekrævende spil, aktiveres tilstanden \"Ekstrem ydeevne\" automatisk. Den kan give mere støj eller højere temperaturer på computerens overflade.",
+                                "desc2": "b. Når du spiller ressourcekrævende spil, vil systemet sandsynligvis skifte til tilstanden \"Ekstrem ydeevne\". I så fald kan temperaturen på computerens overflade og støjen fra blæseren blive øget.",
                                 "desc3": "c. Når batteriets kapacitet er lavere end 30 %, skifter systemet automatisk til tilstanden \"Strømbesparelse\"."
                             }
                         }

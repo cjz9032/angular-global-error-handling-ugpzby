@@ -1156,12 +1156,12 @@
                             }
                         },
                         "autoTransition": {
-                            "description": "Bu kipte “Yüksek Performans” özelliğini etkinleştirin. Etkinleştirildiğinde, bilgisayar yüzeyinin sıcaklığı ve fan gürültüsü otomatik olarak artabilir.",
+                            "description": "“Yüksek performans” kipine otomatik geçişi etkinleştirin. Etkinleştirildiğinde, bilgisayarınızın sıcaklığı ve fan gürültüsü otomatik olarak artabilir.",
                             "more": "DAHA FAZLA",
                             "less": "DAHA AZ",
                             "moreContent": {
                                 "desc1": "a. Ofis, Windows güncellemesi, çevrimiçi film veya sistem ışığı yükleme senaryolarında sistem sessiz olabilir. Normal oyun senaryolarında daha iyi bir performans sergiler.",
-                                "desc2": "b. Ağır oyunlar oynarken “Yüksek performans” kipi otomatik olarak etkinleştirilir. Bu daha fazla gürültüye veya bilgisayarınızın yüzeyinde daha yüksek sıcaklığa neden olabilir.",
+                                "desc2": "b. Zorlu oyunlar oynarken sistem “Yüksek performans” kipine geçebilir. Bu durumda, bilgisayar yüzeyinizin sıcaklığı ve fan gürültüsü artabilir.",
                                 "desc3": "c. Pil kapasitesi %30'dan düşük olduğunda, sistem otomatik olarak “Pil tasarrufu” kipine geçer."
                             }
                         }
