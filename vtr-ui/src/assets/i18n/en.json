@@ -1160,12 +1160,12 @@
 							}
 						},
 						"autoTransition": {
-							"description": "Enable \"Extreme Performance\" in this mode. When enabled, the temperature on your computer surface and the fan noise might automatically increase.",
+							"description": "Enable auto-transition to \"Extreme performance\" mode. When enabled, the temperature on your computer and fan noise might automatically increase.",
 							"more": "MORE",
 							"less": "LESS",
 							"moreContent": {
 								"desc1": "a. In office, Windows update, online movie, or system light loading scenarios, the system can be quiet. While in normal gaming scenarios, it has better performance.",
-								"desc2": "b. When playing heavy gaming, the \"Extreme performance\" mode is automatically enabled. It might cause bigger noise or higher temperature on your computer surface.",
+								"desc2": "b. When playing heavy gaming, the system might probably switch to \"Extreme performance\" mode. In this case, the temperature on your computer surface and fan noise may increase.",
 								"desc3": "c. When the battery capacity is lower than 30%, the system automatically switches to the \"Battery saving\" mode."
 							}
 						}

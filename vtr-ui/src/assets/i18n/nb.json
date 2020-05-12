@@ -1156,12 +1156,12 @@
                             }
                         },
                         "autoTransition": {
-                            "description": "Aktiver Ekstrem ytelse i denne modusen. Når denne funksjonen er aktivert, kan temperaturen på datamaskinens overflate og viftestøyen øke automatisk.",
+                            "description": "Aktiver automatisk overgang til \"Ekstrem ytelse\"-modus. Når denne funksjonen er aktivert, kan temperaturen på datamaskinen og viftestøyen øke automatisk.",
                             "more": "MER",
                             "less": "MINDRE",
                             "moreContent": {
                                 "desc1": "a. Systemet kan være stille i situasjoner ved bruk av Office, Windows Update, filmvisning via Internett eller lett systembelastning. I vanlige spillsituasjoner har den bedre ytelse.",
-                                "desc2": "b. Når du spiller krevende spill, aktiveres Ekstrem ytelse-modus automatisk. Dette kan føre til mer støy eller høyere temperatur på datamaskinens overflate.",
+                                "desc2": "b. Når du spiller krevende spill, vil systemet sannsynligvis bytte til \"Ekstrem ytelse\"-modus. Hvis så skjer, kan temperaturen på datamaskinens overflate og viftestøyen øke.",
                                 "desc3": "c. Når batterikapasiteten er lavere enn 30 %, bytter systemet automatisk til Batterisparing-modus."
                             }
                         }
