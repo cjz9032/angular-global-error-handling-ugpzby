@@ -337,8 +337,7 @@
 																					</div>
 																					<div class="col-2">{{item.fixcount}} Fixes 
 																					</div>
-																					<div class="col-2 px-2"
-																						*ngIf="item.status">
+																					<div class="col-2" *ngIf="item.status === 'C'">
 																						<div class="icon-check">
 																							<div class="icon-bkg">
 																								<fa-icon
@@ -347,8 +346,7 @@
 																							</div>
 																						</div>
 																					</div>
-																					<div class="col-1"
-																						*ngIf="!item.status">
+																					<div class="col-1" *ngIf="item.status === 'S'">
 																						<div class="icon-times">
 																							<div class="icon-bkg">
 																								<fa-icon
