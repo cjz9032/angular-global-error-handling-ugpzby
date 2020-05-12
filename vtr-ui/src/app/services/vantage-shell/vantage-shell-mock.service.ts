@@ -1082,7 +1082,7 @@ export class VantageShellService {
 	 */
 	public getCameraPrivacy(): any {
 		const cameraPrivacyStatus: any = {
-			getCameraPrivacyStatus: this.getPromise({ available: true, status: true }),
+			getCameraPrivacyStatus: this.getPromise({ available: true, status: true, permission: true }),
 			setCameraPrivacyStatus: this.getPromise(true),
 			startMonitor: this.getPromise(true),
 			stopMonitor: this.getPromise(true),

@@ -175,7 +175,7 @@
 							],
 							"optimization": false,
 							"outputHashing": "none",
-							"sourceMap": false,
+							"sourceMap": true,
 							"extractCss": false,
 							"namedChunks": false,
 							"aot": false,

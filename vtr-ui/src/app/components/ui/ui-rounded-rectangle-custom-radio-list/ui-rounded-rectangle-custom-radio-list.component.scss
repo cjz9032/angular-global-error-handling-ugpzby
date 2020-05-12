@@ -1,0 +1,22 @@
+@import "../../../app.theme";
+
+/*
+* UI Spec link
+* https://xd.adobe.com/spec/4dd677d9-0bab-4b71-46f7-ac1f2efe0878-3be7/screen/b2046b82-01ad-465f-b000-572df2e3b668/Selectors/
+*/
+
+.vtr-ui-rounded-rectangle-radio-list {
+	$radio-gutter: 0.8rem;
+
+	margin: $radio-gutter;
+
+	.horizontal {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.vertical {
+		display: flex;
+		flex-direction: column;
+	}
+}

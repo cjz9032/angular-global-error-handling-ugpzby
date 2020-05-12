@@ -1,0 +1,14 @@
+<div class="vtr-ui-rounded-rectangle-custom-radio">
+	<div role="radio"
+		[id]="componentId"
+		[attr.aria-checked]="isChecked"
+		[attr.aria-disabled]="isDisabled"
+		(click)="onClick($event)"
+		[tabindex]="isChecked ? 0 : -1"
+		vtrMetrics
+		[metricsEvent]="metricsEvent"
+		[metricsItem]="componentId"
+		[metricsValue]="isChecked">
+		{{label}}
+	</div>
+</div>

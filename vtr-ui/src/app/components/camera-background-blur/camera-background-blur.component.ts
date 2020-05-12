@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CameraBlur } from 'src/app/data-models/camera/camera-blur-model';
+// import { UiRoundedRectangleRadioListModel, UiRoundedRectangleRadioModel } from '../ui/ui-rounded-rectangle-radio-list/ui-rounded-rectangle-radio-list.model';
 
 @Component({
 	selector: 'vtr-camera-background-blur',
@@ -8,7 +9,7 @@ import { CameraBlur } from 'src/app/data-models/camera/camera-blur-model';
 })
 export class CameraBackgroundBlurComponent implements OnInit {
 	@Input() option = new CameraBlur();
-	@Output() onOptionChanged = new EventEmitter<boolean>();
+	@Output() optionChanged = new EventEmitter<boolean>();
 
 	constructor() { }
 
@@ -16,6 +17,6 @@ export class CameraBackgroundBlurComponent implements OnInit {
 	}
 
 	public onChange(event: any) {
-		this.onOptionChanged.emit(event);
+		this.optionChanged.emit(event);
 	}
 }
