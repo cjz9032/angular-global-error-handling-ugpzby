@@ -152,7 +152,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 				this.deviceWatcher.addEventListener("updated", this.deviceUpdated.bind(this));
 				this.deviceWatcher.addEventListener("enumerationcompleted", this.deviceCompleted.bind(this));
 				// this.deviceWatcher.start();
-				this.logger.info('device watcher start');
+				// this.logger.info('device watcher start');
 			}
 		} 
 	}
