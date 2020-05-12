@@ -24,23 +24,23 @@
 							[isVertical]=true>
 							<vtr-ui-rounded-rectangle-custom-radio [componentId]="'radio1'"
 								[label]="'device.deviceSettings.displayCamera.camera.camerablur.blurMode' | translate"
-								[value]="'Blur'"
-								[isChecked]="option.currentMode.toLowerCase() === 'blur'"
-								(selectionChange)="onChange($event)">
+								[isChecked]="option.currentMode.toLowerCase() === BLUR"
+								[value]="BLUR"
+								(selectionChange)="onChange($event, BLUR)">
 							</vtr-ui-rounded-rectangle-custom-radio>
 
 							<vtr-ui-rounded-rectangle-custom-radio [componentId]="'radio2'"
 								[label]="'device.deviceSettings.displayCamera.camera.camerablur.comicMode' | translate"
-								[value]="'Comic'"
-								[isChecked]="option.currentMode.toLowerCase() === 'comic'"
-								(selectionChange)="onChange($event)">
+								[isChecked]="option.currentMode.toLowerCase() === COMIC"
+								[value]="COMIC"
+								(selectionChange)="onChange($event, COMIC)">
 							</vtr-ui-rounded-rectangle-custom-radio>
 
 							<vtr-ui-rounded-rectangle-custom-radio [componentId]="'radio3'"
 								[label]="'device.deviceSettings.displayCamera.camera.camerablur.sketchMode' | translate"
-								[value]="'Sketch'"
-								[isChecked]="option.currentMode.toLowerCase() === 'sketch'"
-								(selectionChange)="onChange($event)">
+								[isChecked]="option.currentMode.toLowerCase() === SKETCH"
+								[value]="SKETCH"
+								(selectionChange)="onChange($event, SKETCH)">
 							</vtr-ui-rounded-rectangle-custom-radio>
 						</vtr-ui-rounded-rectangle-custom-radio-list>
 					</div>

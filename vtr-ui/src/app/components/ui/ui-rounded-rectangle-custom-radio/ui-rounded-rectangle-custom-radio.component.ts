@@ -15,6 +15,7 @@ export class UiRoundedRectangleCustomRadioComponent implements OnInit {
 	@Input() isChecked = false;
 	@Input() isDisabled = false;
 	@Input() label: string;
+	@Input() value: any;
 	@Input() metricsEvent = 'ItemClick';
 
 	@Output() selectionChange = new EventEmitter<any>();
@@ -23,7 +24,11 @@ export class UiRoundedRectangleCustomRadioComponent implements OnInit {
 
 	ngOnInit() { }
 
-	onClick($event) {
-
+	onClick() {
+		this.selectionChange.emit({
+			value: this.value,
+			componentId: this.componentId,
+			isChecked: this.isChecked
+		});
 	}
 }

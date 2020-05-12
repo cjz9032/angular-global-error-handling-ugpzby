@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CameraBlur } from 'src/app/data-models/camera/camera-blur-model';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 // import { UiRoundedRectangleRadioListModel, UiRoundedRectangleRadioModel } from '../ui/ui-rounded-rectangle-radio-list/ui-rounded-rectangle-radio-list.model';
 
 @Component({
@@ -9,14 +10,19 @@ import { CameraBlur } from 'src/app/data-models/camera/camera-blur-model';
 })
 export class CameraBackgroundBlurComponent implements OnInit {
 	@Input() option = new CameraBlur();
-	@Output() optionChanged = new EventEmitter<boolean>();
+	@Output() optionChanged = new EventEmitter<string>();
 
-	constructor() { }
+	public readonly BLUR = 'blur';
+	public readonly COMIC = 'comic';
+	public readonly SKETCH = 'sketch';
+
+	constructor(private logger: LoggerService) { }
 
 	ngOnInit() {
 	}
 
-	public onChange(event: any) {
-		this.optionChanged.emit(event);
+	public onChange($event, modeSelected: string) {
+		this.logger.info('CameraBackgroundBlurComponent.onChange', {$event, modeSelected});
+		this.optionChanged.emit(modeSelected);
 	}
 }
