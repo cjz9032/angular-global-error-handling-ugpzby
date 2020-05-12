@@ -48,22 +48,23 @@ export class UiBrightnessSliderComponent implements OnInit, AfterContentChecked 
 			step: Number(this.step), // value to change on each slide, default is 1
 			ariaLabel: this.ariaLabelValue
 		};
-		document.body.addEventListener('mousedown', () => {
-			const elem = document.getElementsByClassName('brightness_slider')[0] as HTMLElement;
-			elem.setAttribute('role', '');
-			elem.setAttribute('role', 'slider');
-		});
- 
-		document.body.addEventListener('keydown', (event) => {
-			if (event.keyCode === 9) {
-				const elem = document.getElementsByClassName('brightness_slider')[0] as HTMLElement;
-				elem.setAttribute('role', '');
-				elem.setAttribute('role', 'radiogroup');
-			}
-		});
 	}
 
 	public dragEnd($event: any) {
 		this.onSliderChanged.emit($event.value);
+	}
+
+	onFocusSlider($event: any) {
+		const elem = document.getElementsByClassName('brightness_slider')[0] as HTMLElement;
+		if ($event.which === 9) {
+			elem.setAttribute('role', '');
+			elem.setAttribute('role', 'radiogroup');
+		}
+	}
+
+	onMouseSlider() {
+		const elem = document.getElementsByClassName('brightness_slider')[0] as HTMLElement;
+		elem.setAttribute('role', '');
+		elem.setAttribute('role', 'slider');
 	}
 }
