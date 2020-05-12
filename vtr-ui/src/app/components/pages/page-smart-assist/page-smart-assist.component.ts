@@ -238,10 +238,6 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'aps');
 				this.checkMenuItemsLength();
 			}
-			if (!this.smartAssistCapability.isAntiTheftSupported.available) {
-				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'sensing');
-				this.checkMenuItemsLength();
-			}
 		} catch (error) {
 			this.logger.exception('initVisibility', error.message);
 		}
