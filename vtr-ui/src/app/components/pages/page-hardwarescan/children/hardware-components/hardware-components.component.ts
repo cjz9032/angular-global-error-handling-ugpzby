@@ -493,7 +493,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					backdrop: 'static',
 					size: 'lg',
 					centered: true,
-					windowClass: 'hardware-scan-modal-size'
+					windowClass: 'support-modal-hwscan'
 				});
 				modalRef.componentInstance.supportUrl = supportUrl;
 				modalRef.componentInstance.configureDevicesLists(failedModules, rbsDevices);
