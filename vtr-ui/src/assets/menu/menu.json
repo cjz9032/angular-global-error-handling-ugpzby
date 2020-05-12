@@ -373,6 +373,7 @@
 					"metricsParent": "navbar",
 					"metricsItem": "link.smartPerfomance",
 					"sMode": true,
+					"segment": "+[Consumer]",
 					"routerLinkActiveOptions": {
 						"exact": true
 					},
