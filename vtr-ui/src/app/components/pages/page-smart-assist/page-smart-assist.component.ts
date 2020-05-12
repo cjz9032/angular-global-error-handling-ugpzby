@@ -306,7 +306,6 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			}
 			if (this.smartAssistCapability.isSuperResolutionSupported) {
 				this.superResolution = this.smartAssistCapability.isSuperResolutionSupported;
-				this.isSuperResolutionLoading = false;
 				this.getSuperResolutionStatus();
 			}
 			if (this.smartAssistCapability.isHsaIntelligentSecuritySupported) {
