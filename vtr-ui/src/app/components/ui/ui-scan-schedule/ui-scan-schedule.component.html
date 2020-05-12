@@ -44,13 +44,16 @@
                 <div class="item d-flex">
                     <b>{{'smartPerformance.scanSettings.frequency' |translate }}</b>
                 </div>
-                <div class="status d-flex justify-content-end">
-                    <p class="mr-3">{{selectedFrequency}}</p>
-                    <fa-icon  *ngIf="scheduleTab != 1" (click)="openScanScheduleDropDown(1)"
+                <a class="status d-flex justify-content-end" (click)="openScanScheduleDropDown(1)">
+                    <!-- <p class="mr-3">{{selectedFrequency}}</p> -->
+                    {{selectedFrequency}}
+                    <span class="ml-3">
+                        <fa-icon  *ngIf="scheduleTab != 1" 
                         [icon]="['fas', 'chevron-down']"></fa-icon>
-                        <fa-icon *ngIf="scheduleTab === 1" (click)="openScanScheduleDropDown(1)"
+                    <fa-icon *ngIf="scheduleTab === 1"
                         [icon]="['fas', 'chevron-up']"></fa-icon>
-                </div>
+                    </span>                   
+                </a>
                 <div *ngIf="scheduleTab === 1" class="freq-dropdown">
                     <div *ngFor="let freq of scanFrequency;let ind=index" class="frequency-text"
                         (click)="changeScanFrequency(ind)" [ngClass]="{'selected-frequency':frequencyValue === ind}">{{freq}}</div>
@@ -61,14 +64,16 @@
                     <div class="item d-flex">
                         <b>{{'smartPerformance.scanSettings.txtDate' |translate }}</b>
                     </div>
-                    <div class="status d-flex justify-content-end">
-                        <p class="mr-3">{{selectedNumber}}</p>
-                        <fa-icon *ngIf="scheduleTab != 3" [icon]="['fas', 'chevron-down']"
-                            (click)="openScanScheduleDropDown(3)"></fa-icon>
-                            <fa-icon *ngIf="scheduleTab === 3" (click)="openScanScheduleDropDown(3)"
+                    <a class="status d-flex justify-content-end" (click)="openScanScheduleDropDown(3)">
+                        <!-- <p class="mr-3">{{selectedNumber}}</p> -->
+                        {{selectedNumber}}
+                        <span class="ml-3">
+                        <fa-icon *ngIf="scheduleTab != 3" 
+                            [icon]="['fas', 'chevron-down']"></fa-icon>
+                        <fa-icon *ngIf="scheduleTab === 3"
                             [icon]="['fas', 'chevron-up']"></fa-icon>
-
-                    </div>
+                        </span>
+                    </a>
                     <div *ngIf="scheduleTab === 3" class="date-dropdown">																
                         <div *ngFor="let date of dates;let ind=index"
                             (click)="changeScanDate(ind)" class="date-text" [ngClass]="{'selected-date':dateValue === ind}">{{date}}</div>
@@ -80,14 +85,16 @@
                 <div class="item d-flex">
                     <b>{{'smartPerformance.scanSettings.txtDay' |translate }}</b>
                 </div>
-                <div class="status d-flex justify-content-end">
-                    <p class="mr-3">{{selectedDay}}</p>
-                    <fa-icon *ngIf="scheduleTab != 3" [icon]="['fas', 'chevron-down']"
-                        (click)="openScanScheduleDropDown(3)"></fa-icon>
-                        <fa-icon *ngIf="scheduleTab === 3" (click)="openScanScheduleDropDown(3)"
+                <a class="status d-flex justify-content-end" (click)="openScanScheduleDropDown(3)">
+                    <!-- <p class="mr-3">{{selectedDay}}</p> -->
+                    {{selectedDay}}
+                    <span class="ml-3">
+                        <fa-icon *ngIf="scheduleTab != 3" [icon]="['fas', 'chevron-down']"
+                        ></fa-icon>
+                        <fa-icon *ngIf="scheduleTab === 3"
                         [icon]="['fas', 'chevron-up']"></fa-icon>
-
-                </div>
+                    </span>
+                </a>
                 <div *ngIf="scheduleTab === 3" class="day-dropdown">
                     <div *ngFor="let day of days;let ind=index"
                         (click)="changeScanDay(ind)" class="days-text" [ngClass]="{'selected-day':dayValue === ind}">{{day}}</div>
@@ -97,39 +104,36 @@
                 <div class="item d-flex">
                     <b>{{'smartPerformance.scanSettings.txtTime' |translate }}</b>
                 </div>
-                <div  class="icon" class="status d-flex justify-content-end">
+                <a class="status d-flex justify-content-end" (click)="openScanScheduleDropDown(2)">
                     <!-- <p class="mr-3">12:00AM</p> -->
-                    <p class="mr-3">{{scanTime.hour}}:{{scanTime.min}} {{scanTime.amPm}}</p>
-                    <fa-icon *ngIf="scheduleTab != 2" [icon]="['fas', 'chevron-down']" (click)="openScanScheduleDropDown(2)"></fa-icon>
-                    <fa-icon *ngIf="scheduleTab === 2" (click)="openScanScheduleDropDown(2)"
+                    <!-- <p class="mr-3">{{scanTime.hour}}:{{scanTime.min}} {{scanTime.amPm}}</p> -->
+                    {{scanTime.hour}}:{{scanTime.min}} {{scanTime.amPm}}
+                    <span class="ml-3">
+                    <fa-icon *ngIf="scheduleTab !== 2" [icon]="['fas', 'chevron-down']"></fa-icon>
+                    <fa-icon *ngIf="scheduleTab === 2"
                     [icon]="['fas', 'chevron-up']"></fa-icon>
-                </div>
+                    </span>
+                </a>
                 <div *ngIf="scheduleTab === 2" class="time-dropdown">
                     <div class="row">
                         <div class="col hour-block">
-                                <div class="hour-text" *ngFor="let hour of hours;let ind=index" [ngClass]="{'selected-text':copyScanTime.hourId === ind}"
+                            <div class="hour-text" *ngFor="let hour of hours;let ind=index" [ngClass]="{'selected-text':copyScanTime.hourId === ind}"
                                 (click)="changeHoursTime(ind)">{{hour}}</div>
-                            </div>
-                            <div class="col minutes-block">
-                                    <div class="min-text" *ngFor="let min of mins;let ind=index" [ngClass]="{'selected-text':copyScanTime.minId === ind}"
-                                    (click)="changeMinutesTime(ind)">{{min}}</div>
-                                </div>
-                                <div class="col amPm-block">
-                                        <div class="amPm-text" *ngFor="let amPm of amPm;let ind=index" [ngClass]="{'selected-text':copyScanTime.amPmId === ind}"
-                                        (click)="changeAmPm(ind)">{{amPm}}</div>
-                                            
-                                    </div>
                         </div>
-                        
-                                <div class="row select-close py-2">
-                                    <div class="col text-center"><fa-icon [icon]="['fal', 'check']"	(click)="saveChangeScanTime()"></fa-icon></div>
-                                    <div class="col text-center"><fa-icon [icon]="['fal', 'times']" (click)="cancelChangeScanTime()"></fa-icon></div>
-                                    
-                                
-                                
-                            </div>
-                </div>
-                
+                        <div class="col minutes-block">
+                            <div class="min-text" *ngFor="let min of mins;let ind=index" [ngClass]="{'selected-text':copyScanTime.minId === ind}"
+                                (click)="changeMinutesTime(ind)">{{min}}</div>
+                        </div>
+                        <div class="col amPm-block">
+                            <div class="amPm-text" *ngFor="let amPm of amPm;let ind=index" [ngClass]="{'selected-text':copyScanTime.amPmId === ind}"
+                                (click)="changeAmPm(ind)">{{amPm}}</div>                                            
+                        </div>
+                    </div>                        
+                    <div class="row select-close py-2">
+                        <div class="col text-center"><fa-icon [icon]="['fal', 'check']"	(click)="saveChangeScanTime()"></fa-icon></div>
+                        <div class="col text-center"><fa-icon [icon]="['fal', 'times']" (click)="cancelChangeScanTime()"></fa-icon></div>
+                    </div>
+                </div>                
             </li>
         </ul>
         <!-- <a href="#" class="link-text">Manage Subscription</a> -->
