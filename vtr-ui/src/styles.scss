@@ -1781,3 +1781,18 @@ a, input, label {
 	}
 }
 
+ngb-tooltip-window.schedule-scan.tooltip {
+	border-radius: 0.4rem;
+	background-color: $light;
+	box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
+	padding-bottom: 0;
+	.tooltip-inner {
+		padding: 0.8rem;
+		color: $main_dark;
+		border-radius: 0rem;
+		background-color: $light;
+		font-size: $fontsize_xs;
+		text-align: left;
+		max-width: 24.2rem;
+	}
+}

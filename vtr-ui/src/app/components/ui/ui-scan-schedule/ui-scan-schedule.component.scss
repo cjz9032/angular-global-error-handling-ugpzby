@@ -383,12 +383,12 @@ vtr-ui-smart-performance-scan-summary {
                                         border: none;
                                         border-left: 1px solid $grey_light;
                                         border-bottom: 1px solid $grey_light;
-										color: $dark;  
-										height: 5rem;  
+										color: $dark;
+										height: 5rem;
 										@media #{$breakpoint_xl}{
 											padding: 0.5rem 0.2rem;
 											height: 4.5rem;
-										}  
+										}
 										@media #{$breakpoint_sm}{
 											padding: 0.5rem 0.2rem;
 											height: 3.5rem;
@@ -396,7 +396,7 @@ vtr-ui-smart-performance-scan-summary {
 										&.active {
                                             background-color: transparent;
                                             border-bottom-color: transparent;
-										}                                    
+										}
 									}
                                     &:first-child{
                                         .nav-link{
@@ -841,6 +841,20 @@ vtr-ui-smart-performance-scan-summary {
 						}
 					}
 				}
+				.tooltip-btn {
+					box-shadow: none;
+					border: none;
+					margin-top: 0.5rem;
+					padding-right: 0;
+					padding-left: 0;
+					&:hover {
+						background: none;
+					}
+					fa-icon {
+						color: #212529;
+						font-size: 1.6rem;
+					}
+				}
 			}
 		}
 		.disable-list {
@@ -853,7 +867,7 @@ vtr-ui-smart-performance-scan-summary {
 			}
 		}
 	}
-	.labels { 
+	.labels {
 		.badge {
 			font-size: 1.2rem;
 			margin-bottom: 0.6rem;
@@ -948,16 +962,16 @@ vtr-ui-smart-performance-scan-summary {
 			text-align: center;
 			border: 0rem;
 			cursor: pointer;
-			
+
 	}
 	.cancel-link {
 		font-size: $fontsize_xs;
 		font-weight: $weight_600;
 		vertical-align: middle;
 		letter-spacing: 0.05rem;
-		color: $menu_hover;		
+		color: $menu_hover;
 		margin: 1rem 0rem 0rem 3rem;
-		cursor: pointer;		
+		cursor: pointer;
 		text-transform: uppercase;
 		padding: 0.3rem 0rem;
 		border-bottom: 0.2rem solid $menu_hover;
@@ -981,7 +995,7 @@ vtr-ui-smart-performance-scan-summary {
 			.selected-frequency{
 				color: #11b85b;
 				font-weight: $weight_bold;
-				
+
 			}
 			.frequency-text{
 				cursor: pointer;
@@ -1043,7 +1057,7 @@ vtr-ui-smart-performance-scan-summary {
 			padding: 2rem;
 			// top: 48%;
 			margin-top: 4rem;
-			right: 9%;			
+			right: 9%;
 			box-shadow: $drop_shadow;
 			border-radius: 0.5rem;
 			.selected-day{
@@ -1081,7 +1095,7 @@ vtr-ui-smart-performance-scan-summary {
 				border-right: 1px solid $shade_light;
 				border-bottom: 1px solid $shade_light;
 				padding-right: 2rem;
-				padding-left: 2rem;				
+				padding-left: 2rem;
 				.hour-text{
 					cursor: pointer;
 				}
@@ -1136,8 +1150,14 @@ vtr-ui-smart-performance-scan-summary {
 				}
 			}
 		}
-	
+
 }
+
+	::ng-deep .switch.switch-xs {
+			margin-right: 1rem;
+		}
+
+
 }
 @keyframes expanding {
 	0%{

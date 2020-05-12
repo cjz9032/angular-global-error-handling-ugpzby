@@ -12,7 +12,10 @@
                 </div>
                 <div class="status d-flex justify-content-end">
                     <vtr-ui-switch-onoff [value]="scanToggleValue" (toggle)="setEnableScanStatus($event)"></vtr-ui-switch-onoff>
-
+					<button type="button" class="btn btn-outline-secondary tooltip-btn" placement="left" triggers="click" [autoClose]="'outside'"
+						ngbTooltip="{{'smartPerformance.scanSettings.scanToolTip' |translate }}" tooltipClass="schedule-scan">
+						<fa-icon [icon]="['far', 'question-circle']"></fa-icon>
+					</button>
                 </div>
             </li>
             <li class="d-flex justify-content-between calendar-list" [ngClass]="{'disable-list':!scanToggleValue}" (click)="changeScanSchedule()">
@@ -48,11 +51,11 @@
                     <!-- <p class="mr-3">{{selectedFrequency}}</p> -->
                     {{selectedFrequency}}
                     <span class="ml-3">
-                        <fa-icon  *ngIf="scheduleTab != 1" 
+                        <fa-icon  *ngIf="scheduleTab != 1"
                         [icon]="['fas', 'chevron-down']"></fa-icon>
                     <fa-icon *ngIf="scheduleTab === 1"
                         [icon]="['fas', 'chevron-up']"></fa-icon>
-                    </span>                   
+                    </span>
                 </a>
                 <div *ngIf="scheduleTab === 1" class="freq-dropdown">
                     <div *ngFor="let freq of scanFrequency;let ind=index" class="frequency-text"
@@ -68,13 +71,13 @@
                         <!-- <p class="mr-3">{{selectedNumber}}</p> -->
                         {{selectedNumber}}
                         <span class="ml-3">
-                        <fa-icon *ngIf="scheduleTab != 3" 
+                        <fa-icon *ngIf="scheduleTab != 3"
                             [icon]="['fas', 'chevron-down']"></fa-icon>
                         <fa-icon *ngIf="scheduleTab === 3"
                             [icon]="['fas', 'chevron-up']"></fa-icon>
                         </span>
                     </a>
-                    <div *ngIf="scheduleTab === 3" class="date-dropdown">																
+                    <div *ngIf="scheduleTab === 3" class="date-dropdown">
                         <div *ngFor="let date of dates;let ind=index"
                             (click)="changeScanDate(ind)" class="date-text" [ngClass]="{'selected-date':dateValue === ind}">{{date}}</div>
                             <!-- <ngb-datepicker [(ngModel)]="scanScheduleDate" (select)="changeScanScheduleDate()"></ngb-datepicker> -->
@@ -126,14 +129,14 @@
                         </div>
                         <div class="col amPm-block">
                             <div class="amPm-text" *ngFor="let amPm of amPm;let ind=index" [ngClass]="{'selected-text':copyScanTime.amPmId === ind}"
-                                (click)="changeAmPm(ind)">{{amPm}}</div>                                            
+                                (click)="changeAmPm(ind)">{{amPm}}</div>
                         </div>
-                    </div>                        
+                    </div>
                     <div class="row select-close py-2">
                         <div class="col text-center"><fa-icon [icon]="['fal', 'check']"	(click)="saveChangeScanTime()"></fa-icon></div>
                         <div class="col text-center"><fa-icon [icon]="['fal', 'times']" (click)="cancelChangeScanTime()"></fa-icon></div>
                     </div>
-                </div>                
+                </div>
             </li>
         </ul>
         <!-- <a href="#" class="link-text">Manage Subscription</a> -->
@@ -150,6 +153,7 @@
                 metricsParent="pages.support.smartPerformance"
                 metricsEvent="FeatureClick"
                 >{{'smartPerformance.scanSettings.txtCancel' |translate }}</a>
-            </div>        
+            </div>
     </div>
 </div>
+
