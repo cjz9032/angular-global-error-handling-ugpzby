@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.39](https://bitbucket.tc.lenovo.com///compare/v1.5.38...v1.5.39) (2020-05-12)
+
+
+### Bug Fixes
+
+* **chs menu logo:** VAN-17727 update chs menu logo ([46c4c0c](https://bitbucket.tc.lenovo.com///commit/46c4c0c77a661236aa0cd7ca0853882bb7731ca6))
+* **menu:** add support for update beta feature's availability ([71796b6](https://bitbucket.tc.lenovo.com///commit/71796b6ca43ce556790c6a9b6a3fa543172977bb))
+
 ### [1.5.38](https://bitbucket.tc.lenovo.com///compare/v1.5.37...v1.5.38) (2020-05-11)
 
 
