@@ -4,7 +4,7 @@ import { NO_ERRORS_SCHEMA } from "@angular/core";
 import { UiHeaderSubpageComponent } from './ui-header-subpage.component';
 import { TranslateModule } from "@ngx-translate/core";
 
-describe('UiHeaderSubpageComponent', () => {
+xdescribe('UiHeaderSubpageComponent', () => {
 	let component: UiHeaderSubpageComponent;
 	let fixture: ComponentFixture<UiHeaderSubpageComponent>;
 

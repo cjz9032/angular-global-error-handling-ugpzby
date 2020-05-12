@@ -44,7 +44,7 @@ const interval = [{
 	text: 'Half time of display off timer'
 }]
 
-describe('UiDropdownComponent', () => {
+xdescribe('UiDropdownComponent', () => {
 	let component: UiDropDownComponent;
 	let fixture: ComponentFixture<UiDropDownComponent>;
 	let logger: LoggerService;

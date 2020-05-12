@@ -23,7 +23,7 @@ import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/t
 import { promise } from 'protractor';
 import { DevService } from 'src/app/services/dev/dev.service';
 
-fdescribe('Component: PowerSmartSetting', () => {
+xdescribe('Component: PowerSmartSetting', () => {
 	let component: PowerSmartSettingsComponent;
 	let fixture: ComponentFixture<PowerSmartSettingsComponent>;
 	let commonService: CommonService;
