@@ -31,10 +31,7 @@
 														<hr class="light-dashline" />
 													</div>
 													<div class="performance-slider-block scan-results">
-														<h3 class="recomendation-text"  *ngIf="!isSubscribed">
-															{{'smartPerformance.scanCompletePage.scanRates' |translate }}<span>{{rating}}</span>
-														</h3>
-														<h3 class="recomendation-text"  *ngIf="(isSubscribed && hasSubscribedScanCompleted)">
+														<h3 class="recomendation-text">
 															{{'smartPerformance.scanCompletePage.scanRates' |translate }}<span>{{rating}}</span>
 														</h3>
 														<div class="slider">
@@ -495,20 +492,22 @@
 												</div>
 												<div class="card-info">
 													<p>{{'smartPerformance.scanCompletePage.recommendedAction.description' |translate }}
-														<a href="#" class="link-text" vtrMetrics
+														<!-- <a href="#" class="link-text" vtrMetrics
 															metricsItem="smartPerformance.learnmore"
 															metricsEvent="ArticleClick"
-															metricsParent="pages.support.smartPerformance">{{'smartPerformance.subscriptionDetails.learnMore' |translate }}</a>
+															metricsParent="pages.support.smartPerformance">{{'smartPerformance.subscriptionDetails.learnMore' |translate }}</a> -->
 													</p>
+													<p>{{'smartPerformance.scanCompletePage.recommendedAction.description1' |translate }}</p>
 												</div>
-												<div class="pricing">
+												<!-- <div class="pricing">
 													<h2 class="big-text">
 														{{'smartPerformance.scanCompletePage.recommendedAction.yearlyPricing' |translate }}
 													</h2>
 													<small>{{'smartPerformance.scanCompletePage.recommendedAction.monthlyPricing' |translate }}</small>
 												</div>
 												<p>{{'smartPerformance.scanCompletePage.recommendedAction.longerTerm' |translate }}
-												</p>
+												</p> -->
+												<!-- These are commented as per new requirment please dont delete -->
 												<button class="action-button mt-2" vtrMetrics
 													metricsItem="smartPerformance.subscribeModal"
 													metricsEvent="FeatureClick"
