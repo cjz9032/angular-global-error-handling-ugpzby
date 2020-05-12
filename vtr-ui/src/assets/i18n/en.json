@@ -2424,7 +2424,8 @@
 		},
 		"startScan": "<b>Ready to start the scan?</b> Let’s diagnose for performance and security issues in your computer.",
 		"subscriptionDetails": {
-			"title": "Subscription details",
+			"title": "Subscription Details",
+			"titlebeta":"Lenovo Beta Program",
 			"description": "You are subscribed to the Lenovo Smart Performance Service. During this time all the features are fully available to keep your PC protected and running smoothly.",
 			"learnMore": "Learn more",
 			"startDate": "Start date",
@@ -2432,7 +2433,10 @@
 			"status": "Status",
 			"activeStatus": "ACTIVE",
 			"inactiveStatus": "INACTIVE",
-			"manageSubscription": "MANAGE SUBSCRIPTION"
+			"manageSubscription": "MANAGE SUBSCRIPTION",
+			"manageSubscriptionBeta":"SUBSCRIBE FOR BETA PROGRAM",
+			"descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
+			"descriptionbeta1": "You are welcomed to join and try the full feature."
 		},
 		"scanSettings": {
 			"title": "Schedule scan settings",
@@ -2622,11 +2626,12 @@
 			"scannedAreas": "SCANNED AREAS",
 			"recommendedAction": {
 				"title": "RECOMMENDED ACTION",
-				"description": "We will automatically fix these issues. Once today and every week thereafter",
+				"description": "Lenovo is offering beta program of Smart Performance till July.",
+				"description1":"You are welcomed to enroll in the program to try the full feature of Smart Performance.",
 				"yearlyPricing": "$19.99 / Yr",
 				"monthlyPricing": "LESS THAN $2 PER MONTH.",
 				"longerTerm": "Longer term? Even more savings?",
-				"signupButton": "SIGN UP"
+				"signupButton": "SUBSCRIBE FOR BETA PROGRAM"
 			},
 			"tunepc": {
 				"accumulatedjunkscannedareas": {

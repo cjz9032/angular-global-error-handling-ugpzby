@@ -243,7 +243,7 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, After
 
 	removeHTMLFormatting(source: string) {
 		try {
-			return source.replace(/<\/?.+?\/?>/g, ' ').replace(/  +/g, ' ')
+			return source.replace(/<\/?.+?\/?>/g, ' ').replace(/  +/g, ' ');
 		}
 		catch (error) {
 
