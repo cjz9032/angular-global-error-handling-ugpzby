@@ -15,7 +15,7 @@ import { RouteHandlerService } from 'src/app/services/route-handler/route-handle
 import { DevService } from 'src/app/services/dev/dev.service';
 import { AntiTheftResponse } from 'src/app/data-models/antiTheft/antiTheft.model';
 
-fdescribe('component: AntiTheftComponent', () => {
+describe('component: AntiTheftComponent', () => {
   let component: AntiTheftComponent;
   let fixture: ComponentFixture<AntiTheftComponent>;
   let smartAssist: SmartAssistService;
