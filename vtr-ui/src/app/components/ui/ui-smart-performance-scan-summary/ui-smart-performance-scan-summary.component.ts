@@ -554,8 +554,8 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 			this.logger.info('History Response', res);
 			if (res) {
 				this.historyRes = {
-					Tune: res.Tune,
-					Boost: res.Boost,
+					Tunecount: res.Tunecount,
+					Boostcount: res.Boostcount,
 					Secure: res.Secure,
 					Tunesize: res.Tunesize,
 					Boostsize: res.Boostsize
@@ -567,8 +567,8 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 				this.historyRes = {};
 			}
 		} catch (err) {
-			this.historyScanResults = [];
-			this.historyRes = {};
+			this.logger.error('History Response Error', err);
+
 		}
 	}
 	formatMemorySize(mbytes: number) {
