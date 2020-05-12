@@ -492,6 +492,12 @@ $high-contrast-black-yellow: #FFFF00;
 	border: thin solid $color;
 }
 @mixin under-line-button-outline ($color : $blueFill) {
-	outline: 0.1rem solid $color;
-	outline-offset: 0.2rem;
+	content: '';
+	display: block;
+	position: absolute;
+	left: -0.4rem;
+	top:0;
+	width: calc(100% + 0.8rem);
+	height: calc(100% + 0.6rem);
+	border: thin solid $color;
 }

@@ -176,6 +176,7 @@
 		background-color: $blueFill;
 		border-radius: 20px;
 		transition: all 0.2s ease;
+		position: relative;
 		// &:hover {
 		// 	background-color: $blueHover;
 		// 	cursor: pointer;
@@ -197,6 +198,7 @@
 		border-radius: 0px;
 		margin-top: -8px;
 		transition: all 0.2s ease;
+		position: relative;
 		// &:hover {
 		//   color: $blueHover;
 		//   border-bottom: 2px solid $blueHover;

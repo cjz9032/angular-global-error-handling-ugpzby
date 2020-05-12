@@ -135,7 +135,9 @@
                 @include default-button-border;
             }
             .under-line-button:focus {
-                @include under-line-button-outline;
+                &::after {
+                    @include under-line-button-outline;
+                }
             }
             
         }
