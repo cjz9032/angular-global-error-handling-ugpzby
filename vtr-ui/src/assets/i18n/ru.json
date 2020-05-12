@@ -1475,35 +1475,35 @@
                 }
             },
             "audio": {
-                "title": "Звук",
-                "subtitle": "Параметры звука",
-                "description": "В этом разделе можно автоматически оптимизировать или вручную настроить все параметры звука, например параметры Dolby, микрофон и т. д.",
-                "audioSmartsettings": {
-                    "title": "Audio smart settings",
+				"title": "Звук",
+				"subtitle": "Параметры звука",
+				"description": "В этом разделе можно автоматически оптимизировать или вручную настроить все параметры звука, например параметры Dolby, микрофон и т. д.",
+				"audioSmartsettings": {
+                    "title": "Интеллектуальные параметры звука",
                     "dolby": {
-                        "title": "Dolby audio",
-                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
+                        "title": "Аудиосистема Dolby",
+                        "description": "Выберите желаемый режим из следующего списка. Также можно установить флажок \"Автоматически оптимизировать звук для...\". Если этот флажок установлен, аудиосистема Dolby автоматически выбирает оптимальный звуковой эффект с учетом используемых режимов.",
                         "options": {
-                            "dynamic": "DYNAMIC",
-                            "movie": "MOVIE",
-                            "music": "MUSIC",
-                            "games": "GAME",
-                            "voip": "VOICE"
+                            "dynamic": "Динамический",
+							"movie": "Фильм",
+							"music": "Музыка",
+							"games": "Игра",
+							"voip": "Голос"
                         },
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
-                                "checkboxText": "Automatically optimize audio for VOIP"
+                                "checkboxText": "Автоматическая оптимизация аудио для VoIP",
+                                "tooltip": "Эта функция используется во время вызовов VoIP (через Skype, Microsoft Teams, WeChat и т. д.). Если эта функция включена, аудиосистема Dolby автоматически переключается в голосовой режим для повышения качества звучания голоса."
                             },
                             "entertainmentMode": {
-                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "checkboxText": "Automatically optimize audio for entertainment"
+                                "checkboxText": "Автоматическая оптимизация аудио для развлечений",
+                                "tooltip": "Если выбран этот вариант, аудиосистема Dolby автоматически изменяет режим с учетом используемого приложения:<br>• Если используются такие приложения, как iTunes, выбирается режим \"Музыка\".<br>• Если используются такие приложения, как YouTube, выбирается режим \"Кино\".<br>• Если используются игровые приложения, выбирается режим \"Игры\"."
                             }
                         }
                     },
                     "eCourse": {
-                        "title": "Interactive E-course mode",
-                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
+                        "title": "Режим интерактивного электронного курса",
+                        "tooltip": "Эта функция полезна для онлайн-курсов, предполагающих голосовое взаимодействие между преподавателем и учащимися. Если эта функция включена, аудиосистема Dolby автоматически переходит в режим \"Голос\". При этом для повышения качества передачи голоса будут включены такие функции, как формирование луча, подавление акустического эха и подавление звуков клавиатуры."
                     }
                 },
                 "microphone": {

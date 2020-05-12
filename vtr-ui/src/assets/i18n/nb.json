@@ -1475,35 +1475,35 @@
                 }
             },
             "audio": {
-                "title": "Lyd",
-                "subtitle": "Lydinnstillinger",
-                "description": "I denne delen kan du optimalisere eller fullt ut automatiskkonfigurere lydinnstillingene manuelt, for eksempel Dolby-innstillinger, mikrofon, osv.",
-                "audioSmartsettings": {
-                    "title": "Audio smart settings",
+				"title": "Lyd",
+				"subtitle": "Lydinnstillinger",
+				"description": "I denne delen kan du automatisk optimalisere eller fullt ut manuelt konfigurere lydinnstillingene, for eksempel Dolby-innstillinger, mikrofon, osv.",
+				"audioSmartsettings": {
+                    "title": "Smarte lydinnstillinger",
                     "dolby": {
-                        "title": "Dolby audio",
-                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
+                        "title": "Dolby-lyd",
+                        "description": "Velg ønsket modus nedenfor. Du kan også huke av \"Optimaliser automatisk lyden for ...\". Når funksjonen er aktivert, henter Dolby-lyd automatisk den beste lydeffekten for deg i henhold til modusen du er i.",
                         "options": {
-                            "dynamic": "DYNAMIC",
-                            "movie": "MOVIE",
-                            "music": "MUSIC",
-                            "games": "GAME",
-                            "voip": "VOICE"
+                            "dynamic": "Dynamisk",
+							"movie": "Film",
+							"music": "Musikk",
+							"games": "Spill",
+							"voip": "Tale"
                         },
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
-                                "checkboxText": "Automatically optimize audio for VOIP"
+                                "checkboxText": "Automatisk optimalisering av lyd for VoIP",
+                                "tooltip": "Denne funksjonen brukes når du er på VoIP-samtaler (ved bruk av Skype, Microsoft Teams, WeChat og så videre). Når denne funksjonen er aktivert, endres Dolby-lyd automatisk til talemodus for å gi bedre talekvalitet."
                             },
                             "entertainmentMode": {
-                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "checkboxText": "Automatically optimize audio for entertainment"
+                                "checkboxText": "Automatisk optimalisering av lyd for underholdning",
+                                "tooltip": "Når dette alternativet er valgt, vil Dolby-lyd automatisk justere modusen i henhold til appen du bruker:<br>• Hvis du bruker apper som iTunes, endres den til musikkmodus.<br>• Hvis du bruker apper som YouTube, endres den til filmmodus.<br>• Hvis du bruker spillapper, endres den til spillmodus."
                             }
                         }
                     },
                     "eCourse": {
-                        "title": "Interactive E-course mode",
-                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
+                        "title": "Interaktiv E-kurs-modus",
+                        "tooltip": "Denne funksjonen er nyttig for nettbaserte kurs når det er talekommunikasjon mellom lærere og studenter. Når alternativet er aktivert, endres Dolby-lyd automatisk til talemodus. I mellom tiden aktiveres funksjoner som beamforming, annullering av akustisk ekko og demping av tastaturstøy for å forbedre taleinndataene."
                     }
                 },
                 "microphone": {

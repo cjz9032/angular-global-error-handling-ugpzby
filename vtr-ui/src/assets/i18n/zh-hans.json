@@ -1475,35 +1475,35 @@
                 }
             },
             "audio": {
-                "title": "音频",
-                "subtitle": "音频设置",
-                "description": "在此部分中可自动优化或手动对音频设置进行全面配置，例如 Dolby 设置、麦克风等。",
-                "audioSmartsettings": {
+				"title": "音频",
+				"subtitle": "音频设置",
+				"description": "在此部分中可自动优化或手动对音频设置进行全面配置，例如 Dolby 设置、麦克风等。",
+				"audioSmartsettings": {
                     "title": "音频智能设置",
                     "dolby": {
                         "title": "Dolby 音频",
-                        "description": "从以下位置选择所需的模式。您还可以选择选项\"自动优化音频：\"。启用此功能后，Dolby 音频会根据您处于的不同模式自动为您选择最佳音频效果。",
+                        "description": "从下面选择所需的模式。您还可以选中“针对以下项目自动优化音频：”复选框。选择后，Dolby 音频会根据您所处的模式自动为您选择最佳的音频效果。",
                         "options": {
                             "dynamic": "动态",
-                            "movie": "电影",
-                            "music": "音乐",
-                            "games": "游戏",
-                            "voip": "语音"
+							"movie": "影片",
+							"music": "音乐",
+							"games": "游戏",
+							"voip": "语音"
                         },
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "checkboxText": "自动优化 VOIP 音频",
-                                "tooltip": "当您拨打 VoIP 通话时（使用 Skype、Teams、微信等），此功能将生效。 启用后，Dolby 音频会自动更改为语音模式，从而获得更好的语音质量。"
+                                "checkboxText": "针对 VoIP 自动优化音频",
+                                "tooltip": "在使用 VoIP 通话（使用 Skype、Microsoft Teams、微信等）时，此功能生效。启用后，Dolby 音频会自动更改为“语音”模式，以提高语音质量。"
                             },
                             "entertainmentMode": {
-                                "checkboxText": "自动优化用于娱乐的音频",
-                                "tooltip": "选择此选项后，Dolby 音频会根据您使用的应用自动调整模式："
+                                "checkboxText": "针对娱乐自动优化音频",
+                                "tooltip": "选择此选项后，Dolby 音频会根据您使用的应用程序自动调整模式：<br>•如果您使用的是 iTunes 之类的应用程序，它将更改为“音乐”模式。<br>•如果您使用的是 YouTube 之类的应用程序，它将更改为“影片”模式。<br>•如果您正在使用游戏应用程序，它将相应地更改为“游戏”模式。"
                             }
                         }
                     },
                     "eCourse": {
-                        "title": "网课模式",
-                        "tooltip": "当教师和学生之间存在语音交互时，此功能可用于在线课程。启用后，选择此选项后，Dolby 音频将自动更改为 \"语音\"模式。同时，将打开波束成形、声回波消除和键盘噪声抑制等功能，以提高语音输入。"
+                        "title": "“互动式电子课程”模式",
+                        "tooltip": "当教师和学生之间进行语音互动时，此功能对于在线课程非常有用。启用后，Dolby 音频会自动更改为“语音”模式。同时，将启用诸如波束形成、声学回音消除和键盘噪声抑制等功能，以改善语音输入。"
                     }
                 },
                 "microphone": {

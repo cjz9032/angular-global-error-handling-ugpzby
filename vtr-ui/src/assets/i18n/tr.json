@@ -1475,35 +1475,35 @@
                 }
             },
             "audio": {
-                "title": "Ses",
-                "subtitle": "Ses Ayarları",
-                "description": "Bu bölüm, ses ayarlarınızı otomatik olarak en iyi duruma getirmenizi veya Dolby ayarları, mikrofon gibi ayarları tamamıyla manuel olarak ayarlamanızı sağlar.",
-                "audioSmartsettings": {
-                    "title": "Audio smart settings",
+				"title": "Ses",
+				"subtitle": "Ses Ayarları",
+				"description": "Bu bölüm, ses ayarlarınızı otomatik olarak en iyi duruma getirmenizi veya Dolby ayarları, mikrofon gibi ayarları tamamıyla manuel olarak yapılandırmanızı sağlar.",
+				"audioSmartsettings": {
+                    "title": "Ses akıllı ayarları",
                     "dolby": {
-                        "title": "Dolby audio",
-                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
+                        "title": "Dolby ses",
+                        "description": "Aşağıdakiler arasından istediğiniz bir kipi seçin. \"Sesi şunun için otomatik olarak iyileştir...\" onay kutusunu da işaretleyebilirsiniz. Bu seçenek belirlendiğinde, Dolby ses bulunduğunuz kiplere göre sizin için en iyi ses efektini otomatik olarak seçer.",
                         "options": {
-                            "dynamic": "DYNAMIC",
-                            "movie": "MOVIE",
-                            "music": "MUSIC",
-                            "games": "GAME",
-                            "voip": "VOICE"
+                            "dynamic": "Dinamik",
+							"movie": "Film",
+							"music": "Müzik",
+							"games": "Oyun",
+							"voip": "Ses"
                         },
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
-                                "checkboxText": "Automatically optimize audio for VOIP"
+                                "checkboxText": "VoIP için otomatik olarak en iyi duruma getir",
+                                "tooltip": "Bu işlev, (Skype, Microsoft Teams, WeChat ve benzeri kullanılarak yapılan) VoIP aramalarında etkili olur. Etkinleştirildiğinde, daha iyi ses kalitesi için Dolby sesi otomatik olarak Ses kipine geçer."
                             },
                             "entertainmentMode": {
-                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "checkboxText": "Automatically optimize audio for entertainment"
+                                "checkboxText": "Eğlence için otomatik olarak en iyi duruma getir",
+                                "tooltip": "Bu seçenek belirlendiğinde Dolby ses, kipi kullandığınız uygulamaya göre otomatik olarak ayarlar:<br>• iTunes gibi uygulamalar kullanıyorsanız Müzik kipine geçer.<br>• YouTube gibi uygulamalar kullanıyorsanız Film kipine geçer.<br>• Oyun uygulamaları kullanıyorsanız buna göre Oyun kipine geçer."
                             }
                         }
                     },
                     "eCourse": {
-                        "title": "Interactive E-course mode",
-                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
+                        "title": "Etkileşimli E-kurs kipi",
+                        "tooltip": "Bu işlev, öğretmenler ve öğrenciler arasında sesli etkileşimlerin olduğu çevrimiçi kurslar için yararlıdır. Etkinleştirildiğinde, Dolby ses otomatik olarak Ses kipine geçer. Bu sırada, ses girişini iyileştirmek için ses biçimlendirme, akustik yankı iptali ve klavye gürültüsünü engelleme gibi özellikler etkin hale gelir."
                     }
                 },
                 "microphone": {
