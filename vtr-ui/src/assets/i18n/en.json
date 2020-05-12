@@ -2388,7 +2388,7 @@
 			"description": "Malware can lead to a computer crash, data compromise and performance degradation. Get Malware removal and much, much more done.",
 			"tabSet1": {
 				"tab1": "Malware scan",
-				"tab2": "Zero-day infections",				
+				"tab2": "Zero-day infections",
 				"tab3": "Errant programs",
 				"tab4": "Annoying adware",
 				"tab5": "Security settings"
@@ -2459,7 +2459,8 @@
 			"thu": "Thursday",
 			"fri": "Friday",
 			"sat": "Saturday",
-			"sun": "Sunday"
+			"sun": "Sunday",
+			"scanToolTip": "Enable this toggle can setup a automatic event to trigger system Performance scan on your selected time and date."
 		},
 		"scanningPage": {
 			"title": "Performance & security check",
