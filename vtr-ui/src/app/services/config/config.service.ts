@@ -161,20 +161,7 @@ export class ConfigService {
 			}
 
 			this.menu = await this.updateHide(resultMenu, this.activeSegment, this.isBetaUser);
-
-			this.betaService.betaFeatureAvailable = (function findBetaAvailability(menus: any[], result: boolean) {
-				menus.forEach(m => {
-					if (m.beta) {
-						if (!('availability' in m) || m.availability === true) {
-							result = true;
-						}
-					}
-					if (m.subitems) {
-						result = findBetaAvailability(m.subitems, result);
-					}
-				});
-				return result;
-			})(this.menu, false);
+			this.betaService.betaFeatureAvailable = this.findBetaAvailability(this.menu, false);
 
 			this.initializeSmartAssist();
 			this.notifyMenuChange(this.menu);
@@ -502,11 +489,13 @@ export class ConfigService {
 			}
 			this.initializeSecurityItem(this.country,this.menu);
 			this.updateHide(this.menu, segment, this.isBetaUser);
+			this.betaService.betaFeatureAvailable = this.findBetaAvailability(this.menu, false);
 			return this.menu;
 		}
 	}
 
 	filterByBeta(menu: Array<any>, isBeta: boolean): Promise<Array<any>> {
+		this.isBetaUser = isBeta;
 		this.showSmartPerformance(menu, isBeta);
 		return this.canShowSearch().then((result) => {
 			this.initializeAppSearchItem(menu, result);
@@ -515,19 +504,36 @@ export class ConfigService {
 			return menu;
 		});
 	}
+
+	private findBetaAvailability(menus: any[], result: boolean = false): boolean {
+		menus.forEach(m => {
+			if (m.beta) {
+				if (!('availability' in m) || m.availability === true) {
+					result = true;
+				}
+			}
+			if (m.subitems) {
+				result = this.findBetaAvailability(m.subitems, result);
+			}
+		});
+		return result;
+	}
+
 	showSmartPerformance(menu, isBeta) {
 		menu.forEach(i => {
 			if (i.subitems) {
 				if (i.subitems.length && i.subitems.length > 0) {
 					i.subitems.forEach(el => {
 						if (el.id === 'smart-performance') {
-							el.hide = !isBeta;
+							el.availability = this.activeSegment === SegmentConst.Consumer;
+							el.hide = !isBeta || !el.availability;
 						}
 					})
 				}
 			}
 		})
 	}
+
 	showSystemUpdates(): void {
 		if (!Array.isArray(this.menu)) { return; }
 
