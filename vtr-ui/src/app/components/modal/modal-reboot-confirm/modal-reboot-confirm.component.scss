@@ -10,6 +10,11 @@
 			padding: 0.6rem 1.2rem;
 			width: 4rem;
 			height: 4rem;
+			.close {
+				&:focus {
+					@include outline-blue;
+				}
+			}
 			}
 	}
 
@@ -21,7 +26,7 @@
 	h1 {
 		font-size: $fontsize_xl;
 		font-weight: normal;
-		color: $darkText;		
+		color: $darkText;
 		padding-right: 2.5rem;
 	}
 
@@ -40,6 +45,14 @@
 		margin-top: 1rem;
 		margin-right: 3rem;
 		font-weight: $weight_bold;
+		position: relative;
+		&:focus {
+			outline: 0;
+			box-shadow: none;
+			&::after {
+				@include button-outline-blue;
+			}
+		}
 	}
 	.cancel-link {
 		height: 2.5rem;
@@ -53,8 +66,8 @@
 		cursor: pointer;
 		&:hover {
 			color: $blueHover;
-			border-bottom: 2px solid $blueHover;			
+			border-bottom: 2px solid $blueHover;
 			cursor: pointer;
-		  }		
+		  }
 	}
 }

@@ -11,6 +11,7 @@ import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { map, mergeMap } from 'rxjs/operators';
 import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
 import { WarrantyService } from 'src/app/services/warranty/warranty.service';
+import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-locale-date.pipe';
 @Component({
 	selector: 'vtr-widget-device',
 	templateUrl: './widget-device.component.html',
@@ -27,6 +28,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 	constructor(
 		public deviceService: DeviceService,
 		private commonService: CommonService,
+		private formatLocaleDate: FormatLocaleDatePipe,
 		private systemUpdateService: SystemUpdateService,
 		private translate: TranslateService,
 		private dashboardService: DashboardService,
@@ -229,7 +231,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 				} else {
 					warranty = this.deviceStatus[3];
 				}
-				const warrantyDate = this.commonService.formatUTCDate(data.endDate);
+				const warrantyDate = this.formatLocaleDate.transform(data.endDate);
 				// in warranty
 				if (data.status === 0) {
 					const today = new Date();

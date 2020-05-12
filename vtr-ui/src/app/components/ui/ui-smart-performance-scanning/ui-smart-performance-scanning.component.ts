@@ -318,12 +318,16 @@ export class UiSmartPerformanceScanningComponent implements OnInit, OnChanges {
 		}
 	}
 
-	openCancelScanModel() {
-		this.modalService.open(ModalSmartPerformanceCancelComponent, {
+	async openCancelScanModel() {
+		const modalRef = this.modalService.open(ModalSmartPerformanceCancelComponent, {
 			backdrop: 'static',
 			centered: true,
 			windowClass: 'cancel-modal'
 		});
+		const response = await modalRef.result
+		if(response) {
+			this.smartPerformanceService.scanningStopped.next(true)
+		}
 	}
 
 	toggle(id: string): void {

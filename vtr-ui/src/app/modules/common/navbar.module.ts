@@ -18,7 +18,7 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons/faCheck';
 import { faWrench } from '@fortawesome/pro-light-svg-icons/faWrench';
 import { faLaptop } from '@fortawesome/pro-light-svg-icons/faLaptop';
 import { faColumns } from '@fortawesome/pro-light-svg-icons/faColumns';
-import { faHomeLgAlt } from '@fortawesome/pro-light-svg-icons/faHomeLgAlt';
+import { faHouseSignal } from '@fortawesome/pro-light-svg-icons/faHouseSignal';
 import { faUserShield } from '@fortawesome/pro-light-svg-icons/faUserShield';
 import { faLock } from '@fortawesome/pro-light-svg-icons/faLock';
 import { faTimes } from '@fortawesome/pro-light-svg-icons/faTimes';
@@ -65,7 +65,7 @@ export class NavbarModule {
 		library.addIcons(faWrench);
 		library.addIcons(faLaptop);
 		library.addIcons(faColumns);
-		library.addIcons(faHomeLgAlt);
+		library.addIcons(faHouseSignal);
 		library.addIcons(faUserShield);
 		library.addIcons(faLock);
 		library.addIcons(faSquare);

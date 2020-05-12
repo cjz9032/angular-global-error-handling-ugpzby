@@ -34,9 +34,11 @@ export class HeaderMainComponent implements OnInit, AfterViewInit {
 	ngOnInit() {
 		const self = this;
 		if (this.parentPath !== '' && this.parentPath !== undefined) {
-			this.menuItems.forEach((d, i) => {
-				d.path = self.parentPath + '/' + d.path;
-			});
+			if (this.menuItems) {
+				this.menuItems.forEach((d, i) => {
+					d.path = self.parentPath + '/' + d.path;
+				});
+			}
 		}
 	}
 

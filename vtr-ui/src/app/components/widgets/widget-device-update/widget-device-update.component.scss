@@ -141,7 +141,7 @@
 
 					.progress-bar {
 						border-radius: 0.8rem;
-						margin-top: -0.3rem;
+						margin-top: 0;
 
 						@media #{$high-contrast} {
 							background: $high-contrast-blue !important;

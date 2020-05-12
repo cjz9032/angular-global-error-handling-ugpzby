@@ -35,6 +35,7 @@ import sample from 'lodash/sample';
 import map from 'lodash/map';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { WelcomeTextContent } from 'src/app/data-models/welcomeText/welcome-text.model';
+import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-locale-date.pipe';
 
 interface IConfigItem {
 	cardId: string;
@@ -146,6 +147,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy {
 		public qaService: QaService,
 		private config: NgbModalConfig,
 		public commonService: CommonService,
+		private formatLocaleDate: FormatLocaleDatePipe,
 		public deviceService: DeviceService,
 		private cmsService: CMSService,
 		private upeService: UPEService,
@@ -711,7 +713,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy {
 			cache: true
 		};
 		const warranty = this.systemStatus[2];
-		const warrantyDate = this.commonService.formatUTCDate(value.endDate);
+		const warrantyDate = this.formatLocaleDate.transform(value.endDate);
 		// in warranty
 		if (value.status === 0) {
 			this.translate.stream('dashboard.systemStatus.warranty.detail.until').subscribe((re) => {

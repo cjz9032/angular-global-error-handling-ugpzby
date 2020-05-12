@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { InputAccessoriesService } from './input-accessories.service';
 import { HttpClient } from '@angular/common/http';
 
-describe('InputAccessoriesService', () => {
+xdescribe('InputAccessoriesService', () => {
  beforeEach(() => TestBed.configureTestingModule({
   providers: [
     { provide: HttpClient }

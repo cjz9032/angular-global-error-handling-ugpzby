@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UiBrightnessSliderComponent } from './ui-brightness-slider.component';
 
-xdescribe('UiBrightnessSliderComponent', () => {
+describe('UiBrightnessSliderComponent', () => {
 	let component: UiBrightnessSliderComponent;
 	let fixture: ComponentFixture<UiBrightnessSliderComponent>;
 
@@ -22,4 +22,17 @@ xdescribe('UiBrightnessSliderComponent', () => {
 	it('should create', () => {
 		expect(component).toBeTruthy();
 	});
+
+	it('should check dragEnd when event true', () => {
+		const event=true;
+		component.dragEnd(event);
+		expect(component).toBeTruthy();
+	});
+
+	it('should check dragEnd when event false', () => {
+		const event=false;
+		component.dragEnd(event);
+		expect(component).toBeTruthy();
+	});
+
 });

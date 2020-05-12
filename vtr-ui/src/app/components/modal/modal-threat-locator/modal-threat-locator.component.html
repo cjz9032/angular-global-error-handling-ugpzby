@@ -1,4 +1,4 @@
-<div class="modal-body vtr-modal-threat-locator" id="modal-threat-locator" [ngClass]="{'connection-error-modal': !online}">
+<div class="modal-body vtr-modal-threat-locator" id="modal-threat-locator" [ngClass]="{'connection-error-modal': !online}" #domModalDiv tabindex="-1" role=dialog>
 	<h1>Threat locator</h1>
 	<div class="iframe-container">
 		<div *ngIf="!online" class="disabled-network p-5">

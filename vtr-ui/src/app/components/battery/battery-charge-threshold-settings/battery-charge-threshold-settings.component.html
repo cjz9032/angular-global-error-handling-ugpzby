@@ -33,7 +33,7 @@
 									id="{{textId}}-start-dropdown"
 									(focus)="[closeAllOtherDD(startAtDropDown)]"
 									role="combobox"
-									tabindex="0"
+									[tabindex]="bctInfo.checkboxValue || isDisabled ?-1:0"
 									attr.aria-haspopup="true"
 									attr.aria-label="{{title}}-{{ddStartAtChargeDescription}}-{{bctInfo.startValue}}%-{{option}}-
 									{{startAtChargeOptions.indexOf(bctInfo.startValue)+1}}-{{off}}-{{startAtChargeOptions.length}}-{{selected}}"
@@ -96,7 +96,7 @@
 								<button [ngClass]="['btn','btn-outline-shadow']"
 									ngbDropdownToggle
 									#endToggle
-									tabindex="0"
+									[tabindex]="isDisabled ?-1:0"
 									id="{{textId}}-stop-dropdown"
 									(focus)="[closeAllOtherDD(stopAtDropDown)]"
 									role="combobox"

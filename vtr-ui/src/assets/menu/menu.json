@@ -373,6 +373,7 @@
 					"metricsParent": "navbar",
 					"metricsItem": "link.smartPerfomance",
 					"sMode": true,
+					"segment": "+[Consumer]",
 					"routerLinkActiveOptions": {
 						"exact": true
 					},
@@ -393,7 +394,7 @@
 			},
 			"icon": [
 				"fal",
-				"home-lg-alt"
+				"house-signal"
 			],
 			"forArm": false,
 			"subitems": [],
