@@ -447,7 +447,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 
 	public onUpdateToggleOnOff($event) {
 		if (this.systemUpdateService.isShellAvailable) {
-			const { name, checked } = $event.target;
+			const { name, switchValue: checked } = $event;
 			let { criticalAutoUpdates, recommendedAutoUpdates } = this.systemUpdateService.autoUpdateStatus;
 			if (name === 'critical-updates') {
 				criticalAutoUpdates = checked;
