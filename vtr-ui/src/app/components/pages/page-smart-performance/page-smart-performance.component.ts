@@ -33,7 +33,8 @@ export class PageSmartPerformanceComponent implements OnInit, CanComponentDeacti
   async openModal(): Promise<boolean> {
     const modalRef = this.modalService.open(ModalSmartPerformanceCancelComponent, {
       backdrop: 'static',
-      centered: true
+      centered: true,
+      windowClass: 'cancel-modal'
     });
     modalRef.componentInstance.promptMsg = this.showPromptMsg
     const response = await modalRef.result

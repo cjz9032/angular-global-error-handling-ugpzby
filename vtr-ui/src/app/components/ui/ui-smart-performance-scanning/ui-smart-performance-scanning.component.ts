@@ -281,6 +281,10 @@ export class UiSmartPerformanceScanningComponent implements OnInit, OnChanges {
 				this.sampleDesc
 			);
 		}
+
+		if(this.percent === 100) {
+			this.smartPerformanceService.scanningStopped.next(true)
+		}
 	}
 
 	public async getSmartPerformanceStartScanInformation() {
