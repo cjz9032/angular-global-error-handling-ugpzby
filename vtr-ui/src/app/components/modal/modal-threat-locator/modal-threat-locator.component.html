@@ -1,4 +1,4 @@
-<div class="modal-body vtr-modal-threat-locator" id="modal-threat-locator" [ngClass]="{'connection-error-modal': !online}">
+<div class="modal-body vtr-modal-threat-locator" id="modal-threat-locator" [ngClass]="{'connection-error-modal': !online}" #domIframe tabindex="-1" role=dialog>
 	<h1>Threat locator</h1>
 	<div class="iframe-container">
 		<div *ngIf="!online" class="disabled-network p-5">
@@ -9,8 +9,7 @@
 			attr.sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
 			class="w-100 h-100 border"
 			scrolling="no"
-			frameborder="0" 
-			#domIframe></iframe>
+			frameborder="0"></iframe>
 	</div>
 	<div class="btn-modal-close">
 	<vtr-ui-close-button linkId="sa-ws-btn-closelocator"
