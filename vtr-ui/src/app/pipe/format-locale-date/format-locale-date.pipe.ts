@@ -1,9 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-	name: 'formatUTCDate'
+	name: 'formatLocaleDate'
 })
-export class FormatUTCDatePipe implements PipeTransform {
+export class FormatLocaleDatePipe implements PipeTransform {
 
 	transform(value: any, ...args: any[]): any {
 		const date = new Date(value);
