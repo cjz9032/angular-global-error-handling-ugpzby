@@ -3,13 +3,16 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col col-12">
+				<!-- title -->
 				<div class="heading pb-20"
 					id="dashboard-quick-settings-title"
 					role="heading"
 					attr.aria-label="dashboard-quick-settings-title">{{'dashboard.quickSettings.title' | translate}}
 				</div>
+
+				<!-- microphone -->
 				<div [ngClass]="cameraStatus.available ? 'widget-icon-3': 'widget-icon-2'">
-					<div>
+					<div *ngIf="microphoneStatus.available">
 						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-FA-Microphone2x'"
 							[offIconDefinition]="'icomoon icomoon-FA-Microphone---slash2x'"
 							[value]="microphoneStatus.status && microphoneStatus.permission && !microPhoneGreyOut"
@@ -25,6 +28,8 @@
 							[buttonRole]="'button'">
 						</vtr-widget-switch-icon>
 					</div>
+
+					<!-- camera privacy -->
 					<div *ngIf="cameraStatus.available">
 						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-Camera'"
 							[offIconDefinition]="'icomoon icomoon-Camera-slash'"
@@ -42,6 +47,8 @@
 							[buttonRole]="'button'">
 						</vtr-widget-switch-icon>
 					</div>
+
+					<!-- system update -->
 					<div *ngIf="!deviceService.isSMode">
 						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-quick-setting-system-update'"
 							[offIconDefinition]="'icomoon icomoon-quick-setting-system-update'"
@@ -122,8 +129,11 @@
 				</div>
 			</div>
 		</div>
+
 		<div *ngIf="!microphoneStatus.isLoading || !cameraStatus.isLoading">
-			<div *ngIf="(!microphoneStatus.permission && cameraStatus.permission) || (!microphoneStatus.permission && !isCameraPrivacyCacheExist && !microPhoneGreyOut && cameraPrivacyGreyOut)"
+			<!-- <div *ngIf="(!microphoneStatus.permission && cameraStatus.permission) || (!microphoneStatus.permission && !isCameraPrivacyCacheExist && !microPhoneGreyOut && cameraPrivacyGreyOut)" -->
+			<!-- microphone permission -->
+			<div *ngIf="microphoneStatus.available && (!microphoneStatus.permission) && (!(!cameraStatus.permission && cameraStatus.available))"
 				class="row permission-note mt-4">
 				<div class="col-12 p-3 d-flex">
 					<div class="col-1 pl-0 text-center">
@@ -147,7 +157,11 @@
 					</div>
 				</div>
 			</div>
-			<div *ngIf="!cameraStatus.permission && !cameraStatus.isLoading && cameraStatus.available && microphoneStatus.permission && cameraNoAccessNoteShow"
+
+			
+			<!-- <div *ngIf="!cameraStatus.permission && !cameraStatus.isLoading && cameraStatus.available && microphoneStatus.permission && cameraNoAccessNoteShow" -->
+			<!-- camera permission -->
+			<div *ngIf="!cameraStatus.permission && (!cameraStatus.isLoading) && (!(!microphoneStatus.permission && microphoneStatus.available)) && cameraNoAccessNoteShow"
 				class="row permission-note mt-4">
 				<div class="col-12 p-3 d-flex">
 					<div class="col-1 pl-0 text-center">
@@ -171,7 +185,10 @@
 					</div>
 				</div>
 			</div>
-			<div *ngIf="!microphoneStatus.permission && !cameraStatus.permission && !cameraStatus.isLoading && cameraNoAccessNoteShow"
+
+			<!-- <div *ngIf="!microphoneStatus.permission && !cameraStatus.permission && !cameraStatus.isLoading && cameraNoAccessNoteShow" -->
+			<!-- microphone & camera permission -->
+			<div *ngIf="microphoneStatus.available && (!microphoneStatus.permission) && !cameraStatus.permission && !cameraStatus.isLoading && cameraNoAccessNoteShow"
 				class="row permission-note mt-4">
 				<div class="col-12 p-3 d-flex">
 					<div class="col-1 pl-0 text-center">
@@ -214,6 +231,8 @@
 				</div>
 			</div>
 		</div>
+
+		<!-- my device settings link -->
 		<div class="text-right text-uppercase mt-4">
 			<a class="link-text"
 				vtrMetrics

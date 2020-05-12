@@ -5,21 +5,21 @@
 					'blue-theme': theme==='blue'}">
 		<vtr-spinner></vtr-spinner>
 	</div>
-	<label id="{{onOffSwitchId+'_toggleMain'}}" 
+	<label id="{{onOffSwitchId+'_toggleMain'}}"
 		class="pb-1 pl-1 checkbox"
 		[ngClass]="{'switch-disable': isSwitchDisable, 'white-theme': theme==='white', 'blue-theme': theme==='blue'}"
-		#toggleMain 
-		(click)="toggleMain.focus()" 
-		[hidden]="showLoader" 
+		#toggleMain
+		(click)="toggleMain.focus()"
+		[hidden]="showLoader"
 		[tabindex]="disabled?-1:tabIndex"
-		[attr.disabled]="disabled" 
-		[attr.aria-checked]="value" 
-		[attr.aria-disabled]="disabled" 
+		[attr.disabled]="disabled"
+		[attr.aria-checked]="value"
+		[attr.aria-disabled]="disabled"
 		[attr.aria-label]="ariaLabel"
-		role="switch" 
+		role="switch"
 		(keydown.enter)="onChange(toggle)"
 		(keyup.enter)="sendChangeEvent(toggle)">
-		<input type="checkbox" 
+		<input type="checkbox"
 			vtrMetrics
 			metricsEvent="featureClick"
 			[metricsItem]="onOffSwitchId"
@@ -37,10 +37,10 @@
 			[attr.aria-checked]="value"
 			[attr.aria-disabled]="disabled"
 			[attr.aria-readonly]="readonly"
-			(change)="onChange($event)"
-			(keydown.enter)="onChange($event)"
+			(change)="onChange(toggle)"
+			(keydown.enter)="onChange(toggle)"
 			(click)="sendChangeEvent(toggle)" />
-		<span class="switch {{ size }}" 
+		<span class="switch {{ size }}"
 			id="{{onOffSwitchId}}{{value?'_on_sizeStopProp':'_off_sizeStopProp'}}"
 			(click)="stopPropagation($event);"
 			(keydown.enter)="stopPropagation($event);">
