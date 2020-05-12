@@ -72,14 +72,14 @@ export class AntiTheftComponent implements OnInit {
 		this.getCameraAuthorizedAccessState();
 		this.populateAlarmTimeList();
 		this.populatePhotoNumberList();
-		this.startMonitorCameraAuthorized(this.cameraAuthorizedChange.bind(this));
-		this.startMonitorForCameraPrivacy();
 	}
 
 	ngOnDestroy() {
-		this.stopMonitorCameraAuthorized();
-		this.stopMonitorForCameraPrivacy();
-		this.stopMonitorAntiTheftStatus();
+		if (this.antiTheft.available) {
+			this.stopMonitorCameraAuthorized();
+			this.stopMonitorForCameraPrivacy();
+			this.stopMonitorAntiTheftStatus();
+		}
 	}
 
 	private populateAlarmTimeList() {
@@ -198,6 +198,8 @@ export class AntiTheftComponent implements OnInit {
 							this.removeSensingHeaderMenu.emit();
 						} else {
 							this.startMonitorAntiTheftStatus();
+							this.startMonitorCameraAuthorized(this.cameraAuthorizedChange.bind(this));
+		                    this.startMonitorForCameraPrivacy();
 						}
 						this.commonService.setLocalStorageValue(LocalStorageKey.AntiTheftCache, this.antiTheft);
 						this.isLoading = false;
