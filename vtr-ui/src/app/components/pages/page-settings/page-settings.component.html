@@ -164,7 +164,9 @@
 								</div>
 								<div class="col">
 									<div class="row mb-3">
-										<div class="user-profile-title">
+										<div class="user-profile-title"
+										role="heading"
+										id="settings-segment-choose-title">
 											{{ "welcometutorial.subtitle1" | translate }}
 										</div>
 									</div>
@@ -198,7 +200,9 @@
 								</div>
 								<div class="col">
 									<div class="row mb-3">
-										<div class="user-profile-title">
+										<div class="user-profile-title"
+										role="heading"
+										id="settings-interests-choose-title">
 											{{ "welcometutorial.subtitle2" | translate}}
 										</div>
 									</div>
@@ -219,6 +223,7 @@
 							<hr>
 							<div class="row save-button">
 								<vtr-ui-button id="settings-profile-save-button"
+									linkId="settings-profile-save-button"
 									metricsEvent="featureClick"
 									[metricsItem]="'SAVE'"
 									[label]="'hardwareScan.save' | translate"
