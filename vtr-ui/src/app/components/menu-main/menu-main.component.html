@@ -5,7 +5,8 @@
 			<img class="menu-main-logo"
 				*ngIf="dashboardService.isDashboardDisplayed"
 				[src]="VantageLogo | sanitize : 'resourceUrl'"
-				alt="L" />
+				alt="L"
+				id="menu-main-lnk-db-l-logo"/>
 			<a vtrMetrics
 				*ngIf="!dashboardService.isDashboardDisplayed && items && items.length>0"
 				class="menu-main-logo"
