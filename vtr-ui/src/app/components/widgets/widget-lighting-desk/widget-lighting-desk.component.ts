@@ -373,6 +373,12 @@ export class WidgetLightingDeskComponent implements OnInit,OnChanges {
           let currentNameImg;
           let currentEffectName:any;
           this.lightingProfileCurrentDetail = lightingProfileByIdRes.lightInfo[count];
+          if(this.lightingProfileCurrentDetail.lightSpeed === null){
+            this.lightingProfileCurrentDetail.lightSpeed = 2;
+          }
+          if(this.lightingProfileCurrentDetail.lightBrightness === null){
+            this.lightingProfileCurrentDetail.lightBrightness = 3;
+          }
           currentNameImg = this.getCurrentName(this.lightingPanelImage,this.lightingProfileCurrentDetail.lightPanelType);
           if(currentNameImg.length > 0){
             this.lightingProfileCurrentDetail.panelName = currentNameImg[0].panelName;
