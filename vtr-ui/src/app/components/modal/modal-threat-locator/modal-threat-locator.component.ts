@@ -1,7 +1,9 @@
 import {
 	Component,
 	OnInit,
-	HostListener
+	HostListener,
+	ViewChild,
+	ElementRef
 } from '@angular/core';
 import {
 	NgbActiveModal
@@ -19,6 +21,8 @@ export class ModalThreatLocatorComponent implements OnInit {
 	threatLocatorUrl: string;
 	online: boolean;
 	private metrics: any;
+
+	@ViewChild('domIframe') domIframe: ElementRef;
 
 	constructor(
 		public activeModal: NgbActiveModal,
@@ -90,6 +94,9 @@ export class ModalThreatLocatorComponent implements OnInit {
 		this.buildThreatLocatorUrl(
 			this.getThreatLocatorLanguageId(navigator.language)
 		);
+		setTimeout(() => {
+			this.domIframe.nativeElement.focus();
+		}, 0);
 	}
 
 	closeModal() {
