@@ -43,7 +43,7 @@ export class SystemEventService {
 		return true;
 	}
 
-	cancelListen() {
+	cancelListen(): void {
 		try {
 			this.sysEvent.cancelListen();
 		}
