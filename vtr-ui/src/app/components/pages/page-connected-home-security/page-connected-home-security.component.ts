@@ -103,7 +103,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		const allDevicesItem = adInfo.allDevicesItem;
 		const allDevicesItemNew = adInfoNew.allDevicesItem;
 		let equal = true;
-		if(allDevicesItem.length !== allDevicesItemNew.length) equal = false;
+		if(allDevicesItem.length !== allDevicesItemNew.length) return false;
 		allDevicesItemNew.forEach((deviceItem: any, index: any) => {
 			if(allDevicesItem[index]) {
 				if((deviceItem.type != allDevicesItem[index].type) || (deviceItem.count != allDevicesItem[index].count)) {
