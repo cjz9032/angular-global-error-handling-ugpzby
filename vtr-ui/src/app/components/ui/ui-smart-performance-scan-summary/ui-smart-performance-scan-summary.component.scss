@@ -1388,3 +1388,14 @@ vtr-ui-smart-performance-scan-summary {
 		width: 102%;
 	}
 }
+.spinner-border {
+	height: 35px;
+	width: 35px;
+}
+.loader {
+	position: absolute;
+	z-index: 999;
+	top: 75%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
