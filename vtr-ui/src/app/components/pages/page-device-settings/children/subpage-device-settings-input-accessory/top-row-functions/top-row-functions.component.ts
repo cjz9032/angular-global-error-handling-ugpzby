@@ -14,8 +14,7 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 })
 export class TopRowFunctionsComponent implements OnInit, OnDestroy {
 
-	@ViewChild('adv') showAdvEl: ElementRef
-
+	@ViewChild('adv') adv: ElementRef
 	public topRowKeyObj: TopRowFunctionsCapability;
 	public showAdvancedSection = false;
 	public topRowFunInterval: any;
@@ -37,6 +36,12 @@ export class TopRowFunctionsComponent implements OnInit, OnDestroy {
 		}
 
 		this.getFunctionCapabilities();
+	}
+
+	ngAfterViewInit () {
+		if (!this.showAdvancedSection) {
+		this.adv.nativeElement.focus();
+		}
 	}
 
 	ngOnDestroy() {
@@ -133,10 +138,6 @@ export class TopRowFunctionsComponent implements OnInit, OnDestroy {
 		});
 	}
 
-	switchFocusToShowAdv() {
-		setTimeout(() => {
-			this.showAdvEl.nativeElement.focus()
-		}, 0)
-	}
+	
 
 }
