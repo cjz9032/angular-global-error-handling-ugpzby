@@ -1475,20 +1475,20 @@
                 }
             },
             "audio": {
-				"title": "Audio",
-				"subtitle": "Paramètres audio",
-				"description": "Cette section vous permet d'optimiser automatiquement ou de configurer tous vos paramètres audio manuellement, tels que les paramètres Dolby, le micro, etc.",
-				"audioSmartsettings": {
+                "title": "Audio",
+                "subtitle": "Paramètres audio",
+                "description": "Cette section vous permet d'optimiser automatiquement ou de configurer tous vos paramètres audio manuellement, tels que les paramètres Dolby, le micro, etc.",
+                "audioSmartsettings": {
                     "title": "Paramètres audio intelligents",
                     "dolby": {
                         "title": "Son Dolby",
                         "description": "Sélectionnez le mode de votre choix, parmi les options ci-dessous. Vous pouvez également cocher la case \"Optimiser automatiquement le son pour ...\". Lorsque cette case est sélectionnée, le son Dolby sélectionne automatiquement le meilleur effet audio selon le mode en cours d'utilisation.",
                         "options": {
                             "dynamic": "Dynamique",
-							"movie": "Films",
-							"music": "Musique",
-							"games": "Jeux",
-							"voip": "Voix"
+                            "movie": "Films",
+                            "music": "Musique",
+                            "games": "Jeux",
+                            "voip": "Voix"
                         },
                         "automaticAudioMode": {
                             "voIPMode": {
@@ -3248,7 +3248,11 @@
             "status": "Status",
             "activeStatus": "ACTIVE",
             "inactiveStatus": "INACTIVE",
-            "manageSubscription": "MANAGE SUBSCRIPTION"
+            "manageSubscription": "MANAGE SUBSCRIPTION",
+            "titlebeta": "Lenovo Beta Program",
+            "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
+            "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
+            "descriptionbeta1": "You are welcomed to join and try the full feature."
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3271,7 +3275,8 @@
             "thu": "Thursday",
             "fri": "Friday",
             "sat": "Saturday",
-            "sun": "Sunday"
+            "sun": "Sunday",
+            "scanToolTip": "Enable this toggle can setup a automatic event to trigger system Performance scan on your selected time and date."
         },
         "scanningPage": {
             "title": "Performance & security check",
@@ -3439,7 +3444,8 @@
                 "yearlyPricing": "$19.99 / Yr",
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
-                "signupButton": "SIGN UP"
+                "signupButton": "SIGN UP",
+                "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
             },
             "tune": "{{tune}} ISSUES",
             "boost": "{{boost}} ISSUES",

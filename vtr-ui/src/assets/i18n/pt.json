@@ -1475,20 +1475,20 @@
                 }
             },
             "audio": {
-				"title": "Áudio",
-				"subtitle": "Definições de Áudio",
-				"description": "Esta secção permite-lhe otimizar automaticamente ou configurar totalmente as suas definições de áudio manualmente, como definições de Dolby, microfone, etc.",
-				"audioSmartsettings": {
+                "title": "Áudio",
+                "subtitle": "Definições de Áudio",
+                "description": "Esta secção permite-lhe otimizar automaticamente ou configurar totalmente as suas definições de áudio manualmente, como definições de Dolby, microfone, etc.",
+                "audioSmartsettings": {
                     "title": "Definições de Áudio smart",
                     "dolby": {
                         "title": "Áudio Dolby",
                         "description": "Selecione o modo que pretende de entre as seguintes opções. Também pode marcar a caixa de verificação \"Otimizar automaticamente o áudio para...\". Quando selecionada, o áudio Dolby escolhe automaticamente o melhor efeito de áudio para si, de acordo com os modos em que se encontra.",
                         "options": {
                             "dynamic": "Dinâmico",
-							"movie": "Filme",
-							"music": "Música",
-							"games": "Jogo",
-							"voip": "Voz"
+                            "movie": "Filme",
+                            "music": "Música",
+                            "games": "Jogo",
+                            "voip": "Voz"
                         },
                         "automaticAudioMode": {
                             "voIPMode": {
@@ -3248,7 +3248,11 @@
             "status": "Status",
             "activeStatus": "ACTIVE",
             "inactiveStatus": "INACTIVE",
-            "manageSubscription": "MANAGE SUBSCRIPTION"
+            "manageSubscription": "MANAGE SUBSCRIPTION",
+            "titlebeta": "Lenovo Beta Program",
+            "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
+            "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
+            "descriptionbeta1": "You are welcomed to join and try the full feature."
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3271,7 +3275,8 @@
             "thu": "Thursday",
             "fri": "Friday",
             "sat": "Saturday",
-            "sun": "Sunday"
+            "sun": "Sunday",
+            "scanToolTip": "Enable this toggle can setup a automatic event to trigger system Performance scan on your selected time and date."
         },
         "scanningPage": {
             "title": "Performance & security check",
@@ -3439,7 +3444,8 @@
                 "yearlyPricing": "$19.99 / Yr",
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
-                "signupButton": "SIGN UP"
+                "signupButton": "SIGN UP",
+                "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
             },
             "tune": "{{tune}} ISSUES",
             "boost": "{{boost}} ISSUES",

@@ -1475,20 +1475,20 @@
                 }
             },
             "audio": {
-				"title": "音效",
-				"subtitle": "音訊設定",
-				"description": "您可以透過這個區段來自動最佳化或完全手動配置音訊設定，例如 Dolby 設定、麥克風等。",
-				"audioSmartsettings": {
+                "title": "音效",
+                "subtitle": "音訊設定",
+                "description": "您可以透過這個區段來自動最佳化或完全手動配置音訊設定，例如 Dolby 設定、麥克風等。",
+                "audioSmartsettings": {
                     "title": "智慧型音訊設定",
                     "dolby": {
                         "title": "Dolby 音效",
                         "description": "視您的需要從下面選取模式。您也可以勾選「自動針對以下項目最佳化音訊」勾選框。選取後，Dolby 音訊會根據您所在的模式自動挑選最佳的音訊效果。",
                         "options": {
                             "dynamic": "動態",
-							"movie": "電影",
-							"music": "音樂",
-							"games": "遊戲",
-							"voip": "語音"
+                            "movie": "電影",
+                            "music": "音樂",
+                            "games": "遊戲",
+                            "voip": "語音"
                         },
                         "automaticAudioMode": {
                             "voIPMode": {
@@ -3248,7 +3248,11 @@
             "status": "Status",
             "activeStatus": "ACTIVE",
             "inactiveStatus": "INACTIVE",
-            "manageSubscription": "MANAGE SUBSCRIPTION"
+            "manageSubscription": "MANAGE SUBSCRIPTION",
+            "titlebeta": "Lenovo Beta Program",
+            "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
+            "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
+            "descriptionbeta1": "You are welcomed to join and try the full feature."
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3271,7 +3275,8 @@
             "thu": "Thursday",
             "fri": "Friday",
             "sat": "Saturday",
-            "sun": "Sunday"
+            "sun": "Sunday",
+            "scanToolTip": "Enable this toggle can setup a automatic event to trigger system Performance scan on your selected time and date."
         },
         "scanningPage": {
             "title": "Performance & security check",
@@ -3439,7 +3444,8 @@
                 "yearlyPricing": "$19.99 / Yr",
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
-                "signupButton": "SIGN UP"
+                "signupButton": "SIGN UP",
+                "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
             },
             "tune": "{{tune}} ISSUES",
             "boost": "{{boost}} ISSUES",
