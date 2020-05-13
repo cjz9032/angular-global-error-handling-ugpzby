@@ -23,8 +23,11 @@
 						[allowCollapse]="true"
 						[theme]="'white'"
 						[collapseLinkId]="'audio-smart-settings'">
-						<ul class="list-group list-group-flush" role="list" id="audio-dolby-ul">
-							<li role="listitem" id="audio-dolby-li">
+						<ul class="list-group list-group-flush"
+							role="list"
+							id="audio-dolby-ul">
+							<li role="listitem"
+								id="audio-dolby-li">
 								<vtr-ui-row-switch componentName="Automatic Dolby Audio Settings"
 									[title]="'device.deviceSettings.audio.audioSmartsettings.dolby.title' | translate"
 									componentName="Automatic Dolby Audio Settings"
@@ -59,9 +62,11 @@
 											[textId]="'myDevice-settings-audio-automatic-dolby'">
 										</vtr-ui-circle-radio-with-checkbox>
 									</div>
-									<div class="audioDolbySub pl-5" id="audioDolbySub"
+									<div class="audioDolbySub pl-5"
+										id="audioDolbySub"
 										*ngIf="dolbyModeResponse.isAudioProfileEnabled">
-										<div class="checkbox voipCheckbox" id="audio-dolby-voip"
+										<div class="checkbox voipCheckbox"
+											id="audio-dolby-voip"
 											*ngIf="voipStatus.available">
 											<vtr-ui-checkbox [componentId]="'voipCheckbox'"
 												[value]="voipStatus.status"
@@ -70,32 +75,36 @@
 												[label]="'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.voIPMode.checkboxText' | translate"
 												(toggle)='onVoipCheckboxChange($event)'>
 											</vtr-ui-checkbox>
-											<fa-icon id="voipRightIcon"
-												class="right-icon"
-												role="img"
-												triggers="manual"
-												placement="auto"
-												autoClose="false"
-												[ngbTooltip]="tooltipRef"
-												#rightToolTip1="ngbTooltip"
-												autoClose="true"
-												[icon]="['far', 'question-circle']"
-												container="vtr-root"
-												tooltipClass="vtr-tooltip"
-												(click)="onRightIconClick(rightToolTip1, $event)"
-												(keydown.enter)="onRightIconClick(rightToolTip1, $event)"
-												tabindex="0"
-												attr.aria-label="'Dolby audio voip tooltip, which reads:'+ {{'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.voIPMode.tooltip' | translate}}">
-											</fa-icon>
-											<ng-template #tooltipRef>
-												<div id="voipTooltip" role="tooltip"
-												    attr.aria-label="{{'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.voIPMode.tooltip' | translate}}"
-													[innerHTML]="'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.voIPMode.tooltip' | translate">
-												</div>
-											</ng-template>
+											<div>
+												<fa-icon id="voipRightIcon"
+													class="right-icon"
+													role="img"
+													triggers="manual"
+													placement="auto"
+													autoClose="false"
+													[ngbTooltip]="tooltipRef"
+													#rightToolTip1="ngbTooltip"
+													autoClose="true"
+													[icon]="['far', 'question-circle']"
+													container="vtr-root"
+													tooltipClass="vtr-tooltip"
+													(click)="onRightIconClick(rightToolTip1, $event)"
+													(keydown.enter)="onRightIconClick(rightToolTip1, $event)"
+													tabindex="0"
+													attr.aria-label="'Dolby audio voip tooltip, which reads:'+ {{'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.voIPMode.tooltip' | translate}}">
+												</fa-icon>
+												<ng-template #tooltipRef>
+													<div id="voipTooltip"
+														role="tooltip"
+														attr.aria-label="{{'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.voIPMode.tooltip' | translate}}"
+														[innerHTML]="'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.voIPMode.tooltip' | translate">
+													</div>
+												</ng-template>
+											</div>
 										</div>
 
-										<div class="checkbox entertainmentCheckout" id="audio-dolby-entertainment"
+										<div class="checkbox entertainmentCheckout"
+											id="audio-dolby-entertainment"
 											*ngIf="entertainmentStatus.available">
 											<vtr-ui-checkbox [componentId]="'entertainmentCheckbox'"
 												[value]="entertainmentStatus.status"
@@ -104,33 +113,39 @@
 												[label]="'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.entertainmentMode.checkboxText' | translate"
 												(toggle)='onEntertainmentCheckboxChange($event)'>
 											</vtr-ui-checkbox>
-											<fa-icon id="entertainmentRightIcon"
-												class="right-icon"
-												role="img"
-												triggers="manual"
-												placement="auto"
-												autoClose="false"
-												[ngbTooltip]="tooltipRef"
-												#rightToolTip1="ngbTooltip"
-												autoClose="true"
-												[icon]="['far', 'question-circle']"
-												container="vtr-root"
-												tooltipClass="vtr-tooltip"
-												(click)="onRightIconClick(rightToolTip1, $event)"
-												(keydown.enter)="onRightIconClick(rightToolTip1, $event)"
-												tabindex="0"
-												[attr.aria-label] ="'Dolby audio entertainment tooltip, which reads:'+ entertainmentTooltip">
-											</fa-icon>
-											<ng-template #tooltipRef>
-												<div id="entertainmentTooltip" role="tooltip"
-												attr.aria-label="{{'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.entertainmentMode.tooltip' | translate}}"
-												[innerHTML]="'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.entertainmentMode.tooltip' | translate"></div>
-											</ng-template>
+											<div>
+												<fa-icon id="entertainmentRightIcon"
+													class="right-icon"
+													role="img"
+													triggers="manual"
+													placement="auto"
+													autoClose="false"
+													[ngbTooltip]="tooltipRef"
+													#rightToolTip1="ngbTooltip"
+													autoClose="true"
+													[icon]="['far', 'question-circle']"
+													container="vtr-root"
+													tooltipClass="vtr-tooltip"
+													(click)="onRightIconClick(rightToolTip1, $event)"
+													(keydown.enter)="onRightIconClick(rightToolTip1, $event)"
+													tabindex="0"
+													[attr.aria-label]="'Dolby audio entertainment tooltip, which reads:'+ entertainmentTooltip">
+												</fa-icon>
+												<ng-template #tooltipRef>
+													<div id="entertainmentTooltip"
+														role="tooltip"
+														attr.aria-label="{{'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.entertainmentMode.tooltip' | translate}}"
+														[innerHTML]="'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.entertainmentMode.tooltip' | translate">
+													</div>
+												</ng-template>
+											</div>
 										</div>
 									</div>
 								</vtr-ui-row-switch>
 							</li>
-							<li class="common-li-padding" role="listitem" id="audio-eCourse-li"
+							<li class="common-li-padding"
+								role="listitem"
+								id="audio-eCourse-li"
 								*ngIf='eCourseStatus.available'>
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.audio.audioSmartsettings.eCourse.title' | translate"
@@ -153,8 +168,10 @@
 					</vtr-container-collapsible>
 				</div>
 			</div>
-			<div class="row py-5 smart-settings-card" id="microphone">
-				<div class="col-12 mx-auto container-card" *ngIf="microphoneProperties.available">
+			<div class="row py-5 smart-settings-card"
+				id="microphone">
+				<div class="col-12 mx-auto container-card"
+					*ngIf="microphoneProperties.available">
 					<vtr-container-collapsible componentName="Microphone"
 						[tabIndex]="0"
 						[vtrAppSearchScroller]="['search-microphone']"
