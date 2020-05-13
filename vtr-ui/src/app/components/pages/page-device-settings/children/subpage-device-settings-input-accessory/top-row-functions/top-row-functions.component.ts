@@ -146,6 +146,8 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 	}
 
 	setUpTopRowFunctionRadios() {
+		let uniqueName = 'top-Row-Functions';
+
 		this.methodRadioDetails = [{
 			componentId: 'radio1',
 			label: 'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.radioButton.nMehod',
