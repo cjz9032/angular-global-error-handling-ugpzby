@@ -156,6 +156,9 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		if (this.smartAssist.isShellAvailable) {
 			this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 			this.smartAssistCapability = this.commonService.getLocalStorageValue(LocalStorageKey.SmartAssistCapability, undefined);
+			if (this.smartAssistCapability.isSuperResolutionSupported) {
+				this.superResolution = this.smartAssistCapability.isSuperResolutionSupported;
+			}
 			this.getHPDAdvancedSetting();
 			this.initVisibility();
 			this.setIsThinkPad(this.machineType === 1);
@@ -223,7 +226,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'voice');
 				this.checkMenuItemsLength();
 			}
-			if (!this.smartAssistCapability.isIntelligentMediaSupported.available  && !this.smartAssistCapability.isSuperResolutionSupported.available) {
+			if (!this.smartAssistCapability.isIntelligentMediaSupported.available  && !this.superResolution.available) {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'media');
 				this.checkMenuItemsLength();
 			}
@@ -233,10 +236,6 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			}
 			if (!this.smartAssistCapability.isAPSSupported) {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'aps');
-				this.checkMenuItemsLength();
-			}
-			if (!this.smartAssistCapability.isAntiTheftSupported.available) {
-				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'sensing');
 				this.checkMenuItemsLength();
 			}
 		} catch (error) {
@@ -306,7 +305,6 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			}
 			if (this.smartAssistCapability.isSuperResolutionSupported) {
 				this.superResolution = this.smartAssistCapability.isSuperResolutionSupported;
-				this.isSuperResolutionLoading = false;
 				this.getSuperResolutionStatus();
 			}
 			if (this.smartAssistCapability.isHsaIntelligentSecuritySupported) {

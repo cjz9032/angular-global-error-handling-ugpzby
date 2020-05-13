@@ -27,7 +27,7 @@ export class WidgetSubscriptiondetailsComponent implements OnInit {
 		{
 			UUID: uuid(),
 			StartDate: formatDate(new Date(), 'yyyy/MM/dd', 'en'),
-			EndDate: formatDate(this.myDate.setDate(new Date().getDate() + 90), 'yyyy/MM/dd', 'en')
+			EndDate: formatDate("2020/07/31", 'yyyy/MM/dd', 'en')
 		}
 	];
   ngOnInit() {

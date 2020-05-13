@@ -7,8 +7,12 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import moment from 'moment';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { EMPTY } from 'rxjs';
 import { SupportService } from 'src/app/services/support/support.service';
+import { v4 as uuid } from 'uuid';
+import { formatDate } from '@angular/common';
 import { TranslateService } from '@ngx-translate/core';
+
 @Component({
 	selector: 'vtr-ui-smart-performance-scan-summary',
 	templateUrl: './ui-smart-performance-scan-summary.component.html',
@@ -425,13 +429,26 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 				.format('YYYY-MM-DD HH:mm:ss')
 		);
 	}
+	public subscriptionDetails = [
+		{
+			UUID: uuid(),
+			StartDate: formatDate(new Date(), 'yyyy/MM/dd', 'en'),
+			EndDate: formatDate("2020/07/31", 'yyyy/MM/dd', 'en')
+		}
+	];
 	openSubscribeModal() {
-		this.modalService.open(ModalSmartPerformanceSubscribeComponent, {
-			backdrop: 'static',
-			size: 'lg',
-			centered: true,
-			windowClass: 'subscribe-modal'
-		});
+		// this.modalService.open(ModalSmartPerformanceSubscribeComponent, {
+		// 	backdrop: 'static',
+		// 	size: 'lg',
+		// 	centered: true,
+		// 	windowClass: 'subscribe-modal'
+		// });
+		this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceSubscribed, true);
+		this.commonService.setLocalStorageValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.subscriptionDetails);
+		//this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => this.router.navigate(['support/smart-performance']));
+		this.isSubscribed = this.commonService.getLocalStorageValue(
+			LocalStorageKey.IsSmartPerformanceSubscribed
+		);
 	}
 	ScanNowSummary() {
 		this.backToScan.emit();
@@ -554,8 +571,8 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 			this.logger.info('History Response', res);
 			if (res) {
 				this.historyRes = {
-					Tune: res.Tune,
-					Boost: res.Boost,
+					Tunecount: res.Tunecount,
+					Boostcount: res.Boostcount,
 					Secure: res.Secure,
 					Tunesize: res.Tunesize,
 					Boostsize: res.Boostsize
@@ -567,8 +584,8 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 				this.historyRes = {};
 			}
 		} catch (err) {
-			this.historyScanResults = [];
-			this.historyRes = {};
+			this.logger.error('History Response Error', err);
+
 		}
 	}
 	formatMemorySize(mbytes: number) {
@@ -580,16 +597,14 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		this.sizeExtension = sizes[i];
 		return parseFloat((mb / Math.pow(k, i)).toFixed(1));
 	}
-	changeNextScanDateValue() { 
-		//console.log("event emitted------------------------------",this.isSubscribed);
-		if (this.isSubscribed) {
+	changeNextScanDateValue() {
+        if (this.isSubscribed) {
 			this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix');
 		}
 		else {
 			this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScan');
 		}
-	
-	 } 
+    } 
 
 	public initContentLoad() {
 		this.scannigResultObj.tunePc = {

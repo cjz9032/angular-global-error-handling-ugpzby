@@ -52,7 +52,7 @@ const cameraDetail: CameraDetail = {
 	autoExposureStepValue: 4
 };
 
-describe('SubpageDeviceSettingsDisplayComponent', () => {
+xdescribe('SubpageDeviceSettingsDisplayComponent', () => {
 	let fixture: ComponentFixture<SubpageDeviceSettingsDisplayComponent>;
 	let component: SubpageDeviceSettingsDisplayComponent;
 

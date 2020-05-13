@@ -446,6 +446,7 @@ export class UiScanScheduleComponent implements OnInit {
 				else {
 					this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScan');
 				}
+				this.scanDatekValueChange.emit();
 			}
 		}
 	}

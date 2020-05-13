@@ -1475,35 +1475,35 @@
                 }
             },
             "audio": {
-                "title": "Hang",
-                "subtitle": "Hangbeállítások",
-                "description": "Ezen a részen automatikusan optimalizálhatók vagy manuálisanteljesen mértékben konfigurálhatók a hangbeállítások (például a Dolby-beállítások vagy a mikrofon használata).",
-                "audioSmartsettings": {
-                    "title": "Audio smart settings",
+				"title": "Hang",
+				"subtitle": "Hangbeállítások",
+				"description": "Ezen a részen automatikusan optimalizálhatók vagy manuálisan teljesen mértékben konfigurálhatók a hangbeállítások (például a Dolby-beállítások vagy a mikrofon használata).",
+				"audioSmartsettings": {
+                    "title": "Intelligens hangbeállítások",
                     "dolby": {
-                        "title": "Dolby audio",
-                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
+                        "title": "Dolby hangzás",
+                        "description": "Válassza ki az Önnek megfelelő módot az alábbiak közül. Ezenfelül a \"Hangzás automatikus optimalizálása a következőhöz:\" jelölőnégyzetet is bejelölheti. Ha bejelöli a jelölőnégyzetet, a Dolby hangzás automatikusan, az aktuális üzemmódnak megfelelően kiválasztja a legjobb audieffektust.",
                         "options": {
-                            "dynamic": "DYNAMIC",
-                            "movie": "MOVIE",
-                            "music": "MUSIC",
-                            "games": "GAME",
-                            "voip": "VOICE"
+                            "dynamic": "Dinamikus",
+							"movie": "Film",
+							"music": "Zene",
+							"games": "Játék",
+							"voip": "Hang"
                         },
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
-                                "checkboxText": "Automatically optimize audio for VOIP"
+                                "checkboxText": "Hangzás automatikus optimalizálása VoIP-hez",
+                                "tooltip": "Ez a funkció VoIP-hívások során lép életbe (például Skype, Microsoft Teams, WeChat stb. használata esetén). Ha engedélyezve van, a Dolby hangzás automatikusan a Hang módra vált a jobb hangminőség érdekében."
                             },
                             "entertainmentMode": {
-                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "checkboxText": "Automatically optimize audio for entertainment"
+                                "checkboxText": "Hangzás automatikus optimalizálása szórakoztató tartalmakhoz",
+                                "tooltip": "Ha ezt a lehetőséget választja, a Dolby hangzás automatikusan, a használt alkalmazásnak megfelelően kiválasztja az üzemmódot:<br>• Ha az iTuneshoz hasonló alkalmazásokat használ, átvált a Zene módra.<br>• Ha a YouTube-hoz hasonló alkalmazásokat használ, átvált a Film módra.<br>• Ha játszik, átvált a Játék módra."
                             }
                         }
                     },
                     "eCourse": {
-                        "title": "Interactive E-course mode",
-                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
+                        "title": "Interaktív E-tanfolyam mód",
+                        "tooltip": "Ez a funkció az olyan online tanfolyamok esetében hasznos, amikor a tanárok és a tanulók élőszóban beszélgetnek egymással. Ha engedélyezve van, a Dolby hangzás automatikusan a Hang üzemmódra vált. Emellett a rendszer bekapcsolja a hangbevitelt elősegítő funkciókat, amilyen például a beamforming, vagy a visszhangok és a billentyűzet zajának kiszűrése."
                     }
                 },
                 "microphone": {

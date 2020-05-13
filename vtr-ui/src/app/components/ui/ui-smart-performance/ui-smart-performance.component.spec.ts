@@ -11,7 +11,7 @@ import { TranslateStore } from '@ngx-translate/core';
 
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
-describe('UiSmartPerformanceComponent', () => {
+xdescribe('UiSmartPerformanceComponent', () => {
 	let component: UiSmartPerformanceComponent;
 	let fixture: ComponentFixture<UiSmartPerformanceComponent>;
 	let smartPerformanceService: SmartPerformanceService;

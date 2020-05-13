@@ -1,27 +1,47 @@
 @import "../../../app.theme";
 
 .vtr-widget-hardware-scan-item {
-	margin-top: 2rem;
+	padding: 0 1.5rem;
 
 	.module-information {
+		width: 100%;
+		display: flex;
+		align-items: center;
 		justify-content: space-between;
 		flex-wrap: nowrap;
-	}
 
-	.title {
-		display: flex;
-		justify-content: flex-start;
-		color: $shade_blue;
-		font-size: $fontsize_xl;
-		font-weight: $weight_600;
+		.rotate {
+			-webkit-transform: rotate(180deg);
+			-moz-transform: rotate(180deg);
+			-ms-transform: rotate(180deg);
+			-o-transform: rotate(180deg);
+			transform: rotate(180deg);
+		}
 
-		.module-name {
-			padding-left: 1rem;
+		//angle-up and angle-down icon
+		fa-icon{
+			font-size: 2.4rem;
+			color: $gaming_grey_lightest;
 		}
 	}
 
+	.title {
+		font-size: $fontsize_xs;
+		font-weight: $weight_600;
+		padding-left: 1rem;
+		color: $shade_blue;
+	}
+
+	.subtitle {
+		font-size: $fontsize_xs;
+		padding: 0 1rem;
+		color: $shade_blue;
+		font-weight: $weight_light;
+	}
+
 	.module-icon {
-		display: inline-block;
+		display: flex;
+		align-items: center;
 		font-size: 3rem;
 	}
 
@@ -32,88 +52,73 @@
 		padding-top: 0.5rem;
 	}
 
-	.description {
+	.details-link {
 		display: flex;
-		justify-content: space-between;
+		color: $blue_lightest;
 		font-size: $fontsize_xs2;
-		font-weight: $weight_light;
+		text-decoration: underline;
 
-		.subtitle {
-			color: $shade_blue;
+		&:hover {
+			text-decoration: none;
+			cursor: pointer;
 		}
 
+		fa-icon {
+			font-size: $fontsize_xs;
+			color:$blue_lightest;
+			padding: 0 1rem;
+		}
+	}
 
-		.details {
-			color: $shade_darker;
-			text-decoration: underline;
+	.details-list {
+		margin-left: 4.2rem;
+		.table-details {
+			border-radius: $border_radius;
+		}
+	}
+
+	.button-box {
+		padding: 0.5rem;
+		@media #{$mediaquery_7} {
+			margin-top: 1.2rem;
+		}
+
+		.button {
+			min-height: 2rem;
+			border-radius: 3rem;
+			min-width: 5rem;
+			background: $gradient_main !important;
+			border: none;
+			color: $light !important;
+			font-size: 1rem;
+			font-weight: $weight_bold !important;
+			text-align: center !important;
+			text-decoration: none;
+			display: inline-block;
+			padding: 0 2.5rem;
+		}
+	}
+
+	.result-code {
+		width: 100%;
+		display: flex;
+		text-align: right;
+		padding-left: 3.2rem;
+
+		.result-code-icon {
+			margin-left: 0.5rem;
+			margin-right: 0.4rem;
+			font-size: $fontsize_sm;
+			color: $menu_hover;
+			cursor: pointer;
 
 			&:hover {
-				text-decoration: none;
-				cursor: pointer;
-			}
-
-			fa-icon {
-				font-size: $fontsize_lg;
-				padding-left: 1rem;
-				padding-right: 0.5rem;
-				vertical-align: -0.25rem!important;				
-			}
-		}
-
-		.button-box {
-			padding: 0.5rem;
-			@media #{$mediaquery_7} {
-				margin-top: 1.2rem;
-			}
-
-			.button {
-			  min-height: 2rem;
-			  border-radius: 3rem;
-			  min-width: 5rem;
-			  background: $gradient_main !important;
-			  border: none;
-			  color: $light !important;
-			  font-size: 1rem;
-			  font-weight: $weight_bold !important;
-			  text-align: center !important;
-			  text-decoration: none;
-			  display: inline-block;
-			  // cursor: pointer;
-			  padding: 0 2.5rem;
+				color: $highlight;
 			}
 		}
 	}
-	.result-code {
-		width: 100%;
-		text-align: right;
-		line-height: 3.3rem;
-		padding-right: 1.2rem;
-		.result-code-value-text {
-			color: $shade_blue;
-			font-size: $fontsize_xs2;
-			font-weight: $weight_600;
-		}
-		.left-code-result {
-			.result-code-complete-text {
-				color: $shade_blue;
-				text-transform: uppercase;
-				font-size: $fontsize_xs2;
-				font-weight: $weight_light;
-			}
 
-			.result-code-icon {
-				margin-left: 0.5rem;
-				margin-right: 0.4rem;
-				font-size: $fontsize_sm;
-				color: $menu_hover;
-				cursor: pointer;
-
-				&:hover {
-					color: $highlight;
-				}
-
-
-			}
-		}
+	.test-list{
+		padding-left: 4.2rem;
 	}
 }

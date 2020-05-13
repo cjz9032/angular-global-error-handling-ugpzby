@@ -1475,35 +1475,35 @@
                 }
             },
             "audio": {
-                "title": "オーディオ",
-                "subtitle": "オーディオの設定",
-                "description": "このセクションでは、Dolby 設定やマイクなどのオーディオ設定を自動で最適化することも、すべて手動で構成することもできます。",
-                "audioSmartsettings": {
-                    "title": "Audio smart settings",
+				"title": "オーディオ",
+				"subtitle": "オーディオの設定",
+				"description": "このセクションでは、Dolby 設定やマイクなどのオーディオ設定を自動で最適化することも、すべて手動で設定することもできます。",
+				"audioSmartsettings": {
+                    "title": "オーディオ・スマート設定",
                     "dolby": {
-                        "title": "Dolby audio",
-                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
+                        "title": "Dolby オーディオ",
+                        "description": "次の中からお好みのモードを選択してください。「... 向けのオーディオの自動最適化」チェックボックスをオンにすることもできます。オンにすると、Dolby オーディオで、使用中のモードに応じて、最適なオーディオ効果が自動的に取得されます。",
                         "options": {
-                            "dynamic": "DYNAMIC",
-                            "movie": "MOVIE",
-                            "music": "MUSIC",
-                            "games": "GAME",
-                            "voip": "VOICE"
+                            "dynamic": "ダイナミック",
+							"movie": "ムービー",
+							"music": "音楽",
+							"games": "ゲーム",
+							"voip": "音声"
                         },
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
-                                "checkboxText": "Automatically optimize audio for VOIP"
+                                "checkboxText": "VoIP 向けのオーディオの自動最適化",
+                                "tooltip": "この機能は、VoIP 通話時に有効になります（Skype、Microsoft Teams、WeChat などを使用）。有効にすると、Dolby オーディオは自動的に音声モードに変わり、音声品質が向上します。"
                             },
                             "entertainmentMode": {
-                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "checkboxText": "Automatically optimize audio for entertainment"
+                                "checkboxText": "エンターテイメント向けのオーディオの自動最適化",
+                                "tooltip": "このオプションを選択すると、Dolby オーディオでは、使用しているアプリに応じてモードが自動的に調整されます。<br>• iTunes などのアプリを使用している場合は、音楽モードに切り替わります。<br>• YouTube などのアプリを使用している場合は、ムービー・モードに切り替わります。<br>• ゲーム・アプリを使用している場合は、それに応じてゲーム・モードに切り替わります。"
                             }
                         }
                     },
                     "eCourse": {
-                        "title": "Interactive E-course mode",
-                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
+                        "title": "対話式 E コース・モード",
+                        "tooltip": "この機能は、講師と受講者の間で音声によりやり取りするオンライン・コースで役立ちます。有効にすると、Dolby オーディオは自動的に音声モードに変わります。その間、ビームフォーミング、アコースティック・エコー・キャンセル、キーボード・ノイズ抑制などの機能がオンになり、音声入力が改善されます。"
                     }
                 },
                 "microphone": {
