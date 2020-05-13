@@ -21,27 +21,9 @@
 				<li class="list-group-item border-top">
 					<div class="mt-4 camera-modes-block">
 						<vtr-ui-rounded-rectangle-custom-radio-list [groupName]="'camera-blur-radio-group'"
-							[isVertical]=true>
-							<vtr-ui-rounded-rectangle-custom-radio [componentId]="'radio1'"
-								[label]="'device.deviceSettings.displayCamera.camera.camerablur.blurMode' | translate"
-								[isChecked]="option.currentMode.toLowerCase() === BLUR"
-								[value]="BLUR"
-								(selectionChange)="onChange($event, BLUR)">
-							</vtr-ui-rounded-rectangle-custom-radio>
-
-							<vtr-ui-rounded-rectangle-custom-radio [componentId]="'radio2'"
-								[label]="'device.deviceSettings.displayCamera.camera.camerablur.comicMode' | translate"
-								[isChecked]="option.currentMode.toLowerCase() === COMIC"
-								[value]="COMIC"
-								(selectionChange)="onChange($event, COMIC)">
-							</vtr-ui-rounded-rectangle-custom-radio>
-
-							<vtr-ui-rounded-rectangle-custom-radio [componentId]="'radio3'"
-								[label]="'device.deviceSettings.displayCamera.camera.camerablur.sketchMode' | translate"
-								[isChecked]="option.currentMode.toLowerCase() === SKETCH"
-								[value]="SKETCH"
-								(selectionChange)="onChange($event, SKETCH)">
-							</vtr-ui-rounded-rectangle-custom-radio>
+							[isVertical]=true
+							[radioDetails]="radioDetails"
+							(selectionChange)="onChange($event)">
 						</vtr-ui-rounded-rectangle-custom-radio-list>
 					</div>
 				</li>

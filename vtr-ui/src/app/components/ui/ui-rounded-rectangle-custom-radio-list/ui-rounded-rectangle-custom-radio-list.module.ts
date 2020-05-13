@@ -4,6 +4,10 @@ import { MetricsModule } from 'src/app/services/metric/metrics.module';
 import { FormsModule } from '@angular/forms';
 import { UiRoundedRectangleCustomRadioComponent } from '../ui-rounded-rectangle-custom-radio/ui-rounded-rectangle-custom-radio.component';
 import { UiRoundedRectangleCustomRadioListComponent } from './ui-rounded-rectangle-custom-radio-list.component';
+import { TranslateModule, TranslateLoader, MissingTranslationHandler } from '@ngx-translate/core';
+import { WebpackTranslateLoader } from 'src/app/i18n/loader/webpack-translate-loader.loader';
+import { HttpClient } from '@angular/common/http';
+import { MissingTranslationDefaultHandler } from 'src/app/i18n/handler/missing-tranlsation-default-handler';
 
 @NgModule({
 	declarations: [
@@ -13,7 +17,18 @@ import { UiRoundedRectangleCustomRadioListComponent } from './ui-rounded-rectang
 	imports: [
 		CommonModule,
 		FormsModule,
-		MetricsModule
+		MetricsModule,
+		TranslateModule.forChild({
+			loader: {
+				provide: TranslateLoader,
+				useClass: WebpackTranslateLoader,
+				deps: [ HttpClient ]
+			},
+			missingTranslationHandler: {
+				provide: MissingTranslationHandler,
+				useClass: MissingTranslationDefaultHandler
+			},
+		}),
 	],
 	exports: [
 		UiRoundedRectangleCustomRadioListComponent,

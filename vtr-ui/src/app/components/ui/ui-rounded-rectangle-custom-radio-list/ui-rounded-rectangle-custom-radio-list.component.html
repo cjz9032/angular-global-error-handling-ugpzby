@@ -1,7 +1,26 @@
-<div class="vtr-ui-rounded-rectangle-radio-list">
+<div class="vtr-ui-rounded-rectangle-custom-radio-list">
 	<div role="radiogroup"
+		class="radio-group"
 		class="{{ isVertical ? 'vertical': 'horizontal'}}"
 		[id]="groupName">
-		<ng-content></ng-content>
+		<ng-template ngFor
+			let-item
+			[ngForOf]="radioDetails"
+			let-index="index">
+			<div role="radio"
+				#radioRef
+				[id]="item.componentId"
+				[attr.aria-checked]="item.isChecked"
+				[attr.aria-disabled]="item.isDisabled"
+				(click)="onClick($event)"
+				(keydown)="onKeyDown($event, index)"
+				[tabindex]="item.isChecked ? 0 : -1"
+				vtrMetrics
+				[metricsEvent]="metricsEvent"
+				[metricsItem]="item.componentId"
+				[metricsValue]="item.isChecked">
+				{{item.label | translate}}
+			</div>
+		</ng-template>
 	</div>
 </div>
