@@ -2927,6 +2927,26 @@
 				"results": "Results:",
 				"status": "Status"
 			}
+		},
+		"feedbackContainer": {
+			"title": "Leave us some feedback",
+			"subtitle": "Tell us what you think about Vantage",
+			"buttonText": "send feedback",
+			"questions": {
+				"q1": "Does the product look and feel good?",
+				"q2": "Do the feature seen comprehensive?",
+				"q3": "Was the scan easy to use?"
+			},
+			"rating": {
+				"r1": "Hate it",
+				"r2": "Love it",
+				"r3": "Seems lacking",
+				"r4": "Good enough",
+				"r5": "Crazy",
+				"r6": "Cool"
+			},
+			"commentTip": "Shout what you love and whisper what you hate.",
+			"comments": "Please leave your comments here..."
 		}
 	},
 	"homeSecurity": {
