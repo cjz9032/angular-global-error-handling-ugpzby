@@ -404,7 +404,7 @@
 											<!-- radio buttons -->
 											<div class="slider-note"
 												[class.blur-1]="!intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)">
-												<vtr-ui-rounded-rectangle-radio [radioId]="'autoScreenLockTimer_fast'"
+												<!-- <vtr-ui-rounded-rectangle-radio [radioId]="'autoScreenLockTimer_fast'"
 													[group]="'autoScreenLockTimer'"
 													name="autoScreenLockTimerFast"
 													[label]="'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.fast' | translate"
@@ -430,7 +430,12 @@
 													[checked]="intelligentSecurity.autoScreenLockTimer === '3'"
 													(change)="onZeroTouchLockTimerChange($event, '3')"
 													[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)">
-												</vtr-ui-rounded-rectangle-radio>
+												</vtr-ui-rounded-rectangle-radio> -->
+												<vtr-ui-rounded-rectangle-custom-radio-list
+													[groupName]="'Zero-Touch-Lock-Timer-radio-group'"
+													[radioDetails]="zeroTouchLockTimerRadioDetails"
+													(selectionChange)="onZeroTouchLockTimerChangeOur($event)">
+												</vtr-ui-rounded-rectangle-custom-radio-list>
 											</div>
 											<!-- note -->
 											<!-- <div class="pt-3 pl-4">
@@ -593,7 +598,7 @@
 
 											<div class="slider-note"
 												[class.blur-1]="!intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)">
-												<div role="radiogroup"
+												<!-- <div role="radiogroup"
 													tabindex="0"
 													aria-label="automatic screen locker more list, select using arrow keys"
 													class="radio-group">
@@ -627,7 +632,15 @@
 														(change)="onZeroTouchLockTimerChange($event, '3')"
 														[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)">
 													</vtr-ui-rounded-rectangle-radio>
-												</div>
+
+
+												</div> -->
+
+												<vtr-ui-rounded-rectangle-custom-radio-list
+													[groupName]="'Zero-Touch-Lock-Timer-radio-group'"
+													[radioDetails]="zeroTouchLockTimerRadioDetails"
+													(selectionChange)="onZeroTouchLockTimerChangeOur($event)">
+												</vtr-ui-rounded-rectangle-custom-radio-list>
 
 												<div class="pt-3">
 													<div class="feature-note p-4">
@@ -691,7 +704,8 @@
 
 					<!-- Start of Intelligent Sensing (Anti theft)-->
 					<div class="smart-assist-anti-theft">
-						<vtr-anti-theft id="sensing" (removeSensingHeaderMenu)='removeSensingHeaderMenu()'></vtr-anti-theft>
+						<vtr-anti-theft id="sensing"
+							(removeSensingHeaderMenu)='removeSensingHeaderMenu()'></vtr-anti-theft>
 					</div>
 					<!-- End of Intelligent Sensing (Anti theft)-->
 
