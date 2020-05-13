@@ -76,7 +76,7 @@
 												[manualRefresh]="manualRefresh"
 												(displayColorTempChange)="onSetChangeDisplayColorTemp($event)"
 												(resetTemperature)="resetDaytimeColorTemp($event)"
-												(colorPreviewValue)="setToEyeCareMode()">
+												(colorPreviewValue)="setToEyeCareMode($event)">
 											</vtr-display-color-temp>
 											<div class="row mt-4">
 												<!--<div class="feature-note pl-5 pr-5 pt-4 pb-4 m-4" -->
@@ -415,7 +415,7 @@
 										*ngIf="cameraBlur.enabled">
 										<div class="col-12 pr-0 my-3">
 											<vtr-camera-background-blur [option]="cameraBlur"
-												(onOptionChanged)="onCameraBackgroundOptionChange(false, $event)">
+												(optionChanged)="onCameraBackgroundOptionChange(false, $event)">
 											</vtr-camera-background-blur>
 										</div>
 									</div>

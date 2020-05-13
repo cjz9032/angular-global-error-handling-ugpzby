@@ -34,3 +34,6 @@ export enum PaymentPage{
 	SOURCEQUERYPARAMETER='&source=',
 	SLASH='/',
 }
+export enum enumScanFrequency{
+	ONCEAMONTH = 'Once a month',
+}

@@ -1479,31 +1479,31 @@
                 "subtitle": "Ustawienia dźwięku",
                 "description": "Ta sekcja umożliwia automatyczną optymalizację lub pełną, ręczną konfigurację ustawień dźwięku, takich jak ustawienia trybu Dolby, mikrofonu itp.",
                 "audioSmartsettings": {
-                    "title": "Audio smart settings",
+                    "title": "Inteligentne ustawienia dźwięku",
                     "dolby": {
-                        "title": "Dolby audio",
-                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
+                        "title": "Dźwięk Dolby",
+                        "description": "Wybierz jeden z poniższych trybów. Możesz także zaznaczyć pole wyboru „Automatycznie optymalizuj dźwięk pod kątem...”. Gdy to pole wyboru jest zaznaczone, dla dźwięku Dolby zostaje automatycznie wybrany najlepszy efekt audio w zależności od aktualnie wykorzystywanego trybu.",
                         "options": {
-                            "dynamic": "DYNAMIC",
-                            "movie": "MOVIE",
-                            "music": "MUSIC",
-                            "games": "GAME",
-                            "voip": "VOICE"
+                            "dynamic": "Dynamiczne",
+                            "movie": "Film",
+                            "music": "muzyka",
+                            "games": "Gra",
+                            "voip": "Głos"
                         },
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
-                                "checkboxText": "Automatically optimize audio for VOIP"
+                                "checkboxText": "Automatycznie optymalizuj dźwięk pod kątem VoIP",
+                                "tooltip": "Ta funkcja działa podczas korzystania z połączeń VoIP (za pomocą aplikacji takich jak Skype, Microsoft Teams, WeChat itp.). Po jej włączeniu dźwięk Dolby zostaje automatycznie przełączony w tryb Głos w celu zapewnienia lepszej jakości głosu."
                             },
                             "entertainmentMode": {
-                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "checkboxText": "Automatically optimize audio for entertainment"
+                                "checkboxText": "Automatycznie optymalizuj dźwięk pod kątem materiałów rozrywkowych",
+                                "tooltip": "Po wybraniu tej opcji następuje automatyczne dostosowanie trybu dźwięku Dolby do używanej aplikacji:<br>• Jeśli używasz aplikacji takich jak iTunes, zostanie włączony tryb Muzyka.<br>• Jeśli używasz aplikacji takich jak YouTube, zostanie włączony tryb Film.<br>• Jeśli korzystasz z aplikacji do gry, zostanie włączony tryb Gra."
                             }
                         }
                     },
                     "eCourse": {
-                        "title": "Interactive E-course mode",
-                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
+                        "title": "Tryb interaktywnego e-kursu",
+                        "tooltip": "Ta funkcja przydaje się w przypadku kursów online, podczas których jednocześnie mogą wypowiadać się zarówno osoby prowadzące, jak i uczestnicy kursu. Po włączeniu tej opcji tryb dźwięku Dolby automatycznie zmieni się na Głos. Jednocześnie nastąpi także aktywacja funkcji takich jak formowanie wiązki, eliminacja echa akustycznego i tłumienie odgłosów klawiatury, które wpływają na poprawę jakości głosowych danych wejściowych."
                     }
                 },
                 "microphone": {
@@ -2107,7 +2107,7 @@
                 "heading": "Inteligentna detekcja",
                 "title": "Inteligentny alert wykrycia ruchu",
                 "tooltip": "<div>Ta funkcja nie działa, gdy komputer znajduje się w trybie hibernacji lub jest wyłączony. Sprawdź ustawienia dotyczące czynności wykonywanych w następujących sytuacjach:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>czynności wykonywane po zamknięciu pokrywy</li><li>czynność wykonywana w przypadku niskiego/krytycznie niskiego poziomu naładowania akumulatora</li><li>czynność wykonywana po naciśnięciu przycisku zasilania</li><li>czynność wykonywana po naciśnięciu przycisku uśpienia</li><li>ustawienia limitu czasu bezczynności do przełączenia w stan hibernacji</li></ul></div>W przeciwnym razie nie zostanie uruchomiony alarm ani nie zostaną wykonane zdjęcia.</div>",
-                "desc": "<p><label>Jeśli włączysz tę funkcję, urządzenie zacznie emitować sygnał dźwiękowy, gdy po zablokowaniu ekranu zostanie wykryty ruch — zwłaszcza, jeśli urządzenie znajduje się w miejscu publicznym.</label></p> <p><label>Aby wyłączyć alarm, wprowadź poprawne hasło lub zaloguj się, korzystając z funkcji Windows Hello.</label></p>",
+                "desc": "<p><label>Jeśli włączysz tę funkcję, urządzenie zacznie emitować sygnał dźwiękowy, gdy po zablokowaniu ekranu zostanie wykryty ruch — zwłaszcza, jeśli urządzenie znajduje się w miejscu publicznym.</label></p> <p><label>Aby wyłączyć alarm, zaloguj się do systemu Windows.</label></p>",
                 "note": {
                     "description": "Po pomyślnym zalogowaniu się do systemu nastąpi automatyczne wyłączenie funkcji. Aby ponownie użyć tej funkcji, należy jeszcze raz ją włączyć."
                 },
@@ -2133,7 +2133,7 @@
                     "linkText": "Przejdź do ustawień systemu Windows, aby udzielić dostępu"
                 },
                 "photo": {
-                    "title": "LICZBA ZDJĘĆ WYKONANYCH W TRAKCIE RUCHU",
+                    "title": "LICZBA WYKONANYCH ZDJĘĆ",
                     "tooltip": "Kamera w komputerze włącza się automatycznie, aby robić zdjęcia po wykryciu ruchu. Zdjęcia są wykonywane co 2 sekundy i zapisywane w lokalnej pamięci.",
                     "option1": 5,
                     "option2": 10,
@@ -3128,7 +3128,15 @@
         "warningMessage": "Należy pamiętać, że testy zostaną anulowane, jeśli system będzie w trybie uśpienia lub hibernacji",
         "refreshMessage": "Odświeżanie może zająć trochę czasu, ponieważ wymaga ponownego załadowania wszystkich komponentów",
         "processFinishedCannotBeCanceled": "Nie trzeba już anulować uruchomionego procesu, ponieważ został zakończony.",
-        "cancelMayTakeSomeTime": "Czekaj, w zależności od systemu anulowanie może potrwać pewien czas."
+        "cancelMayTakeSomeTime": "Czekaj, w zależności od systemu anulowanie może potrwać pewien czas.",
+        "scanFailureModal": {
+            "title": "Hardware Problem Detected",
+            "problemDetected": "There were detected problems on the following components on your computer:",
+            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
+            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
+            "supportButtonText": "Open Ticket",
+            "recoverBadSectorsButtonText": "Recover Bad Sectors"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3248,7 +3256,11 @@
             "status": "Status",
             "activeStatus": "ACTIVE",
             "inactiveStatus": "INACTIVE",
-            "manageSubscription": "MANAGE SUBSCRIPTION"
+            "manageSubscription": "MANAGE SUBSCRIPTION",
+            "titlebeta": "Lenovo Beta Program",
+            "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
+            "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
+            "descriptionbeta1": "You are welcomed to join and try the full feature."
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3271,7 +3283,8 @@
             "thu": "Thursday",
             "fri": "Friday",
             "sat": "Saturday",
-            "sun": "Sunday"
+            "sun": "Sunday",
+            "scanToolTip": "Enable this toggle can setup a automatic event to trigger system Performance scan on your selected time and date."
         },
         "scanningPage": {
             "title": "Performance & security check",
@@ -3439,7 +3452,8 @@
                 "yearlyPricing": "$19.99 / Yr",
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
-                "signupButton": "SIGN UP"
+                "signupButton": "SIGN UP",
+                "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
             },
             "tune": "{{tune}} ISSUES",
             "boost": "{{boost}} ISSUES",

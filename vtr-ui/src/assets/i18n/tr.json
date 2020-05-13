@@ -1477,33 +1477,33 @@
             "audio": {
                 "title": "Ses",
                 "subtitle": "Ses Ayarları",
-                "description": "Bu bölüm, ses ayarlarınızı otomatik olarak en iyi duruma getirmenizi veya Dolby ayarları, mikrofon gibi ayarları tamamıyla manuel olarak ayarlamanızı sağlar.",
+                "description": "Bu bölüm, ses ayarlarınızı otomatik olarak en iyi duruma getirmenizi veya Dolby ayarları, mikrofon gibi ayarları tamamıyla manuel olarak yapılandırmanızı sağlar.",
                 "audioSmartsettings": {
-                    "title": "Audio smart settings",
+                    "title": "Ses akıllı ayarları",
                     "dolby": {
-                        "title": "Dolby audio",
-                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
+                        "title": "Dolby ses",
+                        "description": "Aşağıdakiler arasından istediğiniz bir kipi seçin. \"Sesi şunun için otomatik olarak iyileştir...\" onay kutusunu da işaretleyebilirsiniz. Bu seçenek belirlendiğinde, Dolby ses bulunduğunuz kiplere göre sizin için en iyi ses efektini otomatik olarak seçer.",
                         "options": {
-                            "dynamic": "DYNAMIC",
-                            "movie": "MOVIE",
-                            "music": "MUSIC",
-                            "games": "GAME",
-                            "voip": "VOICE"
+                            "dynamic": "Dinamik",
+                            "movie": "Film",
+                            "music": "Müzik",
+                            "games": "Oyun",
+                            "voip": "Ses"
                         },
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
-                                "checkboxText": "Automatically optimize audio for VOIP"
+                                "checkboxText": "VoIP için otomatik olarak en iyi duruma getir",
+                                "tooltip": "Bu işlev, (Skype, Microsoft Teams, WeChat ve benzeri kullanılarak yapılan) VoIP aramalarında etkili olur. Etkinleştirildiğinde, daha iyi ses kalitesi için Dolby sesi otomatik olarak Ses kipine geçer."
                             },
                             "entertainmentMode": {
-                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "checkboxText": "Automatically optimize audio for entertainment"
+                                "checkboxText": "Eğlence için otomatik olarak en iyi duruma getir",
+                                "tooltip": "Bu seçenek belirlendiğinde Dolby ses, kipi kullandığınız uygulamaya göre otomatik olarak ayarlar:<br>• iTunes gibi uygulamalar kullanıyorsanız Müzik kipine geçer.<br>• YouTube gibi uygulamalar kullanıyorsanız Film kipine geçer.<br>• Oyun uygulamaları kullanıyorsanız buna göre Oyun kipine geçer."
                             }
                         }
                     },
                     "eCourse": {
-                        "title": "Interactive E-course mode",
-                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
+                        "title": "Etkileşimli E-kurs kipi",
+                        "tooltip": "Bu işlev, öğretmenler ve öğrenciler arasında sesli etkileşimlerin olduğu çevrimiçi kurslar için yararlıdır. Etkinleştirildiğinde, Dolby ses otomatik olarak Ses kipine geçer. Bu sırada, ses girişini iyileştirmek için ses biçimlendirme, akustik yankı iptali ve klavye gürültüsünü engelleme gibi özellikler etkin hale gelir."
                     }
                 },
                 "microphone": {
@@ -2107,7 +2107,7 @@
                 "heading": "Akıllı algılama",
                 "title": "Akıllı hareket alarmı",
                 "tooltip": "<div>Bu özellik, bilgisayar uyku kipindeyken veya kapalıyken çalışmaz. Aşağıdaki işlemlerin ayarlarını kontrol edin:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>kapağı kapatma işlemleri</li><li>kritik düzeyde/düşük pil işlemi</li><li>Açma/kapama düğmesi işlemi</li><li>uyku düğmesi işlemi</li><li>uyku kipine geçiş için boşta kalma zaman aşımı ayarları</li></ul></div>Aksi takdirde, alarm tetiklenmez veya fotoğraf çekmez.</div>",
-                "desc": "<p><label>Bu özelliği etkin durumdayken, ekranınız kilitlendiğinde ve özellikle halka açık bir yerde hareket algılandığında cihaz bip sesi çıkarmaya başlar.</label></p> <p><label>Alarmı kapatmak için doğru parolayı girin veya Windows Hello ile giriş yapın.</label></p>",
+                "desc": "<p><label>Bu özelliği etkin durumdayken, ekranınız kilitlendiğinde ve özellikle halka açık bir yerde hareket algılandığında cihaz bip sesi çıkarmaya başlar.</label></p> <p><label>Alarmı kapatmak için lütfen Windows'da oturum açın.</label></p>",
                 "note": {
                     "description": "Sisteme başarıyla giriş yaptıktan sonra, bu özellik otomatik olarak kapanır. Özelliği kullanmak için yeniden etkinleştirmeniz gerekir."
                 },
@@ -2121,7 +2121,7 @@
                 },
                 "allowCamera": {
                     "title": "FOTOĞRAF ÇEKME",
-                    "describe": "Bu özelliği etkin durumdayken, ekranınız kilitliyse herhangi bir hareket algılandığında kamera otomatik olarak fotoğraf çeker. Bu veriler cihazınızda yerel olarak işlenir. Lenovo bu verilere erişmez ya da onları kullanmaz.",
+                    "describe": "Bu özellik etkin durumdayken, ekranınız kilitliyse herhangi bir hareket algılandığında kamera otomatik olarak fotoğraf çeker. Bu veriler cihazınızda yerel olarak işlenir. Lenovo bu verilere erişmez ya da onları kullanmaz.",
                     "checkBoxText": "Bu özelliği etkinleştir"
                 },
                 "cameraPrivacy": {
@@ -2133,7 +2133,7 @@
                     "linkText": "Erişim izni vermek için Windows Ayarları bölümüne gidin"
                 },
                 "photo": {
-                    "title": "HAREKET SIRASINDA ÇEKİLEN FOTOĞRAF SAYISI",
+                    "title": "ÇEKİLEN FOTOĞRAF SAYISI",
                     "tooltip": "Hareket algılandığında, bilgisayarınızdaki kamera otomatik olarak etkinleşerek fotoğraf çekmeye başlar. 2 saniyede bir fotoğraf çekilir ve bunlar yerel depolama alanınıza kaydedilir.",
                     "option1": 5,
                     "option2": 10,
@@ -3128,7 +3128,15 @@
         "warningMessage": "Sistem uyku veya hazırda bekleme kipine geçerse testlerin iptal edileceğini unutmayın",
         "refreshMessage": "Tüm bileşenlerin tekrar yüklenmesi gerektiğinden yenileme işlemi biraz zaman alabilir",
         "processFinishedCannotBeCanceled": "Çalışan işlem tamamlandığından artık iptal edilmesi gerekmiyor.",
-        "cancelMayTakeSomeTime": "Lütfen bekleyin, sisteminize bağlı olarak iptal işlemi biraz zaman alabilir."
+        "cancelMayTakeSomeTime": "Lütfen bekleyin, sisteminize bağlı olarak iptal işlemi biraz zaman alabilir.",
+        "scanFailureModal": {
+            "title": "Hardware Problem Detected",
+            "problemDetected": "There were detected problems on the following components on your computer:",
+            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
+            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
+            "supportButtonText": "Open Ticket",
+            "recoverBadSectorsButtonText": "Recover Bad Sectors"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3248,7 +3256,11 @@
             "status": "Status",
             "activeStatus": "ACTIVE",
             "inactiveStatus": "INACTIVE",
-            "manageSubscription": "MANAGE SUBSCRIPTION"
+            "manageSubscription": "MANAGE SUBSCRIPTION",
+            "titlebeta": "Lenovo Beta Program",
+            "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
+            "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
+            "descriptionbeta1": "You are welcomed to join and try the full feature."
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3271,7 +3283,8 @@
             "thu": "Thursday",
             "fri": "Friday",
             "sat": "Saturday",
-            "sun": "Sunday"
+            "sun": "Sunday",
+            "scanToolTip": "Enable this toggle can setup a automatic event to trigger system Performance scan on your selected time and date."
         },
         "scanningPage": {
             "title": "Performance & security check",
@@ -3439,7 +3452,8 @@
                 "yearlyPricing": "$19.99 / Yr",
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
-                "signupButton": "SIGN UP"
+                "signupButton": "SIGN UP",
+                "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
             },
             "tune": "{{tune}} ISSUES",
             "boost": "{{boost}} ISSUES",

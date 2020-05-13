@@ -72,14 +72,14 @@ export class AntiTheftComponent implements OnInit {
 		this.getCameraAuthorizedAccessState();
 		this.populateAlarmTimeList();
 		this.populatePhotoNumberList();
-		this.startMonitorCameraAuthorized(this.cameraAuthorizedChange.bind(this));
-		this.startMonitorForCameraPrivacy();
-		this.startMonitorAntiTheftStatus();
 	}
 
 	ngOnDestroy() {
-		this.stopMonitorCameraAuthorized();
-		this.stopMonitorForCameraPrivacy();
+		if (this.antiTheft.available) {
+			this.stopMonitorCameraAuthorized();
+			this.stopMonitorForCameraPrivacy();
+			this.stopMonitorAntiTheftStatus();
+		}
 	}
 
 	private populateAlarmTimeList() {
@@ -196,6 +196,10 @@ export class AntiTheftComponent implements OnInit {
 						this.antiTheft.photoNumber = response.photoNumber;
 						if (!this.antiTheft.available) {
 							this.removeSensingHeaderMenu.emit();
+						} else {
+							this.startMonitorAntiTheftStatus();
+							this.startMonitorCameraAuthorized(this.cameraAuthorizedChange.bind(this));
+		                    this.startMonitorForCameraPrivacy();
 						}
 						this.commonService.setLocalStorageValue(LocalStorageKey.AntiTheftCache, this.antiTheft);
 						this.isLoading = false;
@@ -408,7 +412,7 @@ export class AntiTheftComponent implements OnInit {
 		try {
 			if (this.smartAssist.isShellAvailable) {
 				this.smartAssist.startMonitorAntiTheftStatus(this.antiTheftStatusChange.bind(this))
-					.then((value) => {
+					.then((value: number) => {
 						this.logger.info('startMonitorAntiTheftStatus.then', value);
 					}).catch(error => {
 						this.logger.error('startMonitorAntiTheftStatus', error.message);
@@ -434,6 +438,21 @@ export class AntiTheftComponent implements OnInit {
 			this.logger.info(`antiTheftStatusChange return data:`, data);
 		} catch (error) {
 			this.logger.error('antiTheftStatusChange', error.message);
+		}
+	}
+
+	public stopMonitorAntiTheftStatus() {
+		try {
+			if (this.smartAssist.isShellAvailable) {
+				this.smartAssist.stopMonitorAntiTheftStatus()
+					.then((value: number) => {
+						this.logger.info('stopMonitorAntiTheftStatus.then', value);
+					}).catch(error => {
+						this.logger.error('stopMonitorAntiTheftStatus', error.message);
+					});
+			}
+		} catch (error) {
+			this.logger.error('stopMonitorAntiTheftStatus', error.message);
 		}
 	}
 

@@ -1477,33 +1477,33 @@
             "audio": {
                 "title": "Ήχος",
                 "subtitle": "Ρυθμίσεις ήχου",
-                "description": "Αυτή η ενότητα σας επιτρέπει να βελτιστοποιείτε αυτόματα ή ναρυθμίζετε απολύτως χειροκίνητα τις ρυθμίσεις ήχου, όπως ρυθμίσεις Dolby, μικρόφωνο κ.λπ.",
+                "description": "Αυτή η ενότητα σάς επιτρέπει να βελτιστοποιήσετε αυτόματα ή να διαμορφώσετε πλήρως τις ρυθμίσεις ήχου χειροκίνητα, όπως ρυθμίσεις Dolby, μικρόφωνο κ.λπ.",
                 "audioSmartsettings": {
-                    "title": "Audio smart settings",
+                    "title": "Έξυπνες ρυθμίσεις ήχου",
                     "dolby": {
-                        "title": "Dolby audio",
-                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
+                        "title": "Ήχος Dolby",
+                        "description": "Επιλέξτε τη λειτουργία που επιθυμείτε από τα ακόλουθα. Μπορείτε επίσης να επιλέξετε το πλαίσιο ελέγχου \"Αυτόματη βελτιστοποίηση ήχου για ...\". Όταν είναι επιλεγμένο, ο ήχος Dolby επιλέγει αυτόματα το καλύτερο εφέ ήχου για εσάς ανάλογα με τις διάφορες λειτουργίες που είστε.",
                         "options": {
-                            "dynamic": "DYNAMIC",
-                            "movie": "MOVIE",
-                            "music": "MUSIC",
-                            "games": "GAME",
-                            "voip": "VOICE"
+                            "dynamic": "Δυναμικό",
+                            "movie": "Ταινία",
+                            "music": "Μουσική",
+                            "games": "Παιχνίδι",
+                            "voip": "Φωνή"
                         },
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
-                                "checkboxText": "Automatically optimize audio for VOIP"
+                                "checkboxText": "Αυτόματη βελτιστοποίηση ήχου για VoIP",
+                                "tooltip": "Αυτή η λειτουργία τίθεται σε ισχύ όταν πραγματοποιείτε κλήσεις VoIP (χρησιμοποιώντας Skype, Microsoft Teams, WeChat κ.λπ.). Όταν είναι ενεργοποιημένη αυτή η δυνατότητα, ο ήχος Dolby αλλάζει αυτόματα στη λειτουργία φωνής για καλύτερη ποιότητα φωνής."
                             },
                             "entertainmentMode": {
-                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "checkboxText": "Automatically optimize audio for entertainment"
+                                "checkboxText": "Αυτόματη βελτιστοποίηση ήχου για ψυχαγωγία",
+                                "tooltip": "Όταν είναι επιλεγμένη αυτή η επιλογή, ο ήχος Dolby ρυθμίζει αυτόματα τη λειτουργία ανάλογα με την εφαρμογή που χρησιμοποιείτε:<br>• Εάν χρησιμοποιείτε εφαρμογές όπως το iTunes, μεταβαίνει στη λειτουργία Μουσικής.<br>• Εάν χρησιμοποιείτε εφαρμογές όπως το YouTube, μεταβαίνει στη λειτουργία Ταινίας.<br>• Εάν χρησιμοποιείτε εφαρμογές παιχνιδιών, μεταβαίνει ανάλογα στη λειτουργία παιχνιδιού."
                             }
                         }
                     },
                     "eCourse": {
-                        "title": "Interactive E-course mode",
-                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
+                        "title": "Διαδραστική λειτουργία E-course",
+                        "tooltip": "Αυτή η λειτουργία είναι χρήσιμη για διαδικτυακά μαθήματα, όταν υπάρχουν φωνητικές αλληλεπιδράσεις μεταξύ δασκάλων και μαθητών. Όταν είναι ενεργοποιημένη, ο ήχος Dolby μεταβαίνει αυτόματα στη λειτουργία Φωνής. Εντωμεταξύ, δυνατότητες όπως η διαμόρφωση ηχητικής δέσμης, η ακύρωση ακουστικής ηχούς και η καταστολή θορύβου πληκτρολογίου θα ενεργοποιηθούν για βελτίωση της εισόδου φωνής."
                     }
                 },
                 "microphone": {
@@ -2107,7 +2107,7 @@
                 "heading": "Έξυπνη ανίχνευση",
                 "title": "Έξυπνος συναγερμός κίνησης",
                 "tooltip": "<div>Αυτή η δυνατότητα δεν λειτουργεί, όταν ο υπολογιστής είναι σε κατάσταση αδρανοποίησης ή απενεργοποιημένος. Ελέγξτε τις ρυθμίσεις στις εξής ενέργειες:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>ενέργειες του καπακιού κλεισίματος</li><li>ενέργεια κρίσιμου/χαμηλού επιπέδου φόρτισης μπαταρίας</li><li>ενέργεια κουμπιού τροφοδοσίας</li><li>ενέργεια κουμπιού αναστολής λειτουργίας</li><li>ρυθμίσεις χρονικού ορίου αδράνειας για μετάβαση του συστήματος σε κατάσταση αδρανοποίησης</li></ul></div>Διαφορετικά, δεν θα ενεργοποιήσει συναγερμό, ούτε τη λήψη φωτογραφιών.</div>",
-                "desc": "<p><label>Όταν αυτή τη δυνατότητα είναι ενεργοποιημένη, η συσκευή θα αρχίσει να ηχεί όταν η οθόνη είναι κλειδωμένη και εντοπιστούν κινήσεις ιδίως σε δημόσιο χώρο.</label></p> <p><label>Για να απορρίψετε τον συναγερμό, πληκτρολογήστε τον σωστό κωδικό πρόσβασης ή συνδεθείτε από το Windows Hello.</label></p>",
+                "desc": "<p><label>Όταν αυτή τη δυνατότητα είναι ενεργοποιημένη, η συσκευή θα αρχίσει να ηχεί όταν η οθόνη είναι κλειδωμένη και εντοπιστούν κινήσεις ιδίως σε δημόσιο χώρο.</label></p> <p><label>Για να απορρίψετε τον συναγερμό, συνδεθείτε στα Windows.</label></p>",
                 "note": {
                     "description": "Μόλις συνδεθείτε στο σύστημα με επιτυχία, αυτή η δυνατότητα θα απενεργοποιηθεί αυτόματα. Θα πρέπει να την ενεργοποιήσετε ξανά για να τη χρησιμοποιήσετε."
                 },
@@ -2121,7 +2121,7 @@
                 },
                 "allowCamera": {
                     "title": "ΛΗΨΗ ΦΩΤΟΓΡΑΦΙΩΝ",
-                    "describe": "Όταν αυτή τη δυνατότητα είναι ενεργοποιημένη, η κάμερα λαμβάνει φωτογραφίες αυτόματα όταν ανιχνεύσει οποιαδήποτε κίνηση εάν η οθόνη είναι κλειδωμένη. Αυτά τα δεδομένα υπόκεινται σε τοπική επεξεργασία στη συσκευή σας. Η Lenovo ούτε έχει πρόσβαση ούτε τα χρησιμοποιεί.",
+                    "describe": "Όταν αυτή τη δυνατότητα είναι ενεργοποιημένη, η κάμερα λαμβάνει φωτογραφίες αυτόματα όταν ανιχνεύονται κινήσεις, εάν η οθόνη είναι κλειδωμένη. Αυτά τα δεδομένα υπόκεινται σε τοπική επεξεργασία στη συσκευή σας. Η Lenovo ούτε έχει πρόσβαση ούτε τα χρησιμοποιεί.",
                     "checkBoxText": "Ενεργοποίηση αυτής της δυνατότητας"
                 },
                 "cameraPrivacy": {
@@ -2133,7 +2133,7 @@
                     "linkText": "Μεταβείτε στις Ρυθμίσεις των Windows για να αποκτήσετε πρόσβαση"
                 },
                 "photo": {
-                    "title": "Ο ΑΡΙΘΜΟΣ ΤΩΝ ΦΩΤΟΓΡΑΦΙΩΝ ΠΟΥ ΛΑΜΒΑΝΟΝΤΑΙ ΣΤΗ ΔΙΑΡΚΕΙΑ ΤΗΣ ΚΙΝΗΣΗΣ",
+                    "title": "Ο ΑΡΙΘΜΟΣ ΤΩΝ ΦΩΤΟΓΡΑΦΙΩΝ ΠΟΥ ΕΛΗΦΘΗΣΑΝ",
                     "tooltip": "Η κάμερα στον υπολογιστή σας ενεργοποιείται αυτόματα για τη λήψη φωτογραφιών, όταν ανιχνεύονται κινήσεις. Οι φωτογραφίες λαμβάνονται κάθε 2 δευτερόλεπτα και αποθηκεύονται στον τοπικό χώρο αποθήκευσης.",
                     "option1": 5,
                     "option2": 10,
@@ -3128,7 +3128,15 @@
         "warningMessage": "Λάβετε υπόψη ότι οι δοκιμές θα ακυρωθούν εάν το σύστημα είναι σε κατάσταση αναστολής λειτουργίας ή αδρανοποίησης",
         "refreshMessage": "Η ανανέωση ενδέχεται να διαρκέσει αρκετή ώρα, επειδή απαιτείται επαναφόρτωση όλων των στοιχείων",
         "processFinishedCannotBeCanceled": "Η διαδικασία που εκτελείται δεν χρειάζεται να ακυρωθεί πια, δεδομένου ότι έχει ολοκληρωθεί.",
-        "cancelMayTakeSomeTime": "Περιμένετε, μπορεί να χρειαστεί λίγος χρόνος για την ακύρωση ανάλογα με το σύστημά σας."
+        "cancelMayTakeSomeTime": "Περιμένετε, μπορεί να χρειαστεί λίγος χρόνος για την ακύρωση ανάλογα με το σύστημά σας.",
+        "scanFailureModal": {
+            "title": "Hardware Problem Detected",
+            "problemDetected": "There were detected problems on the following components on your computer:",
+            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
+            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
+            "supportButtonText": "Open Ticket",
+            "recoverBadSectorsButtonText": "Recover Bad Sectors"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3248,7 +3256,11 @@
             "status": "Status",
             "activeStatus": "ACTIVE",
             "inactiveStatus": "INACTIVE",
-            "manageSubscription": "MANAGE SUBSCRIPTION"
+            "manageSubscription": "MANAGE SUBSCRIPTION",
+            "titlebeta": "Lenovo Beta Program",
+            "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
+            "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
+            "descriptionbeta1": "You are welcomed to join and try the full feature."
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3271,7 +3283,8 @@
             "thu": "Thursday",
             "fri": "Friday",
             "sat": "Saturday",
-            "sun": "Sunday"
+            "sun": "Sunday",
+            "scanToolTip": "Enable this toggle can setup a automatic event to trigger system Performance scan on your selected time and date."
         },
         "scanningPage": {
             "title": "Performance & security check",
@@ -3439,7 +3452,8 @@
                 "yearlyPricing": "$19.99 / Yr",
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
-                "signupButton": "SIGN UP"
+                "signupButton": "SIGN UP",
+                "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
             },
             "tune": "{{tune}} ISSUES",
             "boost": "{{boost}} ISSUES",

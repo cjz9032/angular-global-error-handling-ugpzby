@@ -9,30 +9,29 @@ import { UiRoundedRectangleRadioListModel, UiRoundedRectangleRadioModel } from '
  * https://www.w3.org/TR/2016/WD-wai-aria-practices-1.1-20160317/examples/radio/radio.html
  */
 @Component({
-	selector: 'vtr-ui-rounded-rectangle-radio-list',
-	templateUrl: './ui-rounded-rectangle-radio-list.component.html',
-	styleUrls: ['./ui-rounded-rectangle-radio-list.component.scss']
+	selector: 'vtr-ui-rounded-rectangle-custom-radio-list',
+	templateUrl: './ui-rounded-rectangle-custom-radio-list.component.html',
+	styleUrls: ['./ui-rounded-rectangle-custom-radio-list.component.scss']
 })
-export class UiRoundedRectangleRadioListComponent implements OnInit {
-	@Input() radioId: string;
-	@Input() tooltip: string;
-	@Input() disabled = false;
-	@Input() name: string;
-	@Input() isLarge = false;
+export class UiRoundedRectangleCustomRadioListComponent implements OnInit {
+	@Input() groupName: string;
+	@Input() isVertical = false;
 	@Input() metricsEvent = 'ItemClick';
+	@Input() radioDetails: Array<UiRoundedRectangleRadioModel>;
 
 	@Output() selectionChange = new EventEmitter<UiRoundedRectangleRadioModel>();
 
 	@ViewChildren('radioRef') radioButtons: QueryList<any>;
 
-	public model = new UiRoundedRectangleRadioListModel(
-		'pizza-radio-group',
-		[
-			new UiRoundedRectangleRadioModel('regular-crust', false, false, 'regular crust'),
-			new UiRoundedRectangleRadioModel('thin-crust', false, false, 'thin crust'),
-			new UiRoundedRectangleRadioModel('deep-dish', false, false, 'deep dish'),
-		]
-	);
+	// public model1 = new UiRoundedRectangleRadioListModel(
+	// 	'pizza-radio-group',
+	// 	[
+	// 		new UiRoundedRectangleRadioModel('regular-crust', 'regular crust', 'regular crust', false, false),
+	// 		new UiRoundedRectangleRadioModel('thin-crust', 'thin crust', 'thin crust', false, false),
+	// 		new UiRoundedRectangleRadioModel('deep-dish', 'deep dish', 'deep dish', false, false),
+	// 	]
+	// );
+
 
 	constructor(logger: LoggerService, metrics: MetricService) {
 	}
@@ -46,22 +45,16 @@ export class UiRoundedRectangleRadioListComponent implements OnInit {
 	}
 
 	onKeyDown($event, index: number) {
-		if (
-			this.model
-			&& this.model.radioDetails
-			&& this.model.radioDetails.length > 0) {
+		if (this.radioDetails && this.radioDetails.length > 0) {
 			this.handleKeyPressEvent($event, index);
 		}
 	}
 
-	private updateSelection(radioId: string, hasFocus = false) {
+	private updateSelection(radioId: string, hasFocus = false): UiRoundedRectangleRadioModel {
 		let radio: UiRoundedRectangleRadioModel;
-		if (
-			this.model
-			&& this.model.radioDetails
-			&& this.model.radioDetails.length > 0) {
+		if (this.radioDetails && this.radioDetails.length > 0) {
 			let hasFound = false;
-			this.model.radioDetails.forEach(radioDetail => {
+			this.radioDetails.forEach(radioDetail => {
 				if ((radioDetail.componentId === radioId)) {
 					radio = radioDetail;
 					hasFound = true;
@@ -76,23 +69,24 @@ export class UiRoundedRectangleRadioListComponent implements OnInit {
 				this.radioButtons.forEach(radioButton => {
 					if (radioButton.nativeElement.id === radioId) {
 						radioButton.nativeElement.focus();
+						radioButton.nativeElement.checked = true;
 					}
 				});
 			}
 		}
-		return null;
+		return radio;
 	}
 
 	private setNodeActive(index: number): UiRoundedRectangleRadioModel {
 		if (index >= 0) {
-			const radioId = this.model.radioDetails[index].componentId;
+			const radioId = this.radioDetails[index].componentId;
 			// get element by index and pass its id to next FN
 			return this.updateSelection(radioId, true);
 		}
 		return null;
 	}
 
-	private handleKeyPressEvent(event, index) {
+	private handleKeyPressEvent(event, index: number) {
 		const { type } = event;
 		const { id } = event.target;
 		let nextIndex = index;
@@ -106,7 +100,7 @@ export class UiRoundedRectangleRadioListComponent implements OnInit {
 				case KEYCODE.DOWN:
 				case KEYCODE.RIGHT:
 					// if index is equal to last item then set 0 else ++
-					nextIndex = (index === this.model.radioDetails.length - 1) ? 0 : index + 1;
+					nextIndex = (index === this.radioDetails.length - 1) ? 0 : index + 1;
 					isHandled = true;
 
 					break;
@@ -114,7 +108,7 @@ export class UiRoundedRectangleRadioListComponent implements OnInit {
 				case KEYCODE.UP:
 				case KEYCODE.LEFT:
 					// if index is equal to 0 item then set length -1 else --
-					nextIndex = (index === 0) ? this.model.radioDetails.length - 1 : index - 1;
+					nextIndex = (index === 0) ? this.radioDetails.length - 1 : index - 1;
 					isHandled = true;
 					break;
 

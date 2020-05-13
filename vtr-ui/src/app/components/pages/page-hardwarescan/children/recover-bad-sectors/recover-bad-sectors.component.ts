@@ -3,7 +3,7 @@ import { HardwareScanTestResult } from 'src/app/enums/hardware-scan-test-result.
 import { DeviceService } from 'src/app/services/device/device.service';
 import { TranslateService } from '@ngx-translate/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import { HardwareScanService } from '../../../../../services/hardware-scan/hardware-scan.service';
 import { ModalRecoverConfirmComponent } from '../../../../modal/modal-recover-confirm/modal-recover-confirm.component';
 
@@ -19,6 +19,7 @@ export class RecoverBadSectorsComponent implements OnInit, OnChanges, OnDestroy 
 	public progress: number;
 	public enableViewResults = false;
 	public errorMessage: string;
+	private failedDevicesList: Array<string>;
 
 	public textButton = this.translate.instant('hardwareScan.recoverBadSectors.title');
 	recoverInProgress = false;
@@ -29,11 +30,19 @@ export class RecoverBadSectorsComponent implements OnInit, OnChanges, OnDestroy 
 		private translate: TranslateService,
 		private modalService: NgbModal,
 		private router: Router,
+		private activatedRoute: ActivatedRoute
 	) {
 		this.hardwareScanService.setLoadingStatus(true);
 		this.hardwareScanService.setScanExecutionStatus(false);
 		this.hardwareScanService.setRecoverExecutionStatus(false);
 		this.hardwareScanService.setIsScanDone(false);
+
+		this.failedDevicesList = [];
+		this.activatedRoute.queryParams.subscribe(params => {
+			if (params['failedDevices']) {
+				this.failedDevicesList = params['failedDevices'];
+			}
+		});
 	}
 
 	ngOnInit() {
@@ -104,13 +113,14 @@ export class RecoverBadSectorsComponent implements OnInit, OnChanges, OnDestroy 
 
 	private buildDevicesRecoverList(groupList: any) {
 		const devices = [];
+
 		for (const group of groupList) {
 			devices.push({
 				id: group.id,
 				title: group.name,
 				name: group.name,
 				status: HardwareScanTestResult.NotStarted,
-				isSelected: false,
+				isSelected: this.failedDevicesList.find(p => p === group.id) != undefined,
 				percent: 0,
 				numberOfSectors: 0,
 				numberOfBadSectors: 0,

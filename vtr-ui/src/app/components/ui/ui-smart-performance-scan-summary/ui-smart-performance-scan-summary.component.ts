@@ -44,6 +44,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	leftAnimator: any;
 	@Input() isScanning = false;
 	@Input() isScanningCompleted = false;
+	@Input() inputIsScanningCompleted = false;
 	@Input() hasSubscribedScanCompleted = false;
 	@Input() tune = 0;
 	@Input() boost = 0;
@@ -449,9 +450,19 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		this.isSubscribed = this.commonService.getLocalStorageValue(
 			LocalStorageKey.IsSmartPerformanceSubscribed
 		);
+		if(this.inputIsScanningCompleted)
+		{
+			this.inputIsScanningCompleted = false;
+		}
 	}
 	ScanNowSummary() {
 		this.backToScan.emit();
+	}
+	BackToSummary(){
+		if(this.inputIsScanningCompleted)
+		{
+			this.inputIsScanningCompleted = false;
+		}
 	}
 
 	// scan settings

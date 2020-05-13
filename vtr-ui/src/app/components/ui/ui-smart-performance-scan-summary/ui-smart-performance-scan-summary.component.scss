@@ -233,7 +233,7 @@ vtr-ui-smart-performance-scan-summary {
 						line-height: 1.4rem;
 					}
 				}
-				.icon {
+				.icomoon, .icon {
 					color: $main;
 					font-size: 4rem;
 					line-height: 1;
@@ -642,7 +642,7 @@ vtr-ui-smart-performance-scan-summary {
 				font-size: 1.4rem;
 			}
 		}
-		.icon {
+		.icomoon {
 			color: #7D5FEF;
 			font-size: 10rem;
 			margin-bottom: -4.5rem;
@@ -775,6 +775,109 @@ vtr-ui-smart-performance-scan-summary {
 				position:absolute;
 				left:50%;
 				border-left:1px solid $shade_darkest;
+			}
+		}
+		&.before-result{
+			padding: 3.5rem 2rem 2rem 2rem;
+			.slider {
+				.condition {
+					padding: 0 1.5rem;
+					font-size: 1rem;
+					text-transform: uppercase;
+					font-weight: $weight_regular;
+					.critical{
+						top: -3rem;
+						left: 1.5rem;
+						color: #D00707;
+						position: absolute;
+					}
+					.well {
+						top: -3rem;
+						right: 1.5rem;
+						color: #51982C;
+						position: absolute;
+					}
+				}
+			}
+			.pc-status-info{
+				margin-top: 2rem;
+				.info-text{
+					color: $alt;
+					margin-top: 1.8rem;
+					margin-bottom: 0rem;
+					font-size: 1rem;
+					width: calc(60% - 0.8rem);
+					text-align: center;
+					position: relative;
+					font-weight: $weight_bold;
+					@media #{$breakpoint_sm}{
+						font-size: 1rem;
+						width: calc(60.5% - 2rem);
+					}
+					span{
+						position: relative;
+						z-index: 9;
+					}
+					&::before {
+						content: "";
+						position: absolute;
+						width: 25%;
+						height: 1rem;
+						border: 0.1rem solid $alt;
+						border-top: none;
+						border-right: none;
+						left: 0;
+						bottom: 0.5rem;
+						z-index: 0;
+						@media #{$breakpoint_xl}{
+							width: 20%;
+						}
+						@media #{$breakpoint_lg}{
+							width: 30%;
+						}
+						@media #{$breakpoint_md}{
+							width: 27%;
+						}
+						@media #{$breakpoint_sm}{
+							width: 20%;
+						}
+					}
+					&::after{
+						content: "";
+						position: absolute;
+						width: 25%;
+						height: 1rem;
+						border: 0.1rem solid $alt;
+						border-top: none;
+						border-left: none;
+						right: 0;
+						bottom: 0.5rem;
+						z-index: 0;
+						@media #{$breakpoint_xl}{
+							width: 20%;
+						}
+						@media #{$breakpoint_lg}{
+							width: 30%;
+						}
+						@media #{$breakpoint_md}{
+							width: 27%;
+						}
+						@media #{$breakpoint_sm}{
+							width: 20%;
+						}
+					}
+					&.running-well{
+						width: 39%;
+						margin-left: 0.5%;
+						color: $green_darker;
+						&::before {
+							border-color: $green_darker;
+						}
+						&::after {
+							border-color: $green_darker;
+						}
+					}
+				}
 			}
 		}
 	}
@@ -1155,6 +1258,13 @@ vtr-ui-smart-performance-scan-summary {
 			right: 9%;
 			box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
 			border-radius: 0.5rem;
+			.row{
+				height: 15rem;
+				overflow-y: auto;
+			}
+			.select-close{
+				height: auto;
+			}
 			.hour-block{
 				border-right: 1px solid $shade_light;
 				border-bottom: 1px solid $shade_light;
@@ -1216,6 +1326,55 @@ vtr-ui-smart-performance-scan-summary {
 		}
 	
 }
+}
+.scanned-items{
+	background: $grey_lighter;
+	border-radius: 0.6rem;
+	border: 0.1rem solid $shade_lighter;
+	padding: 1rem 1.6rem;
+	margin-bottom: 1.5rem;
+	.heading{
+		display: flex;
+		align-items: center;
+		.icon{
+			font-size: 3.2rem;
+			line-height: 0;
+			color: $main;
+		}
+		h3 {
+			font-size: 1.4rem;
+			font-weight: $weight_bold;
+			color: $grey_dark;
+			padding-left: 1.6rem;
+			margin-bottom: 0;
+		}
+	}
+	.status{
+		display: flex;
+		align-items: center;
+		.icon-bkg {
+			color: $light;
+		}
+		.icon-check {
+			padding-right: 1rem;
+			display: inline-block;
+			.icon-bkg {
+				display: inline-block;
+				border-radius: 50%;
+				height: 1.7rem;
+				width: 1.7rem;
+				line-height: 1.5rem;
+				font-size: 1rem;
+				text-align: center;
+				background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
+				border: 0.1rem solid $go_dark;
+			}
+
+			&::before {
+				content: '';
+			}
+		}
+	}
 }
 @keyframes expanding {
 	0%{

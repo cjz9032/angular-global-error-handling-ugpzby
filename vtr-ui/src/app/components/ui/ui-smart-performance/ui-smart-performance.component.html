@@ -18,7 +18,7 @@
 								<div class="row">
 									<div class="col col-12 offline-info-background py-5">
 										<div class="d-flex justify-content-center w-100 hero-content">
-											<div class="icon icon-computer-scan-756353"></div>
+											<span class="icomoon icomoon-pcScan"></span>
 											<div class="pl-5 main-title">
 												<h1>{{'smartPerformance.performanceandSecurityCheckTitle' |translate }}</h1>
 												<h3>{{'smartPerformance.performanceandSecurityCheckSubTitle' |translate }}</h3>
@@ -85,23 +85,23 @@
 														<div class="icon-bar my-5">
 															<ul class="listed-task-icons d-flex justify-content-between align-items-center py-3">
 																<li class="icon-box d-flex justify-content-center align-items-center py-3">
-																	<div class="icon icon-recycling-2025397"></div>
+																	<span class="icomoon icomoon-junk"></span>
 																	<p>{{'smartPerformance.tunePCPerformance.tabSet1.tab1' |translate }}</p>
 																</li>
 																<li class="icon-box d-flex justify-content-center align-items-center py-3">
-																	<div class="icon icon-noun-touch-200038"></div>
+																	<div class="icomoon icomoon-usibilityIssue"></div>
 																	<p>{{'smartPerformance.tunePCPerformance.tabSet1.tab2' |translate }}</p>
 																</li>
 																<li class="icon-box d-flex justify-content-center align-items-center py-3">
-																	<div class="icon icon-microsoft-windows-22"></div>
+																	<div class="icomoon icomoon-windows"></div>
 																	<p>{{'smartPerformance.tunePCPerformance.tabSet1.tab3' |translate }}</p>
 																</li>
 																<li class="icon-box d-flex justify-content-center align-items-center py-3">
-																	<div class="icon icon-error-1582584"></div>
+																	<div class="icomoon icomoon-systemError"></div>
 																	<p>{{'smartPerformance.tunePCPerformance.tabSet1.tab4' |translate }}</p>
 																</li>
 																<li class="icon-box d-flex justify-content-center align-items-center py-3">
-																	<div class="icon icon-noun-registery-key-1581151"></div>
+																	<div class="icomoon icomoon-registryError"></div>
 																	<p>{{'smartPerformance.tunePCPerformance.tabSet1.tab5' |translate }}</p>
 																</li>
 															</ul>
@@ -173,7 +173,7 @@
 												</ngb-tab>
 												<ngb-tab id="main-3">
 													<ng-template ngbTabTitle>
-														<div class="icon icon-malware-security"></div>{{'smartPerformance.malwareSecurity.title' |translate }}
+														<span class="icomoon icomoon-malware"></span>{{'smartPerformance.malwareSecurity.title' |translate }}
 													</ng-template>
 													<ng-template ngbTabContent>
 														<h2>{{'smartPerformance.malwareSecurity.heading' |translate }}</h2>
@@ -222,7 +222,7 @@
 
 												<ngb-tab id="main-4">
 													<ng-template ngbTabTitle>
-														<div class="icon icon-easy-resume"></div>{{'smartPerformance.proactiveAutomated.title' |translate }}
+														<span class="icomoon icomoon-proactive"></span>{{'smartPerformance.proactiveAutomated.title' |translate }}
 													</ng-template>
 													<ng-template ngbTabContent>
 														<h2>{{'smartPerformance.proactiveAutomated.heading' |translate }}</h2>
@@ -397,5 +397,5 @@
 	[isScheduleScan] ="isScheduleScan">
 </vtr-ui-smart-performance-scanning>
 <vtr-ui-smart-performance-scan-summary *ngIf="(isScanningCompleted || isSubscribed) && !isScanning " [hasSubscribedScanCompleted]="hasSubscribedScanCompleted"
-	(backToScan)="changeScanEvent()"  [rating]="rating" [tune]="tune"
+	[inputIsScanningCompleted]="showSubscribersummary" (backToScan)="changeScanEvent()"  [rating]="rating" [tune]="tune"
 	[boost]="boost" [secure]="secure"></vtr-ui-smart-performance-scan-summary>

@@ -228,7 +228,7 @@ vtr-ui-smart-performance-scan-summary {
 						line-height: 1.4rem;
 					}
 				}
-				.icon {
+				.icon, .icomoon {
 					color: $main;
 					font-size: 4rem;
 					line-height: 1;
@@ -856,6 +856,12 @@ vtr-ui-smart-performance-scan-summary {
 					}
 				}
 			}
+			.question{
+				font-size: 1.6rem;
+				color: $grey_dark;
+				margin-top: 0.5rem;
+				margin-left: 0.8rem;
+			}
 		}
 		.disable-list {
 			background: $gaming_switch_light;
@@ -1091,6 +1097,13 @@ vtr-ui-smart-performance-scan-summary {
 			right: 9%;
 			box-shadow: $drop_shadow;
 			border-radius: 0.5rem;
+			.row{
+				height: 15rem;
+				overflow-y: auto;
+			}
+			.select-close{
+				height: auto;
+			}
 			.hour-block{
 				border-right: 1px solid $shade_light;
 				border-bottom: 1px solid $shade_light;

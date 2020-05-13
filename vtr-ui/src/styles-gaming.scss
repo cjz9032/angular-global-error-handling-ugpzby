@@ -1339,13 +1339,37 @@
 					.vtr-widget-hardware-scan-item {
 						.description {
 							.subtitle {
-								color: $gaming_lighter;
+								color: $gaming_lighter!important;
 							}
+						}
+						vtr-ui-hardware-list {
+							.vtr-ui-list-hardware {
+								.list-group {
+									.list-group-item {
+										background-color: $gaming_bg!important;
+										border-color: $gaming-Darkslate-blue!important;
+										.title {
+											color: $gaming_lightest;
+										}
+										.subtitle {
+											color: $gaming_grey_lightest;
+										}
+									}
+								}
+							}
+						}
+						.title {
+							color: $gaming_lightest!important;
+						}
+						.subtitle {
+							color: $gaming_lighter!important;
 						}
 						.settings-container {
 							.vtr-ui-list-hardware {
 								.list-group {
 									.list-group-item {
+										background-color: $gaming_bg!important;
+										border-color: $gaming-Darkslate-blue!important;
 										&.details {
 											.table-bordered {
 												tr {
@@ -1415,11 +1439,11 @@
 						.vtr-widget-hardware-scan-item {
 							.description {
 								.subtitle {
-									color: $gaming_lighter;
+									color: $gaming_lighter!important;
 								}
 							}
 							.title {
-								color: $gaming_lightest;
+								color: $gaming_lightest!important;
 							}
 							.subtitle {
 								color: $gaming_grey_lightest;
@@ -1432,7 +1456,7 @@
 							.vtr-ui-list-hardware {
 								.list-group {
 									.list-group-item {
-										background-color: $gaming-bg;
+										background-color: $gaming-bg!important;
 										border: 0.1rem solid $screen_dark_15;
 										.title {
 											color: $gaming_lightest;
@@ -1524,7 +1548,7 @@
 					.vtr-ui-list-hardware {
 						.list-group {
 							.list-group-item {
-								background-color: $gaming-bg;
+								background-color: $gaming-bg!important;
 								border: 0.1rem solid $screen_dark_15;
 								.title {
 									color: $gaming_lightest !important;
@@ -1897,7 +1921,7 @@
 				.vtr-ui-list-hardware {
 					.list-group {
 						.list-group-item {
-							background-color: $gaming-bg;
+							background-color: $gaming-bg!important;
 							border: 0.1rem solid $screen_dark_10;
 							.title {
 								color: $gaming_lightest !important;
@@ -1912,11 +1936,11 @@
 			vtr-widget-hardware-scan-item {
 				.vtr-widget-hardware-scan-item {
 					.title {
-						color: $gaming_lightest;
+						color: $gaming_lightest!important;
 					}
 					.description {
 						.subtitle {
-							color: $gaming_lighter;
+							color: $gaming_lighter!important;
 						}
 					}
 					.subtitle {
@@ -1927,7 +1951,7 @@
 					.vtr-ui-list-hardware {
 						.list-group {
 							.list-group-item {
-								background-color: $gaming-bg;
+								background-color: $gaming-bg!important;
 								border: 0.1rem solid $screen_dark_15;
 								.title {
 									color: $gaming_lightest;

@@ -29,9 +29,9 @@
 				</li>
 			</ul>
 
-			<ul class="list-group list-group-flush superResolution-group" *ngIf="superResolutionAvailable">
-				<li>
-					<div class="border-top common-li-padding"
+			<ul class="list-group list-group-flush superResolution-group" role="list" id="intelligent-media-superResolution" *ngIf="superResolutionAvailable">
+				<li role="listitem">
+					<div class="border-top common-li-padding" id="splitLine"
 						*ngIf="intelligentMediaAvailable"></div>
 					<vtr-ui-row-switch
 						[switchId]="'video-resolution-upscaling.toggle-button'"
@@ -50,17 +50,18 @@
 						[showLoaderState]="isSRLoading">
 					</vtr-ui-row-switch>
 
-					<div class="superResolution-image">
+					<div class="superResolution-image" id="intelligent-media-superResolution-image">
 						<img [src]="image"
 							class="image"
 							role="img"
-							id="intelligent-media-superResolution-image" />
-						<div class="superResolution-image-word">
+							attr.aria-label="{{'device.smartAssist.superResolution.title' | translate}}"
+							id="superResolution-image" />
+						<div class="superResolution-image-word" id="image-text-region">
 							<div class="superResolution-image-before imageText"
 								role="text"
 								id="superResolution-image-before">
 								{{'device.smartAssist.superResolution.imageBefore' | translate}}</div>
-							<div class="superResolution-image-Arrow imageText"> </div>
+							<div class="superResolution-image-Arrow imageText" id="superResolution-image-arrow"> </div>
 							<div class="intelligent-security-image-after imageText"
 								role="text"
 								id="superResolution-image-after">
@@ -69,24 +70,24 @@
 						</div>
 					</div>
 
-					<div class="row">
-						<div class="feature-note p-4">
+					<div class="row" id="superResolution-description-region-row">
+						<div class="feature-note p-4" id="superResolution-description-region">
 							<p id="superResolution-note-description"
 								role="text">
 								{{'device.smartAssist.superResolution.note.description' | translate}}</p>
-							<div class="m-4">
-								<ul>
-									<li>
+							<div class="m-4" id="superResolution-description-region-ui-li">
+								<ul role="list" id="superResolution-description-ui">
+									<li role="listitem" id="superResolution-description-li1">
 										<p id="superResolution-note-description1"
 											role="text">
 											{{'device.smartAssist.superResolution.note.description1' | translate}}</p>
 									</li>
-									<li>
+									<li role="listitem" id="superResolution-description-li2">
 										<p id="superResolution-note-description2"
 											role="text">
 											{{'device.smartAssist.superResolution.note.description2' | translate}}</p>
 									</li>
-									<li>
+									<li role="listitem" id="superResolution-description-li3">
 										<p id="superResolution-note-description3"
 											role="text">
 											{{'device.smartAssist.superResolution.note.description3' | translate}}</p>

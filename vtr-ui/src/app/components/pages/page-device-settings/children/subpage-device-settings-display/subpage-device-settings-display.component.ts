@@ -259,7 +259,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 					}
 				}
 				this.windowsObj.addEventListener('accesschanged', this.cameraAccessChangedHandler);
-			}		
+			}
 	}
 
 	ngAfterViewInit() {
@@ -495,7 +495,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 
 		if (this.windowsObj) {
 			this.windowsObj.removeEventListener('accesschanged', this.cameraAccessChangedHandler);
-		} 
+		}
 	}
 
 	/**
@@ -923,17 +923,21 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 				this.isSet.isSetDaytimeColorTemperatureValue = true;
 				this.setValues.SetDaytimeColorTemperatureValue = value;
 				this.commonService.setLocalStorageValue(LocalStorageKey.DisplayColorTempCapability, this.displayColorTempCache);
+				if (this.eyeCareModeStatus.status) {
+					this.onEyeCareTemperatureChange(this.eyeCareDataSource.current);
+				}
 			}
 		} catch (error) {
 			this.logger.error('onSetChangeDisplayColorTemp', error.message);
 			return EMPTY;
 		}
 	}
-	public setToEyeCareMode() {
+	public setToEyeCareMode($event) {
 		if (this.eyeCareModeStatus.status) {
 			// this.displayColorTempDataSource.current = this.eyeCareDataSource.current;
 			// this.onSetChangeDisplayColorTemp({value: this.eyeCareDataSource.current})
-			this.onEyeCareTemperatureChange(this.eyeCareDataSource.current);
+			this.displayService.setDaytimeColorTemperature($event);
+			//this.onEyeCareTemperatureChange(this.eyeCareDataSource.current);
 
 		}
 	}

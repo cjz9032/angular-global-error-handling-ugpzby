@@ -11,11 +11,29 @@
                     <strong>{{'smartPerformance.scanSettings.enableScan' |translate }}</strong>
                 </div>
                 <div class="status d-flex justify-content-end">
-                    <vtr-ui-switch-onoff [value]="scanToggleValue" (toggle)="setEnableScanStatus($event)"></vtr-ui-switch-onoff>
-					<button type="button" class="btn btn-outline-secondary tooltip-btn" placement="left" triggers="click" [autoClose]="'outside'"
-						ngbTooltip="{{'smartPerformance.scanSettings.scanToolTip' |translate }}" tooltipClass="schedule-scan">
-						<fa-icon [icon]="['far', 'question-circle']"></fa-icon>
-					</button>
+                    <vtr-ui-switch-onoff
+                        [value]="scanToggleValue"
+                        (toggle)="setEnableScanStatus($event)">
+                    </vtr-ui-switch-onoff>
+                    <!-- <button type="button" class="btn btn-outline-secondary tooltip-btn" placement="left" triggers="click" [autoClose]="'outside'"
+                        ngbTooltip="{{'smartPerformance.scanSettings.scanToolTip' |translate }}" tooltipClass="schedule-scan">
+                        <fa-icon [icon]="['far', 'question-circle']"></fa-icon>
+                    </button>  -->
+
+
+                    <fa-icon class="question"
+                        tabindex="0"
+                        triggers="click:blur"
+                        placement="auto"
+                        id=""
+                        attr.aria-label=""
+                        role="tooltip"
+                        [ngbTooltip]="'smartPerformance.scanSettings.tooltipText' |translate"
+                        #tooltip="ngbTooltip"
+                        [icon]="['far', 'question-circle']"
+                        container="vtr-root"
+                        tooltipClass="vtr-tooltip">
+                    </fa-icon>
                 </div>
             </li>
             <li class="d-flex justify-content-between calendar-list" [ngClass]="{'disable-list':!scanToggleValue}" (click)="changeScanSchedule()">
@@ -153,4 +171,3 @@
             </div>
     </div>
 </div>
-

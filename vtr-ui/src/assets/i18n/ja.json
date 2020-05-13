@@ -1477,33 +1477,33 @@
             "audio": {
                 "title": "オーディオ",
                 "subtitle": "オーディオの設定",
-                "description": "このセクションでは、Dolby 設定やマイクなどのオーディオ設定を自動で最適化することも、すべて手動で構成することもできます。",
+                "description": "このセクションでは、Dolby 設定やマイクなどのオーディオ設定を自動で最適化することも、すべて手動で設定することもできます。",
                 "audioSmartsettings": {
-                    "title": "Audio smart settings",
+                    "title": "オーディオ・スマート設定",
                     "dolby": {
-                        "title": "Dolby audio",
-                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
+                        "title": "Dolby オーディオ",
+                        "description": "次の中からお好みのモードを選択してください。「... 向けのオーディオの自動最適化」チェックボックスをオンにすることもできます。オンにすると、Dolby オーディオで、使用中のモードに応じて、最適なオーディオ効果が自動的に取得されます。",
                         "options": {
-                            "dynamic": "DYNAMIC",
-                            "movie": "MOVIE",
-                            "music": "MUSIC",
-                            "games": "GAME",
-                            "voip": "VOICE"
+                            "dynamic": "ダイナミック",
+                            "movie": "ムービー",
+                            "music": "音楽",
+                            "games": "ゲーム",
+                            "voip": "音声"
                         },
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
-                                "checkboxText": "Automatically optimize audio for VOIP"
+                                "checkboxText": "VoIP 向けのオーディオの自動最適化",
+                                "tooltip": "この機能は、VoIP 通話時に有効になります（Skype、Microsoft Teams、WeChat などを使用）。有効にすると、Dolby オーディオは自動的に音声モードに変わり、音声品質が向上します。"
                             },
                             "entertainmentMode": {
-                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "checkboxText": "Automatically optimize audio for entertainment"
+                                "checkboxText": "エンターテイメント向けのオーディオの自動最適化",
+                                "tooltip": "このオプションを選択すると、Dolby オーディオでは、使用しているアプリに応じてモードが自動的に調整されます。<br>• iTunes などのアプリを使用している場合は、音楽モードに切り替わります。<br>• YouTube などのアプリを使用している場合は、ムービー・モードに切り替わります。<br>• ゲーム・アプリを使用している場合は、それに応じてゲーム・モードに切り替わります。"
                             }
                         }
                     },
                     "eCourse": {
-                        "title": "Interactive E-course mode",
-                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
+                        "title": "対話式 E コース・モード",
+                        "tooltip": "この機能は、講師と受講者の間で音声によりやり取りするオンライン・コースで役立ちます。有効にすると、Dolby オーディオは自動的に音声モードに変わります。その間、ビームフォーミング、アコースティック・エコー・キャンセル、キーボード・ノイズ抑制などの機能がオンになり、音声入力が改善されます。"
                     }
                 },
                 "microphone": {
@@ -2107,7 +2107,7 @@
                 "heading": "インテリジェント・センサー",
                 "title": "スマート・モーション・アラーム",
                 "tooltip": "<div>この機能は、コンピューターが休止状態または電源がオフのときは機能しません。次の動作の設定を確認してください。<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>閉じる動作</li><li>重要なアクション/バッテリー低下時の動作</li><li>電源ボタンの動作</li><li>スリープ・ボタンの動作</li><li>休止状態までのアイドル・タイムアウト設定</li></ul></div>それ以外の場合は、アラームがトリガーされず、写真も撮られません。</div>",
-                "desc": "<p><label>この機能を有効にした場合は、画面がロックされた状態で、特に公共の場所で動きが検出されると、デバイスのビープ音が鳴ります。</label></p> <p><label>アラームを解除するには、正しいパスワードを入力するか、Windows Hello でログインします。</label></p>",
+                "desc": "<p><label>この機能を有効にした場合は、画面がロックされた状態で、特に公共の場所で動きが検出されると、デバイスのビープ音が鳴ります。</label></p> <p><label>アラームを解除するには、Windows にログインしてください。</label></p>",
                 "note": {
                     "description": "システムに正しくログインすると、この機能は自動的にオフになります。使用するには、再度有効にする必要があります。"
                 },
@@ -2133,7 +2133,7 @@
                     "linkText": "Windows の設定に移動してアクセスできるようにします"
                 },
                 "photo": {
-                    "title": "動きに対して撮影される写真の枚数",
+                    "title": "撮影した写真の数",
                     "tooltip": "動きが検出されると、コンピューターのカメラが自動的にアクティブになり、写真が撮影されます。写真は 2 秒ごとに撮影され、ローカル・ストレージに保存されます。",
                     "option1": 5,
                     "option2": 10,
@@ -3128,7 +3128,15 @@
         "warningMessage": "システムがスリープ状態または休止状態になると、テストがキャンセルされることに注意してください",
         "refreshMessage": "すべてのコンポーネントを再度読み込む必要があるため、更新に時間がかかる場合があります",
         "processFinishedCannotBeCanceled": "実行中のプロセスは完了しているため、キャンセルする必要はありません。",
-        "cancelMayTakeSomeTime": "お使いのシステムによってはキャンセルに時間がかかる場合がございます。"
+        "cancelMayTakeSomeTime": "お使いのシステムによってはキャンセルに時間がかかる場合がございます。",
+        "scanFailureModal": {
+            "title": "Hardware Problem Detected",
+            "problemDetected": "There were detected problems on the following components on your computer:",
+            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
+            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
+            "supportButtonText": "Open Ticket",
+            "recoverBadSectorsButtonText": "Recover Bad Sectors"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3248,7 +3256,11 @@
             "status": "Status",
             "activeStatus": "ACTIVE",
             "inactiveStatus": "INACTIVE",
-            "manageSubscription": "MANAGE SUBSCRIPTION"
+            "manageSubscription": "MANAGE SUBSCRIPTION",
+            "titlebeta": "Lenovo Beta Program",
+            "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
+            "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
+            "descriptionbeta1": "You are welcomed to join and try the full feature."
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3271,7 +3283,8 @@
             "thu": "Thursday",
             "fri": "Friday",
             "sat": "Saturday",
-            "sun": "Sunday"
+            "sun": "Sunday",
+            "scanToolTip": "Enable this toggle can setup a automatic event to trigger system Performance scan on your selected time and date."
         },
         "scanningPage": {
             "title": "Performance & security check",
@@ -3439,7 +3452,8 @@
                 "yearlyPricing": "$19.99 / Yr",
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
-                "signupButton": "SIGN UP"
+                "signupButton": "SIGN UP",
+                "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
             },
             "tune": "{{tune}} ISSUES",
             "boost": "{{boost}} ISSUES",

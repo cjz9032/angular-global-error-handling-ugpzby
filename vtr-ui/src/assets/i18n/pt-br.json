@@ -1477,33 +1477,33 @@
             "audio": {
                 "title": "Áudio",
                 "subtitle": "Configurações de áudio",
-                "description": "Nesta seção, você pode otimizar automaticamente ou configurar total e manualmente o áudio, como configurações de Dolby, microfone etc.",
+                "description": "Nesta seção, você pode otimizar automaticamente ou configurar totalmente, de forma manual, as configurações de áudio, como configurações de Dolby, microfone etc.",
                 "audioSmartsettings": {
-                    "title": "Audio smart settings",
+                    "title": "Configurações inteligentes de áudio",
                     "dolby": {
-                        "title": "Dolby audio",
-                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
+                        "title": "Áudio Dolby",
+                        "description": "Selecione o modo que você deseja entre os seguintes. Você também pode marcar a caixa de seleção \"Otimizar automaticamente o áudio para...\". Quando selecionado, o áudio Dolby capta automaticamente o melhor efeito para você, de acordo com os modos em que você está.",
                         "options": {
-                            "dynamic": "DYNAMIC",
-                            "movie": "MOVIE",
-                            "music": "MUSIC",
-                            "games": "GAME",
-                            "voip": "VOICE"
+                            "dynamic": "Dinâmico",
+                            "movie": "Filme",
+                            "music": "Música",
+                            "games": "Jogo",
+                            "voip": "Voz"
                         },
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
-                                "checkboxText": "Automatically optimize audio for VOIP"
+                                "checkboxText": "Otimizar automaticamente o áudio para VoIP",
+                                "tooltip": "Esta função é ativada quando você faz chamadas VoIP (usando Skype, Microsoft Teams, WeChat, etc.). Quando ativado, o áudio Dolby muda automaticamente para o modo Voz para proporcionar a melhor qualidade de voz."
                             },
                             "entertainmentMode": {
-                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "checkboxText": "Automatically optimize audio for entertainment"
+                                "checkboxText": "Otimizar automaticamente o áudio para entretenimento",
+                                "tooltip": "Quando essa opção é selecionada, o áudio Dolby ajusta automaticamente o modo de acordo com o aplicativo que você está usando:<br>• Se você estiver usando aplicativos como o iTunes, ele mudará para o modo Música.<br>• Se você estiver usando aplicativos como o YouTube, ele mudará para o modo Filme.<br>• Se você estiver usando aplicativos de jogos, ele mudará para o modo Jogos."
                             }
                         }
                     },
                     "eCourse": {
-                        "title": "Interactive E-course mode",
-                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
+                        "title": "Modo interativo de curso eletrônico",
+                        "tooltip": "Essa função é útil para cursos online quando há interações de voz entre professores e os alunos. Quando ativado, o áudio Dolby muda automaticamente para o modo Voz. Enquanto isso, recursos como formação de feixe, cancelamento de eco acústico e supressão de ruído do teclado serão ativados para melhorar a entrada de voz."
                     }
                 },
                 "microphone": {
@@ -2107,7 +2107,7 @@
                 "heading": "Detecção inteligente",
                 "title": "Alerta de movimento inteligente",
                 "tooltip": "<div>Este recurso não funciona quando o computador está no modo de hibernação ou desligado. Verifique as configurações nas seguintes ações:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>ações de fechamento da tampa</li><li>ação de bateria fraca/crítica</li><li>ação do botão liga/desliga</li><li>ação do botão de suspensão</li><li>configurações de tempo limite inativo para hibernação</li></ul></div>Caso contrário, ele não dispara o alarme nem tira fotos.</div>",
-                "desc": "<p><label>Ao ativar esse recurso, o dispositivo começará a emitir um sinal sonoro quando a tela estiver bloqueada e movimentos forem detectados, principalmente em um local público.</label></p> <p><label>Para descartar o alarme, digite a senha correta ou faça login no Windows Hello.</label></p>",
+                "desc": "<p><label>Ao ativar esse recurso, o dispositivo começará a emitir um sinal sonoro quando a tela estiver bloqueada e movimentos forem detectados, principalmente em um local público.</label></p> <p><label>Para descartar o alarme, faça login no Windows.</label></p>",
                 "note": {
                     "description": "Após o login no sistema, esse recurso será desativado automaticamente. Você precisa habilitá-lo novamente para usá-lo."
                 },
@@ -2121,7 +2121,7 @@
                 },
                 "allowCamera": {
                     "title": "TIRAR FOTOS",
-                    "describe": "Ao ativar esse recurso, a câmera tira fotos automaticamente ao detectar qualquer movimento, se a tela estiver bloqueada. Esses dados são processados localmente no dispositivo. A Lenovo não acessa nem usa esses dados.",
+                    "describe": "Ao ativar esse recurso, a câmera tira fotos automaticamente ao detectar movimentos se a tela estiver bloqueada. Esses dados são processados localmente no dispositivo. A Lenovo não acessa nem usa esses dados.",
                     "checkBoxText": "Ativar esse recurso"
                 },
                 "cameraPrivacy": {
@@ -2133,7 +2133,7 @@
                     "linkText": "Ir para as Configurações do Windows para dar acesso"
                 },
                 "photo": {
-                    "title": "O NÚMERO DE FOTOS TIRADAS DURANTE O MOVIMENTO",
+                    "title": "O NÚMERO DE FOTOS TIRADAS",
                     "tooltip": "A câmera do seu computador é ativada automaticamente para tirar fotos quando movimentos são detectados. As fotos são tiradas a cada 2 segundos e salvas no armazenamento local.",
                     "option1": 5,
                     "option2": 10,
@@ -3128,7 +3128,15 @@
         "warningMessage": "Lembre-se de que os testes serão cancelados se o sistema entrar em suspensão ou hibernar",
         "refreshMessage": "A atualização pode levar algum tempo, pois precisa carregar todos os componentes novamente",
         "processFinishedCannotBeCanceled": "O processo em execução não precisa mais ser cancelado, pois foi concluído.",
-        "cancelMayTakeSomeTime": "Por favor, aguarde. Dependendo do seu sistema, o cancelamento poderá levar algum tempo."
+        "cancelMayTakeSomeTime": "Por favor, aguarde. Dependendo do seu sistema, o cancelamento poderá levar algum tempo.",
+        "scanFailureModal": {
+            "title": "Problema de Hardware Detectado",
+            "problemDetected": "Foram detectados problemas nos seguintes componentes do seu computador:",
+            "suggestedActionSupport": "Se o seu computador está sob Garantia, clique em <b>abrir tíquete</b> para uma peça de substituição. Para mais informações, acesse o site Lenovo Support Web",
+            "suggestedActionRbs": "Você pode tentar recuperar os seus dispositivos de armazenamento clicando em <b>recuperar setores ruins</b>. Se o problema persistir, você pode clicar em <b>abrir tíquete</b> para suporte adicional.",
+            "supportButtonText": "Abrir tíquete",
+            "recoverBadSectorsButtonText": "Recuperar Setores Ruins"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3248,7 +3256,11 @@
             "status": "Status",
             "activeStatus": "ACTIVE",
             "inactiveStatus": "INACTIVE",
-            "manageSubscription": "MANAGE SUBSCRIPTION"
+            "manageSubscription": "MANAGE SUBSCRIPTION",
+            "titlebeta": "Lenovo Beta Program",
+            "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
+            "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
+            "descriptionbeta1": "You are welcomed to join and try the full feature."
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3271,7 +3283,8 @@
             "thu": "Thursday",
             "fri": "Friday",
             "sat": "Saturday",
-            "sun": "Sunday"
+            "sun": "Sunday",
+            "scanToolTip": "Enable this toggle can setup a automatic event to trigger system Performance scan on your selected time and date."
         },
         "scanningPage": {
             "title": "Performance & security check",
@@ -3439,7 +3452,8 @@
                 "yearlyPricing": "$19.99 / Yr",
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
-                "signupButton": "SIGN UP"
+                "signupButton": "SIGN UP",
+                "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
             },
             "tune": "{{tune}} ISSUES",
             "boost": "{{boost}} ISSUES",

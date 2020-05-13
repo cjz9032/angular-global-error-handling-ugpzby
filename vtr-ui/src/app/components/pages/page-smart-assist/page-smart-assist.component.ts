@@ -66,6 +66,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	public zeroTouchLockShowAdvancedSection: boolean;
 	public zeroTouchPresenceLeaveDistanceCapability = false;
 	public zeroTouchPresenceLeaveDistanceAutoAdjustCapability = false;
+	public isRegisterHPDRpcCallback = false;
 	private cameraAccessChangedHandler: any;
 
 	headerMenuItems: PageAnchorLink[] = [
@@ -156,6 +157,9 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		if (this.smartAssist.isShellAvailable) {
 			this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 			this.smartAssistCapability = this.commonService.getLocalStorageValue(LocalStorageKey.SmartAssistCapability, undefined);
+			if (this.smartAssistCapability.isSuperResolutionSupported) {
+				this.superResolution = this.smartAssistCapability.isSuperResolutionSupported;
+			}
 			this.getHPDAdvancedSetting();
 			this.initVisibility();
 			this.setIsThinkPad(this.machineType === 1);
@@ -181,9 +185,18 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	ngOnDestroy() {
 		document.removeEventListener('visibilitychange', this.visibilityChange);
 
+		if (this.isRegisterHPDRpcCallback) {
+			this.smartAssist.unRegisterHPDRpcCallback()
+			.then((response) => {
+				if (response === 0) {//response is the count of the registered callback_event
+					this.logger.info('UnRegister HPD RPC Callback done.');
+				}
+			})
+		}
+
 		if (this.windowsObj) {
 			this.windowsObj.removeEventListener('accesschanged', this.cameraAccessChangedHandler);
-		} 
+		}
 	}
 
 	initDataFromCache() {
@@ -223,7 +236,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'voice');
 				this.checkMenuItemsLength();
 			}
-			if (!this.smartAssistCapability.isIntelligentMediaSupported.available  && !this.smartAssistCapability.isSuperResolutionSupported.available) {
+			if (!this.smartAssistCapability.isIntelligentMediaSupported.available  && !this.superResolution.available) {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'media');
 				this.checkMenuItemsLength();
 			}
@@ -233,10 +246,6 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			}
 			if (!this.smartAssistCapability.isAPSSupported) {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'aps');
-				this.checkMenuItemsLength();
-			}
-			if (!this.smartAssistCapability.isAntiTheftSupported.available) {
-				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'sensing');
 				this.checkMenuItemsLength();
 			}
 		} catch (error) {
@@ -306,10 +315,9 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			}
 			if (this.smartAssistCapability.isSuperResolutionSupported) {
 				this.superResolution = this.smartAssistCapability.isSuperResolutionSupported;
-				this.isSuperResolutionLoading = false;
 				this.getSuperResolutionStatus();
 			}
-			if (this.smartAssistCapability.isHsaIntelligentSecuritySupported) {
+			if (this.smartAssistCapability.isHsaIntelligentSecuritySupported && isFirstTimeLoad) {
 				this.hsaIntelligentSecurity = this.smartAssistCapability.isHsaIntelligentSecuritySupported;
 				this.getHsaIntelligentSecurityStatus();
 			}
@@ -568,48 +576,52 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	}
 
 	getHPDAdvancedSetting() {
-		try {
-			if (this.smartAssist.isShellAvailable) {
-				this.smartAssist.getHPDAdvancedSetting()
-					.then((response) => {
-						this.zeroTouchLoginShowAdvancedSection = response.zeroTouchLoginAdvanced;
-						this.zeroTouchLockShowAdvancedSection = response.zeroTouchLockAdvanced;
-					});
-			}
-		} catch (error) {
-			this.logger.info('getHPDAdvancedSetting error: ', error.message);
+		if (this.smartAssist.isHPDShellAvailable) {
+			this.smartAssist.getHPDAdvancedSetting()
+				.then((response) => {
+					this.zeroTouchLoginShowAdvancedSection = response.zeroTouchLoginAdvanced;
+					this.zeroTouchLockShowAdvancedSection = response.zeroTouchLockAdvanced;
+				});
 		}
 	}
 
 	setHPDAdvancedSetting(section: string, value: boolean) {
-		try {
-			if (this.smartAssist.isShellAvailable) {
-				this.smartAssist.setHPDAdvancedSetting(section, value)
-					.then((response) => {
-						if (response) {
-							this.getHPDAdvancedSetting();
-						}
-						const metricsData = {
-							itemParent: 'Device.SmartAssist',
-							itemName: section + '-advancedSettings',
-							value
-						};
-						this.metrics.sendMetrics(metricsData);
-					});
-			}
-		} catch (error) {
-			this.logger.info('setHPDAdvancedSetting error: ', error.message);
+		if (this.smartAssist.isHPDShellAvailable) {
+			this.smartAssist.setHPDAdvancedSetting(section, value)
+				.then((response) => {
+					if (response) {
+						this.getHPDAdvancedSetting();
+					}
+					const metricsData = {
+						itemParent: 'Device.SmartAssist',
+						itemName: section + '-advancedSettings',
+						value
+					};
+					this.metrics.sendMetrics(metricsData);
+				});
 		}
 	}
 
 	public getHsaIntelligentSecurityStatus() {
 		try {
-			if (this.smartAssist.isShellAvailable) {
+			if (this.smartAssist.isHPDShellAvailable) {
 				this.smartAssist.getHsaIntelligentSecurityStatus()
 					.then((response: HsaIntelligentSecurityResponse) => {
 						this.zeroTouchPresenceLeaveDistanceAutoAdjustCapability = (response.capability && 0x100) !== 0;
 						this.zeroTouchPresenceLeaveDistanceCapability = (response.capability && 0x80) !== 0;
 						this.hsaIntelligentSecurity = response;
+
+						if (!this.isRegisterHPDRpcCallback) {
+							if (this.zeroTouchPresenceLeaveDistanceCapability || this.zeroTouchPresenceLeaveDistanceAutoAdjustCapability) {
+								this.smartAssist.registerHPDRpcCallback()
+								.then((response) => {
+									if (response === 1) { //response is the count of the registered callback_event
+										this.isRegisterHPDRpcCallback = true;
+										this.logger.info('Register HPD RPC Callback done.');
+									}
+								})
+							}
+						}
 					});
 			}
 		} catch (error) {
@@ -619,66 +631,50 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 
 	public onZeroTouchLockDistanceSensitivityAdjustToggle(event: any) {
 		this.hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust = event.switchValue;
-		try {
-			if (this.smartAssist.isShellAvailable) {
-				this.smartAssist.setZeroTouchLockDistanceSensitivityAutoAdjust(event.switchValue)
-					.then((response) => {
-						if (response === 0 && !event.switchValue) {
-							this.getHsaIntelligentSecurityStatus(); // refresh slider-bar when turn off the autoAdjust toggle
-						}
-					});
-			}
-		} catch (error) {
-			this.logger.info('onZeroTouchLockDistanceSensitivityAdjustToggle' + error.message);
+		if (this.smartAssist.isHPDShellAvailable) {
+			this.smartAssist.setZeroTouchLockDistanceSensitivityAutoAdjust(event.switchValue)
+				.then((response) => {
+					if (response === 0 && !event.switchValue) {
+						this.getHsaIntelligentSecurityStatus(); // refresh slider-bar when turn off the autoAdjust toggle
+					}
+				});
 		}
 	}
 
 	public SetZeroTouchLockDistanceSensitivity($event: number) {
 		const value = $event;
 		this.hsaIntelligentSecurity.zeroTouchLockDistance = value;
-		try {
-			if (this.smartAssist.isShellAvailable) {
-				this.smartAssist.setZeroTouchLockDistanceSensitivity(value)
-					.then((response) => {
-						if (response !== 0) {
-							this.logger.info('SetZeroTouchLockDistanceSensitivity error.');
-						}
-					});
-			}
-		} catch (error) {
-			this.logger.info('SetZeroTouchLockDistanceSensitivity', error);
+		if (this.smartAssist.isHPDShellAvailable) {
+			this.smartAssist.setZeroTouchLockDistanceSensitivity(value)
+				.then((response) => {
+					if (response !== 0) {
+						this.logger.info('SetZeroTouchLockDistanceSensitivity error.');
+					}
+				});
 		}
 	}
 
 	public startMonitorHsaIntelligentSecurityStatus() {
-		try {
-			if (this.smartAssist.isShellAvailable) {
-				this.smartAssist.startMonitorHsaIntelligentSecurityStatus(this.hsaIntelligentSecurityChange.bind(this))
-					.then((value) => {
-						this.logger.info('startMonitorHsaIntelligentSecurityStatus.then', value);
-					});
-			}
-		} catch (error) {
-			this.logger.info('startMonitorHsaIntelligentSecurityStatus error: ', error.message);
+		if (this.smartAssist.isHPDShellAvailable) {
+			this.smartAssist.startMonitorHsaIntelligentSecurityStatus(this.hsaIntelligentSecurityChange.bind(this))
+				.then((value) => {
+					this.logger.info('startMonitorHsaIntelligentSecurityStatus.then', value);
+				});
 		}
 	}
 
 	public hsaIntelligentSecurityChange(data: any) {
-		try {
-			const response = JSON.parse(data);
-			if (response && response.errorCode === 0) {
-				this.hsaIntelligentSecurity.capacity = response.capacity;
-				this.hsaIntelligentSecurity.capability = response.capability;
-				this.hsaIntelligentSecurity.sensorType = response.sensorType;
-				this.hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust = response.presenceLeaveDistanceAutoAdjust;
-				this.hsaIntelligentSecurity.zeroTouchLockDistance = response.presenceLeaveDistance;
-				this.zeroTouchPresenceLeaveDistanceAutoAdjustCapability = (response.capability && 0x100) !== 0;
-				this.zeroTouchPresenceLeaveDistanceCapability = (response.capability && 0x80) !== 0;
-			}
-			this.logger.info('hsaIntelligentSecurityChange', data);
-		} catch (error) {
-			this.logger.info('hsaIntelligentSecurityChange', error.message);
+		const response = JSON.parse(data);
+		if (response && response.errorCode === 0) {
+			this.hsaIntelligentSecurity.capacity = response.capacity;
+			this.hsaIntelligentSecurity.capability = response.capability;
+			this.hsaIntelligentSecurity.sensorType = response.sensorType;
+			this.hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust = response.presenceLeaveDistanceAutoAdjust;
+			this.hsaIntelligentSecurity.zeroTouchLockDistance = response.presenceLeaveDistance;
+			this.zeroTouchPresenceLeaveDistanceAutoAdjustCapability = (response.capability && 0x100) !== 0;
+			this.zeroTouchPresenceLeaveDistanceCapability = (response.capability && 0x80) !== 0;
 		}
+		this.logger.info('hsaIntelligentSecurityChange', data);
 	}
 
 	public onDisplayDimTimeChange($event: number) {

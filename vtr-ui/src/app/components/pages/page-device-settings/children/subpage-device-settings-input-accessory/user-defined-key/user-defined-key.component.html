@@ -130,6 +130,7 @@
 												id="ip-userdefined-key-applybtn"
 												attr.aria-label="ip-userdefined-key-applybtn"
 												[ngbTooltip]="'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate"
+												[disabled]="!url"
 												tooltipClass="vtr-system-tooltip"
 												container="body">
 												<span
@@ -184,6 +185,7 @@
 												type="submit"
 												class="button"
 												title=""
+												[disabled]="!description"
 												[ngbTooltip]="'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate"
 												tooltipClass="vtr-system-tooltip"
 												container="body">
@@ -349,9 +351,9 @@
 													*ngIf="this.keyCode"
 													id="delete-key-sequence"
 													tabindex="0"
-													attr.aria-label="delete-key-sequence"
+													attr.aria-label="invoke-key-sequence-delete"
 													(click)="resetInvokeSequence($event);"
-													(keydown.enter)="resetInvokeSequence($event);">
+													(keydown)="resetInvokeSequence($event);">
 													<a>{{'hardwareScan.scheduledScan.delete'| translate}}</a></div>
 											</div>
 										</div>
@@ -366,6 +368,7 @@
 												class="button"
 												title=""
 												[ngbTooltip]="'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate"
+												[disabled]="!this.keyCode"
 												tooltipClass="vtr-system-tooltip"
 												container="body">
 												<span
