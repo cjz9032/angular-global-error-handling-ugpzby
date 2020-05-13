@@ -2107,7 +2107,7 @@
                 "heading": "Akıllı algılama",
                 "title": "Akıllı hareket alarmı",
                 "tooltip": "<div>Bu özellik, bilgisayar uyku kipindeyken veya kapalıyken çalışmaz. Aşağıdaki işlemlerin ayarlarını kontrol edin:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>kapağı kapatma işlemleri</li><li>kritik düzeyde/düşük pil işlemi</li><li>Açma/kapama düğmesi işlemi</li><li>uyku düğmesi işlemi</li><li>uyku kipine geçiş için boşta kalma zaman aşımı ayarları</li></ul></div>Aksi takdirde, alarm tetiklenmez veya fotoğraf çekmez.</div>",
-                "desc": "<p><label>Bu özelliği etkin durumdayken, ekranınız kilitlendiğinde ve özellikle halka açık bir yerde hareket algılandığında cihaz bip sesi çıkarmaya başlar.</label></p> <p><label>Alarmı kapatmak için doğru parolayı girin veya Windows Hello ile giriş yapın.</label></p>",
+                "desc": "<p><label>Bu özelliği etkin durumdayken, ekranınız kilitlendiğinde ve özellikle halka açık bir yerde hareket algılandığında cihaz bip sesi çıkarmaya başlar.</label></p> <p><label>Alarmı kapatmak için lütfen Windows'da oturum açın.</label></p>",
                 "note": {
                     "description": "Sisteme başarıyla giriş yaptıktan sonra, bu özellik otomatik olarak kapanır. Özelliği kullanmak için yeniden etkinleştirmeniz gerekir."
                 },
@@ -2121,7 +2121,7 @@
                 },
                 "allowCamera": {
                     "title": "FOTOĞRAF ÇEKME",
-                    "describe": "Bu özelliği etkin durumdayken, ekranınız kilitliyse herhangi bir hareket algılandığında kamera otomatik olarak fotoğraf çeker. Bu veriler cihazınızda yerel olarak işlenir. Lenovo bu verilere erişmez ya da onları kullanmaz.",
+                    "describe": "Bu özellik etkin durumdayken, ekranınız kilitliyse herhangi bir hareket algılandığında kamera otomatik olarak fotoğraf çeker. Bu veriler cihazınızda yerel olarak işlenir. Lenovo bu verilere erişmez ya da onları kullanmaz.",
                     "checkBoxText": "Bu özelliği etkinleştir"
                 },
                 "cameraPrivacy": {
@@ -2133,7 +2133,7 @@
                     "linkText": "Erişim izni vermek için Windows Ayarları bölümüne gidin"
                 },
                 "photo": {
-                    "title": "HAREKET SIRASINDA ÇEKİLEN FOTOĞRAF SAYISI",
+                    "title": "ÇEKİLEN FOTOĞRAF SAYISI",
                     "tooltip": "Hareket algılandığında, bilgisayarınızdaki kamera otomatik olarak etkinleşerek fotoğraf çekmeye başlar. 2 saniyede bir fotoğraf çekilir ve bunlar yerel depolama alanınıza kaydedilir.",
                     "option1": 5,
                     "option2": 10,

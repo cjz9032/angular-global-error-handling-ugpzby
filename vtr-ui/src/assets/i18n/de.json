@@ -2107,7 +2107,7 @@
                 "heading": "Intelligente Sensorik",
                 "title": "Intelligenter Bewegungsalarm",
                 "tooltip": "<div>Diese Funktion funktioniert nicht, wenn sich der Computer im Ruhezustand befindet oder ausgeschaltet ist. Überprüfen Sie die Einstellungen der folgenden Aktionen:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>Aktionen beim Zuklappen</li><li>Aktion bei kritischem/niedrigem Akkuzustand</li><li>Aktion für Netzschalter</li><li>Aktion für Energiespartaste</li><li>Einstellungen für Leerlaufzeitüberschreitung zu Ruhezustand</li></ul></div>Andernfalls wird kein Alarm ausgelöst und es werden keine Fotos gespeichert.</div>",
-                "desc": "<p><label>Wenn diese Funktion aktiviert ist, beginnt die Einheit zu piepen, wenn der Bildschirm gesperrt ist und Bewegungen erkannt werden, vor allem an einem öffentlichen Ort.</label></p> <p><label>Geben Sie zum Beenden des Alarms das richtige Kennwort ein oder melden Sie sich mit Windows Hello an.</label></p>",
+                "desc": "<p><label>Wenn diese Funktion aktiviert ist, beginnt die Einheit zu piepen, wenn der Bildschirm gesperrt ist und Bewegungen erkannt werden, vor allem an einem öffentlichen Ort.</label></p> <p><label>Melden Sie sich zum Beenden des Alarms bei Windows an.</label></p>",
                 "note": {
                     "description": "Wenn Sie sich erfolgreich beim System angemeldet haben, wird die Funktion automatisch ausgeschaltet. Sie müssen sie erneut aktivieren, um sie verwenden zu können."
                 },
@@ -2121,7 +2121,7 @@
                 },
                 "allowCamera": {
                     "title": "FOTOS AUFNEHMEN",
-                    "describe": "Wenn diese Funktion aktiviert ist, nimmt die Kamera automatisch Fotos auf, wenn der Bildschirm gesperrt ist und Bewegungen erkannt werden. Diese Daten werden lokal auf Ihrem Gerät verarbeitet. Lenovo greift nicht auf diese Daten zu und verwendet sie nicht.",
+                    "describe": "Wenn diese Funktion aktiviert ist, nimmt die Kamera automatisch Fotos auf, wenn bei gesperrtem Bildschirm Bewegungen erkannt werden. Diese Daten werden lokal auf Ihrem Gerät verarbeitet. Lenovo greift nicht auf diese Daten zu und verwendet sie nicht.",
                     "checkBoxText": "Funktion aktivieren"
                 },
                 "cameraPrivacy": {
@@ -2133,7 +2133,7 @@
                     "linkText": "Zu Windows-Einstellungen wechseln, um Zugriff zu gewähren"
                 },
                 "photo": {
-                    "title": "ANZAHL DER BEI BEWEGUNG AUFGENOMMENEN FOTOS",
+                    "title": "ANZAHL DER AUFGENOMMENEN FOTOS",
                     "tooltip": "Die Kamera Ihres Computers wird automatisch aktiviert und macht Fotos, wenn Bewegungen erkannt werden. Alle 2 Sekunden wird ein Foto aufgenommen und lokal gespeichert.",
                     "option1": 5,
                     "option2": 10,

@@ -2107,7 +2107,7 @@
                 "heading": "Inteligentno raspoznavanje",
                 "title": "Pametno upozorenje o pokretu",
                 "tooltip": "<div>Ova funkcija ne radi kada se računar nalazi u režimu hibernacije ili je isključen. Proverite postavke u sledećim radnjama:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>radnje zatvaranja poklopca</li><li>radnja prazne / gotovo ispražnjene baterije</li><li>radnja dugmeta za napajanje</li><li>radnja dugmeta za spavanje</li><li>postavke vremenskog ograničenja u stanju mirovanja u stanje hibernacije</li></ul></div>U suprotnom, neće se aktivirati alarm, niti će se fotografisati.</div>",
-                "desc": "<p><label>Kada omogućite ovu funkciju, uređaj će početi da emituje zvučne signale kada je ekran zaključan, a detektuju se pokreti, posebno na javnom mestu.</label></p> <p><label>Da biste odbacili alarm, unesite ispravnu lozinku ili se prijavite pomoću programa Windows Hello.</label></p>",
+                "desc": "<p><label>Kada omogućite ovu funkciju, uređaj će početi da emituje zvučne signale kada je ekran zaključan, a detektuju se pokreti, posebno na javnom mestu.</label></p> <p><label>Da biste odbacili alarm, prijavite se u Windows.</label></p>",
                 "note": {
                     "description": "Kada uspešno prijavite sistem, ova funkcija se automatski isključuje. Potrebno je da je ponovo omogućite da biste je koristili."
                 },
@@ -2121,7 +2121,7 @@
                 },
                 "allowCamera": {
                     "title": "FOTOGRAFISANJE",
-                    "describe": "Kada omogućite ovu funkciju, kamera automatski snima fotografije kada detektuje pokret ako je ekran zaključan. Ovi podaci se obrađuju lokalno na vašem uređaju. Lenovo im ne pristupa niti ih koristi.",
+                    "describe": "Kada omogućite ovu funkciju, kamera automatski snima fotografije kada se detektuju pokreti ako je ekran zaključan. Ovi podaci se obrađuju lokalno na vašem uređaju. Lenovo im ne pristupa niti ih koristi.",
                     "checkBoxText": "Omogućite ovu funkciju"
                 },
                 "cameraPrivacy": {
@@ -2133,7 +2133,7 @@
                     "linkText": "Idite na postavke operativnog sistema Windows da biste dali pristup"
                 },
                 "photo": {
-                    "title": "BROJ SNIMLJENIH FOTOGRAFIJA DOK TRAJE POKRET",
+                    "title": "BROJ SNIMLJENIH FOTOGRAFIJA",
                     "tooltip": "Kamera na računaru se automatski aktivira za snimanje slika kada se detektuju pokreti. Slike se snimaju na 2 sekunde i čuvaju se u lokalnom skladištu.",
                     "option1": 5,
                     "option2": 10,

@@ -2107,7 +2107,7 @@
                 "heading": "Rilevamento intelligente",
                 "title": "Avviso Smart Motion",
                 "tooltip": "<div>Questa funzione non è disponibile quando il computer è in modalità Ibernazione o è spento. Controllare le impostazioni nelle seguenti azioni:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>azioni del coperchio di chiusura</li><li>azione livello di carica batteria critico/basso</li><li>azione pulsante di alimentazione</li><li>azione pulsante Sospensione</li><li>impostazioni timeout inattività per la modalità Ibernazione</li></ul></div>In caso contrario, l'allarme non verrà attivato, né sarà possibile scattare foto.</div>",
-                "desc": "<p><label>Quando si abilita questa funzione, il dispositivo inizierà a emettere un segnale acustico quando lo schermo è bloccato e vengono rilevati movimenti, soprattutto in un luogo pubblico.</label></p> <p><label>Per disattivare l'allarme, immettere la password corretta o accedere tramite Windows Hello.</label></p>",
+                "desc": "<p><label>Quando si abilita questa funzione, il dispositivo inizierà a emettere un segnale acustico quando lo schermo è bloccato e vengono rilevati movimenti, soprattutto in un luogo pubblico.</label></p> <p><label>Per annullare l'allarme, accedere a Windows.</label></p>",
                 "note": {
                     "description": "Una volta effettuato l'accesso al sistema, questa funzione verrà disattivata automaticamente. Per utilizzare la funzione è necessario abilitarla nuovamente."
                 },
@@ -2121,7 +2121,7 @@
                 },
                 "allowCamera": {
                     "title": "SCATTO FOTO",
-                    "describe": "Quando si abilita questa funzione, la fotocamera scatta automaticamente le foto quando rileva qualsiasi movimento se lo schermo è bloccato. Questi dati vengono elaborati in locale sul dispositivo. Lenovo non accede a questi dati o li utilizza.",
+                    "describe": "Quando si abilita questa funzione, la fotocamera scatta automaticamente le foto quando rileva dei movimenti se lo schermo è bloccato. Questi dati vengono elaborati in locale sul dispositivo. Lenovo non accede a questi dati o li utilizza.",
                     "checkBoxText": "Abilita questa funzione"
                 },
                 "cameraPrivacy": {
@@ -2133,7 +2133,7 @@
                     "linkText": "Accedere alle impostazioni di Windows per consentire l'accesso"
                 },
                 "photo": {
-                    "title": "IL NUMERO DI FOTO SCATTATE DURANTE IL MOVIMENTO",
+                    "title": "IL NUMERO DI FOTO SCATTATE",
                     "tooltip": "La fotocamera del computer si attiva automaticamente per scattare foto quando vengono rilevati movimenti. Le foto vengono scattate ogni 2 secondi e vengono salvate nell'archivio locale.",
                     "option1": 5,
                     "option2": 10,

@@ -2107,7 +2107,7 @@
                 "heading": "Inteligentné snímanie",
                 "title": "Inteligentná signalizácia pohybu",
                 "tooltip": "<div>Táto funkcia nefunguje, keď je počítač v režime dlhodobého spánku alebo je vypnutý. Skontrolujte nastavenia nasledujúcich akcií:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>akcie pri zatvorení krytu</li><li>akcia pri kriticky vybitej/takmer vybitej batérii</li><li>akcia pri stlačení tlačidla napájania</li><li>funkcia pri stlačení tlačidla spánku</li><li>nastavenia časového limitu prechodu z režimu nečinnosti do režimu dlhodobého spánku</li></ul></div>V opačnom prípade sa nespustí budík, ani sa nedá fotografovať.</div>",
-                "desc": "<p><label>Keď povolíte túto funkciu, zariadenie začne vydávať zvukový signál, keď je obrazovka uzamknutá a zistí sa pohyb, najmä vo verejnom priestore.</label></p> <p><label>Ak chcete upozornenie zrušiť, zadajte správne heslo alebo sa prihláste pomocou služby Windows Hello.</label></p>",
+                "desc": "<p><label>Keď povolíte túto funkciu, zariadenie začne vydávať zvukový signál, keď je obrazovka uzamknutá a zistí sa pohyb, najmä vo verejnom priestore.</label></p> <p><label>Ak chcete toto upozornenie zrušiť, prihláste sa do systému Windows.</label></p>",
                 "note": {
                     "description": "Po úspešnom prihlásení do systému sa táto funkcia automaticky vypne. Ak ju chcete používať, musíte ju znova povoliť."
                 },
@@ -2121,7 +2121,7 @@
                 },
                 "allowCamera": {
                     "title": "SNÍMANIE FOTOGRAFIÍ",
-                    "describe": "Ak povolíte túto funkciu, fotoaparát automaticky sníma fotografie pri zistení pohybu, ak je obrazovka uzamknutá. Tieto údaje sa spracúvajú lokálne vo vašom zariadení. Spoločnosť Lenovo k nim nemá prístup a nepoužíva ich.",
+                    "describe": "Keď povolíte túto funkciu, fotoaparát automaticky sníma fotografie pri zistení pohybu, ak je obrazovka uzamknutá. Tieto údaje sa spracúvajú lokálne vo vašom zariadení. Spoločnosť Lenovo k nim nemá prístup a nepoužíva ich.",
                     "checkBoxText": "Povolenie tejto funkcie"
                 },
                 "cameraPrivacy": {
@@ -2133,7 +2133,7 @@
                     "linkText": "Prejdite do nastavení systému Windows a povoľte prístup"
                 },
                 "photo": {
-                    "title": "POČET FOTOGRAFIÍ NASNÍMANÝCH POČAS POHYBU",
+                    "title": "POČET NASNÍMANÝCH FOTOGRAFIÍ",
                     "tooltip": "Fotoaparát v počítači sa pri zistení pohybu automaticky aktivuje a začne snímať fotografie. Fotografie sa snímajú každé 2 sekundy a ukladajú sa na lokálne úložisko.",
                     "option1": 5,
                     "option2": 10,

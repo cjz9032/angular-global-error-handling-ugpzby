@@ -2107,7 +2107,7 @@
                 "heading": "Capteur intelligent",
                 "title": "Alerte de mouvement intelligente",
                 "tooltip": "<div>Cette fonction n'est pas active lorsque l'ordinateur est en mode hibernation ou qu'il est hors tension. Vérifiez les paramètres lors des actions suivantes :<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>actions du fermeture du capot</li><li>action de batterie critique/faible</li><li>action de bouton d'alimentation</li><li>action du bouton de veille</li><li>paramètres de délai d'inactivité en mode hibernation</li></ul></div>Sinon, il ne déclenchera aucune alarme, ni ne prendra aucune photo.</div>",
-                "desc": "<p><label>Lorsque vous activez cette fonction, l'appareil émet un signal sonore lorsque l'écran est verrouillé et que des mouvements sont détectés, notamment dans un endroit public.</label></p> <p><label>Pour ignorer l'alarme, entrez le mot de passe correct ou ouvrez une session à l'aide de Windows Hello.</label></p>",
+                "desc": "<p><label>Lorsque vous activez cette fonction, l'appareil émet un signal sonore lorsque l'écran est verrouillé et que des mouvements sont détectés, notamment dans un endroit public.</label></p> <p><label>Pour ignorer l'alarme, connectez-vous à Windows.</label></p>",
                 "note": {
                     "description": "Une fois que vous vous êtes connecté au système, cette fonction sera automatiquement désactivée. Vous devez l'activer à nouveau pour l'utiliser."
                 },
@@ -2121,7 +2121,7 @@
                 },
                 "allowCamera": {
                     "title": "PRISE DE PHOTOS",
-                    "describe": "Lorsque vous activez cette fonctionnalité, la caméra prend automatiquement des photos lors de la détection d'un mouvement si l'écran est verrouillé. Ces données sont traitées localement sur votre appareil. Lenovo ne peut ni y accéder ni les utiliser.",
+                    "describe": "Lorsque vous activez cette fonctionnalité, la caméra prend automatiquement des photos lors de la détection de mouvements si l'écran est verrouillé. Ces données sont traitées localement sur votre appareil. Lenovo ne peut ni y accéder ni les utiliser.",
                     "checkBoxText": "Activer cette fonctionnalité"
                 },
                 "cameraPrivacy": {
@@ -2133,7 +2133,7 @@
                     "linkText": "Accéder aux paramètres Windows pour donner accès"
                 },
                 "photo": {
-                    "title": "NOMBRE DE PHOTOS PRISES PENDANT LE MOUVEMENT",
+                    "title": "NOMBRE DE PHOTOS PRISES",
                     "tooltip": "L'appareil photo de votre ordinateur s'active automatiquement pour prendre des photos lorsque des mouvements sont détectés. Les photos sont prises toutes les 2 secondes et enregistrées dans votre stockage local.",
                     "option1": 5,
                     "option2": 10,
