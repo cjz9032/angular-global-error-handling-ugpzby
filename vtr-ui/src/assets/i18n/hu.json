@@ -1475,20 +1475,20 @@
                 }
             },
             "audio": {
-				"title": "Hang",
-				"subtitle": "Hangbeállítások",
-				"description": "Ezen a részen automatikusan optimalizálhatók vagy manuálisan teljesen mértékben konfigurálhatók a hangbeállítások (például a Dolby-beállítások vagy a mikrofon használata).",
-				"audioSmartsettings": {
+                "title": "Hang",
+                "subtitle": "Hangbeállítások",
+                "description": "Ezen a részen automatikusan optimalizálhatók vagy manuálisan teljesen mértékben konfigurálhatók a hangbeállítások (például a Dolby-beállítások vagy a mikrofon használata).",
+                "audioSmartsettings": {
                     "title": "Intelligens hangbeállítások",
                     "dolby": {
                         "title": "Dolby hangzás",
                         "description": "Válassza ki az Önnek megfelelő módot az alábbiak közül. Ezenfelül a \"Hangzás automatikus optimalizálása a következőhöz:\" jelölőnégyzetet is bejelölheti. Ha bejelöli a jelölőnégyzetet, a Dolby hangzás automatikusan, az aktuális üzemmódnak megfelelően kiválasztja a legjobb audieffektust.",
                         "options": {
                             "dynamic": "Dinamikus",
-							"movie": "Film",
-							"music": "Zene",
-							"games": "Játék",
-							"voip": "Hang"
+                            "movie": "Film",
+                            "music": "Zene",
+                            "games": "Játék",
+                            "voip": "Hang"
                         },
                         "automaticAudioMode": {
                             "voIPMode": {
@@ -3248,7 +3248,11 @@
             "status": "Status",
             "activeStatus": "ACTIVE",
             "inactiveStatus": "INACTIVE",
-            "manageSubscription": "MANAGE SUBSCRIPTION"
+            "manageSubscription": "MANAGE SUBSCRIPTION",
+            "titlebeta": "Lenovo Beta Program",
+            "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
+            "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
+            "descriptionbeta1": "You are welcomed to join and try the full feature."
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3271,7 +3275,8 @@
             "thu": "Thursday",
             "fri": "Friday",
             "sat": "Saturday",
-            "sun": "Sunday"
+            "sun": "Sunday",
+            "scanToolTip": "Enable this toggle can setup a automatic event to trigger system Performance scan on your selected time and date."
         },
         "scanningPage": {
             "title": "Performance & security check",
@@ -3439,7 +3444,8 @@
                 "yearlyPricing": "$19.99 / Yr",
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
-                "signupButton": "SIGN UP"
+                "signupButton": "SIGN UP",
+                "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
             },
             "tune": "{{tune}} ISSUES",
             "boost": "{{boost}} ISSUES",

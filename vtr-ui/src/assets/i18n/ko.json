@@ -1475,20 +1475,20 @@
                 }
             },
             "audio": {
-				"title": "오디오",
-				"subtitle": "오디오 설정",
-				"description": "이 섹션에서는 Dolby 설정, 마이크 등의 오디오 설정을 자동으로 최적화하거나 수동으로 완벽하게 구성할 수 있습니다.",
-				"audioSmartsettings": {
+                "title": "오디오",
+                "subtitle": "오디오 설정",
+                "description": "이 섹션에서는 Dolby 설정, 마이크 등의 오디오 설정을 자동으로 최적화하거나 수동으로 완벽하게 구성할 수 있습니다.",
+                "audioSmartsettings": {
                     "title": "오디오 스마트 설정",
                     "dolby": {
                         "title": "Dolby 오디오",
                         "description": "다음에서 원하는 모드를 선택하십시오. \"다음에 대한 자동 오디오 최적화...\" 확인란을 선택할 수도 있습니다. 이 확인란을 선택한 경우 Dolby 오디오는 사용자의 모드에 따라 최상의 오디오 효과를 자동으로 선택합니다.",
                         "options": {
                             "dynamic": "동적",
-							"movie": "영화",
-							"music": "음악",
-							"games": "게임",
-							"voip": "음성"
+                            "movie": "영화",
+                            "music": "음악",
+                            "games": "게임",
+                            "voip": "음성"
                         },
                         "automaticAudioMode": {
                             "voIPMode": {
@@ -3248,7 +3248,11 @@
             "status": "Status",
             "activeStatus": "ACTIVE",
             "inactiveStatus": "INACTIVE",
-            "manageSubscription": "MANAGE SUBSCRIPTION"
+            "manageSubscription": "MANAGE SUBSCRIPTION",
+            "titlebeta": "Lenovo Beta Program",
+            "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
+            "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
+            "descriptionbeta1": "You are welcomed to join and try the full feature."
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3271,7 +3275,8 @@
             "thu": "Thursday",
             "fri": "Friday",
             "sat": "Saturday",
-            "sun": "Sunday"
+            "sun": "Sunday",
+            "scanToolTip": "Enable this toggle can setup a automatic event to trigger system Performance scan on your selected time and date."
         },
         "scanningPage": {
             "title": "Performance & security check",
@@ -3439,7 +3444,8 @@
                 "yearlyPricing": "$19.99 / Yr",
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
-                "signupButton": "SIGN UP"
+                "signupButton": "SIGN UP",
+                "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
             },
             "tune": "{{tune}} ISSUES",
             "boost": "{{boost}} ISSUES",
