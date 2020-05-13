@@ -1327,6 +1327,55 @@ vtr-ui-smart-performance-scan-summary {
 	
 }
 }
+.scanned-items{
+	background: $grey_lighter;
+	border-radius: 0.6rem;
+	border: 0.1rem solid $shade_lighter;
+	padding: 1rem 1.6rem;
+	margin-bottom: 1.5rem;
+	.heading{
+		display: flex;
+		align-items: center;
+		.icon{
+			font-size: 3.2rem;
+			line-height: 0;
+			color: $main;
+		}
+		h3 {
+			font-size: 1.4rem;
+			font-weight: $weight_bold;
+			color: $grey_dark;
+			padding-left: 1.6rem;
+			margin-bottom: 0;
+		}
+	}
+	.status{
+		display: flex;
+		align-items: center;
+		.icon-bkg {
+			color: $light;
+		}
+		.icon-check {
+			padding-right: 1rem;
+			display: inline-block;
+			.icon-bkg {
+				display: inline-block;
+				border-radius: 50%;
+				height: 1.7rem;
+				width: 1.7rem;
+				line-height: 1.5rem;
+				font-size: 1rem;
+				text-align: center;
+				background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
+				border: 0.1rem solid $go_dark;
+			}
+
+			&::before {
+				content: '';
+			}
+		}
+	}
+}
 @keyframes expanding {
 	0%{
 		width: 5%;

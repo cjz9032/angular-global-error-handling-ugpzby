@@ -88,6 +88,7 @@
 															</div>
 														</div>
 													</div>
+													
 												</div>
 											</div>
 											<div class="row">
@@ -117,10 +118,16 @@
 													<p>{{'smartPerformance.subscriberScanHomePage.description' |translate }}
 													</p>
 													<div class="d-flex justify-content-between my-5 w-75">
-														<button class="action-button" (click)="ScanNowSummary()"
+														<button *ngIf="!inputIsScanningCompleted" class="action-button" (click)="ScanNowSummary()"
 															vtrMetrics metricsItem="smartPerformance.scanNow"
 															metricsEvent="FeatureClick"
 															metricsParent="pages.support.smartPerformance">{{'smartPerformance.subscriberScanHomePage.scanNow' |translate }}</button>
+															
+															<button *ngIf="inputIsScanningCompleted" class="action-button" (click)="BackToSummary()"
+															vtrMetrics metricsItem="smartPerformance.scanNow"
+															metricsEvent="FeatureClick"
+															metricsParent="pages.support.smartPerformance">{{'smartPerformance.subscriberScanHomePage.backToHome' |translate }}</button>
+
 														<div class="desc desc1">
 															<b>{{'smartPerformance.subscriberScanHomePage.mostRecent' |translate }}</b><br>
 															{{mostRecentScan}}
@@ -128,6 +135,47 @@
 														<div class="desc">
 															<b>{{'smartPerformance.subscriberScanHomePage.nextScheduled' |translate }}</b><br>
 															{{nextScheduleScan}}
+														</div>
+													</div>
+													<div  *ngIf="inputIsScanningCompleted" class="summary-block w-100 pt-3 mb-5">
+														<div class="scanned-items d-flex justify-content-between">
+															<div class="heading" _ngcontent-dag-c274="">
+																<div class="icon icon-performance"></div>
+																<h3>TUNE PC PERFORMANCE</h3>
+															</div>
+															<div class="status">
+																<div class="icon-check">
+																	<div class="icon-bkg">
+																		<fa-icon [icon]="['fas', 'check']"></fa-icon>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="scanned-items d-flex justify-content-between">
+															<div class="heading" _ngcontent-dag-c274="">
+																<div class="icon icon-internet-performance"></div>
+																<h3>INTERNET PERFORMANCE</h3>
+															</div>
+															<div class="status">
+																<div class="icon-check">
+																	<div class="icon-bkg">
+																		<fa-icon [icon]="['fas', 'check']"></fa-icon>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="scanned-items d-flex justify-content-between">
+															<div class="heading" _ngcontent-dag-c274="">
+																<div class="icon icon-malware-security"></div>
+																<h3>MALWARE & SECURITY</h3>
+															</div>
+															<div class="status">
+																<div class="icon-check">
+																	<div class="icon-bkg">
+																		<fa-icon [icon]="['fas', 'check']"></fa-icon>
+																	</div>
+																</div>
+															</div>
 														</div>
 													</div>
 												</div>

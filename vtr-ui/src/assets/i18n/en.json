@@ -2435,7 +2435,7 @@
 			"inactiveStatus": "INACTIVE",
 			"manageSubscription": "MANAGE SUBSCRIPTION",
 			"manageSubscriptionBeta":"SUBSCRIBE FOR BETA PROGRAM",
-			"descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
+			"descriptionbeta": "Lenovo is offering pilot program to try Smart Performance feature till July.",
 			"descriptionbeta1": "You are welcomed to join and try the full feature."
 		},
 		"scanSettings": {
@@ -2899,6 +2899,7 @@
 			"subTitle": "You are subscribed to Lenovo Smart Performance Service",
 			"description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
 			"scanNow": "SCAN NOW",
+			"backToHome": "Back To Home",
 			"returnto": "RETURN TO DASHBOARD",
 			"mostRecent": "MOST RECENT SCAN:",
 			"nextScheduled": "NEXT SCHEDULED SCAN:",

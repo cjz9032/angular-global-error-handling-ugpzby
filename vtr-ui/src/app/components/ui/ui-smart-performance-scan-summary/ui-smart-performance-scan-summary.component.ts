@@ -450,9 +450,19 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		this.isSubscribed = this.commonService.getLocalStorageValue(
 			LocalStorageKey.IsSmartPerformanceSubscribed
 		);
+		if(this.inputIsScanningCompleted)
+		{
+			this.inputIsScanningCompleted = false;
+		}
 	}
 	ScanNowSummary() {
 		this.backToScan.emit();
+	}
+	BackToSummary(){
+		if(this.inputIsScanningCompleted)
+		{
+			this.inputIsScanningCompleted = false;
+		}
 	}
 
 	// scan settings
