@@ -48,6 +48,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 	permission: any;
 	welcomeModel: HomeSecurityWelcome;
 	allDevicesInfo: HomeSecurityAllDevice;
+	allDevicesInfoNew: HomeSecurityAllDevice;
 	homeSecurityDevicePosture: HomeSecurityDevicePosture;
 	locationPermission: DeviceLocationPermission;
 	account: HomeSecurityAccount;
@@ -91,10 +92,31 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			}
 		}
 		if (chs.deviceOverview) {
-			this.allDevicesInfo = new HomeSecurityAllDevice(this.translateService, this.chs.deviceOverview);
+			this.allDevicesInfoNew = new HomeSecurityAllDevice(this.translateService, this.chs.deviceOverview);
+			if(!this.allDeviceInfoEqual(this.allDevicesInfo, this.allDevicesInfoNew))
+				this.allDevicesInfo = new HomeSecurityAllDevice(this.translateService, this.chs.deviceOverview);
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAllDevices, this.allDevicesInfo);
 		}
 	};
+
+	allDeviceInfoEqual(adInfo: HomeSecurityAllDevice, adInfoNew: HomeSecurityAllDevice): boolean{
+		const allDevicesItem = adInfo.allDevicesItem;
+		const allDevicesItemNew = adInfoNew.allDevicesItem;
+		let equal = true;
+		if(allDevicesItem.length !== allDevicesItemNew.length) equal = false;
+		allDevicesItemNew.forEach((deviceItem: any, index: any) => {
+			if(allDevicesItem[index]) {
+				if((deviceItem.type != allDevicesItem[index].type) || (deviceItem.count != allDevicesItem[index].count)) {
+					equal = false;
+				}
+			}
+			else {
+				equal = false;
+			}
+		});
+		return equal;
+	}
+
 	wsPluginMissingEventHandler = () => {
 		this.handleResponseError(new PluginMissingError());
 	};
