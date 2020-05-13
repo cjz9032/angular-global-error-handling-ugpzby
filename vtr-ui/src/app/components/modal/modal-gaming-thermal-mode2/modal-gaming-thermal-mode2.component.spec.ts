@@ -1,20 +1,19 @@
+import { Component, NO_ERRORS_SCHEMA, Input } from '@angular/core';
 import { TestBed, ComponentFixture, async, fakeAsync, tick } from '@angular/core/testing';
 import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { TranslateStore } from '@ngx-translate/core';
-
 import { HttpClientModule } from '@angular/common/http';
-import { TranslationModule } from 'src/app/modules/translation.module';
-import { Component, NO_ERRORS_SCHEMA, Input } from '@angular/core';
+import { TranslateStore } from '@ngx-translate/core';
+import { of } from 'rxjs';
 
-import { SvgInlinePipe } from 'src/app/pipe/svg-inline/svg-inline.pipe';
+import { TranslationModule } from 'src/app/modules/translation.module';
 import { ModalGamingThermalMode2Component } from './modal-gaming-thermal-mode2.component';
 
+import { SvgInlinePipe } from 'src/app/pipe/svg-inline/svg-inline.pipe';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { GamingThermalModeService } from 'src/app/services/gaming/gaming-thermal-mode/gaming-thermal-mode.service';
 import { GamingOCService } from 'src/app/services/gaming/gaming-OC/gaming-oc.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { of } from 'rxjs';
 import { MetricService } from 'src/app/services/metric/metric.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
 
@@ -365,8 +364,9 @@ describe('ModalGamingThermalMode2Component', () => {
             component.gamingCapabilities.cpuOCFeature = true;
             component.gamingCapabilities.gpuOCFeature = true;
             expect(component.OCsupportted).toBe(3, 'OCsupported should be 3');
-            performanceOCSetting = false;
             component.isPerformancOCSetted = false;
+            performanceOCSetting = false;
+            component.OCSettings = true;
             component.getPerformanceOCSetting();
             tick();
             expect(component.OCSettings).toBe(false, 'component.OCSettings should be false');
@@ -374,7 +374,7 @@ describe('ModalGamingThermalMode2Component', () => {
             expect(gpuOCStatusCache).toBe(3, 'gpuOCStatusCache should be 3(false)');
             tick();
             performanceOCSetting = true;
-            component.isPerformancOCSetted = false;
+            component.OCSettings = false;
             component.getPerformanceOCSetting();
             tick();
             expect(component.OCSettings).toBe(true, 'component.OCSettings should be true');
@@ -529,20 +529,24 @@ describe('ModalGamingThermalMode2Component', () => {
             component.gamingCapabilities.gpuOCFeature = true;
             component.renderOCSupported();
             expect(component.OCsupportted).toBe(1, 'OCsupported should be 1');
-            performanceOCSetting = false;
+            tick();
             cpuOCStatusCache = 3;
+            component.isPerformancOCSetted = false;
+            performanceOCSetting = false;
+            component.OCSettings = true;
             component.getPerformanceOCSetting();
             tick();
             expect(component.OCSettings).toBe(false, 'component.OCSettings should be false');
-            expect(cpuOCStatusCache).toBe(3, 'cpuOCStatusCache should be 3(false)');
-            expect(gpuOCStatusCache).toBe(3, 'gpuOCStatusCache should keep 3(false)');
-
+            expect(cpuOCStatusCache).toBe(3, 'cpuOCStatusCache should keep 3(false)');
+            expect(gpuOCStatusCache).toBe(3, 'gpuOCStatusCache should be 3(false)');
+            tick();
             performanceOCSetting = true;
+            component.OCSettings = false;
             component.getPerformanceOCSetting();
             tick();
             expect(component.OCSettings).toBe(true, 'component.OCSettings should be true');
-            expect(cpuOCStatusCache).toBe(3, 'cpuOCStatusCache should be 3(false)');
-            expect(gpuOCStatusCache).toBe(1, 'gpuOCStatusCache should keep 1(true)');
+            expect(cpuOCStatusCache).toBe(3, 'cpuOCStatusCache should keep 3(false)');
+            expect(gpuOCStatusCache).toBe(1, 'gpuOCStatusCache should be 1(true)');
         }));
         it('setPerformanceOC(gpu only)', fakeAsync(() => {
             component.gamingCapabilities.cpuOCFeature = false;

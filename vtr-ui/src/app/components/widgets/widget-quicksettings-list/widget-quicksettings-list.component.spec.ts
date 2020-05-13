@@ -1,6 +1,8 @@
 
 import { ComponentFixture, async, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { Router } from '@angular/router';
+import { of } from 'rxjs';
 
 import { WidgetQuicksettingsListComponent } from "./widget-quicksettings-list.component";
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
@@ -11,15 +13,13 @@ import { AudioService } from 'src/app/services/audio/audio.service';
 import { PowerService } from 'src/app/services/power/power.service';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { GuardService } from 'src/app/services/guard/guardService.service';
-import { Router } from '@angular/router';
-import { of } from 'rxjs';
 
+import { Emitter } from 'mitt';
 
 describe("WidgetQuicksettingsListComponent", () => {
 
 	let component: WidgetQuicksettingsListComponent;
 	let fixture: ComponentFixture<WidgetQuicksettingsListComponent>;
-	let shellService: any;
 
 	let smartFanFeatureCache = true;
 	let thermalModeVersionCache = 1;
@@ -27,14 +27,14 @@ describe("WidgetQuicksettingsListComponent", () => {
 	let currentThermalModeStatusCache = 2;
 	let rapidChargeCache = { "available": false, "status": false};
 	let wifiSecurityFeatureCache = false;
-	let wifiSecurityStatusCache = false;
+	let wifiSecurityStatusCache = 'enable';
 	let dolbyAudioToggleCache = { "available": false, "supportedModes": ["Dynamic", "Movie", "Music", "Games", "Voip"], "isAudioProfileEnabled": false, "currentMode": "Games", "voIPStatus": "True", "entertainmentStatus": "True" }
-
+	let securityWifiSecurityInGamingDashboardCache = false;
+	let securityWifiSecurityShowPluginMissingDialogCache = false;
 
 
 	let thermalModeStatus = 2;
 	let rapidChargeSettings = { "available": false, "status": false };
-	//let wifiSecurity = {}
 	let dolbyAudioToggle = { "available": false, "supportedModes": ["Dynamic", "Movie", "Music", "Games", "Voip"], "isAudioProfileEnabled": false, "currentMode": "Games", "voIPStatus": "True", "entertainmentStatus": "True" }
 	let setReturnValue = true;
 
@@ -88,10 +88,22 @@ describe("WidgetQuicksettingsListComponent", () => {
 			return of(res);
 		},
 		getSessionStorageValue(key: any, defaultValue?: any) {
-
+			switch(key) {
+				case '[SessionStorageKey] SecurityWifiSecurityInGamingDashboard':
+					return securityWifiSecurityInGamingDashboardCache;
+				case '[SessionStorageKey] SecurityWifiSecurityShowPluginMissingDialog':
+					return securityWifiSecurityShowPluginMissingDialogCache;
+			}
 		},
 		setSessionStorageValue(key: any, value: any) {
-
+			switch(key) {
+				case '[SessionStorageKey] SecurityWifiSecurityInGamingDashboard':
+					securityWifiSecurityInGamingDashboardCache = value;
+					break;
+				case '[SessionStorageKey] SecurityWifiSecurityShowPluginMissingDialog':
+					securityWifiSecurityShowPluginMissingDialogCache = value;
+					break;
+				}
 		}
 	};
 	
@@ -107,6 +119,7 @@ describe("WidgetQuicksettingsListComponent", () => {
 		}
 	};
 
+	let shellServiveSpy = jasmine.createSpyObj('VantageService', ['getGamingAllCapabilities', 'registerEvent', 'unRegisterEvent', ,'getSecurityAdvisor', 'getLogger']);
 	let gamingThermalModeServiceSpy = jasmine.createSpyObj('GamingThermalModeService', ['getThermalModeStatus', 'setThermalModeStatus', 'regThermalModeChangeEvent']);
 	let audioServiceSpy = jasmine.createSpyObj('AudioService', ['getDolbyMode', 'setDolbyAudioState', 'startMonitorForDolby', 'stopMonitorForDolby']);
 	let powerServiceSpy = jasmine.createSpyObj('PowerService', ['getRapidChargeModeStatusIdeaNoteBook', 'setRapidChargeModeStatusIdeaNoteBook', ]);
@@ -115,7 +128,7 @@ describe("WidgetQuicksettingsListComponent", () => {
 	let routerSpy = jasmine.createSpyObj('Router', ['routerState']);
 
 	describe("thermalmode", () => {
-		let shellServiveSpy = jasmine.createSpyObj('VantageService', ['getGamingAllCapabilities', 'registerEvent', 'unRegisterEvent', ,'getSecurityAdvisor', 'getLogger']);
+		let gamingThermalModeService: any;
 		let gamingThermalModeServiceMock = {
 			getThermalModeSettingStatus() {
 				return new Promise( resolve => {
@@ -136,13 +149,12 @@ describe("WidgetQuicksettingsListComponent", () => {
 				})
 			}
 		}
-		let gamingThermalModeService: any;
-		shellServiveSpy.getSecurityAdvisor.and.returnValue(new Promise(resolve => { resolve(true)}));
-		audioServiceSpy.getDolbyMode.and.returnValue(new Promise( resolve => { resolve(dolbyAudioToggle)}));
-		audioServiceSpy.startMonitorForDolby.and.returnValue(new Promise( resolve => { resolve(setReturnValue)}));
-		audioServiceSpy.stopMonitorForDolby.and.returnValue(new Promise( resolve => { resolve(setReturnValue)}));
-		powerServiceSpy.getRapidChargeModeStatusIdeaNoteBook.and.returnValue(new Promise( resolve => {resolve(rapidChargeSettings)}));
 		beforeEach(async(() => {
+			shellServiveSpy.getSecurityAdvisor.and.returnValue(new Promise(resolve => { resolve(true)}));
+			audioServiceSpy.getDolbyMode.and.returnValue(new Promise( resolve => { resolve(dolbyAudioToggle)}));
+			audioServiceSpy.startMonitorForDolby.and.returnValue(new Promise( resolve => { resolve(setReturnValue)}));
+			audioServiceSpy.stopMonitorForDolby.and.returnValue(new Promise( resolve => { resolve(setReturnValue)}));
+			powerServiceSpy.getRapidChargeModeStatusIdeaNoteBook.and.returnValue(new Promise( resolve => {resolve(rapidChargeSettings)}));
 			TestBed.configureTestingModule({
 				declarations: [
 					WidgetQuicksettingsListComponent
@@ -161,12 +173,11 @@ describe("WidgetQuicksettingsListComponent", () => {
 				],
 				schemas: [NO_ERRORS_SCHEMA]
 			}).compileComponents();
-			shellService = TestBed.inject(VantageShellService);
 			gamingThermalModeService = TestBed.inject(GamingThermalModeService);
 			fixture = TestBed.createComponent(WidgetQuicksettingsListComponent);
 			component = fixture.debugElement.componentInstance;
 			fixture.detectChanges();
-		}))
+		}));
 
 		it('should create', () => {
 			expect(component).toBeDefined();
@@ -175,7 +186,6 @@ describe("WidgetQuicksettingsListComponent", () => {
 		it('ngOnInit not support thermalMode', () => {
 			smartFanFeatureCache = false;
 			thermalModeVersionCache = 1;
-			fixture.detectChanges();
 			spyOn(component, 'renderThermalModeStatus').and.callThrough();
 			spyOn(component, 'registerThermalModeEvent').and.callThrough();
 			component.ngOnInit();
@@ -187,7 +197,6 @@ describe("WidgetQuicksettingsListComponent", () => {
 		it('ngOnInit thermalMode version is 2', () => {
 			smartFanFeatureCache = true;
 			thermalModeVersionCache = 2;
-			fixture.detectChanges();
 			spyOn(component, 'renderThermalModeStatus').and.callThrough();
 			spyOn(component, 'registerThermalModeEvent').and.callThrough();
 			component.ngOnInit();
@@ -199,7 +208,6 @@ describe("WidgetQuicksettingsListComponent", () => {
 		it('ngOnInit thermalMode version is 1', () => {
 			smartFanFeatureCache = true;
 			thermalModeVersionCache = 1;
-			fixture.detectChanges();
 			spyOn(component, 'renderThermalModeStatus').and.callThrough();
 			spyOn(component, 'registerThermalModeEvent').and.callThrough();
 			component.ngOnInit();
@@ -213,7 +221,6 @@ describe("WidgetQuicksettingsListComponent", () => {
 			thermalModeVersionCache = 1;
 			for(let i = 1;i<=3; i++) {
 				thermalModeStatus = i;
-				fixture.detectChanges();
 				component.renderThermalModeStatus();
 				tick();
 				expect(component.drop.curSelected).toBe(i, `component.drop.curSelected should be ${i}`);
@@ -224,7 +231,6 @@ describe("WidgetQuicksettingsListComponent", () => {
 				thermalModeStatus = undefined;
 				component.drop.curSelected = i;
 				currentThermalModeStatusCache = i;
-				fixture.detectChanges();
 				component.renderThermalModeStatus();
 				tick();
 				expect(component.drop.curSelected).toBe(i, `component.drop.curSelected should keep ${i}`);
@@ -277,7 +283,7 @@ describe("WidgetQuicksettingsListComponent", () => {
 
 			setReturnValue = true;
 			for(let i = 1; i<=3; i++) {
-				event.target.name = 'gaming.dashboard.device.quickSettings.rapidCharge';
+				event.target.name = 'gaming.dashboard.device.quickSettings.null';
 				component.drop.curSelected = i;
 				thermalModeStatus = i;
 				currentThermalModeStatusCache = i;
@@ -295,11 +301,9 @@ describe("WidgetQuicksettingsListComponent", () => {
 		it('registerThermalModeEvent' , () => {
 			spyOn(gamingThermalModeService, 'regThermalModeChangeEvent').and.callThrough();
 			component.gamingCapabilities.smartFanFeature = false
-			fixture.detectChanges();
 			component.registerThermalModeEvent();
 			expect(gamingThermalModeService.regThermalModeChangeEvent).toHaveBeenCalledTimes(0);
 			component.gamingCapabilities.smartFanFeature = true;
-			fixture.detectChanges();
 			component.registerThermalModeEvent();
 			expect(gamingThermalModeService.regThermalModeChangeEvent).toHaveBeenCalledTimes(1);
 		})
@@ -316,13 +320,12 @@ describe("WidgetQuicksettingsListComponent", () => {
 				prevThermalModeStatusCache = i;
 				component.onRegThermalModeEvent(undefined);
 				tick();
-				expect(component.drop.curSelected).toBe(i, `input is undefined, component.drop.curSelected should be ${i}`);
+				expect(component.drop.curSelected).toBe(i, `input is undefined, component.drop.curSelected should keep ${i}`);
 			}
 		}));
 	});
 
 	describe("repidcharge", function () {
-		let shellServiveSpy = jasmine.createSpyObj('VantageService', ['getGamingAllCapabilities', 'registerEvent', 'unRegisterEvent', ,'getSecurityAdvisor', 'getLogger']);
 		let powerServiceMock = {
 			getRapidChargeModeStatusIdeaNoteBook() {
 				return new Promise( resolve => {
@@ -338,10 +341,10 @@ describe("WidgetQuicksettingsListComponent", () => {
 				})
 			}
 		}
-		shellServiveSpy.getSecurityAdvisor.and.returnValue(new Promise(resolve => { resolve(true)}));
-		audioServiceSpy.getDolbyMode.and.returnValue(new Promise( resolve => { resolve(dolbyAudioToggle)}));
-		audioServiceSpy.stopMonitorForDolby.and.returnValue(new Promise( resolve => { resolve(setReturnValue)}));
 		beforeEach(async(() => {
+			shellServiveSpy.getSecurityAdvisor.and.returnValue(new Promise(resolve => { resolve(true)}));
+			audioServiceSpy.getDolbyMode.and.returnValue(new Promise( resolve => { resolve(dolbyAudioToggle)}));
+			audioServiceSpy.stopMonitorForDolby.and.returnValue(new Promise( resolve => { resolve(setReturnValue)}));
 			TestBed.configureTestingModule({
 				declarations: [
 					WidgetQuicksettingsListComponent
@@ -374,65 +377,59 @@ describe("WidgetQuicksettingsListComponent", () => {
 			rapidChargeCache.status = false;
 			rapidChargeSettings.available = false;
 			rapidChargeSettings.status = false;
-			fixture.detectChanges();
 			component.ngOnInit();
-			expect(component.quickSettings[1].isVisible).toBe(false, 'component.quickSettings[1].isVisible should be false');
-			expect(component.quickSettings[1].isChecked).toBe(false, 'component.quickSettings[1].isChecked should be false');
+			expect(component.quickSettings[1].isVisible).toBe(false, 'rapidCharge.visible should be false');
+			expect(component.quickSettings[1].isChecked).toBe(false, 'rapidCharge.checked should be false');
 		});
 
 		it('initialiseRapidChargeCache', fakeAsync(() => {
 			rapidChargeCache.available = true;
 			rapidChargeCache.status = false;
-			fixture.detectChanges();
 			tick();
 			component.initialiseRapidChargeCache();
-			expect(component.quickSettings[1].isVisible).toBe(true, 'component.quickSettings[1].isVisible should be true');
-			expect(component.quickSettings[1].isChecked).toBe(false, 'component.quickSettings[1].isChecked should be false');
+			expect(component.quickSettings[1].isVisible).toBe(true, 'rapidCharge.visible should be true');
+			expect(component.quickSettings[1].isChecked).toBe(false, 'rapidCharge.checked should be false');
 			rapidChargeCache.available = true;
 			rapidChargeCache.status = true;
 			component.initialiseRapidChargeCache();
-			expect(component.quickSettings[1].isVisible).toBe(true, 'component.quickSettings[1].isVisible should be true');
-			expect(component.quickSettings[1].isChecked).toBe(true, 'component.quickSettings[1].isChecked should be true');
+			expect(component.quickSettings[1].isVisible).toBe(true, 'rapidCharge.visible should be true');
+			expect(component.quickSettings[1].isChecked).toBe(true, 'rapidCharge.checked should be true');
 		}));
 
 		it('initialiseRapidChargeSettings', fakeAsync(() => {
 			rapidChargeSettings.available = false;
 			rapidChargeSettings.status = false;
-			fixture.detectChanges();
 			component.initialiseRapidChargeSettings();
 			tick();
-			expect(component.quickSettings[1].isVisible).toBe(false, `rapidChargeSettings is ${rapidChargeSettings}, component.quickSettings[1].isVisible visible should be false`);
-			expect(component.quickSettings[1].isChecked).toBe(false, `rapidChargeSettings is ${rapidChargeSettings}, component.quickSettings[1].isChecked should be false`);
+			expect(component.quickSettings[1].isVisible).toBe(false, `rapidChargeSettings is ${rapidChargeSettings}, rapidCharge.visible should be false`);
+			expect(component.quickSettings[1].isChecked).toBe(false, `rapidChargeSettings is ${rapidChargeSettings}, rapidCharge.checked should be false`);
 			expect(rapidChargeCache.available).toBe(false, `rapidChargeSettings is ${rapidChargeSettings}, rapidChargeCache.available should be false`);
 			expect(rapidChargeCache.status).toBe(false, `rapidChargeSettings is ${rapidChargeSettings}, rapidChargeCache.status should be false`);
 
 			rapidChargeSettings.available = false;
 			rapidChargeSettings.status = true;
-			fixture.detectChanges();
 			component.initialiseRapidChargeSettings();
 			tick();
-			expect(component.quickSettings[1].isVisible).toBe(false, `rapidChargeSettings is ${rapidChargeSettings}, component.quickSettings[1].isVisible visible should be false`);
-			expect(component.quickSettings[1].isChecked).toBe(true, `rapidChargeSettings is ${rapidChargeSettings}, component.quickSettings[1].isChecked should be true`);
+			expect(component.quickSettings[1].isVisible).toBe(false, `rapidChargeSettings is ${rapidChargeSettings}, rapidCharge.visible should be false`);
+			expect(component.quickSettings[1].isChecked).toBe(true, `rapidChargeSettings is ${rapidChargeSettings}, rapidCharge.checked should be true`);
 			expect(rapidChargeCache.available).toBe(false, `rapidChargeSettings is ${rapidChargeSettings}, rapidChargeCache.available should be false`);
 			expect(rapidChargeCache.status).toBe(true, `rapidChargeSettings is ${rapidChargeSettings}, rapidChargeCache.status should be true`);
 
 			rapidChargeSettings.available = true;
 			rapidChargeSettings.status = false;
-			fixture.detectChanges();
 			component.initialiseRapidChargeSettings();
 			tick();
-			expect(component.quickSettings[1].isVisible).toBe(true, `rapidChargeSettings is ${rapidChargeSettings}, component.quickSettings[1].isVisible visible should be true`);
-			expect(component.quickSettings[1].isChecked).toBe(false, `rapidChargeSettings is ${rapidChargeSettings}, component.quickSettings[1].isChecked should be false`);
+			expect(component.quickSettings[1].isVisible).toBe(true, `rapidChargeSettings is ${rapidChargeSettings}, rapidCharge.visible should be true`);
+			expect(component.quickSettings[1].isChecked).toBe(false, `rapidChargeSettings is ${rapidChargeSettings}, rapidCharge.checked should be false`);
 			expect(rapidChargeCache.available).toBe(true, `rapidChargeSettings is ${rapidChargeSettings}, rapidChargeCache.available should be true`);
 			expect(rapidChargeCache.status).toBe(false, `rapidChargeSettings is ${rapidChargeSettings}, rapidChargeCache.status should be false`);
 
 			rapidChargeSettings.available = true;
 			rapidChargeSettings.status = true;
-			fixture.detectChanges();
 			component.initialiseRapidChargeSettings();
 			tick();
-			expect(component.quickSettings[1].isVisible).toBe(true, `rapidChargeSettings is ${rapidChargeSettings}, component.quickSettings[1].isVisible visible should be true`);
-			expect(component.quickSettings[1].isChecked).toBe(true, `rapidChargeSettings is ${rapidChargeSettings}, component.quickSettings[1].isChecked should be true`);
+			expect(component.quickSettings[1].isVisible).toBe(true, `rapidChargeSettings is ${rapidChargeSettings}, rapidCharge.visible should be true`);
+			expect(component.quickSettings[1].isChecked).toBe(true, `rapidChargeSettings is ${rapidChargeSettings}, rapidCharge.checked should be true`);
 			expect(rapidChargeCache.available).toBe(true, `rapidChargeSettings is ${rapidChargeSettings}, rapidChargeCache.available should be true`);
 			expect(rapidChargeCache.status).toBe(true, `rapidChargeSettings is ${rapidChargeSettings}, rapidChargeCache.status should be true`);
 		}));
@@ -440,21 +437,20 @@ describe("WidgetQuicksettingsListComponent", () => {
 		it('setRapidChargeSettings', fakeAsync(() => {
 			rapidChargeCache.available = true;
 			setReturnValue = true;
-			fixture.detectChanges();
 			component.quickSettings[1].isVisible = true;
 			component.quickSettings[1].isChecked = false;
 			component.setRapidChargeSettings(false);
 			tick();
-			expect(component.quickSettings[1].isVisible).toBe(true, `setReturnValue is ${setReturnValue}, component.quickSettings[1].isVisible should be true`);
-			expect(component.quickSettings[1].isChecked).toBe(false, `setReturnValue is ${setReturnValue}, component.quickSettings[1].isChecked should be false`);
+			expect(component.quickSettings[1].isVisible).toBe(true, `setReturnValue is ${setReturnValue}, rapidCharge.visible should be true`);
+			expect(component.quickSettings[1].isChecked).toBe(false, `setReturnValue is ${setReturnValue}, rapidCharge.checked should be false`);
 			expect(rapidChargeCache.available).toBe(true, `setReturnValue is ${setReturnValue}, rapidChargeCache.available should be true`);
 			expect(rapidChargeCache.status).toBe(false, `setReturnValue is ${setReturnValue}, rapidChargeCache.status should be false`);
 			tick();
 			component.quickSettings[1].isChecked = true;
 			component.setRapidChargeSettings(true);
 			tick();
-			expect(component.quickSettings[1].isVisible).toBe(true, `setReturnValue is ${setReturnValue}, component.quickSettings[1].isVisible should be true`);
-			expect(component.quickSettings[1].isChecked).toBe(true, `setReturnValue is ${setReturnValue}, component.quickSettings[1].isChecked should be true`);
+			expect(component.quickSettings[1].isVisible).toBe(true, `setReturnValue is ${setReturnValue}, rapidCharge.visible should be true`);
+			expect(component.quickSettings[1].isChecked).toBe(true, `setReturnValue is ${setReturnValue}, rapidCharge.checked should be true`);
 			expect(rapidChargeCache.available).toBe(true, `setReturnValue is ${setReturnValue}, rapidChargeCache.available should be true`);
 			expect(rapidChargeCache.status).toBe(true, `setReturnValue is ${setReturnValue}, rapidChargeCache.status should be true`);
 
@@ -465,8 +461,8 @@ describe("WidgetQuicksettingsListComponent", () => {
 			component.quickSettings[1].isChecked = false;
 			component.setRapidChargeSettings(false);
 			tick();
-			expect(component.quickSettings[1].isVisible).toBe(true, `setReturnValue is ${setReturnValue}, component.quickSettings[1].isVisible should be true`);
-			// expect(component.quickSettings[1].isChecked).toBe(true, `setReturnValue is ${setReturnValue}, component.quickSettings[1].isChecked should keep true`);
+			expect(component.quickSettings[1].isVisible).toBe(true, `setReturnValue is ${setReturnValue}, rapidCharge.visible should be true`);
+			// expect(component.quickSettings[1].isChecked).toBe(true, `setReturnValue is ${setReturnValue}, rapidCharge.checked should keep true`);
 			expect(rapidChargeCache.available).toBe(true, `setReturnValue is ${setReturnValue}, rapidChargeCache.available should be true`);
 			expect(rapidChargeCache.status).toBe(true, `setReturnValue is ${setReturnValue}, rapidChargeCache.status should keep true`);
 			tick();
@@ -474,8 +470,8 @@ describe("WidgetQuicksettingsListComponent", () => {
 			component.quickSettings[1].isChecked = true;
 			component.setRapidChargeSettings(true);
 			tick();
-			expect(component.quickSettings[1].isVisible).toBe(true, `setReturnValue is ${setReturnValue}, component.quickSettings[1].isVisible should be true`);
-			// expect(component.quickSettings[1].isChecked).toBe(false, `setReturnValue is ${setReturnValue}, component.quickSettings[1].isChecked should keep false`);
+			expect(component.quickSettings[1].isVisible).toBe(true, `setReturnValue is ${setReturnValue}, rapidCharge.visible should be true`);
+			// expect(component.quickSettings[1].isChecked).toBe(false, `setReturnValue is ${setReturnValue}, rapidCharge.checked should keep false`);
 			expect(rapidChargeCache.available).toBe(true, `setReturnValue is ${setReturnValue}, rapidChargeCache.available should be true`);
 			expect(rapidChargeCache.status).toBe(false, `setReturnValue is ${setReturnValue}, rapidChargeCache.status should keep false`);
 		}));
@@ -489,14 +485,13 @@ describe("WidgetQuicksettingsListComponent", () => {
 			}
 			rapidChargeCache.available = true;
 			setReturnValue = true;
-			fixture.detectChanges();
 			component.quickSettings[1].isVisible = true;
 			component.quickSettings[1].isChecked = false;
 			event.target.value = 'false';
 			component.onToggleStateChanged(event);
 			tick();
-			expect(component.quickSettings[1].isVisible).toBe(true, `setReturnValue is ${setReturnValue}, component.quickSettings[1].isVisible should be true`);
-			expect(component.quickSettings[1].isChecked).toBe(false, `setReturnValue is ${setReturnValue}, component.quickSettings[1].isChecked should be false`);
+			expect(component.quickSettings[1].isVisible).toBe(true, `setReturnValue is ${setReturnValue}, rapidChargeCache.visible should be true`);
+			expect(component.quickSettings[1].isChecked).toBe(false, `setReturnValue is ${setReturnValue}, rapidChargeCache.checked should be false`);
 			expect(rapidChargeCache.available).toBe(true, `setReturnValue is ${setReturnValue}, rapidChargeCache.available should be true`);
 			expect(rapidChargeCache.status).toBe(false, `setReturnValue is ${setReturnValue}, rapidChargeCache.status should be false`);
 			tick();
@@ -504,8 +499,8 @@ describe("WidgetQuicksettingsListComponent", () => {
 			event.target.value = 'true';
 			component.onToggleStateChanged(event);
 			tick();
-			expect(component.quickSettings[1].isVisible).toBe(true, `setReturnValue is ${setReturnValue}, component.quickSettings[1].isVisible should be true`);
-			expect(component.quickSettings[1].isChecked).toBe(true, `setReturnValue is ${setReturnValue}, component.quickSettings[1].isChecked should be true`);
+			expect(component.quickSettings[1].isVisible).toBe(true, `setReturnValue is ${setReturnValue}, rapidChargeCache.visible should be true`);
+			expect(component.quickSettings[1].isChecked).toBe(true, `setReturnValue is ${setReturnValue}, rapidChargeCache.checked should be true`);
 			expect(rapidChargeCache.available).toBe(true, `setReturnValue is ${setReturnValue}, rapidChargeCache.available should be true`);
 			expect(rapidChargeCache.status).toBe(true, `setReturnValue is ${setReturnValue}, rapidChargeCache.status should be true`);
 
@@ -517,8 +512,8 @@ describe("WidgetQuicksettingsListComponent", () => {
 			event.target.value = 'false';
 			component.onToggleStateChanged(event);
 			tick();
-			expect(component.quickSettings[1].isVisible).toBe(true, `setReturnValue is ${setReturnValue}, component.quickSettings[1].isVisible should be true`);
-			// expect(component.quickSettings[1].isChecked).toBe(true, `setReturnValue is ${setReturnValue}, component.quickSettings[1].isChecked should keep true`);
+			expect(component.quickSettings[1].isVisible).toBe(true, `setReturnValue is ${setReturnValue}, rapidChargeCache.visible should be true`);
+			// expect(component.quickSettings[1].isChecked).toBe(true, `setReturnValue is ${setReturnValue}, rapidChargeCache.checked should keep true`);
 			expect(rapidChargeCache.available).toBe(true, `setReturnValue is ${setReturnValue}, rapidChargeCache.available should be true`);
 			expect(rapidChargeCache.status).toBe(true, `setReturnValue is ${setReturnValue}, rapidChargeCache.status should keep true`);
 			tick();
@@ -527,23 +522,140 @@ describe("WidgetQuicksettingsListComponent", () => {
 			event.target.value = 'true';
 			component.onToggleStateChanged(event);
 			tick();
-			expect(component.quickSettings[1].isVisible).toBe(true, `setReturnValue is ${setReturnValue}, component.quickSettings[1].isVisible should be true`);
-			// expect(component.quickSettings[1].isChecked).toBe(false, `setReturnValue is ${setReturnValue}, component.quickSettings[1].isChecked should keep false`);
+			expect(component.quickSettings[1].isVisible).toBe(true, `setReturnValue is ${setReturnValue}, rapidChargeCache.visible should be true`);
+			// expect(component.quickSettings[1].isChecked).toBe(false, `setReturnValue is ${setReturnValue}, rapidChargeCache.checked should keep false`);
 			expect(rapidChargeCache.available).toBe(true, `setReturnValue is ${setReturnValue}, rapidChargeCache.available should be true`);
 			expect(rapidChargeCache.status).toBe(false, `setReturnValue is ${setReturnValue}, rapidChargeCache.status should keep false`);
 		}));
 	});
 
 	describe("wifisecurity", function () {
+		let securityAdvisorStub = {
+			wifiSecurity:  {
+				on(event: any, handler: any) {
+				},
+				refresh() {
+					return new Promise( resolve => {
+						resolve(true);
+					});
+				},
+				getWifiState() {
+					return new Promise(resolve => {
+						resolve(true);
+					});
+				},
+				getWifiSecurityState() {
+					return true;
+				}
+			}
+		}
+		let guardMock = {
+			previousPageName: '',
+			getWifiSecurityState() {
+				return true;
+			}
+		}
+		beforeEach(async(() => {
+			shellServiveSpy.getSecurityAdvisor.and.returnValue(securityAdvisorStub);
+			audioServiceSpy.getDolbyMode.and.returnValue(new Promise( resolve => { resolve(dolbyAudioToggle)}));
+			audioServiceSpy.startMonitorForDolby.and.returnValue(new Promise( resolve => { resolve(setReturnValue)}));
+			audioServiceSpy.stopMonitorForDolby.and.returnValue(new Promise( resolve => { resolve(setReturnValue)}));
+			powerServiceSpy.getRapidChargeModeStatusIdeaNoteBook.and.returnValue(new Promise( resolve => {resolve(rapidChargeSettings)}));
+			TestBed.configureTestingModule({
+				declarations: [
+					WidgetQuicksettingsListComponent
+				],
+				imports: [],
+				providers: [
+					{ provide: VantageShellService, useValue: shellServiveSpy },
+					{ provide: CommonService, useValue: commonServiceMock},
+					{ provide: GamingAllCapabilitiesService, useValue: GamingAllCapabilitiesServiceMock},
+					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy},
+					{ provide: AudioService, useValue: audioServiceSpy},
+					{ provide: PowerService, useValue: powerServiceSpy},
+					{ provide: DialogService, useValue: dialogServiceSpy},
+					{ provide: GuardService, useValue: guardMock},
+					{ provide: Router, useValue: routerSpy},
+				],
+				schemas: [NO_ERRORS_SCHEMA]
+			}).compileComponents();
+			fixture = TestBed.createComponent(WidgetQuicksettingsListComponent);
+			component = fixture.debugElement.componentInstance;
+			spyOn(component, 'runLocationService').and.returnValue();
+			fixture.detectChanges();
+		}));
 
+		it('should create', () => {
+			expect(component).toBeDefined();
+		});
+
+		it('ngOnInit not support wifiSecurity', () => {
+			wifiSecurityFeatureCache =  false;
+			wifiSecurityStatusCache = 'never-used';
+			component.ngOnInit();
+			expect(component.quickSettings[2].isVisible).toBe(false, `wifi Security visible should be false`);
+			expect(component.quickSettings[2].isChecked).toBe(false, `wifi Security checked should be false`);
+		});
+
+		it('initializeWifiSecCache', () => {
+			wifiSecurityFeatureCache =  true;
+			wifiSecurityStatusCache = 'never-used';
+			component.initializeWifiSecCache();
+			expect(component.quickSettings[2].isVisible).toBe(true, `wifi Security visible should be true`);
+			expect(component.quickSettings[2].isChecked).toBe(false, `wifi Security checked should be false`);
+
+			wifiSecurityFeatureCache =  true;
+			wifiSecurityStatusCache = 'enabled';
+			component.initializeWifiSecCache();
+			expect(component.quickSettings[2].isVisible).toBe(true, `wifi Security visible should be true`);
+			expect(component.quickSettings[2].isChecked).toBe(true, `wifi Security checked should be true`);
+		});
+
+		it('getWifiSecuritySettings', () => {
+			securityWifiSecurityInGamingDashboardCache = false;
+			securityWifiSecurityShowPluginMissingDialogCache = false;
+			component.getWifiSecuritySettings();
+			expect(securityWifiSecurityInGamingDashboardCache).toBe(true, `isLWSEnabled is flase, securityWifiSecurityInGamingDashboardCache shoulde be true`);
+			expect(securityWifiSecurityShowPluginMissingDialogCache).toBe(true, `isLWSEnabled is flase, securityWifiSecurityShowPluginMissingDialogCache shoulde be true`);
+			expect(component.quickSettings[2].isChecked).toBe(false, `isLWSEnabled is flase, wifi Security checked shoulde be false`)
+
+			// securityWifiSecurityInGamingDashboardCache = false;
+			// securityWifiSecurityShowPluginMissingDialogCache = false;
+			// component.wifiHomeViewModel.isLWSEnabled = true;
+			// component.getWifiSecuritySettings();
+			// expect(securityWifiSecurityInGamingDashboardCache).toBe(true, `isLWSEnabled is true, securityWifiSecurityInGamingDashboardCache shoulde be true`);
+			// expect(securityWifiSecurityShowPluginMissingDialogCache).toBe(true, `isLWSEnabled is true, securityWifiSecurityShowPluginMissingDialogCache shoulde be true`);
+			// expect(component.quickSettings[2].isChecked).toBe(true, `isLWSEnabled is true, wifi Security checked shoulde be true`)
+		});
+
+		it('updateWifiSecurityState', () => {
+			component.updateWifiSecurityState(false);
+			expect(component.quickSettings[2].isVisible).toBe(false, `wifi Security visible shoulde be true`);
+			expect(wifiSecurityFeatureCache).toBe(false, 'wifiSecurityFeatureCache shoulde be true');
+
+			component.updateWifiSecurityState(true);
+			expect(component.quickSettings[2].isVisible).toBe(true, `wifi Security visible shoulde be true`);
+			expect(wifiSecurityFeatureCache).toBe(true, 'wifiSecurityFeatureCache shoulde be true');
+
+		});
+
+		// it('setWifiSecuritySettings', fakeAsync(() => {
+		// 	securityWifiSecurityInGamingDashboardCache = true;
+		// 	component.wifiHomeViewModel.isLWSEnabled = true;
+		// 	component.quickSettings[2].isChecked = true;
+		// 	component.setWifiSecuritySettings(false);
+		// 	tick();
+		// 	expect(component.wifiHomeViewModel.isLWSEnabled).toBe(true);
+		// 	expect(component.quickSettings[2].isChecked).toBe(true);
+		// }));
 	});
 
 	describe("dolby", function () {
-		let shellServiveSpy = jasmine.createSpyObj('VantageService', ['getGamingAllCapabilities', 'registerEvent', 'unRegisterEvent', ,'getSecurityAdvisor', 'getLogger']);
+		let audioService: any;
 		let audioServiceMock = {
 			getDolbyMode() {
 				return new Promise( resolve => {
-					resolve(dolbyAudioToggle)
+					resolve(dolbyAudioToggle);
 				})
 			},
 			setDolbyAudioState(value: any) {
@@ -556,21 +668,18 @@ describe("WidgetQuicksettingsListComponent", () => {
 			},
 			startMonitorForDolby(value: any) {
 				return new Promise( resolve => {
-					resolve(setReturnValue)
+					resolve(setReturnValue);
 				})
 			},
 			stopMonitorForDolby() {
 				return new Promise( resolve => {
-					resolve(setReturnValue)
+					resolve(setReturnValue);
 				})
 			}
 		}
-		shellServiveSpy.getSecurityAdvisor.and.returnValue(new Promise(resolve => { resolve(true)}));
-		audioServiceSpy.getDolbyMode.and.returnValue(new Promise( resolve => { resolve(dolbyAudioToggle)}));
-		audioServiceSpy.startMonitorForDolby.and.returnValue(new Promise( resolve => { resolve(setReturnValue)}));
-		audioServiceSpy.stopMonitorForDolby.and.returnValue(new Promise( resolve => { resolve(setReturnValue)}));
-		powerServiceSpy.getRapidChargeModeStatusIdeaNoteBook.and.returnValue(new Promise( resolve => {resolve(rapidChargeSettings)}));
 		beforeEach(async(() => {
+			shellServiveSpy.getSecurityAdvisor.and.returnValue(new Promise(resolve => { resolve(true)}));
+			powerServiceSpy.getRapidChargeModeStatusIdeaNoteBook.and.returnValue(new Promise( resolve => {resolve(rapidChargeSettings)}));
 			TestBed.configureTestingModule({
 				declarations: [
 					WidgetQuicksettingsListComponent
@@ -589,6 +698,7 @@ describe("WidgetQuicksettingsListComponent", () => {
 				],
 				schemas: [NO_ERRORS_SCHEMA]
 			}).compileComponents();
+			audioService = TestBed.inject(AudioService);
 			fixture = TestBed.createComponent(WidgetQuicksettingsListComponent);
 			component = fixture.debugElement.componentInstance;
 			fixture.detectChanges();
@@ -601,124 +711,119 @@ describe("WidgetQuicksettingsListComponent", () => {
 		it('ngOnInit not support dolby', () => {
 			dolbyAudioToggleCache.available = false;
 			dolbyAudioToggleCache.isAudioProfileEnabled = false;
-			fixture.detectChanges();
 			spyOn(component, 'registerDolbyChangeEvent').and.callThrough();
 			component.ngOnInit();
-			expect(component.quickSettings[3].isVisible).toBe(false, `component.quickSettings[3].isVisible should be false`);
-			expect(component.quickSettings[3].isChecked).toBe(false, `component.quickSettings[3].isVisible should be false`);
+			expect(component.quickSettings[3].isVisible).toBe(false, `dolby.visible should be false`);
+			expect(component.quickSettings[3].isChecked).toBe(false, `dolby.checked should be false`);
 			expect(component.registerDolbyChangeEvent).toHaveBeenCalledTimes(0);
-
 		});
 
 		it('initialiseDolbyCache', () => {
 			dolbyAudioToggleCache.available = true;
 			dolbyAudioToggleCache.isAudioProfileEnabled = false;
-			fixture.detectChanges();
 			spyOn(component, 'registerDolbyChangeEvent').and.callThrough();
 			component.ngOnInit();
-			expect(component.quickSettings[3].isVisible).toBe(true, `component.quickSettings[3].isVisible should be true`);
-			expect(component.quickSettings[3].isChecked).toBe(false, `component.quickSettings[3].isVisible should be false`);
+			expect(component.quickSettings[3].isVisible).toBe(true, `dolby.visible should be true`);
+			expect(component.quickSettings[3].isChecked).toBe(false, `dolby.checked should be false`);
 			expect(component.registerDolbyChangeEvent).toHaveBeenCalledTimes(1);
 
 			dolbyAudioToggleCache.available = true;
 			dolbyAudioToggleCache.isAudioProfileEnabled = true;
-			fixture.detectChanges();
 			component.ngOnInit();
-			expect(component.quickSettings[3].isVisible).toBe(true, `component.quickSettings[3].isVisible should be true`);
-			expect(component.quickSettings[3].isChecked).toBe(true, `component.quickSettings[3].isVisible should be true`);
+			expect(component.quickSettings[3].isVisible).toBe(true, `dolby.visible should be true`);
+			expect(component.quickSettings[3].isChecked).toBe(true, `dolby.checked should be true`);
 			expect(component.registerDolbyChangeEvent).toHaveBeenCalledTimes(2);
 		});
 
-		xit('getDolbySettings', fakeAsync(() => {
+		it('getDolbySettings', fakeAsync(() => {
 			dolbyAudioToggleCache.available = false;
 			dolbyAudioToggleCache.isAudioProfileEnabled = false;
 			dolbyAudioToggle.available = false
 			dolbyAudioToggle.isAudioProfileEnabled = false;
-			fixture.detectChanges();
+			component.quickSettings[3].isVisible = false;
+			component.quickSettings[3].isChecked = false;
 			component.getDolbySettings();
 			tick();
-			expect(component.quickSettings[3].isVisible).toBe(false, `1 component.quickSettings[3].isVisible should be false`);
-			expect(component.quickSettings[3].isChecked).toBe(false, `1 component.quickSettings[3].isVisible should be false`);
-			expect(dolbyAudioToggleCache.available).toBe(false, `1 dolbyAudioToggleCache.available should be false`);
-			expect(dolbyAudioToggleCache.isAudioProfileEnabled).toBe(false, `1 dolbyAudioToggleCache.isAudioProfileEnabled should be false`);
+			expect(component.quickSettings[3].isVisible).toBe(false, `dolbyAudio is ${dolbyAudioToggle}, dolby.visible should be false`);
+			expect(component.quickSettings[3].isChecked).toBe(false, `dolbyAudio is ${dolbyAudioToggle}, dolby.checked should be false`);
+			expect(dolbyAudioToggleCache.available).toBe(false, `dolbyAudio is ${dolbyAudioToggle}, dolbyAudioToggleCache.available should be false`);
+			expect(dolbyAudioToggleCache.isAudioProfileEnabled).toBe(false, `dolbyAudio is ${dolbyAudioToggle}, dolbyAudioToggleCache.isAudioProfileEnabled should be false`);
 
 			tick();
 			dolbyAudioToggle.available = true;
 			dolbyAudioToggle.isAudioProfileEnabled = false;
-			fixture.detectChanges();
+			component.quickSettings[3].isChecked = true;
 			component.getDolbySettings();
 			tick();
-			expect(component.quickSettings[3].isVisible).toBe(true, `2 component.quickSettings[3].isVisible should be true`);
-			expect(component.quickSettings[3].isChecked).toBe(false, `2 component.quickSettings[3].isVisible should be false`);
-			expect(dolbyAudioToggleCache.available).toBe(true, `2 dolbyAudioToggleCache.available should be true`);
-			expect(dolbyAudioToggleCache.isAudioProfileEnabled).toBe(false, `2 dolbyAudioToggleCache.isAudioProfileEnabled should be false`);
+			expect(component.quickSettings[3].isVisible).toBe(true, `dolbyAudio is ${dolbyAudioToggle}, dolby.visible should be true`);
+			expect(component.quickSettings[3].isChecked).toBe(false, `dolbyAudio is ${dolbyAudioToggle}, dolby.checked should be false`);
+			expect(dolbyAudioToggleCache.available).toBe(true, `dolbyAudio is ${dolbyAudioToggle}, dolbyAudioToggleCache.available should be true`);
+			expect(dolbyAudioToggleCache.isAudioProfileEnabled).toBe(false, `dolbyAudio is ${dolbyAudioToggle}, dolbyAudioToggleCache.isAudioProfileEnabled should be false`);
 
-			// tick();
-			// dolbyAudioToggle.available = true;
-			// dolbyAudioToggle.isAudioProfileEnabled = true;
-			// fixture.detectChanges();
-			// component.getDolbySettings();
-			// tick();
-			// expect(component.quickSettings[3].isVisible).toBe(true, `3 component.quickSettings[3].isVisible should be true`);
-			// expect(component.quickSettings[3].isChecked).toBe(true, `3 component.quickSettings[3].isVisible should be true`);
-			// expect(dolbyAudioToggleCache.available).toBe(true, `3 dolbyAudioToggleCache.available should be true`);
-			// expect(dolbyAudioToggleCache.isAudioProfileEnabled).toBe(true, `3 dolbyAudioToggleCache.isAudioProfileEnabled should be true`);
+			tick();
+			dolbyAudioToggle.available = true;
+			dolbyAudioToggle.isAudioProfileEnabled = true;
+			component.quickSettings[3].isChecked = false;
+			component.getDolbySettings();
+			tick();
+			expect(component.quickSettings[3].isVisible).toBe(true, `dolbyAudio is ${dolbyAudioToggle}, dolby.visible should be true`);
+			expect(component.quickSettings[3].isChecked).toBe(true, `dolbyAudio is ${dolbyAudioToggle}, dolby.checked should be true`);
+			expect(dolbyAudioToggleCache.available).toBe(true, `dolbyAudio is ${dolbyAudioToggle}, dolbyAudioToggleCache.available should be true`);
+			expect(dolbyAudioToggleCache.isAudioProfileEnabled).toBe(true, `dolbyAudio is ${dolbyAudioToggle}, dolbyAudioToggleCache.isAudioProfileEnabled should be true`);
 		}));
 
 		it('setDolbySettings', fakeAsync(() => {
-			dolbyAudioToggleCache.available = true;
-			dolbyAudioToggle.available = true;
-			component.quickSettings[3].isVisible = true;
 			setReturnValue = true;
-			fixture.detectChanges();
+			dolbyAudioToggle.available = true;
 			dolbyAudioToggle.isAudioProfileEnabled = true;
+			dolbyAudioToggleCache.available = true;
 			dolbyAudioToggleCache.isAudioProfileEnabled = true;
+			component.quickSettings[3].isVisible = true;
 			component.setDolbySettings(false);
 			tick();
-			expect(component.quickSettings[3].isVisible).toBe(true, `1 component.quickSettings[3].isVisible should be false`);
-			expect(component.quickSettings[3].isChecked).toBe(false, `1 component.quickSettings[3].isChecked should be false`);
-			expect(dolbyAudioToggle.available).toBe(true, `1 dolbyAudioToggleCache.available should be false`);
-			expect(dolbyAudioToggle.isAudioProfileEnabled).toBe(false, `1 dolbyAudioToggleCache.isAudioProfileEnabled should be false`);
-			expect(dolbyAudioToggleCache.available).toBe(true, `1 dolbyAudioToggleCache.available should be false`);
-			expect(dolbyAudioToggleCache.isAudioProfileEnabled).toBe(false, `1 dolbyAudioToggleCache.isAudioProfileEnabled should be false`);
+			expect(component.quickSettings[3].isVisible).toBe(true, `setReturnValue is ${setReturnValue}, dolby.visible should be false`);
+			expect(component.quickSettings[3].isChecked).toBe(false, `setReturnValue is ${setReturnValue}, dolby.checked should be false`);
+			expect(dolbyAudioToggle.available).toBe(true, `setReturnValue is ${setReturnValue}, dolbyAudioToggle.available should be false`);
+			expect(dolbyAudioToggle.isAudioProfileEnabled).toBe(false, `setReturnValue is ${setReturnValue}, dolbyAudioToggle.isAudioProfileEnabled should be false`);
+			expect(dolbyAudioToggleCache.available).toBe(true, `setReturnValue is ${setReturnValue}, dolbyAudioToggleCache.available should be false`);
+			expect(dolbyAudioToggleCache.isAudioProfileEnabled).toBe(false, `setReturnValue is ${setReturnValue}, dolbyAudioToggleCache.isAudioProfileEnabled should be false`);
 
 			tick();
 			dolbyAudioToggle.isAudioProfileEnabled = false;
 			dolbyAudioToggleCache.isAudioProfileEnabled = false;
 			component.setDolbySettings(true);
 			tick();
-			expect(component.quickSettings[3].isVisible).toBe(true, `2 component.quickSettings[3].isVisible should be true`);
-			expect(component.quickSettings[3].isChecked).toBe(true, `2 component.quickSettings[3].isChecked should be true`);
-			expect(dolbyAudioToggle.available).toBe(true, `2 dolbyAudioToggleCache.available should be false`);
-			expect(dolbyAudioToggle.isAudioProfileEnabled).toBe(true, `2 dolbyAudioToggleCache.isAudioProfileEnabled should be true`);
-			expect(dolbyAudioToggleCache.available).toBe(true, `2 dolbyAudioToggleCache.available should be true`);
-			expect(dolbyAudioToggleCache.isAudioProfileEnabled).toBe(true, `2 dolbyAudioToggleCache.isAudioProfileEnabled should be true`);
+			expect(component.quickSettings[3].isVisible).toBe(true, `setReturnValue is ${setReturnValue}, dolby.visible should be true`);
+			expect(component.quickSettings[3].isChecked).toBe(true, `setReturnValue is ${setReturnValue}, dolby.checked should be true`);
+			expect(dolbyAudioToggle.available).toBe(true, `setReturnValue is ${setReturnValue}, dolbyAudioToggle.available should be true`);
+			expect(dolbyAudioToggle.isAudioProfileEnabled).toBe(true, `setReturnValue is ${setReturnValue}, dolbyAudioToggle.isAudioProfileEnabled should be true`);
+			expect(dolbyAudioToggleCache.available).toBe(true, `setReturnValue is ${setReturnValue}, dolbyAudioToggleCache.available should be true`);
+			expect(dolbyAudioToggleCache.isAudioProfileEnabled).toBe(true, `setReturnValue is ${setReturnValue}, dolbyAudioToggleCache.isAudioProfileEnabled should be true`);
 
 			tick();
 			setReturnValue = false;
-			fixture.detectChanges();
 			dolbyAudioToggle.isAudioProfileEnabled = true;
 			dolbyAudioToggleCache.isAudioProfileEnabled = true;
 			component.setDolbySettings(false);
 			tick();
-			expect(component.quickSettings[3].isVisible).toBe(true, `3 component.quickSettings[3].isVisible should be true`);
-			expect(component.quickSettings[3].isChecked).toBe(true, `3 component.quickSettings[3].isChecked should keep true`);
-			expect(dolbyAudioToggle.available).toBe(true, `3 dolbyAudioToggleCache.available should be true`);
-			expect(dolbyAudioToggle.isAudioProfileEnabled).toBe(true, `3 dolbyAudioToggleCache.isAudioProfileEnabled should keep true`);
-			expect(dolbyAudioToggleCache.available).toBe(true, `3 dolbyAudioToggleCache.available should be true`);
-			expect(dolbyAudioToggleCache.isAudioProfileEnabled).toBe(true, `3 dolbyAudioToggleCache.isAudioProfileEnabled should keep true`);
+			expect(component.quickSettings[3].isVisible).toBe(true, `setReturnValue is ${setReturnValue}, dolby.visible should be true`);
+			expect(component.quickSettings[3].isChecked).toBe(true, `setReturnValue is ${setReturnValue}, dolby.checked should keep true`);
+			expect(dolbyAudioToggle.available).toBe(true, `setReturnValue is ${setReturnValue}, dolbyAudioToggle.available should be true`);
+			expect(dolbyAudioToggle.isAudioProfileEnabled).toBe(true, `setReturnValue is ${setReturnValue}, dolbyAudioToggle.isAudioProfileEnabled should keep true`);
+			expect(dolbyAudioToggleCache.available).toBe(true, `setReturnValue is ${setReturnValue}, dolbyAudioToggleCache.available should be true`);
+			expect(dolbyAudioToggleCache.isAudioProfileEnabled).toBe(true, `setReturnValue is ${setReturnValue}, dolbyAudioToggleCache.isAudioProfileEnabled should keep true`);
 
 			tick();
 			dolbyAudioToggle.isAudioProfileEnabled = false;
 			dolbyAudioToggleCache.isAudioProfileEnabled = false;
 			component.setDolbySettings(true);
 			tick();
-			expect(component.quickSettings[3].isVisible).toBe(true, `4 component.quickSettings[3].isVisible should be true`);
-			expect(component.quickSettings[3].isChecked).toBe(false, `4 component.quickSettings[3].isChecked should keep false`);
-			expect(dolbyAudioToggle.available).toBe(true, `4 dolbyAudioToggleCache.available should be true`);
-			expect(dolbyAudioToggle.isAudioProfileEnabled).toBe(false, `4 dolbyAudioToggleCache.isAudioProfileEnabled should keep false`);
-			expect(dolbyAudioToggleCache.available).toBe(true, `4 dolbyAudioToggleCache.available should be true`);
-			expect(dolbyAudioToggleCache.isAudioProfileEnabled).toBe(false, `4 dolbyAudioToggleCache.isAudioProfileEnabled should keep false`);
+			expect(component.quickSettings[3].isVisible).toBe(true, `setReturnValue is ${setReturnValue}, dolby.visible should be true`);
+			expect(component.quickSettings[3].isChecked).toBe(false, `setReturnValue is ${setReturnValue}, dolby.checked should keep false`);
+			expect(dolbyAudioToggle.available).toBe(true, `setReturnValue is ${setReturnValue}, dolbyAudioToggle.available should be true`);
+			expect(dolbyAudioToggle.isAudioProfileEnabled).toBe(false, `setReturnValue is ${setReturnValue}, dolbyAudioToggle.isAudioProfileEnabled should keep false`);
+			expect(dolbyAudioToggleCache.available).toBe(true, `setReturnValue is ${setReturnValue}, dolbyAudioToggleCache.available should be true`);
+			expect(dolbyAudioToggleCache.isAudioProfileEnabled).toBe(false, `setReturnValue is ${setReturnValue}, dolbyAudioToggleCache.isAudioProfileEnabled should keep false`);
 		}));
 
 		it('onToggleStateChanged', fakeAsync(() => {
@@ -732,26 +837,25 @@ describe("WidgetQuicksettingsListComponent", () => {
 			dolbyAudioToggle.available = true;
 			component.quickSettings[3].isVisible = true;
 			setReturnValue = true;
-			fixture.detectChanges();
 			event.target.value = 'false';
 			component.onToggleStateChanged(event);
 			tick();
-			expect(component.quickSettings[3].isVisible).toBe(true, `1 component.quickSettings[3].isVisible should be true`);
-			expect(component.quickSettings[3].isChecked).toBe(false, `1 component.quickSettings[3].isChecked should be false`);
-			expect(dolbyAudioToggle.available).toBe(true, `1 dolbyAudioToggleCache.available should be true`);
-			expect(dolbyAudioToggle.isAudioProfileEnabled).toBe(false, `1 dolbyAudioToggleCache.isAudioProfileEnabled should be true`);
-			expect(dolbyAudioToggleCache.available).toBe(true, `1 dolbyAudioToggleCache.available should be false`);
-			expect(dolbyAudioToggleCache.isAudioProfileEnabled).toBe(false, `1 dolbyAudioToggleCache.isAudioProfileEnabled should be false`);
+			expect(component.quickSettings[3].isVisible).toBe(true, `setReturnValue is ${setReturnValue}, event is ${event}, dolby.visible should be true`);
+			expect(component.quickSettings[3].isChecked).toBe(false, `setReturnValue is ${setReturnValue}, event is ${event}, dolby.checked should be false`);
+			expect(dolbyAudioToggle.available).toBe(true, `setReturnValue is ${setReturnValue}, event is ${event}, dolbyAudioToggle.available should be true`);
+			expect(dolbyAudioToggle.isAudioProfileEnabled).toBe(false, `setReturnValue is ${setReturnValue}, event is ${event}, dolbyAudioToggle.isAudioProfileEnabled should be false`);
+			expect(dolbyAudioToggleCache.available).toBe(true, `setReturnValue is ${setReturnValue}, event is ${event}, dolbyAudioToggleCache.available should be true`);
+			expect(dolbyAudioToggleCache.isAudioProfileEnabled).toBe(false, `setReturnValue is ${setReturnValue}, event is ${event}, dolbyAudioToggleCache.isAudioProfileEnabled should be false`);
 			tick();
 			event.target.value = 'true';
 			component.onToggleStateChanged(event);
 			tick();
-			expect(component.quickSettings[3].isVisible).toBe(true, `2 component.quickSettings[3].isVisible should be true`);
-			expect(component.quickSettings[3].isChecked).toBe(true, `2 component.quickSettings[3].isChecked should be true`);
-			expect(dolbyAudioToggle.available).toBe(true, `2 dolbyAudioToggleCache.available should be true`);
-			expect(dolbyAudioToggle.isAudioProfileEnabled).toBe(true, `2 dolbyAudioToggleCache.isAudioProfileEnabled should be true`);
-			expect(dolbyAudioToggleCache.available).toBe(true, `2 dolbyAudioToggleCache.available should be true`);
-			expect(dolbyAudioToggleCache.isAudioProfileEnabled).toBe(true, `2 dolbyAudioToggleCache.isAudioProfileEnabled should be true`);
+			expect(component.quickSettings[3].isVisible).toBe(true, `setReturnValue is ${setReturnValue}, event is ${event}, dolby.visible should be true`);
+			expect(component.quickSettings[3].isChecked).toBe(true, `setReturnValue is ${setReturnValue}, event is ${event}, dolby.checked should be true`);
+			expect(dolbyAudioToggle.available).toBe(true, `setReturnValue is ${setReturnValue}, event is ${event}, dolbyAudioToggle.available should be true`);
+			expect(dolbyAudioToggle.isAudioProfileEnabled).toBe(true, `setReturnValue is ${setReturnValue}, event is ${event}, dolbyAudioToggle.isAudioProfileEnabled should be true`);
+			expect(dolbyAudioToggleCache.available).toBe(true, `setReturnValue is ${setReturnValue}, event is ${event}, dolbyAudioToggleCache.available should be true`);
+			expect(dolbyAudioToggleCache.isAudioProfileEnabled).toBe(true, `setReturnValue is ${setReturnValue}, event is ${event}, dolbyAudioToggleCache.isAudioProfileEnabled should be true`);
 
 			tick();
 			setReturnValue = false;
@@ -760,307 +864,79 @@ describe("WidgetQuicksettingsListComponent", () => {
 			event.target.value = 'false';
 			component.onToggleStateChanged(event);
 			tick();
-			expect(component.quickSettings[3].isVisible).toBe(true, `3 component.quickSettings[3].isVisible should be true`);
-			expect(component.quickSettings[3].isChecked).toBe(true, `3 component.quickSettings[3].isChecked should keep true`);
-			expect(dolbyAudioToggle.available).toBe(true, `3 dolbyAudioToggleCache.available should be true`);
-			expect(dolbyAudioToggle.isAudioProfileEnabled).toBe(true, `3 dolbyAudioToggleCache.isAudioProfileEnabled should keep true`);
-			expect(dolbyAudioToggleCache.available).toBe(true, `3 dolbyAudioToggleCache.available should be true`);
-			expect(dolbyAudioToggleCache.isAudioProfileEnabled).toBe(true, `3 dolbyAudioToggleCache.isAudioProfileEnabled should keep true`);
+			expect(component.quickSettings[3].isVisible).toBe(true, `setReturnValue is ${setReturnValue}, event is ${event}, dolby.visible should be true`);
+			expect(component.quickSettings[3].isChecked).toBe(true, `setReturnValue is ${setReturnValue}, event is ${event}, dolby.checked should keep true`);
+			expect(dolbyAudioToggle.available).toBe(true, `setReturnValue is ${setReturnValue}, event is ${event}, dolbyAudioToggle.available should be true`);
+			expect(dolbyAudioToggle.isAudioProfileEnabled).toBe(true, `setReturnValue is ${setReturnValue}, event is ${event}, dolbyAudioToggle.isAudioProfileEnabled should keep true`);
+			expect(dolbyAudioToggleCache.available).toBe(true, `setReturnValue is ${setReturnValue}, event is ${event}, dolbyAudioToggleCache.available should be true`);
+			expect(dolbyAudioToggleCache.isAudioProfileEnabled).toBe(true, `setReturnValue is ${setReturnValue}, event is ${event}, dolbyAudioToggleCache.isAudioProfileEnabled should keep true`);
 			tick();
 			dolbyAudioToggle.isAudioProfileEnabled = false;
 			dolbyAudioToggleCache.isAudioProfileEnabled = false;
 			event.target.value = 'true';
 			component.onToggleStateChanged(event);
 			tick();
-			expect(component.quickSettings[3].isVisible).toBe(true, `4 component.quickSettings[3].isVisible should be true`);
-			expect(component.quickSettings[3].isChecked).toBe(false, `4 component.quickSettings[3].isChecked should keep false`);
-			expect(dolbyAudioToggle.available).toBe(true, `4 dolbyAudioToggleCache.available should be true`);
-			expect(dolbyAudioToggle.isAudioProfileEnabled).toBe(false, `4 dolbyAudioToggleCache.isAudioProfileEnabled should keep false`);
-			expect(dolbyAudioToggleCache.available).toBe(true, `4 dolbyAudioToggleCache.available should be true`);
-			expect(dolbyAudioToggleCache.isAudioProfileEnabled).toBe(false, `4 dolbyAudioToggleCache.isAudioProfileEnabled should keep false`);
+			expect(component.quickSettings[3].isVisible).toBe(true, `setReturnValue is ${setReturnValue}, event is ${event}, dolby.visible should be true`);
+			expect(component.quickSettings[3].isChecked).toBe(false, `setReturnValue is ${setReturnValue}, event is ${event}, dolby.checked should keep false`);
+			expect(dolbyAudioToggle.available).toBe(true, `setReturnValue is ${setReturnValue}, event is ${event}, dolbyAudioToggle.available should be true`);
+			expect(dolbyAudioToggle.isAudioProfileEnabled).toBe(false, `setReturnValue is ${setReturnValue}, event is ${event}, dolbyAudioToggle.isAudioProfileEnabled should keep false`);
+			expect(dolbyAudioToggleCache.available).toBe(true, `setReturnValue is ${setReturnValue}, event is ${event}, dolbyAudioToggleCache.available should be true`);
+			expect(dolbyAudioToggleCache.isAudioProfileEnabled).toBe(false, `setReturnValue is ${setReturnValue}, event is ${event}, dolbyAudioToggleCache.isAudioProfileEnabled should keep false`);
 		}));
-		
-		
+
+		it('registerDolbyChangeEvent', () => {
+			spyOn(audioService, 'startMonitorForDolby').and.callThrough();
+			expect(audioService.startMonitorForDolby).toHaveBeenCalledTimes(0);
+			setReturnValue = false;
+			component.registerDolbyChangeEvent();
+			expect(audioService.startMonitorForDolby).toHaveBeenCalledTimes(1);
+			setReturnValue = true;
+			component.registerDolbyChangeEvent();
+			expect(audioService.startMonitorForDolby).toHaveBeenCalledTimes(2);
+		});
+
+		it('unRegisterDolbyEvent', () => {
+			spyOn(audioService, 'stopMonitorForDolby').and.callThrough();
+			expect(audioService.stopMonitorForDolby).toHaveBeenCalledTimes(0);
+			setReturnValue = false;
+			component.unRegisterDolbyEvent();
+			expect(audioService.stopMonitorForDolby).toHaveBeenCalledTimes(1);
+			setReturnValue = true;
+			component.unRegisterDolbyEvent();
+			expect(audioService.stopMonitorForDolby).toHaveBeenCalledTimes(2);
+		});
+
+		it('handleDolbyChangeEvent', fakeAsync(() => {
+			dolbyAudioToggleCache.available = true;
+			dolbyAudioToggle.available = true;
+
+			dolbyAudioToggle.isAudioProfileEnabled = true;
+			component.quickSettings[3].isChecked = false;
+			component.handleDolbyChangeEvent(dolbyAudioToggle);
+			expect(component.quickSettings[3].isChecked).toBe(true, `input is ${dolbyAudioToggle.isAudioProfileEnabled}, dolby.checked should be true`);
+			expect(dolbyAudioToggleCache.isAudioProfileEnabled).toBe(true, `dolbyAudioToggle.isAudioProfileEnabled != dolby.checked, dolbyAudioToggleCache.isAudioProfileEnabled should be true`);
+
+			dolbyAudioToggle.isAudioProfileEnabled = false;
+			component.quickSettings[3].isChecked = true;
+			component.handleDolbyChangeEvent(dolbyAudioToggle);
+			expect(component.quickSettings[3].isChecked).toBe(false, `input is ${dolbyAudioToggle.isAudioProfileEnabled}, dolby.checked should be false`);
+			expect(dolbyAudioToggleCache.isAudioProfileEnabled).toBe(false, `dolbyAudioToggle.isAudioProfileEnabled != dolby.checked, dolbyAudioToggleCache.isAudioProfileEnabled should be false`);
+
+			dolbyAudioToggle.available = undefined;
+			dolbyAudioToggle.isAudioProfileEnabled = false;
+			component.quickSettings[3].isChecked = true;
+			dolbyAudioToggleCache.isAudioProfileEnabled = true;
+			component.handleDolbyChangeEvent(dolbyAudioToggle);
+			expect(component.quickSettings[3].isChecked).toBe(true, `input is ${dolbyAudioToggle.isAudioProfileEnabled}, dolby.checked should keep true`);
+			expect(dolbyAudioToggleCache.isAudioProfileEnabled).toBe(true, `dolbyAudioToggle.available = undefined, dolbyAudioToggleCache.isAudioProfileEnabled should keep true`);
+
+			dolbyAudioToggle.available = true;
+			dolbyAudioToggle.isAudioProfileEnabled = undefined;
+			component.quickSettings[3].isChecked = false;
+			dolbyAudioToggleCache.isAudioProfileEnabled = false;
+			component.handleDolbyChangeEvent(dolbyAudioToggle);
+			expect(component.quickSettings[3].isChecked).toBe(false, `input is ${dolbyAudioToggle.isAudioProfileEnabled}, dolby.cChecked should keep false`);
+			expect(dolbyAudioToggleCache.isAudioProfileEnabled).toBe(false, `dolbyAudioToggle.isAudioProfileEnabled = undefined, dolbyAudioToggleCache.isAudioProfileEnabled should keep false`);
+		}));
 	});
 })
-
-// import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
-// import { WidgetQuicksettingsListComponent } from './widget-quicksettings-list.component';
-// import { Pipe } from '@angular/core';
-// import { HttpClient, HttpHandler } from '@angular/common/http';
-// // tslint:disable-next-line: no-duplicate-imports
-// import { NO_ERRORS_SCHEMA } from '@angular/core';
-// import { AudioService } from 'src/app/services/audio/audio.service';
-// import { GamingThermalModeService } from 'src/app/services/gaming/gaming-thermal-mode/gaming-thermal-mode.service';
-// import { RouterTestingModule } from '@angular/router/testing';
-// import { Router } from '@angular/router';
-// import { DevService } from 'src/app/services/dev/dev.service';
-// import { TranslateService, TranslateStore } from '@ngx-translate/core';
-// import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
-// import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-// import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
-// import { DialogService } from 'src/app/services/dialog/dialog.service';
-// import { UserService } from 'src/app/services/user/user.service';
-// import { CookieService } from 'ngx-cookie-service';
-
-
-// const audioServiceMock = jasmine.createSpyObj('AudioService', ['isShellAvailable', 'getDolbyFeatureStatus', 'setDolbyOnOff']);
-// const gamingThermalModeServiceMock = jasmine.createSpyObj('GamingThermalModeService', ['isShellAvailable', 'getThermalModeStatus', 'setThermalModeStatus', 'regThermalModeEvent']);
-// const  gamingDialogServiceMock = jasmine.createSpyObj('DialogService', ['isShellAvailable']);
-// const  gamingUserServiceMock = jasmine.createSpyObj('UserService', ['isShellAvailable']);
-// const  gamingTranslateServiceMock = jasmine.createSpyObj('TranslateService', ['isShellAvailable']);
-
-// const gamingAllCapabilitiesService = jasmine.createSpyObj('GamingAllCapabilitiesService', [
-// 	'getCapabilityFromCache'
-// ]);
-// xdescribe("WidgetQuicksettingsListComponent", function () {
-// 	let component: WidgetQuicksettingsListComponent;
-// 	let fixture: ComponentFixture<WidgetQuicksettingsListComponent>;
-// 	let router: Router;
-// 	let gamingSettings: any = {};
-// 	let isQuickSettingsVisible = true;
-// 	let originalTimeout;
-// 	gamingThermalModeServiceMock.isShellAvailable.and.returnValue(true);
-// 	gamingDialogServiceMock.isShellAvailable.and.returnValue(true);
-// 	gamingUserServiceMock.isShellAvailable.and.returnValue(true);
-// 	gamingTranslateServiceMock.isShellAvailable.and.returnValue(true);
-
-// 	describe("thermalmode", function () {
-
-// 	})
-
-// 	describe("repidcharge", function () {
-
-// 	})
-
-// 	describe("wifisecurity", function () {
-
-// 	})
-
-// 	describe("dolby", function () {
-
-// 	})
-
-// 	beforeEach(function () {
-// 		originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
-// 		jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
-// 		TestBed.configureTestingModule({
-// 			declarations: [WidgetQuicksettingsListComponent,
-// 				mockPipe({ name: 'translate' })],
-// 			schemas: [NO_ERRORS_SCHEMA],
-// 			imports: [
-// 				RouterTestingModule.withRoutes([]),
-// 			],
-// 			providers: [
-// 				{ provide: HttpClient },
-// 				{ provide: HttpHandler},
-// 				{ provide: VantageShellService},
-// 				{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceMock },
-// 				{ provide: AudioService, useValue: audioServiceMock },
-// 				{ provide: DevService },
-// 				{ provide: DialogService, useValue: gamingDialogServiceMock },
-// 				{ provide: UserService, useValue: gamingUserServiceMock },
-// 				{ provide: CookieService },
-// 				{ provide: TranslateService, useValue: gamingTranslateServiceMock },
-// 				{ provide: TranslateStore },
-// 				{ provide: GamingAllCapabilitiesService, useValue: gamingAllCapabilitiesService },
-// 				{ provide: HypothesisService }
-// 			]
-// 		}).compileComponents();
-// 		fixture = TestBed.createComponent(WidgetQuicksettingsListComponent);
-// 		component = fixture.debugElement.componentInstance;
-// 		router = TestBed.get(Router);
-// 		//	fixture.detectChanges();
-// 	});
-
-// 	it("should create", function (done) {
-// 		setTimeout(function () {
-// 			done();
-// 		}, 9000);
-// 		expect(component).toBeTruthy();
-// 	});
-
-// 	afterEach(function () {
-// 		jasmine.DEFAULT_TIMEOUT_INTERVAL = originalTimeout;
-// 	});
-
-// 	// it('should have default value Balance for thermal mode if localstorage not set', () => {
-// 	// 	fixture = TestBed.createComponent(WidgetQuicksettingsListComponent);
-// 	// 	component = fixture.debugElement.componentInstance;
-// 	// 	fixture.detectChanges();
-// 	// 	//Expected Default Behaviour
-// 	// 	expect(component.drop.curSelected).toEqual(2);
-// 	// });
-
-// 	xit('should update the thermal mode value on service and in Local storage', fakeAsync((done: any) => {
-// 		let thermalModePromisedData: number;
-// 		const uiThermalModeValue = component.drop.curSelected;
-// 		const cacheThermalModeValue = component.GetThermalModeCacheStatus();
-// 		gamingThermalModeServiceMock.getThermalModeStatus.and.returnValue(Promise.resolve(uiThermalModeValue));
-// 		gamingThermalModeServiceMock.getThermalModeStatus().then((response: any) => {
-// 			thermalModePromisedData = response;
-// 		});
-// 		component.renderThermalModeStatus();
-// 		tick(10);
-// 		fixture.detectChanges();
-// 		expect(component).toBeTruthy();
-// 		//	expect(uiThermalModeValue).toEqual(cacheThermalModeValue);
-// 		// expect(uiThermalModeValue).toEqual(thermalModePromisedData);
-// 		// expect(cacheThermalModeValue).toEqual(thermalModePromisedData);
-// 	}));
-
-// 	// it('Should not have same value in current and previous local storage', fakeAsync(() => {
-// 	// 	const cacheThermalModeValue = component.GetThermalModeCacheStatus();
-// 	// 	const PreCacheThermalModeValue = component.GetThermalModePrevCacheStatus();
-// 	// 	tick(10);
-// 	// 	fixture.detectChanges();
-// 	// 	if (PreCacheThermalModeValue){
-// 	// 	expect(cacheThermalModeValue).toEqual(PreCacheThermalModeValue); }
-// 	// }));
-
-// 	xit('should give ischecked true after calling set dolby', fakeAsync(() => {
-// 		component.setDolbySettings(true);
-// 		expect(component.quickSettings[3].isChecked).toEqual(false);
-// 	}));
-
-
-// 	xit('should have default isCheckedBoxVisible legionUpdate object false for Thermal mode & True for all', () => {
-// 		fixture = TestBed.createComponent(WidgetQuicksettingsListComponent);
-// 		component = fixture.debugElement.componentInstance;
-// 		fixture.detectChanges();
-// 		// Expected Default Behaviour
-// 		expect(component.quickSettings[0].isCheckBoxVisible).toEqual(false);
-// 		expect(component.quickSettings[1].isCheckBoxVisible).toEqual(true);
-// 		expect(component.quickSettings[2].isCheckBoxVisible).toEqual(true);
-// 		expect(component.quickSettings[3].isCheckBoxVisible).toEqual(true);
-// 	});
-
-// 	it('should have default isSwitchVisible quickSettings object false for Thermal mode & True for all', () => {
-// 		fixture = TestBed.createComponent(WidgetQuicksettingsListComponent);
-// 		component = fixture.debugElement.componentInstance;
-// 		fixture.detectChanges();
-// 		// Expected Default Behaviour
-// 		expect(component.quickSettings[0].isSwitchVisible).toEqual(false);
-// 	});
-
-// 	xit('should have default isCollapsible legionUpdate object true for CPU OverClock & false for all', () => {
-// 		fixture = TestBed.createComponent(WidgetQuicksettingsListComponent);
-// 		component = fixture.debugElement.componentInstance;
-// 		fixture.detectChanges();
-// 		// Expected Default Behaviour
-// 		expect(component.quickSettings[0].isCollapsible).toEqual(true);
-// 	});
-
-// 	it('handleError', fakeAsync(() => {
-// 		component.handleError(true);
-// 		expect(component).toBeTruthy();
-// 	}));
-
-// 	it('onRegThermalModeEvent', fakeAsync(() => {
-// 		component.onRegThermalModeEvent(true);
-// 		expect(component).toBeTruthy();
-// 	}));
-
-
-// 	xit('registerThermalModeEvent', fakeAsync(() => {
-// 		component.registerThermalModeEvent();
-// 		expect(component).toBeTruthy();
-// 	}));
-
-// 	xit('onOptionSelected', fakeAsync(() => {
-// 		tick(10);
-// 		fixture.detectChanges();
-// 		let envent1 = {
-// 			target: {
-// 				option: {value: 1},
-// 				name: 'gaming.dashboard.device.quickSettings.title'
-// 			}
-// 		};
-// 		try {
-// 			component.setThermalModeStatus = undefined ;
-// 			component.onOptionSelected(envent1);
-
-
-// 		} catch (e) {
-
-// 		}
-
-// 		expect(component).toBeTruthy();
-
-// 	}));
-
-
-
-// 	xit('onToggleStateChanged', fakeAsync(() => {
-// 		tick(10);
-// 		fixture.detectChanges();
-// 		let event: Event;
-// 		let envent1 = {
-// 			target: {
-// 				value: true,
-// 				name: 'gaming.dashboard.device.quickSettings.dolby'
-// 			}
-// 		};
-// 		try {
-// 			component.onToggleStateChanged(envent1);
-
-// 			envent1 = {
-// 				target: {
-// 					value: false,
-// 					name: 'gaming.dashboard.device.quickSettings.rapidCharge'
-// 				}
-// 			};
-// 			component.onToggleStateChanged(envent1);
-
-// 			envent1 = {
-// 				target: {
-// 					value: false,
-// 					name: 'gaming.dashboard.device.quickSettings.wifiSecurity'
-// 				}
-// 			};
-// 			component.onToggleStateChanged(envent1);
-// 		} catch (e) {
-
-// 		}
-// 		expect(component).toBeTruthy();
-
-// 	}));
-
-
-// 	it('GetThermalModePrevCacheStatus', fakeAsync(() => {
-// 		component.GetThermalModePrevCacheStatus();
-// 		expect(component).toBeTruthy();
-// 	}));
-
-
-
-// 	it('onFocus', fakeAsync(() => {
-// 		component.onFocus();
-// 		expect(component).toBeTruthy();
-// 	}));
-
-
-// 	it('updateWifiSecurityState', fakeAsync(() => {
-// 		component.updateWifiSecurityState(true);
-// 		component.updateWifiSecurityState(false);
-// 		expect(component).toBeTruthy();
-// 	}));
-
-// });
-
-
-// /**
-//  * @param options pipeName which has to be mock
-//  * @description To mock the pipe.
-//  * @summary This has to move to one utils file.
-//  */
-// export function mockPipe(options: Pipe): Pipe {
-// 	const metadata: Pipe = {
-// 		name: options.name
-// 	};
-// 	return <any>Pipe(metadata)(class MockPipe {
-// 		public transform(query: string, ...args: any[]): any {
-// 			return query;
-// 		}
-// 	});
-// }
