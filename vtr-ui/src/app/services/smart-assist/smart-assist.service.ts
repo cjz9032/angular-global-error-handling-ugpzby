@@ -27,6 +27,7 @@ export class SmartAssistService {
 	}
 
 	public isShellAvailable = false;
+	public isHPDShellAvailable = false;
 	public isAPSavailable = false;
 	private shellVersion: string;
 
@@ -43,6 +44,9 @@ export class SmartAssistService {
 		this.activeProtectionSystem ? this.isAPSavailable = true : this.isAPSavailable = false;
 		if (this.intelligentSensing && this.intelligentMedia && this.lenovoVoice && this.superResolution) {
 			this.isShellAvailable = true;
+		}
+		if (this.hsaIntelligentSecurity) { //means can connect to vantage shell with rpc
+			this.isHPDShellAvailable = true;
 		}
 	}
 
@@ -214,7 +218,7 @@ export class SmartAssistService {
 	public getHsaIntelligentSecurityStatus() {
 		const intelligentSecurityDate = new HsaIntelligentSecurityResponse(false, false);
 		try {
-			if (this.isShellAvailable) {
+			if (this.isHPDShellAvailable) {
 				const obj = JSON.parse(this.hsaIntelligentSecurity.getAllSetting());
 				if (obj && obj.errorCode === 0) {
 					intelligentSecurityDate.capacity = obj.capacity;
@@ -226,49 +230,49 @@ export class SmartAssistService {
 				return Promise.resolve(intelligentSecurityDate);
 			}
 		} catch (error) {
-			//throw new Error(error.message);
 			return Promise.reject(error.message);
 		}
 	}
 
+	public registerHPDRpcCallback() {
+		if (this.isHPDShellAvailable) {
+			const result = this.hsaIntelligentSecurity.registerCallback();
+			return Promise.resolve(result);
+		}
+		return undefined;
+	}
+
+	public unRegisterHPDRpcCallback() {
+		if (this.isHPDShellAvailable) {
+			const result = this.hsaIntelligentSecurity.unRegisterCallback();
+			return Promise.resolve(result);
+		}
+		return undefined;
+	}
+
 	public setZeroTouchLockDistanceSensitivityAutoAdjust(value: boolean): Promise<number> {
-		try {
-			if (this.isShellAvailable) {
-				const result = this.hsaIntelligentSecurity.setPresenceLeaveDistanceAutoAdjust(value);
-				return Promise.resolve(result);
-			}
-		} catch (error) {
-			//throw new Error(error.message);
-			return Promise.reject(error.message);
+		if (this.isHPDShellAvailable) {
+			const result = this.hsaIntelligentSecurity.setPresenceLeaveDistanceAutoAdjust(value);
+			return Promise.resolve(result);
 		}
 	}
 
 	public setZeroTouchLockDistanceSensitivity(value: number): Promise<number> {
-		try {
-			if (this.isShellAvailable) {
-				const result = this.hsaIntelligentSecurity.setPresenceLeaveDistance(value);
-				return Promise.resolve(result);
-			}
-		} catch (error) {
-			//throw new Error(error.message);
-			return Promise.reject(error.message);
+		if (this.isHPDShellAvailable) {
+			const result = this.hsaIntelligentSecurity.setPresenceLeaveDistance(value);
+			return Promise.resolve(result);
 		}
 	}
 
 	public resetHSAHPDSetting(): Promise<number> {
-		try {
-			if (this.isShellAvailable) {
-				const result = this.hsaIntelligentSecurity.resetAllSetting();
-				return Promise.resolve(result);
-			}
-		} catch (error) {
-			//throw new Error(error.message);
-			return Promise.reject(error.message);
+		if (this.isHPDShellAvailable) {
+			const result = this.hsaIntelligentSecurity.resetAllSetting();
+			return Promise.resolve(result);
 		}
 	}
 
 	public startMonitorHsaIntelligentSecurityStatus(callback: any): Promise<boolean> {
-		if (this.isShellAvailable) {
+		if (this.isHPDShellAvailable) {
 			this.hsaIntelligentSecurity.onstatusupdated = (data: any) => {
 				callback(data);
 			};
