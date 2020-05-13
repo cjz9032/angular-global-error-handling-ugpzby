@@ -540,7 +540,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			});
 	}
 
-	public onZeroTouchLockTimerChange($event, value) {
+	/* public onZeroTouchLockTimerChange($event, value) {
 		// let value = $event.value;
 		this.intelligentSecurity.autoScreenLockTimer = value;
 
@@ -551,10 +551,10 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			.then((isSuccess: boolean) => {
 				this.logger.info(`onZeroTouchLockTimerChange.setSelectedLockTimer ${isSuccess}`, value);
 			});
-		this.setUpZeroTouchLockTimerRadioDetails();
-	}
 
-	public onZeroTouchLockTimerChangeOur($event) {
+	} */
+
+	public onZeroTouchLockTimerChange($event) {
 		let value = $event.value;
 		this.intelligentSecurity.autoScreenLockTimer = value;
 
@@ -564,8 +564,9 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		this.smartAssist.setSelectedLockTimer(value)
 			.then((isSuccess: boolean) => {
 				this.logger.info(`onZeroTouchLockTimerChange.setSelectedLockTimer ${isSuccess}`, value);
+				this.setUpZeroTouchLockTimerRadioDetails();
 			});
-		this.setUpZeroTouchLockTimerRadioDetails();
+
 	}
 
 	public onZeroTouchLockFacialRecoChange($event: boolean) {
