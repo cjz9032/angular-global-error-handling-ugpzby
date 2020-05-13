@@ -1475,35 +1475,35 @@
                 }
             },
             "audio": {
-                "title": "Ήχος",
-                "subtitle": "Ρυθμίσεις ήχου",
-                "description": "Αυτή η ενότητα σας επιτρέπει να βελτιστοποιείτε αυτόματα ή ναρυθμίζετε απολύτως χειροκίνητα τις ρυθμίσεις ήχου, όπως ρυθμίσεις Dolby, μικρόφωνο κ.λπ.",
-                "audioSmartsettings": {
-                    "title": "Audio smart settings",
+				"title": "Ήχος",
+				"subtitle": "Ρυθμίσεις ήχου",
+				"description": "Αυτή η ενότητα σάς επιτρέπει να βελτιστοποιήσετε αυτόματα ή να διαμορφώσετε πλήρως τις ρυθμίσεις ήχου χειροκίνητα, όπως ρυθμίσεις Dolby, μικρόφωνο κ.λπ.",
+				"audioSmartsettings": {
+                    "title": "Έξυπνες ρυθμίσεις ήχου",
                     "dolby": {
-                        "title": "Dolby audio",
-                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
+                        "title": "Ήχος Dolby",
+                        "description": "Επιλέξτε τη λειτουργία που επιθυμείτε από τα ακόλουθα. Μπορείτε επίσης να επιλέξετε το πλαίσιο ελέγχου \"Αυτόματη βελτιστοποίηση ήχου για ...\". Όταν είναι επιλεγμένο, ο ήχος Dolby επιλέγει αυτόματα το καλύτερο εφέ ήχου για εσάς ανάλογα με τις διάφορες λειτουργίες που είστε.",
                         "options": {
-                            "dynamic": "DYNAMIC",
-                            "movie": "MOVIE",
-                            "music": "MUSIC",
-                            "games": "GAME",
-                            "voip": "VOICE"
+                            "dynamic": "Δυναμικό",
+							"movie": "Ταινία",
+							"music": "Μουσική",
+							"games": "Παιχνίδι",
+							"voip": "Φωνή"
                         },
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
-                                "checkboxText": "Automatically optimize audio for VOIP"
+                                "checkboxText": "Αυτόματη βελτιστοποίηση ήχου για VoIP",
+                                "tooltip": "Αυτή η λειτουργία τίθεται σε ισχύ όταν πραγματοποιείτε κλήσεις VoIP (χρησιμοποιώντας Skype, Microsoft Teams, WeChat κ.λπ.). Όταν είναι ενεργοποιημένη αυτή η δυνατότητα, ο ήχος Dolby αλλάζει αυτόματα στη λειτουργία φωνής για καλύτερη ποιότητα φωνής."
                             },
                             "entertainmentMode": {
-                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "checkboxText": "Automatically optimize audio for entertainment"
+                                "checkboxText": "Αυτόματη βελτιστοποίηση ήχου για ψυχαγωγία",
+                                "tooltip": "Όταν είναι επιλεγμένη αυτή η επιλογή, ο ήχος Dolby ρυθμίζει αυτόματα τη λειτουργία ανάλογα με την εφαρμογή που χρησιμοποιείτε:<br>• Εάν χρησιμοποιείτε εφαρμογές όπως το iTunes, μεταβαίνει στη λειτουργία Μουσικής.<br>• Εάν χρησιμοποιείτε εφαρμογές όπως το YouTube, μεταβαίνει στη λειτουργία Ταινίας.<br>• Εάν χρησιμοποιείτε εφαρμογές παιχνιδιών, μεταβαίνει ανάλογα στη λειτουργία παιχνιδιού."
                             }
                         }
                     },
                     "eCourse": {
-                        "title": "Interactive E-course mode",
-                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
+                        "title": "Διαδραστική λειτουργία E-course",
+                        "tooltip": "Αυτή η λειτουργία είναι χρήσιμη για διαδικτυακά μαθήματα, όταν υπάρχουν φωνητικές αλληλεπιδράσεις μεταξύ δασκάλων και μαθητών. Όταν είναι ενεργοποιημένη, ο ήχος Dolby μεταβαίνει αυτόματα στη λειτουργία Φωνής. Εντωμεταξύ, δυνατότητες όπως η διαμόρφωση ηχητικής δέσμης, η ακύρωση ακουστικής ηχούς και η καταστολή θορύβου πληκτρολογίου θα ενεργοποιηθούν για βελτίωση της εισόδου φωνής."
                     }
                 },
                 "microphone": {

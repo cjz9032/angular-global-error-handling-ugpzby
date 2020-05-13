@@ -1475,35 +1475,35 @@
                 }
             },
             "audio": {
-                "title": "Zvok",
-                "subtitle": "Nastavitve zvoka",
-                "description": "Ta razdelek vam omogoča, da samodejno optimizirate ali v celotiročno konfigurirate nastavitve zvoka, kot so nastavitve za Dolby, mikrofon itd.",
-                "audioSmartsettings": {
-                    "title": "Audio smart settings",
+				"title": "Zvok",
+				"subtitle": "Nastavitve zvoka",
+				"description": "Ta razdelek vam omogoča, da samodejno optimizirate ali v celoti ročno konfigurirate nastavitve zvoka, kot so nastavitve za Dolby, mikrofon itd.",
+				"audioSmartsettings": {
+                    "title": "Pametne nastavitve zvoka",
                     "dolby": {
-                        "title": "Dolby audio",
-                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
+                        "title": "Zvok Dolby",
+                        "description": "Na seznamu možnosti izberite želeni način. Izberete lahko tudi potrditveno polje »Samodejna optimizacija zvoka za ...«. Ko je ta funkcija izbrana, zvok Dolby samodejno izbere najboljši zvočni učinek glede na različne načine, ki jih uporabljate.",
                         "options": {
-                            "dynamic": "DYNAMIC",
-                            "movie": "MOVIE",
-                            "music": "MUSIC",
-                            "games": "GAME",
-                            "voip": "VOICE"
+                            "dynamic": "Dinamično",
+							"movie": "Film",
+							"music": "Glasba",
+							"games": "Igra",
+							"voip": "Glas"
                         },
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
-                                "checkboxText": "Automatically optimize audio for VOIP"
+                                "checkboxText": "Samodejno optimiziranje zvoka za VoIP",
+                                "tooltip": "Ta funkcija se uporabi med opravljanjem klicev VoIP (z uporabo programov Skype, Microsoft Teams, WeChat itd.). Ko je funkcija omogočena, zvok Dolby samodejno preklopi v način za glas, da zagotovi boljšo kakovost zvoka."
                             },
                             "entertainmentMode": {
-                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "checkboxText": "Automatically optimize audio for entertainment"
+                                "checkboxText": "Samodejno optimiziranje zvoka za zabavo",
+                                "tooltip": "Ko je ta možnost izbrana, zvok Dolby samodejno prilagodi način glede na aplikacijo, ki jo uporabljate:<br>• Če uporabljate aplikacije, kot je iTunes, se spremeni v glasbeni način.<br>• Če uporabljate aplikacije, kot je YouTube, se spremeni v filmski način.<br>• Če uporabljate aplikacije za igranje iger, se spremeni v način za igre."
                             }
                         }
                     },
                     "eCourse": {
-                        "title": "Interactive E-course mode",
-                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
+                        "title": "Način za interaktivni e-tečaj",
+                        "tooltip": "Ta funkcija je koristna za spletne tečaje, ki vključujejo govorno sporazumevanje med učitelji in udeleženci. Ko je funkcija omogočena, zvok Dolby samodejno preklopi v način za glas. Poleg tega se za boljšo kakovost govora vklopijo tudi funkcije, kot so Beam Forming, odstranjevanje akustičnega odmeva in dušenje zvokov tipkovnice."
                     }
                 },
                 "microphone": {

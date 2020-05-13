@@ -1475,35 +1475,35 @@
                 }
             },
             "audio": {
-                "title": "Audio",
-                "subtitle": "Audio-instellingen",
-                "description": "In dit gedeelte kunt u uw audio-instellingen automatisch optimaliseren ofvolledig configureren, zoals Dolby-instellingen, microfoons, enzovoort.",
-                "audioSmartsettings": {
-                    "title": "Audio smart settings",
+				"title": "Audio",
+				"subtitle": "Audio-instellingen",
+				"description": "In dit gedeelte kunt u uw audio-instellingen automatisch optimaliseren of volledig configureren, zoals Dolby-instellingen, microfoons, enzovoort.",
+				"audioSmartsettings": {
+                    "title": "Slimme audio-instellingen",
                     "dolby": {
-                        "title": "Dolby audio",
-                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
+                        "title": "Dolby-audio",
+                        "description": "Selecteer een van de volgende werkstanden naar wens. U kunt ook het selectievakje \"Audio automatisch optimaliseren voor:\" inschakelen. Als deze functie is ingeschakeld, selecteert Dolby-audio automatisch het beste audio-effect op basis van de geselecteerde werkstand.",
                         "options": {
-                            "dynamic": "DYNAMIC",
-                            "movie": "MOVIE",
-                            "music": "MUSIC",
-                            "games": "GAME",
-                            "voip": "VOICE"
+                            "dynamic": "Dynamisch",
+							"movie": "Film",
+							"music": "Muziek",
+							"games": "Spel",
+							"voip": "Spraak"
                         },
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
-                                "checkboxText": "Automatically optimize audio for VOIP"
+                                "checkboxText": "Audio automatisch optimaliseren voor VoIP",
+                                "tooltip": "Deze functie is van kracht als u in een VoIP-gesprek bent (zoals Skype, Microsoft Teams, WeChat, enz.). Als deze functie is ingeschakeld, verandert Dolby-audio automatisch in de spraakwerkstand voor een betere spraakkwaliteit."
                             },
                             "entertainmentMode": {
-                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "checkboxText": "Automatically optimize audio for entertainment"
+                                "checkboxText": "Audio automatisch optimaliseren voor entertainment",
+                                "tooltip": "Als u deze optie selecteert, wordt de werkstand van Dolby-audio automatisch aangepast voor de app die u gebruikt:<br>• Als u werkt met apps zoals iTunes, wordt de werkstand gewijzigd in de werkstand Muziek.<br>• Als u werkt met apps zoals YouTube, wordt overgeschakeld naar de werkstand Film.<br>• Als u gaming-apps gebruikt, wordt de werkstand ingesteld op Spel."
                             }
                         }
                     },
                     "eCourse": {
-                        "title": "Interactive E-course mode",
-                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
+                        "title": "Interactieve E-cursus-werkstand",
+                        "tooltip": "Deze functie is handig voor online cursussen met gesproken interactie tussen docenten en studenten. Als deze functie is ingeschakeld, verandert Dolby-audio automatisch naar de werkstand Spraak. Ondertussen worden functies zoals bundelvorming, onderdrukking van de akoestische echo en van het geluid van het toetsenbord ingeschakeld om de spraakinvoer te verbeteren."
                     }
                 },
                 "microphone": {

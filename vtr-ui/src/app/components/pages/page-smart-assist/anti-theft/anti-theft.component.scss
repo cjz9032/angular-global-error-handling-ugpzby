@@ -64,6 +64,9 @@ vtr-ui-row-switch {
   .showPhoto {
     .btn-link {
       margin-top: -4px;
+      &:focus {
+        @include outline-border-blue;
+      }
     }
   }
 
@@ -74,6 +77,9 @@ vtr-ui-row-switch {
     margin-left: 8px;
     &:hover {
       color: $highlight;
+    }
+    &:focus {
+      @include outline-border-blue;
     }
   }
 

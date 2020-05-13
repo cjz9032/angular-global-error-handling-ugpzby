@@ -1,8 +1,10 @@
 <div class="vtr-widget-hardware-scan-item" *ngFor="let item of items">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="row module-information">
+			<div class="module-information">
 				<div class="module-icon" *ngIf="item.icon !== undefined">
+
+					<!-- Defines an icon according to the hardware component -->
 					<div class="test-status" [ngSwitch]="item.icon">
 						<img alt="processor" class="img-icon" *ngSwitchCase="'cpu'" [src]="'assets/icons/hardware-scan/icon_hardware_processor.svg' | svgInline | async" />
 						<img alt="memory" class="img-icon" *ngSwitchCase="'memory'" [src]=" 'assets/icons/hardware-scan/icon_hardware_memory.svg' | svgInline | async" />
@@ -12,58 +14,85 @@
 						<img alt="wireless" class="img-icon" *ngSwitchCase="'wireless'" [src]=" 'assets/icons/hardware-scan/icon_hardware_wireless.svg' | svgInline | async" />
 						<img alt="storage" class="img-icon" *ngSwitchCase="'storage'" [src]=" 'assets/icons/hardware-scan/icon_hardware_hdd.svg' | svgInline | async" />
 					</div>
-				</div>
-				<div class="title">
-					<div class="row col-12 module-name">
-						{{item.module}}
-						<div class="row col-12 description">
-							<div class="subtitle">{{item.name}}
-								<span *ngIf="item.details" (click)="item.collapsed = !item.collapsed">
-									<a href="javascript:void(0);"
-										aria-label="module-details"
-										class="details"
-										triggers="click:blur">
-										<fa-icon [icon]="['fas', 'caret-right']" *ngIf="!item.collapsed"></fa-icon>
-										<fa-icon [icon]="['fas', 'caret-down']" *ngIf="item.collapsed"></fa-icon>{{ detailsText }}
-									</a>
-								</span>
-							</div>
-						</div>
+
+					<!-- Defines a style title based on the response received -->
+					<div class="row">
+						<p class="title">{{item.module}}</p><p class="subtitle">{{item.name}}</p>
 					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col">
-				<div class="settings-container">
-					<vtr-ui-hardware-list *ngIf="isLoadingDone" [items]="item.listTest" [details]="item.details"
-						[template]="2" [collapsed]="item.collapsed">
-					</vtr-ui-hardware-list>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col pt-3">
-			<div class="result-code d-flex justify-content-end" *ngIf="item.resultCode">
-				<div class="result-code-value-text pr-2"><span>{{resultCodeText}}:</span></div>
-				<div class="left-code-result">
-					<span class="result-code-complete-text"> {{item.resultCode}}</span>
-					<a *ngIf="item.information"
-						href="javascript:void(0)"
-						(click)="getInformation(item.information)"
-						aria-label="module-result-code-question-mark"
-						class="result-code-icon"
-						triggers="click"
-						[ngbTooltip]="tooltipRefModule"
-						container="vtr-root"
-						tooltipClass="vtr-tooltip"
-						placement="auto">
-						<fa-icon [icon]="['far', 'question-circle']"></fa-icon>
+
+					<!-- Icon to expand and collapse details list -->
+					<a *ngIf="isEnableViewResults || item.details"
+						href="javascript:void(0);"
+						aria-label="module-details"
+						class="details-link"
+						(click)="item.collapsed = !item.collapsed">
+						<fa-icon [icon]="['fas', 'caret-right']" *ngIf="!item.collapsed"></fa-icon>
+						<fa-icon [icon]="['fas', 'caret-up']" *ngIf="item.collapsed"></fa-icon>
+						{{ 'hardwareScan.details' | translate }}
 					</a>
 				</div>
+
+				<!-- Icon to expand and collapse test list -->
+				<a *ngIf="isScanExecute && !isEnableViewResults"
+					href="javascript:void(0);"
+					(click)="item.collapsed = !item.collapsed"
+					[ngClass]="{'rotate': item.collapsed}">
+					<fa-icon [icon]="['fal', 'angle-down']"
+						[attr.aria-expanded]="item.collapsed">
+					</fa-icon>
+				</a>
 			</div>
 		</div>
+
+		<!-- Details List with information about the module -->
+		<div class="row details-list" *ngIf="(isEnableViewResults || item.details) && item.collapsed">
+			<table class="table table-details table-active table-borderless">
+				<tbody>
+					<tr *ngFor="let detail of item.details">
+						<th>{{getKey(detail)}}</th>
+						<td>{{getValue(detail)}}</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
+
+		<div class="row col">
+			<!-- Result code information -->
+			<div class="result-code" *ngIf="item.resultCode">
+				<p class="title">{{resultCodeText}}:</p>
+				<p class="subtitle">{{item.resultCode}}</p>
+				<a *ngIf="item.information"
+					href="javascript:void(0)"
+					(click)="getInformation(item.information)"
+					aria-label="module-result-code-question-mark"
+					class="result-code-icon"
+					triggers="click"
+					[ngbTooltip]="tooltipRefModule"
+					container="vtr-root"
+					tooltipClass="vtr-tooltip"
+					placement="auto">
+					<fa-icon [icon]="['far', 'question-circle']"></fa-icon>
+				</a>
+			</div>
+
+			<!-- Test List with collapsed running test-->
+			<div class="test-list col" *ngIf="isScanExecute && !isEnableViewResults">
+				<vtr-ui-hardware-list
+					[ngbCollapse]="!item.collapsed"
+					[items]="item.listTest"
+					[template]="2">
+				</vtr-ui-hardware-list>
+			</div>
+
+			<!-- Test List with deails test-->
+			<div class="test-list col" *ngIf="isEnableViewResults || item.details || isRecoverExecute">
+				<vtr-ui-hardware-list
+					[items]="item.listTest"
+					[template]="2">
+				</vtr-ui-hardware-list>
+			</div>
+		</div>
+		<hr>
 	</div>
 </div>
 <ng-template #tooltipRefModule>
@@ -79,7 +108,7 @@
 			metricsEvent="articleclick"
 			metricsPageNumber="1">
 			<button class='btn button'>
-				{{ lenovoSupport }}
+				{{ 'hardwareScan.support.subtitle' | translate }}
 			</button>
 		</a>
 	</div>

@@ -1475,35 +1475,35 @@
                 }
             },
             "audio": {
-                "title": "Audio",
-                "subtitle": "Setări audio",
-                "description": "Această secțiune vă oferă posibilitatea de a optimiza în mod automat sau de a configuracomplet setările audio manual, cum ar fi setările Dolby, microfonul etc.",
-                "audioSmartsettings": {
-                    "title": "Audio smart settings",
+				"title": "Audio",
+				"subtitle": "Setări audio",
+				"description": "Această secțiune vă permite să optimizați în mod automat sau să configurați manual toate setările audio, cum ar fi setările Dolby, microfonului etc.",
+				"audioSmartsettings": {
+                    "title": "Setări audio inteligente",
                     "dolby": {
-                        "title": "Dolby audio",
-                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
+                        "title": "Audio Dolby",
+                        "description": "Selectați modul dorit dintre următoarele opțiuni. De asemenea, puteți bifa caseta de selectare „Optimizare audio automată pentru...”. Când caseta este selectată, funcția audio Dolby selectează automat cel mai bun efect audio pentru dumneavoastră, în funcție de modul în care vă aflați.",
                         "options": {
-                            "dynamic": "DYNAMIC",
-                            "movie": "MOVIE",
-                            "music": "MUSIC",
-                            "games": "GAME",
-                            "voip": "VOICE"
+                            "dynamic": "Dinamic",
+							"movie": "Film",
+							"music": "Muzică",
+							"games": "Joc",
+							"voip": "Voce"
                         },
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
-                                "checkboxText": "Automatically optimize audio for VOIP"
+                                "checkboxText": "Optimizare audio automată pentru VoIP",
+                                "tooltip": "Această funcție are efect atunci când sunteți în apeluri VoIP (la utilizarea Skype, Microsoft Teams, WeChat etc.). Când este activată, funcția audio Dolby trece automat în modul Voce, pentru o calitate mai bună a vocii."
                             },
                             "entertainmentMode": {
-                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "checkboxText": "Automatically optimize audio for entertainment"
+                                "checkboxText": "Optimizare audio automată pentru divertisment",
+                                "tooltip": "Când este selectată această opțiune, funcția audio Dolby reglează automat modul, în funcție de aplicația pe care o utilizați:<br>• Dacă utilizați aplicații precum iTunes, funcția trece la modul Muzică.<br>• Dacă utilizați aplicații precum YouTube, funcția trece la modul Film.<br>• Dacă utilizați aplicații de jocuri, funcția trece la modul Jocuri corespunzător."
                             }
                         }
                     },
                     "eCourse": {
-                        "title": "Interactive E-course mode",
-                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
+                        "title": "Modul Curs electronic interactiv",
+                        "tooltip": "Această funcție este utilă pentru cursurile on-line, unde există interacțiuni vocale între profesori și studenți. Când este activată, funcția audio Dolby trece automat în modul Voce. În același timp, se activează caracteristici precum formare undă, anulare ecou acustic și suprimare zgomot tastatură, pentru îmbunătățirea introducerii vocale."
                     }
                 },
                 "microphone": {

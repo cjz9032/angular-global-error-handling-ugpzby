@@ -1475,35 +1475,35 @@
                 }
             },
             "audio": {
-                "title": "Ljud",
-                "subtitle": "Ljudinställningar",
-                "description": "I detta avsnitt kan du automatiskt optimera ellermanuellt konfigurera ljudinställningarna, som Dolby, mikrofon och annat.",
-                "audioSmartsettings": {
-                    "title": "Audio smart settings",
+				"title": "Ljud",
+				"subtitle": "Ljudinställningar",
+				"description": "I detta avsnitt kan du automatiskt optimera eller manuellt konfigurera ljudinställningarna, som Dolby, mikrofon och annat.",
+				"audioSmartsettings": {
+                    "title": "Smarta ljudinställningar",
                     "dolby": {
-                        "title": "Dolby audio",
-                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
+                        "title": "Dolby-ljud",
+                        "description": "Välj det läge du vill ha från följande. Du kan också markera kryssrutan \"Optimera ljud automatiskt för ...\". När du har markerat den väljs automatiskt den bästa ljudeffekten beroende på vilket läge du använder.",
                         "options": {
-                            "dynamic": "DYNAMIC",
-                            "movie": "MOVIE",
-                            "music": "MUSIC",
-                            "games": "GAME",
-                            "voip": "VOICE"
+                            "dynamic": "Dynamiskt",
+							"movie": "Film",
+							"music": "Musik",
+							"games": "Spel",
+							"voip": "Röst"
                         },
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
-                                "checkboxText": "Automatically optimize audio for VOIP"
+                                "checkboxText": "Optimera ljud automatiskt för VoIP",
+                                "tooltip": "Den här funktionen aktiveras när du använder VoIP-samtal (med Skype, Microsoft Teams, WeChat och så vidare). När funktionen har aktiverats ändras röstläget automatiskt så att kvaliteten blir bättre."
                             },
                             "entertainmentMode": {
-                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "checkboxText": "Automatically optimize audio for entertainment"
+                                "checkboxText": "Optimera ljud automatiskt för underhållning",
+                                "tooltip": "När det här alternativet är valt justeras läget automatiskt beroende på vilken app du använder:<br>• Om du använder appar som iTunes ändras det till musikläget.<br>• Om du använder appar som YouTube ändras det till filmläget.<br>• Om du använder spelappar ändras det till spelläget."
                             }
                         }
                     },
                     "eCourse": {
-                        "title": "Interactive E-course mode",
-                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
+                        "title": "Läge för interaktiv e-kurs",
+                        "tooltip": "Den här funktionen är användbar för onlinekurser där lärare och elever talar med varandra. När den här funktionen är aktiverad ändras läget automatiskt till Röst. Funktioner som riktmikrofon, eliminering av akustiskt eko och dämpning av tangenttryckningar aktiveras så att rösterna hörs bättre."
                     }
                 },
                 "microphone": {

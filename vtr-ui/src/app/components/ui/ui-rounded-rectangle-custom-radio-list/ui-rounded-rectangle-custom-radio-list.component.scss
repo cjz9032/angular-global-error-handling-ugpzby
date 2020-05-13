@@ -5,7 +5,10 @@
 * https://xd.adobe.com/spec/4dd677d9-0bab-4b71-46f7-ac1f2efe0878-3be7/screen/b2046b82-01ad-465f-b000-572df2e3b668/Selectors/
 */
 
-.vtr-ui-rounded-rectangle-radio-list {
+.vtr-ui-rounded-rectangle-custom-radio-list {
+	$radio-gutter: 0.8rem;
+
+	margin: $radio-gutter;
 	$radio-gutter: 0.8rem;
 	$radio-width: 25rem;
 	$radio-height: 5rem;
@@ -23,9 +26,19 @@
 
 	margin: $radio-gutter;
 
-	.radio-group {
+	// display radio buttons in row manner
+	.horizontal {
 		display: flex;
 		flex-direction: row;
+	}
+
+	// display radio buttons in row manner. for camera blur
+	.vertical {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.radio-group {
 		[role="radio"] {
 			margin: $radio-gutter;
 			position: relative;
@@ -133,3 +146,5 @@
 		}
 	}
 }
+
+	
