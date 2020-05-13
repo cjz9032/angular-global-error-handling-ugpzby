@@ -3128,7 +3128,15 @@
         "warningMessage": "Houd er rekening mee dat de testen worden geannuleerd als het systeem in de slaap- of sluimerstand staat",
         "refreshMessage": "Het vernieuwen kan even duren omdat alle onderdelen opnieuw moeten worden geladen",
         "processFinishedCannotBeCanceled": "Het actieve proces is voltooid en hoeft niet meer te worden geannuleerd.",
-        "cancelMayTakeSomeTime": "Een ogenblik geduld, het annuleren kan even duren, afhankelijk van uw systeem."
+        "cancelMayTakeSomeTime": "Een ogenblik geduld, het annuleren kan even duren, afhankelijk van uw systeem.",
+        "scanFailureModal": {
+            "title": "Hardware Problem Detected",
+            "problemDetected": "There were detected problems on the following components on your computer:",
+            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
+            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
+            "supportButtonText": "Open Ticket",
+            "recoverBadSectorsButtonText": "Recover Bad Sectors"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

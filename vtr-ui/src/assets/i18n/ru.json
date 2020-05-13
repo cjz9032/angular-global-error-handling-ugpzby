@@ -3128,7 +3128,15 @@
         "warningMessage": "Имейте в виду, что тесты будут отменены при переходе системы в спящий режим или режим гибернации",
         "refreshMessage": "Обновление может занять некоторое время, так как необходимо снова загрузить все компоненты",
         "processFinishedCannotBeCanceled": "Выполняемый процесс больше не требует отмены, так как он уже завершен.",
-        "cancelMayTakeSomeTime": "Подождите. Отмена может занять некоторое время в зависимости от конфигурации системы."
+        "cancelMayTakeSomeTime": "Подождите. Отмена может занять некоторое время в зависимости от конфигурации системы.",
+        "scanFailureModal": {
+            "title": "Hardware Problem Detected",
+            "problemDetected": "There were detected problems on the following components on your computer:",
+            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
+            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
+            "supportButtonText": "Open Ticket",
+            "recoverBadSectorsButtonText": "Recover Bad Sectors"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

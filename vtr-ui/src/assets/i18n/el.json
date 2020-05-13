@@ -3128,7 +3128,15 @@
         "warningMessage": "Λάβετε υπόψη ότι οι δοκιμές θα ακυρωθούν εάν το σύστημα είναι σε κατάσταση αναστολής λειτουργίας ή αδρανοποίησης",
         "refreshMessage": "Η ανανέωση ενδέχεται να διαρκέσει αρκετή ώρα, επειδή απαιτείται επαναφόρτωση όλων των στοιχείων",
         "processFinishedCannotBeCanceled": "Η διαδικασία που εκτελείται δεν χρειάζεται να ακυρωθεί πια, δεδομένου ότι έχει ολοκληρωθεί.",
-        "cancelMayTakeSomeTime": "Περιμένετε, μπορεί να χρειαστεί λίγος χρόνος για την ακύρωση ανάλογα με το σύστημά σας."
+        "cancelMayTakeSomeTime": "Περιμένετε, μπορεί να χρειαστεί λίγος χρόνος για την ακύρωση ανάλογα με το σύστημά σας.",
+        "scanFailureModal": {
+            "title": "Hardware Problem Detected",
+            "problemDetected": "There were detected problems on the following components on your computer:",
+            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
+            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
+            "supportButtonText": "Open Ticket",
+            "recoverBadSectorsButtonText": "Recover Bad Sectors"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

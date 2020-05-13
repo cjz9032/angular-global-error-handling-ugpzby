@@ -3128,7 +3128,15 @@
         "warningMessage": "시스템이 절전 또는 최대 절전 모드 상태인 경우 테스트가 취소됩니다",
         "refreshMessage": "모든 구성 요소를 다시 로드해야 하므로 새로 고침이 오래 걸릴 수 있습니다",
         "processFinishedCannotBeCanceled": "실행 중인 프로세스가 완료되었으므로 더 이상 취소할 필요가 없습니다.",
-        "cancelMayTakeSomeTime": "잠시 기다려 주십시오. 시스템에 따라 취소하는 데 시간이 걸릴 수 있습니다."
+        "cancelMayTakeSomeTime": "잠시 기다려 주십시오. 시스템에 따라 취소하는 데 시간이 걸릴 수 있습니다.",
+        "scanFailureModal": {
+            "title": "Hardware Problem Detected",
+            "problemDetected": "There were detected problems on the following components on your computer:",
+            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
+            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
+            "supportButtonText": "Open Ticket",
+            "recoverBadSectorsButtonText": "Recover Bad Sectors"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

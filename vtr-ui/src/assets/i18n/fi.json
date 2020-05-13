@@ -3128,7 +3128,15 @@
         "warningMessage": "Muista, että testit peruutetaan, jos järjestelmä on lepo- tai horrostilassa",
         "refreshMessage": "Päivitys saattaa kestää jonkin aikaa, koska kaikkien osien lataus on tehtävä uudelleen",
         "processFinishedCannotBeCanceled": "Käynnissä olevaa prosessia ei tarvitse peruuttaa enää, koska se on suoritettu loppuun.",
-        "cancelMayTakeSomeTime": "Odota hetki, peruutus saattaa kestää jonkin aikaa järjestelmästäsi riippuen."
+        "cancelMayTakeSomeTime": "Odota hetki, peruutus saattaa kestää jonkin aikaa järjestelmästäsi riippuen.",
+        "scanFailureModal": {
+            "title": "Hardware Problem Detected",
+            "problemDetected": "There were detected problems on the following components on your computer:",
+            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
+            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
+            "supportButtonText": "Open Ticket",
+            "recoverBadSectorsButtonText": "Recover Bad Sectors"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

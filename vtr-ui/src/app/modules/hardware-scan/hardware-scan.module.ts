@@ -5,7 +5,7 @@ import { NgbModalModule, NgbDropdownModule, NgbDatepickerModule, NgbCollapseModu
 import { HardwareScanRoutingModule } from './hardware-scan-routing.module';
 import { ModalWaitComponent } from '../../components/modal/modal-wait/modal-wait.component';
 import { ModalCancelComponent } from '../../components/modal/modal-cancel/modal-cancel.component';
-import { ModalEticketComponent } from '../../components/modal/modal-eticket/modal-eticket.component';
+import { ModalScanFailureComponent } from '../../components/modal/modal-scan-failure/modal-scan-failure.component';
 import { ModalScheduleNewScanComponent } from '../../components/modal/modal-schedule-new-scan/modal-schedule-new-scan.component';
 import { ModalScheduleScanCollisionComponent } from '../../components/modal/modal-schedule-scan-collision/modal-schedule-scan-collision.component';
 import { ModalHardwareScanCustomizeComponent } from '../../components/modal/modal-hardware-scan-customize/modal-hardware-scan-customize.component';
@@ -49,7 +49,7 @@ import { HardwareScanWaitSelectHeaderComponent } from '../../components/pages/pa
 		ModalRecoverConfirmComponent,
 		ModalWaitComponent,
 		ModalCancelComponent,
-		ModalEticketComponent,
+		ModalScanFailureComponent,
 		ModalHardwareScanCustomizeComponent,
 		ModalScheduleNewScanComponent,
 		ModalScheduleScanCollisionComponent,
@@ -97,7 +97,7 @@ import { HardwareScanWaitSelectHeaderComponent } from '../../components/pages/pa
 		ModalWaitComponent,
 		ModalRecoverConfirmComponent,
 		ModalCancelComponent,
-		ModalEticketComponent,
+		ModalScanFailureComponent,
 		ModalHardwareScanCustomizeComponent,
 		ModalScheduleNewScanComponent,
 		ModalScheduleScanCollisionComponent,

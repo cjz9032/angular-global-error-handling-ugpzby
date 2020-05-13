@@ -3128,7 +3128,15 @@
         "warningMessage": "Majte na pamäti, že testy budú zrušené, ak je systém v režime spánku alebo hibernácie",
         "refreshMessage": "Obnovenie môže chvíľu trvať, pretože je potrebné znova načítať všetky súčasti",
         "processFinishedCannotBeCanceled": "Spustený proces už netreba zrušiť, pretože sa skončil.",
-        "cancelMayTakeSomeTime": "Čakajte, zrušenie môže v závislosti od vášho systému trvať nejaký čas."
+        "cancelMayTakeSomeTime": "Čakajte, zrušenie môže v závislosti od vášho systému trvať nejaký čas.",
+        "scanFailureModal": {
+            "title": "Hardware Problem Detected",
+            "problemDetected": "There were detected problems on the following components on your computer:",
+            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
+            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
+            "supportButtonText": "Open Ticket",
+            "recoverBadSectorsButtonText": "Recover Bad Sectors"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

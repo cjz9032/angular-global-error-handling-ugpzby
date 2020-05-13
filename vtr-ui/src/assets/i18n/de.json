@@ -3128,7 +3128,15 @@
         "warningMessage": "Beachten Sie, dass die Tests abgebrochen werden, wenn das System im Ruhemodus oder im Ruhezustand ist",
         "refreshMessage": "Die Aktualisierung kann einige Zeit in Anspruch nehmen, da alle Komponenten erneut geladen werden müssen",
         "processFinishedCannotBeCanceled": "Der laufende Prozess muss nicht mehr abgebrochen werden, da er abgeschlossen ist.",
-        "cancelMayTakeSomeTime": "Bitte warten Sie einen Moment, je nach System kann der Abbruch einige Zeit in Anspruch nehmen."
+        "cancelMayTakeSomeTime": "Bitte warten Sie einen Moment, je nach System kann der Abbruch einige Zeit in Anspruch nehmen.",
+        "scanFailureModal": {
+            "title": "Hardware Problem Detected",
+            "problemDetected": "There were detected problems on the following components on your computer:",
+            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
+            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
+            "supportButtonText": "Open Ticket",
+            "recoverBadSectorsButtonText": "Recover Bad Sectors"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

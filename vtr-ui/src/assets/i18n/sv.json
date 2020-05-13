@@ -3128,7 +3128,15 @@
         "warningMessage": "Tänk på att testen avbryts om datorn hamnar i vänte- eller viloläge",
         "refreshMessage": "Uppdateringen kan ta lite tid, eftersom alla komponenter behöver läsas in igen",
         "processFinishedCannotBeCanceled": "Den process som körs behöver inte avbrytas längre, eftersom den är klar.",
-        "cancelMayTakeSomeTime": "Vänta – det kan ta en stund att avbryta beroende på ditt system."
+        "cancelMayTakeSomeTime": "Vänta – det kan ta en stund att avbryta beroende på ditt system.",
+        "scanFailureModal": {
+            "title": "Hardware Problem Detected",
+            "problemDetected": "There were detected problems on the following components on your computer:",
+            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
+            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
+            "supportButtonText": "Open Ticket",
+            "recoverBadSectorsButtonText": "Recover Bad Sectors"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

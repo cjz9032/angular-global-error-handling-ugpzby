@@ -3128,7 +3128,15 @@
         "warningMessage": "Ne feledje, hogy a tesztek megszakadnak, ha a rendszer alvó vagy hibernált állapotba kerül",
         "refreshMessage": "A frissítés eltarthat egy ideig, mivel minden összetevőt újra be kell töltenie",
         "processFinishedCannotBeCanceled": "A futó folyamatot nem lehet megszakítani, mivel befejeződött.",
-        "cancelMayTakeSomeTime": "Kérjük, várjon, a megszakítás a rendszertől függően hosszabb időt vehet igénybe."
+        "cancelMayTakeSomeTime": "Kérjük, várjon, a megszakítás a rendszertől függően hosszabb időt vehet igénybe.",
+        "scanFailureModal": {
+            "title": "Hardware Problem Detected",
+            "problemDetected": "There were detected problems on the following components on your computer:",
+            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
+            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
+            "supportButtonText": "Open Ticket",
+            "recoverBadSectorsButtonText": "Recover Bad Sectors"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

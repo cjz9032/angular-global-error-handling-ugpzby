@@ -3128,7 +3128,15 @@
         "warningMessage": "Napominjemo da će se testovi otkazati ako je sustav u stanju mirovanja ili hibernacije",
         "refreshMessage": "Osvježavanje može potrajati neko vrijeme jer je potrebno ponovno učitati sve komponente",
         "processFinishedCannotBeCanceled": "Postupak pokretanja više nije potrebno poništavati jer je dovršen.",
-        "cancelMayTakeSomeTime": "Pričekajte, možda će trebati neko vrijeme za otkazivanje, ovisno o vašem sustavu."
+        "cancelMayTakeSomeTime": "Pričekajte, možda će trebati neko vrijeme za otkazivanje, ovisno o vašem sustavu.",
+        "scanFailureModal": {
+            "title": "Hardware Problem Detected",
+            "problemDetected": "There were detected problems on the following components on your computer:",
+            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
+            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
+            "supportButtonText": "Open Ticket",
+            "recoverBadSectorsButtonText": "Recover Bad Sectors"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",
