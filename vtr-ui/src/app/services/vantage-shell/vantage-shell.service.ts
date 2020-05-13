@@ -644,7 +644,7 @@ export class VantageShellService {
 				return new win.VantageShellExtension.HumanPresenceDetectionRpcClient();
 			}
 		} catch (error) {
-			throw new Error(error.message);
+			return undefined;
 		}
 	}
 
