@@ -132,8 +132,8 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 	}
 
 	public onChangeKeyType($event) {
-		let value = $event.value as boolean;
-		this.topRowKeyObj.stickyFunStatus = value;
+		let value = $event.value;
+		this.topRowKeyObj.stickyFunStatus = JSON.parse(value);
 		this.keyboardService.setFnStickKeyStatus(value).then(res => {
 		});
 	}
@@ -150,7 +150,7 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 			componentId: 'radio1',
 			label: 'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.radioButton.nMehod',
 			value: this.FALSE,
-			isChecked: !this.topRowKeyObj.stickyFunStatus === JSON.parse(this.FALSE),
+			isChecked: this.topRowKeyObj.stickyFunStatus === JSON.parse(this.FALSE),
 			isDisabled: false
 		},
 		{
