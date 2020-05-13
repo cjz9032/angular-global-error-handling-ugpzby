@@ -66,7 +66,7 @@
                                     {{'device.smartAssist.antiTheft.cameraPrivacy.describe' | translate}}</p>
                                 <button id="showCameraPrivacyPageButton" type="button"
                                     class="btn btn-link privacy-button pl-0" tabindex="0" role="link"
-                                    attr.aria-label="{{'device.smartAssist.antiTheft.cameraPrivacy.linkText' | translate}}"
+                                    attr.aria-label="{{'device.smartAssist.antiTheft.title' | translate}}{{'device.smartAssist.antiTheft.cameraPrivacy.linkText' | translate}}"
                                     (click)="showCameraPrivacyPage()">
                                     {{'device.smartAssist.antiTheft.cameraPrivacy.linkText' | translate}}
                                 </button>
@@ -79,7 +79,7 @@
                                     {{'device.smartAssist.antiTheft.authorizedAccess.describe' | translate}}</p>
                                 <button id="showCameraAuthorizedAccessButton" tabindex="0" role="link" type="button"
                                     class="btn btn-link pl-0"
-                                    attr.aria-label="{{'device.smartAssist.antiTheft.authorizedAccess.linkText' | translate}}"
+                                    attr.aria-label="{{'device.smartAssist.antiTheft.title' | translate}}{{'device.smartAssist.antiTheft.authorizedAccess.linkText' | translate}}"
                                     (click)="showCameraAuthorizedAccess()">
                                     {{'device.smartAssist.antiTheft.authorizedAccess.linkText' | translate}}
                                 </button>
@@ -95,7 +95,7 @@
                                     container="vtr-root" tooltipClass="vtr-tooltip"
                                     (click)="onRightIconClick(rightToolTip1, $event)"
                                     (keydown.enter)="onRightIconClick(rightToolTip1, $event)" tabindex="0"
-                                    attr.aria-label="'Smart motion alarm Photos taken tooltip, which reads:'+ {{'device.smartAssist.antiTheft.photo.tooltip' | translate}}">
+                                    attr.aria-label="{{'device.smartAssist.antiTheft.title' | translate}}+'Photos taken tooltip, which reads:'+ {{'device.smartAssist.antiTheft.photo.tooltip' | translate}}">
                                 </fa-icon>
                             </label>
                             <ng-template #tooltipRef>
@@ -124,7 +124,7 @@
                                     type="button" 
                                     class="btn btn-link pl-0" 
                                     [(ngModel)]="antiTheft.photoAddress"
-                                    attr.aria-label="{{'device.smartAssist.antiTheft.showPhoto.link' | translate}}"
+                                    attr.aria-label="{{'device.smartAssist.antiTheft.title' | translate}}{{'device.smartAssist.antiTheft.showPhoto.link' | translate}}"
                                     (click)="showPhotoFolder(antiTheft.photoAddress)">
                                     {{'device.smartAssist.antiTheft.showPhoto.link' | translate}}
                                 </button>
@@ -140,7 +140,7 @@
                                     role="link" 
                                     type="button"
                                     class="btn btn-link pl-0"
-                                    attr.aria-label="{{'device.smartAssist.antiTheft.fileAuthorizationTips.link' | translate}}"
+                                    attr.aria-label="{{'device.smartAssist.antiTheft.title' | translate}}{{'device.smartAssist.antiTheft.fileAuthorizationTips.link' | translate}}"
                                     (click)="showAccessingFileSystem()">
                                     {{'device.smartAssist.antiTheft.fileAuthorizationTips.link' | translate}}
                                 </button>
