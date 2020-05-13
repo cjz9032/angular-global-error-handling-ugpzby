@@ -1475,35 +1475,35 @@
                 }
             },
             "audio": {
-                "title": "שמע",
-                "subtitle": "הגדרות שמע",
-                "description": "סעיף זה מאפשר לכם לבצע אופטימיזציה אוטומטית או להגדירבמלואן את הגדרות השמע באופן ידני, כגון הגדרות Dolby, מיקרופון ועוד.",
-                "audioSmartsettings": {
-                    "title": "Audio smart settings",
+				"title": "שמע",
+				"subtitle": "הגדרות שמע",
+				"description": "סעיף זה מאפשר לכם לבצע אופטימיזציה אוטומטית או להגדיר במלואן את הגדרות השמע באופן ידני, כגון הגדרות Dolby, מיקרופון ועוד.",
+				"audioSmartsettings": {
+                    "title": "הגדרות שמע חכמות",
                     "dolby": {
-                        "title": "Dolby audio",
-                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
+                        "title": "שמע Dolby",
+                        "description": "בחרו את המצב הרצוי מבין האפשרויות הבאות. ניתן גם לסמן את התיבה \"‏‫מיטוב אוטומטי של שמע עבור:\". לאחר הסימון, שמע Dolby בוחר אוטומטית את אפקט השמע הטוב ביותר עבורכם, בהתאם למצבים שבהם אתם נמצאים.",
                         "options": {
-                            "dynamic": "DYNAMIC",
-                            "movie": "MOVIE",
-                            "music": "MUSIC",
-                            "games": "GAME",
-                            "voip": "VOICE"
+                            "dynamic": "דינמי",
+							"movie": "סרט",
+							"music": "מוסיקה",
+							"games": "משחק",
+							"voip": "קול"
                         },
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
-                                "checkboxText": "Automatically optimize audio for VOIP"
+                                "checkboxText": "מיטוב שמע אוטומטי עבור VoIP",
+                                "tooltip": "פונקציה זו מופעלת בשיחות VoIP (באמצעות Skype, Microsoft Teams, WeChat וכו'). כאשר היא מופעלת, שמע Dolby משתנה אוטומטית למצב קולי כדי לספק איכות קול טובה יותר."
                             },
                             "entertainmentMode": {
-                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "checkboxText": "Automatically optimize audio for entertainment"
+                                "checkboxText": "מיטוב שמע אוטומטי עבור בידור",
+                                "tooltip": "כשבוחרים אפשרות זו, שמע Dolby מתאים את המצב באופן אוטומטי בהתאם ליישום שבו אתם משתמשים:<br>• אם אתם משתמשים ביישומים כמו iTunes, זה ישתנה למצב מוזיקה.<br>• אם אתם משתמשים ביישומים כמו YouTube, זה ישתנה למצב סרט.<br>• אם אתם משתמשים ביישומי משחקים, המצב ישתנה למצב משחק בהתאם."
                             }
                         }
                     },
                     "eCourse": {
-                        "title": "Interactive E-course mode",
-                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
+                        "title": "המצב 'קורס אלקטרוני אינטראקטיבי'",
+                        "tooltip": "פונקציה זו שימושית לקורסים מקוונים כאשר קיימות אינטראקציות קוליות בין מורים לתלמידים. כאשר היא מופעלת, שמע Dolby משתנה אוטומטית למצב \"קול\". בינתיים, תכונות כמו יצירת אלומה, ביטול הד אקוסטי ו‏‫השתקת צלילי מקשים‬ יופעלו כדי לשפר את הקלט הקולי."
                     }
                 },
                 "microphone": {

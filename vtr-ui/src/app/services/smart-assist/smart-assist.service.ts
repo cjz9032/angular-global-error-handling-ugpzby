@@ -412,12 +412,21 @@ export class SmartAssistService {
 		return undefined;
 	}
 
-	public startMonitorAntiTheftStatus(callback: any): Promise<boolean> {
+	public startMonitorAntiTheftStatus(callback: any): Promise<number> {
 		if (this.isShellAvailable  && this.antiTheft !== undefined) {
+			const ret = this.antiTheft.registerCallback();
 			this.antiTheft.onstatusupdated = (data: any) => {
 				callback(data);
 			};
-			return Promise.resolve(true);
+			return Promise.resolve(ret);
+		}
+		return undefined;
+	}
+
+	public stopMonitorAntiTheftStatus(): Promise<number> {
+		if (this.isShellAvailable  && this.antiTheft !== undefined) {
+			const ret = this.antiTheft.unRegisterCallback();
+			return Promise.resolve(ret);
 		}
 		return undefined;
 	}

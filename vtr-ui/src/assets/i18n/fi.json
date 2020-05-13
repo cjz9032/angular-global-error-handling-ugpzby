@@ -1475,35 +1475,35 @@
                 }
             },
             "audio": {
-                "title": "Äänitoiminnot",
-                "subtitle": "Ääniasetukset",
-                "description": "Tämän osan avulla voit automaattisesti optimoida taimäärittää ääniasetukset manuaalisesti (esimerkiksi Dolby-asetukset, mikrofoni jne.).",
-                "audioSmartsettings": {
-                    "title": "Audio smart settings",
+				"title": "Äänitoiminnot",
+				"subtitle": "Ääniasetukset",
+				"description": "Tämän osan avulla voit automaattisesti optimoida tai määrittää ääniasetukset manuaalisesti (esimerkiksi Dolby-asetukset, mikrofoni jne.).",
+				"audioSmartsettings": {
+                    "title": "Älykkäät ääniasetukset",
                     "dolby": {
-                        "title": "Dolby audio",
-                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
+                        "title": "Dolby Audio",
+                        "description": "Valitse haluamasi tila seuraavista vaihtoehdoista. Voit myös valita \"Optimoi ääniasetukset automaattisesti...\" -valintaruudun. Kun se on valittuna, Dolby Audio valitsee parhaan äänentoistotavan automaattisesti puolestasi käyttämäsi tilan perusteella.",
                         "options": {
-                            "dynamic": "DYNAMIC",
-                            "movie": "MOVIE",
-                            "music": "MUSIC",
-                            "games": "GAME",
-                            "voip": "VOICE"
+                            "dynamic": "Dynaaminen",
+							"movie": "Elokuva",
+							"music": "Musiikki",
+							"games": "Peli",
+							"voip": "Ääni"
                         },
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
-                                "checkboxText": "Automatically optimize audio for VOIP"
+                                "checkboxText": "Optimoi ääniasetukset automaattisesti VoIP:lle",
+                                "tooltip": "Tämä ominaisuus on käytössä VoIP-puheluiden aikana (Skype, Microsoft Teams, WeChat jne.). Kun se on käytössä, Dolby Audio siirtyy automaattisesti Ääni-tilaan, jotta puheen äänenlaatu paranee."
                             },
                             "entertainmentMode": {
-                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "checkboxText": "Automatically optimize audio for entertainment"
+                                "checkboxText": "Optimoi ääniasetukset automaattisesti viihteelle",
+                                "tooltip": "Kun tämä vaihtoehto on valittuna, Dolby Audio vaihtaa tilaa automaattisesti käyttämäsi sovelluksen mukaan:<br>• Jos käytät iTunesin kaltaisia sovelluksia, se siirtyy Musiikki-tilaan.<br>• Jos käytät YouTube kaltaisia sovelluksia, se siirtyy Elokuva-tilaan.<br>• Jos käytät pelisovelluksia, se siirtyy Peli-tilaan."
                             }
                         }
                     },
                     "eCourse": {
-                        "title": "Interactive E-course mode",
-                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
+                        "title": "Interaktiivinen verkkokurssi -tila",
+                        "tooltip": "Tämä ominaisuus sopii hyvin verkkokursseille, joissa opettajat ja oppilaat puhuvat keskenään. Kun se on käytössä, Dolby Audio siirtyy automaattisesti Ääni-tilaan. Puheen äänenlaatua parannetaan useilla eri ominaisuuksilla, kuten keilanmuodostus, kiertoefektin peruutus ja näppäimistön kirjoitusäänten vaimennus."
                     }
                 },
                 "microphone": {

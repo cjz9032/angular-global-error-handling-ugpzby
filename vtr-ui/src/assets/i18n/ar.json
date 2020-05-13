@@ -1477,35 +1477,35 @@
                 }
             },
             "audio": {
-                "title": "صوت",
-                "subtitle": "إعدادات الصوت",
-                "description": "يمكّنك هذا القسم من تحسين إعدادات الصوت بشكل يدويأو تكوينها بشكل كامل، مثل إعدادات Dolby أو الميكروفون وغير ذلك.",
-                "audioSmartsettings": {
-                    "title": "Audio smart settings",
+				"title": "صوت",
+				"subtitle": "إعدادات الصوت",
+				"description": "يمكّنك هذا القسم من تحسين إعدادات الصوت تلقائيًا أو تكوينها بشكل كامل يدويًا، مثل إعدادات Dolby أو الميكروفون وغير ذلك.",
+				"audioSmartsettings": {
+                    "title": "إعدادات الصوت الذكية",
                     "dolby": {
-                        "title": "Dolby audio",
-                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
+                        "title": "صوت Dolby",
+                        "description": "حدد الوضع كما تريد من التالي. يمكنك أيضًا تحديد خانة الاختيار \"تحسين الصوت تلقائيًا لـ ...\". عند تحديد هذا الخيار، يلتقط صوت Dolby تلقائيًا التأثير الصوتي الأفضل لك استنادًا إلى الأوضاع المختلفة التي تستخدمها.",
                         "options": {
-                            "dynamic": "DYNAMIC",
-                            "movie": "MOVIE",
-                            "music": "MUSIC",
-                            "games": "GAME",
-                            "voip": "VOICE"
+                            "dynamic": "ديناميكي",
+							"movie": "الفيلم",
+							"music": "الموسيقى",
+							"games": "اللعبة",
+							"voip": "الصوت"
                         },
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
-                                "checkboxText": "Automatically optimize audio for VOIP"
+                                "checkboxText": "تحسين الصوت تلقائيًا لـ VoIP",
+                                "tooltip": "تعمل هذه الوظيفة عندما تجري مكالمات VoIP (باستخدام Skype بالإضافة إلى Microsoft Teams وWeChat وغير ذلك). عند تمكين هذه الميزة، يتغير صوت Dolby تلقائيًا إلى وضع الصوت للحصول على جودة صوت أفضل."
                             },
                             "entertainmentMode": {
-                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "checkboxText": "Automatically optimize audio for entertainment"
+                                "checkboxText": "تحسين الصوت تلقائيًا للترفيه",
+                                "tooltip": "عند تحديد هذا الخيار ، يقوم صوت Dolby تلقائيًا بضبط الوضع وفقًا للتطبيق الذي تستخدمه:<br>• إذا كنت تستخدم تطبيقات مثل iTunes، فسيتغير إلى وضع الموسيقى.<br>• إذا كنت تستخدم تطبيقات مثل YouTube، فسيتغير إلى وضع الفيلم.<br>• إذا كنت تستخدم تطبيقات الألعاب، فسيتغير إلى وضع الألعاب وفقًا لذلك."
                             }
                         }
                     },
                     "eCourse": {
-                        "title": "Interactive E-course mode",
-                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
+                        "title": "وضع الدورة الإلكترونية التفاعلية",
+                        "tooltip": "تعتبر هذه الوظيفة مفيدة للدورات عبر الإنترنت عند وجود تفاعلات صوتية بين المعلمين والطلاب. عند تمكين هذه الوظيفة، يتغير صوت Dolby تلقائيًا إلى وضع الصوت. في هذه الأثناء، سيتم تشغيل ميزات مثل تشكيل الشعاع وإلغاء الصدى الصوتي ومنع ضوضاء لوحة المفاتيح لتحسين إدخال الصوت."
                     }
                 },
                 "microphone": {

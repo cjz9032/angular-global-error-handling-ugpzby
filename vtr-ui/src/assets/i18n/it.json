@@ -1475,35 +1475,35 @@
                 }
             },
             "audio": {
-                "title": "Audio",
-                "subtitle": "Impostazioni audio",
-                "description": "Questa sezione ti consente di ottimizzare in modo automatico o di configurare manualmente e completamente le impostazioni audio, ad esempio le impostazioni Dolby, il microfono e così via.",
-                "audioSmartsettings": {
-                    "title": "Audio smart settings",
+				"title": "Audio",
+				"subtitle": "Impostazioni audio",
+				"description": "Questa sezione consente di ottimizzare in modo automatico o di configurare manualmente e completamente le impostazioni audio, ad esempio le impostazioni Dolby, il microfono e così via.",
+				"audioSmartsettings": {
+                    "title": "Impostazioni intelligenti audio",
                     "dolby": {
-                        "title": "Dolby audio",
-                        "description": "Select the mode as you desired from the following. You also can select the option \"Automatically optimize audio for:\". When this feature is enabled, Dolby audio automatically picks up the best audio effect for you according to different modes you are in.",
+                        "title": "Audio Dolby",
+                        "description": "Selezionare la modalità desiderata tra quelle riportate di seguito. È anche possibile selezionare la casella di controllo \"Ottimizza automaticamente l'audio per:\". Se selezionata, l'audio Dolby sceglie automaticamente l'effetto audio migliore in base alle modalità selezionate.",
                         "options": {
-                            "dynamic": "DYNAMIC",
-                            "movie": "MOVIE",
-                            "music": "MUSIC",
-                            "games": "GAME",
-                            "voip": "VOICE"
+                            "dynamic": "Dinamico",
+							"movie": "Film",
+							"music": "Musica",
+							"games": "Gioco",
+							"voip": "Voce"
                         },
                         "automaticAudioMode": {
                             "voIPMode": {
-                                "tooltip": "This function takes effect when you are on VoIP calls (using Skype, Microsoft Teams, WeChat, and etc.).  When enabled, Dolby audio automatically changes to the Voice mode for better voice quality.",
-                                "checkboxText": "Automatically optimize audio for VOIP"
+                                "checkboxText": "Ottimizza l'audio automaticamente per VoIP",
+                                "tooltip": "Questa funzione si attiva durante una chiamata VoIP (utilizzando Skype, Microsoft Teams, WeChat e così via). Se abilitata, l'audio Dolby viene modificato automaticamente in modalità Voce per ottenere una qualità vocale migliore."
                             },
                             "entertainmentMode": {
-                                "tooltip": "When this option is selected, Dolby audio automatically adjusts the mode according to the app you are  using:",
-                                "checkboxText": "Automatically optimize audio for entertainment"
+                                "checkboxText": "Ottimizza l'audio automaticamente per l'intrattenimento",
+                                "tooltip": "Se si seleziona questa opzione, l'audio Dolby regola automaticamente la modalità in base all'app che si sta utilizzando:<br>• Se si utilizzano app come iTunes, viene selezionata la modalità musica.<br>• Se si utilizzano app come YouTube, viene selezionata la modalità Film.<br>• Se si utilizzano videogame, viene selezionata la modalità Gioco."
                             }
                         }
                     },
                     "eCourse": {
-                        "title": "Interactive E-course mode",
-                        "tooltip": "This function is useful for on-line courses when there are voice interactions between teacher and students. When enabled, Dolby audio automatically changes to \"Voice\" mode. Meanwhile, features such as beamforming, acoustic echo cancellation, and keyboard noise suppression will be turned on to improve the voice input."
+                        "title": "Modalità E-course interattivo",
+                        "tooltip": "Questa funzione è utile per i corsi online quando sono presenti interazioni vocali tra docenti e studenti. Se abilitata, l'audio Dolby viene modificato automaticamente in modalità Voce. Inoltre, funzioni come beamforming, eliminazione dell'eco e cancellazione del rumore della tastiera verranno attivate per migliorare l'input vocale."
                     }
                 },
                 "microphone": {

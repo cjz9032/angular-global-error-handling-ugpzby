@@ -1,20 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { AntiTheftComponent } from './anti-theft.component';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { Router, NavigationExtras } from '@angular/router';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { DisplayService } from 'src/app/services/display/display.service';
-import { DropDownInterval } from '../../../../data-models/common/drop-down-interval.model';
 import { TranslateService } from '@ngx-translate/core';
 import { MetricService } from 'src/app/services/metric/metric.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { RouterTestingModule } from "@angular/router/testing";
 import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 import { DevService } from 'src/app/services/dev/dev.service';
+import { AntiTheftResponse } from 'src/app/data-models/antiTheft/antiTheft.model';
 
 describe('component: AntiTheftComponent', () => {
   let component: AntiTheftComponent;
@@ -67,8 +66,40 @@ describe('component: AntiTheftComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it("antiTheftStatusChange", () => {
+    smartAssist = TestBed.get(SmartAssistService);
+    logger = TestBed.get(LoggerService);
+    smartAssist.isShellAvailable = true;
+    const date = '{"available": true,"enabled":true,"cameraAllowed":true,"alarmDuration":10,"photoNumber":5,"photoAddress":" ","errorCode":0}';
+    component.antiTheftStatusChange(date);
+  });
+
+  it("getAntiTheftStatus", () => {
+    smartAssist = TestBed.get(SmartAssistService);
+    logger = TestBed.get(LoggerService);
+    smartAssist.isShellAvailable = true;
+    const antiTheftResponse: AntiTheftResponse = {
+      available: false,
+      status: true,
+      isSupportPhoto: true,
+      cameraPrivacyState: true,
+      authorizedAccessState: true,
+      photoAddress: "",
+      alarmOften: 10,
+      photoNumber: 5
+    };
+    const spy = spyOn<any>(
+      component,
+      'getAntiTheftStatus'
+    ).and.returnValue(Promise.resolve(antiTheftResponse));
+    component.antiTheft = { ...antiTheftResponse };
+    component.getAntiTheftStatus();
+    expect(spy).toHaveBeenCalled();
+  });
+
   it("setAntiTheftStatus", () => {
     smartAssist = TestBed.get(SmartAssistService);
+    logger = TestBed.get(LoggerService);
     smartAssist.isShellAvailable = true;
     const spy = spyOn(
       smartAssist,
@@ -81,6 +112,7 @@ describe('component: AntiTheftComponent', () => {
 
   it("setAlarmOften", () => {
     smartAssist = TestBed.get(SmartAssistService);
+    logger = TestBed.get(LoggerService);
     smartAssist.isShellAvailable = true;
     const spy = spyOn(
       smartAssist,
@@ -93,6 +125,7 @@ describe('component: AntiTheftComponent', () => {
 
   it("setPhotoNumber", () => {
     smartAssist = TestBed.get(SmartAssistService);
+    logger = TestBed.get(LoggerService);
     smartAssist.isShellAvailable = true;
     const spy = spyOn(
       smartAssist,
@@ -105,6 +138,7 @@ describe('component: AntiTheftComponent', () => {
 
   it("setAllowCamera", () => {
     smartAssist = TestBed.get(SmartAssistService);
+    logger = TestBed.get(LoggerService);
     smartAssist.isShellAvailable = true;
     const spy = spyOn(
       smartAssist,
@@ -117,22 +151,33 @@ describe('component: AntiTheftComponent', () => {
 
   it("showCameraPrivacyPage", () => {
     router = TestBed.get(Router);
+    logger = TestBed.get(LoggerService);
     component.showCameraPrivacyPage();
   });
 
   it("showCameraAuthorizedAccess", () => {
     deviceService = TestBed.get(DeviceService);
+    logger = TestBed.get(LoggerService);
     component.showCameraAuthorizedAccess();
   });
 
   it("showPhotoFolder", () => {
     smartAssist = TestBed.get(SmartAssistService);
+    logger = TestBed.get(LoggerService);
     smartAssist.isShellAvailable = true;
     component.showPhotoFolder("C://");
   });
 
+  it("startMonitorAntiTheftStatus()", () => {
+    smartAssist = TestBed.get(SmartAssistService);
+    logger = TestBed.get(LoggerService);
+    smartAssist.isShellAvailable = true;
+    component.startMonitorAntiTheftStatus();
+  });
+
   it("showAccessingFileSystem", () => {
     deviceService = TestBed.get(DeviceService);
+    logger = TestBed.get(LoggerService);
     component.showAccessingFileSystem();
   });
 
