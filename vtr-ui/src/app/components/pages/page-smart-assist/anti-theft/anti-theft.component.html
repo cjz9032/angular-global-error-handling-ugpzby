@@ -65,7 +65,7 @@
                                 <p id="smartMotionAlertCameraPrivacyDescribe" role="text">
                                     {{'device.smartAssist.antiTheft.cameraPrivacy.describe' | translate}}</p>
                                 <button id="showCameraPrivacyPageButton" type="button"
-                                    class="btn btn-link privacy-button pl-0" tabindex="0" role="button"
+                                    class="btn btn-link privacy-button pl-0" tabindex="0" role="link"
                                     attr.aria-label="{{'device.smartAssist.antiTheft.cameraPrivacy.linkText' | translate}}"
                                     (click)="showCameraPrivacyPage()">
                                     {{'device.smartAssist.antiTheft.cameraPrivacy.linkText' | translate}}
@@ -77,7 +77,7 @@
                             <div class="feature-note p-4 cameraTips">
                                 <p id="smartMotionAlertAuthorizedAccessDescribe" role="text">
                                     {{'device.smartAssist.antiTheft.authorizedAccess.describe' | translate}}</p>
-                                <button id="showCameraAuthorizedAccessButton" tabindex="0" role="button" type="button"
+                                <button id="showCameraAuthorizedAccessButton" tabindex="0" role="link" type="button"
                                     class="btn btn-link pl-0"
                                     attr.aria-label="{{'device.smartAssist.antiTheft.authorizedAccess.linkText' | translate}}"
                                     (click)="showCameraAuthorizedAccess()">
@@ -120,7 +120,7 @@
                                 class="subTitle" role="text">{{'device.smartAssist.antiTheft.showPhoto.title' | translate}}
                                 <button id="smartMotionAlertShowPhotoLinkButton" 
                                     tabindex="0" 
-                                    role="button"
+                                    role="link"
                                     type="button" 
                                     class="btn btn-link pl-0" 
                                     [(ngModel)]="antiTheft.photoAddress"
@@ -137,7 +137,7 @@
                                     {{'device.smartAssist.antiTheft.fileAuthorizationTips.content' | translate}}</p>
                                 <button id="smartMotionAlertShowPhotoTipsLink" 
                                     tabindex="0" 
-                                    role="button" 
+                                    role="link" 
                                     type="button"
                                     class="btn btn-link pl-0"
                                     attr.aria-label="{{'device.smartAssist.antiTheft.fileAuthorizationTips.link' | translate}}"
