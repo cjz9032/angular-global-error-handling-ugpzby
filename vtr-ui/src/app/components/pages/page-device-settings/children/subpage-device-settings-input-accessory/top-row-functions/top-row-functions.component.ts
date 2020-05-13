@@ -1,18 +1,19 @@
 import { AppEvent } from './../../../../../../enums/app-event.enum';
-import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef, OnChanges, SimpleChanges } from '@angular/core';
 import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
 import { TopRowFunctionsCapability } from 'src/app/data-models/device/top-row-functions-capability';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { UiRoundedRectangleRadioModel } from 'src/app/components/ui/ui-rounded-rectangle-custom-radio-list/ui-rounded-rectangle-radio-list.model';
 
 @Component({
 	selector: 'vtr-top-row-functions',
 	templateUrl: './top-row-functions.component.html',
 	styleUrls: ['./top-row-functions.component.scss']
 })
-export class TopRowFunctionsComponent implements OnInit, OnDestroy {
+export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 
 	@ViewChild('adv') showAdvEl: ElementRef
 
@@ -20,12 +21,32 @@ export class TopRowFunctionsComponent implements OnInit, OnDestroy {
 	public showAdvancedSection = false;
 	public topRowFunInterval: any;
 	public isCacheFound = false;
-
+	public readonly TRUE = 'true';
+	public readonly FALSE = 'false';
+	public methodRadioDetails: Array<UiRoundedRectangleRadioModel> = [];
 	constructor(
 		private keyboardService: InputAccessoriesService,
 		private logger: LoggerService,
 		private commonService: CommonService
 	) { }
+	ngOnChanges(changes: SimpleChanges): void {
+		if (changes.topRowKeyObj) {
+			this.methodRadioDetails = [{
+				componentId: 'radio1',
+				label: 'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.radioButton.nMehod',
+				value: this.FALSE,
+				isChecked: this.topRowKeyObj.stickyFunStatus === JSON.parse(this.FALSE),
+				isDisabled: false
+			},
+			{
+				componentId: 'radio2',
+				label: 'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.radioButton.fnKeyMehod',
+				value: this.TRUE,
+				isChecked: this.topRowKeyObj.stickyFunStatus === JSON.parse(this.TRUE),
+				isDisabled: false
+			}];
+		}
+	}
 
 	ngOnInit() {
 		this.topRowKeyObj = this.commonService.getLocalStorageValue(LocalStorageKey.TopRowFunctionsCapability, undefined);
@@ -73,8 +94,10 @@ export class TopRowFunctionsComponent implements OnInit, OnDestroy {
 			}
 		}, 30000);
 	}
-	updateCustomKeyEvents(event, value) {
-		const { customeEvent } = event;
+	updateCustomKeyEvents($event) {
+		this.logger.info('topRowKeys', { $event });
+		let value = $event.value;
+		const { customeEvent } = $event;
 		if (customeEvent === AppEvent.LEFT || customeEvent === AppEvent.RIGHT) {
 			this.onChangeKeyType(value);
 		}
@@ -120,7 +143,8 @@ export class TopRowFunctionsComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public onChangeKeyType(value: boolean) {
+	public onChangeKeyType($event) {
+		let value = $event.value as boolean;
 		this.topRowKeyObj.stickyFunStatus = value;
 		this.keyboardService.setFnStickKeyStatus(value).then(res => {
 		});
