@@ -1,34 +1,9 @@
 <div class="vtr-ui-list-hardware">
 	<ul class="list-group" [ngClass]="{'list1': template === 1, 'list2': template === 2, 'list3' : template === 3}">
-		<li class=" list-group-item details" *ngIf="collapsed && details">
-			<div class="row align-items-center">
-				<table class="table table-bordered">
-					<tbody>
-						<tr *ngFor="let detail of details">
-							<td>{{getKey(detail)}}</td>
-							<td>{{getValue(detail)}}</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</li>
 		<li class=" list-group-item" *ngFor="let item of items">
 			<div class="col text button-box">
 				<div class="row item-line">
 					<div class="item-left">
-						<div *ngIf="item.icon !== undefined">
-							<div class="test-status" [ngSwitch]="item.icon">
-								<!--Alt defined as empty to avoid "duplicate" reading by narrator-->
-								<img alt="" class="qr-img" *ngSwitchCase="'cpu'" [src]="'assets/icons/hardware-scan/icon_hardware_processor.svg' | svgInline | async" />
-								<img alt="" class="qr-img" *ngSwitchCase="'memory'" [src]=" 'assets/icons/hardware-scan/icon_hardware_memory.svg' | svgInline | async" />
-								<img alt="" class="qr-img" *ngSwitchCase="'motherboard'" [src]=" 'assets/icons/hardware-scan/icon_hardware_motherboard.svg' | svgInline | async" />
-								<img alt="" class="qr-img" *ngSwitchCase="'pci_express'" [src]=" 'assets/icons/hardware-scan/icon_hardware_pci-desktop.svg' | svgInline | async" />
-								<img alt="" class="qr-img" *ngSwitchCase="'pci_express_laptop'" [src]=" 'assets/icons/hardware-scan/icon_hardware_pci-laptop.svg' | svgInline | async" />
-								<img alt="" class="qr-img" *ngSwitchCase="'wireless'" [src]=" 'assets/icons/hardware-scan/icon_hardware_wireless.svg' | svgInline | async" />
-								<img alt="" class="qr-img" *ngSwitchCase="'storage'" [src]=" 'assets/icons/hardware-scan/icon_hardware_hdd.svg' | svgInline | async" />
-							</div>
-						</div>
-
 						<div class="test-status" *ngIf="item.status >= 0">
 							<div [ngSwitch]="item.status">
 								<!--Aria-hidden defined as true to ignore faicon selection and defined a span with description to the icon-->

@@ -1247,8 +1247,8 @@ export class HardwareScanService {
 				}
 			}
 			result.push({
-				name: this.translate.instant('hardwareScan.pluginTokens.' + module),
-				subname: '',
+				module: this.translate.instant('hardwareScan.pluginTokens.' + module),
+				name: '',
 				icon: module_type
 			});
 		}

@@ -3,27 +3,17 @@
 .vtr-hardware-components {
 	border-radius: 0.5rem !important;
 	background-color: $light;
-	.hardware-scan-items {
-		padding: 2.4rem 2.4rem 0;
+
 	.header {
+		padding: 1rem 1.5rem 0;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 
-		.heading1 {
-			color: $shade_blue;
-			font-weight: $weight_light;
-			text-transform: capitalize;
-			font-size: $fontsize_xl;
-			@media #{$breakpoint_xl3}{
-				font-size: $fontsize_md!important;
-			}
-		}
 		.heading2 {
 			color: $menu_hover;
 			font-size: $fontsize_xl;
 			font-weight: $weight_light;
-
 			&::first-letter {
 				text-transform: uppercase;
 			}
@@ -69,7 +59,7 @@
 			}
 		}
 	}
-}
+
 
 	.text-regular {
 		color: $main_shade;
@@ -79,8 +69,6 @@
 	}
 
 	.hardware-lists-container {
-		// padding: 0rem 2rem 0rem 2rem;
-
 		.heading {
 			color: $main_dark;
 			font-size: $fontsize_xl;
