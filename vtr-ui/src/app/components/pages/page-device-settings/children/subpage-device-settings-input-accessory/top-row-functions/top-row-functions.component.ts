@@ -31,20 +31,7 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 	) { }
 	ngOnChanges(changes: SimpleChanges): void {
 		if (changes.topRowKeyObj) {
-			this.methodRadioDetails = [{
-				componentId: 'radio1',
-				label: 'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.radioButton.nMehod',
-				value: this.FALSE,
-				isChecked: this.topRowKeyObj.stickyFunStatus === JSON.parse(this.FALSE),
-				isDisabled: false
-			},
-			{
-				componentId: 'radio2',
-				label: 'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.radioButton.fnKeyMehod',
-				value: this.TRUE,
-				isChecked: this.topRowKeyObj.stickyFunStatus === JSON.parse(this.TRUE),
-				isDisabled: false
-			}];
+			this.setUpTopRowFunctionRadios();
 		}
 	}
 
@@ -58,6 +45,7 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 		}
 
 		this.getFunctionCapabilities();
+		this.setUpTopRowFunctionRadios();
 	}
 
 	ngOnDestroy() {
@@ -155,6 +143,23 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 				this.keyboardService.restartMachine();
 			}
 		});
+	}
+
+	setUpTopRowFunctionRadios() {
+		this.methodRadioDetails = [{
+			componentId: 'radio1',
+			label: 'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.radioButton.nMehod',
+			value: this.FALSE,
+			isChecked: !this.topRowKeyObj.stickyFunStatus === JSON.parse(this.FALSE),
+			isDisabled: false
+		},
+		{
+			componentId: 'radio2',
+			label: 'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.radioButton.fnKeyMehod',
+			value: this.TRUE,
+			isChecked: this.topRowKeyObj.stickyFunStatus === JSON.parse(this.TRUE),
+			isDisabled: false
+		}];
 	}
 
 	switchFocusToShowAdv() {

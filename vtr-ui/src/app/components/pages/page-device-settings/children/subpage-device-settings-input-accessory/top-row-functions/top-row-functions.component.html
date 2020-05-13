@@ -129,16 +129,14 @@
 						</div>
 					</div>
 					<div class="pl-2 pr-0 mt-5 methods-block">
-
 						<vtr-ui-rounded-rectangle-custom-radio-list [groupName]="'top-row-keys-methods-radio-group'"
-							[isVertical]="true"
 							[radioDetails]="methodRadioDetails"
 							(selectionChange)="onChangeKeyType($event)">
 						</vtr-ui-rounded-rectangle-custom-radio-list>
 
 						<div class="caption mt-4 pl-0"
 							*ngIf="topRowKeyObj.stickyFunStatus">
-							I AM HERE
+
 							<vtr-widget-permission-note
 								[noteTitle]="'device.deviceSettings.displayCamera.camera.note.title' | translate"
 								[description]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.note' | translate"
