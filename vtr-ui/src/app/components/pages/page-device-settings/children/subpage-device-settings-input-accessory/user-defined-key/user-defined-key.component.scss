@@ -55,6 +55,8 @@
 
 		&:disabled {
 			opacity: 0.5;
+			background: $grey_light;
+			color: $shade_blue;
 		}
 		&:focus {
 			outline: 0;
