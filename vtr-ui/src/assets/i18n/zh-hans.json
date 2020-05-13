@@ -2107,7 +2107,7 @@
                 "heading": "智能感知",
                 "title": "智能运动警报",
                 "tooltip": "<div>计算机处于休眠模式或电源已关闭时，此功能无效。请检查以下操作的设置：<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>合上外盖操作</li><li>电量严重不足/电量低操作</li><li>电源按钮操作</li><li>睡眠按钮操作</li><li>休眠的空闲超时设置</li></ul></div>否则，不会触发警报和拍照。</div>",
-                "desc": "<p><label>启用此功能后，当屏幕锁定并检测到运动时（尤其是在公共场所），设备将发出蜂鸣声。</label></p> <p><label>要消除警报，请输入正确的密码或通过 Windows Hello 登录。</label></p>",
+                "desc": "<p><label>启用此功能后，当屏幕锁定并检测到运动时（尤其是在公共场所），设备将发出蜂鸣声。</label></p> <p><label>要解除警报，请登录 Windows。</label></p>",
                 "note": {
                     "description": "成功登录系统后，此功能将自动关闭。需要再次启用此功能才能使用。"
                 },
@@ -2121,7 +2121,7 @@
                 },
                 "allowCamera": {
                     "title": "拍照",
-                    "describe": "启用此功能后，如果屏幕被锁定，摄像头在检测到任何运动时会自动拍照。此数据将在您的设备上进行本地处理。Lenovo 不会访问或使用它。",
+                    "describe": "启用此功能后，如果屏幕被锁定，摄像头在检测到运动时会自动拍照。此数据将在您的设备上进行本地处理。Lenovo 不会访问或使用它。",
                     "checkBoxText": "启用此功能"
                 },
                 "cameraPrivacy": {
@@ -2133,7 +2133,7 @@
                     "linkText": "转到 Windows 设置以授予访问权限"
                 },
                 "photo": {
-                    "title": "运动中拍摄的照片数量",
+                    "title": "拍摄的照片数量",
                     "tooltip": "检测到运动时，计算机上的摄像头会自动激活进行拍照。每 2 秒钟拍摄一次照片，照片将保存到本地存储中。",
                     "option1": 5,
                     "option2": 10,

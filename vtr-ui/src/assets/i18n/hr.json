@@ -2107,7 +2107,7 @@
                 "heading": "Pametno otkrivanje",
                 "title": "Pametni alarm kretanja",
                 "tooltip": "<div>Ova značajka ne radi ako je računalo u stanju hibernacije ili isključeno. Provjerite postavke u sljedećim radnjama:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>radnje zatvaranja poklopca</li><li>radnje kod kritične/slabe baterije</li><li>radnja gumba za napajanje</li><li>radnja gumba za stanje mirovanja</li><li>postavke vremenskog ograničenja mirovanja do hibernacije</li></ul></div>U suprotnom se alarm neće aktivirati, niti će fotografirati.</div>",
-                "desc": "<p><label>Kada omogućite ovu značajku, uređaj će početi piskati kad je vaš zaslon zaključan a otkrije se pokrete, naročito na javnom mjestu.</label></p> <p><label>Da biste isključili alarm, unesite pravilnu lozinku ili se prijavite u sustav Windows Hello.</label></p>",
+                "desc": "<p><label>Kada omogućite ovu značajku, uređaj će početi piskati kad je vaš zaslon zaključan a otkrije se pokrete, naročito na javnom mjestu.</label></p> <p><label>Da biste isključili alarm, prijavite se u Windows.</label></p>",
                 "note": {
                     "description": "Nakon uspješne prijave u sustav, ova će se značajka automatski isključiti. Da biste je opet koristili morate je ponovo uključiti."
                 },
@@ -2121,7 +2121,7 @@
                 },
                 "allowCamera": {
                     "title": "FOTOGRAFIRANJE",
-                    "describe": "Kada omogućite ovu značajku, kamera autoimatski fotografira kad je vaš zaslon zaključan a otkrije se pokrete. Ti se podaci obrađuju lokalno na vašem uređaju. Lenovo im ne pristupa niti ih upotrebljava.",
+                    "describe": "Kad se omogući ovu značajku, ako je zaslon zaključan kamera automatski fotografira kad se otkriju pokreti. Ti se podaci obrađuju lokalno na vašem uređaju. Lenovo im ne pristupa niti ih upotrebljava.",
                     "checkBoxText": "Omogućite ovu značajku"
                 },
                 "cameraPrivacy": {
@@ -2133,7 +2133,7 @@
                     "linkText": "Idite na postavke sustava Windows za omogućivanje pristupa"
                 },
                 "photo": {
-                    "title": "BROJ SNIMLJENIH FOTOGRAFIJA TIJEKOM POMICANJA",
+                    "title": "BROJ SNIMLJENIH FOTOGRAFIJA",
                     "tooltip": "Kamera na vašem računalu automatski se aktivira za fotografiranje kada se otkrije pokrete. Fotografije se snimaju svake 2 sekunde i sprema ih se u vašu lokalnu pohranu.",
                     "option1": 5,
                     "option2": 10,

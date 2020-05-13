@@ -2107,7 +2107,7 @@
                 "heading": "Intelligente sensoren",
                 "title": "Slim bewegingsalarm",
                 "tooltip": "<div>Deze functie werkt niet als de computer in de sluimerstand staat of is uitgeschakeld. Schakel de instellingen voor de volgende acties in:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>acties voor sluiten van het deksel</li><li>actie voor bijna lege batterij</li><li>actie voor de aan/uit-knop</li><li>actie voor de slaapstandknop</li><li>instellingen voor time-out bij inactiviteit naar sluimerstand</li></ul></div>Als je deze niet instelt, worden geen waarschuwingen geactiveerd of foto's genomen.</div>",
-                "desc": "<p><label>Als u deze functie inschakelt, begint het apparaat te piepen wanneer uw scherm vergrendeld is en er bewegingen worden gedetecteerd, vooral in openbare omgevingen.</label></p> <p><label>Om het alarm uit te schakelen geeft u het juiste wachtwoord op of meldt u zich aan bij Windows Hello.</label></p>",
+                "desc": "<p><label>Als u deze functie inschakelt, begint het apparaat te piepen wanneer uw scherm vergrendeld is en er bewegingen worden gedetecteerd, vooral in openbare omgevingen.</label></p> <p><label>Meld u aan bij Windows om het alarm te sluiten.</label></p>",
                 "note": {
                     "description": "Als u eenmaal bij het systeem bent aangemeld, wordt deze functie automatisch uitgeschakeld. Om deze functie weer te gebruiken, moet u de functie opnieuw inschakelen."
                 },
@@ -2121,7 +2121,7 @@
                 },
                 "allowCamera": {
                     "title": "FOTO'S NEMEN",
-                    "describe": "Als u deze functie inschakelt, neemt de camera automatisch foto's als er bewegingen worden gedetecteerd terwijl uw scherm vergrendeld is. Deze gegevens worden lokaal op uw apparaat verwerkt. Lenovo heeft geen toegang tot uw afbeelding en gebruikt deze ook niet.",
+                    "describe": "Als u deze functie inschakelt, neemt de camera automatisch foto's als beweging worden gedetecteerd terwijl uw scherm vergrendeld is. Deze gegevens worden lokaal op uw apparaat verwerkt. Lenovo heeft geen toegang tot uw afbeelding en gebruikt deze ook niet.",
                     "checkBoxText": "Schakel deze functie in"
                 },
                 "cameraPrivacy": {
@@ -2133,7 +2133,7 @@
                     "linkText": "Ga naar de Windows-instellingen om toegang te geven"
                 },
                 "photo": {
-                    "title": "HET AANTAL FOTO'S DAT TIJDENS DE BEWEGING WORDT GENOMEN",
+                    "title": "HET AANTAL FOTO'S DAT IS GEMAAKT",
                     "tooltip": "De camera op de computer wordt automatisch geactiveerd om foto's te maken wanneer er bewegingen worden gedetecteerd. Er worden elke twee seconden foto's genomen en ze worden opgeslagen in uw lokale opslag.",
                     "option1": 5,
                     "option2": 10,

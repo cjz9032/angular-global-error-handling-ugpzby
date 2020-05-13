@@ -2107,7 +2107,7 @@
                 "heading": "Detección inteligente",
                 "title": "Alerta de movimiento inteligente",
                 "tooltip": "<div>Esta característica no funciona cuando el sistema está en modalidad de hibernación o está apagado. Compruebe los valores en las siguientes acciones:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>acciones de la cubierta de cierre</li><li>acción de batería crítica/baja</li><li>acción del botón de encendido</li><li>acción del botón de suspensión</li><li>valores de tiempo de espera de inactividad hasta hibernación</li></ul></div>De lo contrario, no activará la alarma ni tomará las fotos.</div>",
-                "desc": "<p><label>Al habilitar esta característica, el dispositivo empezará a emitir un pitido cuando la pantalla esté bloqueada y se detecten movimientos, especialmente en un espacio público.</label></p> <p><label>Para descartar la alarma, especifique la contraseña correcta o inicie sesión en Windows Hello.</label></p>",
+                "desc": "<p><label>Al habilitar esta característica, el dispositivo empezará a emitir un pitido cuando la pantalla esté bloqueada y se detecten movimientos, especialmente en un espacio público.</label></p> <p><label>Para descartar la alarma, inicie sesión en Windows.</label></p>",
                 "note": {
                     "description": "Una vez inicie sesión satisfactoriamente en el sistema, esta característica se desactivará automáticamente. Debe habilitarla de nuevo para utilizarla."
                 },
@@ -2133,7 +2133,7 @@
                     "linkText": "Vaya a la configuración de Windows para dar acceso"
                 },
                 "photo": {
-                    "title": "EL NÚMERO DE FOTOS TOMADAS DURANTE EL MOVIMIENTO",
+                    "title": "EL NÚMERO DE FOTOS TOMADAS",
                     "tooltip": "La cámara del sistema se activa automáticamente para tomar fotografías cuando se detectan movimientos. Se toman fotografías cada 2 segundos y se guardan en el almacenamiento local.",
                     "option1": 5,
                     "option2": 10,

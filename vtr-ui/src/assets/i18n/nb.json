@@ -2107,7 +2107,7 @@
                 "heading": "Intelligent føler",
                 "title": "Smartbevegelsesalarm",
                 "tooltip": "<div>Denne funksjonen fungerer ikke når datamaskinen er i dvalemodus eller er slått av. Kontroller innstillingene i disse handlingene:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>handlinger til lokket</li><li>handling ved kritisk lavt / svakt batteri</li><li>handling for strømbryter</li><li>handling for hvilemodus</li><li>tidsavbruddinnstillinger for dvalemodus</li></ul></div>Ellers vil det ikke utløses noen alarm eller blir tatt noen bilder.</div>",
-                "desc": "<p><label>Når du aktiverer denne funksjonen, avgir enheten et lydsignal når skjermen er låst og det oppdages bevegelse, spesielt på offentlige steder.</label></p> <p><label>Hvis du vil avbryte alarmen, skriver du inn riktig passord eller logger på med Windows Hello.</label></p>",
+                "desc": "<p><label>Når du aktiverer denne funksjonen, avgir enheten et lydsignal når skjermen er låst og det oppdages bevegelse, spesielt på offentlige steder.</label></p> <p><label>Logg på Windows for å slå av alarmen.</label></p>",
                 "note": {
                     "description": "Når du har logget på systemet, vil denne funksjonen bli slått av automatisk. Du må aktivere den på nytt for å bruke den."
                 },
@@ -2121,7 +2121,7 @@
                 },
                 "allowCamera": {
                     "title": "TA BILDER",
-                    "describe": "Når du aktiverer denne funksjonen, tar kameraet automatisk bildene når det blir oppdaget bevegelse hvis skjermen er låst. Disse dataene behandles lokalt på enheten. Lenovo har verken tilgang til eller bruker dem.",
+                    "describe": "Når du aktiverer denne funksjonen, tar kameraet automatisk bilder når det blir oppdaget bevegelse hvis skjermen er låst. Disse dataene behandles lokalt på enheten. Lenovo har verken tilgang til eller bruker dem.",
                     "checkBoxText": "Aktiver denne funksjonen"
                 },
                 "cameraPrivacy": {
@@ -2133,7 +2133,7 @@
                     "linkText": "Gå til Windows-innstillingene for å gi tilgang"
                 },
                 "photo": {
-                    "title": "ANTALL BILDER SOM TAS VED BEVEGELSE",
+                    "title": "ANTALL BILDER SOM ER TATT",
                     "tooltip": "Kameraet på datamaskinen aktiveres automatisk for å ta bilder når det oppdages bevegelse. Det tas bilder hvert andre sekund, og de lagres på den lokale lagringsplassen.",
                     "option1": 5,
                     "option2": 10,

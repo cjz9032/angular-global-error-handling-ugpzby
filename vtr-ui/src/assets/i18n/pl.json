@@ -2107,7 +2107,7 @@
                 "heading": "Inteligentna detekcja",
                 "title": "Inteligentny alert wykrycia ruchu",
                 "tooltip": "<div>Ta funkcja nie działa, gdy komputer znajduje się w trybie hibernacji lub jest wyłączony. Sprawdź ustawienia dotyczące czynności wykonywanych w następujących sytuacjach:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>czynności wykonywane po zamknięciu pokrywy</li><li>czynność wykonywana w przypadku niskiego/krytycznie niskiego poziomu naładowania akumulatora</li><li>czynność wykonywana po naciśnięciu przycisku zasilania</li><li>czynność wykonywana po naciśnięciu przycisku uśpienia</li><li>ustawienia limitu czasu bezczynności do przełączenia w stan hibernacji</li></ul></div>W przeciwnym razie nie zostanie uruchomiony alarm ani nie zostaną wykonane zdjęcia.</div>",
-                "desc": "<p><label>Jeśli włączysz tę funkcję, urządzenie zacznie emitować sygnał dźwiękowy, gdy po zablokowaniu ekranu zostanie wykryty ruch — zwłaszcza, jeśli urządzenie znajduje się w miejscu publicznym.</label></p> <p><label>Aby wyłączyć alarm, wprowadź poprawne hasło lub zaloguj się, korzystając z funkcji Windows Hello.</label></p>",
+                "desc": "<p><label>Jeśli włączysz tę funkcję, urządzenie zacznie emitować sygnał dźwiękowy, gdy po zablokowaniu ekranu zostanie wykryty ruch — zwłaszcza, jeśli urządzenie znajduje się w miejscu publicznym.</label></p> <p><label>Aby wyłączyć alarm, zaloguj się do systemu Windows.</label></p>",
                 "note": {
                     "description": "Po pomyślnym zalogowaniu się do systemu nastąpi automatyczne wyłączenie funkcji. Aby ponownie użyć tej funkcji, należy jeszcze raz ją włączyć."
                 },
@@ -2133,7 +2133,7 @@
                     "linkText": "Przejdź do ustawień systemu Windows, aby udzielić dostępu"
                 },
                 "photo": {
-                    "title": "LICZBA ZDJĘĆ WYKONANYCH W TRAKCIE RUCHU",
+                    "title": "LICZBA WYKONANYCH ZDJĘĆ",
                     "tooltip": "Kamera w komputerze włącza się automatycznie, aby robić zdjęcia po wykryciu ruchu. Zdjęcia są wykonywane co 2 sekundy i zapisywane w lokalnej pamięci.",
                     "option1": 5,
                     "option2": 10,

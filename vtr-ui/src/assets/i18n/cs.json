@@ -2107,7 +2107,7 @@
                 "heading": "Inteligentní detekce",
                 "title": "Inteligentní varování při pohybu",
                 "tooltip": "<div>Tato funkce nefunguje, když je počítač v režimu hibernace nebo vypnutý. Zkontrolujte nastavení v následujících akcích:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>Akce uzavírání víka</li><li>Akce při nízké/kriticky nízké kapacitě baterie</li><li>Akce hlavního vypínače napájení</li><li>Akce tlačítka režimu spánku</li><li>Nastavení doby nečinnosti do přechodu k hibernaci</li></ul></div>Jinak se nespustí varování, ani se nepořídí snímky.</div>",
-                "desc": "<p><label>Při povolení této funkce začne zařízení vydávat zvukový signál, když je obrazovka uzamčena a je zjištěn pohyb, zejména na veřejném místě.</label></p> <p><label>Chcete-li varování zrušit, zadejte správné heslo nebo se přihlaste funkcí Windows Hello.</label></p>",
+                "desc": "<p><label>Při povolení této funkce začne zařízení vydávat zvukový signál, když je obrazovka uzamčena a je zjištěn pohyb, zejména na veřejném místě.</label></p> <p><label>Chcete-li varování zrušit, přihlaste se do systému Windows.</label></p>",
                 "note": {
                     "description": "Po úspěšném přihlášení do systému se tato funkce automaticky vypne. Abyste ji mohli používat, musíte ji znovu povolit."
                 },
@@ -2121,7 +2121,7 @@
                 },
                 "allowCamera": {
                     "title": "POŘIZOVAT FOTOGRAFIE",
-                    "describe": "Při povolení této funkce pořizuje kamera fotografie automaticky při detekci pohybu, pokud je obrazovka uzamčena. Tato data jsou ve vašem zařízení zpracovávána lokálně. Lenovo k nim nemá přístup ani je nepoužívá.",
+                    "describe": "Pokud je obrazovka uzamčena, pořizuje kamera při povolení této funkce fotografie automaticky při detekci pohybu. Tato data jsou ve vašem zařízení zpracovávána lokálně. Lenovo k nim nemá přístup ani je nepoužívá.",
                     "checkBoxText": "Povolit tuto funkci"
                 },
                 "cameraPrivacy": {
@@ -2133,7 +2133,7 @@
                     "linkText": "Chcete-li poskytnout přístup, přejděte do nastavení systému Windows"
                 },
                 "photo": {
-                    "title": "POČET FOTOGRAFIÍ POŘÍZENÝCH PŘI POHYBU",
+                    "title": "POČET POŘÍZENÝCH FOTOGRAFIÍ",
                     "tooltip": "Kamera v počítači se při rozpoznání pohybů automaticky aktivuje a začne pořizovat fotografie. Fotografie se pořizují každé 2 sekundy a ukládají se do místního úložiště.",
                     "option1": 5,
                     "option2": 10,

@@ -2107,7 +2107,7 @@
                 "heading": "Intelligens észlelés",
                 "title": "Intelligens mozgásérzékeléses riasztás",
                 "tooltip": "<div>Ez a funkció nem működik, ha a számítógép hibernált módban van, és amikor ki van kapcsolva. Ellenőrizze a következő műveletekhez tartozó beállításokat:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>a képernyő lehajtása</li><li>kritikus/alacsony akkumulátortöltöttség</li><li>főkapcsoló használata</li><li>alvás gomb használata</li><li>tétlenségi miatti időtúllépés beállításai (hibernálás)</li></ul></div>Ellenkező esetben a gép nem fog riasztást aktiválni, sem fényképeket készíteni.</div>",
-                "desc": "<p><label>Ha bekapcsolja ezt a funkciót, az eszköz sípoló riasztást ad ki, amikor a képernyő zárolva van, és mozgást észlel a közelében. Ez különösen nyilvános helyeken lehet hasznos.</label></p> <p><label>A riasztás némításához írja be a jelszót, vagy jelentkezzen be a Windows Hello segítségével.</label></p>",
+                "desc": "<p><label>Ha bekapcsolja ezt a funkciót, az eszköz sípoló riasztást ad ki, amikor a képernyő zárolva van, és mozgást észlel a közelében. Ez különösen nyilvános helyeken lehet hasznos.</label></p> <p><label>A riasztás némításához jelentkezzen be a Windows rendszerbe.</label></p>",
                 "note": {
                     "description": "Ha sikerült bejelentkeznie a rendszerbe, a funkció automatikusan kikapcsol. Ha szeretné ismét használni, Önnek újra be kell kapcsolnia."
                 },
@@ -2133,7 +2133,7 @@
                     "linkText": "A Windows beállításaiban adhatja meg a hozzáférést"
                 },
                 "photo": {
-                    "title": "MOZGÁS ÉRZÉKELÉSE ESETÉN KÉSZÍTETT FÉNYKÉPEK SZÁMA",
+                    "title": "A KÉSZÍTETT FÉNYKÉPEK SZÁMA",
                     "tooltip": "Amikor a rendszer mozgást észlel, a számítógép fényképezője automatikusan aktiválódik és fényképeket készít. A rendszer 2 másodpercenként készít képet, amelyeket a helyi tárhelyre ment.",
                     "option1": 5,
                     "option2": 10,

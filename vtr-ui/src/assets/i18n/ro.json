@@ -2107,7 +2107,7 @@
                 "heading": "Detectare inteligentă",
                 "title": "Alertă Smart Motion",
                 "tooltip": "<div>Această caracteristică nu funcționează atunci când computerul este în modul de hibernare sau este oprit. Verificați setările pentru următoarele acțiuni:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>acțiuni de închidere a capacului</li><li>acțiuni pentru nivelul critic/scăzut al energiei bateriei</li><li>acțiuni ale butonului de alimentare</li><li>acțiuni ale butonului de repaus</li><li>setările de expirare a timpului de inactivitate până la trecerea în hibernare</li></ul></div>În caz contrar, caracteristica nu va declanșa alarma și nici nu va realiza fotografii.</div>",
-                "desc": "<p><label>Când activați această caracteristică, dispozitivul va începe să sune atunci când ecranul este blocat și se detectează mișcări, în special într-un loc public.</label></p> <p><label>Pentru a respinge alarma, introduceți parola corectă sau conectați-vă prin Windows Hello.</label></p>",
+                "desc": "<p><label>Când activați această caracteristică, dispozitivul va începe să sune atunci când ecranul este blocat și se detectează mișcări, în special într-un loc public.</label></p> <p><label>Pentru a dezactiva alarma, conectați-vă la Windows.</label></p>",
                 "note": {
                     "description": "După ce v-ați conectat cu succes la sistem, această caracteristică va fi oprită automat. Trebuie să o activați din nou pentru a o utiliza."
                 },
@@ -2121,7 +2121,7 @@
                 },
                 "allowCamera": {
                     "title": "REALIZARE FOTOGRAFII",
-                    "describe": "Când activați această caracteristică, camera foto fotografiază automat când detectează orice mișcare, dacă ecranul este blocat. Aceste date sunt procesate local pe dispozitivul dvs. Lenovo nu accesează datele și nu le folosește.",
+                    "describe": "Când activați această caracteristică, camera fotografiază automat când detectează mișcare, dacă ecranul este blocat. Aceste date sunt procesate local pe dispozitivul dumneavoastră. Lenovo nu accesează datele și nu le folosește.",
                     "checkBoxText": "Activați această caracteristică"
                 },
                 "cameraPrivacy": {
@@ -2133,7 +2133,7 @@
                     "linkText": "Accesați setările Windows pentru a acorda acces."
                 },
                 "photo": {
-                    "title": "NUMĂRUL DE FOTOGRAFII REALIZATE ÎN TIMPUL MIȘCĂRII",
+                    "title": "NUMĂRUL DE FOTOGRAFII REALIZATE",
                     "tooltip": "Camera foto de pe computer se activează automat pentru a face fotografii atunci când se detectează mișcări. Fotografiile sunt făcute la fiecare 2 secunde și sunt salvate pe spațiul de stocare local.",
                     "option1": 5,
                     "option2": 10,

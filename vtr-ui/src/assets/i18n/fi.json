@@ -2107,7 +2107,7 @@
                 "heading": "Älykäs tunnistustoiminto",
                 "title": "Älykäs liikkeentunnistus",
                 "tooltip": "<div>Tämä ominaisuus ei toimi tietokoneen ollessa horrostilassa tai sammutettuna. Tarkista seuraavien toimintojen asetukset:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>kannen sulkemisen toiminnot</li><li>toiminto akun varauksen ollessa loppumassa</li><li>virtapainikkeen toiminto</li><li>lepotilapainikkeen toiminto</li><li>horrostilaan siirtymisen aikakatkaisun asetukset</li></ul></div>Muussa tapauksessa se ei aiheuta hälytystä tai ota valokuvia.</div>",
-                "desc": "<p><label>Kun tämä ominaisuus on käytössä, laite aloittaa äänimerkin toistamisen, jos näyttösi ollessa lukittuna havaitaan liikettä, varsinkin julkisissa tiloissa.</label></p> <p><label>Lopeta hälytys syöttämällä oikea salasana tai kirjautumalla sisään Windows Hellon avulla.</label></p>",
+                "desc": "<p><label>Kun tämä ominaisuus on käytössä, laite aloittaa äänimerkin toistamisen, jos näyttösi ollessa lukittuna havaitaan liikettä, varsinkin julkisissa tiloissa.</label></p> <p><label>Kirjaudu sisään Windowsiin hylätäksesi hälytyksen.</label></p>",
                 "note": {
                     "description": "Kun kirjaudut järjestelmään onnistuneesti, tämä ominaisuus poistetaan automaattisesti käytöstä. Sinun täytyy ottaa se uudelleen käyttöön käyttääksesi sitä."
                 },
@@ -2121,7 +2121,7 @@
                 },
                 "allowCamera": {
                     "title": "VALOKUVIEN OTTAMINEN",
-                    "describe": "Kun tämä ominaisuus on käytössä, kamera ottaa automaattisesti valokuvia, jos havaitaan liikettä näytön ollessa lukittuna. Nämä tiedot käsitellään laitteessa paikallisesti. Lenovolla ei ole pääsyä tietoihin eikä se voi käyttää niitä.",
+                    "describe": "Kun tämä ominaisuus on käytössä, kamera ottaa automaattisesti valokuvia, kun liikettä havaitaan näyttösi ollessa lukittuna. Nämä tiedot käsitellään laitteessa paikallisesti. Lenovolla ei ole pääsyä tietoihin eikä se voi käyttää niitä.",
                     "checkBoxText": "Ota tämä ominaisuus käyttöön"
                 },
                 "cameraPrivacy": {
@@ -2133,7 +2133,7 @@
                     "linkText": "Siirry Windows-asetuksiin ja anna käyttöoikeus"
                 },
                 "photo": {
-                    "title": "LIIKKEEN AIKANA OTETTUJEN VALOKUVIEN MÄÄRÄ",
+                    "title": "OTETTUJEN VALOKUVIEN MÄÄRÄ",
                     "tooltip": "Tietokoneesi kamera aktivoitu automaattisesti ja ottaa valokuvia, kun liikettä havaitaan. Kuvia otetaan 2 sekunnin välein ja ne tallennetaan paikalliseen tallennustilaan.",
                     "option1": 5,
                     "option2": 10,
