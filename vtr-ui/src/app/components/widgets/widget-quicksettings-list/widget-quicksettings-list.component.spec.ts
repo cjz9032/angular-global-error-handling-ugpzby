@@ -770,6 +770,16 @@ describe("WidgetQuicksettingsListComponent", () => {
 			expect(component.quickSettings[3].isChecked).toBe(true, `dolbyAudio is ${dolbyAudioToggle}, dolby.checked should be true`);
 			expect(dolbyAudioToggleCache.available).toBe(true, `dolbyAudio is ${dolbyAudioToggle}, dolbyAudioToggleCache.available should be true`);
 			expect(dolbyAudioToggleCache.isAudioProfileEnabled).toBe(true, `dolbyAudio is ${dolbyAudioToggle}, dolbyAudioToggleCache.isAudioProfileEnabled should be true`);
+
+			dolbyAudioToggle = undefined;
+			component.getDolbySettings();
+			tick();
+			expect(component.quickSettings[3].isVisible).toBe(true, `dolbyAudio is ${dolbyAudioToggle}, dolby.visible should keep true`);
+			expect(component.quickSettings[3].isChecked).toBe(true, `dolbyAudio is ${dolbyAudioToggle}, dolby.checked should keep true`);
+			expect(dolbyAudioToggleCache.available).toBe(true, `dolbyAudio is ${dolbyAudioToggle}, dolbyAudioToggleCache.available should keep true`);
+			expect(dolbyAudioToggleCache.isAudioProfileEnabled).toBe(true, `dolbyAudio is ${dolbyAudioToggle}, dolbyAudioToggleCache.isAudioProfileEnabled should keep true`);
+			tick();
+			dolbyAudioToggle = { "available": false, "supportedModes": ["Dynamic", "Movie", "Music", "Games", "Voip"], "isAudioProfileEnabled": false, "currentMode": "Games", "voIPStatus": "True", "entertainmentStatus": "True" }
 		}));
 
 		it('setDolbySettings', fakeAsync(() => {

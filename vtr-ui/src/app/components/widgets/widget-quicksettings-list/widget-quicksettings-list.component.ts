@@ -413,7 +413,6 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 	}
 
 	public onToggleStateChanged(event: any) {
-		this.wsIsLocationServiceOnEventHandler(true);
 		const { name } = event.target;
 		let status = event.target.value;
 		status = status === 'false' ? false : true;
@@ -429,16 +428,15 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 		try {
 			// version 3.3  update due to dolby API modification
 			this.audioService.getDolbyMode().then((res: DolbyModeResponse) => {
-				this.logger.info(`Widget-quicksettingslist-getDolbySettings: return value: ${res}, dolbyMode from ${this.quickSettings[3].isChecked} to: ${res.isAudioProfileEnabled}`);
-				// TODO conditions need to be modeified by Guo Jing 200508
-				if(res.available) {
-					this.quickSettings[3].isVisible = true;
-					if(this.quickSettings[3].isChecked !== res.isAudioProfileEnabled) {
+				if(res !== undefined ){
+					this.logger.info(`Widget-quicksettingslist-getDolbySettings: return value: ${res}, dolby.checked from ${this.quickSettings[3].isChecked} to: ${res.isAudioProfileEnabled}`);
+					if(this.quickSettings[3].isVisible !== res.available || this.quickSettings[3].isChecked !== res.isAudioProfileEnabled) {
+						this.quickSettings[3].isVisible = res.available;
 						this.quickSettings[3].isChecked = res.isAudioProfileEnabled;
-						this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, res)
+						this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, res);						
 					}
-				}else {
-					this.quickSettings[3].isVisible = false;
+				} else {
+					this.logger.error(`Widget-quicksettingslist-getDolbySettings: return value: ${res}; dolby.visible keep ${this.quickSettings[3].isVisible}, dolby.checked keep ${this.quickSettings[3].isChecked}`);
 				}
 			});
 		} catch (error) {
