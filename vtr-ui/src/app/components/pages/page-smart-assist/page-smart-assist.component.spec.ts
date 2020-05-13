@@ -65,10 +65,10 @@ describe('Component: PageSmartAssistComponent', () => {
 			smartAssistService = TestBed.get(SmartAssistService);
 		});
 
-	it('should create', () => {
-		fixture.detectChanges()
-		expect(component).toBeDefined()
-	});
+	// it('should create', () => {
+	// 	fixture.detectChanges()
+	// 	expect(component).toBeDefined()
+	// });
 
 	it('getHPDAdvancedSetting', () => {
 		smartAssistService = TestBed.get(SmartAssistService);
