@@ -30,14 +30,44 @@
 														</div>
 														<hr class="light-dashline" />
 													</div>
-													<div class="performance-slider-block scan-results">
-														<h3 class="recomendation-text">
+
+													<div *ngIf="!inputIsScanningCompleted" class="performance-slider-block before-result">
+														<div class="slider">
+															<div class="condition">
+																<div class="critical">{{'smartPerformance.critical' |translate }}</div>
+																<div class="well">{{'smartPerformance.allisWell' |translate }}</div>
+															</div>
+															<div class="verticle-lines">
+																<div class="line"></div>
+																<div class="line"></div>
+																<div class="line"></div>
+																<div class="line"></div>
+																<div class="line"></div>
+																<div class="line"></div>
+																<div class="line"></div>
+																<div class="line"></div>
+																<div class="line"></div>
+																<div class="line"></div>
+																<div class="line"></div>
+															</div>
+														</div>
+														<div class="pc-status-info d-flex">
+															<p class="info-text needs-tune-up"><span>{{'smartPerformance.tuneUP' |translate }}</span></p>
+															<p class="info-text running-well"><span>{{'smartPerformance.runningWell' |translate }}</span></p>
+														</div>
+													</div>
+
+													<div *ngIf="inputIsScanningCompleted" class="performance-slider-block scan-results">
+														<h3 class="recomendation-text"  *ngIf="!isSubscribed">
+															{{'smartPerformance.scanCompletePage.scanRates' |translate }}<span>{{rating}}</span>
+														</h3>
+														<h3 class="recomendation-text"  *ngIf="(isSubscribed)">
 															{{'smartPerformance.scanCompletePage.scanRates' |translate }}<span>{{rating}}</span>
 														</h3>
 														<div class="slider">
 															<div class="verticle-lines">
 																<div class="scan-pointer" [ngStyle]="{'left': leftAnimator}" *ngIf="!isSubscribed">&#9660;</div>
-																<div class="scan-pointer" [ngStyle]="{'left': leftAnimator}" *ngIf="hasSubscribedScanCompleted">&#9660;</div>
+																<div class="scan-pointer" [ngStyle]="{'left': leftAnimator}" *ngIf="inputIsScanningCompleted">&#9660;</div>
 																<div class="line"></div>
 																<div class="line"></div>
 																<div class="line"></div>
