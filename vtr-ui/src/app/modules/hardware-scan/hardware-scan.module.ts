@@ -38,7 +38,7 @@ import { faCaretDown } from '@fortawesome/free-solid-svg-icons/faCaretDown';
 import { faRedo } from '@fortawesome/pro-light-svg-icons/faRedo';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons/faExclamationTriangle';
 import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons/faExclamationCircle';
-import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons/faQuestionCircle';
+import { faQuestionCircle } from '@fortawesome/free-regular-svg-icons/faQuestionCircle';
 import { faAngleUp } from '@fortawesome/pro-light-svg-icons/faAngleUp';
 import { faBan } from '@fortawesome/free-solid-svg-icons/faBan';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons/faCheckCircle';
