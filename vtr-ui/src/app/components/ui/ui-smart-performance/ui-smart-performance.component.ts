@@ -22,6 +22,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 	backarrow = '< ';
 	isScanning = false;
 	isScanningCompleted = false;
+	showSubscribersummary = false;
 	public hasSubscribedScanCompleted = false;
 	subItems = [];
 	currentSubItemCategory: any = {};
@@ -223,6 +224,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 				);
 				res = await this.smartPerformanceService.getScheduleScanStatus();
 				if (res && res.scanstatus != 'Idle') {
+					this.showSubscribersummary=true;
 					this.isScanningCompleted = true;
 					this.isScanning = false;
 					this.rating = res.rating;
@@ -266,10 +268,12 @@ export class UiSmartPerformanceComponent implements OnInit {
 					let spForceClose = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartPerformanceForceClose);
 					if(spForceClose) {
 						this.isScanningCompleted = false;
+						this.showSubscribersummary = false;
 						this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceForceClose, false);
 					}
 					else {
 						this.isScanningCompleted = true;
+						this.showSubscribersummary=true;
 					}
 					this.isScanning = false;
 					this.rating = res.rating;
@@ -314,6 +318,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 	cancelScan() {
 		this.isScanning = false;
 		this.isScanningCompleted = false;
+		this.showSubscribersummary=false;
 	}
 	
 	async unregisterScheduleScan(scantype) {
