@@ -1155,6 +1155,13 @@ vtr-ui-smart-performance-scan-summary {
 			right: 9%;
 			box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
 			border-radius: 0.5rem;
+			.row{
+				height: 15rem;
+				overflow-y: auto;
+			}
+			.select-close{
+				height: auto;
+			}
 			.hour-block{
 				border-right: 1px solid $shade_light;
 				border-bottom: 1px solid $shade_light;
