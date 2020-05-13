@@ -19,6 +19,7 @@ export class UiCircleRadioWithCheckboxComponent extends UICustomRadio implements
 	@Input() customIcon = '';
 	@Input() hideIcon = false;
 	@Input() processLabel = true;
+	@Input() sendMetrics = true;
 	@Output() optionChange: EventEmitter<any> = new EventEmitter();
 
 
@@ -34,6 +35,15 @@ export class UiCircleRadioWithCheckboxComponent extends UICustomRadio implements
 
 	onChange(event) {
 		this.optionChange.emit(event);
+		if (this.sendMetrics) {
+			const metricsData = {
+				ItemParent: this.metricsParent,
+				ItemType: 'FeatureClick',
+				ItemName: this.radioLabel + this.label,
+				ItemValue: !this.checked
+			};
+			this.metrics.sendMetrics(metricsData);
+		}
 	}
 
 	getIconName(name: string) {

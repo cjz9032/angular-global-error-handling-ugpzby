@@ -61,6 +61,7 @@
 					[checked]="mode.checked"
 					(optionChange)="update$.next(mode)"
 					[disabled]="mode.disabled"
+					[sendMetrics]=false
 					[textId]="'myDevice-settings-inputAccessories-backlight'">
 				</vtr-ui-circle-radio-with-checkbox>
 			</div>
