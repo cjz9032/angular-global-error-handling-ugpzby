@@ -17,6 +17,7 @@ import { RouteHandlerService } from 'src/app/services/route-handler/route-handle
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { PageAnchorLink } from 'src/app/data-models/common/page-achor-link.model';
 import { TranslateService } from '@ngx-translate/core';
+import { UiCircleRadioWithCheckBoxListModel } from 'src/app/components/ui/ui-circle-radio-with-checkbox-list/ui-circle-radio-with-checkbox-list.model';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-audio',
@@ -51,7 +52,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	public isNewplugin = true;
 	public dolbyToggleButtonStatus = undefined;
 	public eCourseToggleButtonStatus = undefined;
-
+	public radioDetails: Array<UiCircleRadioWithCheckBoxListModel> = [];
 	@Output() tooltipClick = new EventEmitter<boolean>();
 
 	@Input() dolbyModeDisabled = false;
@@ -93,7 +94,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 				.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.audioCapture);
 		}
 		const entertainmentTooltipText = this.translate.instant('device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.entertainmentMode.tooltip');
-		this.entertainmentTooltip = JSON.parse(JSON.stringify(entertainmentTooltipText).replace(/<\/?.+?\/?>/g, ""));
+		this.entertainmentTooltip = JSON.parse(JSON.stringify(entertainmentTooltipText).replace(/<\/?.+?\/?>/g, ''));
 	}
 
 	ngOnInit() {
@@ -284,6 +285,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 							response.entertainmentStatus = this.dolbyModeResponse.entertainmentStatus;
 						}
 						this.dolbyModeResponse = response;
+						this.updateRadioDetails(response);
 						this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyModeResponse);
 						if (this.dolbyModeResponse.eCourseStatus === undefined) {
 							this.isNewplugin = false;
@@ -308,6 +310,25 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			}
 		} catch (error) {
 			this.logger.error('getDolbyModesStatus' + error.message);
+		}
+	}
+
+	updateRadioDetails(response: DolbyModeResponse) {
+		if (response && response.supportedModes) {
+			this.radioDetails = [];
+			response.supportedModes.forEach(dolbyMode => {
+				this.radioDetails.push({
+					componentId: `radioDolbyMode${dolbyMode}`.replace(/\s/g, ''),
+					label: `device.deviceSettings.audio.audioSmartsettings.dolby.options.${dolbyMode.toLowerCase()}`,
+					value: dolbyMode,
+					isChecked: dolbyMode === response.currentMode,
+					isDisabled: false,
+					processIcon: true,
+					customIcon: '',
+					hideIcon: false,
+					processLabel: true
+				});
+			});
 		}
 	}
 
@@ -447,8 +468,8 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 				if (this.audioService.isShellAvailable) {
 					this.cacheFlag.autoOptimization = false;
 					this.audioService.setMicrophoneAutoOptimization(value)
-						.then((value) => {
-							this.logger.info('onVoipCheckboxChange old plugin', value);
+						.then((value1) => {
+							this.logger.info('onVoipCheckboxChange old plugin', value1);
 						}).catch(error => {
 							this.logger.error('onVoipCheckboxChange old plugin', error.message);
 						});
@@ -475,8 +496,8 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			else {
 				if (this.audioService.isShellAvailable) {
 					this.audioService.setDolbyOnOff(value)
-						.then((value) => {
-							this.logger.info('onEntertainmentCheckboxChange old plugin', value);
+						.then((value1) => {
+							this.logger.info('onEntertainmentCheckboxChange old plugin', value1);
 						}).catch(error => {
 							this.logger.error('onEntertainmentCheckboxChange old plugin', error.message);
 						});
@@ -527,7 +548,8 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 
 	onDolbySettingRadioChange(event: any) {
 		try {
-			this.dolbyModeResponse.currentMode = event.target.value;
+			this.dolbyModeResponse.currentMode = event.value;
+			this.updateRadioDetails(this.dolbyModeResponse);
 			if (this.audioService.isShellAvailable) {
 				this.audioService.setDolbyMode(this.dolbyModeResponse.currentMode)
 					.then((value) => {
