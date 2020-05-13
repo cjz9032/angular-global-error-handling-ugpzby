@@ -85,31 +85,37 @@
 										id="powerSmartSettings-maximum-system-protection-note"
 										attr.aria-label="powerSmartSettings-maximum-system-protection-note"
 										*ngIf="showIC>=14">
-										<div class="selectModeDesc" role="text"
-										id="IntelligentCooling-selectedModeText">
+										<div class="selectModeDesc"
+											role="text"
+											id="IntelligentCooling-selectedModeText">
 											{{ selectedModeText }}
 										</div>
-										<div class="transition" *ngIf="showIC>=15 && radioQuietCool">
-											<vtr-ui-checkbox
-												[componentId]="'IntelligentCooling-5.0-AutoTransition'"
+										<div class="transition"
+											*ngIf="showIC>=15 && radioQuietCool">
+											<vtr-ui-checkbox [componentId]="'IntelligentCooling-5.0-AutoTransition'"
 												[value]="isAutoTransitionEnabled"
 												[checked]="isAutoTransitionEnabled"
-												[label] = "'device.deviceSettings.power.powerSmartSettings.intelligentCooling.autoTransition.description' | translate"
+												[label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.autoTransition.description' | translate"
 												(toggle)="onAutoTransitionToggle($event)"
 												id="IntelligentCooling-5.0-AutoTransition-checkBox">
 											</vtr-ui-checkbox>
 
 											<div *ngIf="autoTransitionIsReadMore"
 												attr.aria-label="ITSAutoTransitionReadMore"
-												class="mt-3"
-												>
-												<p class="transitionMoreInfo" role="text" id="ITSAutoTransitionReadMore-PartA">
+												class="mt-3">
+												<p class="transitionMoreInfo"
+													role="text"
+													id="ITSAutoTransitionReadMore-PartA">
 													{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.autoTransition.moreContent.desc1' | translate}}
 												</p>
-												<p class="transitionMoreInfo" role="text" id="ITSAutoTransitionReadMore-PartB">
+												<p class="transitionMoreInfo"
+													role="text"
+													id="ITSAutoTransitionReadMore-PartB">
 													{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.autoTransition.moreContent.desc2' | translate}}
 												</p>
-												<p class="transitionMoreInfo" role="text" id="ITSAutoTransitionReadMore-PartC">
+												<p class="transitionMoreInfo"
+													role="text"
+													id="ITSAutoTransitionReadMore-PartC">
 													{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.autoTransition.moreContent.desc3' | translate}}
 												</p>
 											</div>
@@ -161,7 +167,9 @@
 					[theme]="'white'">
 					<div class="row">
 						<div class="col-auto left-icon">
-							<span [ngClass]="'icomoon icomoon-ic'"></span>
+							<span [ngClass]="'icomoon icomoon-ic'"
+								role="img"
+								attr.aria-label="{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.title' | translate}}"></span>
 						</div>
 						<div class="col text-wrap subtitle">
 							<h3 id="powerSmartSettings.intelligentCooling.title"
@@ -238,7 +246,9 @@
 					[theme]="'white'">
 					<div class="row">
 						<div class="col-auto left-icon">
-							<span [ngClass]="'icomoon icomoon-ic'"></span>
+							<span [ngClass]="'icomoon icomoon-ic'"
+								role="img"
+								attr.aria-label="{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.title' | translate}}"></span>
 						</div>
 						<div class="col text-wrap subtitle">
 							<h3 id="powersmartsettings-intelligentCooling-title"
@@ -343,7 +353,9 @@
 					[theme]="'white'">
 					<div class="row">
 						<div class="col-auto left-icon">
-							<span [ngClass]="'icomoon icomoon-ic'"></span>
+							<span [ngClass]="'icomoon icomoon-ic'"
+								role="img"
+								attr.aria-label="{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.title' | translate}}"></span>
 						</div>
 						<div class="col text-wrap subtitle">
 							<h3 id="powersmartsettings-intelligentCooling-title"
