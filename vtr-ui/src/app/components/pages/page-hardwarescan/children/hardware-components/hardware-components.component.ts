@@ -369,8 +369,8 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 						}
 					}
 					devices.push({
-						name: info,
-						subname: group.name,
+						module: info,
+						name: group.name,
 						icon: icon,
 					});
 				}
@@ -757,9 +757,19 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			results.items.push(item);
 		}
 
-		// Update the ViewResultItem and list of the modules with the details
+		//Update the ViewResultItem
 		this.hardwareScanService.setViewResultItems(results);
-		this.modules = results.items;
+
+		//If a cancellation was requested, the application will return the HW Scan home page.
+		//So, in this case, the modules list will be updated with the data to be displayed on
+		//the home screen (this.getItemToDisplay()) the modules name and description
+		//If the scan finished without cancellation, then the scan result will be display.
+		//In this case, the module list is updated with the scan results and modules details (results.items)
+		if (!this.hardwareScanService.isCancelRequested()){
+			this.modules = results.items;
+		} else {
+			this.modules = this.getItemToDisplay();
+		}
 	}
 
 	/* This function is used to standardize the RBS intermediate response with the same used by a Scan. */
