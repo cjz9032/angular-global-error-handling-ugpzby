@@ -1,0 +1,267 @@
+@import '../../../app.theme.scss';
+
+.vtr-modal-smart-performance-feedback {
+	border-radius: $border_radius;
+	background: $light;
+	background-size: cover;
+	color: $shade_blue;
+	box-shadow: $drop_shadow;
+	padding: 2rem 0;
+	position: relative;
+	width: 100%;
+	line-height: 1.4;
+.icon {
+	position: absolute;
+	width: 3rem;
+	height: 3rem;
+	top: 1rem;
+	right: 1rem;
+	fa-icon {
+		font-size: 2.4rem;
+		color: $shade_blue;
+		cursor: pointer;
+	}
+}
+
+.title {
+	font-size: $fontsize_xl;
+	font-weight: $weight_600;
+	margin-bottom: 1rem;
+	color: $shade_blue;
+	padding: 0 2.4rem;
+}
+.feedback-form {
+	padding: 0 2.4rem;
+	max-height: calc(98vh - 20rem);
+	overflow-y: auto;
+}
+
+.qa-item {
+	margin-bottom: 2.5rem;
+
+	.question {
+		font-size: $fontsize_xs;
+		color: $shade_blue;
+		margin-bottom: 0.8rem;
+		font-weight: $weight_bold;
+	}
+
+	.form-check-inline {
+		margin-right: 2.5rem;
+
+		.form-check-input {
+			position: absolute;
+		}
+
+		&:hover {
+			label {
+				color: $menu_hover;
+			}
+		}
+	}
+
+	.form-check-input {
+		width: calc(100% + 0.4rem);
+		height: 2.4rem;
+		margin-left: -0.2rem;
+		margin-right: 0;
+		opacity: 0;
+		z-index: -1;
+	}
+
+	label {
+		font-size: $body;
+		padding-left: 2.8rem;
+		height: 2rem;
+		color: $shade_blue;
+		position: relative;
+		margin-bottom: 0;
+
+		&::before,
+		&::after {
+			border-radius: 50%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: block;
+			width: 2rem;
+			height: 2rem;
+			content: "";
+		}
+
+		&::before {
+			pointer-events: none;
+			background-color: #fff;
+			border: 1px solid $shade_blue;
+		}
+
+		&::after {
+			background: no-repeat 50%/50% 50%;
+		}
+	}
+
+	.form-check-label-out {
+		position: absolute;
+
+		&::before {
+			width: 2.6rem;
+			height: 2.6rem;
+			left: -0.3rem;
+			top: -0.3rem;
+			background: none;
+			border: none;
+		}
+	}
+
+	.form-check-input:focus~.form-check-label-out {
+		&::before {
+			border: 0.1rem solid $menu_hover;
+		}
+	}
+
+	.form-check-input:checked~label::after {
+		color: #fff;
+		background-color: $menu_hover;
+		width: 1.4rem;
+		height: 1.4rem;
+		margin: 0.3rem 0 0 0.3rem;
+
+		// @media #{$high-contrast} {
+		// 	background-color: currentColor;
+		// }
+
+		// @media #{$black-on-white} {
+		// 	background-color: $high-contrast-white-textselected;
+		// }
+
+		// @media #{$white-on-black} {
+		// 	background-color: $high-contrast-black-textselected;
+		// }
+	}
+
+	.likely-content {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		margin: 0 15rem 0 0;
+
+		.likely-text {
+			padding: 0 1rem;
+			font-size: $fontsize_xs;
+		}
+
+		.form-check-inline {
+			margin-right: 0;
+
+			.form-check-input {
+				width: 4rem;
+				height: 5rem;
+				margin-left: 0;
+			}
+		}
+
+		.form-check-input:checked~label::after {
+			margin: 0.3rem 0 0 1.3rem;
+		}
+
+		label {
+			height: 4.8rem;
+			padding-left: 0;
+			text-align: center;
+			width: 4rem;
+			padding: 0 1rem;
+
+			&::before {
+				top: 2.4rem;
+				margin-left: 1rem;
+			}
+
+			&::after {
+				top: 2.4rem;
+				margin-left: 1rem;
+			}
+		}
+
+		.form-check-label-out {
+			&::before {
+				top: 2.1rem;
+			}
+		}
+	}
+}
+	.comment-tip {
+		color: $shade_blue;
+		font-size: $fontsize_xs;
+		font-weight: $weight_bold;
+		margin-bottom: 1.5rem;
+	}
+	.user-comment {
+				border: 1px solid $shade_lighter;
+				border-radius: 5px;
+				background-color: #FFFFFF;
+				box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15);
+				height: 12rem;
+				padding: 2rem 2.4rem;
+				cursor: text;
+				font-size: $body;
+				color: $shade_blue;
+				user-select: all;
+				overflow-y: auto;
+
+				&:focus {
+					border-color: $main;
+				}
+			}
+		.comment-count {
+			font-size: $fontsize_xs2;
+			color: $grey_dark;
+			margin-bottom: 1.5rem;
+		}
+		.line {
+			margin: 0rem 2.4rem 1.5rem;
+		}
+
+	.send-feedback {
+		margin-left: 2.4rem;
+		padding: 0 2.5rem;
+		position: relative;
+		min-height: 3.5rem;
+		border-radius: 3rem;
+		min-width: 12rem;
+		background: transparent $gradient_blue 0% 0% no-repeat padding-box;
+		border: none;
+		color: $light;
+		font-size: $fontsize_xs;
+		font-weight: $weight_bold;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		text-transform: uppercase;
+
+		&:hover {
+			background: $blue_gradient;
+		}
+
+		&:focus {
+			outline: none !important;
+			box-shadow: none;
+
+			&::after {
+				@include button-outline-blue;
+			}
+		}
+
+		// @media #{$black-on-white} {
+		// 	border: 0.1rem solid $dark;
+
+		// }
+
+		// @media #{$white-on-black} {
+		// 	border: 0.1rem solid $light;
+		// }
+
+		// @media #{$mediaquery_X4} {
+		// 	min-width: 10rem;
+		// }
+	}
+}
