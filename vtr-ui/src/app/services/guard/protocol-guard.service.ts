@@ -185,10 +185,8 @@ export class ProtocolGuardService implements CanActivate {
 				window.history.replaceState([], '', `#${this.deviceService.isGaming ? '/device-gaming' : '/dashboard'}`);
 			}
 
-			if (checkResult[1].startsWith('/dashboard')) {
-				if (this.deviceService.isGaming) {
-					checkResult[1].replace(/^\/dashboard/, '/device-gaming');
-				}
+			if (checkResult[1].startsWith('/dashboard') && this.deviceService.isGaming) {
+				checkResult[1].replace(/^\/dashboard/, '/device-gaming');
 			}
 
 			return this.router.parseUrl(checkResult[1]);
