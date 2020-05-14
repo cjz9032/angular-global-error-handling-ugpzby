@@ -12,7 +12,7 @@
 		<p>{{'smartPerformance.scanningPage.cancelScan.description' |translate }}</p>
 		<h5 *ngIf="promptMsg" class="mt-2">{{ 'hardwareScan.cancelTextPrompt' | translate }}</h5>
 		<hr>
-		<div class="vtr-battery-card" *ngIf="isLoading">
+		<div *ngIf="isLoading">
 			<div class="container" [style.height.px]="40">
 				<div class="loader center-block">
 					<div class="spinner-border text-secondary progress-spinner" role="status"></div>
