@@ -80,6 +80,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 				this.showPowerSmartSettings(true);
 			}
 		}
+
+
 	}
 
 
