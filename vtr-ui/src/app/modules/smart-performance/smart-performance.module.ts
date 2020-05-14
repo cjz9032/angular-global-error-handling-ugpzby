@@ -30,7 +30,7 @@ import { ModalSmartPerformanceCancelComponent } from '../../components/modal/mod
 import { ModalSmartPerformanceSubscribeComponent } from '../../components/modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
 import { WidgetSpeedometerComponent } from '../../components/widgets/widget-speedometer/widget-speedometer.component';
 import { UiSmartPerformanceScanSummaryComponent } from '../../components/ui/ui-smart-performance-scan-summary/ui-smart-performance-scan-summary.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonUiModule } from '../common/common-ui.module';
 import { TranslationModule } from '../translation.module';
 import { WidgetSubscriptiondetailsComponent } from 'src/app/components/widgets/widget-subscriptiondetails/widget-subscriptiondetails.component';
@@ -41,6 +41,7 @@ import { SanitizeModule } from '../sanitize.module';
 import { UiScanScheduleComponent } from '../../components/ui/ui-scan-schedule/ui-scan-schedule.component';
 import { UiAccordionComponent } from 'src/app/components/ui/ui-accordion/ui-accordion.component';
 import { ModalSmartPerformanceFeedbackComponent } from '../../components/modal/modal-smart-performance-feedback/modal-smart-performance-feedback.component';
+import { UiButtonModule } from 'src/app/components/ui/ui-button/ui-button.module';
 
 @NgModule({
 	declarations: [
@@ -63,13 +64,15 @@ import { ModalSmartPerformanceFeedbackComponent } from '../../components/modal/m
 		NgbModule,
 		SmartPerformanceRoutingModule,
 		FormsModule,
+		ReactiveFormsModule,
 		NgbDatepickerModule,
 		PageLayoutModule,
 		HeaderMainModule,
 		FontAwesomeModule,
 		CommonUiModule,
 		SanitizeModule,
-		TranslationModule.forChild()
+		TranslationModule.forChild(),
+		UiButtonModule
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 	exports: [

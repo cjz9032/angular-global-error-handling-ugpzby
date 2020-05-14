@@ -23,6 +23,7 @@ import {
 import { TranslateService } from '@ngx-translate/core';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { ModalSmartPerformanceFeedbackComponent } from '../../modal/modal-smart-performance-feedback/modal-smart-performance-feedback.component';
 @Component({
 	selector: 'vtr-ui-smart-performance-scanning',
 	templateUrl: './ui-smart-performance-scanning.component.html',
@@ -385,4 +386,19 @@ export class UiSmartPerformanceScanningComponent implements OnInit, OnChanges {
 		this.currentScanningItems[0]['isCurrent'] = true;
 		
 	}
+
+	/**
+	   * SP Feedback form
+	   */
+	  onclickFeedback() {
+		this.modalService.open(ModalSmartPerformanceFeedbackComponent, {
+			backdrop: 'static',
+			size: 'lg',
+			keyboard: false,
+			centered: true,
+			windowClass: 'smart-performance-feedback-Modal'
+		});
+	}
+
+
 }

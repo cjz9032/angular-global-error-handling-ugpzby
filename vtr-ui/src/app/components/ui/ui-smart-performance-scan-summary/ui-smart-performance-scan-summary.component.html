@@ -539,9 +539,9 @@
 								<div class="container-fluid">
 									<div class="row mb-40" *ngIf="isSubscribed">
 										<div class="col col-12">
-											<!----------Scan Schedule--------------->
+											<!-- --------Scan Schedule------------- -->
 											<vtr-ui-scan-schedule (scanDatekValueChange)='changeNextScanDateValue()'></vtr-ui-scan-schedule>
-											<!----------Scan Schedule--------------->
+											<!-- --------Scan Schedule------------- -->
 										</div>
 									</div>
 									<div class="row mb-40" *ngIf="!isSubscribed">
@@ -581,6 +581,27 @@
 											<vtr-widget-subscriptiondetails></vtr-widget-subscriptiondetails>
 										</div>
 									</div>
+
+									<div class="row mb-40">
+										<div class="col col-12">
+											<div class="feedback-container">
+												<div class="container-fliud">
+													<div class="row">
+														<div class="col">
+															<div class="title">{{'smartPerformance.feedbackContainer.title' | translate}}</div>
+															<div class="description">{{'smartPerformance.feedbackContainer.subtitle' | translate}}</div>
+															<div class="pt-5 text-center">
+																<button class="feedback-btn" alt="" type="button"
+																(click)="onclickFeedback()">{{'smartPerformance.feedbackContainer.buttonText' | translate}}
+																</button>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
 								</div>
 							</div>
 						</div>

@@ -2935,7 +2935,11 @@
 			"questions": {
 				"q1": "Does the product look and feel good?",
 				"q2": "Do the feature seen comprehensive?",
-				"q3": "Was the scan easy to use?"
+				"q3": "Was the scan easy to use?",
+				"q4": "Happy about the fixes we did?",
+				"q5": "Do you see value for money? ",
+				"q6": "Will you refer it to your friends and family?"
+
 			},
 			"rating": {
 				"r1": "Hate it",
@@ -2943,7 +2947,13 @@
 				"r3": "Seems lacking",
 				"r4": "Good enough",
 				"r5": "Crazy",
-				"r6": "Cool"
+				"r6": "Cool",
+				"r7": "Not so sure",
+				"r8": "Absolutely yes",
+				"r9": "No way",
+				"r10": "Looks worthy",
+				"r11": "Not so sure",
+				"r12": "Absolutely yes"
 			},
 			"commentTip": "Shout what you love and whisper what you hate.",
 			"comments": "Please leave your comments here..."
