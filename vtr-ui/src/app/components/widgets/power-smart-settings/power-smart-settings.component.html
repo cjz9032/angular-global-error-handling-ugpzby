@@ -288,6 +288,9 @@
 								{{'device.deviceSettings.power.powerSmartSettings.dytc6.desc3' | translate}}
 							</p>
 							<div *ngIf="isCollapsed"
+								style="outline:none;"
+								role="text"
+								[autofocus]="isCollapsed"
 								id="readMoreDytc6">
 								<p id="readMoreDytc6Mode1"
 									role="heading"
@@ -316,7 +319,11 @@
 
 							</div>
 							<div class="more-info mt-5 row"
-								(click)="showMoreDytc6()">
+								(click)="showMoreDytc6()"
+								[autofocus]="!isCollapsed && showMoreLessDytc6Clicked"
+								[attr.aria-expanded]="isCollapsed"
+								tabindex="0"
+								role="button">
 								<div class="more-info-button mr-2"
 									*ngIf="!isCollapsed"
 									role="link"
@@ -381,7 +388,10 @@
 								</div>
 							</div>
 							<div *ngIf="isCollapsed"
-								id="readMoreDytc6">
+								id="readMoreDytc6"
+								style="outline:none;"
+								role="text"
+								[autofocus]="isCollapsed">
 								<p id="readMoreDytc6Mode1"
 									role="heading"
 									attr.aria-label="readMoreDytc6Mode1">
@@ -417,7 +427,11 @@
 
 							</div>
 							<div class="more-info mt-5 row"
-								(click)="showMoreDytc6()">
+								(click)="showMoreDytc6()"
+								[autofocus]="!isCollapsed && showMoreLessDytc6Clicked"
+								[attr.aria-expanded]="isCollapsed"
+								tabindex="0"
+								role="button">
 								<div class="more-info-button mr-2"
 									*ngIf="!isCollapsed"
 									role="link"

@@ -46,6 +46,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 	public isAutoTransitionEnabled = false;
 	public autoTransitionIsReadMore = false;
 	public smartSettingsCapability = false;
+	public showMoreLessDytc6Clicked = false;
 
 	@Output() isPowerSmartSettingVisible = new EventEmitter<boolean>();
 
@@ -56,8 +57,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 		public commonService: CommonService,
 		public modalService: NgbModal,
 		private metricService: MetricService) {
-			this.initDataFromCache();
-		}
+		this.initDataFromCache();
+	}
 
 	ngOnInit() {
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
@@ -72,7 +73,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 	}
 
 	ngAfterViewInit() {
-		if(this.cache) {
+		if (this.cache) {
 			if (this.cache.showIC === 0) {
 				this.showPowerSmartSettings(false);
 			} else {
@@ -204,6 +205,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 
 	public showMoreDytc6() {
 		this.isCollapsed = !this.isCollapsed;
+		this.showMoreLessDytc6Clicked = true;
 	}
 
 	// Start Power Smart Settings for IdeaPad
@@ -320,9 +322,9 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 				text = 'device.deviceSettings.power.powerSmartSettings.intelligentCooling.selectedModeText.performance';
 				break;
 			case IntelligentCoolingModes.BatterySaving:
-				if (this.showIC ===14) {
+				if (this.showIC === 14) {
 					text = 'device.deviceSettings.power.powerSmartSettings.intelligentCooling.selectedModeText.batterySaving14';
-				} else if (this.showIC >=15){
+				} else if (this.showIC >= 15) {
 					text = 'device.deviceSettings.power.powerSmartSettings.intelligentCooling.selectedModeText.batterySaving15';
 				}
 				break;
@@ -767,16 +769,16 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 	}
 
 
-	readMore(readMoreDiv: HTMLElement,$event:Event) {
+	readMore(readMoreDiv: HTMLElement, $event: Event) {
 		this.onReadMoreClick = true;
-		if(readMoreDiv){
+		if (readMoreDiv) {
 			readMoreDiv.style.display = 'block';
 			// readMoreDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
 			// const focusElement = readMoreDiv.querySelector('[tabindex = \'0\']') as HTMLElement;
 			// Fix for Edge browser
 			// window.scrollBy(0, 0);
 			// if($event.type!=='click'){
-				readMoreDiv.focus();
+			readMoreDiv.focus();
 			// }
 
 		}
@@ -792,14 +794,14 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 		this.isAutoTransitionEnabled = $event;
 		if (this.powerService.isShellAvailable && this.isAutoTransitionVisible) {
 			this.powerService.setAutoTransitionForICIdeapad($event)
-			.then((isSuccess: boolean) => {
-				if (!isSuccess) {
-					this.logger.info(`onAutoTransitionToggle.setAutoTransitionForICIdeapad failed`);
-				}
-				this.cache.isAutoTransitionEnabled = this.isAutoTransitionEnabled;
-				this.commonService.setLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, this.cache);
-				this.logger.info(`onAutoTransitionToggle.setAutoTransitionForICIdeapad after API ${isSuccess} ; $event: ${$event}`);
-			})
+				.then((isSuccess: boolean) => {
+					if (!isSuccess) {
+						this.logger.info(`onAutoTransitionToggle.setAutoTransitionForICIdeapad failed`);
+					}
+					this.cache.isAutoTransitionEnabled = this.isAutoTransitionEnabled;
+					this.commonService.setLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, this.cache);
+					this.logger.info(`onAutoTransitionToggle.setAutoTransitionForICIdeapad after API ${isSuccess} ; $event: ${$event}`);
+				})
 		}
 	}
 

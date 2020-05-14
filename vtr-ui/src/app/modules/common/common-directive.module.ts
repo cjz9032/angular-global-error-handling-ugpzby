@@ -5,6 +5,7 @@ import { LinkStatusDirective } from 'src/app/directives/link-status.directive';
 import { OutsideclickDirective } from 'src/app/directives/outsideclick.directive';
 import { TranslateDirective } from 'src/app/directives/translate.directive';
 import { UiDropdownNavigate } from 'src/app/directives/ui-dropdown-directive/ui-dropdown-navigate.directive';
+import { AutofocusDirective } from '../../directives/ui-autofocus-directive/autofocus.directive';
 
 @NgModule({
 	declarations: [
@@ -12,14 +13,16 @@ import { UiDropdownNavigate } from 'src/app/directives/ui-dropdown-directive/ui-
 		OutsideclickDirective,
 		TranslateDirective,
 		LinkStatusDirective,
-		UiDropdownNavigate
+		UiDropdownNavigate,
+		AutofocusDirective
 	],
 	exports: [
 		AppEventDirective,
 		OutsideclickDirective,
 		TranslateDirective,
 		LinkStatusDirective,
-		UiDropdownNavigate
+		UiDropdownNavigate,
+		AutofocusDirective
 	],
 	imports: [
 		CommonModule
