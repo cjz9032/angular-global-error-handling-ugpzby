@@ -208,19 +208,21 @@ export class UiSmartPerformanceComponent implements OnInit {
 
 	updateScheduleScanStatus(response) {
 		try {
-			this.scheduleScanObj = response;
 			if (response && response.payload) {
-				if (response.payload.percentage == 100) {
-					this.isScanningCompleted = true;
-					this.isScanning = false;
+				if(response.payload.percentage > 0){
+					this.scheduleScanObj = response;					
+					if (response.payload.percentage == 100) {
+						this.isScanningCompleted = true;
+						this.isScanning = false;
+					}					
+					if (!this.isScheduleScan) {
+						this.isScheduleScan = true;
+					}
+					this.isScanning = true;
 				}
 			}
-			if (!this.isScheduleScan) {
-				this.isScheduleScan = true;
-			}
-			this.isScanning = true;
 		} catch (err) {
-			this.logger.error('ui-smart-performance.getScheduleScanStatus.then', err);
+			this.logger.error('ui-smart-performance.updateScheduleScanStatus.then', err);
 		}
 	}
 
