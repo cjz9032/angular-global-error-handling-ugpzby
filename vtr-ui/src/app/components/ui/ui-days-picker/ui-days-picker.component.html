@@ -11,7 +11,7 @@
 					class="dropcheck d-none"
 					[checked]="showDropDown"
 					[label]="daysId"
-					(click)="onToggleDropDown()">
+					>
 				</vtr-ui-checkbox>
 				<label for="{{daysId}}"
 					#combo
@@ -19,6 +19,7 @@
 					attr.aria-label="{{ subHeadingText | translate}}, {{ smartStandbyService.scheduleLongForm}}"
 					[attr.aria-expanded]="showDropDown"
 					tabindex="0"
+					(click)="onToggleDropDown()"  
 					(keydown.enter)="onToggleDropDown()"
 					class="dropbtn"
 					#dayslistbox>

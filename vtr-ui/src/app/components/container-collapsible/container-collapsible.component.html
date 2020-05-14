@@ -20,7 +20,7 @@
 									[tabindex]="tabIndex ? tabIndex : 0"
 									vtrMetrics
 									id="{{collapseLinkId+'-collapse-link'}}"
-									
+									[attr.aria-label]="!isCollapsed ? cardTitle+'collapse':cardTitle+'expand'"
 									metricsEvent="itemClick"
 									[metricsValue]="!isCollapsed"
 									[metricsItem]="'btn.collapse'"
