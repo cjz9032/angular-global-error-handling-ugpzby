@@ -355,64 +355,6 @@
 		color: $main;
 	}
 
-	.feedback-container {
-		border-radius: $border_radius;
-		background-color: $light;
-		box-shadow: $drop_shadow;
-		padding: $fontsize_xl;
-		.title {
-			color: $main_darker;
-			font-size: $fontsize_xl;
-			font-weight: $weight_600;
-		}
-		.description {
-			color: $main_shade;
-			font-size: $fontsize_xs;
-			font-weight: $weight_light;
-		}
-		.feedback-btn {
-			padding: 0 2.5rem;
-			position: relative;
-			min-height: 5.2rem;
-			border-radius: 3rem;
-			min-width: 12rem;
-			background: transparent $gradient_blue 0% 0% no-repeat padding-box;
-			border: none;
-			color: $light;
-			font-size: $fontsize_xs;
-			font-weight: $weight_bold;
-			text-align: center;
-			text-decoration: none;
-			display: inline-block;
-			width: 100%;
-			text-transform: uppercase;
-
-			&:hover {
-				background: $blue_gradient;
-			}
-
-			&:focus {
-				outline: none !important;
-				box-shadow: none;
-				&::after {
-					@include button-outline-blue;
-				}
-			}
-
-			@media #{$black-on-white} {
-				border: 0.1rem solid $dark;
-
-			}
-			@media #{$white-on-black} {
-				border: 0.1rem solid $light;
-			}
-			@media #{$mediaquery_X4} {
-				min-width: 10rem;
-			}
-		}
-	}
-
-
 }
 
 .sidebar-widget {
@@ -650,5 +592,62 @@
 	85%,
 	100% {
 		transform: translateY(-85%);
+	}
+}
+
+.feedback-container {
+	border-radius: $border_radius;
+	background-color: $light;
+	box-shadow: $drop_shadow;
+	padding: $fontsize_xl;
+	.title {
+		color: $main_darker;
+		font-size: $fontsize_xl;
+		font-weight: $weight_600;
+	}
+	.description {
+		color: $main_shade;
+		font-size: $fontsize_xs;
+		font-weight: $weight_light;
+	}
+	.feedback-btn {
+		padding: 0 2.5rem;
+		position: relative;
+		min-height: 5.2rem;
+		border-radius: 3rem;
+		min-width: 12rem;
+		background: transparent $gradient_blue 0% 0% no-repeat padding-box;
+		border: none;
+		color: $light;
+		font-size: $fontsize_xs;
+		font-weight: $weight_bold;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		width: 100%;
+		text-transform: uppercase;
+
+		&:hover {
+			background: $blue_gradient;
+		}
+
+		&:focus {
+			outline: none !important;
+			box-shadow: none;
+			&::after {
+				@include button-outline-blue;
+			}
+		}
+
+		@media #{$black-on-white} {
+			border: 0.1rem solid $dark;
+
+		}
+		@media #{$white-on-black} {
+			border: 0.1rem solid $light;
+		}
+		@media #{$mediaquery_X4} {
+			min-width: 10rem;
+		}
 	}
 }
