@@ -5,15 +5,18 @@
 				<div class="row">
 					<div class="title">{{title}}</div>
 					<div class="title-question-mark">
-						<a href="javascript:void(0)"
+						<a	href="javascript:void();"
 							aria-label="recover-question-mark"
-							class="recover-question-icon"
+							tabindex="0"
 							triggers="click:blur"
 							[ngbTooltip]="tooltipRef"
-							container="vtr-root"
 							tooltipClass="vtr-tooltip"
-							placement="auto">
-							<fa-icon [icon]="['far', 'question-circle']"></fa-icon>
+							[ngClass]="'recover-question-icon'">
+							<fa-icon
+								placement="auto"
+								[icon]="['far', 'question-circle']"
+								container="vtr-root">
+							</fa-icon>
 						</a>
 					</div>
 				</div>
@@ -28,7 +31,7 @@
 						metricsParent="HardwareScan"
 						metricsItem="HardwareScan.RecoverBadSectors"
 						[isFullWidth]="true"
-						[label]="textButton"
+						[label]="'hardwareScan.recoverBadSectors.title' | translate"
 						[isDisabled]="disable"
 						[routerPath] = "recoverPath"
 						[active]="'true'"
