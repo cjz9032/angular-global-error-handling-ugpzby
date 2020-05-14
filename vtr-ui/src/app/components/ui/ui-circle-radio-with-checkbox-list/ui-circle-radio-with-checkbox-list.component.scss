@@ -2,6 +2,7 @@
 
 @mixin theme($name, $background, $foreground, $label-color) {
 	.vtr-ui-circle-radio-with-checkbox-list.#{$name} {
+		$container-width: 11rem;
 		margin-right: 1.5rem;
 		margin-top: 1.5rem;
 		.circle-radio {
@@ -14,7 +15,7 @@
 
 			.radio-container {
 				position: relative;
-				width: 11rem;
+				width: $container-width;
 				@media screen and (min-width: 992px) and (max-width: 1199.9px) {
 					width: 18rem;
 				}
@@ -57,20 +58,6 @@
 						font-size: 3rem;
 						&::before {
 							color: $background;
-						}
-					}
-
-					&:focus {
-						outline: 0;
-						.checkbox-custom-label::before {
-							content: "\e940";
-							@include circular-button-outline;
-						}
-						.checkbox-custom:checked + .checkbox-custom-label {
-							&::before {
-								content: "\e941";
-								@include circular-button-outline;
-							}
 						}
 					}
 
@@ -196,6 +183,14 @@
 							}
 						}
 					}
+					&:focus {
+						outline: 0;
+						span {
+							&.icomoon {
+								display: block;
+							}
+						}
+					}
 				}
 
 				.text {
@@ -209,6 +204,23 @@
 					color: $shade_blue;
 					opacity: 0.6;
 				}
+				// icon file css class name
+				span {
+					&.icomoon {
+						display: none;
+						font-size: 6.7rem !important;
+						background: transparent;
+						position: absolute;
+						left: 2.2rem;
+						top: 0;
+						&::before {
+							color: $background !important;
+						}
+						// @media screen and (min-width: 992px) and (max-width: 1199.9px) {
+						// 	width: 18rem;
+						// }
+					}
+				}
 			}
 		}
 	}
@@ -216,28 +228,3 @@
 
 @include theme(white-theme, $main, $light, $menu_hover);
 @include theme(blue-theme, $light, $main, $light);
-
-// .vtr-ui-circle-radio-with-checkbox-list.white-theme {
-	// .check-circle {
-	// 	color: $main;
-	// }
-	// .icon-circle {
-	// 	color: $light;
-	// }
-	// .check-circle-disabled {
-	// 	color: $circle_checkbox_disabled !important;
-	// }
-	// &:focus {
-	// 	outline: 0;
-	// 	.checkbox-custom-label::before {
-	// 		content: "\e940";
-	// 		@include circular-button-outline;
-	// 	}
-	// 	.checkbox-custom:checked + .checkbox-custom-label {
-	// 		&::before {
-	// 			content: "\e941";
-	// 			@include circular-button-outline;
-	// 		}
-	// 	}
-	// }
-// }

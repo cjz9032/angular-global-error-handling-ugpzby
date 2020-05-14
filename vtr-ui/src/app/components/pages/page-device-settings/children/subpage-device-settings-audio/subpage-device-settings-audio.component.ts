@@ -549,7 +549,6 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	onDolbySettingRadioChange(event: any) {
 		try {
 			this.dolbyModeResponse.currentMode = event.value;
-			this.updateRadioDetails(this.dolbyModeResponse);
 			if (this.audioService.isShellAvailable) {
 				this.audioService.setDolbyMode(this.dolbyModeResponse.currentMode)
 					.then((value) => {

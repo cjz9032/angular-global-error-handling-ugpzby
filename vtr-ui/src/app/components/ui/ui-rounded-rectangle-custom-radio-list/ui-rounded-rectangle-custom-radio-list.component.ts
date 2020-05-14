@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output, ViewChildren, QueryList
 import { KeyCode as KEYCODE } from 'src/app/enums/key-code.enum';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from 'src/app/services/metric/metric.service';
-import { UiRoundedRectangleRadioListModel, UiRoundedRectangleRadioModel } from './ui-rounded-rectangle-radio-list.model';
+import { UiRoundedRectangleRadioModel } from './ui-rounded-rectangle-radio-list.model';
 
 /**
  * this radio group implementation is based on W3C KB navigation example
@@ -42,6 +42,7 @@ export class UiRoundedRectangleCustomRadioListComponent implements OnInit {
 		const { id } = $event.target;
 		const radio = this.updateSelection(id);
 		this.invokeSelectionChangeEvent(radio);
+		$event.preventDefault();
 	}
 
 	onKeyDown($event, index: number) {

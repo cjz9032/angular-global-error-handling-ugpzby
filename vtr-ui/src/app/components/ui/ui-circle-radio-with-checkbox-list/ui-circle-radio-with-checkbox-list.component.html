@@ -13,7 +13,11 @@
 					[id]="item.componentId"
 					[attr.aria-checked]="item.isChecked"
 					[attr.aria-disabled]="item.isDisabled"
+					(click)="onClick($event)"
+					(keydown)="onKeyDown($event, index)"
 					[tabindex]="item.isChecked ? 0 : -1">
+					<!-- <span class="icomoon icomoon-icon_state_Circle"></span> -->
+					<span class="icomoon icomoon-icon_state_Two_combined"></span>
 					<div *ngIf="!item.hideIcon"
 						[style.cursor]="item.isDisabled?'default': 'pointer'"
 						[ngClass]="'icomoon icomoon-'+getIconName(item)"></div>
@@ -31,7 +35,8 @@
 							[icon]="['far', 'check-circle']"></fa-icon>
 					</fa-layers>
 				</div>
-				<div class="text" [class.text-disabled]="item.isDisabled">
+				<div class="text"
+					[class.text-disabled]="item.isDisabled">
 					{{item.processLabel ? (item.label | translate | capitalizeFirst) : item.label | translate}}
 				</div>
 			</div>
