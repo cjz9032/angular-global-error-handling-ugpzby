@@ -20,10 +20,10 @@
 			</div>
 		</div>
 		<div class="row" *ngIf="!isLoading">
-			<button class="btn cancel-button" (click)="cancelScan()" vtrMetrics metricsEvent="ItemClick"
+			<vtr-button class="btn cancel-button" (click)="cancelScan()" vtrMetrics metricsEvent="ItemClick"
 				metricsParent="Pages.support.smartPerformance" metricsItem="'btn.cancelScan'"
 				class="btn btn-link cancel-button">{{'smartPerformance.scanningPage.cancelScan.yesButton' |translate }}
-				({{secondsCountdown}})</button>
+				({{secondsCountdown}})</vtr-button>
 			<div class="py-5 ml-5">
 				<a (click)="closeModal()" class="resume-scan" vtrMetrics metricsEvent="ItemClick"
 					metricsParent="Pages.support.smartPerformance"
