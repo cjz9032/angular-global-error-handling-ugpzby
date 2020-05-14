@@ -12,6 +12,7 @@ import { SupportService } from 'src/app/services/support/support.service';
 import { v4 as uuid } from 'uuid';
 import { formatDate } from '@angular/common';
 import { TranslateService } from '@ngx-translate/core';
+import { ModalSmartPerformanceFeedbackComponent } from '../../modal/modal-smart-performance-feedback/modal-smart-performance-feedback.component';
 
 @Component({
 	selector: 'vtr-ui-smart-performance-scan-summary',
@@ -806,4 +807,19 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 			}],
 		}
 	  }
+
+	  /**
+	   * SP Feedback form
+	   */
+	  onclickFeedback() {
+		this.modalService.open(ModalSmartPerformanceFeedbackComponent, {
+			backdrop: 'static',
+			size: 'lg',
+			keyboard: false,
+			centered: true,
+			windowClass: 'smart-performance-feedback-Modal'
+		});
+	}
+
+
 }
