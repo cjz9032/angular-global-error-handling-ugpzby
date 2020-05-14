@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.41](https://bitbucket.tc.lenovo.com///compare/v1.5.40...v1.5.41) (2020-05-14)
+
+
+### Bug Fixes
+
+* **protocol:** protocol support lowcase ([0b67346](https://bitbucket.tc.lenovo.com///commit/0b67346ad519bbdb68b97cd96d060972ae3e1d67))
+
 ### [1.5.40](https://bitbucket.tc.lenovo.com///compare/v1.5.39...v1.5.40) (2020-05-13)
 
 ### [1.5.39](https://bitbucket.tc.lenovo.com///compare/v1.5.38...v1.5.39) (2020-05-12)
