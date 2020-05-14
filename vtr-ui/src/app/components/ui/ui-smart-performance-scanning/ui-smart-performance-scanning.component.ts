@@ -283,6 +283,10 @@ export class UiSmartPerformanceScanningComponent implements OnInit, OnChanges {
 			);
 		}
 
+		// if(this.percent > 0 && this.percent < 99) {
+		// 	this.smartPerformanceService.scanningStopped.next(false)
+		// }
+		// de-activates the pop-up, when user is navigating away while scanning
 		if(this.percent === 100) {
 			this.smartPerformanceService.scanningStopped.next(true)
 		}

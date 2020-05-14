@@ -87,6 +87,8 @@ export class UiSmartPerformanceComponent implements OnInit {
 						this.isScanning = true;
 						this.registerScheduleScanStatus();
 						this.getSmartPerformanceStartScanInformation();
+						// activates the pop-up, when scanning is triggered because of scheduled scan and user navigates
+						this.showWarning.emit(true)
 					}
 					else {
 						this.isScanning = false;
@@ -96,7 +98,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 					this.logger.error('this.smartPerformanceService.getReadiness()', error);
 				});
 		}
-
+		// de-activates the pop-up, when user is navigating away while scanning
 		this.smartPerformanceService.scanningStopped.subscribe((res: boolean) => {
 			if(res) {
 				this.showWarning.emit(false)
@@ -178,6 +180,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 						);
 						this.scanAndFixInformation();
 						this.isScanning = true;
+						// activates the pop-up, when user is navigating away while scanning - for subsciber
 						this.showWarning.emit(true);
 						// Subscriber Scan Completed
 						if(this.isSubscribed) {
@@ -307,6 +310,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 							}
 							);
 						this.isScanning = true;
+						// activates the pop-up, when user is navigating away while scanning - for non-subscriber
 						this.showWarning.emit(true)
 						this.scanAndFixInformation();
 					}
