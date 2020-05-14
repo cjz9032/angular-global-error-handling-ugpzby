@@ -203,7 +203,15 @@
 
 
 														<div class="summary-period">
-															<ul class="list-group list-group-horizontal">
+															<ul class="list-group list-group-horizontal">															
+																<li class="list-group-item"
+																	*ngFor="let item of menuItems;let ind=index"
+																	(click)="scanSummaryTime(ind)"
+																	[ngClass]="{'selected-list-item': tabIndex === ind}">
+																	{{item.itemName}}
+																	<!-- <div class="list-item" >
+																	</div> -->
+																</li>
 																<div class="dropdown">
 																	<li id="dropdownMenu1"
 																		class="list-group-item cl list-selected-item">
@@ -228,14 +236,6 @@
 																		</fa-icon>
 																	</li>
 																</div>
-																<li class="list-group-item"
-																	*ngFor="let item of menuItems;let ind=index"
-																	(click)="scanSummaryTime(ind)"
-																	[ngClass]="{'selected-list-item': tabIndex === ind}">
-																	{{item.itemName}}
-																	<!-- <div class="list-item" >
-																	</div> -->
-																</li>
 																<!-- <li class="list-group-item" (click)="scanSummaryTime()">quarterly</li>
 																<li class="list-group-item" (click)="scanSummaryTime()">custom</li> -->
 															

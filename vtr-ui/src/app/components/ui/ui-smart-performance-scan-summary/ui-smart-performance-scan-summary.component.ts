@@ -39,7 +39,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	public menuItems: any = [
 		{ itemName: 'Annual', itemKey: 'ANNUAL' },
 		{ itemName: 'Quarterly', itemKey: 'QUARTERLY' },
-		{ itemName: 'Half yearly', itemKey: 'HALFYEARLY' }
+		{ itemName: 'Custom', itemKey: 'CUSTOM' }
 	];
 
 	leftAnimator: any;
