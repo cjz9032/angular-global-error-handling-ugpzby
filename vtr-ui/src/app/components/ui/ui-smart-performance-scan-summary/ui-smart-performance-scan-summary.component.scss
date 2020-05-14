@@ -267,6 +267,12 @@ vtr-ui-smart-performance-scan-summary {
 							border-top-right-radius: $border_radius;
 							border-top-left-radius: $border_radius;
 							font-size: 1.2rem;
+							.col-2{
+								text-align: center;
+							}
+						}
+						.col-2, .col-1{
+							text-align: center;
 						}
 						&:last-child {
 							border-bottom: none;
@@ -275,7 +281,6 @@ vtr-ui-smart-performance-scan-summary {
 							color: $light;
 						}
 						.icon-check {
-							padding-right: 1rem;
 							display: inline-block;
 							.icon-bkg {
 								display: inline-block;
@@ -296,7 +301,6 @@ vtr-ui-smart-performance-scan-summary {
 
 						.icon-times {
 							display: inline-block;
-							padding-right: 1rem;
 							.icon-bkg {
 								display: inline-block;
 								border-radius: 50%;
