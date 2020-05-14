@@ -46,6 +46,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 	public isAutoTransitionEnabled = false;
 	public autoTransitionIsReadMore = false;
 	public smartSettingsCapability = false;
+	private isMobileWorkstation = false;
 
 	@Output() isPowerSmartSettingVisible = new EventEmitter<boolean>();
 
@@ -395,11 +396,12 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 					this.cache.showIC = this.showIC;
 					const amtCapability = await this.getAMTCapability();
 					let amtSetting = await this.getAMTSetting();
-					this.dytc6GetStatus(amtCapability, amtSetting);
+					this.isMobileWorkstation = await this.isMobileWorkStation();
+					this.dytc6GetStatus(amtCapability, amtSetting, this.isMobileWorkstation);
 					this.amtCapabilityInterval = setInterval(async () => {
 						this.logger.debug('Trying after 30 seconds for getting AMT status');
 						amtSetting = await this.getAMTSetting();
-						this.dytc6GetStatus(amtCapability, amtSetting);
+						this.dytc6GetStatus(amtCapability, amtSetting, this.isMobileWorkstation);
 					}, 30000);
 				}
 			}
@@ -449,7 +451,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 		}
 	}
 
-	private dytc6GetStatus(amtCapability: boolean, amtSetting: boolean) {
+	private dytc6GetStatus(amtCapability: boolean, amtSetting: boolean, isMobileWorkstation: boolean) {
 		this.logger.info('PowerSmartSettingsComponent:initPowerSmartSettingsForThinkPad:: amtCapability', amtCapability);
 		this.logger.info('PowerSmartSettingsComponent:initPowerSmartSettingsForThinkPad:: amtSetting', amtSetting);
 		this.cache.autoModeToggle.available = amtCapability;
@@ -463,6 +465,9 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 			this.dytc6Mode = DYTC6Modes.Manual;
 			this.cache.captionText = DYTC6Modes.Manual;
 
+		} else if (!amtCapability && isMobileWorkstation) {
+			this.showIC = 61;
+			this.cache.showIC = this.showIC;
 		} else {
 			// No auto mode case
 			this.dytc6Mode = DYTC6Modes.Manual;
@@ -739,6 +744,17 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 			}
 		} catch (error) {
 			this.logger.exception('PowerSmartSettingsComponent:getAMTSetting', error);
+			return false;
+		}
+	}
+
+	private isMobileWorkStation() {
+		try {
+			if (this.powerService.isShellAvailable) {
+				return this.powerService.isMobileWorkStation();
+			}
+		} catch (error) {
+			this.logger.exception('PowerSmartSettingsComponent:isMobileWorkStation', error);
 			return false;
 		}
 	}

@@ -1475,20 +1475,20 @@
                 }
             },
             "audio": {
-				"title": "Audio",
-				"subtitle": "Audio-instellingen",
-				"description": "In dit gedeelte kunt u uw audio-instellingen automatisch optimaliseren of volledig configureren, zoals Dolby-instellingen, microfoons, enzovoort.",
-				"audioSmartsettings": {
+                "title": "Audio",
+                "subtitle": "Audio-instellingen",
+                "description": "In dit gedeelte kunt u uw audio-instellingen automatisch optimaliseren of volledig configureren, zoals Dolby-instellingen, microfoons, enzovoort.",
+                "audioSmartsettings": {
                     "title": "Slimme audio-instellingen",
                     "dolby": {
                         "title": "Dolby-audio",
                         "description": "Selecteer een van de volgende werkstanden naar wens. U kunt ook het selectievakje \"Audio automatisch optimaliseren voor:\" inschakelen. Als deze functie is ingeschakeld, selecteert Dolby-audio automatisch het beste audio-effect op basis van de geselecteerde werkstand.",
                         "options": {
                             "dynamic": "Dynamisch",
-							"movie": "Film",
-							"music": "Muziek",
-							"games": "Spel",
-							"voip": "Spraak"
+                            "movie": "Film",
+                            "music": "Muziek",
+                            "games": "Spel",
+                            "voip": "Spraak"
                         },
                         "automaticAudioMode": {
                             "voIPMode": {
@@ -2107,7 +2107,7 @@
                 "heading": "Intelligente sensoren",
                 "title": "Slim bewegingsalarm",
                 "tooltip": "<div>Deze functie werkt niet als de computer in de sluimerstand staat of is uitgeschakeld. Schakel de instellingen voor de volgende acties in:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>acties voor sluiten van het deksel</li><li>actie voor bijna lege batterij</li><li>actie voor de aan/uit-knop</li><li>actie voor de slaapstandknop</li><li>instellingen voor time-out bij inactiviteit naar sluimerstand</li></ul></div>Als je deze niet instelt, worden geen waarschuwingen geactiveerd of foto's genomen.</div>",
-                "desc": "<p><label>Als u deze functie inschakelt, begint het apparaat te piepen wanneer uw scherm vergrendeld is en er bewegingen worden gedetecteerd, vooral in openbare omgevingen.</label></p> <p><label>Om het alarm uit te schakelen geeft u het juiste wachtwoord op of meldt u zich aan bij Windows Hello.</label></p>",
+                "desc": "<p><label>Als u deze functie inschakelt, begint het apparaat te piepen wanneer uw scherm vergrendeld is en er bewegingen worden gedetecteerd, vooral in openbare omgevingen.</label></p> <p><label>Meld u aan bij Windows om het alarm te sluiten.</label></p>",
                 "note": {
                     "description": "Als u eenmaal bij het systeem bent aangemeld, wordt deze functie automatisch uitgeschakeld. Om deze functie weer te gebruiken, moet u de functie opnieuw inschakelen."
                 },
@@ -2121,7 +2121,7 @@
                 },
                 "allowCamera": {
                     "title": "FOTO'S NEMEN",
-                    "describe": "Als u deze functie inschakelt, neemt de camera automatisch foto's als er bewegingen worden gedetecteerd terwijl uw scherm vergrendeld is. Deze gegevens worden lokaal op uw apparaat verwerkt. Lenovo heeft geen toegang tot uw afbeelding en gebruikt deze ook niet.",
+                    "describe": "Als u deze functie inschakelt, neemt de camera automatisch foto's als beweging worden gedetecteerd terwijl uw scherm vergrendeld is. Deze gegevens worden lokaal op uw apparaat verwerkt. Lenovo heeft geen toegang tot uw afbeelding en gebruikt deze ook niet.",
                     "checkBoxText": "Schakel deze functie in"
                 },
                 "cameraPrivacy": {
@@ -2133,7 +2133,7 @@
                     "linkText": "Ga naar de Windows-instellingen om toegang te geven"
                 },
                 "photo": {
-                    "title": "HET AANTAL FOTO'S DAT TIJDENS DE BEWEGING WORDT GENOMEN",
+                    "title": "HET AANTAL FOTO'S DAT IS GEMAAKT",
                     "tooltip": "De camera op de computer wordt automatisch geactiveerd om foto's te maken wanneer er bewegingen worden gedetecteerd. Er worden elke twee seconden foto's genomen en ze worden opgeslagen in uw lokale opslag.",
                     "option1": 5,
                     "option2": 10,
@@ -3128,7 +3128,15 @@
         "warningMessage": "Houd er rekening mee dat de testen worden geannuleerd als het systeem in de slaap- of sluimerstand staat",
         "refreshMessage": "Het vernieuwen kan even duren omdat alle onderdelen opnieuw moeten worden geladen",
         "processFinishedCannotBeCanceled": "Het actieve proces is voltooid en hoeft niet meer te worden geannuleerd.",
-        "cancelMayTakeSomeTime": "Een ogenblik geduld, het annuleren kan even duren, afhankelijk van uw systeem."
+        "cancelMayTakeSomeTime": "Een ogenblik geduld, het annuleren kan even duren, afhankelijk van uw systeem.",
+        "scanFailureModal": {
+            "title": "Hardware Problem Detected",
+            "problemDetected": "There were detected problems on the following components on your computer:",
+            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
+            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
+            "supportButtonText": "Open Ticket",
+            "recoverBadSectorsButtonText": "Recover Bad Sectors"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3248,7 +3256,11 @@
             "status": "Status",
             "activeStatus": "ACTIVE",
             "inactiveStatus": "INACTIVE",
-            "manageSubscription": "MANAGE SUBSCRIPTION"
+            "manageSubscription": "MANAGE SUBSCRIPTION",
+            "titlebeta": "Lenovo Beta Program",
+            "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
+            "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
+            "descriptionbeta1": "You are welcomed to join and try the full feature."
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3271,7 +3283,8 @@
             "thu": "Thursday",
             "fri": "Friday",
             "sat": "Saturday",
-            "sun": "Sunday"
+            "sun": "Sunday",
+            "scanToolTip": "Enable this toggle can setup a automatic event to trigger system Performance scan on your selected time and date."
         },
         "scanningPage": {
             "title": "Performance & security check",
@@ -3439,7 +3452,8 @@
                 "yearlyPricing": "$19.99 / Yr",
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
-                "signupButton": "SIGN UP"
+                "signupButton": "SIGN UP",
+                "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
             },
             "tune": "{{tune}} ISSUES",
             "boost": "{{boost}} ISSUES",

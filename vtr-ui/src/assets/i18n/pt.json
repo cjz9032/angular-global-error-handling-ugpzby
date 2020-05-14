@@ -1475,20 +1475,20 @@
                 }
             },
             "audio": {
-				"title": "Áudio",
-				"subtitle": "Definições de Áudio",
-				"description": "Esta secção permite-lhe otimizar automaticamente ou configurar totalmente as suas definições de áudio manualmente, como definições de Dolby, microfone, etc.",
-				"audioSmartsettings": {
+                "title": "Áudio",
+                "subtitle": "Definições de Áudio",
+                "description": "Esta secção permite-lhe otimizar automaticamente ou configurar totalmente as suas definições de áudio manualmente, como definições de Dolby, microfone, etc.",
+                "audioSmartsettings": {
                     "title": "Definições de Áudio smart",
                     "dolby": {
                         "title": "Áudio Dolby",
                         "description": "Selecione o modo que pretende de entre as seguintes opções. Também pode marcar a caixa de verificação \"Otimizar automaticamente o áudio para...\". Quando selecionada, o áudio Dolby escolhe automaticamente o melhor efeito de áudio para si, de acordo com os modos em que se encontra.",
                         "options": {
                             "dynamic": "Dinâmico",
-							"movie": "Filme",
-							"music": "Música",
-							"games": "Jogo",
-							"voip": "Voz"
+                            "movie": "Filme",
+                            "music": "Música",
+                            "games": "Jogo",
+                            "voip": "Voz"
                         },
                         "automaticAudioMode": {
                             "voIPMode": {
@@ -2107,7 +2107,7 @@
                 "heading": "Deteção inteligente",
                 "title": "Alarme de movimento inteligente",
                 "tooltip": "<div>Esta funcionalidade não funciona quando o computador está modo de hibernação ou desligado. Verifique as definições nas seguintes ações:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>ações após o fecho da tampa</li><li>ação de bateria crítica/baixa</li><li>ação do interruptor de alimentação</li><li>ação do botão de suspensão</li><li>definições de tempo de espera por inatividade para hibernação</li></ul></div>Caso contrário, não aciona o alarme, nem tira fotografias.</div>",
-                "desc": "<p><label>Ao ativar esta funcionalidade, o dispositivo começará a emitir um sinal sonoro quando o seu ecrã estiver bloqueado e forem detetados movimentos, especialmente num local público.</label></p> <p><label>Para dispensar o alarme, introduza a palavra-passe correta ou inicie sessão com o Windows Hello.</label></p>",
+                "desc": "<p><label>Ao ativar esta funcionalidade, o dispositivo começará a emitir um sinal sonoro quando o seu ecrã estiver bloqueado e forem detetados movimentos, especialmente num local público.</label></p> <p><label>Para dispensar o alarme, inicie sessão no Windows.</label></p>",
                 "note": {
                     "description": "Depois de iniciar sessão com êxito no sistema, esta funcionalidade será desativada automaticamente. Terá de voltar a ativá-la para utilizá-la."
                 },
@@ -2121,7 +2121,7 @@
                 },
                 "allowCamera": {
                     "title": "TIRAR FOTOGRAFIAS",
-                    "describe": "Quando ativar esta funcionalidade, a câmara tira fotografias automaticamente quando o ecrã estiver bloqueado e for detetado movimento. Estes dados são processados localmente no seu dispositivo. A Lenovo não tem acesso nem utiliza estes dados.",
+                    "describe": "Quando ativar esta funcionalidade, a câmara tira fotografias automaticamente quando são detetados movimentos se o ecrã estiver bloqueado. Estes dados são processados localmente no seu dispositivo. A Lenovo não tem acesso nem utiliza estes dados.",
                     "checkBoxText": "Ativar esta funcionalidade"
                 },
                 "cameraPrivacy": {
@@ -2133,7 +2133,7 @@
                     "linkText": "Vá às Definições do Windows para dar acesso"
                 },
                 "photo": {
-                    "title": "O NÚMERO DE FOTOS TIRADAS DURANTE O MOVIMENTO",
+                    "title": "O NÚMERO DE FOTOGRAFIAS TIRADAS",
                     "tooltip": "A câmara do computador é ativada automaticamente para tirar fotografias quando forem detetados movimentos. As imagens são tiradas a cada 2 segundos e guardadas no armazenamento local.",
                     "option1": 5,
                     "option2": 10,
@@ -3128,7 +3128,15 @@
         "warningMessage": "Tenha em atenção que os testes serão cancelados se o sistema entrar em modo de suspensão ou hibernação",
         "refreshMessage": "A atualização pode demorar algum tempo por precisar de voltar a carregar todos os componentes",
         "processFinishedCannotBeCanceled": "O processo em execução já não precisa de ser cancelado, uma vez que foi concluído.",
-        "cancelMayTakeSomeTime": "Aguarde, poderá demorar algum tempo a cancelar consoante o sistema."
+        "cancelMayTakeSomeTime": "Aguarde, poderá demorar algum tempo a cancelar consoante o sistema.",
+        "scanFailureModal": {
+            "title": "Hardware Problem Detected",
+            "problemDetected": "There were detected problems on the following components on your computer:",
+            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
+            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
+            "supportButtonText": "Open Ticket",
+            "recoverBadSectorsButtonText": "Recover Bad Sectors"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3248,7 +3256,11 @@
             "status": "Status",
             "activeStatus": "ACTIVE",
             "inactiveStatus": "INACTIVE",
-            "manageSubscription": "MANAGE SUBSCRIPTION"
+            "manageSubscription": "MANAGE SUBSCRIPTION",
+            "titlebeta": "Lenovo Beta Program",
+            "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
+            "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
+            "descriptionbeta1": "You are welcomed to join and try the full feature."
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3271,7 +3283,8 @@
             "thu": "Thursday",
             "fri": "Friday",
             "sat": "Saturday",
-            "sun": "Sunday"
+            "sun": "Sunday",
+            "scanToolTip": "Enable this toggle can setup a automatic event to trigger system Performance scan on your selected time and date."
         },
         "scanningPage": {
             "title": "Performance & security check",
@@ -3439,7 +3452,8 @@
                 "yearlyPricing": "$19.99 / Yr",
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
-                "signupButton": "SIGN UP"
+                "signupButton": "SIGN UP",
+                "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
             },
             "tune": "{{tune}} ISSUES",
             "boost": "{{boost}} ISSUES",

@@ -40,6 +40,7 @@ import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.mod
 import { SanitizeModule } from '../sanitize.module';
 import { UiScanScheduleComponent } from '../../components/ui/ui-scan-schedule/ui-scan-schedule.component';
 import { UiAccordionComponent } from 'src/app/components/ui/ui-accordion/ui-accordion.component';
+import { ModalSmartPerformanceFeedbackComponent } from '../../components/modal/modal-smart-performance-feedback/modal-smart-performance-feedback.component';
 
 @NgModule({
 	declarations: [
@@ -54,7 +55,8 @@ import { UiAccordionComponent } from 'src/app/components/ui/ui-accordion/ui-acco
 		WidgetSubscriptiondetailsComponent,
 		WidgetScansettingsComponent,
 		UiScanScheduleComponent,
-		UiAccordionComponent
+		UiAccordionComponent,
+		ModalSmartPerformanceFeedbackComponent
 	],
 	imports: [
 		CommonModule,

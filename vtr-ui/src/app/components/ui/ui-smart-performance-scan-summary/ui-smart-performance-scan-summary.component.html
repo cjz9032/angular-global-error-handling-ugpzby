@@ -30,14 +30,44 @@
 														</div>
 														<hr class="light-dashline" />
 													</div>
-													<div class="performance-slider-block scan-results">
-														<h3 class="recomendation-text">
+
+													<div *ngIf="!inputIsScanningCompleted" class="performance-slider-block before-result">
+														<div class="slider">
+															<div class="condition">
+																<div class="critical">{{'smartPerformance.critical' |translate }}</div>
+																<div class="well">{{'smartPerformance.allisWell' |translate }}</div>
+															</div>
+															<div class="verticle-lines">
+																<div class="line"></div>
+																<div class="line"></div>
+																<div class="line"></div>
+																<div class="line"></div>
+																<div class="line"></div>
+																<div class="line"></div>
+																<div class="line"></div>
+																<div class="line"></div>
+																<div class="line"></div>
+																<div class="line"></div>
+																<div class="line"></div>
+															</div>
+														</div>
+														<div class="pc-status-info d-flex">
+															<p class="info-text needs-tune-up"><span>{{'smartPerformance.tuneUP' |translate }}</span></p>
+															<p class="info-text running-well"><span>{{'smartPerformance.runningWell' |translate }}</span></p>
+														</div>
+													</div>
+
+													<div *ngIf="inputIsScanningCompleted" class="performance-slider-block scan-results">
+														<h3 class="recomendation-text"  *ngIf="!isSubscribed">
+															{{'smartPerformance.scanCompletePage.scanRates' |translate }}<span>{{rating}}</span>
+														</h3>
+														<h3 class="recomendation-text"  *ngIf="(isSubscribed)">
 															{{'smartPerformance.scanCompletePage.scanRates' |translate }}<span>{{rating}}</span>
 														</h3>
 														<div class="slider">
 															<div class="verticle-lines">
 																<div class="scan-pointer" [ngStyle]="{'left': leftAnimator}" *ngIf="!isSubscribed">&#9660;</div>
-																<div class="scan-pointer" [ngStyle]="{'left': leftAnimator}" *ngIf="hasSubscribedScanCompleted">&#9660;</div>
+																<div class="scan-pointer" [ngStyle]="{'left': leftAnimator}" *ngIf="inputIsScanningCompleted">&#9660;</div>
 																<div class="line"></div>
 																<div class="line"></div>
 																<div class="line"></div>
@@ -58,6 +88,7 @@
 															</div>
 														</div>
 													</div>
+													
 												</div>
 											</div>
 											<div class="row">
@@ -87,10 +118,16 @@
 													<p>{{'smartPerformance.subscriberScanHomePage.description' |translate }}
 													</p>
 													<div class="d-flex justify-content-between my-5 w-75">
-														<button class="action-button" (click)="ScanNowSummary()"
+														<button *ngIf="!inputIsScanningCompleted" class="action-button" (click)="ScanNowSummary()"
 															vtrMetrics metricsItem="smartPerformance.scanNow"
 															metricsEvent="FeatureClick"
 															metricsParent="pages.support.smartPerformance">{{'smartPerformance.subscriberScanHomePage.scanNow' |translate }}</button>
+															
+															<button *ngIf="inputIsScanningCompleted" class="action-button" (click)="BackToSummary()"
+															vtrMetrics metricsItem="smartPerformance.scanNow"
+															metricsEvent="FeatureClick"
+															metricsParent="pages.support.smartPerformance">{{'smartPerformance.subscriberScanHomePage.backToHome' |translate }}</button>
+
 														<div class="desc desc1">
 															<b>{{'smartPerformance.subscriberScanHomePage.mostRecent' |translate }}</b><br>
 															{{mostRecentScan}}
@@ -98,6 +135,47 @@
 														<div class="desc">
 															<b>{{'smartPerformance.subscriberScanHomePage.nextScheduled' |translate }}</b><br>
 															{{nextScheduleScan}}
+														</div>
+													</div>
+													<div  *ngIf="inputIsScanningCompleted" class="summary-block w-100 pt-3 mb-5">
+														<div class="scanned-items d-flex justify-content-between">
+															<div class="heading" _ngcontent-dag-c274="">
+																<div class="icon icon-performance"></div>
+																<h3>TUNE PC PERFORMANCE</h3>
+															</div>
+															<div class="status">
+																<div class="icon-check">
+																	<div class="icon-bkg">
+																		<fa-icon [icon]="['fas', 'check']"></fa-icon>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="scanned-items d-flex justify-content-between">
+															<div class="heading" _ngcontent-dag-c274="">
+																<div class="icon icon-internet-performance"></div>
+																<h3>INTERNET PERFORMANCE</h3>
+															</div>
+															<div class="status">
+																<div class="icon-check">
+																	<div class="icon-bkg">
+																		<fa-icon [icon]="['fas', 'check']"></fa-icon>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="scanned-items d-flex justify-content-between">
+															<div class="heading" _ngcontent-dag-c274="">
+																<div class="icon icon-malware-security"></div>
+																<h3>MALWARE & SECURITY</h3>
+															</div>
+															<div class="status">
+																<div class="icon-check">
+																	<div class="icon-bkg">
+																		<fa-icon [icon]="['fas', 'check']"></fa-icon>
+																	</div>
+																</div>
+															</div>
 														</div>
 													</div>
 												</div>
@@ -122,10 +200,16 @@
 															<p>{{'smartPerformance.subscriberScanHomePage.scanSummary.description' |translate }}
 															</p>
 														</div>
-
-
 														<div class="summary-period">
-															<ul class="list-group list-group-horizontal">
+															<ul class="list-group list-group-horizontal">															
+																<li class="list-group-item"
+																	*ngFor="let item of menuItems;let ind=index"
+																	(click)="scanSummaryTime(ind)"
+																	[ngClass]="{'selected-list-item': tabIndex === ind}">
+																	{{item.itemName}}
+																	<!-- <div class="list-item" >
+																	</div> -->
+																</li>
 																<div class="dropdown">
 																	<li id="dropdownMenu1"
 																		class="list-group-item cl list-selected-item">
@@ -150,92 +234,55 @@
 																		</fa-icon>
 																	</li>
 																</div>
-																<li class="list-group-item"
-																	*ngFor="let item of menuItems;let ind=index"
-																	(click)="scanSummaryTime(ind)"
-																	[ngClass]="{'selected-list-item': tabIndex === ind}">
-																	{{item.itemName}}
-																	<!-- <div class="list-item" >
-																	</div> -->
-																</li>
-																<!-- <li class="list-group-item" (click)="scanSummaryTime()">quarterly</li>
-																<li class="list-group-item" (click)="scanSummaryTime()">custom</li> -->
-															
 															</ul>
 															<div *ngIf="isDropDownOpen && tabIndex != 2"
-																[ngClass]="[tabIndex ===2 ? 'calender-drop' : 'dropdownmenu']">
-																<div *ngIf="tabIndex === 0">
-																	<a (click)="anualScanSummary(year)"
-																		*ngFor="let year of yearsList"
-																		[ngClass]="{'link-active': year.displayName == annualYear}"
-																		vtrMetrics
-																		metricsItem="smartPerformance.annualScanSummary"
-																		metricsEvent="FeatureClick"
-																		metricsParent="pages.support.smartPerformance">
-																		>
-																		{{year.displayName}}
-																		<br>
-																	</a>
-																	<!-- <a (click)="anualScanSummary(lastYear)"
-																[ngClass]="{'link-active':lastYear == annualYear}">{{lastYear}}</a> -->
-																</div>
-																<div *ngIf="tabIndex === 1">
-																	<div
-																		*ngFor="let menu of quarterlyMenu;let ind=index">
-																		<a (click)="quarterlyScanSummary(menu)"
-																			[ngClass]="{'link-active':menu.key == quarterlyMonth.key}"
-																			vtrMetrics
-																			metricsItem="smartPerformance.quaterlyScanSummary"
-																			metricsEvent="FeatureClick"
-																			metricsParent="pages.support.smartPerformance">{{menu.displayName}}</a>
-																	</div>
-																</div>
-
+															[ngClass]="[tabIndex ===2 ? 'calender-drop' : 'dropdownmenu']">
+															<div *ngIf="tabIndex === 0">
+																<a (click)="anualScanSummary(year)" *ngFor="let year of yearsList"
+																	[ngClass]="{'link-active': year.displayName == annualYear}">
+																	{{year.displayName}}
+																	<br>
+																</a>
+																<!-- <a (click)="anualScanSummary(lastYear)"
+																	[ngClass]="{'link-active':lastYear == annualYear}">{{lastYear}}</a> -->
 															</div>
-															<div *ngIf="isDropDownOpen && tabIndex === 2"
-																class="calender-dropDown">
+															<div *ngIf="tabIndex === 1">
+																<div *ngFor="let menu of quarterlyMenu;let ind=index">
+																	<a (click)="quarterlyScanSummary(menu)"
+																		[ngClass]="{'link-active':menu.key == quarterlyMonth.key}">{{menu.displayName}}</a>
+																</div>
+															</div>
+	
+														</div>
+															<div *ngIf="isDropDownOpen && tabIndex === 2" class="calender-dropDown">
 																<div *ngIf="tabIndex === 2">
 																	<div class="row mt-1">
 																		<div class="col">
 																			<div class="row custom-from-date py-3"
 																				[ngClass]="{'selected-custom-date':isFromDate}">
-																				<div class="col-1">
-																					{{'smartPerformance.subscriberScanHomePage.scanSummary.txtFrom' |translate }}
-																				</div>
-																				<div class="col-auto"><input type='text'
-																						[ngModel]="displayFromDate"
-																						(click)="selectFromDate()"
-																						readonly /></div>
+																				<div class="col-1">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtFrom' |translate }}</div>
+																				<div class="col-auto"><input type='text' [ngModel]="displayFromDate"
+																						(click)="selectFromDate()" readonly /></div>
 																			</div>
 																			<div class="row custom-to-date mt-3 py-3"
 																				[ngClass]="{'selected-custom-date':!isFromDate}">
-																				<div class="col-1">
-																					{{'smartPerformance.subscriberScanHomePage.scanSummary.txtTo' |translate }}
-																				</div>
-																				<div class="col-auto"><input type='text'
-																						[ngModel]="displayToDate"
-																						(click)="selectToDate()"
-																						readonly /></div>
-
+																				<div class="col-1">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtTo' |translate }}</div>
+																				<div class="col-auto"><input type='text'  [ngModel]="displayToDate"
+																						(click)="selectToDate()" readonly /></div>
+	
 																			</div>
 																			<div class="row">
 																				<div class="col-3"></div>
-																				<div class="col-9"><button
-																						class="custom-go-btn mt-3"
-																						(click)="customDateScanSummary()"
-																						vtrMetrics
-																						metricsItem="smartPerformance.customScanSummary"
-																						metricsEvent="FeatureClick"
-																						metricsParent="pages.support.smartPerformance">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtGo' |translate }}</button>
+																				<div class="col-9"><button class="custom-go-btn mt-3" (click)="customDateScanSummary()">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtGo' |translate }}</button>
 																				</div>
 																			</div>
 																		</div>
-																	</div>
-																	<div class="col date-picker">
-																		<ngb-datepicker *ngIf="isFromDate" [(ngModel)]="selectedfromDate" [maxDate]="maxDate"
-																			(select)="onDateSelected()"></ngb-datepicker>
-																		<ngb-datepicker *ngIf="!isFromDate" [(ngModel)]="selectedTodate" [maxDate]="maxDate"
-																			(select)="onDateSelected()"></ngb-datepicker>
+																		<div class="col date-picker">
+																			<ngb-datepicker *ngIf="isFromDate" [(ngModel)]="selectedfromDate"
+																				(select)="onDateSelected()"></ngb-datepicker>
+																			<ngb-datepicker *ngIf="!isFromDate" [(ngModel)]="selectedTodate"
+																				(select)="onDateSelected()"></ngb-datepicker>
+																		</div>
 																	</div>
 																</div>
 															</div>
@@ -244,37 +291,44 @@
 
 												</div>
 												<div class="row my-5 d-flex justify-content-between px-0">
-													<div class="tune">
+													<div *ngIf="isLoading">
+														<div class="container" [style.height.px]="40">
+															<div class="loader center-block">
+																<div class="spinner-border text-secondary progress-spinner" role="status"></div>
+															</div>
+														</div>
+													</div>
+													<div *ngIf="!isLoading" class="tune">
 														<div class="d-flex">
 															<div class="w-100">
 																<div class="box-title d-flex  justify-content-between">
 																	<h5>{{'smartPerformance.tunePCPerformance.summaryTitle' |translate }}</h5>
 																	<div class="icon icon-performance"></div>
-																</div>																
+																</div>	
 																<div class="value d-flex justify-content-center">
-																	{{historyRes.Tunecount || 0}} <span>{{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' |translate }}</span>
+																	{{historyRes.tuneCount || 0}} <span>{{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' |translate }}</span>
 																</div>
-																<p class="w-100 text-center">{{formatMemorySize(historyRes.Tunesize)}} <span class="mr-1">{{sizeExtension}}</span> {{'smartPerformance.subscriberScanHomePage.scanSummary.summaryCaption' |translate }}
+																<p class="w-100 text-center">{{formatMemorySize(historyRes.tuneSize)}} <span class="mr-1">{{sizeExtension}}</span> {{'smartPerformance.subscriberScanHomePage.scanSummary.summaryCaption' |translate }}
 																</p>
 															</div>
 															
 														</div>
 													</div>
-													<div class="boost">
+													<div *ngIf="!isLoading" class="boost">
 														<div class="d-flex">
 															<div class="w-100">
 																<div class="box-title d-flex  justify-content-between">
 																	<h5>{{'smartPerformance.boostInternetPerformance.summaryTitle' |translate }}</h5>
 																	<div class="icon icon-internet-performance"></div>
 																</div>
-																<div class="value d-flex justify-content-center">{{historyRes.Boostcount || 0}} <span>{{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' |translate }}</span></div>
-																<p class="w-100 text-center">{{formatMemorySize(historyRes.Boostsize)}}  <span class="mr-1">{{sizeExtension}}</span> {{'smartPerformance.subscriberScanHomePage.scanSummary.summaryCaption' |translate }}
+																<div class="value d-flex justify-content-center">{{historyRes.boostCount || 0}} <span>{{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' |translate }}</span></div>
+																<p class="w-100 text-center">{{formatMemorySize(historyRes.boostSize)}}  <span class="mr-1">{{sizeExtension}}</span> {{'smartPerformance.subscriberScanHomePage.scanSummary.summaryCaption' |translate }}
 																</p>
 															</div>
 															
 														</div>
 													</div>
-													<div class="secure">
+													<div *ngIf="!isLoading" class="secure">
 														<div class="d-flex">
 															<div class="w-100">
 																<div class="box-title d-flex  justify-content-between">
@@ -289,6 +343,16 @@
 														</div>
 													</div>
 												</div>
+											</div>
+											
+										</div>
+									</div>
+								</div>
+
+								<div class="vtr-device-information">
+									<div class="vtr-ui-smart-performance-scan-summary">
+										<div class="vtr-scan-information mt-5">
+											<div class="scan-summary-block">
 												<div class="row px-0">
 													<div class="title-block">
 														<h3>{{'smartPerformance.subscriberScanHomePage.lastScanResults.title' |translate }}
@@ -346,7 +410,7 @@
 																							</div>
 																						</div>
 																					</div>
-																					<div class="col-1" *ngIf="item.status === 'S'">
+																					<div class="col-2" *ngIf="item.status === 'S'">
 																						<div class="icon-times">
 																							<div class="icon-bkg">
 																								<fa-icon
@@ -386,7 +450,7 @@
 																								</fa-icon>
 																							</div>
 																						</div>
-
+		
 																						<div class="row pl-0 pr-0">
 																							<div class="col-1">&nbsp;</div>
 																							<div class="scan-items col-7">
@@ -443,7 +507,6 @@
 																							</div>
 																						</div>
 																					</div>
-
 																				</div>
 																			</div>
 																		</li>
@@ -459,7 +522,6 @@
 								</div>
 							</div>
 						</div>
-
 					</div>
 				</div>
 			</div>

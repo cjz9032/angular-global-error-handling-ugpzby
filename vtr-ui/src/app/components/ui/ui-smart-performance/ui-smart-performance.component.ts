@@ -11,6 +11,7 @@ import { EventTypes } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { EMPTY } from 'rxjs';
 import { JsonPipe } from '@angular/common';
+import { ModalSmartPerformanceFeedbackComponent } from '../../modal/modal-smart-performance-feedback/modal-smart-performance-feedback.component';
 @Component({
 	selector: 'vtr-ui-smart-performance',
 	templateUrl: './ui-smart-performance.component.html',
@@ -22,6 +23,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 	backarrow = '< ';
 	isScanning = false;
 	isScanningCompleted = false;
+	showSubscribersummary = false;
 	public hasSubscribedScanCompleted = false;
 	subItems = [];
 	currentSubItemCategory: any = {};
@@ -37,7 +39,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 	isScheduleScan = false;
 	IsSmartPerformanceFirstRun: any;
 	IsScheduleScanEnabled: any;
-	
+
 	days: any = [
 		'Sunday',
 		'Monday',
@@ -61,7 +63,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 	ngOnInit() {
 		this.isSubscribed = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartPerformanceSubscribed);
 		if (this.isSubscribed === undefined) {
-			
+
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceSubscribed, false);
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled, true);
@@ -90,7 +92,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 						this.isScanning = false;
 					}
 				})
-				.catch(error => { 
+				.catch(error => {
 					this.logger.error('this.smartPerformanceService.getReadiness()', error);
 				});
 		}
@@ -114,7 +116,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 			const res: any = await this.smartPerformanceService.setScanSchedule(
 				payload
 			);
-			
+
 		} catch (err) {
 			this.logger.error('ui-smart-performance.scheduleScan.then', err);
 		}
@@ -177,7 +179,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 						this.scanAndFixInformation();
 						this.isScanning = true;
 						this.showWarning.emit(true);
-						// Subscriber Scan Completed 
+						// Subscriber Scan Completed
 						if(this.isSubscribed) {
 							this.hasSubscribedScanCompleted = true;
 						}
@@ -223,6 +225,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 				);
 				res = await this.smartPerformanceService.getScheduleScanStatus();
 				if (res && res.scanstatus != 'Idle') {
+					this.showSubscribersummary=true;
 					this.isScanningCompleted = true;
 					this.isScanning = false;
 					this.rating = res.rating;
@@ -263,20 +266,23 @@ export class UiSmartPerformanceComponent implements OnInit {
 						this.hasSubscribedScanCompleted = true;
 					}
 
-					let spForceClose = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartPerformanceForceClose);
-					if(spForceClose) {
-						this.isScanningCompleted = false;
-						this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceForceClose, false);
-					}
-					else {
-						this.isScanningCompleted = true;
-					}
 					this.isScanning = false;
 					this.rating = res.rating;
 					this.tune = res.result.tune;
 					this.boost = res.result.boost;
 					this.secure = res.result.secure;
 					this.logger.info('changeScanStatus', this.isScanningCompleted + '>>>' + this.isScanning);
+
+					let spForceClose = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartPerformanceForceClose);
+					if(spForceClose) {
+						this.isScanningCompleted = false;
+						this.showSubscribersummary = false;
+						this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceForceClose, false);
+					}
+					else {
+						this.isScanningCompleted = true;
+						this.showSubscribersummary=true;
+					}
 				}
 			} catch (error) {
 				this.logger.error(
@@ -314,22 +320,41 @@ export class UiSmartPerformanceComponent implements OnInit {
 	cancelScan() {
 		this.isScanning = false;
 		this.isScanningCompleted = false;
+		this.showSubscribersummary=false;
 	}
-	
+
 	async unregisterScheduleScan(scantype) {
-		
+
 		const payload = {
 			scantype
 		};
 		this.logger.info('ui-smart-performance.unregisterScheduleScan', JSON.stringify(payload));
 		try {
-			const res: any = await this.smartPerformanceService.unregisterScanSchedule(payload);		
+			const res: any = await this.smartPerformanceService.unregisterScanSchedule(payload);
 			this.logger.info('ui-smart-performance.unregisterScheduleScan.then', JSON.stringify(res));
 		} catch (err) {
 			this.logger.error('ui-smart-performance.unregisterScheduleScan.then', err);
 		}
 	}
-	
-	
+
+	onclickFeedback() {
+		this.modalService.open(ModalSmartPerformanceFeedbackComponent, {
+			backdrop: 'static',
+			size: 'lg',
+			keyboard: false,
+			centered: true,
+			windowClass: 'smart-performance-feedback-Modal'
+		}).result.then(
+			result => {
+				if (result === 'enable') {
+					// this.toggleOnOff.emit($event);
+				} else if (result === 'close') {
+					// this.isSwitchChecked = !this.isSwitchChecked;
+				}
+			},
+			reason => {
+			}
+		);
+	}
 
 }

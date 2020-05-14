@@ -1475,20 +1475,20 @@
                 }
             },
             "audio": {
-				"title": "Звук",
-				"subtitle": "Настройки звуку",
-				"description": "Цей розділ дає змогу автоматично оптимізувати або повністю налаштувати звук вручну, наприклад настройки системи Dolby, роботу мікрофона тощо.",
-				"audioSmartsettings": {
+                "title": "Звук",
+                "subtitle": "Настройки звуку",
+                "description": "Цей розділ дає змогу автоматично оптимізувати або повністю налаштувати звук вручну, наприклад настройки системи Dolby, роботу мікрофона тощо.",
+                "audioSmartsettings": {
                     "title": "Інтелектуальні настройки звуку",
                     "dolby": {
                         "title": "Звукова система Dolby",
                         "description": "Виберіть потрібний режим із наведених нижче. Ви також можете встановити прапорець \"Автоматично оптимізувати звук для:\". Якщо встановити його, звукова система Dolby автоматично підбиратиме найкращий звуковий ефект для вас залежно від режиму.",
                         "options": {
                             "dynamic": "Динамічний",
-							"movie": "Кіно",
-							"music": "Музика",
-							"games": "Гра",
-							"voip": "Голос"
+                            "movie": "Кіно",
+                            "music": "Музика",
+                            "games": "Гра",
+                            "voip": "Голос"
                         },
                         "automaticAudioMode": {
                             "voIPMode": {
@@ -2107,7 +2107,7 @@
                 "heading": "Інтелектуальне зчитування",
                 "title": "Інтелектуальна тривога за виявлення рухів",
                 "tooltip": "<div>Ця функція не працює, коли комп'ютер перебуває в режимі глибокого сну або вимкнений. Перевірте настройки таких дій:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>дії закриття кришки;</li><li>дія критично низького/низького заряду акумулятора;</li><li>дія кнопки живлення;</li><li>дія кнопки сну;</li><li>настройки часу без активності до переходу в режим сну.</li></ul></div>В іншому випадку сигнал тривоги не спрацює, крім того, не буде зроблено фото.</div>",
-                "desc": "<p><label>Якщо ввімкнути цю функцію, пристрій подаватиме сигнал в разі виявлення рухів перед заблокованим екраном, особливо в громадських місцях.</label></p> <p><label>Щоб вимкнути сигнал, введіть правильний пароль або увійдіть через Windows Hello.</label></p>",
+                "desc": "<p><label>Якщо ввімкнути цю функцію, пристрій подаватиме сигнал в разі виявлення рухів перед заблокованим екраном, особливо в громадських місцях.</label></p> <p><label>Щоб відключити сигнал, увійдіть у Windows.</label></p>",
                 "note": {
                     "description": "Після успішного входу в систему цю функцію буде автоматично вимкнуто. Для подальшого використання її доведеться ввімкнути."
                 },
@@ -2133,7 +2133,7 @@
                     "linkText": "Перейдіть до настройок Windows, щоб надати доступ"
                 },
                 "photo": {
-                    "title": "КІЛЬКІСТЬ ФОТОГРАФІЙ ПІД ЧАС РУХУ",
+                    "title": "КІЛЬКІСТЬ ЗРОБЛЕНИХ ФОТОГРАФІЙ",
                     "tooltip": "Камера на вашому комп'ютері автоматично робить знімки, коли виявляє рух. Фотографії робляться кожні 2 секунди та зберігаються в локальному сховищі.",
                     "option1": 5,
                     "option2": 10,
@@ -3128,7 +3128,15 @@
         "warningMessage": "Зауважте: тести буде скасовано, якщо система перейде до режиму сну або глибокого сну",
         "refreshMessage": "Оновлення може зайняти деякий час – потрібно знову завантажити всі компоненти",
         "processFinishedCannotBeCanceled": "Активний процес завершився, тому його вже не потрібно скасовувати.",
-        "cancelMayTakeSomeTime": "Зачекайте – скасування може зайняти деякий час (залежно від вашої системи)."
+        "cancelMayTakeSomeTime": "Зачекайте – скасування може зайняти деякий час (залежно від вашої системи).",
+        "scanFailureModal": {
+            "title": "Hardware Problem Detected",
+            "problemDetected": "There were detected problems on the following components on your computer:",
+            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
+            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
+            "supportButtonText": "Open Ticket",
+            "recoverBadSectorsButtonText": "Recover Bad Sectors"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3248,7 +3256,11 @@
             "status": "Status",
             "activeStatus": "ACTIVE",
             "inactiveStatus": "INACTIVE",
-            "manageSubscription": "MANAGE SUBSCRIPTION"
+            "manageSubscription": "MANAGE SUBSCRIPTION",
+            "titlebeta": "Lenovo Beta Program",
+            "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
+            "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
+            "descriptionbeta1": "You are welcomed to join and try the full feature."
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3271,7 +3283,8 @@
             "thu": "Thursday",
             "fri": "Friday",
             "sat": "Saturday",
-            "sun": "Sunday"
+            "sun": "Sunday",
+            "scanToolTip": "Enable this toggle can setup a automatic event to trigger system Performance scan on your selected time and date."
         },
         "scanningPage": {
             "title": "Performance & security check",
@@ -3439,7 +3452,8 @@
                 "yearlyPricing": "$19.99 / Yr",
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
-                "signupButton": "SIGN UP"
+                "signupButton": "SIGN UP",
+                "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
             },
             "tune": "{{tune}} ISSUES",
             "boost": "{{boost}} ISSUES",

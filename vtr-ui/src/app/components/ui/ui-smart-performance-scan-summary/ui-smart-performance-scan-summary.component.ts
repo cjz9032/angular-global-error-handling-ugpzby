@@ -20,6 +20,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	public sizeExtension: string;
+	public isLoading = false;
 	constructor(
 		private modalService: NgbModal,
 		private commonService: CommonService,
@@ -38,12 +39,13 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	public menuItems: any = [
 		{ itemName: 'Annual', itemKey: 'ANNUAL' },
 		{ itemName: 'Quarterly', itemKey: 'QUARTERLY' },
-		{ itemName: 'Half yearly', itemKey: 'HALFYEARLY' }
+		{ itemName: 'Custom', itemKey: 'CUSTOM' }
 	];
-	
+
 	leftAnimator: any;
 	@Input() isScanning = false;
 	@Input() isScanningCompleted = false;
+	@Input() inputIsScanningCompleted = false;
 	@Input() hasSubscribedScanCompleted = false;
 	@Input() tune = 0;
 	@Input() boost = 0;
@@ -53,6 +55,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	public toggleValue: number;
 	public currentYear: any;
 	public lastYear: any;
+	Data = [1,2,3]
 	historyRes: any = {};
 	historyScanResults = [];
 	public quarterlyMenu: any = [
@@ -263,7 +266,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		this.logger.info('ui-smart-performance-scan-summary.getNextScanRunTime', JSON.stringify(payload));
 		try {
 			const res: any = await this.smartPerformanceService.getNextScanRunTime(payload);
-			
+
 			if (res != undefined) {
 				this.getNextScanScheduleTime(res.nextruntime);
 			}
@@ -449,9 +452,19 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		this.isSubscribed = this.commonService.getLocalStorageValue(
 			LocalStorageKey.IsSmartPerformanceSubscribed
 		);
+		if(this.inputIsScanningCompleted)
+		{
+			this.inputIsScanningCompleted = false;
+		}
 	}
 	ScanNowSummary() {
 		this.backToScan.emit();
+	}
+	BackToSummary(){
+		if(this.inputIsScanningCompleted)
+		{
+			this.inputIsScanningCompleted = false;
+		}
 	}
 
 	// scan settings
@@ -559,6 +572,8 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	}
 
 	async getHistory(startDate, endDate) {
+		this.isLoading = true;
+
 		const payload = {
 			filterType: 'C',
 			startDate,
@@ -570,12 +585,13 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 			);
 			this.logger.info('History Response', res);
 			if (res) {
+				this.isLoading = false;
 				this.historyRes = {
-					Tunecount: res.Tunecount,
-					Boostcount: res.Boostcount,
-					Secure: res.Secure,
-					Tunesize: res.Tunesize,
-					Boostsize: res.Boostsize
+					tuneCount: res.Tunecount,
+					boostCount: res.Boostcount,
+					secure: res.Secure,
+					tuneSize: res.Tunesize,
+					boostSize: res.Boostsize
 				};
 				this.historyScanResults = res.lastscanresults || [];
 				this.getMostecentScanDateTime(this.historyScanResults[0].scanruntime);
@@ -598,13 +614,15 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		return parseFloat((mb / Math.pow(k, i)).toFixed(1));
 	}
 	changeNextScanDateValue() {
-        if (this.isSubscribed) {
+		//console.log("event emitted------------------------------",this.isSubscribed);
+		if (this.isSubscribed) {
 			this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix');
 		}
 		else {
 			this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScan');
 		}
-    } 
+
+	 }
 
 	public initContentLoad() {
 		this.scannigResultObj.tunePc = {

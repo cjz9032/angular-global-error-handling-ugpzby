@@ -5,6 +5,7 @@ import X2JS from 'x2js';
 import { DeviceService } from '../device/device.service';
 import { environment } from '../../../environments/environment';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { UserService } from '../user/user.service';
 
 declare var Windows;
 
@@ -98,6 +99,7 @@ export class LIDStarterHelper {
 		private commonService: CommonService,
 		private deviceService: DeviceService,
 		private vantageShellService: VantageShellService,
+		private userService: UserService
 	) {
 		// DUMMY
 		this.lid = vantageShellService.getLenovoId();
@@ -403,8 +405,22 @@ export class LIDStarterHelper {
 			userSettings.Settings = new Settings();
 		}
 
+		const isLenovoIdSupported = this.userService.isLenovoIdSupported();
+		const isLenovoIDFeatureEnabled = userSettings.Settings.IsLenovoIDFeatureEnabled.toLowerCase() === 'true';
+		if (isLenovoIDFeatureEnabled !== isLenovoIdSupported) {
+			userSettings.Settings.IsLenovoIDFeatureEnabled = isLenovoIdSupported ? 'True' : 'False';
+			needUpdate = true;
+		}
+
 		if (!userSettings.Settings.Behaviors) {
 			userSettings.Settings.Behaviors = {};
+		}
+
+		if (!payload) {
+			payload = new UserSettingsPayload();
+			payload.staterAccount = this.commonService.getLocalStorageValue(LocalStorageKey.LidStarterAccount);
+			payload.lastSignIndate = this.commonService.getLocalStorageValue(LocalStorageKey.LidFirstSignInDate);
+			needUpdate = true;
 		}
 
 		if (payload.staterAccount
@@ -417,6 +433,11 @@ export class LIDStarterHelper {
 			&& userSettings.Settings.Behaviors.DateFirstSignin !== payload.lastSignIndate) {
 			needUpdate = true;
 			userSettings.Settings.Behaviors.DateFirstSignin = payload.lastSignIndate;
+		}
+
+		const xmlFileExist = await this.isSettingsXmlFileExist();
+		if (!xmlFileExist && !isLenovoIdSupported) {
+			needUpdate = false;
 		}
 
 		if (!needUpdate) {
@@ -435,6 +456,19 @@ export class LIDStarterHelper {
 	json2xml(jsObj: object) {
 		const x2js = new X2JS();
 		return x2js.js2xml(jsObj);
+	}
+
+	async isSettingsXmlFileExist() {
+		let fileObj;
+		try {
+			fileObj = await Windows.Storage.ApplicationData.current.localFolder.getFileAsync(LIDUserSettingsXml);
+			if (fileObj === null) {
+				return false;
+			}
+		} catch (ex) {
+			return false;
+		}
+		return true;
 	}
 
 	async readXmlFile(fileName: String) {

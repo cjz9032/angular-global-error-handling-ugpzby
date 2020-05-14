@@ -11,6 +11,7 @@ import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { GuardService } from '../../../services/guard/guardService.service';
 import { Subscription } from 'rxjs/internal/Subscription';
+import { FeatureIntroduction } from '../../ui/ui-feature-introduction/ui-feature-introduction.component';
 
 @Component({
 	selector: 'vtr-page-security-password',
@@ -27,6 +28,7 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 	dashlaneArticleCategory: string;
 	isOnline = true;
 	notificationSubscription: Subscription;
+	featureIntroduction: FeatureIntroduction;
 
 	constructor(
 		private commonService: CommonService,
@@ -44,16 +46,28 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 			title: 'security.passwordManager.statusTitle',
 			status: 'loading'
 		};
+		this.featureIntroduction = {
+			featureTitle: '',
+			featureTitleDesc: '',
+			imgSrc: 'assets/images/Dashlane-no-left-img.png',
+			imgAlt: '',
+			featureSubtitle: '',
+			featureIntroList: []
+
+		};
 		const cacheStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityPasswordManagerStatus);
 		if (cacheStatus) {
 			this.statusItem.status = cacheStatus;
+			this.getFeatureIntro(this.statusItem.status);
 		}
 		if (this.passwordManager && this.passwordManager.status) {
 			this.statusItem.status = this.passwordManager.status;
+			this.getFeatureIntro(this.statusItem.status);
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityPasswordManagerStatus, this.statusItem.status);
 		}
 		this.passwordManager.on(EventTypes.pmStatusEvent, (status: string) => {
 			this.statusItem.status = status;
+			this.getFeatureIntro(this.statusItem.status);
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityPasswordManagerStatus, this.statusItem.status);
 		});
 		this.fetchCMSArticles();
@@ -141,6 +155,49 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 				default:
 					break;
 			}
+		}
+	}
+
+	private getFeatureIntro(status: string) {
+		if (status === 'installed') {
+			this.featureIntroduction.featureTitle = 'security.passwordManager.getStarted';
+			this.featureIntroduction.featureTitleDesc = 'security.passwordManager.checkOutThisGuide';
+			this.featureIntroduction.descHasLink = true;
+			this.featureIntroduction.featureSubtitle = 'security.passwordManager.allowsYou';
+			this.featureIntroduction.featureIntroList = [
+				{
+					iconName: 'check',
+					detail: 'security.passwordManager.allowsYou1'
+				}, {
+					iconName: 'check',
+					detail: 'security.passwordManager.allowsYou2'
+				}, {
+					iconName: 'check',
+					detail: 'security.passwordManager.allowsYou3'
+				}, {
+					iconName: 'check',
+					detail: 'security.passwordManager.allowsYou4'
+				}
+			];
+		} else if (status === 'not-installed' || status === 'installing') {
+			this.featureIntroduction.featureTitle = 'security.passwordManager.neverForget';
+			this.featureIntroduction.featureTitleDesc = 'security.passwordManager.whatIsDashLane';
+			this.featureIntroduction.featureSubtitle = 'security.passwordManager.helpYou';
+			this.featureIntroduction.featureIntroList = [
+				{
+					iconName: 'check',
+					detail: 'security.passwordManager.helpYou1'
+				}, {
+					iconName: 'check',
+					detail: 'security.passwordManager.helpYou2'
+				}, {
+					iconName: 'check',
+					detail: 'security.passwordManager.helpYou3'
+				}, {
+					iconName: 'check',
+					detail: 'security.passwordManager.helpYou4'
+				}
+			];
 		}
 	}
 }

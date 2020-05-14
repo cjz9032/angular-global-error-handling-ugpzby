@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.42](https://bitbucket.tc.lenovo.com///compare/v1.5.41...v1.5.42) (2020-05-14)
+
+
+### Bug Fixes
+
+* **protocol:** Optimize code ([266c92e](https://bitbucket.tc.lenovo.com///commit/266c92ec44377ff2b3dc2772012240436af58a5c))
+* **protocol:** The Protocol of Dashboard cannot Work(consumer) ([b4221e9](https://bitbucket.tc.lenovo.com///commit/b4221e9b7343a9bf1938b8afaf527d75d2905dbd))
+
+### [1.5.41](https://bitbucket.tc.lenovo.com///compare/v1.5.40...v1.5.41) (2020-05-14)
+
+
+### Bug Fixes
+
+* **protocol:** protocol support lowcase ([0b67346](https://bitbucket.tc.lenovo.com///commit/0b67346ad519bbdb68b97cd96d060972ae3e1d67))
+
 ### [1.5.40](https://bitbucket.tc.lenovo.com///compare/v1.5.39...v1.5.40) (2020-05-13)
 
 ### [1.5.39](https://bitbucket.tc.lenovo.com///compare/v1.5.38...v1.5.39) (2020-05-12)

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ModalEticketComponent } from './modal-eticket.component';
+import { UiFeatureHeadingComponent } from './ui-feature-heading.component';
 
-xdescribe('ModalEticketComponent', () => {
-  let component: ModalEticketComponent;
-  let fixture: ComponentFixture<ModalEticketComponent>;
+describe('UiFeatureHeadingComponent', () => {
+  let component: UiFeatureHeadingComponent;
+  let fixture: ComponentFixture<UiFeatureHeadingComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ModalEticketComponent ]
+      declarations: [ UiFeatureHeadingComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ModalEticketComponent);
+    fixture = TestBed.createComponent(UiFeatureHeadingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1163,7 +1163,7 @@
                             "less": "أقل",
                             "moreContent": {
                                 "desc1": "a. في المكتب ، أو أثناء تحديث Windows ، أو مشاهدة الأفلام عبر الإنترنت، أو سيناريوهات تحميل ضوء النظام، يمكن أن يكون النظام هادئًا. بينما في سيناريوهات الألعاب العادية ، يكون له أداء أفضل.",
-                                "desc2": "b. ب. عند ممارسة الألعاب الثقيلة، قد ينتقل النظام على الأرجح إلى وضع \"الأداء الفائق\". وفي هذه الحالة، قد تزداد درجة الحرارة على سطح الكمبيوتر وقد يزداد ضجيج المروحة.",       
+                                "desc2": "b. ب. عند ممارسة الألعاب الثقيلة، قد ينتقل النظام على الأرجح إلى وضع \"الأداء الفائق\". وفي هذه الحالة، قد تزداد درجة الحرارة على سطح الكمبيوتر وقد يزداد ضجيج المروحة.",
                                 "desc3": "c. عندما تكون سعة البطارية أقل من 30%، يتحول النظام تلقائيًا إلى وضع \"توفير البطارية\"."
                             }
                         }
@@ -1477,20 +1477,20 @@
                 }
             },
             "audio": {
-				"title": "صوت",
-				"subtitle": "إعدادات الصوت",
-				"description": "يمكّنك هذا القسم من تحسين إعدادات الصوت تلقائيًا أو تكوينها بشكل كامل يدويًا، مثل إعدادات Dolby أو الميكروفون وغير ذلك.",
-				"audioSmartsettings": {
+                "title": "صوت",
+                "subtitle": "إعدادات الصوت",
+                "description": "يمكّنك هذا القسم من تحسين إعدادات الصوت تلقائيًا أو تكوينها بشكل كامل يدويًا، مثل إعدادات Dolby أو الميكروفون وغير ذلك.",
+                "audioSmartsettings": {
                     "title": "إعدادات الصوت الذكية",
                     "dolby": {
                         "title": "صوت Dolby",
                         "description": "حدد الوضع كما تريد من التالي. يمكنك أيضًا تحديد خانة الاختيار \"تحسين الصوت تلقائيًا لـ ...\". عند تحديد هذا الخيار، يلتقط صوت Dolby تلقائيًا التأثير الصوتي الأفضل لك استنادًا إلى الأوضاع المختلفة التي تستخدمها.",
                         "options": {
                             "dynamic": "ديناميكي",
-							"movie": "الفيلم",
-							"music": "الموسيقى",
-							"games": "اللعبة",
-							"voip": "الصوت"
+                            "movie": "الفيلم",
+                            "music": "الموسيقى",
+                            "games": "اللعبة",
+                            "voip": "الصوت"
                         },
                         "automaticAudioMode": {
                             "voIPMode": {
@@ -2109,7 +2109,7 @@
                 "heading": "الاستشعار الذكي",
                 "title": "تنبيه الحركة الذكية",
                 "tooltip": "<div>لا تعمل هذه الميزة عندما يكون الكمبيوتر في وضع الإسبات أو غير موصول بالطاقة. تحقق من الإعدادات في الإجراءات التالية:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>إجراءات إغلاق الغطاء</li><li>إجراء بطارية حرجة/منخفضة الشحنة</li><li>إجراء زر الطاقة</li><li>إجراء زر السكون</li><li>إعدادات مهلة الخمول للإسبات</li></ul></div>بخلاف ذلك، لن تشغل المنبه، كما أنها لن تلتقط الصور.</div>",
-                "desc": "<p><label>عند تمكين هذه الميزة، سيبدأ الجهاز بإصدار صوت طنين عندما تكون الشاشة مقفلة ويتم اكتشاف الحركات خاصة في مكان عام.</label></p> <p><label>لاستبعاد التنبيه، أدخل كلمة المرور الصحيحة أو قم بتسجيل الدخول بواسطة Windows Hello.</label></p>",
+                "desc": "<p><label>عند تمكين هذه الميزة، سيبدأ الجهاز بإصدار صوت طنين عندما تكون الشاشة مقفلة ويتم اكتشاف الحركات خاصة في مكان عام.</label></p> <p><label>لرفض التنبيه، يرجى تسجيل الدخول إلى Windows.</label></p>",
                 "note": {
                     "description": "بمجرد تسجيل الدخول إلى النظام بنجاح، سيتم إيقاف تشغيل هذه الميزة تلقائيًا. يجب تمكينه مرة أخرى لاستخدامه."
                 },
@@ -2123,7 +2123,7 @@
                 },
                 "allowCamera": {
                     "title": "التقاط الصور",
-                    "describe": "عند تمكين هذه الميزة، تلتقط الكاميرا الصور تلقائيًا عند اكتشاف أي حركة إذا كانت الشاشة مقفلة. تتم معالجة هذه البيانات محليًا على جهازك. Lenovo لا يمكنها الوصول إليها أو استخدامها.",
+                    "describe": "عند تمكين هذه الميزة، تلتقط الكاميرا الصور تلقائيًا عند اكتشاف الحركات إذا كانت شاشتك مقفلة. تتم معالجة هذه البيانات محليًا على جهازك. Lenovo لا يمكنها الوصول إليها أو استخدامها.",
                     "checkBoxText": "قم بتمكين هذه الميزة"
                 },
                 "cameraPrivacy": {
@@ -2135,7 +2135,7 @@
                     "linkText": "انتقل إلى إعدادات Windows لمنح الوصول"
                 },
                 "photo": {
-                    "title": "عدد الصور التي تم التقاطها أثناء الحركة",
+                    "title": "عدد الصور الملتقطة",
                     "tooltip": "يتم تنشيط الكاميرا الموجودة على الكمبيوتر تلقائيًا لالتقاط الصور عند اكتشاف حركات. يتم التقاط الصور كل ثانيتين ويتم حفظها في وحدة التخزين المحلية.",
                     "option1": 5,
                     "option2": 10,
@@ -3130,7 +3130,15 @@
         "warningMessage": "يُرجى العلم أن الاختبارات سوف تُلغى إذا دخل النظام في وضع السكون أو الإسبات",
         "refreshMessage": "قد يستغرق التحديث بعض الوقت لأنه يحتاج إلى تحميل جميع المكونات مرةً أخرى",
         "processFinishedCannotBeCanceled": "لا داعي لإلغاء العملية قيد التشغيل بعد الآن، حيث إنها قد اكتملت.",
-        "cancelMayTakeSomeTime": "يرجى الانتظار، قد يستغرق الأمر بعض الوقت للإلغاء حسب نظامك."
+        "cancelMayTakeSomeTime": "يرجى الانتظار، قد يستغرق الأمر بعض الوقت للإلغاء حسب نظامك.",
+        "scanFailureModal": {
+            "title": "Hardware Problem Detected",
+            "problemDetected": "There were detected problems on the following components on your computer:",
+            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
+            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
+            "supportButtonText": "Open Ticket",
+            "recoverBadSectorsButtonText": "Recover Bad Sectors"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3250,7 +3258,11 @@
             "status": "Status",
             "activeStatus": "ACTIVE",
             "inactiveStatus": "INACTIVE",
-            "manageSubscription": "MANAGE SUBSCRIPTION"
+            "manageSubscription": "MANAGE SUBSCRIPTION",
+            "titlebeta": "Lenovo Beta Program",
+            "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
+            "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
+            "descriptionbeta1": "You are welcomed to join and try the full feature."
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3273,7 +3285,8 @@
             "thu": "Thursday",
             "fri": "Friday",
             "sat": "Saturday",
-            "sun": "Sunday"
+            "sun": "Sunday",
+            "scanToolTip": "Enable this toggle can setup a automatic event to trigger system Performance scan on your selected time and date."
         },
         "scanningPage": {
             "title": "Performance & security check",
@@ -3441,7 +3454,8 @@
                 "yearlyPricing": "$19.99 / Yr",
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
-                "signupButton": "SIGN UP"
+                "signupButton": "SIGN UP",
+                "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
             },
             "tune": "{{tune}} ISSUES",
             "boost": "{{boost}} ISSUES",

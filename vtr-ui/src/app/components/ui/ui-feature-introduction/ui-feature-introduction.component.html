@@ -1,0 +1,51 @@
+<div class="vtr-ui-feature-introduction">
+	<div class="row">
+		<div class="row">
+			<div class="col col-12 col-sm-12 mt-40">
+				<p class="title" [innerHTML]="items.featureTitle | translate"></p>
+				<p *ngIf="items.featureTitleDesc && !items.descHasLink" class="text-regular" [innerHTML]="items.featureTitleDesc | translate"></p>
+				<div *ngIf="items.descHasLink">
+					<p *vtrTranslate="items.featureTitleDesc | translate" class="text-regular">
+						<ng-content></ng-content>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="row w-100">
+			<div class="col-12 col-xl-6 order-xl-1 mt-40 p-0">
+				<div class="col mt-4">
+					<img class="feature-logo" alt="{{items.imgAlt}}"
+						[src]="items.imgSrc | svgInline | async" />
+				</div>
+			</div>
+			<div class="col-12 col-xl-6 order-xl-2 mt-40">
+				<div class="col">
+					<div class="list-heading">
+						<p class="adjust-left" [innerHTML]="items.featureSubtitle | translate"></p>
+					</div>
+					<ul class="bullet-list" *ngIf="items.featureIntroList">
+						<li class="good" *ngFor="let item of items.featureIntroList">
+							<div class="container-fluid">
+								<div class="row align-items-center">
+									<div class="col-auto pl-0">
+										<div *ngIf="item.iconName" class="bullet-icon">
+											<div class="icon-bkg">
+												<fa-icon [icon]="['fal', item.iconName]"></fa-icon>
+											</div>
+										</div>
+										<div *ngIf="item.mark">
+											<span class="serial mr-2" [innerHTML]="item.mark"></span>
+										</div>
+									</div>
+									<div class="col">
+										<div class="text-regular" [innerHTML]="item.detail | translate"></div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
