@@ -6,7 +6,7 @@ import {
 	AfterViewInit
 } from '@angular/core';
 import {
-	EventTypes, ConnectedHomeSecurity, PluginMissingError, CHSAccountState, WifiSecurity, DevicePosture
+	EventTypes, ConnectedHomeSecurity, PluginMissingError, CHSAccountState, WifiSecurity, DevicePosture, CHSDeviceOverview
 } from '@lenovo/tan-client-bridge';
 import {
 	HomeSecurityAccount
@@ -48,7 +48,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 	permission: any;
 	welcomeModel: HomeSecurityWelcome;
 	allDevicesInfo: HomeSecurityAllDevice;
-	allDevicesInfoNew: HomeSecurityAllDevice;
+	preDeviceOverview: CHSDeviceOverview;
 	homeSecurityDevicePosture: HomeSecurityDevicePosture;
 	locationPermission: DeviceLocationPermission;
 	account: HomeSecurityAccount;
@@ -92,29 +92,22 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			}
 		}
 		if (chs.deviceOverview) {
-			this.allDevicesInfoNew = new HomeSecurityAllDevice(this.translateService, this.chs.deviceOverview);
-			if(!this.allDeviceInfoEqual(this.allDevicesInfo, this.allDevicesInfoNew))
+			if (this.deviceOverviewHasChanged(this.preDeviceOverview, chs.deviceOverview)) {
 				this.allDevicesInfo = new HomeSecurityAllDevice(this.translateService, this.chs.deviceOverview);
+				this.preDeviceOverview = Object.assign({}, this.chs.deviceOverview)
+			}
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAllDevices, this.allDevicesInfo);
 		}
 	};
 
-	allDeviceInfoEqual(adInfo: HomeSecurityAllDevice, adInfoNew: HomeSecurityAllDevice): boolean{
-		const allDevicesItem = adInfo.allDevicesItem;
-		const allDevicesItemNew = adInfoNew.allDevicesItem;
-		let equal = true;
-		if(allDevicesItem.length !== allDevicesItemNew.length) return false;
-		allDevicesItemNew.forEach((deviceItem: any, index: any) => {
-			if(allDevicesItem[index]) {
-				if((deviceItem.type != allDevicesItem[index].type) || (deviceItem.count != allDevicesItem[index].count)) {
-					equal = false;
-				}
+	private deviceOverviewHasChanged(preDeviceOverview: CHSDeviceOverview, newDeviceOverview: CHSDeviceOverview) : boolean {
+		let hasChanged = false;
+		for (const key in preDeviceOverview) {
+			if (preDeviceOverview[key] != newDeviceOverview[key]) {
+				hasChanged = true;
 			}
-			else {
-				equal = false;
-			}
-		});
-		return equal;
+		}
+		return hasChanged;
 	}
 
 	wsPluginMissingEventHandler = () => {
@@ -198,6 +191,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			this.allDevicesInfo = cacheAllDevices;
 		}
 		if (this.chs && this.chs.deviceOverview) {
+			this.preDeviceOverview = Object.assign({}, this.chs.deviceOverview);
 			this.allDevicesInfo = new HomeSecurityAllDevice(this.translateService, this.chs.deviceOverview);
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAllDevices, this.allDevicesInfo);
 		}
