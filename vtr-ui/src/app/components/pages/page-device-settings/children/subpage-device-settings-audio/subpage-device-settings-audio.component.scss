@@ -52,12 +52,12 @@
 					margin-top: 2px;
 					cursor: pointer;
 					border: 0.1rem solid transparent;
-					&:hover {
-						color: $highlight;
-					}
-					&:focus {
-						@include outline-border-blue;
-					}
+					// &:hover {
+					// 	color: $highlight;
+					// }
+					// &:focus {
+					// 	@include outline-border-blue;
+					// }
 				}
 				::ng-deep .auto-set-checkbox {
 					float: left;

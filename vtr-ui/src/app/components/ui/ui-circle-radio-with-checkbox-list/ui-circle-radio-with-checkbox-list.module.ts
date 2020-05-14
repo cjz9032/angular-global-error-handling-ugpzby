@@ -10,7 +10,7 @@ import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontaweso
 import { CommonPipeModule } from 'src/app/modules/common/common-pipe.module';
 import { UiCircleRadioWithCheckBoxListComponent } from './ui-circle-radio-with-checkbox-list.component';
 import { faCircle } from '@fortawesome/free-solid-svg-icons/faCircle';
-import { faCheckCircle } from '@fortawesome/free-regular-svg-icons/faCheckCircle';
+import { faCheckCircle } from '@fortawesome/pro-light-svg-icons/faCheckCircle';
 
 @NgModule({
 	declarations: [
