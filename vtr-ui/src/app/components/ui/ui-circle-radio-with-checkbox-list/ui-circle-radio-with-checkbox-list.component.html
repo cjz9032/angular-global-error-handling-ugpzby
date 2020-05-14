@@ -31,7 +31,7 @@
 							[icon]="['far', 'check-circle']"></fa-icon>
 					</fa-layers>
 				</div>
-				<div class="text">
+				<div class="text" [class.text-disabled]="item.isDisabled">
 					{{item.processLabel ? (item.label | translate | capitalizeFirst) : item.label | translate}}
 				</div>
 			</div>

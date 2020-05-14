@@ -60,24 +60,6 @@
 						}
 					}
 
-					&[aria-checked="true"] {
-						background: $background;
-
-						.check-circle {
-							color: $main;
-						}
-
-						.icon-circle {
-							color: $light;
-						}
-						.icomoon {
-							font-size: 3rem;
-							&::before {
-								color: $light;
-							}
-						}
-					}
-
 					&:focus {
 						outline: 0;
 						.checkbox-custom-label::before {
@@ -126,8 +108,38 @@
 							}
 						}
 					}
+
+					&[aria-disabled="true"] {
+						border-color: $grey_lighter;
+						background: $grey_light;
+						pointer-events: none;
+
+						.icomoon {
+							&::before {
+								color: $shade_blue;
+								opacity: 0.6;
+							}
+						}
+					}
 				}
+
 				[role="radio"][aria-checked="true"] {
+					background: $background;
+
+					.check-circle {
+						color: $main;
+					}
+
+					.icon-circle {
+						color: $light;
+					}
+					.icomoon {
+						font-size: 3rem;
+						&::before {
+							color: $light;
+						}
+					}
+
 					&:hover {
 						background: $blue-light;
 						border-color: $blue-light;
@@ -163,6 +175,27 @@
 							}
 						}
 					}
+					&[aria-disabled="true"] {
+						border-color: $grey_light;
+						background: $grey_light;
+						pointer-events: none;
+
+						.check-circle {
+							color: $shade_blue;
+							opacity: 0.6;
+						}
+
+						.icon-circle {
+							color: $light;
+						}
+
+						.icomoon {
+							&::before {
+								color: $shade_blue;
+								opacity: 0.6;
+							}
+						}
+					}
 				}
 
 				.text {
@@ -170,6 +203,11 @@
 					font-size: $fontsize_xs;
 					color: $label-color;
 					padding-top: 0.5rem;
+				}
+
+				.text-disabled {
+					color: $shade_blue;
+					opacity: 0.6;
 				}
 			}
 		}
@@ -179,7 +217,7 @@
 @include theme(white-theme, $main, $light, $menu_hover);
 @include theme(blue-theme, $light, $main, $light);
 
-.vtr-ui-circle-radio-with-checkbox-list.white-theme {
+// .vtr-ui-circle-radio-with-checkbox-list.white-theme {
 	// .check-circle {
 	// 	color: $main;
 	// }
@@ -202,4 +240,4 @@
 	// 		}
 	// 	}
 	// }
-}
+// }
