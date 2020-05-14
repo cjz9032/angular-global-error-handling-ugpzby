@@ -1,0 +1,23 @@
+@import "../../../app.theme.scss";
+
+.vtr-ui-feature-heading {
+	.heading {
+		color: $shade_blue;
+		font-size: 2.4rem;
+		font-weight: $weight_600;
+	}
+
+	.feature-logo {
+		max-height: 3rem;
+		max-width: 12rem;
+	}
+
+	.text-regular {
+		font-size: 1.4rem;
+
+		a {
+			text-decoration: underline;
+		}
+	}
+
+}
