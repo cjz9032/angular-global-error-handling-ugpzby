@@ -5,18 +5,20 @@
 				<div class="row">
 					<div class="title">{{title}}</div>
 					<div class="title-question-mark">
-						<a	href="javascript:void();"
-							aria-label="recover-question-mark"
+
+						<!-- Ignoring the href property from narrator by using the role="img" atribute
+							and passing the tooltip information with the [attr.aria-label] -->
+						<a href="javascript:void();"
+							[attr.aria-label]="'recover-question-mark, witch reads: ' + description"
+							role="img"
 							tabindex="0"
 							triggers="click:blur"
 							[ngbTooltip]="tooltipRef"
 							tooltipClass="vtr-tooltip"
-							[ngClass]="'recover-question-icon'">
-							<fa-icon
-								placement="auto"
-								[icon]="['far', 'question-circle']"
-								container="vtr-root">
-							</fa-icon>
+							[ngClass]="'recover-question-icon'"
+							placement="left"
+							container="vtr-root">
+							<fa-icon [icon]="['far', 'question-circle']"></fa-icon>
 						</a>
 					</div>
 				</div>
