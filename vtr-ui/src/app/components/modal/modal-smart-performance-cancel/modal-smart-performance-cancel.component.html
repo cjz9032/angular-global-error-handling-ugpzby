@@ -12,7 +12,7 @@
 		<p>{{'smartPerformance.scanningPage.cancelScan.description' |translate }}</p>
 		<h5 *ngIf="promptMsg" class="mt-2">{{ 'hardwareScan.cancelTextPrompt' | translate }}</h5>
 		<hr>
-		<div class="vtr-battery-card" *ngIf="isLoading">
+		<div *ngIf="isLoading">
 			<div class="container" [style.height.px]="40">
 				<div class="loader center-block">
 					<div class="spinner-border text-secondary progress-spinner" role="status"></div>
@@ -20,14 +20,15 @@
 			</div>
 		</div>
 		<div class="row" *ngIf="!isLoading">
-			<button class="btn cancel-button" (click)="cancelScan()" vtrMetrics metricsEvent="ItemClick"
+			<vtr-button class="btn cancel-button" (click)="cancelScan()" vtrMetrics metricsEvent="ItemClick"
 				metricsParent="Pages.support.smartPerformance" metricsItem="'btn.cancelScan'"
-				class="btn btn-link cancel-button">{{'smartPerformance.scanningPage.cancelScan.yesButton' |translate }}</button>
+				class="btn btn-link cancel-button">{{'smartPerformance.scanningPage.cancelScan.yesButton' |translate }}
+				({{secondsCountdown}})</vtr-button>
 			<div class="py-5 ml-5">
 				<a (click)="closeModal()" class="resume-scan" vtrMetrics metricsEvent="ItemClick"
 					metricsParent="Pages.support.smartPerformance"
 					metricsItem="'btn.resumeScan'">{{'smartPerformance.scanningPage.cancelScan.noButton' |translate }}
-					({{secondsCountdown}})</a>
+					</a>
 			</div>
 		</div>
 	</div>

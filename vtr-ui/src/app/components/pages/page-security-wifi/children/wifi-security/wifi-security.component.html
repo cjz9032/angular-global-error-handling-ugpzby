@@ -1,28 +1,11 @@
 <div class="vtr-wifi-security mb-40">
 	<div class="container-fluid security-card">
-		<div class="row">
-			<div class="col">
-				<h2 class="heading">{{'security.wifisecurity.container.title' | translate}}</h2>
-			</div>
-			<div class="pull right">
-				<img *ngIf="!deviceService.isGaming"
-					class="coronet-logo"
-					[src]=" 'assets/images/coronet-logo.svg' | svgInline | async"
-					alt="coronet logo"/>
-				<img *ngIf="deviceService.isGaming"
-					class="coronet-logo"
-					[src]="'assets/images/coronet-logo-gaming.svg' | svgInline | async" />
-			</div>
-		</div>
-		<div class="row mb-20">
-			<div>
-				<div *ngIf="data.isLWSEnabled === false"
-					class="text-regular">{{ 'security.wifisecurity.container.disableDescribe' | translate }}</div>
-				<div *ngIf="data.isLWSEnabled"
-					class="text-regular">{{ 'security.wifisecurity.container.enabledDescribe' | translate }}</div>
-			</div>
-		</div>
-		<div class="row mb-20 no-gutters">
+		<vtr-ui-feature-heading
+			featureTitle="security.wifisecurity.container.title"
+			[description]="data.isLWSEnabled ? 'security.wifisecurity.container.enabledDescribe' : 'security.wifisecurity.container.disableDescribe'"
+			[imgAlt]="deviceService.isGaming ? '' : 'coronet logo'"
+			[imgSrc]="deviceService.isGaming ? 'assets/images/coronet-logo-gaming.svg' : 'assets/images/coronet-logo.svg'"></vtr-ui-feature-heading>
+		<div class="row mt-20 mb-20 no-gutters">
 			<div class="col-12">
 				<div class="wifi-security">
 					<div class="card"

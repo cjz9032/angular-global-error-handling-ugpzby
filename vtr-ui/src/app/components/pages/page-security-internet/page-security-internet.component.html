@@ -16,21 +16,12 @@
 		<div class="container-fluid p-0">
 			<div class="row security-card p-20">
 				<div class="container-fluid p-0">
-					<div class="row"
-						[vtrAppSearchScroller]="['search-internet-protection']">
-						<div class="col">
-							<div class="heading">{{'security.vpn.header' | translate}}</div>
-						</div>
-						<div class="pull right"><img class="surfeasy_logo_teal"
-								src="assets/images/SurfEasy-logo.png" /></div>
-					</div>
-					<div class="row mt-20">
-						<div class="col">
-							<div class="text-regular">
-								{{'security.vpn.whatIsSufEasy' | translate}}
-							</div>
-						</div>
-					</div>
+					<vtr-ui-feature-heading
+						appSearchName="search-internet-protection"
+						featureTitle="security.vpn.header"
+						description="security.vpn.whatIsSufEasy"
+						imgAlt="surfEasy logo"
+						imgSrc="assets/images/SurfEasy-logo.png"></vtr-ui-feature-heading>
 					<div class="row mt-20">
 						<div class="col get-app-code-box">
 							<vtr-ui-security-statusbar [statusList]="[statusItem]">
