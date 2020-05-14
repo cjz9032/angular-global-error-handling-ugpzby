@@ -325,7 +325,7 @@ describe("WidgetQuicksettingsListComponent", () => {
 		}));
 	});
 
-	describe("repidcharge", function () {
+	describe("rapidCharge", function () {
 		let powerServiceMock = {
 			getRapidChargeModeStatusIdeaNoteBook() {
 				return new Promise( resolve => {
