@@ -63,21 +63,22 @@ export class ModalSmartPerformanceCancelComponent implements OnInit {
 			await this.smartPerformanceService.cancelScan().then((cancelScanFromService: any) => {
 				if (cancelScanFromService) {
 					let spModelClose = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartPerformanceForceClose);
-					if (this.promptMsg && !spModelClose) {
+					if (!spModelClose) {
 						if (this.timerRef) {
 							this.stopCountdown();
 							this.isLoading = false;
-							if (this.promptMsg) {
-								this.promptMsg = false;
-							}
+							
 						}
-						this.activeModal.close(false);
 					}
+					// de-activates the pop-up,
+					this.activeModal.close(true);
+					if (this.promptMsg) {
+						this.promptMsg = false;
+					}
+
 					this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceForceClose, true);
 					this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, true);
 				}
-
-				this.activeModal.close(false);
 			})
 		} catch (err) {
 			this.logger.error("Error while leaving page", err.message);
