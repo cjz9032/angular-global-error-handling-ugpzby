@@ -1,0 +1,95 @@
+<div class="vtr-modal-smart-performance-feedback">
+<div class="icon">
+	<fa-icon [icon]="['fal', 'times']" (click)="closeModal()"></fa-icon>
+</div>
+<div class="title">{{ 'dashboard.feedback.title' | translate }}</div>
+<form class="feedback-form">
+<div class="qa-item">
+	<div class="question"
+	[dir]="'dir' | translate"
+	[innerHTML]="questions[0].question | translate"></div>
+	<div class="likely-content">
+	<div class="form-check form-check-inline"
+		*ngFor="let likely of questions[0].likelyValues; let i=index">
+			<input class="form-check-input"
+				type="radio"
+				[id]="'feedback-likely-1' + likely"
+				(click)="isSelected(i, likely,0)"
+				[checked]="selected === i && questions[0].question[likely] === radioSelected">
+				<label class="form-check-label-out"></label>
+				<label class="form-check-label" [id]="'feedback-form-likely-1' + likely" role="text"
+				[for]="'feedback-likely-1' + likely">{{ likely }}</label>
+	</div>
+	<div class="w-100 mb-1"></div>
+	<div class="likely-text" *ngFor="let rating of questions[0].ratingValue">{{ rating | translate }}</div>
+	</div>
+</div>
+<div class="qa-item">
+	<div class="question"
+	[dir]="'dir' | translate"
+	[innerHTML]="questions[1].question | translate"></div>
+	<div class="likely-content">
+	<div class="form-check form-check-inline"
+		*ngFor="let likely of questions[1].likelyValues; let i=index">
+			<input class="form-check-input"
+				type="radio"
+				[id]="'feedback-likely-2' + likely"
+				(click)="isSelected(i, likely,1)"
+				[checked]="selected === i && questions[1].question[likely] === radioSelected">
+				<label class="form-check-label-out"></label>
+				<label class="form-check-label" [id]="'feedback-form-likely-2' + likely" role="text"
+				[for]="'feedback-likely-2' + likely">{{ likely-5 }}</label>
+	</div>
+	<div class="w-100 mb-1"></div>
+	<div class="likely-text" *ngFor="let rating of questions[1].ratingValue">{{ rating | translate }}</div>
+	<!-- <div class="likely-text text-right" >{{ 'smartPerformance.feedbackContainer.rating.r2' | translate }}</div> -->
+	</div>
+</div>
+<div class="qa-item">
+	<div class="question"
+	[dir]="'dir' | translate"
+	[innerHTML]="questions[2].question | translate"></div>
+	<div class="likely-content">
+	<div class="form-check form-check-inline"
+		*ngFor="let likely of questions[2].likelyValues; let i=index">
+			<input class="form-check-input"
+				type="radio"
+				[id]="'feedback-likely-3' + likely"
+				(click)="isSelected(i, likely,2)"
+				[checked]="selected === i && questions[2].question[likely] === radioSelected">
+				<label class="form-check-label-out"></label>
+				<label class="form-check-label" [id]="'feedback-form-likely-3' + likely" role="text"
+				[for]="'feedback-likely-3' + likely">{{ likely-10 }}</label>
+	</div>
+	<div class="w-100 mb-1"></div>
+	<div class="likely-text" *ngFor="let rating of questions[2].ratingValue">{{ rating | translate }}</div>
+	<!-- <div class="likely-text text-right" >{{ 'smartPerformance.feedbackContainer.rating.r2' | translate }}</div> -->
+	</div>
+</div>
+<div class="row">
+	<div class="col">
+		<div class="comment-tip"
+			id="feedback-form-additional-comments"
+			attr.aria-label="feedback-form-additional-comments">
+			{{'smartPerformance.feedbackContainer.commentTip' | translate}}
+		</div>
+		<textarea #feedbackComment placeholder="{{'smartPerformance.feedbackContainer.comments' | translate}}"
+			class="form-control user-comment mb-1"
+			id="feedback-form-comments-input"
+			attr.aria-label="{{'dashboard.feedback.form.comments' | translate}}"
+			cols="30"
+			rows="10"
+			maxlength="1000"
+			pattern="^(?!\s*$).+"
+			required></textarea>
+		<div class="w-100 text-right comment-count">{{feedbackComment.value.length}}/1000</div>
+	</div>
+</div>
+</form>
+<hr class="line">
+<div class="d-flex justify-content-start align-items-center">
+	<button class="send-feedback" alt="" type="submit">{{'smartPerformance.feedbackContainer.buttonText' | translate}}
+	</button>
+</div>
+</div>
+
