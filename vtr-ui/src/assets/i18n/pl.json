@@ -1650,7 +1650,7 @@
                     "cameraPrivacy": {
                         "title": "Tryb prywatności kamery",
                         "tooltip": "Kamera przestaje wysyłać obrazy na żywo, gdy włączone jest ustawienie prywatności. Włącz to ustawienie tylko, jeśli nie chcesz wysyłać swoich zdjęć do innych podczas rozmów wideo.",
-                        "cameraPrivacyAccessNote": "Przejdź na stronę <b>Ustawienia systemu Windows → Prywatność → Aparat</b> i upewnij się, że następujące dwie opcje są włączone w obszarze „Określ, które aplikacje (ze sklepu Microsoft Store) mogą uzyskiwać dostęp do Twojej kamery”:<br>&bull; <b>Zezwalaj aplikacjom na dostęp do swojej kamery</b><br>&bull; <b>Lenovo Vantage</b>"
+                        "cameraPrivacyAccessNote": "Przejdź na stronę <b>Ustawienia systemu Windows → Prywatność → Aparat</b> i upewnij się, że następujące dwie opcje są włączone:<br>&bull; <b>Zezwalaj aplikacjom na dostęp do swojej kamery</b><br>&bull; <b>Lenovo Vantage</b> w obszarze „Określ, które aplikacje (ze sklepu Microsoft Store) mogą uzyskiwać dostęp do Twojej kamery”"
                     },
                     "camera": {
                         "title": "Aparat",
