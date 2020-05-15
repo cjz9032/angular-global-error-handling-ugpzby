@@ -34,14 +34,14 @@
 			[checked]="value"
 			[disabled]="disabled"
 			[readonly]="readonly"
+			aria-hidden="true"
 			[attr.aria-checked]="value"
 			[attr.aria-disabled]="disabled"
 			[attr.aria-readonly]="readonly"
-			(change)="onChange(toggle)"
-			(keydown.enter)="onChange(toggle)"
-			(click)="sendChangeEvent(toggle)" />
+			(change)="onChange(toggle)" />
 		<span class="switch {{ size }}"
 			id="{{onOffSwitchId}}{{value?'_on_sizeStopProp':'_off_sizeStopProp'}}"
+			aria-hidden="true"
 			(click)="stopPropagation($event);"
 			(keydown.enter)="stopPropagation($event);">
 			<span class="switch-label"
