@@ -55,6 +55,7 @@
 		cursor: pointer;
 		&:hover {
 			border: none;
+			text-decoration: none; //Remove underline on customize scan when the cursor is under the link
 		}
 	}
 	.disabled-anchor {

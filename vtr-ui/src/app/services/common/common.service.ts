@@ -270,6 +270,21 @@ export class CommonService {
 		document.querySelector('.vtr-app.container-fluid').scrollTop = 0;
 	}
 
+	public scrollElementByDistance(element: HTMLElement, scrollDistance: number, isScrollUp?: boolean) {
+		const intervalScrollTime = 25
+		let scrollIndex = 10
+		let scrollHeight = Math.floor(scrollDistance / scrollIndex)
+		if (isScrollUp) { scrollHeight *= -1 }
+		const scrollTimer = setInterval(() => {
+			if (scrollIndex > 0) {
+				scrollIndex--
+				element.scrollTop += scrollHeight;
+			} else {
+				clearInterval(scrollTimer)
+			}
+		}, intervalScrollTime)
+	}
+
 	// This is version compare function which takes version numbers of any length and any number size per segment.
 	// Return values:
 	// - negative number if v1 < v2

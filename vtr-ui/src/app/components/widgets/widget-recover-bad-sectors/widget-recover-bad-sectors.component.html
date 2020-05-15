@@ -3,24 +3,26 @@
 		<div class="row">
 			<div class="col">
 				<div class="row">
-					<div class="title">{{title}}</div>
+					<h2 class="title">{{title}}</h2>
 					<div class="title-question-mark">
-						<a	href="javascript:void();"
-							aria-label="recover-question-mark"
+
+						<!-- Ignoring the href property from narrator by using the role="img" atribute
+							and passing the tooltip information with the [attr.aria-label] -->
+						<a href="javascript:void();"
+							[attr.aria-label]="'recover-question-mark, witch reads: ' + description"
+							role="img"
 							tabindex="0"
 							triggers="click:blur"
 							[ngbTooltip]="tooltipRef"
 							tooltipClass="vtr-tooltip"
-							[ngClass]="'recover-question-icon'">
-							<fa-icon
-								placement="auto"
-								[icon]="['far', 'question-circle']"
-								container="vtr-root">
-							</fa-icon>
+							[ngClass]="'recover-question-icon'"
+							placement="left"
+							container="vtr-root">
+							<fa-icon [icon]="['far', 'question-circle']"></fa-icon>
 						</a>
 					</div>
 				</div>
-				<div class="description">{{'hardwareScan.recoverBadSectors.waitAvailability' | translate}}</div>
+				<p class="description">{{'hardwareScan.recoverBadSectors.waitAvailability' | translate}}</p>
 			</div>
 		</div>
 		<div class="row">
