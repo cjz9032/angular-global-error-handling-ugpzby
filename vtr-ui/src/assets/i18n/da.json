@@ -2096,9 +2096,8 @@
                 "tooltip": "<p>Denne funktion fungerer kun med følgende videoafspillere<br>: Windows Media Player<br>Chrome-baserede afspiller<br>Film og tv<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>Oplysninger om, hvordan denne funktion aktiveres på PotPlayer og GOM Player, finder du i den brugervejledning, der leveres sammen med computeren.</p>",
                 "note": {
                     "description": "Denne funktion virker ikke i disse situationer:",
-                    "description1": "Strømsparetilstanden er aktiveret.",
-                    "description2": "CPU-temperaturen er for høj.",
-                    "description3": "Enheden er indstillet til Strømbesparelsestilstand i \"Intelligent køling\"."
+                    "description1": "CPU-temperaturen er for høj.",
+                    "description2": "Enheden er indstillet til Strømbesparelsestilstand i \"Intelligent køling\"."
                 },
                 "imageBefore": "Før",
                 "imageAfter": "Efter"

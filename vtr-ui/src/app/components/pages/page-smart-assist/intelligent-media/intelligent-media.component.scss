@@ -15,17 +15,19 @@
         margin-top: 1.5rem;
         margin-left: 4.5rem !important;
         margin-bottom: 1.5rem !important;
-        p {
+        label {
             font-size: $fontsize_xs;
             color: $shade_blue;
-            &:focus {
-                @include outline-blue;
-            }
+            font-weight: 300;
+            margin-bottom: 0.2rem !important;
+            margin-top: 0.2rem !important;
         }
-        ul li {
-            list-style-type: disc;
-            margin: 0;
-            padding: 0;
+
+        .description-div {
+            margin-left: 1.5rem;
+            ul li {
+                list-style-type: disc;
+            }
         }
     }
 
@@ -68,11 +70,6 @@
                 -ms-box-orient: horizontal;
                 -ms-box-pack: center;
                 -ms-box-align: center;
-
-                display: box;
-                box-orient: horizontal;
-                box-pack: center;
-                box-align: center;
             }
             .superResolution-image-before {
                 width: 47.9%;

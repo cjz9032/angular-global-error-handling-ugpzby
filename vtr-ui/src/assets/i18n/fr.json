@@ -2096,9 +2096,8 @@
                 "tooltip": "<p>Cette fonction n'est disponible que pour les lecteurs vidéo suivants :<br>Windows Media Player<br>lecteur Chrome<br>Films et séries TV<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>Pour savoir comment activer cette fonction sur PotPlayer et GOM Player, reportez-vous au guide d'utilisation fourni avec votre ordinateur.</p>",
                 "note": {
                     "description": "Cette fonction est inopérante quand :",
-                    "description1": "Le mode d'économie de la batterie est activé.",
-                    "description2": "La température de l'unité centrale est trop élevée.",
-                    "description3": "Le périphérique est défini sur le mode d'économie de batterie dans le « système de refroidissement intelligent »."
+                    "description1": "La température de l'unité centrale est trop élevée.",
+                    "description2": "Le périphérique est défini sur le mode d'économie de batterie dans le « système de refroidissement intelligent »."
                 },
                 "imageBefore": "Avant",
                 "imageAfter": "Après"
