@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.44](https://bitbucket.tc.lenovo.com///compare/v1.5.43...v1.5.44) (2020-05-15)
+
+
+### Bug Fixes
+
+* **LWS-Accessibility:** change the text toggle switch read in scan mode ([f3e520b](https://bitbucket.tc.lenovo.com///commit/f3e520bf7d13dec08e6b41e2a88676b1b5bfdab4))
+* **menu:** Optimized beta logic ([2c0d48b](https://bitbucket.tc.lenovo.com///commit/2c0d48b618066093468d5a4c55ad66e860674624))
+* **menu:** show beta toggle in arm system ([26d0970](https://bitbucket.tc.lenovo.com///commit/26d0970a63f751f9be8551f8bc1ed28378730846))
+
 ### [1.5.43](https://bitbucket.tc.lenovo.com///compare/v1.5.42...v1.5.43) (2020-05-15)
 
 ### [1.5.42](https://bitbucket.tc.lenovo.com///compare/v1.5.41...v1.5.42) (2020-05-14)
