@@ -4,6 +4,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { CardService, CardOverlayTheme } from 'src/app/services/card/card.service';
 import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
+import { DeviceService } from 'src/app/services/device/device.service';
 
 @Component({
 	selector: 'vtr-container-card',
@@ -47,6 +48,7 @@ export class ContainerCardComponent implements OnInit {
 	constructor(
 		private commonService: CommonService,
 		private cardService: CardService,
+		public deviceService: DeviceService
 	) { }
 
 	ngOnInit() {
