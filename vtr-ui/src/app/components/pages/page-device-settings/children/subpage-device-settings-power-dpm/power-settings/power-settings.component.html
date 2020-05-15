@@ -9,13 +9,13 @@
 				<h5 id="dpm-powersetting-powerbutton-label">
 					{{'device.deviceSettings.power.dpm.globalPowerSettings.powerButton.label' | translate}}
 				</h5>
-				<vtr-ui-dpm-dropdown [list]="powerbutton_actions" [value]="selectAction"
+				<vtr-ui-dpm-dropdown [label]="'device.deviceSettings.power.dpm.globalPowerSettings.powerButton.label' | translate" [list]="powerbutton_actions" [value]="selectAction"
 					(change)="onActionChange($event)" [dropDownId]="'dpm-powersetting-powerbutton-dropdown'">
 				</vtr-ui-dpm-dropdown>
 				<h5 id="dpm-powersetting-requiredsignin-label">
 					{{'device.deviceSettings.power.dpm.globalPowerSettings.requiredSignIn.label' | translate}}
 				</h5>
-				<vtr-ui-dpm-dropdown [list]="signInOptions" [value]="selectedSignInOptionVal"
+				<vtr-ui-dpm-dropdown [label]="'device.deviceSettings.power.dpm.globalPowerSettings.requiredSignIn.label' | translate" [list]="signInOptions" [value]="selectedSignInOptionVal"
 					(change)="onSignInOptionChanged($event)" [dropDownId]="'dpm-powersetting-requiredsignin-dropdown'">
 				</vtr-ui-dpm-dropdown>
 				<h3 class="note" id="dpm-powersetting-requiredsignin-note">
