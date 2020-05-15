@@ -32,8 +32,7 @@ import { HomeSecurityDevicePosture } from 'src/app/data-models/home-security/hom
 import { DeviceLocationPermission } from 'src/app/data-models/home-security/device-location-permission.model';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
-import _ from 'lodash';
-
+import { isEqual, pick } from 'lodash';
 
 @Component({
 	selector: 'vtr-page-connected-home-security',
@@ -93,15 +92,18 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			}
 		}
 		if (chs.deviceOverview) {
-			delete chs.deviceOverview.allDevicesCount;
-			delete chs.deviceOverview.allDevicesProtected;
-			if(!(_.isEqual(this.preDeviceOverview, Object.assign({}, chs.deviceOverview)))) {
+			if(this.deviceOverviewHasChange(this.preDeviceOverview, chs.deviceOverview)) {
+				this.preDeviceOverview = Object.assign({}, this.chs.deviceOverview);
 				this.allDevicesInfo = new HomeSecurityAllDevice(this.translateService, this.chs.deviceOverview);
-				this.preDeviceOverview = Object.assign({}, this.chs.deviceOverview)
 			}
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAllDevices, this.allDevicesInfo);
 		}
 	};
+
+	private deviceOverviewHasChange(preDeviceOverview: CHSDeviceOverview, newDeviceOverview: CHSDeviceOverview) : boolean {
+		const attrNeedToCompare = ['familyMembersCount', 'placesCount', 'personalDevicesCount', 'wifiNetworkCount', 'homeDevicesCount'];
+		return isEqual(pick(preDeviceOverview, attrNeedToCompare), pick(newDeviceOverview, attrNeedToCompare)) ? false : true;
+	}
 
 	wsPluginMissingEventHandler = () => {
 		this.handleResponseError(new PluginMissingError());
@@ -184,8 +186,8 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			this.allDevicesInfo = cacheAllDevices;
 		}
 		if (this.chs && this.chs.deviceOverview) {
-			this.allDevicesInfo = new HomeSecurityAllDevice(this.translateService, this.chs.deviceOverview);
 			this.preDeviceOverview = Object.assign({}, this.chs.deviceOverview);
+			this.allDevicesInfo = new HomeSecurityAllDevice(this.translateService, this.chs.deviceOverview);
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAllDevices, this.allDevicesInfo);
 		}
 		const cacheAccount = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount);
