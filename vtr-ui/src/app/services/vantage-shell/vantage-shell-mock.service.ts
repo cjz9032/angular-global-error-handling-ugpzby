@@ -1803,7 +1803,7 @@ export class VantageShellService {
 
 	public getIntelligentCoolingForIdeaPad(): any {
 		if (this.getPowerIdeaNoteBook()) {
-			return this.getPowerIdeaNoteBook().its;
+			return this.getPowerIdeaNoteBook().intelligentCoolingForIdeaPad;
 		}
 		return undefined;
 	}

@@ -1,5 +1,5 @@
 import { AppEvent } from './../../../../../../enums/app-event.enum';
-import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
@@ -12,7 +12,7 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 	templateUrl: './top-row-functions.component.html',
 	styleUrls: ['./top-row-functions.component.scss']
 })
-export class TopRowFunctionsComponent implements OnInit, OnDestroy {
+export class TopRowFunctionsComponent implements OnInit, OnDestroy, AfterViewInit {
 
 	@ViewChild('adv') adv: ElementRef
 	public topRowKeyObj: TopRowFunctionsCapability;
@@ -38,9 +38,9 @@ export class TopRowFunctionsComponent implements OnInit, OnDestroy {
 		this.getFunctionCapabilities();
 	}
 
-	ngAfterViewInit () {
+	ngAfterViewInit() {
 		if (!this.showAdvancedSection) {
-		this.adv.nativeElement.focus();
+			this.adv.nativeElement.focus();
 		}
 	}
 
@@ -138,6 +138,6 @@ export class TopRowFunctionsComponent implements OnInit, OnDestroy {
 		});
 	}
 
-	
+
 
 }
