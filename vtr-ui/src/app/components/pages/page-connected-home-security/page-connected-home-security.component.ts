@@ -32,6 +32,7 @@ import { HomeSecurityDevicePosture } from 'src/app/data-models/home-security/hom
 import { DeviceLocationPermission } from 'src/app/data-models/home-security/device-location-permission.model';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
+import _ from 'lodash';
 
 
 @Component({
@@ -92,23 +93,15 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			}
 		}
 		if (chs.deviceOverview) {
-			if (this.deviceOverviewHasChanged(this.preDeviceOverview, chs.deviceOverview)) {
+			delete chs.deviceOverview.allDevicesCount;
+			delete chs.deviceOverview.allDevicesProtected;
+			if(!(_.isEqual(this.preDeviceOverview, Object.assign({}, chs.deviceOverview)))) {
 				this.allDevicesInfo = new HomeSecurityAllDevice(this.translateService, this.chs.deviceOverview);
 				this.preDeviceOverview = Object.assign({}, this.chs.deviceOverview)
 			}
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAllDevices, this.allDevicesInfo);
 		}
 	};
-
-	private deviceOverviewHasChanged(preDeviceOverview: CHSDeviceOverview, newDeviceOverview: CHSDeviceOverview) : boolean {
-		let hasChanged = false;
-		for (const key in preDeviceOverview) {
-			if (preDeviceOverview[key] != newDeviceOverview[key]) {
-				hasChanged = true;
-			}
-		}
-		return hasChanged;
-	}
 
 	wsPluginMissingEventHandler = () => {
 		this.handleResponseError(new PluginMissingError());
@@ -191,8 +184,8 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			this.allDevicesInfo = cacheAllDevices;
 		}
 		if (this.chs && this.chs.deviceOverview) {
-			this.preDeviceOverview = Object.assign({}, this.chs.deviceOverview);
 			this.allDevicesInfo = new HomeSecurityAllDevice(this.translateService, this.chs.deviceOverview);
+			this.preDeviceOverview = Object.assign({}, this.chs.deviceOverview);
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAllDevices, this.allDevicesInfo);
 		}
 		const cacheAccount = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount);
