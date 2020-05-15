@@ -114,7 +114,7 @@ describe('Component: PageSmartAssistComponent', () => {
 			'setHPDAdvancedSetting'
 		).and.returnValue(Promise.resolve(true));
 
-		component.setHPDAdvancedSetting('zeroTouchLogin', true);
+		component.setHPDAdvancedSetting('zeroTouchLogin');
 		expect(smartAssistService.setHPDAdvancedSetting).toHaveBeenCalled();
 	});
 

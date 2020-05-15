@@ -21,7 +21,7 @@
 	border-radius: $border_radius;
 	position: relative;
 	background: $light;
-	overflow: hidden;
+	// overflow: hidden;
 	height: 100% !important;
 
 	// @media #{$breakpoint_md} {
@@ -34,15 +34,7 @@
 	.carousel-link {
 		display: block;
 		&:focus {
-			outline: 0;
-			&::after {
-				@include button-outline-blue;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				border-radius: 0.9rem;
-			}
+			@include outline-blue;
 		}
 	}
 

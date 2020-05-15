@@ -9,7 +9,7 @@
                     {{'device.deviceSettings.power.dpm.powerPlan.currentPowerPlan.label' | translate}}
                 </h5>
                 <div>
-                    <vtr-ui-dpm-dropdown [list]="powerPlanIntervals" [value]="selectedPowerPlanVal"
+                    <vtr-ui-dpm-dropdown [label]="'device.deviceSettings.power.dpm.powerPlan.currentPowerPlan.label' | translate"  [list]="powerPlanIntervals" [value]="selectedPowerPlanVal"
                         (change)="onPowerPlanChange($event)" [dropDownId]="'dpm-powerplan-action-dropdown'">
                     </vtr-ui-dpm-dropdown>
                 </div>

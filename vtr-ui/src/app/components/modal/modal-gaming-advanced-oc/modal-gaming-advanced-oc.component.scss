@@ -1,5 +1,6 @@
 @import '../../../app.theme.scss';
 .gaming-modal-fun {
+    user-select: none;
     .modal-body {
         max-height: 789px;
         @media screen and (max-height: 1000) {
@@ -122,5 +123,24 @@
     .modal-footer {
         padding-top: 1.73rem;
         justify-content: flex-end;
+        button{
+            outline: none;
+        }
     }
+}
+
+::ng-deep body.focus-enable{
+	.is-gaming {
+        .gaming-modal-fun{
+            .close:focus{
+                @include default-button-border;
+            }
+            .under-line-button:focus {
+                &::after {
+                    @include under-line-button-outline;
+                }
+            }
+            
+        }
+	}
 }

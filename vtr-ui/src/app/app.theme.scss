@@ -475,3 +475,29 @@ $high-contrast-black-yellow: #FFFF00;
 	}
 }
 
+//gaming version 3.3
+@mixin default-button-border ($color : $blueFill) {
+	outline: 0;
+	border: 0.1rem solid $color;
+}
+@mixin circular-button-border ($color : $blueFill) {
+	content: '';
+	display: block;
+	position: absolute;
+	left: -0.4rem;
+	top: -0.4rem;
+	border-radius: 500px;
+	width: calc(100% + 0.8rem);
+	height: calc(100% + 0.8rem);
+	border: thin solid $color;
+}
+@mixin under-line-button-outline ($color : $blueFill) {
+	content: '';
+	display: block;
+	position: absolute;
+	left: -0.4rem;
+	top:0;
+	width: calc(100% + 0.8rem);
+	height: calc(100% + 0.6rem);
+	border: thin solid $color;
+}

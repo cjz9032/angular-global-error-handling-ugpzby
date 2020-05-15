@@ -6,7 +6,7 @@ import {
 	AfterViewInit
 } from '@angular/core';
 import {
-	EventTypes, ConnectedHomeSecurity, PluginMissingError, CHSAccountState, WifiSecurity, DevicePosture
+	EventTypes, ConnectedHomeSecurity, PluginMissingError, CHSAccountState, WifiSecurity, DevicePosture, CHSDeviceOverview
 } from '@lenovo/tan-client-bridge';
 import {
 	HomeSecurityAccount
@@ -32,7 +32,7 @@ import { HomeSecurityDevicePosture } from 'src/app/data-models/home-security/hom
 import { DeviceLocationPermission } from 'src/app/data-models/home-security/device-location-permission.model';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
-
+import { isEqual, pick } from 'lodash';
 
 @Component({
 	selector: 'vtr-page-connected-home-security',
@@ -48,6 +48,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 	permission: any;
 	welcomeModel: HomeSecurityWelcome;
 	allDevicesInfo: HomeSecurityAllDevice;
+	preDeviceOverview: CHSDeviceOverview;
 	homeSecurityDevicePosture: HomeSecurityDevicePosture;
 	locationPermission: DeviceLocationPermission;
 	account: HomeSecurityAccount;
@@ -91,10 +92,19 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			}
 		}
 		if (chs.deviceOverview) {
-			this.allDevicesInfo = new HomeSecurityAllDevice(this.translateService, this.chs.deviceOverview);
+			if(this.deviceOverviewHasChange(this.preDeviceOverview, chs.deviceOverview)) {
+				this.preDeviceOverview = Object.assign({}, this.chs.deviceOverview);
+				this.allDevicesInfo = new HomeSecurityAllDevice(this.translateService, this.chs.deviceOverview);
+			}
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAllDevices, this.allDevicesInfo);
 		}
 	};
+
+	private deviceOverviewHasChange(preDeviceOverview: CHSDeviceOverview, newDeviceOverview: CHSDeviceOverview) : boolean {
+		const attrNeedToCompare = ['familyMembersCount', 'placesCount', 'personalDevicesCount', 'wifiNetworkCount', 'homeDevicesCount'];
+		return isEqual(pick(preDeviceOverview, attrNeedToCompare), pick(newDeviceOverview, attrNeedToCompare)) ? false : true;
+	}
+
 	wsPluginMissingEventHandler = () => {
 		this.handleResponseError(new PluginMissingError());
 	};
@@ -176,6 +186,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			this.allDevicesInfo = cacheAllDevices;
 		}
 		if (this.chs && this.chs.deviceOverview) {
+			this.preDeviceOverview = Object.assign({}, this.chs.deviceOverview);
 			this.allDevicesInfo = new HomeSecurityAllDevice(this.translateService, this.chs.deviceOverview);
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAllDevices, this.allDevicesInfo);
 		}
