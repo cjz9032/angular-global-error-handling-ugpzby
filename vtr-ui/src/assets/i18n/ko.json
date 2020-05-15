@@ -2096,9 +2096,8 @@
                 "tooltip": "<p>이 기능은 아래의 비디오 플레이어에서만 작동합니다.<br>Windows Media Player<br>Chrome 기반 플레이어<br>영화 및 TV<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>PotPlayer 및 GOM Player에서 해당 기능을 사용하는 방법에 대한 지침은 컴퓨터와 함께 제공되는 사용 설명서를 참고하십시오.</p>",
                 "note": {
                     "description": "다음의 경우에는 이 기능이 작동하지 않습니다.",
-                    "description1": "배터리 절약 모드가 활성화됩니다.",
-                    "description2": "CPU 온도가 너무 높습니다.",
-                    "description3": "장치가 \"지능형 냉각\"에 있는 배터리 절약 모드로 설정되어 있습니다."
+                    "description1": "CPU 온도가 너무 높습니다.",
+                    "description2": "장치가 \"지능형 냉각\"에 있는 배터리 절약 모드로 설정되어 있습니다."
                 },
                 "imageBefore": "이전",
                 "imageAfter": "이후"

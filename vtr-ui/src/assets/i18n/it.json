@@ -2096,9 +2096,8 @@
                 "tooltip": "<p>Questa funzione è disponibile solo per i seguenti lettori video:<br>Windows Media Player<br>Lettore basato su Chrome<br>Film e TV<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>Per istruzioni su come abilitare questa funzione su PotPlayer e GOM Player, consultare la guida per l'utente fornita con il computer.</p>",
                 "note": {
                     "description": "Questa funzione non può essere utilizzata quando:",
-                    "description1": "La modalità risparmio batteria è abilitata.",
-                    "description2": "La temperatura della CPU è elevata.",
-                    "description3": "Il dispositivo è impostato sulla modalità di risparmio della batteria in \"Raffreddamento intelligente\"."
+                    "description1": "La temperatura della CPU è elevata.",
+                    "description2": "Il dispositivo è impostato sulla modalità di risparmio della batteria in \"Raffreddamento intelligente\"."
                 },
                 "imageBefore": "Prima",
                 "imageAfter": "Dopo"

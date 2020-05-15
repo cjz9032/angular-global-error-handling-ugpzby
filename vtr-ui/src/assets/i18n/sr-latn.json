@@ -2096,9 +2096,8 @@
                 "tooltip": "<p>Ova funkcija radi samo na dolenavedenim video plejerima:<br>Windows Media Player<br>Plejer zasnovan na pregledaču Chrome<br>Movies & TV<br>PotPlayer<br>GOM player</p><p class='srTooltip'>Uputstva o tome kako da omogućite ovu funkciju u plejeru PotPlayer i GOM player potražite u Uputstvu za korisnike koje ste dobili uz računar.</p>",
                 "note": {
                     "description": "Ova funkcija ne radi kada:",
-                    "description1": "Omogućen je režim uštede baterije.",
-                    "description2": "Temperatura procesora je previsoka.",
-                    "description3": "Uređaj je podešen na režim uštede baterije u delu „Pametno hlađenje“."
+                    "description1": "Temperatura procesora je previsoka.",
+                    "description2": "Uređaj je podešen na režim uštede baterije u delu „Pametno hlađenje“."
                 },
                 "imageBefore": "Pre",
                 "imageAfter": "Posle"

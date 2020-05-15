@@ -2096,9 +2096,8 @@
                 "tooltip": "<p>Esta funcionalidade só é compatível com os seguintes leitores de vídeo:<br>Windows Media Player<br>Leitor baseado no Chrome<br>Filmes e TV<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>Para obter instruções para ativar esta função no PotPlayer e no GOM player, consulte o Manual do Utilizador fornecido com o computador.</p>",
                 "note": {
                     "description": "Esta funcionalidade não funciona quando:",
-                    "description1": "O modo de poupança de bateria está ativado.",
-                    "description2": "A temperatura da CPU é demasiado elevada.",
-                    "description3": "O dispositivo está definido para o Modo de poupança de bateria no \"Arrefecimento Inteligente\"."
+                    "description1": "A temperatura da CPU é demasiado elevada.",
+                    "description2": "O dispositivo está definido para o Modo de poupança de bateria no \"Arrefecimento Inteligente\"."
                 },
                 "imageBefore": "Antes",
                 "imageAfter": "Depois"

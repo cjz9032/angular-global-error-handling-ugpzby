@@ -2096,9 +2096,8 @@
                 "tooltip": "<p>תכונה זו פועלת רק עבור נגני הווידיאו הבאים:<br>Windows Media Player<br>נגן המבוסס על Chrome<br>סרטים וטלוויזיה<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>לקבלת הוראות להפעלת פונקציה זו ב-PotPlayer וב-GOM Player, עיינו במדריך למשתמש המצורף למחשבכם.</p>",
                 "note": {
                     "description": "התכונה אינה פועלת כאשר:",
-                    "description1": "מצב חיסכון בסוללה מופעל.",
-                    "description2": "טמפרטורת המעבד גבוהה מדי.",
-                    "description3": "המכשיר מוגדר למצב חיסכון בסוללה במצב של \"קירור חכם\"."
+                    "description1": "טמפרטורת המעבד גבוהה מדי.",
+                    "description2": "המכשיר מוגדר למצב חיסכון בסוללה במצב של \"קירור חכם\"."
                 },
                 "imageBefore": "לפני",
                 "imageAfter": "אחרי"

@@ -20,7 +20,7 @@ import { CommsService } from 'src/app/services/comms/comms.service';
 import { IntelligentSecurity } from 'src/app/data-models/smart-assist/intelligent-security.model';
 import { SmartAssistCache } from 'src/app/data-models/smart-assist/smart-assist-cache.model';
 import { HsaIntelligentSecurityResponse } from 'src/app/data-models/smart-assist/hsa-intelligent-security.model/hsa-intelligent-security.model';
-import { AntiTheftResponse } from 'src/app/data-models/antiTheft/antiTheft.model';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 
 
@@ -32,43 +32,75 @@ describe('Component: PageSmartAssistComponent', () => {
 	let logger: LoggerService;
 	let commonService: CommonService;
 	let vantageShellService: VantageShellService;
-	let navigationExtras : NavigationExtras;
-	 beforeEach(async(() => {
-		        TestBed.configureTestingModule({
-		            declarations: [PageSmartAssistComponent],
-		            imports: [
-		                HttpClientTestingModule,
-		                TranslateModule.forRoot(),
-		                RouterTestingModule
-		            ],
-		            providers: [
-		                CommonService,
-		                LoggerService,
-		                RouteHandlerService,
-		                DisplayService,
-		                DevService,
-		                CommsService,
-		                IntelligentSecurity
-		            ]
-		        }).compileComponents();
-		    }));
+	let navigationExtras: NavigationExtras;
+	beforeEach(async(() => {
+		TestBed.configureTestingModule({
+			declarations: [PageSmartAssistComponent],
+			imports: [
+				HttpClientTestingModule,
+				TranslateModule.forRoot(),
+				RouterTestingModule
+			],
+			providers: [
+				CommonService,
+				LoggerService,
+				RouteHandlerService,
+				DisplayService,
+				DevService,
+				CommsService,
+				IntelligentSecurity
+			]
+		}).compileComponents();
+	}));
 
-		beforeEach(() => {
-			fixture = TestBed.createComponent(
-				PageSmartAssistComponent
-			);
-			component = fixture.componentInstance;
-			deviceService = TestBed.get(DeviceService);
-			commonService = TestBed.get(CommonService);
-			vantageShellService = TestBed.get(VantageShellService);
-			logger = TestBed.get(LoggerService);
-			smartAssistService = TestBed.get(SmartAssistService);
-		});
+	beforeEach(() => {
+		fixture = TestBed.createComponent(
+			PageSmartAssistComponent
+		);
+		component = fixture.componentInstance;
+		deviceService = TestBed.get(DeviceService);
+		commonService = TestBed.get(CommonService);
+		vantageShellService = TestBed.get(VantageShellService);
+		logger = TestBed.get(LoggerService);
+		smartAssistService = TestBed.get(SmartAssistService);
+	});
 
-	// it('should create', () => {
-	// 	fixture.detectChanges()
-	// 	expect(component).toBeDefined()
-	// });
+	it('should create', () => {
+		component.superResolution = new FeatureStatus(false, true);
+		const isSuperResolutionSupported: FeatureStatus = {
+			available: false,
+			status: true,
+			permission: true,
+			isLoading: false
+		};
+		commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCapability, isSuperResolutionSupported);
+		component.superResolution = { ...isSuperResolutionSupported };
+		fixture.detectChanges()
+		expect(component).toBeDefined()
+	});
+
+	it('getSuperResolutionStatus', () => {
+		smartAssistService = TestBed.get(SmartAssistService);
+		smartAssistService.isShellAvailable = true;
+		component.smartAssistCache = new SmartAssistCache();
+		const res: FeatureStatus = {
+			available: true,
+			status: true,
+			permission: true,
+			isLoading: true
+		}
+		const spy = spyOn(
+			smartAssistService,
+			'getSuperResolutionStatus'
+		).and.returnValue(Promise.resolve(res));
+		component.getSuperResolutionStatus();
+		expect(smartAssistService.getSuperResolutionStatus).toHaveBeenCalled();
+	});
+
+	it("removeSensingHeaderMenu", () => {
+		commonService = TestBed.get(CommonService);
+		component.removeSensingHeaderMenu();
+	});
 
 	it('getHPDAdvancedSetting', () => {
 		smartAssistService = TestBed.get(SmartAssistService);
@@ -88,22 +120,6 @@ describe('Component: PageSmartAssistComponent', () => {
 		expect(smartAssistService.getHPDAdvancedSetting).toHaveBeenCalled();
 	});
 
-	it('getSuperResolutionStatus', () => {
-		smartAssistService = TestBed.get(SmartAssistService);
-		smartAssistService.isShellAvailable = true;
-		const res: FeatureStatus = {
-			available: true,
-			status: true,
-			permission:true,
-			isLoading:true
-		}
-		const spy = spyOn(
-			smartAssistService,
-			'getSuperResolutionStatus'
-		).and.returnValue(Promise.resolve(res));
-		component.getSuperResolutionStatus();
-		expect(smartAssistService.getSuperResolutionStatus).toHaveBeenCalled();
-	});
 
 	it('setHPDAdvancedSetting', () => {
 		smartAssistService = TestBed.get(SmartAssistService);

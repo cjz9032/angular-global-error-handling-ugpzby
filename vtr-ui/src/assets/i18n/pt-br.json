@@ -2096,9 +2096,8 @@
                 "tooltip": "<p>Esse recurso funciona somente nos players de vídeo abaixo:<br>Windows Media Player<br>Player baseado em Chrome<br>Movies & TV<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>Para obter instruções sobre como ativar essa função no PotPlayer e no GOM Player, consulte o Guia do Usuário que acompanha o seu computador.</p>",
                 "note": {
                     "description": "Esse recurso não funciona quando:",
-                    "description1": "O modo de economia de bateria está ativado.",
-                    "description2": "A temperatura da CPU está muito alta.",
-                    "description3": "O dispositivo está definido no Modo de economia de bateria em \"Resfriamento inteligente\"."
+                    "description1": "A temperatura da CPU está muito alta.",
+                    "description2": "O dispositivo está definido no Modo de economia de bateria em \"Resfriamento inteligente\"."
                 },
                 "imageBefore": "Antes",
                 "imageAfter": "Depois"

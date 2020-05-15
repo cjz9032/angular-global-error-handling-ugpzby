@@ -2096,9 +2096,8 @@
                 "tooltip": "<p>Denne funksjonen fungerer bare for videospillerne nedenfor:<br>Windows Media Player<br>Chrome-baserte spiller<br>Film og TV<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>Hvis du vil ha informasjon om hvordan du aktiverer denne funksjonen på PotPlayer og GOM Player, kan du se i bruker håndboken som følger med datamaskinen.</p>",
                 "note": {
                     "description": "Denne funksjonen fungerer ikke når følgende er tilfelle:",
-                    "description1": "Batterisparemodus er aktivert.",
-                    "description2": "CPU-temperaturen er for høy.",
-                    "description3": "Enheten er satt til Batterisparing-modus i Intelligent kjøling."
+                    "description1": "CPU-temperaturen er for høy.",
+                    "description2": "Enheten er satt til Batterisparing-modus i Intelligent kjøling."
                 },
                 "imageBefore": "Før",
                 "imageAfter": "Etter"
