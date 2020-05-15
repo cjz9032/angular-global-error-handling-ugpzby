@@ -405,14 +405,14 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	setUpScheduleComputerModesUIModel() {
 		let uniqueName = 'smartStandby-schedule';
 		this.scheduleComputerModesUIModel = [{
-			componentId: 'radio1',
+			componentId: 'Automatic mode',
 			label: 'device.deviceSettings.power.smartStandby.automaticMode',
 			value: this.AUTOMATIC_MODE,
 			isChecked: this.checkbox,
 			isDisabled: !this.smartStandby.isEnabled
 		},
 		{
-			componentId: 'radio2',
+			componentId: 'Manual mode',
 			label: 'device.deviceSettings.power.smartStandby.manualMode',
 			value: this.MANUAL_MODE,
 			isChecked: !this.checkbox,
