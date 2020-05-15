@@ -2096,9 +2096,8 @@
                 "tooltip": "<p>Esta característica solo funciona para los siguientes reproductores de video:<br>Windows Media Player<br>Reproductor basado en Chrome<br>Películas y TV<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>Para obtener instrucciones sobre cómo habilitar esta función en PotPlayer y GOM Player, consulte la guía del usuario que se proporciona con el sistema.</p>",
                 "note": {
                     "description": "Esta característica no funciona cuando;",
-                    "description1": "El modo de ahorro de batería está habilitado.",
-                    "description2": "La temperatura de la CPU es demasiado alta.",
-                    "description3": "El dispositivo está establecido en Modalidad de ahorro de batería en “Enfriamiento inteligente”."
+                    "description1": "La temperatura de la CPU es demasiado alta.",
+                    "description2": "El dispositivo está establecido en Modalidad de ahorro de batería en “Enfriamiento inteligente”."
                 },
                 "imageBefore": "Antes",
                 "imageAfter": "Después"

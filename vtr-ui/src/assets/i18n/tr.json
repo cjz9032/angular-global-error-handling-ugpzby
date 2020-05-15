@@ -2096,9 +2096,8 @@
                 "tooltip": "<p>Bu özellik yalnızca şu video oynatıcılarla kullanılabilir:<br>Windows Media Player<br>Chrome tabanlı oynatıcılar<br>Filmler ve TV<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>PotPlayer ve GOM Player'da bu işlevin etkinleştirilmesiyle ilgili yönergeler için bilgisayarınızla birlikte verilen Kullanma Kılavuzu'na bakın.</p>",
                 "note": {
                     "description": "Bu özellik şu durumlarda çalışmaz:",
-                    "description1": "Pil tasarrufu kipi etkin.",
-                    "description2": "CPU sıcaklığı çok yüksek.",
-                    "description3": "Cihaz \"Akıllı soğutma\"da Pil tasarrufu kipine ayarlanır."
+                    "description1": "CPU sıcaklığı çok yüksek.",
+                    "description2": "Cihaz \"Akıllı soğutma\"da Pil tasarrufu kipine ayarlanır."
                 },
                 "imageBefore": "Önce",
                 "imageAfter": "Sonra"

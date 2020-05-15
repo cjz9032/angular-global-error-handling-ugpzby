@@ -2096,9 +2096,8 @@
                 "tooltip": "<p>Ova značajka radi samo za sljedeće reproduktore videozapisa:<br>Windows Media Player<br>Player sa sustavom Chrome<br>Filmovi i TV<br>PotPlayer<br>GOM player</p><p class='srTooltip'>Za upute o tome kako omogućiti ovu funkciju na reproduktorima PotPlayer i GOM player, pogledajte korisnički priručnik koji dolazi uz vaše računalo.</p>",
                 "note": {
                     "description": "Ova značajka ne funkcionira kad:",
-                    "description1": "Omogućen je način rada štednja baterije.",
-                    "description2": "je temperatura CPU-a previsoka.",
-                    "description3": "Uređaj je postavljen na način uštede baterije u \"Inteligentnom hlađenju\"."
+                    "description1": "je temperatura CPU-a previsoka.",
+                    "description2": "Uređaj je postavljen na način uštede baterije u \"Inteligentnom hlađenju\"."
                 },
                 "imageBefore": "Prije",
                 "imageAfter": "Poslije"

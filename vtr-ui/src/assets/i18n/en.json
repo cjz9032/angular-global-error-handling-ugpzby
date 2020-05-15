@@ -2095,12 +2095,11 @@
 			"superResolution": {
 				"title": "Video resolution upscaling",
 				"desc": "<p><label>This feature enhances the experience of video playback by improving the video resolution. It works especially when the video is in poor resolution.</label></p> <p><label>This function might impact the battery life, battery temperature, and cause noises. Please do not use it in DC mode (battery mode). Otherwise, it will speed up the power consumption and shorten the battery life.</label></p>",
-				"tooltip": "<p>This feature only works for below video players:<br>Windows Media Player<br>Chrome-based player<br>Movies & TV<br>PotPlayer<br>GOM player</p><p class='srTooltip'>For instructions on how to enable this function on PotPlayer and  GOM player, refer to the User  Guide that comes with your computer.</p>",
+				"tooltip": "<p>This feature only works for below video players:<br>Windows Media Player<br>Chrome-based player<br>Movies & TV<br>PotPlayer</p><p class='srTooltip'>For instructions on how to enable this function on PotPlayer, refer to the User  Guide that comes with your computer.</p>",
 				"note": {
 					"description": "This feature does not work when:",
-					"description1": "The Battery saver mode is enabled.",
-                    "description2": "The CPU temperature is too high.",
-                    "description3": "The device is set to Battery saving mode in \"Intelligent cooling\"."
+                    "description1": "The CPU temperature is too high.",
+                    "description2": "The device is set to Battery saving mode in \"Intelligent cooling\"."
 				},
 				"imageBefore":"Before",
                 "imageAfter":"After"

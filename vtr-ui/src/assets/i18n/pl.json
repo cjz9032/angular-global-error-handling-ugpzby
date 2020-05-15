@@ -2096,9 +2096,8 @@
                 "tooltip": "<p>Ta funkcja działa tylko w przypadku następujących odtwarzaczy wideo:<br>Windows Media Player<br>Odtwarzacz działający w przeglądarce Chrome<br>Filmy i TV<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>Aby dowiedzieć się, jak włączyć tę funkcję w odtwarzaczach PotPlayer i GOM Player, zapoznaj się z podręcznikiem użytkownika dostarczonym z komputerem.</p>",
                 "note": {
                     "description": "Funkcja nie działa, gdy:",
-                    "description1": "Tryb oszczędzania baterii jest włączony.",
-                    "description2": "Temperatura procesora jest za wysoka.",
-                    "description3": "Urządzenie działa w trybie oszczędzania baterii po ustawieniu trybu „Inteligentne chłodzenie”."
+                    "description1": "Temperatura procesora jest za wysoka.",
+                    "description2": "Urządzenie działa w trybie oszczędzania baterii po ustawieniu trybu „Inteligentne chłodzenie”."
                 },
                 "imageBefore": "Przed",
                 "imageAfter": "Po"
