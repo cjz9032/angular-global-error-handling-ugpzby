@@ -929,21 +929,21 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		let uniqueName = 'zero-Touch-Lock';
 		// let disabled = !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled);
 		this.zeroTouchLockTimersUIModel = [{
-			componentId: 'radio1',
+			componentId: 'autoScreenLockTimer_fast',
 			label: 'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.fast',
 			value: this.FAST,
 			isChecked: this.intelligentSecurity.autoScreenLockTimer === this.FAST,
 			isDisabled: !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled)
 		},
 		{
-			componentId: 'radio2',
+			componentId: 'autoScreenLockTimer_medium',
 			label: 'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.medium',
 			value: this.MEDIUM,
 			isChecked: this.intelligentSecurity.autoScreenLockTimer === this.MEDIUM,
 			isDisabled: !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled)
 		},
 		{
-			componentId: 'radio3',
+			componentId: 'autoScreenLockTimer_slow',
 			label: 'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.slow',
 			value: this.SLOW,
 			isChecked: this.intelligentSecurity.autoScreenLockTimer === this.SLOW,
