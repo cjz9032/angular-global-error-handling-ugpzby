@@ -69,6 +69,6 @@ describe('WidgetDeviceUpdateSettingsComponent', () => {
 
 	it('should check onClosed', () => {
 		component.onClosed('true','false');
-		expect(component).toBeTruthy(undefined);
+		expect(component).toBeTruthy();
 	});
 });

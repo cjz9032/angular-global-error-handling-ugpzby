@@ -11,6 +11,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { PowerService } from 'src/app/services/power/power.service';
 import { SmartStandbyService } from 'src/app/services/smart-standby/smart-standby.service';
+import { UiRoundedRectangleRadioModel } from 'src/app/components/ui/ui-rounded-rectangle-custom-radio-list/ui-rounded-rectangle-radio-list.model';
 
 
 
@@ -34,11 +35,14 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	public smartStandByInterval: any;
 	public caption = this.translate.instant('device.deviceSettings.power.smartStandby.description');
 	public tooltipText = this.translate.instant('device.deviceSettings.power.smartStandby.tooltip');
-	clicktoChangeId='smartstandby-click-to-change'
-	collapseId='smartstandby-click-to-change-collapse'
+	clicktoChangeId = 'smartstandby-click-to-change'
+	collapseId = 'smartstandby-click-to-change-collapse'
 	firstTimeLoad: boolean;
 	timeOut = 100;
 	@Output() smartStandbyCapability = new EventEmitter<boolean>();
+	public scheduleComputerModesUIModel: Array<UiRoundedRectangleRadioModel> = [];
+	public readonly AUTOMATIC_MODE = 'Automatic mode';
+	public readonly MANUAL_MODE = 'Manual mode';
 
 	constructor(
 		private modalService: NgbModal,
@@ -57,6 +61,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		this.toggleSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onSmartStandbyNotification(notification);
 		});
+		this.setUpScheduleComputerModesUIModel();
 	}
 
 	public showSmartStandby() {
@@ -343,10 +348,15 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	onCheckboxClicked(event) {
+	onCheckboxClicked($event) {
 		this.showDropDown = [false, false, false];
-		this.checkbox = event;
+		this.checkbox = JSON.parse($event.value);
 		this.setSmartStandbyIsAutonomic(this.checkbox);
+		// this.setUpScheduleComputerModeRadios();
+		if (this.checkbox) {
+			this.isCollapsed = true
+		}
+
 	}
 
 
@@ -364,9 +374,9 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		elem.focus();
 		this.isCollapsed = !this.isCollapsed;
 		this.showDropDown = [false, false, false];
-		if(this.isCollapsed){
+		if (this.isCollapsed) {
 			this.focusElement(this.clicktoChangeId);
-			
+
 		}
 		if (!this.isCollapsed) {
 			this.focusElement(this.collapseId);
@@ -390,5 +400,23 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		if (this.toggleSubscription) {
 			this.toggleSubscription.unsubscribe();
 		}
+	}
+
+	setUpScheduleComputerModesUIModel() {
+		let uniqueName = 'smartStandby-schedule';
+		this.scheduleComputerModesUIModel = [{
+			componentId: 'Automatic mode',
+			label: 'device.deviceSettings.power.smartStandby.automaticMode',
+			value: this.AUTOMATIC_MODE,
+			isChecked: this.checkbox,
+			isDisabled: !this.smartStandby.isEnabled
+		},
+		{
+			componentId: 'Manual mode',
+			label: 'device.deviceSettings.power.smartStandby.manualMode',
+			value: this.MANUAL_MODE,
+			isChecked: !this.checkbox,
+			isDisabled: !this.smartStandby.isEnabled
+		}];
 	}
 }

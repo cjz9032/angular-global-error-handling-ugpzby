@@ -1,11 +1,12 @@
 import { AppEvent } from './../../../../../../enums/app-event.enum';
-import { Component, OnInit, OnDestroy, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef, OnChanges, SimpleChanges } from '@angular/core';
 import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
 import { TopRowFunctionsCapability } from 'src/app/data-models/device/top-row-functions-capability';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { UiRoundedRectangleRadioModel } from 'src/app/components/ui/ui-rounded-rectangle-custom-radio-list/ui-rounded-rectangle-radio-list.model';
 import { UiCircleRadioWithCheckBoxListModel } from 'src/app/components/ui/ui-circle-radio-with-checkbox-list/ui-circle-radio-with-checkbox-list.model';
 
 @Component({
@@ -13,20 +14,29 @@ import { UiCircleRadioWithCheckBoxListModel } from 'src/app/components/ui/ui-cir
 	templateUrl: './top-row-functions.component.html',
 	styleUrls: ['./top-row-functions.component.scss']
 })
-export class TopRowFunctionsComponent implements OnInit, OnDestroy, AfterViewInit {
+export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 
-	@ViewChild('adv') adv: ElementRef
+	@ViewChild('adv') showAdvEl: ElementRef
+
 	public topRowKeyObj: TopRowFunctionsCapability;
 	public showAdvancedSection = false;
 	public topRowFunInterval: any;
 	public isCacheFound = false;
 	public functionLockUIModel: Array<UiCircleRadioWithCheckBoxListModel> = [];
+	public readonly TRUE = 'true';
+	public readonly FALSE = 'false';
+	public topRowFunctionKeysUIModel: Array<UiRoundedRectangleRadioModel> = [];
 
 	constructor(
 		private keyboardService: InputAccessoriesService,
 		private logger: LoggerService,
 		private commonService: CommonService
 	) { }
+	ngOnChanges(changes: SimpleChanges): void {
+		if (changes.topRowKeyObj) {
+			this.setUpTopRowFunctionsKeysUIModel();
+		}
+	}
 
 	ngOnInit() {
 		this.topRowKeyObj = this.commonService.getLocalStorageValue(LocalStorageKey.TopRowFunctionsCapability, undefined);
@@ -38,12 +48,7 @@ export class TopRowFunctionsComponent implements OnInit, OnDestroy, AfterViewIni
 		}
 
 		this.getFunctionCapabilities();
-	}
-
-	ngAfterViewInit() {
-		if (!this.showAdvancedSection) {
-			this.adv.nativeElement.focus();
-		}
+		this.setUpTopRowFunctionsKeysUIModel();
 	}
 
 	ngOnDestroy() {
@@ -81,8 +86,10 @@ export class TopRowFunctionsComponent implements OnInit, OnDestroy, AfterViewIni
 			}
 		}, 30000);
 	}
-	updateCustomKeyEvents(event, value) {
-		const { customeEvent } = event;
+	updateCustomKeyEvents($event) {
+		this.logger.info('topRowKeys', { $event });
+		const value = $event.value;
+		const { customeEvent } = $event;
 		if (customeEvent === AppEvent.LEFT || customeEvent === AppEvent.RIGHT) {
 			this.onChangeKeyType(value);
 		}
@@ -128,8 +135,9 @@ export class TopRowFunctionsComponent implements OnInit, OnDestroy, AfterViewIni
 		}
 	}
 
-	public onChangeKeyType(value: boolean) {
-		this.topRowKeyObj.stickyFunStatus = value;
+	public onChangeKeyType($event) {
+		const value = $event.value;
+		this.topRowKeyObj.stickyFunStatus = JSON.parse(value);
 		this.keyboardService.setFnStickKeyStatus(value).then(res => {
 		});
 	}
@@ -144,13 +152,13 @@ export class TopRowFunctionsComponent implements OnInit, OnDestroy, AfterViewIni
 	updateFunctionLockUIModel() {
 		this.functionLockUIModel = [];
 
-		const { primaryFunStatus, fnLockStatus} = this.topRowKeyObj;
+		const { primaryFunStatus, fnLockStatus } = this.topRowKeyObj;
 
 		this.functionLockUIModel.push({
 			componentId: `radio1`,
 			label: `device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.sFunKey`,
 			value: 'special-key',
-			isChecked: (primaryFunStatus && fnLockStatus) || (!primaryFunStatus && !fnLockStatus) ? true: false,
+			isChecked: (primaryFunStatus && fnLockStatus) || (!primaryFunStatus && !fnLockStatus) ? true : false,
 			isDisabled: false,
 			processIcon: true,
 			customIcon: 'Special-function',
@@ -161,7 +169,7 @@ export class TopRowFunctionsComponent implements OnInit, OnDestroy, AfterViewIni
 			componentId: `radio2`,
 			label: `device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.fnKey`,
 			value: 'function-key',
-			isChecked: (primaryFunStatus && fnLockStatus) || (!primaryFunStatus && !fnLockStatus) ? false: true,
+			isChecked: (primaryFunStatus && fnLockStatus) || (!primaryFunStatus && !fnLockStatus) ? false : true,
 			isDisabled: false,
 			processIcon: true,
 			customIcon: 'F1-F12-funciton',
@@ -169,7 +177,6 @@ export class TopRowFunctionsComponent implements OnInit, OnDestroy, AfterViewIni
 			processLabel: true,
 		});
 	}
-
 
 	onFunctionLockRadioChange($event: UiCircleRadioWithCheckBoxListModel) {
 		if ($event) {
@@ -180,6 +187,31 @@ export class TopRowFunctionsComponent implements OnInit, OnDestroy, AfterViewIni
 				this.onChangeFunType(!this.topRowKeyObj.primaryFunStatus);
 			}
 		}
+	}
+
+	setUpTopRowFunctionsKeysUIModel() {
+		const uniqueName = 'top-Row-Functions';
+
+		this.topRowFunctionKeysUIModel = [{
+			componentId: 'nMehod_show',
+			label: 'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.radioButton.nMehod',
+			value: this.FALSE,
+			isChecked: this.topRowKeyObj.stickyFunStatus === JSON.parse(this.FALSE),
+			isDisabled: false
+		},
+		{
+			componentId: 'fnKeyMehod_show',
+			label: 'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.radioButton.fnKeyMehod',
+			value: this.TRUE,
+			isChecked: this.topRowKeyObj.stickyFunStatus === JSON.parse(this.TRUE),
+			isDisabled: false
+		}];
+	}
+
+	switchFocusToShowAdv() {
+		setTimeout(() => {
+			this.showAdvEl.nativeElement.focus()
+		}, 0)
 	}
 
 }
