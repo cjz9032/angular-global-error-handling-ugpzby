@@ -169,11 +169,14 @@ export class ConfigService {
 		});
 	}
 
-	private initializeAppSearchItem(menu: any, supportSearch: boolean) {
+	private initializeAppSearchItem(menu: any, supportSearch: boolean, isBeta: boolean) {
 		const appSearchItem = menu.find((item) => item.id === 'app-search');
 		if (appSearchItem) {
-			appSearchItem.availability = supportSearch;
-			appSearchItem.hide = !supportSearch;
+			appSearchItem.availability = supportSearch
+			&& !this.deviceService.isArm
+			&& !this.deviceService.isSMode
+			&& this.activeSegment !== SegmentConst.Commercial;
+			appSearchItem.hide = !appSearchItem.availability || !isBeta;
 		}
 	}
 
@@ -498,9 +501,7 @@ export class ConfigService {
 		this.isBetaUser = isBeta;
 		this.showSmartPerformance(menu, isBeta);
 		return this.canShowSearch().then((result) => {
-			this.initializeAppSearchItem(menu, result);
-			const item = menu.find(i => i.id === 'app-search');
-			if (item) item.hide = !isBeta || !result;
+			this.initializeAppSearchItem(menu, result, isBeta);
 			return menu;
 		});
 	}
@@ -525,7 +526,7 @@ export class ConfigService {
 				if (i.subitems.length && i.subitems.length > 0) {
 					i.subitems.forEach(el => {
 						if (el.id === 'smart-performance') {
-							el.availability = this.activeSegment === SegmentConst.Consumer;
+							el.availability = this.activeSegment === SegmentConst.Consumer && !this.deviceService.isArm;
 							el.hide = !isBeta || !el.availability;
 						}
 					})
