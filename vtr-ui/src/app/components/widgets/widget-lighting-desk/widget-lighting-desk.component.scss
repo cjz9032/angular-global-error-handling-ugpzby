@@ -236,9 +236,6 @@
                             @media #{$high-contrast} {
                                 -ms-high-contrast-adjust: none;
                             }
-                            &:focus{
-                               @include outline-blue-gaming;
-                            }
                         }
                         vtr-ui-color-picker{
                             position: absolute;
@@ -334,12 +331,14 @@
 		.ui-lighting-desk{		
 			.lighting-panel-select{
                 button:focus{
-                    @include outline-border-blue;
+                    @include default-button-border;
                 }
             }
-            .lighting-default-text{
+            .lighting-default-text,.lighting-color .d-flex{
                 button:focus{
                     @include outline-blue-gaming;
+                }
+                .under-line-button{
                     outline-offset: 0.2rem;
                 }
             }

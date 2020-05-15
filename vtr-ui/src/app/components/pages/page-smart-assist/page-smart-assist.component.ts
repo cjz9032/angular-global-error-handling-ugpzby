@@ -598,8 +598,9 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	setHPDAdvancedSetting(section: string, value: boolean) {
+	setHPDAdvancedSetting(section: string) {
 		if (this.smartAssist.isHPDShellAvailable) {
+			const value = section === 'zeroTouchLogin' ? !this.zeroTouchLoginShowAdvancedSection : !this.zeroTouchLockShowAdvancedSection;
 			this.smartAssist.setHPDAdvancedSetting(section, value)
 				.then((response) => {
 					if (response) {

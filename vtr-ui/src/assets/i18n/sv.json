@@ -2956,7 +2956,7 @@
         "betaSettingTitle": "Betaprogram",
         "betaProgram": "Betaprogram",
         "betaSettingDescription": "Prova de senaste funktionerna vi arbetar på.",
-        "betaSettingNewDescription": "Vi är glada att kunna bjuda in dig till betaprogrammet Smart Performance. Du kan förbättra datorns prestanda genom att<br/><ul class='pl-4'><li>felsöka fel och optimera inställningar proaktivt</li><li>förbättra internetprestandan genom att optimera nätverk och webbläsare</li><li>utföra snabb sökning och reparation utan att använda det befintliga antivirusprogrammet.</li></ul>"
+        "betaSettingNewDescription": "Vi är glada att kunna bjuda in dig till betaprogrammet Smart Performance. Du kan förbättra datorns prestanda genom att:<br/><ul class='pl-4'><li>felsöka fel och optimera inställningar proaktivt</li><li>förbättra internetprestandan genom att optimera nätverk och webbläsare</li><li>utföra snabb sökning och reparation utan att använda det befintliga antivirusprogrammet.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Avbryt",
