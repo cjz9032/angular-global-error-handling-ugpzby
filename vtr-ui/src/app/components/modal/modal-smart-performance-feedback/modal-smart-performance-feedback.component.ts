@@ -19,9 +19,10 @@ export class ModalSmartPerformanceFeedbackComponent implements OnInit {
 	isSubmitButtonActive = false;
 
 	questions = [
+		/* UnSubscribed Users */
 		{
-			likelyValues: [1, 2, 3, 4, 5],
-			name: 'fbProductLF',
+			likelyValues: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+			name: 'fbQ1',
 			question: 'smartPerformance.feedbackContainer.questions.q1',
 			ratingValue: [
 				'smartPerformance.feedbackContainer.rating.r1',
@@ -29,8 +30,8 @@ export class ModalSmartPerformanceFeedbackComponent implements OnInit {
 			]
 		},
 		{
-			likelyValues: [1, 2, 3, 4, 5],
-			name: 'fbFeature',
+			likelyValues: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 
+			name: 'fbQ2',
 			question: 'smartPerformance.feedbackContainer.questions.q2',
 			ratingValue: [
 				'smartPerformance.feedbackContainer.rating.r3',
@@ -38,8 +39,8 @@ export class ModalSmartPerformanceFeedbackComponent implements OnInit {
 			]
 		},
 		{
-			likelyValues: [1, 2, 3, 4, 5],
-			name: 'fbScan',
+			likelyValues: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+			name: 'fbQ3',
 			question: 'smartPerformance.feedbackContainer.questions.q3',
 			ratingValue: [
 				'smartPerformance.feedbackContainer.rating.r5',
@@ -47,17 +48,18 @@ export class ModalSmartPerformanceFeedbackComponent implements OnInit {
 			]
 		},
 		{
-			likelyValues: [1, 2, 3, 4, 5],
-			name: 'fbFixes',
+			likelyValues: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+			name: 'fbQ4',
 			question: 'smartPerformance.feedbackContainer.questions.q4',
 			ratingValue: [
 				'smartPerformance.feedbackContainer.rating.r7',
 				'smartPerformance.feedbackContainer.rating.r8',
 			]
 		},
+		/* Subscribed Users */
 		{
-			likelyValues: [1, 2, 3, 4, 5],
-			name: 'fbValueMoney',
+			likelyValues: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+			name: 'fbQ5',
 			question: 'smartPerformance.feedbackContainer.questions.q5',
 			ratingValue: [
 				'smartPerformance.feedbackContainer.rating.r9',
@@ -65,14 +67,32 @@ export class ModalSmartPerformanceFeedbackComponent implements OnInit {
 			]
 		},
 		{
-			likelyValues: [1, 2, 3, 4, 5],
-			name: 'fbRefer',
+			ynValues: ['Yes','No'],
+			name: 'fbQ6',
 			question: 'smartPerformance.feedbackContainer.questions.q6',
 			ratingValue: [
 				'smartPerformance.feedbackContainer.rating.r11',
 				'smartPerformance.feedbackContainer.rating.r12',
 			]
 		},
+		{
+			likelyValues: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+			name: 'fbQ7',
+			question: 'smartPerformance.feedbackContainer.questions.q7',
+			ratingValue: [
+				'smartPerformance.feedbackContainer.rating.r13',
+				'smartPerformance.feedbackContainer.rating.r14',
+			]
+		},
+		{
+			likelyValues: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+			name: 'fbQ8',
+			question: 'smartPerformance.feedbackContainer.questions.q8',
+			ratingValue: [
+				'smartPerformance.feedbackContainer.rating.r15',
+				'smartPerformance.feedbackContainer.rating.r16',
+			]
+		}
 
 	];
 
@@ -95,12 +115,14 @@ export class ModalSmartPerformanceFeedbackComponent implements OnInit {
 
 		//generating the form
 		this.feedbackForm = new FormGroup({
-			fbProductLF: new FormControl(null),
-			fbFeature: new FormControl(null),
-			fbScan: new FormControl(null),
-			fbFixes: new FormControl(null),
-			fbValueMoney: new FormControl(null),
-			fbRefer: new FormControl(null),
+			fbQ1: new FormControl(null),
+			fbQ2: new FormControl(null),
+			fbQ3: new FormControl(null),
+			fbQ4: new FormControl(null),
+			fbQ5: new FormControl(null),
+			fbQ6: new FormControl(null),
+			fbQ7: new FormControl(null),
+			fbQ8: new FormControl(null),
 			fbComment: new FormControl(null),
 		});	
 	}
@@ -108,12 +130,14 @@ export class ModalSmartPerformanceFeedbackComponent implements OnInit {
 	setSubmitButtonActive() {
 		let formData = this.feedbackForm.value;
 		if (
-			(isNull(formData.fbProductLF) || isUndefined(formData.fbProductLF))
-			&& (isNull(formData.fbFeature) || isUndefined(formData.fbFeature))
-			&& (isNull(formData.fbScan) || isUndefined(formData.fbScan))
-			&& (isNull(formData.fbFixes) || isUndefined(formData.fbFixes))
-			&& (isNull(formData.fbValueMoney) || isUndefined(formData.fbValueMoney))
-			&& (isNull(formData.fbRefer) || isUndefined(formData.fbRefer))
+			(isNull(formData.fbQ1) || isUndefined(formData.fbQ1))
+			&& (isNull(formData.fbQ2) || isUndefined(formData.fbQ2))
+			&& (isNull(formData.fbQ3) || isUndefined(formData.fbQ3))
+			&& (isNull(formData.fbQ4) || isUndefined(formData.fbQ4))
+			&& (isNull(formData.fbQ5) || isUndefined(formData.fbQ5))
+			&& (isNull(formData.fbQ6) || isUndefined(formData.fbQ6))
+			&& (isNull(formData.fbQ7) || isUndefined(formData.fbQ7))
+			&& (isNull(formData.fbQ8) || isUndefined(formData.fbQ8))
 			&& (isNull(formData.fbComment) || isUndefined(formData.fbComment) || formData.fbComment=='')
 		) {
 			this.isSubmitButtonActive = false;
@@ -133,12 +157,14 @@ export class ModalSmartPerformanceFeedbackComponent implements OnInit {
 			Content: formData.fbComment,
 			Subscribed: this.isSubscribed,
 			QA: {
-				fbProductLF: formData.fbProductLF,
-				fbFeature: formData.fbFeature,
-				fbScan: formData.fbScan,
-				fbFixes: formData.fbFixes,
-				fbValueMoney: formData.fbValueMoney,
-				fbRefer: formData.fbRefer,
+				fbQ1: formData.fbQ1,
+				fbQ2: formData.fbQ2,
+				fbQ3: formData.fbQ3,
+				fbQ4: formData.fbQ4,
+				fbQ5: formData.fbQ5,
+				fbQ6: formData.fbQ6,
+				fbQ7: formData.fbQ7,
+				fbQ8: formData.fbQ8,
 				fbComment: formData.fbComment,
 			}
 		};
