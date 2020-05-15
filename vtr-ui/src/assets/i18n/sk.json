@@ -1156,13 +1156,13 @@
                             }
                         },
                         "autoTransition": {
-                            "description": "Povoliť automatický prechod do režimu najvyššieho výkonu. Keď je povolený, teplota počítača a hluk ventilátora sa môžu automaticky zvýšiť.",
+                            "description": "Povoliť automatický prechod do režimu Najvyšší výkon. Keď je povolený, teplota počítača a hluk ventilátora sa môžu automaticky zvýšiť.",
                             "more": "VIAC",
                             "less": "MENEJ",
                             "moreContent": {
                                 "desc1": "a. Pri kancelárskej práci, aktualizácii systému Windows, prehrávaní online filmu alebo nízkom zaťažení systému môže byť systém tichý. Pri bežnom hraní má zasa vyšší výkon.",
-                                "desc2": "b. Pri hraní hier, ktoré výrazne zaťažujú systém, sa systém môže prepnúť do režimu najvyššieho výkonu. V takom prípade sa teplota povrchu počítača a hluk ventilátora môžu zvýšiť.",
-                                "desc3": "c. Ak je kapacita batérie nižšia ako 30 %, systém sa automaticky prepne do režimu úspory batérie."
+                                "desc2": "b. Pri hraní hier, ktoré výrazne zaťažujú systém, sa systém môže prepnúť do režimu Najvyšší výkon. V takom prípade sa teplota povrchu počítača a hluk ventilátora môžu zvýšiť.",
+                                "desc3": "c. Ak je kapacita batérie nižšia ako 30 %, systém sa automaticky prepne do režimu Šetrenie batérie."
                             }
                         }
                     },
