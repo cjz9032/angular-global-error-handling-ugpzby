@@ -52,7 +52,8 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	public isNewplugin = true;
 	public dolbyToggleButtonStatus = undefined;
 	public eCourseToggleButtonStatus = undefined;
-	public radioDetails: Array<UiCircleRadioWithCheckBoxListModel> = [];
+	public dolbyModesUIModel: Array<UiCircleRadioWithCheckBoxListModel> = [];
+	public microphoneModesUIModel: Array<UiCircleRadioWithCheckBoxListModel> = [];
 	@Output() tooltipClick = new EventEmitter<boolean>();
 
 	@Input() dolbyModeDisabled = false;
@@ -213,7 +214,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 
 	onOptimizeModesRadioChange(event: any) {
 		try {
-			const newVal = event.target.value;
+			const newVal = event.value;
 			if (this.microOptimizeModeResponse.current === newVal) {
 				this.logger.info('microphone already set');
 				return;
@@ -285,7 +286,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 							response.entertainmentStatus = this.dolbyModeResponse.entertainmentStatus;
 						}
 						this.dolbyModeResponse = response;
-						this.updateRadioDetails(response);
+						this.updateDolbyModeModel(response);
 						this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyModeResponse);
 						if (this.dolbyModeResponse.eCourseStatus === undefined) {
 							this.isNewplugin = false;
@@ -313,11 +314,11 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	updateRadioDetails(response: DolbyModeResponse) {
+	updateDolbyModeModel(response: DolbyModeResponse) {
 		if (response && response.supportedModes) {
-			this.radioDetails = [];
+			this.dolbyModesUIModel = [];
 			response.supportedModes.forEach(dolbyMode => {
-				this.radioDetails.push({
+				this.dolbyModesUIModel.push({
 					componentId: `radioDolbyMode${dolbyMode}`.replace(/\s/g, ''),
 					label: `device.deviceSettings.audio.audioSmartsettings.dolby.options.${dolbyMode.toLowerCase()}`,
 					value: dolbyMode,
@@ -326,6 +327,25 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 					processIcon: true,
 					customIcon: '',
 					hideIcon: false,
+					processLabel: true
+				});
+			});
+		}
+	}
+
+	updateMicrophoneModel(response: MicrophoneOptimizeModes) {
+		if (response && response.modes) {
+			this.microphoneModesUIModel = [];
+			response.modes.forEach(micMode => {
+				this.microphoneModesUIModel.push({
+					componentId: `radioMicrophone${micMode}`.replace(/\s/g, ''),
+					label: `device.deviceSettings.audio.microphone.optimize.options.${micMode}`,
+					value: micMode,
+					isChecked: micMode === response.current,
+					isDisabled: this.microphoneProperties.disableEffect,
+					processIcon: true,
+					customIcon: micMode.toLowerCase() === 'normal' ? 'LE-VoiceRecognition2x': '',
+					hideIcon: micMode.toLowerCase() === 'normal',
 					processLabel: true
 				});
 			});
@@ -778,6 +798,8 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		}
 		if (msg.hasOwnProperty('modes')) {
 			this.microOptimizeModeResponse.modes = msg.modes;
+			this.updateMicrophoneModel(this.microOptimizeModeResponse);
+
 		}
 		if (msg.hasOwnProperty('currentMode')) {
 			if (msg.currentMode && this.cacheFlag.currentMode) {

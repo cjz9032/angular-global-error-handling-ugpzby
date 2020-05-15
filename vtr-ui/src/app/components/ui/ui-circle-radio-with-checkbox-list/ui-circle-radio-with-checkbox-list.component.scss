@@ -2,7 +2,7 @@
 
 @mixin theme($name, $background, $foreground, $label-color) {
 	.vtr-ui-circle-radio-with-checkbox-list.#{$name} {
-		$container-width: 11rem;
+		$container-width: 12rem;
 		margin-right: 1.5rem;
 		margin-top: 1.5rem;
 		.circle-radio {
@@ -34,7 +34,7 @@
 					.fa-layers {
 						position: absolute;
 						top: 0.35rem;
-						left: 2.6rem;
+						left: 3.2rem;
 						@media screen and (min-width: 992px) and (max-width: 1199.9px) {
 							left: 6rem;
 						}
@@ -211,7 +211,7 @@
 						font-size: 6.7rem !important;
 						background: transparent;
 						position: absolute;
-						left: 2.2rem;
+						left: 2.7rem;
 						top: -0.1rem;
 						&::before {
 							color: $background !important;

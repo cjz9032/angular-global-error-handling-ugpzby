@@ -43,31 +43,12 @@
 									[isSwitchChecked]="dolbyModeResponse.isAudioProfileEnabled"
 									[showLoaderState]="autoDolbyFeatureLoader"
 									[switchId]="'audio-automatic-dolby'">
-									<!-- <div class="row no-gutters tab-focus-white pl-5"
-										*ngIf="dolbyModeResponse.isAudioProfileEnabled"
-										role="radiogroup"
-										tabindex="0"
-										aria-label="dolby audio more list, select using arrow keys">
-										<vtr-ui-circle-radio-with-checkbox
-											*ngFor="let dolbyMode of dolbyModeResponse.supportedModes"
-											[theme]="'white'"
-											[radioId]="'radioDolbyMode' + dolbyMode | removeSpace"
-											[group]="radioGroupAutoDolbySettings"
-											[label]="dolbyMode | dolbyModesTranslation"
-											[value]='dolbyMode'
-											[disabled]='dolbyModeDisabled'
-											[checked]="dolbyMode == dolbyModeResponse.currentMode"
-											(optionChange)="onDolbySettingRadioChange($event)"
-											[processIcon]="true"
-											[textId]="'myDevice-settings-audio-automatic-dolby'">
-										</vtr-ui-circle-radio-with-checkbox>
-									</div> -->
 									<div class="row no-gutters tab-focus-white pl-5"
 										*ngIf="dolbyModeResponse.isAudioProfileEnabled"
 										aria-label="dolby audio more list, select using arrow keys">
 										<vtr-ui-circle-radio-with-checkbox-list [groupName]="'dolby-mode-radio-group'"
 											(optionChange)="onDolbySettingRadioChange($event)"
-											[radioDetails]="radioDetails">
+											[radioDetails]="dolbyModesUIModel">
 										</vtr-ui-circle-radio-with-checkbox-list>
 									</div>
 									<div class="audioDolbySub pl-5"
@@ -309,22 +290,11 @@
 										<div class="row no-gutters tab-focus-white pl-4 ml-4"
 											role="radiogroup"
 											tabindex="0"
-											aria-label="microphone optimizemore list, select using arrow keys">
-											<vtr-ui-circle-radio-with-checkbox
-												*ngFor="let optimizeMode of microOptimizeModeResponse.modes"
-												[radioId]="'radioMicrophone' + optimizeMode | removeSpace"
-												[group]="radioOptimiseMicSettings"
-												[label]="optimizeMode | separatePascalCase"
-												[theme]="'white'"
-												[value]='optimizeMode'
-												[checked]="optimizeMode === microOptimizeModeResponse.current"
-												[disabled]="microphoneProperties.disableEffect"
-												(optionChange)="onOptimizeModesRadioChange($event)"
-												[processIcon]="true"
-												[hideIcon]="optimizeMode === 'Normal'"
-												[customIcon]="optimizeMode === 'Normal' ? 'LE-VoiceRecognition2x': ''"
-												[textId]="'myDevice-settings-audio-microphone-optimize'">
-											</vtr-ui-circle-radio-with-checkbox>
+											aria-label="optimize microphone options, select using arrow keys">
+											<vtr-ui-circle-radio-with-checkbox-list [groupName]="'optimize-microphone-radio-group'"
+											(optionChange)="onOptimizeModesRadioChange($event)"
+											[radioDetails]="microphoneModesUIModel">
+										</vtr-ui-circle-radio-with-checkbox-list>
 										</div>
 									</vtr-ui-row-switch>
 								</li>
