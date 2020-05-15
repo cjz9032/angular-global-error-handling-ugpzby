@@ -1162,7 +1162,7 @@
                             "moreContent": {
                                 "desc1": "a. V kancelářských aplikacích, aktualizacích Windows, online filmech nebo scénářích s lehkým zatížením systému může být systém tichý. V běžných herních scénářích má lepší výkon.",
                                 "desc2": "b. Při hraní náročných her se může systém automaticky přepnout do režimu \"Extrémní výkon\". V tomto případě se může zvýšit teplota povrchu počítače a hluk ventilátoru.",
-                                "desc3": "c. Pokud je kapacita baterie nižší než 30 %, systém se automaticky přepne do režimu \"Úspora baterie\"."
+                                "desc3": "c. Pokud je kapacita baterie nižší než 30 %, systém se automaticky přepne do režimu \"Úspora energie baterie\"."
                             }
                         }
                     },

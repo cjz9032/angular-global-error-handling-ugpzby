@@ -1156,12 +1156,12 @@
                             }
                         },
                         "autoTransition": {
-                            "description": "Omogočite samodejni prehod v način »Skrajna zmogljivost«. Ko je omogočen, se temperatura računalnika in glasnost delovanja ventilatorja lahko samodejno povečata.",
+                            "description": "Omogočite samodejni prehod v način »Izjemna zmogljivost«. Ko je omogočen, se temperatura računalnika in glasnost delovanja ventilatorja lahko samodejno povečata.",
                             "more": "VEČ",
                             "less": "MANJ",
                             "moreContent": {
                                 "desc1": "a. Med uporabo pisarniških programov, posodabljanjem sistema Windows, ogledom filmov v spletu ali pri manjših obremenitvah lahko sistem deluje tiho, medtem ko ima večjo zmogljivost pri običajnem igranju iger.",
-                                "desc2": "b. Pri igranju zahtevnejših iger bo sistem najverjetneje preklopil v način »Skrajna zmogljivost«. V tem primeru se temperatura na površini računalnika in glasnost delovanja ventilatorja lahko povečata.",
+                                "desc2": "b. Pri igranju zahtevnejših iger bo sistem najverjetneje preklopil v način »Izjemna zmogljivost«. V tem primeru se temperatura na površini računalnika in glasnost delovanja ventilatorja lahko povečata.",
                                 "desc3": "c. Ko zmogljivost baterije pade pod 30 %, sistem samodejno preklopi v način »Varčevanje z energijo baterije«."
                             }
                         }

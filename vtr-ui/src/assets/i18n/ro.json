@@ -1162,7 +1162,7 @@
                             "moreContent": {
                                 "desc1": "a. În scenariile de încărcare a aplicaţiilor Office, a Windows Update, a filmelor online sau a luminilor de sistem, sistemul poate fi silenţios. În timp ce în scenariile normale pentru jocuri, computerul are o performanţă mai bună.",
                                 "desc2": "b. În cazul scenariilor intensive pentru jocuri, sistemul poate trece la modul „Performanță extremă”. În acest caz, temperatura suprafeței computerului și zgomotul ventilatorului pot crește.",
-                                "desc3": "c. Atunci când energia bateriei este mai mică de 30%, sistemul trece automat în modul „Economisire baterie”."
+                                "desc3": "c. Atunci când energia bateriei este mai mică de 30%, sistemul trece automat în modul „Economisirea bateriei”."
                             }
                         }
                     },
