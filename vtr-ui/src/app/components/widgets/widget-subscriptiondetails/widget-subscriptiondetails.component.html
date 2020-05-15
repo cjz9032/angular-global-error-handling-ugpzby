@@ -27,14 +27,14 @@
     </ul>
     <a *ngIf="isSubscribed" class="link-text" (click)=openSubscribeModal() 
         vtrMetrics
-        metricsItem="smartPerformance.subscribeModal"
+        metricsItem="btn.manageSub"
         metricsEvent="FeatureClick"
         metricsParent="pages.support.smartPerformance">
         {{'smartPerformance.subscriptionDetails.manageSubscription' |translate }}
     </a>
     <a *ngIf="!isSubscribed" class="link-text" (click)=openSubscribeModal() 
         vtrMetrics
-        metricsItem="smartPerformance.subscribeModal"
+        metricsItem="btn.manageSubBeta"
         metricsEvent="FeatureClick"
         metricsParent="pages.support.smartPerformance">
         {{'smartPerformance.subscriptionDetails.manageSubscriptionBeta' |translate }}
