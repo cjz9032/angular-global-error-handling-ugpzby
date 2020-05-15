@@ -6,6 +6,7 @@ import { EMPTY } from 'rxjs';
 import { TopRowFunctionsCapability } from 'src/app/data-models/device/top-row-functions-capability';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { UiCircleRadioWithCheckBoxListModel } from 'src/app/components/ui/ui-circle-radio-with-checkbox-list/ui-circle-radio-with-checkbox-list.model';
 
 @Component({
 	selector: 'vtr-top-row-functions',
@@ -19,6 +20,7 @@ export class TopRowFunctionsComponent implements OnInit, OnDestroy, AfterViewIni
 	public showAdvancedSection = false;
 	public topRowFunInterval: any;
 	public isCacheFound = false;
+	public functionLockUIModel: Array<UiCircleRadioWithCheckBoxListModel> = [];
 
 	constructor(
 		private keyboardService: InputAccessoriesService,
@@ -63,6 +65,7 @@ export class TopRowFunctionsComponent implements OnInit, OnDestroy, AfterViewIni
 					this.topRowKeyObj.primaryFunCap = res[2];
 					this.getAllStatuses();
 					this.setTopRowStatusCallback();
+					this.updateFunctionLockUIModel()
 				});
 			}
 		} catch (error) {
@@ -138,6 +141,45 @@ export class TopRowFunctionsComponent implements OnInit, OnDestroy, AfterViewIni
 		});
 	}
 
+	updateFunctionLockUIModel() {
+		this.functionLockUIModel = [];
 
+		const { primaryFunStatus, fnLockStatus} = this.topRowKeyObj;
+
+		this.functionLockUIModel.push({
+			componentId: `radio1`,
+			label: `device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.sFunKey`,
+			value: 'special-key',
+			isChecked: (primaryFunStatus && fnLockStatus) || (!primaryFunStatus && !fnLockStatus) ? true: false,
+			isDisabled: false,
+			processIcon: true,
+			customIcon: 'Special-function',
+			hideIcon: true,
+			processLabel: true,
+		});
+		this.functionLockUIModel.push({
+			componentId: `radio2`,
+			label: `device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.fnKey`,
+			value: 'function-key',
+			isChecked: (primaryFunStatus && fnLockStatus) || (!primaryFunStatus && !fnLockStatus) ? false: true,
+			isDisabled: false,
+			processIcon: true,
+			customIcon: 'F1-F12-funciton',
+			hideIcon: true,
+			processLabel: true,
+		});
+	}
+
+
+	onFunctionLockRadioChange($event: UiCircleRadioWithCheckBoxListModel) {
+		if ($event) {
+			const componentId = $event.componentId.toLowerCase();
+			if (componentId === 'radio1') {
+				this.onChangeFunType(this.topRowKeyObj.primaryFunStatus);
+			} else if (componentId === 'radio2') {
+				this.onChangeFunType(!this.topRowKeyObj.primaryFunStatus);
+			}
+		}
+	}
 
 }

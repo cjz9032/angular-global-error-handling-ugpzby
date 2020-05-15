@@ -113,7 +113,7 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 			this.functionLockUIModel.push({
 				componentId: `radio1`,
 				label: `device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.sFunKey`,
-				value: 'performance',
+				value: 'special-key',
 				isChecked: value,
 				isDisabled: false,
 				processIcon: true,
@@ -127,7 +127,7 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 			this.functionLockUIModel.push({
 				componentId: `radio2`,
 				label: `device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.fnKey`,
-				value: this.keyType.FNKEY,
+				value: 'function-key',
 				isChecked: value,
 				isDisabled: false,
 				processIcon: true,
