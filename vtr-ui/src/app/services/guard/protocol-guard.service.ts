@@ -10,26 +10,26 @@ import { DeviceService } from '../device/device.service';
 export class ProtocolGuardService implements CanActivate {
   vantage3xSchema = 'lenovo-vantage3:';
   semanticToPath: { [semantic: string]: string } = {
-	'dashboard': '',
-	'device': 'device',
+	dashboard: 'dashboard',
+	device: 'device',
 	'device-settings': 'device/device-settings/power',
 	'system-updates': 'device/system-updates',
-	'security': 'security',
+	security: 'security',
 	'anti-virus': 'security/anti-virus',
 	'wifi-security': 'security/wifi-security',
 	'password-protection': 'security/password-protection',
 	'internet-protection': 'security/internet-protection',
 	'windows-hello': 'security/windows-hello',
-	'support': 'support',
-	'power': 'device/device-settings/power',
+	support: 'support',
+	power: 'device/device-settings/power',
 	'display-camera': 'device/device-settings/display-camera',
-	'audio': 'device/device-settings/audio',
-	'input': 'device/device-settings/input-accessories',
+	audio: 'device/device-settings/audio',
+	input: 'device/device-settings/input-accessories',
 	'smart-settings': 'device/smart-assist',
 	'home-security': 'home-security',
 	'modern-preload': '?action=modernpreload',
-	'toolbar': '',
-	'preference': 'settings',
+	toolbar: '',
+	preference: 'settings',
 	'gaming-autoclose': 'gaming/autoclose',
 	'gaming-networkboost': 'gaming/networkboost',
 	'gaming-macrokey': 'gaming/macrokey',
@@ -48,10 +48,10 @@ export class ProtocolGuardService implements CanActivate {
   ];
 
   sectionToSemantic: { [section: string]: string } = {
-	'powersection': 'power',
-	'multimedia': 'display-camera',
-	'input': 'input',
-	'multimodesection': 'smart-settings'
+	powersection: 'power',
+	multimedia: 'display-camera',
+	input: 'input',
+	multimodesection: 'smart-settings'
   }
 
   featureIdToSemantic: { [featureId: string]: string } = {
@@ -99,15 +99,15 @@ export class ProtocolGuardService implements CanActivate {
   }
 
   public isRedirectUrlNeeded(args: string) : [boolean, string] {
-	let tempUrl = this.processPath(args);
+	const tempUrl = this.processPath(args);
 	if (tempUrl !== args && tempUrl !== '/') return [true, tempUrl];
 
 	return [false, ''];
   }
 
   private processPath(path: string) : string {
-	let encodedProtocol = path.slice(path.indexOf(this.characteristicCode) + this.characteristicCode.length);
-	let originalProtocol = this.decodeBase64String(encodedProtocol);
+	const encodedProtocol = path.slice(path.indexOf(this.characteristicCode) + this.characteristicCode.length);
+	const originalProtocol = this.decodeBase64String(encodedProtocol);
 	if (!originalProtocol) return '/';
 
 	try {
@@ -127,7 +127,7 @@ export class ProtocolGuardService implements CanActivate {
   }
 
   private convertToUrlAssumeProtocolIs3x(rawData: string) : string {
-	let url = this.constructURL(rawData);
+	const url = this.constructURL(rawData);
 	if (!url) return '';
 	const schema = url.protocol;
 	const semantic = url.pathname;
@@ -135,7 +135,7 @@ export class ProtocolGuardService implements CanActivate {
 
 	if (schema.toLowerCase() !== this.vantage3xSchema || !semantic) return '';
 
-	let path: string | undefined = this.semanticToPath[semantic.toLowerCase()];
+	const path: string | undefined = this.semanticToPath[semantic.toLowerCase()];
 	if (path === undefined) {
 		return '';
 	}
@@ -144,7 +144,7 @@ export class ProtocolGuardService implements CanActivate {
   }
 
   private convertToUrlAssumeProtocolIs2x(rawData: string) : string {
-	let url = this.constructURL(rawData);
+	const url = this.constructURL(rawData.toLowerCase());
 	if (!url) return '';
 	const schema = url.protocol;
 	const pathName = url.pathname;
@@ -153,7 +153,7 @@ export class ProtocolGuardService implements CanActivate {
 
 	if (!schema || !this.backwardCompatibilitySchemas.includes(schema.toLowerCase()) || !pathName || pathName.toLowerCase() !== 'param') return '';
 
-	const featureId: string | null = queryParams.get('featureId');
+	const featureId: string | null = queryParams.get('featureid');
 	if (featureId) {
 		const featureSemantic: string | undefined = this.featureIdToSemantic[featureId.toLowerCase()];
 		if (featureSemantic) {
@@ -183,6 +183,10 @@ export class ProtocolGuardService implements CanActivate {
 				window.history.replaceState([], '', '#' + checkResult[1]);
 			} else {
 				window.history.replaceState([], '', `#${this.deviceService.isGaming ? '/device-gaming' : '/dashboard'}`);
+			}
+
+			if (checkResult[1].startsWith('/dashboard') && this.deviceService.isGaming) {
+				checkResult[1].replace(/^\/dashboard/, '/device-gaming');
 			}
 
 			return this.router.parseUrl(checkResult[1]);

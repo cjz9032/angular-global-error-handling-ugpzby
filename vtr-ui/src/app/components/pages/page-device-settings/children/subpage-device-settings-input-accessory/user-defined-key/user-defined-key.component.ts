@@ -318,9 +318,13 @@ export class UserDefinedKeyComponent implements OnInit {
 
 	}
 	public resetInvokeSequence(event) {
-		this.keyCode = '';
-		this.counter = 0;
-		this.keyCodeValue = '';
+		if (event.keyCode === 13 || event.pointerType === 'mouse' || event.type === 'click') {
+			this.keyCode = '';
+			this.counter = 0;
+			this.keyCodeValue = '';
+		}
+		event.preventDefault();
+
 	}
 	/**
 	 * hide UDF set or error message after 5 seconds

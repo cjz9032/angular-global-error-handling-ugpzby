@@ -62,6 +62,8 @@ import { WidgetLandingNavComponent } from '../../components/pages/page-security/
 import { WidgetSvgCircleComponent } from 'src/app/components/pages/page-security/widget/widget-svg-circle/widget-svg-circle.component';
 import { ThreatLocatorComponent } from '../../components/pages/page-security-wifi/children/threat-locator/threat-locator.component';
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+import { UiFeatureHeadingComponent } from 'src/app/components/ui/ui-feature-heading/ui-feature-heading.component';
+import { UiFeatureIntroductionComponent } from 'src/app/components/ui/ui-feature-introduction/ui-feature-introduction.component';
 
 
 @NgModule({
@@ -80,6 +82,8 @@ import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 		// UI
 		UiLandingFeatureComponent,
 		UiSecurityStatusbarComponent,
+		UiFeatureHeadingComponent,
+		UiFeatureIntroductionComponent,
 		// Pipe
 		SubTransformPipe,
 		DateClassPipe,

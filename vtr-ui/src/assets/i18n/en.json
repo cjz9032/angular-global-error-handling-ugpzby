@@ -2435,7 +2435,7 @@
 			"inactiveStatus": "INACTIVE",
 			"manageSubscription": "MANAGE SUBSCRIPTION",
 			"manageSubscriptionBeta":"SUBSCRIBE FOR BETA PROGRAM",
-			"descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
+			"descriptionbeta": "Lenovo is offering pilot program to try Smart Performance feature till July.",
 			"descriptionbeta1": "You are welcomed to join and try the full feature."
 		},
 		"scanSettings": {
@@ -2899,6 +2899,7 @@
 			"subTitle": "You are subscribed to Lenovo Smart Performance Service",
 			"description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
 			"scanNow": "SCAN NOW",
+			"backToHome": "Back To Home",
 			"returnto": "RETURN TO DASHBOARD",
 			"mostRecent": "MOST RECENT SCAN:",
 			"nextScheduled": "NEXT SCHEDULED SCAN:",
@@ -2926,6 +2927,36 @@
 				"results": "Results:",
 				"status": "Status"
 			}
+		},
+		"feedbackContainer": {
+			"title": "Leave us some feedback",
+			"subtitle": "Tell us what you think about Vantage",
+			"buttonText": "send feedback",
+			"questions": {
+				"q1": "Does the product look and feel good?",
+				"q2": "Do the feature seen comprehensive?",
+				"q3": "Was the scan easy to use?",
+				"q4": "Happy about the fixes we did?",
+				"q5": "Do you see value for money? ",
+				"q6": "Will you refer it to your friends and family?"
+
+			},
+			"rating": {
+				"r1": "Hate it",
+				"r2": "Love it",
+				"r3": "Seems lacking",
+				"r4": "Good enough",
+				"r5": "Crazy",
+				"r6": "Cool",
+				"r7": "Not so sure",
+				"r8": "Absolutely yes",
+				"r9": "No way",
+				"r10": "Looks worthy",
+				"r11": "Not so sure",
+				"r12": "Absolutely yes"
+			},
+			"commentTip": "Shout what you love and whisper what you hate.",
+			"comments": "Please leave your comments here..."
 		}
 	},
 	"homeSecurity": {
@@ -3779,6 +3810,14 @@
 		"doNotSleepOrSignOutOrTurnOffComputer": "• Do not sleep or sign out or turn off your computer.",
 		"testNotApplicable": "Not applicable on custom scan",
 		"cancelMayTakeSomeTime": "Please wait, it may take some time to cancel depending on your system.",
+		"scanFailureModal": {
+            "title": "Hardware Problem Detected",
+            "problemDetected": "There were detected problems on the following components on your computer:",
+            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
+            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
+            "supportButtonText": "Open Ticket",
+            "recoverBadSectorsButtonText": "Recover Bad Sectors"
+        },
 		"customize": {
 			"name": "Customize",
 			"test": "Customize Test",

@@ -15,8 +15,7 @@ import { UiRoundedRectangleRadioModel } from 'src/app/components/ui/ui-rounded-r
 })
 export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 
-	@ViewChild('adv') showAdvEl: ElementRef
-
+	@ViewChild('adv') adv: ElementRef
 	public topRowKeyObj: TopRowFunctionsCapability;
 	public showAdvancedSection = false;
 	public topRowFunInterval: any;
@@ -46,6 +45,12 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 
 		this.getFunctionCapabilities();
 		this.setUpTopRowFunctionRadios();
+	}
+
+	ngAfterViewInit() {
+		if (!this.showAdvancedSection) {
+			this.adv.nativeElement.focus();
+		}
 	}
 
 	ngOnDestroy() {
@@ -166,8 +171,9 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 
 	switchFocusToShowAdv() {
 		setTimeout(() => {
-			this.showAdvEl.nativeElement.focus()
+			this.adv.nativeElement.focus()
 		}, 0)
 	}
+
 
 }

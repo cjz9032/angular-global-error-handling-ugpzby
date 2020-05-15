@@ -17,6 +17,7 @@ import { RouteHandlerService } from 'src/app/services/route-handler/route-handle
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { PageAnchorLink } from 'src/app/data-models/common/page-achor-link.model';
 import { TranslateService } from '@ngx-translate/core';
+import { UiCircleRadioWithCheckBoxListModel } from 'src/app/components/ui/ui-circle-radio-with-checkbox-list/ui-circle-radio-with-checkbox-list.model';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-audio',
@@ -51,7 +52,8 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	public isNewplugin = true;
 	public dolbyToggleButtonStatus = undefined;
 	public eCourseToggleButtonStatus = undefined;
-
+	public dolbyModesUIModel: Array<UiCircleRadioWithCheckBoxListModel> = [];
+	public microphoneModesUIModel: Array<UiCircleRadioWithCheckBoxListModel> = [];
 	@Output() tooltipClick = new EventEmitter<boolean>();
 
 	@Input() dolbyModeDisabled = false;
@@ -93,7 +95,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 				.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.audioCapture);
 		}
 		const entertainmentTooltipText = this.translate.instant('device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.entertainmentMode.tooltip');
-		this.entertainmentTooltip = JSON.parse(JSON.stringify(entertainmentTooltipText).replace(/<\/?.+?\/?>/g, ""));
+		this.entertainmentTooltip = JSON.parse(JSON.stringify(entertainmentTooltipText).replace(/<\/?.+?\/?>/g, ''));
 	}
 
 	ngOnInit() {
@@ -212,7 +214,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 
 	onOptimizeModesRadioChange(event: any) {
 		try {
-			const newVal = event.target.value;
+			const newVal = event.value;
 			if (this.microOptimizeModeResponse.current === newVal) {
 				this.logger.info('microphone already set');
 				return;
@@ -284,6 +286,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 							response.entertainmentStatus = this.dolbyModeResponse.entertainmentStatus;
 						}
 						this.dolbyModeResponse = response;
+						this.updateDolbyModeModel(response);
 						this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyModeResponse);
 						if (this.dolbyModeResponse.eCourseStatus === undefined) {
 							this.isNewplugin = false;
@@ -308,6 +311,44 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			}
 		} catch (error) {
 			this.logger.error('getDolbyModesStatus' + error.message);
+		}
+	}
+
+	updateDolbyModeModel(response: DolbyModeResponse) {
+		if (response && response.supportedModes) {
+			this.dolbyModesUIModel = [];
+			response.supportedModes.forEach(dolbyMode => {
+				this.dolbyModesUIModel.push({
+					componentId: `radioDolbyMode${dolbyMode}`.replace(/\s/g, ''),
+					label: `device.deviceSettings.audio.audioSmartsettings.dolby.options.${dolbyMode.toLowerCase()}`,
+					value: dolbyMode,
+					isChecked: dolbyMode === response.currentMode,
+					isDisabled: false,
+					processIcon: true,
+					customIcon: '',
+					hideIcon: false,
+					processLabel: true,
+				});
+			});
+		}
+	}
+
+	updateMicrophoneModel(response: MicrophoneOptimizeModes) {
+		if (response && response.modes) {
+			this.microphoneModesUIModel = [];
+			response.modes.forEach(micMode => {
+				this.microphoneModesUIModel.push({
+					componentId: `radioMicrophone${micMode}`.replace(/\s/g, ''),
+					label: `device.deviceSettings.audio.microphone.optimize.options.${micMode}`,
+					value: micMode,
+					isChecked: micMode === response.current,
+					isDisabled: this.microphoneProperties.disableEffect,
+					processIcon: true,
+					customIcon: micMode.toLowerCase() === 'normal' ? 'LE-VoiceRecognition2x': '',
+					hideIcon: micMode.toLowerCase() === 'normal',
+					processLabel: true,
+				});
+			});
 		}
 	}
 
@@ -447,8 +488,8 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 				if (this.audioService.isShellAvailable) {
 					this.cacheFlag.autoOptimization = false;
 					this.audioService.setMicrophoneAutoOptimization(value)
-						.then((value) => {
-							this.logger.info('onVoipCheckboxChange old plugin', value);
+						.then((value1) => {
+							this.logger.info('onVoipCheckboxChange old plugin', value1);
 						}).catch(error => {
 							this.logger.error('onVoipCheckboxChange old plugin', error.message);
 						});
@@ -475,8 +516,8 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			else {
 				if (this.audioService.isShellAvailable) {
 					this.audioService.setDolbyOnOff(value)
-						.then((value) => {
-							this.logger.info('onEntertainmentCheckboxChange old plugin', value);
+						.then((value1) => {
+							this.logger.info('onEntertainmentCheckboxChange old plugin', value1);
 						}).catch(error => {
 							this.logger.error('onEntertainmentCheckboxChange old plugin', error.message);
 						});
@@ -527,7 +568,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 
 	onDolbySettingRadioChange(event: any) {
 		try {
-			this.dolbyModeResponse.currentMode = event.target.value;
+			this.dolbyModeResponse.currentMode = event.value;
 			if (this.audioService.isShellAvailable) {
 				this.audioService.setDolbyMode(this.dolbyModeResponse.currentMode)
 					.then((value) => {
@@ -757,6 +798,8 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		}
 		if (msg.hasOwnProperty('modes')) {
 			this.microOptimizeModeResponse.modes = msg.modes;
+			this.updateMicrophoneModel(this.microOptimizeModeResponse);
+
 		}
 		if (msg.hasOwnProperty('currentMode')) {
 			if (msg.currentMode && this.cacheFlag.currentMode) {

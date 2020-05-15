@@ -858,6 +858,7 @@ export class VantageShellService {
 		const dolby: any = {};
 		const obj: any = {
 			available: true,
+			isAudioProfileEnabled: true,
 			currentMode: 'Dynamic',
 			supportedModes: ['Dynamic', 'Movie', 'Music', 'Games', 'Voip']
 		};

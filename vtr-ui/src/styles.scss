@@ -920,7 +920,7 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	}
 }
 
-.feedback-modal {
+.feedback-modal, .smart-performance-feedback-Modal {
 	.modal-dialog {
 		margin: 1.75rem auto;
 		width: 50rem;
@@ -1576,6 +1576,30 @@ vtr-ui-smart-performance-scanning {
 		}
 		@media #{$breakpoint_sm} {
 			max-width: 80%;
+		}
+		.modal-content {
+			border-radius: 1rem;
+			.description {
+				.question {
+					font-weight: $weight_bold;
+				}
+			}
+		}
+	}
+}
+
+.support-modal-hwscan {
+	.modal-dialog {
+		max-width: 30%;
+		margin: 0 auto;
+		@media #{$breakpoint_lg} {
+			max-width: 55%;
+		}
+		@media #{$breakpoint_md} {
+			max-width: 60%;
+		}
+		@media #{$breakpoint_sm} {
+			max-width: 65%;
 		}
 		.modal-content {
 			border-radius: 1rem;

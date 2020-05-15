@@ -10,7 +10,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { ModalHardwareScanCustomizeComponent } from '../../../../modal/modal-hardware-scan-customize/modal-hardware-scan-customize.component';
 import { ModalCancelComponent } from '../../../../modal/modal-cancel/modal-cancel.component';
-import { ModalEticketComponent } from '../../../../modal/modal-eticket/modal-eticket.component';
+import { ModalScanFailureComponent } from '../../../../modal/modal-scan-failure/modal-scan-failure.component';
 import { ModalScheduleScanCollisionComponent } from '../../../../modal/modal-schedule-scan-collision/modal-schedule-scan-collision.component';
 import { HardwareScanService } from '../../../../../services/hardware-scan/hardware-scan.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
@@ -362,15 +362,16 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				for (let i = 0; i < categoryInfo.groupList.length; i++) {
 					const group = categoryInfo.groupList[i];
 					const info = categoryInfo.name;
+					let icon = categoryInfo.id;
 					if (!this.hardwareScanService.getIsDesktopMachine()) {
 						if (categoryInfo.id === 'pci_express') {
-							categoryInfo.id += '_laptop';
+							icon += '_laptop';
 						}
 					}
 					devices.push({
 						module: info,
 						name: group.name,
-						icon: categoryInfo.id,
+						icon: icon,
 					});
 				}
 			}
@@ -487,14 +488,15 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			// If there's failure, shows the support pop-up
 			if (failedModules.length > 0) {
 				const supportUrl = await this.lenovoSupportService.getSupportUrl(this.startDate);
-				const modalRef = this.modalService.open(ModalEticketComponent, {
+				const rbsDevices = this.hardwareScanService.getDevicesToRecoverBadSectors();
+				const modalRef = this.modalService.open(ModalScanFailureComponent, {
 					backdrop: 'static',
 					size: 'lg',
 					centered: true,
-					windowClass: 'hardware-scan-modal-size'
+					windowClass: 'support-modal-hwscan'
 				});
-				modalRef.componentInstance.moduleNames = failedModules;
-				modalRef.componentInstance.setUrl(supportUrl);
+				modalRef.componentInstance.supportUrl = supportUrl;
+				modalRef.componentInstance.configureDevicesLists(failedModules, rbsDevices);
 			}
 		}
 	}
@@ -755,9 +757,19 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			results.items.push(item);
 		}
 
-		// Update the ViewResultItem and list of the modules with the details
+		//Update the ViewResultItem
 		this.hardwareScanService.setViewResultItems(results);
-		this.modules = results.items;
+
+		//If a cancellation was requested, the application will return the HW Scan home page.
+		//So, in this case, the modules list will be updated with the data to be displayed on
+		//the home screen (this.getItemToDisplay()) the modules name and description
+		//If the scan finished without cancellation, then the scan result will be display.
+		//In this case, the module list is updated with the scan results and modules details (results.items)
+		if (!this.hardwareScanService.isCancelRequested()){
+			this.modules = results.items;
+		} else {
+			this.modules = this.getItemToDisplay();
+		}
 	}
 
 	/* This function is used to standardize the RBS intermediate response with the same used by a Scan. */

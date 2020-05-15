@@ -1475,20 +1475,20 @@
                 }
             },
             "audio": {
-				"title": "Zvuk",
-				"subtitle": "Nastavení zvuku",
-				"description": "Tato část umožňuje automaticky optimalizovat nebo plně konfigurovat nastavení zvuku, například nastavení Dolby, mikrofon atd.",
-				"audioSmartsettings": {
+                "title": "Zvuk",
+                "subtitle": "Nastavení zvuku",
+                "description": "Tato část umožňuje automaticky optimalizovat nebo plně konfigurovat nastavení zvuku, například nastavení Dolby, mikrofon atd.",
+                "audioSmartsettings": {
                     "title": "Inteligentní nastavení zvuku",
                     "dolby": {
                         "title": "Zvuk Dolby",
                         "description": "Vyberte požadovaný režim z následujících možností. Můžete také zaškrtnout políčko „Automaticky optimalizovat zvuk pro...“. Pokud je toto políčko zaškrtnuto, zvuk Dolby automaticky vyhledá nejlepší zvukový efekt podle různých režimů, ve kterých se nacházíte.",
                         "options": {
                             "dynamic": "Dynamický",
-							"movie": "Film",
-							"music": "Hudba",
-							"games": "Hra",
-							"voip": "Hlas"
+                            "movie": "Film",
+                            "music": "Hudba",
+                            "games": "Hra",
+                            "voip": "Hlas"
                         },
                         "automaticAudioMode": {
                             "voIPMode": {
@@ -2107,7 +2107,7 @@
                 "heading": "Inteligentní detekce",
                 "title": "Inteligentní varování při pohybu",
                 "tooltip": "<div>Tato funkce nefunguje, když je počítač v režimu hibernace nebo vypnutý. Zkontrolujte nastavení v následujících akcích:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>Akce uzavírání víka</li><li>Akce při nízké/kriticky nízké kapacitě baterie</li><li>Akce hlavního vypínače napájení</li><li>Akce tlačítka režimu spánku</li><li>Nastavení doby nečinnosti do přechodu k hibernaci</li></ul></div>Jinak se nespustí varování, ani se nepořídí snímky.</div>",
-                "desc": "<p><label>Při povolení této funkce začne zařízení vydávat zvukový signál, když je obrazovka uzamčena a je zjištěn pohyb, zejména na veřejném místě.</label></p> <p><label>Chcete-li varování zrušit, zadejte správné heslo nebo se přihlaste funkcí Windows Hello.</label></p>",
+                "desc": "<p><label>Při povolení této funkce začne zařízení vydávat zvukový signál, když je obrazovka uzamčena a je zjištěn pohyb, zejména na veřejném místě.</label></p> <p><label>Chcete-li varování zrušit, přihlaste se do systému Windows.</label></p>",
                 "note": {
                     "description": "Po úspěšném přihlášení do systému se tato funkce automaticky vypne. Abyste ji mohli používat, musíte ji znovu povolit."
                 },
@@ -2121,7 +2121,7 @@
                 },
                 "allowCamera": {
                     "title": "POŘIZOVAT FOTOGRAFIE",
-                    "describe": "Při povolení této funkce pořizuje kamera fotografie automaticky při detekci pohybu, pokud je obrazovka uzamčena. Tato data jsou ve vašem zařízení zpracovávána lokálně. Lenovo k nim nemá přístup ani je nepoužívá.",
+                    "describe": "Pokud je obrazovka uzamčena, pořizuje kamera při povolení této funkce fotografie automaticky při detekci pohybu. Tato data jsou ve vašem zařízení zpracovávána lokálně. Lenovo k nim nemá přístup ani je nepoužívá.",
                     "checkBoxText": "Povolit tuto funkci"
                 },
                 "cameraPrivacy": {
@@ -2133,7 +2133,7 @@
                     "linkText": "Chcete-li poskytnout přístup, přejděte do nastavení systému Windows"
                 },
                 "photo": {
-                    "title": "POČET FOTOGRAFIÍ POŘÍZENÝCH PŘI POHYBU",
+                    "title": "POČET POŘÍZENÝCH FOTOGRAFIÍ",
                     "tooltip": "Kamera v počítači se při rozpoznání pohybů automaticky aktivuje a začne pořizovat fotografie. Fotografie se pořizují každé 2 sekundy a ukládají se do místního úložiště.",
                     "option1": 5,
                     "option2": 10,
@@ -3128,7 +3128,15 @@
         "warningMessage": "Mějte na paměti, že testy budou zrušeny, pokud je systém v režimu spánku nebo hibernace",
         "refreshMessage": "Obnovení může nějakou dobu trvat, protože je třeba znovu načíst všechny součásti",
         "processFinishedCannotBeCanceled": "Probíhající proces již nemusí být zrušen, protože je dokončen.",
-        "cancelMayTakeSomeTime": "Počkejte prosím, v závislosti na vašem systému může zrušení chvilku trvat."
+        "cancelMayTakeSomeTime": "Počkejte prosím, v závislosti na vašem systému může zrušení chvilku trvat.",
+        "scanFailureModal": {
+            "title": "Hardware Problem Detected",
+            "problemDetected": "There were detected problems on the following components on your computer:",
+            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
+            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
+            "supportButtonText": "Open Ticket",
+            "recoverBadSectorsButtonText": "Recover Bad Sectors"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3248,7 +3256,11 @@
             "status": "Status",
             "activeStatus": "ACTIVE",
             "inactiveStatus": "INACTIVE",
-            "manageSubscription": "MANAGE SUBSCRIPTION"
+            "manageSubscription": "MANAGE SUBSCRIPTION",
+            "titlebeta": "Lenovo Beta Program",
+            "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
+            "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
+            "descriptionbeta1": "You are welcomed to join and try the full feature."
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3271,7 +3283,8 @@
             "thu": "Thursday",
             "fri": "Friday",
             "sat": "Saturday",
-            "sun": "Sunday"
+            "sun": "Sunday",
+            "tooltipText": "Enable this toggle to automatically initiate a system performance scan on your selected date and time."
         },
         "scanningPage": {
             "title": "Performance & security check",
@@ -3439,7 +3452,8 @@
                 "yearlyPricing": "$19.99 / Yr",
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
-                "signupButton": "SIGN UP"
+                "signupButton": "SIGN UP",
+                "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
             },
             "tune": "{{tune}} ISSUES",
             "boost": "{{boost}} ISSUES",
@@ -3735,9 +3749,39 @@
                 "scanDate": "Scan date:",
                 "results": "Results:",
                 "status": "Status"
-            }
+            },
+            "backToHome": "Back To Home"
         },
-        "runningWell": "PC is running well"
+        "runningWell": "PC is running well",
+        "feedbackContainer": {
+            "title": "Leave us some feedback",
+            "subtitle": "Tell us what you think about Vantage",
+            "buttonText": "send feedback",
+            "questions": {
+                "q1": "Does the product look and feel good?",
+                "q2": "Do the feature seen comprehensive?",
+                "q3": "Was the scan easy to use?",
+                "q4": "Happy about the fixes we did?",
+                "q5": "Do you see value for money? ",
+                "q6": "Will you refer it to your friends and family?"
+            },
+            "rating": {
+                "r1": "Hate it",
+                "r2": "Love it",
+                "r3": "Seems lacking",
+                "r4": "Good enough",
+                "r5": "Crazy",
+                "r6": "Cool",
+                "r7": "Not so sure",
+                "r8": "Absolutely yes",
+                "r9": "No way",
+                "r10": "Looks worthy",
+                "r11": "Not so sure",
+                "r12": "Absolutely yes"
+            },
+            "commentTip": "Shout what you love and whisper what you hate.",
+            "comments": "Please leave your comments here..."
+        }
     },
     "homeSecurity": {
         "title": "Connected Home Security",

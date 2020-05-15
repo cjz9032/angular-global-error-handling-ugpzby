@@ -1475,20 +1475,20 @@
                 }
             },
             "audio": {
-				"title": "Audio",
-				"subtitle": "Setări audio",
-				"description": "Această secțiune vă permite să optimizați în mod automat sau să configurați manual toate setările audio, cum ar fi setările Dolby, microfonului etc.",
-				"audioSmartsettings": {
+                "title": "Audio",
+                "subtitle": "Setări audio",
+                "description": "Această secțiune vă permite să optimizați în mod automat sau să configurați manual toate setările audio, cum ar fi setările Dolby, microfonului etc.",
+                "audioSmartsettings": {
                     "title": "Setări audio inteligente",
                     "dolby": {
                         "title": "Audio Dolby",
                         "description": "Selectați modul dorit dintre următoarele opțiuni. De asemenea, puteți bifa caseta de selectare „Optimizare audio automată pentru...”. Când caseta este selectată, funcția audio Dolby selectează automat cel mai bun efect audio pentru dumneavoastră, în funcție de modul în care vă aflați.",
                         "options": {
                             "dynamic": "Dinamic",
-							"movie": "Film",
-							"music": "Muzică",
-							"games": "Joc",
-							"voip": "Voce"
+                            "movie": "Film",
+                            "music": "Muzică",
+                            "games": "Joc",
+                            "voip": "Voce"
                         },
                         "automaticAudioMode": {
                             "voIPMode": {
@@ -2107,7 +2107,7 @@
                 "heading": "Detectare inteligentă",
                 "title": "Alertă Smart Motion",
                 "tooltip": "<div>Această caracteristică nu funcționează atunci când computerul este în modul de hibernare sau este oprit. Verificați setările pentru următoarele acțiuni:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>acțiuni de închidere a capacului</li><li>acțiuni pentru nivelul critic/scăzut al energiei bateriei</li><li>acțiuni ale butonului de alimentare</li><li>acțiuni ale butonului de repaus</li><li>setările de expirare a timpului de inactivitate până la trecerea în hibernare</li></ul></div>În caz contrar, caracteristica nu va declanșa alarma și nici nu va realiza fotografii.</div>",
-                "desc": "<p><label>Când activați această caracteristică, dispozitivul va începe să sune atunci când ecranul este blocat și se detectează mișcări, în special într-un loc public.</label></p> <p><label>Pentru a respinge alarma, introduceți parola corectă sau conectați-vă prin Windows Hello.</label></p>",
+                "desc": "<p><label>Când activați această caracteristică, dispozitivul va începe să sune atunci când ecranul este blocat și se detectează mișcări, în special într-un loc public.</label></p> <p><label>Pentru a dezactiva alarma, conectați-vă la Windows.</label></p>",
                 "note": {
                     "description": "După ce v-ați conectat cu succes la sistem, această caracteristică va fi oprită automat. Trebuie să o activați din nou pentru a o utiliza."
                 },
@@ -2121,7 +2121,7 @@
                 },
                 "allowCamera": {
                     "title": "REALIZARE FOTOGRAFII",
-                    "describe": "Când activați această caracteristică, camera foto fotografiază automat când detectează orice mișcare, dacă ecranul este blocat. Aceste date sunt procesate local pe dispozitivul dvs. Lenovo nu accesează datele și nu le folosește.",
+                    "describe": "Când activați această caracteristică, camera fotografiază automat când detectează mișcare, dacă ecranul este blocat. Aceste date sunt procesate local pe dispozitivul dumneavoastră. Lenovo nu accesează datele și nu le folosește.",
                     "checkBoxText": "Activați această caracteristică"
                 },
                 "cameraPrivacy": {
@@ -2133,7 +2133,7 @@
                     "linkText": "Accesați setările Windows pentru a acorda acces."
                 },
                 "photo": {
-                    "title": "NUMĂRUL DE FOTOGRAFII REALIZATE ÎN TIMPUL MIȘCĂRII",
+                    "title": "NUMĂRUL DE FOTOGRAFII REALIZATE",
                     "tooltip": "Camera foto de pe computer se activează automat pentru a face fotografii atunci când se detectează mișcări. Fotografiile sunt făcute la fiecare 2 secunde și sunt salvate pe spațiul de stocare local.",
                     "option1": 5,
                     "option2": 10,
@@ -3128,7 +3128,15 @@
         "warningMessage": "Rețineți că testele vor fi anulate dacă sistemul intră în repaus sau hibernează",
         "refreshMessage": "Actualizarea poate dura un timp, deoarece este necesar să se încarce din nou toate componentele",
         "processFinishedCannotBeCanceled": "Procesul care rulează nu mai trebuie anulat, deoarece este finalizat.",
-        "cancelMayTakeSomeTime": "Așteptați, anularea poate dura un anumit timp, în funcție de sistemul dumneavoastră."
+        "cancelMayTakeSomeTime": "Așteptați, anularea poate dura un anumit timp, în funcție de sistemul dumneavoastră.",
+        "scanFailureModal": {
+            "title": "Hardware Problem Detected",
+            "problemDetected": "There were detected problems on the following components on your computer:",
+            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
+            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
+            "supportButtonText": "Open Ticket",
+            "recoverBadSectorsButtonText": "Recover Bad Sectors"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3248,7 +3256,11 @@
             "status": "Status",
             "activeStatus": "ACTIVE",
             "inactiveStatus": "INACTIVE",
-            "manageSubscription": "MANAGE SUBSCRIPTION"
+            "manageSubscription": "MANAGE SUBSCRIPTION",
+            "titlebeta": "Lenovo Beta Program",
+            "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
+            "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
+            "descriptionbeta1": "You are welcomed to join and try the full feature."
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3271,7 +3283,8 @@
             "thu": "Thursday",
             "fri": "Friday",
             "sat": "Saturday",
-            "sun": "Sunday"
+            "sun": "Sunday",
+            "tooltipText": "Enable this toggle to automatically initiate a system performance scan on your selected date and time."
         },
         "scanningPage": {
             "title": "Performance & security check",
@@ -3439,7 +3452,8 @@
                 "yearlyPricing": "$19.99 / Yr",
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
-                "signupButton": "SIGN UP"
+                "signupButton": "SIGN UP",
+                "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
             },
             "tune": "{{tune}} ISSUES",
             "boost": "{{boost}} ISSUES",
@@ -3735,9 +3749,39 @@
                 "scanDate": "Scan date:",
                 "results": "Results:",
                 "status": "Status"
-            }
+            },
+            "backToHome": "Back To Home"
         },
-        "runningWell": "PC is running well"
+        "runningWell": "PC is running well",
+        "feedbackContainer": {
+            "title": "Leave us some feedback",
+            "subtitle": "Tell us what you think about Vantage",
+            "buttonText": "send feedback",
+            "questions": {
+                "q1": "Does the product look and feel good?",
+                "q2": "Do the feature seen comprehensive?",
+                "q3": "Was the scan easy to use?",
+                "q4": "Happy about the fixes we did?",
+                "q5": "Do you see value for money? ",
+                "q6": "Will you refer it to your friends and family?"
+            },
+            "rating": {
+                "r1": "Hate it",
+                "r2": "Love it",
+                "r3": "Seems lacking",
+                "r4": "Good enough",
+                "r5": "Crazy",
+                "r6": "Cool",
+                "r7": "Not so sure",
+                "r8": "Absolutely yes",
+                "r9": "No way",
+                "r10": "Looks worthy",
+                "r11": "Not so sure",
+                "r12": "Absolutely yes"
+            },
+            "commentTip": "Shout what you love and whisper what you hate.",
+            "comments": "Please leave your comments here..."
+        }
     },
     "homeSecurity": {
         "title": "Connected Home Security",

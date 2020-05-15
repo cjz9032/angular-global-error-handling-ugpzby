@@ -1475,20 +1475,20 @@
                 }
             },
             "audio": {
-				"title": "音效",
-				"subtitle": "音訊設定",
-				"description": "您可以透過這個區段來自動最佳化或完全手動配置音訊設定，例如 Dolby 設定、麥克風等。",
-				"audioSmartsettings": {
+                "title": "音效",
+                "subtitle": "音訊設定",
+                "description": "您可以透過這個區段來自動最佳化或完全手動配置音訊設定，例如 Dolby 設定、麥克風等。",
+                "audioSmartsettings": {
                     "title": "智慧型音訊設定",
                     "dolby": {
                         "title": "Dolby 音效",
                         "description": "視您的需要從下面選取模式。您也可以勾選「自動針對以下項目最佳化音訊」勾選框。選取後，Dolby 音訊會根據您所在的模式自動挑選最佳的音訊效果。",
                         "options": {
                             "dynamic": "動態",
-							"movie": "電影",
-							"music": "音樂",
-							"games": "遊戲",
-							"voip": "語音"
+                            "movie": "電影",
+                            "music": "音樂",
+                            "games": "遊戲",
+                            "voip": "語音"
                         },
                         "automaticAudioMode": {
                             "voIPMode": {
@@ -2107,7 +2107,7 @@
                 "heading": "智慧型感應",
                 "title": "智慧型移動警示",
                 "tooltip": "<div>當電腦處於休眠模式或關閉電源時，此功能無法運作。檢查下列動作中的設定：<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>闔上機蓋的動作</li><li>電力不足/偏低時的動作</li><li>電源按鈕動作</li><li>睡眠按鈕動作</li><li>閒置逾時設定進入休眠</li></ul></div>否則，它不會引發警示，也不會拍照。</div>",
-                "desc": "<p><label>啟用此功能時，裝置將在螢幕鎖定及偵測到移動時開始發出嗶聲，特別是在公共場所。</label></p> <p><label>若要關閉警示音，請輸入正確密碼或透過 Windows Hello 登入。</label></p>",
+                "desc": "<p><label>啟用此功能時，裝置將在螢幕鎖定及偵測到移動時開始發出嗶聲，特別是在公共場所。</label></p> <p><label>若要關閉警示音，請登入 Windows。</label></p>",
                 "note": {
                     "description": "成功登入系統後，此功能將自動關閉。您必須重新啟用才能使用此功能。"
                 },
@@ -2121,7 +2121,7 @@
                 },
                 "allowCamera": {
                     "title": "拍照",
-                    "describe": "啟用此功能時，若您的螢幕已鎖定，相機將在偵測到任何動作時自動拍照。這份資料將由您的裝置本機進行處理，Lenovo 絕不會逕自存取或加以使用。",
+                    "describe": "啟用此功能時，若您的螢幕已鎖定，相機將在偵測到動作時自動拍照。這份資料將由您的裝置本機進行處理，Lenovo 絕不會逕自存取或加以使用。",
                     "checkBoxText": "啟用這項功能"
                 },
                 "cameraPrivacy": {
@@ -2133,7 +2133,7 @@
                     "linkText": "移至 Windows 設定以授與存取權"
                 },
                 "photo": {
-                    "title": "移動期間拍攝的相片數",
+                    "title": "拍攝的相片數",
                     "tooltip": "電腦上的相機會在偵測到動作時自動啟動拍照功能。每 2 秒拍一次，並將照片存到您的本機儲存裝置。",
                     "option1": 5,
                     "option2": 10,
@@ -3128,7 +3128,15 @@
         "warningMessage": "請記住，如果系統進入睡眠或休眠狀態，將會取消測試",
         "refreshMessage": "重新整理可能需要一些時間，因為此時需要再度載入所有元件",
         "processFinishedCannotBeCanceled": "由於執行中的程序已完成，因此不再需要取消。",
-        "cancelMayTakeSomeTime": "請稍候，視您的系統而定，取消可能需要一些時間。"
+        "cancelMayTakeSomeTime": "請稍候，視您的系統而定，取消可能需要一些時間。",
+        "scanFailureModal": {
+            "title": "Hardware Problem Detected",
+            "problemDetected": "There were detected problems on the following components on your computer:",
+            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
+            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
+            "supportButtonText": "Open Ticket",
+            "recoverBadSectorsButtonText": "Recover Bad Sectors"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3248,7 +3256,11 @@
             "status": "Status",
             "activeStatus": "ACTIVE",
             "inactiveStatus": "INACTIVE",
-            "manageSubscription": "MANAGE SUBSCRIPTION"
+            "manageSubscription": "MANAGE SUBSCRIPTION",
+            "titlebeta": "Lenovo Beta Program",
+            "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
+            "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
+            "descriptionbeta1": "You are welcomed to join and try the full feature."
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3271,7 +3283,8 @@
             "thu": "Thursday",
             "fri": "Friday",
             "sat": "Saturday",
-            "sun": "Sunday"
+            "sun": "Sunday",
+            "tooltipText": "Enable this toggle to automatically initiate a system performance scan on your selected date and time."
         },
         "scanningPage": {
             "title": "Performance & security check",
@@ -3439,7 +3452,8 @@
                 "yearlyPricing": "$19.99 / Yr",
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
-                "signupButton": "SIGN UP"
+                "signupButton": "SIGN UP",
+                "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
             },
             "tune": "{{tune}} ISSUES",
             "boost": "{{boost}} ISSUES",
@@ -3735,9 +3749,39 @@
                 "scanDate": "Scan date:",
                 "results": "Results:",
                 "status": "Status"
-            }
+            },
+            "backToHome": "Back To Home"
         },
-        "runningWell": "PC is running well"
+        "runningWell": "PC is running well",
+        "feedbackContainer": {
+            "title": "Leave us some feedback",
+            "subtitle": "Tell us what you think about Vantage",
+            "buttonText": "send feedback",
+            "questions": {
+                "q1": "Does the product look and feel good?",
+                "q2": "Do the feature seen comprehensive?",
+                "q3": "Was the scan easy to use?",
+                "q4": "Happy about the fixes we did?",
+                "q5": "Do you see value for money? ",
+                "q6": "Will you refer it to your friends and family?"
+            },
+            "rating": {
+                "r1": "Hate it",
+                "r2": "Love it",
+                "r3": "Seems lacking",
+                "r4": "Good enough",
+                "r5": "Crazy",
+                "r6": "Cool",
+                "r7": "Not so sure",
+                "r8": "Absolutely yes",
+                "r9": "No way",
+                "r10": "Looks worthy",
+                "r11": "Not so sure",
+                "r12": "Absolutely yes"
+            },
+            "commentTip": "Shout what you love and whisper what you hate.",
+            "comments": "Please leave your comments here..."
+        }
     },
     "homeSecurity": {
         "title": "Connected Home Security",

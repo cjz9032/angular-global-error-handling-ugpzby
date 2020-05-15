@@ -1475,20 +1475,20 @@
                 }
             },
             "audio": {
-				"title": "Ses",
-				"subtitle": "Ses Ayarları",
-				"description": "Bu bölüm, ses ayarlarınızı otomatik olarak en iyi duruma getirmenizi veya Dolby ayarları, mikrofon gibi ayarları tamamıyla manuel olarak yapılandırmanızı sağlar.",
-				"audioSmartsettings": {
+                "title": "Ses",
+                "subtitle": "Ses Ayarları",
+                "description": "Bu bölüm, ses ayarlarınızı otomatik olarak en iyi duruma getirmenizi veya Dolby ayarları, mikrofon gibi ayarları tamamıyla manuel olarak yapılandırmanızı sağlar.",
+                "audioSmartsettings": {
                     "title": "Ses akıllı ayarları",
                     "dolby": {
                         "title": "Dolby ses",
                         "description": "Aşağıdakiler arasından istediğiniz bir kipi seçin. \"Sesi şunun için otomatik olarak iyileştir...\" onay kutusunu da işaretleyebilirsiniz. Bu seçenek belirlendiğinde, Dolby ses bulunduğunuz kiplere göre sizin için en iyi ses efektini otomatik olarak seçer.",
                         "options": {
                             "dynamic": "Dinamik",
-							"movie": "Film",
-							"music": "Müzik",
-							"games": "Oyun",
-							"voip": "Ses"
+                            "movie": "Film",
+                            "music": "Müzik",
+                            "games": "Oyun",
+                            "voip": "Ses"
                         },
                         "automaticAudioMode": {
                             "voIPMode": {
@@ -2107,7 +2107,7 @@
                 "heading": "Akıllı algılama",
                 "title": "Akıllı hareket alarmı",
                 "tooltip": "<div>Bu özellik, bilgisayar uyku kipindeyken veya kapalıyken çalışmaz. Aşağıdaki işlemlerin ayarlarını kontrol edin:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>kapağı kapatma işlemleri</li><li>kritik düzeyde/düşük pil işlemi</li><li>Açma/kapama düğmesi işlemi</li><li>uyku düğmesi işlemi</li><li>uyku kipine geçiş için boşta kalma zaman aşımı ayarları</li></ul></div>Aksi takdirde, alarm tetiklenmez veya fotoğraf çekmez.</div>",
-                "desc": "<p><label>Bu özelliği etkin durumdayken, ekranınız kilitlendiğinde ve özellikle halka açık bir yerde hareket algılandığında cihaz bip sesi çıkarmaya başlar.</label></p> <p><label>Alarmı kapatmak için doğru parolayı girin veya Windows Hello ile giriş yapın.</label></p>",
+                "desc": "<p><label>Bu özelliği etkin durumdayken, ekranınız kilitlendiğinde ve özellikle halka açık bir yerde hareket algılandığında cihaz bip sesi çıkarmaya başlar.</label></p> <p><label>Alarmı kapatmak için lütfen Windows'da oturum açın.</label></p>",
                 "note": {
                     "description": "Sisteme başarıyla giriş yaptıktan sonra, bu özellik otomatik olarak kapanır. Özelliği kullanmak için yeniden etkinleştirmeniz gerekir."
                 },
@@ -2121,7 +2121,7 @@
                 },
                 "allowCamera": {
                     "title": "FOTOĞRAF ÇEKME",
-                    "describe": "Bu özelliği etkin durumdayken, ekranınız kilitliyse herhangi bir hareket algılandığında kamera otomatik olarak fotoğraf çeker. Bu veriler cihazınızda yerel olarak işlenir. Lenovo bu verilere erişmez ya da onları kullanmaz.",
+                    "describe": "Bu özellik etkin durumdayken, ekranınız kilitliyse herhangi bir hareket algılandığında kamera otomatik olarak fotoğraf çeker. Bu veriler cihazınızda yerel olarak işlenir. Lenovo bu verilere erişmez ya da onları kullanmaz.",
                     "checkBoxText": "Bu özelliği etkinleştir"
                 },
                 "cameraPrivacy": {
@@ -2133,7 +2133,7 @@
                     "linkText": "Erişim izni vermek için Windows Ayarları bölümüne gidin"
                 },
                 "photo": {
-                    "title": "HAREKET SIRASINDA ÇEKİLEN FOTOĞRAF SAYISI",
+                    "title": "ÇEKİLEN FOTOĞRAF SAYISI",
                     "tooltip": "Hareket algılandığında, bilgisayarınızdaki kamera otomatik olarak etkinleşerek fotoğraf çekmeye başlar. 2 saniyede bir fotoğraf çekilir ve bunlar yerel depolama alanınıza kaydedilir.",
                     "option1": 5,
                     "option2": 10,
@@ -3128,7 +3128,15 @@
         "warningMessage": "Sistem uyku veya hazırda bekleme kipine geçerse testlerin iptal edileceğini unutmayın",
         "refreshMessage": "Tüm bileşenlerin tekrar yüklenmesi gerektiğinden yenileme işlemi biraz zaman alabilir",
         "processFinishedCannotBeCanceled": "Çalışan işlem tamamlandığından artık iptal edilmesi gerekmiyor.",
-        "cancelMayTakeSomeTime": "Lütfen bekleyin, sisteminize bağlı olarak iptal işlemi biraz zaman alabilir."
+        "cancelMayTakeSomeTime": "Lütfen bekleyin, sisteminize bağlı olarak iptal işlemi biraz zaman alabilir.",
+        "scanFailureModal": {
+            "title": "Hardware Problem Detected",
+            "problemDetected": "There were detected problems on the following components on your computer:",
+            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
+            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
+            "supportButtonText": "Open Ticket",
+            "recoverBadSectorsButtonText": "Recover Bad Sectors"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3248,7 +3256,11 @@
             "status": "Status",
             "activeStatus": "ACTIVE",
             "inactiveStatus": "INACTIVE",
-            "manageSubscription": "MANAGE SUBSCRIPTION"
+            "manageSubscription": "MANAGE SUBSCRIPTION",
+            "titlebeta": "Lenovo Beta Program",
+            "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
+            "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
+            "descriptionbeta1": "You are welcomed to join and try the full feature."
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3271,7 +3283,8 @@
             "thu": "Thursday",
             "fri": "Friday",
             "sat": "Saturday",
-            "sun": "Sunday"
+            "sun": "Sunday",
+            "tooltipText": "Enable this toggle to automatically initiate a system performance scan on your selected date and time."
         },
         "scanningPage": {
             "title": "Performance & security check",
@@ -3439,7 +3452,8 @@
                 "yearlyPricing": "$19.99 / Yr",
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
-                "signupButton": "SIGN UP"
+                "signupButton": "SIGN UP",
+                "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
             },
             "tune": "{{tune}} ISSUES",
             "boost": "{{boost}} ISSUES",
@@ -3735,9 +3749,39 @@
                 "scanDate": "Scan date:",
                 "results": "Results:",
                 "status": "Status"
-            }
+            },
+            "backToHome": "Back To Home"
         },
-        "runningWell": "PC is running well"
+        "runningWell": "PC is running well",
+        "feedbackContainer": {
+            "title": "Leave us some feedback",
+            "subtitle": "Tell us what you think about Vantage",
+            "buttonText": "send feedback",
+            "questions": {
+                "q1": "Does the product look and feel good?",
+                "q2": "Do the feature seen comprehensive?",
+                "q3": "Was the scan easy to use?",
+                "q4": "Happy about the fixes we did?",
+                "q5": "Do you see value for money? ",
+                "q6": "Will you refer it to your friends and family?"
+            },
+            "rating": {
+                "r1": "Hate it",
+                "r2": "Love it",
+                "r3": "Seems lacking",
+                "r4": "Good enough",
+                "r5": "Crazy",
+                "r6": "Cool",
+                "r7": "Not so sure",
+                "r8": "Absolutely yes",
+                "r9": "No way",
+                "r10": "Looks worthy",
+                "r11": "Not so sure",
+                "r12": "Absolutely yes"
+            },
+            "commentTip": "Shout what you love and whisper what you hate.",
+            "comments": "Please leave your comments here..."
+        }
     },
     "homeSecurity": {
         "title": "Connected Home Security",

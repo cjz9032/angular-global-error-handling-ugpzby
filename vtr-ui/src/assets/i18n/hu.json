@@ -1475,20 +1475,20 @@
                 }
             },
             "audio": {
-				"title": "Hang",
-				"subtitle": "Hangbeállítások",
-				"description": "Ezen a részen automatikusan optimalizálhatók vagy manuálisan teljesen mértékben konfigurálhatók a hangbeállítások (például a Dolby-beállítások vagy a mikrofon használata).",
-				"audioSmartsettings": {
+                "title": "Hang",
+                "subtitle": "Hangbeállítások",
+                "description": "Ezen a részen automatikusan optimalizálhatók vagy manuálisan teljesen mértékben konfigurálhatók a hangbeállítások (például a Dolby-beállítások vagy a mikrofon használata).",
+                "audioSmartsettings": {
                     "title": "Intelligens hangbeállítások",
                     "dolby": {
                         "title": "Dolby hangzás",
                         "description": "Válassza ki az Önnek megfelelő módot az alábbiak közül. Ezenfelül a \"Hangzás automatikus optimalizálása a következőhöz:\" jelölőnégyzetet is bejelölheti. Ha bejelöli a jelölőnégyzetet, a Dolby hangzás automatikusan, az aktuális üzemmódnak megfelelően kiválasztja a legjobb audieffektust.",
                         "options": {
                             "dynamic": "Dinamikus",
-							"movie": "Film",
-							"music": "Zene",
-							"games": "Játék",
-							"voip": "Hang"
+                            "movie": "Film",
+                            "music": "Zene",
+                            "games": "Játék",
+                            "voip": "Hang"
                         },
                         "automaticAudioMode": {
                             "voIPMode": {
@@ -2107,7 +2107,7 @@
                 "heading": "Intelligens észlelés",
                 "title": "Intelligens mozgásérzékeléses riasztás",
                 "tooltip": "<div>Ez a funkció nem működik, ha a számítógép hibernált módban van, és amikor ki van kapcsolva. Ellenőrizze a következő műveletekhez tartozó beállításokat:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>a képernyő lehajtása</li><li>kritikus/alacsony akkumulátortöltöttség</li><li>főkapcsoló használata</li><li>alvás gomb használata</li><li>tétlenségi miatti időtúllépés beállításai (hibernálás)</li></ul></div>Ellenkező esetben a gép nem fog riasztást aktiválni, sem fényképeket készíteni.</div>",
-                "desc": "<p><label>Ha bekapcsolja ezt a funkciót, az eszköz sípoló riasztást ad ki, amikor a képernyő zárolva van, és mozgást észlel a közelében. Ez különösen nyilvános helyeken lehet hasznos.</label></p> <p><label>A riasztás némításához írja be a jelszót, vagy jelentkezzen be a Windows Hello segítségével.</label></p>",
+                "desc": "<p><label>Ha bekapcsolja ezt a funkciót, az eszköz sípoló riasztást ad ki, amikor a képernyő zárolva van, és mozgást észlel a közelében. Ez különösen nyilvános helyeken lehet hasznos.</label></p> <p><label>A riasztás némításához jelentkezzen be a Windows rendszerbe.</label></p>",
                 "note": {
                     "description": "Ha sikerült bejelentkeznie a rendszerbe, a funkció automatikusan kikapcsol. Ha szeretné ismét használni, Önnek újra be kell kapcsolnia."
                 },
@@ -2133,7 +2133,7 @@
                     "linkText": "A Windows beállításaiban adhatja meg a hozzáférést"
                 },
                 "photo": {
-                    "title": "MOZGÁS ÉRZÉKELÉSE ESETÉN KÉSZÍTETT FÉNYKÉPEK SZÁMA",
+                    "title": "A KÉSZÍTETT FÉNYKÉPEK SZÁMA",
                     "tooltip": "Amikor a rendszer mozgást észlel, a számítógép fényképezője automatikusan aktiválódik és fényképeket készít. A rendszer 2 másodpercenként készít képet, amelyeket a helyi tárhelyre ment.",
                     "option1": 5,
                     "option2": 10,
@@ -3128,7 +3128,15 @@
         "warningMessage": "Ne feledje, hogy a tesztek megszakadnak, ha a rendszer alvó vagy hibernált állapotba kerül",
         "refreshMessage": "A frissítés eltarthat egy ideig, mivel minden összetevőt újra be kell töltenie",
         "processFinishedCannotBeCanceled": "A futó folyamatot nem lehet megszakítani, mivel befejeződött.",
-        "cancelMayTakeSomeTime": "Kérjük, várjon, a megszakítás a rendszertől függően hosszabb időt vehet igénybe."
+        "cancelMayTakeSomeTime": "Kérjük, várjon, a megszakítás a rendszertől függően hosszabb időt vehet igénybe.",
+        "scanFailureModal": {
+            "title": "Hardware Problem Detected",
+            "problemDetected": "There were detected problems on the following components on your computer:",
+            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
+            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
+            "supportButtonText": "Open Ticket",
+            "recoverBadSectorsButtonText": "Recover Bad Sectors"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3248,7 +3256,11 @@
             "status": "Status",
             "activeStatus": "ACTIVE",
             "inactiveStatus": "INACTIVE",
-            "manageSubscription": "MANAGE SUBSCRIPTION"
+            "manageSubscription": "MANAGE SUBSCRIPTION",
+            "titlebeta": "Lenovo Beta Program",
+            "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
+            "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
+            "descriptionbeta1": "You are welcomed to join and try the full feature."
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3271,7 +3283,8 @@
             "thu": "Thursday",
             "fri": "Friday",
             "sat": "Saturday",
-            "sun": "Sunday"
+            "sun": "Sunday",
+            "tooltipText": "Enable this toggle to automatically initiate a system performance scan on your selected date and time."
         },
         "scanningPage": {
             "title": "Performance & security check",
@@ -3439,7 +3452,8 @@
                 "yearlyPricing": "$19.99 / Yr",
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
-                "signupButton": "SIGN UP"
+                "signupButton": "SIGN UP",
+                "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
             },
             "tune": "{{tune}} ISSUES",
             "boost": "{{boost}} ISSUES",
@@ -3735,9 +3749,39 @@
                 "scanDate": "Scan date:",
                 "results": "Results:",
                 "status": "Status"
-            }
+            },
+            "backToHome": "Back To Home"
         },
-        "runningWell": "PC is running well"
+        "runningWell": "PC is running well",
+        "feedbackContainer": {
+            "title": "Leave us some feedback",
+            "subtitle": "Tell us what you think about Vantage",
+            "buttonText": "send feedback",
+            "questions": {
+                "q1": "Does the product look and feel good?",
+                "q2": "Do the feature seen comprehensive?",
+                "q3": "Was the scan easy to use?",
+                "q4": "Happy about the fixes we did?",
+                "q5": "Do you see value for money? ",
+                "q6": "Will you refer it to your friends and family?"
+            },
+            "rating": {
+                "r1": "Hate it",
+                "r2": "Love it",
+                "r3": "Seems lacking",
+                "r4": "Good enough",
+                "r5": "Crazy",
+                "r6": "Cool",
+                "r7": "Not so sure",
+                "r8": "Absolutely yes",
+                "r9": "No way",
+                "r10": "Looks worthy",
+                "r11": "Not so sure",
+                "r12": "Absolutely yes"
+            },
+            "commentTip": "Shout what you love and whisper what you hate.",
+            "comments": "Please leave your comments here..."
+        }
     },
     "homeSecurity": {
         "title": "Connected Home Security",

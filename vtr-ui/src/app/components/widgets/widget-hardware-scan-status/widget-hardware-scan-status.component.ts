@@ -12,7 +12,6 @@ export class WidgetHardwareScanStatusComponent implements OnInit {
 	public title = this.translate.instant('hardwareScan.previousResult');
 	public description: string;
 	public item: any;
-	public buttonText = this.translate.instant('hardwareScan.viewDetailsLog');
 	public viewResultsPath = '/hardware-scan/view-results';
 
 	constructor(

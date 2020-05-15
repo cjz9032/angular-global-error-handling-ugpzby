@@ -10,8 +10,7 @@
 				[minLegend]="'device.deviceSettings.displayCamera.display.eyeCareMode.options.warm' | translate"
 				[maxLegend]="'device.deviceSettings.displayCamera.display.eyeCareMode.options.cold' | translate"
 				[value]="eyeCareModeSettings.current"
-				(dragEnd)="onEyeCareTemperatureChanged($event)"
-				(valueChange)="onEyeCareTemperaturePreview($event)"
+				(valueChange)="onEyeCareTemperatureChanged($event)"
 				[ariaLabel]="'eye care mode color temperature'"
 				[tipSuffix]="'K'"
 				[showTip]=true

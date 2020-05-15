@@ -40,6 +40,7 @@ import { UiDpmEnergyComponent } from 'src/app/components/ui/ui-dpm-energy/ui-dpm
 import { UiCustomSwitchModule } from 'src/app/components/ui/ui-custom-switch/ui-custom-switch.module';
 import { SpinnerModule } from 'src/app/components/common/spinner/spinner.module';
 import { UiRoundedRectangleCustomRadioListModule } from 'src/app/components/ui/ui-rounded-rectangle-custom-radio-list/ui-rounded-rectangle-custom-radio-list.module';
+import { UiCircleRadioWithCheckBoxListModule } from 'src/app/components/ui/ui-circle-radio-with-checkbox-list/ui-circle-radio-with-checkbox-list.module';
 
 
 @NgModule({
@@ -98,7 +99,8 @@ import { UiRoundedRectangleCustomRadioListModule } from 'src/app/components/ui/u
 		UiBrightnessSliderComponent,
 		UiAddReduceButtonComponent,
 		UiCustomSwitchModule,
-		UiRoundedRectangleCustomRadioListModule
+		UiRoundedRectangleCustomRadioListModule,
+		UiCircleRadioWithCheckBoxListModule,
 	],
 	imports: [
 		CommonModule,
@@ -110,7 +112,8 @@ import { UiRoundedRectangleCustomRadioListModule } from 'src/app/components/ui/u
 		FontAwesomeModule,
 		UiCustomSwitchModule,
 		SpinnerModule,
-		UiRoundedRectangleCustomRadioListModule
+		UiRoundedRectangleCustomRadioListModule,
+		UiCircleRadioWithCheckBoxListModule,
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

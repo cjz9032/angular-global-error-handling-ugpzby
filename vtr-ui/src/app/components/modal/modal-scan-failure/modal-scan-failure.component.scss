@@ -1,0 +1,105 @@
+@import "../../../app.theme";
+
+.vtr-modal-scan-failure{
+	fa-icon {
+		font-size: 2rem;
+		color: $main;
+	}
+
+	.modal-information {
+		padding: 0 2rem 0 2rem;
+
+		.title {
+			width: 100%;
+			font-size: $fontsize_xl;
+			font-weight: $weight_light;
+			color: $shade_blue;
+			padding-bottom: 1rem;
+			padding-right: 2.4rem; // to avoid title overlapping X button
+		}
+
+		.description {
+			width: 100%;
+			color: $shade-darker;
+			font-size: $fontsize_xs2;
+			font-weight: $weight_light;
+    	}
+
+		.modules {
+			padding-bottom: 1rem;
+			.warning {
+				color: $orange_light;
+			}
+			.list-module {
+				list-style-type: none;
+
+				.module-row {
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					padding: 0 1.5rem 0 0rem;
+				}
+
+				.module-name {
+					width: 100%;
+					color: $shade-darker;
+					font-size: $fontsize_xs2;
+					padding-left: 1rem;
+					font-weight: $weight_bold;
+				}
+
+				.list-device {
+					padding: 0 0 0 3.4rem; // icon size (2.4rem) + module-name spacing (1rem)
+				}
+			}
+		}
+
+		.button-row {
+			display: flex;
+			align-items: center;
+			padding: 1rem 0 0 0;
+		}
+
+		.support-button {
+			font-size: $fontsize_xs;
+			font-weight: $weight_medium;
+			line-height: 1.5rem;
+			text-align: center;
+			text-transform: uppercase;
+			padding: 1rem !important;
+			font-weight: $weight_bold;
+
+			.support-button-text {
+				cursor: pointer;
+				text-decoration: underline;
+
+				&:hover {
+					color: $light;
+					text-decoration: none;
+				}
+			}
+		}
+
+		.close-btn {
+			position: absolute;
+			right: 2.3rem;
+			top: 2.4rem;
+			width: 2rem;
+			height: 2rem;
+			cursor: pointer;
+			&:hover {
+				opacity: 0.7;
+			}
+
+			img{
+				width: 100%;
+				height: 100%;
+			}
+		}
+    }
+
+}
+
+.modal-body {
+	padding: 2.4rem;
+}

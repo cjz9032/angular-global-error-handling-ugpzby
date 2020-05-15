@@ -1475,20 +1475,20 @@
                 }
             },
             "audio": {
-				"title": "Ljud",
-				"subtitle": "Ljudinställningar",
-				"description": "I detta avsnitt kan du automatiskt optimera eller manuellt konfigurera ljudinställningarna, som Dolby, mikrofon och annat.",
-				"audioSmartsettings": {
+                "title": "Ljud",
+                "subtitle": "Ljudinställningar",
+                "description": "I detta avsnitt kan du automatiskt optimera eller manuellt konfigurera ljudinställningarna, som Dolby, mikrofon och annat.",
+                "audioSmartsettings": {
                     "title": "Smarta ljudinställningar",
                     "dolby": {
                         "title": "Dolby-ljud",
                         "description": "Välj det läge du vill ha från följande. Du kan också markera kryssrutan \"Optimera ljud automatiskt för ...\". När du har markerat den väljs automatiskt den bästa ljudeffekten beroende på vilket läge du använder.",
                         "options": {
                             "dynamic": "Dynamiskt",
-							"movie": "Film",
-							"music": "Musik",
-							"games": "Spel",
-							"voip": "Röst"
+                            "movie": "Film",
+                            "music": "Musik",
+                            "games": "Spel",
+                            "voip": "Röst"
                         },
                         "automaticAudioMode": {
                             "voIPMode": {
@@ -2107,7 +2107,7 @@
                 "heading": "Intelligent avkänning",
                 "title": "Smart rörelselarm",
                 "tooltip": "<div>Funktionen fungerar inte om datorn är i viloläge eller avstängd. Kontrollera inställningarna för följande åtgärder:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>stänga locket</li><li>kritisk/låg batteriladdning</li><li>strömbrytare</li><li>knapp för strömsparläge</li><li>från inaktiv till viloläge</li></ul></div>I annat fall utlöses inte larmet och det går inte heller att ta foton.</div>",
-                "desc": "<p><label>Om du aktiverar den här funktionen börjar enheten signalera när bildskärmen är låst och rörelser identifieras, speciellt på en offentlig plats.</label></p> <p><label>Du stänger av larmet genom att ange rätt lösenord eller logga in med Windows Hello.</label></p>",
+                "desc": "<p><label>Om du aktiverar den här funktionen börjar enheten signalera när bildskärmen är låst och rörelser identifieras, speciellt på en offentlig plats.</label></p> <p><label>Logga in på Windows om du vill stänga av larmet.</label></p>",
                 "note": {
                     "description": "När du har loggat in på systemet stängs funktionen av automatiskt. Du måste aktivera den igen om du vill använda den."
                 },
@@ -2121,7 +2121,7 @@
                 },
                 "allowCamera": {
                     "title": "TA FOTON",
-                    "describe": "När du aktiverar den här funktionen tar kameran automatiskt foton när den identifierar rörelser och skärmen är låst. Informationen bearbetas lokalt på datorn. Lenovo har inte till åtkomst till denna information och använder den inte.",
+                    "describe": "När du aktiverar den här funktionen tar kameran automatiskt foton när rörelser identifieras och skärmen är låst. Informationen bearbetas lokalt på datorn. Lenovo har inte till åtkomst till denna information och använder den inte.",
                     "checkBoxText": "Aktivera funktionen"
                 },
                 "cameraPrivacy": {
@@ -2133,7 +2133,7 @@
                     "linkText": "Öppna Windows-inställningar för att ge åtkomst"
                 },
                 "photo": {
-                    "title": "ANTAL FOTON SOM TAS UNDER RÖRELSEN",
+                    "title": "ANTAL FOTON SOM TAGITS",
                     "tooltip": "Kameran på datorn aktiveras automatiskt för att ta bilder när rörelser identifieras. Bilder tas varannan sekund och sparas i ditt lokala lagringsutrymme.",
                     "option1": 5,
                     "option2": 10,
@@ -3128,7 +3128,15 @@
         "warningMessage": "Tänk på att testen avbryts om datorn hamnar i vänte- eller viloläge",
         "refreshMessage": "Uppdateringen kan ta lite tid, eftersom alla komponenter behöver läsas in igen",
         "processFinishedCannotBeCanceled": "Den process som körs behöver inte avbrytas längre, eftersom den är klar.",
-        "cancelMayTakeSomeTime": "Vänta – det kan ta en stund att avbryta beroende på ditt system."
+        "cancelMayTakeSomeTime": "Vänta – det kan ta en stund att avbryta beroende på ditt system.",
+        "scanFailureModal": {
+            "title": "Hardware Problem Detected",
+            "problemDetected": "There were detected problems on the following components on your computer:",
+            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
+            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
+            "supportButtonText": "Open Ticket",
+            "recoverBadSectorsButtonText": "Recover Bad Sectors"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3248,7 +3256,11 @@
             "status": "Status",
             "activeStatus": "ACTIVE",
             "inactiveStatus": "INACTIVE",
-            "manageSubscription": "MANAGE SUBSCRIPTION"
+            "manageSubscription": "MANAGE SUBSCRIPTION",
+            "titlebeta": "Lenovo Beta Program",
+            "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
+            "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
+            "descriptionbeta1": "You are welcomed to join and try the full feature."
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3271,7 +3283,8 @@
             "thu": "Thursday",
             "fri": "Friday",
             "sat": "Saturday",
-            "sun": "Sunday"
+            "sun": "Sunday",
+            "tooltipText": "Enable this toggle to automatically initiate a system performance scan on your selected date and time."
         },
         "scanningPage": {
             "title": "Performance & security check",
@@ -3439,7 +3452,8 @@
                 "yearlyPricing": "$19.99 / Yr",
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
-                "signupButton": "SIGN UP"
+                "signupButton": "SIGN UP",
+                "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
             },
             "tune": "{{tune}} ISSUES",
             "boost": "{{boost}} ISSUES",
@@ -3735,9 +3749,39 @@
                 "scanDate": "Scan date:",
                 "results": "Results:",
                 "status": "Status"
-            }
+            },
+            "backToHome": "Back To Home"
         },
-        "runningWell": "PC is running well"
+        "runningWell": "PC is running well",
+        "feedbackContainer": {
+            "title": "Leave us some feedback",
+            "subtitle": "Tell us what you think about Vantage",
+            "buttonText": "send feedback",
+            "questions": {
+                "q1": "Does the product look and feel good?",
+                "q2": "Do the feature seen comprehensive?",
+                "q3": "Was the scan easy to use?",
+                "q4": "Happy about the fixes we did?",
+                "q5": "Do you see value for money? ",
+                "q6": "Will you refer it to your friends and family?"
+            },
+            "rating": {
+                "r1": "Hate it",
+                "r2": "Love it",
+                "r3": "Seems lacking",
+                "r4": "Good enough",
+                "r5": "Crazy",
+                "r6": "Cool",
+                "r7": "Not so sure",
+                "r8": "Absolutely yes",
+                "r9": "No way",
+                "r10": "Looks worthy",
+                "r11": "Not so sure",
+                "r12": "Absolutely yes"
+            },
+            "commentTip": "Shout what you love and whisper what you hate.",
+            "comments": "Please leave your comments here..."
+        }
     },
     "homeSecurity": {
         "title": "Connected Home Security",

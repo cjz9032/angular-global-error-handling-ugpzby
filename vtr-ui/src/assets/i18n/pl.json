@@ -1475,20 +1475,20 @@
                 }
             },
             "audio": {
-				"title": "Dźwięk",
-				"subtitle": "Ustawienia dźwięku",
-				"description": "Ta sekcja umożliwia automatyczną optymalizację lub pełną, ręczną konfigurację ustawień dźwięku, takich jak ustawienia trybu Dolby, mikrofonu itp.",
-				"audioSmartsettings": {
+                "title": "Dźwięk",
+                "subtitle": "Ustawienia dźwięku",
+                "description": "Ta sekcja umożliwia automatyczną optymalizację lub pełną, ręczną konfigurację ustawień dźwięku, takich jak ustawienia trybu Dolby, mikrofonu itp.",
+                "audioSmartsettings": {
                     "title": "Inteligentne ustawienia dźwięku",
                     "dolby": {
                         "title": "Dźwięk Dolby",
                         "description": "Wybierz jeden z poniższych trybów. Możesz także zaznaczyć pole wyboru „Automatycznie optymalizuj dźwięk pod kątem...”. Gdy to pole wyboru jest zaznaczone, dla dźwięku Dolby zostaje automatycznie wybrany najlepszy efekt audio w zależności od aktualnie wykorzystywanego trybu.",
                         "options": {
                             "dynamic": "Dynamiczne",
-							"movie": "Film",
-							"music": "muzyka",
-							"games": "Gra",
-							"voip": "Głos"
+                            "movie": "Film",
+                            "music": "muzyka",
+                            "games": "Gra",
+                            "voip": "Głos"
                         },
                         "automaticAudioMode": {
                             "voIPMode": {
@@ -2107,7 +2107,7 @@
                 "heading": "Inteligentna detekcja",
                 "title": "Inteligentny alert wykrycia ruchu",
                 "tooltip": "<div>Ta funkcja nie działa, gdy komputer znajduje się w trybie hibernacji lub jest wyłączony. Sprawdź ustawienia dotyczące czynności wykonywanych w następujących sytuacjach:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>czynności wykonywane po zamknięciu pokrywy</li><li>czynność wykonywana w przypadku niskiego/krytycznie niskiego poziomu naładowania akumulatora</li><li>czynność wykonywana po naciśnięciu przycisku zasilania</li><li>czynność wykonywana po naciśnięciu przycisku uśpienia</li><li>ustawienia limitu czasu bezczynności do przełączenia w stan hibernacji</li></ul></div>W przeciwnym razie nie zostanie uruchomiony alarm ani nie zostaną wykonane zdjęcia.</div>",
-                "desc": "<p><label>Jeśli włączysz tę funkcję, urządzenie zacznie emitować sygnał dźwiękowy, gdy po zablokowaniu ekranu zostanie wykryty ruch — zwłaszcza, jeśli urządzenie znajduje się w miejscu publicznym.</label></p> <p><label>Aby wyłączyć alarm, wprowadź poprawne hasło lub zaloguj się, korzystając z funkcji Windows Hello.</label></p>",
+                "desc": "<p><label>Jeśli włączysz tę funkcję, urządzenie zacznie emitować sygnał dźwiękowy, gdy po zablokowaniu ekranu zostanie wykryty ruch — zwłaszcza, jeśli urządzenie znajduje się w miejscu publicznym.</label></p> <p><label>Aby wyłączyć alarm, zaloguj się do systemu Windows.</label></p>",
                 "note": {
                     "description": "Po pomyślnym zalogowaniu się do systemu nastąpi automatyczne wyłączenie funkcji. Aby ponownie użyć tej funkcji, należy jeszcze raz ją włączyć."
                 },
@@ -2133,7 +2133,7 @@
                     "linkText": "Przejdź do ustawień systemu Windows, aby udzielić dostępu"
                 },
                 "photo": {
-                    "title": "LICZBA ZDJĘĆ WYKONANYCH W TRAKCIE RUCHU",
+                    "title": "LICZBA WYKONANYCH ZDJĘĆ",
                     "tooltip": "Kamera w komputerze włącza się automatycznie, aby robić zdjęcia po wykryciu ruchu. Zdjęcia są wykonywane co 2 sekundy i zapisywane w lokalnej pamięci.",
                     "option1": 5,
                     "option2": 10,
@@ -3128,7 +3128,15 @@
         "warningMessage": "Należy pamiętać, że testy zostaną anulowane, jeśli system będzie w trybie uśpienia lub hibernacji",
         "refreshMessage": "Odświeżanie może zająć trochę czasu, ponieważ wymaga ponownego załadowania wszystkich komponentów",
         "processFinishedCannotBeCanceled": "Nie trzeba już anulować uruchomionego procesu, ponieważ został zakończony.",
-        "cancelMayTakeSomeTime": "Czekaj, w zależności od systemu anulowanie może potrwać pewien czas."
+        "cancelMayTakeSomeTime": "Czekaj, w zależności od systemu anulowanie może potrwać pewien czas.",
+        "scanFailureModal": {
+            "title": "Hardware Problem Detected",
+            "problemDetected": "There were detected problems on the following components on your computer:",
+            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
+            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
+            "supportButtonText": "Open Ticket",
+            "recoverBadSectorsButtonText": "Recover Bad Sectors"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3248,7 +3256,11 @@
             "status": "Status",
             "activeStatus": "ACTIVE",
             "inactiveStatus": "INACTIVE",
-            "manageSubscription": "MANAGE SUBSCRIPTION"
+            "manageSubscription": "MANAGE SUBSCRIPTION",
+            "titlebeta": "Lenovo Beta Program",
+            "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
+            "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
+            "descriptionbeta1": "You are welcomed to join and try the full feature."
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3271,7 +3283,8 @@
             "thu": "Thursday",
             "fri": "Friday",
             "sat": "Saturday",
-            "sun": "Sunday"
+            "sun": "Sunday",
+            "tooltipText": "Enable this toggle to automatically initiate a system performance scan on your selected date and time."
         },
         "scanningPage": {
             "title": "Performance & security check",
@@ -3439,7 +3452,8 @@
                 "yearlyPricing": "$19.99 / Yr",
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
-                "signupButton": "SIGN UP"
+                "signupButton": "SIGN UP",
+                "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
             },
             "tune": "{{tune}} ISSUES",
             "boost": "{{boost}} ISSUES",
@@ -3735,9 +3749,39 @@
                 "scanDate": "Scan date:",
                 "results": "Results:",
                 "status": "Status"
-            }
+            },
+            "backToHome": "Back To Home"
         },
-        "runningWell": "PC is running well"
+        "runningWell": "PC is running well",
+        "feedbackContainer": {
+            "title": "Leave us some feedback",
+            "subtitle": "Tell us what you think about Vantage",
+            "buttonText": "send feedback",
+            "questions": {
+                "q1": "Does the product look and feel good?",
+                "q2": "Do the feature seen comprehensive?",
+                "q3": "Was the scan easy to use?",
+                "q4": "Happy about the fixes we did?",
+                "q5": "Do you see value for money? ",
+                "q6": "Will you refer it to your friends and family?"
+            },
+            "rating": {
+                "r1": "Hate it",
+                "r2": "Love it",
+                "r3": "Seems lacking",
+                "r4": "Good enough",
+                "r5": "Crazy",
+                "r6": "Cool",
+                "r7": "Not so sure",
+                "r8": "Absolutely yes",
+                "r9": "No way",
+                "r10": "Looks worthy",
+                "r11": "Not so sure",
+                "r12": "Absolutely yes"
+            },
+            "commentTip": "Shout what you love and whisper what you hate.",
+            "comments": "Please leave your comments here..."
+        }
     },
     "homeSecurity": {
         "title": "Connected Home Security",

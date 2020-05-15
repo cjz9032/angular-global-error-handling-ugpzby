@@ -22,10 +22,15 @@ import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.servic
 
 declare var Windows;
 
+interface IUserService {
+	isLenovoIdSupported() : boolean;
+}
+
+
 @Injectable({
 	providedIn: 'root'
 })
-export class UserService {
+export class UserService implements IUserService {
 
 	cookies: any = {};
 	public auth = false;
@@ -106,7 +111,7 @@ export class UserService {
 
 		this.updateLidSupported();
 
-		this.lidStarterHelper = new LIDStarterHelper(devService, commonService, deviceService, vantageShellService);
+		this.lidStarterHelper = new LIDStarterHelper(devService, commonService, deviceService, vantageShellService, this);
 
 		this.subscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
@@ -465,9 +470,9 @@ export class UserService {
 		}
 	}
 
-
 	private updateLidSupported() {
 		let lidSupported = true;
+		const previousLidSupported = this.lidSupported;
 		this.hypSettings.getFeatureSetting('LenovoId').then((result) => {
 			if (!result) {
 				this.lidSupported = true;
@@ -490,6 +495,10 @@ export class UserService {
 						lidSupported = false;
 					}
 					this.lidSupported = lidSupported;
+
+					if (previousLidSupported !== this.lidSupported) {
+						this.lidStarterHelper.updateUserSettingXml(null);
+					}
 				});
 			}
 		});

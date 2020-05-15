@@ -1475,20 +1475,20 @@
                 }
             },
             "audio": {
-				"title": "שמע",
-				"subtitle": "הגדרות שמע",
-				"description": "סעיף זה מאפשר לכם לבצע אופטימיזציה אוטומטית או להגדיר במלואן את הגדרות השמע באופן ידני, כגון הגדרות Dolby, מיקרופון ועוד.",
-				"audioSmartsettings": {
+                "title": "שמע",
+                "subtitle": "הגדרות שמע",
+                "description": "סעיף זה מאפשר לכם לבצע אופטימיזציה אוטומטית או להגדיר במלואן את הגדרות השמע באופן ידני, כגון הגדרות Dolby, מיקרופון ועוד.",
+                "audioSmartsettings": {
                     "title": "הגדרות שמע חכמות",
                     "dolby": {
                         "title": "שמע Dolby",
                         "description": "בחרו את המצב הרצוי מבין האפשרויות הבאות. ניתן גם לסמן את התיבה \"‏‫מיטוב אוטומטי של שמע עבור:\". לאחר הסימון, שמע Dolby בוחר אוטומטית את אפקט השמע הטוב ביותר עבורכם, בהתאם למצבים שבהם אתם נמצאים.",
                         "options": {
                             "dynamic": "דינמי",
-							"movie": "סרט",
-							"music": "מוסיקה",
-							"games": "משחק",
-							"voip": "קול"
+                            "movie": "סרט",
+                            "music": "מוסיקה",
+                            "games": "משחק",
+                            "voip": "קול"
                         },
                         "automaticAudioMode": {
                             "voIPMode": {
@@ -2107,7 +2107,7 @@
                 "heading": "חישה חכמה",
                 "title": "התראת Smart Motion",
                 "tooltip": "<div>תכונה זו אינה פועלת כאשר המחשב נמצא במצב שינה או במצב כיבוי. בדקו את ההגדרות בפעולות הבאות:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>פעולות של מכסה הסגירה</li><li>פעולה של סוללה נמוכה/במצב קריטי</li><li>פעולה של מתג הפעלה</li><li>פעולה של לחצן שינה</li><li>הגדרות פסק זמן ללא פעילות למצב שינה</li></ul></div>אחרת, לא תופעל אזעקה, וגם לא יופעל צילום תמונות.</div>",
-                "desc": "<p><label>בעת הפעלת תכונה זו, המכשיר יתחיל לצפצף כאשר המסך נעול ויזוהו תנועות, במיוחד במקום ציבורי.</label></p> <p><label>כדי לבטל את ההתראה, הזינו את הסיסמה הנכונה או התחברו באמצעות Windows Hello.</label></p>",
+                "desc": "<p><label>בעת הפעלת תכונה זו, המכשיר יתחיל לצפצף כאשר המסך נעול ויזוהו תנועות, במיוחד במקום ציבורי.</label></p> <p><label>כדי לבטל את ההתראה, התחברו ל- Windows.</label></p>",
                 "note": {
                     "description": "לאחר כניסה למערכת בהצלחה, תכונה זו תושבת אוטומטית. צריך להפעיל אותה שוב כדי להשתמש בה."
                 },
@@ -2121,7 +2121,7 @@
                 },
                 "allowCamera": {
                     "title": "צילום תמונות",
-                    "describe": "כאשר תכונה זו מופעלת, המצלמה מצלמת תמונות באופן אוטומטי כאשר היא מגלה תנועה כלשהי אם המסך נעול. נתונים אלה מעובדים באופן מקומי במכשיר שלכם. Lenovo אינה ניגשת אליו ואינה משתמשת בו.",
+                    "describe": "כאשר תכונה זו מופעלת, המצלמה מצלמת תמונות באופן אוטומטי כאשר היא מזהה תנועה כלשהי אם המסך נעול. נתונים אלה מעובדים באופן מקומי במכשיר שלכם. Lenovo אינה ניגשת אליו ואינה משתמשת בו.",
                     "checkBoxText": "להפעלת התכונה"
                 },
                 "cameraPrivacy": {
@@ -2133,7 +2133,7 @@
                     "linkText": "עברו להגדרות Windows כדי לאפשר גישה"
                 },
                 "photo": {
-                    "title": "מספר התמונות שצולמו במהלך התנועה",
+                    "title": "מספר התמונות שצולמו",
                     "tooltip": "המצלמה במחשב מופעלת לצילום באופן אוטומטי כאשר מזוהות תנועות. תמונות מצולמות כל 2 שניות והן נשמרות באחסון המקומי.",
                     "option1": 5,
                     "option2": 10,
@@ -3128,7 +3128,15 @@
         "warningMessage": "קחו בחשבון שהבדיקות יבוטלו אם המערכת במצב שינה או המתנה",
         "refreshMessage": "הרענון עשוי לארוך זמן מה מכיוון שהמחשב צריך לטעון את כל הרכיבים מחדש",
         "processFinishedCannotBeCanceled": "אין יותר צורך לבטל את תהליך ההפעלה מפני שהוא הושלם.",
-        "cancelMayTakeSomeTime": "אנא המתינו, פעולת הביטול עשויה להימשך זמן מה, בהתאם למערכת."
+        "cancelMayTakeSomeTime": "אנא המתינו, פעולת הביטול עשויה להימשך זמן מה, בהתאם למערכת.",
+        "scanFailureModal": {
+            "title": "Hardware Problem Detected",
+            "problemDetected": "There were detected problems on the following components on your computer:",
+            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
+            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
+            "supportButtonText": "Open Ticket",
+            "recoverBadSectorsButtonText": "Recover Bad Sectors"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3248,7 +3256,11 @@
             "status": "Status",
             "activeStatus": "ACTIVE",
             "inactiveStatus": "INACTIVE",
-            "manageSubscription": "MANAGE SUBSCRIPTION"
+            "manageSubscription": "MANAGE SUBSCRIPTION",
+            "titlebeta": "Lenovo Beta Program",
+            "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
+            "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
+            "descriptionbeta1": "You are welcomed to join and try the full feature."
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3271,7 +3283,8 @@
             "thu": "Thursday",
             "fri": "Friday",
             "sat": "Saturday",
-            "sun": "Sunday"
+            "sun": "Sunday",
+            "tooltipText": "Enable this toggle to automatically initiate a system performance scan on your selected date and time."
         },
         "scanningPage": {
             "title": "Performance & security check",
@@ -3439,7 +3452,8 @@
                 "yearlyPricing": "$19.99 / Yr",
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
-                "signupButton": "SIGN UP"
+                "signupButton": "SIGN UP",
+                "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
             },
             "tune": "{{tune}} ISSUES",
             "boost": "{{boost}} ISSUES",
@@ -3735,9 +3749,39 @@
                 "scanDate": "Scan date:",
                 "results": "Results:",
                 "status": "Status"
-            }
+            },
+            "backToHome": "Back To Home"
         },
-        "runningWell": "PC is running well"
+        "runningWell": "PC is running well",
+        "feedbackContainer": {
+            "title": "Leave us some feedback",
+            "subtitle": "Tell us what you think about Vantage",
+            "buttonText": "send feedback",
+            "questions": {
+                "q1": "Does the product look and feel good?",
+                "q2": "Do the feature seen comprehensive?",
+                "q3": "Was the scan easy to use?",
+                "q4": "Happy about the fixes we did?",
+                "q5": "Do you see value for money? ",
+                "q6": "Will you refer it to your friends and family?"
+            },
+            "rating": {
+                "r1": "Hate it",
+                "r2": "Love it",
+                "r3": "Seems lacking",
+                "r4": "Good enough",
+                "r5": "Crazy",
+                "r6": "Cool",
+                "r7": "Not so sure",
+                "r8": "Absolutely yes",
+                "r9": "No way",
+                "r10": "Looks worthy",
+                "r11": "Not so sure",
+                "r12": "Absolutely yes"
+            },
+            "commentTip": "Shout what you love and whisper what you hate.",
+            "comments": "Please leave your comments here..."
+        }
     },
     "homeSecurity": {
         "title": "Connected Home Security",

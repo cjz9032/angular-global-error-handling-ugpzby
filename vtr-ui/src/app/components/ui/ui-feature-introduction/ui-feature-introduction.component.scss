@@ -1,0 +1,90 @@
+@import "../../../app.theme.scss";
+.vtr-ui-feature-introduction {
+	.title {
+		font-size: 3.4rem;
+		font-weight: $weight_regular;
+	}
+	.text-regular {
+		font-size: 1.4rem;
+
+		a {
+			text-decoration: underline;
+		}
+	}
+	.feature-logo {
+		width: 90%;
+	}
+	.list-heading {
+		font-size: 2.4rem;
+		font-weight: $weight_600;
+
+		.adjust-left {
+			padding-left: 0rem;
+		}
+	}
+	.bullet-list {
+		margin-top: 1rem;
+		list-style: none;
+		padding: 0;
+
+		li {
+			margin: 0;
+			padding: 1rem 1rem 1rem 0;
+
+			.text-regular {
+				font-size: 1.4rem;
+			}
+
+			&.good {
+				.bullet-icon {
+					.icon-bkg {
+						background: $green_gradient;
+						background-color: $go_dark;
+						border-color: $green_dark;
+					}
+				}
+			}
+
+			&.bad {
+				.bullet-icon {
+					.icon-bkg {
+						background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
+						background-color: $stop_dark;
+						border-color: $stop_dark;
+					}
+				}
+
+				.detail {
+					color: $stop;
+				}
+
+				.arrow {
+					color: $stop;
+				}
+			}
+
+			.bullet-icon {
+				.icon-bkg {
+					display: inline-block;
+					border-radius: 50%;
+					height: 3rem;
+					width: 3rem;
+					border-width: 0.2rem;
+					border-style: solid;
+					text-align: center;
+
+					fa-icon {
+						font-size: 1.6rem;
+						line-height: 2.6rem;
+						color: $light;
+					}
+				}
+
+				.icon-installed {
+					border-width: 9px;
+					border-color: $main !important;
+				}
+			}
+		}
+	}
+}

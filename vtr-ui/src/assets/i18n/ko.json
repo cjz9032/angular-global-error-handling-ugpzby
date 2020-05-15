@@ -1475,20 +1475,20 @@
                 }
             },
             "audio": {
-				"title": "오디오",
-				"subtitle": "오디오 설정",
-				"description": "이 섹션에서는 Dolby 설정, 마이크 등의 오디오 설정을 자동으로 최적화하거나 수동으로 완벽하게 구성할 수 있습니다.",
-				"audioSmartsettings": {
+                "title": "오디오",
+                "subtitle": "오디오 설정",
+                "description": "이 섹션에서는 Dolby 설정, 마이크 등의 오디오 설정을 자동으로 최적화하거나 수동으로 완벽하게 구성할 수 있습니다.",
+                "audioSmartsettings": {
                     "title": "오디오 스마트 설정",
                     "dolby": {
                         "title": "Dolby 오디오",
                         "description": "다음에서 원하는 모드를 선택하십시오. \"다음에 대한 자동 오디오 최적화...\" 확인란을 선택할 수도 있습니다. 이 확인란을 선택한 경우 Dolby 오디오는 사용자의 모드에 따라 최상의 오디오 효과를 자동으로 선택합니다.",
                         "options": {
                             "dynamic": "동적",
-							"movie": "영화",
-							"music": "음악",
-							"games": "게임",
-							"voip": "음성"
+                            "movie": "영화",
+                            "music": "음악",
+                            "games": "게임",
+                            "voip": "음성"
                         },
                         "automaticAudioMode": {
                             "voIPMode": {
@@ -2107,7 +2107,7 @@
                 "heading": "지능형 센싱",
                 "title": "스마트 모션 알람",
                 "tooltip": "<div>컴퓨터가 최대 절전 모드이거나 전원이 꺼진 경우에는 해당 기능이 작동하지 않습니다. 다음 동작에서 설정을 확인하십시오.<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>덮개 닫기 동작</li><li>배터리 부족/경보 동작</li><li>전원 버튼 동작</li><li>절전 버튼 동작</li><li>최대 절전 모드에 대한 유휴 시간 제한 설정</li></ul></div>그렇지 않으면 알람이 울리지 않고 사진을 찍지도 않습니다.</div>",
-                "desc": "<p><label>이 기능을 활성화하면 화면이 잠겨 있을 때, 특히 공공장소에서 이동이 감지될 때 장치에서 신호음이 울리기 시작합니다.</label></p> <p><label>알람을 해제하려면 올바른 암호를 입력하거나 Windows Hello로 로그인하십시오.</label></p>",
+                "desc": "<p><label>이 기능을 활성화하면 화면이 잠겨 있을 때, 특히 공공장소에서 이동이 감지될 때 장치에서 신호음이 울리기 시작합니다.</label></p> <p><label>알람을 해제하려면 Windows에 로그인하십시오.</label></p>",
                 "note": {
                     "description": "시스템에 로그인하면 이 기능이 자동으로 꺼집니다. 다시 기능을 활성화해야 사용할 수 있습니다."
                 },
@@ -2133,7 +2133,7 @@
                     "linkText": "액세스 권한을 부여하려면, Windows 설정으로 이동합니다"
                 },
                 "photo": {
-                    "title": "움직임이 있는 동안 찍은 사진의 개수",
+                    "title": "촬영한 사진 수",
                     "tooltip": "움직임이 감지되면 컴퓨터의 카메라가 자동으로 활성화되어 사진을 촬영합니다. 사진은 2초마다 촬영되며 로컬 저장 장치에 저장됩니다.",
                     "option1": 5,
                     "option2": 10,
@@ -3128,7 +3128,15 @@
         "warningMessage": "시스템이 절전 또는 최대 절전 모드 상태인 경우 테스트가 취소됩니다",
         "refreshMessage": "모든 구성 요소를 다시 로드해야 하므로 새로 고침이 오래 걸릴 수 있습니다",
         "processFinishedCannotBeCanceled": "실행 중인 프로세스가 완료되었으므로 더 이상 취소할 필요가 없습니다.",
-        "cancelMayTakeSomeTime": "잠시 기다려 주십시오. 시스템에 따라 취소하는 데 시간이 걸릴 수 있습니다."
+        "cancelMayTakeSomeTime": "잠시 기다려 주십시오. 시스템에 따라 취소하는 데 시간이 걸릴 수 있습니다.",
+        "scanFailureModal": {
+            "title": "Hardware Problem Detected",
+            "problemDetected": "There were detected problems on the following components on your computer:",
+            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
+            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
+            "supportButtonText": "Open Ticket",
+            "recoverBadSectorsButtonText": "Recover Bad Sectors"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3248,7 +3256,11 @@
             "status": "Status",
             "activeStatus": "ACTIVE",
             "inactiveStatus": "INACTIVE",
-            "manageSubscription": "MANAGE SUBSCRIPTION"
+            "manageSubscription": "MANAGE SUBSCRIPTION",
+            "titlebeta": "Lenovo Beta Program",
+            "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
+            "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
+            "descriptionbeta1": "You are welcomed to join and try the full feature."
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3271,7 +3283,8 @@
             "thu": "Thursday",
             "fri": "Friday",
             "sat": "Saturday",
-            "sun": "Sunday"
+            "sun": "Sunday",
+            "tooltipText": "Enable this toggle to automatically initiate a system performance scan on your selected date and time."
         },
         "scanningPage": {
             "title": "Performance & security check",
@@ -3439,7 +3452,8 @@
                 "yearlyPricing": "$19.99 / Yr",
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
-                "signupButton": "SIGN UP"
+                "signupButton": "SIGN UP",
+                "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
             },
             "tune": "{{tune}} ISSUES",
             "boost": "{{boost}} ISSUES",
@@ -3735,9 +3749,39 @@
                 "scanDate": "Scan date:",
                 "results": "Results:",
                 "status": "Status"
-            }
+            },
+            "backToHome": "Back To Home"
         },
-        "runningWell": "PC is running well"
+        "runningWell": "PC is running well",
+        "feedbackContainer": {
+            "title": "Leave us some feedback",
+            "subtitle": "Tell us what you think about Vantage",
+            "buttonText": "send feedback",
+            "questions": {
+                "q1": "Does the product look and feel good?",
+                "q2": "Do the feature seen comprehensive?",
+                "q3": "Was the scan easy to use?",
+                "q4": "Happy about the fixes we did?",
+                "q5": "Do you see value for money? ",
+                "q6": "Will you refer it to your friends and family?"
+            },
+            "rating": {
+                "r1": "Hate it",
+                "r2": "Love it",
+                "r3": "Seems lacking",
+                "r4": "Good enough",
+                "r5": "Crazy",
+                "r6": "Cool",
+                "r7": "Not so sure",
+                "r8": "Absolutely yes",
+                "r9": "No way",
+                "r10": "Looks worthy",
+                "r11": "Not so sure",
+                "r12": "Absolutely yes"
+            },
+            "commentTip": "Shout what you love and whisper what you hate.",
+            "comments": "Please leave your comments here..."
+        }
     },
     "homeSecurity": {
         "title": "Connected Home Security",

@@ -650,7 +650,10 @@ xdescribe('SubpageDeviceSettingsDisplayComponent', () => {
 		component = fixture.componentInstance;
 		component.eyeCareModeStatus.status = true;
 		const spy = spyOn(component, 'onEyeCareTemperatureChange')
-		component.setToEyeCareMode();
+		const event: any = {
+			value: 5
+		}
+		component.setToEyeCareMode(event);
 		expect(spy).toHaveBeenCalled()
 	}));
 

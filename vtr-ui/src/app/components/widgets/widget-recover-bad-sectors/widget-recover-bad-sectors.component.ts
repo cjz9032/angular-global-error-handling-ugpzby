@@ -9,7 +9,6 @@ export class WidgetRecoverBadSectorsComponent implements OnInit {
 
 	@Input() title: string;
 	@Input() description: string;
-	@Input() textButton: '';
 	@Input() recoverPath: string;
 	@Input() disable = false;
 	@Input() tooltipText: string;

@@ -9,6 +9,7 @@ import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { GuardService } from '../../../services/guard/guardService.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { Router } from '@angular/router';
+import { FeatureIntroduction } from '../../ui/ui-feature-introduction/ui-feature-introduction.component';
 
 @Component({
 	selector: 'vtr-page-security-internet',
@@ -23,6 +24,7 @@ export class PageSecurityInternetComponent implements OnInit, OnDestroy {
 	securityAdvisor: SecurityAdvisor;
 	isOnline = true;
 	notificationSubscription: Subscription;
+	featureIntroduction: FeatureIntroduction;
 
 	constructor(
 		private cmsService: CMSService,
@@ -38,17 +40,28 @@ export class PageSecurityInternetComponent implements OnInit, OnDestroy {
 			title: 'security.vpn.statusTitle',
 			status: 'loading'
 		};
+		this.featureIntroduction = {
+			featureTitle: '',
+			featureTitleDesc: '',
+			imgSrc: '',
+			featureSubtitle: '',
+			featureIntroList: []
+
+		};
 		this.vpn = this.securityAdvisor.vpn;
 		const cacheStatus: string = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityVPNStatus);
 		if (cacheStatus) {
 			this.statusItem.status = cacheStatus;
+			this.getFeatureIntro(this.statusItem.status);
 		}
 		if (this.vpn && this.vpn.status) {
 			this.statusItem.status = this.vpn.status;
+			this.getFeatureIntro(this.statusItem.status);
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityVPNStatus, this.statusItem.status);
 		}
 		this.vpn.on(EventTypes.vpnStatusEvent, (status: string) => {
 			this.statusItem.status = status;
+			this.getFeatureIntro(this.statusItem.status);
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityVPNStatus, this.statusItem.status);
 		});
 		this.fetchCMSArticles();
@@ -114,6 +127,44 @@ export class PageSecurityInternetComponent implements OnInit, OnDestroy {
 				default:
 					break;
 			}
+		}
+	}
+
+	private getFeatureIntro(status: string) {
+		if (status === 'installed') {
+			this.featureIntroduction.featureTitle = 'security.vpn.howToUseSufEasy';
+			this.featureIntroduction.featureTitleDesc = 'security.vpn.whatCanSufEasy2';
+			this.featureIntroduction.imgSrc = 'assets/images/SurfEasy-Left-img-2.jpg';
+			this.featureIntroduction.featureSubtitle = 'security.vpn.getStarted';
+			this.featureIntroduction.featureIntroList = [
+				{
+					mark: '1.',
+					detail: 'security.vpn.getStarted1'
+				}, {
+					mark: '2.',
+					detail: 'security.vpn.getStarted2'
+				}, {
+					mark: '3.',
+					detail: 'security.vpn.getStarted3'
+				}
+			];
+		} else if (status === 'not-installed' || status === 'installing') {
+			this.featureIntroduction.featureTitle = 'security.vpn.whySufEasy';
+			this.featureIntroduction.featureTitleDesc = 'security.vpn.whySufEasyDescription';
+			this.featureIntroduction.imgSrc = 'assets/images/surfeasy-left-img.jpg';
+			this.featureIntroduction.featureSubtitle = 'security.vpn.startUseSufEasy';
+			this.featureIntroduction.featureIntroList = [
+				{
+					iconName: 'check',
+					detail: 'security.vpn.startUseSufEasy1'
+				}, {
+					iconName: 'check',
+					detail: 'security.vpn.startUseSufEasy2'
+				}, {
+					iconName: 'check',
+					detail: 'security.vpn.startUseSufEasy3'
+				}
+			];
 		}
 	}
 }

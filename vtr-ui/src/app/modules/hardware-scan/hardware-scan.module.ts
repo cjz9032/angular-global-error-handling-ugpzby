@@ -5,7 +5,7 @@ import { NgbModalModule, NgbDropdownModule, NgbDatepickerModule, NgbCollapseModu
 import { HardwareScanRoutingModule } from './hardware-scan-routing.module';
 import { ModalWaitComponent } from '../../components/modal/modal-wait/modal-wait.component';
 import { ModalCancelComponent } from '../../components/modal/modal-cancel/modal-cancel.component';
-import { ModalEticketComponent } from '../../components/modal/modal-eticket/modal-eticket.component';
+import { ModalScanFailureComponent } from '../../components/modal/modal-scan-failure/modal-scan-failure.component';
 import { ModalScheduleNewScanComponent } from '../../components/modal/modal-schedule-new-scan/modal-schedule-new-scan.component';
 import { ModalScheduleScanCollisionComponent } from '../../components/modal/modal-schedule-scan-collision/modal-schedule-scan-collision.component';
 import { ModalHardwareScanCustomizeComponent } from '../../components/modal/modal-hardware-scan-customize/modal-hardware-scan-customize.component';
@@ -38,9 +38,11 @@ import { faCaretDown } from '@fortawesome/free-solid-svg-icons/faCaretDown';
 import { faRedo } from '@fortawesome/pro-light-svg-icons/faRedo';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons/faExclamationTriangle';
 import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons/faExclamationCircle';
-import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons/faQuestionCircle';
+import { faQuestionCircle } from '@fortawesome/free-regular-svg-icons/faQuestionCircle';
 import { faAngleUp } from '@fortawesome/pro-light-svg-icons/faAngleUp';
 import { faBan } from '@fortawesome/free-solid-svg-icons/faBan';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons/faCheckCircle';
+import { faTimesCircle } from '@fortawesome/free-solid-svg-icons/faTimesCircle';
 import { HardwareScanExecutingHeaderComponent } from '../../components/pages/page-hardwarescan/children/hardware-scan-header-pages/hardware-scan-executing-header/hardware-scan-executing-header.component';
 import { HardwareScanWaitSelectHeaderComponent } from '../../components/pages/page-hardwarescan/children/hardware-scan-header-pages/hardware-scan-wait-select-header/hardware-scan-wait-select-header.component';
 
@@ -49,7 +51,7 @@ import { HardwareScanWaitSelectHeaderComponent } from '../../components/pages/pa
 		ModalRecoverConfirmComponent,
 		ModalWaitComponent,
 		ModalCancelComponent,
-		ModalEticketComponent,
+		ModalScanFailureComponent,
 		ModalHardwareScanCustomizeComponent,
 		ModalScheduleNewScanComponent,
 		ModalScheduleScanCollisionComponent,
@@ -97,7 +99,7 @@ import { HardwareScanWaitSelectHeaderComponent } from '../../components/pages/pa
 		ModalWaitComponent,
 		ModalRecoverConfirmComponent,
 		ModalCancelComponent,
-		ModalEticketComponent,
+		ModalScanFailureComponent,
 		ModalHardwareScanCustomizeComponent,
 		ModalScheduleNewScanComponent,
 		ModalScheduleScanCollisionComponent,
@@ -114,6 +116,8 @@ export class HardwareScanModule {
 		library.addIcons(faQuestionCircle);
 		library.addIcons(faAngleUp);
 		library.addIcons(faBan);
+		library.addIcons(faCheckCircle);
+		library.addIcons(faTimesCircle);
 	}
  }
 

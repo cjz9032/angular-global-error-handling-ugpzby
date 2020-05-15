@@ -1475,20 +1475,20 @@
                 }
             },
             "audio": {
-				"title": "Áudio",
-				"subtitle": "Configurações de áudio",
-				"description": "Nesta seção, você pode otimizar automaticamente ou configurar totalmente, de forma manual, as configurações de áudio, como configurações de Dolby, microfone etc.",
-				"audioSmartsettings": {
+                "title": "Áudio",
+                "subtitle": "Configurações de áudio",
+                "description": "Nesta seção, você pode otimizar automaticamente ou configurar totalmente, de forma manual, as configurações de áudio, como configurações de Dolby, microfone etc.",
+                "audioSmartsettings": {
                     "title": "Configurações inteligentes de áudio",
                     "dolby": {
                         "title": "Áudio Dolby",
                         "description": "Selecione o modo que você deseja entre os seguintes. Você também pode marcar a caixa de seleção \"Otimizar automaticamente o áudio para...\". Quando selecionado, o áudio Dolby capta automaticamente o melhor efeito para você, de acordo com os modos em que você está.",
                         "options": {
                             "dynamic": "Dinâmico",
-							"movie": "Filme",
-							"music": "Música",
-							"games": "Jogo",
-							"voip": "Voz"
+                            "movie": "Filme",
+                            "music": "Música",
+                            "games": "Jogo",
+                            "voip": "Voz"
                         },
                         "automaticAudioMode": {
                             "voIPMode": {
@@ -2107,7 +2107,7 @@
                 "heading": "Detecção inteligente",
                 "title": "Alerta de movimento inteligente",
                 "tooltip": "<div>Este recurso não funciona quando o computador está no modo de hibernação ou desligado. Verifique as configurações nas seguintes ações:<div class='antiTheft-tooltip' id ='antiTheft-tooltip'><ul><li>ações de fechamento da tampa</li><li>ação de bateria fraca/crítica</li><li>ação do botão liga/desliga</li><li>ação do botão de suspensão</li><li>configurações de tempo limite inativo para hibernação</li></ul></div>Caso contrário, ele não dispara o alarme nem tira fotos.</div>",
-                "desc": "<p><label>Ao ativar esse recurso, o dispositivo começará a emitir um sinal sonoro quando a tela estiver bloqueada e movimentos forem detectados, principalmente em um local público.</label></p> <p><label>Para descartar o alarme, digite a senha correta ou faça login no Windows Hello.</label></p>",
+                "desc": "<p><label>Ao ativar esse recurso, o dispositivo começará a emitir um sinal sonoro quando a tela estiver bloqueada e movimentos forem detectados, principalmente em um local público.</label></p> <p><label>Para descartar o alarme, faça login no Windows.</label></p>",
                 "note": {
                     "description": "Após o login no sistema, esse recurso será desativado automaticamente. Você precisa habilitá-lo novamente para usá-lo."
                 },
@@ -2121,7 +2121,7 @@
                 },
                 "allowCamera": {
                     "title": "TIRAR FOTOS",
-                    "describe": "Ao ativar esse recurso, a câmera tira fotos automaticamente ao detectar qualquer movimento, se a tela estiver bloqueada. Esses dados são processados localmente no dispositivo. A Lenovo não acessa nem usa esses dados.",
+                    "describe": "Ao ativar esse recurso, a câmera tira fotos automaticamente ao detectar movimentos se a tela estiver bloqueada. Esses dados são processados localmente no dispositivo. A Lenovo não acessa nem usa esses dados.",
                     "checkBoxText": "Ativar esse recurso"
                 },
                 "cameraPrivacy": {
@@ -2133,7 +2133,7 @@
                     "linkText": "Ir para as Configurações do Windows para dar acesso"
                 },
                 "photo": {
-                    "title": "O NÚMERO DE FOTOS TIRADAS DURANTE O MOVIMENTO",
+                    "title": "O NÚMERO DE FOTOS TIRADAS",
                     "tooltip": "A câmera do seu computador é ativada automaticamente para tirar fotos quando movimentos são detectados. As fotos são tiradas a cada 2 segundos e salvas no armazenamento local.",
                     "option1": 5,
                     "option2": 10,
@@ -3128,7 +3128,15 @@
         "warningMessage": "Lembre-se de que os testes serão cancelados se o sistema entrar em suspensão ou hibernar",
         "refreshMessage": "A atualização pode levar algum tempo, pois precisa carregar todos os componentes novamente",
         "processFinishedCannotBeCanceled": "O processo em execução não precisa mais ser cancelado, pois foi concluído.",
-        "cancelMayTakeSomeTime": "Por favor, aguarde. Dependendo do seu sistema, o cancelamento poderá levar algum tempo."
+        "cancelMayTakeSomeTime": "Por favor, aguarde. Dependendo do seu sistema, o cancelamento poderá levar algum tempo.",
+        "scanFailureModal": {
+            "title": "Problema de Hardware Detectado",
+            "problemDetected": "Foram detectados problemas nos seguintes componentes do seu computador:",
+            "suggestedActionSupport": "Se o seu computador está sob Garantia, clique em <b>abrir tíquete</b> para uma peça de substituição. Para mais informações, acesse o site Lenovo Support Web",
+            "suggestedActionRbs": "Você pode tentar recuperar os seus dispositivos de armazenamento clicando em <b>recuperar setores ruins</b>. Se o problema persistir, você pode clicar em <b>abrir tíquete</b> para suporte adicional.",
+            "supportButtonText": "Abrir tíquete",
+            "recoverBadSectorsButtonText": "Recuperar Setores Ruins"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3248,7 +3256,11 @@
             "status": "Status",
             "activeStatus": "ACTIVE",
             "inactiveStatus": "INACTIVE",
-            "manageSubscription": "MANAGE SUBSCRIPTION"
+            "manageSubscription": "MANAGE SUBSCRIPTION",
+            "titlebeta": "Lenovo Beta Program",
+            "manageSubscriptionBeta": "SUBSCRIBE FOR BETA PROGRAM",
+            "descriptionbeta": "Lenovo is offering pilot program to try Smart performance featre till July.",
+            "descriptionbeta1": "You are welcomed to join and try the full feature."
         },
         "scanSettings": {
             "title": "Scan settings",
@@ -3271,7 +3283,8 @@
             "thu": "Thursday",
             "fri": "Friday",
             "sat": "Saturday",
-            "sun": "Sunday"
+            "sun": "Sunday",
+            "tooltipText": "Enable this toggle to automatically initiate a system performance scan on your selected date and time."
         },
         "scanningPage": {
             "title": "Performance & security check",
@@ -3439,7 +3452,8 @@
                 "yearlyPricing": "$19.99 / Yr",
                 "monthlyPricing": "LESS THAN $2 PER MONTH.",
                 "longerTerm": "Longer term? Even more savings?",
-                "signupButton": "SIGN UP"
+                "signupButton": "SIGN UP",
+                "description1": "You are welcomed to enroll in the program to try the full feature of Smart Performance."
             },
             "tune": "{{tune}} ISSUES",
             "boost": "{{boost}} ISSUES",
@@ -3735,9 +3749,39 @@
                 "scanDate": "Scan date:",
                 "results": "Results:",
                 "status": "Status"
-            }
+            },
+            "backToHome": "Back To Home"
         },
-        "runningWell": "PC is running well"
+        "runningWell": "PC is running well",
+        "feedbackContainer": {
+            "title": "Leave us some feedback",
+            "subtitle": "Tell us what you think about Vantage",
+            "buttonText": "send feedback",
+            "questions": {
+                "q1": "Does the product look and feel good?",
+                "q2": "Do the feature seen comprehensive?",
+                "q3": "Was the scan easy to use?",
+                "q4": "Happy about the fixes we did?",
+                "q5": "Do you see value for money? ",
+                "q6": "Will you refer it to your friends and family?"
+            },
+            "rating": {
+                "r1": "Hate it",
+                "r2": "Love it",
+                "r3": "Seems lacking",
+                "r4": "Good enough",
+                "r5": "Crazy",
+                "r6": "Cool",
+                "r7": "Not so sure",
+                "r8": "Absolutely yes",
+                "r9": "No way",
+                "r10": "Looks worthy",
+                "r11": "Not so sure",
+                "r12": "Absolutely yes"
+            },
+            "commentTip": "Shout what you love and whisper what you hate.",
+            "comments": "Please leave your comments here..."
+        }
     },
     "homeSecurity": {
         "title": "Connected Home Security",

@@ -1,0 +1,61 @@
+<div class="modal-body vtr-modal-scan-failure">
+
+	<div class="modal-information">
+		<h1 class="title">{{ 'hardwareScan.scanFailureModal.title' | translate }}</h1>
+		<p class="description">{{ 'hardwareScan.scanFailureModal.problemDetected' | translate }}</p>
+
+		<div class="modules">
+			<li class="list-module" *ngFor="let module of failedModules;">
+				<div class="module-row">
+					<fa-icon aria-hidden="true" aria-labelledby="exclamation-icon" class="warning"
+						[icon]="['fas', 'exclamation-circle']">
+					</fa-icon>
+					<span class="module-name">{{ module.moduleName }}</span>
+				</div>
+				<div *ngIf="module.moduleId == 'storage'">
+					<li class="list-device" *ngFor="let device of module.devices;">
+						<span class="description device-name">{{ device.deviceName }}</span>
+					</li>
+				</div>
+			</li>
+		</div>
+
+		<div *ngIf="hasFailedRbsDevice; else withoutRBS">
+			<div class="description" [innerHTML]="'hardwareScan.scanFailureModal.suggestedActionRbs' | translate"></div>
+			<div class="row">
+				<div class="col button-row">
+					<vtr-ui-button metricsEvent="FeatureClick" metricsParent="HardwareScan.ScanFailureActions"
+						metricsItem="ScanFailureActions.RecoverBadSectors" id="rbsButton" (click)="goToRBSPage()"
+						[tooltipText]="'hardwareScan.scanFailureModal.supportButtonText' | translate"
+						[label]="'hardwareScan.scanFailureModal.recoverBadSectorsButtonText' | translate">
+					</vtr-ui-button>
+					<button class="btn btn-link support-button" type="button" id="supportButtonWithRBS"
+						vtrMetrics metricsEvent="FeatureClick" metricsParent="HardwareScan.ScanFailureActions" metricsItem="HardwareScan.LenovoSupport"
+						(click)="openSupportPage()">{{'hardwareScan.scanFailureModal.supportButtonText' | translate }}</button>
+				</div>
+			</div>
+		</div>
+
+		<ng-template #withoutRBS>
+			<div class="description">
+				<p [innerHTML]="'hardwareScan.scanFailureModal.suggestedActionSupport' | translate"></p>
+			</div>
+			<div class="row">
+				<div class="col button-row">
+					<vtr-ui-button metricsEvent="FeatureClick" metricsParent="HardwareScan.ScanFailureActions"
+						metricsItem="ScanFailureActions.LenovoSupport" id="supportButtonWithoutRBS"
+						(click)="openSupportPage()"
+						[tooltipText]="'hardwareScan.scanFailureModal.supportButtonText' | translate"
+						[label]="'hardwareScan.scanFailureModal.supportButtonText' | translate">
+					</vtr-ui-button>
+				</div>
+			</div>
+		</ng-template>
+
+		<a vtrMetrics metricsEvent="FeatureClick" metricsParent="HardwareScan.ScanFailureActions" aria-label="Close"
+			metricsItem="ScanFailureActions.Close" role="button" href="javascript:;" class="close-btn"
+			(click)="closeModal()">
+			<img [src]=" 'assets/icons/Close.svg' | svgInline | async" alt="" srcset="">
+		</a>
+	</div>
+</div>

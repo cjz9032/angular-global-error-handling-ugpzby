@@ -20,7 +20,7 @@ export class ModalSmartPerformanceCancelComponent implements OnInit {
 		private router: Router,
 		private commonService: CommonService,
 		private logger: LoggerService
-	) {}
+	) { }
 	private timerRef: any;
 	public secondsCountdown = 9;
 	public isLoading = false;
@@ -30,7 +30,7 @@ export class ModalSmartPerformanceCancelComponent implements OnInit {
 		this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, false);
 		this.timerRef = setInterval(() => {
 			if (this.secondsCountdown-- === 0) {
-				this.onAgree();
+				this.cancelScan();
 			}
 		}, 1000);
 	}
@@ -38,13 +38,12 @@ export class ModalSmartPerformanceCancelComponent implements OnInit {
 		if (this.timerRef) {
 			this.stopCountdown();
 		}
-
 		this.activeModal.close(false);
 	}
 
 	onAgree() {
 		if (this.timerRef) {
-			this.stopCountdown();
+			this.stopCountdown()
 		}
 		this.closeModal();
 	}
@@ -58,33 +57,32 @@ export class ModalSmartPerformanceCancelComponent implements OnInit {
 		modal.focus();
 	}
 
-	cancelScan() {
-		if (this.smartPerformanceService.isShellAvailable) {
+	public async cancelScan() {
+		try {
 			this.isLoading = true;
-			this.smartPerformanceService
-				.cancelScan()
-				.then((cancelScanFromService: any) => {
-					if (cancelScanFromService) {
-						this.isLoading = false;
-						this.activeModal.close(true);
-						if (this.promptMsg) {
-							this.promptMsg = false;
+			await this.smartPerformanceService.cancelScan().then((cancelScanFromService: any) => {
+				if (cancelScanFromService) {
+					let spModelClose = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartPerformanceForceClose);
+					if (!spModelClose) {
+						if (this.timerRef) {
+							this.stopCountdown();
+							this.isLoading = false;
+							
 						}
-						// this.router.navigate(['support/smart-performance']);
-						// this.stopScanning.emit();
-						// this.router.navigateByUrl('/support/smart-performance?SPForceClose=true&d='+(new Date).getTime(), {skipLocationChange: false});
-						// this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceForceClose, true);
-					} 
-					// else {
-					// 	// this.isScanning = false;
-					// }
-				})
-				.catch((error) => {
-					this.logger.error("Error while leaving page", error.message);
-				});
+					}
+					// de-activates the pop-up,
+					this.activeModal.close(true);
+					if (this.promptMsg) {
+						this.promptMsg = false;
+					}
+
+					this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceForceClose, true);
+					this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, true);
+				}
+			})
+		} catch (err) {
+			this.logger.error("Error while leaving page", err.message);
 		}
-		this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceForceClose, true);
-		this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, true);
-		// this.activeModal.close('close');
 	}
+
 }
