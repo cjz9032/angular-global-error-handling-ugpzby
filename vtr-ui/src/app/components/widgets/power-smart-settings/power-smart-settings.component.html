@@ -103,7 +103,28 @@
 												(toggle)="onAutoTransitionToggle($event)"
 												id="IntelligentCooling-5.0-AutoTransition-checkBox">
 											</vtr-ui-checkbox>
-
+											<div class="transitionReadMore mt-3 row">		
+												<div class="read-more-button mr-2"
+													role="button"
+													id=" autoTransitionIsReadMore 
+													? powerSmartSettings-intelligentCooling-autoTransition-less
+													: powerSmartSettings-intelligentCooling-autoTransition-more"
+													[attr.aria-label]=" !autoTransitionIsReadMore ? 'more' : 'less'"
+													tabindex="0"
+													(keydown.enter)="autoTransitionReadMoreClick()"
+													(click)="autoTransitionReadMoreClick()"
+													>
+													{{
+														autoTransitionIsReadMore
+														? ('device.deviceSettings.power.powerSmartSettings.intelligentCooling.autoTransition.less' | translate)
+														: ('device.deviceSettings.power.powerSmartSettings.intelligentCooling.autoTransition.more' | translate)
+													}}
+												</div>
+												<fa-icon *ngIf="!autoTransitionIsReadMore"
+													[icon]="['fal', 'chevron-down']"></fa-icon>
+												<fa-icon *ngIf="autoTransitionIsReadMore"
+													[icon]="['fal', 'chevron-up']"></fa-icon>
+											</div>
 											<div *ngIf="autoTransitionIsReadMore"
 												attr.aria-label="ITSAutoTransitionReadMore"
 												class="mt-3">
@@ -122,31 +143,6 @@
 													id="ITSAutoTransitionReadMore-PartC">
 													{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.autoTransition.moreContent.desc3' | translate}}
 												</p>
-											</div>
-											<div class="transitionReadMore mt-3 row"
-												(click)="autoTransitionReadMoreClick()">
-												<div class="read-more-button mr-2"
-													*ngIf="!autoTransitionIsReadMore"
-													role="button"
-													id="powerSmartSettings-intelligentCooling-autoTransition-more"
-													attr.aria-label="powerSmartSettings-intelligentCooling-autoTransition-more"
-													tabindex="0"
-													(keydown.enter)="autoTransitionReadMoreClick()">
-													{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.autoTransition.more' | translate}}
-												</div>
-												<div class="read-more-button mr-2"
-													*ngIf="autoTransitionIsReadMore"
-													role="button"
-													id="powerSmartSettings-intelligentCooling-autoTransition-less"
-													attr.aria-label="powerSmartSettings-intelligentCooling-autoTransition-less"
-													tabindex="0"
-													(keydown.enter)="autoTransitionReadMoreClick()">
-													{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.autoTransition.less' | translate}}
-												</div>
-												<fa-icon *ngIf="!autoTransitionIsReadMore"
-													[icon]="['fal', 'chevron-down']"></fa-icon>
-												<fa-icon *ngIf="autoTransitionIsReadMore"
-													[icon]="['fal', 'chevron-up']"></fa-icon>
 											</div>
 										</div>
 									</div>

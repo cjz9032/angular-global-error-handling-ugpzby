@@ -427,7 +427,7 @@ describe('SmartAssistService', () => {
 		});
 
 		it('getSuperResolutionStatus called', ()=> {
-			const {smartAssistService, shellService} = setup();
+			const {smartAssistService} = setup();
 			const privateSpy = spyOn<any>(smartAssistService.superResolution,'getSuperResolutionStatus').and.callThrough();
 
 			smartAssistService.getSuperResolutionStatus();
@@ -438,7 +438,7 @@ describe('SmartAssistService', () => {
 		});
 
 		it('setSuperResolutionStatus called', ()=> {
-			const {smartAssistService, shellService} = setup();
+			const {smartAssistService} = setup();
 			const privateSpy = spyOn<any>(smartAssistService.superResolution,'setSuperResolutionStatus').and.callThrough();
 
 			smartAssistService.setSuperResolutionStatus(true);
@@ -446,6 +446,234 @@ describe('SmartAssistService', () => {
 
 			smartAssistService.isShellAvailable = false;
 			expect(smartAssistService.setSuperResolutionStatus()).toBeUndefined();
+		});
+
+		it('getAntiTheftStatus called', ()=> {
+			const {smartAssistService} = setup();
+			const privateSpy = spyOn<any>(
+				smartAssistService,
+				'getAntiTheftStatus'
+			).and.callThrough();
+			smartAssistService.isShellAvailable = true;
+			const jsonData = '{ "available": false, "enabled": false, "cameraAllowed": false, "photoAddress": "", "cameraPrivacyState": true, "authorizedAccessState": true, "alarmDuration": 0, "photoNumber": 5, "errorCode": 0 }';
+			smartAssistService.antiTheft = { getMotionAlertSetting() { return jsonData; } }
+			smartAssistService.getAntiTheftStatus();
+			expect(privateSpy).toHaveBeenCalled();
+		});
+
+		it('getAntiTheftStatus called error', ()=> {
+			const {smartAssistService} = setup();
+			const privateSpy = spyOn<any>(
+				smartAssistService,
+				'getAntiTheftStatus'
+			).and.callThrough();
+			smartAssistService.antiTheft = {};
+			smartAssistService.isShellAvailable = true;
+			smartAssistService.getAntiTheftStatus();
+			expect(privateSpy).toHaveBeenCalled();
+		});
+
+		it('getAntiTheftStatus called error', ()=> {
+			const {smartAssistService} = setup();
+			const privateSpy = spyOn<any>(
+				smartAssistService,
+				'getAntiTheftStatus'
+			).and.callThrough();
+			smartAssistService.isShellAvailable = true;
+			smartAssistService.getAntiTheftStatus();
+			expect(privateSpy).toHaveBeenCalled();
+		});
+
+		it('setAntiTheftStatus called', ()=> {
+			const {smartAssistService} = setup();
+			const privateSpy = spyOn<any>(
+				smartAssistService,
+				'setAntiTheftStatus'
+			).and.callThrough();
+			smartAssistService.antiTheft = { setMotionAlertEnabled(value:boolean) { if (value) {return 0;} } }
+			smartAssistService.isShellAvailable = true;
+			smartAssistService.setAntiTheftStatus(true);
+			expect(privateSpy).toHaveBeenCalled();
+		});
+
+		it('setAntiTheftStatus called return Failed', ()=> {
+			const {smartAssistService} = setup();
+			const privateSpy = spyOn<any>(
+				smartAssistService,
+				'setAntiTheftStatus'
+			).and.callThrough();
+			smartAssistService.antiTheft = { setMotionAlertEnabled(value:boolean) { if (value) {return 2;} } }
+			smartAssistService.isShellAvailable = true;
+			smartAssistService.setAntiTheftStatus(true);
+			expect(privateSpy).toHaveBeenCalled();
+		});
+
+		it('setAntiTheftStatus called shell Failed', ()=> {
+			const {smartAssistService} = setup();
+			const privateSpy = spyOn<any>(
+				smartAssistService,
+				'setAntiTheftStatus'
+			).and.callThrough();
+			smartAssistService.antiTheft = { setMotionAlertEnabled(value:boolean) { if (value) {return 0;} } }
+			smartAssistService.isShellAvailable = false;
+			smartAssistService.setAntiTheftStatus(true);
+			expect(privateSpy).toHaveBeenCalled();
+		});
+
+		it('setAlarmOften called', ()=> {
+			const {smartAssistService} = setup();
+			const privateSpy = spyOn<any>(
+				smartAssistService,
+				'setAlarmOften'
+			).and.callThrough();
+			smartAssistService.antiTheft = { setMotionAlertAlarmDuration(value:boolean) { if (value) {return 0;} } }
+			smartAssistService.isShellAvailable = true;
+			smartAssistService.setAlarmOften(10);
+			expect(privateSpy).toHaveBeenCalled();
+		});
+
+		it('setAlarmOften called return Failed', ()=> {
+			const {smartAssistService} = setup();
+			const privateSpy = spyOn<any>(
+				smartAssistService,
+				'setAlarmOften'
+			).and.callThrough();
+			smartAssistService.antiTheft = { setMotionAlertAlarmDuration(value:number) { if (value) {return 2;} } }
+			smartAssistService.isShellAvailable = true;
+			smartAssistService.setAlarmOften(10);
+			expect(privateSpy).toHaveBeenCalled();
+		});
+
+		it('setAlarmOften called shell Failed', ()=> {
+			const {smartAssistService} = setup();
+			const privateSpy = spyOn<any>(
+				smartAssistService,
+				'setAlarmOften'
+			).and.callThrough();
+			smartAssistService.antiTheft = { setMotionAlertAlarmDuration(value:number) { if (value) {return 0;} } }
+			smartAssistService.isShellAvailable = false;
+			smartAssistService.setAlarmOften(10);
+			expect(privateSpy).toHaveBeenCalled();
+		});
+
+		it('setPhotoNumber called', ()=> {
+			const {smartAssistService} = setup();
+			const privateSpy = spyOn<any>(
+				smartAssistService,
+				'setPhotoNumber'
+			).and.callThrough();
+			smartAssistService.antiTheft = { setMotionAlertPhotoNumber(value:boolean) { if (value) {return 0;} } }
+			smartAssistService.isShellAvailable = true;
+			smartAssistService.setPhotoNumber(10);
+			expect(privateSpy).toHaveBeenCalled();
+		});
+
+		it('setPhotoNumber called return Failed', ()=> {
+			const {smartAssistService} = setup();
+			const privateSpy = spyOn<any>(
+				smartAssistService,
+				'setPhotoNumber'
+			).and.callThrough();
+			smartAssistService.antiTheft = { setMotionAlertPhotoNumber(value:number) { if (value) {return 2;} } }
+			smartAssistService.isShellAvailable = true;
+			smartAssistService.setPhotoNumber(10);
+			expect(privateSpy).toHaveBeenCalled();
+		});
+
+		it('setPhotoNumber called shell Failed', ()=> {
+			const {smartAssistService} = setup();
+			const privateSpy = spyOn<any>(
+				smartAssistService,
+				'setPhotoNumber'
+			).and.callThrough();
+			smartAssistService.antiTheft = { setMotionAlertPhotoNumber(value:number) { if (value) {return 0;} } }
+			smartAssistService.isShellAvailable = false;
+			smartAssistService.setPhotoNumber(10);
+			expect(privateSpy).toHaveBeenCalled();
+		});
+
+		it('setAllowCamera called', ()=> {
+			const {smartAssistService} = setup();
+			const privateSpy = spyOn<any>(
+				smartAssistService,
+				'setAllowCamera'
+			).and.callThrough();
+			smartAssistService.antiTheft = { setMotionAlertCameraAllowed(value:boolean) { if (value) {return 0;} } }
+			smartAssistService.isShellAvailable = true;
+			smartAssistService.setAllowCamera(true);
+			expect(privateSpy).toHaveBeenCalled();
+		});
+
+		it('setAllowCamera called return Failed', ()=> {
+			const {smartAssistService} = setup();
+			const privateSpy = spyOn<any>(
+				smartAssistService,
+				'setAllowCamera'
+			).and.callThrough();
+			smartAssistService.antiTheft = { setMotionAlertCameraAllowed(value:boolean) { if (value) {return 2;} } }
+			smartAssistService.isShellAvailable = true;
+			smartAssistService.setAllowCamera(true);
+			expect(privateSpy).toHaveBeenCalled();
+		});
+
+		it('setAllowCamera called shell Failed', ()=> {
+			const {smartAssistService} = setup();
+			const privateSpy = spyOn<any>(
+				smartAssistService,
+				'setAllowCamera'
+			).and.callThrough();
+			smartAssistService.antiTheft = { setMotionAlertCameraAllowed(value:boolean) { if (value) {return 0;} } }
+			smartAssistService.isShellAvailable = false;
+			smartAssistService.setAllowCamera(true);
+			expect(privateSpy).toHaveBeenCalled();
+		});
+
+		it('startMonitorAntiTheftStatus called', ()=> {
+			const {smartAssistService} = setup();
+			const privateSpy = spyOn<any>(
+				smartAssistService,
+				'startMonitorAntiTheftStatus'
+			).and.callThrough();
+			smartAssistService.antiTheft = { onstatusupdated() {} , registerCallback() { } }
+			smartAssistService.isShellAvailable = true;
+			smartAssistService.startMonitorAntiTheftStatus(smartAssistService.antiTheft.registerCallback());
+			expect(privateSpy).toHaveBeenCalled();
+		});
+
+		it('startMonitorAntiTheftStatus called shell Failed', ()=> {
+			const {smartAssistService} = setup();
+			const privateSpy = spyOn<any>(
+				smartAssistService,
+				'startMonitorAntiTheftStatus'
+			).and.callThrough();
+			smartAssistService.antiTheft = { registerCallback() { } }
+			smartAssistService.isShellAvailable = false;
+			smartAssistService.startMonitorAntiTheftStatus(smartAssistService.antiTheft.registerCallback());
+			expect(privateSpy).toHaveBeenCalled();
+		});
+
+		it('stopMonitorAntiTheftStatus called', ()=> {
+			const {smartAssistService} = setup();
+			const privateSpy = spyOn<any>(
+				smartAssistService,
+				'stopMonitorAntiTheftStatus'
+			).and.callThrough();
+			smartAssistService.antiTheft = { unRegisterCallback() { } }
+			smartAssistService.isShellAvailable = true;
+			smartAssistService.stopMonitorAntiTheftStatus();
+			expect(privateSpy).toHaveBeenCalled();
+		});
+
+		it('stopMonitorAntiTheftStatus called shell Failed', ()=> {
+			const {smartAssistService} = setup();
+			const privateSpy = spyOn<any>(
+				smartAssistService,
+				'stopMonitorAntiTheftStatus'
+			).and.callThrough();
+			smartAssistService.antiTheft = { unRegisterCallback() { } }
+			smartAssistService.isShellAvailable = false;
+			smartAssistService.stopMonitorAntiTheftStatus();
+			expect(privateSpy).toHaveBeenCalled();
 		});
 
 		it('getIntelligentScreenVisibility called', ()=> {

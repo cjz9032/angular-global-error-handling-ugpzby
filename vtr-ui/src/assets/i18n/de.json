@@ -1649,7 +1649,8 @@
                     "url": "Windows-Datenschutzeinstellungen aufrufen",
                     "cameraPrivacy": {
                         "title": "Kamera-Datenschutzmodus",
-                        "tooltip": "Im Privatsphäremodus sendet die Kamera keine Live-Bilder mehr. Aktivieren Sie diese Einstellung nur, wenn Sie nicht möchten, dass andere während eines Videoanrufs die Live-Bilder sehen können."
+                        "tooltip": "Im Privatsphäremodus sendet die Kamera keine Live-Bilder mehr. Aktivieren Sie diese Einstellung nur, wenn Sie nicht möchten, dass andere während eines Videoanrufs die Live-Bilder sehen können.",
+                        "cameraPrivacyAccessNote": "Navigieren Sie zu <b>Windows-Einstellungen → Datenschutz → Kamera</b> und stellen Sie sicher, dass die folgenden zwei Optionen aktiviert sind:<br>&bull; <b>Auswählen, welche Apps auf Ihre Kamera zugreifen können</b><br>&bull;<b>Lenovo Vantage</b> unter \"Auswählen, welche (Microsoft Store-)Apps auf Ihre Kamera zugreifen können\""
                     },
                     "camera": {
                         "title": "Kamera",

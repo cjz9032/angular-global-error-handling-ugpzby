@@ -1156,12 +1156,12 @@
                             }
                         },
                         "autoTransition": {
-                            "description": "Az \"Extrém teljesítmény\" mód automatikus bekapcsolásának engedélyezése. Ha engedélyezi, a számítógép felületeinek hőmérséklete megnőhet, és a ventilátor is hangosabban üzemelhet.",
+                            "description": "A \"Különleges Teljesítmény\" mód automatikus bekapcsolásának engedélyezése. Ha engedélyezi, a számítógép felületeinek hőmérséklete megnőhet, és a ventilátor is hangosabban üzemelhet.",
                             "more": "TOVÁBBIAK",
                             "less": "KEVESEBB",
                             "moreContent": {
                                 "desc1": "a. Az Office használata, a Windows frissítése esetén, online filmnézéskor, valamint alacsony rendszerterhelés mellett a gép valószínűleg csendes fog maradni. A játékok jobban fognak futni.",
-                                "desc2": "b. Nagy teljesítményigényű játékok esetén a rendszer valószínűleg automatikusan bekapcsolja az \"Extrém teljesítmény\" üzemmódot. Ebben az esetben a számítógép felületeinek hőmérséklete megnőhet, és a ventilátor is hangosabban üzemelhet.",
+                                "desc2": "b. Nagy teljesítményigényű játékok esetén a rendszer valószínűleg automatikusan bekapcsolja a \"Különleges Teljesítmény\" módot. Ebben az esetben a számítógép felületeinek hőmérséklete megnőhet, és a ventilátor is hangosabban üzemelhet.",
                                 "desc3": "c. Ha az akkumulátor töltöttsége 30% alá csökken, a rendszer automatikusan az „Akkumulátorkímélő” üzemmódba kapcsol."
                             }
                         }
@@ -1649,7 +1649,8 @@
                     "url": "Ugrás a Windows adatvédelmi beállításaihoz",
                     "cameraPrivacy": {
                         "title": "Kamera privát üzemmódja",
-                        "tooltip": "A Privát beállítás engedélyezése esetén a kamera nem küld élőképeket. Akkor használja a beállítást, ha nem szeretne képeket megosztani másokkal videohívás közben."
+                        "tooltip": "A Privát beállítás engedélyezése esetén a kamera nem küld élőképeket. Akkor használja a beállítást, ha nem szeretne képeket megosztani másokkal videohívás közben.",
+                        "cameraPrivacyAccessNote": "Lépjen <b>A Windows beállításai → Adatvédelem → Kamera</b> oldalra, és ellenőrizze, hogy a következő két beállítás engedélyezve van-e:<br>&bull; <b>A kamera elérésének engedélyezése az asztali alkalmazások számára</b><br>&bull; <b>Lenovo Vantage</b> a következő menüpontban: „Válassza ki, hogy mely (Microsoft Store) alkalmazások kapnak hozzáférést a kamerához”"
                     },
                     "camera": {
                         "title": "Kamera",

@@ -1156,12 +1156,12 @@
                             }
                         },
                         "autoTransition": {
-                            "description": "Omogočite samodejni prehod v način »Skrajna zmogljivost«. Ko je omogočen, se temperatura računalnika in glasnost delovanja ventilatorja lahko samodejno povečata.",
+                            "description": "Omogočite samodejni prehod v način »Izjemna zmogljivost«. Ko je omogočen, se temperatura računalnika in glasnost delovanja ventilatorja lahko samodejno povečata.",
                             "more": "VEČ",
                             "less": "MANJ",
                             "moreContent": {
                                 "desc1": "a. Med uporabo pisarniških programov, posodabljanjem sistema Windows, ogledom filmov v spletu ali pri manjših obremenitvah lahko sistem deluje tiho, medtem ko ima večjo zmogljivost pri običajnem igranju iger.",
-                                "desc2": "b. Pri igranju zahtevnejših iger bo sistem najverjetneje preklopil v način »Skrajna zmogljivost«. V tem primeru se temperatura na površini računalnika in glasnost delovanja ventilatorja lahko povečata.",
+                                "desc2": "b. Pri igranju zahtevnejših iger bo sistem najverjetneje preklopil v način »Izjemna zmogljivost«. V tem primeru se temperatura na površini računalnika in glasnost delovanja ventilatorja lahko povečata.",
                                 "desc3": "c. Ko zmogljivost baterije pade pod 30 %, sistem samodejno preklopi v način »Varčevanje z energijo baterije«."
                             }
                         }
@@ -1649,7 +1649,8 @@
                     "url": "Odprite nastavitve zasebnosti sistema Windows",
                     "cameraPrivacy": {
                         "title": "Zasebnostni način za kamero",
-                        "tooltip": "Če je omogočena nastavitev za zasebnost, kamera neha pošiljati slike v živo. To nastavitev vklopite, samo če med videoklici svoje slike ne želite prikazati drugim."
+                        "tooltip": "Če je omogočena nastavitev za zasebnost, kamera neha pošiljati slike v živo. To nastavitev vklopite, samo če med videoklici svoje slike ne želite prikazati drugim.",
+                        "cameraPrivacyAccessNote": "Pojdite na stran <b>Nastavitve sistema Windows → Zasebnost → Kamera</b> in se prepričajte, da sta naslednji dve možnosti vklopljeni:<br>&bull; <b>Namiznim programom dovoli dostop do kamere</b><br>&bull; Možnost <b>Lenovo Vantage</b> pod »Izberite programe (Microsoft Store), ki lahko dostopajo do kamere«"
                     },
                     "camera": {
                         "title": "Kamera",

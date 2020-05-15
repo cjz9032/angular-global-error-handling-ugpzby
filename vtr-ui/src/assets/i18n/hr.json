@@ -1156,12 +1156,12 @@
                             }
                         },
                         "autoTransition": {
-                            "description": "Omogućite automatski prelazak u način \"Ekstremne performanse\". Kada se omogući, temperatura na računalu i šum ventilatora se mogu automatski povećati.",
+                            "description": "Omogućite automatski prelazak u način \"Izuzetne performanse\". Kada se omogući, temperatura na računalu i šum ventilatora se mogu automatski povećati.",
                             "more": "DODATNO",
                             "less": "MANJE",
                             "moreContent": {
                                 "desc1": "a. U uredskoj primjeni, scenarijima ažuriranja sustava Windows, mrežnim filmovima ili pri niskom opterećenju sustav može biti tih. Dok je u normalnim scenarijima igranja, ostvaruje bolje performanse.",
-                                "desc2": "b. Tijekom igranja zahtjevnih igara, sustav se vjerojatno može prebaciti na način \"Ekstremne performanse\". U tom slučaju, temperatura na površini računala i šum ventilatora mogu se povećati.",
+                                "desc2": "b. Tijekom igranja zahtjevnih igara, sustav se vjerojatno može prebaciti na način \"Izuzetne performanse\". U tom slučaju, temperatura na površini računala i šum ventilatora mogu se povećati.",
                                 "desc3": "c. Kad je napunjenost baterije manja od 30 %, sustav automatski prelazi u način \"Ušteda baterije\"."
                             }
                         }
@@ -1649,7 +1649,8 @@
                     "url": "Idite na postavke privatnosti sustava Windows",
                     "cameraPrivacy": {
                         "title": "Način privatnosti kamere",
-                        "tooltip": "Kad je omogućena postavka za zaštitu privatnosti, kamera prestaje slati slike uživo. Tu postavku uključite samo kad ne želite svoju sliku slati drugima tijekom videopoziva."
+                        "tooltip": "Kad je omogućena postavka za zaštitu privatnosti, kamera prestaje slati slike uživo. Tu postavku uključite samo kad ne želite svoju sliku slati drugima tijekom videopoziva.",
+                        "cameraPrivacyAccessNote": "Molimo idite na stranicu <b>Windows postavke → Privatnost → Kamera</b> i provjerite jesu li uključene sljedeće dvije mogućnosti:<br>&bull; <b>Omogućite aplikacijama za radne površine da pristupe vašoj kameri</b><br>&bull; <b>Lenovo Vantage</b> pod \"Odaberite koje (Microsoft Store) aplikacije mogu pristupiti vašoj kameri\""
                     },
                     "camera": {
                         "title": "Kamera",
