@@ -14,8 +14,12 @@ export class WidgetMcafeeComponent implements OnInit {
 	@Input() name: string;
 	@Input() isOnline: boolean;
 	@Input() common: AntivirusCommon;
-	constructor(
 
+	getMcafeeText = this.translate.instant('security.antivirus.mcafee.getMacfee');
+	launchMcafeeText = this.translate.instant('security.antivirus.mcafee.launch')
+
+	constructor(
+		private translate: TranslateService
 	) { }
 
 	ngOnInit() {
