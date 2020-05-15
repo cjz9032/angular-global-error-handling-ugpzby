@@ -22,7 +22,11 @@ import { RouteHandlerService } from 'src/app/services/route-handler/route-handle
 import { HsaIntelligentSecurityResponse } from 'src/app/data-models/smart-assist/hsa-intelligent-security.model/hsa-intelligent-security.model';
 import { MetricService } from 'src/app/services/metric/metric.service';
 import { UiRoundedRectangleRadioModel } from '../../ui/ui-rounded-rectangle-custom-radio-list/ui-rounded-rectangle-radio-list.model';
-
+export enum ZeroTouchLockTimer {
+	FAST = '1',
+	MEDIUM = '2',
+	SLOW = '3',
+};
 @Component({
 	selector: 'vtr-page-smart-assist',
 	templateUrl: './page-smart-assist.component.html',
@@ -540,19 +544,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			});
 	}
 
-	/* public onZeroTouchLockTimerChange($event, value) {
-		// let value = $event.value;
-		this.intelligentSecurity.autoScreenLockTimer = value;
 
-		this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
-		this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
-
-		this.smartAssist.setSelectedLockTimer(value)
-			.then((isSuccess: boolean) => {
-				this.logger.info(`onZeroTouchLockTimerChange.setSelectedLockTimer ${isSuccess}`, value);
-			});
-
-	} */
 
 	public onZeroTouchLockTimerChange($event) {
 		let value = $event.value;
@@ -564,7 +556,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		this.smartAssist.setSelectedLockTimer(value)
 			.then((isSuccess: boolean) => {
 				this.logger.info(`onZeroTouchLockTimerChange.setSelectedLockTimer ${isSuccess}`, value);
-				this.setUpZeroTouchLockTimerRadioDetails();
+				// this.setUpZeroTouchLockTimerRadioDetails();
 			});
 
 	}
@@ -937,34 +929,30 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 
 	setUpZeroTouchLockTimerRadioDetails() {
 		let uniqueName = 'zero-Touch-Lock';
-		let disabled = !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled);
+		// let disabled = !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled);
 		this.zeroTouchLockTimerRadioDetails = [{
 			componentId: 'radio1',
 			label: 'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.fast',
 			value: ZeroTouchLockTimer.FAST,
 			isChecked: this.intelligentSecurity.autoScreenLockTimer === ZeroTouchLockTimer.FAST,
-			isDisabled: disabled
+			isDisabled: !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled)
 		},
 		{
 			componentId: 'radio2',
 			label: 'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.medium',
 			value: ZeroTouchLockTimer.MEDIUM,
 			isChecked: this.intelligentSecurity.autoScreenLockTimer === ZeroTouchLockTimer.MEDIUM,
-			isDisabled: disabled
+			isDisabled: !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled)
 		},
 		{
 			componentId: 'radio3',
 			label: 'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.slow',
 			value: ZeroTouchLockTimer.SLOW,
 			isChecked: this.intelligentSecurity.autoScreenLockTimer === ZeroTouchLockTimer.SLOW,
-			isDisabled: disabled
+			isDisabled: !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled)
 		}];
 	}
 
 }
 
-export enum ZeroTouchLockTimer {
-	FAST = '1',
-	MEDIUM = '2',
-	SLOW = '3',
-};
+

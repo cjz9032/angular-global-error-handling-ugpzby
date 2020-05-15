@@ -352,7 +352,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		this.showDropDown = [false, false, false];
 		this.checkbox = JSON.parse($event.value);
 		this.setSmartStandbyIsAutonomic(this.checkbox);
-		this.setUpScheduleComputerModeRadios();
+		// this.setUpScheduleComputerModeRadios();
 		if (this.checkbox) {
 			this.isCollapsed = true
 		}

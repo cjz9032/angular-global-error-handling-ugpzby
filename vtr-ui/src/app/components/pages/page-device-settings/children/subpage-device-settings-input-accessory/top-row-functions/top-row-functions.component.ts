@@ -22,7 +22,7 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 	public isCacheFound = false;
 	public readonly TRUE = 'true';
 	public readonly FALSE = 'false';
-	public methodRadioDetails: Array<UiRoundedRectangleRadioModel> = [];
+	public keyMethodRadioDetails: Array<UiRoundedRectangleRadioModel> = [];
 	constructor(
 		private keyboardService: InputAccessoriesService,
 		private logger: LoggerService,
@@ -153,7 +153,7 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 	setUpTopRowFunctionRadios() {
 		let uniqueName = 'top-Row-Functions';
 
-		this.methodRadioDetails = [{
+		this.keyMethodRadioDetails = [{
 			componentId: 'radio1',
 			label: 'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.radioButton.nMehod',
 			value: this.FALSE,
