@@ -118,7 +118,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	private machineType: number;
 	private smartAssistCapability: SmartAssistCapability = undefined;
 	public jumpToSettingsTitle: string;
-	public zeroTouchLockTimerRadioDetails: Array<UiRoundedRectangleRadioModel> = [];
+	public zeroTouchLockTimersUIModel: Array<UiRoundedRectangleRadioModel> = [];
 
 	constructor(
 		routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
@@ -484,7 +484,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
 			this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
 			//if (this.intelligentSecurity.isZeroTouchLockVisible && this.zeroTouchLockShowAdvancedSection) {
-			this.setUpZeroTouchLockTimerRadioDetails();
+			this.setUpZeroTouchLockTimersUIModel();
 			//}
 
 			this.logger.info('PageSmartAssistComponent.Promise.initZeroTouchLock()', this.intelligentSecurity);
@@ -927,10 +927,10 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	}
 
 
-	setUpZeroTouchLockTimerRadioDetails() {
+	setUpZeroTouchLockTimersUIModel() {
 		let uniqueName = 'zero-Touch-Lock';
 		// let disabled = !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled);
-		this.zeroTouchLockTimerRadioDetails = [{
+		this.zeroTouchLockTimersUIModel = [{
 			componentId: 'radio1',
 			label: 'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.fast',
 			value: ZeroTouchLockTimer.FAST,

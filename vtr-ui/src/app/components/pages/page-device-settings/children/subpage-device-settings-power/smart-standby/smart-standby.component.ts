@@ -40,7 +40,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	firstTimeLoad: boolean;
 	timeOut = 100;
 	@Output() smartStandbyCapability = new EventEmitter<boolean>();
-	public scheduleModeRadioDetails: Array<UiRoundedRectangleRadioModel> = [];
+	public scheduleComputerModesUIModel: Array<UiRoundedRectangleRadioModel> = [];
 	public readonly AUTOMATIC_MODE = 'Automatic mode';
 	public readonly MANUAL_MODE = 'Manual mode';
 
@@ -61,7 +61,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		this.toggleSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onSmartStandbyNotification(notification);
 		});
-		this.setUpScheduleComputerModeRadios();
+		this.setUpScheduleComputerModesUIModel();
 	}
 
 	public showSmartStandby() {
@@ -402,9 +402,9 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	setUpScheduleComputerModeRadios() {
+	setUpScheduleComputerModesUIModel() {
 		let uniqueName = 'smartStandby-schedule';
-		this.scheduleModeRadioDetails = [{
+		this.scheduleComputerModesUIModel = [{
 			componentId: 'radio1',
 			label: 'device.deviceSettings.power.smartStandby.automaticMode',
 			value: this.AUTOMATIC_MODE,
