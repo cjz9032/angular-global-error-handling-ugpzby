@@ -15,7 +15,8 @@ import { UiRoundedRectangleRadioModel } from 'src/app/components/ui/ui-rounded-r
 })
 export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 
-	@ViewChild('adv') adv: ElementRef
+	@ViewChild('adv') showAdvEl: ElementRef
+
 	public topRowKeyObj: TopRowFunctionsCapability;
 	public showAdvancedSection = false;
 	public topRowFunInterval: any;
@@ -45,12 +46,6 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 
 		this.getFunctionCapabilities();
 		this.setUpTopRowFunctionsKeysUIModel();
-	}
-
-	ngAfterViewInit() {
-		if (!this.showAdvancedSection) {
-			this.adv.nativeElement.focus();
-		}
 	}
 
 	ngOnDestroy() {
@@ -89,7 +84,7 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 	}
 	updateCustomKeyEvents($event) {
 		this.logger.info('topRowKeys', { $event });
-		let value = $event.value;
+		const value = $event.value;
 		const { customeEvent } = $event;
 		if (customeEvent === AppEvent.LEFT || customeEvent === AppEvent.RIGHT) {
 			this.onChangeKeyType(value);
@@ -137,7 +132,7 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 	}
 
 	public onChangeKeyType($event) {
-		let value = $event.value;
+		const value = $event.value;
 		this.topRowKeyObj.stickyFunStatus = JSON.parse(value);
 		this.keyboardService.setFnStickKeyStatus(value).then(res => {
 		});
@@ -151,7 +146,7 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 	}
 
 	setUpTopRowFunctionsKeysUIModel() {
-		let uniqueName = 'top-Row-Functions';
+		const uniqueName = 'top-Row-Functions';
 
 		this.topRowFunctionKeysUIModel = [{
 			componentId: 'nMehod_show',
@@ -171,9 +166,8 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 
 	switchFocusToShowAdv() {
 		setTimeout(() => {
-			this.adv.nativeElement.focus()
+			this.showAdvEl.nativeElement.focus()
 		}, 0)
 	}
-
 
 }

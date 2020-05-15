@@ -56,7 +56,7 @@
 															vtrMetrics
 															metricsEvent="ItemClick"
 															metricsParent="Pages.support.smartPerformance"
-															metricsItem="'btn.cancel'"
+															metricsItem="'btn.cancelScan'"
 															class="btn btn-link cancel-check"
 															[disabled]="percent === 0 || isCheckingStatus" (click)="openCancelScanModel()"
 															 >{{'smartPerformance.scanningPage.cancelScan.button' |translate }}</button>
@@ -255,7 +255,11 @@
 														<div class="title">{{'smartPerformance.feedbackContainer.title' | translate}}</div>
 														<div class="description">{{'smartPerformance.feedbackContainer.subtitle' | translate}}</div>
 														<div class="pt-5 text-center">
-															<button class="feedback-btn" alt="" type="button"
+															<button class="feedback-btn"
+															vtrMetrics
+															metricsEvent="FeatureClick"
+            												metricsParent="pages.support.smartPerformance" metricsItem="sp.feedback" 
+															alt="" type="button"
 															(click)="onclickFeedback()">{{'smartPerformance.feedbackContainer.buttonText' | translate}}
 															</button>
 														</div>

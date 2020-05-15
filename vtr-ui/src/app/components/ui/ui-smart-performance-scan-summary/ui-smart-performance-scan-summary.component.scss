@@ -47,6 +47,7 @@ vtr-ui-smart-performance-scan-summary {
 			}
 			.summary-period {
 				width: 62%;
+				position: relative;
 				@media #{$breakpoint_xl}{
 					width: 100%;
 				}
@@ -62,18 +63,6 @@ vtr-ui-smart-performance-scan-summary {
 				.list-group {
 					background: #303D49;
 					border-radius: 0.5rem;
-					.list-selected-item{
-						width: 25rem;
-						@media #{$breakpoint_lg}{
-							width: 20rem;
-						}
-						@media #{$breakpoint_md}{
-							width: 25rem;
-						}
-						@media #{$breakpoint_sm}{
-							width: auto;
-						}
-					}
 					.list-group-item {
 						border-radius: 0.5rem;
 						border: none;
@@ -83,10 +72,10 @@ vtr-ui-smart-performance-scan-summary {
 						font-weight: $weight_bold;
 						padding: 1rem;
 						margin: 0.5rem;
+						cursor: pointer;
 						@media #{$breakpoint_sm}{
 							padding: 0.3rem;
 						}
-						cursor: pointer;
 						.calender-icon{
 							color: $go_dark;
 						}
@@ -109,6 +98,19 @@ vtr-ui-smart-performance-scan-summary {
 							cursor: pointer;
 						}
 					}
+					.list-selected-item{
+						width: 25rem;
+						cursor: default;
+						@media #{$breakpoint_lg}{
+							width: 20rem;
+						}
+						@media #{$breakpoint_md}{
+							width: 25rem;
+						}
+						@media #{$breakpoint_sm}{
+							width: auto;
+						}
+					}
 					.selected-list-item{
 						background-color:#45515D;
 					}
@@ -125,7 +127,7 @@ vtr-ui-smart-performance-scan-summary {
 					border-radius: 0.9rem;
 					padding: 1rem;
 					position: absolute;
-					right: 22%;
+					left: 48%;
 					font-size: 1.2rem;
 					a {
 						font-size: 1.4rem;
