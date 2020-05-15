@@ -1,18 +1,20 @@
 import { Injectable } from '@angular/core';
 import * as Phoenix from '@lenovo/tan-client-bridge';
+import { CHSAccountState, EventTypes, WinRT } from '@lenovo/tan-client-bridge';
 import { environment } from '../../../environments/environment';
 import { CommonService } from '../common/common.service';
 import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
 import { HttpClient } from '@angular/common/http';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { Container, BindingScopeEnum } from 'inversify';
+import { BindingScopeEnum, Container } from 'inversify';
 import { HardwareScanShellMock } from 'src/app/services/hardware-scan/hardware-scan-shell-mock';
-import { WinRT, CHSAccountState, EventTypes } from '@lenovo/tan-client-bridge';
-import { of } from 'rxjs';
-import { TopRowFunctionsIdeapad, KeyType } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.interface';
+import { KeyType } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.interface';
 import { VoipErrorCodeEnum } from 'src/app/enums/voip.enum';
 import { CommonErrorCode } from 'src/app/data-models/common/common.interface';
-import { BacklightStatusEnum, BacklightLevelEnum } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.enum';
+import {
+	BacklightLevelEnum,
+	BacklightStatusEnum
+} from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.enum';
 import { MetricHelper } from 'src/app/services/metric/metrics.helper';
 
 declare var Windows;
@@ -364,7 +366,7 @@ export class VantageShellService {
 		};
 		sysInfo.getMachineInfo = this.getPromise(machineInfo);
 		sysInfo.getMachineInfoSync = this.getPromise(machineInfo);
-		sysInfo.getMachineType = this.getPromise(1); // 1 = ThinkPad
+		sysInfo.getMachineType = this.getPromise(0); // 1 = ThinkPad
 		sysInfo.getHardwareInfo = this.getPromise(hardwareInfo);
 		return sysInfo;
 	}
@@ -2124,7 +2126,7 @@ export class VantageShellService {
 				capabilityList: {
 					Items: [
 						{
-							key: 'fnLock',
+							key: 'FnLock',
 							value: 'True',
 						}
 					]
@@ -2181,23 +2183,27 @@ export class VantageShellService {
 			setBacklight: (status) => Promise.resolve({
 				errorcode: CommonErrorCode.SUCCEED
 			}),
-			getBacklightOnSystemChange: (settings) => Promise.resolve({
-				settingList: {
-					setting: [
-						{
-							key: 'KeyboardBacklightLevel',
-							value: BacklightLevelEnum.ONE_LEVEL,
-							enabled: 0,
-							errorCode: CommonErrorCode.SUCCEED
-						},
-						{
-							key: 'KeyboardBacklightStatus',
-							value: BacklightStatusEnum.LEVEL_1,
-							enabled: 0,
-							errorCode: CommonErrorCode.SUCCEED
+			getBacklightOnSystemChange: (settings) => new Promise(resolve => {
+				setTimeout(() => {
+					resolve({
+						settingList: {
+							setting: [
+								{
+									key: 'KeyboardBacklightLevel',
+									value: BacklightLevelEnum.ONE_LEVEL,
+									enabled: 0,
+									errorCode: CommonErrorCode.SUCCEED
+								},
+								{
+									key: 'KeyboardBacklightStatus',
+									value: BacklightStatusEnum.LEVEL_1,
+									enabled: 0,
+									errorCode: CommonErrorCode.SUCCEED
+								}
+							]
 						}
-					]
-				}
+					})
+				}, 30000);
 			})
 		};
 	}
