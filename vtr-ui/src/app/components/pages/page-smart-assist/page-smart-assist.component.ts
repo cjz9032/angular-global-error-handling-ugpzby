@@ -22,18 +22,13 @@ import { RouteHandlerService } from 'src/app/services/route-handler/route-handle
 import { HsaIntelligentSecurityResponse } from 'src/app/data-models/smart-assist/hsa-intelligent-security.model/hsa-intelligent-security.model';
 import { MetricService } from 'src/app/services/metric/metric.service';
 import { UiRoundedRectangleRadioModel } from '../../ui/ui-rounded-rectangle-custom-radio-list/ui-rounded-rectangle-radio-list.model';
-export enum ZeroTouchLockTimer {
-	FAST = '1',
-	MEDIUM = '2',
-	SLOW = '3',
-};
+
 @Component({
 	selector: 'vtr-page-smart-assist',
 	templateUrl: './page-smart-assist.component.html',
 	styleUrls: ['./page-smart-assist.component.scss']
 })
 export class PageSmartAssistComponent implements OnInit, OnDestroy {
-
 	title = 'Smart Assist';
 	back = 'BACK';
 	backarrow = '< ';
@@ -119,6 +114,9 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	private smartAssistCapability: SmartAssistCapability = undefined;
 	public jumpToSettingsTitle: string;
 	public zeroTouchLockTimersUIModel: Array<UiRoundedRectangleRadioModel> = [];
+	public readonly FAST = '1';
+	public readonly MEDIUM = '2';
+	public readonly SLOW = '3';
 
 	constructor(
 		routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
@@ -933,22 +931,22 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		this.zeroTouchLockTimersUIModel = [{
 			componentId: 'radio1',
 			label: 'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.fast',
-			value: ZeroTouchLockTimer.FAST,
-			isChecked: this.intelligentSecurity.autoScreenLockTimer === ZeroTouchLockTimer.FAST,
+			value: this.FAST,
+			isChecked: this.intelligentSecurity.autoScreenLockTimer === this.FAST,
 			isDisabled: !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled)
 		},
 		{
 			componentId: 'radio2',
 			label: 'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.medium',
-			value: ZeroTouchLockTimer.MEDIUM,
-			isChecked: this.intelligentSecurity.autoScreenLockTimer === ZeroTouchLockTimer.MEDIUM,
+			value: this.MEDIUM,
+			isChecked: this.intelligentSecurity.autoScreenLockTimer === this.MEDIUM,
 			isDisabled: !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled)
 		},
 		{
 			componentId: 'radio3',
 			label: 'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.slow',
-			value: ZeroTouchLockTimer.SLOW,
-			isChecked: this.intelligentSecurity.autoScreenLockTimer === ZeroTouchLockTimer.SLOW,
+			value: this.SLOW,
+			isChecked: this.intelligentSecurity.autoScreenLockTimer === this.SLOW,
 			isDisabled: !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled)
 		}];
 	}
