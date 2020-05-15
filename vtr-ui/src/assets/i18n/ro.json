@@ -2096,9 +2096,8 @@
                 "tooltip": "<p>Această caracteristică funcționează numai cu următoarele playere video:<br>Windows Media Player<br>Playerul bazat pe Chrome<br>Movies & TV<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>Pentru instrucțiuni privind modul în care să activați această funcție în PotPlayer și în GOM Player, consultați Ghidul utilizatorului care este livrat împreună cu computerul.</p>",
                 "note": {
                     "description": "Această caracteristică nu funcționează când:",
-                    "description1": "Modul de economisire a bateriei este activat.",
-                    "description2": "Temperatura procesorului este prea mare.",
-                    "description3": "Dispozitivul este setat pe modul de economisire a bateriei în „Răcire inteligentă”."
+                    "description1": "Temperatura procesorului este prea mare.",
+                    "description2": "Dispozitivul este setat pe modul de economisire a bateriei în „Răcire inteligentă”."
                 },
                 "imageBefore": "Înainte",
                 "imageAfter": "După"

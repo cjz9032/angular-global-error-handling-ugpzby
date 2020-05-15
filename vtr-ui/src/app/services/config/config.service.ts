@@ -73,6 +73,7 @@ export class ConfigService {
 	private isSmartAssistAvailable = false;
 	private isBetaUser: boolean;
 	private country: string;
+	private betaFeature = ['smart-performance', 'app-search'];
 
 	constructor(
 		private betaService: BetaService,
@@ -118,9 +119,8 @@ export class ConfigService {
 					this.notifyMenuChange(this.menu);
 					break;
 				case MenuItemEvent.MenuBetaItemChange:
-					this.filterByBeta(this.menu, notification.payload).then((menu) => {
-						this.notifyMenuChange(menu);
-					});
+					this.updateBetaMenu(this.menu, notification.payload, false);
+					this.notifyMenuChange(this.menu);
 					break;
 				default:
 					break;
@@ -161,7 +161,6 @@ export class ConfigService {
 			}
 
 			this.menu = await this.updateHide(resultMenu, this.activeSegment, this.isBetaUser);
-			this.betaService.betaFeatureAvailable = this.findBetaAvailability(this.menu, false);
 
 			this.initializeSmartAssist();
 			this.notifyMenuChange(this.menu);
@@ -169,11 +168,11 @@ export class ConfigService {
 		});
 	}
 
-	private initializeAppSearchItem(menu: any, supportSearch: boolean) {
+	private initializeAppSearchItem(menu: any, supportSearch: boolean, isBeta: boolean) {
 		const appSearchItem = menu.find((item) => item.id === 'app-search');
 		if (appSearchItem) {
-			appSearchItem.availability = supportSearch;
-			appSearchItem.hide = !supportSearch;
+			appSearchItem.availability = supportSearch && !appSearchItem.hide;
+			appSearchItem.hide = !appSearchItem.availability || !isBeta;
 		}
 	}
 
@@ -488,50 +487,68 @@ export class ConfigService {
 				chsMenuItem.hide = !this.showCHS;
 			}
 			this.initializeSecurityItem(this.country,this.menu);
+			this.betaFeature.forEach(featureId => {
+				this.supportFilter(this.menu, featureId, true);
+			});
 			this.updateHide(this.menu, segment, this.isBetaUser);
-			this.betaService.betaFeatureAvailable = this.findBetaAvailability(this.menu, false);
 			return this.menu;
 		}
 	}
 
-	filterByBeta(menu: Array<any>, isBeta: boolean): Promise<Array<any>> {
+	async initializeByBeta(menu: MenuItem[], isBeta: boolean) {
+		this.updateBetaMenu(menu, isBeta, true);
+
+		const result = await this.canShowSearch();
+		this.updateAvailability(menu, 'app-search', result);
+
+
+		this.updateBetaService(menu);
+	}
+
+	updateAvailability(menu: MenuItem[],id: string, featureAvailability: boolean) {
+		menu.forEach(item => {
+			if (item.id === id) {
+				item.availability = item.availability && featureAvailability;
+				item.hide = item.hide || !featureAvailability;
+			}
+			if (Array.isArray(item.subitems) && item.subitems.length > 0) {
+				item.subitems = this.updateAvailability(item.subitems, id, featureAvailability);
+			}
+		});
+		return menu;
+	}
+
+	updateBetaMenu(menu: MenuItem[], isBeta: boolean, isUpdateAvailability: boolean) {
 		this.isBetaUser = isBeta;
-		this.showSmartPerformance(menu, isBeta);
-		return this.canShowSearch().then((result) => {
-			this.initializeAppSearchItem(menu, result);
-			const item = menu.find(i => i.id === 'app-search');
-			if (item) item.hide = !isBeta || !result;
-			return menu;
-		});
+		(function findBetaMenu(menus: MenuItem[], betaState: boolean) {
+			menus.forEach(m => {
+				if (m.beta) {
+					if (isUpdateAvailability) {
+						m.availability = !m.hide;
+					}
+					m.hide = !m.availability || !betaState;
+				}
+				if (Array.isArray(m.subitems) && m.subitems.length > 0) {
+					findBetaMenu(m.subitems, isBeta);
+				}
+			});
+		})(menu, isBeta);
 	}
 
-	private findBetaAvailability(menus: any[], result: boolean = false): boolean {
-		menus.forEach(m => {
-			if (m.beta) {
-				if (!('availability' in m) || m.availability === true) {
-					result = true;
+	private updateBetaService(menu: MenuItem[]) {
+		this.betaService.betaFeatureAvailable = (function isBetaAvail(menus: MenuItem[], result: boolean) {
+			menus.forEach(m => {
+				if (m.beta) {
+					if (!('availability' in m) || m.availability === true) {
+						result = true;
+					}
 				}
-			}
-			if (m.subitems) {
-				result = this.findBetaAvailability(m.subitems, result);
-			}
-		});
-		return result;
-	}
-
-	showSmartPerformance(menu, isBeta) {
-		menu.forEach(i => {
-			if (i.subitems) {
-				if (i.subitems.length && i.subitems.length > 0) {
-					i.subitems.forEach(el => {
-						if (el.id === 'smart-performance') {
-							el.availability = this.activeSegment === SegmentConst.Consumer;
-							el.hide = !isBeta || !el.availability;
-						}
-					})
+				if (Array.isArray(m.subitems) && m.subitems.length > 0) {
+					result = isBetaAvail(m.subitems, result);
 				}
-			}
-		})
+			});
+			return result;
+		})(menu, false);
 	}
 
 	showSystemUpdates(): void {
@@ -582,7 +599,7 @@ export class ConfigService {
 		this.smodeFilter(menu, this.deviceService.isSMode);
 		this.armFilter(menu, this.deviceService.isArm);
 		if (segment !== SegmentConst.Gaming) this.segmentFilter(menu, segment);
-		await this.filterByBeta(menu, beta);
+		await this.initializeByBeta(menu, beta);
 		return menu;
 	}
 

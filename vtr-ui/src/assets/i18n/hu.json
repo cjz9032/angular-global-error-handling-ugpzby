@@ -2096,9 +2096,8 @@
                 "tooltip": "<p>Ez a funkció kizárólag az alábbi videolejátszókkal működik:<br>Windows Media Player<br>Chrome-alapú lejátszó<br>Filmek+TV<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>A funkció PotPlayer és GOM Player lejátszókban való engedélyezésével kapcsolatban olvassa el a számítógéphez kapott felhasználói kézikönyvet.</p>",
                 "note": {
                     "description": "A funkció az alábbi esetekben nem működik:",
-                    "description1": "Az Akkumulátorkímélő mód engedélyezve van.",
-                    "description2": "A processzor hőmérséklete túl magas.",
-                    "description3": "\"Intelligens hűtés\" üzemmódban be van kapcsolva az Akkumulátorkímélő kód."
+                    "description1": "A processzor hőmérséklete túl magas.",
+                    "description2": "\"Intelligens hűtés\" üzemmódban be van kapcsolva az Akkumulátorkímélő kód."
                 },
                 "imageBefore": "Előtte",
                 "imageAfter": "Utána"
