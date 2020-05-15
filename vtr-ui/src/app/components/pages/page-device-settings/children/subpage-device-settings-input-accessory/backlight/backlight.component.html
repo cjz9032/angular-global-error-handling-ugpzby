@@ -52,7 +52,7 @@
 				role="radiogroup"
 				tabindex="0"
 				aria-label="back light mode list, select using arrow keys">
-				<vtr-ui-circle-radio-with-checkbox *ngFor="let mode of modes"
+				<!-- <vtr-ui-circle-radio-with-checkbox *ngFor="let mode of modes"
 					[theme]="'white'"
 					[radioId]="'backlightMode' + mode.value | removeSpace"
 					[group]="'backlight'"
@@ -63,7 +63,11 @@
 					[disabled]="mode.disabled"
 					[sendMetrics]=false
 					[textId]="'myDevice-settings-inputAccessories-backlight'">
-				</vtr-ui-circle-radio-with-checkbox>
+				</vtr-ui-circle-radio-with-checkbox> -->
+				<vtr-ui-circle-radio-with-checkbox-list [groupName]="'optimize-microphone-radio-group'"
+					(optionChange)="onBacklightRadioChange($event)"
+					[radioDetails]="kbBacklightUIModel">
+				</vtr-ui-circle-radio-with-checkbox-list>
 			</div>
 		</vtr-ui-row-switch>
 	</div>

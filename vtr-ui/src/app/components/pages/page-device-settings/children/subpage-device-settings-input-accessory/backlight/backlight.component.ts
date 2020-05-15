@@ -19,6 +19,7 @@ import { BacklightLevel, BacklightMode, BacklightStatus } from './backlight.inte
 import { LocalStorageKey } from '../../../../../../enums/local-storage-key.enum';
 import { CommonService } from '../../../../../../services/common/common.service';
 import { MetricService } from '../../../../../../services/metric/metric.service';
+import { UiCircleRadioWithCheckBoxListModel } from 'src/app/components/ui/ui-circle-radio-with-checkbox-list/ui-circle-radio-with-checkbox-list.model';
 
 @Component({
 	selector: 'vtr-backlight',
@@ -72,6 +73,8 @@ export class BacklightComponent implements OnInit, OnDestroy {
 	private twoLevelSubscription: Subscription;
 	private changeSubscription: Subscription;
 
+	public kbBacklightUIModel: Array<UiCircleRadioWithCheckBoxListModel> = [];
+
 	constructor(
 		private backlightService: BacklightService,
 		private commonService: CommonService,
@@ -109,7 +112,7 @@ export class BacklightComponent implements OnInit, OnDestroy {
 					const metricsData = {
 						ItemParent: 'Device.MyDeviceSettings',
 						ItemName: 'BacklightIdeapad',
-						ItemParam: {machineFamilyName},
+						ItemParam: { machineFamilyName },
 						ItemValue: update.value
 					};
 					this.metrics.sendMetrics(metricsData);
@@ -158,6 +161,7 @@ export class BacklightComponent implements OnInit, OnDestroy {
 				modeItem.checked = false;
 			}
 			mode.checked = true;
+			this.updateBacklightModel(this.modes);
 		});
 
 		this.changeSubscription = this.backlightService.getBacklightOnSystemChange()
@@ -186,10 +190,10 @@ export class BacklightComponent implements OnInit, OnDestroy {
 		if (this.oneLevelSubscription) {
 			this.oneLevelSubscription.unsubscribe();
 		}
-		if (this.twoLevelSubscription ) {
+		if (this.twoLevelSubscription) {
 			this.twoLevelSubscription.unsubscribe();
 		}
-		if (this.autoSubscription ) {
+		if (this.autoSubscription) {
 			this.autoSubscription.unsubscribe();
 		}
 		this.backlightService.clearCache();
@@ -213,6 +217,37 @@ export class BacklightComponent implements OnInit, OnDestroy {
 				checked: false,
 				disabled: false
 			});
+		}
+	}
+
+	updateBacklightModel(response: BacklightMode[]) {
+		if (response) {
+			this.kbBacklightUIModel = [];
+			response.forEach(mode => {
+				this.kbBacklightUIModel.push({
+					componentId: `backlightMode${mode}`.replace(/\s/g, ''),
+					label: `device.deviceSettings.audio.microphone.optimize.options.${mode}`,
+					value: mode.value,
+					isChecked: mode.checked,
+					isDisabled: mode.disabled,
+					processIcon: true,
+					customIcon: '',
+					hideIcon: false,
+					processLabel: true,
+				});
+			});
+		}
+	}
+
+
+	onBacklightRadioChange($event: UiCircleRadioWithCheckBoxListModel) {
+		if ($event) {
+			const componentId = $event.componentId.toLowerCase();
+			// if (componentId === 'radio1') {
+			// 	this.onChangeFunType(this.topRowKeyObj.primaryFunStatus);
+			// } else if (componentId === 'radio2') {
+			// 	this.onChangeFunType(!this.topRowKeyObj.primaryFunStatus);
+			// }
 		}
 	}
 }
