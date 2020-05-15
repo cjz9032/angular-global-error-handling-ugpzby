@@ -328,7 +328,6 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 					customIcon: '',
 					hideIcon: false,
 					processLabel: true,
-					isVisible: true,
 				});
 			});
 		}
@@ -348,7 +347,6 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 					customIcon: micMode.toLowerCase() === 'normal' ? 'LE-VoiceRecognition2x': '',
 					hideIcon: micMode.toLowerCase() === 'normal',
 					processLabel: true,
-					isVisible: true,
 				});
 			});
 		}
