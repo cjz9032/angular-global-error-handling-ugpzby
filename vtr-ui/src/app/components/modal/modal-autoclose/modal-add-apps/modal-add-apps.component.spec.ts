@@ -113,6 +113,18 @@ describe('ModalAddAppsComponent', () => {
 	})
 	);
 
+
+	it('checkFocus', fakeAsync(() => {
+		component.loadingNoApps = false;
+		component.noRunningInterval = true;
+		const result = component.checkFocus({which: 9});
+		tick(10);
+		component.ngOnDestroy();
+		tick(10);
+		expect(result).toBe(undefined);
+	})
+	);
+
 });
 
 export function mockPipe(options: Pipe): Pipe {
