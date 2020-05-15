@@ -45,22 +45,11 @@
 									[switchId]="'audio-automatic-dolby'">
 									<div class="row no-gutters tab-focus-white pl-5"
 										*ngIf="dolbyModeResponse.isAudioProfileEnabled"
-										role="radiogroup"
-										tabindex="0"
 										aria-label="dolby audio more list, select using arrow keys">
-										<vtr-ui-circle-radio-with-checkbox
-											*ngFor="let dolbyMode of dolbyModeResponse.supportedModes"
-											[theme]="'white'"
-											[radioId]="'radioDolbyMode' + dolbyMode | removeSpace"
-											[group]="radioGroupAutoDolbySettings"
-											[label]="dolbyMode | dolbyModesTranslation"
-											[value]='dolbyMode'
-											[disabled]='dolbyModeDisabled'
-											[checked]="dolbyMode == dolbyModeResponse.currentMode"
+										<vtr-ui-circle-radio-with-checkbox-list [groupName]="'dolby-mode-radio-group'"
 											(optionChange)="onDolbySettingRadioChange($event)"
-											[processIcon]="true"
-											[textId]="'myDevice-settings-audio-automatic-dolby'">
-										</vtr-ui-circle-radio-with-checkbox>
+											[radioDetails]="dolbyModesUIModel">
+										</vtr-ui-circle-radio-with-checkbox-list>
 									</div>
 									<div class="audioDolbySub pl-5"
 										id="audioDolbySub"
@@ -68,14 +57,16 @@
 										<div class="checkbox voipCheckbox"
 											id="audio-dolby-voip"
 											*ngIf="voipStatus.available">
-											<vtr-ui-checkbox [componentId]="'voipCheckbox'"
-												[value]="voipStatus.status"
-												[checked]="voipStatus.status"
-												[disabled]='automaticAudioDisabled'
-												[label]="'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.voIPMode.checkboxText' | translate"
-												(toggle)='onVoipCheckboxChange($event)'>
-											</vtr-ui-checkbox>
-											<div>
+											<div id="audio-dolby-voip-checkbox">
+												<vtr-ui-checkbox [componentId]="'voipCheckbox'"
+													[value]="voipStatus.status"
+													[checked]="voipStatus.status"
+													[disabled]='automaticAudioDisabled'
+													[label]="'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.voIPMode.checkboxText' | translate"
+													(toggle)='onVoipCheckboxChange($event)'>
+												</vtr-ui-checkbox>
+											</div>
+											<div id="audio-dolby-voip-tip">
 												<fa-icon id="voipRightIcon"
 													class="right-icon"
 													role="img"
@@ -106,14 +97,16 @@
 										<div class="checkbox entertainmentCheckout"
 											id="audio-dolby-entertainment"
 											*ngIf="entertainmentStatus.available">
-											<vtr-ui-checkbox [componentId]="'entertainmentCheckbox'"
-												[value]="entertainmentStatus.status"
-												[checked]="entertainmentStatus.status"
-												[disabled]='automaticAudioDisabled'
-												[label]="'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.entertainmentMode.checkboxText' | translate"
-												(toggle)='onEntertainmentCheckboxChange($event)'>
-											</vtr-ui-checkbox>
-											<div>
+											<div id="audio-dolby-entertainment-checkbox">
+												<vtr-ui-checkbox [componentId]="'entertainmentCheckbox'"
+													[value]="entertainmentStatus.status"
+													[checked]="entertainmentStatus.status"
+													[disabled]='automaticAudioDisabled'
+													[label]="'device.deviceSettings.audio.audioSmartsettings.dolby.automaticAudioMode.entertainmentMode.checkboxText' | translate"
+													(toggle)='onEntertainmentCheckboxChange($event)'>
+												</vtr-ui-checkbox>
+											</div>
+											<div id="audio-dolby-entertainment-tip">
 												<fa-icon id="entertainmentRightIcon"
 													class="right-icon"
 													role="img"
@@ -297,22 +290,12 @@
 										<div class="row no-gutters tab-focus-white pl-4 ml-4"
 											role="radiogroup"
 											tabindex="0"
-											aria-label="microphone optimizemore list, select using arrow keys">
-											<vtr-ui-circle-radio-with-checkbox
-												*ngFor="let optimizeMode of microOptimizeModeResponse.modes"
-												[radioId]="'radioMicrophone' + optimizeMode | removeSpace"
-												[group]="radioOptimiseMicSettings"
-												[label]="optimizeMode | separatePascalCase"
-												[theme]="'white'"
-												[value]='optimizeMode'
-												[checked]="optimizeMode === microOptimizeModeResponse.current"
-												[disabled]="microphoneProperties.disableEffect"
+											aria-label="optimize microphone options, select using arrow keys">
+											<vtr-ui-circle-radio-with-checkbox-list
+												[groupName]="'optimize-microphone-radio-group'"
 												(optionChange)="onOptimizeModesRadioChange($event)"
-												[processIcon]="true"
-												[hideIcon]="optimizeMode === 'Normal'"
-												[customIcon]="optimizeMode === 'Normal' ? 'LE-VoiceRecognition2x': ''"
-												[textId]="'myDevice-settings-audio-microphone-optimize'">
-											</vtr-ui-circle-radio-with-checkbox>
+												[radioDetails]="microphoneModesUIModel">
+											</vtr-ui-circle-radio-with-checkbox-list>
 										</div>
 									</vtr-ui-row-switch>
 								</li>

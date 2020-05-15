@@ -8,6 +8,7 @@ import { DurationCounterService } from 'src/app/services/timer/timer-service-ex.
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from 'src/app/services/metric/metric.service';
 import { WinRT } from '@lenovo/tan-client-bridge';
+import { CommonService } from 'src/app/services/common/common.service';
 
 @Component({
 	selector: 'vtr-modal-article-detail',
@@ -35,10 +36,12 @@ export class ModalArticleDetailComponent implements OnInit {
 	contentStatus = this.AllContentStatus.Loading;
 
 	@ViewChild('articleDetailModal') articleDetailModal: ElementRef;
+	@ViewChild('articleDialogContent') articleDialogContent: ElementRef;
 
 	constructor(
 		public activeModal: NgbActiveModal,
 		private cmsService: CMSService,
+		private commonService: CommonService,
 		private activatedRoute: ActivatedRoute,
 		private sanitizer: DomSanitizer,
 		private timerService: DurationCounterService,
@@ -133,6 +136,15 @@ export class ModalArticleDetailComponent implements OnInit {
 	closeModal() {
 		this.sendArticleViewMetric();
 		this.activeModal.close('close');
+	}
+
+	@HostListener('document:keydown.pageup')
+	onClickPageUp() {
+		this.commonService.scrollElementByDistance(this.articleDialogContent.nativeElement, this.articleDialogContent.nativeElement.clientHeight - 40, true)
+	}
+	@HostListener('document:keydown.pagedown')
+	onClickPageDown() {
+		this.commonService.scrollElementByDistance(this.articleDialogContent.nativeElement, this.articleDialogContent.nativeElement.clientHeight - 40)
 	}
 
 	@HostListener('document:keydown.escape', ['$event'])

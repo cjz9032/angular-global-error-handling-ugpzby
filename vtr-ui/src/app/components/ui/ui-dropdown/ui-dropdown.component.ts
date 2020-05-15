@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges, OnChanges } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons/faChevronDown';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons/faChevronUp';
@@ -9,7 +9,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 	templateUrl: './ui-dropdown.component.html',
 	styleUrls: ['./ui-dropdown.component.scss'],
 })
-export class UiDropDownComponent implements OnInit {
+export class UiDropDownComponent implements OnInit, OnChanges {
 	@Input() dropDownId: string;
 	@Input() dropDownName: string;
 	@Input() list: any[];
@@ -35,6 +35,12 @@ export class UiDropDownComponent implements OnInit {
 
 	ngOnInit() {
 		this.setDropDownValue();
+	}
+	ngOnChanges(changes: SimpleChanges) {
+		if (changes && changes['value'] && changes.value['previousValue'] !== changes.value['currentValue']) {
+			this.setDropDownValue();
+		}
+
 	}
 
 	// refactoring duplicate lines of code for interval

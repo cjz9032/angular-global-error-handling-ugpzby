@@ -1,0 +1,230 @@
+@import "./../../../app.theme";
+
+@mixin theme($name, $background, $foreground, $label-color) {
+	.vtr-ui-circle-radio-with-checkbox-list.#{$name} {
+		$container-width: 12rem;
+		margin-right: 1.5rem;
+		margin-top: 1.5rem;
+		.circle-radio {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+			text-align: center;
+
+			.radio-container {
+				position: relative;
+				width: $container-width;
+				@media screen and (min-width: 992px) and (max-width: 1199.9px) {
+					width: 18rem;
+				}
+				// circle UI part
+				[role="radio"] {
+					background: $foreground;
+					border: 0.2rem solid $background;
+					display: inline-block;
+					vertical-align: middle;
+					width: 6rem;
+					height: 6rem;
+					border-radius: 50%;
+					text-align: center;
+					line-height: 6rem;
+
+					.fa-layers {
+						position: absolute;
+						top: 0.35rem;
+						left: 3.2rem;
+						@media screen and (min-width: 992px) and (max-width: 1199.9px) {
+							left: 6rem;
+						}
+					}
+
+					.check-circle {
+						position: absolute;
+						right: -2.5rem;
+						top: 0.5rem;
+						font-size: 2rem;
+					}
+
+					.icon-circle {
+						position: absolute;
+						right: -2.6rem;
+						top: 0.4rem;
+						font-size: 2rem;
+					}
+
+					.icomoon {
+						font-size: 3rem;
+						&::before {
+							color: $background;
+						}
+					}
+
+					&:hover {
+						border-color: $blue-light;
+
+						.icomoon {
+							&::before {
+								color: $blue-light;
+							}
+						}
+					}
+
+					&:disabled {
+						.text {
+							color: $circle_checkbox_disabled;
+						}
+					}
+
+					&:active {
+						background: $shade_blue;
+						border-color: $shade_blue;
+
+						.check-circle {
+							color: $shade_blue;
+						}
+
+						.icon-circle {
+							color: $light;
+						}
+
+						.icomoon {
+							&::before {
+								color: $light;
+							}
+						}
+					}
+
+					&[aria-disabled="true"] {
+						border-color: $grey_lighter;
+						background: $grey_light;
+						pointer-events: none;
+
+						.icomoon {
+							&::before {
+								color: $shade_blue;
+								opacity: 0.6;
+							}
+						}
+					}
+				}
+
+				[role="radio"][aria-checked="true"] {
+					background: $background;
+
+					.check-circle {
+						color: $main;
+					}
+
+					.icon-circle {
+						color: $light;
+					}
+					.icomoon {
+						font-size: 3rem;
+						&::before {
+							color: $light;
+						}
+					}
+
+					&:hover {
+						background: $blue-light;
+						border-color: $blue-light;
+
+						.check-circle {
+							color: $blue-light;
+						}
+
+						.icon-circle {
+							color: $light;
+						}
+						.icomoon {
+							&::before {
+								color: $light;
+							}
+						}
+					}
+					&:active {
+						background: $shade_blue;
+						border-color: $shade_blue;
+
+						.check-circle {
+							color: $shade_blue;
+						}
+
+						.icon-circle {
+							color: $light;
+						}
+
+						.icomoon {
+							&::before {
+								color: $light;
+							}
+						}
+					}
+					&[aria-disabled="true"] {
+						border-color: $grey_light;
+						background: $grey_light;
+						pointer-events: none;
+
+						.check-circle {
+							color: $shade_blue;
+							opacity: 0.6;
+						}
+
+						.icon-circle {
+							color: $light;
+						}
+
+						.icomoon {
+							&::before {
+								color: $shade_blue;
+								opacity: 0.6;
+							}
+						}
+					}
+					&:focus {
+						outline: 0;
+						span {
+							&.icomoon {
+								display: block;
+							}
+						}
+					}
+				}
+
+				.text {
+					font-weight: $weight_light;
+					font-size: $fontsize_xs;
+					color: $label-color;
+					padding-top: 0.5rem;
+				}
+
+				.text-disabled {
+					color: $shade_blue;
+					opacity: 0.6;
+				}
+				// icon file css class name
+				span {
+					&.icomoon {
+						display: none;
+						font-size: 6.7rem !important;
+						background: transparent;
+						position: absolute;
+						left: 2.7rem;
+						top: -0.1rem;
+						&::before {
+							color: $background !important;
+						}
+						// @media screen and (min-width: 992px) and (max-width: 1199.9px) {
+						// 	width: 18rem;
+						// }
+					}
+				}
+			}
+		}
+	}
+}
+
+@include theme(white-theme, $main, $light, $menu_hover);
+@include theme(blue-theme, $light, $main, $light);

@@ -518,6 +518,17 @@ export class PowerService {
 			throw new Error(error.message);
 		}
 	}
+
+	public isMobileWorkStation(): Promise<boolean> {
+		try {
+			if (this.devicePowerItsIntelligentCooling) {
+				return this.devicePowerItsIntelligentCooling.intelligentCooling.isMobileWorkStation();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
 	// ------------- End DYTC 6.0 -------------------
 
 	// End Power smart settings

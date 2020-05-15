@@ -2,8 +2,8 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col">
-				<div class="title">{{title}}</div>
-				<div class="description">{{description}}</div>
+				<h2 class="title">{{title}}</h2>
+				<p class="description">{{description}}</p>
 			</div>
 		</div>
 	</div>
@@ -19,7 +19,7 @@
 			metricsParent="HardwareScan"
 			metricsItem="HardwareScan.DetailsLog"
 			[isFullWidth]="true"
-			[label]="buttonText"
+			[label]="'hardwareScan.viewDetailsLog' | translate"
 			[routerPath] = "viewResultsPath"
 			[active]="'true'"
 			(onClick)="onPreviousResults()">

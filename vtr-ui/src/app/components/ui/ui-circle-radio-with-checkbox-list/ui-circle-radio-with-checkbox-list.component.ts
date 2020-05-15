@@ -1,45 +1,33 @@
 import { Component, EventEmitter, Input, OnInit, Output, ViewChildren, QueryList } from '@angular/core';
-import { KeyCode as KEYCODE } from 'src/app/enums/key-code.enum';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from 'src/app/services/metric/metric.service';
-import { UiRoundedRectangleRadioModel } from './ui-rounded-rectangle-radio-list.model';
+import { UiCircleRadioWithCheckBoxListModel } from './ui-circle-radio-with-checkbox-list.model';
+import { KeyCode as KEYCODE } from 'src/app/enums/key-code.enum';
 
-/**
- * this radio group implementation is based on W3C KB navigation example
- * https://www.w3.org/TR/2016/WD-wai-aria-practices-1.1-20160317/examples/radio/radio.html
- */
 @Component({
-	selector: 'vtr-ui-rounded-rectangle-custom-radio-list',
-	templateUrl: './ui-rounded-rectangle-custom-radio-list.component.html',
-	styleUrls: ['./ui-rounded-rectangle-custom-radio-list.component.scss']
+	selector: 'vtr-ui-circle-radio-with-checkbox-list',
+	templateUrl: './ui-circle-radio-with-checkbox-list.component.html',
+	styleUrls: ['./ui-circle-radio-with-checkbox-list.component.scss']
 })
-export class UiRoundedRectangleCustomRadioListComponent implements OnInit {
-	@Input() groupName: string;
-	@Input() isVertical = false;
-	@Input() metricsEvent = 'ItemClick';
-	@Input() radioDetails: Array<UiRoundedRectangleRadioModel>;
-
-	@Output() selectionChange = new EventEmitter<UiRoundedRectangleRadioModel>();
+export class UiCircleRadioWithCheckBoxListComponent implements OnInit {
+	@Input() metricsParent: string;
+	@Input() tooltip: string;
+	@Input() theme = 'white';
+	@Input() sendMetrics = true;
+	@Input() groupName = '';
+	@Input() radioDetails: Array<UiCircleRadioWithCheckBoxListModel> = [];
+	@Output() optionChange: EventEmitter<UiCircleRadioWithCheckBoxListModel> = new EventEmitter();
 
 	@ViewChildren('radioRef') radioButtons: QueryList<any>;
 
-	// public model1 = new UiRoundedRectangleRadioListModel(
-	// 	'pizza-radio-group',
-	// 	[
-	// 		new UiRoundedRectangleRadioModel('regular-crust', 'regular crust', 'regular crust', false, false),
-	// 		new UiRoundedRectangleRadioModel('thin-crust', 'thin crust', 'thin crust', false, false),
-	// 		new UiRoundedRectangleRadioModel('deep-dish', 'deep dish', 'deep dish', false, false),
-	// 	]
-	// );
-
-
-	constructor(logger: LoggerService, metrics: MetricService) {
+	constructor(logger: LoggerService, private metrics: MetricService) {
 	}
 
-	ngOnInit() { }
+	ngOnInit() {
+	}
 
 	onClick($event) {
-		const { id } = $event.target;
+		const { id } = $event.currentTarget;
 		const radio = this.updateSelection(id);
 		this.invokeSelectionChangeEvent(radio);
 		$event.preventDefault();
@@ -51,8 +39,8 @@ export class UiRoundedRectangleCustomRadioListComponent implements OnInit {
 		}
 	}
 
-	private updateSelection(radioId: string, hasFocus = false): UiRoundedRectangleRadioModel {
-		let radio: UiRoundedRectangleRadioModel;
+	private updateSelection(radioId: string): UiCircleRadioWithCheckBoxListModel {
+		let radio: UiCircleRadioWithCheckBoxListModel;
 		if (this.radioDetails && this.radioDetails.length > 0) {
 			let hasFound = false;
 			this.radioDetails.forEach(radioDetail => {
@@ -66,7 +54,7 @@ export class UiRoundedRectangleCustomRadioListComponent implements OnInit {
 			});
 
 			// set selected if its found had requires focus
-			if (hasFound && hasFocus) {
+			if (hasFound) {
 				this.radioButtons.forEach(radioButton => {
 					if (radioButton.nativeElement.id === radioId) {
 						radioButton.nativeElement.focus();
@@ -78,11 +66,11 @@ export class UiRoundedRectangleCustomRadioListComponent implements OnInit {
 		return radio;
 	}
 
-	private setNodeActive(index: number): UiRoundedRectangleRadioModel {
+	private setNodeActive(index: number): UiCircleRadioWithCheckBoxListModel {
 		if (index >= 0) {
 			const radioId = this.radioDetails[index].componentId;
 			// get element by index and pass its id to next FN
-			return this.updateSelection(radioId, true);
+			return this.updateSelection(radioId);
 		}
 		return null;
 	}
@@ -129,7 +117,36 @@ export class UiRoundedRectangleCustomRadioListComponent implements OnInit {
 		}
 	}
 
-	private invokeSelectionChangeEvent(radio: UiRoundedRectangleRadioModel) {
-		this.selectionChange.emit(radio);
+	private invokeSelectionChangeEvent(radio: UiCircleRadioWithCheckBoxListModel) {
+		if (radio) {
+			this.optionChange.emit(radio);
+			if (this.sendMetrics) {
+				const metricsData = {
+					ItemParent: this.metricsParent,
+					ItemType: 'FeatureClick',
+					ItemName: radio.componentId,
+					ItemValue: radio.value
+				};
+				this.metrics.sendMetrics(metricsData);
+			}
+		}
 	}
+
+	getIconName(item: UiCircleRadioWithCheckBoxListModel) {
+		if (item.processIcon) {
+			if (item.value) {
+				const arr = item.value.split(' ');
+				const index = arr.indexOf('&');
+				if (index !== -1) {
+					arr.splice(index, 1);
+				}
+				return arr.join('').toLowerCase();
+			} else {
+				return '';
+			}
+		} else {
+			return item.value.toLowerCase();
+		}
+	}
+
 }

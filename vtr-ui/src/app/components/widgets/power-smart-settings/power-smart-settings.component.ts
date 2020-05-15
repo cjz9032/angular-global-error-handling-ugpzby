@@ -10,6 +10,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { PowerService } from 'src/app/services/power/power.service';
 import { ModalIntelligentCoolingModesComponent } from '../../modal/modal-intelligent-cooling-modes/modal-intelligent-cooling-modes.component';
 import { MetricService } from 'src/app//services/metric/metric.service';
+import { UiCircleRadioWithCheckBoxListModel } from '../../ui/ui-circle-radio-with-checkbox-list/ui-circle-radio-with-checkbox-list.model';
 
 const thinkpad = 1;
 const ideapad = 0;
@@ -47,8 +48,11 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 	public autoTransitionIsReadMore = false;
 	public smartSettingsCapability = false;
 	public showMoreLessDytc6Clicked = false;
+	private isMobileWorkstation = false;
 
 	@Output() isPowerSmartSettingVisible = new EventEmitter<boolean>();
+
+	public intelligentCoolingUIModel: Array<UiCircleRadioWithCheckBoxListModel> = [];
 
 	constructor(
 		public powerService: PowerService,
@@ -126,6 +130,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 				this.isPowerSmartSettingVisible.emit(false);
 				this.commonService.setLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, this.cache);
 			} else {
+				this.updateIntelligentCoolingUIModel(this.showIC);
 				this.isPowerSmartSettingVisible.emit(true);
 			}
 		}
@@ -193,15 +198,15 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 		this.setAutoModeSetting(event);
 	}
 
-	changeQuietCool(event) {
+	changeQuietCool() {
 		this.setManualModeSetting(IntelligentCoolingModes.Cool);
 	}
 
-	changePerformance(event) {
+	changePerformance() {
 		this.setManualModeSetting(IntelligentCoolingModes.Performance);
 	}
 
-	changeBatterySaving(event) {
+	changeBatterySaving() {
 		this.setManualModeSetting(IntelligentCoolingModes.BatterySaving);
 	}
 
@@ -399,11 +404,12 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 					this.cache.showIC = this.showIC;
 					const amtCapability = await this.getAMTCapability();
 					let amtSetting = await this.getAMTSetting();
-					this.dytc6GetStatus(amtCapability, amtSetting);
+					this.isMobileWorkstation = await this.isMobileWorkStation();
+					this.dytc6GetStatus(amtCapability, amtSetting, this.isMobileWorkstation);
 					this.amtCapabilityInterval = setInterval(async () => {
 						this.logger.debug('Trying after 30 seconds for getting AMT status');
 						amtSetting = await this.getAMTSetting();
-						this.dytc6GetStatus(amtCapability, amtSetting);
+						this.dytc6GetStatus(amtCapability, amtSetting, this.isMobileWorkstation);
 					}, 30000);
 				}
 			}
@@ -453,7 +459,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 		}
 	}
 
-	private dytc6GetStatus(amtCapability: boolean, amtSetting: boolean) {
+	private dytc6GetStatus(amtCapability: boolean, amtSetting: boolean, isMobileWorkstation: boolean) {
 		this.logger.info('PowerSmartSettingsComponent:initPowerSmartSettingsForThinkPad:: amtCapability', amtCapability);
 		this.logger.info('PowerSmartSettingsComponent:initPowerSmartSettingsForThinkPad:: amtSetting', amtSetting);
 		this.cache.autoModeToggle.available = amtCapability;
@@ -467,6 +473,9 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 			this.dytc6Mode = DYTC6Modes.Manual;
 			this.cache.captionText = DYTC6Modes.Manual;
 
+		} else if (!amtCapability && isMobileWorkstation) {
+			this.showIC = 61;
+			this.cache.showIC = this.showIC;
 		} else {
 			// No auto mode case
 			this.dytc6Mode = DYTC6Modes.Manual;
@@ -747,6 +756,17 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 		}
 	}
 
+	private isMobileWorkStation() {
+		try {
+			if (this.powerService.isShellAvailable) {
+				return this.powerService.isMobileWorkStation();
+			}
+		} catch (error) {
+			this.logger.exception('PowerSmartSettingsComponent:isMobileWorkStation', error);
+			return false;
+		}
+	}
+
 	// ------------- End DYTC 6.0 -------------------
 	// =================== End Power Smart Settings for ThinkPad
 
@@ -818,5 +838,77 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 			this.metricService.sendMetrics(metricsData);
 		}
 		this.autoTransitionIsReadMore = !this.autoTransitionIsReadMore
+	}
+
+	updateIntelligentCoolingUIModel(showIC: number) {
+		this.intelligentCoolingUIModel = [];
+		if (showIC < 14) {
+			this.intelligentCoolingUIModel.push({
+				componentId: `radioICPerformance`,
+				label: `device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.performance${showIC}`,
+				value: 'performance',
+				isChecked: this.radioPerformance,
+				isDisabled: false,
+				processIcon: true,
+				customIcon: '',
+				hideIcon: false,
+				processLabel: true,
+				// isVisible: this.showIC > 14
+			});
+		}
+		this.intelligentCoolingUIModel.push({
+			componentId: `radioICQuiteCool`,
+			label: `device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.quiteCool${(showIC >= 15 ? 14 : showIC)}`,
+			value: showIC >= 14 ? 'LE-IntelligentCooling2x' : 'LE-CoolingDown2x',
+			isChecked: this.radioQuietCool,
+			isDisabled: false,
+			processIcon: true,
+			customIcon: showIC >= 14 ? 'LE-IntelligentCooling2x' : 'LE-CoolingDown2x',
+			hideIcon: true,
+			processLabel: true,
+			// isVisible: true
+		});
+
+		if (showIC >= 14) {
+			this.intelligentCoolingUIModel.push({
+				componentId: `radioICPerformance`,
+				label: `device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.performance${(showIC >= 15 ? 14 : showIC)}`,
+				value: 'performance',
+				isChecked: this.radioPerformance,
+				isDisabled: false,
+				processIcon: true,
+				customIcon: '',
+				hideIcon: false,
+				processLabel: true,
+				// isVisible: this.showIC >= 14
+			});
+
+			this.intelligentCoolingUIModel.push({
+				componentId: `quiteBatterySaving`,
+				label: `device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.batterySaving`,
+				value: 'LE-Battery-Life-mode2x',
+				isChecked: this.radioBatterySaving,
+				isDisabled: false,
+				processIcon: true,
+				customIcon: '',
+				hideIcon: false,
+				processLabel: true,
+				// isVisible: this.showIC >= 14
+			});
+		}
+	}
+
+	onIntelligentCoolingModeChange($event: UiCircleRadioWithCheckBoxListModel) {
+		this.logger.info('PowerSmartSettingsComponent.onIntelligentCoolingModeChange', $event);
+		if ($event) {
+			if ($event.componentId.toLowerCase() === 'radioicperformance') {
+				this.changePerformance()
+			} else if ($event.componentId.toLowerCase() === 'radioicquitecool') {
+				this.changeQuietCool();
+			} else if ($event.componentId.toLowerCase() === 'quitebatterysaving') {
+				this.changeBatterySaving();
+			}
+		}
+
 	}
 }
