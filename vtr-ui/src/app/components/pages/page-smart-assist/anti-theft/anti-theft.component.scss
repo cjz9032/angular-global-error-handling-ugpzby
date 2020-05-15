@@ -24,15 +24,18 @@ vtr-ui-row-switch {
 
 .subFunctions {
   margin-left: 4.5rem !important;
-  p {
+
+  .allowCameraDescribe {
     font-size: $fontsize_xs;
-    outline: 0;
-  }
-  label {
-    font-size: $fontsize_xs;
-    color: #667481;
+    color: $grey_dark;
     font-weight: 300;
-    outline: 0;
+  }
+  .feature-note {
+    label {
+      font-size: $fontsize_xs;
+      color: $shade_blue;
+      font-weight: 300;
+    }
   }
   .subTitle {
     font-weight: $weight_bold;
@@ -54,9 +57,9 @@ vtr-ui-row-switch {
       margin-top: 0px !important;
     }
   }
-  
+
   .select {
-    max-width:380px;
+    max-width: 380px;
     width: 45%;
     min-width: 360px;
   }

@@ -2096,9 +2096,8 @@
                 "tooltip": "<p>Tato funkce funguje pouze pro tyto přehrávače videa:<br>Windows Media Player<br>Přehrávač založený na prohlížeči Chrome<br>Filmy a TV pořady<br>PotPlayer<br>GOM player</p><p class='srTooltip'>Pokyny, jak tuto funkci povolit v přehrávači PotPlayer a GOM Player, naleznete v Uživatelské příručce dodávané s počítačem.</p>",
                 "note": {
                     "description": "Tato funkce nepracuje v následujících případech:",
-                    "description1": "Je povolen režim úspory baterie.",
-                    "description2": "Teplota procesoru je příliš vysoká.",
-                    "description3": "Zařízení je nastaveno na režim úspory baterie v možnosti „Intelligent cooling“."
+                    "description1": "Teplota procesoru je příliš vysoká.",
+                    "description2": "Zařízení je nastaveno na režim úspory baterie v možnosti „Intelligent cooling“."
                 },
                 "imageBefore": "Před",
                 "imageAfter": "Po"

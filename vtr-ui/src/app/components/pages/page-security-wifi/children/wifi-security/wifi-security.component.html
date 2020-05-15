@@ -53,9 +53,11 @@
 									<vtr-ui-switch-onoff
 										[ngClass]="{'switch-disable': data.isLWSEnabled === undefined || data.wifiSecurity?.changeWifiSecurity}"
 										[value]="data.isLWSEnabled"
+										[ariaLabel]="'security.wifisecurity.container.name' | translate"
 										[onOffSwitchId]="'sa-ws-switch'"
 										[disabled]="data.isLWSEnabled === undefined || data.wifiSecurity?.changeWifiSecurity"
-										(toggle)="noticeToggleChange()"></vtr-ui-switch-onoff>
+										(toggle)="noticeToggleChange()">
+									</vtr-ui-switch-onoff>
 								</div>
 							</div>
 						</div>

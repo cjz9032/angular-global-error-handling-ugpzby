@@ -9,10 +9,11 @@
         background-color: $highContrastGray;
     }
     button {
-        margin-top: -0.2rem;
         font-size: 0;
+        outline: none;
         span {
             font-size: 3rem;
+            margin-top: -0.3rem;
         }
     }
     p {
@@ -39,4 +40,14 @@
             }
         }
     }
+}
+
+::ng-deep body.focus-enable{
+	.is-gaming {
+		.vtr-ui-add-reduce-button{
+            button:focus{
+                @include default-button-border;
+            }
+		}
+	}
 }

@@ -2096,9 +2096,8 @@
                 "tooltip": "<p>Denna funktion fungerar bara för nedanstående videospelare:<br>Windows Media Player<br>Chrome-baserad spelare<br>Film & TV<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>Anvisningar om hur du aktiverar denna funktion i PotPlayer och GOM Player finns i användarhandboken som medföljer datorn.</p>",
                 "note": {
                     "description": "Funktionen fungerar inte när",
-                    "description1": "Batterisparläge är aktiverat.",
-                    "description2": "processortemperaturen är för hög.",
-                    "description3": "Enheten är inställd på batterisparläge i Intelligent nedkylning."
+                    "description1": "processortemperaturen är för hög.",
+                    "description2": "Enheten är inställd på batterisparläge i Intelligent nedkylning."
                 },
                 "imageBefore": "Före",
                 "imageAfter": "Efter"
@@ -2956,7 +2955,7 @@
         "betaSettingTitle": "Betaprogram",
         "betaProgram": "Betaprogram",
         "betaSettingDescription": "Prova de senaste funktionerna vi arbetar på.",
-        "betaSettingNewDescription": "Vi är glada att kunna bjuda in dig till betaprogrammet Smart Performance. Du kan förbättra datorns prestanda genom att<br/><ul class='pl-4'><li>felsöka fel och optimera inställningar proaktivt</li><li>förbättra internetprestandan genom att optimera nätverk och webbläsare</li><li>utföra snabb sökning och reparation utan att använda det befintliga antivirusprogrammet.</li></ul>"
+        "betaSettingNewDescription": "Vi är glada att kunna bjuda in dig till betaprogrammet Smart Performance. Du kan förbättra datorns prestanda genom att:<br/><ul class='pl-4'><li>felsöka fel och optimera inställningar proaktivt</li><li>förbättra internetprestandan genom att optimera nätverk och webbläsare</li><li>utföra snabb sökning och reparation utan att använda det befintliga antivirusprogrammet.</li></ul>"
     },
     "modernPreload": {
         "cancel": "Avbryt",

@@ -37,6 +37,7 @@
 								<div class="no-border-bottom pt-4 intelligent-security-image">
 									<img [src]="image"
 										role="img"
+										alt="intelligentSecurity"
 										id="intelligent-security-image" />
 									<div class="intelligent-security-image-word">
 										<p class="intelligent-security-image-word-title"
@@ -68,16 +69,19 @@
 											[tooltipText]=" 'device.smartAssist.intelligentSecurity.zeroTouchLoginForIdea.tooltip' | translate">
 										</vtr-ui-row-switch>
 										<!-- show advanced section -->
-										<div class="pl-4 border-bottom pb-4 ml-4"
-											*ngIf="!zeroTouchLoginShowAdvancedSection">
-											<span class="link-text mt-2 ml-4"
-												role="link"
+										<div class="pl-4 pb-4 ml-4 mb-2">
+											<span class="advanced-section-text mt-2 ml-4"
+												role="button"
 												tabindex="0"
-												id="smartAssist-intelligentSecurity-zeroTouchLogin-showAdvSettings"
-												attr-aria-label="smartAssist.intelligentSecurity.zeroTouchLogin.showAdvSettings"
-												(click)="setHPDAdvancedSetting('zeroTouchLogin', true)"
-												(keydown.enter)="setHPDAdvancedSetting('zeroTouchLogin', true)">
-												{{'device.smartAssist.intelligentSecurity.advancedSettings.showAdvSettings' | translate}}
+												id="smartAssist-intelligentSecurity-zeroTouchLogin-advSettings"
+												attr-aria-label="smartAssist.intelligentSecurity.zeroTouchLogin.advSettings"
+												(click)="setHPDAdvancedSetting('zeroTouchLogin')"
+												(keydown.enter)="setHPDAdvancedSetting('zeroTouchLogin')">
+												{{	
+													!zeroTouchLoginShowAdvancedSection ? 
+													('device.smartAssist.intelligentSecurity.advancedSettings.showAdvSettings' | translate) : 
+													('device.smartAssist.intelligentSecurity.advancedSettings.hideAdvSettings' | translate)
+												}}
 											</span>
 										</div>
 										<!-- login distance sensitivity adjust -->
@@ -187,19 +191,9 @@
 												</div>
 											</div>
 										</div>
-										<!-- hide advanced section -->
-										<div class="pl-4 border-bottom pb-4 ml-4"
-											[ngClass]="{'zeroTouchHideAdv': intelligentSecurity.isZeroTouchLoginAdjustEnabled && !intelligentSecurity.isWindowsHelloRegistered}"
-											*ngIf="zeroTouchLoginShowAdvancedSection">
-											<span class="link-text mt-2 ml-4"
-												role="link"
-												tabindex="0"
-												id="smartAssist-intelligentSecurity-zeroTouchLogin-hideAdvSettings"
-												attr.aria-label="smartAssist.intelligentSecurity.zeroTouchLogin.hideAdvSettings"
-												(click)="setHPDAdvancedSetting('zeroTouchLogin', false)"
-												(keydown.enter)="setHPDAdvancedSetting('zeroTouchLogin', false)">
-												{{'device.smartAssist.intelligentSecurity.advancedSettings.hideAdvSettings' | translate}}
-											</span>
+										<!-- border bottom line -->
+										<div class="pl-4 border-bottom-foridea ml-4"
+											[ngClass]="{'zeroTouchHideAdv': zeroTouchLoginShowAdvancedSection && intelligentSecurity.isZeroTouchLoginAdjustEnabled && !intelligentSecurity.isWindowsHelloRegistered}">
 										</div>
 									</li>
 								</ul>
@@ -302,16 +296,19 @@
 											[disabled]="!intelligentSecurity.isHPDEnabled">
 										</vtr-ui-row-switch>
 										<!-- show advanced section -->
-										<div class="pl-4 border-bottom pb-4 ml-4"
-											*ngIf="!zeroTouchLockShowAdvancedSection">
-											<span class="link-text mt-2 ml-4"
-												role="link"
+										<div class="pl-4 pb-4 ml-4 mb-2">
+											<span class="advanced-section-text mt-2 ml-4"
+												role="button"
 												tabindex="0"
-												id="smartAssist-intelligentSecurity-zeroTouchLock-showAdvSettings"
-												attr-aria-label="smartAssist.intelligentSecurity.zeroTouchLock.showAdvSettings"
-												(click)="setHPDAdvancedSetting('zeroTouchLock', true)"
-												(keydown.enter)="setHPDAdvancedSetting('zeroTouchLock', true)">
-												{{'device.smartAssist.intelligentSecurity.advancedSettings.showAdvSettings' | translate}}
+												id="smartAssist-intelligentSecurity-zeroTouchLock-advSettings"
+												attr-aria-label="smartAssist.intelligentSecurity.zeroTouchLock.advSettings"
+												(click)="setHPDAdvancedSetting('zeroTouchLock')"
+												(keydown.enter)="setHPDAdvancedSetting('zeroTouchLock')">
+												{{	
+													!zeroTouchLockShowAdvancedSection ? 
+													('device.smartAssist.intelligentSecurity.advancedSettings.showAdvSettings' | translate) : 
+													('device.smartAssist.intelligentSecurity.advancedSettings.hideAdvSettings' | translate)
+												}}
 											</span>
 										</div>
 										<!-- facial recognition -->
@@ -507,19 +504,9 @@
 												</vtr-ui-custom-slider>
 											</div>
 										</div>
-										<!-- hide advanced section -->
-										<div class="pl-4 border-bottom pb-4 ml-4"
-											[ngClass]="{'zeroTouchHideAdv': hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust}"
-											*ngIf="zeroTouchLockShowAdvancedSection">
-											<span class="link-text mt-2 ml-4"
-												role="link"
-												tabindex="0"
-												id="smartAssist-intelligentSecurity-zeroTouchLock-hideAdvSettings"
-												attr.aria-label="smartAssist.intelligentSecurity.zeroTouchLock.hideAdvSettings"
-												(click)="setHPDAdvancedSetting('zeroTouchLock', false)"
-												(keydown.enter)="setHPDAdvancedSetting('zeroTouchLock', false)">
-												{{'device.smartAssist.intelligentSecurity.advancedSettings.hideAdvSettings' | translate}}
-											</span>
+										<!-- border bottom line -->
+										<div class="pl-4 border-bottom-foridea ml-4"
+											[ngClass]="{'zeroTouchHideAdv': zeroTouchLockShowAdvancedSection && hsaIntelligentSecurity.zeroTouchLockDistanceAutoAdjust}">
 										</div>
 									</li>
 								</ul>

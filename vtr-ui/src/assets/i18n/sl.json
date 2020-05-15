@@ -2096,9 +2096,8 @@
                 "tooltip": "<p>Ta funkcija deluje samo s temi predvajalniki videoposnetkov:<br>Windows Media Player<br>predvajalnik v brskalniku Chrome<br>Filmi in oddaje<br>PotPlayer<br>GOM Player</p><p class='srTooltip'>Navodila za omogočanje te funkcije v predvajalnikih PotPlayer in GOM Player najdete v Vodiču za uporabnika, ki je priložen računalniku.</p>",
                 "note": {
                     "description": "Ta funkcija ne deluje v naslednjih primerih:",
-                    "description1": "Omogočen je način varčevanja energije baterije.",
-                    "description2": "Temperatura CPE je previsoka.",
-                    "description3": "Naprava je nastavljena na način varčevanja z energijo baterije pri vklopljenem pametnem hlajenju."
+                    "description1": "Temperatura CPE je previsoka.",
+                    "description2": "Naprava je nastavljena na način varčevanja z energijo baterije pri vklopljenem pametnem hlajenju."
                 },
                 "imageBefore": "Prej",
                 "imageAfter": "Potem"
