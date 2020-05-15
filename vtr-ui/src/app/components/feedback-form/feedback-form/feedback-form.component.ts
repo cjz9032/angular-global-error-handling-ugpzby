@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, AfterViewInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
@@ -10,15 +10,12 @@ import { KeyCode } from 'src/app/enums/key-code.enum';
 	templateUrl: './feedback-form.component.html',
 	styleUrls: ['./feedback-form.component.scss']
 })
-export class FeedbackFormComponent implements OnInit, AfterViewInit {
+export class FeedbackFormComponent implements OnInit {
 	feedbackForm: FormGroup;
 	feedbackSuccess = false;
 	leftTime = 3;
 	countryCode = '';
 	public isSubmitted = false;
-	@ViewChild('radioGroup') radioGroup: ElementRef;
-	radioBoxes: any;
-	nextIndex: number;
 
 	private metrics: any;
 
@@ -47,7 +44,6 @@ export class FeedbackFormComponent implements OnInit, AfterViewInit {
 		public activeModal: NgbActiveModal,
 		private shellService: VantageShellService,
 		private deviceService: DeviceService,
-		private renderer: Renderer2
 	) {
 		this.metrics = this.shellService.getMetrics();
 	}
@@ -55,34 +51,6 @@ export class FeedbackFormComponent implements OnInit, AfterViewInit {
 	ngOnInit() {
 		this.createFeedbackForm();
 		this.getCurrentRegion();
-	}
-
-	ngAfterViewInit() {
-		this.radioBoxes = [ ...(Array.from(this.radioGroup.nativeElement.children).slice(0, 11))]
-		this.nextIndex = 0
-		this.renderer.setAttribute(this.radioGroup.nativeElement.children[this.nextIndex].firstChild, 'tabindex', '0');
-		this.radioGroup.nativeElement.children[this.nextIndex].firstChild.focus()
-	}
-
-	onKeyboardNavigate(event: KeyboardEvent) {
-		switch(event['keyCode']) {
-			case KeyCode.LEFT:
-			case KeyCode.UP:
-				event.preventDefault()
-				this.nextIndex = this.nextIndex > 0 ? this.nextIndex - 1 : 0;
-				this.renderer.setAttribute(this.radioGroup.nativeElement.children[this.nextIndex], 'tabindex', '0');
-				this.radioGroup.nativeElement.children[this.nextIndex].firstChild.focus();
-				this.renderer.setAttribute(this.radioGroup.nativeElement.children[this.nextIndex].firstChild, 'aria-checked', 'true');
-				break;
-			case KeyCode.RIGHT:
-			case KeyCode.DOWN:
-				event.preventDefault()
-				this.nextIndex = this.nextIndex < this.radioBoxes.length - 1 ? this.nextIndex + 1 : this.nextIndex;
-				this.renderer.setAttribute(this.radioGroup.nativeElement.children[this.nextIndex], 'tabindex', '0');
-				this.radioGroup.nativeElement.children[this.nextIndex].firstChild.focus();
-				this.renderer.setAttribute(this.radioGroup.nativeElement.children[this.nextIndex].firstChild, 'aria-checked', 'true');
-				break;
-		}
 	}
 
 	 getCurrentRegion() {

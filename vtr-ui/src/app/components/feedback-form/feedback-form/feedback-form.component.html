@@ -42,16 +42,16 @@
 						[for]="qa.idNo">{{'dashboard.feedback.form.no' | translate}}</label>
 				</div>
 				<div class="likely-content"
-					*ngIf="qa.likelyValues" #radioGroup>
+					*ngIf="qa.likelyValues">
 					<div class="form-check form-check-inline"
-						*ngFor="let likely of qa.likelyValues" (keydown)="onKeyboardNavigate($event)">
+						*ngFor="let likely of qa.likelyValues">
 						<input class="form-check-input"
 							type="radio"
 							[formControlName]="qa.name"
 							[name]="qa.name"
 							[id]="'feedback-likely-' + likely"
-							tabindex="-1"
-							(keydown.enter)="setLikelyStatus(qa.name, likely)"
+							[tabindex]="feedbackSuccess ? -1 : 0"
+							(keyup.enter)="setLikelyStatus(qa.name, likely)"
 							[value]="likely">
 						<label class="form-check-label-out"></label>
 						<label class="form-check-label" [id]="'feedback-form-likely-' + likely" role="text"
