@@ -1649,7 +1649,8 @@
                     "url": "Odprite nastavitve zasebnosti sistema Windows",
                     "cameraPrivacy": {
                         "title": "Zasebnostni način za kamero",
-                        "tooltip": "Če je omogočena nastavitev za zasebnost, kamera neha pošiljati slike v živo. To nastavitev vklopite, samo če med videoklici svoje slike ne želite prikazati drugim."
+                        "tooltip": "Če je omogočena nastavitev za zasebnost, kamera neha pošiljati slike v živo. To nastavitev vklopite, samo če med videoklici svoje slike ne želite prikazati drugim.",
+                        "cameraPrivacyAccessNote": "Pojdite na stran <b>Nastavitve sistema Windows → Zasebnost → Kamera</b> in se prepričajte, da sta naslednji dve možnosti vklopljeni:<br>&bull; <b>Namiznim programom dovoli dostop do kamere</b><br>&bull; Možnost <b>Lenovo Vantage</b> pod »Izberite programe (Microsoft Store), ki lahko dostopajo do kamere«"
                     },
                     "camera": {
                         "title": "Kamera",

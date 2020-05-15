@@ -1649,7 +1649,8 @@
                     "url": "转到 Windows 隐私设置",
                     "cameraPrivacy": {
                         "title": "摄像头隐私模式",
-                        "tooltip": "启用“隐私”设置后，摄像头停止发送实时图像。请仅在不希望在视频通话时与其他人共享您的图像时开启此设置。"
+                        "tooltip": "启用“隐私”设置后，摄像头停止发送实时图像。请仅在不希望在视频通话时与其他人共享您的图像时开启此设置。",
+                        "cameraPrivacyAccessNote": "请转至 <b>Windows 设置 → 隐私 → 相机</b> 页面，并确保以下两个选项已开启：<br>&bull; <b>允许桌面应用访问你的相机</b><br>&bull; <b>Lenovo Vantage</b> 在“选择可访问摄像头的（Microsoft Store) 应用”下"
                     },
                     "camera": {
                         "title": "摄像头",

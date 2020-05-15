@@ -1649,7 +1649,8 @@
                     "url": "Idite na postavke privatnosti sustava Windows",
                     "cameraPrivacy": {
                         "title": "Način privatnosti kamere",
-                        "tooltip": "Kad je omogućena postavka za zaštitu privatnosti, kamera prestaje slati slike uživo. Tu postavku uključite samo kad ne želite svoju sliku slati drugima tijekom videopoziva."
+                        "tooltip": "Kad je omogućena postavka za zaštitu privatnosti, kamera prestaje slati slike uživo. Tu postavku uključite samo kad ne želite svoju sliku slati drugima tijekom videopoziva.",
+                        "cameraPrivacyAccessNote": "Molimo idite na stranicu <b>Windows postavke → Privatnost → Kamera</b> i provjerite jesu li uključene sljedeće dvije mogućnosti:<br>&bull; <b>Omogućite aplikacijama za radne površine da pristupe vašoj kameri</b><br>&bull; <b>Lenovo Vantage</b> pod \"Odaberite koje (Microsoft Store) aplikacije mogu pristupiti vašoj kameri\""
                     },
                     "camera": {
                         "title": "Kamera",

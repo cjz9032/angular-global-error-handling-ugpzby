@@ -1649,7 +1649,8 @@
                     "url": "Přejít na nastavení ochrany soukromí systému Windows",
                     "cameraPrivacy": {
                         "title": "Režim soukromí kamery",
-                        "tooltip": "Je-li aktivní nastavení Soukromí, přestane kamera odesílat živý obraz. Tuto volbu tedy zapněte pouze v případě, když během videohovoru nechcete sdílet svůj obraz."
+                        "tooltip": "Je-li aktivní nastavení Soukromí, přestane kamera odesílat živý obraz. Tuto volbu tedy zapněte pouze v případě, když během videohovoru nechcete sdílet svůj obraz.",
+                        "cameraPrivacyAccessNote": "Jděte na stránku <b>Nastavení systému Windows → Soukromí → Fotoaparát</b> a ujistěte se, že jsou na stránce zapnuty následující dvě možnosti:<br>&bull; <b>Povolit stolním aplikacím přístup k vašemu fotoaparátu</b><br>&bull; <b>Lenovo Vantage</b> v části \"Vyberte, které aplikace (Microsoft Store) mají přístup k fotoaparátu\""
                     },
                     "camera": {
                         "title": "Fotoaparát",
