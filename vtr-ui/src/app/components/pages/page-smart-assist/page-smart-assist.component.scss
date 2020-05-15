@@ -342,7 +342,7 @@ $fontsize_xs: 1.4rem;
 	color: $purple_navy;
 }
 
-.link-text {
+.advanced-section-text {
 	font-size: $fontsize_xs2;
 	font-weight: $weight_bold;
 	text-decoration: underline;
@@ -395,8 +395,12 @@ $fontsize_xs: 1.4rem;
 	}
 }
 
+.border-bottom-foridea {
+	border-bottom: 0.099rem solid $shade_lighter;
+}
+
 .zeroTouchHideAdv {
-	margin-top: -3rem;
+	margin-top: -2rem;
 }
 
 .zeroTouchLoginDistanceNote {
