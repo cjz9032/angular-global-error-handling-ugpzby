@@ -1649,7 +1649,8 @@
                     "url": "Idite na postavke zaštite privatnosti sistema Windows",
                     "cameraPrivacy": {
                         "title": "Režim za privatnost prilikom korišćenja kamere",
-                        "tooltip": "Kamera prestaje da šalje slike uživo kada se omoguće postavke zaštite privatnosti. Uključite ove postavke samo kada ne želite da delite svoje slike sa drugima tokom video poziva."
+                        "tooltip": "Kamera prestaje da šalje slike uživo kada se omoguće postavke zaštite privatnosti. Uključite ove postavke samo kada ne želite da delite svoje slike sa drugima tokom video poziva.",
+                        "cameraPrivacyAccessNote": "Idite na stranicu <b>Windows postavke → Privatnost → Kamera</b> i uverite se da su uključene sledeće dve opcije:<br>&bull; <b>Dozvoli da desktop aplikacije pristupaju kameri</b><br>&bull; <b>Lenovo Vantage</b> u delu „Odaberite koje aplikacije (Microsoft Store) mogu da pristupaju kameri“"
                     },
                     "camera": {
                         "title": "Kamera",

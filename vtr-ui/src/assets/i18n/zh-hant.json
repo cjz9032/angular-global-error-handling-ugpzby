@@ -1649,7 +1649,8 @@
                     "url": "跳至 Windows 隱私權設定",
                     "cameraPrivacy": {
                         "title": "攝影機隱私模式",
-                        "tooltip": "啟用隱私設定時，攝影機會停止傳送即時影像。請僅在您不想在視訊通話時與其他人共用您的影像時開啟此設定。"
+                        "tooltip": "啟用隱私設定時，攝影機會停止傳送即時影像。請僅在您不想在視訊通話時與其他人共用您的影像時開啟此設定。",
+                        "cameraPrivacyAccessNote": "請前往 <b>Windows 設定 → 隱私權 → 相機</b> 頁面，並確保開啟以下兩個選項：<br>&bull;<b>允許桌面應用存取您的相機</b><br>&bull;<b>Lenovo Vantage </b>在「選擇哪些 (Microsoft Store) 應用程式可以存取您的相機」下"
                     },
                     "camera": {
                         "title": "相機",

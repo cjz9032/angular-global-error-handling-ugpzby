@@ -1649,7 +1649,8 @@
                     "url": "Siirry Windowsin yksityisyysasetuksiin",
                     "cameraPrivacy": {
                         "title": "Kameran yksityisyystila",
-                        "tooltip": "Kamera ei lähetä videokuvaa, kun yksityisyysasetus on käytössä. Ota tämä asetus käyttöön vain silloin, kun et haluat jakaa kuvia muiden kanssa videopuhelun aikana."
+                        "tooltip": "Kamera ei lähetä videokuvaa, kun yksityisyysasetus on käytössä. Ota tämä asetus käyttöön vain silloin, kun et haluat jakaa kuvia muiden kanssa videopuhelun aikana.",
+                        "cameraPrivacyAccessNote": "Avaa <b>Windows-asetukset → Tietosuoja → Kamera</b> ja varmista, että seuraavat kaksi vaihtoehtoa ovat käytössä:<br>&bull; <b>Salli sovellusten käyttää kameraasi</b><br>&bull; <b>Lenovo Vantage</b> kohdassa \"Valitse, mitkä (Microsoft Storen) sovellukset voivat käyttää kameraasi\""
                     },
                     "camera": {
                         "title": "Kamera",

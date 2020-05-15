@@ -1649,7 +1649,8 @@
                     "url": "Ga naar Windows-privacyinstellingen",
                     "cameraPrivacy": {
                         "title": "Privacy-modus camera",
-                        "tooltip": "De camera verstuurt geen live-beelden meer als de instelling Privacy ingeschakeld is. Schakel deze instelling alleen in als u uw foto's niet meer met anderen wilt delen tijdens een videogesprek."
+                        "tooltip": "De camera verstuurt geen live-beelden meer als de instelling Privacy ingeschakeld is. Schakel deze instelling alleen in als u uw foto's niet meer met anderen wilt delen tijdens een videogesprek.",
+                        "cameraPrivacyAccessNote": "Ga naar de pagina <b>Windows-instellingen → Privacy → Camera</b>. Hierop moeten de volgende twee opties zijn ingeschakeld:<br>&bull; <b>Bureaublad-apps toegang tot uw camera geven</b><br>&bull; <b>Lenovo Vantage</b> onder Kies welke Microsoft Store-apps toegang hebben tot uw camera."
                     },
                     "camera": {
                         "title": "Camera",
