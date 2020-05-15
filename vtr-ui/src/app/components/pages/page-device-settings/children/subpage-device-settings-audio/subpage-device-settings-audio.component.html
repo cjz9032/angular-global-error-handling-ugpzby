@@ -291,10 +291,11 @@
 											role="radiogroup"
 											tabindex="0"
 											aria-label="optimize microphone options, select using arrow keys">
-											<vtr-ui-circle-radio-with-checkbox-list [groupName]="'optimize-microphone-radio-group'"
-											(optionChange)="onOptimizeModesRadioChange($event)"
-											[radioDetails]="microphoneModesUIModel">
-										</vtr-ui-circle-radio-with-checkbox-list>
+											<vtr-ui-circle-radio-with-checkbox-list
+												[groupName]="'optimize-microphone-radio-group'"
+												(optionChange)="onOptimizeModesRadioChange($event)"
+												[radioDetails]="microphoneModesUIModel">
+											</vtr-ui-circle-radio-with-checkbox-list>
 										</div>
 									</vtr-ui-row-switch>
 								</li>

@@ -37,10 +37,9 @@
 									</div>
 									<div class="row no-gutters ml-2 cooling-mode-list-block"
 										*ngIf="showIntelligentCoolingModes"
-										role="radiogroup"
-										aria-label="intelligent Cooling mode list, select using arrow keys"
+										aria-label="intelligent cooling modes, select using arrow keys"
 										tabindex="0">
-										<vtr-ui-circle-radio-with-checkbox *ngIf="showIC&lt;14"
+										<!-- <vtr-ui-circle-radio-with-checkbox *ngIf="showIC&lt;14"
 											[theme]="'white'"
 											[radioId]="'radioICPerformance'"
 											[group]="'radio'"
@@ -78,7 +77,12 @@
 											[checked]="radioBatterySaving"
 											(optionChange)="changeBatterySaving($event)"
 											[textId]="'myDevice-settings-power-intelligent-cooling'">
-										</vtr-ui-circle-radio-with-checkbox>
+										</vtr-ui-circle-radio-with-checkbox> -->
+										<vtr-ui-circle-radio-with-checkbox-list
+											[groupName]="'optimize-microphone-radio-group'"
+											(optionChange)="onIntelligentCoolingModeChange($event)"
+											[radioDetails]="intelligentCoolingUIModel">
+										</vtr-ui-circle-radio-with-checkbox-list>
 									</div>
 									<div class="well ml-2"
 										role="heading"

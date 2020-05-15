@@ -10,6 +10,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { PowerService } from 'src/app/services/power/power.service';
 import { ModalIntelligentCoolingModesComponent } from '../../modal/modal-intelligent-cooling-modes/modal-intelligent-cooling-modes.component';
 import { MetricService } from 'src/app//services/metric/metric.service';
+import { UiCircleRadioWithCheckBoxListModel } from '../../ui/ui-circle-radio-with-checkbox-list/ui-circle-radio-with-checkbox-list.model';
 
 const thinkpad = 1;
 const ideapad = 0;
@@ -50,6 +51,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 
 	@Output() isPowerSmartSettingVisible = new EventEmitter<boolean>();
 
+	public intelligentCoolingUIModel: Array<UiCircleRadioWithCheckBoxListModel> = [];
+
 	constructor(
 		public powerService: PowerService,
 		private translate: TranslateService,
@@ -57,8 +60,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 		public commonService: CommonService,
 		public modalService: NgbModal,
 		private metricService: MetricService) {
-			this.initDataFromCache();
-		}
+		this.initDataFromCache();
+	}
 
 	ngOnInit() {
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
@@ -73,7 +76,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 	}
 
 	ngAfterViewInit() {
-		if(this.cache) {
+		if (this.cache) {
 			if (this.cache.showIC === 0) {
 				this.showPowerSmartSettings(false);
 			} else {
@@ -124,6 +127,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 				this.isPowerSmartSettingVisible.emit(false);
 				this.commonService.setLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, this.cache);
 			} else {
+				this.updateIntelligentCoolingUIModel(this.showIC);
 				this.isPowerSmartSettingVisible.emit(true);
 			}
 		}
@@ -191,15 +195,15 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 		this.setAutoModeSetting(event);
 	}
 
-	changeQuietCool(event) {
+	changeQuietCool() {
 		this.setManualModeSetting(IntelligentCoolingModes.Cool);
 	}
 
-	changePerformance(event) {
+	changePerformance() {
 		this.setManualModeSetting(IntelligentCoolingModes.Performance);
 	}
 
-	changeBatterySaving(event) {
+	changeBatterySaving() {
 		this.setManualModeSetting(IntelligentCoolingModes.BatterySaving);
 	}
 
@@ -321,9 +325,9 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 				text = 'device.deviceSettings.power.powerSmartSettings.intelligentCooling.selectedModeText.performance';
 				break;
 			case IntelligentCoolingModes.BatterySaving:
-				if (this.showIC ===14) {
+				if (this.showIC === 14) {
 					text = 'device.deviceSettings.power.powerSmartSettings.intelligentCooling.selectedModeText.batterySaving14';
-				} else if (this.showIC >=15){
+				} else if (this.showIC >= 15) {
 					text = 'device.deviceSettings.power.powerSmartSettings.intelligentCooling.selectedModeText.batterySaving15';
 				}
 				break;
@@ -783,16 +787,16 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 	}
 
 
-	readMore(readMoreDiv: HTMLElement,$event:Event) {
+	readMore(readMoreDiv: HTMLElement, $event: Event) {
 		this.onReadMoreClick = true;
-		if(readMoreDiv){
+		if (readMoreDiv) {
 			readMoreDiv.style.display = 'block';
 			// readMoreDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
 			// const focusElement = readMoreDiv.querySelector('[tabindex = \'0\']') as HTMLElement;
 			// Fix for Edge browser
 			// window.scrollBy(0, 0);
 			// if($event.type!=='click'){
-				readMoreDiv.focus();
+			readMoreDiv.focus();
 			// }
 
 		}
@@ -808,14 +812,14 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 		this.isAutoTransitionEnabled = $event;
 		if (this.powerService.isShellAvailable && this.isAutoTransitionVisible) {
 			this.powerService.setAutoTransitionForICIdeapad($event)
-			.then((isSuccess: boolean) => {
-				if (!isSuccess) {
-					this.logger.info(`onAutoTransitionToggle.setAutoTransitionForICIdeapad failed`);
-				}
-				this.cache.isAutoTransitionEnabled = this.isAutoTransitionEnabled;
-				this.commonService.setLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, this.cache);
-				this.logger.info(`onAutoTransitionToggle.setAutoTransitionForICIdeapad after API ${isSuccess} ; $event: ${$event}`);
-			})
+				.then((isSuccess: boolean) => {
+					if (!isSuccess) {
+						this.logger.info(`onAutoTransitionToggle.setAutoTransitionForICIdeapad failed`);
+					}
+					this.cache.isAutoTransitionEnabled = this.isAutoTransitionEnabled;
+					this.commonService.setLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, this.cache);
+					this.logger.info(`onAutoTransitionToggle.setAutoTransitionForICIdeapad after API ${isSuccess} ; $event: ${$event}`);
+				})
 		}
 	}
 
@@ -830,5 +834,77 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy, AfterView
 			this.metricService.sendMetrics(metricsData);
 		}
 		this.autoTransitionIsReadMore = !this.autoTransitionIsReadMore
+	}
+
+	updateIntelligentCoolingUIModel(showIC: number) {
+		this.intelligentCoolingUIModel = [];
+		if (showIC < 14) {
+			this.intelligentCoolingUIModel.push({
+				componentId: `radioICPerformance`,
+				label: `device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.performance${showIC}`,
+				value: 'performance',
+				isChecked: this.radioPerformance,
+				isDisabled: false,
+				processIcon: true,
+				customIcon: '',
+				hideIcon: false,
+				processLabel: true,
+				// isVisible: this.showIC > 14
+			});
+		}
+		this.intelligentCoolingUIModel.push({
+			componentId: `radioICQuiteCool`,
+			label: `device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.quiteCool${(showIC >= 15 ? 14 : showIC)}`,
+			value: showIC >= 14 ? 'LE-IntelligentCooling2x' : 'LE-CoolingDown2x',
+			isChecked: this.radioQuietCool,
+			isDisabled: false,
+			processIcon: true,
+			customIcon: showIC >= 14 ? 'LE-IntelligentCooling2x' : 'LE-CoolingDown2x',
+			hideIcon: true,
+			processLabel: true,
+			// isVisible: true
+		});
+
+		if (showIC >= 14) {
+			this.intelligentCoolingUIModel.push({
+				componentId: `radioICPerformance`,
+				label: `device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.performance${(showIC >= 15 ? 14 : showIC)}`,
+				value: 'performance',
+				isChecked: this.radioPerformance,
+				isDisabled: false,
+				processIcon: true,
+				customIcon: '',
+				hideIcon: false,
+				processLabel: true,
+				// isVisible: this.showIC >= 14
+			});
+
+			this.intelligentCoolingUIModel.push({
+				componentId: `quiteBatterySaving`,
+				label: `device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.batterySaving`,
+				value: 'LE-Battery-Life-mode2x',
+				isChecked: this.radioBatterySaving,
+				isDisabled: false,
+				processIcon: true,
+				customIcon: '',
+				hideIcon: false,
+				processLabel: true,
+				// isVisible: this.showIC >= 14
+			});
+		}
+	}
+
+	onIntelligentCoolingModeChange($event: UiCircleRadioWithCheckBoxListModel) {
+		this.logger.info('PowerSmartSettingsComponent.onIntelligentCoolingModeChange', $event);
+		if($event){
+			if($event.componentId.toLowerCase() === 'radioicperformance'){
+				this.changePerformance()
+			} else if($event.componentId.toLowerCase() === 'radioicquitecool'){
+				this.changeQuietCool();
+			} else if($event.componentId.toLowerCase() === 'quitebatterysaving'){
+				this.changeBatterySaving();
+			}
+		}
+
 	}
 }
