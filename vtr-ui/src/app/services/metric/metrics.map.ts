@@ -12,12 +12,12 @@ interface MetricsMap {
 // if ItemParent is not provided, it would be filled with the pageName of the route
 export const metricsMap: MetricsMap = {
 	closeFeedbackEvent: {
-		ItemType: EventName.FeatureClick,
+		ItemType: EventName.featureclick,
 		ItemName: 'btn.close',
 		ItemParent: 'Dialog.Feedback'
 	},
 	giveFeedbackEvent: {
-		ItemType: EventName.FeatureClick,
+		ItemType: EventName.featureclick,
 		ItemName: 'btn.givefeedback',
 		ItemParent: ''
 	}
