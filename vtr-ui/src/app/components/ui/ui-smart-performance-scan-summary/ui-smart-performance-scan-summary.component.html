@@ -219,43 +219,45 @@
 																			*ngIf="!dropDownToggle">{{currentDate}}</span>
 																		<span
 																			*ngIf="tabIndex === 0">{{annualYear}}</span>
+																		<!-- <span
+																			*ngIf="tabIndex === 1">{{quarterlyMonth?.displayName}}</span> -->
 																		<span
-																			*ngIf="tabIndex === 1">{{quarterlyMonth?.displayName}}</span>
-																		<span
-																			*ngIf="tabIndex === 2">{{customDate}}</span>
+																			*ngIf="tabIndex === 1">{{customDate}}</span>
 																		<fa-icon class="drop-down-icon"
-																			*ngIf="dropDownToggle && !isDropDownOpen"
+																			*ngIf="dropDownToggle && !isDropDownOpen && tabIndex === 1"
 																			(click)="openDropDown()"
 																			[icon]="['fas', 'chevron-down']"></fa-icon>
 																		<fa-icon class="drop-down-icon"
-																			*ngIf="dropDownToggle && isDropDownOpen"
+																			*ngIf="dropDownToggle && isDropDownOpen && tabIndex === 1"
 																			(click)="openDropDown()"
 																			[icon]="['fas', 'chevron-up']">
 																		</fa-icon>
 																	</li>
 																</div>
 															</ul>
-															<div *ngIf="isDropDownOpen && tabIndex != 2"
+															<!-- Annual Dropdown menu hidden -->
+															<!-- <div *ngIf="isDropDownOpen && tabIndex != 2"
 															[ngClass]="[tabIndex ===2 ? 'calender-drop' : 'dropdownmenu']">
 															<div *ngIf="tabIndex === 0">
 																<a (click)="anualScanSummary(year)" *ngFor="let year of yearsList"
 																	[ngClass]="{'link-active': year.displayName == annualYear}">
 																	{{year.displayName}}
 																	<br>
-																</a>
-																<!-- <a (click)="anualScanSummary(lastYear)"
-																	[ngClass]="{'link-active':lastYear == annualYear}">{{lastYear}}</a> -->
-															</div>
-															<div *ngIf="tabIndex === 1">
+																</a>																
+															</div> -->
+
+															 <!-- Quarterly option is hidden for current 3.3 release  -->
+
+															<!-- <div *ngIf="tabIndex === 1">
 																<div *ngFor="let menu of quarterlyMenu;let ind=index">
 																	<a (click)="quarterlyScanSummary(menu)"
 																		[ngClass]="{'link-active':menu.key == quarterlyMonth.key}">{{menu.displayName}}</a>
 																</div>
-															</div>
+															</div> -->
 	
-														</div>
-															<div *ngIf="isDropDownOpen && tabIndex === 2" class="calender-dropDown">
-																<div *ngIf="tabIndex === 2">
+														<!-- </div> -->
+															<div *ngIf="isDropDownOpen && tabIndex === 1" class="calender-dropDown">
+																<div *ngIf="tabIndex === 1">
 																	<div class="row mt-1">
 																		<div class="col">
 																			<div class="row custom-from-date py-3"

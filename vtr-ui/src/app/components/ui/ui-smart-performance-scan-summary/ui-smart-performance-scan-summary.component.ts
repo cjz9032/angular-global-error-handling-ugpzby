@@ -20,8 +20,6 @@ import { ModalSmartPerformanceFeedbackComponent } from '../../modal/modal-smart-
 	styleUrls: ['./ui-smart-performance-scan-summary.component.scss']
 })
 export class UiSmartPerformanceScanSummaryComponent implements OnInit {
-	public sizeExtension: string;
-	public isLoading = false;
 	constructor(
 		private modalService: NgbModal,
 		private commonService: CommonService,
@@ -32,17 +30,23 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		public shellServices: VantageShellService,
 		private translate: TranslateService
 	) { }
+	public sizeExtension: string;
+	public isLoading = false;
 	public machineFamilyName: string;
 	public today = new Date();
 	public items: any = [];
 	isSubscribed: any;
 	title = 'smartPerformance.title';
+	/* Quarterly option is hidden for current 3.3 release */
+	// public menuItems: any = [
+	// 	{ itemName: 'Annual', itemKey: 'ANNUAL' },
+	// 	{ itemName: 'Quarterly', itemKey: 'QUARTERLY' },
+	// 	{ itemName: 'Custom', itemKey: 'CUSTOM' }
+	// ];
 	public menuItems: any = [
 		{ itemName: 'Annual', itemKey: 'ANNUAL' },
-		{ itemName: 'Quarterly', itemKey: 'QUARTERLY' },
 		{ itemName: 'Custom', itemKey: 'CUSTOM' }
 	];
-
 	leftAnimator: any;
 	@Input() isScanning = false;
 	@Input() isScanningCompleted = false;
@@ -93,7 +97,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	selectedFrequency: any;
 	selectedDay: any;
 	selectedNumber: any;
-	yearsList: any[] = [this.getYearObj(0)];// removed last year, "this.getYearObj(-1)" to fix van-17574
+	yearsList: any[] = [];// removed last year, "this.getYearObj(-1)" to fix van-17574
 	scanFrequency: any = [
 		this.translate.instant('smartPerformance.scanSettings.scanFrequencyWeek'),
 		this.translate.instant('smartPerformance.scanSettings.scanFrequencyEveryWeek'),
@@ -188,6 +192,13 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	// boostindividualIssueCount: any = 0;
 	// secureindividualIssueCount: any = 0;
 	public data = [{name: 'D', value: 4}]
+	public subscriptionDetails = [
+		{
+			UUID: uuid(),
+			StartDate: formatDate(new Date(), 'yyyy/MM/dd', 'en'),
+			EndDate: formatDate('2020/07/31', 'yyyy/MM/dd', 'en')
+		}
+	];
 	ngOnInit() {
 		const cacheMachineFamilyName = this.commonService.getLocalStorageValue(
 			LocalStorageKey.MachineFamilyName,
@@ -299,23 +310,32 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		this.tabIndex = value;
 		this.logger.info('scanSummaryTime.tabIndex', this.tabIndex);
 		if (value === 0) {
+			// this.yearsList = [];
 			const d = new Date();
 			this.currentYear = d.getFullYear();
 			this.lastYear = d.getFullYear() - 1;
-			this.annualYear = this.yearsList[0].displayName;
-			this.getHistory(
-				this.yearsList[0].startDate,
-				this.yearsList[0].endDate
-			);
+			const month = d.getMonth();
+			const day = d.getDate();
+			const prevYear = new Date(this.lastYear, month, day);
+			const yearObj = this.getYearObj(prevYear, d);
+			if (yearObj) {
+				// this.yearsList.push(yearObj);
+				this.annualYear = yearObj.displayName;
+				this.getHistory(
+					yearObj.startDate,
+					yearObj.endDate
+				);
+			}
 		}
+		/* Quarterly option is hidden for current 3.3 release */
+		// if (value === 1) {
+		// 	this.quarterlyMonth = this.quarterlyMenu[0];
+		// 	this.getHistory(
+		// 		this.quarterlyMonth.startDate,
+		// 		this.quarterlyMonth.endDate
+		// 	);
+		// }
 		if (value === 1) {
-			this.quarterlyMonth = this.quarterlyMenu[0];
-			this.getHistory(
-				this.quarterlyMonth.startDate,
-				this.quarterlyMonth.endDate
-			);
-		}
-		if (value === 2) {
 			this.fromDate = this.calendar.getToday();
 			this.toDate = this.calendar.getToday();
 
@@ -343,7 +363,6 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 			this.selectedfromDate = this.fromDate;
 			this.selectedTodate = this.toDate;
 			this.customDate = this.displayFromDate + ' - ' + this.displayToDate;
-			// console.log('---------IN THE TABINDEX 2' + this.customDate);
 			this.getHistory(
 				moment
 					.utc(this.fromDate)
@@ -423,7 +442,6 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		this.toDate.setMonth(this.selectedTodate.month - 1);
 		this.toDate.setFullYear(this.selectedTodate.year);
 		this.customDate = this.displayFromDate + ' - ' + this.displayToDate;
-		// console.log(this.fromDate);
 		this.getHistory(
 			moment(this.fromDate)
 				.startOf('day')
@@ -433,13 +451,6 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 				.format('YYYY-MM-DD HH:mm:ss')
 		);
 	}
-	public subscriptionDetails = [
-		{
-			UUID: uuid(),
-			StartDate: formatDate(new Date(), 'yyyy/MM/dd', 'en'),
-			EndDate: formatDate("2020/07/31", 'yyyy/MM/dd', 'en')
-		}
-	];
 	openSubscribeModal() {
 		// this.modalService.open(ModalSmartPerformanceSubscribeComponent, {
 		// 	backdrop: 'static',
@@ -563,13 +574,19 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 				.format('YYYY-MM-DD HH:mm:ss')
 		};
 	}
-	getYearObj(yearCount) {
-		const year = moment().add(yearCount, 'year');
+	getYearObj(prevDate, currentDate) {
+
+		// const year = moment().add(yearCount, 'year');
+		// return {
+		// 	displayName: year.format('YYYY'),
+		// 	startDate: year.startOf('year').format('YYYY-MM-DD HH:mm:ss'),
+		// 	endDate: year.endOf('year').format('YYYY-MM-DD HH:mm:ss')
+		// };
 		return {
-			displayName: year.format('YYYY'),
-			startDate: year.startOf('year').format('YYYY-MM-DD HH:mm:ss'),
-			endDate: year.endOf('year').format('YYYY-MM-DD HH:mm:ss')
-		};
+			displayName: moment(prevDate).format('YYYY')+ '-'+ moment(currentDate).format('YYYY'),
+			startDate: moment(prevDate).format('YYYY-MM-DD HH:mm:ss'),
+			endDate: moment(currentDate).format('YYYY-MM-DD HH:mm:ss')
+		}
 	}
 
 	async getHistory(startDate, endDate) {
@@ -608,14 +625,16 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	formatMemorySize(mbytes: number) {
 		const k = 1024;
 		const mb: number = mbytes ? mbytes : 0;
-		if (mb === 0) { return 0 + ' ' + 'MB' }
-		const sizes = ['MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
-		const i = Math.floor(Math.log(mb) / Math.log(k));
-		this.sizeExtension = sizes[i];
-		return parseFloat((mb / Math.pow(k, i)).toFixed(1));
+		if (mb && mb !== 0) {
+			const sizes = ['MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+			const i = Math.floor(Math.log(mb) / Math.log(k));
+			this.sizeExtension = sizes[i];
+			return parseFloat((mb / Math.pow(k, i)).toFixed(1));
+		} else {
+			return 0 + ' ' + 'MB'
+		}
 	}
 	changeNextScanDateValue() {
-		//console.log("event emitted------------------------------",this.isSubscribed);
 		if (this.isSubscribed) {
 			this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix');
 		}
