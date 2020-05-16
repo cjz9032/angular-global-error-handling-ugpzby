@@ -439,10 +439,10 @@ export class UiScanScheduleComponent implements OnInit {
 			if(!this.IsScheduleScanEnabled) {
 				if (this.isSubscribed) {
 					this.scheduleScan('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix', 'onceaweek', this.days[new Date().getDay()], new Date(new Date().setHours(0,0,0,0)), []);
-					this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix');
+					// this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix');
 				} else {
 					this.scheduleScan('Lenovo.Vantage.SmartPerformance.ScheduleScan', 'onceaweek', this.days[new Date().getDay()], new Date(new Date().setHours(0,0,0,0)), []);
-					this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScan');
+					// this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScan');
 				}
 				this.commonService.setLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled, true);
 				this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, this.scanFrequency[0]);
