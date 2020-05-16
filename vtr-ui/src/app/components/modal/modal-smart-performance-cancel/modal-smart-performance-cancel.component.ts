@@ -12,8 +12,8 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 	styleUrls: ["./modal-smart-performance-cancel.component.scss"],
 })
 export class ModalSmartPerformanceCancelComponent implements OnInit {
-	// @Output() stopScanning = new EventEmitter();
 	@Input() promptMsg: boolean = false;
+	@Output() cancelRequested: EventEmitter<any> = new EventEmitter();
 	constructor(
 		public activeModal: NgbActiveModal,
 		public smartPerformanceService: SmartPerformanceService,
@@ -26,7 +26,7 @@ export class ModalSmartPerformanceCancelComponent implements OnInit {
 	public isLoading = false;
 
 	ngOnInit() {
-		this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceForceClose, false);
+		// this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceForceClose, false);
 		this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, false);
 		this.timerRef = setInterval(() => {
 			if (this.secondsCountdown-- === 0) {
@@ -59,16 +59,15 @@ export class ModalSmartPerformanceCancelComponent implements OnInit {
 
 	public async cancelScan() {
 		try {
+			this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, true);
 			this.isLoading = true;
 			await this.smartPerformanceService.cancelScan().then((cancelScanFromService: any) => {
 				if (cancelScanFromService) {
-					let spModelClose = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartPerformanceForceClose);
-					if (!spModelClose) {
-						if (this.timerRef) {
-							this.stopCountdown();
-							this.isLoading = false;
-							
-						}
+					
+					// emiting cancel in smart performance scanning component.
+					this.cancelRequested.emit();
+					if (this.timerRef) {
+						this.stopCountdown()
 					}
 					// de-activates the pop-up,
 					this.activeModal.close(true);
@@ -76,8 +75,6 @@ export class ModalSmartPerformanceCancelComponent implements OnInit {
 						this.promptMsg = false;
 					}
 
-					this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceForceClose, true);
-					this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, true);
 				}
 			})
 		} catch (err) {

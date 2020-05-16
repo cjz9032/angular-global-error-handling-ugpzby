@@ -133,11 +133,11 @@
 														<div class="icon-bar my-5">
 															<ul class="listed-task-icons d-flex justify-content-between align-items-center py-3">
 																<li class="icon-box d-flex justify-content-center align-items-center py-3">
-																	<div class="icon icon-router"></div>
+																	<div class="icon icon-icon-e-junk"></div>
 																	<p>{{'smartPerformance.boostInternetPerformance.tabSet1.tab1' |translate }}</p>
 																</li>
 																<li class="icon-box d-flex justify-content-center align-items-center py-3">
-																	<div class="icon icon-icon-browser-settings"></div>
+																	<div class="icon icon-router"></div>
 																	<p>{{'smartPerformance.boostInternetPerformance.tabSet1.tab2' |translate }}</p>
 																</li>
 																<li class="icon-box d-flex justify-content-center align-items-center py-3">
@@ -145,11 +145,11 @@
 																	<p>{{'smartPerformance.boostInternetPerformance.tabSet1.tab3' |translate }}</p>
 																</li>
 																<li class="icon-box d-flex justify-content-center align-items-center py-3">
-																	<div class="icon icon-wifi"></div>
+																	<div class="icon icon-visible-to-online-trackers"></div>
 																	<p>{{'smartPerformance.boostInternetPerformance.tabSet1.tab4' |translate }}</p>
 																</li>
 																<li class="icon-box d-flex justify-content-center align-items-center py-3">
-																	<div class="icon icon-icon-e-junk"></div>
+																	<div class="icon icon-wifi"></div>
 																	<p>{{'smartPerformance.boostInternetPerformance.tabSet1.tab5' |translate }}</p>
 																</li>
 															</ul>
@@ -416,10 +416,10 @@
 	</div></div>
 </right-content>
 </vtr-page-layout>
-<vtr-ui-smart-performance-scanning *ngIf="isScanning" (sendScanStatus)="changeScanStatus($event)"
-    	 (stopScanning)="cancelScan()" [scheduleScanData] ="scheduleScanObj"
-	[isScheduleScan] ="isScheduleScan">
+<vtr-ui-smart-performance-scanning *ngIf="isScanning" (sendModelStatus)="cancelScanfromScanning()"
+	[scheduleScanData]="scheduleScanObj" [isScheduleScan]="isScheduleScan">
 </vtr-ui-smart-performance-scanning>
-<vtr-ui-smart-performance-scan-summary *ngIf="(isScanningCompleted || isSubscribed) && !isScanning " [hasSubscribedScanCompleted]="hasSubscribedScanCompleted"
-	[inputIsScanningCompleted]="showSubscribersummary" (backToScan)="changeScanEvent()"  [rating]="rating" [tune]="tune"
-	[boost]="boost" [secure]="secure"></vtr-ui-smart-performance-scan-summary>
+<vtr-ui-smart-performance-scan-summary *ngIf="(isScanningCompleted || isSubscribed) && !isScanning "
+	[hasSubscribedScanCompleted]="hasSubscribedScanCompleted" [inputIsScanningCompleted]="showSubscribersummary"
+	(backToScan)="changeScanEvent()" [rating]="rating" [tune]="tune" [boost]="boost" [secure]="secure">
+</vtr-ui-smart-performance-scan-summary>
