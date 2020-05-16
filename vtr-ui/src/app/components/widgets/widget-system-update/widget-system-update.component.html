@@ -2,11 +2,12 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col">
-				<div class="title" id="widget-system-update-title" role="text">{{'systemUpdates.title' | translate}}</div>
+				<div class="title" id="widget-system-update-title" attr.aria-label="{{title}}" role="text">{{title}}</div>
 				<div class="description"
 					id="widget-system-update-description"
+					attr.aria-label="{{subtitle}}"
 					[dir]="'dir' | translate"
-					[innerHTML]="'dashboard.systemUpdate.subtitle' | translate"></div>
+					[innerHTML]="subtitle"></div>
 				<div class="button-box">
 					<vtr-ui-button linkId="btn-check-for-system-updates"
 						metricsEvent="FeatureClick"
