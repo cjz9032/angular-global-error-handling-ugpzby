@@ -261,30 +261,20 @@ export class UiSmartPerformanceComponent implements OnInit {
 				if (res && res.state === true) {
                     // Subscriber Scan cancel model
 					let spSubscribeCancelModel = this.commonService.getLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted);
-					if(spSubscribeCancelModel) {
-						this.hasSubscribedScanCompleted = false;
-						this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, false);
-					}
-					else {
-						this.hasSubscribedScanCompleted = true;
-					}
-
-					this.isScanning = false;
-					this.rating = res.rating;
-					this.tune = res.result.tune;
-					this.boost = res.result.boost;
-					this.secure = res.result.secure;
-					this.logger.info('changeScanStatus', this.isScanningCompleted + '>>>' + this.isScanning);
-
-					let spForceClose = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartPerformanceForceClose);
-					if(spForceClose) {
-						this.isScanningCompleted = false;
+					if (spSubscribeCancelModel) {
+						// this.hasSubscribedScanCompleted = false;
 						this.showSubscribersummary = false;
-						this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceForceClose, false);
+						// this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, false);
 					}
 					else {
-						this.isScanningCompleted = true;
-						this.showSubscribersummary=true;
+						// this.hasSubscribedScanCompleted = true;
+						this.showSubscribersummary = true;
+						this.isScanning = false;
+						this.rating = res.rating;
+						this.tune = res.result.tune;
+						this.boost = res.result.boost;
+						this.secure = res.result.secure;
+						this.logger.info('changeScanStatus', this.isScanningCompleted + '>>>' + this.isScanning);
 					}
 				}
 			} catch (error) {
@@ -359,6 +349,11 @@ export class UiSmartPerformanceComponent implements OnInit {
 			reason => {
 			}
 		);
+	}
+
+	cancelScanfromScanning() {
+		this.isScanning = false;
+		this.isScanningCompleted = false;
 	}
 
 }

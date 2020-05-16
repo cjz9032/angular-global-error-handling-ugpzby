@@ -41,6 +41,7 @@ export class UiSmartPerformanceScanningComponent implements OnInit, OnChanges {
 	@Input() percent = 0;
 	@Input() isCheckingStatus = false;
 	@Output() sendScanStatus = new EventEmitter();
+	@Output() sendModelStatus = new EventEmitter();
 	public onehundreadFlag = true;
 	public twohundreadFlag = true;
 	public threehundreadFlag = true;
@@ -328,15 +329,15 @@ export class UiSmartPerformanceScanningComponent implements OnInit, OnChanges {
 	}
 
 	async openCancelScanModel() {
-		const modalRef = this.modalService.open(ModalSmartPerformanceCancelComponent, {
+		const modalCancel = this.modalService.open(ModalSmartPerformanceCancelComponent, {
 			backdrop: 'static',
 			centered: true,
 			windowClass: 'cancel-modal'
 		});
-		const response = await modalRef.result
-		if(response) {
-			this.smartPerformanceService.scanningStopped.next(true)
-		}
+		modalCancel.componentInstance.cancelRequested.subscribe(() => {
+			this.sendModelStatus.emit();
+			modalCancel.close();
+		});
 	}
 
 	toggle(id: string): void {

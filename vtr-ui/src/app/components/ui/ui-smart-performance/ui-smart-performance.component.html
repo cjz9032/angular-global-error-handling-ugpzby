@@ -416,10 +416,10 @@
 	</div></div>
 </right-content>
 </vtr-page-layout>
-<vtr-ui-smart-performance-scanning *ngIf="isScanning" (sendScanStatus)="changeScanStatus($event)"
-    	 (stopScanning)="cancelScan()" [scheduleScanData] ="scheduleScanObj"
-	[isScheduleScan] ="isScheduleScan">
+<vtr-ui-smart-performance-scanning *ngIf="isScanning" (sendModelStatus)="cancelScanfromScanning()"
+	[scheduleScanData]="scheduleScanObj" [isScheduleScan]="isScheduleScan">
 </vtr-ui-smart-performance-scanning>
-<vtr-ui-smart-performance-scan-summary *ngIf="(isScanningCompleted || isSubscribed) && !isScanning " [hasSubscribedScanCompleted]="hasSubscribedScanCompleted"
-	[inputIsScanningCompleted]="showSubscribersummary" (backToScan)="changeScanEvent()"  [rating]="rating" [tune]="tune"
-	[boost]="boost" [secure]="secure"></vtr-ui-smart-performance-scan-summary>
+<vtr-ui-smart-performance-scan-summary *ngIf="(isScanningCompleted || isSubscribed) && !isScanning "
+	[hasSubscribedScanCompleted]="hasSubscribedScanCompleted" [inputIsScanningCompleted]="showSubscribersummary"
+	(backToScan)="changeScanEvent()" [rating]="rating" [tune]="tune" [boost]="boost" [secure]="secure">
+</vtr-ui-smart-performance-scan-summary>
