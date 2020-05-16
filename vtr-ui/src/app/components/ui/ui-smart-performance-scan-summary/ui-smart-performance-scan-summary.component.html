@@ -100,15 +100,15 @@
 													</p>
 													<div class="d-flex justify-content-between my-5">
 														<button class="action-button" vtrMetrics
-															metricsItem="btn.signupRepairButton"
+															metricsItem="smartPerformance.subscribeModal"
 															metricsEvent="ItemClick"
 															metricsParent="pages.support.smartPerformance"
 															(click)=openSubscribeModal()>{{'smartPerformance.scanCompletePage.signupRepairButton' |translate }}</button>
-														<div class="desc col pl-5">
+														<!-- <div class="desc col pl-5">
 															<p
 																[innerHTML]="'smartPerformance.scanCompletePage.monthlyPricing' |translate">
 															</p>
-														</div>
+														</div> -->
 													</div>
 													<vtr-ui-accordion [tune]="tune"	[boost]="boost" [secure]="secure" [scannigResultObj]= "scannigResultObj"></vtr-ui-accordion>
 												</div>
@@ -119,12 +119,12 @@
 													</p>
 													<div class="d-flex justify-content-between my-5 w-75">
 														<button *ngIf="!inputIsScanningCompleted" class="action-button" (click)="ScanNowSummary()"
-															vtrMetrics metricsItem="btn.scanAndFix"
+															vtrMetrics metricsItem="smartPerformance.scanNow"
 															metricsEvent="FeatureClick"
 															metricsParent="pages.support.smartPerformance">{{'smartPerformance.subscriberScanHomePage.scanNow' |translate }}</button>
 															
 															<button *ngIf="inputIsScanningCompleted" class="action-button" (click)="BackToSummary()"
-															vtrMetrics metricsItem="btn.backToSmartPerformance"
+															vtrMetrics metricsItem="smartPerformance.scanNow"
 															metricsEvent="FeatureClick"
 															metricsParent="pages.support.smartPerformance">{{'smartPerformance.subscriberScanHomePage.backToHome' |translate }}</button>
 
@@ -205,11 +205,7 @@
 																<li class="list-group-item"
 																	*ngFor="let item of menuItems;let ind=index"
 																	(click)="scanSummaryTime(ind)"
-																	[ngClass]="{'selected-list-item': tabIndex === ind}"
-																	vtrMetrics
-																	metricsItem="scanSummary.filter.{{item.itemName | lowercase}}"
-																	metricsEvent="FeatureClick"
-																	metricsParent="pages.support.smartPerformance">
+																	[ngClass]="{'selected-list-item': tabIndex === ind}">
 																	{{item.itemName}}
 																	<!-- <div class="list-item" >
 																	</div> -->
@@ -223,43 +219,45 @@
 																			*ngIf="!dropDownToggle">{{currentDate}}</span>
 																		<span
 																			*ngIf="tabIndex === 0">{{annualYear}}</span>
+																		<!-- <span
+																			*ngIf="tabIndex === 1">{{quarterlyMonth?.displayName}}</span> -->
 																		<span
-																			*ngIf="tabIndex === 1">{{quarterlyMonth?.displayName}}</span>
-																		<span
-																			*ngIf="tabIndex === 2">{{customDate}}</span>
+																			*ngIf="tabIndex === 1">{{customDate}}</span>
 																		<fa-icon class="drop-down-icon"
-																			*ngIf="dropDownToggle && !isDropDownOpen"
+																			*ngIf="dropDownToggle && !isDropDownOpen && tabIndex === 1"
 																			(click)="openDropDown()"
 																			[icon]="['fas', 'chevron-down']"></fa-icon>
 																		<fa-icon class="drop-down-icon"
-																			*ngIf="dropDownToggle && isDropDownOpen"
+																			*ngIf="dropDownToggle && isDropDownOpen && tabIndex === 1"
 																			(click)="openDropDown()"
 																			[icon]="['fas', 'chevron-up']">
 																		</fa-icon>
 																	</li>
 																</div>
 															</ul>
-															<div *ngIf="isDropDownOpen && tabIndex != 2"
+															<!-- Annual Dropdown menu hidden -->
+															<!-- <div *ngIf="isDropDownOpen && tabIndex != 2"
 															[ngClass]="[tabIndex ===2 ? 'calender-drop' : 'dropdownmenu']">
 															<div *ngIf="tabIndex === 0">
 																<a (click)="anualScanSummary(year)" *ngFor="let year of yearsList"
 																	[ngClass]="{'link-active': year.displayName == annualYear}">
 																	{{year.displayName}}
 																	<br>
-																</a>
-																<!-- <a (click)="anualScanSummary(lastYear)"
-																	[ngClass]="{'link-active':lastYear == annualYear}">{{lastYear}}</a> -->
-															</div>
-															<div *ngIf="tabIndex === 1">
+																</a>																
+															</div> -->
+
+															 <!-- Quarterly option is hidden for current 3.3 release  -->
+
+															<!-- <div *ngIf="tabIndex === 1">
 																<div *ngFor="let menu of quarterlyMenu;let ind=index">
 																	<a (click)="quarterlyScanSummary(menu)"
 																		[ngClass]="{'link-active':menu.key == quarterlyMonth.key}">{{menu.displayName}}</a>
 																</div>
-															</div>
+															</div> -->
 	
-														</div>
-															<div *ngIf="isDropDownOpen && tabIndex === 2" class="calender-dropDown">
-																<div *ngIf="tabIndex === 2">
+														<!-- </div> -->
+															<div *ngIf="isDropDownOpen && tabIndex === 1" class="calender-dropDown">
+																<div *ngIf="tabIndex === 1">
 																	<div class="row mt-1">
 																		<div class="col">
 																			<div class="row custom-from-date py-3"
@@ -441,13 +439,13 @@
 																								{{item.Tune || 0}}
 																							</div>
 																							<div class="scan-status col-2 px-2"
-																								*ngIf="item.status">
+																							*ngIf="item.status === 'C'">
 																								<fa-icon
 																									[icon]="['fas', 'circle']">
 																								</fa-icon>
 																							</div>
 																							<div class="scan-status col-2 px-2"
-																								*ngIf="!item.status">
+																							*ngIf="item.status === 'S'">
 																								<fa-icon
 																									class="red-icon"
 																									[icon]="['fas', 'circle']">
@@ -469,13 +467,13 @@
 																								{{item.Boost || 0}}
 																							</div>
 																							<div class="scan-status col-2 px-2"
-																								*ngIf="item.status">
+																							*ngIf="item.status === 'C'">
 																								<fa-icon
 																									[icon]="['fas', 'circle']">
 																								</fa-icon>
 																							</div>
 																							<div class="scan-status col-2 px-2"
-																								*ngIf="!item.status">
+																							*ngIf="item.status === 'S'">
 																								<fa-icon
 																									class="red-icon"
 																									[icon]="['fas', 'circle']">
@@ -497,13 +495,13 @@
 																								{{item.secure || 0}}
 																							</div>
 																							<div class="scan-status col-2 px-2"
-																								*ngIf="item.status">
+																							*ngIf="item.status === 'C'">
 																								<fa-icon
 																									[icon]="['fas', 'circle']">
 																								</fa-icon>
 																							</div>
 																							<div class="scan-status col-2 px-2"
-																								*ngIf="!item.status">
+																							*ngIf="item.status === 'S'">
 																								<fa-icon
 																									class="red-icon"
 																									[icon]="['fas', 'circle']">
@@ -573,7 +571,7 @@
 												</p> -->
 												<!-- These are commented as per new requirment please dont delete -->
 												<button class="action-button mt-2" vtrMetrics
-													metricsItem="btn.subSignup"
+													metricsItem="smartPerformance.subscribeModal"
 													metricsEvent="FeatureClick"
 													metricsParent="pages.support.smartPerformance"
 													(click)=openSubscribeModal()>{{'smartPerformance.scanCompletePage.recommendedAction.signupButton' |translate }}</button>
@@ -595,11 +593,7 @@
 															<div class="title">{{'smartPerformance.feedbackContainer.title' | translate}}</div>
 															<div class="description">{{'smartPerformance.feedbackContainer.subtitle' | translate}}</div>
 															<div class="pt-5 text-center">
-																<button class="feedback-btn"
-																vtrMetrics
-																metricsEvent="FeatureClick"
-            													metricsParent="pages.support.smartPerformance" metricsItem="sp.feedback" 
-																alt="" type="button"
+																<button class="feedback-btn" alt="" type="button"
 																(click)="onclickFeedback()">{{'smartPerformance.feedbackContainer.buttonText' | translate}}
 																</button>
 															</div>

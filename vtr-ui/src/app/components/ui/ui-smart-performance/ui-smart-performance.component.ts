@@ -92,6 +92,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 					}
 					else {
 						this.isScanning = false;
+						this.showWarning.emit(false)
 					}
 				})
 				.catch(error => {
@@ -103,6 +104,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 			if(res) {
 				this.showWarning.emit(false)
 			}
+			
 		})
 
 	}

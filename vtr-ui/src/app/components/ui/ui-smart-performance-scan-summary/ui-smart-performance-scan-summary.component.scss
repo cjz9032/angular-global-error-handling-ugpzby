@@ -127,7 +127,7 @@ vtr-ui-smart-performance-scan-summary {
 					border-radius: 0.9rem;
 					padding: 1rem;
 					position: absolute;
-					left: 48%;
+					left: 15rem;
 					font-size: 1.2rem;
 					a {
 						font-size: 1.4rem;
@@ -537,11 +537,11 @@ vtr-ui-smart-performance-scan-summary {
                                     p{
                                         font-size: 1.4rem;
                                     }
-                                        fa-icon {
-                                            font-size: 1.4rem;
-                                            margin-right: 0.8rem;
-                                            color: $go_dark;
-                                        }
+									fa-icon {
+										font-size: 1.4rem;
+										margin-right: 0.8rem;
+										color: $go_dark;
+									}
                                 }
                             }
                         }
