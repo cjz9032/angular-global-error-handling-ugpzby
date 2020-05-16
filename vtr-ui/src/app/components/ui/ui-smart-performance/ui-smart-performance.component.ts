@@ -165,7 +165,9 @@ export class UiSmartPerformanceComponent implements OnInit {
 			this.subItems = [];
 		}
 	}
+	//Scan Now event from Summary Page
 	changeScanEvent() {
+		this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, false);
 		if (this.smartPerformanceService.isShellAvailable) {
 			this.smartPerformanceService
 				.getReadiness()
@@ -287,6 +289,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 		}
 	}
 	scanNow() {
+		this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, false);
 		if (this.smartPerformanceService.isShellAvailable) {
 			this.smartPerformanceService
 				.getReadiness()
@@ -354,6 +357,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 	cancelScanfromScanning() {
 		this.isScanning = false;
 		this.isScanningCompleted = false;
+		this.showSubscribersummary = false;
 	}
 
 }

@@ -94,87 +94,13 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	selectedDay: any;
 	selectedNumber: any;
 	yearsList: any[] = [this.getYearObj(0)];// removed last year, "this.getYearObj(-1)" to fix van-17574
-	scanFrequency: any = [
-		this.translate.instant('smartPerformance.scanSettings.scanFrequencyWeek'),
-		this.translate.instant('smartPerformance.scanSettings.scanFrequencyEveryWeek'),
-		this.translate.instant('smartPerformance.scanSettings.scanFrequencyMonth')
-	];
-	days: any = [
-		this.translate.instant('smartPerformance.scanSettings.sun'),
-		this.translate.instant('smartPerformance.scanSettings.mon'),
-		this.translate.instant('smartPerformance.scanSettings.tue'),
-		this.translate.instant('smartPerformance.scanSettings.wed'),
-		this.translate.instant('smartPerformance.scanSettings.thu'),
-		this.translate.instant('smartPerformance.scanSettings.fri'),
-		this.translate.instant('smartPerformance.scanSettings.sat')
-	];
-	dates: any = [
-		'1',
-		'2',
-		'3',
-		'4',
-		'5',
-		'6',
-		'7',
-		'8',
-		'9',
-		'10',
-		'11',
-		'12',
-		'13',
-		'14',
-		'15',
-		'16',
-		'17',
-		'18',
-		'19',
-		'20',
-		'21',
-		'22',
-		'23',
-		'24',
-		'25',
-		'26',
-		'27',
-		'28'
-	];
-	hours: any = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-	mins: any = [
-		'00',
-		'05',
-		'10',
-		'15',
-		'20',
-		'25',
-		'30',
-		'35',
-		'40',
-		'45',
-		'50',
-		'55'
-	];
-	amPm: any = ['AM', 'PM'];
+	
 	isDaySelectionEnable = true;
 	scanToggleValue = true;
 	frequencyValue = 1;
 	dayValue = 0;
 	dateValue = 0;
-	scanTime: any = {
-		hour: this.hours[11],
-		hourId: 11,
-		min: this.mins[0],
-		minId: 0,
-		amPm: this.amPm[0],
-		amPmId: 0
-	};
-	copyScanTime: any = {
-		hour: this.hours[11],
-		hourId: 11,
-		min: this.mins[0],
-		minId: 0,
-		amPm: this.amPm[0],
-		amPmId: 0
-	};
+	 
 	scanScheduleDate: any;
 	issueCount: any = 0;
 	nextScheduleScan: any;
@@ -205,9 +131,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		this.isSubscribed = this.commonService.getLocalStorageValue(
 			LocalStorageKey.IsSmartPerformanceSubscribed
 		);
-		this.selectedFrequency = this.scanFrequency[1];
-		this.selectedDay = this.days[0];
-		this.selectedNumber = this.dates[0];
+	 
 		this.isDaySelectionEnable = false;
 		this.scanScheduleDate = this.selectedDate;
 		this.leftAnimator = '0%';
@@ -467,7 +391,6 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 			this.inputIsScanningCompleted = false;
 		}
 	}
-
 	// scan settings
 	changeScanSchedule() {
 		if (this.scanToggleValue) {
@@ -481,30 +404,6 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 			this.scheduleTab = value;
 		}
 	}
-
-	changeScanFrequency(value) {
-		this.frequencyValue = value;
-		this.scheduleTab = '';
-		this.isDaySelectionEnable = true;
-		// if (value === 0) {
-		// 	this.isDaySelectionEnable = false;
-		// } else {
-		// 	this.isDaySelectionEnable = true;
-		// }
-		this.selectedFrequency = this.scanFrequency[value];
-	}
-	changeScanDay(value) {
-		this.dayValue = value;
-		this.scheduleTab = '';
-		this.selectedDay = this.days[value];
-		this.selectedNumber = this.dates[value];
-	}
-	changeScanDate(value) {
-		this.dateValue = value;
-		this.scheduleTab = '';
-		this.selectedDay = this.days[value];
-		this.selectedNumber = this.dates[value];
-	}
 	saveChangedScanSchedule() {
 		this.scheduleTab = '';
 		this.isChangeSchedule = false;
@@ -517,36 +416,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		this.logger.info('setEnableScanStatus', event.switchValue);
 		this.scanToggleValue = event.switchValue;
 	}
-	saveChangeScanTime() {
-		this.scheduleTab = '';
-		this.scanTime.hour = this.copyScanTime.hour;
-		this.scanTime.min = this.copyScanTime.min;
-		this.scanTime.amPm = this.copyScanTime.amPm;
-		this.scanTime.hourId = this.copyScanTime.hourId;
-		this.scanTime.minId = this.copyScanTime.minId;
-		this.scanTime.amPmId = this.copyScanTime.amPmId;
-	}
-	cancelChangeScanTime() {
-		this.scheduleTab = '';
-		this.copyScanTime.hour = this.scanTime.hour;
-		this.copyScanTime.min = this.scanTime.min;
-		this.copyScanTime.amPm = this.scanTime.amPm;
-		this.copyScanTime.hourId = this.scanTime.hourId;
-		this.copyScanTime.minId = this.scanTime.minId;
-		this.copyScanTime.amPmId = this.scanTime.amPmId;
-	}
-	changeHoursTime(value) {
-		this.copyScanTime.hour = this.hours[value];
-		this.copyScanTime.hourId = value;
-	}
-	changeMinutesTime(value) {
-		this.copyScanTime.min = this.mins[value];
-		this.copyScanTime.minId = value;
-	}
-	changeAmPm(value) {
-		this.copyScanTime.amPm = this.amPm[value];
-		this.copyScanTime.amPmId = value;
-	}
+	 
 	changeScanScheduleDate() {
 		this.scheduleTab = '';
 	}
