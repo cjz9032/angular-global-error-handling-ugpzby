@@ -117,7 +117,7 @@
 													</h3>
 													<p>{{'smartPerformance.subscriberScanHomePage.description' |translate }}
 													</p>
-													<div class="d-flex justify-content-between my-5 w-75">
+													<div class="d-flex justify-content-start my-5 w-75">
 														<button *ngIf="!inputIsScanningCompleted" class="action-button" (click)="ScanNowSummary()"
 															vtrMetrics metricsItem="btn.scanAndFix"
 															metricsEvent="FeatureClick"
@@ -132,7 +132,7 @@
 															<b>{{'smartPerformance.subscriberScanHomePage.mostRecent' |translate }}</b><br>
 															{{mostRecentScan}}
 														</div>
-														<div class="desc">
+														<div class="desc desc2">
 															<b>{{'smartPerformance.subscriberScanHomePage.nextScheduled' |translate }}</b><br>
 															{{nextScheduleScan}}
 														</div>
@@ -399,9 +399,9 @@
 																						</fa-icon>
 																					</div>
 																					<div class="col-7">
-																						<b>{{item.scanruntime | date: 'dd/MM/yyyy'}}</b>
+																						<b>{{item.scanruntime | date: 'MM/dd/yyyy'}}</b>
 																						<span> -
-																							{{item.scanruntime | date: 'h:mm a'}}</span>
+																							{{item.scanruntime | date: 'h:mma'}}</span>
 																					</div>
 																					<div class="col-2">{{item.fixcount}} Fixes 
 																					</div>

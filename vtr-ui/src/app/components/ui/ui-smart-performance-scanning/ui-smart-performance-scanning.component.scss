@@ -50,8 +50,8 @@
 				font-size: 7rem;
 				margin-top: 1rem;
 			}
-        }
-        .progress-div {
+		}
+		.progress-div {
             .progress-title{
                 color: $light !important;
 				font-size: 2.6rem;
@@ -79,22 +79,65 @@
 				}
             }
         }
-        .cancel-check {
-			@media #{$breakpoint_sm}{
-				padding: 1.5rem !important;
-			}
-            .btn-link {
-                color: $light;
-                font-size: 1.6rem;
-                text-transform: uppercase;
-                padding: 0 !important;
-				border-bottom: 0.1rem solid $light;
-				text-decoration: none;
-				@media #{$breakpoint_sm}{
-					font-size: $fontsize_xs2;
+		.progress-bar-div-container {
+			.progress-bar-div {
+				padding: 1rem;
+				border-radius: 1.5rem;
+				background: linear-gradient($gradient_angle_reverse, $main_darkest 0%, $main_darker 100%);
+
+				::ng-deep .mat-progress-bar-fill::after {
+					background: linear-gradient(90deg, $go 0%, $go 100%);
 				}
-            }
-        }
+
+				::ng-deep .mat-progress-bar-buffer {
+					background: $light;
+				}
+
+				::ng-deep .mat-progress-bar {
+					border-radius: 0.4rem;
+				}
+
+				::ng-deep .progress {
+					height: 0.2rem;
+
+					.progress-bar {
+						border-radius: 0.8rem;
+						margin-top: 0;
+
+						@media #{$high-contrast} {
+							background: $high-contrast-blue !important;
+						}
+
+						&.bg-info {
+							background: linear-gradient(90deg, $go_light 0%, $go_dark 100%) !important;
+						}
+					}
+				}
+			}
+		}
+		.cancel-check {
+			color: $light;
+			font-size: 1.3rem;
+			font-weight: $weight_medium;
+			line-height: 1.5rem;
+			text-align: center;
+			text-transform: uppercase;
+			border-bottom: 0.2rem solid $light;
+			padding: 0 0 0.1rem;
+
+			&:hover, &:focus {
+				color: $light;
+				text-decoration: none;
+			}
+
+			&:focus{
+				@include outline-blue;
+			}
+
+			button {
+				cursor: pointer;
+			}
+		}
     }
 
 
@@ -364,7 +407,10 @@
 	padding: 4rem;
 	.title {
 		font-size: 2.5rem;
-		font-weight: 500;
+		font-weight: $weight_semibold;
+		fa-icon {
+			color: $main;
+		}
 	}
 	.card-info{
 		p {
@@ -446,6 +492,7 @@
 			font-size: 1rem;
 			line-height: 1.2rem;
 			margin-bottom: 0.6rem;
+			font-weight: $weight_semibold;
 		}
 		.badge-primary{
 			position: relative;

@@ -2340,7 +2340,7 @@
 		"section2Description": "Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
 		"tunePCPerformance": {
 			"title": "TUNE PC PERFORMANCE",
-			"summaryTitle":"Tune PC Performance",
+			"summaryTitle":"PC Performance",
 			"heading": "Show your computer some extra love",
 			"description": "Even the best computer will benefit from periodic tune-ups. Get a tune-up and get more done with our powerful app.",
 			"tabSet1": {
@@ -2930,7 +2930,7 @@
 		},
 		"feedbackContainer": {
 			"title": "Leave us some feedback",
-			"subtitle": "Tell us what you think about Vantage",
+			"subtitle": "Tell us what you think about Smart Performance",
 			"buttonText": "send feedback",
 			"questions": {
 				"q1": "How difficult or easy was it to use the scan feature?",
