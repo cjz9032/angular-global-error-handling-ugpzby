@@ -2320,7 +2320,7 @@
 		"performanceandSecurityCheckSubTitle": "Let's diagnose and resolve performance and security issues in your computer",
 		"scanButton": "FREE PC SCAN",
 		"section1Heading": "How would you rate your PC Performance?",
-		"section1Description": "PC running slow? Applications taking too long to respond? Windows errors? Malware concerns? Let's diagnose what's causing the problem and fix it.",
+		"section1Description": "PC running slowly? Applications taking too long to respond? Windows errors? Malware concerns? Let's diagnose what's causing the problem and fix it.",
 		"critical": "CRITICAL",
 		"allisWell": "ALL IS WELL",
 		"zero": "0",
@@ -2337,10 +2337,10 @@
 		"tuneUP": "Your PC needs a tune-up",
 		"runningWell": "PC is running well",
 		"section2Heading": "Top-notch PC Performance. Always",
-		"section2Description": "Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+		"section2Description": "Our software can proactively scan your PC 24x7 to find and fix issues as they arise, so that your PC always has top-notch performance.",
 		"tunePCPerformance": {
 			"title": "TUNE PC PERFORMANCE",
-			"summaryTitle":"Tune PC Performance",
+			"summaryTitle":"PC Performance",
 			"heading": "Show your computer some extra love",
 			"description": "Even the best computer will benefit from periodic tune-ups. Get a tune-up and get more done with our powerful app.",
 			"tabSet1": {
@@ -2422,7 +2422,7 @@
 				"tab3Description": "No scareware, built with best practises"
 			}
 		},
-		"startScan": "<b>Ready to start the scan?</b> Let’s diagnose for performance and security issues in your computer.",
+		"startScan": "<b>Ready to start the scan?</b> Let’s diagnose the performance and security issues in your computer.",
 		"subscriptionDetails": {
 			"title": "Subscription Details",
 			"titlebeta":"Lenovo Beta Program",
@@ -2930,7 +2930,7 @@
 		},
 		"feedbackContainer": {
 			"title": "Leave us some feedback",
-			"subtitle": "Tell us what you think about Vantage",
+			"subtitle": "Tell us what you think about Smart Performance",
 			"buttonText": "send feedback",
 			"questions": {
 				"q1": "How difficult or easy was it to use the scan feature?",
