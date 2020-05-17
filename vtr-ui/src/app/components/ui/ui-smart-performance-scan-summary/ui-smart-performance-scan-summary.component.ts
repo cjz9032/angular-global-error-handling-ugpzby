@@ -213,12 +213,12 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		this.leftAnimator = '0%';
 		this.scanSummaryTime(0);
 
-		if (this.isSubscribed) {
-			this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix');
-		}
-		else {
-			this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScan');
-		}
+		// if (this.isSubscribed) {
+		// 	this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix');
+		// } 
+		// else {
+		// 	this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScan');
+		// }
 
 		this.supportService.getMachineInfo().then(async (machineInfo) => {
 			this.systemSerialNumber = machineInfo.serialnumber;
@@ -267,8 +267,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		this.logger.info('ui-smart-performance-scan-summary.getNextScanRunTime', JSON.stringify(payload));
 		try {
 			const res: any = await this.smartPerformanceService.getNextScanRunTime(payload);
-
-			if (res != undefined) {
+			if(res.nextruntime) {
 				this.getNextScanScheduleTime(res.nextruntime);
 			}
 			this.logger.info('ui-smart-performance-scan-summary.getNextScanRunTime.then', JSON.stringify(res));
@@ -614,14 +613,16 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		this.sizeExtension = sizes[i];
 		return parseFloat((mb / Math.pow(k, i)).toFixed(1));
 	}
-	changeNextScanDateValue() {
+	changeNextScanDateValue(nextScanTime) {
 		//console.log("event emitted------------------------------",this.isSubscribed);
-		if (this.isSubscribed) {
-			this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix');
-		}
-		else {
-			this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScan');
-		}
+		this.nextScheduleScan =  nextScanTime.nxtScanDate + ' at ' + nextScanTime.nxtScanHour + ':' + nextScanTime.nxtScanMin + ' ' + nextScanTime.nxtScanAMPM;
+
+		// if (this.isSubscribed) {
+		// 	this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix');
+		// }
+		// else {
+		// 	this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScan');
+		// }
 
 	 }
 
