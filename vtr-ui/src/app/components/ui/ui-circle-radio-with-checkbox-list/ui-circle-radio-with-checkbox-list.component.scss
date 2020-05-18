@@ -34,8 +34,8 @@
 
 					.fa-layers {
 						position: absolute;
-						top: 0.35rem;
-						left: 3.2rem;
+						top: 0.3rem;
+						left: 3.1rem;
 						@media screen and (min-width: 992px) and (max-width: 1199.9px) {
 							left: 6rem;
 						}
@@ -209,10 +209,10 @@
 				span {
 					&.icomoon {
 						display: none;
-						font-size: 6.7rem !important;
+						font-size: 6.8rem !important;
 						background: transparent;
 						position: absolute;
-						left: 2.7rem;
+						left: 2.6rem;
 						top: -0.1rem;
 						&::before {
 							color: $background !important;
