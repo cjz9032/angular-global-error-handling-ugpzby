@@ -1,19 +1,25 @@
-export enum MetricEventName {
-	TaskAction = 'TaskAction',
-	AppAction = 'AppAction',
-	GetEnvInfo = 'GetEnvInfo',
-	AppLoaded = 'AppLoaded',
-	FeatureClick = 'FeatureClick',
-	FirstRun = 'FirstRun',
-	ArticleDisplay = 'ArticleDisplay',
-	PageView = 'PageView',
-	ItemView = 'ItemView',
-	ArticleClick = 'ArticleClick',
-	ArticleView = 'ArticleView',
-	SettingUpdate = 'SettingUpdate',
-	UserFeedback = 'UserFeedback',
-	Unknown = 'Unknown'
-}
+// intentially set the property to be lower case, we are using it as a map object
+export const MetricEventName = {
+	taskaction: 'TaskAction',
+	appaction : 'AppAction',
+	getenvInfo : 'GetEnvInfo',
+	apploaded : 'AppLoaded',
+	itemclick : 'FeatureClick',			// convert itemclick to FeatureClick
+	featureclick : 'FeatureClick',
+	firstrun : 'FirstRun',
+	articlecisplay : 'ArticleDisplay',
+	pageview : 'PageView',
+	itemview : 'ItemView',
+	docclick : 'ArticleClick', // convert docclick => ArticleClick
+	docview : 'ArticleView', // convert docview => ArticleView
+	articleclick : 'ArticleClick',
+	articleview : 'ArticleView',
+	settingupdate : 'SettingUpdate',
+	userfeedback : 'UserFeedback',
+	contentdisplay : 'ContentDisplay',
+	unknown : 'Unknown'
+};
+Object.freeze(MetricEventName);
 
 export enum MetricConst {
 	TaskCheckSystemUpdate = 'SystemUpdate.CheckForUpdates',

@@ -68,6 +68,7 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 			Action: 'Read More',
 			ActionType: 'External',
 			ActionLink: 'https://pcsupport.lenovo.com/lenovodiagnosticsolutions/downloads',
+			isLocal: true
 		});
 		if (!this.commonService.isOnline) {
 			this.hardwareScanSupportCard.Title = this.translate.instant('hardwareScan.offline');

@@ -2,6 +2,8 @@ import { Component, OnInit, AfterViewInit, Input, ViewChild } from '@angular/cor
 import { SupportService } from '../../../services/support/support.service';
 import { CardService } from 'src/app/services/card/card.service';
 import { SupportContentStatus } from 'src/app/enums/support-content-status.enum';
+import { MetricService } from 'src/app/services/metric/metric.service';
+import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
 
 @Component({
 	selector: 'vtr-ui-article-item',
@@ -11,11 +13,13 @@ import { SupportContentStatus } from 'src/app/enums/support-content-status.enum'
 export class UIArticleItemComponent implements OnInit, AfterViewInit {
 
 	SupportContentStatus = SupportContentStatus;
-	@Input() item: any;
 	@Input() index: any;
 	@Input() tabIndex: number;
 	@Input() articleType: string;
+	@Input() order: number | string;
 	@ViewChild('articleItemDiv', { static: true }) articleItemDiv: any;
+
+	private _item: FeatureContent;
 
 	itemCategory = '';
 	ratio = 420 / 430;
@@ -28,8 +32,21 @@ export class UIArticleItemComponent implements OnInit, AfterViewInit {
 	constructor(
 		private supportService: SupportService,
 		public cardService: CardService,
+		private metricsService: MetricService
+
 	) {
 		this.metricsDatas = this.supportService.metricsDatas;
+	}
+
+	@Input() set item(itemValue: any) {
+		this._item = itemValue;
+		if (!itemValue.isLocal) {
+			this.metricsService.sendContentDisplay(itemValue.Id, itemValue.DataSource, this.order as string);
+		}
+	}
+
+	get item() {
+		return this._item;
 	}
 
 	ngOnInit() {
