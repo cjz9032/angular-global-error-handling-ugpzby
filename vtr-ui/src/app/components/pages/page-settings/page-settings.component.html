@@ -181,7 +181,7 @@
 													[checked]="usageType && usageType === usage.value"
 													[value]="usage.value"
 													(click)="saveUsageType(usage.value)"
-													(keypress)="onKeyPress($event)" />
+													name="settings-segment-choose" />
 												<img src="assets/images/welcome/{{usage.image}}" />
 												<label for="settings-segment-choose-{{usage.id}}"
 													class="centered">{{ usage.textKey | translate }}</label>
