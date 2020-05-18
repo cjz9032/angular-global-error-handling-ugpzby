@@ -84,18 +84,20 @@
 						</li>
 
 						<li *ngIf="showLegionAccessory">
-							<a  aria-label="legion accessory"
-							 tabindex="1" (click)="launchAccessory()"
-							  vtrMetrics [metricsItem]="'systemtools_legion_accessory'" metricsEvent="featureClick" metricsParent="Gaming.Dashboard" role="link">
-								<figure id="gaming_dashboard_systemtools_legion_accessory" role="img">
-									<div class="system-icon" title="">
-										<img class="image" [src]="'assets/images/gaming/gaming-accessory.svg'  | svgInline | async" />
-									</div>
-									<figcaption title="{{'gaming.dashboard.device.systemTools.legionAccessory' | translate}}">
-										{{'gaming.dashboard.device.systemTools.legionAccessory' | translate}}
-									</figcaption>
-								</figure>
-							</a>
+							<button class="button-container" (click)="launchAccessory()"
+							 tabindex="1" aria-label="legion accessory central" role="button"
+							 vtrMetrics [metricsItem]="'systemtools_legion_accessory'" metricsEvent="featureClick" metricsParent="Gaming.Dashboard">
+								<a tabindex="-1">
+									<figure id="gaming_dashboard_systemtools_legion_accessory" role="img">
+										<div class="system-icon" title="">
+											<img class="image" [src]="'assets/images/gaming/gaming-accessory.svg'  | svgInline | async" />
+										</div>
+										<figcaption title="{{'gaming.dashboard.device.systemTools.legionAccessory' | translate}}">
+											{{'gaming.dashboard.device.systemTools.legionAccessory' | translate}}
+										</figcaption>
+									</figure>
+								</a>
+							</button>
 						</li>
 					</ul>
 				</div>
