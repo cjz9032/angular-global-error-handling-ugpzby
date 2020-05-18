@@ -132,7 +132,7 @@ xdescribe('SubpageDeviceSettingsDisplayComponent', () => {
 		);
 		component = fixture.componentInstance;
 		commonService = TestBed.get(CommonService);
-		const privacy = { available: true };
+		const privacy = { available: true , status: true};
 		const spy = spyOn(
 			commonService,
 			'getLocalStorageValue'
