@@ -2434,7 +2434,7 @@
 			"activeStatus": "ACTIVE",
 			"inactiveStatus": "INACTIVE",
 			"manageSubscription": "MANAGE SUBSCRIPTION",
-			"manageSubscriptionBeta":"SUBSCRIBE FOR BETA PROGRAM",
+			"manageSubscriptionBeta":"ENABLE FULL FEATURE",
 			"descriptionbeta": "Lenovo is offering pilot program to try Smart Performance feature till July.",
 			"descriptionbeta1": "You are welcomed to join and try the full feature."
 		},
@@ -2632,7 +2632,7 @@
 				"yearlyPricing": "$19.99 / Yr",
 				"monthlyPricing": "LESS THAN $2 PER MONTH.",
 				"longerTerm": "Longer term? Even more savings?",
-				"signupButton": "SUBSCRIBE FOR BETA PROGRAM"
+				"signupButton": "ENABLE FULL FEATURE"
 			},
 			"tunepc": {
 				"accumulatedjunkscannedareas": {
