@@ -37,7 +37,8 @@ vtr-ui-smart-performance-scan-summary {
 				}
 			}
 			.summary-period {
-				width: 62%;
+				//width: 62%;
+				width:auto;
 				padding-top: 0.2rem;
 				@media #{$breakpoint_xl}{
 					width: 100%;

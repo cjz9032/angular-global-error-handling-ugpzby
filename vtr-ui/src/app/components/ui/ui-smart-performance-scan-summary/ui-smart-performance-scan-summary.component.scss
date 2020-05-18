@@ -46,7 +46,8 @@ vtr-ui-smart-performance-scan-summary {
 				}
 			}
 			.summary-period {
-				width: 62%;
+				//width: 62%;
+				width: auto;
 				position: relative;
 				@media #{$breakpoint_xl}{
 					width: 100%;
@@ -99,13 +100,13 @@ vtr-ui-smart-performance-scan-summary {
 						}
 					}
 					.list-selected-item{
-						width: 25rem;
+						width: 21rem;
 						cursor: default;
 						@media #{$breakpoint_lg}{
 							width: 20rem;
 						}
 						@media #{$breakpoint_md}{
-							width: 25rem;
+							width: 21rem;
 						}
 						@media #{$breakpoint_sm}{
 							width: auto;
