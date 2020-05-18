@@ -3,7 +3,8 @@ import {
 	OnInit,
 	Input,
 	Output,
-	EventEmitter
+	EventEmitter,
+	OnChanges
 } from '@angular/core';
 import {
 	NgbModal
@@ -31,7 +32,7 @@ import { TranslateService } from '@ngx-translate/core';
 	templateUrl: './wifi-security.component.html',
 	styleUrls: ['./wifi-security.component.scss']
 })
-export class WifiSecurityComponent extends BaseComponent implements OnInit {
+export class WifiSecurityComponent extends BaseComponent implements OnInit, OnChanges {
 	@Input() data: WifiHomeViewModel;
 	isShowMore = true; // less info, more info
 	isShowMoreLink = true; // show more link
@@ -44,6 +45,11 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 
 	showMoreText = this.translate.instant('security.wifisecurity.container.showmore');
 	showLessText = this.translate.instant('security.wifisecurity.container.showless');
+
+	wsNameText = this.translate.instant('security.wifisecurity.container.name');
+	wsEnabledText = this.translate.instant('security.wifisecurity.container.enable');
+	wsDisabledText = this.translate.instant('security.wifisecurity.container.disable');
+	switchLabel = '';
 
 	networkLevel = [
 		'neutral network',
@@ -65,6 +71,16 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 		if (this.configService) {
 			this.isShowMore = !this.configService.showCHS;
 		}
+		this.changeSwitchLabel();
+	}
+
+	ngOnChanges(): void {
+		this.changeSwitchLabel();
+	}
+
+	changeSwitchLabel() {
+		this.switchLabel = this.data.isLWSEnabled ?
+			this.wsNameText + ' ' + this.wsEnabledText : this.wsNameText + ' ' + this.wsDisabledText;
 	}
 
 	noticeToggleChange() {
