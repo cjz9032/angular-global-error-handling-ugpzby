@@ -74,7 +74,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		this.toggleSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onSmartStandbyNotification(notification);
 		});
-
+		this.updateScheduleComputerModesUIModel();
 	}
 
 	public showSmartStandby() {
@@ -317,7 +317,6 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 							this.isCollapsed = false;
 							this.caption = this.translate.instant('device.deviceSettings.power.smartStandby.description2');
 							this.tooltipText = this.translate.instant('device.deviceSettings.power.smartStandby.oldTooltipText');
-							this.updateScheduleComputerModesUIModel();
 						}
 					}).catch(error => {
 						this.logger.error('getIsAutonomicCapability', error.message);
@@ -351,7 +350,6 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 				this.powerService.getSmartStandbyIsAutonomic()
 					.then((response: boolean) => {
 						this.checkbox = response;
-						this.updateScheduleComputerModesUIModel();
 						this.logger.info('getSmartStandbyIsAutonomic:', response);
 					}).catch(error => {
 						this.logger.error('getSmartStandbyIsAutonomic', error.message);
@@ -366,13 +364,9 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 
 	onCheckboxClicked($event) {
 		this.showDropDown = [false, false, false];
-		this.checkbox = JSON.parse($event.isChecked);
+		this.checkbox = $event.value === this.AUTOMATIC_MODE ? true : false;
 		this.setSmartStandbyIsAutonomic(this.checkbox);
-		// this.setUpScheduleComputerModeRadios();
-		if (this.checkbox) {
-			this.isCollapsed = true
-		}
-
+		this.isCollapsed = true
 	}
 
 
@@ -424,14 +418,14 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 			componentId: 'Automatic mode',
 			label: 'device.deviceSettings.power.smartStandby.automaticMode',
 			value: this.AUTOMATIC_MODE,
-			isChecked: this.checkbox,
+			isChecked: this.checkbox === true ? true : false,
 			isDisabled: !this.smartStandby.isEnabled
 		},
 		{
 			componentId: 'Manual mode',
 			label: 'device.deviceSettings.power.smartStandby.manualMode',
 			value: this.MANUAL_MODE,
-			isChecked: !this.checkbox,
+			isChecked: this.checkbox !== true ? true : false,
 			isDisabled: !this.smartStandby.isEnabled
 		}];
 	}
