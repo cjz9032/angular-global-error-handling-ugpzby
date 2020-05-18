@@ -280,9 +280,9 @@
 																			</div>
 																		</div>
 																		<div class="col date-picker">
-																			<ngb-datepicker *ngIf="isFromDate" [(ngModel)]="selectedfromDate"
+																			<ngb-datepicker *ngIf="isFromDate" [(ngModel)]="selectedfromDate" [displayMonths]="displayMonths" [navigation] = "navigation" [maxDate]="maxDate"
 																				(select)="onDateSelected()"></ngb-datepicker>
-																			<ngb-datepicker *ngIf="!isFromDate" [(ngModel)]="selectedTodate"
+																			<ngb-datepicker *ngIf="!isFromDate" [(ngModel)]="selectedTodate" [displayMonths]="displayMonths" [navigation] = "navigation" [maxDate]="maxDate"
 																				(select)="onDateSelected()"></ngb-datepicker>
 																		</div>
 																	</div>
