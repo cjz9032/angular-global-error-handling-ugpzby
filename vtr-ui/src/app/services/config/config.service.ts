@@ -500,7 +500,8 @@ export class ConfigService {
 
 		const result = await this.canShowSearch();
 		this.updateAvailability(menu, 'app-search', result);
-
+		const smartPerformanceResult = await this.showSmartPerformance();
+		this.updateAvailability(menu, 'smart-performance', smartPerformanceResult);
 
 		this.updateBetaService(menu);
 	}
@@ -517,7 +518,18 @@ export class ConfigService {
 		});
 		return menu;
 	}
-
+	public showSmartPerformance(): Promise<boolean> {
+		return new Promise(resolve => {
+			if (this.hypSettings) {
+				this.hypSettings.getFeatureSetting('SmartPerformance').then((result) => {
+					resolve((result || '').toString().toLowerCase() === 'true');
+				}, (error) => {
+					this.logger.error('ConfigService.showSmartPerformance: promise rejected ', error);
+					resolve(false);
+				});
+			}
+		});
+	}
 	updateBetaMenu(menu: MenuItem[], isBeta: boolean, isUpdateAvailability: boolean) {
 		this.isBetaUser = isBeta;
 		(function findBetaMenu(menus: MenuItem[], betaState: boolean) {
