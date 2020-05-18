@@ -3130,12 +3130,12 @@
         "processFinishedCannotBeCanceled": "由於執行中的程序已完成，因此不再需要取消。",
         "cancelMayTakeSomeTime": "請稍候，視您的系統而定，取消可能需要一些時間。",
         "scanFailureModal": {
-            "title": "Hardware Problem Detected",
-            "problemDetected": "There were detected problems on the following components on your computer:",
-            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
-            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
-            "supportButtonText": "Open Ticket",
-            "recoverBadSectorsButtonText": "Recover Bad Sectors"
+            "title": "偵測到硬體問題",
+            "problemDetected": "偵測到您電腦的如下裝置有問題：",
+            "suggestedActionRbs": "您也可以試著點擊 <b>回復錯誤磁區</b> 回復您的儲存裝置。如果問題持續，請點擊 <b>打開服務票據</b> 取得進一步支援。",
+            "suggestedActionSupport": "如果您的電腦還在保固期間內，請點擊<b>打開服務票據</b>以更換零件。如需進一步的資訊，請前往「Lenovo支援中心」網站。",
+            "supportButtonText": "打開服務票據",
+            "recoverBadSectorsButtonText": "回復錯誤磁區"
         }
     },
     "smartPerformance": {

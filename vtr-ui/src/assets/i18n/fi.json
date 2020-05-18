@@ -3130,12 +3130,12 @@
         "processFinishedCannotBeCanceled": "Käynnissä olevaa prosessia ei tarvitse peruuttaa enää, koska se on suoritettu loppuun.",
         "cancelMayTakeSomeTime": "Odota hetki, peruutus saattaa kestää jonkin aikaa järjestelmästäsi riippuen.",
         "scanFailureModal": {
-            "title": "Hardware Problem Detected",
-            "problemDetected": "There were detected problems on the following components on your computer:",
-            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
-            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
-            "supportButtonText": "Open Ticket",
-            "recoverBadSectorsButtonText": "Recover Bad Sectors"
+            "title": "Laitteisto-ongelma havaittiin",
+            "problemDetected": "Tietokoneesi seuraavissa osissa havaittiin ongelmia:",
+            "suggestedActionRbs": "Voit yrittää korjata tallennuslaitteesi napsauttamalla <b>Korjaa vialliset sektorit</b>. Jos ongelma ei katoa, napsauta <b>Avaa ongelmaraportti</b> saadaksesi tukea.",
+            "suggestedActionSupport": "Jos tietokoneesi takuuaika on vielä voimassa, napsauta <b>Avaa ongelmaraportti</b> saadaksesi varaosan. Lisätietoja saat Lenovon tukisivustolta.",
+            "supportButtonText": "Avaa ongelmaraportti",
+            "recoverBadSectorsButtonText": "Korjaa vialliset sektorit"
         }
     },
     "smartPerformance": {

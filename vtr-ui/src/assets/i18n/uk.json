@@ -3130,12 +3130,12 @@
         "processFinishedCannotBeCanceled": "Активний процес завершився, тому його вже не потрібно скасовувати.",
         "cancelMayTakeSomeTime": "Зачекайте – скасування може зайняти деякий час (залежно від вашої системи).",
         "scanFailureModal": {
-            "title": "Hardware Problem Detected",
-            "problemDetected": "There were detected problems on the following components on your computer:",
-            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
-            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
-            "supportButtonText": "Open Ticket",
-            "recoverBadSectorsButtonText": "Recover Bad Sectors"
+            "title": "Виявлено проблему з устаткуванням",
+            "problemDetected": "Виявлено проблеми з такими компонентами вашого комп’ютера:",
+            "suggestedActionRbs": "Ви можете спробувати відновити накопичувачі, вибравши <b>Відновлення пошкоджених секторів</b>. Якщо проблема не зникає, виберіть <b>Відкрити запит</b> для подальшої підтримки.",
+            "suggestedActionSupport": "Якщо комп'ютер на гарантії, виберіть <b>Відкрити запит</b>, щоб отримати запасну частину. Додаткову інформацію див. на веб-сайті служби підтримки Lenovo.",
+            "supportButtonText": "Відкрити запит",
+            "recoverBadSectorsButtonText": "Відновлення пошкоджених секторів"
         }
     },
     "smartPerformance": {

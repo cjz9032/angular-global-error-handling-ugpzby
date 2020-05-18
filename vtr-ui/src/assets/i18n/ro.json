@@ -3130,12 +3130,12 @@
         "processFinishedCannotBeCanceled": "Procesul care rulează nu mai trebuie anulat, deoarece este finalizat.",
         "cancelMayTakeSomeTime": "Așteptați, anularea poate dura un anumit timp, în funcție de sistemul dumneavoastră.",
         "scanFailureModal": {
-            "title": "Hardware Problem Detected",
-            "problemDetected": "There were detected problems on the following components on your computer:",
-            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
-            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
-            "supportButtonText": "Open Ticket",
-            "recoverBadSectorsButtonText": "Recover Bad Sectors"
+            "title": "A fost detectată o problemă hardware",
+            "problemDetected": "Au fost detectate probleme la următoarele componente ale computerului:",
+            "suggestedActionRbs": "Puteți încerca să vă recuperați dispozitivele de stocare, făcând clic pe <b>Recuperarea sectoarelor defecte</b>. Dacă problema persistă, puteți face clic pe <b>Deschidere tichet</b>, pentru asistență suplimentară.",
+            "suggestedActionSupport": "În cazul în care computerul dumneavoastră este în garanție, faceți clic pe <b>Deschidere tichet</b> pentru a solicita o piesă de schimb. Pentru informații suplimentare, accesați site-ul web de asistență Lenovo.",
+            "supportButtonText": "Deschidere tichet",
+            "recoverBadSectorsButtonText": "Recuperarea sectoarelor defecte"
         }
     },
     "smartPerformance": {

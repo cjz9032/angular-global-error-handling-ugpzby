@@ -15,13 +15,15 @@ export class UiHardwareListCheckboxComponent implements OnInit {
 	@Input() devices: any[];
 
 	constructor(private translate: TranslateService,
-				private hardwareScanService: HardwareScanService) { }
+		private hardwareScanService: HardwareScanService) { }
 
 	ngOnInit() {
 		this.hardwareScanService.setHasDevicesToRecover(this.devices.find(x => x.isSelected));
 	}
 
-	ngOnDestroy() { this.onDeselectAllDevices(); }
+	ngOnDestroy() {
+		this.onDeselectAllDevices();
+	}
 
 	onSelectDevice() {
 		this.hardwareScanService.setHasDevicesToRecover(this.devices.find(x => x.isSelected));
