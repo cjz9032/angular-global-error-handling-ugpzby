@@ -14,7 +14,7 @@
 				[attr.aria-disabled]="item.isDisabled"
 				(click)="onClick($event)"
 				(keydown)="onKeyDown($event, index)"
-				[tabindex]="item.isChecked ? 0 : -1"
+				[tabIndex]="item.isDisabled ?-1:item.isChecked? 0 :-1"
 				vtrMetrics
 				[metricsEvent]="metricsEvent"
 				[metricsItem]="item.componentId"
