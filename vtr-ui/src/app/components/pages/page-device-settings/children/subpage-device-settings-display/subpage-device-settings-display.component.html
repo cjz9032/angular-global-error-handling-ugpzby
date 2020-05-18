@@ -295,23 +295,16 @@
 									[isSwitchVisible]="true"
 									[showChildContent]="true"
 									[leftIcon]="['fal', 'camera']"
-									[rightIcon]="['far', 'question-circle']"
 									(toggleOnOff)="onCameraPrivacyModeToggle($event)"
 									[isSwitchChecked]="cameraPrivacyModeStatus.status"
-									[tooltipText]="'device.deviceSettings.displayCamera.camera.cameraPrivacy.tooltip' | translate"
 									[isDisabled]="shouldCameraSectionDisabled"
-									[showLoaderState]="cameraPrivacyModeStatus.isLoading">
-									<div class="row">
+									[showLoaderState]="cameraPrivacyModeStatus.isLoading"
+									[caption]= "'device.deviceSettings.displayCamera.camera.cameraPrivacy.tooltip' | translate">
+									<div class="row notemar">
 										<div class="col-12 pr-0 pl-5">
-											<div *ngIf="hideNote"
-												class="row permission-note mt-5">
-												<div class="col-12 p-3 d-flex">
-													<div class="col-1 pl-0 text-center">
-														<fa-icon [icon]="['fas', 'exclamation-circle']"
-															class="note-icon">
-														</fa-icon>
-													</div>
-													<div class="col-11 pr-0 pl-2">
+											<div class="row permission-note">
+												<div class="col-12 well d-flex border-bottom-camera-privacy-note" *ngIf="hideNote">
+													<div class="pr-0">
 														<p class="mb-0 mt-auto"
 															id="camera-privacy-mode-note"
 															attr.aria-label="camera-privacy-mode-note">
@@ -327,13 +320,10 @@
 														</button>
 													</div>
 												</div>
-											</div>
-											<div class="row permission-note">
 												<div class="well">
 													<p class="mb-0"
 													id="device-settings-camera-access-enabled-note"
-													[innerHTML] = "'device.deviceSettings.displayCamera.camera.cameraPrivacy.cameraPrivacyAccessNote' | translate">
-												</p>
+													[innerHTML] = "'device.deviceSettings.displayCamera.camera.cameraPrivacy.cameraPrivacyAccessNote' | translate"></p>
 												</div>
 											</div>
 										</div>
@@ -360,13 +350,8 @@
 										<div class="col-12 pr-0 pl-5">
 											<div *ngIf="hideNote"
 												class="row permission-note my-2">
-												<div class="col-12 p-3 d-flex">
-													<div class="col-1 pl-0 text-center">
-														<fa-icon [icon]="['fas', 'exclamation-circle']"
-															class="note-icon">
-														</fa-icon>
-													</div>
-													<div class="col-11 pr-0 pl-2">
+												<div class="col-12 well d-flex">
+													<div class="pr-0">
 														<p class="mb-0 mt-auto"
 															id="device-settings-camera-privacy-note"
 															attr.aria-label="device-settings-camera-privacy-note">
