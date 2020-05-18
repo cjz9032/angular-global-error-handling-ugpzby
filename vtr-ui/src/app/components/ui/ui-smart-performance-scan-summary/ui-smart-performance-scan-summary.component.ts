@@ -504,6 +504,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 			this.sizeExtension = sizes[i];
 			return parseFloat((mb / Math.pow(k, i)).toFixed(1));
 		} else {
+			this.sizeExtension = '';
 			return 0 + ' ' + 'MB'
 		}
 	}
