@@ -64,6 +64,7 @@ import { ThreatLocatorComponent } from '../../components/pages/page-security-wif
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { UiFeatureHeadingComponent } from 'src/app/components/ui/ui-feature-heading/ui-feature-heading.component';
 import { UiFeatureIntroductionComponent } from 'src/app/components/ui/ui-feature-introduction/ui-feature-introduction.component';
+import { UiDescriptionButtonComponent } from 'src/app/components/ui/ui-description-button/ui-description-button.component';
 
 
 @NgModule({
@@ -84,6 +85,7 @@ import { UiFeatureIntroductionComponent } from 'src/app/components/ui/ui-feature
 		UiSecurityStatusbarComponent,
 		UiFeatureHeadingComponent,
 		UiFeatureIntroductionComponent,
+		UiDescriptionButtonComponent,
 		// Pipe
 		SubTransformPipe,
 		DateClassPipe,

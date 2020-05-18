@@ -1,32 +1,24 @@
 <div class="vtr-widget-mcafee mt-4 row justify-content-between mb-5">
-	<div class="col-8">
-		<div class="col-auto px-0 mr-auto">
-			<div class="title pb-3">{{'security.antivirus.common.mcafeePremium' | translate}}</div>
+	<vtr-ui-description-button class="col-12"
+		[vtrMetricEnabled]="install?true:false"
+		metricsEvent="FeatureClick"
+		[metricsItem]="install?'launchMcafee':''"
+		metricsParent="security.antivirus"
+		[id]="install?'sa-av-btn-launchmcafee':'sa-av-btn-getMcafee'"
+		[label]="install?launchMcafeeText:getMcafeeText"
+		[upperCaseLabel]="false"
+		[btnHeight]="true"
+		[rightCol]="'col-4'"
+		(buttonClick)="install?common.launch():common.openMcAfeePurchase('button')">
+		<div class="col min-width-50 flex-100 d-flex flex-column justify-content-center">
+			<div class="row">
+				<div class="col-auto px-0 mr-auto">
+					<div class="title pb-3">{{'security.antivirus.common.mcafeePremium' | translate}}</div>
+				</div>
+				<div class="subtitle">
+					{{'security.antivirus.common.protectedBy' | translate: {protectedName: name } }}
+				</div>
+			</div>
 		</div>
-		<div class="subtitle">
-			{{'security.antivirus.common.protectedBy' | translate: {protectedName: name } }}
-		</div>
-	</div>
-	<div class="col-4 text-right px-0">
-		<vtr-ui-button  *ngIf="install"
-			metricsEvent="FeatureClick"
-			metricsItem="launchMcafee"
-			metricsParent="security.antivirus"
-			[upperCaseLabel]=false
-			[btnHeight]=true
-			(onClick)="common.launch()"
-			[label]="'security.antivirus.mcafee.launch' | translate"
-			[upperCaseLabel]="false"
-			[linkId]="'sa-av-btn-launchmcafee'"></vtr-ui-button>
-		<vtr-ui-button *ngIf="!install"
-			linkId="sa-av-btn-getMcafee"
-			[upperCaseLabel]=false
-			[btnHeight]=true
-			[isDisabled]="isOnline === false"
-			[vtrMetricEnabled]="false"
-			(onClick)="common.openMcAfeePurchase('button')"
-			[isLoading]="common.purchaseBtnIsLoading"
-			[label]="'security.antivirus.mcafee.getMacfee' | translate"
-			[upperCaseLabel]="false"></vtr-ui-button>
-	</div>
+	</vtr-ui-description-button>
 </div>

@@ -18,29 +18,26 @@
 			color: $main_dark;
 			font-size: 1.4rem;
 		}
-		.col-check-location {
+		.description-button {
 			margin: auto;
 			@media #{$mediaquery_md, $mediaquery_X45} {
 				justify-content: center !important;
-				.button-box {
+				::ng-deep vtr-ui-button {
 					width: 100%;
-					::ng-deep .vtr-ui-button {
-						.button-box {
-							.button {
-								width: 100%;
-								max-width: 100%;
-							}
-						}
+					.button {
+						width: 100%;
+						max-width: 100%;
 					}
 				}
 			}
 		}
+	}
 
-		.button-box {
-			padding: 0rem;
-			margin: 0rem;
-			padding-top: 1rem;
-			text-align: left !important;
-		}
+	.button-box {
+		padding: 0rem;
+		margin: 0rem;
+		padding-top: 1rem;
+		text-align: left !important;
 	}
 }
+
