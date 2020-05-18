@@ -25,26 +25,11 @@
 									<h5 id="smart-standby-schedule-computer"
 										attr.aria-label="smart-standby-schedule-computer">
 										{{ 'device.deviceSettings.power.smartStandby.subTitle' | translate }}</h5>
-									<vtr-ui-rounded-rectangle-radio [radioId]="'Automatic mode'"
-										[group]="'smartStandByBtns'"
-										name="nMehod_show"
-										[label]="'device.deviceSettings.power.smartStandby.automaticMode' | translate"
-										[value]="'Automatic mode'"
-										[checked]="checkbox"
-										(change)="onCheckboxClicked(true);isCollapsed = true"
-										(customKeyEvent)="onCheckboxClicked(false);isCollapsed = true"
-										[disabled]="!smartStandby.isEnabled">
-									</vtr-ui-rounded-rectangle-radio>
-									<vtr-ui-rounded-rectangle-radio [radioId]="'Manual mode'"
-										[group]="'smartStandByBtns'"
-										name="fnKeyMehod_show"
-										[label]="'device.deviceSettings.power.smartStandby.manualMode' | translate"
-										[value]="'Manual mode'"
-										[checked]="!checkbox"
-										(change)="onCheckboxClicked(false)"
-										(customKeyEvent)="onCheckboxClicked(true)"
-										[disabled]="!smartStandby.isEnabled">
-									</vtr-ui-rounded-rectangle-radio>
+									<vtr-ui-rounded-rectangle-custom-radio-list
+										[groupName]="'smart-standby-schedule-computer-mode-radio-group'"
+										[radioDetails]="scheduleComputerModesUIModel"
+										(selectionChange)="onCheckboxClicked($event)">
+									</vtr-ui-rounded-rectangle-custom-radio-list>
 								</div>
 							</div>
 							<div *ngIf="!isAutonomicCapability && smartStandby?.isEnabled"
@@ -86,7 +71,7 @@
 									(keydown.enter)="onToggle(timeToggle)"
 									#timeToggle>
 									<div>
-										<div [style.display]="isCollapsed? 'block':'none'"  
+										<div [style.display]="isCollapsed? 'block':'none'"
 											class="collapse-text"
 											role="button"
 											[attr.aria-expanded]="!isCollapsed"
@@ -95,7 +80,7 @@
 											<!-- Expand -->
 											{{'common.ui.clickToChange' | translate | uppercase }}
 										</div>
-										<div [style.display]="isCollapsed? 'none':'block'"  
+										<div [style.display]="isCollapsed? 'none':'block'"
 											class="collapse-text"
 											id="smartstandby-click-to-change-collapse"
 											role="button"

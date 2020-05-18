@@ -24,10 +24,10 @@
 					</div>
 					<div class="mb-3">
 						<div class="col-12 pl-0 d-flex methods-block"
-							role="radiogroup"
 							tabindex="0"
-							aria-label=" Function lock selection list, select using arrow keys" #rad>
-							<div class="mr-5">
+							aria-label=" Function lock selection list, select using arrow keys"
+							#rad>
+							<!-- <div class="mr-5">
 								<vtr-ui-circle-radio-with-checkbox [theme]="'white'"
 									[radioId]="'radio1'"
 									[group]="'radio'"
@@ -51,7 +51,11 @@
 									[textId]="'myDevice-settings-inputAccessories-top-row-functions-thinkpad'"
 									[processLabel]="false">
 								</vtr-ui-circle-radio-with-checkbox>
-							</div>
+							</div> -->
+							<vtr-ui-circle-radio-with-checkbox-list [groupName]="'optimize-microphone-radio-group'"
+								(optionChange)="onFunctionLockRadioChange($event)"
+								[radioDetails]="functionLockUIModel">
+							</vtr-ui-circle-radio-with-checkbox-list>
 						</div>
 						<p class="text mt-4"
 							role="heading"
@@ -64,7 +68,8 @@
 								id="inputAccessory.topRowFunctions.showAdvSettings"
 								(click)="showAdvancedSection = !showAdvancedSection"
 								(keydown.enter)="showAdvancedSection = !showAdvancedSection; rad.focus()"
-								tabindex="0" #adv>
+								tabindex="0"
+								#adv>
 								{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.showAdvSettings' | translate}}
 							</a>
 						</div>
@@ -126,34 +131,15 @@
 							{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.description' | translate}}
 						</div>
 					</div>
-					<div class="pl-2 pr-0 mt-5 methods-block"
-						role="radiogroup"
-						tabindex="0"
-						aria-label="n Method list, select using arrow keys">
-						<vtr-ui-rounded-rectangle-radio [radioId]="'nMehod_show'"
-							[group]="'topRowKeys'"
-							name="nMehod_show"
-							[label]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.radioButton.nMehod' | translate"
-							[value]="'false'"
-							[checked]="!topRowKeyObj.stickyFunStatus"
-							(change)="onChangeKeyType(false)"
-							[isLarge]="true"
-							[disabled]="false"
-							(customKeyEvent)="updateCustomKeyEvents($event, true)">
-						</vtr-ui-rounded-rectangle-radio>
-						<vtr-ui-rounded-rectangle-radio [radioId]="'fnKeyMehod_show'"
-							[group]="'topRowKeys'"
-							name="fnKeyMehod_show"
-							[label]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.radioButton.fnKeyMehod' | translate"
-							[value]="'true'"
-							[checked]="topRowKeyObj.stickyFunStatus"
-							(change)="onChangeKeyType(true)"
-							[isLarge]="true"
-							[disabled]="false"
-							(customKeyEvent)="updateCustomKeyEvents($event, false)">
-						</vtr-ui-rounded-rectangle-radio>
+					<div class="pl-2 pr-0 mt-5 methods-block">
+						<vtr-ui-rounded-rectangle-custom-radio-list [groupName]="'top-row-keys-methods-radio-group'"
+							[radioDetails]="topRowFunctionKeysUIModel"
+							(selectionChange)="onChangeKeyType($event)">
+						</vtr-ui-rounded-rectangle-custom-radio-list>
+
 						<div class="caption mt-4 pl-0"
 							*ngIf="topRowKeyObj.stickyFunStatus">
+
 							<vtr-widget-permission-note
 								[noteTitle]="'device.deviceSettings.displayCamera.camera.note.title' | translate"
 								[description]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.note' | translate"
@@ -170,7 +156,7 @@
 				role="link"
 				id="inputAccessory.topRowFunctions.hideAdvSettings"
 				(click)="showAdvancedSection = !showAdvancedSection"
-				(keydown.enter)="showAdvancedSection = !showAdvancedSection;"
+				(keydown.enter)="showAdvancedSection = !showAdvancedSection; switchFocusToShowAdv()"
 				tabindex="0">
 				{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.hideAdvSettings' | translate}}
 			</a>

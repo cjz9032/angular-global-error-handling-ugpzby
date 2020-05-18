@@ -1823,3 +1823,15 @@ ngb-tooltip-window.schedule-scan.tooltip {
 		max-width: 24.2rem;
 	}
 }
+
+/* intelligent media video playback tooltip */
+.video-playback-group {
+	.vtr-ui-switch-row.white-theme {
+	ngb-tooltip-window.vtr-tooltip.tooltip {
+		.tooltip-inner {
+			max-width: 20rem !important;
+			box-sizing: content-box;
+		}
+	}
+	}
+}

@@ -21,6 +21,7 @@ import { SmartAssistCache } from 'src/app/data-models/smart-assist/smart-assist-
 import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 import { HsaIntelligentSecurityResponse } from 'src/app/data-models/smart-assist/hsa-intelligent-security.model/hsa-intelligent-security.model';
 import { MetricService } from 'src/app/services/metric/metric.service';
+import { UiRoundedRectangleRadioModel } from '../../ui/ui-rounded-rectangle-custom-radio-list/ui-rounded-rectangle-radio-list.model';
 
 @Component({
 	selector: 'vtr-page-smart-assist',
@@ -28,7 +29,6 @@ import { MetricService } from 'src/app/services/metric/metric.service';
 	styleUrls: ['./page-smart-assist.component.scss']
 })
 export class PageSmartAssistComponent implements OnInit, OnDestroy {
-
 	title = 'Smart Assist';
 	back = 'BACK';
 	backarrow = '< ';
@@ -113,6 +113,10 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	private machineType: number;
 	private smartAssistCapability: SmartAssistCapability = undefined;
 	public jumpToSettingsTitle: string;
+	public zeroTouchLockTimersUIModel: Array<UiRoundedRectangleRadioModel> = [];
+	public readonly FAST = '1';
+	public readonly MEDIUM = '2';
+	public readonly SLOW = '3';
 
 	constructor(
 		routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
@@ -173,13 +177,13 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		}
 
 		if (this.windowsObj) {
-			this.cameraAccessChangedHandler = (args:any) => {
+			this.cameraAccessChangedHandler = (args: any) => {
 				if (args && this.intelligentSecurity.isZeroTouchLockFacialRecoVisible) {
 					this.permissionChanged();
 				}
 			}
 			this.windowsObj.addEventListener('accesschanged', this.cameraAccessChangedHandler);
-		} 
+		}
 	}
 
 	ngOnDestroy() {
@@ -187,11 +191,11 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 
 		if (this.isRegisterHPDRpcCallback) {
 			this.smartAssist.unRegisterHPDRpcCallback()
-			.then((response) => {
-				if (response === 0) {//response is the count of the registered callback_event
-					this.logger.info('UnRegister HPD RPC Callback done.');
-				}
-			})
+				.then((response) => {
+					if (response === 0) {//response is the count of the registered callback_event
+						this.logger.info('UnRegister HPD RPC Callback done.');
+					}
+				})
 		}
 
 		if (this.windowsObj) {
@@ -236,7 +240,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'voice');
 				this.checkMenuItemsLength();
 			}
-			if (!this.smartAssistCapability.isIntelligentMediaSupported.available  && !this.superResolution.available) {
+			if (!this.smartAssistCapability.isIntelligentMediaSupported.available && !this.superResolution.available) {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'media');
 				this.checkMenuItemsLength();
 			}
@@ -477,6 +481,10 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			}
 			this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
 			this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
+			//if (this.intelligentSecurity.isZeroTouchLockVisible && this.zeroTouchLockShowAdvancedSection) {
+			this.setUpZeroTouchLockTimersUIModel();
+			//}
+
 			this.logger.info('PageSmartAssistComponent.Promise.initZeroTouchLock()', this.intelligentSecurity);
 		}).catch(error => {
 			this.logger.error('error in PageSmartAssistComponent.Promise.initZeroTouchLock()', error.message);
@@ -534,7 +542,10 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			});
 	}
 
-	public onZeroTouchLockTimerChange(event: any, value: string) {
+
+
+	public onZeroTouchLockTimerChange($event) {
+		let value = $event.value;
 		this.intelligentSecurity.autoScreenLockTimer = value;
 
 		this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
@@ -543,7 +554,9 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		this.smartAssist.setSelectedLockTimer(value)
 			.then((isSuccess: boolean) => {
 				this.logger.info(`onZeroTouchLockTimerChange.setSelectedLockTimer ${isSuccess}`, value);
+				// this.setUpZeroTouchLockTimerRadioDetails();
 			});
+
 	}
 
 	public onZeroTouchLockFacialRecoChange($event: boolean) {
@@ -615,12 +628,12 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 						if (!this.isRegisterHPDRpcCallback) {
 							if (this.zeroTouchPresenceLeaveDistanceCapability || this.zeroTouchPresenceLeaveDistanceAutoAdjustCapability) {
 								this.smartAssist.registerHPDRpcCallback()
-								.then((response) => {
-									if (response === 1) { //response is the count of the registered callback_event
-										this.isRegisterHPDRpcCallback = true;
-										this.logger.info('Register HPD RPC Callback done.');
-									}
-								})
+									.then((response) => {
+										if (response === 1) { //response is the count of the registered callback_event
+											this.isRegisterHPDRpcCallback = true;
+											this.logger.info('Register HPD RPC Callback done.');
+										}
+									})
 							}
 						}
 					});
@@ -911,4 +924,34 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			this.jumpToSettingsTitle = '';
 		}
 	}
+
+
+	setUpZeroTouchLockTimersUIModel() {
+		let uniqueName = 'zero-Touch-Lock';
+		// let disabled = !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled);
+		this.zeroTouchLockTimersUIModel = [{
+			componentId: 'autoScreenLockTimer_fast',
+			label: 'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.fast',
+			value: this.FAST,
+			isChecked: this.intelligentSecurity.autoScreenLockTimer === this.FAST,
+			isDisabled: !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled)
+		},
+		{
+			componentId: 'autoScreenLockTimer_medium',
+			label: 'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.medium',
+			value: this.MEDIUM,
+			isChecked: this.intelligentSecurity.autoScreenLockTimer === this.MEDIUM,
+			isDisabled: !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled)
+		},
+		{
+			componentId: 'autoScreenLockTimer_slow',
+			label: 'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.slow',
+			value: this.SLOW,
+			isChecked: this.intelligentSecurity.autoScreenLockTimer === this.SLOW,
+			isDisabled: !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled)
+		}];
+	}
+
 }
+
+

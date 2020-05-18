@@ -5,6 +5,7 @@ import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { CardService, CardOverlayTheme } from 'src/app/services/card/card.service';
 import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
 import { DeviceService } from 'src/app/services/device/device.service';
+import { MetricService } from 'src/app/services/metric/metric.service';
 
 @Component({
 	selector: 'vtr-container-card',
@@ -36,6 +37,9 @@ export class ContainerCardComponent implements OnInit {
 			this.overlayThemeDefaultIsDark = !itemValue.OverlayTheme || itemValue.OverlayTheme !== CardOverlayTheme.Light
 			this.overlayThemeDefaultIsLight = !itemValue.OverlayTheme || itemValue.OverlayTheme !== CardOverlayTheme.Dark
 			this._item = itemValue;
+			if (!itemValue.isLocal) {
+				this.metricsService.sendContentDisplay(itemValue.Id, itemValue.DataSource, this.order as string);
+			}
 		} else {
 			this._item = new FeatureContent();
 		}
@@ -48,7 +52,8 @@ export class ContainerCardComponent implements OnInit {
 	constructor(
 		private commonService: CommonService,
 		private cardService: CardService,
-		public deviceService: DeviceService
+		public deviceService: DeviceService,
+		private metricsService: MetricService
 	) { }
 
 	ngOnInit() {

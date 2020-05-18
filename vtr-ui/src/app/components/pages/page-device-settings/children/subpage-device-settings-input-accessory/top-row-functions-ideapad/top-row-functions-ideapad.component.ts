@@ -7,6 +7,7 @@ import { MetricService } from '../../../../../../services/metric/metric.service'
 import { CommonService } from '../../../../../../services/common/common.service';
 import { LocalStorageKey } from '../../../../../../enums/local-storage-key.enum';
 import { StringBooleanEnum } from '../../../../../../data-models/common/common.interface';
+import { UiCircleRadioWithCheckBoxListModel } from 'src/app/components/ui/ui-circle-radio-with-checkbox-list/ui-circle-radio-with-checkbox-list.model';
 
 @Component({
 	selector: 'vtr-top-row-functions-ideapad',
@@ -25,6 +26,7 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 	fnkey$: Observable<boolean>;
 	private fnLockStatus$: Observable<FnLockStatus>;
 	private fnLockSubject$: Subject<FnLockStatus> = new Subject<FnLockStatus>();
+	public functionLockUIModel: Array<UiCircleRadioWithCheckBoxListModel> = [];
 
 	constructor(
 		private topRowFunctionsIdeapadService: TopRowFunctionsIdeapadService,
@@ -54,7 +56,7 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 						const metricsData = {
 							ItemParent: 'Device.MyDeviceSettings',
 							ItemName: 'TopRowFunctionsIdeapad',
-							ItemParam: {machineFamilyName},
+							ItemParam: { machineFamilyName },
 							ItemValue: KeyType.HOTKEY
 						};
 						this.metrics.sendMetrics(metricsData);
@@ -75,7 +77,7 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 						const metricsData = {
 							ItemParent: 'Device.MyDeviceSettings',
 							ItemName: 'TopRowFunctionsIdeapad',
-							ItemParam: {machineFamilyName},
+							ItemParam: { machineFamilyName },
 							ItemValue: KeyType.FNKEY
 						};
 						this.metrics.sendMetrics(metricsData);
@@ -94,6 +96,8 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 				concatMap(() => this.topRowFunctionsIdeapadService.fnLockStatus)
 			)
 			.subscribe(res => this.fnLockSubject$.next(res));
+
+		this.updateFunctionLockUIModel();
 	}
 
 	ngOnDestroy() {
@@ -102,4 +106,47 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 		}
 	}
 
+	updateFunctionLockUIModel() {
+		this.functionLockUIModel = [];
+
+		this.hotkey$.subscribe(value => {
+			this.functionLockUIModel.push({
+				componentId: `radio1`,
+				label: `device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.sFunKey`,
+				value: 'special-key',
+				isChecked: value,
+				isDisabled: false,
+				processIcon: true,
+				customIcon: 'Special-function',
+				hideIcon: true,
+				processLabel: true,
+			});
+		});
+
+		this.fnkey$.subscribe(value => {
+			this.functionLockUIModel.push({
+				componentId: `radio2`,
+				label: `device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.fnKey`,
+				value: 'function-key',
+				isChecked: value,
+				isDisabled: false,
+				processIcon: true,
+				customIcon: 'F1-F12-funciton',
+				hideIcon: true,
+				processLabel: true,
+			});
+		});
+	}
+
+
+	onFunctionLockRadioChange($event: UiCircleRadioWithCheckBoxListModel) {
+		if ($event) {
+			const componentId = $event.componentId.toLowerCase();
+			if (componentId === 'radio1') {
+				this.update$.next(this.keyType.HOTKEY);
+			} else if (componentId === 'radio2') {
+				this.update$.next(this.keyType.FNKEY);
+			}
+		}
+	}
 }

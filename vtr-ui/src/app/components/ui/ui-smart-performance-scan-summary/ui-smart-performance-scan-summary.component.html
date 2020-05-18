@@ -104,11 +104,11 @@
 															metricsEvent="ItemClick"
 															metricsParent="pages.support.smartPerformance"
 															(click)=openSubscribeModal()>{{'smartPerformance.scanCompletePage.signupRepairButton' |translate }}</button>
-														<div class="desc col pl-5">
+														<!-- <div class="desc col pl-5">
 															<p
 																[innerHTML]="'smartPerformance.scanCompletePage.monthlyPricing' |translate">
 															</p>
-														</div>
+														</div> -->
 													</div>
 													<vtr-ui-accordion [tune]="tune"	[boost]="boost" [secure]="secure" [scannigResultObj]= "scannigResultObj"></vtr-ui-accordion>
 												</div>
@@ -117,7 +117,7 @@
 													</h3>
 													<p>{{'smartPerformance.subscriberScanHomePage.description' |translate }}
 													</p>
-													<div class="d-flex justify-content-between my-5 w-75">
+													<div class="d-flex justify-content-start my-5 w-75">
 														<button *ngIf="!inputIsScanningCompleted" class="action-button" (click)="ScanNowSummary()"
 															vtrMetrics metricsItem="smartPerformance.scanNow"
 															metricsEvent="FeatureClick"
@@ -132,7 +132,7 @@
 															<b>{{'smartPerformance.subscriberScanHomePage.mostRecent' |translate }}</b><br>
 															{{mostRecentScan}}
 														</div>
-														<div class="desc">
+														<div class="desc desc2">
 															<b>{{'smartPerformance.subscriberScanHomePage.nextScheduled' |translate }}</b><br>
 															{{nextScheduleScan}}
 														</div>
@@ -219,43 +219,45 @@
 																			*ngIf="!dropDownToggle">{{currentDate}}</span>
 																		<span
 																			*ngIf="tabIndex === 0">{{annualYear}}</span>
+																		<!-- <span
+																			*ngIf="tabIndex === 1">{{quarterlyMonth?.displayName}}</span> -->
 																		<span
-																			*ngIf="tabIndex === 1">{{quarterlyMonth?.displayName}}</span>
-																		<span
-																			*ngIf="tabIndex === 2">{{customDate}}</span>
+																			*ngIf="tabIndex === 1">{{customDate}}</span>
 																		<fa-icon class="drop-down-icon"
-																			*ngIf="dropDownToggle && !isDropDownOpen"
+																			*ngIf="dropDownToggle && !isDropDownOpen && tabIndex === 1"
 																			(click)="openDropDown()"
 																			[icon]="['fas', 'chevron-down']"></fa-icon>
 																		<fa-icon class="drop-down-icon"
-																			*ngIf="dropDownToggle && isDropDownOpen"
+																			*ngIf="dropDownToggle && isDropDownOpen && tabIndex === 1"
 																			(click)="openDropDown()"
 																			[icon]="['fas', 'chevron-up']">
 																		</fa-icon>
 																	</li>
 																</div>
 															</ul>
-															<div *ngIf="isDropDownOpen && tabIndex != 2"
+															<!-- Annual Dropdown menu hidden -->
+															<!-- <div *ngIf="isDropDownOpen && tabIndex != 2"
 															[ngClass]="[tabIndex ===2 ? 'calender-drop' : 'dropdownmenu']">
 															<div *ngIf="tabIndex === 0">
 																<a (click)="anualScanSummary(year)" *ngFor="let year of yearsList"
 																	[ngClass]="{'link-active': year.displayName == annualYear}">
 																	{{year.displayName}}
 																	<br>
-																</a>
-																<!-- <a (click)="anualScanSummary(lastYear)"
-																	[ngClass]="{'link-active':lastYear == annualYear}">{{lastYear}}</a> -->
-															</div>
-															<div *ngIf="tabIndex === 1">
+																</a>																
+															</div> -->
+
+															 <!-- Quarterly option is hidden for current 3.3 release  -->
+
+															<!-- <div *ngIf="tabIndex === 1">
 																<div *ngFor="let menu of quarterlyMenu;let ind=index">
 																	<a (click)="quarterlyScanSummary(menu)"
 																		[ngClass]="{'link-active':menu.key == quarterlyMonth.key}">{{menu.displayName}}</a>
 																</div>
-															</div>
+															</div> -->
 	
-														</div>
-															<div *ngIf="isDropDownOpen && tabIndex === 2" class="calender-dropDown">
-																<div *ngIf="tabIndex === 2">
+														<!-- </div> -->
+															<div *ngIf="isDropDownOpen && tabIndex === 1" class="calender-dropDown">
+																<div *ngIf="tabIndex === 1">
 																	<div class="row mt-1">
 																		<div class="col">
 																			<div class="row custom-from-date py-3"
@@ -395,9 +397,9 @@
 																						</fa-icon>
 																					</div>
 																					<div class="col-7">
-																						<b>{{item.scanruntime | date: 'dd/MM/yyyy'}}</b>
+																						<b>{{item.scanruntime | date: 'MM/dd/yyyy'}}</b>
 																						<span> -
-																							{{item.scanruntime | date: 'h:mm a'}}</span>
+																							{{item.scanruntime | date: 'h:mma'}}</span>
 																					</div>
 																					<div class="col-2">{{item.fixcount}} Fixes 
 																					</div>
@@ -437,13 +439,13 @@
 																								{{item.Tune || 0}}
 																							</div>
 																							<div class="scan-status col-2 px-2"
-																								*ngIf="item.status">
+																							*ngIf="item.status === 'C'">
 																								<fa-icon
 																									[icon]="['fas', 'circle']">
 																								</fa-icon>
 																							</div>
 																							<div class="scan-status col-2 px-2"
-																								*ngIf="!item.status">
+																							*ngIf="item.status === 'S'">
 																								<fa-icon
 																									class="red-icon"
 																									[icon]="['fas', 'circle']">
@@ -465,13 +467,13 @@
 																								{{item.Boost || 0}}
 																							</div>
 																							<div class="scan-status col-2 px-2"
-																								*ngIf="item.status">
+																							*ngIf="item.status === 'C'">
 																								<fa-icon
 																									[icon]="['fas', 'circle']">
 																								</fa-icon>
 																							</div>
 																							<div class="scan-status col-2 px-2"
-																								*ngIf="!item.status">
+																							*ngIf="item.status === 'S'">
 																								<fa-icon
 																									class="red-icon"
 																									[icon]="['fas', 'circle']">
@@ -493,13 +495,13 @@
 																								{{item.secure || 0}}
 																							</div>
 																							<div class="scan-status col-2 px-2"
-																								*ngIf="item.status">
+																							*ngIf="item.status === 'C'">
 																								<fa-icon
 																									[icon]="['fas', 'circle']">
 																								</fa-icon>
 																							</div>
 																							<div class="scan-status col-2 px-2"
-																								*ngIf="!item.status">
+																							*ngIf="item.status === 'S'">
 																								<fa-icon
 																									class="red-icon"
 																									[icon]="['fas', 'circle']">

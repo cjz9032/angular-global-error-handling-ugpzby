@@ -1162,7 +1162,7 @@
                             "moreContent": {
                                 "desc1": "a. În scenariile de încărcare a aplicaţiilor Office, a Windows Update, a filmelor online sau a luminilor de sistem, sistemul poate fi silenţios. În timp ce în scenariile normale pentru jocuri, computerul are o performanţă mai bună.",
                                 "desc2": "b. În cazul scenariilor intensive pentru jocuri, sistemul poate trece la modul „Performanță extremă”. În acest caz, temperatura suprafeței computerului și zgomotul ventilatorului pot crește.",
-                                "desc3": "c. Atunci când energia bateriei este mai mică de 30%, sistemul trece automat în modul „Economisire baterie”."
+                                "desc3": "c. Atunci când energia bateriei este mai mică de 30%, sistemul trece automat în modul „Economisirea bateriei”."
                             }
                         }
                     },
@@ -1649,7 +1649,8 @@
                     "url": "Accesați setările de confidențialitate Windows",
                     "cameraPrivacy": {
                         "title": "Modul de confidențialitate a camerei",
-                        "tooltip": "Camera nu mai trimite imagini live când setarea confidențialitate este activată. Activaţi această setare numai când nu doriţi să partajaţi imaginile cu celelalte persoane în timpul unui apel video."
+                        "tooltip": "Camera nu mai trimite imagini live când setarea confidențialitate este activată. Activaţi această setare numai când nu doriţi să partajaţi imaginile cu celelalte persoane în timpul unui apel video.",
+                        "cameraPrivacyAccessNote": "Accesați pagina <b>Setări Windows → Confidențialitate → Cameră</b> și asigurați-vă că următoarele două opțiuni sunt activate:<br>&bull; <b>Permiteți aplicațiilor desktop să vă acceseze camera</b><br>&bull; și <b>Lenovo Vantage</b>, din secțiunea „Selectați aplicațiile (Microsoft Store) care vă pot accesa camera”"
                     },
                     "camera": {
                         "title": "Cameră",

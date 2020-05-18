@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
-import { MetricConst } from 'src/app/enums/metrics.enum';
-import { AppAction, GetEnvInfo, AppLoaded, FirstRun, TaskAction, ArticleView } from 'src/app/services/metric/metrics.model';
+import { MetricConst, MetricEventName as EventName } from 'src/app/enums/metrics.enum';
+import { AppAction, GetEnvInfo, AppLoaded, FirstRun, TaskAction, ArticleView, ContentDisplay } from 'src/app/services/metric/metrics.model';
 import { DurationCounterService } from 'src/app/services/timer/timer-service-ex.service';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { MetricHelper } from './metrics.helper';
 import { CommonService } from '../common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { ActivatedRoute } from '@angular/router';
 
 declare var Windows;
 
@@ -28,6 +29,7 @@ export class MetricService {
 		private timerService: DurationCounterService,
 		hypothesisService: HypothesisService,
 		private commonService: CommonService,
+		private activeRouter: ActivatedRoute
 	) {
 		this.metricsClient = this.shellService.getMetrics();
 		this.isFirstLaunch = !this.commonService.getLocalStorageValue(LocalStorageKey.HadRunApp);
@@ -212,6 +214,25 @@ export class MetricService {
 		this.metricsClient.sendAsync(articleView);
 	}
 
+	public getPageName() {
+		return  this.activeRouter.snapshot.data.pageName
+		|| this.activeRouter.snapshot.root.firstChild.data.pageName
+		|| this.activeRouter.snapshot.root.firstChild.firstChild.data.pageName
+		|| MetricConst.Unknown
+	}
+
+	public sendContentDisplay(itemID: string, dataSource: string, position: string) {
+		const contentDisplay: ContentDisplay = {
+			ItemType: EventName.contentdisplay,
+			ItemID: itemID,
+			DataSource: this.toLower(dataSource),
+			Position: position,
+			ItemParent: this.getPageName(),
+		}
+
+		this.metricsClient.sendAsync(contentDisplay);
+	}
+
 	private handleAppLoadedEvent() {
 		if (this.hasSendAppLoadedEvent) {
 			return;	// send the initialzation metrics once at one session
@@ -267,5 +288,9 @@ export class MetricService {
 	public async HandleCheckWelcomeNeeded(welcomeNeeded: boolean) {
 		this.welcomeNeeded = welcomeNeeded;
 		this.sendMetricsAfterPageLoad();
+	}
+
+	private toLower(content: string) {
+		return content && content.toLowerCase();
 	}
 }

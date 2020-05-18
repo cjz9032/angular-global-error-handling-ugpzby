@@ -27,7 +27,7 @@
 										<div class="d-flex justify-content-center mb-4">
 											<button class="action-button" (click)="scanNow()"
 											vtrMetrics
-											metricsItem="smartPerformance.FreeScan"
+											metricsItem="btn.freePCScan"
 											metricsEvent="FeatureClick"
 											metricsParent="pages.support.smartPerformance"
 											>{{'smartPerformance.scanButton' |translate }}</button>
@@ -133,23 +133,23 @@
 														<div class="icon-bar my-5">
 															<ul class="listed-task-icons d-flex justify-content-between align-items-center py-3">
 																<li class="icon-box d-flex justify-content-center align-items-center py-3">
-																	<div class="icon icon-router"></div>
+																	<div class="icon icon-icon-e-junk"></div>
 																	<p>{{'smartPerformance.boostInternetPerformance.tabSet1.tab1' |translate }}</p>
 																</li>
 																<li class="icon-box d-flex justify-content-center align-items-center py-3">
-																	<div class="icon icon-icon-browser-settings"></div>
+																	<div class="icon icon-router"></div>
 																	<p>{{'smartPerformance.boostInternetPerformance.tabSet1.tab2' |translate }}</p>
 																</li>
 																<li class="icon-box d-flex justify-content-center align-items-center py-3">
-																	<div class="icon icon-visible-to-online-trackers"></div>
+																	<div class="icon icon-icon-browser-security"></div>
 																	<p>{{'smartPerformance.boostInternetPerformance.tabSet1.tab3' |translate }}</p>
 																</li>
 																<li class="icon-box d-flex justify-content-center align-items-center py-3">
-																	<div class="icon icon-wifi"></div>
+																	<div class="icon icon-visible-to-online-trackers"></div>
 																	<p>{{'smartPerformance.boostInternetPerformance.tabSet1.tab4' |translate }}</p>
 																</li>
 																<li class="icon-box d-flex justify-content-center align-items-center py-3">
-																	<div class="icon icon-icon-e-junk"></div>
+																	<div class="icon icon-wifi"></div>
 																	<p>{{'smartPerformance.boostInternetPerformance.tabSet1.tab5' |translate }}</p>
 																</li>
 															</ul>
@@ -278,7 +278,7 @@
 											<div class="contents">
 												<button class="action-button btn-block" (click)="scanNow()"
 												vtrMetrics
-												metricsItem="smartPerformance.FreeScan"
+												metricsItem="btn.freePCScan"
 												metricsEvent="FeatureClick"
 												metricsParent="pages.support.smartPerformance">{{'smartPerformance.scanButton' |translate }}</button>
 												<div class="description">
@@ -338,11 +338,11 @@
 											vtrMetrics
 											metricsEvent="FeatureClick"
 											metricsParent="pages.support.smartPerformance"
-											metricsItem="smartPerformance.signupRepairButton"
+											metricsItem="btn.signupRepairButton"
 											>{{'smartPerformance.scanCompletePage.signupRepairButton' |translate }}</button>
 											<div class="desc">
 												<p>{{'smartPerformance.scanCompletePage.monthlyPricing' |translate }}<a href="#" class="para-link" vtrMetrics
-													metricsItem="smartPerformance.MonthlyPricing"
+													metricsItem="btn.monthlyPricing"
 													metricsParent="pages.support.smartPerformance"
 													metricsEvent="FeatureClick">Learn more</a></p>
 											</div>
@@ -394,7 +394,10 @@
 													<div class="title">{{'smartPerformance.feedbackContainer.title' | translate}}</div>
 													<div class="description">{{'smartPerformance.feedbackContainer.subtitle' | translate}}</div>
 													<div class="pt-5 text-center">
-														<button class="feedback-btn" alt="" type="button"
+														<button class="feedback-btn"
+														vtrMetrics
+														metricsEvent="FeatureClick"
+            											metricsParent="pages.support.smartPerformance" metricsItem="sp.feedback" alt="" type="button"
 														(click)="onclickFeedback()">{{'smartPerformance.feedbackContainer.buttonText' | translate}}
 														</button>
 													</div>
@@ -413,10 +416,10 @@
 	</div></div>
 </right-content>
 </vtr-page-layout>
-<vtr-ui-smart-performance-scanning *ngIf="isScanning" (sendScanStatus)="changeScanStatus($event)"
-    	 (stopScanning)="cancelScan()" [scheduleScanData] ="scheduleScanObj"
-	[isScheduleScan] ="isScheduleScan">
+<vtr-ui-smart-performance-scanning *ngIf="isScanning" (sendModelStatus)="cancelScanfromScanning()"
+	[scheduleScanData]="scheduleScanObj" [isScheduleScan]="isScheduleScan">
 </vtr-ui-smart-performance-scanning>
-<vtr-ui-smart-performance-scan-summary *ngIf="(isScanningCompleted || isSubscribed) && !isScanning " [hasSubscribedScanCompleted]="hasSubscribedScanCompleted"
-	[inputIsScanningCompleted]="showSubscribersummary" (backToScan)="changeScanEvent()"  [rating]="rating" [tune]="tune"
-	[boost]="boost" [secure]="secure"></vtr-ui-smart-performance-scan-summary>
+<vtr-ui-smart-performance-scan-summary *ngIf="(isScanningCompleted || isSubscribed) && !isScanning "
+	[hasSubscribedScanCompleted]="hasSubscribedScanCompleted" [inputIsScanningCompleted]="showSubscribersummary"
+	(backToScan)="changeScanEvent()" [rating]="rating" [tune]="tune" [boost]="boost" [secure]="secure">
+</vtr-ui-smart-performance-scan-summary>

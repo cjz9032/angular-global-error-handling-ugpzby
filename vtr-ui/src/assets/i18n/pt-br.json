@@ -1162,7 +1162,7 @@
                             "moreContent": {
                                 "desc1": "a. Nos cenários de escritório, atualização do Windows, filmes on-line ou de carregamento leve do sistema, o sistema pode ficar silencioso. Enquanto em cenários normais de jogos, ele tem melhor desempenho.",
                                 "desc2": "b. Ao jogar jogos pesados, o sistema provavelmente pode alternar para o modo \"Desempenho extremo\". Nesse caso, a temperatura na superfície do computador e o ruído do ventilador podem aumentar.",
-                                "desc3": "c. Quando a capacidade da bateria é inferior a 30%, o sistema muda automaticamente para o modo \"Economia de bateria\"."
+                                "desc3": "c. Quando a capacidade da bateria é inferior a 30%, o sistema muda automaticamente para o modo \"Economia da bateria\"."
                             }
                         }
                     },
@@ -1649,7 +1649,8 @@
                     "url": "Ir para as configurações de privacidade do Windows",
                     "cameraPrivacy": {
                         "title": "Modo de privacidade da câmera",
-                        "tooltip": "A câmera interrompe o envio de imagens ao vivo quando a configuração de privacidade está ativada. Ative essa configuração somente quando não desejar compartilhar suas imagens durante chamadas com vídeo."
+                        "tooltip": "A câmera interrompe o envio de imagens ao vivo quando a configuração de privacidade está ativada. Ative essa configuração somente quando não desejar compartilhar suas imagens durante chamadas com vídeo.",
+                        "cameraPrivacyAccessNote": "Vá para a página <b>Configurações do Windows → Privacidade → Câmera</b> e verifique se as duas opções a seguir estão ativadas:<br>&bull; <b>Permitir que aplicativos de desktop acessem sua câmera</b><br>&bull; <b>Lenovo Vantage</b> em \"Escolha quais aplicativos (Microsoft Store) podem acessar sua câmera\""
                     },
                     "camera": {
                         "title": "Câmera",

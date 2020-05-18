@@ -1649,7 +1649,8 @@
                     "url": "Gå til Windows-indstillinger for beskyttelse af personlige oplysninger",
                     "cameraPrivacy": {
                         "title": "Tilstand for beskyttelse af personlige oplysninger for kamera",
-                        "tooltip": "Kameraet holder op med at sende live-billeder, når indstillingen for privatlivsbeskyttelse er aktiveret. Slå kun denne indstilling til, hvis du ikke ønsker at dele dine billeder med andre under videoopkald."
+                        "tooltip": "Kameraet holder op med at sende live-billeder, når indstillingen for privatlivsbeskyttelse er aktiveret. Slå kun denne indstilling til, hvis du ikke ønsker at dele dine billeder med andre under videoopkald.",
+                        "cameraPrivacyAccessNote": "Gå til siden <b>Windows-indstillinger → Beskyttelse af personlige oplysninger → Kamera</b>, og tjek, at følgende to indstillinger er slået til:<br>&bull; <b>Tillad apps at få adgang til dit kamera</b><br>&bull; <b>Lenovo Vantage</b> under \"Vælg, hvilke (Microsoft Store)-apps der har adgang til dit kamera\""
                     },
                     "camera": {
                         "title": "Kamera",

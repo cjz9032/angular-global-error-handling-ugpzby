@@ -28,32 +28,33 @@
 							</vtr-ui-security-statusbar>
 						</div>
 					</div>
-					<div class="row mt-20">
-						<div class="col text-regular min-width-50 flex-100 d-flex align-items-center">
-							{{'security.vpn.helpKeep' | translate}}
-						</div>
-						<div class="d-flex pull right align-items-center flex-1">
-							<div class="col-12 p-0">
-								<vtr-ui-button
-									*ngIf="statusItem.status === 'not-installed' || statusItem.status === 'installing'"
-									(onClick)="getSurfEasy()"
-									metricsEvent="FeatureClick"
-									metricsItem="getSurfEasy"
-									[btnHeight]=true
-									[linkId]="'sa-vpn-btn-getsurfeasy'"
-									[isDisabled]="statusItem.status === 'installing' || isOnline === false"
-									[label]="'security.vpn.getSufEasy' | translate">
-								</vtr-ui-button>
-								<vtr-ui-button *ngIf="statusItem.status === 'installed'"
-									(onClick)="openSurfEasy()"
-									metricsEvent="FeatureClick"
-									metricsItem="openSurfEasy"
-									[btnHeight]=true
-									[linkId]="'sa-vpn-btn-opensurfeasy'"
-									[label]="'security.vpn.openSufEasy' | translate">
-								</vtr-ui-button>
+					<div class="mt-20" *ngIf="statusItem.status === 'not-installed' || statusItem.status === 'installing'">
+						<vtr-ui-description-button
+							metricsEvent="FeatureClick"
+							metricsItem="getSurfEasy"
+							id="sa-vpn-btn-getsurfeasy"
+							[isDisabled]="statusItem.status === 'installing' || isOnline === false"
+							[label]="'security.vpn.getSufEasy' | translate"
+							[buttonPos]="'align-items-center'"
+							[btnHeight]="true"
+							(buttonClick)="getSurfEasy()">
+							<div class="text-regular col min-width-50 flex-100 d-flex flex-column justify-content-center">
+								{{'security.vpn.helpKeep' | translate}}
 							</div>
-						</div>
+						</vtr-ui-description-button>
+					</div>
+					<div class="mt-20" *ngIf="statusItem.status === 'installed'">
+						<vtr-ui-description-button
+							metricsItem="openSurfEasy"
+							[label]="'security.vpn.openSufEasy' | translate"
+							id="sa-vpn-btn-opensurfeasy"
+							[buttonPos]="'align-items-center'"
+							[btnHeight]="true"
+							(buttonClick)="openSurfEasy()">
+							<div class="text-regular col min-width-50 flex-100 d-flex flex-column justify-content-center">
+								{{'security.vpn.helpKeep' | translate}}
+							</div>
+						</vtr-ui-description-button>
 					</div>
 				</div>
 			</div>

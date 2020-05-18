@@ -164,11 +164,23 @@
                                 p{
                                     font-size: 1.4rem;
                                 }
-                                    fa-icon {
-                                        font-size: 1.4rem;
-                                        margin-right: 0.8rem;
-                                        color: $go_dark;
+                                fa-icon {
+                                    font-size: 1.4rem;
+                                    margin-right: 0.8rem;
+                                    color: $go_dark;
+                                    position: relative;
+                                    text-indent: -100rem;
+                                    &::after {
+                                        position: absolute;
+                                        height: 0.6rem;
+                                        width: 0.6rem;
+                                        content: '';
+                                        border-radius: 1rem;
+                                        background-color: $go_dark;
+                                        left: 1.5rem;
+                                        top: 0.8rem;
                                     }
+                                }
                             }
                         }
                     }

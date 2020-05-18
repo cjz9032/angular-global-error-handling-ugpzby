@@ -1162,7 +1162,7 @@
                             "moreContent": {
                                 "desc1": "a. Op kantoor, Windows Update, online film of scenario's voor systeemverlichting, kan het systeem stil zijn. Bij normaal gamen levert de computer betere prestaties.",
                                 "desc2": "b. Als u zware games speelt, kan automatisch worden overgeschakeld naar de werkstand \"Extreme prestaties\". In dat geval kan de temperatuur van de buitenkant van uw computer hoger worden en de ventilator luider klinken.",
-                                "desc3": "c. Als de capaciteit van de batterij lager is dan 30%, schakelt het systeem automatisch over naar de werkstand \"Batterijbesparing\"."
+                                "desc3": "c. Als de capaciteit van de batterij lager is dan 30%, schakelt het systeem automatisch over naar de werkstand \"Batterij besparen\"."
                             }
                         }
                     },
@@ -1649,7 +1649,8 @@
                     "url": "Ga naar Windows-privacyinstellingen",
                     "cameraPrivacy": {
                         "title": "Privacy-modus camera",
-                        "tooltip": "De camera verstuurt geen live-beelden meer als de instelling Privacy ingeschakeld is. Schakel deze instelling alleen in als u uw foto's niet meer met anderen wilt delen tijdens een videogesprek."
+                        "tooltip": "De camera verstuurt geen live-beelden meer als de instelling Privacy ingeschakeld is. Schakel deze instelling alleen in als u uw foto's niet meer met anderen wilt delen tijdens een videogesprek.",
+                        "cameraPrivacyAccessNote": "Ga naar de pagina <b>Windows-instellingen → Privacy → Camera</b>. Hierop moeten de volgende twee opties zijn ingeschakeld:<br>&bull; <b>Bureaublad-apps toegang tot uw camera geven</b><br>&bull; <b>Lenovo Vantage</b> onder Kies welke Microsoft Store-apps toegang hebben tot uw camera."
                     },
                     "camera": {
                         "title": "Camera",

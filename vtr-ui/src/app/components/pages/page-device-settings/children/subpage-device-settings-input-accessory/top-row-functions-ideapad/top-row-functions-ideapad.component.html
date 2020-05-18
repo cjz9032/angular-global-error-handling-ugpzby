@@ -25,7 +25,7 @@
 						role="radiogroup"
 						tabindex="0"
 						aria-label=" Function key selection list, select using arrow keys">
-						<div class="mr-5">
+						<!-- <div class="mr-5"> -->
 							<!-- <vtr-ui-rectangle-radio [radioId]="'radio1'"
 								[checked]="hotkey$ | async"
 								[group]="'top-row-functions-ideapad-radio'"
@@ -34,7 +34,7 @@
 								(change)="update$.next(keyType.HOTKEY)"
 								[value]="keyType.HOTKEY">
 							</vtr-ui-rectangle-radio> -->
-							<vtr-ui-circle-radio-with-checkbox [theme]="'white'"
+							<!-- <vtr-ui-circle-radio-with-checkbox [theme]="'white'"
 								[radioId]="'radio1'"
 								[group]="'top-row-functions-ideapad-radio'"
 								[checked]="hotkey$ | async"
@@ -44,7 +44,7 @@
 								[value]="'icomoon icomoon-Special-function'">
 							</vtr-ui-circle-radio-with-checkbox>
 						</div>
-						<div>
+						<div> -->
 							<!-- <vtr-ui-rectangle-radio [radioId]="'radio2'"
 								[group]="'top-row-functions-ideapad-radio'"
 								[checked]="fnkey$ | async"
@@ -54,7 +54,7 @@
 								[value]="keyType.FNKEY">
 							</vtr-ui-rectangle-radio> -->
 
-							<vtr-ui-circle-radio-with-checkbox [theme]="'white'"
+							<!-- <vtr-ui-circle-radio-with-checkbox [theme]="'white'"
 								[radioId]="'radio2'"
 								[group]="'top-row-functions-ideapad-radio'"
 								[checked]="fnkey$ | async"
@@ -63,8 +63,12 @@
 								[textId]="'myDevice-settings-inputAccessories-top-row-functions-ideapad'"
 								[value]="'icomoon icomoon-F1-F12-funciton'"
 								[processLabel]="false">
-							</vtr-ui-circle-radio-with-checkbox>
-						</div>
+							</vtr-ui-circle-radio-with-checkbox> -->
+						<!-- </div> -->
+						<vtr-ui-circle-radio-with-checkbox-list [groupName]="'optimize-microphone-radio-group'"
+							(optionChange)="onFunctionLockRadioChange($event)"
+							[radioDetails]="functionLockUIModel">
+						</vtr-ui-circle-radio-with-checkbox-list>
 					</div>
 					<p class="text mt-3"
 						*ngIf="hotkey$ | async"
