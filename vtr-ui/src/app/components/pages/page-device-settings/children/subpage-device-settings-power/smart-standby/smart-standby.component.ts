@@ -417,7 +417,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	}
 
 	updateScheduleComputerModesUIModel() {
-		let uniqueName = 'smartStandby-schedule';
+		// let uniqueName = 'smartStandby-schedule';
 		this.scheduleComputerModesUIModel = [{
 			componentId: 'Automatic mode',
 			label: 'device.deviceSettings.power.smartStandby.automaticMode',
