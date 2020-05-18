@@ -40,9 +40,22 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	firstTimeLoad: boolean;
 	timeOut = 100;
 	@Output() smartStandbyCapability = new EventEmitter<boolean>();
-	public scheduleComputerModesUIModel: Array<UiRoundedRectangleRadioModel> = [];
 	public readonly AUTOMATIC_MODE = 'Automatic mode';
 	public readonly MANUAL_MODE = 'Manual mode';
+	public scheduleComputerModesUIModel: Array<UiRoundedRectangleRadioModel> = [{
+		componentId: 'Automatic mode',
+		label: 'device.deviceSettings.power.smartStandby.automaticMode',
+		value: this.AUTOMATIC_MODE,
+		isChecked: this.checkbox,
+		isDisabled: !this.smartStandby.isEnabled
+	},
+	{
+		componentId: 'Manual mode',
+		label: 'device.deviceSettings.power.smartStandby.manualMode',
+		value: this.MANUAL_MODE,
+		isChecked: !this.checkbox,
+		isDisabled: !this.smartStandby.isEnabled
+	}];
 
 	constructor(
 		private modalService: NgbModal,
@@ -61,7 +74,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		this.toggleSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onSmartStandbyNotification(notification);
 		});
-		this.setUpScheduleComputerModesUIModel();
+
 	}
 
 	public showSmartStandby() {
@@ -166,6 +179,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 							this.cache.isEnabled = this.smartStandby.isEnabled;
 							this.commonService.setLocalStorageValue(LocalStorageKey.SmartStandbyCapability, this.cache);
 							this.setSmartStandbySection(isEnabled);
+							this.updateScheduleComputerModesUIModel();
 						}
 					})
 					.catch(error => {
@@ -402,7 +416,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	setUpScheduleComputerModesUIModel() {
+	updateScheduleComputerModesUIModel() {
 		let uniqueName = 'smartStandby-schedule';
 		this.scheduleComputerModesUIModel = [{
 			componentId: 'Automatic mode',
