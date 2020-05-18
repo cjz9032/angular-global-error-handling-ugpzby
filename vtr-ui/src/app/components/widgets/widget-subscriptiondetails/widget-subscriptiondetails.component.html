@@ -25,13 +25,13 @@
             <div class="status"><div [ngClass]="{'badge-danger': strStatus==='INACTIVE', 'badge-success': strStatus==='ACTIVE' }" class="badge badge-pill">{{status |translate}}</div></div>
         </li>
     </ul>
-    <a *ngIf="isSubscribed" class="link-text" (click)=openSubscribeModal() 
+    <!-- <a *ngIf="isSubscribed" class="link-text" (click)=openSubscribeModal() 
         vtrMetrics
         metricsItem="btn.manageSub"
         metricsEvent="FeatureClick"
         metricsParent="pages.support.smartPerformance">
         {{'smartPerformance.subscriptionDetails.manageSubscription' |translate }}
-    </a>
+    </a> -->
     <a *ngIf="!isSubscribed" class="link-text" (click)=openSubscribeModal() 
         vtrMetrics
         metricsItem="btn.manageSubBeta"

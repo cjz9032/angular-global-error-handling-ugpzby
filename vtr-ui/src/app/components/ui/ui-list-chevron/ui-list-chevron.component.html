@@ -41,20 +41,22 @@
 						<div class="col item-text"
 							[ngClass]="{'col-10': chevronVisibility, 'col-11': !chevronVisibility}">
 							<div class="row no-gutters" [ngClass]="{'flex-column': item.notificationDetail}">
-								<div id="{{item.itemId}}" role="link" class="title text-break d-flex align-items-center"
+								<div id="{{item.itemId}}-title" attr.aria-label="{{item.title}}" role="link" class="title text-break d-flex align-items-center"
 									[ngClass]="{'light-title':item.lightTitle, 'col-12':!item.detail, 'col-6': item.detail}"
 									[ngbTooltip]="item.title" tooltipClass="vtr-system-tooltip" container="body" [attr.aria-label]="item.title"
 									(mouseenter)="(ta.isOpen() ? ta.close() : true )">
 									{{item.title}}
 								</div>
-								<div title=""
+								<div id="{{item.itemId}}-detail" attr.aria-label="{{item.detail}}"
+									title=""
 									class="col-6 detail word-break-all d-flex align-items-center justify-content-end"
 									*ngIf="item.detail" [ngClass]="getItemDetailClasses(item)"
 									[ngbTooltip]="item.detail" tooltipClass="vtr-system-tooltip" container="body"
 									(mouseenter)="(ta.isOpen() ? ta.close() : true )">
 									{{item.detail}}
 								</div>
-								<div *ngIf="item.subText" class="sub-text">
+								<div id="{{item.itemId}}-subText" attr.aria-label="{{item.subText}}"
+									*ngIf="item.subText" class="sub-text">
 									<span title="" class="{{'dirClass' | translate}}" dir="{{'dir' | translate}}"
 										[ngbTooltip]="item.subText" tooltipClass="vtr-system-tooltip" container="body"
 										(mouseenter)="(ta.isOpen() ? ta.close() : true )">{{item.subText | characterLimit:20}}</span>
@@ -135,14 +137,16 @@
 						<div class="col item-text"
 							[ngClass]="{'col-10': chevronVisibility, 'col-11': !chevronVisibility}">
 							<div class="row no-gutters">
-								<div title="" class="col-5 title text-break d-flex align-items-center"
+								<div id="{{item.itemId}}-title" attr.aria-label="{{item.title}}"
+									title="" class="col-5 title text-break d-flex align-items-center"
 									[ngClass]="{'light-title':item.lightTitle, 'col-12':!item.detail, 'col-5': item.detail}"
 									[ngbTooltip]="item.title" tooltipClass="vtr-system-tooltip" container="body"
 									(mouseenter)="(ta.isOpen() ? ta.close() : true )"
 									>
 									{{item.title}}
 								</div>
-								<div title=""
+								<div id="{{item.itemId}}-detail" attr.aria-label="{{item.detail}}"
+									title=""
 									class="col-7 detail word-break-all d-flex align-items-center justify-content-end"
 									*ngIf="item.detail" [ngClass]="getItemDetailClasses(item)"
 									[ngbTooltip]="item.detail" tooltipClass="vtr-system-tooltip" container="body"
@@ -185,7 +189,7 @@
 			<!--Open other apps if launch existed-->
 			<a *ngIf="item.launch" href="javascript:void(0);" id="{{linkId}}-{{item.id}}" vtrMetrics
 				[metricsItem]="item.metricsItemName ? item.metricsItemName : item.title" [metricsEvent]="metricsEvent"
-				(click)="item.launch()" [ngClass]="clickable?'':'disabled'" [tabindex]="clickable ? 0 : -1" 
+				(click)="item.launch()" [ngClass]="clickable?'':'disabled'" [tabindex]="clickable ? 0 : -1"
 				[attr.role]="clickable?'':'document'"
 				[title]=""
 				[ngbTooltip]="(item.metricsItemName ? item.metricsItemName : item.title) + (item.detail? ' - '+item.detail:'' ) +(item.subText? ' - '+item.subText:'' )"

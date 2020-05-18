@@ -29,20 +29,22 @@
 			</div>
 			<div class="button-container w-100">
 				<div class="row no-gutters align-items-center flex-nowrap justify-content-between">
-					<h5 class="desc mb-0 follow-btn" [innerHTML]="btnDesc[statusItem?.fullyProtected ? 1 : 0] | translate"></h5>
-					<vtr-ui-button class="button"
-						metricsItem="securityAdvisor101"
+					<vtr-ui-description-button class="security101-row follow-btn"
 						metricsEvent="ArticleClick"
-						metricsItemPosition="1"
-						metricsPageNumber="1"
+						metricsItem="securityAdvisor101"
 						[metricsItemID]="articleId"
 						[metricsItemCategory]="articleCategory"
-						[label]="'security.landing.security101' | translate"
-						(onClick)="buttonClick()"
+						metricsItemPosition="1"
+						metricsPageNumber="1"
+						id="sa-ov-btn-securityArticle"
 						[isDisabled]="!isOnline"
 						[btnHeight]=true
-						linkId="sa-ov-btn-securityArticle">
-					</vtr-ui-button>
+						[label]="'security.landing.security101' | translate"
+						(buttonClick)="buttonClick()">
+						<div class="col min-width-50 flex-100 d-flex flex-column justify-content-center">
+							<h5 class="desc mb-0" [innerHTML]="btnDesc[statusItem?.fullyProtected ? 1 : 0] | translate"></h5>
+						</div>
+					</vtr-ui-description-button>
 				</div>
 			</div>
 		</div>

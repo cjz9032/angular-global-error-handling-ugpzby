@@ -17,10 +17,12 @@ export class SystemEventService {
 
 	) {
 		this.sysEvent = this.shellService.getSysEventFeature();
-		this.sysEvent.startListen();
-		this.sysEvent.on(EventTypes.customEvent, (event: SystemEvent) => {
-			this.commonService.sendNotification(event.Name, event.EventArgs);
-		});
+		if (this.sysEvent) {
+			this.sysEvent.startListen();
+			this.sysEvent.on(EventTypes.customEvent, (event: SystemEvent) => {
+				this.commonService.sendNotification(event.Name, event.EventArgs);
+			});
+		}
 	}
 
 	async registerCustomEvent(eventName: string): Promise<boolean> {
@@ -36,11 +38,11 @@ export class SystemEventService {
 	async unRegisterCustomEvent(eventName: string): Promise<boolean> {
 		try {
 			await this.sysEvent.unRegisterCustomEvent(eventName);
-			return false;
+			return true;
 		} catch{
 			this.logger.error(`unRegisterCustomEvent ${eventName} failed`);
 		}
-		return true;
+		return false;
 	}
 
 	cancelListen(): void {

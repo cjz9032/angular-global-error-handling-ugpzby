@@ -60,7 +60,7 @@ export class MetricsDirective {
 	}
 	composeFeatureClickEvent(): MetricEvents.FeatureClick {
 		return {
-			ItemType: EventName.FeatureClick,
+			ItemType: EventName.featureclick,
 			ItemName: this.metricsTranslateService.translate(this.metricsItem),
 			ItemParent: this.getItemParent(),
 			ItemValue: this.metricsValue,
@@ -73,7 +73,7 @@ export class MetricsDirective {
 		}
 
 		return {
-			ItemType: EventName.ArticleClick,
+			ItemType: EventName.articleclick,
 			ItemName: this.metricsTranslateService.translate(this.metricsItem),
 			ItemParent: this.getItemParent(),
 			ItemParm: this.metricsParam,
@@ -86,7 +86,7 @@ export class MetricsDirective {
 	}
 	composeSettingUpdateEvent(): MetricEvents.SettingUpdate {
 		return {
-			ItemType: EventName.SettingUpdate,
+			ItemType: EventName.settingupdate,
 			SettingParent: this.getItemParent(),
 			SettingName: this.metricsSettingName,
 			SettingValue: this.metricsSettingValue,
@@ -95,7 +95,7 @@ export class MetricsDirective {
 	}
 	composeUnknownEvent(): any {
 		return {
-			ItemType: EventName.Unknown,
+			ItemType: EventName.unknown,
 			ItemName: this.metricsTranslateService.translate(this.metricsItem),
 			ItemParent: this.getItemParent(),
 			ItemValue: this.metricsValue,
@@ -112,15 +112,15 @@ export class MetricsDirective {
 		let data: any;
 		const eventName = MetricHelper.normalizeEventName(this.metricsEvent);
 		switch (eventName) {
-			case EventName.FeatureClick: {
+			case EventName.featureclick: {
 				data = this.composeFeatureClickEvent();
 				break;
 			}
-			case EventName.ArticleClick: {
+			case EventName.articleclick: {
 				data = this.composeArticleClickEvent();
 				break;
 			}
-			case EventName.SettingUpdate: {
+			case EventName.settingupdate: {
 				data = this.composeSettingUpdateEvent();
 				break;
 			}
@@ -151,7 +151,7 @@ export class MetricsDirective {
 
 		// if data is null/undefined or
 		if (!data || !data.ItemType) {
-			data = { ItemType: EventName.Unknown, content: data };
+			data = { ItemType: EventName.unknown, content: data };
 		}
 
 		// Normalize the item type
@@ -160,9 +160,9 @@ export class MetricsDirective {
 		// automatically fill the item parent
 		const tmpData: any = data;
 		if (!data.SettingParent) {
-			if (tmpData.ItemType === EventName.SettingUpdate ) {
+			if (tmpData.ItemType === EventName.settingupdate ) {
 				tmpData.SettingParent = this.getItemParent();
-			} else if ((tmpData.ItemType === EventName.FeatureClick || tmpData.ItemType === EventName.ArticleClick)) {
+			} else if ([EventName.featureclick, EventName.articleclick].indexOf(tmpData.ItemType) !== -1) {
 				tmpData.ItemParent = this.getItemParent();
 			}
 		}

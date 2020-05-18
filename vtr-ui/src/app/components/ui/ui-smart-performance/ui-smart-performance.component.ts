@@ -92,6 +92,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 					}
 					else {
 						this.isScanning = false;
+						this.showWarning.emit(false)
 					}
 				})
 				.catch(error => {
@@ -103,6 +104,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 			if(res) {
 				this.showWarning.emit(false)
 			}
+			
 		})
 
 	}
@@ -165,7 +167,9 @@ export class UiSmartPerformanceComponent implements OnInit {
 			this.subItems = [];
 		}
 	}
+	//Scan Now event from Summary Page
 	changeScanEvent() {
+		this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, false);
 		if (this.smartPerformanceService.isShellAvailable) {
 			this.smartPerformanceService
 				.getReadiness()
@@ -261,30 +265,20 @@ export class UiSmartPerformanceComponent implements OnInit {
 				if (res && res.state === true) {
                     // Subscriber Scan cancel model
 					let spSubscribeCancelModel = this.commonService.getLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted);
-					if(spSubscribeCancelModel) {
-						this.hasSubscribedScanCompleted = false;
-						this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, false);
-					}
-					else {
-						this.hasSubscribedScanCompleted = true;
-					}
-
-					this.isScanning = false;
-					this.rating = res.rating;
-					this.tune = res.result.tune;
-					this.boost = res.result.boost;
-					this.secure = res.result.secure;
-					this.logger.info('changeScanStatus', this.isScanningCompleted + '>>>' + this.isScanning);
-
-					let spForceClose = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartPerformanceForceClose);
-					if(spForceClose) {
-						this.isScanningCompleted = false;
+					if (spSubscribeCancelModel) {
+						// this.hasSubscribedScanCompleted = false;
 						this.showSubscribersummary = false;
-						this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartPerformanceForceClose, false);
+						// this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, false);
 					}
 					else {
-						this.isScanningCompleted = true;
-						this.showSubscribersummary=true;
+						// this.hasSubscribedScanCompleted = true;
+						this.showSubscribersummary = true;
+						this.isScanning = false;
+						this.rating = res.rating;
+						this.tune = res.result.tune;
+						this.boost = res.result.boost;
+						this.secure = res.result.secure;
+						this.logger.info('changeScanStatus', this.isScanningCompleted + '>>>' + this.isScanning);
 					}
 				}
 			} catch (error) {
@@ -297,6 +291,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 		}
 	}
 	scanNow() {
+		this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, false);
 		if (this.smartPerformanceService.isShellAvailable) {
 			this.smartPerformanceService
 				.getReadiness()
@@ -359,6 +354,12 @@ export class UiSmartPerformanceComponent implements OnInit {
 			reason => {
 			}
 		);
+	}
+
+	cancelScanfromScanning() {
+		this.isScanning = false;
+		this.isScanningCompleted = false;
+		this.showSubscribersummary = false;
 	}
 
 }

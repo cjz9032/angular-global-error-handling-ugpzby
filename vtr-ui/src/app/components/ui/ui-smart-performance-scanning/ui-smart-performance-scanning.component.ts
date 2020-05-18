@@ -41,6 +41,7 @@ export class UiSmartPerformanceScanningComponent implements OnInit, OnChanges {
 	@Input() percent = 0;
 	@Input() isCheckingStatus = false;
 	@Output() sendScanStatus = new EventEmitter();
+	@Output() sendModelStatus = new EventEmitter();
 	public onehundreadFlag = true;
 	public twohundreadFlag = true;
 	public threehundreadFlag = true;
@@ -74,25 +75,7 @@ export class UiSmartPerformanceScanningComponent implements OnInit, OnChanges {
 		this.spCategoryenum = SPCategory;
 		this.spSubCategoryenum = SPSubCategory;
 		this.activegroup = this.spCategoryenum.TUNEUPPERFORMANCE;
-		//let myTag = this.el.nativeElement.querySelector(".scrollingTextUL");
-		
-		// if(!myTag.classList.contains('ms-slider__words'))
-		// {
-		// 	console.log("---------------------------------------------------",myTag);
-		// 	myTag.classList.add('ms-slider__words'); 
-		// }
-		// this.smartperformanceScanningStatusEventRef = this.getSmartPerformanceStartScanStatusEvent.bind(this);
-		// this.shellServices.registerEvent(EventTypes.smartPerformanceScanStatus, this.smartperformanceScanningStatusEventRef);
-
-		// this.shellServices.registerEvent(
-		// 	EventTypes.smartPerformanceScanStatus,
-		// 	event => {
-		// 		// console.log("event registered.................................");
-		// 		this.updateScanResponse(event);
-		// 	}
-		// );
-
-		// this.getSmartPerformanceStartScanInformation();
+	 
 		this.initSpeed();
 		this.sampleDesc = this.translate.instant(
 			'smartPerformance.scanningPage.nowScanningDetail.tunePCDesc'
@@ -288,55 +271,22 @@ export class UiSmartPerformanceScanningComponent implements OnInit, OnChanges {
 		// }
 		// de-activates the pop-up, when user is navigating away while scanning
 		if(this.percent === 100) {
-			this.smartPerformanceService.scanningStopped.next(true)
+			this.smartPerformanceService.scanningStopped.next(true);
 		}
 	}
 
-	public async getSmartPerformanceStartScanInformation() {
-		let res;
-		if (this.smartPerformanceService.isShellAvailable) {
-			try {
-				this.isSubscribed = this.commonService.getLocalStorageValue(
-					LocalStorageKey.IsSmartPerformanceSubscribed
-				);
-
-				if (this.isSubscribed == true) {
-					res = await this.smartPerformanceService.launchScanAndFix();
-					// console.log(JSON.stringify(res));
-				} else {
-					// 	console.log('CALLING START SCAN');
-					res = await this.smartPerformanceService.startScan();
-				}
-
-				if (res && res.state === true) {
-					// final result
-					this.sendScanStatus.emit({
-						rating: res.rating,
-						tune: res.result.tune,
-						boost: res.result.boost,
-						secure: res.result.secure
-					});
-				}
-			} catch (error) {
-				this.logger.error(
-					'getSmartPerformanceStartScanInformation :: error',
-					error.message
-				);
-				return EMPTY;
-			}
-		}
-	}
+ 
 
 	async openCancelScanModel() {
-		const modalRef = this.modalService.open(ModalSmartPerformanceCancelComponent, {
+		const modalCancel = this.modalService.open(ModalSmartPerformanceCancelComponent, {
 			backdrop: 'static',
 			centered: true,
 			windowClass: 'cancel-modal'
 		});
-		const response = await modalRef.result
-		if(response) {
-			this.smartPerformanceService.scanningStopped.next(true)
-		}
+		modalCancel.componentInstance.cancelRequested.subscribe(() => {
+			this.sendModelStatus.emit();
+			modalCancel.close();
+		});
 	}
 
 	toggle(id: string): void {

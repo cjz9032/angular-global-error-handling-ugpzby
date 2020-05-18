@@ -2,13 +2,13 @@ import { Component, OnInit, ElementRef, HostListener, SecurityContext, ViewChild
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { ActivatedRoute } from '@angular/router';
 import { DurationCounterService } from 'src/app/services/timer/timer-service-ex.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from 'src/app/services/metric/metric.service';
 import { WinRT } from '@lenovo/tan-client-bridge';
 import { CommonService } from 'src/app/services/common/common.service';
+import { MetricEventName } from 'src/app/enums/metrics.enum';
 
 @Component({
 	selector: 'vtr-modal-article-detail',
@@ -121,7 +121,7 @@ export class ModalArticleDetailComponent implements OnInit {
 		const focusDuration = this.focusDurationCounter !== null ? this.focusDurationCounter.getDuration() : 0;
 		const blurDuration = this.blurDurationCounter !== null ? this.blurDurationCounter.getDuration() : 0;
 		const metricsData = {
-			ItemType: 'ArticleView',
+			ItemType: MetricEventName.articleview,
 			ItemID: this.articleId,
 			ItemParent: this.metricsParent,
 			ItemCategory: this.articleCategory,

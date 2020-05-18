@@ -1,0 +1,23 @@
+<div class="row col-12">
+	<ng-content></ng-content>
+	<div class="d-flex pull right flex-1 {{rightCol}} {{buttonPos}}">
+		<vtr-ui-button
+			[vtrMetricEnabled]="vtrMetricEnabled"
+			[metricsEvent]="metricsEvent"
+			[metricsItem]="metricsItem"
+			[metricsParent]="metricsParent"
+			[metricsItemID]="metricsItemID"
+			[metricsParam]="metricsParam"
+			[metricsItemCategory]="metricsItemCategory"
+			[metricsItemPosition]="metricsItemPosition"
+			[metricsPageNumber]="metricsPageNumber"
+			[tabIndex]="tabIndex"
+			[upperCaseLabel]="upperCaseLabel"
+			[btnHeight]="btnHeight"
+			(onClick)="clickButton($event)"
+			[isDisabled]="isDisabled"
+			[label]="label"
+			[linkId]="id">	
+		</vtr-ui-button>	
+	</div>
+</div>

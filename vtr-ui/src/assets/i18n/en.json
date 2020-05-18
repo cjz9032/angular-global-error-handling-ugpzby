@@ -2320,7 +2320,7 @@
 		"performanceandSecurityCheckSubTitle": "Let's diagnose and resolve performance and security issues in your computer",
 		"scanButton": "FREE PC SCAN",
 		"section1Heading": "How would you rate your PC Performance?",
-		"section1Description": "PC running slow? Applications taking too long to respond? Windows errors? Malware concerns? Let's diagnose what's causing the problem and fix it.",
+		"section1Description": "PC running slowly? Applications taking too long to respond? Windows errors? Malware concerns? Let's diagnose what's causing the problem and fix it.",
 		"critical": "CRITICAL",
 		"allisWell": "ALL IS WELL",
 		"zero": "0",
@@ -2337,10 +2337,10 @@
 		"tuneUP": "Your PC needs a tune-up",
 		"runningWell": "PC is running well",
 		"section2Heading": "Top-notch PC Performance. Always",
-		"section2Description": "Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+		"section2Description": "Our software can proactively scan your PC 24x7 to find and fix issues as they arise, so that your PC always has top-notch performance.",
 		"tunePCPerformance": {
 			"title": "TUNE PC PERFORMANCE",
-			"summaryTitle":"Tune PC Performance",
+			"summaryTitle":"PC Performance",
 			"heading": "Show your computer some extra love",
 			"description": "Even the best computer will benefit from periodic tune-ups. Get a tune-up and get more done with our powerful app.",
 			"tabSet1": {
@@ -2422,7 +2422,7 @@
 				"tab3Description": "No scareware, built with best practises"
 			}
 		},
-		"startScan": "<b>Ready to start the scan?</b> Let’s diagnose for performance and security issues in your computer.",
+		"startScan": "<b>Ready to start the scan?</b> Let’s diagnose the performance and security issues in your computer.",
 		"subscriptionDetails": {
 			"title": "Subscription Details",
 			"titlebeta":"Lenovo Beta Program",
@@ -2930,32 +2930,38 @@
 		},
 		"feedbackContainer": {
 			"title": "Leave us some feedback",
-			"subtitle": "Tell us what you think about Vantage",
+			"subtitle": "Tell us what you think about Smart Performance",
 			"buttonText": "send feedback",
 			"questions": {
-				"q1": "Does the product look and feel good?",
-				"q2": "Do the feature seen comprehensive?",
-				"q3": "Was the scan easy to use?",
-				"q4": "Happy about the fixes we did?",
-				"q5": "Do you see value for money? ",
-				"q6": "Will you refer it to your friends and family?"
+				"q1": "How difficult or easy was it to use the scan feature?",
+				"q2": "How difficult or easy was it to understand the scan results?",
+				"q3": "How likely are you to pay for a Smart Performance subscription in order to enhance your system’s performance?",
+				"q4": "Overall how satisfied are you with the Smart Performance feature?",
+				"q5": "How difficult or easy was it to understand the fixes that Smart Performance made to your system?",
+				"q6": "Did we find any malware on your system?",
+				"q7": "How likely are you to continue paying for the Smart Performance feature?",
+				"q8": "Overall how satisfied are you with the Smart Performance feature?"
 
 			},
 			"rating": {
-				"r1": "Hate it",
-				"r2": "Love it",
-				"r3": "Seems lacking",
-				"r4": "Good enough",
-				"r5": "Crazy",
-				"r6": "Cool",
-				"r7": "Not so sure",
-				"r8": "Absolutely yes",
-				"r9": "No way",
-				"r10": "Looks worthy",
-				"r11": "Not so sure",
-				"r12": "Absolutely yes"
+				"r1": "Very Difficult",
+				"r2": "Very Easy",
+				"r3": "Very Difficult",
+				"r4": "Very Easy",
+				"r5": "Not at all likely",
+				"r6": "Very Likely",
+				"r7": "Not at all satisfied",
+				"r8": "Very Satisfied",
+				"r9": "Very Difficult",
+				"r10": "Very Easy",
+				"r11": "Yes",
+				"r12": "No",
+				"r13": "Not at all likely",
+				"r14": "Very Likely",
+				"r15": "Not at all satisfied",
+				"r16": "Very Satisfied"
 			},
-			"commentTip": "Shout what you love and whisper what you hate.",
+			"commentTip": "Please leave any comments or additional feedback below: (Open-ended feedback box)",
 			"comments": "Please leave your comments here..."
 		}
 	},
