@@ -113,6 +113,8 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	IsScheduleScanEnabled: any;
 	public scanData: any = {};
 	systemSerialNumber: any;
+	displayMonths:number = 1;
+    navigation:string = 'arrows';
 	public maxDate: any;
 	// tuneindividualIssueCount: any = 0;
 	// boostindividualIssueCount: any = 0;
