@@ -317,6 +317,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 							this.isCollapsed = false;
 							this.caption = this.translate.instant('device.deviceSettings.power.smartStandby.description2');
 							this.tooltipText = this.translate.instant('device.deviceSettings.power.smartStandby.oldTooltipText');
+							this.updateScheduleComputerModesUIModel();
 						}
 					}).catch(error => {
 						this.logger.error('getIsAutonomicCapability', error.message);
@@ -350,6 +351,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 				this.powerService.getSmartStandbyIsAutonomic()
 					.then((response: boolean) => {
 						this.checkbox = response;
+						this.updateScheduleComputerModesUIModel();
 						this.logger.info('getSmartStandbyIsAutonomic:', response);
 					}).catch(error => {
 						this.logger.error('getSmartStandbyIsAutonomic', error.message);
@@ -364,7 +366,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 
 	onCheckboxClicked($event) {
 		this.showDropDown = [false, false, false];
-		this.checkbox = JSON.parse($event.value);
+		this.checkbox = JSON.parse($event.isChecked);
 		this.setSmartStandbyIsAutonomic(this.checkbox);
 		// this.setUpScheduleComputerModeRadios();
 		if (this.checkbox) {
