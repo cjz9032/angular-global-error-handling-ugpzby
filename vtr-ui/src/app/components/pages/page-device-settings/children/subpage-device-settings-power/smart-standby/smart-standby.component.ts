@@ -74,7 +74,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		this.toggleSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onSmartStandbyNotification(notification);
 		});
-		this.updateScheduleComputerModesUIModel();
+
 	}
 
 	public showSmartStandby() {
@@ -106,6 +106,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 			this.firstTimeLoad = false;
 			this.showSmartStandby();
 		}, 30000);
+
 	}
 
 	async setSmartStandbyEnabled() {
@@ -128,7 +129,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 			this.cache.activeStartEnd = this.smartStandby.activeStartEnd;
 			this.cache.daysOfWeekOff = this.smartStandby.daysOfWeekOff;
 			this.commonService.setLocalStorageValue(LocalStorageKey.SmartStandbyCapability, this.cache);
-
+			this.updateScheduleComputerModesUIModel();
 		}
 
 		// this.initSmartStandby();
@@ -158,6 +159,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		} else {
 			this.cache = new SmartStandby();
 		}
+		this.updateScheduleComputerModesUIModel();
 	}
 
 	public onSmartStandbyToggle(event: any) {
@@ -317,6 +319,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 							this.isCollapsed = false;
 							this.caption = this.translate.instant('device.deviceSettings.power.smartStandby.description2');
 							this.tooltipText = this.translate.instant('device.deviceSettings.power.smartStandby.oldTooltipText');
+							this.updateScheduleComputerModesUIModel();
 						}
 					}).catch(error => {
 						this.logger.error('getIsAutonomicCapability', error.message);
@@ -350,6 +353,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 				this.powerService.getSmartStandbyIsAutonomic()
 					.then((response: boolean) => {
 						this.checkbox = response;
+						this.updateScheduleComputerModesUIModel();
 						this.logger.info('getSmartStandbyIsAutonomic:', response);
 					}).catch(error => {
 						this.logger.error('getSmartStandbyIsAutonomic', error.message);
