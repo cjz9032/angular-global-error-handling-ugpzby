@@ -98,7 +98,9 @@
 										<div class="col col-1 text-right">
 											<div class="expand">
 												<a href="javascript:;" (click)="toggleExpand(item.packageID)"
-												id="{{'su_installation_update_expand_'+item.packageID}}" role="button"
+													id="{{'su_installation_update_expand_'+item.packageID}}"
+													role="button"
+													[attr.aria-label]="item.packageID === expandedRecordId ? 'collapse' : 'expand'"
 													tabindex="0">
 													<fa-icon *ngIf="expandedRecordId!==item.packageID"
 														[icon]="['fas', 'plus-circle']"></fa-icon>
