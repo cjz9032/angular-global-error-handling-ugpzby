@@ -46,14 +46,14 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		componentId: 'Automatic mode',
 		label: 'device.deviceSettings.power.smartStandby.automaticMode',
 		value: this.AUTOMATIC_MODE,
-		isChecked: this.checkbox,
+		isChecked: this.checkbox === true ? true : false,
 		isDisabled: !this.smartStandby.isEnabled
 	},
 	{
 		componentId: 'Manual mode',
 		label: 'device.deviceSettings.power.smartStandby.manualMode',
 		value: this.MANUAL_MODE,
-		isChecked: !this.checkbox,
+		isChecked: this.checkbox !== true ? true : false,
 		isDisabled: !this.smartStandby.isEnabled
 	}];
 
