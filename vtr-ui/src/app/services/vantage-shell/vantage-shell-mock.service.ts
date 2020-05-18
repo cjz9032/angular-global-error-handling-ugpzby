@@ -2167,7 +2167,7 @@ export class VantageShellService {
 					setting: [
 						{
 							key: 'KeyboardBacklightLevel',
-							value: BacklightLevelEnum.ONE_LEVEL,
+							value: BacklightLevelEnum.TWO_LEVELS_AUTO,
 							enabled: 0,
 							errorCode: CommonErrorCode.SUCCEED
 						},

@@ -107,34 +107,50 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 	}
 
 	updateFunctionLockUIModel() {
+		this.subscribeForDataChange();
 		this.functionLockUIModel = [];
+		this.functionLockUIModel.push({
+			componentId: `radio1`,
+			label: `device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.sFunKey`,
+			value: 'special-key',
+			isChecked: false,
+			isDisabled: false,
+			processIcon: true,
+			customIcon: 'Special-function',
+			hideIcon: true,
+			processLabel: true,
+		});
+		this.functionLockUIModel.push({
+			componentId: `radio2`,
+			label: `device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.fnKey`,
+			value: 'function-key',
+			isChecked: false,
+			isDisabled: false,
+			processIcon: true,
+			customIcon: 'F1-F12-funciton',
+			hideIcon: true,
+			processLabel: true,
+		});
+	}
 
-		this.hotkey$.subscribe(value => {
-			this.functionLockUIModel.push({
-				componentId: `radio1`,
-				label: `device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.sFunKey`,
-				value: 'special-key',
-				isChecked: value,
-				isDisabled: false,
-				processIcon: true,
-				customIcon: 'Special-function',
-				hideIcon: true,
-				processLabel: true,
+	updateFunctionLockValue(componentId: string, value: boolean) {
+		if (this.functionLockUIModel && this.functionLockUIModel.length > 0) {
+			this.functionLockUIModel.forEach((model) => {
+				if (model.componentId === componentId) {
+					model.isChecked = value;
+				}
+				model.isChecked = false;
 			});
+		}
+	}
+
+	subscribeForDataChange() {
+		this.hotkey$.subscribe(value => {
+			this.updateFunctionLockValue('radio1', value);
 		});
 
 		this.fnkey$.subscribe(value => {
-			this.functionLockUIModel.push({
-				componentId: `radio2`,
-				label: `device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.fnKey`,
-				value: 'function-key',
-				isChecked: value,
-				isDisabled: false,
-				processIcon: true,
-				customIcon: 'F1-F12-funciton',
-				hideIcon: true,
-				processLabel: true,
-			});
+			this.updateFunctionLockValue('radio2', value);
 		});
 	}
 
