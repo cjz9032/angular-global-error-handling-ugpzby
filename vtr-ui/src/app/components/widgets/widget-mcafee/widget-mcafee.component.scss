@@ -70,9 +70,8 @@
       flex-basis: 100%;
     }
 }
-
 ::ng-deep {
-    .vtr-ui-button {
+    vtr-ui-button {
 		.button-box {
 			.button {
 				max-width: 100%;
@@ -80,3 +79,4 @@
 		}
     }
 }
+

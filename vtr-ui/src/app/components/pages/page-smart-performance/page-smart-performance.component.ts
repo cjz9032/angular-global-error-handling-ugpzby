@@ -14,7 +14,7 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 })
 export class PageSmartPerformanceComponent implements OnInit, CanComponentDeactivate {
   isScanning: boolean = false;
-  showPromptMsg: boolean = true
+  // showPromptMsg: boolean = true
 
   constructor(
     private modalService: NgbModal,
@@ -25,30 +25,29 @@ export class PageSmartPerformanceComponent implements OnInit, CanComponentDeacti
 
   ngOnInit() {
     //Checking getReadiness true or false and updating  isSacnnig value.
-    if (this.smartPerformanceService.isShellAvailable) {
-      this.smartPerformanceService
-        .getReadiness()
-        .then((getReadinessFromService: any) => {
-          this.logger.info('ScanNow.getReadiness.then', getReadinessFromService);
-          if (!getReadinessFromService) {
-            this.isScanning = true;
-            this.toggleScanning(true);
-          }
-          else {
-            this.isScanning = false;
-            this.toggleScanning(false);
-          }
-        })
-        .catch(error => {
-          this.logger.error('page-smart-performance-component this.smartPerformanceService.getReadiness()', error);
-        });
-    }
+    // No need of this functionality as I had already implemented this in ui-smart-performance component ngOnInit hook. there 'm emitting boolean value "showWarning" when getReadiness promise returns false.
+    // if (this.smartPerformanceService.isShellAvailable) {
+    //   this.smartPerformanceService
+    //     .getReadiness()
+    //     .then((getReadinessFromService: any) => {
+    //       this.logger.info('ScanNow.getReadiness.then', getReadinessFromService);
+    //       if (!getReadinessFromService) {
+    //         this.isScanning = true;
+    //         this.toggleScanning(true);
+    //       }
+    //       else {
+    //         this.isScanning = false;
+    //         this.toggleScanning(false);
+    //       }
+    //     })
+    //     .catch(error => {
+    //       this.logger.error('page-smart-performance-component this.smartPerformanceService.getReadiness()', error);
+    //     });
+    // }
   }
 
   toggleScanning(value: boolean) {
-    if(this.isScanning) {
-      this.isScanning = value
-    }
+    this.isScanning = value
   }
 
   canDeactivate(): Observable<boolean> | Promise<boolean> | boolean {
@@ -65,7 +64,7 @@ export class PageSmartPerformanceComponent implements OnInit, CanComponentDeacti
       centered: true,
       windowClass: 'cancel-modal'
     });
-    modalRef.componentInstance.promptMsg = this.showPromptMsg
+    // modalRef.componentInstance.promptMsg = this.showPromptMsg
     const response = await modalRef.result
     return response;
   }

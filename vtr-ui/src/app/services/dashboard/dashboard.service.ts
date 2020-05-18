@@ -5,8 +5,6 @@ import { Observable } from 'rxjs/internal/Observable';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
-import { DeviceService } from '../device/device.service';
-import { TranslateService } from '@ngx-translate/core';
 import { SegmentConst } from '../self-select/self-select.service';
 import { LocalInfoService } from '../local-info/local-info.service';
 import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
@@ -54,8 +52,6 @@ export class DashboardService {
 	constructor(
 		shellService: VantageShellService,
 		commonService: CommonService,
-		private deviceService: DeviceService,
-		private translate: TranslateService,
 		private localInfoService: LocalInfoService
 	) {
 		this.dashboard = shellService.getDashboard();
@@ -241,7 +237,8 @@ export class DashboardService {
 				source: 'Vantage',
 				title: this.translateString['dashboard.offlineInfo.welcomeToVantage'],
 				url: 'assets/cms-cache/offline/Default-SMB-Welcome.jpg',
-				ActionLink: null
+				ActionLink: null,
+				isLocal: true
 			}
 		];
 		this.offlineCardContent.positionB = {

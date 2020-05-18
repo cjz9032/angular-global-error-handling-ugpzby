@@ -3,10 +3,13 @@ import { environment } from '../../../environments/environment';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { CommonService } from '../../services/common/common.service';
-import { MetricEventName as EventName } from 'src/app/enums/metrics.enum';
+import { MetricEventName as EventName, MetricEventName } from 'src/app/enums/metrics.enum';
 
 declare var window;
 export class MetricHelper {
+	private static EventList  = Object.values(EventName).map(item => {
+		item.toLowerCase();
+	});
 
 	constructor() {
 	}
@@ -45,56 +48,10 @@ export class MetricHelper {
 
 	public static normalizeEventName(eventName) {
 		if (!eventName) {
-			return EventName.Unknown;
+			return EventName.unknown;
 		}
 
-		eventName = eventName.toLowerCase();
-		switch (eventName) {
-			case 'firstrun':
-				eventName = EventName.FirstRun;
-				break;
-			case 'apploaded':
-				eventName = EventName.AppLoaded;
-				break;
-			case 'articledisplay':
-				eventName = EventName.ArticleDisplay;
-				break;
-			case 'appaction':
-				eventName = EventName.AppAction;
-				break;
-			case 'getenvinfo':
-				eventName = EventName.GetEnvInfo;
-				break;
-			case 'pageview':
-				eventName = EventName.PageView;
-				break;
-			case 'featureclick':
-			case 'itemclick':
-				eventName = EventName.FeatureClick;
-				break;
-			case 'itemview':
-				eventName = EventName.ItemView;
-				break;
-			case 'articleclick':
-			case 'docclick':
-				eventName = EventName.ArticleClick;
-				break;
-			case 'articleview':
-			case 'docview':
-				eventName = EventName.ArticleView;
-				break;
-			case 'taskaction':
-				eventName = EventName.TaskAction;
-				break;
-			case 'settingupdate':
-				eventName = EventName.SettingUpdate;
-				break;
-			case 'userfeedback':
-				eventName = EventName.UserFeedback;
-				break;
-		}
-
-		return eventName;
+		return MetricEventName[eventName.toLowerCase()] || eventName
 	}
 
 	public static initializeMetricClient(metricClient, shellService: VantageShellService, commonService: CommonService, hypothesisService: HypothesisService) {

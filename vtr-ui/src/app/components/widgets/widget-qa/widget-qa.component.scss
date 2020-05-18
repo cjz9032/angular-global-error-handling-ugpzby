@@ -38,7 +38,7 @@
 		&:first-child {
 			border-top: none;
 		}
-		a {
+		.item_title {
 			display: list-item;
 			color: inherit;
 			&:hover {
@@ -48,6 +48,7 @@
 			&:focus {
 				text-decoration: none;
 				overflow: inherit;
+				@include outline-blue;	
 			}
 		}
 	}

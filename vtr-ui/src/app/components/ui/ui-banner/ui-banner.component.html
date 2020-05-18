@@ -1,8 +1,9 @@
 <article class="vtr-ui-banner">
-	<span
-		[innerHTML]="'nonProduction' | translate"
+	<span id="non-production-tips" attr.aria-label="{{nonProductionTips}}"
+		[innerHTML]="nonProductionTips"
 	></span>
 	<button
+		role="button"
 		class="close-btn"
 		tabindex="0"
 		(keydown.enter)="onCloseClick($event)"

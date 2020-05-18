@@ -23,7 +23,9 @@
 	background: $light;
 	// overflow: hidden;
 	height: 100% !important;
-
+	&:focus {
+		@include outline-blue;
+	}
 	// @media #{$breakpoint_md} {
 	// 	height: 24.3rem !important;
 	// }

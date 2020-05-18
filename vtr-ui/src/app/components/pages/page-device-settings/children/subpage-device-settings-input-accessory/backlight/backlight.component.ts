@@ -141,6 +141,8 @@ export class BacklightComponent implements OnInit, OnDestroy {
 						mode.checked = true;
 					}
 				}
+				this.updateBacklightModel(this.modes);
+
 			});
 		this.twoLevelSubscription = this.level$
 			.pipe(
@@ -155,13 +157,13 @@ export class BacklightComponent implements OnInit, OnDestroy {
 						mode.checked = true;
 					}
 				}
+				this.updateBacklightModel(this.modes);
 			});
 		this.update$.subscribe(mode => {
 			for (const modeItem of this.modes) {
 				modeItem.checked = false;
 			}
 			mode.checked = true;
-			this.updateBacklightModel(this.modes);
 		});
 
 		this.changeSubscription = this.backlightService.getBacklightOnSystemChange()
@@ -225,14 +227,14 @@ export class BacklightComponent implements OnInit, OnDestroy {
 			this.kbBacklightUIModel = [];
 			response.forEach(mode => {
 				this.kbBacklightUIModel.push({
-					componentId: `backlightMode${mode}`.replace(/\s/g, ''),
+					componentId: `backlightMode${mode.value.toLocaleLowerCase()}`.replace(/\s/g, ''),
 					label: `device.deviceSettings.audio.microphone.optimize.options.${mode}`,
 					value: mode.value,
 					isChecked: mode.checked,
 					isDisabled: mode.disabled,
 					processIcon: true,
-					customIcon: '',
-					hideIcon: false,
+					customIcon: mode.value,
+					hideIcon: true,
 					processLabel: true,
 				});
 			});
@@ -242,12 +244,13 @@ export class BacklightComponent implements OnInit, OnDestroy {
 
 	onBacklightRadioChange($event: UiCircleRadioWithCheckBoxListModel) {
 		if ($event) {
-			const componentId = $event.componentId.toLowerCase();
-			// if (componentId === 'radio1') {
-			// 	this.onChangeFunType(this.topRowKeyObj.primaryFunStatus);
-			// } else if (componentId === 'radio2') {
-			// 	this.onChangeFunType(!this.topRowKeyObj.primaryFunStatus);
-			// }
+			const backlight: BacklightMode = {
+				checked: true,
+				value: $event.value as BacklightStatusEnum,
+				disabled: false,
+				title: $event.label
+			};
+			this.update$.next(backlight);
 		}
 	}
 }

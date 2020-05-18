@@ -24,7 +24,7 @@ export class IMetricEvent {
 export class FirstRun extends IMetricEvent {
 	constructor(IsGaming: boolean) {
 		super();
-		this.ItemType = EventName.FirstRun;
+		this.ItemType = EventName.firstrun;
 		this.IsGaming  = IsGaming;
 	}
 	public IsGaming: boolean;
@@ -33,7 +33,7 @@ export class FirstRun extends IMetricEvent {
 export class AppLoaded extends IMetricEvent {
 	constructor(durationForWeb) {
 		super();
-		this.ItemType = EventName.AppLoaded;
+		this.ItemType = EventName.apploaded;
 		this.DurationForWeb = Math.round(durationForWeb);
 	}
 
@@ -43,7 +43,7 @@ export class AppLoaded extends IMetricEvent {
 export class ArticleDisplay extends IMetricEvent {
 	constructor(itemParm, itemValue, isUPE) {
 		super();
-		this.ItemType = EventName.ArticleDisplay;
+		this.ItemType = EventName.articlecisplay;
 		this.ItemParm = itemParm;
 		this.ItemValue = itemValue;
 		this.UPE = isUPE;
@@ -57,7 +57,7 @@ export class ArticleDisplay extends IMetricEvent {
 export class AppAction extends IMetricEvent {
 	constructor(actionType: string, launchParms: string, launchType: string, duration: number, durationBlur: number) {
 		super();
-		this.ItemType = EventName.AppAction;
+		this.ItemType = EventName.appaction;
 		this.ActionType = actionType;
 		this.LaunchType = launchType;
 		this.LaunchParms = launchParms;
@@ -82,7 +82,7 @@ export class GetEnvInfo extends IMetricEvent {
 		isFirstLaunch
 	}) {
 		super();
-		this.ItemType = EventName.GetEnvInfo;
+		this.ItemType = EventName.getenvInfo;
 		this.ImcVersion = source.imcVersion;
 		this.SrvVersion = source.srvVersion;
 		this.ShellVersion = source.shellVersion;
@@ -104,7 +104,7 @@ export class GetEnvInfo extends IMetricEvent {
 export class PageView extends IMetricEvent {
 	constructor(pageName: string, duration: number, durationBlur: number, pageContext: string = null) {
 		super();
-		this.ItemType = EventName.PageView;
+		this.ItemType = EventName.pageview;
 		this.PageName = pageName;
 		this.PageContext = pageContext;
 		this.PageDuration = duration;
@@ -119,7 +119,7 @@ export class PageView extends IMetricEvent {
 export class FeatureClick extends IMetricEvent {
 	constructor(itemName, itemParent, itemValue?, itemParm?) {
 		super();
-		this.ItemType = EventName.FeatureClick;
+		this.ItemType = EventName.featureclick;
 		this.ItemName = itemName;
 		this.ItemParent = itemParent;
 		this.ItemValue = itemValue;
@@ -136,7 +136,7 @@ export class FeatureClick extends IMetricEvent {
 export class ItemView extends IMetricEvent {
 	constructor(itemName, itemParent, itemValue = null, itemParm = null) {
 		super();
-		this.ItemType = EventName.ItemView;
+		this.ItemType = EventName.itemview;
 		this.ItemName = itemName;
 		this.ItemParent = itemParent;
 	}
@@ -149,7 +149,7 @@ export class ItemView extends IMetricEvent {
 export class ArticleClick extends IMetricEvent {
 	constructor(itemID, itemParm, itemParent, itemCategory, itemPosition, viewOrder: number, pageNumber: any) {
 		super();
-		this.ItemType = EventName.ArticleClick;
+		this.ItemType = EventName.articleclick;
 		this.ItemID = itemID;
 		this.ItemParm = itemParm;
 		this.ItemParent = itemParent;
@@ -172,7 +172,7 @@ export class ArticleClick extends IMetricEvent {
 export class ArticleView extends IMetricEvent {
 	constructor(itemID, itemParent, itemCategory, duration: number, docReadPosition: number, mediaReadPosition: number) {
 		super();
-		this.ItemType = EventName.FeatureClick;
+		this.ItemType = EventName.articleview;
 		this.ItemID = itemID;
 		this.ItemParent = itemParent;
 		this.ItemCategory = itemCategory;
@@ -193,7 +193,7 @@ export class ArticleView extends IMetricEvent {
 export class TaskAction extends IMetricEvent {
 	constructor(taskName: string, taskCount: number, taskParm: string, taskResult: string, taskDuration: number) {
 		super();
-		this.ItemType = EventName.TaskAction;
+		this.ItemType = EventName.taskaction;
 		this.TaskName = taskName;
 		this.TaskCount = taskCount;
 		this.TaskParm = taskParm;
@@ -210,7 +210,7 @@ export class TaskAction extends IMetricEvent {
 export class SettingUpdate extends IMetricEvent {
 	constructor(settingName, settingValue, settingParm, settingParent) {
 		super();
-		this.ItemType = EventName.SettingUpdate;
+		this.ItemType = EventName.settingupdate;
 		this.SettingName = settingName;
 		this.SettingValue = settingValue;
 		this.SettingParm = settingParm;
@@ -227,7 +227,7 @@ export class SettingUpdate extends IMetricEvent {
 export class UserFeedback extends IMetricEvent {
 	constructor(itemName, userEmail, itemParent, content, qaNewStyle: number, qaPerformance: string, qaUseFrequency: string) {
 		super();
-		this.ItemType = EventName.UserFeedback;
+		this.ItemType = EventName.userfeedback;
 		this.ItemName = itemName;
 		this.UserEmail = userEmail;
 		this.ItemParent = itemParent;
@@ -244,4 +244,15 @@ export class UserFeedback extends IMetricEvent {
 	public Content: string;
 	public QA: any;
 
+}
+
+export class ContentDisplay extends IMetricEvent {
+	constructor() {
+		super();
+		this.ItemType = EventName.contentdisplay;
+	}
+	public ItemID: string;
+	public ItemParent: string;
+	public Position: string;
+	public DataSource: string;
 }

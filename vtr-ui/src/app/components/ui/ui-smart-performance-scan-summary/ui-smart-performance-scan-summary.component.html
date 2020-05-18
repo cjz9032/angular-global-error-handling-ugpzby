@@ -280,9 +280,9 @@
 																			</div>
 																		</div>
 																		<div class="col date-picker">
-																			<ngb-datepicker *ngIf="isFromDate" [(ngModel)]="selectedfromDate"
+																			<ngb-datepicker *ngIf="isFromDate" [(ngModel)]="selectedfromDate" [displayMonths]="displayMonths" [navigation] = "navigation" [maxDate]="maxDate"
 																				(select)="onDateSelected()"></ngb-datepicker>
-																			<ngb-datepicker *ngIf="!isFromDate" [(ngModel)]="selectedTodate"
+																			<ngb-datepicker *ngIf="!isFromDate" [(ngModel)]="selectedTodate" [displayMonths]="displayMonths" [navigation] = "navigation" [maxDate]="maxDate"
 																				(select)="onDateSelected()"></ngb-datepicker>
 																		</div>
 																	</div>
@@ -292,7 +292,7 @@
 													</div>
 
 												</div>
-												<div class="row my-5 d-flex justify-content-between px-0">
+												<div class="row my-5 d-flex justify-content-between px-0 position-relative">
 													<div *ngIf="isLoading">
 														<div class="container" [style.height.px]="40">
 															<div class="loader center-block">
@@ -338,7 +338,7 @@
 																	<span class="icomoon icomoon-malware"></span>
 																</div>
 																
-																<div class="value d-flex justify-content-center">{{historyRes.Secure || 0}} <span>{{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' |translate }}</span></div>
+																<div class="value d-flex justify-content-center">{{historyRes.secure || 0}} <span>{{'smartPerformance.subscriberScanHomePage.scanSummary.fixes' |translate }}</span></div>
 																<!-- <p>{{'smartPerformance.subscriberScanHomePage.scanSummary.secureSummary' |translate }}</p> -->
 															</div>
 															
@@ -492,7 +492,7 @@
 																							</div>
 																							<div
 																								class="scan-item-value col-2">
-																								{{item.secure || 0}}
+																								{{item.Secure || 0}}
 																							</div>
 																							<div class="scan-status col-2 px-2"
 																							*ngIf="item.status === 'C'">

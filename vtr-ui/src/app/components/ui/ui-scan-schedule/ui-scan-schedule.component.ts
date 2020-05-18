@@ -206,6 +206,15 @@ export class UiScanScheduleComponent implements OnInit {
 			this.scanToggleValue = true;
 		}
 
+		// if(	this.scheduleScanFrequency!==undefined)
+		// {
+		// 	if (this.isSubscribed) {
+		// 		this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix');
+		// 	} else {
+		// 		this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScan');
+		// 	}
+		// }
+		// fetching next schedule date and time from api.
 		if (this.scheduleScanFrequency !== undefined && this.isSubscribed) {
 			this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix');
 		}
@@ -344,6 +353,12 @@ export class UiScanScheduleComponent implements OnInit {
 			let scanScheduleTime;
 			this.scheduleTab = '';
 			this.isChangeSchedule = false;
+			const nextScanEvent = {
+				nextScanDate: '',
+				nextScanHour: this.scanTime['hour'],
+				nextScanMin: this.scanTime['min'],
+				nextScanAMPM: this.scanTime['amPm']
+			}
 
 			if (!this.isSubscribed) {
 				this.unregisterScheduleScan('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix');
@@ -390,8 +405,10 @@ export class UiScanScheduleComponent implements OnInit {
 
 			this.scanTime.hour = this.copyScanTime.hour;
 			this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, this.selectedFrequency);
-			// this.scanDatekValueChange.emit(scanScheduleTime);
-			this.sendNextScheduleDate()
+			// this.scanDatekValueChange.emit();
+
+			// sending next schedule date and time to scan summary component when saved new scan event.
+			this.sendNextScheduleDate(nextScanEvent);
 
 		} catch (err) {
 			this.logger.error('ui-scan-schedule.component.saveChangedScanSchedule', err);
@@ -426,6 +443,12 @@ export class UiScanScheduleComponent implements OnInit {
 	//toggle button event schedule scan
 
 	setEnableScanStatus(event) {
+		const nextScanEvent = {
+			nextScanDate: '',
+			nextScanHour: this.scanTime['hour'],
+			nextScanMin: this.scanTime['min'],
+			nextScanAMPM: this.scanTime['amPm']
+		}
 
 		this.logger.info('setEnableScanStatus', event.switchValue);
 		this.scanToggleValue = event.switchValue;
@@ -452,8 +475,10 @@ export class UiScanScheduleComponent implements OnInit {
 				}
 				this.commonService.setLocalStorageValue(LocalStorageKey.IsSPScheduleScanEnabled, true);
 				this.commonService.setLocalStorageValue(LocalStorageKey.SPScheduleScanFrequency, this.scanFrequency[0]);
-				// this.scanDatekValueChange.emit(true);
-				this.sendNextScheduleDate();
+				// this.scanDatekValueChange.emit();
+
+			// sending next schedule date and time to scan summary component when schedule scan is enabled.
+			this.sendNextScheduleDate(nextScanEvent);
 				return;
 			}
 		}
@@ -477,16 +502,28 @@ export class UiScanScheduleComponent implements OnInit {
 
 	async getNextScanRunTime(scantype: string) {
 		const payload = {scantype};
+		let nextScanEvent = {}
 		this.logger.info('ui-smart-performance.getNextScanRunTime', JSON.stringify(payload));
 		try {
 			const res: any = await this.smartPerformanceService.getNextScanRunTime(payload);
+
+			// checking next scan run time fetched from api and when present passing th sendNextScheduleDate method.
+			if(res.nextruntime) {
 			const dt = moment(res.nextruntime).format('LLLL')
 			this.selectedDay = dt.split(',')[0]
+			this.dayValue = this.days.indexOf(this.selectedDay)
 			this.scanTime.hour = dt.split(' ')[4].split(':')[0];
 			this.scanTime.min = dt.split(' ')[4].split(':')[1];
 			this.scanTime.amPm = dt.split(' ')[5]
-			this.dayValue = this.days.indexOf(this.selectedDay)
-			this.sendNextScheduleDate()
+			nextScanEvent = {
+				nextScanDate: '',
+				nextScanHour: this.scanTime['hour'],
+				nextScanMin: this.scanTime['min'],
+				nextScanAMPM: this.scanTime['amPm']
+			}
+			this.sendNextScheduleDate(nextScanEvent)
+
+			}
 			// if (res!== undefined) {			
 			// 	this.getNextScanScheduleTime(res.nextruntime);
 			// 	this.nextScheduleScanDate = res.nextruntime;
@@ -543,41 +580,33 @@ export class UiScanScheduleComponent implements OnInit {
 		}
 	}
 
-	sendNextScheduleDate() {
-		const nextScan = {
-			enableNextScan: true,
-			nxtScanDate: '',
-			nxtScanHour: this.scanTime.hour,
-			nxtScanMin: this.scanTime.min,
-			nxtScanAMPM: this.scanTime.amPm
-		}
-
+	sendNextScheduleDate(nextScheduleScanEvent) {
 		switch(this.selectedFrequency) {
 			case this.scanFrequency[0] :
 				if(moment().day() <= (this.dayValue)) {
-					nextScan.nxtScanDate = moment().day(this.dayValue).format('L').slice(0, 5)
-					this.scanDatekValueChange.emit(nextScan)
+					nextScheduleScanEvent['nextScanDate'] = moment().day(this.dayValue).format('L').slice(0, 5)
+					this.scanDatekValueChange.emit(nextScheduleScanEvent)
 				} else {
-					nextScan.nxtScanDate = moment().add(1, 'weeks').day(this.dayValue).format('L').slice(0, 5)
-					this.scanDatekValueChange.emit(nextScan)
+					nextScheduleScanEvent['nextScanDate'] = moment().add(1, 'weeks').day(this.dayValue).format('L').slice(0, 5)
+					this.scanDatekValueChange.emit(nextScheduleScanEvent)
 				}
 				break;
 			case this.scanFrequency[1] :
 				if(moment().day() <= this.dayValue) {
-					nextScan.nxtScanDate = moment().day(this.dayValue).format('L').slice(0, 5)
-					this.scanDatekValueChange.emit(nextScan)
+					nextScheduleScanEvent['nextScanDate'] = moment().day(this.dayValue).format('L').slice(0, 5)
+					this.scanDatekValueChange.emit(nextScheduleScanEvent)
 				} else {
-					nextScan.nxtScanDate = moment().add(2, 'weeks').day(this.dayValue).format('L').slice(0, 5)
-					this.scanDatekValueChange.emit(nextScan)
+					nextScheduleScanEvent['nextScanDate'] = moment().add(2, 'weeks').day(this.dayValue).format('L').slice(0, 5)
+					this.scanDatekValueChange.emit(nextScheduleScanEvent)
 				}
 				break;
 			case this.scanFrequency[2] :
 				if(this.dateValue <= moment().date()) {
-					nextScan.nxtScanDate = moment().date(this.dateValue + 1).add(1, 'month').format('MM/DD')
-					this.scanDatekValueChange.emit(nextScan)
+					nextScheduleScanEvent['nextScanDate'] = moment().date(this.dateValue + 1).add(1, 'month').format('MM/DD')
+					this.scanDatekValueChange.emit(nextScheduleScanEvent)
 				} else {
-					nextScan.nxtScanDate = moment().date(this.dateValue + 1).format('MM/DD')
-					this.scanDatekValueChange.emit(nextScan)
+					nextScheduleScanEvent['nextScanDate'] = moment().date(this.dateValue + 1).format('MM/DD')
+					this.scanDatekValueChange.emit(nextScheduleScanEvent)
 				}
 		}
 	}

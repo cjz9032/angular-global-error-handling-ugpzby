@@ -303,6 +303,10 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		const privacy = this.commonService.getLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy);
 		if (privacy && privacy.available !== undefined) {
 			this.cameraPrivacyModeStatus.available = privacy.available;
+			if (privacy.status !== undefined) {
+				this.cameraPrivacyModeStatus.status = privacy.status;
+				this.cameraPrivacyModeStatus.isLoading = false;
+			}
 		}
 	}
 
