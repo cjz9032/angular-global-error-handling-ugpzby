@@ -150,12 +150,13 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		this.leftAnimator = '0%';
 		this.scanSummaryTime(0);
 
-		if (this.isSubscribed) {
-			this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix');
-		}
-		else {
-			this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScan');
-		}
+		//  we are calling in ui-schedule scan component.
+		// if (this.isSubscribed) {
+		// 	this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix');
+		// }
+		// else {
+		// 	this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScan');
+		// }
 
 		this.supportService.getMachineInfo().then(async (machineInfo) => {
 			this.systemSerialNumber = machineInfo.serialnumber;
@@ -503,16 +504,20 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 			this.sizeExtension = sizes[i];
 			return parseFloat((mb / Math.pow(k, i)).toFixed(1));
 		} else {
+			this.sizeExtension = '';
 			return 0 + ' ' + 'MB'
 		}
 	}
-	changeNextScanDateValue() {
-		if (this.isSubscribed) {
-			this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix');
-		}
-		else {
-			this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScan');
-		}
+	changeNextScanDateValue(nextScheduleScanEvent) {
+		// retrieved this event form ui-scan-schedule component.
+		this.nextScheduleScan =  nextScheduleScanEvent['nextScanDate'] + ' at ' + nextScheduleScanEvent['nextScanHour'] + ':' + nextScheduleScanEvent['nextScanMin'] + ' ' + nextScheduleScanEvent['nextScanAMPM'];
+
+		// if (this.isSubscribed) {
+		// 	this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix');
+		// }
+		// else {
+		// 	this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScan');
+		// }
 
 	 }
 

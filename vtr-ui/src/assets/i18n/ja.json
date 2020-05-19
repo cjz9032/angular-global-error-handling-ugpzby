@@ -3130,12 +3130,12 @@
         "processFinishedCannotBeCanceled": "実行中のプロセスは完了しているため、キャンセルする必要はありません。",
         "cancelMayTakeSomeTime": "お使いのシステムによってはキャンセルに時間がかかる場合がございます。",
         "scanFailureModal": {
-            "title": "Hardware Problem Detected",
-            "problemDetected": "There were detected problems on the following components on your computer:",
-            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
-            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
-            "supportButtonText": "Open Ticket",
-            "recoverBadSectorsButtonText": "Recover Bad Sectors"
+            "title": "ハードウェアの問題が検出されました",
+            "problemDetected": "コンピューターの次のコンポーネントで問題が検出されました。",
+            "suggestedActionRbs": "「<b>不良セクターの復元</b>」をクリックして、ストレージ・デバイスの復元を試みることができます。問題が解決しない場合は、「<b>チケットを開く</b>」をクリックして、さらにサポートをお求めいただけます。",
+            "suggestedActionSupport": "お使いのコンピューターが保証期間中の場合、「<b>チケットを開く</b>」をクリックして、交換部品をご入手いただけます。詳細については、Lenovo サポート Web サイトをご覧ください。",
+            "supportButtonText": "チケットを開く",
+            "recoverBadSectorsButtonText": "不良セクターの復元"
         }
     },
     "smartPerformance": {

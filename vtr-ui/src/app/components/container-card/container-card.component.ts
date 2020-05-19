@@ -16,7 +16,7 @@ export class ContainerCardComponent implements OnInit {
 	@Input() type = '';
 	@Input() ratio = 0.5;
 	@Input() cornerShift = '';
-	@Input() order: number | string;
+	@Input() order = '';
 	@Input() sideFlag = '';
 	@Input() containerCardId = '';
 	@Input() dataSource = '';

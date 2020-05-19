@@ -3130,12 +3130,12 @@
         "processFinishedCannotBeCanceled": "Procesa, ki se izvaja, ni več treba preklicati, ker je dokončan.",
         "cancelMayTakeSomeTime": "Počakajte. Preklic lahko traja nekaj časa, odvisno od sistema.",
         "scanFailureModal": {
-            "title": "Hardware Problem Detected",
-            "problemDetected": "There were detected problems on the following components on your computer:",
-            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
-            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
-            "supportButtonText": "Open Ticket",
-            "recoverBadSectorsButtonText": "Recover Bad Sectors"
+            "title": "Zaznana je težava s strojno opremo",
+            "problemDetected": "V računalniku so bile zaznane težave z naslednjimi komponentami:",
+            "suggestedActionRbs": "Shranjevalne naprave lahko poskusite obnoviti s klikom na <b>Obnovitev poškodovanih sektorjev</b>. Če težave ne morete odpraviti, lahko kliknete <b>Odprtje zahteve</b> in zaprosite za nadaljnjo podporo.",
+            "suggestedActionSupport": "Če je računalnik pod garancijo, kliknite <b>Odprtje zahteve</b> in naročite nadomestni del. Za dodatne informacije obiščite spletno mesto Lenovo za podporo.",
+            "supportButtonText": "Odprtje zahteve",
+            "recoverBadSectorsButtonText": "Obnovitev poškodovanih sektorjev"
         }
     },
     "smartPerformance": {
