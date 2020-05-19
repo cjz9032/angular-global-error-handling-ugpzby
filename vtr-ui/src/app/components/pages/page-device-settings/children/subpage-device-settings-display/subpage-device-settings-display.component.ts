@@ -917,12 +917,12 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		});
 	}
 
-	public onSetChangeDisplayColorTemp($event: any) {
+	public async onSetChangeDisplayColorTemp($event: any) {
 		try {
 			const value = $event;
 			this.logger.debug('onSetChangeDisplayColorTemp', value);
 			if (this.displayService.isShellAvailable) {
-				this.displayService.setDaytimeColorTemperature(value);
+				await this.displayService.setDaytimeColorTemperature(value);
 				this.displayColorTempCache.current = value;
 				this.isSet.isSetDaytimeColorTemperatureValue = true;
 				this.setValues.SetDaytimeColorTemperatureValue = value;
@@ -943,6 +943,8 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 			this.displayService.setDaytimeColorTemperature($event);
 			//this.onEyeCareTemperatureChange(this.eyeCareDataSource.current);
 
+		} else {
+			this.onSetChangeDisplayColorTemp($event);
 		}
 	}
 
