@@ -36,7 +36,7 @@
 				<div class="col-auto" *ngIf="isScanExecute && !isEnableViewResults">
 					<div class="collapse-control"
 						tabindex="0"
-						[attr.aria-label]="item.collapsed ? 'collapse-test-list':'expand-test-list'"
+						[attr.aria-label]="item.collapsed ? item.module + 'collapse-test-list': item.module + 'expand-test-list'"
 						(click)="item.collapsed = !item.collapsed"
 						(keyup.enter)="item.collapsed = !item.collapsed"
 						role="button"
