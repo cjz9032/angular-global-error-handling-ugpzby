@@ -13,6 +13,7 @@ import { v4 as uuid } from 'uuid';
 import { formatDate } from '@angular/common';
 import { TranslateService } from '@ngx-translate/core';
 import { ModalSmartPerformanceFeedbackComponent } from '../../modal/modal-smart-performance-feedback/modal-smart-performance-feedback.component';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'vtr-ui-smart-performance-scan-summary',
@@ -28,7 +29,8 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		private supportService: SupportService,
 		public smartPerformanceService: SmartPerformanceService,
 		public shellServices: VantageShellService,
-		private translate: TranslateService
+		private translate: TranslateService,
+		private router: Router
 	) { }
 	public sizeExtension: string;
 	public isLoading = false;
@@ -89,6 +91,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	displayToDate: any;
 	customDate: any;
 	@Output() backToScan = new EventEmitter();
+	@Output() backToNonSubscriber = new EventEmitter();
 	// @Output() sendScanData = new EventEmitter();
 	@Output() sendScanData: EventEmitter<any> = new EventEmitter();
 	// scan settings
@@ -149,16 +152,10 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 		this.isDaySelectionEnable = false;
 		this.scanScheduleDate = this.selectedDate;
 		this.leftAnimator = '0%';
-		this.scanSummaryTime(0);
-
-		//  we are calling in ui-schedule scan component.
-		// if (this.isSubscribed) {
-		// 	this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix');
-		// }
-		// else {
-		// 	this.getNextScanRunTime('Lenovo.Vantage.SmartPerformance.ScheduleScan');
-		// }
-
+		if(this.isSubscribed){
+			this.scanSummaryTime(0);
+		}
+		
 		this.supportService.getMachineInfo().then(async (machineInfo) => {
 			this.systemSerialNumber = machineInfo.serialnumber;
 		});
@@ -481,7 +478,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 			const res: any = await this.smartPerformanceService.getHistory(
 				payload
 			);
-			this.logger.info('History Response', res);
+			this.logger.info('ui-smart-performance-scan-summary.getHistory', res);
 			if (res) {
 				this.isLoading = false;
 				this.historyRes = {
@@ -498,7 +495,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 				this.historyRes = {};
 			}
 		} catch (err) {
-			this.logger.error('History Response Error', err);
+			this.logger.error('Ui-smart-performance-scan-summary.getHistory Error', err);
 
 		}
 	}
@@ -723,6 +720,8 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 			windowClass: 'smart-performance-feedback-Modal'
 		});
 	}
-
+	backToNonSubScriberHome(){	
+		this.backToNonSubscriber.emit();
+	}
 
 }
