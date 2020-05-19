@@ -420,6 +420,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			SettingParent: 'Page.Settings'
 		};
 		this.metrics.sendAsync(interestData);
+		(document.querySelector('.menu-main-logo') as HTMLElement).focus();
 	}
 
 	@HostListener('window: focus')
