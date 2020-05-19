@@ -82,12 +82,12 @@ export class UiSmartPerformanceComponent implements OnInit {
 			this.smartPerformanceService
 				.getReadiness()
 				.then((getReadinessFromService: any) => {
-					this.logger.info('ScanNow.getReadiness.then', getReadinessFromService);
+					this.logger.info('ui-smart-performance.ngOnInit.getReadiness.then', getReadinessFromService);
 					if (!getReadinessFromService) {
 						this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, false);
 						this.isScanning = true;
-						this.registerScheduleScanStatus();
-						this.getSmartPerformanceStartScanInformation();
+						this.registerScheduleScanEvent();
+						this.getSmartPerformanceScheduleScanStatus();
 						// activates the pop-up, when scanning is triggered because of scheduled scan and user navigates
 						this.showWarning.emit(true)
 					}
@@ -97,7 +97,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 					}
 				})
 				.catch(error => {
-					this.logger.error('this.smartPerformanceService.getReadiness()', error);
+					this.logger.error('ui-smart-performance.ngOnInit.getReadiness.then', error);
 				});
 		}
 		// de-activates the pop-up, when user is navigating away while scanning
@@ -135,7 +135,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 		});
 
 	}
-	registerScheduleScanStatus() {
+	registerScheduleScanEvent() {
 		this.shellServices.registerEvent(EventTypes.smartPerformanceScheduleScanStatus,
 			event => {
 				this.scheduleScanObj=null;
@@ -208,23 +208,25 @@ export class UiSmartPerformanceComponent implements OnInit {
 
 	updateScheduleScanStatus(response) {
 		try {
-			this.scheduleScanObj = response;
 			if (response && response.payload) {
-				if (response.payload.percentage == 100) {
-					this.isScanningCompleted = true;
-					this.isScanning = false;
+				if(response.payload.percentage > 0){
+					this.scheduleScanObj = response;					
+					if (response.payload.percentage == 100) {
+						this.isScanningCompleted = true;
+						this.isScanning = false;
+					}					
+					if (!this.isScheduleScan) {
+						this.isScheduleScan = true;
+					}
+					this.isScanning = true;
 				}
 			}
-			if (!this.isScheduleScan) {
-				this.isScheduleScan = true;
-			}
-			this.isScanning = true;
 		} catch (err) {
-			this.logger.error('ui-smart-performance.getScheduleScanStatus.then', err);
+			this.logger.error('ui-smart-performance.updateScheduleScanStatus.then', err);
 		}
 	}
 
-	public async getSmartPerformanceStartScanInformation() {
+	public async getSmartPerformanceScheduleScanStatus() {
 		let res;
 		if (this.smartPerformanceService.isShellAvailable) {
 			try {
@@ -235,9 +237,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 				if (res && res.scanstatus != 'Idle') {
 					let spSubscribeCancelModel = this.commonService.getLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted);
 					if (spSubscribeCancelModel) {
-						// this.hasSubscribedScanCompleted = false;
 						this.showSubscribersummary = false;
-						// this.commonService.setLocalStorageValue(LocalStorageKey.HasSubscribedScanCompleted, false);
 					}
 					else {
 						this.showSubscribersummary=true;
@@ -247,12 +247,12 @@ export class UiSmartPerformanceComponent implements OnInit {
 						this.tune = res.result.tune;
 						this.boost = res.result.boost;
 						this.secure = res.result.secure;
-						this.logger.info('changeScanStatus', this.isScanningCompleted + '>>>' + this.isScanning);
+						this.logger.info('ui-smart-performance.getSmartPerformanceScheduleScanStatus', JSON.stringify(res));
 					}
 				}
 			} catch (error) {
 				this.logger.error(
-					'getSmartPerformanceStartScanInformation :: error',
+					'ui-smart-performance.getSmartPerformanceScheduleScanStatus :: error',
 					error.message
 				);
 				return EMPTY;
@@ -287,12 +287,12 @@ export class UiSmartPerformanceComponent implements OnInit {
 						this.tune = res.result.tune;
 						this.boost = res.result.boost;
 						this.secure = res.result.secure;
-						this.logger.info('changeScanStatus', this.isScanningCompleted + '>>>' + this.isScanning);
+						this.logger.info('ui-smart-performance.scanAndFixInformation ',JSON.stringify(res));
 					}
 				}
 			} catch (error) {
 				this.logger.error(
-					'getSmartPerformanceStartScanInformation :: error',
+					'ui-smart-performance.scanAndFixInformation :: error',
 					error.message
 				);
 				return EMPTY;
@@ -370,5 +370,10 @@ export class UiSmartPerformanceComponent implements OnInit {
 		this.isScanningCompleted = false;
 		this.showSubscribersummary = false;
 	}
+	changeSummaryToHome(){
+        this.isScanning = false;
+        this.isScanningCompleted = false;
+        this.showSubscribersummary = false;
+    }
 
 }

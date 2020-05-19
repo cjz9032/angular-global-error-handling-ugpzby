@@ -2622,7 +2622,7 @@
 			"scanRates": "Our scan rates your PC at: ",
 			"summary": "Summary",
 			"summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
-			"signupRepairButton": "SIGN UP & REPAIR NOW",
+			"signupRepairButton": "Back To Home",
 			"monthlyPricing": "<b>Less than $2 per month.</b> We will automatically fix these issues. Once today and every week thereafter <a  href=\"#\">Learn more</a>",
 			"issueCount": "{{individualIssueCount}} ISSUES",
 			"tune": "{{tune}} ISSUES",
