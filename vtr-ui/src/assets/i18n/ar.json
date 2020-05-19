@@ -3132,12 +3132,12 @@
         "processFinishedCannotBeCanceled": "لا داعي لإلغاء العملية قيد التشغيل بعد الآن، حيث إنها قد اكتملت.",
         "cancelMayTakeSomeTime": "يرجى الانتظار، قد يستغرق الأمر بعض الوقت للإلغاء حسب نظامك.",
         "scanFailureModal": {
-            "title": "Hardware Problem Detected",
-            "problemDetected": "There were detected problems on the following components on your computer:",
-            "suggestedActionRbs": "You can try to recover you storage devices by clicking on <b>recover bad sectors</b>. If the problem persists, you can click on <b>open ticket</b> for further support.",
-            "suggestedActionSupport": "If your computer is under Warranty, click on <b>open ticket</b> for a replacement part. For further information, go to Lenovo Support Web site.",
-            "supportButtonText": "Open Ticket",
-            "recoverBadSectorsButtonText": "Recover Bad Sectors"
+            "title": "اكتشاف مشاكل تتعلق بالأجهزة",
+            "problemDetected": "تم اكتشاف مشاكل تتعلق بالمكونات التالية على جهاز الكمبيوتر:",
+            "suggestedActionRbs": "يمكنك محاولة استعادة أجهزة التخزين عن طريق النقر فوق <b>استعادة القطاعات المصابة‬</b>. إذا استمرت المشكلة، يمكنك النقر فوق <b>فتح تذكرة</b> للحصول على مزيد من الدعم.",
+            "suggestedActionSupport": "إذا كان جهاز الكمبيوتر خاضعًا للضمان، فانقر فوق <b>فتح تذكرة</b> للحصول على قطعة بديلة. لمزيد من المعلومات، انتقل إلى موقع ويب دعم Lenovo.",
+            "supportButtonText": "فتح تذكرة",
+            "recoverBadSectorsButtonText": "استعادة القطاعات المصابة"
         }
     },
     "smartPerformance": {

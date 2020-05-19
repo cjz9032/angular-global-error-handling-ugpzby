@@ -1593,13 +1593,13 @@ vtr-ui-smart-performance-scanning {
 		max-width: 30%;
 		margin: 0 auto;
 		@media #{$breakpoint_lg} {
-			max-width: 55%;
+			max-width: 70%;
 		}
 		@media #{$breakpoint_md} {
-			max-width: 60%;
+			max-width: 75%;
 		}
 		@media #{$breakpoint_sm} {
-			max-width: 65%;
+			max-width: 80%;
 		}
 		.modal-content {
 			border-radius: 1rem;
