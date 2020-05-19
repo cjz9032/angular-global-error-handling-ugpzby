@@ -38,7 +38,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	public tooltipText = 'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.toolTipContent';
 	public humanPresenceDetectStatus = new FeatureStatus(false, true);
 	public autoIrCameraLoginStatus = new FeatureStatus(false, true);
-	public intelligentSecurity: IntelligentSecurity;
+	public intelligentSecurity: IntelligentSecurity = new IntelligentSecurity();
 	// public intelligentSecurityCopy: IntelligentSecurity;
 	public autoScreenLockTimer = false;
 	public zeroTouchLoginStatus = new FeatureStatus(false, true);
@@ -46,7 +46,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	public options: any;
 	// public keepMyDisplay: boolean;
 	public getAutoScreenOffNoteStatus: any;
-	public intelligentScreen: IntelligentScreen;
+	public intelligentScreen: IntelligentScreen = new IntelligentScreen();
 	public intelligentMedia = new FeatureStatus(false, true);
 	public lenovoVoice = new FeatureStatus(false, true);
 	public isIntelligentMediaLoading = true;
@@ -555,10 +555,9 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	// this is invoked when auto lock feature is toggled
 	public onZeroTouchLockStatusToggle(event: any) {
 		this.intelligentSecurity.isZeroTouchLockEnabled = event.switchValue;
-		this.updateZeroTouchLockTimersUIModel();
 		this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
 		this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
-
+		this.updateZeroTouchLockTimersUIModel();
 		this.smartAssist.setZeroTouchLockStatus(this.intelligentSecurity.isZeroTouchLockEnabled)
 			.then((isSuccess: boolean) => {
 				this.logger.info(`onChangeZeroTouchLockFlag.setAutoLockStatus ${isSuccess}`, this.intelligentSecurity.isZeroTouchLockEnabled);
