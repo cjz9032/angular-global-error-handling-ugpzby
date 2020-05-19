@@ -283,10 +283,16 @@ export class UiSmartPerformanceScanningComponent implements OnInit, OnChanges {
 			centered: true,
 			windowClass: 'cancel-modal'
 		});
-		modalCancel.componentInstance.cancelRequested.subscribe(() => {
-			this.sendModelStatus.emit();
-			modalCancel.close();
-		});
+		
+		const response = await modalCancel.result
+		if(response) {
+			this.sendModelStatus.emit()
+			// this.smartPerformanceService.scanningStopped.next(true)
+		}
+		// modalCancel.componentInstance.cancelRequested.subscribe(() => {
+		// 	this.sendModelStatus.emit();
+		// 	modalCancel.close();
+		// });
 	}
 
 	toggle(id: string): void {

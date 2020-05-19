@@ -38,7 +38,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	public tooltipText = 'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.toolTipContent';
 	public humanPresenceDetectStatus = new FeatureStatus(false, true);
 	public autoIrCameraLoginStatus = new FeatureStatus(false, true);
-	public intelligentSecurity: IntelligentSecurity;
+	public intelligentSecurity: IntelligentSecurity = new IntelligentSecurity();
 	// public intelligentSecurityCopy: IntelligentSecurity;
 	public autoScreenLockTimer = false;
 	public zeroTouchLoginStatus = new FeatureStatus(false, true);
@@ -46,7 +46,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	public options: any;
 	// public keepMyDisplay: boolean;
 	public getAutoScreenOffNoteStatus: any;
-	public intelligentScreen: IntelligentScreen;
+	public intelligentScreen: IntelligentScreen = new IntelligentScreen();
 	public intelligentMedia = new FeatureStatus(false, true);
 	public lenovoVoice = new FeatureStatus(false, true);
 	public isIntelligentMediaLoading = true;
@@ -113,10 +113,31 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	private machineType: number;
 	private smartAssistCapability: SmartAssistCapability = undefined;
 	public jumpToSettingsTitle: string;
-	public zeroTouchLockTimersUIModel: Array<UiRoundedRectangleRadioModel> = [];
 	public readonly FAST = '1';
 	public readonly MEDIUM = '2';
 	public readonly SLOW = '3';
+	public zeroTouchLockTimersUIModel: Array<UiRoundedRectangleRadioModel> = [{
+		componentId: 'autoScreenLockTimer_fast',
+		label: 'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.fast',
+		value: this.FAST,
+		isChecked: this.intelligentSecurity.autoScreenLockTimer === this.FAST,
+		isDisabled: !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled)
+	},
+	{
+		componentId: 'autoScreenLockTimer_medium',
+		label: 'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.medium',
+		value: this.MEDIUM,
+		isChecked: this.intelligentSecurity.autoScreenLockTimer === this.MEDIUM,
+		isDisabled: !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled)
+	},
+	{
+		componentId: 'autoScreenLockTimer_slow',
+		label: 'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.slow',
+		value: this.SLOW,
+		isChecked: this.intelligentSecurity.autoScreenLockTimer === this.SLOW,
+		isDisabled: !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled)
+	}];
+
 
 	constructor(
 		routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
@@ -223,6 +244,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				this.smartAssistCache.sensitivityVisibility = this.sensitivityVisibility;
 				this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
 			}
+			this.updateZeroTouchLockTimersUIModel();
 		} catch (error) {
 			this.logger.exception('initDataFromCache', error);
 		}
@@ -274,6 +296,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		this.intelligentSecurity.facilRecognitionCameraAccess = true;
 		this.intelligentSecurity.facialRecognitionCameraPrivacyMode = false;
 		this.intelligentSecurity.isDistanceSensitivityVisible = false;
+		this.updateZeroTouchLockTimersUIModel();
 	}
 
 	private setIntelligentScreen() {
@@ -482,7 +505,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
 			this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
 			//if (this.intelligentSecurity.isZeroTouchLockVisible && this.zeroTouchLockShowAdvancedSection) {
-			this.setUpZeroTouchLockTimersUIModel();
+			this.updateZeroTouchLockTimersUIModel();
 			//}
 
 			this.logger.info('PageSmartAssistComponent.Promise.initZeroTouchLock()', this.intelligentSecurity);
@@ -532,10 +555,9 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	// this is invoked when auto lock feature is toggled
 	public onZeroTouchLockStatusToggle(event: any) {
 		this.intelligentSecurity.isZeroTouchLockEnabled = event.switchValue;
-
 		this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
 		this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
-
+		this.updateZeroTouchLockTimersUIModel();
 		this.smartAssist.setZeroTouchLockStatus(this.intelligentSecurity.isZeroTouchLockEnabled)
 			.then((isSuccess: boolean) => {
 				this.logger.info(`onChangeZeroTouchLockFlag.setAutoLockStatus ${isSuccess}`, this.intelligentSecurity.isZeroTouchLockEnabled);
@@ -926,8 +948,8 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	}
 
 
-	setUpZeroTouchLockTimersUIModel() {
-		let uniqueName = 'zero-Touch-Lock';
+	updateZeroTouchLockTimersUIModel() {
+		// let uniqueName = 'zero-Touch-Lock';
 		// let disabled = !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled);
 		this.zeroTouchLockTimersUIModel = [{
 			componentId: 'autoScreenLockTimer_fast',

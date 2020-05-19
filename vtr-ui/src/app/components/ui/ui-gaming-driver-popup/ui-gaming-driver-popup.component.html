@@ -1,5 +1,5 @@
-<ui-gaming-driver-popup  tabindex="1" vtrOutsideClick (clickOutside)="onOutsideClick()"
- [attr.aria-label]="'Driver Install Required window'">
+<ui-gaming-driver-popup  tabindex="1" class="gaming-popup-window" vtrOutsideClick (clickOutside)="onOutsideClick()"
+attr.aria-label="{{ 'gaming.dashboard.device.legionEdge.driverPopup.headerText' | translate }} window">
 	<div class="modal-body vtr-ui-gaming-driver-popup" id="'{{automationId}}_driver_popup'" role="text">
 			<div class="btn-close">
 			<a type="button" class="close driver_popup_close_btn" (click)="close()"

@@ -59,6 +59,9 @@
 	body.focus-enable{
 		.is-gaming{
 			.gaming-help-popup{
+				&:focus{
+					@include outline-blue-gaming;
+				}
 				button.close,.innerContent{
 					&:focus{
 					@include outline-blue-gaming;

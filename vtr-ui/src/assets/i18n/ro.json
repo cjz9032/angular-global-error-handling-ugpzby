@@ -1198,14 +1198,14 @@
                         "desc3_1": "Unele dintre moduri se pot regla automat într-o gamă mai largă de performanţă, în funcţie de activitatea dvs. Pentru a dezactiva modul automat, apăsaţi Fn + T."
                     },
                     "dytc61": {
-                        "title1": "Quiet mode(only for on battery mode)",
-                        "desc1": "The slider is on the far left. Both fan speed and performance are low for a cooler, quieter computer and the best battery life.",
-                        "title2": "Balanced mode",
-                        "desc2": "The slider is on the left or center left. Fan speed and performance are dynamically balanced for the best experience.",
-                        "title3": "Performance mode",
-                        "desc3": "The slider is on the center or center right. Both fan speed and surface temperature are high.",
-                        "title4": "Ultra-performance mode",
-                        "desc4": "The slider is far right, providing ultra-high performance with bigger noise and higher surface temperature."
+                        "title1": "Modul silențios (numai pentru modul baterie)",
+                        "desc1": "Cursorul este în extremitatea stângă. Viteza și performanța ventilatorului sunt reduse, pentru un computer mai silențios, cu o răcire mai bună și cu cea mai bună durată de viață a bateriei.",
+                        "title2": "Mod echilibrat",
+                        "desc2": "Cursorul este în stânga sau în centru-stânga. Viteza și performanța ventilatorului sunt echilibrate dinamic – pentru cea mai bună experiență.",
+                        "title3": "Mod performanță",
+                        "desc3": "Cursorul este în centru sau în centru-dreapta. Atât viteza ventilatorului, cât și temperatura suprafeței sunt ridicate.",
+                        "title4": "Modul ultra-performanță",
+                        "desc4": "Cursorul este în extremitatea dreaptă, oferind ultra-performanță, cu zgomot mai mare și o temperatură ridicată a suprafeței."
                     }
                 },
                 "powerSettings": {
@@ -3763,7 +3763,9 @@
                 "q3": "Was the scan easy to use?",
                 "q4": "Happy about the fixes we did?",
                 "q5": "Do you see value for money? ",
-                "q6": "Will you refer it to your friends and family?"
+                "q6": "Will you refer it to your friends and family?",
+                "q7": "How likely are you to continue paying for the Smart Performance feature?",
+                "q8": "Overall how satisfied are you with the Smart Performance feature?"
             },
             "rating": {
                 "r1": "Hate it",
@@ -3777,7 +3779,11 @@
                 "r9": "No way",
                 "r10": "Looks worthy",
                 "r11": "Not so sure",
-                "r12": "Absolutely yes"
+                "r12": "Absolutely yes",
+                "r13": "Not at all likely",
+                "r14": "Very Likely",
+                "r15": "Not at all satisfied",
+                "r16": "Very Satisfied"
             },
             "commentTip": "Shout what you love and whisper what you hate.",
             "comments": "Please leave your comments here..."

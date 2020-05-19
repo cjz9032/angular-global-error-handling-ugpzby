@@ -373,7 +373,7 @@
 
 							<div class="row mb-40" *ngIf="!isScanning && !isScanningCompleted">
 								<div class="col col-12">
-									<vtr-widget-subscriptiondetails></vtr-widget-subscriptiondetails>
+									<vtr-widget-subscriptiondetails (subScribeEvent)="changeManageSubscription($event)"></vtr-widget-subscriptiondetails>
 								</div>
 							</div>
 
@@ -421,5 +421,5 @@
 </vtr-ui-smart-performance-scanning>
 <vtr-ui-smart-performance-scan-summary *ngIf="(isScanningCompleted || isSubscribed) && !isScanning "
 	[hasSubscribedScanCompleted]="hasSubscribedScanCompleted" [inputIsScanningCompleted]="showSubscribersummary"
-	(backToScan)="changeScanEvent()" [rating]="rating" [tune]="tune" [boost]="boost" [secure]="secure">
+	(backToScan)="changeScanEvent()" (backToNonSubscriber)="changeSummaryToHome()" [rating]="rating" [tune]="tune" [boost]="boost" [secure]="secure">
 </vtr-ui-smart-performance-scan-summary>

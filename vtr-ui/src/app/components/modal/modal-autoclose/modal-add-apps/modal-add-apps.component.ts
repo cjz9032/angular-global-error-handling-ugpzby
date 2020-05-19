@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, AfterViewInit } from '@angular/core';
 import { isUndefined } from 'util';
 import { GamingAutoCloseService } from 'src/app/services/gaming/gaming-autoclose/gaming-autoclose.service';
 
@@ -7,14 +7,13 @@ import { GamingAutoCloseService } from 'src/app/services/gaming/gaming-autoclose
 	templateUrl: './modal-add-apps.component.html',
 	styleUrls: [ './modal-add-apps.component.scss' ]
 })
-export class ModalAddAppsComponent implements OnInit, AfterViewInit,OnDestroy {
+export class ModalAddAppsComponent implements OnInit, AfterViewInit {
 	statusAskAgain: boolean;
 	@Input() showAppsModal: boolean;
 	@Output() closeAddAppsModal = new EventEmitter<any>();
 	@Output() addAppToList = new EventEmitter<any>();
 	public loading = true;
 	public loadingNoApps = false;
-	noRunningInterval: any;
 	runningList: any = [];
 	public isChecked: any = [];
 	constructor(private gamingAutoCloseService: GamingAutoCloseService) { }
@@ -32,7 +31,7 @@ export class ModalAddAppsComponent implements OnInit, AfterViewInit,OnDestroy {
 
 	focusElement() {
 		setTimeout(() => {
-			const modal = document.getElementsByClassName('autoclose_close_add_apps')[0] as HTMLElement;
+			const modal = document.getElementsByClassName('gaming-popup-window')[0] as HTMLElement;
 			if (modal) {
 				modal.focus();
 			}
@@ -86,16 +85,8 @@ export class ModalAddAppsComponent implements OnInit, AfterViewInit,OnDestroy {
 
 	checkFocus(event) {
 		if (this.loadingNoApps && event.which === 9) {
-			this.noRunningInterval = setInterval(() => {
-				const modal = document.getElementsByClassName('autoclose_close_add_apps')[0] as HTMLElement;
-				modal.focus();
-			}, 1);
+			this.focusElement();
 		}
 	}
 
-	ngOnDestroy() {
-		if (this.noRunningInterval) {
-			clearInterval(this.noRunningInterval);
-		}
-	}
 }

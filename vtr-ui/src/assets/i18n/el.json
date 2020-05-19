@@ -1198,14 +1198,14 @@
                         "desc3_1": "Ορισμένες από τις λειτουργίες μπορούν να προσαρμοστούν αυτόματα σε ένα μεγαλύτερο εύρος απόδοσης που βασίζεται στη δραστηριότητά σας. Για να απενεργοποιήσετε τον αυτόματο τρόπο λειτουργίας, πατήστε Fn+ T."
                     },
                     "dytc61": {
-                        "title1": "Quiet mode(only for on battery mode)",
-                        "desc1": "The slider is on the far left. Both fan speed and performance are low for a cooler, quieter computer and the best battery life.",
-                        "title2": "Balanced mode",
-                        "desc2": "The slider is on the left or center left. Fan speed and performance are dynamically balanced for the best experience.",
-                        "title3": "Performance mode",
-                        "desc3": "The slider is on the center or center right. Both fan speed and surface temperature are high.",
-                        "title4": "Ultra-performance mode",
-                        "desc4": "The slider is far right, providing ultra-high performance with bigger noise and higher surface temperature."
+                        "title1": "Αθόρυβη λειτουργία (μόνο για τη λειτουργία μπαταρίας)",
+                        "desc1": "Το ρυθμιστικό είναι στο αριστερό άκρο. Η ταχύτητα και η απόδοση του ανεμιστήρα μειώνονται για έναν πιο ψυχρό, αθόρυβο υπολογιστή και βέλτιστη διάρκεια ζωής της μπαταρίας.",
+                        "title2": "Ισορροπημένη λειτουργία",
+                        "desc2": "Το ρυθμιστικό είναι στα αριστερά ή στα αριστερά του κέντρου. Η ταχύτητα και η απόδοση του ανεμιστήρα εξισορροπούνται δυναμικά για τη βέλτιστη εμπειρία.",
+                        "title3": "Λειτουργία απόδοσης",
+                        "desc3": "Το ρυθμιστικό είναι στο κέντρο ή στα δεξιά του κέντρου. Τόσο η ταχύτητα του ανεμιστήρα όσο και η θερμοκρασία της επιφάνειας είναι υψηλές.",
+                        "title4": "Λειτουργία απόδοσης Ultra",
+                        "desc4": "Το ρυθμιστικό είναι στο δεξιό άκρο, και παρέχει εξαιρετικά υψηλή απόδοση με μεγαλύτερο θόρυβο και υψηλότερη θερμοκρασία επιφάνειας."
                     }
                 },
                 "powerSettings": {
@@ -1231,7 +1231,7 @@
                     "title": "Γραμμή εργαλείων του Lenovo Vantage",
                     "vantageToolbar": {
                         "title": "Γραμμή εργαλείων και ρυθμίσεις premium του Lenovo Vantage",
-                        "description": "Καρφιτσώστε τη γραμμή εργαλείων του Lenovo Vantage στη γραμμή εργασιών των Windows για εύκολη πρόσβαση στις συχνότερα χρησιμοποιούμενες ρυθμίσεις σας και λάβετε premium προσφορές και ενημερώσεις.",
+                        "description": "Καρφιτσώστε τη γραμμή εργαλείων του Lenovo Vantage στη γραμμή εργασιών των Windows για να έχετε εύκολη πρόσβαση στις συχνότερα χρησιμοποιούμενες ρυθμίσεις σας και να λαμβάνετε premium προσφορές και ενημερώσεις.",
                         "hint": "Οι επιλογές στην εικόνα εξαρτώνται από τη χωρητικότητα του μηχανήματος. Για παράδειγμα, ορισμένα μηχανήματα υποστηρίζουν ρυθμίσεις οπίσθιου φωτισμού και ορισμένα ενδέχεται να μην υποστηρίζουν."
                     }
                 },
@@ -3763,7 +3763,9 @@
                 "q3": "Was the scan easy to use?",
                 "q4": "Happy about the fixes we did?",
                 "q5": "Do you see value for money? ",
-                "q6": "Will you refer it to your friends and family?"
+                "q6": "Will you refer it to your friends and family?",
+                "q7": "How likely are you to continue paying for the Smart Performance feature?",
+                "q8": "Overall how satisfied are you with the Smart Performance feature?"
             },
             "rating": {
                 "r1": "Hate it",
@@ -3777,7 +3779,11 @@
                 "r9": "No way",
                 "r10": "Looks worthy",
                 "r11": "Not so sure",
-                "r12": "Absolutely yes"
+                "r12": "Absolutely yes",
+                "r13": "Not at all likely",
+                "r14": "Very Likely",
+                "r15": "Not at all satisfied",
+                "r16": "Very Satisfied"
             },
             "commentTip": "Shout what you love and whisper what you hate.",
             "comments": "Please leave your comments here..."

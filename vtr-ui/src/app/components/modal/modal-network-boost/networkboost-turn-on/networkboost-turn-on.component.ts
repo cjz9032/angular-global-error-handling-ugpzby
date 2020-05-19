@@ -54,7 +54,7 @@ export class NetworkboostTurnOnComponent implements OnInit, AfterViewInit {
   keydownFn(event) {
     if (event.which === 9) {
       setTimeout(() => {
-        document.getElementById('nbTurnOnModal_closeButton').focus();
+        document.getElementById("nbTurnOnModal").focus();
       }, 2);
     }
   }
